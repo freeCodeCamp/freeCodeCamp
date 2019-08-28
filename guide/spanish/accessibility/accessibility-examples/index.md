@@ -46,8 +46,10 @@ Para permitir que los usuarios no videntes se salten al contenido principal de u
   -webkit-clip-path: inset(50%); 
   clip-path: inset(50%); 
   border: 0; 
- } 
- .skip-link:active, .skip-link:focus { 
+ }
+ 
+ .skip-link:active,
+ .skip-link:focus { 
   position: static; 
   width: auto; 
   height: auto; 

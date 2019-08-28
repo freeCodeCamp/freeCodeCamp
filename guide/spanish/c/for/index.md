@@ -2,11 +2,11 @@
 title: For Loop
 localeTitle: En bucle
 ---
-# En bucle
+# El bucle for
 
-El bucle `for` ejecuta un bloque de código hasta que una condición especificada es falsa. Use `while` bucles cuando el número de iteraciones es variable, de lo contrario use `for` bucles. Un uso común de `for` bucles son iteraciones de matriz.
+El bucle `for` ejecuta un bloque de código hasta que una condición especificada es falsa. Use bucles `while` cuando el número de iteraciones es variable, de lo contrario use los bucles `for`. Un uso común de los bucles `for` son iteraciones de matriz. El bucle `for` es también conocido como un "bucle de control al inicio" ya que la condición es verificada antes de la siguiente iteración. Otro ejemplo de un "bucle de control al inicio" son los bucles `while.
 
-## Sintaxis de For Loop
+## Sintaxis del bucle For 
 
 ```c
 for ( init; condition; increment ) { 

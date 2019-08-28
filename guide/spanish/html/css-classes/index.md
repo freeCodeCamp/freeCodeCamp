@@ -10,8 +10,8 @@ Al escribir HTML, se pueden agregar clases a un elemento. Simplemente agregue el
 
 ```html
 
-<h1 class="super-man other-class third-class">"Here I come to save the day!"</h1> 
- <p>is a popular catchphrase that <span class="super-man">Super Man</span> often said.</p> 
+<h1 class="super-man other-class third-class">"¡Aquí vengo a salvar el día!"</h1> 
+ <p>es un eslogan popular que <span class="super-man">Super Man</span> decía a menudo.</p> 
 ```
 
 A continuación, puede diseñar estos elementos con CSS. Se hace referencia a las clases con punto (.) Delante de ellas en CSS, pero no debe poner puntos en su HTML.

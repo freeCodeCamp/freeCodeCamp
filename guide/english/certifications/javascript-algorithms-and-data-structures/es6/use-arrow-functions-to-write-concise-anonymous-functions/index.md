@@ -36,3 +36,11 @@ const magic = () => {
 
 As long as you got rid of the `var` keyword, you're good.
 </details>
+
+<details><summary>Solution 2 (Click to Show/Hide)</summary>
+
+```javascript
+const magic = () => new Date();
+```
+Since there is only a return value, this can be written in one line.
+</details>

@@ -24,8 +24,14 @@ Este exemplo mostra um conjunto de uma tabela que foi "copiada" da tabela "Forne
 
 `sql SELECT * INTO SupplierUSA FROM Supplier WHERE Country = 'USA';` **Resultados** : 4 linhas afetadas 2
 
-| ID | CompanyName | ContactName | Cidade | País | Telefone | | ---- | ----------------------------- |: ------------- -: | ------------- |: --------: |: --------------: | | 2 | Nova Orleans Cajun Delights | Shelley Burke | Nova Orleans | EUA | (100) 555-4822 | | 3 | Homestead da avó Kelly | Regina Murphy | Ann Arbor | EUA | (313) 555-5735 | | 16 | Cervejas Bigfoot | Cheryl Saylor | Curva | EUA | NULL | | 19 | Nova Inglaterra Seafood Cannery | Robb Merchant | Boston | EUA | (617) 555-3267 |
-
+```
+| ID | CompanyName | ContactName | Cidade | País | Telefone | 
+| -- | --------- |: -----------: | ------ |: ---: |: -----: |
+| 2 | Nova Orleans Cajun Delights | Shelley Burke | Nova Orleans | EUA | (100) 555-4822 | 
+| 3 | Homestead da avó Kelly | Regina Murphy | Ann Arbor | EUA | (313) 555-5735 | 
+| 16 | Cervejas Bigfoot | Cheryl Saylor | Curva | EUA | NULL |
+| 19 | Nova Inglaterra Seafood Cannery | Robb Merchant | Boston | EUA | (617) 555-3267 |
+```
 Por favor, consulte o manual do seu gerenciador de banco de dados e divirta-se tentando opções diferentes.
 
 ## Fontes

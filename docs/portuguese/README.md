@@ -15,13 +15,13 @@
 
 Olá 👋!
 
-Este directório contem toda a documentação sobre como contribuir para o freeCodeCamp.org
+Este diretório contém toda a documentação sobre como contribuir para o freeCodeCamp.org
 
 ## [Se está começcando agora, leia isto primeiro.](/docs/portuguese/CONTRIBUTING.md)
 
 ---
 
-## Artigos de referência rápida
+## Artigos para referência rápida
 
 1. Como trabalhar em artigos de Guias.
 2. Como trabalhar em Desafios de Código.
@@ -33,9 +33,9 @@ Este directório contem toda a documentação sobre como contribuir para o freeC
 1. Guia de estilo para criar artigos de Guias.
 2. Guia de estilo para criar Desafios de Código.
 
-## Referência de comandos rápidos quando se trabalha localmente
+## Referência de comandos rápidos para trabalhar localmente
 
-Uma rápida referência dos comandos que vais precisar, quando a trabalhar localmente.
+Uma rápida referência aos comandos que você irá precisar quando for trabalhar localmente.
 
 | comando | descrição |
 | ------- | ----------- |

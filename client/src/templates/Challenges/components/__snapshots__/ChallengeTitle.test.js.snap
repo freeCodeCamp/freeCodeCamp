@@ -16,7 +16,7 @@ exports[`<ChallengeTitle/> renders correctly 1`] = `
   >
     title text
     <i
-      className="ion-checkmark-circled text-primary"
+      className="ion-checkmark text-primary"
       title="Completed"
     />
   </h2>

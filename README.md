@@ -1,5 +1,5 @@
 ![freeCodeCamp.org Social Banner](https://s3.amazonaws.com/freecodecamp/wide-social-banner.png)
-[![Build Status](https://travis-ci.org/freeCodeCamp/freeCodeCamp.svg?branch=staging)](https://travis-ci.org/freeCodeCamp/freeCodeCamp)
+
 [![Pull Requests Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
 [![first-timers-only Friendly](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](http://www.firsttimersonly.com/)
 [![Open Source Helpers](https://www.codetriage.com/freecodecamp/freecodecamp/badges/users.svg)](https://www.codetriage.com/freecodecamp/freecodecamp)
@@ -138,7 +138,11 @@ Please don't create GitHub issues for security issues. Instead, please send an e
 
 ### Contributing
 
-#### [Please follow these steps to contribute.](CONTRIBUTING.md)
+> ### [Please follow these steps to contribute.](CONTRIBUTING.md)
+
+### Platform, Build and Deployment Status
+
+The build and deployment status for the code is available in [our DevOps Guide](/docs/devops.md). The general platform status for all our applications is available at [`status.freecodecamp.org`](https://status.freecodecamp.org)
 
 ### License
 

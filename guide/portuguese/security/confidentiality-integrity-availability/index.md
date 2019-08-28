@@ -4,7 +4,7 @@ localeTitle: Disponibilidade de Integridade de Confidencialidade
 ---
 ## Confidencialidade, Integridade, Disponibilidade (CIA)
 
-Confidencialidade, Integridade e Disponibilidade ou a tríade da CIA é o conceito mais fundamental em segurança cibernética. Serve como princípios orientadores ou metas de segurança da informação para organizações e indivíduos manterem a informação protegida de olhares indiscretos.
+Confidencialidade, Integridade e Disponibilidade ou a tríade da CIA é o conceito mais fundamental em segurança da informação. Serve como princípios orientadores ou metas de segurança da informação para organizações e indivíduos manterem a informação em todos os seus estados protegida de olhares indiscretos.
 
 ### Confidencialidade
 
@@ -13,8 +13,7 @@ Confidencialidade é garantir que o acesso aos dados seja restrito apenas ao pú
 Algumas medidas para manter as informações confidenciais são:
 
 *   Encriptação
-*   Senha
-*   Autenticação de dois fatores
+*   Controle de acesso
 *   Biométrico
 *   Tokens de segurança
 
@@ -24,16 +23,15 @@ Integridade refere-se à manutenção da exatidão e integridade dos dados. Em o
 
 Medidas para manter a integridade das informações incluem:
 
-*   Encriptação
+*   Assinatura Digital
 *   Hashing
 *   Controles de acesso do usuário
 *   Checksums
 *   Controle de versão
-*   Backups
 
 ### Disponibilidade
 
-Por fim, as informações devem estar disponíveis quando necessário. Para garantir alta disponibilidade de dados, você deve manter um hardware e software funcionando corretamente e fornecer largura de banda adequada. Mas essas medidas por si só não são suficientes porque existem forças externas em jogo; a disponibilidade de dados pode ainda ser comprometida por:
+Por fim, as informações devem estar disponíveis quando necessário para as partes interessadas. Para garantir alta disponibilidade de dados, você deve manter um hardware e software funcionando corretamente e fornecer largura de banda adequada. Mas essas medidas por si só não são suficientes porque existem forças externas em jogo; a disponibilidade de dados pode ainda ser comprometida por:
 
 *   Negação de Serviço (DoS)
 *   Quedas de energia
@@ -49,6 +47,7 @@ Medidas para mitigar ameaças à disponibilidade incluem:
 *   Failover
 *   RAID
 *   Clusters de alta disponibilidade
+*   Disaster Recovery
 
 ### Desafios para a Tríade CIA
 
@@ -67,4 +66,4 @@ Além da tríade da CIA, há também outros temas recorrentes na segurança da i
 *   não-repúdio: garantia de que alguém / alguma coisa não pode negar algo (por exemplo, não se pode negar a autenticidade de uma assinatura digital)
 *   autenticação: provar que uma pessoa é quem afirma ser
 *   confiabilidade: confiança de que se pode depender de um sistema ou processo
-*   privacidade: uma contrapartida generalizada de confidencialidade que também aborda a consequência social de não cumprir o requisito
+*   privacidade: uma contrapartida generalizada de confidencialidade que também aborda a consequência social de não cumprir o requisito. OBS: essa área não compete à Segurança da Informação. Ela é uma responsabilidade dos governos em questão e assunto da área do Direito, e também sendo um direito fundamental (no Brasil). A Segurança da Informação pode dar aporte para essa área, mas não deverá partir dela as iniciativas.

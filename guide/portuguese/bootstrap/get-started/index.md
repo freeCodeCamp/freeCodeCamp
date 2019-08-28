@@ -12,7 +12,7 @@ Um site responsivo é um site que redimensiona e reorganiza esses itens na pági
 
 #### Como adiciono o Bootstrap à minha página
 
-Adicionar bootstrap à sua página é um processo rápido, basta adicionar o seguinte às tags `<head>` no seu código.
+Adicionar bootstrap à sua página é um processo rápido, basta adicionar o seguinte código às tags `<head>` no seu código.
 
 ```html
 
@@ -45,7 +45,7 @@ $ npm install bootstrap@3
 
 **Parabéns!**
 
-Bootstrap está trabalhando agora nesta página
+Agora o Bootstrap está funcionando nesta página
 
 #### Mais Informações
 

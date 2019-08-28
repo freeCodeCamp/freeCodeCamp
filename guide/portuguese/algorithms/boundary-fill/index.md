@@ -4,16 +4,16 @@ localeTitle: Preenchimento de limite
 ---
 ## Preenchimento de limite
 
-Preenchimento de limite é o algoritmo usado freqüentemente em computação gráfica para preencher uma cor desejada dentro de um polígono fechado com o mesmo limite cor para todos os seus lados.
+Preenchimento de limite é o algoritmo usado freqüentemente em computação gráfica para preencher uma cor desejada dentro de um polígono fechado com o mesmo limite de cor para todos os seus lados.
 
-A implementação mais aproximada do algoritmo é uma função recursiva baseada em pilha.
+A implementação mais aproximada do algoritmo é uma função recursiva baseada no conceito de pilha.
 
 ### Trabalhando:
 
 O problema é bastante simples e geralmente segue estas etapas:
 
 1.  Tome a posição do ponto de partida e da cor limítrofe.
-2.  Decida se deseja ir em 4 direções (N, S, W, E) ou 8 direções (N, S, W, E, NW, NE, SW, SE).
+2.  Decida se deseja ir em 4 direções (Norte, Sul, Leste, Oeste) ou 8 direções (Norte, Sul, Leste, Oeste, Nordeste, Noroeste, Sudoeste, Sudeste).
 3.  Escolha uma cor de preenchimento.
 4.  Viaje nessas direções.
 5.  Se o pixel que você colocar não for a cor de preenchimento ou a cor limite, substitua-o pela cor de preenchimento.

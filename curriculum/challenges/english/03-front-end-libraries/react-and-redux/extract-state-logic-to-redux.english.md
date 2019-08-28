@@ -24,7 +24,7 @@ Then create a reducer called <code>messageReducer()</code> that handles the stat
 tests:
   - text: The const <code>ADD</code> should exist and hold a value equal to the string <code>ADD</code>
     testString: assert(ADD === 'ADD');
-  - text: The action creator <code>addMessage</code> should return an object with <code>type</code> equal to <code>ADD</code> and message equal to the message that is passed in.
+  - text: The action creator <code>addMessage</code> should return an object with <code>type</code> equal to <code>ADD</code> and <code>message</code> equal to the message that is passed in.
     testString: assert((function() { const addAction = addMessage('__TEST__MESSAGE__'); return addAction.type === ADD && addAction.message === '__TEST__MESSAGE__'; })());
   - text: <code>messageReducer</code> should be a function.
     testString: assert(typeof messageReducer === 'function');

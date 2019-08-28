@@ -4,17 +4,22 @@ import { Highlight } from 'react-instantsearch-dom';
 import { isEmpty } from 'lodash';
 
 const Suggestion = ({ handleSubmit, hit }) => {
+  const dropdownFooter = hit.objectID.includes('default-hit-');
   return isEmpty(hit) || isEmpty(hit.objectID) ? null : (
     <a
-      className='fcc_suggestion_item'
-      href='/search'
-      onClick={e => handleSubmit(e, hit.query)}
+      className={
+        dropdownFooter
+          ? 'fcc_suggestion_footer fcc_suggestion_item'
+          : 'fcc_suggestion_item'
+      }
+      href={hit.url}
+      onClick={e => (dropdownFooter ? handleSubmit(e, hit.query) : '')}
     >
       <span className='hit-name'>
-        {hit.objectID.includes('default-hit-') ? (
+        {dropdownFooter ? (
           <Highlight attribute='query' hit={hit} tagName='strong' />
         ) : (
-          <Highlight attribute='query' hit={hit} />
+          <Highlight attribute='title' hit={hit} />
         )}
       </span>
     </a>

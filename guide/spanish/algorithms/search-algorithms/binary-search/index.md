@@ -8,7 +8,7 @@ Una búsqueda binaria localiza un elemento en una matriz ordenada dividiendo rep
 
 ¿Cómo buscar un nombre en un directorio telefónico?
 
-Una forma sería comenzar desde la primera página y ver cada nombre en la agenda hasta que encontremos lo que estamos buscando. Pero esa sería una forma extremadamente laboriosa e ineficiente de buscar.
+Una forma sería comenzar desde la primera página y ver cada nombre en la agenda hasta que encontremos lo que estamos buscando. Pero esa sería una forma extremadamente laboriosa e ineficiente de buscar. Otra forma de verlo es como buscamos en un diccionario, abrimos el diccionario y dependiendo de la letra en la que lo abrimos, decidimos hacia dónde movernos para continuar la búsqueda.
 
 Como sabemos que los nombres en la agenda están ordenados alfabéticamente, probablemente podríamos trabajar en los siguientes pasos:
 
@@ -93,7 +93,7 @@ function binarySearch(arr, item, low, high) {
         return null; 
     } 
  
-    // Find the middle of the array. 
+    // Encuentra el centro de la matriz.
     var mid = Math.ceil((low + high) / 2); 
  
     if (arr[mid] === item) { // Found the item! 
@@ -209,7 +209,7 @@ def binary_search(arr, l, r, target):
 ### Ejemplo en C ++
 
 ```cpp
-// Binary Search using iteration 
+// Búsqueda binaria usando iteración 
  int binary_search(int arr[], int beg, int end, int num) 
  { 
     while(beg <= end){ 
@@ -257,7 +257,7 @@ volver a mediados
 
 } devuelve -1; }
 ```
-Iterative approach! 
+¡Enfoque iterativo!
 ```
 
 C ++ - enfoque iterativo int binarySearch (int arr \[\], int start, int end, int x) { while (inicio <= fin) { int mid = start + (end - start) / 2; if (arr \[mid\] == x) volver a mediados if (arr \[mid\] <x) inicio = medio + 1; más end = mid - 1; } devuelve -1; } \`\` \`

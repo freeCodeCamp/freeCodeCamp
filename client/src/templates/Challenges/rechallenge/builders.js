@@ -9,12 +9,13 @@ import {
 } from 'lodash';
 
 import { compileHeadTail, setExt, transformContents } from '../utils/polyvinyl';
+import { nightThemeStyle } from './displayStyle.js';
 
 const htmlCatch = '\n<!--fcc-->\n';
 const jsCatch = '\n;/*fcc*/\n';
 
 const defaultTemplate = ({ source }) => `
-  <body style='margin:8px;'>
+  <body id='display-body'style='margin:8px;'>
     <!-- fcc-start-source -->
       ${source}
     <!-- fcc-end-source -->
@@ -56,14 +57,15 @@ export const cssToHtml = cond([
   [stubTrue, identity]
 ]);
 
-// FileStream::concatHtml(
-//   required: [ ...Object ],
-//   template: String,
-//   files: [ polyVinyl ]
-// ) => String
-export function concatHtml({ required = [], template, files = [] } = {}) {
+export function concatHtml({
+  required = [],
+  template,
+  files = [],
+  theme = 'night'
+} = {}) {
+  theme = theme === '' ? 'night' : theme;
   const createBody = template ? _template(template) : defaultTemplate;
-
+  const displayTheme = theme === 'night' ? nightThemeStyle : ` `;
   const head = required
     .map(({ link, src }) => {
       if (link && src) {
@@ -79,7 +81,7 @@ A required file can not have both a src and a link: src = ${src}, link = ${link}
       }
       return '';
     })
-    .reduce((head, element) => head.concat(element), '');
+    .reduce((head, element) => head.concat(element), displayTheme);
 
   const source = files.reduce(
     (source, file) => source.concat(file.contents, htmlCatch),

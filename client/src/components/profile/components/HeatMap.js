@@ -56,13 +56,11 @@ function HeatMap({ calendar, streak }) {
       <FullWidthRow>
         <CalendarHeatMap
           classForValue={value => {
-            if (!value || value.count < 1) {
-              return 'colour-empty';
-            }
-            if (value.count > 4) {
-              return 'colour-scale-a-lot';
-            }
-            return `colour-scale-${value.count}`;
+            if (!value || value.count < 1) return 'color-empty';
+            if (value.count < 4) return 'color-scale-1';
+            if (value.count < 8) return 'color-scale-2';
+            if (value.count >= 8) return 'color-scale-a-lot';
+            return 'color-empty';
           }}
           endDate={endOfCalendar}
           startDate={startOfCalendar}
@@ -76,7 +74,7 @@ function HeatMap({ calendar, streak }) {
               valueCount = 'No points';
             }
             return {
-              'data-tip': `<strong>${valueCount}</strong> on ${new Date(
+              'data-tip': `<b>${valueCount}</b> on ${new Date(
                 value.date
               ).toLocaleDateString('en-US', {
                 year: 'numeric',
@@ -93,10 +91,10 @@ function HeatMap({ calendar, streak }) {
       <FullWidthRow>
         <div className='streak-container'>
           <span className='streak'>
-            <strong>Longest Streak:</strong> {streak.longest || 0}
+            <b>Longest Streak:</b> {streak.longest || 0}
           </span>
           <span className='streak'>
-            <strong>Current Streak:</strong> {streak.current || 0}
+            <b>Current Streak:</b> {streak.current || 0}
           </span>
         </div>
       </FullWidthRow>

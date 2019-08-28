@@ -2,11 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
 import Helmet from 'react-helmet';
-import {
-  Button,
-  ListGroup,
-  ListGroupItem
-} from '@freecodecamp/react-bootstrap';
+import { ListGroup, ListGroupItem } from '@freecodecamp/react-bootstrap';
 
 import LearnLayout from '../../components/layouts/Learn';
 import FullWidthRow from '../../components/helpers/FullWidthRow';
@@ -61,10 +57,8 @@ function IntroductionPage({ data: { markdownRemark, allChallengeNode } }) {
             Go to the first lesson
           </Link>
           <ButtonSpacer />
-          <Link to='/learn'>
-            <Button block={true} bsSize='lg' className='btn-invert'>
-              View the curriculum
-            </Button>
+          <Link class='btn btn-lg btn-primary btn-block' to='/learn'>
+            View the curriculum
           </Link>
           <ButtonSpacer />
           <hr />

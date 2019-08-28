@@ -1,4 +1,4 @@
-const isDev = process.env.NODE_ENV !== 'production';
+const isDev = process.env.FREECODECAMP_NODE_ENV !== 'production';
 const isBeta = !!process.env.BETA;
 
 export function getEmailSender() {

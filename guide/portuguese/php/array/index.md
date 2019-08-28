@@ -9,9 +9,9 @@ Um array no PHP é na verdade um mapa ordenado. Um mapa é um tipo que associa v
 Aqui está um exemplo:
 ```
 <?php 
- // array without keys 
- $bikes = array("Suzuki","BMW","Yamaha"); 
- echo "I like " . $bikes[0] . ", " . $bikes[1] . " and " . $bikes[2] . "."; 
+ // array sem chaves 
+ $motocicletas = array("Suzuki","BMW","Yamaha"); 
+ echo "Eu gosto de " . $motocicletas[0] . ", " . $motocicletas[1] . " e " . $motocicletas[2] . "."; 
  ?> 
 ```
 

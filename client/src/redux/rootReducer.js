@@ -20,15 +20,6 @@ import {
   ns as searchNameSpace
 } from '../components/search/redux';
 
-// console.log({
-//   [appNameSpace]: app,
-//   [challengeNameSpace]: challenge,
-//   [curriculumMapNameSpace]: curriculumMap,
-//   [flashNameSpace]: flash,
-//   form: formReducer,
-//   [searchNameSpace]: search,
-//   [settingsNameSpace]: settings
-// });
 export default combineReducers({
   [appNameSpace]: app,
   [challengeNameSpace]: challenge,

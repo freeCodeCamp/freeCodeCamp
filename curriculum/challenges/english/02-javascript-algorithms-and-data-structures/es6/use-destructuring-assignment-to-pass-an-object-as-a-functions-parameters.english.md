@@ -26,7 +26,7 @@ const profileUpdate = ({ name, age, nationality, location }) => {
 ```
 
 This removes some extra lines and makes our code look neat.
-This has the added benefit of not having to manipulate an entire object in a function; only the fields that are needed are copied inside the function.
+This has the added benefit of not having to manipulate an entire object in a function — only the fields that are needed are copied inside the function.
 </section>
 
 ## Instructions

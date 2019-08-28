@@ -6,11 +6,11 @@ localeTitle: Área dos Triângulos
 
 A área de um triângulo é o espaço fechado total no plano bidimensional pelos lados do triângulo.
 
-A área de um triângulo pode ser calculada multiplicando-se uma metade pela base \* altura
+A área de um triângulo pode ser calculada multiplicando-se a base pela altura e dividindo o resutado por 2.
 
 Por exemplo, se você tem um triângulo de 3 cm na base e 4 cm de altura, você pode trabalhar na área:
 
-Areaa = 0,5 \* 3 \* 4 = 6 cm²
+Area = (3 * 4) / 2 = 6 cm²
 
 #### Terminologia
 
@@ -19,13 +19,13 @@ Areaa = 0,5 \* 3 \* 4 = 6 cm²
 
 #### Fórmula
 
-**Área = 0.5 \* base do triângulo \* altura do triângulo**
+**Área = ( base do triângulo * altura do triângulo ) / 2**
 
 ![Triângulo](http://www.mathportal.org/calculators/plane-geometry-calculators/triangleEquilateral.gif)
 
 Por exemplo, na imagem acima,
 
-Área = 0,5 \* a \* h
+Área = ( a * b) / 2
 
 ### Mais Informações
 

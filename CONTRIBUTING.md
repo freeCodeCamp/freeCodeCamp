@@ -101,7 +101,7 @@ Contributing to this requires some understanding of APIs, ES6 Syntax, and a lot 
 
 Essentially, we expect basic familiarity with some of the aforementioned technologies, tools, and libraries. With that being said, you are not required to be an expert on them in order to contribute.
 
-**If you want to help us improve our codebase, you can either [setup freeCodeCamp locally](/docs/how-to-setup-freecodecamp-locally.md) or use Gitpod, a free online dev environment.**
+**If you want to help us improve our codebase, you can either [set up freeCodeCamp locally](/docs/how-to-setup-freecodecamp-locally.md) or use Gitpod, a free online dev environment.**
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
@@ -115,7 +115,7 @@ Feel free to ask us questions on the related issue threads, and we will be glad 
 | Ahmad Abdolsaheb | [`@ahmadabdolsaheb`](https://github.com/ahmadabdolsaheb) | [`@Abdolsaheb`](https://twitter.com/Abdolsaheb) |
 | Kristofer Koishigawa | [`@scissorsneedfoodtoo`](https://github.com/scissorsneedfoodtoo) | [`@kriskoishigawa`](https://twitter.com/kriskoishigawa) |
 
-> **Email: `dev at freecodecamp dot org`**
+> **Email: `dev@freecodecamp.org`**
 
 ## Frequently Asked Questions
 

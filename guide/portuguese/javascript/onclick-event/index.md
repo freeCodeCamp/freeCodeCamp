@@ -22,7 +22,7 @@ No exemplo simples acima, quando um usuário clica no botão, ele verá um alert
 
 ### Adicionando `onclick` dinamicamente
 
-O evento `onclick` também pode ser adicionado programaticamente a qualquer elemento usando o código a seguir no exemplo a seguir:
+O evento `onclick` também pode ser adicionado programaticamente a qualquer elemento, evitando poluir o html usando o código a seguir no exemplo a seguir:
 
 ```javascript
 <p id="foo">click on this element.</p> 

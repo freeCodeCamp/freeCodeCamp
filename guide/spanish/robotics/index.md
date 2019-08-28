@@ -4,7 +4,7 @@ localeTitle: Robótica
 ---
 ## Robótica
 
-La robótica es sobre los sistemas que componen los robots. No hay una definición de robot aplicable universalmente. Una definición generalmente aceptada es: _Un robot es una máquina física programable que sigue el paradigma de pensar, pensar y actuar_ . Más específicamente, un robot necesita detectar su entorno, utilizar esa información como una entrada para tomar decisiones y luego actuar en consecuencia. Cada sistema en este paradigma es a menudo un estudio en sí mismo. Hay una multitud de variedades de tipos de robots y sistemas de componentes. Cada robot usualmente se dedica a un conjunto de procesos con objetivos claros.
+La robótica es la rama de la ciencia que estudia sobre los sistemas que componen los robots. No hay una definición de robot aplicable universalmente. Una definición generalmente aceptada es: _Un robot es una máquina física programable que sigue el paradigma de pensar, pensar y actuar_ . Más específicamente, un robot necesita detectar su entorno, utilizar esa información como una entrada para tomar decisiones y luego actuar en consecuencia. Cada sistema en este paradigma es a menudo un estudio en sí mismo. Hay una multitud de variedades de tipos de robots y sistemas de componentes. Cada robot usualmente se dedica a un conjunto de procesos con objetivos claros. En el caso de tratarse de robots autonomos, se deben cumplir _siempre_ [https://es.wikipedia.org/wiki/Tres_leyes_de_la_rob%C3%B3tica](https://es.wikipedia.org/wiki/Tres_leyes_de_la_rob%C3%B3tica) 
 
 ### Sentido
 
@@ -20,7 +20,7 @@ Una vez que el robot toma su decisión, debe actuar en consecuencia. Para ello, 
 
 ## Cosas esenciales para la robótica.
 
-Primero, necesitas tener una buena cantidad de paciencia para as en Robótica.
+Primero, necesitas tener una buena cantidad de paciencia para ser un as en Robótica.
 
 1) Sea bueno en cualquier lenguaje de programación para tener un buen control sobre el código. 2) Aprenda RaspberryPi o Arduino para la comprensión adecuada de la electrónica y la lógica. Ahora la diferencia entre RaspberryPi y Arduino es: RaspberryPi es un SBC (Single-Board-Computer) mientras que Arduino es solo un microcontrolador. Así que la diferencia entre las cosas anteriores es bastante importante. 3) La cinemática inversa es muy importante para la parte de diseño. Aquí es un buen recurso para aprender [cinemática inversa](https://www.intechopen.com/books/industrial_robotics_theory_modelling_and_control/robot_kinematics__forward_and_inverse_kinematics) .
 
