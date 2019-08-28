@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 import { curry } from 'lodash';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
-import { Button, Row, Col } from '@freecodecamp/react-bootstrap';
+import { Row, Col } from '@freecodecamp/react-bootstrap';
 
 import { userByNameSelector } from '../../../redux';
 import FullWidthRow from '../../helpers/FullWidthRow';
@@ -113,15 +113,11 @@ function renderCertShow(username, cert) {
     <Fragment key={cert.title}>
       <Row>
         <Col className='certifications' sm={10} smPush={1}>
-          <Link to={`/certification/${username}/${cert.showURL}`}>
-            <Button
-              block={true}
-              bsSize='lg'
-              bsStyle='primary'
-              className='btn-invert'
-            >
-              View {cert.title}
-            </Button>
+          <Link
+            className='btn btn-lg btn-primary btn-block'
+            to={`/certification/${username}/${cert.showURL}`}
+          >
+            View {cert.title}
           </Link>
         </Col>
       </Row>
