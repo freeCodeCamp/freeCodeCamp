@@ -323,7 +323,6 @@ export const reducer = handleActions(
       };
     },
     [types.updateCurrentChallengeUrl]: (state, { payload }) => {
-      console.log('updatingCurrentChallengeUrl', payload);
       return {
         ...state,
         currentChallengeUrl: payload

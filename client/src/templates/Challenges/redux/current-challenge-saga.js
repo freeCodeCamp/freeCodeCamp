@@ -1,5 +1,5 @@
 import { put, select, call, takeEvery } from 'redux-saga/effects';
-import cookies from 'browser-cookies';
+import store from 'store';
 
 import {
   isSignedInSelector,
@@ -17,12 +17,15 @@ import { post } from '../../../utils/ajax';
 import { randomCompliment } from '../utils/get-words';
 import { updateSuccessMessage } from './';
 
-function* currentChallengeSaga({ payload: { id, slug } }) {
-  cookies.set('currentChallengeUrl', slug, { expires: 365 });
+export const CURRENT_CHALLENGE_KEY = 'currentChallengeUrl';
+
+export function* currentChallengeSaga({ payload: { id, slug } }) {
+  store.set(CURRENT_CHALLENGE_KEY, slug);
   yield put(updateCurrentChallengeUrl(slug));
 
   const isSignedIn = yield select(isSignedInSelector);
   const currentChallengeId = yield select(currentChallengeIdSelector);
+  // TODO: should the server update take place on challenge completion instead?
   if (isSignedIn && id !== currentChallengeId) {
     const update = {
       endpoint: '/update-my-current-challenge',

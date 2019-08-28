@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import uniq from 'lodash/uniq';
 import { createSelector } from 'reselect';
-import cookies from 'browser-cookies';
+import store from 'store';
 
 import SuperBlock from './components/SuperBlock';
 import Spacer from '../helpers/Spacer';
@@ -12,15 +12,13 @@ import Spacer from '../helpers/Spacer';
 import './map.css';
 import { ChallengeNode } from '../../redux/propTypes';
 import { toggleSuperBlock, toggleBlock, isInitializedSelector } from './redux';
-import {
-  currentChallengeUrlSelector,
-  currentChallengeIdSelector
-} from '../../redux';
+import { currentChallengeUrlSelector } from '../../redux';
 import { getBlocksFromChallengeUrl } from '../../utils';
 import { blockNameify } from '../../../utils/blockNameify';
+// eslint-disable-next-line max-len
+import { CURRENT_CHALLENGE_KEY } from '../../templates/Challenges/redux/current-challenge-saga';
 
 const propTypes = {
-  currentChallengeId: PropTypes.string,
   currentChallengeUrl: PropTypes.string,
   introNodes: PropTypes.arrayOf(
     PropTypes.shape({
@@ -39,11 +37,9 @@ const propTypes = {
 
 const mapStateToProps = state => {
   return createSelector(
-    currentChallengeIdSelector,
     currentChallengeUrlSelector,
     isInitializedSelector,
-    (currentChallengeId, currentChallengeUrl, isInitialized) => ({
-      currentChallengeId,
+    (currentChallengeUrl, isInitialized) => ({
       currentChallengeUrl,
       isInitialized
     })
@@ -63,11 +59,11 @@ function mapDispatchToProps(dispatch) {
 export class Map extends Component {
   constructor(props) {
     super(props);
-    // Tries to use the cookie, then the store value and finally defaults
+    // Tries to use the redux store, then local storage and finally defaults
     // to the first challenge.
     const currentChallengeUrl =
-      cookies.get('currentChallengeUrl') ||
       props.currentChallengeUrl ||
+      store.get(CURRENT_CHALLENGE_KEY) ||
       props.nodes[0].fields.slug;
 
     if (!this.props.isInitialized)
