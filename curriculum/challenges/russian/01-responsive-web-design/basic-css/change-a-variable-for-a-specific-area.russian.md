@@ -2,23 +2,28 @@
 id: 5a9d72a1424fe3d0e10cad15
 title: Change a variable for a specific area
 challengeType: 0
-videoUrl: ''
+videoUrl: https://scrimba.com/c/cdRwbuW
+forumTopicId: 301085
 localeTitle: Изменение переменной для определенной области
 ---
 
 ## Description
-<section id="description"> Когда вы создаете переменные в <code>:root</code> они задают значение этой переменной для всей страницы. Вы можете переписать эти переменные, установив их снова в пределах определенного элемента. </section>
+<section id='description'>
+Когда вы создаете переменные в <code>:root</code> они задают значение этой переменной для всей страницы. Вы можете переписать эти переменные, установив их снова в пределах определенного элемента.
+</section>
 
 ## Instructions
-<section id="instructions"> Измените значение <code>--penguin-belly</code> на <code>white</code> в классе <code>penguin</code> . </section>
+<section id='instructions'>
+Измените значение <code>--penguin-belly</code> на <code>white</code> в классе <code>penguin</code> .
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: Класс <code>penguin</code> должен переназначить переменную <code>--penguin-belly</code> на <code>white</code> .
-    testString: 'assert(code.match(/.penguin\s*?{[\s\S]*--penguin-belly\s*?:\s*?white\s*?;[\s\S]*}/gi), "The <code>penguin</code> class should reassign the <code>--penguin-belly</code> variable to <code>white</code>.");'
+  - text: The <code>penguin</code> class should reassign the <code>--penguin-belly</code> variable to <code>white</code>.
+    testString: assert(code.match(/.penguin\s*?{[\s\S]*--penguin-belly\s*?:\s*?white\s*?;[\s\S]*}/gi));
 
 ```
 
@@ -239,14 +244,13 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+var code = ".penguin {--penguin-belly: white;}"
 ```
+
 </section>

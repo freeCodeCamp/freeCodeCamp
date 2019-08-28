@@ -2,31 +2,36 @@
 id: 5900f3711000cf542c50fe84
 challengeType: 5
 title: 'Problem 5: Smallest multiple'
-videoUrl: ''
+forumTopicId: 302160
 localeTitle: 'Проблема 5: Наименьшая множественность'
 ---
 
 ## Description
-undefined
+<section id='description'>
+2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
+What is the smallest positive number that is evenly divisible by all of the numbers from 1 to <code>n</code>?
+</section>
 
 ## Instructions
-undefined
+<section id='instructions'>
+
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: ''
-    testString: 'assert.strictEqual(smallestMult(5), 60, "<code>smallestMult(5)</code> should return 60.");'
-  - text: ''
-    testString: 'assert.strictEqual(smallestMult(7), 420, "<code>smallestMult(7)</code> should return 420.");'
-  - text: ''
-    testString: 'assert.strictEqual(smallestMult(10), 2520, "<code>smallestMult(10)</code> should return 2520.");'
-  - text: ''
-    testString: 'assert.strictEqual(smallestMult(13), 360360, "<code>smallestMult(13)</code> should return 360360.");'
-  - text: ''
-    testString: 'assert.strictEqual(smallestMult(20), 232792560, "<code>smallestMult(20)</code> should return 232792560.");'
+  - text: <code>smallestMult(5)</code> should return 60.
+    testString: assert.strictEqual(smallestMult(5), 60);
+  - text: <code>smallestMult(7)</code> should return 420.
+    testString: assert.strictEqual(smallestMult(7), 420);
+  - text: <code>smallestMult(10)</code> should return 2520.
+    testString: assert.strictEqual(smallestMult(10), 2520);
+  - text: <code>smallestMult(13)</code> should return 360360.
+    testString: assert.strictEqual(smallestMult(13), 360360);
+  - text: <code>smallestMult(20)</code> should return 232792560.
+    testString: assert.strictEqual(smallestMult(20), 232792560);
 
 ```
 
@@ -49,14 +54,26 @@ smallestMult(20);
 
 </div>
 
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
 ```js
-// solution required
+function smallestMult(n){
+  function gcd(a, b) {
+    return b === 0 ? a : gcd(b, a%b); // Euclidean algorithm
+  }
+
+  function lcm(a, b) {
+    return a * b / gcd(a, b);
+  }
+  var result = 1;
+  for(var i = 2; i <= n; i++) {
+    result = lcm(result, i);
+  }
+  return result;
+}
 ```
+
 </section>

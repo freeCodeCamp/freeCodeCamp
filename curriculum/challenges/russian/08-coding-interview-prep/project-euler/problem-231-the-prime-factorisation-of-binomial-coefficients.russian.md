@@ -2,15 +2,18 @@
 id: 5900f4531000cf542c50ff66
 challengeType: 5
 title: 'Problem 231: The prime factorisation of binomial coefficients'
-videoUrl: ''
+forumTopicId: 301875
 localeTitle: 'Задача 231: простая факторизация биномиальных коэффициентов'
 ---
 
 ## Description
-<section id="description"> Биномиальный коэффициент 10C3 = 120. 120 = 23 × 3 × 5 = 2 × 2 × 2 × 3 × 5 и 2 + 2 + 2 + 3 + 5 = 14. Таким образом, сумма членов простой факторизации 10C3 составляет 14. <p> Найдите сумму членов в простой факторизации 20000000C15000000. </p></section>
+<section id='description'>
+Биномиальный коэффициент 10C3 = 120. 120 = 23 × 3 × 5 = 2 × 2 × 2 × 3 × 5 и 2 + 2 + 2 + 3 + 5 = 14. Таким образом, сумма членов простой факторизации 10C3 составляет 14. <p> Найдите сумму членов в простой факторизации 20000000C15000000. </p>
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +21,8 @@ localeTitle: 'Задача 231: простая факторизация бино
 
 ```yml
 tests:
-  - text: <code>euler231()</code> должен вернуть 7526965179680.
-    testString: 'assert.strictEqual(euler231(), 7526965179680, "<code>euler231()</code> should return 7526965179680.");'
+  - text: <code>euler231()</code> should return 7526965179680.
+    testString: assert.strictEqual(euler231(), 7526965179680);
 
 ```
 
@@ -42,8 +45,6 @@ euler231();
 
 </div>
 
-
-
 </section>
 
 ## Solution
@@ -52,4 +53,5 @@ euler231();
 ```js
 // solution required
 ```
+
 </section>
