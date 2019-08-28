@@ -2,12 +2,13 @@
 
 import { takeEvery } from 'redux-saga/effects';
 import store from 'store';
+import { isEmpty } from 'lodash';
 
 const themeKey = 'fcc-theme';
 const defaultTheme = 'default';
 const nightTheme = 'night';
 
-function setTheme(currentTheme = defaultTheme, theme) {
+function setTheme(currentTheme = nightTheme, theme = nightTheme) {
   if (currentTheme !== theme) {
     store.set(themeKey, theme);
   }
@@ -17,9 +18,9 @@ function setTheme(currentTheme = defaultTheme, theme) {
 }
 
 function* updateLocalThemeSaga({ payload: { user, theme } }) {
-  const currentTheme = store.get(themeKey) || defaultTheme;
-  if (user) {
-    const { theme = defaultTheme } = user;
+  const currentTheme = store.get(themeKey) || nightTheme;
+  if (!isEmpty(user)) {
+    const { theme = nightTheme } = user;
     return setTheme(currentTheme, theme);
   }
   if (theme) {

@@ -9,7 +9,6 @@ forumTopicId: 302359
 ## Description
 <section id='description'>
 <strong>Objective:</strong> Build a full stack JavaScript app that is functionally similar to this: <a href='https://fcc-voting-arthow4n.herokuapp.com/' target='_blank'>https://fcc-voting-arthow4n.herokuapp.com/</a> and deploy it to Heroku.
-Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-dynamic-web-application-projects'>https://freecodecamp.com/challenges/get-set-for-our-dynamic-web-application-projects</a>.
 Here are the specific user stories you should implement for this project:
 <strong>User Story:</strong> As an authenticated user, I can keep my polls and come back later to access them.
 <strong>User Story:</strong> As an authenticated user, I can share my polls with my friends.

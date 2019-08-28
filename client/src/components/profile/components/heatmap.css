@@ -3,36 +3,32 @@
   justify-content: space-around;
   align-items: center;
   font-size: 18px;
-  color: var(--secondary-color);
+  color: var(--primary-color);
 }
 
-.streak strong {
-  color: var(--secondary-color);
+.react-calendar-heatmap-month-label {
+  color: var(--primary-color);
 }
 
-.night .streak strong {
-  color: #ccc;
+.react-calendar-heatmap .color-empty {
+  fill: var(--tertiary-background);
 }
-.react-calendar-heatmap .colour-empty {
-  fill: #eee;
+.react-calendar-heatmap .color-scale-1 {
+  fill: var(--gray-45);
 }
-.react-calendar-heatmap .colour-scale-1 {
-  fill: #d6e685;
+.react-calendar-heatmap .color-scale-2 {
+  fill: var(--quaternary-color);
 }
-.react-calendar-heatmap .colour-scale-2 {
-  fill: #8cc665;
-}
-.react-calendar-heatmap .colour-scale-3 {
-  fill: #44a340;
-}
-.react-calendar-heatmap .colour-scale-4 {
-  fill: #1e6823;
-}
-.react-calendar-heatmap .colour-scale-a-lot {
-  fill: #006400;
+.react-calendar-heatmap .color-scale-a-lot {
+  fill: var(--primary-color);
 }
 
 .react-tooltip {
-  background-color: #006400 !important;
-  border: 1px solid black !important;
+  color: var(--primary-color) !important;
+  background-color: var(--primary-background) !important;
+  border: 1px solid var(--primary-color) !important;
+}
+
+.__react_component_tooltip:after {
+  border-top-color: var(--primary-color) !important;
 }
