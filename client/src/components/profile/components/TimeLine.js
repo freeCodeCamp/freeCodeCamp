@@ -41,7 +41,12 @@ const propTypes = {
     })
   ),
   fetchIdToNameMap: PropTypes.func.isRequired,
-  idToNameMap: PropTypes.object,
+  idToNameMap: PropTypes.objectOf(
+    PropTypes.shape({
+      challengePath: PropTypes.string,
+      challengeTitle: PropTypes.string
+    })
+  ),
   username: PropTypes.string
 };
 
@@ -69,8 +74,7 @@ class Timeline extends Component {
   renderCompletion(completed) {
     const { idToNameMap } = this.props;
     const { id, completedDate } = completed;
-    const challengeTitle = idToNameMap[id].challengeTitle;
-    const challengePath = idToNameMap[id].challengePath;
+    const { challengeTitle, challengePath } = idToNameMap[id];
     return (
       <tr key={id}>
         <td>
