@@ -4,16 +4,19 @@ import isEmpty from 'lodash/isEmpty';
 import Suggestion from './SearchSuggestion';
 
 const CustomHits = connectHits(({ hits, currentRefinement, handleSubmit }) => {
+  const shortenedHits = hits.filter((hit, i) => i < 8);
   const defaultHit = [
     {
       objectID: `default-hit-${currentRefinement}`,
       query: currentRefinement,
       _highlightResult: {
         query: {
-          value:
-            'Search for "<ais-highlight-0000000000>' +
-            currentRefinement +
-            '</ais-highlight-0000000000>"'
+          value: `
+            See all results for
+            <ais-highlight-0000000000>
+            ${currentRefinement}
+            </ais-highlight-0000000000>
+          `
         }
       }
     }
@@ -21,7 +24,7 @@ const CustomHits = connectHits(({ hits, currentRefinement, handleSubmit }) => {
   return (
     <div className='ais-Hits'>
       <ul className='ais-Hits-list'>
-        {defaultHit.concat(hits).map(hit => (
+        {shortenedHits.concat(defaultHit).map(hit => (
           <li
             className='ais-Hits-item'
             data-fccobjectid={hit.objectID}

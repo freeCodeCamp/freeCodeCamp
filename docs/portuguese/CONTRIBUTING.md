@@ -24,11 +24,11 @@ Divirta-se contribuindo 🎉!
 
 ## Esses são alguns jeitos divertidos de contribuir
 
-Você pode escolher contribuir para uma área do seu interesse:
+Você pode contribuir para qualquer área do seu interesse:
 
 1. [Contribua para essa base de códigos abertos.](#contribua-para-essa-base-de-códigos-abertos)
 
-    Nos ajude criando e editando [Artigos de guias](https://guide.freecodecamp.org), [desafios de código](https://www.freecodecamp.org/learn) e corrigindo bugs na plataforma de aprendizado.
+    Nos ajude criando e editando [Artigos guia](https://www.freecodecamp.org/guide), [desafios de codificação](https://www.freecodecamp.org/learn), ou corrigindo bugs na plataforma de aprendizado.
 
 2. Ajude campistas em nosso [fórum público](https://www.freecodecamp.org/forum/).
 

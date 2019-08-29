@@ -13,7 +13,7 @@ import {
   updateProjectFormValues
 } from '../redux';
 import { frontEndProject } from '../../../../utils/challengeTypes';
-import { createGuideUrl } from '../utils';
+import { getGuideUrl } from '../utils';
 
 import LearnLayout from '../../../components/layouts/Learn';
 import Spacer from '../../../components/helpers/Spacer';
@@ -93,7 +93,8 @@ export class Project extends Component {
       data: {
         challengeNode: {
           challengeType,
-          fields: { blockName, slug },
+          fields: { blockName },
+          forumTopicId,
           title,
           description,
           guideUrl
@@ -127,7 +128,7 @@ export class Project extends Component {
             onSubmit={openCompletionModal}
             updateProjectForm={updateProjectFormValues}
           />
-          <ToolPanel guideUrl={createGuideUrl(slug)} />
+          <ToolPanel guideUrl={getGuideUrl({ forumTopicId, title })} />
           <Spacer />
         </div>
         <CompletionModal />
@@ -148,6 +149,7 @@ export default connect(
 export const query = graphql`
   query ProjectChallenge($slug: String!) {
     challengeNode(fields: { slug: { eq: $slug } }) {
+      forumTopicId
       title
       description
       challengeType

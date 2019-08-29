@@ -38,31 +38,9 @@ We have a huge open source codebase consisting of thousands of [coding challenge
 
 You can help us to:
 
-- [📝 Research, Write and Update our guide articles](#research-write-and-update-our-guide-articles)
-
 - [💻 Create, Update and Fix Bugs in our coding challenges](#create-update-and-fix-bugs-in-our-coding-challenges)
 
-- [🌐 Translate guide articles](#translate-guide-articles)
-
 - [🛠 Fix bugs in freeCodeCamp.org's learning platform](#help-us-fix-bugs-in-freecodecamporgs-learning-platform)
-
-### Research, Write and Update our guide articles
-
-**What are guide articles?**
-
-Guide articles help you get a quick understanding of a technology concept. These are short, plain English explanations that you can read before going on to more in-depth resources.
-
-You can find an [example article about HTML Anchor Elements here](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/guide/english/html/elements/a-tag/index.md).
-
-**What can I write an article about?**
-
-We welcome your help in writing these articles. You don't have to be an expert on a topic to write about it. This entire Guide is open source, so even if you make a mistake, another contributor will eventually correct it.
-
-To help, find a `stub article` on our [Guide website](https://guide.freecodecamp.org), write the article, then open a pull request to replace the stub with your article. A [pull request](https://help.github.com/articles/about-pull-requests/) is how you'll suggest changes. It lets others know about, review, and eventually adopt your changes.
-
-If you can't find a stub about the topic you'd like to write about, you can open a PR that creates the stub and includes your draft article.
-
-**If you would like to help improve guide articles, here's [how to work on guide articles](/docs/how-to-work-on-guide-articles.md).**
 
 ### Create, Update and Fix Bugs in our coding challenges
 
@@ -71,21 +49,6 @@ All our coding challenges are curated by the community, bringing in expert knowl
 You can help expand them and make their wording clearer. You can update the user stories to explain the concept better and even remove redundant ones. You can also improve the challenge tests to make them more accurately test people's code.
 
 If you're interested in improving these coding challenges, here's [how to work on coding challenges](/docs/how-to-work-on-coding-challenges.md).
-
-### Translate guide articles
-
-You can help us translate our Guide articles for a language that you speak. Currently, we have translated versions in:
-
-- [Arabic (عربي)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/guide/arabic)
-- [Chinese (中文)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/guide/chinese)
-- [Portuguese (Português)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/guide/portuguese)
-- [Russian (русский)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/guide/russian)
-- [Spanish (Español)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/guide/spanish)
-
-
-We would love your help in improving the quality of these translations. Millions of people use the English language version of freeCodeCamp.org, and we expect millions more to use these translated versions as well.
-
-Note that once we have finished [Version 7.0 of the freeCodeCamp curriculum](https://www.freecodecamp.org/forum/t/help-us-build-version-7-0-of-the-freecodecamp-curriculum/263546) we plan to translate it as well.
 
 ### Help us fix bugs in freeCodeCamp.org's learning platform
 
