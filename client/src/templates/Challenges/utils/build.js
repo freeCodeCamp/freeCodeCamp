@@ -108,12 +108,7 @@ async function getDOMTestRunner(buildData, proxyLogger, document) {
     runTestInTestFrame(document, testString, testTimeout);
 }
 
-export function buildDOMChallenge({
-  files,
-  required = [],
-  template = '',
-  theme = ``
-}) {
+export function buildDOMChallenge({ files, required = [], template = '' }) {
   const finalRequires = [...globalRequires, ...required, ...frameRunner];
   const loadEnzyme = Object.keys(files).some(key => files[key].ext === 'jsx');
   const toHtml = [jsToHtml, cssToHtml];
@@ -125,7 +120,7 @@ export function buildDOMChallenge({
     .then(checkFilesErrors)
     .then(files => ({
       challengeType: challengeTypes.html,
-      build: concatHtml({ required: finalRequires, template, files, theme }),
+      build: concatHtml({ required: finalRequires, template, files }),
       sources: buildSourceMap(files),
       loadEnzyme
     }));
