@@ -12,14 +12,12 @@ import Spacer from '../helpers/Spacer';
 import './map.css';
 import { ChallengeNode } from '../../redux/propTypes';
 import { toggleSuperBlock, toggleBlock, isInitializedSelector } from './redux';
-import { currentChallengeUrlSelector } from '../../redux';
-import { getBlocksFromChallengeUrl } from '../../utils';
-import { blockNameify } from '../../../utils/blockNameify';
+import { currentChallengeIdSelector } from '../../redux';
 // eslint-disable-next-line max-len
 import { CURRENT_CHALLENGE_KEY } from '../../templates/Challenges/redux/current-challenge-saga';
 
 const propTypes = {
-  currentChallengeUrl: PropTypes.string,
+  currentChallengeId: PropTypes.string,
   introNodes: PropTypes.arrayOf(
     PropTypes.shape({
       fields: PropTypes.shape({ slug: PropTypes.string.isRequired }),
@@ -37,10 +35,10 @@ const propTypes = {
 
 const mapStateToProps = state => {
   return createSelector(
-    currentChallengeUrlSelector,
+    currentChallengeIdSelector,
     isInitializedSelector,
-    (currentChallengeUrl, isInitialized) => ({
-      currentChallengeUrl,
+    (currentChallengeId, isInitialized) => ({
+      currentChallengeId,
       isInitialized
     })
   )(state);
@@ -57,25 +55,20 @@ function mapDispatchToProps(dispatch) {
 }
 
 export class Map extends Component {
-  constructor(props) {
-    super(props);
-    // Tries to use the redux store, then local storage and finally defaults
-    // to the first challenge.
-    const currentChallengeUrl =
-      props.currentChallengeUrl ||
-      store.get(CURRENT_CHALLENGE_KEY) ||
-      props.nodes[0].fields.slug;
+  componentDidMount() {
+    const currentChallengeId =
+      this.props.currentChallengeId || store.get(CURRENT_CHALLENGE_KEY);
 
     if (!this.props.isInitialized)
-      this.initializeExpandedState(currentChallengeUrl);
+      this.initializeExpandedState(currentChallengeId);
   }
 
-  initializeExpandedState(currentChallengeUrl) {
-    const { block, superBlock } = getBlocksFromChallengeUrl(
-      currentChallengeUrl
-    );
+  initializeExpandedState(currentChallengeId) {
+    const { superBlock, block } = currentChallengeId
+      ? this.props.nodes.find(node => node.id === currentChallengeId)
+      : this.props.nodes[0];
     this.props.toggleBlock(block);
-    this.props.toggleSuperBlock(blockNameify(superBlock));
+    this.props.toggleSuperBlock(superBlock);
   }
 
   renderSuperBlocks(superBlocks) {

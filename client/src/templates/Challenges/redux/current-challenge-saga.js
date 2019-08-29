@@ -6,7 +6,7 @@ import {
   currentChallengeIdSelector,
   openDonationModal,
   showDonationSelector,
-  updateCurrentChallengeUrl,
+  updateCurrentChallengeId,
   donationRequested,
   updateComplete,
   updateFailed,
@@ -18,16 +18,16 @@ import { post } from '../../../utils/ajax';
 import { randomCompliment } from '../utils/get-words';
 import { updateSuccessMessage } from './';
 
-export const CURRENT_CHALLENGE_KEY = 'currentChallengeUrl';
+export const CURRENT_CHALLENGE_KEY = 'currentChallengeId';
 
-export function* currentChallengeSaga({ payload: { id, slug } }) {
-  store.set(CURRENT_CHALLENGE_KEY, slug);
-  yield put(updateCurrentChallengeUrl(slug));
-
+export function* currentChallengeSaga({ payload: { id } }) {
   const isSignedIn = yield select(isSignedInSelector);
   const currentChallengeId = yield select(currentChallengeIdSelector);
   // TODO: should the server update take place on challenge completion instead?
   if (isSignedIn && id !== currentChallengeId) {
+    store.set(CURRENT_CHALLENGE_KEY, id);
+    yield put(updateCurrentChallengeId(id));
+
     const update = {
       endpoint: '/update-my-current-challenge',
       payload: {

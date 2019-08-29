@@ -56,7 +56,7 @@ export const types = createTypes(
     'resetUserData',
     'submitComplete',
     'updateComplete',
-    'updateCurrentChallengeUrl',
+    'updateCurrentChallengeId',
     'updateFailed',
     ...createAsyncTypes('fetchUser'),
     ...createAsyncTypes('fetchProfileForUser'),
@@ -121,8 +121,8 @@ export const showCert = createAction(types.showCert);
 export const showCertComplete = createAction(types.showCertComplete);
 export const showCertError = createAction(types.showCertError);
 
-export const updateCurrentChallengeUrl = createAction(
-  types.updateCurrentChallengeUrl
+export const updateCurrentChallengeId = createAction(
+  types.updateCurrentChallengeId
 );
 
 export const completedChallengesSelector = state =>
@@ -130,8 +130,6 @@ export const completedChallengesSelector = state =>
 export const completionCountSelector = state => state[ns].completionCount;
 export const currentChallengeIdSelector = state =>
   userSelector(state).currentChallengeId || '';
-export const currentChallengeUrlSelector = state =>
-  state[ns].currentChallengeUrl || '';
 export const donationRequestedSelector = state => state[ns].donationRequested;
 
 export const isOnlineSelector = state => state[ns].isOnline;
@@ -331,10 +329,17 @@ export const reducer = handleActions(
         }
       };
     },
-    [types.updateCurrentChallengeUrl]: (state, { payload }) => {
+    [types.updateCurrentChallengeId]: (state, { payload }) => {
+      const { appUsername } = state;
       return {
         ...state,
-        currentChallengeUrl: payload
+        user: {
+          ...state.user,
+          [appUsername]: {
+            ...state.user[appUsername],
+            currentChallengeId: payload
+          }
+        }
       };
     },
     [settingsTypes.updateLegacyCertComplete]: (state, { payload }) => {

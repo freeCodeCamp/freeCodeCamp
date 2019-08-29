@@ -143,13 +143,13 @@ class ShowClassic extends Component {
           challengeType
         }
       },
-      pageContext: { challengeMeta, slug }
+      pageContext: { challengeMeta }
     } = this.props;
     initConsole('');
     createFiles(files);
     initTests(tests);
     updateChallengeMeta({ ...challengeMeta, title, challengeType });
-    challengeMounted({ id: challengeMeta.id, slug });
+    challengeMounted(challengeMeta.id);
   }
 
   componentWillUnmount() {

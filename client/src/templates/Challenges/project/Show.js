@@ -58,11 +58,11 @@ export class Project extends Component {
       data: {
         challengeNode: { title, challengeType }
       },
-      pageContext: { challengeMeta, slug },
+      pageContext: { challengeMeta },
       updateChallengeMeta
     } = this.props;
     updateChallengeMeta({ ...challengeMeta, title, challengeType });
-    challengeMounted({ id: challengeMeta.id, slug });
+    challengeMounted(challengeMeta.id);
   }
 
   componentDidUpdate(prevProps) {
@@ -76,7 +76,7 @@ export class Project extends Component {
       data: {
         challengeNode: { title: currentTitle, challengeType }
       },
-      pageContext: { challengeMeta, slug },
+      pageContext: { challengeMeta },
       updateChallengeMeta
     } = this.props;
     if (prevTitle !== currentTitle) {
@@ -85,7 +85,7 @@ export class Project extends Component {
         title: currentTitle,
         challengeType
       });
-      challengeMounted({ id: challengeMeta.id, slug });
+      challengeMounted(challengeMeta.id);
     }
   }
 
