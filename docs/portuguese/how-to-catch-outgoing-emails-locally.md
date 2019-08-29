@@ -10,13 +10,13 @@
     </tr>
 </table>
 
-# Como obter localmente os emails enviados (para fluxos de emails)
+# Como obter localmente os emails enviados para fluxos de emails
 
 > **Nota:** Este passo é **opcional** - Obrigatório apenas quando estiver trabalhando com fluxos de emails
 
 ## Introdução
 
-Alguns do fluxos de email, como atualizar o email de um usuário, necessita de uma api e/ou um servidor back-end para enviar os emails. No ambiente de desenvolvimento, você pode usar uma ferramenta para obter esses emails localmente, em vez de ter que usar um provedor de email e efetivamente enviar o email. MailHog é uma dessas ferramentas para desenvolvedores fazerem testes com emails, ela vai oter os emails que sua instância local do freeCodeCamp mandar.
+Alguns do fluxos de email, como atualizar o email de um usuário, necessitam de uma api e/ou um servidor back-end para enviar os emails. No ambiente de desenvolvimento você pode usar uma ferramenta para obter esses emails localmente, ao invés de um provedor de email e efetivamente enviar o email. MailHog é uma dessas ferramentas para desenvolvedores fazerem testes com emails. Ela vai oter os emails que sua instância local do freeCodeCamp mandar.
 
 ## Instando MailHog
 
@@ -37,7 +37,7 @@ brew services start mailhog
 
 Este comando vai iniciar o serviço mailhog em background.
 
-A seguir, você pode pular para [usando MailHog](#usando-o-mailhog).
+Quando a instalação for finalizada você começar a [usar MailHog](#usando-o-mailhog).
 
 ### Instalando MailHog no Windows
 
@@ -46,33 +46,33 @@ Clique no link para sua versão de windows (32 ou 64 bit) e o arquivo executáve
 
 Quando o download finalizar, clique no arquivo. Você provavelmente vai receber uma notificação no firewall do Windows onde você deve permitir o acesso para MailHog. Assim que o fizer, o prompt de comando do Windows irá aparecer com o MailHog rodando.
 
-Para fechar o MailHog basta fechar o prompt de comando. Para rodar de novo é só clicar no mesmo arquivo executável baixado anteriormente. Não precisa fazer o download novamente.
+Para fechar o MailHog basta fechar o prompt de comando. Para rodar novamente basta clicar no mesmo arquivo executável baixado anteriormente. Não é necessário fazer o download novamente.
 
-A seguir, você pode pular para [usando MailHog](#usando-o-mailhog).
+A seguir, você pode [usar o MailHog](#usar-o-mailhog).
 
 ### Instalando MailHog no Linux
 
 Primeiro, instale o [Go](https://golang.org).
 
-Para sistemas baseados em Debian, por exemplo, Ubuntu e Linux Mint, rode no terminal:
+Para sistemas baseados em Debian, por exemplo, Ubuntu e Linux Mint, execute no terminal para instalar o GO:
 
 ```bash
 sudo apt-get install golang
 ```
 
-Para CentOS, Fedora, Red Hat Linux, e outros sistemas baseados em sistemas RPM, rode no terminal:
+Para CentOS, Fedora, Red Hat Linux, e outros sistemas baseados em sistemas RPM, execute no terminal:
 
 ```bash
 sudo dnf install golang
 ```
 
-Or:
+Você pode também executar o seguinte comando para instalar o GO:
 
 ```bash
 sudo yum install golang
 ```
 
-Configure o path para Go:
+Configure o path para Go com os seguintes comandos:
 
 ```bash
 echo "export GOPATH=$HOME/go" >> ~/.profile
@@ -80,7 +80,7 @@ echo 'export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin' >> ~/.profile
 source ~/.profile
 ```
 
-Em seguida, instale e inicie o MailHog:
+Em seguida, execute os comandos abaixo para instalar e executar o MailHog:
 
 ```bash
 go get github.com/mailhog/MailHog
@@ -88,16 +88,16 @@ sudo cp /home/$(whoami)/go/bin/MailHog /usr/local/bin/mailhog
 mailhog
 ```
 
-A seguir, você pode pular para [usando MailHog](#usando-o-mailhog).
+Comece a [usar o MailHog](#usando-o-mailhog).
 
-## Usando o MailHog
+## Usar o MailHog
 
 Uma vez que você instalou o MailHog e iniciou o serviço, você precisa abrir seu inbox MailHog no browser. Abra uma nova aba ou janela e entre em [http://localhost:8025](http://localhost:8025).
 Você deve ver agora algo semelhante com a tela abaixo:
 
 ![Captura de tela MailHog 1](../images/mailhog/1.jpg)
 
-Quando sua instalação do freeCodeCamp enviar um email você irá ver ele aparecer aqui. Como mostra abaixo:
+Quando sua instalação do freeCodeCamp enviar um email você irá ver ele aparecer como mostrado abaixo
 
 ![Captura de tela MailHog 2](../images/mailhog/2.jpg)
 
@@ -105,8 +105,8 @@ Abra o email e você deve ver duas abas onde pode ver o conteúdo - texto simple
 
 ![Captura de tela MailHog 3](../images/mailhog/3.jpg)
 
-Qualquer link no email deve ser clicável.
+Qualquer link no email deve ser clicável e levar até a sua URL.
 
 ## Links úteis
 
-- Para qualquer dúvidas ou questões relacionadas ao MailHog ou instruções ou configurações customizadas, verifique o repositório do [MailHog](https://github.com/mailhog/MailHog).
+- Para qualquer dúvidas ou questões relacionadas ao MailHog, instruções ou configurações customizadas, verifique o repositório do [MailHog](https://github.com/mailhog/MailHog).
