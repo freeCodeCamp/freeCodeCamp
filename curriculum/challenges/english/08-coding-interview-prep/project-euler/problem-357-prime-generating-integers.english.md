@@ -2,6 +2,7 @@
 id: 5900f4d11000cf542c50ffe4
 challengeType: 5
 title: 'Problem 357: Prime generating integers'
+forumTopicId: 302017
 ---
 
 ## Description
@@ -25,7 +26,7 @@ for every divisor d of n, d+n/d is prime.
 ```yml
 tests:
   - text: <code>euler357()</code> should return 1739023853137.
-    testString: assert.strictEqual(euler357(), 1739023853137, '<code>euler357()</code> should return 1739023853137.');
+    testString: assert.strictEqual(euler357(), 1739023853137);
 
 ```
 
@@ -57,4 +58,5 @@ euler357();
 ```js
 // solution required
 ```
+
 </section>

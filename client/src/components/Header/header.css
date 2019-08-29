@@ -6,21 +6,15 @@ header {
 }
 
 #top-nav {
-  background: #006400;
-  margin-bottom: 0.45rem;
-  height: 38px;
-  margin-bottom: 0px;
+  background: var(--theme-color);
+  height: var(--header-height);
+  margin-bottom: 0;
   border-radius: 0;
   border: none;
   display: flex;
   justify-content: space-between;
-  padding: 0 30px 0 15px;
-}
-
-@media screen, (max-width: 630px) {
-  #top-nav {
-    padding: 0;
-  }
+  align-items: center;
+  padding: 0 15px;
 }
 
 #top-nav .home-link {
@@ -28,68 +22,41 @@ header {
   align-items: center;
 }
 
-#top-nav img {
+#top-nav .home-link:hover {
+  background-color: var(--theme-color);
+}
+
+/* Navbar logo */
+
+#top-nav .nav-logo {
   max-height: 25px;
   min-width: 35px;
-  margin: 0 5px 0 10px;
+  margin: 0 5px;
 }
 
-#top-right-nav {
-  display: flex;
-  width: 270px;
-  margin: 0;
-  list-style: none;
-  justify-content: space-around;
+.logoContainer {
+  margin-right: 10px;
 }
 
-#top-right-nav a, #top-right-nav img {
-  max-height: 40px;
+@media (min-width: 735px) {
+  .logoContainer {
+    margin-right: 50px;
+    width: 25%;
+  }
 }
 
-#top-right-nav a.btn-cta {
-  background-color: #ffac33;
-  background-image: linear-gradient(#ffcc4d, #ffac33);
-  border-color: #f1a02a;
-  color: #292f33 !important;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-  max-height: 38px;
-  padding: 4px 12px;
+@media (max-width: 734px) {
+  #top-nav {
+    padding: 0;
+  }
+
+  #top-nav .nav-logo {
+    margin: 0 0 0 10px;
+  }
 }
 
-#top-right-nav li {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  margin: 0 3px;
-}
-
-#top-right-nav li > a, #top-right-nav li > span {
-  color:#fff;
-  font-size: 17px;
-}
-
-#top-right-nav li > a:hover, #top-right-nav li > a:focus {
-  text-decoration: none;
-}
-
-.user-state-spinner {
-  height: 40px;
-}
-
-.user-state-spinner > div {
-  animation-duration: 1.5s !important;
-}
-
-/* Search bar */
-.fcc_searchBar {
-  flex-grow: 0.8;
-  padding: 2px 10px 0;
-}
-.ais-SearchBox-form {
-  margin-bottom: 0;
-}
-.ais-Hits {
-  background-color: #fff;
+@media (max-width: 420px) {
+  #top-nav .nav-logo {
+    margin: 0 0 0 5px;
+  }
 }

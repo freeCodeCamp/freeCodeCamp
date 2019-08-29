@@ -1,24 +1,27 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { navigate } from 'gatsby';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Grid, Row, Col, Button } from '@freecodecamp/react-bootstrap';
+import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 
-import { Loader, Spacer } from '../components/helpers';
-import Layout from '../components/layouts/Default';
+import { CurrentChallengeLink, Loader, Spacer } from '../components/helpers';
+import Supporters from '../components/Supporters';
 import {
   userSelector,
   userFetchStateSelector,
-  isSignedInSelector
+  isSignedInSelector,
+  activeDonationsSelector
 } from '../redux';
 import { randomQuote } from '../utils/get-words';
+import createRedirect from '../components/createRedirect';
+import RedirectHome from '../components/RedirectHome';
 
 import './welcome.css';
 
 const propTypes = {
+  activeDonations: PropTypes.number,
   fetchState: PropTypes.shape({
     pending: PropTypes.bool,
     complete: PropTypes.bool,
@@ -27,11 +30,13 @@ const propTypes = {
   isSignedIn: PropTypes.bool,
   user: PropTypes.shape({
     acceptedPrivacyTerms: PropTypes.bool,
-    username: PropTypes.string,
-    completedChallengeCount: PropTypes.number,
-    completedProjectCount: PropTypes.number,
     completedCertCount: PropTypes.number,
-    completedLegacyCertCount: PropTypes.number
+    completedChallengeCount: PropTypes.number,
+    completedLegacyCertCount: PropTypes.number,
+    completedProjectCount: PropTypes.number,
+    isDonating: PropTypes.bool,
+    name: PropTypes.string,
+    username: PropTypes.string
   })
 };
 
@@ -39,9 +44,16 @@ const mapStateToProps = createSelector(
   userFetchStateSelector,
   isSignedInSelector,
   userSelector,
-  (fetchState, isSignedIn, user) => ({ fetchState, isSignedIn, user })
+  activeDonationsSelector,
+  (fetchState, isSignedIn, user, activeDonations) => ({
+    activeDonations,
+    fetchState,
+    isSignedIn,
+    user
+  })
 );
 const mapDispatchToProps = dispatch => bindActionCreators({}, dispatch);
+const RedirectAcceptPrivacyTerm = createRedirect('/accept-privacy-terms');
 
 function Welcome({
   fetchState: { pending, complete },
@@ -52,56 +64,45 @@ function Welcome({
     completedChallengeCount: completedChallenges = 0,
     completedProjectCount = 0,
     completedCertCount = 0,
-    completedLegacyCertCount: completedLegacyCerts = 0
-  }
+    completedLegacyCertCount: completedLegacyCerts = 0,
+    isDonating
+  },
+  activeDonations
 }) {
   if (pending && !complete) {
-    return (
-      <Layout>
-        <div className='loader-wrapper'>
-          <Loader />
-        </div>
-      </Layout>
-    );
+    return <Loader fullScreen={true} />;
   }
 
   if (!isSignedIn) {
-    navigate('/');
-    return null;
+    return <RedirectHome />;
   }
 
   if (isSignedIn && !acceptedPrivacyTerms) {
-    navigate('/accept-privacy-terms');
-    return null;
+    return <RedirectAcceptPrivacyTerm />;
   }
 
   const { quote, author } = randomQuote();
   return (
-    <Layout>
+    <Fragment>
       <Helmet>
-        <title>Welcome {name ? name : 'Camper'} | freeCodeCamp.org</title>
+        <title>Welcome | freeCodeCamp.org</title>
       </Helmet>
       <main>
-        <Grid className='text-center'>
+        <Grid>
           <Row>
             <Col xs={12}>
               <Spacer />
-              <h1 className='big-heading'>Welcome {name ? name : 'Camper'}!</h1>
+              <h1 className='big-heading text-center'>
+                Welcome {name ? name : 'Camper'}!
+              </h1>
             </Col>
           </Row>
           <Spacer />
-          <Row>
-            <Col sm={8} smOffset={2} xs={12}>
-              <a
-                className='update-link'
-                href='/n/7gR5pBM-K?refsource=userhome'
-                target='_blank'
-                >
-                We're building a massive open dataset about new coders. Take the
-                2018 New Coder Survey. It only takes 5 minutes.
-              </a>
-            </Col>
-          </Row>
+          <Supporters
+            activeDonations={activeDonations}
+            isDonating={isDonating}
+          />
+          <Spacer size={2} />
           <Spacer />
           <Row className='quote-partial'>
             <Col sm={10} smOffset={1} xs={12}>
@@ -140,16 +141,16 @@ function Welcome({
           </Row>
           <Spacer />
           <Row>
-            <Col sm={8} smOffset={2} xs={12}>
-              <Button block={true} bsStyle='primary' className='btn-cta-big'>
+            <Col sm={6} smOffset={3} xs={12}>
+              <CurrentChallengeLink>
                 Go to my next challenge
-              </Button>
+              </CurrentChallengeLink>
             </Col>
           </Row>
           <Spacer size={4} />
         </Grid>
       </main>
-    </Layout>
+    </Fragment>
   );
 }
 

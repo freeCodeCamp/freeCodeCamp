@@ -2,6 +2,7 @@
 id: 5900f4761000cf542c50ff88
 challengeType: 5
 title: 'Problem 265: Binary Circles'
+forumTopicId: 301914
 ---
 
 ## Description
@@ -33,7 +34,7 @@ Find S(5).
 ```yml
 tests:
   - text: <code>euler265()</code> should return 209110240768.
-    testString: assert.strictEqual(euler265(), 209110240768, '<code>euler265()</code> should return 209110240768.');
+    testString: assert.strictEqual(euler265(), 209110240768);
 
 ```
 
@@ -65,4 +66,5 @@ euler265();
 ```js
 // solution required
 ```
+
 </section>

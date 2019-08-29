@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036180
 title: Optimize Re-Renders with shouldComponentUpdate
 challengeType: 6
 isRequired: false
+forumTopicId: 301398
 ---
 
 ## Description
@@ -13,7 +14,7 @@ This method is a useful way to optimize performance. For example, the default be
 
 ## Instructions
 <section id='instructions'>
-The <code>shouldComponentUpdate()</code> method is added in a component called <code>OnlyEvens</code>. Currently, this method returns <code>true</code> so <code>OnlyEvens</code> re-renders every time it receives new <code>props</code>. Modify the method so <code>OnlyEvens</code> updates only if the <code>value</code> of its new props is even. Click the <code>Add</code> button and watch the order of events in your browser's console as the other lifecycle hooks are triggered.
+The <code>shouldComponentUpdate()</code> method is added in a component called <code>OnlyEvens</code>. Currently, this method returns <code>true</code> so <code>OnlyEvens</code> re-renders every time it receives new <code>props</code>. Modify the method so <code>OnlyEvens</code> updates only if the <code>value</code> of its new props is even. Click the <code>Add</code> button and watch the order of events in your browser's console as the lifecycle hooks are triggered.
 </section>
 
 ## Tests
@@ -22,13 +23,13 @@ The <code>shouldComponentUpdate()</code> method is added in a component called <
 ```yml
 tests:
   - text: The <code>Controller</code> component should render the <code>OnlyEvens</code> component as a child.
-    testString: assert((() => { const mockedComponent = Enzyme.mount(React.createElement(Controller)); return mockedComponent.find('Controller').length === 1 && mockedComponent.find('OnlyEvens').length === 1; })(), 'The <code>Controller</code> component should render the <code>OnlyEvens</code> component as a child.');
+    testString: assert((() => { const mockedComponent = Enzyme.mount(React.createElement(Controller)); return mockedComponent.find('Controller').length === 1 && mockedComponent.find('OnlyEvens').length === 1; })());
   - text: The <code>shouldComponentUpdate</code> method should be defined on the <code>OnlyEvens</code> component.
-    testString: assert((() => { const child = React.createElement(OnlyEvens).type.prototype.shouldComponentUpdate.toString().replace(/s/g,''); return child !== 'undefined'; })(), 'The <code>shouldComponentUpdate</code> method should be defined on the <code>OnlyEvens</code> component.');
+    testString: assert((() => { const child = React.createElement(OnlyEvens).type.prototype.shouldComponentUpdate.toString().replace(/s/g,''); return child !== 'undefined'; })());
   - text: The <code>OnlyEvens</code> component should return an <code>h1</code> tag which renders the value of <code>this.props.value</code>.
-    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(Controller)); const first = () => { mockedComponent.setState({ value: 1000 }); return waitForIt(() => mockedComponent.find(''h1'').html()); }; const second = () => { mockedComponent.setState({ value: 10 }); return waitForIt(() => mockedComponent.find(''h1'').html()); }; const firstValue = await first(); const secondValue = await second(); assert(firstValue === ''<h1>1000</h1>'' && secondValue === ''<h1>10</h1>'', ''The <code>OnlyEvens</code> component should return an <code>h1</code> tag which renders the value of <code>this.props.value</code>.''); }; '
+    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(Controller)); const first = () => { mockedComponent.setState({ value: 1000 }); return waitForIt(() => mockedComponent.find(''h1'').html()); }; const second = () => { mockedComponent.setState({ value: 10 }); return waitForIt(() => mockedComponent.find(''h1'').html()); }; const firstValue = await first(); const secondValue = await second(); assert(firstValue === ''<h1>1000</h1>'' && secondValue === ''<h1>10</h1>''); }; '
   - text: <code>OnlyEvens</code> should re-render only when <code>nextProps.value</code> is even.
-    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(Controller)); const first = () => { mockedComponent.setState({ value: 8 }); return waitForIt(() => mockedComponent.find(''h1'').text()); }; const second = () => { mockedComponent.setState({ value: 7 }); return waitForIt(() => mockedComponent.find(''h1'').text()); }; const third = () => { mockedComponent.setState({ value: 42 }); return waitForIt(() => mockedComponent.find(''h1'').text()); }; const firstValue = await first(); const secondValue = await second(); const thirdValue = await third(); assert(firstValue === ''8'' && secondValue === ''8'' && thirdValue === ''42'', ''<code>OnlyEvens</code> should re-render only when <code>nextProps.value</code> is even.''); }; '
+    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(Controller)); const first = () => { mockedComponent.setState({ value: 8 }); return waitForIt(() => mockedComponent.find(''h1'').text()); }; const second = () => { mockedComponent.setState({ value: 7 }); return waitForIt(() => mockedComponent.find(''h1'').text()); }; const third = () => { mockedComponent.setState({ value: 42 }); return waitForIt(() => mockedComponent.find(''h1'').text()); }; const firstValue = await first(); const secondValue = await second(); const thirdValue = await third(); assert(firstValue === ''8'' && secondValue === ''8'' && thirdValue === ''42''); }; '
 
 ```
 
@@ -49,9 +50,6 @@ class OnlyEvens extends React.Component {
      // change code below this line
     return true;
      // change code above this line
-  }
-  componentWillReceiveProps(nextProps) {
-    console.log('Receiving new props...');
   }
   componentDidUpdate() {
     console.log('Component re-rendered.');
@@ -113,9 +111,6 @@ class OnlyEvens extends React.Component {
     // change code below this line
     return nextProps.value % 2 === 0;
     // change code above this line
-  }
-  componentWillReceiveProps(nextProps) {
-    console.log('Receiving new props...');
   }
   componentDidUpdate() {
     console.log('Component re-rendered.');

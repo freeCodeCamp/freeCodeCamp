@@ -3,6 +3,7 @@ id: 5a24c314108439a4d403614a
 title: Moving Forward From Here
 challengeType: 6
 isRequired: false
+forumTopicId: 301434
 ---
 
 ## Description
@@ -24,7 +25,7 @@ Log the message <code>'Now I know React and Redux!'</code> to the console.
 ```yml
 tests:
   - text: The message <code>Now I know React and Redux!</code> should be logged to the console.
-    testString: assert(editor.getValue().includes('console.log("Now I know React and Redux!")') || editor.getValue().includes('console.log(\'Now I know React and Redux!\')'), 'The message <code>Now I know React and Redux!</code> should be logged to the console.');
+    testString: getUserInput => assert(/console\s*\.\s*log\s*\(\s*('|"|`)Now I know React and Redux!\1\s*\)/.test(getUserInput('index')));
 
 ```
 

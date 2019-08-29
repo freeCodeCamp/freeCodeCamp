@@ -1,14 +1,9 @@
-.challenge-instructions {
-  font-size: 16px;
-}
-
 .challenge-instructions blockquote {
-  background-color: #eee;
-  color: #c7254e;
+  background-color: var(--tertiary-background);
+  color: var(--tertiary-color);
   padding: 10px;
   width: 100%;
   margin: 0;
   margin-bottom: 1.45rem;
-  font-family: monospace;
-  font-size: 16px;
+  font-size: 0.9rem;
 }
