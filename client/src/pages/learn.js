@@ -1,7 +1,6 @@
-/* eslint-disable max-len */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
 
@@ -12,7 +11,7 @@ import {
 } from '../redux/propTypes';
 
 import LearnLayout from '../components/layouts/Learn';
-import Spacer from '../components/helpers/Spacer';
+import { Link, Spacer } from '../components/helpers';
 import Map from '../components/Map';
 
 import './learn.css';
@@ -38,10 +37,10 @@ const IndexPage = ({
 }) => (
   <LearnLayout>
     <div className='learn-page-wrapper'>
-      <Helmet title='Welcome to learn.freeCodeCamp!' />
+      <Helmet title='Learn | freeCodeCamp.org' />
       <Spacer />
       <Spacer />
-      <h2>Welcome to the freeCodeCamp curriculum</h2>
+      <h1 className='text-center'>Welcome to the freeCodeCamp curriculum</h1>
       <p>
         We have thousands of coding lessons to help you improve your skills.
       </p>
@@ -49,20 +48,15 @@ const IndexPage = ({
       <p>
         And yes - all of this is 100% free, thanks to the thousands of campers
         who{' '}
-        <a
-          href='https://donate.freecodecamp.org'
-          rel='noopener noreferrer'
-          target='_blank'
-          >
+        <Link external={true} to='/donate'>
           donate
-        </a>{' '}
+        </Link>{' '}
         to our nonprofit.
       </p>
       <p>
         If you are new to coding, we recommend you{' '}
         <Link to={slug}>start at the beginning</Link>.
       </p>
-      <Spacer />
       <Map
         introNodes={mdEdges.map(({ node }) => node)}
         nodes={edges
@@ -85,9 +79,7 @@ export const query = graphql`
         slug
       }
     }
-    allChallengeNode(
-      sort: { fields: [superOrder, order, challengeOrder] }
-    ) {
+    allChallengeNode(sort: { fields: [superOrder, order, challengeOrder] }) {
       edges {
         node {
           fields {

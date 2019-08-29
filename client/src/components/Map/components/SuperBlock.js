@@ -8,15 +8,16 @@ import { uniq, find } from 'lodash';
 import Block from './Block';
 
 import { makeExpandedSuperBlockSelector, toggleSuperBlock } from '../redux';
-import Caret from '../../icons/Caret';
+import Caret from '../../../assets/icons/Caret';
 import { ChallengeNode } from '../../../redux/propTypes';
 
 const mapStateToProps = (state, ownProps) => {
   const expandedSelector = makeExpandedSuperBlockSelector(ownProps.superBlock);
 
-  return createSelector(expandedSelector, isExpanded => ({ isExpanded }))(
-    state
-  );
+  return createSelector(
+    expandedSelector,
+    isExpanded => ({ isExpanded })
+  )(state);
 };
 
 function mapDispatchToProps(dispatch) {
@@ -88,10 +89,14 @@ export class SuperBlock extends Component {
     const { superBlock, isExpanded, toggleSuperBlock } = this.props;
     return (
       <li className={`superblock ${isExpanded ? 'open' : ''}`}>
-        <div className='map-title' onClick={() => toggleSuperBlock(superBlock)}>
+        <button
+          aria-expanded={isExpanded}
+          className='map-title'
+          onClick={() => toggleSuperBlock(superBlock)}
+        >
           <Caret />
           <h4>{createSuperBlockTitle(superBlock)}</h4>
-        </div>
+        </button>
         {isExpanded ? this.renderBlock(superBlock) : null}
       </li>
     );

@@ -50,9 +50,9 @@ export default function(UserIdent) {
         new Error('invalid or empty email recieved from auth0'),
         {
           message: dedent`
-    Oops... something is not right. We did not find a valid email from your
-    ${provider} account. Please try again with a different provider that has an
-    email available with it.
+    ${provider} did not return a valid email address.
+    Please try again with a different account that has an
+    email associated with it your update your settings on ${provider}, for us to be able to retrieve your email.
           `,
           type: 'info',
           redirectTo: '/'
@@ -73,8 +73,7 @@ export default function(UserIdent) {
               new Error('could not find or create a user'),
               {
                 message: dedent`
-    Oops... something is not right. We could not find or create a
-    user with that email.
+    We could not find or create a user with that email address.
                 `,
                 type: 'info',
                 redirectTo: '/'

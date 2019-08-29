@@ -2,6 +2,7 @@
 id: 5900f4521000cf542c50ff64
 challengeType: 5
 title: 'Problem 229: Four Representations using Squares'
+forumTopicId: 301872
 ---
 
 ## Description
@@ -38,7 +39,7 @@ How many such numbers are there that do not exceed 2×109?
 ```yml
 tests:
   - text: <code>euler229()</code> should return 11325263.
-    testString: assert.strictEqual(euler229(), 11325263, '<code>euler229()</code> should return 11325263.');
+    testString: assert.strictEqual(euler229(), 11325263);
 
 ```
 
@@ -70,4 +71,5 @@ euler229();
 ```js
 // solution required
 ```
+
 </section>

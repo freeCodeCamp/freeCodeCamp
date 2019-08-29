@@ -2,6 +2,7 @@
 id: 5900f3dd1000cf542c50fef0
 challengeType: 5
 title: 'Problem 113: Non-bouncy numbers'
+forumTopicId: 301739
 ---
 
 ## Description
@@ -24,7 +25,7 @@ How many numbers below a googol (10100) are not bouncy?
 ```yml
 tests:
   - text: <code>euler113()</code> should return 51161058134250.
-    testString: assert.strictEqual(euler113(), 51161058134250, '<code>euler113()</code> should return 51161058134250.');
+    testString: assert.strictEqual(euler113(), 51161058134250);
 
 ```
 
@@ -56,4 +57,5 @@ euler113();
 ```js
 // solution required
 ```
+
 </section>

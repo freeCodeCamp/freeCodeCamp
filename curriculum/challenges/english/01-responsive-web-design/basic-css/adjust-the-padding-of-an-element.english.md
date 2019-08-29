@@ -2,8 +2,8 @@
 id: bad88fee1348bd9aedf08825
 title: Adjust the Padding of an Element
 challengeType: 0
-guideUrl: 'https://www.freecodecamp.org/guide/certificates/adjust-the-padding-of-an-element'
 videoUrl: 'https://scrimba.com/c/cED8ZC2'
+forumTopicId: 301083
 ---
 
 ## Description
@@ -27,7 +27,7 @@ Change the <code>padding</code> of your blue box to match that of your red box.
 ```yml
 tests:
   - text: Your <code>blue-box</code> class should give elements <code>20px</code> of <code>padding</code>.
-    testString: assert($(".blue-box").css("padding-top") === "20px", 'Your <code>blue-box</code> class should give elements <code>20px</code> of <code>padding</code>.');
+    testString: assert($(".blue-box").css("padding-top") === "20px");
 
 ```
 
@@ -86,7 +86,43 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style>
+  .injected-text {
+    margin-bottom: -25px;
+    text-align: center;
+  }
+
+  .box {
+    border-style: solid;
+    border-color: black;
+    border-width: 5px;
+    text-align: center;
+  }
+
+  .yellow-box {
+    background-color: yellow;
+    padding: 10px;
+  }
+  
+  .red-box {
+    background-color: crimson;
+    color: #fff;
+    padding: 20px;
+  }
+
+  .blue-box {
+    background-color: blue;
+    color: #fff;
+    padding: 20px;
+  }
+</style>
+<h5 class="injected-text">margin</h5>
+
+<div class="box yellow-box">
+  <h5 class="box red-box">padding</h5>
+  <h5 class="box blue-box">padding</h5>
+</div>
 ```
+
 </section>

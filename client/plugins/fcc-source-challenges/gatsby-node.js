@@ -1,6 +1,6 @@
 const chokidar = require('chokidar');
 
-const { createChallengeNode } = require('./create-Challenge-nodes');
+const { createChallengeNode } = require('./create-challenge-nodes');
 
 exports.sourceNodes = function sourceChallengesSourceNodes(
   { actions, reporter },
@@ -28,31 +28,30 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
   const { createNode } = actions;
   const watcher = chokidar.watch(curriculumPath, {
     ignored: /(^|[\/\\])\../,
-    persistent: true
+    persistent: true,
+    usePolling: true
   });
 
-  watcher.on('ready', sourceAndCreateNodes).on(
-    'change',
-    filePath =>
-      (/\.md$/).test(filePath)
-        ? onSourceChange(filePath)
-            .then(challenge => {
-              reporter.info(
-                `File changed at ${filePath}, replacing challengeNode id ${
-                  challenge.id
-                }`
-              );
-              return createChallengeNode(challenge, reporter);
-            })
-            .then(createNode)
-            .catch(e =>
-              reporter.error(`fcc-replace-challenge
+  watcher.on('change', filePath =>
+    /\.md$/.test(filePath)
+      ? onSourceChange(filePath)
+          .then(challenge => {
+            reporter.info(
+              `
+File changed at ${filePath}, replacing challengeNode id ${challenge.id}
+              `
+            );
+            return createChallengeNode(challenge, reporter);
+          })
+          .then(createNode)
+          .catch(e =>
+            reporter.error(`fcc-replace-challenge
 
   ${e.message}
 
   `)
-            )
-        : null
+          )
+      : null
   );
 
   function sourceAndCreateNodes() {
@@ -74,4 +73,8 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
   `)
       );
   }
+
+  return new Promise((resolve, reject) => {
+    watcher.on('ready', () => sourceAndCreateNodes().then(resolve, reject));
+  });
 };

@@ -1,9 +1,0 @@
----
-title: Harshad or Niven series
-localeTitle: Série Harshad ou Niven
----
-## Série Harshad ou Niven
-
-Este é um esboço. [Ajude nossa comunidade a expandi-lo](https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/rosetta-code/harshad-or-niven-series/index.md) .
-
-[Este guia de estilo rápido ajudará a garantir que sua solicitação de recebimento seja aceita](https://github.com/freecodecamp/guides/blob/master/README.md) .

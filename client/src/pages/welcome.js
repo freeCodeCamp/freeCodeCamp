@@ -1,14 +1,12 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { navigate } from 'gatsby';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Grid, Row, Col, Button } from '@freecodecamp/react-bootstrap';
+import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 
-import { Loader, Spacer } from '../components/helpers';
-import CurrentChallengeLink from '../components/helpers/CurrentChallengeLink';
+import { CurrentChallengeLink, Loader, Spacer } from '../components/helpers';
 import Supporters from '../components/Supporters';
 import {
   userSelector,
@@ -17,6 +15,8 @@ import {
   activeDonationsSelector
 } from '../redux';
 import { randomQuote } from '../utils/get-words';
+import createRedirect from '../components/createRedirect';
+import RedirectHome from '../components/RedirectHome';
 
 import './welcome.css';
 
@@ -30,12 +30,13 @@ const propTypes = {
   isSignedIn: PropTypes.bool,
   user: PropTypes.shape({
     acceptedPrivacyTerms: PropTypes.bool,
-    username: PropTypes.string,
-    completedChallengeCount: PropTypes.number,
-    completedProjectCount: PropTypes.number,
     completedCertCount: PropTypes.number,
+    completedChallengeCount: PropTypes.number,
     completedLegacyCertCount: PropTypes.number,
-    isDonating: PropTypes.bool
+    completedProjectCount: PropTypes.number,
+    isDonating: PropTypes.bool,
+    name: PropTypes.string,
+    username: PropTypes.string
   })
 };
 
@@ -52,6 +53,7 @@ const mapStateToProps = createSelector(
   })
 );
 const mapDispatchToProps = dispatch => bindActionCreators({}, dispatch);
+const RedirectAcceptPrivacyTerm = createRedirect('/accept-privacy-terms');
 
 function Welcome({
   fetchState: { pending, complete },
@@ -68,35 +70,31 @@ function Welcome({
   activeDonations
 }) {
   if (pending && !complete) {
-    return (
-      <div className='loader-wrapper'>
-        <Loader />
-      </div>
-    );
+    return <Loader fullScreen={true} />;
   }
 
   if (!isSignedIn) {
-    navigate('/');
-    return null;
+    return <RedirectHome />;
   }
 
   if (isSignedIn && !acceptedPrivacyTerms) {
-    navigate('/accept-privacy-terms');
-    return null;
+    return <RedirectAcceptPrivacyTerm />;
   }
 
   const { quote, author } = randomQuote();
   return (
     <Fragment>
       <Helmet>
-        <title>Welcome {name ? name : 'Camper'} | freeCodeCamp.org</title>
+        <title>Welcome | freeCodeCamp.org</title>
       </Helmet>
       <main>
-        <Grid className='text-center'>
+        <Grid>
           <Row>
             <Col xs={12}>
               <Spacer />
-              <h1 className='big-heading'>Welcome {name ? name : 'Camper'}!</h1>
+              <h1 className='big-heading text-center'>
+                Welcome {name ? name : 'Camper'}!
+              </h1>
             </Col>
           </Row>
           <Spacer />
@@ -143,11 +141,9 @@ function Welcome({
           </Row>
           <Spacer />
           <Row>
-            <Col sm={8} smOffset={2} xs={12}>
+            <Col sm={6} smOffset={3} xs={12}>
               <CurrentChallengeLink>
-                <Button block={true} bsStyle='primary' className='btn-cta-big'>
-                  Go to my next challenge
-                </Button>
+                Go to my next challenge
               </CurrentChallengeLink>
             </Col>
           </Row>

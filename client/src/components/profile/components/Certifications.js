@@ -4,11 +4,12 @@ import { Link } from 'gatsby';
 import { curry } from 'lodash';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
-import { Button, Row, Col } from '@freecodecamp/react-bootstrap';
+import { Row, Col } from '@freecodecamp/react-bootstrap';
 
 import { userByNameSelector } from '../../../redux';
 import FullWidthRow from '../../helpers/FullWidthRow';
 import { ButtonSpacer, Spacer } from '../../helpers';
+import './certifications.css';
 
 const mapStateToProps = (state, props) =>
   createSelector(
@@ -73,11 +74,6 @@ const mapStateToProps = (state, props) =>
       ],
       legacyCerts: [
         {
-          show: isFullStackCert,
-          title: 'Full Stack Certification',
-          showURL: 'legacy-full-stack'
-        },
-        {
           show: isFrontEndCert,
           title: 'Front End Certification',
           showURL: 'legacy-front-end'
@@ -116,16 +112,12 @@ function renderCertShow(username, cert) {
   return cert.show ? (
     <Fragment key={cert.title}>
       <Row>
-        <Col sm={10} smPush={1}>
-          <Link to={`/certification/${username}/${cert.showURL}`}>
-            <Button
-              block={true}
-              bsSize='lg'
-              bsStyle='primary'
-              className='btn-invert'
-              >
-              View {cert.title}
-            </Button>
+        <Col className='certifications' sm={10} smPush={1}>
+          <Link
+            className='btn btn-lg btn-primary btn-block'
+            to={`/certification/${username}/${cert.showURL}`}
+          >
+            View {cert.title}
           </Link>
         </Col>
       </Row>
@@ -143,7 +135,7 @@ function Certificates({
 }) {
   const renderCertShowWithUsername = curry(renderCertShow)(username);
   return (
-    <FullWidthRow>
+    <FullWidthRow className='certifications'>
       <h2 className='text-center'>freeCodeCamp Certifications</h2>
       <br />
       {hasModernCert ? (

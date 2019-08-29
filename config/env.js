@@ -1,6 +1,6 @@
 const path = require('path');
 
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.FREECODECAMP_NODE_ENV !== 'production') {
   const envPath = path.resolve(__dirname, '../.env');
   require('dotenv').config({ path: envPath });
 }
@@ -11,6 +11,7 @@ const {
   FORUM_LOCATION: forum,
   NEWS_LOCATION: news,
   LOCALE: locale,
+  STRIPE_PUBLIC: stripePublicKey
 } = process.env;
 
 const locations = {
@@ -20,4 +21,4 @@ const locations = {
   newsLocation: news
 };
 
-module.exports = Object.assign(locations, { locale });
+module.exports = Object.assign(locations, { locale, stripePublicKey });

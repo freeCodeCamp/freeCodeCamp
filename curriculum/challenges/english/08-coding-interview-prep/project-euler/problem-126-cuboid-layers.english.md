@@ -2,6 +2,7 @@
 id: 5900f3ea1000cf542c50fefd
 challengeType: 5
 title: 'Problem 126: Cuboid layers'
+forumTopicId: 301753
 ---
 
 ## Description
@@ -27,7 +28,7 @@ Find the least value of n for which C(n) = 1000.
 ```yml
 tests:
   - text: <code>euler126()</code> should return 18522.
-    testString: assert.strictEqual(euler126(), 18522, '<code>euler126()</code> should return 18522.');
+    testString: assert.strictEqual(euler126(), 18522);
 
 ```
 
@@ -59,4 +60,5 @@ euler126();
 ```js
 // solution required
 ```
+
 </section>

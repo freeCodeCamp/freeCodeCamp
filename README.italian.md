@@ -113,7 +113,7 @@ La nostra comunità ha tra l'altro:
 
 - Un forum molto attivo [forum](https://www.freecodecamp.org/forum)
 - Migliaia di [gruppi di studio locali](https://study-group-directory.freecodecamp.org/) in tutto il mondo, dove è possibile programmare insieme di persona
-- Medium [la più grande pubblicazione tecnica](https://medium.freecodecamp.org)
+- Una pubblicazione di [Developer News](https://www.freecodecamp.org/news), un sito gratuito, open source e senza pubblicità per il cross-post degli articoli del tuo blog.
 - Un popolare [canale YouTube](https://youtube.com/freecodecamp)
 - Una guida completa [di migliaia di argomenti di programmazione](https://guide.freecodecamp.org/)
 

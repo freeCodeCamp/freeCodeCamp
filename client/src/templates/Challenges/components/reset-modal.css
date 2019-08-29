@@ -1,29 +1,29 @@
+.reset-modal p {
+  color: var(--danger-color);
+}
+
 .reset-modal-header {
-  color: #fff;
-  background-color: #d9534f;
-  border-color: #d43f3a;
+  color: var(--danger-color);
+  background-color: var(--danger-background);
+  border: none;
+}
+
+.reset-modal-header h4 {
+  color: var(--danger-color);
+}
+
+.reset-modal .modal-footer {
+  border-color: var(--danger-color);
 }
 
 .reset-modal-header .close {
-  color: #fff;
+  color: var(--danger-color);
   font-size: 28px;
   text-shadow: none;
-}
-
-.night .reset-modal-header .close {
-  color: #222;
 }
 
 @media screen and (max-width: 767px) {
   .reset-modal .btn-lg {
     font-size: 16px;
   }
-}
-
-.night .reset-modal-body,
-.night .reset-modal-footer {
-  background-color: #333;
-}
-.night .reset-modal-footer {
-  border-top-color: #222;
 }

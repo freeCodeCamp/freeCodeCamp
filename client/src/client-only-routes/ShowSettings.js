@@ -26,6 +26,7 @@ import Internet from '../components/settings/Internet';
 import Portfolio from '../components/settings/Portfolio';
 import Honesty from '../components/settings/Honesty';
 import Certification from '../components/settings/Certification';
+import DangerZone from '../components/settings/DangerZone';
 import RedirectHome from '../components/RedirectHome';
 
 const propTypes = {
@@ -165,11 +166,7 @@ function ShowSettings(props) {
   } = props;
 
   if (showLoading) {
-    return (
-      <div className='loader-wrapper'>
-        <Loader />
-      </div>
-    );
+    return <Loader fullScreen={true} />;
   }
 
   if (!showLoading && !isSignedIn) {
@@ -191,7 +188,7 @@ function ShowSettings(props) {
               bsStyle='primary'
               className='btn-invert'
               href={`/${username}`}
-              >
+            >
               Show me my public portfolio
             </Button>
             <Button
@@ -201,7 +198,7 @@ function ShowSettings(props) {
               className='btn-invert'
               href={'/signout'}
               onClick={createHandleSignoutClick(hardGoTo)}
-              >
+            >
               Sign me out of freeCodeCamp
             </Button>
           </FullWidthRow>
@@ -258,7 +255,7 @@ function ShowSettings(props) {
             verifyCert={verifyCert}
           />
           <Spacer />
-          {/* <DangerZone /> */}
+          <DangerZone />
         </main>
       </Grid>
     </Fragment>

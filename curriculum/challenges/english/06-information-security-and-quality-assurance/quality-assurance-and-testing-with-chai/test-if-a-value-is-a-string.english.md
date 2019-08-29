@@ -2,17 +2,18 @@
 id: 587d824d367417b2b2512c52
 title: Test if a Value is a String
 challengeType: 2
+forumTopicId: 301599
 ---
 
 ## Description
 <section id='description'>
 As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
-#isString asserts that the actual value is a string.
+<code>isString</code> or <code>isNotString</code> asserts that the actual value is a string.
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Use <code>assert.isString()</code> or <code>assert.isNotString()</code> to make the tests pass. 
 </section>
 
 ## Tests
@@ -44,4 +45,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

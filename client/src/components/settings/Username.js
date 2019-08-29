@@ -91,9 +91,8 @@ class UsernameSettings extends Component {
       characterValidation: { valid }
     } = this.state;
 
-    return this.setState(
-      { submitClicked: true },
-      () => (valid ? submitNewUsername(formValue) : null)
+    return this.setState({ submitClicked: true }, () =>
+      valid ? submitNewUsername(formValue) : null
     );
   }
 

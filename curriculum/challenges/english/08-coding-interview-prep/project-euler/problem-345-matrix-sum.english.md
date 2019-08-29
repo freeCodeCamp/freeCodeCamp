@@ -2,6 +2,7 @@
 id: 5900f4c81000cf542c50ffda
 challengeType: 5
 title: 'Problem 345: Matrix Sum'
+forumTopicId: 302004
 ---
 
 ## Description
@@ -45,7 +46,7 @@ Find the Matrix Sum of:
 ```yml
 tests:
   - text: <code>euler345()</code> should return 13938.
-    testString: assert.strictEqual(euler345(), 13938, '<code>euler345()</code> should return 13938.');
+    testString: assert.strictEqual(euler345(), 13938);
 
 ```
 
@@ -77,4 +78,5 @@ euler345();
 ```js
 // solution required
 ```
+
 </section>

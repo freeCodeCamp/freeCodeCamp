@@ -2,6 +2,7 @@
 id: 5900f43e1000cf542c50ff4f
 challengeType: 5
 title: 'Problem 209: Circular Logic'
+forumTopicId: 301850
 ---
 
 ## Description
@@ -30,7 +31,7 @@ for all 6-bit inputs (a, b, c, d, e, f)?
 ```yml
 tests:
   - text: <code>euler209()</code> should return 15964587728784.
-    testString: assert.strictEqual(euler209(), 15964587728784, '<code>euler209()</code> should return 15964587728784.');
+    testString: assert.strictEqual(euler209(), 15964587728784);
 
 ```
 
@@ -62,4 +63,5 @@ euler209();
 ```js
 // solution required
 ```
+
 </section>
