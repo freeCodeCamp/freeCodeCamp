@@ -12,7 +12,6 @@ import {
   challengeIdToNameMapSelector,
   fetchIdToNameMap
 } from '../../../templates/Challenges/redux';
-import { blockNameify } from '../../../../utils/blockNameify';
 import { FullWidthRow } from '../../helpers';
 import SolutionViewer from '../../settings/SolutionViewer';
 
@@ -42,7 +41,12 @@ const propTypes = {
     })
   ),
   fetchIdToNameMap: PropTypes.func.isRequired,
-  idToNameMap: PropTypes.objectOf(PropTypes.string),
+  idToNameMap: PropTypes.objectOf(
+    PropTypes.shape({
+      challengePath: PropTypes.string,
+      challengeTitle: PropTypes.string
+    })
+  ),
   username: PropTypes.string
 };
 
@@ -70,13 +74,11 @@ class Timeline extends Component {
   renderCompletion(completed) {
     const { idToNameMap } = this.props;
     const { id, completedDate } = completed;
-    const challengeDashedName = idToNameMap[id];
+    const { challengeTitle, challengePath } = idToNameMap[id];
     return (
       <tr key={id}>
         <td>
-          <a href={`/challenges/${challengeDashedName}`}>
-            {blockNameify(challengeDashedName)}
-          </a>
+          <Link to={`/learn/${challengePath}`}>{challengeTitle}</Link>
         </td>
         <td className='text-center'>
           <time dateTime={format(completedDate, 'YYYY-MM-DDTHH:MM:SSZ')}>
@@ -128,9 +130,11 @@ class Timeline extends Component {
             </thead>
             <tbody>
               {reverse(
-                sortBy(completedMap, ['completedDate']).filter(
-                  ({ id }) => id in idToNameMap
-                )
+                sortBy(completedMap, ['completedDate']).filter(challenge => {
+                  return (
+                    challenge.challengeType !== 7 && idToNameMap[challenge.id]
+                  );
+                })
               ).map(this.renderCompletion)}
             </tbody>
           </Table>
@@ -143,7 +147,7 @@ class Timeline extends Component {
           >
             <Modal.Header closeButton={true}>
               <Modal.Title id='contained-modal-title'>
-                {`${username}'s Solution to ${blockNameify(idToNameMap[id])}`}
+                {`${username}'s Solution to ${idToNameMap[id].challengeTitle}`}
               </Modal.Title>
             </Modal.Header>
             <Modal.Body>
