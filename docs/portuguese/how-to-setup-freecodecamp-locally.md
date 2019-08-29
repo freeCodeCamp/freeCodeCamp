@@ -36,7 +36,7 @@ Isso é essencial, pois assim você pode trabalhar com sua cópia do freeCodeCam
 
 ## Preparando o ambiente de desenvolvimento
 
-Uma vez que os pré-requisitos estão instaladas, você precisa preparar seu ambiente de desenvolvimento. Isso é comum para muitos _workflows_ de desenvolvimento, e você precisará fazer isso uma única vez.
+Uma vez que os pré-requisitos estão instalados, você precisa preparar seu ambiente de desenvolvimento. Isso é comum para muitos _workflows_ de desenvolvimento, e você precisará fazer isso uma única vez.
 
 **Siga estes passos para preparar seu ambiente de desenvolvimento:**
 
