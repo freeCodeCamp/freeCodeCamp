@@ -20,7 +20,7 @@ freeCodeCamp.org的存在是因为像你这样的数千名志愿者。我们很�
 
 我们严格执行[“行为准则”](https://www.freecodecamp.org/code-of-conduct)。请您花一点时间阅读它。它只有196个字。
 
-祝您贡献愉快🎉！
+贡献愉快🎉！
 
 ## 您可以通过以下这些不错的方式进行贡献
 
@@ -82,7 +82,6 @@ freeCodeCamp.org的存在是因为像你这样的数千名志愿者。我们很�
 - [西班牙语（西班牙语）](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/spanish)
 - [葡萄牙语（葡萄牙语）](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/portuguese)
 
-
 我们非常欢迎您的贡献以帮助提高翻译质量。数百万人已经在使用freeCodeCamp.org的英语版本，我们也希望还有数百万人使用这些翻译版本。
 
 ### 帮助我们修复freeCodeCamp.org学习平台中的错误
@@ -92,8 +91,8 @@ freeCodeCamp.org的存在是因为像你这样的数千名志愿者。我们很�
 简单的说，
 
  - 我们有一个基于Node.js的API服务器。
- - 一组基于React的客户端应用程序。
- - 用于评估前端项目的脚本。
+ - 一系列基于React的客户端应用程序。
+ - 一个用于评估前端项目的脚本。
 
 
 为此做出贡献需要对API和ES6语法有所了解，更需要足够的好奇心。
@@ -120,26 +119,25 @@ freeCodeCamp.org的存在是因为像你这样的数千名志愿者。我们很�
 
 **我被困在这些文档中没有解释的问题上。怎么能得到帮助？**
 
-您可以透过以下的管道：
+您可以通过以下的渠道：
 
 - [我们公共论坛上的“贡献者”类别](https://www.freecodecamp.org/forum/c/contributors)
 - [我们的公共贡献者在Gitter的聊天室](https://gitter.im/FreeCodeCamp/Contributors)
 
-我们很高兴能帮助您为您想要处理的任何课题做出贡献。确保在发布新查询之前搜索您的查询。请务必要有礼貌和耐心。我们的社区志愿者和主持人随时为您提供指导。
+我们很高兴能帮助您为您想要处理的任何问题做出贡献。确保在发布新问题之前搜索您的问题。请务必要有礼貌和耐心。我们的社区志愿者和主持人随时为您提供指导。
 
 **我是GitHub和开源的新手：**
 
 阅读我们的[如何参与开源指南](https://github.com/freeCodeCamp/how-to-contribute-to-open-source)。
 
-**这些标记在问题上的不同的标签是什么意思？**
+**这些标记在问题上的不同的标签(label)是什么意思？**
 
-我们的社区版主[分类](https://en.wikipedia.org/wiki/Software_bug#Bug_management) 根据优先级，严重程度和其他因素发出请求。您可以[在这里找到一个完整的含义词汇表](https://github.com/freecodecamp/freecodecamp/labels)。
+我们的社区版主根据优先级、严重程度和其他因素将问题和PR[分类](https://en.wikipedia.org/wiki/Software_bug#Bug_management)。您可以[在这里找到一个完整的含义词汇表](https://github.com/freecodecamp/freecodecamp/labels)。
 
 您应该通过[**“求助”**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22)或[**“欢迎新手”**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+welcome%22)快速查找您可以贡献的项目。这些都是可以自行进行，并不需要批准。
 
-如果这些项目缺乏明确的需求，请在评论中提问。
+如果这些问题缺乏明确的需求，欢迎在评论中提问。
 
 **我发现了一个错误的拼写，我应该在提出PR之前报告问题吗？**
 
-对于拼写错误和其他措辞更改，您可以直接打开请求，而无需先创建问题。问题更多的是讨论与代码相关，或者课程结构方面的重大问题。
-
+对于拼写错误和其他措辞更改，您可以直接提出PR，而无需先创建问题。问题更多的是讨论与代码相关，或者课程结构方面的重大问题。
