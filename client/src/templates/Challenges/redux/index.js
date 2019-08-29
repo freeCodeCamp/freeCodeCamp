@@ -2,7 +2,6 @@ import { createAction, handleActions } from 'redux-actions';
 import { reducer as reduxFormReducer } from 'redux-form';
 
 import { createTypes } from '../../../../utils/stateManagement';
-import { createAsyncTypes } from '../../../utils/createTypes';
 
 import { createPoly } from '../utils/polyvinyl';
 import challengeModalEpic from './challenge-modal-epic';
@@ -11,7 +10,6 @@ import codeLockEpic from './code-lock-epic';
 import createQuestionEpic from './create-question-epic';
 import codeStorageEpic from './code-storage-epic';
 
-import { createIdToNameMapSaga } from './id-to-name-map-saga';
 import { createExecuteChallengeSaga } from './execute-challenge-saga';
 import { createCurrentChallengeSaga } from './current-challenge-saga';
 import { challengeTypes } from '../../../../utils/challengeTypes';
@@ -21,7 +19,6 @@ export const backendNS = 'backendChallenge';
 
 const initialState = {
   challengeFiles: {},
-  challengeIdToNameMap: {},
   challengeMeta: {
     id: '',
     nextChallengePath: '/',
@@ -78,9 +75,7 @@ export const types = createTypes(
     'resetChallenge',
     'submitChallenge',
 
-    'moveToTab',
-
-    ...createAsyncTypes('fetchIdToNameMap')
+    'moveToTab'
   ],
   ns
 );
@@ -94,7 +89,6 @@ export const epics = [
 ];
 
 export const sagas = [
-  ...createIdToNameMapSaga(types),
   ...createExecuteChallengeSaga(types),
   ...createCurrentChallengeSaga(types)
 ];
@@ -114,12 +108,6 @@ export const createFiles = createAction(types.createFiles, challengeFiles =>
       {}
     )
 );
-
-export const fetchIdToNameMap = createAction(types.fetchIdToNameMap);
-export const fetchIdToNameMapComplete = createAction(
-  types.fetchIdToNameMapComplete
-);
-export const fetchIdToNameMapError = createAction(types.fetchIdToNameMapError);
 
 export const createQuestion = createAction(types.createQuestion);
 export const initTests = createAction(types.initTests);
@@ -162,8 +150,6 @@ export const moveToTab = createAction(types.moveToTab);
 
 export const currentTabSelector = state => state[ns].currentTab;
 export const challengeFilesSelector = state => state[ns].challengeFiles;
-export const challengeIdToNameMapSelector = state =>
-  state[ns].challengeIdToNameMap;
 export const challengeMetaSelector = state => state[ns].challengeMeta;
 export const challengeTestsSelector = state => state[ns].challengeTests;
 export const consoleOutputSelector = state => state[ns].consoleOut;
@@ -230,10 +216,6 @@ const MAX_LOGS_SIZE = 64 * 1024;
 
 export const reducer = handleActions(
   {
-    [types.fetchIdToNameMapComplete]: (state, { payload }) => ({
-      ...state,
-      challengeIdToNameMap: payload
-    }),
     [types.createFiles]: (state, { payload }) => ({
       ...state,
       challengeFiles: payload
