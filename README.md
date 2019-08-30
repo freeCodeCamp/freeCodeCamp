@@ -126,15 +126,15 @@ Our community also has:
 - A [Developer News](https://www.freecodecamp.org/news) publication, a free, open source, no-ads place to cross-post your blog articles.
 - A [Facebook group](https://www.facebook.com/groups/freeCodeCampEarth/permalink/428140994253892/) with over 100,000 members worldwide
 
-### [Join our community here](https://www.freecodecamp.org/signin).
+> ### [Join our community here](https://www.freecodecamp.org/signin).
 
-### Found a bug?
+### Reporting Bugs and Issues
 
 If you think you've found a bug, first read the [How to Report a Bug](https://www.freecodecamp.org/forum/t/how-to-report-a-bug/19543) article and follow its instructions. If you're confident it's a new bug, and have confirmed that someone else is facing the same issue, go ahead and create a new GitHub issue. Be sure to include as much information as possible so we can reproduce the bug.
 
-### Found a security issue?
+### Reporting Security Issues
 
-Please don't create GitHub issues for security issues. Instead, please send an email to `security@freecodecamp.org` and we'll look into it immediately.
+If you think you have found a vulnerability, please report responsibly. Don't create GitHub issues for security issues. Instead, please send an email to `security@freecodecamp.org` and we'll look into it immediately.
 
 ### Contributing
 
