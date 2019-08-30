@@ -7,7 +7,7 @@ import { Link } from 'gatsby';
 
 import ga from '../../../analytics';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
-import { userSelector } from '../../../redux';
+import { completedChallengesSelector } from '../../../redux';
 import Caret from '../../../assets/icons/Caret';
 import { blockNameify } from '../../../../utils/blockNameify';
 /* eslint-disable max-len */
@@ -19,8 +19,8 @@ const mapStateToProps = (state, ownProps) => {
 
   return createSelector(
     expandedSelector,
-    userSelector,
-    (isExpanded, { completedChallenges = [] }) => ({
+    completedChallengesSelector,
+    (isExpanded, completedChallenges) => ({
       isExpanded,
       completedChallenges: completedChallenges.map(({ id }) => id)
     })
@@ -127,6 +127,7 @@ export class Block extends Component {
       }
       return { ...challenge, isCompleted };
     });
+
     return (
       <li className={`block ${isExpanded ? 'open' : ''}`}>
         <button
