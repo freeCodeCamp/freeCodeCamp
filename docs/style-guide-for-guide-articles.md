@@ -162,17 +162,28 @@ When proposing a solution for a curriculum challenge related article, the full c
 ````markdown
 # Challenge Name Goes Here
 
+---
+## Problem Explanation
+
+This summarizes what need to be done without just restating the challenge description and/or instructions.  This is an optional section
+
+#### Relevant Links
+* [Link Text](link_url_goes_here)
+* [Link Text](link_url_goes_here)
+
+---
 ## Hints
 
-### Hint #1
+### Hint 1
 Hint goes here
 
-###  Hint #2
+### Hint 2
 Hint goes here
 
+---
 ## Solutions
 
-<details><summary>Solution #1 (Click to Unhide)</summary>
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 ```js
 function myFunc() {
@@ -181,28 +192,12 @@ function myFunc() {
 ```
 
 #### Code Explanation
+
 * Code explanation goes here
 * Code explanation goes here
 
 #### Relevant Links
-* [Link Text](link_url_goes_here)
-* [Link Text](link_url_goes_here)
 
-</details>
-
-<details><summary>Solution #2 (Click to Unhide)</summary>
-
-```js
-function myFunc() {
-  console.log('Hello World!');
-}
-```
-
-#### Code Explanation
-* Code explanation goes here
-* Code explanation goes here
-
-#### Relevant Links
 * [Link Text](link_url_goes_here)
 * [Link Text](link_url_goes_here)
 
