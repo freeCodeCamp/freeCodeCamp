@@ -93,7 +93,7 @@ Once you have your id, put it into the markdown file as the `id` field at the to
 id: 5a474d78df58bafeb3535d34
 title: Challenge Title
 ```
-  
+
 
 ## Writing tests
 
@@ -142,7 +142,7 @@ The following is an example of code:
 
 ````
 - Additional information in the form of a note should be formatted `<strong>Note:</strong> Rest of note text...`
-- If multiple notes are needed, then list all of the notes in separate sentences using the format `<strong>Notes:</strong> First note text.  Second note text.`. 
+- If multiple notes are needed, then list all of the notes in separate sentences using the format `<strong>Notes:</strong> First note text.  Second note text.`.
 - Use double quotes where applicable
 
 ## Formatting seed code
@@ -174,7 +174,7 @@ Example:
 
 ````
 <section id='solution'>
-  
+
 ```html
 <style>
   #container p {
@@ -192,12 +192,137 @@ Example:
 
 ## Why do we have all these rules?
 
-Our goal is to develop a fun and clear interactive learning experience. 
+Our goal is to develop a fun and clear interactive learning experience.
 
-Designing interactive coding challenges is difficult. It would be much easier to write a lengthy explanation or to create a video tutorial, and there's a place for those on Medium and YouTube. However, for our core curriculum, we're sticking with what works best for most people - a fully interactive, video game-like experience. 
+Designing interactive coding challenges is difficult. It would be much easier to write a lengthy explanation or to create a video tutorial, and there's a place for those on Medium and YouTube. However, for our core curriculum, we're sticking with what works best for most people - a fully interactive, video game-like experience.
 
 We want campers to achieve a flow state. We want them to build momentum and blast through our curriculum with as few snags as possible. We want them to go into the projects with confidence and a wide exposure to programming concepts.
 
 Creating these challenges requires immense creativity and attention to detail. But you'll have plenty of help. You have support from a whole team of contributors, whom you can bounce ideas off of and demo your challenges to. Stay active in the [contributors room](https://gitter.im/freecodecamp/contributors) and ask lots of questions.
 
 With your help, we can design an interactive coding curriculum that will help millions of people learn to code for years to come.
+
+## Reply Templates for Moderators Reviewing Pull Requests
+
+> You can make your own with GitHub's built-in [**Saved replies**](https://github.com/settings/replies/) feature or use the ones below.
+
+### Thank you
+
+```markdown
+Thank you for your contribution to the page! 👍
+We are happy to accept these changes and look forward to future contributions. 🎉
+```
+
+### Thank you and congrats
+
+> For thanking and encouraging first-time contributors.
+
+```markdown
+Hi @username. Congrats on your first pull request (PR)! 🎉
+
+Thank you for your contribution to the page! 👍
+We are happy to accept these changes and look forward to future contributions. 📝
+```
+
+### Build Error
+
+```markdown
+Hey @username
+
+We would love to be able to merge your changes but it looks like there is an error with the Travis CI build. ⚠️
+
+Once you resolve these issues, We will be able to review your PR and merge it. 😊
+
+---
+
+> Feel free to reference the [Style guide for writing articles](https://github.com/freeCodeCamp/freeCodeCamp#article-title) for this repo on formatting an article correctly so your Travis CI build passes. ✅
+>
+> Also, it's good practice on GitHub to write a brief description of your changes when creating a PR. 📝
+```
+
+### Syncing Fork
+
+> When PR is not up to date with the `master` branch.
+
+``````markdown
+Hey @username
+
+We would love to be able to merge your changes but it looks like there is an error with the Travis CI build. ⚠️
+
+```bash
+Error: ENOTDIR: not a directory, open 'src/pages/java/data-abstraction/index.md'
+```
+
+This particular error was not caused by your file but was an old error caused by merging faulty code to the `master` branch. It has since been resolved.
+
+To pass the build, you will have to sync the latest changes from the `master` branch of the `freeCodeCamp/freeCodeCamp` repo.
+
+Using the command line, you can do this in three easy steps:
+
+```bash
+git remote add upstream git://github.com/freeCodeCamp/freeCodeCamp.git
+
+git fetch upstream
+
+git pull upstream master
+```
+
+If you're using a GUI, you can simply `Add a new remote...` and use the link `git://github.com/freeCodeCamp/freeCodeCamp.git` from above.
+
+Once you sync your fork and pass the build, We will be able to review your PR and merge it. 😊
+
+---
+
+> Feel free to reference the [Syncing a Fork](https://help.github.com/articles/syncing-a-fork/) article on GitHub for more insight on how to keep your fork up-to-date with the upstream repository. 🔄
+>
+> Also, it's good practice on GitHub to write a brief description of your changes when creating a PR. 📝
+``````
+
+### Merge Conflicts
+
+> When PR has merge conflicts that need to be resolved.¹
+
+```markdown
+Hey @username
+
+We would love to be able to merge your changes but it looks like you have some merge conflicts. ⚠️
+
+Once you resolve these conflicts, We will be able to review your PR and merge it. 😊
+
+---
+
+> If you're not familiar with the merge conflict process, feel free to look over GitHub's guide on ["Resolving a merge conflict"](https://help.github.com/articles/resolving-a-merge-conflict-on-github/). 🔍️
+>
+> Also, it's good practice on GitHub to write a brief description of your changes when creating a PR. 📝
+```
+¹ If a first-time-contributor has a merge conflict, maintainers will resolve the conflict for them.
+
+### Duplicate
+
+> When PR is repetitive or a duplicate.
+
+```markdown
+Hey @username
+
+It seems that similar changes have already been accepted earlier for this article you are editing, sorry about that. 😓
+
+If you feel you have more to add, please feel free to open up a new PR.
+
+Thanks again! 😊
+
+---
+
+> If you have any questions, feel free to reach out through [Gitter](https://gitter.im/FreeCodeCamp/Contributors) or by commenting below. 💬
+```
+
+### Closing invalid pull requests
+
+> When PR is invalid.
+
+```markdown
+Hey @username
+
+You have not added any content, We will be closing this PR and marking it as `invalid`. 😓️
+
+Feel free to open another PR though! 👍
+```
