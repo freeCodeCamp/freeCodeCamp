@@ -17,7 +17,8 @@ const baseProps = {
   introNodes: mockIntroNodes,
   nodes: mockNodes,
   toggleBlock: () => {},
-  toggleSuperBlock: () => {}
+  toggleSuperBlock: () => {},
+  resetExpansion: () => {}
 };
 
 test('<Map /> snapshot', () => {
@@ -64,25 +65,6 @@ describe('<Map/>', () => {
       expect(superSpy).toHaveBeenCalledWith(mockNodes[7].superBlock);
     });
 
-    it('should initialize if isInitialized is false', () => {
-      const mapToRender = <Map {...baseProps} />;
-      shallow(mapToRender);
-
-      expect(initializeSpy).toHaveBeenCalledTimes(1);
-    });
-
-    it('should not initialize if isInitialized is true', () => {
-      const props = {
-        ...baseProps,
-        currentChallengeId: currentChallengeId,
-        isInitialized: true
-      };
-      const mapToRender = <Map {...props} />;
-
-      shallow(mapToRender);
-      expect(initializeSpy).toHaveBeenCalledTimes(0);
-    });
-
     it('should use the currentChallengeId prop if it exists', () => {
       const props = { ...baseProps, currentChallengeId };
       const mapToRender = <Map {...props} />;
@@ -107,6 +89,17 @@ describe('<Map/>', () => {
 
       expect(superSpy).toHaveBeenCalledTimes(1);
       expect(superSpy).toHaveBeenCalledWith(mockNodes[0].superBlock);
+    });
+
+    it('calls resetExpansion when initialising', () => {
+      const expansionSpy = jest.fn();
+      const props = {
+        ...baseProps,
+        resetExpansion: expansionSpy
+      };
+      const mapToRender = <Map {...props} />;
+      shallow(mapToRender);
+      expect(expansionSpy).toHaveBeenCalledTimes(1);
     });
   });
 });

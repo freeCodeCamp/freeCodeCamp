@@ -1,7 +1,6 @@
 import { createAction, handleActions } from 'redux-actions';
 
 import { createTypes } from '../../../../utils/stateManagement';
-import { isEmpty } from 'lodash';
 
 export const ns = 'curriculumMap';
 
@@ -14,8 +13,12 @@ const initialState = {
   }
 };
 
-const types = createTypes(['toggleSuperBlock', 'toggleBlock'], ns);
+const types = createTypes(
+  ['resetExpansion', 'toggleSuperBlock', 'toggleBlock'],
+  ns
+);
 
+export const resetExpansion = createAction(types.resetExpansion);
 export const toggleBlock = createAction(types.toggleBlock);
 export const toggleSuperBlock = createAction(types.toggleSuperBlock);
 
@@ -23,11 +26,16 @@ export const makeExpandedSuperBlockSelector = superBlock => state =>
   !!state[ns].expandedState.superBlock[superBlock];
 export const makeExpandedBlockSelector = block => state =>
   !!state[ns].expandedState.block[block];
-export const isInitializedSelector = state =>
-  !isEmpty(state[ns].expandedState.superBlock);
 
 export const reducer = handleActions(
   {
+    [types.resetExpansion]: state => ({
+      ...state,
+      expandedState: {
+        superBlock: {},
+        block: {}
+      }
+    }),
     [types.toggleBlock]: (state, { payload }) => ({
       ...state,
       expandedState: {

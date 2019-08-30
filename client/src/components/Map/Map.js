@@ -10,7 +10,7 @@ import Spacer from '../helpers/Spacer';
 
 import './map.css';
 import { ChallengeNode } from '../../redux/propTypes';
-import { toggleSuperBlock, toggleBlock, isInitializedSelector } from './redux';
+import { toggleSuperBlock, toggleBlock, resetExpansion } from './redux';
 import { currentChallengeIdSelector } from '../../redux';
 
 const propTypes = {
@@ -24,8 +24,8 @@ const propTypes = {
       })
     })
   ),
-  isInitialized: PropTypes.bool,
   nodes: PropTypes.arrayOf(ChallengeNode),
+  resetExpansion: PropTypes.func,
   toggleBlock: PropTypes.func.isRequired,
   toggleSuperBlock: PropTypes.func.isRequired
 };
@@ -33,10 +33,8 @@ const propTypes = {
 const mapStateToProps = state => {
   return createSelector(
     currentChallengeIdSelector,
-    isInitializedSelector,
-    (currentChallengeId, isInitialized) => ({
-      currentChallengeId,
-      isInitialized
+    currentChallengeId => ({
+      currentChallengeId
     })
   )(state);
 };
@@ -44,6 +42,7 @@ const mapStateToProps = state => {
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(
     {
+      resetExpansion,
       toggleSuperBlock,
       toggleBlock
     },
@@ -53,11 +52,11 @@ function mapDispatchToProps(dispatch) {
 
 export class Map extends Component {
   componentDidMount() {
-    if (!this.props.isInitialized)
-      this.initializeExpandedState(this.props.currentChallengeId);
+    this.initializeExpandedState(this.props.currentChallengeId);
   }
 
   initializeExpandedState(currentChallengeId) {
+    this.props.resetExpansion();
     const { superBlock, block } = currentChallengeId
       ? this.props.nodes.find(node => node.id === currentChallengeId)
       : this.props.nodes[0];
