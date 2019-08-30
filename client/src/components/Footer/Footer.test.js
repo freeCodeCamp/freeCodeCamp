@@ -8,7 +8,6 @@ import Footer from './';
 describe('<Footer />', () => {
   it('renders to the DOM', () => {
     const tree = renderer.create(<Footer />).toJSON();
-    console.log(tree);
     expect(tree).toMatchSnapshot();
   });
 });

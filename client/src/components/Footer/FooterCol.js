@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Link from '../helpers/Link';
-import footerLinks from './footerLinks';
+import { footerLinks } from './footerLinks';
 
 import './footer.css';
 
