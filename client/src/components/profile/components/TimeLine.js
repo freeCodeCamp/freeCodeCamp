@@ -1,29 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { createSelector } from 'reselect';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
 import format from 'date-fns/format';
-import { find, reverse, sortBy, isEmpty } from 'lodash';
+import { find, reverse, sortBy } from 'lodash';
 import { Button, Modal, Table } from '@freecodecamp/react-bootstrap';
-import { Link } from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 
-import {
-  challengeIdToNameMapSelector,
-  fetchIdToNameMap
-} from '../../../templates/Challenges/redux';
 import { FullWidthRow } from '../../helpers';
 import SolutionViewer from '../../settings/SolutionViewer';
-
-const mapStateToProps = createSelector(
-  challengeIdToNameMapSelector,
-  idToNameMap => ({
-    idToNameMap
-  })
-);
-
-const mapDispatchToProps = dispatch =>
-  bindActionCreators({ fetchIdToNameMap }, dispatch);
+import { challengeTypes } from '../../../../utils/challengeTypes';
 
 const propTypes = {
   completedMap: PropTypes.arrayOf(
@@ -40,7 +24,6 @@ const propTypes = {
       )
     })
   ),
-  fetchIdToNameMap: PropTypes.func.isRequired,
   idToNameMap: PropTypes.objectOf(
     PropTypes.shape({
       challengePath: PropTypes.string,
@@ -50,7 +33,7 @@ const propTypes = {
   username: PropTypes.string
 };
 
-class Timeline extends Component {
+class TimelineInner extends Component {
   constructor(props) {
     super(props);
 
@@ -64,21 +47,14 @@ class Timeline extends Component {
     this.viewSolution = this.viewSolution.bind(this);
   }
 
-  componentDidMount() {
-    if (isEmpty(this.props.idToNameMap)) {
-      return this.props.fetchIdToNameMap();
-    }
-    return null;
-  }
-
   renderCompletion(completed) {
     const { idToNameMap } = this.props;
     const { id, completedDate } = completed;
-    const { challengeTitle, challengePath } = idToNameMap[id];
+    const { challengeTitle, challengePath } = idToNameMap.get(id);
     return (
       <tr key={id}>
         <td>
-          <Link to={`/learn/${challengePath}`}>{challengeTitle}</Link>
+          <Link to={challengePath}>{challengeTitle}</Link>
         </td>
         <td className='text-center'>
           <time dateTime={format(completedDate, 'YYYY-MM-DDTHH:MM:SSZ')}>
@@ -108,9 +84,6 @@ class Timeline extends Component {
   render() {
     const { completedMap, idToNameMap, username } = this.props;
     const { solutionToView: id, solutionOpen } = this.state;
-    if (isEmpty(idToNameMap)) {
-      return null;
-    }
     return (
       <FullWidthRow>
         <h2 className='text-center'>Timeline</h2>
@@ -132,7 +105,8 @@ class Timeline extends Component {
               {reverse(
                 sortBy(completedMap, ['completedDate']).filter(challenge => {
                   return (
-                    challenge.challengeType !== 7 && idToNameMap[challenge.id]
+                    challenge.challengeType !== challengeTypes.step &&
+                    idToNameMap.has(challenge.id)
                   );
                 })
               ).map(this.renderCompletion)}
@@ -147,7 +121,9 @@ class Timeline extends Component {
           >
             <Modal.Header closeButton={true}>
               <Modal.Title id='contained-modal-title'>
-                {`${username}'s Solution to ${idToNameMap[id].challengeTitle}`}
+                {`${username}'s Solution to ${
+                  idToNameMap.get(id).challengeTitle
+                }`}
               </Modal.Title>
             </Modal.Header>
             <Modal.Body>
@@ -168,10 +144,38 @@ class Timeline extends Component {
   }
 }
 
-Timeline.displayName = 'Timeline';
-Timeline.propTypes = propTypes;
+TimelineInner.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Timeline);
+function useIdToNameMap() {
+  const {
+    allChallengeNode: { edges }
+  } = useStaticQuery(graphql`
+    query challengeNodes {
+      allChallengeNode {
+        edges {
+          node {
+            fields {
+              slug
+            }
+            id
+            title
+          }
+        }
+      }
+    }
+  `);
+  const idToNameMap = new Map();
+  edges.forEach(({ node: { id, title, fields: { slug } } }) => {
+    idToNameMap.set(id, { challengeTitle: title, challengePath: slug });
+  });
+  return idToNameMap;
+}
+
+const Timeline = props => {
+  const idToNameMap = useIdToNameMap();
+  return <TimelineInner idToNameMap={idToNameMap} {...props} />;
+};
+
+Timeline.displayName = 'Timeline';
+
+export default Timeline;
