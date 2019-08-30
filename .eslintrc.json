@@ -1,13 +1,15 @@
 {
   "root": true,
   "extends": ["@freecodecamp/eslint-config", "prettier", "prettier/react"],
-  "plugins": ["prettier"],
+  "plugins": ["prettier", "react-hooks"],
   "rules": {
     "max-len": [
       "error",
       { "code": 80, "ignoreUrls": true, "ignoreTemplateLiterals": true }
     ],
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
   },
   "settings": {
     "react": {
