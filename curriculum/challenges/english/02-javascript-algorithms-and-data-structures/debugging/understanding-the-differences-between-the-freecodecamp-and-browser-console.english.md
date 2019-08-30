@@ -26,7 +26,7 @@ First, use <code>console.clear()</code> to clear the browser console. After that
 ```yml
 tests:
   - text: Use <code>console.clear()</code> to clear the browser console.
-    testString: const noSpaces = code.replace(/\s/g, ''); assert(noSpaces.match(/console.clear\(\)/));
+    testString: const removeJSComments = code.replace(/\/\*[\s\S]*?\*\/|\/\/.*$/gm, ''); const noSpaces = removeJSComments.replace(/\s/g, ''); assert(noSpaces.match(/console.clear\(\)/));
   - text: Use <code>console.log()</code> to print the <code>output</code> variable.
     testString: const noSpaces = code.replace(/\s/g, ''); assert(noSpaces.match(/console\.log\(output\)/));
 
