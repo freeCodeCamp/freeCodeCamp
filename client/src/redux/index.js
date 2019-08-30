@@ -1,6 +1,7 @@
 /* global PAYPAL_SUPPORTERS */
 import { createAction, handleActions } from 'redux-actions';
 import { uniqBy } from 'lodash';
+import store from 'store';
 
 import { createTypes, createAsyncTypes } from '../utils/createTypes';
 import { createFetchUserSaga } from './fetch-user-saga';
@@ -15,6 +16,9 @@ import failedUpdatesEpic from './failed-updates-epic';
 import updateCompleteEpic from './update-complete-epic';
 
 import { types as settingsTypes } from './settings';
+import { types as challengeTypes } from '../templates/Challenges/redux/';
+// eslint-disable-next-line max-len
+import { CURRENT_CHALLENGE_KEY } from '../templates/Challenges/redux/current-challenge-saga';
 
 export const ns = 'app';
 
@@ -28,7 +32,7 @@ export const defaultFetchState = {
 const initialState = {
   appUsername: '',
   completionCount: 0,
-  currentChallengeId: null,
+  currentChallengeId: store.get(CURRENT_CHALLENGE_KEY),
   donationRequested: false,
   showCert: {},
   showCertFetchState: {
@@ -330,7 +334,7 @@ export const reducer = handleActions(
         }
       };
     },
-    [types.updateCurrentChallengeId]: (state, { payload }) => ({
+    [challengeTypes.challengeMounted]: (state, { payload }) => ({
       ...state,
       currentChallengeId: payload
     }),

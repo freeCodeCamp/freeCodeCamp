@@ -3,10 +3,8 @@ import store from 'store';
 
 import {
   isSignedInSelector,
-  currentChallengeIdSelector,
   openDonationModal,
   showDonationSelector,
-  updateCurrentChallengeId,
   donationRequested,
   updateComplete,
   updateFailed,
@@ -21,13 +19,9 @@ import { updateSuccessMessage } from './';
 export const CURRENT_CHALLENGE_KEY = 'currentChallengeId';
 
 export function* currentChallengeSaga({ payload: id }) {
+  store.set(CURRENT_CHALLENGE_KEY, id);
   const isSignedIn = yield select(isSignedInSelector);
-  const currentChallengeId = yield select(currentChallengeIdSelector);
-  // TODO: should the server update take place on challenge completion instead?
-  if (isSignedIn && id !== currentChallengeId) {
-    store.set(CURRENT_CHALLENGE_KEY, id);
-    yield put(updateCurrentChallengeId(id));
-
+  if (isSignedIn) {
     const update = {
       endpoint: '/update-my-current-challenge',
       payload: {

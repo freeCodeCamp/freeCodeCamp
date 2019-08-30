@@ -9,8 +9,6 @@ import store from 'store';
 import { Map } from './Map';
 import mockNodes from '../../__mocks__/map-nodes';
 import mockIntroNodes from '../../__mocks__/intro-nodes';
-// eslint-disable-next-line max-len
-import { CURRENT_CHALLENGE_KEY } from '../../templates/Challenges/redux/current-challenge-saga';
 
 Enzyme.configure({ adapter: new Adapter() });
 const renderer = new ShallowRenderer();
@@ -47,7 +45,6 @@ describe('<Map/>', () => {
     });
     // 7 was chosen because it has a different superblock from the first node.
     const currentChallengeId = mockNodes[7].id;
-    const anotherId = mockNodes[2].id;
 
     it('should expand the block with the most recent challenge', () => {
       const blockSpy = jest.fn();
@@ -88,17 +85,7 @@ describe('<Map/>', () => {
 
     it('should use the currentChallengeId prop if it exists', () => {
       const props = { ...baseProps, currentChallengeId };
-      store.set(CURRENT_CHALLENGE_KEY, anotherId);
       const mapToRender = <Map {...props} />;
-      shallow(mapToRender);
-
-      expect(initializeSpy).toHaveBeenCalledTimes(1);
-      expect(initializeSpy).toHaveBeenCalledWith(currentChallengeId);
-    });
-
-    it('should use storage if the prop is not set', () => {
-      store.set(CURRENT_CHALLENGE_KEY, currentChallengeId);
-      const mapToRender = <Map {...baseProps} />;
       shallow(mapToRender);
 
       expect(initializeSpy).toHaveBeenCalledTimes(1);

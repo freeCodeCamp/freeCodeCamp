@@ -4,7 +4,6 @@ import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import uniq from 'lodash/uniq';
 import { createSelector } from 'reselect';
-import store from 'store';
 
 import SuperBlock from './components/SuperBlock';
 import Spacer from '../helpers/Spacer';
@@ -13,8 +12,6 @@ import './map.css';
 import { ChallengeNode } from '../../redux/propTypes';
 import { toggleSuperBlock, toggleBlock, isInitializedSelector } from './redux';
 import { currentChallengeIdSelector } from '../../redux';
-// eslint-disable-next-line max-len
-import { CURRENT_CHALLENGE_KEY } from '../../templates/Challenges/redux/current-challenge-saga';
 
 const propTypes = {
   currentChallengeId: PropTypes.string,
@@ -56,11 +53,8 @@ function mapDispatchToProps(dispatch) {
 
 export class Map extends Component {
   componentDidMount() {
-    const currentChallengeId =
-      this.props.currentChallengeId || store.get(CURRENT_CHALLENGE_KEY);
-
     if (!this.props.isInitialized)
-      this.initializeExpandedState(currentChallengeId);
+      this.initializeExpandedState(this.props.currentChallengeId);
   }
 
   initializeExpandedState(currentChallengeId) {
