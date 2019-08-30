@@ -2,37 +2,28 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Link from '../helpers/Link';
-import { footerLinks } from './footerLinks';
 
-import './footer.css';
-
-function FooterCol({ colNum, title }) {
-  // if the column number is not applicable return an empty div
-  if (colNum < 1 || colNum > footerLinks + 1) return <div></div>;
-
-  let linksRow = footerLinks[colNum - 1].map(function(item, i) {
-    if (item.interal)
-      return (
-        <Link key={i} to={item.to}>
-          {item.text}
-        </Link>
-      );
-    return (
-      <Link external={true} key={i} to={item.to}>
-        {item.text}
-      </Link>
-    );
-  });
+function FooterCol({ title, links }) {
   return (
-    <div className={`footer-col-${colNum}`}>
+    <div className='footer-col'>
       <div className='col-header'>{title}</div>
-      {linksRow}
+      {links.map(({ to, text, internal }, i) => (
+        <Link external={!internal} key={`link-${i}`} to={to}>
+          {text}
+        </Link>
+      ))}
     </div>
   );
 }
 
 const propTypes = {
-  colNum: PropTypes.number,
+  links: PropTypes.arrayOf(
+    PropTypes.shape({
+      to: PropTypes.string.isRequired,
+      text: PropTypes.string,
+      internal: PropTypes.bool
+    })
+  ).isRequired,
   title: PropTypes.string
 };
 

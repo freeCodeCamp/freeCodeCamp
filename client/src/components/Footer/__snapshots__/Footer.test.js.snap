@@ -31,7 +31,7 @@ exports[`<Footer /> renders to the DOM 1`] = `
         </p>
       </div>
       <div
-        className="footer-col-1"
+        className="footer-col"
       >
         <div
           className="col-header"
@@ -47,8 +47,6 @@ exports[`<Footer /> renders to the DOM 1`] = `
         </a>
         <a
           href="/donate"
-          rel="noopener noreferrer"
-          target="_blank"
         >
           Donate
         </a>
@@ -124,7 +122,7 @@ exports[`<Footer /> renders to the DOM 1`] = `
         </a>
       </div>
       <div
-        className="footer-col-2"
+        className="footer-col"
       >
         <div
           className="col-header"
@@ -217,7 +215,7 @@ exports[`<Footer /> renders to the DOM 1`] = `
         </a>
       </div>
       <div
-        className="footer-col-3"
+        className="footer-col"
       >
         <div
           className="col-header"
@@ -310,7 +308,7 @@ exports[`<Footer /> renders to the DOM 1`] = `
         </a>
       </div>
       <div
-        className="footer-col-4"
+        className="footer-col"
       >
         <div
           className="col-header"
