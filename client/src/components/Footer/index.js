@@ -2,8 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Link from '../helpers/Link';
-import FootCol from './FooterCol';
+import FooterCol from './FooterCol';
 
+import { footerLinks } from './footerLinks';
 import './footer.css';
 
 const propTypes = {
@@ -43,10 +44,13 @@ function Footer() {
               .
             </p>
           </div>
-          <FootCol colNum={1} title={'Our Nonprofit'} />
-          <FootCol colNum={2} title={'Best Tutorials'} />
-          <FootCol colNum={3} title={'Best Examples'} />
-          <FootCol colNum={4} title={'Trending Reference'} />
+          {footerLinks.map(({ title, links }, index) => (
+            <FooterCol
+              key={`footer-col-${index}`}
+              links={links}
+              title={title}
+            />
+          ))}
         </div>
       </div>
     </footer>
