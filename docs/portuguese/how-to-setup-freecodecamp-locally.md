@@ -1,15 +1,3 @@
-<table>
-    <tr>
-        <td> Read these guidelines in </td>
-        <td><a href="/CONTRIBUTING.md"> English </a></td>
-        <td><a href="/docs/chinese/CONTRIBUTING.md"> 中文 </a></td>
-        <td><a href="/docs/russian/CONTRIBUTING.md"> русский </a></td>
-        <td><a href="/docs/arabic/CONTRIBUTING.md"> عربي </a></td>
-        <td><a href="/docs/spanish/CONTRIBUTING.md"> Español </a></td>
-        <td><a href="/docs/portuguese/CONTRIBUTING.md"> Português </a></td>
-    </tr>
-</table>
-
 # Configurando freeCodeCamp localmente
 
 Siga estas instruções para configurar freeCodeCamp localmente em seu sistema. Isso é altamente recomendado se você quer contribuir regularmente.
@@ -18,9 +6,9 @@ Alguns _workflows_ de contribuição como pré-visualização de páginas para o
 
 ## Dê _Fork_ no repositório do GitHub
 
-['Dar _fork_'](https://help.github.com/articles/about-forks/) é obter sua própria cópia do repositório principal do _freeCodeCamp_ (a.k.a _repo_) no GitHub.
+['Dar _fork_'](https://help.github.com/articles/about-forks/) é obter sua própria cópia do repositório principal do _freeCodeCamp_ (também conhecido como _repo_) no GitHub.
 
-Isso é essencial, pois assim você pode trabalhar com sua cópia do freeCodeCamp no GitHub, ou baixá-la para trabalhar localmente. Depois, você poderá requisitar que suas mudanças sejam enviadas para o repositório principal via _pull request_.
+Isso é essencial, pois assim você pode trabalhar com sua cópia do freeCodeCamp no GitHub, ou baixá-la (_clone_)para trabalhar localmente. Depois, você poderá requisitar que suas mudanças sejam enviadas para o repositório principal via _pull request_.
 
 > **Dica:**
 > O repositório principal em `https://github.com/freeCodeCamp/freeCodeCamp` é comumente chamado de repositório `upstream`.
@@ -58,7 +46,7 @@ Uma vez que os pré-requisitos estão instalados, você precisa preparar seu amb
 
 ['Clonar'](https://help.github.com/articles/cloning-a-repository/) é **baixar** uma cópia de um repositório que pertence à você ou à outra pessoa, de um local remoto ou `remote` _location_. No seu caso, este local remoto é o seu `fork` repositório do freeCodeCamp, que deve estar disponível em `https://github.com/SEU_USUARIO/freeCodeCamp`.
 
-Rode os seguintes comandos em sua máquina:
+Execute os seguintes comandos em sua máquina:
 
 1. Abra o Terminal / Prompt de Comando / Bash Shell em seu diretório de projetos
 
@@ -72,11 +60,13 @@ Rode os seguintes comandos em sua máquina:
 
 Isso irá baixar o repositório do freeCodeCamp integralmente em seu diretório de projetos.
 
+Nota: `--depth=1` cria um clone "raso" do seu fork, baixando apenas o histórico/_commit_ mais recente.
+
 ## Configure um `upstream` para o repositório principal
 
 Agora que você já baixou uma cópia do seu _fork_, você precisará configurar um `upstream`.
 
-Como foi mencionado anteriormente, o repositório principal `https://github.com/freeCodeCamp/freeCodeCamp` é comumente chamado de repositório `upstream`. Seu _fork_ em `https://github.com/SEU_USUARIO/freeCodeCamp` é comument chamado de repositório `origin`.
+Como foi mencionado anteriormente, o repositório principal `https://github.com/freeCodeCamp/freeCodeCamp` é geralmente chamado de repositório `upstream`. Seu _fork_ em `https://github.com/SEU_USUARIO/freeCodeCamp` é geralmente chamado de repositório `origin`.
 
 Você precisa apontar sua cópia local para o `upstream` alem de apontar para `origin`. Isso acontece para que você possa sincronizar com mudanças do repositório principal. Dessa forma, você não precisa pelo processo de _fork_ e _clone_ várias vezes.
 
@@ -121,22 +111,49 @@ Você pode pular a parte de rodar o freeCodeCamp localmente se você está apena
 
 ### Instalando os pré-requisitos
 
-Comece instalando esses _softwares_.
+Existem dois métodos atualmente para rodar o freeCodeCamp localmente:
+- Docker (recomendado) 
+- Local
 
-| Pré-requisito                                                                                 | Versão | Comentários                                                                                                                                                                                                        |
-| --------------------------------------------------------------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) | `3.6`  | [Notas de atualização](https://docs.mongodb.com/manual/release-notes/), Obs: Estamos atualmente na versão `3.6`, uma [nova atualização está planejada](https://github.com/freeCodeCamp/freeCodeCamp/issues/18275). |
-| [Node.js](http://nodejs.org)                                                                  | `8.x`  | [LTS Schedule](https://github.com/nodejs/Release#release-schedule)                                                                                                                                                 |
-| npm (vem junto com o Node)                                                                    | `6.x`  | Não possui uma versão LTS, usamos a versão que vêm com o Node LTS                                                                                                                                                  |
+Você deve seguir **um** dos métodos abaixo.
+
+A utilização do Docker vai, idealmente, resultar em menos erros durante o processo de instalação e tem como objetivo a melhor experiência de desenvolvimento. Usamos o Docker para instalar e rodar os softwares de dependência adicionais "por trás dos panos". Isso descomplica as coisas e torna a experiência consistente dentre a maioria dos tipos de aparelhos e OS.
+
+Se você tiver problemas com um método, tente utilizar o outro. Se você encontrar problemas com qualquer um dos métodos, tente primeiro realizar uma busca pelo seu problema e ver se ela já foi respondida. Se você não conseguir encontrar uma solução, por favor busque em nosso GitHub na aba [issues] por uma solução e reporte o erro se ele ainda não estiver sido reportado.
+
+E, como sempre, sinta-se livre para dar um pulo no nosso [Chat de Contribuidores(https://gitter.im/FreeCodeCamp/Contributors) para dúvidas pequenas.
+
+### Instalando os pré-requisitos
+
+Comece instalando esses softwares que são pré-requisitos:
+
+Softwares necessários tanto para a execução com Docker quanto para a execução Local:
+
+| Pré-requisito | Versão | Notas |
+| ------------ | ------- | ----- |
+| [Node.js](http://nodejs.org)| `10.x`  | [LTS Schedule](https://github.com/nodejs/Release#release-schedule) |
+| npm (instalado junto do Node)| `6.x`   | Não possui uma versão _LTS_. Utilizandos a versão que vem juntamente com o Node LTS|
+
+**Pré-requisitos adicionais para utilizar o Docker:**
+
+| Pré-requisito | Versão | Notas |
+| ------------ | ------- | ----- |
+| [Docker CE](https://docs.docker.com/install/) | `Stable (estável)` | - |
+| [Docker Compose](https://docs.docker.com/compose/install/) | `Stable (estável)` | Deve ser instalado separadamente caso você não esteja utilizando o macOS ou o Windows |
+
+**Pré-requisitos adicionais para utilizar a Build Local:**
+
+| Pré-requisito | Versão | Notas |
+| ------------ | ------- | ----- |
+| [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) | `3.6`   | [Release Notes](https://docs.mongodb.com/manual/release-notes/), Nota: Nós estamos atualmente na versão `3.6` e [planejamos realizar uma atualização](https://github.com/freeCodeCamp/freeCodeCamp/issues/18275). |
 
 **Importante:**
 
 Recomendamos fortemente atualizar para as versões estáveis mais recentes, ou seja, as versões _LTS_ mencionadas acima. (_LTS_ significa _Long Term Service_ ou _Suporte à longo prazo_)
-Se o Node.js or MongoDB já estiverem instaladas em sua máquina, rode os seguintes comando para verificar as versões:
+Se o Node.js já estiver instalado em sua máquina, rode os seguintes comando para verificar as versões:
 
 ```shell
 node -v
-mongo --version
 npm -v
 ```
 
@@ -146,20 +163,14 @@ npm -v
 
 Normalmente, desenvolvemos utilizando sistemas operacionais mais populares e atualizados como o macOS 10.12 ou posterior, Ubuntu 16.04 ou posterior e Windows 10. É recomendado que você verifique seu problema específico em fontes como: Google, Stack Overflow ou Stack Exchange. Há chances de que haja alguém que já enfrentou o mesmo problema que o seu e que exista uma resposta pronta para o que você precisa.
 
-Se você usa um sistema operacional diferente e/ou ainda está com problemas, vá para a [_contributors community_ no nosso fórum público](https://www.freeCodeCamp.org/c/contributors) ou o [Chat de Contribuidores](https://gitter.im/freeCodeCamp/Contributors). Podemos te ajudar a solucionar seu problema.
+Se você utiliza um SO diferente e/ou ainda está encontrando problemas, fale com a [comunidade de contribuidores no nosso fórum público](https://www.freeCodeCamp.org/forum/c/contributors) ou no [Chat de Contribuidores](https://gitter.im/freeCodeCamp/Contributors).
 
-Não podemos prover suporte no GitHub, pois problemas de instalação de _software_ estão além do escopo deste projeto.
+**Por favor evite criar _issues_ no GitHub para problemas de pré-requisito. Eles estão fora do escopo desse projeto.**
 
-### Instalando dependências
+### Configurando as dependências
 
-Comece instalando as dependência necessárias para que a aplicação rode.
-
-```shell
-# Instala dependências NPM
-npm install
-```
-
-Depois você precisará adicionar as variáveis de ambiente privadas (_API Keys_)
+#### Passo 1: Configurar o arquivo de variábel de ambiente
+As chaves de API e variáveis de ambiente padrões são armazenadas no arquivo `sample.env`. Esse arquivo precisa ser copiado para um novo arquivo chamado `.env` que é acesso dinamicamente durante o processo de instalação. 
 
 ```shell
 # Crie uma cópia de "sample.env" e chame-a de ".env".
@@ -172,69 +183,92 @@ cp sample.env .env
 copy sample.env .env
 ```
 
-As chaves não precisam ser alteradas para rodar a aplicação localmente. Você pode deixar os valores padrão de `sample.env` como estão.
+As chaves não precisam ser alteradas para rodar a aplicação localmente. Você pode deixar os valores padrão copiados de `sample.env` como estão.
 
-`MONGOHQ_URL` é a mais importante. A não ser que você tenha o MongoDB rodando em uma configuração diferente da padrão, a URL em `sample.env` deve funcionar normalmente.
+Tenha em mente que se você quiser utilizar serviços adicionais, você precisará adquirir suas chaves de API próprias para esses serviços e editar adequadamente as entradas no arquivo `.env`.
 
-Você pode deixar as outras chaves como estão. Tenha em mente que se você quiser usar mais serviços, você precisará obter suas próprias chaves e editá-las no arquivo `.env`.
+**Para utilizar a Build do Docker:** Se você está utilizando o Docker e a instalação do Docker te instruiu a utilizar a Docker Toolbox (aplicável a versões antigas do macOS e do Windows), você precisa mudar a variável `DOCKER_HOST_LOCATION` no seu arquivo `.env` para o output do comando `docker-machine ip`. Se você utilizar qualquer versão do Linux suportada pelo Docker ou se você utiliza o Docker Desktop (novas versões do macOS e Windows 10) você pode deixar a variável `DOCKER_HOST_LOCATION` em seu valor padrão.
 
-Agora vamos "linkar" vários serviços como o _api-server_, o _client UI application_, etc. Você [aprender mais sobre esses serviços neste guia](#).
+#### Step 2: Instalando as dependências
 
-Esses serviços são semi-independentes. Significa que, em produção, o _deploy_ é feito em locais diferentes, mas estão todos disponíveis para você quando o projeto está sendo rodado localmente.
+Esse passo instalará as dependências necessárias para que a aplicação rode:
 
-> Nota do Tradutor: neste trecho, é utilizado o termo _bootstrap_. Este termo foi substituído por _linkar_, já que não achei uma forma melhor para o termo.
-
+**Utilizando a Build do Docker:**
 ```shell
-# Bootstrap ou linkar todos os projetos deste repositório
-npm run bootstrap
+npm run docker:init
+npm run docker:install
+npm run docker:seed
 ```
 
-### Inicie o MongoDB
+Cada um dos comandos acima demandará um tempo até terminarem. Você deverá esperar que cada comando complete sua execução antes de executar o próximo.
 
-Você precisará iniciar o MongoDB, antes que a aplicação possa rodar:
-
-Inicie o servidor do MongoDB em um terminal separado:
-
-- Em macOS & Ubuntu:
-
-  ```shell
-  mongod
-  ```
-
-- No Windows, você precisa especificar o caminho completo para o binário `mongod`
-
-  Certifique-se de trocar `3.6` pela versão que você tem instalada.
-
-  ```shell
-  "C:\Program Files\MongoDB\Server\3.6\bin\mongod"
-  ```
-
-> Dica:
-> Você pode evitar de ter que iniciar o MongoDB toda hora instalando-o como um _background service_.
-> Você pode [aprender mais sobre isso na documentação sobre seu respectivo sistema operacional](https://docs.mongodb.com/manual/administration/install-community/)
-
-### _Seed_: popule o banco de dados
-
-Agora, vamos popular o banco de dados. Neste passo, vamos rodar o comando abaixo que
-irá preencher o servidor MongoDB com alguns _data-sets_ iniciais que são necessários para outros serviços. Isso inclui alguns _schemas_, dentre outras coisas.
-
-> Nota do Tradutor: nesta seção, é utilizado o termo _seed_. Quando se trata de banco de dados, _seed_ ou semente é um conjunto de configurações iniciais criadas para popular o banco de dados. Isso pode incluir entidades, relacionamentos e um conjunto de dados inicial. Então, o verbo _to seed_ foi substituído por "popular o banco de dados".
+Você também precisará instalar alguns pacotes do npm fora do Docker. Você pode pular esse passo se você está apenas rodando o aplicativo localmente e não irá utilizar o git.
 
 ```shell
+npm ci
+```
+
+Todos os comandos acima devem ser executados apenas na primeira vez que você prepara o seu ambiente de desenvolvimento local.
+
+
+**Utilizando a Build Local:**
+
+```sh
+# Instale as dependências NPM
+npm ci
+```
+
+#### Passo 3: Iniciar o MongoDB e popular o banco de dados (Build Local apenas)
+
+Esse passo se aplica somente a Buid Local; se você esta utilizando a build do Docker por favor pule para o passo 4.
+
+A não ser que você tenha o MongoDB rodando em uma configuração diferente da original, a URL armazenada como valor na variável `MONGOHQ_URL` no arquivo `.env` deve funcionar. Se você estiver utilizando uma configuração customizada, modifique esse valor conforme for necessário.
+
+Antes de executar a aplicação localmente, você precisa iniciar o serviço do MongoDB:
+
+Inicie o servidor do MongoDB em um prompt de comando separado:
+- No macOS e Ubuntu:
+
+    ```sh
+    mongod
+    ```
+
+- No Windows você deve especificar o caminho completo para o arquivo binário do `mongodb`
+
+    ```sh
+    "C:\Program Files\MongoDB\Server\3.6\bin\mongod"
+    ```
+
+    Por favor substitua o `3.6` com a versão que você possui.
+
+> Dica:
+> Você pode evitar ter que iniciar o MongoDB todas as vezes ao instalá-lo como um serviço de background.
+> Você pode [aprender mais sobre isso na documentação do MongoDB para o seu SO](https://docs.mongodb.com/manual/administration/install-community/)
+
+Agora vamos popular o banco de dados. Nesse passo, executamos o comando abaixo que preenche o servidor do MongoDB com dados iniciais que são necessários para os serviços. Isso inclui alguns _schemas_, dentre outras coisas.
+
+```sh
 npm run seed
 ```
 
-### Inicie o _freeCodeCamp client application_ e a _API server_
+
+### Passo 4: Inicie o _freeCodeCamp client application_ e a _API server_
 
 Agora você pode iniciar o servidor da API e a aplicação cliente.
 
+**Build do Docker:**
 ```shell
+npm run docker:develop
+```
+
+**Build Local:**
+```sh
 npm run develop
 ```
 
 Este único comando irá iniciar todos os serviços, incluindo a API e o cliente disponíveis para você trabalhar.
 
-Agora abra um _browser_ e visite <http://localhost:8000>. Se a aplicação carregar, parabéns! – _you're all set_.
+Agora abra um _browser_ e visite <http://localhost:8000>. Se a aplicação carregar, parabéns – você está pronto pra começar!
 
 > Dica:
 >
@@ -243,17 +277,27 @@ Agora abra um _browser_ e visite <http://localhost:8000>. Se a aplicação carre
 
 O que significa que, se você visitar <http://localhost:3000/explorer> você deveria ver quais APIs temos.
 
-Parabéns 🎉! Agora você tem uma cópia da plataforma de aprendizado do freeCodeCamp completinha e rodando na sua máquina local.
+Parabéns 🎉🎉🎉! Agora você tem uma cópia da plataforma de aprendizado do freeCodeCamp completinha e rodando na sua máquina local.
+
+## Como logar quando trabalhando localmente
+
+O seu _setup_ local automaticamente preenche o banco de dados com um usuário local. Ao clicar no botão `Sign In` (logar) você será automaticamente autenticado na aplicação local.
+
+Entretanto, acessar a página de portólio do usuário é um pouco trabalhoso. Durante o desenvolvimento o Gatsby assume o serviço das páginas do lado do cliente e então você verá uma página `404` para o portólio do usuário quando trabalhando localmente.
+
+Clicar no botão `Previw Custom 404 Page` (ver a prévia da página 404 customizada) irá te encaminhar para a página correta.
+
+![Imagem - Como logar quando trabalhando localmente](https://user-images.githubusercontent.com/1884376/52650951-48922e80-2f11-11e9-9eee-360a25ad28ad.gif)
 
 ## Breve referência de comandos para trabalhar localmente
 
-[Aqui está uma breve referência](/docs/README.md) de uma lista de comandos que você pode precisar quando estiver rodando localmente:
+[Aqui está uma breve lista](/docs/portuguese/CONTRIBUTING.md) de comandos que você pode precisar quando estiver rodando localmente:
 
 ## Fazer alterações locais ao seu clone de freeCodeCamp
 
 > Nota do Tradutor: esta seção utiliza vários termos relacionados ao Git em geral, que não foram traduzidos. Por exemplo: _master, origin, branch, fork, rebase, upstream_.
 
-Assim, você pode alterar arquivos e "commitar" suas mudanças.
+Você agora pode fazer alterações nos arquivos e fazer commit das suas modificações do clone local do seu fork.
 
 Siga estes passos:
 
@@ -278,19 +322,36 @@ Siga estes passos:
    git checkout master
    ```
 
-2. Depois, você deve dar `rebase` da `upstream`.
+2. Sincronize as últimas modificações da upstream `master` branch do freeCodeCamp para sua local master branch
+
+	**Nota**: Se você possui qualquer Pull Request que você fez a partir da `master` branch do seu fork, você provavelmente irá perdê-la ao final desse passo. Garanta que seu pull request foi _merged_ por um moderador antes de fazer esse passo. Para evitar esse cenário, você sempre deve trabalhar em uma branch separada da master.
 
    Este passo **irá sincronizar as últimas alterações** do repositório principal do freeCodeCamp. É importante que você dê _rebase_ frequetemente, para evitar conflitos posteriores.
 
-   ```shell
-   git pull --rebase upstream master
-   ```
+   Atualize sua cópia local do repositório upstream do freeCodeCamp:
+    ```sh
+    git fetch upstream
+    ```
 
-   Opcionalmente, você pode dar _push_ na _branch_ de volta à _origin_, para que você um histórica limpo em seu _fork_ no GitHub.
+    Faça hard reset da sua master branch com a master do freeCodeCamp: 
 
-   ```shell
-   git push origin master --force
-   ```
+    ```sh
+    git reset --hard upstream/master
+    ```
+
+    Faça um push da sua master branch para a sua origin para possuir um histórico limpo do seu fork no GitHub:
+
+    ```sh
+    git push origin master --force
+    ```
+
+    Você pode validar se seu master atual bate com a upstream/master performando um comando diff:
+
+    ```sh
+    git diff upstream/master
+    ```
+
+    O resultado do outpud deve estar vazio.
 
 3. Agora, você deve criar uma nova _branch_
 
@@ -302,7 +363,7 @@ Siga estes passos:
    git checkout -b fix/update-guide-for-xyz
    ```
 
-   O nome da sua _branch_ deve começar com `fix/`, `feat/`, etc. Evite usar números de _issue_ em _branches_. Os nomes de _branches_ devem ser curtos, significativos e únicos.
+   O nome da sua _branch_ deve começar com `fix/`, `feat/`, `docs/`, etc. Evite usar números de _issue_ em _branches_. Os nomes de _branches_ devem ser curtos, significativos e únicos.
 
    Alguns bons nomes de _branch_ são:
 
@@ -318,7 +379,7 @@ Siga estes passos:
 
 5. Uma vez que você está feliz com suas alterações, você deve (opcionalmente) rodar o freeCodeCamp localmente para verificar suas mudanças.
 
-6. Certifique-se de corrigir quaisquer erros, e verifique a formatação de suas mudanças. Nós temos um _style guide_ para os Guias e Desafios de Código.
+6. Certifique-se de corrigir quaisquer erros, e verifique a formatação de suas mudanças. Nós temos um _style guide_ para os Guias e Desafios de Código na seção de [documentos](/docs/).
 
 7. Agora, verifique e confirme os arquivos que você quer atualizar
 
@@ -345,7 +406,7 @@ Siga estes passos:
 
 8. Adicione suas mudanças à _staging area_ e faça um _commit_.
 
-   Este passo deve mostrar apenas os arquivos que você alterou ou adicionou. Você pode dar um _reset_, e retornar ao estado original arquivos que você não pretendia alterar.
+   Este passo deve mostrar apenas os arquivos que você alterou ou adicionou. Você pode dar um _reset_, e retornar arquivos que você não pretendia alterar ao estado original .
 
    ```shell
    git add path/to/my/changed/file.ext
@@ -430,52 +491,41 @@ Siga estes passos:
 
    ![Imagem - Notificação "Compare & pull request" no GitHub](/docs/images/github/compare-pull-request-prompt.png)
 
-2. Por padrão, todas as _pull requests_ devem se referir ao repositório principal do freeCodeCamp, `master` branch.
-
-   Ceritifique-se que o _Base Fork_ está apontando para freeCodeCamp/freeCodeCamp ao crair uma _Pull Request_.\*\*
-
-   ![Imagem - Comparando "forks" ao fazer uma "pull request"](/docs/images/github/comparing-forks-for-pull-request.png)
-
-3. Envie a _pull request_ da sua _branch_ para a _branch_ `master` do freeCodeCamp.
-
-4. No corpo do seu PR inclua um sumário detalhando quais mudanças você fez e por que.
-
-   - Será apresentado a você um _template_ de _pull request_. É um checklist de coisas que você deveria ter feito antes de abrir um _pull request_.
-
-   - Preencha com detalhes como lhe convir. Essa informação será revisada e então será decidido se seu _pull request_ será aceito ou não.
-
-   - Se o PR foi criado para corrigir um problema ou _bug_ existente então, ao fim da descrição da _pull request_, adicione a _keyword_ `closes` e #xxxx (onde xxxx
-     é o número da _issue_). Exemplo: `closes #1337`. Isso informa ao GitHub para fechar automaticamente a _issue_ existente, se o PR for _accepted and merged_.
-
-5. Indique se você testou numa cópia local do site ou não.
-
-   Isso é muito importante quando você está fazendo alterações que não são copiar/editar arquivos Markdown. Por exemplo, mudanças de CSS ou código JavaScript, etc.
-
-## Tenha seu PR aceito
 
 ## Obtendo ajuda
 
-Se você está com dificuldades e precisa de ajuda, deixa-nos saber ao perguntar na [categoria 'Contributors' em nosso fórum](https://www.freecodecamp.org/forum/c/contributors) ou o [Chat de Contribuidores](https://gitter.im/FreeCodeCamp/Contributors) no Gitter.
+Se você está com dificuldades e precisa de ajuda, deixa-nos saber ao perguntar na [categoria 'Contributors' em nosso fórum](https://www.freecodecamp.org/forum/c/contributors) ou no [Chat de Contribuidores](https://gitter.im/FreeCodeCamp/Contributors) no Gitter.
 
-Deve haver um erro no console do seu _browser_ ou no Bash / Terminal / Linha de Comando que pode ajudar a identificar o problema.
+Deve haver um erro no console do seu _browser_ ou no Bash / Terminal / Linha de Comando que pode ajudar a identificar o problema. Coloque essa mensagem na sua descrição do problema para que outras pessoas possam identificar o problema mais facilmente e te ajudar a encontrar uma solução.
 
 ### _Troubleshooting_: solucionando problemas
 
-Se sua aplicação roda, mas você está encontrando problemas com a interface em si, por exemplo, se as fontes não estão carregando ou se o editor de código não está aparecendo apropriadamente, você pode tentar os seguintes passos ao menos uma vez:
+Se sua aplicação roda, mas você está encontrando problemas com a interface em si, por exemplo, se as fontes não estão carregando ou se o editor de código não está aparecendo apropriadamente, veja os passos a seguir dependendo do seu setup local:
 
-```shell
-# Remove todos os node modules instalados
-rm -rf node_modules ./**/node_modules
+**Build do Docker:**
 
-# Reinstala os pacotes NPM
-npm install
+```sh
+# Utilizamos um mono repo e temos diferentes componentes (server, client, tools, plugins, etc.)
+# Use esse comando para limpar todas as dependências em todos os componentes
+npm run docker:clean
 
-# Bootstrap, "linka" todos os projetos
-npm run bootstrap
+# Reinstale os pacotes npm
+npm run docker:install
 
-# Seed, popula o banco de dados
+# Popule o banco de dados
+npm run docker:seed
+
+# Reinicie a aplicação
+npm run docker:develop
+```
+
+**Build Local:**
+```sh
+npm run clean
+npm ci
 npm run seed
-
-# Reinicia a aplicação
 npm run develop
 ```
+Se você não consegue logar, e, ao invés disso, receber um banner com uma mensagem de erro dizendo que isso será reportado ao freeCodeCamp, por favor verifique novamente que sua local port 3000 não é utilizada por um programa diferente.
+
+Se você obter erros durante a instalação das dependências, por favor tenha certeza de que você não está em uma rede restrita ou que suas configurações de firewall não estão te impedindo de acessar os recursos. Uma solução seria utilizar um serviço de VPN se possível e se for permitido no seu ambiente. 
