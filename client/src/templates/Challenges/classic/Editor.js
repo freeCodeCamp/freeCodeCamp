@@ -1,12 +1,13 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component, Suspense } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import MonacoEditor from 'react-monaco-editor';
+import { createSelector } from 'reselect';
 
 import { executeChallenge, updateFile } from '../redux';
 import { userSelector } from '../../../redux';
-import { createSelector } from 'reselect';
+
+const MonacoEditor = React.lazy(() => import('react-monaco-editor'));
 
 const propTypes = {
   contents: PropTypes.string,
@@ -45,7 +46,7 @@ const defineMonacoThemes = monaco => {
     return;
   }
   monacoThemesDefined = true;
-  const yellowCollor = 'FFFF00';
+  const yellowColor = 'FFFF00';
   const lightBlueColor = '9CDCFE';
   const darkBlueColor = '00107E';
   monaco.editor.defineTheme('vs-dark-custom', {
@@ -56,9 +57,9 @@ const defineMonacoThemes = monaco => {
     },
     rules: [
       { token: 'delimiter.js', foreground: lightBlueColor },
-      { token: 'delimiter.parenthesis.js', foreground: yellowCollor },
-      { token: 'delimiter.array.js', foreground: yellowCollor },
-      { token: 'delimiter.bracket.js', foreground: yellowCollor }
+      { token: 'delimiter.parenthesis.js', foreground: yellowColor },
+      { token: 'delimiter.array.js', foreground: yellowColor },
+      { token: 'delimiter.bracket.js', foreground: yellowColor }
     ]
   });
   monaco.editor.defineTheme('vs-custom', {
@@ -129,8 +130,7 @@ class Editor extends Component {
     const { contents, ext, theme, fileKey } = this.props;
     const editorTheme = theme === 'night' ? 'vs-dark-custom' : 'vs-custom';
     return (
-      <Fragment>
-        <base href='/' />
+      <Suspense fallback={<div />}>
         <MonacoEditor
           editorDidMount={this.editorDidMount}
           editorWillMount={this.editorWillMount}
@@ -141,7 +141,7 @@ class Editor extends Component {
           theme={editorTheme}
           value={contents}
         />
-      </Fragment>
+      </Suspense>
     );
   }
 }
