@@ -28,6 +28,7 @@ export const defaultFetchState = {
 const initialState = {
   appUsername: '',
   completionCount: 0,
+  currentChallengeId: null,
   donationRequested: false,
   showCert: {},
   showCertFetchState: {
@@ -128,8 +129,7 @@ export const updateCurrentChallengeId = createAction(
 export const completedChallengesSelector = state =>
   userSelector(state).completedChallenges || [];
 export const completionCountSelector = state => state[ns].completionCount;
-export const currentChallengeIdSelector = state =>
-  userSelector(state).currentChallengeId || '';
+export const currentChallengeIdSelector = state => state[ns].currentChallengeId;
 export const donationRequestedSelector = state => state[ns].donationRequested;
 
 export const isOnlineSelector = state => state[ns].isOnline;
@@ -212,6 +212,7 @@ export const reducer = handleActions(
         [username]: { ...user, sessionUser: true }
       },
       appUsername: username,
+      currentChallengeId: user.currentChallengeId,
       userFetchState: {
         pending: false,
         complete: true,
@@ -329,19 +330,10 @@ export const reducer = handleActions(
         }
       };
     },
-    [types.updateCurrentChallengeId]: (state, { payload }) => {
-      const { appUsername } = state;
-      return {
-        ...state,
-        user: {
-          ...state.user,
-          [appUsername]: {
-            ...state.user[appUsername],
-            currentChallengeId: payload
-          }
-        }
-      };
-    },
+    [types.updateCurrentChallengeId]: (state, { payload }) => ({
+      ...state,
+      currentChallengeId: payload
+    }),
     [settingsTypes.updateLegacyCertComplete]: (state, { payload }) => {
       const { appUsername } = state;
       return {

@@ -20,7 +20,7 @@ import { updateSuccessMessage } from './';
 
 export const CURRENT_CHALLENGE_KEY = 'currentChallengeId';
 
-export function* currentChallengeSaga({ payload: { id } }) {
+export function* currentChallengeSaga({ payload: id }) {
   const isSignedIn = yield select(isSignedInSelector);
   const currentChallengeId = yield select(currentChallengeIdSelector);
   // TODO: should the server update take place on challenge completion instead?
