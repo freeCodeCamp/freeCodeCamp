@@ -40,7 +40,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Open your browser console
+// Open your browser console.
 let output = "Get this to log once in the browser console and twice in the freeCodeCamp console";
 // Use console.clear() on the next line to clear the browser console.
 
