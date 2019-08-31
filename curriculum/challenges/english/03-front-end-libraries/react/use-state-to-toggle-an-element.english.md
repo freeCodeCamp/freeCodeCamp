@@ -49,6 +49,8 @@ tests:
     testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const first = () => { mockedComponent.setState({ visibility: false }); return waitForIt(() => mockedComponent.state(''visibility'')); }; const second = () => { mockedComponent.find(''button'').simulate(''click''); return waitForIt(() => mockedComponent.state(''visibility'')); }; const third = () => { mockedComponent.find(''button'').simulate(''click''); return waitForIt(() => mockedComponent.state(''visibility'')); }; const firstValue = await first(); const secondValue = await second(); const thirdValue = await third(); assert(!firstValue && secondValue && !thirdValue); }; '
   - text: An anonymous function should be passed to <code>setState</code>.
     testString: const paramRegex = '[a-zA-Z$_]\\w*(,[a-zA-Z$_]\\w*)?'; const noSpaces = code.replace(/\s/g, ''); assert(new RegExp('this\\.setState\\((function\\(' + paramRegex + '\\){|([a-zA-Z$_]\\w*|\\(' + paramRegex + '\\))=>)').test(noSpaces));
+  - text: <code>this</code> should not be used inside <code>setState</code>
+    testString: assert(!/this\.setState\([^}]*this/.test(code));
 
 ```
 
