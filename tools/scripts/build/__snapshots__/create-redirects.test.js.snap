@@ -13,6 +13,8 @@ exports[`createRedirects matches the snapshot 1`] = `
 /about                                        https://news.example.com/about 200
 /academic-honesty                             https://news.example.com/academic-honesty 200
 /code-of-conduct                              https://news.example.com/code-of-conduct 200
+/copyright                                    https://news.example.com/copyright-policy 200
+/copyright-policy                             https://news.example.com/copyright-policy 200
 /privacy                                      https://news.example.com/privacy-policy 200
 /privacy-policy                               https://news.example.com/privacy-policy 200
 /sponsors                                     https://news.example.com/sponsors 200
@@ -41,9 +43,9 @@ exports[`createRedirects matches the snapshot 1`] = `
 /:username/back-end-certification             /certification/:username/legacy-back-end 301
 /:username/full-stack-certification           /certification/:username/full-stack 301
 
-# unsunscribe redirects
+# unsubscribe redirects
 /u/*                                          https://api.example.com/u/:splat 200
-/unsunscribe/*                                https://api.example.com/unsunscribe/:splat 200
+/unsubscribe/*                                https://api.example.com/unsubscribe/:splat 200
 /ue/*                                         https://api.example.com/ue/:splat 200
 
 # misc redirects

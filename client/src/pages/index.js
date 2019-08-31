@@ -30,8 +30,7 @@ const IndexPage = () => (
     <Helmet>
       <title>Learn to code | freeCodeCamp.org</title>
     </Helmet>
-    <Spacer />
-    <Spacer />
+    <Spacer size={2} />
     <Grid className='text-center'>
       <Row>
         <h1 className='big-heading'>Learn to code for free.</h1>
@@ -81,8 +80,7 @@ const IndexPage = () => (
           <p className='large-p'>Get experience by coding for nonprofits.</p>
         </Col>
       </Row>
-      <Spacer />
-      <Spacer />
+      <Spacer size={2} />
       <BigCallToAction />
       <Spacer />
       <h2>As featured in:</h2>
@@ -234,8 +232,7 @@ const IndexPage = () => (
       </p>
       <Spacer />
       <BigCallToAction />
-      <Spacer />
-      <Spacer />
+      <Spacer size={2} />
     </Grid>
   </Fragment>
 );

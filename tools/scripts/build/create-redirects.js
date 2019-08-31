@@ -34,6 +34,8 @@ const template = `
 /about                                        #{{NEWS}}/about 200
 /academic-honesty                             #{{NEWS}}/academic-honesty 200
 /code-of-conduct                              #{{NEWS}}/code-of-conduct 200
+/copyright                                    #{{NEWS}}/copyright-policy 200
+/copyright-policy                             #{{NEWS}}/copyright-policy 200
 /privacy                                      #{{NEWS}}/privacy-policy 200
 /privacy-policy                               #{{NEWS}}/privacy-policy 200
 /sponsors                                     #{{NEWS}}/sponsors 200
@@ -62,9 +64,9 @@ const template = `
 /:username/back-end-certification             /certification/:username/legacy-back-end 301
 /:username/full-stack-certification           /certification/:username/full-stack 301
 
-# unsunscribe redirects
+# unsubscribe redirects
 /u/*                                          #{{API}}/u/:splat 200
-/unsunscribe/*                                #{{API}}/unsunscribe/:splat 200
+/unsubscribe/*                                #{{API}}/unsubscribe/:splat 200
 /ue/*                                         #{{API}}/ue/:splat 200
 
 # misc redirects

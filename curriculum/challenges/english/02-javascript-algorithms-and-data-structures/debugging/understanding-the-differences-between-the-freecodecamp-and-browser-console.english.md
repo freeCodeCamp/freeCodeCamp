@@ -7,18 +7,17 @@ forumTopicId: 301193
 
 ## Description
 <section id='description'>
-You may have noticed that some freeCodeCamp JavaScript challenges include their own console.  This console behaves a little differently than the browser console you used in the last challenge.
-The following challenge is meant to highlight some of the differences between the freeCodeCamp console and the browser console.
-First, the browser console.  When you load and run an ordinary JavaScript file in your browser the <code>console.log()</code> statements will print exactly what you tell them to print to the browser console the exact number of times you requested. In your in-browser text editor the process is slightly different and can be confusing at first.
-Values passed to <code>console.log()</code> in the text editor block run each set of tests as well as one more time for any function calls that you have in your code.
-This lends itself to some interesting behavior and might trip you up in the beginning, because a logged value that you expect to see only once may print out many more times depending on the number of tests and the values being passed to those tests.
-If you would like to see only your single output and not have to worry about running through the test cycles, you can use <code>console.clear()</code>.
+You may have noticed that some freeCodeCamp JavaScript challenges include their own console. This console behaves a little differently than the browser console you used in the last challenge.
+The following challenge is meant to highlight the main difference between the freeCodeCamp console and your browser console.
+When you run ordinary JavaScript, the browsers console will display your <code>console.log()</code> statements the exact number of times you requested.
+The freeCodeCamp console will print your <code>console.log()</code> statements for each test of that challenge, as well as one more time for any function calls that you have in your code.
+This lends itself to some interesting behavior and might trip you up in the beginning, because a logged value that you expect to see only once may print out many more times.
+If you would like to see only your single output and not have to worry about running through the test cycles, you can use <code>console.clear()</code> and check the browsers console.
 </section>
 
 ## Instructions
 <section id='instructions'>
-Use <code>console.log()</code> to print the variables in the code where indicated.
-
+First, use <code>console.clear()</code> to clear the browser console. After that, use <code>console.log</code> to log the <code>output</code> variable.
 </section>
 
 ## Tests
@@ -26,12 +25,10 @@ Use <code>console.log()</code> to print the variables in the code where indicate
 
 ```yml
 tests:
-  - text: Use <code>console.log()</code> to print the <code>outputTwo</code> variable.  In your Browser Console this should print out the value of the variable two times.
-    testString: assert(code.match(/console\.log\(outputTwo\)/g));
-  - text: Use <code>console.log()</code> to print the <code>outputOne</code> variable.
-    testString: assert(code.match(/console\.log\(outputOne\)/g));
-  - text: Use <code>console.clear()</code> to modify your output so that <code>outputOne</code> variable only outputs once.
-    testString: assert(code.match(/^(\s*console.clear\(\);?\s*)$/gm));
+  - text: Use <code>console.clear()</code> to clear the browser console.
+    testString: const removeJSComments = code.replace(/\/\*[\s\S]*?\*\/|\/\/.*$/gm, ''); const noSpaces = removeJSComments.replace(/\s/g, ''); assert(noSpaces.match(/console.clear\(\)/));
+  - text: Use <code>console.log()</code> to print the <code>output</code> variable.
+    testString: const noSpaces = code.replace(/\s/g, ''); assert(noSpaces.match(/console\.log\(output\)/));
 
 ```
 
@@ -43,18 +40,15 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Open your browser console
-let outputTwo = "This will print to the browser console 2 times";
-// Use console.log() to print the outputTwo variable
+// Open your browser console.
+let output = "Get this to log once in the browser console and twice in the freeCodeCamp console";
+// Use console.clear() on the next line to clear the browser console.
 
 
-let outputOne = "Try to get this to log only once to the browser console";
-// Use console.clear() in the next line to print the outputOne only once
+// Use console.log() to print the output variable.
 
 
-// Use console.log() to print the outputOne variable
-
-
+// Check the two consoles to see the difference. The freeCodeCamp console should have printed the variable twice, once for each test of this challenge. The browser console should only print the variable once because you cleared it first.
 ```
 
 </div>
@@ -68,9 +62,15 @@ let outputOne = "Try to get this to log only once to the browser console";
 
 
 ```js
-let outputTwo = "This will print to the browser console 2 times"; console.log(outputTwo); let outputOne = "Try to get this to log only once to the browser console";
+// Open your browser console.
+let output = "Get this to log once in the browser console and twice in the freeCodeCamp console";
+// Use console.clear() on the next line to clear the browser console.
 console.clear();
-console.log(outputOne);
+
+// Use console.log() to print the output variable.
+console.log(output);
+
+// Check the two consoles to see the difference. The freeCodeCamp console should have printed the variable twice, one for each test of this challenge. The browser console should only print the variable once becuase you cleared it first.
 ```
 
 </section>
