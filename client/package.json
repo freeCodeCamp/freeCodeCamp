@@ -24,6 +24,7 @@
     "entities": "^1.1.2",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
+    "final-form": "^4.18.5",
     "gatsby": "^2.13.67",
     "gatsby-cli": "^2.7.31",
     "gatsby-link": "^2.2.5",
@@ -48,6 +49,7 @@
     "react": "^16.9.0",
     "react-calendar-heatmap": "^1.8.1",
     "react-dom": "^16.9.0",
+    "react-final-form": "^6.3.0",
     "react-ga": "^2.6.0",
     "react-helmet": "^5.2.1",
     "react-identicons": "^1.1.7",
@@ -64,7 +66,6 @@
     "redux": "^4.0.4",
     "redux-actions": "^2.6.5",
     "redux-devtools-extension": "^2.13.8",
-    "redux-form": "^5.3.6",
     "redux-observable": "^1.1.0",
     "redux-saga": "^1.0.5",
     "reselect": "^3.0.1",
@@ -92,7 +93,8 @@
     "test": "jest"
   },
   "devDependencies": {
-    "@testing-library/react": "^8.0.5",
+    "@testing-library/jest-dom": "^4.1.0",
+    "@testing-library/react": "^9.1.3",
     "autoprefixer": "^9.6.1",
     "babel-plugin-transform-imports": "^1.5.1",
     "chokidar": "^2.1.5",
