@@ -16,8 +16,9 @@ import { wrapHandledError } from '../utils/create-handled-error';
 const apiProxyRE = /^\/internal\/|^\/external\//;
 const newsShortLinksRE = /^\/internal\/n\/|^\/internal\/p\?/;
 const loopbackAPIPathRE = /^\/internal\/api\//;
+const showCertRe = /^\/internal\/certificate\/showCert\//;
 
-const _whiteListREs = [newsShortLinksRE, loopbackAPIPathRE];
+const _whiteListREs = [newsShortLinksRE, loopbackAPIPathRE, showCertRe];
 
 export function isWhiteListedPath(path, whiteListREs = _whiteListREs) {
   return whiteListREs.some(re => re.test(path));

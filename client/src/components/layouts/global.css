@@ -19,9 +19,12 @@ body {
 }
 
 .default-layout {
-  display: block;
   margin-top: var(--header-height);
   background: var(--secondary-background);
+  display: flex;
+  flex-direction: column;
+  margin-top: var(--header-height);
+  min-height: calc(100vh - var(--header-height));
 }
 
 h1 {
@@ -326,4 +329,8 @@ pre {
 .has-success.radio-inline label,
 .has-success.checkbox-inline label {
   color: var(--highlight-color);
+}
+
+.panel-primary {
+  border-color: var(--primary-color);
 }

@@ -4,13 +4,13 @@ exports[`<ChallengeTitle/> renders correctly 1`] = `
 <div
   className="challenge-title-wrap"
 >
-  <MockedLink
+  <a
     aria-label="Previous lesson"
     className="btn-invert btn btn-primary"
-    to="/prev"
+    href="/prev"
   >
     &lt;
-  </MockedLink>
+  </a>
   <h2
     className="text-center challenge-title"
   >
@@ -20,12 +20,12 @@ exports[`<ChallengeTitle/> renders correctly 1`] = `
       title="Completed"
     />
   </h2>
-  <MockedLink
+  <a
     aria-label="Next lesson"
     className="btn-invert btn btn-primary"
-    to="/intro/path"
+    href="/intro/path"
   >
     &gt;
-  </MockedLink>
+  </a>
 </div>
 `;

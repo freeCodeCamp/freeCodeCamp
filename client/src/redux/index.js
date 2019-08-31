@@ -1,6 +1,7 @@
 /* global PAYPAL_SUPPORTERS */
 import { createAction, handleActions } from 'redux-actions';
 import { uniqBy } from 'lodash';
+import store from 'store';
 
 import { createTypes, createAsyncTypes } from '../utils/createTypes';
 import { createFetchUserSaga } from './fetch-user-saga';
@@ -15,6 +16,9 @@ import failedUpdatesEpic from './failed-updates-epic';
 import updateCompleteEpic from './update-complete-epic';
 
 import { types as settingsTypes } from './settings';
+import { types as challengeTypes } from '../templates/Challenges/redux/';
+// eslint-disable-next-line max-len
+import { CURRENT_CHALLENGE_KEY } from '../templates/Challenges/redux/current-challenge-saga';
 
 export const ns = 'app';
 
@@ -28,6 +32,7 @@ export const defaultFetchState = {
 const initialState = {
   appUsername: '',
   completionCount: 0,
+  currentChallengeId: store.get(CURRENT_CHALLENGE_KEY),
   donationRequested: false,
   showCert: {},
   showCertFetchState: {
@@ -56,6 +61,7 @@ export const types = createTypes(
     'resetUserData',
     'submitComplete',
     'updateComplete',
+    'updateCurrentChallengeId',
     'updateFailed',
     ...createAsyncTypes('fetchUser'),
     ...createAsyncTypes('fetchProfileForUser'),
@@ -120,11 +126,14 @@ export const showCert = createAction(types.showCert);
 export const showCertComplete = createAction(types.showCertComplete);
 export const showCertError = createAction(types.showCertError);
 
+export const updateCurrentChallengeId = createAction(
+  types.updateCurrentChallengeId
+);
+
 export const completedChallengesSelector = state =>
   userSelector(state).completedChallenges || [];
 export const completionCountSelector = state => state[ns].completionCount;
-export const currentChallengeIdSelector = state =>
-  userSelector(state).currentChallengeId || '';
+export const currentChallengeIdSelector = state => state[ns].currentChallengeId;
 export const donationRequestedSelector = state => state[ns].donationRequested;
 
 export const isOnlineSelector = state => state[ns].isOnline;
@@ -207,6 +216,7 @@ export const reducer = handleActions(
         [username]: { ...user, sessionUser: true }
       },
       appUsername: username,
+      currentChallengeId: user.currentChallengeId,
       userFetchState: {
         pending: false,
         complete: true,
@@ -324,6 +334,10 @@ export const reducer = handleActions(
         }
       };
     },
+    [challengeTypes.challengeMounted]: (state, { payload }) => ({
+      ...state,
+      currentChallengeId: payload
+    }),
     [settingsTypes.updateLegacyCertComplete]: (state, { payload }) => {
       const { appUsername } = state;
       return {
