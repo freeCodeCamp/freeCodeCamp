@@ -8,7 +8,7 @@ forumTopicId: 301086
 
 ## Description
 <section id='description'>
-To create a CSS variable, you just need to give it a <dfn>name</dfn> with two dashes in front of it and assign it a <dfn>value</dfn> like this:
+To create a CSS variable, you just need to give it a name with two dashes in front of it and assign it a value like this:
 
 ```css
 --penguin-skin: gray;

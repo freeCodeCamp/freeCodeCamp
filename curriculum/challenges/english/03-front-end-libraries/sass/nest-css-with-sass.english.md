@@ -7,7 +7,7 @@ forumTopicId: 301457
 
 ## Description
 <section id='description'>
-Sass allows <dfn>nesting</dfn> of CSS rules, which is a useful way of organizing a style sheet.
+Sass allows nesting of CSS rules, which is a useful way of organizing a style sheet.
 Normally, each element is targeted on a different line to style it, like so:
 
 ```scss

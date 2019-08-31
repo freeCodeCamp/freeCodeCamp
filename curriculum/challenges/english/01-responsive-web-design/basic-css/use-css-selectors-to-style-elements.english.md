@@ -8,8 +8,8 @@ forumTopicId: 18349
 
 ## Description
 <section id='description'>
-With CSS, there are hundreds of CSS <dfn>properties</dfn> that you can use to change the way an element looks on your page.
-When you entered <code>&#60;h2 style="color: red;"&#62;CatPhotoApp&#60;/h2&#62;</code>, you were styling that individual <code>h2</code> element with <dfn>inline CSS</dfn>, which stands for <dfn>Cascading Style Sheets</dfn>.
+With CSS, there are hundreds of CSS properties that you can use to change the way an element looks on your page.
+When you entered <code>&#60;h2 style="color: red;"&#62;CatPhotoApp&#60;/h2&#62;</code>, you were styling that individual <code>h2</code> element with inline CSS, which stands for Cascading Style Sheets.
 That's one way to specify the style of an element, but there's a better way to apply CSS.
 At the top of your code, create a <code>style</code> block like this:
 
