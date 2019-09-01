@@ -124,9 +124,7 @@ class TimelineInner extends Component {
               <Modal.Title id='contained-modal-title'>
                 {`${
                   displayUsername ? displayUsername : username
-                }'s Solution to ${
-                  idToNameMap.get(id).challengeTitle
-                }`}
+                }'s Solution to ${idToNameMap.get(id).challengeTitle}`}
               </Modal.Title>
             </Modal.Header>
             <Modal.Body>
