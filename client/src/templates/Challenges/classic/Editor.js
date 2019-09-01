@@ -6,6 +6,7 @@ import { createSelector } from 'reselect';
 
 import { executeChallenge, updateFile } from '../redux';
 import { userSelector } from '../../../redux';
+import { Loader } from '../../../components/helpers';
 
 const MonacoEditor = React.lazy(() => import('react-monaco-editor'));
 
@@ -130,7 +131,7 @@ class Editor extends Component {
     const { contents, ext, theme, fileKey } = this.props;
     const editorTheme = theme === 'night' ? 'vs-dark-custom' : 'vs-custom';
     return (
-      <Suspense fallback={<div />}>
+      <Suspense fallback={<Loader timeout={600} />}>
         <MonacoEditor
           editorDidMount={this.editorDidMount}
           editorWillMount={this.editorWillMount}
