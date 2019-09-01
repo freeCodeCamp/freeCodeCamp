@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
 import SearchBar from '../search/searchBar/SearchBar';
 
 import NavigationMenu from './components/NavMenu';
@@ -15,15 +16,20 @@ const propTypes = {
 function Header(props) {
   const { disableSettings } = props;
   return (
-    <header>
-      <nav id='top-nav'>
-        <Link className='home-link' to='/'>
-          <NavLogo />
-        </Link>
-        <SearchBar />
-        <NavigationMenu disableSettings={disableSettings} />
-      </nav>
-    </header>
+    <>
+      <Helmet>
+        <style>{':root{--header-height: 38px}'}</style>
+      </Helmet>
+      <header>
+        <nav id='top-nav'>
+          <Link className='home-link' to='/'>
+            <NavLogo />
+          </Link>
+          <SearchBar />
+          <NavigationMenu disableSettings={disableSettings} />
+        </nav>
+      </header>
+    </>
   );
 }
 
