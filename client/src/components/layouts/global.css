@@ -14,10 +14,6 @@ body {
   white-space: normal;
 }
 
-.big-heading {
-  font-size: 50px !important;
-}
-
 .default-layout {
   margin-top: var(--header-height);
   background: var(--secondary-background);
@@ -60,6 +56,33 @@ th {
   font-size: 1rem;
   font-family: 'Roboto Mono', monospace;
   margin: 0 0 1.2rem;
+}
+
+.big-heading {
+  font-size: 2.5rem !important;
+}
+
+.medium-heading {
+  font-size: 1.5rem !important;
+  font-weight: normal;
+}
+
+@media (max-width: 500px) {
+  .big-heading {
+    font-size: 1.6rem !important;
+  }
+  .medium-heading {
+    font-size: 1.4rem !important;
+  }
+  h1 {
+    font-size: 1.2rem;
+  }
+  h2 {
+    font-size: 1.1rem;
+  }
+  h3 {
+    font-size: 1rem;
+  }
 }
 
 .text-center {
@@ -350,4 +373,10 @@ pre {
 
 .nav-tabs > li > a {
   border-radius: 0;
+}
+
+blockquote footer,
+blockquote small,
+blockquote .small {
+  color: var(--gray-45);
 }

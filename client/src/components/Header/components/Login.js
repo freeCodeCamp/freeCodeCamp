@@ -26,7 +26,7 @@ const createOnClick = (navigate, isSignedIn) => e => {
   e.preventDefault();
   gtagReportConversion();
   if (isSignedIn) {
-    return gatsbyNavigate('/welcome');
+    return gatsbyNavigate('/');
   }
   return navigate(`${apiLocation}/signin`);
 };

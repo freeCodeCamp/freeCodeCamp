@@ -11,8 +11,6 @@ import DonateForm from '../components/Donation/components/DonateForm';
 import DonateText from '../components/Donation/components/DonateText';
 import PoweredByStripe from '../components/Donation/components/poweredByStripe';
 
-import './index.css';
-
 class DonatePage extends Component {
   constructor(...props) {
     super(...props);

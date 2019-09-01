@@ -20,7 +20,7 @@ function Header(props) {
         <Link className='home-link' to='/'>
           <NavLogo />
         </Link>
-        {disableSettings ? null : <SearchBar />}
+        <SearchBar />
         <NavigationMenu disableSettings={disableSettings} />
       </nav>
     </header>
