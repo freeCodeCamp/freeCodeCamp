@@ -11,12 +11,14 @@ import {
   fetchUser,
   isSignedInSelector,
   onlineStatusChange,
-  isOnlineSelector
+  isOnlineSelector,
+  userSelector
 } from '../../redux';
-import { flashMessagesSelector, removeFlashMessage } from '../Flash/redux';
+import { flashMessageSelector, removeFlashMessage } from '../Flash/redux';
 
 import { isBrowser } from '../../../utils';
 
+import WithInstantSearch from '../search/WithInstantSearch';
 import OfflineWarning from '../OfflineWarning';
 import Flash from '../Flash';
 import Header from '../Header';
@@ -24,7 +26,7 @@ import Footer from '../Footer';
 
 import './global.css';
 import './layout.css';
-import './night.css';
+import './variables.css';
 
 fontawesome.config = {
   autoAddCss: false
@@ -56,35 +58,34 @@ const metaKeywords = [
 
 const propTypes = {
   children: PropTypes.node.isRequired,
-  disableMenuButtonBehavior: PropTypes.bool,
-  disableSettings: PropTypes.bool,
   fetchUser: PropTypes.func.isRequired,
-  flashMessages: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      type: PropTypes.string,
-      message: PropTypes.string
-    })
-  ),
-  hasMessages: PropTypes.bool,
+  flashMessage: PropTypes.shape({
+    id: PropTypes.string,
+    type: PropTypes.string,
+    message: PropTypes.string
+  }),
+  hasMessage: PropTypes.bool,
   isOnline: PropTypes.bool.isRequired,
   isSignedIn: PropTypes.bool,
   landingPage: PropTypes.bool,
-  mediaBreakpoint: PropTypes.string,
   onlineStatusChange: PropTypes.func.isRequired,
+  pathname: PropTypes.string.isRequired,
   removeFlashMessage: PropTypes.func.isRequired,
-  showFooter: PropTypes.bool
+  showFooter: PropTypes.bool,
+  theme: PropTypes.string
 };
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
-  flashMessagesSelector,
+  flashMessageSelector,
   isOnlineSelector,
-  (isSignedIn, flashMessages, isOnline) => ({
+  userSelector,
+  (isSignedIn, flashMessage, isOnline, user) => ({
     isSignedIn,
-    flashMessages,
-    hasMessages: !!flashMessages.length,
-    isOnline
+    flashMessage,
+    hasMessage: !!flashMessage.message,
+    isOnline,
+    theme: user.theme
   })
 );
 const mapDispatchToProps = dispatch =>
@@ -94,30 +95,22 @@ const mapDispatchToProps = dispatch =>
   );
 
 class DefaultLayout extends Component {
-  constructor(props) {
-    super(props);
-
-    this.location = '';
-  }
-
   componentDidMount() {
-    if (!this.props.isSignedIn) {
-      this.props.fetchUser();
+    const { isSignedIn, fetchUser, pathname } = this.props;
+    if (!isSignedIn) {
+      fetchUser();
     }
-    const url = window.location.pathname + window.location.search;
-    ga.pageview(url);
+    ga.pageview(pathname);
 
     window.addEventListener('online', this.updateOnlineStatus);
     window.addEventListener('offline', this.updateOnlineStatus);
-
-    this.location = url;
   }
 
-  componentDidUpdate() {
-    const url = window.location.pathname + window.location.search;
-    if (url !== this.location) {
-      ga.pageview(url);
-      this.location = url;
+  componentDidUpdate(prevProps) {
+    const { pathname } = this.props;
+    const { pathname: prevPathname } = prevProps;
+    if (pathname !== prevPathname) {
+      ga.pageview(pathname);
     }
   }
 
@@ -136,20 +129,21 @@ class DefaultLayout extends Component {
   render() {
     const {
       children,
-      disableSettings,
-      hasMessages,
-      flashMessages = [],
-      removeFlashMessage,
-      landingPage,
-      showFooter = true,
-      mediaBreakpoint,
-      disableMenuButtonBehavior,
+      hasMessage,
+      flashMessage,
       isOnline,
-      isSignedIn
+      isSignedIn,
+      landingPage,
+      removeFlashMessage,
+      showFooter = true,
+      theme
     } = this.props;
     return (
       <Fragment>
         <Helmet
+          bodyAttributes={{
+            class: `${theme === 'default' ? 'light-palette' : 'dark-palette'}`
+          }}
           meta={[
             {
               name: 'description',
@@ -162,19 +156,20 @@ class DefaultLayout extends Component {
         >
           <style>{fontawesome.dom.css()}</style>
         </Helmet>
-        <Header
-          disableMenuButtonBehavior={disableMenuButtonBehavior}
-          disableSettings={disableSettings}
-          mediaBreakpoint={mediaBreakpoint}
-        />
-        <div className={`default-layout ${landingPage ? 'landing-page' : ''}`}>
-          <OfflineWarning isOnline={isOnline} isSignedIn={isSignedIn} />
-          {hasMessages ? (
-            <Flash messages={flashMessages} onClose={removeFlashMessage} />
-          ) : null}
-          {children}
-        </div>
-        {showFooter && <Footer />}
+        <WithInstantSearch>
+          <Header disableSettings={landingPage} />
+          <div
+            className={`default-layout
+          ${landingPage ? 'landing-page' : ''}`}
+          >
+            <OfflineWarning isOnline={isOnline} isSignedIn={isSignedIn} />
+            {hasMessage && flashMessage ? (
+              <Flash flashMessage={flashMessage} onClose={removeFlashMessage} />
+            ) : null}
+            {children}
+            {showFooter && <Footer />}
+          </div>
+        </WithInstantSearch>
       </Fragment>
     );
   }

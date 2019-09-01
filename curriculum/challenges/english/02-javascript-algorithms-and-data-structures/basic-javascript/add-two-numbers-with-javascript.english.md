@@ -3,6 +3,7 @@ id: cf1111c1c11feddfaeb3bdef
 title: Add Two Numbers with JavaScript
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cM2KBAG'
+forumTopicId: 16650
 ---
 
 ## Description
@@ -11,7 +12,11 @@ videoUrl: 'https://scrimba.com/c/cM2KBAG'
 Now let's try to add two numbers using JavaScript.
 JavaScript uses the <code>+</code> symbol as an addition operator when placed between two numbers.
 <strong>Example:</strong>
-<blockquote>myVar = 5 + 10; // assigned 15</blockquote>
+
+```js
+myVar = 5 + 10; // assigned 15
+```
+
 </section>
 
 ## Instructions
@@ -25,9 +30,9 @@ Change the <code>0</code> so that sum will equal <code>20</code>.
 ```yml
 tests:
   - text: <code>sum</code> should equal <code>20</code>
-    testString: assert(sum === 20, '<code>sum</code> should equal <code>20</code>');
+    testString: assert(sum === 20);
   - text: Use the <code>+</code> operator
-    testString: assert(/\+/.test(code), 'Use the <code>+</code> operator');
+    testString: assert(/\+/.test(code));
 
 ```
 

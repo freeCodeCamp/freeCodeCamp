@@ -62,7 +62,7 @@ function Supporters({ isDonating, activeDonations }) {
                 them to join the community.
               </Fragment>
             ) : (
-              `Join ${donationsLocale} supporters. Your $5 / month` +
+              `Join ${donationsLocale} supporters. Your $5 / month ` +
               'donation will help keep tech education free and open.'
             )}
           </p>

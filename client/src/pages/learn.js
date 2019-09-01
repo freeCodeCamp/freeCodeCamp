@@ -38,9 +38,8 @@ const IndexPage = ({
   <LearnLayout>
     <div className='learn-page-wrapper'>
       <Helmet title='Learn | freeCodeCamp.org' />
-      <Spacer />
-      <Spacer />
-      <h2>Welcome to the freeCodeCamp curriculum</h2>
+      <Spacer size={2} />
+      <h1 className='text-center'>Welcome to the freeCodeCamp curriculum</h1>
       <p>
         We have thousands of coding lessons to help you improve your skills.
       </p>
@@ -57,7 +56,6 @@ const IndexPage = ({
         If you are new to coding, we recommend you{' '}
         <Link to={slug}>start at the beginning</Link>.
       </p>
-      <Spacer />
       <Map
         introNodes={mdEdges.map(({ node }) => node)}
         nodes={edges

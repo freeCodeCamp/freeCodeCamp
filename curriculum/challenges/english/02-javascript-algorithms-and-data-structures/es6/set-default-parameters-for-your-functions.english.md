@@ -2,13 +2,22 @@
 id: 587d7b88367417b2b2512b46
 title: Set Default Parameters for Your Functions
 challengeType: 1
+forumTopicId: 301209
 ---
 
 ## Description
 <section id='description'>
 In order to help us create more flexible functions, ES6 introduces <dfn>default parameters</dfn> for functions.
 Check out this code:
-<blockquote>function greeting(name = "Anonymous") {<br>&nbsp;&nbsp;return "Hello " + name;<br>}<br>console.log(greeting("John")); // Hello John<br>console.log(greeting()); // Hello Anonymous</blockquote>
+
+```js
+function greeting(name = "Anonymous") {
+  return "Hello " + name;
+}
+console.log(greeting("John")); // Hello John
+console.log(greeting()); // Hello Anonymous
+```
+
 The default parameter kicks in when the argument is not specified (it is undefined). As you can see in the example above, the parameter <code>name</code> will receive its default value <code>"Anonymous"</code> when you do not provide a value for the parameter. You can add default values for as many parameters as you want.
 </section>
 
@@ -57,4 +66,5 @@ console.log(increment(5)); // returns 6
 ```js
 const increment = (number, value = 1) => number + value;
 ```
+
 </section>

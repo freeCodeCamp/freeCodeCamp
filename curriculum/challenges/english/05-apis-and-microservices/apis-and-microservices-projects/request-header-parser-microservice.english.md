@@ -3,6 +3,7 @@ id: bd7158d8c443edefaeb5bdff
 title: Request Header Parser Microservice
 challengeType: 4
 isRequired: true
+forumTopicId: 301507
 ---
 
 ## Description
@@ -40,4 +41,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

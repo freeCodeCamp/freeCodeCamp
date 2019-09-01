@@ -3,6 +3,7 @@ id: 587d7787367417b2b2512aa1
 title: Make Screen Reader Navigation Easier with the header Landmark
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cB76vtv'
+forumTopicId: 301023
 ---
 
 ## Description
@@ -23,13 +24,13 @@ Camper Cat is writing some great articles about ninja training, and wants to add
 ```yml
 tests:
   - text: Your code should have one <code>header</code> tag.
-    testString: assert($('header').length == 1, 'Your code should have one <code>header</code> tag.');
+    testString: assert($('header').length == 1);
   - text: Your <code>header</code> tags should wrap around the <code>h1</code>.
-    testString: assert($('header').children('h1').length == 1, 'Your <code>header</code> tags should wrap around the <code>h1</code>.');
+    testString: assert($('header').children('h1').length == 1);
   - text: Your code should not have any <code>div</code> tags.
-    testString: assert($('div').length == 0, 'Your code should not have any <code>div</code> tags.');
+    testString: assert($('div').length == 0);
   - text: Make sure your <code>header</code> element has a closing tag.
-    testString: assert(code.match(/<\/header>/g) && code.match(/<\/header>/g).length === code.match(/<header>/g).length, 'Make sure your <code>header</code> element has a closing tag.');
+    testString: assert(code.match(/<\/header>/g) && code.match(/<\/header>/g).length === code.match(/<header>/g).length);
 
 ```
 
@@ -77,7 +78,32 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<body>
+
+  <header>
+    <h1>Training with Camper Cat</h1>
+  </header>
+
+
+  <main>
+    <section id="stealth">
+      <h2>Stealth &amp; Agility Training</h2>
+      <article><h3>Climb foliage quickly using a minimum spanning tree approach</h3></article>
+      <article><h3>No training is NP-complete without parkour</h3></article>
+    </section>
+    <section id="combat">
+      <h2>Combat Training</h2>
+      <article><h3>Dispatch multiple enemies with multithreaded tactics</h3></article>
+      <article><h3>Goodbye world: 5 proven ways to knock out an opponent</h3></article>
+    </section>
+    <section id="weapons">
+      <h2>Weapons Training</h2>
+      <article><h3>Swords: the best tool to literally divide and conquer</h3></article>
+      <article><h3>Breadth-first or depth-first in multi-weapon training?</h3></article>
+    </section>
+  </main>
+</body>
 ```
+
 </section>

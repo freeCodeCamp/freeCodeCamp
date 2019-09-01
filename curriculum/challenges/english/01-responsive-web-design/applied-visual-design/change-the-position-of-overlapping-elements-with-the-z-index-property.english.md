@@ -3,6 +3,7 @@ id: 587d78a3367417b2b2512acf
 title: Change the Position of Overlapping Elements with the z-index Property
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cM94aHk'
+forumTopicId: 301046
 ---
 
 ## Description
@@ -21,7 +22,7 @@ Add a <code>z-index</code> property to the element with the class name of <code>
 ```yml
 tests:
   - text: The element with class <code>first</code> should have a <code>z-index</code> value of 2.
-    testString: assert($('.first').css('z-index') == '2', 'The element with class <code>first</code> should have a <code>z-index</code> value of 2.');
+    testString: assert($('.first').css('z-index') == '2');
 
 ```
 
@@ -67,7 +68,29 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style>
+  div {
+    width: 60%;
+    height: 200px;
+    margin-top: 20px;
+  }
+
+  .first {
+    background-color: red;
+    position: absolute;
+    z-index: 2;
+  }
+  .second {
+    background-color: blue;
+    position: absolute;
+    left: 40px;
+    top: 50px;
+    z-index: 1;
+  }
+</style>
+<div class="first"></div>
+<div class="second"></div>
 ```
+
 </section>

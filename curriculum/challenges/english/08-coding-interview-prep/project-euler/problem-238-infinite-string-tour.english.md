@@ -2,6 +2,7 @@
 id: 5900f45b1000cf542c50ff6d
 challengeType: 5
 title: 'Problem 238: Infinite string tour'
+forumTopicId: 301883
 ---
 
 ## Description
@@ -53,7 +54,7 @@ Find ∑ p(k), for 0 < k ≤ 2·1015.
 ```yml
 tests:
   - text: <code>euler238()</code> should return 9922545104535660.
-    testString: assert.strictEqual(euler238(), 9922545104535660, '<code>euler238()</code> should return 9922545104535660.');
+    testString: assert.strictEqual(euler238(), 9922545104535660);
 
 ```
 
@@ -85,4 +86,5 @@ euler238();
 ```js
 // solution required
 ```
+
 </section>

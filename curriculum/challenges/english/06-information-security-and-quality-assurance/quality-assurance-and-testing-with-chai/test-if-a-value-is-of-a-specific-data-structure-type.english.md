@@ -2,6 +2,7 @@
 id: 587d824e367417b2b2512c56
 title: Test if a Value is of a Specific Data Structure Type
 challengeType: 2
+forumTopicId: 301601
 ---
 
 ## Description
@@ -13,7 +14,7 @@ As a reminder, this project is being built upon the following starter project on
 
 ## Instructions
 <section id='instructions'>
-Use <code>#typeOf</code> or <code>#notTypeOf</code> where it is appropriate.
+Use <code>assert.typeOf()</code> or <code>assert.notTypeOf()</code> to make the tests pass.
 </section>
 
 ## Tests
@@ -49,4 +50,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

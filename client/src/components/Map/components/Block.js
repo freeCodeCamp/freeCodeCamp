@@ -7,20 +7,20 @@ import { Link } from 'gatsby';
 
 import ga from '../../../analytics';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
-import { userSelector } from '../../../redux';
-import Caret from '../../icons/Caret';
+import { completedChallengesSelector } from '../../../redux';
+import Caret from '../../../assets/icons/Caret';
 import { blockNameify } from '../../../../utils/blockNameify';
 /* eslint-disable max-len */
-import GreenPass from '../../../templates/Challenges/components/icons/GreenPass';
-import GreenNotCompleted from '../../../templates/Challenges/components/icons/GreenNotCompleted';
+import GreenPass from '../../../assets/icons/GreenPass';
+import GreenNotCompleted from '../../../assets/icons/GreenNotCompleted';
 /* eslint-enable max-len */
 const mapStateToProps = (state, ownProps) => {
   const expandedSelector = makeExpandedBlockSelector(ownProps.blockDashedName);
 
   return createSelector(
     expandedSelector,
-    userSelector,
-    (isExpanded, { completedChallenges = [] }) => ({
+    completedChallengesSelector,
+    (isExpanded, completedChallenges) => ({
       isExpanded,
       completedChallenges: completedChallenges.map(({ id }) => id)
     })
@@ -127,6 +127,7 @@ export class Block extends Component {
       }
       return { ...challenge, isCompleted };
     });
+
     return (
       <li className={`block ${isExpanded ? 'open' : ''}`}>
         <button

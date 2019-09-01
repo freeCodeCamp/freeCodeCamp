@@ -2,19 +2,20 @@
 id: 587d824c367417b2b2512c4f
 title: Test if a Value Falls within a Specific Range
 challengeType: 2
+forumTopicId: 301598
 ---
 
 ## Description
 <section id='description'>
 As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
 
+<code>.approximately(actual, expected, delta, [message])</code>
+Asserts that the actual is equal <code>expected</code>, to within a +/- <code>delta</code> range.
 </section>
 
 ## Instructions
 <section id='instructions'>
-<code>.approximately</code>
-<code>.approximately(actual, expected, range, [message])</code>
-<code>actual = expected +/- range</code>
+Use <code>assert.approximately()</code> to make the tests pass.
 Choose the minimum range (3rd parameter) to make the test always pass. It should be less than 1.
 </section>
 
@@ -45,4 +46,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

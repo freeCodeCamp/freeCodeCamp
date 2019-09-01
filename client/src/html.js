@@ -4,21 +4,21 @@ import PropTypes from 'prop-types';
 export default class HTML extends React.Component {
   render() {
     return (
-      <html id='__fcc-html' {...this.props.htmlAttributes} lang='en'>
+      <html
+        className='night'
+        id='__fcc-html'
+        {...this.props.htmlAttributes}
+        lang='en'
+      >
         <head>
           <meta charSet='utf-8' />
           <meta content='ie=edge' httpEquiv='x-ua-compatible' />
           <meta
-            content='width=device-width, initial-scale=1, shrink-to-fit=no'
+            content='width=device-width, initial-scale=1.0, shrink-to-fit=no'
             name='viewport'
           />
-          <link
-            href={
-              'https://cdn.freecodecamp.org/compiled/bootstrap/v3/css/' +
-              'bootstrap.min.css'
-            }
-            rel='stylesheet'
-          />
+          <link as='style' href='/css/bootstrap.min.css' rel='preload' />
+          <link href='/css/bootstrap.min.css' rel='stylesheet' />
           {this.props.headComponents}
         </head>
         <body {...this.props.bodyAttributes}>

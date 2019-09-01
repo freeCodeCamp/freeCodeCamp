@@ -2,12 +2,17 @@
 id: 587d7fb0367417b2b2512bef
 title: Serve an HTML File
 challengeType: 2
+forumTopicId: 301516
 ---
 
 ## Description
 <section id='description'>
 You can respond to requests with a file using the <code>res.sendFile(path)</code> method. You can put it inside the <code>app.get('/', ...)</code> route handler. Behind the scenes, this method will set the appropriate headers to instruct your browser on how to handle the file you want to send, according to its type. Then it will read and send the file. This method needs an absolute file path. We recommend you to use the Node global variable <code>__dirname</code> to calculate the path like this:
-<blockquote>absolutePath = __dirname + relativePath/file.ext</blockquote>
+
+```js
+absolutePath = __dirname + relativePath/file.ext
+```
+
 </section>
 
 ## Instructions
@@ -40,4 +45,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

@@ -2,6 +2,7 @@
 id: 5900f3741000cf542c50fe87
 challengeType: 5
 title: 'Problem 8: Largest product in a series'
+forumTopicId: 302193
 ---
 
 ## Description
@@ -42,9 +43,9 @@ Find the <code>n</code> adjacent digits in the 1000-digit number that have the g
 ```yml
 tests:
   - text: <code>largestProductinaSeries(4)</code> should return 5832.
-    testString: assert.strictEqual(largestProductinaSeries(4), 5832, '<code>largestProductinaSeries(4)</code> should return 5832.');
+    testString: assert.strictEqual(largestProductinaSeries(4), 5832);
   - text: <code>largestProductinaSeries(13)</code> should return 23514624000.
-    testString: assert.strictEqual(largestProductinaSeries(13), 23514624000, '<code>largestProductinaSeries(13)</code> should return 23514624000.');
+    testString: assert.strictEqual(largestProductinaSeries(13), 23514624000);
 
 ```
 

@@ -3,6 +3,7 @@ id: 587d78ac367417b2b2512af6
 title: Align Elements Using the justify-content Property
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/c43gnHm'
+forumTopicId: 301102
 ---
 
 ## Description
@@ -27,7 +28,7 @@ An example helps show this property in action. Add the CSS property <code>justif
 ```yml
 tests:
   - text: The <code>#box-container</code> element should have a <code>justify-content</code> property set to a value of center.
-    testString: assert($('#box-container').css('justify-content') == 'center', 'The <code>#box-container</code> element should have a <code>justify-content</code> property set to a value of center.');
+    testString: assert($('#box-container').css('justify-content') == 'center');
 
 ```
 
@@ -74,7 +75,31 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style>
+  #box-container {
+    background: gray;
+    display: flex;
+    height: 500px;
+    justify-content: center;
+  }
+  #box-1 {
+    background-color: dodgerblue;
+    width: 25%;
+    height: 100%;
+  }
+
+  #box-2 {
+    background-color: orangered;
+    width: 25%;
+    height: 100%;
+  }
+</style>
+
+<div id="box-container">
+  <div id="box-1"></div>
+  <div id="box-2"></div>
+</div>
 ```
+
 </section>

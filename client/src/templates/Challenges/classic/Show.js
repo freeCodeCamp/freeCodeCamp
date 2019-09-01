@@ -20,7 +20,7 @@ import ResetModal from '../components/ResetModal';
 import MobileLayout from './MobileLayout';
 import DesktopLayout from './DesktopLayout';
 
-import { createGuideUrl } from '../utils';
+import { getGuideUrl } from '../utils';
 import { challengeTypes } from '../../../../utils/challengeTypes';
 import { ChallengeNode } from '../../../redux/propTypes';
 import { dasherize } from '../../../../utils';
@@ -28,6 +28,7 @@ import {
   createFiles,
   challengeFilesSelector,
   challengeTestsSelector,
+  initConsole,
   initTests,
   updateChallengeMeta,
   challengeMounted,
@@ -47,6 +48,7 @@ const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
       createFiles,
+      initConsole,
       initTests,
       updateChallengeMeta,
       challengeMounted
@@ -63,12 +65,11 @@ const propTypes = {
   files: PropTypes.shape({
     key: PropTypes.string
   }),
+  initConsole: PropTypes.func.isRequired,
   initTests: PropTypes.func.isRequired,
   output: PropTypes.string,
   pageContext: PropTypes.shape({
-    challengeMeta: PropTypes.shape({
-      nextChallengePath: PropTypes.string
-    })
+    challengeMeta: PropTypes.object
   }),
   tests: PropTypes.arrayOf(
     PropTypes.shape({
@@ -104,24 +105,11 @@ class ShowClassic extends Component {
 
   componentDidMount() {
     const {
-      challengeMounted,
-      createFiles,
-      initTests,
-      updateChallengeMeta,
       data: {
-        challengeNode: {
-          files,
-          title,
-          fields: { tests },
-          challengeType
-        }
-      },
-      pageContext: { challengeMeta }
+        challengeNode: { title }
+      }
     } = this.props;
-    createFiles(files);
-    initTests(tests);
-    updateChallengeMeta({ ...challengeMeta, title, challengeType });
-    challengeMounted(challengeMeta.id);
+    this.initializeComponent(title);
   }
 
   componentDidUpdate(prevProps) {
@@ -131,30 +119,36 @@ class ShowClassic extends Component {
       }
     } = prevProps;
     const {
+      data: {
+        challengeNode: { title: currentTitle }
+      }
+    } = this.props;
+    if (prevTitle !== currentTitle) {
+      this.initializeComponent(currentTitle);
+    }
+  }
+
+  initializeComponent(title) {
+    const {
       challengeMounted,
       createFiles,
+      initConsole,
       initTests,
       updateChallengeMeta,
       data: {
         challengeNode: {
           files,
-          title: currentTitle,
           fields: { tests },
           challengeType
         }
       },
       pageContext: { challengeMeta }
     } = this.props;
-    if (prevTitle !== currentTitle) {
-      createFiles(files);
-      initTests(tests);
-      updateChallengeMeta({
-        ...challengeMeta,
-        title: currentTitle,
-        challengeType
-      });
-      challengeMounted(challengeMeta.id);
-    }
+    initConsole('');
+    createFiles(files);
+    initTests(tests);
+    updateChallengeMeta({ ...challengeMeta, title, challengeType });
+    challengeMounted(challengeMeta.id);
   }
 
   componentWillUnmount() {
@@ -170,13 +164,6 @@ class ShowClassic extends Component {
       title
     } = this.getChallenge();
     return `${blockName}: ${title}`;
-  }
-
-  getGuideUrl() {
-    const {
-      fields: { slug }
-    } = this.getChallenge();
-    return createGuideUrl(slug);
   }
 
   getVideoUrl = () => this.getChallenge().videoUrl;
@@ -201,13 +188,24 @@ class ShowClassic extends Component {
       instructions
     } = this.getChallenge();
 
+    const {
+      introPath,
+      nextChallengePath,
+      prevChallengePath
+    } = this.props.pageContext.challengeMeta;
+
+    const { forumTopicId, title } = this.getChallenge();
     return (
       <SidePanel
         className='full-height'
         description={description}
-        guideUrl={this.getGuideUrl()}
+        guideUrl={getGuideUrl({ forumTopicId, title })}
         instructions={instructions}
+        introPath={introPath}
+        nextChallengePath={nextChallengePath}
+        prevChallengePath={prevChallengePath}
         section={dasherize(blockName)}
+        showPrevNextBtns={true}
         showToolPanel={showToolPanel}
         title={this.getBlockNameTitle()}
         videoUrl={this.getVideoUrl()}
@@ -244,39 +242,37 @@ class ShowClassic extends Component {
   }
 
   render() {
+    const { forumTopicId, title } = this.getChallenge();
     return (
       <LearnLayout>
         <Helmet
           title={`Learn ${this.getBlockNameTitle()} | freeCodeCamp.org`}
         />
         <Media maxWidth={MAX_MOBILE_WIDTH}>
-          {matches =>
-            matches ? (
-              <MobileLayout
-                editor={this.renderEditor()}
-                guideUrl={this.getGuideUrl()}
-                hasPreview={this.hasPreview()}
-                instructions={this.renderInstructionsPanel({
-                  showToolPanel: false
-                })}
-                preview={this.renderPreview()}
-                testOutput={this.renderTestOutput()}
-                videoUrl={this.getVideoUrl()}
-              />
-            ) : (
-              <DesktopLayout
-                challengeFile={this.getChallengeFile()}
-                editor={this.renderEditor()}
-                hasPreview={this.hasPreview()}
-                instructions={this.renderInstructionsPanel({
-                  showToolPanel: true
-                })}
-                preview={this.renderPreview()}
-                resizeProps={this.resizeProps}
-                testOutput={this.renderTestOutput()}
-              />
-            )
-          }
+          <MobileLayout
+            editor={this.renderEditor()}
+            guideUrl={getGuideUrl({ forumTopicId, title })}
+            hasPreview={this.hasPreview()}
+            instructions={this.renderInstructionsPanel({
+              showToolPanel: false
+            })}
+            preview={this.renderPreview()}
+            testOutput={this.renderTestOutput()}
+            videoUrl={this.getVideoUrl()}
+          />
+        </Media>
+        <Media minWidth={MAX_MOBILE_WIDTH + 1}>
+          <DesktopLayout
+            challengeFile={this.getChallengeFile()}
+            editor={this.renderEditor()}
+            hasPreview={this.hasPreview()}
+            instructions={this.renderInstructionsPanel({
+              showToolPanel: true
+            })}
+            preview={this.renderPreview()}
+            resizeProps={this.resizeProps}
+            testOutput={this.renderTestOutput()}
+          />
         </Media>
         <CompletionModal />
         <HelpModal />
@@ -303,6 +299,7 @@ export const query = graphql`
       instructions
       challengeType
       videoUrl
+      forumTopicId
       fields {
         slug
         blockName

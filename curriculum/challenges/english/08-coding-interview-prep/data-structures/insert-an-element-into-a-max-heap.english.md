@@ -2,6 +2,7 @@
 id: 587d825a367417b2b2512c8a
 title: Insert an Element into a Max Heap
 challengeType: 1
+forumTopicId: 301703
 ---
 
 ## Description
@@ -34,13 +35,13 @@ Finally, add a print method which returns an array of all the items that have be
 ```yml
 tests:
   - text: The MaxHeap data structure exists.
-    testString: assert((function() { var test = false; if (typeof MaxHeap !== 'undefined') { test = new MaxHeap() }; return (typeof test == 'object')})(), 'The MaxHeap data structure exists.');
+    testString: assert((function() { var test = false; if (typeof MaxHeap !== 'undefined') { test = new MaxHeap() }; return (typeof test == 'object')})());
   - text: MaxHeap has a method called insert.
-    testString: assert((function() { var test = false; if (typeof MaxHeap !== 'undefined') { test = new MaxHeap() } else { return false; }; return (typeof test.insert == 'function')})(), 'MaxHeap has a method called insert.');
+    testString: assert((function() { var test = false; if (typeof MaxHeap !== 'undefined') { test = new MaxHeap() } else { return false; }; return (typeof test.insert == 'function')})());
   - text: MaxHeap has a method called print.
-    testString: assert((function() { var test = false; if (typeof MaxHeap !== 'undefined') { test = new MaxHeap() } else { return false; }; return (typeof test.print == 'function')})(), 'MaxHeap has a method called print.');
+    testString: assert((function() { var test = false; if (typeof MaxHeap !== 'undefined') { test = new MaxHeap() } else { return false; }; return (typeof test.print == 'function')})());
   - text: The insert method adds elements according to the max heap property.
-    testString: 'assert((function() { var test = false; if (typeof MaxHeap !== ''undefined'') { test = new MaxHeap() } else { return false; }; test.insert(50); test.insert(100); test.insert(700); test.insert(32); test.insert(51); let result = test.print(); return ((result.length == 5) ? result[0] == 700 : result[1] == 700) })(), ''The insert method adds elements according to the max heap property.'');'
+    testString: 'assert((function() { var test = false; if (typeof MaxHeap !== ''undefined'') { test = new MaxHeap() } else { return false; }; test.insert(50); test.insert(100); test.insert(700); test.insert(32); test.insert(51); let result = test.print(); return ((result.length == 5) ? result[0] == 700 : result[1] == 700) })());'
 
 ```
 
@@ -48,7 +49,6 @@ tests:
 
 ## Challenge Seed
 <section id='challengeSeed'>
-
 <div id='js-seed'>
 
 ```js
@@ -59,9 +59,6 @@ var MaxHeap = function() {
 ```
 
 </div>
-
-
-
 </section>
 
 ## Solution
@@ -88,4 +85,5 @@ var MaxHeap = function() {
 	// change code above this line
 };
 ```
+
 </section>

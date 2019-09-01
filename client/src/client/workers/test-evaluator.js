@@ -2,14 +2,39 @@ import chai from 'chai';
 import '@babel/polyfill';
 import __toString from 'lodash/toString';
 
-const oldLog = self.console.log.bind(self.console);
-self.console.log = function proxyConsole(...args) {
-  self.postMessage({
-    type: 'LOG',
-    data: args.map(arg => JSON.stringify(arg)).join(' ')
-  });
-  return oldLog(...args);
-};
+const __utils = (() => {
+  const MAX_LOGS_SIZE = 64 * 1024;
+
+  let logs = [];
+  function flushLogs() {
+    if (logs.length) {
+      self.postMessage({
+        type: 'LOG',
+        data: logs.join('\n')
+      });
+      logs = [];
+    }
+  }
+
+  const oldLog = self.console.log.bind(self.console);
+  self.console.log = function proxyConsole(...args) {
+    logs.push(args.map(arg => JSON.stringify(arg)).join(' '));
+    if (logs.join('\n').length > MAX_LOGS_SIZE) {
+      flushLogs();
+    }
+    return oldLog(...args);
+  };
+
+  function postResult(data) {
+    flushLogs();
+    self.postMessage(data);
+  }
+
+  return {
+    postResult,
+    oldLog
+  };
+})();
 
 self.onmessage = async e => {
   /* eslint-disable no-unused-vars */
@@ -30,7 +55,12 @@ self.onmessage = async e => {
       `);
     } catch (err) {
       if (__userCodeWasExecuted) {
+        // rethrow error, since test failed.
         throw err;
+      } else {
+        // report errors to dev console (not the editor console, since the test
+        // may still pass)
+        __utils.oldLog(err);
       }
       testResult = eval(e.data.testString);
     }
@@ -38,11 +68,11 @@ self.onmessage = async e => {
     if (typeof testResult === 'function') {
       await testResult(fileName => __toString(e.data.sources[fileName]));
     }
-    self.postMessage({
+    __utils.postResult({
       pass: true
     });
   } catch (err) {
-    self.postMessage({
+    __utils.postResult({
       err: {
         message: err.message,
         stack: err.stack

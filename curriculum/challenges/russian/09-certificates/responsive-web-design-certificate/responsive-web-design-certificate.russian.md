@@ -4,7 +4,7 @@ title: Responsive Web Design Certificate
 challengeType: 7
 isPrivate: true
 videoUrl: ''
-localeTitle: Сертификат Отзывчивый веб-дизайн
+localeTitle: Сертификат Отзывчивый Веб-дизайн
 ---
 
 ## Description

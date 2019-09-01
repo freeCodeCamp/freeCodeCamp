@@ -2,6 +2,7 @@
 id: 587d824e367417b2b2512c57
 title: Test if an Object is an Instance of a Constructor
 challengeType: 2
+forumTopicId: 301605
 ---
 
 ## Description
@@ -13,7 +14,7 @@ As a reminder, this project is being built upon the following starter project on
 
 ## Instructions
 <section id='instructions'>
-Use <code>#instanceOf</code> or <code>#notInstanceOf</code> where it is appropriate.
+Use <code>assert.instanceOf()</code> or <code>assert.notInstanceOf()</code> to make the tests pass. 
 </section>
 
 ## Tests
@@ -47,4 +48,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

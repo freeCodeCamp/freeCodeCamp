@@ -3,6 +3,7 @@ id: 587d7b7e367417b2b2512b24
 title: Use the Conditional (Ternary) Operator
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c3JRmSg'
+forumTopicId: 301181
 ---
 
 ## Description
@@ -11,9 +12,26 @@ The <dfn>conditional operator</dfn>, also called the <dfn>ternary operator</dfn>
 The syntax is:
 <code>condition ? statement-if-true : statement-if-false;</code>
 The following function uses an if-else statement to check a condition:
-<blockquote>function findGreater(a, b) {<br>&nbsp;&nbsp;if(a > b) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return "a is greater";<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;else {<br>&nbsp;&nbsp;&nbsp;&nbsp;return "b is greater";<br>&nbsp;&nbsp;}<br>}</blockquote>
+
+```js
+function findGreater(a, b) {
+  if(a > b) {
+    return "a is greater";
+  }
+  else {
+    return "b is greater";
+  }
+}
+```
+
 This can be re-written using the <code>conditional operator</code>:
-<blockquote>function findGreater(a, b) {<br>&nbsp;&nbsp;return a > b ? "a is greater" : "b is greater";<br>}</blockquote>
+
+```js
+function findGreater(a, b) {
+  return a > b ? "a is greater" : "b is greater";
+}
+```
+
 </section>
 
 ## Instructions
@@ -27,13 +45,13 @@ Use the <code>conditional operator</code> in the <code>checkEqual</code> functio
 ```yml
 tests:
   - text: <code>checkEqual</code> should use the <code>conditional operator</code>
-    testString: assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?/.test(code), '<code>checkEqual</code> should use the <code>conditional operator</code>');
+    testString: assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?/.test(code));
   - text: <code>checkEqual(1, 2)</code> should return "Not Equal"
-    testString: assert(checkEqual(1, 2) === "Not Equal", '<code>checkEqual(1, 2)</code> should return "Not Equal"');
+    testString: assert(checkEqual(1, 2) === "Not Equal");
   - text: <code>checkEqual(1, 1)</code> should return "Equal"
-    testString: assert(checkEqual(1, 1) === "Equal", '<code>checkEqual(1, 1)</code> should return "Equal"');
+    testString: assert(checkEqual(1, 1) === "Equal");
   - text: <code>checkEqual(1, -1)</code> should return "Not Equal"
-    testString: assert(checkEqual(1, -1) === "Not Equal", '<code>checkEqual(1, -1)</code> should return "Not Equal"');
+    testString: assert(checkEqual(1, -1) === "Not Equal");
 ```
 
 </section>
@@ -65,4 +83,5 @@ function checkEqual(a, b) {
   return a === b ? "Equal" : "Not Equal";
 }
 ```
+
 </section>

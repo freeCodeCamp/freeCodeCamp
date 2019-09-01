@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 const base = '/internal';
+axios.defaults.withCredentials = true;
 
 function get(path) {
   return axios.get(`${base}${path}`);
@@ -24,10 +25,6 @@ export function getSessionUser() {
   return get('/user/get-session-user');
 }
 
-export function getIdToNameMap() {
-  return get('/api/challenges/get-id-to-name');
-}
-
 export function getUserProfile(username) {
   return get(`/api/users/get-public-profile?username=${username}`);
 }
@@ -45,6 +42,9 @@ export function getArticleById(shortId) {
 }
 
 /** POST **/
+export function putUpdateLegacyCert(body) {
+  return post('/update-my-projects', body);
+}
 
 export function postReportUser(body) {
   return post('/user/report-user', body);

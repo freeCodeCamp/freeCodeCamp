@@ -1,0 +1,149 @@
+{
+  "footerLinks": [
+    {
+      "title": "Our Nonprofit",
+      "links": [
+        { "to": "/news/about/", "text": "About" },
+        { "to": "/donate", "text": "Donate", "internal": true },
+        { "to": "/news/shop/", "text": "Shop" },
+        {
+          "to": "https://www.linkedin.com/school/free-code-camp/people/",
+          "text": "Alumni Network"
+        },
+        { "to": "https://github.com/freeCodeCamp/", "text": "Open Source" },
+        { "to": "/news/support/", "text": "Support" },
+        { "to": "/news/sponsors/", "text": "Sponsors" },
+        {
+          "to": "/news/academic-honesty-policy/",
+          "text": "Academic Honesty"
+        },
+        { "to": "/news/code-of-conduct/", "text": "Code of Conduct" },
+        { "to": "/news/privacy-policy/", "text": "Privacy Policy" },
+        { "to": "/news/terms-of-service/", "text": "Terms of Service" },
+        { "to": "/news/copyright-policy/", "text": "Copyright Policy" }
+      ]
+    },
+    {
+      "title": "Best Tutorials",
+      "links": [
+        { "to": "/news/best-python-tutorial/", "text": "Python Tutorial" },
+        { "to": "/news/best-git-tutorial/", "text": "Git Tutorial" },
+        { "to": "/news/the-best-linux-tutorials/", "text": "Linux Tutorial" },
+        {
+          "to": "/news/best-javascript-tutorial/",
+          "text": "JavaScript Tutorial"
+        },
+        {
+          "to": "/news/best-react-javascript-tutorial/",
+          "text": "React Tutorial"
+        },
+        { "to": "/news/best-html-html5-tutorial/", "text": "HTML Tutorial" },
+        { "to": "/news/best-css-and-css3-tutorial/", "text": "CSS Tutorial" },
+        { "to": "/news/best-sql-database-tutorial/", "text": "SQL Tutorial" },
+        { "to": "/news/best-java-8-tutorial/", "text": "Java Tutorial" },
+        {
+          "to": "/news/best-angular-tutorial-angularjs/",
+          "text": "Angular Tutorial"
+        },
+        {
+          "to": "/news/best-wordpress-tutorial/",
+          "text": "WordPress Tutorial"
+        },
+        {
+          "to": "/news/best-bootstrap-tutorial-responsive-web-design/",
+          "text": "Bootstrap Tutorial"
+        }
+      ]
+    },
+    {
+      "title": "Best Examples",
+      "links": [
+        { "to": "/news/python-example/", "text": "Python Example" },
+        { "to": "/news/javascript-example/", "text": "JavaScript Example" },
+        { "to": "/news/react-examples-reactjs/", "text": "React Example" },
+        {
+          "to": "/news/linux-example-bash-command-line/",
+          "text": "Linux Example"
+        },
+        { "to": "/news/html-and-html5-example/", "text": "HTML Example" },
+        { "to": "/news/css-example-css3/", "text": "CSS Example" },
+        { "to": "/news/sql-example/", "text": "SQL Example" },
+        { "to": "/news/java-example/", "text": "Java Example" },
+        {
+          "to": "/news/the-best-angular-examples/",
+          "text": "Angular Example"
+        },
+        { "to": "/news/the-best-jquery-examples/", "text": "jQuery Example" },
+        {
+          "to": "/news/the-best-bootstrap-examples/",
+          "text": "Bootstrap Example"
+        },
+        { "to": "/news/the-best-php-examples/", "text": "PHP Example" }
+      ]
+    },
+    {
+      "title": "Trending Reference",
+      "links": [
+        {
+          "to": "/news/2019-web-developer-roadmap/",
+          "text": "2019 Web Developer Roadmap"
+        },
+
+        {
+          "to": "/news/linux-command-line-bash-tutorial/",
+          "text": "Linux Command Line Guide"
+        },
+
+        {
+          "to": "/news/the-ultimate-guide-to-git-reset-and-git-revert/",
+          "text": "Git Reset and Git Revert"
+        },
+
+        {
+          "to": "/news/the-ultimate-guide-to-git-merge-and-git-rebase/",
+          "text": "Git Merge and Git Rebase"
+        },
+
+        {
+          "to": "/news/the-ultimate-guide-to-javascript-array-methods-map/",
+          "text": "JavaScript Array Map"
+        },
+
+        {
+          "to": "/news/the-ultimate-guide-to-javascript-array-methods-reduce/",
+          "text": "JavaScript Array Reduce"
+        },
+
+        {
+          "to": "/news/the-ultimate-guide-to-javascript-date-and-moment-js/",
+          "text": "JavaScript Date"
+        },
+
+        {
+          "to": "/news/the-ultimate-guide-to-javascript-string-methods-split/",
+          "text": "JavaScript String Split"
+        },
+
+        {
+          "to": "/news/understanding-flexbox-everything-you-need-to-know-b4013d4dc9af/",
+          "text": "CSS Flexbox Guide"
+        },
+
+        {
+          "to": "/news/11-things-i-learned-reading-the-css-grid-specification-fb3983aa5e0/",
+          "text": "CSS Grid Guide"
+        },
+
+        {
+          "to": "/news/the-ultimate-guide-to-linux-creating-a-sudo-user/",
+          "text": "Create a Linux Sudo User"
+        },
+
+        {
+          "to": "/news/the-ultimate-guide-to-ssh-setting-up-ssh-keys/",
+          "text": "How to Set Up SSH Keys"
+        }
+      ]
+    }
+  ]
+}

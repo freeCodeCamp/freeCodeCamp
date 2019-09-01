@@ -3,6 +3,7 @@ id: a3bfc1673c0526e06d3ac698
 title: Sum All Primes
 isRequired: true
 challengeType: 5
+forumTopicId: 16085
 ---
 
 ## Description
@@ -24,11 +25,11 @@ Remember to use <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-yo
 ```yml
 tests:
   - text: <code>sumPrimes(10)</code> should return a number.
-    testString: assert.deepEqual(typeof sumPrimes(10), 'number', '<code>sumPrimes(10)</code> should return a number.');
+    testString: assert.deepEqual(typeof sumPrimes(10), 'number');
   - text: <code>sumPrimes(10)</code> should return 17.
-    testString: assert.deepEqual(sumPrimes(10), 17, '<code>sumPrimes(10)</code> should return 17.');
+    testString: assert.deepEqual(sumPrimes(10), 17);
   - text: <code>sumPrimes(977)</code> should return 73156.
-    testString: assert.deepEqual(sumPrimes(977), 73156, '<code>sumPrimes(977)</code> should return 73156.');
+    testString: assert.deepEqual(sumPrimes(977), 73156);
 
 ```
 

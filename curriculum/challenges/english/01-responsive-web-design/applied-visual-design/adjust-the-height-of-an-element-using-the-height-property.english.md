@@ -3,12 +3,19 @@ id: 587d7791367417b2b2512ab5
 title: Adjust the Height of an Element Using the height Property
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cEDaDTN'
+forumTopicId: 301034
 ---
 
 ## Description
 <section id='description'>
 You can specify the height of an element using the <code>height</code> property in CSS, similar to the <code>width</code> property. Here's an example that changes the height of an image to 20px:
-<blockquote>img {<br>&nbsp;&nbsp;height: 20px;<br>}</blockquote>
+
+```css
+img {
+  height: 20px;
+}
+```
+
 </section>
 
 ## Instructions
@@ -117,4 +124,5 @@ tests:
   </div>
 </div>
 ```
+
 </section>

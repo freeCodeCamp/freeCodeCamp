@@ -2,12 +2,17 @@
 id: 587d7fb4367417b2b2512bfd
 title: Add Keywords to Your package.json
 challengeType: 2
+forumTopicId: 301526
 ---
 
 ## Description
 <section id='description'>
 The <code>keywords</code> field is where you can describe your project using related keywords. Here's an example:
-<blockquote>"keywords": [ "descriptive", "related", "words" ],</blockquote>
+
+```json
+"keywords": [ "descriptive", "related", "words" ],
+```
+
 As you can see, this field is structured as an array of double-quoted strings.
 </section>
 
@@ -44,4 +49,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

@@ -3,6 +3,7 @@ id: 587d78ab367417b2b2512af2
 title: Use the flex-direction Property to Make a Row
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cBEkbfJ'
+forumTopicId: 301110
 ---
 
 ## Description
@@ -23,7 +24,7 @@ Add the CSS property <code>flex-direction</code> to the <code>#box-container</co
 ```yml
 tests:
   - text: The <code>#box-container</code> element should have a <code>flex-direction</code> property set to row-reverse.
-    testString: assert($('#box-container').css('flex-direction') == 'row-reverse', 'The <code>#box-container</code> element should have a <code>flex-direction</code> property set to row-reverse.');
+    testString: assert($('#box-container').css('flex-direction') == 'row-reverse');
 
 ```
 
@@ -69,7 +70,30 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style>
+  #box-container {
+    display: flex;
+    height: 500px;
+    flex-direction: row-reverse;
+  }
+  #box-1 {
+    background-color: dodgerblue;
+    width: 50%;
+    height: 50%;
+  }
+
+  #box-2 {
+    background-color: orangered;
+    width: 50%;
+    height: 50%;
+  }
+</style>
+
+<div id="box-container">
+  <div id="box-1"></div>
+  <div id="box-2"></div>
+</div>
 ```
+
 </section>

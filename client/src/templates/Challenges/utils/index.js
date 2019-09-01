@@ -1,7 +1,10 @@
-const guideBase = '/guide/certifications';
+import { forumLocation } from '../../../../../config/env.json';
 
-export function createGuideUrl(slug = '') {
-  return guideBase + slug.replace(/^\/learn\//, '/');
+export function getGuideUrl({ forumTopicId, title = '' }) {
+  title = encodeURIComponent(title);
+  return forumTopicId
+    ? `${forumLocation}/t/${forumTopicId}`
+    : `${forumLocation}/search?q=${title}%20in%3Atitle%20order%3Aviews`;
 }
 
 export function isGoodXHRStatus(status) {

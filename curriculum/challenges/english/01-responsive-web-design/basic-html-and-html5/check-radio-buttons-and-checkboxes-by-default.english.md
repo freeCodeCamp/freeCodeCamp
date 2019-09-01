@@ -3,6 +3,7 @@ id: bad87fee1348bd9aedd08835
 title: Check Radio Buttons and Checkboxes by Default
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cWk3Qh6'
+forumTopicId: 301094
 ---
 
 ## Description
@@ -23,9 +24,9 @@ Set the first of your <code>radio button</code>s and the first of your <code>che
 ```yml
 tests:
   - text: Your first radio button on your form should be checked by default.
-    testString: assert($('input[type="radio"]').prop("checked"), 'Your first radio button on your form should be checked by default.');
+    testString: assert($('input[type="radio"]').prop("checked"));
   - text: Your first checkbox on your form should be checked by default.
-    testString: assert($('input[type="checkbox"]').prop("checked"), 'Your first checkbox on your form should be checked by default.');
+    testString: assert($('input[type="checkbox"]').prop("checked"));
 
 ```
 
@@ -56,11 +57,11 @@ tests:
     <li>other cats</li>
   </ol>
   <form action="/submit-cat-photo">
-    <label><input type="radio" name="indoor-outdoor" value="indoor"> Indoor</label>
-    <label><input type="radio" name="indoor-outdoor" value="outdoor"> Outdoor</label><br>
-    <label><input type="checkbox" name="personality" value="loving"> Loving</label>
-    <label><input type="checkbox" name="personality" value="lazy"> Lazy</label>
-    <label><input type="checkbox" name="personality" value="energetic"> Energetic</label><br>
+    <label for="indoor"><input id="indoor" type="radio" name="indoor-outdoor" value="indoor"> Indoor</label>
+    <label for="outdoor"><input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor"> Outdoor</label><br>
+    <label for="loving"><input id="loving" type="checkbox" name="personality" value="loving"> Loving</label>
+    <label for="lazy"><input id="lazy" type="checkbox" name="personality" value="lazy"> Lazy</label>
+    <label for="energetic"><input id="energetic" type="checkbox" name="personality" value="energetic"> Energetic</label><br>
     <input type="text" placeholder="cat photo URL" required>
     <button type="submit">Submit</button>
   </form>
@@ -96,11 +97,11 @@ tests:
     <li>other cats</li>
   </ol>
   <form action="/submit-cat-photo">
-    <label><input type="radio" name="indoor-outdoor" value="indoor" checked> Indoor</label>
-    <label><input type="radio" name="indoor-outdoor" value="outdoor"> Outdoor</label><br>
-    <label><input type="checkbox" name="personality" value="loving" checked> Loving</label>
-    <label><input type="checkbox" name="personality" value="lazy"> Lazy</label>
-    <label><input type="checkbox" name="personality" value="energetic"> Energetic</label><br>
+    <label for="indoor"><input id="indoor" type="radio" name="indoor-outdoor" value="indoor" checked> Indoor</label>
+    <label for="outdoor"><input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor"> Outdoor</label><br>
+    <label for="loving"><input id="loving" type="checkbox" name="personality" value="loving" checked> Loving</label>
+    <label for="lazy"><input id="lazy" type="checkbox" name="personality" value="lazy"> Lazy</label>
+    <label for="energetic"><input id="energetic" type="checkbox" name="personality" value="energetic"> Energetic</label><br>
     <input type="text" placeholder="cat photo URL" required>
     <button type="submit">Submit</button>
   </form>

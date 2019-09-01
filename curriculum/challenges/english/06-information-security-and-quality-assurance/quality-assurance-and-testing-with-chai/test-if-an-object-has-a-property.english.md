@@ -2,6 +2,7 @@
 id: 587d824e367417b2b2512c55
 title: Test if an Object has a Property
 challengeType: 2
+forumTopicId: 301604
 ---
 
 ## Description
@@ -13,7 +14,7 @@ As a reminder, this project is being built upon the following starter project on
 
 ## Instructions
 <section id='instructions'>
-Use <code>#property</code> or <code>#notProperty</code> where it is appropriate.
+Use <code>assert.property()</code> or <code>assert.notProperty()</code> to make the tests pass. 
 </section>
 
 ## Tests
@@ -45,4 +46,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>
