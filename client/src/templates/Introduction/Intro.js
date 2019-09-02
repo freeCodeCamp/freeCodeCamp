@@ -18,14 +18,12 @@ const propTypes = {
   })
 };
 
-function renderMenuItems({ edges = [] }) {
-  return edges
-    .map(({ node }) => node)
-    .map(({ title, fields: { slug } }) => (
-      <Link key={'intro-' + slug} to={slug}>
-        <ListGroupItem>{title}</ListGroupItem>
-      </Link>
-    ));
+function renderMenuItems({ nodes = [] }) {
+  return nodes.map(({ title, fields: { slug } }) => (
+    <Link key={'intro-' + slug} to={slug}>
+      <ListGroupItem>{title}</ListGroupItem>
+    </Link>
+  ));
 }
 
 function IntroductionPage({ data: { markdownRemark, allChallengeNode } }) {
@@ -33,7 +31,7 @@ function IntroductionPage({ data: { markdownRemark, allChallengeNode } }) {
     html,
     frontmatter: { block }
   } = markdownRemark;
-  const firstLesson = allChallengeNode && allChallengeNode.edges[0].node;
+  const firstLesson = allChallengeNode && allChallengeNode.nodes[0];
   const firstLessonPath = firstLesson
     ? firstLesson.fields.slug
     : '/strange-place';
@@ -57,7 +55,7 @@ function IntroductionPage({ data: { markdownRemark, allChallengeNode } }) {
             Go to the first lesson
           </Link>
           <ButtonSpacer />
-          <Link class='btn btn-lg btn-primary btn-block' to='/learn'>
+          <Link className='btn btn-lg btn-primary btn-block' to='/learn'>
             View the curriculum
           </Link>
           <ButtonSpacer />
@@ -91,13 +89,11 @@ export const query = graphql`
       filter: { block: { eq: $block } }
       sort: { fields: [superOrder, order, challengeOrder] }
     ) {
-      edges {
-        node {
-          fields {
-            slug
-          }
-          title
+      nodes {
+        fields {
+          slug
         }
+        title
       }
     }
   }

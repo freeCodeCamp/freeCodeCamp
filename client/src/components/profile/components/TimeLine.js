@@ -148,24 +148,22 @@ TimelineInner.propTypes = propTypes;
 
 function useIdToNameMap() {
   const {
-    allChallengeNode: { edges }
+    allChallengeNode: { nodes }
   } = useStaticQuery(graphql`
     query challengeNodes {
       allChallengeNode {
-        edges {
-          node {
-            fields {
-              slug
-            }
-            id
-            title
+        nodes {
+          fields {
+            slug
           }
+          id
+          title
         }
       }
     }
   `);
   const idToNameMap = new Map();
-  edges.forEach(({ node: { id, title, fields: { slug } } }) => {
+  nodes.forEach(({ id, title, fields: { slug } }) => {
     idToNameMap.set(id, { challengeTitle: title, challengePath: slug });
   });
   return idToNameMap;

@@ -15,6 +15,10 @@ export const MarkdownRemark = PropTypes.shape({
     title: PropTypes.string,
     block: PropTypes.string,
     superBlock: PropTypes.string
+  }),
+  fields: PropTypes.shape({
+    slug: PropTypes.string,
+    block: PropTypes.string
   })
 });
 
@@ -59,17 +63,9 @@ export const ChallengeNode = PropTypes.shape({
 });
 
 export const AllChallengeNode = PropTypes.shape({
-  edges: PropTypes.arrayOf(
-    PropTypes.shape({
-      node: ChallengeNode
-    })
-  )
+  nodes: PropTypes.arrayOf(ChallengeNode)
 });
 
 export const AllMarkdownRemark = PropTypes.shape({
-  edges: PropTypes.arrayOf(
-    PropTypes.shape({
-      node: MarkdownRemark
-    })
-  )
+  nodes: PropTypes.arrayOf(MarkdownRemark)
 });

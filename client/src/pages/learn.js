@@ -31,8 +31,8 @@ const IndexPage = ({
     challengeNode: {
       fields: { slug }
     },
-    allChallengeNode: { edges },
-    allMarkdownRemark: { edges: mdEdges }
+    allChallengeNode: { nodes },
+    allMarkdownRemark: { nodes: mdNodes }
   }
 }) => (
   <LearnLayout>
@@ -56,12 +56,7 @@ const IndexPage = ({
         If you are new to coding, we recommend you{' '}
         <Link to={slug}>start at the beginning</Link>.
       </p>
-      <Map
-        introNodes={mdEdges.map(({ node }) => node)}
-        nodes={edges
-          .map(({ node }) => node)
-          .filter(({ isPrivate }) => !isPrivate)}
-      />
+      <Map introNodes={mdNodes} nodes={nodes} />
     </div>
   </LearnLayout>
 );
@@ -79,31 +74,25 @@ export const query = graphql`
       }
     }
     allChallengeNode(sort: { fields: [superOrder, order, challengeOrder] }) {
-      edges {
-        node {
-          fields {
-            slug
-            blockName
-          }
-          id
-          block
-          title
-          isRequired
-          superBlock
-          dashedName
+      nodes {
+        fields {
+          slug
+          blockName
         }
+        id
+        block
+        title
+        superBlock
       }
     }
     allMarkdownRemark(filter: { frontmatter: { block: { ne: null } } }) {
-      edges {
-        node {
-          frontmatter {
-            title
-            block
-          }
-          fields {
-            slug
-          }
+      nodes {
+        frontmatter {
+          title
+          block
+        }
+        fields {
+          slug
         }
       }
     }
