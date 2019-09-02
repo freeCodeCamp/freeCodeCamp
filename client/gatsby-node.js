@@ -31,10 +31,11 @@ exports.onCreateNode = function onCreateNode({ node, actions, getNode }) {
     const slug = createFilePath({ node, getNode });
     if (!slug.includes('LICENSE')) {
       const {
-        frontmatter: { component = '' }
+        frontmatter: { component = '', block }
       } = node;
       createNodeField({ node, name: 'slug', value: slug });
       createNodeField({ node, name: 'component', value: component });
+      createNodeField({ node, name: 'block', value: dasherize(block) });
     }
   }
 };

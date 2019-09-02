@@ -1,47 +1,37 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import { createSelector } from 'reselect';
-import { uniq, find } from 'lodash';
 
 import Block from './Block';
-
-import { makeExpandedSuperBlockSelector, toggleSuperBlock } from '../redux';
 import Caret from '../../../assets/icons/Caret';
-import { ChallengeNode } from '../../../redux/propTypes';
-
-const mapStateToProps = (state, ownProps) => {
-  const expandedSelector = makeExpandedSuperBlockSelector(ownProps.superBlock);
-
-  return createSelector(
-    expandedSelector,
-    isExpanded => ({ isExpanded })
-  )(state);
-};
-
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators(
-    {
-      toggleSuperBlock
-    },
-    dispatch
-  );
-}
 
 const propTypes = {
-  introNodes: PropTypes.arrayOf(
+  blocks: PropTypes.objectOf(
     PropTypes.shape({
-      fields: PropTypes.shape({ slug: PropTypes.string.isRequired }),
-      frontmatter: PropTypes.shape({
-        title: PropTypes.string.isRequired,
-        block: PropTypes.string.isRequired
+      block: PropTypes.string.isRequired,
+      blockName: PropTypes.string.isRequired,
+      challenges: PropTypes.arrayOf(
+        PropTypes.shape({
+          fields: PropTypes.shape({ slug: PropTypes.string.isRequired }),
+          title: PropTypes.string.isRequired,
+          isCompleted: PropTypes.bool.isRequired
+        })
+      ),
+      completedChallenges: PropTypes.number.isRequired,
+      intro: PropTypes.shape({
+        fields: PropTypes.shape({
+          block: PropTypes.string.isRequired,
+          slug: PropTypes.string.isRequired
+        }),
+        frontmatter: PropTypes.shape({
+          title: PropTypes.string.isRequired
+        })
       })
     })
   ),
+  expandedBlocks: PropTypes.objectOf(PropTypes.bool).isRequired,
   isExpanded: PropTypes.bool,
-  nodes: PropTypes.arrayOf(ChallengeNode),
   superBlock: PropTypes.string,
+  toggleBlock: PropTypes.func.isRequired,
   toggleSuperBlock: PropTypes.func.isRequired
 };
 
@@ -53,60 +43,56 @@ function createSuperBlockTitle(str) {
     : `${str} Certification (300 hours)`;
 }
 
-export class SuperBlock extends Component {
-  renderBlock(superBlock) {
-    const { nodes, introNodes } = this.props;
-    const blocksForSuperBlock = nodes.filter(
-      node => node.superBlock === superBlock
-    );
-    const blockDashedNames = uniq(
-      blocksForSuperBlock.map(({ block }) => block)
-    );
-    return (
-      <ul>
-        {blockDashedNames.map(blockDashedName => (
-          <Block
-            blockDashedName={blockDashedName}
-            challenges={blocksForSuperBlock.filter(
-              node => node.block === blockDashedName
-            )}
-            intro={find(
-              introNodes,
-              ({ frontmatter: { block } }) =>
-                block
-                  .toLowerCase()
-                  .split(' ')
-                  .join('-') === blockDashedName
-            )}
-            key={blockDashedName}
-          />
-        ))}
-      </ul>
-    );
-  }
+function createHandleSuperBlockClick(superBlock, toggleSuperBlock) {
+  return () => {
+    toggleSuperBlock(superBlock);
+  };
+}
 
-  render() {
-    const { superBlock, isExpanded, toggleSuperBlock } = this.props;
-    return (
-      <li className={`superblock ${isExpanded ? 'open' : ''}`}>
-        <button
-          aria-expanded={isExpanded}
-          className='map-title'
-          onClick={() => toggleSuperBlock(superBlock)}
-        >
-          <Caret />
-          <h4>{createSuperBlockTitle(superBlock)}</h4>
-        </button>
-        {isExpanded ? this.renderBlock(superBlock) : null}
-      </li>
-    );
-  }
+function renderBlocks(blocks, expandedBlocks, toggleBlock) {
+  return (
+    <ul>
+      {Object.values(blocks).map(block => (
+        <Block
+          key={block.block}
+          {...block}
+          isExpanded={!!expandedBlocks[block.block]}
+          toggleBlock={toggleBlock}
+        />
+      ))}
+    </ul>
+  );
+}
+
+function SuperBlock(props) {
+  const {
+    superBlock,
+    isExpanded,
+    toggleSuperBlock,
+    blocks,
+    expandedBlocks,
+    toggleBlock
+  } = props;
+  const handleSuperBlockClick = createHandleSuperBlockClick(
+    superBlock,
+    toggleSuperBlock
+  );
+  return (
+    <li className={`superblock ${isExpanded ? 'open' : ''}`}>
+      <button
+        aria-expanded={isExpanded}
+        className='map-title'
+        onClick={handleSuperBlockClick}
+      >
+        <Caret />
+        <h4>{createSuperBlockTitle(superBlock)}</h4>
+      </button>
+      {isExpanded && renderBlocks(blocks, expandedBlocks, toggleBlock)}
+    </li>
+  );
 }
 
 SuperBlock.displayName = 'SuperBlock';
 SuperBlock.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(SuperBlock);
+export default SuperBlock;

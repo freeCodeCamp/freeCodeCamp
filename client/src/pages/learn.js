@@ -89,10 +89,10 @@ export const query = graphql`
       nodes {
         frontmatter {
           title
-          block
         }
         fields {
           slug
+          block
         }
       }
     }
