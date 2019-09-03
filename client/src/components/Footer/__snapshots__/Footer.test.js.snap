@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Footer /> renders to the DOM 1`] = `
+exports[`<Footer /> matches snapshot 1`] = `
 <footer
   className="site-footer"
 >
