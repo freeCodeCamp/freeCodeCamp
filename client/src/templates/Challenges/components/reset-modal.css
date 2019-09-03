@@ -5,7 +5,6 @@
 .reset-modal-header {
   color: var(--danger-color);
   background-color: var(--danger-background);
-  border: none;
 }
 
 .reset-modal-header h4 {

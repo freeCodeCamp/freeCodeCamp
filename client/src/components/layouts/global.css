@@ -104,6 +104,11 @@ a:focus {
   border: 1px solid var(--secondary-color);
 }
 
+.modal-footer,
+.modal-header {
+  border-color: var(--secondary-color);
+}
+
 /* button */
 .btn {
   background-color: var(--quaternary-background);
