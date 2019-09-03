@@ -12,10 +12,6 @@
   color: var(--danger-color);
 }
 
-.reset-modal .modal-footer {
-  border-color: var(--danger-color);
-}
-
 .reset-modal-header .close {
   color: var(--danger-color);
   font-size: 28px;
