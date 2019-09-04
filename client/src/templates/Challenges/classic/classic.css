@@ -34,3 +34,9 @@
   height: 100%;
   overflow: hidden;
 }
+#challenge-page-tabs a {
+  text-decoration: none;
+}
+#challenge-page-tabs a:hover {
+  color: var(--secondary-background);
+}

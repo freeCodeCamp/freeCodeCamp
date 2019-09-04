@@ -100,6 +100,13 @@ a:focus {
 
 .modal-content {
   background-color: var(--secondary-background);
+  border-radius: 0px;
+  border: 1px solid var(--secondary-color);
+}
+
+.modal-footer,
+.modal-header {
+  border-color: var(--secondary-color);
 }
 
 /* button */
@@ -333,4 +340,14 @@ pre {
 
 .panel-primary {
   border-color: var(--primary-color);
+}
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  color: var(--secondary-background);
+}
+
+.nav-tabs > li > a {
+  border-radius: 0;
 }
