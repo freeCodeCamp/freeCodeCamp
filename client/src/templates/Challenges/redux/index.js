@@ -13,6 +13,7 @@ import codeStorageEpic from './code-storage-epic';
 import { createExecuteChallengeSaga } from './execute-challenge-saga';
 import { createCurrentChallengeSaga } from './current-challenge-saga';
 import { challengeTypes } from '../../../../utils/challengeTypes';
+import { completedChallengesSelector } from '../../../redux';
 
 export const ns = 'challenge';
 export const backendNS = 'backendChallenge';
@@ -153,6 +154,11 @@ export const challengeFilesSelector = state => state[ns].challengeFiles;
 export const challengeMetaSelector = state => state[ns].challengeMeta;
 export const challengeTestsSelector = state => state[ns].challengeTests;
 export const consoleOutputSelector = state => state[ns].consoleOut;
+export const isChallengeCompletedSelector = state => {
+  const completedChallenges = completedChallengesSelector(state);
+  const { id: currentChallengeId } = challengeMetaSelector(state);
+  return completedChallenges.some(({ id }) => id === currentChallengeId);
+};
 export const isCodeLockedSelector = state => state[ns].isCodeLocked;
 export const isCompletionModalOpenSelector = state =>
   state[ns].modal.completion;
