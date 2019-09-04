@@ -1,30 +1,14 @@
-/* global expect */
+/* global jest, expect */
+import '@testing-library/jest-dom/extend-expect';
 
 import React from 'react';
-import renderer from 'react-test-renderer';
-import Enzyme from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { render, fireEvent } from '@testing-library/react';
 
-import { DynamicForm } from './Form';
-
-Enzyme.configure({ adapter: new Adapter() });
+import Form from './Form';
 
 const defaultTestProps = {
-  errors: {},
-  fields: {
-    _meta: {
-      allPristine: true,
-      name: 'name',
-      onChange: () => {},
-      value: ''
-    }
-  },
-  handleSubmit: () => {},
-
   buttonText: 'Submit',
-  enableSubmit: true,
   formFields: ['name', 'website'],
-  hideButton: false,
   id: 'my-test-form',
   options: {
     types: {
@@ -36,8 +20,69 @@ const defaultTestProps = {
   submit: () => {}
 };
 
-test('<DynamicForm /> snapshot', () => {
-  const component = renderer.create(<DynamicForm {...defaultTestProps} />);
-  let tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+test('should render', () => {
+  const { getByLabelText, getByText } = render(<Form {...defaultTestProps} />);
+
+  const nameInput = getByLabelText(/name/i);
+  expect(nameInput).not.toBeRequired();
+  expect(nameInput).toHaveAttribute('type', 'text');
+
+  const websiteInput = getByLabelText(/website/i);
+  expect(websiteInput).toBeRequired();
+  expect(websiteInput).toHaveAttribute('type', 'url');
+
+  const button = getByText(/submit/i);
+  expect(button).toHaveAttribute('type', 'submit');
+  expect(button).toBeDisabled();
+});
+
+test('should render with default values', () => {
+  const websiteValue = 'http://mysite.com';
+  const nameValue = 'John';
+
+  const { getByLabelText, getByText } = render(
+    <Form
+      {...defaultTestProps}
+      enableSubmit={true}
+      initialValues={{ name: nameValue, website: websiteValue }}
+    />
+  );
+
+  const nameInput = getByLabelText(/name/i);
+  expect(nameInput).toHaveValue(nameValue);
+
+  const websiteInput = getByLabelText(/website/i);
+  expect(websiteInput).toHaveValue(websiteValue);
+
+  const button = getByText(/submit/i);
+  expect(button).toBeEnabled();
+});
+
+test('should submit', () => {
+  const submit = jest.fn();
+  const props = {
+    ...defaultTestProps,
+    submit
+  };
+  const websiteValue = 'http://mysite.com';
+
+  const { getByLabelText, getByText } = render(<Form {...props} />);
+
+  const websiteInput = getByLabelText(/website/i);
+  fireEvent.change(websiteInput, { target: { value: websiteValue } });
+  expect(websiteInput).toHaveValue(websiteValue);
+
+  const button = getByText(/submit/i);
+  expect(button).toBeEnabled();
+
+  fireEvent.click(button);
+  expect(submit).toHaveBeenCalledTimes(1);
+  expect(submit.mock.calls[0][0]).toEqual({ website: websiteValue });
+
+  fireEvent.change(websiteInput, { target: { value: `${websiteValue}///` } });
+  expect(websiteInput).toHaveValue(`${websiteValue}///`);
+
+  fireEvent.click(button);
+  expect(submit).toHaveBeenCalledTimes(2);
+  expect(submit.mock.calls[1][0]).toEqual({ website: websiteValue });
 });

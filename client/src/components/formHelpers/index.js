@@ -18,7 +18,7 @@ export function callIfDefined(fn) {
 export function formatUrlValues(values, options) {
   return Object.keys(values).reduce((result, key) => {
     let value = values[key];
-    if (options.types[key] === 'url') {
+    if (value && options.types[key] === 'url') {
       value = normalizeUrl(value, normalizeOptions);
     }
     return { ...result, [key]: value };
