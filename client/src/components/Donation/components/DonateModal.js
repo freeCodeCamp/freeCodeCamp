@@ -75,7 +75,7 @@ class DonateModal extends Component {
     };
     return (
       <div className='modal-close-btn-container'>
-        <Button bsStyle='link' onClick={handleClick}>
+        <Button className='btn btn-lg btn-primary' onClick={handleClick}>
           Close
         </Button>
       </div>

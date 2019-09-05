@@ -1,5 +1,6 @@
 .donation-modal {
   font-size: 0.8rem;
+  overflow-y: auto;
 }
 
 .donation-modal p {
