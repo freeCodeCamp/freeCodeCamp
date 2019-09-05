@@ -1,5 +1,4 @@
 import { createAction, handleActions } from 'redux-actions';
-import { reducer as reduxFormReducer } from 'redux-form';
 
 import { createTypes } from '../../../../utils/stateManagement';
 
@@ -353,24 +352,3 @@ export const reducer = handleActions(
   },
   initialState
 );
-
-const resetProjectFormValues = handleActions(
-  {
-    [types.updateProjectFormValues]: (state, { payload: { solution } }) => {
-      if (!solution) {
-        return {
-          ...state,
-          solution: {},
-          githubLink: {}
-        };
-      }
-      return state;
-    }
-  },
-  {}
-);
-
-export const formReducer = reduxFormReducer.plugin({
-  'frond-end-form': resetProjectFormValues,
-  'back-end-form': resetProjectFormValues
-});

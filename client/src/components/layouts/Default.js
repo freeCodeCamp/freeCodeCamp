@@ -25,7 +25,6 @@ import Header from '../Header';
 import Footer from '../Footer';
 
 import './global.css';
-import './layout.css';
 import './variables.css';
 
 fontawesome.config = {
@@ -67,7 +66,6 @@ const propTypes = {
   hasMessage: PropTypes.bool,
   isOnline: PropTypes.bool.isRequired,
   isSignedIn: PropTypes.bool,
-  landingPage: PropTypes.bool,
   onlineStatusChange: PropTypes.func.isRequired,
   pathname: PropTypes.string.isRequired,
   removeFlashMessage: PropTypes.func.isRequired,
@@ -133,7 +131,6 @@ class DefaultLayout extends Component {
       flashMessage,
       isOnline,
       isSignedIn,
-      landingPage,
       removeFlashMessage,
       showFooter = true,
       theme
@@ -157,11 +154,8 @@ class DefaultLayout extends Component {
           <style>{fontawesome.dom.css()}</style>
         </Helmet>
         <WithInstantSearch>
-          <Header disableSettings={landingPage} />
-          <div
-            className={`default-layout
-          ${landingPage ? 'landing-page' : ''}`}
-          >
+          <Header disableSettings={!isSignedIn} />
+          <div className={`default-layout`}>
             <OfflineWarning isOnline={isOnline} isSignedIn={isSignedIn} />
             {hasMessage && flashMessage ? (
               <Flash flashMessage={flashMessage} onClose={removeFlashMessage} />

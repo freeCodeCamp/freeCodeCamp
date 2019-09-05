@@ -1,0 +1,14 @@
+.quote-partial .blockquote {
+  font-size: 1.3rem;
+  border: none;
+}
+
+@media (max-width: 500px) {
+  .quote-partial .blockquote {
+    font-size: 1.2rem;
+    border: none;
+  }
+}
+.quote-author {
+  font-style: normal;
+}

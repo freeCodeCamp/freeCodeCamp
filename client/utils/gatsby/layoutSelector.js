@@ -11,13 +11,6 @@ export default function layoutSelector({ element, props }) {
   const {
     location: { pathname }
   } = props;
-  if (pathname === '/') {
-    return (
-      <DefaultLayout landingPage={true} pathname={pathname}>
-        {element}
-      </DefaultLayout>
-    );
-  }
   if (element.type === FourOhFourPage) {
     return <DefaultLayout pathname={pathname}>{element}</DefaultLayout>;
   }
