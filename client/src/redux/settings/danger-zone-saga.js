@@ -37,7 +37,7 @@ function* resetProgressSaga() {
     // wait for the refresh to complete
     yield take(appTypes.fetchUserComplete);
     // the complete action has been called
-    yield call(navigate, '/welcome');
+    yield call(navigate, '/');
   } catch (e) {
     yield put(resetProgressError(e));
   }

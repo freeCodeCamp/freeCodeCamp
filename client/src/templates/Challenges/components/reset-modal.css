@@ -5,15 +5,10 @@
 .reset-modal-header {
   color: var(--danger-color);
   background-color: var(--danger-background);
-  border: none;
 }
 
 .reset-modal-header h4 {
   color: var(--danger-color);
-}
-
-.reset-modal .modal-footer {
-  border-color: var(--danger-color);
 }
 
 .reset-modal-header .close {

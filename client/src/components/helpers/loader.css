@@ -1,12 +1,19 @@
-.full-screen-wrapper {
-  height: 100vh;
+.fcc-loader {
+  height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.full-screen-wrapper .sk-spinner {
-  transform: scale(2);
+.fcc-loader .sk-spinner {
   color: var(--secondary-color);
+}
+
+.fcc-loader.full-screen-wrapper {
+  height: calc(100vh - var(--header-height, 0px));
+}
+
+.fcc-loader.full-screen-wrapper .sk-spinner {
+  transform: scale(2);
 }

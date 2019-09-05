@@ -32,7 +32,7 @@ const mapStateToProps = createSelector(
 );
 const mapDispatchToProps = dispatch =>
   bindActionCreators({ acceptTerms }, dispatch);
-const RedirectWelcome = createRedirect('/welcome');
+const RedirectHome = createRedirect('/');
 
 class AcceptPrivacyTerms extends Component {
   constructor(props) {
@@ -66,7 +66,7 @@ class AcceptPrivacyTerms extends Component {
   render() {
     const { acceptedPrivacyTerms } = this.props;
     if (acceptedPrivacyTerms) {
-      return <RedirectWelcome />;
+      return <RedirectHome />;
     }
     const { privacyPolicy, termsOfService, quincyEmail } = this.state;
     return (
