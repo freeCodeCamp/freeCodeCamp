@@ -8,7 +8,9 @@ import {
   ControlLabel,
   Form,
   FormControl,
-  FormGroup
+  FormGroup,
+  Row,
+  Col
 } from '@freecodecamp/react-bootstrap';
 import { injectStripe } from 'react-stripe-elements';
 
@@ -162,34 +164,35 @@ class DonateForm extends Component {
   renderDonateForm() {
     const { isFormValid } = this.state;
     return (
-      <div>
-        <Form className='donation-form' onSubmit={this.handleSubmit}>
-          <FormGroup className='donation-email-container'>
-            <ControlLabel>
-              Email (we'll send you a tax-deductible donation receipt):
-            </ControlLabel>
-            <FormControl
-              onChange={this.handleEmailChange}
-              placeholder='me@example.com'
-              required={true}
-              type='text'
-              value={this.getUserEmail()}
-            />
-          </FormGroup>
-          <StripeCardForm getValidationState={this.getValidationState} />
-          <Button
-            block={true}
-            bsSize='lg'
-            bsStyle='primary'
-            disabled={!isFormValid}
-            id='confirm-donation-btn'
-            type='submit'
-          >
-            Confirm your donation of $5 / month
-          </Button>
-          <Spacer />
-        </Form>
-      </div>
+      <Row>
+        <Col sm={10} smOffset={1} xs={12}>
+          <Form className='donation-form' onSubmit={this.handleSubmit}>
+            <FormGroup className='donation-email-container'>
+              <ControlLabel>
+                Email (we'll send you a tax-deductible donation receipt):
+              </ControlLabel>
+              <FormControl
+                onChange={this.handleEmailChange}
+                placeholder='me@example.com'
+                required={true}
+                type='text'
+                value={this.getUserEmail()}
+              />
+            </FormGroup>
+            <StripeCardForm getValidationState={this.getValidationState} />
+            <Button
+              block={true}
+              bsStyle='primary'
+              disabled={!isFormValid}
+              id='confirm-donation-btn'
+              type='submit'
+            >
+              Confirm your donation of $5 / month
+            </Button>
+            <Spacer />
+          </Form>
+        </Col>
+      </Row>
     );
   }
 
