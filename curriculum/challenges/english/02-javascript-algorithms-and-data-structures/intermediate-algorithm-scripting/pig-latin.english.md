@@ -70,18 +70,30 @@ translatePigLatin("consonant");
 
 ```js
 function translatePigLatin(str) {
-  if (isVowel(str.charAt(0))) return str + "way";
-  var front = [];
-  str = str.split('');
-  while (str.length && !isVowel(str[0])) {
-    front.push(str.shift());
+ 
+  let r=/([b-df-hj-np-tv-z]{0,})([aeiou]{0,1})([a-z]+)/;
+ 
+  let y = str.match(r);
+  console.log(y);
+  console.log(y[1].length)
+
+  if(y[2].length==0){
+    return str;
   }
-  return [].concat(str, front).join('') + 'ay';
+  if (y[1].length>0){
+    let newstr = y[2]+y[3]+y[1]+"ay";
+    console.log(newstr);
+    return newstr;
+  }
+
+  if(y[1].length==0){
+    let newstr = y[2]+ y[3]+"way";
+    console.log(newstr);
+    return newstr; 
+  }
+
 }
 
-function isVowel(c) {
-  return ['a', 'e', 'i', 'o', 'u'].indexOf(c.toLowerCase()) !== -1;
-}
 ```
 
 </section>
