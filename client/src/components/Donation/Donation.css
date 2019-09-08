@@ -1,5 +1,5 @@
 .donation-modal {
-  font-size: 0.8rem;
+  overflow-y: auto;
 }
 
 .donation-modal p {
@@ -16,15 +16,29 @@
   font-size: 1.2rem;
 }
 
-.donation-modal .donation-form {
-  width: 60%;
-}
 .donation-form {
   display: flex;
   flex-direction: column;
   width: 80%;
   justify-content: center;
   margin: 0 auto;
+}
+
+@media (max-width: 500px) {
+  .donation-form {
+    width: 100%;
+  }
+}
+
+.donation-modal .btn-link {
+  border: none;
+  text-decoration: underline;
+  background: transparent;
+}
+.donation-modal .btn-link:hover {
+  background: var(--tertiary-background);
+  text-decoration: none;
+  color: inherit;
 }
 
 .donation-elements {
