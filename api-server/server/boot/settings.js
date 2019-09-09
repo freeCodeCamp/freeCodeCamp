@@ -188,7 +188,6 @@ function updateMyAbout(req, res, next) {
 
 function createUpdateMyUsername(app) {
   const { User } = app.models;
-  console.log(User);
   return async function updateMyUsername(req, res, next) {
     const {
       user,
