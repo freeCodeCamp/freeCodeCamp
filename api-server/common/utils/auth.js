@@ -74,7 +74,7 @@ export function getEncodedEmail(email) {
   if (!email) {
     return null;
   }
-  return Buffer(email).toString('base64');
+  return Buffer.from(email).toString('base64');
 }
 
-export const decodeEmail = email => Buffer(email, 'base64').toString();
+export const decodeEmail = email => Buffer.from(email, 'base64').toString();
