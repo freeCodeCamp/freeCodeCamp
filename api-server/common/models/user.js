@@ -571,7 +571,6 @@ export default function(User) {
   };
 
   User.prototype.updateMyUsername = function updateMyUsername(newUsername) {
-    console.log(newUsername);
     return Observable.defer(() => {
       const isOwnUsername = isTheSame(newUsername.toLowerCase(), this.username);
       if (isOwnUsername) {
