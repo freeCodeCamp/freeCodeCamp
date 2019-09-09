@@ -55,6 +55,10 @@ function destroyAll(id, Model) {
   return Observable.fromNodeCallback(Model.destroyAll, Model)({ userId: id });
 }
 
+function ensureLowerCaseString(maybeString) {
+  return (maybeString && maybeString.toLowerCase()) || '';
+}
+
 function buildCompletedChallengesUpdate(completedChallenges, project) {
   const key = Object.keys(project)[0];
   const solutions = project[key];
@@ -509,10 +513,14 @@ export default function(User) {
 
   User.prototype.requestAuthEmail = requestAuthEmail;
 
-  User.prototype.requestUpdateEmail = function requestUpdateEmail(newEmail) {
-    const currentEmail = this.email;
+  function requestUpdateEmail(requestedEmail) {
+    const newEmail = ensureLowerCaseString(requestedEmail);
+    const currentEmail = ensureLowerCaseString(this.email);
     const isOwnEmail = isTheSame(newEmail, currentEmail);
-    const isResendUpdateToSameEmail = isTheSame(newEmail, this.newEmail);
+    const isResendUpdateToSameEmail = isTheSame(
+      newEmail,
+      ensureLowerCaseString(this.newEmail)
+    );
     const isLinkSentWithinLimit = getWaitMessage(this.emailVerifyTTL);
     const isVerifiedEmail = this.emailVerified;
 
@@ -583,7 +591,9 @@ export default function(User) {
     } else {
       return 'Something unexpected happened while updating your email.';
     }
-  };
+  }
+
+  User.prototype.requestUpdateEmail = requestUpdateEmail;
 
   User.prototype.requestUpdateFlags = async function requestUpdateFlags(
     values
