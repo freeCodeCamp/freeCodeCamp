@@ -16,10 +16,19 @@ import generate from 'nanoid/generate';
 
 import { apiLocation } from '../../../config/env';
 
-import { fixCompletedChallengeItem } from '../utils';
-import { saveUser, observeMethod } from '../../server/utils/rx.js';
+import {
+  fixCompletedChallengeItem,
+  getEncodedEmail,
+  getWaitMessage,
+  renderEmailChangeEmail,
+  renderSignUpEmail,
+  renderSignInEmail
+} from '../utils';
+
 import { blacklistedUsernames } from '../../server/utils/constants.js';
 import { wrapHandledError } from '../../server/utils/create-handled-error.js';
+import { saveUser, observeMethod } from '../../server/utils/rx.js';
+import { getEmailSender } from '../../server/utils/url-utils';
 import {
   normaliseUserFields,
   getProgress,
@@ -436,6 +445,145 @@ export default function(User) {
   }
 
   User.prototype.requestCompletedChallenges = requestCompletedChallenges;
+
+  function requestAuthEmail(isSignUp, newEmail) {
+    return Observable.defer(() => {
+      const messageOrNull = getWaitMessage(this.emailAuthLinkTTL);
+      if (messageOrNull) {
+        throw wrapHandledError(new Error('request is throttled'), {
+          type: 'info',
+          message: messageOrNull
+        });
+      }
+
+      // create a temporary access token with ttl for 15 minutes
+      return this.createAuthToken({ ttl: 15 * 60 * 1000 });
+    })
+      .flatMap(token => {
+        let renderAuthEmail = renderSignInEmail;
+        let subject = 'Your sign in link for freeCodeCamp.org';
+        if (isSignUp) {
+          renderAuthEmail = renderSignUpEmail;
+          subject = 'Your sign in link for your new freeCodeCamp.org account';
+        }
+        if (newEmail) {
+          renderAuthEmail = renderEmailChangeEmail;
+          subject = dedent`
+            Please confirm your updated email address for freeCodeCamp.org
+          `;
+        }
+        const { id: loginToken, created: emailAuthLinkTTL } = token;
+        const loginEmail = getEncodedEmail(newEmail ? newEmail : null);
+        const host = apiLocation;
+        const mailOptions = {
+          type: 'email',
+          to: newEmail ? newEmail : this.email,
+          from: getEmailSender(),
+          subject,
+          text: renderAuthEmail({
+            host,
+            loginEmail,
+            loginToken,
+            emailChange: !!newEmail
+          })
+        };
+        const userUpdate = new Promise((resolve, reject) =>
+          this.updateAttributes({ emailAuthLinkTTL }, err => {
+            if (err) {
+              return reject(err);
+            }
+            return resolve();
+          })
+        );
+        return Observable.forkJoin(
+          User.email.send$(mailOptions),
+          Observable.fromPromise(userUpdate)
+        );
+      })
+      .map(
+        () =>
+          'Check your email and click the link we sent you to confirm' +
+          ' your new email address.'
+      );
+  }
+
+  User.prototype.requestAuthEmail = requestAuthEmail;
+
+  User.prototype.requestUpdateEmail = function requestUpdateEmail(newEmail) {
+    const currentEmail = this.email;
+    const isOwnEmail = isTheSame(newEmail, currentEmail);
+    const isResendUpdateToSameEmail = isTheSame(newEmail, this.newEmail);
+    const isLinkSentWithinLimit = getWaitMessage(this.emailVerifyTTL);
+    const isVerifiedEmail = this.emailVerified;
+
+    if (isOwnEmail && isVerifiedEmail) {
+      // email is already associated and verified with this account
+      throw wrapHandledError(new Error('email is already verified'), {
+        type: 'info',
+        message: `
+            ${newEmail} is already associated with this account.
+            You can update a new email address instead.`
+      });
+    }
+    if (isResendUpdateToSameEmail && isLinkSentWithinLimit) {
+      // trying to update with the same newEmail and
+      // confirmation email is still valid
+      throw wrapHandledError(new Error(), {
+        type: 'info',
+        message: dedent`
+          We have already sent an email confirmation request to ${newEmail}.
+          ${isLinkSentWithinLimit}`
+      });
+    }
+    if (!isEmail('' + newEmail)) {
+      throw createEmailError();
+    }
+
+    // newEmail is not associated with this user, and
+    // this attempt to change email is the first or
+    // previous attempts have expired
+    if (
+      !isOwnEmail ||
+      (isOwnEmail && !isVerifiedEmail) ||
+      (isResendUpdateToSameEmail && !isLinkSentWithinLimit)
+    ) {
+      const updateConfig = {
+        newEmail,
+        emailVerified: false,
+        emailVerifyTTL: new Date()
+      };
+
+      // defer prevents the promise from firing prematurely (before subscribe)
+      return Observable.defer(() => User.doesExist(null, newEmail))
+        .do(exists => {
+          if (exists && !isOwnEmail) {
+            // newEmail is not associated with this account,
+            // but is associated with different account
+            throw wrapHandledError(new Error('email already in use'), {
+              type: 'info',
+              message: `${newEmail} is already associated with another account.`
+            });
+          }
+        })
+        .flatMap(() => {
+          const updatePromise = new Promise((resolve, reject) =>
+            this.updateAttributes(updateConfig, err => {
+              if (err) {
+                return reject(err);
+              }
+              return resolve();
+            })
+          );
+          return Observable.forkJoin(
+            Observable.fromPromise(updatePromise),
+            this.requestAuthEmail(false, newEmail),
+            (_, message) => message
+          );
+        });
+    } else {
+      return 'Something unexpected happened while updating your email.';
+    }
+  };
 
   User.prototype.requestUpdateFlags = async function requestUpdateFlags(
     values
