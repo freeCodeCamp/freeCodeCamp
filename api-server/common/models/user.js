@@ -335,10 +335,10 @@ export default function(User) {
   });
 
   User.doesExist = function doesExist(username, email) {
-    username = username.toLowerCase();
     if (!username.toLowerCase() && (!email || !isEmail(email))) {
       return Promise.resolve(false);
     }
+    username = username.toLowerCase();
     log('checking existence');
 
     // check to see if username is on blacklist
@@ -381,13 +381,13 @@ export default function(User) {
   });
 
   User.about = function about(username, cb) {
-    username = username.toLowerCase();
     if (!username) {
       // Zalgo!!
       return nextTick(() => {
         cb(null, {});
       });
     }
+    username = username.toLowerCase();
     return User.findOne({ where: { username } }, (err, user) => {
       if (err) {
         return cb(err);
