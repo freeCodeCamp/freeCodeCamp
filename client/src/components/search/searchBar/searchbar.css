@@ -143,20 +143,3 @@
 .fcc_suggestion_footer .hit-name .ais-Highlight .ais-Highlight-nonHighlighted {
   font-weight: bold;
 }
-
-/* Show only the first 5 hits on mobile */
-.ais-Hits-list .ais-Hits-item:nth-child(n + 6) {
-  display: none;
-}
-
-/* Ensure the dropdown footer is always visible */
-.ais-Hits-list .ais-Hits-item:nth-child(9) {
-  display: block;
-}
-
-@media (min-width: 767px) and (min-height: 768px) {
-  /* Show hits 6-8 on desktop and some tablets */
-  .ais-Hits-list .ais-Hits-item:nth-child(n + 6) {
-    display: block;
-  }
-}
