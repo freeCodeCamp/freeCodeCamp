@@ -4,7 +4,7 @@ import isEmpty from 'lodash/isEmpty';
 import Suggestion from './SearchSuggestion';
 
 const CustomHits = connectHits(
-  ({ hits, currentRefinement, handleSubmit, getHits }) => {
+  ({ hits, currentRefinement, handleSubmit, getHitsLength }) => {
     const footer = [
       {
         objectID: `default-hit-${currentRefinement}`,
@@ -22,7 +22,7 @@ const CustomHits = connectHits(
       }
     ];
     const allHits = hits.concat(footer);
-    getHits(allHits);
+    getHitsLength(allHits.length);
 
     return (
       <div className='ais-Hits'>
@@ -43,11 +43,11 @@ const CustomHits = connectHits(
 );
 
 const SearchHits = connectStateResults(
-  ({ handleSubmit, getHits, searchState }) => {
+  ({ handleSubmit, getHitsLength, searchState }) => {
     return isEmpty(searchState) || !searchState.query ? null : (
       <CustomHits
         currentRefinement={searchState.query}
-        getHits={getHits}
+        getHitsLength={getHitsLength}
         handleSubmit={handleSubmit}
       />
     );

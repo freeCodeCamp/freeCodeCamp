@@ -135,6 +135,15 @@
   border: 0;
 }
 
+/* Hit selected with arrow keys */
+.highlighted {
+  background-color: var(--blue-dark);
+}
+
+.unHighlighted {
+  background-color: var(--gray-75);
+}
+
 /* Dropdown footer */
 .fcc_suggestion_footer {
   border-top: 1.5px solid var(--gray-00);

@@ -12,7 +12,11 @@ const Suggestion = ({ handleSubmit, hit }) => {
           ? 'fcc_suggestion_footer fcc_suggestion_item'
           : 'fcc_suggestion_item'
       }
-      href={hit.url}
+      href={
+        dropdownFooter
+          ? `https://freecodecamp.org/news/search/?query=${hit.query}`
+          : hit.url
+      }
       onClick={e => (dropdownFooter ? handleSubmit(e, hit.query) : '')}
     >
       <span className='hit-name'>
