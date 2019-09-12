@@ -200,6 +200,7 @@ class SearchBar extends Component {
             Search
           </label>
           <SearchBox
+            focusShortcuts={[83, 191]}
             onChange={this.handleChange}
             onKeyDown={this.handleKeyDown}
             onSubmit={this.handleSearch}
