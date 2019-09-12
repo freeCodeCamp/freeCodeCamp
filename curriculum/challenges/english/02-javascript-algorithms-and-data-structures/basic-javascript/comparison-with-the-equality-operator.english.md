@@ -9,7 +9,7 @@ forumTopicId: 16784
 ## Description
 <section id='description'>
 There are many <dfn>Comparison Operators</dfn> in JavaScript. All of these operators return a boolean <code>true</code> or <code>false</code> value.
-The most basic operator is the equality operator <code>==</code>. The equality operator compares two values and returns <code>true</code> if they're equivalent or <code>false</code> if they are not. Note that equality is different from assignment (<code>=</code>), which assigns the value at the right of the operator to a variable in the left.
+The most basic operator is the equality operator <code>==</code>. The equality operator compares two values and returns <code>true</code> if they're equivalent or <code>false</code> if they are not. Note that equality is different from assignment (<code>=</code>), which assigns the value at the right of the operator to a variable on the left.
 
 ```js
 function equalityTest(myVal) {
@@ -34,7 +34,7 @@ In order for JavaScript to compare two different <code>data types</code> (for ex
 
 ## Instructions
 <section id='instructions'>
-Add the <code>equality operator</code> to the indicated line so that the function will return "Equal" when <code>val</code> is equivalent to <code>12</code>
+Add the <code>equality operator</code> to the indicated line so that the function will return "Equal" when <code>val</code> is equivalent to <code>12</code>.
 </section>
 
 ## Tests
