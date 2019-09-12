@@ -69,12 +69,12 @@ class SearchBar extends Component {
 
   componentDidUpdate() {
     const { hitsNode, index } = this.state;
-    if (hitsNode && index >= 0) {
+    if (hitsNode) {
       hitsNode.forEach(hit => hit.classList.add('unHighlighted'));
-      hitsNode[index].classList.remove('unHighlighted');
-      hitsNode[index].classList.add('highlighted');
-    } else if (hitsNode && index === -1) {
-      hitsNode.forEach(hit => hit.classList.add('unHighlighted'));
+      if (index >= 0) {
+        hitsNode[index].classList.remove('unHighlighted');
+        hitsNode[index].classList.add('highlighted');
+      }
     }
   }
 
@@ -88,7 +88,7 @@ class SearchBar extends Component {
       toggleSearchFocused(true);
     }
     // Reset if user updates query
-    this.setState({ index: -1, hitsNode: [] });
+    this.setState({ index: -1 });
   }
 
   handlePageClick(e) {
@@ -97,7 +97,7 @@ class SearchBar extends Component {
     if (!isSearchFocusedClick) {
       // Reset if user clicks outside of
       // search bar / closes dropdown
-      this.setState({ index: -1, hitsNode: [] });
+      this.setState({ index: -1 });
     }
     return toggleSearchFocused(isSearchFocusedClick);
   }
@@ -136,8 +136,7 @@ class SearchBar extends Component {
       toggleSearchDropdown(false);
       this.setState({
         index: -1,
-        hitsLength: length,
-        hitsNode: []
+        hitsLength: length
       });
     } else {
       this.setState({ hitsLength: length });
@@ -150,9 +149,9 @@ class SearchBar extends Component {
     const upKey = e.keyCode === 38;
     const downKey = e.keyCode === 40;
     const searchBar = ReactDOM.findDOMNode(this);
-    let hitsNode;
+    let currentHitsNode;
     if (isDropdownEnabled && isSearchFocused) {
-      hitsNode = searchBar.querySelectorAll('.fcc_suggestion_item');
+      currentHitsNode = searchBar.querySelectorAll('.fcc_suggestion_item');
     }
 
     if (upKey || downKey) {
@@ -161,16 +160,30 @@ class SearchBar extends Component {
       e.preventDefault();
     }
 
-    if (upKey && index >= 0) {
-      this.setState(prevState => ({
-        index: prevState.index - 1,
-        hitsNode: hitsNode
-      }));
-    } else if (downKey && index < hitsNode.length - 1) {
-      this.setState(prevState => ({
-        index: prevState.index + 1,
-        hitsNode: hitsNode
-      }));
+    if (upKey) {
+      if (index === -1) {
+        this.setState({
+          index: currentHitsNode.length - 1,
+          hitsNode: currentHitsNode
+        });
+      } else {
+        this.setState(prevState => ({
+          index: prevState.index - 1,
+          hitsNode: currentHitsNode
+        }));
+      }
+    } else if (downKey) {
+      if (index === currentHitsNode.length - 1) {
+        this.setState({
+          index: -1,
+          hitsNode: currentHitsNode
+        });
+      } else {
+        this.setState(prevState => ({
+          index: prevState.index + 1,
+          hitsNode: currentHitsNode
+        }));
+      }
     }
   }
 
