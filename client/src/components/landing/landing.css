@@ -42,6 +42,10 @@
   text-decoration: underline;
 }
 
+.text-shift {
+  margin-left: 110px;
+}
+
 /* Buttons with a lot of text can overflow and mess up formatting on small
    screens, this stops that unless the word itself is too large. */
 

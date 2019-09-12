@@ -22,39 +22,41 @@ function Landing() {
         <title>Learn to code | freeCodeCamp.org</title>
       </Helmet>
       <main className='index-page'>
-        <Spacer size={2} />
+        <Spacer size={1} />
         <Grid>
           <Row>
             <Col sm={10} smOffset={1} xs={12}>
               <h1 className='big-heading text-center'>
                 Welcome to freeCodeCamp.org
               </h1>
-              <Spacer />
-              <h2 className='medium-heading'>Learn to code.</h2>
-              <h2 className='medium-heading'>
+              <Spacer size={0.8} />
+              <h2 className='medium-heading text-shift'>Learn to code.</h2>
+              <h2 className='medium-heading text-shift'>
                 Build projects and earn certifications.
               </h2>
-              <h2 className='medium-heading'>
+              <h2 className='medium-heading text-shift'>
                 Grow your portfolio and get a developer job.
               </h2>
-              <h2 className='medium-heading'>
+              <h2 className='medium-heading text-shift'>
                 It's all 100% free thanks to our nonprofit's donors.
               </h2>
             </Col>
           </Row>
-          <Spacer />
+          <Spacer size={0.7} />
           <BigCallToAction />
-          <Spacer size={2} />
+          <Spacer size={0.8} />
+          <h2 className='medium-heading text-center'>As seen in:</h2>
+          <Spacer size={0.7} />
           <Image
             alt='companies featuring freeCodeCamp.org'
             className='img-center'
             responsive={true}
             src='https://cdn-media-1.freecodecamp.org/learn/as-seen-on.png'
           />
-          <Spacer />
+          <Spacer size={0.8} />
           <Row>
             <Col sm={10} smOffset={1} xs={12}>
-              <h2 className='medium-heading'>
+              <h2 className='medium-heading text-shift'>
                 Since 2014, more than 40,000 freeCodeCamp.org graduates have
                 gotten jobs in tech.
               </h2>
