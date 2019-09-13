@@ -18,6 +18,7 @@ exports[`createRedirects matches the snapshot 1`] = `
 /privacy                                      https://news.example.com/privacy-policy 200
 /privacy-policy                               https://news.example.com/privacy-policy 200
 /shop                                         https://news.example.com/shop 200
+/software-resources-for-nonprofits            https://news.example.com/software-resources-for-nonprofits 200
 /sponsors                                     https://news.example.com/sponsors 200
 /support                                      https://news.example.com/support 200
 /terms                                        https://news.example.com/terms-of-service 200
