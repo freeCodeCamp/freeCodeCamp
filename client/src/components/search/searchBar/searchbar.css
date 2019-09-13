@@ -111,7 +111,7 @@
 .fcc_suggestion_item {
   display: block;
   padding: 8px;
-  color: var(--gray-00);
+  color: var(--gray-00) !important;
   text-decoration: none;
 }
 
@@ -120,7 +120,6 @@
 }
 
 .fcc_suggestion_item:hover {
-  background-color: var(--blue-dark);
   cursor: pointer;
 }
 

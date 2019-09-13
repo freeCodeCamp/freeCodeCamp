@@ -4,7 +4,14 @@ import isEmpty from 'lodash/isEmpty';
 import Suggestion from './SearchSuggestion';
 
 const CustomHits = connectHits(
-  ({ hits, currentRefinement, handleSubmit, getHitsLength }) => {
+  ({
+    hits,
+    currentRefinement,
+    handleSubmit,
+    handleHits,
+    handleMouseEnter,
+    handleMouseLeave
+  }) => {
     const footer = [
       {
         objectID: `default-hit-${currentRefinement}`,
@@ -21,8 +28,8 @@ const CustomHits = connectHits(
         }
       }
     ];
-    const allHits = hits.concat(footer);
-    getHitsLength(allHits.length);
+    const allHits = hits.filter((_, i) => i < 8).concat(footer);
+    handleHits();
 
     return (
       <div className='ais-Hits'>
@@ -33,7 +40,12 @@ const CustomHits = connectHits(
               data-fccobjectid={hit.objectID}
               key={hit.objectID}
             >
-              <Suggestion handleSubmit={handleSubmit} hit={hit} />
+              <Suggestion
+                handleMouseEnter={handleMouseEnter}
+                handleMouseLeave={handleMouseLeave}
+                handleSubmit={handleSubmit}
+                hit={hit}
+              />
             </li>
           ))}
         </ul>
@@ -43,11 +55,19 @@ const CustomHits = connectHits(
 );
 
 const SearchHits = connectStateResults(
-  ({ handleSubmit, getHitsLength, searchState }) => {
+  ({
+    handleSubmit,
+    handleHits,
+    searchState,
+    handleMouseEnter,
+    handleMouseLeave
+  }) => {
     return isEmpty(searchState) || !searchState.query ? null : (
       <CustomHits
         currentRefinement={searchState.query}
-        getHitsLength={getHitsLength}
+        handleHits={handleHits}
+        handleMouseEnter={handleMouseEnter}
+        handleMouseLeave={handleMouseLeave}
         handleSubmit={handleSubmit}
       />
     );

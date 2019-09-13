@@ -49,10 +49,12 @@ class SearchBar extends Component {
 
     this.searchBarRef = React.createRef();
     this.handleChange = this.handleChange.bind(this);
-    this.handlePageClick = this.handlePageClick.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
     this.handleHits = this.handleHits.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
+    this.handleMouseEnter = this.handleMouseEnter.bind(this);
+    this.handleMouseLeave = this.handleMouseLeave.bind(this);
+    this.handleFocus = this.handleFocus.bind(this);
     this.state = {
       hitsLength: 0,
       index: -1,
@@ -64,7 +66,7 @@ class SearchBar extends Component {
     const searchInput = document.querySelector('.ais-SearchBox-input');
     searchInput.id = 'fcc_instantsearch';
 
-    document.addEventListener('click', this.handlePageClick);
+    document.addEventListener('click', this.handleFocus);
   }
 
   componentDidUpdate() {
@@ -79,7 +81,7 @@ class SearchBar extends Component {
   }
 
   componentWillUnmount() {
-    document.removeEventListener('click', this.handlePageClick);
+    document.addEventListener('click', this.handleFocus);
   }
 
   handleChange() {
@@ -91,15 +93,15 @@ class SearchBar extends Component {
     this.setState({ index: -1 });
   }
 
-  handlePageClick(e) {
+  handleFocus(e) {
     const { toggleSearchFocused } = this.props;
-    const isSearchFocusedClick = this.searchBarRef.current.contains(e.target);
-    if (!isSearchFocusedClick) {
+    const isSearchFocused = this.searchBarRef.current.contains(e.target);
+    if (!isSearchFocused) {
       // Reset if user clicks outside of
       // search bar / closes dropdown
       this.setState({ index: -1 });
     }
-    return toggleSearchFocused(isSearchFocusedClick);
+    return toggleSearchFocused(isSearchFocused);
   }
 
   handleSearch(e, query) {
@@ -108,6 +110,7 @@ class SearchBar extends Component {
     const { hitsNode, index } = this.state;
     // Disable the search dropdown
     toggleSearchDropdown(false);
+
     const selectedHit = hitsNode[index];
     if (selectedHit) {
       // Redirect to hit selected by arrow keys
@@ -127,32 +130,47 @@ class SearchBar extends Component {
     );
   }
 
-  handleHits(length) {
-    const { toggleSearchDropdown } = this.props;
-    if (length !== this.state.hitsLength) {
-      // Toggle dropdown and reset if the length of hits
+  handleHits() {
+    const { isDropdownEnabled, isSearchFocused } = this.props;
+    if (isDropdownEnabled && isSearchFocused) {
+      const searchBar = ReactDOM.findDOMNode(this);
+      const currentHitsNode = searchBar.querySelectorAll(
+        '.fcc_suggestion_item'
+      );
+
+      // Reset index if the length of hits
       // suddenly changes because the dropdown is open
       // while the window height moves above / below 768 px
-      toggleSearchDropdown(false);
-      this.setState({
-        index: -1,
-        hitsLength: length
-      });
-    } else {
-      this.setState({ hitsLength: length });
+      this.setState(prevState => ({
+        index:
+          prevState.hitsLength !== currentHitsNode.length
+            ? -1
+            : prevState.index,
+        hitsLength: currentHitsNode.length,
+        hitsNode: currentHitsNode
+      }));
     }
   }
 
+  handleMouseEnter(e) {
+    const { hitsNode } = this.state;
+    const hoveredIndex = Array.from(hitsNode).indexOf(e.currentTarget);
+
+    this.setState({
+      index: hoveredIndex
+    });
+  }
+
+  handleMouseLeave() {
+    this.setState({
+      index: -1
+    });
+  }
+
   handleKeyDown(e) {
-    const { isDropdownEnabled, isSearchFocused } = this.props;
-    const { index } = this.state;
+    const { index, hitsLength } = this.state;
     const upKey = e.keyCode === 38;
     const downKey = e.keyCode === 40;
-    const searchBar = ReactDOM.findDOMNode(this);
-    let currentHitsNode;
-    if (isDropdownEnabled && isSearchFocused) {
-      currentHitsNode = searchBar.querySelectorAll('.fcc_suggestion_item');
-    }
 
     if (upKey || downKey) {
       // Prevent cursor from jumping to
@@ -163,25 +181,21 @@ class SearchBar extends Component {
     if (upKey) {
       if (index === -1) {
         this.setState({
-          index: currentHitsNode.length - 1,
-          hitsNode: currentHitsNode
+          index: hitsLength - 1
         });
       } else {
         this.setState(prevState => ({
-          index: prevState.index - 1,
-          hitsNode: currentHitsNode
+          index: prevState.index - 1
         }));
       }
     } else if (downKey) {
-      if (index === currentHitsNode.length - 1) {
+      if (index === hitsLength - 1) {
         this.setState({
-          index: -1,
-          hitsNode: currentHitsNode
+          index: -1
         });
       } else {
         this.setState(prevState => ({
-          index: prevState.index + 1,
-          hitsNode: currentHitsNode
+          index: prevState.index + 1
         }));
       }
     }
@@ -202,6 +216,7 @@ class SearchBar extends Component {
           <SearchBox
             focusShortcuts={[83, 191]}
             onChange={this.handleChange}
+            onFocus={this.handleFocus}
             onKeyDown={this.handleKeyDown}
             onSubmit={this.handleSearch}
             showLoadingIndicator={true}
@@ -209,7 +224,9 @@ class SearchBar extends Component {
           />
           {isDropdownEnabled && isSearchFocused && (
             <SearchHits
-              getHitsLength={this.handleHits}
+              handleHits={this.handleHits}
+              handleMouseEnter={this.handleMouseEnter}
+              handleMouseLeave={this.handleMouseLeave}
               handleSubmit={this.handleSearch}
             />
           )}
