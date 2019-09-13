@@ -10,13 +10,12 @@
   color: var(--gray-00);
 }
 
-.ais-SearchBox-submit,
 .ais-SearchBox-reset {
   display: none;
 }
 
 .ais-SearchBox-input {
-  padding: 1px 10px;
+  padding: 1px 10px 1px 30px;
   font-size: 18px;
   display: inline-block;
   width: calc(100vw - 10px);
