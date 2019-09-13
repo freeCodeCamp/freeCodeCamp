@@ -14,9 +14,9 @@ function Initial(props) {
         <circle
           cx='100'
           cy='99'
-          fill='#858591'
+          fill='var(--primary-color)'
           r='95'
-          stroke='#858591'
+          stroke='var(--primary-color)'
           strokeDasharray='null'
           strokeLinecap='null'
           strokeLinejoin='null'
@@ -42,7 +42,7 @@ function Initial(props) {
               '447 1-1zm3 3c0-.552-.448-1-1-1s-1 .448-1 1 .448 1 1 1 1-.448 ' +
               '1-1z'
             }
-            fill='#fff'
+            fill='var(--primary-background)'
           />
         </svg>
       </g>

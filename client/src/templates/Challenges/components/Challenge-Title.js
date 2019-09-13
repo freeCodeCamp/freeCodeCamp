@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Link from '../../../components/helpers/Link';
 
 import './challenge-title.css';
+import GreenPass from '../../../assets/icons/GreenPass';
 
 const propTypes = {
   children: PropTypes.string,
@@ -21,13 +22,6 @@ function ChallengeTitle({
   prevChallengePath,
   showPrevNextBtns
 }) {
-  let icon = null;
-  if (isCompleted) {
-    icon = (
-      // TODO Use SVG here
-      <i className='ion-checkmark text-primary' title='Completed' />
-    );
-  }
   return (
     <div className='challenge-title-wrap'>
       {showPrevNextBtns ? (
@@ -41,7 +35,11 @@ function ChallengeTitle({
       ) : null}
       <h2 className='text-center challenge-title'>
         {children || 'Happy Coding!'}
-        {icon}
+        {isCompleted ? (
+          <GreenPass
+            style={{ height: '15px', width: '15px', marginLeft: '5px' }}
+          />
+        ) : null}
       </h2>
       {showPrevNextBtns ? (
         <Link

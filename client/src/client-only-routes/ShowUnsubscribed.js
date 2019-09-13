@@ -18,8 +18,7 @@ function ShowUnsubscribed({ unsubscribeId }) {
       <Grid>
         <main>
           <FullWidthRow>
-            <Spacer />
-            <Spacer />
+            <Spacer size={2} />
             <Panel bsStyle='primary' className='text-center'>
               <Spacer />
               <h2>You have successfully been unsubscribed</h2>
@@ -38,6 +37,7 @@ function ShowUnsubscribed({ unsubscribeId }) {
               </Button>
             </FullWidthRow>
           ) : null}
+          <Spacer size={2} />
         </main>
       </Grid>
     </Fragment>

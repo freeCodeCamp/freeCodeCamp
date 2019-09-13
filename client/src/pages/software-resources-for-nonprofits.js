@@ -11,8 +11,7 @@ function SoftwareResourcesForNonProfits() {
       <Helmet>
         <title>Software Resources for Nonprofits | freeCodeCamp.org</title>
       </Helmet>
-      <Spacer />
-      <Spacer />
+      <Spacer size={2} />
       <Grid>
         <FullWidthRow>
           <h2 className='text-center'>Software Resources for Nonprofits</h2>

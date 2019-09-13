@@ -3,7 +3,7 @@ import { homeLocation, apiLocation } from '../../config/env';
 
 const { clientID, clientSecret, domain } = auth0;
 
-const successRedirect = `${homeLocation}/welcome`;
+const successRedirect = `${homeLocation}/`;
 const failureRedirect = `${homeLocation}/signin`;
 
 export default {

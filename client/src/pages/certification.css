@@ -27,8 +27,6 @@
 }
 
 .certification-namespace.certificate-wrapper {
-  top: calc(100vh / 20);
-  position: relative;
   font-family: 'Sax Mono', monospace;
 }
 

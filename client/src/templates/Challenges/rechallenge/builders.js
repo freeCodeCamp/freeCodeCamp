@@ -9,7 +9,6 @@ import {
 } from 'lodash';
 
 import { compileHeadTail, setExt, transformContents } from '../utils/polyvinyl';
-import { nightThemeStyle } from './displayStyle.js';
 
 const htmlCatch = '\n<!--fcc-->\n';
 const jsCatch = '\n;/*fcc*/\n';
@@ -57,15 +56,8 @@ export const cssToHtml = cond([
   [stubTrue, identity]
 ]);
 
-export function concatHtml({
-  required = [],
-  template,
-  files = [],
-  theme = 'night'
-} = {}) {
-  theme = theme === '' ? 'night' : theme;
+export function concatHtml({ required = [], template, files = [] } = {}) {
   const createBody = template ? _template(template) : defaultTemplate;
-  const displayTheme = theme === 'night' ? nightThemeStyle : ` `;
   const head = required
     .map(({ link, src }) => {
       if (link && src) {
@@ -81,7 +73,7 @@ A required file can not have both a src and a link: src = ${src}, link = ${link}
       }
       return '';
     })
-    .reduce((head, element) => head.concat(element), displayTheme);
+    .reduce((head, element) => head.concat(element));
 
   const source = files.reduce(
     (source, file) => source.concat(file.contents, htmlCatch),

@@ -137,7 +137,7 @@ exports.createPages = function createPages({ graphql, actions }) {
 
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 
-exports.onCreateWebpackConfig = ({ stage, plugins, actions }) => {
+exports.onCreateWebpackConfig = ({ plugins, actions }) => {
   actions.setWebpackConfig({
     node: {
       fs: 'empty'
@@ -153,24 +153,10 @@ exports.onCreateWebpackConfig = ({ stage, plugins, actions }) => {
           process.env.FREECODECAMP_NODE_ENV || 'development'
         ),
         PAYPAL_SUPPORTERS: JSON.stringify(process.env.PAYPAL_SUPPORTERS || 404)
-      })
+      }),
+      new MonacoWebpackPlugin()
     ]
   });
-  if (stage !== 'build-html') {
-    actions.setWebpackConfig({
-      plugins: [new MonacoWebpackPlugin()]
-    });
-  }
-  if (stage === 'build-html') {
-    actions.setWebpackConfig({
-      plugins: [
-        plugins.normalModuleReplacement(
-          /react-monaco-editor/,
-          require.resolve('./src/__mocks__/monacoEditorMock.js')
-        )
-      ]
-    });
-  }
 };
 
 exports.onCreateBabelConfig = ({ actions }) => {

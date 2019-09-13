@@ -18,13 +18,13 @@ function GreenNotCompleted(props) {
           <circle
             cx='100'
             cy='99'
-            fill='#FFFFFF'
+            fill='var(--primary-background)'
             r='95'
-            stroke='#858591'
+            stroke='var(--primary-color)'
             strokeDasharray='null'
             strokeLinecap='null'
             strokeLinejoin='null'
-            strokeWidth='5'
+            strokeWidth='10'
           />
         </g>
       </svg>

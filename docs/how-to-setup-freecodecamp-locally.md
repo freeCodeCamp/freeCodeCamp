@@ -234,7 +234,7 @@ Start the MongoDB server in a separate terminal:
 > You can avoid having to start MongoDB every time by installing it as a background service.
 > You can [learn more about it in their documentation for your OS](https://docs.mongodb.com/manual/administration/install-community/)
 
-Next, let's seed the database. In this step, we run the below command that fills the MongoDB server with some initial data sets that are required by services. This include a few schemas, among other things.
+Next, let's seed the database. In this step, we run the below command that fills the MongoDB server with some initial data sets that are required by services. These include a few schemas, among other things.
 
 ```sh
 npm run seed

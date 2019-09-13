@@ -2,7 +2,7 @@
 
 exports[`<Loader /> matches the fullScreen render snapshot 1`] = `
 <div
-  class="full-screen-wrapper"
+  class="fcc-loader full-screen-wrapper"
 >
   <div
     class="sk-fade-in sk-spinner line-scale-pulse-out"
@@ -18,7 +18,7 @@ exports[`<Loader /> matches the fullScreen render snapshot 1`] = `
 
 exports[`<Loader /> matches to the default render snapshot 1`] = `
 <div
-  class=""
+  class="fcc-loader "
 >
   <div
     class="sk-fade-in sk-spinner line-scale-pulse-out"
