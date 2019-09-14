@@ -8,9 +8,9 @@
 
 We continuously deploy our current `master`, the default development branch on a **separate isolated environment**.
 
-Typically, the `master` branch is merged into the `production-staging` branch once a day and released into an isolated infrastructure. This is known as our "staging / beta" application. It is identical to our live production environment at `freeCodeCamp.org`, other than it using a separate set of databases. This isolation lets us test ongoing development and features in a "production like" scenario, without affecting regular users of freeCodeCamp.org's platforms. Once the developer teams are satisified with the changes on the staging application, these changes are moved every few days to the `production-current` branch. This branch as the name suggests is what you would see live on `freeCodeCamp.org`.
+Typically, the `master` branch is merged into the `production-staging` branch once a day and released into an isolated infrastructure. This is known as our "staging / beta" application. It is identical to our live production environment at `freeCodeCamp.org`, other than it using a separate set of databases. This isolation lets us test ongoing development and features in a "production like" scenario, without affecting regular users of freeCodeCamp.org's platforms. Once the developer teams are satisfied with the changes on the staging application, these changes are moved every few days to the `production-current` branch. This branch as the name suggests is what you would see live on `freeCodeCamp.org`.
 
-We welcome you to test these releases in a **"public beta testing"** mode and get early access to upcoming features to the platforms. Sometimes these features/changes are referred as **next, beta, staging,** etc. interchangeably.
+We welcome you to test these releases in a **"public beta testing"** mode and get early access to upcoming features to the platforms. Sometimes these features/changes are referred to as **next, beta, staging,** etc. interchangeably.
 
 Your contributions via feedback and issue reports will help us in making the production platforms at `freeCodeCamp.org` more **resilient**, **consistent** and **stable** for everyone.
 
