@@ -39,6 +39,7 @@ const template = `
 /privacy                                      #{{NEWS}}/privacy-policy 200
 /privacy-policy                               #{{NEWS}}/privacy-policy 200
 /shop                                         #{{NEWS}}/shop 200
+/software-resources-for-nonprofits            #{{NEWS}}/software-resources-for-nonprofits 200
 /sponsors                                     #{{NEWS}}/sponsors 200
 /support                                      #{{NEWS}}/support 200
 /terms                                        #{{NEWS}}/terms-of-service 200
