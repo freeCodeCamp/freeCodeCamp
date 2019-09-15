@@ -9,7 +9,6 @@ import {
   partial,
   stubTrue
 } from 'lodash';
-
 import * as Babel from '@babel/standalone';
 import presetEnv from '@babel/preset-env';
 import presetReact from '@babel/preset-react';
@@ -17,6 +16,7 @@ import protect from 'loop-protect';
 
 import * as vinyl from '../utils/polyvinyl.js';
 import createWorker from '../utils/worker-executor';
+import { HtmlValidator } from './validators';
 
 const protectTimeout = 100;
 Babel.registerPlugin('loopProtection', protect(protectTimeout));
@@ -33,8 +33,6 @@ const babelOptionsJS = {
 const babelTransformCode = options => code =>
   Babel.transform(code, options).code;
 
-// const sourceReg =
-//  /(<!-- fcc-start-source -->)([\s\S]*?)(?=<!-- fcc-end-source -->)/g;
 const NBSPReg = new RegExp(String.fromCharCode(160), 'g');
 
 const testJS = matchesProperty('ext', 'js');
@@ -89,6 +87,16 @@ export const babelTransformer = cond([
   [stubTrue, identity]
 ]);
 
+function createHtmlValidator(html) {
+  const htmlValidator = new HtmlValidator(html);
+  return htmlValidator;
+}
+
+const createValidators = cond([
+  [testHTML, partial(vinyl.setValidator, createHtmlValidator)],
+  [stubTrue, identity]
+]);
+
 const sassWorker = createWorker('sass-compile');
 async function transformSASS(element) {
   const styleTags = element.querySelectorAll('style[type="text/sass"]');
@@ -140,5 +148,6 @@ export const transformers = [
   replaceNBSP,
   babelTransformer,
   composeHTML,
-  htmlTransformer
+  htmlTransformer,
+  createValidators
 ];

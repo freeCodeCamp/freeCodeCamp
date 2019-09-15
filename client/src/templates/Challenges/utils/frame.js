@@ -98,13 +98,20 @@ const initTestFrame = frameReady => ctx => {
     }
   });
   contentLoaded.then(async () => {
-    const { sources, loadEnzyme } = ctx;
+    const { sources, loadEnzyme, validatorMap } = ctx;
     // default for classic challenges
     // should not be used for modern
     const code = sources && 'index' in sources ? sources['index'] : '';
     // provide the file name and get the original source
     const getUserInput = fileName => toString(sources[fileName]);
-    await ctx.document.__initTestFrame({ code, getUserInput, loadEnzyme });
+    const getFileValidator = (fileName = 'index') => validatorMap[fileName];
+
+    await ctx.document.__initTestFrame({
+      code,
+      getFileValidator,
+      getUserInput,
+      loadEnzyme
+    });
     frameReady();
   });
   return ctx;

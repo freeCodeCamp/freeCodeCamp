@@ -10,6 +10,9 @@ async function initTestFrame(e = {}) {
   if (!e.getUserInput) {
     e.getUserInput = () => code;
   }
+  if (!e.getFileValidator) {
+    e.getFileValidator = () => null;
+  }
 
   /* eslint-disable no-unused-vars */
   // Fake Deep Equal dependency
@@ -33,7 +36,7 @@ async function initTestFrame(e = {}) {
 
   // eslint-disable-next-line no-inline-comments
   const { default: chai } = await import(/* webpackChunkName: "chai" */ 'chai');
-  const assert = chai.assert;
+  const { assert, expect } = chai;
   /* eslint-enable no-unused-vars */
 
   let Enzyme;
@@ -60,7 +63,8 @@ async function initTestFrame(e = {}) {
       // eslint-disable-next-line no-eval
       const test = eval(testString);
       if (typeof test === 'function') {
-        await test(e.getUserInput);
+        const { getFileValidator, getUserInput } = e;
+        await test({ getFileValidator, getUserInput });
       }
       return { pass: true };
     } catch (err) {

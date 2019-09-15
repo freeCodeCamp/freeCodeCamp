@@ -77,6 +77,7 @@ export function createPoly({ name, ext, contents, history, ...rest } = {}) {
     path: name + '.' + ext,
     key: name + ext,
     contents,
+    validator: null,
     error: null
   };
 }
@@ -105,6 +106,18 @@ export function checkPoly(poly) {
 export function isEmpty(poly) {
   checkPoly(poly);
   return !!poly.contents;
+}
+
+function getCompleteContents(poly, padding = '') {
+  return [poly.head, poly.contents, poly.tail].join(padding);
+}
+
+export function setValidator(createValidator, poly) {
+  checkPoly(poly);
+  return {
+    ...poly,
+    validator: createValidator(getCompleteContents(poly))
+  };
 }
 
 // setContent(contents: String, poly: PolyVinyl) => PolyVinyl
@@ -180,10 +193,7 @@ export function appendToTail(tail, poly) {
 // compileHeadTail(padding: String, poly: PolyVinyl) => PolyVinyl
 export function compileHeadTail(padding = '', poly) {
   return clearHeadTail(
-    transformContents(
-      () => [poly.head, poly.contents, poly.tail].join(padding),
-      poly
-    )
+    transformContents(() => getCompleteContents(poly, padding), poly)
   );
 }
 

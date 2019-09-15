@@ -48,6 +48,13 @@ function buildSourceMap(files) {
   }, {});
 }
 
+function createValidatorMap(files) {
+  return files.reduce(
+    (map, file) => ({ ...map, [file.name]: file.validator }),
+    {}
+  );
+}
+
 function checkFilesErrors(files) {
   const errors = files.filter(({ error }) => error).map(({ error }) => error);
   if (errors.length) {
@@ -122,6 +129,7 @@ export function buildDOMChallenge({ files, required = [], template = '' }) {
       challengeType: challengeTypes.html,
       build: concatHtml({ required: finalRequires, template, files }),
       sources: buildSourceMap(files),
+      validatorMap: createValidatorMap(files),
       loadEnzyme
     }));
 }
