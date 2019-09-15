@@ -18,11 +18,11 @@ localeTitle: 'Мутате массив, объявленный с конста�
 ```yml
 tests:
   - text: Не заменяйте ключевое слово <code>const</code> .
-    testString: 'getUserInput => assert(getUserInput("index").match(/const/g), "Do not replace <code>const</code> keyword.");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").match(/const/g), "Do not replace <code>const</code> keyword.");'
   - text: <code>s</code> должна быть постоянной переменной (используя <code>const</code> ).
-    testString: 'getUserInput => assert(getUserInput("index").match(/const\s+s/g), "<code>s</code> should be a constant variable (by using <code>const</code>).");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").match(/const\s+s/g), "<code>s</code> should be a constant variable (by using <code>const</code>).");'
   - text: Не изменяйте оригинальное объявление массива.
-    testString: 'getUserInput => assert(getUserInput("index").match(/const\s+s\s*=\s*\[\s*5\s*,\s*7\s*,\s*2\s*\]\s*;?/g), "Do not change the original array declaration.");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").match(/const\s+s\s*=\s*\[\s*5\s*,\s*7\s*,\s*2\s*\]\s*;?/g), "Do not change the original array declaration.");'
   - text: '<code>s</code> должно быть равно <code>[2, 5, 7]</code> .'
     testString: 'assert.deepEqual(s, [2, 5, 7], "<code>s</code> should be equal to <code>[2, 5, 7]</code>.");'
 

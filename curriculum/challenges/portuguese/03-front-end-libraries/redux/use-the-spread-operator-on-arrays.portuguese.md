@@ -25,7 +25,7 @@ tests:
   - text: Despachar uma ação do tipo <code>ADD_TO_DO</code> no repositório Redux deve adicionar um item <code>todo</code> e NÃO deve sofrer mutação.
     testString: 'assert((function() { const initialState = store.getState(); const isFrozen = DeepFreeze(initialState); store.dispatch(addToDo("__TEST__TO__DO__")); const finalState = store.getState(); const expectedState = [ "Do not mutate state!", "__TEST__TO__DO__" ]; return( isFrozen && DeepEqual(finalState, expectedState)); })(), "Dispatching an action of type <code>ADD_TO_DO</code> on the Redux store should add a <code>todo</code> item and should NOT mutate state.");'
   - text: O operador de propagação deve ser usado para retornar o novo estado.
-    testString: 'getUserInput => assert(getUserInput("index").includes("...state"), "The spread operator should be used to return new state.");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").includes("...state"), "The spread operator should be used to return new state.");'
 
 ```
 

@@ -20,7 +20,7 @@ tests:
   - text: 'a saída é <code>{name: &quot;Zodiac Hasbro&quot;, age: 56, gender: &quot;male&quot;}</code> .'
     testString: 'assert(() => {const res={name:"Zodiac Hasbro",age:56,gender:"male"}; const person=createPerson("Zodiac Hasbro", 56, "male"); return Object.keys(person).every(k => person[k] === res[k]);}, "the output is <code>{name: "Zodiac Hasbro", age: 56, gender: "male"}</code>.");'
   - text: 'Não <code>:</code> foram usados.'
-    testString: 'getUserInput => assert(!getUserInput("index").match(/:/g), "No <code>:</code> were used.");'
+    testString: '({ getUserInput }) => assert(!getUserInput("index").match(/:/g), "No <code>:</code> were used.");'
 
 ```
 

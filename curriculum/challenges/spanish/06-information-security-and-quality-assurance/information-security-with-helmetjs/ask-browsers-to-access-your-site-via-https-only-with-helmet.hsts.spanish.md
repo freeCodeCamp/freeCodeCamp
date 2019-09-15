@@ -19,9 +19,9 @@ localeTitle: Pida a los navegadores que accedan a su sitio a través de HTTPS so
 ```yml
 tests:
   - text: casco.hsts () middleware debe ser montado correctamente
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/app-info").then(data => { assert.include(data.appStack, "hsts"); assert.property(data.headers, "strict-transport-security"); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: '({ getUserInput }) => $.get(getUserInput("url") + "/_api/app-info").then(data => { assert.include(data.appStack, "hsts"); assert.property(data.headers, "strict-transport-security"); }, xhr => { throw new Error(xhr.responseText); })'
   - text: maxAge debe ser igual a 7776000 ms (90 días)
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/app-info").then(data => { assert.match(data.headers["strict-transport-security"], /^max-age=777600000;?/); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: '({ getUserInput }) => $.get(getUserInput("url") + "/_api/app-info").then(data => { assert.match(data.headers["strict-transport-security"], /^max-age=777600000;?/); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 

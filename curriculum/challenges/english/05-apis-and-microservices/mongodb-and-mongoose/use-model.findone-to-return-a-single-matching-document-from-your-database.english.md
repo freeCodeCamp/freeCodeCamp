@@ -7,7 +7,7 @@ forumTopicId: 301545
 
 ## Description
 <section id='description'>
-<code>Model.findOne()</code> behaves like <code>.find()</code>, but it returns only one document (not an array), even if there are multiple items. It is especially useful when searching by properties that you have declared as unique. 
+<code>Model.findOne()</code> behaves like <code>.find()</code>, but it returns only one document (not an array), even if there are multiple items. It is especially useful when searching by properties that you have declared as unique.
 </section>
 
 ## Instructions
@@ -21,7 +21,7 @@ Find just one person which has a certain food in the person&apos;s favorites, us
 ```yml
 tests:
   - text: Find one item should succeed
-    testString: 'getUserInput => $.post(getUserInput(''url'') + ''/_api/find-one-by-food'', {name: ''Gary'', age: 46, favoriteFoods: [''chicken salad'']}).then(data => { assert.equal(data.name, ''Gary'', ''item.name is not what expected''); assert.deepEqual(data.favoriteFoods, [''chicken salad''], ''item.favoriteFoods is not what expected''); assert.equal(data.__v, 0, ''The item should be not previously edited''); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: '({ getUserInput }) => $.post(getUserInput(''url'') + ''/_api/find-one-by-food'', {name: ''Gary'', age: 46, favoriteFoods: [''chicken salad'']}).then(data => { assert.equal(data.name, ''Gary'', ''item.name is not what expected''); assert.deepEqual(data.favoriteFoods, [''chicken salad''], ''item.favoriteFoods is not what expected''); assert.equal(data.__v, 0, ''The item should be not previously edited''); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 

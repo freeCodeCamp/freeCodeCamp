@@ -19,11 +19,11 @@ localeTitle: 'Проверьте, является ли значение мас�
 ```yml
 tests:
   - text: Все испытания должны пройти
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=10").then(data => {assert.equal(data.state,"passed"); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: '({ getUserInput }) => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=10").then(data => {assert.equal(data.state,"passed"); }, xhr => { throw new Error(xhr.responseText); })'
   - text: Выберите правильное утверждение - isArray vs. isNotArray
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=10").then(data => {  assert.equal(data.assertions[0].method, "isArray", "String.prototype.split() returns an Array"); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: '({ getUserInput }) => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=10").then(data => {  assert.equal(data.assertions[0].method, "isArray", "String.prototype.split() returns an Array"); }, xhr => { throw new Error(xhr.responseText); })'
   - text: Выберите правильное утверждение - isArray vs. isNotArray
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=10").then(data => {  assert.equal(data.assertions[1].method, "isNotArray", "Array.prototype.indexOf() returns a number"); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: '({ getUserInput }) => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=10").then(data => {  assert.equal(data.assertions[1].method, "isNotArray", "Array.prototype.indexOf() returns a number"); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 

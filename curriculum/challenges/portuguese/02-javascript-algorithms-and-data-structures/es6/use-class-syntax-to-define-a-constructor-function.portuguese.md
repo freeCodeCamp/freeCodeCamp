@@ -20,7 +20,7 @@ tests:
   - text: <code>Vegetable</code> deve ser uma <code>class</code> com um método <code>constructor</code> definido.
     testString: 'assert(typeof Vegetable === "function" && typeof Vegetable.constructor === "function", "<code>Vegetable</code> should be a <code>class</code> with a defined <code>constructor</code> method.");'
   - text: palavra-chave <code>class</code> foi usada.
-    testString: 'getUserInput => assert(getUserInput("index").match(/class/g),"<code>class</code> keyword was used.");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").match(/class/g),"<code>class</code> keyword was used.");'
   - text: <code>Vegetable</code> pode ser instanciado.
     testString: 'assert(() => {const a = new Vegetable("apple"); return typeof a === "object";},"<code>Vegetable</code> can be instantiated.");'
   - text: <code>carrot.name</code> deve devolver a <code>carrot</code> .

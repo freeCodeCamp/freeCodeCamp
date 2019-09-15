@@ -6,18 +6,18 @@ challengeType: 2
 ---
 
 ## Description
-<section id='description'> 
-La siguiente parte de un buen package.json es el campo de descripción, donde pertenece una descripción breve pero informativa sobre su proyecto. 
-Si algún día planea publicar un paquete en npm, recuerde que esta es la cadena que debe vender su idea al usuario cuando decide instalar el paquete o no. Sin embargo, este no es el único caso de uso para la descripción: es una excelente manera de resumir lo que hace un proyecto, es tan importante para sus proyectos Node.js normales para ayudar a otros desarrolladores, futuros mantenedores o incluso a su propio yo a entender el proyecto. con rapidez. 
-Independientemente de lo que planee para su proyecto, definitivamente se recomienda una descripción. Agreguemos algo similar a esto: 
-<code>"description": "A project that does something awesome",</code> 
-Instrucciones 
-Agrega una descripción al package.json en tu proyecto de Glitch. 
-Recuerde usar comillas dobles para los nombres de campo (") y las comas (,) para separar los campos. 
+<section id='description'>
+La siguiente parte de un buen package.json es el campo de descripción, donde pertenece una descripción breve pero informativa sobre su proyecto.
+Si algún día planea publicar un paquete en npm, recuerde que esta es la cadena que debe vender su idea al usuario cuando decide instalar el paquete o no. Sin embargo, este no es el único caso de uso para la descripción: es una excelente manera de resumir lo que hace un proyecto, es tan importante para sus proyectos Node.js normales para ayudar a otros desarrolladores, futuros mantenedores o incluso a su propio yo a entender el proyecto. con rapidez.
+Independientemente de lo que planee para su proyecto, definitivamente se recomienda una descripción. Agreguemos algo similar a esto:
+<code>"description": "A project that does something awesome",</code>
+Instrucciones
+Agrega una descripción al package.json en tu proyecto de Glitch.
+Recuerde usar comillas dobles para los nombres de campo (") y las comas (,) para separar los campos.
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -27,7 +27,7 @@ Recuerde usar comillas dobles para los nombres de campo (") y las comas (,) para
 ```yml
 tests:
   - text: package.json debería tener una clave de "descripción" válida
-    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert(packJson.description, ''"description" is missing''); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: '({ getUserInput }) => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert(packJson.description, ''"description" is missing''); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 

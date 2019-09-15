@@ -18,15 +18,15 @@ localeTitle: Utilice las funciones de flecha para escribir funciones anónimas c
 ```yml
 tests:
   - text: El usuario reemplazó la palabra clave <code>var</code> .
-    testString: 'getUserInput => assert(!getUserInput("index").match(/var/g), "User did replace <code>var</code> keyword.");'
+    testString: '({ getUserInput }) => assert(!getUserInput("index").match(/var/g), "User did replace <code>var</code> keyword.");'
   - text: <code>magic</code> debe ser una variable constante (usando <code>const</code> ).
-    testString: 'getUserInput => assert(getUserInput("index").match(/const\s+magic/g), "<code>magic</code> should be a constant variable (by using <code>const</code>).");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").match(/const\s+magic/g), "<code>magic</code> should be a constant variable (by using <code>const</code>).");'
   - text: <code>magic</code> es una <code>function</code> .
     testString: 'assert(typeof magic === "function", "<code>magic</code> is a <code>function</code>.");'
   - text: <code>magic()</code> devuelve la fecha correcta.
     testString: 'assert(magic().getDate() == new Date().getDate(), "<code>magic()</code> returns correct date.");'
   - text: <code>function</code> palabra clave de la <code>function</code> no se utilizó.
-    testString: 'getUserInput => assert(!getUserInput("index").match(/function/g), "<code>function</code> keyword was not used.");'
+    testString: '({ getUserInput }) => assert(!getUserInput("index").match(/function/g), "<code>function</code> keyword was not used.");'
 
 ```
 

@@ -26,7 +26,7 @@ tests:
   - text: El resultado de <code>sum()</code> debe ser 0
     testString: 'assert(sum() === 0, "The result of <code>sum()</code> should be 0");'
   - text: La función de <code>sum</code> usa el operador de <code>...</code> propagación en el parámetro <code>args</code> .
-    testString: 'getUserInput => assert(getUserInput("index").match(/function\s+sum\s*\(\s*...args\s*\)\s*{/g), "The <code>sum</code> function uses the <code>...</code> spread operator on the <code>args</code> parameter.");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").match(/function\s+sum\s*\(\s*...args\s*\)\s*{/g), "The <code>sum</code> function uses the <code>...</code> spread operator on the <code>args</code> parameter.");'
 
 ```
 

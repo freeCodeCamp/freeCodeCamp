@@ -17,7 +17,7 @@ FAV_PET = "Dogs"; // returns error
 ```
 
 As you can see, trying to reassign a variable declared with <code>const</code> will throw an error. You should always name variables you don't want to reassign using the <code>const</code> keyword. This helps when you accidentally attempt to reassign a variable that is meant to stay constant. A common practice when naming constants is to use all uppercase letters, with words separated by an underscore.
-  
+
   <strong>Note:</strong> It is common for developers to use uppercase variable identifiers for immutable values and lowercase or camelCase for mutable values (objects and arrays). In a later challenge you will see an example of a lowercase variable identifier being used for an array.
 </section>
 
@@ -32,13 +32,13 @@ Change the code so that all variables are declared using <code>let</code> or <co
 ```yml
 tests:
   - text: <code>var</code> does not exist in your code.
-    testString: getUserInput => assert(!getUserInput('index').match(/var/g));
+    testString: ({ getUserInput }) => assert(!getUserInput('index').match(/var/g));
   - text: <code>SENTENCE</code> should be a constant variable declared with <code>const</code>.
-    testString: getUserInput => assert(getUserInput('index').match(/(const SENTENCE)/g));
+    testString: ({ getUserInput }) => assert(getUserInput('index').match(/(const SENTENCE)/g));
   - text: <code>i</code> should be declared with <code>let</code>.
-    testString: getUserInput => assert(getUserInput('index').match(/(let i)/g));
+    testString: ({ getUserInput }) => assert(getUserInput('index').match(/(let i)/g));
   - text: <code>console.log</code> should be changed to print the <code>SENTENCE</code> variable.
-    testString: getUserInput => assert(getUserInput('index').match(/console\.log\(\s*SENTENCE\s*\)\s*;?/g));
+    testString: ({ getUserInput }) => assert(getUserInput('index').match(/console\.log\(\s*SENTENCE\s*\)\s*;?/g));
 
 ```
 

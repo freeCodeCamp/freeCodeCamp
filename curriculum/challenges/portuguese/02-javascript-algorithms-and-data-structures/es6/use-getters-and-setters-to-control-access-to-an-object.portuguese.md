@@ -20,7 +20,7 @@ tests:
   - text: <code>Thermostat</code> deve ser uma <code>class</code> com um método <code>constructor</code> definido.
     testString: 'assert(typeof Thermostat === "function" && typeof Thermostat.constructor === "function","<code>Thermostat</code> should be a <code>class</code> with a defined <code>constructor</code> method.");'
   - text: palavra-chave <code>class</code> foi usada.
-    testString: 'getUserInput => assert(getUserInput("index").match(/class/g),"<code>class</code> keyword was used.");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").match(/class/g),"<code>class</code> keyword was used.");'
   - text: <code>Thermostat</code> pode ser instanciado.
     testString: 'assert(() => {const t = new Thermostat(32); return typeof t === "object" && t.temperature === 0;}, "<code>Thermostat</code> can be instantiated.");'
 

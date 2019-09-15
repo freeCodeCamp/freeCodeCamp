@@ -33,11 +33,11 @@ tests:
   - text: Dispatching <code>logoutUser</code> should update the <code>login</code> property in the store state to <code>false</code>.
     testString: assert((function() {  store.dispatch(loginUser()); const loggedIn = store.getState(); store.dispatch(logoutUser()); const afterLogout = store.getState(); return loggedIn.authenticated === true && afterLogout.authenticated === false })());
   - text: The <code>authReducer</code> function should handle multiple action types with a switch statement.
-    testString: getUserInput => assert((function() { return typeof authReducer === 'function' && getUserInput('index').toString().includes('switch') && getUserInput('index').toString().includes('case') && getUserInput('index').toString().includes('default') })());
+    testString: ({ getUserInput }) => assert((function() { return typeof authReducer === 'function' && getUserInput('index').toString().includes('switch') && getUserInput('index').toString().includes('case') && getUserInput('index').toString().includes('default') })());
   - text: <code>LOGIN</code> and <code>LOGOUT</code> should be declared as <code>const</code> values and should be assigned strings of <code>LOGIN</code>and <code>LOGOUT</code>.
-    testString: getUserInput => assert((function() {  const noWhiteSpace = getUserInput('index').toString().replace(/\s/g,''); return (noWhiteSpace.includes('constLOGIN=\'LOGIN\'') || noWhiteSpace.includes('constLOGIN="LOGIN"')) && (noWhiteSpace.includes('constLOGOUT=\'LOGOUT\'') || noWhiteSpace.includes('constLOGOUT="LOGOUT"')) })());
+    testString: ({ getUserInput }) => assert((function() {  const noWhiteSpace = getUserInput('index').toString().replace(/\s/g,''); return (noWhiteSpace.includes('constLOGIN=\'LOGIN\'') || noWhiteSpace.includes('constLOGIN="LOGIN"')) && (noWhiteSpace.includes('constLOGOUT=\'LOGOUT\'') || noWhiteSpace.includes('constLOGOUT="LOGOUT"')) })());
   - text: The action creators and the reducer should reference the <code>LOGIN</code> and <code>LOGOUT</code> constants.
-    testString: getUserInput => assert((function() { const noWhiteSpace = getUserInput('index').toString().replace(/\s/g,''); return noWhiteSpace.includes('caseLOGIN:') && noWhiteSpace.includes('caseLOGOUT:') && noWhiteSpace.includes('type:LOGIN') && noWhiteSpace.includes('type:LOGOUT') })());
+    testString: ({ getUserInput }) => assert((function() { const noWhiteSpace = getUserInput('index').toString().replace(/\s/g,''); return noWhiteSpace.includes('caseLOGIN:') && noWhiteSpace.includes('caseLOGOUT:') && noWhiteSpace.includes('type:LOGIN') && noWhiteSpace.includes('type:LOGOUT') })());
 
 ```
 

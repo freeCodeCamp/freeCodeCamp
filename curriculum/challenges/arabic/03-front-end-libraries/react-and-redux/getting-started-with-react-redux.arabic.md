@@ -21,7 +21,7 @@ tests:
   - text: يجب أن يقوم مكون <code>DisplayMessages</code> بعرض عنصر <code>div</code> فارغ.
     testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); return mockedComponent.find("div").text() === "" })(), "The <code>DisplayMessages</code> component should render an empty <code>div</code> element.");'
   - text: يجب استدعاء منشئ <code>DisplayMessages</code> بشكل صحيح مع <code>super</code> ، يمر في <code>props</code> .
-    testString: 'getUserInput => assert((function() { const noWhiteSpace = getUserInput("index").replace(/\s/g,""); return noWhiteSpace.includes("constructor(props)") && noWhiteSpace.includes("super(props"); })(), "The <code>DisplayMessages</code> constructor should be called properly with <code>super</code>, passing in <code>props</code>.");'
+    testString: '({ getUserInput }) => assert((function() { const noWhiteSpace = getUserInput("index").replace(/\s/g,""); return noWhiteSpace.includes("constructor(props)") && noWhiteSpace.includes("super(props"); })(), "The <code>DisplayMessages</code> constructor should be called properly with <code>super</code>, passing in <code>props</code>.");'
   - text: 'يجب أن يكون لمكون <code>DisplayMessages</code> حالة أولية تساوي <code>{input: &quot;&quot;, messages: []}</code> .'
     testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); const initialState = mockedComponent.state(); return typeof initialState === "object" && initialState.input === "" && Array.isArray(initialState.messages) && initialState.messages.length === 0; })(), "The <code>DisplayMessages</code> component should have an initial state equal to <code>{input: "", messages: []}</code>.");'
 

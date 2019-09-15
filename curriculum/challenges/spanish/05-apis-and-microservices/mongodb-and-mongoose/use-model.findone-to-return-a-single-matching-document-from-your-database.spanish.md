@@ -6,12 +6,12 @@ challengeType: 2
 ---
 
 ## Description
-<section id='description'> 
-Model.findOne () se comporta como .find (), pero solo devuelve un documento (no una matriz), incluso si hay varios elementos. Es especialmente útil cuando busca por propiedades que ha declarado como únicas. Encuentre solo una persona que tenga cierta comida en sus favoritos, usando Model.findOne () -&gt; Person. Utilice la función de argumento de alimentos como clave de búsqueda. 
+<section id='description'>
+Model.findOne () se comporta como .find (), pero solo devuelve un documento (no una matriz), incluso si hay varios elementos. Es especialmente útil cuando busca por propiedades que ha declarado como únicas. Encuentre solo una persona que tenga cierta comida en sus favoritos, usando Model.findOne () -&gt; Person. Utilice la función de argumento de alimentos como clave de búsqueda.
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -21,7 +21,7 @@ Model.findOne () se comporta como .find (), pero solo devuelve un documento (no 
 ```yml
 tests:
   - text: Encontrar un elemento debe tener éxito
-    testString: 'getUserInput => $.post(getUserInput(''url'') + ''/_api/find-one-by-food'', {name: ''Gary'', age: 46, favoriteFoods: [''chicken salad'']}).then(data => { assert.equal(data.name, ''Gary'', ''item.name is not what expected''); assert.deepEqual(data.favoriteFoods, [''chicken salad''], ''item.favoriteFoods is not what expected''); assert.equal(data.__v, 0, ''The item should be not previously edited''); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: '({ getUserInput }) => $.post(getUserInput(''url'') + ''/_api/find-one-by-food'', {name: ''Gary'', age: 46, favoriteFoods: [''chicken salad'']}).then(data => { assert.equal(data.name, ''Gary'', ''item.name is not what expected''); assert.deepEqual(data.favoriteFoods, [''chicken salad''], ''item.favoriteFoods is not what expected''); assert.equal(data.__v, 0, ''The item should be not previously edited''); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 

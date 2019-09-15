@@ -23,7 +23,7 @@ Store the variable <code>MESSAGE_STYLE=uppercase</code> in the <code>.env</code>
 ```yml
 tests:
   - text: The response of the endpoint <code>/json</code> should change according to the environment variable <code>MESSAGE_STYLE</code>
-    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/use-env-vars'').then(data => { assert.isTrue(data.passed, ''The response of "/json" does not change according to MESSAGE_STYLE''); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: '({ getUserInput }) => $.get(getUserInput(''url'') + ''/_api/use-env-vars'').then(data => { assert.isTrue(data.passed, ''The response of "/json" does not change according to MESSAGE_STYLE''); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 

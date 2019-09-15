@@ -19,7 +19,7 @@ localeTitle: Evita que IE abra HTML no confiable con helmet.ieNoOpen ()
 ```yml
 tests:
   - text: El middleware helmet.ieNoOpen () se debe montar correctamente
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/app-info").then(data => { assert.include(data.appStack, "ienoopen"); assert.equal(data.headers["x-download-options"], "noopen"); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: '({ getUserInput }) => $.get(getUserInput("url") + "/_api/app-info").then(data => { assert.include(data.appStack, "ienoopen"); assert.equal(data.headers["x-download-options"], "noopen"); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 

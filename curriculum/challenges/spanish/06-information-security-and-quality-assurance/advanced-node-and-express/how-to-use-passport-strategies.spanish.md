@@ -21,7 +21,7 @@ tests:
   - text: Todos los pasos correctamente implementados en el server.js
     testString: ' getUserInput => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /showLogin:( |)true/gi, "You should be passing the variable "showLogin" as true to your render function for the homepage"); assert.match(data, /failureRedirect:( |)("|")\/("|")/gi, "Your code should include a failureRedirect to the "/" route"); assert.match(data, /login[^]*post[^]*local/gi, "You should have a route for login which accepts a POST and passport.authenticates local"); }, xhr => { throw new Error(xhr.statusText); })'
   - text: Una solicitud POST para / iniciar sesión correctamente redirige a /
-    testString: 'getUserInput => $.post(getUserInput("url")+ "/login") .then(data => { assert.match(data, /Looks like this page is being rendered from Pug into HTML!/gi, "A login attempt at this point should redirect to the homepage since we do not have any registered users"); }, xhr => { throw new Error(xhr.statusText); })'
+    testString: '({ getUserInput }) => $.post(getUserInput("url")+ "/login") .then(data => { assert.match(data, /Looks like this page is being rendered from Pug into HTML!/gi, "A login attempt at this point should redirect to the homepage since we do not have any registered users"); }, xhr => { throw new Error(xhr.statusText); })'
 
 ```
 

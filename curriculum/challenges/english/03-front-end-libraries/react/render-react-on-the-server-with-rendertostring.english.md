@@ -23,7 +23,7 @@ The <code>renderToString()</code> method is provided on <code>ReactDOMServer</co
 ```yml
 tests:
   - text: The <code>App</code> component should render to a string using <code>ReactDOMServer.renderToString</code>.
-    testString: getUserInput => assert(getUserInput('index').replace(/ /g,'').includes('ReactDOMServer.renderToString(<App/>)') && Enzyme.mount(React.createElement(App)).children().name() === 'div');
+    testString: ({ getUserInput }) => assert(getUserInput('index').replace(/ /g,'').includes('ReactDOMServer.renderToString(<App/>)') && Enzyme.mount(React.createElement(App)).children().name() === 'div');
 
 ```
 

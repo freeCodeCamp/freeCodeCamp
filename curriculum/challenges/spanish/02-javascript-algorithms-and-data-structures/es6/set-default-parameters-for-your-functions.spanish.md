@@ -22,7 +22,7 @@ tests:
   - text: El resultado del <code>increment(5)</code> debe ser <code>6</code> .
     testString: 'assert(increment(5) === 6, "The result of <code>increment(5)</code> should be <code>6</code>.");'
   - text: se usó el parámetro por defecto <code>1</code> para el <code>value</code> .
-    testString: 'getUserInput => assert(getUserInput("index").match(/value\s*=\s*1/g), "default parameter <code>1</code> was used for <code>value</code>.");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").match(/value\s*=\s*1/g), "default parameter <code>1</code> was used for <code>value</code>.");'
 
 ```
 

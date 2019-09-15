@@ -19,7 +19,7 @@ localeTitle: Mitigue el riesgo de ataques de scripts entre sitios (XSS) con helm
 ```yml
 tests:
   - text: El middleware helmet.xssFilter () se debe montar correctamente
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/app-info").then(data => { assert.include(data.appStack, "xXssProtection"); assert.property(data.headers, "x-xss-protection"); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: '({ getUserInput }) => $.get(getUserInput("url") + "/_api/app-info").then(data => { assert.include(data.appStack, "xXssProtection"); assert.property(data.headers, "x-xss-protection"); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 

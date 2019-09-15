@@ -19,7 +19,7 @@ localeTitle: Напишите компонент реакции с нуля
 ```yml
 tests:
   - text: 'Должен быть компонент React, называемый <code>MyComponent</code> .'
-    testString: 'getUserInput => assert(getUserInput("index").replace(/\s/g, "").includes("classMyComponentextendsReact.Component{"), "There should be a React component called <code>MyComponent</code>.");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").replace(/\s/g, "").includes("classMyComponentextendsReact.Component{"), "There should be a React component called <code>MyComponent</code>.");'
   - text: <code>MyComponent</code> должен содержать тег <code>h1</code> с текстом <code>My First React Component!</code> Дело и пунктуация.
     testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find("h1").text() === "My First React Component!"; })(), "<code>MyComponent</code> should contain an <code>h1</code> tag with text <code>My First React Component!</code> Case and punctuation matter.");'
   - text: <code>MyComponent</code> должен отображать DOM.

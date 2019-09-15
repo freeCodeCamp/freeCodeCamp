@@ -25,7 +25,7 @@ tests:
   - text: عند تعيين <code>display</code> على <code>false</code> ، يجب أن يتم <code>display</code> فقط <code>button</code> <code>div</code> <code>button</code> .
     testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const state_1 = () => { mockedComponent.setState({display: false}); return waitForIt(() => mockedComponent )}; const updated = await state_1(); assert(mockedComponent.find("div").length === 1 && mockedComponent.find("div").children().length === 1 && mockedComponent.find("button").length === 1 && mockedComponent.find("h1").length === 0, "When <code>display</code> is set to <code>false</code>, only a <code>div</code> and <code>button</code> should render."); }; '
   - text: يجب أن تستخدم طريقة التجسيد عبارة <code>if/else</code> للتحقق من حالة <code>this.state.display</code> .
-    testString: 'getUserInput => assert(getUserInput("index").includes("if") && getUserInput("index").includes("else"), "The render method should use an <code>if/else</code> statement to check the condition of <code>this.state.display</code>.");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").includes("if") && getUserInput("index").includes("else"), "The render method should use an <code>if/else</code> statement to check the condition of <code>this.state.display</code>.");'
 
 ```
 

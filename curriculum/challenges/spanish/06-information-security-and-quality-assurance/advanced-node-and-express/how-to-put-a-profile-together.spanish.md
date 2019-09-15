@@ -19,7 +19,7 @@ localeTitle: Cómo armar un perfil
 ```yml
 tests:
   - text: Agregó correctamente una variable de renderizado Pug a / perfil
-    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /\/views\/pug\/profile[^]*username:( |)req.user.username/gi, "You should be passing the variable username with req.user.username into the render function of the profile page"); }, xhr => { throw new Error(xhr.statusText); })'
+    testString: '({ getUserInput }) => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /\/views\/pug\/profile[^]*username:( |)req.user.username/gi, "You should be passing the variable username with req.user.username into the render function of the profile page"); }, xhr => { throw new Error(xhr.statusText); })'
 
 ```
 

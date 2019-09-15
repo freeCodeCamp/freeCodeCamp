@@ -18,7 +18,7 @@ localeTitle: Explore as diferenças entre o var e deixe
 ```yml
 tests:
   - text: <code>var</code> não existe no código.
-    testString: 'getUserInput => assert(!getUserInput("index").match(/var/g),"<code>var</code> does not exist in code.");'
+    testString: '({ getUserInput }) => assert(!getUserInput("index").match(/var/g),"<code>var</code> does not exist in code.");'
   - text: <code>catName</code> deve ser <code>Oliver</code> .
     testString: 'assert(catName === "Oliver", "<code>catName</code> should be <code>Oliver</code>.");'
   - text: <code>quote</code> deve ser <code>&quot;Oliver says Meow!&quot;</code>

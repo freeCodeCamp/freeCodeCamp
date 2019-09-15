@@ -6,17 +6,17 @@ challengeType: 2
 ---
 
 ## Description
-<section id='description'> 
-Crie uma instância de documento usando o construtor Person que você construiu antes. Passe para o construtor um objeto com os campos name, age e favoriteFoods. Seus tipos devem estar em conformidade com os do esquema pessoal. Em seguida, chame o método document.save () na instância do documento retornado. Passe para ele um retorno de chamada usando a convenção Node. Esse é um padrão comum, todos os métodos CRUD a seguir assumem uma função de retorno de chamada como o último argumento. 
-<code>/* Example */</code> 
-<code>// ...</code> 
-<code>person.save(function(err, data) {</code> 
-<code>// ...do your stuff here...</code> 
-<code>});</code> 
+<section id='description'>
+Crie uma instância de documento usando o construtor Person que você construiu antes. Passe para o construtor um objeto com os campos name, age e favoriteFoods. Seus tipos devem estar em conformidade com os do esquema pessoal. Em seguida, chame o método document.save () na instância do documento retornado. Passe para ele um retorno de chamada usando a convenção Node. Esse é um padrão comum, todos os métodos CRUD a seguir assumem uma função de retorno de chamada como o último argumento.
+<code>/* Example */</code>
+<code>// ...</code>
+<code>person.save(function(err, data) {</code>
+<code>// ...do your stuff here...</code>
+<code>});</code>
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -26,7 +26,7 @@ Crie uma instância de documento usando o construtor Person que você construiu 
 ```yml
 tests:
   - text: Criar e salvar um item do banco de dados deve ser bem-sucedido
-    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/create-and-save-person'').then(data => { assert.isString(data.name, ''"item.name" should be a String''); assert.isNumber(data.age, ''28'', ''"item.age" should be a Number''); assert.isArray(data.favoriteFoods, ''"item.favoriteFoods" should be an Array''); assert.equal(data.__v, 0, ''The db item should be not previously edited''); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: '({ getUserInput }) => $.get(getUserInput(''url'') + ''/_api/create-and-save-person'').then(data => { assert.isString(data.name, ''"item.name" should be a String''); assert.isNumber(data.age, ''28'', ''"item.age" should be a Number''); assert.isArray(data.favoriteFoods, ''"item.favoriteFoods" should be an Array''); assert.equal(data.__v, 0, ''The db item should be not previously edited''); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 

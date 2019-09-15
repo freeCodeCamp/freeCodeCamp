@@ -6,16 +6,16 @@ challengeType: 2
 ---
 
 ## Description
-<section id='description'> 
-La versión es junto con el nombre de uno de los campos requeridos en package.json. Este campo describe la versión actual de su proyecto. 
-Ejemplo 
-<code>"version": "1.2",</code> 
-Instrucciones 
-Agregue una versión a package.json en su proyecto de Glitch. 
+<section id='description'>
+La versión es junto con el nombre de uno de los campos requeridos en package.json. Este campo describe la versión actual de su proyecto.
+Ejemplo
+<code>"version": "1.2",</code>
+Instrucciones
+Agregue una versión a package.json en su proyecto de Glitch.
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -25,7 +25,7 @@ Agregue una versión a package.json en su proyecto de Glitch.
 ```yml
 tests:
   - text: package.json debería tener una clave de "versión" válida
-    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert(packJson.version, ''"version" is missing''); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: '({ getUserInput }) => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert(packJson.version, ''"version" is missing''); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 

@@ -17,7 +17,7 @@ function(req, res, next) {
 }
 ```
 
-Let’s suppose you mounted this function on a route. When a request matches the route, it displays the string “I’m a middleware…”, then it executes the next function in the stack. 
+Let’s suppose you mounted this function on a route. When a request matches the route, it displays the string “I’m a middleware…”, then it executes the next function in the stack.
 In this exercise, you are going to build root-level middleware. As you have seen in challenge 4, to mount a middleware function at root level, you can use the <code>app.use(&lt;mware-function&gt;)</code> method. In this case, the function will be executed for all the requests, but you can also set more specific conditions. For example, if you want a function to be executed only for POST requests, you could use <code>app.post(&lt;mware-function&gt;)</code>. Analogous methods exist for all the HTTP verbs (GET, DELETE, PUT, …).
 </section>
 
@@ -33,7 +33,7 @@ Build a simple logger. For every request, it should log to the console a string 
 ```yml
 tests:
   - text: Root level logger middleware should be active
-    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/root-middleware-logger'').then(data => { assert.isTrue(data.passed, ''root-level logger is not working as expected''); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: '({ getUserInput }) => $.get(getUserInput(''url'') + ''/_api/root-middleware-logger'').then(data => { assert.isTrue(data.passed, ''root-level logger is not working as expected''); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 

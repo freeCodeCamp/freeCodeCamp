@@ -19,9 +19,9 @@ localeTitle: Peça aos navegadores que acessem seu site via HTTPS somente com he
 ```yml
 tests:
   - text: O middleware helmet.hsts () deve ser montado corretamente
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/app-info").then(data => { assert.include(data.appStack, "hsts"); assert.property(data.headers, "strict-transport-security"); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: '({ getUserInput }) => $.get(getUserInput("url") + "/_api/app-info").then(data => { assert.include(data.appStack, "hsts"); assert.property(data.headers, "strict-transport-security"); }, xhr => { throw new Error(xhr.responseText); })'
   - text: maxAge deve ser igual a 7776000 ms (90 dias)
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/app-info").then(data => { assert.match(data.headers["strict-transport-security"], /^max-age=777600000;?/); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: '({ getUserInput }) => $.get(getUserInput("url") + "/_api/app-info").then(data => { assert.match(data.headers["strict-transport-security"], /^max-age=777600000;?/); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 

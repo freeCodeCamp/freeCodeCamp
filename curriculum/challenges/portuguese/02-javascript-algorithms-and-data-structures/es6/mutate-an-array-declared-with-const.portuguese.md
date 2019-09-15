@@ -18,11 +18,11 @@ localeTitle: Mude uma matriz declarada com const
 ```yml
 tests:
   - text: Não substitua a palavra-chave <code>const</code> .
-    testString: 'getUserInput => assert(getUserInput("index").match(/const/g), "Do not replace <code>const</code> keyword.");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").match(/const/g), "Do not replace <code>const</code> keyword.");'
   - text: <code>s</code> deve ser uma variável constante (usando <code>const</code> ).
-    testString: 'getUserInput => assert(getUserInput("index").match(/const\s+s/g), "<code>s</code> should be a constant variable (by using <code>const</code>).");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").match(/const\s+s/g), "<code>s</code> should be a constant variable (by using <code>const</code>).");'
   - text: Não altere a declaração original da matriz.
-    testString: 'getUserInput => assert(getUserInput("index").match(/const\s+s\s*=\s*\[\s*5\s*,\s*7\s*,\s*2\s*\]\s*;?/g), "Do not change the original array declaration.");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").match(/const\s+s\s*=\s*\[\s*5\s*,\s*7\s*,\s*2\s*\]\s*;?/g), "Do not change the original array declaration.");'
   - text: '<code>s</code> deve ser igual a <code>[2, 5, 7]</code> .'
     testString: 'assert.deepEqual(s, [2, 5, 7], "<code>s</code> should be equal to <code>[2, 5, 7]</code>.");'
 

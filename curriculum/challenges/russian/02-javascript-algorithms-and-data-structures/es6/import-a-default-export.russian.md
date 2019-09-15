@@ -18,7 +18,7 @@ localeTitle: Импорт экспорта по умолчанию
 ```yml
 tests:
   - text: Правильно импортирует метод <code>export default</code> .
-    testString: 'getUserInput => assert(getUserInput("index").match(/import\s+subtract\s+from\s+"math_functions"/g), "Properly imports <code>export default</code> method.");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").match(/import\s+subtract\s+from\s+"math_functions"/g), "Properly imports <code>export default</code> method.");'
 
 ```
 

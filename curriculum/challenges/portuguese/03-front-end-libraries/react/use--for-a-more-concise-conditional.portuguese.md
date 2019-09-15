@@ -25,7 +25,7 @@ tests:
   - text: 'Quando a <code>display</code> está definida como <code>false</code> , apenas um <code>div</code> e um <code>button</code> devem ser renderizados.'
     testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const state_1 = () => { mockedComponent.setState({display: false}); return waitForIt(() => mockedComponent )}; const updated = await state_1(); assert(updated.find("div").length === 1 && updated.find("div").children().length === 1 && updated.find("button").length === 1 && updated.find("h1").length === 0, "When <code>display</code> is set to <code>false</code>, only a <code>div</code> and <code>button</code> should render."); }; '
   - text: O método de renderização deve usar o operador && lógico para verificar a condição de this.state.display.
-    testString: 'getUserInput => assert(getUserInput("index").includes("&&"), "The render method should use the && logical operator to check the condition of this.state.display.");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").includes("&&"), "The render method should use the && logical operator to check the condition of this.state.display.");'
 
 ```
 

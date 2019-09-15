@@ -18,7 +18,7 @@ localeTitle: Importar uma exportação padrão
 ```yml
 tests:
   - text: Importa corretamente <code>export default</code> método <code>export default</code> .
-    testString: 'getUserInput => assert(getUserInput("index").match(/import\s+subtract\s+from\s+"math_functions"/g), "Properly imports <code>export default</code> method.");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").match(/import\s+subtract\s+from\s+"math_functions"/g), "Properly imports <code>export default</code> method.");'
 
 ```
 

@@ -6,12 +6,12 @@ challengeType: 2
 ---
 
 ## Description
-<section id='description'> 
-عند حفظ مستند ، يقوم mongodb تلقائيًا بإضافة حقل _id ، وتعيينه إلى مفتاح أبجدي رقمي فريد. البحث عن طريق _id هو عملية متكررة للغاية ، لذلك يوفر النمس طريقة مخصصة لذلك. ابحث عن الشخص (فقط !!) الذي لديه _id محدد ، باستخدام Model.findById () -> الشخص. استخدم الوسيطة function personId كمفتاح البحث. 
+<section id='description'>
+عند حفظ مستند ، يقوم mongodb تلقائيًا بإضافة حقل _id ، وتعيينه إلى مفتاح أبجدي رقمي فريد. البحث عن طريق _id هو عملية متكررة للغاية ، لذلك يوفر النمس طريقة مخصصة لذلك. ابحث عن الشخص (فقط !!) الذي لديه _id محدد ، باستخدام Model.findById () -> الشخص. استخدم الوسيطة function personId كمفتاح البحث.
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -21,7 +21,7 @@ challengeType: 2
 ```yml
 tests:
   - text: العثور على عنصر من خلال معرف يجب أن تنجح
-    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/find-by-id'').then(data => { assert.equal(data.name, ''test'', ''item.name is not what expected''); assert.equal(data.age, 0, ''item.age is not what expected''); assert.deepEqual(data.favoriteFoods, [''none''], ''item.favoriteFoods is not what expected''); assert.equal(data.__v, 0, ''The item should be not previously edited''); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: '({ getUserInput }) => $.get(getUserInput(''url'') + ''/_api/find-by-id'').then(data => { assert.equal(data.name, ''test'', ''item.name is not what expected''); assert.equal(data.age, 0, ''item.age is not what expected''); assert.deepEqual(data.favoriteFoods, [''none''], ''item.favoriteFoods is not what expected''); assert.equal(data.__v, 0, ''The item should be not previously edited''); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 

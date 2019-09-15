@@ -18,9 +18,9 @@ localeTitle: Использовать экспорт для повторного
 ```yml
 tests:
   - text: <code>foo</code> экспортируется.
-    testString: 'getUserInput => assert(getUserInput("index").match(/export\s+const\s+foo\s*=\s*"bar"/g), "<code>foo</code> is exported.");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").match(/export\s+const\s+foo\s*=\s*"bar"/g), "<code>foo</code> is exported.");'
   - text: <code>bar</code> экспортируется.
-    testString: 'getUserInput => assert(getUserInput("index").match(/export\s+const\s+bar\s*=\s*"foo"/g), "<code>bar</code> is exported.");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").match(/export\s+const\s+bar\s*=\s*"foo"/g), "<code>bar</code> is exported.");'
 
 ```
 

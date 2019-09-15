@@ -19,9 +19,9 @@ localeTitle: Сравнение области действия переменн
 ```yml
 tests:
   - text: <code>var</code> не существует в коде.
-    testString: 'getUserInput => assert(!getUserInput("index").match(/var/g),"<code>var</code> does not exist in code.");'
+    testString: '({ getUserInput }) => assert(!getUserInput("index").match(/var/g),"<code>var</code> does not exist in code.");'
   - text: 'Переменная <code>i</code> объявленная в операторе if, должна равняться «области блока».'
-    testString: 'getUserInput => assert(getUserInput("index").match(/(i\s*=\s*).*\s*.*\s*.*\1("|")block\s*scope\2/g), "The variable <code>i</code> declared in the if statement should equal "block scope".");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").match(/(i\s*=\s*).*\s*.*\s*.*\1("|")block\s*scope\2/g), "The variable <code>i</code> declared in the if statement should equal "block scope".");'
   - text: <code>checkScope()</code> должен возвращать &quot;область действия&quot;
     testString: 'assert(checkScope() === "function scope", "<code>checkScope()</code> should return "function scope"");'
 

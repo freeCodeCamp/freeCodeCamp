@@ -22,7 +22,7 @@ Install the Helmet package, then require it.
 ```yml
 tests:
   - text: '"helmet" dependency should be in package.json'
-    testString: getUserInput => $.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, 'helmet'); }, xhr => { throw new Error(xhr.responseText); })
+    testString: ({ getUserInput }) => $.get(getUserInput('url') + '/_api/package.json').then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, 'helmet'); }, xhr => { throw new Error(xhr.responseText); })
 
 ```
 

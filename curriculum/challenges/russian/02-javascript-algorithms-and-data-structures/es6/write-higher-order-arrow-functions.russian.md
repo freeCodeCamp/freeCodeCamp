@@ -18,17 +18,17 @@ localeTitle: Написание функций стрелок с более вы
 ```yml
 tests:
   - text: <code>squaredIntegers</code> должен быть постоянной переменной (используя <code>const</code> ).
-    testString: 'getUserInput => assert(getUserInput("index").match(/const\s+squaredIntegers/g), "<code>squaredIntegers</code> should be a constant variable (by using <code>const</code>).");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").match(/const\s+squaredIntegers/g), "<code>squaredIntegers</code> should be a constant variable (by using <code>const</code>).");'
   - text: <code>squaredIntegers</code> должен быть <code>array</code>
     testString: 'assert(Array.isArray(squaredIntegers), "<code>squaredIntegers</code> should be an <code>array</code>");'
   - text: '<code>squaredIntegers</code> должно быть <code>[16, 1764, 36]</code>'
     testString: 'assert.deepStrictEqual(squaredIntegers, [16, 1764, 36], "<code>squaredIntegers</code> should be <code>[16, 1764, 36]</code>");'
   - text: ключевое слово <code>function</code> не использовалось.
-    testString: 'getUserInput => assert(!getUserInput("index").match(/function/g), "<code>function</code> keyword was not used.");'
+    testString: '({ getUserInput }) => assert(!getUserInput("index").match(/function/g), "<code>function</code> keyword was not used.");'
   - text: петля не должна использоваться
-    testString: 'getUserInput => assert(!getUserInput("index").match(/(for)|(while)/g), "loop should not be used");'
+    testString: '({ getUserInput }) => assert(!getUserInput("index").match(/(for)|(while)/g), "loop should not be used");'
   - text: '<code>map</code> , <code>filter</code> или <code>reduce</code> должны использоваться'
-    testString: 'getUserInput => assert(getUserInput("index").match(/map|filter|reduce/g), "<code>map</code>, <code>filter</code>, or <code>reduce</code> should be used");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").match(/map|filter|reduce/g), "<code>map</code>, <code>filter</code>, or <code>reduce</code> should be used");'
 
 ```
 

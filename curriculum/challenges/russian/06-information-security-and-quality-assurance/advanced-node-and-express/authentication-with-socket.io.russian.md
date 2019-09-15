@@ -24,11 +24,11 @@ localeTitle: Аутентификация с помощью Socket.IO
 ```yml
 tests:
   - text: passportSocketIo является зависимым
-    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/package.json") .then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, "passport.socketio", "Your project should list "passport.socketio" as a dependency"); }, xhr => { throw new Error(xhr.statusText); })'
+    testString: '({ getUserInput }) => $.get(getUserInput("url")+ "/_api/package.json") .then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, "passport.socketio", "Your project should list "passport.socketio" as a dependency"); }, xhr => { throw new Error(xhr.statusText); })'
   - text: требуется паспортSocketIo
-    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js").then(data => { assert.match(data, /require\(([""])passport\.socketio\1\)/gi, "You should correctly require and instantiate "passport.socketio"");}, xhr => { throw new Error(xhr.statusText); })'
+    testString: '({ getUserInput }) => $.get(getUserInput("url")+ "/_api/server.js").then(data => { assert.match(data, /require\(([""])passport\.socketio\1\)/gi, "You should correctly require and instantiate "passport.socketio"");}, xhr => { throw new Error(xhr.statusText); })'
   - text: passportSocketIo правильно настроен
-    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /io\.use\(.+\.authorize\(/gi, "You should register "passport.socketio" as socket.io middleware and provide it correct options"); }, xhr => { throw new Error(xhr.statusText); })'
+    testString: '({ getUserInput }) => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /io\.use\(.+\.authorize\(/gi, "You should register "passport.socketio" as socket.io middleware and provide it correct options"); }, xhr => { throw new Error(xhr.statusText); })'
 
 ```
 

@@ -21,7 +21,7 @@ tests:
   - text: El envío de la acción <code>ADD</code> en la tienda debe incrementar el estado en <code>1</code> .
     testString: 'assert((function() { const initialState = store.getState(); store.dispatch({ type: "ADD" }); const newState = store.getState(); return newState === (initialState + 1); })(), "Dispatching the <code>ADD</code> action on the store should increment the state by <code>1</code>.");'
   - text: Debe haber una función de escucha suscrita a la tienda usando <code>store.subscribe</code> .
-    testString: 'getUserInput => assert(getUserInput("index").includes("store.subscribe("), "There should be a listener function subscribed to the store using <code>store.subscribe</code>.");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").includes("store.subscribe("), "There should be a listener function subscribed to the store using <code>store.subscribe</code>.");'
   - text: La devolución de llamada a <code>store.subscribe</code> también debe incrementar la variable de <code>count</code> global a medida que se actualiza el almacén.
     testString: 'assert(store.getState() === count, "The callback to <code>store.subscribe</code> should also increment the global <code>count</code> variable as the store is updated.");'
 

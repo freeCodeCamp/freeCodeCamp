@@ -18,9 +18,9 @@ undefined
 ```yml
 tests:
   - text: ''
-    testString: 'getUserInput => assert(!getUserInput("index").match(/var/g),"<code>var</code> does not exist in code.");'
+    testString: '({ getUserInput }) => assert(!getUserInput("index").match(/var/g),"<code>var</code> does not exist in code.");'
   - text: ''
-    testString: 'getUserInput => assert(getUserInput("index").match(/(i\s*=\s*).*\s*.*\s*.*\1("|")block\s*scope\2/g), "The variable <code>i</code> declared in the if statement should equal "block scope".");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").match(/(i\s*=\s*).*\s*.*\s*.*\1("|")block\s*scope\2/g), "The variable <code>i</code> declared in the if statement should equal "block scope".");'
   - text: ''
     testString: 'assert(checkScope() === "function scope", "<code>checkScope()</code> should return "function scope"");'
 

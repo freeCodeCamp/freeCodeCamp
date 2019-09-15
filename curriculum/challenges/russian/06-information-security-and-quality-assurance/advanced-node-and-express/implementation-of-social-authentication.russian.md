@@ -22,9 +22,9 @@ localeTitle: Реализация социальной аутентификац�
 ```yml
 tests:
   - text: Правило маршрута / auth / github
-    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /("|")\/auth\/github("|")[^]*get.*passport.authenticate.*github/gi, "Route auth/github should only call passport.authenticate with github"); }, xhr => { throw new Error(xhr.statusText); })'
+    testString: '({ getUserInput }) => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /("|")\/auth\/github("|")[^]*get.*passport.authenticate.*github/gi, "Route auth/github should only call passport.authenticate with github"); }, xhr => { throw new Error(xhr.statusText); })'
   - text: Правило маршрута / auth / github / callback
-    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /("|")\/auth\/github\/callback("|")[^]*get.*passport.authenticate.*github.*failureRedirect:( |)("|")\/("|")/gi, "Route auth/github/callback should accept a get request and call passport.authenticate for github with a failure redirect to home"); }, xhr => { throw new Error(xhr.statusText); })'
+    testString: '({ getUserInput }) => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /("|")\/auth\/github\/callback("|")[^]*get.*passport.authenticate.*github.*failureRedirect:( |)("|")\/("|")/gi, "Route auth/github/callback should accept a get request and call passport.authenticate for github with a failure redirect to home"); }, xhr => { throw new Error(xhr.statusText); })'
 
 ```
 

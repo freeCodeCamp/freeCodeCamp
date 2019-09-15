@@ -21,7 +21,7 @@ tests:
   - text: إرسال إجراء <code>ADD</code> على المخزن يجب زيادة الحالة بواسطة <code>1</code> .
     testString: 'assert((function() { const initialState = store.getState(); store.dispatch({ type: "ADD" }); const newState = store.getState(); return newState === (initialState + 1); })(), "Dispatching the <code>ADD</code> action on the store should increment the state by <code>1</code>.");'
   - text: يجب أن تكون هناك وظيفة مستمع مشتركة في المتجر باستخدام <code>store.subscribe</code> .
-    testString: 'getUserInput => assert(getUserInput("index").includes("store.subscribe("), "There should be a listener function subscribed to the store using <code>store.subscribe</code>.");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").includes("store.subscribe("), "There should be a listener function subscribed to the store using <code>store.subscribe</code>.");'
   - text: يجب أيضًا أن <code>store.subscribe</code> رد الاتصال إلى <code>store.subscribe</code> إلى زيادة متغير <code>count</code> العالمي عند تحديث المتجر.
     testString: 'assert(store.getState() === count, "The callback to <code>store.subscribe</code> should also increment the global <code>count</code> variable as the store is updated.");'
 

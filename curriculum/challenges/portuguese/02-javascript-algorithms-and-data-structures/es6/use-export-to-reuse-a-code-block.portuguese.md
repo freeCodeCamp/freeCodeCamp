@@ -18,9 +18,9 @@ localeTitle: Use a exportação para reutilizar um bloco de código
 ```yml
 tests:
   - text: <code>foo</code> é exportado.
-    testString: 'getUserInput => assert(getUserInput("index").match(/export\s+const\s+foo\s*=\s*"bar"/g), "<code>foo</code> is exported.");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").match(/export\s+const\s+foo\s*=\s*"bar"/g), "<code>foo</code> is exported.");'
   - text: <code>bar</code> é exportada.
-    testString: 'getUserInput => assert(getUserInput("index").match(/export\s+const\s+bar\s*=\s*"foo"/g), "<code>bar</code> is exported.");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").match(/export\s+const\s+bar\s*=\s*"foo"/g), "<code>bar</code> is exported.");'
 
 ```
 

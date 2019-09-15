@@ -18,11 +18,11 @@ localeTitle: Предотвращение мутации объектов
 ```yml
 tests:
   - text: Не заменяйте ключевое слово <code>const</code> .
-    testString: 'getUserInput => assert(getUserInput("index").match(/const/g), "Do not replace <code>const</code> keyword.");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").match(/const/g), "Do not replace <code>const</code> keyword.");'
   - text: <code>MATH_CONSTANTS</code> должна быть постоянной переменной (используя <code>const</code> ).
-    testString: 'getUserInput => assert(getUserInput("index").match(/const\s+MATH_CONSTANTS/g), "<code>MATH_CONSTANTS</code> should be a constant variable (by using <code>const</code>).");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").match(/const\s+MATH_CONSTANTS/g), "<code>MATH_CONSTANTS</code> should be a constant variable (by using <code>const</code>).");'
   - text: Не меняйте оригинальные <code>MATH_CONSTANTS</code> .
-    testString: 'getUserInput => assert(getUserInput("index").match(/const\s+MATH_CONSTANTS\s+=\s+{\s+PI:\s+3.14\s+};/g), "Do not change original <code>MATH_CONSTANTS</code>.");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").match(/const\s+MATH_CONSTANTS\s+=\s+{\s+PI:\s+3.14\s+};/g), "Do not change original <code>MATH_CONSTANTS</code>.");'
   - text: <code>PI</code> равно <code>3.14</code> .
     testString: 'assert(PI === 3.14, "<code>PI</code> equals <code>3.14</code>.");'
 

@@ -26,7 +26,7 @@ tests:
   - text: <code>sum()</code>的结果应为0
     testString: 'assert(sum() === 0, "The result of <code>sum()</code> should be 0");'
   - text: <code>sum</code>函数在<code>args</code>参数上使用<code>...</code> spread运算符。
-    testString: 'getUserInput => assert(getUserInput("index").match(/function\s+sum\s*\(\s*...args\s*\)\s*{/g), "The <code>sum</code> function uses the <code>...</code> spread operator on the <code>args</code> parameter.");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").match(/function\s+sum\s*\(\s*...args\s*\)\s*{/g), "The <code>sum</code> function uses the <code>...</code> spread operator on the <code>args</code> parameter.");'
 
 ```
 

@@ -18,9 +18,9 @@ localeTitle: Compare escopos das palvras-chave var e let
 ```yml
 tests:
   - text: <code>var</code> não existe no código.
-    testString: 'getUserInput => assert(!getUserInput("index").match(/var/g),"<code>var</code> does not exist in code.");'
+    testString: '({ getUserInput }) => assert(!getUserInput("index").match(/var/g),"<code>var</code> does not exist in code.");'
   - text: A variável <code>i</code> declarada na instrução if deve ser igual a &quot;escopo de bloco&quot;.
-    testString: 'getUserInput => assert(getUserInput("index").match(/(i\s*=\s*).*\s*.*\s*.*\1("|")block\s*scope\2/g), "The variable <code>i</code> declared in the if statement should equal "block scope".");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").match(/(i\s*=\s*).*\s*.*\s*.*\1("|")block\s*scope\2/g), "The variable <code>i</code> declared in the if statement should equal "block scope".");'
   - text: <code>checkScope()</code> deve retornar &quot;escopo de função&quot;
     testString: 'assert(checkScope() === "function scope", "<code>checkScope()</code> should return "function scope"");'
 

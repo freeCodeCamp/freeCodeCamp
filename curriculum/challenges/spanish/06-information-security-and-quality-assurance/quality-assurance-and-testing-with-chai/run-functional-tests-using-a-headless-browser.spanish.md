@@ -19,15 +19,15 @@ localeTitle: Ejecutar pruebas funcionales utilizando un navegador sin cabeza
 ```yml
 tests:
   - text: Todas las pruebas deben pasar
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=functional&n=4").then(data => { assert.equal(data.state,"passed"); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: '({ getUserInput }) => $.get(getUserInput("url") + "/_api/get-tests?type=functional&n=4").then(data => { assert.equal(data.state,"passed"); }, xhr => { throw new Error(xhr.responseText); })'
   - text: Afirmar que la solicitud del navegador sin cabeza tuvo éxito
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=functional&n=4").then(data => { assert.equal(data.assertions[0].method, "browser.success"); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: '({ getUserInput }) => $.get(getUserInput("url") + "/_api/get-tests?type=functional&n=4").then(data => { assert.equal(data.assertions[0].method, "browser.success"); }, xhr => { throw new Error(xhr.responseText); })'
   - text: 'Afirmar que el texto dentro del elemento "span # name" es "Cristoforo"'
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=functional&n=4").then(data => { assert.equal(data.assertions[1].method, "browser.text"); assert.equal(data.assertions[1].args[0], "\"span#name\""); assert.equal(data.assertions[1].args[1], "\"Cristoforo\"");}, xhr => { throw new Error(xhr.responseText); })'
+    testString: '({ getUserInput }) => $.get(getUserInput("url") + "/_api/get-tests?type=functional&n=4").then(data => { assert.equal(data.assertions[1].method, "browser.text"); assert.equal(data.assertions[1].args[0], "\"span#name\""); assert.equal(data.assertions[1].args[1], "\"Cristoforo\"");}, xhr => { throw new Error(xhr.responseText); })'
   - text: 'afirmar que el texto dentro del elemento "span # surname" es "Colombo"'
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=functional&n=4").then(data => { assert.equal(data.assertions[2].method, "browser.text"); assert.equal(data.assertions[2].args[0], "\"span#surname\""); assert.equal(data.assertions[2].args[1], "\"Colombo\"");}, xhr => { throw new Error(xhr.responseText); })'
+    testString: '({ getUserInput }) => $.get(getUserInput("url") + "/_api/get-tests?type=functional&n=4").then(data => { assert.equal(data.assertions[2].method, "browser.text"); assert.equal(data.assertions[2].args[0], "\"span#surname\""); assert.equal(data.assertions[2].args[1], "\"Colombo\"");}, xhr => { throw new Error(xhr.responseText); })'
   - text: 'Afirmar que el elemento "span # dates" existe y su conteo es 1'
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=functional&n=4").then(data => { assert.equal(data.assertions[3].method, "browser.element"); assert.equal(data.assertions[3].args[0], "\"span#dates\""); assert.equal(data.assertions[3].args[1], 1);}, xhr => { throw new Error(xhr.responseText); })'
+    testString: '({ getUserInput }) => $.get(getUserInput("url") + "/_api/get-tests?type=functional&n=4").then(data => { assert.equal(data.assertions[3].method, "browser.element"); assert.equal(data.assertions[3].args[0], "\"span#dates\""); assert.equal(data.assertions[3].args[1], 1);}, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 

@@ -25,7 +25,7 @@ tests:
   - text: 调度<code>ONLINE</code>类型的操作应该将<code>status</code>中的属性<code>status</code>更新为<code>online</code>并且不应该改变状态。
     testString: 'assert((function() { const initialState = store.getState(); const isFrozen = DeepFreeze(initialState); store.dispatch({type: "ONLINE"}); const finalState = store.getState(); const expectedState = { user: "CamperBot", status: "online", friends: "732,982", community: "freeCodeCamp" }; return isFrozen && DeepEqual(finalState, expectedState); })(), "Dispatching an action of type <code>ONLINE</code> should update the property <code>status</code> in state to <code>online</code> and should NOT mutate state.");'
   - text: <code>Object.assign</code>应该用于返回新状态。
-    testString: 'getUserInput => assert(getUserInput("index").includes("Object.assign"), "<code>Object.assign</code> should be used to return new state.");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").includes("Object.assign"), "<code>Object.assign</code> should be used to return new state.");'
 
 ```
 

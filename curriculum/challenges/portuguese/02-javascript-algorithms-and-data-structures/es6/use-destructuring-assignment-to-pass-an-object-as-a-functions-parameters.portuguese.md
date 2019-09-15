@@ -22,7 +22,7 @@ tests:
   - text: <code>half(stats)</code> deve ser <code>28.015</code>
     testString: 'assert(half(stats) === 28.015, "<code>half(stats)</code> should be <code>28.015</code>");'
   - text: Destruturação foi usada.
-    testString: 'getUserInput => assert(getUserInput("index").match(/\(\s*\{\s*\w+\s*,\s*\w+\s*\}\s*\)/g), "Destructuring was used.");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").match(/\(\s*\{\s*\w+\s*,\s*\w+\s*\}\s*\)/g), "Destructuring was used.");'
 
 ```
 

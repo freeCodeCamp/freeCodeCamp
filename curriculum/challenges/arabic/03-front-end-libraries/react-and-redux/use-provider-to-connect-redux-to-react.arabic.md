@@ -21,7 +21,7 @@ tests:
   - text: يجب أن يتم عرض <code>AppWrapper</code> .
     testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find("AppWrapper").length === 1; })(), "The <code>AppWrapper</code> should render.");'
   - text: يجب أن يكون مكون مجمّع <code>Provider</code> يحتوي على <code>store</code> دعامة تم تمريره إليه ، يساوي مخزن Redux.
-    testString: 'getUserInput => assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return getUserInput("index").replace(/\s/g,"").includes("<Providerstore={store}>"); })(), "The <code>Provider</code> wrapper component should have a prop of <code>store</code> passed to it, equal to the Redux store.");'
+    testString: '({ getUserInput }) => assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return getUserInput("index").replace(/\s/g,"").includes("<Providerstore={store}>"); })(), "The <code>Provider</code> wrapper component should have a prop of <code>store</code> passed to it, equal to the Redux store.");'
   - text: يجب أن يتم عرض <code>DisplayMessages</code> كطفل من <code>AppWrapper</code> .
     testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find("AppWrapper").find("DisplayMessages").length === 1; })(), "<code>DisplayMessages</code> should render as a child of <code>AppWrapper</code>.");'
   - text: يجب أن يقوم مكون <code>DisplayMessages</code> بعرض عنصر h2 و input و button و <code>ul</code> .

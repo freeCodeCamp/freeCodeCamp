@@ -19,7 +19,7 @@ localeTitle: Ocultar información potencialmente peligrosa mediante el uso de he
 ```yml
 tests:
   - text: helmet.hidePoweredBy () middleware debe montarse correctamente
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/app-info").then(data => { assert.include(data.appStack, "hidePoweredBy"); assert.notEqual(data.headers["x-powered-by"], "Express")}, xhr => { throw new Error(xhr.responseText); })'
+    testString: '({ getUserInput }) => $.get(getUserInput("url") + "/_api/app-info").then(data => { assert.include(data.appStack, "hidePoweredBy"); assert.notEqual(data.headers["x-powered-by"], "Express")}, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 

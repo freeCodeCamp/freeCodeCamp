@@ -19,7 +19,7 @@ localeTitle: Reduza o risco de ataques de script de site cruzado (XSS) com helme
 ```yml
 tests:
   - text: O middleware helmet.xssFilter () deve ser montado corretamente
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/app-info").then(data => { assert.include(data.appStack, "xXssProtection"); assert.property(data.headers, "x-xss-protection"); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: '({ getUserInput }) => $.get(getUserInput("url") + "/_api/app-info").then(data => { assert.include(data.appStack, "xXssProtection"); assert.property(data.headers, "x-xss-protection"); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 

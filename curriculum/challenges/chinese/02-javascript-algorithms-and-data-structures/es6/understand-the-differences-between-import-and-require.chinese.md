@@ -18,7 +18,7 @@ localeTitle: 理解import和require之间的差异
 ```yml
 tests:
   - text: 有效的<code>import</code>声明
-    testString: 'getUserInput => assert(getUserInput("index").match(/import\s+\{\s*capitalizeString\s*\}\s+from\s+("|")string_functions\1/g), "valid <code>import</code> statement");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").match(/import\s+\{\s*capitalizeString\s*\}\s+from\s+("|")string_functions\1/g), "valid <code>import</code> statement");'
 
 ```
 

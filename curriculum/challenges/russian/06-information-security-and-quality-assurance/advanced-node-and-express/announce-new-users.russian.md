@@ -28,9 +28,9 @@ localeTitle: Объявление новых пользователей
 ```yml
 tests:
   - text: 'Событие «пользователь» испускается с именем, currentUsers и подключенным'
-    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /io.emit.*("|")user("|").*name.*currentUsers.*connected/gi, "You should have an event emitted named user sending name, currentUsers, and connected"); }, xhr => { throw new Error(xhr.statusText); })'
+    testString: '({ getUserInput }) => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /io.emit.*("|")user("|").*name.*currentUsers.*connected/gi, "You should have an event emitted named user sending name, currentUsers, and connected"); }, xhr => { throw new Error(xhr.statusText); })'
   - text: 'Клиент правильно обрабатывает и отображает новые данные из «пользовательского» события,'
-    testString: 'getUserInput => $.get(getUserInput("url")+ "/public/client.js") .then(data => { assert.match(data, /socket.on.*("|")user("|")[^]*num-users/gi, "You should change the text of #num-users within on your client within the "user" even listener to show the current users connected"); assert.match(data, /socket.on.*("|")user("|")[^]*messages.*li/gi, "You should append a list item to #messages on your client within the "user" event listener to annouce a user came or went"); }, xhr => { throw new Error(xhr.statusText); })'
+    testString: '({ getUserInput }) => $.get(getUserInput("url")+ "/public/client.js") .then(data => { assert.match(data, /socket.on.*("|")user("|")[^]*num-users/gi, "You should change the text of #num-users within on your client within the "user" even listener to show the current users connected"); assert.match(data, /socket.on.*("|")user("|")[^]*messages.*li/gi, "You should append a list item to #messages on your client within the "user" event listener to annouce a user came or went"); }, xhr => { throw new Error(xhr.statusText); })'
 
 ```
 

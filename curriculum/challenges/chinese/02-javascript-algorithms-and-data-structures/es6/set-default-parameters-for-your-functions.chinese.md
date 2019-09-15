@@ -22,7 +22,7 @@ tests:
   - text: <code>increment(5)</code>的结果应为<code>6</code> 。
     testString: 'assert(increment(5) === 6, "The result of <code>increment(5)</code> should be <code>6</code>.");'
   - text: 默认参数<code>1</code>用于<code>value</code> 。
-    testString: 'getUserInput => assert(getUserInput("index").match(/value\s*=\s*1/g), "default parameter <code>1</code> was used for <code>value</code>.");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").match(/value\s*=\s*1/g), "default parameter <code>1</code> was used for <code>value</code>.");'
 
 ```
 

@@ -28,7 +28,7 @@ Send the <code>/views/index.html</code> file as a response to GET requests to th
 ```yml
 tests:
   - text: Your app should serve the file views/index.html
-    testString: 'getUserInput => $.get(getUserInput(''url'')).then(data => { assert.match(data, /<h1>.*<\/h1>/, ''Your app does not serve the expected HTML''); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: '({ getUserInput }) => $.get(getUserInput(''url'')).then(data => { assert.match(data, /<h1>.*<\/h1>/, ''Your app does not serve the expected HTML''); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 

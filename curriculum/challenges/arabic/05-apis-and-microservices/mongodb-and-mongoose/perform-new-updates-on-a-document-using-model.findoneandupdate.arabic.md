@@ -6,14 +6,14 @@ challengeType: 2
 ---
 
 ## Description
-<section id='description'> 
-الإصدارات الحديثة من النمس لها طرق لتبسيط تحديث الوثائق. تتصرف بعض الميزات الأكثر تقدمًا (أي خطافات ما قبل / النشر والتحقق من الصحة) بشكل مختلف مع هذا الأسلوب ، لذلك لا تزال الطريقة الكلاسيكية مفيدة في العديد من المواقف. يمكن استخدام findByIdAndUpdate () عند البحث باستخدام Id. 
-البحث عن شخص حسب الاسم وتعيين سنها إلى 20. استخدم الدالة parameter nameName كمفتاح بحث. 
-تلميح: نريد منك إرجاع المستند الذي تم تحديثه. للقيام بذلك ، تحتاج إلى تمرير مستند الخيارات {جديد: true} كوسيطة 3 للبحث عن OneOndUpdate (). بشكل افتراضي ، ترجع هذه الطرق الكائن غير المعدل. 
+<section id='description'>
+الإصدارات الحديثة من النمس لها طرق لتبسيط تحديث الوثائق. تتصرف بعض الميزات الأكثر تقدمًا (أي خطافات ما قبل / النشر والتحقق من الصحة) بشكل مختلف مع هذا الأسلوب ، لذلك لا تزال الطريقة الكلاسيكية مفيدة في العديد من المواقف. يمكن استخدام findByIdAndUpdate () عند البحث باستخدام Id.
+البحث عن شخص حسب الاسم وتعيين سنها إلى 20. استخدم الدالة parameter nameName كمفتاح بحث.
+تلميح: نريد منك إرجاع المستند الذي تم تحديثه. للقيام بذلك ، تحتاج إلى تمرير مستند الخيارات {جديد: true} كوسيطة 3 للبحث عن OneOndUpdate (). بشكل افتراضي ، ترجع هذه الطرق الكائن غير المعدل.
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -23,7 +23,7 @@ challengeType: 2
 ```yml
 tests:
   - text: findOneAndUpdate يجب أن ينجح عنصر
-    testString: 'getUserInput => $.post(getUserInput(''url'') + ''/_api/find-one-update'', {name:''Dorian Gray'', age: 35, favoriteFoods:[''unknown'']}).then(data => { assert.equal(data.name, ''Dorian Gray'', ''item.name is not what expected''); assert.equal(data.age, 20, ''item.age is not what expected''); assert.deepEqual(data.favoriteFoods, [''unknown''], ''item.favoriteFoods is not what expected''); assert.equal(data.__v, 0, ''findOneAndUpdate does not increment version by design !!!''); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: '({ getUserInput }) => $.post(getUserInput(''url'') + ''/_api/find-one-update'', {name:''Dorian Gray'', age: 35, favoriteFoods:[''unknown'']}).then(data => { assert.equal(data.name, ''Dorian Gray'', ''item.name is not what expected''); assert.equal(data.age, 20, ''item.age is not what expected''); assert.deepEqual(data.favoriteFoods, [''unknown''], ''item.favoriteFoods is not what expected''); assert.equal(data.__v, 0, ''findOneAndUpdate does not increment version by design !!!''); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 

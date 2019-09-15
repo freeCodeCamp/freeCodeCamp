@@ -20,9 +20,9 @@ tests:
   - text: '<code>arr</code> deve ser <code>[3,4,5,6,7,8,9,10]</code>'
     testString: 'assert(arr.every((v, i) => v === i + 3) && arr.length === 8,"<code>arr</code> should be <code>[3,4,5,6,7,8,9,10]</code>");'
   - text: Destructuring deve ser usado.
-    testString: 'getUserInput => assert(getUserInput("index").match(/\[\s*\w*\s*,\s*\w*\s*,\s*...\w+\s*\]/g),"Destructuring should be used.");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").match(/\[\s*\w*\s*,\s*\w*\s*,\s*...\w+\s*\]/g),"Destructuring should be used.");'
   - text: <code>Array.slice()</code> não deve ser usado.
-    testString: 'getUserInput => assert(!getUserInput("index").match(/slice/g), "<code>Array.slice()</code> should not be used.");'
+    testString: '({ getUserInput }) => assert(!getUserInput("index").match(/slice/g), "<code>Array.slice()</code> should not be used.");'
 
 ```
 

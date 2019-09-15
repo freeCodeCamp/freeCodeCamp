@@ -18,9 +18,9 @@ localeTitle: Comparar los alcances de la var y dejar Palabras clave
 ```yml
 tests:
   - text: <code>var</code> no existe en el código.
-    testString: 'getUserInput => assert(!getUserInput("index").match(/var/g),"<code>var</code> does not exist in code.");'
+    testString: '({ getUserInput }) => assert(!getUserInput("index").match(/var/g),"<code>var</code> does not exist in code.");'
   - text: La variable <code>i</code> declaradas en la sentencia if debe ser igual a &quot;ámbito de bloque&quot;.
-    testString: 'getUserInput => assert(getUserInput("index").match(/(i\s*=\s*).*\s*.*\s*.*\1("|")block\s*scope\2/g), "The variable <code>i</code> declared in the if statement should equal "block scope".");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").match(/(i\s*=\s*).*\s*.*\s*.*\1("|")block\s*scope\2/g), "The variable <code>i</code> declared in the if statement should equal "block scope".");'
   - text: <code>checkScope()</code> debería devolver &quot;alcance de función&quot;
     testString: 'assert(checkScope() === "function scope", "<code>checkScope()</code> should return "function scope"");'
 

@@ -21,7 +21,7 @@ tests:
   - text: O armazenamento do redux deve ter um valor de 5 para o estado inicial.
     testString: 'assert(store.getState()===5, "The redux store should have a value of 5 for the initial state.");'
   - text: Uma variável <code>currentState</code> deve existir e deve ser atribuída ao estado atual do repositório do Redux.
-    testString: 'getUserInput => assert(currentState === 5 && getUserInput("index").includes("store.getState()"), "A variable <code>currentState</code> should exist and should be assigned the current state of the Redux store.");'
+    testString: '({ getUserInput }) => assert(currentState === 5 && getUserInput("index").includes("store.getState()"), "A variable <code>currentState</code> should exist and should be assigned the current state of the Redux store.");'
 
 ```
 

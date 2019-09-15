@@ -19,7 +19,7 @@ localeTitle: Синхронизировать и синхронизироват�
 ```yml
 tests:
   - text: Синхронизированный хэш генерируется и правильно сравнивается
-    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /START_SYNC[^]*hash.*=.*bcrypt.hashSync.*myPlaintextPassword( |),( |)saltRounds[^]*END_SYNC/gi, "You should call bcrypt.hashSync on myPlaintextPassword with saltRounds"); assert.match(data, /START_SYNC[^]*result.*=.*bcrypt.compareSync.*myPlaintextPassword( |),( |)hash[^]*END_SYNC/gi, "You should call bcrypt.compareSync on myPlaintextPassword with the hash generated in the last line"); }, xhr => { throw new Error(xhr.statusText); })'
+    testString: '({ getUserInput }) => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /START_SYNC[^]*hash.*=.*bcrypt.hashSync.*myPlaintextPassword( |),( |)saltRounds[^]*END_SYNC/gi, "You should call bcrypt.hashSync on myPlaintextPassword with saltRounds"); assert.match(data, /START_SYNC[^]*result.*=.*bcrypt.compareSync.*myPlaintextPassword( |),( |)hash[^]*END_SYNC/gi, "You should call bcrypt.compareSync on myPlaintextPassword with the hash generated in the last line"); }, xhr => { throw new Error(xhr.statusText); })'
 
 ```
 

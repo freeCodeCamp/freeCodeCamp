@@ -18,7 +18,7 @@ localeTitle: Исследуйте различия между ключевыми
 ```yml
 tests:
   - text: <code>var</code> не существует в коде.
-    testString: 'getUserInput => assert(!getUserInput("index").match(/var/g),"<code>var</code> does not exist in code.");'
+    testString: '({ getUserInput }) => assert(!getUserInput("index").match(/var/g),"<code>var</code> does not exist in code.");'
   - text: <code>catName</code> должен быть <code>Oliver</code> .
     testString: 'assert(catName === "Oliver", "<code>catName</code> should be <code>Oliver</code>.");'
   - text: <code>quote</code> должна быть <code>&quot;Oliver says Meow!&quot;</code>

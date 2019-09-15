@@ -19,7 +19,7 @@ localeTitle: Use os poderes de um motor de modelo
 ```yml
 tests:
   - text: Variáveis ​​de renderização do Pug corretas
-    testString: 'getUserInput => $.get(getUserInput("url")+ "/") .then(data => { assert.match(data, /pug-variable("|")>Please login/gi, "Your projects home page should now be rendered by pug with the projects .pug file unaltered"); }, xhr => { throw new Error(xhr.statusText); })'
+    testString: '({ getUserInput }) => $.get(getUserInput("url")+ "/") .then(data => { assert.match(data, /pug-variable("|")>Please login/gi, "Your projects home page should now be rendered by pug with the projects .pug file unaltered"); }, xhr => { throw new Error(xhr.statusText); })'
 
 ```
 

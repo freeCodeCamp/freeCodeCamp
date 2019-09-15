@@ -18,17 +18,17 @@ localeTitle: Escrever funções de seta de ordem superior
 ```yml
 tests:
   - text: <code>squaredIntegers</code> deve ser uma variável constante (usando <code>const</code> ).
-    testString: 'getUserInput => assert(getUserInput("index").match(/const\s+squaredIntegers/g), "<code>squaredIntegers</code> should be a constant variable (by using <code>const</code>).");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").match(/const\s+squaredIntegers/g), "<code>squaredIntegers</code> should be a constant variable (by using <code>const</code>).");'
   - text: <code>squaredIntegers</code> deve ser um <code>array</code>
     testString: 'assert(Array.isArray(squaredIntegers), "<code>squaredIntegers</code> should be an <code>array</code>");'
   - text: '<code>squaredIntegers</code> deve ser <code>[16, 1764, 36]</code>'
     testString: 'assert.deepStrictEqual(squaredIntegers, [16, 1764, 36], "<code>squaredIntegers</code> should be <code>[16, 1764, 36]</code>");'
   - text: palavra-chave de <code>function</code> não foi usada.
-    testString: 'getUserInput => assert(!getUserInput("index").match(/function/g), "<code>function</code> keyword was not used.");'
+    testString: '({ getUserInput }) => assert(!getUserInput("index").match(/function/g), "<code>function</code> keyword was not used.");'
   - text: loop não deve ser usado
-    testString: 'getUserInput => assert(!getUserInput("index").match(/(for)|(while)/g), "loop should not be used");'
+    testString: '({ getUserInput }) => assert(!getUserInput("index").match(/(for)|(while)/g), "loop should not be used");'
   - text: '<code>map</code> , <code>filter</code> ou <code>reduce</code> deve ser usado'
-    testString: 'getUserInput => assert(getUserInput("index").match(/map|filter|reduce/g), "<code>map</code>, <code>filter</code>, or <code>reduce</code> should be used");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").match(/map|filter|reduce/g), "<code>map</code>, <code>filter</code>, or <code>reduce</code> should be used");'
 
 ```
 

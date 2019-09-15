@@ -25,7 +25,7 @@ tests:
   - text: 在Redux存储上调度<code>ADD_TO_DO</code>类型的操作应该添加<code>todo</code> ，不应该改变状态。
     testString: 'assert((function() { const initialState = store.getState(); const isFrozen = DeepFreeze(initialState); store.dispatch(addToDo("__TEST__TO__DO__")); const finalState = store.getState(); const expectedState = [ "Do not mutate state!", "__TEST__TO__DO__" ]; return( isFrozen && DeepEqual(finalState, expectedState)); })(), "Dispatching an action of type <code>ADD_TO_DO</code> on the Redux store should add a <code>todo</code> item and should NOT mutate state.");'
   - text: 应使用扩展运算符返回新状态。
-    testString: 'getUserInput => assert(getUserInput("index").includes("...state"), "The spread operator should be used to return new state.");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").includes("...state"), "The spread operator should be used to return new state.");'
 
 ```
 

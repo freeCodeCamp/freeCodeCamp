@@ -33,7 +33,7 @@ tests:
   - text: Dispatching <code>logoutUser</code> should update the <code>authenticated</code> property in the store state to <code>false</code>.
     testString: assert((function() {  store.dispatch(loginUser()); const loggedIn = store.getState(); store.dispatch(logoutUser()); const afterLogout = store.getState(); return loggedIn.authenticated === true && afterLogout.authenticated === false  })());
   - text: The <code>authReducer</code> function should handle multiple action types with a <code>switch</code> statement.
-    testString: getUserInput => assert( getUserInput('index').toString().includes('switch') && getUserInput('index').toString().includes('case') && getUserInput('index').toString().includes('default'));
+    testString: ({ getUserInput }) => assert( getUserInput('index').toString().includes('switch') && getUserInput('index').toString().includes('case') && getUserInput('index').toString().includes('default'));
 
 ```
 

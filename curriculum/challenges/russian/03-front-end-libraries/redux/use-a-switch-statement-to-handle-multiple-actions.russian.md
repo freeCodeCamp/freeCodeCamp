@@ -29,7 +29,7 @@ tests:
   - text: Отправка <code>logoutUser</code> должна обновить <code>authenticated</code> свойство в состоянии хранилища на <code>false</code> .
     testString: 'assert((function() {  store.dispatch(loginUser()); const loggedIn = store.getState(); store.dispatch(logoutUser()); const afterLogout = store.getState(); return loggedIn.authenticated === true && afterLogout.authenticated === false  })(), "Dispatching <code>logoutUser</code> should update the <code>authenticated</code> property in the store state to <code>false</code>.");'
   - text: Функция <code>authReducer</code> должна обрабатывать разные типы действий с помощью оператора <code>switch</code> .
-    testString: 'getUserInput => assert( getUserInput("index").toString().includes("switch") && getUserInput("index").toString().includes("case") && getUserInput("index").toString().includes("default"), "The <code>authReducer</code> function should handle multiple action types with a <code>switch</code> statement.");'
+    testString: '({ getUserInput }) => assert( getUserInput("index").toString().includes("switch") && getUserInput("index").toString().includes("case") && getUserInput("index").toString().includes("default"), "The <code>authReducer</code> function should handle multiple action types with a <code>switch</code> statement.");'
 
 ```
 

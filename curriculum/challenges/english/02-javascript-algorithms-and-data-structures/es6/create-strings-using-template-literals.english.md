@@ -50,9 +50,9 @@ tests:
   - text: <code>resultDisplayArray</code> is the desired output.
     testString: assert(makeList(result.failure).every((v, i) => v === `<li class="text-warning">${result.failure[i]}</li>` || v === `<li class='text-warning'>${result.failure[i]}</li>`));
   - text: Template strings and expression interpolation should be used
-    testString: getUserInput => assert(getUserInput('index').match(/(`.*\${.*}.*`)/));
+    testString: ({ getUserInput }) => assert(getUserInput('index').match(/(`.*\${.*}.*`)/));
   - text: An iterator should be used
-    testString: getUserInput => assert(getUserInput('index').match(/for|map|reduce|forEach|while/));
+    testString: ({ getUserInput }) => assert(getUserInput('index').match(/for|map|reduce|forEach|while/));
 ```
 
 </section>
@@ -103,9 +103,9 @@ const result = {
 };
 function makeList(arr) {
   "use strict";
-  
+
   const resultDisplayArray = arr.map(val => `<li class="text-warning">${val}</li>`);
-  
+
   return resultDisplayArray;
 }
 /**

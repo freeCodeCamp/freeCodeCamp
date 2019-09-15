@@ -23,7 +23,7 @@ tests:
   - text: <code>Items</code>组件应该呈现。
     testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ShoppingCart)); return mockedComponent.find("Items").length === 1; })(), "The <code>Items</code> component should render.");'
   - text: <code>Items</code>组件应包含<code>propTypes</code>检查，该检查要求<code>quantity</code>为<code>number</code> 。
-    testString: 'getUserInput => assert((function() { const noWhiteSpace = getUserInput("index").replace(/ /g, ""); return noWhiteSpace.includes("quantity:PropTypes.number.isRequired") && noWhiteSpace.includes("Items.propTypes="); })(), "The <code>Items</code> component should include a <code>propTypes</code> check that requires <code>quantity</code> to be a <code>number</code>.");'
+    testString: '({ getUserInput }) => assert((function() { const noWhiteSpace = getUserInput("index").replace(/ /g, ""); return noWhiteSpace.includes("quantity:PropTypes.number.isRequired") && noWhiteSpace.includes("Items.propTypes="); })(), "The <code>Items</code> component should include a <code>propTypes</code> check that requires <code>quantity</code> to be a <code>number</code>.");'
 
 ```
 

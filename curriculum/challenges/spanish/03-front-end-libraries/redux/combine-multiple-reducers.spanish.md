@@ -25,7 +25,7 @@ tests:
   - text: 'El <code>state</code> tienda debe tener dos claves: <code>count</code> , que contiene un número, y <code>auth</code> , que contiene un objeto. El objeto <code>auth</code> debe tener una propiedad de <code>authenticated</code> , que contiene un valor booleano.'
     testString: 'assert((function() { const state = store.getState(); return typeof state.auth === "object" && typeof state.auth.authenticated === "boolean" && typeof state.count === "number" })(), "The store <code>state</code> should have two keys: <code>count</code>, which holds a number, and <code>auth</code>, which holds an object. The <code>auth</code> object should have a property of <code>authenticated</code>, which holds a boolean.");'
   - text: El <code>rootReducer</code> debe ser una función que combine el <code>counterReducer</code> y el <code>authReducer</code> .
-    testString: 'getUserInput => assert((function() {  const noWhiteSpace = getUserInput("index").replace(/\s/g,""); return typeof rootReducer === "function" && noWhiteSpace.includes("Redux.combineReducers")  })(), "The <code>rootReducer</code> should be a function that combines the <code>counterReducer</code> and the <code>authReducer</code>.");'
+    testString: '({ getUserInput }) => assert((function() {  const noWhiteSpace = getUserInput("index").replace(/\s/g,""); return typeof rootReducer === "function" && noWhiteSpace.includes("Redux.combineReducers")  })(), "The <code>rootReducer</code> should be a function that combines the <code>counterReducer</code> and the <code>authReducer</code>.");'
 
 ```
 

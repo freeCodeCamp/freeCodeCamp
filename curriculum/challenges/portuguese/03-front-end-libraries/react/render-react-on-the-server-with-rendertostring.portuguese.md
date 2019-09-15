@@ -19,7 +19,7 @@ localeTitle: Renderizar Reagir no Servidor com renderToString
 ```yml
 tests:
   - text: O componente <code>App</code> deve renderizar uma string usando <code>ReactDOMServer.renderToString</code> .
-    testString: 'getUserInput => assert(getUserInput("index").replace(/ /g,"").includes("ReactDOMServer.renderToString(<App/>)") && Enzyme.mount(React.createElement(App)).children().name() === "div", "The <code>App</code> component should render to a string using <code>ReactDOMServer.renderToString</code>.");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").replace(/ /g,"").includes("ReactDOMServer.renderToString(<App/>)") && Enzyme.mount(React.createElement(App)).children().name() === "div", "The <code>App</code> component should render to a string using <code>ReactDOMServer.renderToString</code>.");'
 
 ```
 

@@ -22,7 +22,7 @@ tests:
   - text: <code>resultDisplayArray</code> é a saída desejada.
     testString: 'assert(makeList(result.failure).every((v, i) => v === `<li class="text-warning">${result.failure[i]}</li>` || v === `<li class="text-warning">${result.failure[i]}</li>`), "<code>resultDisplayArray</code> is the desired output.");'
   - text: Sequências de modelos foram usadas
-    testString: 'getUserInput => assert(getUserInput("index").match(/`.*`/g), "Template strings were not used");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").match(/`.*`/g), "Template strings were not used");'
 
 ```
 

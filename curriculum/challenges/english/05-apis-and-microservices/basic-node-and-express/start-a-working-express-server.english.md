@@ -32,7 +32,7 @@ Use the <code>app.get()</code> method to serve the string "Hello Express" to GET
 ```yml
 tests:
   - text: Your app should serve the string 'Hello Express'
-    testString: 'getUserInput => $.get(getUserInput(''url'')).then(data => { assert.equal(data, ''Hello Express'', ''Your app does not serve the text "Hello Express"''); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: '({ getUserInput }) => $.get(getUserInput(''url'')).then(data => { assert.equal(data, ''Hello Express'', ''Your app does not serve the text "Hello Express"''); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 

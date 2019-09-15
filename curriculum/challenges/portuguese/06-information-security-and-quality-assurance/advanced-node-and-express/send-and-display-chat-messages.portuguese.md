@@ -19,9 +19,9 @@ localeTitle: Enviar e exibir mensagens de bate-papo
 ```yml
 tests:
   - text: O servidor escuta "mensagem de bate-papo" e emite-a corretamente
-    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /socket.on.*("|")chat message("|")[^]*io.emit.*("|")chat message("|").*name.*message/gi, "Your server should listen to the socket for "chat message" then emit to all users "chat message" with name and message in the data object"); }, xhr => { throw new Error(xhr.statusText); })'
+    testString: '({ getUserInput }) => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /socket.on.*("|")chat message("|")[^]*io.emit.*("|")chat message("|").*name.*message/gi, "Your server should listen to the socket for "chat message" then emit to all users "chat message" with name and message in the data object"); }, xhr => { throw new Error(xhr.statusText); })'
   - text: Cliente manipulando e exibindo adequadamente os novos dados do evento 'mensagem de bate-papo'
-    testString: 'getUserInput => $.get(getUserInput("url")+ "/public/client.js") .then(data => { assert.match(data, /socket.on.*("|")chat message("|")[^]*messages.*li/gi, "You should append a list item to #messages on your client within the "chat message" event listener to display the new message"); }, xhr => { throw new Error(xhr.statusText); })'
+    testString: '({ getUserInput }) => $.get(getUserInput("url")+ "/public/client.js") .then(data => { assert.match(data, /socket.on.*("|")chat message("|")[^]*messages.*li/gi, "You should append a list item to #messages on your client within the "chat message" event listener to display the new message"); }, xhr => { throw new Error(xhr.statusText); })'
 
 ```
 

@@ -19,9 +19,9 @@ localeTitle: Lidar com uma desconexão
 ```yml
 tests:
   - text: O servidor manipula a desconexão do evento de um soquete
-    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /socket.on.*("|")disconnect("|")/gi, ""); }, xhr => { throw new Error(xhr.statusText); })'
+    testString: '({ getUserInput }) => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /socket.on.*("|")disconnect("|")/gi, ""); }, xhr => { throw new Error(xhr.statusText); })'
   - text: Seu cliente está ouvindo o evento "contagem de usuários"
-    testString: 'getUserInput => $.get(getUserInput("url")+ "/public/client.js") .then(data => { assert.match(data, /socket.on.*("|")user count("|")/gi, "Your client should be connection to server with the connection defined as socket"); }, xhr => { throw new Error(xhr.statusText); })'
+    testString: '({ getUserInput }) => $.get(getUserInput("url")+ "/public/client.js") .then(data => { assert.match(data, /socket.on.*("|")user count("|")/gi, "Your client should be connection to server with the connection defined as socket"); }, xhr => { throw new Error(xhr.statusText); })'
 
 ```
 

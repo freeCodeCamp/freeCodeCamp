@@ -19,7 +19,7 @@ localeTitle: Render React на сервере с помощью renderToString
 ```yml
 tests:
   - text: Компонент <code>App</code> должен отображать строку с помощью <code>ReactDOMServer.renderToString</code> .
-    testString: 'getUserInput => assert(getUserInput("index").replace(/ /g,"").includes("ReactDOMServer.renderToString(<App/>)") && Enzyme.mount(React.createElement(App)).children().name() === "div", "The <code>App</code> component should render to a string using <code>ReactDOMServer.renderToString</code>.");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").replace(/ /g,"").includes("ReactDOMServer.renderToString(<App/>)") && Enzyme.mount(React.createElement(App)).children().name() === "div", "The <code>App</code> component should render to a string using <code>ReactDOMServer.renderToString</code>.");'
 
 ```
 

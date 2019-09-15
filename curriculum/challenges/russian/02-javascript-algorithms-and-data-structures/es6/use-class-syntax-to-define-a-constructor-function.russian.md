@@ -20,7 +20,7 @@ tests:
   - text: <code>Vegetable</code> должен быть <code>class</code> с определенным методом <code>constructor</code> .
     testString: 'assert(typeof Vegetable === "function" && typeof Vegetable.constructor === "function", "<code>Vegetable</code> should be a <code>class</code> with a defined <code>constructor</code> method.");'
   - text: ключевое слово <code>class</code> .
-    testString: 'getUserInput => assert(getUserInput("index").match(/class/g),"<code>class</code> keyword was used.");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").match(/class/g),"<code>class</code> keyword was used.");'
   - text: <code>Vegetable</code> могут быть созданы.
     testString: 'assert(() => {const a = new Vegetable("apple"); return typeof a === "object";},"<code>Vegetable</code> can be instantiated.");'
   - text: <code>carrot.name</code> должно вернуть <code>carrot</code> .

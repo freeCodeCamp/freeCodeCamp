@@ -6,17 +6,17 @@ challengeType: 2
 ---
 
 ## Description
-<section id='description'> 
-Ahora ha probado algunas formas en que puede administrar las dependencias de su proyecto usando la sección de dependencias de package.json. Ha incluido paquetes externos al agregarlos al archivo e incluso le ha dicho a npm qué tipo de versiones desea utilizando caracteres especiales como la tilde (~) o el caret (^). 
-¿Pero qué sucede si desea eliminar un paquete externo que ya no necesita? Es posible que ya lo haya adivinado: simplemente elimine la "clave" correspondiente: par de valores para eso de sus dependencias. 
-Este mismo método se aplica a la eliminación de otros campos en su package.json y 
-Instrucciones 
-Elimine el momento del paquete de sus dependencias. 
-Asegúrese de tener la cantidad correcta de comas después de quitarla. 
+<section id='description'>
+Ahora ha probado algunas formas en que puede administrar las dependencias de su proyecto usando la sección de dependencias de package.json. Ha incluido paquetes externos al agregarlos al archivo e incluso le ha dicho a npm qué tipo de versiones desea utilizando caracteres especiales como la tilde (~) o el caret (^).
+¿Pero qué sucede si desea eliminar un paquete externo que ya no necesita? Es posible que ya lo haya adivinado: simplemente elimine la "clave" correspondiente: par de valores para eso de sus dependencias.
+Este mismo método se aplica a la eliminación de otros campos en su package.json y
+Instrucciones
+Elimine el momento del paquete de sus dependencias.
+Asegúrese de tener la cantidad correcta de comas después de quitarla.
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -26,7 +26,7 @@ Asegúrese de tener la cantidad correcta de comas después de quitarla.
 ```yml
 tests:
   - text: '"dependencias" no debe incluir "momento"'
-    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert.notProperty(packJson.dependencies, ''moment'', ''"dependencies" still includes "moment"''); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: '({ getUserInput }) => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert.notProperty(packJson.dependencies, ''moment'', ''"dependencies" still includes "moment"''); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 

@@ -19,11 +19,11 @@ localeTitle: Aprende cómo funcionan las afirmaciones de JavaScript
 ```yml
 tests:
   - text: Todas las pruebas deben pasar
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=0").then(data => {assert.equal(data.state,"passed"); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: '({ getUserInput }) => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=0").then(data => {assert.equal(data.state,"passed"); }, xhr => { throw new Error(xhr.responseText); })'
   - text: Elija la aserción correcta - isNull vs. isNotNull
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=0").then(data => {  assert.equal(data.assertions[0].method, "isNull", "Null is null"); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: '({ getUserInput }) => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=0").then(data => {  assert.equal(data.assertions[0].method, "isNull", "Null is null"); }, xhr => { throw new Error(xhr.responseText); })'
   - text: Elija la aserción correcta - isNull vs. isNotNull
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=0").then(data => {  assert.equal(data.assertions[1].method, "isNotNull", "1 is not null"); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: '({ getUserInput }) => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=0").then(data => {  assert.equal(data.assertions[1].method, "isNotNull", "1 is not null"); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 

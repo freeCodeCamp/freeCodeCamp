@@ -22,7 +22,7 @@ tests:
   - text: <code>resultDisplayArray</code> - желаемый результат.
     testString: 'assert(makeList(result.failure).every((v, i) => v === `<li class="text-warning">${result.failure[i]}</li>` || v === `<li class="text-warning">${result.failure[i]}</li>`), "<code>resultDisplayArray</code> is the desired output.");'
   - text: Использовались строки шаблонов
-    testString: 'getUserInput => assert(getUserInput("index").match(/`.*`/g), "Template strings were not used");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").match(/`.*`/g), "Template strings were not used");'
 
 ```
 

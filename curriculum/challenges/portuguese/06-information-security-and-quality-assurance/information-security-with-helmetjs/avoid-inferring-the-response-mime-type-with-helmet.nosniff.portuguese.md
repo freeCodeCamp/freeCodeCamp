@@ -19,7 +19,7 @@ localeTitle: Evite Inferir o Tipo MIME de Resposta com helmet.noSniff ()
 ```yml
 tests:
   - text: middleware helmet.noSniff () deve ser montado corretamente
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/app-info").then(data => { assert.include(data.appStack, "nosniff"); assert.equal(data.headers["x-content-type-options"], "nosniff"); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: '({ getUserInput }) => $.get(getUserInput("url") + "/_api/app-info").then(data => { assert.include(data.appStack, "nosniff"); assert.equal(data.headers["x-content-type-options"], "nosniff"); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 

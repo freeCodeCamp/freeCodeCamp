@@ -6,12 +6,12 @@ challengeType: 2
 ---
 
 ## Description
-<section id='description'> 
-Model.findOne () ведет себя как .find (), но возвращает только один документ (не массив), даже если есть несколько элементов. Это особенно полезно при поиске по свойствам, которые вы объявили уникальными. Найдите только одного человека, у которого есть определенная еда в избранном, используя Model.findOne () -&gt; Person. Используйте аргумент функции food в качестве ключа поиска. 
+<section id='description'>
+Model.findOne () ведет себя как .find (), но возвращает только один документ (не массив), даже если есть несколько элементов. Это особенно полезно при поиске по свойствам, которые вы объявили уникальными. Найдите только одного человека, у которого есть определенная еда в избранном, используя Model.findOne () -&gt; Person. Используйте аргумент функции food в качестве ключа поиска.
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -21,7 +21,7 @@ Model.findOne () ведет себя как .find (), но возвращает 
 ```yml
 tests:
   - text: Найти один предмет должен быть успешным
-    testString: 'getUserInput => $.post(getUserInput(''url'') + ''/_api/find-one-by-food'', {name: ''Gary'', age: 46, favoriteFoods: [''chicken salad'']}).then(data => { assert.equal(data.name, ''Gary'', ''item.name is not what expected''); assert.deepEqual(data.favoriteFoods, [''chicken salad''], ''item.favoriteFoods is not what expected''); assert.equal(data.__v, 0, ''The item should be not previously edited''); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: '({ getUserInput }) => $.post(getUserInput(''url'') + ''/_api/find-one-by-food'', {name: ''Gary'', age: 46, favoriteFoods: [''chicken salad'']}).then(data => { assert.equal(data.name, ''Gary'', ''item.name is not what expected''); assert.deepEqual(data.favoriteFoods, [''chicken salad''], ''item.favoriteFoods is not what expected''); assert.equal(data.__v, 0, ''The item should be not previously edited''); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 

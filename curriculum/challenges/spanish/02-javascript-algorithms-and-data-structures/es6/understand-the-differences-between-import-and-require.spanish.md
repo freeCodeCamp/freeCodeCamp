@@ -18,7 +18,7 @@ localeTitle: Comprender las diferencias entre importar y requerir
 ```yml
 tests:
   - text: declaración de <code>import</code> válida
-    testString: 'getUserInput => assert(getUserInput("index").match(/import\s+\{\s*capitalizeString\s*\}\s+from\s+("|")string_functions\1/g), "valid <code>import</code> statement");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").match(/import\s+\{\s*capitalizeString\s*\}\s+from\s+("|")string_functions\1/g), "valid <code>import</code> statement");'
 
 ```
 

@@ -25,7 +25,7 @@ tests:
   - text: El envío de una acción de tipo <code>ONLINE</code> debe actualizar el <code>status</code> la propiedad en estado a en <code>online</code> y NO debe mutar el estado.
     testString: 'assert((function() { const initialState = store.getState(); const isFrozen = DeepFreeze(initialState); store.dispatch({type: "ONLINE"}); const finalState = store.getState(); const expectedState = { user: "CamperBot", status: "online", friends: "732,982", community: "freeCodeCamp" }; return isFrozen && DeepEqual(finalState, expectedState); })(), "Dispatching an action of type <code>ONLINE</code> should update the property <code>status</code> in state to <code>online</code> and should NOT mutate state.");'
   - text: <code>Object.assign</code> debe utilizar para devolver un nuevo estado.
-    testString: 'getUserInput => assert(getUserInput("index").includes("Object.assign"), "<code>Object.assign</code> should be used to return new state.");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").includes("Object.assign"), "<code>Object.assign</code> should be used to return new state.");'
 
 ```
 

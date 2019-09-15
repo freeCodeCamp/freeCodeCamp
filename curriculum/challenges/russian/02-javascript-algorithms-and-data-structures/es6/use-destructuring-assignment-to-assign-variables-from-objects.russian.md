@@ -20,7 +20,7 @@ tests:
   - text: <code>getTempOfTmrw(AVG_TEMPERATURES)</code> должно быть <code>79</code>
     testString: 'assert(getTempOfTmrw(AVG_TEMPERATURES) === 79, "<code>getTempOfTmrw(AVG_TEMPERATURES)</code> should be <code>79</code>");'
   - text: использовалось деструктурирование с переназначением
-    testString: 'getUserInput => assert(getUserInput("index").match(/\{\s*tomorrow\s*:\s*tempOfTomorrow\s*}\s*=\s*avgTemperatures/g),"destructuring with reassignment was used");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").match(/\{\s*tomorrow\s*:\s*tempOfTomorrow\s*}\s*=\s*avgTemperatures/g),"destructuring with reassignment was used");'
 
 ```
 

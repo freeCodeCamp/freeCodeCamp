@@ -21,7 +21,7 @@ tests:
   - text: El <code>AppWrapper</code> debe hacer.
     testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find("AppWrapper").length === 1; })(), "The <code>AppWrapper</code> should render.");'
   - text: 'El componente contenedor del <code>Provider</code> debe tener una propiedad de la <code>store</code> pasado, igual a la tienda Redux.'
-    testString: 'getUserInput => assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return getUserInput("index").replace(/\s/g,"").includes("<Providerstore={store}>"); })(), "The <code>Provider</code> wrapper component should have a prop of <code>store</code> passed to it, equal to the Redux store.");'
+    testString: '({ getUserInput }) => assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return getUserInput("index").replace(/\s/g,"").includes("<Providerstore={store}>"); })(), "The <code>Provider</code> wrapper component should have a prop of <code>store</code> passed to it, equal to the Redux store.");'
   - text: <code>DisplayMessages</code> debería renderizarse como un elemento secundario de <code>AppWrapper</code> .
     testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find("AppWrapper").find("DisplayMessages").length === 1; })(), "<code>DisplayMessages</code> should render as a child of <code>AppWrapper</code>.");'
   - text: 'El componente <code>DisplayMessages</code> debe representar un elemento h2, input, button y <code>ul</code> .'

@@ -18,7 +18,7 @@ localeTitle: Crear un respaldo de exportación con la exportación predeterminad
 ```yml
 tests:
   - text: Uso adecuado de la <code>export</code> reserva.
-    testString: 'getUserInput => assert(getUserInput("index").match(/export\s+default\s+function\s+subtract\(x,y\)\s+{return\s+x\s-\s+y;}/g), "Proper used of <code>export</code> fallback.");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").match(/export\s+default\s+function\s+subtract\(x,y\)\s+{return\s+x\s-\s+y;}/g), "Proper used of <code>export</code> fallback.");'
 
 ```
 

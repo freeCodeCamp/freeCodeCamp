@@ -6,16 +6,16 @@ challengeType: 2
 ---
 
 ## Description
-<section id='description'> 
-الإصدار مع اسم واحد من الحقول المطلوبة في package.json. يصف هذا الحقل الإصدار الحالي لمشروعك. 
-مثال 
-<code>"version": "1.2",</code> 
-Instruction 
-بإضافة نسخة إلى package.json في مشروع Glitch الخاص بك. 
+<section id='description'>
+الإصدار مع اسم واحد من الحقول المطلوبة في package.json. يصف هذا الحقل الإصدار الحالي لمشروعك.
+مثال
+<code>"version": "1.2",</code>
+Instruction
+بإضافة نسخة إلى package.json في مشروع Glitch الخاص بك.
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -25,7 +25,7 @@ Instruction
 ```yml
 tests:
   - text: package.json يجب أن يكون لديك مفتاح "إصدار" صالح
-    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert(packJson.version, ''"version" is missing''); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: '({ getUserInput }) => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert(packJson.version, ''"version" is missing''); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 

@@ -15,8 +15,8 @@ We recommend to keep the log panel open while working at these challenges. By re
 <section id='instructions'>
 
 If you have not already done so, please read the instructions in [the introduction](/learn/apis-and-microservices/basic-node-and-express/) and start a new project on Glitch using [this link](https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-express/).
-  
-Modify the <code>myApp.js</code> file to log "Hello World" to the console. 
+
+Modify the <code>myApp.js</code> file to log "Hello World" to the console.
 
 </section>
 
@@ -26,7 +26,7 @@ Modify the <code>myApp.js</code> file to log "Hello World" to the console.
 ```yml
 tests:
   - text: <code>"Hello World"</code> should be in the console
-    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/hello-console'').then(data => { assert.isTrue(data.passed, ''"Hello World" is not in the server console''); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: '({ getUserInput }) => $.get(getUserInput(''url'') + ''/_api/hello-console'').then(data => { assert.isTrue(data.passed, ''"Hello World" is not in the server console''); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 

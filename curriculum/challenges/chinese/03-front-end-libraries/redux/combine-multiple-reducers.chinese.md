@@ -25,7 +25,7 @@ tests:
   - text: 存储<code>state</code>应该有两个键： <code>count</code> ，它包含一个数字， <code>auth</code> ，它包含一个对象。 <code>auth</code>对象应具有<code>authenticated</code>属性，该属性包含布尔值。
     testString: 'assert((function() { const state = store.getState(); return typeof state.auth === "object" && typeof state.auth.authenticated === "boolean" && typeof state.count === "number" })(), "The store <code>state</code> should have two keys: <code>count</code>, which holds a number, and <code>auth</code>, which holds an object. The <code>auth</code> object should have a property of <code>authenticated</code>, which holds a boolean.");'
   - text: 该<code>rootReducer</code>应该是结合了功能<code>counterReducer</code>和<code>authReducer</code> 。
-    testString: 'getUserInput => assert((function() {  const noWhiteSpace = getUserInput("index").replace(/\s/g,""); return typeof rootReducer === "function" && noWhiteSpace.includes("Redux.combineReducers")  })(), "The <code>rootReducer</code> should be a function that combines the <code>counterReducer</code> and the <code>authReducer</code>.");'
+    testString: '({ getUserInput }) => assert((function() {  const noWhiteSpace = getUserInput("index").replace(/\s/g,""); return typeof rootReducer === "function" && noWhiteSpace.includes("Redux.combineReducers")  })(), "The <code>rootReducer</code> should be a function that combines the <code>counterReducer</code> and the <code>authReducer</code>.");'
 
 ```
 

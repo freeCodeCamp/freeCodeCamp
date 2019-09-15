@@ -18,7 +18,7 @@ localeTitle: Понимание различий между импортом и 
 ```yml
 tests:
   - text: действительный оператор <code>import</code>
-    testString: 'getUserInput => assert(getUserInput("index").match(/import\s+\{\s*capitalizeString\s*\}\s+from\s+("|")string_functions\1/g), "valid <code>import</code> statement");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").match(/import\s+\{\s*capitalizeString\s*\}\s+from\s+("|")string_functions\1/g), "valid <code>import</code> statement");'
 
 ```
 

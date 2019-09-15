@@ -25,7 +25,7 @@ tests:
   - text: При <code>ADD_TO_DO</code> действия типа <code>ADD_TO_DO</code> в хранилище Redux следует добавить объект <code>todo</code> и НЕ должен мутировать состояние.
     testString: 'assert((function() { const initialState = store.getState(); const isFrozen = DeepFreeze(initialState); store.dispatch(addToDo("__TEST__TO__DO__")); const finalState = store.getState(); const expectedState = [ "Do not mutate state!", "__TEST__TO__DO__" ]; return( isFrozen && DeepEqual(finalState, expectedState)); })(), "Dispatching an action of type <code>ADD_TO_DO</code> on the Redux store should add a <code>todo</code> item and should NOT mutate state.");'
   - text: Оператор распространения должен использоваться для возврата нового состояния.
-    testString: 'getUserInput => assert(getUserInput("index").includes("...state"), "The spread operator should be used to return new state.");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").includes("...state"), "The spread operator should be used to return new state.");'
 
 ```
 

@@ -18,15 +18,15 @@ localeTitle: Escrever funções de seta com parâmetros
 ```yml
 tests:
   - text: O usuário substituiu a palavra-chave <code>var</code> .
-    testString: 'getUserInput => assert(!getUserInput("index").match(/var/g), "User did replace <code>var</code> keyword.");'
+    testString: '({ getUserInput }) => assert(!getUserInput("index").match(/var/g), "User did replace <code>var</code> keyword.");'
   - text: <code>myConcat</code> deve ser uma variável constante (usando <code>const</code> ).
-    testString: 'getUserInput => assert(getUserInput("index").match(/const\s+myConcat/g), "<code>myConcat</code> should be a constant variable (by using <code>const</code>).");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").match(/const\s+myConcat/g), "<code>myConcat</code> should be a constant variable (by using <code>const</code>).");'
   - text: <code>myConcat</code> deve ser uma função
     testString: 'assert(typeof myConcat === "function", "<code>myConcat</code> should be a function");'
   - text: <code>myConcat()</code> retorna o <code>array</code> correto
     testString: 'assert(() => { const a = myConcat([1], [2]); return a[0] == 1 && a[1] == 2; }, "<code>myConcat()</code> returns the correct <code>array</code>");'
   - text: palavra-chave de <code>function</code> não foi usada.
-    testString: 'getUserInput => assert(!getUserInput("index").match(/function/g), "<code>function</code> keyword was not used.");'
+    testString: '({ getUserInput }) => assert(!getUserInput("index").match(/function/g), "<code>function</code> keyword was not used.");'
 
 ```
 

@@ -25,7 +25,7 @@ tests:
   - text: O <code>div</code> deve conter uma tag <code>p</code> como o segundo elemento.
     testString: 'assert(JSX.props.children[1].type === "p", "The <code>div</code> should contain a <code>p</code> tag as the second element.");'
   - text: O <code>JSX</code> deve incluir um comentário.
-    testString: 'getUserInput => assert(getUserInput("index").includes("/*") && getUserInput("index").includes("*/"), "The <code>JSX</code> should include a comment.");'
+    testString: '({ getUserInput }) => assert(getUserInput("index").includes("/*") && getUserInput("index").includes("*/"), "The <code>JSX</code> should include a comment.");'
 
 ```
 

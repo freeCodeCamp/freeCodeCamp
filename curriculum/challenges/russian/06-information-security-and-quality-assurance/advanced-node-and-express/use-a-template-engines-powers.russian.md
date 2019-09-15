@@ -19,7 +19,7 @@ localeTitle: Использование мощностей шаблонных д
 ```yml
 tests:
   - text: Моппер отображает переменные правильно
-    testString: 'getUserInput => $.get(getUserInput("url")+ "/") .then(data => { assert.match(data, /pug-variable("|")>Please login/gi, "Your projects home page should now be rendered by pug with the projects .pug file unaltered"); }, xhr => { throw new Error(xhr.statusText); })'
+    testString: '({ getUserInput }) => $.get(getUserInput("url")+ "/") .then(data => { assert.match(data, /pug-variable("|")>Please login/gi, "Your projects home page should now be rendered by pug with the projects .pug file unaltered"); }, xhr => { throw new Error(xhr.statusText); })'
 
 ```
 
