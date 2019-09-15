@@ -1,6 +1,6 @@
 ---
-id: 5d7df75a8360d21c6826a9b4
-title: Part 99
+id: 5d7f41fa7c4263f469c36b1a
+title: Part 108
 challengeType: 0
 isRequired: true
 ---
@@ -8,9 +8,7 @@ isRequired: true
 ## Description
 <section id='description'>
 
-At the end of that line, add a random number between one and the value of `xp`. Here is the formula to get a random number between 1 and 5: `Math.floor(Math.random() * 5) + 1`.
-
-`Math.random()` returns a decimal or floating point number between 0 and 1, and `Math.floor()` rounds a given number down to the nearest integer.
+Finish the `defeatMonster` function by calling the `update()` function and pass in `locations[4]`.
 
 </section>
 
@@ -25,7 +23,7 @@ At the end of that line, add a random number between one and the value of `xp`. 
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: xp = 1, fightDragon(), monsterHealth = 20, attack(), assert(monsterHealth === 14);
+    testString: assert(defeatMonster.toString().match(/^\s*update\(\s*locations\[\s*4\s*\]\s*\)/m));
 
 ```
 
@@ -218,10 +216,29 @@ function attack() {
 	text.innerText = "The " + monsters[fighting].name + " attacks.";
 	text.innerText += " You attack it with your " + weapons[currentWeapon].name + ".";
 	health -= monsters[fighting].level;
-	monsterHealth -= weapons[currentWeapon].power;
+	monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
+	healthText.innerText = health;
+	monsterHealthText.innerText = monsterHealth;
+	if (health <= 0) {
+		lose();
+	} else if (monsterHealth <= 0) {
+		defeatMonster();
+	}
 }
 
 function dodge() {
+  text.innerText = "You dodge the attack from the " + monsters[fighting].name + ".";
+}
+
+function defeatMonster() {
+	gold += Math.floor(monsters[fighting].level * 6.7);
+	xp += monsters[fighting].level;
+	goldText.innerText = gold;
+	xpText.innerText = xp;
+  
+}
+
+function lose() {
 }
 
 </script>
@@ -500,9 +517,28 @@ function attack() {
 	text.innerText += " You attack it with your " + weapons[currentWeapon].name + ".";
 	health -= monsters[fighting].level;
 	monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
+	healthText.innerText = health;
+	monsterHealthText.innerText = monsterHealth;
+	if (health <= 0) {
+		lose();
+	} else if (monsterHealth <= 0) {
+		defeatMonster();
+	}
 }
 
 function dodge() {
+  text.innerText = "You dodge the attack from the " + monsters[fighting].name + ".";
+}
+
+function defeatMonster() {
+	gold += Math.floor(monsters[fighting].level * 6.7);
+	xp += monsters[fighting].level;
+	goldText.innerText = gold;
+	xpText.innerText = xp;
+  update(locations[4]);
+}
+
+function lose() {
 }
 </script>
 ```

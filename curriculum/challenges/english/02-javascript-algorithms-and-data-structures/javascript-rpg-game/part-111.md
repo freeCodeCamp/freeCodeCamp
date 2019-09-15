@@ -1,6 +1,6 @@
 ---
-id: 5d7df75a8360d21c6826a9b4
-title: Part 99
+id: 5d7f459421b11cdaa3f6b15f
+title: Part 111
 challengeType: 0
 isRequired: true
 ---
@@ -8,9 +8,7 @@ isRequired: true
 ## Description
 <section id='description'>
 
-At the end of that line, add a random number between one and the value of `xp`. Here is the formula to get a random number between 1 and 5: `Math.floor(Math.random() * 5) + 1`.
-
-`Math.random()` returns a decimal or floating point number between 0 and 1, and `Math.floor()` rounds a given number down to the nearest integer.
+While you're working in the `locations` array, add another object at the end. Set `name` to "lose". Set `"button text"` to `["REPLAY?", "REPLAY?", "REPLAY?"]`. Set `"button functions"` to `[restart, restart, restart]`. And set `text` to "You die. ☠️".
 
 </section>
 
@@ -25,7 +23,8 @@ At the end of that line, add a random number between one and the value of `xp`. 
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: xp = 1, fightDragon(), monsterHealth = 20, attack(), assert(monsterHealth === 14);
+    testString: |
+      assert.deepStrictEqual(locations[5], {name: "lose", "button text": ["REPLAY?", "REPLAY?", "REPLAY?"],"button functions": [restart, restart, restart],text: "You die. ☠️"});
 
 ```
 
@@ -118,6 +117,12 @@ const locations = [
 		"button text": ["Attack", "Dodge", "Run"],
 		"button functions": [attack, dodge, goTown],
 		text: "You are fighting a monster."
+	},
+  {
+		name: "kill monster",
+		"button text": ["Go to town square", "Go to town square", "Go to town square"],
+		"button functions": [goTown, goTown, goTown],
+		text: 'The monster screams "Arg!" as it dies. You gain experience points and find gold.'
 	}
 ];
 
@@ -218,10 +223,29 @@ function attack() {
 	text.innerText = "The " + monsters[fighting].name + " attacks.";
 	text.innerText += " You attack it with your " + weapons[currentWeapon].name + ".";
 	health -= monsters[fighting].level;
-	monsterHealth -= weapons[currentWeapon].power;
+	monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
+	healthText.innerText = health;
+	monsterHealthText.innerText = monsterHealth;
+	if (health <= 0) {
+		lose();
+	} else if (monsterHealth <= 0) {
+		defeatMonster();
+	}
 }
 
 function dodge() {
+  text.innerText = "You dodge the attack from the " + monsters[fighting].name + ".";
+}
+
+function defeatMonster() {
+	gold += Math.floor(monsters[fighting].level * 6.7);
+	xp += monsters[fighting].level;
+	goldText.innerText = gold;
+	xpText.innerText = xp;
+  update(locations[4]);
+}
+
+function lose() {
 }
 
 </script>
@@ -295,6 +319,9 @@ function dodge() {
   </div>
   <div id="text">Welcome to Dragon Repeller. You must defeat the dragon that is preventing people from leaving the town. You are in the town square. Where do you want to go? Use the buttons above.</div>
 </div>
+<script>
+function restart() {} // Initialize for test
+</script>
 ```
 
 </div>
@@ -399,6 +426,18 @@ const locations = [
 		"button text": ["Attack", "Dodge", "Run"],
 		"button functions": [attack, dodge, goTown],
 		text: "You are fighting a monster."
+	},
+  {
+		name: "kill monster",
+		"button text": ["Go to town square", "Go to town square", "Go to town square"],
+		"button functions": [goTown, goTown, goTown],
+		text: 'The monster screams "Arg!" as it dies. You gain experience points and find gold.'
+	},
+  {
+		name: "lose",
+		"button text": ["REPLAY?", "REPLAY?", "REPLAY?"],
+		"button functions": [restart, restart, restart],
+		text: "You die. ☠️"
 	}
 ];
 
@@ -500,9 +539,28 @@ function attack() {
 	text.innerText += " You attack it with your " + weapons[currentWeapon].name + ".";
 	health -= monsters[fighting].level;
 	monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
+	healthText.innerText = health;
+	monsterHealthText.innerText = monsterHealth;
+	if (health <= 0) {
+		lose();
+	} else if (monsterHealth <= 0) {
+		defeatMonster();
+	}
 }
 
 function dodge() {
+  text.innerText = "You dodge the attack from the " + monsters[fighting].name + ".";
+}
+
+function defeatMonster() {
+	gold += Math.floor(monsters[fighting].level * 6.7);
+	xp += monsters[fighting].level;
+	goldText.innerText = gold;
+	xpText.innerText = xp;
+  update(locations[4]);
+}
+
+function lose() {
 }
 </script>
 ```
