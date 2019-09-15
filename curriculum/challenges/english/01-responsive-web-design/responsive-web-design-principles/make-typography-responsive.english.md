@@ -26,10 +26,23 @@ Set the <code>width</code> of the <code>h2</code> tag to 80% of the viewport's w
 ```yml
 tests:
   - text: Your <code>h2</code> tag should have a <code>width</code> of 80vw.
-    testString: assert(code.match(/h2\s*?{\s*?width:\s*?80vw;\s*?}/g));
-  - text: Your <code>p</code> tag should have a <code>width</code> of 75vmin.
-    testString: assert(code.match(/p\s*?{\s*?width:\s*?75vmin;\s*?}/g));
+    testString: >
+      ({ getFileValidator }) => {
+        const validator = getFileValidator();
+        const css = validator.getCssValidator();
 
+        expect(css.hasRuleForSelector('h2')).to.be.true;
+        expect(css.selectorHasProperty('h2', ['width', '80vw'])).to.be.true;
+      }
+  - text: Your <code>p</code> tag should have a <code>width</code> of 75vmin.
+    testString: >
+      ({ getFileValidator }) => {
+        const validator = getFileValidator();
+        const css = validator.getCssValidator();
+
+        expect(css.hasRuleForSelector('p')).to.be.true;
+        expect(css.selectorHasProperty('p', ['width', '75vmin'])).to.be.true;
+      }
 ```
 
 </section>

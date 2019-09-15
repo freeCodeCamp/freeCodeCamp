@@ -31,7 +31,13 @@ To pass the test on this challenge, change your <code>h1</code> element's text t
 ```yml
 tests:
   - text: Your <code>h1</code> element should have the text "Hello World".
-    testString: assert.isTrue((/hello(\s)+world/gi).test($('h1').text()));
+    testString: >
+      ({ getFileValidator }) => {
+        const validator = getFileValidator();
+
+        expect(validator.domNodeExists('h1')).to.be.true;
+        expect(validator.elementHasText('h1', 'Hello World')).to.be.true;
+      }
 
 ```
 
