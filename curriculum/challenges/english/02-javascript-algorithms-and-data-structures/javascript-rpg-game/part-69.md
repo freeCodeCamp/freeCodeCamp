@@ -22,7 +22,7 @@ Up to this point, anytime `text.innerText` was updated, the old text was erased.
 
 ```yml
 tests:
-  - text: This time, use the <code>+=</code> operator instead of the <code>=</code> operator to add text to the end of <code>text.innerText</code>.
+  - text: See description above for instructions.
     testString: |
       assert(buyWeapon.toString().match(/text\.innerText\s*\+\=\s*[\'\"\`] In your inventory you have\: [\'\"\`]\;?/));
 

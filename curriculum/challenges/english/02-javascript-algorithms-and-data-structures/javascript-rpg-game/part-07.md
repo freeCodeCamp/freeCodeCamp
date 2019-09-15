@@ -21,7 +21,7 @@ Strings must be surrounded with double quotes <code>"</code>, single quotes <cod
 
 ```yml
 tests:
-  - text: Now set the inventory to equal the string "stick".
+  - text: See description above for instructions.
     testString: assert(inventory === "stick");
 
 ```

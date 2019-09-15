@@ -21,7 +21,7 @@ Get a reference to the HTML element with the <code>id</code> of <code>button1</c
 
 ```yml
 tests:
-  - text: Get a reference to the HTML element with the <code>id</code> of <code>button1</code> and assign it to a variable with the name <code>button1</code>.
+  - text: See description above for instructions.
     # testString: assert(typeof button1 === "object" && button1.id === 'button1' && button1.innerHTML === 'Go to store'); # More flexible test, but JS needs to be in a separate file
     testString: assert(/let\s+button1\s*\=\s*document.querySelector\(\s*[\'\"\`]\s*\#button1\s*[\'\"\`]\s*\);?/.test(code));
 

@@ -22,8 +22,7 @@ Now use the `+=` operator to add to `text.innerText`. Add the string " In your i
 
 ```yml
 tests:
-  - text: |
-      Now use the <code>+=</code> operator to add to <code>text.innerText</code>. Add the string " In your inventory you have: " (with spaces at the beginning and end). Then add the <code>inventory</code> variable to the end of the string.
+  - text: See description above for instructions.
     testString: |
       inventory = ['potato', 'carrot'], sellWeapon(), assert(text.innerText === 'You sold a potato. In your inventory you have: carrot');
 

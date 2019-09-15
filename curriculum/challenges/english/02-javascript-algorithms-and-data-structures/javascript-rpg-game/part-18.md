@@ -20,7 +20,7 @@ Similar to the <code>goStore</code> function, create a <code>goCave</code> funct
 
 ```yml
 tests:
-  - text: Similar to the <code>goStore</code> function, create a <code>goCave</code> function that prints "Going to cave." to the console.
+  - text: See description above for instructions.
     testString: assert(goCave.toString().match(/console\.log\(\s*[\"\'\`]Going to cave\.?[\"\'\`]\s*\)/));
 
 ```

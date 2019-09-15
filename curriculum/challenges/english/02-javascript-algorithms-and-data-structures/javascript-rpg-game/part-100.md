@@ -22,7 +22,7 @@ Update `healthText.innerText` and `monsterHealthText.innerText` to equal `health
 
 ```yml
 tests:
-  - text: Update <code>healthText.innerText</code> and <code>monsterHealthText.innerText</code> to equal <code>health</code> and <code>monsterHealth</code>.
+  - text: See description above for instructions.
     testString: xp = 1, health = 50, fightDragon(), monsterHealth = 20, attack(), assert(monsterHealthText.innerText === '14' && healthText.innerText === '30');
 
 ```

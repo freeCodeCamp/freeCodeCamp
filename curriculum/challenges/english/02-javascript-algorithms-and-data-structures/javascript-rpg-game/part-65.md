@@ -22,7 +22,7 @@ Right after the word `weapons` (with no space between), add brackets `[]`. In be
 
 ```yml
 tests:
-  - text: Right after the word <code>weapons</code> (with no space between), add brackets <code>[]</code>. In between the brackets put <code>currentWeapon</code>, which is the index number of the weapon the player just bought.
+  - text: See description above for instructions.
     testString: assert(/let\s*newWeapon\s*\=\s*weapons\s?\[currentWeapon\]\;?/.test(code));
 
 ```

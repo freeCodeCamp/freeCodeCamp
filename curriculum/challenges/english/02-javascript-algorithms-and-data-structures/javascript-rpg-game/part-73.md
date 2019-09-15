@@ -22,7 +22,7 @@ At some point in the future, you may want to add more weapons. Instead of checki
 
 ```yml
 tests:
-  - text: Instead of checking if <code>currentWeapon</code> is less than three, check if <code>currentWeapon</code> is less than the length of the <code>weapons</code> array.
+  - text: See description above for instructions.
     testString: assert(buyWeapon.toString().match(/if\s*\(\s*currentWeapon\s*\<\s*weapons\.length\s*\)\s*\{\s*if\s*\(\s*gold\s*\>\=\s*30\s*\)\s*\{/));
 
 ```

@@ -22,7 +22,7 @@ Check if health is less than or equal to zero. If it is, call the `lose()` funct
 
 ```yml
 tests:
-  - text: Check if health is less than or equal to zero. If it is, call the <code>lose()</code> function.
+  - text: See description above for instructions.
     testString: assert(attack.toString().match(/^\s*if\s*\(\s*health\s*\<\=\s*0\s*\)\s*\{\s*lose\(\s*\);?\s*\}/m));
 
 ```

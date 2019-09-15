@@ -20,7 +20,7 @@ At the end of the current code, add three new empty functions called <code>buyHe
 
 ```yml
 tests:
-  - text: At the end of the current code, add three new empty functions called <code>buyHealth</code>, <code>buyWeapon</code>, and <code>goTown</code>. After this step, you can test out the game by clicking the "Go to store" button.
+  - text: See description above for instructions.
     testString: assert(typeof buyHealth === 'function' && typeof buyWeapon === 'function' && typeof goTown === 'function');
 
 ```

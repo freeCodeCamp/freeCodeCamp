@@ -21,7 +21,7 @@ Create another variable to keep track of health and start it at 100.
 
 ```yml
 tests:
-  - text: Create another variable to keep track of health and start it at 100
+  - text: See description above for instructions.
     testString: assert(health === 100);
 
 ```

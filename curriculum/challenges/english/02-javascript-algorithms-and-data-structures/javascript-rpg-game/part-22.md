@@ -20,7 +20,7 @@ Now that the text on the buttons have changed, the <code>onclick</code> properti
 
 ```yml
 tests:
-  - text: Inside the goStore function, update the <code>onclick</code> property of all three buttons.
+  - text: See description above for instructions.
     testString: assert(goStore.toString().match(/button1\.onclick\s*\=\s*buyHealth\;?/) && goStore.toString().match(/button2\.onclick\s*\=\s*buyWeapon\;?/) && goStore.toString().match(/button3\.onclick\s*\=\s*goTown\;?/));
 
 ```

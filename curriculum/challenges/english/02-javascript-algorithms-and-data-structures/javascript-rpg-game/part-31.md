@@ -33,7 +33,7 @@ const arr = [
 
 ```yml
 tests:
-  - text: After the <code>name</code> property put a comma. On the next line add a property named <code>"button text"</code> that has a value of an empty array.
+  - text: See description above for instructions.
     testString: assert.deepStrictEqual(locations[0]['button text'], []);
 
 ```

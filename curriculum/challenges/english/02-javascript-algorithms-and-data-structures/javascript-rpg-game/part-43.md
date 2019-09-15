@@ -22,7 +22,7 @@ Now update the three `onclick` properties. These will look very similar to the `
 
 ```yml
 tests:
-  - text: Now update the three <code>onclick</code> properties.
+  - text: See description above for instructions.
     testString: assert(update.toString().match(/button1\.onclick\s*\=\s*location\[[\'\"\`]button functions[\'\"\`]\]\[0\]/) && update.toString().match(/button2\.onclick\s*\=\s*location\[[\'\"\`]button functions[\'\"\`]\]\[1\]/) && update.toString().match(/button3\.onclick\s*\=\s*location\[[\'\"\`]button functions[\'\"\`]\]\[2\]/));
 
 ```

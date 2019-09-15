@@ -22,7 +22,7 @@ Let's tell the player what weapon they bought. In between the two lines you just
 
 ```yml
 tests:
-  - text: In between the two lines you just wrote, use <code>let</code> to initialize a new variable called <code>newWeapon</code>. Set <code>newWeapon</code> to equal <code>weapons</code>.
+  - text: See description above for instructions.
     testString: assert(/let\s*newWeapon\s*\=\s*weapons\;?/.test(code));
 
 ```

@@ -24,7 +24,7 @@ Here is how you would call a function named `exampleFunction` with an argument c
 
 ```yml
 tests:
-  - text: Now change the code you just wrote to call the <code>update</code> function so the <code>locations</code> array is passed in as an argument.
+  - text: See description above for instructions.
     testString: assert(goTown.toString().match(/update\(locations\)/));
 
 ```

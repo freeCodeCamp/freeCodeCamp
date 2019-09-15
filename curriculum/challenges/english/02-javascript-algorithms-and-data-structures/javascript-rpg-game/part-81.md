@@ -30,7 +30,7 @@ let firstElement = arr.shift();
 
 ```yml
 tests:
-  - text: Use the <code>shift()</code> method on the <code>inventory</code> array to remove the first element and return that removed element. Set <code>currentWeapon</code> to equal returned element. 
+  - text: See description above for instructions.
     testString: assert(code.match(/if\s*\(\s*inventory\.length\s*\>\s*1\s*\)\s*\{\s*(.\s*)*let\s*currentWeapon\s*\=\s*inventory\.shift\(\s*\)\;?/));
 
 ```

@@ -25,7 +25,7 @@ For example, this code updates the text of <code>button</code> to say "Click Me"
 
 ```yml
 tests:
-  - text: Remove the code inside the <code>goStore</code> function. Add a new line of code inside the function that updates the text of <code>button1</code> so that it says "Buy 10 health (10 gold)".
+  - text: See description above for instructions.
     # testString: assert(goStore.toString().match(/button1\.innerText\s*\=\s*[\'\"\`]Buy 10 health \(10 gold\)\.?[\'\"\`]/));
     testString: assert((() => { goStore(); return button1.innerText === "Buy 10 health (10 gold)" })());
 

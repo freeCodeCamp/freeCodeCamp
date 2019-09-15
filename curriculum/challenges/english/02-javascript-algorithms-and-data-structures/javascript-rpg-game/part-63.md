@@ -22,7 +22,7 @@ Now update the `innerText` property of `goldText` and `text`. `text` should equa
 
 ```yml
 tests:
-  - text: Now update the <code>innerText</code> property of <code>goldText</code> and <code>text</code>. <code>text</code> should equal "You now have a new weapon.".
+  - text: See description above for instructions.
     # testString: assert(buyWeapon.toString().match(/goldText\.innerText\s*\=\s*gold\;/) && buyWeapon.toString().match(/text\.innerText\s*\=\s*[\'\"\`]You now have a new weapon\.?[\'\"\`]\;?/));
     # testString: assert((() => { buyWeapon(); return goldText.innerText === '20' && text.innerText === 'You now have a new weapon.' })());
     testString: buyWeapon(), assert(goldText.innerText === '20' && text.innerText === 'You now have a new weapon.');

@@ -22,7 +22,7 @@ Now update the `goStore` function. The code should look just like the code insid
 
 ```yml
 tests:
-  - text: Now update the <code>goStore</code> function.
+  - text: See description above for instructions.
     testString: assert(goStore.toString().match(/update\(locations\[1\]\)/));
 
 ```

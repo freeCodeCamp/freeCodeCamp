@@ -22,7 +22,7 @@ The `locations` array contains two locations: the town square and store. Current
 
 ```yml
 tests:
-  - text: Pass in only the first element of the locations array by adding <code>[0]</code> at the end of the name of the array.
+  - text: See description above for instructions.
     testString: assert(goTown.toString().match(/update\(locations\[0\]\)/));
 
 ```

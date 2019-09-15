@@ -24,7 +24,7 @@ For example here is how you would set set `num` to equal 5 less than `num`: `num
 
 ```yml
 tests:
-  - text: Inside the <code>buyHealth</code> function, set <code>gold</code> to equal <code>gold</code> minus 10.
+  - text: See description above for instructions.
     # testString: assert((() => { buyHealth(); return gold === 40; })());
     testString: buyHealth(), assert(gold === 40);
 

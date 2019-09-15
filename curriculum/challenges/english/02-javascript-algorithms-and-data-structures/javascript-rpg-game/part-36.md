@@ -22,7 +22,7 @@ Now we are can consolidate the code inside the `goTown` and `goStore` functions.
 
 ```yml
 tests:
-  - text: Copy the code inside the <code>goTown</code> function and paste it in the <code>update</code> function. Then delete all the code inside the <code>goTown</code> and <code>goStore</code> functions.
+  - text: See description above for instructions.
     # testString: assert(goTown.toString() === "function goTown() {}" && goStore.toString() === "function goStore() {}" && update.toString().match(/button1\.innerText\s*\=\s*[\'\"\`]Go to store[\'\"\`]/) && update.toString().match(/button2\.innerText\s*\=\s*[\'\"\`]Go to cave[\'\"\`]/) && update.toString().match(/button3\.innerText\s*\=\s*[\'\"\`]Fight dragon\.?[\'\"\`]/) && update.toString().match(/button1\.onclick\s*\=\s*goStore\;?/) && update.toString().match(/button2\.onclick\s*\=\s*goCave\;?/) && update.toString().match(/button3\.onclick\s*\=\s*fightDragon\;?/) && update.toString().match(/text\.innerText\s*\=\s*[\'\"\`]You are in the town square\. You see a sign that says \\\"[sS]tore\\\"\.?[\'\"\`]/));
     testString: assert((() => { update(); return goTown.toString() === "function goTown() {}" && goStore.toString() === "function goStore() {}" && button1.innerText === "Go to store" && button2.innerText === "Go to cave" && button3.innerText === "Fight dragon" && text.innerText === "You are in the town square. You see a sign that says \"Store\"." && update.toString().match(/button1\.onclick\s*\=\s*goStore\;?/) && update.toString().match(/button2\.onclick\s*\=\s*goCave\;?/) && update.toString().match(/button3\.onclick\s*\=\s*fightDragon\;?/)})());
 

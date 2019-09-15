@@ -20,7 +20,7 @@ Designate what the first button in the HTML does by setting the <code>onclick</c
 
 ```yml
 tests:
-  - text: Designate what the first button in the HTML does by setting the <code>onclick</code> property of <code>button1</code> to the function name <code>goStore</code>.
+  - text: See description above for instructions.
     testString: assert(/button1\.onclick\s*\=\s*goStore\;?/.test(code));
 
 ```

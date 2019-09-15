@@ -29,7 +29,7 @@ let ourStr = "Hello, our name is " + ourName + ".";
 
 ```yml
 tests:
-  - text: Get just the name property of the current weapon by adding <code>.name</code> at the end of <code>weapons[currentWeapon]</code> (don't use a space).
+  - text: See description above for instructions.
     testString: assert(buyWeapon.toString().match(/[\'\"\`]You now have a [\'\"\`]\s*\+\s*newWeapon\;?/));
 
 ```

@@ -24,7 +24,7 @@ Set `name` to "cave". Set the elements in the `"button text"` array to ["Fight s
 
 ```yml
 tests:
-  - text: Add a third object in the <code>locations</code> array with the same properties as the other two objects. 
+  - text: See description above for instructions. 
     testString: |
       assert.deepStrictEqual(locations[2], { name: "cave", "button text": ["Fight slime", "Fight fanged beast", "Go to town square"], "button functions": [fightSlime, fightBeast, goTown], text: "You enter the cave. You see some monsters." });
 

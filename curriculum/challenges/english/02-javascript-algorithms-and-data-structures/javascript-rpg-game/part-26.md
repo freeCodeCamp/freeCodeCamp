@@ -20,8 +20,7 @@ Add double quote marks around the word "Store" in the line "You see a sign that 
 
 ```yml
 tests:
-  - text: Add double quote marks around the word "Store" in the line "You see a sign that says Store."
-    # testString: assert(goTown.toString().match(/text\.innerText\s*\=\s*[\'\"\`]You are in the town square\. You see a sign that says \\\"[sS]tore\\\"\.?[\'\"\`]/));
+  - text: See description above for instructions.
     testString: assert((() => { goTown(); return text.innerText ===  "You are in the town square. You see a sign that says \"Store\"."})())
 
 ```

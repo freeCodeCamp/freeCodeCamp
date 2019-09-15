@@ -32,7 +32,7 @@ const arr = [
 
 ```yml
 tests:
-  - text: Inside the object you just added, create a property called <code>name</code> with the value of "town square".
+  - text: See description above for instructions.
     testString: assert(locations[0].name === 'town square');
 
 ```

@@ -22,7 +22,7 @@ Set `monsterHealth` to `monsterHealth` minus the power of the current weapon (`w
 
 ```yml
 tests:
-  - text: Set <code>monsterHealth</code> to <code>monsterHealth</code> minus the power of the current weapon (<code>weapons[currentWeapon].power</code>).
+  - text: See description above for instructions.
     testString: fightDragon(), monsterHealth = 20, attack(), assert(monsterHealth === 15);
 
 ```

@@ -30,7 +30,7 @@ Change the line `currentWeapon += 1;` to use the `++` operator.
 
 ```yml
 tests:
-  - text: Change the line <code>currentWeapon += 1;</code> to use the <code>++</code> operator.
+  - text: See description above for instructions.
     testString: assert(buyWeapon.toString().match(/currentWeapon\s*\+\+\;?/));
 
 ```

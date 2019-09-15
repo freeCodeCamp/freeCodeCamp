@@ -22,7 +22,7 @@ Before we write the code for the `buyWeapon` function, use `const` to create a `
 
 ```yml
 tests:
-  - text: Before we write the code for the <code>buyWeapon</code> function, use <code>const</code> to create a <code>weapons</code> variable right above the <code>locations</code> array. Set it to equal an empty array.
+  - text: See description above for instructions.
     testString: assert.deepStrictEqual(weapons, []);
 
 ```

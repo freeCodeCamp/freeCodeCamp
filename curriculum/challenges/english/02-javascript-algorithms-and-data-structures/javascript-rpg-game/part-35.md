@@ -22,7 +22,7 @@ The `locations` array currently has one element which is an object. Within the a
 
 ```yml
 tests:
-  - text: Add one final property to the object named <code>text</code>. The value should be the final text from the <code>goTown</code> function.
+  - text: See description above for instructions.
     testString: |
       assert.deepStrictEqual(locations[1], { name: "store", "button text": ["Buy 10 health (10 gold)", "Buy weapon (30 gold)", "Go to town square"], "button functions": [buyHealth, buyWeapon, goTown], text: "You enter the store." });
 

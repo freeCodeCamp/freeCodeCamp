@@ -22,7 +22,7 @@ Fighting each type of monster will be very similar so all three fighting functio
 
 ```yml
 tests:
-  - text: At the end of the code, add an empty function named <code>goFight</code>.
+  - text: See description above for instructions.
     testString: assert(typeof goFight === 'function');
 
 ```

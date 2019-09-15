@@ -22,7 +22,7 @@ Now that the gold and health variables have been updated, we need to update the 
 
 ```yml
 tests:
-  - text: Inside the <code>buyHealth</code> function, add the line <code>goldText.innerText = gold;</code>. Then use the same pattern to update <code>healthText</code>.
+  - text: See description above for instructions.
     testString: assert(buyHealth.toString().match(/goldText\.innerText\s*\=\s*gold\;?/) && buyHealth.toString().match(/healthText.innerText\s*\=\s*health\;?/));
     # testString: assert((() => { buyHealth(); return goldText.innerText === '40' && healthText.innerText === '110'; })());
 

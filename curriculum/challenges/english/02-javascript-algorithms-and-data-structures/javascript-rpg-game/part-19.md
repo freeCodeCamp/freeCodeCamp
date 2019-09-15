@@ -21,7 +21,7 @@ When you are finished, you can test out your program in the browser.
 
 ```yml
 tests:
-  - text: Also, create a <code>fightDragon</code> function that prints "Fighting dragon." to the console. When you are finished, you can test out your program in the browser.
+  - text: See description above for instructions.
     testString: assert(fightDragon.toString().match(/console\.log\(\s*[\"\'\`]Fighting dragon\.?[\"\'\`]\s*\)/));
 
 ```

@@ -22,7 +22,7 @@ At the end of that line, add a random number between one and the value of `xp`. 
 
 ```yml
 tests:
-  - text: At the end of that line, add a random number between one and the value of <code>xp</code>.
+  - text: See description above for instructions.
     testString: xp = 1, fightDragon(), monsterHealth = 20, attack(), assert(monsterHealth === 14);
 
 ```

@@ -20,7 +20,7 @@ Move the <code>goTown</code> function to above the <code>goStore</code> function
 
 ```yml
 tests:
-  - text: Move the <code>goTown</code> function to above the <code>goStore</code> function. Then, copy and paste the contents of the <code>goStore</code> function into the <code>goTown</code> function.
+  - text: See description above for instructions.
     # testString: assert(goTown.toString().match(/button1\.innerText\s*\=\s*[\'\"\`]Buy 10 health \(10 gold\)\.?[\'\"\`]/) && goTown.toString().match(/button2\.innerText\s*\=\s*[\'\"\`]Buy weapon \(30 gold\)\.?[\'\"\`]/) && goTown.toString().match(/button3\.innerText\s*\=\s*[\'\"\`]Go to town square\.?[\'\"\`]/) && goTown.toString().match(/button1\.onclick\s*\=\s*buyHealth\;?/) && goTown.toString().match(/button2\.onclick\s*\=\s*buyWeapon\;?/) && goTown.toString().match(/button3\.onclick\s*\=\s*goTown\;?/) && goTown.toString().match(/text\.innerText\s*\=\s*[\'\"\`]You enter the store\.?[\'\"\`]/));
     testString: assert((() => { goTown(); return button1.innerText === "Buy 10 health (10 gold)" && button2.innerText === "Buy weapon (30 gold)" && button3.innerText === "Go to town square" && text.innerText === "You enter the store." && goTown.toString().match(/button1\.onclick\s*\=\s*buyHealth\;?/) && goTown.toString().match(/button2\.onclick\s*\=\s*buyWeapon\;?/) && goTown.toString().match(/button3\.onclick\s*\=\s*goTown\;?/)})());
 

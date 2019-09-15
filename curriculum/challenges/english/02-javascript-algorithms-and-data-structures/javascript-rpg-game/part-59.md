@@ -22,7 +22,7 @@ Inside the `buyWeapon` function, add an `if` statement to check if gold is great
 
 ```yml
 tests:
-  - text: Inside the <code>buyWeapon</code> function, add an <code>if</code> statement to check if gold is greater than or equal to 30.
+  - text: See description above for instructions.
     testString: assert(buyWeapon.toString().match(/if\s*\(\s*gold\s*\>\=\s*30\)\s*\{\s*\}/));
 
 ```

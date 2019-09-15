@@ -22,7 +22,7 @@ Add code so that if the length of the inventory is NOT more than one, then a tex
 
 ```yml
 tests:
-  - text: Add code so that if the length of the inventory is NOT more than one, then a text message appears that says "Don't sell your only weapon!".
+  - text: See description above for instructions.
     testString: inventory = ['potato'], sellWeapon(), assert(inventory[0] === 'potato' && text.innerText === "Don't sell your only weapon!");
 
 ```

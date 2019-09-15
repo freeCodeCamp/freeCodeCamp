@@ -22,7 +22,7 @@ Write the code for the `fightBeast` and `fightDragon` functions, using the `figh
 
 ```yml
 tests:
-  - text: Write the code for the <code>fightBeast</code> and <code>fightDragon</code> functions, using the <code>fightSlime</code> function as an example.
+  - text: See description above for instructions.
     testString: assert(fightBeast.toString().match(/fighting\s*\=\s*1\;?\s*goFight\(\s*\)\;?/) && fightDragon.toString().match(/fighting\s*\=\s*2\;?\s*goFight\(\s*\)\;?/));
 
 ```

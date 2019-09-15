@@ -24,7 +24,7 @@ Update both lines inside the `buyHealth` function to use compound assignment.
 
 ```yml
 tests:
-  - text: Inside the <code>buyHealth</code> function, set <code>gold</code> to equal <code>gold</code> minus 10.
+  - text: See description above for instructions.
     testString: assert(buyHealth.toString().match(/gold\s*\-\=\s*10\;?/) && buyHealth.toString().match(/health\s*\+\=\s*10\;?/));
 
 ```

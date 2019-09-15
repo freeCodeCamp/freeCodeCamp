@@ -29,7 +29,7 @@ function testFun(param) {
 
 ```yml
 tests:
-  - text: Above the <code>goTown</code> function, create an empty function called <code>update</code>. This time the function should take a parameter named <code>location</code> so data can be passed into the function when it is called.
+  - text: See description above for instructions.
     testString: assert(update.toString().match(/function update\(\s*location\)\s*\{\s*\}/));
 
 ```

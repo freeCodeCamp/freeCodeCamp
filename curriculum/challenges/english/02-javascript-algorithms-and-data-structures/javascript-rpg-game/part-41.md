@@ -22,7 +22,7 @@ isRequired: true
 
 ```yml
 tests:
-  - text: <code>location["button text"]</code> is an array with three elements. Use only the first element of the array by adding <code>[0]</code> at the end.
+  - text: See description above for instructions.
     testString: assert(update.toString().match(/button1\.innerText\s*\=\s*location\[[\'\"\`]button text[\'\"\`]\]\[0\]/));
 
 ```

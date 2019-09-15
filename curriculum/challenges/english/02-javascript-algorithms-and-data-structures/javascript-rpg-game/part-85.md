@@ -24,7 +24,7 @@ Below where the `weapons` array is defined, define a `monsters` array. Set the c
 
 ```yml
 tests:
-  - text: Below where the <code>weapons</code> array is defined, define a <code>monsters</code> array.
+  - text: See description above for instructions.
     testString: |
       assert.deepStrictEqual(monsters, [{ name: "slime", level: 2, health: 15 }, {name: "fanged beast", level: 8, health: 60 }, { name: "dragon", level: 20, health: 300 }]);
 

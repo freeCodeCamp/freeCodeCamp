@@ -22,7 +22,7 @@ At the end of the string you just added after the ending quote mark, add `+ inve
 
 ```yml
 tests:
-  - text: At the end of the string you just added after the ending quote mark, add `+ inventory` to add the contents of the inventory to the end of the string.
+  - text: See description above for instructions.
     testString: |
       assert(buyWeapon.toString().match(/text\.innerText\s*\+\=\s*[\'\"\`] In your inventory you have\: [\'\"\`]\s*\+\s*inventory\;?/));
 

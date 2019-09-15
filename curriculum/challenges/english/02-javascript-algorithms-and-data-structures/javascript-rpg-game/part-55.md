@@ -31,7 +31,7 @@ if (num >= 5) {
 
 ```yml
 tests:
-  - text: Add an <code>else</code> statement where you can put code to run if a player dees not have enough money.
+  - text: See description above for instructions.
     testString: assert(buyHealth.toString().match(/\}\s*else\s*\{\s*\}/));
 
 ```

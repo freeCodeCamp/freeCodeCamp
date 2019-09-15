@@ -22,7 +22,7 @@ Now set the `innerText` property of `monsterNameText` to equal `monsters[fightin
 
 ```yml
 tests:
-  - text: Now set the <code>innerText</code> property of <code>monsterNameText</code> to equal <code>monsters[fighting].name</code>. Also, set the <code>innerText</code> property of <code>monsterHealthText</code> to equal <code>monsterHealth</code>.
+  - text: See description above for instructions.
     testString: assert((() => { fightBeast(); return monsterNameText.innerText === 'fanged beast' && monsterHealthText.innerText === '60'})() && (() => { fightDragon(); return monsterNameText.innerText === 'dragon' && monsterHealthText.innerText === '300'})());
 
 ```

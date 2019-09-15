@@ -20,7 +20,7 @@ For now, let's start the player with just the stick. Delete the dagger and sword
 
 ```yml
 tests:
-  - text: Delete the dagger and sword items in the array.
+  - text: See description above for instructions.
     testString: assert(inventory[0] === 'stick' && inventory.length === 1);
 
 ```

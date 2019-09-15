@@ -22,7 +22,7 @@ Add another property in the object with the name `"button functions"`. The value
 
 ```yml
 tests:
-  - text: Add another property in the object with the name <code>"button functions"</code>. The value should be an array containing the three <code>onclick</code> functions from the <code>goTown</code> function. 
+  - text: See description above for instructions.
     testString: assert.deepStrictEqual(locations[0]['button functions'], [goStore, goCave, fightDragon]);
 
 ```

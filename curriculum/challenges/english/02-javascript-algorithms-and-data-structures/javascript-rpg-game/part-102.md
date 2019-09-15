@@ -34,7 +34,7 @@ if (num > 15) {
 
 ```yml
 tests:
-  - text: At the end of the `if` statement, add an `else if` statement to check if `monsterHealth` is less than or equal to zero. Inside the `else if` block, call the `defeatMonster()` function.
+  - text: See description above for instructions.
     testString: assert(attack.toString().match(/^\s*if\s*\(\s*health\s*\<\=\s*0\s*\)\s*\{\s*lose\(\s*\);?\s*\}\s*else if\s*\(\s*monsterHealth\s*\<\=\s*0\s*\)\s*\{\s*defeatMonster\(\s*\)\;?\s*\}/m));
 
 ```

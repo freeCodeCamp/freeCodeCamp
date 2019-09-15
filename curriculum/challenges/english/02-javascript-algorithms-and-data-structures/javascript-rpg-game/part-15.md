@@ -20,7 +20,7 @@ Now set the <code>onclick</code> property of <code>button2</code> and <code>butt
 
 ```yml
 tests:
-  - text: Now set the <code>onclick</code> property of <code>button2</code> and <code>button3</code>.
+  - text: See description above for instructions.
     testString: assert(/button2\.onclick\s*\=\s*goCave\;?/.test(code) && /button3\.onclick\s*\=\s*fightDragon\;?/.test(code));
 
 ```

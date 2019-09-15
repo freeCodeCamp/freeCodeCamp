@@ -22,7 +22,7 @@ Just end the line with a semicolon right after the variable name.
 
 ```yml
 tests:
-  - text: Using the <code>let</code> keyword, declare a variable called <code>fighting</code> but don't set it equal to anything.
+  - text: See description above for instructions.
     testString: assert(/let\s+fighting\s*;?/.test(code) && fighting === undefined);
 
 ```

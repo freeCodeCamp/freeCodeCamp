@@ -22,7 +22,7 @@ Create two more empty functions: `fightSlime` and `fightBeast`.
 
 ```yml
 tests:
-  - text: "Create two more empty functions: <code>fightSlime</code> and <code>fightBeast</code>."
+  - text: See description above for instructions.
     testString: assert(typeof fightSlime === 'function' && typeof fightBeast === 'function');
 
 ```

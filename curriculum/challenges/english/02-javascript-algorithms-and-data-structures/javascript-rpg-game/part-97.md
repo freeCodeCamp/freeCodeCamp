@@ -22,7 +22,7 @@ Next, set `health` to equal `health` minus the monster's level. You can get the 
 
 ```yml
 tests:
-  - text: Next, set <code>health</code> to equal <code>health</code> minus the monster's level.
+  - text: See description above for instructions.
     testString: health = 50, fightDragon(), attack(), assert(health === 30);
 
 ```

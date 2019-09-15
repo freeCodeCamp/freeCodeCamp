@@ -22,7 +22,7 @@ Once a player has the best weapon, they can't buy another one. Wrap all the code
 
 ```yml
 tests:
-  - text: Wrap all the code in the `buyWeapon` function inside another <code>if</code> statement. The condition should check if <code>currentWeapon</code> is less than 3 (the index of the last weapon).
+  - text: See description above for instructions.
     testString: assert(buyWeapon.toString().match(/if\s*\(\s*currentWeapon\s*\<\s*3\s*\)\s*\{\s*if\s*\(\s*gold\s*\>\=\s*30\s*\)\s*\{/) && buyWeapon.toString().match(/\}\s*else\s*\{\s*text\.innerText\s*\=\s*[\'\"\`]You do not have enough gold to buy a weapon\.?[\'\"\`]\;?\s*\}\s*\}/));
 
 ```

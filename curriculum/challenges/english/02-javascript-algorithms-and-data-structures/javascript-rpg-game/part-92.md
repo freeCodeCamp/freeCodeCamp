@@ -22,7 +22,7 @@ Next in the `goFight` function, set `monsterHealth` to equal the health of the c
 
 ```yml
 tests:
-  - text: Next in the <code>goFight</code> function, set <code>monsterHealth</code> to equal the health of the current monster. You can get the health of the current monster with <code>monsters[fighting].health</code>.
+  - text: See description above for instructions.
     testString: assert((() => { fightSlime(); return monsterHealth === 15 })() && (() => { fightBeast(); return monsterHealth === 60 })() && (() => { fightDragon(); return monsterHealth === 300 })());
 
 ```

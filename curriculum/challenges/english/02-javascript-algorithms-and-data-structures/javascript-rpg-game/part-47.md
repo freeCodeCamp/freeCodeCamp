@@ -22,7 +22,7 @@ Now update the `goCave` function using the pattern from `goTown` and `goCave`.
 
 ```yml
 tests:
-  - text: Now update the <code>goCave</code> function using the pattern from <code>goTown</code> and <code>goCave</code>. 
+  - text: See description above for instructions.
     testString: assert(goCave.toString().match(/update\(locations\[2\]\)\;?/));
 
 ```

@@ -22,7 +22,7 @@ We'll build out the `attack` function now. For the first line in the function, u
 
 ```yml
 tests:
-  - text: For the first line in the function, update the text message to say "The [monster name] attacks." but replace "[monster name]" with the actual name of the monster.
+  - text: See description above for instructions.
     testString: fightDragon(), attack(), assert(text.innerText === 'The dragon attacks.');
 
 ```

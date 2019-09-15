@@ -28,7 +28,7 @@ let sandwich = ["peanut butter", "jelly", "bread"];
 
 ```yml
 tests:
-  - text: Since the inventory can store multiple items, change the value of <code>inventory</code> to an array with the items stick, dagger, and sword.
+  - text: See description above for instructions.
     testString: assert(inventory.includes('stick') && inventory.includes('dagger') && inventory.includes('sword'));
 
 ```

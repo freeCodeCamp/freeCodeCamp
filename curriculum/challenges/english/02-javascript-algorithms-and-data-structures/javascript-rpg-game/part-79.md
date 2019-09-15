@@ -22,7 +22,7 @@ Inside the `if` statement, set `gold` equal to 15 more than its current value. A
 
 ```yml
 tests:
-  - text: Inside the <code>if</code> statement, set <code>gold</code> equal to 15 more than its current value. Also, update <code>goldText.innerText</code> to the new value.
+  - text: See description above for instructions.
     testString: assert((() => { gold = 50; inventory = ['stick']; sellWeapon(); return gold === 50 && goldText.innerText === '50' })() && (() => { gold = 50; inventory = ['stick', 'dagger']; sellWeapon(); return gold === 65 && goldText.innerText === '65' })());
 
 ```

@@ -22,7 +22,7 @@ We have to fix an error. The `currentWeapon` variable is the array index. Array 
 
 ```yml
 tests:
-  - text: In the <code>if</code> condition you are working on, change <code>weapons.length</code> to <code>weapons.length - 1</code>.
+  - text: See description above for instructions.
     testString: assert(buyWeapon.toString().match(/if\s*\(\s*currentWeapon\s*\<\s*weapons\.length\s*\-\s*1\s*\)\s*\{\s*if\s*\(\s*gold\s*\>\=\s*30\s*\)\s*\{/));
 
 ```

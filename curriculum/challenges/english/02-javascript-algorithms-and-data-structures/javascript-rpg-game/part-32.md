@@ -24,7 +24,7 @@ Here is an example array with three strings: `const arr = ["one", "two", "three"
 
 ```yml
 tests:
-  - text: Inside the <code>"button text"</code> array, add three string elements. Use the three stings assigned to the buttons inside the <code>goTown</code> function. 
+  - text: See description above for instructions.
     testString: assert.deepStrictEqual(locations[0]['button text'], ["Go to store","Go to cave","Fight dragon"]);
 
 ```

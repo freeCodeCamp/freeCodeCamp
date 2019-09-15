@@ -27,7 +27,7 @@ function functionName() {
 
 ```yml
 tests:
-  - text: For now, make the <code>goStore</code> function output the message "Going to store." to the web console.
+  - text: See description above for instructions.
     # testString: assert(code.match(/function goStore\s*\(\s*\)\s*\{\s*console\.log\(\s*[\"\'\`]Going to store\.?[\"\'\`]\s*\)\;?\s*\}/));
     testString: assert(goStore.toString().match(/console\.log\(\s*[\"\'\`]Going to store\.?[\"\'\`]\s*\)/));
 

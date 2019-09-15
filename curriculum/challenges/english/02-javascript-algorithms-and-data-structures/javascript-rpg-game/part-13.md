@@ -21,7 +21,7 @@ Write a single line comment that says "initialize buttons".
 
 ```yml
 tests:
-  - text: Write a single line comment that says "initialize buttons".
+  - text: See description above for instructions.
     testString: assert(/\/\/\s*[iI]nitialize buttons/.test(code));
 
 ```

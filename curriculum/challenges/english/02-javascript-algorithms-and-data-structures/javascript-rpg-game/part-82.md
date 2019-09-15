@@ -22,7 +22,7 @@ After the line that creates the `currentWeapon` variable, set `text.innerText` t
 
 ```yml
 tests:
-  - text: After the line that creates the <code>currentWeapon</code> variable, set <code>text.innerText</code> to equal <code>"You sold a " + currentWeapon + "."</code>
+  - text: See description above for instructions.
     testString: inventory = ['potato', 'carrot'], sellWeapon(), assert(text.innerText === 'You sold a potato.' && inventory[0] === 'carrot');
 
 ```

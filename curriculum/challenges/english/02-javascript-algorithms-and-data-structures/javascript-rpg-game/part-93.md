@@ -24,7 +24,7 @@ Here is an example of updating the `display` property of an element named `myEle
 
 ```yml
 tests:
-  - text: The HTML that shows the monster stats that has been hidden using CSS. Display the <code>monsterStats</code> HTML element by updating its CSS <code>display</code> property to equal <code>block</code>. 
+  - text: See description above for instructions.
     testString: assert(goFight.toString().match(/^\s*monsterStats\.style\.display\s*\=\s*[\'\"\`]block[\'\"\`]\;?/m));
 
 ```

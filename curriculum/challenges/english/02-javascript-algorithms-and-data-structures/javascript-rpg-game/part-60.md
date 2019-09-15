@@ -22,7 +22,7 @@ Similar to in the `buyHealth` function, set `gold` to equal 30 less than its cur
 
 ```yml
 tests:
-  - text: Similar to in the <code>buyHealth</code> function, set <code>gold</code> to equal 30 less than its current value.
+  - text: See description above for instructions.
     # testString: assert((() => { gold = 50; buyWeapon(); return gold === 20; })());
     testString: gold = 50, buyWeapon(), assert(gold === 20);
 

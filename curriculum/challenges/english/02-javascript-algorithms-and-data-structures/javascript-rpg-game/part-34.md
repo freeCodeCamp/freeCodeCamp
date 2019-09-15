@@ -22,7 +22,7 @@ Add one final property to the object named `text`. The value should be the final
 
 ```yml
 tests:
-  - text: Add one final property to the object named <code>text</code>. The value should be the final text from the <code>goTown</code> function.
+  - text: See description above for instructions.
     testString: assert(locations[0].text === "You are in the town square. You see a sign that says \"Store.\"");
 
 ```

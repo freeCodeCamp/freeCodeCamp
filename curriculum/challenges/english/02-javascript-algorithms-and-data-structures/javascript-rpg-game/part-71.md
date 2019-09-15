@@ -22,7 +22,7 @@ At the end of the `if` statement inside the `buyWeapon` function, add an `else` 
 
 ```yml
 tests:
-  - text: Inside the <code>else</code> statement, set <code>text.innerText</code> to equal "You do not have enough gold to buy a weapon.".
+  - text: See description above for instructions.
     testString: assert(buyWeapon.toString().match(/\}\s*else\s*\{\s*text\.innerText\s*\=\s*[\'\"\`]You do not have enough gold to buy a weapon\.?[\'\"\`]\;?\s*\}/));
 
 ```

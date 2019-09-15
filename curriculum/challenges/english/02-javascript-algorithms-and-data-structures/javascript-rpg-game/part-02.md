@@ -20,7 +20,7 @@ Create a variable called <code>gold</code> and set it to the value 50.
 
 ```yml
 tests:
-  - text: Create a variable called <code>gold</code> and set it to the value 50.
+  - text: See description above for instructions.
     testString: assert(gold === 50);
 
 ```

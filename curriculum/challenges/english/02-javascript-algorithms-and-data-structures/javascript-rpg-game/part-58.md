@@ -22,7 +22,7 @@ Just like in the `locations` array, all the elements in `weapons` will be object
 
 ```yml
 tests:
-  - text: Add four objects to the <code>weapons</code> array, each with two properties.
+  - text: See description above for instructions.
     testString: |
       assert.deepStrictEqual(weapons, [{name: "stick",power: 5},{name: "dagger",power: 30},{name: "claw hammer",power: 50},{name: "sword",power: 100}]);
 

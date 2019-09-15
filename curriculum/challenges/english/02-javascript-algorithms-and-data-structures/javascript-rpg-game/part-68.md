@@ -29,7 +29,7 @@ arr.push(next);
 
 ```yml
 tests:
-  - text: Push the <code>newWeapon</code> onto the end of the <code>inventory</code> array.
+  - text: See description above for instructions.
     # testString: assert(buyWeapon.toString().match(/inventory\.push\(\s*newWeapon\s*\)\;?/));
     testString: buyWeapon(), assert.deepStrictEqual(inventory, ['stick', 'dagger']);
 

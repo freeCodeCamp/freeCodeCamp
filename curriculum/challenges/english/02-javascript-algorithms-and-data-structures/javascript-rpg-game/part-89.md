@@ -22,7 +22,7 @@ Add a new object in the `locations` array with all the same properties as the ot
 
 ```yml
 tests:
-  - text: Add a new object in the <code>locations</code> array with all the same properties as the other objects in the array.
+  - text: See description above for instructions.
     testString: |
       assert.deepStrictEqual(locations[3], {name: "fight","button text": ["Attack", "Dodge", "Run"],"button functions": [attack, dodge, goTown],text: "You are fighting a monster."});
 

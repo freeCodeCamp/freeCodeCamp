@@ -22,7 +22,7 @@ Once a player has the most powerful weapon, we'll give them the ability to sell 
 
 ```yml
 tests:
-  - text: In the else statement, set <code>button2.innerText</code> to equal "Sell weapon for 15 gold". Also, set <code>button2.onclick</code> to the function name <code>sellWeapon</code>. Also, set <code>button2.onclick</code> to the function name <code>sellWeapon</code>.
+  - text: See description above for instructions.
     testString: assert(buyWeapon.toString().match(/else\s*\{\s*text\.innerText\s*\=\s*[\'\"\`]You already have the most powerful weapon\![\'\"\`]\;?\s*button2\.innerText\s*\=\s*[\'\"\`]Sell weapon for 15 gold\.?[\'\"\`]\;?\s*button2\.onclick\s*\=\s*sellWeapon\;?\s*\}/));
 
 ```

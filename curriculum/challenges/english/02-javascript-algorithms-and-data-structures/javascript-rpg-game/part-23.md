@@ -20,7 +20,7 @@ Right after the <code>onclick</code> properties are updated, change the <code>in
 
 ```yml
 tests:
-  - text: Right after the <code>onclick</code> properties are updated, change the <code>innerText</code> property of <code>text</code> to "You enter the store."
+  - text: See description above for instructions.
     testString: assert(goStore.toString().match(/text\.innerText\s*\=\s*[\'\"\`]You enter the store\.?[\'\"\`]/)); # Must be a regex test since buyHealth, buyWeapon, and goTown are still undefined
 
 ```

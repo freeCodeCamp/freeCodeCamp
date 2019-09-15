@@ -24,7 +24,7 @@ So far we have been accessing properties of the location object using bracket no
 
 ```yml
 tests:
-  - text: Finally, update <code>text.innerText</code> to equal the <code>text</code> from the location object.
+  - text: See description above for instructions.
     testString: assert(update.toString().match(/text\.innerText\s*\=\s*location\.text\;?/));
 
 ```

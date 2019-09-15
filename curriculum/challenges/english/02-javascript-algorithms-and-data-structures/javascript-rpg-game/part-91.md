@@ -22,7 +22,7 @@ In the `goFight` function, call the `update` function and pass it `locations[3]`
 
 ```yml
 tests:
-  - text: In the <code>goFight</code> function, call the <code>update</code> function and pass it <code>locations[3]</code>.
+  - text: See description above for instructions.
     testString: assert(goFight.toString().match(/update\(\s*locations\[\s*3\s*\]\s*\)\;?/));
 
 ```

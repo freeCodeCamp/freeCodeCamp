@@ -22,7 +22,7 @@ Now use the `+=` operator to append more text to `text.innerText`. Add the text 
 
 ```yml
 tests:
-  - text: Add the text " You attack it with your [weapon name]." but replace "[weapon name]" with the actual weapon name.
+  - text: See description above for instructions.
     testString: currentWeapon = 3, fightDragon(), attack(), assert(text.innerText === 'The dragon attacks. You attack it with your sword.');
 
 ```

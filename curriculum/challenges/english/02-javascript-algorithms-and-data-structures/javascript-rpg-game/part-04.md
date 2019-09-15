@@ -21,7 +21,7 @@ Change every <code>var</code> to <code>let</code>.
 
 ```yml
 tests:
-  - text: Change every <code>var</code> to <code>let</code>.
+  - text: See description above for instructions.
     testString: assert(/let\s+xp\s*\=\s*0\;?/.test(code) && /let\s+health\s*\=\s*100\;?/.test(code) && /let\s+gold\s*\=\s*50\;?/.test(code) && /let\s+currentWeapon\s*\=\s*0\;?/.test(code));
 
 ```

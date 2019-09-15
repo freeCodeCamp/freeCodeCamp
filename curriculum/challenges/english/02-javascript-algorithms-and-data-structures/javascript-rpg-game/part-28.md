@@ -21,7 +21,7 @@ Below the list of <code>const</code> variables, create a new <code>const</code> 
 
 ```yml
 tests:
-  - text: Below the list of <code>const</code> variables, create a new <code>const</code> variable called <code>locations</code>. Set it to equal an empty array.
+  - text: See description above for instructions.
     testString: assert(Array.isArray(locations) && locations.length === 0);
 
 ```

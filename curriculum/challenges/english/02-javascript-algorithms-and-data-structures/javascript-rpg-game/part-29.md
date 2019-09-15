@@ -25,8 +25,7 @@ Here is an example of an array named `arr` with an empty object inside: `const a
 
 ```yml
 tests:
-  - text: Inside the <code>locations</code> array add an empty object using curly braces.
-    # testString: assert(JSON.stringify(locations).match(/\[\{\}\]/));
+  - text: See description above for instructions.
     testString: assert.deepStrictEqual(JSON.stringify(locations), `[{}]`);
 
 ```

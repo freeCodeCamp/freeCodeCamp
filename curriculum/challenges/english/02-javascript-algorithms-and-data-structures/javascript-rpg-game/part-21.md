@@ -20,7 +20,7 @@ After the line that updates <code>button1</code>, update the text of <code>butto
 
 ```yml
 tests:
-  - text: After the line that updates <code>button1</code>, update the text of <code>button2</code> to say "Buy weapon (30 gold)" and update the text of <code>button3</code> to say "Go to town square".
+  - text: See description above for instructions.
     # testString: assert(goStore.toString().match(/button1\.innerText\s*\=\s*[\'\"\`]Buy 10 health \(10 gold\)\.?[\'\"\`]/) && goStore.toString().match(/button2\.innerText\s*\=\s*[\'\"\`]Buy weapon \(30 gold\)\.?[\'\"\`]/) && goStore.toString().match(/button3\.innerText\s*\=\s*[\'\"\`]Go to town square\.?[\'\"\`]/));
     testString: assert((() => { goStore(); return button1.innerText === "Buy 10 health (10 gold)" && button2.innerText === "Buy weapon (30 gold)" && button3.innerText === "Go to town square" })());
 

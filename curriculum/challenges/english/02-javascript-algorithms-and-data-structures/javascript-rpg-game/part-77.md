@@ -22,7 +22,7 @@ After the `buyWeapon` function, create an empty function called `sellWeapon`.
 
 ```yml
 tests:
-  - text: After the <code>buyWeapon</code> function, create an empty function called <code>sellWeapon</code>.
+  - text: See description above for instructions.
     testString: assert(typeof sellWeapon === 'function');
 
 ```

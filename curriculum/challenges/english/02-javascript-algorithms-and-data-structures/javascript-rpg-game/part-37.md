@@ -24,7 +24,7 @@ Here is how you would call a function named `exampleFunction`: `exampleFunction(
 
 ```yml
 tests:
-  - text: Inside the <code>goTown</code> function, call the <code>update</code> function. 
+  - text: See description above for instructions.
     testString: assert(goTown.toString().match(/update\(\)/));
 
 ```

@@ -26,7 +26,7 @@ function functionName() {
 
 ```yml
 tests:
-  - text: Create the <code>goStore</code> function to hold the code that runs whenever the player goes to the store.
+  - text: See description above for instructions.
     testString: assert(typeof goStore === 'function');
     # testString: assert(code.match(/function goStore\s*\(\s*\)\s*\{\s*\}/));
     # testString: assert.deepStrictEqual(typeof goStore, 'function');

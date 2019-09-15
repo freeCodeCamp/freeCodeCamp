@@ -22,7 +22,7 @@ When a name has two words, the convention is to use so-called "lowerCamelCase". 
 
 ```yml
 tests:
-  - text: Create a variable called <code>currentWeapon</code> and set it to 0.
+  - text: See description above for instructions.
     testString: assert(currentWeapon === 0);
 
 ```

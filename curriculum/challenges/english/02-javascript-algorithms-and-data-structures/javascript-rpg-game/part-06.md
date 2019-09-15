@@ -20,7 +20,7 @@ Declare variables named <code>monsterHealth</code> and <code>inventory</code> wi
 
 ```yml
 tests:
-  - text: Declare variables named <code>monsterHealth</code> and <code>inventory</code> without initializing them.
+  - text: See description above for instructions.
     # testString: assert(/let\s+monsterHealth\s*;?/.test(code) && /let\s+inventory\s*;?/.test(code));
     testString: assert(monsterHealth === undefined && inventory === undefined);
 

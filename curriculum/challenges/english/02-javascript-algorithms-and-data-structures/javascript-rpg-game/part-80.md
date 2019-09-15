@@ -22,7 +22,7 @@ Use the `let` keyword to create a variable named `currentWeapon`. Don't set it e
 
 ```yml
 tests:
-  - text: Use the <code>let</code> keyword to create a variable named <code>currentWeapon</code>. Don't set it equal to anything yet.
+  - text: See description above for instructions.
     testString: assert(code.match(/if\s*\(\s*inventory\.length\s*\>\s*1\s*\)\s*\{\s*(.\s*)*let\s*currentWeapon\;?/)); # match code as toString() changes let and const to var
 
 ```

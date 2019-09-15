@@ -22,7 +22,7 @@ Get just the name property of the current weapon by adding `.name` at the end of
 
 ```yml
 tests:
-  - text: Get just the name property of the current weapon by adding <code>.name</code> at the end of <code>weapons[currentWeapon]</code> (don't use a space).
+  - text: See description above for instructions.
     testString: assert(/let\s*newWeapon\s*\=\s*weapons\s?\[currentWeapon\]\.name\;?/.test(code));
 
 ```

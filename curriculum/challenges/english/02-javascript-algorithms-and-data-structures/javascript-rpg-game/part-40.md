@@ -24,7 +24,7 @@ Inside the `update` function, change `button1.innerText` to equal `location["but
 
 ```yml
 tests:
-  - text: Inside the <code>update</code> function, change <code>button1.innerText</code> to equal <code>location["button text"]</code>.
+  - text: See description above for instructions.
     testString: assert(update.toString().match(/button1\.innerText\s*\=\s*location\[[\'\"\`]button text[\'\"\`]\]/));
 
 ```

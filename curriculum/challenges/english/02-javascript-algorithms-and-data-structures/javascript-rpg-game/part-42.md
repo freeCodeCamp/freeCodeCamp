@@ -22,7 +22,7 @@ Now update the `innerText` of the other two buttons. They should be set to equal
 
 ```yml
 tests:
-  - text: Now update the <code>innerText</code> of the other two buttons.
+  - text: See description above for instructions.
     testString: assert(update.toString().match(/button2\.innerText\s*\=\s*location\[[\'\"\`]button text[\'\"\`]\]\[1\]/) && update.toString().match(/button3\.innerText\s*\=\s*location\[[\'\"\`]button text[\'\"\`]\]\[2\]/));
 
 ```

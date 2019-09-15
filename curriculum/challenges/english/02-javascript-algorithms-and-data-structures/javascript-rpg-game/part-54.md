@@ -30,7 +30,7 @@ if (num >= 5) {
 
 ```yml
 tests:
-  - text: Change the condition to check if the amount of gold the player has is greater than or equal to 10.
+  - text: See description above for instructions.
     testString: assert(buyHealth.toString().match(/if\s*\(\s*gold\s*\>\=\s*10\s*\)/));
 
 ```

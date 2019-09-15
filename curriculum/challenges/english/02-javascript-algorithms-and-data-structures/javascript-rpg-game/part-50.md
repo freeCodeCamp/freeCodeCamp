@@ -22,7 +22,7 @@ After gold is subtracted, add ten to health.
 
 ```yml
 tests:
-  - text: After gold is subtracted, add ten to health.
+  - text: See description above for instructions.
     # testString: assert((() => { buyHealth(); return gold === 40 && health === 110 })());
     testString: buyHealth(), assert(gold === 40 && health === 110);
 

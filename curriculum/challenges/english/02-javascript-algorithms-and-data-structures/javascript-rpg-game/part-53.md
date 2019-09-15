@@ -32,7 +32,7 @@ Note: For now you should use the word "condition" inside the `if` statement but 
 
 ```yml
 tests:
-  - text: Put all the code in the <code>buyHealth</code> function inside an <code>if</code> statement.
+  - text: See description above for instructions.
     # testString: assert(buyHealth.toString().match(/if\s*\(\s*condition\s*\)\s*\{\s*gold\s*\-\=\s*10\;?\s*health\s*\+\=\s*10\;?\s*goldText\.innerText\s*\=\s*gold\;?\s*healthText\.innerText\s*\=\s*health\;?\s*\}\s*\}/));
     testString: assert(buyHealth.toString().match(/if\s*\(\s*condition\s*\)\s*\{\s*(gold|health|goldText|healthText)/) && buyHealth.toString().match(/gold\s*\-\=\s*10\;?/) && buyHealth.toString().match(/health\s*\+\=\s*10\;?/) && buyHealth.toString().match(/goldText\.innerText\s*\=\s*gold\;?/) && buyHealth.toString().match(/healthText\.innerText\s*\=\s*health\;?/));
 

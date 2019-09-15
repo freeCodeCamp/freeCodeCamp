@@ -22,7 +22,7 @@ At the end of the code create empty functions named `attack` and `dodge`.
 
 ```yml
 tests:
-  - text: At the end of the code create empty functions named <code>attack</code> and <code>dodge</code>.
+  - text: See description above for instructions.
     testString: assert(typeof attack === 'function' && typeof dodge === 'function');
 
 ```

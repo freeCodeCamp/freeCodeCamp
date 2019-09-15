@@ -20,7 +20,7 @@ You can also declare variables with the <code>const</code> key word. Since <code
 
 ```yml
 tests:
-  - text: Since <code>button1</code> is a constant that will never change, switch the <code>let</code> keyword that declares the variable to <code>const</code>.
+  - text: See description above for instructions.
     testString: assert(/const\s+button1\s*/.test(code));
 
 ```

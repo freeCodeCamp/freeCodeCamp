@@ -22,7 +22,7 @@ At the end of the code add two empty functions named `defeatMonster` and `lose`.
 
 ```yml
 tests:
-  - text: At the end of the code add two empty functions named `defeatMonster` and `lose`.
+  - text: See description above for instructions.
     testString: assert(typeof defeatMonster === 'function' && typeof lose === 'function');
 
 ```

@@ -22,7 +22,7 @@ Players should not be able to sell their only weapon. Inside the `sellWeapon` fu
 
 ```yml
 tests:
-  - text: Inside the <code>sellWeapon</code> function, add an <code>if</code> statement with a condition that checks if the length of the <code>inventory</code> array is greater than one.
+  - text: See description above for instructions.
     testString: assert(sellWeapon.toString().match(/if\s*\(\s*inventory\.length\s*\>\s*1\s*\)\s*\{\s*\}/));
 
 ```

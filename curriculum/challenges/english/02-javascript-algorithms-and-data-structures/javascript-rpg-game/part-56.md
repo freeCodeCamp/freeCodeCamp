@@ -22,7 +22,7 @@ Inside the `else` statement, set `text.innerText` to equal "You do not have enou
 
 ```yml
 tests:
-  - text: Add an <code>else</code> statement where you can put code to run if a player dees not have enough money.
+  - text: See description above for instructions.
     # testString: assert(buyHealth.toString().match(/\}\s*else\s*\{\s*text\.innerText\s*\=\s*[\'\"\`]You do not have enough gold to buy health\.?[\'\"\`]\;?\s*\}/));
     # testString: assert((() => { gold = 5; buyHealth(); return text.innerText === "You do not have enough gold to buy health."; })());
     testString: gold = 5, buyHealth(), assert(text.innerText === "You do not have enough gold to buy health.");

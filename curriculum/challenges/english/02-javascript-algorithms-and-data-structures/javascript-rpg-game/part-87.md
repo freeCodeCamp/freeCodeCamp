@@ -24,7 +24,7 @@ As a reminder, here is how you would call a function named `myFunc`: `myFunc();`
 
 ```yml
 tests:
-  - text: At the end of the code, add an empty function named <code>goFight</code>.
+  - text: See description above for instructions.
     testString: assert(fightSlime.toString().match(/fighting\s*\=\s*0\;?\s*goFight\(\s*\)\;?/));
 
 ```

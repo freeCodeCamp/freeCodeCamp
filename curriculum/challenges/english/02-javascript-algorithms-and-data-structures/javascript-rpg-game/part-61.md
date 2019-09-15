@@ -22,7 +22,7 @@ The value of `currentWeapon` corresponds to an index in the `weapons` array. The
 
 ```yml
 tests:
-  - text: In the <code>buyWeapon</code> function, add one to <code>currentWeapon</code> since the user is buying the next weapon in the <code>weapons</code> array.
+  - text: See description above for instructions.
     # testString: assert((() => { currentWeapon = 0; buyWeapon(); return currentWeapon === 1; })());
     testString: currentWeapon = 0, buyWeapon(), assert(currentWeapon === 1);
 
