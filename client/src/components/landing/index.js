@@ -5,6 +5,8 @@ import Helmet from 'react-helmet';
 import Login from '../Header/components/Login';
 import { Spacer } from '../helpers';
 
+import asSeenOn from '../../assets/images/as-seen-on.svg';
+
 import './landing.css';
 
 const BigCallToAction = () => (
@@ -45,11 +47,11 @@ function Landing() {
           <Spacer />
           <BigCallToAction />
           <Spacer size={2} />
-          <Image
+          <svg
             alt='companies featuring freeCodeCamp.org'
             className='img-center'
             responsive={true}
-            src='https://cdn-media-1.freecodecamp.org/learn/as-seen-on.png'
+            src={asSeenOn}
           />
           <Spacer />
           <Row>
