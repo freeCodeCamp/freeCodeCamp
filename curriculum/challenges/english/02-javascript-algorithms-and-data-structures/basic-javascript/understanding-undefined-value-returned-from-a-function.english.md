@@ -34,7 +34,7 @@ Create a function <code>addFive</code> without any arguments. This function adds
 tests:
   - text: <code>addFive</code> should be a function
     testString: assert(typeof addFive === 'function');
-  - text: <code>sum</code> should be equal to 8
+  - text: Once both functions have ran, the <code>sum</code> should be equal to 8
     testString: assert(sum === 8);
   - text: Returned value from <code>addFive</code> should be <code>undefined</code>
     testString: assert(addFive() === undefined);
