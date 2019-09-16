@@ -47,9 +47,9 @@ function Landing() {
           <Spacer />
           <BigCallToAction />
           <Spacer size={2} />
-          <svg
+          <Image
             alt='companies featuring freeCodeCamp.org'
-            className='img-center'
+            className='img-center as-seen-on'
             responsive={true}
             src={asSeenOn}
           />

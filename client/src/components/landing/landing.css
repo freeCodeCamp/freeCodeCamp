@@ -41,6 +41,9 @@
 .underlined-link {
   text-decoration: underline;
 }
+.as-seen-on {
+  width: 80%;
+}
 
 /* Buttons with a lot of text can overflow and mess up formatting on small
    screens, this stops that unless the word itself is too large. */
