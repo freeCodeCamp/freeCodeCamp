@@ -8,8 +8,8 @@ import './challenge-title.css';
 import GreenPass from '../../../assets/icons/GreenPass';
 
 const keyMap = {
-  NAVIGATE_PREV: 'ctrl+shift+pagedown',
-  NAVIGATE_NEXT: 'ctrl+shift+pageup'
+  NAVIGATE_PREV: ['ctrl+shift+<', 'cmd+shift+<'],
+  NAVIGATE_NEXT: ['ctrl+shift+>', 'cmd+shift+>']
 };
 
 const propTypes = {
@@ -33,7 +33,6 @@ function ChallengeTitle({
     NAVIGATE_PREV: () => navigate(prevChallengePath),
     NAVIGATE_NEXT: () => navigate(nextChallengePath)
   };
-
   return (
     <div className='challenge-title-wrap'>
       <GlobalHotKeys handlers={handlers} keyMap={keyMap} />

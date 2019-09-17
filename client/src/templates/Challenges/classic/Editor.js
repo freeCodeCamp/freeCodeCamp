@@ -128,7 +128,7 @@ class Editor extends Component {
       keybindings: [
         /* eslint-disable no-bitwise */
         monaco.KeyMod.chord(
-          monaco.KeyMod.CtrlCmd | monaco.KeyMod.Shift | monaco.KeyCode.PageDown
+          monaco.KeyMod.CtrlCmd | monaco.KeyMod.Shift | monaco.KeyCode.US_COMMA
         )
       ],
       run: () => navigate(this.props.prevChallengePath)
@@ -139,7 +139,7 @@ class Editor extends Component {
       keybindings: [
         /* eslint-disable no-bitwise */
         monaco.KeyMod.chord(
-          monaco.KeyMod.CtrlCmd | monaco.KeyMod.Shift | monaco.KeyCode.PageUp
+          monaco.KeyMod.CtrlCmd | monaco.KeyMod.Shift | monaco.KeyCode.US_DOT
         )
       ],
       run: () => navigate(this.props.nextChallengePath)
