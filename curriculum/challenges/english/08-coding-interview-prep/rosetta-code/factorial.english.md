@@ -39,7 +39,7 @@ tests:
   - text: <code>factorial(5)</code> should return 120.
     testString: assert.equal(factorial(5),results[1]);
   - text: <code>factorial(10)</code> should return 3,628,800.
-    testString: assert.equal(factorial(10),results[2]);
+    testString: assert.equal(factorial(10), 3628800);
 
 ```
 
