@@ -2,12 +2,13 @@
 id: 5d5aab5d07f328a948d398d2
 title: Part 06
 challengeType: 0
-isRequired: true
 ---
 
 ## Description
 <section id='description'>
-Declare variables named <code>monsterHealth</code> and <code>inventory</code> without initializing them.
+
+Declare variables named `monsterHealth` and `inventory` without initializing them.
+
 </section>
 
 ## Instructions

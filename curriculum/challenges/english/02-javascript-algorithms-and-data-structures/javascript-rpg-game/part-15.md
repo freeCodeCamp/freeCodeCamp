@@ -2,12 +2,13 @@
 id: 5d653b2d6e6bf7a6a27aa80b
 title: Part 15
 challengeType: 0
-isRequired: true
 ---
 
 ## Description
 <section id='description'>
-Now set the <code>onclick</code> property of <code>button2</code> and <code>button3</code>. The second button should be set to <code>goCave</code> and the third button should be set to <code>fightDragon</code>.
+
+Now set the `onclick` property of `button2` and `button3`. The second button should be set to `goCave` and the third button should be set to `fightDragon`.
+
 </section>
 
 ## Instructions

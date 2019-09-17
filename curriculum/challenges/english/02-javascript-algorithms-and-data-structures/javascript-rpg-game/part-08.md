@@ -2,13 +2,12 @@
 id: 5d5aad2307f328a948d398d4
 title: Part 08
 challengeType: 0
-isRequired: true
 ---
 
 ## Description
 <section id='description'>
 
-Since the inventory can store multiple items, change the value of <code>inventory</code> to an array with the items stick, dagger, and sword.
+Since the inventory can store multiple items, change the value of `inventory` to an array with the items stick, dagger, and sword.
 
 Here is an example of a variable sandwich that equals a three-item array: 
 

@@ -2,12 +2,12 @@
 id: 5d653c4d6e6bf7a6a27aa80c
 title: Part 16
 challengeType: 0
-isRequired: true
 ---
 
 ## Description
 <section id='description'>
-Create the <code>goStore</code> function to hold the code that runs whenever the player goes to the store. Here is an example of an empty function called <code>functionName</code> (Note the opening curly brace at the end of the first line and the closing curly brace on the second line):
+
+Create the `goStore` function to hold the code that runs whenever the player goes to the store. Here is an example of an empty function called `functionName` (Note the opening curly brace at the end of the first line and the closing curly brace on the second line):
 
 ```js
 function functionName() {

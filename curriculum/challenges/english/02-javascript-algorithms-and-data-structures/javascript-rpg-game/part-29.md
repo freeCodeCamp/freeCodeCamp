@@ -2,7 +2,6 @@
 id: 5d665983e0696bdec46938dc
 title: Part 29
 challengeType: 0
-isRequired: true
 ---
 
 ## Description
@@ -13,6 +12,7 @@ Arrays can store any data type, including objects. Objects are similar to arrays
 Inside the `locations` array add an empty object using curly braces.
 
 Here is an example of an array named `arr` with an empty object inside: `const arr = [{}];`
+
 </section>
 
 ## Instructions

@@ -2,13 +2,15 @@
 id: 5d65f4cd2012114c7d7c57ec
 title: Part 19
 challengeType: 0
-isRequired: true
 ---
 
 ## Description
 <section id='description'>
-Also, create a <code>fightDragon</code> function that prints "Fighting dragon." to the console.
+
+Also, create a `fightDragon` function that prints "Fighting dragon." to the console.
+
 When you are finished, you can test out your program in the browser.
+
 </section>
 
 ## Instructions

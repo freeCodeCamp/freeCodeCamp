@@ -2,12 +2,15 @@
 id: 5d64cf8f853b56a21cd16319
 title: Part 12
 challengeType: 0
-isRequired: true
 ---
 
 ## Description
 <section id='description'>
-Here are the ids of the other HTML elements that we want a reference to in the JavaScript code: <code>button2</code>, <code>button3</code>, <code>text</code>, <code>xpText</code>, <code>healthText</code>, <code>goldText</code>, <code>monsterStats</code>, <code>monsterNameText</code>, <code>monsterHealthText</code>. Just like you did with <code>storeButton</code>, create variables and set them equal to the element references.
+
+Here are the ids of the other HTML elements that we want a reference to in the JavaScript code: `button2`, `button3`, `text`, `xpText`, `healthText`, `goldText`, `monsterStats`, `monsterNameText`, `monsterHealthText`. 
+
+Just like you did with `storeButton`, create variables and set them equal to the element references.
+
 </section>
 
 ## Instructions

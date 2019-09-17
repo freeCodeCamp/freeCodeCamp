@@ -2,13 +2,15 @@
 id: 5d5a813321b9e3db6c106a46
 title: Part 01
 challengeType: 0
-isRequired: true
 ---
 
 ## Description
 <section id='description'>
-To keep track of the player's experience points, we've declared a variable called <code>xp</code> and assigned it the starting value of 0.
+
+To keep track of the player's experience points, we've declared a variable called `xp` and assigned it the starting value of 0.
+
 Create another variable to keep track of health and start it at 100.
+
 </section>
 
 ## Instructions

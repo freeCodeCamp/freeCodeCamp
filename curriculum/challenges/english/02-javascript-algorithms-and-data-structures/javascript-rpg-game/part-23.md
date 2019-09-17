@@ -2,12 +2,13 @@
 id: 5d660a32e0696bdec46938d5
 title: Part 23
 challengeType: 0
-isRequired: true
 ---
 
 ## Description
 <section id='description'>
-Right after the <code>onclick</code> properties are updated, change the <code>innerText</code> property of <code>text</code> to "You enter the store."
+
+Right after the `onclick` properties are updated, change the `innerText` property of `text` to "You enter the store."
+
 </section>
 
 ## Instructions

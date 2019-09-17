@@ -2,13 +2,15 @@
 id: 5d651ee1ee291f75bbd738ee
 title: Part 13
 challengeType: 0
-isRequired: true
 ---
 
 ## Description
 <section id='description'>
-Make a comment to describe what the next few lines of code will do. Comments can be written with either two forward-slashes <code>//</code> or with a multi-line sequence <code>/* */</code>. For example, here is a single line comment that says "hello world": <code>// hello world</code>.
+
+Make a comment to describe what the next few lines of code will do. Comments can be written with either two forward-slashes `//` or with a multi-line sequence `/* */`. For example, here is a single line comment that says "hello world": `// hello world`.
+
 Write a single line comment that says "initialize buttons".
+
 </section>
 
 ## Instructions

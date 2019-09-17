@@ -2,12 +2,13 @@
 id: 5d6616d8e0696bdec46938d6
 title: Part 24
 challengeType: 0
-isRequired: true
 ---
 
 ## Description
 <section id='description'>
-At the end of the current code, add three new empty functions called <code>buyHealth</code>, <code>buyWeapon</code>, and <code>goTown</code>. After this step, you can test out the game by clicking the "Go to store" button.
+
+At the end of the current code, add three new empty functions called `buyHealth`, `buyWeapon`, and `goTown`. After this step, you can test out the game by clicking the "Go to store" button.
+
 </section>
 
 ## Instructions

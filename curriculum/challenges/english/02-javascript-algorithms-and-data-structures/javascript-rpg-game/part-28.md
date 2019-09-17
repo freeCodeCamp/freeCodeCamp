@@ -2,12 +2,12 @@
 id: 5d6653d5e0696bdec46938da
 title: Part 28
 challengeType: 0
-isRequired: true
 ---
 
 ## Description
 <section id='description'>
-Below the list of <code>const</code> variables, create a new <code>const</code> variable called <code>locations</code>. Set it to equal an empty array. This will be used to store all the data for the locations in the game.
+
+Below the list of `const` variables, create a new `const` variable called `locations`. Set it to equal an empty array. This will be used to store all the data for the locations in the game.
 
 </section>
 

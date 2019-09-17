@@ -2,16 +2,15 @@
 id: 5d65f6392012114c7d7c57ed
 title: Part 20
 challengeType: 0
-isRequired: true
 ---
 
 ## Description
 <section id='description'>
 
 When a player clicks the 'Go to store' button, the buttons and text in the game should change.
-Remove the code inside the <code>goStore</code> function. Add a new line of code inside the function that updates the text of <code>button1</code> so that it says "Buy 10 health (10 gold)".
+Remove the code inside the `goStore` function. Add a new line of code inside the function that updates the text of `button1` so that it says "Buy 10 health (10 gold)".
 
-For example, this code updates the text of <code>button</code> to say "Click Me": <code>button.innerText = "Click Me";</code>.
+For example, this code updates the text of `button` to say "Click Me": `button.innerText = "Click Me";`.
 
 </section>
 

@@ -2,12 +2,13 @@
 id: 5d66093c4bab337fbb433885
 title: Part 22
 challengeType: 0
-isRequired: true
 ---
 
 ## Description
 <section id='description'>
-Now that the text on the buttons have changed, the <code>onclick</code> properties on the buttons should change. Inside the goStore function, update the <code>onclick</code> property of all three buttons. The new functions should be <code>buyHealth</code>, <code>buyWeapon</code>, and <code>goTown</code>. If you have trouble, look at how the buttons were initialized.
+
+Now that the text on the buttons have changed, the `onclick` properties on the buttons should change. Inside the goStore function, update the `onclick` property of all three buttons. The new functions should be `buyHealth`, `buyWeapon`, and `goTown`. If you have trouble, look at how the buttons were initialized.
+
 </section>
 
 ## Instructions

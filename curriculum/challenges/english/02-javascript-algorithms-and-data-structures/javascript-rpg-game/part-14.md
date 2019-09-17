@@ -2,12 +2,13 @@
 id: 5d652e5a6e6bf7a6a27aa80a
 title: Part 14
 challengeType: 0
-isRequired: true
 ---
 
 ## Description
 <section id='description'>
-Designate what the first button in the HTML does by setting the <code>onclick</code> property of <code>button1</code> to the function name <code>goStore</code>. You will create the <code>goStore</code> function later. For example, in <code>button.onclick = openProgram;</code>, the <code>onclick</code> property of <code>button</code> is set to <code>openProgram</code>.
+
+Designate what the first button in the HTML does by setting the `onclick` property of `button1` to the function name `goStore`. You will create the `goStore` function later. For example, in `button.onclick = openProgram;`, the `onclick` property of `button` is set to `openProgram`.
+
 </section>
 
 ## Instructions

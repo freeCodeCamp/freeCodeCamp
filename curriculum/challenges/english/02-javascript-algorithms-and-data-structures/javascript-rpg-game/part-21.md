@@ -2,12 +2,13 @@
 id: 5d6606634bab337fbb433884
 title: Part 21
 challengeType: 0
-isRequired: true
 ---
 
 ## Description
 <section id='description'>
-After the line that updates <code>button1</code>, update the text of <code>button2</code> to say "Buy weapon (30 gold)" and update the text of <code>button3</code> to say "Go to town square".
+
+After the line that updates `button1`, update the text of `button2` to say "Buy weapon (30 gold)" and update the text of `button3` to say "Go to town square".
+
 </section>
 
 ## Instructions

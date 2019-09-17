@@ -2,12 +2,13 @@
 id: 5d5b66ce07f328a948d398d7
 title: Part 11
 challengeType: 0
-isRequired: true
 ---
 
 ## Description
 <section id='description'>
-You can also declare variables with the <code>const</code> key word. Since <code>button1</code> is a constant that will never change, switch the <code>let</code> keyword that declares the variable to <code>const</code>.
+
+You can also declare variables with the `const` key word. Since `button1` is a constant that will never change, switch the `let` keyword that declares the variable to `const`.
+
 </section>
 
 ## Instructions

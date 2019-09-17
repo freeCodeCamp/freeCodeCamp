@@ -2,12 +2,13 @@
 id: 5d65f2c62012114c7d7c57eb
 title: Part 18
 challengeType: 0
-isRequired: true
 ---
 
 ## Description
 <section id='description'>
-Similar to the <code>goStore</code> function, create a <code>goCave</code> function that prints "Going to cave." to the console.
+
+Similar to the `goStore` function, create a `goCave` function that prints "Going to cave." to the console.
+
 </section>
 
 ## Instructions

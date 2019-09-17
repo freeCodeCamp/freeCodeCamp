@@ -2,13 +2,15 @@
 id: 5d5ab57f07f328a948d398d6
 title: Part 10
 challengeType: 0
-isRequired: true
 ---
 
 ## Description
 <section id='description'>
-In order to update HTML elements on the page, you need to get references to them in your JavaScript code. The code <code>let el = document.querySelector("#el");</code> gets a reference to an HTML element with an <code>id</code> of <code>el</code> and assigns it to the variable <code>el</code>.
-Get a reference to the HTML element with the <code>id</code> of <code>button1</code> and assign it to a variable with the name <code>button1</code>.
+
+In order to update HTML elements on the page, you need to get references to them in your JavaScript code. The code `let el = document.querySelector("#el");` gets a reference to an HTML element with an `id` of `el` and assigns it to the variable `el`.
+
+Get a reference to the HTML element with the `id` of `button1` and assign it to a variable with the name `button1`.
+
 </section>
 
 ## Instructions

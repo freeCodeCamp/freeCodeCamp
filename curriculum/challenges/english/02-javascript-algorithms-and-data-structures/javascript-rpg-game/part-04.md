@@ -2,13 +2,15 @@
 id: 5d5a903507f328a948d398d0
 title: Part 04
 challengeType: 0
-isRequired: true
 ---
 
 ## Description
 <section id='description'>
-We've been declaring variables with the <code>var</code> keyword. However, in modern JavaScript, it's better to use <code>let</code> instead of <code>var</code> because it fixes a number of unusual behaviors with <code>var</code> that make it difficult to reason about.
-Change every <code>var</code> to <code>let</code>.
+
+We've been declaring variables with the `var` keyword. However, in modern JavaScript, it's better to use `let` instead of `var` because it fixes a number of unusual behaviors with `var` that make it difficult to reason about.
+
+Change every `var` to `let`.
+
 </section>
 
 ## Instructions

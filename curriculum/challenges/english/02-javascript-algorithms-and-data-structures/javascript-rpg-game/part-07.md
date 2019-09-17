@@ -2,13 +2,15 @@
 id: 5d5aac9c07f328a948d398d3
 title: Part 07
 challengeType: 0
-isRequired: true
 ---
 
 ## Description
 <section id='description'>
+
 Now set the inventory to equal the string "stick".
-Strings must be surrounded with double quotes <code>"</code>, single quotes <code>'</code>, or backticks <code>`</code>.
+
+Strings must be surrounded with double quotes `"`, single quotes `'`, or backticks <code>`</code>.
+
 </section>
 
 ## Instructions

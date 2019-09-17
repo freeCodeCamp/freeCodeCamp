@@ -2,12 +2,12 @@
 id: 5d6542826e6bf7a6a27aa80d
 title: Part 17
 challengeType: 0
-isRequired: true
 ---
 
 ## Description
 <section id='description'>
-For now, make the <code>goStore</code> function output the message "Going to store." to the web console. For example, here is a function that outputs the message "Hello World" to the web console (Note that code inside a function should be indented):
+
+For now, make the `goStore` function output the message "Going to store." to the web console. For example, here is a function that outputs the message "Hello World" to the web console (Note that code inside a function should be indented):
 
 ```js
 function functionName() {

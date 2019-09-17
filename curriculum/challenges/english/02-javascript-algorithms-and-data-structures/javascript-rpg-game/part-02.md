@@ -2,12 +2,13 @@
 id: 5d5a8dd907f328a948d398ce
 title: Part 02
 challengeType: 0
-isRequired: true
 ---
 
 ## Description
 <section id='description'>
-Create a variable called <code>gold</code> and set it to the value 50.
+
+Create a variable called `gold` and set it to the value 50.
+
 </section>
 
 ## Instructions

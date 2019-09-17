@@ -2,14 +2,16 @@
 id: 5d661bc6e0696bdec46938d9
 title: Part 27
 challengeType: 0
-isRequired: true
 ---
 
 ## Description
 <section id='description'>
-There is repetition in the <code>goTown</code> and <code>goStore</code> functions. When you have repetition in code, it is a sign that you need a new function.
-Above the <code>goTown</code> function, create an empty function called <code>update</code>. This time the function should take a parameter named <code>location</code> so data can be passed into the function when it is called.
-Here is an example of a function named <code>testFun</code> that accepts a parameter named <code>param</code>:
+
+There is repetition in the `goTown` and `goStore` functions. When you have repetition in code, it is a sign that you need a new function.
+
+Above the `goTown` function, create an empty function called `update`. This time the function should take a parameter named `location` so data can be passed into the function when it is called.
+
+Here is an example of a function named `testFun` that accepts a parameter named `param`:
 
 ```js
 function testFun(param) {

@@ -2,14 +2,15 @@
 id: 5d5aaa5807f328a948d398d1
 title: Part 05
 challengeType: 0
-isRequired: true
 ---
 
 ## Description
 <section id='description'>
+
 Now you will declare a variable without initializing it.
-Using the <code>let</code> keyword, declare a variable called <code>fighting</code> but don't set it equal to anything.
-Just end the line with a semicolon right after the variable name. 
+
+Using the `let` keyword, declare a variable called `fighting` but don't set it equal to anything. Just end the line with a semicolon right after the variable name. 
+
 </section>
 
 ## Instructions

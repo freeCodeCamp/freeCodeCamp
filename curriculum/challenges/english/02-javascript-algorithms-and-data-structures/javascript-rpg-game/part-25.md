@@ -2,12 +2,13 @@
 id: 5d661814e0696bdec46938d7
 title: Part 25
 challengeType: 0
-isRequired: true
 ---
 
 ## Description
 <section id='description'>
-Move the <code>goTown</code> function to above the <code>goStore</code> function. Then, copy and paste the contents of the <code>goStore</code> function into the <code>goTown</code> function.
+
+Move the `goTown` function to above the `goStore` function. Then, copy and paste the contents of the `goStore` function into the `goTown` function.
+
 </section>
 
 ## Instructions

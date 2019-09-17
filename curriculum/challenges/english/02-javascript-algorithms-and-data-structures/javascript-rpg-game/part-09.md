@@ -2,12 +2,13 @@
 id: 5d5aae1207f328a948d398d5
 title: Part 09
 challengeType: 0
-isRequired: true
 ---
 
 ## Description
 <section id='description'>
+
 For now, let's start the player with just the stick. Delete the dagger and sword items in the array. More items will be added to the array during game play.
+
 </section>
 
 ## Instructions
