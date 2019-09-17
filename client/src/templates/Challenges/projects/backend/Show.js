@@ -4,6 +4,7 @@ import { Grid, Col, Row } from '@freecodecamp/react-bootstrap';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 import { graphql } from 'gatsby';
+import Helmet from 'react-helmet';
 
 import {
   executeChallenge,
@@ -16,26 +17,26 @@ import {
   updateChallengeMeta,
   updateProjectFormValues,
   backendNS
-} from '../redux';
-import { getGuideUrl } from '../utils';
+} from '../../redux';
+import { getGuideUrl } from '../../utils';
 
-import LearnLayout from '../../../components/layouts/Learn';
-import ChallengeTitle from '../components/Challenge-Title';
-import ChallengeDescription from '../components/Challenge-Description';
-import TestSuite from '../components/Test-Suite';
-import Output from '../components/Output';
-import CompletionModal from '../components/CompletionModal';
-import HelpModal from '../components/HelpModal';
-import ProjectToolPanel from '../project/Tool-Panel';
-import ProjectForm from '../project/ProjectForm';
-import { Form } from '../../../components/formHelpers';
-import Spacer from '../../../components/helpers/Spacer';
-import { ChallengeNode } from '../../../redux/propTypes';
-import { isSignedInSelector } from '../../../redux';
+import LearnLayout from '../../../../components/layouts/Learn';
+import ChallengeTitle from '../../components/Challenge-Title';
+import ChallengeDescription from '../../components/Challenge-Description';
+import TestSuite from '../../components/Test-Suite';
+import Output from '../../components/Output';
+import CompletionModal from '../../components/CompletionModal';
+import HelpModal from '../../components/HelpModal';
+import ProjectToolPanel from '../Tool-Panel';
+import ProjectForm from '../ProjectForm';
+import { Form } from '../../../../components/formHelpers';
+import Spacer from '../../../../components/helpers/Spacer';
+import { ChallengeNode } from '../../../../redux/propTypes';
+import { isSignedInSelector } from '../../../../redux';
 
-import { backend } from '../../../../utils/challengeTypes';
+import { backend } from '../../../../../utils/challengeTypes';
 
-import '../components/test-frame.css';
+import '../../components/test-frame.css';
 
 const propTypes = {
   challengeMounted: PropTypes.func.isRequired,
@@ -86,6 +87,9 @@ const options = {
   required: ['solution'],
   types: {
     solution: 'url'
+  },
+  placeholders: {
+    solution: 'Link to solution, ex: https://codepen.io/camperbot/full/oNvPqqo'
   }
 };
 
@@ -181,6 +185,7 @@ export class BackEnd extends Component {
 
     return (
       <LearnLayout>
+        <Helmet title={`${blockNameTitle} | Learn | freeCodeCamp.org`} />
         <Grid>
           <Row>
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
@@ -228,7 +233,6 @@ export class BackEnd extends Component {
                 output={output}
               />
               <TestSuite tests={tests} />
-
               <Spacer />
             </Col>
             <CompletionModal />

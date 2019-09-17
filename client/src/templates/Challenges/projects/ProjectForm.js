@@ -49,7 +49,18 @@ export class ProjectForm extends Component {
         buttonText={`${buttonCopy}`}
         formFields={isFrontEnd ? frontEndFields : backEndFields}
         id={isFrontEnd ? 'front-end-form' : 'back-end-form'}
-        options={options}
+        options={{
+          ...options,
+          placeholders: {
+            solution:
+              'Link to solution, ex: ' +
+              (isFrontEnd
+                ? 'https://codepen.io/camperbot/full/oNvPqqo'
+                : 'https://camperbot.glitch.me'),
+            githubLink:
+              'Link to GitHub repo, ex: https://github.com/camperbot/hello'
+          }
+        }}
         submit={this.handleSubmit}
       />
     );

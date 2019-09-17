@@ -1,29 +1,29 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Grid, Col, Row } from '@freecodecamp/react-bootstrap';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 
-import { ChallengeNode } from '../../../redux/propTypes';
+import { ChallengeNode } from '../../../../redux/propTypes';
 import {
   challengeMounted,
   updateChallengeMeta,
   openModal,
   updateProjectFormValues
-} from '../redux';
-import { frontEndProject } from '../../../../utils/challengeTypes';
-import { getGuideUrl } from '../utils';
+} from '../../redux';
+import { frontEndProject } from '../../../../../utils/challengeTypes';
+import { getGuideUrl } from '../../utils';
 
-import LearnLayout from '../../../components/layouts/Learn';
-import Spacer from '../../../components/helpers/Spacer';
-import ProjectForm from './ProjectForm';
-import SidePanel from './Side-Panel';
-import ToolPanel from './Tool-Panel';
-import CompletionModal from '../components/CompletionModal';
-import HelpModal from '../components/HelpModal';
-
-import './project.css';
+import LearnLayout from '../../../../components/layouts/Learn';
+import ChallengeTitle from '../../components/Challenge-Title';
+import ChallengeDescription from '../../components/Challenge-Description';
+import Spacer from '../../../../components/helpers/Spacer';
+import ProjectForm from '../ProjectForm';
+import ProjectToolPanel from '../Tool-Panel';
+import CompletionModal from '../../components/CompletionModal';
+import HelpModal from '../../components/HelpModal';
 
 const mapStateToProps = () => ({});
 const mapDispatchToProps = dispatch =>
@@ -96,8 +96,7 @@ export class Project extends Component {
           fields: { blockName },
           forumTopicId,
           title,
-          description,
-          guideUrl
+          description
         }
       },
       openCompletionModal,
@@ -111,28 +110,35 @@ export class Project extends Component {
     const blockNameTitle = `${blockName} - ${title}`;
     return (
       <LearnLayout>
-        <Helmet title={`${blockNameTitle} | Learn freeCodeCamp}`} />
-        <div className='project-show-wrapper'>
-          <SidePanel
-            className='full-height'
-            description={description}
-            guideUrl={guideUrl}
-            introPath={introPath}
-            nextChallengePath={nextChallengePath}
-            prevChallengePath={prevChallengePath}
-            showPrevNextBtns={true}
-            title={blockNameTitle}
-          />
-          <ProjectForm
-            isFrontEnd={isFrontEnd}
-            onSubmit={openCompletionModal}
-            updateProjectForm={updateProjectFormValues}
-          />
-          <ToolPanel guideUrl={getGuideUrl({ forumTopicId, title })} />
-          <Spacer />
-        </div>
-        <CompletionModal />
-        <HelpModal />
+        <Helmet title={`${blockNameTitle} | Learn | freeCodeCamp.org`} />
+        <Grid>
+          <Row>
+            <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+              <Spacer />
+              <ChallengeTitle
+                introPath={introPath}
+                nextChallengePath={nextChallengePath}
+                prevChallengePath={prevChallengePath}
+                showPrevNextBtns={true}
+              >
+                {blockNameTitle}
+              </ChallengeTitle>
+              <ChallengeDescription description={description} />
+              <ProjectForm
+                isFrontEnd={isFrontEnd}
+                onSubmit={openCompletionModal}
+                updateProjectForm={updateProjectFormValues}
+              />
+              <ProjectToolPanel
+                guideUrl={getGuideUrl({ forumTopicId, title })}
+              />
+              <br />
+              <Spacer />
+            </Col>
+            <CompletionModal />
+            <HelpModal />
+          </Row>
+        </Grid>
       </LearnLayout>
     );
   }
