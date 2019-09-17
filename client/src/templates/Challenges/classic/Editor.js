@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
+import { navigate } from 'gatsby';
 
 import { executeChallenge, updateFile } from '../redux';
 import { userSelector, isDonationModalOpenSelector } from '../../../redux';
@@ -17,6 +18,8 @@ const propTypes = {
   executeChallenge: PropTypes.func.isRequired,
   ext: PropTypes.string,
   fileKey: PropTypes.string,
+  nextChallengePath: PropTypes.string.isRequired,
+  prevChallengePath: PropTypes.string.isRequired,
   theme: PropTypes.string,
   updateFile: PropTypes.func.isRequired
 };
@@ -118,6 +121,28 @@ class Editor extends Component {
         monaco.KeyMod.chord(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter)
       ],
       run: this.props.executeChallenge
+    });
+    this._editor.addAction({
+      id: 'navigate-prev',
+      label: 'Navigate to previous challenge',
+      keybindings: [
+        /* eslint-disable no-bitwise */
+        monaco.KeyMod.chord(
+          monaco.KeyMod.CtrlCmd | monaco.KeyMod.Shift | monaco.KeyCode.PageDown
+        )
+      ],
+      run: () => navigate(this.props.prevChallengePath)
+    });
+    this._editor.addAction({
+      id: 'navigate-next',
+      label: 'Navigate to next challenge',
+      keybindings: [
+        /* eslint-disable no-bitwise */
+        monaco.KeyMod.chord(
+          monaco.KeyMod.CtrlCmd | monaco.KeyMod.Shift | monaco.KeyCode.PageUp
+        )
+      ],
+      run: () => navigate(this.props.nextChallengePath)
     });
   };
 
