@@ -35,7 +35,7 @@ tests:
   - text: <code>factorial(2)</code> should return a number.
     testString: assert(typeof factorial(2) === 'number');
   - text: <code>factorial(3)</code> should return 6.
-    testString: assert.equal(factorial(3),results[0]);
+    testString: assert.equal(factorial(3), 6);
   - text: <code>factorial(5)</code> should return 120.
     testString: assert.equal(factorial(5),results[1]);
   - text: <code>factorial(10)</code> should return 3,628,800.
