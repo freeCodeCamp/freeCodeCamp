@@ -69,7 +69,12 @@ const propTypes = {
   initTests: PropTypes.func.isRequired,
   output: PropTypes.string,
   pageContext: PropTypes.shape({
-    challengeMeta: PropTypes.object
+    challengeMeta: PropTypes.shape({
+      id: PropTypes.string,
+      introPath: PropTypes.string,
+      nextChallengePath: PropTypes.string,
+      prevChallengePath: PropTypes.string
+    })
   }),
   tests: PropTypes.arrayOf(
     PropTypes.shape({
@@ -214,10 +219,23 @@ class ShowClassic extends Component {
   }
 
   renderEditor() {
-    const { files } = this.props;
+    const {
+      files,
+      pageContext: {
+        challengeMeta: { prevChallengePath, nextChallengePath }
+      }
+    } = this.props;
+
     const challengeFile = first(Object.keys(files).map(key => files[key]));
     return (
-      challengeFile && <Editor {...challengeFile} fileKey={challengeFile.key} />
+      challengeFile && (
+        <Editor
+          nextChallengePath={nextChallengePath}
+          prevChallengePath={prevChallengePath}
+          {...challengeFile}
+          fileKey={challengeFile.key}
+        />
+      )
     );
   }
 
