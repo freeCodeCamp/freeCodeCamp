@@ -33,6 +33,7 @@ import { Form } from '../../../../components/formHelpers';
 import Spacer from '../../../../components/helpers/Spacer';
 import { ChallengeNode } from '../../../../redux/propTypes';
 import { isSignedInSelector } from '../../../../redux';
+import Hotkeys from '../../components/Hotkeys';
 
 import { backend } from '../../../../../utils/challengeTypes';
 
@@ -186,6 +187,11 @@ export class BackEnd extends Component {
     return (
       <LearnLayout>
         <Helmet title={`${blockNameTitle} | Learn | freeCodeCamp.org`} />
+        <Hotkeys
+          introPath={introPath}
+          nextChallengePath={nextChallengePath}
+          prevChallengePath={prevChallengePath}
+        />
         <Grid>
           <Row>
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>

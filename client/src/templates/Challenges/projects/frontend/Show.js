@@ -24,6 +24,7 @@ import ProjectForm from '../ProjectForm';
 import ProjectToolPanel from '../Tool-Panel';
 import CompletionModal from '../../components/CompletionModal';
 import HelpModal from '../../components/HelpModal';
+import Hotkeys from '../../components/Hotkeys';
 
 const mapStateToProps = () => ({});
 const mapDispatchToProps = dispatch =>
@@ -110,6 +111,11 @@ export class Project extends Component {
     const blockNameTitle = `${blockName} - ${title}`;
     return (
       <LearnLayout>
+        <Hotkeys
+          introPath={introPath}
+          nextChallengePath={nextChallengePath}
+          prevChallengePath={prevChallengePath}
+        />
         <Helmet title={`${blockNameTitle} | Learn | freeCodeCamp.org`} />
         <Grid>
           <Row>

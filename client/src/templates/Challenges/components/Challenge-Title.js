@@ -1,16 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Link from '../../../components/helpers/Link';
-import { GlobalHotKeys } from 'react-hotkeys';
-import { navigate } from 'gatsby';
 
 import './challenge-title.css';
 import GreenPass from '../../../assets/icons/GreenPass';
-
-const keyMap = {
-  NAVIGATE_PREV: ['ctrl+shift+<', 'cmd+shift+<'],
-  NAVIGATE_NEXT: ['ctrl+shift+>', 'cmd+shift+>']
-};
 
 const propTypes = {
   children: PropTypes.string,
@@ -29,13 +22,8 @@ function ChallengeTitle({
   prevChallengePath,
   showPrevNextBtns
 }) {
-  const handlers = {
-    NAVIGATE_PREV: () => navigate(prevChallengePath),
-    NAVIGATE_NEXT: () => navigate(nextChallengePath)
-  };
   return (
     <div className='challenge-title-wrap'>
-      <GlobalHotKeys handlers={handlers} keyMap={keyMap} />
       {showPrevNextBtns ? (
         <Link
           aria-label='Previous lesson'
