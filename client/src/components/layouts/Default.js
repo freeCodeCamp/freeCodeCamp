@@ -154,7 +154,7 @@ class DefaultLayout extends Component {
           <style>{fontawesome.dom.css()}</style>
         </Helmet>
         <WithInstantSearch>
-          <Header disableSettings={!isSignedIn} />
+          <Header />
           <div className={`default-layout`}>
             <OfflineWarning isOnline={isOnline} isSignedIn={isSignedIn} />
             {hasMessage && flashMessage ? (
