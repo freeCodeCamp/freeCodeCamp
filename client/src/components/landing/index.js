@@ -6,6 +6,7 @@ import Login from '../Header/components/Login';
 import { Spacer } from '../helpers';
 
 import './landing.css';
+import freeCodeCampFive from '../../assets/images/freeCodeCampFive';
 
 const BigCallToAction = () => (
   <Row>
@@ -45,12 +46,7 @@ function Landing() {
           <Spacer />
           <BigCallToAction />
           <Spacer size={2} />
-          <Image
-            alt='companies featuring freeCodeCamp.org'
-            className='img-center'
-            responsive={true}
-            src='https://cdn-media-1.freecodecamp.org/learn/as-seen-on.png'
-          />
+          <freeCodeCampFive />
           <Spacer />
           <Row>
             <Col sm={10} smOffset={1} xs={12}>
