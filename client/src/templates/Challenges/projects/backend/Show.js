@@ -185,67 +185,68 @@ export class BackEnd extends Component {
     const blockNameTitle = `${blockName} - ${title}`;
 
     return (
-      <LearnLayout>
-        <Helmet title={`${blockNameTitle} | Learn | freeCodeCamp.org`} />
-        <Hotkeys
-          introPath={introPath}
-          nextChallengePath={nextChallengePath}
-          prevChallengePath={prevChallengePath}
-        />
-        <Grid>
-          <Row>
-            <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-              <Spacer />
-              <ChallengeTitle
-                introPath={introPath}
-                nextChallengePath={nextChallengePath}
-                prevChallengePath={prevChallengePath}
-                showPrevNextBtns={true}
-              >
-                {blockNameTitle}
-              </ChallengeTitle>
-              <ChallengeDescription
-                description={description}
-                instructions={instructions}
-              />
-              {challengeType === backend ? (
-                <Form
-                  buttonText={`${buttonCopy}`}
-                  formFields={formFields}
-                  id={backendNS}
-                  options={options}
-                  submit={this.handleSubmit}
+      <Hotkeys
+        introPath={introPath}
+        nextChallengePath={nextChallengePath}
+        prevChallengePath={prevChallengePath}
+      >
+        <LearnLayout>
+          <Helmet title={`${blockNameTitle} | Learn | freeCodeCamp.org`} />
+          <Grid>
+            <Row>
+              <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+                <Spacer />
+                <ChallengeTitle
+                  introPath={introPath}
+                  nextChallengePath={nextChallengePath}
+                  prevChallengePath={prevChallengePath}
+                  showPrevNextBtns={true}
+                >
+                  {blockNameTitle}
+                </ChallengeTitle>
+                <ChallengeDescription
+                  description={description}
+                  instructions={instructions}
                 />
-              ) : (
-                <ProjectForm
-                  isFrontEnd={false}
-                  onSubmit={executeChallenge}
-                  updateProjectForm={updateProjectFormValues}
+                {challengeType === backend ? (
+                  <Form
+                    buttonText={`${buttonCopy}`}
+                    formFields={formFields}
+                    id={backendNS}
+                    options={options}
+                    submit={this.handleSubmit}
+                  />
+                ) : (
+                  <ProjectForm
+                    isFrontEnd={false}
+                    onSubmit={executeChallenge}
+                    updateProjectForm={updateProjectFormValues}
+                  />
+                )}
+                <ProjectToolPanel
+                  guideUrl={getGuideUrl({ forumTopicId, title })}
                 />
-              )}
-              <ProjectToolPanel
-                guideUrl={getGuideUrl({ forumTopicId, title })}
-              />
-              <br />
-              <Output
-                defaultOutput={`/**
+                <br />
+                <Output
+                  defaultOutput={`/**
 *
 * Test output will go here
 *
 *
 */`}
-                dimensions={this.state}
-                height={150}
-                output={output}
-              />
-              <TestSuite tests={tests} />
-              <Spacer />
-            </Col>
-            <CompletionModal />
-            <HelpModal />
-          </Row>
-        </Grid>
-      </LearnLayout>
+                  dimensions={this.state}
+                  height={150}
+                  output={output}
+                />
+                <TestSuite tests={tests} />
+                <Spacer />
+              </Col>
+              <CompletionModal />
+              <HelpModal />
+            </Row>
+          </Grid>
+        </LearnLayout>
+      </Hotkeys>
     );
   }
 }
