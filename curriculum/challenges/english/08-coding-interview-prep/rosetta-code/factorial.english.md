@@ -59,15 +59,6 @@ function factorial(n) {
 </div>
 
 
-### After Test
-<div id='js-teardown'>
-
-```js
-const results=[6,120,3628800];
-```
-
-</div>
-
 </section>
 
 ## Solution
