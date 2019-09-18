@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 
 const propTypes = {};
 
-function freeCodeCampFive(props) {
+function FreeCodeCampFive(props) {
   return (
     <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -41,7 +41,7 @@ function freeCodeCampFive(props) {
   );
 }
 
-freeCodeCampFive.displayName = 'freeCodeCampFive';
-freeCodeCampFive.propTypes = propTypes;
+FreeCodeCampFive.displayName = 'FreeCodeCampFive';
+FreeCodeCampFive.propTypes = propTypes;
 
-export default freeCodeCampFive;
+export default FreeCodeCampFive;
