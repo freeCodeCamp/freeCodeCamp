@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { navigate } from 'gatsby';
 
 import { executeChallenge, updateFile } from '../redux';
 import { userSelector, isDonationModalOpenSelector } from '../../../redux';
@@ -13,13 +12,12 @@ const MonacoEditor = React.lazy(() => import('react-monaco-editor'));
 
 const propTypes = {
   canFocus: PropTypes.bool,
+  containerRef: PropTypes.any.isRequired,
   contents: PropTypes.string,
   dimensions: PropTypes.object,
   executeChallenge: PropTypes.func.isRequired,
   ext: PropTypes.string,
   fileKey: PropTypes.string,
-  nextChallengePath: PropTypes.string.isRequired,
-  prevChallengePath: PropTypes.string.isRequired,
   theme: PropTypes.string,
   updateFile: PropTypes.func.isRequired
 };
@@ -123,26 +121,13 @@ class Editor extends Component {
       run: this.props.executeChallenge
     });
     this._editor.addAction({
-      id: 'navigate-prev',
-      label: 'Navigate to previous challenge',
-      keybindings: [
-        /* eslint-disable no-bitwise */
-        monaco.KeyMod.chord(
-          monaco.KeyMod.CtrlCmd | monaco.KeyMod.Shift | monaco.KeyCode.US_COMMA
-        )
-      ],
-      run: () => navigate(this.props.prevChallengePath)
-    });
-    this._editor.addAction({
-      id: 'navigate-next',
-      label: 'Navigate to next challenge',
-      keybindings: [
-        /* eslint-disable no-bitwise */
-        monaco.KeyMod.chord(
-          monaco.KeyMod.CtrlCmd | monaco.KeyMod.Shift | monaco.KeyCode.US_DOT
-        )
-      ],
-      run: () => navigate(this.props.nextChallengePath)
+      id: 'leave-editor',
+      label: 'Leave editor',
+      keybindings: [monaco.KeyCode.Escape],
+      run: () => {
+        if (this.props.containerRef.current)
+          this.props.containerRef.current.focus();
+      }
     });
   };
 
