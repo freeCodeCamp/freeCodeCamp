@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { createSelector } from 'reselect';
 import { SearchBox } from 'react-instantsearch-dom';
+import { HotKeys, configure } from 'react-hotkeys';
 
 import {
   isSearchDropdownEnabledSelector,
@@ -51,7 +52,6 @@ class SearchBar extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
     this.handleHits = this.handleHits.bind(this);
-    this.handleKeyDown = this.handleKeyDown.bind(this);
     this.handleMouseEnter = this.handleMouseEnter.bind(this);
     this.handleMouseLeave = this.handleMouseLeave.bind(this);
     this.handleFocus = this.handleFocus.bind(this);
@@ -81,7 +81,7 @@ class SearchBar extends Component {
   }
 
   componentWillUnmount() {
-    document.addEventListener('click', this.handleFocus);
+    document.removeEventListener('click', this.handleFocus);
   }
 
   handleChange() {
@@ -167,18 +167,16 @@ class SearchBar extends Component {
     });
   }
 
-  handleKeyDown(e) {
-    const { index, hitsLength } = this.state;
-    const upKey = e.keyCode === 38;
-    const downKey = e.keyCode === 40;
+  keyMap = {
+    INDEX_UP: ['up'],
+    INDEX_DOWN: ['down']
+  };
 
-    if (upKey || downKey) {
-      // Prevent cursor from jumping to
-      // beginning or end of search bar
+  handlers = {
+    INDEX_UP: e => {
+      const { index, hitsLength } = this.state;
       e.preventDefault();
-    }
 
-    if (upKey) {
       if (index === -1) {
         this.setState({
           index: hitsLength - 1
@@ -188,7 +186,11 @@ class SearchBar extends Component {
           index: prevState.index - 1
         }));
       }
-    } else if (downKey) {
+    },
+    INDEX_DOWN: e => {
+      const { index, hitsLength } = this.state;
+      e.preventDefault();
+
       if (index === hitsLength - 1) {
         this.setState({
           index: -1
@@ -199,38 +201,42 @@ class SearchBar extends Component {
         }));
       }
     }
-  }
+  };
 
   render() {
     const { isDropdownEnabled, isSearchFocused } = this.props;
+    // Allow react-hotkeys to work on the searchbar
+    configure({ ignoreTags: ['select', 'textarea'] });
+
     return (
       <div
         className='fcc_searchBar'
         data-testid='fcc_searchBar'
         ref={this.searchBarRef}
       >
-        <div className='fcc_search_wrapper'>
-          <label className='fcc_sr_only' htmlFor='fcc_instantsearch'>
-            Search
-          </label>
-          <SearchBox
-            focusShortcuts={[83, 191]}
-            onChange={this.handleChange}
-            onFocus={this.handleFocus}
-            onKeyDown={this.handleKeyDown}
-            onSubmit={this.handleSearch}
-            showLoadingIndicator={true}
-            translations={{ placeholder }}
-          />
-          {isDropdownEnabled && isSearchFocused && (
-            <SearchHits
-              handleHits={this.handleHits}
-              handleMouseEnter={this.handleMouseEnter}
-              handleMouseLeave={this.handleMouseLeave}
-              handleSubmit={this.handleSearch}
+        <HotKeys handlers={this.handlers} keyMap={this.keyMap}>
+          <div className='fcc_search_wrapper'>
+            <label className='fcc_sr_only' htmlFor='fcc_instantsearch'>
+              Search
+            </label>
+            <SearchBox
+              focusShortcuts={[83, 191]}
+              onChange={this.handleChange}
+              onFocus={this.handleFocus}
+              onSubmit={this.handleSearch}
+              showLoadingIndicator={true}
+              translations={{ placeholder }}
             />
-          )}
-        </div>
+            {isDropdownEnabled && isSearchFocused && (
+              <SearchHits
+                handleHits={this.handleHits}
+                handleMouseEnter={this.handleMouseEnter}
+                handleMouseLeave={this.handleMouseLeave}
+                handleSubmit={this.handleSearch}
+              />
+            )}
+          </div>
+        </HotKeys>
       </div>
     );
   }
