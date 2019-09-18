@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Grid, Row, Col, Image } from '@freecodecamp/react-bootstrap';
+import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 
 import Login from '../Header/components/Login';
