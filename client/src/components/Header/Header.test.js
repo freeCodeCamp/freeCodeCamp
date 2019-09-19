@@ -30,8 +30,8 @@ describe('<NavLinks />', () => {
   it('renders to the DOM', () => {
     expect(root).toBeTruthy();
   });
-  it('has 2 a tags', () => {
-    expect(aTags.length === 2).toBeTruthy();
+  it('has 3 a tags', () => {
+    expect(aTags.length === 3).toBeTruthy();
   });
 
   it('has link to portfolio', () => {
