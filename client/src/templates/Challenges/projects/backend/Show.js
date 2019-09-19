@@ -105,6 +105,7 @@ export class BackEnd extends Component {
   componentDidMount() {
     this.initializeComponent();
     window.addEventListener('resize', this.updateDimensions);
+    this._container.focus();
   }
 
   updateDimensions() {
@@ -186,6 +187,7 @@ export class BackEnd extends Component {
 
     return (
       <Hotkeys
+        innerRef={c => (this._container = c)}
         introPath={introPath}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
