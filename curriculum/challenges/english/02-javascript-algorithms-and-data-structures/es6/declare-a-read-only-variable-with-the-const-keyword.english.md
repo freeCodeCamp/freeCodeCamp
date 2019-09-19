@@ -33,12 +33,12 @@ Change the code so that all variables are declared using <code>let</code> or <co
 tests:
   - text: <code>var</code> does not exist in your code.
     testString: getUserInput => assert(!getUserInput('index').match(/var/g));
-  - text: <code>SENTENCE</code> should be a constant variable declared with <code>const</code>.
-    testString: getUserInput => assert(getUserInput('index').match(/(const SENTENCE)/g));
+  - text: <code>sentence</code> should be a constant variable declared with <code>const</code>.
+    testString: getUserInput => assert(getUserInput('index').match(/(const sentence)/g));
   - text: <code>i</code> should be declared with <code>let</code>.
     testString: getUserInput => assert(getUserInput('index').match(/(let i)/g));
-  - text: <code>console.log</code> should be changed to print the <code>SENTENCE</code> variable.
-    testString: getUserInput => assert(getUserInput('index').match(/console\.log\(\s*SENTENCE\s*\)\s*;?/g));
+  - text: <code>console.log</code> should be changed to print the <code>sentence</code> variable.
+    testString: getUserInput => assert(getUserInput('index').match(/console\.log\(\s*sentence\s*\)\s*;?/g));
 
 ```
 
@@ -81,9 +81,9 @@ function printManyTimes(str) {
 
   // change code below this line
 
-  const SENTENCE = str + " is cool!";
+  const sentence = str + " is cool!";
   for (let i = 0; i < str.length; i+=2) {
-    console.log(SENTENCE);
+    console.log(sentence);
   }
 
   // change code above this line
