@@ -17,7 +17,7 @@ One common way is to explicitly bind <code>this</code> in the constructor so <co
 <section id='instructions'>
 The code editor has a component with a <code>state</code> that keeps track of the text. It also has a method which allows you to set the text to <code>"You clicked!"</code>. However, the method doesn't work because it's using the <code>this</code> keyword that is undefined. Fix it by explicitly binding <code>this</code> to the <code>handleClick()</code> method in the component's constructor.
 Next, add a click handler to the <code>button</code> element in the render method. It should trigger the <code>handleClick()</code> method when the button receives a click event. Remember that the method you pass to the <code>onClick</code> handler needs curly braces because it should be interpreted directly as JavaScript.
-Once you complete the above steps you should be able to click the button and see the item count increment in the HTML.
+Once you complete the above steps you should be able to click the button and see <code>You clicked!</code>.
 </section>
 
 ## Tests
