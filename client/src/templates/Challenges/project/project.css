@@ -1,9 +1,0 @@
-.project-show-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 15px;
-}

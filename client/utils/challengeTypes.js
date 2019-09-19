@@ -39,7 +39,7 @@ exports.viewTypes = {
   [html]: 'classic',
   [js]: 'classic',
   [bonfire]: 'classic',
-  [frontEndProject]: 'project',
+  [frontEndProject]: 'frontend',
   [backEndProject]: 'backend',
   [modern]: 'modern',
   [step]: 'step',

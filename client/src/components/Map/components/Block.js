@@ -10,10 +10,10 @@ import { makeExpandedBlockSelector, toggleBlock } from '../redux';
 import { completedChallengesSelector } from '../../../redux';
 import Caret from '../../../assets/icons/Caret';
 import { blockNameify } from '../../../../utils/blockNameify';
-/* eslint-disable max-len */
 import GreenPass from '../../../assets/icons/GreenPass';
 import GreenNotCompleted from '../../../assets/icons/GreenNotCompleted';
-/* eslint-enable max-len */
+import IntroInformation from '../../../assets/icons/IntroInformation';
+
 const mapStateToProps = (state, ownProps) => {
   const expandedSelector = makeExpandedBlockSelector(ownProps.blockDashedName);
 
@@ -95,7 +95,11 @@ export class Block extends Component {
           key={'map-challenge' + challenge.fields.slug}
         >
           <span className='badge map-badge'>
-            {i !== 0 && this.renderCheckMark(challenge.isCompleted)}
+            {i === 0 ? (
+              <IntroInformation style={mapIconStyle} />
+            ) : (
+              this.renderCheckMark(challenge.isCompleted)
+            )}
           </span>
           <Link
             onClick={this.handleChallengeClick(challenge.fields.slug)}
