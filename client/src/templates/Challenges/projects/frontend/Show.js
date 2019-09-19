@@ -63,6 +63,7 @@ export class Project extends Component {
     } = this.props;
     updateChallengeMeta({ ...challengeMeta, title, challengeType });
     challengeMounted(challengeMeta.id);
+    this._container.focus();
   }
 
   componentDidUpdate(prevProps) {
@@ -111,6 +112,7 @@ export class Project extends Component {
     const blockNameTitle = `${blockName} - ${title}`;
     return (
       <Hotkeys
+        innerRef={c => (this._container = c)}
         introPath={introPath}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
