@@ -52,7 +52,7 @@ function Welcome({ name }) {
               <Link className='btn btn-lg btn-primary btn-block' to='/learn'>
                 Build Projects and Earn Certifications
               </Link>
-              <Link className='btn btn-lg btn-primary btn-block' to='settings'>
+              <Link className='btn btn-lg btn-primary btn-block' to='/settings'>
                 Update Your Developer Portfolio
               </Link>
               <Link

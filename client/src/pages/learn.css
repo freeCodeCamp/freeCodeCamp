@@ -7,6 +7,10 @@
   top: 38px;
 }
 
+.learn-page-wrapper .signup-btn {
+  width: 100%;
+}
+
 @media screen and (max-width: 630px) {
   .learn-page-wrapper {
     padding: 0 40px;

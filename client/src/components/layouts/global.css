@@ -379,3 +379,7 @@ blockquote small,
 blockquote .small {
   color: var(--gray-45);
 }
+
+.alert {
+  border-radius: 0px;
+}

@@ -1,17 +1,39 @@
 import React, { Component, Fragment } from 'react';
+import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { StripeProvider, Elements } from 'react-stripe-elements';
 import { Grid, Row, Col, Button } from '@freecodecamp/react-bootstrap';
+import { connect } from 'react-redux';
+import { createSelector } from 'reselect';
 
-import { stripePublicKey } from '../../config/env.json';
-
-import Spacer from '../components/helpers/Spacer';
+import { stripePublicKey, apiLocation } from '../../config/env.json';
+import { Spacer, Loader } from '../components/helpers';
 import DonateOther from '../components/Donation/components/DonateOther';
 import DonateForm from '../components/Donation/components/DonateForm';
 import DonateText from '../components/Donation/components/DonateText';
 import PoweredByStripe from '../components/Donation/components/poweredByStripe';
+import { signInLoadingSelector, isSignedInSelector, hardGoTo } from '../redux';
 
-class DonatePage extends Component {
+const mapStateToProps = createSelector(
+  signInLoadingSelector,
+  isSignedInSelector,
+  (showLoading, isSignedIn) => ({
+    showLoading,
+    isSignedIn
+  })
+);
+
+const mapDispatchToProps = dispatch => ({
+  navigate: location => dispatch(hardGoTo(location))
+});
+
+const propTypes = {
+  isSignedIn: PropTypes.bool.isRequired,
+  navigate: PropTypes.func.isRequired,
+  showLoading: PropTypes.bool.isRequired
+};
+
+export class DonatePage extends Component {
   constructor(...props) {
     super(...props);
     this.state = {
@@ -28,7 +50,7 @@ class DonatePage extends Component {
         ...state,
         stripe: window.Stripe(stripePublicKey)
       }));
-    } else {
+    } else if (document.querySelector('#stripe-js')) {
       document
         .querySelector('#stripe-js')
         .addEventListener('load', this.handleStripeLoad);
@@ -60,6 +82,16 @@ class DonatePage extends Component {
 
   render() {
     const { showOtherOptions, stripe } = this.state;
+    const { showLoading, isSignedIn, navigate } = this.props;
+
+    if (showLoading) {
+      return <Loader fullScreen={true} />;
+    }
+
+    if (!showLoading && !isSignedIn) {
+      return navigate(`${apiLocation}/signin`);
+    }
+
     return (
       <Fragment>
         <Helmet title='Support our nonprofit | freeCodeCamp.org' />
@@ -97,5 +129,9 @@ class DonatePage extends Component {
 }
 
 DonatePage.displayName = 'DonatePage';
+DonatePage.propTypes = propTypes;
 
-export default DonatePage;
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(DonatePage);

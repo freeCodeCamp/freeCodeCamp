@@ -1,0 +1,145 @@
+.universal-nav {
+  z-index: 300;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  /* overflow-y: hidden; */
+  height: 40px;
+  font-size: 18px;
+  font-family: 'Lato', sans-serif;
+  height: calc(2 * var(--header-height));
+  background: var(--theme-color);
+  position: absolute;
+  z-index: 1000;
+  color: var(--gray-00);
+  width: 100%;
+  padding: 0 15px;
+  top: 0;
+}
+
+.universal-nav a {
+  text-decoration: none;
+}
+
+.universal-nav-middle {
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  margin-right: 10px;
+  letter-spacing: 0.4px;
+  white-space: nowrap;
+  -ms-overflow-scrolling: touch;
+  margin-right: 0;
+}
+
+.universal-nav-logo {
+  color: var(--gray-00);
+  font-size: 1.7rem;
+  line-height: 1em;
+  font-weight: bold;
+  letter-spacing: -0.5px;
+  display: flex;
+  flex-shrink: 0;
+  position: absolute;
+  left: 15px;
+  top: 0px;
+}
+
+.universal-nav-logo:hover {
+  text-decoration: none;
+  background-color: var(--theme-color);
+}
+
+.universal-nav-logo img {
+  display: block;
+  width: auto;
+  height: 25px;
+  margin-top: 7px;
+}
+
+.nav-list {
+  display: flex;
+  margin: 0 0 0 -12px;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-list {
+  height: var(--header-height);
+}
+
+.nav-list li {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list li a {
+  display: block;
+  margin: 0;
+  padding: 8px 15px;
+  color: var(--gray-00);
+  opacity: 1;
+  white-space: nowrap;
+  height: var(--header-height);
+}
+
+.nav-list li:hover {
+  background: var(--gray-00);
+}
+
+.nav-list li a:hover {
+  color: var(--theme-color);
+  text-decoration: none;
+  background: var(--gray-00);
+}
+
+.universal-nav-right {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  height: 38px;
+}
+
+@media (max-width: 380px) {
+  .universal-nav {
+    padding: 0px 5px;
+  }
+  .universal-nav-logo {
+    left: 5px;
+  }
+  .nav-list li a {
+    padding: 8px 5px;
+  }
+}
+
+@media (min-width: 700px) {
+  .universal-nav-logo {
+    margin-left: auto;
+    margin-right: auto;
+    position: static;
+    left: auto;
+    top: auto;
+  }
+  .main-nav-group {
+    margin-left: auto;
+  }
+  .universal-nav-middle {
+    flex: 1 0 33%;
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .universal-nav-left {
+    flex: 1 0 33%;
+    margin-left: 0px;
+  }
+  .universal-nav-right {
+    flex: 1 0 33%;
+    margin-left: auto;
+  }
+  .universal-nav {
+    height: var(--header-height);
+  }
+}
