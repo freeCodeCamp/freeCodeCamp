@@ -54,7 +54,7 @@ function Landing() {
             <Col md={3} mdOffset={1}>
               <SpotifyLogo />
             </Col>
-            <Col md={3} mdOffset={1}>
+            <Col md={2} mdOffset={1}>
               <AppleLogo />
             </Col>
             <Col md={3} mdOffset={1}>
