@@ -116,7 +116,7 @@ class Editor extends Component {
       label: 'Run tests',
       keybindings: [
         /* eslint-disable no-bitwise */
-        monaco.KeyMod.chord(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter)
+        monaco.KeyMod.chord(monaco.KeyMod.WinCtrl | monaco.KeyCode.Enter)
       ],
       run: this.props.executeChallenge
     });
