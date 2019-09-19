@@ -1,9 +1,19 @@
 <!-- do not translate this -->
-| [Read these guidelines in your spoken language](/docs/i18n-languages) |
+| [Read these guidelines in other languages](/docs/i18n-languages) |
 |-|
 <!-- do not translate this -->
 
 # How to work on coding challenges
+
+Our goal is to develop a fun and clear interactive learning experience.
+
+Designing interactive coding challenges is difficult. It would be much easier to write a lengthy explanation or to create a video tutorial, and there's a place for those on Medium and YouTube. However, for our core curriculum, we're sticking with what works best for most people - a fully interactive, video game-like experience.
+
+We want campers to achieve a flow state. We want them to build momentum and blast through our curriculum with as few snags as possible. We want them to go into the projects with confidence and a wide exposure to programming concepts.
+
+Creating these challenges requires immense creativity and attention to detail. But you'll have plenty of help. You have support from a whole team of contributors, whom you can bounce ideas off of and demo your challenges to. Stay active in the [contributors room](https://gitter.im/freecodecamp/contributors) and ask lots of questions.
+
+With your help, we can design an interactive coding curriculum that will help millions of people learn to code for years to come.
 
 The content for each challenge is stored in its own markdown file. This markdown file is later coverted using our tools, to webpage that you can interact with. You can find all of freeCodeCamp.org's curricular content in the [`/curriculum`](/curriculum) directory.
 
@@ -12,16 +22,16 @@ There are two ways you can work on these challenges:
 - We recommend, you clone the project and edit locally on your computer. For help with that, read our [contributing guidelines here](/CONTRIBUTING.md).
 - Or optionally, you can modify a challenge within the GitHub interface, by clicking the pencil icon to start editing the file.
 
-### Challenge Template
+## Challenge Template
 
 Below is a template of what the challenge markdown files look like.
 
 **Notes:**
 
 1. In the below sections, examples of `{ext}` are:
-    * `html` - HTML/CSS
-    * `js` - JavaScript
-    * `jsx` - JSX
+    - `html` - HTML/CSS
+    - `js` - JavaScript
+    - `jsx` - JSX
 
 2. For the `Tests` section below, `text` and `testString` should be valid YAML strings. `testString` can be a stringified function or expression possibly using Chai asserts.
 
@@ -97,34 +107,36 @@ Optional Test tear down code.
 </section>
 ````
 
+## Numbering Challenges
 
-## Proper nouns
+Every challenge needs an `id`. If you don't specify one, then MongoDB will create a new random one when it saves the data; however, we don't want it to do that, since we want the challenge ids to be consistent across different environments (staging, production, lots of different developers, etc.).
 
-Proper nouns should use correct capitalization when possible. Below is a list of words as they should appear in the challenges.
+To generate a new one in a shell (assuming MongoDB is running separately):
 
-- JavaScript (capital letters in "J" and "S" and no abbreviations)
-- Node.js
-- Front-end development (adjective form with a dash) is when you're working on the front end (noun form with no dash). The same goes with "back end", "full stack", and many other compound terms.
+1. Run `mongo` command
+2. Run `ObjectId()` command
 
-## The 2-minute rule
+For example:
 
-Each challenge should be solvable within 120 seconds by a native English speaker who has completed the challenges leading up to it. This includes the amount of time it takes to read the directions, understand the seeded code, write their own code, and get all the tests to pass.
+```bash
+$ mongo
+MongoDB shell version v3.6.1
+connecting to: mongodb://127.0.0.1:27017
+MongoDB server version: 3.4.10
+...
+$ ObjectId()
+ObjectId("5a474d78df58bafeb3535d34")
+```
 
-If it takes longer than two minutes to complete the challenge, you have two options:
-- Simplify the challenge, or
-- Split the challenge into two challenges.
+The result is a new id, for example `5a474d78df58bafeb3535d34` above.
 
-The 2-minute rule forces you, the challenge designer, to make your directions concise, your seed code clear, and your tests straight-forward.
+Once you have your id, put it into the markdown file as the `id` field at the top, e.g.
 
-We have JavaScript events that track how long it takes for campers to solve challenges and we can use them to identify challenges that need to be simplified or split.
-
-## Modularity
-
-Each challenge should teach exactly one concept, and that concept should be apparent from the challenge's name.
-
-We can reinforce previously covered concepts through repetition and variations - for example, introducing h1 elements in one challenge, then h3 elements a few challenges later.
-
-Our goal is to have thousands of 2-minute challenges. These can flow together and reiterate previously-covered concepts.
+```yml
+---
+id: 5a474d78df58bafeb3535d34
+title: Challenge Title
+```
 
 ## Naming challenges
 
@@ -140,47 +152,8 @@ Here are some example challenge names:
 - Condense arrays with .reduce
 - Use Bracket Notation to Find the First Character in a String
 
-## Numbering Challenges
 
-Every challenge needs an `id`. If you don't specify one, then MongoDB will create a new random one when it saves the data; however, we don't want it to do that, since we want the challenge ids to be consistent across different environments (staging, production, lots of different developers, etc.).
-
-To generate a new one in a shell (assuming MongoDB is running separately):
-
-1. Run `mongo` command
-2. Run `ObjectId()` command
-
-For example:
-
-```sh
-$ mongo
-MongoDB shell version v3.6.1
-connecting to: mongodb://127.0.0.1:27017
-MongoDB server version: 3.4.10
-...
-$ ObjectId()
-ObjectId("5a474d78df58bafeb3535d34")
-```
-
-The result is a new id, for example `5a474d78df58bafeb3535d34` above.
-
-Once you have your id, put it into the markdown file as the `id` field at the top, e.g.
-
-```
----
-id: 5a474d78df58bafeb3535d34
-title: Challenge Title
-```
-
-
-## Writing tests
-
-Challenges should have the minimum number of tests necessary to verify that a camper understands a concept.
-
-Our goal is to communicate the single point that the challenge is trying to teach, and test that they have understood that point.
-
-Challenge tests can make use of the Node.js and Chai.js assertion libraries. Also, if needed, user-generated code can be accessed in the `code` variable.
-
-## Writing instructions
+## Writing challenge descriptions/instructions
 
 Sentences should be clear and concise with minimal jargon. If used, jargon should be immediately defined in plain English.
 
@@ -194,21 +167,47 @@ You can add diagrams if absolutely necessary.
 
 Don't use emojis or emoticons in challenges. freeCodeCamp has a global community, and the cultural meaning of an emoji or emoticon may be different around the world. Also, emojis can render differently on different systems.
 
-## Formatting challenge text
+Proper nouns should use correct capitalization when possible. Below is a list of words as they should appear in the challenges.
+
+- JavaScript (capital letters in "J" and "S" and no abbreviations)
+- Node.js
+- Front-end development (adjective form with a dash) is when you're working on the front end (noun form with no dash). The same goes with "back end", "full stack", and many other compound terms.
+
+### The 2-minute rule
+
+Each challenge should be solvable within 120 seconds by a native English speaker who has completed the challenges leading up to it. This includes the amount of time it takes to read the directions/instructions, understand the seeded code, write their own code, and get all the tests to pass.
+
+If it takes longer than two minutes to complete the challenge, you have two options:
+
+- Simplify the challenge, or
+- Split the challenge into two challenges.
+
+The 2-minute rule forces you, the challenge designer, to make your directions concise, your seed code clear, and your tests straight-forward.
+
+We have JavaScript events that track how long it takes for campers to solve challenges and we can use them to identify challenges that need to be simplified or split.
+
+### Modularity
+
+Each challenge should teach exactly one concept, and that concept should be apparent from the challenge's name.
+
+We can reinforce previously covered concepts through repetition and variations - for example, introducing h1 elements in one challenge, then h3 elements a few challenges later.
+
+Our goal is to have thousands of 2-minute challenges. These can flow together and reiterate previously-covered concepts.
+
+### Formatting challenge text
 
 Here are specific formatting guidelines for challenge text and examples:
 
 - Language keywords go in `<code>` tags. For example, HTML tag names or CSS property names
 - The first instance of a keyword when it's being defined, or general keywords (i.e. "object" or "immutable") go in `<dfn>` tags
 - References to code parts (i.e. function, method or variable names) should be wrapped in `<code>` tags. See example below:
-
-````
-Use <code>parseInt</code> to convert the variable <code>realNumber</code> into an integer.
-````
+- Use <code>parseInt</code> to convert the variable <code>realNumber</code> into an integer.
 - Multi-line code blocks **must be preceded by an empty line**.  The next line must start with three backticks followed immediately by one of the [supported languages](https://prismjs.com/#supported-languages).  To complete the code block, you must start a newline which only has three backticks and **another empty line**.
 **Note:** If you are going to use an example code in YAML, use `yaml` instead of `yml` for the language to the right of the backticks.
+
 See example below:
-````
+
+````md
 The following is an example of code:
 
 ```{language}
@@ -216,11 +215,19 @@ The following is an example of code:
 [YOUR CODE HERE]
 
 ```
-
 ````
+
 - Additional information in the form of a note should be formatted `<strong>Note:</strong> Rest of note text...`
 - If multiple notes are needed, then list all of the notes in separate sentences using the format `<strong>Notes:</strong> First note text.  Second note text.`.
 - Use double quotes where applicable
+
+## Writing tests
+
+Challenges should have the minimum number of tests necessary to verify that a camper understands a concept.
+
+Our goal is to communicate the single point that the challenge is trying to teach, and test that they have understood that point.
+
+Challenge tests can make use of the Node.js and Chai.js assertion libraries. Also, if needed, user-generated code can be accessed in the `code` variable.
 
 ## Formatting seed code
 
@@ -233,61 +240,15 @@ Here are specific formatting guidelines for the challenge seed code:
 
     `// Fix this line`
 
-## Formatting Solution
+## Curriculum Challenge Hints and Solutions
 
-The challenge solution must be in proper markdown tags. The code must be wrapped in `section` tags with an id of `solution`.
+Each challenge has a `Get a Hint` button, so a user can access any hints/solutions which have been created for the challenge.  Curriculum hints/solutions topics are located on [our forum](https://www.freecodecamp.org/forum/c/guide) under the `Guide` category.
 
-````
-<section id='solution'>
+If you find a problem with an existing challenge's hints/solutions topic, you can make suggestions in the comments below the main wiki post if you are at least a level 3 forum user.  Select moderators will review the comments and decide whether or not to include the changes in the existing topic.
 
-```html or ```js
- [ SOLUTION CODE]
-```
+### Adding new Challenge hints/solutionsd Topics
 
-</section>
-````
-
-Example:
-
-````
-<section id='solution'>
-
-```html
-<style>
-  #container p {
-    font-family: Arial, sans-serif;
-  }
-</style>
-
-<div id="container">
-  <p>Hello World!</p>
-</div>
-```
-
-</section>
-````
-
-## Why do we have all these rules?
-
-Our goal is to develop a fun and clear interactive learning experience.
-
-Designing interactive coding challenges is difficult. It would be much easier to write a lengthy explanation or to create a video tutorial, and there's a place for those on Medium and YouTube. However, for our core curriculum, we're sticking with what works best for most people - a fully interactive, video game-like experience.
-
-We want campers to achieve a flow state. We want them to build momentum and blast through our curriculum with as few snags as possible. We want them to go into the projects with confidence and a wide exposure to programming concepts.
-
-Creating these challenges requires immense creativity and attention to detail. But you'll have plenty of help. You have support from a whole team of contributors, whom you can bounce ideas off of and demo your challenges to. Stay active in the [contributors room](https://gitter.im/freecodecamp/contributors) and ask lots of questions.
-
-With your help, we can design an interactive coding curriculum that will help millions of people learn to code for years to come.
-
-### Curriculum Challenge Hints and Solutions
-
-With your help, we can create a comprehensive reference tool that will help millions of people who are learning to code, for years to come. Curriculum hint topics are located on [our forum](https://www.freecodecamp.org/forum/c/guide) under the `Guide` category.
-
-If you find a problem with an existing challenge's hints/solutions topic, you can make suggestions in the comments below the main wiki post.  Select moderators will review the comments and decide whether or not to include the changes in the existing topic.
-
-#### Adding New Challenge Related Topics
-
-Only moderators should add new hints and solutions topics when new challenges are added to the curriculum.
+Only moderators can add new hints and solutions topics when new challenges are added to the curriculum.
 
 Take the following steps when adding a new challenge hints/solutions related topic.
 
@@ -296,16 +257,59 @@ Take the following steps when adding a new challenge hints/solutions related top
 3. `camperbot` should be the owner of these topics/posts, so you will need to request an admin to change the ownership of the main post to `camperbot`.
 4. Once the new topic is created, a forum topic id is created.  It is located at the end of the forum topic URL.  This id must be added to the frontmatter of the curriculum challenge file via the normal pull request process for the `Get a Hint` button to link to the topic.
 
-#### Guidelines for content of hints and solutions topics
+### Guidelines for content of hints and solutions topics
 
-When proposing a solution for a curriculum challenge related Guide topic, the full code should be given. This includes all the original seed code plus any changes needed to pass all the challenge tests.
+When proposing a solution for a curriculum challenge related Guide topic, the full code must be added. This includes all the original seed code plus any changes needed to pass all the challenge tests.  The following template should be used when creating new hints/solutions topics:
+
+````md
+# Challenge Name Goes Here
+
+---
+## Problem Explanation
+
+This summarizes what need to be done without just restating the challenge description and/or instructions.  This is an optional section
+
+#### Relevant Links
+- [Link Text](link_url_goes_here)
+- [Link Text](link_url_goes_here)
+
+---
+## Hints
+
+### Hint 1
+Hint goes here
+
+### Hint 2
+Hint goes here
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
+```js
+function myFunc() {
+  console.log('Hello World!');
+}
+```
+
+#### Code Explanation
+
+- Code explanation goes here
+- Code explanation goes here
+
+#### Relevant Links
+
+- [Link Text](link_url_goes_here)
+- [Link Text](link_url_goes_here)
+
+</details>
+````
 
 ### Useful Links
 
 Creating and Editing Challenges:
 
-1. [Challenge Style Guide](style-guide-for-curriculum-challenges.md) - how to create and format challenges
+1. [Challenge types](https://github.com/freeCodeCamp/learn/blob/a5cb25704168aa37f59a582f0bb5a19b7bd89b46/utils/challengeTypes.js) - what the numeric challenge type values mean (enum).
 
-2. [Challenge types](https://github.com/freeCodeCamp/learn/blob/a5cb25704168aa37f59a582f0bb5a19b7bd89b46/utils/challengeTypes.js) - what the numeric challenge type values mean (enum).
-
-3. [Contributing to FreeCodeCamp - Writing ES6 Challenge Tests ](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - a video following [Ethan Arrowood](https://twitter.com/ArrowoodTech) as he contributes to the old version of the curriculum
+2. [Contributing to FreeCodeCamp - Writing ES6 Challenge Tests ](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - a video following [Ethan Arrowood](https://twitter.com/ArrowoodTech) as he contributes to the old version of the curriculum

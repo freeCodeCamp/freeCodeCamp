@@ -1,5 +1,5 @@
 <!-- do not translate this -->
-| [Read these guidelines in your spoken language](/docs/i18n-languages) |
+| [Read these guidelines in other languages](/docs/i18n-languages) |
 |-|
 <!-- do not translate this -->
 
