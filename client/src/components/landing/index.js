@@ -1,16 +1,11 @@
 import React, { Fragment } from 'react';
-import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
+import { Grid, Row, Col, Image } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 
 import Login from '../Header/components/Login';
 import { Spacer } from '../helpers';
 
 import './landing.css';
-import AmazonLogo from '../../assets/images/AmazonLogo';
-import AppleLogo from '../../assets/images/AppleLogo';
-import GoogleLogo from '../../assets/images/GoogleLogo';
-import SpotifyLogo from '../../assets/images/SpotifyLogo';
-import MicrosoftLogo from '../../assets/images/MicrosoftLogo';
 
 const BigCallToAction = () => (
   <Row>
@@ -43,33 +38,19 @@ function Landing() {
                 Grow your portfolio and get a developer job.
               </h2>
               <h2 className='medium-heading'>
-                Izt's all 100% free thanks to our nonprofit's donors.
+                It's all 100% free thanks to our nonprofit's donors.
               </h2>
             </Col>
           </Row>
           <Spacer />
           <BigCallToAction />
           <Spacer size={2} />
-          <Row>
-            <Col md={3} mdOffset={1}>
-              <SpotifyLogo />
-            </Col>
-            <Col md={2} mdOffset={1}>
-              <AppleLogo />
-            </Col>
-            <Col md={3} mdOffset={1}>
-              <MicrosoftLogo />
-            </Col>
-          </Row>
-          <Spacer />
-          <Row>
-            <Col md={3} mdOffset={2}>
-              <AmazonLogo />
-            </Col>
-            <Col md={3} mdOffset={2}>
-              <GoogleLogo />
-            </Col>
-          </Row>
+          <Image
+            alt='companies featuring freeCodeCamp.org'
+            className='img-center'
+            responsive={true}
+            src='https://cdn-media-1.freecodecamp.org/learn/as-seen-on.png'
+          />
           <Spacer />
           <Row>
             <Col sm={10} smOffset={1} xs={12}>
