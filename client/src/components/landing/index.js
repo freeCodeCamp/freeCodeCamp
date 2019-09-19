@@ -6,7 +6,13 @@ import Login from '../Header/components/Login';
 import { Spacer } from '../helpers';
 
 import './landing.css';
-import FreeCodeCampFive from '../../assets/images/FreeCodeCampFive';
+import {
+  SpotifyLogo,
+  AppleLogo,
+  MicrosoftLogo,
+  AmazonLogo,
+  GoogleLogo
+} from '../../assets/images/';
 
 const BigCallToAction = () => (
   <Row>
@@ -46,7 +52,11 @@ function Landing() {
           <Spacer />
           <BigCallToAction />
           <Spacer size={2} />
-          <FreeCodeCampFive />
+          <SpotifyLogo />
+          <AppleLogo />
+          <MicrosoftLogo />
+          <AmazonLogo />
+          <GoogleLogo />
           <Spacer />
           <Row>
             <Col sm={10} smOffset={1} xs={12}>
