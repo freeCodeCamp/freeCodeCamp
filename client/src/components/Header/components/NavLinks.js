@@ -9,7 +9,7 @@ export function NavLinks() {
           <Link to='/'>Light</Link>
         </li>
         <li className='nav-portfolio' role='menuitem'>
-          <Link to='/settings'>Portfolio</Link>
+          <Link to='/portfolio'>Portfolio</Link>
         </li>
       </ul>
     </div>

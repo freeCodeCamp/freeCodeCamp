@@ -25,7 +25,7 @@ describe('<NavLinks />', () => {
     return acc;
   }, []);
 
-  const expectedLinks = ['/', '/settings'];
+  const expectedLinks = ['/', '/portfolio'];
 
   it('renders to the DOM', () => {
     expect(root).toBeTruthy();
@@ -34,7 +34,7 @@ describe('<NavLinks />', () => {
     expect(aTags.length === 2).toBeTruthy();
   });
 
-  it('has links to settings', () => {
+  it('has link to portfolio', () => {
     // checks if all links in expected links exist in links
     expect(expectedLinks.every(elem => links.indexOf(elem) > -1)).toBeTruthy();
   });
