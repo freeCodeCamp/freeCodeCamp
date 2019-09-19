@@ -53,7 +53,7 @@
     "react-final-form": "^6.3.0",
     "react-ga": "^2.6.0",
     "react-helmet": "^5.2.1",
-    "react-hotkeys": "^2.0.0-pre9",
+    "react-hotkeys": "^2.0.0",
     "react-identicons": "^1.1.7",
     "react-instantsearch-dom": "^5.7.0",
     "react-monaco-editor": "^0.30.1",

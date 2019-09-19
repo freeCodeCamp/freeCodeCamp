@@ -26,12 +26,8 @@ const propTypes = {
   description: PropTypes.string,
   guideUrl: PropTypes.string,
   instructions: PropTypes.string,
-  introPath: PropTypes.string,
   isChallengeCompleted: PropTypes.bool,
-  nextChallengePath: PropTypes.string,
-  prevChallengePath: PropTypes.string,
   section: PropTypes.string,
-  showPrevNextBtns: PropTypes.bool,
   showToolPanel: PropTypes.bool,
   tests: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string,
@@ -61,27 +57,17 @@ export class SidePanel extends Component {
       title,
       description,
       instructions,
-      introPath,
       isChallengeCompleted,
       guideUrl,
-      nextChallengePath,
-      prevChallengePath,
       tests,
       section,
-      showPrevNextBtns,
       showToolPanel,
       videoUrl
     } = this.props;
     return (
       <div className='instructions-panel' role='complementary'>
         <div>
-          <ChallengeTitle
-            introPath={introPath}
-            isCompleted={isChallengeCompleted}
-            nextChallengePath={nextChallengePath}
-            prevChallengePath={prevChallengePath}
-            showPrevNextBtns={showPrevNextBtns}
-          >
+          <ChallengeTitle isCompleted={isChallengeCompleted}>
             {title}
           </ChallengeTitle>
           <ChallengeDescription

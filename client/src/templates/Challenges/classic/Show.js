@@ -199,12 +199,6 @@ class ShowClassic extends Component {
       instructions
     } = this.getChallenge();
 
-    const {
-      introPath,
-      nextChallengePath,
-      prevChallengePath
-    } = this.props.pageContext.challengeMeta;
-
     const { forumTopicId, title } = this.getChallenge();
     return (
       <SidePanel
@@ -212,11 +206,7 @@ class ShowClassic extends Component {
         description={description}
         guideUrl={getGuideUrl({ forumTopicId, title })}
         instructions={instructions}
-        introPath={introPath}
-        nextChallengePath={nextChallengePath}
-        prevChallengePath={prevChallengePath}
         section={dasherize(blockName)}
-        showPrevNextBtns={true}
         showToolPanel={showToolPanel}
         title={this.getBlockNameTitle()}
         videoUrl={this.getVideoUrl()}
