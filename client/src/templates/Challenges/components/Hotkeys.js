@@ -4,7 +4,7 @@ import { HotKeys, GlobalHotKeys } from 'react-hotkeys';
 import { navigate } from 'gatsby';
 
 const keyMap = {
-  EXECUTE_CHALLENGE: 'ctrl+enter',
+  EXECUTE_CHALLENGE: ['ctrl+enter', 'cmd+enter'],
   NAVIGATE_PREV: ['ctrl+left', 'cmd+left'],
   NAVIGATE_NEXT: ['ctrl+right', 'cmd+right']
 };
