@@ -287,7 +287,7 @@ A quick reference to the commands that you will need when working locally.
 
 > ### Todo: Add docker quick command list
 
-**Docker Build:**
+**Local Build:**
 
 | command | description |
 | ------- | ----------- |
