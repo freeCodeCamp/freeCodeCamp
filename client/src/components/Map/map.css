@@ -19,6 +19,7 @@ button.map-title {
   padding-bottom: 18px;
   background: transparent;
   border: none;
+  text-align: left;
 }
 
 button.map-title:hover {
@@ -49,10 +50,39 @@ li.open > .map-title svg:first-child {
 }
 
 .map-challenge-title {
+  display: flex;
   margin-bottom: 0.25rem;
-  max-width: calc(100% - 80px);
+  max-width: calc(100% - 105px);
+}
+
+@media (max-width: 640px) {
+  .map-ui .block ul {
+    padding-inline-start: 6px;
+    font-size: 0.9rem;
+  }
+  button.map-title {
+    width: 100%;
+  }
+  .map-ui ul {
+    padding-inline-start: 15px;
+  }
+  .map-ui > ul {
+    padding-inline-start: 0;
+  }
+  .map-challenge-title {
+    max-width: 100%;
+  }
+  .map-title-completed {
+    flex-shrink: 0;
+    padding-left: 15px;
+  }
 }
 
 .block a {
   text-decoration: none;
+}
+
+/* 14px is the width of the expansion arrow */
+.superblock {
+  max-width: calc(100% - 14px);
 }
