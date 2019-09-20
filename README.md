@@ -5,7 +5,7 @@
 [![Open Source Helpers](https://www.codetriage.com/freecodecamp/freecodecamp/badges/users.svg)](https://www.codetriage.com/freecodecamp/freecodecamp)
 [![Setup Automated](https://img.shields.io/badge/setup-automated-blue?logo=gitpod)](https://gitpod.io/from-referrer/)
 
-## Welcome to freeCodeCamp.org's open source codebase and curriculum
+## freeCodeCamp.org's open source codebase and curriculum
 
 [freeCodeCamp.org](https://www.freecodecamp.org) is a friendly community where you can learn to code for free. It is run by a [donor-supported 501(c)(3) nonprofit](https://donate.freecodecamp.org) with the goal of helping millions of busy adults transition into tech. Our community has already helped more than 10,000 people get their first developer job.
 
@@ -123,16 +123,16 @@ Our community also has:
 - A [forum](https://www.freecodecamp.org/forum) where you can usually get programming help or project feedback within hours.
 - A [YouTube channel](https://youtube.com/freecodecamp) with free courses on Python, SQL, Android, and a wide variety of other technologies.
 - A [podcast](https://podcast.freecodecamp.org/) with technology insights and inspiring stories from developers.
-- [Local study groups](https://study-group-directory.freecodecamp.org/) around the world, where you can code together in person
 - A comprehensive [guide to thousands of programming topics](https://guide.freecodecamp.org/)
 - A [Developer News](https://www.freecodecamp.org/news) publication, a free, open source, no-ads place to cross-post your blog articles.
-- A [Facebook group](https://www.facebook.com/groups/freeCodeCampEarth/permalink/428140994253892/) with over 100,000 members worldwide
 
 > ### [Join our community here](https://www.freecodecamp.org/signin).
 
 ### Reporting Bugs and Issues
 
-If you think you've found a bug, first read the [How to Report a Bug](https://www.freecodecamp.org/forum/t/how-to-report-a-bug/19543) article and follow its instructions. If you're confident it's a new bug, and have confirmed that someone else is facing the same issue, go ahead and create a new GitHub issue. Be sure to include as much information as possible so we can reproduce the bug.
+If you think you've found a bug, first read the [how to report a bug](https://www.freecodecamp.org/forum/t/how-to-report-a-bug/19543) article and follow its instructions.
+
+If you're confident it's a new bug, and have confirmed that someone else is facing the same issue, go ahead and create a new GitHub issue. Be sure to include as much information as possible so we can reproduce the bug.
 
 ### Reporting Security Issues
 
@@ -144,7 +144,7 @@ If you think you have found a vulnerability, please report responsibly. Don't cr
 
 ### Platform, Build and Deployment Status
 
-The build and deployment status for the code is available in [our DevOps Guide](/docs/devops.md). The general platform status for all our applications is available at [`status.freecodecamp.org`](https://status.freecodecamp.org)
+The general platform status for all our applications is available at [`status.freecodecamp.org`](https://status.freecodecamp.org). The build and deployment status for the code is available in [our DevOps Guide](/docs/devops.md).
 
 ### License
 

@@ -1,54 +1,39 @@
-<table>
-    <tr>
-        <!-- Do not translate this table -->
-        <td> Read these guidelines in </td>
-        <td><a href="/CONTRIBUTING.md"> English </a></td>
-        <td><a href="/docs/arabic/CONTRIBUTING.md"> عربي </a></td>
-        <td><a href="/docs/chinese/CONTRIBUTING.md"> 中文 </a></td>
-        <td><a href="/docs/portuguese/CONTRIBUTING.md"> Português </a></td>
-        <td><a href="/docs/russian/CONTRIBUTING.md"> Русский </a></td>
-        <td><a href="/docs/spanish/CONTRIBUTING.md"> Español </a></td>
-        <td><a href="/docs/greek/CONTRIBUTING.md"> Ελληνικά </a></td>
-    </tr>
-</table>
+<!-- do not translate this -->
+| [Read these guidelines in other languages](/docs/i18n-languages) |
+|-|
+<!-- do not translate this -->
 
 # Contribution Guidelines
 
-Hello 👋!
+Hello. 👋
 
 freeCodeCamp.org is possible, thanks to thousands of kind volunteers like you. We are grateful for your contributions and we are excited to welcome you aboard.
 
 We strictly enforce our ["Code of Conduct"](https://www.freecodecamp.org/code-of-conduct). Take a moment to read it. It's only 196 words long.
 
-Happy contributing 🎉!
+Happy contributing.
 
 ## Here are some fun ways that you can help
 
-You can choose to contribute to any area that interests you:
+You can contribute to any of these:
 
-1. [Contribute to this open source codebase](#contribute-to-this-open-source-codebase). Help to edit [guide articles](https://guide.freecodecamp.org/), [coding challenges](https://learn.freecodecamp.org/), or fix bugs on the learning platform.
+1. [Contribute to this open source codebase](#contribute-to-this-open-source-codebase). Help us edit coding challenges, or fix bugs on the learning platform.
 
 2. Help campers on our [public forum](https://www.freecodecamp.org/forum/). [Answer their coding questions](https://www.freecodecamp.org/forum/?max_posts=1) or [give them feedback on their coding projects](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1).
 
-3. Help us add subtitles or closed captions to our [YouTube channel videos](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ/videos).
+3. Help us add subtitles (closed captions) to our [YouTube channel videos](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ/videos).
 
 ## Contribute to this open source codebase
 
-We have a huge open source codebase consisting of thousands of [coding challenges](https://learn.freecodecamp.org) and [guide articles](https://guide.freecodecamp.org).
+Our codebase has thousands of [coding challenges](https://learn.freecodecamp.org) and other source code that powers our learning platform.
 
-You can help us to:
-
-- [💻 Create, Update and Fix Bugs in our coding challenges](#create-update-and-fix-bugs-in-our-coding-challenges)
-
-- [🛠 Fix bugs in freeCodeCamp.org's learning platform](#help-us-fix-bugs-in-freecodecamporgs-learning-platform)
-
-### Create, Update and Fix Bugs in our coding challenges
+### Create, update and fix bugs in our coding challenges
 
 All our coding challenges are curated by the community, bringing in expert knowledge from volunteers like you.
 
 You can help expand them and make their wording clearer. You can update the user stories to explain the concept better and even remove redundant ones. You can also improve the challenge tests to make them more accurately test people's code.
 
-If you're interested in improving these coding challenges, here's [how to work on coding challenges](/docs/how-to-work-on-coding-challenges.md).
+**If you're interested in improving these coding challenges, here's [how to work on coding challenges](/docs/how-to-work-on-coding-challenges.md).**
 
 ### Help us fix bugs in freeCodeCamp.org's learning platform
 

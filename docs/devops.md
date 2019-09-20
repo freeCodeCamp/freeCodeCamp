@@ -1,3 +1,8 @@
+<!-- do not translate this -->
+| [Read these guidelines in other languages](/docs/i18n-languages) |
+|-|
+<!-- do not translate this -->
+
 # DevOps Guide
 
 > ### :warning: THIS GUIDE IS NOT LIVE YET. :warning:
