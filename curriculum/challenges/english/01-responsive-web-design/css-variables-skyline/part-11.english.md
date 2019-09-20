@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Nest four `div` elements in the `bb1` container. Give them the classes `bb1a`, `bb1b`, `bb1c`, and `bb1d` in that order. These will be different parts of the first building.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($(".bb1").contains("div.bb1a") && $(".bb1").contains("div.bb1b") && $(".bb1").contains("div.bb1c") && $(".bb1").contains("div.bb1d"));
 
 ```
 
@@ -64,10 +64,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Nest four `div` elements in the `bb1` container. Give them the classes `bb1a`, `bb1b`, `bb1c`, and `bb1d` in that order. These will be different parts of the first building.
--->
 ```
 
 </div>

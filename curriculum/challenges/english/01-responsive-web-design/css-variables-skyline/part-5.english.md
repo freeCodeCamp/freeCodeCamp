@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+In CSS, you can target everything with an asterisk. Add a border to everything by using the `*` selector in your style area and giving it a `border` of `1px solid black`. This is a trick I like to use to help visualize where elements are and their size. You will remove this later.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(code.match(/<style\s*>\s*\*\s*{\s*border\s*:\s*1px\s+solid\s+black\s*;?\s*}\s*<\/style\s*>/g));
 
 ```
 
@@ -40,10 +40,6 @@ tests:
   <body>
   </body>
 </html>
-
-<!--
-  In CSS you can target everything with an asterisk. Add a border to everything by using the `*` selector in your style area and giving it a `border` of `1px solid black`. This is a trick I like to use to help visualize where elements are and their size. You will remove this later.
--->
 ```
 
 </div>

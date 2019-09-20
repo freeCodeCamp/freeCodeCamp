@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Welcome to the CSS Variables skyline project! Start by adding the `!DOCTYPE` declaration at the top of the document. Give it a type of `html` so the browser knows what type of document it's reading.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match(/^<!DOCTYPE html>$/g));
+    testString: assert(code.match(/<!DOCTYPE\s+html\s*>/gi));
 
 ```
 
@@ -30,10 +30,6 @@ tests:
 <div id='html-seed'>
 
 ```html
-
-<!--
-  Welcome to the build a skyline project! Start by adding the `!DOCTYPE` declaration above this comment. Give your project a type of `html` so the browser knows what type of document it's reading.
--->
 ```
 
 </div>

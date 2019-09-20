@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Nest opening and closing `title` and `style` tags in the `head` area and give your project a title of `freeCodeCamp Skyline Project`. Any styles you are asked to add during this project should go in the style area.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(code.match(/<head\s*>\s*(<style\s*>\s*<\/style\s*>\s*<title\s*>freeCodeCamp Skyline Project<\/title\s*>|<title\s*>freeCodeCamp Skyline Project<\/title\s*>\s*<style\s*>\s*<\/style>)\s*<\/head\s*>/g));
 
 ```
 
@@ -33,15 +33,12 @@ tests:
 <!DOCTYPE html>
 <html>    
   <head>
+    
   </head>
 
   <body>
   </body>
 </html>
-
-<!--
-  Nest opening and closing `title` and `style` tags in the `head` area and give your project a title of `freeCodeCamp Skyline Project`.
--->
 ```
 
 </div>

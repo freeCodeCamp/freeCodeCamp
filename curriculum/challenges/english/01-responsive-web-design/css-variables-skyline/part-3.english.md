@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Next, add opening and closing `head` and `body` tags within the `html` element.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(code.match(/<html\s*>\s*<head\s*>\s*<\/head\s*>\s*<body\s*>\s*<\/body\s*>\s*<\/html\s*>/gi));
 
 ```
 
@@ -32,11 +32,8 @@ tests:
 ```html
 <!DOCTYPE html>
 <html>
+  
 </html>
-
-<!--
-  Next, add opening and closing `head` and `body` tags within the `html` element.
--->
 ```
 
 </div>
