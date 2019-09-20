@@ -22,7 +22,7 @@ Note: make a new document with these information to pass the test, name = Gary ,
 ```yml
 tests:
   - text: Find one item should succeed
-    testString: "getUserInput => $.post(getUserInput('url') + '/_api/find-one-by-food', {name: 'Gary', age: 46, favoriteFoods: ['chicken salad']}).then(data => { assert.equal(data.name, 'Gary', 'item.name is not what expected'); assert.deepEqual(data.favoriteFoods, ['chicken salad'], 'item.favoriteFoods is not what expected'); assert.equal(data.__v, 0, 'The item should be not previously edited'); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: "getUserInput => $.post(getUserInput('url') + '/_api/find-one-by-food', {name: 'Gary', age: 46, favoriteFoods: ['chicken salad']}).then((data) => { assert.equal(data.name, 'Gary', 'item.name is not what expected'); assert.deepEqual(data.favoriteFoods, ['chicken salad'], 'item.favoriteFoods is not what expected'); assert.equal(data.__v, 0, 'The item should be not previously edited'); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 
