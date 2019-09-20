@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Also add a `box-sizing` of `border-box` to the `*` selector. This will make it so the border you added doesn't add any size to your elements.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($("#display-body").css("box-sizing") === "border-box");
 
 ```
 
@@ -44,10 +44,6 @@ tests:
   <body>
   </body>
 </html>
-
-<!--
-  Also add a `box-sizing` of `border-box` to the `*` selector. This will make it so the border you added doesn't add any size to your elements.
--->
 ```
 
 </div>

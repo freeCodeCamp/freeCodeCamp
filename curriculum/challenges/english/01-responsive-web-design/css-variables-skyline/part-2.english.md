@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Add opening and closing `html` tags below the `doctype` so you have a place to start putting some code.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(code.match(/<!DOCTYPE\s+html\s*>\s*<html\s*>\s*<\/html\s*>/gi));
 
 ```
 
@@ -31,10 +31,6 @@ tests:
 
 ```html
 <!DOCTYPE html>
-
-<!--
-  Add opening and closing `html` tags below the `doctype` so you have a place to start putting some code.
--->
 ```
 
 </div>

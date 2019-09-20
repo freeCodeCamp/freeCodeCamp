@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Nest a `div` with a class of `bb1` in the `background-buildings` container. Give it a `width` of `10%` and `height` of `70%`. "bb" stands for "background building", this will be a container for your first building.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const noSpaces = code.replace(/\s/g, ''); assert($(".background-buildings")[0].contains($("div.bb1")[0]) && noSpaces.match(/\.bb1{(height:70%;width:10%;?}|width:10%;height:70%;?})/g));
 
 ```
 
@@ -57,10 +57,6 @@ tests:
     <div class="background-buildings"></div>
   </body>
 </html>
-
-<!--
-  Nest a `div` with a class of `bb1` in the `background-buildings` container. Give it a `width` of `10%` and `height` of `70%`. "bb" stands for "background building", this will be a container for your first building.
--->
 ```
 
 </div>

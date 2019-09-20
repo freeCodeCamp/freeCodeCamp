@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Give your `background-buildings` element a `width` and `height` of `100%` to make it the full width and height of its parent, the body.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const noSpaces = code.replace(/\s/g, ''); assert(noSpaces.match(/\.background-buildings{(height:100%;width:100%;?}|width:100%;height:100%;?})/g));
 
 ```
 
@@ -52,10 +52,6 @@ tests:
     <div class="background-buildings"></div>
   </body>
 </html>
-
-<!--
-  Give your `background-buildings` element a `width` and `height` of `100%` to make it the full width and height of its parent, the `body`.
--->
 ```
 
 </div>

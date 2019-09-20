@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+It's tough to see now, but there's a border at the edge of your preview, that's the body. Create a `div` element in the `body` with a class of `background-buildings`. This will be a container for a group of buildings.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($("#display-body")[0].contains($("div.background-buildings")[0]));
 
 ```
 
@@ -51,10 +51,6 @@ tests:
   <body>
   </body>
 </html>
-
-<!--
-  It's tough to see now, but there's a border at the edge of your viewport, that's the body. Create a `div` element in the `body` with a class of `background-buildings`. This will be a container for a group of buildings.
--->
 ```
 
 </div>
