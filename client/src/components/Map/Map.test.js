@@ -6,8 +6,8 @@ import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import store from 'store';
 
-import { Map } from './Map';
-import mockNodes from '../../__mocks__/map-nodes';
+import { Map } from './';
+import mockChallengeNodes from '../../__mocks__/challenge-nodes';
 import mockIntroNodes from '../../__mocks__/intro-nodes';
 
 Enzyme.configure({ adapter: new Adapter() });
@@ -15,7 +15,7 @@ const renderer = new ShallowRenderer();
 
 const baseProps = {
   introNodes: mockIntroNodes,
-  nodes: mockNodes,
+  nodes: mockChallengeNodes,
   toggleBlock: () => {},
   toggleSuperBlock: () => {},
   resetExpansion: () => {}
@@ -25,7 +25,7 @@ test('<Map /> snapshot', () => {
   const componentToRender = (
     <Map
       introNodes={mockIntroNodes}
-      nodes={mockNodes}
+      nodes={mockChallengeNodes}
       toggleBlock={() => {}}
       toggleSuperBlock={() => {}}
     />
@@ -45,7 +45,7 @@ describe('<Map/>', () => {
       store.clearAll();
     });
     // 7 was chosen because it has a different superblock from the first node.
-    const currentChallengeId = mockNodes[7].id;
+    const currentChallengeId = mockChallengeNodes[7].id;
 
     it('should expand the block with the most recent challenge', () => {
       const blockSpy = jest.fn();
@@ -59,10 +59,10 @@ describe('<Map/>', () => {
       const mapToRender = <Map {...props} />;
       shallow(mapToRender);
       expect(blockSpy).toHaveBeenCalledTimes(1);
-      expect(blockSpy).toHaveBeenCalledWith(mockNodes[7].block);
+      expect(blockSpy).toHaveBeenCalledWith(mockChallengeNodes[7].block);
 
       expect(superSpy).toHaveBeenCalledTimes(1);
-      expect(superSpy).toHaveBeenCalledWith(mockNodes[7].superBlock);
+      expect(superSpy).toHaveBeenCalledWith(mockChallengeNodes[7].superBlock);
     });
 
     it('should use the currentChallengeId prop if it exists', () => {
@@ -85,13 +85,13 @@ describe('<Map/>', () => {
       const mapToRender = <Map {...props} />;
       shallow(mapToRender);
       expect(blockSpy).toHaveBeenCalledTimes(1);
-      expect(blockSpy).toHaveBeenCalledWith(mockNodes[0].block);
+      expect(blockSpy).toHaveBeenCalledWith(mockChallengeNodes[0].block);
 
       expect(superSpy).toHaveBeenCalledTimes(1);
-      expect(superSpy).toHaveBeenCalledWith(mockNodes[0].superBlock);
+      expect(superSpy).toHaveBeenCalledWith(mockChallengeNodes[0].superBlock);
     });
 
-    it('calls resetExpansion when initialising', () => {
+    it('calls resetExpansion when initializing', () => {
       const expansionSpy = jest.fn();
       const props = {
         ...baseProps,

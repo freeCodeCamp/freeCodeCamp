@@ -74,7 +74,17 @@ exports[`<Block expanded snapshot: block-expanded 1`] = `
     >
       <span
         className="badge map-badge"
-      />
+      >
+        <IntroInformation
+          style={
+            Object {
+              "height": "15px",
+              "marginRight": "10px",
+              "width": "15px",
+            }
+          }
+        />
+      </span>
       <mockConstructor
         onClick={[Function]}
         to="/super-block-one/block-a"

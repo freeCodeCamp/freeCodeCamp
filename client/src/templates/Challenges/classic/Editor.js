@@ -5,12 +5,13 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
 import { executeChallenge, updateFile } from '../redux';
-import { userSelector } from '../../../redux';
+import { userSelector, isDonationModalOpenSelector } from '../../../redux';
 import { Loader } from '../../../components/helpers';
 
 const MonacoEditor = React.lazy(() => import('react-monaco-editor'));
 
 const propTypes = {
+  canFocus: PropTypes.bool,
   contents: PropTypes.string,
   dimensions: PropTypes.object,
   executeChallenge: PropTypes.func.isRequired,
@@ -21,8 +22,12 @@ const propTypes = {
 };
 
 const mapStateToProps = createSelector(
+  isDonationModalOpenSelector,
   userSelector,
-  ({ theme = 'night' }) => ({ theme })
+  (open, { theme = 'night' }) => ({
+    canFocus: !open,
+    theme
+  })
 );
 
 const mapDispatchToProps = dispatch =>
@@ -104,7 +109,7 @@ class Editor extends Component {
 
   editorDidMount = (editor, monaco) => {
     this._editor = editor;
-    this._editor.focus();
+    if (this.props.canFocus) this._editor.focus();
     this._editor.addAction({
       id: 'execute-challenge',
       label: 'Run tests',

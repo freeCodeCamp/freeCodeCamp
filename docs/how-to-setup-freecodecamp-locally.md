@@ -1,3 +1,8 @@
+<!-- do not translate this -->
+| [Read these guidelines in other languages](/docs/i18n-languages) |
+|-|
+<!-- do not translate this -->
+
 # Set up freeCodeCamp locally
 Follow these guidelines for getting freeCodeCamp locally on your system. This is highly recommended if you want to contribute regularly.
 
@@ -147,7 +152,7 @@ npm -v
 
 If you have a different version, please install the recommended version. We can only support installation issues for recommended versions.
 
-Windows users:  
+Windows users:
 > Make sure the command line tool you use (e.g., cmd, PowerShell, Git Bash for Windows, WSL) has the correct user privileges. If possible, you should launch the tool with Administrator's privilege. On Windows you should be able to launch as administrator by right-clicking the application and selecting `Launch as an Administrator`.
 
 #### I am having issues with installing the recommended prerequisites. What should I do?
@@ -275,7 +280,25 @@ Simply clicking the `Preview Custom 404 Page` button will forward you to the cor
 ![Image - How to sign in when working locally](https://user-images.githubusercontent.com/1884376/52650951-48922e80-2f11-11e9-9eee-360a25ad28ad.gif)
 
 ## Quick commands reference when working locally
-[Here is a quick reference](/docs/README.md) to a list of commands that you may occasionally need locally.
+
+A quick reference to the commands that you will need when working locally.
+
+**Docker Build:**
+
+> ### Todo: Add docker quick command list
+
+**Local Build:**
+
+| command | description |
+| ------- | ----------- |
+| `npm ci` | Installs / re-install all dependencies and bootstraps the different services. |
+| `npm run seed` | Parses all the challenge markdown files and inserts them into MongoDB. |
+| `npm run develop` | Starts the freeCodeCamp API Server and Client Applications. |
+| `npm test` |  Run all JS tests in the system, including client, server, lint and challenge tests. |
+| `npm run test:client` | Run the client test suite. |
+| `npm run test:curriculum` | Run the curriculum test suite. |
+| `npm run test:server` | Run the server test suite. |
+| `npm run clean` | Uninstalls all dependencies and cleans up caches. |
 
 ## Making changes to your clone of freeCodeCamp locally
 You can now make changes to files and commit your changes to your local clone of your fork.

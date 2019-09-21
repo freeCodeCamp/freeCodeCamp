@@ -2,15 +2,18 @@
 title: Greatest subsequential sum
 id: 5a23c84252665b21eecc7e84
 challengeType: 5
-videoUrl: ''
+forumTopicId: 302278
 localeTitle: Наибольшая подпоследовательная сумма
 ---
 
 ## Description
-<section id="description"> Если задана последовательность целых чисел, найдите непрерывную подпоследовательность, которая максимизирует сумму ее элементов, т. Е. Элементы ни одной отдельной подпоследовательности не прибавляют к значению, большему, чем это. Считается, что пустая подпоследовательность имеет сумму \ (0 \); таким образом, если все элементы отрицательны, результат должен быть пустой. </section>
+<section id='description'>
+Если задана последовательность целых чисел, найдите непрерывную подпоследовательность, которая максимизирует сумму ее элементов, т. Е. Элементы ни одной отдельной подпоследовательности не прибавляют к значению, большему, чем это. Считается, что пустая подпоследовательность имеет сумму \ (0 \); таким образом, если все элементы отрицательны, результат должен быть пустой.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,22 +21,22 @@ localeTitle: Наибольшая подпоследовательная сум�
 
 ```yml
 tests:
-  - text: <code>maximumSubsequence</code> должна быть функцией.
-    testString: 'assert(typeof maximumSubsequence=="function","<code>maximumSubsequence</code> should be a function.");'
-  - text: '<code>maximumSubsequence(&quot;+JSON.stringify(tests[0])+&quot;)</code> должен возвращать массив.'
-    testString: 'assert(Array.isArray(maximumSubsequence(tests[0])),"<code>maximumSubsequence("+JSON.stringify(tests[0])+")</code> should return an array.");'
-  - text: '<code>maximumSubsequence(&quot;+JSON.stringify(tests[0])+&quot;)</code> должен возвращать <code>&quot;+JSON.stringify(results[0])+&quot;</code> .'
-    testString: 'assert.deepEqual(maximumSubsequence(tests[0]),results[0],"<code>maximumSubsequence("+JSON.stringify(tests[0])+")</code> should return <code>"+JSON.stringify(results[0])+"</code>.");'
-  - text: '<code>maximumSubsequence(&quot;+JSON.stringify(tests[1])+&quot;)</code> должен возвращать <code>&quot;+JSON.stringify(results[1])+&quot;</code> .'
-    testString: 'assert.deepEqual(maximumSubsequence(tests[1]),results[1],"<code>maximumSubsequence("+JSON.stringify(tests[1])+")</code> should return <code>"+JSON.stringify(results[1])+"</code>.");'
-  - text: '<code>maximumSubsequence(&quot;+JSON.stringify(tests[2])+&quot;)</code> должен возвращать <code>&quot;+JSON.stringify(results[2])+&quot;</code> .'
-    testString: 'assert.deepEqual(maximumSubsequence(tests[2]),results[2],"<code>maximumSubsequence("+JSON.stringify(tests[2])+")</code> should return <code>"+JSON.stringify(results[2])+"</code>.");'
-  - text: '<code>maximumSubsequence(&quot;+JSON.stringify(tests[3])+&quot;)</code> должны возвращать <code>&quot;+JSON.stringify(results[3])+&quot;</code> .'
-    testString: 'assert.deepEqual(maximumSubsequence(tests[3]),results[3],"<code>maximumSubsequence("+JSON.stringify(tests[3])+")</code> should return <code>"+JSON.stringify(results[3])+"</code>.");'
-  - text: '<code>maximumSubsequence(&quot;+JSON.stringify(tests[4])+&quot;)</code> должен возвращать <code>&quot;+JSON.stringify(results[4])+&quot;</code> .'
-    testString: 'assert.deepEqual(maximumSubsequence(tests[4]),results[4],"<code>maximumSubsequence("+JSON.stringify(tests[4])+")</code> should return <code>"+JSON.stringify(results[4])+"</code>.");'
-  - text: '<code>maximumSubsequence(&quot;+JSON.stringify(tests[5])+&quot;)</code> должен возвращать <code>&quot;+JSON.stringify(results[5])+&quot;</code> .'
-    testString: 'assert.deepEqual(maximumSubsequence(tests[5]),results[5],"<code>maximumSubsequence("+JSON.stringify(tests[5])+")</code> should return <code>"+JSON.stringify(results[5])+"</code>.");'
+  - text: <code>maximumSubsequence</code> should be a function.
+    testString: assert(typeof maximumSubsequence=='function');
+  - text: <code>maximumSubsequence([ 1, 2, -1, 3, 10, -10 ])</code> should return an array.
+    testString: assert(Array.isArray(maximumSubsequence([ 1, 2,-1, 3, 10, -10 ])));
+  - text: <code>maximumSubsequence([ 1, 2, -1, 3, 10, -10 ])</code> should return <code>[ 1, 2, -1, 3, 10 ]</code>.
+    testString: assert.deepEqual(maximumSubsequence([1,2,-1,3,10,-10]), [ 1, 2, -1, 3, 10 ]);
+  - text: <code>maximumSubsequence([ 0, 8, 10, -2, -4, -1, -5, -3 ])</code> should return <code>[ 0, 8, 10 ]</code>.
+    testString: assert.deepEqual(maximumSubsequence([0, 8, 10, -2, -4, -1, -5, -3]), [ 0, 8, 10 ]);
+  - text: <code>maximumSubsequence([ 9, 9, -10, 1 ])</code> should return <code>[ 9, 9 ]</code>.
+    testString: assert.deepEqual(maximumSubsequence([ 9, 9, -10, 1 ]), [ 9, 9 ]);
+  - text: <code>maximumSubsequence([ 7, 1, -5, -3, -8, 1 ]</code> should return <code>[ 7, 1 ]</code>.
+    testString: assert.deepEqual(maximumSubsequence([ 7, 1, -5, -3, -8, 1 ]), [ 7, 1 ]);
+  - text: <code>maximumSubsequence([ -3, 6, -1, 4, -4, -6 ])</code> should return <code>[ 6, -1, 4 ]</code>.
+    testString: assert.deepEqual(maximumSubsequence([ -3, 6, -1, 4, -4, -6 ]), [ 6, -1, 4 ]);
+  - text: <code>maximumSubsequence([ -1, -2, 3, 5, 6, -2, -1, 4, -4, 2, -1 ])</code> should return <code>[ 3, 5, 6, -2, -1, 4 ]</code>.
+    testString: assert.deepEqual(maximumSubsequence([ -1, -2, 3, 5, 6, -2, -1, 4, -4, 2, -1 ]), [ 3, 5, 6, -2, -1, 4 ]);
 
 ```
 
@@ -45,20 +48,10 @@ tests:
 <div id='js-seed'>
 
 ```js
-function maximumSubsequence (population) {
+function maximumSubsequence(population) {
   // Good luck!
 }
 
-```
-
-</div>
-
-
-### After Test
-<div id='js-teardown'>
-
-```js
-console.info('after the test');
 ```
 
 </div>
@@ -69,6 +62,31 @@ console.info('after the test');
 <section id='solution'>
 
 ```js
-// solution required
+function maximumSubsequence(population) {
+  function sumValues(arr) {
+      var result = 0;
+      for (var i = 0, len = arr.length; i < len; i++) {
+          result += arr[i];
+      }
+      return result;
+  }
+  var greatest;
+  var maxValue = 0;
+  var subsequence = [];
+
+  for (var i = 0, len = population.length; i < len; i++) {
+      for (var j = i; j <= len; j++) {
+          var subsequence = population.slice(i, j);
+          var value = sumValues(subsequence);
+          if (value > maxValue) {
+              maxValue = value;
+              greatest = subsequence;
+          };
+      }
+  }
+
+  return greatest;
+}
 ```
+
 </section>

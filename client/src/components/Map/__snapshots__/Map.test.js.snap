@@ -1,321 +1,334 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Map /> snapshot: Map 1`] = `
-<div
-  className="map-ui"
+<Row
+  bsClass="row"
+  componentClass="div"
 >
-  <ul>
-    <Connect(SuperBlock)
-      introNodes={
-        Array [
-          Object {
-            "fields": Object {
-              "slug": "/super-block-one/block-a",
-            },
-            "frontmatter": Object {
-              "block": "Block A",
-              "title": "Introduction to Block A",
-            },
-          },
-          Object {
-            "fields": Object {
-              "slug": "/super-block-one/block-b",
-            },
-            "frontmatter": Object {
-              "block": "Block B",
-              "title": "Introduction to Block B",
-            },
-          },
-          Object {
-            "fields": Object {
-              "slug": "/super-block-one/block-c",
-            },
-            "frontmatter": Object {
-              "block": "Block C",
-              "title": "Introduction to Block C",
-            },
-          },
-        ]
-      }
-      nodes={
-        Array [
-          Object {
-            "block": "block-a",
-            "dashedName": "challenge-one",
-            "fields": Object {
-              "blockName": "Block A",
-              "slug": "/super-block-one/block-a/challenge-one",
-            },
-            "id": "a",
-            "isPrivate": false,
-            "isRequired": false,
-            "superBlock": "Super Block One",
-            "title": "Challenge One",
-          },
-          Object {
-            "block": "block-a",
-            "dashedName": "challenge-two",
-            "fields": Object {
-              "blockName": "Block A",
-              "slug": "/super-block-one/block-a/challenge-two",
-            },
-            "id": "b",
-            "isPrivate": false,
-            "isRequired": false,
-            "superBlock": "Super Block One",
-            "title": "Challenge Two",
-          },
-          Object {
-            "block": "block-b",
-            "dashedName": "challenge-one",
-            "fields": Object {
-              "blockName": "Block B",
-              "slug": "/super-block-one/block-b/challenge-one",
-            },
-            "id": "c",
-            "isPrivate": false,
-            "isRequired": false,
-            "superBlock": "Super Block One",
-            "title": "Challenge One",
-          },
-          Object {
-            "block": "block-b",
-            "dashedName": "challenge-two",
-            "fields": Object {
-              "blockName": "Block B",
-              "slug": "/super-block-one/block-b/challenge-two",
-            },
-            "id": "d",
-            "isPrivate": false,
-            "isRequired": false,
-            "superBlock": "Super Block One",
-            "title": "Challenge Two",
-          },
-          Object {
-            "block": "block-c",
-            "dashedName": "challenge-one",
-            "fields": Object {
-              "blockName": "Block C",
-              "slug": "/super-block-one/block-c/challenge-one",
-            },
-            "id": "e",
-            "isPrivate": true,
-            "isRequired": false,
-            "superBlock": "Super Block One",
-            "title": "Challenge One",
-          },
-          Object {
-            "block": "block-a",
-            "dashedName": "challenge-one",
-            "fields": Object {
-              "blockName": "Block A",
-              "slug": "/super-block-one/block-a/challenge-one",
-            },
-            "id": "f",
-            "isPrivate": false,
-            "isRequired": false,
-            "superBlock": "Super Block Two",
-            "title": "Challenge One",
-          },
-          Object {
-            "block": "block-a",
-            "dashedName": "challenge-two",
-            "fields": Object {
-              "blockName": "Block A",
-              "slug": "/super-block-one/block-a/challenge-two",
-            },
-            "id": "g",
-            "isPrivate": false,
-            "isRequired": false,
-            "superBlock": "Super Block Two",
-            "title": "Challenge Two",
-          },
-          Object {
-            "block": "block-b",
-            "dashedName": "challenge-one",
-            "fields": Object {
-              "blockName": "Block B",
-              "slug": "/super-block-one/block-b/challenge-one",
-            },
-            "id": "h",
-            "isPrivate": false,
-            "isRequired": false,
-            "superBlock": "Super Block Two",
-            "title": "Challenge One",
-          },
-          Object {
-            "block": "block-b",
-            "dashedName": "challenge-two",
-            "fields": Object {
-              "blockName": "Block B",
-              "slug": "/super-block-one/block-b/challenge-two",
-            },
-            "id": "i",
-            "isPrivate": false,
-            "isRequired": false,
-            "superBlock": "Super Block Two",
-            "title": "Challenge Two",
-          },
-        ]
-      }
-      superBlock="Super Block One"
-    />
-    <Connect(SuperBlock)
-      introNodes={
-        Array [
-          Object {
-            "fields": Object {
-              "slug": "/super-block-one/block-a",
-            },
-            "frontmatter": Object {
-              "block": "Block A",
-              "title": "Introduction to Block A",
-            },
-          },
-          Object {
-            "fields": Object {
-              "slug": "/super-block-one/block-b",
-            },
-            "frontmatter": Object {
-              "block": "Block B",
-              "title": "Introduction to Block B",
-            },
-          },
-          Object {
-            "fields": Object {
-              "slug": "/super-block-one/block-c",
-            },
-            "frontmatter": Object {
-              "block": "Block C",
-              "title": "Introduction to Block C",
-            },
-          },
-        ]
-      }
-      nodes={
-        Array [
-          Object {
-            "block": "block-a",
-            "dashedName": "challenge-one",
-            "fields": Object {
-              "blockName": "Block A",
-              "slug": "/super-block-one/block-a/challenge-one",
-            },
-            "id": "a",
-            "isPrivate": false,
-            "isRequired": false,
-            "superBlock": "Super Block One",
-            "title": "Challenge One",
-          },
-          Object {
-            "block": "block-a",
-            "dashedName": "challenge-two",
-            "fields": Object {
-              "blockName": "Block A",
-              "slug": "/super-block-one/block-a/challenge-two",
-            },
-            "id": "b",
-            "isPrivate": false,
-            "isRequired": false,
-            "superBlock": "Super Block One",
-            "title": "Challenge Two",
-          },
-          Object {
-            "block": "block-b",
-            "dashedName": "challenge-one",
-            "fields": Object {
-              "blockName": "Block B",
-              "slug": "/super-block-one/block-b/challenge-one",
-            },
-            "id": "c",
-            "isPrivate": false,
-            "isRequired": false,
-            "superBlock": "Super Block One",
-            "title": "Challenge One",
-          },
-          Object {
-            "block": "block-b",
-            "dashedName": "challenge-two",
-            "fields": Object {
-              "blockName": "Block B",
-              "slug": "/super-block-one/block-b/challenge-two",
-            },
-            "id": "d",
-            "isPrivate": false,
-            "isRequired": false,
-            "superBlock": "Super Block One",
-            "title": "Challenge Two",
-          },
-          Object {
-            "block": "block-c",
-            "dashedName": "challenge-one",
-            "fields": Object {
-              "blockName": "Block C",
-              "slug": "/super-block-one/block-c/challenge-one",
-            },
-            "id": "e",
-            "isPrivate": true,
-            "isRequired": false,
-            "superBlock": "Super Block One",
-            "title": "Challenge One",
-          },
-          Object {
-            "block": "block-a",
-            "dashedName": "challenge-one",
-            "fields": Object {
-              "blockName": "Block A",
-              "slug": "/super-block-one/block-a/challenge-one",
-            },
-            "id": "f",
-            "isPrivate": false,
-            "isRequired": false,
-            "superBlock": "Super Block Two",
-            "title": "Challenge One",
-          },
-          Object {
-            "block": "block-a",
-            "dashedName": "challenge-two",
-            "fields": Object {
-              "blockName": "Block A",
-              "slug": "/super-block-one/block-a/challenge-two",
-            },
-            "id": "g",
-            "isPrivate": false,
-            "isRequired": false,
-            "superBlock": "Super Block Two",
-            "title": "Challenge Two",
-          },
-          Object {
-            "block": "block-b",
-            "dashedName": "challenge-one",
-            "fields": Object {
-              "blockName": "Block B",
-              "slug": "/super-block-one/block-b/challenge-one",
-            },
-            "id": "h",
-            "isPrivate": false,
-            "isRequired": false,
-            "superBlock": "Super Block Two",
-            "title": "Challenge One",
-          },
-          Object {
-            "block": "block-b",
-            "dashedName": "challenge-two",
-            "fields": Object {
-              "blockName": "Block B",
-              "slug": "/super-block-one/block-b/challenge-two",
-            },
-            "id": "i",
-            "isPrivate": false,
-            "isRequired": false,
-            "superBlock": "Super Block Two",
-            "title": "Challenge Two",
-          },
-        ]
-      }
-      superBlock="Super Block Two"
-    />
-    <Spacer />
-  </ul>
-</div>
+  <Col
+    bsClass="col"
+    componentClass="div"
+    sm={10}
+    smOffset={1}
+    xs={12}
+  >
+    <div
+      className="map-ui"
+    >
+      <ul>
+        <Connect(SuperBlock)
+          introNodes={
+            Array [
+              Object {
+                "fields": Object {
+                  "slug": "/super-block-one/block-a",
+                },
+                "frontmatter": Object {
+                  "block": "Block A",
+                  "title": "Introduction to Block A",
+                },
+              },
+              Object {
+                "fields": Object {
+                  "slug": "/super-block-one/block-b",
+                },
+                "frontmatter": Object {
+                  "block": "Block B",
+                  "title": "Introduction to Block B",
+                },
+              },
+              Object {
+                "fields": Object {
+                  "slug": "/super-block-one/block-c",
+                },
+                "frontmatter": Object {
+                  "block": "Block C",
+                  "title": "Introduction to Block C",
+                },
+              },
+            ]
+          }
+          nodes={
+            Array [
+              Object {
+                "block": "block-a",
+                "dashedName": "challenge-one",
+                "fields": Object {
+                  "blockName": "Block A",
+                  "slug": "/super-block-one/block-a/challenge-one",
+                },
+                "id": "a",
+                "isPrivate": false,
+                "isRequired": false,
+                "superBlock": "Super Block One",
+                "title": "Challenge One",
+              },
+              Object {
+                "block": "block-a",
+                "dashedName": "challenge-two",
+                "fields": Object {
+                  "blockName": "Block A",
+                  "slug": "/super-block-one/block-a/challenge-two",
+                },
+                "id": "b",
+                "isPrivate": false,
+                "isRequired": false,
+                "superBlock": "Super Block One",
+                "title": "Challenge Two",
+              },
+              Object {
+                "block": "block-b",
+                "dashedName": "challenge-one",
+                "fields": Object {
+                  "blockName": "Block B",
+                  "slug": "/super-block-one/block-b/challenge-one",
+                },
+                "id": "c",
+                "isPrivate": false,
+                "isRequired": false,
+                "superBlock": "Super Block One",
+                "title": "Challenge One",
+              },
+              Object {
+                "block": "block-b",
+                "dashedName": "challenge-two",
+                "fields": Object {
+                  "blockName": "Block B",
+                  "slug": "/super-block-one/block-b/challenge-two",
+                },
+                "id": "d",
+                "isPrivate": false,
+                "isRequired": false,
+                "superBlock": "Super Block One",
+                "title": "Challenge Two",
+              },
+              Object {
+                "block": "block-c",
+                "dashedName": "challenge-one",
+                "fields": Object {
+                  "blockName": "Block C",
+                  "slug": "/super-block-one/block-c/challenge-one",
+                },
+                "id": "e",
+                "isPrivate": true,
+                "isRequired": false,
+                "superBlock": "Super Block One",
+                "title": "Challenge One",
+              },
+              Object {
+                "block": "block-a",
+                "dashedName": "challenge-one",
+                "fields": Object {
+                  "blockName": "Block A",
+                  "slug": "/super-block-one/block-a/challenge-one",
+                },
+                "id": "f",
+                "isPrivate": false,
+                "isRequired": false,
+                "superBlock": "Super Block Two",
+                "title": "Challenge One",
+              },
+              Object {
+                "block": "block-a",
+                "dashedName": "challenge-two",
+                "fields": Object {
+                  "blockName": "Block A",
+                  "slug": "/super-block-one/block-a/challenge-two",
+                },
+                "id": "g",
+                "isPrivate": false,
+                "isRequired": false,
+                "superBlock": "Super Block Two",
+                "title": "Challenge Two",
+              },
+              Object {
+                "block": "block-b",
+                "dashedName": "challenge-one",
+                "fields": Object {
+                  "blockName": "Block B",
+                  "slug": "/super-block-one/block-b/challenge-one",
+                },
+                "id": "h",
+                "isPrivate": false,
+                "isRequired": false,
+                "superBlock": "Super Block Two",
+                "title": "Challenge One",
+              },
+              Object {
+                "block": "block-b",
+                "dashedName": "challenge-two",
+                "fields": Object {
+                  "blockName": "Block B",
+                  "slug": "/super-block-one/block-b/challenge-two",
+                },
+                "id": "i",
+                "isPrivate": false,
+                "isRequired": false,
+                "superBlock": "Super Block Two",
+                "title": "Challenge Two",
+              },
+            ]
+          }
+          superBlock="Super Block One"
+        />
+        <Connect(SuperBlock)
+          introNodes={
+            Array [
+              Object {
+                "fields": Object {
+                  "slug": "/super-block-one/block-a",
+                },
+                "frontmatter": Object {
+                  "block": "Block A",
+                  "title": "Introduction to Block A",
+                },
+              },
+              Object {
+                "fields": Object {
+                  "slug": "/super-block-one/block-b",
+                },
+                "frontmatter": Object {
+                  "block": "Block B",
+                  "title": "Introduction to Block B",
+                },
+              },
+              Object {
+                "fields": Object {
+                  "slug": "/super-block-one/block-c",
+                },
+                "frontmatter": Object {
+                  "block": "Block C",
+                  "title": "Introduction to Block C",
+                },
+              },
+            ]
+          }
+          nodes={
+            Array [
+              Object {
+                "block": "block-a",
+                "dashedName": "challenge-one",
+                "fields": Object {
+                  "blockName": "Block A",
+                  "slug": "/super-block-one/block-a/challenge-one",
+                },
+                "id": "a",
+                "isPrivate": false,
+                "isRequired": false,
+                "superBlock": "Super Block One",
+                "title": "Challenge One",
+              },
+              Object {
+                "block": "block-a",
+                "dashedName": "challenge-two",
+                "fields": Object {
+                  "blockName": "Block A",
+                  "slug": "/super-block-one/block-a/challenge-two",
+                },
+                "id": "b",
+                "isPrivate": false,
+                "isRequired": false,
+                "superBlock": "Super Block One",
+                "title": "Challenge Two",
+              },
+              Object {
+                "block": "block-b",
+                "dashedName": "challenge-one",
+                "fields": Object {
+                  "blockName": "Block B",
+                  "slug": "/super-block-one/block-b/challenge-one",
+                },
+                "id": "c",
+                "isPrivate": false,
+                "isRequired": false,
+                "superBlock": "Super Block One",
+                "title": "Challenge One",
+              },
+              Object {
+                "block": "block-b",
+                "dashedName": "challenge-two",
+                "fields": Object {
+                  "blockName": "Block B",
+                  "slug": "/super-block-one/block-b/challenge-two",
+                },
+                "id": "d",
+                "isPrivate": false,
+                "isRequired": false,
+                "superBlock": "Super Block One",
+                "title": "Challenge Two",
+              },
+              Object {
+                "block": "block-c",
+                "dashedName": "challenge-one",
+                "fields": Object {
+                  "blockName": "Block C",
+                  "slug": "/super-block-one/block-c/challenge-one",
+                },
+                "id": "e",
+                "isPrivate": true,
+                "isRequired": false,
+                "superBlock": "Super Block One",
+                "title": "Challenge One",
+              },
+              Object {
+                "block": "block-a",
+                "dashedName": "challenge-one",
+                "fields": Object {
+                  "blockName": "Block A",
+                  "slug": "/super-block-one/block-a/challenge-one",
+                },
+                "id": "f",
+                "isPrivate": false,
+                "isRequired": false,
+                "superBlock": "Super Block Two",
+                "title": "Challenge One",
+              },
+              Object {
+                "block": "block-a",
+                "dashedName": "challenge-two",
+                "fields": Object {
+                  "blockName": "Block A",
+                  "slug": "/super-block-one/block-a/challenge-two",
+                },
+                "id": "g",
+                "isPrivate": false,
+                "isRequired": false,
+                "superBlock": "Super Block Two",
+                "title": "Challenge Two",
+              },
+              Object {
+                "block": "block-b",
+                "dashedName": "challenge-one",
+                "fields": Object {
+                  "blockName": "Block B",
+                  "slug": "/super-block-one/block-b/challenge-one",
+                },
+                "id": "h",
+                "isPrivate": false,
+                "isRequired": false,
+                "superBlock": "Super Block Two",
+                "title": "Challenge One",
+              },
+              Object {
+                "block": "block-b",
+                "dashedName": "challenge-two",
+                "fields": Object {
+                  "blockName": "Block B",
+                  "slug": "/super-block-one/block-b/challenge-two",
+                },
+                "id": "i",
+                "isPrivate": false,
+                "isRequired": false,
+                "superBlock": "Super Block Two",
+                "title": "Challenge Two",
+              },
+            ]
+          }
+          superBlock="Super Block Two"
+        />
+        <Spacer />
+      </ul>
+    </div>
+  </Col>
+</Row>
 `;

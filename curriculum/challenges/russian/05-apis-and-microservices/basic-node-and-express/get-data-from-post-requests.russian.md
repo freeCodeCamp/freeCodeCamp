@@ -1,12 +1,13 @@
 ---
 id: 587d7fb2367417b2b2512bf8
 title: Get Data from POST Requests
-localeTitle: Получить данные из запросов POST
 challengeType: 2
+forumTopicId: 301511
+localeTitle: Получить данные из запросов POST
 ---
 
 ## Description
-<section id='description'> 
+<section id='description'>
 Установите обработчик POST по пути <code>/name</code> . Это тот же путь, что и раньше. Мы подготовили форму на главной странице html. Он отправит те же данные упражнения 10 (Строка запроса). Если body-parser настроен правильно, вы должны найти параметры в объекте <code>req.body</code> . Посмотрите на обычный пример библиотеки: 
 <blockquote>route: POST '/library'<br>urlencoded_body: userId=546&bookId=6754 <br>req.body: {userId: '546', bookId: '6754'}</blockquote> 
 Ответьте тем же объектом JSON, что и раньше: <code>{name: 'firstname lastname'}</code> . Проверьте, работает ли ваша конечная точка, используя HTML-форму, предоставленную на главной странице приложения. 
@@ -15,11 +16,11 @@ POST (иногда PUT) - создание нового ресурса с исп
 GET - чтение существующего ресурса без его изменения, 
 PUT или PATCH (иногда POST) - обновление ресурса с использованием данных отправлено, 
 DELETE =&gt; Удалить ресурс. 
-Есть также несколько других методов, которые используются для согласования соединения с сервером. За исключением GET, все другие методы, перечисленные выше, могут иметь полезную нагрузку (то есть данные в теле запроса). Промежуточное программное обеспечение body-parser также работает с этими методами. 
+Есть также несколько других методов, которые используются для согласования соединения с сервером. За исключением GET, все другие методы, перечисленные выше, могут иметь полезную нагрузку (то есть данные в теле запроса). Промежуточное программное обеспечение body-parser также работает с этими методами.
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -28,24 +29,11 @@ DELETE =&gt; Удалить ресурс.
 
 ```yml
 tests:
-  - text: «Тест 1- ваша конечная точка API должна отвечать правильным именем»
+  - text: 'Test 1 : Your API endpoint should respond with the correct name'
     testString: 'getUserInput => $.post(getUserInput(''url'') + ''/name'', {first: ''Mick'', last: ''Jagger''}).then(data => { assert.equal(data.name, ''Mick Jagger'', ''Test 1: "POST /name" route does not behave as expected'') }, xhr => { throw new Error(xhr.responseText); })'
-  - text: «Тест 2- ваша конечная точка API должна отвечать правильным именем»
+  - text: 'Test 2 : Your API endpoint should respond with the correct name'
     testString: 'getUserInput => $.post(getUserInput(''url'') + ''/name'', {first: ''Keith'', last: ''Richards''}).then(data => { assert.equal(data.name, ''Keith Richards'', ''Test 2: "POST /name" route does not behave as expected'') }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-</section>
-
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
 </section>

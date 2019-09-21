@@ -2,15 +2,18 @@
 id: 5900f48d1000cf542c50ff9f
 challengeType: 5
 title: 'Problem 288: An enormous factorial'
-videoUrl: ''
+forumTopicId: 301939
 localeTitle: 'Задача 288: Огромный факторный'
 ---
 
 ## Description
-<section id="description"> Для любого простого числа p число N (p, q) определяется формулой N (p, q) = Σn = 0 до q Tn * pn с Tn, порожденной следующим генератором случайных чисел: <p> S0 = 290797 Sn + 1 = Sn2 mod 50515093 Tn = Sn mod p </p><p> Пусть Nfac (p, q) - факториал N (p, q). Пусть NF (p, q) - число множителей p в Nfac (p, q). </p><p> Вам дается NF (3,10000) mod 320 = 624955285. </p><p> Найдите NF (61,107) мод 6110 </p></section>
+<section id='description'>
+Для любого простого числа p число N (p, q) определяется формулой N (p, q) = Σn = 0 до q Tn * pn с Tn, порожденной следующим генератором случайных чисел: <p> S0 = 290797 Sn + 1 = Sn2 mod 50515093 Tn = Sn mod p </p><p> Пусть Nfac (p, q) - факториал N (p, q). Пусть NF (p, q) - число множителей p в Nfac (p, q). </p><p> Вам дается NF (3,10000) mod 320 = 624955285. </p><p> Найдите NF (61,107) мод 6110 </p>
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +21,8 @@ localeTitle: 'Задача 288: Огромный факторный'
 
 ```yml
 tests:
-  - text: <code>euler288()</code> должен вернуть 605857431263982000.
-    testString: 'assert.strictEqual(euler288(), 605857431263982000, "<code>euler288()</code> should return 605857431263982000.");'
+  - text: <code>euler288()</code> should return 605857431263982000.
+    testString: assert.strictEqual(euler288(), 605857431263982000);
 
 ```
 
@@ -42,8 +45,6 @@ euler288();
 
 </div>
 
-
-
 </section>
 
 ## Solution
@@ -52,4 +53,5 @@ euler288();
 ```js
 // solution required
 ```
+
 </section>

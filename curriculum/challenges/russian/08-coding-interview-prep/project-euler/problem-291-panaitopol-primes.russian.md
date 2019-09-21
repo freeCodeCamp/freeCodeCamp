@@ -2,15 +2,18 @@
 id: 5900f48f1000cf542c50ffa2
 challengeType: 5
 title: 'Problem 291: Panaitopol Primes'
-videoUrl: ''
+forumTopicId: 301943
 localeTitle: 'Problem 291: Panaitopol Primes'
 ---
 
 ## Description
-<section id="description"> Простое число p называется панаитоповым простым, если для некоторых натуральных x и y. <p> Найдите, сколько Панайтопольских простых чисел меньше 5 × 1015. </p></section>
+<section id='description'>
+Простое число p называется панаитоповым простым, если для некоторых натуральных x и y. <p> Найдите, сколько Панайтопольских простых чисел меньше 5 × 1015. </p>
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +21,8 @@ localeTitle: 'Problem 291: Panaitopol Primes'
 
 ```yml
 tests:
-  - text: <code>euler291()</code> должен возвращать 4037526.
-    testString: 'assert.strictEqual(euler291(), 4037526, "<code>euler291()</code> should return 4037526.");'
+  - text: <code>euler291()</code> should return 4037526.
+    testString: assert.strictEqual(euler291(), 4037526);
 
 ```
 
@@ -42,8 +45,6 @@ euler291();
 
 </div>
 
-
-
 </section>
 
 ## Solution
@@ -52,4 +53,5 @@ euler291();
 ```js
 // solution required
 ```
+
 </section>

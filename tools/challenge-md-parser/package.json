@@ -16,6 +16,7 @@
     "jest": "^24.8.0"
   },
   "dependencies": {
+    "@google-cloud/translate": "^2.1.3",
     "hast-util-select": "^2.1.0",
     "hast-util-to-html": "^4.0.1",
     "js-yaml": "^3.12.0",
@@ -25,6 +26,7 @@
     "remark-frontmatter": "^1.3.0",
     "remark-parse": "^5.0.0",
     "remark-rehype": "^3.0.1",
+    "remark-stringify": "^6.0.4",
     "to-vfile": "^5.0.1",
     "unified": "^7.0.0",
     "unist-util-visit": "^1.4.0"

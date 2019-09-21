@@ -7,7 +7,7 @@ import Adapter from 'enzyme-adapter-react-16';
 import sinon from 'sinon';
 
 import { SuperBlock } from './SuperBlock';
-import mockNodes from '../../../__mocks__/map-nodes';
+import mockChallengeNodes from '../../../__mocks__/challenge-nodes';
 import mockIntroNodes from '../../../__mocks__/intro-nodes';
 
 Enzyme.configure({ adapter: new Adapter() });
@@ -18,7 +18,7 @@ test('<SuperBlock /> not expanded snapshot', () => {
   const props = {
     introNodes: mockIntroNodes,
     isExpanded: false,
-    nodes: mockNodes,
+    nodes: mockChallengeNodes,
     superBlock: 'Super Block One',
     toggleSuperBlock: toggleSpy
   };
@@ -33,7 +33,7 @@ test('<SuperBlock /> expanded snapshot', () => {
   const props = {
     introNodes: mockIntroNodes,
     isExpanded: true,
-    nodes: mockNodes,
+    nodes: mockChallengeNodes,
     superBlock: 'Super Block One',
     toggleSuperBlock: toggleSpy
   };
@@ -48,7 +48,7 @@ test('<SuperBlock should handle toggle clicks correctly', () => {
   const props = {
     introNodes: mockIntroNodes,
     isExpanded: false,
-    nodes: mockNodes,
+    nodes: mockChallengeNodes,
     superBlock: 'Super Block One',
     toggleSuperBlock: toggleSpy
   };
@@ -61,7 +61,7 @@ test('<SuperBlock should handle toggle clicks correctly', () => {
       .find('.map-title')
       .find('h4')
       .text()
-  ).toBe('Super Block One Certification (300 hours)');
+  ).toBe('Super Block One Certification (300\xa0hours)');
   expect(enzymeWrapper.find('ul').length).toBe(0);
 
   enzymeWrapper.find('.map-title').simulate('click');
@@ -76,6 +76,6 @@ test('<SuperBlock should handle toggle clicks correctly', () => {
       .find('.map-title')
       .find('h4')
       .text()
-  ).toBe('Super Block One Certification (300 hours)');
+  ).toBe('Super Block One Certification (300\xa0hours)');
   expect(enzymeWrapper.find('ul').length).toBe(1);
 });
