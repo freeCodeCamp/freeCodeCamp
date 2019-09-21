@@ -6,12 +6,11 @@ frontmatter).
 Since the first run which covered over 10,000+ PRs, it is curently ran every
 couple of days for just the most recent PRs.
 
-To run the script for a specific range (i.e. label and comment on guide errors),
+To run the script for a specific range,
 run `node sweeper.js range startingPrNumber endingPrNumber`
 */
 
 const { getPRs, getUserInput, getFiles } = require('../lib/get-prs');
-const { guideFolderChecks } = require('../lib/validation');
 const { ProcessingLog, rateLimiter } = require('../lib/utils');
 const { labeler } = require('../lib/pr-tasks');
 
@@ -30,29 +29,18 @@ console.log('Sweeper started...');
       let {
         number,
         labels: currentLabels,
-        user: { login: username }
       } = openPRs[i];
       const prFiles = await getFiles(number);
       count++;
-
-      const guideFolderErrorsComment = await guideFolderChecks(
-        number,
-        prFiles,
-        username
-      );
-      const commentLogVal = guideFolderErrorsComment
-        ? guideFolderErrorsComment
-        : 'none';
 
       const labelsAdded = await labeler(
         number,
         prFiles,
         currentLabels,
-        guideFolderErrorsComment
       );
       const labelLogVal = labelsAdded.length ? labelsAdded : 'none added';
 
-      log.add(number, { number, comment: commentLogVal, labels: labelLogVal });
+      log.add(number, { number, labels: labelLogVal });
       if (count > 4000) {
         await rateLimiter(2350);
       }

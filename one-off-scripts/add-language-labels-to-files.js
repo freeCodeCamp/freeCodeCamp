@@ -1,7 +1,7 @@
 /*
 This script was created to iterate over all open PRs to label.
 
-To run the script for a specific range (i.e. label and comment on guide errors),
+To run the script for a specific range,
 run `node sweeper.js range startingPrNumber endingPrNumber`
 */
 
@@ -12,7 +12,7 @@ const { labeler } = require('../lib/pr-tasks');
 const log = new ProcessingLog('add-language-labels');
 
 log.start();
-console.log('Guide and Curriculum File language labeler started...');
+console.log('Curriculum File language labeler started...');
 (async() => {
   const { totalPRs, firstPR, lastPR } = await getUserInput();
   const prPropsToGet = ['number', 'labels', 'user'];
