@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+To use a variable, just put the variable name in parenthesis with `var` in front of them like this: `var(--variable-name)`. Add your variable as the value of the `background-color` property of the `bb1a` class. Whatever value you gave the variable will be applied to whatever property you use it on. In this case, your variable has the value of `#999`. So `#999` will be used as the value for the `background-color` property.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const bb1aStyle = code.match(/\.bb1a\s*{[\s\S]+?[^}]}/g)[0]; assert(/background-color\s*:\s*var\(\s*--building-color1\s*\)\s*(;|\s*})/g.test(bb1aStyle));
 
 ```
 
@@ -93,10 +93,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  To use a variable, just put the variable name in parenthesis with `var` in front of them like this: `var(--variable-name)`. Add your variable as the value of the `background-color` property of the `bb1a` class. Whatever value you gave the variable will be applied to whatever property you use it on. In this case, your variable has the value of `#999`. So `#999` will be used as the value for the `background-color` property.
--->
 ```
 
 </div>

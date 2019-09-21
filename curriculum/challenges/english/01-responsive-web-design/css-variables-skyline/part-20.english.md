@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+The buildings are stacked on top of each other and running off the screen. Let's fix that. Add the properties `display: flex;`, `align-items: flex-end;`, and `justify-content: space-evenly;` to the `background-buildings` class. This will use Flexbox again to evenly space the buildings across the bottom of the `background-buildings` element.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const bb = $(".background-buildings"); assert(bb.css("display") === "flex" && bb.css("align-items") === "flex-end" && bb.css("justify-content") === "space-evenly");
 
 ```
 
@@ -115,11 +115,6 @@ tests:
     </div>
   </body>
 </html>
-
-
-<!--
-  The buildings are stacked on top of each other and running off the screen. Let's fix that. Add the properties `display: flex;`, `align-items: flex-end;`, and `justify-content: space-evenly;` to the `background-buildings` class. This will use Flexbox again to evenly space the buildings across the bottom of the `background-buildings` element.
--->
 ```
 
 </div>

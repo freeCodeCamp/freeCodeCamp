@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+It's that simple. Use the same variable as the `background-color` of the `bb1b`, `bb1c`, and `bb1d` classes.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const bb1bStyle = code.match(/\.bb1b\s*{[\s\S]+?[^}]}/g)[0]; const bb1cStyle = code.match(/\.bb1c\s*{[\s\S]+?[^}]}/g)[0]; const bb1dStyle = code.match(/\.bb1d\s*{[\s\S]+?[^}]}/g)[0]; assert(/background-color\s*:\s*var\(\s*--building-color1\s*\)\s*(;|\s*})/g.test(bb1bStyle) && /background-color\s*:\s*var\(\s*--building-color1\s*\)\s*(;|\s*})/g.test(bb1cStyle) && /background-color\s*:\s*var\(\s*--building-color1\s*\)\s*(;|\s*})/g.test(bb1dStyle));
 
 ```
 
@@ -94,10 +94,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  It's that simple. Use the same variable as the `background-color` of the `bb1b`, `bb1c`, and `bb1d` classes.
--->
 ```
 
 </div>

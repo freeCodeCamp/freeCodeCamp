@@ -19,7 +19,7 @@ Nest four `div` elements in the `bb1` container. Give them the classes `bb1a`, `
 ```yml
 tests:
   - text: test-text
-    testString: assert($(".bb1").contains("div.bb1a") && $(".bb1").contains("div.bb1b") && $(".bb1").contains("div.bb1c") && $(".bb1").contains("div.bb1d"));
+    testString: const bb1 = $(".bb1")[0]; assert(bb1.contains($("div.bb1a")[0]) && bb1.contains($("div.bb1b")[0]) && bb1.contains($("div.bb1c")[0]) && bb1.contains($("div.bb1d")[0]));
 
 ```
 

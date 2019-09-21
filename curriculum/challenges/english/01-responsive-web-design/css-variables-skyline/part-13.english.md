@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Give your `bb1` element these style properties: `display: flex;`, `flex-direction: column;`, and `align-items: center;`. This will center the parts of the building using "flex" or "flexbox". You will learn about it in more detail on another project.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const bb1 = $(".bb1"); assert(bb1.css("display") === "flex" && bb1.css("flex-direction") === "column" && bb1.css("align-items") === "center");
 
 ```
 
@@ -89,10 +89,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Give your `bb1` element these style properties: `display: flex;`, `flex-direction: column;`, and `align-items: center;`. This will center the parts of the building using "flex" or "flexbox". You will learn about it in more detail on another project.
--->
 ```
 
 </div>

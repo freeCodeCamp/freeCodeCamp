@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Give the new buildings `width` and `height` properties of: `10%` and `50%` for `bb2`, `10%` and `55%` for `bb3`, and `11%` and `58%` for `bb4`.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const noSpaces = code.replace(/\s/g, ''); assert(noSpaces.match(/\.bb2{(height:50%;width:10%;?}|width:10%;height:50%;?})/g) && noSpaces.match(/\.bb3{(height:55%;width:10%;?}|width:10%;height:55%;?})/g) && noSpaces.match(/\.bb4{(height:58%;width:11%;?}|width:11%;height:58%;?})/g));
 
 ```
 
@@ -100,10 +100,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Give the new buildings `width` and `height` properties of: `10%` and `50%` for `bb2`, `10%` and `55%` for `bb3`, and `11%` and `58%` for `bb4`.
--->
 ```
 
 </div>
