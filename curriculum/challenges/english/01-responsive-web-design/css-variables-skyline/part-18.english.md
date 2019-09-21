@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Your first building looks pretty good now. Let's make some more! Nest three new `div` elements in the `background-buildings` container and give them the classes of `bb2`, `bb3`, and `bb4` in that order.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const bb = $(".background-buildings"); assert(bb.children(".bb2").length === 1 && bb.children(".bb3").length === 1 && bb.children(".bb4").length === 1);
 
 ```
 
@@ -97,10 +97,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Your first building looks pretty good now. Let's make some more! Nest three new `div` elements in the `background-buildings` container and give them the classes of `bb2`, `bb3`, and `bb4` in that order.
--->
 ```
 
 </div>

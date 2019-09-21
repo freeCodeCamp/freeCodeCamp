@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Now you have something that is starting to resemble a building. Lets get into your first variable. Variable declarations begin with two dashes (`-`) and are given a name and a value like this: `--variable-name: value;`. In the `bb1` class, create a variable named `--building-color1` and give it a value of `#999`.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const bb1style = code.match(/\.bb1\s*{[\s\S]+?[^}]}/g)[0]; assert(/--building-color1\s*:\s*#999\s*(;|\s*})/g.test(bb1style));
 
 ```
 
@@ -92,10 +92,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Now you have something that is starting to resemble a building. Lets get into your first variable. Variable declarations begin with two dashes (`-`) and are given a name and a value like this: `--variable-name: value;`. In the `bb1` class, create a variable named `--building-color1` and give it a value of `#999`.
--->
 ```
 
 </div>

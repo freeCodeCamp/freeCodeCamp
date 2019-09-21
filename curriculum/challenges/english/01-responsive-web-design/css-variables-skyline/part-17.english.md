@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+I don't really like that color. Change the value of your variable from `#999` to `#aa80ff` and you can see how it gets applied everywhere you used the variable. This is the main advantage of using variables, being able to quickly change many values in your stylesheet by just changing the value of a variable.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const bb1style = code.match(/\.bb1\s*{[\s\S]+?[^}]}/g)[0]; assert(/--building-color1\s*:\s*#aa80ff\s*(;|\s*})/g.test(bb1style));
 
 ```
 
@@ -97,10 +97,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  I don't really like that color. Change the value of your variable from `#999` to `#aa80ff` and you can see how it gets applied everywhere you used the variable. This is the main advantage of using variables, being able to quickly change many values in your stylesheet by just changing the value of a variable.
--->
 ```
 
 </div>
