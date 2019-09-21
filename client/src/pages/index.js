@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import { Loader } from '../components/helpers';
-import Welcome from '../components/welcome';
 import Landing from '../components/landing';
 import {
   userSelector,
@@ -25,11 +24,12 @@ const mapStateToProps = createSelector(
 );
 
 const RedirectAcceptPrivacyTerm = createRedirect('/accept-privacy-terms');
+const RedirectLearn = createRedirect('/learn');
 
 export const IndexPage = ({
   fetchState: { pending, complete },
   isSignedIn,
-  user: { acceptedPrivacyTerms, name = '' }
+  user: { acceptedPrivacyTerms }
 }) => {
   if (pending && !complete) {
     return <Loader fullScreen={true} />;
@@ -40,7 +40,7 @@ export const IndexPage = ({
   }
 
   if (isSignedIn) {
-    return <Welcome name={name} />;
+    return <RedirectLearn />;
   }
 
   return <Landing />;
@@ -54,14 +54,7 @@ const propTypes = {
   }),
   isSignedIn: PropTypes.bool,
   user: PropTypes.shape({
-    acceptedPrivacyTerms: PropTypes.bool,
-    completedCertCount: PropTypes.number,
-    completedChallengeCount: PropTypes.number,
-    completedLegacyCertCount: PropTypes.number,
-    completedProjectCount: PropTypes.number,
-    isDonating: PropTypes.bool,
-    name: PropTypes.string,
-    username: PropTypes.string
+    acceptedPrivacyTerms: PropTypes.bool
   })
 };
 

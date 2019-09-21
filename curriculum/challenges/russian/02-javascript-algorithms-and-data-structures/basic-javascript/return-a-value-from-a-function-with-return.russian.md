@@ -2,29 +2,34 @@
 id: 56533eb9ac21ba0edf2244c2
 title: Return a Value from a Function with Return
 challengeType: 1
-videoUrl: ''
+videoUrl: https://scrimba.com/c/cy87wue
+forumTopicId: 18271
 localeTitle: Возврат значения из функции с возвратом
 ---
 
 ## Description
-<section id="description"> Мы можем передавать значения в функцию с <dfn>аргументами</dfn> . Вы можете использовать оператор <code>return</code> чтобы отправить значение обратно из функции. <strong>пример</strong> <blockquote> function plusThree (num) { <br> return num + 3; <br> } <br> var answer = plusThree (5); // 8 </blockquote> <code>plusThree</code> принимает <dfn>аргумент</dfn> для <code>num</code> и возвращает значение, равное <code>num + 3</code> . </section>
+<section id='description'>
+Мы можем передавать значения в функцию с <dfn>аргументами</dfn> . Вы можете использовать оператор <code>return</code> чтобы отправить значение обратно из функции. <strong>пример</strong> <blockquote> function plusThree (num) { <br> return num + 3; <br> } <br> var answer = plusThree (5); // 8 </blockquote> <code>plusThree</code> принимает <dfn>аргумент</dfn> для <code>num</code> и возвращает значение, равное <code>num + 3</code> .
+</section>
 
 ## Instructions
-<section id="instructions"> Создайте функцию <code>timesFive</code> которая принимает один аргумент, умножает его на <code>5</code> и возвращает новое значение. См. Последнюю строку в редакторе для примера того, как вы можете проверить свою функцию <code>timesFive</code> . </section>
+<section id='instructions'>
+Создайте функцию <code>timesFive</code> которая принимает один аргумент, умножает его на <code>5</code> и возвращает новое значение. См. Последнюю строку в редакторе для примера того, как вы можете проверить свою функцию <code>timesFive</code> .
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>timesFive</code> должна быть функцией
-    testString: 'assert(typeof timesFive === "function", "<code>timesFive</code> should be a function");'
-  - text: <code>timesFive(5)</code> должен вернуть <code>25</code>
-    testString: 'assert(timesFive(5) === 25, "<code>timesFive(5)</code> should return <code>25</code>");'
-  - text: <code>timesFive(2)</code> должен вернуть <code>10</code>
-    testString: 'assert(timesFive(2) === 10, "<code>timesFive(2)</code> should return <code>10</code>");'
-  - text: <code>timesFive(0)</code> должен возвращать <code>0</code>
-    testString: 'assert(timesFive(0) === 0, "<code>timesFive(0)</code> should return <code>0</code>");'
+  - text: <code>timesFive</code> should be a function
+    testString: assert(typeof timesFive === 'function');
+  - text: <code>timesFive(5)</code> should return <code>25</code>
+    testString: assert(timesFive(5) === 25);
+  - text: <code>timesFive(2)</code> should return <code>10</code>
+    testString: assert(timesFive(2) === 10);
+  - text: <code>timesFive(0)</code> should return <code>0</code>
+    testString: assert(timesFive(0) === 0);
 
 ```
 
@@ -51,14 +56,16 @@ console.log(minusSeven(10));
 
 </div>
 
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
 ```js
-// solution required
+function timesFive(num) {
+  return num * 5;
+}
+timesFive(10);
 ```
+
 </section>

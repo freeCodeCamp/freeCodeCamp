@@ -2,23 +2,28 @@
 id: 5a90376038fddaf9a66b5d3c
 title: Align All Items Horizontally using justify-items
 challengeType: 0
-videoUrl: ''
+videoUrl: https://scrimba.com/p/pByETK/cJbpECn
+forumTopicId: 301120
 localeTitle: Выравнивание всех элементов по горизонтали с использованием оправдательных элементов
 ---
 
 ## Description
-<section id="description"> Иногда вы хотите, чтобы все элементы в вашей сетке CSS имели одинаковое выравнивание. Вы можете использовать ранее изученные свойства и выровнять их по отдельности, или вы можете выровнять их все горизонтально, используя <code>justify-items</code> в контейнере сетки. Это свойство может принимать все те же значения, о которых вы узнали в предыдущих двух задачах, разница в том, что он переместит <b>все</b> элементы нашей сетки в желаемое выравнивание. </section>
+<section id='description'>
+Иногда вы хотите, чтобы все элементы в вашей сетке CSS имели одинаковое выравнивание. Вы можете использовать ранее изученные свойства и выровнять их по отдельности, или вы можете выровнять их все горизонтально, используя <code>justify-items</code> в контейнере сетки. Это свойство может принимать все те же значения, о которых вы узнали в предыдущих двух задачах, разница в том, что он переместит <b>все</b> элементы нашей сетки в желаемое выравнивание.
+</section>
 
 ## Instructions
-<section id="instructions"> Используйте это свойство, чтобы центрировать все наши объекты по горизонтали. </section>
+<section id='instructions'>
+Используйте это свойство, чтобы центрировать все наши объекты по горизонтали.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: класс <code>container</code> должен иметь свойство <code>justify-items</code> которое имеет значение <code>center</code> .
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*justify-items\s*?:\s*?center\s*?;[\s\S]*}/gi), "<code>container</code> class should have a <code>justify-items</code> property that has the value of <code>center</code>.");'
+  - text: <code>container</code> class should have a <code>justify-items</code> property that has the value of <code>center</code>.
+    testString: assert(code.match(/.container\s*?{[\s\S]*justify-items\s*?:\s*?center\s*?;[\s\S]*}/gi));
 
 ```
 
@@ -65,14 +70,13 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+var code = ".container {justify-items: center;}"
 ```
+
 </section>

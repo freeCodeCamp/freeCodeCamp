@@ -10,7 +10,7 @@ forumTopicId: 18329
 <section id='description'>
 Commenting is a way that you can leave comments for other developers within your code without affecting the resulting output that is displayed to the end user.
 Commenting is also a convenient way to make code inactive without having to delete it entirely.
-Comments in HTML starts with <code>&#60;!--</code>, and ends with a <code>--&#62;</code>
+Comments in HTML start with <code>&#60;!--</code> and end with a <code>--&#62;</code>
 </section>
 
 ## Instructions

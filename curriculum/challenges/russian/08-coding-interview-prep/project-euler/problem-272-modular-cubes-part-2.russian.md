@@ -2,15 +2,18 @@
 id: 5900f47d1000cf542c50ff8f
 challengeType: 5
 title: 'Problem 272: Modular Cubes, part 2'
-videoUrl: ''
+forumTopicId: 301922
 localeTitle: 'Задача 272: Модульные кубы, часть 2'
 ---
 
 ## Description
-<section id="description"> Для положительного числа n определим C (n) как число целых чисел x, для которых 1 <p> При n = 91 существует 8 возможных значений для x, а именно: 9, 16, 22, 29, 53, 74, 79, 81. Таким образом, C (91) = 8. </p><p> Найдите сумму положительных чисел n≤1011, для которых C (n) = 242. </p></section>
+<section id='description'>
+Для положительного числа n определим C (n) как число целых чисел x, для которых 1 <p> При n = 91 существует 8 возможных значений для x, а именно: 9, 16, 22, 29, 53, 74, 79, 81. Таким образом, C (91) = 8. </p><p> Найдите сумму положительных чисел n≤1011, для которых C (n) = 242. </p>
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +21,8 @@ localeTitle: 'Задача 272: Модульные кубы, часть 2'
 
 ```yml
 tests:
-  - text: <code>euler272()</code> должен вернуть 8495585919506151000.
-    testString: 'assert.strictEqual(euler272(), 8495585919506151000, "<code>euler272()</code> should return 8495585919506151000.");'
+  - text: <code>euler272()</code> should return 8495585919506151000.
+    testString: assert.strictEqual(euler272(), 8495585919506151000);
 
 ```
 
@@ -42,8 +45,6 @@ euler272();
 
 </div>
 
-
-
 </section>
 
 ## Solution
@@ -52,4 +53,5 @@ euler272();
 ```js
 // solution required
 ```
+
 </section>

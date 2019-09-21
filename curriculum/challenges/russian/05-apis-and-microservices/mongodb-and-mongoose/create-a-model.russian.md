@@ -1,12 +1,13 @@
 ---
 id: 587d7fb6367417b2b2512c07
 title: Create a Model
-localeTitle: Создать модель
 challengeType: 2
+forumTopicId: 301535
+localeTitle: Создать модель
 ---
 
 ## Description
-<section id='description'> 
+<section id='description'>
 Прежде всего нам нужна схема. Каждая схема отображается в коллекцию MongoDB. Он определяет форму документов в этой коллекции. 
 Схемы являются строительным блоком для Моделей. Они могут быть вложенными для создания сложных моделей, но в этом случае мы будем делать все просто. 
 Модель позволяет создавать экземпляры ваших объектов, называемые документами. 
@@ -27,12 +28,23 @@ challengeType: 2
 <code>//... do something (risky) ...</code> 
 <code>if(error) return done(error);</code> 
 <code>done(null, result);</code> 
-<code>};</code> 
+<code>};</code>
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
+Create a person having this prototype :
+<blockquote>
+- Person Prototype -<br>
+--------------------<br>
+name : string [required]<br>
+age :  number<br>
+favoriteFoods : array of strings (*)
+</blockquote>
 
+Use the mongoose basic schema types. If you want you can also add
+more fields, use simple validators like required or unique,
+and set default values. See the <a href='http://mongoosejs.com/docs/guide.html'>mongoose docs</a>.
 </section>
 
 ## Tests
@@ -40,22 +52,9 @@ challengeType: 2
 
 ```yml
 tests:
-  - text: Создание экземпляра из схемы мангуста должно завершиться успешно
+  - text: Creating an instance from a mongoose schema should succeed
     testString: 'getUserInput => $.post(getUserInput(''url'') + ''/_api/mongoose-model'', {name: ''Mike'', age: 28, favoriteFoods: [''pizza'', ''cheese'']}).then(data => { assert.equal(data.name, ''Mike'', ''"model.name" is not what expected''); assert.equal(data.age, ''28'', ''"model.age" is not what expected''); assert.isArray(data.favoriteFoods, ''"model.favoriteFoods" is not an Array''); assert.include(data.favoriteFoods, ''pizza'', ''"model.favoriteFoods" does not include the expected items''); assert.include(data.favoriteFoods, ''cheese'', ''"model.favoriteFoods" does not include the expected items''); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-</section>
-
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
 </section>

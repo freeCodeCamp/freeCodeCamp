@@ -2,25 +2,30 @@
 id: 56533eb9ac21ba0edf2244bf
 title: Local Scope and Functions
 challengeType: 1
-videoUrl: ''
+videoUrl: https://scrimba.com/c/cd62NhM
+forumTopicId: 18227
 localeTitle: Локальная область и функции
 ---
 
 ## Description
-<section id="description"> Переменные, объявленные внутри функции, а также параметры функции имеют <dfn>локальную</dfn> область. Это означает, что они видны только внутри этой функции. Вот функция <code>myTest</code> с локальной переменной <code>loc</code> . <blockquote> function myTest () { <br> var loc = &quot;foo&quot;; <br> console.log (LOC); <br> } <br> MyTest (); // logs &quot;foo&quot; <br> console.log (LOC); // loc не определен </blockquote> <code>loc</code> не определяется вне функции. </section>
+<section id='description'>
+Переменные, объявленные внутри функции, а также параметры функции имеют <dfn>локальную</dfn> область. Это означает, что они видны только внутри этой функции. Вот функция <code>myTest</code> с локальной переменной <code>loc</code> . <blockquote> function myTest () { <br> var loc = &quot;foo&quot;; <br> console.log (LOC); <br> } <br> MyTest (); // logs &quot;foo&quot; <br> console.log (LOC); // loc не определен </blockquote> <code>loc</code> не определяется вне функции.
+</section>
 
 ## Instructions
-<section id="instructions"> Объявите локальную переменную <code>myVar</code> внутри <code>myLocalScope</code> . Запустите тесты, а затем следуйте инструкциям, прокомментированным в редакторе. <strong>намек</strong> <br> Обновление страницы может помочь, если вы застряли. </section>
+<section id='instructions'>
+Объявите локальную переменную <code>myVar</code> внутри <code>myLocalScope</code> . Запустите тесты, а затем следуйте инструкциям, прокомментированным в редакторе. <strong>намек</strong> <br> Обновление страницы может помочь, если вы застряли.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: Глобальная переменная <code>myVar</code>
-    testString: 'assert(typeof myVar === "undefined", "No global <code>myVar</code> variable");'
-  - text: Добавьте локальную переменную <code>myVar</code>
-    testString: 'assert(/var\s+myVar/.test(code), "Add a local <code>myVar</code> variable");'
+  - text: No global <code>myVar</code> variable
+    testString: assert(typeof myVar === 'undefined');
+  - text: Add a local <code>myVar</code> variable
+    testString: assert(/function\s+myLocalScope\s*\(\s*\)\s*\{\s[\s\S]+\s*var\s*myVar\s*(\s*|=[\s\S]+)\s*;[\s\S]+}/.test(code));
 
 ```
 
@@ -49,7 +54,7 @@ console.log(myVar);
 
 </div>
 
-### Before Test
+### Before Tests
 <div id='js-setup'>
 
 ```js
@@ -76,11 +81,13 @@ function uncapture() {
 
 </div>
 
-### After Test
+### After Tests
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+typeof myLocalScope === 'function' && (capture(), myLocalScope(), uncapture());
+(function() { return logOutput || "console.log never called"; })();
+
 ```
 
 </div>
@@ -91,6 +98,13 @@ console.info('after the test');
 <section id='solution'>
 
 ```js
-// solution required
+function myLocalScope() {
+  'use strict';
+
+  var myVar;
+  console.log(myVar);
+}
+myLocalScope();
 ```
+
 </section>

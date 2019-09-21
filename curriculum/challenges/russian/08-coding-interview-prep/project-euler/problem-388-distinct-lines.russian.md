@@ -2,23 +2,27 @@
 id: 5900f4f11000cf542c510002
 challengeType: 5
 title: 'Problem 388: Distinct Lines'
-videoUrl: ''
+forumTopicId: 302052
 localeTitle: 'Задача 388: Разные строки'
 ---
 
 ## Description
-<section id="description"> Рассмотрим все точки решетки (a, b, c) с 0 ≤ a, b, c ≤ N. <p> Из начала координат O (0,0,0) все линии тянутся к другим точкам решетки. Пусть D (N) - число различных таких линий. </p><p> Вам дается, что D (1 000 000) = 831909254469114121. </p><p> Найдите D (1010). Дайте в качестве ответа первые девять цифр, за которыми следуют последние девять цифр. </p></section>
+<section id='description'>
+Рассмотрим все точки решетки (a, b, c) с 0 ≤ a, b, c ≤ N. <p> Из начала координат O (0,0,0) все линии тянутся к другим точкам решетки. Пусть D (N) - число различных таких линий. </p><p> Вам дается, что D (1 000 000) = 831909254469114121. </p><p> Найдите D (1010). Дайте в качестве ответа первые девять цифр, за которыми следуют последние девять цифр. </p>
+</section>
 
 ## Instructions
-undefined
+<section id='instructions'>
+
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: ''
-    testString: 'assert.strictEqual(euler388(), 831907372805130000, "<code>euler388()</code> should return 831907372805130000.");'
+  - text: <code>euler388()</code> should return 831907372805130000.
+    testString: assert.strictEqual(euler388(), 831907372805130000);
 
 ```
 
@@ -41,8 +45,6 @@ euler388();
 
 </div>
 
-
-
 </section>
 
 ## Solution
@@ -51,4 +53,5 @@ euler388();
 ```js
 // solution required
 ```
+
 </section>

@@ -1,3 +1,8 @@
+<!-- do not translate this -->
+| [Read these guidelines in other languages](/docs/i18n-languages) |
+|-|
+<!-- do not translate this -->
+
 # Catch outgoing emails locally for email workflows
 
 > **Note:** This is an **optional** step and is required only when working with email workflows

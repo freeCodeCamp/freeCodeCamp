@@ -11,7 +11,7 @@ exports[`<SuperBlock /> expanded snapshot: superBlock-expanded 1`] = `
   >
     <Caret />
     <h4>
-      Super Block One Certification (300 hours)
+      Super Block One Certification (300 hours)
     </h4>
   </button>
   <ul>
@@ -149,7 +149,7 @@ exports[`<SuperBlock /> not expanded snapshot: superBlock-not-expanded 1`] = `
   >
     <Caret />
     <h4>
-      Super Block One Certification (300 hours)
+      Super Block One Certification (300 hours)
     </h4>
   </button>
 </li>

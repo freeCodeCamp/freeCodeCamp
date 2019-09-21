@@ -15,7 +15,7 @@ const propTypes = {
   fields: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
   options: PropTypes.shape({
     ignored: PropTypes.arrayOf(PropTypes.string),
-    placeholder: PropTypes.bool,
+    placeholders: PropTypes.objectOf(PropTypes.string),
     required: PropTypes.arrayOf(PropTypes.string),
     types: PropTypes.objectOf(PropTypes.string)
   })
@@ -25,7 +25,7 @@ function FormFields(props) {
   const { fields, options = {} } = props;
   const {
     ignored = [],
-    placeholder = true,
+    placeholders = {},
     required = [],
     types = {}
   } = options;
@@ -38,6 +38,8 @@ function FormFields(props) {
             {({ input: { value, onChange }, meta: { pristine, error } }) => {
               const key = kebabCase(name);
               const type = name in types ? types[name] : 'text';
+              const placeholder =
+                name in placeholders ? placeholders[name] : '';
               return (
                 <Col key={key} xs={12}>
                   <FormGroup>
@@ -51,7 +53,7 @@ function FormFields(props) {
                       id={key}
                       name={name}
                       onChange={onChange}
-                      placeholder={placeholder ? name : ''}
+                      placeholder={placeholder}
                       required={required.includes(name)}
                       rows={4}
                       type={type}

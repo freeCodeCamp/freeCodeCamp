@@ -27,13 +27,13 @@ import Portfolio from '../components/settings/Portfolio';
 import Honesty from '../components/settings/Honesty';
 import Certification from '../components/settings/Certification';
 import DangerZone from '../components/settings/DangerZone';
-import RedirectHome from '../components/RedirectHome';
 
 const propTypes = {
   createFlashMessage: PropTypes.func.isRequired,
   hardGoTo: PropTypes.func.isRequired,
-  isSignedIn: PropTypes.bool,
-  showLoading: PropTypes.bool,
+  isSignedIn: PropTypes.bool.isRequired,
+  navigate: PropTypes.func.isRequired,
+  showLoading: PropTypes.bool.isRequired,
   submitNewAbout: PropTypes.func.isRequired,
   toggleNightMode: PropTypes.func.isRequired,
   updateInternetSettings: PropTypes.func.isRequired,
@@ -105,6 +105,7 @@ const mapDispatchToProps = dispatch =>
     {
       createFlashMessage,
       hardGoTo,
+      navigate: location => dispatch(hardGoTo(location)),
       submitNewAbout,
       toggleNightMode: theme => updateUserFlag({ theme }),
       updateInternetSettings: updateUserFlag,
@@ -121,7 +122,7 @@ const createHandleSignoutClick = hardGoTo => e => {
   return hardGoTo(`${apiLocation}/signout`);
 };
 
-function ShowSettings(props) {
+export function ShowSettings(props) {
   const {
     createFlashMessage,
     hardGoTo,
@@ -157,6 +158,7 @@ function ShowSettings(props) {
       website,
       portfolio
     },
+    navigate,
     showLoading,
     updateQuincyEmail,
     updateInternetSettings,
@@ -170,7 +172,7 @@ function ShowSettings(props) {
   }
 
   if (!showLoading && !isSignedIn) {
-    return <RedirectHome />;
+    return navigate(`${apiLocation}/signin`);
   }
 
   return (
