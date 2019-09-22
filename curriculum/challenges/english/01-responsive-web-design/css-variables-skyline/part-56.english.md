@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Next, change the `#777` and `#999` of `bb2a` to `transparent`. This will make the left and right borders invisible.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const bb2a = code.match(/\.bb2a\s*{[\s\S]+?[^}]}/g)[0]; assert(/border-left\s*:\s*5vw\s+solid\s+transparent\s*(;|})/g.test(bb2a) && /border-right\s*:\s*5vw\s+solid\s+transparent\s*(;|})/g.test(bb2a));
 
 ```
 
@@ -221,10 +221,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Next, change the `#777` and `#999` of `bb2a` to `transparent`. This will make the left and right borders invisible.
--->
 ```
 
 </div>

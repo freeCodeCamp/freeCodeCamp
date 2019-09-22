@@ -6,7 +6,17 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+So far, all the gradients you created have gone from top to bottom, that's the default direction. You can specify another direction by adding it before your colors like this:
+
+```css
+gradient-type(
+  direction
+  color1,
+  color2
+);
+```
+
+Fill in `bb3` with a `repeating-linear-gradient`. Use `90deg` for the direction, your `building-color3` for the first two colors, and `window-color3` at `15%` for the third. When you don't specify a distance for a color, it will use the values that makes sense. In this case, the first two colors will default to `0%` and `7.5%` because it starts at `0%`, and `7.5%` is half of the `15%`.
 </section>
 
 ## Instructions
@@ -19,7 +29,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const bb3 = code.match(/\.bb3\s*{[\s\S]+?[^}]}/g)[0]; assert(/background\s*:\s*repeating-linear-gradient\(\s*90deg\s*,\s*var\(\s*--building-color3\s*\)\s*(0%\s*,|,)\s*var\(\s*--building-color3\s*\)\s*(7\.5%\s*,|,)\s*var\(\s*--window-color3\s*\)\s*15%\s*\)\s*(;|})/g.test(bb3));
 
 ```
 
@@ -220,18 +230,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  So far, all the gradients you created have gone from top to bottom, that's the default direction. You can specify another direction by adding it before your colors like this:
-  `
-    gradient-type(
-      direction
-      color1,
-      color2
-    );
-  `
-  Fill in `bb3` with a `repeating-linear-gradient`. Use `90deg` for the direction, your `building-color3` for the first two colors, and `window-color3` at `15%` for the third. If you haven't noticed by now, when you don't specify a distance for a color, it will use the values that makes sense. In this case, the first two colors will be `0%` and `7.5%` because it starts at `0%`, and `7.5%` is half of the `15%`.
--->
 ```
 
 </div>

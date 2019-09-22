@@ -6,7 +6,16 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Gradients in CSS are a way to transition between colors across the distance of an element. They are applied to the `background` property. The syntax looks like this:
+
+```css
+gradient-type(
+  color1,
+  color2
+);
+```
+
+In the example, `color1` is solid at the top, `color2` is solid at the bottom, and in between it transitions evenly from one to the next. In `bb1a`, add a gradient of type `linear-gradient` to the `background` property with `--building-color1` as the first color and `--window-color1` as the second.
 </section>
 
 ## Instructions
@@ -19,7 +28,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($(".bb1a").css("background") === "rgba(0, 0, 0, 0) linear-gradient(rgb(170, 128, 255), black) repeat scroll 0% 0% / auto padding-box border-box");
 
 ```
 
@@ -191,17 +200,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Gradients in CSS are a way to transition between colors across the **distance** of an element. They are applied to the `background` property. The syntax looks like this:
-  `
-    gradient-type(
-      color1,
-      color2
-    );
-  `
-  In the example, `color1` is solid at the top, `color2` is solid at the bottom, and in between it transitions evenly from one to the next. In `bb1a`, add a gradient of type `linear-gradient` to the `background` property with `--building-color1` as the first color and `--window-color1` as the second.
--->
 ```
 
 </div>

@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Remove the `background-color` property and value from `bb3` since you are using the gradient as the background now.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const bb3 = code.match(/\.bb3\s*{[\s\S]+?[^}]}/g)[0]; assert(!/background-color/g.test(bb3));
 
 ```
 
@@ -227,10 +227,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Remove the `background-color` property and value from `bb3` since you are using the gradient as the background now.
--->
 ```
 
 </div>

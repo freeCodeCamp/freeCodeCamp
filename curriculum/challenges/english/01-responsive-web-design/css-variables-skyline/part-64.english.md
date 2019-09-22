@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Remove the `background-color` property and value from `bb4` and add it to the three new sections; `bb4a`, bb4b`, and `bb4c`.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const bb4 = code.match(/\.bb4\s*{[\s\S]+?[^}]}/g)[0]; assert(!/background-color/g.test(bb4) && $(".bb4a").css("background-color") === "rgb(83, 140, 198)" && $(".bb4b").css("background-color") === "rgb(83, 140, 198)" && $(".bb4c").css("background-color") === "rgb(83, 140, 198)");
 
 ```
 
@@ -245,10 +245,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Remove the `background-color` property and value from `bb4` and add it to the three new sections; `bb4a`, bb4b`, and `bb4c`.
--->
 ```
 
 </div>

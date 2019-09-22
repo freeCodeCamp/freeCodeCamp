@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Remove the `margin` and `border-top` properties and values from `bb2a` to turn it into a triangle for the top of the building.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const bb2a = code.match(/\.bb2a\s*{[\s\S]+?[^}]}/g)[0]; assert(!/margin/g.test(bb2a) && !/border-top/g.test(bb2a));
 
 ```
 
@@ -221,10 +221,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Remove the `margin` and `border-top` properties and values from `bb2a` to turn it into a triangle.
--->
 ```
 
 </div>

@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Add the new `bb1-window` class to the `bb1a`, `bb1b`, and `bb1c` elements. This will apply the gradient to them.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($(".bb1a.bb1-window").length === 1 && $(".bb1b.bb1-window").length === 1 && $(".bb1c.bb1-window").length === 1);
 
 ```
 
@@ -199,10 +199,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Add the new `bb1-window` class to the `bb1a`, `bb1b`, and `bb1c` elements. This will apply the gradient to them.
--->
 ```
 
 </div>

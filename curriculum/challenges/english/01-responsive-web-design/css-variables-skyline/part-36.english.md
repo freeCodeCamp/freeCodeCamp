@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Squeeze the buildings together again by adding two empty `div` elements at both the top and bottom of the `foreground-buildings` element. And one more in between `fb2` and `fb3`.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const fb = $(".foreground-buildings").children("div"); assert(fb.length === 11 && fb[2] === $("div.fb1")[0] && fb[3] === $("div.fb2")[0] && fb[5] === $("div.fb3")[0] && fb[6] === $("div.fb4")[0] && fb[7] === $("div.fb5")[0] && fb[8] === $("div.fb6")[0]);
 
 ```
 
@@ -179,10 +179,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Squeeze the buildings together again by adding two empty `div` elements at both the top and bottom of the `foreground-buildings` element. And one more in between `fb2` and `fb3`.
--->
 ```
 
 </div>

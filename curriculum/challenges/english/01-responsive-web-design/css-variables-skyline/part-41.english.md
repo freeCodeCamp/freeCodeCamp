@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+You want to add the same gradient to the next two sections. But instead of doing that, create a new class called `bb1-window` and move the `height` and `background` properties and values from `bb1a` to the new class.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const bb1wStyle = code.match(/\.bb1-window\s*{[\s\S]+?[^}]}/g)[0]; console.log(bb1wStyle); assert(/height\s*:\s*10%\s*(;|})/g.test(bb1wStyle) && /background\s*:\s*linear-gradient\(\s*var\(\s*--building-color1\s*\)\s*,\s*var\(\s*--window-color1\s*\)\s*\)\s*(;|})/g.test(bb1wStyle));
 
 ```
 
@@ -196,10 +196,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  You want to add the same gradient to the next two sections. But instead of adding doing that, create a new class called `bb1-window` and move the `height` and `background` properties and values from `bb1a` to the new class.
--->
 ```
 
 </div>

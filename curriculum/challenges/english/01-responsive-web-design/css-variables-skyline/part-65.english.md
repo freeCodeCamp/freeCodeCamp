@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+You want `bb4` to share the properties of `bb1` that center the sections. Instead of duplicating that code, create a new class above the background building comment called `building-wrap`. Leave it empty for now; this class will be used in a few places to save you some coding.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(/\.building-wrap\s*{\s*}/g.test(code));
 
 ```
 
@@ -247,10 +247,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  You want `bb4` to share the properties of `bb1` that center the sections. Instead of duplicating that code, create a new class above the background building comment called `building-wrap`. This class will be used in a few places so it will save you some space.
--->
 ```
 
 </div>

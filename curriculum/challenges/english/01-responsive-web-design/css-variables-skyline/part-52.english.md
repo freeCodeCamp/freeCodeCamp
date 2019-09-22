@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+You can see the hard color change at the top of the `bb2b` section. Change the `bb2b` gradient type from `linear-gradient` to `repeating-linear-gradient`. The current gradient ends at 9% of the elements height, this will make that 9% repeat throughout the rest of the element. Giving you some stripes, and saving you from having to add a bunch of elements to create them.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($(".bb2b").css("background") === "rgba(0, 0, 0, 0) repeating-linear-gradient(rgb(102, 204, 153), rgb(102, 204, 153) 6%, rgb(140, 217, 179) 6%, rgb(140, 217, 179) 9%) repeat scroll 0% 0% / auto padding-box border-box");
 
 ```
 
@@ -214,10 +214,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  You can see the hard color change at the top of the `bb2b` section. Change the `bb2b` gradient type from `linear-gradient` to `repeating-linear-gradient`. The current gradient ends at 9% of the elements height, this will make that 9% repeat throughout the rest of the element. Giving you some stripes, and saving you from having to add a bunch of elements to create them.
--->
 ```
 
 </div>

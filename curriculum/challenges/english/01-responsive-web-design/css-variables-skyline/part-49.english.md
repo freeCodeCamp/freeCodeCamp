@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Give `bb2b` a `width` and `height` of `100%` to make it fill the building container. You will add something on the top a little later.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(/\.bb2b\s*{\s*(width\s*:\s*100%\s*;\s*height\s*:\s*100%\s*(;|})|height\s*:\s*100%\s*;\s*width\s*:\s*100%\s*(;|}))/g.test(code));
 
 ```
 
@@ -201,10 +201,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Give `bb2b` a `width` and `height` of `100%` to make it fill the building container. You will add something on the top a little later.
--->
 ```
 
 </div>
