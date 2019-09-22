@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Looks good! On to the foreground buildings! Turn the `fb1` building into three sections by nesting three new `div` elements within it. Give them the classes of `fb1a`, `fb1b` and `fb1c` in that order.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const fb1 = $(".fb1").children("div"); assert(fb1.length === 3 && fb1[0] === $("div.fb1a")[0] && fb1[1] === $("div.fb1b")[0] && fb1[2] === $("div.fb1c")[0]);
 
 ```
 
@@ -268,10 +268,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Looks good! On to the foreground buildings! Turn the `fb1` building into three sections by nesting three new `div` elements within it. Give them the classes of `fb1a`, `fb1b` and `fb1c` in that order.
--->
 ```
 
 </div>

@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Give `fb1b` a `width` of `60%` and `height` of `10%`, and `fb1c` a `width` of `100%` and `height` of `80%`.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const fb1b = code.match(/\.fb1b\s*{[\s\S]+?[^}]}/g)[0]; const fb1c = code.match(/\.fb1c\s*{[\s\S]+?[^}]}/g)[0]; assert(/width\s*:\s*60%\s*(;|})/g.test(fb1b) && /height\s*:\s*10%\s*(;|})/g.test(fb1b) && /width\s*:\s*100%\s*(;|})/g.test(fb1c) && /height\s*:\s*80%\s*(;|})/g.test(fb1c));
 
 ```
 
@@ -272,10 +272,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Give `fb1b` a `width` of `60%` and `height` of `10%`, and `fb1c` a `width` of `100%` and `height` of `80%`.
--->
 ```
 
 </div>

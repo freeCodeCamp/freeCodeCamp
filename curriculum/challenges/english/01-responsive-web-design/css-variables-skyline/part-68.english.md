@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Create a new variable called `--window-color4` in `:root` and give it a value of `#8cb3d9`. This will be the secondary color for the last background building.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const rootStyle = code.match(/:root\s*{[\s\S]+?[^}]}/g)[0]; assert(/--window-color4\s*:\s*#8cb3d9\s*(;|})/g.test(rootStyle));
 
 ```
 
@@ -250,10 +250,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Create a new variable called `--window-color4` in `:root` and give it a value of `#8cb3d9`. This will be the secondary color for the last background building.
--->
 ```
 
 </div>

@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Nest four new `div` elements within `bb4c`, give them all the class of `bb4-window`. These will be windows for this building.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($(".bb4c").children("div.bb4-window").length === 4);
 
 ```
 
@@ -251,10 +251,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Nest four new `div` elements within `bb4c`, give them all the class of `bb4-window`. These will be windows for this building.
--->
 ```
 
 </div>

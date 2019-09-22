@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Add the new `window-wrap` class to the `bb4c` element.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($(".bb4c.window-wrap").length === 1);
 
 ```
 
@@ -268,10 +268,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Add the new `window-wrap` class to the `bb4c` element.
--->
 ```
 
 </div>

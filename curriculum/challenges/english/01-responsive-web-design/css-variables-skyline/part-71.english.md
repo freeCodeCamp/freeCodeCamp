@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Add a new class below `building-wrap` called `window-wrap` and add these properties to it: `display: flex;`, `align-items: center;`, and `justify-content: space-evenly;`. This will be used in a few places to center window elements vertically and space them evenly in their parent.
 </section>
 
 ## Instructions
@@ -19,7 +19,8 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const wWrap = code.match(/\.window-wrap\s*{[\s\S]+?[^}]}/g)[0]; assert(/display\s*:\s*flex\s*(;|})/g.test(wWrap) && /align-items\s*:\s*center\s*(;|})/g.test(wWrap) && /justify-content\s*:\s*space-evenly\s*(;|})/g.test(wWrap));
+
 
 ```
 
@@ -262,10 +263,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Add a new class below `building-wrap` called `window-wrap` and add these properties to it: `display: flex;`, `align-items: center;`, and `justify-content: space-evenly;`. This will be used in a few places to center window elements vertically and space them evenly in their parent.
--->
 ```
 
 </div>

@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Add the new `building-wrap` class to the `bb1` and `bb4` elements. This will apply the centering properties to the buildings that need it.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($(".bb1.building-wrap").length === 1 && $(".bb4.building-wrap").length === 1);
 
 ```
 
@@ -250,10 +250,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Add the new `building-wrap` class to the `bb1` and `bb4` elements. This will apply the centering properties to the buildings that need it.
--->
 ```
 
 </div>
