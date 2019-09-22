@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Now that you did that, you can delete the old `foreground-buildings` class and all its properties since they aren't needed anymore.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(code.match(/\.foreground-buildings/g).length === 1);
 
 ```
 
@@ -181,10 +181,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Now that you did that, you can delete the old `foreground-buildings` class and all its properties since they aren't needed anymore.
--->
 ```
 
 </div>

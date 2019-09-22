@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Add the same `display`, `align-items`, and `justify-content` properties and values to `foreground-buildings` that you used on `background-buildings`. Again, this will use Flexbox to evenly space the buildings across the bottom of their container.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const fb = $(".foreground-buildings"); assert(fb.css("display") === "flex" && fb.css("align-items") === "flex-end" && fb.css("justify-content") === "space-evenly");
 
 ```
 
@@ -178,10 +178,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Add the same `display`, `align-items`, and `justify-content` properties and values to `foreground-buildings` that you used on `background-buildings`. Again, this will use Flexbox to evenly space the buildings across the bottom of their container.
--->
 ```
 
 </div>

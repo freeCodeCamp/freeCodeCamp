@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+I see some code that can be optimized. Move the `position` and `top` properties and values from `foreground-buildings` to `background-buildings`. Then select both `background-buildings` and `foreground-buildings` there, effectively applying those styles to both of the elements. You can use a comma (`,`) to separate selectors like this: `selector1, selector2`.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($(".background-buildings").css("position") === "absolute" && $(".background-buildings").css("top") === "0px" && /(\.background-buildings\s*,\s*\.foreground-buildings|\.foreground-buildings\s*,\s*\.background-buildings)/g.test(code));
 
 ```
 
@@ -181,10 +181,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  I see some code that can be optimized. Move the `position` and `top` properties and values from `foreground-buildings` to `background-buildings`. Then select both `background-buildings` and `foreground-buildings` there, effectively applying those styles to both of the elements. You can use a comma (`,`) to separate selectors like this: `selector1, selector2`. Then delete the old `foreground-buildings` class and all its properties.
--->
 ```
 
 </div>
