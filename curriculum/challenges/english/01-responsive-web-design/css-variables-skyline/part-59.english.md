@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+On to the next building! Create a new variable called `--window-color3` in `:root` and give it a value of `#d98cb3`. This will be the secondary color for this building.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const rootStyle = code.match(/:root\s*{[\s\S]+?[^}]}/g)[0]; assert(/--window-color3\s*:\s*#d98cb3\s*(;|})/g.test(rootStyle));
 
 ```
 
@@ -219,10 +219,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  On to the next building! Create a new variable called `--window-color3` in `:root` and give it a value of `#d98cb3`. This will be the secondary color for this building.
--->
 ```
 
 </div>

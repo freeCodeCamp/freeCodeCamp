@@ -19,7 +19,7 @@ The skyline is coming together. Fill in the `background-color` property of the f
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($(".fb1").css("background-color") === "rgb(83, 140, 198)" && $(".fb2").css("background-color") === "rgb(204, 102, 153)" && $(".fb3").css("background-color") === "rgb(170, 128, 255)" && $(".fb4").css("background-color") === "rgb(170, 128, 255)" && $(".fb5").css("background-color") === "rgb(102, 204, 153)" && $(".fb6").css("background-color") === "rgb(204, 102, 153)");
 
 ```
 

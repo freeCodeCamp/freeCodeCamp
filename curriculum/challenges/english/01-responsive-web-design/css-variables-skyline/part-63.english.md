@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Give the new `div` elements these `width` and `height` values: `3%` and `10%` to `bb4a`, `80%` and `5%` to `bb4b`, and `100%` and `85%` to `bb4c`.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const bb4a = code.match(/\.bb4a\s*{[\s\S]+?[^}]}/g)[0]; const bb4b = code.match(/\.bb4b\s*{[\s\S]+?[^}]}/g)[0]; const bb4c = code.match(/\.bb4c\s*{[\s\S]+?[^}]}/g)[0]; assert(/width\s*:\s*3%\s*(;|})/g.test(bb4a) && /height\s*:\s*10%\s*(;|})/g.test(bb4a) && /width\s*:\s*80%\s*(;|})/g.test(bb4b) && /height\s*:\s*5%\s*(;|})/g.test(bb4b) && /width\s*:\s*100%\s*(;|})/g.test(bb4c) && /height\s*:\s*85%\s*(;|})/g.test(bb4c));
 
 ```
 
@@ -230,10 +230,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Give the new `div` elements these `width` and `height` values: `3%` and `10%` to `bb4a`, `80%` and `5%` to `bb4b`, and `100%` and `85%` to `bb4c`.
--->
 ```
 
 </div>

@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Nest two new `div` elements within `bb2`, give them the classes of `bb2a` and `bb2b` in that order. These will be two sections for this building.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const bb2 = $(".bb2").children("div"); assert(bb2.length === 2 && bb2[0] === $(".bb2a")[0] && bb2[1] === $(".bb2b")[0]);
 
 ```
 
@@ -198,10 +198,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Nest two new `div` elements within `bb2`, give them the classes of `bb2a` and `bb2b` in that order. These will be two sections for this building.
--->
 ```
 
 </div>

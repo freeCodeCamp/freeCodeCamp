@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+In the next few steps, you are going to use some tricks with CSS borders to turn the `bb2a` section into a triangle. First, remove the `background-color` from `bb2` since you don't need it anymore.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const bb2 = code.match(/\.bb2\s*{[\s\S]+?[^}]}/g)[0]; assert(!/background-color/g.test(bb2));
 
 ```
 
@@ -214,10 +214,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  In the next few steps, you are going to use some tricks with CSS borders to turn the `bb2a` section into a triangle. First, remove the `background-color` from `bb2` since you don't need it anymore.
--->
 ```
 
 </div>

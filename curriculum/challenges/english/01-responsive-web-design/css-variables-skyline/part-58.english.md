@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Finally, on the `border-bottom` property of `bb2a`, change the `1vw` to `5vh` and change the `#555` color to your `--building-color2` variable. There you go, now it looks good!
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const bb2a = code.match(/\.bb2a\s*{[\s\S]+?[^}]}/g)[0]; assert(/border-bottom\s*:\s*5vh\s+solid\s+var\(\s*--building-color2\s*\)\s*(;|})/g.test(bb2a));
 
 ```
 
@@ -219,10 +219,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Finally, on the `border-bottom` property of `bb2a`, change the `1vw` to `5vh` and change the `#555` color to your `--building-color2` variable. There you go, now it looks good!
--->
 ```
 
 </div>

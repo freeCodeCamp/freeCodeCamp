@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Next, remove the `width` and `height` from `bb2a`, and change the `border-left` and `border-right` to use `5vw` instead of `1vw`. The element will now have zero size and the borders will come together in the middle.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const bb2a = code.match(/\.bb2a\s*{[\s\S]+?[^}]}/g)[0]; assert(!/width/g.test(bb2a) && !/height/g.test(bb2a) && /border-left\s*:\s*5vw\s+solid\s+#777\s*(;|})/g.test(bb2a) && /border-right\s*:\s*5vw\s+solid\s+#999\s*(;|})/g.test(bb2a));
 
 ```
 
@@ -223,10 +223,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Next, remove the `width` and `height` from `bb2a`, and change the `border-left` and `border-right` to use `5vw` instead of `1vw`. The element will now have zero size and the borders will come together in the middle.
--->
 ```
 
 </div>

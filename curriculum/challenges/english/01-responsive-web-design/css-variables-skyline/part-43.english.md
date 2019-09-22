@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+You don't need the `height` or `background-color` properties in `bb1a`, `bb1b` or `bb1c` anymore, so go ahead and remove them.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const bb1aStyle = code.match(/\.bb1a\s*{[\s\S]+?[^}]}/g)[0]; const bb1bStyle = code.match(/\.bb1b\s*{[\s\S]+?[^}]}/g)[0]; const bb1cStyle = code.match(/\.bb1c\s*{[\s\S]+?[^}]}/g)[0]; assert(!/(height|background-color)/g.test(bb1aStyle) && !/(height|background-color)/g.test(bb1bStyle) && !/(height|background-color)/g.test(bb1cStyle));
 
 ```
 
@@ -199,10 +199,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  You don't need the `height` or `background-color` properties in `bb1a`, `bb1b` or `bb1c` anymore, so go ahead and remove them.
--->
 ```
 
 </div>

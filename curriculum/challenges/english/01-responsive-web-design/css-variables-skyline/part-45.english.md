@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+It's a little hidden behind the foreground buildings, but you can see the three color gradient there. Since you are using that now, remove the `background-color` property from `bb1d`.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const bb1dStyle = code.match(/\.bb1d\s*{[\s\S]+?[^}]}/g)[0]; assert(!/background-color/g.test(bb1dStyle));
 
 ```
 
@@ -201,10 +201,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Since you are using the gradient now, remove the `background-color` property from `bb1d`.
--->
 ```
 
 </div>

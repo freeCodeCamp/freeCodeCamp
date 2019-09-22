@@ -6,7 +6,17 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+You can specify where you want a gradient transition to complete by adding it to the color like this:
+
+```css
+gradient-type(
+  color1,
+  color2 20%,
+  color3
+);
+```
+
+Here, it will transition from `color1` to `color2` between `0%` and `20%` of the element and then transition to `color3` for the rest. Add `80%` to the `--building-color1` color of the `bb1d` gradient so you can see it in action.
 </section>
 
 ## Instructions
@@ -19,7 +29,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($(".bb1d").css("background") === "rgba(0, 0, 0, 0) linear-gradient(orange, rgb(170, 128, 255) 80%, black) repeat scroll 0% 0% / auto padding-box border-box");
 
 ```
 
@@ -199,18 +209,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  You can specify where you want a gradient transition to complete by adding it to the color like this:
-  `
-    gradient-type(
-      color1,
-      color2 20%,
-      color3
-    );
-  `
-  Here, it will transition from `color1` to `color2` between `0%` and `20%` of the element and then transition to `color3` for the rest. Add `80%` to the `--building-color1` color of the `bb1d` gradient so you can see it in action.
--->
 ```
 
 </div>

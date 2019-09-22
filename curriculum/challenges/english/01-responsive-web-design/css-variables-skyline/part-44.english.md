@@ -6,7 +6,17 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Gradients can use as many colors as you want like this:
+
+```css
+gradient-type(
+  color1,
+  color2,
+  color1
+);
+```
+
+Add a `linear-gradient` to `bb1d` with `orange` as the first color, `--building-color1` as the second, and `--window-color1` as the third. Remember to use the gradient on the `background` property.
 </section>
 
 ## Instructions
@@ -19,7 +29,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($(".bb1d").css("background") === "rgba(0, 0, 0, 0) linear-gradient(orange, rgb(170, 128, 255), black) repeat scroll 0% 0% / auto padding-box border-box");
 
 ```
 
@@ -194,18 +204,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Gradients can use as many colors as you want like this:
-  `
-    gradient-type(
-      color1,
-      color2,
-      color1
-    );
-  `
-  Add a `linear-gradient` to `bb1d` with `orange` as the first color, `--building-color1` as the second, and `--window-color1` as the third. Remember to use the gradient on the `background` property.
--->
 ```
 
 </div>

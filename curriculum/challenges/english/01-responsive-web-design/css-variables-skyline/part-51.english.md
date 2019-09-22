@@ -6,7 +6,18 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+You can make an instant color change in a gradient by giving the transition zero space like this:
+
+```css
+gradient-type(
+  color1,
+  color1 50%,
+  color2 50%,
+  color2
+);
+```
+
+Here, the top half of the element will be `color1` and the bottom half will be `color2`. Add a `linear-gradient` to `bb2b` that uses `--building-color2` from `0%` to `6%` and `--window-color2` from `6%` to `9%`. Don't forget that gradients are applied to the `background` property.
 </section>
 
 ## Instructions
@@ -19,7 +30,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($(".bb2b").css("background") === "rgba(0, 0, 0, 0) linear-gradient(rgb(102, 204, 153) 0%, rgb(102, 204, 153) 6%, rgb(140, 217, 179) 6%, rgb(140, 217, 179) 9%) repeat scroll 0% 0% / auto padding-box border-box" || $(".bb2b").css("background") === "rgba(0, 0, 0, 0) linear-gradient(rgb(102, 204, 153), rgb(102, 204, 153) 6%, rgb(140, 217, 179) 6%, rgb(140, 217, 179) 9%) repeat scroll 0% 0% / auto padding-box border-box");
 
 ```
 
@@ -207,19 +218,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  You can make an instant color change in a gradient by giving the transition zero space like this:
-    `
-    gradient-type(
-      color1,
-      color1 50%,
-      color2 50%,
-      color2
-    );
-  `
-  Here, the top half of the element will be `color1` and the bottom half will be `color2`. Add a `linear-gradient` to `bb2b` that uses `--building-color2` from `0%` to `6%` and `--window-color2` from `6%` to `9%`. Don't forget that gradients are applied to the `background` property.
--->
 ```
 
 </div>

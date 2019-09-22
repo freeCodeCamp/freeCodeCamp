@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Remove `orange` from the `bb1d` gradient and change the `80%` to `50%`. This will make `--building-color1` solid for the first half, and then transition to `--window-color1` for the second half.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($(".bb1d").css("background") === "rgba(0, 0, 0, 0) linear-gradient(rgb(170, 128, 255) 50%, black) repeat scroll 0% 0% / auto padding-box border-box");
 
 ```
 
@@ -199,10 +199,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Remove `orange` from the `bb1d` gradient and change the `80%` to `50%`. This will make `--building-color1` solid for the first half, and then transition to `black` for the second half.
--->
 ```
 
 </div>
