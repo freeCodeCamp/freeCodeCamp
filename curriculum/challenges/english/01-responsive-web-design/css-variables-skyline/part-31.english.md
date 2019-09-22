@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Give the six new `div` elements these `width` and `height` values: `10%` and `60%` to `fb1`, `10%` and `40%` to `fb2`, `10%` and `35%` to `fb3`, `8%` and `45%` to `fb4`, `10%` and `33%` to `fb5`, and `9%` and `38%` to `fb6`.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(/\.fb1\s*{\s*(width\s*:\s*10%\s*;\s*height\s*:\s*60%\s*(;|})|height\s*:\s*60%\s*;\s*width\s*:\s*10%\s*(;|}))/g.test(code) && /\.fb2\s*{\s*(width\s*:\s*10%\s*;\s*height\s*:\s*40%\s*(;|})|height\s*:\s*40%\s*;\s*width\s*:\s*10%\s*(;|}))/g.test(code) && /\.fb3\s*{\s*(width\s*:\s*10%\s*;\s*height\s*:\s*35%\s*(;|})|height\s*:\s*35%\s*;\s*width\s*:\s*10%\s*(;|}))/g.test(code) && /\.fb4\s*{\s*(width\s*:\s*8%\s*;\s*height\s*:\s*45%\s*(;|})|height\s*:\s*45%\s*;\s*width\s*:\s*8%\s*(;|}))/g.test(code) && /\.fb5\s*{\s*(width\s*:\s*10%\s*;\s*height\s*:\s*33%\s*(;|})|height\s*:\s*33%\s*;\s*width\s*:\s*10%\s*(;|}))/g.test(code) && /\.fb6\s*{\s*(width\s*:\s*9%\s*;\s*height\s*:\s*38%\s*(;|})|height\s*:\s*38%\s*;\s*width\s*:\s*9%\s*(;|}))/g.test(code));
 
 ```
 
@@ -148,10 +148,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Give the six new `div` elements these `width` and `height` values: `10%` and `60%` to `fb1`, `10%` and `40%` to `fb2`, `10%` and `35%` to `fb3`, `8%` and `45%` to `fb4`, `10%` and `33%` to `fb5`, and `9%` and `38%` to `fb6`.
--->
 ```
 
 </div>
