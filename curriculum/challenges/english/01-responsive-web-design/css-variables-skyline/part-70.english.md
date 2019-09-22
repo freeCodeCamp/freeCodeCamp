@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Give the `bb4-window` class a `width` of `18%`, a `height` of `90%`, and add your `--window-color4` variable as the `background-color`.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const bb4Window = code.match(/\.bb4-window\s*{[\s\S]+?[^}]}/g)[0]; assert(/width\s*:\s*18%\s*(;|})/g.test(bb4Window) && /height\s*:\s*90%\s*(;|})/g.test(bb4Window) && /background-color\s*:\s*var\(\s*--window-color4\s*\)\s*(;|})/g.test(bb4Window));
 
 ```
 
@@ -256,12 +256,7 @@ tests:
     </div>
   </body>
 </html>
-
-
-
-<!--
-  Give the `bb4-window` class a `width` of `18%`, a `height` of `90%`, and add your `--window-color4` variable as the `background-color`.
--->```
+```
 
 </div>
 </section>

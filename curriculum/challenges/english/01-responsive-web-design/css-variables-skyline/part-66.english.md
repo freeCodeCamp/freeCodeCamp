@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Move the `display`, `flex-direction`, and `align-items` properties and values from `bb1` to the new `building-wrap` class.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const bWrap = code.match(/\.building-wrap\s*{[\s\S]+?[^}]}/g)[0]; assert(/display\s*:\s*flex\s*(;|})/g.test(bWrap) && /flex-direction\s*:\s*column\s*(;|})/g.test(bWrap) && /align-items\s*:\s*center\s*(;|})/g.test(bWrap));
 
 ```
 
@@ -251,10 +251,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Move the `display`, `flex-direction`, and `align-items` properties and values from `bb1` to the new `building-wrap` class.
--->
 ```
 
 </div>

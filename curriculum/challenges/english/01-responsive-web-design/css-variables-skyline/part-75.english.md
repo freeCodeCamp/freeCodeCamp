@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Add the `building-wrap` class to the `fb1` element to center the sections.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($(".fb1.building-wrap").length === 1);
 
 ```
 
@@ -282,10 +282,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Add the `building-wrap` class to the `fb1` element to center the sections.
--->
 ```
 
 </div>
