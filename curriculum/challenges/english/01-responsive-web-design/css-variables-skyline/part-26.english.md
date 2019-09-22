@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Now that you've worked the bugs out and the buildings are the right colors, you can remove the fallback values in the two places they were used. Go ahead and do that now.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const bb2style = code.match(/\.bb2\s*{[\s\S]+?[^}]}/g)[0]; const bb3style = code.match(/\.bb3\s*{[\s\S]+?[^}]}/g)[0]; assert(/background-color\s*:\s*var\(\s*--building-color2\s*\)\s*(;|\s*})/g.test(bb2style) && /background-color\s*:\s*var\(\s*--building-color3\s*\)\s*(;|\s*})/g.test(bb3style));
 
 ```
 
@@ -130,10 +130,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Now that you've worked the bugs out and the buildings are the right colors, you can remove the fallback values in the two places they were used. Go ahead and do that now.
--->
 ```
 
 </div>

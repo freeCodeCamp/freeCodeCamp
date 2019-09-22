@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Create another variable named `--building-color4` and give it a value of `#538cc6`, make sure it's in the `:root` selector this time. Then use it as the `background-color` of the `bb4` element.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const rootStyle = code.match(/:root\s*{[\s\S]+?[^}]}/g)[0]; const bb4style = code.match(/\.bb4\s*{[\s\S]+?[^}]}/g)[0]; assert(/--building-color4\s*:\s*#538cc6\s*(;|\s*})/g.test(rootStyle) && /background-color\s*:\s*var\(\s*--building-color4\s*\)\s*(;|\s*})/g.test(bb4style));
 
 ```
 
@@ -130,10 +130,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Create another variable named `--building-color4` and give it a value of `#538cc6`, make sure it's in the `:root` selector this time. Then use it as the `background-color` of the `bb4` element.
--->
 ```
 
 </div>

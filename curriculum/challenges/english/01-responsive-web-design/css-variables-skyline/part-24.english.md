@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Create a new variable by the other ones named `--building-color3` and give it a value of `#cc6699`. Then use it as the `background-color` of the `bb3` class and give it a fallback value of `pink`.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const bb1style = code.match(/\.bb1\s*{[\s\S]+?[^}]}/g)[0]; const bb3style = code.match(/\.bb3\s*{[\s\S]+?[^}]}/g)[0];assert(/--building-color3\s*:\s*#cc6699\s*(;|\s*})/g.test(bb1style) && /background-color\s*:\s*var\(\s*--building-color3\s*,\s*pink\s*\)\s*(;|\s*})/g.test(bb3style));
 
 ```
 
@@ -125,10 +125,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Create a new variable by the other ones named `--building-color3` and give it a value of `#cc6699`. Then use it as the `background-color` of the `bb3` class and give it a fallback value of `pink`.
--->
 ```
 
 </div>

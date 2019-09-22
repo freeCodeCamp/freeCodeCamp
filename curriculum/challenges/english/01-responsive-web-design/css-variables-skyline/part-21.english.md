@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+I don't like how spaced out the buildings are. Squeeze them together by adding two empty `div` elements to the top of the `background-buildings` element, two more at the bottom of it, and one more in between `bb3` and `bb4`. These will be added as things that are spaced evenly across the container, effectively moving the buildings closer to the center.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const bb = $(".background-buildings").children("div"); assert(bb.length === 9 && bb[2] === $("div.bb1")[0] && bb[3] === $("div.bb2")[0] && bb[4] === $("div.bb3")[0] && bb[6] === $("div.bb4")[0]);
 
 ```
 
@@ -118,11 +118,7 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  I don't like how spaced out the buildings are. Squeeze them together by adding two empty `div` elements to the top of the `background-buildings` element, two more at the bottom of it, and one more in between `bb3` and `bb4`. These will be added as things that are spaced evenly across the container, effectively moving the buildings closer to the center.
--->
-```
+ ```
 
 </div>
 </section>

@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+The background buildings are starting to look pretty good. Create a new `div` below the `background-buildings` element and give it a class of `foreground-buildings`.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($("body").children("div")[1] === $("div.foreground-buildings")[0]);
 
 ```
 
@@ -132,10 +132,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  The background buildings are starting to look pretty good. Create a new `div` below the `background-buildings` element and give it a class of `foreground-buildings`.
--->
 ```
 
 </div>
