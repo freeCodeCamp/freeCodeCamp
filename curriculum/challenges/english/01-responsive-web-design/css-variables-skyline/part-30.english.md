@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Nest six `div` elements within `foreground-buildings` and give them the classes of `fb1` through `fb6` in that order. "fb" stands for "foreground building". These will be six more buildings for the foreground.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const fb = $(".foreground-buildings").children("div"); assert(fb.length === 6 && fb[0] === $("div.fb1")[0] && fb[1] === $("div.fb2")[0] && fb[2] === $("div.fb3")[0] && fb[3] === $("div.fb4")[0] && fb[4] === $("div.fb5")[0]  && fb[5] === $("div.fb6")[0]);
 
 ```
 
@@ -141,10 +141,6 @@ tests:
     <div class="foreground-buildings"></div>
   </body>
 </html>
-
-<!--
-  Nest six `div` elements within `foreground-buildings` and give them the classes of `fb1` through `fb6` in that order. "fb" stands for "foreground building". These will be six more buildings for the foreground.
--->
 ```
 
 </div>

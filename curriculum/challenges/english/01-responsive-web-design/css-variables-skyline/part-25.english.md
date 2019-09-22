@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+That one used the fallback value as well? I see the problem now! The variables you declared in `bb1` do not cascade to the `bb2` and `bb3` sibling elements. That's just how CSS works. Because of this, variables are often declared in the `:root` selector. This is the highest level selector in CSS; putting your variables there will make them usable everywhere. Add the `:root` selector to the top of your stylesheet and move all your variable declarations there.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const bb1style = code.match(/\.bb1\s*{[\s\S]+?[^}]}/g)[0]; const rootStyle = code.match(/:root\s*{[\s\S]+?[^}]}/g)[0]; assert(/--building-color1\s*:\s*#aa80ff\s*(;|\s*})/g.test(rootStyle) && /--building-color2\s*:\s*#66cc99\s*(;|\s*})/g.test(rootStyle) && /--building-color3\s*:\s*#cc6699\s*(;|\s*})/g.test(rootStyle) && !/--building-color1\s*:\s*#aa80ff\s*(;|\s*})/g.test(bb1style) && !/--building-color2\s*:\s*#66cc99\s*(;|\s*})/g.test(bb1style) && !/--building-color3\s*:\s*#cc6699\s*(;|\s*})/g.test(bb1style));
 
 ```
 
@@ -127,10 +127,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  That one used the fallback value as well? I see the problem now! The variables you declared in `bb1` do not cascade to the `bb2` and `bb3` sibling elements. That's just how CSS works. Because of this, variables are often declared in the `:root` selector. This is the highest level selector in CSS, putting your variables there will make them usable everywhere. Add the `:root` selector to the top of your stylesheet and move all your variable declarations there.
--->
 ```
 
 </div>

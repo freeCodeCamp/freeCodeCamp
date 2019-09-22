@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Create a new variable by the other one called `--building-color2` and give it a value of `#66cc99`. Then set it as the `background-color` of `bb2`.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const bb1style = code.match(/\.bb1\s*{[\s\S]+?[^}]}/g)[0]; const bb2style = code.match(/\.bb2\s*{[\s\S]+?[^}]}/g)[0]; assert(/--building-color2\s*:\s*#66cc99\s*(;|\s*})/g.test(bb1style) && /background-color\s*:\s*var\(\s*--building-color2\s*\)\s*(;|\s*})/g.test(bb2style));
 
 ```
 
@@ -123,10 +123,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Create a new variable by the other one called `--building-color2` and give it a value of `#66cc99`. Then set it as the `background-color` of `bb2`.
--->
 ```
 
 </div>
