@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Add a `repeating-linear-gradient` to `fb5` with your building color variable for this building from `0%` to `5%` and `transparent` from `5%` to `10%`.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const fb5 = code.match(/\.fb5\s*{[\s\S]+?[^}]}/g)[0]; assert(/background\s*:\s*repeating-linear-gradient\(\s*var\(\s*--building-color2\s*\)\s*(0%\s*,|,)\s*var\(\s*--building-color2\s*\)\s*5%\s*,\s*transparent\s*5%\s*,\s*transparent\s*10%\s*\)\s*(;|})/g.test(fb5));
 
 ```
 
@@ -295,7 +295,6 @@ tests:
       .fb5 {
         width: 10%;
         height: 33%;
-        background-color: var(--window-color2);
         position: relative;
         right: 10%;
       }
@@ -383,10 +382,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Add a `linear-gradient` to `fb5` that has a `90deg` direction. Use your `--building-color2` variable from `0%` to `12%`, `44%` to `56%` and `88% to `100%`. And use `transparent` from `12%` to `44%` and `56%` to `88%`.
--->
 ```
 
 </div>

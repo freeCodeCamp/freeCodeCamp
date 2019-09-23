@@ -304,28 +304,20 @@ tests:
       .fb5 {
         width: 10%;
         height: 33%;
-        background-color: var(--window-color2);
         position: relative;
         right: 10%;
-        background:
-          linear-gradient(
-            90deg,
-            var(--building-color2),
-            var(--building-color2) 12%,
-            transparent 12%,
-            transparent 44%,
-            var(--building-color2) 44%,
-            var(--building-color2) 56%,
-            transparent 56%,
-            transparent 88%,
-            var(--building-color2) 88%,
-            var(--building-color2)
-          ),
-          repeating-linear-gradient(
+        background: repeating-linear-gradient(
             var(--building-color2),
             var(--building-color2) 5%,
             transparent 5%,
             transparent 10%
+          ),
+          repeating-linear-gradient(
+            90deg,
+            var(--building-color2),
+            var(--building-color2) 12%,
+            var(--window-color2) 12%,
+            var(--window-color2) 44%
           );
       }
 
