@@ -58,6 +58,12 @@ tests:
     testString: assert(code.match(/class/g));
   - text: <code>Thermostat</code> should be able to be instantiated.
     testString: assert((() => {const t = new Thermostat(32);return typeof t === 'object' && t.temperature === 0;})());
+  - text: A <code>getter</code> should be defined.
+    testString: assert((() => {const desc = Object.getOwnPropertyDescriptor(Thermostat.prototype, 'temperature');return !!desc && typeof desc.get === 'function';})());
+  - text: A <code>setter</code> should  be defined.
+    testString: assert((() => {const desc = Object.getOwnPropertyDescriptor(Thermostat.prototype, 'temperature');return !!desc && typeof desc.set === 'function';})());
+  - text: Calling the <code>setter</code> should set the temperature.
+    testString: assert((() => {const t = new Thermostat(32); t.temperature = 26;return t.temperature !== 0;})());
 
 ```
 
