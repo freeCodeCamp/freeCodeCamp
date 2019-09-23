@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Two more to go! Change the `background-color` of `fb5` to use your `--window-color2` variable. You're going to put some of the building color on top of it again.
 </section>
 
 ## Instructions
@@ -383,10 +383,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Two more to go! Change the `background-color` of `fb5` to use your `--window-color2` variable. You're going to put some of the building color on top of it again.
--->
 ```
 
 </div>

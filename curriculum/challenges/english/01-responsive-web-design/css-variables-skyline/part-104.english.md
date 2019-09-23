@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+This building is going to have another triangle on top. Give `fb4a` a `border-top` of `5vh solid transparent` and a `border-left` that is `8vw`, `solid`, and uses your `--building-color1` variable as the color.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const fb4a = code.match(/\.fb4a\s*{[\s\S]+?[^}]}/g)[0]; assert(/border-top\s*:\s*5vh\s+solid\s+transparent\s*(;|})/g.test(fb4a) && /border-left\s*:\s*8vw\s+solid\s+var\(\s*--building-color1\s*\)\s*(;|})/g.test(fb4a));
 
 ```
 
@@ -378,10 +378,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  `fb4a` is going to have another triangle on top. Give it a `border-top` of `5vh solid transparent` and a `border-left` that is `8vw`, `solid`, and uses your `--building-color1` variable as the color.
--->
 ```
 
 </div>
