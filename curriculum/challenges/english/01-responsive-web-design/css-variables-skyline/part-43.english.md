@@ -98,8 +98,7 @@ tests:
 
       .bb1-window {
         height: 10%;
-        background:
-          linear-gradient(
+        background: linear-gradient(
             var(--building-color1),
             var(--window-color1)
           );

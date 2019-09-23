@@ -81,8 +81,7 @@ tests:
       }
 
       .sky {
-        background-image: 
-          radial-gradient(
+        background-image: radial-gradient(
             closest-corner circle at 15% 15%,
             #ffcf33,
             #ffcf33 20%,
@@ -112,8 +111,7 @@ tests:
       .bb1d {
         width: 100%;
         height: 70%;
-        background-image: 
-          linear-gradient(
+        background-image: linear-gradient(
             var(--building-color1),
             var(--building-color1),
             var(--window-color1)
@@ -122,8 +120,7 @@ tests:
 
       .bb1-window {
         height: 10%;
-        background-image: 
-          linear-gradient(
+        background-image: linear-gradient(
             var(--building-color1),
             var(--window-color1)
           );
@@ -143,8 +140,7 @@ tests:
       .bb2b {
         width: 100%;
         height: 100%;
-        background-image: 
-          repeating-linear-gradient(
+        background-image: repeating-linear-gradient(
             var(--building-color2),
             var(--building-color2) 6%,
             var(--window-color2) 6%,
@@ -155,8 +151,7 @@ tests:
       .bb3 {
         width: 10%;
         height: 55%;
-        background-image:
-          repeating-linear-gradient(
+        background-image: repeating-linear-gradient(
             90deg,
             var(--building-color3),
             var(--building-color3),
@@ -214,16 +209,15 @@ tests:
       .fb1c {
         width: 100%;
         height: 80%;
-        background: 
-          repeating-linear-gradient(
+        background: repeating-linear-gradient(
             90deg,
-            var(--building-color4) 0%,
+            var(--building-color4),
             var(--building-color4) 10%,
             transparent 10%,
             transparent 15%
           ),
           repeating-linear-gradient(
-            var(--building-color4) 0%,
+            var(--building-color4),
             var(--building-color4) 10%,
             var(--window-color4) 10%,
             var(--window-color4) 90%
@@ -329,8 +323,7 @@ tests:
         width: 9%;
         height: 38%;
         background-color: var(--window-color3);
-        background-image:
-          repeating-linear-gradient(
+        background-image: repeating-linear-gradient(
             90deg,
             var(--building-color3),
             var(--building-color3) 10%,
@@ -348,18 +341,17 @@ tests:
       @media (max-width: 1000px) {
         :root {
           --building-color1: #000;
-          --window-color1: #777;
           --building-color2: #000;
-          --window-color2: #777;
           --building-color3: #000;
-          --window-color3: #777;
           --building-color4: #000;
+          --window-color1: #777;
+          --window-color2: #777;
+          --window-color3: #777;
           --window-color4: #777;
         }
   
         .sky {
-          background-image: 
-            radial-gradient(
+          background-image: radial-gradient(
               closest-corner circle at 15% 15%,
               #ccc,
               #ccc 20%,
