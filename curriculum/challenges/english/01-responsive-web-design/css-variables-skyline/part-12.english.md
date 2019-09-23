@@ -19,7 +19,7 @@ Give the parts of your building `width` and `height` properties with these value
 ```yml
 tests:
   - text: test-text
-    testString: const noSpaces = code.replace(/\s/g, ''); assert(noSpaces.match(/\.bb1a{(height:10%;width:70%;?}|width:70%;height:10%;?})/g) && noSpaces.match(/\.bb1b{(height:10%;width:80%;?}|width:80%;height:10%;?})/g) && noSpaces.match(/\.bb1c{(height:10%;width:90%;?}|width:90%;height:10%;?})/g) && noSpaces.match(/\.bb1d{(height:70%;width:100%;?}|width:100%;height:70%;?})/g));
+    testString: const bb1a = code.match(/\.bb1a\s*{[\s\S]+?[^}]}/g)[0]; const bb1b = code.match(/\.bb1b\s*{[\s\S]+?[^}]}/g)[0]; const bb1c = code.match(/\.bb1c\s*{[\s\S]+?[^}]}/g)[0]; const bb1d = code.match(/\.bb1d\s*{[\s\S]+?[^}]}/g)[0]; assert(/width\s*:\s*70%\s*(;|})/g.test(bb1a) && /height\s*:\s*10%\s*(;|})/g.test(bb1a) && /width\s*:\s*80%\s*(;|})/g.test(bb1b) && /height\s*:\s*10%\s*(;|})/g.test(bb1b) && /width\s*:\s*90%\s*(;|})/g.test(bb1c) && /height\s*:\s*10%\s*(;|})/g.test(bb1c) && /width\s*:\s*100%\s*(;|})/g.test(bb1d) && /height\s*:\s*70%\s*(;|})/g.test(bb1d));
 
 ```
 

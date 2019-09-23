@@ -6,7 +6,18 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+You can add multiple gradients to an element by separating them with a comma (`,`) like this:
+
+```css
+gradient1(
+  colors
+),
+gradient2(
+  colors
+);
+```
+
+Add a `repeating-linear-gradient` to `fb1c` at the bottom of the one that's there; use your `--building-color4` from `0%` to `10%` and `transparent` from `10%` and `90%`. This will fill an area at the top and bottom of this section.
 </section>
 
 ## Instructions
@@ -19,7 +30,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const fb1c = code.match(/\.fb1c\s*{[\s\S]+?[^}]}/g)[0]; assert(/background\s*:\s*repeating-linear-gradient\(\s*90deg\s*,\s*var\(\s*--building-color4\s*\)\s*(0%\s*,|,)\s*var\(\s*--building-color4\s*\)\s*10%\s*,\s*transparent\s*10%\s*,\s*transparent\s*15%\s*\)\s*,\s*repeating-linear-gradient\(\s*var\(\s*--building-color4\s*\)\s*(0%\s*,|,)\s*var\(\s*--building-color4\s*\)\s*10%\s*,\s*var\(\s*--window-color4\s*\)\s*10%\s*,\s*var\(\s*--window-color4\s*\)\s*90%\s*\)\s*(;|})/g.test(fb1c));
 
 ```
 
@@ -195,16 +206,14 @@ tests:
       .fb1c {
         width: 100%;
         height: 80%;
-        background-color: var(--window-color4);
         background: 
-          linear-gradient(
-            var(--building-color4),
+          repeating-linear-gradient(
+            90deg,
+            var(--building-color4) 0%,
             var(--building-color4) 10%,
             transparent 10%,
-            transparent 90%,
-            var(--building-color4) 90%,
-            var(--building-color4)
-          );
+            transparent 15%
+          )
       }
 
       .fb2 {
@@ -292,19 +301,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  You can add multiple gradients to an element by separating them with a comma (`,`) like this:
-  `
-    gradient1(
-      colors
-    ),
-    gradient2(
-      colors
-    );
-  `
-  Add a `repeating-linear-gradient` to `fb1c` with a direction of `90deg` and your `--building-color4` at `0%` and `10%` and `transparent` at `10%` and `15%`. This will put some vertical bars across the element.
--->
 ```
 
 </div>

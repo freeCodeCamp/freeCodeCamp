@@ -30,7 +30,7 @@ Here, the top half of the element will be `color1` and the bottom half will be `
 ```yml
 tests:
   - text: test-text
-    testString: assert($(".bb2b").css("background") === "rgba(0, 0, 0, 0) linear-gradient(rgb(102, 204, 153) 0%, rgb(102, 204, 153) 6%, rgb(140, 217, 179) 6%, rgb(140, 217, 179) 9%) repeat scroll 0% 0% / auto padding-box border-box" || $(".bb2b").css("background") === "rgba(0, 0, 0, 0) linear-gradient(rgb(102, 204, 153), rgb(102, 204, 153) 6%, rgb(140, 217, 179) 6%, rgb(140, 217, 179) 9%) repeat scroll 0% 0% / auto padding-box border-box");
+    testString: const bb2b = code.match(/\.bb2b\s*{[\s\S]+?[^}]}/g)[0]; assert(/background\s*:\s*linear-gradient\(\s*var\(\s*--building-color2\s*\)\s*(0%\s*,|,)\s*var\(\s*--building-color2\s*\)\s*6%\s*,\s*var\(\s*--window-color2\s*\)\s*6%\s*,\s*var\(\s*--window-color2\s*\)\s*9%\s*\)\s*(;|})/g.test(bb2b));
 
 ```
 

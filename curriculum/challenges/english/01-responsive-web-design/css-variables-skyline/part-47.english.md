@@ -19,7 +19,7 @@ Remove `orange` from the `bb1d` gradient and change the `80%` to `50%`. This wil
 ```yml
 tests:
   - text: test-text
-    testString: assert($(".bb1d").css("background") === "rgba(0, 0, 0, 0) linear-gradient(rgb(170, 128, 255) 50%, black) repeat scroll 0% 0% / auto padding-box border-box");
+    testString: const bb1d = code.match(/\.bb1d\s*{[\s\S]+?[^}]}/g)[0]; assert(/background\s*:\s*linear-gradient\(\s*var\(\s*--building-color1\s*\)\s*50%\s*,\s*var\(\s*--window-color1\s*\)\s*\)\s*(;|})/g.test(bb1d));
 
 ```
 

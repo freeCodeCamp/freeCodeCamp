@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+For `fb2a`, add a `border-bottom` of `10vh solid var(--building-color3)` and a `border-left` and `border-right` of `1vw solid transparent`. This time the border trick will create a trapezoid shape.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const fb2a = code.match(/\.fb2a\s*{[\s\S]+?[^}]}/g)[0]; assert(/border-bottom\s*:\s*10vh\s+solid\s+var\(\s*--building-color3\s*\)\s*(;|})/g.test(fb2a) && /border-left\s*:\s*1vw\s+solid\s+transparent\s*(;|})/g.test(fb2a) && /border-right\s*:\s*1vw\s+solid\s+transparent\s*(;|})/g.test(fb2a));
 
 ```
 
@@ -201,22 +201,19 @@ tests:
       .fb1c {
         width: 100%;
         height: 80%;
-        background-color: var(--window-color4);
         background: 
-          linear-gradient(
-            var(--building-color4),
-            var(--building-color4) 10%,
-            transparent 10%,
-            transparent 90%,
-            var(--building-color4) 90%,
-            var(--building-color4)
-          ),
           repeating-linear-gradient(
             90deg,
-            var(--building-color4),
+            var(--building-color4) 0%,
             var(--building-color4) 10%,
             transparent 10%,
             transparent 15%
+          ),
+          repeating-linear-gradient(
+            var(--building-color4) 0%,
+            var(--building-color4) 10%,
+            var(--window-color4) 10%,
+            var(--window-color4) 90%
           );
       }
 
@@ -327,10 +324,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  For `fb2a`, add a `border-bottom` of `10vh solid var(--building-color3)` and a `border-left` and `border-right` of `1vw solid transparent`. This time the border trick will create a trapezoid shape.
--->
 ```
 
 </div>
