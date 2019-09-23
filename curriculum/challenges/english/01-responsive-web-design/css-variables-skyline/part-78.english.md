@@ -102,8 +102,7 @@ tests:
       .bb1d {
         width: 100%;
         height: 70%;
-        background:
-          linear-gradient(
+        background: linear-gradient(
             var(--building-color1) 50%,
             var(--window-color1)
           );
@@ -111,8 +110,7 @@ tests:
 
       .bb1-window {
         height: 10%;
-        background:
-          linear-gradient(
+        background: linear-gradient(
             var(--building-color1),
             var(--window-color1)
           );
@@ -132,8 +130,7 @@ tests:
       .bb2b {
         width: 100%;
         height: 100%;
-        background:
-          repeating-linear-gradient(
+        background: repeating-linear-gradient(
             var(--building-color2),
             var(--building-color2) 6%,
             var(--window-color2) 6%,
@@ -144,8 +141,7 @@ tests:
       .bb3 {
         width: 10%;
         height: 55%;
-        background:
-          repeating-linear-gradient(
+        background: repeating-linear-gradient(
             90deg,
             var(--building-color3),
             var(--building-color3),

@@ -88,8 +88,7 @@ tests:
       .bb1d {
         width: 100%;
         height: 70%;
-        background:
-          linear-gradient(
+        background: linear-gradient(
             var(--building-color1) 50%,
             var(--window-color1)
           );
@@ -97,8 +96,7 @@ tests:
 
       .bb1-window {
         height: 10%;
-        background:
-          linear-gradient(
+        background: linear-gradient(
             var(--building-color1),
             var(--window-color1)
           );

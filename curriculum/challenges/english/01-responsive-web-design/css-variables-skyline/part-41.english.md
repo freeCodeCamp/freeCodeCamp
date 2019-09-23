@@ -77,8 +77,7 @@ tests:
         width: 70%;
         height: 10%;
         background-color: var(--building-color1);
-        background:
-          linear-gradient(
+        background: linear-gradient(
             var(--building-color1),
             var(--window-color1)
           );
