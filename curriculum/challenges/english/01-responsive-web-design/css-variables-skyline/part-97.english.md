@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Only three more building to go. Nest two new `div` elements within the `fb4` element and give them the classes of `fb4a` and `fb4b` in that order. Remember that you sort of flipped the location of `fb4` and `fb5`, so it's the rightmost purple building you are working on now.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const fb4 = $(".fb4").children("div"); assert(fb4.length === 2 && fb4[0] === $("div.fb4a")[0] && fb4[1] === $("div.fb4b")[0]);
 
 ```
 
@@ -201,22 +201,19 @@ tests:
       .fb1c {
         width: 100%;
         height: 80%;
-        background-color: var(--window-color4);
         background: 
-          linear-gradient(
-            var(--building-color4),
-            var(--building-color4) 10%,
-            transparent 10%,
-            transparent 90%,
-            var(--building-color4) 90%,
-            var(--building-color4)
-          ),
           repeating-linear-gradient(
             90deg,
-            var(--building-color4),
+            var(--building-color4) 0%,
             var(--building-color4) 10%,
             transparent 10%,
             transparent 15%
+          ),
+          repeating-linear-gradient(
+            var(--building-color4) 0%,
+            var(--building-color4) 10%,
+            var(--window-color4) 10%,
+            var(--window-color4) 90%
           );
       }
 
@@ -356,10 +353,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Only three more building to go. Nest two new `div` elements within the `fb4` element and give them the classes of `fb4a` and `fb4b` in that order. Remember, that you sort of flipped the location of `fb4` and `fb5`, so it's the rightmost purple building you are working on now.
--->
 ```
 
 </div>

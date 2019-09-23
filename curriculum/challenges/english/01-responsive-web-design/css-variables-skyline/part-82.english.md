@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+On to the next building! Nest two `div` elements within `fb2` and give them the classes of `fb2a` and `fb2b` in that order.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const fb2 = $(".fb2").children("div"); assert(fb2.length === 2 && fb2[0] === $("div.fb2a")[0] && fb2[1] === $("div.fb2b")[0]);
 
 ```
 
@@ -201,22 +201,19 @@ tests:
       .fb1c {
         width: 100%;
         height: 80%;
-        background-color: var(--window-color4);
         background: 
-          linear-gradient(
-            var(--building-color4),
-            var(--building-color4) 10%,
-            transparent 10%,
-            transparent 90%,
-            var(--building-color4) 90%,
-            var(--building-color4)
-          ),
           repeating-linear-gradient(
             90deg,
-            var(--building-color4),
+            var(--building-color4) 0%,
             var(--building-color4) 10%,
             transparent 10%,
             transparent 15%
+          ),
+          repeating-linear-gradient(
+            var(--building-color4) 0%,
+            var(--building-color4) 10%,
+            var(--window-color4) 10%,
+            var(--window-color4) 90%
           );
       }
 
@@ -305,10 +302,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  On to the next building! Nest two `div` elements within `fb2` and give them the classes of `fb2a` and `fb2b` in that order.
--->
 ```
 
 </div>

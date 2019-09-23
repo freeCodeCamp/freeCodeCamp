@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Add `display: flex;` and `flex-wrap: wrap;` to `fb4b`. This will put your windows side by side and then push them down to a new row when they don't fit.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($(".fb4b").css("display") === "flex" && $(".fb4b").css("flex-wrap") === "wrap");
 
 ```
 
@@ -201,22 +201,19 @@ tests:
       .fb1c {
         width: 100%;
         height: 80%;
-        background-color: var(--window-color4);
         background: 
-          linear-gradient(
-            var(--building-color4),
-            var(--building-color4) 10%,
-            transparent 10%,
-            transparent 90%,
-            var(--building-color4) 90%,
-            var(--building-color4)
-          ),
           repeating-linear-gradient(
             90deg,
-            var(--building-color4),
+            var(--building-color4) 0%,
             var(--building-color4) 10%,
             transparent 10%,
             transparent 15%
+          ),
+          repeating-linear-gradient(
+            var(--building-color4) 0%,
+            var(--building-color4) 10%,
+            var(--window-color4) 10%,
+            var(--window-color4) 90%
           );
       }
 
@@ -379,10 +376,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Add `display: flex;` and `flex-wrap: wrap;` to `fb4b`. This will put your windows side by side and then push them down to a new row when they don't fit.
--->
 ```
 
 </div>

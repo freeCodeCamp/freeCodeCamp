@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Give the `fb3-window` elements a `width` of `25%`, a `height` of `80%`, and use your `--window-color1` variable as the `background-color` value.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const fb3w = code.match(/\.fb3-window\s*{[\s\S]+?[^}]}/g)[0]; assert(/width\s*:\s*25%\s*(;|})/g.test(fb3w) && /height\s*:\s*80%\s*(;|})/g.test(fb3w) && /background-color\s*:\s*var\(\s*--window-color1\s*\)\s*(;|})/g.test(fb3w));
 
 ```
 
@@ -201,22 +201,19 @@ tests:
       .fb1c {
         width: 100%;
         height: 80%;
-        background-color: var(--window-color4);
         background: 
-          linear-gradient(
-            var(--building-color4),
-            var(--building-color4) 10%,
-            transparent 10%,
-            transparent 90%,
-            var(--building-color4) 90%,
-            var(--building-color4)
-          ),
           repeating-linear-gradient(
             90deg,
-            var(--building-color4),
+            var(--building-color4) 0%,
             var(--building-color4) 10%,
             transparent 10%,
             transparent 15%
+          ),
+          repeating-linear-gradient(
+            var(--building-color4) 0%,
+            var(--building-color4) 10%,
+            var(--window-color4) 10%,
+            var(--window-color4) 90%
           );
       }
 
@@ -350,10 +347,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Give the `fb3-window` elements a `width` of `25%`, a `height` of `80%`, and use your `--window-color1` variable as the `background-color` value.
--->
 ```
 
 </div>

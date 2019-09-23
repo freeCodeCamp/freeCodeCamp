@@ -19,7 +19,7 @@ Nest a `div` with a class of `bb1` in the `background-buildings` container. Give
 ```yml
 tests:
   - text: test-text
-    testString: const noSpaces = code.replace(/\s/g, ''); assert($(".background-buildings")[0].contains($("div.bb1")[0]) && noSpaces.match(/\.bb1{(height:70%;width:10%;?}|width:10%;height:70%;?})/g));
+    testString: const bb1 = code.match(/\.bb1\s*{[\s\S]+?[^}]}/g)[0]; assert($(".background-buildings")[0].contains($("div.bb1")[0]) && /width\s*:\s*10%\s*(;|})/g.test(bb1) && /height\s*:\s*70%\s*(;|})/g.test(bb1));
 
 ```
 

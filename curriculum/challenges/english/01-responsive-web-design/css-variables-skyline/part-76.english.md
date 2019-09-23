@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Move the `background-color` property and value from `fb1` to `fb1b`.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const fb1b = code.match(/\.fb1b\s*{[\s\S]+?[^}]}/g)[0]; assert(/background-color\s*:\s*var\(\s*--building-color4\s*\)\s*(;|})/g.test(fb1b));
 
 ```
 
@@ -282,10 +282,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Move the `background-color` property and value from `fb1` to `fb1b`.
--->
 ```
 
 </div>

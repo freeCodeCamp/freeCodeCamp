@@ -6,7 +6,9 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Don't worry about the space at the bottom, everything will get moved down later when you add some height to the element at the top of the building.
+
+Add a `repeating-linear-gradient` to `fb1c` with a `90deg` angle, your `--building-color4` from `0%` to `10%` and `transparent` from `10%` to `15%`.
 </section>
 
 ## Instructions
@@ -19,7 +21,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const fb1c = code.match(/\.fb1c\s*{[\s\S]+?[^}]}/g)[0]; assert(/background\s*:\s*repeating-linear-gradient\(\s*90deg\s*,\s*var\(\s*--building-color4\s*\)\s*(0%\s*,|,)\s*var\(\s*--building-color4\s*\)\s*10%\s*,\s*transparent\s*10%\s*,\s*transparent\s*15%\s*\)\s*(;|})/g.test(fb1c));
 
 ```
 
@@ -195,7 +197,6 @@ tests:
       .fb1c {
         width: 100%;
         height: 80%;
-        background-color: var(--window-color4);
       }
 
       .fb2 {
@@ -283,10 +284,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Don't worry about the space at the bottom, everything will get moved down later when you add some height to `fb1a`. Add a `linear-gradient` to `fb1c` with your `--building-color4` variable from `0%` to `10%`, `transparent` from `10%` to `90%`, and your `--building-color4` again from `90%` to `100%`. This will give you a solid `--building-color4` bar at the top and bottom 10%.
--->
 ```
 
 </div>

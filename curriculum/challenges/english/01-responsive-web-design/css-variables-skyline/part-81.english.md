@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+When you make the left and right borders bigger, the border on the bottom will expand to be the width of the combined left and right border widths. Add `2vw solid transparent;` as the value of the `border-left` and `border-right` properties of `fb1a`. They will be invisible, but it will make the border on the bottom `4vw` wide.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const fb1a = code.match(/\.fb1a\s*{[\s\S]+?[^}]}/g)[0]; assert(/border-left\s*:\s*2vw\s+solid\s+transparent\s*(;|})/g.test(fb1a) && /border-right\s*:\s*2vw\s+solid\s+transparent\s*(;|})/g.test(fb1a));
 
 ```
 
@@ -199,22 +199,19 @@ tests:
       .fb1c {
         width: 100%;
         height: 80%;
-        background-color: var(--window-color4);
         background: 
-          linear-gradient(
-            var(--building-color4),
-            var(--building-color4) 10%,
-            transparent 10%,
-            transparent 90%,
-            var(--building-color4) 90%,
-            var(--building-color4)
-          ),
           repeating-linear-gradient(
             90deg,
-            var(--building-color4),
+            var(--building-color4) 0%,
             var(--building-color4) 10%,
             transparent 10%,
             transparent 15%
+          ),
+          repeating-linear-gradient(
+            var(--building-color4) 0%,
+            var(--building-color4) 10%,
+            var(--window-color4) 10%,
+            var(--window-color4) 90%
           );
       }
 
@@ -303,10 +300,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  When you make the left and right borders bigger, the border on the bottom will expand to be the width of the combined left and right border widths. Add `2vw solid transparent;` as the value of the `border-left` and `border-right` properties of `fb1a`. They will be invisible, but it will make the border on the bottom `4vw` wide.
--->
 ```
 
 </div>

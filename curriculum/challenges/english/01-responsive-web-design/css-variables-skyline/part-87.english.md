@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Move the `background-color` property and value from `fb2` to `fb2b` to just color the section and not the container.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const fb2 = code.match(/\.fb2\s*{[\s\S]+?[^}]}/g)[0]; const fb2b = code.match(/\.fb2b\s*{[\s\S]+?[^}]}/g)[0]; assert(!/background-color/g.test(fb2) && /background-color\s*:\s*var\(\s*--building-color3\s*\)\s*(;|})/g.test(fb2b));
 
 ```
 
@@ -201,22 +201,19 @@ tests:
       .fb1c {
         width: 100%;
         height: 80%;
-        background-color: var(--window-color4);
         background: 
-          linear-gradient(
-            var(--building-color4),
-            var(--building-color4) 10%,
-            transparent 10%,
-            transparent 90%,
-            var(--building-color4) 90%,
-            var(--building-color4)
-          ),
           repeating-linear-gradient(
             90deg,
-            var(--building-color4),
+            var(--building-color4) 0%,
             var(--building-color4) 10%,
             transparent 10%,
             transparent 15%
+          ),
+          repeating-linear-gradient(
+            var(--building-color4) 0%,
+            var(--building-color4) 10%,
+            var(--window-color4) 10%,
+            var(--window-color4) 90%
           );
       }
 
@@ -327,11 +324,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Move the `background-color` property and value from `fb2` to `fb2b` to just color the section and not the container.
--->
-
 ```
 
 </div>

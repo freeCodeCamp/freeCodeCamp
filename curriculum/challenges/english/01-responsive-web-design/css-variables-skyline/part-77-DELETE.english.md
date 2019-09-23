@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Add your `--window-color4` variable as the `background-color` of `fb1c`. You use the window color here as the background because you are going to put some building color on top of it to give the appearance of windows.
 </section>
 
 ## Instructions
@@ -19,7 +19,8 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const fb1c = code.match(/\.fb1c\s*{[\s\S]+?[^}]}/g)[0]; assert(/background-color\s*:\s*var\(\s*--window-color4\s*\)\s*(;|})/g.test(fb1c));
+
 
 ```
 
@@ -282,10 +283,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Add your `--window-color4` variable as the `background-color` of `fb1c`. You use the window color here as the background because you are going to put some building color on top of it to give the appearance of windows.
--->
 ```
 
 </div>

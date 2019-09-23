@@ -19,7 +19,7 @@ You want to add the same gradient to the next two sections. But instead of doing
 ```yml
 tests:
   - text: test-text
-    testString: const bb1wStyle = code.match(/\.bb1-window\s*{[\s\S]+?[^}]}/g)[0]; console.log(bb1wStyle); assert(/height\s*:\s*10%\s*(;|})/g.test(bb1wStyle) && /background\s*:\s*linear-gradient\(\s*var\(\s*--building-color1\s*\)\s*,\s*var\(\s*--window-color1\s*\)\s*\)\s*(;|})/g.test(bb1wStyle));
+    testString: const bb1wStyle = code.match(/\.bb1-window\s*{[\s\S]+?[^}]}/g)[0]; assert(/height\s*:\s*10%\s*(;|})/g.test(bb1wStyle) && /background\s*:\s*linear-gradient\(\s*var\(\s*--building-color1\s*\)\s*,\s*var\(\s*--window-color1\s*\)\s*\)\s*(;|})/g.test(bb1wStyle));
 
 ```
 

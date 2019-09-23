@@ -19,7 +19,7 @@ You can see the hard color change at the top of the `bb2b` section. Change the `
 ```yml
 tests:
   - text: test-text
-    testString: assert($(".bb2b").css("background") === "rgba(0, 0, 0, 0) repeating-linear-gradient(rgb(102, 204, 153), rgb(102, 204, 153) 6%, rgb(140, 217, 179) 6%, rgb(140, 217, 179) 9%) repeat scroll 0% 0% / auto padding-box border-box");
+    testString: const bb2b = code.match(/\.bb2b\s*{[\s\S]+?[^}]}/g)[0]; assert(/background\s*:\s*repeating-linear-gradient\(\s*var\(\s*--building-color2\s*\)\s*(0%\s*,|,)\s*var\(\s*--building-color2\s*\)\s*6%\s*,\s*var\(\s*--window-color2\s*\)\s*6%\s*,\s*var\(\s*--window-color2\s*\)\s*9%\s*\)\s*(;|})/g.test(bb2b));
 
 ```
 

@@ -19,7 +19,7 @@ Give the new buildings `width` and `height` properties of: `10%` and `50%` for `
 ```yml
 tests:
   - text: test-text
-    testString: const noSpaces = code.replace(/\s/g, ''); assert(noSpaces.match(/\.bb2{(height:50%;width:10%;?}|width:10%;height:50%;?})/g) && noSpaces.match(/\.bb3{(height:55%;width:10%;?}|width:10%;height:55%;?})/g) && noSpaces.match(/\.bb4{(height:58%;width:11%;?}|width:11%;height:58%;?})/g));
+    testString: const bb2 = code.match(/\.bb2\s*{[\s\S]+?[^}]}/g)[0]; const bb3 = code.match(/\.bb3\s*{[\s\S]+?[^}]}/g)[0]; const bb4 = code.match(/\.bb4\s*{[\s\S]+?[^}]}/g)[0]; assert(/width\s*:\s*10%\s*(;|})/g.test(bb2) && /height\s*:\s*50%\s*(;|})/g.test(bb2) && /width\s*:\s*10%\s*(;|})/g.test(bb3) && /height\s*:\s*55%\s*(;|})/g.test(bb3) && /width\s*:\s*11%\s*(;|})/g.test(bb4) && /height\s*:\s*58%\s*(;|})/g.test(bb4));
 
 ```
 

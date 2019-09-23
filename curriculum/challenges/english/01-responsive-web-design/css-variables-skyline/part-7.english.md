@@ -19,7 +19,7 @@ Now you can see your body, it's the horizontal line on your page. The box around
 ```yml
 tests:
   - text: test-text
-    testString: const css = $("#display-body").css(["margin-top", "margin-right", "margin-left", "margin-bottom", "overflow-x", "overflow-y"]); assert(css["margin-top"] === "8px" && css["margin-right"] === "8px" && css["margin-bottom"] === "8px" && css["margin-left"] === "8px" && css["overflow-x"] === "hidden" && css["overflow-y"] === "hidden" && code.match(/height\s*:\s*100vh\s*;/g));
+    testString: const body = code.match(/body\s*{[\s\S]+?[^}]}/g)[0]; assert(/height\s*:\s*100vh\s*(;|})/g.test(body) && /margin\s*:\s*(0|0px)\s*(;|})/g.test(body) && /overflow\s*:\s*hidden\s*(;|})/g.test(body));
 
 ```
 

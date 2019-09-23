@@ -19,7 +19,7 @@ Give your `background-buildings` element a `width` and `height` of `100%` to mak
 ```yml
 tests:
   - text: test-text
-    testString: const noSpaces = code.replace(/\s/g, ''); assert(noSpaces.match(/\.background-buildings{(height:100%;width:100%;?}|width:100%;height:100%;?})/g));
+    testString: const bb = code.match(/\.background-buildings\s*{[\s\S]+?[^}]}/g)[0]; assert(/width\s*:\s*100%\s*(;|})/g.test(bb) && /height\s*:\s*100%\s*(;|})/g.test(bb))
 
 ```
 

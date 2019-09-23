@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Remove the `background-color` property and value from `fb3` and add them to `fb3a` and `fb3b`.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const fb3 = code.match(/\.fb3\s*{[\s\S]+?[^}]}/g)[0]; const fb3a = code.match(/\.fb3a\s*{[\s\S]+?[^}]}/g)[0];const fb3b = code.match(/\.fb3b\s*{[\s\S]+?[^}]}/g)[0]; assert(!/background-color/g.test(fb3) && /background-color\s*:\s*var\(\s*--building-color1\s*\)\s*(;|})/g.test(fb3a) && /background-color\s*:\s*var\(\s*--building-color1\s*\)\s*(;|})/g.test(fb3b));
 
 ```
 
@@ -201,22 +201,19 @@ tests:
       .fb1c {
         width: 100%;
         height: 80%;
-        background-color: var(--window-color4);
         background: 
-          linear-gradient(
-            var(--building-color4),
-            var(--building-color4) 10%,
-            transparent 10%,
-            transparent 90%,
-            var(--building-color4) 90%,
-            var(--building-color4)
-          ),
           repeating-linear-gradient(
             90deg,
-            var(--building-color4),
+            var(--building-color4) 0%,
             var(--building-color4) 10%,
             transparent 10%,
             transparent 15%
+          ),
+          repeating-linear-gradient(
+            var(--building-color4) 0%,
+            var(--building-color4) 10%,
+            var(--window-color4) 10%,
+            var(--window-color4) 90%
           );
       }
 
@@ -345,10 +342,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Remove the `background-color` property and value from `fb3` and add them to `fb3a` and `fb3b`.
--->
 ```
 
 </div>
