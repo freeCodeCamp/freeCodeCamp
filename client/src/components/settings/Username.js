@@ -60,7 +60,9 @@ class UsernameSettings extends Component {
     this.state = {
       isFormPristine: true,
       formValue: props.username,
-      formDisplayValue: props.displayUsername,
+      formDisplayValue: props.displayUsername
+        ? props.displayUsername
+        : props.username,
       characterValidation: { valid: false, error: null },
       submitClicked: false
     };

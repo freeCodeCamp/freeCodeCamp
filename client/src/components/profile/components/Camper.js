@@ -104,9 +104,6 @@ function Camper({
       <h2 className='text-center username'>
         @{displayUsername ? displayUsername : username}
       </h2>
-      <h2 className='text-center username'>
-        @Username(for testing only): {username}
-      </h2>
       {name && <p className='text-center name'>{name}</p>}
       {location && <p className='text-center location'>{location}</p>}
       {about && <p className='bio text-center'>{about}</p>}

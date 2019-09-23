@@ -335,7 +335,7 @@ export default function(User) {
   });
 
   User.doesExist = function doesExist(username, email) {
-    if (!username.toLowerCase() && (!email || !isEmail(email))) {
+    if (!username && (!email || !isEmail(email))) {
       return Promise.resolve(false);
     }
     username = username.toLowerCase();
