@@ -1,12 +1,12 @@
 ---
-id: 5d822fd413a79914d39e9934
+id: 5d822fd413a79914d39e9915
 title: Part 108
 challengeType: 0
 ---
 
 ## Description
 <section id='description'>
-Placeholder Description
+You don't need the `background-color` for this building anymore so you can remove that property.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const fb5 = code.match(/\.fb5\s*{[\s\S]+?[^}]}/g)[0]; assert(!/background-color/g.test(fb5));
 
 ```
 
@@ -290,6 +290,7 @@ tests:
       .fb5 {
         width: 10%;
         height: 33%;
+        background-color: var(--building-color2);
         position: relative;
         right: 10%;
         background: repeating-linear-gradient(
@@ -390,10 +391,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Finally, you made it to the last building! Change the `background-color` of `fb6` to use your `window-color3` variable.
--->
 ```
 
 </div>

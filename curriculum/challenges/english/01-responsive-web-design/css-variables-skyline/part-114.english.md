@@ -1,12 +1,12 @@
 ---
-id: 5d822fd413a79914d39e993a
+id: 5d822fd413a79914d39e9938
 title: Part 114
 challengeType: 0
 ---
 
 ## Description
 <section id='description'>
-Placeholder Description
+Give the `sky` a `radial-gradient`. Use `#ffcf33` from `0%` to `20%`, `#ffff66` at `21%`, and `#bbeeff` at `100%`. This will add circular gradient to the background that will be your sun.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const sky = code.match(/\.sky\s*{[\s\S]+?[^}]}/g)[0]; assert(/background\s*:\s*radial-gradient\(\s*#ffcf33\s*(0%\s*,|,)\s*#ffcf33\s*20%\s*,\s*#ffff66\s*21%\s*,\s*#bbeeff\s*100%\s*\)\s*(;|})/g.test(sky));
 
 ```
 
@@ -76,16 +76,6 @@ tests:
         display: flex;
         align-items: center;
         justify-content: space-evenly;
-      }
-
-      .sky {
-        background: radial-gradient(
-            closest-corner circle at 15% 15%,
-            #ffcf33,
-            #ffcf33 20%,
-            #ffff66 21%,
-            #bbeeff 100%
-          );
       }
 
       /* BACKGROUND BUILDINGS - "bb" stands for "background building" */
@@ -319,7 +309,6 @@ tests:
       .fb6 {
         width: 9%;
         height: 38%;
-        background-color: var(--window-color3);
         background: repeating-linear-gradient(
             90deg,
             var(--building-color3),
@@ -330,8 +319,8 @@ tests:
           repeating-linear-gradient(
             var(--building-color3),
             var(--building-color3) 10%,
-            transparent 10%,
-            transparent 30%
+            var(--window-color3) 10%,
+            var(--window-color3) 30%
           );
       }
     </style>
@@ -412,18 +401,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  A media query can be used to change styles based on certain conditions and they look like this:
-  `
-    @media (condition) {
-      selector {
-        new styles
-      }
-    }  
-  `
-  Add a media query at the bottom of your stylesheet with a condition of `max-width: 1000px`. Styles added here will take effect when the window size is 1000px wide or less.
--->
 ```
 
 </div>

@@ -1,12 +1,20 @@
 ---
-id: 5d822fd413a79914d39e993c
+id: 5d822fd413a79914d39e993a
 title: Part 116
 challengeType: 0
 ---
 
 ## Description
 <section id='description'>
-Placeholder Description
+A media query can be used to change styles based on certain conditions, and they look like this:
+
+```css
+@media (condition) {
+
+}  
+```
+
+Add a empty media query at the bottom of your stylesheet with a condition of `max-width: 1000px`. Styles added in here will take effect when the document size is 1000px wide or less.
 </section>
 
 ## Instructions
@@ -19,7 +27,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(/\@media\s*\(\s*max-width\s*:\s*1000px\s*\)\s*{\s*}/g.test(code));
 
 ```
 
@@ -319,7 +327,6 @@ tests:
       .fb6 {
         width: 9%;
         height: 38%;
-        background-color: var(--window-color3);
         background: repeating-linear-gradient(
             90deg,
             var(--building-color3),
@@ -330,21 +337,9 @@ tests:
           repeating-linear-gradient(
             var(--building-color3),
             var(--building-color3) 10%,
-            transparent 10%,
-            transparent 30%
+            var(--window-color3) 10%,
+            var(--window-color3) 30%
           );
-      }
-
-      @media (max-width: 1000px) {
-        .sky {
-          background: radial-gradient(
-              closest-corner circle at 15% 15%,
-              #ffcf33,
-              #ffcf33 20%,
-              #ffff66 21%,
-              #bbeeff 100%
-            );
-        }
       }
     </style>
   </head>
@@ -424,10 +419,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  In the `sky` class of the media query, change the two `#ffcf33` values to `#ccc`, the `#ffff66` to `#445`, and the `#bbeeff` to `#223`. Then you can resize your window to see the background change colors.
--->
 ```
 
 </div>

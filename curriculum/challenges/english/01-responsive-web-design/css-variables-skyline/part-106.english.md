@@ -290,6 +290,7 @@ tests:
       .fb5 {
         width: 10%;
         height: 33%;
+        background-color: var(--building-color2);
         position: relative;
         right: 10%;
       }
