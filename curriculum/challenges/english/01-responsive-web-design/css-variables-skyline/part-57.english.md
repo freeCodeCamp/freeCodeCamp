@@ -110,8 +110,8 @@ tests:
 
       .bb2a {
         margin: auto;
-        border-top: 1vw solid #333;
-        border-bottom: 1vw solid #555;
+        border-top: 1vw solid #000;
+        border-bottom: 1vw solid #000;
         border-left: 5vw solid transparent;
         border-right: 5vw solid transparent;
       }

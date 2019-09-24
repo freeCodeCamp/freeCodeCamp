@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Welcome to the CSS Variables skyline project! Start by adding the `!DOCTYPE` declaration at the top of the document. Give it a type of `html` so the browser knows what type of document it's reading.
+Welcome to the CSS Variables skyline project! Start by adding the `!DOCTYPE html` declaration at the top of the document so the browser knows what type of document it's reading.
 </section>
 
 ## Instructions

@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Nest four `div` elements in the `bb1` container. Give them the classes `bb1a`, `bb1b`, `bb1c`, and `bb1d` in that order. These will be different parts of the first building.
+Nest four `div` elements in the `bb1` container. Give them the classes `bb1a`, `bb1b`, `bb1c`, and `bb1d` in that order. This building will have four sections.
 </section>
 
 ## Instructions

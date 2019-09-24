@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-You can see the hard color change at the top of the `bb2b` section. Change the `bb2b` gradient type from `linear-gradient` to `repeating-linear-gradient`. The current gradient ends at 9% of the elements height, this will make that 9% repeat throughout the rest of the element. Giving you some stripes, and saving you from having to add a bunch of elements to create them.
+You can see the hard color change at the top of the `bb2b` section. Change the `bb2b` gradient type from `linear-gradient` to `repeating-linear-gradient`. This will make the four colors of your gradient repeat until it gets to the bottom of the element; giving you some stripes, and saving you from having to add a bunch of elements to create them.
 </section>
 
 ## Instructions

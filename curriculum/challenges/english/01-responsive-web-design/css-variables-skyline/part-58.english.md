@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Finally, on the `border-bottom` property of `bb2a`, change the `1vw` to `5vh` and change the `#555` color to your `--building-color2` variable. There you go, now it looks good!
+Finally, on the `border-bottom` property of `bb2a`, change the `1vw` to `5vh` and change the `#000` color to your `--building-color2` variable. There you go, now it looks good! At any time throughout this project, you can go and comment out or remove the `border` property you added to everything at the beginning to see what the buildings will look like when that gets removed at the end.
 </section>
 
 ## Instructions
@@ -109,7 +109,7 @@ tests:
       }
 
       .bb2a {
-        border-bottom: 1vw solid #555;
+        border-bottom: 1vw solid #000;
         border-left: 5vw solid transparent;
         border-right: 5vw solid transparent;
       }

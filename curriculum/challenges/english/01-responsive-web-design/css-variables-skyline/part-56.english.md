@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Next, change the `#777` and `#999` of `bb2a` to `transparent`. This will make the left and right borders invisible.
+Next, change the two `#999` of `bb2a` to `transparent`. This will make the left and right borders invisible.
 </section>
 
 ## Instructions
@@ -110,9 +110,9 @@ tests:
 
       .bb2a {
         margin: auto;
-        border-top: 1vw solid #333;
-        border-bottom: 1vw solid #555;
-        border-left: 5vw solid #777;
+        border-top: 1vw solid #000;
+        border-bottom: 1vw solid #000;
+        border-left: 5vw solid #999;
         border-right: 5vw solid #999;
       }
 

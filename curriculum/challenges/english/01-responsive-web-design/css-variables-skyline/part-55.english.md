@@ -19,7 +19,7 @@ Next, remove the `width` and `height` from `bb2a`, and change the `border-left` 
 ```yml
 tests:
   - text: test-text
-    testString: const bb2a = code.match(/\.bb2a\s*{[\s\S]+?[^}]}/g)[0]; assert(!/width/g.test(bb2a) && !/height/g.test(bb2a) && /border-left\s*:\s*5vw\s+solid\s+#777\s*(;|})/g.test(bb2a) && /border-right\s*:\s*5vw\s+solid\s+#999\s*(;|})/g.test(bb2a));
+    testString: const bb2a = code.match(/\.bb2a\s*{[\s\S]+?[^}]}/g)[0]; assert(!/width/g.test(bb2a) && !/height/g.test(bb2a) && /border-left\s*:\s*5vw\s+solid\s+#999\s*(;|})/g.test(bb2a) && /border-right\s*:\s*5vw\s+solid\s+#999\s*(;|})/g.test(bb2a));
 
 ```
 
@@ -112,9 +112,9 @@ tests:
         margin: auto;
         width: 5vw;
         height: 5vw;
-        border-top: 1vw solid #333;
-        border-bottom: 1vw solid #555;
-        border-left: 1vw solid #777;
+        border-top: 1vw solid #000;
+        border-bottom: 1vw solid #000;
+        border-left: 1vw solid #999;
         border-right: 1vw solid #999;
       }
 
