@@ -97,8 +97,7 @@ class ShowUser extends Component {
       return (
         <main>
           <FullWidthRow>
-            <Spacer />
-            <Spacer />
+            <Spacer size={2} />
             <Panel bsStyle='info'>
               <Panel.Heading>
                 <Panel.Title componentClass='h3'>
@@ -132,8 +131,7 @@ class ShowUser extends Component {
           <title>Report a users profile | freeCodeCamp.org</title>
         </Helmet>
         <FullWidthRow>
-          <Spacer />
-          <Spacer />
+          <Spacer size={2} />
           <Col md={8} mdOffset={2}>
             <h2>
               Do you want to report {username}

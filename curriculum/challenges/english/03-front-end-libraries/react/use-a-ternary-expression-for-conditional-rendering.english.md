@@ -74,9 +74,9 @@ class CheckUserAge extends React.Component {
     });
   }
   submit() {
-    this.setState({
-      userAge: this.state.input
-    });
+    this.setState(state => ({
+      userAge: state.input
+    }));
   }
   render() {
     const buttonOne = <button onClick={this.submit}>Submit</button>;
@@ -140,9 +140,9 @@ class CheckUserAge extends React.Component {
     });
   }
   submit() {
-    this.setState({
-      userAge: this.state.input
-    });
+    this.setState(state => ({
+      userAge: state.input
+    }));
   }
   render() {
     const buttonOne = <button onClick={this.submit}>Submit</button>;

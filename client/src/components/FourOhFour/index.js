@@ -3,7 +3,7 @@ import Helmet from 'react-helmet';
 import Spinner from 'react-spinkit';
 import { Link } from 'gatsby';
 
-import notFoundLogo from '../../images/freeCodeCamp-404.svg';
+import notFoundLogo from '../../assets/images/freeCodeCamp-404.svg';
 import { quotes } from '../../resources/quotes.json';
 
 import './404.css';
@@ -49,7 +49,7 @@ class NotFoundPage extends Component {
         ) : (
           <Spinner color='#006400' name='ball-clip-rotate-multiple' />
         )}
-        <Link className='btn-curriculum' to='/learn'>
+        <Link className='btn btn-cta' to='/learn'>
           View the Curriculum
         </Link>
       </div>

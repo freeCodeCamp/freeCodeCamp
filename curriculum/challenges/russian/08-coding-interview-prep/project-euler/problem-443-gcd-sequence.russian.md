@@ -2,23 +2,40 @@
 id: 5900f5271000cf542c51003a
 challengeType: 5
 title: 'Problem 443: GCD sequence'
-videoUrl: ''
+forumTopicId: 302115
 localeTitle: 'Задача 443: последовательность GCD'
 ---
 
 ## Description
-undefined
+<section id='description'>
+Let g(n) be a sequence defined as follows:
+g(4) = 13,
+g(n) = g(n-1) + gcd(n, g(n-1)) for n > 4.
+
+The first few values are:
+
+n 4567891011121314151617181920...
+g(n) 1314161718272829303132333451545560...
+
+<!-- TODO Use MathJax -->
+
+You are given that g(1 000) = 2524 and g(1 000 000) = 2624152.
+
+Find g(1015).
+</section>
 
 ## Instructions
-undefined
+<section id='instructions'>
+
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: ''
-    testString: 'assert.strictEqual(euler443(), 2744233049300770, "<code>euler443()</code> should return 2744233049300770.");'
+  - text: <code>euler443()</code> should return 2744233049300770.
+    testString: assert.strictEqual(euler443(), 2744233049300770);
 
 ```
 
@@ -41,8 +58,6 @@ euler443();
 
 </div>
 
-
-
 </section>
 
 ## Solution
@@ -51,4 +66,5 @@ euler443();
 ```js
 // solution required
 ```
+
 </section>

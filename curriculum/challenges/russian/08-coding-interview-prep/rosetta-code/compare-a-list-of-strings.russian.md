@@ -2,15 +2,18 @@
 title: Compare a list of strings
 id: 596e457071c35c882915b3e4
 challengeType: 5
-videoUrl: ''
+forumTopicId: 302235
 localeTitle: Сравнить список строк
 ---
 
 ## Description
-<section id="description"><p> Учитывая <a href="https://en.wikipedia.org/wiki/List_(abstract_data_type)" title="wp: List_ (abstract_data_type)">список</a> произвольно многих строк, реализуйте функцию для каждого из следующих условий: </p> если все они лексически равны, если каждая строка лексически меньше, чем одна после нее (т. е. является ли список в строгом порядке) </section>
+<section id='description'>
+<p> Учитывая <a href="https://en.wikipedia.org/wiki/List_(abstract_data_type)" title="wp: List_ (abstract_data_type)">список</a> произвольно многих строк, реализуйте функцию для каждого из следующих условий: </p> если все они лексически равны, если каждая строка лексически меньше, чем одна после нее (т. е. является ли список в строгом порядке)
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,30 +21,30 @@ localeTitle: Сравнить список строк
 
 ```yml
 tests:
-  - text: <code>allEqual</code> - это функция.
-    testString: 'assert(typeof allEqual === "function", "<code>allEqual</code> is a function.");'
-  - text: <code>azSorted</code> - это функция.
-    testString: 'assert(typeof azSorted === "function", "<code>azSorted</code> is a function.");'
-  - text: '<code>allEqual([&quot;AA&quot;, &quot;AA&quot;, &quot;AA&quot;, &quot;AA&quot;])</code> возвращает true.'
-    testString: 'assert(allEqual(testCases[0]), "<code>allEqual(["AA", "AA", "AA", "AA"])</code> returns true.");'
-  - text: '<code>azSorted([&quot;AA&quot;, &quot;AA&quot;, &quot;AA&quot;, &quot;AA&quot;])</code> возвращает false.'
-    testString: 'assert(!azSorted(testCases[0]), "<code>azSorted(["AA", "AA", "AA", "AA"])</code> returns false.");'
-  - text: '<code>allEqual([&quot;AA&quot;, &quot;ACB&quot;, &quot;BB&quot;, &quot;CC&quot;])</code> возвращает false.'
-    testString: 'assert(!allEqual(testCases[1]), "<code>allEqual(["AA", "ACB", "BB", "CC"])</code> returns false.");'
-  - text: '<code>azSorted([&quot;AA&quot;, &quot;ACB&quot;, &quot;BB&quot;, &quot;CC&quot;])</code> возвращает true.'
-    testString: 'assert(azSorted(testCases[1]), "<code>azSorted(["AA", "ACB", "BB", "CC"])</code> returns true.");'
-  - text: '<code>allEqual([])</code> возвращает true.'
-    testString: 'assert(allEqual(testCases[2]), "<code>allEqual([])</code> returns true.");'
-  - text: '<code>azSorted([])</code> возвращает true.'
-    testString: 'assert(azSorted(testCases[2]), "<code>azSorted([])</code> returns true.");'
-  - text: '<code>allEqual([&quot;AA&quot;])</code> возвращает true.'
-    testString: 'assert(allEqual(testCases[3]), "<code>allEqual(["AA"])</code> returns true.");'
-  - text: '<code>azSorted([&quot;AA&quot;])</code> возвращает true.'
-    testString: 'assert(azSorted(testCases[3]), "<code>azSorted(["AA"])</code> returns true.");'
-  - text: '<code>allEqual([&quot;BB&quot;, &quot;AA&quot;])</code> возвращает false.'
-    testString: 'assert(!allEqual(testCases[4]), "<code>allEqual(["BB", "AA"])</code> returns false.");'
-  - text: '<code>azSorted([&quot;BB&quot;, &quot;AA&quot;])</code> возвращает false.'
-    testString: 'assert(!azSorted(testCases[4]), "<code>azSorted(["BB", "AA"])</code> returns false.");'
+  - text: <code>allEqual</code> is a function.
+    testString: assert(typeof allEqual === 'function');
+  - text: <code>azSorted</code> is a function.
+    testString: assert(typeof azSorted === 'function');
+  - text: <code>allEqual(["AA", "AA", "AA", "AA"])</code> returns true.
+    testString: assert(allEqual(testCases[0]));
+  - text: <code>azSorted(["AA", "AA", "AA", "AA"])</code> returns false.
+    testString: assert(!azSorted(testCases[0]));
+  - text: <code>allEqual(["AA", "ACB", "BB", "CC"])</code> returns false.
+    testString: assert(!allEqual(testCases[1]));
+  - text: <code>azSorted(["AA", "ACB", "BB", "CC"])</code> returns true.
+    testString: assert(azSorted(testCases[1]));
+  - text: <code>allEqual([])</code> returns true.
+    testString: assert(allEqual(testCases[2]));
+  - text: <code>azSorted([])</code> returns true.
+    testString: assert(azSorted(testCases[2]));
+  - text: <code>allEqual(["AA"])</code> returns true.
+    testString: assert(allEqual(testCases[3]));
+  - text: <code>azSorted(["AA"])</code> returns true.
+    testString: assert(azSorted(testCases[3]));
+  - text: <code>allEqual(["BB", "AA"])</code> returns false.
+    testString: assert(!allEqual(testCases[4]));
+  - text: <code>azSorted(["BB", "AA"])</code> returns false.
+    testString: assert(!azSorted(testCases[4]));
 
 ```
 
@@ -53,12 +56,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function allEqual (arr) {
+function allEqual(arr) {
   // Good luck!
   return true;
 }
 
-function azSorted (arr) {
+function azSorted(arr) {
   // Good luck!
   return true;
 }
@@ -67,12 +70,12 @@ function azSorted (arr) {
 
 </div>
 
-
-### After Test
+### After Tests
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const testCases = [['AA', 'AA', 'AA', 'AA'], ['AA', 'ACB', 'BB', 'CC'], [], ['AA'], ['BB', 'AA']];
+
 ```
 
 </div>
@@ -83,6 +86,21 @@ console.info('after the test');
 <section id='solution'>
 
 ```js
-// solution required
+function allEqual(a) {
+  let out = true;
+  let i = 0;
+  while (++i < a.length) {
+    out = out && (a[i - 1] === a[i]);
+  } return out;
+}
+
+function azSorted(a) {
+  let out = true;
+  let i = 0;
+  while (++i < a.length) {
+    out = out && (a[i - 1] < a[i]);
+  } return out;
+}
 ```
+
 </section>

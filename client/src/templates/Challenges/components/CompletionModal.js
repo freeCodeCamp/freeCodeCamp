@@ -6,7 +6,7 @@ import { createSelector } from 'reselect';
 import { Button, Modal } from '@freecodecamp/react-bootstrap';
 
 import ga from '../../../analytics';
-import GreenPass from './icons/GreenPass';
+import GreenPass from '../../../assets/icons/GreenPass';
 
 import { dasherize } from '../../../../utils';
 

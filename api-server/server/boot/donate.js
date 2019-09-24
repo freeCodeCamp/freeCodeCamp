@@ -144,7 +144,7 @@ export default function donateBoot(app, done) {
   const publicInvalid = !pubKey || pubKey === 'pk_from_stipe_dashboard';
 
   if (secretInvalid || publicInvalid) {
-    if (process.env.NODE_ENV === 'production') {
+    if (process.env.FREECODECAMP_NODE_ENV === 'production') {
       throw new Error('Stripe API keys are required to boot the server!');
     }
     console.info('No Stripe API keys were found, moving on...');

@@ -443,6 +443,10 @@
     [
       "5cc0bd7a49b71cb96132e54c",
       "Use Recursion to Create a Range of Numbers"
+    ],
+    [
+      "5cd9a70215d3c4e65518328f",
+      "Use Recursion to Create a Countdown"
     ]
   ],
   "helpRoom": "HelpJavaScript",

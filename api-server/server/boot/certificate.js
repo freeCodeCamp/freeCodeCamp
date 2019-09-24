@@ -436,7 +436,7 @@ function createShowCert(app) {
         );
         let { completedDate = new Date() } = certChallenge || {};
 
-        // the challange id has been rotated for isDataVisCert
+        // the challenge id has been rotated for isDataVisCert
         // so we need to check for id 561add10cb82ac38a17513b3
         if (certType === 'isDataVisCert' && !certChallenge) {
           console.log('olderId');

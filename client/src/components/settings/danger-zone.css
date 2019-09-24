@@ -1,22 +1,27 @@
 .btn-danger {
-  background-color: #fff;
-  color: #ad1601;
-  border-color: #ad1601;
+  background-color: var(--danger-color);
+  color: var(--danger-background);
+  border-color: var(--danger-background);
 }
 
 .btn-danger:hover,
 .btn-danger:focus {
-  background-color: #ad1601;
+  color: var(--danger-color);
+  background-color: var(--danger-background);
+  border-color: var(--danger-background);
 }
+
 .danger-zone .panel-heading {
-  background-color: #ad1601;
-  color: #fff;
+  color: var(--danger-color);
+  background-color: var(--danger-background);
+  border-radius: 0;
+  border: none;
 }
 
 .danger-zone .panel-danger {
-  border-color: #ad1601;
+  border-color: var(--danger-background);
 }
 
 .danger-zone p {
-  color: #ad1601;
+  color: var(--danger-color);
 }

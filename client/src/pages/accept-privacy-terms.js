@@ -32,7 +32,7 @@ const mapStateToProps = createSelector(
 );
 const mapDispatchToProps = dispatch =>
   bindActionCreators({ acceptTerms }, dispatch);
-const RedirectWelcome = createRedirect('/welcome');
+const RedirectHome = createRedirect('/');
 
 class AcceptPrivacyTerms extends Component {
   constructor(props) {
@@ -66,7 +66,7 @@ class AcceptPrivacyTerms extends Component {
   render() {
     const { acceptedPrivacyTerms } = this.props;
     if (acceptedPrivacyTerms) {
-      return <RedirectWelcome />;
+      return <RedirectHome />;
     }
     const { privacyPolicy, termsOfService, quincyEmail } = this.state;
     return (
@@ -78,8 +78,7 @@ class AcceptPrivacyTerms extends Component {
           <Row>
             <Col xs={12}>
               <div className='text-center'>
-                <Spacer />
-                <Spacer />
+                <Spacer size={2} />
                 <h3>
                   Please review our updated privacy policy and the terms of
                   service.
@@ -103,7 +102,7 @@ class AcceptPrivacyTerms extends Component {
                     onChange={this.createHandleChange('termsOfService')}
                   >
                     I accept the{' '}
-                    <Link external={true} to='/terms-of-service'>
+                    <Link external={true} to='/news/terms-of-service'>
                       terms of service
                     </Link>{' '}
                     (required)
@@ -121,7 +120,7 @@ class AcceptPrivacyTerms extends Component {
                     onChange={this.createHandleChange('privacyPolicy')}
                   >
                     I accept the{' '}
-                    <Link external={true} to='/privacy-policy'>
+                    <Link external={true} to='/news/privacy-policy'>
                       privacy policy
                     </Link>{' '}
                     (required)

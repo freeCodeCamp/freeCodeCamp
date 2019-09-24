@@ -9,7 +9,6 @@ forumTopicId: 302363
 ## Description
 <section id='description'>
 <strong>Objective:</strong> Build a full stack JavaScript app that is functionally similar to this: <a href='http://watchstocks.herokuapp.com/' target='_blank'>http://watchstocks.herokuapp.com/</a> and deploy it to Heroku.
-Note that for each project, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-our-dynamic-web-application-projects'>https://freecodecamp.com/challenges/get-set-for-our-dynamic-web-application-projects</a>.
 Here are the specific user stories you should implement for this project:
 <strong>User Story:</strong> I can view a graph displaying the recent trend lines for each added stock.
 <strong>User Story:</strong> I can add new stocks by their symbol name.

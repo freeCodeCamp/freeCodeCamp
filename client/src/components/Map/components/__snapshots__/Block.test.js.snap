@@ -74,13 +74,23 @@ exports[`<Block expanded snapshot: block-expanded 1`] = `
     >
       <span
         className="badge map-badge"
-      />
-      <Unknown
+      >
+        <IntroInformation
+          style={
+            Object {
+              "height": "15px",
+              "marginRight": "10px",
+              "width": "15px",
+            }
+          }
+        />
+      </span>
+      <mockConstructor
         onClick={[Function]}
         to="/super-block-one/block-a"
       >
         Introduction to Block A
-      </Unknown>
+      </mockConstructor>
     </li>
     <li
       className="map-challenge-title map-challenge-title-completed"
@@ -98,12 +108,12 @@ exports[`<Block expanded snapshot: block-expanded 1`] = `
           }
         />
       </span>
-      <Unknown
+      <mockConstructor
         onClick={[Function]}
         to="/super-block-one/block-a/challenge-one"
       >
         Challenge One
-      </Unknown>
+      </mockConstructor>
     </li>
     <li
       className="map-challenge-title"
@@ -121,12 +131,12 @@ exports[`<Block expanded snapshot: block-expanded 1`] = `
           }
         />
       </span>
-      <Unknown
+      <mockConstructor
         onClick={[Function]}
         to="/super-block-one/block-a/challenge-two"
       >
         Challenge Two
-      </Unknown>
+      </mockConstructor>
     </li>
     <li
       className="map-challenge-title"
@@ -144,12 +154,12 @@ exports[`<Block expanded snapshot: block-expanded 1`] = `
           }
         />
       </span>
-      <Unknown
+      <mockConstructor
         onClick={[Function]}
         to="/super-block-one/block-a/challenge-one"
       >
         Challenge One
-      </Unknown>
+      </mockConstructor>
     </li>
     <li
       className="map-challenge-title map-challenge-title-completed"
@@ -167,12 +177,12 @@ exports[`<Block expanded snapshot: block-expanded 1`] = `
           }
         />
       </span>
-      <Unknown
+      <mockConstructor
         onClick={[Function]}
         to="/super-block-one/block-a/challenge-two"
       >
         Challenge Two
-      </Unknown>
+      </mockConstructor>
     </li>
   </ul>
 </li>

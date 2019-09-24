@@ -34,7 +34,7 @@ In order for JavaScript to compare two different <dfn>data types</dfn> (for exam
 
 ## Instructions
 <section id='instructions'>
-Add the equality operator to the indicated line so that the function will return "Equal" when <code>val</code> is equivalent to <code>12</code>
+Add the equality operator to the indicated line so that the function will return "Equal" when <code>val</code> is equivalent to <code>12</code>.
 </section>
 
 ## Tests

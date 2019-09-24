@@ -15,7 +15,7 @@ const propTypes = {
 
 const style = {
   base: {
-    color: '#006400',
+    color: '#0a0a23',
     fontSize: '18px'
   }
 };

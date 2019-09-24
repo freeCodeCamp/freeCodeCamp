@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 const base = '/internal';
+axios.defaults.withCredentials = true;
 
 function get(path) {
   return axios.get(`${base}${path}`);
@@ -22,10 +23,6 @@ function put(path, body) {
 
 export function getSessionUser() {
   return get('/user/get-session-user');
-}
-
-export function getIdToNameMap() {
-  return get('/api/challenges/get-id-to-name');
 }
 
 export function getUserProfile(username) {

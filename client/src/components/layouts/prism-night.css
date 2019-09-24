@@ -7,7 +7,7 @@
 
 .night code[class*='language-'],
 .night pre[class*='language-'] {
-  color: #ccc;
+  color: var(--secondary-color);
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   font-size: 1em;
   text-align: left;
@@ -29,7 +29,7 @@
 }
 
 .night pre[class*='language-'] code[class*='language-'] {
-  color: #d4d4d4;
+  color: var(--quaternary-color);
 }
 
 /* Code blocks */
@@ -41,7 +41,7 @@
 
 .night :not(pre) > code[class*='language-'],
 .night pre[class*='language-'] {
-  background: #242424;
+  background: var(--primary-background);
 }
 
 /* Inline code */

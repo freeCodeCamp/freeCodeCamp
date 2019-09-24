@@ -15,9 +15,9 @@ One common way is to explicitly bind <code>this</code> in the constructor so <co
 
 ## Instructions
 <section id='instructions'>
-The code editor has a component with a <code>state</code> that keeps track of an item count. It also has a method which allows you to increment this item count. However, the method doesn't work because it's using the <code>this</code> keyword that is undefined. Fix it by explicitly binding <code>this</code> to the <code>addItem()</code> method in the component's constructor.
-Next, add a click handler to the <code>button</code> element in the render method. It should trigger the <code>addItem()</code> method when the button receives a click event. Remember that the method you pass to the <code>onClick</code> handler needs curly braces because it should be interpreted directly as JavaScript.
-Once you complete the above steps you should be able to click the button and see the item count increment in the HTML.
+The code editor has a component with a <code>state</code> that keeps track of the text. It also has a method which allows you to set the text to <code>"You clicked!"</code>. However, the method doesn't work because it's using the <code>this</code> keyword that is undefined. Fix it by explicitly binding <code>this</code> to the <code>handleClick()</code> method in the component's constructor.
+Next, add a click handler to the <code>button</code> element in the render method. It should trigger the <code>handleClick()</code> method when the button receives a click event. Remember that the method you pass to the <code>onClick</code> handler needs curly braces because it should be interpreted directly as JavaScript.
+Once you complete the above steps you should be able to click the button and see <code>You clicked!</code>.
 </section>
 
 ## Tests
@@ -27,10 +27,10 @@ Once you complete the above steps you should be able to click the button and see
 tests:
   - text: <code>MyComponent</code> should return a <code>div</code> element which wraps two elements, a button and an <code>h1</code> element, in that order.
     testString: assert(Enzyme.mount(React.createElement(MyComponent)).find('div').length === 1 && Enzyme.mount(React.createElement(MyComponent)).find('div').childAt(0).type() === 'button' && Enzyme.mount(React.createElement(MyComponent)).find('div').childAt(1).type() === 'h1');
-  - text: 'The state of <code>MyComponent</code> should initialize with the key value pair <code>{ itemCount: 0 }</code>.'
-    testString: 'assert(Enzyme.mount(React.createElement(MyComponent)).state(''itemCount'') === 0);'
-  - text: Clicking the <code>button</code> element should run the <code>addItem</code> method and increment the state <code>itemCount</code> by <code>1</code>.
-    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const first = () => { mockedComponent.setState({ itemCount: 0 }); return waitForIt(() => mockedComponent.state(''itemCount'')); }; const second = () => { mockedComponent.find(''button'').simulate(''click''); return waitForIt(() => mockedComponent.state(''itemCount'')); }; const firstValue = await first(); const secondValue = await second(); assert(firstValue === 0 && secondValue === 1); };'
+  - text: 'The state of <code>MyComponent</code> should initialize with the key value pair <code>{ text: "Hello" }</code>.'
+    testString: 'assert(Enzyme.mount(React.createElement(MyComponent)).state(''text'') === ''Hello'');'
+  - text: Clicking the <code>button</code> element should run the <code>handleClick</code> method and set the state <code>text</code> to <code>"You clicked!"</code>.
+    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const first = () => { mockedComponent.setState({ text: ''Hello'' }); return waitForIt(() => mockedComponent.state(''text'')); }; const second = () => { mockedComponent.find(''button'').simulate(''click''); return waitForIt(() => mockedComponent.state(''text'')); }; const firstValue = await first(); const secondValue = await second(); assert(firstValue === ''Hello'' && secondValue === ''You clicked!''); };'
 
 ```
 
@@ -46,15 +46,15 @@ class MyComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      itemCount: 0
+      text: "Hello"
     };
     // change code below this line
 
     // change code above this line
   }
-  addItem() {
+  handleClick() {
     this.setState({
-      itemCount: this.state.itemCount + 1
+      text: "You clicked!"
     });
   }
   render() {
@@ -63,7 +63,7 @@ class MyComponent extends React.Component {
         { /* change code below this line */ }
         <button>Click Me</button>
         { /* change code above this line */ }
-        <h1>Current Item Count: {this.state.itemCount}</h1>
+        <h1>{this.state.text}</h1>
       </div>
     );
   }
@@ -93,20 +93,20 @@ class MyComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      itemCount: 0
+      text: "Hello"
     };
-    this.addItem = this.addItem.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
-  addItem() {
+  handleClick() {
     this.setState({
-      itemCount: this.state.itemCount + 1
+      text: "You clicked!"
     });
   }
   render() {
     return (
       <div>
-        <button onClick = {this.addItem}>Click Me</button>
-        <h1>Current Item Count: {this.state.itemCount}</h1>
+        <button onClick = {this.handleClick}>Click Me</button>
+        <h1>{this.state.text}</h1>
       </div>
     );
   }

@@ -1,5 +1,15 @@
 import { pick } from 'lodash';
 
+export {
+  getEncodedEmail,
+  decodeEmail,
+  getWaitMessage,
+  getWaitPeriod,
+  renderEmailChangeEmail,
+  renderSignUpEmail,
+  renderSignInEmail
+} from './auth';
+
 export function dashify(str) {
   return ('' + str)
     .toLowerCase()

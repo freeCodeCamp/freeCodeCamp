@@ -47,7 +47,7 @@ export default function(UserIdent) {
         : '';
     if (!isEmail('' + email)) {
       throw wrapHandledError(
-        new Error('invalid or empty email recieved from auth0'),
+        new Error('invalid or empty email received from auth0'),
         {
           message: dedent`
     ${provider} did not return a valid email address.
@@ -61,7 +61,9 @@ export default function(UserIdent) {
     }
 
     if (provider === 'email') {
-      return User.findOne$({ where: { email } })
+      return User.findOne$({
+        where: { email: new RegExp(email.replace('.', '\\.'), 'i') }
+      })
         .flatMap(user => {
           return user
             ? Observable.of(user)

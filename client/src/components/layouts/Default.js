@@ -11,7 +11,8 @@ import {
   fetchUser,
   isSignedInSelector,
   onlineStatusChange,
-  isOnlineSelector
+  isOnlineSelector,
+  userSelector
 } from '../../redux';
 import { flashMessageSelector, removeFlashMessage } from '../Flash/redux';
 
@@ -24,8 +25,7 @@ import Header from '../Header';
 import Footer from '../Footer';
 
 import './global.css';
-import './layout.css';
-import './night.css';
+import './variables.css';
 
 fontawesome.config = {
   autoAddCss: false
@@ -66,22 +66,24 @@ const propTypes = {
   hasMessage: PropTypes.bool,
   isOnline: PropTypes.bool.isRequired,
   isSignedIn: PropTypes.bool,
-  landingPage: PropTypes.bool,
   onlineStatusChange: PropTypes.func.isRequired,
   pathname: PropTypes.string.isRequired,
   removeFlashMessage: PropTypes.func.isRequired,
-  showFooter: PropTypes.bool
+  showFooter: PropTypes.bool,
+  theme: PropTypes.string
 };
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
   flashMessageSelector,
   isOnlineSelector,
-  (isSignedIn, flashMessage, isOnline) => ({
+  userSelector,
+  (isSignedIn, flashMessage, isOnline, user) => ({
     isSignedIn,
     flashMessage,
     hasMessage: !!flashMessage.message,
-    isOnline
+    isOnline,
+    theme: user.theme
   })
 );
 const mapDispatchToProps = dispatch =>
@@ -129,13 +131,16 @@ class DefaultLayout extends Component {
       flashMessage,
       isOnline,
       isSignedIn,
-      landingPage,
       removeFlashMessage,
-      showFooter = true
+      showFooter = true,
+      theme
     } = this.props;
     return (
       <Fragment>
         <Helmet
+          bodyAttributes={{
+            class: `${theme === 'default' ? 'light-palette' : 'dark-palette'}`
+          }}
           meta={[
             {
               name: 'description',
@@ -149,10 +154,8 @@ class DefaultLayout extends Component {
           <style>{fontawesome.dom.css()}</style>
         </Helmet>
         <WithInstantSearch>
-          <Header disableSettings={landingPage} />
-          <div
-            className={`default-layout ${landingPage ? 'landing-page' : ''}`}
-          >
+          <Header />
+          <div className={`default-layout`}>
             <OfflineWarning isOnline={isOnline} isSignedIn={isSignedIn} />
             {hasMessage && flashMessage ? (
               <Flash flashMessage={flashMessage} onClose={removeFlashMessage} />

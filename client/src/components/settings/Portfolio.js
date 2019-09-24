@@ -17,8 +17,6 @@ import { FullWidthRow, ButtonSpacer, Spacer } from '../helpers';
 import SectionHeader from './SectionHeader';
 import BlockSaveButton from '../helpers/form/BlockSaveButton';
 
-import './portfolio.css';
-
 const propTypes = {
   picture: PropTypes.string,
   portfolio: PropTypes.arrayOf(
@@ -285,7 +283,6 @@ class PortfolioSettings extends Component {
               block={true}
               bsSize='lg'
               bsStyle='danger'
-              className='btn-delete-portfolio'
               onClick={() => this.handleRemoveItem(id)}
               type='button'
             >

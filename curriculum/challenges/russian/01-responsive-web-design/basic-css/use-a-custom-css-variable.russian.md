@@ -2,29 +2,34 @@
 id: 5a9d727a424fe3d0e10cad12
 title: Use a custom CSS Variable
 challengeType: 0
-videoUrl: ''
+videoUrl: https://scrimba.com/c/cM989ck
+forumTopicId: 301090
 localeTitle: Используйте настраиваемую переменную CSS
 ---
 
 ## Description
-<section id="description"> После создания вашей переменной вы можете присвоить ее значение другим свойствам CSS, указав имя, которое вы ему дали. <blockquote> фон: var (- пингвин-скин); </blockquote> Это изменит фон любого элемента, на который вы нацеливаетесь, на серый, поскольку это значение переменной <code>--penguin-skin</code> . Обратите внимание: стили не будут применяться, если имена переменных не будут точно совпадать. </section>
+<section id='description'>
+После создания вашей переменной вы можете присвоить ее значение другим свойствам CSS, указав имя, которое вы ему дали. <blockquote> фон: var (- пингвин-скин); </blockquote> Это изменит фон любого элемента, на который вы нацеливаетесь, на серый, поскольку это значение переменной <code>--penguin-skin</code> . Обратите внимание: стили не будут применяться, если имена переменных не будут точно совпадать.
+</section>
 
 ## Instructions
-<section id="instructions"> Примените переменную <code>--penguin-skin</code> к свойству <code>background</code> <code>--penguin-skin</code> <code>penguin-top</code> , <code>penguin-bottom</code> , <code>right-hand</code> и <code>left-hand</code> . </section>
+<section id='instructions'>
+Примените переменную <code>--penguin-skin</code> к свойству <code>background</code> <code>--penguin-skin</code> <code>penguin-top</code> , <code>penguin-bottom</code> , <code>right-hand</code> и <code>left-hand</code> .
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: Примените переменную <code>--penguin-skin</code> к свойству <code>background</code> класса <code>penguin-top</code> .
-    testString: 'assert(code.match(/.penguin-top\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}[\s\S]*.penguin-bottom\s{/gi), "Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>penguin-top</code> class.");'
-  - text: Примените переменную <code>--penguin-skin</code> к свойству <code>background</code> класса <code>penguin-bottom</code> .
-    testString: 'assert(code.match(/.penguin-bottom\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}[\s\S]*.right-hand\s{/gi), "Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>penguin-bottom</code> class.");'
-  - text: Примените переменную <code>--penguin-skin</code> к свойству <code>background</code> для <code>right-hand</code> класса.
-    testString: 'assert(code.match(/.right-hand\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}[\s\S]*.left-hand\s{/gi), "Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>right-hand</code> class.");'
-  - text: Примените переменную <code>--penguin-skin</code> к свойству <code>background</code> для <code>left-hand</code> класса.
-    testString: 'assert(code.match(/.left-hand\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}/gi), "Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>left-hand</code> class.");'
+  - text: Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>penguin-top</code> class.
+    testString: assert(code.match(/.penguin-top\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}[\s\S]*.penguin-bottom\s{/gi));
+  - text: Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>penguin-bottom</code> class.
+    testString: assert(code.match(/.penguin-bottom\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}[\s\S]*.right-hand\s{/gi));
+  - text: Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>right-hand</code> class.
+    testString: assert(code.match(/.right-hand\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}[\s\S]*.left-hand\s{/gi));
+  - text: Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>left-hand</code> class.
+    testString: assert(code.match(/.left-hand\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}/gi));
 
 ```
 
@@ -251,14 +256,13 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+var code = ".penguin-top {background: var(--penguin-skin);} .penguin-bottom {background: var(--penguin-skin);} .right-hand {background: var(--penguin-skin);} .left-hand {background: var(--penguin-skin);}"
 ```
+
 </section>

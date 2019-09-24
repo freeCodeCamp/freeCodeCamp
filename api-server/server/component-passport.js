@@ -83,9 +83,9 @@ export const loginRedirect = () => {
     const successRedirect = req => {
       if (!!req && req.session && req.session.returnTo) {
         delete req.session.returnTo;
-        return `${homeLocation}/welcome`;
+        return `${homeLocation}/`;
       }
-      return `${homeLocation}/welcome`;
+      return `${homeLocation}/`;
     };
 
     let redirect = url.parse(successRedirect(req), true);
@@ -112,7 +112,7 @@ export const createPassportCallbackAuthenticator = (strategy, config) => (
       if (!user || !userInfo) {
         return res.redirect('/signin');
       }
-      const redirect = `${homeLocation}/welcome`;
+      const redirect = `${homeLocation}/`;
 
       const { accessToken } = userInfo;
       const { provider } = config;

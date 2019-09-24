@@ -2,23 +2,28 @@
 id: 56bbb991ad1ed5201cd392ce
 title: Manipulate Arrays With unshift()
 challengeType: 1
-videoUrl: ''
+videoUrl: https://scrimba.com/c/ckNDESv
+forumTopicId: 18239
 localeTitle: Манипулировать массивами С помощью функции unshift ()
 ---
 
 ## Description
-<section id="description"> Вы не только можете <code>shift</code> элементы с начала массива, но также можете <code>unshift</code> элементы в начало массива, то есть добавить элементы перед массивом. <code>.unshift()</code> работает точно так же, как <code>.push()</code> , но вместо добавления элемента в конце массива <code>unshift()</code> добавляет элемент в начале массива. </section>
+<section id='description'>
+Вы не только можете <code>shift</code> элементы с начала массива, но также можете <code>unshift</code> элементы в начало массива, то есть добавить элементы перед массивом. <code>.unshift()</code> работает точно так же, как <code>.push()</code> , но вместо добавления элемента в конце массива <code>unshift()</code> добавляет элемент в начале массива.
+</section>
 
 ## Instructions
-<section id="instructions"> Добавьте <code>[&quot;Paul&quot;,35]</code> в начало переменной <code>myArray</code> используя <code>unshift()</code> . </section>
+<section id='instructions'>
+Добавьте <code>[&quot;Paul&quot;,35]</code> в начало переменной <code>myArray</code> используя <code>unshift()</code> .
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: '<code>myArray</code> должен теперь иметь [[«Павел», 35], [«собака», 3]].'
-    testString: 'assert((function(d){if(typeof d[0] === "object" && d[0][0] == "Paul" && d[0][1] === 35 && d[1][0] != undefined && d[1][0] == "dog" && d[1][1] != undefined && d[1][1] == 3){return true;}else{return false;}})(myArray), "<code>myArray</code> should now have [["Paul", 35], ["dog", 3]].");'
+  - text: <code>myArray</code> should now have [["Paul", 35], ["dog", 3]].
+    testString: assert((function(d){if(typeof d[0] === "object" && d[0][0] == 'Paul' && d[0][1] === 35 && d[1][0] != undefined && d[1][0] == 'dog' && d[1][1] != undefined && d[1][1] == 3){return true;}else{return false;}})(myArray));
 
 ```
 
@@ -46,12 +51,12 @@ myArray.shift();
 
 </div>
 
-
-### After Test
+### After Tests
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(y, z){return 'myArray = ' + JSON.stringify(y);})(myArray);
+
 ```
 
 </div>
@@ -62,6 +67,9 @@ console.info('after the test');
 <section id='solution'>
 
 ```js
-// solution required
+var myArray = [["John", 23], ["dog", 3]];
+myArray.shift();
+myArray.unshift(["Paul", 35]);
 ```
+
 </section>

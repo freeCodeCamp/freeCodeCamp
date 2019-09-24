@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
+import { Link } from 'gatsby';
 import Spinner from 'react-spinkit';
 
 import { isSignedInSelector, userFetchStateSelector } from '../../../redux';
 import Login from './Login';
-import SignedIn from './SignedIn';
 
 const mapStateToProps = createSelector(
   userFetchStateSelector,
@@ -41,7 +41,13 @@ function UserState(props) {
       />
     );
   }
-  return isSignedIn ? <SignedIn /> : <Login />;
+  return isSignedIn ? (
+    <Link className='top-right-nav-link' to='/settings'>
+      Settings
+    </Link>
+  ) : (
+    <Login />
+  );
 }
 
 UserState.displayName = 'UserState';

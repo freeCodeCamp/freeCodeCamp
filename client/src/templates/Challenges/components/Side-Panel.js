@@ -6,15 +6,16 @@ import ChallengeTitle from './Challenge-Title';
 import ChallengeDescription from './Challenge-Description';
 import ToolPanel from './Tool-Panel';
 import TestSuite from './Test-Suite';
-import Spacer from '../../../components/helpers/Spacer';
 
-import { challengeTestsSelector } from '../redux';
+import { challengeTestsSelector, isChallengeCompletedSelector } from '../redux';
 import { createSelector } from 'reselect';
 import './side-panel.css';
 
 const mapStateToProps = createSelector(
+  isChallengeCompletedSelector,
   challengeTestsSelector,
-  tests => ({
+  (isChallengeCompleted, tests) => ({
+    isChallengeCompleted,
     tests
   })
 );
@@ -25,11 +26,8 @@ const propTypes = {
   description: PropTypes.string,
   guideUrl: PropTypes.string,
   instructions: PropTypes.string,
-  introPath: PropTypes.string,
-  nextChallengePath: PropTypes.string,
-  prevChallengePath: PropTypes.string,
+  isChallengeCompleted: PropTypes.bool,
   section: PropTypes.string,
-  showPrevNextBtns: PropTypes.bool,
   showToolPanel: PropTypes.bool,
   tests: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string,
@@ -59,26 +57,17 @@ export class SidePanel extends Component {
       title,
       description,
       instructions,
-      introPath,
+      isChallengeCompleted,
       guideUrl,
-      nextChallengePath,
-      prevChallengePath,
       tests,
       section,
-      showPrevNextBtns,
       showToolPanel,
       videoUrl
     } = this.props;
     return (
       <div className='instructions-panel' role='complementary'>
-        <Spacer />
         <div>
-          <ChallengeTitle
-            introPath={introPath}
-            nextChallengePath={nextChallengePath}
-            prevChallengePath={prevChallengePath}
-            showPrevNextBtns={showPrevNextBtns}
-          >
+          <ChallengeTitle isCompleted={isChallengeCompleted}>
             {title}
           </ChallengeTitle>
           <ChallengeDescription

@@ -13,11 +13,11 @@
 }
 
 .intro-toc .list-group-item:hover {
-  background-color: #eee;
+  background-color: var(--secondary-background);
 }
 
 .intro-toc a:hover {
   text-decoration: none;
   text-decoration-style: none;
-  color: #006400;
+  color: var(--secondary-color);
 }

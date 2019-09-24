@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createRedirects matches the snapshot 1`] = `
+"
+#
+# WARNING: The order of this list is very important.
+#
+
+#api redirect
+/internal/*                                   https://api.example.com/internal/:splat 200
+
+# pages
+/about                                        https://news.example.com/about 200
+/academic-honesty                             https://news.example.com/academic-honesty 200
+/code-of-conduct                              https://news.example.com/code-of-conduct 200
+/copyright                                    https://news.example.com/copyright-policy 200
+/copyright-policy                             https://news.example.com/copyright-policy 200
+/privacy                                      https://news.example.com/privacy-policy 200
+/privacy-policy                               https://news.example.com/privacy-policy 200
+/shop                                         https://news.example.com/shop 200
+/software-resources-for-nonprofits            https://news.example.com/software-resources-for-nonprofits 200
+/sponsors                                     https://news.example.com/sponsors 200
+/support                                      https://news.example.com/support 200
+/terms                                        https://news.example.com/terms-of-service 200
+/terms-of-service                             https://news.example.com/terms-of-service 200
+
+# applications
+/forum/*                                      https://forum.example.com/:splat 200
+/news                                         https://news.example.com/ 200
+/news/*                                       https://news.example.com/:splat 200
+
+# auth redirects
+/deprecated-signin                            https://api.example.com/signin 200
+/email-signin                                 https://api.example.com/signin 200
+/login                                        https://api.example.com/signin 200
+/logout                                       https://api.example.com/signout 200
+/passwordless-change                          https://api.example.com/confirm-email 200
+/signin                                       https://api.example.com/signin 200
+/signup                                       https://api.example.com/signin 200
+
+# certification redirects
+/:username/front-end-certification            /certification/:username/legacy-front-end 301
+/:username/data-visualization-certification   /certification/:username/legacy-data-visualization 301
+/:username/back-end-certification             /certification/:username/legacy-back-end 301
+/:username/full-stack-certification           /certification/:username/full-stack 301
+
+# unsubscribe redirects
+/u/*                                          https://api.example.com/u/:splat 200
+/ue/*                                         https://api.example.com/ue/:splat 200
+/unsubscribe/*                                https://api.example.com/unsubscribe/:splat 200
+
+# misc redirects
+/agile                                        / 301
+/all-stories                                  / 301
+/chat                                         https://gitter.im/FreeCodeCamp/FreeCodeCamp 301
+/field-guide/*                                / 301
+/how-nonprofit-projects-work                  / 301
+/learn-to-code                                /learn 301
+/map                                          /learn 200
+/nonprofit-project-instructions               / 301
+/Nonprofits                                   / 301
+/nonprofits                                   / 301
+/nonprofits-form                              / 301
+/pmi-acp-agile-project-managers               / 301
+/pmi-acp-agile-project-managers-form          / 301
+/stories                                      / 301
+/twitch                                       https://twitch.tv/freecodecamp 301
+/welcome                                      / 200
+
+"
+`;

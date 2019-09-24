@@ -1,6 +1,6 @@
 const path = require('path');
 
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.FREECODECAMP_NODE_ENV !== 'production') {
   const envPath = path.resolve(__dirname, '../.env');
   require('dotenv').config({ path: envPath });
 }

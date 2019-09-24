@@ -2,23 +2,28 @@
 id: 5a9d726c424fe3d0e10cad11
 title: Create a custom CSS Variable
 challengeType: 0
-videoUrl: ''
+videoUrl: https://scrimba.com/c/cQd27Hr
+forumTopicId: 301086
 localeTitle: Создание пользовательской переменной CSS
 ---
 
 ## Description
-<section id="description"> Чтобы создать переменную CSS, вам просто нужно дать ей <code>name</code> с <code>two dashes</code> перед ним и присвоить ему <code>value</code> подобное этому: <blockquote> - пингвин-кожа: серый; </blockquote> Это создаст переменную с именем <code>--penguin-skin</code> и присвоит ей значение <code>gray</code> . Теперь вы можете использовать эту переменную в другом месте вашего CSS, чтобы изменить значение других элементов на серый. </section>
+<section id='description'>
+Чтобы создать переменную CSS, вам просто нужно дать ей <code>name</code> с <code>two dashes</code> перед ним и присвоить ему <code>value</code> подобное этому: <blockquote> - пингвин-кожа: серый; </blockquote> Это создаст переменную с именем <code>--penguin-skin</code> и присвоит ей значение <code>gray</code> . Теперь вы можете использовать эту переменную в другом месте вашего CSS, чтобы изменить значение других элементов на серый.
+</section>
 
 ## Instructions
-<section id="instructions"> В классе <code>penguin</code> создайте переменное имя <code>--penguin-skin</code> и придайте ему значение <code>gray</code> </section>
+<section id='instructions'>
+В классе <code>penguin</code> создайте переменное имя <code>--penguin-skin</code> и придайте ему значение <code>gray</code>
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: класс <code>penguin</code> должен объявить переменную <code>--penguin-skin</code> и назначить ее <code>gray</code> .
-    testString: 'assert(code.match(/.penguin\s*?{[\s\S]*--penguin-skin\s*?:\s*?gray\s*?;[\s\S]*}/gi), "<code>penguin</code> class should declare the <code>--penguin-skin</code> variable and assign it to <code>gray</code>.");'
+  - text: <code>penguin</code> class should declare the <code>--penguin-skin</code> variable and assign it to <code>gray</code>.
+    testString: assert(code.match(/.penguin\s*?{[\s\S]*--penguin-skin\s*?:\s*?gray\s*?;[\s\S]*}/gi));
 
 ```
 
@@ -232,14 +237,13 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+var code = ".penguin {--penguin-skin: gray;}"
 ```
+
 </section>

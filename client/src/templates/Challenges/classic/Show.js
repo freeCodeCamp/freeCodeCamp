@@ -19,8 +19,9 @@ import VideoModal from '../components/VideoModal';
 import ResetModal from '../components/ResetModal';
 import MobileLayout from './MobileLayout';
 import DesktopLayout from './DesktopLayout';
+import Hotkeys from '../components/Hotkeys';
 
-import { createGuideUrl } from '../utils';
+import { getGuideUrl } from '../utils';
 import { challengeTypes } from '../../../../utils/challengeTypes';
 import { ChallengeNode } from '../../../redux/propTypes';
 import { dasherize } from '../../../../utils';
@@ -32,7 +33,8 @@ import {
   initTests,
   updateChallengeMeta,
   challengeMounted,
-  consoleOutputSelector
+  consoleOutputSelector,
+  executeChallenge
 } from '../redux';
 
 import './classic.css';
@@ -51,7 +53,8 @@ const mapDispatchToProps = dispatch =>
       initConsole,
       initTests,
       updateChallengeMeta,
-      challengeMounted
+      challengeMounted,
+      executeChallenge
     },
     dispatch
   );
@@ -62,6 +65,7 @@ const propTypes = {
   data: PropTypes.shape({
     challengeNode: ChallengeNode
   }),
+  executeChallenge: PropTypes.func.isRequired,
   files: PropTypes.shape({
     key: PropTypes.string
   }),
@@ -69,7 +73,12 @@ const propTypes = {
   initTests: PropTypes.func.isRequired,
   output: PropTypes.string,
   pageContext: PropTypes.shape({
-    challengeMeta: PropTypes.object
+    challengeMeta: PropTypes.shape({
+      id: PropTypes.string,
+      introPath: PropTypes.string,
+      nextChallengePath: PropTypes.string,
+      prevChallengePath: PropTypes.string
+    })
   }),
   tests: PropTypes.arrayOf(
     PropTypes.shape({
@@ -94,6 +103,8 @@ class ShowClassic extends Component {
     this.state = {
       resizing: false
     };
+
+    this.containerRef = React.createRef();
   }
   onResize() {
     this.setState({ resizing: true });
@@ -166,13 +177,6 @@ class ShowClassic extends Component {
     return `${blockName}: ${title}`;
   }
 
-  getGuideUrl() {
-    const { forumTopicId, title } = this.getChallenge();
-    return forumTopicId
-      ? 'https://www.freecodecamp.org/forum/t/' + forumTopicId
-      : createGuideUrl(title);
-  }
-
   getVideoUrl = () => this.getChallenge().videoUrl;
 
   getChallengeFile() {
@@ -195,22 +199,14 @@ class ShowClassic extends Component {
       instructions
     } = this.getChallenge();
 
-    const {
-      introPath,
-      nextChallengePath,
-      prevChallengePath
-    } = this.props.pageContext.challengeMeta;
+    const { forumTopicId, title } = this.getChallenge();
     return (
       <SidePanel
         className='full-height'
         description={description}
-        guideUrl={this.getGuideUrl()}
+        guideUrl={getGuideUrl({ forumTopicId, title })}
         instructions={instructions}
-        introPath={introPath}
-        nextChallengePath={nextChallengePath}
-        prevChallengePath={prevChallengePath}
         section={dasherize(blockName)}
-        showPrevNextBtns={true}
         showToolPanel={showToolPanel}
         title={this.getBlockNameTitle()}
         videoUrl={this.getVideoUrl()}
@@ -220,9 +216,16 @@ class ShowClassic extends Component {
 
   renderEditor() {
     const { files } = this.props;
+
     const challengeFile = first(Object.keys(files).map(key => files[key]));
     return (
-      challengeFile && <Editor {...challengeFile} fileKey={challengeFile.key} />
+      challengeFile && (
+        <Editor
+          containerRef={this.containerRef}
+          {...challengeFile}
+          fileKey={challengeFile.key}
+        />
+      )
     );
   }
 
@@ -247,42 +250,57 @@ class ShowClassic extends Component {
   }
 
   render() {
+    const { forumTopicId, title } = this.getChallenge();
+    const {
+      executeChallenge,
+      pageContext: {
+        challengeMeta: { introPath, nextChallengePath, prevChallengePath }
+      }
+    } = this.props;
     return (
-      <LearnLayout>
-        <Helmet
-          title={`Learn ${this.getBlockNameTitle()} | freeCodeCamp.org`}
-        />
-        <Media maxWidth={MAX_MOBILE_WIDTH}>
-          <MobileLayout
-            editor={this.renderEditor()}
-            guideUrl={this.getGuideUrl()}
-            hasPreview={this.hasPreview()}
-            instructions={this.renderInstructionsPanel({
-              showToolPanel: false
-            })}
-            preview={this.renderPreview()}
-            testOutput={this.renderTestOutput()}
-            videoUrl={this.getVideoUrl()}
+      <Hotkeys
+        executeChallenge={executeChallenge}
+        innerRef={this.containerRef}
+        introPath={introPath}
+        nextChallengePath={nextChallengePath}
+        prevChallengePath={prevChallengePath}
+      >
+        <LearnLayout>
+          <Helmet
+            title={`Learn ${this.getBlockNameTitle()} | freeCodeCamp.org`}
           />
-        </Media>
-        <Media minWidth={MAX_MOBILE_WIDTH + 1}>
-          <DesktopLayout
-            challengeFile={this.getChallengeFile()}
-            editor={this.renderEditor()}
-            hasPreview={this.hasPreview()}
-            instructions={this.renderInstructionsPanel({
-              showToolPanel: true
-            })}
-            preview={this.renderPreview()}
-            resizeProps={this.resizeProps}
-            testOutput={this.renderTestOutput()}
-          />
-        </Media>
-        <CompletionModal />
-        <HelpModal />
-        <VideoModal videoUrl={this.getVideoUrl()} />
-        <ResetModal />
-      </LearnLayout>
+          <Media maxWidth={MAX_MOBILE_WIDTH}>
+            <MobileLayout
+              editor={this.renderEditor()}
+              guideUrl={getGuideUrl({ forumTopicId, title })}
+              hasPreview={this.hasPreview()}
+              instructions={this.renderInstructionsPanel({
+                showToolPanel: false
+              })}
+              preview={this.renderPreview()}
+              testOutput={this.renderTestOutput()}
+              videoUrl={this.getVideoUrl()}
+            />
+          </Media>
+          <Media minWidth={MAX_MOBILE_WIDTH + 1}>
+            <DesktopLayout
+              challengeFile={this.getChallengeFile()}
+              editor={this.renderEditor()}
+              hasPreview={this.hasPreview()}
+              instructions={this.renderInstructionsPanel({
+                showToolPanel: true
+              })}
+              preview={this.renderPreview()}
+              resizeProps={this.resizeProps}
+              testOutput={this.renderTestOutput()}
+            />
+          </Media>
+          <CompletionModal />
+          <HelpModal />
+          <VideoModal videoUrl={this.getVideoUrl()} />
+          <ResetModal />
+        </LearnLayout>
+      </Hotkeys>
     );
   }
 }

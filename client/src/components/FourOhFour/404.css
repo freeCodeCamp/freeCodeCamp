@@ -14,10 +14,9 @@
 }
 
 .quote-wrapper {
-  background-color: #eee;
+  background-color: var(--tertiary-background);
   padding: 20px 20px 20px 42px;
   border-width: 0;
-  border-radius: 5px;
   position: relative;
   max-width: 980px;
 }
@@ -32,12 +31,13 @@
 .quote-wrapper span {
   font-size: 50px;
   font-weight: 600;
-  color: #a5a5a5;
+  color: var(--tertiary-color);
   font-family: 'Arial', sans-serif;
   font-style: normal;
   padding-left: 15px;
   padding-top: 5px;
   position: absolute;
+  border-radius: 0;
   top: 0;
   left: 0;
 }
@@ -45,22 +45,4 @@
 .quote-wrapper .author {
   text-align: right;
   margin: 0;
-}
-
-.btn-curriculum {
-  margin-top: 20px;
-  background-color: #ffac33;
-  background-image: linear-gradient(#ffcc4d, #ffac33);
-  border: 1px solid #f1a02a;
-  color: #292f33;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-  max-height: 38px;
-  padding: 8px 12px;
-  border-radius: 4px;
-  text-align: center;
-}
-
-.btn-curriculum:hover {
-  text-decoration: none;
-  color: inherit;
 }

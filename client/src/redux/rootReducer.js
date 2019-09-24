@@ -1,5 +1,4 @@
 import { combineReducers } from 'redux';
-import { reducer as formReducer } from 'redux-form';
 
 import { reducer as app, ns as appNameSpace } from './';
 import {
@@ -20,21 +19,11 @@ import {
   ns as searchNameSpace
 } from '../components/search/redux';
 
-// console.log({
-//   [appNameSpace]: app,
-//   [challengeNameSpace]: challenge,
-//   [curriculumMapNameSpace]: curriculumMap,
-//   [flashNameSpace]: flash,
-//   form: formReducer,
-//   [searchNameSpace]: search,
-//   [settingsNameSpace]: settings
-// });
 export default combineReducers({
   [appNameSpace]: app,
   [challengeNameSpace]: challenge,
   [curriculumMapNameSpace]: curriculumMap,
   [flashNameSpace]: flash,
-  form: formReducer,
   [searchNameSpace]: search,
   [settingsNameSpace]: settings
 });

@@ -16,8 +16,9 @@ import { wrapHandledError } from '../utils/create-handled-error';
 const apiProxyRE = /^\/internal\/|^\/external\//;
 const newsShortLinksRE = /^\/internal\/n\/|^\/internal\/p\?/;
 const loopbackAPIPathRE = /^\/internal\/api\//;
+const showCertRe = /^\/internal\/certificate\/showCert\//;
 
-const _whiteListREs = [newsShortLinksRE, loopbackAPIPathRE];
+const _whiteListREs = [newsShortLinksRE, loopbackAPIPathRE, showCertRe];
 
 export function isWhiteListedPath(path, whiteListREs = _whiteListREs) {
   return whiteListREs.some(re => re.test(path));
@@ -51,10 +52,10 @@ export default ({ jwtSecret = _jwtSecret, getUserById = _getUserById } = {}) =>
         });
       }
       if (!accessToken && error === errorTypes.expiredToken) {
-        throw wrapHandledError(new Error('Access token is no longer vaild'), {
+        throw wrapHandledError(new Error('Access token is no longer valid'), {
           type: 'info',
           redirect: `${homeLocation}/signin`,
-          message: 'Access token is no longer vaild',
+          message: 'Access token is no longer valid',
           status: 403
         });
       }
