@@ -110,6 +110,7 @@ class DefaultLayout extends Component {
     if (pathname !== prevPathname) {
       ga.pageview(pathname);
     }
+    this.renderFlashMessages();
   }
 
   componentWillUnmount() {
@@ -124,14 +125,18 @@ class DefaultLayout extends Component {
     return typeof isOnline === 'boolean' ? onlineStatusChange(isOnline) : null;
   };
 
+  renderFlashMessages = () => {
+    const { hasMessage = false, flashMessage, removeFlashMessage } = this.props;
+    if (hasMessage && flashMessage) {
+      Flash({ flashMessage, removeFlashMessage });
+    }
+  };
+
   render() {
     const {
       children,
-      hasMessage,
-      flashMessage,
       isOnline,
       isSignedIn,
-      removeFlashMessage,
       showFooter = true,
       theme
     } = this.props;
@@ -157,9 +162,6 @@ class DefaultLayout extends Component {
           <Header />
           <div className={`default-layout`}>
             <OfflineWarning isOnline={isOnline} isSignedIn={isSignedIn} />
-            {hasMessage && flashMessage ? (
-              <Flash flashMessage={flashMessage} onClose={removeFlashMessage} />
-            ) : null}
             {children}
             {showFooter && <Footer />}
           </div>
