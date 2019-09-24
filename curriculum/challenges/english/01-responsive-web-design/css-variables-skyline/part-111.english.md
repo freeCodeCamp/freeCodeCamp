@@ -1,12 +1,12 @@
 ---
-id: 5d822fd413a79914d39e9937
+id: 5d822fd413a79914d39e9931
 title: Part 111
 challengeType: 0
 ---
 
 ## Description
 <section id='description'>
-Placeholder Description
+You can remove the `background-color` for this building now, since it isn't needed.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const fb6 = code.match(/\.fb6\s*{[\s\S]+?[^}]}/g)[0]; assert(!/background-color/g.test(fb6));
 
 ```
 
@@ -47,6 +47,7 @@ tests:
       }
 
       * {
+        border: 1px solid black;
         box-sizing: border-box;
       }
 
@@ -309,7 +310,7 @@ tests:
       .fb6 {
         width: 9%;
         height: 38%;
-        background-color: var(--window-color3);
+        background-color: var(--building-color3);
         background: repeating-linear-gradient(
             90deg,
             var(--building-color3),
@@ -320,8 +321,8 @@ tests:
           repeating-linear-gradient(
             var(--building-color3),
             var(--building-color3) 10%,
-            transparent 10%,
-            transparent 30%
+            var(--window-color3) 10%,
+            var(--window-color3) 30%
           );
       }
     </style>
@@ -402,10 +403,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Add `sky` as a second class to the `background-buildings` element. You are going to make a background for the skyline.
--->
 ```
 
 </div>

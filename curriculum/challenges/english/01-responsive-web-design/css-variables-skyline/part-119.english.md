@@ -1,12 +1,12 @@
 ---
-id: 5d822fd413a79914d39e993f
+id: 5d822fd413a79914d39e993d
 title: Part 119
 challengeType: 0
 ---
 
 ## Description
 <section id='description'>
-Placeholder Description
+Add a `:root` selector to the top of your media query. Then redefine all four of the `--building-color` variables to use the value `#000` there.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const root = code.match(/:root\s*{[\s\S]+?[^}]}/g)[1]; assert(/--building-color1\s*:\s*#000\s*(;|})/g.test(root) && /--building-color2\s*:\s*#000\s*(;|})/g.test(root) && /--building-color3\s*:\s*#000\s*(;|})/g.test(root) && /--building-color4\s*:\s*#000\s*(;|})/g.test(root));
 
 ```
 
@@ -319,7 +319,6 @@ tests:
       .fb6 {
         width: 9%;
         height: 38%;
-        background-color: var(--window-color3);
         background: repeating-linear-gradient(
             90deg,
             var(--building-color3),
@@ -330,23 +329,12 @@ tests:
           repeating-linear-gradient(
             var(--building-color3),
             var(--building-color3) 10%,
-            transparent 10%,
-            transparent 30%
+            var(--window-color3) 10%,
+            var(--window-color3) 30%
           );
       }
 
       @media (max-width: 1000px) {
-        :root {
-          --building-color1: #000;
-          --building-color2: #000;
-          --building-color3: #000;
-          --building-color4: #000;
-          --window-color1: #777;
-          --window-color2: #777;
-          --window-color3: #777;
-          --window-color4: #777;
-        }
-        
         .sky {
           background: radial-gradient(
               closest-corner circle at 15% 15%,

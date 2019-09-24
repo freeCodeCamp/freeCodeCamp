@@ -1,12 +1,12 @@
 ---
-id: 5d822fd413a79914d39e993e
+id: 5d822fd413a79914d39e993c
 title: Part 118
 challengeType: 0
 ---
 
 ## Description
 <section id='description'>
-Placeholder Description
+In the `sky` class of the media query, change the two `#ffcf33` color values to `#ccc`, the `#ffff66` to `#445`, and the `#bbeeff` to `#223`. Then you can resize your window to see the background change colors.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const sky = code.match(/\.sky\s*{[\s\S]+?[^}]}/g)[1]; assert(/background\s*:\s*radial-gradient\(\s*closest-corner\s+circle\s+at\s+15%\s+15%\s*,\s*#ccc\s*(0%\s*,|,)\s*#ccc\s*20%\s*,\s*#445\s*21%\s*,\s*#223\s*100%\s*\)\s*(;|})/g.test(sky));
 
 ```
 
@@ -319,7 +319,6 @@ tests:
       .fb6 {
         width: 9%;
         height: 38%;
-        background-color: var(--window-color3);
         background: repeating-linear-gradient(
             90deg,
             var(--building-color3),
@@ -330,26 +329,19 @@ tests:
           repeating-linear-gradient(
             var(--building-color3),
             var(--building-color3) 10%,
-            transparent 10%,
-            transparent 30%
+            var(--window-color3) 10%,
+            var(--window-color3) 30%
           );
       }
 
       @media (max-width: 1000px) {
-        :root {
-          --building-color1: #000;
-          --building-color2: #000;
-          --building-color3: #000;
-          --building-color4: #000;
-        }
-
         .sky {
           background: radial-gradient(
               closest-corner circle at 15% 15%,
-              #ccc,
-              #ccc 20%,
-              #445 21%,
-              #223 100%
+              #ffcf33,
+              #ffcf33 20%,
+              #ffff66 21%,
+              #bbeeff 100%
             );
         }
       }
@@ -431,10 +423,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Lastly, in the `:root` selector of the media query, redefine all four of the `--window-color` variables to use `#777`. When you're done, resize the window and watch it go from day to night. Variables are primarily used with colors, and that's how you used them here. But they can be given any value and used on any property. Your project looks great!
--->
 ```
 
 </div>

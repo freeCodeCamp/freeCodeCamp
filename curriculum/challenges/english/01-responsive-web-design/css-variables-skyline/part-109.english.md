@@ -1,12 +1,12 @@
 ---
-id: 5d822fd413a79914d39e9935
+id: 5d822fd413a79914d39e9934
 title: Part 109
 challengeType: 0
 ---
 
 ## Description
 <section id='description'>
-Placeholder Description
+Finally! You made it to the last building! Add a `repeating-linear-gradient` to it with a `90deg` direction. Use the building color from `0%` to `10%` and `transparent` from `10%` to `30%`.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const fb6 = code.match(/\.fb6\s*{[\s\S]+?[^}]}/g)[0]; assert(/background\s*:\s*repeating-linear-gradient\(\s*90deg\s*,\s*var\(\s*--building-color3\s*\)\s*(0%\s*,|,)\s*var\(\s*--building-color3\s*\)\s*10%\s*,\s*transparent\s*10%\s*,\s*transparent\s*30%\s*\)\s*(;|})/g.test(fb6));
 
 ```
 
@@ -310,7 +310,7 @@ tests:
       .fb6 {
         width: 9%;
         height: 38%;
-        background-color: var(--window-color3);
+        background-color: var(--building-color3);
       }
     </style>
   </head>
@@ -390,10 +390,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Add two `repeating-linear-gradient` to `fb6`. One the default direction and one at `90deg`. Use your `--building-color3` variable from `0%` to `10%` on both of them, and `transparent` from `10%` to `30%` on both of them. This will make a grid of windows for your last building.
--->
 ```
 
 </div>

@@ -1,12 +1,12 @@
 ---
-id: 5d822fd413a79914d39e9938
+id: 5d822fd413a79914d39e9936
 title: Part 112
 challengeType: 0
 ---
 
 ## Description
 <section id='description'>
-Placeholder Description
+Okay, the buildings are done. Go back to the `*` selector and remove the border you applied to everything at the beginning and the buildings will come together.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const all = code.match(/\*\s*{[\s\S]+?[^}]}/g)[0]; assert(!/border\s*:\s*1px\s+solid\s+black/g.test(all));
 
 ```
 
@@ -47,6 +47,7 @@ tests:
       }
 
       * {
+        border: 1px solid black;
         box-sizing: border-box;
       }
 
@@ -309,7 +310,6 @@ tests:
       .fb6 {
         width: 9%;
         height: 38%;
-        background-color: var(--window-color3);
         background: repeating-linear-gradient(
             90deg,
             var(--building-color3),
@@ -320,15 +320,15 @@ tests:
           repeating-linear-gradient(
             var(--building-color3),
             var(--building-color3) 10%,
-            transparent 10%,
-            transparent 30%
+            var(--window-color3) 10%,
+            var(--window-color3) 30%
           );
       }
     </style>
   </head>
 
   <body>
-    <div class="background-buildings sky">
+    <div class="background-buildings">
       <div></div>
       <div></div>
       <div class="bb1 building-wrap">
@@ -402,10 +402,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Add the `sky` class below your `window-wrap` class. Give the background a `radial-gradient`. Use `#ffcf33` from `0%` to `20%`, `#ffff66` at `21%`, and `#bbeeff` at `100%`. This will add circular gradient to the background that will be your sun.
--->
 ```
 
 </div>

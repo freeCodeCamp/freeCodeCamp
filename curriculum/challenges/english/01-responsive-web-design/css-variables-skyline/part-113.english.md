@@ -1,12 +1,12 @@
 ---
-id: 5d822fd413a79914d39e9939
+id: 5d822fd413a79914d39e9937
 title: Part 113
 challengeType: 0
 ---
 
 ## Description
 <section id='description'>
-Placeholder Description
+Add `sky` as a second class to the `background-buildings` element. You are going to make a background for the skyline.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($(".background-buildings.sky").length === 1);
 
 ```
 
@@ -76,15 +76,6 @@ tests:
         display: flex;
         align-items: center;
         justify-content: space-evenly;
-      }
-
-      .sky {
-        background: radial-gradient(
-            #ffcf33,
-            #ffcf33 20%,
-            #ffff66 21%,
-            #bbeeff 100%
-          );
       }
 
       /* BACKGROUND BUILDINGS - "bb" stands for "background building" */
@@ -318,7 +309,6 @@ tests:
       .fb6 {
         width: 9%;
         height: 38%;
-        background-color: var(--window-color3);
         background: repeating-linear-gradient(
             90deg,
             var(--building-color3),
@@ -329,15 +319,15 @@ tests:
           repeating-linear-gradient(
             var(--building-color3),
             var(--building-color3) 10%,
-            transparent 10%,
-            transparent 30%
+            var(--window-color3) 10%,
+            var(--window-color3) 30%
           );
       }
     </style>
   </head>
 
   <body>
-    <div class="background-buildings sky">
+    <div class="background-buildings">
       <div></div>
       <div></div>
       <div class="bb1 building-wrap">
@@ -411,10 +401,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  At the top of the `sky` gradient color list, where you would put a direction for the gradient, add `closest-corner circle at 15% 15%,`. This will move the start of the gradient to `15%` from the top and left. It will make it end at the `closest-corner` and it will maintain a `circle` shape. These are some keywords built into gradients to describe how it behaves.
--->
 ```
 
 </div>

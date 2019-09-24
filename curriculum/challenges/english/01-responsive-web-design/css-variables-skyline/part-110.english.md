@@ -1,12 +1,12 @@
 ---
-id: 5d822fd413a79914d39e9936
+id: 5d822fd413a79914d39e9935
 title: Part 110
 challengeType: 0
 ---
 
 ## Description
 <section id='description'>
-Placeholder Description
+Add another `repeating-linear-gradient` to this building; make it the same as the one you just added, except don't add the `90deg` direction and use your window color instead of the two `transparent` colors.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const fb6 = code.match(/\.fb6\s*{[\s\S]+?[^}]}/g)[0]; assert(/background\s*:\s*repeating-linear-gradient\(\s*90deg\s*,\s*var\(\s*--building-color3\s*\)\s*(0%\s*,|,)\s*var\(\s*--building-color3\s*\)\s*10%\s*,\s*transparent\s*10%\s*,\s*transparent\s*30%\s*\)\s*,\s*repeating-linear-gradient\(\s*var\(\s*--building-color3\s*\)\s*(0%\s*,|,)\s*var\(\s*--building-color3\s*\)\s*10%\s*,\s*var\(\s*--window-color3\s*\)\s*10%\s*,\s*var\(\s*--window-color3\s*\)\s*30%\s*\)\s*(;|})/g.test(fb6));
 
 ```
 
@@ -310,20 +310,14 @@ tests:
       .fb6 {
         width: 9%;
         height: 38%;
-        background-color: var(--window-color3);
+        background-color: var(--building-color3);
         background: repeating-linear-gradient(
-            90deg,
-            var(--building-color3),
-            var(--building-color3) 10%,
-            transparent 10%,
-            transparent 30%
-          ),
-          repeating-linear-gradient(
-            var(--building-color3),
-            var(--building-color3) 10%,
-            transparent 10%,
-            transparent 30%
-          );
+          90deg,
+          var(--building-color3),
+          var(--building-color3) 10%,
+          transparent 10%,
+          transparent 30%
+        )
       }
     </style>
   </head>
@@ -403,10 +397,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Okay, the buildings are done. Go back to the `*` selector and remove the border you applied to everything, and the buildings should come together.
--->
 ```
 
 </div>

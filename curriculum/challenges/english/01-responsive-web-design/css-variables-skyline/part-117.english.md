@@ -1,12 +1,12 @@
 ---
-id: 5d822fd413a79914d39e993d
+id: 5d822fd413a79914d39e993b
 title: Part 117
 challengeType: 0
 ---
 
 ## Description
 <section id='description'>
-Placeholder Description
+Copy and paste your whole `sky` class along with its properties and values into the media query. You are going to make another color scheme for the skyline that changes it from day to night.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const sky = code.match(/\.sky\s*{[\s\S]+?[^}]}/g)[1]; assert(/background\s*:\s*radial-gradient\(\s*closest-corner\s+circle\s+at\s+15%\s+15%\s*,\s*#ffcf33\s*(0%\s*,|,)\s*#ffcf33\s*20%\s*,\s*#ffff66\s*21%\s*,\s*#bbeeff\s*100%\s*\)\s*(;|})/g.test(sky));
 
 ```
 
@@ -319,7 +319,6 @@ tests:
       .fb6 {
         width: 9%;
         height: 38%;
-        background-color: var(--window-color3);
         background: repeating-linear-gradient(
             90deg,
             var(--building-color3),
@@ -330,21 +329,13 @@ tests:
           repeating-linear-gradient(
             var(--building-color3),
             var(--building-color3) 10%,
-            transparent 10%,
-            transparent 30%
+            var(--window-color3) 10%,
+            var(--window-color3) 30%
           );
       }
 
       @media (max-width: 1000px) {
-        .sky {
-          background: radial-gradient(
-              closest-corner circle at 15% 15%,
-              #ccc,
-              #ccc 20%,
-              #445 21%,
-              #223 100%
-            );
-        }
+        
       }
     </style>
   </head>
@@ -424,10 +415,6 @@ tests:
     </div>
   </body>
 </html>
-
-<!--
-  Add a `:root` selector to the top of your media query. Then redefine all four of the `--building-color` variables to use the value `#000` there.
--->
 ```
 
 </div>
