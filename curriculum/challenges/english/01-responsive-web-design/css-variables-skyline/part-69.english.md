@@ -6,6 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
+
 Nest four new `div` elements within `bb4c`, give them all the class of `bb4-window`. These will be windows for this building.
 </section>
 

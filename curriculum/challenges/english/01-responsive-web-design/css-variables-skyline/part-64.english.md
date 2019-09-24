@@ -6,6 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
+
 Remove the `background-color` property and value from `bb4` and add it to the three new sections; `bb4a`, bb4b`, and `bb4c`.
 </section>
 

@@ -6,6 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
+
 The background buildings are starting to look pretty good. Create a new `div` below the `background-buildings` element and give it a class of `foreground-buildings`.
 </section>
 

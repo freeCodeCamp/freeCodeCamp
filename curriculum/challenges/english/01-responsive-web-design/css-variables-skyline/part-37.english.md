@@ -6,6 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
+
 Move the position of `fb4` relative to where it is now by adding a `position` of `relative` and `left` of `10%` to it. Do the same for `fb5` but use `right` instead of `left`. This will cover up the remaining white space in between the buildings.
 </section>
 

@@ -6,6 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
+
 Give `bb2b` a `width` and `height` of `100%` to make it fill the building container. You will add something on the top a little later.
 </section>
 

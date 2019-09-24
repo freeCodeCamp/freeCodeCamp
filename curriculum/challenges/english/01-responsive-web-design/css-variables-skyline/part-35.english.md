@@ -6,6 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
+
 The skyline is coming together. Fill in the `background-color` property of the foreground buildings. Use your `--building-color1` variable to fill in `fb3` and `fb4`, `--building-color2` for `fb5`, `--building-color3` for `fb2` and `fb6`, and `--building-color4` for `fb1`.
 </section>
 

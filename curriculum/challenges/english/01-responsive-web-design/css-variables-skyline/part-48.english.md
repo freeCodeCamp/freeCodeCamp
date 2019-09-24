@@ -6,6 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
+
 Nest two new `div` elements within `bb2`, give them the classes of `bb2a` and `bb2b` in that order. These will be two sections for this building.
 </section>
 

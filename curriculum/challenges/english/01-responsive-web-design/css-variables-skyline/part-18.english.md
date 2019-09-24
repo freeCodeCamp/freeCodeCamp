@@ -6,6 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
+
 Your first building looks pretty good now. Let's make some more! Nest three new `div` elements in the `background-buildings` container and give them the classes of `bb2`, `bb3`, and `bb4` in that order.
 </section>
 

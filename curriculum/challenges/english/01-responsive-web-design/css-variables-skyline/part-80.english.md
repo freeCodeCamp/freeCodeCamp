@@ -6,6 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
+
 You're going to use some more border tricks for top section. Add a `border-bottom` with a value of `7vh solid var(--building-color4)` to `fb1a`. This will put a `7vh` height border on the bottom. But since the element has zero size, it only shows up as a 2px wide line from the 1px border that is on all the elements.
 </section>
 

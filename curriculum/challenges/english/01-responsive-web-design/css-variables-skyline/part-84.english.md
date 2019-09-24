@@ -6,6 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
+
 Nest three `div` elements within `fb2b` and give them a class of `fb2-window`. These will be windows for this section of the building.
 </section>
 

@@ -6,6 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
+
 Copy and paste your whole `sky` class along with its properties and values into the media query. You are going to make another color scheme for the skyline that changes it from day to night.
 </section>
 

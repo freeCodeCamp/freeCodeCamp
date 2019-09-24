@@ -6,6 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
+
 Give `fb4b` a `width` of `100%` and `height` of `89%`.
 </section>
 

@@ -6,6 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
+
 Remove the `margin` and `border-top` properties and values from `bb2a` to turn it into a triangle for the top of the building.
 </section>
 

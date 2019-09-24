@@ -6,6 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
+
 Add opening and closing `html` tags below the `doctype` so you have a place to start putting some code.
 </section>
 

@@ -6,6 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
+
 Add a `:root` selector to the top of your media query. Then redefine all four of the `--building-color` variables to use the value `#000` there.
 </section>
 

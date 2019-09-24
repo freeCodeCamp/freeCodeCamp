@@ -6,6 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
+
 When you make the left and right borders bigger, the border on the bottom will expand to be the width of the combined left and right border widths. Add `2vw solid transparent;` as the value of the `border-left` and `border-right` properties of `fb1a`. They will be invisible, but it will make the border on the bottom `4vw` wide.
 </section>
 

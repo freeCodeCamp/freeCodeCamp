@@ -6,6 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
+
 Nest six `div` elements within `foreground-buildings` and give them the classes of `fb1` through `fb6` in that order. "fb" stands for "foreground building". These will be six more buildings for the foreground.
 </section>
 

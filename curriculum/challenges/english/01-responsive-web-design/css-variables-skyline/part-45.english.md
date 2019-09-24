@@ -6,6 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
+
 It's a little hidden behind the foreground buildings, but you can see the three color gradient there. Since you are using that now, remove the `background-color` property from `bb1d`.
 </section>
 

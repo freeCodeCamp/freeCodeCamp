@@ -6,6 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
+
 Move the `display`, `flex-direction`, and `align-items` properties and values from `bb1` to the new `building-wrap` class.
 </section>
 

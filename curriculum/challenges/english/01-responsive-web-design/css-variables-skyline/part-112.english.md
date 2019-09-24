@@ -6,6 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
+
 Okay, the buildings are done. Go back to the `*` selector and remove the border you applied to everything at the beginning and the buildings will come together.
 </section>
 

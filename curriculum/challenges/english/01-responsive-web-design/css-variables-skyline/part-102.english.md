@@ -6,6 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
+
 Add your `--window-color1` variable as the `background-color` of `fb4-window`. Also add a `margin` of `10%` to give the windows some space.
 </section>
 

@@ -6,6 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
+
 It's that simple. Use the same variable as the `background-color` of the `bb1b`, `bb1c`, and `bb1d` classes.
 </section>
 

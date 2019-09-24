@@ -6,6 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
+
 Add `sky` as a second class to the `background-buildings` element. You are going to make a background for the skyline.
 </section>
 

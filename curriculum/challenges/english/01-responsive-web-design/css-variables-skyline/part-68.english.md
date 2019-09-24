@@ -6,6 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
+
 Create a new variable called `--window-color4` in `:root` and give it a value of `#8cb3d9`. This will be the secondary color for the last background building.
 </section>
 
