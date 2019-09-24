@@ -12,13 +12,13 @@ Add these properties to `bb2a`:
   margin: auto;
   width: 5vw;
   height: 5vw;
-  border-top: 1vw solid #333;
-  border-bottom: 1vw solid #555;
-  border-left: 1vw solid #777;
+  border-top: 1vw solid #000;
+  border-bottom: 1vw solid #000;
+  border-left: 1vw solid #999;
   border-right: 1vw solid #999;
 ```
 
-After you add these, you can see how a thick border on an element gives you some angles where two sides meet. You're going to use that bottom border as the top of the building.
+After you add these, you can see how a thick border on an element gives you some angles where two sides meet. You are going to use that bottom border as the top of the building.
 </section>
 
 ## Instructions
@@ -31,7 +31,7 @@ After you add these, you can see how a thick border on an element gives you some
 ```yml
 tests:
   - text: test-text
-    testString: const bb2a = code.match(/\.bb2a\s*{[\s\S]+?[^}]}/g)[0]; assert(/margin\s*:\s*auto\s*(;|})/g.test(bb2a) && /width\s*:\s*5vw\s*(;|})/g.test(bb2a) && /height\s*:\s*5vw\s*(;|})/g.test(bb2a) && /border-top\s*:\s*1vw\s+solid\s+#333\s*(;|})/g.test(bb2a) && /border-bottom\s*:\s*1vw\s+solid\s+#555\s*(;|})/g.test(bb2a) && /border-left\s*:\s*1vw\s+solid\s+#777\s*(;|})/g.test(bb2a) && /border-right\s*:\s*1vw\s+solid\s+#999\s*(;|})/g.test(bb2a));
+    testString: const bb2a = code.match(/\.bb2a\s*{[\s\S]+?[^}]}/g)[0]; assert(/margin\s*:\s*auto\s*(;|})/g.test(bb2a) && /width\s*:\s*5vw\s*(;|})/g.test(bb2a) && /height\s*:\s*5vw\s*(;|})/g.test(bb2a) && /border-top\s*:\s*1vw\s+solid\s+#000\s*(;|})/g.test(bb2a) && /border-bottom\s*:\s*1vw\s+solid\s+#000\s*(;|})/g.test(bb2a) && /border-left\s*:\s*1vw\s+solid\s+#999\s*(;|})/g.test(bb2a) && /border-right\s*:\s*1vw\s+solid\s+#999\s*(;|})/g.test(bb2a));
 
 ```
 

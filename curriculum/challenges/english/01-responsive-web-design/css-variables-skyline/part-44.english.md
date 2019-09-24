@@ -12,7 +12,7 @@ Gradients can use as many colors as you want like this:
 gradient-type(
   color1,
   color2,
-  color1
+  color3
 );
 ```
 
