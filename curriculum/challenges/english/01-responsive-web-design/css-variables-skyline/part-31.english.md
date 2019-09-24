@@ -7,7 +7,7 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-Give the six new `div` elements these `width` and `height` values: `10%` and `60%` to `fb1`, `10%` and `40%` to `fb2`, `10%` and `35%` to `fb3`, `8%` and `45%` to `fb4`, `10%` and `33%` to `fb5`, and `9%` and `38%` to `fb6`.
+Give the six new elements these `width` and `height` values: `10%` and `60%` to `fb1`, `10%` and `40%` to `fb2`, `10%` and `35%` to `fb3`, `8%` and `45%` to `fb4`, `10%` and `33%` to `fb5`, and `9%` and `38%` to `fb6`.
 </section>
 
 ## Instructions

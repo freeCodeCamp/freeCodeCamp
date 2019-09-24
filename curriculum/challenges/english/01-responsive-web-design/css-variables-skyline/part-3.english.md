@@ -7,7 +7,7 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-Next, add opening and closing `head` and `body` tags within the `html` element.
+Next, add opening and closing `head` and `body` tags within the html element.
 </section>
 
 ## Instructions

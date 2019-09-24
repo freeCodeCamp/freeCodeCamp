@@ -7,7 +7,7 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-Add a `repeating-linear-gradient` to `fb5` with your building color variable for this building from `0%` to `5%` and `transparent` from `5%` to `10%`.
+On to the next building! It's the green one in the foreground. Give it a `repeating-linear-gradient` with your building color from `0%` to `5%` and `transparent` from `5%` to `10%`.
 </section>
 
 ## Instructions

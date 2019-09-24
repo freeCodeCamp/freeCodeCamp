@@ -18,7 +18,7 @@ gradient2(
 );
 ```
 
-Add a `repeating-linear-gradient` to `fb1c` at the bottom of the one that's there; use your `--building-color4` from `0%` to `10%` and `transparent` from `10%` and `90%`. This will fill an area at the top and bottom of this section.
+Add a `repeating-linear-gradient` to `fb1c` below the one that's there; use your `--building-color4` from `0%` to `10%` and `--window-color4` from `10%` and `90%`. This will fill in behind the gradient you added last.
 </section>
 
 ## Instructions

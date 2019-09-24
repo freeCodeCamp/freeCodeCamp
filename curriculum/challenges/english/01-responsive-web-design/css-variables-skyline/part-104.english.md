@@ -7,7 +7,7 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-This building is going to have another triangle on top. Give `fb4a` a `border-top` of `5vh solid transparent` and a `border-left` that is `8vw`, `solid`, and uses your `--building-color1` variable as the color.
+This building is going to have another triangle on top. Give the top section a `border-top` of `5vh solid transparent` and a `border-left` that is `8vw`, `solid`, and uses your building color variable as the color.
 </section>
 
 ## Instructions

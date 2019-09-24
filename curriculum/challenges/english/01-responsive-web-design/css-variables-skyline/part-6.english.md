@@ -7,7 +7,7 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-Also add a `box-sizing` of `border-box` to the `*` selector. This will make it so the border you added doesn't add any size to your elements.
+Also add a `box-sizing` of `border-box` to the everything. This will make it so the border you added doesn't add any size to your elements.
 </section>
 
 ## Instructions
