@@ -17,7 +17,7 @@ gradient-type(
 );
 ```
 
-Here, the top half of the element will be `color1` and the bottom half will be `color2`. Add a `linear-gradient` to `bb2b` that uses `--building-color2` from `0%` to `6%` and `--window-color2` from `6%` to `9%`. Don't forget that gradients are applied to the `background` property.
+Here, the top half of the element will be `color1` and the bottom half will be `color2`. Add a `linear-gradient` to `bb2b` that uses `--building-color2` from `0%` to `6%` and `--window-color2` from `6%` to `9%`.
 </section>
 
 ## Instructions

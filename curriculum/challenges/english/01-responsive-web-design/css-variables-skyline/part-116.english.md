@@ -14,7 +14,7 @@ A media query can be used to change styles based on certain conditions, and they
 }  
 ```
 
-Add a empty media query at the bottom of your stylesheet with a condition of `max-width: 1000px`. Styles added in here will take effect when the document size is 1000px wide or less.
+Add an empty media query at the bottom of your stylesheet with a condition of `max-width: 1000px`. Styles added in here will take effect when the document size is 1000px wide or less.
 </section>
 
 ## Instructions

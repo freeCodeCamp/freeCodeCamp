@@ -7,7 +7,7 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-Finally! You made it to the last building! Add a `repeating-linear-gradient` to it with a `90deg` direction. Use the building color from `0%` to `10%` and `transparent` from `10%` to `30%`.
+Finally! You made it to the last building! Add a repeating gradient to it with a `90deg` direction. Use the building color from `0%` to `10%` and `transparent` from `10%` to `30%`.
 </section>
 
 ## Instructions

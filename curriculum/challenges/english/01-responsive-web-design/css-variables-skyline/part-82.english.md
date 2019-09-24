@@ -7,7 +7,7 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-On to the next building! Nest two `div` elements within `fb2` and give them the classes of `fb2a` and `fb2b` in that order.
+On to the next building! Nest two `div` elements within `fb2` and give them the classes of `fb2a` and `fb2b`, in that order.
 </section>
 
 ## Instructions

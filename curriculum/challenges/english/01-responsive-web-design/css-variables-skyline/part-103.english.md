@@ -7,7 +7,7 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-Add `display: flex;` and `flex-wrap: wrap;` to `fb4b`. This will put your windows side by side and then push them down to a new row when they don't fit.
+Add `display: flex;` and `flex-wrap: wrap;` to the window container. This will put your windows side by side and then push them down to a new row when they don't fit.
 </section>
 
 ## Instructions

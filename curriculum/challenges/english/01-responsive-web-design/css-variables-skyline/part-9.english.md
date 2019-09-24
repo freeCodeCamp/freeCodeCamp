@@ -7,7 +7,7 @@ challengeType: 0
 ## Description
 <section id='description'>
 
-Give your `background-buildings` element a `width` and `height` of `100%` to make it the full width and height of its parent, the body.
+Give your background buildings element a `width` and `height` of `100%` to make it the full width and height of its parent, the body.
 </section>
 
 ## Instructions
