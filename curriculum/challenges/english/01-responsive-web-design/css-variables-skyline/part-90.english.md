@@ -6,6 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
+
 Give the `fb3a` element a `width` of `80%` and `height` of `15%`. Then give the `fb3b` element a `width` of `100%` and `height` of `35%`.
 </section>
 

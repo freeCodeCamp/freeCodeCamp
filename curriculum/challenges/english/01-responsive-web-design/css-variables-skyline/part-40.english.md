@@ -6,6 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
+
 Gradients in CSS are a way to transition between colors across the distance of an element. They are applied to the `background` property and the syntax looks like this:
 
 ```css

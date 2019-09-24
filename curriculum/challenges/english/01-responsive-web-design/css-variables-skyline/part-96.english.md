@@ -6,6 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
+
 I'm not thrilled about that black for the windows anymore. Change the `--window-color1` value to `#bb99ff`.
 </section>
 

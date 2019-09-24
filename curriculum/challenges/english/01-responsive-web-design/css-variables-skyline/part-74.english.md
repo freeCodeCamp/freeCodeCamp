@@ -6,6 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
+
 Give `fb1b` a `width` of `60%` and `height` of `10%`, and `fb1c` a `width` of `100%` and `height` of `80%`.
 </section>
 

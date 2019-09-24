@@ -6,6 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
+
 Remove the `background-color` property and value from `bb3` since you are using the gradient as the background now.
 </section>
 

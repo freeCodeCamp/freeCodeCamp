@@ -6,6 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
+
 Add your `building-wrap` class to the `fb3` element to center the sections.
 </section>
 

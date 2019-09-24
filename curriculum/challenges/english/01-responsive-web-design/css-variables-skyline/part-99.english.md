@@ -6,6 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
+
 Add your `--building-color1` variable as value of the `background-color` property of `fb4b`. Then, remove the `background-color` from `fb4`.
 </section>
 

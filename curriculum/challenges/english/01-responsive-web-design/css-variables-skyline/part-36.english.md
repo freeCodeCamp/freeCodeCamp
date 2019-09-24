@@ -6,6 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
+
 Squeeze the buildings together again by adding two empty `div` elements at both the top and bottom of the `foreground-buildings` element. And one more in between `fb2` and `fb3`.
 </section>
 

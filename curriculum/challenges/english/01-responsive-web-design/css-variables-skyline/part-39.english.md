@@ -6,7 +6,8 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Create a new variable in `:root` called `--window-color1` and give it a value of `black`. This will be a secondary color for some of the buildings.
+
+Create a new variable in `:root` called `--window-color1` and give it a value of `black`. This will be a secondary color for the purple buildings.
 </section>
 
 ## Instructions

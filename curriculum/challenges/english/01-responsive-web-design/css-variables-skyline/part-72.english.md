@@ -6,6 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
+
 Add the new `window-wrap` class to the `bb4c` element.
 </section>
 

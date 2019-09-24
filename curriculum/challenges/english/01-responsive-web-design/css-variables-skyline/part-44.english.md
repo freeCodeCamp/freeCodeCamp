@@ -6,6 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
+
 Gradients can use as many colors as you want like this:
 
 ```css

@@ -6,6 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
+
 The next building will have three sections. Nest three `div` elements within `bb4`. Give them the classes of `bb4a`, `bb4b` and `bb4c` in that order.
 </section>
 

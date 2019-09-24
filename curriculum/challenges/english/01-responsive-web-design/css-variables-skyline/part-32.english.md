@@ -6,6 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
+
 Add the same `display`, `align-items`, and `justify-content` properties and values to `foreground-buildings` that you used on `background-buildings`. Again, this will use Flexbox to evenly space the buildings across the bottom of their container.
 </section>
 

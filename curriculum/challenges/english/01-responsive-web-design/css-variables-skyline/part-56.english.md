@@ -6,6 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
+
 Next, change the two `#999` of `bb2a` to `transparent`. This will make the left and right borders invisible.
 </section>
 

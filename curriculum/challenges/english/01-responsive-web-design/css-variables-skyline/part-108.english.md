@@ -6,6 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
+
 You don't need the `background-color` for this building anymore so you can remove that property.
 </section>
 

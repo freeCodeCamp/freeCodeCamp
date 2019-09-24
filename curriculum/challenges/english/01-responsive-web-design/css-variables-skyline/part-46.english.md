@@ -6,6 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
+
 You can specify where you want a gradient transition to complete by adding it to the color like this:
 
 ```css

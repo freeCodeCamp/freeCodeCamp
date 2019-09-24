@@ -6,6 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
+
 Nest six `div` elements within `fb4b` and give them all a class of `fb4-window`.
 </section>
 

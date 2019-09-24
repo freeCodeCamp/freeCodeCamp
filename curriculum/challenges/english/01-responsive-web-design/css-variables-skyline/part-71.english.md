@@ -6,6 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
+
 Add a new class below `building-wrap` called `window-wrap` and add these properties to it: `display: flex;`, `align-items: center;`, and `justify-content: space-evenly;`. This will be used in a few places to center window elements vertically and space them evenly in their parent.
 </section>
 

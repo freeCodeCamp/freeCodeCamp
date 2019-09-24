@@ -6,6 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
+
 Give the new `div` elements these `width` and `height` values: `3%` and `10%` to `bb4a`, `80%` and `5%` to `bb4b`, and `100%` and `85%` to `bb4c`.
 </section>
 

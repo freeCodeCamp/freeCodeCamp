@@ -6,6 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
+
 Add your `window-wrap` class to the `fb3a` element to center and space the windows.
 </section>
 

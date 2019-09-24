@@ -6,6 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
+
 Add the new `building-wrap` class to the `bb1` and `bb4` elements. This will apply the centering properties to the buildings that need it.
 </section>
 

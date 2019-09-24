@@ -6,6 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
+
 Remove the `background-color` property and value from `fb3` and add them to `fb3a` and `fb3b`.
 </section>
 
