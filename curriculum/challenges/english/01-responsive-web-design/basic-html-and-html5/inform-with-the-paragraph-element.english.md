@@ -8,7 +8,7 @@ forumTopicId: 18202
 
 ## Description
 <section id='description'>
-<code>p</code> elements are the preferred element for paragraph text on websites. <code>p</code> is short for "paragraph".
+<code>p</code> elements are the preferred element for paragraph text on websites. Any sort of text that exists under a heading, such as a description or explanation, is a good fit for this tag. <code>p</code> is short for "paragraph".
 You can create a paragraph element like this:
 <code>&#60;p&#62;I'm a p tag!&#60;/p&#62;</code>
 </section>
