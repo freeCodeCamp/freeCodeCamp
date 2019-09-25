@@ -18,6 +18,7 @@ export const ns = 'challenge';
 export const backendNS = 'backendChallenge';
 
 const initialState = {
+  canFocusEditor: true,
   challengeFiles: {},
   challengeMeta: {
     id: '',
@@ -75,7 +76,9 @@ export const types = createTypes(
     'resetChallenge',
     'submitChallenge',
 
-    'moveToTab'
+    'moveToTab',
+
+    'setEditorFocusability'
   ],
   ns
 );
@@ -148,6 +151,8 @@ export const submitChallenge = createAction(types.submitChallenge);
 
 export const moveToTab = createAction(types.moveToTab);
 
+export const setEditorFocusability = createAction(types.setEditorFocusability);
+
 export const currentTabSelector = state => state[ns].currentTab;
 export const challengeFilesSelector = state => state[ns].challengeFiles;
 export const challengeMetaSelector = state => state[ns].challengeMeta;
@@ -216,6 +221,8 @@ export const challengeDataSelector = state => {
   }
   return challengeData;
 };
+
+export const canFocusEditorSelector = state => state[ns].canFocusEditor;
 
 const MAX_LOGS_SIZE = 64 * 1024;
 
@@ -348,6 +355,10 @@ export const reducer = handleActions(
     [types.executeChallenge]: state => ({
       ...state,
       currentTab: 3
+    }),
+    [types.setEditorFocusability]: (state, { payload }) => ({
+      ...state,
+      canFocusEditor: payload
     })
   },
   initialState

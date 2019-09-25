@@ -7,7 +7,7 @@ This document outlines our security policy for the codebase, and how to report v
 | Version     | Branch                   | Supported          | Website active   |
 | ----------- | ------------------------ | ------------------ | ---------------- |
 | production  | `production-legacy-2018` | :white_check_mark: | freecodecamp.org |
-| beta        | `master`                 |                    |                  |
+| beta        | `production-staging`     | :white_check_mark: | freecodecamp.dev |
 | development | `master`                 |                    |                  |
 
 ## Reporting a Vulnerability

@@ -1,10 +1,14 @@
 import React, { Component, Suspense } from 'react';
 import PropTypes from 'prop-types';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
-import { executeChallenge, updateFile } from '../redux';
+import {
+  canFocusEditorSelector,
+  executeChallenge,
+  setEditorFocusability,
+  updateFile
+} from '../redux';
 import { userSelector, isDonationModalOpenSelector } from '../../../redux';
 import { Loader } from '../../../components/helpers';
 
@@ -12,32 +16,32 @@ const MonacoEditor = React.lazy(() => import('react-monaco-editor'));
 
 const propTypes = {
   canFocus: PropTypes.bool,
+  containerRef: PropTypes.any.isRequired,
   contents: PropTypes.string,
   dimensions: PropTypes.object,
   executeChallenge: PropTypes.func.isRequired,
   ext: PropTypes.string,
   fileKey: PropTypes.string,
+  setEditorFocusability: PropTypes.func,
   theme: PropTypes.string,
   updateFile: PropTypes.func.isRequired
 };
 
 const mapStateToProps = createSelector(
+  canFocusEditorSelector,
   isDonationModalOpenSelector,
   userSelector,
-  (open, { theme = 'night' }) => ({
-    canFocus: !open,
+  (canFocus, open, { theme = 'night' }) => ({
+    canFocus: open ? false : canFocus,
     theme
   })
 );
 
-const mapDispatchToProps = dispatch =>
-  bindActionCreators(
-    {
-      executeChallenge,
-      updateFile
-    },
-    dispatch
-  );
+const mapDispatchToProps = {
+  setEditorFocusability,
+  executeChallenge,
+  updateFile
+};
 
 const modeMap = {
   css: 'css',
@@ -109,7 +113,9 @@ class Editor extends Component {
 
   editorDidMount = (editor, monaco) => {
     this._editor = editor;
-    if (this.props.canFocus) this._editor.focus();
+    if (this.props.canFocus) {
+      this._editor.focus();
+    } else this.focusOnHotkeys();
     this._editor.addAction({
       id: 'execute-challenge',
       label: 'Run tests',
@@ -119,7 +125,25 @@ class Editor extends Component {
       ],
       run: this.props.executeChallenge
     });
+    this._editor.addAction({
+      id: 'leave-editor',
+      label: 'Leave editor',
+      keybindings: [monaco.KeyCode.Escape],
+      run: () => {
+        this.focusOnHotkeys();
+        this.props.setEditorFocusability(false);
+      }
+    });
+    this._editor.onDidFocusEditorWidget(() =>
+      this.props.setEditorFocusability(true)
+    );
   };
+
+  focusOnHotkeys() {
+    if (this.props.containerRef.current) {
+      this.props.containerRef.current.focus();
+    }
+  }
 
   onChange = editorValue => {
     const { updateFile, fileKey } = this.props;
