@@ -6,6 +6,7 @@ import { InstantSearch, Configure } from 'react-instantsearch-dom';
 import qs from 'query-string';
 import { navigate } from 'gatsby';
 import Media from 'react-responsive';
+import algoliasearch from 'algoliasearch/lite';
 
 import {
   isSearchDropdownEnabledSelector,
@@ -17,6 +18,11 @@ import {
 import { createSelector } from 'reselect';
 
 const DEBOUNCE_TIME = 100;
+
+const searchClient = algoliasearch(
+  'QMJYL5WYTI',
+  '4318af87aa3ce128708f1153556c6108'
+);
 
 const propTypes = {
   children: PropTypes.any,
@@ -120,10 +126,9 @@ class InstantSearchRoot extends Component {
     const MAX_MOBILE_HEIGHT = 768;
     return (
       <InstantSearch
-        apiKey='4318af87aa3ce128708f1153556c6108'
-        appId='QMJYL5WYTI'
         indexName='news'
         onSearchStateChange={this.onSearchStateChange}
+        searchClient={searchClient}
         searchState={{ query }}
       >
         {this.isSearchPage() ? (
