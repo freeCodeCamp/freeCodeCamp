@@ -2,6 +2,7 @@
 id: 5d68c947e0696bdec46938ec
 title: Part 45
 challengeType: 0
+isBeta: true
 ---
 
 ## Description

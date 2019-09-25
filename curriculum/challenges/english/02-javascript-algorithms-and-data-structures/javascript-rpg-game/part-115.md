@@ -2,6 +2,7 @@
 id: 5d80d20d21b11cdaa3f6b166
 title: Part 115
 challengeType: 0
+isBeta: true
 ---
 
 ## Description
@@ -251,7 +252,7 @@ function defeatMonster() {
 }
 
 function lose() {
-  update(locations[5])
+  update(locations[5]);
 }
 
 function restart() {

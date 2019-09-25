@@ -2,6 +2,7 @@
 id: 5d80da7521b11cdaa3f6b168
 title: Part 117
 challengeType: 0
+isBeta: true
 ---
 
 ## Description
@@ -22,7 +23,7 @@ After the `lose` function, create a function called `winGame`. Inside the `winGa
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(winGame.toString().match(/^\s*update\s*\(\s*locations\[\s*6\s*\]\s*\)\;?/m));
+    testString: assert(winGame.toString().replace(/\s/g, '').includes('update(locations[6])'));
 
 ```
 
@@ -251,7 +252,7 @@ function defeatMonster() {
 }
 
 function lose() {
-  update(locations[5])
+  update(locations[5]);
 }
 
 function restart() {

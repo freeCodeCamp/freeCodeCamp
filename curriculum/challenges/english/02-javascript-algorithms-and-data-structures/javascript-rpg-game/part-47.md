@@ -2,6 +2,7 @@
 id: 5d68d3f7e0696bdec46938ee
 title: Part 47
 challengeType: 0
+isBeta: true
 ---
 
 ## Description

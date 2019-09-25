@@ -7,6 +7,7 @@
   "required": [],
   "superBlock": "javascript-algorithms-and-data-structures",
   "superOrder": 2,
+  "isBeta": true,
   "challengeOrder": [
     [
       "5d5a813321b9e3db6c106a46",
@@ -479,6 +480,46 @@
     [
       "5d80da7521b11cdaa3f6b168",
       "Part 117"
+    ],
+    [
+      "5dbab6d36ef5fe3a704f848c",
+      "Part 118"
+    ],
+    [
+      "5dbabb746ef5fe3a704f848d",
+      "Part 119"
+    ],
+    [
+      "5dbac08e6ef5fe3a704f848f",
+      "Part 120"
+    ],
+    [
+      "5dbac0c86ef5fe3a704f8490",
+      "Part 121"
+    ],
+    [
+      "5dbac1f16ef5fe3a704f8491",
+      "Part 122"
+    ],
+    [
+      "5dbac2b06ef5fe3a704f8492",
+      "Part 123"
+    ],
+    [
+      "5dbac6176ef5fe3a704f8493",
+      "Part 124"
+    ],
+    [
+      "5dbaca566ef5fe3a704f8494",
+      "Part 125"
+    ],
+    [
+      "5dbae0446ef5fe3a704f8495",
+      "Part 126"
+    ],
+    [
+      "5dbae0446ef5dbae1f66ef5fe3a704f84965fe3a704f8495",
+      "Part 127"
     ]
   ],
   "helpRoom": "HelpJavaScript",

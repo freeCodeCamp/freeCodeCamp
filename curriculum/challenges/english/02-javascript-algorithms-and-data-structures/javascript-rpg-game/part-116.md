@@ -2,6 +2,7 @@
 id: 5d80d67021b11cdaa3f6b167
 title: Part 116
 challengeType: 0
+isBeta: true
 ---
 
 ## Description
@@ -269,7 +270,7 @@ function defeatMonster() {
 }
 
 function lose() {
-  update(locations[5])
+  update(locations[5]);
 }
 
 function restart() {
