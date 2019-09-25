@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import { Observable } from 'rx';
 
-import { unDasherize, nameify } from '../utils';
+import { unDasherize, nameify } from '../../../utils/slugs';
 import {
   addNameIdMap as _addNameIdToMap,
   checkMapData,

@@ -3,7 +3,7 @@ const { findIndex } = require('lodash');
 const readDirP = require('readdirp-walk');
 const { parseMarkdown } = require('@freecodecamp/challenge-md-parser');
 
-const { dasherize } = require('./utils');
+const { dasherize } = require('../utils/slugs');
 
 const challengesDir = path.resolve(__dirname, './challenges');
 const metaDir = path.resolve(challengesDir, '_meta');
