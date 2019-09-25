@@ -6,7 +6,7 @@ const adler32 = require('adler32');
 const Rx = require('rx');
 const _ = require('lodash');
 const createDebugger = require('debug');
-const utils = require('../server/utils');
+const { dasherize, nameify } = require('../utils/slugs');
 const getChallenges = require('./getChallenges');
 const { validateChallenge } = require('./schema/challengeSchema');
 const app = require('../server/server');
@@ -16,8 +16,6 @@ const log = createDebugger('fcc:seed');
 // this may be brittle
 log.enabled = true;
 
-const dasherize = utils.dasherize;
-const nameify = utils.nameify;
 const Observable = Rx.Observable;
 const Challenge = app.models.Challenge;
 

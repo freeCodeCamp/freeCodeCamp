@@ -15,7 +15,7 @@ import isURL from 'validator/lib/isURL';
 import { homeLocation } from '../../../config/env';
 
 import { ifNoUserSend } from '../utils/middleware';
-import { dasherize } from '../utils';
+import { dasherize } from '../../../utils/slugs';
 import _pathMigrations from '../resources/pathMigration.json';
 import { fixCompletedChallengeItem } from '../../common/utils';
 

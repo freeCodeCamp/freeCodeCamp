@@ -24,7 +24,7 @@ import Hotkeys from '../components/Hotkeys';
 import { getGuideUrl } from '../utils';
 import { challengeTypes } from '../../../../utils/challengeTypes';
 import { ChallengeNode } from '../../../redux/propTypes';
-import { dasherize } from '../../../../utils';
+import { dasherize } from '../../../../../utils/slugs';
 import {
   createFiles,
   challengeFilesSelector,
