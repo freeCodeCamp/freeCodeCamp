@@ -24,6 +24,7 @@ import ProjectForm from '../ProjectForm';
 import ProjectToolPanel from '../Tool-Panel';
 import CompletionModal from '../../components/CompletionModal';
 import HelpModal from '../../components/HelpModal';
+import Hotkeys from '../../components/Hotkeys';
 
 const mapStateToProps = () => ({});
 const mapDispatchToProps = dispatch =>
@@ -62,6 +63,7 @@ export class Project extends Component {
     } = this.props;
     updateChallengeMeta({ ...challengeMeta, title, challengeType });
     challengeMounted(challengeMeta.id);
+    this._container.focus();
   }
 
   componentDidUpdate(prevProps) {
@@ -109,37 +111,37 @@ export class Project extends Component {
 
     const blockNameTitle = `${blockName} - ${title}`;
     return (
-      <LearnLayout>
-        <Helmet title={`${blockNameTitle} | Learn | freeCodeCamp.org`} />
-        <Grid>
-          <Row>
-            <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-              <Spacer />
-              <ChallengeTitle
-                introPath={introPath}
-                nextChallengePath={nextChallengePath}
-                prevChallengePath={prevChallengePath}
-                showPrevNextBtns={true}
-              >
-                {blockNameTitle}
-              </ChallengeTitle>
-              <ChallengeDescription description={description} />
-              <ProjectForm
-                isFrontEnd={isFrontEnd}
-                onSubmit={openCompletionModal}
-                updateProjectForm={updateProjectFormValues}
-              />
-              <ProjectToolPanel
-                guideUrl={getGuideUrl({ forumTopicId, title })}
-              />
-              <br />
-              <Spacer />
-            </Col>
-            <CompletionModal />
-            <HelpModal />
-          </Row>
-        </Grid>
-      </LearnLayout>
+      <Hotkeys
+        innerRef={c => (this._container = c)}
+        introPath={introPath}
+        nextChallengePath={nextChallengePath}
+        prevChallengePath={prevChallengePath}
+      >
+        <LearnLayout>
+          <Helmet title={`${blockNameTitle} | Learn | freeCodeCamp.org`} />
+          <Grid>
+            <Row>
+              <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+                <Spacer />
+                <ChallengeTitle>{blockNameTitle}</ChallengeTitle>
+                <ChallengeDescription description={description} />
+                <ProjectForm
+                  isFrontEnd={isFrontEnd}
+                  onSubmit={openCompletionModal}
+                  updateProjectForm={updateProjectFormValues}
+                />
+                <ProjectToolPanel
+                  guideUrl={getGuideUrl({ forumTopicId, title })}
+                />
+                <br />
+                <Spacer />
+              </Col>
+              <CompletionModal />
+              <HelpModal />
+            </Row>
+          </Grid>
+        </LearnLayout>
+      </Hotkeys>
     );
   }
 }
