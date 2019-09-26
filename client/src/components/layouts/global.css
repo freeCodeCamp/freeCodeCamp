@@ -131,6 +131,10 @@ a:focus {
   border-color: var(--secondary-color);
 }
 
+button {
+  background-color: var(--secondary-background);
+}
+
 /* button */
 .btn {
   background-color: var(--quaternary-background);
@@ -245,6 +249,7 @@ input {
   -moz-box-shadow: none !important;
   box-shadow: none !important;
   border-radius: 0px;
+  background-color: var(--secondary-background);
 }
 
 form {
