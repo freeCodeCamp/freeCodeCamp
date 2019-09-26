@@ -12,7 +12,8 @@ const preFormattedBlockNames = {
   'mongodb-and-mongoose': 'MongoDB and Mongoose',
   'the-dom': 'The DOM',
   'apis-and-microservices': 'APIs and Microservices',
-  'apis-and-microservices-projects': 'APIs and Microservices Projects'
+  'apis-and-microservices-projects': 'APIs and Microservices Projects',
+  'javascript-spreadsheet': 'JavaScript Spreadsheet'
 };
 
 const noFormatting = ['and', 'for', 'of', 'the', 'up', 'with'];
