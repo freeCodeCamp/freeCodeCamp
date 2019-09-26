@@ -43,6 +43,12 @@ tests:
     testString: assert(mutation(["hello", "neo"]) === false);
   - text: <code>mutation(["voodoo", "no"])</code> should return false.
     testString: assert(mutation(["voodoo", "no"]) === false);
+  - text: <code>mutation(["ate", "date"] should return false</code> should return false.
+    testString: assert(mutation(["ate", "date"]) === false);
+  - text: <code>mutation(["Tiger", "Zebra"])</code> should return false.
+    testString: assert(mutation(["Tiger", "Zebra"]) === false);
+  - text: <code>mutation(["Noel", "Ole"])</code> should return true.
+    testString: assert(mutation(["Noel", "Ole"]) === true);
 
 ```
 
