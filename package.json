@@ -45,7 +45,8 @@
     "test:lint": "echo 'Warning: TODO - Define Linting tests.'",
     "test:search-indexing": "jest ./search-indexing",
     "test:server": "cd ./api-server && npm test && cd ../",
-    "test:tools": "jest ./tools"
+    "test:tools": "jest ./tools",
+    "test:utils": "jest ./utils/*.js"
   },
   "devDependencies": {
     "@freecodecamp/eslint-config": "^2.0.2",

@@ -2,11 +2,11 @@ exports.dasherize = function dasherize(name) {
   return ('' + name)
     .toLowerCase()
     .replace(/\s/g, '-')
-    .replace(/[^a-z0-9\-.]/gi, '');
+    .replace(/[^a-z\d\-.]/g, '');
 };
 
 exports.nameify = function nameify(str) {
-  return ('' + str).replace(/[^a-zA-Z0-9\s]/g, '');
+  return ('' + str).replace(/[^a-z\d\s]/gi, '');
 };
 
 exports.unDasherize = function unDasherize(name) {
@@ -15,7 +15,7 @@ exports.unDasherize = function unDasherize(name) {
       // replace dash with space
       .replace(/-/g, ' ')
       // strip nonalphanumarics chars except whitespace
-      .replace(/[^a-zA-Z\d\s]/g, '')
+      .replace(/[^a-z\d\s]/gi, '')
       .trim()
   );
 };
