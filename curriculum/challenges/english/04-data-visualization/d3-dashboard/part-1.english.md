@@ -6,6 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
+
 Welcome to the dashboard project! You will be using the JavaScript data visualization library, `D3`, for this project.
   
 Start by making the bare bones of an HTML document. Add `<!DOCTYPE html>` at the top of the file to tell the browser what type of document it's reading.
@@ -21,7 +22,7 @@ Start by making the bare bones of an HTML document. Add `<!DOCTYPE html>` at the
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match(/<!DOCTYPE\s+html\s*>/gi));
+    testString: assert(/<!DOCTYPE\s+html\s*>/gi.test(code));
 
 ```
 

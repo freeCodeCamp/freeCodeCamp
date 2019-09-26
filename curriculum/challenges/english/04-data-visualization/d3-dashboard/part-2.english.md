@@ -6,7 +6,8 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Next, add opening and closing `html`, `head` and `body` tags below the doctype. Be sure to nest them properly.
 </section>
 
 ## Instructions
@@ -19,7 +20,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(/<!DOCTYPE\s+html\s*>\s*<html\s*>\s*<head\s*>\s*<\/head\s*>\s*<body\s*>\s*<\/body\s*>\s*<\/html\s*>/gi.test(code));
 
 ```
 
@@ -31,11 +32,6 @@ tests:
 
 ```html
 <!DOCTYPE html>
-
-
-<!--
-  Next, add opening and closing `<html>`, `<head>` and `<body>` tags below the doctype. Be sure to nest them properly.
--->
 ```
 
 </div>

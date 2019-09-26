@@ -6,7 +6,8 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Later on, you will be adding more elements to the dashboard container. For them to display correctly, set the `display` to `flex` and the `align-items` to `center` in the `dashboard` class.
 </section>
 
 ## Instructions
@@ -19,7 +20,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const dashboard = $(".dashboard"); assert(dashboard.css("display") === "flex" && dashboard.css("align-items") === "center");
 
 ```
 
@@ -30,6 +31,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<style>
 body {
   background-color: #ccc;
   margin: 100px 10px;
@@ -41,14 +43,28 @@ body {
   background-color: white;
   box-shadow: 5px 5px 5px 5px #888;
   margin: auto;
-
-  
-  /*
-    Later on, you will be adding more elements to the dashboard container. For them to display correctly, set the `display` to `flex` and the `align-items` to `center` in the `dashboard` class.
-  */
 }
+</style>
+
+```
+
+</div>
 
 
+### Before Test
+<div id='html-setup'>
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>D3 Dashboard</title>
+  </head>
+
+  <body>
+    <div class="dashboard"></div>
+  </body>
+</html>
 ```
 
 </div>

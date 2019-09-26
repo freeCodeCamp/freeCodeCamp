@@ -6,7 +6,8 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Center the dashboard by adding a `margin` of `auto` to it.
 </section>
 
 ## Instructions
@@ -19,7 +20,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const dashboard = code.match(/.dashboard\s*{[\s\S]+?[^}]}/g)[0]; assert(/margin\s*:\s*auto\s*(;|})/g.test(dashboard));
 
 ```
 
@@ -30,6 +31,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<style>
 body {
   background-color: #ccc;
 }
@@ -39,14 +41,28 @@ body {
   height: 500px;
   background-color: white;
   box-shadow: 5px 5px 5px 5px #888;
-
-
-  /*
-    Center the dashboard container by adding a `margin` of `auto` to it.
-  */
 }
+</style>
+
+```
+
+</div>
 
 
+### Before Test
+<div id='html-setup'>
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>D3 Dashboard</title>
+  </head>
+
+  <body>
+    <div class="dashboard"></div>
+  </body>
+</html>
 ```
 
 </div>

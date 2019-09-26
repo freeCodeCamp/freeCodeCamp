@@ -6,7 +6,8 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+In the head, add a `title` of `D3 Dashboard`.
 </section>
 
 ## Instructions
@@ -19,7 +20,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(/<head\s*>\s*<title\s*>D3 Dashboard<\/title\s*>\s*<\/head\s*>/g.test(code));
 
 ```
 
@@ -33,15 +34,9 @@ tests:
 <!DOCTYPE html>
 <html>
   <head>
-
-
-    <!--
-      In the `head`, add a `title` of `D3 Dashboard`.
-    -->
   </head>
 
   <body>
-
   </body>
 </html>
 ```

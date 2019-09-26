@@ -6,7 +6,8 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Below the title, link to the external stylesheet by adding a `link` element with a `rel` attribute of `stylesheet` and an `href` attribute of `./dashboard.css`.
 </section>
 
 ## Instructions
@@ -19,7 +20,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const link = code.match(/<link\s+[\s\S]+?[^>]>/gi)[0]; assert(/rel\s*=\s*('|")\s*stylesheet\s*\1/gi.test(link) && /href\s*=\s*('|")\s*(.\/)?dashboard\.css\s*\1/gi.test(link));
 
 ```
 
@@ -34,15 +35,9 @@ tests:
 <html>
   <head>
     <title>D3 Dashboard</title>
-
-
-    <!--
-      Below the title, link to the external stylesheet by adding a `<link>` element with a `rel` attribute of `stylesheet` and an `href` attribute of `./dashboard.css`.
-    -->
   </head>
 
   <body>
-
   </body>
 </html>
 

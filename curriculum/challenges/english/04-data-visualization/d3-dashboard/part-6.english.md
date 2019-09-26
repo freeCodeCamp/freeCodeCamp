@@ -6,7 +6,8 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+You are now looking at the style sheet that you linked to earlier. At the top of this file, target the `body` of the html document and give it a `background-color` of `#ccc`.
 </section>
 
 ## Instructions
@@ -19,7 +20,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const body = code.match(/body\s*{[\s\S]+?[^}]}/g)[0]; assert(/background-color\s*:\s*#ccc\s*(;|})/gi.test(body));
 
 ```
 
@@ -30,11 +31,27 @@ tests:
 <div id='html-seed'>
 
 ```html
+<style>
+</style>
+```
+
+</div>
 
 
-/*
-  You are now looking at the style sheet that you linked to earlier. At the top of this file, target the `body` of the html document and give it a `background-color` of `#ccc`.
-*/
+### Before Test
+<div id='html-setup'>
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>D3 Dashboard</title>
+  </head>
+
+  <body>
+    <div class="dashboard"></div>
+  </body>
+</html>
 ```
 
 </div>

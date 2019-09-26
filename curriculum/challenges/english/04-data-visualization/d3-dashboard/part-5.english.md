@@ -6,7 +6,8 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Next, add a container for the dashboard. Put an empty `div` element in the body with class of `dashboard`.
 </section>
 
 ## Instructions
@@ -19,7 +20,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($("div.dashboard").length === 1);
 
 ```
 
@@ -38,11 +39,6 @@ tests:
   </head>
 
   <body>
-
-
-    <!--
-      Next, add a container for the dashboard. Put an empty `div` element in the `body` with class of `dashboard`.
-    -->
   </body>
 </html>
 

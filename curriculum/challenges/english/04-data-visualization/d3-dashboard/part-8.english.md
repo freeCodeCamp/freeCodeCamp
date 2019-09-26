@@ -6,7 +6,8 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Give the dashboard a `background-color` of `white` and a `box-shadow` of `5px 5px 5px 5px #888`.
 </section>
 
 ## Instructions
@@ -19,7 +20,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const dashboard = $(".dashboard"); assert(dashboard.css("background-color") === "rgb(255, 255, 255)" && dashboard.css("box-shadow") === "rgb(136, 136, 136) 5px 5px 5px 5px");
 
 ```
 
@@ -30,6 +31,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<style>
 body {
   background-color: #ccc;
 }
@@ -37,14 +39,28 @@ body {
 .dashboard {
   width: 980px;
   height: 500px;
-
-
-  /*
-    Give the `dashboard` class a `background-color` of `white` and a `box-shadow` of `5px 5px 5px 5px #888`.
-  */
 }
+</style>
+
+```
+
+</div>
 
 
+### Before Test
+<div id='html-setup'>
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>D3 Dashboard</title>
+  </head>
+
+  <body>
+    <div class="dashboard"></div>
+  </body>
+</html>
 ```
 
 </div>

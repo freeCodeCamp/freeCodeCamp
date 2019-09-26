@@ -6,7 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+Move the container down a little by adding a `margin` of `100px 10px` to the `body` element.
 </section>
 
 ## Instructions
@@ -19,7 +19,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const body = code.match(/body\s*{[\s\S]+?[^}]}/g)[0]; assert(/margin\s*:\s*100px\s*10px\s*(;|})/g.test(body));
 
 ```
 
@@ -30,13 +30,9 @@ tests:
 <div id='html-seed'>
 
 ```html
+<style>
 body {
   background-color: #ccc;
-
-
-  /*
-    Move the container down a little by adding a `margin` of `100px 10px` to the `body` element.
-  */
 }
 
 .dashboard {
@@ -46,6 +42,26 @@ body {
   box-shadow: 5px 5px 5px 5px #888;
   margin: auto;
 }
+</style>
+```
+
+</div>
+
+
+### Before Test
+<div id='html-setup'>
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>D3 Dashboard</title>
+  </head>
+
+  <body>
+    <div class="dashboard"></div>
+  </body>
+</html>
 ```
 
 </div>

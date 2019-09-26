@@ -6,7 +6,8 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Add a third script just before the closing body tag. It will be the javascript file you will use to create the rest of the dashboard. Give the script a `src` attribute of `./dashboard.js`.
 </section>
 
 ## Instructions
@@ -19,7 +20,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const script = code.match(/<script\s+[\s\S]+?[^>]>\s*<\/script\s*>/gi)[2]; assert(/src\s*=\s*('|")\s*(\.\/)?dashboard.js\s*\1/gi.test(script));
 
 ```
 
@@ -41,13 +42,33 @@ tests:
 
   <body>
     <div class="dashboard"></div>
-
-
-    <!--
-      Add a third `script` tag just before the closing `body` tag. It will be the javascript file you will use to create the rest of the dashboard. Give the script a `src` attribute of `./dashboard.js`.
-    -->
   </body>
 </html>
+```
+
+</div>
+
+
+### Before Test
+<div id='html-setup'>
+
+```html
+<style>
+  body {
+    background-color: #ccc;
+    margin: 100px 10px;
+  }
+
+  .dashboard {
+    width: 980px;
+    height: 500px;
+    background-color: white;
+    box-shadow: 5px 5px 5px 5px #888;
+    margin: auto;
+    display: flex;
+    align-items: center;
+  }
+</style>
 ```
 
 </div>

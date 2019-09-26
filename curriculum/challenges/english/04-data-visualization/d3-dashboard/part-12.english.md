@@ -6,7 +6,8 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Add a `script` tag at the bottom of the head element and give it a `src` attribute of `./d3-5.9.2.min.js`. Don't forget the closing tag. This will add the d3 library to your project.
 </section>
 
 ## Instructions
@@ -19,7 +20,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const script = code.match(/<script\s+[\s\S]+?[^>]>\s*<\/script\s*>/gi)[0]; assert(/src\s*=\s*('|")\s*(\.\/)?d3-5.9.2.min.js\s*\1/gi.test(script));
 
 ```
 
@@ -35,17 +36,37 @@ tests:
   <head>
     <title>D3 Dashboard</title>
     <link rel="stylesheet" href="./dashboard.css">
-
-
-    <!--
-      Add a `<script>` tag at the bottom of the `head` element and give it a `src` attribute of `./d3-5.9.2.min.js`. Don't forget the closing tag. This will add the d3 library to your project.
-    -->
   </head>
 
   <body>
     <div class="dashboard"></div>
   </body>
 </html>
+```
+
+</div>
+
+
+### Before Test
+<div id='html-setup'>
+
+```html
+<style>
+  body {
+    background-color: #ccc;
+    margin: 100px 10px;
+  }
+
+  .dashboard {
+    width: 980px;
+    height: 500px;
+    background-color: white;
+    box-shadow: 5px 5px 5px 5px #888;
+    margin: auto;
+    display: flex;
+    align-items: center;
+  }
+</style>
 ```
 
 </div>

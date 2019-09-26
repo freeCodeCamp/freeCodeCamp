@@ -6,7 +6,8 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Next, target the `dashboard` class you created and give it a `width` of `980px` and a `height` of `500px`.
 </section>
 
 ## Instructions
@@ -19,7 +20,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const dashboard = $(".dashboard"); assert(dashboard.css("width") === "980px" && dashboard.css("height") === "500px");
 
 ```
 
@@ -30,15 +31,30 @@ tests:
 <div id='html-seed'>
 
 ```html
+<style>
 body {
   background-color: #ccc;
 }
+</style>
+```
+
+</div>
 
 
+### Before Test
+<div id='html-setup'>
 
-/*
-  Next, target the `dashboard` class you created and give it a `width` of `980px` and a `height` of `500px`.
-*/
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>D3 Dashboard</title>
+  </head>
+
+  <body>
+    <div class="dashboard"></div>
+  </body>
+</html>
 ```
 
 </div>
