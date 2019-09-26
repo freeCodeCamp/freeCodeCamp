@@ -38,8 +38,8 @@ tests:
     testString: assert(sum === 8);
   - text: Returned value from <code>addFive</code> should be <code>undefined</code>
     testString: assert(addFive() === undefined);
-  - text: Inside of your functions, add 5 to the <code>sum</code> variable
-    testString: assert(code.match(/(sum\s*\=\s*sum\s*\+\s*5)|(sum\s*\+\=\s*5)/g).length === 1);
+  - text: Inside the <code>addFive</code> function, add <code>5</code> to the <code>sum</code> variable
+    testString: assert(addFive.toString().replace(/\s/g, '').match(/sum=sum\+5|sum\+=5/));
 
 ```
 
@@ -62,25 +62,12 @@ function addThree() {
 
 
 // Only change code above this line
+addThree();
 var returnedValue = addFive();
 ```
 
 </div>
 
-
-### After Test
-<div id='js-teardown'>
-
-```js
-var sum = 0;
-function addThree() {sum = sum + 3;}
-addThree();
-addFive();
-```
-
-</div>
-
-</section>
 
 ## Solution
 <section id='solution'>
