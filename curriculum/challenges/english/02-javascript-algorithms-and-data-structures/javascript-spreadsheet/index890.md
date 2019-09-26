@@ -32,6 +32,8 @@ tests:
   - text: See description above for instructions.
     testString: assert(sum([1,2,3]) === 6);
 
+```
+
 </section>
 
 ## Challenge Seed
