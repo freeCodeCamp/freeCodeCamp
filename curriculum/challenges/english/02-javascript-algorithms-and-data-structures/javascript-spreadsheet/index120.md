@@ -100,3 +100,8 @@ const infixEval = (str, regex) =>
 
 
 </section>
+
+## Solution
+<section id='solution'>
+
+</section>

@@ -22,7 +22,9 @@ Remove the curly braces and `return` keyword from `range`.
 tests:
   - text: See description above for instructions.
     testString: assert(code.replace(/\s/g, "").includes("constrange=(start,end)=>start>end?[]:[start].concat(range(start+1,end))"));
+
 ```
+
 </section>
 
 ## Challenge Seed
@@ -123,5 +125,10 @@ const range = (start, end) => {
 
 </div>
 
+
+</section>
+
+## Solution
+<section id='solution'>
 
 </section>

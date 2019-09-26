@@ -24,6 +24,7 @@ tests:
   testString: assert(!(code.includes("arr")) && code.replace(/\s/g, "").includes("[start].concat([end])")); 
 
 ```
+
 </section>
 
 ## Challenge Seed
@@ -125,5 +126,10 @@ const range = (start, end) => {
 
 </div>
 
+
+</section>
+
+## Solution
+<section id='solution'>
 
 </section>

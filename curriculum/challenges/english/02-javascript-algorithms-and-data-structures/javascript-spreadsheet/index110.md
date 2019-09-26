@@ -95,3 +95,8 @@ const infixEval = (str, regex) => str.replace(regex, infixToFunction["+"]);
 
 
 </section>
+
+## Solution
+<section id='solution'>
+
+</section>

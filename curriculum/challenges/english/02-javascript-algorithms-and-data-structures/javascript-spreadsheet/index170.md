@@ -106,3 +106,8 @@ const highPrecedence = str => {
 
 
 </section>
+
+## Solution
+<section id='solution'>
+
+</section>

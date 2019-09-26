@@ -147,3 +147,8 @@ const evalFormula = x => {
 
 
 </section>
+
+## Solution
+<section id='solution'>
+
+</section>

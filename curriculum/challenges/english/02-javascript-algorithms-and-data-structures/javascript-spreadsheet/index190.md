@@ -110,3 +110,8 @@ const spreadsheetFunctions = {
 
 
 </section>
+
+## Solution
+<section id='solution'>
+
+</section>
