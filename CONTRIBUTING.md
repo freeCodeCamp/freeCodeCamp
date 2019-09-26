@@ -55,16 +55,6 @@ Essentially, we expect basic familiarity with some of the aforementioned technol
 
 (Starts a ready-to-code dev environment for freecodecamp in your browser.)
 
-Feel free to ask us questions on the related issue threads, and we will be glad to clarify. When in doubt, you can reach out to our platform dev team to help you with this:
-
-| Name            | GitHub | Twitter |
-|:----------------|:-------|:--------|
-| Mrugesh Mohapatra | [`@raisedadead`](https://github.com/raisedadead) | [`@raisedadead`](https://twitter.com/raisedadead)|
-| Ahmad Abdolsaheb | [`@ahmadabdolsaheb`](https://github.com/ahmadabdolsaheb) | [`@Abdolsaheb`](https://twitter.com/Abdolsaheb) |
-| Kristofer Koishigawa | [`@scissorsneedfoodtoo`](https://github.com/scissorsneedfoodtoo) | [`@kriskoishigawa`](https://twitter.com/kriskoishigawa) |
-
-> **Email: `dev@freecodecamp.org`**
-
 ## Frequently Asked Questions
 
 **How can I report a bug that is not on board?**
@@ -79,19 +69,6 @@ Please note that any issues that seek coding help on a challenge will be closed.
 
 Please don't create GitHub issues for security issues. Instead, please send an email to `security@freecodecamp.org` and we'll look into it immediately.
 
-**I am stuck on something that is not included in this documentation. How can I get help?**
-
-Feel free to ask for help in:
-
-- [The "Contributors" category of our public forum](https://www.freecodecamp.org/forum/c/contributors)
-- [Our public contributors chat room on Gitter](https://gitter.im/FreeCodeCamp/Contributors)
-
-We are excited to help you contribute to any of the topics that you would like to work on. Make sure you search for your query before posting a new one. Be polite and patient. Our community of volunteers and moderators are always around to guide you through your queries.
-
-**I am new to GitHub and Open Source in general:**
-
-Read our [How to Contribute to Open Source Guide](https://github.com/freeCodeCamp/how-to-contribute-to-open-source).
-
 **What do these different labels that are tagged on issues mean?**
 
 Our community moderators [triage](https://en.wikipedia.org/wiki/Software_bug#Bug_management) issues and pull requests based on their priority, severity, and other factors. You can [find a complete glossary of their meanings here](https://github.com/freecodecamp/freecodecamp/labels).
@@ -103,3 +80,26 @@ If these issues lack clarity on what needs to be done, feel free to ask question
 **I found a typo, should I report an issue before I can make a pull request?**
 
 For typos and other wording changes, you can directly open pull requests without first creating an issue. Issues are more for discussing larger problems associated with code or structural aspects of the curriculum.
+
+**I am new to GitHub and Open Source in general:**
+
+Read our [How to Contribute to Open Source Guide](https://github.com/freeCodeCamp/how-to-contribute-to-open-source).
+
+**I am stuck on something that is not included in this documentation. How can I get help?**
+
+Feel free to ask for help in:
+
+- [The "Contributors" category of our public forum](https://www.freecodecamp.org/forum/c/contributors)
+- [Our public contributors chat room on Gitter](https://gitter.im/FreeCodeCamp/Contributors)
+
+We are excited to help you contribute to any of the topics that you would like to work on. Feel free to ask us questions on the related issue threads, and we will be glad to clarify. Make sure you search for your query before posting a new one. Be polite and patient. Our community of volunteers and moderators are always around to guide you through your queries.
+
+When in doubt, you can reach out to our platform dev team to help you with this:
+
+| Name            | GitHub | Twitter |
+|:----------------|:-------|:--------|
+| Mrugesh Mohapatra | [`@raisedadead`](https://github.com/raisedadead) | [`@raisedadead`](https://twitter.com/raisedadead)|
+| Ahmad Abdolsaheb | [`@ahmadabdolsaheb`](https://github.com/ahmadabdolsaheb) | [`@Abdolsaheb`](https://twitter.com/Abdolsaheb) |
+| Kristofer Koishigawa | [`@scissorsneedfoodtoo`](https://github.com/scissorsneedfoodtoo) | [`@kriskoishigawa`](https://twitter.com/kriskoishigawa) |
+
+> **Email: `dev@freecodecamp.org`**
