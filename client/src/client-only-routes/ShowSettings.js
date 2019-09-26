@@ -16,9 +16,7 @@ import {
 import { submitNewAbout, updateUserFlag, verifyCert } from '../redux/settings';
 import { createFlashMessage } from '../components/Flash/redux';
 
-import Spacer from '../components/helpers/Spacer';
-import Loader from '../components/helpers/Loader';
-import FullWidthRow from '../components/helpers/FullWidthRow';
+import { FullWidthRow, Link, Loader, Spacer } from '../components/helpers';
 import About from '../components/settings/About';
 import Privacy from '../components/settings/Privacy';
 import Email from '../components/settings/Email';
@@ -184,15 +182,12 @@ export function ShowSettings(props) {
         <main>
           <Spacer size={2} />
           <FullWidthRow>
-            <Button
-              block={true}
-              bsSize='lg'
-              bsStyle='primary'
-              className='btn-invert'
-              href={`/${username}`}
+            <Link
+              className='btn-invert btn btn-lg btn-primary btn-block'
+              to={`/${username}`}
             >
               Show me my public portfolio
-            </Button>
+            </Link>
             <Button
               block={true}
               bsSize='lg'
