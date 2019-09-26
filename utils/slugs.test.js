@@ -11,9 +11,11 @@ describe('dasherize', () => {
     expect(dasherize('UPPERCASE')).toBe('uppercase');
   });
   it('converts spaces to dashes', () => {
-    expect(dasherize('  the space  between    ')).toBe(
-      '--the-space--between----'
-    );
+    expect(dasherize('the space  between')).toBe('the-space--between');
+  });
+
+  it('trims off surrounding whitespace', () => {
+    expect(dasherize('  the space  between    ')).toBe('the-space--between');
   });
 
   it('removes everything except letters, numbers, - and .', () => {
