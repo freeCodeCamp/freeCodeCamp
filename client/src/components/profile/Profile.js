@@ -54,7 +54,7 @@ function TakeMeToTheChallenges() {
   return <CurrentChallengeLink>Take me to the Challenges</CurrentChallengeLink>;
 }
 
-function renderIsLocked(username) {
+function renderIsLocked(username, isSessionUser) {
   return (
     <Fragment>
       <Helmet>
@@ -62,6 +62,7 @@ function renderIsLocked(username) {
       </Helmet>
       <Spacer size={2} />
       <Grid>
+        {isSessionUser ? renderSettingsButton() : null}
         <FullWidthRow>
           <h2 className='text-center'>
             {username} has not made their profile public.
@@ -132,7 +133,7 @@ function Profile({ user, isSessionUser }) {
   } = user;
 
   if (isLocked) {
-    return renderIsLocked(username);
+    return renderIsLocked(username, isSessionUser);
   }
   return (
     <Fragment>
