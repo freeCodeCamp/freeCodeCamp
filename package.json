@@ -10,6 +10,7 @@
     "build:server": "cd ./api-server && npm run build",
     "bootstrap": "lerna bootstrap --ci",
     "clean": "npm-run-all clean:gatsby-site clean:packages",
+    "clean-and-develop": "npm run clean && npm ci && npm run develop",
     "clean:root-deps": "shx rm -rf node_modules",
     "clean:packages": "lerna clean -y",
     "clean:gatsby-site": "cd ./client && npm run clean",
