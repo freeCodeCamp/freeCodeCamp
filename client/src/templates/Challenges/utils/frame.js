@@ -83,7 +83,7 @@ const mountFrame = document => ({ element, ...rest }) => {
 const buildProxyConsole = proxyLogger => ctx => {
   const oldLog = ctx.window.console.log.bind(ctx.window.console);
   ctx.window.console.log = function proxyConsole(...args) {
-    proxyLogger(args.map(arg => JSON.stringify(arg)).join(' '));
+    proxyLogger(args.map(arg => '' + JSON.stringify(arg)).join(' '));
     return oldLog(...args);
   };
   return ctx;
