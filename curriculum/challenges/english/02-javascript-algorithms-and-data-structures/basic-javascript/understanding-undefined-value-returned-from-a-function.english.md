@@ -88,7 +88,7 @@ function addFive() {
 
 // Only change code above this line
 addThree();
-var returnedValue = addFive();
+addFive();
 ```
 
 </section>
