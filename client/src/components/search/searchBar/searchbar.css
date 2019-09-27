@@ -19,6 +19,7 @@
   font-size: 18px;
   display: inline-block;
   width: calc(100vw - 10px);
+  margin-top: 6px;
 }
 
 .fcc_searchBar .ais-SearchBox-input,
@@ -40,55 +41,6 @@
   top: 71px;
   width: calc(100vw - 10px);
   left: 5px;
-}
-
-#fcc_instantsearch {
-  margin-top: 6px;
-}
-
-@media (min-width: 380px) {
-  .fcc_searchBar .ais-Hits {
-    width: calc(100vw - 30px);
-    left: 15px;
-  }
-  .ais-SearchBox-input {
-    width: calc(100vw - 30px);
-  }
-  .fcc_searchBar .ais-SearchBox-form {
-    display: flex;
-    position: absolute;
-    top: var(--header-height);
-    right: 15px;
-  }
-}
-
-@media (min-width: 700px) {
-  .ais-SearchBox-input {
-    width: 100%;
-  }
-  #fcc_instantsearch {
-    margin-top: 6px;
-    max-width: 500px;
-  }
-  .fcc_searchBar {
-    position: relative;
-  }
-  .fcc_searchBar .ais-Hits {
-    top: auto;
-    width: calc(80vw - 20px);
-    left: 10px;
-  }
-  .fcc_searchBar .ais-SearchBox-form {
-    display: flex;
-    position: static;
-    top: auto;
-    right: 15px;
-  }
-}
-@media (min-width: 1100px) {
-  .fcc_searchBar .ais-Hits {
-    width: calc(100% - 20px);
-  }
 }
 
 /* hits */
@@ -133,13 +85,13 @@
   border: 0;
 }
 
-/* Hit selected with arrow keys */
-.highlighted {
-  background-color: var(--blue-dark);
+.ais-Hits-item {
+  background-color: var(--gray-75);
 }
 
-.unHighlighted {
-  background-color: var(--gray-75);
+/* Hit selected with arrow keys or mouse */
+.selected {
+  background-color: var(--blue-dark);
 }
 
 /* Dropdown footer */
@@ -149,4 +101,50 @@
 
 .fcc_suggestion_footer .hit-name .ais-Highlight .ais-Highlight-nonHighlighted {
   font-weight: bold;
+}
+
+@media (min-width: 380px) {
+  .fcc_searchBar .ais-Hits {
+    width: calc(100vw - 30px);
+    left: 15px;
+  }
+  .ais-SearchBox-input {
+    width: calc(100vw - 30px);
+  }
+  .fcc_searchBar .ais-SearchBox-form {
+    display: flex;
+    position: absolute;
+    top: var(--header-height);
+    right: 15px;
+  }
+}
+
+@media (min-width: 700px) {
+  .ais-SearchBox-input {
+    width: 100%;
+    margin-top: 6px;
+    max-width: 500px;
+  }
+  .fcc_searchBar {
+    position: relative;
+  }
+  .fcc_searchBar .ais-Hits {
+    top: auto;
+    width: calc(80vw - 20px);
+    left: 10px;
+  }
+  .fcc_searchBar .ais-SearchBox-form {
+    display: flex;
+    position: static;
+    top: auto;
+    right: 15px;
+  }
+  .ais-SearchBox-submit {
+    left: 0.85rem;
+  }
+}
+@media (min-width: 1100px) {
+  .fcc_searchBar .ais-Hits {
+    width: calc(100% - 20px);
+  }
 }

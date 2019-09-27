@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { createSelector } from 'reselect';
 import { SearchBox } from 'react-instantsearch-dom';
 import { HotKeys, configure } from 'react-hotkeys';
+import { isEqual } from 'lodash';
 
 import {
   isSearchDropdownEnabledSelector,
@@ -18,6 +18,9 @@ import SearchHits from './SearchHits';
 
 import './searchbar-base.css';
 import './searchbar.css';
+
+// Configure react-hotkeys to work with the searchbar
+configure({ ignoreTags: ['select', 'textarea'] });
 
 const propTypes = {
   isDropdownEnabled: PropTypes.bool,
@@ -51,33 +54,20 @@ class SearchBar extends Component {
     this.searchBarRef = React.createRef();
     this.handleChange = this.handleChange.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
-    this.handleHits = this.handleHits.bind(this);
     this.handleMouseEnter = this.handleMouseEnter.bind(this);
     this.handleMouseLeave = this.handleMouseLeave.bind(this);
     this.handleFocus = this.handleFocus.bind(this);
+    this.handleHits = this.handleHits.bind(this);
     this.state = {
-      hitsLength: 0,
       index: -1,
-      hitsNode: []
+      hits: []
     };
   }
 
   componentDidMount() {
     const searchInput = document.querySelector('.ais-SearchBox-input');
     searchInput.id = 'fcc_instantsearch';
-
     document.addEventListener('click', this.handleFocus);
-  }
-
-  componentDidUpdate() {
-    const { hitsNode, index } = this.state;
-    if (hitsNode) {
-      hitsNode.forEach(hit => hit.classList.add('unHighlighted'));
-      if (index >= 0) {
-        hitsNode[index].classList.remove('unHighlighted');
-        hitsNode[index].classList.add('highlighted');
-      }
-    }
   }
 
   componentWillUnmount() {
@@ -89,8 +79,10 @@ class SearchBar extends Component {
     if (!isSearchFocused) {
       toggleSearchFocused(true);
     }
-    // Reset if user updates query
-    this.setState({ index: -1 });
+
+    this.setState({
+      index: -1
+    });
   }
 
   handleFocus(e) {
@@ -107,14 +99,14 @@ class SearchBar extends Component {
   handleSearch(e, query) {
     e.preventDefault();
     const { toggleSearchDropdown, updateSearchQuery } = this.props;
-    const { hitsNode, index } = this.state;
+    const { index, hits } = this.state;
+    const selectedHit = hits[index];
+
     // Disable the search dropdown
     toggleSearchDropdown(false);
-
-    const selectedHit = hitsNode[index];
     if (selectedHit) {
-      // Redirect to hit selected by arrow keys
-      return window.location.assign(selectedHit.href);
+      // Redirect to hit / footer selected by arrow keys
+      return window.location.assign(selectedHit.url);
     } else if (!query) {
       // Set query to value in search bar if enter is pressed
       query = e.currentTarget.children[0].value;
@@ -125,39 +117,25 @@ class SearchBar extends Component {
     // return navigate('/search');
 
     // Temporary redirect to News search results page
-    return window.location.assign(
-      `https://freecodecamp.org/news/search/?query=${query}`
-    );
-  }
-
-  handleHits() {
-    const { isDropdownEnabled, isSearchFocused } = this.props;
-    if (isDropdownEnabled && isSearchFocused) {
-      const searchBar = ReactDOM.findDOMNode(this);
-      const currentHitsNode = searchBar.querySelectorAll(
-        '.fcc_suggestion_item'
-      );
-
-      // Reset index if the length of hits
-      // suddenly changes because the dropdown is open
-      // while the window height moves above / below 768 px
-      this.setState(prevState => ({
-        index:
-          prevState.hitsLength !== currentHitsNode.length
-            ? -1
-            : prevState.index,
-        hitsLength: currentHitsNode.length,
-        hitsNode: currentHitsNode
-      }));
-    }
+    // when non-empty search input submitted
+    return query
+      ? window.location.assign(
+          `https://freecodecamp.org/news/search/?query=${encodeURIComponent(
+            query
+          )}`
+        )
+      : false;
   }
 
   handleMouseEnter(e) {
-    const { hitsNode } = this.state;
-    const hoveredIndex = Array.from(hitsNode).indexOf(e.currentTarget);
+    e.persist();
+    const hoveredText = e.currentTarget.innerText;
 
-    this.setState({
-      index: hoveredIndex
+    this.setState(({ hits }) => {
+      const hitsTitles = hits.map(hit => hit.title);
+      const hoveredIndex = hitsTitles.indexOf(hoveredText);
+
+      return { index: hoveredIndex };
     });
   }
 
@@ -167,46 +145,40 @@ class SearchBar extends Component {
     });
   }
 
+  handleHits(currHits) {
+    const { hits } = this.state;
+
+    if (!isEqual(hits, currHits)) {
+      this.setState({
+        index: -1,
+        hits: currHits
+      });
+    }
+  }
+
   keyMap = {
     INDEX_UP: ['up'],
     INDEX_DOWN: ['down']
   };
 
-  handlers = {
+  keyHandlers = {
     INDEX_UP: e => {
-      const { index, hitsLength } = this.state;
       e.preventDefault();
-
-      if (index === -1) {
-        this.setState({
-          index: hitsLength - 1
-        });
-      } else {
-        this.setState(prevState => ({
-          index: prevState.index - 1
-        }));
-      }
+      this.setState(({ index, hits }) => ({
+        index: index === -1 ? hits.length - 1 : index - 1
+      }));
     },
     INDEX_DOWN: e => {
-      const { index, hitsLength } = this.state;
       e.preventDefault();
-
-      if (index === hitsLength - 1) {
-        this.setState({
-          index: -1
-        });
-      } else {
-        this.setState(prevState => ({
-          index: prevState.index + 1
-        }));
-      }
+      this.setState(({ index, hits }) => ({
+        index: index === hits.length - 1 ? -1 : index + 1
+      }));
     }
   };
 
   render() {
     const { isDropdownEnabled, isSearchFocused } = this.props;
-    // Allow react-hotkeys to work on the searchbar
-    configure({ ignoreTags: ['select', 'textarea'] });
+    const { index } = this.state;
 
     return (
       <div
@@ -214,7 +186,7 @@ class SearchBar extends Component {
         data-testid='fcc_searchBar'
         ref={this.searchBarRef}
       >
-        <HotKeys handlers={this.handlers} keyMap={this.keyMap}>
+        <HotKeys handlers={this.keyHandlers} keyMap={this.keyMap}>
           <div className='fcc_search_wrapper'>
             <label className='fcc_sr_only' htmlFor='fcc_instantsearch'>
               Search
@@ -232,7 +204,7 @@ class SearchBar extends Component {
                 handleHits={this.handleHits}
                 handleMouseEnter={this.handleMouseEnter}
                 handleMouseLeave={this.handleMouseLeave}
-                handleSubmit={this.handleSearch}
+                selectedIndex={index}
               />
             )}
           </div>

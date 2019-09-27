@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { connectStateResults, connectHits } from 'react-instantsearch-dom';
 import isEmpty from 'lodash/isEmpty';
 import Suggestion from './SearchSuggestion';
@@ -6,44 +7,51 @@ import Suggestion from './SearchSuggestion';
 const CustomHits = connectHits(
   ({
     hits,
-    currentRefinement,
-    handleSubmit,
-    handleHits,
+    searchQuery,
     handleMouseEnter,
-    handleMouseLeave
+    handleMouseLeave,
+    selectedIndex,
+    handleHits
   }) => {
     const footer = [
       {
-        objectID: `default-hit-${currentRefinement}`,
-        query: currentRefinement,
+        objectID: `default-hit-${searchQuery}`,
+        query: searchQuery,
+        url: `https://freecodecamp.org/news/search/?query=${encodeURIComponent(
+          searchQuery
+        )}`,
+        title: `See all results for ${searchQuery}`,
         _highlightResult: {
           query: {
             value: `
             See all results for
             <ais-highlight-0000000000>
-            ${currentRefinement}
+            ${searchQuery}
             </ais-highlight-0000000000>
           `
           }
         }
       }
     ];
-    const allHits = hits.filter((_, i) => i < 8).concat(footer);
-    handleHits();
+    const allHits = hits.slice(0, 8).concat(footer);
+    useEffect(() => {
+      handleHits(allHits);
+    });
 
     return (
       <div className='ais-Hits'>
         <ul className='ais-Hits-list'>
-          {allHits.map(hit => (
+          {allHits.map((hit, i) => (
             <li
-              className='ais-Hits-item'
+              className={
+                i === selectedIndex ? 'ais-Hits-item selected' : 'ais-Hits-item'
+              }
               data-fccobjectid={hit.objectID}
               key={hit.objectID}
             >
               <Suggestion
                 handleMouseEnter={handleMouseEnter}
                 handleMouseLeave={handleMouseLeave}
-                handleSubmit={handleSubmit}
                 hit={hit}
               />
             </li>
@@ -56,22 +64,26 @@ const CustomHits = connectHits(
 
 const SearchHits = connectStateResults(
   ({
-    handleSubmit,
-    handleHits,
     searchState,
     handleMouseEnter,
-    handleMouseLeave
+    handleMouseLeave,
+    selectedIndex,
+    handleHits
   }) => {
     return isEmpty(searchState) || !searchState.query ? null : (
       <CustomHits
-        currentRefinement={searchState.query}
         handleHits={handleHits}
         handleMouseEnter={handleMouseEnter}
         handleMouseLeave={handleMouseLeave}
-        handleSubmit={handleSubmit}
+        searchQuery={searchState.query}
+        selectedIndex={selectedIndex}
       />
     );
   }
 );
+
+CustomHits.propTypes = {
+  handleHits: PropTypes.func.isRequired
+};
 
 export default SearchHits;
