@@ -1,5 +1,5 @@
 const path = require('path');
-const { dasherize } = require('..');
+const { dasherize } = require('../../../utils/slugs');
 
 const { viewTypes } = require('../challengeTypes');
 

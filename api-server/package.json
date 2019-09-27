@@ -79,6 +79,7 @@
     "babel-jest": "^24.8.0",
     "babel-plugin-transform-function-bind": "^6.22.0",
     "babel-plugin-transform-imports": "^1.5.1",
+    "cross-env": "^6.0.0",
     "jest": "^24.8.0",
     "joi": "^13.1.2",
     "joi-objectid": "^2.0.0",

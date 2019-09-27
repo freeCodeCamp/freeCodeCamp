@@ -1,14 +1,6 @@
 const path = require('path');
 require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 
-exports.dasherize = function dasherize(name) {
-  return ('' + name)
-    .toLowerCase()
-    .replace(/\s/g, '-')
-    .replace(/[^a-z0-9\-\.]/gi, '')
-    .replace(/\:/g, '');
-};
-
 const supportedLangs = [
   'arabic',
   'chinese',

@@ -8,7 +8,7 @@ import { homeLocation } from '../../../config/env';
 import nonprofits from '../utils/commit.json';
 import { commitGoals, completeCommitment$ } from '../utils/commit';
 
-import { unDasherize } from '../utils';
+import { unDasherize } from '../../../utils/slugs';
 
 import { observeQuery, saveInstance } from '../utils/rx';
 

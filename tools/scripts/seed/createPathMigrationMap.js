@@ -1,6 +1,6 @@
 const { flatten } = require('lodash');
 
-const { dasherize } = require('../../../api-server/server/utils');
+const { dasherize } = require('../../../utils/slugs');
 
 function createPathMigrationMap(curriculum) {
   return Object.keys(curriculum)

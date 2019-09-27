@@ -8,7 +8,7 @@ import { Button, Modal } from '@freecodecamp/react-bootstrap';
 import ga from '../../../analytics';
 import GreenPass from '../../../assets/icons/GreenPass';
 
-import { dasherize } from '../../../../utils';
+import { dasherize } from '../../../../../utils/slugs';
 
 import './completion-modal.css';
 
