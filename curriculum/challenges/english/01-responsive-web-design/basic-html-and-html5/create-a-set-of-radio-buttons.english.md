@@ -42,11 +42,11 @@ Add a pair of radio buttons to your form, each nested in its own <code>label</co
 tests:
   - text: Your page should have two radio button elements.
     testString: assert($('input[type="radio"]').length > 1);
-  - text: Give your radio buttons the <code>name</code> attribute of <code>indoor-outdoor</code>.
+  - text: Your radio buttons should be given the <code>name</code> attribute of <code>indoor-outdoor</code>.
     testString: assert($('input[type="radio"]').filter("[name='indoor-outdoor']").length > 1);
   - text: Each of your two radio button elements should be nested in its own <code>label</code> element.
     testString: assert($('label > input[type="radio"]:only-child').length > 1);
-  - text: Make sure each of your <code>label</code> elements has a closing tag.
+  - text: Each of your <code>label</code> elements should have a closing tag.
     testString: assert((code.match(/<\/label>/g) && code.match(/<label/g) && code.match(/<\/label>/g).length === code.match(/<label/g).length));
   - text: One of your radio buttons should have the label <code>indoor</code>.
     testString: assert($("label").text().match(/indoor/gi));

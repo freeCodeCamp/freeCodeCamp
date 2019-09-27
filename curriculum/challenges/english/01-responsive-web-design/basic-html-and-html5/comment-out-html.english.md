@@ -22,15 +22,15 @@ Comment out your <code>h1</code> element and your <code>p</code> element, but no
 
 ```yml
 tests:
-  - text: Comment out your <code>h1</code> element so that it is not visible on your page.
+  - text: Commenting out your <code>h1</code> element should <code>h1</code> element not visible on your page.
     testString: assert(($("h1").length === 0));
-  - text: Leave your <code>h2</code> element uncommented so that it is visible on your page.
+  - text: Leaving your <code>h2</code> element uncommented should mke the <code>h2</code> element visible on your page.
     testString: assert(($("h2").length > 0));
-  - text: Comment out your <code>p</code> element so that it is not visible on your page.
+  - text: Commenting out your <code>p</code> element should <code>p</code> element not visible on your page.
     testString: assert(($("p").length === 0));
-  - text: Be sure to close each of your comments with <code>--&#62;</code>.
+  - text: Each of your comments should be closed with <code>--&#62;</code>.
     testString: assert(code.match(/[^fc]-->/g).length > 1);
-  - text: Do not change the order of the <code>h1</code> <code>h2</code> or <code>p</code> in the code.
+  - text: You should not change the order of the <code>h1</code> <code>h2</code> or <code>p</code> in the code.
     testString: assert((code.match(/<([a-z0-9]){1,2}>/g)[0]==="<h1>" && code.match(/<([a-z0-9]){1,2}>/g)[1]==="<h2>" && code.match(/<([a-z0-9]){1,2}>/g)[2]==="<p>") );
 
 ```
