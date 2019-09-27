@@ -14,15 +14,13 @@ import {
   toggleSearchDropdown,
   updateSearchQuery
 } from './redux';
+import { algoliaAppId, algoliaAPIKey } from '../../../config/env.json';
 
 import { createSelector } from 'reselect';
 
 const DEBOUNCE_TIME = 100;
 
-const searchClient = algoliasearch(
-  'QMJYL5WYTI',
-  '4318af87aa3ce128708f1153556c6108'
-);
+const searchClient = algoliasearch(algoliaAppId, algoliaAPIKey);
 
 const propTypes = {
   children: PropTypes.any,
