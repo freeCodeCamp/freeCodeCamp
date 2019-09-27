@@ -20,6 +20,13 @@ The function names are not case sensitive.
 ## Tests
 <section id='tests'>
 
+```yml
+tests:
+  - text: "You're finished!"
+    testString: assert(true);
+
+```
+
 </section>
 
 ## Challenge Seed
