@@ -10,6 +10,7 @@
     "build:server": "cd ./api-server && npm run build",
     "bootstrap": "lerna bootstrap --ci",
     "clean": "npm-run-all clean:gatsby-site clean:packages",
+    "clean-and-develop": "npm run clean && npm ci && npm run develop",
     "clean:root-deps": "shx rm -rf node_modules",
     "clean:packages": "lerna clean -y",
     "clean:gatsby-site": "cd ./client && npm run clean",
@@ -45,7 +46,8 @@
     "test:lint": "echo 'Warning: TODO - Define Linting tests.'",
     "test:search-indexing": "jest ./search-indexing",
     "test:server": "cd ./api-server && npm test && cd ../",
-    "test:tools": "jest ./tools"
+    "test:tools": "jest ./tools",
+    "test:utils": "jest ./utils/*.js"
   },
   "devDependencies": {
     "@freecodecamp/eslint-config": "^2.0.2",
