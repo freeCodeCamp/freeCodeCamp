@@ -1,6 +1,6 @@
 ---
 id: 5d79253307ecd49e030bdcd1
-title: Step 23
+title: Step 023
 challengeType: 1
 isBeta: true
 ---

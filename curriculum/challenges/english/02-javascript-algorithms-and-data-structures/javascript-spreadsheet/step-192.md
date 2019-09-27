@@ -1,6 +1,6 @@
 ---
 id: 5d792534cac2dbe0a719ea7a
-title: Step 26
+title: Step 026
 challengeType: 1
 isBeta: true
 ---

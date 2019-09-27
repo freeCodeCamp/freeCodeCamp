@@ -1,6 +1,6 @@
 ---
 id: 5d79253297c0ebb149ea9fed
-title: Step 1
+title: Step 001
 challengeType: 1
 isBeta: true
 ---

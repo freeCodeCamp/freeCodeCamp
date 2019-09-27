@@ -1,6 +1,6 @@
 ---
 id: 5d7925358c220e5b2998909e
-title: Step 52
+title: Step 052
 challengeType: 1
 isBeta: true
 ---

@@ -1,6 +1,6 @@
 ---
 id: 5d79253539b5e944ba3e314c
-title: Step 48
+title: Step 048
 challengeType: 1
 isBeta: true
 ---

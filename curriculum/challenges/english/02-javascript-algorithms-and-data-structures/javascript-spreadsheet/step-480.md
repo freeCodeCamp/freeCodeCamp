@@ -1,6 +1,6 @@
 ---
 id: 5d792536dd8a4daf255488ac
-title: Step 70
+title: Step 070
 challengeType: 1
 isBeta: true
 ---

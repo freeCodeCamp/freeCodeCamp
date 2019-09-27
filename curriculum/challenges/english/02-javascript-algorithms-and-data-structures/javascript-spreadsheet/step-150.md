@@ -1,6 +1,6 @@
 ---
 id: 5d7925330f300c342315066d
-title: Step 20
+title: Step 020
 challengeType: 1
 isBeta: true
 ---

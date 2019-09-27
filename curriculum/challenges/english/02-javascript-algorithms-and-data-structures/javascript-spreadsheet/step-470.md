@@ -1,6 +1,6 @@
 ---
 id: 5d7925361596f84067904f7f
-title: Step 69
+title: Step 069
 challengeType: 1
 isBeta: true
 ---
