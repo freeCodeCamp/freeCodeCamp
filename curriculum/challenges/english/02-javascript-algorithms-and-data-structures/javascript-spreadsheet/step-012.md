@@ -1,20 +1,13 @@
 ---
-id: 5d7925342415527083bd6667
-title: Step 030
+id: 5d7925330918ae4a2f282e7e
+title: Step 012
 challengeType: 1
 isBeta: true
 ---
 
 ## Description
 <section id='description'>
-The `split` method returns an array of strings from a larger string by using its argument to determine where to make each split:
-
-```js
-"a b c".split(" "); // ["a", "b", "c"];
-```
-
-Add a function `toNumberList` (inside `applyFn`) which takes an argument `args` and splits it by commas.
-Return `toNumberList`.
+Use arrow function syntax to define a function `infixEval` which takes `str` and `regex` as arguments and returns `str.replace(regex, "")`.
 </section>
 
 ## Instructions
@@ -28,7 +21,7 @@ Return `toNumberList`.
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(applyFn("")("0,1,2").every((x, i) => x == i));
+    testString: assert(/constinfixEval=\(str,regex\)=>str\.replace\(regex,['"]{2}\)/.test(code));
 
 ```
 
@@ -48,28 +41,6 @@ const infixToFunction = {
   "*": (x, y) => x * y,
   "/": (x, y) => x / y
 };
-
-const infixEval = (str, regex) =>
-  str.replace(regex, (_, arg1, fn, arg2) =>
-    infixToFunction[fn](parseFloat(arg1), parseFloat(arg2))
-  );
-
-const highPrecedence = str => {
-  const regex = /([0-9.]+)([*\/])([0-9.]+)/;
-  const str2 = infixEval(str, regex);
-  return str === str2 ? str : highPrecedence(str2);
-};
-
-const spreadsheetFunctions = {
-  "": x => x
-};
-
-const applyFn = str => {
-  const noHigh = highPrecedence(str);
-  const infix = /([0-9.]+)([+-])([0-9.]+)/;
-  const str2 = infixEval(noHigh, infix);
-  const regex = /([a-z]*)\(([0-9., ]*)\)(?!.*\()/i;
-}
 
 
 </script>

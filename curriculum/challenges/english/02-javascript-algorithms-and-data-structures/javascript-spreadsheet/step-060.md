@@ -1,13 +1,13 @@
 ---
-id: 5d79253352e33dd59ec2f6de
-title: Step 008
+id: 5d7925353b307724a462b06b
+title: Step 060
 challengeType: 1
 isBeta: true
 ---
 
 ## Description
 <section id='description'>
-Add the key `+` to `infixToFunction` and assign it the value `addVar`.
+Finally, return `fn("A")`.
 </section>
 
 ## Instructions
@@ -21,7 +21,7 @@ Add the key `+` to `infixToFunction` and assign it the value `addVar`.
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(infixToFunction["+"].toString() === addVar.toString());
+    testString: assert(/elemValue.*constfn=elemValue\(['"]1['"]\);?returnfn\(['"]A['"]\);?\}/.test(code.replace(/\s/g, "")));
 
 ```
 
@@ -35,9 +35,60 @@ tests:
 ```html
 <script>
 
-const infixToFunction = {};
+const infixToFunction = {
+  "+": (x, y) => x + y,
+  "-": (x, y) => x - y,
+  "*": (x, y) => x * y,
+  "/": (x, y) => x / y
+};
 
-const addVar = (x, y) => x + y;
+const infixEval = (str, regex) =>
+  str.replace(regex, (_, arg1, fn, arg2) =>
+    infixToFunction[fn](parseFloat(arg1), parseFloat(arg2))
+  );
+
+const highPrecedence = str => {
+  const regex = /([0-9.]+)([*\/])([0-9.]+)/;
+  const str2 = infixEval(str, regex);
+  return str === str2 ? str : highPrecedence(str2);
+};
+
+const spreadsheetFunctions = {
+  "": x => x
+};
+
+const applyFn = str => {
+  const noHigh = highPrecedence(str);
+  const infix = /([0-9.]+)([+-])([0-9.]+)/;
+  const str2 = infixEval(noHigh, infix);
+  const regex = /([a-z]*)\(([0-9., ]*)\)(?!.*\()/i;
+  const toNumberList = args => args.split(",").map(parseFloat);
+  const applyFunction = (fn, args) =>
+    spreadsheetFunctions[fn.toLowerCase()](toNumberList(args));
+  return str2.replace(
+    regex,
+    (match, fn, args) =>
+      spreadsheetFunctions.hasOwnProperty(fn.toLowerCase()) ? applyFunction(fn, args) : match
+  );
+};
+
+const range = (start, end) =>
+  start > end ? [] : [start].concat(range(start + 1, end));
+
+const charRange = (start, end) =>
+  range(start.charCodeAt(0), end.charCodeAt(0)).map(x =>
+    String.fromCharCode(x)
+  );
+
+const evalFormula = x => {
+  const rangeRegex = /([A-J])([1-9][0-9]?):([A-J])([1-9][0-9]?)/gi;
+  const rangeFromString = (n1, n2) => range(parseInt(n1), parseInt(n2));
+  const elemValue = n => {
+    const fn = c => document.getElementById(c + n).value;
+    return fn;
+  };
+  const fn = elemValue("1");
+};
 
 
 </script>

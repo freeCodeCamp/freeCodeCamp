@@ -1,15 +1,16 @@
 ---
-id: 5d7925346f4f2da6df4354a6
-title: Step 025
+id: 5d79253297c0ebb149ea9fed
+title: Step 001
 challengeType: 1
 isBeta: true
 ---
 
 ## Description
 <section id='description'>
-Define an empty function `applyFn` which takes an argument `str`.
-Use the curly brace syntax with an anonymous function.
-Do not wrap parentheses around the parameter.
+In functional programming, we prefer immutable values over mutable values.
+Mutable values (declared with <code>var</code> or `let`) can lead to unexpected behaviors and bugs.
+Values declared with `const` cannot be reassigned, which makes using them easier because you don't have to keep track of their values.
+Start by creating an empty `infixToFunction` object using `const`.
 </section>
 
 ## Instructions
@@ -23,7 +24,7 @@ Do not wrap parentheses around the parameter.
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(code.replace(/\s/g, "").includes("constapplyFn=str=>{}"));
+    testString: assert(code.replace(/\s/g, "").includes("constinfixToFunction={}"));
 
 ```
 
@@ -36,28 +37,6 @@ tests:
 
 ```html
 <script>
-
-const infixToFunction = {
-  "+": (x, y) => x + y,
-  "-": (x, y) => x - y,
-  "*": (x, y) => x * y,
-  "/": (x, y) => x / y
-};
-
-const infixEval = (str, regex) =>
-  str.replace(regex, (_, arg1, fn, arg2) =>
-    infixToFunction[fn](parseFloat(arg1), parseFloat(arg2))
-  );
-
-const highPrecedence = str => {
-  const regex = /([0-9.]+)([*\/])([0-9.]+)/;
-  const str2 = infixEval(str, regex);
-  return str === str2 ? str : highPrecedence(str2);
-};
-
-const spreadsheetFunctions = {
-  "": x => x
-};
 
 
 </script>

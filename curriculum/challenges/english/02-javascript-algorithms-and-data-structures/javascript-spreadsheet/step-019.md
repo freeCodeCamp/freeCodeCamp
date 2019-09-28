@@ -1,13 +1,22 @@
 ---
-id: 5d79253483eada4dd69258eb
-title: Step 040
+id: 5d7925335ab63018dcec11fe
+title: Step 019
 challengeType: 1
 isBeta: true
 ---
 
 ## Description
 <section id='description'>
-`range` should set `arr` to `[start]` and should then return `arr`.
+Arrow functions can have multiple statements:
+
+```js
+const fn = (x, y) => {
+  const result = x + y;
+  return result; // explicit return statement required
+};
+```
+
+Use this syntax for the `highPrecedence` function.
 </section>
 
 ## Instructions
@@ -21,7 +30,7 @@ isBeta: true
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(code.replace(/\s/g, "").includes("constarr=[start]") && JSON.stringify(range(1)) === "[1]");
+    testString: assert(code.replace(/\s/g, "").includes("highPrecedence=str=>{returnstr"));
 
 ```
 
@@ -44,37 +53,9 @@ const infixToFunction = {
 
 const infixEval = (str, regex) =>
   str.replace(regex, (_, arg1, fn, arg2) =>
-    infixToFunction[fn](parseFloat(arg1), parseFloat(arg2))
-  );
+    infixToFunction[fn](parseFloat(arg1), parseFloat(arg2)));
 
-const highPrecedence = str => {
-  const regex = /([0-9.]+)([*\/])([0-9.]+)/;
-  const str2 = infixEval(str, regex);
-  return str === str2 ? str : highPrecedence(str2);
-};
-
-const spreadsheetFunctions = {
-  "": x => x
-};
-
-const applyFn = str => {
-  const noHigh = highPrecedence(str);
-  const infix = /([0-9.]+)([+-])([0-9.]+)/;
-  const str2 = infixEval(noHigh, infix);
-  const regex = /([a-z]*)\(([0-9., ]*)\)(?!.*\()/i;
-  const toNumberList = args => args.split(",").map(parseFloat);
-  const applyFunction = (fn, args) =>
-    spreadsheetFunctions[fn.toLowerCase()](toNumberList(args));
-  return str2.replace(
-    regex,
-    (match, fn, args) =>
-      spreadsheetFunctions.hasOwnProperty(fn.toLowerCase()) ? applyFunction(fn, args) : match
-  );
-};
-
-const range = (start, end) => {
-
-}
+const highPrecedence = str => str;
 
 
 </script>

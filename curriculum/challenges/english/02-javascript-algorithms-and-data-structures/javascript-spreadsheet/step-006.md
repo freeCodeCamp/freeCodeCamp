@@ -1,15 +1,21 @@
 ---
-id: 5d7925346f4f2da6df4354a6
-title: Step 025
+id: 5d792533cc8b18b6c133edc7
+title: Step 006
 challengeType: 1
 isBeta: true
 ---
 
 ## Description
 <section id='description'>
-Define an empty function `applyFn` which takes an argument `str`.
-Use the curly brace syntax with an anonymous function.
-Do not wrap parentheses around the parameter.
+You can also assign anonymous functions to variables:
+
+```js
+const fn = function(x) {
+  return x;
+}
+```
+
+Assign the anonymous function to the variable `addVar`. 
 </section>
 
 ## Instructions
@@ -23,7 +29,7 @@ Do not wrap parentheses around the parameter.
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(code.replace(/\s/g, "").includes("constapplyFn=str=>{}"));
+    testString: assert(code.replace(/\s/g, "").includes("constaddVar=function(x,y){returnx+y"));
 
 ```
 
@@ -37,27 +43,11 @@ tests:
 ```html
 <script>
 
-const infixToFunction = {
-  "+": (x, y) => x + y,
-  "-": (x, y) => x - y,
-  "*": (x, y) => x * y,
-  "/": (x, y) => x / y
-};
+const infixToFunction = {};
 
-const infixEval = (str, regex) =>
-  str.replace(regex, (_, arg1, fn, arg2) =>
-    infixToFunction[fn](parseFloat(arg1), parseFloat(arg2))
-  );
-
-const highPrecedence = str => {
-  const regex = /([0-9.]+)([*\/])([0-9.]+)/;
-  const str2 = infixEval(str, regex);
-  return str === str2 ? str : highPrecedence(str2);
-};
-
-const spreadsheetFunctions = {
-  "": x => x
-};
+function(x, y) {
+  return x + y;
+}
 
 
 </script>

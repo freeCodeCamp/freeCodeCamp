@@ -1,14 +1,13 @@
 ---
-id: 5d7925323be8848dbc58a07a
-title: Step 002
+id: 5d7925330f300c342315066d
+title: Step 020
 challengeType: 1
 isBeta: true
 ---
 
 ## Description
 <section id='description'>
-Now define an empty function `add` using the `function` keyword.
-It should accept two parameters, `x` and `y`.
+In `highPrecedence`, define `regex` to be `/([0-9.]+)([*/])([0-9.]+)/`.
 </section>
 
 ## Instructions
@@ -22,7 +21,7 @@ It should accept two parameters, `x` and `y`.
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(code.replace(/\s/g, "").includes("functionadd(x,y){}"));
+    testString: assert(code.replace(/\s/g, "").includes("regex=/([0-9.]+)([*/])([0-9.]+)/"));
 
 ```
 
@@ -36,7 +35,21 @@ tests:
 ```html
 <script>
 
-const infixToFunction = {};
+const infixToFunction = {
+  "+": (x, y) => x + y,
+  "-": (x, y) => x - y,
+  "*": (x, y) => x * y,
+  "/": (x, y) => x / y
+};
+
+const infixEval = (str, regex) =>
+  str.replace(regex, (_, arg1, fn, arg2) =>
+    infixToFunction[fn](parseFloat(arg1), parseFloat(arg2))
+  );
+
+const highPrecedence = str => {
+  return str;
+};
 
 
 </script>

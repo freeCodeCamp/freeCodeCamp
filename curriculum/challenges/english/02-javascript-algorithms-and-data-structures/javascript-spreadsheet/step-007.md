@@ -1,13 +1,20 @@
 ---
-id: 5d7925330f300c342315066d
-title: Step 020
+id: 5d7925337954ed57a565a135
+title: Step 007
 challengeType: 1
 isBeta: true
 ---
 
 ## Description
 <section id='description'>
-In `highPrecedence`, define `regex` to be `/([0-9.]+)([*/])([0-9.]+)/`.
+This is possible because the anonymous function has been immediately assigned to a value - this is effectively the same as using a named function.
+Rewrite `addVar` using ES6's arrow syntax:
+
+```js
+const fn = (x, y) => x;
+```
+
+Note that the value is returned implicitly.
 </section>
 
 ## Instructions
@@ -21,7 +28,7 @@ In `highPrecedence`, define `regex` to be `/([0-9.]+)([*/])([0-9.]+)/`.
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(code.replace(/\s/g, "").includes("regex=/([0-9.]+)([*/])([0-9.]+)/"));
+    testString: assert(code.replace(/\s/g, "").includes("constaddVar=(x,y)=>x+y"));
 
 ```
 
@@ -35,20 +42,10 @@ tests:
 ```html
 <script>
 
-const infixToFunction = {
-  "+": (x, y) => x + y,
-  "-": (x, y) => x - y,
-  "*": (x, y) => x * y,
-  "/": (x, y) => x / y
-};
+const infixToFunction = {};
 
-const infixEval = (str, regex) =>
-  str.replace(regex, (_, arg1, fn, arg2) =>
-    infixToFunction[fn](parseFloat(arg1), parseFloat(arg2))
-  );
-
-const highPrecedence = str => {
-  return str;
+const addVar = function(x, y) {
+  return x + y;
 };
 
 

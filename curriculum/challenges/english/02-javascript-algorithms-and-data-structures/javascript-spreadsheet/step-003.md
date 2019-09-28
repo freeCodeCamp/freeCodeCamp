@@ -1,15 +1,13 @@
 ---
-id: 5d7925346f4f2da6df4354a6
-title: Step 025
+id: 5d792532f631702ae6d23e11
+title: Step 003
 challengeType: 1
 isBeta: true
 ---
 
 ## Description
 <section id='description'>
-Define an empty function `applyFn` which takes an argument `str`.
-Use the curly brace syntax with an anonymous function.
-Do not wrap parentheses around the parameter.
+Now return the sum of `x` and `y` using the `return` keyword.
 </section>
 
 ## Instructions
@@ -23,7 +21,7 @@ Do not wrap parentheses around the parameter.
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(code.replace(/\s/g, "").includes("constapplyFn=str=>{}"));
+    testString: assert(add(1, 2) === 3 && add(100, 2000) === 2100);
 
 ```
 
@@ -37,27 +35,11 @@ tests:
 ```html
 <script>
 
-const infixToFunction = {
-  "+": (x, y) => x + y,
-  "-": (x, y) => x - y,
-  "*": (x, y) => x * y,
-  "/": (x, y) => x / y
-};
+const infixToFunction = {};
 
-const infixEval = (str, regex) =>
-  str.replace(regex, (_, arg1, fn, arg2) =>
-    infixToFunction[fn](parseFloat(arg1), parseFloat(arg2))
-  );
+function add(x, y) {
 
-const highPrecedence = str => {
-  const regex = /([0-9.]+)([*\/])([0-9.]+)/;
-  const str2 = infixEval(str, regex);
-  return str === str2 ? str : highPrecedence(str2);
-};
-
-const spreadsheetFunctions = {
-  "": x => x
-};
+}
 
 
 </script>

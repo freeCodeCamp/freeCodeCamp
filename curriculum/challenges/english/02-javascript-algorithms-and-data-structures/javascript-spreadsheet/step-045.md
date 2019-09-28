@@ -1,21 +1,13 @@
 ---
-id: 5d792533cc8b18b6c133edc7
-title: Step 006
+id: 5d792535591db67ee15b4106
+title: Step 045
 challengeType: 1
 isBeta: true
 ---
 
 ## Description
 <section id='description'>
-You can also assign anonymous functions to variables:
-
-```js
-const fn = function(x) {
-  return x;
-}
-```
-
-Assign the anonymous function to the variable `addVar`. 
+Use the ternary operator to return `[]` if `start > end` and `[start].concat([end])` otherwise.
 </section>
 
 ## Instructions
@@ -29,7 +21,7 @@ Assign the anonymous function to the variable `addVar`.
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(code.replace(/\s/g, "").includes("constaddVar=function(x,y){returnx+y"));
+    testString: assert(JSON.stringify(range(3, 2)) === "[]" && JSON.stringify(range(1, 3)) === "[1,3]");
 
 ```
 
@@ -43,10 +35,45 @@ tests:
 ```html
 <script>
 
-const infixToFunction = {};
+const infixToFunction = {
+  "+": (x, y) => x + y,
+  "-": (x, y) => x - y,
+  "*": (x, y) => x * y,
+  "/": (x, y) => x / y
+};
 
-function(x, y) {
-  return x + y;
+const infixEval = (str, regex) =>
+  str.replace(regex, (_, arg1, fn, arg2) =>
+    infixToFunction[fn](parseFloat(arg1), parseFloat(arg2))
+  );
+
+const highPrecedence = str => {
+  const regex = /([0-9.]+)([*\/])([0-9.]+)/;
+  const str2 = infixEval(str, regex);
+  return str === str2 ? str : highPrecedence(str2);
+};
+
+const spreadsheetFunctions = {
+  "": x => x
+};
+
+const applyFn = str => {
+  const noHigh = highPrecedence(str);
+  const infix = /([0-9.]+)([+-])([0-9.]+)/;
+  const str2 = infixEval(noHigh, infix);
+  const regex = /([a-z]*)\(([0-9., ]*)\)(?!.*\()/i;
+  const toNumberList = args => args.split(",").map(parseFloat);
+  const applyFunction = (fn, args) =>
+    spreadsheetFunctions[fn.toLowerCase()](toNumberList(args));
+  return str2.replace(
+    regex,
+    (match, fn, args) =>
+      spreadsheetFunctions.hasOwnProperty(fn.toLowerCase()) ? applyFunction(fn, args) : match
+  );
+};
+
+const range = (start, end) => {
+  return [start].concat([end]);
 }
 
 

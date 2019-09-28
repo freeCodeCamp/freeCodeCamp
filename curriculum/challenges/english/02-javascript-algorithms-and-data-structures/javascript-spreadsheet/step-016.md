@@ -1,13 +1,14 @@
 ---
-id: 5d792535591db67ee15b4106
-title: Step 045
+id: 5d792533bb38fab70b27f527
+title: Step 016
 challengeType: 1
 isBeta: true
 ---
 
 ## Description
 <section id='description'>
-Use the ternary operator to return `[]` if `start > end` and `[start].concat([end])` otherwise.
+`arg1` and `arg2` are the numbers inputed by the user in a string such as "1+3".
+Pass `parseFloat(arg1)` and `parseFloat(arg2)` as the arguments to `infixToFunction[fn]` (remember `infixToFunction[fn]` is a function).
 </section>
 
 ## Instructions
@@ -21,7 +22,7 @@ Use the ternary operator to return `[]` if `start > end` and `[start].concat([en
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(JSON.stringify(range(3, 2)) === "[]" && JSON.stringify(range(1, 3)) === "[1,3]");
+    testString: const regex = /([0-9.]+)([+-\/*])([0-9.]+)/; assert(infixEval("23+35", regex) === "58" && infixEval("100-20", regex) === "80" && infixEval("10*10", regex) === "100" && infixEval("120/6", regex) === "20");
 
 ```
 
@@ -43,38 +44,9 @@ const infixToFunction = {
 };
 
 const infixEval = (str, regex) =>
-  str.replace(regex, (_, arg1, fn, arg2) =>
-    infixToFunction[fn](parseFloat(arg1), parseFloat(arg2))
+  str.replace(regex, (match, arg1, fn, arg2) =>
+    infixToFunction[fn]
   );
-
-const highPrecedence = str => {
-  const regex = /([0-9.]+)([*\/])([0-9.]+)/;
-  const str2 = infixEval(str, regex);
-  return str === str2 ? str : highPrecedence(str2);
-};
-
-const spreadsheetFunctions = {
-  "": x => x
-};
-
-const applyFn = str => {
-  const noHigh = highPrecedence(str);
-  const infix = /([0-9.]+)([+-])([0-9.]+)/;
-  const str2 = infixEval(noHigh, infix);
-  const regex = /([a-z]*)\(([0-9., ]*)\)(?!.*\()/i;
-  const toNumberList = args => args.split(",").map(parseFloat);
-  const applyFunction = (fn, args) =>
-    spreadsheetFunctions[fn.toLowerCase()](toNumberList(args));
-  return str2.replace(
-    regex,
-    (match, fn, args) =>
-      spreadsheetFunctions.hasOwnProperty(fn.toLowerCase()) ? applyFunction(fn, args) : match
-  );
-};
-
-const range = (start, end) => {
-  return [start].concat([end]);
-}
 
 
 </script>

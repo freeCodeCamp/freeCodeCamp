@@ -1,16 +1,13 @@
 ---
-id: 5d79253297c0ebb149ea9fed
-title: Step 001
+id: 5d792533e7707b9645d7b540
+title: Step 010
 challengeType: 1
 isBeta: true
 ---
 
 ## Description
 <section id='description'>
-In functional programming, we prefer immutable values over mutable values.
-Mutable values (declared with <code>var</code> or `let`) can lead to unexpected behaviors and bugs.
-Values declared with `const` cannot be reassigned, which makes using them easier because you don't have to keep track of their values.
-Start by creating an empty `infixToFunction` object using `const`.
+Remove the now redundant `addVar` definition. 
 </section>
 
 ## Instructions
@@ -24,7 +21,7 @@ Start by creating an empty `infixToFunction` object using `const`.
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(code.replace(/\s/g, "").includes("constinfixToFunction={}"));
+    testString: assert(typeof addVar === "undefined");
 
 ```
 
@@ -37,6 +34,12 @@ tests:
 
 ```html
 <script>
+
+const infixToFunction = {
+  "+": (x, y) => x + y
+};
+
+const addVar = (x, y) => x + y;
 
 
 </script>
