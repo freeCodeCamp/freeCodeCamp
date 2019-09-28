@@ -19,17 +19,17 @@ Define an empty arrow function without arguments and assign it to `window.onload
 ## Instructions
 <section id='instructions'>
 
+</section>
+
+## Tests
+<section id='tests'>
+
 ```yml
 tests:
   - text: See description above for instructions.
     testString: assert(code.replace(/\s/g, "").includes("window.onload=()=>"));
 
 ```
-
-</section>
-
-## Tests
-<section id='tests'>
 
 </section>
 

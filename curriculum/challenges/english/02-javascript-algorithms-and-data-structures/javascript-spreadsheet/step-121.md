@@ -22,17 +22,17 @@ Add a function `nodups` to `spreadsheetFunctions`, with the value `arr => arr.re
 ## Instructions
 <section id='instructions'>
 
+</section>
+
+## Tests
+<section id='tests'>
+
 ```yml
 tests:
   - text: See description above for instructions.
     testString: assert(spreadsheetFunctions.nodups.toString().replace(/\s/g, "") === "arr=>arr.reduce((a,x)=>a.includes(x),[])");
 
 ```
-
-</section>
-
-## Tests
-<section id='tests'>
 
 </section>
 
