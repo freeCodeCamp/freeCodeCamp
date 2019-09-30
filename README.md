@@ -134,6 +134,7 @@ If you think you've found a bug, first read the [how to report a bug](https://ww
 
 If you're confident it's a new bug, and have confirmed that someone else is facing the same issue, go ahead and create a new GitHub issue. Be sure to include as much information as possible so we can reproduce the bug.
 
+
 ### Reporting Security Issues
 
 If you think you have found a vulnerability, please report responsibly. Don't create GitHub issues for security issues. Instead, please send an email to `security@freecodecamp.org` and we'll look into it immediately.
