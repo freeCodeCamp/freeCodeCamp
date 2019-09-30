@@ -7,13 +7,16 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 You don't have to specify the second argument in `slice`.
 If you don't, then `slice` will extract from the first argument to the end of the string.
 Change the call to `slice` to log all characters except the first instead.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -26,6 +29,7 @@ tests:
     testString: assert(code.replace(/\s/g, "").includes("console.log(value.slice(1))"));
 
 ```
+
 
 </section>
 
@@ -181,9 +185,11 @@ const update = event => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

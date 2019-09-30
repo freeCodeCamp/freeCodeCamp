@@ -7,12 +7,15 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Now, assign the result of calling `infixEval` with `str` and `regex` to `str2`.
 Return `str2`.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -25,6 +28,7 @@ tests:
     testString: assert(highPrecedence("7*6") === "42" && highPrecedence("50/25") === "2");
 
 ```
+
 
 </section>
 
@@ -103,9 +107,11 @@ const highPrecedence = str => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

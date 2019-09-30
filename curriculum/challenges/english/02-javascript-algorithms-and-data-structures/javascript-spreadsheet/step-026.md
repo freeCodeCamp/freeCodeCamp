@@ -7,11 +7,14 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Set `noHigh` to `highPrecedence(str)` in `applyFn`.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -24,6 +27,7 @@ tests:
     testString: assert(code.replace(/\s/g, "").includes("constapplyFn=str=>{constnoHigh=highPrecedence(str)"));
 
 ```
+
 
 </section>
 
@@ -111,9 +115,11 @@ const applyFn = str => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

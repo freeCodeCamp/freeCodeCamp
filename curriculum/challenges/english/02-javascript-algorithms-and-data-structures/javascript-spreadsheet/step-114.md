@@ -7,12 +7,15 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 `evalFormula` is now pure, as it now has no external dependencies, and as before, performs no side effects.
 Now define a new function, `increment` inside `spreadsheetFunctions`, which takes `nums` as argument and uses `map` to increment each value of `nums` by 1.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -25,6 +28,7 @@ tests:
     testString: assert(JSON.stringify(spreadsheetFunctions.increment([1, 5, 3])) === "[2,6,4]");
 
 ```
+
 
 </section>
 
@@ -183,9 +187,11 @@ const update = event => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

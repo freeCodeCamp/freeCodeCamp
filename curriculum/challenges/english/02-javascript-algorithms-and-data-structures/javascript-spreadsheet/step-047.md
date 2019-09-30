@@ -7,11 +7,14 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Remove the curly braces and `return` keyword from `range`.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -24,6 +27,7 @@ tests:
     testString: assert(code.replace(/\s/g, "").includes("constrange=(start,end)=>start>end?[]:[start].concat(range(start+1,end))"));
 
 ```
+
 
 </section>
 
@@ -126,9 +130,11 @@ const range = (start, end) => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

@@ -7,6 +7,7 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 This is possible because the anonymous function has been immediately assigned to a value - this is effectively the same as using a named function.
 Rewrite `addVar` using ES6's arrow syntax:
 
@@ -15,10 +16,12 @@ const fn = (x, y) => x;
 ```
 
 Note that the value is returned implicitly.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -31,6 +34,7 @@ tests:
     testString: assert(code.replace(/\s/g, "").includes("constaddVar=(x,y)=>x+y"));
 
 ```
+
 
 </section>
 
@@ -98,9 +102,11 @@ const addVar = function(x, y) {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

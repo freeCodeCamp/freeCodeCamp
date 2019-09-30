@@ -7,12 +7,15 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 The function in `varRangeExpanded` contains an unused argument.
 Replace or prefix it with an underscore.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -25,6 +28,7 @@ tests:
     testString: assert(code.replace(/\s/g, "").includes("constvarRangeExpanded=x.replace(rangeRegex,(_"));
 
 ```
+
 
 </section>
 
@@ -142,9 +146,11 @@ const evalFormula = x => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

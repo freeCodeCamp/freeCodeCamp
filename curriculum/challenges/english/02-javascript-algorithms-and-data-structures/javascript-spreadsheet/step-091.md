@@ -7,12 +7,15 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Now set `value` to `element.value.replace(/\s/g, "")`.
 This removes all whitespace from `element` so that we can ignore it.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -25,6 +28,7 @@ tests:
     testString: assert(/constupdate=\(?event\)?=>\{constelement=event\.target;?constvalue=element\.value\.replace\(\/\\s\/g,["']{2}\);?\}/.test(code.replace(/\s/g, "")));
 
 ```
+
 
 </section>
 
@@ -176,9 +180,11 @@ const update = event => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

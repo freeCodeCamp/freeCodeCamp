@@ -7,11 +7,14 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Change the empty string in `varExpanded` to the result of calling `idToText` with `match.toUpperCase()`.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 
 </section>
@@ -25,6 +28,7 @@ tests:
     testString: assert(code.replace(/\s/g, "").includes("match=>idToText(match.toUpperCase())"))
 
 ```
+
 
 </section>
 
@@ -184,9 +188,11 @@ const update = event => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

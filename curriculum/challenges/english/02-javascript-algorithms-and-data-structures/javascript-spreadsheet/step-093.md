@@ -7,12 +7,15 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Add another condition to the if statement so that it only executes if the first character of `value` is `=`.
 Do this by adding `&& value[0] === "="` to the if statement.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -25,6 +28,7 @@ tests:
     testString: assert(/constupdate=\(?event\)?=>\{constelement=event\.target;?constvalue=element\.value\.replace\(\/\\s\/g,["']{2}\);?if\(!\(?value\.includes\(element\.id\)\)?&&value\[0\]===["']=["']\)\{\}\}/.test(code.replace(/\s/g, "")));
 
 ```
+
 
 </section>
 
@@ -178,9 +182,11 @@ const update = event => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

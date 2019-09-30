@@ -7,14 +7,17 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 The `slice` method takes two arguments.
 It extracts characters from the string from the index specified by the first argument up to (but not including) the second argument.
 The index starts at 0.
 Use the `slice` method to log the first two letters of `value` to the console.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -27,6 +30,7 @@ tests:
     testString: assert(code.replace(/\s/g, "").includes("console.log(value.slice(0,2))"));
 
 ```
+
 
 </section>
 
@@ -180,9 +184,11 @@ const update = event => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

@@ -7,11 +7,14 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Now define a function `createLabel` which takes an argument `name` and has an empty body.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -24,6 +27,7 @@ tests:
     testString: assert(/window\.onload[\s\S]*constcreateLabel=\(?name\)?=>\{\}/.test(code.replace(/\s/g, "")));
 
 ```
+
 
 </section>
 
@@ -154,9 +158,11 @@ window.onload = () => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

@@ -7,11 +7,14 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Replace the `n1` return value in `varRangeExpanded` with `rangeFromString(n1, n2)`.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -24,6 +27,7 @@ tests:
     testString: assert(code.replace(/\s/g, "").includes('constvarRangeExpanded=x.replace(rangeRegex,(match,c1,n1,c2,n2)=>rangeFromString(n1,n2))'));
 
 ```
+
 
 </section>
 
@@ -141,9 +145,11 @@ const evalFormula = x => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

@@ -7,12 +7,15 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Now change the if statement to set `element.value` to the result of passing `value.slice(1)` to `evalFormula`.
 There is no need to use `const` because we're modifying `element.value`, not declaring it.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -25,6 +28,7 @@ tests:
     testString: assert(/constupdate=\(?event\)?=>\{constelement=event\.target;?constvalue=element\.value\.replace\(\/\\s\/g,["']{2}\);?if\(!\(?value\.includes\(element\.id\)\)?&&value\[0\]===["']=["']\)\{element\.value=evalFormula\(value\.slice\(1\)\);?\}\}/.test(code.replace(/\s/g, "")));
 
 ```
+
 
 </section>
 
@@ -180,9 +184,11 @@ const update = event => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

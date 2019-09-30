@@ -7,6 +7,7 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 The `map` method takes a function and for each element of an array, it passes the element to the function and replace the element with the return value:
 
 ```js
@@ -14,10 +15,12 @@ The `map` method takes a function and for each element of an array, it passes th
 ```
 
 In `toNumberList`, chain the `map` method to `args.split(",")` and pass it `parseFloat` to parse each element of the array into a number.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -30,6 +33,7 @@ tests:
     testString: assert(applyfn("")("0,1,2").every((x, i) => x === i) && code.includes("map"));
 
 ```
+
 
 </section>
 
@@ -121,9 +125,11 @@ const applyFn = str => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

@@ -7,11 +7,14 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Add a function `idToText` to `evalFormula`, which takes the argument `id` and returns `cells`.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -24,6 +27,7 @@ tests:
     testString: assert(/constidToText=\(?id\)?=>cells/.test(code.replace(/\s/g, "")));
 
 ```
+
 
 </section>
 
@@ -182,9 +186,11 @@ const update = event => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

@@ -7,13 +7,16 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Recursion is when a function calls itself.
 We often use it instead of while/for loops, as loops usually involve mutable state.
 Replace the empty string in `highPrecedence` with a call to `highPrecedence` with `str2` as argument.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -26,6 +29,7 @@ tests:
     testString: assert(highPrecedence("2*2*2") === "8" && highPrecedence("2*2") === "4" && highPrecedence("2+2") === "2+2");
 
 ```
+
 
 </section>
 
@@ -105,9 +109,11 @@ const highPrecedence = str => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

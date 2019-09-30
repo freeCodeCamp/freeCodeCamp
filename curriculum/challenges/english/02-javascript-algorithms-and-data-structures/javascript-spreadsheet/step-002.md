@@ -7,12 +7,15 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Now define an empty function `add` using the `function` keyword.
 It should accept two parameters, `x` and `y`.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -25,6 +28,7 @@ tests:
     testString: assert(code.replace(/\s/g, "").includes("functionadd(x,y){}"));
 
 ```
+
 
 </section>
 
@@ -88,9 +92,11 @@ const infixToFunction = {};
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

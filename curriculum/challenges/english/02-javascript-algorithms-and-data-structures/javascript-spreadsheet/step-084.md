@@ -7,11 +7,14 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Add `range(1, 99)` to the end of `window.onload` (the result will be discarded for now).
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -24,6 +27,7 @@ tests:
     testString: assert(/window\.onload[\s\S]*range\(1,99\);?\}/.test(code.replace(/\s/g, "")));
 
 ```
+
 
 </section>
 
@@ -161,9 +165,11 @@ window.onload = () => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

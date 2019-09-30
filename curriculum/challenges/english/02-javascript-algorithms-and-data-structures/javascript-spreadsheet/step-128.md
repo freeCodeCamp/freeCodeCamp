@@ -7,6 +7,7 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 The `sort` method sorts an array alphabetically:
 
 ```js
@@ -14,10 +15,12 @@ The `sort` method sorts an array alphabetically:
 ```
 
 Assign the sorted `nums` to `sorted` in `median`.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -30,6 +33,7 @@ tests:
     testString: assert(code.replace(/\s/g, "").includes("constmedian=nums=>{constsorted=nums.sort()"));
 
 ```
+
 
 </section>
 
@@ -205,9 +209,11 @@ const update = event => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

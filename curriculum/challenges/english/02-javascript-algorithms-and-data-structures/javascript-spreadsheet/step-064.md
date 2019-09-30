@@ -7,12 +7,15 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 The technique we just used is called currying - instead of taking multiple arguments, a function takes a single argument and return another function, which also takes a single argument.
 Define a new curried function, `addChars`, and set it equal to `c1 => c2 => c1 + c2`.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -25,6 +28,7 @@ tests:
     testString: assert(code.replace(/\s/g, "").includes("constaddChars=c1=>c2=>c1+c2"));
 
 ```
+
 
 </section>
 
@@ -140,9 +144,11 @@ const evalFormula = x => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

@@ -7,11 +7,14 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 In `idToText`, use the `id` property of `cell` to make sure the argument is equal to the cell's id rather than the cell itself.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -24,6 +27,7 @@ tests:
     testString: assert(/constidToText=\(?id\)?=>cells\.find\(\(?cell\)?=>cell\.id===id\)/.test(code.replace(/\s/g, "")));
 
 ```
+
 
 </section>
 
@@ -182,9 +186,11 @@ const update = event => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

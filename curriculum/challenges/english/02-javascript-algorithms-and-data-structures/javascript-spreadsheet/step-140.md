@@ -7,14 +7,17 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 The function in the `map` method can actually take a second argument: the index of the element.
 This is why you need an arrow function in `charRange` - if you don't use one, then the index will be passed to `String.fromCharCode` as the second argument, leading to unexpected results.
 However, it is safe for functions like `parseFloat` which take only one argument (but not for `parseInt`).
 Chain `.map((x, i) => x + i)` to `.fill(start)` to add its index to every element in the array in `range`.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -27,6 +30,7 @@ tests:
     testString: assert(code.replace(/\s/g, "").includes("constrange=(start,end)=>Array(end-start+1).fill(start).map((x,i)=>x+i)"));
 
 ```
+
 
 </section>
 
@@ -211,9 +215,11 @@ const update = event => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

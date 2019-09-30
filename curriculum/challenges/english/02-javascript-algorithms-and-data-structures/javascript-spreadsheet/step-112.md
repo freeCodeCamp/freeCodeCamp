@@ -7,11 +7,14 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Change the empty string in `elemValue` to the result of calling `idToText` with `c + n`.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -24,6 +27,7 @@ tests:
     testString: assert(code.replace(/\s/g, "").includes("elemValue=n=>c=>idToText(c+n)"));
 
 ```
+
 
 </section>
 
@@ -182,9 +186,11 @@ const update = event => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

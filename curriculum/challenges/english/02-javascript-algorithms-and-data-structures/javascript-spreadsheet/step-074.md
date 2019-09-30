@@ -7,13 +7,16 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Set `varRegex` to `/[A-J][1-9][0-9]?/gi`.
 Then set `varExpanded` to the result of replacing `varRegex` with an empty string in `varRangeExpanded`.
 Return `varExpanded`.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -26,6 +29,7 @@ tests:
     testString: assert(code.includes("varRegex") && code.includes("varExpanded") && evalFormula("aC12bc") === "abc");
 
 ```
+
 
 </section>
 
@@ -143,9 +147,11 @@ const evalFormula = x => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

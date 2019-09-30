@@ -7,12 +7,15 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 The `some` method checks if any element of the array satisfies the provided testing function.
 Add `someeven` to `spreadsheetFunctions`, which checks if any of the items passed in are even.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -25,6 +28,7 @@ tests:
     testString: assert(spreadsheetFunctions.someeven([1, 5, 4, 3]) && !spreadsheetFunctions.someeven([3, 5, 9]) && code.includes(".some"));
 
 ```
+
 
 </section>
 
@@ -208,9 +212,11 @@ const update = event => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

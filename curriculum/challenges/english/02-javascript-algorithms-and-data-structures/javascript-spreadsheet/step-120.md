@@ -7,12 +7,15 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 The `includes` method checks if an element is in an array.
 Add a `has2` function to `spreadsheetFunctions` which checks if the inputted array has the number 2 in it.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -25,6 +28,7 @@ tests:
     testString: assert(spreadsheetFunctions.has2([2,3,5]) && !spreadsheetFunctions.has2([1,3,10]));
 
 ```
+
 
 </section>
 
@@ -192,9 +196,11 @@ const update = event => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

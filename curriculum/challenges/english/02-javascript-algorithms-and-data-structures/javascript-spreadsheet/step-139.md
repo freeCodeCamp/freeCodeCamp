@@ -7,12 +7,15 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 The `fill` method takes an argument and replaces all elements of the array with that argument.
 Use it on the array in `range` to replace everything with `start`.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -25,6 +28,7 @@ tests:
     testString: assert(code.replace(/\s/g, "").includes("constrange=(start,end)=>Array(end-start+1).fill(start)"));
 
 ```
+
 
 </section>
 
@@ -209,9 +213,11 @@ const update = event => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

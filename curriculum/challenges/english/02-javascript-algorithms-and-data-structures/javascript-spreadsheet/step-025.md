@@ -7,13 +7,16 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Define an empty function `applyFn` which takes an argument `str`.
 Use the curly brace syntax with an anonymous function.
 Do not wrap parentheses around the parameter.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -26,6 +29,7 @@ tests:
     testString: assert(code.replace(/\s/g, "").includes("constapplyFn=str=>{}"));
 
 ```
+
 
 </section>
 
@@ -109,9 +113,11 @@ const spreadsheetFunctions = {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

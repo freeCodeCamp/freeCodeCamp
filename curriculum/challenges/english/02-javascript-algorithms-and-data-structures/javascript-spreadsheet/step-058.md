@@ -7,12 +7,15 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Inside `elemValue`, define `fn` to be a function which takes `c` as argument and returns `document.getElementById(c + n).value`.
 Return `fn` instead of `n`.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -25,6 +28,7 @@ tests:
     testString: assert(/elemValue.*constfn=\(?c\)?=>document\.getElementById\(c+n\)\.value;?returnfn;?\}/.test(code.replace(/\s/g, "")));
 
 ```
+
 
 </section>
 
@@ -139,9 +143,11 @@ const evalFormula = x => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

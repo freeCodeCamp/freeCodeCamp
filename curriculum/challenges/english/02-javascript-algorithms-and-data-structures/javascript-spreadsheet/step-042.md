@@ -7,6 +7,7 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 This is still valid because we're modifying `arr` in place instead of reassigning to it (which is invalid with the `const` keyword).
 But doing this still modifies state, and we don't want to do that in functional programming.
 The `concat` method returns a new array instead of modifying an existing one:
@@ -17,10 +18,12 @@ The `concat` method returns a new array instead of modifying an existing one:
 ```
 
 Use `concat` instead of `push` to return the result of adding `end` to `arr`.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -33,6 +36,7 @@ tests:
     testString: assert(JSON.stringify(range(1,2)) === "[1,2]" && code.includes("concat") && !(code.includes("push")));
 
 ```
+
 
 </section>
 
@@ -137,9 +141,11 @@ const range = (start, end) => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

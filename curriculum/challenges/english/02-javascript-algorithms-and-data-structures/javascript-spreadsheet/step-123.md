@@ -7,6 +7,7 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 ES6 introduced a shorthand object literal syntax:
 
 ```js
@@ -17,10 +18,12 @@ console.log(myObject); // { a: 10 }
 
 First, move `sum` outside of `spreadsheetFunctions`.
 `sum` should be a function expression similar to `isEven`.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -33,6 +36,7 @@ tests:
     testString: assert(sum([1,2,3]) === 6);
 
 ```
+
 
 </section>
 
@@ -202,9 +206,11 @@ const update = event => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

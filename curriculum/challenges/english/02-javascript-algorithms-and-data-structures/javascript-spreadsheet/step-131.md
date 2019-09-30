@@ -7,11 +7,14 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Now define two variable: `length` which is `sorted.length` and `middle` which is `length /  2 - 1`.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -24,6 +27,7 @@ tests:
     testString: assert(/constmedian=nums=>\{constsorted=nums\.slice\(\)\.sort\(\((.+),(.+)\)=>\1-\2\);?constlength=sorted\.length;?constmiddle=length\/2-1/.test(code.replace(/\s/g, "")));
 
 ```
+
 
 </section>
 
@@ -201,9 +205,11 @@ const update = event => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

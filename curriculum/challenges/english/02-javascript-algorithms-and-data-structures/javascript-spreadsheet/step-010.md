@@ -7,11 +7,14 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Remove the now redundant `addVar` definition. 
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -24,6 +27,7 @@ tests:
     testString: assert(typeof addVar === "undefined");
 
 ```
+
 
 </section>
 
@@ -91,9 +95,11 @@ const addVar = (x, y) => x + y;
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

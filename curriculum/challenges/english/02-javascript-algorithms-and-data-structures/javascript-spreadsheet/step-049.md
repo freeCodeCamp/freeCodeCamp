@@ -7,11 +7,14 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Make `charRange` return `range(start, end)`.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -24,6 +27,7 @@ tests:
     testString: assert(JSON.stringify(charRange(1,5)) === "[1,2,3,4,5]");
 
 ```
+
 
 </section>
 
@@ -127,9 +131,11 @@ const charRange = (start, end) => start;
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

@@ -7,6 +7,7 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 You can define arrow functions without arguments:
 
 ```js
@@ -14,10 +15,12 @@ const two = () => 2;
 ```
 
 Define an empty arrow function without arguments and assign it to `window.onload`.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -30,6 +33,7 @@ tests:
     testString: assert(code.replace(/\s/g, "").includes("window.onload=()=>"));
 
 ```
+
 
 </section>
 
@@ -155,9 +159,11 @@ const evalFormula = x => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

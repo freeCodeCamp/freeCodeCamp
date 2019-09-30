@@ -7,11 +7,14 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Replace the `n1` return value in `rangeFromString` with `range(n1, n2)`.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -24,6 +27,7 @@ tests:
     testString: assert(/evalFormula.*constrangeFromString=\(n1,n2\)=>range\(n1,n2\)/.test(code.replace(/\s/g, "")));  
 
 ```
+
 
 </section>
 
@@ -135,9 +139,11 @@ const evalFormula = x => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

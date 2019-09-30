@@ -7,11 +7,14 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Replace the `""` in `varExpanded` with `match => document.getElementById(match.toUpperCase()).value`.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -24,6 +27,7 @@ tests:
     testString: assert(code.replace(/\s/g, "").includes("constvarExpanded=varRangeExpanded.replace(varRegex,match=>document.getElementById(match.toUpperCase()).value)");
 
 ```
+
 
 </section>
 
@@ -143,9 +147,11 @@ const evalFormula = x => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

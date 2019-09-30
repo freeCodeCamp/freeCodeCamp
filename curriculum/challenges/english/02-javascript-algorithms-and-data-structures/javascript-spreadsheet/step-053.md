@@ -7,12 +7,15 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Create a new function `evalFormula` which takes a single argument, `x`.
 Set `/([A-J])([1-9][0-9]?):([A-J])([1-9][0-9]?)/gi` to a variable named `rangeRegex`.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -25,6 +28,7 @@ tests:
     testString: assert(code.replace(/\s/g, "").includes("constevalFormula=x=>{constrangeRegex=/([A-J])([1-9][0-9]?):([A-J])([1-9][0-9]?)/gi"));
 
 ```
+
 
 </section>
 
@@ -131,9 +135,11 @@ const charRange = (start, end) =>
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

@@ -7,11 +7,14 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Chain `forEach` onto `range(1, 99)`, passing in `createLabel` as an argument.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -24,6 +27,7 @@ tests:
     testString: assert(/window\.onload[\s\S]*range\(1,99\)\.forEach\(createLabel\);?\}/.test(code.replace(/\s/g, "")));
 
 ```
+
 
 </section>
 
@@ -162,9 +166,11 @@ window.onload = () => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

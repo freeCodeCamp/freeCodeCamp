@@ -7,6 +7,7 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 The `reduce` method can take a second argument (in addition to the function), specifying the initial accumulator value.
 In this case, the current value starts from index 0 rather than index 1.
 
@@ -17,10 +18,12 @@ In this case, the current value starts from index 0 rather than index 1.
 ```
 
 Add a function `nodups` to `spreadsheetFunctions`, with the value `arr => arr.reduce((a, x) => a.includes(x), [])`.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -33,6 +36,7 @@ tests:
     testString: assert(spreadsheetFunctions.nodups.toString().replace(/\s/g, "") === "arr=>arr.reduce((a,x)=>a.includes(x),[])");
 
 ```
+
 
 </section>
 
@@ -201,9 +205,11 @@ const update = event => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

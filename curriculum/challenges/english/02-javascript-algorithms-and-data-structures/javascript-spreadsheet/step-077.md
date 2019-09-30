@@ -7,13 +7,16 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 `evalFormula` should return the value passed to it if this value remained unchanged.
 Otherwise, it should call itself with the latest value.
 Use the ternary operator in the last line of `evalFormula` to return `functionExpanded` if `x === functionExpanded` and `evalFormula(functionExpanded)` otherwise.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -26,6 +29,7 @@ tests:
     testString: assert(evalFormula("(2+2)*2") === "8")
 
 ```
+
 
 </section>
 
@@ -149,9 +153,11 @@ const evalFormula = x => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

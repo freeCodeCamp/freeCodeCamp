@@ -7,12 +7,15 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Now define a function `elemValue`, which takes an argument `n` and returns `n`.
 Use the curly brace arrow function syntax.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -25,6 +28,7 @@ tests:
     testString: assert(/evalFormula.*constelemValue=n=>\{returnn;?\}/.test(code.replace(/\s/g, "")));  
 
 ```
+
 
 </section>
 
@@ -136,9 +140,11 @@ const evalFormula = x => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

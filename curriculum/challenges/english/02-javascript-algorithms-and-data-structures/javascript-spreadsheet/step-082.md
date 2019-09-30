@@ -7,6 +7,7 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Add the following code to `createLabel`:
 
 ```js
@@ -15,10 +16,12 @@ label.textContent = name;
 container.appendChild(label);
 ```
 
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -31,6 +34,7 @@ tests:
     testString: assert(/window\.onload[\s\S]*constcreateLabel=\(?name\)?=>\{constlabel=document\.createElement\(["']div["']\);?label\.className=["']label["'];?label\.textContent=name;?container\.appendChild\(label\);?\}/.test(code.replace(/\s/g, "")));
 
 ```
+
 
 </section>
 
@@ -164,9 +168,11 @@ window.onload = () => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

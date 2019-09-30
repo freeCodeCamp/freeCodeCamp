@@ -7,12 +7,15 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 The `every` method checks if all elements of an array satisfy the provided testing function.
 Use it to add an `everyeven` function to `spreadsheetFunctions` which checks if all values passed in are even`spreadsheetFunctions` which checks if all values passed in are even.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -25,6 +28,7 @@ tests:
     testString: assert(spreadsheetFunctions.everyeven([2, 6, 4, 0, 20]) && !spreadsheetFunctions.everyeven([10, 0, 9, 2]) && code.includes(".every"));
 
 ```
+
 
 </section>
 
@@ -209,9 +213,11 @@ const update = event => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

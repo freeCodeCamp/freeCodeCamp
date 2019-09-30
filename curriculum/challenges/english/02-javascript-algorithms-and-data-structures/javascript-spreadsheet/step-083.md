@@ -7,12 +7,15 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 The `forEach` method takes a function and calls it with each element of the array.
 Chain `forEach` to `letters` and pass it the `createLabel` function to create a label for each of the letters.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -25,6 +28,7 @@ tests:
     testString: assert(code.replace(/\s/g, "").includes("letters.forEach(createLabel)"))
 
 ```
+
 
 </section>
 
@@ -161,9 +165,11 @@ window.onload = () => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

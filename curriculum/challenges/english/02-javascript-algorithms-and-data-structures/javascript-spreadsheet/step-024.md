@@ -7,12 +7,15 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Define an object `spreadsheetFunctions`, with a single key - an empty string (`""`).
 The corresponding value should be the function `x => x`.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -25,6 +28,7 @@ tests:
     testString: assert(spreadsheetFunctions[""]("x") === "x");
 
 ```
+
 
 </section>
 
@@ -104,9 +108,11 @@ const highPrecedence = str => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

@@ -7,11 +7,14 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Now define a `median` function which takes an argument `nums` (in the global scope).
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -24,6 +27,7 @@ tests:
     testString: assert(/constmedian=\(?nums\)?=>/.test(code.replace(/\s/g, "")));
 
 ```
+
 
 </section>
 
@@ -197,9 +201,11 @@ const update = event => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

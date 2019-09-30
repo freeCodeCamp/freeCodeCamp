@@ -7,12 +7,15 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 The `Array` function takes an argument `x` and creates an array of size `x` filled with `undefined`.
 Make `range` return an array of `undefined` with size `end - start + 1`.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -25,6 +28,7 @@ tests:
     testString: assert(code.replace(/\s/g, "").includes("constrange=(start,end)=>Array(end-start+1)"));
 
 ```
+
 
 </section>
 
@@ -209,9 +213,11 @@ const update = event => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

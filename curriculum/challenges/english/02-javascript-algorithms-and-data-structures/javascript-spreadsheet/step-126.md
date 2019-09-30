@@ -7,6 +7,7 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 The spread operator allow you to pass multiple arguments instead of an array:
 
 ```js
@@ -16,10 +17,12 @@ sum3(...arr); // 6
 ```
 
 Use the spread operator to add `range` to `spreadsheetFunctions`.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -32,6 +35,7 @@ tests:
     testString: assert(JSON.stringify(spreadsheetFunctions.range(1, 5)) === "[1,2,3,4,5]" && code.includes("..."));
 
 ```
+
 
 </section>
 
@@ -204,9 +208,11 @@ const update = event => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

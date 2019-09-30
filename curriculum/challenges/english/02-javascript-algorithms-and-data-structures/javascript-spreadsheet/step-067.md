@@ -7,6 +7,7 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 You call curried functions like this:
 
 ```js
@@ -15,10 +16,12 @@ const result = add(1)(2);
 
 Use `map` on the `charRange` in `addChars`, passing in `x => elemValue(n)(x)` as the argument.
 
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -31,6 +34,7 @@ tests:
     testString: assert(code.replace(/\s/g, "").includes("constaddChars=c1=>c2=>n=>charRange(c1,c2).map(x=>elemValue(n)(x))"));
 
 ```
+
 
 </section>
 
@@ -146,9 +150,11 @@ const evalFormula = x => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

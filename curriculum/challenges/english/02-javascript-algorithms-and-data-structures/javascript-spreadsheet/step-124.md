@@ -7,12 +7,15 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Now use the shorthand syntax to reference `sum` inside of `spreadsheetFunctions`.
 This both adds it to the functions you can use in the spreadsheet, and allows you to use it throughout your program.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -25,6 +28,7 @@ tests:
     testString: assert(/[{,]sum[,}]/.test(code.replace(/\s/g, "")));
 
 ```
+
 
 </section>
 
@@ -194,9 +198,11 @@ const update = event => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

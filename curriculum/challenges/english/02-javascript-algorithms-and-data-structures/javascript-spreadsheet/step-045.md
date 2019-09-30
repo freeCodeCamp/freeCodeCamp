@@ -7,11 +7,14 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Use the ternary operator to return `[]` if `start > end` and `[start].concat([end])` otherwise.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -24,6 +27,7 @@ tests:
     testString: assert(JSON.stringify(range(3, 2)) === "[]" && JSON.stringify(range(1, 3)) === "[1,3]");
 
 ```
+
 
 </section>
 
@@ -126,9 +130,11 @@ const range = (start, end) => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

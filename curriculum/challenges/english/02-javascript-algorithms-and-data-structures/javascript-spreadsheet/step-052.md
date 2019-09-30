@@ -7,11 +7,14 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Now, pass `x` to `String.fromCharCode` in the arrow function.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -24,6 +27,7 @@ tests:
     testString: assert(JSON.stringify(charRange("A", "C")) === '["A","B","C"]');
 
 ```
+
 
 </section>
 
@@ -127,9 +131,11 @@ const charRange = (start, end) => range(start.charCodeAt(0), end.charCodeAt(0)).
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

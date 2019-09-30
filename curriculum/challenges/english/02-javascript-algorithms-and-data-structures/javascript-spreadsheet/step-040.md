@@ -7,11 +7,14 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 `range` should set `arr` to `[start]` and should then return `arr`.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -24,6 +27,7 @@ tests:
     testString: assert(code.replace(/\s/g, "").includes("constarr=[start]") && JSON.stringify(range(1)) === "[1]");
 
 ```
+
 
 </section>
 
@@ -126,9 +130,11 @@ const range = (start, end) => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

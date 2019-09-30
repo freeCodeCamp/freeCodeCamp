@@ -7,6 +7,7 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 `replace` is a higher order function because it can take a function as argument (higher order functions can also return functions).
 Pass the `+` function from `infixToFunction` to the `replace` method as the second argument.
 This is how you would pass the `-` function:
@@ -15,10 +16,12 @@ This is how you would pass the `-` function:
 str.replace(regex, infixToFunction["-"])
 ```
 
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -31,6 +34,7 @@ tests:
     testString: assert(infixEval("ab", /(a)b/) === "aba");
 
 ```
+
 
 </section>
 
@@ -101,9 +105,11 @@ const infixEval = (str, regex) => str.replace(regex, "");
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

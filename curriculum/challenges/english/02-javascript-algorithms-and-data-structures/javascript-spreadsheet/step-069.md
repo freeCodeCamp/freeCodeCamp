@@ -7,13 +7,16 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Remove the `fn` declaration and return statement.
 Set `varRangeExpanded` to the result of using the `replace` method on `x`, with `rangeRegex` as the first argument and `""` as the second argument.
 Then, return it.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -26,6 +29,7 @@ tests:
     testString: assert(!(code.includes("const fn")) && code.includes("varRangeExpanded") && evalFormula("A1:J133") === "3");
 
 ```
+
 
 </section>
 
@@ -141,9 +145,11 @@ const evalFormula = x => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

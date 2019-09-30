@@ -7,11 +7,14 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Now add `median` to `spreadsheetFunctions`, just like you added `sum` and `average`.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -24,6 +27,7 @@ tests:
     testString: assert(spreadsheetFunctions.median([1, 20, 3]) === 3 && spreadsheetFunctions.median([27, 7, 20, 10]) === 15);
 
 ```
+
 
 </section>
 
@@ -206,9 +210,11 @@ const update = event => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

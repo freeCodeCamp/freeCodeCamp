@@ -7,11 +7,14 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 When calling `evalFormula` in `update`, pass in `Array.from(document.getElementById("container").children)` as the `cells` argument.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -24,6 +27,7 @@ tests:
     testString: assert(code.replace(/\s/g, "").includes('evalFormula(value.slice(1),Array.from(document.getElementById("container").children))'));
 
 ```
+
 
 </section>
 
@@ -180,9 +184,11 @@ const update = event => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

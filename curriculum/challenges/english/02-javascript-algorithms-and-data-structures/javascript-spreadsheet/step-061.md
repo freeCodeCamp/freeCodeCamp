@@ -7,13 +7,16 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 You might think that this wouldn't work because `fn` wouldn't have access to `n` after `elemValue` has finished executing.
 However, this works because of closures - functions have access to all variables declared at their time of creation.
 Inside `elemValue`, remove the variable `fn` and its definition, and replace `return fn` with `return c => document.getElementById(c + n).value`.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -26,6 +29,7 @@ tests:
     testString: assert(code.replace(/\s/g, "").includes("constelemValue=n=>{returnc=>document.getElementById(c+n).value"));
 
 ```
+
 
 </section>
 
@@ -143,9 +147,11 @@ const evalFormula = x => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

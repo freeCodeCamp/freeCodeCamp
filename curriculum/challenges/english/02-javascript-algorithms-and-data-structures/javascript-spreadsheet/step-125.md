@@ -7,13 +7,16 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 The `length` property returns the length of an array.
 Use this property with the `sum` function to define an `average` function.
 As with `sum`, add this function to both the global scope and to `spreadsheetFunctions`.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -26,6 +29,7 @@ tests:
     testString: assert(average([1, 5, 12]) === 6 && spreadsheetFunctions.average([1, 20, 3, 8]) === 8);
 
 ```
+
 
 </section>
 
@@ -196,9 +200,11 @@ const update = event => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

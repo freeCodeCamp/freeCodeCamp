@@ -7,13 +7,16 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Note that `applyFunction` can access `toNumberList` from outside of itself.
 This is called lexical scoping - inner functions can access variables from outer functions.
 Now return `str2.replace(regex, "")` at the end of `applyFn`.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -26,6 +29,7 @@ tests:
     testString: assert(applyFn("2*2fn(1, 2, 3.3)") === "4");
 
 ```
+
 
 </section>
 
@@ -119,9 +123,11 @@ const applyFn = str => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

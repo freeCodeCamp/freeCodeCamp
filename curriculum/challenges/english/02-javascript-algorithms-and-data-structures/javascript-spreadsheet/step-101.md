@@ -7,11 +7,14 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Now try calling `highPrecedence` and pass it the string `"2*2"` without assigning it to a variable in `update`.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -24,6 +27,7 @@ tests:
     testString: assert(/update=\(?event\)?=>\{.*highPrecedence\((['"])2*2\1\).*\}/.test(code.replace(/\s/g, "")));
 
 ```
+
 
 </section>
 
@@ -181,9 +185,11 @@ const update = event => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

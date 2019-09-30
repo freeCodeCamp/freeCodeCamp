@@ -7,6 +7,7 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Anonymous functions are functions without names - they are used only once and then forgotten.
 The syntax is the same as for normal functions but without the name:
 
@@ -17,10 +18,12 @@ function(x) {
 ```
 
 Make the function `add` anonymous and remove the `addVar` definition (as `add` isn't defined anymore).
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -33,6 +36,7 @@ tests:
     testString: assert(code.replace(/\s/g, "").includes("function(x,y){returnx+y"));
 
 ```
+
 
 </section>
 
@@ -102,9 +106,11 @@ const addVar = add;
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

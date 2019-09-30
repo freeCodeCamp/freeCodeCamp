@@ -7,11 +7,14 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Replace the second argument of `str.replace` with an anonymous function, which takes `match`, `arg1`, `fn`, and `arg2`, and returns `infixToFunction["+"]`.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -24,6 +27,7 @@ tests:
     testString: assert(code.replace(/\s/g, "").includes('str.replace(regex,(match,arg1,fn,arg2)=>infixToFunction["+"])'));
 
 ```
+
 
 </section>
 
@@ -94,9 +98,11 @@ const infixEval = (str, regex) => str.replace(regex, infixToFunction["+"]);
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

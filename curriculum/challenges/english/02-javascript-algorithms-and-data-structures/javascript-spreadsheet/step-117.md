@@ -7,6 +7,7 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 The `%` operator returns the remainder:
 
 ```js
@@ -16,10 +17,12 @@ The `%` operator returns the remainder:
 ```
 
 Add an `isEven` function (to the global scope) which returns whether the number passed to it is even.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -32,6 +35,7 @@ tests:
     testString: assert(isEven(20) && !isEven(31));
 
 ```
+
 
 </section>
 
@@ -195,9 +199,11 @@ const update = event => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

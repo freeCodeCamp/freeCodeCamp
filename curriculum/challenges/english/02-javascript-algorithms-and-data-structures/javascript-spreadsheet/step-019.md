@@ -7,6 +7,7 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Arrow functions can have multiple statements:
 
 ```js
@@ -17,10 +18,12 @@ const fn = (x, y) => {
 ```
 
 Use this syntax for the `highPrecedence` function.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -33,6 +36,7 @@ tests:
     testString: assert(code.replace(/\s/g, "").includes("highPrecedence=str=>{returnstr"));
 
 ```
+
 
 </section>
 
@@ -107,9 +111,11 @@ const highPrecedence = str => str;
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

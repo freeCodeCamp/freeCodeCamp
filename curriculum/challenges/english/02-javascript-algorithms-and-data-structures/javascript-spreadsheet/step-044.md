@@ -7,11 +7,14 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Replace the call to `arr` in `arr.concat([end])` with `[start]` and remove the `arr` variable and its definition.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -24,6 +27,7 @@ tests:
     testString: assert(!(code.includes("arr")) && code.replace(/\s/g, "").includes("[start].concat([end])"));
 
 ```
+
 
 </section>
 
@@ -127,9 +131,11 @@ const range = (start, end) => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

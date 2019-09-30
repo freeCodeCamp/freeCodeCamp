@@ -7,11 +7,14 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Add the key `+` to `infixToFunction` and assign it the value `addVar`.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -24,6 +27,7 @@ tests:
     testString: assert(infixToFunction["+"].toString() === addVar.toString());
 
 ```
+
 
 </section>
 
@@ -89,9 +93,11 @@ const addVar = (x, y) => x + y;
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

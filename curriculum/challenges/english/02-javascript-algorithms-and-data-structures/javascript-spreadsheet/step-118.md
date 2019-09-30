@@ -7,6 +7,7 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 The `filter` method keeps only the elements of an array that satisfy the function passed to it:
 
 ```js
@@ -14,10 +15,12 @@ The `filter` method keeps only the elements of an array that satisfy the functio
 ```
 
 Use `filter` to add a function called `even` to `spreadsheetFunctions`, which returns all the even elements of an array, `nums`.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -30,6 +33,7 @@ tests:
     testString: assert(JSON.stringify(even([2,3,5,6,9,4])) === "[2,6,4]" && code.includes("filter"));
 
 ```
+
 
 </section>
 
@@ -195,9 +199,11 @@ const update = event => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

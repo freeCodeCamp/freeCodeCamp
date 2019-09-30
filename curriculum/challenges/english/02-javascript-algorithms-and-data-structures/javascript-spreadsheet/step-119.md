@@ -7,6 +7,7 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 The `reduce` method takes a function which an accumulator and the current value.
 The accumulator is initially set to the value at index 0.
 The `reduce` method then goes through each element of the array after that, passing in the element as the current value and the result of the last call as the accumulator.
@@ -17,10 +18,12 @@ For example, here'how to multiply all the value in an array:
 ```
 
 Using `reduce`, add a function `sum` to `spreadsheetFunctions`, which sums all values in the array passed to it.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -33,6 +36,7 @@ tests:
     testString: assert(spreadsheetFunctions.sum([10,5,1,3]) === 19 && code.includes("reduce"));
 
 ```
+
 
 </section>
 
@@ -199,9 +203,11 @@ const update = event => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

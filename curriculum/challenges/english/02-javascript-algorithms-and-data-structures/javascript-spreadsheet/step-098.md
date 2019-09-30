@@ -7,12 +7,15 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Change the `random` function so that it returns `Math.floor(Math.random() * y + x)`.
 It now returns a random number within a range.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -25,6 +28,7 @@ tests:
     testString: assert(/["']?random["']?:\(\[x,y\]\)=>Math\.floor\(Math\.random\(\)\*y\+x\)/.test(code.replace(/\s/g, "")) && spreadsheetFunctions["random"]([1, 1]) === 1);
 
 ```
+
 
 </section>
 
@@ -182,9 +186,11 @@ const update = event => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

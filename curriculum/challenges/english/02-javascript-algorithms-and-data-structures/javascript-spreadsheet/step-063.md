@@ -7,12 +7,15 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 You also don't need the parentheses in `elemValue` - it's parsed this way automatically.
 Remove them.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -25,6 +28,7 @@ tests:
     testString: assert(/constelemValue=n=>c=>document\.getElementById\(c+n\)\.value/.test(code.replace(/\s/g, "")));
 
 ```
+
 
 </section>
 
@@ -139,9 +143,11 @@ const evalFormula = x => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

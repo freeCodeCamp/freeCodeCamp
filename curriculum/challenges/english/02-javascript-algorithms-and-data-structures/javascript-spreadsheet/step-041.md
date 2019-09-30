@@ -7,11 +7,14 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 After declaring `arr`, but before returning it, `range` should use the `push` method to add `end` onto `arr`.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -24,6 +27,7 @@ tests:
     testString: assert(JSON.stringify(range(1, 2)) === "[1,2]" && code.includes("push"));
 
 ```
+
 
 </section>
 
@@ -127,9 +131,11 @@ const range = (start, end) => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

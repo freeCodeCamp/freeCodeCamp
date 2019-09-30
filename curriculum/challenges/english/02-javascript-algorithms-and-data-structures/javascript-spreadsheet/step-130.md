@@ -7,13 +7,16 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Unfortunately, `sort` not only returns a new array, but also modifies the existing one.
 So our function also modifies the array passed to it - it is impure.
 You can fix this by adding `.slice()` between `nums` and `sort` - this creates a new array, that is equivalent to `nums`, but is immediately discarded, so it doesn't matter if it changes.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -26,6 +29,7 @@ tests:
     testString: assert(/constmedian=nums=>\{constsorted=nums\.slice\(\)\.sort\(\((.+),(.+)\)=>\1-\2\)/.test(code.replace(/\s/g, "")));
 
 ```
+
 
 </section>
 
@@ -203,9 +207,11 @@ const update = event => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

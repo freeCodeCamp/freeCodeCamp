@@ -7,11 +7,14 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Now, remove the curly braces and return statement.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -24,6 +27,7 @@ tests:
     testString: assert(/constelemValue=n=>\(?c=>document\.getElementById\(c+n\)\.value/.test(code.replace(/\s/g, "")));
 
 ```
+
 
 </section>
 
@@ -140,9 +144,11 @@ const evalFormula = x => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

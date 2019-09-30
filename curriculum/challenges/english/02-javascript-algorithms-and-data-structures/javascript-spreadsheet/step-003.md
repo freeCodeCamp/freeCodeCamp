@@ -7,11 +7,14 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Now return the sum of `x` and `y` using the `return` keyword.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -24,6 +27,7 @@ tests:
     testString: assert(add(1, 2) === 3 && add(100, 2000) === 2100);
 
 ```
+
 
 </section>
 
@@ -91,9 +95,11 @@ function add(x, y) {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

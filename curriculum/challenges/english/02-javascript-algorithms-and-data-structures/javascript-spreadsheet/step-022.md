@@ -7,6 +7,7 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 The ternary operator has the following syntax:
 
 ```js
@@ -16,10 +17,12 @@ const result = 9 > 10 ? "Yes" : "No"; // "No"
 ```
 
 Use this operator to return `str` if `str === str2`, and an empty string (`""`) otherwise.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -32,6 +35,7 @@ tests:
     testString: assert(highPrecedence("2*2") === "" && highPrecedence("2+2") === "2+2" && code.includes("?"));
 
 ```
+
 
 </section>
 
@@ -111,9 +115,11 @@ const highPrecedence = str => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

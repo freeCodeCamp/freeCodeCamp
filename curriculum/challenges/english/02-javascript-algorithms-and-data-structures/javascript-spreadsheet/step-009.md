@@ -7,11 +7,14 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 In `infixToFunction`, replace `addVar` with `(x, y) => x + y`.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -24,6 +27,7 @@ tests:
     testString: assert(/\+["']:\(x,y\)=>x\+y/.test(code));
 
 ```
+
 
 </section>
 
@@ -91,9 +95,11 @@ const addVar = (x, y) => x + y;
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

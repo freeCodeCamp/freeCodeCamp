@@ -7,13 +7,16 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Congragulations!
 You've finished this spreadsheet. Try inputing something like `=sum(range(1, 10))` into the spreadsheetFunctions.
 The function names are not case sensitive.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -26,6 +29,7 @@ tests:
     testString: assert(true);
 
 ```
+
 
 </section>
 
@@ -210,9 +214,11 @@ const update = event => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

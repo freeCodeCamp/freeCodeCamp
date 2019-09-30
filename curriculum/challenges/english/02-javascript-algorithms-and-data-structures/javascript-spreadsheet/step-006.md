@@ -7,6 +7,7 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 You can also assign anonymous functions to variables:
 
 ```js
@@ -16,10 +17,12 @@ const fn = function(x) {
 ```
 
 Assign the anonymous function to the variable `addVar`. 
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -32,6 +35,7 @@ tests:
     testString: assert(code.replace(/\s/g, "").includes("constaddVar=function(x,y){returnx+y"));
 
 ```
+
 
 </section>
 
@@ -99,9 +103,11 @@ function(x, y) {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

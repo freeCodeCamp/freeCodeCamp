@@ -7,12 +7,15 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Use the ternary operator to return `average([sorted[middle], sorted[middle + 1]])` if `length` is even, and `sorted[middle + 0.5]` otherwise.
 Note that the `middle` variable is close to the middle but is not actually the middle.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -25,6 +28,7 @@ tests:
     testString: assert(median([1, 20, 3]) === 3 && median([27, 7, 20, 10]) === 15);
 
 ```
+
 
 </section>
 
@@ -205,9 +209,11 @@ const update = event => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

@@ -7,11 +7,14 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 As `n1` and `n2` are actually strings, replace `n1` and `n2` with `parseInt(n1)` and `parseInt(n2)`.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -24,6 +27,7 @@ tests:
     testString: assert(/evalFormula.*constrangeFromString=\(n1,n2\)=>range\(parseInt\(n1\),parseInt\(n2\)\)/.test(code.replace(/\s/g, "")));  
 
 ```
+
 
 </section>
 
@@ -135,9 +139,11 @@ const evalFormula = x => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

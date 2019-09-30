@@ -7,12 +7,15 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Obviously, this was ignored, as all `highPrecedence` does is return a value and this value is ignored.
 Now compare `highPrecedence("2*2")` with `highPrecedence("2*2")`, and `console.log` the result.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -25,6 +28,7 @@ tests:
     testString: assert(/update=\(?event\)?=>\{.*console\.log\((highPrecedence\(['"]2*2['"]\))===\1\).*\}/.test(code.replace(/\s/g, "")));
 
 ```
+
 
 </section>
 
@@ -182,9 +186,11 @@ const update = event => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

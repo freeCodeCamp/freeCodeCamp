@@ -7,12 +7,15 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Define a function `charRange` which takes `start` and `end` as arguments.
 It should return `start`.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -25,6 +28,7 @@ tests:
     testString: assert(code.replace(/\s/g).includes("constcharRange=(start,end)=>start"));
 
 ```
+
 
 </section>
 
@@ -126,9 +130,11 @@ const range = (start, end) =>
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

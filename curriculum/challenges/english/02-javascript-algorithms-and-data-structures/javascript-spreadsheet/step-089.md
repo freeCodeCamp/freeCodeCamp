@@ -7,6 +7,7 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Add the following code to `letters.forEach`:
 
 ```js
@@ -16,10 +17,12 @@ input.onchange = update;
 container.appendChild(input);
 ```
 
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -32,6 +35,7 @@ tests:
     testString: assert(/window\.onload[\s\S]*range\(1,99\)\.forEach\(\(?x\)?=>\{createLabel\(x\);?letters\.forEach\(\(?x\)?=>\{constinput=document\.createElement\(["']input["']\);?input\.type=["']text["'];?input\.id=y+x;?input\.onchange=update;?container\.appendChild\(input\);?\}\);?\}\);?\}/.test(code.replace(/\s/g, "")));
 
 ```
+
 
 </section>
 
@@ -175,9 +179,11 @@ window.onload = () => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

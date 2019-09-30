@@ -7,12 +7,15 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 To make this function pure, instead of depending on application state implicitly, we can pass it down explicitly as an argument.
 Add an argument `cells` to `evalFormula`.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -25,6 +28,7 @@ tests:
     testString: assert(code.replace(/\s/g, "").includes("evalFormula=(x,cells)=>{"));
 
 ```
+
 
 </section>
 
@@ -181,9 +185,11 @@ const update = event => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

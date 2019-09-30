@@ -7,12 +7,15 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Set `functionExpanded` to `applyFn(varExpanded)` in `evalFormula`.
 Return `functionExpanded`.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -24,6 +27,7 @@ tests:
   - text: See description above for instructions.
     testString: assert(code.includes("functionExpanded") && applyFn("2+2") === "4");
 ```
+
 
 </section>
 
@@ -146,9 +150,11 @@ const evalFormula = x => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

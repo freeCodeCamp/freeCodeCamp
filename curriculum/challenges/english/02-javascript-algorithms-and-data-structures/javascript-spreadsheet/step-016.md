@@ -7,12 +7,15 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 `arg1` and `arg2` are the numbers inputed by the user in a string such as "1+3".
 Pass `parseFloat(arg1)` and `parseFloat(arg2)` as the arguments to `infixToFunction[fn]` (remember `infixToFunction[fn]` is a function).
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -25,6 +28,7 @@ tests:
     testString: const regex = /([0-9.]+)([+-\/*])([0-9.]+)/; assert(infixEval("23+35", regex) === "58" && infixEval("100-20", regex) === "80" && infixEval("10*10", regex) === "100" && infixEval("120/6", regex) === "20");
 
 ```
+
 
 </section>
 
@@ -98,9 +102,11 @@ const infixEval = (str, regex) =>
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

@@ -7,12 +7,15 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 In the global scope, define a function called `update` which takes `event` as argument.
 It should define a variable, `element`, setting it to `event.target`.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -25,6 +28,7 @@ tests:
     testString: assert(/constupdate=\(?event\)?=>\{?constelement=event\.target;?\}?/.test(code.replace(/\s/g, "")));
 
 ```
+
 
 </section>
 
@@ -172,9 +176,11 @@ window.onload = () => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

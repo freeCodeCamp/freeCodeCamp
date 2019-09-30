@@ -7,6 +7,7 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 When defining an arrow function with a single argument, the parentheses can be omitted:
 
 ```js
@@ -14,10 +15,12 @@ const greeting = name => `Hello !`;
 ```
 
 Define a function `highPrecedence` which takes a single argument `str` and returns it.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -30,6 +33,7 @@ tests:
     testString: assert(highPrecedence("a") === "a");
 
 ```
+
 
 </section>
 
@@ -103,9 +107,11 @@ const infixEval = (str, regex) =>
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

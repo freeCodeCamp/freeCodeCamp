@@ -7,11 +7,14 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Replace `[end]` with a recursive call to `range`: `[start].concat(range(start + 1, end))`
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -24,6 +27,7 @@ tests:
     testString: assert(JSON.stringify(range(1, 5)) === "[1,2,3,4,5]");
 
 ```
+
 
 </section>
 
@@ -126,9 +130,11 @@ const range = (start, end) => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

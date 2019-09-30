@@ -7,13 +7,16 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 The `hasOwnProperty` method checks if a key exists in an object.
 So `spreadsheetFunctions.hasOwnProperty("")` would return `true`, but replacing `""` with anything else would make it return `false`.
 Chain `hasOwnProperty` to `spreadsheetFunctions` to check if the `fn.toLowerCase()` key exists in `spreadsheetFunctions`.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -26,6 +29,7 @@ tests:
     testString: assert(code.replace(/\s/g, "").includes("returnstr2.replace(regex,(match,fn,args)=>spreadsheetFunctions.hasOwnProperty(fn.toLowerCase()))"));
 
 ```
+
 
 </section>
 
@@ -120,9 +124,11 @@ const applyFn = str => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

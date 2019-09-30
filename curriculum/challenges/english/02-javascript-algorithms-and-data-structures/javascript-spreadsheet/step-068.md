@@ -7,13 +7,16 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 However, you don't need an arrow function.
 As `elemValue(n)` is a function, you can pass it to `map` directly.
 Change `x => elemValue(n)(x)` to `elemValue(n)`.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -26,6 +29,7 @@ tests:
     testString: assert(code.replace(/\s/g, "").includes("constaddChars=c1=>c2=>n=>charRange(c1,c2).map(elemValue(n))"));
 
 ```
+
 
 </section>
 
@@ -141,9 +145,11 @@ const evalFormula = x => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

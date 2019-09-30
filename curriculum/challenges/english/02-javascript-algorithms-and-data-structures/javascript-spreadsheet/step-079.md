@@ -7,12 +7,15 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 In `window.onload`, asssign `document.getElementById("container")` to `container`.
 Also assign `charRange("A", "J")` to `letters`.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -25,6 +28,7 @@ test:
     testString: assert(/window\.onload=\(\)=>\{constcontainer=document\.getElementById\(["']container["']\);?constletters=charRange(["']A["'], ["']J["']);?\}/.test(code.replace(/\s/g, "")));
 
 ```
+
 
 </section>
 
@@ -152,9 +156,11 @@ window.onload = () => { };
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

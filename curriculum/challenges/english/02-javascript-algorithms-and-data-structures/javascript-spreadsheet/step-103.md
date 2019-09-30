@@ -7,13 +7,16 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 This is true, so `highPrecedence` might be a pure function.
 If you inspect it, you can see that it indeed performs no I/O and doesn't use functions like `Math.random()` - so it's pure.
 Remove the `console.log` statement.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -26,6 +29,7 @@ tests:
     testString: assert(!/update=\(?event\)?=>\{.*console\.log\((highPrecedence\(['"]2*2['"]\))===\1\).*\}/.test(code.replace(/\s/g, "")));
 
 ```
+
 
 </section>
 
@@ -183,9 +187,11 @@ const update = event => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

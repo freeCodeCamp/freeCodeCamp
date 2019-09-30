@@ -7,6 +7,7 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 You can also pass in a negative argument to `slice` to specify that index from the end:
 
 ```js
@@ -14,10 +15,12 @@ You can also pass in a negative argument to `slice` to specify that index from t
 ```
 
 Use a negative index to add a function `lasttwo` which returns the last two elements of an array.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -30,6 +33,7 @@ tests:
     testString: assert(JSON.stringify(spreadsheetFunctions.lasttwo([2, 6, 1, 4, 3])) === "[4,3]");
 
 ```
+
 
 </section>
 
@@ -192,9 +196,11 @@ const update = event => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

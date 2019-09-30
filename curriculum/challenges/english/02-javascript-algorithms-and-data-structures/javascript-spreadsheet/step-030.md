@@ -7,6 +7,7 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 The `split` method returns an array of strings from a larger string by using its argument to determine where to make each split:
 
 ```js
@@ -15,10 +16,12 @@ The `split` method returns an array of strings from a larger string by using its
 
 Add a function `toNumberList` (inside `applyFn`) which takes an argument `args` and splits it by commas.
 Return `toNumberList`.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -31,6 +34,7 @@ tests:
     testString: assert(applyFn("")("0,1,2").every((x, i) => x == i));
 
 ```
+
 
 </section>
 
@@ -121,9 +125,11 @@ const applyFn = str => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

@@ -7,6 +7,7 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 The `concat` method can also accept arrays:
 
 ```js
@@ -15,10 +16,12 @@ The `concat` method can also accept arrays:
 ```
 
 Use this form of `concat` by passing an array with just `end` to it: `arr.concat([end])`.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -31,6 +34,7 @@ tests:
     testString: assert(code.replace(/\s/g, "").includes("returnarr.concat([end])"));
 
 ```
+
 
 </section>
 
@@ -134,9 +138,11 @@ const range = (start, end) => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

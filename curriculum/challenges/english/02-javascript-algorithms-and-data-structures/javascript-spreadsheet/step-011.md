@@ -7,11 +7,14 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Add similar definitions for `-`, `*` and `/` in `infixToFunction`.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -24,6 +27,7 @@ tests:
     testString: assert(infixToFunction["-"](10, 2) === 8 && infixToFunction["*"](10, 10) === 100 && infixToFunction["/"](100, 10) === 10);
 
 ```
+
 
 </section>
 
@@ -89,9 +93,11 @@ const infixToFunction = {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>

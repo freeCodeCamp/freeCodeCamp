@@ -7,11 +7,14 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 In `highPrecedence`, define `regex` to be `/([0-9.]+)([*/])([0-9.]+)/`.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 
 </section>
 
@@ -24,6 +27,7 @@ tests:
     testString: assert(code.replace(/\s/g, "").includes("regex=/([0-9.]+)([*/])([0-9.]+)/"));
 
 ```
+
 
 </section>
 
@@ -101,9 +105,11 @@ const highPrecedence = str => {
 </div>
 
 
+
 </section>
 
 ## Solution
 <section id='solution'>
+
 
 </section>
