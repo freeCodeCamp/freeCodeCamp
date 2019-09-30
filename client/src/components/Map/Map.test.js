@@ -26,6 +26,7 @@ test('<Map /> snapshot', () => {
     <Map
       introNodes={mockIntroNodes}
       nodes={mockChallengeNodes}
+      resetExpansion={() => {}}
       toggleBlock={() => {}}
       toggleSuperBlock={() => {}}
     />
@@ -52,6 +53,7 @@ describe('<Map/>', () => {
       const superSpy = jest.fn();
       const props = {
         ...baseProps,
+        hash: '',
         toggleBlock: blockSpy,
         toggleSuperBlock: superSpy,
         currentChallengeId: currentChallengeId
@@ -71,7 +73,10 @@ describe('<Map/>', () => {
       shallow(mapToRender);
 
       expect(initializeSpy).toHaveBeenCalledTimes(1);
-      expect(initializeSpy).toHaveBeenCalledWith(currentChallengeId);
+      expect(initializeSpy).toHaveBeenCalledWith(
+        currentChallengeId,
+        props.hash
+      );
     });
 
     it('should default to the first challenge otherwise', () => {

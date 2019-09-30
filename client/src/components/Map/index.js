@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import uniq from 'lodash/uniq';
 import { createSelector } from 'reselect';
+import { scroller } from 'react-scroll';
 
 import SuperBlock from './components/SuperBlock';
 import Spacer from '../helpers/Spacer';
@@ -13,9 +14,11 @@ import './map.css';
 import { ChallengeNode } from '../../redux/propTypes';
 import { toggleSuperBlock, toggleBlock, resetExpansion } from './redux';
 import { currentChallengeIdSelector } from '../../redux';
+import { dasherize } from '../../../../utils/slugs';
 
 const propTypes = {
   currentChallengeId: PropTypes.string,
+  hash: PropTypes.string,
   introNodes: PropTypes.arrayOf(
     PropTypes.shape({
       fields: PropTypes.shape({ slug: PropTypes.string.isRequired }),
@@ -52,17 +55,41 @@ function mapDispatchToProps(dispatch) {
 }
 
 export class Map extends Component {
+  componentWillMount() {
+    this.initializeExpandedState(
+      this.props.currentChallengeId,
+      this.props.hash
+    );
+  }
   componentDidMount() {
-    this.initializeExpandedState(this.props.currentChallengeId);
+    if (this.props.hash) {
+      window.scrollTo(0, 0);
+      scroller.scrollTo(this.props.hash, {
+        duration: 1500,
+        smooth: 'easeInOutQuint',
+        offset: -25
+      });
+    }
   }
 
-  initializeExpandedState(currentChallengeId) {
+  initializeExpandedState(currentChallengeId, hash) {
     this.props.resetExpansion();
-    const { superBlock, block } = currentChallengeId
-      ? this.props.nodes.find(node => node.id === currentChallengeId)
-      : this.props.nodes[0];
-    this.props.toggleBlock(block);
-    this.props.toggleSuperBlock(superBlock);
+    let node;
+
+    // find the challenge that has the same superblock with hash
+    if (this.props.hash) {
+      node = this.props.nodes.find(node => dasherize(node.superBlock) === hash);
+    }
+
+    // if there is no hash or the hash did not match any challenge superblock
+    if (!node) {
+      node = currentChallengeId
+        ? this.props.nodes.find(node => node.id === currentChallengeId)
+        : this.props.nodes[0];
+    }
+
+    this.props.toggleBlock(node.block);
+    this.props.toggleSuperBlock(node.superBlock);
   }
 
   renderSuperBlocks(superBlocks) {

@@ -60,6 +60,7 @@
     "react-redux": "^5.0.7",
     "react-reflex": "^3.0.16",
     "react-responsive": "^6.1.1",
+    "react-scroll": "^1.7.14",
     "react-spinkit": "^3.0.0",
     "react-stripe-elements": "^2.0.3",
     "react-tooltip": "^3.10.0",
