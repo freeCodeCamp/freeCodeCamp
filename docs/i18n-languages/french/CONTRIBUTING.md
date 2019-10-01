@@ -68,7 +68,7 @@ Si vous êtes intéressé à améliorer ces défis de codage, voici [comment tra
 Vous pouvez nous aider à traduire les articles de notre Guide et les défis du codage dans la langue que vous parlez. Nous avons actuellement des versions traduites en :
 
 - [Chinois (中文)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/chinese)
-- [Russe (русский)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/russian)
+- [Russe (Русский)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/russian)
 - [Arabe (عربى)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/arabic)
 - [Espagnol (Español)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/spanish)
 - Portugais (Português)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/portuguese)
