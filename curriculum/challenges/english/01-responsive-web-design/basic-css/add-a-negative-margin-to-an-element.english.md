@@ -8,7 +8,7 @@ forumTopicId: 16166
 
 ## Description
 <section id='description'>
-An element's <code>margin</code> controls the amount of space between an element's <code>border</code> and surrounding elements.
+Negative margins have such a good place in web design because of ability to position elements without additional markup. An element's <code>margin</code> controls the amount of space between an element's <code>border</code> and surrounding elements.
 If you set an element's <code>margin</code> to a negative value, the element will grow larger.
 </section>
 
