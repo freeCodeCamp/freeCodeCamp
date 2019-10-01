@@ -55,6 +55,11 @@ function mapDispatchToProps(dispatch) {
 }
 
 export class Map extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { idToScrollto: null };
+  }
+
   componentWillMount() {
     this.initializeExpandedState(
       this.props.currentChallengeId,
@@ -62,12 +67,12 @@ export class Map extends Component {
     );
   }
   componentDidMount() {
-    if (this.props.hash) {
+    if (this.state.idToScrollto) {
       window.scrollTo(0, 0);
-      scroller.scrollTo(this.props.hash, {
+      scroller.scrollTo(this.state.idToScrollto, {
         duration: 1500,
         smooth: 'easeInOutQuint',
-        offset: -25
+        offset: -35
       });
     }
   }
@@ -79,14 +84,17 @@ export class Map extends Component {
     // find the challenge that has the same superblock with hash
     if (this.props.hash) {
       node = this.props.nodes.find(node => dasherize(node.superBlock) === hash);
+      if (node) this.setState({ idToScrollto: dasherize(node.superBlock) });
     }
 
     // if there is no hash or the hash did not match any challenge superblock
-    if (!node) {
-      node = currentChallengeId
-        ? this.props.nodes.find(node => node.id === currentChallengeId)
-        : this.props.nodes[0];
+    // and there was a currentChallengeId
+    if (!node && currentChallengeId) {
+      node = this.props.nodes.find(node => node.id === currentChallengeId);
+      if (node) this.setState({ idToScrollto: dasherize(node.title) });
     }
+
+    if (!node) node = this.props.nodes[0];
 
     this.props.toggleBlock(node.block);
     this.props.toggleSuperBlock(node.superBlock);
