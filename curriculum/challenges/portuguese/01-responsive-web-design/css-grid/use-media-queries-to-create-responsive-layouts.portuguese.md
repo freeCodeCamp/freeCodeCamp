@@ -10,7 +10,7 @@ localeTitle: Use consultas de mídia para criar layouts responsivos
 <section id="description"> A CSS Grid pode ser uma maneira fácil de tornar seu site mais responsivo usando consultas de mídia para reorganizar as áreas da grade, alterar as dimensões de uma grade e reorganizar o posicionamento dos itens. Na visualização, quando a largura da janela de visualização é de 300 px ou mais, o número de colunas muda de 1 para 2. A área de publicidade ocupa a coluna da esquerda completamente. </section>
 
 ## Instructions
-<section id="instructions"> Quando a largura da janela de visualização for de <code>400px</code> ou mais, faça a área de cabeçalho ocupar completamente a linha superior e a área de rodapé ocupará completamente a linha inferior. </section>
+<section id="instructions"> Quando a largura da janela de visualização for de <code>400px</code> ou mais, faça a área de cabeçalho ocupar completamente a linha superior e a área de rodapé ocupar completamente a linha inferior. </section>
 
 ## Tests
 <section id='tests'>
