@@ -5,7 +5,7 @@
 
 # Catch outgoing emails locally for email workflows
 
-> **Note:** This is an **optional** step and is required only when working with email workflows
+> **Note:** This is an **optional** step and is required only when working with email workflows.
 
 ## Introduction
 
