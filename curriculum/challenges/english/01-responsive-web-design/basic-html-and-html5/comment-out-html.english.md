@@ -9,7 +9,7 @@ forumTopicId: 16782
 ## Description
 <section id='description'>
 Remember that in order to start a comment, you need to use <code>&#60;!--</code> and to end a comment, you need to use <code>--&#62;</code>
-Here you'll need to end the comment before your <code>h2</code> element begins.
+Here you'll need to end the comment before your <code>h2</code> element begins. Don't hesitate to put a lot of comments in your code, it will help you to remind what you did and make other people able to read your code.
 </section>
 
 ## Instructions
