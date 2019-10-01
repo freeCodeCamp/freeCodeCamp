@@ -31,7 +31,7 @@ tests:
 <section id='challengeSeed'>
 <div id='html-seed'>
 
-```js
+```html
 <script>
 
 
