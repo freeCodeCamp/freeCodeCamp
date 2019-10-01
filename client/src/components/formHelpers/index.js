@@ -15,6 +15,16 @@ export function callIfDefined(fn) {
   return value => (value ? fn(value) : value);
 }
 
+export function formatUrlValues(values, options) {
+  return Object.keys(values).reduce((result, key) => {
+    let value = values[key];
+    if (value && options.types[key] === 'url') {
+      value = normalizeUrl(value, normalizeOptions);
+    }
+    return { ...result, [key]: value };
+  }, {});
+}
+
 // formatUrl(url: String) => String
 export function formatUrl(url) {
   if (typeof url === 'string' && url.length > 4 && url.indexOf('.') !== -1) {

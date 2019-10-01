@@ -2,6 +2,7 @@
 id: 5900f4c81000cf542c50ffdb
 challengeType: 5
 title: 'Problem 348: Sum of a square and a cube'
+forumTopicId: 302007
 ---
 
 ## Description
@@ -29,7 +30,7 @@ Find the sum of the five smallest such palindromic numbers.
 ```yml
 tests:
   - text: <code>euler348()</code> should return 1004195061.
-    testString: assert.strictEqual(euler348(), 1004195061, '<code>euler348()</code> should return 1004195061.');
+    testString: assert.strictEqual(euler348(), 1004195061);
 
 ```
 
@@ -61,4 +62,5 @@ euler348();
 ```js
 // solution required
 ```
+
 </section>

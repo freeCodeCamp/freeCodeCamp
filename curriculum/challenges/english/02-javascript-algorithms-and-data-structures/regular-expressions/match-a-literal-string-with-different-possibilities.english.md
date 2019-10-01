@@ -2,6 +2,7 @@
 id: 587d7db4367417b2b2512b90
 title: Match a Literal String with Different Possibilities
 challengeType: 1
+forumTopicId: 301345
 ---
 
 ## Description
@@ -23,19 +24,19 @@ Complete the regex <code>petRegex</code> to match the pets <code>"dog"</code>, <
 ```yml
 tests:
   - text: Your regex <code>petRegex</code> should return <code>true</code> for the string <code>"John has a pet dog."</code>
-    testString: assert(petRegex.test('John has a pet dog.'), 'Your regex <code>petRegex</code> should return <code>true</code> for the string <code>"John has a pet dog."</code>');
+    testString: assert(petRegex.test('John has a pet dog.'));
   - text: Your regex <code>petRegex</code> should return <code>false</code> for the string <code>"Emma has a pet rock."</code>
-    testString: assert(!petRegex.test('Emma has a pet rock.'), 'Your regex <code>petRegex</code> should return <code>false</code> for the string <code>"Emma has a pet rock."</code>');
+    testString: assert(!petRegex.test('Emma has a pet rock.'));
   - text: Your regex <code>petRegex</code> should return <code>true</code> for the string <code>"Emma has a pet bird."</code>
-    testString: assert(petRegex.test('Emma has a pet bird.'), 'Your regex <code>petRegex</code> should return <code>true</code> for the string <code>"Emma has a pet bird."</code>');
+    testString: assert(petRegex.test('Emma has a pet bird.'));
   - text: Your regex <code>petRegex</code> should return <code>true</code> for the string <code>"Liz has a pet cat."</code>
-    testString: assert(petRegex.test('Liz has a pet cat.'), 'Your regex <code>petRegex</code> should return <code>true</code> for the string <code>"Liz has a pet cat."</code>');
+    testString: assert(petRegex.test('Liz has a pet cat.'));
   - text: Your regex <code>petRegex</code> should return <code>false</code> for the string <code>"Kara has a pet dolphin."</code>
-    testString: assert(!petRegex.test('Kara has a pet dolphin.'), 'Your regex <code>petRegex</code> should return <code>false</code> for the string <code>"Kara has a pet dolphin."</code>');
+    testString: assert(!petRegex.test('Kara has a pet dolphin.'));
   - text: Your regex <code>petRegex</code> should return <code>true</code> for the string <code>"Alice has a pet fish."</code>
-    testString: assert(petRegex.test('Alice has a pet fish.'), 'Your regex <code>petRegex</code> should return <code>true</code> for the string <code>"Alice has a pet fish."</code>');
+    testString: assert(petRegex.test('Alice has a pet fish.'));
   - text: Your regex <code>petRegex</code> should return <code>false</code> for the string <code>"Jimmy has a pet computer."</code>
-    testString: assert(!petRegex.test('Jimmy has a pet computer.'), 'Your regex <code>petRegex</code> should return <code>false</code> for the string <code>"Jimmy has a pet computer."</code>');
+    testString: assert(!petRegex.test('Jimmy has a pet computer.'));
 
 ```
 
@@ -62,6 +63,9 @@ let result = petRegex.test(petString);
 <section id='solution'>
 
 ```js
-// solution required
+let petString = "James has a pet cat.";
+let petRegex = /dog|cat|bird|fish/; // Change this line
+let result = petRegex.test(petString);
 ```
+
 </section>

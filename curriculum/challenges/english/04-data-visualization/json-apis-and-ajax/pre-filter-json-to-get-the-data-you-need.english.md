@@ -2,6 +2,7 @@
 id: 587d7fae367417b2b2512be7
 title: Pre-filter JSON to Get the Data You Need
 challengeType: 6
+forumTopicId: 18257
 ---
 
 ## Description
@@ -9,7 +10,13 @@ challengeType: 6
 If you don't want to render every cat photo you get from the freeCodeCamp Cat Photo API, you can pre-filter the JSON before looping through it.
 Given that the JSON data is stored in an array, you can use the <code>filter</code> method to filter out the cat whose "id" key has a value of 1.
 Here's the code to do this:
-<blockquote>json = json.filter(function(val) {<br>&nbsp;&nbsp;return (val.id !== 1);<br>});</blockquote>
+
+```js
+json = json.filter(function(val) {
+  return (val.id !== 1);
+});
+```
+
 </section>
 
 ## Instructions
@@ -23,7 +30,7 @@ Add code to <code>filter</code> the json data to remove the cat with the "id" va
 ```yml
 tests:
   - text: Your code should use the <code>filter</code> method.
-    testString: assert(code.match(/json\.filter/g), 'Your code should use the <code>filter</code> method.');
+    testString: assert(code.match(/json\.filter/g));
 
 ```
 
@@ -87,7 +94,7 @@ tests:
   }
 </style>
 <h1>Cat Photo Finder</h1>
-<p class="message box">
+<p class="message">
   The message will go here
 </p>
 <p>
@@ -109,4 +116,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

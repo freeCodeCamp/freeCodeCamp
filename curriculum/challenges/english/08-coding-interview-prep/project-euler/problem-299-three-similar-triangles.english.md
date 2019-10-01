@@ -2,6 +2,7 @@
 id: 5900f4971000cf542c50ffaa
 challengeType: 5
 title: 'Problem 299: Three similar triangles'
+forumTopicId: 301951
 ---
 
 ## Description
@@ -33,7 +34,7 @@ If b+d < 100 000 000, how many distinct triplets (a,b,d) are there such that p
 ```yml
 tests:
   - text: <code>euler299()</code> should return 549936643.
-    testString: assert.strictEqual(euler299(), 549936643, '<code>euler299()</code> should return 549936643.');
+    testString: assert.strictEqual(euler299(), 549936643);
 
 ```
 
@@ -65,4 +66,5 @@ euler299();
 ```js
 // solution required
 ```
+
 </section>

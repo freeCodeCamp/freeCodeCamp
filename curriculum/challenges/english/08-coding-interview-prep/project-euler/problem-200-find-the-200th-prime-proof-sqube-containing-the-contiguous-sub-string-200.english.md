@@ -2,6 +2,7 @@
 id: 5900f4351000cf542c50ff47
 challengeType: 5
 title: 'Problem 200: Find the 200th prime-proof sqube containing the contiguous sub-string "200"'
+forumTopicId: 301840
 ---
 
 ## Description
@@ -27,7 +28,7 @@ Find the 200th prime-proof sqube containing the contiguous sub-string "200".
 ```yml
 tests:
   - text: <code>euler200()</code> should return 229161792008.
-    testString: assert.strictEqual(euler200(), 229161792008, '<code>euler200()</code> should return 229161792008.');
+    testString: assert.strictEqual(euler200(), 229161792008);
 
 ```
 
@@ -59,4 +60,5 @@ euler200();
 ```js
 // solution required
 ```
+
 </section>

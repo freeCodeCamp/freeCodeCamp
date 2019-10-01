@@ -2,14 +2,14 @@
 title: Combinations
 id: 5958469238c0d8d2632f46db
 challengeType: 5
+forumTopicId: 302233
 ---
 
 ## Description
 <section id='description'>
-Task:
-<p>Given non-negative integers  <big> m </big>  and  <big> n</big>,  generate all size  <big> m </big>  <a href="http://mathworld.wolfram.com/Combination.html" title="link: http://mathworld.wolfram.com/Combination.html">combinations</a>  of the integers from  <big> 0</big>  (zero)  to  <big> n-1 </big>  in sorted order  (each combination is sorted and the entire table is sorted).</p>
-Example:
-<p><big>3</big>  comb  <big> 5 </big>is:</p>
+Given non-negative integers <code>m</code> and <code>n</code>, generate all size <code>m</code> combinations of the integers from <code>0</code> (zero) to <code>n-1</code> in sorted order (each combination is sorted and the entire table is sorted).
+<strong>Example:</strong>
+<code>3</code> comb <code>5</code> is:
 <pre>
 0 1 2
 0 1 3
@@ -35,11 +35,11 @@ Example:
 ```yml
 tests:
   - text: <code>combinations</code> is a function.
-    testString: assert(typeof combinations === 'function', '<code>combinations</code> is a function.');
+    testString: assert(typeof combinations === 'function');
   - text: <code>combinations(3, 5)</code> should return <code>[[0, 1, 2], [0, 1, 3], [0, 1, 4], [0, 2, 3], [0, 2, 4], [0, 3, 4], [1, 2, 3], [1, 2, 4], [1, 3, 4], [2, 3, 4]]</code>.
-    testString: assert.deepEqual(combinations(testInput1[0], testInput1[1]), testOutput1, '<code>combinations(3, 5)</code> should return <code>[[0, 1, 2], [0, 1, 3], [0, 1, 4], [0, 2, 3], [0, 2, 4], [0, 3, 4], [1, 2, 3], [1, 2, 4], [1, 3, 4], [2, 3, 4]]</code>.');
+    testString: assert.deepEqual(combinations(testInput1[0], testInput1[1]), testOutput1);
   - text: <code>combinations(4, 6)</code> should return <code>[[0,1,2,3],  [0,1,2,4],  [0,1,2,5],  [0,1,3,4],  [0,1,3,5],  [0,1,4,5],  [0,2,3,4],  [0,2,3,5],  [0,2,4,5],  [0,3,4,5],  [1,2,3,4],  [1,2,3,5],  [1,2,4,5],  [1,3,4,5],  [2,3,4,5]]</code>
-    testString: assert.deepEqual(combinations(testInput2[0], testInput2[1]), testOutput2, '<code>combinations(4, 6)</code> should return <code>[[0,1,2,3],  [0,1,2,4],  [0,1,2,5],  [0,1,3,4],  [0,1,3,5],  [0,1,4,5],  [0,2,3,4],  [0,2,3,5],  [0,2,4,5],  [0,3,4,5],  [1,2,3,4],  [1,2,3,5],  [1,2,4,5],  [1,3,4,5],  [2,3,4,5]]</code>');
+    testString: assert.deepEqual(combinations(testInput2[0], testInput2[1]), testOutput2);
 
 ```
 
@@ -51,7 +51,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function combinations (m, n) {
+function combinations(m, n) {
   // Good luck!
   return true;
 }
@@ -80,7 +80,7 @@ const testOutput2 = [[0, 1, 2, 3], [0, 1, 2, 4], [0, 1, 2, 5], [0, 1, 3, 4], [0,
 
 
 ```js
-function combinations (m, n) {
+function combinations(m, n) {
   const nArr = [...Array(n).keys()];
 
   return (function generateCombinations (size, numArr) {

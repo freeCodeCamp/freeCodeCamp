@@ -2,14 +2,18 @@
 id: 5895f70df9fc0f352b528e68
 title: Authentication Strategies
 challengeType: 2
+forumTopicId: 301547
 ---
 
 ## Description
 <section id='description'>
 As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a>.
-A strategy is a way of authenticating a user. You can use a strategy for allowing users to authenticate based on locally saved information (if you have them register first) or from a variety of providers such as Google or Github. For this project we will set up a local strategy. To see a list of the 100's of strategies, visit Passports site <a href='http://passportjs.org/'>here</a>.
+A strategy is a way of authenticating a user. You can use a strategy for allowing users to authenticate based on locally saved information (if you have them register first) or from a variety of providers such as Google or GitHub. For this project we will set up a local strategy. To see a list of the 100's of strategies, visit Passports site <a href='http://passportjs.org/'>here</a>.
 Add <em>passport-local</em> as a dependency and add it to your server as follows: <code>const LocalStrategy = require('passport-local');</code>
-Now you will have to tell passport to <b>use</b> an instantiated LocalStartegy object with a few settings defined. Make sure this as well as everything from this point on is encapsulated in the database connection since it relies on it! <pre>passport.use(new LocalStrategy(
+Now you will have to tell passport to <b>use</b> an instantiated LocalStartegy object with a few settings defined. Make sure this as well as everything from this point on is encapsulated in the database connection since it relies on it!
+
+```js
+passport.use(new LocalStrategy(
   function(username, password, done) {
     db.collection('users').findOne({ username: username }, function (err, user) {
       console.log('User '+ username +' attempted to log in.');
@@ -19,8 +23,11 @@ Now you will have to tell passport to <b>use</b> an instantiated LocalStartegy o
       return done(null, user);
     });
   }
-));</pre> This is defining the process to take when we try to authenticate someone locally. First it tries to find a user in our database with the username entered, then it checks for the password to match, then finally if no errors have popped up that we checked for, like an incorrect password, the users object is returned and they are authenticated.
-Many strategies are set up using different settings, general it is easy to set it up based on the README in that strategies repository though. A good example of this is the Github strategy where we don't need to worry about a username or password because the user will be sent to Github's auth page to authenticate and as long as they are logged in and agree then Github returns their profile for us to use.
+));
+```
+
+This is defining the process to take when we try to authenticate someone locally. First it tries to find a user in our database with the username entered, then it checks for the password to match, then finally if no errors have popped up that we checked for, like an incorrect password, the users object is returned and they are authenticated.
+Many strategies are set up using different settings, general it is easy to set it up based on the README in that strategies repository though. A good example of this is the GitHub strategy where we don't need to worry about a username or password because the user will be sent to GitHub's auth page to authenticate and as long as they are logged in and agree then GitHub returns their profile for us to use.
 In the next step we will set up how to actually call the authentication strategy to validate a user based on form data! Submit your page when you think you've got it right up to this point.
 </section>
 
@@ -54,4 +61,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

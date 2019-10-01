@@ -2,6 +2,7 @@
 id: 5900f3b61000cf542c50fec8
 challengeType: 5
 title: 'Problem 73: Counting fractions in a range'
+forumTopicId: 302186
 ---
 
 ## Description
@@ -24,7 +25,7 @@ How many fractions lie between 1/3 and 1/2 in the sorted set of reduced proper f
 ```yml
 tests:
   - text: <code>euler73()</code> should return 7295372.
-    testString: assert.strictEqual(euler73(), 7295372, '<code>euler73()</code> should return 7295372.');
+    testString: assert.strictEqual(euler73(), 7295372);
 
 ```
 
@@ -56,4 +57,5 @@ euler73();
 ```js
 // solution required
 ```
+
 </section>

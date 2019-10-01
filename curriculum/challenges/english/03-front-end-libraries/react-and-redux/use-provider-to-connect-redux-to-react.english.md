@@ -3,13 +3,20 @@ id: 5a24c314108439a4d4036144
 title: Use Provider to Connect Redux to React
 challengeType: 6
 isRequired: false
+forumTopicId: 301435
 ---
 
 ## Description
 <section id='description'>
 In the last challenge, you created a Redux store to handle the messages array and created an action for adding new messages. The next step is to provide React access to the Redux store and the actions it needs to dispatch updates. React Redux provides its <code>react-redux</code> package to help accomplish these tasks.
 React Redux provides a small API with two key features: <code>Provider</code> and <code>connect</code>. Another challenge covers <code>connect</code>. The <code>Provider</code> is a wrapper component from React Redux that wraps your React app. This wrapper then allows you to access the Redux <code>store</code> and <code>dispatch</code> functions throughout your component tree. <code>Provider</code> takes two props, the Redux store and the child components of your app. Defining the <code>Provider</code> for an App component might look like this:
-<blockquote>&lt;Provider store={store}&gt;<br>&nbsp;&nbsp;&lt;App/&gt;<br>&lt;/Provider&gt;</blockquote>
+
+```jsx
+<Provider store={store}>
+  <App/>
+</Provider>
+```
+
 </section>
 
 ## Instructions
@@ -24,13 +31,13 @@ The code editor now shows all your Redux and React code from the past several ch
 ```yml
 tests:
   - text: The <code>AppWrapper</code> should render.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('AppWrapper').length === 1; })(), 'The <code>AppWrapper</code> should render.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('AppWrapper').length === 1; })());
   - text: The <code>Provider</code> wrapper component should have a prop of <code>store</code> passed to it, equal to the Redux store.
-    testString: getUserInput => assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return getUserInput('index').replace(/\s/g,'').includes('<Providerstore={store}>'); })(), 'The <code>Provider</code> wrapper component should have a prop of <code>store</code> passed to it, equal to the Redux store.');
+    testString: getUserInput => assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return getUserInput('index').replace(/\s/g,'').includes('<Providerstore={store}>'); })());
   - text: <code>DisplayMessages</code> should render as a child of <code>AppWrapper</code>.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('AppWrapper').find('DisplayMessages').length === 1; })(), '<code>DisplayMessages</code> should render as a child of <code>AppWrapper</code>.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('AppWrapper').find('DisplayMessages').length === 1; })());
   - text: The <code>DisplayMessages</code> component should render an h2, input, button, and <code>ul</code> element.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('div').length === 1 && mockedComponent.find('h2').length === 1 && mockedComponent.find('button').length === 1 && mockedComponent.find('ul').length === 1; })(), 'The <code>DisplayMessages</code> component should render an h2, input, button, and <code>ul</code> element.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('div').length === 1 && mockedComponent.find('h2').length === 1 && mockedComponent.find('button').length === 1 && mockedComponent.find('ul').length === 1; })());
 
 ```
 

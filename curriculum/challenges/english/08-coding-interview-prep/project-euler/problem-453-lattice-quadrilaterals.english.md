@@ -2,6 +2,7 @@
 id: 5900f5311000cf542c510044
 challengeType: 5
 title: 'Problem 453: Lattice Quadrilaterals'
+forumTopicId: 302126
 ---
 
 ## Description
@@ -28,7 +29,7 @@ Find Q(12345, 6789) mod 135707531.
 ```yml
 tests:
   - text: <code>euler453()</code> should return 104354107.
-    testString: assert.strictEqual(euler453(), 104354107, '<code>euler453()</code> should return 104354107.');
+    testString: assert.strictEqual(euler453(), 104354107);
 
 ```
 
@@ -60,4 +61,5 @@ euler453();
 ```js
 // solution required
 ```
+
 </section>

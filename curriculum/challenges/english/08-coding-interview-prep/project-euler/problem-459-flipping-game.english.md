@@ -2,6 +2,7 @@
 id: 5900f5371000cf542c51004a
 challengeType: 5
 title: 'Problem 459: Flipping game'
+forumTopicId: 302133
 ---
 
 ## Description
@@ -40,7 +41,7 @@ Find W(106).
 ```yml
 tests:
   - text: <code>euler459()</code> should return 3996390106631.
-    testString: assert.strictEqual(euler459(), 3996390106631, '<code>euler459()</code> should return 3996390106631.');
+    testString: assert.strictEqual(euler459(), 3996390106631);
 
 ```
 
@@ -72,4 +73,5 @@ euler459();
 ```js
 // solution required
 ```
+
 </section>

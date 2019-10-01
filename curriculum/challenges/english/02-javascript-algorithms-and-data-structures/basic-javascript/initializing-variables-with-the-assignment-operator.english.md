@@ -2,6 +2,8 @@
 id: 56533eb9ac21ba0edf2244a9
 title: Initializing Variables with the Assignment Operator
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/cWJ4Bfb'
+forumTopicId: 301171
 ---
 
 ## Description
@@ -22,7 +24,7 @@ Define a variable <code>a</code> with <code>var</code> and initialize it to a va
 ```yml
 tests:
   - text: Initialize <code>a</code> to a value of <code>9</code>
-    testString: assert(/var\s+a\s*=\s*9\s*/.test(code), 'Initialize <code>a</code> to a value of <code>9</code>');
+    testString: assert(/var\s+a\s*=\s*9\s*/.test(code));
 
 ```
 

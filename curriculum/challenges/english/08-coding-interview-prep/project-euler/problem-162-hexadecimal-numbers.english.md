@@ -2,6 +2,7 @@
 id: 5900f40e1000cf542c50ff21
 challengeType: 5
 title: 'Problem 162: Hexadecimal numbers'
+forumTopicId: 301796
 ---
 
 ## Description
@@ -27,7 +28,7 @@ Give your answer as a hexadecimal number.
 ```yml
 tests:
   - text: <code>euler162()</code> should return 3D58725572C62302.
-    testString: assert.strictEqual(euler162(), '3D58725572C62302', '<code>euler162()</code> should return 3D58725572C62302.');
+    testString: assert.strictEqual(euler162(), '3D58725572C62302');
 
 ```
 
@@ -59,4 +60,5 @@ euler162();
 ```js
 // solution required
 ```
+
 </section>

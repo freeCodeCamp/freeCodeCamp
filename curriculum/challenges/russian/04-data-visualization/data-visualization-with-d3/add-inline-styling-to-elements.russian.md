@@ -1,28 +1,30 @@
 ---
 id: 587d7fa7367417b2b2512bc6
 title: Add Inline Styling to Elements
-required:
-  - src: 'https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js'
 challengeType: 6
-videoUrl: ''
+forumTopicId: 301475
 localeTitle: Добавить встроенный стиль в элементы
 ---
 
 ## Description
-<section id="description"> D3 позволяет добавлять встроенные стили CSS для динамических элементов с помощью метода <code>style()</code> . Метод <code>style()</code> принимает в качестве аргумента пару ключ-значение, разделенную запятыми. Вот пример, чтобы задать цвет текста выбора синим: <code>selection.style(&quot;color&quot;,&quot;blue&quot;);</code> </section>
+<section id='description'>
+D3 позволяет добавлять встроенные стили CSS для динамических элементов с помощью метода <code>style()</code> . Метод <code>style()</code> принимает в качестве аргумента пару ключ-значение, разделенную запятыми. Вот пример, чтобы задать цвет текста выбора синим: <code>selection.style(&quot;color&quot;,&quot;blue&quot;);</code>
+</section>
 
 ## Instructions
-<section id="instructions"> Добавьте метод <code>style()</code> в код в редакторе, чтобы весь отображаемый текст имел <code>font-family</code> <code>verdana</code> . </section>
+<section id='instructions'>
+Добавьте метод <code>style()</code> в код в редакторе, чтобы весь отображаемый текст имел <code>font-family</code> <code>verdana</code> .
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: Элементы <code>h2</code> должны иметь <code>font-family</code> шрифтов verdana.
-    testString: 'assert($("h2").css("font-family") == "verdana", "Your <code>h2</code> elements should have a <code>font-family</code> of verdana.");'
-  - text: ''
-    testString: 'assert(code.match(/\.style/g), "Your code should use the <code>style()</code> method.");'
+  - text: Your <code>h2</code> elements should have a <code>font-family</code> of verdana.
+    testString: assert($('h2').css('font-family') == 'verdana');
+  - text: Your code should use the <code>style()</code> method.
+    testString: assert(code.match(/\.style/g));
 
 ```
 
@@ -55,14 +57,13 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>

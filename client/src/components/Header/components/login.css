@@ -1,31 +1,3 @@
-.btn-cta {
-  background-color: #ffac33;
-  background-image: linear-gradient(#ffcc4d, #ffac33);
-  border-color: #f1a02a;
-  color: #292f33 !important;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-  max-height: 38px;
+.signup-btn {
   padding: 4px 12px;
-}
-
-.signup-btn.btn {
-  background-color: #ffac33;
-  background-image: linear-gradient(#ffcc4d, #ffac33);
-  -ms-filter: 'progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffcc4d,  endColorstr=#ffac33,  GradientType=0)';
-  border-color: #f1a02a;
-  color: #292f33 !important;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-}
-.signup-btn:hover,
-.signup-btn:focus {
-  background-color: #e99110;
-  background-image: linear-gradient(#ffcc4d, #e99110);
-  -ms-filter: 'progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffcc4d,  endColorstr=#e99110,  GradientType=0)';
-  border-color: #ec8b11;
-  color: #292f33 !important;
-}
-.signup-btn:active {
-  background-color: #f2a330;
-  background-image: none;
-  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.3);
 }

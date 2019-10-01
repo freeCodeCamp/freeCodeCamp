@@ -2,6 +2,7 @@
 id: 5900f3c81000cf542c50fedb
 challengeType: 5
 title: 'Problem 92: Square digit chains'
+forumTopicId: 302209
 ---
 
 ## Description
@@ -25,7 +26,7 @@ How many starting numbers below ten million will arrive at 89?
 ```yml
 tests:
   - text: <code>euler92()</code> should return 8581146.
-    testString: assert.strictEqual(euler92(), 8581146, '<code>euler92()</code> should return 8581146.');
+    testString: assert.strictEqual(euler92(), 8581146);
 
 ```
 
@@ -57,4 +58,5 @@ euler92();
 ```js
 // solution required
 ```
+
 </section>

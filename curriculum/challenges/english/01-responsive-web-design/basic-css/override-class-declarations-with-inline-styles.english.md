@@ -3,6 +3,7 @@ id: bad87fee1348bd9aedf06756
 title: Override Class Declarations with Inline Styles
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cGJDRha'
+forumTopicId: 18252
 ---
 
 ## Description
@@ -24,15 +25,15 @@ Leave the <code>blue-text</code> and <code>pink-text</code> classes on your <cod
 ```yml
 tests:
   - text: Your <code>h1</code> element should have the class <code>pink-text</code>.
-    testString: assert($("h1").hasClass("pink-text"), 'Your <code>h1</code> element should have the class <code>pink-text</code>.');
+    testString: assert($("h1").hasClass("pink-text"));
   - text: Your <code>h1</code> element should have the class <code>blue-text</code>.
-    testString: assert($("h1").hasClass("blue-text"), 'Your <code>h1</code> element should have the class <code>blue-text</code>.');
+    testString: assert($("h1").hasClass("blue-text"));
   - text: Your <code>h1</code> element should have the id of <code>orange-text</code>.
-    testString: assert($("h1").attr("id") === "orange-text", 'Your <code>h1</code> element should have the id of <code>orange-text</code>.');
+    testString: assert($("h1").attr("id") === "orange-text");
   - text: Give your <code>h1</code> element an inline style.
-    testString: assert(document.querySelector('h1[style]'), 'Give your <code>h1</code> element an inline style.');
+    testString: assert(document.querySelector('h1[style]'));
   - text: Your <code>h1</code> element should be white.
-    testString: assert($("h1").css("color") === "rgb(255, 255, 255)", 'Your <code>h1</code> element should be white.');
+    testString: assert($("h1").css("color") === "rgb(255, 255, 255)");
 
 ```
 
@@ -72,7 +73,24 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style>
+  body {
+    background-color: black;
+    font-family: monospace;
+    color: green;
+  }
+  #orange-text {
+    color: orange;
+  }
+  .pink-text {
+    color: pink;
+  }
+  .blue-text {
+    color: blue;
+  }
+</style>
+<h1 id="orange-text" class="pink-text blue-text" style="color: white">Hello World!</h1>
 ```
+
 </section>

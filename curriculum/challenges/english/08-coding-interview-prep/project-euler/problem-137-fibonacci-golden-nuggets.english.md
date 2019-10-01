@@ -2,6 +2,7 @@
 id: 5900f3f51000cf542c50ff08
 challengeType: 5
 title: 'Problem 137: Fibonacci golden nuggets'
+forumTopicId: 301765
 ---
 
 ## Description
@@ -41,7 +42,7 @@ Find the 15th golden nugget.
 ```yml
 tests:
   - text: <code>euler137()</code> should return 1120149658760.
-    testString: assert.strictEqual(euler137(), 1120149658760, '<code>euler137()</code> should return 1120149658760.');
+    testString: assert.strictEqual(euler137(), 1120149658760);
 
 ```
 
@@ -73,4 +74,5 @@ euler137();
 ```js
 // solution required
 ```
+
 </section>

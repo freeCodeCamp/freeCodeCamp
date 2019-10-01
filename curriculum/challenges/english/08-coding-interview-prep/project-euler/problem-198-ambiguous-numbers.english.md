@@ -2,6 +2,7 @@
 id: 5900f4331000cf542c50ff45
 challengeType: 5
 title: 'Problem 198: Ambiguous Numbers'
+forumTopicId: 301836
 ---
 
 ## Description
@@ -26,7 +27,7 @@ How many ambiguous numbers x = p/q,
 ```yml
 tests:
   - text: <code>euler198()</code> should return 52374425.
-    testString: assert.strictEqual(euler198(), 52374425, '<code>euler198()</code> should return 52374425.');
+    testString: assert.strictEqual(euler198(), 52374425);
 
 ```
 
@@ -58,4 +59,5 @@ euler198();
 ```js
 // solution required
 ```
+
 </section>

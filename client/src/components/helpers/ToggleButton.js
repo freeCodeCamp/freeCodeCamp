@@ -6,6 +6,8 @@ import {
 } from '@freecodecamp/react-bootstrap';
 
 import './toggle-button.css';
+import ToggleCheck from '../../assets/icons/ToggleCheck';
+import Spacer from '../../assets/icons/Spacer';
 
 const propTypes = {
   name: PropTypes.string.isRequired,
@@ -26,28 +28,42 @@ export default function ToggleButton({
   onLabel = 'On',
   offLabel = 'Off'
 }) {
+  const checkIconStyle = {
+    height: '15px',
+    width: '20px'
+  };
   return (
     <Fragment>
       <BSBG name={name} onChange={onChange} type='radio'>
         <TB
-          bsSize='lg'
+          bsSize='sm'
           bsStyle='primary'
           className={`toggle-${getActiveClass(value)}`}
           disabled={value}
           type='radio'
           value={1}
-          >
+        >
+          {value ? (
+            <ToggleCheck style={checkIconStyle} />
+          ) : (
+            <Spacer style={checkIconStyle} />
+          )}
           {onLabel}
         </TB>
         <TB
-          bsSize='lg'
+          bsSize='sm'
           bsStyle='primary'
           className={`toggle-${getActiveClass(!value)}`}
           disabled={!value}
           type='radio'
           value={2}
-          >
+        >
           {offLabel}
+          {!value ? (
+            <ToggleCheck style={checkIconStyle} />
+          ) : (
+            <Spacer style={checkIconStyle} />
+          )}
         </TB>
       </BSBG>
     </Fragment>

@@ -2,6 +2,7 @@
 id: 5900f4691000cf542c50ff7c
 challengeType: 5
 title: 'Problem 253: Tidying up'
+forumTopicId: 301901
 ---
 
 ## Description
@@ -38,7 +39,7 @@ Give your answer rounded to six decimal places.
 ```yml
 tests:
   - text: <code>euler253()</code> should return 11.492847.
-    testString: assert.strictEqual(euler253(), 11.492847, '<code>euler253()</code> should return 11.492847.');
+    testString: assert.strictEqual(euler253(), 11.492847);
 
 ```
 
@@ -70,4 +71,5 @@ euler253();
 ```js
 // solution required
 ```
+
 </section>

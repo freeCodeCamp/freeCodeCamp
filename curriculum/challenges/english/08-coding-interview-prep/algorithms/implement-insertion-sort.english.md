@@ -2,6 +2,7 @@
 id: 587d8259367417b2b2512c86
 title: Implement Insertion Sort
 challengeType: 1
+forumTopicId: 301613
 ---
 
 ## Description
@@ -22,13 +23,13 @@ The next sorting method we'll look at is insertion sort. This method works by bu
 ```yml
 tests:
   - text: <code>insertionSort</code> is a function.
-    testString: assert(typeof insertionSort == 'function', '<code>insertionSort</code> is a function.');
+    testString: assert(typeof insertionSort == 'function');
   - text: <code>insertionSort</code> returns a sorted array (least to greatest).
-    testString: assert(isSorted(insertionSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])), '<code>insertionSort</code> returns a sorted array (least to greatest).');
+    testString: assert(isSorted(insertionSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])));
   - text: <code>insertionSort</code> returns an array that is unchanged except for order.
-    testString: assert.sameMembers(insertionSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]), [1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92], '<code>insertionSort</code> returns an array that is unchanged except for order.');
+    testString: assert.sameMembers(insertionSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]), [1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]);
   - text: <code>insertionSort</code> should not use the built-in <code>.sort()</code> method.
-    testString: assert.strictEqual(code.search(/\.sort\(/), -1, '<code>insertionSort</code> should not use the built-in <code>.sort()</code> method.');
+    testString: assert.strictEqual(code.search(/\.sort\(/), -1);
 
 ```
 
@@ -42,13 +43,11 @@ tests:
 ```js
 function insertionSort(array) {
   // change code below this line
-
-  // change code above this line
   return array;
+  // change code above this line
 }
 
-// test array:
-// [1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]
+insertionSort([1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]);
 ```
 
 </div>
@@ -72,6 +71,18 @@ function isSorted(arr) {
 <section id='solution'>
 
 ```js
-// solution required
+function insertionSort (array) {
+  for (let currentIndex = 0; currentIndex < array.length; currentIndex++) {
+    let current = array[currentIndex];
+    let j = currentIndex - 1;
+    while (j > -1 && array[j] > current) {
+      array[j + 1] = array[j];
+      j--;
+    }
+    array[j + 1] = current;
+  }
+  return array;
+}
 ```
+
 </section>

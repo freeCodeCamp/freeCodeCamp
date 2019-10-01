@@ -2,6 +2,7 @@
 id: 5900f41a1000cf542c50ff2d
 challengeType: 5
 title: 'Problem 174: Counting the number of "hollow" square laminae that can form one, two, three, ... distinct arrangements'
+forumTopicId: 301809
 ---
 
 ## Description
@@ -26,7 +27,7 @@ What is ∑ N(n) for 1 ≤ n ≤ 10?
 ```yml
 tests:
   - text: <code>euler174()</code> should return 209566.
-    testString: assert.strictEqual(euler174(), 209566, '<code>euler174()</code> should return 209566.');
+    testString: assert.strictEqual(euler174(), 209566);
 
 ```
 
@@ -58,4 +59,5 @@ euler174();
 ```js
 // solution required
 ```
+
 </section>

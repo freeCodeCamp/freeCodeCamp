@@ -2,6 +2,7 @@
 id: 5900f4f31000cf542c510006
 challengeType: 5
 title: 'Problem 391: Hopping Game'
+forumTopicId: 302056
 ---
 
 ## Description
@@ -47,7 +48,7 @@ Find Σ(M(n))3 for 1 ≤ n ≤ 1000.
 ```yml
 tests:
   - text: <code>euler391()</code> should return 61029882288.
-    testString: assert.strictEqual(euler391(), 61029882288, '<code>euler391()</code> should return 61029882288.');
+    testString: assert.strictEqual(euler391(), 61029882288);
 
 ```
 
@@ -79,4 +80,5 @@ euler391();
 ```js
 // solution required
 ```
+
 </section>

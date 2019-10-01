@@ -3,6 +3,7 @@ id: 587d78ad367417b2b2512afb
 title: Use the flex-shrink Property to Shrink Items
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cd3PBfr'
+forumTopicId: 301113
 ---
 
 ## Description
@@ -23,9 +24,9 @@ Add the CSS property <code>flex-shrink</code> to both <code>#box-1</code> and <c
 ```yml
 tests:
   - text: The <code>#box-1</code> element should have the <code>flex-shrink</code> property set to a value of 1.
-    testString: assert($('#box-1').css('flex-shrink') == '1', 'The <code>#box-1</code> element should have the <code>flex-shrink</code> property set to a value of 1.');
+    testString: assert($('#box-1').css('flex-shrink') == '1');
   - text: The <code>#box-2</code> element should have the <code>flex-shrink</code> property set to a value of 2.
-    testString: assert($('#box-2').css('flex-shrink') == '2', 'The <code>#box-2</code> element should have the <code>flex-shrink</code> property set to a value of 2.');
+    testString: assert($('#box-2').css('flex-shrink') == '2');
 
 ```
 
@@ -72,7 +73,31 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style>
+  #box-container {
+    display: flex;
+    height: 500px;
+  }
+  #box-1 {
+    background-color: dodgerblue;
+    width: 100%;
+    height: 200px;
+    flex-shrink: 1;
+  }
+
+  #box-2 {
+    background-color: orangered;
+    width: 100%;
+    height: 200px;
+    flex-shrink: 2;
+  }
+</style>
+
+<div id="box-container">
+  <div id="box-1"></div>
+  <div id="box-2"></div>
+</div>
 ```
+
 </section>

@@ -1,0 +1,58 @@
+{
+  "name": "MongoDB and Mongoose",
+  "dashedName": "mongodb-and-mongoose",
+  "order": 3,
+  "time": "5 hours",
+  "superBlock": "apis-and-microservices",
+  "superOrder": 5,
+  "challengeOrder": [
+    [
+      "587d7fb6367417b2b2512c06",
+      "Install and Set Up Mongoose"
+    ],
+    [
+      "587d7fb6367417b2b2512c07",
+      "Create a Model"
+    ],
+    [
+      "587d7fb6367417b2b2512c09",
+      "Create and Save a Record of a Model"
+    ],
+    [
+      "587d7fb7367417b2b2512c0a",
+      "Create Many Records with model.create()"
+    ],
+    [
+      "587d7fb7367417b2b2512c0b",
+      "Use model.find() to Search Your Database"
+    ],
+    [
+      "587d7fb7367417b2b2512c0c",
+      "Use model.findOne() to Return a Single Matching Document from Your Database"
+    ],
+    [
+      "587d7fb7367417b2b2512c0d",
+      "Use model.findById() to Search Your Database By _id"
+    ],
+    [
+      "587d7fb8367417b2b2512c0e",
+      "Perform Classic Updates by Running Find, Edit, then Save"
+    ],
+    [
+      "587d7fb8367417b2b2512c0f",
+      "Perform New Updates on a Document Using model.findOneAndUpdate()"
+    ],
+    [
+      "587d7fb8367417b2b2512c10",
+      "Delete One Document Using model.findByIdAndRemove"
+    ],
+    [
+      "587d7fb8367417b2b2512c11",
+      "Delete Many Documents with model.remove()"
+    ],
+    [
+      "587d7fb9367417b2b2512c12",
+      "Chain Search Query Helpers to Narrow Search Results"
+    ]
+  ]
+}

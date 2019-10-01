@@ -2,6 +2,7 @@
 id: 5900f4251000cf542c50ff38
 challengeType: 5
 title: 'Problem 185: Number Mind'
+forumTopicId: 301821
 ---
 
 ## Description
@@ -57,7 +58,7 @@ Find the unique 16-digit secret sequence.
 ```yml
 tests:
   - text: <code>euler185()</code> should return 4640261571849533.
-    testString: assert.strictEqual(euler185(), 4640261571849533, '<code>euler185()</code> should return 4640261571849533.');
+    testString: assert.strictEqual(euler185(), 4640261571849533);
 
 ```
 
@@ -89,4 +90,5 @@ euler185();
 ```js
 // solution required
 ```
+
 </section>

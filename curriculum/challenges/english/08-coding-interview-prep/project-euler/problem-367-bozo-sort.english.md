@@ -2,6 +2,7 @@
 id: 5900f4db1000cf542c50ffee
 challengeType: 5
 title: 'Problem 367: Bozo sort'
+forumTopicId: 302028
 ---
 
 ## Description
@@ -36,7 +37,7 @@ Give your answer rounded to the nearest integer.
 ```yml
 tests:
   - text: <code>euler367()</code> should return 48271207.
-    testString: assert.strictEqual(euler367(), 48271207, '<code>euler367()</code> should return 48271207.');
+    testString: assert.strictEqual(euler367(), 48271207);
 
 ```
 
@@ -68,4 +69,5 @@ euler367();
 ```js
 // solution required
 ```
+
 </section>

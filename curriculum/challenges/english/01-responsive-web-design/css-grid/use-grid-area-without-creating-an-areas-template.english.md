@@ -3,14 +3,23 @@ id: 5a94fe2669fb03452672e45e
 title: Use grid-area Without Creating an Areas Template
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/c6N7VhK'
+forumTopicId: 301135
 ---
 
 ## Description
 <section id='description'>
 The <code>grid-area</code> property you learned in the last challenge can be used in another way. If your grid doesn't have an areas template to reference, you can create an area on the fly for an item to be placed like this:
-<blockquote>item1 { grid-area: 1/1/2/4; }</blockquote>
+
+```css
+item1 { grid-area: 1/1/2/4; }
+```
+
 This is using the line numbers you learned about earlier to define where the area for this item will be. The numbers in the example above represent these values:
-<blockquote>grid-area: horizontal line to start at / vertical line to start at / horizontal line to end at / vertical line to end at;</blockquote>
+
+```css
+grid-area: horizontal line to start at / vertical line to start at / horizontal line to end at / vertical line to end at;
+```
+
 So the item in the example will consume the rows between lines 1 and 2, and the columns between lines 1 and 4.
 </section>
 
@@ -24,8 +33,8 @@ Using the <code>grid-area</code> property, place the element with <code>item5</c
 
 ```yml
 tests:
-  - text: <code>item5</code> class should have a <code>grid-area</code> property that has the value of <code>3/1/4/4</code>.
-    testString: assert(code.match(/.item5\s*?{[\s\S]*grid-area\s*?:\s*?3\s*?\/\s*?1\s*?\/\s*?4\s*?\/\s*?4\s*?;[\s\S]*}/gi), '<code>item5</code> class should have a <code>grid-area</code> property that has the value of <code>3/1/4/4</code>.');
+  - text: <code>item5</code> class should have a <code>grid-area</code> property such that it is between the third and fourth horizontal lines and between the first and fourth vertical lines.
+    testString: assert(code.match(/.item5\s*?{[\s\S]*grid-area\s*?:\s*?3\s*?\/\s*?1\s*?\/\s*?4\s*?\/\s*?4\s*?;[\s\S]*}/gi));
 
 ```
 

@@ -3,6 +3,7 @@ id: 5a9036ee38fddaf9a66b5d37
 title: Add Gaps Faster with grid-gap
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/ca2qVtv'
+forumTopicId: 301118
 ---
 
 ## Description
@@ -21,7 +22,7 @@ Use <code>grid-gap</code> to introduce a <code>10px</code> gap between the rows 
 ```yml
 tests:
   - text: <code>container</code> class should have a <code>grid-gap</code> property that introduces <code>10px</code> gap between the rows and <code>20px</code> gap between the columns.
-    testString: assert(code.match(/.container\s*?{[\s\S]*grid-gap\s*?:\s*?10px\s+?20px\s*?;[\s\S]*}/gi), '<code>container</code> class should have a <code>grid-gap</code> property that introduces <code>10px</code> gap between the rows and <code>20px</code> gap between the columns.');
+    testString: assert(code.match(/.container\s*?{[\s\S]*grid-gap\s*?:\s*?10px\s+?20px\s*?;[\s\S]*}/gi));
 
 ```
 

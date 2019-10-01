@@ -2,6 +2,7 @@
 id: 5900f4411000cf542c50ff54
 challengeType: 5
 title: 'Problem 213: Flea Circus'
+forumTopicId: 301855
 ---
 
 ## Description
@@ -23,7 +24,7 @@ What is the expected number of unoccupied squares after 50 rings of the bell? Gi
 ```yml
 tests:
   - text: <code>euler213()</code> should return 330.721154.
-    testString: assert.strictEqual(euler213(), 330.721154, '<code>euler213()</code> should return 330.721154.');
+    testString: assert.strictEqual(euler213(), 330.721154);
 
 ```
 
@@ -55,4 +56,5 @@ euler213();
 ```js
 // solution required
 ```
+
 </section>

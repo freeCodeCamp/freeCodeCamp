@@ -2,27 +2,33 @@
 title: Hofstadter Figure-Figure sequences
 id: 59622f89e4e137560018a40e
 challengeType: 5
+forumTopicId: 302286
 ---
 
 ## Description
 <section id='description'>
-<p>These two sequences of positive integers are defined as:</p>
-<p><big>$$R(1)=1\ ;\ S(1)=2 \\R(n)=R(n-1)+S(n-1), \quad n>1.$$</big></p>
-<p>The sequence <big>$S(n)$</big> is further defined as the sequence of positive integers not present in <big>$R(n)$</big>.</p><p>Sequence <big>$R$</big> starts:</p>
-<p>1, 3, 7, 12, 18, ...</p>
-<p>Sequence <big>$S$</big> starts:</p>
-<p>2, 4, 5, 6, 8, ...</p>
-Task:
-Create two functions named ffr and ffs that when given n return R(n) or S(n) respectively.(Note that R(1) = 1 and S(1) = 2 to avoid off-by-one errors).
-No maximum value for n should be assumed.
-Sloane's <a href="http://oeis.org/A005228" title="link: http://oeis.org/A005228">A005228</a> and <a href="http://oeis.org/A030124" title="link: http://oeis.org/A030124">A030124</a>.
-<a href="http://mathworld.wolfram.com/HofstadterFigure-FigureSequence.html" title="link: http://mathworld.wolfram.com/HofstadterFigure-FigureSequence.html">Wolfram MathWorld</a>
-Wikipedia: <a href="https://en.wikipedia.org/wiki/Hofstadter_sequence#Hofstadter_Figure-Figure_sequences" title="wp: Hofstadter_sequence#Hofstadter_Figure-Figure_sequences">Hofstadter Figure-Figure sequences</a>.
+These two sequences of positive integers are defined as:
+<span style="margin-left: 2em;"><big>$R(1)=1\ ;\ S(1)=2 \\R(n)=R(n-1)+S(n-1), \quad n>1.$</big></span>
+The sequence <big>$S(n)$</big> is further defined as the sequence of positive integers not present in <big>$R(n)$</big>.
+Sequence <big>$R$</big> starts:
+<pre>1, 3, 7, 12, 18, ...</pre>
+Sequence <big>$S$</big> starts:
+<pre>2, 4, 5, 6, 8, ...</pre>
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Create two functions named <code>ffr</code> and <code>ffs</code>  that when given <code>n</code> return <code>R(n)</code> or <code>S(n)</code> respectively. (Note that R(1) = 1 and S(1) = 2 to avoid off-by-one errors).
+No maximum value for <code>n</code> should be assumed.
+<strong>References</strong>
+<ul>
+  <li>
+    Sloane's <a href="https://oeis.org/A005228" target="_blank">A005228</a> and <a href="https://oeis.org/A030124" target="_blank">A030124</a>.
+  </li>
+  <li>
+    Wikipedia: <a href="https://en.wikipedia.org/wiki/Hofstadter_sequence#Hofstadter_Figure-Figure_sequences" title="wp: Hofstadter_sequence#Hofstadter_Figure-Figure_sequences" target="_blank">Hofstadter Figure-Figure sequences</a>.
+  </li>
+</ul>
 </section>
 
 ## Tests
@@ -31,29 +37,29 @@ Wikipedia: <a href="https://en.wikipedia.org/wiki/Hofstadter_sequence#Hofstadter
 ```yml
 tests:
   - text: <code>ffr</code> is a function.
-    testString: assert(typeof ffr === 'function', '<code>ffr</code> is a function.');
+    testString: assert(typeof ffr === 'function');
   - text: <code>ffs</code> is a function.
-    testString: assert(typeof ffs === 'function', '<code>ffs</code> is a function.');
+    testString: assert(typeof ffs === 'function');
   - text: <code>ffr</code> should return integer.
-    testString: assert(Number.isInteger(ffr(1)), '<code>ffr</code> should return integer.');
+    testString: assert(Number.isInteger(ffr(1)));
   - text: <code>ffs</code> should return integer.
-    testString: assert(Number.isInteger(ffs(1)), '<code>ffs</code> should return integer.');
+    testString: assert(Number.isInteger(ffs(1)));
   - text: <code>ffr()</code> should return <code>69</code>
-    testString: assert.equal(ffr(ffrParamRes[0][0]), ffrParamRes[0][1], '<code>ffr()</code> should return <code>69</code>');
+    testString: assert.equal(ffr(ffrParamRes[0][0]), ffrParamRes[0][1]);
   - text: <code>ffr()</code> should return <code>1509</code>
-    testString: assert.equal(ffr(ffrParamRes[1][0]), ffrParamRes[1][1], '<code>ffr()</code> should return <code>1509</code>');
+    testString: assert.equal(ffr(ffrParamRes[1][0]), ffrParamRes[1][1]);
   - text: <code>ffr()</code> should return <code>5764</code>
-    testString: assert.equal(ffr(ffrParamRes[2][0]), ffrParamRes[2][1], '<code>ffr()</code> should return <code>5764</code>');
+    testString: assert.equal(ffr(ffrParamRes[2][0]), ffrParamRes[2][1]);
   - text: <code>ffr()</code> should return <code>526334</code>
-    testString: assert.equal(ffr(ffrParamRes[3][0]), ffrParamRes[3][1], '<code>ffr()</code> should return <code>526334</code>');
+    testString: assert.equal(ffr(ffrParamRes[3][0]), ffrParamRes[3][1]);
   - text: <code>ffs()</code> should return <code>14</code>
-    testString: assert.equal(ffs(ffsParamRes[0][0]), ffsParamRes[0][1], '<code>ffs()</code> should return <code>14</code>');
+    testString: assert.equal(ffs(ffsParamRes[0][0]), ffsParamRes[0][1]);
   - text: <code>ffs()</code> should return <code>59</code>
-    testString: assert.equal(ffs(ffsParamRes[1][0]), ffsParamRes[1][1], '<code>ffs()</code> should return <code>59</code>');
+    testString: assert.equal(ffs(ffsParamRes[1][0]), ffsParamRes[1][1]);
   - text: <code>ffs()</code> should return <code>112</code>
-    testString: assert.equal(ffs(ffsParamRes[2][0]), ffsParamRes[2][1], '<code>ffs()</code> should return <code>112</code>');
+    testString: assert.equal(ffs(ffsParamRes[2][0]), ffsParamRes[2][1]);
   - text: <code>ffs()</code> should return <code>1041</code>
-    testString: assert.equal(ffs(ffsParamRes[3][0]), ffsParamRes[3][1], '<code>ffs()</code> should return <code>1041</code>');
+    testString: assert.equal(ffs(ffsParamRes[3][0]), ffsParamRes[3][1]);
 
 ```
 

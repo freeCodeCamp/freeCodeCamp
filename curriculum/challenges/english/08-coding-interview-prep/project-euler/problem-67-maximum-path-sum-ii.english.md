@@ -2,6 +2,7 @@
 id: 5900f3b01000cf542c50fec2
 challengeType: 5
 title: 'Problem 67: Maximum path sum II'
+forumTopicId: 302179
 ---
 
 ## Description
@@ -26,7 +27,7 @@ NOTE: This is a much more difficult version of Problem 18. It is not possible to
 ```yml
 tests:
   - text: <code>euler67()</code> should return 7273.
-    testString: assert.strictEqual(euler67(), 7273, '<code>euler67()</code> should return 7273.');
+    testString: assert.strictEqual(euler67(), 7273);
 
 ```
 
@@ -58,4 +59,5 @@ euler67();
 ```js
 // solution required
 ```
+
 </section>

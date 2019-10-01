@@ -2,6 +2,7 @@
 id: 5900f4f41000cf542c510007
 challengeType: 5
 title: 'Problem 392: Enmeshed unit circle'
+forumTopicId: 302057
 ---
 
 ## Description
@@ -36,7 +37,7 @@ Give as your answer the area occupied by the red cells rounded to 10 digits behi
 ```yml
 tests:
   - text: <code>euler392()</code> should return 3.1486734435.
-    testString: assert.strictEqual(euler392(), 3.1486734435, '<code>euler392()</code> should return 3.1486734435.');
+    testString: assert.strictEqual(euler392(), 3.1486734435);
 
 ```
 
@@ -68,4 +69,5 @@ euler392();
 ```js
 // solution required
 ```
+
 </section>

@@ -2,6 +2,7 @@
 id: 5900f5241000cf542c510037
 challengeType: 5
 title: 'Problem 440: GCD and Tiling'
+forumTopicId: 302112
 ---
 
 ## Description
@@ -34,7 +35,7 @@ Find S(2000) mod 987 898 789.
 ```yml
 tests:
   - text: <code>euler440()</code> should return 970746056.
-    testString: assert.strictEqual(euler440(), 970746056, '<code>euler440()</code> should return 970746056.');
+    testString: assert.strictEqual(euler440(), 970746056);
 
 ```
 
@@ -66,4 +67,5 @@ euler440();
 ```js
 // solution required
 ```
+
 </section>

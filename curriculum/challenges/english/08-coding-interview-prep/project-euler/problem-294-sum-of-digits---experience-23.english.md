@@ -2,6 +2,7 @@
 id: 5900f4931000cf542c50ffa5
 challengeType: 5
 title: 'Problem 294: Sum of digits - experience #23'
+forumTopicId: 301946
 ---
 
 ## Description
@@ -31,7 +32,7 @@ Find S(1112) and give your answer mod 109.
 ```yml
 tests:
   - text: <code>euler294()</code> should return 789184709.
-    testString: assert.strictEqual(euler294(), 789184709, '<code>euler294()</code> should return 789184709.');
+    testString: assert.strictEqual(euler294(), 789184709);
 
 ```
 
@@ -63,4 +64,5 @@ euler294();
 ```js
 // solution required
 ```
+
 </section>

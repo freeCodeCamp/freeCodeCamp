@@ -2,13 +2,24 @@
 id: 56533eb9ac21ba0edf2244bf
 title: Local Scope and Functions
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/cd62NhM'
+forumTopicId: 18227
 ---
 
 ## Description
 <section id='description'>
 Variables which are declared within a function, as well as the function parameters have <dfn>local</dfn> scope. That means, they are only visible within that function.
 Here is a function <code>myTest</code> with a local variable called <code>loc</code>.
-<blockquote>function myTest() {<br>&nbsp;&nbsp;var loc = "foo";<br>&nbsp;&nbsp;console.log(loc);<br>}<br>myTest(); // logs "foo"<br>console.log(loc); // loc is not defined</blockquote>
+
+```js
+function myTest() {
+  var loc = "foo";
+  console.log(loc);
+}
+myTest(); // logs "foo"
+console.log(loc); // loc is not defined
+```
+
 <code>loc</code> is not defined outside of the function.
 </section>
 
@@ -24,9 +35,10 @@ Declare a local variable <code>myVar</code> inside <code>myLocalScope</code>. Ru
 ```yml
 tests:
   - text: No global <code>myVar</code> variable
-    testString: assert(typeof myVar === 'undefined', 'No global <code>myVar</code> variable');
+    testString: assert(typeof myVar === 'undefined');
   - text: Add a local <code>myVar</code> variable
-    testString: assert(/var\s+myVar/.test(code), 'Add a local <code>myVar</code> variable');
+    testString: assert(/function\s+myLocalScope\s*\(\s*\)\s*\{\s[\s\S]+\s*var\s*myVar\s*(\s*|=[\s\S]+)\s*;[\s\S]+}/.test(code));
+
 
 ```
 

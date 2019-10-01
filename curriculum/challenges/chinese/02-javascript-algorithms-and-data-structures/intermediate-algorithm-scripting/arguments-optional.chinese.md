@@ -3,7 +3,6 @@ id: a97fd23d9b809dac9921074f
 title: Arguments Optional
 isRequired: true
 challengeType: 5
-guideUrl: 'https://chinese.freecodecamp.org/guide/certificates/arguments-optional'
 videoUrl: ''
 localeTitle: 参数可选
 ---

@@ -2,6 +2,7 @@
 id: 5900f4811000cf542c50ff94
 challengeType: 5
 title: 'Problem 277: A Modified Collatz sequence'
+forumTopicId: 301927
 ---
 
 ## Description
@@ -44,7 +45,7 @@ What is the smallest a1 > 1015 that begins with the sequence "UDDDUdddDDUDDddDdD
 ```yml
 tests:
   - text: <code>euler277()</code> should return 1125977393124310.
-    testString: assert.strictEqual(euler277(), 1125977393124310, '<code>euler277()</code> should return 1125977393124310.');
+    testString: assert.strictEqual(euler277(), 1125977393124310);
 
 ```
 
@@ -76,4 +77,5 @@ euler277();
 ```js
 // solution required
 ```
+
 </section>

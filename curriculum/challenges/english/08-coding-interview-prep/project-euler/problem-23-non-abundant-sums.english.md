@@ -2,6 +2,7 @@
 id: 5900f3831000cf542c50fe96
 challengeType: 5
 title: 'Problem 23: Non-abundant sums'
+forumTopicId: 301873
 ---
 
 ## Description
@@ -23,13 +24,13 @@ Find the sum of all positive integers <= <var>n</var> which cannot be written as
 ```yml
 tests:
   - text: <code>sumOfNonAbundantNumbers(10000)</code> should return 3731004.
-    testString: assert(sumOfNonAbundantNumbers(10000) === 3731004, '<code>sumOfNonAbundantNumbers(10000)</code> should return 3731004.');
+    testString: assert(sumOfNonAbundantNumbers(10000) === 3731004);
   - text: <code>sumOfNonAbundantNumbers(15000)</code> should return 4039939.
-    testString: assert(sumOfNonAbundantNumbers(15000) === 4039939, '<code>sumOfNonAbundantNumbers(15000)</code> should return 4039939.');
+    testString: assert(sumOfNonAbundantNumbers(15000) === 4039939);
   - text: <code>sumOfNonAbundantNumbers(20000)</code> should return 4159710.
-    testString: assert(sumOfNonAbundantNumbers(20000) === 4159710, '<code>sumOfNonAbundantNumbers(20000)</code> should return 4159710.');
+    testString: assert(sumOfNonAbundantNumbers(20000) === 4159710);
   - text: <code>sumOfNonAbundantNumbers(28123)</code> should return 4179871.
-    testString: assert(sumOfNonAbundantNumbers(28123) === 4179871, '<code>sumOfNonAbundantNumbers(28123)</code> should return 4179871.');
+    testString: assert(sumOfNonAbundantNumbers(28123) === 4179871);
 
 ```
 
@@ -61,4 +62,5 @@ sumOfNonAbundantNumbers(28123);
 ```js
 // solution required
 ```
+
 </section>

@@ -1,16 +1,22 @@
 ---
 id: 587d7fa8367417b2b2512bcd
 title: Create a Bar for Each Data Point in the Set
-required:
-  - src: 'https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js'
 challengeType: 6
+forumTopicId: 301482
 ---
 
 ## Description
 <section id='description'>
 The last challenge added only one rectangle to the <code>svg</code> element to represent a bar. Here, you'll combine what you've learned so far about <code>data()</code>, <code>enter()</code>, and SVG shapes to create and append a rectangle for each data point in <code>dataset</code>.
 A previous challenge showed the format for how to create and append a <code>div</code> for each item in <code>dataset</code>:
-<blockquote>d3.select("body").selectAll("div")<br>&nbsp;&nbsp;.data(dataset)<br>&nbsp;&nbsp;.enter()<br>&nbsp;&nbsp;.append("div")</blockquote>
+
+```js
+d3.select("body").selectAll("div")
+  .data(dataset)
+  .enter()
+  .append("div")
+```
+
 There are a few differences working with <code>rect</code> elements instead of <code>divs</code>. The <code>rects</code> must be appended to an <code>svg</code> element, not directly to the <code>body</code>. Also, you need to tell D3 where to place each <code>rect</code> within the <code>svg</code> area. The bar placement will be covered in the next challenge.
 </section>
 
@@ -25,13 +31,13 @@ Use the <code>data()</code>, <code>enter()</code>, and <code>append()</code> met
 ```yml
 tests:
   - text: Your document should have 9 <code>rect</code> elements.
-    testString: assert($('rect').length == 9, 'Your document should have 9 <code>rect</code> elements.');
+    testString: assert($('rect').length == 9);
   - text: Your code should use the <code>data()</code> method.
-    testString: assert(code.match(/\.data/g), 'Your code should use the <code>data()</code> method.');
+    testString: assert(code.match(/\.data/g));
   - text: Your code should use the <code>enter()</code> method.
-    testString: assert(code.match(/\.enter/g), 'Your code should use the <code>enter()</code> method.');
+    testString: assert(code.match(/\.enter/g));
   - text: Your code should use the <code>append()</code> method.
-    testString: assert(code.match(/\.append/g), 'Your code should use the <code>append()</code> method.');
+    testString: assert(code.match(/\.append/g));
 
 ```
 
@@ -81,4 +87,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

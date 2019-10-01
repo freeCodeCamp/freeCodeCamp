@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use una variable CSS personalizada
 ---
 
-## Description
+## Descripción
 <section id="description"> Después de crear su variable, puede asignar su valor a otras propiedades de CSS haciendo referencia al nombre que le dio. <blockquote> fondo: var (- piel de pingüino); </blockquote> Esto cambiará el fondo de cualquier elemento que estés apuntando a gris porque ese es el valor de la variable <code>--penguin-skin</code> . Tenga en cuenta que los estilos no se aplicarán a menos que los nombres de las variables coincidan exactamente. </section>
 
-## Instructions
+## Instrucciones
 <section id="instructions"> Aplique la variable <code>--penguin-skin</code> a la propiedad de <code>background</code> de las clases <code>penguin-top</code> , <code>penguin-bottom</code> , <code>right-hand</code> y <code>left-hand</code> . </section>
 
-## Tests
+## Pruebas
 <section id='tests'>
 
 ```yml
@@ -255,7 +255,7 @@ tests:
 
 </section>
 
-## Solution
+## Solución
 <section id='solution'>
 
 ```js

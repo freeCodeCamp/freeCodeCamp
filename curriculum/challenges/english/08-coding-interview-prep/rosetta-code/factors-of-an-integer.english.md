@@ -2,12 +2,13 @@
 title: Factors of an integer
 id: 597f1e7fbc206f0e9ba95dc4
 challengeType: 5
+forumTopicId: 302265
 ---
 
 ## Description
 <section id='description'>
-<p>Write a function that returns the factors  of a positive integer.</p><p>These factors are the positive integers by which the number being factored can be divided to yield a positive integer result.</p>
-///
+Write a function that returns the factors of a positive integer as an array.
+These factors are the positive integers by which the number being factored can be divided to yield a positive integer result.
 </section>
 
 ## Instructions
@@ -21,13 +22,13 @@ challengeType: 5
 ```yml
 tests:
   - text: <code>factors</code> is a function.
-    testString: assert(typeof factors === 'function', '<code>factors</code> is a function.');
+    testString: assert(typeof factors === 'function');
   - text: <code>factors(45)</code> should return <code>[1,3,5,9,15,45]</code>.
-    testString: assert.deepEqual(factors(45), ans[0], '<code>factors(45)</code> should return <code>[1,3,5,9,15,45]</code>.');
+    testString: assert.deepEqual(factors(45), ans[0]);
   - text: <code>factors(53)</code> should return <code>[1,53]</code>.
-    testString: assert.deepEqual(factors(53), ans[1], '<code>factors(53)</code> should return <code>[1,53]</code>.');
+    testString: assert.deepEqual(factors(53), ans[1]);
   - text: <code>factors(64)</code> should return <code>[1,2,4,8,16,32,64]</code>.
-    testString: assert.deepEqual(factors(64), ans[2], '<code>factors(64)</code> should return <code>[1,2,4,8,16,32,64]</code>.');
+    testString: assert.deepEqual(factors(64), ans[2]);
 
 ```
 
@@ -39,7 +40,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function factors (num) {
+function factors(num) {
   // Good luck!
 }
 ```

@@ -2,25 +2,42 @@
 id: 587d7fad367417b2b2512be1
 title: Handle Click Events with JavaScript using the onclick property
 challengeType: 6
-videoUrl: ''
-localeTitle: 'Ручка Нажмите «События» с помощью JavaScript, используя свойство onclick'
+forumTopicId: 301503
+localeTitle: Ручка Нажмите «События» с помощью JavaScript, используя свойство onclick
 ---
 
 ## Description
-undefined
+<section id='description'>
+You want your code to execute only once your page has finished loading. For that purpose, you can attach a JavaScript event to the document called <code>DOMContentLoaded</code>. Here's the code that does this:
+
+```js
+document.addEventListener('DOMContentLoaded',function() {
+
+});
+```
+
+You can implement event handlers that go inside of the <code>DOMContentLoaded</code> function. You can implement an <code>onclick</code> event handler which triggers when the user clicks on the element with id <code>getMessage</code>, by adding the following code:
+
+```js
+document.getElementById('getMessage').onclick=function(){};
+```
+
+</section>
 
 ## Instructions
-undefined
+<section id='instructions'>
+Add a click event handler inside of the <code>DOMContentLoaded</code> function for the element with id of <code>getMessage</code>.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: ''
-    testString: 'assert(code.match(/document\.getElementById\(\s*?("|")getMessage\1\s*?\)/g), "Your code should use the <code>document.getElementById</code> method to select the <code>getMessage</code> element.");'
-  - text: ''
-    testString: 'assert(typeof document.getElementById("getMessage").onclick === "function", "Your code should add an <code>onclick</code> event handler.");'
+  - text: Your code should use the <code>document.getElementById</code> method to select the <code>getMessage</code> element.
+    testString: assert(code.match(/document\s*\.getElementById\(\s*?('|")getMessage\1\s*?\)/g));
+  - text: Your code should add an <code>onclick</code> event handler.
+    testString: assert(typeof document.getElementById('getMessage').onclick === 'function');
 
 ```
 
@@ -67,7 +84,7 @@ tests:
   }
 </style>
 <h1>Cat Photo Finder</h1>
-<p class="message box">
+<p class="message">
   The message will go here
 </p>
 <p>
@@ -80,14 +97,13 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>

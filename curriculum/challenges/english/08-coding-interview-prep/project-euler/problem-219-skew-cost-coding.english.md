@@ -2,6 +2,7 @@
 id: 5900f4481000cf542c50ff5a
 challengeType: 5
 title: 'Problem 219: Skew-cost coding'
+forumTopicId: 301861
 ---
 
 ## Description
@@ -32,7 +33,7 @@ What is Cost(109) ?
 ```yml
 tests:
   - text: <code>euler219()</code> should return 64564225042.
-    testString: assert.strictEqual(euler219(), 64564225042, '<code>euler219()</code> should return 64564225042.');
+    testString: assert.strictEqual(euler219(), 64564225042);
 
 ```
 
@@ -64,4 +65,5 @@ euler219();
 ```js
 // solution required
 ```
+
 </section>

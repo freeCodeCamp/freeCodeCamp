@@ -2,6 +2,8 @@
 id: cf1231c1c11feddfaeb5bdef
 title: Multiply Two Numbers with JavaScript
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/cP3y3Aq'
+forumTopicId: 18243
 ---
 
 ## Description
@@ -10,7 +12,11 @@ We can also multiply one number by another.
 JavaScript uses the <code>*</code> symbol for multiplication of two numbers.
 
 <strong>Example</strong>
-<blockquote>myVar = 13 * 13; // assigned 169</blockquote>
+
+```js
+myVar = 13 * 13; // assigned 169
+```
+
 
 </section>
 
@@ -25,9 +31,9 @@ Change the <code>0</code> so that product will equal <code>80</code>.
 ```yml
 tests:
   - text: Make the variable <code>product</code> equal 80
-    testString: assert(product === 80,'Make the variable <code>product</code> equal 80');
+    testString: assert(product === 80);
   - text: Use the <code>*</code> operator
-    testString: assert(/\*/.test(code), 'Use the <code>*</code> operator');
+    testString: assert(/\*/.test(code));
 
 ```
 

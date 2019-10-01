@@ -2,6 +2,7 @@
 id: 5900f41c1000cf542c50ff2e
 challengeType: 5
 title: 'Problem 175: Fractions involving the number of different ways a number can be expressed as a sum of powers of 2'
+forumTopicId: 301810
 ---
 
 ## Description
@@ -29,7 +30,7 @@ Give your answer as comma separated integers, without any whitespaces.
 ```yml
 tests:
   - text: <code>euler175()</code> should return 1, 13717420, 8.
-    testString: assert.strictEqual(euler175(), 1, 13717420, 8, '<code>euler175()</code> should return 1, 13717420, 8.');
+    testString: assert.strictEqual(euler175(), 1, 13717420, 8);
 
 ```
 
@@ -61,4 +62,5 @@ euler175();
 ```js
 // solution required
 ```
+
 </section>

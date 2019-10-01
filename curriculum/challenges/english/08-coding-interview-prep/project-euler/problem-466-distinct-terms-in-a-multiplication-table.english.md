@@ -2,6 +2,7 @@
 id: 5900f53e1000cf542c510051
 challengeType: 5
 title: 'Problem 466: Distinct terms in a multiplication table'
+forumTopicId: 302141
 ---
 
 ## Description
@@ -35,7 +36,7 @@ Find P(64,1016).
 ```yml
 tests:
   - text: <code>euler466()</code> should return 258381958195474750.
-    testString: assert.strictEqual(euler466(), 258381958195474750, '<code>euler466()</code> should return 258381958195474750.');
+    testString: assert.strictEqual(euler466(), 258381958195474750);
 
 ```
 
@@ -67,4 +68,5 @@ euler466();
 ```js
 // solution required
 ```
+
 </section>

@@ -3,6 +3,7 @@ id: 587d78b1367417b2b2512b0a
 title: Use a Retina Image for Higher Resolution Displays
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pzrPu4/cVZ4Rfp'
+forumTopicId: 301142
 ---
 
 ## Description
@@ -11,7 +12,14 @@ With the increase of internet connected devices, their sizes and specifications 
 
 The simplest way to make your images properly appear on High-Resolution Displays, such as the MacBook Pros "retina display" is to define their <code>width</code> and <code>height</code> values as only half of what the original file is.
 Here is an example of an image that is only using half of the original height and width:
-<blockquote>&lt;style&gt;<br>&nbsp;&nbsp;img { height: 250px; width: 250px; }<br>&lt;/style&gt;<br>&lt;img src=&quot;coolPic500x500&quot; alt=&quot;A most excellent picture&quot;&gt;</blockquote>
+
+```html
+<style>
+  img { height: 250px; width: 250px; }
+</style>
+<img src="coolPic500x500" alt="A most excellent picture">
+```
+
 </section>
 
 ## Instructions
@@ -25,9 +33,9 @@ Set the <code>width</code> and <code>height</code> of the <code>img</code> tag t
 ```yml
 tests:
   - text: Your <code>img</code> tag should have a <code>width</code> of 100 pixels.
-    testString: assert($('img').css('width') == '100px', 'Your <code>img</code> tag should have a <code>width</code> of 100 pixels.');
+    testString: assert($('img').css('width') == '100px');
   - text: Your <code>img</code> tag should have a <code>height</code> of 100 pixels.
-    testString: assert($('img').css('height') == '100px', 'Your <code>img</code> tag should have a <code>height</code> of 100 pixels.');
+    testString: assert($('img').css('height') == '100px');
 
 ```
 
@@ -55,7 +63,15 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style>
+  img { 
+    height: 100px; 
+    width: 100px; 
+  }
+</style>
+
+<img src="https://s3.amazonaws.com/freecodecamp/FCCStickers-CamperBot200x200.jpg" alt="freeCodeCamp sticker that says 'Because CamperBot Cares'">
 ```
+
 </section>

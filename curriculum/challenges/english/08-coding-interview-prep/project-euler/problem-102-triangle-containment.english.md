@@ -2,6 +2,7 @@
 id: 5900f3d21000cf542c50fee5
 challengeType: 5
 title: 'Problem 102: Triangle containment'
+forumTopicId: 301726
 ---
 
 ## Description
@@ -26,7 +27,7 @@ NOTE: The first two examples in the file represent the triangles in the example 
 ```yml
 tests:
   - text: <code>euler102()</code> should return 228.
-    testString: assert.strictEqual(euler102(), 228, '<code>euler102()</code> should return 228.');
+    testString: assert.strictEqual(euler102(), 228);
 
 ```
 
@@ -58,4 +59,5 @@ euler102();
 ```js
 // solution required
 ```
+
 </section>

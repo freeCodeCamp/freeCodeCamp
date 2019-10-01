@@ -10,7 +10,7 @@ localeTitle: Padronizar Tempos com o Atributo de Data e Hora HTML5
 <section id="description"> Continuando com o tema date, o HTML5 também introduziu o elemento <code>time</code> junto com um atributo <code>datetime</code> para padronizar os tempos. Este é um elemento in-line que pode envolver uma data ou hora em uma página. Um formato válido dessa data é mantido pelo atributo <code>datetime</code> . Esse é o valor acessado pelos dispositivos auxiliares. Isso ajuda a evitar a confusão, afirmando uma versão padronizada de um tempo, mesmo que seja escrito de maneira informal ou coloquial no texto. Aqui está um exemplo: <code>&lt;p&gt;Master Camper Cat officiated the cage match between Goro and Scorpion &lt;time datetime=&quot;2013-02-13&quot;&gt;last Wednesday&lt;/time&gt;, which ended in a draw.&lt;/p&gt;</code> </section>
 
 ## Instructions
-<section id="instructions"> Resultados da pesquisa Mortal Kombat do Camper Cat estão em! Embrulhe uma tag de <code>time</code> torno do texto &quot;Quinta-feira, 15 de setembro &lt;sup&gt; th &lt;/ sup&gt;&quot; e adicione um atributo <code>datetime</code> a ele definido como &quot;2016-09-15&quot;. </section>
+<section id="instructions"> Resultados da pesquisa Mortal Kombat do Camper Cat estão em! Adicione uma tag de <code>time</code> torno do texto &quot;Quinta-feira, 15 de setembro &lt;sup&gt; th &lt;/ sup&gt;&quot; e adicione um atributo <code>datetime</code> a ele definido como &quot;2016-09-15&quot;. </section>
 
 ## Tests
 <section id='tests'>

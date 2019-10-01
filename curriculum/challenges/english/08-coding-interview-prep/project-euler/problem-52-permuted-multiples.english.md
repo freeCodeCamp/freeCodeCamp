@@ -2,6 +2,7 @@
 id: 5900f3a01000cf542c50feb3
 challengeType: 5
 title: 'Problem 52: Permuted multiples'
+forumTopicId: 302163
 ---
 
 ## Description
@@ -21,7 +22,7 @@ Find the smallest positive integer, x, such that 2x, 3x, 4x, 5x, and 6x, contain
 ```yml
 tests:
   - text: <code>permutedMultiples()</code> should return 142857.
-    testString: assert.strictEqual(permutedMultiples(), 142857, '<code>permutedMultiples()</code> should return 142857.');
+    testString: assert.strictEqual(permutedMultiples(), 142857);
 
 ```
 

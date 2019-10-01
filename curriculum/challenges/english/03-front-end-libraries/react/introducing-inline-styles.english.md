@@ -3,11 +3,12 @@ id: 5a24c314108439a4d4036181
 title: Introducing Inline Styles
 challengeType: 6
 isRequired: false
+forumTopicId: 301395
 ---
 
 ## Description
 <section id='description'>
-There are other complex concepts that add powerful capabilities to your React code. But you may be wondering about the more simple problem of how to style those JSX elements you create in React. You likely know that it won't be exactly the same as working with HTML because of <a target="_blank" href="front-end-libraries/react/define-an-html-class-in-jsx"> the way you apply classes to JSX elements</a>.
+There are other complex concepts that add powerful capabilities to your React code. But you may be wondering about the more simple problem of how to style those JSX elements you create in React. You likely know that it won't be exactly the same as working with HTML because of <a target="_blank" href="learn/front-end-libraries/react/define-an-html-class-in-jsx"> the way you apply classes to JSX elements</a>.
 If you import styles from a stylesheet, it isn't much different at all. You apply a class to your JSX element using the <code>className</code> attribute, and apply styles to the class in your stylesheet. Another option is to apply <strong><em>inline</em></strong> styles, which are very common in ReactJS development.
 You apply inline styles to JSX elements similar to how you do it in HTML, but with a few JSX differences. Here's an example of an inline style in HTML:
 <code>&lt;div style="color: yellow; font-size: 16px"&gt;Mellow Yellow&lt;/div&gt;</code>
@@ -28,11 +29,11 @@ Note that you can optionally set the font size to be a number, omitting the unit
 ```yml
 tests:
   - text: The component should render a <code>div</code> element.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Colorful)); return mockedComponent.children().type() === 'div'; })(), 'The component should render a <code>div</code> element.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Colorful)); return mockedComponent.children().type() === 'div'; })());
   - text: The <code>div</code> element should have a color of <code>red</code>.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Colorful)); return mockedComponent.children().props().style.color === 'red'; })(), 'The <code>div</code> element should have a color of <code>red</code>.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Colorful)); return mockedComponent.children().props().style.color === 'red'; })());
   - text: The <code>div</code> element should have a font size of <code>72px</code>.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Colorful)); return (mockedComponent.children().props().style.fontSize === 72 || mockedComponent.children().props().style.fontSize === '72' || mockedComponent.children().props().style.fontSize === '72px'); })(), 'The <code>div</code> element should have a font size of <code>72px</code>.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Colorful)); return (mockedComponent.children().props().style.fontSize === 72 || mockedComponent.children().props().style.fontSize === '72' || mockedComponent.children().props().style.fontSize === '72px'); })());
 
 ```
 

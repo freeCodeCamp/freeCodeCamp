@@ -2,6 +2,7 @@
 id: 5900f48f1000cf542c50ffa1
 challengeType: 5
 title: 'Problem 290: Digital Signature'
+forumTopicId: 301942
 ---
 
 ## Description
@@ -20,7 +21,7 @@ How many integers 0 ≤ n < 1018 have the property that the sum of the digits of
 ```yml
 tests:
   - text: <code>euler290()</code> should return 20444710234716470.
-    testString: assert.strictEqual(euler290(), 20444710234716470, '<code>euler290()</code> should return 20444710234716470.');
+    testString: assert.strictEqual(euler290(), 20444710234716470);
 
 ```
 
@@ -52,4 +53,5 @@ euler290();
 ```js
 // solution required
 ```
+
 </section>

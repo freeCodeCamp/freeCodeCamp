@@ -2,6 +2,7 @@
 id: 5900f50b1000cf542c51001d
 challengeType: 5
 title: 'Problem 414: Kaprekar constant'
+forumTopicId: 302083
 ---
 
 ## Description
@@ -51,7 +52,7 @@ Give the last 18 digits as your answer.
 ```yml
 tests:
   - text: <code>euler414()</code> should return 552506775824935500.
-    testString: assert.strictEqual(euler414(), 552506775824935500, '<code>euler414()</code> should return 552506775824935500.');
+    testString: assert.strictEqual(euler414(), 552506775824935500);
 
 ```
 
@@ -83,4 +84,5 @@ euler414();
 ```js
 // solution required
 ```
+
 </section>

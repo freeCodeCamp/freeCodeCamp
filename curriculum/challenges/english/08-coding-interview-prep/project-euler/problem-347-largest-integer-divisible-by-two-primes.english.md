@@ -2,6 +2,7 @@
 id: 5900f4c81000cf542c50ffd9
 challengeType: 5
 title: 'Problem 347: Largest integer divisible by two primes'
+forumTopicId: 302006
 ---
 
 ## Description
@@ -34,7 +35,7 @@ Find S(10 000 000).
 ```yml
 tests:
   - text: <code>euler347()</code> should return 11109800204052.
-    testString: assert.strictEqual(euler347(), 11109800204052, '<code>euler347()</code> should return 11109800204052.');
+    testString: assert.strictEqual(euler347(), 11109800204052);
 
 ```
 
@@ -66,4 +67,5 @@ euler347();
 ```js
 // solution required
 ```
+
 </section>

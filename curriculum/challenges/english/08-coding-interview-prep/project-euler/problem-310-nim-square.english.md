@@ -2,6 +2,7 @@
 id: 5900f4a21000cf542c50ffb5
 challengeType: 5
 title: 'Problem 310: Nim Square'
+forumTopicId: 301966
 ---
 
 ## Description
@@ -26,7 +27,7 @@ Find the number of losing positions for the next player if 0≤a≤b≤c≤100 0
 ```yml
 tests:
   - text: <code>euler310()</code> should return 2586528661783.
-    testString: assert.strictEqual(euler310(), 2586528661783, '<code>euler310()</code> should return 2586528661783.');
+    testString: assert.strictEqual(euler310(), 2586528661783);
 
 ```
 
@@ -58,4 +59,5 @@ euler310();
 ```js
 // solution required
 ```
+
 </section>

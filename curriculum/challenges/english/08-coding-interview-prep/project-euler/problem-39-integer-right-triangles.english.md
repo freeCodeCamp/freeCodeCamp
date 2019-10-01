@@ -2,6 +2,7 @@
 id: 5900f3931000cf542c50fea6
 challengeType: 5
 title: 'Problem 39: Integer right triangles'
+forumTopicId: 302054
 ---
 
 ## Description
@@ -22,13 +23,13 @@ For which value of p ≤ n, is the number of solutions maximised?
 ```yml
 tests:
   - text: <code>intRightTriangles(500)</code> should return 420.
-    testString: assert(intRightTriangles(500) == 420, '<code>intRightTriangles(500)</code> should return 420.');
+    testString: assert(intRightTriangles(500) == 420);
   - text: <code>intRightTriangles(800)</code> should return 420.
-    testString: assert(intRightTriangles(800) == 420, '<code>intRightTriangles(800)</code> should return 420.');
+    testString: assert(intRightTriangles(800) == 420);
   - text: <code>intRightTriangles(900)</code> should return 840.
-    testString: assert(intRightTriangles(900) == 840, '<code>intRightTriangles(900)</code> should return 840.');
+    testString: assert(intRightTriangles(900) == 840);
   - text: <code>intRightTriangles(1000)</code> should return 840.
-    testString: assert(intRightTriangles(1000) == 840, '<code>intRightTriangles(1000)</code> should return 840.');
+    testString: assert(intRightTriangles(1000) == 840);
 
 ```
 
@@ -60,4 +61,5 @@ intRightTriangles(1000);
 ```js
 // solution required
 ```
+
 </section>

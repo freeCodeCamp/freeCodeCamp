@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Adjuntar un valor de reserva a una variable CSS
 ---
 
-## Description
+## Descripción
 <section id="description"> Cuando use su variable como un valor de propiedad CSS, puede adjuntar un valor de reserva al que su navegador volverá si la variable dada no es válida. <strong>Nota:</strong> este respaldo no se utiliza para aumentar la compatibilidad del navegador, y no funcionará en los navegadores IE. Más bien, se usa para que el navegador tenga un color para mostrar si no puede encontrar su variable. Así es como lo haces: <blockquote> fondo: var (- piel de pingüino, negro); </blockquote> Esto establecerá el fondo en negro si su variable no se estableció. Tenga en cuenta que esto puede ser útil para la depuración. </section>
 
-## Instructions
+## Instrucciones
 <section id="instructions"> Parece que hay un problema con las variables proporcionadas a las <code>.penguin-top</code> y <code>.penguin-bottom</code> . En lugar de corregir el error tipográfico, agregue un valor alternativo de <code>black</code> a la propiedad de <code>background</code> de las <code>.penguin-top</code> y <code>.penguin-bottom</code> . </section>
 
-## Tests
+## Pruebas
 <section id='tests'>
 
 ```yml
@@ -245,7 +245,7 @@ tests:
 
 </section>
 
-## Solution
+## Solución
 <section id='solution'>
 
 ```js

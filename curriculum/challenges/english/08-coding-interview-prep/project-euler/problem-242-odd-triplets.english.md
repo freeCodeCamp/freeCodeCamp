@@ -2,6 +2,7 @@
 id: 5900f45f1000cf542c50ff71
 challengeType: 5
 title: 'Problem 242: Odd Triplets'
+forumTopicId: 301889
 ---
 
 ## Description
@@ -28,7 +29,7 @@ How many odd-triplets are there with n ≤ 1012 ?
 ```yml
 tests:
   - text: <code>euler242()</code> should return 997104142249036700.
-    testString: assert.strictEqual(euler242(), 997104142249036700, '<code>euler242()</code> should return 997104142249036700.');
+    testString: assert.strictEqual(euler242(), 997104142249036700);
 
 ```
 
@@ -60,4 +61,5 @@ euler242();
 ```js
 // solution required
 ```
+
 </section>

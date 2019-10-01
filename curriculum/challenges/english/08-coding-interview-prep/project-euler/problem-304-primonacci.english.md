@@ -2,6 +2,7 @@
 id: 5900f49d1000cf542c50ffaf
 challengeType: 5
 title: 'Problem 304: Primonacci'
+forumTopicId: 301958
 ---
 
 ## Description
@@ -35,7 +36,7 @@ Give your answer mod 1234567891011.
 ```yml
 tests:
   - text: <code>euler304()</code> should return 283988410192.
-    testString: assert.strictEqual(euler304(), 283988410192, '<code>euler304()</code> should return 283988410192.');
+    testString: assert.strictEqual(euler304(), 283988410192);
 
 ```
 
@@ -67,4 +68,5 @@ euler304();
 ```js
 // solution required
 ```
+
 </section>

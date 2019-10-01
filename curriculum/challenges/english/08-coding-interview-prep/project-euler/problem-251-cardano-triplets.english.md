@@ -2,6 +2,7 @@
 id: 5900f4671000cf542c50ff7a
 challengeType: 5
 title: 'Problem 251: Cardano Triplets'
+forumTopicId: 301899
 ---
 
 ## Description
@@ -30,7 +31,7 @@ Find how many Cardano Triplets exist such that a+b+c ≤ 110,000,000.
 ```yml
 tests:
   - text: <code>euler251()</code> should return 18946051.
-    testString: assert.strictEqual(euler251(), 18946051, '<code>euler251()</code> should return 18946051.');
+    testString: assert.strictEqual(euler251(), 18946051);
 
 ```
 
@@ -62,4 +63,5 @@ euler251();
 ```js
 // solution required
 ```
+
 </section>

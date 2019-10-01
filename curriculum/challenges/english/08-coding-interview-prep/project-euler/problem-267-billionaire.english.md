@@ -2,6 +2,7 @@
 id: 5900f4771000cf542c50ff8a
 challengeType: 5
 title: 'Problem 267: Billionaire'
+forumTopicId: 301916
 ---
 
 ## Description
@@ -25,7 +26,7 @@ All computations are assumed to be exact (no rounding), but give your answer rou
 ```yml
 tests:
   - text: <code>euler267()</code> should return 0.999992836187.
-    testString: assert.strictEqual(euler267(), 0.999992836187, '<code>euler267()</code> should return 0.999992836187.');
+    testString: assert.strictEqual(euler267(), 0.999992836187);
 
 ```
 
@@ -57,4 +58,5 @@ euler267();
 ```js
 // solution required
 ```
+
 </section>

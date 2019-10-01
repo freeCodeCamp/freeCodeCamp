@@ -3,6 +3,7 @@ id: 587d78ae367417b2b2512aff
 title: Use the order Property to Rearrange Items
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cMbvNAG'
+forumTopicId: 301116
 ---
 
 ## Description
@@ -21,9 +22,9 @@ Add the CSS property <code>order</code> to both <code>#box-1</code> and <code>#b
 ```yml
 tests:
   - text: The <code>#box-1</code> element should have the <code>order</code> property set to a value of 2.
-    testString: assert($('#box-1').css('order') == '2', 'The <code>#box-1</code> element should have the <code>order</code> property set to a value of 2.');
+    testString: assert($('#box-1').css('order') == '2');
   - text: The <code>#box-2</code> element should have the <code>order</code> property set to a value of 1.
-    testString: assert($('#box-2').css('order') == '1', 'The <code>#box-2</code> element should have the <code>order</code> property set to a value of 1.');
+    testString: assert($('#box-2').css('order') == '1');
 
 ```
 
@@ -70,7 +71,31 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style>
+  #box-container {
+    display: flex;
+    height: 500px;
+  }
+  #box-1 {
+    background-color: dodgerblue;
+    order: 2;
+    height: 200px;
+    width: 200px;
+  }
+
+  #box-2 {
+    background-color: orangered;
+    order: 1;
+    height: 200px;
+    width: 200px;
+  }
+</style>
+
+<div id="box-container">
+  <div id="box-1"></div>
+  <div id="box-2"></div>
+</div>
 ```
+
 </section>

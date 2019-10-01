@@ -2,6 +2,7 @@
 id: 5900f4f11000cf542c510002
 challengeType: 5
 title: 'Problem 388: Distinct Lines'
+forumTopicId: 302052
 ---
 
 ## Description
@@ -29,7 +30,7 @@ Find D(1010). Give as your answer the first nine digits followed by the last nin
 ```yml
 tests:
   - text: <code>euler388()</code> should return 831907372805130000.
-    testString: assert.strictEqual(euler388(), 831907372805130000, '<code>euler388()</code> should return 831907372805130000.');
+    testString: assert.strictEqual(euler388(), 831907372805130000);
 
 ```
 
@@ -61,4 +62,5 @@ euler388();
 ```js
 // solution required
 ```
+
 </section>

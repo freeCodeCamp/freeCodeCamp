@@ -2,73 +2,47 @@
 title: Convert seconds to compound duration
 id: 596fd036dc1ab896c5db98b1
 challengeType: 5
+forumTopicId: 302236
 ---
 
 ## Description
 <section id='description'>
-Task:
-<p>Implement a function which:</p>
-takes a positive integer representing a duration in seconds as input (e.g., <code>100</code>), and
-returns a string which shows the same duration decomposed into weeks, days, hours, minutes, and seconds as detailed below (e.g., "<code>1 min, 40 sec</code>").
-<p>Demonstrate that it passes the following three test-cases:</p><p style="font-size:115%; margin:1em 0 0 0">Test Cases</p>
-<table>
-<tbody>
-<tr>
-<th>input number</th>
-<th>output number</th>
-</tr>
-<tr>
-<td>7259</td>
-<td><code>2 hr, 59 sec</code></td>
-</tr>
-<tr>
-<td>86400</td>
-<td><code>1 d</code></td>
-</tr>
-<tr>
-<td>6000000</td>
-<td><code>9 wk, 6 d, 10 hr, 40 min</code></td>
-</tr>
-</tbody>
-</table>
-<p style="font-size:115%; margin:1em 0 0 0">Details</p>
-The following five units should be used:
-<table>
-<tbody>
-<tr>
-<th>unit</th>
-<th>suffix used in output</th>
-<th>conversion</th>
-</tr>
-<tr>
-<td>week</td>
-<td><code>wk</code></td>
-<td>1 week = 7 days</td>
-</tr>
-<tr>
-<td>day</td>
-<td><code>d</code></td>
-<td>1 day = 24 hours</td>
-</tr>
-<tr>
-<td>hour</td>
-<td><code>hr</code></td>
-<td>1 hour = 60 minutes</td>
-</tr>
-<tr>
-<td>minute</td>
-<td><code>min</code></td>
-<td>1 minute = 60 seconds</td>
-</tr>
-<tr>
-<td>second</td>
-<td><code>sec</code></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-However, only include quantities with non-zero values in the output (e.g., return "<code>1 d</code>" and not "<code>0 wk, 1 d, 0 hr, 0 min, 0 sec</code>").Give larger units precedence over smaller ones as much as possible (e.g., return <code>2 min, 10 sec</code> and not <code>1 min, 70 sec</code> or <code>130 sec</code>)Mimic the formatting shown in the test-cases (quantities sorted from largest unit to smallest and separated by comma+space; value and unit of each quantity separated by space).
-<p><hr style="margin:1em 0;"/></p>
+Implement a function which:
+<ul>
+  <li>takes a positive integer representing a duration in seconds as input (e.g., <code>100</code>), and</li>
+  <li>returns a string which shows the same duration decomposed into weeks, days, hours, minutes, and seconds as detailed below (e.g., <code>1 min, 40 sec</code>).</li>
+</ul>
+Demonstrate that it passes the following three test-cases:
+<div style="font-size:115%; font-weight: bold;">Test Cases</div>
+
+| Input number | Output number |
+| --- | --- |
+| 7259 | <code>2 hr, 59 sec</code> |
+| 728640059 | <code>1 d</code> |
+| 6000000 | <code>9 wk, 6 d, 10 hr, 40 min</code> |
+<div style="font-size:115%; font-weight: bold;">Details</div>
+<ul>
+  <li>
+    The following five units should be used:
+
+| Unit | Suffix used in Output | Conversion |
+| --- | --- | --- |
+| week | <code>wk</code> | 1 week = 7 days |
+| day | <code>d</code> | 1 day = 24 hours |
+| hour | <code>hr</code> | 1 hour = 60 minutes |
+| minute | <code>min</code> | 1 minute = 60 seconds |
+| second | <code>sec</code> | --- |
+  </li>
+  <li>
+    However, <strong>only</strong> include quantities with non-zero values in the output (e.g., return <code>1 d</code> and not <code>0 wk, 1 d, 0 hr, 0 min, 0 sec</code>).
+  </li>
+  <li>
+    Give larger units precedence over smaller ones as much as possible (e.g., return <code>2 min, 10 sec</code> and not <code>1 min, 70 sec</code> or <code>130 sec</code>).
+  </li>
+  <li>
+    Mimic the formatting shown in the test-cases (quantities sorted from largest unit to smallest and separated by comma+space; value and unit of each quantity separated by space).
+  </li>
+</ul>
 </section>
 
 ## Instructions
@@ -82,13 +56,13 @@ However, only include quantities with non-zero values in the output (e.g., retur
 ```yml
 tests:
   - text: <code>convertSeconds</code> is a function.
-    testString: assert(typeof convertSeconds === 'function', '<code>convertSeconds</code> is a function.');
+    testString: assert(typeof convertSeconds === 'function');
   - text: <code>convertSeconds(7259)</code> should return <code>2 hr, 59 sec</code>.
-    testString: assert.equal(convertSeconds(testCases[0]), results[0], '<code>convertSeconds(7259)</code> should return <code>2 hr, 59 sec</code>.');
+    testString: assert.equal(convertSeconds(testCases[0]), results[0]);
   - text: <code>convertSeconds(86400)</code> should return <code>1 d</code>.
-    testString: assert.equal(convertSeconds(testCases[1]), results[1], '<code>convertSeconds(86400)</code> should return <code>1 d</code>.');
+    testString: assert.equal(convertSeconds(testCases[1]), results[1]);
   - text: <code>convertSeconds(6000000)</code> should return <code>9 wk, 6 d, 10 hr, 40 min</code>.
-    testString: assert.equal(convertSeconds(testCases[2]), results[2], '<code>convertSeconds(6000000)</code> should return <code>9 wk, 6 d, 10 hr, 40 min</code>.');
+    testString: assert.equal(convertSeconds(testCases[2]), results[2]);
 
 ```
 
@@ -100,7 +74,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function convertSeconds (sec) {
+function convertSeconds(sec) {
   // Good luck!
   return true;
 }
@@ -126,7 +100,7 @@ const results = ['2 hr, 59 sec', '1 d', '9 wk, 6 d, 10 hr, 40 min'];
 
 
 ```js
-function convertSeconds (sec) {
+function convertSeconds(sec) {
   const localNames = ['wk', 'd', 'hr', 'min', 'sec'];
   // compoundDuration :: [String] -> Int -> String
   const compoundDuration = (labels, intSeconds) =>

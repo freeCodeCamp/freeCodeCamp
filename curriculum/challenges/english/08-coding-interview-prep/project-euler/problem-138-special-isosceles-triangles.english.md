@@ -2,6 +2,7 @@
 id: 5900f3f61000cf542c50ff09
 challengeType: 5
 title: 'Problem 138: Special isosceles triangles'
+forumTopicId: 301766
 ---
 
 ## Description
@@ -25,7 +26,7 @@ Find ∑ L for the twelve smallest isosceles triangles for which h = b ± 1 and 
 ```yml
 tests:
   - text: <code>euler138()</code> should return 1118049290473932.
-    testString: assert.strictEqual(euler138(), 1118049290473932, '<code>euler138()</code> should return 1118049290473932.');
+    testString: assert.strictEqual(euler138(), 1118049290473932);
 
 ```
 
@@ -57,4 +58,5 @@ euler138();
 ```js
 // solution required
 ```
+
 </section>

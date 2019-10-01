@@ -2,6 +2,7 @@
 id: 5900f4ff1000cf542c510011
 challengeType: 5
 title: 'Problem 402: Integer-valued polynomials'
+forumTopicId: 302070
 ---
 
 ## Description
@@ -37,7 +38,7 @@ Find the last 9 digits of Σ S(Fk) for 2 ≤ k ≤ 1234567890123.
 ```yml
 tests:
   - text: <code>euler402()</code> should return 356019862.
-    testString: assert.strictEqual(euler402(), 356019862, '<code>euler402()</code> should return 356019862.');
+    testString: assert.strictEqual(euler402(), 356019862);
 
 ```
 
@@ -69,4 +70,5 @@ euler402();
 ```js
 // solution required
 ```
+
 </section>

@@ -10,7 +10,7 @@ function BlockSaveButton({ children, ...restProps }) {
       bsStyle='primary'
       type='submit'
       {...restProps}
-      >
+    >
       {children || 'Save'}
     </Button>
   );

@@ -7,7 +7,7 @@ localeTitle: Crear una lista desordenada con viñetas
 ---
 
 ## Description
-<section id="description"> HTML tiene un elemento especial para crear <code>unordered lists</code> , o listas de estilo de punto de bala. Las listas desordenadas comienzan con un elemento <code>&lt;ul&gt;</code> apertura, seguido de cualquier número de elementos <code>&lt;li&gt;</code> . Por último, las listas no ordenadas se cierran con <code>&lt;/ul&gt;</code> Por ejemplo: <blockquote> &lt;ul&gt; <br> &lt;li&gt; leche &lt;/li&gt; <br> &lt;li&gt; queso &lt;/li&gt; <br> &lt;/ul&gt; </blockquote> crearía una lista de estilo de punto de bala de &quot;leche&quot; y &quot;queso&quot;. </section>
+<section id="description"> HTML tiene un elemento especial para crear <code>unordered lists</code> , o listas de estilo de punto de bala. Las listas desordenadas comienzan con un elemento <code>&lt;ul&gt;</code> de apertura, seguido de cualquier número de elementos <code>&lt;li&gt;</code> . Por último, las listas no ordenadas se cierran con <code>&lt;/ul&gt;</code> Por ejemplo: <blockquote> &lt;ul&gt; <br> &lt;li&gt; leche &lt;/li&gt; <br> &lt;li&gt; queso &lt;/li&gt; <br> &lt;/ul&gt; </blockquote> crearía una lista de estilo de punto de bala de &quot;leche&quot; y &quot;queso&quot;. </section>
 
 ## Instructions
 <section id="instructions"> Elimina los dos últimos elementos <code>p</code> y crea una lista desordenada de tres cosas que los gatos adoran al final de la página. </section>
@@ -25,6 +25,8 @@ tests:
     testString: 'assert(code.match(/<\/ul>/gi) && code.match(/<ul/gi) && code.match(/<\/ul>/gi).length === code.match(/<ul/gi).length, "Make sure your <code>ul</code> element has a closing tag.");'
   - text: Asegúrese de que sus elementos <code>li</code> tengan etiquetas de cierre.
     testString: 'assert(code.match(/<\/li>/gi) && code.match(/<li[\s>]/gi) && code.match(/<\/li>/gi).length === code.match(/<li[\s>]/gi).length, "Make sure your <code>li</code> elements have closing tags.");'
+  - text: Asegúrese de que sus elementos <code>li</code> no contengan una cadena vacía o sólo espacios en blanco.
+    testString: assert($("ul li").filter((_, item) => !$(item).text().trim()).length === 0, 'Make sure your <code>li</code> elements don\’t contain an empty string or only white-space.');
 
 ```
 

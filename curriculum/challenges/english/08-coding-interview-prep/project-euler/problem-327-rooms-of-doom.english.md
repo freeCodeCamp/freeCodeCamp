@@ -2,6 +2,7 @@
 id: 5900f4b31000cf542c50ffc6
 challengeType: 5
 title: 'Problem 327: Rooms of Doom'
+forumTopicId: 301984
 ---
 
 ## Description
@@ -41,7 +42,7 @@ Find ΣM(C,30) for 3 ≤ C ≤ 40.
 ```yml
 tests:
   - text: <code>euler327()</code> should return 34315549139516.
-    testString: assert.strictEqual(euler327(), 34315549139516, '<code>euler327()</code> should return 34315549139516.');
+    testString: assert.strictEqual(euler327(), 34315549139516);
 
 ```
 
@@ -73,4 +74,5 @@ euler327();
 ```js
 // solution required
 ```
+
 </section>

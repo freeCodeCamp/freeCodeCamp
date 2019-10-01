@@ -2,6 +2,7 @@
 id: 5900f4231000cf542c50ff35
 challengeType: 5
 title: 'Problem 182: RSA encryption'
+forumTopicId: 301818
 ---
 
 ## Description
@@ -34,7 +35,7 @@ Find the sum of all values of e, 1<e<φ(1009,3643) and gcd(e,φ)=1, so that the 
 ```yml
 tests:
   - text: <code>euler182()</code> should return 399788195976.
-    testString: assert.strictEqual(euler182(), 399788195976, '<code>euler182()</code> should return 399788195976.');
+    testString: assert.strictEqual(euler182(), 399788195976);
 
 ```
 
@@ -66,4 +67,5 @@ euler182();
 ```js
 // solution required
 ```
+
 </section>

@@ -2,15 +2,16 @@
 id: 587d8255367417b2b2512c74
 title: Create a Priority Queue Class
 challengeType: 1
+forumTopicId: 301630
 ---
 
 ## Description
 <section id='description'>
 In this challenge you will be creating a Priority Queue. A Priority Queue is a special type of Queue in which items may have additional information which specifies their priority. This could be simply represented with an integer. Item priority will override placement order in determining the sequence items are dequeued. If an item with a higher priority is enqueued after items with lower priority, the higher priority item will be dequeued before all the others.
 For instance, let’s imagine we have a priority queue with three items:
-<code>[[’kitten’, 2], [‘dog’, 2], [‘rabbit’, 2]]</code>
-Here the second value (an integer) represents item priority. If we enqueue <code>[‘human’, 1]</code> with a priority of <code>1</code> (assuming lower priorities are given precedence) it would then be the first item to be dequeued. The collection would like this:
-<code>[[‘human’, 1], [’kitten’, 2], [‘dog’, 2], [‘rabbit’, 2]]</code>.
+<code>[['kitten', 2], ['dog', 2], ['rabbit', 2]]</code>
+Here the second value (an integer) represents item priority. If we enqueue <code>['human', 1]</code> with a priority of <code>1</code> (assuming lower priorities are given precedence) it would then be the first item to be dequeued. The collection would like this:
+<code>[['human', 1], ['kitten', 2], ['dog', 2], ['rabbit', 2]]</code>.
 We’ve started writing a <code>PriorityQueue</code> in the code editor. You will need to add an <code>enqueue</code> method for adding items with a priority, a <code>dequeue</code> method for removing items, a <code>size</code> method to return the number of items in the queue, a <code>front</code> method to return the element at the front of the queue, and finally an <code>isEmpty</code> method that will return <code>true</code> if the queue is empty or <code>false</code> if it is not.
 The <code>enqueue</code> should accept items with the format shown above (<code>['human', 1]</code>) where <code>1</code> represents the priority. The <code>dequeue</code> should return only the current item, not its priority.
 </section>
@@ -26,19 +27,19 @@ The <code>enqueue</code> should accept items with the format shown above (<code>
 ```yml
 tests:
   - text: Your <code>Queue</code> class should have a <code>enqueue</code> method.
-    testString: assert((function(){var test = new PriorityQueue();  return (typeof test.enqueue === 'function')}()), 'Your <code>Queue</code> class should have a <code>enqueue</code> method.');
+    testString: assert((function(){var test = new PriorityQueue();  return (typeof test.enqueue === 'function')}()));
   - text: Your <code>Queue</code> class should have a <code>dequeue</code> method.
-    testString: assert((function(){var test = new PriorityQueue();  return (typeof test.dequeue === 'function')}()), 'Your <code>Queue</code> class should have a <code>dequeue</code> method.');
+    testString: assert((function(){var test = new PriorityQueue();  return (typeof test.dequeue === 'function')}()));
   - text: Your <code>Queue</code> class should have a <code>size</code> method.
-    testString: assert((function(){var test = new PriorityQueue();  return (typeof test.size === 'function')}()), 'Your <code>Queue</code> class should have a <code>size</code> method.');
+    testString: assert((function(){var test = new PriorityQueue();  return (typeof test.size === 'function')}()));
   - text: Your <code>Queue</code> class should have an <code>isEmpty</code> method.
-    testString: assert((function(){var test = new PriorityQueue();  return (typeof test.isEmpty === 'function')}()), 'Your <code>Queue</code> class should have an <code>isEmpty</code> method.');
+    testString: assert((function(){var test = new PriorityQueue();  return (typeof test.isEmpty === 'function')}()));
   - text: Your PriorityQueue should correctly keep track of the current number of items using the <code>size</code> method as items are enqueued and dequeued.
-    testString: assert((function(){var test = new PriorityQueue(); test.enqueue(['David Brown', 2]); test.enqueue(['Jon Snow', 1]); var size1 = test.size(); test.dequeue(); var size2 = test.size(); test.enqueue(['A', 3]); test.enqueue(['B', 3]); test.enqueue(['C', 3]); return (size1 === 2 && size2 === 1 && test.size() === 4)}()), 'Your PriorityQueue should correctly keep track of the current number of items using the <code>size</code> method as items are enqueued and dequeued.');
+    testString: assert((function(){var test = new PriorityQueue(); test.enqueue(['David Brown', 2]); test.enqueue(['Jon Snow', 1]); var size1 = test.size(); test.dequeue(); var size2 = test.size(); test.enqueue(['A', 3]); test.enqueue(['B', 3]); test.enqueue(['C', 3]); return (size1 === 2 && size2 === 1 && test.size() === 4)}()));
   - text: The <code>isEmpty</code> method should return <code>true</code> when the queue is empty.
-    testString: assert((function(){var test = new PriorityQueue(); test.enqueue(['A', 1]); test.enqueue(['B', 1]); test.dequeue(); var first = test.isEmpty(); test.dequeue(); return (!first && test.isEmpty()); }()), 'The <code>isEmpty</code> method should return <code>true</code> when the queue is empty.');
+    testString: assert((function(){var test = new PriorityQueue(); test.enqueue(['A', 1]); test.enqueue(['B', 1]); test.dequeue(); var first = test.isEmpty(); test.dequeue(); return (!first && test.isEmpty()); }()));
   - text: The priority queue should return items with a higher priority before items with a lower priority and return items in first-in-first-out order otherwise.
-    testString: assert((function(){var test = new PriorityQueue(); test.enqueue(['A', 5]); test.enqueue(['B', 5]); test.enqueue(['C', 5]); test.enqueue(['D', 3]); test.enqueue(['E', 1]); test.enqueue(['F', 7]); var result = []; result.push(test.dequeue()); result.push(test.dequeue()); result.push(test.dequeue()); result.push(test.dequeue()); result.push(test.dequeue()); result.push(test.dequeue()); return result.join('') === 'EDABCF';}()), 'The priority queue should return items with a higher priority before items with a lower priority and return items in first-in-first-out order otherwise.');
+    testString: assert((function(){var test = new PriorityQueue(); test.enqueue(['A', 5]); test.enqueue(['B', 5]); test.enqueue(['C', 5]); test.enqueue(['D', 3]); test.enqueue(['E', 1]); test.enqueue(['F', 7]); var result = []; result.push(test.dequeue()); result.push(test.dequeue()); result.push(test.dequeue()); result.push(test.dequeue()); result.push(test.dequeue()); result.push(test.dequeue()); return result.join('') === 'EDABCF';}()));
 
 ```
 
@@ -46,7 +47,6 @@ tests:
 
 ## Challenge Seed
 <section id='challengeSeed'>
-
 <div id='js-seed'>
 
 ```js

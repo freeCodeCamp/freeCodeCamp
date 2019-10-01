@@ -2,6 +2,7 @@
 id: 5900f3fd1000cf542c50ff10
 challengeType: 5
 title: 'Problem 145: How many reversible numbers are there below one-billion?'
+forumTopicId: 301774
 ---
 
 ## Description
@@ -24,7 +25,7 @@ How many reversible numbers are there below one-billion (109)?
 ```yml
 tests:
   - text: <code>euler145()</code> should return 608720.
-    testString: assert.strictEqual(euler145(), 608720, '<code>euler145()</code> should return 608720.');
+    testString: assert.strictEqual(euler145(), 608720);
 
 ```
 
@@ -56,4 +57,5 @@ euler145();
 ```js
 // solution required
 ```
+
 </section>

@@ -3,12 +3,17 @@ id: 5a94fe4469fb03452672e460
 title: Limit Item Size Using the minmax Function
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cD97RTv'
+forumTopicId: 301131
 ---
 
 ## Description
 <section id='description'>
 There's another built-in function to use with <code>grid-template-columns</code> and <code>grid-template-rows</code> called <code>minmax</code>. It's used to limit the size of items when the grid container changes size. To do this you need to specify the acceptable size range for your item. Here is an example:
-<blockquote>grid-template-columns: 100px minmax(50px, 200px);</blockquote>
+
+```css
+grid-template-columns: 100px minmax(50px, 200px);
+```
+
 In the code above, <code>grid-template-columns</code> is set to create two columns; the first is 100px wide, and the second has the minimum width of 50px and the maximum width of 200px.
 </section>
 
@@ -23,7 +28,7 @@ Using the <code>minmax</code> function, replace the <code>1fr</code> in the <cod
 ```yml
 tests:
   - text: <code>container</code> class should have a <code>grid-template-columns</code> property that is set to repeat 3 columns with the minimum width of <code>90px</code> and maximum width of <code>1fr</code>.
-    testString: assert(code.match(/.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?repeat\s*?\(\s*?3\s*?,\s*?minmax\s*?\(\s*?90px\s*?,\s*?1fr\s*?\)\s*?\)\s*?;[\s\S]*}/gi), '<code>container</code> class should have a <code>grid-template-columns</code> property that is set to repeat 3 columns with the minimum width of <code>90px</code> and maximum width of <code>1fr</code>.');
+    testString: assert(code.match(/.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?repeat\s*?\(\s*?3\s*?,\s*?minmax\s*?\(\s*?90px\s*?,\s*?1fr\s*?\)\s*?\)\s*?;[\s\S]*}/gi));
 
 ```
 

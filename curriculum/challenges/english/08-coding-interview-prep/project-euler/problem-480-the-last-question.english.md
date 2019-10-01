@@ -2,6 +2,7 @@
 id: 5900f54c1000cf542c51005f
 challengeType: 5
 title: 'Problem 480: The Last Question'
+forumTopicId: 302158
 ---
 
 ## Description
@@ -58,7 +59,7 @@ Give your answer using lowercase characters (no punctuation or space).
 ```yml
 tests:
   - text: <code>euler480()</code> should return turnthestarson.
-    testString: assert.strictEqual(euler480(), turnthestarson, '<code>euler480()</code> should return turnthestarson.');
+    testString: assert.strictEqual(euler480(), turnthestarson);
 
 ```
 
@@ -90,4 +91,5 @@ euler480();
 ```js
 // solution required
 ```
+
 </section>

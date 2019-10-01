@@ -2,6 +2,7 @@
 id: 5900f4151000cf542c50ff27
 challengeType: 5
 title: 'Problem 168: Number Rotations'
+forumTopicId: 301802
 ---
 
 ## Description
@@ -23,7 +24,7 @@ Find the last 5 digits of the sum of all integers n, 10 < n < 10100, that have t
 ```yml
 tests:
   - text: <code>euler168()</code> should return 59206.
-    testString: assert.strictEqual(euler168(), 59206, '<code>euler168()</code> should return 59206.');
+    testString: assert.strictEqual(euler168(), 59206);
 
 ```
 
@@ -55,4 +56,5 @@ euler168();
 ```js
 // solution required
 ```
+
 </section>

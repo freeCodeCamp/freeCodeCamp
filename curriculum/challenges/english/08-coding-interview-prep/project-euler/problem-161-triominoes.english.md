@@ -2,6 +2,7 @@
 id: 5900f40d1000cf542c50ff20
 challengeType: 5
 title: 'Problem 161: Triominoes'
+forumTopicId: 301795
 ---
 
 ## Description
@@ -34,7 +35,7 @@ In how many ways can a 9 by 12 grid be tiled in this way by triominoes?
 ```yml
 tests:
   - text: <code>euler161()</code> should return 20574308184277972.
-    testString: assert.strictEqual(euler161(), 20574308184277972, '<code>euler161()</code> should return 20574308184277972.');
+    testString: assert.strictEqual(euler161(), 20574308184277972);
 
 ```
 
@@ -66,4 +67,5 @@ euler161();
 ```js
 // solution required
 ```
+
 </section>

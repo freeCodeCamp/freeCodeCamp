@@ -2,6 +2,7 @@
 id: 5900f4c31000cf542c50ffd5
 challengeType: 5
 title: 'Problem 342: The totient of a square is a cube'
+forumTopicId: 302001
 ---
 
 ## Description
@@ -28,7 +29,7 @@ Find the sum of all numbers n, 1 &lt n < 1010 such that φ(n2) is a cube.
 ```yml
 tests:
   - text: <code>euler342()</code> should return 5943040885644.
-    testString: assert.strictEqual(euler342(), 5943040885644, '<code>euler342()</code> should return 5943040885644.');
+    testString: assert.strictEqual(euler342(), 5943040885644);
 
 ```
 
@@ -60,4 +61,5 @@ euler342();
 ```js
 // solution required
 ```
+
 </section>

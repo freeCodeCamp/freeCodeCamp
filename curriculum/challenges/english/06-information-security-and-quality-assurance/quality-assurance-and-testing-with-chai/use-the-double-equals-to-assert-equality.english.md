@@ -2,17 +2,18 @@
 id: 587d824b367417b2b2512c4a
 title: Use the Double Equals to Assert Equality
 challengeType: 2
+forumTopicId: 301609
 ---
 
 ## Description
 <section id='description'>
 As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
-.equal(), .notEqual()
-.equal() compares objects using '=='
+<code>equal()</code> compares objects using <code>==</code>.
 </section>
 
 ## Instructions
 <section id='instructions'>
+Use <code>assert.equal()</code> or <code>assert.notEqual()</code> to make the tests pass.
 
 </section>
 
@@ -47,4 +48,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

@@ -14,7 +14,7 @@
   max-width: 1500px;
   width: 100%;
   padding: 30px;
-  border: darkgreen 15px solid;
+  border: var(--theme-color) 15px solid;
   border-radius: 3px;
 }
 
@@ -27,15 +27,13 @@
 }
 
 .certification-namespace.certificate-wrapper {
-  top: calc(100vh / 20);
-  position: relative;
   font-family: 'Sax Mono', monospace;
 }
 
 .certification-namespace header {
   width: 100%;
   height: 140px;
-  background-color: darkgreen;
+  background-color: var(--theme-color);
   position: relative;
 }
 
@@ -63,7 +61,7 @@
   margin-top: -20px;
   height: 380px;
   text-align: center;
-  background-color: #efefef;
+  background-color: var(--gray-05);
 }
 
 .certification-namespace .information-container {
@@ -78,7 +76,8 @@
 }
 
 .certification-namespace h3 {
-  font-size: 30px;
+  font-size: 25px;
+  font-weight: normal;
 }
 
 .certification-namespace h4 {
@@ -88,13 +87,13 @@
 
 .certification-namespace h1 {
   font-size: 40px;
-  color: #006400;
+  color: var(--theme-color);
 }
 
 .certification-namespace .signatures {
   text-align: center;
   margin: 0 auto;
-  background-color: #efefef;
+  background-color: var(--gray-05);
 }
 
 .certification-namespace .signatures img {
@@ -113,17 +112,7 @@
   font-size: 15px;
   text-align: center;
   word-wrap: break-word;
-  background-color: #efefef;
-}
-
-/*adds vertical alignment when the height is bigger than required to display everything*/
-@media screen and (min-height: 700px) {
-  .certification-namespace body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100vh;
-  }
+  background-color: var(--gray-05);
 }
 
 /*mobile media queries*/

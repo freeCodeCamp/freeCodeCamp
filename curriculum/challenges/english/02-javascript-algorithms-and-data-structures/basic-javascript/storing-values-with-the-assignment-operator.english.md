@@ -2,6 +2,8 @@
 id: 56533eb9ac21ba0edf2244a8
 title: Storing Values with the Assignment Operator
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/cEanysE'
+forumTopicId: 18310
 ---
 
 ## Description
@@ -10,7 +12,12 @@ In JavaScript, you can store a value in a variable with the <dfn>assignment</dfn
 <code>myVariable = 5;</code>
 This assigns the <code>Number</code> value <code>5</code> to <code>myVariable</code>.
 Assignment always goes from right to left. Everything to the right of the <code>=</code> operator is resolved before the value is assigned to the variable to the left of the operator.
-<blockquote>myVar = 5;<br>myNum = myVar;</blockquote>
+
+```js
+myVar = 5;
+myNum = myVar;
+```
+
 This assigns <code>5</code> to <code>myVar</code> and then resolves <code>myVar</code> to <code>5</code>  again and assigns it to <code>myNum</code>.
 </section>
 
@@ -26,13 +33,13 @@ Assign the contents of <code>a</code> to variable <code>b</code>.
 ```yml
 tests:
   - text: Do not change code above the line
-    testString: assert(/var a;/.test(code) && /var b = 2;/.test(code), 'Do not change code above the line');
+    testString: assert(/var a;/.test(code) && /var b = 2;/.test(code));
   - text: <code>a</code> should have a value of 7
-    testString: assert(typeof a === 'number' && a === 7, '<code>a</code> should have a value of 7');
+    testString: assert(typeof a === 'number' && a === 7);
   - text: <code>b</code> should have a value of 7
-    testString: assert(typeof b === 'number' && b === 7, '<code>b</code> should have a value of 7');
+    testString: assert(typeof b === 'number' && b === 7);
   - text: <code>a</code> should be assigned to <code>b</code> with <code>=</code>
-    testString: assert(/b\s*=\s*a\s*;/g.test(code), '<code>a</code> should be assigned to <code>b</code> with <code>=</code>');
+    testString: assert(/b\s*=\s*a\s*;/g.test(code));
 
 ```
 

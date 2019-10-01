@@ -2,6 +2,7 @@
 id: 5900f4051000cf542c50ff18
 challengeType: 5
 title: 'Problem 153: Investigating Gaussian Integers'
+forumTopicId: 301784
 ---
 
 ## Description
@@ -64,7 +65,7 @@ What is ∑ s(n) for 1 ≤ n ≤ 108?
 ```yml
 tests:
   - text: <code>euler153()</code> should return 17971254122360636.
-    testString: assert.strictEqual(euler153(), 17971254122360636, '<code>euler153()</code> should return 17971254122360636.');
+    testString: assert.strictEqual(euler153(), 17971254122360636);
 
 ```
 
@@ -96,4 +97,5 @@ euler153();
 ```js
 // solution required
 ```
+
 </section>

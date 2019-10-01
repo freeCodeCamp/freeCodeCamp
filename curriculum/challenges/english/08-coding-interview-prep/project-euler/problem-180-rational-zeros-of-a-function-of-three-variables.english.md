@@ -2,6 +2,7 @@
 id: 5900f4201000cf542c50ff33
 challengeType: 5
 title: 'Problem 180: Rational zeros of a function of three variables'
+forumTopicId: 301816
 ---
 
 ## Description
@@ -28,7 +29,7 @@ Find u + v.
 ```yml
 tests:
   - text: <code>euler180()</code> should return 285196020571078980.
-    testString: assert.strictEqual(euler180(), 285196020571078980, '<code>euler180()</code> should return 285196020571078980.');
+    testString: assert.strictEqual(euler180(), 285196020571078980);
 
 ```
 
@@ -60,4 +61,5 @@ euler180();
 ```js
 // solution required
 ```
+
 </section>

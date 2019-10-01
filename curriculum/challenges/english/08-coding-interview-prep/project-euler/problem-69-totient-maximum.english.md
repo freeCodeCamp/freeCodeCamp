@@ -2,6 +2,7 @@
 id: 5900f3b11000cf542c50fec4
 challengeType: 5
 title: 'Problem 69: Totient maximum'
+forumTopicId: 302181
 ---
 
 ## Description
@@ -64,7 +65,7 @@ Find the value of n ≤ 1,000,000 for which n/φ(n) is a maximum.
 ```yml
 tests:
   - text: <code>euler69()</code> should return 510510.
-    testString: assert.strictEqual(euler69(), 510510, '<code>euler69()</code> should return 510510.');
+    testString: assert.strictEqual(euler69(), 510510);
 
 ```
 
@@ -96,4 +97,5 @@ euler69();
 ```js
 // solution required
 ```
+
 </section>

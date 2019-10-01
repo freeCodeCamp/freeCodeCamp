@@ -2,13 +2,22 @@
 id: 56533eb9ac21ba0edf2244c2
 title: Return a Value from a Function with Return
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/cy87wue'
+forumTopicId: 18271
 ---
 
 ## Description
 <section id='description'>
 We can pass values into a function with <dfn>arguments</dfn>. You can use a <code>return</code> statement to send a value back out of a function.
 <strong>Example</strong>
-<blockquote>function plusThree(num) {<br>&nbsp;&nbsp;return num + 3;<br>}<br>var answer = plusThree(5); // 8</blockquote>
+
+```js
+function plusThree(num) {
+  return num + 3;
+}
+var answer = plusThree(5); // 8
+```
+
 <code>plusThree</code> takes an <dfn>argument</dfn> for <code>num</code> and returns a value equal to <code>num + 3</code>.
 </section>
 
@@ -23,13 +32,13 @@ Create a function <code>timesFive</code> that accepts one argument, multiplies i
 ```yml
 tests:
   - text: <code>timesFive</code> should be a function
-    testString: assert(typeof timesFive === 'function', '<code>timesFive</code> should be a function');
+    testString: assert(typeof timesFive === 'function');
   - text: <code>timesFive(5)</code> should return <code>25</code>
-    testString: assert(timesFive(5) === 25, '<code>timesFive(5)</code> should return <code>25</code>');
+    testString: assert(timesFive(5) === 25);
   - text: <code>timesFive(2)</code> should return <code>10</code>
-    testString: assert(timesFive(2) === 10, '<code>timesFive(2)</code> should return <code>10</code>');
+    testString: assert(timesFive(2) === 10);
   - text: <code>timesFive(0)</code> should return <code>0</code>
-    testString: assert(timesFive(0) === 0, '<code>timesFive(0)</code> should return <code>0</code>');
+    testString: assert(timesFive(0) === 0);
 
 ```
 

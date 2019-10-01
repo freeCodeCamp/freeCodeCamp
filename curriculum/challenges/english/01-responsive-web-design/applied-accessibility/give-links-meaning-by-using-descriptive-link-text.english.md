@@ -3,6 +3,7 @@ id: 587d778f367417b2b2512aae
 title: Give Links Meaning by Using Descriptive Link Text
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c437DcV'
+forumTopicId: 301013
 ---
 
 ## Description
@@ -22,9 +23,9 @@ The link text that Camper Cat is using is not very descriptive without the surro
 ```yml
 tests:
   - text: Your code should move the anchor <code>a</code> tags from around the words "Click here" to wrap around the words "information about batteries".
-    testString: assert($('a').text().match(/^(information about batteries)$/g), 'Your code should move the anchor <code>a</code> tags from around the words "Click here" to wrap around the words "information about batteries".');
+    testString: assert($('a').text().match(/^(information about batteries)$/g));
   - text: Make sure your <code>a</code> element has a closing tag.
-    testString: assert(code.match(/<\/a>/g) && code.match(/<\/a>/g).length === code.match(/<a href=(''|"")>/g).length, 'Make sure your <code>a</code> element has a closing tag.');
+    testString: assert(code.match(/<\/a>/g) && code.match(/<\/a>/g).length === code.match(/<a href=(''|"")>/g).length);
 
 ```
 
@@ -56,7 +57,16 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<body>
+  <header>
+    <h1>Deep Thoughts with Master Camper Cat</h1>
+  </header>
+  <article>
+    <h2>Defeating your Foe: the Red Dot is Ours!</h2>
+    <p>Felines the world over have been waging war on the most persistent of foes. This red nemesis combines both cunning stealth and lightening speed. But chin up, fellow fighters, our time for victory may soon be near. Click here for <a href="">information about batteries</a></p>
+  </article>
+</body>
 ```
+
 </section>

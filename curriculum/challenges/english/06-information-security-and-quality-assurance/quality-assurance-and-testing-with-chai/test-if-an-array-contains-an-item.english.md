@@ -2,6 +2,7 @@
 id: 587d824d367417b2b2512c51
 title: Test if an Array Contains an Item
 challengeType: 2
+forumTopicId: 301603
 ---
 
 ## Description
@@ -11,7 +12,7 @@ As a reminder, this project is being built upon the following starter project on
 
 ## Instructions
 <section id='instructions'>
-
+Use <code>assert.include()</code> or <code>assert.notInclude()</code> to make the tests pass. 
 </section>
 
 ## Tests
@@ -41,4 +42,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

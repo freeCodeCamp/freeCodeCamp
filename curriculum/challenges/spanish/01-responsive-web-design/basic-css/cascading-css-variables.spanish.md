@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Variables CSS en cascada
 ---
 
-## Description
+## Descripción
 <section id="description"> Cuando creas una variable, queda disponible para que la uses dentro del elemento en el que la creas. También está disponible dentro de cualquier elemento anidado dentro de él. Este efecto se conoce como <dfn>cascada</dfn> . Debido a la conexión en cascada, las variables CSS a menudo se definen en el elemento <dfn>: raíz</dfn> . <code>:root</code> es un selector de <dfn>pseudo-clase</dfn> que coincide con el elemento raíz del documento, generalmente el <code></code> elemento. Al crear sus variables en <code>:root</code> , estarán disponibles globalmente y se podrá acceder a ellas desde cualquier otro selector más adelante en la hoja de estilo. </section>
 
-## Instructions
+## Instrucciones
 <section id="instructions"> Defina una variable llamada <code>--penguin-belly</code> en el selector de <code>:root</code> y dale el valor de <code>pink</code> . Luego puede ver cómo el valor caerá en cascada para cambiar el valor a rosa, en cualquier lugar donde se use esa variable. </section>
 
-## Tests
+## Pruebas
 <section id='tests'>
 
 ```yml
@@ -241,7 +241,7 @@ tests:
 
 </section>
 
-## Solution
+## Solución
 <section id='solution'>
 
 ```js

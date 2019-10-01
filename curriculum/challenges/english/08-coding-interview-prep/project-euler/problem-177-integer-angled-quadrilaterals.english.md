@@ -2,6 +2,7 @@
 id: 5900f41e1000cf542c50ff30
 challengeType: 5
 title: 'Problem 177: Integer angled Quadrilaterals'
+forumTopicId: 301812
 ---
 
 ## Description
@@ -25,7 +26,7 @@ Note: In your calculations you may assume that a calculated angle is integral if
 ```yml
 tests:
   - text: <code>euler177()</code> should return 129325.
-    testString: assert.strictEqual(euler177(), 129325, '<code>euler177()</code> should return 129325.');
+    testString: assert.strictEqual(euler177(), 129325);
 
 ```
 
@@ -57,4 +58,5 @@ euler177();
 ```js
 // solution required
 ```
+
 </section>

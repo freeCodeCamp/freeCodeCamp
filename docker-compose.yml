@@ -1,37 +1,107 @@
 # Docker Compose file for FreeCodeCamp
 #
+# If using Docker Toolbox, set `DOCKER_HOST_LOCATION` env var to output from
+# `docker-machine ip`
+#
 # Bootstrap with:
-#   docker-compose run --rm freecodecamp npm install
-#   docker-compose run --rm freecodecamp npm run only-once
+#  npm run docker:init
+#  npm run docker:install
+#  npm run docker:seed
 #
 # Run with:
-#   docker-compose up
+#  npm run docker:develop
 #
-version: "3"
+# If plan to make a contribution to the project then install root node_modules
+# with:
+#  npm ci --ignore-scripts
+#
+version: '3'
 services:
-    freecodecamp:
-        image: node:8.10
-        depends_on:
-            - db
-            - mailhog
-        environment:
-            - MAILHOG_HOST=mailhog
-            - MONGOHQ_URL=mongodb://db:27017/freecodecamp
-        volumes:
-            - ./api-server:/app
-        working_dir: /app
-        command:
-            - npm
-            - run
-            - develop
-        ports:
-            - "3000:3000"
-    db:
-        image: mongo:3.6
-        ports:
-            - "27017:27017"
-    mailhog:
-        image: mailhog/mailhog
-        ports:
-            - "1025:1025"
-            - "8025:8025"
+  freecodecamp:
+    image: node:lts
+    user: node
+    depends_on:
+      - db
+      - mailhog
+    environment:
+      - MAILHOG_HOST=mailhog
+      - MONGOHQ_URL=mongodb://db:27017/freecodecamp
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules
+      - client_node_modules:/app/client/node_modules
+      - server_node_modules:/app/api-server/node_modules
+      - curriculum_node_modules:/app/curriculum/node_modules
+      - challenge_md_parser_node_modules:/app/tools/challenge-md-parser/node_modules
+      - seed_node_modules:/app/tools/scripts/seed/node_modules
+      - client_plugin_nav_data_node_modules:/app/client/plugins/fcc-create-nav-data/node_modules
+    working_dir: /app
+  client:
+    image: node:lts
+    user: node
+    environment:
+      - API_PROXY=http://api-server:3000
+      - GATSBY_WEBPACK_PUBLICPATH=http://$DOCKER_HOST_LOCATION:8000/
+      - HOME_LOCATION=http://$DOCKER_HOST_LOCATION:8000
+      - API_LOCATION=http://$DOCKER_HOST_LOCATION:3000
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules
+      - client_node_modules:/app/client/node_modules
+      - server_node_modules:/app/api-server/node_modules
+      - curriculum_node_modules:/app/curriculum/node_modules
+      - challenge_md_parser_node_modules:/app/tools/challenge-md-parser/node_modules
+      - seed_node_modules:/app/tools/scripts/seed/node_modules
+      - client_plugin_nav_data_node_modules:/app/client/plugins/fcc-create-nav-data/node_modules
+    working_dir: /app/client
+    command: npm run develop -- -H '0.0.0.0'
+    ports:
+      - '8000:8000'
+      - '9228:9228'
+  api-server:
+    image: node:lts
+    user: node
+    depends_on:
+      - db
+      - mailhog
+    environment:
+      - MAILHOG_HOST=mailhog
+      - MONGOHQ_URL=mongodb://db:27017/freecodecamp
+      - COOKIE_DOMAIN=$DOCKER_HOST_LOCATION
+      - HOME_LOCATION=http://$DOCKER_HOST_LOCATION:8000
+      - API_LOCATION=http://$DOCKER_HOST_LOCATION:3000
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules
+      - client_node_modules:/app/client/node_modules
+      - server_node_modules:/app/api-server/node_modules
+      - curriculum_node_modules:/app/curriculum/node_modules
+      - challenge_md_parser_node_modules:/app/tools/challenge-md-parser/node_modules
+      - seed_node_modules:/app/tools/scripts/seed/node_modules
+      - client_plugin_nav_data_node_modules:/app/client/plugins/fcc-create-nav-data/node_modules
+    working_dir: /app/api-server
+    command: npm run develop
+    ports:
+      - '3000:3000'
+      - '9229:9229'
+  db:
+    image: mongo:3.6
+    ports:
+      - '27016:27017'
+    volumes:
+      - dbdata:/data/db
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - '1025:1025'
+      - '8025:8025'
+
+volumes:
+  dbdata:
+  node_modules:
+  client_node_modules:
+  server_node_modules:
+  curriculum_node_modules:
+  challenge_md_parser_node_modules:
+  seed_node_modules:
+  client_plugin_nav_data_node_modules:

@@ -2,12 +2,12 @@
 title: Top rank per group
 id: 595011cba5a81735713873bd
 challengeType: 5
+forumTopicId: 302339
 ---
 
 ## Description
 <section id='description'>
-Task:
-<p>Find the top N ranked data in each group, where N  is provided as a parameter. Name of the rank and the group are also provided as parameter.</p>
+Find the top <code>n</code> ranked data in each group, where <code>n</code> is provided as a parameter. Name of the rank and the group are also provided as parameter.
 Given the following data:
 <pre>
 [
@@ -53,19 +53,19 @@ one could rank the top-rated movie in each genre by calling
 ```yml
 tests:
   - text: <code>topRankPerGroup</code> is a function.
-    testString: assert(typeof topRankPerGroup === 'function', '<code>topRankPerGroup</code> is a function.');
+    testString: assert(typeof topRankPerGroup === 'function');
   - text: <code>topRankPerGroup</code> returns undefined on negative n values.
-    testString: assert(typeof topRankPerGroup(-1, []) === 'undefined', '<code>topRankPerGroup</code> returns undefined on negative n values.');
+    testString: assert(typeof topRankPerGroup(-1, []) === 'undefined');
   - text: First department must be D050
-    testString: assert.equal(res1[0][0].dept, 'D050', 'First department must be D050');
+    testString: assert.equal(res1[0][0].dept, 'D050');
   - text: First department must be D050
-    testString: assert.equal(res1[0][1].salary, 21900, 'First department must be D050');
+    testString: assert.equal(res1[0][1].salary, 21900);
   - text: The last department must be D202
-    testString: assert.equal(res1[3][3].dept, 'D202', 'The last department must be D202');
+    testString: assert.equal(res1[3][3].dept, 'D202');
   - text: <code>topRankPerGroup(1, ...)</code> must return only top ranking result per group.
-    testString: assert.equal(res2[2].length, 1, '<code>topRankPerGroup(1, ...)</code> must return only top ranking result per group.');
+    testString: assert.equal(res2[2].length, 1);
   - text: <code>topRankPerGroup(1, ...)</code> must return only top ranking result per group.
-    testString: assert.equal(res3[2][1].name, 'Maze Runner', '<code>topRankPerGroup(1, ...)</code> must return only top ranking result per group.');
+    testString: assert.equal(res3[2][1].name, 'Maze Runner');
 
 ```
 
@@ -119,7 +119,6 @@ const testData2 = [
 const res2 = topRankPerGroup(1, testData2, 'genre', 'rating');
 const res3 = topRankPerGroup(2, testData2, 'genre', 'rating');
 
-//console.log(JSON.stringify(topRankPerGroup(10, testData1)));
 ```
 
 </div>

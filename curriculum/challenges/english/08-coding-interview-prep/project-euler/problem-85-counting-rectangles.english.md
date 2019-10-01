@@ -2,6 +2,7 @@
 id: 5900f3c11000cf542c50fed4
 challengeType: 5
 title: 'Problem 85: Counting rectangles'
+forumTopicId: 302199
 ---
 
 ## Description
@@ -23,7 +24,7 @@ Although there exists no rectangular grid that contains exactly two million rect
 ```yml
 tests:
   - text: <code>euler85()</code> should return 2772.
-    testString: assert.strictEqual(euler85(), 2772, '<code>euler85()</code> should return 2772.');
+    testString: assert.strictEqual(euler85(), 2772);
 
 ```
 
@@ -55,4 +56,5 @@ euler85();
 ```js
 // solution required
 ```
+
 </section>

@@ -2,17 +2,18 @@
 id: 587d824c367417b2b2512c4c
 title: Assert Deep Equality with .deepEqual and .notDeepEqual
 challengeType: 2
+forumTopicId: 301587
 ---
 
 ## Description
 <section id='description'>
 As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
-.deepEqual(), .notDeepEqual()
-.deepEqual() asserts that two object are deep equal
+<code>deepEqual()</code> asserts that two object are deep equal.
 </section>
 
 ## Instructions
 <section id='instructions'>
+Use <code>assert.deepEqual()</code> or <code>assert.notDeepEqual()</code> to make the tests pass.
 
 </section>
 
@@ -43,4 +44,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

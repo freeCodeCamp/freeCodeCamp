@@ -2,6 +2,7 @@
 id: 5900f54a1000cf542c51005c
 challengeType: 5
 title: 'Problem 477: Number Sequence Game'
+forumTopicId: 302154
 ---
 
 ## Description
@@ -34,7 +35,7 @@ Find F(108).
 ```yml
 tests:
   - text: <code>euler477()</code> should return 25044905874565164.
-    testString: assert.strictEqual(euler477(), 25044905874565164, '<code>euler477()</code> should return 25044905874565164.');
+    testString: assert.strictEqual(euler477(), 25044905874565164);
 
 ```
 
@@ -66,4 +67,5 @@ euler477();
 ```js
 // solution required
 ```
+
 </section>

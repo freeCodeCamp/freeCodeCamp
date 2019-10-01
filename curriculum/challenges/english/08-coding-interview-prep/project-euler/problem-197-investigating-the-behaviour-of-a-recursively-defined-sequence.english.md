@@ -2,6 +2,7 @@
 id: 5900f4311000cf542c50ff44
 challengeType: 5
 title: 'Problem 197: Investigating the behaviour of a recursively defined sequence'
+forumTopicId: 301835
 ---
 
 ## Description
@@ -24,7 +25,7 @@ Give your answer with 9 digits after the decimal point.
 ```yml
 tests:
   - text: <code>euler197()</code> should return 1.710637717.
-    testString: assert.strictEqual(euler197(), 1.710637717, '<code>euler197()</code> should return 1.710637717.');
+    testString: assert.strictEqual(euler197(), 1.710637717);
 
 ```
 
@@ -56,4 +57,5 @@ euler197();
 ```js
 // solution required
 ```
+
 </section>

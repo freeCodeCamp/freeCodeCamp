@@ -7,7 +7,7 @@ localeTitle: Ajustar a largura de um elemento usando a propriedade width
 ---
 
 ## Description
-<section id="description"> Você pode especificar a largura de um elemento usando a propriedade <code>width</code> em CSS. Os valores podem ser dados em unidades de tamanho relativo (como em), unidades de tamanho absoluto (como px) ou como uma porcentagem de seu elemento pai contendo. Veja um exemplo que altera a largura de uma imagem para 220px: <blockquote> img { <br> largura: 220px; <br> } </blockquote></section>
+<section id="description"> Você pode especificar a largura de um elemento usando a propriedade <code>width</code> em CSS. Os valores podem ser dados em unidades de tamanho relativo (como em), unidades de tamanho absoluto (como px) ou como uma porcentagem de seu elemento pai contendo. Veja um exemplo que altera a largura de uma imagem para 220px: <blockquote> img { <br> width: 220px; <br> } </blockquote></section>
 
 ## Instructions
 <section id="instructions"> Adicione uma propriedade <code>width</code> ao cartão inteiro e defina-o para um valor absoluto de 245px. Use a classe <code>fullCard</code> para selecionar o elemento. </section>

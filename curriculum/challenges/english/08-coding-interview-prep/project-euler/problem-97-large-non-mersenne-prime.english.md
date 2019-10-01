@@ -2,6 +2,7 @@
 id: 5900f3ce1000cf542c50fee0
 challengeType: 5
 title: 'Problem 97: Large non-Mersenne prime'
+forumTopicId: 302214
 ---
 
 ## Description
@@ -22,7 +23,7 @@ Find the last ten digits of this prime number.
 ```yml
 tests:
   - text: <code>euler97()</code> should return 8739992577.
-    testString: assert.strictEqual(euler97(), 8739992577, '<code>euler97()</code> should return 8739992577.');
+    testString: assert.strictEqual(euler97(), 8739992577);
 
 ```
 
@@ -54,4 +55,5 @@ euler97();
 ```js
 // solution required
 ```
+
 </section>

@@ -2,6 +2,7 @@
 id: 5900f3781000cf542c50fe8b
 challengeType: 5
 title: 'Problem 12: Highly divisible triangular number'
+forumTopicId: 301746
 ---
 
 ## Description
@@ -31,15 +32,15 @@ What is the value of the first triangle number to have over <code>n</code> divis
 ```yml
 tests:
   - text: <code>divisibleTriangleNumber(5)</code> should return 28.
-    testString: assert.strictEqual(divisibleTriangleNumber(5), 28, '<code>divisibleTriangleNumber(5)</code> should return 28.');
+    testString: assert.strictEqual(divisibleTriangleNumber(5), 28);
   - text: <code>divisibleTriangleNumber(23)</code> should return 630.
-    testString: assert.strictEqual(divisibleTriangleNumber(23), 630, '<code>divisibleTriangleNumber(23)</code> should return 630.');
+    testString: assert.strictEqual(divisibleTriangleNumber(23), 630);
   - text: <code>divisibleTriangleNumber(167)</code> should return 1385280.
-    testString: assert.strictEqual(divisibleTriangleNumber(167), 1385280, '<code>divisibleTriangleNumber(167)</code> should return 1385280.');
+    testString: assert.strictEqual(divisibleTriangleNumber(167), 1385280);
   - text: <code>divisibleTriangleNumber(374)</code> should return 17907120.
-    testString: assert.strictEqual(divisibleTriangleNumber(374), 17907120, '<code>divisibleTriangleNumber(374)</code> should return 17907120.');
+    testString: assert.strictEqual(divisibleTriangleNumber(374), 17907120);
   - text: <code>divisibleTriangleNumber(500)</code> should return 76576500.
-    testString: assert.strictEqual(divisibleTriangleNumber(500), 76576500, '<code>divisibleTriangleNumber(500)</code> should return 76576500.');
+    testString: assert.strictEqual(divisibleTriangleNumber(500), 76576500);
 
 ```
 

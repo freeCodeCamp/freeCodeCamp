@@ -2,6 +2,7 @@
 id: 5900f51d1000cf542c51002f
 challengeType: 5
 title: 'Problem 433: Steps in Euclid''s algorithm'
+forumTopicId: 302104
 ---
 
 ## Description
@@ -31,7 +32,7 @@ Find S(5·106).
 ```yml
 tests:
   - text: <code>euler433()</code> should return 326624372659664.
-    testString: assert.strictEqual(euler433(), 326624372659664, '<code>euler433()</code> should return 326624372659664.');
+    testString: assert.strictEqual(euler433(), 326624372659664);
 
 ```
 
@@ -63,4 +64,5 @@ euler433();
 ```js
 // solution required
 ```
+
 </section>

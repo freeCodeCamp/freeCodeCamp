@@ -2,6 +2,7 @@
 id: 5900f5041000cf542c510016
 challengeType: 5
 title: 'Problem 407: Idempotents'
+forumTopicId: 302075
 ---
 
 ## Description
@@ -28,7 +29,7 @@ Find ∑M(n) for 1 ≤ n ≤ 107.
 ```yml
 tests:
   - text: <code>euler407()</code> should return 39782849136421.
-    testString: assert.strictEqual(euler407(), 39782849136421, '<code>euler407()</code> should return 39782849136421.');
+    testString: assert.strictEqual(euler407(), 39782849136421);
 
 ```
 
@@ -60,4 +61,5 @@ euler407();
 ```js
 // solution required
 ```
+
 </section>

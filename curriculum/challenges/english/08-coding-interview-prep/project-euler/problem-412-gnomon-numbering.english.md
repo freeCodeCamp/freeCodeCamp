@@ -2,6 +2,7 @@
 id: 5900f5081000cf542c51001a
 challengeType: 5
 title: 'Problem 412: Gnomon numbering'
+forumTopicId: 302081
 ---
 
 ## Description
@@ -34,7 +35,7 @@ Find LC(10000, 5000) mod 76543217.
 ```yml
 tests:
   - text: <code>euler412()</code> should return 38788800.
-    testString: assert.strictEqual(euler412(), 38788800, '<code>euler412()</code> should return 38788800.');
+    testString: assert.strictEqual(euler412(), 38788800);
 
 ```
 
@@ -66,4 +67,5 @@ euler412();
 ```js
 // solution required
 ```
+
 </section>

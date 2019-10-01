@@ -3,7 +3,7 @@ id: bad87fee1348bd9aec908853
 title: Add id Attributes to Bootstrap Elements
 challengeType: 0
 videoUrl: ''
-localeTitle: أضف سمات المعرف إلى عناصر Bootstrap
+localeTitle: إضافة سمات المعرف إلى عناصر Bootstrap
 ---
 
 ## Description

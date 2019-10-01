@@ -3,6 +3,7 @@ id: 5a9036ee38fddaf9a66b5d34
 title: Use CSS Grid units to Change the Size of Columns and Rows
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cvE8phd'
+forumTopicId: 301134
 ---
 
 ## Description
@@ -12,7 +13,11 @@ You can use absolute and relative units like <code>px</code> and <code>em</code>
 <code>auto</code>: sets the column or row to the width or height of its content automatically,
 <code>%</code>: adjusts the column or row to the percent width of its container.
 Here's the code that generates the output in the preview:
-<blockquote>grid-template-columns: auto 50px 10% 2fr 1fr;</blockquote>
+
+```css
+grid-template-columns: auto 50px 10% 2fr 1fr;
+```
+
 This snippet creates five columns. The first column is as wide as its content, the second column is 50px, the third column is 10% of its container, and for the last two columns; the remaining space is divided into three sections, two are allocated for the fourth column, and one for the fifth.
 </section>
 
@@ -27,7 +32,7 @@ Make a grid with three columns whose widths are as follows: 1fr, 100px, and 2fr.
 ```yml
 tests:
   - text: '<code>container</code> class should have a <code>grid-template-columns</code> property that has three columns with the following widths: <code>1fr, 100px, and 2fr</code>.'
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?1fr\s*?100px\s*?2fr\s*?;[\s\S]*}/gi), ''<code>container</code> class should have a <code>grid-template-columns</code> property that has three columns with the following widths: <code>1fr, 100px, and 2fr</code>.'');'
+    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?1fr\s*?100px\s*?2fr\s*?;[\s\S]*}/gi));'
 
 ```
 

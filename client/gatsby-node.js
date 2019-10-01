@@ -2,17 +2,15 @@ require('dotenv').config();
 
 const { createFilePath } = require('gatsby-source-filesystem');
 
-const { dasherize } = require('./utils');
+const { dasherize } = require('../utils/slugs');
 const { blockNameify } = require('./utils/blockNameify');
 const {
   createChallengePages,
   createBlockIntroPages,
-  createSuperBlockIntroPages,
-  createGuideArticlePages
+  createSuperBlockIntroPages
 } = require('./utils/gatsby');
 
 const createByIdentityMap = {
-  guideMarkdown: createGuideArticlePages,
   blockIntroMarkdown: createBlockIntroPages,
   superBlockIntroMarkdown: createSuperBlockIntroPages
 };
@@ -30,9 +28,13 @@ exports.onCreateNode = function onCreateNode({ node, actions, getNode }) {
   }
 
   if (node.internal.type === 'MarkdownRemark') {
-    let slug = createFilePath({ node, getNode });
+    const slug = createFilePath({ node, getNode });
     if (!slug.includes('LICENSE')) {
+      const {
+        frontmatter: { component = '' }
+      } = node;
       createNodeField({ node, name: 'slug', value: slug });
+      createNodeField({ node, name: 'component', value: component });
     }
   }
 };
@@ -74,6 +76,7 @@ exports.createPages = function createPages({ graphql, actions }) {
                 fields {
                   slug
                   nodeIdentity
+                  component
                 }
                 frontmatter {
                   block
@@ -132,27 +135,10 @@ exports.createPages = function createPages({ graphql, actions }) {
   });
 };
 
-const RmServiceWorkerPlugin = require('webpack-remove-serviceworker-plugin');
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 
-exports.onCreateWebpackConfig = ({ stage, rules, plugins, actions }) => {
+exports.onCreateWebpackConfig = ({ plugins, actions }) => {
   actions.setWebpackConfig({
-    module: {
-      rules: [
-        rules.js({
-          /* eslint-disable max-len */
-          exclude: modulePath => {
-            return (
-              (/node_modules/).test(modulePath) &&
-              !(/(ansi-styles|chalk|strict-uri-encode|react-freecodecamp-search)/).test(
-                modulePath
-              )
-            );
-          }
-          /* eslint-enable max-len*/
-        })
-      ]
-    },
     node: {
       fs: 'empty'
     },
@@ -161,26 +147,16 @@ exports.onCreateWebpackConfig = ({ stage, rules, plugins, actions }) => {
         HOME_PATH: JSON.stringify(
           process.env.HOME_PATH || 'http://localhost:3000'
         ),
-        STRIPE_PUBLIC_KEY: JSON.stringify(process.env.STRIPE_PUBLIC_KEY || '')
+        STRIPE_PUBLIC_KEY: JSON.stringify(process.env.STRIPE_PUBLIC_KEY || ''),
+        ROLLBAR_CLIENT_ID: JSON.stringify(process.env.ROLLBAR_CLIENT_ID || ''),
+        ENVIRONMENT: JSON.stringify(
+          process.env.FREECODECAMP_NODE_ENV || 'development'
+        ),
+        PAYPAL_SUPPORTERS: JSON.stringify(process.env.PAYPAL_SUPPORTERS || 404)
       }),
-      new RmServiceWorkerPlugin()
+      new MonacoWebpackPlugin()
     ]
   });
-  if (stage !== 'build-html') {
-    actions.setWebpackConfig({
-      plugins: [new MonacoWebpackPlugin()]
-    });
-  }
-  if (stage === 'build-html') {
-    actions.setWebpackConfig({
-      plugins: [
-        plugins.normalModuleReplacement(
-          /react-monaco-editor/,
-          require.resolve('./src/__mocks__/monacoEditorMock.js')
-        )
-      ]
-    });
-  }
 };
 
 exports.onCreateBabelConfig = ({ actions }) => {

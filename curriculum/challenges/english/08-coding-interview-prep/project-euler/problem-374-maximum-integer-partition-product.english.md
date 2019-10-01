@@ -2,6 +2,7 @@
 id: 5900f4e51000cf542c50fff6
 challengeType: 5
 title: 'Problem 374: Maximum Integer Partition Product'
+forumTopicId: 302036
 ---
 
 ## Description
@@ -39,7 +40,7 @@ Give your answer modulo 982451653, the 50 millionth prime.
 ```yml
 tests:
   - text: <code>euler374()</code> should return 334420941.
-    testString: assert.strictEqual(euler374(), 334420941, '<code>euler374()</code> should return 334420941.');
+    testString: assert.strictEqual(euler374(), 334420941);
 
 ```
 
@@ -71,4 +72,5 @@ euler374();
 ```js
 // solution required
 ```
+
 </section>

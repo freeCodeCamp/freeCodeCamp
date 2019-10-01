@@ -2,6 +2,7 @@
 id: 5900f3fa1000cf542c50ff0d
 challengeType: 5
 title: 'Problem 142: Perfect Square Collection'
+forumTopicId: 301771
 ---
 
 ## Description
@@ -20,7 +21,7 @@ Find the smallest x + y + z with integers x > y > z > 0 such that x + y, x − y
 ```yml
 tests:
   - text: <code>euler142()</code> should return 1006193.
-    testString: assert.strictEqual(euler142(), 1006193, '<code>euler142()</code> should return 1006193.');
+    testString: assert.strictEqual(euler142(), 1006193);
 
 ```
 
@@ -52,4 +53,5 @@ euler142();
 ```js
 // solution required
 ```
+
 </section>

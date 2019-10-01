@@ -2,6 +2,7 @@
 id: 5900f4fe1000cf542c510010
 challengeType: 5
 title: 'Problem 400: Fibonacci tree game'
+forumTopicId: 302067
 ---
 
 ## Description
@@ -41,7 +42,7 @@ Find f(10000). Give the last 18 digits of your answer.
 ```yml
 tests:
   - text: <code>euler400()</code> should return 438505383468410600.
-    testString: assert.strictEqual(euler400(), 438505383468410600, '<code>euler400()</code> should return 438505383468410600.');
+    testString: assert.strictEqual(euler400(), 438505383468410600);
 
 ```
 
@@ -73,4 +74,5 @@ euler400();
 ```js
 // solution required
 ```
+
 </section>

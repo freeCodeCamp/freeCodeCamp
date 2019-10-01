@@ -2,6 +2,7 @@
 id: 5900f4b11000cf542c50ffc4
 challengeType: 5
 title: 'Problem 325: Stone Game II'
+forumTopicId: 301982
 ---
 
 ## Description
@@ -44,7 +45,7 @@ Find S(1016) mod 710.
 ```yml
 tests:
   - text: <code>euler325()</code> should return 54672965.
-    testString: assert.strictEqual(euler325(), 54672965, '<code>euler325()</code> should return 54672965.');
+    testString: assert.strictEqual(euler325(), 54672965);
 
 ```
 
@@ -76,4 +77,5 @@ euler325();
 ```js
 // solution required
 ```
+
 </section>

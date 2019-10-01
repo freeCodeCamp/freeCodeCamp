@@ -3,12 +3,17 @@ id: 5a24c314108439a4d4036187
 title: Use a Ternary Expression for Conditional Rendering
 challengeType: 6
 isRequired: false
+forumTopicId: 301414
 ---
 
 ## Description
 <section id='description'>
 Before moving on to dynamic rendering techniques, there's one last way to use built-in JavaScript conditionals to render what you want: the <em><strong>ternary operator</strong></em>. The ternary operator is often utilized as a shortcut for <code>if/else</code> statements in JavaScript. They're not quite as robust as traditional <code>if/else</code> statements, but they are very popular among React developers. One reason for this is because of how JSX is compiled, <code>if/else</code> statements can't be inserted directly into JSX code. You might have noticed this a couple challenges ago &mdash; when an <code>if/else</code> statement was required, it was always <em>outside</em> the <code>return</code> statement. Ternary expressions can be an excellent alternative if you want to implement conditional logic within your JSX. Recall that a ternary operator has three parts, but you can combine several ternary expressions together. Here's the basic syntax:
-<blockquote>condition ? expressionIfTrue : expressionIfFalse</blockquote>
+
+```js
+condition ? expressionIfTrue : expressionIfFalse
+```
+
 </section>
 
 ## Instructions
@@ -23,19 +28,19 @@ Once the component is rendering information to the page, users should have a way
 ```yml
 tests:
   - text: The <code>CheckUserAge</code> component should render with a single <code>input</code> element and a single <code>button</code> element.
-    testString: assert(Enzyme.mount(React.createElement(CheckUserAge)).find('div').find('input').length === 1 && Enzyme.mount(React.createElement(CheckUserAge)).find('div').find('button').length === 1, 'The <code>CheckUserAge</code> component should render with a single <code>input</code> element and a single <code>button</code> element.');
+    testString: assert(Enzyme.mount(React.createElement(CheckUserAge)).find('div').find('input').length === 1 && Enzyme.mount(React.createElement(CheckUserAge)).find('div').find('button').length === 1);
   - text: The <code>CheckUserAge</code> component&apos;s state should be initialized with a property of <code>userAge</code> and a property of <code>input</code>, both set to a value of an empty string.
-    testString: assert(Enzyme.mount(React.createElement(CheckUserAge)).state().input === '' && Enzyme.mount(React.createElement(CheckUserAge)).state().userAge === '', 'The <code>CheckUserAge</code> component&apos;s state should be initialized with a property of <code>userAge</code> and a property of <code>input</code>, both set to a value of an empty string.');
+    testString: assert(Enzyme.mount(React.createElement(CheckUserAge)).state().input === '' && Enzyme.mount(React.createElement(CheckUserAge)).state().userAge === '');
   - text: When the <code>CheckUserAge</code> component is first rendered to the DOM, the <code>button</code>&apos;s inner text should be Submit.
-    testString: assert(Enzyme.mount(React.createElement(CheckUserAge)).find('button').text() === 'Submit', 'When the <code>CheckUserAge</code> component is first rendered to the DOM, the <code>button</code>&apos;s inner text should be Submit.');
+    testString: assert(Enzyme.mount(React.createElement(CheckUserAge)).find('button').text() === 'Submit');
   - text: When a number of less than 18 is entered into the <code>input</code> element and the <code>button</code> is clicked, the <code>button</code>&apos;s inner text should read <code>You Shall Not Pass</code>.
-    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(CheckUserAge)); const initialButton = mockedComponent.find(''button'').text(); const enter3AndClickButton = () => { mockedComponent.find(''input'').simulate(''change'', {target: { value: ''3'' }}); mockedComponent.find(''button'').simulate(''click''); return waitForIt(() => { mockedComponent.update(); return mockedComponent.find(''button'').text(); }); }; const enter17AndClickButton = () => { mockedComponent.find(''input'').simulate(''change'', {target: { value: ''17'' }}); mockedComponent.find(''button'').simulate(''click''); return waitForIt(() => { mockedComponent.update(); return mockedComponent.find(''button'').text(); }); }; const userAge3 = await enter3AndClickButton(); const userAge17 = await enter17AndClickButton(); assert(initialButton === ''Submit'' && userAge3 === ''You Shall Not Pass'' && userAge17 === ''You Shall Not Pass'', ''When a number of less than 18 is entered into the <code>input</code> element and the <code>button</code> is clicked, the <code>button</code>&apos;s inner text should read <code>You Shall Not Pass</code>.''); }; '
+    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(CheckUserAge)); const initialButton = mockedComponent.find(''button'').text(); const enter3AndClickButton = () => { mockedComponent.find(''input'').simulate(''change'', {target: { value: ''3'' }}); mockedComponent.find(''button'').simulate(''click''); return waitForIt(() => { mockedComponent.update(); return mockedComponent.find(''button'').text(); }); }; const enter17AndClickButton = () => { mockedComponent.find(''input'').simulate(''change'', {target: { value: ''17'' }}); mockedComponent.find(''button'').simulate(''click''); return waitForIt(() => { mockedComponent.update(); return mockedComponent.find(''button'').text(); }); }; const userAge3 = await enter3AndClickButton(); const userAge17 = await enter17AndClickButton(); assert(initialButton === ''Submit'' && userAge3 === ''You Shall Not Pass'' && userAge17 === ''You Shall Not Pass''); }; '
   - text: When a number greater than or equal to 18 is entered into the <code>input</code> element and the <code>button</code> is clicked, the <code>button</code>&apos;s inner text should read <code>You May Enter</code>.
-    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(CheckUserAge)); const initialButton = mockedComponent.find(''button'').text(); const enter18AndClickButton = () => { mockedComponent.find(''input'').simulate(''change'', {target: { value: ''18'' }}); mockedComponent.find(''button'').simulate(''click''); return waitForIt(() => { mockedComponent.update(); return mockedComponent.find(''button'').text(); }); }; const enter35AndClickButton = () => { mockedComponent.find(''input'').simulate(''change'', {target: { value: ''35'' }}); mockedComponent.find(''button'').simulate(''click''); return waitForIt(() => { mockedComponent.update(); return mockedComponent.find(''button'').text(); }); }; const userAge18 = await enter18AndClickButton(); const userAge35 = await enter35AndClickButton(); assert(initialButton === ''Submit'' && userAge18 === ''You May Enter'' && userAge35 === ''You May Enter'', ''When a number greater than or equal to 18 is entered into the <code>input</code> element and the <code>button</code> is clicked, the <code>button</code>&apos;s inner text should read <code>You May Enter</code>.''); }; '
+    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(CheckUserAge)); const initialButton = mockedComponent.find(''button'').text(); const enter18AndClickButton = () => { mockedComponent.find(''input'').simulate(''change'', {target: { value: ''18'' }}); mockedComponent.find(''button'').simulate(''click''); return waitForIt(() => { mockedComponent.update(); return mockedComponent.find(''button'').text(); }); }; const enter35AndClickButton = () => { mockedComponent.find(''input'').simulate(''change'', {target: { value: ''35'' }}); mockedComponent.find(''button'').simulate(''click''); return waitForIt(() => { mockedComponent.update(); return mockedComponent.find(''button'').text(); }); }; const userAge18 = await enter18AndClickButton(); const userAge35 = await enter35AndClickButton(); assert(initialButton === ''Submit'' && userAge18 === ''You May Enter'' && userAge35 === ''You May Enter''); }; '
   - text: Once a number has been submitted, and the value of the <code>input</code> is once again changed, the <code>button</code> should return to reading <code>Submit</code>.
-    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(CheckUserAge)); const enter18AndClickButton = () => { mockedComponent.find(''input'').simulate(''change'', {target: { value: ''18'' }}); mockedComponent.find(''button'').simulate(''click''); return waitForIt(() => { mockedComponent.update(); return mockedComponent.find(''button'').text(); }); }; const changeInputDontClickButton = () => { mockedComponent.find(''input'').simulate(''change'', {target: { value: ''5'' }}); return waitForIt(() => { mockedComponent.update(); return mockedComponent.find(''button'').text(); }); }; const enter10AndClickButton = () => { mockedComponent.find(''input'').simulate(''change'', {target: { value: ''10'' }}); mockedComponent.find(''button'').simulate(''click''); return waitForIt(() => { mockedComponent.update(); return mockedComponent.find(''button'').text(); }); }; const userAge18 = await enter18AndClickButton(); const changeInput1 = await changeInputDontClickButton(); const userAge10 = await enter10AndClickButton(); const changeInput2 = await changeInputDontClickButton(); assert(userAge18 === ''You May Enter'' && changeInput1 === ''Submit'' && userAge10 === ''You Shall Not Pass'' && changeInput2 === ''Submit'', ''Once a number has been submitted, and the value of the <code>input</code> is once again changed, the <code>button</code> should return to reading <code>Submit</code>.''); }; '
+    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(CheckUserAge)); const enter18AndClickButton = () => { mockedComponent.find(''input'').simulate(''change'', {target: { value: ''18'' }}); mockedComponent.find(''button'').simulate(''click''); return waitForIt(() => { mockedComponent.update(); return mockedComponent.find(''button'').text(); }); }; const changeInputDontClickButton = () => { mockedComponent.find(''input'').simulate(''change'', {target: { value: ''5'' }}); return waitForIt(() => { mockedComponent.update(); return mockedComponent.find(''button'').text(); }); }; const enter10AndClickButton = () => { mockedComponent.find(''input'').simulate(''change'', {target: { value: ''10'' }}); mockedComponent.find(''button'').simulate(''click''); return waitForIt(() => { mockedComponent.update(); return mockedComponent.find(''button'').text(); }); }; const userAge18 = await enter18AndClickButton(); const changeInput1 = await changeInputDontClickButton(); const userAge10 = await enter10AndClickButton(); const changeInput2 = await changeInputDontClickButton(); assert(userAge18 === ''You May Enter'' && changeInput1 === ''Submit'' && userAge10 === ''You Shall Not Pass'' && changeInput2 === ''Submit''); }; '
   - text: Your code should not contain any <code>if/else</code> statements.
-    testString: assert(new RegExp(/(\s|;)if(\s|\()/).test(Enzyme.mount(React.createElement(CheckUserAge)).instance().render.toString()) === false, 'Your code should not contain any <code>if/else</code> statements.');
+    testString: assert(new RegExp(/(\s|;)if(\s|\()/).test(Enzyme.mount(React.createElement(CheckUserAge)).instance().render.toString()) === false);
 
 ```
 
@@ -69,9 +74,9 @@ class CheckUserAge extends React.Component {
     });
   }
   submit() {
-    this.setState({
-      userAge: this.state.input
-    });
+    this.setState(state => ({
+      userAge: state.input
+    }));
   }
   render() {
     const buttonOne = <button onClick={this.submit}>Submit</button>;
@@ -135,9 +140,9 @@ class CheckUserAge extends React.Component {
     });
   }
   submit() {
-    this.setState({
-      userAge: this.state.input
-    });
+    this.setState(state => ({
+      userAge: state.input
+    }));
   }
   render() {
     const buttonOne = <button onClick={this.submit}>Submit</button>;

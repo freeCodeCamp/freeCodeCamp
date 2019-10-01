@@ -2,6 +2,7 @@
 id: 5900f54b1000cf542c51005d
 challengeType: 5
 title: 'Problem 479: Roots on the Rise'
+forumTopicId: 302156
 ---
 
 ## Description
@@ -28,7 +29,7 @@ Find S(106) modulo 1 000 000 007.
 ```yml
 tests:
   - text: <code>euler479()</code> should return 191541795.
-    testString: assert.strictEqual(euler479(), 191541795, '<code>euler479()</code> should return 191541795.');
+    testString: assert.strictEqual(euler479(), 191541795);
 
 ```
 
@@ -60,4 +61,5 @@ euler479();
 ```js
 // solution required
 ```
+
 </section>

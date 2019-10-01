@@ -1,4 +1,4 @@
-const isDev = process.env.NODE_ENV !== 'production';
+const isDev = process.env.FREECODECAMP_NODE_ENV !== 'production';
 const isBeta = !!process.env.BETA;
 
 export function getEmailSender() {
@@ -25,13 +25,7 @@ export function getHost() {
 
 export function getServerFullURL() {
   if (!isDev) {
-   return getProtocol()
-        + '://'
-        + getHost();
+    return getProtocol() + '://' + getHost();
   }
-  return getProtocol()
-       + '://'
-       + getHost()
-       + ':'
-       + getPort();
+  return getProtocol() + '://' + getHost() + ':' + getPort();
 }

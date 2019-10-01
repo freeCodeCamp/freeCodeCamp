@@ -2,6 +2,7 @@
 id: 5900f4cb1000cf542c50ffdd
 challengeType: 5
 title: 'Problem 350: Constraining the least greatest and the greatest least'
+forumTopicId: 302010
 ---
 
 ## Description
@@ -33,7 +34,7 @@ Find f(106, 1012, 1018) mod 1014.
 ```yml
 tests:
   - text: <code>euler350()</code> should return 84664213.
-    testString: assert.strictEqual(euler350(), 84664213, '<code>euler350()</code> should return 84664213.');
+    testString: assert.strictEqual(euler350(), 84664213);
 
 ```
 
@@ -65,4 +66,5 @@ euler350();
 ```js
 // solution required
 ```
+
 </section>

@@ -2,6 +2,7 @@
 id: 5900f44b1000cf542c50ff5e
 challengeType: 5
 title: 'Problem 223: Almost right-angled triangles I'
+forumTopicId: 301866
 ---
 
 ## Description
@@ -22,7 +23,7 @@ How many barely acute triangles are there with perimeter ≤ 25,000,000?
 ```yml
 tests:
   - text: <code>euler223()</code> should return 61614848.
-    testString: assert.strictEqual(euler223(), 61614848, '<code>euler223()</code> should return 61614848.');
+    testString: assert.strictEqual(euler223(), 61614848);
 
 ```
 
@@ -54,4 +55,5 @@ euler223();
 ```js
 // solution required
 ```
+
 </section>

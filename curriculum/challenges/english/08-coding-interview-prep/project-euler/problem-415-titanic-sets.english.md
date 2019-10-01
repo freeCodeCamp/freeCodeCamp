@@ -2,6 +2,7 @@
 id: 5900f50c1000cf542c51001e
 challengeType: 5
 title: 'Problem 415: Titanic sets'
+forumTopicId: 302084
 ---
 
 ## Description
@@ -29,7 +30,7 @@ Find T(1011) mod 108.
 ```yml
 tests:
   - text: <code>euler415()</code> should return 55859742.
-    testString: assert.strictEqual(euler415(), 55859742, '<code>euler415()</code> should return 55859742.');
+    testString: assert.strictEqual(euler415(), 55859742);
 
 ```
 
@@ -61,4 +62,5 @@ euler415();
 ```js
 // solution required
 ```
+
 </section>

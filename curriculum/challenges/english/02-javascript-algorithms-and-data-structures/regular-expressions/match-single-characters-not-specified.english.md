@@ -2,6 +2,7 @@
 id: 587d7db6367417b2b2512b98
 title: Match Single Characters Not Specified
 challengeType: 1
+forumTopicId: 301358
 ---
 
 ## Description
@@ -22,11 +23,11 @@ Create a single regex that matches all characters that are not a number or a vow
 ```yml
 tests:
   - text: Your regex <code>myRegex</code> should match 9 items.
-    testString: assert(result.length == 9, 'Your regex <code>myRegex</code> should match 9 items.');
+    testString: assert(result.length == 9);
   - text: Your regex <code>myRegex</code> should use the global flag.
-    testString: assert(myRegex.flags.match(/g/).length == 1, 'Your regex <code>myRegex</code> should use the global flag.');
+    testString: assert(myRegex.flags.match(/g/).length == 1);
   - text: Your regex <code>myRegex</code> should use the case insensitive flag.
-    testString: assert(myRegex.flags.match(/i/).length == 1, 'Your regex <code>myRegex</code> should use the case insensitive flag.');
+    testString: assert(myRegex.flags.match(/i/).length == 1);
 
 ```
 
@@ -53,6 +54,9 @@ let result = myRegex; // Change this line
 <section id='solution'>
 
 ```js
-// solution required
+let quoteSample = "3 blind mice.";
+let myRegex = /[^0-9aeiou]/gi; // Change this line
+let result = quoteSample.match(myRegex); // Change this line
 ```
+
 </section>

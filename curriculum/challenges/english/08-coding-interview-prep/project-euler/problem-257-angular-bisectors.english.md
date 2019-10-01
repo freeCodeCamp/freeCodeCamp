@@ -2,6 +2,7 @@
 id: 5900f46e1000cf542c50ff80
 challengeType: 5
 title: 'Problem 257: Angular Bisectors'
+forumTopicId: 301905
 ---
 
 ## Description
@@ -32,7 +33,7 @@ How many triangles ABC with perimeter≤100,000,000 exist so that the ratio area
 ```yml
 tests:
   - text: <code>euler257()</code> should return 139012411.
-    testString: assert.strictEqual(euler257(), 139012411, '<code>euler257()</code> should return 139012411.');
+    testString: assert.strictEqual(euler257(), 139012411);
 
 ```
 
@@ -64,4 +65,5 @@ euler257();
 ```js
 // solution required
 ```
+
 </section>

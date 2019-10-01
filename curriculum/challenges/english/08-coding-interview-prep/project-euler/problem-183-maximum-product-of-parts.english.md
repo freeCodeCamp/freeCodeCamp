@@ -2,6 +2,7 @@
 id: 5900f4231000cf542c50ff36
 challengeType: 5
 title: 'Problem 183: Maximum product of parts'
+forumTopicId: 301819
 ---
 
 ## Description
@@ -35,7 +36,7 @@ Find ΣD(N) for 5 ≤ N ≤ 10000.
 ```yml
 tests:
   - text: <code>euler183()</code> should return 48861552.
-    testString: assert.strictEqual(euler183(), 48861552, '<code>euler183()</code> should return 48861552.');
+    testString: assert.strictEqual(euler183(), 48861552);
 
 ```
 
@@ -67,4 +68,5 @@ euler183();
 ```js
 // solution required
 ```
+
 </section>

@@ -2,6 +2,7 @@
 id: 5900f5141000cf542c510027
 challengeType: 5
 title: 'Problem 423: Consecutive die throws'
+forumTopicId: 302093
 ---
 
 ## Description
@@ -37,7 +38,7 @@ Find S(50 000 000) mod 1 000 000 007.
 ```yml
 tests:
   - text: <code>euler423()</code> should return 653972374.
-    testString: assert.strictEqual(euler423(), 653972374, '<code>euler423()</code> should return 653972374.');
+    testString: assert.strictEqual(euler423(), 653972374);
 
 ```
 
@@ -69,4 +70,5 @@ euler423();
 ```js
 // solution required
 ```
+
 </section>

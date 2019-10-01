@@ -2,6 +2,7 @@
 id: 5900f5361000cf542c510049
 challengeType: 5
 title: 'Problem 458: Permutations of Project'
+forumTopicId: 302132
 ---
 
 ## Description
@@ -26,7 +27,7 @@ Find T(1012). Give the last 9 digits of your answer.
 ```yml
 tests:
   - text: <code>euler458()</code> should return 423341841.
-    testString: assert.strictEqual(euler458(), 423341841, '<code>euler458()</code> should return 423341841.');
+    testString: assert.strictEqual(euler458(), 423341841);
 
 ```
 
@@ -58,4 +59,5 @@ euler458();
 ```js
 // solution required
 ```
+
 </section>

@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036165
 title: Use React to Render Nested Components
 challengeType: 6
 isRequired: false
+forumTopicId: 301420
 ---
 
 ## Description
@@ -22,13 +23,13 @@ There are two functional components defined in the code editor, called <code>Typ
 ```yml
 tests:
   - text: The <code>TypesOfFood</code> component should return a single <code>div</code> element.
-    testString: assert(Enzyme.shallow(React.createElement(TypesOfFood)).type() === 'div', 'The <code>TypesOfFood</code> component should return a single <code>div</code> element.');
+    testString: assert(Enzyme.shallow(React.createElement(TypesOfFood)).type() === 'div');
   - text: The <code>TypesOfFood</code> component should return the <code>Fruits</code> component.
-    testString: assert(Enzyme.shallow(React.createElement(TypesOfFood)).props().children[1].type.name === 'Fruits', 'The <code>TypesOfFood</code> component should return the <code>Fruits</code> component.');
+    testString: assert(Enzyme.shallow(React.createElement(TypesOfFood)).props().children[1].type.name === 'Fruits');
   - text: The <code>Fruits</code> component should return the <code>TypesOfFruit</code> component.
-    testString: assert(Enzyme.mount(React.createElement(TypesOfFood)).find('h2').html() === '<h2>Fruits:</h2>', 'The <code>Fruits</code> component should return the <code>TypesOfFruit</code> component.');
+    testString: assert(Enzyme.mount(React.createElement(TypesOfFood)).find('h2').html() === '<h2>Fruits:</h2>');
   - text: The <code>TypesOfFruit</code> component should return the <code>h2</code> and <code>ul</code> elements.
-    testString: assert(Enzyme.mount(React.createElement(TypesOfFood)).find('ul').text() === 'ApplesBlueberriesStrawberriesBananas', 'The <code>TypesOfFruit</code> component should return the <code>h2</code> and <code>ul</code> elements.');
+    testString: assert(Enzyme.mount(React.createElement(TypesOfFood)).find('ul').text() === 'ApplesBlueberriesStrawberriesBananas');
 
 ```
 

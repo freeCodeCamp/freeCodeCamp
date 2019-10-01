@@ -2,6 +2,7 @@
 id: 5900f51a1000cf542c51002d
 challengeType: 5
 title: 'Problem 430: Range flips'
+forumTopicId: 302101
 ---
 
 ## Description
@@ -34,7 +35,7 @@ Give your answer rounded to 2 decimal places behind the decimal point.
 ```yml
 tests:
   - text: <code>euler430()</code> should return 5000624921.38.
-    testString: assert.strictEqual(euler430(), 5000624921.38, '<code>euler430()</code> should return 5000624921.38.');
+    testString: assert.strictEqual(euler430(), 5000624921.38);
 
 ```
 
@@ -66,4 +67,5 @@ euler430();
 ```js
 // solution required
 ```
+
 </section>

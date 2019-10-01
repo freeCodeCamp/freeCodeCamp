@@ -3,6 +3,7 @@ id: 587d781e367417b2b2512acb
 title: Lock an Element to its Parent with Absolute Positioning
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cyLJ7c3'
+forumTopicId: 301060
 ---
 
 ## Description
@@ -22,11 +23,11 @@ Lock the <code>#searchbar</code> element to the top-right of its <code>section</
 ```yml
 tests:
   - text: The <code>#searchbar</code> element should have a <code>position</code> set to <code>absolute</code>.
-    testString: assert($('#searchbar').css('position') == 'absolute', 'The <code>#searchbar</code> element should have a <code>position</code> set to <code>absolute</code>.');
+    testString: assert($('#searchbar').css('position') == 'absolute');
   - text: Your code should use the <code>top</code> CSS offset of 50 pixels on the <code>#searchbar</code> element.
-    testString: assert($('#searchbar').css('top') == '50px', 'Your code should use the <code>top</code> CSS offset of 50 pixels on the <code>#searchbar</code> element.');
+    testString: assert($('#searchbar').css('top') == '50px');
   - text: Your code should use the <code>right</code> CSS offset of 50 pixels on the <code>#searchbar</code> element.
-    testString: assert($('#searchbar').css('right') == '50px', 'Your code should use the <code>right</code> CSS offset of 50 pixels on the <code>#searchbar</code> element.');
+    testString: assert($('#searchbar').css('right') == '50px');
 
 ```
 
@@ -69,7 +70,27 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style>
+  #searchbar {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+  }
+  section {
+    position: relative;
+  }
+</style>
+<body>
+  <h1>Welcome!</h1>
+  <section>
+    <form id="searchbar">
+      <label for="search">Search:</label>
+      <input type="search" id="search" name="search">
+      <input type="submit" name="submit" value="Go!">
+    </form>
+  </section>
+</body>
 ```
+
 </section>

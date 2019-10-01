@@ -2,6 +2,7 @@
 id: 5900f4161000cf542c50ff29
 challengeType: 5
 title: 'Problem 170: Find the largest 0 to 9 pandigital that can be formed by concatenating products'
+forumTopicId: 301805
 ---
 
 ## Description
@@ -29,7 +30,7 @@ What is the largest 0 to 9 pandigital 10-digit concatenated product of an intege
 ```yml
 tests:
   - text: <code>euler170()</code> should return 9857164023.
-    testString: assert.strictEqual(euler170(), 9857164023, '<code>euler170()</code> should return 9857164023.');
+    testString: assert.strictEqual(euler170(), 9857164023);
 
 ```
 
@@ -61,4 +62,5 @@ euler170();
 ```js
 // solution required
 ```
+
 </section>

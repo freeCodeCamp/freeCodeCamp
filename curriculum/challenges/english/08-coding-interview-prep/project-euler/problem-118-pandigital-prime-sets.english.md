@@ -2,6 +2,7 @@
 id: 5900f3e21000cf542c50fef5
 challengeType: 5
 title: 'Problem 118: Pandigital prime sets'
+forumTopicId: 301744
 ---
 
 ## Description
@@ -21,7 +22,7 @@ How many distinct sets containing each of the digits one through nine exactly on
 ```yml
 tests:
   - text: <code>euler118()</code> should return 44680.
-    testString: assert.strictEqual(euler118(), 44680, '<code>euler118()</code> should return 44680.');
+    testString: assert.strictEqual(euler118(), 44680);
 
 ```
 
@@ -53,4 +54,5 @@ euler118();
 ```js
 // solution required
 ```
+
 </section>

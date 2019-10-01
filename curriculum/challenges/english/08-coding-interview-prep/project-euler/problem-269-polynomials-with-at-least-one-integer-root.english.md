@@ -2,6 +2,7 @@
 id: 5900f4791000cf542c50ff8c
 challengeType: 5
 title: 'Problem 269: Polynomials with at least one integer root'
+forumTopicId: 301918
 ---
 
 ## Description
@@ -30,7 +31,7 @@ What is Z(1016)?
 ```yml
 tests:
   - text: <code>euler269()</code> should return 1311109198529286.
-    testString: assert.strictEqual(euler269(), 1311109198529286, '<code>euler269()</code> should return 1311109198529286.');
+    testString: assert.strictEqual(euler269(), 1311109198529286);
 
 ```
 
@@ -62,4 +63,5 @@ euler269();
 ```js
 // solution required
 ```
+
 </section>

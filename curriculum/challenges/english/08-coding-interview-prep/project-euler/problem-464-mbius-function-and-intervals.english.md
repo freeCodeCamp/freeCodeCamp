@@ -2,6 +2,7 @@
 id: 5900f53d1000cf542c51004f
 challengeType: 5
 title: 'Problem 464: Möbius function and intervals'
+forumTopicId: 302139
 ---
 
 ## Description
@@ -39,7 +40,7 @@ Find C(20 000 000).
 ```yml
 tests:
   - text: <code>euler464()</code> should return 198775297232878.
-    testString: assert.strictEqual(euler464(), 198775297232878, '<code>euler464()</code> should return 198775297232878.');
+    testString: assert.strictEqual(euler464(), 198775297232878);
 
 ```
 
@@ -71,4 +72,5 @@ euler464();
 ```js
 // solution required
 ```
+
 </section>

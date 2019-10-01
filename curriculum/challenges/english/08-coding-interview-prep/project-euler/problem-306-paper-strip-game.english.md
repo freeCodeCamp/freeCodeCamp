@@ -2,6 +2,7 @@
 id: 5900f49f1000cf542c50ffb1
 challengeType: 5
 title: 'Problem 306: Paper-strip Game'
+forumTopicId: 301960
 ---
 
 ## Description
@@ -37,7 +38,7 @@ For 1 ≤ n ≤ 1 000 000, how many values of n are there for which the first pl
 ```yml
 tests:
   - text: <code>euler306()</code> should return 852938.
-    testString: assert.strictEqual(euler306(), 852938, '<code>euler306()</code> should return 852938.');
+    testString: assert.strictEqual(euler306(), 852938);
 
 ```
 
@@ -69,4 +70,5 @@ euler306();
 ```js
 // solution required
 ```
+
 </section>

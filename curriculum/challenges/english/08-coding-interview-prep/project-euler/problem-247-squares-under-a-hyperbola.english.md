@@ -2,6 +2,7 @@
 id: 5900f4641000cf542c50ff76
 challengeType: 5
 title: 'Problem 247: Squares under a hyperbola'
+forumTopicId: 301894
 ---
 
 ## Description
@@ -35,7 +36,7 @@ What is the largest n for which the index of Sn is (3,3)?
 ```yml
 tests:
   - text: <code>euler247()</code> should return 782252.
-    testString: assert.strictEqual(euler247(), 782252, '<code>euler247()</code> should return 782252.');
+    testString: assert.strictEqual(euler247(), 782252);
 
 ```
 
@@ -67,4 +68,5 @@ euler247();
 ```js
 // solution required
 ```
+
 </section>

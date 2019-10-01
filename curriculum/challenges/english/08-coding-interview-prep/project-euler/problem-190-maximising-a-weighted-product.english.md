@@ -2,6 +2,7 @@
 id: 5900f42b1000cf542c50ff3d
 challengeType: 5
 title: 'Problem 190: Maximising a weighted product'
+forumTopicId: 301828
 ---
 
 ## Description
@@ -24,7 +25,7 @@ Find Σ[Pm] for 2 ≤ m ≤ 15.
 ```yml
 tests:
   - text: <code>euler190()</code> should return 371048281.
-    testString: assert.strictEqual(euler190(), 371048281, '<code>euler190()</code> should return 371048281.');
+    testString: assert.strictEqual(euler190(), 371048281);
 
 ```
 
@@ -56,4 +57,5 @@ euler190();
 ```js
 // solution required
 ```
+
 </section>

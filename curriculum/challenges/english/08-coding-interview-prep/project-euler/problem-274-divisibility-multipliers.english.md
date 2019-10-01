@@ -2,6 +2,7 @@
 id: 5900f47f1000cf542c50ff91
 challengeType: 5
 title: 'Problem 274: Divisibility Multipliers'
+forumTopicId: 301924
 ---
 
 ## Description
@@ -32,7 +33,7 @@ The sum of the divisibility multipliers for the primes that are coprime to 10 an
 ```yml
 tests:
   - text: <code>euler274()</code> should return 1601912348822.
-    testString: assert.strictEqual(euler274(), 1601912348822, '<code>euler274()</code> should return 1601912348822.');
+    testString: assert.strictEqual(euler274(), 1601912348822);
 
 ```
 
@@ -64,4 +65,5 @@ euler274();
 ```js
 // solution required
 ```
+
 </section>

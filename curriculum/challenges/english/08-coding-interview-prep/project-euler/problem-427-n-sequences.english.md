@@ -2,6 +2,7 @@
 id: 5900f5181000cf542c51002a
 challengeType: 5
 title: 'Problem 427: n-sequences'
+forumTopicId: 302097
 ---
 
 ## Description
@@ -30,7 +31,7 @@ Find f(7 500 000) mod 1 000 000 009.
 ```yml
 tests:
   - text: <code>euler427()</code> should return 97138867.
-    testString: assert.strictEqual(euler427(), 97138867, '<code>euler427()</code> should return 97138867.');
+    testString: assert.strictEqual(euler427(), 97138867);
 
 ```
 
@@ -62,4 +63,5 @@ euler427();
 ```js
 // solution required
 ```
+
 </section>

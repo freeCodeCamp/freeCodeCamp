@@ -2,6 +2,7 @@
 id: 5900f5191000cf542c51002b
 challengeType: 5
 title: 'Problem 428: Necklace of Circles'
+forumTopicId: 302098
 ---
 
 ## Description
@@ -33,7 +34,7 @@ Find T(1&nbsp;000&nbsp;000&nbsp;000).
 ```yml
 tests:
   - text: <code>necklace(1000000000)</code> should return 747215561862.
-    testString: assert.strictEqual(necklace(1000000000), 747215561862, '<code>necklace(1000000000)</code> should return 747215561862.');
+    testString: assert.strictEqual(necklace(1000000000), 747215561862);
 
 ```
 
@@ -65,4 +66,5 @@ necklace(1000000000)
 ```js
 // solution required
 ```
+
 </section>

@@ -2,15 +2,18 @@
 id: 5900f3961000cf542c50fea9
 challengeType: 5
 title: 'Problem 42: Coded triangle numbers'
-videoUrl: ''
+forumTopicId: 302089
 localeTitle: 'Задача 42: Номера кодовых треугольников'
 ---
 
 ## Description
-<section id="description"> N-й член последовательности чисел треугольника задается выражением tn = ½n (n + 1); поэтому первые десять чисел треугольника: 1, 3, 6, 10, 15, 21, 28, 36, 45, 55, ... путем преобразования каждой буквы в слово в число, соответствующее его алфавитному положению, и добавление этих значений мы формируем значение слова. Например, значение слова для SKY равно 19 + 11 + 25 = 55 = t10. Если значение слова является числом треугольника, мы будем называть слово треугольным словом. Используя массив слов n-длины, сколько из них являются треугольными словами? </section>
+<section id='description'>
+N-й член последовательности чисел треугольника задается выражением tn = ½n (n + 1); поэтому первые десять чисел треугольника: 1, 3, 6, 10, 15, 21, 28, 36, 45, 55, ... путем преобразования каждой буквы в слово в число, соответствующее его алфавитному положению, и добавление этих значений мы формируем значение слова. Например, значение слова для SKY равно 19 + 11 + 25 = 55 = t10. Если значение слова является числом треугольника, мы будем называть слово треугольным словом. Используя массив слов n-длины, сколько из них являются треугольными словами?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,14 +21,14 @@ localeTitle: 'Задача 42: Номера кодовых треугольни�
 
 ```yml
 tests:
-  - text: <code>codedTriangleNumbers(1400)</code> должен вернуть 129.
-    testString: 'assert(codedTriangleNumbers(1400) == 129, "<code>codedTriangleNumbers(1400)</code> should return 129.");'
-  - text: <code>codedTriangleNumbers(1500)</code> должен вернуть 137.
-    testString: 'assert(codedTriangleNumbers(1500) == 137, "<code>codedTriangleNumbers(1500)</code> should return 137.");'
-  - text: <code>codedTriangleNumbers(1600)</code> должен вернуть 141.
-    testString: 'assert(codedTriangleNumbers(1600) == 141, "<code>codedTriangleNumbers(1600)</code> should return 141.");'
-  - text: <code>codedTriangleNumbers(1786)</code> должно возвращать 162.
-    testString: 'assert(codedTriangleNumbers(1786) == 162, "<code>codedTriangleNumbers(1786)</code> should return 162.");'
+  - text: <code>codedTriangleNumbers(1400)</code> should return 129.
+    testString: assert(codedTriangleNumbers(1400) == 129);
+  - text: <code>codedTriangleNumbers(1500)</code> should return 137.
+    testString: assert(codedTriangleNumbers(1500) == 137);
+  - text: <code>codedTriangleNumbers(1600)</code> should return 141.
+    testString: assert(codedTriangleNumbers(1600) == 141);
+  - text: <code>codedTriangleNumbers(1786)</code> should return 162.
+    testString: assert(codedTriangleNumbers(1786) == 162);
 
 ```
 
@@ -51,8 +54,6 @@ codedTriangleNumbers(1786);
 
 </div>
 
-
-
 </section>
 
 ## Solution
@@ -61,4 +62,5 @@ codedTriangleNumbers(1786);
 ```js
 // solution required
 ```
+
 </section>

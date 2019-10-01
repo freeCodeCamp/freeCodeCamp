@@ -2,6 +2,7 @@
 id: 5900f4511000cf542c50ff62
 challengeType: 5
 title: 'Problem 226: A Scoop of Blancmange'
+forumTopicId: 301869
 ---
 
 ## Description
@@ -29,7 +30,7 @@ What area under the blancmange curve is enclosed by C?Give your answer rounded t
 ```yml
 tests:
   - text: <code>euler226()</code> should return 0.11316017.
-    testString: assert.strictEqual(euler226(), 0.11316017, '<code>euler226()</code> should return 0.11316017.');
+    testString: assert.strictEqual(euler226(), 0.11316017);
 
 ```
 
@@ -61,4 +62,5 @@ euler226();
 ```js
 // solution required
 ```
+
 </section>

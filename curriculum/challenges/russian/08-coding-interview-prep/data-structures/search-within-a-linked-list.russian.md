@@ -2,31 +2,35 @@
 id: 587d8251367417b2b2512c64
 title: Search within a Linked List
 challengeType: 1
-videoUrl: ''
+forumTopicId: 301715
 localeTitle: Поиск в связанном списке
 ---
 
 ## Description
-<section id="description"> Давайте добавим еще несколько полезных методов в наш связанный класс списка. Не было бы полезно, если бы мы могли сказать, был ли наш список пустым или нет, как в наших классах <code>Stack</code> и <code>Queue</code> ? Мы также должны иметь возможность находить определенные элементы в нашем связанном списке. Прохождение через структуры данных - это то, с чем вы захотите получить много практики! Давайте создадим метод <code>indexOf</code> который принимает <code>element</code> в качестве аргумента и возвращает <code>index</code> этого элемента в связанном списке. Если элемент не найден в связанном списке, верните <code>-1</code> . Давайте также реализуем метод, который делает обратное: метод <code>elementAt</code> который принимает <code>index</code> в качестве аргумента и возвращает <code>element</code> в указанном <code>index</code> . Если ни один <code>element</code> не найден, возвращайте <code>undefined</code> . </section>
+<section id='description'>
+Давайте добавим еще несколько полезных методов в наш связанный класс списка. Не было бы полезно, если бы мы могли сказать, был ли наш список пустым или нет, как в наших классах <code>Stack</code> и <code>Queue</code> ? Мы также должны иметь возможность находить определенные элементы в нашем связанном списке. Прохождение через структуры данных - это то, с чем вы захотите получить много практики! Давайте создадим метод <code>indexOf</code> который принимает <code>element</code> в качестве аргумента и возвращает <code>index</code> этого элемента в связанном списке. Если элемент не найден в связанном списке, верните <code>-1</code> . Давайте также реализуем метод, который делает обратное: метод <code>elementAt</code> который принимает <code>index</code> в качестве аргумента и возвращает <code>element</code> в указанном <code>index</code> . Если ни один <code>element</code> не найден, возвращайте <code>undefined</code> .
+</section>
 
 ## Instructions
-<section id="instructions"> Напишите метод <code>isEmpty</code> который проверяет, является ли связанный список пустым, метод <code>indexOf</code> который возвращает <code>index</code> данного элемента, и <code>elementAt</code> который возвращает <code>element</code> в указанном <code>index.</code> </section>
+<section id='instructions'>
+Напишите метод <code>isEmpty</code> который проверяет, является ли связанный список пустым, метод <code>indexOf</code> который возвращает <code>index</code> данного элемента, и <code>elementAt</code> который возвращает <code>element</code> в указанном <code>index.</code>
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: Класс <code>LinkedList</code> должен иметь метод <code>indexOf</code> .
-    testString: 'assert((function(){var test = new LinkedList(); return (typeof test.indexOf === "function")}()), "Your <code>LinkedList</code> class should have a <code>indexOf</code> method.");'
-  - text: Класс <code>LinkedList</code> должен иметь метод <code>elementAt</code> .
-    testString: 'assert((function(){var test = new LinkedList(); return (typeof test.elementAt === "function")}()), "Your <code>LinkedList</code> class should have a <code>elementAt</code> method.");'
-  - text: Метод <code>size</code> должен возвращать длину связанного списка.
-    testString: 'assert((function(){var test = new LinkedList(); test.add("cat"); test.add("dog"); test.add("kitten"); return test.size() === 3}()), "Your <code>size</code> method should return the length of the linked list");'
-  - text: Ваш метод <code>indexOf</code> должен возвращать индекс данного элемента.
-    testString: 'assert((function(){var test = new LinkedList(); test.add("cat"); test.add("dog"); test.add("kitten"); return test.indexOf("kitten") === 2}()), "Your <code>indexOf</code> method should return the index of the given element.");'
-  - text: Метод <code>elementAt</code> должен возвращаться в элементе по заданному индексу.
-    testString: 'assert((function(){var test = new LinkedList(); test.add("cat"); test.add("dog"); test.add("kitten"); return test.elementAt(1) === "dog"}()), "Your <code>elementAt</code> method should return at element at a given index.");'
+  - text: Your <code>LinkedList</code> class should have a <code>indexOf</code> method.
+    testString: assert((function(){var test = new LinkedList(); return (typeof test.indexOf === 'function')}()));
+  - text: Your <code>LinkedList</code> class should have a <code>elementAt</code> method.
+    testString: assert((function(){var test = new LinkedList(); return (typeof test.elementAt === 'function')}()));
+  - text: Your <code>size</code> method should return the length of the linked list
+    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten'); return test.size() === 3}()));
+  - text: Your <code>indexOf</code> method should return the index of the given element.
+    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten'); return test.indexOf('kitten') === 2}()));
+  - text: Your <code>elementAt</code> method should return at element at a given index.
+    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten'); return test.elementAt(1) === 'dog'}()));
 
 ```
 
@@ -60,7 +64,7 @@ function LinkedList() {
     if(head === null){
         head = node;
     } else {
-        currentNode = head;
+        var currentNode = head;
 
         while(currentNode.next){
             currentNode  = currentNode.next;
@@ -98,8 +102,6 @@ function LinkedList() {
 
 </div>
 
-
-
 </section>
 
 ## Solution
@@ -108,4 +110,5 @@ function LinkedList() {
 ```js
 // solution required
 ```
+
 </section>

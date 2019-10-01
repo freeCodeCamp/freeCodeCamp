@@ -2,6 +2,7 @@
 id: 5900f3d61000cf542c50fee7
 challengeType: 5
 title: 'Problem 103: Special subset sums: optimum'
+forumTopicId: 301727
 ---
 
 ## Description
@@ -28,7 +29,7 @@ NOTE: This problem is related to Problem 105 and Problem 106.
 ```yml
 tests:
   - text: <code>euler103()</code> should return 20313839404245.
-    testString: assert.strictEqual(euler103(), 20313839404245, '<code>euler103()</code> should return 20313839404245.');
+    testString: assert.strictEqual(euler103(), 20313839404245);
 
 ```
 
@@ -60,4 +61,5 @@ euler103();
 ```js
 // solution required
 ```
+
 </section>

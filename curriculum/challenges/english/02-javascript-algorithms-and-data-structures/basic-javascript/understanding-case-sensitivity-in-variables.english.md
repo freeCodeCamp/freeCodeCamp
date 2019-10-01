@@ -2,6 +2,8 @@
 id: 56533eb9ac21ba0edf2244ab
 title: Understanding Case Sensitivity in Variables
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/cd6GDcD'
+forumTopicId: 18334
 ---
 
 ## Description
@@ -11,7 +13,13 @@ In JavaScript all variables and function names are case sensitive. This means th
 <h4>Best Practice</h4>
 Write variable names in JavaScript in <dfn>camelCase</dfn>. In <dfn>camelCase</dfn>, multi-word variable names have the first word in lowercase and the first letter of each subsequent word is capitalized.
 <strong>Examples:</strong>
-<blockquote>var someVariable;<br>var anotherVariableName;<br>var thisVariableNameIsSoLong;</blockquote>
+
+```js
+var someVariable;
+var anotherVariableName;
+var thisVariableNameIsSoLong;
+```
+
 </section>
 
 ## Instructions
@@ -25,17 +33,17 @@ Modify the existing declarations and assignments so their names use <dfn>camelCa
 ```yml
 tests:
   - text: <code>studlyCapVar</code> is defined and has a value of <code>10</code>
-    testString: assert(typeof studlyCapVar !== 'undefined' && studlyCapVar === 10, '<code>studlyCapVar</code> is defined and has a value of <code>10</code>');
+    testString: assert(typeof studlyCapVar !== 'undefined' && studlyCapVar === 10);
   - text: <code>properCamelCase</code> is defined and has a value of <code>"A String"</code>
-    testString: assert(typeof properCamelCase !== 'undefined' && properCamelCase === "A String", '<code>properCamelCase</code> is defined and has a value of <code>"A String"</code>');
+    testString: assert(typeof properCamelCase !== 'undefined' && properCamelCase === "A String");
   - text: <code>titleCaseOver</code> is defined and has a value of <code>9000</code>
-    testString: assert(typeof titleCaseOver !== 'undefined' && titleCaseOver === 9000, '<code>titleCaseOver</code> is defined and has a value of <code>9000</code>');
+    testString: assert(typeof titleCaseOver !== 'undefined' && titleCaseOver === 9000);
   - text: <code>studlyCapVar</code> should use camelCase in both declaration and assignment sections.
-    testString: assert(code.match(/studlyCapVar/g).length === 2, '<code>studlyCapVar</code> should use camelCase in both declaration and assignment sections.');
+    testString: assert(code.match(/studlyCapVar/g).length === 2);
   - text: <code>properCamelCase</code> should use camelCase in both declaration and assignment sections.
-    testString: assert(code.match(/properCamelCase/g).length === 2, '<code>properCamelCase</code> should use camelCase in both declaration and assignment sections.');
+    testString: assert(code.match(/properCamelCase/g).length === 2);
   - text: <code>titleCaseOver</code> should use camelCase in both declaration and assignment sections.
-    testString: assert(code.match(/titleCaseOver/g).length === 2, '<code>titleCaseOver</code> should use camelCase in both declaration and assignment sections.');
+    testString: assert(code.match(/titleCaseOver/g).length === 2);
 
 ```
 

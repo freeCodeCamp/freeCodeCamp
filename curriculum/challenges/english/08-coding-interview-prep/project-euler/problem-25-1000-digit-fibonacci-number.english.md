@@ -2,6 +2,7 @@
 id: 5900f3851000cf542c50fe98
 challengeType: 5
 title: 'Problem 25: 1000-digit Fibonacci number'
+forumTopicId: 301897
 ---
 
 ## Description
@@ -25,13 +26,13 @@ What is the index of the first term in the Fibonacci sequence to contain <var>n<
 ```yml
 tests:
   - text: <code>digitFibonacci(5)</code> should return 21.
-    testString: assert.strictEqual(digitFibonacci(5), 21, '<code>digitFibonacci(5)</code> should return 21.');
+    testString: assert.strictEqual(digitFibonacci(5), 21);
   - text: <code>digitFibonacci(10)</code> should return 45.
-    testString: assert.strictEqual(digitFibonacci(10), 45, '<code>digitFibonacci(10)</code> should return 45.');
+    testString: assert.strictEqual(digitFibonacci(10), 45);
   - text: <code>digitFibonacci(15)</code> should return 69.
-    testString: assert.strictEqual(digitFibonacci(15), 69, '<code>digitFibonacci(15)</code> should return 69.');
+    testString: assert.strictEqual(digitFibonacci(15), 69);
   - text: <code>digitFibonacci(20)</code> should return 93.
-    testString: assert.strictEqual(digitFibonacci(20), 93, '<code>digitFibonacci(20)</code> should return 93.');
+    testString: assert.strictEqual(digitFibonacci(20), 93);
 
 ```
 

@@ -7,37 +7,38 @@ localeTitle: Verificar tudo ou nada
 ---
 
 ## Description
-<section id="description"> Às vezes, os padrões que você deseja pesquisar podem ter partes dele que podem ou não existir. No entanto, pode ser importante verificar para eles, no entanto. Você pode especificar a possível existência de um elemento com um ponto de interrogação <code>?</code> . Isso verifica zero ou um dos elementos anteriores. Você pode pensar neste símbolo dizendo que o elemento anterior é opcional. Por exemplo, existem pequenas diferenças no inglês americano e britânico e você pode usar o ponto de interrogação para combinar com as duas grafias. <blockquote> deixe americano = &quot;cor&quot;; <br> deixe british = &quot;cor&quot;; <br> deixe rainbowRegex = / colou? r /; <br> rainbowRegex.test (americano); // Retorna true <br> rainbowRegex.test (britânico); // Retorna true </blockquote></section>
+<section id="description"> Eventualmente, os padrões que você deseja pesquisar contém partes que podem ou não existir. No entanto, pode ser importante verificar por elas. Você pode especificar a possível existência de um elemento com um ponto de interrogação <code>?</code>. Isso verifica zero ou um dos elementos anteriores. Você pode pensar neste símbolo como uma forma de dizer que o elemento anterior é opcional. Por exemplo, existem pequenas diferenças no inglês americano e britânico e você pode usar o ponto de interrogação para combinar com as duas grafias. <blockquote>let americano = "color";<br>let britanico = "colour";<br>let rainbowRegex= /colou?r/;<br>rainbowRegex.test(americano); // Retorna true<br>rainbowRegex.test(britanico); // Retorna true</blockquote>
+</section>
 
 ## Instructions
-<section id="instructions"> Altere o regex <code>favRegex</code> para coincidir com o inglês americano (favorito) e o inglês britânico (favorito) versão da palavra. </section>
+<section id="instructions"> Altere o regex <code>favRegex</code> para coincidir com as versões em inglês americano (favorite) e inglês britânico (favourite) da palavra. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
-tests:
+testes:
   - text: Seu regex deve usar o símbolo opcional <code>?</code> .
-    testString: 'assert(favRegex.source.match(/\?/).length > 0, "Your regex should use the optional symbol, <code>?</code>.");'
+    testString: 'assert(favRegex.source.match(/\?/).length > 0, "Seu regex deve usar o símbolo opcional, <code>?</code>.");'
   - text: Seu regex deve coincidir com <code>&quot;favorite&quot;</code>
-    testString: 'assert(favRegex.test("favorite"), "Your regex should match <code>"favorite"</code>");'
+    testString: 'assert(favRegex.test("favorite"), "Seu regex deve coincidir com <code>"favorite"</code>");'
   - text: Seu regex deve coincidir com <code>&quot;favourite&quot;</code>
-    testString: 'assert(favRegex.test("favourite"), "Your regex should match <code>"favourite"</code>");'
-  - text: Seu regex não deve corresponder a <code>&quot;fav&quot;</code>
-    testString: 'assert(!favRegex.test("fav"), "Your regex should not match <code>"fav"</code>");'
+    testString: 'assert(favRegex.test("favourite"), "Seu regex deve coincidir com <code>"favourite"</code>");'
+  - text: Seu regex não deve coincidir com <code>&quot;fav&quot;</code>
+    testString: 'assert(!favRegex.test("fav"), "Seu regex não deve coincidir com <code>"fav"</code>");'
 
 ```
 
 </section>
 
-## Challenge Seed
+## Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
 
 ```js
 let favWord = "favorite";
-let favRegex = /change/; // Change this line
+let favRegex = /change/; // Altere esta linha
 let result = favRegex.test(favWord);
 
 ```
@@ -48,10 +49,10 @@ let result = favRegex.test(favWord);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js
-// solution required
+// solução necessária
 ```
 </section>

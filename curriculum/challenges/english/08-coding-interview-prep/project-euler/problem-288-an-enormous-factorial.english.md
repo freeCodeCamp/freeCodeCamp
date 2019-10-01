@@ -2,6 +2,7 @@
 id: 5900f48d1000cf542c50ff9f
 challengeType: 5
 title: 'Problem 288: An enormous factorial'
+forumTopicId: 301939
 ---
 
 ## Description
@@ -35,7 +36,7 @@ Find NF(61,107) mod 6110
 ```yml
 tests:
   - text: <code>euler288()</code> should return 605857431263982000.
-    testString: assert.strictEqual(euler288(), 605857431263982000, '<code>euler288()</code> should return 605857431263982000.');
+    testString: assert.strictEqual(euler288(), 605857431263982000);
 
 ```
 
@@ -67,4 +68,5 @@ euler288();
 ```js
 // solution required
 ```
+
 </section>

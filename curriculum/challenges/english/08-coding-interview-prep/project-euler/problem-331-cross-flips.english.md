@@ -2,6 +2,7 @@
 id: 5900f4b71000cf542c50ffca
 challengeType: 5
 title: 'Problem 331: Cross flips'
+forumTopicId: 301989
 ---
 
 ## Description
@@ -37,7 +38,7 @@ Find .
 ```yml
 tests:
   - text: <code>euler331()</code> should return 467178235146843500.
-    testString: assert.strictEqual(euler331(), 467178235146843500, '<code>euler331()</code> should return 467178235146843500.');
+    testString: assert.strictEqual(euler331(), 467178235146843500);
 
 ```
 
@@ -69,4 +70,5 @@ euler331();
 ```js
 // solution required
 ```
+
 </section>

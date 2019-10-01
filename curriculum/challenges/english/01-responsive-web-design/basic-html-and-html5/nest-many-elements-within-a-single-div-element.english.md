@@ -3,6 +3,7 @@ id: bad87fee1348bd9aede08835
 title: Nest Many Elements within a Single div Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cNW4kC3'
+forumTopicId: 18246
 ---
 
 ## Description
@@ -24,13 +25,13 @@ Hint: Try putting your opening <code>div</code> tag above your "Things cats love
 ```yml
 tests:
   - text: Nest your <code>p</code> elements inside your <code>div</code> element.
-    testString: assert($("div").children("p").length > 1, 'Nest your <code>p</code> elements inside your <code>div</code> element.');
+    testString: assert($("div").children("p").length > 1);
   - text: Nest your <code>ul</code> element inside your <code>div</code> element.
-    testString: assert($("div").children("ul").length > 0, 'Nest your <code>ul</code> element inside your <code>div</code> element.');
+    testString: assert($("div").children("ul").length > 0);
   - text: Nest your <code>ol</code> element inside your <code>div</code> element.
-    testString: assert($("div").children("ol").length > 0, 'Nest your <code>ol</code> element inside your <code>div</code> element.');
+    testString: assert($("div").children("ol").length > 0);
   - text: Make sure your <code>div</code> element has a closing tag.
-    testString: assert(code.match(/<\/div>/g) && code.match(/<\/div>/g).length === code.match(/<div>/g).length, 'Make sure your <code>div</code> element has a closing tag.');
+    testString: assert(code.match(/<\/div>/g) && code.match(/<\/div>/g).length === code.match(/<div>/g).length);
 
 ```
 
@@ -62,11 +63,11 @@ tests:
   </ol>
 
   <form action="/submit-cat-photo">
-    <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
-    <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
-    <label><input type="checkbox" name="personality" checked> Loving</label>
-    <label><input type="checkbox" name="personality"> Lazy</label>
-    <label><input type="checkbox" name="personality"> Energetic</label><br>
+    <label for="indoor"><input id="indoor" type="radio" name="indoor-outdoor" value="indoor" checked> Indoor</label>
+    <label for="outdoor"><input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor"> Outdoor</label><br>
+    <label for="loving"><input id="loving" type="checkbox" name="personality" value="loving" checked> Loving</label>
+    <label for="lazy"><input id="lazy" type="checkbox" name="personality" value="lazy"> Lazy</label>
+    <label for="energetic"><input id="energetic" type="checkbox" name="personality" value="energetic"> Energetic</label><br>
     <input type="text" placeholder="cat photo URL" required>
     <button type="submit">Submit</button>
   </form>
@@ -82,7 +83,36 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<h2>CatPhotoApp</h2>
+<main>
+  <p>Click here to view more <a href="#">cat photos</a>.</p>
+  
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <div>
+    <p>Things cats love:</p>
+    <ul>
+      <li>cat nip</li>
+      <li>laser pointers</li>
+      <li>lasagna</li>
+    </ul>
+    <p>Top 3 things cats hate:</p>
+    <ol>
+      <li>flea treatment</li>
+      <li>thunder</li>
+      <li>other cats</li>
+    </ol>
+  </div>
+  <form action="/submit-cat-photo">
+    <label for="indoor"><input id="indoor" type="radio" name="indoor-outdoor" value="indoor" checked> Indoor</label>
+    <label for="outdoor"><input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor"> Outdoor</label><br>
+    <label for="loving"><input id="loving" type="checkbox" name="personality" value="loving" checked> Loving</label>
+    <label for="lazy"><input id="lazy" type="checkbox" name="personality" value="lazy"> Lazy</label>
+    <label for="energetic"><input id="energetic" type="checkbox" name="personality" value="energetic"> Energetic</label><br>
+    <input type="text" placeholder="cat photo URL" required>
+    <button type="submit">Submit</button>
+  </form>
+</main>
 ```
+
 </section>

@@ -2,6 +2,7 @@
 id: 5900f51e1000cf542c510030
 challengeType: 5
 title: 'Problem 432: Totient sum'
+forumTopicId: 302103
 ---
 
 ## Description
@@ -25,7 +26,7 @@ Give the last 9 digits of your answer.
 ```yml
 tests:
   - text: <code>euler432()</code> should return 754862080.
-    testString: assert.strictEqual(euler432(), 754862080, '<code>euler432()</code> should return 754862080.');
+    testString: assert.strictEqual(euler432(), 754862080);
 
 ```
 
@@ -57,4 +58,5 @@ euler432();
 ```js
 // solution required
 ```
+
 </section>

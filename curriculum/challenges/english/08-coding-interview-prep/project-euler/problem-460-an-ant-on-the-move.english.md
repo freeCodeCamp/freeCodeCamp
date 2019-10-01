@@ -2,6 +2,7 @@
 id: 5900f5381000cf542c51004b
 challengeType: 5
 title: 'Problem 460: An ant on the move'
+forumTopicId: 302135
 ---
 
 ## Description
@@ -40,7 +41,7 @@ Find F(10000). Give your answer rounded to nine decimal places.
 ```yml
 tests:
   - text: <code>euler460()</code> should return 18.420738199.
-    testString: assert.strictEqual(euler460(), 18.420738199, '<code>euler460()</code> should return 18.420738199.');
+    testString: assert.strictEqual(euler460(), 18.420738199);
 
 ```
 
@@ -72,4 +73,5 @@ euler460();
 ```js
 // solution required
 ```
+
 </section>

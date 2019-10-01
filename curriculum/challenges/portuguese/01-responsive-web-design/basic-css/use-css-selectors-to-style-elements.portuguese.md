@@ -7,7 +7,7 @@ localeTitle: Use seletores CSS para elementos de estilo
 ---
 
 ## Description
-<section id="description"> Com o CSS, existem centenas de <code>properties</code> CSS que você pode usar para alterar a aparência de um elemento na sua página. Quando você digitou <code>&lt;h2 style=&quot;color: red&quot;&gt;CatPhotoApp&lt;/h2&gt;</code> , você estava estilizando esse elemento <code>h2</code> individual com <code>inline CSS</code> , que significa <code>Cascading Style Sheets</code> . Essa é uma maneira de especificar o estilo de um elemento, mas há uma maneira melhor de aplicar <code>CSS</code> . Na parte superior do seu código, crie um bloco de <code>style</code> como este: <blockquote> &lt;style&gt; <br> &lt;/ style&gt; </blockquote> Dentro desse bloco de estilo, você pode criar um <code>CSS selector</code> para todos os elementos <code>h2</code> . Por exemplo, se você quisesse que todos os elementos <code>h2</code> fossem vermelhos, você adicionaria uma regra de estilo semelhante a esta: <blockquote> &lt;style&gt; <br> h2 {cor: vermelho;} <br> &lt;/ style&gt; </blockquote> Observe que é importante ter chaves de abertura e de fechamento ( <code>{</code> e <code>}</code> ) ao redor das regras de estilo de cada elemento. Você também precisa garantir que a definição de estilo do seu elemento esteja entre as tags de estilo de abertura e fechamento. Por fim, adicione um ponto-e-vírgula ao final de cada uma das regras de estilo de seu elemento. </section>
+<section id="description"> Com o CSS, existem centenas de <code>properties</code> CSS que você pode usar para alterar a aparência de um elemento na sua página. Quando você digitou <code>&lt;h2 style=&quot;color: red;&quot;&gt;CatPhotoApp&lt;/h2&gt;</code> , você estava estilizando esse elemento <code>h2</code> individual com <code>inline CSS</code> , que significa <code>Cascading Style Sheets</code> . Essa é uma maneira de especificar o estilo de um elemento, mas há uma maneira melhor de aplicar <code>CSS</code> . Na parte superior do seu código, crie um bloco de <code>style</code> como este: <blockquote> &lt;style&gt; <br> &lt;/ style&gt; </blockquote> Dentro desse bloco de estilo, você pode criar um <code>CSS selector</code> para todos os elementos <code>h2</code> . Por exemplo, se você quisesse que todos os elementos <code>h2</code> fossem vermelhos, você adicionaria uma regra de estilo semelhante a esta: <blockquote> &lt;style&gt; <br> h2 {cor: vermelho;} <br> &lt;/ style&gt; </blockquote> Observe que é importante ter chaves de abertura e de fechamento ( <code>{</code> e <code>}</code> ) ao redor das regras de estilo de cada elemento. Você também precisa garantir que a definição de estilo do seu elemento esteja entre as tags de estilo de abertura e fechamento. Por fim, adicione um ponto-e-vírgula ao final de cada uma das regras de estilo de seu elemento. </section>
 
 ## Instructions
 <section id="instructions"> Exclua o atributo style do seu elemento <code>h2</code> e, em vez disso, crie um bloco de <code>style</code> CSS. Adicione o CSS necessário para tornar todos os elementos <code>h2</code> azuis. </section>
@@ -38,7 +38,7 @@ tests:
 <div id='html-seed'>
 
 ```html
-<h2 style="color: red">CatPhotoApp</h2>
+<h2 style="color: red;">CatPhotoApp</h2>
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
 

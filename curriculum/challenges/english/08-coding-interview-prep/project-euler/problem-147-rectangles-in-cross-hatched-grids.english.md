@@ -2,6 +2,7 @@
 id: 5900f3ff1000cf542c50ff12
 challengeType: 5
 title: 'Problem 147: Rectangles in cross-hatched grids'
+forumTopicId: 301776
 ---
 
 ## Description
@@ -31,7 +32,7 @@ How many different rectangles could be situated within 47x43 and smaller grids?
 ```yml
 tests:
   - text: <code>euler147()</code> should return 846910284.
-    testString: assert.strictEqual(euler147(), 846910284, '<code>euler147()</code> should return 846910284.');
+    testString: assert.strictEqual(euler147(), 846910284);
 
 ```
 
@@ -63,4 +64,5 @@ euler147();
 ```js
 // solution required
 ```
+
 </section>

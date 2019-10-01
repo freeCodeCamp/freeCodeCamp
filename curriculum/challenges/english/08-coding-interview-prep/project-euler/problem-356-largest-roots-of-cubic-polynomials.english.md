@@ -2,6 +2,7 @@
 id: 5900f4d01000cf542c50ffe3
 challengeType: 5
 title: 'Problem 356: Largest roots of cubic polynomials'
+forumTopicId: 302016
 ---
 
 ## Description
@@ -27,7 +28,7 @@ Note:  represents the floor function.
 ```yml
 tests:
   - text: <code>euler356()</code> should return 28010159.
-    testString: assert.strictEqual(euler356(), 28010159, '<code>euler356()</code> should return 28010159.');
+    testString: assert.strictEqual(euler356(), 28010159);
 
 ```
 
@@ -59,4 +60,5 @@ euler356();
 ```js
 // solution required
 ```
+
 </section>

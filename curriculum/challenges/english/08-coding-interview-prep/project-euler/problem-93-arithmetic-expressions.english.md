@@ -2,6 +2,7 @@
 id: 5900f3ca1000cf542c50fedc
 challengeType: 5
 title: 'Problem 93: Arithmetic expressions'
+forumTopicId: 302210
 ---
 
 ## Description
@@ -28,7 +29,7 @@ Find the set of four distinct digits, a < b < c < d, for which the longest set o
 ```yml
 tests:
   - text: <code>euler93()</code> should return 1258.
-    testString: assert.strictEqual(euler93(), 1258, '<code>euler93()</code> should return 1258.');
+    testString: assert.strictEqual(euler93(), 1258);
 
 ```
 
@@ -60,4 +61,5 @@ euler93();
 ```js
 // solution required
 ```
+
 </section>

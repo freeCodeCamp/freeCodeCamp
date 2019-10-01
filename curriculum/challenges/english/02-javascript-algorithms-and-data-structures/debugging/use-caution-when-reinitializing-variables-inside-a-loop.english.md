@@ -2,6 +2,7 @@
 id: 587d7b86367417b2b2512b3c
 title: Use Caution When Reinitializing Variables Inside a Loop
 challengeType: 1
+forumTopicId: 301194
 ---
 
 ## Description
@@ -21,11 +22,11 @@ The following function is supposed to create a two-dimensional array with <code>
 ```yml
 tests:
   - text: Your code should set the <code>matrix</code> variable to an array holding 3 rows of 2 columns of zeroes each.
-    testString: assert(JSON.stringify(matrix) == "[[0,0],[0,0],[0,0]]", 'Your code should set the <code>matrix</code> variable to an array holding 3 rows of 2 columns of zeroes each.');
+    testString: assert(JSON.stringify(matrix) == "[[0,0],[0,0],[0,0]]");
   - text: The <code>matrix</code> variable should have 3 rows.
-    testString: assert(matrix.length == 3, 'The <code>matrix</code> variable should have 3 rows.');
+    testString: assert(matrix.length == 3);
   - text: The <code>matrix</code> variable should have 2 columns in each row.
-    testString: assert(matrix[0].length == 2 && matrix[1].length === 2 && matrix[2].length === 2, 'The <code>matrix</code> variable should have 2 columns in each row.');
+    testString: assert(matrix[0].length == 2 && matrix[1].length === 2 && matrix[2].length === 2);
 
 ```
 
@@ -68,6 +69,25 @@ console.log(matrix);
 <section id='solution'>
 
 ```js
-// solution required
+function zeroArray(m, n) {
+ // Creates a 2-D array with m rows and n columns of zeroes
+ let newArray = [];
+ for (let i = 0; i < m; i++) {
+   let row = [];
+   // Adds the m-th row into newArray
+
+   for (let j = 0; j < n; j++) {
+     // Pushes n zeroes into the current row to create the columns
+     row.push(0);
+   }
+   // Pushes the current row, which now has n zeroes in it, to the array
+   newArray.push(row);
+ }
+ return newArray;
+}
+
+let matrix = zeroArray(3, 2);
+console.log(matrix);
 ```
+
 </section>

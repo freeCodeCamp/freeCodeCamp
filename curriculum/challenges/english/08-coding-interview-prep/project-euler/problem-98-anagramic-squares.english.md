@@ -2,6 +2,7 @@
 id: 5900f3cf1000cf542c50fee1
 challengeType: 5
 title: 'Problem 98: Anagramic squares'
+forumTopicId: 302215
 ---
 
 ## Description
@@ -23,7 +24,7 @@ NOTE: All anagrams formed must be contained in the given text file.
 ```yml
 tests:
   - text: <code>euler98()</code> should return 18769.
-    testString: assert.strictEqual(euler98(), 18769, '<code>euler98()</code> should return 18769.');
+    testString: assert.strictEqual(euler98(), 18769);
 
 ```
 
@@ -55,4 +56,5 @@ euler98();
 ```js
 // solution required
 ```
+
 </section>

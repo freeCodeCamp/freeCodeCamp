@@ -2,6 +2,7 @@
 id: 5900f4431000cf542c50ff56
 challengeType: 5
 title: 'Problem 215: Crack-free Walls'
+forumTopicId: 301857
 ---
 
 ## Description
@@ -29,7 +30,7 @@ Calculate W(32,10).
 ```yml
 tests:
   - text: <code>euler215()</code> should return 806844323190414.
-    testString: assert.strictEqual(euler215(), 806844323190414, '<code>euler215()</code> should return 806844323190414.');
+    testString: assert.strictEqual(euler215(), 806844323190414);
 
 ```
 
@@ -61,4 +62,5 @@ euler215();
 ```js
 // solution required
 ```
+
 </section>

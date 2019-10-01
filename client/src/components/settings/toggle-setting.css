@@ -1,9 +1,49 @@
 .toggle-setting-container .form-group {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  margin-bottom: 5px;
 }
 
-.toggle-setting-container .form-group label {
-  max-width: 50%;
+.toggle-setting-container .toggle-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.toggle-setting-container .btn-group {
+  padding-left: 5px;
+}
+
+.toggle-setting-container > .form-group > * {
+  flex: 1 1 0;
+}
+
+.toggle-setting-container .btn-group {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+@media (max-width: 440px) {
+  .toggle-setting-container .form-group {
+    flex-direction: column;
+  }
+
+  .toggle-setting-container > .form-group > * {
+    flex: 0 1 auto;
+  }
+
+  .toggle-setting-container .toggle-label {
+    justify-content: flex-start;
+  }
+
+  .toggle-setting-container .help-block {
+    margin-bottom: 0px;
+  }
+
+  .toggle-setting-container .btn-group {
+    justify-content: flex-start;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
 }

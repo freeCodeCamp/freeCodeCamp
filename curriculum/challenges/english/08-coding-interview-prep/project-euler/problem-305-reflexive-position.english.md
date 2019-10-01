@@ -2,6 +2,7 @@
 id: 5900f49d1000cf542c50ffb0
 challengeType: 5
 title: 'Problem 305: Reflexive Position'
+forumTopicId: 301959
 ---
 
 ## Description
@@ -31,7 +32,7 @@ Find ∑f(3k) for 1≤k≤13.
 ```yml
 tests:
   - text: <code>euler305()</code> should return 18174995535140.
-    testString: assert.strictEqual(euler305(), 18174995535140, '<code>euler305()</code> should return 18174995535140.');
+    testString: assert.strictEqual(euler305(), 18174995535140);
 
 ```
 
@@ -63,4 +64,5 @@ euler305();
 ```js
 // solution required
 ```
+
 </section>

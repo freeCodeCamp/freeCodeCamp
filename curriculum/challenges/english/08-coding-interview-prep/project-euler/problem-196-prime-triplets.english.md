@@ -2,6 +2,7 @@
 id: 5900f4301000cf542c50ff42
 challengeType: 5
 title: 'Problem 196: Prime triplets'
+forumTopicId: 301834
 ---
 
 ## Description
@@ -46,7 +47,7 @@ Find  S(5678027) + S(7208785).
 ```yml
 tests:
   - text: <code>euler196()</code> should return 322303240771079940.
-    testString: assert.strictEqual(euler196(), 322303240771079940, '<code>euler196()</code> should return 322303240771079940.');
+    testString: assert.strictEqual(euler196(), 322303240771079940);
 
 ```
 
@@ -78,4 +79,5 @@ euler196();
 ```js
 // solution required
 ```
+
 </section>

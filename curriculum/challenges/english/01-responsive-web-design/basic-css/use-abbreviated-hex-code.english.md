@@ -3,6 +3,7 @@ id: bad87fee1348bd9aedf08719
 title: Use Abbreviated Hex Code
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cRkpKAm'
+forumTopicId: 18338
 ---
 
 ## Description
@@ -24,21 +25,21 @@ Go ahead, try using the abbreviated hex codes to color the correct elements.
 ```yml
 tests:
   - text: Give your <code>h1</code> element with the text <code>I am red!</code> the <code>color</code> red.
-    testString: assert($('.red-text').css('color') === 'rgb(255, 0, 0)', 'Give your <code>h1</code> element with the text <code>I am red!</code> the <code>color</code> red.');
+    testString: assert($('.red-text').css('color') === 'rgb(255, 0, 0)');
   - text: Use the abbreviate <code>hex code</code> for the color red instead of the hex code <code>#FF0000</code>.
-    testString: assert(code.match(/\.red-text\s*?{\s*?color:\s*?#F00\s*?;\s*?}/gi), 'Use the abbreviate <code>hex code</code> for the color red instead of the hex code <code>#FF0000</code>.');
+    testString: assert(code.match(/\.red-text\s*?{\s*?color:\s*?#F00\s*?;\s*?}/gi));
   - text: Give your <code>h1</code> element with the text <code>I am green!</code> the <code>color</code> green.
-    testString: assert($('.green-text').css('color') === 'rgb(0, 255, 0)', 'Give your <code>h1</code> element with the text <code>I am green!</code> the <code>color</code> green.');
+    testString: assert($('.green-text').css('color') === 'rgb(0, 255, 0)');
   - text: Use the abbreviated <code>hex code</code> for the color green instead of the hex code <code>#00FF00</code>.
-    testString: assert(code.match(/\.green-text\s*?{\s*?color:\s*?#0F0\s*?;\s*?}/gi), 'Use the abbreviated <code>hex code</code> for the color green instead of the hex code <code>#00FF00</code>.');
+    testString: assert(code.match(/\.green-text\s*?{\s*?color:\s*?#0F0\s*?;\s*?}/gi));
   - text: Give your <code>h1</code> element with the text <code>I am cyan!</code> the <code>color</code> cyan.
-    testString: assert($('.cyan-text').css('color') === 'rgb(0, 255, 255)', 'Give your <code>h1</code> element with the text <code>I am cyan!</code> the <code>color</code> cyan.');
+    testString: assert($('.cyan-text').css('color') === 'rgb(0, 255, 255)');
   - text: Use the abbreviated <code>hex code</code> for the color cyan instead of the hex code <code>#00FFFF</code>.
-    testString: assert(code.match(/\.cyan-text\s*?{\s*?color:\s*?#0FF\s*?;\s*?}/gi), 'Use the abbreviated <code>hex code</code> for the color cyan instead of the hex code <code>#00FFFF</code>.');
+    testString: assert(code.match(/\.cyan-text\s*?{\s*?color:\s*?#0FF\s*?;\s*?}/gi));
   - text: Give your <code>h1</code> element with the text <code>I am fuchsia!</code> the <code>color</code> fuchsia.
-    testString: assert($('.fuchsia-text').css('color') === 'rgb(255, 0, 255)', 'Give your <code>h1</code> element with the text <code>I am fuchsia!</code> the <code>color</code> fuchsia.');
+    testString: assert($('.fuchsia-text').css('color') === 'rgb(255, 0, 255)');
   - text: Use the abbreviated <code>hex code</code> for the color fuchsia instead of the hex code <code>#FF00FF</code>.
-    testString: assert(code.match(/\.fuchsia-text\s*?{\s*?color:\s*?#F0F\s*?;\s*?}/gi), 'Use the abbreviated <code>hex code</code> for the color fuchsia instead of the hex code <code>#FF00FF</code>.');
+    testString: assert(code.match(/\.fuchsia-text\s*?{\s*?color:\s*?#F0F\s*?;\s*?}/gi));
 
 ```
 
@@ -83,7 +84,29 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style>
+  .red-text {
+    color: #F00;
+  }
+  .fuchsia-text {
+    color: #F0F;
+  }
+  .cyan-text {
+    color: #0FF;
+  }
+  .green-text {
+    color: #0F0;
+  }
+</style>
+
+<h1 class="red-text">I am red!</h1>
+
+<h1 class="fuchsia-text">I am fuchsia!</h1>
+
+<h1 class="cyan-text">I am cyan!</h1>
+
+<h1 class="green-text">I am green!</h1>
 ```
+
 </section>

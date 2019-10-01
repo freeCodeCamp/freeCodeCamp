@@ -2,15 +2,18 @@
 id: 5900f44b1000cf542c50ff5d
 challengeType: 5
 title: 'Problem 222: Sphere Packing'
-videoUrl: ''
+forumTopicId: 301865
 localeTitle: 'Задача 222: Сфера упаковки'
 ---
 
 ## Description
-<section id="description"> Какова длина самой короткой трубы, внутреннего радиуса 50 мм, которая может полностью содержать 21 шарик радиусов 30 мм, 31 мм, ..., 50 мм? <p> Дайте свой ответ в микрометрах (10-6 м), округленных до ближайшего целого числа. </p></section>
+<section id='description'>
+Какова длина самой короткой трубы, внутреннего радиуса 50 мм, которая может полностью содержать 21 шарик радиусов 30 мм, 31 мм, ..., 50 мм? <p> Дайте свой ответ в микрометрах (10-6 м), округленных до ближайшего целого числа. </p>
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +21,8 @@ localeTitle: 'Задача 222: Сфера упаковки'
 
 ```yml
 tests:
-  - text: <code>euler222()</code> должен вернуть 1590933.
-    testString: 'assert.strictEqual(euler222(), 1590933, "<code>euler222()</code> should return 1590933.");'
+  - text: <code>euler222()</code> should return 1590933.
+    testString: assert.strictEqual(euler222(), 1590933);
 
 ```
 
@@ -42,8 +45,6 @@ euler222();
 
 </div>
 
-
-
 </section>
 
 ## Solution
@@ -52,4 +53,5 @@ euler222();
 ```js
 // solution required
 ```
+
 </section>

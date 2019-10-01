@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -7,19 +7,20 @@ import { Link } from 'gatsby';
 
 import ga from '../../../analytics';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
-import { userSelector } from '../../../redux';
-import Caret from '../../icons/Caret';
-/* eslint-disable max-len */
-import GreenPass from '../../../templates/Challenges/components/icons/GreenPass';
-import GreenNotCompleted from '../../../templates/Challenges/components/icons/GreenNotCompleted';
-/* eslint-enable max-len */
+import { completedChallengesSelector } from '../../../redux';
+import Caret from '../../../assets/icons/Caret';
+import { blockNameify } from '../../../../utils/blockNameify';
+import GreenPass from '../../../assets/icons/GreenPass';
+import GreenNotCompleted from '../../../assets/icons/GreenNotCompleted';
+import IntroInformation from '../../../assets/icons/IntroInformation';
+
 const mapStateToProps = (state, ownProps) => {
   const expandedSelector = makeExpandedBlockSelector(ownProps.blockDashedName);
 
   return createSelector(
     expandedSelector,
-    userSelector,
-    (isExpanded, { completedChallenges = [] }) => ({
+    completedChallengesSelector,
+    (isExpanded, completedChallenges) => ({
       isExpanded,
       completedChallenges: completedChallenges.map(({ id }) => id)
     })
@@ -46,7 +47,7 @@ const propTypes = {
 
 const mapIconStyle = { height: '15px', marginRight: '10px', width: '15px' };
 
-export class Block extends PureComponent {
+export class Block extends Component {
   constructor(...props) {
     super(...props);
 
@@ -92,14 +93,18 @@ export class Block extends PureComponent {
         <li
           className={'map-challenge-title' + completedClass}
           key={'map-challenge' + challenge.fields.slug}
-          >
+        >
           <span className='badge map-badge'>
-            {i !== 0 && this.renderCheckMark(challenge.isCompleted)}
+            {i === 0 ? (
+              <IntroInformation style={mapIconStyle} />
+            ) : (
+              this.renderCheckMark(challenge.isCompleted)
+            )}
           </span>
           <Link
             onClick={this.handleChallengeClick(challenge.fields.slug)}
             to={challenge.fields.slug}
-            >
+          >
             {challenge.title || challenge.frontmatter.title}
           </Link>
         </li>
@@ -108,21 +113,43 @@ export class Block extends PureComponent {
   }
 
   render() {
-    const { completedChallenges, challenges, isExpanded, intro } = this.props;
-    const { blockName } = challenges[0].fields;
+    const {
+      blockDashedName,
+      completedChallenges,
+      challenges,
+      isExpanded,
+      intro
+    } = this.props;
+    let completedCount = 0;
     const challengesWithCompleted = challenges.map(challenge => {
       const { id } = challenge;
       const isCompleted = completedChallenges.some(
         completedId => id === completedId
       );
+      if (isCompleted) {
+        completedCount++;
+      }
       return { ...challenge, isCompleted };
     });
+
     return (
       <li className={`block ${isExpanded ? 'open' : ''}`}>
-        <div className='map-title' onClick={this.handleBlockClick}>
+        <button
+          aria-expanded={isExpanded}
+          className='map-title'
+          onClick={this.handleBlockClick}
+        >
           <Caret />
-          <h5>{blockName}</h5>
-        </div>
+          <h4>{blockNameify(blockDashedName)}</h4>
+          <div className='map-title-completed'>
+            <span>
+              {this.renderCheckMark(
+                completedCount === challengesWithCompleted.length
+              )}
+            </span>
+            <span>{`${completedCount}/${challengesWithCompleted.length}`}</span>
+          </div>
+        </button>
         <ul>
           {isExpanded
             ? this.renderChallenges(intro, challengesWithCompleted)
@@ -136,4 +163,7 @@ export class Block extends PureComponent {
 Block.displayName = 'Block';
 Block.propTypes = propTypes;
 
-export default connect(mapStateToProps, mapDispatchToProps)(Block);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Block);

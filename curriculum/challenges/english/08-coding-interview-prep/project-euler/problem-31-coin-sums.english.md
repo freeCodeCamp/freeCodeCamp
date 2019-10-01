@@ -2,6 +2,7 @@
 id: 5900f38b1000cf542c50fe9e
 challengeType: 5
 title: 'Problem 31: Coin sums'
+forumTopicId: 301965
 ---
 
 ## Description
@@ -24,13 +25,13 @@ How many different ways can £(n) be made using any number of coins?
 ```yml
 tests:
   - text: <code>coinSums(50)</code> should return 451.
-    testString: assert(coinSums(50) == 451, '<code>coinSums(50)</code> should return 451.');
+    testString: assert(coinSums(50) == 451);
   - text: <code>coinSums(100)</code> should return 4563.
-    testString: assert(coinSums(100) == 4563, '<code>coinSums(100)</code> should return 4563.');
+    testString: assert(coinSums(100) == 4563);
   - text: <code>coinSums(150)</code> should return 21873.
-    testString: assert(coinSums(150) == 21873, '<code>coinSums(150)</code> should return 21873.');
+    testString: assert(coinSums(150) == 21873);
   - text: <code>coinSums(200)</code> should return 73682.
-    testString: assert(coinSums(200) == 73682, '<code>coinSums(200)</code> should return 73682.');
+    testString: assert(coinSums(200) == 73682);
 
 ```
 

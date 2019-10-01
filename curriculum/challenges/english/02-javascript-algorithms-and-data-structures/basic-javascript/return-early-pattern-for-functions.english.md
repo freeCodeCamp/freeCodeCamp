@@ -2,13 +2,24 @@
 id: 56533eb9ac21ba0edf2244c4
 title: Return Early Pattern for Functions
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/cQe39Sq'
+forumTopicId: 18272
 ---
 
 ## Description
 <section id='description'>
 When a <code>return</code> statement is reached, the execution of the current function stops and control returns to the calling location.
 <strong>Example</strong>
-<blockquote>function myFun() {<br>&nbsp;&nbsp;console.log("Hello");<br>&nbsp;&nbsp;return "World";<br>&nbsp;&nbsp;console.log("byebye")<br>}<br>myFun();</blockquote>
+
+```js
+function myFun() {
+  console.log("Hello");
+  return "World";
+  console.log("byebye")
+}
+myFun();
+```
+
 The above outputs "Hello" to the console, returns "World", but <code>"byebye"</code> is never output, because the function exits at the <code>return</code> statement.
 </section>
 
@@ -24,17 +35,17 @@ Modify the function <code>abTest</code> so that if <code>a</code> or <code>b</co
 ```yml
 tests:
   - text: <code>abTest(2,2)</code> should return a number
-    testString: assert(typeof abTest(2,2) === 'number' , '<code>abTest(2,2)</code> should return a number');
+    testString: assert(typeof abTest(2,2) === 'number' );
   - text: <code>abTest(2,2)</code> should return <code>8</code>
-    testString: assert(abTest(2,2) === 8 , '<code>abTest(2,2)</code> should return <code>8</code>');
+    testString: assert(abTest(2,2) === 8 );
   - text: <code>abTest(-2,2)</code> should return <code>undefined</code>
-    testString: assert(abTest(-2,2) === undefined , '<code>abTest(-2,2)</code> should return <code>undefined</code>');
+    testString: assert(abTest(-2,2) === undefined );
   - text: <code>abTest(2,-2)</code> should return <code>undefined</code>
-    testString: assert(abTest(2,-2) === undefined , '<code>abTest(2,-2)</code> should return <code>undefined</code>');
+    testString: assert(abTest(2,-2) === undefined );
   - text: <code>abTest(2,8)</code> should return <code>18</code>
-    testString: assert(abTest(2,8) === 18 , '<code>abTest(2,8)</code> should return <code>18</code>');
+    testString: assert(abTest(2,8) === 18 );
   - text: <code>abTest(3,3)</code> should return <code>12</code>
-    testString: assert(abTest(3,3) === 12 , '<code>abTest(3,3)</code> should return <code>12</code>');
+    testString: assert(abTest(3,3) === 12 );
 
 ```
 

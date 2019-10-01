@@ -2,6 +2,7 @@
 id: 5900f4f11000cf542c510003
 challengeType: 5
 title: 'Problem 387: Harshad Numbers'
+forumTopicId: 302051
 ---
 
 ## Description
@@ -36,7 +37,7 @@ Find the sum of the strong, right truncatable Harshad primes less than 1014.
 ```yml
 tests:
   - text: <code>euler387()</code> should return 696067597313468.
-    testString: assert.strictEqual(euler387(), 696067597313468, '<code>euler387()</code> should return 696067597313468.');
+    testString: assert.strictEqual(euler387(), 696067597313468);
 
 ```
 
@@ -68,4 +69,5 @@ euler387();
 ```js
 // solution required
 ```
+
 </section>

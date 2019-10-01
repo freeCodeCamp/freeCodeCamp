@@ -3,12 +3,13 @@ id: 5a858944d96184f06fd60d61
 title: Create Your First CSS Grid
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cqwREC4'
+forumTopicId: 301129
 ---
 
 ## Description
 <section id='description'>
 Turn any HTML element into a grid container by setting its <code>display</code> property to <code>grid</code>. This gives you the ability to use all the other properties associated with CSS Grid.
-<strong>Note</strong><br>In CSS Grid, the parent element is referred to as the <dfn>container</dfn> and its children are called <dfn>items</dfn>.
+<strong>Note:</strong> In CSS Grid, the parent element is referred to as the <dfn>container</dfn> and its children are called <dfn>items</dfn>.
 </section>
 
 ## Instructions
@@ -22,7 +23,7 @@ Change the display of the div with the <code>container</code> class to <code>gri
 ```yml
 tests:
   - text: <code>container</code> class should have a <code>display</code> property with a value of <code>grid</code>.
-    testString: assert(code.match(/.container\s*?{[\s\S]*display\s*?:\s*?grid\s*?;[\s\S]*}/gi), '<code>container</code> class should have a <code>display</code> property with a value of <code>grid</code>.');
+    testString: assert(code.match(/.container\s*?{[\s\S]*display\s*?:\s*?grid\s*?;[\s\S]*}/gi));
 
 ```
 

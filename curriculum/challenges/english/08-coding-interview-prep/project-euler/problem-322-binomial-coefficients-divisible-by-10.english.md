@@ -2,6 +2,7 @@
 id: 5900f4af1000cf542c50ffc1
 challengeType: 5
 title: 'Problem 322: Binomial coefficients divisible by 10'
+forumTopicId: 301979
 ---
 
 ## Description
@@ -24,7 +25,7 @@ Find T(1018, 1012-10).
 ```yml
 tests:
   - text: <code>euler322()</code> should return 999998760323314000.
-    testString: assert.strictEqual(euler322(), 999998760323314000, '<code>euler322()</code> should return 999998760323314000.');
+    testString: assert.strictEqual(euler322(), 999998760323314000);
 
 ```
 
@@ -56,4 +57,5 @@ euler322();
 ```js
 // solution required
 ```
+
 </section>

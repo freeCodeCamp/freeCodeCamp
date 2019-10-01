@@ -2,6 +2,8 @@
 id: bd7123c9c549eddfaeb5bdef
 title: Use Bracket Notation to Find the First Character in a String
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/ca8JwhW'
+forumTopicId: 18341
 ---
 
 ## Description
@@ -23,9 +25,9 @@ Use <dfn>bracket notation</dfn> to find the first character in the <code>lastNam
 ```yml
 tests:
   - text: The <code>firstLetterOfLastName</code> variable should have the value of <code>L</code>.
-    testString: assert(firstLetterOfLastName === 'L', 'The <code>firstLetterOfLastName</code> variable should have the value of <code>L</code>.');
+    testString: assert(firstLetterOfLastName === 'L');
   - text: You should use bracket notation.
-    testString: assert(code.match(/firstLetterOfLastName\s*?=\s*?lastName\[.*?\]/), 'You should use bracket notation.');
+    testString: assert(code.match(/firstLetterOfLastName\s*?=\s*?lastName\[.*?\]/));
 
 ```
 

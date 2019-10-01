@@ -2,6 +2,7 @@
 id: 5900f5191000cf542c51002c
 challengeType: 5
 title: 'Problem 429: Sum of squares of unitary divisors'
+forumTopicId: 302099
 ---
 
 ## Description
@@ -28,7 +29,7 @@ Find S(100 000 000!) modulo 1 000 000 009.
 ```yml
 tests:
   - text: <code>euler429()</code> should return 98792821.
-    testString: assert.strictEqual(euler429(), 98792821, '<code>euler429()</code> should return 98792821.');
+    testString: assert.strictEqual(euler429(), 98792821);
 
 ```
 
@@ -60,4 +61,5 @@ euler429();
 ```js
 // solution required
 ```
+
 </section>

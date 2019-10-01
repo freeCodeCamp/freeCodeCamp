@@ -2,6 +2,7 @@
 id: 5900f52c1000cf542c51003f
 challengeType: 5
 title: 'Problem 448: Average least common multiple'
+forumTopicId: 302120
 ---
 
 ## Description
@@ -28,7 +29,7 @@ Find S(99999999019) mod 999999017.
 ```yml
 tests:
   - text: <code>euler448()</code> should return 106467648.
-    testString: assert.strictEqual(euler448(), 106467648, '<code>euler448()</code> should return 106467648.');
+    testString: assert.strictEqual(euler448(), 106467648);
 
 ```
 
@@ -60,4 +61,5 @@ euler448();
 ```js
 // solution required
 ```
+
 </section>

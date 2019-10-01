@@ -2,6 +2,7 @@
 id: 5900f50d1000cf542c51001f
 challengeType: 5
 title: 'Problem 417: Reciprocal cycles II'
+forumTopicId: 302086
 ---
 
 ## Description
@@ -42,7 +43,7 @@ Find ∑L(n) for 3 ≤ n ≤ 100 000 000
 ```yml
 tests:
   - text: <code>euler417()</code> should return 446572970925740.
-    testString: assert.strictEqual(euler417(), 446572970925740, '<code>euler417()</code> should return 446572970925740.');
+    testString: assert.strictEqual(euler417(), 446572970925740);
 
 ```
 
@@ -74,4 +75,5 @@ euler417();
 ```js
 // solution required
 ```
+
 </section>

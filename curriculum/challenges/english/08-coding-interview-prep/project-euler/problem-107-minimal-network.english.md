@@ -2,6 +2,7 @@
 id: 5900f3d91000cf542c50feea
 challengeType: 5
 title: 'Problem 107: Minimal network'
+forumTopicId: 301731
 ---
 
 ## Description
@@ -35,7 +36,7 @@ Using network.txt (right click and 'Save Link/Target As...'), a 6K text file con
 ```yml
 tests:
   - text: <code>euler107()</code> should return 259679.
-    testString: assert.strictEqual(euler107(), 259679, '<code>euler107()</code> should return 259679.');
+    testString: assert.strictEqual(euler107(), 259679);
 
 ```
 
@@ -67,4 +68,5 @@ euler107();
 ```js
 // solution required
 ```
+
 </section>

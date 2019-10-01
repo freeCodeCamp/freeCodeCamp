@@ -2,14 +2,24 @@
 id: 598e8944f009e646fc236146
 title: Understanding Undefined Value returned from a Function
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/ce2p7cL'
+forumTopicId: 301177
 ---
 
 ## Description
 <section id='description'>
 A function can include the <code>return</code> statement but it does not have to. In the case that the function doesn't have a <code>return</code> statement, when you call it, the function processes the inner code but the returned value is <code>undefined</code>.
 <strong>Example</strong>
-<blockquote>var sum = 0;<br>function addSum(num) {<br>&nbsp;&nbsp;sum = sum + num;<br>}<br>var returnedValue = addSum(3); // sum will be modified but returned value is undefined</blockquote>
-<code>addSum</code> is a function without a <code>return</code> statement. The function will change the global <code>sum</code> variable but the returned value of the function is <code>undefined</code>
+
+```js
+var sum = 0;
+function addSum(num) {
+  sum = sum + num;
+}
+var returnedValue = addSum(3); // sum will be modified but returned value is undefined
+```
+
+<code>addSum</code> is a function without a <code>return</code> statement. The function will change the global <code>sum</code> variable but the returned value of the function is <code>undefined</code>.
 </section>
 
 ## Instructions
@@ -23,13 +33,13 @@ Create a function <code>addFive</code> without any arguments. This function adds
 ```yml
 tests:
   - text: <code>addFive</code> should be a function
-    testString: assert(typeof addFive === 'function', '<code>addFive</code> should be a function');
+    testString: assert(typeof addFive === 'function');
   - text: <code>sum</code> should be equal to 8
-    testString: assert(sum === 8, '<code>sum</code> should be equal to 8');
+    testString: assert(sum === 8);
   - text: Returned value from <code>addFive</code> should be <code>undefined</code>
-    testString: assert(addFive() === undefined, 'Returned value from <code>addFive</code> should be <code>undefined</code>');
+    testString: assert(addFive() === undefined);
   - text: Inside of your functions, add 5 to the <code>sum</code> variable
-    testString: assert(code.match(/(sum\s*\=\s*sum\s*\+\s*5)|(sum\s*\+\=\s*5)/g).length === 1, 'Inside of your functions, add 5 to the <code>sum</code> variable');
+    testString: assert(code.match(/(sum\s*\=\s*sum\s*\+\s*5)|(sum\s*\+\=\s*5)/g).length === 1);
 
 ```
 

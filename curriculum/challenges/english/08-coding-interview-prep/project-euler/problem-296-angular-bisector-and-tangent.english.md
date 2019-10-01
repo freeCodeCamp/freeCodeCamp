@@ -2,6 +2,7 @@
 id: 5900f4941000cf542c50ffa7
 challengeType: 5
 title: 'Problem 296: Angular Bisector and Tangent'
+forumTopicId: 301948
 ---
 
 ## Description
@@ -25,7 +26,7 @@ How many triangles ABC with a perimeter not exceeding 100 000 exist such that BE
 ```yml
 tests:
   - text: <code>euler296()</code> should return 1137208419.
-    testString: assert.strictEqual(euler296(), 1137208419, '<code>euler296()</code> should return 1137208419.');
+    testString: assert.strictEqual(euler296(), 1137208419);
 
 ```
 
@@ -57,4 +58,5 @@ euler296();
 ```js
 // solution required
 ```
+
 </section>

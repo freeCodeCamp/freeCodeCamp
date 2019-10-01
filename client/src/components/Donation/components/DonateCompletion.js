@@ -1,29 +1,29 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Alert, Button } from '@freecodecamp/react-bootstrap';
 import Spinner from 'react-spinkit';
 
+import '../Donation.css';
+
 const propTypes = {
-  close: PropTypes.func.isRequired,
   error: PropTypes.string,
   processing: PropTypes.bool,
   reset: PropTypes.func.isRequired,
   success: PropTypes.bool
 };
 
-function DonateCompletion({ close, processing, reset, success, error = null }) {
+function DonateCompletion({ processing, reset, success, error = null }) {
   /* eslint-disable no-nested-ternary */
   const style = processing ? 'info' : success ? 'success' : 'danger';
   const heading = processing
-    ? 'We are processing your donation'
+    ? 'We are processing your donation.'
     : success
-      ? 'Donation successful. Thank you for supporting the freeCodeCamp ' +
-        'community!'
-      : 'Something went wrong with your donation';
+    ? 'Your donation was successful.'
+    : 'Something went wrong with your donation';
   return (
-    <Alert bsStyle={style}>
+    <Alert bsStyle={style} className='donation-completion'>
       <h4>{heading}</h4>
-      <div id='donation-completion-body'>
+      <div className='donation-completion-body'>
         {processing && (
           <Spinner
             className='user-state-spinner'
@@ -32,18 +32,19 @@ function DonateCompletion({ close, processing, reset, success, error = null }) {
             name='line-scale'
           />
         )}
-        {error && error}
+        {success && (
+          <p>Thank you for supporting the freeCodeCamp.org community.</p>
+        )}
+        {error && <p>{error}</p>}
       </div>
       <p className='donation-completion-buttons'>
         {error && (
-          <Fragment>
+          <div>
             <Button bsStyle='primary' onClick={reset}>
               Try again
             </Button>
-            <span />
-          </Fragment>
+          </div>
         )}
-        {!processing && <Button onClick={close}>Close</Button>}
       </p>
     </Alert>
   );

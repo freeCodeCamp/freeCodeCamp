@@ -2,6 +2,7 @@
 id: 5900f3b21000cf542c50fec5
 challengeType: 5
 title: 'Problem 70: Totient permutation'
+forumTopicId: 302183
 ---
 
 ## Description
@@ -22,7 +23,7 @@ Find the value of n, 1 < n < 107, for which φ(n) is a permutation of n and the 
 ```yml
 tests:
   - text: <code>euler70()</code> should return 8319823.
-    testString: assert.strictEqual(euler70(), 8319823, '<code>euler70()</code> should return 8319823.');
+    testString: assert.strictEqual(euler70(), 8319823);
 
 ```
 
@@ -54,4 +55,5 @@ euler70();
 ```js
 // solution required
 ```
+
 </section>

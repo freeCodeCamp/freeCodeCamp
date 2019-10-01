@@ -2,6 +2,7 @@
 id: 5900f4e11000cf542c50fff4
 challengeType: 5
 title: 'Problem 373: Circumscribed Circles'
+forumTopicId: 302035
 ---
 
 ## Description
@@ -29,7 +30,7 @@ Find S(107).
 ```yml
 tests:
   - text: <code>euler373()</code> should return 727227472448913.
-    testString: assert.strictEqual(euler373(), 727227472448913, '<code>euler373()</code> should return 727227472448913.');
+    testString: assert.strictEqual(euler373(), 727227472448913);
 
 ```
 
@@ -61,4 +62,5 @@ euler373();
 ```js
 // solution required
 ```
+
 </section>

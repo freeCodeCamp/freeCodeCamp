@@ -2,6 +2,7 @@
 id: 5900f3a21000cf542c50feb5
 challengeType: 5
 title: 'Problem 54: Poker hands'
+forumTopicId: 302165
 ---
 
 ## Description
@@ -43,7 +44,7 @@ How many hands does Player 1 win?
 ```yml
 tests:
   - text: <code>euler54()</code> should return 376.
-    testString: assert.strictEqual(euler54(), 376, '<code>euler54()</code> should return 376.');
+    testString: assert.strictEqual(euler54(), 376);
 
 ```
 
@@ -75,4 +76,5 @@ euler54();
 ```js
 // solution required
 ```
+
 </section>

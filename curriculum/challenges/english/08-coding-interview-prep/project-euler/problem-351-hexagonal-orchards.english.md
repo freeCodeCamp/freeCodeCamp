@@ -2,6 +2,7 @@
 id: 5900f4cb1000cf542c50ffde
 challengeType: 5
 title: 'Problem 351: Hexagonal orchards'
+forumTopicId: 302011
 ---
 
 ## Description
@@ -39,7 +40,7 @@ Find H(100 000 000).
 ```yml
 tests:
   - text: <code>euler351()</code> should return 11762187201804552.
-    testString: assert.strictEqual(euler351(), 11762187201804552, '<code>euler351()</code> should return 11762187201804552.');
+    testString: assert.strictEqual(euler351(), 11762187201804552);
 
 ```
 
@@ -71,4 +72,5 @@ euler351();
 ```js
 // solution required
 ```
+
 </section>

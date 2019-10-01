@@ -2,6 +2,7 @@
 id: 5900f4ea1000cf542c50fffc
 challengeType: 5
 title: 'Problem 381: (prime-k) factorial'
+forumTopicId: 302045
 ---
 
 ## Description
@@ -31,7 +32,7 @@ Find ∑S(p) for 5 ≤ p < 108.
 ```yml
 tests:
   - text: <code>euler381()</code> should return 139602943319822.
-    testString: assert.strictEqual(euler381(), 139602943319822, '<code>euler381()</code> should return 139602943319822.');
+    testString: assert.strictEqual(euler381(), 139602943319822);
 
 ```
 
@@ -63,4 +64,5 @@ euler381();
 ```js
 // solution required
 ```
+
 </section>

@@ -47,12 +47,12 @@ export default function(UserIdent) {
         : '';
     if (!isEmail('' + email)) {
       throw wrapHandledError(
-        new Error('invalid or empty email recieved from auth0'),
+        new Error('invalid or empty email received from auth0'),
         {
           message: dedent`
-    Oops... something is not right. We did not find a valid email from your
-    ${provider} account. Please try again with a different provider that has an
-    email available with it.
+    ${provider} did not return a valid email address.
+    Please try again with a different account that has an
+    email associated with it your update your settings on ${provider}, for us to be able to retrieve your email.
           `,
           type: 'info',
           redirectTo: '/'
@@ -61,7 +61,9 @@ export default function(UserIdent) {
     }
 
     if (provider === 'email') {
-      return User.findOne$({ where: { email } })
+      return User.findOne$({
+        where: { email: new RegExp(email.replace('.', '\\.'), 'i') }
+      })
         .flatMap(user => {
           return user
             ? Observable.of(user)
@@ -73,8 +75,7 @@ export default function(UserIdent) {
               new Error('could not find or create a user'),
               {
                 message: dedent`
-    Oops... something is not right. We could not find or create a
-    user with that email.
+    We could not find or create a user with that email address.
                 `,
                 type: 'info',
                 redirectTo: '/'
@@ -126,16 +127,26 @@ export default function(UserIdent) {
             created: new Date(),
             ttl: user.constructor.settings.ttl
           });
-          const updateUser = user.update$({
-            email: email,
-            emailVerified: true,
-            emailAuthLinkTTL: null,
-            emailVerifyTTL: null
-          });
+          const updateUser = new Promise((resolve, reject) =>
+            user.updateAttributes(
+              {
+                email: email,
+                emailVerified: true,
+                emailAuthLinkTTL: null,
+                emailVerifyTTL: null
+              },
+              err => {
+                if (err) {
+                  return reject(err);
+                }
+                return resolve();
+              }
+            )
+          );
           return Observable.combineLatest(
             Observable.of(user),
             createToken,
-            updateUser,
+            Observable.fromPromise(updateUser),
             (user, token) => ({ user, token })
           );
         })

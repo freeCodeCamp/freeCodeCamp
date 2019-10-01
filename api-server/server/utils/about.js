@@ -2,7 +2,7 @@ import _ from 'lodash';
 import debug from 'debug';
 import dedent from 'dedent';
 import fs from 'fs';
-import goog from 'googleapis';
+import { google } from 'googleapis';
 import { Observable } from 'rx';
 
 import { timeCache, observeMethod } from './rx';
@@ -13,7 +13,7 @@ const scope = 'https://www.googleapis.com/auth/analytics.readonly';
 const pathToCred = process.env.GOOGLE_APPLICATION_CREDENTIALS;
 
 const log = debug('fcc:server:utils:about');
-const analytics = goog.analytics('v3');
+const analytics = google.analytics('v3');
 const makeRequest = observeMethod(analytics.data.realtime, 'get');
 export const toBoundInt = _.flow(
   // first convert string to integer
@@ -60,11 +60,11 @@ export function createActiveUsers() {
     return zero;
   }
 
-  const client = new goog.auth.JWT(
+  const client = new google.auth.JWT(
     credentials['client_email'],
     null,
     credentials['private_key'],
-    [scope],
+    [scope]
   );
   const authorize = observeMethod(client, 'authorize');
   const options = {
@@ -89,7 +89,5 @@ export function createActiveUsers() {
     .do(null, err => console.error(err))
     // always send a number down
     .catch(() => Observable.of(0))
-    // cache for 2 seconds to prevent hitting our daily request limit
     ::timeCache(2, 'seconds');
 }
-

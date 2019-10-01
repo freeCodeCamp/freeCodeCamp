@@ -1,10 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import Spinner from 'react-spinkit';
 
-function Loader() {
-  return <Spinner name='ball-clip-rotate-multiple' />;
+import './loader.css';
+
+function Loader({ fullScreen, timeout }) {
+  const [showSpinner, setShowSpinner] = useState(!timeout);
+  useEffect(() => {
+    let timerId;
+    if (!showSpinner) {
+      timerId = setTimeout(() => setShowSpinner(true), timeout);
+    }
+    return () => clearTimeout(timerId);
+  }, [setShowSpinner, showSpinner, timeout]);
+  return (
+    <div className={`fcc-loader ${fullScreen ? 'full-screen-wrapper' : ''}`}>
+      {showSpinner && <Spinner name='line-scale-pulse-out' />}
+    </div>
+  );
 }
 
 Loader.displayName = 'Loader';
+Loader.propTypes = {
+  fullScreen: PropTypes.bool,
+  timeout: PropTypes.number
+};
 
 export default Loader;

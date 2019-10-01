@@ -2,20 +2,29 @@
 id: 587d824f367417b2b2512c5b
 title: Run Functional Tests on an API Response using Chai-HTTP IV - PUT method
 challengeType: 2
+forumTopicId: 301591
 ---
 
 ## Description
 <section id='description'>
 As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
 This exercise is similar to the preceding. Look at it for the details.
-Send {surname: 'da Verrazzano'}. Replace assert.fail() and make the test pass.
-Check for 1) status, 2) type, 3) body.name, 4) body.surname
-Follow the assertion order above, We rely on it.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+Send 
 
+```json
+{
+  "surname": "da Verrazzano"
+}
+```
+
+Replace <code>assert.fail()</code> and make the test pass.
+Check for 1) <code>status</code>, 2) <code>type</code>, 3) <code>body.name</code>, 4) <code>body.surname</code>.
+Follow the assertion order above, We rely on it.
 </section>
 
 ## Tests
@@ -49,4 +58,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

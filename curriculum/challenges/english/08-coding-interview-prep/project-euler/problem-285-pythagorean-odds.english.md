@@ -2,6 +2,7 @@
 id: 5900f48a1000cf542c50ff9c
 challengeType: 5
 title: 'Problem 285: Pythagorean odds'
+forumTopicId: 301936
 ---
 
 ## Description
@@ -29,7 +30,7 @@ If he plays 105 turns with k = 1, k = 2, k = 3, ..., k = 105, wh
 ```yml
 tests:
   - text: <code>euler285()</code> should return 157055.80999.
-    testString: assert.strictEqual(euler285(), 157055.80999, '<code>euler285()</code> should return 157055.80999.');
+    testString: assert.strictEqual(euler285(), 157055.80999);
 
 ```
 
@@ -61,4 +62,5 @@ euler285();
 ```js
 // solution required
 ```
+
 </section>

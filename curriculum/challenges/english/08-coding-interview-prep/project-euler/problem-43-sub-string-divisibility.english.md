@@ -2,6 +2,7 @@
 id: 5900f3971000cf542c50feaa
 challengeType: 5
 title: 'Problem 43: Sub-string divisibility'
+forumTopicId: 302100
 ---
 
 ## Description
@@ -29,7 +30,7 @@ Find the numbers of all 0 to 9 pandigital numbers with this property.
 ```yml
 tests:
   - text: <code>substringDivisibility()</code> should return [ 1430952867, 1460357289, 1406357289, 4130952867, 4160357289, 4106357289 ].
-    testString: assert.deepEqual(substringDivisibility(), [ 1430952867, 1460357289, 1406357289, 4130952867, 4160357289, 4106357289 ], '<code>substringDivisibility()</code> should return [ 1430952867, 1460357289, 1406357289, 4130952867, 4160357289, 4106357289 ].');
+    testString: assert.deepEqual(substringDivisibility(), [ 1430952867, 1460357289, 1406357289, 4130952867, 4160357289, 4106357289 ]);
 
 ```
 
@@ -61,4 +62,5 @@ substringDivisibility();
 ```js
 // solution required
 ```
+
 </section>

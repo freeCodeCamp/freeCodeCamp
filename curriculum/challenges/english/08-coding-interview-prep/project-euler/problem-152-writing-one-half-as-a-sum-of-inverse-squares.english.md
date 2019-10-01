@@ -2,6 +2,7 @@
 id: 5900f4041000cf542c50ff17
 challengeType: 5
 title: 'Problem 152: Writing one half as a sum of inverse squares'
+forumTopicId: 301783
 ---
 
 ## Description
@@ -24,7 +25,7 @@ How many ways are there to write the number 1/2 as a sum of inverse squares usin
 ```yml
 tests:
   - text: <code>euler152()</code> should return 301.
-    testString: assert.strictEqual(euler152(), 301, '<code>euler152()</code> should return 301.');
+    testString: assert.strictEqual(euler152(), 301);
 
 ```
 
@@ -56,4 +57,5 @@ euler152();
 ```js
 // solution required
 ```
+
 </section>

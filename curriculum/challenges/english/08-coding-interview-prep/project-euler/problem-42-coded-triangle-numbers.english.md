@@ -2,6 +2,7 @@
 id: 5900f3961000cf542c50fea9
 challengeType: 5
 title: 'Problem 42: Coded triangle numbers'
+forumTopicId: 302089
 ---
 
 ## Description
@@ -23,13 +24,13 @@ Using words array of n-length, how many are triangle words?
 ```yml
 tests:
   - text: <code>codedTriangleNumbers(1400)</code> should return 129.
-    testString: assert(codedTriangleNumbers(1400) == 129, '<code>codedTriangleNumbers(1400)</code> should return 129.');
+    testString: assert(codedTriangleNumbers(1400) == 129);
   - text: <code>codedTriangleNumbers(1500)</code> should return 137.
-    testString: assert(codedTriangleNumbers(1500) == 137, '<code>codedTriangleNumbers(1500)</code> should return 137.');
+    testString: assert(codedTriangleNumbers(1500) == 137);
   - text: <code>codedTriangleNumbers(1600)</code> should return 141.
-    testString: assert(codedTriangleNumbers(1600) == 141, '<code>codedTriangleNumbers(1600)</code> should return 141.');
+    testString: assert(codedTriangleNumbers(1600) == 141);
   - text: <code>codedTriangleNumbers(1786)</code> should return 162.
-    testString: assert(codedTriangleNumbers(1786) == 162, '<code>codedTriangleNumbers(1786)</code> should return 162.');
+    testString: assert(codedTriangleNumbers(1786) == 162);
 
 ```
 
@@ -64,4 +65,5 @@ codedTriangleNumbers(1786);
 ```js
 // solution required
 ```
+
 </section>

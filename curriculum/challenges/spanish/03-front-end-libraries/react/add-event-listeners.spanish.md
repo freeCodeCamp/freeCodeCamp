@@ -18,14 +18,14 @@ localeTitle: Añadir escuchas de eventos
 
 ```yml
 tests:
-  - text: <code>MyComponent</code> debe generar un elemento <code>div</code> que envuelva una etiqueta <code>h1</code> .
-    testString: 'assert((() => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find("div").children().find("h1").length === 1; })(), "<code>MyComponent</code> should render a <code>div</code> element which wraps an <code>h1</code> tag.");'
-  - text: Se debe adjuntar un detector de keydown al documento en <code>componentDidMount</code> .
-    testString: 'assert((() => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const didMountString = mockedComponent.instance().componentDidMount.toString(); return new RegExp("document\.addEventListener(.|\n|\r)+keydown(.|\n|\r)+this\.handleKeyPress").test(didMountString); })(), "A keydown listener should be attached to the document in <code>componentDidMount</code>.");'
-  - text: El oyente keydown debe eliminarse del documento en <code>componentWillUnmount</code> .
-    testString: 'assert((() => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const willUnmountString = mockedComponent.instance().componentWillUnmount.toString(); return new RegExp("document\.removeEventListener(.|\n|\r)+keydown(.|\n|\r)+this\.handleKeyPress").test(willUnmountString); })(), "The keydown listener should be removed from the document in <code>componentWillUnmount</code>.");'
-  - text: 'Una vez que el componente se haya montado, al presionar <code>enter</code> se actualizará su estado y la etiqueta <code>h1</code> renderizada.'
-    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const beforeState = mockedComponent.state("message"); const beforeText = mockedComponent.find("h1").text(); const pressEnterKey = () => { mockedComponent.instance().handleKeyPress({ keyCode: 13 }); return waitForIt(() => { mockedComponent.update(); return { state: mockedComponent.state("message"), text: mockedComponent.find("h1").text()}; });}; const afterKeyPress = await pressEnterKey(); assert(beforeState !== afterKeyPress.state && beforeText !== afterKeyPress.text, "Once the component has mounted, pressing <code>enter</code> should update its state and the rendered <code>h1</code> tag."); }; '
+  - text: <code>MyComponent</code> debe generar un elemento <code>div</code> que envuelva una etiqueta <code>h1</code>.
+    testString: 'assert((() => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find("div").children().find("h1").length === 1; })(), "<code>MyComponent</code> debe generar un elemento <code>div</code> que envuelva una etiqueta <code>h1</code>.");'
+  - text: Se debe adjuntar un detector de keydown al documento en <code>componentDidMount</code>.
+    testString: 'assert((() => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const didMountString = mockedComponent.instance().componentDidMount.toString(); return new RegExp("document\.addEventListener(.|\n|\r)+keydown(.|\n|\r)+this\.handleKeyPress").test(didMountString); })(), "Se debe adjuntar un detector de keydown al documento en <code>componentDidMount</code>.");'
+  - text: El oyente keydown debe eliminarse del documento en <code>componentWillUnmount</code>.
+    testString: 'assert((() => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const willUnmountString = mockedComponent.instance().componentWillUnmount.toString(); return new RegExp("document\.removeEventListener(.|\n|\r)+keydown(.|\n|\r)+this\.handleKeyPress").test(willUnmountString); })(), "El oyente keydown debe eliminarse del documento en <code>componentWillUnmount</code>.");'
+  - text: Una vez que el componente se haya montado, al presionar <code>enter</code> se actualizará su estado y la etiqueta <code>h1</code> renderizada.
+    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const beforeState = mockedComponent.state("message"); const beforeText = mockedComponent.find("h1").text(); const pressEnterKey = () => { mockedComponent.instance().handleKeyPress({ keyCode: 13 }); return waitForIt(() => { mockedComponent.update(); return { state: mockedComponent.state("message"), text: mockedComponent.find("h1").text()}; });}; const afterKeyPress = await pressEnterKey(); assert(beforeState !== afterKeyPress.state && beforeText !== afterKeyPress.text, "Una vez que el componente se haya montado, al presionar <code>enter</code> se actualizará su estado y la etiqueta <code>h1</code> renderizada."); }; '
 
 ```
 
@@ -93,6 +93,41 @@ console.info('after the test');
 <section id='solution'>
 
 ```js
-// solution required
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      message: "
+    };
+    this.handleKeyPress = this.handleKeyPress.bind(this);
+    this.handleEnter = this.handleEnter.bind(this);  }
+  componentDidMount() {
+    // change code below this line
+    document.addEventListener('keydown', this.handleKeyPress);
+    // change code above this line
+  }
+  componentWillUnmount() {
+    // change code below this line
+    document.removeEventListener('keydown', this.handleKeyPress);
+    // change code above this line
+  }
+  handleEnter() {
+    this.setState({
+      message: this.state.message + 'You pressed the enter key! '
+    });
+  }
+  handleKeyPress(event) {
+    if (event.keyCode === 13) {
+      this.handleEnter();
+    }
+  }
+  render() {
+    return (
+      <div>
+        <h1>{this.state.message}</h1>
+      </div>
+    );
+  }
+};
 ```
 </section>

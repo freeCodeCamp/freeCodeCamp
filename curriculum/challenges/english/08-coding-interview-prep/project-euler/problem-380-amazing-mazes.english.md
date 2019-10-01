@@ -2,6 +2,7 @@
 id: 5900f4e81000cf542c50fffb
 challengeType: 5
 title: 'Problem 380: Amazing Mazes!'
+forumTopicId: 302044
 ---
 
 ## Description
@@ -33,7 +34,7 @@ E.g. if the answer is 1234567891011 then the answer format would be 1.2346e12.
 ```yml
 tests:
   - text: <code>euler380()</code> should return Infinity.
-    testString: assert.strictEqual(euler380(), Infinity, '<code>euler380()</code> should return Infinity.');
+    testString: assert.strictEqual(euler380(), Infinity);
 
 ```
 
@@ -65,4 +66,5 @@ euler380();
 ```js
 // solution required
 ```
+
 </section>

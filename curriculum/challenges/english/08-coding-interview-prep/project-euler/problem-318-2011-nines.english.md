@@ -2,6 +2,7 @@
 id: 5900f4ab1000cf542c50ffbd
 challengeType: 5
 title: 'Problem 318: 2011 nines'
+forumTopicId: 301974
 ---
 
 ## Description
@@ -46,7 +47,7 @@ Find ∑N(p,q) for p+q ≤ 2011.
 ```yml
 tests:
   - text: <code>euler318()</code> should return 709313889.
-    testString: assert.strictEqual(euler318(), 709313889, '<code>euler318()</code> should return 709313889.');
+    testString: assert.strictEqual(euler318(), 709313889);
 
 ```
 
@@ -78,4 +79,5 @@ euler318();
 ```js
 // solution required
 ```
+
 </section>

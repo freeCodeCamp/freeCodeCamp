@@ -2,6 +2,7 @@
 id: 5900f3ef1000cf542c50ff02
 challengeType: 5
 title: 'Problem 131: Prime cube partnership'
+forumTopicId: 301759
 ---
 
 ## Description
@@ -23,7 +24,7 @@ How many primes below one million have this remarkable property?
 ```yml
 tests:
   - text: <code>euler131()</code> should return 173.
-    testString: assert.strictEqual(euler131(), 173, '<code>euler131()</code> should return 173.');
+    testString: assert.strictEqual(euler131(), 173);
 
 ```
 
@@ -55,4 +56,5 @@ euler131();
 ```js
 // solution required
 ```
+
 </section>

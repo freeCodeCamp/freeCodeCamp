@@ -2,6 +2,7 @@
 id: 5900f5411000cf542c510053
 challengeType: 5
 title: 'Problem 469: Empty chairs'
+forumTopicId: 302144
 ---
 
 ## Description
@@ -30,7 +31,7 @@ Find E(1018). Give your answer rounded to fourteen decimal places in the form 0.
 ```yml
 tests:
   - text: <code>euler469()</code> should return 0.56766764161831.
-    testString: assert.strictEqual(euler469(), 0.56766764161831, '<code>euler469()</code> should return 0.56766764161831.');
+    testString: assert.strictEqual(euler469(), 0.56766764161831);
 
 ```
 
@@ -62,4 +63,5 @@ euler469();
 ```js
 // solution required
 ```
+
 </section>

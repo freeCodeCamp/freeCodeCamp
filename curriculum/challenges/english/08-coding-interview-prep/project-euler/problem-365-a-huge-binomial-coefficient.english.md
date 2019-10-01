@@ -2,6 +2,7 @@
 id: 5900f4da1000cf542c50ffec
 challengeType: 5
 title: 'Problem 365: A huge binomial coefficient'
+forumTopicId: 302026
 ---
 
 ## Description
@@ -26,7 +27,7 @@ Calculate ∑M(1018,109,p*q*r) for 1000<p<q<r<5000 and p,q,r prime.
 ```yml
 tests:
   - text: <code>euler365()</code> should return 162619462356610300.
-    testString: assert.strictEqual(euler365(), 162619462356610300, '<code>euler365()</code> should return 162619462356610300.');
+    testString: assert.strictEqual(euler365(), 162619462356610300);
 
 ```
 
@@ -58,4 +59,5 @@ euler365();
 ```js
 // solution required
 ```
+
 </section>

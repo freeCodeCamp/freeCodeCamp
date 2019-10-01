@@ -2,6 +2,7 @@
 id: 5900f4131000cf542c50ff25
 challengeType: 5
 title: 'Problem 166: Criss Cross'
+forumTopicId: 301800
 ---
 
 ## Description
@@ -32,7 +33,7 @@ In how many ways can you fill a 4x4 grid with the digits d, 0 ≤ d ≤ 9 so tha
 ```yml
 tests:
   - text: <code>euler166()</code> should return 7130034.
-    testString: assert.strictEqual(euler166(), 7130034, '<code>euler166()</code> should return 7130034.');
+    testString: assert.strictEqual(euler166(), 7130034);
 
 ```
 
@@ -64,4 +65,5 @@ euler166();
 ```js
 // solution required
 ```
+
 </section>

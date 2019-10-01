@@ -2,6 +2,7 @@
 id: 5900f4fc1000cf542c51000e
 challengeType: 5
 title: 'Problem 399: Squarefree Fibonacci Numbers'
+forumTopicId: 302064
 ---
 
 ## Description
@@ -41,7 +42,7 @@ If it happens that the conjecture is false, then the accepted answer to this pro
 ```yml
 tests:
   - text: <code>euler399()</code> should return 1508395636674243, 6.5e27330467.
-    testString: assert.strictEqual(euler399(), 1508395636674243, 6.5e27330467, '<code>euler399()</code> should return 1508395636674243, 6.5e27330467.');
+    testString: assert.strictEqual(euler399(), 1508395636674243, 6.5e27330467);
 
 ```
 
@@ -73,4 +74,5 @@ euler399();
 ```js
 // solution required
 ```
+
 </section>

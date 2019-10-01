@@ -2,6 +2,7 @@
 id: 5900f4311000cf542c50ff43
 challengeType: 5
 title: 'Problem 195: Inscribed circles of triangles with one angle of 60 degrees'
+forumTopicId: 301833
 ---
 
 ## Description
@@ -26,7 +27,7 @@ Find T(1053779).
 ```yml
 tests:
   - text: <code>euler195()</code> should return 75085391.
-    testString: assert.strictEqual(euler195(), 75085391, '<code>euler195()</code> should return 75085391.');
+    testString: assert.strictEqual(euler195(), 75085391);
 
 ```
 
@@ -58,4 +59,5 @@ euler195();
 ```js
 // solution required
 ```
+
 </section>

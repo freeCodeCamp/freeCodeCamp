@@ -2,6 +2,7 @@
 id: 5900f4091000cf542c50ff1c
 challengeType: 5
 title: 'Problem 157: Solving the diophantine equation'
+forumTopicId: 301788
 ---
 
 ## Description
@@ -42,7 +43,7 @@ How many solutions has this equation for 1 ≤ n ≤ 9?
 ```yml
 tests:
   - text: <code>euler157()</code> should return 53490.
-    testString: assert.strictEqual(euler157(), 53490, '<code>euler157()</code> should return 53490.');
+    testString: assert.strictEqual(euler157(), 53490);
 
 ```
 
@@ -74,4 +75,5 @@ euler157();
 ```js
 // solution required
 ```
+
 </section>

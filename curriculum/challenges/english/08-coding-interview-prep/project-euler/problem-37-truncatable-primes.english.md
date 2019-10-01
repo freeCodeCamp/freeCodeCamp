@@ -2,6 +2,7 @@
 id: 5900f3911000cf542c50fea4
 challengeType: 5
 title: 'Problem 37: Truncatable primes'
+forumTopicId: 302031
 ---
 
 ## Description
@@ -22,13 +23,13 @@ NOTE: 2, 3, 5, and 7 are not considered to be truncatable primes.
 ```yml
 tests:
   - text: <code>truncatablePrimes(8)</code> should return 1986.
-    testString: assert(truncatablePrimes(8) == 1986, '<code>truncatablePrimes(8)</code> should return 1986.');
+    testString: assert(truncatablePrimes(8) == 1986);
   - text: <code>truncatablePrimes(9)</code> should return 5123.
-    testString: assert(truncatablePrimes(9) == 5123, '<code>truncatablePrimes(9)</code> should return 5123.');
+    testString: assert(truncatablePrimes(9) == 5123);
   - text: <code>truncatablePrimes(10)</code> should return 8920.
-    testString: assert(truncatablePrimes(10) == 8920, '<code>truncatablePrimes(10)</code> should return 8920.');
+    testString: assert(truncatablePrimes(10) == 8920);
   - text: <code>truncatablePrimes(11)</code> should return 748317.
-    testString: assert(truncatablePrimes(11) == 748317, '<code>truncatablePrimes(11)</code> should return 748317.');
+    testString: assert(truncatablePrimes(11) == 748317);
 
 ```
 
@@ -60,4 +61,5 @@ truncatablePrimes(11);
 ```js
 // solution required
 ```
+
 </section>

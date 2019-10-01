@@ -2,6 +2,7 @@
 id: 5900f5411000cf542c510054
 challengeType: 5
 title: 'Problem 468: Smooth divisors of binomial coefficients'
+forumTopicId: 302143
 ---
 
 ## Description
@@ -34,7 +35,7 @@ Find F(11 111 111) mod 1 000 000 993.
 ```yml
 tests:
   - text: <code>euler468()</code> should return 852950321.
-    testString: assert.strictEqual(euler468(), 852950321, '<code>euler468()</code> should return 852950321.');
+    testString: assert.strictEqual(euler468(), 852950321);
 
 ```
 
@@ -66,4 +67,5 @@ euler468();
 ```js
 // solution required
 ```
+
 </section>

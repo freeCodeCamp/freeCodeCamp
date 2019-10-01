@@ -2,11 +2,14 @@
 title: Gaussian elimination
 id: 5a23c84252665b21eecc7e77
 challengeType: 5
+forumTopicId: 302272
 ---
 
 ## Description
 <section id='description'>
-Write a function to solve \(A.x = b\) using Gaussian elimination then backwards substitution. \(A\) being an \(n \times n\) matrix. Also, \(x\) and \(b\) are \(n\) by 1 vectors. To improve accuracy, please use partial pivoting and scaling.
+Write a function to solve \(Ax = b\) using Gaussian elimination then backwards substitution.
+\(A\) being an \(n \times n\) matrix. Also, \(x\) and \(b\) are \(n\) by 1 vectors.
+To improve accuracy, please use partial pivoting and scaling.
 </section>
 
 ## Instructions
@@ -20,19 +23,19 @@ Write a function to solve \(A.x = b\) using Gaussian elimination then backwards 
 ```yml
 tests:
   - text: <code>gaussianElimination</code> should be a function.
-    testString: assert(typeof gaussianElimination=='function','<code>gaussianElimination</code> should be a function.');
+    testString: assert(typeof gaussianElimination=='function');
   - text: <code>gaussianElimination([[1,1],[1,-1]], [5,1])</code> should return an array.
-    testString: assert(Array.isArray(gaussianElimination([[1,1],[1,-1]], [5,1])),'<code>gaussianElimination([[1,1],[1,-1]], [5,1])</code> should return an array.');
+    testString: assert(Array.isArray(gaussianElimination([[1,1],[1,-1]], [5,1])));
   - text: <code>gaussianElimination([[1,1],[1,-1]], [5,1])</code> should return <code>[ 3, 2 ]</code>.
-    testString: assert.deepEqual(gaussianElimination([[1,1],[1,-1]], [5,1]), [ 3, 2 ],'<code>gaussianElimination([[1,1],[1,-1]], [5,1])</code> should return <code>[ 3, 2 ]</code>.');
+    testString: assert.deepEqual(gaussianElimination([[1,1],[1,-1]], [5,1]), [ 3, 2 ]);
   - text: <code>gaussianElimination([[2,3],[2,1]] , [8,4])</code> should return <code>[ 1, 2 ]</code>.
-    testString: assert.deepEqual(gaussianElimination([[2,3],[2,1]] , [8,4]), [ 1, 2 ],'<code>gaussianElimination([[2,3],[2,1]] , [8,4])</code> should return <code>[ 1, 2 ]</code>.');
+    testString: assert.deepEqual(gaussianElimination([[2,3],[2,1]] , [8,4]), [ 1, 2 ]);
   - text: <code>gaussianElimination([[1,3],[5,-2]], [14,19])</code> should return <code>[ 5, 3 ]</code>.
-    testString: assert.deepEqual(gaussianElimination([[1,3],[5,-2]], [14,19]), [ 5, 3 ],'<code>gaussianElimination([[1,3],[5,-2]], [14,19])</code> should return <code>[ 5, 3 ]</code>.');
+    testString: assert.deepEqual(gaussianElimination([[1,3],[5,-2]], [14,19]), [ 5, 3 ]);
   - text: <code>gaussianElimination([[1,1],[5,-1]] , [10,14])</code> should return <code>[ 4, 6 ]</code>.
-    testString: assert.deepEqual(gaussianElimination([[1,1],[5,-1]] , [10,14]), [ 4, 6 ],'<code>gaussianElimination([[1,1],[5,-1]] , [10,14])</code> should return <code>[ 4, 6 ]</code>.');
+    testString: assert.deepEqual(gaussianElimination([[1,1],[5,-1]] , [10,14]), [ 4, 6 ]);
   - text: <code>gaussianElimination([[1,2,3],[4,5,6],[7,8,8]] , [6,15,23])</code> should return <code>[ 1, 1, 1 ]</code>.
-    testString: assert.deepEqual(gaussianElimination([[1,2,3],[4,5,6],[7,8,8]] , [6,15,23]), [ 1, 1, 1 ],'<code>gaussianElimination([[1,2,3],[4,5,6],[7,8,8]] , [6,15,23])</code> should return <code>[ 1, 1, 1 ]</code>.');
+    testString: assert.deepEqual(gaussianElimination([[1,2,3],[4,5,6],[7,8,8]] , [6,15,23]), [ 1, 1, 1 ]);
 
 ```
 
@@ -44,7 +47,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function gaussianElimination (A,b) {
+function gaussianElimination(A,b) {
   // Good luck!
 }
 ```

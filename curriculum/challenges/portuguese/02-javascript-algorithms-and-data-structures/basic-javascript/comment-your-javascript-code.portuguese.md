@@ -45,6 +45,7 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+// Comentário
+/* Aqui também pode ser inserido um comentário */
 ```
 </section>

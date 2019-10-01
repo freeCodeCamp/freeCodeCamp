@@ -2,6 +2,7 @@
 id: 5900f4be1000cf542c50ffd1
 challengeType: 5
 title: 'Problem 338: Cutting Rectangular Grid Paper'
+forumTopicId: 301996
 ---
 
 ## Description
@@ -37,7 +38,7 @@ Find G(1012). Give your answer modulo 108.
 ```yml
 tests:
   - text: <code>euler338()</code> should return 15614292.
-    testString: assert.strictEqual(euler338(), 15614292, '<code>euler338()</code> should return 15614292.');
+    testString: assert.strictEqual(euler338(), 15614292);
 
 ```
 
@@ -69,4 +70,5 @@ euler338();
 ```js
 // solution required
 ```
+
 </section>

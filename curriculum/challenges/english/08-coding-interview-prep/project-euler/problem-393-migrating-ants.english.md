@@ -2,6 +2,7 @@
 id: 5900f4f61000cf542c510008
 challengeType: 5
 title: 'Problem 393: Migrating ants'
+forumTopicId: 302058
 ---
 
 ## Description
@@ -26,7 +27,7 @@ Find  f(10).
 ```yml
 tests:
   - text: <code>euler393()</code> should return 112398351350823100.
-    testString: assert.strictEqual(euler393(), 112398351350823100, '<code>euler393()</code> should return 112398351350823100.');
+    testString: assert.strictEqual(euler393(), 112398351350823100);
 
 ```
 
@@ -58,4 +59,5 @@ euler393();
 ```js
 // solution required
 ```
+
 </section>

@@ -1,32 +1,34 @@
 ---
 id: 587d7fa8367417b2b2512bcd
 title: Create a Bar for Each Data Point in the Set
-required:
-  - src: 'https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js'
 challengeType: 6
-videoUrl: ''
+forumTopicId: 301482
 localeTitle: Создайте панель для каждой точки данных в наборе
 ---
 
 ## Description
-<section id="description"> Последняя задача добавила только один прямоугольник в элемент <code>svg</code> для представления строки. Здесь вы объедините все, что вы узнали до сих пор, о формах <code>data()</code> , <code>enter()</code> и SVG для создания и добавления прямоугольника для каждой точки <code>dataset</code> в <code>dataset</code> . Предыдущий вызов показал формат создания и добавления <code>div</code> для каждого элемента в <code>dataset</code> : <blockquote> d3.select ( &quot;тело&quot;). SelectAll ( &quot;DIV&quot;) <br> .data (набор данных) <br> .войти() <br> .append ( &quot;DIV&quot;) </blockquote> Есть несколько отличий, которые работают с <code>rect</code> элементами вместо <code>divs</code> . <code>rects</code> должны быть добавлены к элементу <code>svg</code> , а не непосредственно к <code>body</code> . Кроме того, вам нужно указать D3, где разместить каждый <code>rect</code> в области <code>svg</code> . Размещение бар будет рассмотрено в следующей задаче. </section>
+<section id='description'>
+Последняя задача добавила только один прямоугольник в элемент <code>svg</code> для представления строки. Здесь вы объедините все, что вы узнали до сих пор, о формах <code>data()</code> , <code>enter()</code> и SVG для создания и добавления прямоугольника для каждой точки <code>dataset</code> в <code>dataset</code> . Предыдущий вызов показал формат создания и добавления <code>div</code> для каждого элемента в <code>dataset</code> : <blockquote> d3.select ( &quot;тело&quot;). SelectAll ( &quot;DIV&quot;) <br> .data (набор данных) <br> .войти() <br> .append ( &quot;DIV&quot;) </blockquote> Есть несколько отличий, которые работают с <code>rect</code> элементами вместо <code>divs</code> . <code>rects</code> должны быть добавлены к элементу <code>svg</code> , а не непосредственно к <code>body</code> . Кроме того, вам нужно указать D3, где разместить каждый <code>rect</code> в области <code>svg</code> . Размещение бар будет рассмотрено в следующей задаче.
+</section>
 
 ## Instructions
-<section id="instructions"> Используйте методы <code>data()</code> , <code>enter()</code> и <code>append()</code> для создания и добавления <code>rect</code> для каждого элемента в <code>dataset</code> . Бары должны отображать все друг на друга, это будет исправлено в следующей задаче. </section>
+<section id='instructions'>
+Используйте методы <code>data()</code> , <code>enter()</code> и <code>append()</code> для создания и добавления <code>rect</code> для каждого элемента в <code>dataset</code> . Бары должны отображать все друг на друга, это будет исправлено в следующей задаче.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: Ваш документ должен иметь 9 <code>rect</code> элементы.
-    testString: 'assert($("rect").length == 9, "Your document should have 9 <code>rect</code> elements.");'
-  - text: Ваш код должен использовать метод <code>data()</code> .
-    testString: 'assert(code.match(/\.data/g), "Your code should use the <code>data()</code> method.");'
-  - text: Ваш код должен использовать метод <code>enter()</code> .
-    testString: 'assert(code.match(/\.enter/g), "Your code should use the <code>enter()</code> method.");'
-  - text: Ваш код должен использовать метод <code>append()</code> .
-    testString: 'assert(code.match(/\.append/g), "Your code should use the <code>append()</code> method.");'
+  - text: Your document should have 9 <code>rect</code> elements.
+    testString: assert($('rect').length == 9);
+  - text: Your code should use the <code>data()</code> method.
+    testString: assert(code.match(/\.data/g));
+  - text: Your code should use the <code>enter()</code> method.
+    testString: assert(code.match(/\.enter/g));
+  - text: Your code should use the <code>append()</code> method.
+    testString: assert(code.match(/\.append/g));
 
 ```
 
@@ -67,14 +69,13 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>

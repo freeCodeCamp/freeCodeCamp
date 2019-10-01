@@ -2,6 +2,7 @@
 id: 5900f5001000cf542c510012
 challengeType: 5
 title: 'Problem 404: Crisscross Ellipses'
+forumTopicId: 302072
 ---
 
 ## Description
@@ -39,7 +40,7 @@ Find C(1017).
 ```yml
 tests:
   - text: <code>euler404()</code> should return 1199215615081353.
-    testString: assert.strictEqual(euler404(), 1199215615081353, '<code>euler404()</code> should return 1199215615081353.');
+    testString: assert.strictEqual(euler404(), 1199215615081353);
 
 ```
 
@@ -71,4 +72,5 @@ euler404();
 ```js
 // solution required
 ```
+
 </section>

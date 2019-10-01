@@ -2,6 +2,7 @@
 id: 5900f42c1000cf542c50ff3f
 challengeType: 5
 title: 'Problem 192: Best Approximations'
+forumTopicId: 301830
 ---
 
 ## Description
@@ -27,7 +28,7 @@ Find the sum of all denominators of the best approximations to √n for the deno
 ```yml
 tests:
   - text: <code>euler192()</code> should return 57060635927998344.
-    testString: assert.strictEqual(euler192(), 57060635927998344, '<code>euler192()</code> should return 57060635927998344.');
+    testString: assert.strictEqual(euler192(), 57060635927998344);
 
 ```
 
@@ -59,4 +60,5 @@ euler192();
 ```js
 // solution required
 ```
+
 </section>

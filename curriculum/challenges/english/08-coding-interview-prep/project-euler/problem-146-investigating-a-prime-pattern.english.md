@@ -2,6 +2,7 @@
 id: 5900f3fe1000cf542c50ff11
 challengeType: 5
 title: 'Problem 146: Investigating a Prime Pattern'
+forumTopicId: 301775
 ---
 
 ## Description
@@ -22,7 +23,7 @@ What is the sum of all such integers n below 150 million?
 ```yml
 tests:
   - text: <code>euler146()</code> should return 676333270.
-    testString: assert.strictEqual(euler146(), 676333270, '<code>euler146()</code> should return 676333270.');
+    testString: assert.strictEqual(euler146(), 676333270);
 
 ```
 
@@ -54,4 +55,5 @@ euler146();
 ```js
 // solution required
 ```
+
 </section>

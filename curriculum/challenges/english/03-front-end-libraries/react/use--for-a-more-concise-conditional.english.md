@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036185
 title: Use && for a More Concise Conditional
 challengeType: 6
 isRequired: false
+forumTopicId: 301413
 ---
 
 ## Description
@@ -23,13 +24,13 @@ Solve the previous example again, so the <code>h1</code> only renders if <code>d
 ```yml
 tests:
   - text: <code>MyComponent</code> should exist and render.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find('MyComponent').length; })(), '<code>MyComponent</code> should exist and render.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find('MyComponent').length; })());
   - text: When <code>display</code> is set to <code>true</code>, a <code>div</code>, <code>button</code>, and <code>h1</code> should render.
-    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const state_1 = () => { mockedComponent.setState({display: true}); return waitForIt(() => mockedComponent )}; const updated = await state_1(); assert(updated.find(''div'').length === 1 && updated.find(''div'').children().length === 2 && updated.find(''button'').length === 1 && updated.find(''h1'').length === 1, ''When <code>display</code> is set to <code>true</code>, a <code>div</code>, <code>button</code>, and <code>h1</code> should render.''); }; '
+    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const state_1 = () => { mockedComponent.setState({display: true}); return waitForIt(() => mockedComponent )}; const updated = await state_1(); assert(updated.find(''div'').length === 1 && updated.find(''div'').children().length === 2 && updated.find(''button'').length === 1 && updated.find(''h1'').length === 1); }; '
   - text: When <code>display</code> is set to <code>false</code>, only a <code>div</code> and <code>button</code> should render.
-    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const state_1 = () => { mockedComponent.setState({display: false}); return waitForIt(() => mockedComponent )}; const updated = await state_1(); assert(updated.find(''div'').length === 1 && updated.find(''div'').children().length === 1 && updated.find(''button'').length === 1 && updated.find(''h1'').length === 0, ''When <code>display</code> is set to <code>false</code>, only a <code>div</code> and <code>button</code> should render.''); }; '
+    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const state_1 = () => { mockedComponent.setState({display: false}); return waitForIt(() => mockedComponent )}; const updated = await state_1(); assert(updated.find(''div'').length === 1 && updated.find(''div'').children().length === 1 && updated.find(''button'').length === 1 && updated.find(''h1'').length === 0); }; '
   - text: The render method should use the && logical operator to check the condition of this.state.display.
-    testString: getUserInput => assert(getUserInput('index').includes('&&'), 'The render method should use the && logical operator to check the condition of this.state.display.');
+    testString: getUserInput => assert(getUserInput('index').includes('&&'));
 
 ```
 
@@ -50,9 +51,9 @@ class MyComponent extends React.Component {
     this.toggleDisplay = this.toggleDisplay.bind(this);
   }
   toggleDisplay() {
-    this.setState({
-      display: !this.state.display
-    });
+    this.setState(state => ({
+      display: !state.display
+    }));
   }
   render() {
     // change code below this line
@@ -94,9 +95,9 @@ class MyComponent extends React.Component {
  this.toggleDisplay = this.toggleDisplay.bind(this);
   }
   toggleDisplay() {
-    this.setState({
-      display: !this.state.display
-    });
+    this.setState(state => ({
+      display: !state.display
+    }));
   }
   render() {
     // change code below this line

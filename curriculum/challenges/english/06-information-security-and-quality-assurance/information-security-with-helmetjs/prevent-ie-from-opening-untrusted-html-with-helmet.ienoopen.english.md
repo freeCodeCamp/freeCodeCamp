@@ -2,6 +2,7 @@
 id: 587d8248367417b2b2512c3b
 title: Prevent IE from Opening Untrusted HTML with helmet.ieNoOpen()
 challengeType: 2
+forumTopicId: 301584
 ---
 
 ## Description
@@ -38,4 +39,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

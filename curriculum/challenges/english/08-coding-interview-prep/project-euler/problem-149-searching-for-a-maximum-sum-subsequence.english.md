@@ -2,6 +2,7 @@
 id: 5900f4021000cf542c50ff13
 challengeType: 5
 title: 'Problem 149: Searching for a maximum-sum subsequence'
+forumTopicId: 301778
 ---
 
 ## Description
@@ -36,7 +37,7 @@ Finally, find the greatest sum of (any number of) adjacent entries in any direct
 ```yml
 tests:
   - text: <code>euler149()</code> should return 52852124.
-    testString: assert.strictEqual(euler149(), 52852124, '<code>euler149()</code> should return 52852124.');
+    testString: assert.strictEqual(euler149(), 52852124);
 
 ```
 
@@ -68,4 +69,5 @@ euler149();
 ```js
 // solution required
 ```
+
 </section>

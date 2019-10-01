@@ -2,23 +2,23 @@ import { createAction, handleActions } from 'redux-actions';
 
 import { createTypes } from '../../../../utils/stateManagement';
 
-const ns = 'curriculumMap';
+export const ns = 'curriculumMap';
 
 export const getNS = () => ns;
 
 const initialState = {
   expandedState: {
-    superBlock: {
-      'Responsive Web Design': true
-    },
-    block: {
-      'basic-html-and-html5': true
-    }
+    superBlock: {},
+    block: {}
   }
 };
 
-const types = createTypes(['toggleSuperBlock', 'toggleBlock'], ns);
+const types = createTypes(
+  ['resetExpansion', 'toggleSuperBlock', 'toggleBlock'],
+  ns
+);
 
+export const resetExpansion = createAction(types.resetExpansion);
 export const toggleBlock = createAction(types.toggleBlock);
 export const toggleSuperBlock = createAction(types.toggleSuperBlock);
 
@@ -29,6 +29,13 @@ export const makeExpandedBlockSelector = block => state =>
 
 export const reducer = handleActions(
   {
+    [types.resetExpansion]: state => ({
+      ...state,
+      expandedState: {
+        superBlock: {},
+        block: {}
+      }
+    }),
     [types.toggleBlock]: (state, { payload }) => ({
       ...state,
       expandedState: {

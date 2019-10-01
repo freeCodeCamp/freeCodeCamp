@@ -2,6 +2,7 @@
 id: 5900f4381000cf542c50ff4b
 challengeType: 5
 title: 'Problem 204: Generalised Hamming Numbers'
+forumTopicId: 301845
 ---
 
 ## Description
@@ -27,7 +28,7 @@ How many generalised Hamming numbers of type 100 are there which don't exceed 10
 ```yml
 tests:
   - text: <code>euler204()</code> should return 2944730.
-    testString: assert.strictEqual(euler204(), 2944730, '<code>euler204()</code> should return 2944730.');
+    testString: assert.strictEqual(euler204(), 2944730);
 
 ```
 
@@ -59,4 +60,5 @@ euler204();
 ```js
 // solution required
 ```
+
 </section>

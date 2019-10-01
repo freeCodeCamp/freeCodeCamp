@@ -2,6 +2,7 @@
 id: 5900f40c1000cf542c50ff1e
 challengeType: 5
 title: 'Problem 159: Digital root sums of factorisations'
+forumTopicId: 301790
 ---
 
 ## Description
@@ -45,7 +46,7 @@ Find ∑mdrs(n) for 1 < n < 1,000,000.
 ```yml
 tests:
   - text: <code>euler159()</code> should return 14489159.
-    testString: assert.strictEqual(euler159(), 14489159, '<code>euler159()</code> should return 14489159.');
+    testString: assert.strictEqual(euler159(), 14489159);
 
 ```
 
@@ -77,4 +78,5 @@ euler159();
 ```js
 // solution required
 ```
+
 </section>

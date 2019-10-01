@@ -7,7 +7,7 @@ localeTitle: Introduciendo otras declaraciones
 ---
 
 ## Description
-<section id="description"> Cuando una condición para una sentencia <code>if</code> es verdadera, se ejecuta el bloque de código siguiente. ¿Qué pasa cuando esa condición es falsa? Normalmente no pasaría nada. Con una sentencia <code>else</code> , se puede ejecutar un bloque de código alternativo. <blockquote> if (num&gt; 10) { <br> devuelve &quot;Más grande que 10&quot;; <br> } else { <br> devuelve &quot;10 o menos&quot;; <br> } </blockquote></section>
+<section id="description"> Cuando una condición para una sentencia <code>if</code> es verdadera, se ejecuta el bloque de código siguiente. ¿Qué pasa cuando esa condición es falsa? Normalmente no pasaría nada. Con una sentencia <code>else</code> , se puede ejecutar un bloque de código alternativo. <blockquote> if (num&gt; 10) { <br> return &quot;Más grande que 10&quot;; <br> } else { <br> return &quot;10 o menos&quot;; <br> } </blockquote></section>
 
 ## Instructions
 <section id="instructions"> Combine las declaraciones <code>if</code> en una sola instrucción <code>if/else</code> . </section>

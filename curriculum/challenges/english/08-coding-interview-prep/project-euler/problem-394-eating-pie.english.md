@@ -2,6 +2,7 @@
 id: 5900f4f71000cf542c510009
 challengeType: 5
 title: 'Problem 394: Eating pie'
+forumTopicId: 302059
 ---
 
 ## Description
@@ -36,7 +37,7 @@ Find E(40) rounded to 10 decimal places behind the decimal point.
 ```yml
 tests:
   - text: <code>euler394()</code> should return 3.2370342194.
-    testString: assert.strictEqual(euler394(), 3.2370342194, '<code>euler394()</code> should return 3.2370342194.');
+    testString: assert.strictEqual(euler394(), 3.2370342194);
 
 ```
 
@@ -68,4 +69,5 @@ euler394();
 ```js
 // solution required
 ```
+
 </section>

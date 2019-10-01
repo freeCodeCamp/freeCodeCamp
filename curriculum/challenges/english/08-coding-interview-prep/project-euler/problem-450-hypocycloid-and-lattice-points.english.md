@@ -2,6 +2,7 @@
 id: 5900f52e1000cf542c510041
 challengeType: 5
 title: 'Problem 450: Hypocycloid and Lattice points'
+forumTopicId: 302123
 ---
 
 ## Description
@@ -48,7 +49,7 @@ Find T(106).
 ```yml
 tests:
   - text: <code>euler450()</code> should return 583333163984220900.
-    testString: assert.strictEqual(euler450(), 583333163984220900, '<code>euler450()</code> should return 583333163984220900.');
+    testString: assert.strictEqual(euler450(), 583333163984220900);
 
 ```
 
@@ -80,4 +81,5 @@ euler450();
 ```js
 // solution required
 ```
+
 </section>

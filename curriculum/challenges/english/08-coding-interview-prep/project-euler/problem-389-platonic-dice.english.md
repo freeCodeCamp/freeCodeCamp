@@ -2,6 +2,7 @@
 id: 5900f4f21000cf542c510004
 challengeType: 5
 title: 'Problem 389: Platonic Dice'
+forumTopicId: 302053
 ---
 
 ## Description
@@ -21,7 +22,7 @@ Find the variance of I, and give your answer rounded to 4 decimal places.
 ```yml
 tests:
   - text: <code>euler389()</code> should return 2406376.3623.
-    testString: assert.strictEqual(euler389(), 2406376.3623, '<code>euler389()</code> should return 2406376.3623.');
+    testString: assert.strictEqual(euler389(), 2406376.3623);
 
 ```
 
@@ -53,4 +54,5 @@ euler389();
 ```js
 // solution required
 ```
+
 </section>

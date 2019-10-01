@@ -2,6 +2,7 @@
 id: 5900f3e01000cf542c50fef3
 challengeType: 5
 title: 'Problem 116: Red, green or blue tiles'
+forumTopicId: 301742
 ---
 
 ## Description
@@ -93,7 +94,7 @@ NOTE: This is related to Problem 117.
 ```yml
 tests:
   - text: <code>euler116()</code> should return 20492570929.
-    testString: assert.strictEqual(euler116(), 20492570929, '<code>euler116()</code> should return 20492570929.');
+    testString: assert.strictEqual(euler116(), 20492570929);
 
 ```
 
@@ -125,4 +126,5 @@ euler116();
 ```js
 // solution required
 ```
+
 </section>

@@ -2,6 +2,7 @@
 id: 5900f4931000cf542c50ffa6
 challengeType: 5
 title: 'Problem 295: Lenticular holes'
+forumTopicId: 301947
 ---
 
 ## Description
@@ -42,7 +43,7 @@ Find L(100 000).
 ```yml
 tests:
   - text: <code>euler295()</code> should return 4884650818.
-    testString: assert.strictEqual(euler295(), 4884650818, '<code>euler295()</code> should return 4884650818.');
+    testString: assert.strictEqual(euler295(), 4884650818);
 
 ```
 
@@ -74,4 +75,5 @@ euler295();
 ```js
 // solution required
 ```
+
 </section>

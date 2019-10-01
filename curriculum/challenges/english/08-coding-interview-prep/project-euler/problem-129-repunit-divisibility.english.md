@@ -2,6 +2,7 @@
 id: 5900f3ef1000cf542c50ff01
 challengeType: 5
 title: 'Problem 129: Repunit divisibility'
+forumTopicId: 301756
 ---
 
 ## Description
@@ -23,7 +24,7 @@ Find the least value of n for which A(n) first exceeds one-million.
 ```yml
 tests:
   - text: <code>euler129()</code> should return 1000023.
-    testString: assert.strictEqual(euler129(), 1000023, '<code>euler129()</code> should return 1000023.');
+    testString: assert.strictEqual(euler129(), 1000023);
 
 ```
 
@@ -55,4 +56,5 @@ euler129();
 ```js
 // solution required
 ```
+
 </section>

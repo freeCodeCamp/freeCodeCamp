@@ -1,0 +1,12 @@
+.output-text {
+  white-space: pre-line;
+  word-break: normal;
+  padding-top: 0;
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+}
+
+pre.output-text code {
+  color: #c7254e;
+}

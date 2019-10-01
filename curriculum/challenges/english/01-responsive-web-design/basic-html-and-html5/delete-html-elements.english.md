@@ -3,6 +3,7 @@ id: bad87fed1348bd9aedf08833
 title: Delete HTML Elements
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/ckK73C9'
+forumTopicId: 17559
 ---
 
 ## Description
@@ -22,11 +23,11 @@ Delete your <code>h1</code> element so we can simplify our view.
 ```yml
 tests:
   - text: Delete your <code>h1</code> element.
-    testString: assert(!code.match(/<h1>/gi) && !code.match(/<\/h1>/gi), 'Delete your <code>h1</code> element.');
+    testString: assert(!code.match(/<h1>/gi) && !code.match(/<\/h1>/gi));
   - text: Leave your <code>h2</code> element on the page.
-    testString: assert(code.match(/<h2>[\w\W]*<\/h2>/gi), 'Leave your <code>h2</code> element on the page.');
+    testString: assert(code.match(/<h2>[\w\W]*<\/h2>/gi));
   - text: Leave your <code>p</code> element on the page.
-    testString: assert(code.match(/<p>[\w\W]*<\/p>/gi), 'Leave your <code>p</code> element on the page.');
+    testString: assert(code.match(/<p>[\w\W]*<\/p>/gi));
 
 ```
 

@@ -2,6 +2,7 @@
 id: 5900f4151000cf542c50ff28
 challengeType: 5
 title: 'Problem 169: Exploring the number of different ways a number can be expressed as a sum of powers of 2'
+forumTopicId: 301803
 ---
 
 ## Description
@@ -26,7 +27,7 @@ What is f(1025)?
 ```yml
 tests:
   - text: <code>euler169()</code> should return 178653872807.
-    testString: assert.strictEqual(euler169(), 178653872807, '<code>euler169()</code> should return 178653872807.');
+    testString: assert.strictEqual(euler169(), 178653872807);
 
 ```
 
@@ -58,4 +59,5 @@ euler169();
 ```js
 // solution required
 ```
+
 </section>

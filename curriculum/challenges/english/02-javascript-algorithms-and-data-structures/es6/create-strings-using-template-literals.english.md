@@ -2,6 +2,7 @@
 id: 587d7b8a367417b2b2512b4e
 title: Create Strings using Template Literals
 challengeType: 1
+forumTopicId: 301200
 ---
 
 ## Description
@@ -9,7 +10,23 @@ challengeType: 1
 A new feature of ES6 is the <dfn>template literal</dfn>. This is a special type of string that makes creating complex strings easier.
 Template literals allow you to create multi-line strings and to use string interpolation features to create strings.
 Consider the code below:
-<blockquote>const person = {<br>&nbsp;&nbsp;name: "Zodiac Hasbro",<br>&nbsp;&nbsp;age: 56<br>};<br><br>// Template literal with multi-line and string interpolation<br>const greeting = `Hello, my name is ${person.name}!<br>I am ${person.age} years old.`;<br><br>console.log(greeting); // prints<br>// Hello, my name is Zodiac Hasbro!<br>// I am 56 years old.<br></blockquote>
+
+```js
+const person = {
+  name: "Zodiac Hasbro",
+  age: 56
+};
+
+// Template literal with multi-line and string interpolation
+const greeting = `Hello, my name is ${person.name}!
+I am ${person.age} years old.`;
+
+console.log(greeting); // prints
+// Hello, my name is Zodiac Hasbro!
+// I am 56 years old.
+
+```
+
 A lot of things happened there.
 Firstly, the example uses backticks (<code>`</code>), not quotes (<code>'</code> or <code>"</code>), to wrap the string.
 Secondly, notice that the string is multi-line, both in the code and the output. This saves inserting <code>\n</code> within strings.
@@ -20,6 +37,7 @@ This new way of creating strings gives you more flexibility to create robust str
 ## Instructions
 <section id='instructions'>
 Use template literal syntax with backticks to display each entry of the <code>result</code> object's <code>failure</code> array. Each entry should be wrapped inside an <code>li</code> element with the class attribute <code>text-warning</code>, and listed within the <code>resultDisplayArray</code>.
+Use an iterator method (any kind of loop) to get the desired output.
 </section>
 
 ## Tests
@@ -27,13 +45,14 @@ Use template literal syntax with backticks to display each entry of the <code>re
 
 ```yml
 tests:
-  - text: <code>resultDisplayArray</code> is an array containing <code>result failure</code> messages.
-    testString: assert(typeof makeList(result.failure) === 'object' && resultDisplayArray.length === 3, '<code>resultDisplayArray</code> is a list containing <code>result failure</code> messages.');
+  - text: <code>resultDisplayArray</code> should be an array containing <code>result failure</code> messages.
+    testString: assert(typeof makeList(result.failure) === 'object' && resultDisplayArray.length === 3);
   - text: <code>resultDisplayArray</code> is the desired output.
-    testString: assert(makeList(result.failure).every((v, i) => v === `<li class="text-warning">${result.failure[i]}</li>` || v === `<li class='text-warning'>${result.failure[i]}</li>`), '<code>resultDisplayArray</code> is the desired output.');
-  - text: Template strings were used
-    testString: getUserInput => assert(getUserInput('index').match(/`.*`/g), 'Template strings were not used');
-
+    testString: assert(makeList(result.failure).every((v, i) => v === `<li class="text-warning">${result.failure[i]}</li>` || v === `<li class='text-warning'>${result.failure[i]}</li>`));
+  - text: Template strings and expression interpolation should be used
+    testString: getUserInput => assert(getUserInput('index').match(/(`.*\${.*}.*`)/));
+  - text: An iterator should be used
+    testString: getUserInput => assert(getUserInput('index').match(/for|map|reduce|forEach|while/));
 ```
 
 </section>
@@ -77,6 +96,25 @@ const resultDisplayArray = makeList(result.failure);
 <section id='solution'>
 
 ```js
-// solution required
+const result = {
+  success: ["max-length", "no-amd", "prefer-arrow-functions"],
+  failure: ["no-var", "var-on-top", "linebreak"],
+  skipped: ["id-blacklist", "no-dup-keys"]
+};
+function makeList(arr) {
+  "use strict";
+  
+  const resultDisplayArray = arr.map(val => `<li class="text-warning">${val}</li>`);
+  
+  return resultDisplayArray;
+}
+/**
+ * makeList(result.failure) should return:
+ * [ `<li class="text-warning">no-var</li>`,
+ *   `<li class="text-warning">var-on-top</li>`,
+ *   `<li class="text-warning">linebreak</li>` ]
+ **/
+const resultDisplayArray = makeList(result.failure);
 ```
+
 </section>

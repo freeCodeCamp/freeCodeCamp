@@ -2,6 +2,7 @@
 id: 5900f41e1000cf542c50ff31
 challengeType: 5
 title: 'Problem 178: Step Numbers'
+forumTopicId: 301813
 ---
 
 ## Description
@@ -25,7 +26,7 @@ How many pandigital step numbers less than 1040 are there?
 ```yml
 tests:
   - text: <code>euler178()</code> should return 126461847755.
-    testString: assert.strictEqual(euler178(), 126461847755, '<code>euler178()</code> should return 126461847755.');
+    testString: assert.strictEqual(euler178(), 126461847755);
 
 ```
 
@@ -57,4 +58,5 @@ euler178();
 ```js
 // solution required
 ```
+
 </section>

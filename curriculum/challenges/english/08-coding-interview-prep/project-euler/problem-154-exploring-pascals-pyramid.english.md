@@ -2,6 +2,7 @@
 id: 5900f4071000cf542c50ff19
 challengeType: 5
 title: 'Problem 154: Exploring Pascal''s pyramid'
+forumTopicId: 301785
 ---
 
 ## Description
@@ -27,7 +28,7 @@ How many coefficients in the expansion of (x + y + z)200000 are multiples of 101
 ```yml
 tests:
   - text: <code>euler154()</code> should return 479742450.
-    testString: assert.strictEqual(euler154(), 479742450, '<code>euler154()</code> should return 479742450.');
+    testString: assert.strictEqual(euler154(), 479742450);
 
 ```
 
@@ -59,4 +60,5 @@ euler154();
 ```js
 // solution required
 ```
+
 </section>

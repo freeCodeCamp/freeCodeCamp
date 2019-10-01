@@ -1,9 +1,6 @@
 ---
 id: 587d7dbf367417b2b2512bbb
 title: Apply a Style Until a Condition is Met with @while
-required:
-  - src: 'https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.9/sass.sync.min.js'
-    raw: true
 challengeType: 0
 videoUrl: ''
 localeTitle: Aplicar un estilo hasta que se cumpla una condición con @while

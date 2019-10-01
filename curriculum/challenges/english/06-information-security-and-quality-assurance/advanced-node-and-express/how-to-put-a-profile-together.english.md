@@ -2,6 +2,7 @@
 id: 5895f70ef9fc0f352b528e6b
 title: How to Put a Profile Together
 challengeType: 2
+forumTopicId: 301554
 ---
 
 ## Description
@@ -41,4 +42,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

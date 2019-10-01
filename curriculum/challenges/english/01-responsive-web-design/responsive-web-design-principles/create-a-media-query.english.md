@@ -3,6 +3,7 @@ id: 587d78b0367417b2b2512b08
 title: Create a Media Query
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pzrPu4/cqwKrtm'
+forumTopicId: 301139
 ---
 
 ## Description
@@ -26,11 +27,12 @@ Add a media query, so that the <code>p</code> tag has a <code>font-size</code> o
 
 ```yml
 tests:
-  - text: Your <code>p</code> element should have the <code>font-size</code> of 10px when the device <code>height</code> is less than or equal to 800px.
-    testString: assert($('p').css('font-size') == '10px', 'Your <code>p</code> element should have the <code>font-size</code> of 10px when the device <code>height</code> is less than or equal to 800px.');
   - text: Declare a <code>@media</code> query for devices with a <code>height</code> less than or equal to 800px.
-    testString: assert(code.match(/@media\s*?\(\s*?max-height\s*?:\s*?800px\s*?\)/g), 'Declare a <code>@media</code> query for devices with a <code>height</code> less than or equal to 800px.');
-
+    testString: assert($("style").text().replace(/\s/g ,'').match(/@media\(max-height:800px\)/g));
+  - text: Your <code>p</code> element should have a <code>font-size</code> of 10px when the device <code>height</code> is less than or equal to 800px.
+    testString: assert($("style").text().replace(/\s/g ,'').match(/@media\(max-height:800px\){p{font-size:10px;?}}/g));
+  - text: Your <code>p</code> element should have an initial <code>font-size</code> of 20px when the device <code>height</code> is more than 800px.
+    testString: assert($("style").text().replace(/\s/g ,'').replace(/@media.*}/g, '').match(/p{font-size:20px;?}/g));
 ```
 
 </section>
@@ -47,7 +49,6 @@ tests:
   }
 
   /* Add media query below */
-
 </style>
 
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis tempus massa. Aenean erat nisl, gravida vel vestibulum cursus, interdum sit amet lectus. Sed sit amet quam nibh. Suspendisse quis tincidunt nulla. In hac habitasse platea dictumst. Ut sit amet pretium nisl. Vivamus vel mi sem. Aenean sit amet consectetur sem. Suspendisse pretium, purus et gravida consequat, nunc ligula ultricies diam, at aliquet velit libero a dui.</p>
@@ -62,7 +63,20 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style>
+  p {
+    font-size: 20px;
+  }
+
+  @media (max-height: 800px) {
+    p {
+      font-size: 10px;
+    }
+  }
+</style>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis tempus massa. Aenean erat nisl, gravida vel vestibulum cursus, interdum sit amet lectus. Sed sit amet quam nibh. Suspendisse quis tincidunt nulla. In hac habitasse platea dictumst. Ut sit amet pretium nisl. Vivamus vel mi sem. Aenean sit amet consectetur sem. Suspendisse pretium, purus et gravida consequat, nunc ligula ultricies diam, at aliquet velit libero a dui.</p>
 ```
+
 </section>

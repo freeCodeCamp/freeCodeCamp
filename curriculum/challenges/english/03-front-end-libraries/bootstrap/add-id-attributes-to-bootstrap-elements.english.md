@@ -2,6 +2,7 @@
 id: bad87fee1348bd9aec908853
 title: Add id Attributes to Bootstrap Elements
 challengeType: 0
+forumTopicId: 16639
 ---
 
 ## Description
@@ -25,9 +26,9 @@ Give the well on the left the id of <code>left-well</code>. Give the well on the
 ```yml
 tests:
   - text: Give your left <code>well</code> the id of <code>left-well</code>.
-    testString: assert($(".col-xs-6").children("#left-well") && $(".col-xs-6").children("#left-well").length > 0, 'Give your left <code>well</code> the id of <code>left-well</code>.');
+    testString: assert($(".col-xs-6").children("#left-well") && $(".col-xs-6").children("#left-well").length > 0);
   - text: Give your right <code>well</code> the id of <code>right-well</code>.
-    testString: assert($(".col-xs-6").children("#right-well") && $(".col-xs-6").children("#right-well").length > 0, 'Give your right <code>well</code> the id of <code>right-well</code>.');
+    testString: assert($(".col-xs-6").children("#right-well") && $(".col-xs-6").children("#right-well").length > 0);
 
 ```
 
@@ -69,7 +70,26 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<div class="container-fluid">
+  <h3 class="text-primary text-center">jQuery Playground</h3>
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="well" id="left-well">
+        <button class="btn btn-default target"></button>
+        <button class="btn btn-default target"></button>
+        <button class="btn btn-default target"></button>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <div class="well" id="right-well">
+        <button class="btn btn-default target"></button>
+        <button class="btn btn-default target"></button>
+        <button class="btn btn-default target"></button>
+      </div>
+    </div>
+  </div>
+</div>
 ```
+
 </section>

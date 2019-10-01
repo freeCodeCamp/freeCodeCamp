@@ -16,9 +16,12 @@ const propTypes = {
   reset: PropTypes.func.isRequired
 };
 
-const mapStateToProps = createSelector(isResetModalOpenSelector, isOpen => ({
-  isOpen
-}));
+const mapStateToProps = createSelector(
+  isResetModalOpenSelector,
+  isOpen => ({
+    isOpen
+  })
+);
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
@@ -41,7 +44,7 @@ function ResetModal({ reset, close, isOpen }) {
       keyboard={true}
       onHide={close}
       show={isOpen}
-      >
+    >
       <Modal.Header className='reset-modal-header' closeButton={true}>
         <Modal.Title className='text-center'>Reset this lesson?</Modal.Title>
       </Modal.Header>
@@ -56,13 +59,13 @@ function ResetModal({ reset, close, isOpen }) {
           </p>
         </div>
       </Modal.Body>
-      <Modal.Footer>
+      <Modal.Footer className='reset-modal-footer'>
         <Button
           block={true}
           bsSize='large'
           bsStyle='danger'
           onClick={withActions(reset, close)}
-          >
+        >
           Reset this Lesson
         </Button>
       </Modal.Footer>
@@ -73,4 +76,7 @@ function ResetModal({ reset, close, isOpen }) {
 ResetModal.displayName = 'ResetModal';
 ResetModal.propTypes = propTypes;
 
-export default connect(mapStateToProps, mapDispatchToProps)(ResetModal);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ResetModal);

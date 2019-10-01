@@ -2,13 +2,24 @@
 id: 567af2437cbaa8c51670a16c
 title: Testing Objects for Properties
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/cm8Q7Ua'
+forumTopicId: 18324
 ---
 
 ## Description
 <section id='description'>
 Sometimes it is useful to check if the property of a given object exists or not. We can use the <code>.hasOwnProperty(propname)</code> method of objects to determine if that object has the given property name. <code>.hasOwnProperty()</code> returns <code>true</code> or <code>false</code> if the property is found or not.
 <strong>Example</strong>
-<blockquote>var myObj = {<br>&nbsp;&nbsp;top: "hat",<br>&nbsp;&nbsp;bottom: "pants"<br>};<br>myObj.hasOwnProperty("top");    // true<br>myObj.hasOwnProperty("middle"); // false</blockquote>
+
+```js
+var myObj = {
+  top: "hat",
+  bottom: "pants"
+};
+myObj.hasOwnProperty("top");    // true
+myObj.hasOwnProperty("middle"); // false
+```
+
 </section>
 
 ## Instructions
@@ -22,11 +33,11 @@ Modify the function <code>checkObj</code> to test <code>myObj</code> for <code>c
 ```yml
 tests:
   - text: <code>checkObj("gift")</code> should return  <code>"pony"</code>.
-    testString: assert(checkObj("gift") === "pony", '<code>checkObj("gift")</code> should return  <code>"pony"</code>.');
+    testString: assert(checkObj("gift") === "pony");
   - text: <code>checkObj("pet")</code> should return  <code>"kitten"</code>.
-    testString: assert(checkObj("pet") === "kitten", '<code>checkObj("pet")</code> should return  <code>"kitten"</code>.');
+    testString: assert(checkObj("pet") === "kitten");
   - text: <code>checkObj("house")</code> should return  <code>"Not Found"</code>.
-    testString: assert(checkObj("house") === "Not Found", '<code>checkObj("house")</code> should return  <code>"Not Found"</code>.');
+    testString: assert(checkObj("house") === "Not Found");
 
 ```
 

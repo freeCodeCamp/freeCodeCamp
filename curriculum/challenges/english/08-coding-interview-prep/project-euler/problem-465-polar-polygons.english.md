@@ -2,6 +2,7 @@
 id: 5900f53d1000cf542c510050
 challengeType: 5
 title: 'Problem 465: Polar polygons'
+forumTopicId: 302140
 ---
 
 ## Description
@@ -36,7 +37,7 @@ Find P(713) mod 1 000 000 007.
 ```yml
 tests:
   - text: <code>euler465()</code> should return 585965659.
-    testString: assert.strictEqual(euler465(), 585965659, '<code>euler465()</code> should return 585965659.');
+    testString: assert.strictEqual(euler465(), 585965659);
 
 ```
 
@@ -68,4 +69,5 @@ euler465();
 ```js
 // solution required
 ```
+
 </section>

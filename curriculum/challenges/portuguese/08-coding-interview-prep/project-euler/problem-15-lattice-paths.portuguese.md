@@ -7,7 +7,7 @@ localeTitle: 'Problema 15: caminhos da rede'
 ---
 
 ## Description
-<section id="description"> Começando no canto superior esquerdo de uma grade de 2 × 2, e somente sendo capaz de se mover para a direita e para baixo, há exatamente 6 rotas para o canto inferior direito. <img class="img-responsive center-block" alt="um diagrama de 6 2 por 2 grades mostrando todas as rotas para o canto inferior direito" src="https://i.imgur.com/1Atixoj.gif"><p> Quantas dessas rotas estão lá através de um determinado <code>gridSize</code> ? </p></section>
+<section id="description"> Começando no canto superior esquerdo de uma grade de 2 × 2, e somente sendo capaz de se mover para a direita e para baixo, há exatamente 6 rotas para o canto inferior direito. <img class="img-responsive center-block" alt="um diagrama de 6 2 por 2 grades mostrando todas as rotas para o canto inferior direito" src="https://cdn-media-1.freecodecamp.org/imgr/1Atixoj.gif"><p> Quantas dessas rotas estão lá através de um determinado <code>gridSize</code> ? </p></section>
 
 ## Instructions
 <section id="instructions">

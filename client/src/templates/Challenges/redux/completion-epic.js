@@ -13,7 +13,6 @@ import { navigate } from 'gatsby';
 import {
   backendFormValuesSelector,
   projectFormValuesSelector,
-  submitComplete,
   types,
   challengeMetaSelector,
   challengeTestsSelector,
@@ -24,8 +23,7 @@ import {
 import {
   userSelector,
   isSignedInSelector,
-  openDonationModal,
-  showDonationSelector,
+  submitComplete,
   updateComplete,
   updateFailed
 } from '../../../redux';
@@ -104,9 +102,9 @@ function submitBackendChallenge(type, state) {
     if (type === types.submitChallenge) {
       const { id } = challengeMetaSelector(state);
       const { username } = userSelector(state);
-      const { solution: { value: solution } } = backendFormValuesSelector(
-        state
-      );
+      const {
+        solution: { value: solution }
+      } = backendFormValuesSelector(state);
       const challengeInfo = { id, solution };
 
       const update = {
@@ -126,19 +124,13 @@ const submitters = {
   'project.backEnd': submitProject
 };
 
-function shouldShowDonate(state) {
-  return showDonationSelector(state) ? of(openDonationModal()) : empty();
-}
-
 export default function completionEpic(action$, state$) {
   return action$.pipe(
     ofType(types.submitChallenge),
     switchMap(({ type }) => {
       const state = state$.value;
       const meta = challengeMetaSelector(state);
-      const { isDonating } = userSelector(state);
       const { nextChallengePath, introPath, challengeType } = meta;
-      const showDonate = isDonating ? empty() : shouldShowDonate(state);
       const closeChallengeModal = of(closeModal('completion'));
       let submitter = () => of({ type: 'no-user-signed-in' });
       if (
@@ -157,7 +149,6 @@ export default function completionEpic(action$, state$) {
       return submitter(type, state).pipe(
         tap(() => navigate(introPath ? introPath : nextChallengePath)),
         concat(closeChallengeModal),
-        concat(showDonate),
         filter(Boolean)
       );
     })

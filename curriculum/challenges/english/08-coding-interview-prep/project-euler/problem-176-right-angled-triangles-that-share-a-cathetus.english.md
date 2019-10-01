@@ -2,6 +2,7 @@
 id: 5900f41c1000cf542c50ff2f
 challengeType: 5
 title: 'Problem 176: Right-angled triangles that share a cathetus'
+forumTopicId: 301811
 ---
 
 ## Description
@@ -21,7 +22,7 @@ Find the smallest integer that can be the length of a cathetus of exactly 47547 
 ```yml
 tests:
   - text: <code>euler176()</code> should return 96818198400000.
-    testString: assert.strictEqual(euler176(), 96818198400000, '<code>euler176()</code> should return 96818198400000.');
+    testString: assert.strictEqual(euler176(), 96818198400000);
 
 ```
 
@@ -53,4 +54,5 @@ euler176();
 ```js
 // solution required
 ```
+
 </section>

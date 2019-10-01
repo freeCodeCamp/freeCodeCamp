@@ -7,7 +7,7 @@ localeTitle: Añadir dos números con JavaScript
 ---
 
 ## Description
-<section id="description"> <code>Number</code> es un tipo de datos en JavaScript que representa datos numéricos. Ahora intentemos agregar dos números usando JavaScript. JavaScript usa el símbolo <code>+</code> como operación de suma cuando se coloca entre dos números. <strong>Ejemplo</strong> <blockquote> myVar = 5 + 10; // asignado 15 </blockquote></section>
+<section id="description"> <code>Number</code> es un tipo de dato de JavaScript que representa datos numéricos. Ahora vamos a intentar agregar dos números usando JavaScript. JavaScript usa el símbolo <code>+</code> como operación de suma cuando esta se coloca entre dos números. <strong>Ejemplo</strong> <blockquote> myVar = 5 + 10; // asignado 15 </blockquote></section>
 
 ## Instructions
 <section id="instructions"> Cambia el <code>0</code> para que la suma sea igual a <code>20</code> . </section>

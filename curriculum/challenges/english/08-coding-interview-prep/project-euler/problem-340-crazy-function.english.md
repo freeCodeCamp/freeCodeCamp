@@ -2,6 +2,7 @@
 id: 5900f4c21000cf542c50ffd4
 challengeType: 5
 title: 'Problem 340: Crazy Function'
+forumTopicId: 301999
 ---
 
 ## Description
@@ -32,7 +33,7 @@ Find the last 9 digits of S(217, 721, 127).
 ```yml
 tests:
   - text: <code>euler340()</code> should return 291504964.
-    testString: assert.strictEqual(euler340(), 291504964, '<code>euler340()</code> should return 291504964.');
+    testString: assert.strictEqual(euler340(), 291504964);
 
 ```
 
@@ -64,4 +65,5 @@ euler340();
 ```js
 // solution required
 ```
+
 </section>

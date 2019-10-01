@@ -2,6 +2,7 @@
 id: 5900f3d51000cf542c50fee6
 challengeType: 5
 title: 'Problem 104: Pandigital Fibonacci ends'
+forumTopicId: 301728
 ---
 
 ## Description
@@ -23,7 +24,7 @@ Given that Fk is the first Fibonacci number for which the first nine digits AND 
 ```yml
 tests:
   - text: <code>euler104()</code> should return 329468.
-    testString: assert.strictEqual(euler104(), 329468, '<code>euler104()</code> should return 329468.');
+    testString: assert.strictEqual(euler104(), 329468);
 
 ```
 
@@ -55,4 +56,5 @@ euler104();
 ```js
 // solution required
 ```
+
 </section>

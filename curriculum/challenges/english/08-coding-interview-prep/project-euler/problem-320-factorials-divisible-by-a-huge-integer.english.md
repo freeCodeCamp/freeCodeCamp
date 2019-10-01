@@ -2,6 +2,7 @@
 id: 5900f4ae1000cf542c50ffbf
 challengeType: 5
 title: 'Problem 320: Factorials divisible by a huge integer'
+forumTopicId: 301977
 ---
 
 ## Description
@@ -28,7 +29,7 @@ Find S(1 000 000) mod 1018.
 ```yml
 tests:
   - text: <code>euler320()</code> should return 278157919195482660.
-    testString: assert.strictEqual(euler320(), 278157919195482660, '<code>euler320()</code> should return 278157919195482660.');
+    testString: assert.strictEqual(euler320(), 278157919195482660);
 
 ```
 
@@ -60,4 +61,5 @@ euler320();
 ```js
 // solution required
 ```
+
 </section>

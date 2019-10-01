@@ -2,6 +2,7 @@
 id: 5900f4a01000cf542c50ffb2
 challengeType: 5
 title: 'Problem 307: Chip Defects'
+forumTopicId: 301961
 ---
 
 ## Description
@@ -27,7 +28,7 @@ Find p(20 000, 1 000 000) and give your answer rounded to 10 decimal places in t
 ```yml
 tests:
   - text: <code>euler307()</code> should return 0.7311720251.
-    testString: assert.strictEqual(euler307(), 0.7311720251, '<code>euler307()</code> should return 0.7311720251.');
+    testString: assert.strictEqual(euler307(), 0.7311720251);
 
 ```
 
@@ -59,4 +60,5 @@ euler307();
 ```js
 // solution required
 ```
+
 </section>

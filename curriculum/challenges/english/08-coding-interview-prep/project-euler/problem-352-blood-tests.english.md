@@ -2,6 +2,7 @@
 id: 5900f4cd1000cf542c50ffdf
 challengeType: 5
 title: 'Problem 352: Blood tests'
+forumTopicId: 302012
 ---
 
 ## Description
@@ -57,7 +58,7 @@ Give your answer rounded to six decimal places.
 ```yml
 tests:
   - text: <code>euler352()</code> should return 378563.260589.
-    testString: assert.strictEqual(euler352(), 378563.260589, '<code>euler352()</code> should return 378563.260589.');
+    testString: assert.strictEqual(euler352(), 378563.260589);
 
 ```
 
@@ -89,4 +90,5 @@ euler352();
 ```js
 // solution required
 ```
+
 </section>

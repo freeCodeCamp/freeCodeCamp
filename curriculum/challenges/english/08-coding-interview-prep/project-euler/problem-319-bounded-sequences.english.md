@@ -2,6 +2,7 @@
 id: 5900f4ab1000cf542c50ffbe
 challengeType: 5
 title: 'Problem 319: Bounded Sequences'
+forumTopicId: 301975
 ---
 
 ## Description
@@ -35,7 +36,7 @@ Find t(1010) and give your answer modulo 109.
 ```yml
 tests:
   - text: <code>euler319()</code> should return 268457129.
-    testString: assert.strictEqual(euler319(), 268457129, '<code>euler319()</code> should return 268457129.');
+    testString: assert.strictEqual(euler319(), 268457129);
 
 ```
 
@@ -67,4 +68,5 @@ euler319();
 ```js
 // solution required
 ```
+
 </section>

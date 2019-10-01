@@ -2,6 +2,7 @@
 id: 5900f4b11000cf542c50ffc3
 challengeType: 5
 title: 'Problem 324: Building a tower'
+forumTopicId: 301981
 ---
 
 ## Description
@@ -23,7 +24,7 @@ Find f(1010000) mod 100000007.
 ```yml
 tests:
   - text: <code>euler324()</code> should return 96972774.
-    testString: assert.strictEqual(euler324(), 96972774, '<code>euler324()</code> should return 96972774.');
+    testString: assert.strictEqual(euler324(), 96972774);
 
 ```
 
@@ -55,4 +56,5 @@ euler324();
 ```js
 // solution required
 ```
+
 </section>

@@ -2,18 +2,19 @@
 id: 587d824e367417b2b2512c56
 title: Test if a Value is of a Specific Data Structure Type
 challengeType: 2
+forumTopicId: 301601
 ---
 
 ## Description
 <section id='description'>
 As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
-#typeOf asserts that value’s type is the given string, as determined by Object.prototype.toString.
-Use #typeOf or #notTypeOf where appropriate
+<code>#typeOf</code> asserts that value’s type is the given string, as determined by <code>Object.prototype.toString</code>.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Use <code>assert.typeOf()</code> or <code>assert.notTypeOf()</code> to make the tests pass.
 </section>
 
 ## Tests
@@ -49,4 +50,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

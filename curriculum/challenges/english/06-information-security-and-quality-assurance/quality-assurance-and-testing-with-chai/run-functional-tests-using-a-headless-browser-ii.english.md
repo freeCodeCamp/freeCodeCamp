@@ -2,18 +2,19 @@
 id: 587d8250367417b2b2512c5d
 title: Run Functional Tests using a Headless Browser II
 challengeType: 2
+forumTopicId: 301594
 ---
 
 ## Description
 <section id='description'>
 As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
-This exercise is similar to the preceding.
-Look at  the code for directions. Follow the assertions order, We rely on it.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+This exercise is similar to the preceding.
+Look at the code for directions. Follow the assertions order, We rely on it.
 </section>
 
 ## Tests
@@ -47,4 +48,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

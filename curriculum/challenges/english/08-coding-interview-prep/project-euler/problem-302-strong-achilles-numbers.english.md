@@ -2,6 +2,7 @@
 id: 5900f49b1000cf542c50ffad
 challengeType: 5
 title: 'Problem 302: Strong Achilles Numbers'
+forumTopicId: 301956
 ---
 
 ## Description
@@ -38,7 +39,7 @@ How many Strong Achilles numbers are there below 1018?
 ```yml
 tests:
   - text: <code>euler302()</code> should return 1170060.
-    testString: assert.strictEqual(euler302(), 1170060, '<code>euler302()</code> should return 1170060.');
+    testString: assert.strictEqual(euler302(), 1170060);
 
 ```
 
@@ -70,4 +71,5 @@ euler302();
 ```js
 // solution required
 ```
+
 </section>

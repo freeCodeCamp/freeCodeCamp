@@ -2,6 +2,7 @@
 id: 5900f3d01000cf542c50fee2
 challengeType: 5
 title: 'Problem 99: Largest exponential'
+forumTopicId: 302216
 ---
 
 ## Description
@@ -23,7 +24,7 @@ NOTE: The first two lines in the file represent the numbers in the example given
 ```yml
 tests:
   - text: <code>euler99()</code> should return 709.
-    testString: assert.strictEqual(euler99(), 709, '<code>euler99()</code> should return 709.');
+    testString: assert.strictEqual(euler99(), 709);
 
 ```
 
@@ -55,4 +56,5 @@ euler99();
 ```js
 // solution required
 ```
+
 </section>

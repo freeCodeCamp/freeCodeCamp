@@ -2,6 +2,7 @@
 id: 5900f3991000cf542c50feac
 challengeType: 5
 title: 'Problem 45: Triangular, pentagonal, and hexagonal'
+forumTopicId: 302122
 ---
 
 ## Description
@@ -25,7 +26,7 @@ Find the next triangle number that is also pentagonal and hexagonal.
 ```yml
 tests:
   - text: <code>triPentaHexa(40756)</code> should return 1533776805.
-    testString: assert.strictEqual(triPentaHexa(40756), 1533776805, '<code>triPentaHexa(40756)</code> should return 1533776805.');
+    testString: assert.strictEqual(triPentaHexa(40756), 1533776805);
 
 ```
 

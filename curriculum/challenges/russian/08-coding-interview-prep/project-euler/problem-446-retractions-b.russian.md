@@ -2,15 +2,18 @@
 id: 5900f52c1000cf542c51003d
 challengeType: 5
 title: 'Problem 446: Retractions B'
-videoUrl: ''
+forumTopicId: 302118
 localeTitle: 'Задача 446: Отвод B'
 ---
 
 ## Description
-<section id="description"> Для каждого целого n&gt; 1 семейство функций fn, a, b определяется посредством fn, a, b (x) ≡ax + b mod n для a, b, x integer и 0 <p> F (N) = ΣR (n4 + 4) для 1≤n≤N. F (1024) = 77532377300600. </p><p> Найти F (107) (mod 1 000 000 007) </p></section>
+<section id='description'>
+Для каждого целого n&gt; 1 семейство функций fn, a, b определяется посредством fn, a, b (x) ≡ax + b mod n для a, b, x integer и 0 <p> F (N) = ΣR (n4 + 4) для 1≤n≤N. F (1024) = 77532377300600. </p><p> Найти F (107) (mod 1 000 000 007) </p>
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +21,8 @@ localeTitle: 'Задача 446: Отвод B'
 
 ```yml
 tests:
-  - text: ''
-    testString: 'assert.strictEqual(euler446(), 907803852, "<code>euler446()</code> should return 907803852.");'
+  - text: <code>euler446()</code> should return 907803852.
+    testString: assert.strictEqual(euler446(), 907803852);
 
 ```
 
@@ -42,8 +45,6 @@ euler446();
 
 </div>
 
-
-
 </section>
 
 ## Solution
@@ -52,4 +53,5 @@ euler446();
 ```js
 // solution required
 ```
+
 </section>

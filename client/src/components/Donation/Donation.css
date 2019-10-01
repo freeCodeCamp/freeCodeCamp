@@ -1,0 +1,106 @@
+.donation-modal {
+  overflow-y: auto;
+}
+
+.donation-modal p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.donation-modal .alert {
+  width: 60%;
+  margin: 0 auto 0;
+}
+
+.donation-modal .modal-title {
+  font-size: 1.2rem;
+}
+
+.donation-form {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+@media (max-width: 500px) {
+  .donation-form {
+    width: 100%;
+  }
+}
+
+.donation-modal .btn-link {
+  border: none;
+  text-decoration: underline;
+  background: transparent;
+}
+.donation-modal .btn-link:hover {
+  background: var(--tertiary-background);
+  text-decoration: none;
+  color: inherit;
+}
+
+.donation-elements {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.donation-completion,
+.donation-completion-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.donation-completion-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.donation-email-container label {
+  display: flex;
+  flex-direction: column;
+}
+
+.donation-email-container input {
+  font-weight: normal;
+}
+
+.donation-form .btn {
+  white-space: normal;
+}
+
+.modal-close-btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.modal-close-btn-container a {
+  font-size: 18px;
+}
+
+.modal-close-btn-container a:hover {
+  text-decoration: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.donate-input-element {
+  padding-top: 8px;
+}
+
+.StripeElement--focus {
+  border-color: #66afe9;
+  outline: 0;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+    0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+.wallet {
+  overflow-wrap: break-word;
+}

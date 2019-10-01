@@ -2,14 +2,25 @@
 id: 587d7fad367417b2b2512be1
 title: Handle Click Events with JavaScript using the onclick property
 challengeType: 6
+forumTopicId: 301503
 ---
 
 ## Description
 <section id='description'>
 You want your code to execute only once your page has finished loading. For that purpose, you can attach a JavaScript event to the document called <code>DOMContentLoaded</code>. Here's the code that does this:
-<blockquote>document.addEventListener('DOMContentLoaded',function() {<br><br>});</blockquote>
+
+```js
+document.addEventListener('DOMContentLoaded',function() {
+
+});
+```
+
 You can implement event handlers that go inside of the <code>DOMContentLoaded</code> function. You can implement an <code>onclick</code> event handler which triggers when the user clicks on the element with id <code>getMessage</code>, by adding the following code:
-<blockquote>document.getElementById('getMessage').onclick=function(){};</blockquote>
+
+```js
+document.getElementById('getMessage').onclick=function(){};
+```
+
 </section>
 
 ## Instructions
@@ -23,9 +34,9 @@ Add a click event handler inside of the <code>DOMContentLoaded</code> function f
 ```yml
 tests:
   - text: Your code should use the <code>document.getElementById</code> method to select the <code>getMessage</code> element.
-    testString: assert(code.match(/document\.getElementById\(\s*?('|")getMessage\1\s*?\)/g), 'Your code should use the <code>document.getElementById</code> method to select the <code>getMessage</code> element.');
+    testString: assert(code.match(/document\s*\.getElementById\(\s*?('|")getMessage\1\s*?\)/g));
   - text: Your code should add an <code>onclick</code> event handler.
-    testString: assert(typeof document.getElementById('getMessage').onclick === 'function', 'Your code should add an <code>onclick</code> event handler.');
+    testString: assert(typeof document.getElementById('getMessage').onclick === 'function');
 
 ```
 
@@ -72,7 +83,7 @@ tests:
   }
 </style>
 <h1>Cat Photo Finder</h1>
-<p class="message box">
+<p class="message">
   The message will go here
 </p>
 <p>
@@ -94,4 +105,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

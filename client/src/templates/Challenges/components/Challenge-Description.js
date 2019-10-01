@@ -1,6 +1,6 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, Component } from 'react';
+import Prism from 'prismjs';
 import PropTypes from 'prop-types';
-import { Col, Row } from '@freecodecamp/react-bootstrap';
 
 import './challenge-description.css';
 
@@ -10,23 +10,37 @@ const propTypes = {
   section: PropTypes.string
 };
 
-function ChallengeDescription({ description, instructions, section }) {
-  return (
-    <Row>
-      <Col className={`challenge-instructions ${section}`} xs={12}>
+class ChallengeDescription extends Component {
+  componentDidMount() {
+    // Just in case 'current' has not been created, though it should have been.
+    if (this.instructionsRef.current) {
+      Prism.highlightAllUnder(this.instructionsRef.current);
+    }
+  }
+
+  constructor(props) {
+    super(props);
+    this.instructionsRef = React.createRef();
+  }
+
+  render() {
+    const { description, instructions, section } = this.props;
+    return (
+      <div
+        className={`challenge-instructions ${section}`}
+        ref={this.instructionsRef}
+      >
         <div dangerouslySetInnerHTML={{ __html: description }} />
-        {instructions ? (
+        {instructions && (
           <Fragment>
             <hr />
             <div dangerouslySetInnerHTML={{ __html: instructions }} />
-            <hr />
           </Fragment>
-        ) : (
-          <hr />
         )}
-      </Col>
-    </Row>
-  );
+        <hr />
+      </div>
+    );
+  }
 }
 
 ChallengeDescription.displayName = 'ChallengeDescription';

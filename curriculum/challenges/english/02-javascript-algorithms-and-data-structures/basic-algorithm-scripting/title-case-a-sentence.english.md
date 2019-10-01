@@ -3,6 +3,7 @@ id: ab6137d4e35944e21037b769
 title: Title Case a Sentence
 isRequired: true
 challengeType: 5
+forumTopicId: 16088
 ---
 
 ## Description
@@ -23,13 +24,13 @@ Remember to use <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-yo
 ```yml
 tests:
   - text: <code>titleCase("I&#39;m a little tea pot")</code> should return a string.
-    testString: assert(typeof titleCase("I'm a little tea pot") === "string", '<code>titleCase("I&#39;m a little tea pot")</code> should return a string.');
+    testString: assert(typeof titleCase("I'm a little tea pot") === "string");
   - text: <code>titleCase("I&#39;m a little tea pot")</code> should return <code>I&#39;m A Little Tea Pot</code>.
-    testString: assert(titleCase("I'm a little tea pot") === "I'm A Little Tea Pot", '<code>titleCase("I&#39;m a little tea pot")</code> should return <code>I&#39;m A Little Tea Pot</code>.');
+    testString: assert(titleCase("I'm a little tea pot") === "I'm A Little Tea Pot");
   - text: <code>titleCase("sHoRt AnD sToUt")</code> should return <code>Short And Stout</code>.
-    testString: assert(titleCase("sHoRt AnD sToUt") === "Short And Stout", '<code>titleCase("sHoRt AnD sToUt")</code> should return <code>Short And Stout</code>.');
+    testString: assert(titleCase("sHoRt AnD sToUt") === "Short And Stout");
   - text: <code>titleCase("HERE IS MY HANDLE HERE IS MY SPOUT")</code> should return <code>Here Is My Handle Here Is My Spout</code>.
-    testString: assert(titleCase("HERE IS MY HANDLE HERE IS MY SPOUT") === "Here Is My Handle Here Is My Spout", '<code>titleCase("HERE IS MY HANDLE HERE IS MY SPOUT")</code> should return <code>Here Is My Handle Here Is My Spout</code>.');
+    testString: assert(titleCase("HERE IS MY HANDLE HERE IS MY SPOUT") === "Here Is My Handle Here Is My Spout");
 
 ```
 

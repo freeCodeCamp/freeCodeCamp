@@ -2,6 +2,7 @@
 id: 5900f4ed1000cf542c50fffe
 challengeType: 5
 title: 'Problem 384: Rudin-Shapiro sequence'
+forumTopicId: 302048
 ---
 
 ## Description
@@ -44,7 +45,7 @@ Find ΣGF(t) for 2≤t≤45.
 ```yml
 tests:
   - text: <code>euler384()</code> should return 3354706415856333000.
-    testString: assert.strictEqual(euler384(), 3354706415856333000, '<code>euler384()</code> should return 3354706415856333000.');
+    testString: assert.strictEqual(euler384(), 3354706415856333000);
 
 ```
 
@@ -76,4 +77,5 @@ euler384();
 ```js
 // solution required
 ```
+
 </section>

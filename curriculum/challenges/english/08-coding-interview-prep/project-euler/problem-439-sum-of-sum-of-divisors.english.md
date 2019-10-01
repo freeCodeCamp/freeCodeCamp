@@ -2,6 +2,7 @@
 id: 5900f5231000cf542c510035
 challengeType: 5
 title: 'Problem 439: Sum of sum of divisors'
+forumTopicId: 302110
 ---
 
 ## Description
@@ -25,7 +26,7 @@ Find S(1011) mod 109.
 ```yml
 tests:
   - text: <code>euler439()</code> should return 968697378.
-    testString: assert.strictEqual(euler439(), 968697378, '<code>euler439()</code> should return 968697378.');
+    testString: assert.strictEqual(euler439(), 968697378);
 
 ```
 
@@ -57,4 +58,5 @@ euler439();
 ```js
 // solution required
 ```
+
 </section>

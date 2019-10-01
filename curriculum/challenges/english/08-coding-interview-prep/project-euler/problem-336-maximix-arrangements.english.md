@@ -2,6 +2,7 @@
 id: 5900f4bd1000cf542c50ffcf
 challengeType: 5
 title: 'Problem 336: Maximix Arrangements'
+forumTopicId: 301994
 ---
 
 ## Description
@@ -33,7 +34,7 @@ Find the 2011th lexicographic maximix arrangement for eleven carriages.
 ```yml
 tests:
   - text: <code>euler336()</code> should return CAGBIHEFJDK.
-    testString: assert.strictEqual(euler336(), CAGBIHEFJDK, '<code>euler336()</code> should return CAGBIHEFJDK.');
+    testString: assert.strictEqual(euler336(), CAGBIHEFJDK);
 
 ```
 
@@ -65,4 +66,5 @@ euler336();
 ```js
 // solution required
 ```
+
 </section>

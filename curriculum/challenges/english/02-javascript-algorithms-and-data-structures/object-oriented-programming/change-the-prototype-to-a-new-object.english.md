@@ -2,16 +2,43 @@
 id: 587d7daf367417b2b2512b7f
 title: Change the Prototype to a New Object
 challengeType: 1
+forumTopicId: 301316
 ---
 
 ## Description
 <section id='description'>
 Up until now you have been adding properties to the <code>prototype</code> individually:
-<blockquote>Bird.prototype.numLegs = 2;</blockquote>
+
+```js
+Bird.prototype.numLegs = 2;
+```
+
 This becomes tedious after more than a few properties.
-<blockquote>Bird.prototype.eat = function() {<br>&nbsp;&nbsp;console.log("nom nom nom");<br>}<br><br>Bird.prototype.describe = function() {<br>&nbsp;&nbsp;console.log("My name is " + this.name);<br>}</blockquote>
+
+```js
+Bird.prototype.eat = function() {
+  console.log("nom nom nom");
+}
+
+Bird.prototype.describe = function() {
+  console.log("My name is " + this.name);
+}
+```
+
 A more efficient way is to set the <code>prototype</code> to a new object that already contains the properties. This way, the properties are added all at once:
-<blockquote>Bird.prototype = {<br>&nbsp;&nbsp;numLegs: 2, <br>&nbsp;&nbsp;eat: function() {<br>&nbsp;&nbsp;&nbsp;&nbsp;console.log("nom nom nom");<br>&nbsp;&nbsp;},<br>&nbsp;&nbsp;describe: function() {<br>&nbsp;&nbsp;&nbsp;&nbsp;console.log("My name is " + this.name);<br>&nbsp;&nbsp;}<br>};</blockquote>
+
+```js
+Bird.prototype = {
+  numLegs: 2, 
+  eat: function() {
+    console.log("nom nom nom");
+  },
+  describe: function() {
+    console.log("My name is " + this.name);
+  }
+};
+```
+
 </section>
 
 ## Instructions
@@ -25,13 +52,13 @@ Add the property <code>numLegs</code> and the two methods <code>eat()</code> and
 ```yml
 tests:
   - text: <code>Dog.prototype</code> should be set to a new object.
-    testString: assert((/Dog\.prototype\s*?=\s*?{/).test(code), '<code>Dog.prototype</code> should be set to a new object.');
+    testString: assert((/Dog\.prototype\s*?=\s*?{/).test(code));
   - text: <code>Dog.prototype</code> should have the property <code>numLegs</code>.
-    testString: assert(Dog.prototype.numLegs !== undefined, '<code>Dog.prototype</code> should have the property <code>numLegs</code>.');
+    testString: assert(Dog.prototype.numLegs !== undefined);
   - text: <code>Dog.prototype</code> should have the method <code>eat()</code>.
-    testString: assert(typeof Dog.prototype.eat === 'function', '<code>Dog.prototype</code> should have the method <code>eat()</code>.');
+    testString: assert(typeof Dog.prototype.eat === 'function');
   - text: <code>Dog.prototype</code> should have the method <code>describe()</code>.
-    testString: assert(typeof Dog.prototype.describe === 'function', '<code>Dog.prototype</code> should have the method <code>describe()</code>.');
+    testString: assert(typeof Dog.prototype.describe === 'function');
 
 ```
 

@@ -2,6 +2,7 @@
 id: 5900f4881000cf542c50ff9a
 challengeType: 5
 title: 'Problem 283: Integer sided triangles for which the area * perimeter ratio is integral'
+forumTopicId: 301934
 ---
 
 ## Description
@@ -26,7 +27,7 @@ Find the sum of the perimeters of all integer sided triangles for which the area
 ```yml
 tests:
   - text: <code>euler283()</code> should return 28038042525570324.
-    testString: assert.strictEqual(euler283(), 28038042525570324, '<code>euler283()</code> should return 28038042525570324.');
+    testString: assert.strictEqual(euler283(), 28038042525570324);
 
 ```
 
@@ -58,4 +59,5 @@ euler283();
 ```js
 // solution required
 ```
+
 </section>

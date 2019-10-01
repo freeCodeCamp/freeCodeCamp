@@ -1,12 +1,10 @@
 const babelOptions = {
-  presets: [
-    '@babel/preset-env',
-    '@babel/react'
-  ],
+  presets: ['@babel/preset-env', '@babel/react'],
   plugins: [
     '@babel/plugin-proposal-function-bind',
     [
-      'transform-imports', {
+      'transform-imports',
+      {
         '@freecodecamp/react-bootstrap': {
           transform: '@freecodecamp/react-bootstrap/lib/${member}',
           preventFullImport: true

@@ -2,6 +2,7 @@
 id: 5900f4841000cf542c50ff97
 challengeType: 5
 title: 'Problem 280: Ant and seeds'
+forumTopicId: 301931
 ---
 
 ## Description
@@ -25,7 +26,7 @@ Give your answer rounded to 6 decimal places.
 ```yml
 tests:
   - text: <code>euler280()</code> should return 430.088247.
-    testString: assert.strictEqual(euler280(), 430.088247, '<code>euler280()</code> should return 430.088247.');
+    testString: assert.strictEqual(euler280(), 430.088247);
 
 ```
 
@@ -57,4 +58,5 @@ euler280();
 ```js
 // solution required
 ```
+
 </section>

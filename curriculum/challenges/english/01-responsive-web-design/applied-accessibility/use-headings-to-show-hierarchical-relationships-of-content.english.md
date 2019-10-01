@@ -3,6 +3,7 @@ id: 587d774d367417b2b2512a9e
 title: Use Headings to Show Hierarchical Relationships of Content
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cqVEktm'
+forumTopicId: 301026
 ---
 
 ## Description
@@ -17,7 +18,7 @@ One final point, each page should always have one (and only one) <code>h1</code>
 
 ## Instructions
 <section id='instructions'>
-Camper Cat wants a page on his site dedicated to becoming a ninja. Help him fix the headings so his markup gives semantic meaning to the content, and shows the proper parent-child relationships of his sections. Change all the <code>h5</code> tags to the proper heading level to indicate they are subsections of the <code>h2</code> ones.
+Camper Cat wants a page on his site dedicated to becoming a ninja. Help him fix the headings so his markup gives semantic meaning to the content, and shows the proper parent-child relationships of his sections. Change all the <code>h5</code> tags to the proper heading level to indicate they are subsections of the <code>h2</code> ones. Use <code>h3</code> tags for the purpose.
 </section>
 
 ## Tests
@@ -25,11 +26,14 @@ Camper Cat wants a page on his site dedicated to becoming a ninja. Help him fix 
 
 ```yml
 tests:
-  - text: Your code should have six <code>h3</code> tags.
-    testString: assert($('h3').length === 6, 'Your code should have six <code>h3</code> tags.');
+  - text: Your code should have 6 <code>h3</code> tags.
+    testString: assert($("h3").length === 6);
+  - text: Your code should have 6 <code>h3</code> closing tags.
+    testString: assert((code.match(/\/h3/g) || []).length===6);
   - text: Your code should not have any <code>h5</code> tags.
-    testString: assert($('h5').length === 0, 'Your code should not have any <code>h5</code> tags.');
-
+    testString: assert($("h5").length === 0);
+  - text: Your code should not have any <code>h5</code> closing tags.
+    testString: assert(/\/h5/.test(code)===false);
 ```
 
 </section>
@@ -65,7 +69,21 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<h1>How to Become a Ninja</h1>
+<main>
+  <h2>Learn the Art of Moving Stealthily</h2>
+  <h3>How to Hide in Plain Sight</h3>
+  <h3>How to Climb a Wall</h3>
+
+  <h2>Learn the Art of Battle</h2>
+  <h3>How to Strengthen your Body</h3>
+  <h3>How to Fight like a Ninja</h3>
+
+  <h2>Learn the Art of Living with Honor</h2>
+  <h3>How to Breathe Properly</h3>
+  <h3>How to Simplify your Life</h3>
+</main>
 ```
+
 </section>

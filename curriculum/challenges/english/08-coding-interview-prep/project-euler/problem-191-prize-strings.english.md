@@ -2,6 +2,7 @@
 id: 5900f42b1000cf542c50ff3e
 challengeType: 5
 title: 'Problem 191: Prize Strings'
+forumTopicId: 301829
 ---
 
 ## Description
@@ -32,7 +33,7 @@ How many "prize" strings exist over a 30-day period?
 ```yml
 tests:
   - text: <code>euler191()</code> should return 1918080160.
-    testString: assert.strictEqual(euler191(), 1918080160, '<code>euler191()</code> should return 1918080160.');
+    testString: assert.strictEqual(euler191(), 1918080160);
 
 ```
 
@@ -64,4 +65,5 @@ euler191();
 ```js
 // solution required
 ```
+
 </section>

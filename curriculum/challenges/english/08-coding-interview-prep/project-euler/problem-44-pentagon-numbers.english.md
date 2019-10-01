@@ -2,6 +2,7 @@
 id: 5900f3981000cf542c50feab
 challengeType: 5
 title: 'Problem 44: Pentagon numbers'
+forumTopicId: 302111
 ---
 
 ## Description
@@ -23,7 +24,7 @@ Find the pair of pentagonal numbers, P<sub>j</sub> and P<sub>k</sub>, for which 
 ```yml
 tests:
   - text: <code>pentagonNumbers()</code> should return 5482660.
-    testString: assert.strictEqual(pentagonNumbers(), 5482660, '<code>pentagonNumbers()</code> should return 5482660.');
+    testString: assert.strictEqual(pentagonNumbers(), 5482660);
 
 ```
 

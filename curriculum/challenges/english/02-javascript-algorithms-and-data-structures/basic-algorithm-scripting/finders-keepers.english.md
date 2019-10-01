@@ -3,6 +3,7 @@ id: a6e40f1041b06c996f7b2406
 title: Finders Keepers
 isRequired: true
 challengeType: 5
+forumTopicId: 16016
 ---
 
 ## Description
@@ -22,9 +23,9 @@ Remember to use <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-yo
 ```yml
 tests:
   - text: <code>findElement([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; })</code> should return 8.
-    testString: assert.strictEqual(findElement([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; }), 8, '<code>findElement([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; })</code> should return 8.');
+    testString: assert.strictEqual(findElement([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; }), 8);
   - text: <code>findElement([1, 3, 5, 9], function(num) { return num % 2 === 0; })</code> should return undefined.
-    testString: assert.strictEqual(findElement([1, 3, 5, 9], function(num) { return num % 2 === 0; }), undefined, '<code>findElement([1, 3, 5, 9], function(num) { return num % 2 === 0; })</code> should return undefined.');
+    testString: assert.strictEqual(findElement([1, 3, 5, 9], function(num) { return num % 2 === 0; }), undefined);
 
 ```
 
@@ -56,16 +57,7 @@ findElement([1, 2, 3, 4], num => num % 2 === 0);
 
 ```js
 function findElement(arr, func) {
-  let num;
-
-  arr.some(e => {
-    if (func(e)) {
-      num = e;
-      return true;
-    }
-  });
-
-  return num;
+  return arr.filter(func)[0];
 }
 
 findElement([1, 2, 3, 4], num => num % 2 === 0);

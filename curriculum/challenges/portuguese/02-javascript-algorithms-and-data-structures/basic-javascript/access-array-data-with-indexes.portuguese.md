@@ -2,7 +2,6 @@
 id: 56bbb991ad1ed5201cd392ca
 title: Access Array Data with Indexes
 challengeType: 1
-guideUrl: 'https://portuguese.freecodecamp.org/guide/certificates/access-array-data-with-indexes'
 videoUrl: ''
 localeTitle: Dados de Matriz de Acesso com Índices
 ---

@@ -2,6 +2,7 @@
 id: 5900f4141000cf542c50ff26
 challengeType: 5
 title: 'Problem 167: Investigating Ulam sequences'
+forumTopicId: 301801
 ---
 
 ## Description
@@ -25,7 +26,7 @@ Find ∑U(2,2n+1)k for 2 ≤ n ≤10, where k = 1011.
 ```yml
 tests:
   - text: <code>euler167()</code> should return 3916160068885.
-    testString: assert.strictEqual(euler167(), 3916160068885, '<code>euler167()</code> should return 3916160068885.');
+    testString: assert.strictEqual(euler167(), 3916160068885);
 
 ```
 
@@ -57,4 +58,5 @@ euler167();
 ```js
 // solution required
 ```
+
 </section>

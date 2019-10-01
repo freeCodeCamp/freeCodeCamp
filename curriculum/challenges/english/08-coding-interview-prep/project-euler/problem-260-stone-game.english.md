@@ -2,6 +2,7 @@
 id: 5900f4701000cf542c50ff83
 challengeType: 5
 title: 'Problem 260: Stone Game'
+forumTopicId: 301909
 ---
 
 ## Description
@@ -39,7 +40,7 @@ with xi ≤ yi ≤ zi ≤ 1000.
 ```yml
 tests:
   - text: <code>euler260()</code> should return 167542057.
-    testString: assert.strictEqual(euler260(), 167542057, '<code>euler260()</code> should return 167542057.');
+    testString: assert.strictEqual(euler260(), 167542057);
 
 ```
 
@@ -71,4 +72,5 @@ euler260();
 ```js
 // solution required
 ```
+
 </section>

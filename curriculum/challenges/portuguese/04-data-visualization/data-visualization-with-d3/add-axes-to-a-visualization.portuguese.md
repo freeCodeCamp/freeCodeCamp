@@ -1,8 +1,6 @@
 ---
 id: 587d7fad367417b2b2512bdf
 title: Add Axes to a Visualization
-required:
-  - src: 'https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js'
 challengeType: 6
 videoUrl: ''
 localeTitle: Adicionar eixos a uma visualização

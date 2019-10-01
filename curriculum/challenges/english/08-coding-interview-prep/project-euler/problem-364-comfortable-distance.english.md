@@ -2,6 +2,7 @@
 id: 5900f4d91000cf542c50ffea
 challengeType: 5
 title: 'Problem 364: Comfortable distance'
+forumTopicId: 302025
 ---
 
 ## Description
@@ -32,7 +33,7 @@ Find T(1 000 000) mod 100 000 007.
 ```yml
 tests:
   - text: <code>euler364()</code> should return 44855254.
-    testString: assert.strictEqual(euler364(), 44855254, '<code>euler364()</code> should return 44855254.');
+    testString: assert.strictEqual(euler364(), 44855254);
 
 ```
 
@@ -64,4 +65,5 @@ euler364();
 ```js
 // solution required
 ```
+
 </section>

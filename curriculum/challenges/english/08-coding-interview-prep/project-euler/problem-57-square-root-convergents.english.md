@@ -2,6 +2,7 @@
 id: 5900f3a51000cf542c50feb8
 challengeType: 5
 title: 'Problem 57: Square root convergents'
+forumTopicId: 302168
 ---
 
 ## Description
@@ -28,7 +29,7 @@ In the first one-thousand expansions, how many fractions contain a numerator wit
 ```yml
 tests:
   - text: <code>euler57()</code> should return 153.
-    testString: assert.strictEqual(euler57(), 153, '<code>euler57()</code> should return 153.');
+    testString: assert.strictEqual(euler57(), 153);
 
 ```
 
@@ -60,4 +61,5 @@ euler57();
 ```js
 // solution required
 ```
+
 </section>

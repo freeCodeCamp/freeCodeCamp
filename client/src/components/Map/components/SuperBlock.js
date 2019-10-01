@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -8,15 +8,16 @@ import { uniq, find } from 'lodash';
 import Block from './Block';
 
 import { makeExpandedSuperBlockSelector, toggleSuperBlock } from '../redux';
-import Caret from '../../icons/Caret';
+import Caret from '../../../assets/icons/Caret';
 import { ChallengeNode } from '../../../redux/propTypes';
 
 const mapStateToProps = (state, ownProps) => {
   const expandedSelector = makeExpandedSuperBlockSelector(ownProps.superBlock);
 
-  return createSelector(expandedSelector, isExpanded => ({ isExpanded }))(
-    state
-  );
+  return createSelector(
+    expandedSelector,
+    isExpanded => ({ isExpanded })
+  )(state);
 };
 
 function mapDispatchToProps(dispatch) {
@@ -49,10 +50,10 @@ const codingPrepRE = new RegExp('Interview Prep');
 function createSuperBlockTitle(str) {
   return codingPrepRE.test(str)
     ? `${str} (Thousands of hours of challenges)`
-    : `${str} Certification (300 hours)`;
+    : `${str} Certification (300\xa0hours)`;
 }
 
-export class SuperBlock extends PureComponent {
+export class SuperBlock extends Component {
   renderBlock(superBlock) {
     const { nodes, introNodes } = this.props;
     const blocksForSuperBlock = nodes.filter(
@@ -88,10 +89,14 @@ export class SuperBlock extends PureComponent {
     const { superBlock, isExpanded, toggleSuperBlock } = this.props;
     return (
       <li className={`superblock ${isExpanded ? 'open' : ''}`}>
-        <div className='map-title' onClick={() => toggleSuperBlock(superBlock)}>
+        <button
+          aria-expanded={isExpanded}
+          className='map-title'
+          onClick={() => toggleSuperBlock(superBlock)}
+        >
           <Caret />
           <h4>{createSuperBlockTitle(superBlock)}</h4>
-        </div>
+        </button>
         {isExpanded ? this.renderBlock(superBlock) : null}
       </li>
     );

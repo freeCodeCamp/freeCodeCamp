@@ -2,6 +2,7 @@
 id: 5900f4be1000cf542c50ffd0
 challengeType: 5
 title: 'Problem 337: Totient Stairstep Sequences'
+forumTopicId: 301995
 ---
 
 ## Description
@@ -29,7 +30,7 @@ Find S(20 000 000) mod 108.
 ```yml
 tests:
   - text: <code>euler337()</code> should return 85068035.
-    testString: assert.strictEqual(euler337(), 85068035, '<code>euler337()</code> should return 85068035.');
+    testString: assert.strictEqual(euler337(), 85068035);
 
 ```
 
@@ -61,4 +62,5 @@ euler337();
 ```js
 // solution required
 ```
+
 </section>

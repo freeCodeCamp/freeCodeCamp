@@ -38053,7 +38053,7 @@
       "    [6, 7, 10, 7, 6]]</pre>",
       "<p>See, also:</p><a href=\"https://youtu.be/ftcIcn8AmSY?t=536\" title=\"link: https://youtu.be/ftcIcn8AmSY?t=536\">Four Solutions to a Trivial Problem</a> – a Google Tech Talk by Guy Steele",
       "<a href=\"http://stackoverflow.com/questions/24414700/amazon-water-collected-between-towers/\" title=\"link: http://stackoverflow.com/questions/24414700/amazon-water-collected-between-towers/\">Water collected between towers</a> on Stack Overflow, from which the example above is taken)",
-      "<a href=\"https://gist.github.com/paf31/9d84ecf6a6a9b69cdb597a390f25764d\" title=\"link: https://gist.github.com/paf31/9d84ecf6a6a9b69cdb597a390f25764d\">An interesting Haskell solution</a>, using the Tardis monad, by <a href=\"https://gist.github.com/paf31\" title=\"link: https://gist.github.com/paf31\">Phil Freeman</a> in a <a href=\"https://gist.github.com/paf31/9d84ecf6a6a9b69cdb597a390f25764d\" title=\"link: https://gist.github.com/paf31/9d84ecf6a6a9b69cdb597a390f25764d\">Github gist</a>."
+      "<a href=\"https://gist.github.com/paf31/9d84ecf6a6a9b69cdb597a390f25764d\" title=\"link: https://gist.github.com/paf31/9d84ecf6a6a9b69cdb597a390f25764d\">An interesting Haskell solution</a>, using the Tardis monad, by <a href=\"https://gist.github.com/paf31\" title=\"link: https://gist.github.com/paf31\">Phil Freeman</a> in a <a href=\"https://gist.github.com/paf31/9d84ecf6a6a9b69cdb597a390f25764d\" title=\"link: https://gist.github.com/paf31/9d84ecf6a6a9b69cdb597a390f25764d\">GitHub gist</a>."
     ],
     "challengeSeed": [
       "function replaceMe (foo) {",

@@ -2,6 +2,7 @@
 id: 5900f38a1000cf542c50fe9d
 challengeType: 5
 title: 'Problem 30: Digit n powers'
+forumTopicId: 301953
 ---
 
 ## Description
@@ -26,13 +27,13 @@ Find the sum of all the numbers that can be written as the sum of n powers of th
 ```yml
 tests:
   - text: <code>digitnPowers(2)</code> should return 0.
-    testString: assert(digitnPowers(2) == 0, '<code>digitnPowers(2)</code> should return 0.');
+    testString: assert(digitnPowers(2) == 0);
   - text: <code>digitnPowers(3)</code> should return 1301.
-    testString: assert(digitnPowers(3) == 1301, '<code>digitnPowers(3)</code> should return 1301.');
+    testString: assert(digitnPowers(3) == 1301);
   - text: <code>digitnPowers(4)</code> should return 19316.
-    testString: assert(digitnPowers(4) == 19316, '<code>digitnPowers(4)</code> should return 19316.');
+    testString: assert(digitnPowers(4) == 19316);
   - text: <code>digitnPowers(5)</code> should return 443839.
-    testString: assert(digitnPowers(5) == 443839, '<code>digitnPowers(5)</code> should return 443839.');
+    testString: assert(digitnPowers(5) == 443839);
 
 ```
 
@@ -64,4 +65,5 @@ digitnPowers(5);
 ```js
 // solution required
 ```
+
 </section>

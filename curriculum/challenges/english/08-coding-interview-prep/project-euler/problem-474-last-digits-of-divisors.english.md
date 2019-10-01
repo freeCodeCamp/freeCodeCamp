@@ -2,6 +2,7 @@
 id: 5900f5471000cf542c510059
 challengeType: 5
 title: 'Problem 474: Last digits of divisors'
+forumTopicId: 302151
 ---
 
 ## Description
@@ -27,7 +28,7 @@ Find F(106!, 65432) modulo (1016 + 61).
 ```yml
 tests:
   - text: <code>euler474()</code> should return 9690646731515010.
-    testString: assert.strictEqual(euler474(), 9690646731515010, '<code>euler474()</code> should return 9690646731515010.');
+    testString: assert.strictEqual(euler474(), 9690646731515010);
 
 ```
 
@@ -59,4 +60,5 @@ euler474();
 ```js
 // solution required
 ```
+
 </section>

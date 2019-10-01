@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -12,12 +12,11 @@ import {
   Checkbox
 } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
-
-import Layout from '../components/layouts/Default';
-import { ButtonSpacer, Spacer } from '../components/helpers';
-import { acceptTerms, userSelector } from '../redux';
 import { createSelector } from 'reselect';
-import { navigate } from 'gatsby';
+
+import { ButtonSpacer, Spacer, Link } from '../components/helpers';
+import { acceptTerms, userSelector } from '../redux';
+import createRedirect from '../components/createRedirect';
 
 const propTypes = {
   acceptTerms: PropTypes.func.isRequired,
@@ -33,6 +32,7 @@ const mapStateToProps = createSelector(
 );
 const mapDispatchToProps = dispatch =>
   bindActionCreators({ acceptTerms }, dispatch);
+const RedirectHome = createRedirect('/');
 
 class AcceptPrivacyTerms extends Component {
   constructor(props) {
@@ -66,12 +66,11 @@ class AcceptPrivacyTerms extends Component {
   render() {
     const { acceptedPrivacyTerms } = this.props;
     if (acceptedPrivacyTerms) {
-      navigate('/welcome');
-      return null;
+      return <RedirectHome />;
     }
     const { privacyPolicy, termsOfService, quincyEmail } = this.state;
     return (
-      <Layout>
+      <Fragment>
         <Helmet>
           <title>Privacy Policy and Terms of Service | freeCodeCamp.org</title>
         </Helmet>
@@ -79,8 +78,7 @@ class AcceptPrivacyTerms extends Component {
           <Row>
             <Col xs={12}>
               <div className='text-center'>
-                <Spacer />
-                <Spacer />
+                <Spacer size={2} />
                 <h3>
                   Please review our updated privacy policy and the terms of
                   service.
@@ -102,15 +100,11 @@ class AcceptPrivacyTerms extends Component {
                     id='terms-of-service'
                     inline={true}
                     onChange={this.createHandleChange('termsOfService')}
-                    >
+                  >
                     I accept the{' '}
-                    <a
-                      href='https://www.freecodecamp/terms'
-                      rel='noopener noreferrer'
-                      target='_blank'
-                      >
+                    <Link external={true} to='/news/terms-of-service'>
                       terms of service
-                    </a>{' '}
+                    </Link>{' '}
                     (required)
                   </Checkbox>
                 </FormGroup>
@@ -124,15 +118,11 @@ class AcceptPrivacyTerms extends Component {
                     id='privacy-policy'
                     inline={true}
                     onChange={this.createHandleChange('privacyPolicy')}
-                    >
+                  >
                     I accept the{' '}
-                    <a
-                      href='https://www.freecodecamp/privacy'
-                      rel='noopener noreferrer'
-                      target='_blank'
-                      >
+                    <Link external={true} to='/news/privacy-policy'>
                       privacy policy
-                    </a>{' '}
+                    </Link>{' '}
                     (required)
                   </Checkbox>
                 </FormGroup>
@@ -146,7 +136,7 @@ class AcceptPrivacyTerms extends Component {
                     id='quincy-email'
                     inline={true}
                     onChange={this.createHandleChange('quincyEmail')}
-                    >
+                  >
                     I want weekly emails from Quincy, freeCodeCamp.org's
                     founder.
                   </Checkbox>
@@ -158,14 +148,14 @@ class AcceptPrivacyTerms extends Component {
                   className='big-cta-btn'
                   disabled={!privacyPolicy || !termsOfService}
                   type='submit'
-                  >
+                >
                   Continue to freeCodeCamp
                 </Button>
               </form>
             </Col>
           </Row>
         </Grid>
-      </Layout>
+      </Fragment>
     );
   }
 }

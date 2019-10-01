@@ -2,6 +2,7 @@
 id: 5900f3a91000cf542c50febc
 challengeType: 5
 title: 'Problem 61: Cyclical figurate numbers'
+forumTopicId: 302173
 ---
 
 ## Description
@@ -55,7 +56,7 @@ Find the sum of the only ordered set of six cyclic 4-digit numbers for which eac
 ```yml
 tests:
   - text: <code>euler61()</code> should return 28684.
-    testString: assert.strictEqual(euler61(), 28684, '<code>euler61()</code> should return 28684.');
+    testString: assert.strictEqual(euler61(), 28684);
 
 ```
 
@@ -87,4 +88,5 @@ euler61();
 ```js
 // solution required
 ```
+
 </section>

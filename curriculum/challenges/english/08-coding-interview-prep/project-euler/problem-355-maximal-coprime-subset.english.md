@@ -2,6 +2,7 @@
 id: 5900f4d01000cf542c50ffe2
 challengeType: 5
 title: 'Problem 355: Maximal coprime subset'
+forumTopicId: 302015
 ---
 
 ## Description
@@ -27,7 +28,7 @@ Find Co(200000).
 ```yml
 tests:
   - text: <code>euler355()</code> should return 1726545007.
-    testString: assert.strictEqual(euler355(), 1726545007, '<code>euler355()</code> should return 1726545007.');
+    testString: assert.strictEqual(euler355(), 1726545007);
 
 ```
 
@@ -59,4 +60,5 @@ euler355();
 ```js
 // solution required
 ```
+
 </section>

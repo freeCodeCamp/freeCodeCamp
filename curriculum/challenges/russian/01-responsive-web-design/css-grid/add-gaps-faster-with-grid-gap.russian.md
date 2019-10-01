@@ -2,23 +2,28 @@
 id: 5a9036ee38fddaf9a66b5d37
 title: Add Gaps Faster with grid-gap
 challengeType: 0
-videoUrl: ''
-localeTitle: Добавить пробелы быстрее с разрывом сетки
+videoUrl: https://scrimba.com/p/pByETK/ca2qVtv
+forumTopicId: 301118
+localeTitle: Добавление промежутков быстрее с grid-gap
 ---
 
 ## Description
-<section id="description"> <code>grid-gap</code> - это сокращенное свойство для <code>grid-row-gap</code> <code>grid-column-gap</code> и <code>grid-row-gap</code> <code>grid-column-gap</code> из двух предыдущих задач, которые более удобны в использовании. Если <code>grid-gap</code> имеет одно значение, это создаст разрыв между всеми строками и столбцами. Однако, если есть два значения, он будет использовать первый, чтобы установить разрыв между строками и вторым значением для столбцов. </section>
+<section id='description'>
+<code>grid-gap</code> - это сокращенное свойство для <code>grid-row-gap</code> и <code>grid-column-gap</code> из двух предыдущих упражнений, которое более удобно в использовании. Если <code>grid-gap</code> имеет одно значение, это создаст разрыв между всеми строками и столбцами. Однако, если есть два значения, он будет использовать первое, чтобы установить разрыв между строками, и второе значение - между столбцами.
+</section>
 
 ## Instructions
-<section id="instructions"> Используйте <code>grid-gap</code> чтобы ввести <code>10px</code> зазор между строками и <code>20px</code> разрыв между столбцами. </section>
+<section id='instructions'>
+Используйте <code>grid-gap</code> чтобы задать <code>10px</code> промежуток между строками и <code>20px</code> промежуток между столбцами.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: класс <code>container</code> должен иметь свойство <code>grid-gap</code> которое вводит разрыв <code>10px</code> между строками и <code>20px</code> разрыв между столбцами.
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-gap\s*?:\s*?10px\s+?20px\s*?;[\s\S]*}/gi), "<code>container</code> class should have a <code>grid-gap</code> property that introduces <code>10px</code> gap between the rows and <code>20px</code> gap between the columns.");'
+  - text: <code>container</code> class should have a <code>grid-gap</code> property that introduces <code>10px</code> gap between the rows and <code>20px</code> gap between the columns.
+    testString: assert(code.match(/.container\s*?{[\s\S]*grid-gap\s*?:\s*?10px\s+?20px\s*?;[\s\S]*}/gi));
 
 ```
 
@@ -63,14 +68,13 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+var code = ".container {grid-gap: 10px 20px;}"
 ```
+
 </section>

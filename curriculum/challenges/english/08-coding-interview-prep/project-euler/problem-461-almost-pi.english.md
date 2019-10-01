@@ -2,6 +2,7 @@
 id: 5900f53a1000cf542c51004c
 challengeType: 5
 title: 'Problem 461: Almost Pi'
+forumTopicId: 302136
 ---
 
 ## Description
@@ -26,7 +27,7 @@ Find g(10000).
 ```yml
 tests:
   - text: <code>euler461()</code> should return 159820276.
-    testString: assert.strictEqual(euler461(), 159820276, '<code>euler461()</code> should return 159820276.');
+    testString: assert.strictEqual(euler461(), 159820276);
 
 ```
 
@@ -58,4 +59,5 @@ euler461();
 ```js
 // solution required
 ```
+
 </section>

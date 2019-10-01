@@ -2,6 +2,7 @@
 id: 5900f5221000cf542c510033
 challengeType: 5
 title: 'Problem 436: Unfair wager'
+forumTopicId: 302107
 ---
 
 ## Description
@@ -34,7 +35,7 @@ Give your answer rounded to 10 places behind the decimal point in the form 0.abc
 ```yml
 tests:
   - text: <code>euler436()</code> should return 0.5276662759.
-    testString: assert.strictEqual(euler436(), 0.5276662759, '<code>euler436()</code> should return 0.5276662759.');
+    testString: assert.strictEqual(euler436(), 0.5276662759);
 
 ```
 
@@ -66,4 +67,5 @@ euler436();
 ```js
 // solution required
 ```
+
 </section>

@@ -2,6 +2,7 @@
 id: 5900f3aa1000cf542c50febd
 challengeType: 5
 title: 'Problem 62: Cubic permutations'
+forumTopicId: 302174
 ---
 
 ## Description
@@ -21,7 +22,7 @@ Find the smallest cube for which exactly five permutations of its digits are cub
 ```yml
 tests:
   - text: <code>euler62()</code> should return 127035954683.
-    testString: assert.strictEqual(euler62(), 127035954683, '<code>euler62()</code> should return 127035954683.');
+    testString: assert.strictEqual(euler62(), 127035954683);
 
 ```
 
@@ -53,4 +54,5 @@ euler62();
 ```js
 // solution required
 ```
+
 </section>

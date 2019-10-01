@@ -2,6 +2,7 @@
 id: 5900f37a1000cf542c50fe8c
 challengeType: 5
 title: 'Problem 13: Large sum'
+forumTopicId: 301757
 ---
 
 ## Description
@@ -121,9 +122,9 @@ Work out the first ten digits of the sum of the following one-hundred 50-digit n
 ```yml
 tests:
   - text: <code>largeSum(testNums)</code> should return 8348422521.
-    testString: assert.strictEqual(largeSum(testNums), 8348422521, '<code>largeSum(testNums)</code> should return 8348422521.');
+    testString: assert.strictEqual(largeSum(testNums), 8348422521);
   - text: <code>largeSum(fiftyDigitNums)</code> should return 5537376230.
-    testString: assert.strictEqual(largeSum(fiftyDigitNums), 5537376230, '<code>largeSum(fiftyDigitNums)</code> should return 5537376230.');
+    testString: assert.strictEqual(largeSum(fiftyDigitNums), 5537376230);
 
 ```
 

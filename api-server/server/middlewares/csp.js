@@ -12,7 +12,7 @@ let trusted = [
 const host = process.env.HOST || 'localhost';
 const port = process.env.SYNC_PORT || '3000';
 
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.FREECODECAMP_NODE_ENV !== 'production') {
   trusted = trusted.concat([`ws://${host}:${port}`, 'http://localhost:8000']);
 }
 

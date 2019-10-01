@@ -2,6 +2,7 @@
 id: 5900f3c51000cf542c50fed8
 challengeType: 5
 title: 'Problem 87: Prime power triples'
+forumTopicId: 302201
 ---
 
 ## Description
@@ -25,7 +26,7 @@ How many numbers below fifty million can be expressed as the sum of a prime squa
 ```yml
 tests:
   - text: <code>euler87()</code> should return 1097343.
-    testString: assert.strictEqual(euler87(), 1097343, '<code>euler87()</code> should return 1097343.');
+    testString: assert.strictEqual(euler87(), 1097343);
 
 ```
 
@@ -57,4 +58,5 @@ euler87();
 ```js
 // solution required
 ```
+
 </section>

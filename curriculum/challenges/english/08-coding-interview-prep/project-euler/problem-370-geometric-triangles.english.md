@@ -2,6 +2,7 @@
 id: 5900f4de1000cf542c50fff1
 challengeType: 5
 title: 'Problem 370: Geometric triangles'
+forumTopicId: 302032
 ---
 
 ## Description
@@ -26,7 +27,7 @@ How many geometric triangles exist with perimeter ≤ 2.5·1013 ?
 ```yml
 tests:
   - text: <code>euler370()</code> should return 41791929448408.
-    testString: assert.strictEqual(euler370(), 41791929448408, '<code>euler370()</code> should return 41791929448408.');
+    testString: assert.strictEqual(euler370(), 41791929448408);
 
 ```
 
@@ -58,4 +59,5 @@ euler370();
 ```js
 // solution required
 ```
+
 </section>

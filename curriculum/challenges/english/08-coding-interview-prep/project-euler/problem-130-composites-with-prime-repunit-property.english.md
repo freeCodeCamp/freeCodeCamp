@@ -2,6 +2,7 @@
 id: 5900f3ee1000cf542c50ff00
 challengeType: 5
 title: 'Problem 130: Composites with prime repunit property'
+forumTopicId: 301758
 ---
 
 ## Description
@@ -24,7 +25,7 @@ Find the sum of the first twenty-five composite values of n for whichGCD(n, 10) 
 ```yml
 tests:
   - text: <code>euler130()</code> should return 149253.
-    testString: assert.strictEqual(euler130(), 149253, '<code>euler130()</code> should return 149253.');
+    testString: assert.strictEqual(euler130(), 149253);
 
 ```
 
@@ -56,4 +57,5 @@ euler130();
 ```js
 // solution required
 ```
+
 </section>

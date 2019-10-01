@@ -2,6 +2,7 @@
 id: 5900f4911000cf542c50ffa3
 challengeType: 5
 title: 'Problem 292: Pythagorean Polygons'
+forumTopicId: 301944
 ---
 
 ## Description
@@ -27,7 +28,7 @@ Find P(120).
 ```yml
 tests:
   - text: <code>euler292()</code> should return 3600060866.
-    testString: assert.strictEqual(euler292(), 3600060866, '<code>euler292()</code> should return 3600060866.');
+    testString: assert.strictEqual(euler292(), 3600060866);
 
 ```
 
@@ -59,4 +60,5 @@ euler292();
 ```js
 // solution required
 ```
+
 </section>

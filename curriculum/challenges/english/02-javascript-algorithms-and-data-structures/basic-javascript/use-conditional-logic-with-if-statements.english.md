@@ -2,6 +2,8 @@
 id: cf1111c1c12feddfaeb3bdef
 title: Use Conditional Logic with If Statements
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/cy87mf3'
+forumTopicId: 18348
 ---
 
 ## Description
@@ -11,7 +13,18 @@ When the condition evaluates to <code>true</code>, the program executes the stat
 <strong>Pseudocode</strong>
 <blockquote>if (<i>condition is true</i>) {<br>&nbsp;&nbsp;<i>statement is executed</i><br>}</blockquote>
 <strong>Example</strong>
-<blockquote>function test (myCondition) {<br>&nbsp;&nbsp;if (myCondition) {<br>&nbsp;&nbsp;&nbsp;&nbsp; return "It was true";<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;return "It was false";<br>}<br>test(true);  // returns "It was true"<br>test(false); // returns "It was false"</blockquote>
+
+```js
+function test (myCondition) {
+  if (myCondition) {
+     return "It was true";
+  }
+  return "It was false";
+}
+test(true);  // returns "It was true"
+test(false); // returns "It was false"
+```
+
 When <code>test</code> is called with a value of <code>true</code>, the <code>if</code> statement evaluates <code>myCondition</code> to see if it is <code>true</code> or not. Since it is <code>true</code>, the function returns <code>"It was true"</code>. When we call <code>test</code> with a value of <code>false</code>, <code>myCondition</code> is <em>not</em> <code>true</code> and the statement in the curly braces is not executed and the function returns <code>"It was false"</code>.
 </section>
 
@@ -26,15 +39,15 @@ Create an <code>if</code> statement inside the function to return <code>"Yes, th
 ```yml
 tests:
   - text: <code>trueOrFalse</code> should be a function
-    testString: assert(typeof trueOrFalse === "function", '<code>trueOrFalse</code> should be a function');
+    testString: assert(typeof trueOrFalse === "function");
   - text: <code>trueOrFalse(true)</code> should return a string
-    testString: assert(typeof trueOrFalse(true) === "string", '<code>trueOrFalse(true)</code> should return a string');
+    testString: assert(typeof trueOrFalse(true) === "string");
   - text: <code>trueOrFalse(false)</code> should return a string
-    testString: assert(typeof trueOrFalse(false) === "string", '<code>trueOrFalse(false)</code> should return a string');
+    testString: assert(typeof trueOrFalse(false) === "string");
   - text: <code>trueOrFalse(true)</code> should return "Yes, that was true"
-    testString: assert(trueOrFalse(true) === "Yes, that was true", '<code>trueOrFalse(true)</code> should return "Yes, that was true"');
+    testString: assert(trueOrFalse(true) === "Yes, that was true");
   - text: <code>trueOrFalse(false)</code> should return "No, that was false"
-    testString: assert(trueOrFalse(false) === "No, that was false", '<code>trueOrFalse(false)</code> should return "No, that was false"');
+    testString: assert(trueOrFalse(false) === "No, that was false");
 
 ```
 

@@ -3,19 +3,27 @@ id: 5a9036d038fddaf9a66b5d32
 title: Add Columns with grid-template-columns
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/c7NzDHv'
+forumTopicId: 301117
 ---
 
 ## Description
 <section id='description'>
 Simply creating a grid element doesn't get you very far. You need to define the structure of the grid as well. To add some columns to the grid, use the <code>grid-template-columns</code> property on a grid container as demonstrated below:
-<blockquote>.container {<br>&nbsp;&nbsp;display: grid;<br>&nbsp;&nbsp;grid-template-columns: 50px 50px;<br>}</blockquote>
-This will give your grid two columns that are 50px wide each.
+
+```css
+.container {
+  display: grid;
+  grid-template-columns: 50px 50px;
+}
+```
+
+This will give your grid two columns that are each 50px wide.
 The number of parameters given to the <code>grid-template-columns</code> property indicates the number of columns in the grid, and the value of each parameter indicates the width of each column.
 </section>
 
 ## Instructions
 <section id='instructions'>
-Give the grid container three columns that are <code>100px</code> wide each.
+Give the grid container three columns that are each <code>100px</code> wide.
 </section>
 
 ## Tests
@@ -24,7 +32,7 @@ Give the grid container three columns that are <code>100px</code> wide each.
 ```yml
 tests:
   - text: <code>container</code> class should have a <code>grid-template-columns</code> property with three units of <code>100px</code>.
-    testString: assert(code.match(/.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?100px\s*?100px\s*?100px\s*?;[\s\S]*}/gi), '<code>container</code> class should have a <code>grid-template-columns</code> property with three units of <code>100px</code>.');
+    testString: assert(code.match(/.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?100px\s*?100px\s*?100px\s*?;[\s\S]*}/gi));
 
 ```
 

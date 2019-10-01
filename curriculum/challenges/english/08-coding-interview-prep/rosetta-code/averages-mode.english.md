@@ -1,12 +1,15 @@
 ---
-title: Averages-Mode
+title: Averages/Mode
 id: 594d8d0ab97724821379b1e6
 challengeType: 5
+forumTopicId: 302226
 ---
 
 ## Description
 <section id='description'>
-<p>Write a program to find the <a href="https://en.wikipedia.org/wiki/Mode (statistics)" title="wp: Mode (statistics)">mode</a> value of a collection.</p><p>The case where the collection is empty may be ignored. Care must be taken to handle the case where the mode is non-unique.</p><p>If it is not appropriate or possible to support a general collection, use a vector (array), if possible. If it is not appropriate or possible to support an unspecified value type, use integers.</p>
+Write a program to find the <a href='https://en.wikipedia.org/wiki/Mode (statistics)' title='wp: Mode (statistics)' target='_blank'>mode</a> value of a collection.
+The case where the collection is empty may be ignored. Care must be taken to handle the case where the mode is non-unique.
+If it is not appropriate or possible to support a general collection, use a vector (array), if possible. If it is not appropriate or possible to support an unspecified value type, use integers.
 </section>
 
 ## Instructions
@@ -20,11 +23,11 @@ challengeType: 5
 ```yml
 tests:
   - text: <code>mode</code> is a function.
-    testString: assert(typeof mode === 'function', '<code>mode</code> is a function.');
+    testString: assert(typeof mode === 'function');
   - text: <code>mode([1, 3, 6, 6, 6, 6, 7, 7, 12, 12, 17])</code> should equal <code>[6]</code>
-    testString: assert.deepEqual(mode(arr1), [6], '<code>mode([1, 3, 6, 6, 6, 6, 7, 7, 12, 12, 17])</code> should equal <code>[6]</code>');
+    testString: assert.deepEqual(mode(arr1), [6]);
   - text: <code>mode([1, 2, 4, 4, 1])</code> should equal <code>[1, 4]</code>.
-    testString: assert.deepEqual(mode(arr2).sort(), [1, 4], '<code>mode([1, 2, 4, 4, 1])</code> should equal <code>[1, 4]</code>.');
+    testString: assert.deepEqual(mode(arr2).sort(), [1, 4]);
 
 ```
 
@@ -36,7 +39,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function mode (arr) {
+function mode(arr) {
   // Good luck!
   return true;
 }

@@ -2,23 +2,27 @@
 id: 587d7fae367417b2b2512be7
 title: Pre-filter JSON to Get the Data You Need
 challengeType: 6
-videoUrl: ''
+forumTopicId: 18257
 localeTitle: Предварительный фильтр JSON для получения необходимых данных
 ---
 
 ## Description
-<section id="description"> Если вы не хотите отображать каждую фотографию кота, которую вы получаете из FreeCodeCamp Cat Photo API, вы можете предварительно фильтровать JSON перед ее прокруткой. Учитывая , что данные JSON хранится в массиве, вы можете использовать <code>filter</code> метод , чтобы отфильтровать кошку, ключ «Идентификатор» имеет значение 1. Вот код , чтобы сделать это: <blockquote> json = json.filter (функция (val) { <br> return (val.id! == 1); <br> }); </blockquote></section>
+<section id='description'>
+Если вы не хотите отображать каждую фотографию кота, которую вы получаете из FreeCodeCamp Cat Photo API, вы можете предварительно фильтровать JSON перед ее прокруткой. Учитывая , что данные JSON хранится в массиве, вы можете использовать <code>filter</code> метод , чтобы отфильтровать кошку, ключ «Идентификатор» имеет значение 1. Вот код , чтобы сделать это: <blockquote> json = json.filter (функция (val) { <br> return (val.id! == 1); <br> }); </blockquote>
+</section>
 
 ## Instructions
-<section id="instructions"> Добавьте код, чтобы <code>filter</code> данные json, чтобы удалить кошку с «id» значением 1. </section>
+<section id='instructions'>
+Добавьте код, чтобы <code>filter</code> данные json, чтобы удалить кошку с «id» значением 1.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: Ваш код должен использовать метод <code>filter</code> .
-    testString: 'assert(code.match(/json\.filter/g), "Your code should use the <code>filter</code> method.");'
+  - text: Your code should use the <code>filter</code> method.
+    testString: assert(code.match(/json\.filter/g));
 
 ```
 
@@ -82,7 +86,7 @@ tests:
   }
 </style>
 <h1>Cat Photo Finder</h1>
-<p class="message box">
+<p class="message">
   The message will go here
 </p>
 <p>
@@ -95,14 +99,13 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>

@@ -2,6 +2,7 @@
 id: 5900f48d1000cf542c50ffa0
 challengeType: 5
 title: 'Problem 289: Eulerian Cycles'
+forumTopicId: 301940
 ---
 
 ## Description
@@ -34,7 +35,7 @@ Find L(6,10) mod 1010.
 ```yml
 tests:
   - text: <code>euler289()</code> should return 6567944538.
-    testString: assert.strictEqual(euler289(), 6567944538, '<code>euler289()</code> should return 6567944538.');
+    testString: assert.strictEqual(euler289(), 6567944538);
 
 ```
 
@@ -66,4 +67,5 @@ euler289();
 ```js
 // solution required
 ```
+
 </section>

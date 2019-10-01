@@ -2,6 +2,8 @@
 id: 56533eb9ac21ba0edf2244ae
 title: Finding a Remainder in JavaScript
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/cWP24Ub'
+forumTopicId: 18184
 ---
 
 ## Description
@@ -25,11 +27,11 @@ Set <code>remainder</code> equal to the remainder of <code>11</code> divided by 
 ```yml
 tests:
   - text: The variable <code>remainder</code> should be initialized
-    testString: assert(/var\s+?remainder/.test(code), 'The variable <code>remainder</code> should be initialized');
+    testString: assert(/var\s+?remainder/.test(code));
   - text: The value of <code>remainder</code> should be <code>2</code>
-    testString: assert(remainder === 2, 'The value of <code>remainder</code> should be <code>2</code>');
+    testString: assert(remainder === 2);
   - text: You should use the <code>%</code> operator
-    testString: assert(/\s+?remainder\s*?=\s*?.*%.*;/.test(code), 'You should use the <code>%</code> operator');
+    testString: assert(/\s+?remainder\s*?=\s*?.*%.*;/.test(code));
 
 ```
 

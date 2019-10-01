@@ -2,6 +2,7 @@
 id: 5900f4ae1000cf542c50ffc0
 challengeType: 5
 title: 'Problem 321: Swapping Counters'
+forumTopicId: 301978
 ---
 
 ## Description
@@ -34,7 +35,7 @@ Find the sum of the first forty terms of this sequence.
 ```yml
 tests:
   - text: <code>euler321()</code> should return 2470433131948040.
-    testString: assert.strictEqual(euler321(), 2470433131948040, '<code>euler321()</code> should return 2470433131948040.');
+    testString: assert.strictEqual(euler321(), 2470433131948040);
 
 ```
 
@@ -66,4 +67,5 @@ euler321();
 ```js
 // solution required
 ```
+
 </section>
