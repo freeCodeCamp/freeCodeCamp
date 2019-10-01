@@ -16,6 +16,11 @@ The property of balance is important for trees because it is what determines the
 <section id='instructions'>
 Write two methods for our binary tree: <code>findMinHeight</code> and <code>findMaxHeight</code>. These methods should return an integer value for the minimum and maximum height within a given binary tree, respectively. If the node is empty let's assign it a height of <code>-1</code> (that's the base case). Finally, add a third method <code>isBalanced</code> which returns <code>true</code> or <code>false</code> depending on whether the tree is balanced or not. You can use the first two methods you just wrote to determine this.
 </section>
+## Hint
+<section id='hint'>
+  It is easy to get Maximum height but in Min. height take into consideration with only one node either left or right.Try to do it in O(logn) time complexity and O(1) space complexity.
+  </section>
+  
 
 ## Tests
 <section id='tests'>
