@@ -21,6 +21,9 @@ const baseProps = {
   resetExpansion: () => {}
 };
 
+// set .scrollTo to avoid errors in default test environment
+window.scrollTo = jest.fn();
+
 test('<Map /> snapshot', () => {
   const componentToRender = (
     <Map

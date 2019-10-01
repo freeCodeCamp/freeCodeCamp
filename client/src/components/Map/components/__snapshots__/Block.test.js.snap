@@ -71,6 +71,7 @@ exports[`<Block expanded snapshot: block-expanded 1`] = `
   <ul>
     <li
       className="map-challenge-title"
+      id="introduction-to-block-a"
     >
       <span
         className="badge map-badge"
@@ -94,6 +95,7 @@ exports[`<Block expanded snapshot: block-expanded 1`] = `
     </li>
     <li
       className="map-challenge-title map-challenge-title-completed"
+      id="challenge-one"
     >
       <span
         className="badge map-badge"
@@ -117,6 +119,7 @@ exports[`<Block expanded snapshot: block-expanded 1`] = `
     </li>
     <li
       className="map-challenge-title"
+      id="challenge-two"
     >
       <span
         className="badge map-badge"
@@ -140,6 +143,7 @@ exports[`<Block expanded snapshot: block-expanded 1`] = `
     </li>
     <li
       className="map-challenge-title"
+      id="challenge-one"
     >
       <span
         className="badge map-badge"
@@ -163,6 +167,7 @@ exports[`<Block expanded snapshot: block-expanded 1`] = `
     </li>
     <li
       className="map-challenge-title map-challenge-title-completed"
+      id="challenge-two"
     >
       <span
         className="badge map-badge"
