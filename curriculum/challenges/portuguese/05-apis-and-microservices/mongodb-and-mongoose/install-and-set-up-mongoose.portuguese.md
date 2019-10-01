@@ -7,7 +7,7 @@ challengeType: 2
 
 ## Description
 <section id='description'> 
-Adicione mongodb e mangusto ao package.json do projeto. Então exija mangusto. Armazene seu URI do banco de dados mLab no arquivo .env privado como MONGO_URI. Conecte-se ao banco de dados usando mongoose.connect ( <Your URI> ) 
+Adicione MongoDB e mangusto ao package.json do projeto. Então exija mangusto. Armazene seu URI do banco de dados mLab no arquivo .env privado como MONGO_URI. Conecte-se ao banco de dados usando mongoose.connect ( <Your URI> ) 
 </section>
 
 ## Instructions
