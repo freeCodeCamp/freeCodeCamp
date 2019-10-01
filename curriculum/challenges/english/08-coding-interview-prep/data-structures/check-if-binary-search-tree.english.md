@@ -18,6 +18,17 @@ The main distinction of a binary search tree is that the nodes are ordered in an
 In this challenge, you will create a utility for your tree. Write a JavaScript method <code>isBinarySearchTree</code> which takes a tree as an input and returns a boolean value for whether the tree is a binary search tree or not. Use recursion whenever possible.
 </section>
 
+## HINT:
+
+<section id='hint'>
+ Note that it's not enough to write a recursive function that just checks
+if the left and right nodes of each node are less than and greater than the current
+node (and calls that recursively). You need to make sure that all the nodes of the
+subtree starting at your current node are within the valid range of values allowed by
+the current node's ancestors. Therefore you can solve this recursively by writing a
+helper function that accepts a current node, the smallest allowed value, and the
+largest allowed value for that subtree.
+
 ## Tests
 
 <section id='tests'>
