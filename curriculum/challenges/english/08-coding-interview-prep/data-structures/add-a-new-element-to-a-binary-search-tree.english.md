@@ -113,6 +113,14 @@ BinarySearchTree.prototype = {
 <section id='solution'>
 
 ```js
+Different Cases:
+Case 1: The binary tree is empty
+Case 2: The value is greater than current root node, and right subtree is not empty.
+Case 3: The value is greater than current root node, and right subtree is empty.
+Case 4: The value is smaller or equal to the current root node and left subtree is not empty.
+Case 5: The value is smaller or equal to the current root node and left subtree is empty.
+
+C++:
 function Node(value) {
   this.value = value;
   this.left = null;
@@ -150,6 +158,24 @@ function BinarySearchTree() {
     }
   };
 }
+
+Python:
+
+def insert(root,node): 
+    if root is None: 
+        root = node 
+    else: 
+        if root.val < node.val: 
+            if root.right is None: 
+                root.right = node 
+            else: 
+                insert(root.right, node) 
+        else: 
+            if root.left is None: 
+                root.left = node 
+            else: 
+                insert(root.left, node) 
+
 ```
 
 </section>
