@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Add three more variables; `twitterColor` with a value of `'#7cd9d1'`, `tumblrColor` equal to `'#f6dd71'`, and `instagramColor` at `'#fd9b98'`. These will be color values used throughout the project to represent the different platforms.
 </section>
 
 ## Instructions
@@ -20,7 +21,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: console.log(twitterColor); assert(twitterColor === '#7cd9d1' && tumblrColor === '#f6dd71' && instagramColor === '#fd9b98');
 
 ```
 
@@ -31,14 +32,12 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const margin = 70,
   svgWidth = 700,
   svgHeight = 500;
 
-  
-/*
-  Add three more `const` variables; `twitterColor` with a value of `#7cd9d1`, tumblrColor` equal to `#f6dd71`, and `instagramColor` at `#fd9b98`. These will be color values used throughout the project to represent the different platforms.
-*/
+</script>  
 ```
 
 </div>
@@ -55,7 +54,7 @@ const margin = 70,
     <style>
       body {
         background-color: #ccc;
-        margin: 100px 10px;
+        padding: 100px 10px;
       }
 
       .dashboard {

@@ -157,7 +157,7 @@ const rightDashboard = d3.select('.dashboard')
     <style>
       body {
         background-color: #ccc;
-        margin: 100px 10px;
+        padding: 100px 10px;
       }
 
       .dashboard {

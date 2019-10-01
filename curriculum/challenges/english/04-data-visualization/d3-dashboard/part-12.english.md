@@ -55,7 +55,7 @@ tests:
 <style>
   body {
     background-color: #ccc;
-    margin: 100px 10px;
+    padding: 100px 10px;
   }
 
   .dashboard {

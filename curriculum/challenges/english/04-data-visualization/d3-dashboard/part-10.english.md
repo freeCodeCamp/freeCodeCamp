@@ -7,7 +7,7 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Move the container down a little by adding a `margin` of `100px 10px` to the `body` element.
+Move the container down a little by adding a `padding` of `100px 10px` to the `body` element.
 </section>
 
 ## Instructions
@@ -20,7 +20,7 @@ Move the container down a little by adding a `margin` of `100px 10px` to the `bo
 ```yml
 tests:
   - text: test-text
-    testString: const body = code.match(/body\s*{[\s\S]+?[^}]}/g)[0]; assert(/margin\s*:\s*100px\s*10px\s*(;|})/g.test(body));
+    testString: const body = code.match(/body\s*{[\s\S]+?[^}]}/g)[0]; assert(/padding\s*:\s*100px\s*10px\s*(;|})/g.test(body));
 
 ```
 
