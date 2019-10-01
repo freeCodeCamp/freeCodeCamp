@@ -10,16 +10,16 @@
   color: var(--gray-00);
 }
 
-.ais-SearchBox-submit,
 .ais-SearchBox-reset {
   display: none;
 }
 
 .ais-SearchBox-input {
-  padding: 1px 10px;
+  padding: 1px 10px 1px 30px;
   font-size: 18px;
   display: inline-block;
   width: calc(100vw - 10px);
+  margin-top: 6px;
 }
 
 .fcc_searchBar .ais-SearchBox-input,
@@ -43,8 +43,64 @@
   left: 5px;
 }
 
-#fcc_instantsearch {
-  margin-top: 6px;
+/* hits */
+.fcc_searchBar .ais-Highlight-highlighted {
+  background-color: transparent;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.ais-Highlight-nonHighlighted {
+  font-weight: 300;
+}
+
+.fcc_hits_wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.fcc_suggestion_item {
+  display: block;
+  padding: 8px;
+  color: var(--gray-00) !important;
+  text-decoration: none;
+}
+
+.fcc_suggestion_item [class^='ais-'] {
+  font-size: 17px;
+}
+
+.fcc_suggestion_item:hover {
+  cursor: pointer;
+}
+
+.fcc_sr_only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.ais-Hits-item {
+  background-color: var(--gray-75);
+}
+
+/* Hit selected with arrow keys or mouse */
+.selected {
+  background-color: var(--blue-dark);
+}
+
+/* Dropdown footer */
+.fcc_suggestion_footer {
+  border-top: 1.5px solid var(--gray-00);
+}
+
+.fcc_suggestion_footer .hit-name .ais-Highlight .ais-Highlight-nonHighlighted {
+  font-weight: bold;
 }
 
 @media (min-width: 380px) {
@@ -66,8 +122,6 @@
 @media (min-width: 700px) {
   .ais-SearchBox-input {
     width: 100%;
-  }
-  #fcc_instantsearch {
     margin-top: 6px;
     max-width: 500px;
   }
@@ -85,78 +139,12 @@
     top: auto;
     right: 15px;
   }
+  .ais-SearchBox-submit {
+    left: 0.85rem;
+  }
 }
 @media (min-width: 1100px) {
   .fcc_searchBar .ais-Hits {
     width: calc(100% - 20px);
-  }
-}
-
-/* hits */
-.fcc_searchBar .ais-Highlight-highlighted {
-  background-color: transparent;
-  font-style: normal;
-  font-weight: bold;
-}
-
-.ais-Highlight-nonHighlighted {
-  font-weight: 300;
-}
-
-.fcc_hits_wrapper {
-  display: flex;
-  justify-content: center;
-}
-
-.fcc_suggestion_item {
-  display: block;
-  padding: 8px;
-  color: var(--gray-00);
-  text-decoration: none;
-}
-
-.fcc_suggestion_item [class^='ais-'] {
-  font-size: 17px;
-}
-
-.fcc_suggestion_item:hover {
-  background-color: var(--blue-dark);
-  cursor: pointer;
-}
-
-.fcc_sr_only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}
-
-/* Dropdown footer */
-.fcc_suggestion_footer {
-  border-top: 1.5px solid var(--gray-00);
-}
-
-.fcc_suggestion_footer .hit-name .ais-Highlight .ais-Highlight-nonHighlighted {
-  font-weight: bold;
-}
-
-/* Show only the first 5 hits on mobile */
-.ais-Hits-list .ais-Hits-item:nth-child(n + 6) {
-  display: none;
-}
-
-/* Ensure the dropdown footer is always visible */
-.ais-Hits-list .ais-Hits-item:nth-child(9) {
-  display: block;
-}
-
-@media (min-width: 767px) and (min-height: 768px) {
-  /* Show hits 6-8 on desktop and some tablets */
-  .ais-Hits-list .ais-Hits-item:nth-child(n + 6) {
-    display: block;
   }
 }

@@ -92,7 +92,7 @@ th {
   color: var(--secondary-color);
 }
 
-a:hover {
+a:not(.fcc_suggestion_item):hover {
   color: var(--tertiary-color);
   background-color: var(--tertiary-background);
 }
@@ -163,6 +163,7 @@ a:focus {
 }
 
 .btn:active:hover,
+.btn-primary:hover,
 .btn-primary:active:hover,
 .btn-primary.active:hover,
 .open > .dropdown-toggle.btn-primary:hover,
