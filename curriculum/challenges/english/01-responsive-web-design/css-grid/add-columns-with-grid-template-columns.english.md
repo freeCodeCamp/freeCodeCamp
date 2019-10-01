@@ -18,7 +18,7 @@ Simply creating a grid element doesn't get you very far. You need to define the 
 ```
 
 This will give your grid two columns that are each 50px wide.
-The number of parameters given to the <code>grid-template-columns</code> property indicates the number of columns in the grid, and the value of each parameter indicates the width of each column.
+The number of parameters given to the <code>grid-template-columns</code> property indicates the number of columns in the grid, and the value of each parameter indicates the width of each column. Here's a game that you can play before doing our exercices. It will be fast and will help you to understand the utility of Grid. https://cssgridgarden.com
 </section>
 
 ## Instructions
