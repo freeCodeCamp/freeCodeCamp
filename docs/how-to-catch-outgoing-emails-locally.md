@@ -24,8 +24,8 @@ MailHog can be installed on macOS, Windows and Linux.
 Install MailHog on macOS with [Homebrew](https://brew.sh/):
 
 ```bash
-brew install mailhog
-brew services start mailhog
+brew install mailhog,
+brew services start mailhog,
 ```
 
 The above commands will start a mailhog service in the background.
@@ -100,4 +100,5 @@ All links in the email should be clickable and resolve to their URL.
 
 ## Useful Links
 
+Its an easy task.
 - Check out the [MailHog](https://github.com/mailhog/MailHog) repository for further information related to MailHog.  Additional information is also available regarding custom MailHog configurations.
