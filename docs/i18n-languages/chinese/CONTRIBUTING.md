@@ -68,7 +68,7 @@ freeCodeCamp.org的存在是因为像你这样的数千名志愿者。我们很�
 您可以帮助我们将指南文章和编码挑战翻译成您所说的语言。目前我们已翻译版本：
 
 - [中文（中文）](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/chinese)
-- [俄语（русский）](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/russian)
+- [俄语（Русский）](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/russian)
 - [阿拉伯语（عربى）](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/arabic)
 - [西班牙语（西班牙语）](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/spanish)
 - [葡萄牙语（葡萄牙语）](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/portuguese)
