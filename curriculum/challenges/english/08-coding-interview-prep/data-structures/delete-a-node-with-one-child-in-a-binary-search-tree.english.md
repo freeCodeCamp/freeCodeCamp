@@ -16,6 +16,11 @@ Now that we can delete leaf nodes let's move on to the second case: deleting a n
 
 We've provided some code in our <code>remove</code> method that accomplishes the tasks from the last challenge. We find the target to delete and its parent and define the number of children the target node has. Let's add the next case here for target nodes with only one child. Here, we'll have to determine if the single child is a left or right branch in the tree and then set the correct reference in the parent to point to this node. In addition, let's account for the case where the target is the root node (this means the parent node will be <code>null</code>). Feel free to replace all the starter code with your own as long as it passes the tests.
 </section>
+## Constraints
+<section id='constraints'>
+  Time Complexity: O(logn)
+  Space Complexity: O(1)
+</section>
 
 ## Tests
 <section id='tests'>
