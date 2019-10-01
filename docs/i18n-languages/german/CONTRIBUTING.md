@@ -68,7 +68,7 @@ Wenn Du daran interessiert bist, diese Coding Challenges zu verbessern, findest 
 Du kannst uns helfen, unsere Leitfaden-Artikel und unsere Coding Challenges in eine Sprache, die Du sprichst, zu übersetzen. Aktuell haben wir übersetzte Versionen in den folgenden Sprachen:
 
 - [Chinese (中文)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/chinese)
-- [Russian (русский)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/russian)
+- [Russian (Русский)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/russian)
 - [Arabic (عربى)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/arabic)
 - [Spanish (Español)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/spanish)
 - [Portuguese (Português)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/portuguese)
