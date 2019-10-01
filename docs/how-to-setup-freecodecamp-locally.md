@@ -11,7 +11,7 @@ Some of the contribution workflows, like previewing pages for the guide or the c
 ## Fork the repository on GitHub
 ['Forking'](https://help.github.com/articles/about-forks/) is a step where you get your own copy of freeCodeCamp's main repository (a.k.a _repo_) on GitHub.
 
-This is essential as it allows you to work on your copy of freeCodeCamp on GitHub, or to download (clone) your repository to work on locally. Later, you will be able to request changes to be pulled into the main repository from your fork via a pull request.
+This is essential as it allows you to work on your own copy of freeCodeCamp on GitHub, or to download (clone) your repository to work on locally. Later, you will be able to request changes to be pulled into the main repository from your fork via a pull request.
 
 > **ProTip:**
 > The main repository at `https://github.com/freeCodeCamp/freeCodeCamp` is often referred to as the `upstream` repository.
@@ -153,7 +153,7 @@ npm -v
 If you have a different version, please install the recommended version. We can only support installation issues for recommended versions.
 
 Windows users:
-> Make sure the command-line tool you use (e.g., cmd, PowerShell, Git Bash for Windows, WSL) has the correct user privileges. If possible, you should launch the tool with the Administrator's privilege. On Windows, you should be able to launch as administrator by right-clicking the application and selecting `Launch as an Administrator`.
+> Make sure the command line tool you use (e.g., cmd, PowerShell, Git Bash for Windows, WSL) has the correct user privileges. If possible, you should launch the tool with the Administrator's privilege. On Windows, you should be able to launch as administrator by right-clicking the application and selecting `Launch as an Administrator`.
 
 #### I am having issues with installing the recommended prerequisites. What should I do?
 We regularly develop on the latest or most popular operating systems like macOS 10.12 or later, Ubuntu 16.04 or later and Windows 10. It is recommended to research your specific issue on resources such as Google, Stack Overflow and Stack Exchange. There is a good chance that someone has faced the same issue and there is already an answer to your specific query.
@@ -178,9 +178,9 @@ cp sample.env .env
 copy sample.env .env
 ```
 
-The keys in the `.env` file is *not* required to be changed to run the app locally. You can leave the default values copied over from `sample.env` as-is.
+The keys in the `.env` file are *not* required to be changed to run the app locally. You can leave the default values copied over from `sample.env` as-is.
 
-Keep in mind if you want to use additional services, you'll have to acquire your API keys for those services and edit the entries accordingly in the `.env` file.
+Keep in mind if you want to use additional services, you'll have to acquire your own API keys for those services and edit the entries accordingly in the `.env` file.
 
 **Docker Build:** If using the Docker build and the Docker installation instructed you to use Docker Toolbox (applies to older versions of macOS and Windows), you need to change `DOCKER_HOST_LOCATION` in your `.env` file var to the output from the `docker-machine ip` command. If you use any Docker supported the flavor of Linux or if you use Docker Desktop (new versions of macOS and Windows 10) you can leave `DOCKER_HOST_LOCATION` to the default value.
 
@@ -330,7 +330,7 @@ Follow these steps:
 
     **Note:** If you have any outstanding Pull Request that you made from the `master` branch of your fork, you will lose them at the end of this step. You should ensure your pull request is merged by a moderator before performing this step. To avoid this scenario, you should *always* work on a branch separate from master.
 
-    This step **will sync the latest changes** from the main repository of freeCodeCamp. You must rebase your branch on top of the latest `upstream/master` as often as possible to avoid conflicts later.
+    This step **will sync the latest changes** from the main repository of freeCodeCamp. It is important that you rebase your branch on top of the latest `upstream/master` as often as possible to avoid conflicts later.
 
     Update your local copy of the freeCodeCamp upstream repository:
     ```sh
