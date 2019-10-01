@@ -8,7 +8,7 @@ forumTopicId: 301100
 
 ## Description
 <section id='description'>
-To the right is the tweet embed that will be used as the practical example. Some of the elements would look better with a different layout. The last challenge demonstrated <code>display: flex</code>. Here you'll add it to several components in the tweet embed to start adjusting their positioning.
+To the right is the tweet embed that will be used as the practical example. Some of the elements would look better with a different layout. The last challenge demonstrated <code>display: flex</code>. Here you'll add it to several components in the tweet embed to start adjusting their positioning. Here's a game that you can play before doing our exercices. It will be fast and will help you to understand the utility of Flexbox. https://flexboxfroggy.com
 </section>
 
 ## Instructions
