@@ -8,7 +8,7 @@ forumTopicId: 301427
 
 ## Description
 <section id='description'>
-Now that you understand how to use <code>connect</code> to connect React to Redux, you can apply what you've learned to your React component that handles messages.
+Now that you understand how to use <code>connect</code> to connect React to Redux, you can apply what you've learned to your React message handling component.
 In the last lesson, the component you connected to Redux was named <code>Presentational</code>, and this wasn't arbitrary. This term <i>generally</i> refers to React components that are not directly connected to Redux. They are simply responsible for the presentation of UI and do this as a function of the props they receive. By contrast, container components are connected to Redux. These are typically responsible for dispatching actions to the store and often pass store state to child components as props.
 </section>
 
