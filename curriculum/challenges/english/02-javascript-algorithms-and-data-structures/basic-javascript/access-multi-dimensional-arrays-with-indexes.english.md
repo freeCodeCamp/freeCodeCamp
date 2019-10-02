@@ -9,6 +9,7 @@ forumTopicId: 16159
 ## Description
 <section id='description'>
 One way to think of a <dfn>multi-dimensional</dfn> array, is as an <em>array of arrays</em>. When you use brackets to access your array, the first set of brackets refers to the entries in the outer-most (the first level) array, and each additional pair of brackets refers to the next level of entries inside.
+  
 <strong>Example</strong>
 
 ```js
