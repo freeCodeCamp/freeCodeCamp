@@ -1,7 +1,10 @@
 ---
-name: 'Bug Report: Software issue in Learning platform'
-about: Reporting a software bug, in learning platform (not for content in guide articles
-  or coding challenges).
+name: 'Bug Report: Software issue on freeCodeCamp.org''s platforms'
+about: Report a software bug on freeCodeCamp.org's News, Community Forum, Code Radio
+  or Coding platforms
+title: ''
+labels: 'type: bug'
+assignees: ''
 
 ---
 
