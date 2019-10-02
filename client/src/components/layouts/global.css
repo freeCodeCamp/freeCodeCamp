@@ -22,6 +22,50 @@ body {
   min-height: calc(100vh - var(--header-height, 0px));
 }
 
+.default-layout > div > :nth-child(3) > button,
+input[type='submit'] {
+  background-color: var(--quaternary-background);
+}
+
+.default-layout > div > :nth-child(3) > button:hover,
+input[type='submit']:hover {
+  background-color: var(--secundary-background);
+}
+
+.default-layout > div > :nth-child(3) > button:active,
+input[type='submit']:active {
+  background: var(--primary-color);
+  color: var(--secondary-background);
+  outline: 0;
+  outline-color: none;
+  outline-color: var(--secundary-background);
+  border: none;
+}
+
+button,
+input[type='submit'] {
+  background-color: var(--quaternary-background);
+  color: var(--secondary-color);
+  border-width: 2px;
+  border-style: outset;
+  border-color: buttonface;
+  border-image: initial;
+}
+
+#search {
+  background-color: var(--quaternary-background);
+  color: var(--primary-color);
+  border-color: var(--quaternary-color);
+  border-width: 2px;
+  border-style: outset;
+  border-color: buttonface;
+  border-image: initial;
+}
+
+#search::placeholder {
+  color: var(--secondary-color);
+}
+
 h1 {
   color: var(--secondary-color);
   font-weight: 700;
