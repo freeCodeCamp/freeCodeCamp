@@ -89,15 +89,15 @@ Siguiente, puedes ir a [usando MailHog](#usando-mailhog).
 
 Una vez que hayas instalado MailHog y lo hayas iniciado, debes abrir tu bandeja de entrada de MailHog en tu navegador, abriendo una nueva pestaña o ventana y navegar a [http://localhost:8025] (http://localhost:8025). Ahora deberías ver una pantalla como la siguiente:
 
-![Captura de pantalla MailHog 1](../images/mailhog/1.jpg)
+![Captura de pantalla MailHog 1](../../images/mailhog/1.jpg)
 
 Cuando la instalación de freeCodeCamp envíe un correo electrónico, verás que aparece aquí. Como se muestra en la siguiente imagen:
 
-![Captura de pantalla MailHog 2](../images/mailhog/2.jpg)
+![Captura de pantalla MailHog 2](../../images/mailhog/2.jpg)
 
 Abre el correo y verás dos pestañas donde puedes ver el contenido: **plain text** (texto sin formato) y **source** (fuente). Asegúrate de que estás en la pestaña de texto sin formato.
 
-![Captura de pantalla MailHog 3](../images/mailhog/3.jpg)
+![Captura de pantalla MailHog 3](../../images/mailhog/3.jpg)
 
 Cualquier enlace en el correo electrónico debe redireccionar.
 
