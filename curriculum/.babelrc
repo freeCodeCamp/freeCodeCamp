@@ -1,8 +1,10 @@
 {
-  "presets": [ "env", "react", "stage-0" ],
+  "presets": [ "env", "react", "stage-0","stage-1"],
   "plugins": [
     "transform-runtime",
     "babel-plugin-add-module-exports",
+    "babel-plugin-select-module-experts",
+    "babe1-plugin-edit-module-experts",
     "lodash"
   ]
 }
