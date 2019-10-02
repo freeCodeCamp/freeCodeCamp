@@ -7,10 +7,10 @@ videoUrl: ''
 localeTitle: Comprobador de palíndromo
 ---
 
-## Description
-<section id="description"> Devuelve <code>true</code> si la cadena dada es un palíndromo. De lo contrario, devuelve <code>false</code> . Un <dfn>palíndromo</dfn> es una palabra u oración que se escribe de la misma manera tanto hacia adelante como hacia atrás, ignorando la puntuación, el caso y el espaciado. <strong>Nota</strong> <br> Deberá eliminar <strong>todos los caracteres no alfanuméricos</strong> (puntuación, espacios y símbolos) y convertir todo en el mismo caso (mayúsculas o minúsculas) para comprobar si hay palíndromos. Pasaremos cadenas con distintos formatos, como <code>&quot;racecar&quot;</code> , <code>&quot;RaceCar&quot;</code> y <code>&quot;race CAR&quot;</code> entre otros. También pasaremos cadenas con símbolos especiales, como <code>&quot;2A3*3a2&quot;</code> , <code>&quot;2A3 3a2&quot;</code> y <code>&quot;2_A3*3#A2&quot;</code> . Recuerda usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> si te atascas. Escribe tu propio código. </section>
+## Descripción
+<section id="description"> Devuelve <code>true</code> si la cadena dada es un palíndromo. De lo contrario, devuelve <code>false</code> . Un <dfn>palíndromo</dfn> es una palabra u oración que se escribe de la misma manera tanto hacia adelante como hacia atrás, ignorando la puntuación, si son mayúsculas o minúsculas y el espaciado.<br><strong>Nota</strong>: deberá eliminar <strong>todos los caracteres no alfanuméricos</strong> (puntuación, espacios y símbolos) y convertir todo a mayúsculas o minúsculas para comprobar si hay palíndromos. Pasaremos cadenas con distintos formatos, como <code>&quot;racecar&quot;</code> , <code>&quot;RaceCar&quot;</code> y <code>&quot;race CAR&quot;</code> entre otros. También pasaremos cadenas con símbolos especiales, como <code>&quot;2A3*3a2&quot;</code> , <code>&quot;2A3 3a2&quot;</code> y <code>&quot;2_A3*3#A2&quot;</code> . Recuerda usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> si te atascas. Escribe tu propio código. </section>
 
-## Instructions
+## Instrucciones
 <section id="instructions">
 </section>
 
@@ -50,7 +50,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semilla del desafío
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -73,10 +73,19 @@ palindrome("eye");
 
 </section>
 
-## Solution
+## Solución
 <section id='solution'>
 
 ```js
-// solution required
+function palindrome(str) {
+  var re = /[\W_]/g;
+  var lowRegStr = str.toLowerCase().replace(re, '');
+  var reverseStr = lowRegStr.split('').reverse().join(''); 
+  return reverseStr === lowRegStr;
+}
+
+
+
+palindrome("eye");
 ```
 </section>
