@@ -68,7 +68,41 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
+<!DOCTYPE html>
+<html>    
+  <head>
+    <title>freeCodeCamp Skyline Project</title>
+    <style>
+      * {
+        border: 1px solid black;
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 100vh;
+        margin: 0;
+        overflow: hidden;
+      }
+
+      .background-buildings {
+        width: 100%;
+        height: 100%;
+      }
+
+      .bb1 {
+        width: 10%;
+        height: 70%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="background-buildings">
+      <div class="bb1"></div>
+    </div>
+  </body>
+</html>
 ```
 
 </section>

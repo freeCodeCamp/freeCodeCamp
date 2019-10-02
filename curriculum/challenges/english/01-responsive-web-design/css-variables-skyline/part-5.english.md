@@ -51,7 +51,21 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
+<!DOCTYPE html>
+<html>    
+  <head>
+    <title>freeCodeCamp Skyline Project</title>
+    <style>
+      * {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+
+  <body>
+  </body>
+</html>
 ```
 
 </section>

@@ -50,7 +50,17 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
+<!DOCTYPE html>
+<html>    
+  <head>
+    <title>freeCodeCamp Skyline Project</title>
+    <style></style>
+  </head>
+
+  <body>
+  </body>
+</html>
 ```
 
 </section>

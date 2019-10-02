@@ -42,7 +42,11 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
+<!DOCTYPE html>
+<html>
+  
+</html>
 ```
 
 </section>

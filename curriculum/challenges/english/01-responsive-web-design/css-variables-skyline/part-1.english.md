@@ -41,7 +41,8 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
+<!DOCTYPE html>
 ```
 
 </section>
