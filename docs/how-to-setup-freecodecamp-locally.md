@@ -34,7 +34,7 @@ Once you have the prerequisites installed, you need to prepare your development 
 
 3. Install a code editor of your choice.
 
-    We highly recommend using [VS Code](https://code.visualstudio.com/) or [Atom](https://atom.io/). These are great, free, and open source code editors.
+    We highly recommend using [VS Code](https://code.visualstudio.com/) or [Atom](https://atom.io/). These are great, free and open source code editors.
 
 4. Set up linting for your code editor.
 
