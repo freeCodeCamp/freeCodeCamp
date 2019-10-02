@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
-import { Link } from 'gatsby';
+import Link from '../helpers/Link';
 
 import { CurrentChallengeLink, FullWidthRow, Spacer } from '../helpers';
 import Camper from './components/Camper';
