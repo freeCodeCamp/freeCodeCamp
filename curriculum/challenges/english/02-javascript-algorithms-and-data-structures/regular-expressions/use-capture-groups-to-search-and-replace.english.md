@@ -18,7 +18,7 @@ wrongText.replace(silverRegex, "blue");
 // Returns "The sky is blue."
 ```
 
-You can also access capture groups in the replacement string with dollar signs (<code>\$</code>).
+You can also access capture groups in the replacement string with dollar signs (<code>$</code>).
 
 ```js
 "Code Camp".replace(/(\w+)\s(\w+)/, "$2 $1");
@@ -30,7 +30,7 @@ You can also access capture groups in the replacement string with dollar signs (
 ## Instructions
 
 <section id="instructions">
-Write a regex so that it will search for the string <code>"good"</code>. Then update the <code>replaceText</code> variable to replace <code>"good"</code> with <code>"okey-dokey"</code>.
+Write a regex using capture groups that will search for the words <code>"one"</code>, <code>"two"</code>, and <code>"three"</code>. Then update the <code>replaceText</code> variable to replace <code>"one two three"</code> with <code>"three two one"</code>.
 </section>
 
 ## Tests

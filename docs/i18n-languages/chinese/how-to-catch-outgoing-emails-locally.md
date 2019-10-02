@@ -87,15 +87,15 @@ mailhog
 安装MailHog并开始运行后，您需要在浏览器中打开MailHog收件箱，打开新选项卡或窗口并导航到[http://localhost：8025](http://localhost:8025) 。
 您现在应该看到如下屏幕：
 
-![MailHog Screenshot 1](images/mailhog/1.jpg)
+![MailHog Screenshot 1](../../images/mailhog/1.jpg)
 
 当您的freeCodeCamp安装发送电子邮件时，你会看到它出现在这里。如下所示：
 
-![MailHog Screenshot 2](images/mailhog/2.jpg)
+![MailHog Screenshot 2](../../images/mailhog/2.jpg)
 
 打开邮件，您应该看到两个选项卡让您查看内容 - 纯文本和源文件。请确保您在纯文本选项卡上。
 
-![MailHog Screenshot 3](images/mailhog/3.jpg)
+![MailHog Screenshot 3](../../images/mailhog/3.jpg)
 
 电子邮件中的任何链接都应该是可点击的。
 
