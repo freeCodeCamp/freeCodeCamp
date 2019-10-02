@@ -153,3 +153,30 @@ function BinarySearchTree() {
 ```
 
 </section>
+## Python solution for the above
+# node class
+<section id="solution">
+  class Node: 
+    def __init__(self,key): 
+        self.left = None
+        self.right = None
+        self.val = key 
+  </section>
+  # insert code in PYthon
+<section id="solution">
+  def insert(root,node): 
+    if root is None: 
+        root = node 
+    else: 
+        if root.val < node.val: 
+            if root.right is None: 
+                root.right = node 
+            else: 
+                insert(root.right, node) 
+        else: 
+            if root.left is None: 
+                root.left = node 
+            else: 
+                insert(root.left, node) 
+  
+  </section>
