@@ -58,14 +58,9 @@ export class Map extends Component {
   constructor(props) {
     super(props);
     this.state = { idToScrollto: null };
+    this.initializeExpandedState();
   }
 
-  componentWillMount() {
-    this.initializeExpandedState(
-      this.props.currentChallengeId,
-      this.props.hash
-    );
-  }
   componentDidMount() {
     if (this.state.idToScrollto) {
       window.scrollTo(0, 0);
@@ -77,27 +72,39 @@ export class Map extends Component {
     }
   }
 
-  initializeExpandedState(currentChallengeId, hash) {
-    this.props.resetExpansion();
+  // As this happens in the constructor, it's necessary to manipulate state
+  // directly.
+  initializeExpandedState() {
+    const {
+      currentChallengeId,
+      hash,
+      nodes,
+      resetExpansion,
+      toggleBlock,
+      toggleSuperBlock
+    } = this.props;
+    resetExpansion();
     let node;
 
     // find the challenge that has the same superblock with hash
-    if (this.props.hash) {
-      node = this.props.nodes.find(node => dasherize(node.superBlock) === hash);
-      if (node) this.setState({ idToScrollto: dasherize(node.superBlock) });
+    if (hash) {
+      node = nodes.find(node => dasherize(node.superBlock) === hash);
+      // eslint-disable-next-line react/no-direct-mutation-state
+      if (node) this.state = { idToScrollto: dasherize(node.superBlock) };
     }
 
     // if there is no hash or the hash did not match any challenge superblock
     // and there was a currentChallengeId
     if (!node && currentChallengeId) {
-      node = this.props.nodes.find(node => node.id === currentChallengeId);
-      if (node) this.setState({ idToScrollto: dasherize(node.title) });
+      node = nodes.find(node => node.id === currentChallengeId);
+      // eslint-disable-next-line react/no-direct-mutation-state
+      if (node) this.state = { idToScrollto: dasherize(node.title) };
     }
 
-    if (!node) node = this.props.nodes[0];
+    if (!node) node = nodes[0];
 
-    this.props.toggleBlock(node.block);
-    this.props.toggleSuperBlock(node.superBlock);
+    toggleBlock(node.block);
+    toggleSuperBlock(node.superBlock);
   }
 
   renderSuperBlocks(superBlocks) {
