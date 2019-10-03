@@ -5,9 +5,9 @@
 
 # Como trabalhar em Artigos Guia
 
-Com a tua ajuda, nós podemos criar uma ferramenta de referência compreensiva que ajudará milhões de pessoas que estão a aprender código nos anos que aí vêm. 💛
+Com a sua ajuda, nós podemos criar uma ferramenta de referência compreensiva que ajudará milhões de pessoas que estão aprendendo a programar nos anos virão. 💛
 
-Tu podes:
+Você pode:
 
 - [Ajudar-nos criando e Editando Artigos Guia](#steps-for-creating-and-editing-guide-articles).
 - [Ajudar-nos revendo <i>pull requests</i> para Artigos Guia]()
@@ -27,14 +27,14 @@ Ou então apenas [criar um <i>issue</i>](https://github.com/freeCodeCamp/freeCod
 
 ### Criar um <i>Pull request</i> (PR) para propor mudanças
 
-Há duas maneiras para propor uma mudança num repositório, depois de editares ou adicionar um Artigo Guia:
+Há duas maneiras para propor uma mudança em um repositório, depois de editar ou adicionar um Artigo Guia:
 
 - [Usando o GitHub Web Interface no teu <i>browser</i>](#using-the-github-web-interface-on-your-browser).
 - [Trabalhando na tua máquina pessoal](#working-on-your-local-machine) (_recomendado_ para pré-visualizar mudanças).
 
 #### Usando o GitHub Web Interface no teu browser
 
-Vê a demonstração em vídeo ou segue os passos abaixo:
+Veja a demonstração em vídeo ou siga os passos abaixo:
 
 **[A FAZER]** Atualizar a gravação do GIF.
 
@@ -65,7 +65,7 @@ Vê a demonstração em vídeo ou segue os passos abaixo:
 
     Isto não leva tempo adicional comparado com uma mensagem não convencional como 'update file' ou 'add index.md'
 
-    Podes aprender mais sobre <i>commits</i> convencionais [aqui](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#why-use-conventional-commits).
+    Pode aprender mais sobre <i>commits</i> convencionais [aqui](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#why-use-conventional-commits).
 
 4. Seleciona a opção de <i>radio button</i> para **"Create a new branch for this commit and start a pull request"** e clica em <kbd>Propose file changes</kbd>.
 
@@ -100,7 +100,7 @@ Aqui estão algumas diretrizes que os <i>reviewers</i> seguem ao analizar PRs:
 
 #### Conteúdo Contraditório/Duplicado
 
-UM PR é considera um **duplicate** se faz mudanças ao mesmo artigo que outro PR.
+Um PR é considerado um **duplicate** se faz mudanças ao mesmo artigo que outro PR.
 
 Em geral, um <i>reviewer</i> irá:
 
@@ -147,9 +147,9 @@ Nós fechamos PR
 - se não respeita o [Academic Honesty policy](https://www.freecodecamp.org/academic-honesty)
 - se está parado (se a mudança é pedida e não há atividade durante duas semanas)
 
-Também, se estiveres a trabalhar de um artigo <i>"stub"</i>, as tuas mudanças devem ser substanciais o suficiente para substituir o texto <i>stub</i>.
+Também, se estiver trabalhando em um artigo <i>"stub"</i>, as tuas mudanças devem ser substanciais o suficiente para substituir o texto <i>stub</i>.
 
-Não aceitamos um PR que só adiciona links à secção de "Mais Informação:".
+Não aceitamos um PR que só adiciona links à seção de "Mais Informação:".
 
 O repositório tem um script `Normalise.js` que adiciona atributos a links, mas também procura texto "This is a stub..." via um RegEx.
 
@@ -167,11 +167,11 @@ Mantém-te ativo no [chat room de contribuidores](https://gitter.im/freecodecamp
 
 ## Passos para rever <i>pull requests</i> para Artigos Guia
 
-> Esta secção é direccionada a revisores deste repositório.
+> Esta seção é direcionada a revisores deste repositório.
 
 ## Squash e Merge
 
-Nós usamos a opção <kcd>Squash and merge</kcd> quando <i>merging</i> o PR que mantém a <i>commit history</i> limpa.
+Nós usamos a opção <kcd>Squash and merge</kcd> quando <i>merging</i> o PR que mantém a <i>commit history</i> é limpo.
 
 ![GIF - Squash and merge](https://files.gitter.im/FreeCodeCamp/Contributors/56MQ/9cb8db153d7bb1b3576cd1ffc207e39d.gif)
 
