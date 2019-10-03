@@ -132,15 +132,11 @@ class DefaultLayout extends Component {
       isOnline,
       isSignedIn,
       removeFlashMessage,
-      showFooter = true,
-      theme
+      showFooter = true
     } = this.props;
     return (
       <Fragment>
         <Helmet
-          bodyAttributes={{
-            class: `${theme === 'default' ? 'light-palette' : 'dark-palette'}`
-          }}
           meta={[
             {
               name: 'description',

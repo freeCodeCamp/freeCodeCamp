@@ -63,7 +63,7 @@ const defineMonacoThemes = monaco => {
     base: 'vs-dark',
     inherit: true,
     colors: {
-      'editor.background': '#2a2a40'
+      'editor.background': '#1b1b32'
     },
     rules: [
       { token: 'delimiter.js', foreground: lightBlueColor },
@@ -75,6 +75,9 @@ const defineMonacoThemes = monaco => {
   monaco.editor.defineTheme('vs-custom', {
     base: 'vs',
     inherit: true,
+    colors: {
+      'editor.background': '#f5f6f7'
+    },
     rules: [{ token: 'identifier.js', foreground: darkBlueColor }]
   });
 };
@@ -82,7 +85,9 @@ const defineMonacoThemes = monaco => {
 class Editor extends Component {
   constructor(...props) {
     super(...props);
-
+    this.state = {
+      theme: window.__theme
+    };
     this.options = {
       fontSize: '18px',
       scrollBeyondLastLine: false,
@@ -103,7 +108,6 @@ class Editor extends Component {
         verticalScrollbarSize: 5
       }
     };
-
     this._editor = null;
   }
 
@@ -112,6 +116,9 @@ class Editor extends Component {
   };
 
   editorDidMount = (editor, monaco) => {
+    window.__onThemeChange = () => {
+      this.setState({ theme: window.__theme });
+    };
     this._editor = editor;
     if (this.props.canFocus) {
       this._editor.focus();
@@ -158,7 +165,9 @@ class Editor extends Component {
 
   render() {
     const { contents, ext, theme, fileKey } = this.props;
-    const editorTheme = theme === 'night' ? 'vs-dark-custom' : 'vs-custom';
+    console.log(theme);
+    const editorTheme =
+      this.state.theme === 'dark' ? 'vs-dark-custom' : 'vs-custom';
     return (
       <Suspense fallback={<Loader timeout={600} />}>
         <MonacoEditor
