@@ -17,7 +17,6 @@ import { apiLocation } from '../../config/env.json';
 
 import {
   isSignedInSelector,
-  hardGoTo,
   userFetchStateSelector,
   userSelector,
   reportUser
