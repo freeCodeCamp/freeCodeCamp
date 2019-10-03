@@ -8,7 +8,7 @@ The `if`/`elif`/`else` structure is a common way to control the flow of a progra
 Note that parenthesis is not used before and after the condition check as in other languages.
 ```python
 if True:
-  print('If block will execute!')
+  print("If block will execute!")
 ```
 
 ```python
@@ -22,15 +22,15 @@ if x > 4:
 _Example_:
 ```python
 if 1:   # 1 evaluates to true
-  print('If block will execute!')
+  print("If block will execute!")
  ```
 
 You can optionally add an `else` response that will execute if the condition is `False`:
 ```python
 if not True:
-  print('If statement will execute!')
+  print("If statement will execute!")
 else:
-  print('Else statement will execute!')
+  print("Else statement will execute!")
 ```
 Or you can also see this example
 ```python
@@ -99,5 +99,3 @@ Output
 True
 >
 ```
-
-
