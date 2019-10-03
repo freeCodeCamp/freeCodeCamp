@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Your code is starting to get quite long. Add a comment above the `fb1` class that says `FOREGROUND BUILDINGS - "fb" stands for "foreground building"` to help people understand your code. Above the `bb1` class add another comment that says `BACKGROUND BUILDINGS - "bb" stands for "background building`. If you don't remember, comments in CSS look like this: `/* Comment here */`.
+Your code is starting to get quite long. Add a comment above the `fb1` class that says `FOREGROUND BUILDINGS - "fb" stands for "foreground building"` to help people understand your code. Above the `bb1` class add another comment that says `BACKGROUND BUILDINGS - "bb" stands for "background building"`. If you don't remember, comments in CSS look like this: `/* Comment here */`.
 </section>
 
 ## Instructions
@@ -21,7 +21,7 @@ Your code is starting to get quite long. Add a comment above the `fb1` class tha
 ```yml
 tests:
   - text: test-text
-    testString: assert(/\/\*\s*BACKGROUND BUILDINGS - "bb" stands for "background building\s*\*\//g.test(code) && /\/\*\s*FOREGROUND BUILDINGS - "fb" stands for "foreground building"\s*\*\//g.test(code));
+    testString: assert(/\/\*\s*BACKGROUND BUILDINGS - "bb" stands for "background building"\s*\*\//g.test(code) && /\/\*\s*FOREGROUND BUILDINGS - "fb" stands for "foreground building"\s*\*\//g.test(code));
 
 ```
 
