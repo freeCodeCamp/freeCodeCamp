@@ -53,7 +53,7 @@ Você pode encontrar um [artigo de exemplo sobre elementos HTML aqui](../../guid
 
 **Sobre o que eu posso escrever um artigo?**
 
-Nós agradecemos sua ajuda na escrita desses artigos. Você não precisa ser um especialista em um tópico para escrever sobre isso - Todo o Guia é código aberto, então mesmo que você cometa um erro, outro contribuidor vai eventualmente corrigí-lo.
+Nós agradecemos sua ajuda na escrita desses artigos. Você não precisa ser um especialista em um tópico para escrever sobre determinado assunto, pois todo o guia é código aberto, então mesmo que você cometa um erro outro contribuidor vai eventualmente corrigí-lo.
 
 Para ajudar, encontre um `artigo provisório` na [página de Guias](https://www.freecodecamp.org/guide), escreva o artigo, e então abra um <i>pull request</i> (PR) para substituir o provisório pelo seu artigo. Um [<i>pull request</i>](https://help.github.com/articles/about-pull-requests/) é a forma como você vai sugerir mudanças. Ele permite que outros saibam das suas mudanças, revisem-nas e as adotem.
 
