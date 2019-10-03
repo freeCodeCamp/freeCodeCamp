@@ -100,7 +100,7 @@ Aqui estão algumas diretrizes que os <i>reviewers</i> seguem ao analizar PRs:
 
 #### Conteúdo Contraditório/Duplicado
 
-UM PR é considera um **duplicate** se faz mudanças ao mesmo artigo que outro PR.
+Um PR é considerado um **duplicado** se faz mudanças ao mesmo artigo que outro PR.
 
 Em geral, um <i>reviewer</i> irá:
 
