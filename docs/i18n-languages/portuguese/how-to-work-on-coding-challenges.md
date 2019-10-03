@@ -13,7 +13,7 @@ Você pode fazer mudanças sem ter nada rodando em seu sistema local.
 
 Depois que encontrar o arquivo que deseja modificar pela interface do GitHub, clique no ícone de lápis para começar a editar. Isto ira criar um fork do projeto automaticamente, se você já não tem um.
 
-Você também pode clonar o projeto e editar localmente no seu computador. Para ajuda com isso, leia o artigo [Orientações de Contribuição](/docs/portuguese/CONTRIBUTING.md).
+Você também pode clonar o projeto e editar localmente no seu computador. Para ajuda com isso, leia o artigo [Orientações de Contribuição](/docs/i18n-languages/portuguese/CONTRIBUTING.md).
 
 ### Modelo de Desafio
 
