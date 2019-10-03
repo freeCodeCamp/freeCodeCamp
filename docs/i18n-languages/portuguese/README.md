@@ -36,83 +36,83 @@ The one exception to this is in the event that we discover violations of our [Ac
 
 Here are our six core certifications:
 
-#### 1. Responsive Web Design Certification
+#### 1. Certificação de Web Design Responsivo
 
-- [Basic HTML and HTML5](https://learn.freecodecamp.org/responsive-web-design/basic-html-and-html5)
-- [Basic CSS](https://learn.freecodecamp.org/responsive-web-design/basic-css)
-- [Applied Visual Design](https://learn.freecodecamp.org/responsive-web-design/applied-visual-design)
-- [Applied Accessibility](https://learn.freecodecamp.org/responsive-web-design/applied-accessibility)
-- [Responsive Web Design Principles](https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-principles)
+- [HTML e HTML5 Básico](https://learn.freecodecamp.org/responsive-web-design/basic-html-and-html5)
+- [CSS Básico](https://learn.freecodecamp.org/responsive-web-design/basic-css)
+- [Design Visual Aplicado](https://learn.freecodecamp.org/responsive-web-design/applied-visual-design)
+- [Acessibilidade Aplicada](https://learn.freecodecamp.org/responsive-web-design/applied-accessibility)
+- [Princípios de Web Design Responsivo](https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-principles)
 - [CSS Flexbox](https://learn.freecodecamp.org/responsive-web-design/css-flexbox)
 - [CSS Grid](https://learn.freecodecamp.org/responsive-web-design/css-grid)
   <br />
   <br />
-  **Projects**: Tribute Page, Survey Form, Product Landing Page, Technical Documentation Page, Personal Portfolio Webpage
+  **Projetos**: Página de Tributos, Formulário de Inquérito, Página Inicial de Produto, Página de Documentação Técnica, Página Web para Portfólio Pessoal
 
-#### 2. JavaScript Algorithms and Data Structures Certification
+#### 2. Certificação de Algoritmos de JavaScript e Estruturas de Data
 
-- [Basic JavaScript](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript)
+- [JavaScript Básico](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript)
 - [ES6](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6)
-- [Regular Expressions](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/regular-expressions)
+- [Expressões Regulares](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/regular-expressions)
 - [Debugging](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/debugging)
-- [Basic Data Structures](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-data-structures)
-- [Algorithm Scripting](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-algorithm-scripting)
-- [Object Oriented Programming](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/object-oriented-programming)
-- [Functional Programming](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/functional-programming)
-- [Intermediate Algorithm Scripting](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/intermediate-algorithm-scripting)
+- [Estruturas de Data Básicas](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-data-structures)
+- [Scripting de Algoritmos](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-algorithm-scripting)
+- [Programação Orientada a Objetos](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/object-oriented-programming)
+- [Programação Funcional](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/functional-programming)
+- [Scripting de Algoritmos Intermédios](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/intermediate-algorithm-scripting)
   <br />
   <br />
-  **Projects**: Palindrome Checker, Roman Numeral Converter, Caesar's Cipher, Telephone Number Validator, Cash Register
+  **Projetos**: Verificador de Palindromos, Conversor de Numerais Romanos, Cifra de César, Verificador de Número de Telefone, Caixa Registadora
 
-#### 3. Front End Libraries Certification
+#### 3. Certificação de Bibliotecas de Front End
 
 - [Bootstrap](https://learn.freecodecamp.org/front-end-libraries/bootstrap)
 - [jQuery](https://learn.freecodecamp.org/front-end-libraries/jquery)
 - [Sass](https://learn.freecodecamp.org/front-end-libraries/sass)
 - [React](https://learn.freecodecamp.org/front-end-libraries/react)
 - [Redux](https://learn.freecodecamp.org/front-end-libraries/redux)
-- [React and Redux](https://learn.freecodecamp.org/front-end-libraries/react-and-redux)
+- [React e Redux](https://learn.freecodecamp.org/front-end-libraries/react-and-redux)
   <br />
   <br />
-  **Projects**: Random Quote Machine, Markdown Previewer, Drum Machine, JavaScript Calculator, Pomodoro Clock
+  **Projetos**: Máquina de Citações Aleatórias, Pré-visualizador de Markdown, Máquina de Tambores, Calculadora de JavaScript, Relógio Pomodoro
 
-#### 4. Data Visualization Certification
+#### 4. Certificação de Visualização de Data
 
-- [Data Visualization with D3](https://learn.freecodecamp.org/data-visualization/data-visualization-with-d3)
-- [JSON APIs and Ajax](https://learn.freecodecamp.org/data-visualization/json-apis-and-ajax)
+- [Visualização de Data com D3](https://learn.freecodecamp.org/data-visualization/data-visualization-with-d3)
+- [APIs de JSON e Ajax](https://learn.freecodecamp.org/data-visualization/json-apis-and-ajax)
   <br />
   <br />
-  **Projects**: Bar Chart, Scatterplot Graph, Heat Map, Choropleth Map, Treemap Diagram
+  **Projetos**: Gráfico de Barras, Gráfico de Dispersão, Mapa de Calor, Mapa Choropleth, Diagrama Treemap
 
-#### 5. APIs and Microservices Certification
+#### 5. Certificações de APIs e Microserviços
 
-- [Managing Packages with Npm](https://learn.freecodecamp.org/apis-and-microservices/managing-packages-with-npm)
-- [Basic Node and Express](https://learn.freecodecamp.org/apis-and-microservices/basic-node-and-express)
-- [MongoDB and Mongoose](https://learn.freecodecamp.org/apis-and-microservices/mongodb-and-mongoose)
+- [Gerenciar Pacotes com NPM](https://learn.freecodecamp.org/apis-and-microservices/managing-packages-with-npm)
+- [Node e Express Básico](https://learn.freecodecamp.org/apis-and-microservices/basic-node-and-express)
+- [MongoDB e Mongoose](https://learn.freecodecamp.org/apis-and-microservices/mongodb-and-mongoose)
   <br />
   <br />
-  **Projects**: Timestamp Microservice, Request Header Parser, URL Shortener, Exercise Tracker, File Metadata Microservice
+  **Projetos**: Microserviço de Timestamps, Parser de Cabeçalho de Pedidos, Encolhedor de URL, Tracker de Exercício, Microserviço de Metadata de Ficheiros
 
-#### 6. Information Security and Quality Assurance Certification
+#### 6. Certificações de Segurança de Informação e Garantia de Qualidade
 
-- [Information Security with HelmetJS](https://learn.freecodecamp.org/information-security-and-quality-assurance/information-security-with-helmetjs)
-- [Quality Assurance and Testing with Chai](https://learn.freecodecamp.org/information-security-and-quality-assurance/quality-assurance-and-testing-with-chai)
-- [Advanced Node and Express](https://learn.freecodecamp.org/information-security-and-quality-assurance/advanced-node-and-express)
+- [Segurança de Informação com HelmetJS](https://learn.freecodecamp.org/information-security-and-quality-assurance/information-security-with-helmetjs)
+- [Garantia de Qualidade e Testes com Chai](https://learn.freecodecamp.org/information-security-and-quality-assurance/quality-assurance-and-testing-with-chai)
+- [Node e Express Avançado](https://learn.freecodecamp.org/information-security-and-quality-assurance/advanced-node-and-express)
   <br />
   <br />
-  **Projects**: Metric-Imperial Converter, Issue Tracker, Personal Library, Stock Price Checker, Anonymous Message Board
+  **Projetos**: Conversor Métrico-Imperial, Issue Tracker, Biblioteca Pessoal, Verificador de Preços da Bolsa, Quadro de Mensagens Anónimo
 
-#### Full Stack Development Certification
+#### Certificação de Desenvolvimento Full Stack
 
-Once you have earned all 6 of these certifications, you'll be able to claim your freeCodeCamp.org Full Stack Development Certification. This final distinction signifies that you’ve completed around 1,800 hours of coding with a wide range of web development tools.
+Quando tenhas merecido todos os 6 certificados, poderás reclamar a tua freeCodeCamp.org Certificação de Desenvolvimento Full Stack. Esta última distinção significa que completaste aproximadamente 1,800 horas de código com uma larga variedade de ferramentas de desenvolvimento web.
 
-#### Legacy Certifications
+#### Certificações Legacy
 
-We also have 3 legacy certifications from our 2015 curriculum, which are still available. All of the required projects for these legacy certifications will remain available on freeCodeCamp.org.
+Também temos 3 certificações legacy do nosso currículo de 2015, ainda disponíveis. Todos os projetos requeridos para estas certificações legacy permanecerão disponíveis em freeCodeCamp.org.
 
-- Legacy Front End Development Certification
-- Legacy Data Visualization Certification
-- Legacy Back End Development Certification
+- Certificação de Desenvolvimento Front End Legacy
+- Certificação de Visualização de Data Legacy
+- Certificação de Desenvolvimento Back End Legacy
 
 ### A Plataforma de Aprendizagem
 
