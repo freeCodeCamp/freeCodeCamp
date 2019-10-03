@@ -5,9 +5,9 @@
 
 # Configurando freeCodeCamp localmente
 
-Siga estas instruções para configurar freeCodeCamp localmente em seu sistema. Isso é altamente recomendado se você quer contribuir regularmente.
+Siga essas instruções para configurar freeCodeCamp localmente em seu sistema. Isso é altamente recomendado, caso você queira contribuir regularmente.
 
-Alguns _workflows_ de contribuição como pré-visualização de páginas para o Guia ou Desafios de Código, _debugging_ e correção de _bugs_ no código requerem que você rode freeCodeCamp localmente.
+Alguns _workflows_ de contribuição, como pré-visualização de páginas para o Guia ou Desafios de Código, _debugging_ e correção de _bugs_ no código requerem que você rode freeCodeCamp localmente.
 
 ## Dê _Fork_ no repositório do GitHub
 
@@ -57,7 +57,7 @@ Rode os seguintes comandos em sua máquina:
 
    _Por exemplo: `/seudiretoriodeprojetos/`_
 
-2. _Clone_ seu _fork_ do freeCodeCamp, substituindo `SEU_USUARIO` pelo seu nome de usuário do GitHub
+2. _Clone_ seu _fork_ do freeCodeCamp, substituindo o campo `SEU_USUARIO` pelo seu nome de usuário do GitHub
 
    ```shell
    git clone https://github.com/SEU_USUARIO/freeCodeCamp.git
@@ -152,7 +152,7 @@ Comece instalando as dependência necessárias para que a aplicação rode.
 npm install
 ```
 
-Depois você precisará adicionar as variáveis de ambiente privadas (_API Keys_)
+Depois, você precisará adicionar as variáveis de ambiente privadas (_API Keys_)
 
 ```shell
 # Crie uma cópia de "sample.env" e chame-a de ".env".
@@ -171,11 +171,13 @@ As chaves não precisam ser alteradas para rodar a aplicação localmente. Você
 
 Você pode deixar as outras chaves como estão. Tenha em mente que se você quiser usar mais serviços, você precisará obter suas próprias chaves e editá-las no arquivo `.env`.
 
-Agora vamos "linkar" vários serviços como o _api-server_, o _client UI application_, etc. Você [aprender mais sobre esses serviços neste guia](#).
+Agora vamos inicializar vários serviços como o _api-server_, o _client UI application_, etc. Você [aprender mais sobre esses serviços neste guia](#).
 
 Esses serviços são semi-independentes. Significa que, em produção, o _deploy_ é feito em locais diferentes, mas estão todos disponíveis para você quando o projeto está sendo rodado localmente.
 
 > Nota do Tradutor: neste trecho, é utilizado o termo _bootstrap_. Este termo foi substituído por _linkar_, já que não achei uma forma melhor para o termo.
+
+> Nota do Tradutor: O termo _linkar_ foi substituído por _inicializar_ para manter uma semântica.
 
 ```shell
 # Bootstrap ou linkar todos os projetos deste repositório
