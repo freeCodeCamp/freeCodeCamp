@@ -15,7 +15,7 @@ Divirta-se contribuindo 🎉!
 
 ## Esses são alguns jeitos divertidos de contribuir
 
-Você pode contribuir para qualquer área do seu interesse:
+Você pode contribuir em qualquer área do seu interesse:
 
 1. [Contribua para essa base de códigos abertos.](#contribua-para-essa-base-de-códigos-abertos)
 
@@ -47,13 +47,13 @@ Você pode nos ajudar:
 
 **O que são Artigos de guia?**
 
-Artigos de guia ajudam você a ter um rápido entendimento sobre um conceito tecnológico. Eles são explicações em Português, curtas e diretas, que você pode ler antes de partir para recursos mais aprofundados.
+Artigos de guia ajudam você a ter um rápido entendimento sobre um conceito tecnológico. Esses artigos são explicações em português, explicações curtas e diretas que você pode ler antes de partir para recursos mais profundos.
 
 Você pode encontrar um [artigo de exemplo sobre elementos HTML aqui](../../guide/portuguese/html/elements/index.md).
 
 **Sobre o que eu posso escrever um artigo?**
 
-Nós agradecemos sua ajuda na escrita desses artigos. Você não precisa ser um especialista em um tópico para escrever sobre isso - Todo o Guia é código aberto, então mesmo que você cometa um erro, outro contribuidor vai eventualmente corrigí-lo.
+Nós agradecemos sua ajuda na escrita desses artigos. Você não precisa ser um especialista em um tópico para escrever sobre isso - Todo o Guia é código aberto, então mesmo que você cometa um erro, outro contribuidor vai eventualmente corrigi-lo.
 
 Para ajudar, encontre um `artigo provisório` na [página de Guias](https://www.freecodecamp.org/guide), escreva o artigo, e então abra um <i>pull request</i> (PR) para substituir o provisório pelo seu artigo. Um [<i>pull request</i>](https://help.github.com/articles/about-pull-requests/) é a forma como você vai sugerir mudanças. Ele permite que outros saibam das suas mudanças, revisem-nas e as adotem.
 
@@ -66,7 +66,7 @@ Se você não consegue encontrar um artigo provisório do tópico sobre o qual v
 ### Crie, Atualize e Corrija <i>Bugs</i> em nossos desafios de código
 
 Todos os nossos Desafios de código tem curadoria da comunidade, trazendo conhecimento especializado de voluntários como você.
-Entretanto, eles precisam ser constantemente refinados para melhor qualidade. Por exemplo, você pode querer atualizar suas instruções para melhorar seu palavreado. Você pode atualizar as histórias de usuário para explicar o conceito melhor ou mesmo evitar redundâncias. Você pode querer refatorar testes que não passam em códigos válidos das histórias de usuário.
+Entretanto, eles precisam ser constantemente refinados para melhor qualidade. Por exemplo, você pode querer atualizar suas instruções para melhorar as palavras. Você pode atualizar as histórias de usuário para explicar o conceito melhor ou mesmo evitar redundâncias. Você pode querer refatorar testes que não passam em códigos válidos das histórias de usuário.
 
 **Se você gostaria de trabalhar nisso, por favor, siga as seguintes recomendações:**
 
@@ -98,7 +98,7 @@ De maneira geral,
 - Um conjunto de aplicações cliente baseadas em React.
 - Um <i>script</i> que nós utilizamos para avaliar nossos projetos <i>Frontend</i>.
 
-Contribuir para isso requer certo conhecimento de APIs, sintaxe ES6 e bastante curiosidade.
+Contribuir nesse caso requer certo conhecimento de APIs, sintaxe ES6 e bastante curiosidade.
 
 Nós esperamos certa familiaridade básica com algumas das tecnologias, ferramentas e bibliotecas mencionadas. Dito isso, não é necessário que você seja um especialista nelas.
 
@@ -145,4 +145,4 @@ Se essas <i>issues</i> possuem falta de clareza do que deve ser feito, sinta-se 
 
 **Encontrei um erro de escrita, eu devo reportar antes de criar um <i>pull request</i>?**
 
-Você pode criar diretamente um <i>pull request</i> sem ter de reportar uma <i>issue</i> em casos de erros de escrita ou pequenas mudanças de palavreado. <i>Issues</i> são ferramentas para buscar confirmação em mudanças que você gostaria de propor por meio de um <i>pull request</i>.
+Você pode criar diretamente um <i>pull request</i> sem ter de reportar uma <i>issue</i>, ou <i>problema<i>, em casos de erros de escrita ou pequenas mudanças de palavreado. <i>Issues</i> são ferramentas para buscar confirmação em mudanças que você gostaria de propor por meio de um <i>pull request</i>.
