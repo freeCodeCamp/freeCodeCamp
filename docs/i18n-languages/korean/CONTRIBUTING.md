@@ -9,7 +9,7 @@
 
 freeCodeCamp.org는 여러분과 같은 수천 명의 친절한 자원봉사자 덕분에 운영할 수 있습니다. 우리는 여러분의 기여를 환영하며 감사하고 기쁘게 생각합니다.
 
-우리는 [행동 강령] (https://www.freecodecamp.org/code-of-conduct)을 엄격히 시행합니다. 잠시 시간을 내어 읽어주십시오. 단지 196 단어밖에 되지 않습니다.
+우리는 [행동 강령](https://www.freecodecamp.org/code-of-conduct)을 엄격히 시행합니다. 잠시 시간을 내어 읽어주십시오. 단지 196 단어밖에 되지 않습니다.
 
 행복한 기여가 되길 바랍니다 🎉!
 
@@ -91,8 +91,8 @@ freeCodeCamp.org는 여러분과 같은 수천 명의 친절한 자원봉사자 
 
 본질적으로 앞서 언급한 기술, 도구 및 라이브러리에 대한 기본적인 지식을 기대합니다. 여러분은 기여하기 위해 전문가가 될 필요가 없습니다.
 
-관련 문제에 관해 질문 할 수 있으면 언제든지 알려주시기 바랍니다. 의심스러운 점이 있다면 우리의 개발자 팀인 Mrugesh Mohapatra [`@ raisedadead`] (https://github.com/raisedadead) 또는 Stuart Taylor [`@ bouncey`] (https://github.com/bouncey)가 도와줄 것입니다.
-코드 베이스를 개선하는 데 도움을 주려면 [로컬에서 freeCodeCamp를 설치하는 방법] (/docs/ how-to-setup-freecodecamp-locally.md)을 참조하십시오.
+관련 문제에 관해 질문 할 수 있으면 언제든지 알려주시기 바랍니다. 의심스러운 점이 있다면 우리의 개발자 팀인 Mrugesh Mohapatra[`@ raisedadead`](https://github.com/raisedadead) 또는 Stuart Taylor[`@ bouncey`](https://github.com/bouncey)가 도와줄 것입니다.
+코드 베이스를 개선하는 데 도움을 주려면 [로컬에서 freeCodeCamp를 설치하는 방법](/docs/how-to-setup-freecodecamp-locally.md)을 참조하십시오.
 
 ## 자주 묻는 질문
 
