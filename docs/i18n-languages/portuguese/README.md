@@ -5,24 +5,24 @@
 [![Open Source Helpers](https://www.codetriage.com/freecodecamp/freecodecamp/badges/users.svg)](https://www.codetriage.com/freecodecamp/freecodecamp)
 [![Setup Automated](https://img.shields.io/badge/setup-automated-blue?logo=gitpod)](https://gitpod.io/from-referrer/)
 
-## freeCodeCamp.org's open source codebase and curriculum
+## Codebase open source e currículo do freeCodeCamp.org
 
-[freeCodeCamp.org](https://www.freecodecamp.org) is a friendly community where you can learn to code for free. It is run by a [donor-supported 501(c)(3) nonprofit](https://donate.freecodecamp.org) with the goal of helping millions of busy adults transition into tech. Our community has already helped more than 10,000 people get their first developer job.
+O [freeCodeCamp.org](https://www.freecodecamp.org) é uma comunidade amigável onde podes aprender a programar gratuitamente. É mantida por uma [não-lucrativa 501(c)(3) suportada por doações](https://donate.freecodecamp.org) com o objetivo de ajudar a transicionar milhões de adultos ocupados para tech. A nossa comunidade já ajudou mais que 10,000 pessoas a alcançar o seu primeiro trabalho de desenvolvedor.
 
-Our full-stack web development curriculum is completely free and self-paced. We have thousands of interactive coding challenges to help you expand your skills.
+O nosso currículo de desenvolvimento full-stack é completamente gratuito e individualizado. Temos milhares de desafios de programação interativos para ajudar a expansão das tuas competências.
 
-## Table of Contents
+## Tabela de Conteúdos
 
-* [Certifications](#certifications)
-* [The Learning Platform](#the-learning-platform)
-* [Reporting Bugs and Issues](#reporting-bugs-and-issues)
-* [Reporting Security Issues](#reporting-security-issues)
-* [Contributing](#contributing)
-* [Platform, Build and Deployment Status](#platform-build-and-deployment-status)
-* [License](#license)
+* [Certificações](#certificações)
+* [A Plataforma de Aprendizagem](#a-plataforma-de-aprendizagem)
+* [Reportar Bugs e Issues](#reportar-bugs-e-issues)
+* [Reporting Problemas de Segurança](#reportar-problemas-de-segurança)
+* [Contribuir](#contribuir)
+* [Plataforma, Build e Estado de Deployment](#platforma-build-e-estado-de-desenvolvimento)
+* [Licença](#licença)
 
 
-### Certifications
+### Certificações
 
 freeCodeCamp.org offers several free developer certifications. Each of these certifications involves building 5 required web app projects, along with hundreds of optional coding challenges to help you prepare for those projects. We estimate that each certification will take a beginning programmer around 300 hours to earn.
 
