@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
+import { navigate } from '@reach/router';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import {
