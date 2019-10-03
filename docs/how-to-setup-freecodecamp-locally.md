@@ -34,11 +34,11 @@ Once you have the prerequisites installed, you need to prepare your development 
 
 3. Install a code editor of your choice.
 
-    We highly recommend using [VS Code](https://code.visualstudio.com/) or [Atom](https://atom.io/). These are great free and open source code editors.
+    We highly recommend using [VS Code](https://code.visualstudio.com/) or [Atom](https://atom.io/). These are great, free and open source code editors.
 
-4. Setup linting for your code editor.
+4. Set up linting for your code editor.
 
-    You should have [ESLint running in your editor](http://eslint.org/docs/user-guide/integrations.html), and it will highlight anything doesn't conform to [freeCodeCamp's JavaScript Style Guide](http://forum.freecodecamp.org/t/free-code-camp-javascript-style-guide/19121).
+    You should have [ESLint running in your editor](http://eslint.org/docs/user-guide/integrations.html), and it will highlight anything that doesn't conform to [freeCodeCamp's JavaScript Style Guide](http://forum.freecodecamp.org/t/free-code-camp-javascript-style-guide/19121).
 
     > Please do not ignore any linting errors. They are meant to **help** you and to ensure a clean and simple code base.
 
