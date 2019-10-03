@@ -114,25 +114,25 @@ We also have 3 legacy certifications from our 2015 curriculum, which are still a
 - Legacy Data Visualization Certification
 - Legacy Back End Development Certification
 
-### The Learning Platform
+### A Plataforma de Aprendizagem
 
-This code is running live at [freeCodeCamp.org](https://www.freecodecamp.org).
+Este código está a correr ao vivo em [freeCodeCamp.org](https://www.freecodecamp.org).
 
-Our community also has:
+A nossa comunidade também tem:
 
-- A [forum](https://www.freecodecamp.org/forum) where you can usually get programming help or project feedback within hours.
-- A [YouTube channel](https://youtube.com/freecodecamp) with free courses on Python, SQL, Android, and a wide variety of other technologies.
-- A [podcast](https://podcast.freecodecamp.org/) with technology insights and inspiring stories from developers.
-- A comprehensive [guide to thousands of programming topics](https://guide.freecodecamp.org/)
-- A [Developer News](https://www.freecodecamp.org/news) publication, a free, open source, no-ads place to cross-post your blog articles.
+- Um [fórum](https://www.freecodecamp.org/forum) onde consegues, usualmente, encontrar ajuda de programação ou feedback de projeto dentro de horas.
+- Um [canal de YouTube](https://youtube.com/freecodecamp) com cursos gratuitos de Python, SQL, Android, e uma larga variedade de outras tecnologias.
+- Um [podcast](https://podcast.freecodecamp.org/) com conhecimentos tecnológicos e histórias inspiradoras de desenvolvedores.
+- Um [guia compreensivo para centenas de tópicos de programação](https://guide.freecodecamp.org/)
+- Uma publicação [Developer News](https://www.freecodecamp.org/news), um local grátis, open source, sem anúncios para dar cross-post aos teus artigos de blog.
 
-> ### [Join our community here](https://www.freecodecamp.org/signin).
+> ### [Junta-te à nossa comunidade aqui](https://www.freecodecamp.org/signin).
 
-### Reporting Bugs and Issues
+### Reportar Bugs e Issues
 
-If you think you've found a bug, first read the [how to report a bug](https://www.freecodecamp.org/forum/t/how-to-report-a-bug/19543) article and follow its instructions.
+Se pensas que encontraste um bug, primeiro lê o article [como reportar um bug](https://www.freecodecamp.org/forum/t/how-to-report-a-bug/19543) e segue as suas instruções.
 
-If you're confident it's a new bug, and have confirmed that someone else is facing the same issue, go ahead and create a new GitHub issue. Be sure to include as much information as possible so we can reproduce the bug.
+Se estás confiante que é um novo bug, e confirmaste que outra pessoa se está a deparar com o mesmo problema, segue em frente e cria um novo GitHub issue. Assegura que incluis o máximo de informação possível para que consigamos replicar o erro.
 
 ### Reportar Problemas de Segurança
 
