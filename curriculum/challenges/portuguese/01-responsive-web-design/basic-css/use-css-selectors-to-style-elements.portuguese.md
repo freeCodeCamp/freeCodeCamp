@@ -83,7 +83,9 @@ tests:
 
 ```html
 <style>
-h2 {color: blue;}
+  h2 {
+    color: blue;
+  }
 </style>
 
 <h2>CatPhotoApp</h2>
