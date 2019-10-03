@@ -9,7 +9,7 @@
 
 ## Introdução
 
-Alguns do fluxos de email, como atualizar o email de um usuário, necessita de uma api e/ou um servidor back-end para enviar os emails. No ambiente de desenvolvimento, você pode usar uma ferramenta para obter esses emails localmente, em vez de ter que usar um provedor de email e efetivamente enviar o email. MailHog é uma dessas ferramentas para desenvolvedores fazerem testes com emails, ela vai oter os emails que sua instância local do freeCodeCamp mandar.
+Alguns dos fluxos de email, como atualizar o email de um usuário, necessita de uma api e/ou um servidor back-end para enviar os emails. No ambiente de desenvolvimento, você pode usar uma ferramenta para obter esses emails localmente, em vez de ter que usar um provedor de email e efetivamente enviar o email. MailHog é uma dessas ferramentas para desenvolvedores fazerem testes com emails, ela vai obter os emails que sua instância local do freeCodeCamp mandar.
 
 ## Instando MailHog
 
@@ -28,7 +28,7 @@ brew install mailhog
 brew services start mailhog
 ```
 
-Este comando vai iniciar o serviço mailhog em background.
+Este comando vai iniciar o serviço mailhog em background, ou processo em segundo plano.
 
 A seguir, você pode pular para [usando MailHog](#usando-o-mailhog).
 
@@ -85,7 +85,7 @@ A seguir, você pode pular para [usando MailHog](#usando-o-mailhog).
 
 ## Usando o MailHog
 
-Uma vez que você instalou o MailHog e iniciou o serviço, você precisa abrir seu inbox MailHog no browser. Abra uma nova aba ou janela e entre em [http://localhost:8025](http://localhost:8025).
+Uma vez que você instalou o MailHog e iniciou o serviço, você precisa abrir seu inbox MailHog no navegador. Abra uma nova aba ou janela e entre em [http://localhost:8025](http://localhost:8025).
 Você deve ver agora algo semelhante com a tela abaixo:
 
 ![Captura de tela MailHog 1](../../images/mailhog/1.jpg)
@@ -102,4 +102,4 @@ Qualquer link no email deve ser clicável.
 
 ## Links úteis
 
-- Para qualquer dúvidas ou questões relacionadas ao MailHog ou instruções ou configurações customizadas, verifique o repositório do [MailHog](https://github.com/mailhog/MailHog).
+- Para qualquer dúvidas ou questões relacionadas ao MailHog, instruções ou configurações customizadas, verifique o repositório do [MailHog](https://github.com/mailhog/MailHog).
