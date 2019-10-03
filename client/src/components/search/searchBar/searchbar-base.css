@@ -618,7 +618,7 @@ a[class^='ais-'] {
   -moz-appearance: none;
   appearance: none;
   position: absolute;
-  z-index: 1;
+  z-index: 100;
   width: 20px;
   height: 20px;
   top: 50%;
@@ -628,6 +628,7 @@ a[class^='ais-'] {
 }
 .ais-SearchBox-submit {
   left: 0.3rem;
+  top: 57%;
 }
 .ais-SearchBox-reset {
   right: 0.3rem;

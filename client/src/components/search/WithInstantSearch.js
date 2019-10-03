@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Location } from '@reach/router';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { InstantSearch, Configure } from 'react-instantsearch-dom';
 import qs from 'query-string';
 import { navigate } from 'gatsby';
+import Media from 'react-responsive';
 
 import {
   isSearchDropdownEnabledSelector,
@@ -116,6 +117,7 @@ class InstantSearchRoot extends Component {
 
   render() {
     const { query } = this.props;
+    const MAX_MOBILE_HEIGHT = 768;
     return (
       <InstantSearch
         apiKey='4318af87aa3ce128708f1153556c6108'
@@ -124,7 +126,18 @@ class InstantSearchRoot extends Component {
         onSearchStateChange={this.onSearchStateChange}
         searchState={{ query }}
       >
-        <Configure hitsPerPage={15} />
+        {this.isSearchPage() ? (
+          <Configure hitsPerPage={15} />
+        ) : (
+          <Fragment>
+            <Media maxHeight={MAX_MOBILE_HEIGHT}>
+              <Configure hitsPerPage={5} />
+            </Media>
+            <Media minHeight={MAX_MOBILE_HEIGHT + 1}>
+              <Configure hitsPerPage={8} />
+            </Media>
+          </Fragment>
+        )}
         {this.props.children}
       </InstantSearch>
     );
