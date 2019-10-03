@@ -21,7 +21,7 @@ The background buildings are starting to look pretty good. Create a new `div` be
 ```yml
 tests:
   - text: test-text
-    testString: assert($("body").children("div")[1] === $("div.foreground-buildings")[0]);
+    testString: assert($("#display-body").children("div")[1] === $("div.foreground-buildings")[0]);
 
 ```
 
