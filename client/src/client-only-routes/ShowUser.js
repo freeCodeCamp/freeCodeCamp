@@ -50,7 +50,7 @@ const mapStateToProps = createSelector(
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
-      navigate: location => dispatch(hardGoTo(location)),
+      navigate,
       reportUser
     },
     dispatch
