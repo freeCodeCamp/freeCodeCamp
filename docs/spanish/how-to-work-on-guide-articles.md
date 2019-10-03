@@ -10,13 +10,13 @@ Puedes:
 ## Pasos para crear y editar artículos de la Guía
 
 1. 🍴 [Fork este repositorio](https://github.com/freeCodeCamp/freeCodeCamp#fork-destination-box)
-2. 👀️ Sgiue las normas de controbución expuestas a continuación.
+2. 👀️ Sigue las normas de controbución expuestas a continuación.
 3. 🔧 Propón cambios asombrosos!
 4. 📖 Lee la [guía de buenas prácticas de estilo](/docs/style-guide-for-guide-articles).
 5. 👉 [Haz una Pull Request](https://github.com/freeCodeCamp/freeCodeCamp/compare)
 6. 🎉 Consigue que aprueben tu Pull request - Éxito!
 
-O siemplement [crea un tema](https://github.com/freeCodeCamp/freeCodeCamp/issues) - toda pequeña ayuda cuenta! 😊
+O simplemente [crea un tema](https://github.com/freeCodeCamp/freeCodeCamp/issues) - toda pequeña ayuda cuenta! 😊
 
 ### [Sigue estas recomendaciones de nuestra guía de estilo para crear un artículo atractivo](/docs/style-guide-for-guide-articles.md)
 
@@ -35,17 +35,17 @@ Mira este vídeo de demostración o sigue los siguientes pasos:
 
 ![GIF showing the GitHub interface steps](#)
 
-1. Ve a la carpets **"páginas"** (situado en [`guide`](/guide)) donde encontrarás el artículo raiz que quieras editar.
+1. Ve a la carpets **"páginas"** (situado en [`guide`](/guide)) donde encontrarás el artículo raíz que quieras editar.
 
     > Todas las raíces estarán en un archivo index.md
 
 2. Pincha en <kbd>Editar este archivo</kbd> y haz tus cambios al archivo en la consola de edición de GitHub.
 
-    > Si el icono aparece gris y te muestra la alerta "Debes estar en una rama para hacer o proponer cambios a este archivo", significa que probablemente estés en la rama de otra persona. En la parte superior izquierda de la página hay una casilla desplegable que dice: "Árbol: #######". Pincha en el desplegable y cambia la rama a maestra. El icono de edición debería estar disponible ahora.
+    > Si el ícono aparece gris y te muestra la alerta "Debes estar en una rama para hacer o proponer cambios a este archivo", significa que probablemente estés en la rama de otra persona. En la parte superior izquierda de la página hay una casilla desplegable que dice: "Árbol: #######". Pincha en el desplegable y cambia la rama a maestra. El ícono de edición debería estar disponible ahora.
 
 3. Desplázate a la parte de abajo de la pantalla y añade un mensaje explicando tus cambios.
 
-    (Opcional): Recomendamos haer un mensaje convencional. Esta es una buena práctica que verás en algunos de los repositorios Open Source más populares. Como desarrollador, deberías seguir las prácticas estándar.
+    (Opcional): Recomendamos hacer un mensaje convencional. Esta es una buena práctica que verás en algunos de los repositorios Open Source más populares. Como desarrollador, deberías seguir las prácticas estándar.
 
     Algunos ejemplos de mensajes convencionales serían:
 
@@ -109,7 +109,7 @@ Los revisores harán todos los esfuerzos posibles para resolver estos conflictos
 
 #### Solicitar cambios
 
-Si la Pull Request no es perfect el revisor podría:
+Si la Pull Request no es perfecto el revisor podría:
 
 - solicitar cambios al contribuidor y añadir la etiqueta *cambios solicitados*
 - solucionar errores menores y hacer un envío encima de la PR
@@ -118,7 +118,7 @@ Si la Pull Request no es perfect el revisor podría:
 
 Todas las PRs deben superar los test de Travis CI antes de poder ser integradas.
 
-Si una PR rompe la ejecución (un test de Travis CI falla y muestra una "X" roja) hay tres cauas probables y tendrás que resolver el problemas antes de que podamos integrar la PR:
+Si una PR rompe la ejecución (un test de Travis CI falla y muestra una "X" roja) hay tres causas probables y tendrás que resolver el problemas antes de que podamos integrar la PR:
 
 1. Tu PR crea un nueva artículo pero la falta un archivo `index.md` en algún lugar.
     - Cada directorio en `src/pages` necesita un archivo `index.md` en él (y debe llamarse `index.md`).
@@ -270,7 +270,7 @@ Una vez resuelvas estos conflictos, podré revisar tu PR e integrarla. 😊
 
 > Si no estás familiarizado con los conflictos de integración, por favor revisa la guía de GitHub ["Resolviendo conflictos de integración"](https://help.github.com/articles/resolving-a-merge-conflict-on-github/) para más información. 🔍️
 >
-> Además, es una buena ráctica en GitHub escribir una decripción breve de tus cambios al crear una PR. 📝
+> Además, es una buena práctica en GitHub escribir una decripción breve de tus cambios al crear una PR. 📝
 ```
 ¹ Si un contribuidor primerizo tiene conflictos de integración, los encargados de mantenimiento lo resolverán en su lugar.
 
