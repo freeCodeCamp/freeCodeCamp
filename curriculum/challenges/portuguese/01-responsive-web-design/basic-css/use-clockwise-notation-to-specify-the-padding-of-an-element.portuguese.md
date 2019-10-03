@@ -113,7 +113,7 @@ tests:
   .blue-box {
     background-color: blue;
     color: #fff;
-	padding: 40 20 20 40;
+    padding: 40px 20px 20px 40px;
   }
 </style>
 <h5 class="injected-text">margin</h5>
