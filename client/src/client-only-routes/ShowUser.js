@@ -25,7 +25,6 @@ import { Spacer, Loader, FullWidthRow } from '../components/helpers';
 
 const propTypes = {
   email: PropTypes.string,
-  hardGoTo: PropTypes.func.isRequired,
   isSignedIn: PropTypes.bool,
   navigate: PropTypes.func.isRequired,
   reportUser: PropTypes.func.isRequired,
