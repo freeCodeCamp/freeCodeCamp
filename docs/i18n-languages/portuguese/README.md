@@ -130,7 +130,7 @@ A nossa comunidade também tem:
 
 ### Reportar Bugs e Issues
 
-Se pensas que encontraste um bug, primeiro lê o article [como reportar um bug](https://www.freecodecamp.org/forum/t/how-to-report-a-bug/19543) e segue as suas instruções.
+Se pensas que encontraste um bug, primeiro lê o artigo [como reportar um bug](https://www.freecodecamp.org/forum/t/how-to-report-a-bug/19543) e segue as suas instruções.
 
 Se estás confiante que é um novo bug, e confirmaste que outra pessoa se está a deparar com o mesmo problema, segue em frente e cria um novo GitHub issue. Assegura que incluis o máximo de informação possível para que consigamos replicar o erro.
 
