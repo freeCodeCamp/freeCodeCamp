@@ -24,17 +24,17 @@ O nosso currículo de desenvolvimento full-stack é completamente gratuito e ind
 
 ### Certificações
 
-freeCodeCamp.org offers several free developer certifications. Each of these certifications involves building 5 required web app projects, along with hundreds of optional coding challenges to help you prepare for those projects. We estimate that each certification will take a beginning programmer around 300 hours to earn.
+O freeCodeCamp.org oferece várias certificações de desenvolvedor gratuitas. Cada uma destas certificações envolve a construção obrigatória de 5 aplicações web, acompanhadas com centenas de desafios de programação opcionais para te ajudar a preparar para esses projetos. Estimamos que cada certificação demorará, a um programador iniciante, por volta de 300 horas a alcançar.
 
-Each of these 30 projects in the freeCodeCamp.org curriculum has its own agile user stories and automated tests. These help you build up your project incrementally and ensure you've fulfilled all the user stories before you submit it.
+Cada um destes 30 projetos no currículo do freeCodeCamp.org tem as suas user stories ágeis e testes automáticos. Estes ajudam-te a construir o teu projeto incrementalmente e asseguram que completaste todas as user stories antes de o submeteres.
 
-You can pull in these test suites through [freeCodeCamp's CDN](https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js). This means you can build these projects on websites like CodePen and Glitch - or even on your local computer's development environment.
+Consegues descarregar estas test suites através do [CDN do freeCodeCamp](https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js). Isto significa que podes dar build a estes projetos em websites como o CodePen e Glitch - ou até no ambiente de desenvolvimento do teu computador local.
 
-Once you’ve earned a certification, you will always have it. You will always be able to link to it from your LinkedIn or résumé. And when your prospective employers or freelance clients click that link, they’ll see a verified certification specific to you.
+Quando alcançares uma certificação, ficas com ela para sempre. Serás sempre capaz de referenciá-la desde o teu LinkedIn ou currículo. E quando os teus empregadores prospetivos ou clientes freelance clicam no link, verão uma certificação verificada específica para ti.
 
-The one exception to this is in the event that we discover violations of our [Academic Honesty Policy](https://www.freecodecamp.org/academic-honesty). When we catch people unambiguously plagiarizing (submitting other people's code or projects as their own without citation), we do what all rigorous institutions of learning should do - we revoke their certifications and ban those people.
+A única exceção para tal é no evento de descobrirmos violações da nossa [Política de Honestidade Académica](https://www.freecodecamp.org/academic-honesty). Quando inequivocamente apanhamos pessoas a plagiar (submetendo código ou projetos de outras pessoas como delas mesmas sem citação), fazemos o que todas as instituições de aprendizagem rigorosas deveriam fazer - retiramos-lhes as suas certificações e banimos essas pessoas.
 
-Here are our six core certifications:
+Aqui estão as nossas seis certificações principais:
 
 #### 1. Certificação de Web Design Responsivo
 
