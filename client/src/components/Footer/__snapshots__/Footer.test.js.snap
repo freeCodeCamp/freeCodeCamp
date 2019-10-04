@@ -23,7 +23,9 @@ exports[`<Footer /> matches snapshot 1`] = `
           Donations to freeCodeCamp go toward our education initiatives, and help pay for servers, services, and staff. You can 
           <a
             className="inline"
-            href="/donate"
+            href="https://donate.freecodecamp.org"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             make a tax-deductible donation here
           </a>
@@ -46,7 +48,9 @@ exports[`<Footer /> matches snapshot 1`] = `
           About
         </a>
         <a
-          href="/donate"
+          href="https://donate.freecodecamp.org"
+          rel="noopener noreferrer"
+          target="_blank"
         >
           Donate
         </a>
