@@ -27,6 +27,11 @@ Mathematically this is expressed as:
 
 Note that the formula expressed above uses sides a and b and angle C between them. These can be substituted for another other two sides and the angle between them.
 
+### Method 3
+If you know only the length of the sides of the triangle you can use the formula:
+ 
+ ![Formula-3](https://github.com/andrea1015/misc/blob/master/erone.PNG)
+
 
 ### Terminology
 
@@ -35,6 +40,9 @@ Base - The bottom side. Select a side that is known.
 Perpendicular Height - The height of the triangle, measured perpendicular to the base, to the tallest point of the triangle.
 
 Sin - The sine trigonometric expression.
+
+p - Perimeter
+a, b, c - sides of the triangle
 
 ### Examples
 
