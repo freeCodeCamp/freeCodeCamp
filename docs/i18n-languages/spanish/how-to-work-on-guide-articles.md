@@ -10,7 +10,7 @@ Con tu ayuda, podemos crear un herramienta de referencia accesible que ayudará 
 Puedes:
 
 
-- [Ayudarnos creando y editando articulos de la Guía](#steps-for-creating-and-editing-guide-articles).
+- [Ayudarnos creando y editando articulos de la Guía](#pasos-para-crear-y-editar-artículos-de-la-guía).
 - [Ayudarnos revisando Pull Requests para artículos de la Guía]()
 
 ## Pasos para crear y editar artículos de la Guía
