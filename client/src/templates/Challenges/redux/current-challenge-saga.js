@@ -44,6 +44,13 @@ function* updateSuccessMessageSaga() {
 function* showDonateModalSaga() {
   let { isDonating } = yield select(userSelector);
   let shouldShowDonate = yield select(showDonationSelector);
+  /**
+   *  We are disabling donation modals for now.
+   */
+  shouldShowDonate = false;
+  /**
+   *  We are disabling donation modals for now.
+   */
   if (!isDonating && shouldShowDonate) {
     yield put(openDonationModal());
     yield put(donationRequested());
