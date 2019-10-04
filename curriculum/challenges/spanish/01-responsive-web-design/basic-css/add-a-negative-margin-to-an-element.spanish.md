@@ -77,7 +77,7 @@ tests:
 </section>
 
 
-## Solición
+## Solución
 
 <section id='solution'>
 
