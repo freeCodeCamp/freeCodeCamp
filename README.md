@@ -126,7 +126,7 @@ Our community also has:
 - A comprehensive [guide to thousands of programming topics](https://guide.freecodecamp.org/)
 - A [Developer News](https://www.freecodecamp.org/news) publication, a free, open source, no-ads place to cross-post your blog articles.
 
-> ### [Join our community here](https://www.freecodecamp.org/signin).
+> ### [Join our community here.](https://www.freecodecamp.org/signin)
 
 ### Reporting Bugs and Issues
 
