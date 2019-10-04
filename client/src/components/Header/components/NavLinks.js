@@ -14,9 +14,6 @@ function NavLinks({ displayMenu }) {
         className={'nav-list' + (displayMenu ? ' display-flex' : '')}
         role='menu'
       >
-        <li className='nav-theme' role='menuitem'>
-          <Link to='/'>Light</Link>
-        </li>
         <li className='nav-projects' role='menuitem'>
           <Link to='/learn'>Projects</Link>
         </li>
