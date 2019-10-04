@@ -16,6 +16,8 @@ import { types as appTypes } from '../../../redux';
 
 import { setContent, isPoly } from '../utils/polyvinyl';
 
+import { createFlashMessage } from '../../../components/Flash/redux';
+
 const legacyPrefixes = [
   'Bonfire: ',
   'Waypoint: ',
@@ -72,17 +74,39 @@ function clearCodeEpic(action$, state$) {
 }
 
 function saveCodeEpic(action$, state$) {
+  let saveSuccessful;
   return action$.pipe(
-    ofType(types.executeChallenge),
+    ofType(types.executeChallenge, types.saveEditorContent),
     // do not save challenge if code is locked
     filter(() => !isCodeLockedSelector(state$.value)),
     tap(() => {
       const state = state$.value;
       const { id } = challengeMetaSelector(state);
       const files = challengeFilesSelector(state);
-      store.set(id, files);
+      try {
+        store.set(id, files);
+        // Possible fileType values: indexhtml indexjs indexjsx
+        // The files Object always has one of these as the first/only attribute
+        const fileType = Object.keys(files)[0];
+        if (store.get(id)[fileType].contents !== files[fileType].contents) {
+          throw Error('Failed to save to localStorage');
+        }
+        saveSuccessful = true;
+      } catch (e) {
+        saveSuccessful = false;
+      }
     }),
-    ignoreElements()
+    ofType(types.saveEditorContent),
+    switchMap(() =>
+      of(
+        createFlashMessage({
+          type: saveSuccessful ? 'success' : 'warning',
+          message: saveSuccessful
+            ? 'Saved! Your code was saved to localStorage'
+            : 'Oops, your code did not save, localStorage may be full'
+        })
+      )
+    )
   );
 }
 
