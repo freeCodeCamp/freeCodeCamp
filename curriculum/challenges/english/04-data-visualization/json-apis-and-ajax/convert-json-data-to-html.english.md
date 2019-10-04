@@ -24,7 +24,7 @@ json.forEach(function(val) {
 });
 ```
 
-<b>WARNING!</b> To complete this challenge you need to add new HTML elements. To do this you will use the innerHTML method, this can make your site vulnerable to XSS attacks, which in brief allows an attacker to execute code on the client side. To learn more <a href="https://guide.freecodecamp.org/security/xss-cross-site-scripting/">see the guide</a>
+<b>Note:</b> For this challenge you need to add new html elements to the page, so you cannot rely on textContent. Instead you need to use innerHTML which can make a site vulnerable to cross site scripting attacks.
 </section>
 
 ## Instructions
