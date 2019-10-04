@@ -36,6 +36,7 @@ const template = `
 /code-of-conduct                              #{{NEWS}}/code-of-conduct 200
 /copyright                                    #{{NEWS}}/copyright-policy 200
 /copyright-policy                             #{{NEWS}}/copyright-policy 200
+/donate                                       https://donate.freecodecamp.org 200
 /privacy                                      #{{NEWS}}/privacy-policy 200
 /privacy-policy                               #{{NEWS}}/privacy-policy 200
 /shop                                         #{{NEWS}}/shop 200
