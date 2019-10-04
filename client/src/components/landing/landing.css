@@ -1,45 +1,5 @@
-.black-text {
-  color: var(--secondary-color);
-  font-weight: 400;
-  font-size: 40px;
-}
-
 .large-p {
   font-size: 24px;
-}
-
-.img-center {
-  margin: 0 auto;
-}
-
-.landing-icon {
-  height: 100px;
-  width: 100px;
-}
-
-.landing-skill-icon {
-  color: var(--secondary-color);
-  margin-top: -15px;
-  padding-bottom: 15px;
-  height: 150px;
-  margin-bottom: 1.45rem;
-}
-
-.testimonial-image {
-  border-radius: 5px;
-  height: 200px;
-  width: 200px;
-  color: var(--secondary-color);
-}
-
-.testimonial-copy {
-  text-align: center;
-  font-size: 18px !important;
-  margin-left: 20px;
-  margin-right: 20px;
-}
-.underlined-link {
-  text-decoration: underline;
 }
 
 /* Buttons with a lot of text can overflow and mess up formatting on small
@@ -49,13 +9,20 @@
   white-space: pre-line;
 }
 
-@media (min-width: 991px) and (max-width: 1199px) {
-  .testimonial-copy {
-    height: 150px;
-  }
+.logo-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: center;
 }
-@media (min-width: 1200px) {
-  .testimonial-copy {
-    height: 100px;
-  }
+
+.logo-row h2 {
+  height: 35px;
+  padding: 0 10px 0 10px;
+}
+
+.landing-page ul {
+  list-style: none;
+  padding-left: 0px;
 }

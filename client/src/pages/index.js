@@ -2,6 +2,7 @@ import React from 'react';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
 
 import { Loader } from '../components/helpers';
 import Landing from '../components/landing';
@@ -11,6 +12,7 @@ import {
   isSignedInSelector
 } from '../redux';
 import createRedirect from '../components/createRedirect';
+import { AllChallengeNode } from '../redux/propTypes';
 
 const mapStateToProps = createSelector(
   userFetchStateSelector,
@@ -29,7 +31,10 @@ const RedirectLearn = createRedirect('/learn');
 export const IndexPage = ({
   fetchState: { pending, complete },
   isSignedIn,
-  user: { acceptedPrivacyTerms }
+  user: { acceptedPrivacyTerms },
+  data: {
+    allChallengeNode: { edges }
+  }
 }) => {
   if (pending && !complete) {
     return <Loader fullScreen={true} />;
@@ -43,10 +48,13 @@ export const IndexPage = ({
     return <RedirectLearn />;
   }
 
-  return <Landing />;
+  return <Landing edges={edges} />;
 };
 
 const propTypes = {
+  data: PropTypes.shape({
+    allChallengeNode: AllChallengeNode
+  }),
   fetchState: PropTypes.shape({
     pending: PropTypes.bool,
     complete: PropTypes.bool,
@@ -62,3 +70,23 @@ IndexPage.propTypes = propTypes;
 IndexPage.displayName = 'IndexPage';
 
 export default connect(mapStateToProps)(IndexPage);
+
+export const query = graphql`
+  query challNodes {
+    allChallengeNode(sort: { fields: [superOrder, order, challengeOrder] }) {
+      edges {
+        node {
+          fields {
+            slug
+            blockName
+          }
+          id
+          block
+          title
+          superBlock
+          dashedName
+        }
+      }
+    }
+  }
+`;

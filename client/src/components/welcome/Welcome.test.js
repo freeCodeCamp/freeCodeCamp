@@ -46,6 +46,7 @@ const loggedInProps = {
   user: {
     name: 'Development User'
   },
+  location: { hash: '' },
   data: {
     challengeNode: {
       fields: {

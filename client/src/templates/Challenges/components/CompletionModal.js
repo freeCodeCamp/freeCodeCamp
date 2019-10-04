@@ -97,6 +97,7 @@ export class CompletionModal extends Component {
     if (this.state.downloadURL) {
       URL.revokeObjectURL(this.state.downloadURL);
     }
+    this.props.close();
   }
 
   render() {
