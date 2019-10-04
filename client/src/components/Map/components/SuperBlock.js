@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { uniq, find } from 'lodash';
+import { dasherize } from '../../../../../utils/slugs';
 
 import Block from './Block';
 
@@ -88,7 +89,10 @@ export class SuperBlock extends Component {
   render() {
     const { superBlock, isExpanded, toggleSuperBlock } = this.props;
     return (
-      <li className={`superblock ${isExpanded ? 'open' : ''}`}>
+      <li
+        className={`superblock ${isExpanded ? 'open' : ''}`}
+        id={dasherize(superBlock)}
+      >
         <button
           aria-expanded={isExpanded}
           className='map-title'

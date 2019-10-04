@@ -3,6 +3,7 @@
 exports[`<SuperBlock /> expanded snapshot: superBlock-expanded 1`] = `
 <li
   className="superblock open"
+  id="super-block-one"
 >
   <button
     aria-expanded={true}
@@ -141,6 +142,7 @@ exports[`<SuperBlock /> expanded snapshot: superBlock-expanded 1`] = `
 exports[`<SuperBlock /> not expanded snapshot: superBlock-not-expanded 1`] = `
 <li
   className="superblock "
+  id="super-block-one"
 >
   <button
     aria-expanded={false}

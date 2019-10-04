@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import uniq from 'lodash/uniq';
 import { createSelector } from 'reselect';
+import { scroller } from 'react-scroll';
 
 import SuperBlock from './components/SuperBlock';
 import Spacer from '../helpers/Spacer';
@@ -13,9 +14,11 @@ import './map.css';
 import { ChallengeNode } from '../../redux/propTypes';
 import { toggleSuperBlock, toggleBlock, resetExpansion } from './redux';
 import { currentChallengeIdSelector } from '../../redux';
+import { dasherize } from '../../../../utils/slugs';
 
 const propTypes = {
   currentChallengeId: PropTypes.string,
+  hash: PropTypes.string,
   introNodes: PropTypes.arrayOf(
     PropTypes.shape({
       fields: PropTypes.shape({ slug: PropTypes.string.isRequired }),
@@ -52,17 +55,56 @@ function mapDispatchToProps(dispatch) {
 }
 
 export class Map extends Component {
-  componentDidMount() {
-    this.initializeExpandedState(this.props.currentChallengeId);
+  constructor(props) {
+    super(props);
+    this.state = { idToScrollto: null };
+    this.initializeExpandedState();
   }
 
-  initializeExpandedState(currentChallengeId) {
-    this.props.resetExpansion();
-    const { superBlock, block } = currentChallengeId
-      ? this.props.nodes.find(node => node.id === currentChallengeId)
-      : this.props.nodes[0];
-    this.props.toggleBlock(block);
-    this.props.toggleSuperBlock(superBlock);
+  componentDidMount() {
+    if (this.state.idToScrollto) {
+      window.scrollTo(0, 0);
+      scroller.scrollTo(this.state.idToScrollto, {
+        duration: 1500,
+        smooth: 'easeInOutQuint',
+        offset: -35
+      });
+    }
+  }
+
+  // As this happens in the constructor, it's necessary to manipulate state
+  // directly.
+  initializeExpandedState() {
+    const {
+      currentChallengeId,
+      hash,
+      nodes,
+      resetExpansion,
+      toggleBlock,
+      toggleSuperBlock
+    } = this.props;
+    resetExpansion();
+    let node;
+
+    // find the challenge that has the same superblock with hash
+    if (hash) {
+      node = nodes.find(node => dasherize(node.superBlock) === hash);
+      // eslint-disable-next-line react/no-direct-mutation-state
+      if (node) this.state = { idToScrollto: dasherize(node.superBlock) };
+    }
+
+    // if there is no hash or the hash did not match any challenge superblock
+    // and there was a currentChallengeId
+    if (!node && currentChallengeId) {
+      node = nodes.find(node => node.id === currentChallengeId);
+      // eslint-disable-next-line react/no-direct-mutation-state
+      if (node) this.state = { idToScrollto: dasherize(node.title) };
+    }
+
+    if (!node) node = nodes[0];
+
+    toggleBlock(node.block);
+    toggleSuperBlock(node.superBlock);
   }
 
   renderSuperBlocks(superBlocks) {
