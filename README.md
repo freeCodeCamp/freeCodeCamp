@@ -140,7 +140,7 @@ If you think you have found a vulnerability, please report responsibly. Don't cr
 
 ### Contributing
 
-> ### [Please follow these steps to contribute.](CONTRIBUTING.md)
+> ### [Please follow these steps to contribute](CONTRIBUTING.md).
 
 ### Platform, Build and Deployment Status
 
