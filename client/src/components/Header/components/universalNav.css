@@ -113,7 +113,6 @@
   height: auto;
 }
 
-
 @media (max-width: 265px) {
   .nav-list li a {
     width: 50vw;
