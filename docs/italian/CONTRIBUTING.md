@@ -124,7 +124,7 @@ Sentiti libero di chiedere aiuto su:
 - [La categoria "Contributori" dell nostro forum pubblico](https://www.freecodecamp.org/forum/c/contributors)
 - [La nostra chat room dei contributori pubblici su Gitter](https://gitter.im/FreeCodeCamp/Contributors)
 
-Siamo lieti di aiutarti a contribuire a uno qualsiasi degli argomenti su cui vorresti lavorare. Assicurati di cercare la tua domanda prima di pubblicarne una nuova. Sii educato e paziente. I nostri volontari e moderatori della comunità sono sempre in giro per guidarti nelle tue domande.
+Siamo lieti di aiutarti a contribuire ad uno qualsiasi degli argomenti su cui vorresti lavorare. Assicurati di cercare la tua domanda prima di pubblicarne una nuova. Sii educato e paziente. I nostri volontari e moderatori della comunità sono sempre in giro per guidarti nelle tue domande.
 
 **Sono nuovo su GitHub e nell'Open Source in generale:**
 
