@@ -13,13 +13,15 @@ Chương trình học lập trình web full-stack hoàn toàn miễn phí và t�
 
 ## Mục lục
 
-- [Các chứng Chỉ](#chứng-chỉ)
-- [Nền tản học tập](#nền-tảng-học-tập)
-- [Báo lỗi và vấn đề](#báo-lỗi-và-vấn-đề)
-- [Báo cáo vấn đề bảo mật](#Báo-cáo-vấn-đề-bảo-mật)
-- [Đóng góp](#đóng-góp)
-- [Tình trạng nền tảng, xây dựng và triển khai](#tình-trạng-nền-tảng,-xây-dựng-và-triển-khai)
-- [Giấy phép](#giấy-phép)
+- [Các chứng chỉ](#certifications)
+- [Nền tản học tập](#the-learning-platforms)
+- [Báo lỗi và vấn đề](#found-a-bug)
+- [Báo cáo vấn đề bảo mật](#found-a-security-issue)
+- [Đóng góp](#contributing)
+- [Tình trạng nền tảng, xây dựng và triển khai](#platform-build-and-deployment-status)
+- [Giấy phép](#license)
+
+<div id='certifications'/>
 
 ### Chứng Chỉ
 
@@ -114,7 +116,9 @@ Chúng tôi cũng có 3 loại chứng chỉ cũ từ chương trình giảng d�
 - Chứng chỉ trực quan hóa dữ liệu cũ
 - Chứng chỉ phát triển Back End cũ
 
-### Nền tảng học tập
+<div id='the-learning-platforms'/>
+
+### Nền Tảng Học Tập
 
 Mã lập trình đang được chạy trực tiếp trên [freeCodeCamp.org](https://www.freecodecamp.org).
 
@@ -128,27 +132,35 @@ Cộng đồng của chúng tôi còn có:
 
 > ### [Tham gia cùng chúng tôi tại đây](https://www.freecodecamp.org/signin).
 
-### Báo lỗi và vấn đề
+<div id='found-a-bug'/>
+
+### Báo Lỗi và Vấn Đề
 
 Nếu bạn nghĩ rằng bạn đã tìm thấy một lỗi, đầu tiên hãy đọc bài viết [Cách báo cáo lỗi](https://www.freecodecamp.org/forum/t/how-to-report-a-bug/19543) và làm theo hướng dẫn
 
 Nếu bạn nghĩ đó là một lỗi mới và đã xác nhận rằng ai đó cũng đang gặp phải vấn đề tương tự, hãy tiếp tục và tạo một vấn đề mới trên Github. Hãy chắc chắn cung cấp càng nhiều thông tin càng tốt để chúng tôi có thể sửa lỗi.
 
-### Reporting Security Issues
+<div id='found-a-security-issue'/>
 
-### Báo cáo vấn đề bảo mật
+### Báo Lỗi Bảo Mật
 
 Nếu bạn nghĩ rằng bạn đã tìm thấy một lỗ hổng, xin vui lòng có trách nhiệm báo cáo. Vui lòng đừng tạo các vấn đề cho các vấn đề liên quan đến bảo mật trên GitHub. Thay vào đó, vui lòng gửi email đến `security@freecodecamp.org` và chúng tôi sẽ xem xét ngay lập tức.
 
-### Đóng góp
+<div id='contributing'/>
+
+### Đóng Góp
 
 > ### [Vui lòng làm theo các bước đóng góp sau.](CONTRIBUTING.md)
 
-### Tình trạng nền tảng, xây dựng và triển khai
+<div id='platform-build-and-deployment-status'/>
+
+### Tình Trạng Nền Tảng, Xây Dựng và Triển Khai
 
 Trạng thái nền tảng chung cho tất cả các ứng dụng của chúng tôi có sẵn tại [`status.freecodecamp.org`](https://status.freecodecamp.org). Trạng thái xây dựng và triển khai mã lập trình có sẵn trong [DevOps Guide](/docs/devops.md).
 
-### Giấy phép
+<div id='license'/>
+
+### Giấy Phép
 
 Bản quyền © 2019 freeCodeCamp.org
 
