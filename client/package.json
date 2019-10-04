@@ -55,7 +55,7 @@
     "react-helmet": "^5.2.1",
     "react-hotkeys": "^2.0.0",
     "react-identicons": "^1.1.7",
-    "react-instantsearch-dom": "^5.7.0",
+    "react-instantsearch-dom": "^6.0.0-beta.0",
     "react-monaco-editor": "^0.30.1",
     "react-redux": "^5.0.7",
     "react-reflex": "^3.0.16",
