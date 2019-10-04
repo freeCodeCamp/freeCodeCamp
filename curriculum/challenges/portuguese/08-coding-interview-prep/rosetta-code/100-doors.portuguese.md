@@ -7,7 +7,7 @@ localeTitle: 100 portas
 ---
 
 ## Description
-<section id="description"><p> Existem 100 portas em uma fila que estão todas fechadas inicialmente. Você faz 100 passes pelas portas. Na primeira vez, visite cada porta e &#39;ative&#39; a porta (se a porta estiver fechada, abra-a; se estiver aberta, feche-a). Na segunda vez, visite apenas todas as segundas portas (ou seja, porta nº 2, nº 4, nº 6, ...) e alterne-a. Na terceira vez, visite todas as 3as portas (por exemplo, porta # 3, # 6, # 9, ...), etc., até visitar apenas a 100ª porta. </p><p> Implemente uma função para determinar o estado das portas após a última passagem. Retorne o resultado final em uma matriz, com apenas o número da porta incluído na matriz, se estiver aberto. </p></section>
+<section id="description"><p> Existem 100 portas em uma fila que estão todas fechadas inicialmente. Você passa 100 vezes pelas portas. Na primeira vez, visita cada porta e &#39;ative&#39; a porta (se a porta estiver fechada, abre-a; se estiver aberta, fecha-a). Na segunda vez, visita apenas todas as segundas portas (ou seja, porta nº 2, nº 4, nº 6, ...) e alterna-a. Na terceira vez, visita todas as 3as portas (por exemplo, porta # 3, # 6, # 9, ...), etc., até visitar apenas a 100ª porta. </p><p> Implemente uma função para determinar o estado das portas após a última passagem. Retorne o resultado final em uma matriz, com apenas o número da porta incluído na matriz, se estiver aberta. </p></section>
 
 ## Instructions
 <section id="instructions">
