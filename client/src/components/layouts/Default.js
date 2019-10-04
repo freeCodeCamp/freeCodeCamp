@@ -11,8 +11,7 @@ import {
   fetchUser,
   isSignedInSelector,
   onlineStatusChange,
-  isOnlineSelector,
-  userSelector
+  isOnlineSelector
 } from '../../redux';
 import { flashMessageSelector, removeFlashMessage } from '../Flash/redux';
 
@@ -69,21 +68,18 @@ const propTypes = {
   onlineStatusChange: PropTypes.func.isRequired,
   pathname: PropTypes.string.isRequired,
   removeFlashMessage: PropTypes.func.isRequired,
-  showFooter: PropTypes.bool,
-  theme: PropTypes.string
+  showFooter: PropTypes.bool
 };
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
   flashMessageSelector,
   isOnlineSelector,
-  userSelector,
-  (isSignedIn, flashMessage, isOnline, user) => ({
+  (isSignedIn, flashMessage, isOnline) => ({
     isSignedIn,
     flashMessage,
     hasMessage: !!flashMessage.message,
-    isOnline,
-    theme: user.theme
+    isOnline
   })
 );
 const mapDispatchToProps = dispatch =>

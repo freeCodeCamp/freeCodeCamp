@@ -21,8 +21,11 @@ export default class HTML extends React.Component {
             dangerouslySetInnerHTML={{
               __html: `
               (function() {
+                var preferredTheme;
+                
                 window.__onThemeChange = function() {};
                 window.__onThemeChangeEditor = function() {};
+
                 function setTheme(newTheme) {
                   window.__theme = newTheme;
                   preferredTheme = newTheme;
@@ -31,7 +34,6 @@ export default class HTML extends React.Component {
                   window.__onThemeChangeEditor(newTheme);
                 }
 
-                var preferredTheme;
                 try {
                   preferredTheme = localStorage.getItem('theme');
                 } catch (err) { }

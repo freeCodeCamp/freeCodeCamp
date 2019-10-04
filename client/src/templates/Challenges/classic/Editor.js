@@ -9,7 +9,7 @@ import {
   setEditorFocusability,
   updateFile
 } from '../redux';
-import { userSelector, isDonationModalOpenSelector } from '../../../redux';
+import { isDonationModalOpenSelector } from '../../../redux';
 import { Loader } from '../../../components/helpers';
 
 const MonacoEditor = React.lazy(() => import('react-monaco-editor'));
@@ -23,17 +23,14 @@ const propTypes = {
   ext: PropTypes.string,
   fileKey: PropTypes.string,
   setEditorFocusability: PropTypes.func,
-  theme: PropTypes.string,
   updateFile: PropTypes.func.isRequired
 };
 
 const mapStateToProps = createSelector(
   canFocusEditorSelector,
   isDonationModalOpenSelector,
-  userSelector,
-  (canFocus, open, { theme = 'night' }) => ({
-    canFocus: open ? false : canFocus,
-    theme
+  (canFocus, open) => ({
+    canFocus: open ? false : canFocus
   })
 );
 
@@ -168,8 +165,7 @@ class Editor extends Component {
   }
 
   render() {
-    const { contents, ext, theme, fileKey } = this.props;
-    console.log(theme);
+    const { contents, ext, fileKey } = this.props;
     const editorTheme =
       this.state.theme === 'dark' ? 'vs-dark-custom' : 'vs-custom';
     return (
