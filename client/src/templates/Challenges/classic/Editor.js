@@ -86,7 +86,7 @@ class Editor extends Component {
   constructor(...props) {
     super(...props);
     this.state = {
-      theme: window.__theme
+      theme: typeof window !== `undefined` ? window.__theme : null
     };
     this.options = {
       fontSize: '18px',
@@ -116,8 +116,8 @@ class Editor extends Component {
   };
 
   editorDidMount = (editor, monaco) => {
-    window.__onThemeChange = () => {
-      this.setState({ theme: window.__theme });
+    window.__onThemeChangeEditor = theme => {
+      this.setState({ theme: theme });
     };
     this._editor = editor;
     if (this.props.canFocus) {
@@ -161,6 +161,10 @@ class Editor extends Component {
     if (this.props.dimensions !== prevProps.dimensions && this._editor) {
       this._editor.layout();
     }
+  }
+
+  componentWillUnmount() {
+    window.__onThemeChangeEditor = () => {};
   }
 
   render() {

@@ -22,11 +22,13 @@ export default class HTML extends React.Component {
               __html: `
               (function() {
                 window.__onThemeChange = function() {};
+                window.__onThemeChangeEditor = function() {};
                 function setTheme(newTheme) {
                   window.__theme = newTheme;
                   preferredTheme = newTheme;
                   document.body.className = newTheme;
                   window.__onThemeChange(newTheme);
+                  window.__onThemeChangeEditor(newTheme);
                 }
 
                 var preferredTheme;

@@ -76,7 +76,8 @@
   padding: 0;
 }
 
-.nav-list li a {
+.nav-list li a,
+.nav-list .nav-theme {
   display: block;
   margin: 0;
   padding: 8px 15px;
@@ -89,8 +90,12 @@
 .nav-list li:hover {
   background: var(--gray-00);
 }
+.nav-list li {
+  cursor: pointer;
+}
 
-.nav-list li a:hover {
+.nav-list li a:hover,
+.nav-list .nav-theme:hover {
   color: var(--theme-color);
   text-decoration: none;
   background: var(--gray-00);
