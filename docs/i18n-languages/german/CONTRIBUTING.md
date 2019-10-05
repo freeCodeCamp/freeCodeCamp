@@ -25,7 +25,7 @@ Du kannst Dir einen beliebigen Bereich aussuchen, zu dem du etwas beitragen möc
 
 ## Trage etwas zu dieser Open-Source-Codebase bei
 
-Wir haben eine riesige Open-Source-Codebase, die aus tausenden von [Coding Challenges](https://learn.freecodecamp.org) und [Leitfaden-Artikeln](https://guide.freecodecamp.org) besteht.
+Wir haben eine riesige Open-Source-Codebas, die aus tausenden von [Coding Challenges](https://learn.freecodecamp.org) und [Leitfaden-Artikeln](https://guide.freecodecamp.org) besteht.
 
 Hierbei kannst Du uns helfen:
 
