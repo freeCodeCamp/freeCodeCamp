@@ -131,8 +131,10 @@ a:focus {
   border-color: var(--secondary-color);
 }
 
-/* button */
-.btn {
+/* buttons including buttons in gatsby default 404 */
+.btn,
+p button,
+input[type='submit'] {
   background-color: var(--quaternary-background);
   border-width: 3px;
   border-color: var(--secondary-color);
