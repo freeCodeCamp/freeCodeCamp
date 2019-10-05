@@ -33,4 +33,3 @@ jobs:
 
     - stage: Unit and Integration tests
       script: npm test
-
