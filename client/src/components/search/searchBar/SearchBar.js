@@ -213,14 +213,7 @@ class SearchBar extends Component {
 SearchBar.displayName = 'SearchBar';
 SearchBar.propTypes = propTypes;
 
-const ConnectSearchBar = connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(SearchBar);
-
-const ForwardRefSearchBar = React.forwardRef((props, ref) => (
-  <ConnectSearchBar {...props} innerRef={ref} />
-));
-ForwardRefSearchBar.displayName = 'SearchBar';
-
-export default ForwardRefSearchBar;

@@ -40,9 +40,7 @@ describe('<NavLinks />', () => {
 
 const UniversalNavProps = {
   displayMenu: false,
-  ref: {
-    menuButtonRef: {},
-    searchBarRef: {}
-  },
+  menuButtonRef: {},
+  searchBarRef: {},
   toggleDisplayMenu: function() {}
 };

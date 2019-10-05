@@ -8,39 +8,35 @@ import MenuButton from './MenuButton';
 import NavLinks from './NavLinks';
 import './universalNav.css';
 
-export const UniversalNav = React.forwardRef(
-  ({ displayMenu, toggleDisplayMenu }, ref) => {
-    const { menuButtonRef, searchBarRef } = ref;
-    return (
-      <nav
-        className={
-          'universal-nav nav-padding' + (displayMenu ? ' expand-nav' : '')
-        }
-        id='universal-nav'
-      >
-        <div
-          className={
-            'universal-nav-left' + (displayMenu ? ' display-flex' : '')
-          }
-        >
-          <SearchBar ref={searchBarRef} />
-        </div>
-        <div className='universal-nav-middle'>
-          <Link id='universal-nav-logo' to='/'>
-            <NavLogo />
-          </Link>
-        </div>
-        <div className='universal-nav-right main-nav'>
-          <NavLinks displayMenu={displayMenu} />
-        </div>
-        <MenuButton
-          displayMenu={displayMenu}
-          onClick={toggleDisplayMenu}
-          ref={menuButtonRef}
-        />
-      </nav>
-    );
-  }
+export const UniversalNav = ({
+  displayMenu,
+  toggleDisplayMenu,
+  menuButtonRef,
+  searchBarRef
+}) => (
+  <nav
+    className={'universal-nav nav-padding' + (displayMenu ? ' expand-nav' : '')}
+    id='universal-nav'
+  >
+    <div
+      className={'universal-nav-left' + (displayMenu ? ' display-flex' : '')}
+    >
+      <SearchBar innerRef={searchBarRef} />
+    </div>
+    <div className='universal-nav-middle'>
+      <Link id='universal-nav-logo' to='/'>
+        <NavLogo />
+      </Link>
+    </div>
+    <div className='universal-nav-right main-nav'>
+      <NavLinks displayMenu={displayMenu} />
+    </div>
+    <MenuButton
+      displayMenu={displayMenu}
+      innerRef={menuButtonRef}
+      onClick={toggleDisplayMenu}
+    />
+  </nav>
 );
 
 UniversalNav.displayName = 'UniversalNav';
@@ -48,5 +44,7 @@ export default UniversalNav;
 
 UniversalNav.propTypes = {
   displayMenu: PropTypes.bool,
+  menuButtonRef: PropTypes.object,
+  searchBarRef: PropTypes.object,
   toggleDisplayMenu: PropTypes.func
 };

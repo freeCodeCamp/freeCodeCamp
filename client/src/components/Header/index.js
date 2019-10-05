@@ -50,10 +50,8 @@ export class Header extends React.Component {
         <header>
           <UniversalNav
             displayMenu={displayMenu}
-            ref={{
-              menuButtonRef: this.menuButtonRef,
-              searchBarRef: this.searchBarRef
-            }}
+            menuButtonRef={this.menuButtonRef}
+            searchBarRef={this.searchBarRef}
             toggleDisplayMenu={this.toggleDisplayMenu}
           />
         </header>
