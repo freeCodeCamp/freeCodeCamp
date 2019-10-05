@@ -13,6 +13,7 @@ import { blockNameify } from '../../../../utils/blockNameify';
 import GreenPass from '../../../assets/icons/GreenPass';
 import GreenNotCompleted from '../../../assets/icons/GreenNotCompleted';
 import IntroInformation from '../../../assets/icons/IntroInformation';
+import { dasherize } from '../../../../../utils/slugs';
 
 const mapStateToProps = (state, ownProps) => {
   const expandedSelector = makeExpandedBlockSelector(ownProps.blockDashedName);
@@ -92,6 +93,11 @@ export class Block extends Component {
       return (
         <li
           className={'map-challenge-title' + completedClass}
+          id={
+            challenge.title
+              ? dasherize(challenge.title)
+              : dasherize(challenge.frontmatter.title)
+          }
           key={'map-challenge' + challenge.fields.slug}
         >
           <span className='badge map-badge'>

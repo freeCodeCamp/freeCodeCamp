@@ -11,7 +11,9 @@ const {
   FORUM_LOCATION: forum,
   NEWS_LOCATION: news,
   LOCALE: locale,
-  STRIPE_PUBLIC: stripePublicKey
+  STRIPE_PUBLIC: stripePublicKey,
+  ALGOLIA_APP_ID: algoliaAppId,
+  ALGOLIA_API_KEY: algoliaAPIKey
 } = process.env;
 
 const locations = {
@@ -21,4 +23,9 @@ const locations = {
   newsLocation: news
 };
 
-module.exports = Object.assign(locations, { locale, stripePublicKey });
+module.exports = Object.assign(locations, {
+  locale,
+  stripePublicKey,
+  algoliaAppId,
+  algoliaAPIKey
+});
