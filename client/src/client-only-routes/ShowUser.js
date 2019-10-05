@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
-import { Link, navigate } from 'gatsby';
+import { navigate } from '@reach/router';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import {
@@ -14,6 +14,8 @@ import {
 } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 
+import { apiLocation } from '../../config/env.json';
+
 import {
   isSignedInSelector,
   userFetchStateSelector,
@@ -25,6 +27,7 @@ import { Spacer, Loader, FullWidthRow } from '../components/helpers';
 const propTypes = {
   email: PropTypes.string,
   isSignedIn: PropTypes.bool,
+  navigate: PropTypes.func.isRequired,
   reportUser: PropTypes.func.isRequired,
   userFetchState: PropTypes.shape({
     pending: PropTypes.bool,
@@ -46,7 +49,13 @@ const mapStateToProps = createSelector(
 );
 
 const mapDispatchToProps = dispatch =>
-  bindActionCreators({ reportUser }, dispatch);
+  bindActionCreators(
+    {
+      navigate,
+      reportUser
+    },
+    dispatch
+  );
 
 class ShowUser extends Component {
   constructor(props) {
@@ -79,9 +88,10 @@ class ShowUser extends Component {
     const { username, reportUser } = this.props;
     return reportUser({ username, reportDescription });
   }
-  setNavigationTimer() {
+
+  setNavigationTimer(navigate) {
     if (!this.timer) {
-      this.timer = setTimeout(() => navigate('/signin'), 5000);
+      this.timer = setTimeout(() => navigate(`${apiLocation}/signin`), 5000);
     }
   }
 
@@ -93,7 +103,8 @@ class ShowUser extends Component {
     }
 
     if ((complete || errored) && !isSignedIn) {
-      this.setNavigationTimer();
+      const { navigate } = this.props;
+      this.setNavigationTimer(navigate);
       return (
         <main>
           <FullWidthRow>
@@ -111,9 +122,16 @@ class ShowUser extends Component {
                   automatically in 5 seconds
                 </p>
                 <p>
-                  <Link to='/signin'>
-                    Or you can here if you do not want to wait
-                  </Link>
+                  <Button
+                    bsStyle='default'
+                    href='/signin'
+                    onClick={e => {
+                      e.preventDefault();
+                      return navigate(`${apiLocation}/signin`);
+                    }}
+                  >
+                    Or click here if you do not want to wait
+                  </Button>
                 </p>
                 <Spacer />
               </Panel.Body>
