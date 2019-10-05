@@ -10,6 +10,7 @@ exports[`<Map /> snapshot: Map 1`] = `
     >
       <div
         class="map-ui"
+        data-test-label="learn-curriculum-map"
       >
         <ul>
           <li

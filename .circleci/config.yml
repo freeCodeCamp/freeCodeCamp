@@ -1,0 +1,32 @@
+version: 2.1
+
+executors:
+  e2e-executor:
+    docker:
+      - image: cypress/browsers:node10.16.0-chrome76
+
+jobs:
+  e2e:
+    executor: e2e-executor
+    steps:
+      - checkout
+      - run:
+          name: Copy base .env file
+          command: cp sample.env .env
+      - run:
+          name: Install node modules
+          command: npm install && npm run bootstrap
+      - run:
+          name: End 2 end test command
+          # Running `npm run e2e:ci` causes the circleci node to OOM
+          command: npm run e2e
+
+workflows:
+  version: 2
+  tests:
+    jobs:
+      - e2e:
+          filters:
+            branches:
+              ignore:
+                - master

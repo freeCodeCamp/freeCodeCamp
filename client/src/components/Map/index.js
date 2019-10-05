@@ -115,7 +115,7 @@ export class Map extends Component {
     return (
       <Row>
         <Col sm={10} smOffset={1} xs={12}>
-          <div className='map-ui'>
+          <div className='map-ui' data-test-label='learn-curriculum-map'>
             <ul>
               {this.renderSuperBlocks(superBlocks)}
               <Spacer />
