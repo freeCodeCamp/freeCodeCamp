@@ -48,6 +48,5 @@ export default UniversalNav;
 
 UniversalNav.propTypes = {
   displayMenu: PropTypes.bool,
-  menuButtonRef: PropTypes.object,
   toggleDisplayMenu: PropTypes.func
 };
