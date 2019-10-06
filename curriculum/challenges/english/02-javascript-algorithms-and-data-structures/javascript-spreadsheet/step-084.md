@@ -1,7 +1,7 @@
 ---
 id: 5d7925373b7127cfaeb50c26
 title: Step 084
-challengeType: 1
+challengeType: 0
 isBeta: true
 ---
 

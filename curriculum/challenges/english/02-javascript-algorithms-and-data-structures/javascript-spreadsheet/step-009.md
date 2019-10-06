@@ -1,7 +1,7 @@
 ---
 id: 5d792533d31e4f7fad33011d
 title: Step 009
-challengeType: 1
+challengeType: 0
 isBeta: true
 ---
 

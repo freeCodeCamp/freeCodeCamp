@@ -1,7 +1,7 @@
 ---
 id: 5d792539534f1bf991bb987f
 title: Step 123
-challengeType: 1
+challengeType: 0
 isBeta: true
 ---
 

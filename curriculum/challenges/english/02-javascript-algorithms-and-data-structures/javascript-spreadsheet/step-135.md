@@ -1,7 +1,7 @@
 ---
 id: 5d792539e1446045d0df6d28
 title: Step 135
-challengeType: 1
+challengeType: 0
 isBeta: true
 ---
 

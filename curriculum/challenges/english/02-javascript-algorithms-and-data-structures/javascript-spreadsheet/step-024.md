@@ -1,7 +1,7 @@
 ---
 id: 5d792534257122211d3043af
 title: Step 024
-challengeType: 1
+challengeType: 0
 isBeta: true
 ---
 

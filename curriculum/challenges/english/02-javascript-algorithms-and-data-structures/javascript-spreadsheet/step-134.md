@@ -1,7 +1,7 @@
 ---
 id: 5d792539239148965a1a59a5
 title: Step 134
-challengeType: 1
+challengeType: 0
 isBeta: true
 ---
 

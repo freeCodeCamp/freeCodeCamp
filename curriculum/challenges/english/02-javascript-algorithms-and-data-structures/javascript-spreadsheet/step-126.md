@@ -1,7 +1,7 @@
 ---
 id: 5d7925398d525f61a9ff3a79
 title: Step 126
-challengeType: 1
+challengeType: 0
 isBeta: true
 ---
 

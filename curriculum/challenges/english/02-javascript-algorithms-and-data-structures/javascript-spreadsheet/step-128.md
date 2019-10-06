@@ -1,7 +1,7 @@
 ---
 id: 5d7925398a7184b41b12a0e0
 title: Step 128
-challengeType: 1
+challengeType: 0
 isBeta: true
 ---
 

@@ -1,7 +1,7 @@
 ---
 id: 5d7925398157757b23730fdd
 title: Step 121
-challengeType: 1
+challengeType: 0
 isBeta: true
 ---
 

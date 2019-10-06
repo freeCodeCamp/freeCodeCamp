@@ -1,7 +1,7 @@
 ---
 id: 5d79253a8b29d78984369e4b
 title: Step 139
-challengeType: 1
+challengeType: 0
 isBeta: true
 ---
 

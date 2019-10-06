@@ -1,7 +1,7 @@
 ---
 id: 5d79253a0f968095adfa40f6
 title: Step 141
-challengeType: 1
+challengeType: 0
 isBeta: true
 ---
 

@@ -1,7 +1,7 @@
 ---
 id: 5d7925365d4035eeb2e395fd
 title: Step 076
-challengeType: 1
+challengeType: 0
 isBeta: true
 ---
 

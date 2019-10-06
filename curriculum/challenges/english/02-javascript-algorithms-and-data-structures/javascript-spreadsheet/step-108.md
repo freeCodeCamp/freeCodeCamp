@@ -1,7 +1,7 @@
 ---
 id: 5d79253824ae9b4a6e6f3108
 title: Step 108
-challengeType: 1
+challengeType: 0
 isBeta: true
 ---
 

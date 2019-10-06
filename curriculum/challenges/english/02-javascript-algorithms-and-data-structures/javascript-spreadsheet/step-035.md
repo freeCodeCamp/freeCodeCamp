@@ -1,7 +1,7 @@
 ---
 id: 5d7925348ee084278ff15556
 title: Step 035
-challengeType: 1
+challengeType: 0
 isBeta: true
 ---
 

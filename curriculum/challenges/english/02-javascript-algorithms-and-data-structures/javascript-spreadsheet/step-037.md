@@ -1,7 +1,7 @@
 ---
 id: 5d792534408c5be896b0a46e
 title: Step 037
-challengeType: 1
+challengeType: 0
 isBeta: true
 ---
 

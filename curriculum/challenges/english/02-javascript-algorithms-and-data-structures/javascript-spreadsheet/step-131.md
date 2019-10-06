@@ -1,7 +1,7 @@
 ---
 id: 5d79253939434a2724c0ec41
 title: Step 131
-challengeType: 1
+challengeType: 0
 isBeta: true
 ---
 

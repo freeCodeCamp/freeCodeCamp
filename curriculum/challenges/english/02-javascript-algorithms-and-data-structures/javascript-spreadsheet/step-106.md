@@ -1,7 +1,7 @@
 ---
 id: 5d792538e48b5a2c6e5bbe12
 title: Step 106
-challengeType: 1
+challengeType: 0
 isBeta: true
 ---
 

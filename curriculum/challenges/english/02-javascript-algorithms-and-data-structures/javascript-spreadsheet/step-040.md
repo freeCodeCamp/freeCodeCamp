@@ -1,7 +1,7 @@
 ---
 id: 5d79253483eada4dd69258eb
 title: Step 040
-challengeType: 1
+challengeType: 0
 isBeta: true
 ---
 

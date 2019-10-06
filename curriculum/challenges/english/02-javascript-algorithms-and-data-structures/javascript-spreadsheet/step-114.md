@@ -1,7 +1,7 @@
 ---
 id: 5d792538631844ad0bdfb4c3
 title: Step 114
-challengeType: 1
+challengeType: 0
 isBeta: true
 ---
 

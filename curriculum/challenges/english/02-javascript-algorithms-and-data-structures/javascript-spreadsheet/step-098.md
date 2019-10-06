@@ -1,7 +1,7 @@
 ---
 id: 5d7925374321824cba309875
 title: Step 098
-challengeType: 1
+challengeType: 0
 isBeta: true
 ---
 

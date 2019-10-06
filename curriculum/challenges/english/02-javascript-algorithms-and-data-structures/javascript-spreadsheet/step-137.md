@@ -1,7 +1,7 @@
 ---
 id: 5d79253a98bd9fdf7ce68d0a
 title: Step 137
-challengeType: 1
+challengeType: 0
 isBeta: true
 ---
 

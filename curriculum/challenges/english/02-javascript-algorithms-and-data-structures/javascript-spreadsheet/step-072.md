@@ -1,7 +1,7 @@
 ---
 id: 5d79253685fc69b8fe60a0d2
 title: Step 072
-challengeType: 1
+challengeType: 0
 isBeta: true
 ---
 

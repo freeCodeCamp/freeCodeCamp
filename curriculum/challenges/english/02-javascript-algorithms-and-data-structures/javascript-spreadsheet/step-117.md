@@ -1,7 +1,7 @@
 ---
 id: 5d792539dd4fd4c96fd85f7e
 title: Step 117
-challengeType: 1
+challengeType: 0
 isBeta: true
 ---
 
