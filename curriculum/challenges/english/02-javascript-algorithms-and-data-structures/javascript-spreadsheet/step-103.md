@@ -26,7 +26,7 @@ Remove the `console.log` statement.
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(!/update=\(?event\)?=>\{.*console\.log\((highPrecedence\(['"]2*2['"]\))===\1\).*\}/.test(code.replace(/\s/g, "")));
+    testString: assert(!code.includes("console.log"));
 
 ```
 
