@@ -14,7 +14,7 @@ localeTitle: Используйте свойство flex-basis для уста�
 
 ## Instructions
 <section id='instructions'>
-Установите начальный размер ящиков с использованием <code>flex-basis</code> . Добавьте свойство CSS <code>flex-basis</code> как в <code>#box-1</code> и в <code>#box-2</code> . Дайте <code>#box-1</code> значение <code>10em</code> и <code>#box-2</code> значение <code>20em</code> .
+Установите начальный размер боксов(контейнеров) с использованием <code>flex-basis</code> . Добавьте свойство CSS <code>flex-basis</code> как в <code>#box-1</code> и в <code>#box-2</code> . Дайте <code>#box-1</code> значение <code>10em</code> и <code>#box-2</code> значение <code>20em</code> .
 </section>
 
 ## Tests
