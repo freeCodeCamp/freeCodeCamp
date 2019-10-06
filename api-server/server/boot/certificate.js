@@ -438,17 +438,40 @@ function createShowCert(app) {
 
         // the challenge id has been rotated for isDataVisCert
         // so we need to check for id 561add10cb82ac38a17513b3
+
+        const oldDataVizId = '561add10cb82ac38a17513b3';
         if (certType === 'isDataVisCert' && !certChallenge) {
           console.log('olderId');
           let oldDataVisIdChall = _.find(
             completedChallenges,
-            ({ id }) => '561add10cb82ac38a17513b3' === id
+            ({ id }) => oldDataVizId === id
           );
 
           if (oldDataVisIdChall) {
             completedDate = oldDataVisIdChall.completedDate || completedDate;
           }
         }
+
+        // if fullcert is not found, return the latest completedDate
+        if (certType === 'isFullStackCert' && !certChallenge) {
+          var chalIds = [oldDataVizId];
+          for (var o in certIds) {
+            if (certIds.hasOwnProperty(o)) chalIds.push(certIds[o]);
+          }
+
+          let latestDate = 0;
+          for (let i of chalIds) {
+            let foundItem = _.find(completedChallenges, ['id', i]);
+            if (foundItem && foundItem.completedDate > latestDate) {
+              latestDate = foundItem.completedDate;
+            }
+          }
+
+          completedDate = latestDate;
+        }
+
+        console.log(certType);
+        // console.log(completionDates);
 
         const { username, name } = user;
         return res.json({
