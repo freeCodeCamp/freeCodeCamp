@@ -9,7 +9,7 @@
 
 [freeCodeCamp.org](https://www.freecodecamp.org) est une communauté conviviale où vous pouvez apprendre à coder gratuitement. Elle est gérée par [un organisme à but non lucratif 501 (c) (3)](https://donate.freecodecamp.org) et soutenue par des donateurs dans le but d'aider des millions d'adultes à se reconvertir vers l'informatique. Notre communauté a déjà aidé plus de 10 000 personnes à décrocher leur premier emploi de développeur.
 
-Notre programme complet de développement Web est entièrement gratuit et à votre rythme. Nous avons des milliers de défis de codage interactif pour vous aider à développer vos compétences.
+Notre programme complet de développement Web est entièrement gratuit et vous permet d'étudier à votre rythme. Nous avons des milliers de défis de codage interactif pour vous aider à développer vos compétences.
 
 ## Table des matières
 

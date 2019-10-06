@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
-import { Link } from 'gatsby';
+import Link from '../helpers/Link';
 
 import { CurrentChallengeLink, FullWidthRow, Spacer } from '../helpers';
 import Camper from './components/Camper';
@@ -62,7 +62,9 @@ function renderIsLocked(username, isSessionUser) {
       </Helmet>
       <Spacer size={2} />
       <Grid>
-        {isSessionUser ? renderSettingsButton() : null}
+        {isSessionUser
+          ? renderSettingsButton()
+          : renderReportUserButton(username)}
         <FullWidthRow>
           <h2 className='text-center'>
             {username} has not made their profile public.
@@ -90,6 +92,24 @@ function renderSettingsButton() {
         <Col sm={4} smOffset={4}>
           <Link className='btn btn-lg btn-primary btn-block' to='/settings'>
             Update my settings
+          </Link>
+        </Col>
+      </Row>
+      <Spacer size={2} />
+    </Fragment>
+  );
+}
+
+function renderReportUserButton(username) {
+  return (
+    <Fragment>
+      <Row>
+        <Col sm={4} smOffset={4}>
+          <Link
+            className='btn btn-lg btn-primary btn-block'
+            to={`/user/${username}/report-user`}
+          >
+            Report This User
           </Link>
         </Col>
       </Row>
@@ -142,7 +162,9 @@ function Profile({ user, isSessionUser }) {
       </Helmet>
       <Spacer size={2} />
       <Grid>
-        {isSessionUser ? renderSettingsButton() : null}
+        {isSessionUser
+          ? renderSettingsButton()
+          : renderReportUserButton(username)}
         <Camper
           about={showAbout ? about : null}
           githubProfile={githubProfile}
