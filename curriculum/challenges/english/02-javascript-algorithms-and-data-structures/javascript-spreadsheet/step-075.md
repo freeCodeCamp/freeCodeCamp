@@ -24,7 +24,7 @@ Replace the `""` in `varExpanded` with `match => document.getElementById(match.t
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(code.replace(/\s/g, "").includes("constvarExpanded=varRangeExpanded.replace(varRegex,match=>document.getElementById(match.toUpperCase()).value)");
+    testString: assert(code.replace(/\s/g, "").includes("constvarExpanded=varRangeExpanded.replace(varRegex,match=>document.getElementById(match.toUpperCase()).value)"));
 
 ```
 
