@@ -9,12 +9,12 @@ localeTitle: Использовать свойство align-items в Tweet Embe
 
 ## Description
 <section id='description'>
-Последняя задача привела свойство <code>align-items</code> и привела пример. Это свойство может быть применено к нескольким элементам вставки tweet для выравнивания элементов flex внутри них.
+В последней задаче указано свойство <code>align-items</code> и приведен пример. Это свойство может быть применено к нескольким элементам вставки tweet для выравнивания элементов flex внутри них.
 </section>
 
 ## Instructions
 <section id='instructions'>
-Добавьте <code>align-items</code> свойств CSS в элемент <code>.follow-btn</code> . Установите значение в центр.
+Добавьте <code>align-items</code> свойств CSS в элемент <code>.follow-btn</code> . Установите значение в центре.
 </section>
 
 ## Tests
