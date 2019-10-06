@@ -124,7 +124,7 @@ Our community also has:
 - A [YouTube channel](https://youtube.com/freecodecamp) with free courses on Python, SQL, Android, and a wide variety of other technologies.
 - A [podcast](https://podcast.freecodecamp.org/) with technology insights and inspiring stories from developers.
 - A comprehensive [guide to thousands of programming topics](https://guide.freecodecamp.org/)
-- A [Developer News](https://www.freecodecamp.org/news) publication, a free, open source, no-ads place to cross-post your blog articles.
+- A [Developer News](https://www.freecodecamp.org/news) publication, a free, open source, no-ads place to cross-post your blog article.
 
 > ### [Join our community here](https://www.freecodecamp.org/signin).
 
