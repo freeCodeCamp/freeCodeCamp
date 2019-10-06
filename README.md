@@ -49,7 +49,7 @@ Here are our six core certifications:
   <br />
   **Projects**: Tribute Page, Survey Form, Product Landing Page, Technical Documentation Page, Personal Portfolio Webpage
 
-#### 2. JavaScript Algorithms and Data Structures Certification
+#### 2. Java Algorithms and Data Structures Certification
 
 - [Basic JavaScript](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript)
 - [ES6](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6)
