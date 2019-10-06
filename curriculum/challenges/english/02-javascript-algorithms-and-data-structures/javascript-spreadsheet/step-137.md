@@ -27,7 +27,7 @@ Replace the body of `range` with `start`.
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(code.replace(/\s/g, "").includes("constrange=(start,end)=>start"));
+    testString: assert(/constrange=\(start,end\)=>start(;|\n)/.test(code.replace(/\s/g, "")));
 
 ```
 
