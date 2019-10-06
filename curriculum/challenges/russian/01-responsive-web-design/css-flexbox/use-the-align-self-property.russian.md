@@ -14,7 +14,7 @@ localeTitle: Использовать свойство align-self
 
 ## Instructions
 <section id='instructions'>
-Добавьте свойство CSS <code>align-self</code> в <code>#box-1</code> и <code>#box-2</code> . Дайте <code>#box-1</code> значение центра и дайте <code>#box-2</code> значение flex-end.
+Добавьте свойство CSS <code>align-self</code> в <code>#box-1</code> и <code>#box-2</code> . Установите <code>#box-1</code> значение центра и укажите <code>#box-2</code> значение flex-end.
 </section>
 
 ## Tests
