@@ -16,9 +16,9 @@ localeTitle: Промежуточное ПО для создания серве�
 Подсказка: тест не пройдет, если вы не подключите промежуточное ПО. Если вы смонтируете функцию где-то еще, тест не пройдёт, даже если результат вывода верный.
 </section>
 
-## Instructions
+## Инструкция
 <section id='instructions'>
-In the route <code>app.get('/now', ...)</code> chain a middleware function and the final handler. In the middleware function you should add the current time to the request object in the <code>req.time</code> key. You can use <code>new Date().toString()</code>. In the handler, respond with a JSON object, taking the structure <code>{time: req.time}</code>.
+В цепочке маршрута <code>app.get('/now', ...)</code> есть функция промежуточного программного обеспечения и конечный обработчик. В функции промежуточного программного обеспечения вы должны добавить текущее время к объекту запроса в ключе <code>req.time</code>. Вы можете использовать <code>new Date().toString()</code>. В обработчике реагирует с JSON-объектом, и выполняется установка <code>{time: req.time}</code>.
 <strong>Note:</strong> The test will not pass if you don’t chain the middleware. If you mount the function somewhere else, the test will fail, even if the output result is correct.
 </section>
 
