@@ -1,3 +1,15 @@
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+### VisualStudioCode Patch ###
+
+# Ignore all local history of files
+.history
+
 node_modules
 
 .env
@@ -15,7 +27,6 @@ node_modules
 
 .DS_Store
 
-
 api-server/lib/*
 curriculum/dist
 curriculum/build
@@ -24,5 +35,4 @@ client/static/js/frame-runner.js
 client/static/js/frame-runner.js.map
 client/static/_redirects
 env.json
-.vscode/
 .netlify
