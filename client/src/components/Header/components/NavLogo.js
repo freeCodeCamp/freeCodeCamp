@@ -1,15 +1,10 @@
 import React from 'react';
-
-const fCClogo = 'https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg';
+import FreeCodeCampLogo from '../../../assets/icons/FreeCodeCampLogo.js'
 
 function NavLogo() {
   return (
     <picture>
-      <img
-        alt='learn to code at freeCodeCamp logo'
-        className='nav-logo'
-        src={fCClogo}
-      />
+     <FreeCodeCampLogo/>
     </picture>
   );
 }
