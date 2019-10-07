@@ -56,8 +56,7 @@
     "./middlewares/csp": {},
     "./middlewares/flash-cheaters": {},
     "./middlewares/passport-login": {},
-    "./middlewares/email-not-verified-notice": {},
-    "./middlewares/privacy-terms-notice": {}
+    "./middlewares/email-not-verified-notice": {}
   },
   "files": {},
   "final:after": {
