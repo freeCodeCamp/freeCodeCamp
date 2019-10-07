@@ -11,7 +11,7 @@ freeCodeCamp.org is possible, thanks to thousands of kind volunteers like you. W
 
 We strictly enforce our ["Code of Conduct"](https://www.freecodecamp.org/code-of-conduct). Please take a moment to read it. It's only 196 words long.
 
-Happy contributing!
+Happy contributing.
 
 ## Here are some fun ways that you can help
 
