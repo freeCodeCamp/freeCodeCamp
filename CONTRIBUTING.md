@@ -7,9 +7,9 @@
 
 Hello. 👋
 
-freeCodeCamp.org is possible, thanks to thousands of kind volunteers like you. We are grateful for your contributions and we are excited to welcome you aboard.
+freeCodeCamp.org is possible, thanks to thousands of kind volunteers like you. We are grateful for your contributions and are excited to welcome you aboard.
 
-We strictly enforce our ["Code of Conduct"](https://www.freecodecamp.org/code-of-conduct). Take a moment to read it. It's only 196 words long.
+We strictly enforce our ["Code of Conduct"](https://www.freecodecamp.org/code-of-conduct). Please take a moment to read it. It's only 196 words long.
 
 Happy contributing.
 
@@ -25,13 +25,13 @@ You can contribute to any of these:
 
 ## Contribute to this open source codebase
 
-Our codebase has thousands of [coding challenges](https://learn.freecodecamp.org) and other source code that powers our learning platform.
+Our codebase has thousands of [coding challenges](https://learn.freecodecamp.org) and other source code that power our learning platform.
 
 ### Create, update and fix bugs in our coding challenges
 
 All our coding challenges are curated by the community, bringing in expert knowledge from volunteers like you.
 
-You can help expand them and make their wording clearer. You can update the user stories to explain the concept better and even remove redundant ones. You can also improve the challenge tests to make them more accurately test people's code.
+You can help expand them and make their wording better. You can also update the user stories to explain the concept better or remove redundant ones and improve the challenge tests to make them more accurately test people's code.
 
 **If you're interested in improving these coding challenges, here's [how to work on coding challenges](/docs/how-to-work-on-coding-challenges.md).**
 
