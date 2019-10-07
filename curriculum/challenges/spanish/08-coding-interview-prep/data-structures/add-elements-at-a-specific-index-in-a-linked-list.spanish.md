@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Agregar elementos a un índice específico en una lista enlazada
 ---
 
-## Description
-<section id="description"> Vamos a crear un método addAt (índice, elemento) que agregue un elemento a un índice dado. Al igual que con la forma en que eliminamos los elementos en un índice determinado, debemos realizar un seguimiento del índice actual mientras recorremos la lista enlazada. Cuando el currentIndex coincida con el índice dado, deberíamos reasignar la siguiente propiedad del nodo anterior para hacer referencia al nuevo nodo agregado. Y el nuevo nodo debe hacer referencia al siguiente nodo en el currentIndex. Volviendo al ejemplo de la línea de conga, una nueva persona quiere unirse a la línea, pero quiere unirse en el medio. Estás en el medio de la línea, así que quitas las manos de la persona que está delante de ti. La nueva persona se acerca y pone sus manos sobre la persona que una vez tuvo, y ahora tiene las manos sobre la nueva persona. Instrucciones Cree un método addAt (índice, elemento) que agregue un elemento a un índice determinado. Devuelve false si un elemento no se pudo agregar. Nota Recuerde verificar si el índice dado es negativo o más largo que la longitud de la lista enlazada. </section>
+## Descripción
+<section id="description"> Vamos a crear un método <code>addAt</code/> (índice, elemento) que agregue un elemento a un índice dado. Al igual que con la forma en que eliminamos los elementos en un índice determinado, debemos realizar un seguimiento del índice actual mientras recorremos la lista enlazada. Cuando el <code>currentIndex</code> coincida con el índice dado, deberíamos reasignar la siguiente propiedad del nodo anterior para hacer referencia al nuevo nodo agregado. Y el nuevo nodo debe hacer referencia al siguiente nodo en el <code>currentIndex</code>. Volviendo al ejemplo de la línea de conga, una nueva persona quiere unirse a la línea, pero quiere unirse en el medio. Estás en el medio de la línea, así que quitas las manos de la persona que está delante de ti. La nueva persona se acerca y pone sus manos sobre la persona que una vez tuvo, y ahora tiene las manos sobre la nueva persona. Instrucciones Cree un método <code>addAt</code/> (índice, elemento) que agregue un elemento a un índice determinado. Devuelve <code>false</code/> si un elemento no se pudo agregar. Nota Recuerde verificar si el índice dado es negativo o más largo que la longitud de la lista enlazada. </section>
 
-## Instructions
+## Instrucciones
 <section id="instructions">
 </section>
 
-## Tests
+## Pruebas
 <section id='tests'>
 
 ```yml
@@ -82,7 +82,7 @@ function LinkedList() {
 
 </section>
 
-## Solution
+## Solución
 <section id='solution'>
 
 ```js
