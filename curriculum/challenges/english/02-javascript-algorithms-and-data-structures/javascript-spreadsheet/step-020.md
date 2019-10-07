@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-In `highPrecedence`, define `regex` to be `/([0-9.]+)([*/])([0-9.]+)/`.
+In `highPrecedence`, define `regex` to be `/([0-9.]+)([*\/])([0-9.]+)/`.
 
 </section>
 
@@ -24,7 +24,7 @@ In `highPrecedence`, define `regex` to be `/([0-9.]+)([*/])([0-9.]+)/`.
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(code.replace(/\s/g, "").includes("regex=/([0-9.]+)([*/])([0-9.]+)/"));
+    testString: assert(code.replace(/\s/g, "").includes("regex=/([0-9.]+)([*\\/])([0-9.]+)/"));
 
 ```
 
@@ -111,5 +111,25 @@ const highPrecedence = str => {
 ## Solution
 <section id='solution'>
 
+```html
+<script>
+const infixToFunction = {
+  "+": (x, y) => x + y,
+  "-": (x, y) => x - y,
+  "*": (x, y) => x * y,
+  "/": (x, y) => x / y
+};
+
+const infixEval = (str, regex) =>
+  str.replace(regex, (_, arg1, fn, arg2) =>
+    infixToFunction[fn](parseFloat(arg1), parseFloat(arg2))
+  );
+
+const highPrecedence = str => {
+  const regex = /([0-9.]+)([*\/])([0-9.]+)/;
+  return str;
+};
+</script>
+```
 
 </section>

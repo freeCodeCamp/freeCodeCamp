@@ -104,5 +104,20 @@ const infixEval = (str, regex) => str.replace(regex, infixToFunction["+"]);
 ## Solution
 <section id='solution'>
 
+```html
+<script>
+const infixToFunction = {
+  "+": (x, y) => x + y,
+  "-": (x, y) => x - y,
+  "*": (x, y) => x * y,
+  "/": (x, y) => x / y
+};
+
+const infixEval = (str, regex) =>
+  str.replace(regex, (match, arg1, fn, arg2) =>
+    infixToFunction["+"]
+  );
+</script>
+```
 
 </section>

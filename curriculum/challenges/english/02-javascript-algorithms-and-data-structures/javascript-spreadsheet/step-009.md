@@ -24,7 +24,7 @@ In `infixToFunction`, replace `addVar` with `(x, y) => x + y`.
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(/\+["']:\(x,y\)=>x\+y/.test(code));
+    testString: assert(code.replace(/\s/g, '').match(/\+["']:\(x,y\)=>x\+y/));
 
 ```
 
@@ -39,11 +39,11 @@ tests:
 ```html
 <script>
 
+const addVar = (x, y) => x + y;
+
 const infixToFunction = {
   "+": addVar
 };
-
-const addVar = (x, y) => x + y;
 
 
 </script>
@@ -101,5 +101,14 @@ const addVar = (x, y) => x + y;
 ## Solution
 <section id='solution'>
 
+```html
+<script>
+const addVar = (x, y) => x + y;
+
+const infixToFunction = {
+  "+": (x, y) => x + y
+};
+</script>
+```
 
 </section>

@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Now define an empty function `add` using the `function` keyword.
+Above `infixToFunction`, define an empty function `add` using the `function` keyword.
 It should accept two parameters, `x` and `y`.
 
 </section>
@@ -98,5 +98,14 @@ const infixToFunction = {};
 ## Solution
 <section id='solution'>
 
+```html
+<script>
+function add(x, y) {
+
+}
+
+const infixToFunction = {};
+</script>
+```
 
 </section>

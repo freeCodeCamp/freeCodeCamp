@@ -17,7 +17,7 @@ function(x) {
 }
 ```
 
-Make the function `add` anonymous and remove the `addVar` definition (as `add` isn't defined anymore).
+First, remove the `addVar` definition.
 
 </section>
 
@@ -33,7 +33,7 @@ Make the function `add` anonymous and remove the `addVar` definition (as `add` i
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(code.replace(/\s/g, "").includes("function(x,y){returnx+y"));
+    testString: assert(!code.replace(/\s/g, "").includes("constaddVar=add"));
 
 ```
 
@@ -48,13 +48,13 @@ tests:
 ```html
 <script>
 
-const infixToFunction = {};
-
 function add(x, y) {
   return x + y;
 }
 
 const addVar = add;
+
+const infixToFunction = {};
 
 
 </script>
@@ -112,5 +112,14 @@ const addVar = add;
 ## Solution
 <section id='solution'>
 
+```html
+<script>
+function add(x, y) {
+  return x + y;
+}
+
+const infixToFunction = {};
+</script>
+```
 
 </section>

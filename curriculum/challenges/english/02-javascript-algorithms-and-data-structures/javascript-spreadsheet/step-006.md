@@ -8,12 +8,15 @@ isBeta: true
 ## Description
 <section id='description'>
 
-You can also assign anonymous functions to variables:
+Anonymous functions are often passed as arguments to other functions, but what if you want to call one later?
+You can assign anonymous functions to variables and call them with the variable's name:
 
 ```js
 const fn = function(x) {
   return x;
 }
+
+fn();
 ```
 
 Assign the anonymous function to the variable `addVar`. 
@@ -47,11 +50,11 @@ tests:
 ```html
 <script>
 
-const infixToFunction = {};
-
-function(x, y) {
+function add(x, y) {
   return x + y;
 }
+
+const infixToFunction = {};
 
 
 </script>
@@ -109,5 +112,14 @@ function(x, y) {
 ## Solution
 <section id='solution'>
 
+```html
+<script>
+const addVar = function(x, y) {
+  return x + y;
+};
+
+const infixToFunction = {};
+</script>
+```
 
 </section>

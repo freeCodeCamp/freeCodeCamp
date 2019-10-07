@@ -39,9 +39,9 @@ tests:
 ```html
 <script>
 
-const infixToFunction = {};
-
 const addVar = (x, y) => x + y;
+
+const infixToFunction = {};
 
 
 </script>
@@ -99,5 +99,14 @@ const addVar = (x, y) => x + y;
 ## Solution
 <section id='solution'>
 
+```html
+<script>
+const addVar = (x, y) => x + y;
+
+const infixToFunction = {
+  "+": addVar
+};
+</script>
+```
 
 </section>

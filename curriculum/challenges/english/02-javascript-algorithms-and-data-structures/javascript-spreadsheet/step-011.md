@@ -99,5 +99,15 @@ const infixToFunction = {
 ## Solution
 <section id='solution'>
 
+```html
+<script>
+const infixToFunction = {
+  "+": (x, y) => x + y,
+  "-": (x, y) => x - y,
+  "*": (x, y) => x * y,
+  "/": (x, y) => x / y
+};
+</script>
+```
 
 </section>

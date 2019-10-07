@@ -98,5 +98,10 @@ tests:
 ## Solution
 <section id='solution'>
 
+```html
+<script>
+const infixToFunction = {};
+</script>
+```
 
 </section>

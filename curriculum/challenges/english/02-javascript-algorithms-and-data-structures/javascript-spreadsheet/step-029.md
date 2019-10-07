@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Set `regex` to `/([a-z]*)(([0-9., ]*))(?!.*()/i` in `applyFn`.
+Set `regex` to `/([a-z]*)\(([0-9., ]*)\)(?!.*\()/i` in `applyFn`.
 
 </section>
 
@@ -24,7 +24,7 @@ Set `regex` to `/([a-z]*)(([0-9., ]*))(?!.*()/i` in `applyFn`.
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(code.replace(/\s/g, "").includes("constapplyFn=str=>{constnoHigh=highPrecedence(str);constinfix=/([0-9.]+)([+-])([0-9.]+)/;conststr2=infixEval(noHigh,infix);constregex=/([a-z]*)(([0-9., ]*))(?!.*()/i"));
+    testString: assert(applyFn.toString().replace(/\s/g, '').includes('varregex=/([a-z]*)\\(([0-9.,]*)\\)(?!.*\\()/i'));
 
 ```
 
@@ -123,5 +123,37 @@ const applyFn = str => {
 ## Solution
 <section id='solution'>
 
+```html
+<script>
+const infixToFunction = {
+  "+": (x, y) => x + y,
+  "-": (x, y) => x - y,
+  "*": (x, y) => x * y,
+  "/": (x, y) => x / y
+};
+
+const infixEval = (str, regex) =>
+  str.replace(regex, (_, arg1, fn, arg2) =>
+    infixToFunction[fn](parseFloat(arg1), parseFloat(arg2))
+  );
+
+const highPrecedence = str => {
+  const regex = /([0-9.]+)([*\/])([0-9.]+)/;
+  const str2 = infixEval(str, regex);
+  return str === str2 ? str : highPrecedence(str2);
+};
+
+const spreadsheetFunctions = {
+  "": x => x
+};
+
+const applyFn = str => {
+  const noHigh = highPrecedence(str);
+  const infix = /([0-9.]+)([+-])([0-9.]+)/;
+  const str2 = infixEval(noHigh, infix);
+  const regex = /([a-z]*)\(([0-9., ]*)\)(?!.*\()/i;
+}
+</script>
+```
 
 </section>

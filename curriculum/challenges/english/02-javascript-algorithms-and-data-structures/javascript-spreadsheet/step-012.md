@@ -24,7 +24,7 @@ Use arrow function syntax to define a function `infixEval` which takes `str` and
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(/constinfixEval=\(str,regex\)=>str\.replace\(regex,['"]{2}\)/.test(code));
+    testString: assert(/constinfixEval=\(str,regex\)=>str\.replace\(regex,['"]{2}\)/.test(code.replace(/\s/g, '')));
 
 ```
 
@@ -102,5 +102,17 @@ const infixToFunction = {
 ## Solution
 <section id='solution'>
 
+```html
+<script>
+const infixToFunction = {
+  "+": (x, y) => x + y,
+  "-": (x, y) => x - y,
+  "*": (x, y) => x * y,
+  "/": (x, y) => x / y
+};
+
+const infixEval = (str, regex) => str.replace(regex, "");
+</script>
+```
 
 </section>
