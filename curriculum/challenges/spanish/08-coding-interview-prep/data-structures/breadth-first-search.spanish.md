@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Búsqueda de amplitud
 ---
 
-## Description
-<section id="description"> Hasta ahora, hemos aprendido diferentes formas de crear representaciones de gráficos. ¿Ahora que? Una pregunta natural que se debe tener es ¿cuáles son las distancias entre dos nodos en el gráfico? Introduzca los <dfn>algoritmos de recorrido del gráfico</dfn> . <dfn>Algoritmos de recorrido</dfn> son algoritmos para atravesar o visitar los nodos en un gráfico. Un tipo de algoritmo de recorrido es el primer algoritmo de búsqueda. Este algoritmo comienza en un nodo, primero visita a todos sus vecinos que están a un borde de distancia, luego continúa visitando a cada uno de sus vecinos. Visualmente, esto es lo que hace el algoritmo. <img class="img-responsive" src="https://camo.githubusercontent.com/2f57e6239884a1a03402912f13c49555dec76d06/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f342f34362f416e696d617465645f4246532e676966"> Para implementar este algoritmo, deberá ingresar una estructura de gráfico y un nodo en el que desee comenzar. Primero, querrá estar al tanto de las distancias desde el nodo de inicio. Esto querrá comenzar todas sus distancias, inicialmente un número grande, como <code>Infinity</code> . Esto proporciona una referencia para el caso en el que no se puede acceder a un nodo desde su nodo de inicio. A continuación, querrá ir desde el nodo de inicio a sus vecinos. Estos vecinos están a un borde de distancia y en este punto debes agregar una unidad de distancia a las distancias que estás siguiendo. Por último, la cola es una estructura de datos importante que ayudará a implementar el primer algoritmo de búsqueda. Esta es una matriz donde puede agregar elementos a un extremo y eliminar elementos del otro extremo. Esto también se conoce como estructura de datos <dfn>FIFO</dfn> o <dfn>primero en entrar, primero en salir</dfn> . </section>
+## Descripción
+<section id="description"> Hasta ahora, hemos aprendido diferentes formas de crear representaciones de gráficos. ¿Ahora que? Una pregunta natural que se debe tener es ¿cuáles son las distancias entre dos nodos en el gráfico? Introduzca los <dfn>algoritmos de recorrido del gráfico</dfn> . <dfn>Algoritmos de recorrido</dfn> son algoritmos para atravesar o visitar los nodos en un gráfico. Un tipo de algoritmo de recorrido es el primer algoritmo de búsqueda. Este algoritmo comienza en un nodo, primero visita a todos sus vecinos que están a un borde de distancia, luego continúa visitando a cada uno de sus vecinos. Visualmente, esto es lo que hace el algoritmo. <img class="img-responsive" src="https://camo.githubusercontent.com/2f57e6239884a1a03402912f13c49555dec76d06/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f342f34362f416e696d617465645f4246532e676966"> Para implementar este algoritmo, deberá ingresar una estructura de gráfico y un nodo en el que desee comenzar. Primero, querrá estar al tanto de las distancias desde el nodo de inicio. Esto querrá comenzar todas sus distancias, inicialmente un número grande, como <code>Infinity</code>. Esto proporciona una referencia para el caso en el que no se puede acceder a un nodo desde su nodo de inicio. A continuación, querrá ir desde el nodo de inicio a sus vecinos. Estos vecinos están a un borde de distancia y en este punto debes agregar una unidad de distancia a las distancias que estás siguiendo. Por último, la cola es una estructura de datos importante que ayudará a implementar el primer algoritmo de búsqueda. Esta es una matriz donde puede agregar elementos a un extremo y eliminar elementos del otro extremo. Esto también se conoce como estructura de datos <dfn>FIFO</dfn> o <dfn>primero en entrar, primero en salir</dfn>. </section>
 
-## Instructions
-<section id="instructions"> Escriba una función <code>bfs()</code> que tome un gráfico de matriz de adyacencia (una matriz bidimensional) y una raíz de etiqueta de nodo como parámetros. La etiqueta del nodo solo será el valor entero del nodo entre <code>0</code> y <code>n - 1</code> , donde <code>n</code> es el número total de nodos en el gráfico. Su función dará salida a un objeto JavaScript pares de clave-valor con el nodo y su distancia desde la raíz. Si no se pudo alcanzar el nodo, debería tener una distancia de <code>Infinity</code> . </section>
+## Instrucciones
+<section id="instructions">Escriba una función <code>bfs()</code> que tome un gráfico de matriz de adyacencia (una matriz bidimensional) y una raíz de etiqueta de nodo como parámetros. La etiqueta del nodo solo será el valor entero del nodo entre <code>0</code> y <code>n - 1</code>, donde <code>n</code> es el número total de nodos en el gráfico. Su función dará salida a un objeto JavaScript pares de clave-valor con el nodo y su distancia desde la raíz. Si no se pudo alcanzar el nodo, debería tener una distancia de <code>Infinity</code> . </section>
 
-## Tests
+## Pruebas
 <section id='tests'>
 
 ```yml
@@ -56,7 +56,7 @@ console.log(bfs(exBFSGraph, 3));
 </div>
 
 
-### After Test
+### Despues de las pruebas
 <div id='js-teardown'>
 
 ```js
@@ -67,7 +67,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solución
 <section id='solution'>
 
 ```js
