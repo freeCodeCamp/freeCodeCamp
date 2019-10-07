@@ -4,14 +4,14 @@
 <!-- do not translate this -->
 
 # Set up freeCodeCamp locally
-Follow these guidelines for getting freeCodeCamp locally on your system. This is highly recommended if you want to contribute regularly.
+Follow these guidelines for setting up freeCodeCamp locally on your system. This is highly recommended if you regularly want to contribute.
 
-Some of the contribution workflows, like previewing pages for the guide or the coding challenges, debugging and fixing bugs in codebase, requires you to have freeCodeCamp running locally.
+Some of the contribution workflows, like previewing pages for the guide or the coding challenges, debugging and fixing bugs in codebase, require you to have freeCodeCamp running locally.
 
 ## Fork the repository on GitHub
 ['Forking'](https://help.github.com/articles/about-forks/) is a step where you get your own copy of freeCodeCamp's main repository (a.k.a _repo_) on GitHub.
 
-This is essential as it allows you to work on your own copy of freeCodeCamp on GitHub, or to download (clone) your repository to work on locally. Later, you will be able to request changes to be pulled into the main repository from your fork via a pull request.
+This is essential as it allows you to work on your copy of freeCodeCamp on GitHub, or to download (clone) your repository to work on locally. Later, you will be able to request changes to be pulled into the main repository from your fork via a pull request.
 
 > **ProTip:**
 > The main repository at `https://github.com/freeCodeCamp/freeCodeCamp` is often referred to as the `upstream` repository.
