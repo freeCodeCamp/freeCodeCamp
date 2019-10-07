@@ -1,7 +1,7 @@
 node_modules
 
 .env
-.Trash-*
+
 
 *lib-cov
 *~
@@ -15,7 +15,7 @@ node_modules
 *.swp
 
 .DS_Store
-
+.Trash-*
 
 api-server/lib/*
 curriculum/dist
