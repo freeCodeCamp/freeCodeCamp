@@ -31,7 +31,7 @@ Return `toNumberList`.
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(applyFn.toString().replace(/\s/g, '').includes('vartoNumberList=functiontoNumberList(args){returnargs.split(",")'));
+    testString: assert(JSON.stringify(applyFn("")("foo,baz,bar")) === '["foo","baz","bar"]');
 
 ```
 
@@ -161,6 +161,7 @@ const applyFn = str => {
   const str2 = infixEval(noHigh, infix);
   const regex = /([a-z]*)\(([0-9., ]*)\)(?!.*\()/i;
   const toNumberList = args => args.split(",");
+  return toNumberList;
 }
 </script>
 ```

@@ -30,7 +30,7 @@ In `toNumberList`, chain the `map` method to `args.split(",")` and pass it `pars
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(applyfn("")("0,1,2").every((x, i) => x === i) && code.includes("map"));
+    testString: assert(code.replace(/\s/g, "").includes('constapplyFn=str=>{constnoHigh=highPrecedence(str);constinfix=/([0-9.]+)([+-])([0-9.]+)/;conststr2=infixEval(noHigh,infix);constregex=/([a-z]*)(([0-9.,]*))(?!.*()/i;consttoNumberList=args=>args.split(",").map(parseFloat)'));
 
 ```
 
