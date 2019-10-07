@@ -1,6 +1,7 @@
 node_modules
 
 .env
+.Trash-*
 
 *lib-cov
 *~
