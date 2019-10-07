@@ -12,40 +12,8 @@ Array [
     }
   />,
   <div
-    className="spacer"
-    style={
-      Object {
-        "height": "1px",
-        "padding": "15px 0",
-      }
-    }
-  />,
-  <div
     className="container"
   >
-    <div
-      className="row"
-    >
-      <div
-        className="col-sm-4 col-sm-offset-4"
-      >
-        <a
-          className="btn btn-lg btn-primary btn-block"
-          href="/user/string/report-user"
-        >
-          Report This User
-        </a>
-      </div>
-    </div>
-    <div
-      className="spacer"
-      style={
-        Object {
-          "height": "1px",
-          "padding": "15px 0",
-        }
-      }
-    />
     <div
       className="spacer"
       style={
@@ -182,6 +150,33 @@ Array [
       </h2>
       <br />
     </div>
+    <div
+      className="spacer"
+      style={
+        Object {
+          "height": "1px",
+          "padding": "15px 0",
+        }
+      }
+    />
+    <div
+      className="text-center row"
+    >
+      <a
+        href="/user/string/report-user"
+      >
+        Report This User
+      </a>
+    </div>
+    <div
+      className="spacer"
+      style={
+        Object {
+          "height": "1px",
+          "padding": "15px 0",
+        }
+      }
+    />
   </div>,
 ]
 `;
