@@ -3,7 +3,7 @@ title: A Tag
 ---
 ## A Tag
 
-The `<a>` tag or _anchor_ element creates a hyperlink to another page or file. In order to link to a different page or file the `<a>` tag must also contain a `href` attribute, which indicates the link's destination.
+The `<a>` tag or _anchor_ element creates a hyperlink to another page or file.It is not a self closing tag so you have to write `</a>` at end of you text. In order to link to a different page or file the `<a>` tag must also contain a `href` attribute, which indicates the link's destination.
 
 The text between the opening and closing `<a>` tags becomes the link.
 
