@@ -30,7 +30,7 @@ brew services start mailhog
 
 Die obigen Befehle starten einen Mailhog-Dienst im Hintergrund.
 
-Wenn die Installation abgeschlossen ist, kannst du mit [MailHog](#using-mailhog) beginnen.
+Wenn die Installation abgeschlossen ist, kannst du mit [MailHog](#mailhog-benutzen) beginnen.
 
 ### MailHog auf Windows installieren
 
@@ -40,7 +40,7 @@ Wenn der Download abgeschlossen ist, klicke auf die Datei um sie zu öffnen. Es 
 
 Schließe MailHog, indem du das Eingabeaufforderungsfenster schließt. Um MailHog erneut zu starten, klicke auf die ausführbare MailHog-Datei (.exe), die ursprünglich heruntergeladen wurde - es ist nicht notwendig, eine neue MailHog-Installationsdatei herunterzuladen.
 
-Starte [MailHog](#using-mailhog).
+Starte [MailHog](#mailhog-benutzen).
 
 ### MailHog auf Linux installieren
 
@@ -80,7 +80,7 @@ sudo cp /home/$(whoami)/go/bin/MailHog /usr/local/bin/mailhog
 mailhog
 ```
 
-Starte [MailHog](#using-mailhog).
+Starte [MailHog](#mailhog-benutzen).
 
 ## MailHog benutzen
 
