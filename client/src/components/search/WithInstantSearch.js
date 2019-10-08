@@ -20,7 +20,11 @@ import { createSelector } from 'reselect';
 
 const DEBOUNCE_TIME = 100;
 
-const searchClient = algoliasearch(algoliaAppId, algoliaAPIKey);
+// If a key is missing, searches will fail, but the client will still render.
+const searchClient =
+  algoliaAppId && algoliaAPIKey
+    ? algoliasearch(algoliaAppId, algoliaAPIKey)
+    : {};
 
 const propTypes = {
   children: PropTypes.any,

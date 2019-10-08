@@ -30,6 +30,12 @@ const locations = {
 module.exports = Object.assign(locations, {
   locale,
   stripePublicKey,
-  algoliaAppId,
-  algoliaAPIKey
+  algoliaAppId:
+    !algoliaAppId || algoliaAppId === 'Algolia app id from dashboard'
+      ? null
+      : algoliaAppId,
+  algoliaAPIKey:
+    !algoliaAPIKey || algoliaAPIKey === 'Algolia api key from dashboard'
+      ? null
+      : algoliaAPIKey
 });
