@@ -7,15 +7,15 @@
 
 Hallo 👋!
 
-freeCodeCamp.org wird dank vieler tausender Freiwilligen wie dir ermöglicht. Wir sind sehr dankbar für Deine Beiträge, und freuen uns, Dich hier willkommen zu heißen.
+freeCodeCamp.org wird dank vieler tausender Freiwilligen wie dir ermöglicht. Wir sind sehr dankbar für deine Beiträge und freuen uns, dich hier willkommen zu heißen.
 
-Wir setzen unseren ["Verhaltenskodex"](https://www.freecodecamp.org/code-of-conduct) streng durch. Nimm Dir einen Moment Zeit, ihn zu lesen. Er ist nur 196 Wörter lang.
+Wir setzen unseren [„Verhaltenskodex″](https://www.freecodecamp.org/code-of-conduct) streng durch. Nimm dir einen Moment Zeit, ihn zu lesen. Er ist nur 196 Wörter lang.
 
 Viel Spaß beim Mitwirken 🎉!
 
-## Hier sind einige Wege, wie Du helfen kannst
+## Hier sind einige Wege, wie du helfen kannst
 
-Du kannst Dir einen beliebigen Bereich aussuchen, zu dem du etwas beitragen möchtest:
+Du kannst dir einen beliebigen Bereich aussuchen, zu dem du etwas beitragen möchtest:
 
 1. [Trage etwas zu dieser Open-Source-Codebase bei](#Trage-etwas-zu-dieser-Open-Source-Codebase-bei). Hilf dabei, die [Leitfaden-Artikel](https://guide.freecodecamp.org/) oder die [Coding Challenges](https://learn.freecodecamp.org/) zu bearbeiten, oder fixe Bugs auf der Lernplattform.
 
@@ -27,7 +27,7 @@ Du kannst Dir einen beliebigen Bereich aussuchen, zu dem du etwas beitragen möc
 
 Wir haben eine riesige Open-Source-Codebas, die aus tausenden von [Coding Challenges](https://learn.freecodecamp.org) und [Leitfaden-Artikeln](https://guide.freecodecamp.org) besteht.
 
-Hierbei kannst Du uns helfen:
+Hierbei kannst du uns helfen:
 
 - [📝 Leitfaden-Artikel recherchieren, schreiben und aktualisieren](#leitfaden-artikel-recherchieren-schreiben-und-aktualisieren)
 
@@ -41,31 +41,31 @@ Hierbei kannst Du uns helfen:
 
 **Was sind Leitfaden-Artikel?**
 
-Leitfaden-Artikel helfen Dir, ein technologisches Konzept schnell zu begreifen. Sie sind kurz und in einer klar verständlichen Sprache geschrieben, sodass Du sie lesen kannst, bevor Du zu tiefer gehenden Ressourcen weitergehst.
+Leitfaden-Artikel helfen dir, ein technologisches Konzept schnell zu begreifen. Sie sind kurz und in einer klar verständlichen Sprache geschrieben, sodass du sie lesen kannst, bevor du zu tiefer gehenden Ressourcen weitergehst.
 
 Hier findest du einen [Beispiel-Artikel zu HTML-Anchor-Elementen](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/guide/english/html/elements/a-tag/index.md).
 
 **Über was kann ich einen Artikel schreiben?**
 
-Wir freuen uns über Deine Hilfe beim Schreiben dieser Artikel. Du musst kein Experte in einem Gebiet sein, um darüber zu schreiben - der komplette Leitfaden ist Open Source, d.h. auch wenn Du einen Fehler machst, wird ihn schlussendlich ein anderer Contributor korrigieren.
+Wir freuen uns über deine Hilfe beim Schreiben dieser Artikel. Du musst kein Experte in einem Gebiet sein, um darüber zu schreiben - der komplette Leitfaden ist Open Source, d.h. auch wenn du einen Fehler machst, wird ihn schlussendlich ein anderer Contributor korrigieren.
 
-Um zu helfen, finde einen `Stub-Artikel` auf unser [Leitfaden-Webseite](https://guide.freecodecamp.org), schreibe den Artikel und öffne einen Pull Request, um den Stub mit Deinem Artikel zu ersetzen. Ein [Pull Request](https://help.github.com/articles/about-pull-requests/) ist ein Weg, um Änderungen vorzuschlagen. So können andere von Deinen Änderungen erfahren, sie prüfen und schließlich übernehmen.
+Um zu helfen, finde einen `Stub-Artikel` auf unser [Leitfaden-Webseite](https://guide.freecodecamp.org), schreibe den Artikel und öffne einen Pull Request, um den Stub mit deinem Artikel zu ersetzen. Ein [Pull Request](https://help.github.com/articles/about-pull-requests/) ist ein Weg, um Änderungen vorzuschlagen. So können andere von Deinen Änderungen erfahren, sie prüfen und schließlich übernehmen.
 
-Wenn Du keinen Stub zu dem Thema finden kannst, über das Du gerne schreiben würdest, kannst Du einen Pull Request öffnen, der den Stub anlegt und Deinen Artikel enthält.
+Wenn du keinen Stub zu dem Thema finden kannst, über das du gerne schreiben würdest, kannst Du einen Pull Request öffnen, der den Stub anlegt und deinen Artikel enthält.
 
-Wenn Du dabei helfen willst, die Leitfaden-Artikel zu verbessern, kannst du [hier eine Anleitung finden](/docs/how-to-work-on-guide-articles.md).
+Wenn du dabei helfen willst, die Leitfaden-Artikel zu verbessern, kannst du [hier eine Anleitung finden](/docs/how-to-work-on-guide-articles.md).
 
 ### Bugs in unseren Coding-Challenges finden, aktualisieren und fixen
 
-Alle unsere Coding Challenges werden von Mitgliedern unserer Community verwaltet, die Experten-Wissen von Freiwilligen wie Dir mitbringen.
+Alle unsere Coding Challenges werden von Mitgliedern unserer Community verwaltet, die Experten-Wissen von Freiwilligen wie dir mitbringen.
 
-Du kannst dabei helfen, sie zu erweitern und sie klarer zu formulieren. Du kannst die User Stories aktualisieren, um das Konzept besser zu erklären, und auch überflüssige entfernen. Ebenso kannst Du die Challenge-Tests verbessern, damit sie den eingereichten Code genauer testen.
+Du kannst dabei helfen, sie zu erweitern und sie klarer zu formulieren. Du kannst die User Stories aktualisieren, um das Konzept besser zu erklären, und auch überflüssige entfernen. Ebenso kannst du die Challenge-Tests verbessern, damit sie den eingereichten Code genauer testen.
 
-Wenn Du daran interessiert bist, diese Coding Challenges zu verbessern, findest Du [hier eine Artikel dazu](/docs/how-to-work-on-coding-challenges.md).
+Wenn du daran interessiert bist, diese Coding Challenges zu verbessern, findest du [hier einen Artikel dazu](/docs/how-to-work-on-coding-challenges.md).
 
 ### Leitfaden-Artikel und Coding Challenges übersetzen
 
-Du kannst uns helfen, unsere Leitfaden-Artikel und unsere Coding Challenges in eine Sprache, die Du sprichst, zu übersetzen. Aktuell haben wir übersetzte Versionen in den folgenden Sprachen:
+Du kannst uns helfen, unsere Leitfaden-Artikel und unsere Coding Challenges in eine Sprache, die du sprichst, zu übersetzen. Aktuell haben wir übersetzte Versionen in den folgenden Sprachen:
 
 - [Chinese (中文)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/chinese)
 - [Russian (русский)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/russian)
@@ -73,7 +73,7 @@ Du kannst uns helfen, unsere Leitfaden-Artikel und unsere Coding Challenges in e
 - [Spanish (Español)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/spanish)
 - [Portuguese (Português)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/portuguese)
 
-Wir würden uns sehr über Deine Hilfe beim Verbessern der Übersetzungen freuen. Millionen Menschen nutzen die englischsprachige Version von freeCodeCamp.org, und wir erwarten, dass Millionen Menschen mehr die übersetzten Versionen nutzen werden.
+Wir würden uns sehr über deine Hilfe beim Verbessern der Übersetzungen freuen. Millionen Menschen nutzen die englischsprachige Version von freeCodeCamp.org und wir erwarten, dass Millionen Menschen mehr die übersetzten Versionen nutzen werden.
 
 ### Bugs auf der Lernplattform von freeCodeCamp.org fixen
 
@@ -89,7 +89,7 @@ Um dazu beizutragen braucht man ein gewisses Verständnis von APIs, ES6-Syntax a
 
 Im Wesentlichen erwarten wir eine grundlegende Vertrautheit mit einigen der erwähnten Technologien, Tools und Bibliotheken. Du musst allerdings keine Experte darin sein, um etwas beizutragen.
 
-Bitte zögere nicht, uns Fragen auf den damit zusammenhängenden Issue Threads zu schicken, wir beantworten sie gerne. Wenn Du Dir nicht sicher bist, kannst Du Dich immer an Mrugesh Mohapatra [`@raisedadead`](https://github.com/raisedadead) oder Stuart Taylor [`@bouncey`](https://github.com/bouncey) von unserem Plattform-Development-Team wenden, um Dir hiermit zu helfen.
+Bitte zögere nicht, uns Fragen auf den damit zusammenhängenden Issue Threads zu schicken, wir beantworten sie gerne. Wenn du dir nicht sicher bist, kannst du dich immer an Mrugesh Mohapatra [`@raisedadead`](https://github.com/raisedadead) oder Stuart Taylor [`@bouncey`](https://github.com/bouncey) von unserem Plattform-Development-Team wenden, um dir hiermit zu helfen.
 
 Wenn Du uns helfen möchtest, unsere Codebase zu verbessern, findest du hier eine Anleitung, [wie du freeCodeCamp lokal anlegst](/docs/how-to-setup-freecodecamp-locally.md).
 
@@ -97,11 +97,11 @@ Wenn Du uns helfen möchtest, unsere Codebase zu verbessern, findest du hier ein
 
 **Wie kann ich einen Bug melden, der noch nicht dokumentiert wurde?**
 
-Wenn Du denkst, dass Du einen Bug gefunden hast, lies zunächst den ["Hilfe, ich habe einen Bug gefunden"](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543)-Artikel und folge den Anweisungen.
+Wenn du denkst, dass du einen Bug gefunden hast, lies zunächst den ["Hilfe, ich habe einen Bug gefunden"](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543)-Artikel und folge den Anweisungen.
 
-Wenn Du Dir sicher bist, dass es sich um einen neuen Bug handelt, kannst du ein neues GitHub-Issue erstellen. Stelle sicher, dass Du so viel Information wie möglich dazuschreibst, sodass wir den Bug nachvollziehen können. Wie haben ein vorgefertigtes Issue-Template, das Dir dabei hilft.
+Wenn du dir sicher bist, dass es sich um einen neuen Bug handelt, kannst du ein neues GitHub-Issue erstellen. Stelle sicher, dass du so viel Information wie möglich dazuschreibst, sodass wir den Bug nachvollziehen können. Wie haben ein vorgefertigtes Issue-Template, das dir dabei hilft.
 
-Bitte beachte, dass alle Issues, die nach Hilfe bei einer Coding Challenge fragen, geschlossen werden. Der Issue-Tracker ist ausschließlich für Probleme und Diskussionen, die sich auf die Codebase beziehen. Wenn Du Dir nicht sicher bist, [frag im Forum nach Hilfe](https://www.freecodecamp.org/forum), bevor Du einen Report machst.
+Bitte beachte, dass alle Issues, die nach Hilfe bei einer Coding Challenge fragen, geschlossen werden. Der Issue-Tracker ist ausschließlich für Probleme und Diskussionen, die sich auf die Codebase beziehen. Wenn du dir nicht sicher bist, [frag im Forum nach Hilfe](https://www.freecodecamp.org/forum), bevor du einen Report machst.
 
 **Wie kann ich ein Sicherheitsrisiko melden?**
 
@@ -109,12 +109,12 @@ Bitte erstelle keine GitHub-Issues für Sicherheitsrisiken. Schicke stattdessen 
 
 **Ich hänge an etwas fest, das nicht in der Dokumentation beschrieben ist. Wie bekomme ich Hilfe?**
 
-An den folgenden Orten kannst Du um Hilfe bitten:
+An den folgenden Orten kannst du um Hilfe bitten:
 
 - [Der "Contributor"-Bereich unseres öffentlichen Forums](https://www.freecodecamp.org/forum/c/contributors)
 - [Unser öffentlicher Chatroom für Contributor auf Gitter](https://gitter.im/FreeCodeCamp/Contributors)
 
-Wir helfen Dir sehr gerne beim Mitwirken an jeglichen Bereichen, die Dich interessieren. Stelle sicher, dass Du erst nach deiner Anfrage suchst, before Du eine neue anlegst. Sei höflich und geduldig. Unsere Community von Freiwilligen und Moderatoren ist immer da, um Dich bei Deinen Anliegen zu führen.
+Wir helfen dir sehr gerne beim Mitwirken an jeglichen Bereichen, die dich interessieren. Stelle sicher, dass du erst nach deiner Anfrage suchst, bevor du eine neue anlegst. Sei höflich und geduldig. Unsere Community von Freiwilligen und Moderatoren ist immer da, um dich bei deinen Anliegen zu führen.
 
 **Ich bin ein GitHub/Open-Source-Neuling:**
 
@@ -122,12 +122,12 @@ Lies unseren [Wie wirke ich an Open-Source-Projekten mit-Artikel](https://github
 
 **Was bedeuten die unterschiedlichen Label, die auf Issues getaggt sind?**
 
-Unsere Community-Moderatoren [sichten](https://en.wikipedia.org/wiki/Software_bug#Bug_management) Issues und Pull Requests basierend auf ihrer Priorität, Schwere und anderen Faktoren. [Hier findest Du das komplette Glossar zu den Bedeutungen](https://github.com/freecodecamp/freecodecamp/labels).
+Unsere Community-Moderatoren [sichten](https://en.wikipedia.org/wiki/Software_bug#Bug_management) Issues und Pull Requests basierend auf ihrer Priorität, Schwere und anderen Faktoren. [Hier findest du das komplette Glossar zu den Bedeutungen](https://github.com/freecodecamp/freecodecamp/labels).
 
-Du solltest durch die **`Help Wanted`** oder **`first timers welcome`** Issues schauen, um einen schnellen Überblick über das, woran Du arbeiten könntest, zu gewinnen. Diese sind frei zur Bearbeitung und Du musst nicht nach Erlaubnis fragen, um daran zu arbeiten.
+Du solltest durch die **`Help Wanted`** oder **`first timers welcome`** Issues schauen, um einen schnellen Überblick über das, woran du arbeiten könntest, zu gewinnen. Diese sind frei zur Bearbeitung und du musst nicht nach Erlaubnis fragen, um daran zu arbeiten.
 
 Wenn diese Issues unklar sind bezüglich was getan werden muss, zögere nicht, Fragen in den Kommentaren zu stellen.
 
 **Ich habe einen Rechtschreibfehler gefunden, soll ich ein Issue öffnen, bevor ich einen Pull Request machen kann?**
 
-Für Rechtschreibfehler und andere Formulierungsänderungen kannst Du direkt einen Pull Request erstellen, ohne vorher ein Issue zu öffnen. Issues sind eher für die Diskussion größerer Probleme, die sich mit dem Code und anderen strukturellen Aspekten des Curriculums beschäftigen.
+Für Rechtschreibfehler und andere Formulierungsänderungen kannst du direkt einen Pull Request erstellen, ohne vorher ein Issue zu öffnen. Issues sind eher für die Diskussion größerer Probleme, die sich mit dem Code und anderen strukturellen Aspekten des Curriculums beschäftigen.
