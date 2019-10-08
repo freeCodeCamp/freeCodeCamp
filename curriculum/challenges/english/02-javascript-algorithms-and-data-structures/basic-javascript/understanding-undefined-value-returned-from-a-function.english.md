@@ -16,7 +16,7 @@ var sum = 0;
 function addSum(num) {
   sum = sum + num;
 }
-var returnedValue = addSum(3); // sum will be modified but returned value is undefined
+addSum(3); // sum will be modified but returned value is undefined
 ```
 
 <code>addSum</code> is a function without a <code>return</code> statement. The function will change the global <code>sum</code> variable but the returned value of the function is <code>undefined</code>.
