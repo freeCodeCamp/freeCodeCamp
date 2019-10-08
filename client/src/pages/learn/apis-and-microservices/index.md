@@ -5,7 +5,7 @@ superBlock: APIs and Microservices
 ## Introduction to APIs and Microservices
 
 This is a stub introduction for APIs and Microservices
-
+Providing neccesary resources and lessons for APIs and Microservices.
 ## Microservices
 
 So, what are Microservices?
