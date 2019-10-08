@@ -441,7 +441,6 @@ function createShowCert(app) {
 
         const oldDataVizId = '561add10cb82ac38a17513b3';
         if (certType === 'isDataVisCert' && !certChallenge) {
-          console.log('olderId');
           let oldDataVisIdChall = _.find(
             completedChallenges,
             ({ id }) => oldDataVizId === id
@@ -454,24 +453,23 @@ function createShowCert(app) {
 
         // if fullcert is not found, return the latest completedDate
         if (certType === 'isFullStackCert' && !certChallenge) {
+          // create an array of certification ids
           var chalIds = [oldDataVizId];
-          for (var o in certIds) {
-            if (certIds.hasOwnProperty(o)) chalIds.push(certIds[o]);
+          for (var i in certIds) {
+            if (certIds.hasOwnProperty(i)) chalIds.push(certIds[i]);
           }
 
+          // loop over completed challenges to find latest completedDate
           let latestDate = 0;
-          for (let i of chalIds) {
-            let foundItem = _.find(completedChallenges, ['id', i]);
-            if (foundItem && foundItem.completedDate > latestDate) {
-              latestDate = foundItem.completedDate;
+          for (let i of completedChallenges) {
+            if (chalIds.includes(i.id)) {
+              latestDate =
+                latestDate < i.completedDate ? i.completedDate : latestDate;
+              chalIds = chalIds.filter(value => value !== i.id);
             }
           }
-
-          completedDate = latestDate;
+          completedDate = latestDate ? latestDate : completedDate;
         }
-
-        console.log(certType);
-        // console.log(completionDates);
 
         const { username, name } = user;
         return res.json({
