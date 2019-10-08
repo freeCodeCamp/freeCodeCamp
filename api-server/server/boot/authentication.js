@@ -180,7 +180,7 @@ function createGetPasswordlessAuth(app) {
             'success',
             'Success! You have signed in to your account. Happy Coding!'
           );
-          return res.redirectWithFlash(`${homeLocation}`);
+          return res.redirectWithFlash(`${homeLocation}/learn`);
         })
         .subscribe(() => {}, next)
     );
