@@ -5,3 +5,4 @@ superBlock: Data Visualization
 ## Introduction to Data Visualization
 
 This is a stub introduction for Data Visualization
+Providing necesary resources and lessons regarding Data Visuallization
