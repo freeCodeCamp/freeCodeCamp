@@ -103,14 +103,9 @@ function renderSettingsButton() {
 function renderReportUserButton(username) {
   return (
     <Fragment>
-      <Row>
-        <Col sm={4} smOffset={4}>
-          <Link
-            className='btn btn-lg btn-primary btn-block'
-            to={`/user/${username}/report-user`}
-          >
-            Report This User
-          </Link>
+      <Row className='text-center'>
+        <Col sm={8} smOffset={2}>
+          <Link to={`/user/${username}/report-user`}>Report This User</Link>
         </Col>
       </Row>
       <Spacer size={2} />
@@ -162,9 +157,7 @@ function Profile({ user, isSessionUser }) {
       </Helmet>
       <Spacer size={2} />
       <Grid>
-        {isSessionUser
-          ? renderSettingsButton()
-          : renderReportUserButton(username)}
+        {isSessionUser ? renderSettingsButton() : null}
         <Camper
           about={showAbout ? about : null}
           githubProfile={githubProfile}
@@ -188,6 +181,8 @@ function Profile({ user, isSessionUser }) {
         {showTimeLine ? (
           <Timeline completedMap={completedChallenges} username={username} />
         ) : null}
+        <Spacer />
+        {isSessionUser ? null : renderReportUserButton(username)}
       </Grid>
     </Fragment>
   );

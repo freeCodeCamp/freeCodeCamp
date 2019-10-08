@@ -23,38 +23,6 @@ Array [
   <div
     className="container"
   >
-    <div
-      className="row"
-    >
-      <div
-        className="col-sm-4 col-sm-offset-4"
-      >
-        <a
-          className="btn btn-lg btn-primary btn-block"
-          href="/user/string/report-user"
-        >
-          Report This User
-        </a>
-      </div>
-    </div>
-    <div
-      className="spacer"
-      style={
-        Object {
-          "height": "1px",
-          "padding": "15px 0",
-        }
-      }
-    />
-    <div
-      className="spacer"
-      style={
-        Object {
-          "height": "1px",
-          "padding": "15px 0",
-        }
-      }
-    />
     <div>
       <div
         className="row"
@@ -182,6 +150,46 @@ Array [
       </h2>
       <br />
     </div>
+    <div
+      className="spacer"
+      style={
+        Object {
+          "height": "1px",
+          "padding": "15px 0",
+        }
+      }
+    />
+    <div
+      className="text-center row"
+    >
+      <div
+        className="col-sm-8 col-sm-offset-2"
+      >
+        <a
+          href="/user/string/report-user"
+        >
+          Report This User
+        </a>
+      </div>
+    </div>
+    <div
+      className="spacer"
+      style={
+        Object {
+          "height": "1px",
+          "padding": "15px 0",
+        }
+      }
+    />
+    <div
+      className="spacer"
+      style={
+        Object {
+          "height": "1px",
+          "padding": "15px 0",
+        }
+      }
+    />
   </div>,
 ]
 `;

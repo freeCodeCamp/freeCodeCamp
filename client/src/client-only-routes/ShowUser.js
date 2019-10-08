@@ -10,6 +10,7 @@ import {
   FormGroup,
   ControlLabel,
   Button,
+  Row,
   Col
 } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
@@ -148,34 +149,40 @@ class ShowUser extends Component {
         <Helmet>
           <title>Report a users profile | freeCodeCamp.org</title>
         </Helmet>
-        <FullWidthRow>
-          <Spacer size={2} />
-          <Col md={8} mdOffset={2}>
+        <Spacer size={2} />
+        <Row className='text-center'>
+          <Col sm={10} smOffset={1} xs={12}>
             <h2>
               Do you want to report {username}
               's profile for abuse?
             </h2>
-            <p>
-              We will notify the community moderators' team, and a send copy of
-              this report to your email:{' '}
-              <span className='green-text'>{email}</span>.
-            </p>
-            <p>We may get back to you for more information, if required.</p>
-            <form onSubmit={this.handleSubmit}>
-              <FormGroup controlId='report-user-textarea'>
-                <ControlLabel>Additional Information</ControlLabel>
-                <FormControl
-                  componentClass='textarea'
-                  onChange={this.handleChange}
-                  placeholder=''
-                  value={textarea}
-                />
-              </FormGroup>
-              <Button block={true} bsStyle='primary' type='submit'>
-                Submit the report
-              </Button>
-            </form>
           </Col>
+        </Row>
+        <Spacer />
+        <FullWidthRow>
+          <p>
+            We will notify the community moderators' team, and a send copy of
+            this report to your email:
+          </p>
+          <h3 className='text-center'>{email}</h3>
+          <p>We may get back to you for more information, if required.</p>
+          <Spacer />
+          <form onSubmit={this.handleSubmit}>
+            <FormGroup controlId='report-user-textarea'>
+              <ControlLabel>Additional Information</ControlLabel>
+              <FormControl
+                componentClass='textarea'
+                onChange={this.handleChange}
+                placeholder=''
+                value={textarea}
+              />
+            </FormGroup>
+            <Spacer />
+            <Button block={true} bsStyle='primary' type='submit'>
+              Submit the report
+            </Button>
+          </form>
+          <Spacer size={2} />
         </FullWidthRow>
       </Fragment>
     );
