@@ -15,7 +15,6 @@ exports[`createRedirects matches the snapshot 1`] = `
 /code-of-conduct                              https://news.example.com/code-of-conduct 200
 /copyright                                    https://news.example.com/copyright-policy 200
 /copyright-policy                             https://news.example.com/copyright-policy 200
-/donate                                       https://donate.freecodecamp.org 200
 /privacy                                      https://news.example.com/privacy-policy 200
 /privacy-policy                               https://news.example.com/privacy-policy 200
 /shop                                         https://news.example.com/shop 200
