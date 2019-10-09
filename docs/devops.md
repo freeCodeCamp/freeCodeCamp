@@ -9,7 +9,7 @@
 
 # Developer Operations at freeCodeCamp.org
 
-Thanks for your interest in learning more about how we do devops for the platform at freeCodeCamp.org. 
+Thanks for your interest in learning more about how we do DevOps for the platform at freeCodeCamp.org.
 
 We have tried to keep the language in this guide as simple as possible for everyone. However, you may find some technical jargon in here. This is not an exhaustive guide for all operations, and is to be used just as a reference for your understanding of the systems.
 
@@ -19,9 +19,9 @@ We continuously build and deploy [`master`](https://github.com/freeCodeCamp/free
 
 Typically, the `master` branch is merged into the [`production-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) branch once a day and released into an isolated infrastructure. We call this our "staging/beta" application.
 
-It is identical to our live production environment at `freeCodeCamp.org`, other than it using a separate set of databases, servers, web-proxy, etc. This isolation lets us test ongoing development and features in a "production like" scenario, without affecting regular users of freeCodeCamp.org's platforms. 
+It is identical to our live production environment at `freeCodeCamp.org`, other than it using a separate set of databases, servers, web-proxy, etc. This isolation lets us test ongoing development and features in a "production like" scenario, without affecting regular users of freeCodeCamp.org's platforms.
 
-Once the developer team (@freeCodeCamp/dev-team) is happy with the changes on the staging application, these changes are moved every few days to the [`production-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-current) branch. We then release the changes to our live platforms on freeCodeCamp.org
+Once the developer team [`@freeCodeCamp/dev-team`](https://github.com/orgs/freeCodeCamp/teams/dev-team/members) is happy with the changes on the staging application, these changes are moved every few days to the [`production-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-current) branch. We then release the changes to our live platforms on freeCodeCamp.org
 
 We employ various levels of integration and acceptance testing to check on the quality of the code. All our tests are done through software like Travis and Azure Pipelines. Some of this automated, that is once changes are pushed to the corresponding branch, they get built and deployed on the platforms.
 
@@ -47,50 +47,75 @@ The dev-team merges changes from the `production-staging` branch to `production-
 
 ## Build and Deployment Status
 
-We use Azure Pipelines and other CI software (Travis, GitHub Actions), to continiously test and deploy our applications.
+We use Azure Pipelines and other CI software (Travis, GitHub Actions), to continuously test and deploy our applications.
 
 ### Triggering a build
 
-Currently we have given access only to the developer team to push to the production branches, beacuse of the automated deplyements on live sites. The changes to the `production-*` branches can land only via fast-forward merge to the [`upstream`](https://github.com/freeCodeCamp/freeCodeCamp). 
+Currently, only the developer team can push to the production branches, because of the automated deployments on live sites. The changes to the `production-*` branches can land only via fast-forward merge to the [`upstream`](https://github.com/freeCodeCamp/freeCodeCamp).
 
-You should have configured your remotes correctly:
+> Note: In the upcoming days we would improve this flow to be done via pull-requests, for better access management and transparency.
 
-```sh
-freeCodeCamp on  master is 📦 v0.0.1 via ⬢ v10.16.0
-❯ git remote -v
-origin	git@github.com:raisedadead/freeCodeCamp.git (fetch)
-origin	git@github.com:raisedadead/freeCodeCamp.git (push)
-upstream	git@github.com:freeCodeCamp/freeCodeCamp.git (fetch)
-upstream	git@github.com:freeCodeCamp/freeCodeCamp.git (push)
-```
+1. Configure your remotes correctly.
 
-The below commands will move changes from `master` to the `production-*` branch:
+   ```sh
+   freeCodeCamp on master is 📦 v0.0.1 via ⬢ v10.16.0
+   ❯ git remote -v
+   origin	git@github.com:raisedadead/freeCodeCamp.git (fetch)
+   origin	git@github.com:raisedadead/freeCodeCamp.git (push)
+   upstream	git@github.com:freeCodeCamp/freeCodeCamp.git (fetch)
+   upstream	git@github.com:freeCodeCamp/freeCodeCamp.git (push)
+   ```
 
-> #### :rotating_light: Do not run the below, if you have not confirmed Travis is green on the master branch :rotating_light:
+2. Make sure your master is pristine and in sync with the upstream.
 
-```sh
-git checkout master
-git fetch --all --prune
-git reset --hard upstream/master
-git checkout production-staging
-git merge master
-git push upstream
-```
+   ```sh
+   git checkout master
+   git fetch --all --prune
+   git reset --hard upstream/master
+   ```
 
-You will not be able to force push and if you have re-written the history in anyway it will error out. 
+3. Check that the Travis CI is passing on the master branch for upstream.
+
+   - [ ] https://travis-ci.org/freeCodeCamp/freeCodeCamp/branches should be Green.
+
+   ![Image - Check build status on Travis CI](/docs/images/devops/travis-build.png)
+
+4. Confirm that you are able to build the repository locally.
+
+   ```
+   npm run clean-and-develop
+   ```
+
+5. Move changes from master to `production-staging`
+
+   ```
+   git checkout production-staging
+   git merge master
+   git push upstream
+   ```
+
+   You will not be able to force push and if you have re-written the history in anyway these commands will error out.
 
 ### Triggering a deployment
 
-Once the changes are pushed, these should trigger our CI and CD pipilines:
+Once the changes are pushed to the production branches, these should trigger our build and release pipelines:
 
 - Build Pipeline: https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build
+
+  This pipeline is setup to build artifacts for deployments.
+
+
 - Release Pipeline: https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release
 
-The build pipeline triggers the release pipeline after a hold of 15 minutes for devs to go in and intervene if necessary. We would make these to mannual approvals in future. 
+  This pipeline is setup to deploy artifacts to their destination servers.
 
-> Note: The release pipeline is intentionaly not deploying to production site currently, before the upcoming release. This should change when the guide goes live in a few days.
+The build pipeline triggers the release pipeline after a hold of 15 minutes for our staff developers to go in and intervene if necessary. We would make these to have manual approvals in future for more faster builds.
 
-Should you find any anomalies please let us know on the tracker, or send an email to `dev@freecodecamp.org`. As always all security vulnerabilities should be reported to `security@freecodecamp.org` instead of the public tracker and forum.
+For now, you should not trigger more than one build within an hour, and wait for a previous build to complete.
+
+The code/config is publicly accessible on Azure's Dev Dashboard. Write access to this is limited to the freeCodeCamp.org staff team.
+
+> Note: The release pipeline is intentionally not deploying to production site currently, before the upcoming release. This should change when the guide goes live in a few days.
 
 ### Build Status
 
@@ -110,12 +135,14 @@ Should you find any anomalies please let us know on the tracker, or send an emai
 
 ## Known Limitations
 
-There will be some known limitations and tradeoffs when using this beta version of the platform.
+There will be some known limitations and tradeoffs when using the beta version of the platform.
 
 - #### All data / personal progress on these beta applications `will NOT be saved or carried over` to production.
+
   **Users on the beta version will have a separate account from the production.** The beta version uses a physically separate database from production. This gives us the ability to prevent any accidental loss of data or modifications. The dev team may purge the database on this beta version as needed.
 
 - #### There are no guarantees on the uptime and reliability of the beta applications.
+
   Deployment is expected to be frequent and in rapid iterations, sometimes multiple times a day. As a result there will be unexpected downtime at times or broken functionality on the beta version. The dev team will usually notify for updates in the [Contributors Chat room](https://gitter.im/FreeCodeCamp/Contributors).
 
 - #### Do not send regular users to this site as a measure of confirming a fix
@@ -123,6 +150,7 @@ There will be some known limitations and tradeoffs when using this beta version 
   The beta site is and always has been to augment local development and testing, nothing else. It's not a promise of what’s coming, but a glimpse of what is being worked upon.
 
 - #### Sign in and authentication only available via email, not social.
+
   Google, GitHub and Facebook logins will NOT be available in this beta mode. This is simply a technical limitation, because we are using a separate `test domain` for this version. **Email logins will work just as fine.**
 
   The sign page may look different than production (as a measure to isolate the development and the production databases.)
@@ -130,3 +158,5 @@ There will be some known limitations and tradeoffs when using this beta version 
 ## Reporting issues and leaving feedback
 
 Please open fresh issues for discussions and reporting bugs. You can label them as **[`release: next/beta`](https://github.com/freeCodeCamp/freeCodeCamp/labels/release%3A%20next%2Fbeta)** for triage.
+
+You may send an email to `dev@freecodecamp.org` if you have any queries. As always all security vulnerabilities should be reported to `security@freecodecamp.org` instead of the public tracker and forum.
