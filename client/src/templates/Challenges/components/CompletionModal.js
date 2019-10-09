@@ -40,6 +40,9 @@ const mapDispatchToProps = function(dispatch) {
     handleKeypress: e => {
       if (e.keyCode === 13 && (e.ctrlKey || e.metaKey)) {
         e.preventDefault();
+        // Since Hotkeys also listens to Ctrl + Enter we have to stop this event
+        // getting to it.
+        e.stopPropagation();
         dispatch(submitChallenge());
       }
     },
