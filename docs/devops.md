@@ -49,7 +49,7 @@ The dev-team merges changes from the `production-staging` branch to `production-
 
 We use Azure Pipelines and other CI software (Travis, GitHub Actions), to continiously test and deploy our applications.
 
-### Triggering a build and deplyment
+### Triggering a build
 
 Currently we have given access only to the developer team to push to the production branches, beacuse of the automated deplyements on live sites. The changes to the `production-*` branches can land only via fast-forward merge to the [`upstream`](https://github.com/freeCodeCamp/freeCodeCamp). 
 
@@ -66,6 +66,8 @@ upstream	git@github.com:freeCodeCamp/freeCodeCamp.git (push)
 
 The below commands will move changes from `master` to the `production-*` branch:
 
+> #### :rotating_light: Do not run the below, if you have not confirmed Travis is green on the master branch :rotating_light:
+
 ```sh
 git checkout master
 git reset --hard upstream/master
@@ -75,6 +77,8 @@ git push upstream
 ```
 
 You will not be able to force push and if you have re-written the history in anyway it will error out. 
+
+### Triggering a deployment
 
 Once the changes are pushed, these should trigger our CI and CD pipilines:
 
