@@ -49,6 +49,44 @@ The dev-team merges changes from the `production-staging` branch to `production-
 
 We use Azure Pipelines and other CI software (Travis, GitHub Actions), to continiously test and deploy our applications.
 
+### Triggering a build and deplyment
+
+Currently we have given access only to the developer team to push to the production branches, beacuse of the automated deplyements on live sites. The changes to the `production-*` branches can land only via fast-forward merge to the [`upstream`](https://github.com/freeCodeCamp/freeCodeCamp). 
+
+You should have configured your remotes correctly:
+
+```sh
+freeCodeCamp on  master is 📦 v0.0.1 via ⬢ v10.16.0
+❯ git remote -v
+origin	git@github.com:raisedadead/freeCodeCamp.git (fetch)
+origin	git@github.com:raisedadead/freeCodeCamp.git (push)
+upstream	git@github.com:freeCodeCamp/freeCodeCamp.git (fetch)
+upstream	git@github.com:freeCodeCamp/freeCodeCamp.git (push)
+```
+
+The below commands will move changes from `master` to the `production-*` branch:
+
+```sh
+git checkout master
+git reset --hard upstream/master
+git checkout production-staging
+git merge master
+git push upstream
+```
+
+You will not be able to force push and if you have re-written the history in anyway it will error out. 
+
+Once the changes are pushed, these should trigger our CI and CD pipilines:
+
+- Build Pipeline: https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build
+- Release Pipeline: https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release
+
+The build pipeline triggers the release pipeline after a hold of 15 minutes for devs to go in and intervene if necessary. We would make these to mannual approvals in future. 
+
+> Note: The release pipeline is intentionaly not deploying to production site currently, before the upcoming release. This should change when the guide goes live in a few days.
+
+Should you find any anomalies please let us know on the tracker, or send an email to `dev@freecodecamp.org`. As always all security vulnerabilities should be reported to `security@freecodecamp.org` instead of the public tracker and forum.
+
 ### Build Status
 
 | Platform        | Type       | Status      |
@@ -87,9 +125,3 @@ There will be some known limitations and tradeoffs when using this beta version 
 ## Reporting issues and leaving feedback
 
 Please open fresh issues for discussions and reporting bugs. You can label them as **[`release: next/beta`](https://github.com/freeCodeCamp/freeCodeCamp/labels/release%3A%20next%2Fbeta)** for triage.
-
-## ToDo: Add guidelines
-
-- [ ] Checking and getting access to development logs and other resources
-- [ ] Merging master into production-staging via fast forward
-- [ ] ...
