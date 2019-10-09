@@ -1,9 +1,10 @@
 const apiPlaceholderRE = /#\{\{API\}\}/g;
 const newsPlaceholderRE = /#\{\{NEWS\}\}/g;
-const forumPlacehilderRE = /#\{\{FORUM\}\}/g;
+const forumPlaceholderRE = /#\{\{FORUM\}\}/g;
+const donatePlaceholderRE = /#\{\{DONATE\}\}/g;
 
 exports.createRedirects = function createRedirects(locations) {
-  const { api, newsProxy, forumProxy } = locations;
+  const { api, newsProxy, forumProxy, donate } = locations;
 
   if (!(api && newsProxy && forumProxy)) {
     throw new Error(`One or more locations are missing, all are required.
@@ -11,6 +12,7 @@ exports.createRedirects = function createRedirects(locations) {
     api: ${api}
     newsProxy: ${newsProxy}
     forumProxy: ${forumProxy}
+    donate: ${donate}
 
     `);
   }
@@ -18,7 +20,8 @@ exports.createRedirects = function createRedirects(locations) {
   return template
     .replace(apiPlaceholderRE, api)
     .replace(newsPlaceholderRE, newsProxy)
-    .replace(forumPlacehilderRE, forumProxy);
+    .replace(forumPlaceholderRE, forumProxy)
+    .replace(donatePlaceholderRE, donate);
 };
 
 /* eslint-disable max-len */
@@ -36,7 +39,7 @@ const template = `
 /code-of-conduct                              #{{NEWS}}/code-of-conduct 200
 /copyright                                    #{{NEWS}}/copyright-policy 200
 /copyright-policy                             #{{NEWS}}/copyright-policy 200
-/donate                                       https://donate.freecodecamp.org 200
+/donate                                       #{{DONATE}}/ 302
 /privacy                                      #{{NEWS}}/privacy-policy 200
 /privacy-policy                               #{{NEWS}}/privacy-policy 200
 /shop                                         #{{NEWS}}/shop 200

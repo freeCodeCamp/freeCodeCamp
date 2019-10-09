@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import Link from '../helpers/Link';
 import FooterCol from './FooterCol';
-
+import { donateLocation } from '../../../config/env.json';
 import { footerLinks } from './footerLinks';
 import './footer.css';
 
@@ -37,12 +37,8 @@ function Footer() {
             </p>
             <p>
               Donations to freeCodeCamp go toward our education initiatives, and
-              help pay for servers, services, and staff. You can&nbsp;
-              <Link
-                className='inline'
-                external={true}
-                to='https://donate.freecodecamp.org'
-              >
+              help pay for servers, services, and staff. You can{` `}
+              <Link className='inline' external={true} to={`${donateLocation}`}>
                 make a tax-deductible donation here
               </Link>
               .

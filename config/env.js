@@ -7,6 +7,7 @@ if (process.env.FREECODECAMP_NODE_ENV !== 'production') {
 
 const {
   HOME_LOCATION: home,
+  DONATE_LOCATION: donate,
   API_LOCATION: api,
   FORUM_LOCATION: forum,
   NEWS_LOCATION: news,
@@ -21,6 +22,7 @@ const {
 const locations = {
   homeLocation: home,
   apiLocation: api,
+  donateLocation: donate,
   forumLocation: forum,
   newsLocation: news,
   forumProxy: forumProxy,

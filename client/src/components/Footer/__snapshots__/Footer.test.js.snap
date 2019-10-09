@@ -20,10 +20,11 @@ exports[`<Footer /> matches snapshot 1`] = `
           Our mission: to help people learn to code for free. We accomplish this by creating thousands of videos, articles, and interactive coding lessons - all freely available to the public. We also have thousands of freeCodeCamp study groups around the world.
         </p>
         <p>
-          Donations to freeCodeCamp go toward our education initiatives, and help pay for servers, services, and staff. You can 
+          Donations to freeCodeCamp go toward our education initiatives, and help pay for servers, services, and staff. You can
+           
           <a
             className="inline"
-            href="https://donate.freecodecamp.org"
+            href="http://donate.localhost"
             rel="noopener noreferrer"
             target="_blank"
           >
