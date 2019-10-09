@@ -24,7 +24,7 @@ Now try calling `highPrecedence` and pass it the string `"2*2"` without assignin
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(/update=\(?event\)?=>\{.*highPrecedence\((['"])2*2\1\).*\}/.test(code.replace(/\s/g, "")));
+    testString: assert(/update=\(?event\)?=>\{.*highPrecedence\((['"])2\*2\1\).*\}/.test(code.replace(/\s/g, "")));
 
 ```
 
@@ -281,7 +281,7 @@ window.onload = () => {
 };
 
 const update = event => {
-  // highPrecedence("2*2");
+  highPrecedence("2*2");
   const element = event.target;
   const value = element.value.replace(/\s/g, "");
   if (!value.includes(element.id) && value[0] === "=") {

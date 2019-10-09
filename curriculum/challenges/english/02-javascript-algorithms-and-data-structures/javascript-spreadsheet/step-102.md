@@ -25,7 +25,7 @@ Now compare `highPrecedence("2*2")` with `highPrecedence("2*2")`, and `console.l
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(/update=\(?event\)?=>\{.*console\.log\((highPrecedence\(['"]2*2['"]\))===\1\).*\}/.test(code.replace(/\s/g, "")));
+    testString: assert(/update=\(?event\)?=>\{.*console\.log\((highPrecedence\(['"]2\*2['"]\))===\1\).*\}/.test(code.replace(/\s/g, "")));
 
 ```
 

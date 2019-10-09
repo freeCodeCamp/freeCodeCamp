@@ -286,7 +286,7 @@ const update = event => {
   if (!value.includes(element.id) && value[0] === "=") {
     element.value = evalFormula(
       value.slice(1),
-      Array.from(documet.getElementById("container").children)
+      Array.from(document.getElementById("container").children)
     );
   }
 };

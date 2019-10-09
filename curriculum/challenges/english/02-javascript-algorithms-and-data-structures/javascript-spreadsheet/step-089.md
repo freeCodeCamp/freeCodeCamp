@@ -32,7 +32,7 @@ container.appendChild(input);
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(/window\.onload[\s\S]*range\(1,99\)\.forEach\(\(?x\)?=>\{createLabel\(x\);?letters\.forEach\(\(?x\)?=>\{constinput=document\.createElement\(["']input["']\);?input\.type=["']text["'];?input\.id=y+x;?input\.onchange=update;?container\.appendChild\(input\);?\}\);?\}\);?\}/.test(code.replace(/\s/g, "")));
+    testString: assert(/window\.onload[\s\S]*range\(1,99\)\.forEach\(\(?x\)?=>\{createLabel\(x\);?letters\.forEach\(\(?y\)?=>\{constinput=document\.createElement\(["']input["']\);?input\.type=["']text["'];?input\.id=y\+x;?input\.onchange=update;?container\.appendChild\(input\);?\}\);?\}\);?\}/.test(code.replace(/\s/g, "")));
 
 ```
 

@@ -24,7 +24,7 @@ Inside `letters.forEach`, assign `document.createElement("input")` to `input`.
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(/window\.onload[\s\S]*range\(1,99\)\.forEach\(\(?x\)?=>\{createLabel\(x\);?letters\.forEach\(\(?x\)?=>\{constinput=document\.createElement\(["']input["']\);?\}\);?\}\);?\}/.test(code.replace(/\s/g, "")));
+    testString: assert(/window\.onload[\s\S]*range\(1,99\)\.forEach\(\(?x\)?=>\{createLabel\(x\);?letters\.forEach\(\(?y\)?=>\{constinput=document\.createElement\(["']input["']\);?\}\);?\}\);?\}/.test(code.replace(/\s/g, "")));
 
 ```
 

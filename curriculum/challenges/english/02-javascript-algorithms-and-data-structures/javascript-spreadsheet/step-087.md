@@ -24,7 +24,7 @@ Inside the `range` `forEach`, use the `forEach` method on `letters`, passing in 
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(/window\.onload[\s\S]*range\(1,99\)\.forEach\(\(?x\)?=>\{createLabel\(x\);?letters\.forEach\(\(?x\)?=>\{\}\);?\}\);?\}/.test(code.replace(/\s/g, "")));
+    testString: assert(/window\.onload.*range\(1,99\)\.forEach\(\(?x\)?=>\{createLabel\(x\);?letters\.forEach\(\(?y\)?=>\{\}\);?\}\);?\}/.test(code.replace(/\s/g, "")));
 
 ```
 

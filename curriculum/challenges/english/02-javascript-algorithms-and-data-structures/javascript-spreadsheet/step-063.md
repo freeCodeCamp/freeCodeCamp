@@ -25,7 +25,7 @@ Remove them.
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(/constelemValue=n=>c=>document\.getElementById\(c+n\)\.value/.test(code.replace(/\s/g, "")));
+    testString: assert(/constelemValue=n=>c=>document\.getElementById\(c\+n\)\.value/.test(code.replace(/\s/g, "")));
 
 ```
 
