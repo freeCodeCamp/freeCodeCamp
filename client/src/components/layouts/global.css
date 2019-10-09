@@ -132,6 +132,16 @@ a:focus {
 }
 
 /* button */
+button,
+input[type='submit'] {
+  background-color: var(--quaternary-background);
+  color: var(--secondary-color);
+  border-width: 2px;
+  border-style: outset;
+  border-color: buttonface;
+  border-image: initial;
+}
+
 .btn {
   background-color: var(--quaternary-background);
   border-width: 3px;
@@ -195,14 +205,6 @@ fieldset[disabled] .btn-primary.focus {
   color: var(--quaternary-color);
 }
 
-/* .btn:focus,
-.btn:active:focus,
-.btn.active:focus,
-.btn.focus,
-.btn:active.focus,
-.btn.active.focus {
-  outline: none;
-} */
 .btn-cta {
   background-color: #ffac33;
   background-image: linear-gradient(#ffcc4d, #ffac33);
@@ -383,4 +385,38 @@ blockquote .small {
 
 .alert {
   border-radius: 0px;
+}
+
+/* gatsby 404 page */
+.default-layout > div > :nth-child(3) > button,
+input[type='submit'] {
+  background-color: var(--quaternary-background);
+}
+
+.default-layout > div > :nth-child(3) > button:hover,
+input[type='submit']:hover {
+  background-color: var(--secundary-background);
+}
+
+.default-layout > div > :nth-child(3) > button:active,
+input[type='submit']:active {
+  background: var(--primary-color);
+  color: var(--secondary-background);
+  outline: 0;
+  outline-color: none;
+  outline-color: var(--secundary-background);
+  border: none;
+}
+#search {
+  background-color: var(--quaternary-background);
+  color: var(--primary-color);
+  border-color: var(--quaternary-color);
+  border-width: 2px;
+  border-style: outset;
+  border-color: buttonface;
+  border-image: initial;
+}
+
+#search::placeholder {
+  color: var(--secondary-color);
 }

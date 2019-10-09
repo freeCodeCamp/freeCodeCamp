@@ -12,6 +12,7 @@ export class Header extends React.Component {
       displayMenu: false
     };
     this.menuButtonRef = React.createRef();
+    this.searchBarRef = React.createRef();
     this.handleClickOutside = this.handleClickOutside.bind(this);
     this.toggleDisplayMenu = this.toggleDisplayMenu.bind(this);
   }
@@ -29,7 +30,8 @@ export class Header extends React.Component {
       this.state.displayMenu &&
       this.menuButtonRef.current &&
       !this.menuButtonRef.current.contains(event.target) &&
-      event.target.id !== 'fcc_instantsearch'
+      this.searchBarRef.current &&
+      !this.searchBarRef.current.contains(event.target)
     ) {
       this.toggleDisplayMenu();
     }
@@ -48,7 +50,8 @@ export class Header extends React.Component {
         <header>
           <UniversalNav
             displayMenu={displayMenu}
-            ref={this.menuButtonRef}
+            menuButtonRef={this.menuButtonRef}
+            searchBarRef={this.searchBarRef}
             toggleDisplayMenu={this.toggleDisplayMenu}
           />
         </header>

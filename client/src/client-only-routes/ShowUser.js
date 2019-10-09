@@ -10,7 +10,8 @@ import {
   FormGroup,
   ControlLabel,
   Button,
-  Col
+  Col,
+  Row
 } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 
@@ -142,41 +143,45 @@ class ShowUser extends Component {
     }
 
     const { textarea } = this.state;
-
+    const placeholderText = `Please provide as much detail as possible about the account or behavior you are reporting.`;
     return (
       <Fragment>
         <Helmet>
           <title>Report a users profile | freeCodeCamp.org</title>
         </Helmet>
-        <FullWidthRow>
-          <Spacer size={2} />
-          <Col md={8} mdOffset={2}>
+        <Spacer size={2} />
+        <Row className='text-center'>
+          <Col sm={8} smOffset={2} xs={12}>
             <h2>
               Do you want to report {username}
               's profile for abuse?
             </h2>
+          </Col>
+        </Row>
+        <Row>
+          <Col sm={6} smOffset={3} xs={12}>
             <p>
               We will notify the community moderators' team, and a send copy of
-              this report to your email:{' '}
-              <span className='green-text'>{email}</span>.
+              this report to your email: <strong>{email}</strong>
             </p>
             <p>We may get back to you for more information, if required.</p>
             <form onSubmit={this.handleSubmit}>
               <FormGroup controlId='report-user-textarea'>
-                <ControlLabel>Additional Information</ControlLabel>
+                <ControlLabel>What would you like to report?</ControlLabel>
                 <FormControl
                   componentClass='textarea'
                   onChange={this.handleChange}
-                  placeholder=''
+                  placeholder={placeholderText}
                   value={textarea}
                 />
               </FormGroup>
               <Button block={true} bsStyle='primary' type='submit'>
                 Submit the report
               </Button>
+              <Spacer />
             </form>
           </Col>
-        </FullWidthRow>
+        </Row>
       </Fragment>
     );
   }

@@ -7,9 +7,9 @@
 
 Hello. 👋
 
-freeCodeCamp.org is possible, thanks to thousands of kind volunteers like you. We are grateful for your contributions and we are excited to welcome you aboard.
+freeCodeCamp.org is possible, thanks to thousands of kind volunteers like you. We are grateful for your contributions and are excited to welcome you aboard.
 
-We strictly enforce our ["Code of Conduct"](https://www.freecodecamp.org/code-of-conduct). Take a moment to read it. It's only 196 words long.
+We strictly enforce our ["Code of Conduct"](https://www.freecodecamp.org/code-of-conduct). Please take a moment to read it. It's only 196 words long.
 
 Happy contributing.
 
@@ -25,13 +25,13 @@ You can contribute to any of these:
 
 ## Contribute to this open source codebase
 
-Our codebase has thousands of [coding challenges](https://learn.freecodecamp.org) and other source code that powers our learning platform.
+Our codebase has thousands of [coding challenges](https://learn.freecodecamp.org) and other source code that power our learning platform.
 
 ### Create, update and fix bugs in our coding challenges
 
 All our coding challenges are curated by the community, bringing in expert knowledge from volunteers like you.
 
-You can help expand them and make their wording clearer. You can update the user stories to explain the concept better and even remove redundant ones. You can also improve the challenge tests to make them more accurately test people's code.
+You can help expand them and make their wording better. You can also update the user stories to explain the concept better or remove redundant ones and improve the challenge tests to make them more accurately test people's code.
 
 **If you're interested in improving these coding challenges, here's [how to work on coding challenges](/docs/how-to-work-on-coding-challenges.md).**
 
@@ -57,7 +57,7 @@ Essentially, we expect basic familiarity with some of the aforementioned technol
 
 ## Frequently Asked Questions
 
-**How can I report a bug that is not on board?**
+### How can I report a bug that is not on board?
 
 If you think you've found a bug, first read the ["Help I've Found a Bug"](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) article and follow its instructions.
 
@@ -65,27 +65,42 @@ If you're confident it's a new bug, go ahead and create a new GitHub issue. Be s
 
 Please note that any issues that seek coding help on a challenge will be closed. The issue tracker is strictly for codebase related issues and discussions. Whenever in doubt, you should [seek assistance on the forum](https://www.freecodecamp.org/forum) before making a report.
 
-**How can I report a security issue?**
+### How can I report a security issue?
 
 Please don't create GitHub issues for security issues. Instead, please send an email to `security@freecodecamp.org` and we'll look into it immediately.
 
-**What do these different labels that are tagged on issues mean?**
+### What do these different labels that are tagged on issues mean?
 
 Our community moderators [triage](https://en.wikipedia.org/wiki/Software_bug#Bug_management) issues and pull requests based on their priority, severity, and other factors. You can [find a complete glossary of their meanings here](https://github.com/freecodecamp/freecodecamp/labels).
 
-You should go through [**`help wanted`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) or [**`first-timers welcome`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+welcome%22) issues for a quick overview of what is available for you to work on. These are up for grabs, and you do not need to seek permission before working on them.
+You should go through [**`help wanted`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) or [**`first timers welcome`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+welcome%22) issues for a quick overview of what is available for you to work on. 
 
-If these issues lack clarity on what needs to be done, feel free to ask questions in the comments.
+These are up for grabs, and you do not need to seek permission before working on them. If these issues lack clarity on what needs to be done, feel free to ask questions in the comments.
 
-**I found a typo, should I report an issue before I can make a pull request?**
+### I found a typo, should I report an issue before I can make a pull request?
 
 For typos and other wording changes, you can directly open pull requests without first creating an issue. Issues are more for discussing larger problems associated with code or structural aspects of the curriculum.
 
-**I am new to GitHub and Open Source in general:**
+### How do I get an issue assigned to me?
+
+We typically do not assign issues to anyone other than long time contributors to avoid ambigious no-shows. Instead we follow the below policy to be fair to everyone:
+
+1. The first pull-request for any issue is preffered to be merged.
+2. In case of multiple pull-requests for the same issue, we give priorty to quality of the code in the pull-requests. 
+   - Did you include tests? 
+   - Did you catch all usecases?
+   - Did you ensure all tests pass, and you confirmed everything works locally?
+3. Finally we favor pull-requests which follow our recomended guidelines. 
+   - Did you follow the pull-request checklist? 
+   - Did you name your pull-request title meaningfully?
+
+You do not need any permission for issues that are marked `help wanted` or `first timers welcome` as explained earlier. Follow the guidelines carefully and open a pull-request.
+
+### I am new to GitHub and Open Source, where should I start?
 
 Read our [How to Contribute to Open Source Guide](https://github.com/freeCodeCamp/how-to-contribute-to-open-source).
 
-**I am stuck on something that is not included in this documentation. How can I get help?**
+### I am stuck on something that is not included in this documentation. How can I get help?
 
 Feel free to ask for help in:
 

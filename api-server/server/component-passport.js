@@ -112,7 +112,7 @@ export const createPassportCallbackAuthenticator = (strategy, config) => (
       if (!user || !userInfo) {
         return res.redirect('/signin');
       }
-      const redirect = `${homeLocation}/`;
+      const redirect = `${homeLocation}/learn`;
 
       const { accessToken } = userInfo;
       const { provider } = config;
