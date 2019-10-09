@@ -25,7 +25,7 @@ tests:
     testString: assert($("button").hasClass("btn") && $("button").hasClass("btn-default"));
   - text: Ваша кнопка должна иметь класс <code>btn-block</code>.
     testString: assert($("button").hasClass("btn-block"));
-  - text: Убедитесь, что <code>button</code>-эдементв имеют закрывающий тег.
+  - text: Убедитесь, что все <code>button</code>-элементы имеют закрывающий тег.
     testString: assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length);
 
 ```
