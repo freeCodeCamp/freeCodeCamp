@@ -12,10 +12,8 @@ const propTypes = {
   success: PropTypes.bool
 };
 
-function DonateCompletion({ processing = true, reset, success, error = null }) {
+function DonateCompletion({ processing, reset, success, error = null }) {
   /* eslint-disable no-nested-ternary */
-  // success = error = null;
-  // processing = true;
   const style = processing ? 'info' : success ? 'success' : 'danger';
   const heading = processing
     ? 'We are processing your donation.'
