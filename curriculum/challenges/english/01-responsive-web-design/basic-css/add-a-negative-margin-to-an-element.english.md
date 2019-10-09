@@ -126,3 +126,10 @@ tests:
 ```
 
 </section>
+
+Also,using media queries,we  can make a webpage responsive.
+It has the syntax: 
+@mediaquery <size>
+  attribues.
+  
+ Also, bootstrap classes can be used to make a webpage responsive
