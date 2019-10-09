@@ -104,3 +104,7 @@
 .wallet {
   overflow-wrap: break-word;
 }
+
+.alert p {
+  color: inherit;
+}

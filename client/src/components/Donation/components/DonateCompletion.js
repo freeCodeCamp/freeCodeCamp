@@ -12,8 +12,10 @@ const propTypes = {
   success: PropTypes.bool
 };
 
-function DonateCompletion({ processing, reset, success, error = null }) {
+function DonateCompletion({ processing = true, reset, success, error = null }) {
   /* eslint-disable no-nested-ternary */
+  // success = error = null;
+  // processing = true;
   const style = processing ? 'info' : success ? 'success' : 'danger';
   const heading = processing
     ? 'We are processing your donation.'
@@ -22,12 +24,14 @@ function DonateCompletion({ processing, reset, success, error = null }) {
     : 'Something went wrong with your donation';
   return (
     <Alert bsStyle={style} className='donation-completion'>
-      <h4>{heading}</h4>
+      <h4>
+        <b>{heading}</b>
+      </h4>
       <div className='donation-completion-body'>
         {processing && (
           <Spinner
             className='user-state-spinner'
-            color='#006400'
+            color='#0a0a23'
             fadeIn='none'
             name='line-scale'
           />
