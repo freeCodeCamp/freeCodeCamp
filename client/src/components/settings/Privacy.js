@@ -4,7 +4,6 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Button, Form } from '@freecodecamp/react-bootstrap';
-import { isEqual } from 'lodash';
 
 import { userSelector } from '../../redux';
 import { submitProfileUI } from '../../redux/settings';
@@ -17,7 +16,6 @@ import SectionHeader from './SectionHeader';
 const mapStateToProps = createSelector(
   userSelector,
   user => ({
-    ...user.profileUI,
     user
   })
 );
@@ -26,77 +24,47 @@ const mapDispatchToProps = dispatch =>
   bindActionCreators({ submitProfileUI }, dispatch);
 
 const propTypes = {
-  isLocked: PropTypes.bool,
-  showAbout: PropTypes.bool,
-  showCerts: PropTypes.bool,
-  showDonation: PropTypes.bool,
-  showHeatMap: PropTypes.bool,
-  showLocation: PropTypes.bool,
-  showName: PropTypes.bool,
-  showPoints: PropTypes.bool,
-  showPortfolio: PropTypes.bool,
-  showTimeLine: PropTypes.bool,
   submitProfileUI: PropTypes.func.isRequired,
-  user: PropTypes.object
+  user: PropTypes.shape({
+    profileUI: PropTypes.shape({
+      isLocked: PropTypes.bool,
+      showAbout: PropTypes.bool,
+      showCerts: PropTypes.bool,
+      showDonation: PropTypes.bool,
+      showHeatMap: PropTypes.bool,
+      showLocation: PropTypes.bool,
+      showName: PropTypes.bool,
+      showPoints: PropTypes.bool,
+      showPortfolio: PropTypes.bool,
+      showTimeLine: PropTypes.bool
+    }),
+    username: PropTypes.String
+  })
 };
 
 class PrivacySettings extends Component {
-  constructor(props) {
-    super(props);
-
-    const originalProfileUI = { ...props.user.profileUI };
-
-    this.state = {
-      privacyValues: {
-        ...originalProfileUI
-      },
-      originalProfileUI: { ...originalProfileUI }
-    };
-  }
-
-  componentDidUpdate() {
-    const { profileUI: currentPropsProfileUI } = this.props.user;
-    const { originalProfileUI } = this.state;
-    if (!isEqual(originalProfileUI, currentPropsProfileUI)) {
-      /* eslint-disable-next-line react/no-did-update-set-state */
-      return this.setState(state => ({
-        ...state,
-        originalProfileUI: { ...currentPropsProfileUI },
-        privacyValues: { ...currentPropsProfileUI }
-      }));
-    }
-    return null;
-  }
-
   handleSubmit = e => e.preventDefault();
 
-  toggleFlag = flag => () =>
-    this.setState(
-      state => ({
-        privacyValues: {
-          ...state.privacyValues,
-          [flag]: !state.privacyValues[flag]
-        }
-      }),
-      () => this.props.submitProfileUI(this.state.privacyValues)
-    );
+  toggleFlag = flag => () => {
+    const privacyValues = { ...this.props.user.profileUI };
+    privacyValues[flag] = !privacyValues[flag];
+    this.props.submitProfileUI(privacyValues);
+  };
 
   render() {
-    const {
-      privacyValues: {
-        isLocked = true,
-        showAbout = false,
-        showCerts = false,
-        showDonation = false,
-        showHeatMap = false,
-        showLocation = false,
-        showName = false,
-        showPoints = false,
-        showPortfolio = false,
-        showTimeLine = false
-      }
-    } = this.state;
     const { user } = this.props;
+    const {
+      isLocked = true,
+      showAbout = false,
+      showCerts = false,
+      showDonation = false,
+      showHeatMap = false,
+      showLocation = false,
+      showName = false,
+      showPoints = false,
+      showPortfolio = false,
+      showTimeLine = false
+    } = user.profileUI;
 
     return (
       <div className='privacy-settings'>
