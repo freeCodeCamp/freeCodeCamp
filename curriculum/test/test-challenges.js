@@ -257,7 +257,7 @@ function populateTestsForLang({ lang, challenges }) {
 
         describe('Check tests against solutions', function() {
           solutions.forEach((solution, index) => {
-            it(`Solution ${index + 1}`, async function() {
+            it(`Solution ${index + 1} must pass the tests`, async function() {
               this.timeout(5000 * tests.length + 1000);
               const testRunner = await createTestRunner(
                 { ...challenge, files },
@@ -311,13 +311,10 @@ async function createTestRunnerForDOMChallenge(
         }, testString)
       ]);
       if (!pass) {
-        throw AssertionError(`${text}\n${err.message}`);
+        throw new AssertionError(err.message);
       }
     } catch (err) {
-      throw typeof err === 'string'
-        ? `${text}\n${err}`
-        : (err.message = `${text}
-        ${err.message}`);
+      reThrow(err, text);
     }
   };
 }
@@ -338,13 +335,23 @@ async function createTestRunnerForJSChallenge({ files }, solution) {
         5000
       ).done;
       if (!pass) {
-        throw new AssertionError(`${text}\n${err.message}`);
+        throw new AssertionError(err.message);
       }
     } catch (err) {
-      throw typeof err === 'string'
-        ? `${text}\n${err}`
-        : (err.message = `${text}
-        ${err.message}`);
+      reThrow(err, text);
     }
   };
+}
+
+function reThrow(err, text) {
+  if (typeof err === 'string') {
+    throw new AssertionError(
+      `${text}
+         ${err}`
+    );
+  } else {
+    err.message = `${text}
+       ${err.message}`;
+    throw err;
+  }
 }

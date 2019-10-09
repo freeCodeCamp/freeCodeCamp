@@ -1,10 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Location } from '@reach/router';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { InstantSearch, Configure } from 'react-instantsearch-dom';
 import qs from 'query-string';
 import { navigate } from 'gatsby';
+import Media from 'react-responsive';
+import algoliasearch from 'algoliasearch/lite';
 
 import {
   isSearchDropdownEnabledSelector,
@@ -12,10 +14,17 @@ import {
   toggleSearchDropdown,
   updateSearchQuery
 } from './redux';
+import { algoliaAppId, algoliaAPIKey } from '../../../config/env.json';
 
 import { createSelector } from 'reselect';
 
 const DEBOUNCE_TIME = 100;
+
+// If a key is missing, searches will fail, but the client will still render.
+const searchClient =
+  algoliaAppId && algoliaAPIKey
+    ? algoliasearch(algoliaAppId, algoliaAPIKey)
+    : {};
 
 const propTypes = {
   children: PropTypes.any,
@@ -116,15 +125,26 @@ class InstantSearchRoot extends Component {
 
   render() {
     const { query } = this.props;
+    const MAX_MOBILE_HEIGHT = 768;
     return (
       <InstantSearch
-        apiKey='4318af87aa3ce128708f1153556c6108'
-        appId='QMJYL5WYTI'
         indexName='news'
         onSearchStateChange={this.onSearchStateChange}
+        searchClient={searchClient}
         searchState={{ query }}
       >
-        <Configure hitsPerPage={15} />
+        {this.isSearchPage() ? (
+          <Configure hitsPerPage={15} />
+        ) : (
+          <Fragment>
+            <Media maxHeight={MAX_MOBILE_HEIGHT}>
+              <Configure hitsPerPage={5} />
+            </Media>
+            <Media minHeight={MAX_MOBILE_HEIGHT + 1}>
+              <Configure hitsPerPage={8} />
+            </Media>
+          </Fragment>
+        )}
         {this.props.children}
       </InstantSearch>
     );

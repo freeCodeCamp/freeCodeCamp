@@ -14,9 +14,10 @@ import {
 
 import LearnLayout from '../components/layouts/Learn';
 import Login from '../components/Header/components/Login';
-import { Link, Spacer, Loader } from '../components/helpers';
+import { Link, Spacer } from '../components/helpers';
 import Map from '../components/Map';
 import Welcome from '../components/welcome';
+import { dasherize } from '../../../utils/slugs';
 
 import {
   ChallengeNode,
@@ -46,7 +47,10 @@ const propTypes = {
     complete: PropTypes.bool,
     errored: PropTypes.bool
   }),
+  hash: PropTypes.string,
   isSignedIn: PropTypes.bool,
+  location: PropTypes.object,
+  state: PropTypes.object,
   user: PropTypes.shape({
     name: PropTypes.string
   })
@@ -68,8 +72,15 @@ const BigCallToAction = isSignedIn => {
   return '';
 };
 
+// choose between the state from landing page and hash from url.
+const hashValueSelector = (state, hash) => {
+  if (state && state.superBlock) return dasherize(state.superBlock);
+  else if (hash) return hash.substr(1);
+  else return null;
+};
+
 export const LearnPage = ({
-  fetchState: { pending, complete },
+  location: { hash = '', state = '' },
   isSignedIn,
   user: { name = '' },
   data: {
@@ -80,10 +91,7 @@ export const LearnPage = ({
     allMarkdownRemark: { edges: mdEdges }
   }
 }) => {
-  if (pending && !complete) {
-    return <Loader fullScreen={true} />;
-  }
-
+  const hashValue = hashValueSelector(state, hash);
   return (
     <LearnLayout>
       <Helmet title='Learn | freeCodeCamp.org' />
@@ -100,6 +108,7 @@ export const LearnPage = ({
           </Col>
         </Row>
         <Map
+          hash={hashValue}
           introNodes={mdEdges.map(({ node }) => node)}
           nodes={edges
             .map(({ node }) => node)

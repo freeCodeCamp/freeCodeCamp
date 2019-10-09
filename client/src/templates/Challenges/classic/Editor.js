@@ -31,7 +31,7 @@ const mapStateToProps = createSelector(
   canFocusEditorSelector,
   isDonationModalOpenSelector,
   userSelector,
-  (canFocus, open, { theme = 'night' }) => ({
+  (canFocus, open, { theme = 'default' }) => ({
     canFocus: open ? false : canFocus,
     theme
   })

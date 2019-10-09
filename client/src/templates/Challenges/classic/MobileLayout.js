@@ -59,7 +59,7 @@ class MobileLayout extends Component {
           id='challenge-page-tabs'
           onSelect={moveToTab}
         >
-          <TabPane eventKey={1} title='Instructions'>
+          <TabPane eventKey={1} title='Info'>
             {instructions}
           </TabPane>
           <TabPane eventKey={2} title='Code' {...editorTabPaneProps}>

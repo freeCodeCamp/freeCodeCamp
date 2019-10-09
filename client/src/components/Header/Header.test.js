@@ -2,19 +2,17 @@
 import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
 import TestRenderer from 'react-test-renderer';
-
-import Header from './';
+import { UniversalNav } from './components/UniversalNav';
 import NavLinks from './components/NavLinks';
 
-describe('<Header />', () => {
+describe('<UniversalNav />', () => {
   it('renders to the DOM', () => {
     const shallow = new ShallowRenderer();
-    shallow.render(<Header />);
+    shallow.render(<UniversalNav {...UniversalNavProps} />);
     const result = shallow.getRenderOutput();
     expect(result).toBeTruthy();
   });
 });
-
 describe('<NavLinks />', () => {
   const root = TestRenderer.create(<NavLinks />).root;
   const aTags = root.findAllByType('a');
@@ -25,17 +23,24 @@ describe('<NavLinks />', () => {
     return acc;
   }, []);
 
-  const expectedLinks = ['/', '/portfolio'];
+  const expectedLinks = ['/learn', '/portfolio'];
 
   it('renders to the DOM', () => {
     expect(root).toBeTruthy();
   });
-  it('has 3 a tags', () => {
-    expect(aTags.length === 3).toBeTruthy();
+  it('has 2 links', () => {
+    expect(aTags.length === 2).toBeTruthy();
   });
 
-  it('has link to portfolio', () => {
+  it('has links to learn and portfolio', () => {
     // checks if all links in expected links exist in links
     expect(expectedLinks.every(elem => links.indexOf(elem) > -1)).toBeTruthy();
   });
 });
+
+const UniversalNavProps = {
+  displayMenu: false,
+  menuButtonRef: {},
+  searchBarRef: {},
+  toggleDisplayMenu: function() {}
+};

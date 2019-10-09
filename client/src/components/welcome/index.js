@@ -32,14 +32,6 @@ function Welcome({ name }) {
           </blockquote>
         </Col>
       </Row>
-      <Row>
-        <Col sm={10} smOffset={1} xs={12}>
-          <Spacer />
-          <h2 className='text-center medium-heading'>
-            What would you like to do today?
-          </h2>
-        </Col>
-      </Row>
     </Fragment>
   );
 }
