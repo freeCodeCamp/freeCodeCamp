@@ -50,78 +50,46 @@ const propTypes = {
   })
 };
 
-function TakeMeToTheChallenges() {
-  return <CurrentChallengeLink>Take me to the Challenges</CurrentChallengeLink>;
-}
-
-function renderIsLocked(username, isSessionUser) {
-  return (
+function renderMessage(isSessionUser, username) {
+  return isSessionUser ? (
     <Fragment>
-      <Helmet>
-        <title>Profile | freeCodeCamp.org</title>
-      </Helmet>
-      <Spacer size={2} />
-      <Grid>
-        {isSessionUser
-          ? renderSettingsButton()
-          : renderReportUserButton(username)}
-        <FullWidthRow>
-          <h2 className='text-center'>
-            {username} has not made their profile public.
-          </h2>
-        </FullWidthRow>
-        <FullWidthRow>
-          <p className='alert alert-info'>
-            {username} needs to change their privacy setting in order for you to
-            view their profile
-          </p>
-        </FullWidthRow>
-        <FullWidthRow>
-          <TakeMeToTheChallenges />
-          <Spacer />
-        </FullWidthRow>
-      </Grid>
+      <FullWidthRow>
+        <h2 className='text-center'>You have not made your profile public.</h2>
+      </FullWidthRow>
+      <FullWidthRow>
+        <p className='alert alert-info'>
+          You need to change your privacy setting in order for your profile to
+          be seen by others. This is a preview of how your profile will look
+          when made public.
+        </p>
+      </FullWidthRow>
+      <Spacer />
+    </Fragment>
+  ) : (
+    <Fragment>
+      <FullWidthRow>
+        <h2 className='text-center'>
+          {username} has not made their profile public.
+        </h2>
+      </FullWidthRow>
+      <FullWidthRow>
+        <p className='alert alert-info'>
+          {username} needs to change their privacy setting in order for you to
+          view their profile.
+        </p>
+      </FullWidthRow>
+      <Spacer />
+      <FullWidthRow>
+        <CurrentChallengeLink>Take me to the Challenges</CurrentChallengeLink>
+      </FullWidthRow>
+      <Spacer />
     </Fragment>
   );
 }
 
-function renderSettingsButton() {
-  return (
-    <Fragment>
-      <Row>
-        <Col sm={4} smOffset={4}>
-          <Link className='btn btn-lg btn-primary btn-block' to='/settings'>
-            Update my settings
-          </Link>
-        </Col>
-      </Row>
-      <Spacer size={2} />
-    </Fragment>
-  );
-}
-
-function renderReportUserButton(username) {
-  return (
-    <Fragment>
-      <Row>
-        <Col sm={4} smOffset={4}>
-          <Link
-            className='btn btn-lg btn-primary btn-block'
-            to={`/user/${username}/report-user`}
-          >
-            Report This User
-          </Link>
-        </Col>
-      </Row>
-      <Spacer size={2} />
-    </Fragment>
-  );
-}
-
-function Profile({ user, isSessionUser }) {
+function renderProfile(user) {
   const {
     profileUI: {
-      isLocked = true,
       showAbout = false,
       showCerts = false,
       showHeatMap = false,
@@ -152,42 +120,67 @@ function Profile({ user, isSessionUser }) {
     yearsTopContributor
   } = user;
 
-  if (isLocked) {
-    return renderIsLocked(username, isSessionUser);
-  }
+  return (
+    <Fragment>
+      <Camper
+        about={showAbout ? about : null}
+        githubProfile={githubProfile}
+        isGithub={isGithub}
+        isLinkedIn={isLinkedIn}
+        isTwitter={isTwitter}
+        isWebsite={isWebsite}
+        linkedin={linkedin}
+        location={showLocation ? location : null}
+        name={showName ? name : null}
+        picture={picture}
+        points={showPoints ? points : null}
+        twitter={twitter}
+        username={username}
+        website={website}
+        yearsTopContributor={yearsTopContributor}
+      />
+      {showHeatMap ? <HeatMap calendar={calendar} streak={streak} /> : null}
+      {showCerts ? <Certifications username={username} /> : null}
+      {showPortfolio ? <Portfolio portfolio={portfolio} /> : null}
+      {showTimeLine ? (
+        <Timeline completedMap={completedChallenges} username={username} />
+      ) : null}
+      <Spacer />
+    </Fragment>
+  );
+}
+
+function Profile({ user, isSessionUser }) {
+  const {
+    profileUI: { isLocked = true },
+    username
+  } = user;
+
   return (
     <Fragment>
       <Helmet>
         <title>Profile | freeCodeCamp.org</title>
       </Helmet>
-      <Spacer size={2} />
+      <Spacer />
       <Grid>
-        {isSessionUser
-          ? renderSettingsButton()
-          : renderReportUserButton(username)}
-        <Camper
-          about={showAbout ? about : null}
-          githubProfile={githubProfile}
-          isGithub={isGithub}
-          isLinkedIn={isLinkedIn}
-          isTwitter={isTwitter}
-          isWebsite={isWebsite}
-          linkedin={linkedin}
-          location={showLocation ? location : null}
-          name={showName ? name : null}
-          picture={picture}
-          points={showPoints ? points : null}
-          twitter={twitter}
-          username={username}
-          website={website}
-          yearsTopContributor={yearsTopContributor}
-        />
-        {showHeatMap ? <HeatMap calendar={calendar} streak={streak} /> : null}
-        {showCerts ? <Certifications username={username} /> : null}
-        {showPortfolio ? <Portfolio portfolio={portfolio} /> : null}
-        {showTimeLine ? (
-          <Timeline completedMap={completedChallenges} username={username} />
+        {isSessionUser ? (
+          <Row>
+            <Col sm={4} smOffset={4}>
+              <Link className='btn btn-lg btn-primary btn-block' to='/settings'>
+                Update my settings
+              </Link>
+            </Col>
+          </Row>
         ) : null}
+        <Spacer />
+        {isLocked ? renderMessage(isSessionUser, username) : null}
+        {!isLocked || isSessionUser ? renderProfile(user) : null}
+        {isSessionUser ? null : (
+          <Row className='text-center'>
+            <Link to={`/user/${username}/report-user`}>Report This User</Link>
+          </Row>
+        )}
+        <Spacer />
       </Grid>
     </Fragment>
   );

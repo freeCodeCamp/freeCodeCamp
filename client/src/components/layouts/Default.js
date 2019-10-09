@@ -133,7 +133,7 @@ class DefaultLayout extends Component {
       isSignedIn,
       removeFlashMessage,
       showFooter = true,
-      theme
+      theme = 'default'
     } = this.props;
     return (
       <Fragment>
