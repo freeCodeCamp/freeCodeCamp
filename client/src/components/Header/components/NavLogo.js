@@ -1,8 +1,8 @@
 import React from 'react';
-import FccLogo from '../../../assets/icons/FccLogo';
+import freeCodeCampLogo from '../../../assets/icons/freeCodeCampLogo';
 
 function NavLogo() {
-  return <FccLogo />;
+  return <freeCodeCampLogo />;
 }
 
 NavLogo.displayName = 'NavLogo';

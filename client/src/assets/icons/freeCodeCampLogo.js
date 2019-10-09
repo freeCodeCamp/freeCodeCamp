@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import React from 'react';
 
-function FccLogo() {
+function freeCodeCampLogo() {
   return (
     <svg
       height='38'
@@ -19,6 +19,6 @@ function FccLogo() {
   );
 }
 
-FccLogo.displayName = 'FccLogo';
+freeCodeCampLogo.displayName = 'freeCodeCampLogo';
 
-export default FccLogo;
+export default freeCodeCampLogo;
