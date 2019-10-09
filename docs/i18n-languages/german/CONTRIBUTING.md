@@ -25,7 +25,7 @@ Du kannst Dir einen beliebigen Bereich aussuchen, zu dem du etwas beitragen möc
 
 ## Trage etwas zu dieser Open-Source-Codebase bei
 
-Wir haben eine riesige Open-Source-Codebas, die aus tausenden von [Coding Challenges](https://learn.freecodecamp.org) und [Leitfaden-Artikeln](https://guide.freecodecamp.org) besteht.
+Wir haben eine riesige Open-Source-Codebase, die aus tausenden von [Coding Challenges](https://learn.freecodecamp.org) und [Leitfaden-Artikeln](https://guide.freecodecamp.org) besteht.
 
 Hierbei kannst Du uns helfen:
 
@@ -49,7 +49,7 @@ Hier findest du einen [Beispiel-Artikel zu HTML-Anchor-Elementen](https://github
 
 Wir freuen uns über Deine Hilfe beim Schreiben dieser Artikel. Du musst kein Experte in einem Gebiet sein, um darüber zu schreiben - der komplette Leitfaden ist Open Source, d.h. auch wenn Du einen Fehler machst, wird ihn schlussendlich ein anderer Contributor korrigieren.
 
-Um zu helfen, finde einen `Stub-Artikel` auf unser [Leitfaden-Webseite](https://guide.freecodecamp.org), schreibe den Artikel und öffne einen Pull Request, um den Stub mit Deinem Artikel zu ersetzen. Ein [Pull Request](https://help.github.com/articles/about-pull-requests/) ist ein Weg, um Änderungen vorzuschlagen. So können andere von Deinen Änderungen erfahren, sie prüfen und schließlich übernehmen.
+Um zu helfen, finde einen `Stub-Artikel` auf unser [Leitfaden-Webseite](https://guide.freecodecamp.org), schreibe den Artikel und öffne einen Pull Request, um den Stub mit Deinem Artikel zu ersetzen. Eine [Pull Request](https://help.github.com/articles/about-pull-requests/) ist ein Weg, um Änderungen vorzuschlagen. So können andere von Deinen Änderungen erfahren, sie prüfen und schließlich übernehmen.
 
 Wenn Du keinen Stub zu dem Thema finden kannst, über das Du gerne schreiben würdest, kannst Du einen Pull Request öffnen, der den Stub anlegt und Deinen Artikel enthält.
 
@@ -57,7 +57,7 @@ Wenn Du dabei helfen willst, die Leitfaden-Artikel zu verbessern, kannst du [hie
 
 ### Bugs in unseren Coding-Challenges finden, aktualisieren und fixen
 
-Alle unsere Coding Challenges werden von Mitgliedern unserer Community verwaltet, die Experten-Wissen von Freiwilligen wie Dir mitbringen.
+Alle unsere Coding Challenges werden von Mitgliedern unserer Community verwaltet, welche über Expertenwissen in einem gewissem Teilgebiet verfügen.
 
 Du kannst dabei helfen, sie zu erweitern und sie klarer zu formulieren. Du kannst die User Stories aktualisieren, um das Konzept besser zu erklären, und auch überflüssige entfernen. Ebenso kannst Du die Challenge-Tests verbessern, damit sie den eingereichten Code genauer testen.
 
@@ -73,17 +73,17 @@ Du kannst uns helfen, unsere Leitfaden-Artikel und unsere Coding Challenges in e
 - [Spanish (Español)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/spanish)
 - [Portuguese (Português)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/portuguese)
 
-Wir würden uns sehr über Deine Hilfe beim Verbessern der Übersetzungen freuen. Millionen Menschen nutzen die englischsprachige Version von freeCodeCamp.org, und wir erwarten, dass Millionen Menschen mehr die übersetzten Versionen nutzen werden.
+Wir würden uns sehr über Deine Hilfe beim Verbessern der Übersetzungen freuen. Millionen Menschen nutzen die englischsprachige Version von freeCodeCamp.org und wir hoffen durch die Übersetzung in weitere Sprachen noch viele Millionen Menschen mehr erreichen zu können.
 
 ### Bugs auf der Lernplattform von freeCodeCamp.org fixen
 
-Unsere Lernplattform läuft auf einem modernen JavaScript-Stack. Sie hat mehrere Komponenten, Tools und Bibliotheken, inklusive aber nicht limitiert auf Node.js, MongoDB, LoopBack, OAuth 2.0, React, Gatsby, Webpack, und mehr.
+Unsere Lernplattform läuft auf einem modernen JavaScript-Stack. Sie besteht aus zahlreichen Komponenten, Tools und Bibliotheken, inklusive aber nicht limitiert auf Node.js, MongoDB, LoopBack, OAuth 2.0, React, Gatsby, Webpack, und mehr.
 
 Grob gesagt haben wir
 
-- einen Node.js basierten API-Server,
-- eine Reihe von React basierten Client-Anwendungen und
-- ein Skript, das wir verwenden, um unsere Frontend-Projekte zu evaluieren.
+- einen auf Node.js basierenden API-Server,
+- eine Reihe von auf React basierenden Client-Anwendungen und
+- ein Skript, das zur Evaluierung unserer Frontend-Projekte verwendet wird.
 
 Um dazu beizutragen braucht man ein gewisses Verständnis von APIs, ES6-Syntax and eine Menge Neugier.
 
@@ -99,13 +99,13 @@ Wenn Du uns helfen möchtest, unsere Codebase zu verbessern, findest du hier ein
 
 Wenn Du denkst, dass Du einen Bug gefunden hast, lies zunächst den ["Hilfe, ich habe einen Bug gefunden"](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543)-Artikel und folge den Anweisungen.
 
-Wenn Du Dir sicher bist, dass es sich um einen neuen Bug handelt, kannst du ein neues GitHub-Issue erstellen. Stelle sicher, dass Du so viel Information wie möglich dazuschreibst, sodass wir den Bug nachvollziehen können. Wie haben ein vorgefertigtes Issue-Template, das Dir dabei hilft.
+Wenn Du Dir sicher bist, dass es sich um einen neuen Bug handelt, kannst du einen neues GitHub-Issue erstellen. Stelle sicher, dass Du so viel Information wie möglich dazuschreibst, sodass wir den Bug nachvollziehen können. Wie haben ein vorgefertigtes Issue-Template, das Dir dabei hilft.
 
 Bitte beachte, dass alle Issues, die nach Hilfe bei einer Coding Challenge fragen, geschlossen werden. Der Issue-Tracker ist ausschließlich für Probleme und Diskussionen, die sich auf die Codebase beziehen. Wenn Du Dir nicht sicher bist, [frag im Forum nach Hilfe](https://www.freecodecamp.org/forum), bevor Du einen Report machst.
 
 **Wie kann ich ein Sicherheitsrisiko melden?**
 
-Bitte erstelle keine GitHub-Issues für Sicherheitsrisiken. Schicke stattdessen eine E-Mail an `security@freecodecamp.org` und wir werden uns sofort darum kümmern.
+Bitte erstelle keine GitHub-Issues für mögliche Sicherheitslücken. Schicke stattdessen eine E-Mail an `security@freecodecamp.org` und wir werden uns sofort darum kümmern.
 
 **Ich hänge an etwas fest, das nicht in der Dokumentation beschrieben ist. Wie bekomme ich Hilfe?**
 
