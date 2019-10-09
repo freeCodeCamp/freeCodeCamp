@@ -113,9 +113,7 @@ class Editor extends Component {
 
   editorDidMount = (editor, monaco) => {
     this._editor = editor;
-    if (this.props.canFocus) {
-      this._editor.focus();
-    } else this.focusOnHotkeys();
+    this.focusOnHotkeys();
     this._editor.addAction({
       id: 'execute-challenge',
       label: 'Run tests',
