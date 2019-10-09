@@ -3,17 +3,27 @@
 |-|
 <!-- do not translate this -->
 
-# DevOps Guide
-
 > ### :warning: THIS GUIDE IS NOT LIVE YET. :warning:
 > The processes described here will come to effect in the upcoming version of freeCodeCamp.org.
 > Some parts of the guide are applicable on the beta application.
 
-## Developer Operations at freeCodeCamp.org
+# Developer Operations at freeCodeCamp.org
 
-We continuously deploy our current `master`, the default development branch on a **separate isolated environment**.
+Thanks for your interest in learning more about how we do devops for the platform at freeCodeCamp.org. 
 
-Typically, the `master` branch is merged into the `production-staging` branch once a day and released into an isolated infrastructure. This is known as our "staging / beta" application. It is identical to our live production environment at `freeCodeCamp.org`, other than it using a separate set of databases. This isolation lets us test ongoing development and features in a "production like" scenario, without affecting regular users of freeCodeCamp.org's platforms. Once the developer teams are satisfied with the changes on the staging application, these changes are moved every few days to the `production-current` branch. This branch as the name suggests is what you would see live on `freeCodeCamp.org`.
+We have tried to keep the language in this guide as simple as possible for everyone. However, you may find some technical jargon in here. This is not an exhaustive guide for all operations, and is to be used just as a reference for your understanding of the systems.
+
+## How we build and deploy the codebase?
+
+We continuously build and deploy [`master`](https://github.com/freeCodeCamp/freeCodeCamp/tree/master), our default development branch on a **separate set of servers**.
+
+Typically, the `master` branch is merged into the [`production-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) branch once a day and released into an isolated infrastructure. We call this our "staging/beta" application.
+
+It is identical to our live production environment at `freeCodeCamp.org`, other than it using a separate set of databases, servers, web-proxy, etc. This isolation lets us test ongoing development and features in a "production like" scenario, without affecting regular users of freeCodeCamp.org's platforms. 
+
+Once the developer team (@freeCodeCamp/dev-team) is happy with the changes on the staging application, these changes are moved every few days to the [`production-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-current) branch. We then release the changes to our live platforms on freeCodeCamp.org
+
+We employ various levels of integration and acceptance testing to check on the quality of the code. All our tests are done through software like Travis and Azure Pipelines. Some of this automated, that is once changes are pushed to the corresponding branch, they get built and deployed on the platforms.
 
 We welcome you to test these releases in a **"public beta testing"** mode and get early access to upcoming features to the platforms. Sometimes these features/changes are referred to as **next, beta, staging,** etc. interchangeably.
 
@@ -21,15 +31,21 @@ Your contributions via feedback and issue reports will help us in making the pro
 
 We thank you for reporting bugs that you encounter and help in making freeCodeCamp.org better. You rock!
 
-## Identifying the upcoming version of freeCodeCamp
+## Identifying the upcoming version of platform
 
 The domain name will be different than **`freeCodeCamp.org`**. Currently this public beta testing version is available at:
 
 <h3 align="center"><a href='https://www.freecodecamp.dev' _target='blank'><code>www.freecodecamp.dev</code></a></h4>
 
-## Build and Deployment Status
+The dev-team merges changes from the `master` branch to `production-staging` when they release changes. Usually the top commit should be what you see live on the site. You can identify the exact version deployed by visiting the build and deployment logs available below in the status section.
 
-Usually the dev team will merge the changes from the master branch to special branch called `production-staging` (`beta/staging site`) when they deploy. Usually the top commit should be what you see live on the site.
+## Identifying the current version of platform
+
+**The current version of the platform is always available at [`freeCodeCamp.org`](https://www.freecodecamp.org).**
+
+The dev-team merges changes from the `production-staging` branch to `production-current` when they release changes. The top commit should be what you see live on the site. You can identify the exact version deployed by visiting the build and deployment logs available below in the status section.
+
+## Build and Deployment Status
 
 We use Azure Pipelines and other CI software (Travis, GitHub Actions), to continiously test and deploy our applications.
 
@@ -51,7 +67,7 @@ We use Azure Pipelines and other CI software (Travis, GitHub Actions), to contin
 
 ## Known Limitations
 
-There will be some known limitations and tradeoffs when using this beta version of freeCodeCamp.
+There will be some known limitations and tradeoffs when using this beta version of the platform.
 
 - #### All data / personal progress on these beta applications `will NOT be saved or carried over` to production.
   **Users on the beta version will have a separate account from the production.** The beta version uses a physically separate database from production. This gives us the ability to prevent any accidental loss of data or modifications. The dev team may purge the database on this beta version as needed.
