@@ -25,7 +25,7 @@ It should take two arguments: `fn` and `args`, and should return `spreadsheetFun
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(code.replace(/\s/g, "").includes('constapplyFn=str=>{constnoHigh=highPrecedence(str);constinfix=/([0-9.]+)([+-])([0-9.]+)/;conststr2=infixEval(noHigh,infix);constregex=/([a-z]*)\\(([0-9.,]*)\\)(?!.*()/i;consttoNumberList=args=>args.split(",").map(parseFloat);constapplyFunction=(fn,args)=>spreadsheetFunctions'));
+    testString: assert(code.replace(/\s/g, "").includes('consttoNumberList=args=>args.split(",").map(parseFloat);constapplyFunction=(fn,args)=>spreadsheetFunctions'));
 
 ```
 

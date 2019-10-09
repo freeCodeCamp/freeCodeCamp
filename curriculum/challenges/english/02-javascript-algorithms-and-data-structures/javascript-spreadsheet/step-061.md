@@ -94,7 +94,7 @@ const evalFormula = x => {
     return fn;
   };
   const fn = elemValue("1");
-  return fn("A")
+  return fn("A");
 };
 
 
@@ -207,7 +207,7 @@ const evalFormula = x => {
     return c => document.getElementById(c + n).value);
   };
   const fn = elemValue("1");
-  return fn("A")
+  return fn("A");
 };
 </script>
 ```
