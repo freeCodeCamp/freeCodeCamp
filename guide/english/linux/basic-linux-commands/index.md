@@ -7,6 +7,7 @@ When starting out with linux, there are some basic commands everyone should know
 
  1. **cd** - change directory 
 - cd followed by a directory or file path will take you inside that directory(folder).
+- use `cd ..` to navigate the containing directory
 
  2. **ls** - list command
 - Type `ls` and the contents of the current directory will be displayed.
