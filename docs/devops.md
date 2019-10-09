@@ -70,6 +70,7 @@ The below commands will move changes from `master` to the `production-*` branch:
 
 ```sh
 git checkout master
+git fetch --all --prune
 git reset --hard upstream/master
 git checkout production-staging
 git merge master
