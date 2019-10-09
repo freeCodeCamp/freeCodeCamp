@@ -31,7 +31,7 @@ Wir haben eine riesige Open-Source-Codebase, die aus tausenden von [Coding Chall
 
 Alle unsere Coding Challenges werden von der Community beaufsichtigt und bringen Expertenwissen von Freiwilligen wie dir ein.
 
-Du kannst helfen, diese zu erweitern und ihren Wortlaut zu verbessern. Du kannst auch die User Stories aktualisieren, um das Konzept besser zu erklären oder redundante zu entfernen und die Challenge-Tests zu verbessern, um den Code von Personen genauer zu testen.
+Du kannst helfen, diese zu erweitern und ihren Wortlaut zu verbessern. Du kannst auch die User Stories aktualisieren, um das Konzept besser zu erklären oder redundante zu entfernen. Außerdem kannst du auch die Challenge-Tests verbessern, um den Code von Personen genauer zu testen.
 
 ### Helfe uns, Fehler in der Lernplattform von freeCodeCamp.org zu beheben.
 
@@ -49,7 +49,7 @@ Im Wesentlichen erwarten wir grundlegende Kenntnisse in einigen der oben genannt
 
 **Wenn du uns helfen möchtest, unsere Codebasis zu verbessern, kannst du entweder [freeCodeCamp lokal einrichten](/docs/how-to-setup-freecodecamp-locally.md) oder Gitpod, eine kostenlose Online-Dev-Umgebung, verwenden.**
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
+[![Öffnen in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
 (Startet eine ready-to-code Entwicklungsumgebung für Freecodecamp in deinem Browser.)
 
@@ -90,9 +90,9 @@ Wir weisen Probleme in der Regel niemandem außer Langzeit-Mitarbeitern zu, um m
    - Hast du sichergestellt, dass alle Tests bestanden wurden, und hast du bestätigt, dass alles vor Ort funktioniert?
 3. Schließlich favorisieren wir Pull-Requests, die unseren empfohlenen Richtlinien folgen. 
    - Hast du die Checkliste für Pull-Requests befolgt? 
-   - Hast du deinen Pull-Request Titel sinnvoll benannt und formuliertt?
+   - Hast du deinen Pull-Request Titel sinnvoll benannt und formuliert?
 
-Sie benötigen keine Berechtigung für Probleme, die mit `Hilfe gesucht` oder `Erste Zeit willkommen` markiert sind, wie bereits erwähnt. Befolgen Sie die Anweisungen sorgfältig und öffnen Sie einen Pull-Request.
+Du benötigst keine Berechtigung für Probleme, die mit `Help Wanted` oder `first timers welcome` markiert sind. Befolge die Anweisungen sorgfältig und öffne einen Pull-Request.
 
 **Ich bin ein GitHub/Open-Source-Neuling:**
 
