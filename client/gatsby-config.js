@@ -110,6 +110,20 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-plugin-advanced-sitemap`,
+      options: {
+        exclude: [
+          `/dev-404-page`,
+          `/404`,
+          `/404.html`,
+          `/offline-plugin-app-shell-fallback`,
+          `/learn`,
+          /(\/)learn(\/)\S*/
+        ],
+        addUncaughtPages: true
+      }
+    },
+    {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'freeCodeCamp',
@@ -129,8 +143,6 @@ module.exports = {
         fonts: ['Lato:300,400,400i,500,700', 'Roboto Mono:400,700']
       }
     },
-    'gatsby-plugin-sitemap',
-    'gatsby-plugin-remove-fingerprints',
     'gatsby-plugin-remove-serviceworker'
   ]
 };
