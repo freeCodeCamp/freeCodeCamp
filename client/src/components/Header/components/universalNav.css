@@ -49,7 +49,7 @@
   background-color: var(--theme-color);
 }
 
-#universal-nav-logo img {
+#universal-nav-logo svg {
   display: block;
   width: auto;
   height: 25px;
