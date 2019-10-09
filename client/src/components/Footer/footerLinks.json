@@ -4,7 +4,7 @@
       "title": "Our Nonprofit",
       "links": [
         { "to": "/news/about/", "text": "About" },
-        { "to": "https://donate.freecodecamp.org", "text": "Donate" },
+        { "to": "/donate", "text": "Donate", "internal": true },
         { "to": "/news/shop/", "text": "Shop" },
         {
           "to": "https://www.linkedin.com/school/free-code-camp/people/",
