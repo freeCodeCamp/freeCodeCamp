@@ -205,7 +205,7 @@ const evalFormula = x => {
     return fn;
   };
   const fn = elemValue("1");
-  return fn("A")
+  return fn("A");
 };
 </script>
 ```

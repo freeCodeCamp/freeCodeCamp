@@ -91,7 +91,7 @@ const evalFormula = x => {
   const elemValue = n => c => document.getElementById(c + n).value;
 
   const fn = elemValue("1");
-  return fn("A")
+  return fn("A");
 };
 
 
@@ -203,7 +203,7 @@ const evalFormula = x => {
   const elemValue = n => c => document.getElementById(c + n).value;
   const addChars = c1 => c2 => c1 + c2
   const fn = elemValue("1");
-  return fn("A")
+  return fn("A");
 };
 </script>
 ```

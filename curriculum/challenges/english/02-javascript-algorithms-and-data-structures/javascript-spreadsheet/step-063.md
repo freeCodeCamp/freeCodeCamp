@@ -90,7 +90,7 @@ const evalFormula = x => {
   const rangeFromString = (n1, n2) => range(parseInt(n1), parseInt(n2));
   const elemValue = n => (c => document.getElementById(c + n).value));
   const fn = elemValue("1");
-  return fn("A")
+  return fn("A");
 };
 
 
@@ -202,7 +202,7 @@ const evalFormula = x => {
   const elemValue = n => c => document.getElementById(c + n).value;
 
   const fn = elemValue("1");
-  return fn("A")
+  return fn("A");
 };
 </script>
 ```

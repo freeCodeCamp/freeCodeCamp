@@ -92,7 +92,7 @@ const evalFormula = x => {
   const elemValue = n => c => document.getElementById(c + n).value;
   const addChars = c1 => c2 => n => charRange(c1, c2).map(x => elemValue(n)(x));
   const fn = elemValue("1");
-  return fn("A")
+  return fn("A");
 };
 
 
@@ -204,7 +204,7 @@ const evalFormula = x => {
   const elemValue = n => c => document.getElementById(c + n).value;
   const addChars = c1 => c2 => n => charRange(c1, c2).map(elemValue(n));
   const fn = elemValue("1");
-  return fn("A")
+  return fn("A");
 };
 </script>
 ```
