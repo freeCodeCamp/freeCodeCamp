@@ -66,7 +66,7 @@ const spreadsheetFunctions = {
   random: ([x, y]) => Math.floor(Math.random() * y + x),
   increment: nums => nums.map(x => x + 1),
   firsttwo: arr => arr.slice(0, 2),
-  lastttwo: arr => arr.slice(-2),
+  lasttwo: arr => arr.slice(-2),
   even: nums => nums.filter(isEven),
   has2: arr => arr.includes(2),
   nodups: arr => arr.reduce((a, x) => a.includes(x) ? a : a.concat(x), [])
@@ -232,7 +232,7 @@ const spreadsheetFunctions = {
   random: ([x, y]) => Math.floor(Math.random() * y + x),
   increment: nums => nums.map(x => x + 1),
   firsttwo: arr => arr.slice(0, 2),
-  lastttwo: arr => arr.slice(-2),
+  lasttwo: arr => arr.slice(-2),
   even: nums => nums.filter(isEven),
   sum,
   has2: arr => arr.includes(2),
