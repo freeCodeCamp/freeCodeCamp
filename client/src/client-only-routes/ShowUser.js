@@ -64,7 +64,8 @@ class ShowUser extends Component {
 
     this.timer = null;
     this.state = {
-      textarea: ''
+      textarea: '',
+      time: 5
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -72,7 +73,7 @@ class ShowUser extends Component {
 
   componentWillUnmount() {
     if (this.timer) {
-      clearTimeout(this.timer);
+      clearInterval(this.timer);
     }
   }
 
@@ -92,7 +93,12 @@ class ShowUser extends Component {
 
   setNavigationTimer(navigate) {
     if (!this.timer) {
-      this.timer = setTimeout(() => navigate(`${apiLocation}/signin`), 5000);
+      this.timer = setInterval(() => {
+        if (this.state.time <= 0) {
+          navigate(`${apiLocation}/signin`);
+        }
+        this.setState({ time: this.state.time - 1 });
+      }, 1000);
     }
   }
 
@@ -120,7 +126,7 @@ class ShowUser extends Component {
                 <Spacer />
                 <p>
                   You will be redirected to sign in to freeCodeCamp.org
-                  automatically in 5 seconds
+                  automatically in {this.state.time} seconds
                 </p>
                 <p>
                   <Button
