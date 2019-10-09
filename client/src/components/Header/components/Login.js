@@ -35,11 +35,11 @@ function Login(props) {
   const { children, navigate, isSignedIn, ...restProps } = props;
   return (
     <Button
+      bsStyle='default'
+      className={(restProps.block ? 'btn-cta-big' : '') + ' signup-btn btn-cta'}
       href='/signin'
       onClick={createOnClick(navigate, isSignedIn)}
       {...restProps}
-      bsStyle='default'
-      className={(restProps.block ? 'btn-cta-big' : '') + ' signup-btn btn-cta'}
     >
       {children || 'Sign In'}
     </Button>
