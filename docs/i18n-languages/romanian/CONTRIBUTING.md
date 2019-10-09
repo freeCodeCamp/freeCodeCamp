@@ -17,9 +17,9 @@ Iți urăm contribuție plăcută 🎉!
 
 Poți alege să contribuiești în orice arie/domeniu care te interesează:
 
-1. [Contribuiește la codul open source al aceastei pagine.](#contribute-to-this-open-source-codebase). Ajutâ la editarea [articolelor de orientare](https://guide.freecodecamp.org/), la [provocările de codare](https://learn.freecodecamp.org/) sau la corectarea erorilor de pe platforma de învățare.
+1. [Contribuie la codul open source al aceastei pagini.](#contribute-to-this-open-source-codebase). Ajutând la editarea [articolelor de orientare](https://guide.freecodecamp.org/), la [provocările de codare](https://learn.freecodecamp.org/) sau la corectarea erorilor de pe platforma de învățare.
 
-2. Ajută-i pe colegii de pe [forumul public](https://www.freecodecamp.org/forum/). [Răspunde la întrebările lor de codare](https://www.freecodecamp.org/forum/?max_posts=1) sau [oferăle feedback cu privire la proiectele lor de codare](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1)
+2. Ajută-i pe colegii de pe [forumul public](https://www.freecodecamp.org/forum/). [Răspunde la întrebările lor de codare](https://www.freecodecamp.org/forum/?max_posts=1) sau [oferă-le feedback cu privire la proiectele lor de codare](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1)
 
 3. Ajută-ne să adăugăm subtitrări în [videoclipurile canalului YouTube](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ/videos).
 
