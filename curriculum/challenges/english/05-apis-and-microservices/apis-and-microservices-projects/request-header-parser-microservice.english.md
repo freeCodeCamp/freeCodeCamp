@@ -23,9 +23,13 @@ Start this project on Glitch using <a href='https://glitch.com/edit/#!/remix/clo
 
 ```yml
 tests:
-  - text: 'I can get the IP address, language and operating system for my browser.'
-    testString: ''
-
+  - text: 'I can get my IP address.'
+    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/api/whoami'').then(data => assert.exists(data.ipaddress), xhr => { throw new Error(xhr.responseText)})'
+  - text: 'I can get my preferred language.'
+    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/api/whoami'').then(data => assert.exists(data.language), xhr => { throw new Error(xhr.responseText)})'
+  - text: 'I can get my software.'
+    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/api/whoami'').then(data => assert.exists(data.software), xhr => { throw new Error(xhr.responseText)})'
+    
 ```
 
 </section>
