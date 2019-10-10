@@ -8,6 +8,10 @@
   z-index: 1000;
 }
 
+.flash-message div {
+  max-width: 100%;
+}
+
 .flash-message-enter {
   opacity: 0;
 }

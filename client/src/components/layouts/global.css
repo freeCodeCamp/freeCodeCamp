@@ -61,6 +61,19 @@ p {
   line-height: 1.5rem;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span,
+div {
+  word-wrap: break-word;
+}
+
 .big-heading {
   font-size: 2.5rem !important;
 }
@@ -255,6 +268,10 @@ input {
   -moz-box-shadow: none !important;
   box-shadow: none !important;
   border-radius: 0px;
+}
+
+textarea {
+  resize: vertical;
 }
 
 form {

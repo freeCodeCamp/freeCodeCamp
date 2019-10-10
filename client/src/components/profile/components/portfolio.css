@@ -1,5 +1,5 @@
 .portfolio-heading.media-heading {
-  border-bottom: 1px solid rgba(0, 100, 0, 0.6);
+  border-bottom: 1px solid var(--quaternary-background);
   padding-bottom: 10px;
 }
 .portfolio-screen-shot {
