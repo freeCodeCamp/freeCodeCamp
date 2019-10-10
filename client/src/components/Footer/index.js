@@ -38,11 +38,7 @@ function Footer() {
             <p>
               Donations to freeCodeCamp go toward our education initiatives, and
               help pay for servers, services, and staff. You can&nbsp;
-              <Link
-                className='inline'
-                external={true}
-                to='https://donate.freecodecamp.org'
-              >
+              <Link className='inline' to='/donate'>
                 make a tax-deductible donation here
               </Link>
               .

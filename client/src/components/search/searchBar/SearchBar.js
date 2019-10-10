@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { createSelector } from 'reselect';
 import { SearchBox } from 'react-instantsearch-dom';
-import { HotKeys, configure } from 'react-hotkeys';
+import { HotKeys, ObserveKeys } from 'react-hotkeys';
 import { isEqual } from 'lodash';
 
 import {
@@ -18,9 +18,6 @@ import SearchHits from './SearchHits';
 
 import './searchbar-base.css';
 import './searchbar.css';
-
-// Configure react-hotkeys to work with the searchbar
-configure({ ignoreTags: ['select', 'textarea'] });
 
 const propTypes = {
   innerRef: PropTypes.object,
@@ -187,14 +184,16 @@ class SearchBar extends Component {
             <label className='fcc_sr_only' htmlFor='fcc_instantsearch'>
               Search
             </label>
-            <SearchBox
-              focusShortcuts={[83, 191]}
-              onChange={this.handleChange}
-              onFocus={this.handleFocus}
-              onSubmit={this.handleSearch}
-              showLoadingIndicator={true}
-              translations={{ placeholder }}
-            />
+            <ObserveKeys>
+              <SearchBox
+                focusShortcuts={[83, 191]}
+                onChange={this.handleChange}
+                onFocus={this.handleFocus}
+                onSubmit={this.handleSearch}
+                showLoadingIndicator={true}
+                translations={{ placeholder }}
+              />
+            </ObserveKeys>
             {isDropdownEnabled && isSearchFocused && (
               <SearchHits
                 handleHits={this.handleHits}
