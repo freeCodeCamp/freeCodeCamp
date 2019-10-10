@@ -375,7 +375,20 @@ export const reducer = handleActions(
     [settingsTypes.updateUserFlagComplete]: (state, { payload }) =>
       payload ? spreadThePayloadOnUser(state, payload) : state,
     [settingsTypes.verifyCertComplete]: (state, { payload }) =>
-      payload ? spreadThePayloadOnUser(state, payload) : state
+      payload ? spreadThePayloadOnUser(state, payload) : state,
+    [settingsTypes.submitProfileUIComplete]: (state, { payload }) =>
+      payload
+        ? {
+            ...state,
+            user: {
+              ...state.user,
+              [state.appUsername]: {
+                ...state.user[state.appUsername],
+                profileUI: { ...payload }
+              }
+            }
+          }
+        : state
   },
   initialState
 );

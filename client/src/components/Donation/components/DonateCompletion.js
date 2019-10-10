@@ -22,12 +22,14 @@ function DonateCompletion({ processing, reset, success, error = null }) {
     : 'Something went wrong with your donation';
   return (
     <Alert bsStyle={style} className='donation-completion'>
-      <h4>{heading}</h4>
+      <h4>
+        <b>{heading}</b>
+      </h4>
       <div className='donation-completion-body'>
         {processing && (
           <Spinner
             className='user-state-spinner'
-            color='#006400'
+            color='#0a0a23'
             fadeIn='none'
             name='line-scale'
           />
