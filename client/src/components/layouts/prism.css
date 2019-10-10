@@ -4,5 +4,10 @@ code .token.operator {
 
 :not(pre) > code[class*='language-'],
 pre[class*='language-'] {
-  background: var(--quaternary-background);
+  background: var(--primary-background);
+}
+
+* {
+  text-shadow: none !important;
+}
 }
