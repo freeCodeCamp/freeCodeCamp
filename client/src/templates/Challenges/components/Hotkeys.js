@@ -3,9 +3,17 @@ import PropTypes from 'prop-types';
 import { HotKeys, GlobalHotKeys } from 'react-hotkeys';
 import { navigate } from 'gatsby';
 import { connect } from 'react-redux';
+import { createSelector } from 'reselect';
 
-import { setEditorFocusability } from '../redux';
+import { canFocusEditorSelector, setEditorFocusability } from '../redux';
 import './hotkeys.css';
+
+const mapStateToProps = createSelector(
+  canFocusEditorSelector,
+  canFocusEditor => ({
+    canFocusEditor
+  })
+);
 
 const mapDispatchToProps = { setEditorFocusability };
 
@@ -17,6 +25,7 @@ const keyMap = {
 };
 
 const propTypes = {
+  canFocusEditor: PropTypes.bool,
   children: PropTypes.any,
   executeChallenge: PropTypes.func,
   innerRef: PropTypes.any,
@@ -27,6 +36,7 @@ const propTypes = {
 };
 
 function Hotkeys({
+  canFocusEditor,
   children,
   executeChallenge,
   introPath,
@@ -45,14 +55,25 @@ function Hotkeys({
       if (executeChallenge) executeChallenge();
     },
     NAVIGATION_MODE: () => setEditorFocusability(false),
-    NAVIGATE_PREV: () => navigate(prevChallengePath),
-    NAVIGATE_NEXT: () => navigate(introPath ? introPath : nextChallengePath)
+    NAVIGATE_PREV: () => {
+      if (!canFocusEditor) navigate(prevChallengePath);
+    },
+    NAVIGATE_NEXT: () => {
+      if (!canFocusEditor) navigate(introPath ? introPath : nextChallengePath);
+    }
   };
   // GlobalHotKeys is always mounted and tracks all keypresses. Without it,
   // keyup events can be missed and react-hotkeys assumes that that key is still
   // being pressed.
+  // allowChanges is necessary if the handlers depend on props (in this case
+  // canFocusEditor)
   return (
-    <HotKeys handlers={handlers} innerRef={innerRef} keyMap={keyMap}>
+    <HotKeys
+      allowChanges={true}
+      handlers={handlers}
+      innerRef={innerRef}
+      keyMap={keyMap}
+    >
       {children}
       <GlobalHotKeys />
     </HotKeys>
@@ -63,6 +84,6 @@ Hotkeys.displayName = 'Hotkeys';
 Hotkeys.propTypes = propTypes;
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(Hotkeys);
