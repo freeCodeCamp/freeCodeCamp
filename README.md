@@ -150,6 +150,10 @@ The general platform status for all our applications is available at [`status.fr
 
 Testing purpose to check output
 
+### Hacktober Fest
+
+Great learning opportunity platform
+
 ### License
 
 Copyright © 2019 freeCodeCamp.org
