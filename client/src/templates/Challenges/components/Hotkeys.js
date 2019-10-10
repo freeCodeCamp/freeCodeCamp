@@ -2,8 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { HotKeys, GlobalHotKeys } from 'react-hotkeys';
 import { navigate } from 'gatsby';
+import { connect } from 'react-redux';
+
+import { setEditorFocusability } from '../redux';
+import './hotkeys.css';
+
+const mapDispatchToProps = { setEditorFocusability };
 
 const keyMap = {
+  NAVIGATION_MODE: 'escape',
   EXECUTE_CHALLENGE: ['ctrl+enter', 'command+enter'],
   NAVIGATE_PREV: ['p'],
   NAVIGATE_NEXT: ['n']
@@ -15,7 +22,8 @@ const propTypes = {
   innerRef: PropTypes.any,
   introPath: PropTypes.string,
   nextChallengePath: PropTypes.string,
-  prevChallengePath: PropTypes.string
+  prevChallengePath: PropTypes.string,
+  setEditorFocusability: PropTypes.func.isRequired
 };
 
 function Hotkeys({
@@ -24,7 +32,8 @@ function Hotkeys({
   introPath,
   innerRef,
   nextChallengePath,
-  prevChallengePath
+  prevChallengePath,
+  setEditorFocusability
 }) {
   const handlers = {
     EXECUTE_CHALLENGE: e => {
@@ -35,6 +44,7 @@ function Hotkeys({
       e.preventDefault();
       if (executeChallenge) executeChallenge();
     },
+    NAVIGATION_MODE: () => setEditorFocusability(false),
     NAVIGATE_PREV: () => navigate(prevChallengePath),
     NAVIGATE_NEXT: () => navigate(introPath ? introPath : nextChallengePath)
   };
@@ -52,4 +62,7 @@ function Hotkeys({
 Hotkeys.displayName = 'Hotkeys';
 Hotkeys.propTypes = propTypes;
 
-export default Hotkeys;
+export default connect(
+  null,
+  mapDispatchToProps
+)(Hotkeys);
