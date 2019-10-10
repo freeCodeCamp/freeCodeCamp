@@ -77,15 +77,6 @@ Dai un'occhiata a [**`help wanted`**](https://github.com/freeCodeCamp/freeCodeCa
 
 Se non sei sicuro sul da farsi, chiedi pure chiarimenti nei commenti.
 
-**Mi sono bloccato su qualcosa che non è in questa documentazione. Come posso ottenere aiuto?**
-
-Sentiti libero di chiedere aiuto su:
-
-- [La categoria "Contributori" dell nostro forum pubblico](https://www.freecodecamp.org/forum/c/contributors)
-- [La nostra chat room dei contributori pubblici su Gitter](https://gitter.im/FreeCodeCamp/Contributors)
-
-Siamo lieti di aiutarti a contribuire a uno qualsiasi degli argomenti su cui vorresti lavorare. Assicurati di cercare la tua domanda prima di pubblicarne una nuova. Sii educato e paziente. I nostri volontari e moderatori della comunità sono sempre in giro per guidarti nelle tue domande.
-
 **Ho trovato un errore di battitura, devo aprire un issue prima di fare una pull request?**
 
 Per errori di battitura e altre variazioni di testo, è possibile aprire direttamente le pull request senza creare prima un issue. Gli issue sono utilizzati per discutere di problemi più grandi associati al codice, o di aspetti strutturali del curriculum.
