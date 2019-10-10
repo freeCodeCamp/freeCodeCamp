@@ -132,3 +132,4 @@ If these issues lack clarity on what needs to be done, feel free to ask question
 **오타를 찾았는데 풀 요청하기 전에 문제를 보고해야 하는가?**
 
 오타 및 기타 단어 변경의 경우 먼저 문제를 만들지 않고 풀 요청을 직접 열 수 있다. 문제는 커리큘럼의 코드 또는 구조적인 측면과 관련된 더 큰 문제를 토론하는 데 더 많다.
+My changes.
