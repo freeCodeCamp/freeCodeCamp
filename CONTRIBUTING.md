@@ -107,7 +107,7 @@ Feel free to ask for help in:
 - [The "Contributors" category of our public forum](https://www.freecodecamp.org/forum/c/contributors)
 - [Our public contributors chat room on Gitter](https://gitter.im/FreeCodeCamp/Contributors)
 
-We are excited to help you contribute to any of the topics that you would like to work on. Feel free to ask us questions on the related issue threads, and we will be glad to clarify. Make sure you search for your query before posting a new one. Be polite and patient. Our community of volunteers and moderators are always around to guide you through your queries.
+We are very excited to help you contribute to any of the topics that you would like to work on. Feel free to ask us questions on the related issue threads, and we will be glad to clarify. Make sure you search for your query before posting a new one. Be polite and patient. Our community of volunteers and moderators are always around to guide you through your queries.
 
 When in doubt, you can reach out to our platform dev team to help you with this:
 
