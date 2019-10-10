@@ -3,111 +3,79 @@
 |-|
 <!-- do not translate this -->
 
-# Le Linee guida per la contribuzione
+# Linee guida per i contributi
 
-Ciao 👋!
+Ciao! 👋
 
-freeCodeCamp.org è possibile grazie a migliaia di volontari come te. Siamo grati per il tuo contributo e siamo lieti di accoglierti a bordo.
+freeCodeCamp.org è possibile grazie a migliaia di volontari come te. Ti ringraziamo per i tuoi contributi, siamo felici di accoglierti a bordo!
 
-Applichiamo rigorosamente il nostro ["Codice di condotta"](https://www.freecodecamp.org/code-of-conduct). Prenditi un momento per leggerlo. È lungo solo 196 parole.
+Applichiamo rigorosamente il nostro ["codice di condotta"](https://www.freecodecamp.org/code-of-conduct). Per favore, prenditi un momento per leggerlo: sono solo 196 parole.
 
-Ti auguriamo un felice contributo 🎉!
+Buon divertimento!
 
-## Ecco alcuni modi divertenti in cui ci puoi aiutare
+## Ecco alcuni modi divertenti di aiutarci
 
 Puoi scegliere di contribuire a qualsiasi area che ti interessa:
 
-1. [Contribuisci a questo codice open source.](#contribuisci-a-questo-codice-open-source). Aiuta a modificare gli [articoli guida](https://guide.freecodecamp.org/), [sfide di codifica](https://learn.freecodecamp.org/), o correggi i bug/errori sulla piattaforma di apprendimento.
+1. [Contribuisci a questo codice open source.](#contribuisci-a-questo-codice-open-source). Aiutaci a modificare le coding challenge o a correggere i bug della piattaforma.
 
-2. Aiuta i colleghi sul nostro [forum pubblico](https://www.freecodecamp.org/forum/). [Rispondi alle loro domande di codifica](https://www.freecodecamp.org/forum/?max_posts=1) o [dai loro feedback sui loro progetti di codifica](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1)
+2. Aiuta gli studenti sul nostro [forum pubblico](https://www.freecodecamp.org/forum/). [Rispondi alle domande sul codice](https://www.freecodecamp.org/forum/?max_posts=1) o [dai un feedback sui progetti](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1)
 
 3. Aiutaci ad aggiungere i sottotitoli ai nostri [video del canale YouTube](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ/videos).
 
 ## Contribuisci a questo codice open source
 
-Abbiamo un enorme numero di codice open source nelle migliaia di [sfide di codifica](https://learn.freecodecamp.org) e [articoli guida](https://guide.freecodecamp.org).
+Abbiamo migliaia di [coding challenge](https://learn.freecodecamp.org) nel nostro codebase, insieme al sorgente che tiene in piedi la nostra piattaforma.
 
-Puoi aiutarci:
+###  Ricerca, aggiorna e correggi i bug nelle coding challenge
 
-- [📝 Ricerca, scrivi e aggiorna i nostri articoli guida](#ricerca-scrivi-e-aggiorna-i-nostri-articoli-guida)
+Tutte le nostre challenge sono curate dalla comunità, e nascono dall'esperienza di volontari come te.
 
+Puoi aiutare ad espanderle o a renderne più chiare le consegne. Puoi aggiornare le user story per spiegare meglio i concetti, o anche rimuovere quelle ridondanti. Puoi anche migliorare i test delle challenge per renderli più accurati.
 
-- [💻 Crea, aggiorna e correggi i bug nelle nostre sfide di codifica](#crea-aggiorna-e-correggi-i-bug-nelle-nostre-sfide-di-codifica)
+**Se ti interessa migliorare le coding challenge, scopri [come lavorare sulle coding challenge](/docs/how-to-work-on-coding-challenges.md).**
 
-- [🌐 Traduci gli articoli guida e le sfide di codifica](#traduci-gli-articoli-guida-e-le-sfide-di-codifica)
+### Aiutaci a correggere i bug della piattaforma di freeCodeCamp.org
 
-- [🛠 Aiutaci a correggere i bug nella piattaforma di apprendimento di freeCodeCamp.org](#aiutaci-a-correggere-i-bug-nella-piattaforma-di-apprendimento-di-freecodecamporg)
+La nostra piattaforma gira su un moderno stack JavaScript. Sfrutta vari componenti, strumenti e librerie, inclusi Node.js, MongoDB, LoopBack, OAuth 2.0, React, Gatsby, Webpack e altro.
 
-###  Ricerca, scrivi e aggiorna i nostri articoli guida
-
-**Cosa sono gli articoli Guida?**
-
-Gli articoli guida ti aiutano a comprendere rapidamente il concetto di tecnologia. Queste sono brevi spiegazioni in un italiano semplice che è possibile leggere prima di passare a risorse più approfondite.
-
-Puoi trovare un [articolo di esempio sull'elemento Ancora HTML qui](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/guide/english/html/elements/a-tag/index.md).
-
-**Cosa posso scrivere in un articolo?**
-
-Ogni tuo aiuto nello scrivere questi articoli è ben accolto. Non devi essere un esperto in un argomento per scriverne: questa intera guida è open source, quindi anche se commetti un errore, qualcun altro contribuirà per correggerlo.
-
-Per aiutare, trova un articolo abbozzato ("stub") sul nostro [sito web di guida](https://www.freecodecamp.org/guide), scrivi l'articolo, quindi apri una pull request delle modifiche per sostituire la bozza con il tuo articolo. Una [pull request](https://help.github.com/articles/about-pull-requests/) è il modo in cui suggerirai le modifiche. Permette agli altri di conoscere le tue modifiche, rivederle e adottarle.
-
-Se non riesci a trovare uno stub sull'argomento di cui vorresti scrivere, puoi aprire un PR che crea lo stub e include il tuo articolo di brutta copia.
-
-Se vuoi contribuire a migliorare gli articoli guida, ecco [come lavorare sugli articoli guida](/docs/how-to-work-on-guide-articles.md).
-
-### Crea, aggiorna e correggi i bug nelle nostre sfide di codifica
-
-Tutte le nostre sfide di programmazione sono curate dalla comunità, portando la conoscenza di esperti da volontari come te.
-
-Puoi aiutarli ad espanderli e rendere più chiara la loro formulazione. Puoi aggiornare le storie degli utenti per spiegare meglio il concetto e persino rimuovere quelli ridondanti/ripetitivi. È inoltre possibile migliorare i test di sfida per renderli più accurati dei test del codice degli altri.
-
-Se sei interessato a migliorare queste sfide di programmazione, ecco [come lavorare sulle sfide di programmazione](/docs/how-to-work-on-coding-challenges.md).
-
-### Traduci gli articoli guida e le sfide di programmazione
-
-Puoi aiutarci a tradurre i nostri articoli guida e le sfide di programmazione per una lingua che parli. Attualmente abbiamo tradotto le versioni in:
-
-- [Cinese (中文)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/chinese)
-- [Russo (русский)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/russian)
-- [Arabo (عربى)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/arabic)
-- [Spagnolo (Español)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/spanish)
-- [Portoghese (Português)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/portuguese)
-- [Italiano (Italiano)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/italian)
-
-Ci piacerebbe ricevere il tuo aiuto per migliorare la qualità di queste traduzioni. Milioni di persone usano la versione in lingua inglese di freeCodeCamp.org, e ci aspettiamo che altri milioni usino anche queste versioni tradotte.
-
-### Aiutaci a correggere i bug nella piattaforma di apprendimento di freeCodeCamp.org
-
-La nostra piattaforma di apprendimento funziona su un moderno stack JavaScript. Dispone di vari componenti, strumenti e librerie inclusi, tra l'altro pero' senza limitarsi, Node.js, MongoDB, LoopBack, OAuth 2.0, React, Gatsby, Webpack e altri.
-
-In linea di massima,
+In generale,
 
 - Abbiamo un server API basato su Node.js.
 - Un set di applicazioni client basate su React.
-- Uno script che usiamo per valutare i nostri progetti di Frontend.
+- Uno script che utilizziamo per valutare i nostri progetti frontend.
 
-Contribuire a questo richiede una certa comprensione delle API, ES6 Sintassi e molta curiosità.
+Contribuire al codice richiede una certa comprensione di API, sintassi ES6, e un bel po' di curiosità.
 
-In sostanza, ci aspettiamo una certa familiarità di base, con alcune delle tecnologie, strumenti e librerie sopra citate. Detto questo, non è necessario che tu sia un esperto riguardo a questi argomenti.
+Essenzialmente, ci aspettiamo una familiarità di base con alcune delle tecnologie, degli strumenti e delle librerie di cui sopra. Ciò detto, non è comunque necessario essere un esperto per poter contribuire!
 
-Sentiti libero di farci domande, nei relativi thread, e saremo lieti di chiarire. In caso di dubbio, puoi raggiungere Mrugesh Mohapatra [`@raisedadead`](https://github.com/raisedadead) o Stuart Taylor [`@bouncey`](https://github.com/bouncey) dalla nostra piattaforma dev team per aiutarti.
+**Se vuoi aiutarci a migliorare il nostro codebase, puoi [installare freeCodeCamp in locale](/docs/how-to-setup-freecodecamp-locally.md) oppure puoi usare Gitpod, un ambiente dev online gratuito.**
 
-Se vuoi aiutarci a migliorare il nostro codebase, ecco [come installare freeCodeCamp localmente](/docs/how-to-setup-freecodecamp-locally.md).
+[![Apri in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
+
+(Apre un ambiente dev per freeCodeCamp nel tuo browser.)
 
 ## Domande frequenti
 
-**Come posso segnalare un bug/errore, che non è sulla lavagna?**
+**Come posso segnalare un nuovo bug?**
 
-Se pensi di aver trovato un bug/errore, leggi prima l'articolo ["Aiuto! Ho trovato un bug/errore"](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) e segui le sue istruzioni.
+Se pensi di aver trovato un bug, leggi prima l'articolo ["Aiuto! Ho trovato un bug"](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) e segui le istruzioni.
 
-Se sei sicuro che sia un nuovo bug, vai avanti e crea un nuovo issue su GitHub. Assicurati di includere quante più informazioni possibili in modo che noi possiamo riprodurre il bug. Abbiamo un modello di problema predefinito per aiutarti con questo.
+Se sei sicuro che sia un nuovo bug, crea pure un issue su GitHub. Assicurati di includere quante più informazioni possibili, in modo che il bug sia riproducibile. Abbiamo un template predefinito per aiutarti con l'issue.
 
-Si prega di notare che eventuali problemi che richiedono aiuto nella programmazione per una sfida saranno chiusi. Il tracker dei problemi è strettamente correlato ai problemi e alle discussioni relativi al codebase. Dovresti [cercare assistenza sul forum](https://www.freecodecamp.org/forum) prima di segnalare ogniqualvolta ci sono dubbi.
+Sottolineiamo che tutti gli issue aperti per chiedere aiuto con le challenge verranno chiusi. Il tracker è da utilizzare esclusivamente per problemi e discussioni legate al codebase. Se hai qualche dubbio, [chiedi assistenza sul forum](https://www.freecodecamp.org/forum) prima di fare una segnalazione.
 
 **Come posso segnalare un problema di sicurezza?**
 
-Si prega di non creare issue su GitHub per problemi di sicurezza. Invece, si prega di inviare una mail a `security@freecodecamp.org` e lo esamineremo immediatamente.
+Non creare un issue su GitHub per problemi di sicurezza. Invia una mail a `security@freecodecamp.org` ed esamineremo immediatamente il problema.
+
+**Che cosa significano le varie etichette degli issue?**
+
+I moderatori della comunità [smistano](https://en.wikipedia.org/wiki/Software_bug#Bug_management) i problemi e le pull request in base alla loro priorità, gravità e altri fattori. Puoi [trovare qui un glossario completo dei loro significati](https://github.com/freecodecamp/freecodecamp/labels).
+
+Dai un'occhiata a [**`help wanted`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) o [**`first-timers welcome`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+welcome%22) per farti un'idea di ciò che è disponibile e su cui puoi lavorare. Sono tutti problemi aperti e non c'è bisogno di chiedere il pemesso prima di lavorarci su.
+
+Se non sei sicuro sul da farsi, chiedi pure chiarimenti nei commenti.
 
 **Mi sono bloccato su qualcosa che non è in questa documentazione. Come posso ottenere aiuto?**
 
@@ -118,18 +86,29 @@ Sentiti libero di chiedere aiuto su:
 
 Siamo lieti di aiutarti a contribuire a uno qualsiasi degli argomenti su cui vorresti lavorare. Assicurati di cercare la tua domanda prima di pubblicarne una nuova. Sii educato e paziente. I nostri volontari e moderatori della comunità sono sempre in giro per guidarti nelle tue domande.
 
-**Sono nuovo su GitHub e nell'Open Source in generale:**
-
-Leggi la nostra [Guida su come contribuire all'open source](https://github.com/freeCodeCamp/how-to-contribute-to-open-source).
-
-**Che cosa significano le diverse etichette che sono taggate sui problemi?**
-
-I nostri moderatori della comunita' [smistano](https://en.wikipedia.org/wiki/Software_bug#Bug_management) i problemi e le pull request in base alla loro priorità, gravità e altri fattori. Puoi [trovare qui un glossario completo dei loro significati](https://github.com/freecodecamp/freecodecamp/labels).
-
-Dovresti esaminare gli argomenti **`Help Wanted`** oppure **`first timers welcome`** per una rapida ricerca di ciò che è disponibile e su cui puoi lavorare. Sono tutti problemi aperti e non c'è bisogno di chiedere il pemesso prima di lavorarci su.
-
-Se questi problemi mancano di chiarezza su ciò che deve essere fatto, sentiti libero di porre domande nei commenti.
-
-**Ho trovato un errore di battitura, dovrei segnalare un problema prima di poter effettuare una pull request?**
+**Ho trovato un errore di battitura, devo aprire un issue prima di fare una pull request?**
 
 Per errori di battitura e altre variazioni di testo, è possibile aprire direttamente le pull request senza creare prima un issue. Gli issue sono utilizzati per discutere di problemi più grandi associati al codice, o di aspetti strutturali del curriculum.
+
+**Sono nuovo su GitHub e nell'open source in generale:**
+
+Leggi la nostra [guida su come contribuire all'open source](https://github.com/freeCodeCamp/how-to-contribute-to-open-source).
+
+**Sono bloccato con qualcosa che manca in questa documentazione. Cosa faccio?**
+
+Puoi chiedere aiuto:
+
+- [Nella categoria "Contributors" del nostro forum](https://www.freecodecamp.org/forum/c/contributors)
+- [Nella nostra chat su Gitter](https://gitter.im/FreeCodeCamp/Contributors)
+
+Siamo lieti di aiutarti a contribuire a uno qualsiasi degli argomenti su cui vorresti lavorare. Assicurati di cercare la tua domanda prima di pubblicarne una nuova. Sii educato e paziente. I nostri volontari e moderatori della comunità sono sempre disponibili ad aiutarti!
+
+Per qualsiasi dubbio, contatta gli sviluppatori del nostro team:
+
+| Nome            | GitHub | Twitter |
+|:----------------|:-------|:--------|
+| Mrugesh Mohapatra | [`@raisedadead`](https://github.com/raisedadead) | [`@raisedadead`](https://twitter.com/raisedadead)|
+| Ahmad Abdolsaheb | [`@ahmadabdolsaheb`](https://github.com/ahmadabdolsaheb) | [`@Abdolsaheb`](https://twitter.com/Abdolsaheb) |
+| Kristofer Koishigawa | [`@scissorsneedfoodtoo`](https://github.com/scissorsneedfoodtoo) | [`@kriskoishigawa`](https://twitter.com/kriskoishigawa) |
+
+> **Email: `dev@freecodecamp.org`**
