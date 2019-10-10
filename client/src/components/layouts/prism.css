@@ -1,3 +1,8 @@
 code .token.operator {
   background: none;
 }
+
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+  background: var(--quaternary-background);
+}
