@@ -60,6 +60,11 @@ sentensify("May-the-force-be-with-you");
 <section id='solution'>
 
 ```js
-// solution required
+function sentensify(str) {
+  // Add your code below this line
+  return str.split(/[-,.]/).join(' ');
+  // Add your code above this line
+}
+sentensify("May-the-force-be-with-you");
 ```
 </section>
