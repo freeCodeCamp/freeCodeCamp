@@ -57,6 +57,10 @@ th {
   margin: 0 0 1.2rem;
 }
 
+p {
+  line-height: 1.5rem;
+}
+
 .big-heading {
   font-size: 2.5rem !important;
 }
