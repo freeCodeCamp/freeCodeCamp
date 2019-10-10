@@ -62,7 +62,7 @@ Here are our six core certifications:
 - [Intermediate Algorithm Scripting](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/intermediate-algorithm-scripting)
   <br />
   <br />
-  **Projects**: Palindrome Checker, Roman Numeral Converter, Caesar's Cipher, Telephone Number Validator, Cash Register
+  **Projects**: Palindrome(something which is exactly equals to its reverse whether it is a string or a number) Checker, Roman Numeral Converter, Caesar's Cipher, Telephone Number Validator, Cash Register
 
 #### 3. Front End Libraries Certification
 
