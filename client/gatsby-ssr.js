@@ -11,6 +11,7 @@ import layoutSelector from './utils/gatsby/layoutSelector';
 const store = createStore();
 
 export const wrapRootElement = ({ element }) => {
+  console.log('test')
   return <Provider store={store}>{element}</Provider>;
 };
 
