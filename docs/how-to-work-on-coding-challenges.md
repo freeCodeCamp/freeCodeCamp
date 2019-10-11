@@ -322,7 +322,7 @@ Before you [create a pull request](how-to-open-a-pull-request) for your changes,
 npm run test -- -g 'the full English title of the challenge'
 ```
     
-Once you tested each applicable challenge file using the syntax above and the test results show all tests pass, then you can create a pull request.
+Once you have verified that each challenge you've worked on passes the tests, please create a pull request.
 
 ### Useful Links
 
