@@ -72,6 +72,15 @@ confirmEnding("Bastian", "n");
 <section id='solution'>
 
 ```js
-// solution required
+function confirmEnding(str, target) {
+  if(str.endsWith(target)) {
+    return true;
+  } 
+  else if(!str.endsWith(target)) {
+    return false;
+  }
+}
+
+confirmEnding("Bastian", "n");
 ```
 </section>
