@@ -11,7 +11,7 @@ Puedes:
 
 
 - [Ayudarnos creando y editando articulos de la Guía](#steps-for-creating-and-editing-guide-articles).
-- [Ayudarnos revisando Pull Requests para artículos de la Guía]()
+- [Ayudarnos revisando Pull Requests para artículos de la Guía](#crear-pull-request-para-proponer-cambios).
 
 ## Pasos para crear y editar artículos de la Guía
 
