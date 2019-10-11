@@ -70,8 +70,9 @@ h6,
 p,
 a,
 span,
-div {
-  word-wrap: break-word;
+div,
+code {
+  word-break: break-word;
 }
 
 .big-heading {
