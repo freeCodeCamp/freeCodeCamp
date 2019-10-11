@@ -54,6 +54,6 @@ console.info('after the test');
 <section id='solution'>
 
 ```js
-// solution required
+var sum = 10 + 10;
 ```
 </section>
