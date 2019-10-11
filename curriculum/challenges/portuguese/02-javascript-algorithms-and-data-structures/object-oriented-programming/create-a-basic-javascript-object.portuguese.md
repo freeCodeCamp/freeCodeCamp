@@ -50,6 +50,9 @@ let dog = {
 <section id='solution'>
 
 ```js
-// solution required
+let dog = {
+  var name = "Beagle";
+  var numLegs = 4;
+};
 ```
 </section>
