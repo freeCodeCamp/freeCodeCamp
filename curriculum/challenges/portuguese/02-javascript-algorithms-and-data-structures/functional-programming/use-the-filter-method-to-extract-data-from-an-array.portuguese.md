@@ -24,7 +24,7 @@ tests:
   - text: Seu código não deve usar um loop <code>for</code> .
     testString: 'assert(!code.match(/for\s*?\(.+?\)/g), "Your code should not use a <code>for</code> loop.");'
   - text: '<code>filteredList</code> deve ser igual a <code>[{&quot;title&quot;: &quot;Inception&quot;,&quot;rating&quot;: &quot;8.8&quot;},{&quot;title&quot;: &quot;Interstellar&quot;,&quot;rating&quot;: &quot;8.6&quot;},{&quot;title&quot;: &quot;The Dark Knight&quot;,&quot;rating&quot;: &quot;9.0&quot;},{&quot;title&quot;: &quot;Batman Begins&quot;,&quot;rating&quot;: &quot;8.3&quot;}]</code> .'
-    testString: 'assert.deepEqual(filteredList, [{"title": "Inception","rating": "8.8"},{"title": "Interstellar","rating": "8.6"},{"title": "The Dark Knight","rating": "9.0"},{"title": "Batman Begins","rating": "8.3"}], "<code>filteredList</code> should equal <code>[{"title": "Inception","rating": "8.8"},{"title": "Interstellar","rating": "8.6"},{"title": "The Dark Knight","rating": "9.0"},{"title": "Batman Begins","rating": "8.3"}]</code>.");'
+    testString: 'assert.deepEqual(filteredList, [{"title": "Inception","rating": "8.8"},{"title": "Interstellar","rating": "8.6"},{"title": "The Dark Knight","rating": "9.0"},{"title": "Batman Begins","rating": "8.3"}]);'
 
 ```
 
