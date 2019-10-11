@@ -7,7 +7,7 @@ forumTopicId: 18303
 
 ## Description
 <section id='description'>
-The <code>sort</code> method sorts the elements of an array according to the callback function.
+The <code>sort</code> method sorts the elements of an array according to the callback function, if omitted, the array elements are converted to strings, then sorted according to each character's Unicode code point value.
 For example:
 
 ```js
