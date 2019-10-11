@@ -27,11 +27,6 @@ fs.readdirSync('../../curriculum/challenges/english/' + dir).forEach(file => {
   }
 });
 
-// TEST
-// var dir1 = fs.readdirSync('../../curriculum/challenges/english')[4];
-// var dir2 = fs.readdirSync('../../curriculum/challenges/english/' + dir1)[0];
-// var dir = dir1 + '/' + dir2;
-// getFile('exercise-tracker.english.md', dir);
 
 // Load in full text, description, instructions, and title
 function getFile(file, dir) {
