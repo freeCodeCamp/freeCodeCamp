@@ -75,6 +75,11 @@ console.info('after the test');
 <section id='solution'>
 
 ```js
-// solution required
+var myDog = {
+  name: "Bob";
+  legs: 4;
+  tails: 1;
+  friends: ["Max", "Annie"];
+};
 ```
 </section>
