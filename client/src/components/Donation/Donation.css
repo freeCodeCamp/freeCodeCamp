@@ -103,8 +103,13 @@
 
 .wallet {
   overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .alert p {
   color: inherit;
+}
+
+.donate-other .btn-cta {
+  margin: 7px 0px;
 }

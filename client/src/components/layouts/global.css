@@ -96,11 +96,6 @@ p {
   color: var(--secondary-color);
 }
 
-a:not(.fcc_suggestion_item):hover {
-  color: var(--tertiary-color);
-  background-color: var(--tertiary-background);
-}
-
 a {
   color: inherit;
   text-decoration: underline;
@@ -109,6 +104,8 @@ a {
 a:hover,
 a:focus {
   text-decoration: none;
+  color: var(--tertiary-color);
+  background-color: var(--tertiary-background);
 }
 /* modal */
 
@@ -135,8 +132,7 @@ a:focus {
   border-color: var(--secondary-color);
 }
 
-/* button */
-button,
+/* button button,
 input[type='submit'] {
   background-color: var(--quaternary-background);
   color: var(--secondary-color);
@@ -144,8 +140,10 @@ input[type='submit'] {
   border-style: outset;
   border-color: buttonface;
   border-image: initial;
-}
+} */
 
+button,
+input[type='submit'],
 .btn {
   background-color: var(--quaternary-background);
   border-width: 3px;
@@ -156,6 +154,8 @@ input[type='submit'] {
   /* outline: none; */
 }
 
+button:hover,
+input[type='submit']:hover,
 .btn:hover,
 .btn-primary:hover {
   border-color: var(--secondary-color);
@@ -230,6 +230,17 @@ fieldset[disabled] .btn-primary.focus {
   background-image: none;
   box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.3);
 }
+.btn-link {
+  color: inherit;
+  border: none;
+  text-decoration: underline;
+  background: transparent;
+}
+.btn-link:hover {
+  background: var(--tertiary-background);
+  text-decoration: none;
+  color: inherit;
+}
 
 strong {
   color: var(--secondary-color);
@@ -273,6 +284,18 @@ code {
   background-color: transparent;
 }
 
+.has-error .help-block,
+.has-error .control-label,
+.has-error .radio,
+.has-error .checkbox,
+.has-error .radio-inline,
+.has-error .checkbox-inline,
+.has-error.radio label,
+.has-error.checkbox label,
+.has-error.radio-inline label,
+.has-error.checkbox-inline labe {
+  color: var(--danger-color);
+}
 .help-block em {
   font-size: 0.8rem;
 }
@@ -391,26 +414,7 @@ blockquote .small {
   border-radius: 0px;
 }
 
-/* gatsby 404 page */
-.default-layout > div > :nth-child(3) > button,
-input[type='submit'] {
-  background-color: var(--quaternary-background);
-}
-
-.default-layout > div > :nth-child(3) > button:hover,
-input[type='submit']:hover {
-  background-color: var(--secundary-background);
-}
-
-.default-layout > div > :nth-child(3) > button:active,
-input[type='submit']:active {
-  background: var(--primary-color);
-  color: var(--secondary-background);
-  outline: 0;
-  outline-color: none;
-  outline-color: var(--secundary-background);
-  border: none;
-}
+/* gatsby 404 */
 #search {
   background-color: var(--quaternary-background);
   color: var(--primary-color);

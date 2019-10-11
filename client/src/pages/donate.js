@@ -112,7 +112,7 @@ export class DonatePage extends Component {
               <div className='text-center'>
                 <PoweredByStripe />
                 <Spacer />
-                <Button onClick={this.toggleOtherOptions}>
+                <Button class='btn btn-link' onClick={this.toggleOtherOptions}>
                   {`${
                     showOtherOptions ? 'Hide' : 'Show'
                   } other ways to donate.`}
