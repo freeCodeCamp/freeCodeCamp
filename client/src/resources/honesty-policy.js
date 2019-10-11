@@ -4,7 +4,7 @@ const HonestyPolicy = () => {
   return (
     <Fragment>
       <p key={1}>
-        Before we issue our verified certification to a camper, he or she must
+        Before you can claim a verified certification, you must
         accept our Academic Honesty Pledge, which reads:
       </p>
       <p key={2}>
