@@ -316,7 +316,7 @@ Before you [create a pull request](how-to-open-a-pull-request.md) for your chang
   cd curriculum
 ```
 
-3. Run the following for each challenge file for which you have added solution:
+3. Run the following for each challenge file for which you have changed any `testString`s or added solutions:
 
 ```
 npm run test -- -g 'the full English title of the challenge'
