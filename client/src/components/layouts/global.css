@@ -86,6 +86,9 @@ p {
   h3 {
     font-size: 1rem;
   }
+  .btn-cta {
+    font-size: 1.2rem;
+  }
 }
 
 .text-center {
