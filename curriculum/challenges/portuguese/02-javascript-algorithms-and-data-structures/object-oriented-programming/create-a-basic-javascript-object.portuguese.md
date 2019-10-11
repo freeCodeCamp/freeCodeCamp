@@ -51,8 +51,8 @@ let dog = {
 
 ```js
 let dog = {
-  var name = "Beagle";
-  var numLegs = 4;
+  name: "Beagle",
+  numLegs: 4
 };
 ```
 </section>
