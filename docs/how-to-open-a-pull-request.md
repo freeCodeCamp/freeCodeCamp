@@ -7,7 +7,7 @@
 
 ## How to prepare a good Pull Request title:
 
-When opening a Pull Request(PR), use the following scope table to decide what to title your PR in the following format:
+When opening a Pull Request (PR), use the following scope table to decide what to title your PR in the following format:
 `fix/feat/chore/refactor/docs/perf (scope): PR Title`
 
 An example is `fix(learn): Fixed tests for the do...while loop challenge`.
