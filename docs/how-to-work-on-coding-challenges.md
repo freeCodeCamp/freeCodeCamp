@@ -308,7 +308,7 @@ function myFunc() {
 
 Before you [create a pull request](how-to-open-a-pull-request) for your changes, you need to validate the changes you have made do not inadvertently cause problems with the challenge working correctly.  You do this by performing the following steps:
 
-1. In the `.env` file, set the environment variable `TEST_CHALLENGES_FOR_LANGS` to the language of the challange(s) you are needing to test.  The currently accepted values are `english`, `arabic`, `chinese`, `portuguese`, `russian` and `spanish`.
+1. In the `.env` file, set the environment variable `TEST_CHALLENGES_FOR_LANGS` to the language of the challenge(s) you need to test.  The currently accepted values are `english`, `arabic`, `chinese`, `portuguese`, `russian` and `spanish`.
 
 2.  Switch to the `curriculum` directory:
 
