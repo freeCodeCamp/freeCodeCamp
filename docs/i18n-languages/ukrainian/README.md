@@ -5,24 +5,24 @@
 [![Open Source Helpers](https://www.codetriage.com/freecodecamp/freecodecamp/badges/users.svg)](https://www.codetriage.com/freecodecamp/freecodecamp)
 [![Setup Automated](https://img.shields.io/badge/setup-automated-blue?logo=gitpod)](https://gitpod.io/from-referrer/)
 
-## freeCodeCamp.org's open source codebase and curriculum
+## open-source база та курикулум freeCodeCamp.org
 
-[freeCodeCamp.org](https://www.freecodecamp.org) is a friendly community where you can learn to code for free. It is run by a [donor-supported 501(c)(3) nonprofit](https://donate.freecodecamp.org) with the goal of helping millions of busy adults transition into tech. Our community has already helped more than 10,000 people get their first developer job.
+[freeCodeCamp.org](https://www.freecodecamp.org) - це дружня спільнота де ви можете навчитися програмувати безкоштовно. Веб-сайт підтримується [неприбутковою організацією 501(c)(3) nonprofit](https://donate.freecodecamp.org) з ціллю допомогти мільйонам зайнятих людей перевестися до тех. індустрії. Наша сапільнота вже допомогла більш ніж 10 000 людей знайти їх першу розробницьку роботу.
 
-Our full-stack web development curriculum is completely free and self-paced. We have thousands of interactive coding challenges to help you expand your skills.
+Наш курикулум з full-stack веб розробки повністю безкоштовний і розрахований на вільний темп виконання. Ми пропонуємо тисячі інтерактивних задач з програмування для розширення ваших навичок та вмінь.
 
-## Table of Contents
+## Зміст
 
-* [Certifications](#certifications)
-* [The Learning Platform](#the-learning-platform)
-* [Reporting Bugs and Issues](#reporting-bugs-and-issues)
-* [Reporting Security Issues](#reporting-security-issues)
-* [Contributing](#contributing)
-* [Platform, Build and Deployment Status](#platform-build-and-deployment-status)
-* [License](#license)
+* [Сертифікації](#сертифікації)
+* [Навчальна платформа](#the-learning-platform)
+* [Повідомлення про баги та помилки](#reporting-bugs-and-issues)
+* [Повідомлення порушень безпеки](#reporting-security-issues)
+* [Внесок](#contributing)
+* [Статус Platform, Build, Deployment](#platform-build-and-deployment-status)
+* [Ліцензія](#license)
 
 
-### Certifications
+### Cертіфікації
 
 freeCodeCamp.org offers several free developer certifications. Each of these certifications involves building 5 required web app projects, along with hundreds of optional coding challenges to help you prepare for those projects. We estimate that each certification will take a beginning programmer around 300 hours to earn.
 
