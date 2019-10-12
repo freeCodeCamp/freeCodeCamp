@@ -12,6 +12,7 @@ node_modules
 *.pid
 *.gz
 *.swp
+*.html
 
 .DS_Store
 
