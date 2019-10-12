@@ -72,15 +72,17 @@
 
 1. Змініть каталог на новий каталог freeCodeCamp:
 
-    `` `
+    ```
+
     cd freeCodeCamp
-    `` `
+
+    ```
 
 2. Додайте віддалену посилання на основне сховище freeCodeCamp:
 
-    `` sh
+    ``sh
     git remote add upstream https://github.com/freeCodeCamp/freeCodeCamp.git
-    `` `
+    ```
 
 3. Переконайтесь, що конфігурація виглядає правильно:
 
