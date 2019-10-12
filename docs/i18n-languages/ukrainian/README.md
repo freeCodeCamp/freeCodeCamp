@@ -5,7 +5,7 @@
 [![Open Source Helpers](https://www.codetriage.com/freecodecamp/freecodecamp/badges/users.svg)](https://www.codetriage.com/freecodecamp/freecodecamp)
 [![Setup Automated](https://img.shields.io/badge/setup-automated-blue?logo=gitpod)](https://gitpod.io/from-referrer/)
 
-## open-source база та курикулум freeCodeCamp.org
+## Open-source база та курикулум freeCodeCamp.org
 
 [freeCodeCamp.org](https://www.freecodecamp.org) - це дружня спільнота де ви можете навчитися програмувати безкоштовно. Веб-сайт підтримується [неприбутковою організацією 501(c)(3) nonprofit](https://donate.freecodecamp.org) з ціллю допомогти мільйонам зайнятих людей перевестися до тех. індустрії. Наша сапільнота вже допомогла більш ніж 10 000 людей знайти їх першу розробницьку роботу.
 
@@ -22,7 +22,7 @@
 * [Ліцензія](#license)
 
 
-### Cертіфікації
+### Cертифікації
 
 freeCodeCamp.org пропонує декілька безкоштовних сертифікацій. Кожна з них потребує виконання 5 web-проектів та має сотні опціональних задач для підготовки до проектів. Проходження кожної з сертифікацій, за нашими розрахунками, у програміста початкового рівня займе близько 300 годин.
 
@@ -36,9 +36,9 @@ freeCodeCamp.org пропонує декілька безкоштовних се
 
 Ось наші шість основних сертифікатів:
 
-#### 1. Responsive Web Design Certification
+#### 1. Сертифікація з Responsive Web Дизайну
 
-- [Basic HTML and HTML5](https://learn.freecodecamp.org/responsive-web-design/basic-html-and-html5)
+- [ HTML and HTML5](https://learn.freecodecamp.org/responsive-web-design/basic-html-and-html5)
 - [Basic CSS](https://learn.freecodecamp.org/responsive-web-design/basic-css)
 - [Applied Visual Design](https://learn.freecodecamp.org/responsive-web-design/applied-visual-design)
 - [Applied Accessibility](https://learn.freecodecamp.org/responsive-web-design/applied-accessibility)
@@ -49,7 +49,7 @@ freeCodeCamp.org пропонує декілька безкоштовних се
   <br />
   **Projects**: Tribute Page, Survey Form, Product Landing Page, Technical Documentation Page, Personal Portfolio Webpage
 
-#### 2. JavaScript Algorithms and Data Structures Certification
+#### 2. Сертифікація з алгоритмів та структур даних JavaScript
 
 - [Basic JavaScript](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript)
 - [ES6](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6)
