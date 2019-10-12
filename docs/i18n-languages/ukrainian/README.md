@@ -28,19 +28,13 @@ freeCodeCamp.org пропонує декілька безкоштовних се
 
 Кожен з цих 30 проектів в навчальній програмі freeCodeCamp.org має власні юзер-сторі та автоматизовані тести, вони допомагають вам нарощувати проект поступово і гарантує, що ви виконали всі юзер-сторі перед тим, як подати проект.
 
-Ви можете скористатися цими тестовими наборами через [freeCodeCamp's CDN] (https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js). Це означає, що ви можете будувати ці проекти на веб-сайтах, таких як CodePen та Glitch, або навіть на середовищі розробки локального комп'ютера.
+Ви можете скористатися цими тестовими наборами через [freeCodeCamp's CDN] (https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js). Це означає, що ви можете будувати ці проекти на веб-сайтах як CodePen та Glitch, або навіть в середовищі розробки локального комп'ютера.
 
-Щойно ви отримаєте сертифікат, ви завжди матимете його. Ви завжди зможете зв’язатись із ним зі свого LinkedIn або резюме. І коли ваші потенційні роботодавці або незалежні клієнти натискають на це посилання, вони побачать перевірену сертифікацію, специфічну для вас.
+Щойно ви отримаєте сертифікат, ви завжди матимете його. Ви завжди зможете створити на нього посилання на вашому LinkedIn або резюме. І коли ваші потенційні роботодавці або незалежні клієнти натискнуть на це посилання, вони побачать перевірену персоналізовану сертифікацію.
 
-Єдиним винятком з цього є те, що ми виявимо порушення нашої [Академічної політики чесності] (https://www.freecodecamp.org/academic-honesty). Коли ми ловимо людей, що однозначно плагіатують (подаючи код чи проекти інших людей як власні без цитування), ми робимо те, що повинні робити усі суворі навчальні заклади - ми відкликаємо їх сертифікати та забороняємо цим людям.
+Єдиний виняток з цього буде при виявленні порушення нашої [Академічної політики чесності] (https://www.freecodecamp.org/academic-honesty). Коли ми визначаємо людей, що однозначно плагіатують (подаючи код чи проекти інших людей як власні без цитування), ми робимо те, що повинні робити усі суворі навчальні заклади - ми відкликаємо їх сертифікати та блокуємо цим людей.
 
-Ось наші шість основних сертифікатів: and ensure you've fulfilled all the user stories before you submit it.
-
-You can pull in these test suites through [freeCodeCamp's CDN](https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js). This means you can build these projects on websites like CodePen and Glitch - or even on your local computer's development environment.
-
-Once you’ve earned a certification, you will always have it. You will always be able to link to it from your LinkedIn or résumé. And when your prospective employers or freelance clients click that link, they’ll see a verified certification specific to you.
-
-The one exception to this is in the event that we discover violations of our [Academic Honesty Policy](https://www.freecodecamp.org/academic-honesty). When we catch people unambiguously plagiarizing (submitting other people's code or projects as their own without citation), we do what all rigorous institutions of learning should do - we revoke their certifications and ban those people.
+Ось наші шість основних сертифікатів:
 
 #### 1. Responsive Web Design Certification
 
