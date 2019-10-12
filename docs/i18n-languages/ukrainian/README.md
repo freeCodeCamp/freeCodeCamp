@@ -38,16 +38,16 @@ freeCodeCamp.org пропонує декілька безкоштовних се
 
 #### 1. Сертифікація з Responsive Web Дизайну
 
-- [ HTML and HTML5](https://learn.freecodecamp.org/responsive-web-design/basic-html-and-html5)
-- [Basic CSS](https://learn.freecodecamp.org/responsive-web-design/basic-css)
-- [Applied Visual Design](https://learn.freecodecamp.org/responsive-web-design/applied-visual-design)
-- [Applied Accessibility](https://learn.freecodecamp.org/responsive-web-design/applied-accessibility)
-- [Responsive Web Design Principles](https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-principles)
+- [Основи HTML and HTML5](https://learn.freecodecamp.org/responsive-web-design/basic-html-and-html5)
+- [Основи CSS](https://learn.freecodecamp.org/responsive-web-design/basic-css)
+- [Прикладний Візуальний Дизайн](https://learn.freecodecamp.org/responsive-web-design/applied-visual-design)
+- [Прикладна Доступність](https://learn.freecodecamp.org/responsive-web-design/applied-accessibility)
+- [Принципи Responsive Web Дизайну](https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-principles)
 - [CSS Flexbox](https://learn.freecodecamp.org/responsive-web-design/css-flexbox)
 - [CSS Grid](https://learn.freecodecamp.org/responsive-web-design/css-grid)
   <br />
   <br />
-  **Projects**: Tribute Page, Survey Form, Product Landing Page, Technical Documentation Page, Personal Portfolio Webpage
+  **Projects**: Сторінка Нагороди, Форма Опитування, Цільова Сторінка Продукту, Сторінка Технічної Документації, Веб-Сторінка Особистого Портфоліо
 
 #### 2. Сертифікація з алгоритмів та структур даних JavaScript
 
