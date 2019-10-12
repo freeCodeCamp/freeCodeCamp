@@ -54,37 +54,37 @@ function renderMessage(isSessionUser, username) {
   return isSessionUser ? (
     <Fragment>
       <FullWidthRow>
-        <h2 className='text-center'>You have not made your profile public.</h2>
+        <h2 className='text-center'>You have not made your portfolio public.</h2>
       </FullWidthRow>
       <FullWidthRow>
         <p className='alert alert-info'>
-          You need to change your privacy setting in order for your profile to
-          be seen by others. This is a preview of how your profile will look
+          You need to change your privacy setting in order for your portfolio to
+          be seen by others. This is a preview of how your portfolio will look
           when made public.
         </p>
       </FullWidthRow>
       <Spacer />
     </Fragment>
   ) : (
-    <Fragment>
-      <FullWidthRow>
-        <h2 className='text-center'>
-          {username} has not made their profile public.
+      <Fragment>
+        <FullWidthRow>
+          <h2 className='text-center'>
+            {username} has not made their portfolio public.
         </h2>
-      </FullWidthRow>
-      <FullWidthRow>
-        <p className='alert alert-info'>
-          {username} needs to change their privacy setting in order for you to
-          view their profile.
+        </FullWidthRow>
+        <FullWidthRow>
+          <p className='alert alert-info'>
+            {username} needs to change their privacy setting in order for you to
+            view their portfolio.
         </p>
-      </FullWidthRow>
-      <Spacer />
-      <FullWidthRow>
-        <CurrentChallengeLink>Take me to the Challenges</CurrentChallengeLink>
-      </FullWidthRow>
-      <Spacer />
-    </Fragment>
-  );
+        </FullWidthRow>
+        <Spacer />
+        <FullWidthRow>
+          <CurrentChallengeLink>Take me to the Challenges</CurrentChallengeLink>
+        </FullWidthRow>
+        <Spacer />
+      </Fragment>
+    );
 }
 
 function renderProfile(user) {
@@ -159,7 +159,7 @@ function Profile({ user, isSessionUser }) {
   return (
     <Fragment>
       <Helmet>
-        <title>Profile | freeCodeCamp.org</title>
+        <title>Portfolio | freeCodeCamp.org</title>
       </Helmet>
       <Spacer />
       <Grid>
@@ -186,7 +186,7 @@ function Profile({ user, isSessionUser }) {
   );
 }
 
-Profile.displayName = 'Profile';
+Profile.displayName = 'Portfolio';
 Profile.propTypes = propTypes;
 
 export default Profile;
