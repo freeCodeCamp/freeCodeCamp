@@ -19,8 +19,8 @@ The content for each challenge is stored in its own markdown file. This markdown
 
 There are two ways you can work on these challenges:
 
-- We recommend, you clone the project and edit locally on your computer. For help with that, read our [contributing guidelines here](/CONTRIBUTING.md).
-- Or optionally, you can modify a challenge within the GitHub interface, by clicking the pencil icon to start editing the file.
+- We recommend you clone the project and edit it locally on your computer. For help with that, read our [contributing guidelines](/CONTRIBUTING.md).
+- Alternatively, you can modify a challenge within GitHub.com itself by clicking the pencil icon to start editing the file.
 
 ## Challenge Template
 
