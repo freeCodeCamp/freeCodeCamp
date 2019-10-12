@@ -28,7 +28,7 @@ Below is a template of what the challenge markdown files look like.
 
 **Notes:**
 
-1. In the below sections, examples of `{ext}` are:
+1. In the following sections, examples of `{ext}` are:
     - `html` - HTML/CSS
     - `js` - JavaScript
     - `jsx` - JSX
