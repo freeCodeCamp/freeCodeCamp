@@ -72,9 +72,7 @@
 
 1. Змініть каталог на новий каталог freeCodeCamp:
 
-    ```
-    cd freeCodeCamp
-    ```
+    ```cd freeCodeCamp```
 
 2. Додайте віддалену посилання на основне сховище freeCodeCamp:
 
