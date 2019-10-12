@@ -40,7 +40,7 @@ An example is `fix(learn): Fixed tests for the do...while loop challenge`.
     - Fill in the details as they seem fit to you. This information will be reviewed, and the reviewers will decide whether or not your pull request is accepted.
 
     - If the PR is meant to address an existing GitHub Issue then, at the end of
-      your PR's description body, use the keyword _Closes_ with the issue number to automatically close that issue if the PR is accepted and merged.
+      your PR's description body, use the keyword _Closes_ with the issue number to [automatically close that issue if the PR is accepted and merged](https://help.github.com/en/articles/closing-issues-using-keywords).
       
       > Example: `Closes #123` will close issue 123
 
