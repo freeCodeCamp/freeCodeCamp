@@ -9,7 +9,7 @@ Our goal is to develop a fun and clear interactive learning experience.
 
 Designing interactive coding challenges is difficult. It would be much easier to write a lengthy explanation or to create a video tutorial, and there's a place for those on Medium and YouTube. However, for our core curriculum, we're sticking with what works best for most people—a fully interactive, video game-like experience.
 
-We want campers to achieve a _flow state_. We want them to build momentum and blast through our curriculum with as few snags as possible. We want them to go into the projects with confidence and a wide exposure to programming concepts.
+We want campers to achieve a _flow state_. We want them to build momentum and blast through our curriculum with as few snags as possible. We want them to go into the projects with confidence, and gain a wide exposure to programming concepts.
 
 Creating these challenges requires immense creativity and attention to detail. But you'll have plenty of help. You have support from a whole team of contributors, whom you can bounce ideas off of and demo your challenges to. Stay active in the [contributors room](https://gitter.im/freecodecamp/contributors) and ask lots of questions.
 
