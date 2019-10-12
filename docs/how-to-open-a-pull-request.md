@@ -46,4 +46,4 @@ An example is `fix(learn): Fixed tests for the do...while loop challenge`.
 
 5. Indicate if you have tested on a local copy of the site or not.
 
-    This is very important when you are making changes that are not just making edits to text content such as a Guide article verbiage. Examples of changes needing local testing would include JavaScript, CSS, or HTML which could change the functionality or layout of a page.
+    This is very important when you are making changes that are not just making edits to text content, like documentation or a Guide article. Examples of changes needing local testing would include JavaScript, CSS, or HTML which could change the functionality or layout of a page.
