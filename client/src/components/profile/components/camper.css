@@ -6,3 +6,9 @@
   display: flex;
   justify-content: center;
 }
+
+.username,
+.name,
+.bio {
+  overflow-wrap: break-word;
+}

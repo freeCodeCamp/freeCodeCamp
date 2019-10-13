@@ -10,6 +10,7 @@
 
 .flash-message div {
   max-width: 100%;
+  overflow-wrap: break-word;
 }
 
 .flash-message-enter {
