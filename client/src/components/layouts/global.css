@@ -132,16 +132,6 @@ a:focus {
   border-color: var(--secondary-color);
 }
 
-/* button button,
-input[type='submit'] {
-  background-color: var(--quaternary-background);
-  color: var(--secondary-color);
-  border-width: 2px;
-  border-style: outset;
-  border-color: buttonface;
-  border-image: initial;
-} */
-
 button,
 input[type='submit'],
 .btn {
@@ -151,7 +141,6 @@ input[type='submit'],
   color: var(--secondary-color);
   border-radius: 0px;
   text-decoration: none;
-  /* outline: none; */
 }
 
 button:hover,
