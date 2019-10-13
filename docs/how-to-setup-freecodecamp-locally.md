@@ -203,7 +203,7 @@ You will also need to install a few npm packages outside of Docker. You can skip
 npm ci
 ```
 
-All of the above needs to be run only the first time you set up the local dev environment.
+All of the above commands only need to be run the first time you set up the local dev environment.
 
 **Local Build:**
 
