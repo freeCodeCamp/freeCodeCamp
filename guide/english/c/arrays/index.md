@@ -14,7 +14,7 @@ int main(void) {
     printf("%d", k);
     printf("%d", j);
     printf("%d", i);
-    ... //and so on..
+    .... //and so on..
 
     return 0;
 }
