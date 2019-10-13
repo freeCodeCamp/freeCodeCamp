@@ -109,7 +109,7 @@ freeCodeCamp.org возможен благодаря тысячам добров
 
 ** Если вы хотите работать над этим, следуйте этим рекомендациям: **
 
-#### [Как настроить freeCodeCamp локально.](/docs/how-to-setup-freecodecamp-locally.md)
+#### [Как настроить freeCodeCamp локально.](/docs/docs/i18n-languages/russian/how-to-setup-freecodecamp-locally.md)
 
 ## Часто задаваемые вопросы
 
