@@ -8,7 +8,7 @@ These are some of the standard reply templates that you may use while reviewing 
 
 ```markdown
 Thank you for your contribution to the page! 👍
-We are happy to accept these changes and look forward to future contributions. 🎉
+We are happy to accept these changes and look forward to any future contributions. 🎉
 ```
 
 ### Thank you and congrats
@@ -17,9 +17,9 @@ We are happy to accept these changes and look forward to future contributions. �
 
 ```markdown
 Hi @username. Congrats on your first pull request (PR)! 🎉
-
+Well Done!
 Thank you for your contribution to the page! 👍
-We are happy to accept these changes and look forward to future contributions. 📝
+We are happy to accept these changes and look forward to any future contributions. 📝
 ```
 
 ### Build Error
@@ -27,15 +27,15 @@ We are happy to accept these changes and look forward to future contributions. �
 ```markdown
 Hey @username
 
-We would love to be able to merge your changes but it looks like there is an error with the Travis CI build. ⚠️
+We would love to be able to merge your changes, but it looks like there is an error with the Travis CI build. ⚠️
 
-Once you resolve these issues, We will be able to review your PR and merge it. 😊
+Once you resolve these issues, we will be able to review your PR and merge it. 😊
 
 ---
 
-> Feel free to reference the [Style guide for writing articles](https://github.com/freeCodeCamp/freeCodeCamp#article-title) for this repo on formatting an article correctly so your Travis CI build passes. ✅
+> Feel free to reference the [Style guide for writing articles](https://github.com/freeCodeCamp/freeCodeCamp#article-title) for this repo on formatting an article correctly, so your Travis CI build passes. ✅
 >
-> Also, it's good practice on GitHub to write a brief description of your changes when creating a PR. 📝
+> Also, it's good practice on GitHub, to write a brief description of your changes, when creating a PR. 📝
 ```
 
 ### Syncing Fork
@@ -45,13 +45,13 @@ Once you resolve these issues, We will be able to review your PR and merge it. �
 ``````markdown
 Hey @username
 
-We would love to be able to merge your changes but it looks like there is an error with the Travis CI build. ⚠️
+We would love to be able to merge your changes, but it looks like there is an error with the Travis CI build. ⚠️
 
 ```bash
 Error: ENOTDIR: not a directory, open 'src/pages/java/data-abstraction/index.md'
 ```
 
-This particular error was not caused by your file but was an old error caused by merging faulty code to the `master` branch. It has since been resolved.
+This particular error was not caused by your file, but was an old error caused by merging faulty code to the `master` branch. It has since been resolved.
 
 To pass the build, you will have to sync the latest changes from the `master` branch of the `freeCodeCamp/freeCodeCamp` repo.
 
@@ -71,9 +71,9 @@ Once you sync your fork and pass the build, We will be able to review your PR an
 
 ---
 
-> Feel free to reference the [Syncing a Fork](https://help.github.com/articles/syncing-a-fork/) article on GitHub for more insight on how to keep your fork up-to-date with the upstream repository. 🔄
+> Feel free to reference the [Syncing a Fork](https://help.github.com/articles/syncing-a-fork/) article on GitHub, for more insight on how to keep your fork up-to-date with the upstream repository. 🔄
 >
-> Also, it's good practice on GitHub to write a brief description of your changes when creating a PR. 📝
+> Also, it's good practice on GitHub to write a brief description of your changes, when creating a PR. 📝
 ``````
 
 ### Merge Conflicts
