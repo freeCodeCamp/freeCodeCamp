@@ -45,7 +45,7 @@ Once you resolve these issues, we will be able to review your PR and merge it. �
 ``````markdown
 Hey @username
 
-We would love to be able to merge your changes, but it looks like there is an error with the Travis CI build. ⚠️
+We would love to be able to merge your changes but it looks like there is an error with the Travis CI build. ⚠️
 
 ```bash
 Error: ENOTDIR: not a directory, open 'src/pages/java/data-abstraction/index.md'
