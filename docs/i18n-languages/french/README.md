@@ -38,7 +38,7 @@ Voici nos six certifications principales :
 #### 1. Certification Responsive Web Design
 
 - [Introduction à HTML et HTML5](https://learn.freecodecamp.org/responsive-web-design/basic-html-and-html5)
-- [Introduction à CSS](https://learn.freecodecamp.org/responsive-web-design/basic-css)
+- [Introduction au CSS](https://learn.freecodecamp.org/responsive-web-design/basic-css)
 - [Conception visuelle appliquée](https://learn.freecodecamp.org/responsive-web-design/applied-visual-design)
 - [Accessibilité appliquée](https://learn.freecodecamp.org/responsive-web-design/applied-accessibility)
 - [Principes de conception Web réactifs](https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-principles)
@@ -118,12 +118,12 @@ Ce code est exécuté en direct sur [freeCodeCamp.org](https://www.freecodecamp.
 
 Notre communauté a aussi:
 
-- Un [forum](https://www.freecodecamp.org/forum) où vous pouvez généralement avoir de l'aide en programmation ou des feedbacks sur vos projets.
-- Une chaine [YouTube channel](https://youtube.com/freecodecamp) avec des cours gratuits sur Python, SQL, Android et une grande variété d'autres sujets.
+- Un [forum](https://www.freecodecamp.org/forum) où vous pouvez avoir de l'aide en programmation ou des retours sur vos projets.
+- Une chaine [YouTube channel](https://youtube.com/freecodecamp) avec des cours gratuits sur Python, SQL, Android ainsi une grande variété d'autres sujets.
 - Un [podcast](https://podcast.freecodecamp.org/) avec des discussions techniques autour de nouvelles technologies et des histoires inspirantes de développeurs.
 - [Des groupes d'études locaux](https://study-group-directory.freecodecamp.org/), situés partout dans le monde et où vous pourrez programmer ensemble et en face en face.
-- Un [guide complet couvrant des milliers de sujets différents](https://guide.freecodecamp.org/)
-- Un [Feed de newws](https://www.freecodecamp.org/news), gratuit, open source et sans pub, où vous pourrez crossposter vos articles de blog.
+- Un [guide complet](https://guide.freecodecamp.org/) couvrant des milliers de sujets différents.
+- Un [Feed de news](https://www.freecodecamp.org/news), gratuit, open source et sans pub, où vous pourrez crossposter vos articles de blog.
 - Un [groupe Facebook](https://www.facebook.com/groups/freeCodeCampEarth/permalink/428140994253892/) avec plus de 100 000 membres autour du monde.
     
 
