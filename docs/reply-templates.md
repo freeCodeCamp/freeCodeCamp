@@ -27,13 +27,13 @@ We are happy to accept these changes and look forward to any future contribution
 ```markdown
 Hey @username
 
-We would love to be able to merge your changes, but it looks like there is an error with the Travis CI build. ⚠️
+We would love to be able to merge your changes but it looks like there is an error with the Travis CI build. ⚠️
 
 Once you resolve these issues, we will be able to review your PR and merge it. 😊
 
 ---
 
-> Feel free to reference the [Style guide for writing articles](https://github.com/freeCodeCamp/freeCodeCamp#article-title) for this repo on formatting an article correctly, so your Travis CI build passes. ✅
+> Feel free to reference the [Style guide for writing articles](https://github.com/freeCodeCamp/freeCodeCamp#article-title) for this repo on formatting an article correctly so your Travis CI build passes. ✅
 >
 > Also, it's good practice on GitHub, to write a brief description of your changes, when creating a PR. 📝
 ```
@@ -53,7 +53,7 @@ Error: ENOTDIR: not a directory, open 'src/pages/java/data-abstraction/index.md'
 
 This particular error was not caused by your file, but was an old error caused by merging faulty code to the `master` branch. It has since been resolved.
 
-To pass the build, you will have to sync the latest changes from the `master` branch of the `freeCodeCamp/freeCodeCamp` repo.
+To pass the build you will have to sync the latest changes from the `master` branch of the `freeCodeCamp/freeCodeCamp` repo.
 
 Using the command line, you can do this in three easy steps:
 
