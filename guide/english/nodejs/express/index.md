@@ -162,7 +162,7 @@ Routers are helpful in separating concerns such as different endpoints and keep 
 
 ### Routing Methods
 
-HTTP is a standard protocol for a client and a server to communicate over. It provides different methods for a client to make request. Each route has at least on hanlder function or a callback. This callback function determines what will be the response from server for that particular route. For example, a route of `app.get()` is used to handle GET requests and in return send simple message as a response.
+HTTP is a standard protocol for a client and a server to communicate over. It provides different methods for a client to make request. Each route has at least one handler function or a callback. This callback function determines what will be the response from server for that particular route. For example, a route of `app.get()` is used to handle GET requests and in return send simple message as a response.
 
 ```javascript
 // GET method route
