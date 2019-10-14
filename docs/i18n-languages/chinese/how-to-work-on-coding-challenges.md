@@ -29,62 +29,64 @@ videoUrl：'视频解释的网址'
 ---
 
 ## 说明
-<section id ='description'>
+<section id='description'>
 挑战的描述以及通过的要求
-</节>
+</section>
 
 ## 说明
-<section id ='说明'>
+<section id='instructions'>
 关于究竟需要做什么的说明。
-</节>
+</section>
+
 ## 测试
 <section id ='tests'>
 
 ```yml
- - 文字：应该返回“foo”。
-  testString：'使用Chai断言的字符串化函数'
+  - text：应该返回“foo”。
+    testString：'使用Chai断言的字符串化函数'
 ```
 
-</节>
+</section>
 
-<div id ='js-seed'>
+## 挑战原因
+<section id='challengeSeed'>
 
-```JS
+<div id ='{ext}-seed'>
+
+```{ext}
 默认情况下，代码在编辑器中显示。
 ```
 
-</ DIV>
+</div>
 
 ### 测试前
-<div id ='js-setup'>
+<div id ='{ext}-setup'>
 
-```JS
+```{ext}
 测试设置代码。
 ```
 
 </div>
 
-</节>
-
 ### 经过测试
-<div id ='js-teardown'>
+<div id ='{ext}-teardown'>
 
-```JS
+```{ext}
 测试拆解代码。
 ```
 
-</ DIV>
+</div>
 
-</节>
+</section>
 
 ## 解决方案
 <section id ='solution'>
 
-```JS
+```{ext}
 挑战解决方案代码
 ```
 
-</节>
+</section>
 ````
 
 ### 有用的链接
