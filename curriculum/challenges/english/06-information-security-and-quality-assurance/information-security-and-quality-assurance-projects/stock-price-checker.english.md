@@ -8,7 +8,8 @@ forumTopicId: 301572
 
 ## Description
 <section id='description'>
-Build a full stack JavaScript app that is functionally similar to this: <a href='https://giant-chronometer.glitch.me/' target='_blank'>https://giant-chronometer.glitch.me/</a>.
+Build a full stack JavaScript app that is functionally similar to this: <a href='https://sphenoid-crater.glitch.me/' target='_blank'>https://sphenoid-crater.glitch.me/</a>.
+Since all reliable stock price APIs require an API key, we've built a workaround. Use <a href='https://repeated-alpaca.glitch.me/' target='_blank'>https://repeated-alpaca.glitch.me/</a> to get up-to-date stock price information without needing to sign up for your own key.
 Working on this project will involve you writing your code on Glitch on our starter project. After completing this project you can copy your public glitch url (to the homepage of your app) into this screen to test it! Optionally you may choose to write your project on another platform but must be publicly visible for our testing.
 Start this project on Glitch using <a href='https://glitch.com/edit/#!/remix/clone-from-repo?REPO_URL=https://github.com/freeCodeCamp/boilerplate-project-stockchecker/'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-project-stockchecker/'>this repository</a> on GitHub! If you use Glitch, remember to save the link to your project somewhere safe!
 </section>
@@ -23,17 +24,17 @@ Start this project on Glitch using <a href='https://glitch.com/edit/#!/remix/clo
 
 ```yml
 tests:
-  - text: Set the content security policies to only allow loading of scripts and css from your server.
+  - text: Set the content security policies to only allow loading of scripts and CSS from your server.
     testString: ''
   - text: I can GET /api/stock-prices with form data containing a Nasdaq stock ticker and receive back an object stockData.
     testString: ''
-  - text: In stockData, I can see the stock(string, the ticker), price(decimal in string format), and likes(int).
+  - text: In stockData, I can see the stock (the ticker as a string), price (decimal in string format), and likes (int).
     testString: ''
-  - text: I can also pass along field like as true(boolean) to have my like added to the stock(s). Only 1 like per ip should be accepted.
+  - text: I can also pass along field like as true (boolean) to have my like added to the stock(s). Only 1 like per IP should be accepted.
     testString: ''
-  - text: If I pass along 2 stocks, the return object will be an array with both stock's info. Instead of likes, it will display rel_likes(the difference between the likes on both stocks) on both.
+  - text: If I pass along 2 stocks, the return object will be an array with information about both stocks. Instead of likes, it will display rel_likes (the difference between the likes on both stocks) on both.
     testString: ''
-  - text: 'A good way to receive current price is the following external API(replacing ''GOOG'' with your stock): https://finance.google.com/finance/info?q=NASDAQ%3aGOOG'
+  - text: 'A good way to receive current prices is through our stock price proxy (replacing ''GOOG'' with your stock symbol): https://repeated-alpaca.glitch.me/v1/stock/GOOG/quote'
     testString: ''
   - text: All 5 functional tests are complete and passing.
     testString: ''
