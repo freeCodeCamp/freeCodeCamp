@@ -113,9 +113,7 @@ export class DonatePage extends Component {
                 <PoweredByStripe />
                 <Spacer />
                 <Button bsStyle='link' onClick={this.toggleOtherOptions}>
-                  {`${
-                    showOtherOptions ? 'Hide' : 'Show'
-                  } other ways to donate.`}
+                  {`${showOtherOptions ? 'Hide' : 'Show'} other ways to donate`}
                 </Button>
               </div>
               <Spacer />
