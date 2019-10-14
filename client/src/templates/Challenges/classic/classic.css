@@ -28,7 +28,7 @@
 }
 
 #challenge-page-tabs .nav-tabs > li > a:hover {
-  color: var(--secondary-background);
+  color: var(--gray-85);
 }
 
 #challenge-page-tabs .tab-content {
