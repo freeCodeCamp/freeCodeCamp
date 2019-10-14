@@ -30,17 +30,6 @@
   }
 }
 
-.donation-modal .btn-link {
-  border: none;
-  text-decoration: underline;
-  background: transparent;
-}
-.donation-modal .btn-link:hover {
-  background: var(--tertiary-background);
-  text-decoration: none;
-  color: inherit;
-}
-
 .donation-elements {
   display: flex;
   flex-direction: column;
@@ -103,8 +92,13 @@
 
 .wallet {
   overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .alert p {
   color: inherit;
+}
+
+.donate-other .btn-cta {
+  margin: 7px 0px;
 }
