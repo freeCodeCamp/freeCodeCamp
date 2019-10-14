@@ -20,3 +20,8 @@
 #learn-app-wrapper .reflex-container.horizontal > .reflex-splitter {
   height: 5px;
 }
+
+#description p,
+#instructions p {
+  font-family: 'Lato', sans-serif;
+}
