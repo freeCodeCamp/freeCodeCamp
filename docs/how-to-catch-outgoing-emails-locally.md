@@ -52,7 +52,7 @@ Run the following commands to install GO on Debian-based systems, like Ubuntu an
 sudo apt-get install golang
 ```
 
-Run the following commands to install GO on RPM-based systems, like CentOS, Fedora, Red Hat Linux, etc.
+Run the following commands to install GO on RPM-based systems like CentOS, Fedora, Red Hat Linux, etc.
 
 ```bash
 sudo dnf install golang
