@@ -9,6 +9,7 @@
 
 .username,
 .name,
-.bio {
+.bio,
+.location {
   overflow-wrap: break-word;
 }
