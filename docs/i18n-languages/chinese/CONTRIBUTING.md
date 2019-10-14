@@ -53,7 +53,7 @@ freeCodeCamp.org的存在是因为像你这样的数千名志愿者。我们很�
 
 如果您找不到关于您想要撰写的主题的存根，则可以开一个PR，创建有关存根并包含您的草稿文章。
 
-如果您想帮助改进指南文章，请参阅[如何编辑指南文章](/docs/chinese/how-to-work-on-guide-articles.md)。
+如果您想帮助改进指南文章，请参阅[如何编辑指南文章](./how-to-work-on-guide-articles.md)。
 
 ### 创建，更新编码挑战和修复其中的错误
 
@@ -61,17 +61,17 @@ freeCodeCamp.org的存在是因为像你这样的数千名志愿者。我们很�
 
 您可以帮助扩展它们并使其措辞更加清晰。您可以更新用户故事以更好地解释概念，甚至删除多余的概念。您还可以改进挑战测试，使其更准确地测试人们的代码。
 
-如果您对改进这些编码挑战感兴趣，请参阅[如何处理编码挑战](/docs/chinese/how-to-work-on-coding-challenges.md)。
+如果您对改进这些编码挑战感兴趣，请参阅[如何处理编码挑战](./how-to-work-on-coding-challenges.md)。
 
 ### 翻译指南文章和编码挑战
 
 您可以帮助我们将指南文章和编码挑战翻译成您所说的语言。目前我们已翻译版本：
 
-- [中文（中文）](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/chinese)
-- [俄语（русский）](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/russian)
-- [阿拉伯语（عربى）](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/arabic)
-- [西班牙语（西班牙语）](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/spanish)
-- [葡萄牙语（葡萄牙语）](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/portuguese)
+- [中文（中文）](/curriculum/challenges/chinese)
+- [俄语（русский）](/curriculum/challenges/russian)
+- [阿拉伯语（عربى）](/curriculum/challenges/arabic)
+- [西班牙语（西班牙语）](/curriculum/challenges/spanish)
+- [葡萄牙语（葡萄牙语）](/curriculum/challenges/portuguese)
 
 我们非常欢迎您的贡献以帮助提高翻译质量。数百万人已经在使用freeCodeCamp.org的英语版本，我们也希望还有数百万人使用这些翻译版本。
 
@@ -92,7 +92,7 @@ freeCodeCamp.org的存在是因为像你这样的数千名志愿者。我们很�
 
 如果您对于以上相关问有任何疑问，请在相关的主题上向我们提问，我们将很乐意的为您澄清。您可以联系我们的平台开发团队中的Mrugesh Mohapatra [`@isedadead`](https://github.com/raisedadead) 或Stuart Taylor [`@bouncey`](https://github.com/bouncey) 为您提供帮助。
 
-如果您想帮助我们改进代码库，请参阅[如何在本地启动freeCodeCamp](/docs/chinese/how-to-setup-freecodecamp-locally.md)。
+如果您想帮助我们改进代码库，请参阅[如何在本地启动freeCodeCamp](./how-to-setup-freecodecamp-locally.md)。
 
 ## 常见的疑问
 
