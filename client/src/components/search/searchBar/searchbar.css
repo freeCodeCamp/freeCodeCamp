@@ -72,7 +72,6 @@
 
 .fcc_suggestion_item:hover {
   cursor: pointer;
-  background-color: var(--blue-dark);
 }
 
 .fcc_sr_only {
@@ -93,6 +92,14 @@
 /* Hit selected with arrow keys or mouse */
 .selected {
   background-color: var(--blue-dark);
+}
+
+/* Override for rule in global.css to prevent
+multiple highlighted hits with the mouse
+and arrow keys */
+.fcc_suggestion_item:focus,
+.fcc_suggestion_item:hover {
+  background-color: transparent;
 }
 
 /* Dropdown footer */
