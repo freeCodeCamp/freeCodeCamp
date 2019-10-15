@@ -7,7 +7,7 @@
 
 ## Wie man einen guten Pull Request Titel vorbereitet:
 
-Wenn du eine Pull Request(PR) erstellst, verwende die folgende Thementabelle, um zu entscheiden, wie du deinen PR im folgenden Format benennen möchtest:
+Wenn du eine Pull Request(PR) erstellst, verwende die folgende Tabelle, um zu entscheiden, wie du deine PR im folgenden Format benennen möchtest:
 `fix/feat/chore/refactor/docs/perf (scope): PR Title`
 
 Ein Beispiel ist `fix(learn): Fixed tests for the do...while loop challenge`.
