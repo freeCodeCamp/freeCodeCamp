@@ -27,6 +27,11 @@ const template = `
 # WARNING: The order of this list is very important.
 #
 
+# domain mappings
+https://freecodecamp-dev.netlify.com/*        https://www.freecodecamp.dev/:splat 301!
+https://freecodecamp-org.netlify.com/*        https://www.freecodecamp.org/:splat 301!
+
+
 #api redirect
 /internal/*                                   #{{API}}/internal/:splat 200
 
