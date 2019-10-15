@@ -83,6 +83,7 @@
   color: var(--gray-00);
   opacity: 1;
   white-space: nowrap;
+  height: 38px;
 }
 
 .nav-list li:hover {
@@ -92,11 +93,12 @@
 .nav-list li a:hover {
   color: var(--theme-color);
   text-decoration: none;
-  background: transparent;
+  background: white;
 }
 
 .nav-list li a:focus {
-  background: transparent;
+  background: var(--theme-color);
+  color: white;
 }
 
 .universal-nav-right {
