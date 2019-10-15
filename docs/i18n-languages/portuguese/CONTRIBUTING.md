@@ -90,7 +90,7 @@ A maioria dessas versões são traduções de máquina. Nós vamos amar sua ajud
 
 ### Nos ajude a corrigir <i>bugs</i> na plataforma de aprendizado da freeCodeCamp.org
 
-Nossa plataforma de aprendizado roda em uma <i>stack</i> moderna de Javascript. Ela contém vários componentes, ferramentas e bibliotecas, incluindo, mas não limitadas a: Node.js, MongoDB, LoopBack, OAuth 2.0, React, Gatsby, Webpack, entre outras.
+Nossa plataforma de aprendizado roda em uma <i>stack</i> moderna de JavaScript. Ela contém vários componentes, ferramentas e bibliotecas, incluindo, mas não limitadas a: Node.js, MongoDB, LoopBack, OAuth 2.0, React, Gatsby, Webpack, entre outras.
 
 De maneira geral,
 
