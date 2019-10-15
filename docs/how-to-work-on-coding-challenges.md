@@ -13,7 +13,7 @@ We want campers to achieve a flow state. We want them to build momentum and blas
 
 Creating these challenges requires immense creativity and attention to detail. There's plenty of help available. You'll have support from a whole team of contributors to whom you can bounce ideas off and demo your challenges. Stay active in the [contributors room](https://gitter.im/freecodecamp/contributors) and ask lots of questions.
 
-With your help, we can design an interactive coding curriculum, that will help millions of people learn how to code for years to come.
+With your help we can design an interactive coding curriculum that will help millions of people learn to code for years to come.
 
 The content for each challenge is stored in its own markdown file. This markdown file is later converted to HTML using our tools to create interactive web pages. You can find all of freeCodeCamp.org's curricular content in the [`/curriculum`](/curriculum) directory.
 
@@ -157,13 +157,13 @@ Here are some example challenge names:
 
 Sentences should be clear and concise with minimal jargon. If used, jargon should be immediately defined in plain English.
 
-Keep paragraphs short (around 1-4 sentences). People are more likely to read several short paragraphs, rather than a wall of text.
+Keep paragraphs short (around 1-4 sentences). People are more likely to read several short paragraphs than a wall of text.
 
-Challenge text should use the second person ("you") to help to give it a conversational tone. This way, the text and instructions seem to speak directly to the camper, working through the challenge. Try to avoid using the first person ("I", "we", "let's", and "us").
+Challenge text should use the second person ("you") to help to give it a conversational tone. This way the text and instructions seem to speak directly to the camper working through the challenge. Try to avoid using the first person ("I", "we", "let's", and "us").
 
 Don't use outbound links. These interrupt the flow. Campers should never have to google anything during these challenges. If there are resources you think campers would benefit from, add them to the challenge's Guide-related article.
 
-You can add diagrams, if absolutely necessary.
+You can add diagrams if absolutely necessary.
 
 Don't use emojis or emoticons in challenges. freeCodeCamp has a global community, and the cultural meaning of an emoji or emoticon may be different around the world. Also, emojis can render differently on different systems.
 
@@ -175,7 +175,7 @@ Proper nouns should use correct capitalization when possible. Below is a list of
 
 ### The 2-minute rule
 
-Each challenge should be solvable within 120 seconds, by a native English speaker who has completed the challenges leading up to it. This includes the amount of time it takes to read the directions/instructions, understand the seeded code, write their own code, and get all the tests to pass.
+Each challenge should be solvable within 120 seconds by a native English speaker who has completed the challenges leading up to it. This includes the amount of time it takes to read the directions/instructions understand the seeded code, write their own code and get all the tests to pass.
 
 If it takes longer than two minutes to complete the challenge, you have two options:
 
