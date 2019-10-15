@@ -19,7 +19,7 @@ Der Inhalt für jede Herausforderung wird in einer eigenen Markdown Datei gespei
 
 Es gibt zwei Möglichkeiten, wie du an diesen Herausforderungen arbeiten kannst:
 
-- Wir empfehlen, das Projekt zu klonen und lokal auf deinen Computer zu bearbeiten. Hilfreich sind dabei unsere [Beitrags Richtlinien](/CONTRIBUTING.md).
+- Wir empfehlen, das Projekt zu klonen und [lokal](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/docs/how-to-setup-freecodecamp-locally.md) auf deinen Computer zu bearbeiten. Hilfreich sind dabei unsere [Beitrags Richtlinien](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/docs/i18n-languages/german/CONTRIBUTING.md).
 - Oder optional kannst du eine Challenge innerhalb der GitHub-Oberfläche ändern, indem du auf das Bleistift-Symbol klickst, um mit der Bearbeitung der Datei zu beginnen.
 
 ## Herausforderungsvorlage
