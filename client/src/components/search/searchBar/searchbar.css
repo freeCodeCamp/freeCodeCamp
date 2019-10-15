@@ -18,8 +18,8 @@
   padding: 1px 10px 1px 30px;
   font-size: 18px;
   display: inline-block;
-  width: calc(100vw - 10px);
   margin-top: 6px;
+  height: 26px;
 }
 
 .fcc_searchBar .ais-SearchBox-input,
@@ -125,7 +125,6 @@ and arrow keys */
 @media (min-width: 800px) {
   .ais-SearchBox-input {
     width: 100%;
-    margin-top: 6px;
     max-width: 500px;
   }
   .fcc_searchBar {
