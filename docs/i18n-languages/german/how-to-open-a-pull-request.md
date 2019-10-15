@@ -25,7 +25,7 @@ Ein Beispiel ist `fix(learn): Fixed tests for the do...while loop challenge`.
 
     ![Image - Compare pull request prompt on GitHub](/docs/images/github/compare-pull-request-prompt.png)
 
-2. Standardmäßig sollten alle Pull-Requests gegen den Hauptrepo von freeCodeCamp, Zweig `master`, gerichtet sein.
+2. Standardmäßig sollten alle Pull-Requests gegen den `master` Zweig des Hauptrepositories von freeCodeCamp, gerichtet sein.
 
     Stelle sicher, dass dein `base fork:` auf freeCodeCamp/freeCodeCamp eingestellt ist, wenn du eine Pull-Request auslöst.
 
