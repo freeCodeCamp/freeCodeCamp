@@ -40,7 +40,7 @@ Ein Beispiel ist `fix(learn): Fixed tests for the do...while loop challenge`.
     - Fülle die Details aus, wie es dir passt. Diese Informationen werden überprüft und entschieden, ob deine Pull-Request akzeptiert wird oder nicht.
 
     - Wenn die PR einen bestehenden Bug/Fehler beheben soll, dann füge am Ende von
-      der Beschreibung deines Pull Requests, das Schlüsselwort `closes` und #xxxx an (wobei xxxx
+      der Beschreibung deiner Pull Request, das Schlüsselwort `closes` und #xxxx an (wobei xxxx
       die Problemnummer darstellt). Beispiel: `closes #1337`. Dies teilt GitHub mit, dass er
       automatisch das bestehende Problem schließt, wenn die PR akzeptiert und zusammengeführt wird.
 
