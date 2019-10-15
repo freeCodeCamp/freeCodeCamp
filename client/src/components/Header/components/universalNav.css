@@ -48,6 +48,9 @@
   text-decoration: none;
   background-color: var(--theme-color);
 }
+#universal-nav-logo:focus {
+  background-color: inherit;
+}
 
 #universal-nav-logo svg {
   display: block;
@@ -76,7 +79,7 @@
 .nav-list li a {
   display: block;
   margin: 0;
-  padding: 8px 15px;
+  padding: 6px 15px;
   color: var(--gray-00);
   opacity: 1;
   white-space: nowrap;

@@ -137,12 +137,6 @@ module.exports = {
         icon: 'src/assets/images/square_puck.png'
       }
     },
-    {
-      resolve: 'gatsby-plugin-google-fonts',
-      options: {
-        fonts: ['Lato:300,400,400i,500,700', 'Roboto Mono:400,700']
-      }
-    },
     'gatsby-plugin-remove-serviceworker'
   ]
 };

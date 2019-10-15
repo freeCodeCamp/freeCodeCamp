@@ -153,14 +153,14 @@ class ShowUser extends Component {
     return (
       <Fragment>
         <Helmet>
-          <title>Report a users profile | freeCodeCamp.org</title>
+          <title>Report a users portfolio | freeCodeCamp.org</title>
         </Helmet>
         <Spacer size={2} />
         <Row className='text-center'>
           <Col sm={8} smOffset={2} xs={12}>
             <h2>
               Do you want to report {username}
-              's profile for abuse?
+              's portfolio for abuse?
             </h2>
           </Col>
         </Row>

@@ -6,6 +6,9 @@ import { createStore } from './src/redux/createStore';
 import AppMountNotifier from './src/components/AppMountNotifier';
 import layoutSelector from './utils/gatsby/layoutSelector';
 
+require('typeface-lato');
+require('typeface-roboto-mono');
+
 const store = createStore();
 
 export const wrapRootElement = ({ element }) => {
