@@ -35,7 +35,7 @@ Ein Beispiel ist `fix(learn): Fixed tests for the do...while loop challenge`.
 
 4. Füge im Text deiner PR eine detailliertere Zusammenfassung der von dir vorgenommen Änderungen und den Grund dafür hinzu.
 
-    - Es wird dir eine Pull Request Vorlage angezeigt. Dies ist eine Checkliste, die du vor dem Öffnen des Pull-Auftrags hättest befolgen sollen.
+    - Es wird dir eine Pull Request Vorlage angezeigt. Dies ist eine Checkliste, die du vor dem Öffnen der Pull-Request hättest befolgen sollen.
 
     - Fülle die Details aus, wie es dir passt. Diese Informationen werden überprüft und entschieden, ob deine Pull-Anfrage akzeptiert wird oder nicht.
 
