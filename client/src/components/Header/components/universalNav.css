@@ -92,7 +92,11 @@
 .nav-list li a:hover {
   color: var(--theme-color);
   text-decoration: none;
-  background: var(--gray-00);
+  background: transparent;
+}
+
+.nav-list li a:focus {
+  background: transparent;
 }
 
 .universal-nav-right {
@@ -114,6 +118,12 @@
   cursor: pointer;
   margin-top: 4px;
   height: auto;
+}
+
+.toggle-button-nav:hover {
+  background-color: var(--theme-color);
+  color: var(--gray-00);
+  border: 1px solid var(--gray-00);
 }
 
 @media (max-width: 265px) {
@@ -158,19 +168,28 @@
   .expand-nav {
     min-height: calc(3 * var(--header-height));
   }
+
   .reverse-toggle-color {
     background-color: var(--gray-00);
     color: var(--theme-color);
   }
+
+  .reverse-toggle-color:hover {
+    background-color: var(--gray-00);
+    color: var(--theme-color);
+  }
+
   .universal-nav-left form {
     display: none;
   }
+
   .fcc_searchBar .ais-SearchBox-form {
     display: flex;
     position: absolute;
     top: var(--header-height);
     left: 15px;
   }
+
   #universal-nav-logo {
     display: flex;
     position: absolute;
