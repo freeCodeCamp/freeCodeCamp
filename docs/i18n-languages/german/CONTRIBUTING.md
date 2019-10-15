@@ -33,6 +33,8 @@ Alle unsere Coding Challenges werden von der Community beaufsichtigt und bringen
 
 Du kannst helfen, diese zu erweitern und ihren Wortlaut zu verbessern. Du kannst auch die User Stories aktualisieren, um das Konzept besser zu erklären oder redundante zu entfernen. Außerdem kannst du auch die Challenge-Tests verbessern, um den Code von Personen genauer zu testen.
 
+**Wenn du daran interessiert bist die Coding Challenges zu verbessern, kannst du [hier](/docs/how-to-work-on-coding-challenges.md) nähere Informationen dazu finden, wie man an diesen arbeitet.**
+
 ### Helfe uns, Fehler in der Lernplattform von freeCodeCamp.org zu beheben.
 
 Unsere Lernplattform läuft auf einem modernen JavaScript-Stack. Es enthält verschiedene Komponenten, Tools und Bibliotheken, einschließlich, aber nicht beschränkt auf, Node.js, MongoDB, LoopBack, OAuth 2.0, React, Gatsby, Webpack und mehr.
@@ -79,7 +81,7 @@ Wenn diese Issues unklar sind bezüglich was getan werden muss, zögere nicht, F
 
 Für Rechtschreibfehler und andere Formulierungsänderungen kannst du direkt einen Pull Request erstellen, ohne vorher ein Issue zu öffnen. Issues sind eher für die Diskussion größerer Probleme, die sich mit dem Code und anderen strukturellen Aspekten des Curriculums beschäftigen.
 
-### Wie bekomme ich ein Problem zugewiesen?
+**Wie bekomme ich ein Problem zugewiesen?**
 
 Wir weisen Probleme in der Regel niemandem außer Langzeit-Mitarbeitern zu, um mehrdeutige No-Shows zu vermeiden. Stattdessen verfolgen wir die untenstehende Richtlinie, um allen gegenüber fair zu sein:
 
