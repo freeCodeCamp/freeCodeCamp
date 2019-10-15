@@ -33,7 +33,7 @@ Below is a template of what the challenge markdown files look like.
     - `js` - JavaScript
     - `jsx` - JSX
 
-2. For the `Tests` section below, `text` and `testString` should be valid YAML strings. `testString` can be a stringified function, or expression, possibly using Chai asserts.
+2. For the `Tests` section below, `text` and `testString` should be valid YAML strings. `testString` can be a stringified function  or expression using which could use Chai asserts.
 
 ````md
 ---
