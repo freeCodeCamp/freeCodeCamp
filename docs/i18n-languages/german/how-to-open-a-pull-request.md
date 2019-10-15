@@ -37,7 +37,7 @@ Ein Beispiel ist `fix(learn): Fixed tests for the do...while loop challenge`.
 
     - Es wird dir eine Pull Request Vorlage angezeigt. Dies ist eine Checkliste, die du vor dem Öffnen der Pull-Request hättest befolgen sollen.
 
-    - Fülle die Details aus, wie es dir passt. Diese Informationen werden überprüft und entschieden, ob deine Pull-Anfrage akzeptiert wird oder nicht.
+    - Fülle die Details aus, wie es dir passt. Diese Informationen werden überprüft und entschieden, ob deine Pull-Request akzeptiert wird oder nicht.
 
     - Wenn die PR einen bestehenden Bug/Fehler beheben soll, dann füge am Ende von
       der Beschreibung deines Pull Requests, das Schlüsselwort `closes` und #xxxx an (wobei xxxx
