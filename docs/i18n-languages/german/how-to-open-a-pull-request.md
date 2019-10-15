@@ -19,7 +19,7 @@ Ein Beispiel ist `fix(learn): Fixed tests for the do...while loop challenge`.
 | `guide` | Für Pull-Requests, die Änderungen an dem Leitfaden vornehmen. |
 | `docs` | Für Pull-Requests, die Änderungen an der Projektdokumentation vornehmen. |
 
-## Vorschlag für einen Pull-Request (PR)
+## Vorschlag für eine Pull-Request (PR)
 
 1. Sobald die Änderungen bestätigt wurden, wirst du aufgefordert, eine Pull Request auf der GitHub-Seite deines Forks zu erstellen.
 
