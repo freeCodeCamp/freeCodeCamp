@@ -7,7 +7,7 @@
 
 Unser Ziel ist es, eine unterhaltsame und klare interaktive Lernerfahrung zu entwickeln.
 
-Das Entwerfen von interaktiven Programmierherausforderungen ist schwierig. Es wäre viel einfacher, eine ausführliche Erklärung zu schreiben oder ein Video-Tutorial zu erstellen. Für unseren Kernherausforderungen halten wir jedoch an dem fest, was für die meisten Menschen am besten funktioniert - ein völlig interaktives, videospielartiges Erlebnis.
+Das Entwerfen von interaktiven Programmierherausforderungen ist schwierig. Es wäre viel einfacher, eine ausführliche Erklärung zu schreiben oder ein Video-Tutorial zu erstellen. Für unsere Kernherausforderungen halten wir jedoch an dem fest, was für die meisten Menschen am besten funktioniert - ein völlig interaktives, videospielartiges Erlebnis.
 
 Wir wollen, dass du mit so wenig Schwierigkeiten wie möglich Dynamik entwickelst und unseren Lehrplan durchbrichst. Wir möchten, dass du mit Selbstvertrauen und einer großen Erfahrung mit Programmierkonzepten in die Projekte einsteigst.
 
