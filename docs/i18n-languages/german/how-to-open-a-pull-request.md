@@ -31,7 +31,7 @@ Ein Beispiel ist `fix(learn): Fixed tests for the do...while loop challenge`.
 
     ![Image - Comparing forks when making a pull request](/docs/images/github/comparing-forks-for-pull-request.png)
 
-3. Sende die Pull-Anfrage aus deinem Zweig an den `master`- Zweig von freeCodeCamp.
+3. Sende die Pull-Request aus deinem Zweig an den `master` Zweig von freeCodeCamp.
 
 4. Füge im Text deiner PR eine detailliertere Zusammenfassung der von dir vorgenommen Änderungen und den Grund dafür hinzu.
 
