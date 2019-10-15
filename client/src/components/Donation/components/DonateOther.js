@@ -88,7 +88,7 @@ class DonateOther extends Component {
     return (
       <Fragment>
         <Spacer />
-        <Grid>
+        <Grid className='donate-other'>
           <Row>
             <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
               <h2 className='text-center'>
@@ -110,9 +110,21 @@ class DonateOther extends Component {
                 one of the links below and following the instructions on PayPal.
                 You can easily stop your donations at any time in the future.
               </p>
-              {paypalMonthlyDonations.map(item => {
-                return this.renderForm(item);
-              })}
+              <Row>
+                <Col
+                  lg={6}
+                  lgOffset={3}
+                  md={6}
+                  mdOffset={3}
+                  sm={8}
+                  smOffset={2}
+                  xs={12}
+                >
+                  {paypalMonthlyDonations.map(item => {
+                    return this.renderForm(item);
+                  })}
+                </Col>
+              </Row>
               <hr />
               <h3>Make a one-time donation using PayPal</h3>
               <p>
@@ -120,7 +132,20 @@ class DonateOther extends Component {
                 amount of money by clicking one of the links below and following
                 the instructions on PayPal:
               </p>
-              {this.renderForm(paypalOneTimeDonation)}
+              <Row>
+                <Col
+                  lg={6}
+                  lgOffset={3}
+                  md={6}
+                  mdOffset={3}
+                  sm={8}
+                  smOffset={2}
+                  xs={12}
+                >
+                  {this.renderForm(paypalOneTimeDonation)}
+                </Col>
+              </Row>
+
               <hr />
               <h3>Get your employer to match your donation</h3>
               <p>
@@ -155,28 +180,28 @@ class DonateOther extends Component {
                 donations.
               </p>
               <h4>Make a one-time Bitcoin donation</h4>
-              <p className='negative-15'>
+              <p>
                 Our Bitcoin wallet is{' '}
                 <code className='wallet'>
                   12skYi7aMCjDUdrVdoB3JjZ77ug8gxJfbL
                 </code>
               </p>
               <h4>Make a one-time Ethereum donation</h4>
-              <p className='negative-15'>
+              <p>
                 Our Ethereum wallet is{' '}
                 <code className='wallet'>
                   0x0ADbEf2471416BD8732cf0f3944294eE393CcAF5
                 </code>
               </p>
               <h4>Make a one-time Litecoin donation</h4>
-              <p className='negative-15'>
+              <p>
                 Our Litecoin wallet is{' '}
                 <code className='wallet'>
                   LKu8UG8Z1nbTxnq9Do96PsC3FwbNtycf3X
                 </code>
               </p>
               <h4>Make a one-time Bitcoin Cash donation</h4>
-              <p className='negative-15'>
+              <p>
                 Our Bitcoin Cash wallet is{' '}
                 <code className='wallet'>
                   1EBxPEJWrGZWxe2UayyAsnd5VsRg5H9xfu

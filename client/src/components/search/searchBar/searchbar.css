@@ -72,6 +72,7 @@
 
 .fcc_suggestion_item:hover {
   cursor: pointer;
+  background-color: var(--blue-dark);
 }
 
 .fcc_sr_only {

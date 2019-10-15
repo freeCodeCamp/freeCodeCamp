@@ -8,6 +8,11 @@
   margin-top: 1.45rem;
 }
 
+.intro-layout p,
+.intro-layout li {
+  font-family: 'Lato', sans-serif;
+}
+
 .intro-toc .list-group-item {
   margin: 5px auto;
 }

@@ -2,29 +2,48 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { HotKeys, GlobalHotKeys } from 'react-hotkeys';
 import { navigate } from 'gatsby';
+import { connect } from 'react-redux';
+import { createSelector } from 'reselect';
+
+import { canFocusEditorSelector, setEditorFocusability } from '../redux';
+import './hotkeys.css';
+
+const mapStateToProps = createSelector(
+  canFocusEditorSelector,
+  canFocusEditor => ({
+    canFocusEditor
+  })
+);
+
+const mapDispatchToProps = { setEditorFocusability };
 
 const keyMap = {
+  NAVIGATION_MODE: 'escape',
   EXECUTE_CHALLENGE: ['ctrl+enter', 'command+enter'],
   NAVIGATE_PREV: ['p'],
   NAVIGATE_NEXT: ['n']
 };
 
 const propTypes = {
+  canFocusEditor: PropTypes.bool,
   children: PropTypes.any,
   executeChallenge: PropTypes.func,
   innerRef: PropTypes.any,
   introPath: PropTypes.string,
   nextChallengePath: PropTypes.string,
-  prevChallengePath: PropTypes.string
+  prevChallengePath: PropTypes.string,
+  setEditorFocusability: PropTypes.func.isRequired
 };
 
 function Hotkeys({
+  canFocusEditor,
   children,
   executeChallenge,
   introPath,
   innerRef,
   nextChallengePath,
-  prevChallengePath
+  prevChallengePath,
+  setEditorFocusability
 }) {
   const handlers = {
     EXECUTE_CHALLENGE: e => {
@@ -35,14 +54,26 @@ function Hotkeys({
       e.preventDefault();
       if (executeChallenge) executeChallenge();
     },
-    NAVIGATE_PREV: () => navigate(prevChallengePath),
-    NAVIGATE_NEXT: () => navigate(introPath ? introPath : nextChallengePath)
+    NAVIGATION_MODE: () => setEditorFocusability(false),
+    NAVIGATE_PREV: () => {
+      if (!canFocusEditor) navigate(prevChallengePath);
+    },
+    NAVIGATE_NEXT: () => {
+      if (!canFocusEditor) navigate(introPath ? introPath : nextChallengePath);
+    }
   };
   // GlobalHotKeys is always mounted and tracks all keypresses. Without it,
   // keyup events can be missed and react-hotkeys assumes that that key is still
   // being pressed.
+  // allowChanges is necessary if the handlers depend on props (in this case
+  // canFocusEditor)
   return (
-    <HotKeys handlers={handlers} innerRef={innerRef} keyMap={keyMap}>
+    <HotKeys
+      allowChanges={true}
+      handlers={handlers}
+      innerRef={innerRef}
+      keyMap={keyMap}
+    >
       {children}
       <GlobalHotKeys />
     </HotKeys>
@@ -52,4 +83,7 @@ function Hotkeys({
 Hotkeys.displayName = 'Hotkeys';
 Hotkeys.propTypes = propTypes;
 
-export default Hotkeys;
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Hotkeys);
