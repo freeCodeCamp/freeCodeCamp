@@ -14,12 +14,12 @@ function NavLinks({ displayMenu }) {
         className={'nav-list' + (displayMenu ? ' display-flex' : '')}
         role='menu'
       >
-        <li className='nav-projects' role='menuitem'>
+        <li className='nav-news' role='menuitem'>
           <Link external={true} to='/news'>
             News
           </Link>
         </li>
-        <li className='nav-projects' role='menuitem'>
+        <li className='nav-forum' role='menuitem'>
           <Link external={true} to='/forum'>
             Forum
           </Link>
