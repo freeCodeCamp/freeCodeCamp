@@ -73,8 +73,6 @@
     "sanitize-html": "^1.20.0",
     "sass.js": "^0.11.0",
     "store": "^2.0.12",
-    "typeface-lato": "0.0.75",
-    "typeface-roboto-mono": "0.0.75",
     "validator": "^10.11.0"
   },
   "keywords": [
