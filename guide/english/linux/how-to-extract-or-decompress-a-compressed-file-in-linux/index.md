@@ -16,5 +16,5 @@ Step 2:
 2) To Decompress a zip file:<br>
 `unzip file-name.zip`
 
-3) To extract a file compresses with gunzip:
+3) To extract a file compresses with gunzip:<br>
 `gunzip file_name.gz`
