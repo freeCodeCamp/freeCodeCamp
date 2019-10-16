@@ -26,8 +26,8 @@ For example, if we wanted to create a red, 5 pixel border around an HTML element
 ## Instructions
 <section id='instructions'>
 Create a class called <code>thick-green-border</code>. This class should add a 10px, solid, green border around an HTML element. Apply the class to your cat photo.
-Remember that you can apply multiple classes to an element using its <code>class</code> attribute, by separating each class name with a space. For example:
-<code>&lt;img class="class1 class2"&gt;</code>
+Remember that you can apply multiple classes to an element using its <code>class</code> attribute by separating each class name with a space. For example:
+  <code>&lt;img class="class1 class2"&gt;</code> gives the <code>img</code> tag a class of <code>class1</code> and <code>class2</class2>.
 </section>
 
 ## Tests
