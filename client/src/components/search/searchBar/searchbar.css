@@ -30,7 +30,7 @@
 }
 
 .fcc_searchBar .ais-Hits {
-  top: 71px;
+  top: 70px;
   width: calc(100vw - 30px);
   left: 15px;
 }
@@ -122,7 +122,7 @@ and arrow keys */
   right: 15px;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 1000px) {
   .ais-SearchBox-input {
     width: 100%;
     max-width: 500px;
