@@ -88,7 +88,7 @@ Open a new browser tab or window and navigate to [http://localhost:8025](http://
 
 ![MailHog Screenshot 1](images/mailhog/1.jpg)
 
-Emails sent by your freeCodeCamp installation will appear as below
+Emails sent by your freeCodeCamp installation will appear as below.
 
 ![MailHog Screenshot 2](images/mailhog/2.jpg)
 
