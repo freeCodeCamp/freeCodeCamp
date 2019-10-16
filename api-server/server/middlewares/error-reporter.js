@@ -1,14 +1,9 @@
 import debug from 'debug';
-import Rollbar from 'rollbar';
 import {
   isHandledError,
   unwrapHandledError
 } from '../utils/create-handled-error.js';
 
-import { rollbar } from '../../../config/secrets';
-
-const { appId } = rollbar;
-const reporter = new Rollbar(appId);
 const log = debug('fcc:middlewares:error-reporter');
 
 const errTemplate = (error, req) => {
@@ -28,7 +23,7 @@ ${JSON.stringify(error, null, 2)}
 
 export function reportError(err) {
   return process.env.FREECODECAMP_NODE_ENV === 'production'
-    ? reporter.error(err.message, err)
+    ? console.error(err.message, err)
     : console.error(err);
 }
 

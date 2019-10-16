@@ -58,7 +58,6 @@
     "redux-actions": "^2.6.5",
     "redux-saga": "^0.16.0",
     "reselect": "^3.0.1",
-    "rollbar": "^2.11.0",
     "rss-parser": "^3.7.2",
     "rx": "^4.1.0",
     "shortid": "^2.2.14",

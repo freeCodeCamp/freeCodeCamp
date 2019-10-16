@@ -159,7 +159,6 @@ exports.onCreateWebpackConfig = ({ plugins, actions }) => {
           process.env.HOME_PATH || 'http://localhost:3000'
         ),
         STRIPE_PUBLIC_KEY: JSON.stringify(process.env.STRIPE_PUBLIC_KEY || ''),
-        ROLLBAR_CLIENT_ID: JSON.stringify(process.env.ROLLBAR_CLIENT_ID || ''),
         ENVIRONMENT: JSON.stringify(
           process.env.FREECODECAMP_NODE_ENV || 'development'
         ),
