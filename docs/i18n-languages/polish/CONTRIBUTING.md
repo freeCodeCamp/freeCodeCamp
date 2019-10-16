@@ -4,7 +4,7 @@ Cześć. 👋
 
 funkcjonowanie freeCodeCamp.org jest możliwe dzięki tysiącom życzliwych wolontariuszy takich jak Ty. Jesteśmy wdzięczni za Twój wkład i cieszymy się, że możemy Cię powitać na pokładzie.
 
-Ściśle egzekwujemy nasz [„Kodeks postępowania”] (https://www.freecodecamp.org/code-of-conduct). Poświęć chwilę, aby go przeczytać. Ma tylko 196 słów.
+Ściśle egzekwujemy nasz [„Kodeks postępowania”](https://www.freecodecamp.org/code-of-conduct). Poświęć chwilę, aby go przeczytać. Ma tylko 196 słów.
 
 Szczęsliwego rozwijania kodu open source!
 
@@ -15,7 +15,7 @@ Możesz przyczynić się do jednego z tych:
  
 1. [Przyczyniaj się do tej otwartej źródłowej bazy danych](#przyczyniaj się do tej otwartej źródłowej bazy danych). Pomóż nam edytować wyzwania związane z kodowaniem lub naprawiaj błędy na platformie edukacyjnej.. Pomóż nam edytować wyzwania związane z kodowaniem lub naprawiać błędy na platformie edukacyjnej.
 
-2. Pomoc dla kamperów na naszym [forum publicznym](https://www.freecodecamp.org/forum/). Odpowiedz na pytania dotyczące kodowania](https://www.freecodecamp.org/forum/?max_posts=1) lub [podaj im informacje zwrotne na temat ich projektów kodowania](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1).
+2. Pomoc dla kamperów na naszym [forum publicznym](https://www.freecodecamp.org/forum/). [Odpowiedz na pytania dotyczące kodowania](https://www.freecodecamp.org/forum/?max_posts=1) lub [podaj im informacje zwrotne na temat ich projektów kodowania](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1).
 
 3. Pomóż nam dodawać napisy (podpisy zamknięte) do naszych [Filmów na kanale YouTube](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ/videos).
 
@@ -69,7 +69,7 @@ Proszę nie tworzyć problemów z GitHub w sprawach bezpieczeństwa. Zamiast teg
 
 Nasi moderatorzy społeczności [triage](https://en.wikipedia.org/wiki/Software_bug#Bug_management) zgłaszają problemy i wnioski w oparciu o ich priorytet, dotkliwość i inne czynniki. Możesz [znaleźć kompletny słowniczek ich znaczeń tutaj](https://github.com/freecodecamp/freecodecamp/labels).
 
-Powinieneś przejść przez [**`pomocy poszukiwanej`**] (https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) lub [**`pierwsze timers welcome`**] (https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+welcome%22) w celu szybkiego przeglądu tego, nad czym możesz pracować. 
+Powinieneś przejść przez [**`help wanted`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) lub [**`first timers welcome`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+welcome%22) w celu szybkiego przeglądu tego, nad czym możesz pracować. 
 
 Są one do pobrania i nie musisz ubiegać się o pozwolenie przed rozpoczęciem pracy nad nimi. Jeśli te kwestie nie są jasne, co należy zrobić, nie krępuj się zadawać pytań w komentarzach.
 
