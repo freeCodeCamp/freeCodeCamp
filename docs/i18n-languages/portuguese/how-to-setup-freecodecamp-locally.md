@@ -397,7 +397,7 @@ Siga estes passos:
    docs: update contributing guidelines
    ```
 
-   Mantenha as mensagens curtas, não mais do que 50 caractéres. Você pode sempre adicionar informações na descrição da mensagem de _commit_.
+   Mantenha as mensagens curtas, não mais do que 50 caracteres. Você pode sempre adicionar informações na descrição da mensagem de _commit_.
 
    Isso não toma nenhum tempo adicional comparado à mensagens não convencionais como 'update file' or 'add index.md'
 
