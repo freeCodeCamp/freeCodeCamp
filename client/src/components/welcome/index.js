@@ -7,8 +7,12 @@ import { randomQuote } from '../../utils/get-words';
 
 import './welcome.css';
 
+// created outside the function, so that the quotes don't change unless the
+// page is reloaded.
+
+const { quote, author } = randomQuote();
+
 function Welcome({ name }) {
-  const { quote, author } = randomQuote();
   return (
     <Fragment>
       <Row>
