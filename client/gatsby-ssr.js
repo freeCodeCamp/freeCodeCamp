@@ -38,6 +38,12 @@ export const onRenderBody = ({ setHeadComponents, setPostBodyComponents }) => {
         `
         }}
         key='gtag-dataLayer'
+      />,
+      <script
+        async={true}
+        id='stripe-js'
+        key='stripe-js'
+        src='https://js.stripe.com/v3/'
       />
     ].filter(Boolean)
   );
