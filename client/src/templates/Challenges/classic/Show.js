@@ -105,6 +105,7 @@ class ShowClassic extends Component {
     };
 
     this.containerRef = React.createRef();
+    this.editorRef = React.createRef();
   }
   onResize() {
     this.setState({ resizing: true });
@@ -222,6 +223,7 @@ class ShowClassic extends Component {
       challengeFile && (
         <Editor
           containerRef={this.containerRef}
+          ref={this.editorRef}
           {...challengeFile}
           fileKey={challengeFile.key}
         />
@@ -259,6 +261,7 @@ class ShowClassic extends Component {
     } = this.props;
     return (
       <Hotkeys
+        editorRef={this.editorRef}
         executeChallenge={executeChallenge}
         innerRef={this.containerRef}
         introPath={introPath}

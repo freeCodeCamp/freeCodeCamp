@@ -20,6 +20,7 @@ const mapDispatchToProps = { setEditorFocusability };
 const keyMap = {
   NAVIGATION_MODE: 'escape',
   EXECUTE_CHALLENGE: ['ctrl+enter', 'command+enter'],
+  FOCUS_EDITOR: 'e',
   NAVIGATE_PREV: ['p'],
   NAVIGATE_NEXT: ['n']
 };
@@ -27,6 +28,7 @@ const keyMap = {
 const propTypes = {
   canFocusEditor: PropTypes.bool,
   children: PropTypes.any,
+  editorRef: PropTypes.object,
   executeChallenge: PropTypes.func,
   innerRef: PropTypes.any,
   introPath: PropTypes.string,
@@ -38,6 +40,7 @@ const propTypes = {
 function Hotkeys({
   canFocusEditor,
   children,
+  editorRef,
   executeChallenge,
   introPath,
   innerRef,
@@ -53,6 +56,12 @@ function Hotkeys({
       // should not be prevented in that case.
       e.preventDefault();
       if (executeChallenge) executeChallenge();
+    },
+    FOCUS_EDITOR: e => {
+      e.preventDefault();
+      if (editorRef && editorRef.current) {
+        editorRef.current.getWrappedInstance().focusOnEditor();
+      }
     },
     NAVIGATION_MODE: () => setEditorFocusability(false),
     NAVIGATE_PREV: () => {
