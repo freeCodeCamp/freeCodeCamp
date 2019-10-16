@@ -17,9 +17,9 @@ localeTitle: Adicionar cantos arredondados com raio de borda
 
 ```yml
 tests:
-  - text: Seu elemento de imagem deve ter a classe "borda verde espessa".
+  - text: Seu elemento de imagem deve ter a classe "thick-green-border".
     testString: assert($("img").hasClass("thick-green-border"));
-  - text: Sua imagem deve ter um raio de 10 <code>10px</code>
+  - text: Sua imagem deve ter uma borda com raio de <code>10px</code>
     testString: assert(parseInt($("img").css("border-top-left-radius")) > 8);
 
 ```
