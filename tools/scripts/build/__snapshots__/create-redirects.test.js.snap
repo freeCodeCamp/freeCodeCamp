@@ -12,7 +12,7 @@ https://freecodecamp-org.netlify.com/*        https://www.freecodecamp.org/:spla
 
 
 #api redirect
-/internal/*                                   https://api.example.com/internal/:splat 200
+/internal/*                                   https://api.example.com/internal/:splat 200!
 
 # pages
 /about                                        https://news.example.com/about 200
@@ -35,13 +35,13 @@ https://freecodecamp-org.netlify.com/*        https://www.freecodecamp.org/:spla
 /news/*                                       https://news.example.com/:splat 200
 
 # auth redirects
-/deprecated-signin                            https://api.example.com/signin 200
-/email-signin                                 https://api.example.com/signin 200
-/login                                        https://api.example.com/signin 200
-/logout                                       https://api.example.com/signout 200
-/passwordless-change                          https://api.example.com/confirm-email 200
-/signin                                       https://api.example.com/signin 200
-/signup                                       https://api.example.com/signin 200
+/deprecated-signin                            https://api.example.com/signin 200!
+/email-signin                                 https://api.example.com/signin 200!
+/login                                        https://api.example.com/signin 200!
+/logout                                       https://api.example.com/signout 200!
+/passwordless-change                          https://api.example.com/confirm-email 200!
+/signin                                       https://api.example.com/signin 200!
+/signup                                       https://api.example.com/signin 200!
 
 # certification redirects
 /:username/front-end-certification            /certification/:username/legacy-front-end 301
@@ -50,9 +50,9 @@ https://freecodecamp-org.netlify.com/*        https://www.freecodecamp.org/:spla
 /:username/full-stack-certification           /certification/:username/full-stack 301
 
 # unsubscribe redirects
-/u/*                                          https://api.example.com/u/:splat 200
-/ue/*                                         https://api.example.com/ue/:splat 200
-/unsubscribe/*                                https://api.example.com/unsubscribe/:splat 200
+/u/*                                          https://api.example.com/u/:splat 200!
+/ue/*                                         https://api.example.com/ue/:splat 200!
+/unsubscribe/*                                https://api.example.com/unsubscribe/:splat 200!
 
 # misc redirects
 /agile                                        / 301
