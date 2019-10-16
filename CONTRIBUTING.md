@@ -31,7 +31,7 @@ Our codebase has thousands of [coding challenges](https://learn.freecodecamp.org
 
 All our coding challenges are curated by the community, bringing in expert knowledge from volunteers like you.
 
-You can help expand them and make their wording better. You can also update the user stories to explain the concept better or remove redundant ones and improve the challenge tests to make them more accurately test people's code.
+You can help expand them and make their wording better. You can also update the user stories to explain the concept better, or remove redundant ones and improve the challenge tests to make them more accurately test people's code.
 
 **If you're interested in improving these coding challenges, here's [how to work on coding challenges](/docs/how-to-work-on-coding-challenges.md).**
 
@@ -83,10 +83,10 @@ For typos and other wording changes, you can directly open pull requests without
 
 ### How do I get an issue assigned to me?
 
-We typically do not assign issues to anyone other than long time contributors to avoid ambigious no-shows. Instead we follow the below policy to be fair to everyone:
+We typically do not assign issues to anyone other than long time contributors to avoid ambigious no-shows. Instead, we follow the below policy to be fair to everyone:
 
-1. The first pull-request for any issue is preffered to be merged.
-2. In case of multiple pull-requests for the same issue, we give priorty to quality of the code in the pull-requests. 
+1. The first pull-request for any issue is prefered to be merged.
+2. In case of multiple pull-requests for the same issue, we give priority to quality of the code in the pull-requests. 
    - Did you include tests? 
    - Did you catch all usecases?
    - Did you ensure all tests pass, and you confirmed everything works locally?
