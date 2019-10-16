@@ -24,6 +24,7 @@ import Flash from '../Flash';
 import Header from '../Header';
 import Footer from '../Footer';
 
+import './fonts.css';
 import './global.css';
 import './variables.css';
 
