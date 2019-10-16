@@ -7,14 +7,7 @@ Before extracting the data from a compressed file, you must first determine the 
 Step 1: To Know the file type<br>
 `file File-Name`
 
-Step 2: 
-1) To Decompress a tar file:<br>
+Step 2: To Decompress a tar file<br>
 `tar xvf File-Name -C /Directory-Location`
 
 `We Use (-C) for specific directory if we do not use (-C) then it automatically extract to current directory.`
-
-2) To Decompress a zip file:<br>
-`unzip file-name.zip`
-
-3) To extract a file compresses with gunzip:
-`gunzip file_name.gz`
