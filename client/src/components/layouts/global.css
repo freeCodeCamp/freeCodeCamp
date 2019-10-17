@@ -63,6 +63,7 @@ p {
 
 .big-heading {
   font-size: 2.5rem !important;
+  overflow-wrap: break-word;
 }
 
 .medium-heading {
@@ -257,6 +258,10 @@ input {
   border-radius: 0px;
 }
 
+textarea {
+  resize: vertical;
+}
+
 form {
   margin-bottom: 5px;
 }
@@ -405,6 +410,7 @@ blockquote .small {
 
 .alert {
   border-radius: 0px;
+  overflow-wrap: break-word;
 }
 
 /* gatsby 404 */

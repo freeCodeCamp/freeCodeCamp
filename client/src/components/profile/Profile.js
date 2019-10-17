@@ -70,7 +70,7 @@ function renderMessage(isSessionUser, username) {
   ) : (
     <Fragment>
       <FullWidthRow>
-        <h2 className='text-center'>
+        <h2 className='text-center' style={{ overflowWrap: 'break-word' }}>
           {username} has not made their portfolio public.
         </h2>
       </FullWidthRow>

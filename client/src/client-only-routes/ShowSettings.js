@@ -200,7 +200,9 @@ export function ShowSettings(props) {
             </Button>
           </FullWidthRow>
           <Spacer />
-          <h1 className='text-center'>{`Account Settings for ${username}`}</h1>
+          <h1 className='text-center' style={{ overflowWrap: 'break-word' }}>
+            {`Account Settings for ${username}`}
+          </h1>
           <About
             about={about}
             currentTheme={theme}
