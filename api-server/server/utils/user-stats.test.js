@@ -599,13 +599,12 @@ describe('user stats', () => {
         .then(user => {
           expect(user).toEqual(mockUser);
 
-          // fields added or removed by getUserById
-          expect(user).not.toHaveProperty('progressTimestamps');
+          expect(user).toHaveProperty('progressTimestamps');
           expect(user).toHaveProperty('completedChallengeCount');
           expect(user).toHaveProperty('completedProjectCount');
           expect(user).toHaveProperty('completedCertCount');
           expect(user).toHaveProperty('completedLegacyCertCount');
-          expect(user.completedChallenges).toEqual([]);
+          expect(user).toHaveProperty('completedChallenges');
         })
         .then(done)
         .catch(done);
