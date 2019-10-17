@@ -3,10 +3,6 @@
 |-|
 <!-- do not translate this -->
 
-> ### :warning: THIS GUIDE IS NOT LIVE YET. :warning:
-> The processes described here will come to effect in the upcoming version of freeCodeCamp.org.
-> Some parts of the guide are applicable on the beta application.
-
 # Developer Operations at freeCodeCamp.org
 
 Thanks for your interest in learning more about how we do DevOps for the platform at freeCodeCamp.org.
@@ -130,8 +126,8 @@ The code/config is publicly accessible on Azure's Dev Dashboard. Write access to
 | :----------- | :--------- | :---------: |
 | Client       | Beta/Next  | [![Azure Pipelines Deployment Status](https://vsrm.dev.azure.com/freeCodeCamp-org/_apis/public/Release/badge/4b80aded-11d9-49ea-9b7d-596e98ff07c4/4/8)](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release) |
 | API          | Beta/Next  | [![Azure Pipelines Deployment Status](https://vsrm.dev.azure.com/freeCodeCamp-org/_apis/public/Release/badge/4b80aded-11d9-49ea-9b7d-596e98ff07c4/4/9)](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release) |
-| Client       | Production | [![Azure Pipelines Deployment Status](https://vsrm.dev.azure.com/freeCodeCamp-org/_apis/public/Release/badge/4b80aded-11d9-49ea-9b7d-596e98ff07c4/4/12)](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release) |
-| API          | Production | [![Azure Pipelines Deployment Status](https://vsrm.dev.azure.com/freeCodeCamp-org/_apis/public/Release/badge/4b80aded-11d9-49ea-9b7d-596e98ff07c4/4/11)](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release) |
+| Client       | Production | [![Azure Pipelines Deployment Status](https://vsrm.dev.azure.com/freeCodeCamp-org/_apis/public/Release/badge/4b80aded-11d9-49ea-9b7d-596e98ff07c4/4/13)](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release) |
+| API          | Production | Manual Deployments - Status Not Available |
 
 ## Known Limitations
 

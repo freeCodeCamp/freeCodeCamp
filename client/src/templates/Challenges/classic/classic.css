@@ -27,6 +27,10 @@
   font-size: 0.8em;
 }
 
+#challenge-page-tabs .nav-tabs > li > a:hover {
+  color: var(--gray-85);
+}
+
 #challenge-page-tabs .tab-content {
   height: calc(100vh - var(--header-height, 0px) - 69px);
   overflow-y: auto;
