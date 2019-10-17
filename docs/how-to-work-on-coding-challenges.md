@@ -304,6 +304,26 @@ function myFunc() {
 </details>
 ````
 
+## Testing Challenges
+
+Before you [create a pull request](how-to-open-a-pull-request.md) for your changes, you need to validate that the changes you have made do not inadvertently cause problems with the challenge.  To test all challenges run `npm run test:curriculum`. To save time you can limit the tests to one challenge by performing the following steps:
+
+1. In the `.env` file, set the environment variable `TEST_CHALLENGES_FOR_LANGS` to the language of the challenge(s) you need to test.  The currently accepted values are `english`, `arabic`, `chinese`, `portuguese`, `russian` and `spanish`.
+
+2.  Switch to the `curriculum` directory:
+
+```
+  cd curriculum
+```
+
+3. Run the following for each challenge file for which you have changed any `testString`s or added solutions:
+
+```
+npm run test -- -g 'the full English title of the challenge'
+```
+    
+Once you have verified that each challenge you've worked on passes the tests, please create a pull request.
+
 ### Useful Links
 
 Creating and Editing Challenges:
