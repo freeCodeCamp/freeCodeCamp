@@ -20,8 +20,6 @@ const mapStateToProps = createSelector(
   })
 );
 
-const MathJax = global.MathJax;
-
 const propTypes = {
   description: PropTypes.string,
   guideUrl: PropTypes.string,
@@ -36,6 +34,7 @@ const propTypes = {
 
 export class SidePanel extends Component {
   componentDidMount() {
+    const MathJax = global.MathJax;
     if (MathJax) {
       MathJax.Hub.Config({
         tex2jax: {

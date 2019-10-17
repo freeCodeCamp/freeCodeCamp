@@ -67,6 +67,7 @@ const metaKeywords = [
 ];
 
 const propTypes = {
+  cdnInfo: PropTypes.object,
   children: PropTypes.node.isRequired,
   fetchUser: PropTypes.func.isRequired,
   flashMessage: PropTypes.shape({
@@ -144,7 +145,8 @@ class DefaultLayout extends Component {
       isSignedIn,
       removeFlashMessage,
       showFooter = true,
-      theme = 'default'
+      theme = 'default',
+      cdnInfo
     } = this.props;
     return (
       <Fragment>
