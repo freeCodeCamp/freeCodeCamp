@@ -48,6 +48,7 @@ class DonateModal extends Component {
       stripe: null
     };
     this.renderMaybe = this.renderMaybe.bind(this);
+    this.handleStripeLoad = this.handleStripeLoad.bind(this);
   }
   componentDidMount() {
     if (window.Stripe) {
@@ -63,7 +64,6 @@ class DonateModal extends Component {
 
   handleStripeLoad() {
     // Create Stripe instance once Stripe.js loads
-    console.info('stripe has loaded');
     this.setState(state => ({
       ...state,
       stripe: window.Stripe(stripePublicKey)
