@@ -388,6 +388,18 @@ pre {
   color: var(--danger-color);
 }
 
+.has-error .form-control,
+.has-warning .form-control,
+.has-success .form-control {
+  border-color: var(--quaternary-background);
+}
+
+.has-error .form-control:focus,
+.has-warning .form-control:focus,
+.has-success .form-control:focus {
+  border-color: var(--tertiary-color);
+}
+
 .panel-primary {
   border-color: var(--primary-color);
 }
