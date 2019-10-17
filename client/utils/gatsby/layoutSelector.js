@@ -21,7 +21,7 @@ export default function layoutSelector({ element, props }) {
     console.log('Hitting guide for some reason. Need a redirect.');
   }
   if (/^\/learn\/coding-interview-prep\/rosetta-code(\/.*)*/.test(pathname)) {
-    const mathjax = {
+    const cdnInfo = {
       address:
         'https://cdnjs.cloudflare.com/ajax/libs/mathjax/' +
         '2.7.4/MathJax.js?config=TeX-AMS_HTML',
@@ -29,7 +29,7 @@ export default function layoutSelector({ element, props }) {
       type: 'text/javascript'
     };
     return (
-      <DefaultLayout cdnInfo={mathjax} pathname={pathname} showFooter={false}>
+      <DefaultLayout cdnInfo={cdnInfo} pathname={pathname} showFooter={false}>
         {element}
       </DefaultLayout>
     );

@@ -137,6 +137,7 @@ class DefaultLayout extends Component {
   };
 
   render() {
+    const MathJax = global.MathJax;
     const {
       children,
       hasMessage,

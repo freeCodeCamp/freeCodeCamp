@@ -33,8 +33,8 @@ const propTypes = {
 };
 
 export class SidePanel extends Component {
-  componentDidMount() {
-    const MathJax = global.MathJax;
+  async componentDidMount() {
+    const MathJax = await global.MathJax;
     if (MathJax) {
       MathJax.Hub.Config({
         tex2jax: {
