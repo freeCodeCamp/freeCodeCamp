@@ -10,6 +10,7 @@ import TestSuite from './Test-Suite';
 import { challengeTestsSelector, isChallengeCompletedSelector } from '../redux';
 import { createSelector } from 'reselect';
 import './side-panel.css';
+import { mathJaxScriptLoader } from '../../../utils/scriptLoaders';
 
 const mapStateToProps = createSelector(
   isChallengeCompletedSelector,
@@ -33,9 +34,28 @@ const propTypes = {
 };
 
 export class SidePanel extends Component {
-  async componentDidMount() {
-    const MathJax = await global.MathJax;
+  constructor(...props) {
+    super(...props);
+    this.state = {
+      MathJax: global.MathJax
+    };
+    this.handleMathJaxLoad = this.handleMathJaxLoad.bind(this);
+  }
+
+  handleMathJaxLoad() {
+    console.info('MathJax has loaded');
+    this.setState(state => ({
+      ...state,
+      MathJax: global.MathJax
+    }));
+  }
+
+  componentDidMount() {
+    const { MathJax } = this.state;
+    const mathJaxMountPoint = document.querySelector('#mathjax');
+    const rosettaCodeChallenge = this.props.section === 'rosetta-code';
     if (MathJax) {
+      // Configure MathJax loaded through Gatsby SSR
       MathJax.Hub.Config({
         tex2jax: {
           inlineMath: [['$', '$'], ['\\(', '\\)']],
@@ -48,6 +68,17 @@ export class SidePanel extends Component {
         MathJax.Hub,
         document.querySelector('.rosetta-code')
       ]);
+    } else if (mathJaxMountPoint && rosettaCodeChallenge) {
+      mathJaxMountPoint.addEventListener('load', this.handleMathJaxLoad);
+    } else if (rosettaCodeChallenge) {
+      mathJaxScriptLoader(this.handleMathJaxLoad);
+    }
+  }
+
+  componentWillUnmount() {
+    const mathJaxMountPoint = document.querySelector('#mathjax');
+    if (mathJaxMountPoint) {
+      mathJaxMountPoint.removeEventListener('load', this.handleMathJaxLoad);
     }
   }
 

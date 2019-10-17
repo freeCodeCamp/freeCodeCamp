@@ -104,14 +104,6 @@ const mapDispatchToProps = dispatch =>
     dispatch
   );
 
-const mathJaxCdn = {
-  address:
-    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/' +
-    '2.7.4/MathJax.js?config=TeX-AMS_HTML',
-  key: 'mathjax',
-  type: 'text/javascript'
-};
-
 class DefaultLayout extends Component {
   componentDidMount() {
     const { isSignedIn, fetchUser, pathname } = this.props;
@@ -153,14 +145,8 @@ class DefaultLayout extends Component {
       isSignedIn,
       removeFlashMessage,
       showFooter = true,
-      theme = 'default',
-      pathname
+      theme = 'default'
     } = this.props;
-    const MathJax = global.MathJax;
-    const rosettaCodeChallenge = pathname.includes(
-      '/coding-interview-prep/rosetta-code/'
-    );
-    console.log(rosettaCodeChallenge);
     return (
       <Fragment>
         <Helmet
@@ -219,13 +205,6 @@ class DefaultLayout extends Component {
             rel='preload'
             type='font/woff'
           />
-          {!MathJax && rosettaCodeChallenge ? (
-            <script
-              key={mathJaxCdn.key}
-              src={mathJaxCdn.address}
-              type={mathJaxCdn.type}
-            ></script>
-          ) : null}
           <style>{fontawesome.dom.css()}</style>
         </Helmet>
         <WithInstantSearch>
