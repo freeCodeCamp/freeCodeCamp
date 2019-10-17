@@ -28,15 +28,14 @@ which stands for change directory.
 
 Here is a list of common commands:
 
-Command | Usage
------------- | -------------
-pwd | Print Working Directory (Where Am I? )
-ls | List contents of current directory
-mkdir | Create a new directory
-touch | Create a new file
-cp| Copy a file 
-rm | Remove a file 
-rm -rf | Remove a directory 
+1) pwd: Print Working Directory (Where Am I? )
+2) ls: List contents of current directory (Many options can also be used to show specififc data. Check the ls man page)
+3) mkdir: Create a new directory
+4) touch: Create a new file
+5) cp: Copy a file 
+6) rm: Remove a file 
+7) rm -rf: Remove a directory 
+8) man: Shows info and usage of any command
 
 ### Usage Examples
 
@@ -67,6 +66,12 @@ For example, if we have a file, _'test.txt'_ that is stored in our _/Desktop_ di
 Use the following syntax to delete a file 
 
 **rm _#PATH_TO_FILE_**
+
+#### Learning More
+One can use the man command to get info on and how to use any specific command. It's syntax is as follows:
+`man command_name`
+Example:
+`man ls`
 
 #### Detect which process is using the port you want to use
 ``` lsof -i :<PORT> ```
