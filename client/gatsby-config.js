@@ -6,18 +6,12 @@ const {
   localeChallengesRootDir
 } = require('./utils/buildChallenges');
 
-const { API_PROXY: proxyUrl = 'http://localhost:3000' } = process.env;
-
 const curriculumIntroRoot = path.resolve(__dirname, './src/pages');
 
 module.exports = {
   siteMetadata: {
     title: 'freeCodeCamp',
     siteUrl: 'https://www.freecodecamp.org'
-  },
-  proxy: {
-    prefix: '/internal',
-    url: proxyUrl
   },
   plugins: [
     'gatsby-plugin-react-helmet',

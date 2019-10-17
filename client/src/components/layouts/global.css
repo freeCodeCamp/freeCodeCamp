@@ -63,6 +63,7 @@ p {
 
 .big-heading {
   font-size: 2.5rem !important;
+  overflow-wrap: break-word;
 }
 
 .medium-heading {
@@ -257,6 +258,10 @@ input {
   border-radius: 0px;
 }
 
+textarea {
+  resize: vertical;
+}
+
 form {
   margin-bottom: 5px;
 }
@@ -383,6 +388,18 @@ pre {
   color: var(--danger-color);
 }
 
+.has-error .form-control,
+.has-warning .form-control,
+.has-success .form-control {
+  border-color: var(--quaternary-background);
+}
+
+.has-error .form-control:focus,
+.has-warning .form-control:focus,
+.has-success .form-control:focus {
+  border-color: var(--tertiary-color);
+}
+
 .panel-primary {
   border-color: var(--primary-color);
 }
@@ -405,6 +422,7 @@ blockquote .small {
 
 .alert {
   border-radius: 0px;
+  overflow-wrap: break-word;
 }
 
 /* gatsby 404 */
