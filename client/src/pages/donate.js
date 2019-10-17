@@ -12,7 +12,11 @@ import DonateOther from '../components/Donation/components/DonateOther';
 import DonateForm from '../components/Donation/components/DonateForm';
 import DonateText from '../components/Donation/components/DonateText';
 import PoweredByStripe from '../components/Donation/components/poweredByStripe';
-import { signInLoadingSelector, isSignedInSelector, hardGoTo } from '../redux';
+import {
+  signInLoadingSelector,
+  isSignedInSelector,
+  hardGoTo as navigate
+} from '../redux';
 
 const mapStateToProps = createSelector(
   signInLoadingSelector,
@@ -23,9 +27,9 @@ const mapStateToProps = createSelector(
   })
 );
 
-const mapDispatchToProps = dispatch => ({
-  navigate: location => dispatch(hardGoTo(location))
-});
+const mapDispatchToProps = {
+  navigate
+};
 
 const propTypes = {
   isSignedIn: PropTypes.bool.isRequired,
