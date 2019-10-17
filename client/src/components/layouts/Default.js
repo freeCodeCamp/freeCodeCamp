@@ -67,7 +67,6 @@ const metaKeywords = [
 ];
 
 const propTypes = {
-  cdnInfo: PropTypes.object,
   children: PropTypes.node.isRequired,
   fetchUser: PropTypes.func.isRequired,
   flashMessage: PropTypes.shape({
@@ -98,11 +97,20 @@ const mapStateToProps = createSelector(
     theme: user.theme
   })
 );
+
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     { fetchUser, removeFlashMessage, onlineStatusChange },
     dispatch
   );
+
+const mathJaxCdn = {
+  address:
+    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/' +
+    '2.7.4/MathJax.js?config=TeX-AMS_HTML',
+  key: 'mathjax',
+  type: 'text/javascript'
+};
 
 class DefaultLayout extends Component {
   componentDidMount() {
@@ -137,7 +145,6 @@ class DefaultLayout extends Component {
   };
 
   render() {
-    const MathJax = global.MathJax;
     const {
       children,
       hasMessage,
@@ -147,8 +154,13 @@ class DefaultLayout extends Component {
       removeFlashMessage,
       showFooter = true,
       theme = 'default',
-      cdnInfo
+      pathname
     } = this.props;
+    const MathJax = global.MathJax;
+    const rosettaCodeChallenge = pathname.includes(
+      '/coding-interview-prep/rosetta-code/'
+    );
+    console.log(rosettaCodeChallenge);
     return (
       <Fragment>
         <Helmet
@@ -207,6 +219,13 @@ class DefaultLayout extends Component {
             rel='preload'
             type='font/woff'
           />
+          {!MathJax && rosettaCodeChallenge ? (
+            <script
+              key={mathJaxCdn.key}
+              src={mathJaxCdn.address}
+              type={mathJaxCdn.type}
+            ></script>
+          ) : null}
           <style>{fontawesome.dom.css()}</style>
         </Helmet>
         <WithInstantSearch>

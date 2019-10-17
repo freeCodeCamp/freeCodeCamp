@@ -20,20 +20,6 @@ export default function layoutSelector({ element, props }) {
   if (/^\/guide(\/.*)*/.test(pathname)) {
     console.log('Hitting guide for some reason. Need a redirect.');
   }
-  if (/^\/learn\/coding-interview-prep\/rosetta-code(\/.*)*/.test(pathname)) {
-    const cdnInfo = {
-      address:
-        'https://cdnjs.cloudflare.com/ajax/libs/mathjax/' +
-        '2.7.4/MathJax.js?config=TeX-AMS_HTML',
-      key: 'mathjax',
-      type: 'text/javascript'
-    };
-    return (
-      <DefaultLayout cdnInfo={cdnInfo} pathname={pathname} showFooter={false}>
-        {element}
-      </DefaultLayout>
-    );
-  }
   if (/^\/learn(\/.*)*/.test(pathname)) {
     return (
       <DefaultLayout pathname={pathname} showFooter={false}>
