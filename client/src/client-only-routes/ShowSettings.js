@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Grid, Button } from '@freecodecamp/react-bootstrap';
@@ -11,7 +10,7 @@ import {
   signInLoadingSelector,
   userSelector,
   isSignedInSelector,
-  hardGoTo
+  hardGoTo as navigate
 } from '../redux';
 import { submitNewAbout, updateUserFlag, verifyCert } from '../redux/settings';
 import { createFlashMessage } from '../components/Flash/redux';
@@ -28,7 +27,6 @@ import DangerZone from '../components/settings/DangerZone';
 
 const propTypes = {
   createFlashMessage: PropTypes.func.isRequired,
-  hardGoTo: PropTypes.func.isRequired,
   isSignedIn: PropTypes.bool.isRequired,
   navigate: PropTypes.func.isRequired,
   showLoading: PropTypes.bool.isRequired,
@@ -98,32 +96,26 @@ const mapStateToProps = createSelector(
   })
 );
 
-const mapDispatchToProps = dispatch =>
-  bindActionCreators(
-    {
-      createFlashMessage,
-      hardGoTo,
-      navigate: location => dispatch(hardGoTo(location)),
-      submitNewAbout,
-      toggleNightMode: theme => updateUserFlag({ theme }),
-      updateInternetSettings: updateUserFlag,
-      updateIsHonest: updateUserFlag,
-      updatePortfolio: updateUserFlag,
-      updateQuincyEmail: sendQuincyEmail => updateUserFlag({ sendQuincyEmail }),
-      verifyCert
-    },
-    dispatch
-  );
+const mapDispatchToProps = {
+  createFlashMessage,
+  navigate,
+  submitNewAbout,
+  toggleNightMode: theme => updateUserFlag({ theme }),
+  updateInternetSettings: updateUserFlag,
+  updateIsHonest: updateUserFlag,
+  updatePortfolio: updateUserFlag,
+  updateQuincyEmail: sendQuincyEmail => updateUserFlag({ sendQuincyEmail }),
+  verifyCert
+};
 
-const createHandleSignoutClick = hardGoTo => e => {
+const createHandleSignoutClick = navigate => e => {
   e.preventDefault();
-  return hardGoTo(`${apiLocation}/signout`);
+  return navigate(`${apiLocation}/signout`);
 };
 
 export function ShowSettings(props) {
   const {
     createFlashMessage,
-    hardGoTo,
     isSignedIn,
     submitNewAbout,
     toggleNightMode,
@@ -194,7 +186,7 @@ export function ShowSettings(props) {
               bsStyle='primary'
               className='btn-invert'
               href={'/signout'}
-              onClick={createHandleSignoutClick(hardGoTo)}
+              onClick={createHandleSignoutClick(navigate)}
             >
               Sign me out of freeCodeCamp
             </Button>
