@@ -14,6 +14,7 @@ import {
   closeDonationModal,
   isDonationModalOpenSelector
 } from '../../../redux';
+import { stripeScriptLoader } from '../../../utils/scriptLoaders';
 
 import PoweredByStripe from './poweredByStripe';
 import DonateText from './DonateText';
@@ -50,20 +51,29 @@ class DonateModal extends Component {
   }
   componentDidMount() {
     if (window.Stripe) {
-      /* eslint-disable react/no-did-mount-set-state */
-      this.setState(state => ({
-        ...state,
-        stripe: window.Stripe(stripePublicKey)
-      }));
+      this.handleStripeLoad();
+    } else if (document.querySelector('#stripe-js')) {
+      document
+        .querySelector('#stripe-js')
+        .addEventListener('load', this.handleStripeLoad);
     } else {
-      document.querySelector('#stripe-js').addEventListener('load', () => {
-        // Create Stripe instance once Stripe.js loads
-        console.info('stripe has loaded');
-        this.setState(state => ({
-          ...state,
-          stripe: window.Stripe(stripePublicKey)
-        }));
-      });
+      stripeScriptLoader(this.handleStripeLoad);
+    }
+  }
+
+  handleStripeLoad() {
+    // Create Stripe instance once Stripe.js loads
+    console.info('stripe has loaded');
+    this.setState(state => ({
+      ...state,
+      stripe: window.Stripe(stripePublicKey)
+    }));
+  }
+
+  componentWillUnmount() {
+    const stripeMountPoint = document.querySelector('#stripe-js');
+    if (stripeMountPoint) {
+      stripeMountPoint.removeEventListener('load', this.handleStripeLoad);
     }
   }
 
