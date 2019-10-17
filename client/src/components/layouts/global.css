@@ -95,6 +95,10 @@ p {
   text-align: center !important;
 }
 
+.social-media-icons {
+  margin-top: 1em;
+}
+
 .green-text {
   color: var(--secondary-color);
 }
