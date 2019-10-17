@@ -8,7 +8,7 @@
 
 [freeCodeCamp.org](https://www.freecodecamp.org) es una comunidad amigable donde puedes aprender a programar gratis. Es administrado por una organización sin fines de lucro respaldada por donantes ([donor-supported 501(c)(3) nonprofit](https://donate.freecodecamp.org)) y cuyo objetivo es ayudar a millones de adultos en la transición laboral a campos vinculados con la tecnología. Nuestra comunidad ya ha ayudado a más de 10,000 de personas a obtener su primer trabajo como desarrolladores.
 
-Nuestro plan de estudios de desarrollo web full-stack es completamente gratuito y cada uno puede hacerlo a su propio ritmo. Tenemos miles de desafíos inteactivos de programación para ayudarte a expandir tus habilidades.
+Nuestro plan de estudios de desarrollo web full-stack es completamente gratuito y cada uno puede hacerlo a su propio ritmo. Tenemos miles de desafíos interactivos de programación para ayudarte a expandir tus habilidades.
 
 ## Índice
 
@@ -105,7 +105,7 @@ Una vez que hayas obtenido las 6 de estas certificaciones,podrás reclamar tu ce
 
 #### Legacy Certifications
 
-Además contamos con 3 certificaciones legacy de nuestro plan de estudios del 2015, las cuales todavía se encuentran vigentes. Todos los proyectos requeridos para dichas certificaciones legacy permanecerán disponibles en freeCodeCamp.org.
+Además contamos con 3 certificaciones de legacía de nuestro plan de estudios del 2015, las cuales todavía se encuentran vigentes. Todos los proyectos requeridos para dichas certificaciones legacy permanecerán disponibles en freeCodeCamp.org.
 
 - Certificación Legacy de Desarrollo Front End
 - Certificación Legacy de Visualización de Datos
@@ -119,7 +119,7 @@ Nuestra comunidad además cuenta con:
 
 - Un [foro](https://www.freecodecamp.org/forum) donde a menudo puedes obtener ayuda en temas de programación o feedback sobre tus proyectos en cuestión de horas.
 - Un [canal de YouTube](https://youtube.com/freecodecamp) con cursos gratuitos sobre Python, SQL, Android, y una gran variedad de otras tecnologías.
-- Un [podcast](https://podcast.freecodecamp.org/) con noticias sobre tecnología e inspiradoras historias sobre programadores.
+- Un [podcast](https://podcast.freecodecamp.org/) con noticias sobre tecnología e historias inspiradoras sobre programadores.
 - [Grupos de estudio locales](https://study-group-directory.freecodecamp.org/) alrededor del mundo, para que puedas reunirte y programar junto con otras personas.
 - Una completa [guía de miles de temas de programación](https://guide.freecodecamp.org/)
 - La [publicación técnica más extensa](https://medium.freecodecamp.org) de Medium.
@@ -133,7 +133,7 @@ Si piensas que encontraste un bug, primero lee [How to Report a Bug](https://www
 
 ### Encontraste un problema de seguridad?
 
-Por favor, no crees un ticket en GitHub sobre problemas de seguridad. En cambio, envía un correo electrónico a `security @ freecodecamp.org` y lo veremos de inmediato.
+Por favor, no crees un ticket en GitHub sobre problemas de seguridad. En cambio, envía un correo electrónico a `security @ freecodecamp.org` y lo revisaremos de inmediato.
 
 ### Contribuciones
 
