@@ -105,6 +105,7 @@ class Editor extends Component {
     };
 
     this._editor = null;
+    this.focusOnEditor = this.focusOnEditor.bind(this);
   }
 
   editorWillMount = monaco => {
@@ -145,6 +146,10 @@ class Editor extends Component {
     }
   }
 
+  focusOnEditor() {
+    this._editor.focus();
+  }
+
   onChange = editorValue => {
     const { updateFile, fileKey } = this.props;
     updateFile({ key: fileKey, editorValue });
@@ -179,7 +184,11 @@ class Editor extends Component {
 Editor.displayName = 'Editor';
 Editor.propTypes = propTypes;
 
+// NOTE: withRef gets replaced by forwardRef in react-redux 6,
+// https://github.com/reduxjs/react-redux/releases/tag/v6.0.0
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
+  null,
+  { withRef: true }
 )(Editor);

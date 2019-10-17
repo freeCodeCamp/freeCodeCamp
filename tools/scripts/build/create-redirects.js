@@ -27,8 +27,13 @@ const template = `
 # WARNING: The order of this list is very important.
 #
 
+# domain mappings
+https://freecodecamp-dev.netlify.com/*        https://www.freecodecamp.dev/:splat 301!
+https://freecodecamp-org.netlify.com/*        https://www.freecodecamp.org/:splat 301!
+
+
 #api redirect
-/internal/*                                   #{{API}}/internal/:splat 200
+/internal/*                                   #{{API}}/internal/:splat 200!
 
 # pages
 /about                                        #{{NEWS}}/about 200
@@ -51,13 +56,13 @@ const template = `
 /news/*                                       #{{NEWS}}/:splat 200
 
 # auth redirects
-/deprecated-signin                            #{{API}}/signin 200
-/email-signin                                 #{{API}}/signin 200
-/login                                        #{{API}}/signin 200
-/logout                                       #{{API}}/signout 200
-/passwordless-change                          #{{API}}/confirm-email 200
-/signin                                       #{{API}}/signin 200
-/signup                                       #{{API}}/signin 200
+/deprecated-signin                            #{{API}}/signin 200!
+/email-signin                                 #{{API}}/signin 200!
+/login                                        #{{API}}/signin 200!
+/logout                                       #{{API}}/signout 200!
+/passwordless-change                          #{{API}}/confirm-email 200!
+/signin                                       #{{API}}/signin 200!
+/signup                                       #{{API}}/signin 200!
 
 # certification redirects
 /:username/front-end-certification            /certification/:username/legacy-front-end 301
@@ -66,9 +71,9 @@ const template = `
 /:username/full-stack-certification           /certification/:username/full-stack 301
 
 # unsubscribe redirects
-/u/*                                          #{{API}}/u/:splat 200
-/ue/*                                         #{{API}}/ue/:splat 200
-/unsubscribe/*                                #{{API}}/unsubscribe/:splat 200
+/u/*                                          #{{API}}/u/:splat 200!
+/ue/*                                         #{{API}}/ue/:splat 200!
+/unsubscribe/*                                #{{API}}/unsubscribe/:splat 200!
 
 # misc redirects
 /agile                                        / 301
