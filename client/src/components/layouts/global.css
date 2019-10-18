@@ -228,8 +228,11 @@ fieldset[disabled] .btn-primary.focus {
   border: none;
   text-decoration: underline;
   background: transparent;
+  padding: 0;
 }
-.btn-link:hover {
+.btn-link:hover,
+.btn-link:focus,
+.btn-link:focus:active {
   background: var(--tertiary-background);
   text-decoration: none;
   color: inherit;
