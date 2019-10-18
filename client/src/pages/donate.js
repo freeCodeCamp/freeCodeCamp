@@ -48,6 +48,7 @@ export class DonatePage extends Component {
     this.handleStripeLoad = this.handleStripeLoad.bind(this);
     this.toggleOtherOptions = this.toggleOtherOptions.bind(this);
   }
+
   componentDidMount() {
     if (window.Stripe) {
       this.handleStripeLoad();
@@ -64,6 +65,27 @@ export class DonatePage extends Component {
     const stripeMountPoint = document.querySelector('#stripe-js');
     if (stripeMountPoint) {
       stripeMountPoint.removeEventListener('load', this.handleStripeLoad);
+
+      // Remove stacking Stripe iframes when navigating away from /donate
+      const config = { attributes: false, childList: true, subtree: false };
+
+      const filterNodes = nl =>
+        Array.from(nl)
+          .filter(b => b.nodeName === 'IFRAME')
+          .filter(b => b.name.match(/__privateStripe/g));
+
+      const mutationCallback = a =>
+        a
+          .reduce(
+            (acc, curr) =>
+              curr.type === 'childList'
+                ? [...acc, ...filterNodes(curr.addedNodes)]
+                : acc,
+            []
+          )
+          .forEach(a => a.remove());
+
+      new MutationObserver(mutationCallback).observe(document.body, config);
     }
   }
 
