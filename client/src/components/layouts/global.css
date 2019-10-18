@@ -223,13 +223,18 @@ fieldset[disabled] .btn-primary.focus {
   background-image: none;
   box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.3);
 }
-.btn-link {
+.btn-link,
+.btn-link:focus,
+.btn-link:active {
   color: inherit;
   border: none;
   text-decoration: underline;
   background: transparent;
+  padding: 0;
+  outline: 0;
 }
-.btn-link:hover {
+.btn-link:hover,
+.btn-link:focus:active {
   background: var(--tertiary-background);
   text-decoration: none;
   color: inherit;
