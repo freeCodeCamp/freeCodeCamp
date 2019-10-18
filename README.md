@@ -125,7 +125,6 @@ Our community also has:
 - A [podcast](https://podcast.freecodecamp.org/) with technology insights and inspiring stories from developers.
 - A [Developer News](https://www.freecodecamp.org/news) publication, a free, open source, no-ads place to cross-post your blog articles.
 
-
 > ### [Join our community here](https://www.freecodecamp.org/signin).
 
 ### Reporting Bugs and Issues
