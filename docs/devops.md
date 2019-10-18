@@ -41,6 +41,45 @@ The dev-team merges changes from the `master` branch to `production-staging` whe
 
 The dev-team merges changes from the `production-staging` branch to `production-current` when they release changes. The top commit should be what you see live on the site. You can identify the exact version deployed by visiting the build and deployment logs available below in the status section.
 
+## Provisioning VMs with API Code and Startup commands
+
+1. Install Node LTS.
+
+2. Update `npm` and install PM2 and setup logrotate and startup on boot 
+   
+   ```
+   npm i -g npm
+   npm i -g pm2
+   pm2 install pm2-logrotate   
+   pm2 startup
+   ```
+   
+3. Clone freeCodeCamp, setup env and keys, install dependencies, and make first build.
+   
+   ```
+   npm run ensure-env && npm run build:server
+   ```
+
+4. Start Instances  
+
+   ```
+   cd api-server 
+   pm2 start production-start.js -i max --max-memory-restart 600M --name org
+   ```
+5. Logging, Monitoring and Reloading on updates to code changes
+
+   ```
+   pm2 logs
+   ```
+   
+   ```
+   pm2 monitor
+   ```
+   
+   ```
+   pm2 reload all --update-env && pm2 logs
+   ```
+
 ## Build and Deployment Status
 
 We use Azure Pipelines and other CI software (Travis, GitHub Actions), to continuously test and deploy our applications.
