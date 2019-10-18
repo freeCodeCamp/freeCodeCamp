@@ -27,7 +27,7 @@ An example is `fix(learn): Fixed tests for the do...while loop challenge`.
 
 2. By default, all pull requests should be against the freeCodeCamp main repo, `master` branch.
 
-    Make sure that your Base Fork is set to freeCodeCamp/freeCodeCamp when raising a Pull Request.
+    Make sure that your Base Fork is set to freeCodeCamp/freeCodeCamp when raising a pull request.
 
     ![Image - Comparing forks when making a pull request](/docs/images/github/comparing-forks-for-pull-request.png)
 
