@@ -24,7 +24,6 @@ const propTypes = {
 class InternetSettings extends Component {
   constructor(props) {
     super(props);
-
     const {
       githubProfile = '',
       linkedin = '',
@@ -36,6 +35,30 @@ class InternetSettings extends Component {
       formValues: { githubProfile, linkedin, twitter, website },
       originalValues: { githubProfile, linkedin, twitter, website }
     };
+  }
+
+  componentDidUpdate() {
+    const {
+      githubProfile = '',
+      linkedin = '',
+      twitter = '',
+      website = ''
+    } = this.props;
+
+    const { originalValues } = this.state;
+
+    if (
+      githubProfile !== originalValues.githubProfile ||
+      linkedin !== originalValues.linkedin ||
+      twitter !== originalValues.twitter ||
+      website !== originalValues.website
+    ) {
+      /* eslint-disable-next-line react/no-did-update-set-state */
+      return this.setState({
+        originalValues: { githubProfile, linkedin, twitter, website }
+      });
+    }
+    return null;
   }
 
   getValidationStateFor(maybeURl = '') {
@@ -66,7 +89,20 @@ class InternetSettings extends Component {
   };
 
   isFormValid = () => {
-    const { formValues } = this.state;
+    const { formValues, originalValues } = this.state;
+    const valueReducer = obj => {
+      return Object.values(obj).reduce(
+        (acc, cur) => (acc ? acc : cur !== ''),
+        false
+      );
+    };
+
+    let formHasValues = valueReducer(formValues);
+    let OriginalHasValues = valueReducer(originalValues);
+
+    // check if user had values but wants to delete them all
+    if (OriginalHasValues && !formHasValues) return true;
+
     return Object.keys(formValues).reduce((bool, key) => {
       const maybeUrl = formValues[key];
       return maybeUrl ? isURL(maybeUrl) : bool;
@@ -76,10 +112,17 @@ class InternetSettings extends Component {
   handleSubmit = e => {
     e.preventDefault();
     if (!this.isFormPristine() && this.isFormValid()) {
-      // Only submit the form if is has changed, and if it is valid
+      // // Only submit the form if is has changed, and if it is valid
       const { formValues } = this.state;
+      const isSocial = {
+        isGithub: !!formValues.githubProfile,
+        isLinkedIn: !!formValues.linkedin,
+        isTwitter: !!formValues.twitter,
+        isWebsite: !!formValues.website
+      };
+
       const { updateInternetSettings } = this.props;
-      return updateInternetSettings(formValues);
+      return updateInternetSettings({ ...isSocial, ...formValues });
     }
     return null;
   };
@@ -146,10 +189,7 @@ class InternetSettings extends Component {
               />
             </FormGroup>
             <BlockSaveButton
-              disabled={
-                this.isFormPristine() ||
-                (!this.isFormPristine() && !this.isFormValid())
-              }
+              disabled={this.isFormPristine() || !this.isFormValid()}
             />
           </form>
         </FullWidthRow>
