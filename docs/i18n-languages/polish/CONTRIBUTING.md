@@ -1,4 +1,4 @@
-# Wytyczne dotyczące twojego wkładu 
+# Wytyczne dotyczące twojego wkładu w FreeCodeCamp
 
 Cześć. 👋
 
@@ -8,7 +8,7 @@ funkcjonowanie freeCodeCamp.org jest możliwe dzięki tysiącom życzliwych wolo
 
 Szczęsliwego rozwijania kodu open source!
 
-## Oto kilka zabawnych sposobów, które możesz pomóc
+## Oto kilka zabawnych sposobów, w które możesz pomóc
 
 Możesz przyczynić się do jednego z tych:
 
@@ -25,9 +25,9 @@ Nasza baza danych zawiera tysiące [wyzwań związanych z kodowaniem](https://le
 
 ##### Twórz, aktualizuj i naprawiaj błędy w naszych wyzwaniach związanych z kodowaniem.
 
-Wszystkie nasze wyzwania związane z kodowaniem są obsługiwane przez społeczność, dostarczając specjalistyczną wiedzę od wolontariuszy takich jak Ty.
+Wszystkie nasze wyzwania związane z kodowaniem są obsługiwane przez społeczność, dostarczającą specjalistyczną wiedzę od wolontariuszy takich jak Ty.
 
-Możesz pomóc je rozszerzyć i poprawić ich brzmienie. Możesz również aktualizować historie użytkowników, aby lepiej wyjaśnić koncepcję lub usunąć zbędne i poprawić testy wyzwań, aby uczynić je dokładniej testować kod ludzi.
+Możesz pomóc je rozszerzyć i poprawić ich brzmienie. Możesz również aktualizować historie użytkowników, aby lepiej wyjaśnić koncepcję lub usunąć zbędne i poprawić testy wyzwań, aby lepiej testowały kod ludzi.
 
 **Jeśli jesteś zainteresowany poprawą tych wyzwań związanych z kodowaniem, oto [jak pracować nad wyzwaniami związanymi z kodowaniem](/docs/how-to-work-on-coding-challenges.md).**
 
@@ -40,8 +40,7 @@ Ogólnie rzecz biorąc,
 - Mamy serwer API oparty na Node.js.
 - Zestaw aplikacji klienckich opartych na React.
 - Skrypt, którego używamy do oceny naszych projektów front-end.
-
-Przyczynienie się do tego wymaga trochę zrozumienia API, ES6 Syntax, i wiele ciekawości.
+rozwijanie naszego stacku wymaga trochę zrozumienia API, ES6 Syntax, i chęci nauki.
 
 Zasadniczo oczekujemy podstawowej znajomości niektórych z wyżej wymienionych technologii, narzędzi i bibliotek. Biorąc to pod uwagę, nie jesteście zobowiązani do bycia ekspertem w tym zakresie, aby móc wnieść swój wkład.
 
