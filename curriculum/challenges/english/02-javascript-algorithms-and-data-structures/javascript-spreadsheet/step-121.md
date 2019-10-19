@@ -33,7 +33,7 @@ Add a function `nodups` to `spreadsheetFunctions`, with the value `arr => arr.re
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(spreadsheetFunctions.nodups.toString().replace(/\s/g, "") === "arr=>arr.reduce((a,x)=>a.includes(x),[])");
+    testString: assert(/nodups['"]?:arr=>arr\.reduce\(\(a,x\)=>a\.includes\(x\),\[\]\)/.test(code.replace(/\s/g, "")))
 
 ```
 
@@ -241,7 +241,7 @@ const spreadsheetFunctions = {
   lasttwo: arr => arr.slice(-2),
   even: nums => nums.filter(isEven),
   sum: nums => nums.reduce((a, x) => a + x),
-  has2: arr => arr.includes(2)
+  has2: arr => arr.includes(2),
   nodups: arr => arr.reduce((a, x) => a.includes(x), [])
 };
 

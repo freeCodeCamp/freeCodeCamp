@@ -240,7 +240,7 @@ const average = nums => sum(nums) / nums.length;
 const median = nums => {
   const sorted = nums.slice().sort((x, y) => x - y);
   const length = sorted.length;
-  const middle = sorted.length / 2 - 1;
+  const middle = length / 2 - 1;
   return isEven(length);
 }; 
 
