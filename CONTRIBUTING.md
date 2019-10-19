@@ -17,13 +17,13 @@ Happy contributing.
 
 You can contribute to any of these:
 
-1. [Contribute to this open source codebase](#contribute-to-this-open-source-codebase). Help us edit coding challenges, or fix bugs on the learning platform.
+1. [Contribute to this open-source codebase](#contribute-to-this-open-source-codebase). Help us edit coding challenges, or fix bugs on the learning platform.
 
 2. Help campers on our [public forum](https://www.freecodecamp.org/forum/). [Answer their coding questions](https://www.freecodecamp.org/forum/?max_posts=1) or [give them feedback on their coding projects](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1).
 
 3. Help us add subtitles (closed captions) to our [YouTube channel videos](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ/videos).
 
-## Contribute to this open source codebase
+## Contribute to this open-source codebase
 
 Our codebase has thousands of [coding challenges](https://learn.freecodecamp.org) and other source code that power our learning platform.
 
@@ -42,12 +42,12 @@ Our learning platform runs on a modern JavaScript stack. It has various componen
 Broadly,
 
 - We have a Node.js based API server.
-- A set of React based client applications.
+- A set of React-based client applications.
 - A script that we use to evaluate our front-end projects.
 
 Contributing to this requires some understanding of APIs, ES6 Syntax, and a lot of curiosity.
 
-Essentially, we expect basic familiarity with some of the aforementioned technologies, tools, and libraries. With that being said, you are not required to be an expert on them in order to contribute.
+Essentially, we expect basic familiarity with some of the aforementioned technologies, tools, and libraries. With that being said, you are not required to be an expert on them to contribute.
 
 **If you want to help us improve our codebase, you can either [set up freeCodeCamp locally](/docs/how-to-setup-freecodecamp-locally.md) or use Gitpod, a free online dev environment.**
 
@@ -83,14 +83,14 @@ For typos and other wording changes, you can directly open pull requests without
 
 ### How do I get an issue assigned to me?
 
-We typically do not assign issues to anyone other than long time contributors to avoid ambigious no-shows. Instead we follow the below policy to be fair to everyone:
+We typically do not assign issues to anyone other than long-time contributors to avoid ambiguous no-shows. Instead, we follow the below policy to be fair to everyone:
 
-1. The first pull-request for any issue is preffered to be merged.
-2. In case of multiple pull-requests for the same issue, we give priorty to quality of the code in the pull-requests. 
+1. The first pull-request for any issue is preferred to be merged.
+2. In the case of multiple pull-requests for the same issue, we give priority to the quality of the code in the pull-requests. 
    - Did you include tests? 
-   - Did you catch all usecases?
+   - Did you catch all use-cases?
    - Did you ensure all tests pass, and you confirmed everything works locally?
-3. Finally we favor pull-requests which follow our recomended guidelines. 
+3. Finally, we favor pull-requests which follow our recommended guidelines. 
    - Did you follow the pull-request checklist? 
    - Did you name your pull-request title meaningfully?
 
