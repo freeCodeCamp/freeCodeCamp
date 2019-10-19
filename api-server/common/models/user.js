@@ -983,6 +983,12 @@ export default function(User) {
   });
 
   User.prototype.getPoints$ = function getPoints$() {
+    if (
+      Array.isArray(this.progressTimestamps) &&
+      this.progressTimestamps.length
+    ) {
+      return Observable.of(this.progressTimestamps);
+    }
     const id = this.getId();
     const filter = {
       where: { id },
@@ -994,6 +1000,12 @@ export default function(User) {
     });
   };
   User.prototype.getCompletedChallenges$ = function getCompletedChallenges$() {
+    if (
+      Array.isArray(this.completedChallenges) &&
+      this.completedChallenges.length
+    ) {
+      return Observable.of(this.completedChallenges);
+    }
     const id = this.getId();
     const filter = {
       where: { id },

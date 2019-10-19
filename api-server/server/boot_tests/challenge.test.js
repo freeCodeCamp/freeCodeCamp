@@ -28,7 +28,7 @@ import {
 } from './fixtures';
 
 describe('boot/challenge', () => {
-  xdescribe('backendChallengeCompleted');
+  xdescribe('backendChallengeCompleted', () => {});
 
   describe('buildUserUpdate', () => {
     it('returns an Object with a nested "completedChallenges" property', () => {
@@ -332,9 +332,9 @@ describe('boot/challenge', () => {
     });
   });
 
-  xdescribe('modernChallengeCompleted');
+  xdescribe('modernChallengeCompleted', () => {});
 
-  xdescribe('projectCompleted');
+  xdescribe('projectCompleted', () => {});
 
   describe('redirectToCurrentChallenge', () => {
     const mockHomeLocation = 'https://www.example.com';

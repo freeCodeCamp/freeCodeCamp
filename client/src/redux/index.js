@@ -311,9 +311,11 @@ export const reducer = handleActions(
       }
     }),
     [types.submitComplete]: (state, { payload: { id, challArray } }) => {
-      let submitedchallneges = [{ id }];
+      // TODO: possibly more of the payload (files?) should be added
+      // to the completedChallenges array.
+      let submittedchallenges = [{ id, completedDate: Date.now() }];
       if (challArray) {
-        submitedchallneges = challArray;
+        submittedchallenges = challArray;
       }
       const { appUsername } = state;
       return {
@@ -325,7 +327,7 @@ export const reducer = handleActions(
             ...state.user[appUsername],
             completedChallenges: uniqBy(
               [
-                ...submitedchallneges,
+                ...submittedchallenges,
                 ...state.user[appUsername].completedChallenges
               ],
               'id'

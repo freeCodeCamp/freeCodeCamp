@@ -23,6 +23,16 @@ import OfflineWarning from '../OfflineWarning';
 import Flash from '../Flash';
 import Header from '../Header';
 import Footer from '../Footer';
+// preload common fonts
+import latoLightURL from '../../../static/fonts/lato/Lato-Light.woff';
+import latoRegularURL from '../../../static/fonts/lato/Lato-Regular.woff';
+import latoBoldURL from '../../../static/fonts/lato/Lato-Bold.woff';
+// eslint-disable-next-line max-len
+import robotoRegularURL from '../../../static/fonts/roboto-mono/RobotoMono-Regular.woff';
+// eslint-disable-next-line max-len
+import robotoBoldURL from '../../../static/fonts/roboto-mono/RobotoMono-Bold.woff';
+// eslint-disable-next-line max-len
+import robotoItalicURL from '../../../static/fonts/roboto-mono/RobotoMono-Italic.woff';
 
 import './fonts.css';
 import './global.css';
@@ -152,6 +162,48 @@ class DefaultLayout extends Component {
             { name: 'keywords', content: metaKeywords.join(', ') }
           ]}
         >
+          <link
+            as='font'
+            crossOrigin='anonymous'
+            href={latoRegularURL}
+            rel='preload'
+            type='font/woff'
+          />
+          <link
+            as='font'
+            crossOrigin='anonymous'
+            href={latoLightURL}
+            rel='preload'
+            type='font/woff'
+          />
+          <link
+            as='font'
+            crossOrigin='anonymous'
+            href={latoBoldURL}
+            rel='preload'
+            type='font/woff'
+          />
+          <link
+            as='font'
+            crossOrigin='anonymous'
+            href={robotoRegularURL}
+            rel='preload'
+            type='font/woff'
+          />
+          <link
+            as='font'
+            crossOrigin='anonymous'
+            href={robotoBoldURL}
+            rel='preload'
+            type='font/woff'
+          />
+          <link
+            as='font'
+            crossOrigin='anonymous'
+            href={robotoItalicURL}
+            rel='preload'
+            type='font/woff'
+          />
           <style>{fontawesome.dom.css()}</style>
         </Helmet>
         <WithInstantSearch>
