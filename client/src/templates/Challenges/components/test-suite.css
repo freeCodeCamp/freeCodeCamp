@@ -1,0 +1,33 @@
+.challenge-test-suite {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin: 15px 0;
+}
+
+.test-result {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.test-result:nth-child(odd) {
+  background-color: var(--tertiary-background);
+}
+
+.test-output {
+  padding: 5px 10px;
+}
+
+.test-status-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 60px;
+  min-height: 60px;
+}
+
+.test-status-icon > svg {
+  width: 40px;
+  height: 40px;
+}

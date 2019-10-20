@@ -1,0 +1,102 @@
+{
+  "name": "article",
+  "plural": "articles",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "shortId": {
+      "type": "string",
+      "required": true
+    },
+    "slugPart": {
+      "type": "string",
+      "required": true,
+      "description": "A kebab-case-string created from the title, will have the shortId appended to it"
+    },
+    "meta": {
+      "type": "object",
+      "default": {},
+      "description": "A place to keep the referral link and read time"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "author": {
+      "type": "object",
+      "required": true
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "featureImage": {
+      "type": "object"
+    },
+    "draft": {
+      "type": "string",
+      "required": true
+    },
+    "renderableContent": {
+      "type": "string"
+    },
+    "youtubeId": {
+      "type": "string",
+      "description": "A youtube video id eg: 'EErY9zXGLNU'"
+    },
+    "published": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "featured": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "underReview": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "viewCount": {
+      "type": "number",
+      "required": true,
+      "default": 1
+    },
+    "firstPublishedDate": {
+      "type": "date"
+    },
+    "createdDate": {
+      "type": "date",
+      "required": true
+    },
+    "lastEditedDate": {
+      "type": "date",
+      "required": true
+    },
+    "history": {
+      "type": [
+        "object"
+      ],
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": "externalId"
+    },
+    "popularity": {
+      "type": "hasOne",
+      "model": "popularity",
+      "foreignKey": "popularityId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

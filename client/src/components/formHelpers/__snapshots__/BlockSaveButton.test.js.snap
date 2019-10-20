@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BlockSaveButton /> snapshot 1`] = `
+<button
+  className="btn btn-primary btn-block"
+  disabled={false}
+  type="submit"
+>
+  Save
+</button>
+`;

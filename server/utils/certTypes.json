@@ -1,6 +1,0 @@
-{
-  "frontEnd": "isFrontEndCert",
-  "backEnd": "isBackEndCert",
-  "dataVis": "isDataVisCert",
-  "fullStack": "isFullStackCert"
-}

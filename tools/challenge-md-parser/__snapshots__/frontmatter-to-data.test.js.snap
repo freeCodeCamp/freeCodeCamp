@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`frontmatter-to-data plugin should have an output to match the snapshot 1`] = `
+Object {
+  "challengeType": 0,
+  "id": "bd7123c8c441eddfaeb5bdef",
+  "title": "Say Hello to HTML Elements",
+  "videoUrl": "https://scrimba.com/p/pVMPUv/cE8Gpt2",
+}
+`;

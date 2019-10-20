@@ -1,0 +1,27 @@
+#learn-app-wrapper .desktop-layout {
+  height: calc(100vh - var(--header-height, 0px));
+}
+
+#learn-app-wrapper .reflex-container.vertical > .reflex-splitter,
+#learn-app-wrapper .reflex-container.horizontal > .reflex-splitter {
+  background-color: var(--quaternary-background);
+  border: none;
+}
+
+#learn-app-wrapper .reflex-container.vertical > .reflex-splitter:hover,
+#learn-app-wrapper .reflex-container.horizontal > .reflex-splitter:hover {
+  background-color: var(--quaternary-color);
+}
+
+#learn-app-wrapper .reflex-container.vertical > .reflex-splitter {
+  width: 5px;
+}
+
+#learn-app-wrapper .reflex-container.horizontal > .reflex-splitter {
+  height: 5px;
+}
+
+#description p,
+#instructions p {
+  font-family: 'Lato', sans-serif;
+}

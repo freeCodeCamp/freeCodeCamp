@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: http://www.freecodecamp.com/sitemap.xml

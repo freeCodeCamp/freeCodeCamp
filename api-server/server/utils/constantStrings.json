@@ -1,0 +1,15 @@
+{
+  "gitHubUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1521.3 Safari/537.36",
+
+  "legacyFrontEndChallengeId": "561add10cb82ac38a17513be",
+  "legacyBackEndChallengeId": "660add10cb82ac38a17513be",
+  "legacyDataVisId": "561add10cb82ac39a17513bc",
+
+  "respWebDesignId": "561add10cb82ac38a17513bc",
+  "frontEndLibsId": "561acd10cb82ac38a17513bc",
+  "dataVis2018Id": "5a553ca864b52e1d8bceea14",
+  "jsAlgoDataStructId": "561abd10cb81ac38a17513bc",
+  "apisMicroservicesId": "561add10cb82ac38a17523bc",
+  "infosecQaId": "561add10cb82ac38a17213bc",
+  "fullStackId": "561add10cb82ac38a17213bd"
+}

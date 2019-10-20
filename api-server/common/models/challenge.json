@@ -1,0 +1,139 @@
+{
+  "name": "challenge",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "trackChanges": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true
+    },
+    "name": {
+      "type": "string",
+      "index": {
+        "mongodb": {
+          "unique": true,
+          "background": true
+        }
+      }
+    },
+    "title": {
+      "type": "string"
+    },
+    "order": {
+      "type": "number"
+    },
+    "suborder": {
+      "type": "number"
+    },
+    "checksum": {
+      "type": "number"
+    },
+    "isBeta": {
+      "type": "boolean",
+      "description": "Show only during dev or on beta site. Completely omitted otherwise"
+    },
+    "isComingSoon": {
+      "type": "boolean",
+      "description": "Challenge shows in production, but is unreachable and disabled. Is reachable in beta/dev only if isBeta flag is set"
+    },
+    "dashedName": {
+      "type": "string"
+    },
+    "superBlock": {
+      "type": "string",
+      "description": "Used for ordering challenge blocks in map"
+    },
+    "superOrder": {
+      "type": "number",
+      "description": "Used to determine super block order, set by prepending two digit number to super block folder name"
+    },
+    "block": {
+      "type": "string"
+    },
+    "difficulty": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "tests": {
+      "type": "array"
+    },
+    "head": {
+      "type": "string",
+      "description": "Appended to user code",
+      "default": ""
+    },
+    "tail": {
+      "type": "string",
+      "description": "Prepended to user code",
+      "default": ""
+    },
+    "helpRoom": {
+      "type": "string",
+      "description": "Gitter help chatroom this challenge belongs too. Must be PascalCase",
+      "default": "Help"
+    },
+    "fileName": {
+      "type": "string",
+      "description": "Filename challenge comes from. Used in dev mode"
+    },
+    "challengeSeed": {
+      "type": "array"
+    },
+    "challengeType": {
+      "type": "number"
+    },
+    "solutions": {
+      "type": "array",
+      "default": []
+    },
+    "guideUrl": {
+      "type": "string",
+      "description": "Used to link to an article in the FCC guide"
+    },
+    "required": {
+      "type": [
+        {
+          "type": {
+            "link": {
+              "type": "string",
+              "description": "Used for css files"
+            },
+            "src": {
+              "type": "string",
+              "description": "Used for script files"
+            },
+            "crossDomain": {
+              "type": "boolean",
+              "description": "Files coming from freeCodeCamp must mark this true"
+            }
+          }
+        }
+      ],
+      "default": []
+    },
+    "template": {
+      "type": "string",
+      "description": "A template to render the compiled challenge source into. This template uses template literal delimiter, i.e. ${ foo }"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}
