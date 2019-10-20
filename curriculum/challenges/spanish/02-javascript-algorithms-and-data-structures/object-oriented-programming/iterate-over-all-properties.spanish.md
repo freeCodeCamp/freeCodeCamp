@@ -6,10 +6,29 @@ videoUrl: ''
 localeTitle: Iterar sobre todas las propiedades
 ---
 
-## Description
-<section id="description"> Ahora ha visto dos tipos de propiedades: propiedades <code>own</code> y propiedades <code>prototype</code> . <code>Own</code> propiedades <code>Own</code> se definen directamente en la instancia del objeto en sí. Y las propiedades del <code>prototype</code> se definen en el <code>prototype</code> . <blockquote> función Bird (nombre) { <br> this.name = nombre; //propia propiedad <br> } <br><br> Bird.prototype.numLegs = 2; // propiedad prototipo <br><br> dejar pato = nuevo pájaro (&quot;Donald&quot;); </blockquote> Aquí es cómo se agregan las propiedades <code>own</code> <code>duck</code> a la matriz <code>ownProps</code> y las propiedades de <code>prototype</code> a la matriz <code>prototypeProps</code> : <blockquote> dejemos ownProps = []; <br> vamos prototypeProps = []; <br><br> para (dejar propiedad en pato) { <br> if (duck.hasOwnProperty (propiedad)) { <br> ownProps.push (propiedad); <br> } else { <br> prototypeProps.push (propiedad); <br> } <br> } <br><br> console.log (ownProps); // imprime [&quot;nombre&quot;] <br> console.log (prototypeProps); // imprime [&quot;numLegs&quot;] </blockquote></section>
+## Descrición
+<section id="description"> Ahora ha visto dos tipos de propiedades: propiedades <code>own</code> y propiedades <code>prototype</code> . <code>Own</code> propiedades <code>Own</code> se definen directamente en la instancia del objeto en sí. Y las propiedades del <code>prototype</code> se definen en el <code>prototype</code> .
+<pre><code>función Bird (nombre) {
+  this.name = nombre; //propia propiedad
+}
 
-## Instructions
+Bird.prototype.numLegs = 2; // propiedad prototipo
+
+dejar pato = nuevo pájaro ('Donald');</code></pre>
+Aquí es cómo se agregan las propiedades <code>own</code> <code>duck</code> a la matriz <code>ownProps</code> y las propiedades de <code>prototype</code> a la matriz <code>prototypeProps</code> :
+<pre><code>let ownProps = [];
+let prototypeProps = [];
+for (let propiedad in pato) {
+  if (duck.hasOwnProperty (propiedad)) {
+    ownProps.push (propiedad);
+  } else {
+    prototypeProps.push (propiedad);
+  }
+}
+console.log (ownProps); // imprime ['nombre']
+console.log (prototypeProps); // imprime ['numLegs']</code></pre></section>
+
+## Instrucciones
 <section id="instructions"> Agregue todas las propiedades <code>own</code> de <code>beagle</code> a la matriz <code>ownProps</code> . Agregue todas las propiedades <code>prototype</code> de <code>Dog</code> a la matriz <code>prototypeProps</code> . </section>
 
 ## Tests
