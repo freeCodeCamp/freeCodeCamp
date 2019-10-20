@@ -1,6 +1,7 @@
 import React, { Fragment, Component } from 'react';
 import PropTypes from 'prop-types';
 import {
+  HelpBlock,
   FormControl,
   FormGroup,
   ControlLabel
@@ -40,12 +41,23 @@ class InternetSettings extends Component {
 
   getValidationStateFor(maybeURl = '') {
     if (!maybeURl || !maybeUrlRE.test(maybeURl)) {
-      return null;
+      return {
+        state: null,
+        message: ''
+      };
     }
     if (isURL(maybeURl)) {
-      return 'success';
+      return {
+        state: 'success',
+        message: ''
+      };
     }
-    return 'error';
+    return {
+      state: 'error',
+      message:
+        'We could not validate your URL correctly, ' +
+        'please ensure it is correct'
+    };
   }
 
   createHandleChange = key => e => {
@@ -88,6 +100,27 @@ class InternetSettings extends Component {
     const {
       formValues: { githubProfile, linkedin, twitter, website }
     } = this.state;
+
+    const {
+      state: githubProfileValidation,
+      message: githubProfileValidationMessage
+    } = this.getValidationStateFor(githubProfile);
+
+    const {
+      state: linkedinValidation,
+      message: linkedinValidationMessage
+    } = this.getValidationStateFor(linkedin);
+
+    const {
+      state: twitterValidation,
+      message: twitterValidationMessage
+    } = this.getValidationStateFor(twitter);
+
+    const {
+      state: websiteValidation,
+      message: websiteValidationMessage
+    } = this.getValidationStateFor(website);
+
     return (
       <Fragment>
         <SectionHeader>Your Internet Presence</SectionHeader>
@@ -95,55 +128,59 @@ class InternetSettings extends Component {
           <form id='internet-presence' onSubmit={this.handleSubmit}>
             <FormGroup
               controlId='internet-github'
-              validationState={this.getValidationStateFor(githubProfile)}
+              validationState={githubProfileValidation}
             >
-              <ControlLabel>
-                <strong>GitHub</strong>
-              </ControlLabel>
+              <ControlLabel>GitHub</ControlLabel>
               <FormControl
                 onChange={this.createHandleChange('githubProfile')}
                 type='url'
                 value={githubProfile}
               />
+              {githubProfileValidationMessage ? (
+                <HelpBlock>{githubProfileValidationMessage}</HelpBlock>
+              ) : null}
             </FormGroup>
             <FormGroup
               controlId='internet-linkedin'
-              validationState={this.getValidationStateFor(linkedin)}
+              validationState={linkedinValidation}
             >
-              <ControlLabel>
-                <strong>LinkedIn</strong>
-              </ControlLabel>
+              <ControlLabel>LinkedIn</ControlLabel>
               <FormControl
                 onChange={this.createHandleChange('linkedin')}
                 type='url'
                 value={linkedin}
               />
+              {linkedinValidationMessage ? (
+                <HelpBlock>{linkedinValidationMessage}</HelpBlock>
+              ) : null}
             </FormGroup>
             <FormGroup
               controlId='internet-picture'
-              validationState={this.getValidationStateFor(twitter)}
+              validationState={twitterValidation}
             >
-              <ControlLabel>
-                <strong>Twitter</strong>
-              </ControlLabel>
+              <ControlLabel>Twitter</ControlLabel>
               <FormControl
                 onChange={this.createHandleChange('twitter')}
                 type='url'
                 value={twitter}
               />
+              {twitterValidationMessage ? (
+                <HelpBlock>{twitterValidationMessage}</HelpBlock>
+              ) : null}
             </FormGroup>
             <FormGroup
               controlId='internet-website'
-              validationState={this.getValidationStateFor(website)}
+              validationState={websiteValidation}
             >
-              <ControlLabel>
-                <strong>Personal Website</strong>
-              </ControlLabel>
+              <ControlLabel>Personal Website</ControlLabel>
               <FormControl
                 onChange={this.createHandleChange('website')}
                 type='url'
                 value={website}
               />
+              {websiteValidationMessage ? (
+                <HelpBlock>{websiteValidationMessage}</HelpBlock>
+              ) : null}
             </FormGroup>
             <BlockSaveButton
               disabled={
