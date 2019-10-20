@@ -101,7 +101,7 @@ La única excepción a esto es en caso en que descubramos una violación a nuest
 
 #### Certificación de Desarrollo Full Stack
 
-Una vez que hayas obtenido las 6 de estas certificaciones,podrás reclamar tu certificación de Desarrollo Full Stack de freeCodeCamp.org. Esta última distinción significa que has completado aproximadamente 1,800 horas de programación con una amplia gama de herramientas de desarrollo web.
+Una vez que hayas obtenido las 6 de estas certificaciones, podrás reclamar tu certificación de Desarrollo Full Stack de freeCodeCamp.org. Esta última distinción significa que has completado aproximadamente 1,800 horas de programación con una amplia gama de herramientas de desarrollo web.
 
 #### Legacy Certifications
 
@@ -129,7 +129,7 @@ Nuestra comunidad además cuenta con:
 
 ### Encontraste un bug?
 
-Si piensas que encontraste un bug, primero lee [How to Report a Bug](https://www.freecodecamp.org/forum/t/how-to-report-a-bug/19543) y sigue las instrucciones. Si estás seguro de que es un bug nuevo y has confirmado que afecta a otras personas, continúa y crea un ticket en GitHub. Asegúrate de incluir tanta información como sea posible para poder reproducir el bug..
+Si piensas que encontraste un bug, primero lee [How to Report a Bug](https://www.freecodecamp.org/forum/t/how-to-report-a-bug/19543) y sigue las instrucciones. Si estás seguro de que es un bug nuevo y has confirmado que afecta a otras personas, continúa y crea un ticket en GitHub. Asegúrate de incluir tanta información como sea posible para poder reproducir el bug.
 
 ### Encontraste un problema de seguridad?
 
