@@ -106,10 +106,9 @@ class SearchBar extends Component {
       return window.location.assign(selectedHit.url);
     } else if (!query) {
       // Set query to value in search bar if enter is pressed
-      query = e.currentTarget.children[0].value;
+      query = e.currentTarget.children[0].value.trim();
     }
     updateSearchQuery(query);
-
     // For Learn search results page
     // return navigate('/search');
 
