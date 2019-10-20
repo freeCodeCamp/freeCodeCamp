@@ -14,11 +14,10 @@ import {
 } from '@freecodecamp/react-bootstrap';
 import { injectStripe } from 'react-stripe-elements';
 
-import { apiLocation } from '../../../../config/env.json';
 import Spacer from '../../../components/helpers/Spacer';
 import StripeCardForm from './StripeCardForm';
 import DonateCompletion from './DonateCompletion';
-import { postJSON$ } from '../../../templates/Challenges/utils/ajax-stream.js';
+import { postChargeStripe } from '../../../utils/ajax';
 import { userSelector, isSignedInSelector } from '../../../redux';
 
 const propTypes = {
@@ -123,34 +122,40 @@ class DonateForm extends Component {
       }
     }));
 
-    const chargeStripePath = isSignedIn
-      ? `${apiLocation}/internal/donate/charge-stripe`
-      : `${apiLocation}/unauthenticated/donate/charge-stripe`;
-    return postJSON$(chargeStripePath, {
+    return postChargeStripe(isSignedIn, {
       token,
       amount
-    }).subscribe(
-      res =>
+    })
+      .then(response => {
+        const data = response && response.data;
         this.setState(state => ({
           ...state,
           donationState: {
             ...state.donationState,
             processing: false,
             success: true,
-            error: res.error
+            error: data.error ? data.error : null
           }
-        })),
-      err =>
+        }));
+      })
+      .catch(error => {
+        const data =
+          error.response && error.response.data
+            ? error.response.data
+            : {
+                error:
+                  'Something is not right. Please contact team@freecodecamp.org'
+              };
         this.setState(state => ({
           ...state,
           donationState: {
             ...state.donationState,
             processing: false,
             success: false,
-            error: err.error
+            error: data.error
           }
-        }))
-    );
+        }));
+      });
   }
 
   resetDonation() {
