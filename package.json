@@ -39,6 +39,7 @@
     "seed": "npm-run-all -p seed:*",
     "seed:auth-user": "cross-env DEBUG=fcc:* node ./tools/scripts/seed/seedAuthUser",
     "seed:challenges": "cross-env DEBUG=fcc:* node ./tools/scripts/seed/seedChallenges",
+    "serve:client": "cd ./client && npm run serve",
     "test": "npm-run-all -p test:*",
     "test:client": "cd ./client && npm test && cd ../",
     "test:curriculum": "cd ./curriculum && npm test && cd ../",

@@ -1,7 +1,15 @@
+import { apiLocation } from '../../config/env.json';
+
 import axios from 'axios';
 
-const base = '/internal';
+const base = apiLocation + '/internal';
+const baseUnauthenticated = apiLocation + '/unauthenticated';
+
 axios.defaults.withCredentials = true;
+
+export function postUnauthenticated(path, body) {
+  return axios.post(`${baseUnauthenticated}${path}`, body);
+}
 
 function get(path) {
   return axios.get(`${base}${path}`);
@@ -42,6 +50,13 @@ export function getArticleById(shortId) {
 }
 
 /** POST **/
+export function postChargeStripe(isSignedIn, body) {
+  const donatePath = '/donate/charge-stripe';
+  return isSignedIn
+    ? post(donatePath, body)
+    : postUnauthenticated(donatePath, body);
+}
+
 export function putUpdateLegacyCert(body) {
   return post('/update-my-projects', body);
 }

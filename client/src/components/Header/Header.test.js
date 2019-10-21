@@ -23,16 +23,16 @@ describe('<NavLinks />', () => {
     return acc;
   }, []);
 
-  const expectedLinks = ['/learn', '/portfolio'];
+  const expectedLinks = ['/learn', '/portfolio', '/news', '/forum'];
 
   it('renders to the DOM', () => {
     expect(root).toBeTruthy();
   });
   it('has 2 links', () => {
-    expect(aTags.length === 2).toBeTruthy();
+    expect(aTags.length === 4).toBeTruthy();
   });
 
-  it('has links to learn and portfolio', () => {
+  it('has links to news, forum, learn and portfolio', () => {
     // checks if all links in expected links exist in links
     expect(expectedLinks.every(elem => links.indexOf(elem) > -1)).toBeTruthy();
   });

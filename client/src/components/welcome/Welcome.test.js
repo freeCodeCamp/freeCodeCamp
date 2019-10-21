@@ -16,7 +16,9 @@ describe('<Welcome />', () => {
     const shallow = new ShallowRenderer();
     shallow.render(<LearnPage {...loggedInProps} />);
     const result = shallow.getRenderOutput();
-    expect(result.type.displayName === 'LearnLayout').toBeTruthy();
+    expect(
+      result.type.WrappedComponent.displayName === 'LearnLayout'
+    ).toBeTruthy();
   });
 
   it('has a header', () => {

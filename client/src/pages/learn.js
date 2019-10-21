@@ -14,7 +14,7 @@ import {
 
 import LearnLayout from '../components/layouts/Learn';
 import Login from '../components/Header/components/Login';
-import { Link, Spacer, Loader } from '../components/helpers';
+import { Link, Spacer } from '../components/helpers';
 import Map from '../components/Map';
 import Welcome from '../components/welcome';
 import { dasherize } from '../../../utils/slugs';
@@ -80,7 +80,6 @@ const hashValueSelector = (state, hash) => {
 };
 
 export const LearnPage = ({
-  fetchState: { pending, complete },
   location: { hash = '', state = '' },
   isSignedIn,
   user: { name = '' },
@@ -92,12 +91,7 @@ export const LearnPage = ({
     allMarkdownRemark: { edges: mdEdges }
   }
 }) => {
-  if (pending && !complete) {
-    return <Loader fullScreen={true} />;
-  }
-
   const hashValue = hashValueSelector(state, hash);
-
   return (
     <LearnLayout>
       <Helmet title='Learn | freeCodeCamp.org' />

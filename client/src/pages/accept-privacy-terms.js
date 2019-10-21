@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import {
-  Grid,
   Row,
   Col,
   Button,
@@ -74,87 +73,84 @@ class AcceptPrivacyTerms extends Component {
         <Helmet>
           <title>Privacy Policy and Terms of Service | freeCodeCamp.org</title>
         </Helmet>
-        <Grid>
-          <Row>
-            <Col xs={12}>
-              <div className='text-center'>
-                <Spacer size={2} />
-                <h3>
-                  Please review our updated privacy policy and the terms of
-                  service.
-                </h3>
+        <Spacer size={2} />
+        <Row className='text-center'>
+          <Col sm={8} smOffset={2} xs={12}>
+            <h1>
+              Please review our updated privacy policy and the terms of service.
+            </h1>
+          </Col>
+        </Row>
+        <Spacer size={2} />
+        <Row>
+          <Col sm={8} smOffset={2} xs={12}>
+            <form onSubmit={this.handleSubmit}>
+              <FormGroup>
+                <ControlLabel htmlFor='terms-of-service'>
+                  Terms of Service
+                </ControlLabel>
                 <Spacer />
-              </div>
-            </Col>
-          </Row>
-          <Row>
-            <Col sm={6} smOffset={3}>
-              <form onSubmit={this.handleSubmit}>
-                <FormGroup>
-                  <ControlLabel htmlFor='terms-of-service'>
-                    Terms of Service
-                  </ControlLabel>
-                  <Spacer />
-                  <Checkbox
-                    checked={termsOfService}
-                    id='terms-of-service'
-                    inline={true}
-                    onChange={this.createHandleChange('termsOfService')}
-                  >
-                    I accept the{' '}
-                    <Link external={true} to='/news/terms-of-service'>
-                      terms of service
-                    </Link>{' '}
-                    (required)
-                  </Checkbox>
-                </FormGroup>
-                <FormGroup>
-                  <ControlLabel htmlFor='privacy-policy'>
-                    Privacy Policy
-                  </ControlLabel>
-                  <Spacer />
-                  <Checkbox
-                    checked={privacyPolicy}
-                    id='privacy-policy'
-                    inline={true}
-                    onChange={this.createHandleChange('privacyPolicy')}
-                  >
-                    I accept the{' '}
-                    <Link external={true} to='/news/privacy-policy'>
-                      privacy policy
-                    </Link>{' '}
-                    (required)
-                  </Checkbox>
-                </FormGroup>
-                <FormGroup>
-                  <ControlLabel htmlFor='quincy-email'>
-                    Quincy's Emails
-                  </ControlLabel>
-                  <Spacer />
-                  <Checkbox
-                    checked={quincyEmail}
-                    id='quincy-email'
-                    inline={true}
-                    onChange={this.createHandleChange('quincyEmail')}
-                  >
-                    I want weekly emails from Quincy, freeCodeCamp.org's
-                    founder.
-                  </Checkbox>
-                </FormGroup>
-                <ButtonSpacer />
-                <Button
-                  block={true}
-                  bsStyle='primary'
-                  className='big-cta-btn'
-                  disabled={!privacyPolicy || !termsOfService}
-                  type='submit'
+                <Checkbox
+                  checked={termsOfService}
+                  id='terms-of-service'
+                  inline={true}
+                  onChange={this.createHandleChange('termsOfService')}
                 >
-                  Continue to freeCodeCamp
-                </Button>
-              </form>
-            </Col>
-          </Row>
-        </Grid>
+                  I accept the{' '}
+                  <Link external={true} to='/news/terms-of-service'>
+                    terms of service
+                  </Link>{' '}
+                  (required)
+                </Checkbox>
+              </FormGroup>
+              <Spacer />
+              <FormGroup>
+                <ControlLabel htmlFor='privacy-policy'>
+                  Privacy Policy
+                </ControlLabel>
+                <Spacer />
+                <Checkbox
+                  checked={privacyPolicy}
+                  id='privacy-policy'
+                  inline={true}
+                  onChange={this.createHandleChange('privacyPolicy')}
+                >
+                  I accept the{' '}
+                  <Link external={true} to='/news/privacy-policy'>
+                    privacy policy
+                  </Link>{' '}
+                  (required)
+                </Checkbox>
+              </FormGroup>
+              <Spacer />
+              <FormGroup>
+                <ControlLabel htmlFor='quincy-email'>
+                  Quincy's Emails
+                </ControlLabel>
+                <Spacer />
+                <Checkbox
+                  checked={quincyEmail}
+                  id='quincy-email'
+                  inline={true}
+                  onChange={this.createHandleChange('quincyEmail')}
+                >
+                  I want weekly emails from Quincy, freeCodeCamp.org's founder.
+                </Checkbox>
+              </FormGroup>
+              <ButtonSpacer />
+              <Button
+                block={true}
+                bsStyle='primary'
+                className='big-cta-btn'
+                disabled={!privacyPolicy || !termsOfService}
+                type='submit'
+              >
+                Continue to freeCodeCamp.org
+              </Button>
+              <Spacer size={2} />
+            </form>
+          </Col>
+        </Row>
       </Fragment>
     );
   }

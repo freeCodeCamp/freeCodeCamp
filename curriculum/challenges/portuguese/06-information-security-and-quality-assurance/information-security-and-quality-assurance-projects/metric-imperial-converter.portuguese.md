@@ -8,7 +8,7 @@ localeTitle: Conversor Metric-Imperial
 ---
 
 ## Description
-<section id="description"> Crie um aplicativo JavaScript de pilha completa que seja funcionalmente semelhante a este: <a href="https://hard-twilight.glitch.me/" target="_blank">https://hard-twilight.glitch.me/</a> . Trabalhar neste projeto envolverá você escrevendo seu código no Glitch em nosso projeto inicial. Depois de concluir este projeto, você pode copiar sua URL de falha pública (para a página inicial do seu aplicativo) nesta tela para testá-lo! Opcionalmente, você pode optar por escrever seu projeto em outra plataforma, mas deve estar publicamente visível para nossos testes. Inicie este projeto no Glitch usando <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-project-metricimpconverter/">este link</a> ou clone <a href="https://github.com/freeCodeCamp/boilerplate-project-metricimpconverter/">este repositório</a> no GitHub! Se você usa o Glitch, lembre-se de salvar o link do seu projeto em algum lugar seguro! </section>
+<section id="description"> Crie um aplicativo JavaScript de pilha completa que seja funcionalmente semelhante a este: <a href="https://incongruous-beard.glitch.me/" target="_blank">https://incongruous-beard.glitch.me/</a> . Trabalhar neste projeto envolverá você escrevendo seu código no Glitch em nosso projeto inicial. Depois de concluir este projeto, você pode copiar sua URL de falha pública (para a página inicial do seu aplicativo) nesta tela para testá-lo! Opcionalmente, você pode optar por escrever seu projeto em outra plataforma, mas deve estar publicamente visível para nossos testes. Inicie este projeto no Glitch usando <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-project-metricimpconverter/">este link</a> ou clone <a href="https://github.com/freeCodeCamp/boilerplate-project-metricimpconverter/">este repositório</a> no GitHub! Se você usa o Glitch, lembre-se de salvar o link do seu projeto em algum lugar seguro! </section>
 
 ## Instructions
 <section id="instructions">
@@ -61,4 +61,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

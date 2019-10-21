@@ -6,6 +6,7 @@ import { createSelector } from 'reselect';
 import { Button, Modal } from '@freecodecamp/react-bootstrap';
 
 import ga from '../../../analytics';
+import Login from '../../../components/Header/components/Login';
 import GreenPass from '../../../assets/icons/GreenPass';
 
 import { dasherize } from '../../../../../utils/slugs';
@@ -21,15 +22,19 @@ import {
   challengeMetaSelector
 } from '../redux';
 
+import { isSignedInSelector } from '../../../redux';
+
 const mapStateToProps = createSelector(
   challengeFilesSelector,
   challengeMetaSelector,
   isCompletionModalOpenSelector,
+  isSignedInSelector,
   successMessageSelector,
-  (files, { title }, isOpen, message) => ({
+  (files, { title }, isOpen, isSignedIn, message) => ({
     files,
     title,
     isOpen,
+    isSignedIn,
     message
   })
 );
@@ -40,6 +45,9 @@ const mapDispatchToProps = function(dispatch) {
     handleKeypress: e => {
       if (e.keyCode === 13 && (e.ctrlKey || e.metaKey)) {
         e.preventDefault();
+        // Since Hotkeys also listens to Ctrl + Enter we have to stop this event
+        // getting to it.
+        e.stopPropagation();
         dispatch(submitChallenge());
       }
     },
@@ -55,6 +63,7 @@ const propTypes = {
   files: PropTypes.object.isRequired,
   handleKeypress: PropTypes.func.isRequired,
   isOpen: PropTypes.bool,
+  isSignedIn: PropTypes.bool.isRequired,
   message: PropTypes.string,
   submitChallenge: PropTypes.func.isRequired,
   title: PropTypes.string
@@ -104,6 +113,7 @@ export class CompletionModal extends Component {
     const {
       close,
       isOpen,
+      isSignedIn,
       submitChallenge,
       handleKeypress,
       message,
@@ -141,9 +151,19 @@ export class CompletionModal extends Component {
             bsStyle='primary'
             onClick={submitChallenge}
           >
-            Submit and go to next challenge{' '}
+            {isSignedIn ? 'Submit and g' : 'G'}o to next challenge{' '}
             <span className='hidden-xs'>(Ctrl + Enter)</span>
           </Button>
+          {isSignedIn ? null : (
+            <Login
+              block={true}
+              bsSize='lg'
+              bsStyle='primary'
+              className='btn-invert'
+            >
+              Sign in to save your progress
+            </Login>
+          )}
           {this.state.downloadURL ? (
             <Button
               block={true}

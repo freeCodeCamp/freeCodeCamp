@@ -65,7 +65,7 @@ export class SidePanel extends Component {
       videoUrl
     } = this.props;
     return (
-      <div className='instructions-panel' role='complementary'>
+      <div className='instructions-panel' role='complementary' tabIndex='-1'>
         <div>
           <ChallengeTitle isCompleted={isChallengeCompleted}>
             {title}
