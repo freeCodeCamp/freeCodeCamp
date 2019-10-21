@@ -6,7 +6,7 @@ import { apiLocation } from '../../config/env.json';
 
 import { DonatePage } from './donate';
 
-describe('<ShowSettings />', () => {
+describe('<DonatePage />', () => {
   it('redirects to signin page when user not logged in', () => {
     const shallow = new ShallowRenderer();
     shallow.render(<DonatePage {...loggedOutProps} />);
@@ -14,7 +14,8 @@ describe('<ShowSettings />', () => {
     expect(navigate).toHaveBeenCalledWith(
       `${apiLocation}/signin?returnTo=donate`
     );
-    expect(true).toBeTruthy();
+    const result = shallow.getRenderOutput();
+    expect(result.type.displayName).toBe('Loader');
   });
 });
 

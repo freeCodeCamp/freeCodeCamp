@@ -14,7 +14,8 @@ describe('<ShowSettings />', () => {
     expect(navigate).toHaveBeenCalledWith(
       `${apiLocation}/signin?returnTo=settings`
     );
-    expect(true).toBeTruthy();
+    const result = shallow.getRenderOutput();
+    expect(result.type.displayName).toBe('Loader');
   });
 });
 
