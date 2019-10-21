@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { createSelector } from 'reselect';
 import PropTypes from 'prop-types';
 
@@ -10,7 +11,7 @@ import {
   signInLoadingSelector,
   userSelector,
   isSignedInSelector,
-  hardGoTo as navigate
+  hardGoTo
 } from '../redux';
 
 import Loader from '../components/helpers/Loader';
@@ -26,11 +27,17 @@ const mapStateToProps = createSelector(
   })
 );
 
-const mapDispatchToProps = {
-  navigate
-};
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      hardGoTo,
+      navigate: location => dispatch(hardGoTo(location))
+    },
+    dispatch
+  );
 
 const propTypes = {
+  hardGoTo: PropTypes.func.isRequired,
   isSignedIn: PropTypes.bool.isRequired,
   navigate: PropTypes.func.isRequired,
   showLoading: PropTypes.bool.isRequired,

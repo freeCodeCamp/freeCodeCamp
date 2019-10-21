@@ -1,5 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
+import { bindActionCreators } from 'redux';
+import { navigate } from '@reach/router';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import {
@@ -16,7 +18,6 @@ import Helmet from 'react-helmet';
 import { apiLocation } from '../../config/env.json';
 
 import {
-  hardGoTo as navigate,
   isSignedInSelector,
   userFetchStateSelector,
   userSelector,
@@ -48,10 +49,14 @@ const mapStateToProps = createSelector(
   })
 );
 
-const mapDispatchToProps = {
-  navigate,
-  reportUser
-};
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      navigate,
+      reportUser
+    },
+    dispatch
+  );
 
 class ShowUser extends Component {
   constructor(props) {
