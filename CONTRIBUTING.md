@@ -37,7 +37,7 @@ You can help expand them and make their wording better. You can also update the 
 
 ### Help us fix bugs in freeCodeCamp.org's learning platform
 
-Our learning platform runs on a modern JavaScript stack. It has various components, tools, and libraries, including but not limited to, Node.js, MongoDB, LoopBack, OAuth 2.0, React, Gatsby, Webpack, and more.
+Our learning platform runs on a modern JavaScript stack. It has various components, tools and libraries, including but not limited to, Node.js, MongoDB, LoopBack, OAuth 2.0, React, Gatsby, Webpack and more.
 
 Broadly,
 
@@ -53,7 +53,7 @@ Essentially, we expect basic familiarity with some of the aforementioned technol
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
-(Starts a ready-to-code dev environment for freecodecamp in your browser.)
+(Starts a ready-to-code dev environment for freecodecamp in your browser)
 
 ## Frequently Asked Questions
 
@@ -75,7 +75,7 @@ Our community moderators [triage](https://en.wikipedia.org/wiki/Software_bug#Bug
 
 You should go through [**`help wanted`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) or [**`first timers welcome`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+welcome%22) issues for a quick overview of what is available for you to work on. 
 
-These are up for grabs, and you do not need to seek permission before working on them. If these issues lack clarity on what needs to be done, feel free to ask questions in the comments.
+These are up for grabs and you do not need to seek permission before working on them. If these issues lack clarity on what needs to be done, feel free to ask questions in the comments.
 
 ### I found a typo, should I report an issue before I can make a pull request?
 
@@ -89,7 +89,7 @@ We typically do not assign issues to anyone other than long-time contributors to
 2. In the case of multiple pull-requests for the same issue, we give priority to the quality of the code in the pull-requests. 
    - Did you include tests? 
    - Did you catch all use-cases?
-   - Did you ensure all tests pass, and you confirmed everything works locally?
+   - Did you ensure all tests pass and you confirmed everything works locally?
 3. Finally, we favor pull-requests which follow our recommended guidelines. 
    - Did you follow the pull-request checklist? 
    - Did you name your pull-request title meaningfully?
