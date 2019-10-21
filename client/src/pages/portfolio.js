@@ -50,7 +50,8 @@ function ProfilePage(props) {
     return <Loader fullScreen={true} />;
   }
   if (!showLoading && !isSignedIn) {
-    return navigate(`${apiLocation}/signin?returnTo=portfolio`);
+    navigate(`${apiLocation}/signin?returnTo=portfolio`);
+    return <Loader fullScreen={true} />;
   }
   const RedirecUser = createRedirect('/' + username);
   return <RedirecUser />;
