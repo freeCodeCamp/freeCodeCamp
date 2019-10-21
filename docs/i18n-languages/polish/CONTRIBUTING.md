@@ -6,7 +6,7 @@ funkcjonowanie freeCodeCamp.org jest możliwe dzięki tysiącom życzliwych wolo
 
 Ściśle egzekwujemy nasz [„Kodeks postępowania”](https://www.freecodecamp.org/code-of-conduct). Poświęć chwilę, aby go przeczytać. Ma tylko 196 słów.
 
-Szczęsliwego rozwijania kodu open source!
+Szczęśliwego rozwijania kodu open source!
 
 ## Oto kilka zabawnych sposobów, w które możesz pomóc
 
