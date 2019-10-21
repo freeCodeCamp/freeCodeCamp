@@ -69,7 +69,29 @@ const names = ['MARY','PATRICIA','LINDA','BARBARA','ELIZABETH','JENNIFER','MARIA
 <section id='solution'>
 
 ```js
-// solution required
+
+const nameScore = (name) => {
+  let sum = 0;
+  for (let i = 0; i < name.length; i++) {
+    sum += name.charCodeAt(i) - 64;
+  }
+  return sum;
+}
+
+const totalScore = (names) => {
+  let sum = 0;
+  const data = names.slice().sort();
+
+  for (let i = 0; i < data.length; i++) {
+    sum += nameScore(data[i]) * (i + 1);
+  }
+
+  return sum;
+}
+
+const small = ['ABC', 'DEF'];
+totalScore(small); // 36 because 36 = (1 + 2 + 3) * 1 + (4 + 5 + 6) * 2
+totalScore(names); // 871198282
 ```
 
 </section>
