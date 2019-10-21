@@ -63,7 +63,22 @@ digitnPowers(5);
 <section id='solution'>
 
 ```js
-// solution required
+const sum = (power, limit = 1000000) => {
+  let sum = 0;
+
+  for (let i = 2; i < limit; i++) {
+    const digits = i.toString().split('');
+    let digitsSum = 0;
+
+    digits.forEach(num => digitsSum += Math.pow(parseInt(num), power));
+
+    if (digitsSum === i) {
+      sum += i;
+    }
+  }
+
+  return sum;
+}
 ```
 
 </section>
