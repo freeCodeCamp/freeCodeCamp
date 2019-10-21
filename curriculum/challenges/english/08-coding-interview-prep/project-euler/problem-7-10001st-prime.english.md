@@ -59,23 +59,29 @@ nthPrime(10001);
 ## Solution
 <section id='solution'>
 
-
 ```js
-const nthPrime = (number)=>{
- let pN = 2;
- let step = 0;
- while (step<number) {
-   let isPrime = true;
-   for(let i = 2;i<pN;i++){
-      if(!(pN%i)){
-        isPrime = false;
-        break;
-      }
-   }
-   isPrime ? step++ : '';
-    pN++;
- }
- return pN-1;
+const isPrime = (value) => {
+    for (let i = 2; i < value; i++) {
+        if (value % i === 0) {
+            return false;
+        }
+    }
+    return value > 1;
+}
+
+
+const findNthPrime = (n) => {
+    const primes = [];
+    let prime = 2;
+
+    while (primes.length < n) {
+        if (isPrime(prime)) {
+            primes.push(prime);
+        }
+        prime++;
+    }
+
+    return primes.pop();
 }
 ```
 
