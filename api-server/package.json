@@ -86,7 +86,7 @@
     "loopback-component-explorer": "^6.4.0",
     "nodemon": "^1.19.4",
     "passport-mock-strategy": "^2.0.0",
-    "pm2": "^3.5.1",
+    "pm2": "^4.1.2",
     "tap-difflet": "^0.7.2",
     "tap-spec": "^5.0.0"
   },

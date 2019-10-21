@@ -100,7 +100,7 @@ class EmailSettings extends Component {
       return { state: 'success', message: '' };
     } else {
       return {
-        state: 'warning',
+        state: 'error',
         message:
           'We could not validate your email correctly, ' +
           'please ensure it is correct'
