@@ -10,7 +10,7 @@ Szczęsliwego rozwijania kodu open source!
 
 ## Oto kilka zabawnych sposobów, w które możesz pomóc
 
-Możesz przyczynić się do jednego z tych:
+Możesz przyczynić się do jednego z tych rzeczy:
 
  
 1. [Przyczyniaj się do tej otwartej źródłowej bazy danych](#przyczyniaj się do tej otwartej źródłowej bazy danych). Pomóż nam edytować wyzwania związane z kodowaniem lub naprawiaj błędy na platformie edukacyjnej.. Pomóż nam edytować wyzwania związane z kodowaniem lub naprawiać błędy na platformie edukacyjnej.
