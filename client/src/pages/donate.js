@@ -12,7 +12,12 @@ import DonateOther from '../components/Donation/components/DonateOther';
 import DonateForm from '../components/Donation/components/DonateForm';
 import DonateText from '../components/Donation/components/DonateText';
 import PoweredByStripe from '../components/Donation/components/poweredByStripe';
-import { signInLoadingSelector, isSignedInSelector, hardGoTo } from '../redux';
+import {
+  signInLoadingSelector,
+  isSignedInSelector,
+  hardGoTo as navigate
+} from '../redux';
+import { stripeScriptLoader } from '../utils/scriptLoaders';
 
 const mapStateToProps = createSelector(
   signInLoadingSelector,
@@ -23,9 +28,9 @@ const mapStateToProps = createSelector(
   })
 );
 
-const mapDispatchToProps = dispatch => ({
-  navigate: location => dispatch(hardGoTo(location))
-});
+const mapDispatchToProps = {
+  navigate
+};
 
 const propTypes = {
   isSignedIn: PropTypes.bool.isRequired,
@@ -45,21 +50,18 @@ export class DonatePage extends Component {
   }
   componentDidMount() {
     if (window.Stripe) {
-      /* eslint-disable react/no-did-mount-set-state */
-      this.setState(state => ({
-        ...state,
-        stripe: window.Stripe(stripePublicKey)
-      }));
+      this.handleStripeLoad();
     } else if (document.querySelector('#stripe-js')) {
       document
         .querySelector('#stripe-js')
         .addEventListener('load', this.handleStripeLoad);
+    } else {
+      stripeScriptLoader(this.handleStripeLoad);
     }
   }
 
   componentWillUnmount() {
     const stripeMountPoint = document.querySelector('#stripe-js');
-
     if (stripeMountPoint) {
       stripeMountPoint.removeEventListener('load', this.handleStripeLoad);
     }
@@ -89,7 +91,7 @@ export class DonatePage extends Component {
     }
 
     if (!showLoading && !isSignedIn) {
-      return navigate(`${apiLocation}/signin`);
+      return navigate(`${apiLocation}/signin?returnTo=donate`);
     }
 
     return (
@@ -112,10 +114,8 @@ export class DonatePage extends Component {
               <div className='text-center'>
                 <PoweredByStripe />
                 <Spacer />
-                <Button onClick={this.toggleOtherOptions}>
-                  {`${
-                    showOtherOptions ? 'Hide' : 'Show'
-                  } other ways to donate.`}
+                <Button bsStyle='link' onClick={this.toggleOtherOptions}>
+                  {`${showOtherOptions ? 'Hide' : 'Show'} other ways to donate`}
                 </Button>
               </div>
               <Spacer />

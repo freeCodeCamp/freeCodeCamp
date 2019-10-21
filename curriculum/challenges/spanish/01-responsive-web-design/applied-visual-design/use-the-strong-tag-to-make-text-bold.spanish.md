@@ -3,7 +3,7 @@ id: 587d781a367417b2b2512ab7
 title: Use the strong Tag to Make Text Bold
 challengeType: 0
 videoUrl: ''
-localeTitle: Utilice la etiqueta fuerte para hacer el texto en negrita
+localeTitle: Utilice la etiqueta strong para hacer el texto en negrita
 ---
 
 ## Description
