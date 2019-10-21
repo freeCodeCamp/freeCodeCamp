@@ -11,7 +11,9 @@ describe('<ShowSettings />', () => {
     const shallow = new ShallowRenderer();
     shallow.render(<DonatePage {...loggedOutProps} />);
     expect(navigate).toHaveBeenCalledTimes(1);
-    expect(navigate).toHaveBeenCalledWith(`${apiLocation}/signin`);
+    expect(navigate).toHaveBeenCalledWith(
+      `${apiLocation}/signin?returnTo=donate`
+    );
     expect(true).toBeTruthy();
   });
 });

@@ -101,6 +101,10 @@ export const createPassportCallbackAuthenticator = (strategy, config) => (
   res,
   next
 ) => {
+  const returnTo =
+    req && req.query && req.query.state
+      ? Buffer.from(req.query.state, 'base64').toString('utf-8')
+      : `${homeLocation}/learn`;
   return passport.authenticate(
     strategy,
     { session: false },
@@ -112,7 +116,7 @@ export const createPassportCallbackAuthenticator = (strategy, config) => (
       if (!user || !userInfo) {
         return res.redirect('/signin');
       }
-      const redirect = `${homeLocation}/learn`;
+      const redirect = `${returnTo}`;
 
       const { accessToken } = userInfo;
       const { provider } = config;
