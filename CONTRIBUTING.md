@@ -29,7 +29,7 @@ Our codebase has thousands of [coding challenges](https://learn.freecodecamp.org
 
 ### Create, update and fix bugs in our coding challenges
 
-All our coding challenges are curated by the community, bringing in expert knowledge from volunteers like you.
+All our coding challenges are curated by the community, bringing in expert knowledge from volunteers
 
 You can help expand them and make their wording better. You can also update the user stories to explain the concept better or remove redundant ones and improve the challenge tests to make them more accurately test people's code.
 
@@ -55,7 +55,7 @@ Essentially, we expect basic familiarity with some of the aforementioned technol
 
 (Starts a ready-to-code dev environment for freecodecamp in your browser.)
 
-## Frequently Asked Questions
+## Frequently Asked Questions(FAQ)
 
 ### How can I report a bug that is not on board?
 
