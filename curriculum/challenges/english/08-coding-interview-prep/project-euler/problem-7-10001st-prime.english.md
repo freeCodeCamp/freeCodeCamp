@@ -61,27 +61,27 @@ nthPrime(10001);
 
 ```js
 const isPrime = (value) => {
-    for (let i = 2; i < value; i++) {
-        if (value % i === 0) {
-            return false;
-        }
+  for (let i = 2; i < value; i++) {
+    if (value % i === 0) {
+      return false;
     }
-    return value > 1;
+  }
+  return value > 1;
 }
 
 
 const findNthPrime = (n) => {
-    const primes = [];
-    let prime = 2;
+  const primes = [];
+  let prime = 2;
 
-    while (primes.length < n) {
-        if (isPrime(prime)) {
-            primes.push(prime);
-        }
-        prime++;
+  while (primes.length < n) {
+    if (isPrime(prime)) {
+      primes.push(prime);
     }
+    prime++;
+  }
 
-    return primes.pop();
+  return primes.pop();
 }
 ```
 
