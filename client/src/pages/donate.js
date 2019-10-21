@@ -91,7 +91,7 @@ export class DonatePage extends Component {
     }
 
     if (!showLoading && !isSignedIn) {
-      return navigate(`${apiLocation}/signin`);
+      return navigate(`${apiLocation}/signin?returnTo=donate`);
     }
 
     return (
