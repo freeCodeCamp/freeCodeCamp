@@ -246,5 +246,5 @@ const updatePrivacyTerms = (req, res, next) => {
 
 function updateUserFlag(req, res, next) {
   const { user, body: update } = req;
-  user.updateAttributes(update, createStandardHandler(req, res, next));
+  return user.updateAttributes(update, createStandardHandler(req, res, next));
 }

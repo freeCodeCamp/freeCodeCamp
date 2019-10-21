@@ -39,7 +39,7 @@ function DonateCompletion({ processing, reset, success, error = null }) {
         )}
         {error && <p>{error}</p>}
       </div>
-      <p className='donation-completion-buttons'>
+      <div className='donation-completion-buttons'>
         {error && (
           <div>
             <Button bsStyle='primary' onClick={reset}>
@@ -47,7 +47,7 @@ function DonateCompletion({ processing, reset, success, error = null }) {
             </Button>
           </div>
         )}
-      </p>
+      </div>
     </Alert>
   );
 }
