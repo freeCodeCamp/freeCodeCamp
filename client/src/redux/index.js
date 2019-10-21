@@ -311,7 +311,7 @@ export const reducer = handleActions(
       }
     }),
     [types.submitComplete]: (state, { payload: { id, challArray } }) => {
-      let submitedchallneges = [{ id }];
+      let submitedchallneges = [{ id, completedDate: Date.now() }];
       if (challArray) {
         submitedchallneges = challArray;
       }
