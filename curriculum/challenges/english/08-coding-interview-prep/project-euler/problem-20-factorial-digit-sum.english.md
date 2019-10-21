@@ -61,7 +61,29 @@ sumFactorialDigits(100);
 <section id='solution'>
 
 ```js
-// solution required
+import bigInt from 'big-integer';
+
+const calcFactorial = (num) => {
+  let factorial = bigInt(num);
+
+  for (let i = num - 1; i > 0; i--) {
+    factorial = factorial.multiply(i);
+  }
+
+  return factorial;
+}
+
+
+const findFactorialDigitsSum = (num) => {
+  let sum = 0;
+  const factorial = calcFactorial(num);
+
+  for (let i = 0; i < factorial.toString().length; i++) {
+    sum += parseInt(factorial.toString()[i])
+  }
+
+  return sum;
+}
 ```
 
 </section>
