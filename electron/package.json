@@ -1,0 +1,11 @@
+{
+	"name": "@freecodecamp/native",
+	"private": true,
+	"description": "The freeCodeCamp native client, written in electron",
+	"version": "0.0.1"
+	"author": "freeCodeCamp <team@freecodecamp.org",
+	"dependencies": {
+		"electron": "^=7.0.0",
+		
+	}
+}
