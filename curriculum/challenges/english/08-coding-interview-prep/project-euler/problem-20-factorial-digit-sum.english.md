@@ -61,7 +61,32 @@ sumFactorialDigits(100);
 <section id='solution'>
 
 ```js
-// solution required
+const sumFactorialDigits = (n) => {
+  if(n === 0) {
+    return [1]
+  }
+  const result = sumFactorialDigits(n - 1)
+  let overflow = [0]
+  const limit = result.length
+  for(let i = 0; i <= limit; i++) {
+    const digit = (result[i] || 0) * n + overflow.pop()
+    if(digit > 9) {
+      let newOverflow = parseInt(digit / 10).toString().split('').map((x, index, arr) => parseInt(x) + (overflow[arr.length - index - 1] || 0))
+      overflow = newOverflow
+      for(let j = 0;j < Math.max(newOverflow.length, overflow.length); j++) {
+
+      }
+      result[i] = digit % 10
+    } else {
+      result[i] = digit
+      overflow = [0]
+    }
+  }
+
+  return result
+}
+
+sumFactorialDigits(100);
 ```
 
 </section>
