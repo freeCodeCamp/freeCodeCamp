@@ -55,7 +55,7 @@ export function ifNotVerifiedRedirectToUpdateEmail(req, res, next) {
   return next();
 }
 
-export function ifUserRedirectTo(path = `${homeLocation}/`, status) {
+export function ifUserRedirectTo(path = `${homeLocation}/learn`, status) {
   status = status === 301 ? 301 : 302;
   return (req, res, next) => {
     const { accessToken } = getAccessTokenFromRequest(req);

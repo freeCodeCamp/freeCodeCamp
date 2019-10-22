@@ -25,10 +25,7 @@ function NavLinks({ displayMenu }) {
           </Link>
         </li>
         <li className='nav-projects' role='menuitem'>
-          <Link to='/learn'>Projects</Link>
-        </li>
-        <li className='nav-portfolio' role='menuitem'>
-          <Link to='/portfolio'>Portfolio</Link>
+          <Link to='/learn'>Learn</Link>
         </li>
       </ul>
     </div>
