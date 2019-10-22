@@ -19,6 +19,7 @@
 
 .universal-nav a {
   text-decoration: none;
+  font-family: 'Roboto Mono', monospace;
 }
 
 .universal-nav-middle {
@@ -129,7 +130,7 @@
   border: 1px solid var(--gray-00);
 }
 
-@media (max-width: 355px) {
+@media (max-width: 300px) {
   .nav-list li a {
     width: 50vw;
     text-align: center;
