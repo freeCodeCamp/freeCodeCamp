@@ -34,7 +34,7 @@
 .certificate-outer-wrapper {
   display: flex;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .certification-namespace header {
