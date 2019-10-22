@@ -19,7 +19,8 @@ const baseProps = {
   nodes: mockChallengeNodes,
   toggleBlock: () => {},
   toggleSuperBlock: () => {},
-  resetExpansion: () => {}
+  resetExpansion: () => {},
+  isSignedIn: true
 };
 
 // set .scrollTo to avoid errors in default test environment
