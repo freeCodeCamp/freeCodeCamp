@@ -1,5 +1,7 @@
 import React, { Fragment, Component } from 'react';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import {
   HelpBlock,
   FormControl,
@@ -179,6 +181,13 @@ class InternetSettings extends Component {
                 type='url'
                 value={githubProfile}
               />
+              {githubProfile && !githubProfileValidationMessage ? (
+                <FormControl.Feedback>
+                  <span>
+                    <FontAwesomeIcon icon={faCheck} size='1x' />
+                  </span>
+                </FormControl.Feedback>
+              ) : null}
               {githubProfileValidationMessage ? (
                 <HelpBlock>{githubProfileValidationMessage}</HelpBlock>
               ) : null}
@@ -193,6 +202,13 @@ class InternetSettings extends Component {
                 type='url'
                 value={linkedin}
               />
+              {linkedin && !linkedinValidationMessage ? (
+                <FormControl.Feedback>
+                  <span>
+                    <FontAwesomeIcon icon={faCheck} size='1x' />
+                  </span>
+                </FormControl.Feedback>
+              ) : null}
               {linkedinValidationMessage ? (
                 <HelpBlock>{linkedinValidationMessage}</HelpBlock>
               ) : null}
@@ -207,6 +223,13 @@ class InternetSettings extends Component {
                 type='url'
                 value={twitter}
               />
+              {twitter && !twitterValidationMessage ? (
+                <FormControl.Feedback>
+                  <span>
+                    <FontAwesomeIcon icon={faCheck} size='1x' />
+                  </span>
+                </FormControl.Feedback>
+              ) : null}
               {twitterValidationMessage ? (
                 <HelpBlock>{twitterValidationMessage}</HelpBlock>
               ) : null}
@@ -221,6 +244,13 @@ class InternetSettings extends Component {
                 type='url'
                 value={website}
               />
+              {website && !websiteValidationMessage ? (
+                <FormControl.Feedback>
+                  <span>
+                    <FontAwesomeIcon icon={faCheck} size='1x' />
+                  </span>
+                </FormControl.Feedback>
+              ) : null}
               {websiteValidationMessage ? (
                 <HelpBlock>{websiteValidationMessage}</HelpBlock>
               ) : null}
