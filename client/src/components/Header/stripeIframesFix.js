@@ -4,22 +4,25 @@ const stripeObserver = () => {
   const filterNodes = nl =>
     Array.from(nl)
       .filter(b => b.nodeName === 'IFRAME')
-      .filter(
-        b =>
-          b.name !== '__privateStripeMetricsController0' &&
-          b.name !== '__privateStripeController1'
-      );
+      .filter(b => /__privateStripeController/.test(b.name));
 
-  const mutationCallback = a =>
-    a
-      .reduce(
-        (acc, curr) =>
-          curr.type === 'childList'
-            ? [...acc, ...filterNodes(curr.addedNodes)]
-            : acc,
-        []
-      )
-      .forEach(a => a.remove());
+  const mutationCallback = a => {
+    const controllerAdded = a.reduce(
+      (acc, curr) =>
+        curr.type === 'childList'
+          ? [...acc, ...filterNodes(curr.addedNodes)]
+          : acc,
+      []
+    )[0];
+    if (controllerAdded) {
+      const allControllers = filterNodes(document.body.childNodes);
+      allControllers.forEach(controller => {
+        if (controller.name !== controllerAdded.name) {
+          controller.remove();
+        }
+      });
+    }
+  };
 
   return new MutationObserver(mutationCallback).observe(document.body, config);
 };
