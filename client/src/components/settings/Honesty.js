@@ -24,9 +24,14 @@ class Honesty extends Component {
   );
 
   renderIsHonestAgreed = () => (
-    <Panel bsStyle='info' className='agreed btn'>
+    <Button
+      block={true}
+      bsStyle='primary'
+      className='disabled-agreed'
+      disabled={true}
+    >
       <p>You have accepted our Academic Honesty Policy.</p>
-    </Panel>
+    </Button>
   );
 
   render() {
