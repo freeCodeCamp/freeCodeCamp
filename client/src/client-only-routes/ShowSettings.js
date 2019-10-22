@@ -162,14 +162,13 @@ export function ShowSettings(props) {
   }
 
   if (!showLoading && !isSignedIn) {
-    return navigate(`${apiLocation}/signin?returnTo=settings`);
+    navigate(`${apiLocation}/signin?returnTo=settings`);
+    return <Loader fullScreen={true} />;
   }
 
   return (
     <Fragment>
-      <Helmet>
-        <title>Settings | freeCodeCamp.org</title>
-      </Helmet>
+      <Helmet title='Settings | freeCodeCamp.org'></Helmet>
       <Grid>
         <main>
           <Spacer size={2} />
