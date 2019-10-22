@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link, Spacer, Loader } from '../helpers';
+import { Link, Spacer, Loader, FullWidthRow } from '../helpers';
 import { Row, Col } from '@freecodecamp/react-bootstrap';
-import { navigate as gatsbyNavigate } from 'gatsby';
 import { apiLocation } from '../../../config/env.json';
 import { randomQuote } from '../../utils/get-words';
 
@@ -47,26 +46,20 @@ function Intro({
                 ? 'Welcome back, ' + name + '.'
                 : 'Welcome to freeCodeCamp.org'}
             </h1>
-          </Col>
-          <Col sm={10} smOffset={1} xs={12}>
             <Spacer />
-            <div className='btn-group-wrap'>
-              <div className='btn-group' role='group'>
-                <button
-                  className={'btn-primary btn'}
-                  onClick={() => gatsbyNavigate(`/${username}`)}
-                >
-                  View my Portfolio
-                </button>
-                <button
-                  className={'btn-primary btn'}
-                  onClick={() => gatsbyNavigate(`/settings`)}
-                >
-                  Update my settings
-                </button>
-              </div>
-            </div>
           </Col>
+
+          <FullWidthRow className='button-group'>
+            <Link
+              className='btn btn-lg btn-primary btn-block'
+              to={`/${username}`}
+            >
+              View my Portfolio
+            </Link>
+            <Link className='btn btn-lg btn-primary btn-block' to='/settings'>
+              Update my settings
+            </Link>
+          </FullWidthRow>
         </Row>
         <Spacer />
         <Row className='text-center quote-partial'>

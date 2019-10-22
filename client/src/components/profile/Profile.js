@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
+import { Grid, Row, Button } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 import Link from '../helpers/Link';
 
@@ -10,9 +10,11 @@ import HeatMap from './components/HeatMap';
 import Certifications from './components/Certifications';
 import Portfolio from './components/Portfolio';
 import Timeline from './components/TimeLine';
+import { apiLocation } from '../../../config/env.json';
 
 const propTypes = {
   isSessionUser: PropTypes.bool,
+  navigate: PropTypes.func.isRequired,
   user: PropTypes.shape({
     profileUI: PropTypes.shape({
       isLocked: PropTypes.bool,
@@ -152,11 +154,16 @@ function renderProfile(user) {
   );
 }
 
-function Profile({ user, isSessionUser }) {
+function Profile({ user, isSessionUser, navigate }) {
   const {
     profileUI: { isLocked = true },
     username
   } = user;
+
+  const createHandleSignoutClick = navigate => e => {
+    e.preventDefault();
+    return navigate(`${apiLocation}/signout`);
+  };
 
   return (
     <Fragment>
@@ -166,13 +173,21 @@ function Profile({ user, isSessionUser }) {
       <Spacer />
       <Grid>
         {isSessionUser ? (
-          <Row>
-            <Col sm={4} smOffset={4}>
-              <Link className='btn btn-lg btn-primary btn-block' to='/settings'>
-                Update my settings
-              </Link>
-            </Col>
-          </Row>
+          <FullWidthRow className='button-group'>
+            <Link className='btn btn-lg btn-primary btn-block' to='/settings'>
+              Update my settings
+            </Link>
+            <Button
+              block={true}
+              bsSize='lg'
+              bsStyle='primary'
+              className='btn-invert'
+              href={'/signout'}
+              onClick={createHandleSignoutClick(navigate)}
+            >
+              Sign me out of freeCodeCamp
+            </Button>
+          </FullWidthRow>
         ) : null}
         <Spacer />
         {isLocked ? renderMessage(isSessionUser, username) : null}

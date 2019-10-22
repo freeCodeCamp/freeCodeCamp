@@ -33,17 +33,6 @@
   text-align: center;
 }
 
-#learn-app-wrapper div.btn-group {
-  display: flex;
-  justify-items: center;
-}
-
-#learn-app-wrapper .btn-group-wrap {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-}
-
 .quote-partial .blockquote {
   font-size: 1.3rem;
   border: none;

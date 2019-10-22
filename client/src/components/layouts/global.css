@@ -240,6 +240,9 @@ fieldset[disabled] .btn-primary.focus {
   color: inherit;
 }
 
+.button-group .btn:not(:last-child) {
+  margin-bottom: 10px;
+}
 strong {
   color: var(--secondary-color);
 }

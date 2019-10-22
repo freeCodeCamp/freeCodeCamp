@@ -172,7 +172,7 @@ export function ShowSettings(props) {
       <Grid>
         <main>
           <Spacer size={2} />
-          <FullWidthRow>
+          <FullWidthRow className='button-group'>
             <Link
               className='btn-invert btn btn-lg btn-primary btn-block'
               to={`/${username}`}
