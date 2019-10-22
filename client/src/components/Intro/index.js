@@ -50,12 +50,22 @@ function Intro({
           </Col>
           <Col sm={10} smOffset={1} xs={12}>
             <Spacer />
-            <button
-              className={'btn-primary btn center-block'}
-              onClick={() => gatsbyNavigate(`/${username}`)}
-            >
-              View your Portfolio and Settings
-            </button>
+            <div className='btn-group-wrap'>
+              <div className='btn-group' role='group'>
+                <button
+                  className={'btn-primary btn'}
+                  onClick={() => gatsbyNavigate(`/${username}`)}
+                >
+                  View my Portfolio
+                </button>
+                <button
+                  className={'btn-primary btn'}
+                  onClick={() => gatsbyNavigate(`/settings`)}
+                >
+                  Update my settings
+                </button>
+              </div>
+            </div>
           </Col>
         </Row>
         <Spacer />
