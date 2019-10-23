@@ -75,7 +75,7 @@
 
 p.footer-donation {
   font-weight: 700;
-  font-size: 17px;
+  font-size: 18px;
 }
 
 .footer-container .col-spacer {
@@ -107,11 +107,11 @@ p.footer-donation {
     font-size: 16.5;
   }
 
-  .our-nonprofit {
+  /* .our-nonprofit {
     flex: 1 0 35%;
-  }
+  } */
   .footer-col:last-of-type {
-    flex: 1 0 30%;
+    /* flex: 1 0 30%; */
     margin-left: 0px;
   }
   .footer-container .col-spacer {
@@ -133,15 +133,10 @@ p.footer-donation {
     flex: 1 0 35%;
   }
   .footer-col {
-    flex: 1 0 10%;
+    flex: 1 0 9%;
   }
-  .footer-col:last-of-type {
-    flex: 1 0 17%;
-  }
-
-  .our-nonprofit {
-    flex: 1 0 20%;
-    padding: 0 35px 0 55px;
+  .trending-guides {
+    flex: 1 0 15%;
   }
 
   p.footer-donation {
