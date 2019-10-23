@@ -1,6 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
+import stripeObserver from './stripeIframesFix';
 import UniversalNav from './components/UniversalNav';
 
 import './header.css';
@@ -19,6 +20,10 @@ export class Header extends React.Component {
 
   componentDidMount() {
     document.addEventListener('click', this.handleClickOutside);
+
+    // Remove stacking Stripe iframes with each navigation
+    // after visiting /donate
+    stripeObserver();
   }
 
   componentWillUnmount() {

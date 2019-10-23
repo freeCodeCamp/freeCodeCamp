@@ -48,6 +48,7 @@ export class DonatePage extends Component {
     this.handleStripeLoad = this.handleStripeLoad.bind(this);
     this.toggleOtherOptions = this.toggleOtherOptions.bind(this);
   }
+
   componentDidMount() {
     if (window.Stripe) {
       this.handleStripeLoad();
