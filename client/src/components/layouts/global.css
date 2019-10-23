@@ -71,6 +71,10 @@ p {
   font-weight: normal;
 }
 
+.medium-heading.text-center {
+  margin-bottom: 50px;
+}
+
 @media (max-width: 500px) {
   .big-heading {
     font-size: 1.6rem !important;
