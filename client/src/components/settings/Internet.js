@@ -141,6 +141,18 @@ class InternetSettings extends Component {
     return null;
   };
 
+  renderHelpBlock = validationMessage =>
+    validationMessage ? <HelpBlock>{validationMessage}</HelpBlock> : null;
+
+  renderCheck = (url, validation) =>
+    url && validation === 'success' ? (
+      <FormControl.Feedback>
+        <span>
+          <FontAwesomeIcon icon={faCheck} size='1x' />
+        </span>
+      </FormControl.Feedback>
+    ) : null;
+
   render() {
     const {
       formValues: { githubProfile, linkedin, twitter, website }
@@ -181,16 +193,8 @@ class InternetSettings extends Component {
                 type='url'
                 value={githubProfile}
               />
-              {githubProfile && !githubProfileValidationMessage ? (
-                <FormControl.Feedback>
-                  <span>
-                    <FontAwesomeIcon icon={faCheck} size='1x' />
-                  </span>
-                </FormControl.Feedback>
-              ) : null}
-              {githubProfileValidationMessage ? (
-                <HelpBlock>{githubProfileValidationMessage}</HelpBlock>
-              ) : null}
+              {this.renderCheck(githubProfile, githubProfileValidation)}
+              {this.renderHelpBlock(githubProfileValidationMessage)}
             </FormGroup>
             <FormGroup
               controlId='internet-linkedin'
@@ -202,16 +206,8 @@ class InternetSettings extends Component {
                 type='url'
                 value={linkedin}
               />
-              {linkedin && !linkedinValidationMessage ? (
-                <FormControl.Feedback>
-                  <span>
-                    <FontAwesomeIcon icon={faCheck} size='1x' />
-                  </span>
-                </FormControl.Feedback>
-              ) : null}
-              {linkedinValidationMessage ? (
-                <HelpBlock>{linkedinValidationMessage}</HelpBlock>
-              ) : null}
+              {this.renderCheck(linkedin, linkedinValidation)}
+              {this.renderHelpBlock(linkedinValidationMessage)}
             </FormGroup>
             <FormGroup
               controlId='internet-picture'
@@ -223,16 +219,8 @@ class InternetSettings extends Component {
                 type='url'
                 value={twitter}
               />
-              {twitter && !twitterValidationMessage ? (
-                <FormControl.Feedback>
-                  <span>
-                    <FontAwesomeIcon icon={faCheck} size='1x' />
-                  </span>
-                </FormControl.Feedback>
-              ) : null}
-              {twitterValidationMessage ? (
-                <HelpBlock>{twitterValidationMessage}</HelpBlock>
-              ) : null}
+              {this.renderCheck(twitter, twitterValidation)}
+              {this.renderHelpBlock(twitterValidationMessage)}
             </FormGroup>
             <FormGroup
               controlId='internet-website'
@@ -244,16 +232,8 @@ class InternetSettings extends Component {
                 type='url'
                 value={website}
               />
-              {website && !websiteValidationMessage ? (
-                <FormControl.Feedback>
-                  <span>
-                    <FontAwesomeIcon icon={faCheck} size='1x' />
-                  </span>
-                </FormControl.Feedback>
-              ) : null}
-              {websiteValidationMessage ? (
-                <HelpBlock>{websiteValidationMessage}</HelpBlock>
-              ) : null}
+              {this.renderCheck(website, websiteValidation)}
+              {this.renderHelpBlock(websiteValidationMessage)}
             </FormGroup>
             <BlockSaveButton
               disabled={this.isFormPristine() || !this.isFormValid()}
