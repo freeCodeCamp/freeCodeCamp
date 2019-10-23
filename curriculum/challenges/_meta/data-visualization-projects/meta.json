@@ -1,0 +1,34 @@
+{
+  "name": "Data Visualization Projects",
+  "dashedName": "data-visualization-projects",
+  "order": 3,
+  "time": "150 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "data-visualization",
+  "superOrder": 4,
+  "challengeOrder": [
+    [
+      "bd7168d8c242eddfaeb5bd13",
+      "Visualize Data with a Bar Chart"
+    ],
+    [
+      "bd7178d8c242eddfaeb5bd13",
+      "Visualize Data with a Scatterplot Graph"
+    ],
+    [
+      "bd7188d8c242eddfaeb5bd13",
+      "Visualize Data with a Heat Map"
+    ],
+    [
+      "587d7fa6367417b2b2512bbf",
+      "Visualize Data with a Choropleth Map"
+    ],
+    [
+      "587d7fa6367417b2b2512bc0",
+      "Visualize Data with a Treemap Diagram"
+    ]
+  ],
+  "helpRoom": "Help",
+  "fileName": "04-data-visualization/data-visualization-projects.json"
+}

@@ -1,0 +1,34 @@
+{
+  "name": "JavaScript Algorithms and Data Structures Projects",
+  "dashedName": "javascript-algorithms-and-data-structures-projects",
+  "order": 10,
+  "time": "50 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "javascript-algorithms-and-data-structures",
+  "superOrder": 2,
+  "challengeOrder": [
+    [
+      "aaa48de84e1ecc7c742e1124",
+      "Palindrome Checker"
+    ],
+    [
+      "a7f4d8f2483413a6ce226cac",
+      "Roman Numeral Converter"
+    ],
+    [
+      "56533eb9ac21ba0edf2244e2",
+      "Caesars Cipher"
+    ],
+    [
+      "aff0395860f5d3034dc0bfc9",
+      "Telephone Number Validator"
+    ],
+    [
+      "aa2e6f85cab2ab736c9a9b24",
+      "Cash Register"
+    ]
+  ],
+  "helpRoom": "HelpJavaScript",
+  "fileName": "02-javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects.json"
+}

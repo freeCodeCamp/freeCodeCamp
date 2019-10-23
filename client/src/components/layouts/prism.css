@@ -1,0 +1,12 @@
+code .token.operator {
+  background: none;
+}
+
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+  background: var(--primary-background);
+}
+
+* {
+  text-shadow: none !important;
+}

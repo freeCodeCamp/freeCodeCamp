@@ -1,0 +1,91 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.10.1
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  'npm:marked:20150520':
+    - gulp-notify > node-notifier > cli-usage > marked:
+        patched: '2016-07-09T00:55:04.882Z'
+    - gitter-sidecar > marked:
+        patched: '2016-07-29T23:00:15.905Z'
+  'npm:minimatch:20160620':
+    - gulp > vinyl-fs > glob-stream > minimatch:
+        patched: '2016-07-09T00:55:04.882Z'
+      jsonlint-cli > minimatch:
+        patched: '2018-06-30T14:27:04.475Z'
+    - gulp > vinyl-fs > glob-stream > glob > minimatch:
+        patched: '2016-07-09T00:55:04.882Z'
+    - rev-del > mocha > glob > minimatch:
+        patched: '2016-07-09T00:55:04.882Z'
+    - gulp > vinyl-fs > glob-watcher > gaze > globule > minimatch:
+        patched: '2016-07-09T00:55:04.882Z'
+    - gulp > vinyl-fs > glob-watcher > gaze > globule > glob > minimatch:
+        patched: '2016-07-09T00:55:04.882Z'
+    - gulp-nodemon > gulp > vinyl-fs > glob-stream > minimatch:
+        patched: '2016-07-11T14:56:14.310Z'
+    - gulp-nodemon > gulp > vinyl-fs > glob-stream > glob > minimatch:
+        patched: '2016-07-11T14:56:14.310Z'
+    - gulp-nodemon > gulp > vinyl-fs > glob-watcher > gaze > globule > minimatch:
+        patched: '2016-07-11T14:56:14.310Z'
+    - gulp-nodemon > gulp > vinyl-fs > glob-watcher > gaze > globule > glob > minimatch:
+        patched: '2016-07-11T14:56:14.310Z'
+    - gulp-nodemon > gulp > vinyl-fs > glob-stream > minimatch:
+        patched: '2016-07-20T15:33:26.680Z'
+    - gulp-nodemon > gulp > vinyl-fs > glob-stream > glob > minimatch:
+        patched: '2016-07-20T15:33:26.680Z'
+    - gulp-nodemon > gulp > vinyl-fs > glob-watcher > gaze > globule > minimatch:
+        patched: '2016-07-20T15:33:26.680Z'
+    - gulp-nodemon > gulp > vinyl-fs > glob-watcher > gaze > globule > glob > minimatch:
+        patched: '2016-07-20T15:33:26.680Z'
+    - gulp-nodemon > gulp > vinyl-fs > glob-stream > minimatch:
+        patched: '2016-07-24T17:05:18.332Z'
+    - gulp-nodemon > gulp > vinyl-fs > glob-stream > glob > minimatch:
+        patched: '2016-07-24T17:05:18.332Z'
+    - gulp-nodemon > gulp > vinyl-fs > glob-watcher > gaze > globule > minimatch:
+        patched: '2016-07-24T17:05:18.332Z'
+    - gulp-nodemon > gulp > vinyl-fs > glob-watcher > gaze > globule > glob > minimatch:
+        patched: '2016-07-24T17:05:18.332Z'
+    - loopback > strong-globalize > fs-sync > glob > minimatch:
+        patched: '2016-08-16T21:48:23.694Z'
+    - loopback > loopback-connector-remote > loopback-datasource-juggler > strong-globalize > fs-sync > glob > minimatch:
+        patched: '2016-08-16T21:48:23.694Z'
+    - loopback > strong-remoting > strong-globalize > fs-sync > glob > minimatch:
+        patched: '2016-09-03T18:30:05.313Z'
+    - loopback > loopback-connector-remote > strong-remoting > strong-globalize > fs-sync > glob > minimatch:
+        patched: '2016-09-03T18:30:05.313Z'
+    - loopback > strong-remoting > loopback-phase > strong-globalize > fs-sync > glob > minimatch:
+        patched: '2016-09-20T18:38:48.774Z'
+    - loopback > strong-globalize > fs-sync > glob > minimatch:
+        patched: '2016-09-20T18:38:48.774Z'
+    - loopback-component-passport > strong-globalize > fs-sync > glob > minimatch:
+        patched: '2016-09-20T18:38:48.774Z'
+    - loopback > loopback-connector-remote > loopback-datasource-juggler > strong-globalize > fs-sync > glob > minimatch:
+        patched: '2016-09-20T18:38:48.774Z'
+    - loopback > loopback-phase > strong-globalize > fs-sync > glob > minimatch:
+        patched: '2016-09-20T18:38:48.774Z'
+    - loopback-boot > strong-globalize > fs-sync > glob > minimatch:
+        patched: '2016-09-20T18:38:48.774Z'
+    - loopback > loopback-connector-remote > strong-remoting > loopback-phase > strong-globalize > fs-sync > glob > minimatch:
+        patched: '2016-09-20T18:38:48.774Z'
+    - loopback > strong-remoting > strong-globalize > fs-sync > glob > minimatch:
+        patched: '2016-09-20T18:38:48.774Z'
+    - loopback > loopback-connector-remote > strong-remoting > strong-globalize > fs-sync > glob > minimatch:
+        patched: '2016-09-20T18:38:48.774Z'
+    - jsonlint-cli > minimatch:
+        patched: '2016-10-27T21:56:34.219Z'
+  'npm:uglify-js:20151024':
+    - jade > transformers > uglify-js:
+        patched: '2018-06-30T14:27:04.475Z'
+    - jade > transformers > uglify-js:
+        patched: '2016-09-20T18:38:48.774Z'
+    - jade > transformers > uglify-js:
+        patched: '2018-01-18T00:49:18.512Z'
+  'npm:uglify-js:20150824':
+    - jade > transformers > uglify-js:
+        patched: '2018-06-30T14:27:04.475Z'
+  'npm:ms:20170412':
+    - compression > debug > ms:
+        patched: '2017-05-25T00:47:03.990Z'
+  'npm:tunnel-agent:20170305':
+    - jsonlint-cli > omni-fetch > caw > tunnel-agent:
+        patched: '2018-06-30T14:27:04.475Z'

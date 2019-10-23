@@ -1,16 +1,31 @@
 language: node_js
 
 node_js:
-  - '4.2.1'
+  - 'lts/*'
+
+cache:
+  directories:
+    - '$HOME/.npm'
 
 env:
-  - CXX=g++-4.8
+  global:
+    - NO_UPDATE_NOTIFIER=1
+    - NODE_NO_WARNINGS=1
 
-addons:
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-    packages:
-      - g++-4.8
+before_install:
+  - npm config set loglevel warn
 
-sudo: false
+install: npm ci
+
+before_script:
+  - npm run ensure-env
+
+jobs:
+  include:
+    - stage: Lint javaScript
+      script:
+        - npm run lint
+
+    - stage: Unit and Integration tests
+      script: npm test
+

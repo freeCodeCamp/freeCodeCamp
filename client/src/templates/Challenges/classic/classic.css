@@ -1,0 +1,47 @@
+.reflex-element {
+  overflow: hidden !important;
+}
+
+.monaco-menu .action-label {
+  color: var(--highlight-color);
+  letter-spacing: 0.02em;
+}
+
+.monaco-aria-container {
+  top: -999em;
+}
+
+#challenge-page-tabs .nav-tabs {
+  margin-left: 2px;
+  display: flex;
+}
+
+#challenge-page-tabs .nav-tabs > li {
+  flex: 1;
+  text-align: center;
+}
+
+#challenge-page-tabs .nav-tabs > li > a {
+  padding: 5px 10px;
+  text-decoration: none;
+  font-size: 0.8em;
+}
+
+#challenge-page-tabs .nav-tabs > li > a:hover {
+  color: var(--gray-85);
+}
+
+#challenge-page-tabs .tab-content {
+  height: calc(100vh - var(--header-height, 0px) - 69px);
+  overflow-y: auto;
+}
+
+#challenge-page-tabs .tab-pane {
+  height: 100%;
+  overflow: hidden;
+}
+
+#challenge-page-tabs .nav-tabs > li.active > a {
+  color: var(--quaternary-color);
+  background-color: var(--quaternary-background);
+}

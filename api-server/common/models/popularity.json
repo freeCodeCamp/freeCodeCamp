@@ -1,0 +1,28 @@
+{
+  "name": "popularity",
+  "plural": "popularities",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "events": {
+      "type": [
+        "object"
+      ],
+      "required": true,
+      "default": []
+    }
+  },
+  "validations": [],
+  "relations": {
+    "article": {
+      "type": "belongsTo",
+      "model": "article",
+      "foreignKey": "articleId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

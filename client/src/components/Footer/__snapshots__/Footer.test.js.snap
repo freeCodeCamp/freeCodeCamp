@@ -1,0 +1,406 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Footer /> matches snapshot 1`] = `
+<footer
+  className="site-footer"
+>
+  <div
+    className="footer-container"
+  >
+    <div
+      className="footer-row"
+    >
+      <div
+        className="footer-desc-col"
+      >
+        <p>
+          freeCodeCamp is a donor-supported tax-exempt 501(c)(3) nonprofit organization (United States Federal Tax Identification Number: 82-0779546)
+        </p>
+        <p>
+          Our mission: to help people learn to code for free. We accomplish this by creating thousands of videos, articles, and interactive coding lessons - all freely available to the public. We also have thousands of freeCodeCamp study groups around the world.
+        </p>
+        <p>
+          Donations to freeCodeCamp go toward our education initiatives, and help pay for servers, services, and staff. You can 
+          <a
+            className="inline"
+            href="/donate"
+          >
+            make a tax-deductible donation here
+          </a>
+          .
+        </p>
+      </div>
+      <div
+        className="footer-col"
+      >
+        <div
+          className="col-header"
+        >
+          Our Nonprofit
+        </div>
+        <a
+          href="/news/about/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          About
+        </a>
+        <a
+          href="/donate"
+        >
+          Donate
+        </a>
+        <a
+          href="/news/shop/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Shop
+        </a>
+        <a
+          href="https://www.linkedin.com/school/free-code-camp/people/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Alumni Network
+        </a>
+        <a
+          href="https://github.com/freeCodeCamp/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Open Source
+        </a>
+        <a
+          href="/news/support/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Support
+        </a>
+        <a
+          href="/news/sponsors/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Sponsors
+        </a>
+        <a
+          href="/news/academic-honesty-policy/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Academic Honesty
+        </a>
+        <a
+          href="/news/code-of-conduct/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Code of Conduct
+        </a>
+        <a
+          href="/news/privacy-policy/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Privacy Policy
+        </a>
+        <a
+          href="/news/terms-of-service/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Terms of Service
+        </a>
+        <a
+          href="/news/copyright-policy/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Copyright Policy
+        </a>
+      </div>
+      <div
+        className="footer-col"
+      >
+        <div
+          className="col-header"
+        >
+          Best Tutorials
+        </div>
+        <a
+          href="/news/best-python-tutorial/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Python Tutorial
+        </a>
+        <a
+          href="/news/best-git-tutorial/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Git Tutorial
+        </a>
+        <a
+          href="/news/the-best-linux-tutorials/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Linux Tutorial
+        </a>
+        <a
+          href="/news/best-javascript-tutorial/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          JavaScript Tutorial
+        </a>
+        <a
+          href="/news/best-react-javascript-tutorial/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          React Tutorial
+        </a>
+        <a
+          href="/news/best-html-html5-tutorial/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          HTML Tutorial
+        </a>
+        <a
+          href="/news/best-css-and-css3-tutorial/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          CSS Tutorial
+        </a>
+        <a
+          href="/news/best-sql-database-tutorial/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          SQL Tutorial
+        </a>
+        <a
+          href="/news/best-java-8-tutorial/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Java Tutorial
+        </a>
+        <a
+          href="/news/best-angular-tutorial-angularjs/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Angular Tutorial
+        </a>
+        <a
+          href="/news/best-wordpress-tutorial/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          WordPress Tutorial
+        </a>
+        <a
+          href="/news/best-bootstrap-tutorial-responsive-web-design/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Bootstrap Tutorial
+        </a>
+      </div>
+      <div
+        className="footer-col"
+      >
+        <div
+          className="col-header"
+        >
+          Best Examples
+        </div>
+        <a
+          href="/news/python-example/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Python Example
+        </a>
+        <a
+          href="/news/javascript-example/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          JavaScript Example
+        </a>
+        <a
+          href="/news/react-examples-reactjs/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          React Example
+        </a>
+        <a
+          href="/news/linux-example-bash-command-line/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Linux Example
+        </a>
+        <a
+          href="/news/html-and-html5-example/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          HTML Example
+        </a>
+        <a
+          href="/news/css-example-css3/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          CSS Example
+        </a>
+        <a
+          href="/news/sql-example/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          SQL Example
+        </a>
+        <a
+          href="/news/java-example/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Java Example
+        </a>
+        <a
+          href="/news/the-best-angular-examples/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Angular Example
+        </a>
+        <a
+          href="/news/the-best-jquery-examples/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          jQuery Example
+        </a>
+        <a
+          href="/news/the-best-bootstrap-examples/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Bootstrap Example
+        </a>
+        <a
+          href="/news/the-best-php-examples/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          PHP Example
+        </a>
+      </div>
+      <div
+        className="footer-col"
+      >
+        <div
+          className="col-header"
+        >
+          Trending Reference
+        </div>
+        <a
+          href="/news/2019-web-developer-roadmap/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          2019 Web Developer Roadmap
+        </a>
+        <a
+          href="/news/linux-command-line-bash-tutorial/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Linux Command Line Guide
+        </a>
+        <a
+          href="/news/the-ultimate-guide-to-git-reset-and-git-revert/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Git Reset and Git Revert
+        </a>
+        <a
+          href="/news/the-ultimate-guide-to-git-merge-and-git-rebase/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Git Merge and Git Rebase
+        </a>
+        <a
+          href="/news/the-ultimate-guide-to-javascript-array-methods-map/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          JavaScript Array Map
+        </a>
+        <a
+          href="/news/the-ultimate-guide-to-javascript-array-methods-reduce/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          JavaScript Array Reduce
+        </a>
+        <a
+          href="/news/the-ultimate-guide-to-javascript-date-and-moment-js/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          JavaScript Date
+        </a>
+        <a
+          href="/news/the-ultimate-guide-to-javascript-string-methods-split/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          JavaScript String Split
+        </a>
+        <a
+          href="/news/understanding-flexbox-everything-you-need-to-know-b4013d4dc9af/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          CSS Flexbox Guide
+        </a>
+        <a
+          href="/news/11-things-i-learned-reading-the-css-grid-specification-fb3983aa5e0/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          CSS Grid Guide
+        </a>
+        <a
+          href="/news/the-ultimate-guide-to-linux-creating-a-sudo-user/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Create a Linux Sudo User
+        </a>
+        <a
+          href="/news/the-ultimate-guide-to-ssh-setting-up-ssh-keys/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          How to Set Up SSH Keys
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+`;

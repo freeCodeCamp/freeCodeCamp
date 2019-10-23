@@ -1,0 +1,21 @@
+# -------------------------------------------------
+# CODEOWNERS - For automated review request for 
+# high impact files.
+#
+# Important: The order in this file cascades.
+#
+# https://help.github.com/articles/about-codeowners
+# -------------------------------------------------
+
+# -------------------------------------------------
+# All files except markdown are owned by dev team
+# -------------------------------------------------
+
+* @freecodecamp/dev-team
+*.md
+
+# -------------------------------------------------
+# All files in the root are owned by dev team
+# -------------------------------------------------
+
+/* @freecodecamp/dev-team

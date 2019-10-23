@@ -1,0 +1,18 @@
+{
+  "name": "Legacy Data Visualization Certificate",
+  "dashedName": "legacy-data-visualization-certificate",
+  "order": 1,
+  "time": "",
+  "template": "",
+  "required": [],
+  "superBlock": "certificates",
+  "superOrder": 9,
+  "challengeOrder": [
+    [
+      "561add10cb82ac39a17513bc",
+      "Legacy Data Visualization Certificate"
+    ]
+  ],
+  "isPrivate": true,
+  "fileName": "09-certificates/legacy-data-visualization-certificate.json"
+}
