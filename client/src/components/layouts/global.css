@@ -154,6 +154,7 @@ input[type='submit']:hover,
   border-color: var(--secondary-color);
   background-color: var(--secondary-color);
   color: var(--secondary-background);
+  cursor: pointer;
 }
 
 .btn:active,
