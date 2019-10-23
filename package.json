@@ -2,7 +2,8 @@
   "name": "@freecodecamp/freecodecamp",
   "private": true,
   "version": "0.0.1",
-  "scripts": {
+  "scripts":
+  {
     "audit": "npm audit & lerna exec --no-bail 'echo $LERNA_PACKAGE_NAME & npm audit'",
     "audit:fix": "npm audit fix & lerna exec 'echo $LERNA_PACKAGE_NAME & npm audit fix'",
     "build": "npm-run-all ensure-env -p build:*",
@@ -50,7 +51,8 @@
     "test:tools": "jest ./tools",
     "test:utils": "jest ./utils/*.js"
   },
-  "devDependencies": {
+  "devDependencies":
+  {
     "@freecodecamp/eslint-config": "^2.0.2",
     "babel-eslint": "^10.0.2",
     "cross-env": "^5.2.0",
@@ -85,12 +87,13 @@
     "sinon-express-mock": "^2.2.0",
     "slugg": "^1.2.1"
   },
-  "lint-staged": {
-    "linters": {
-      "*.js": [
-        "eslint --fix",
-        "git add"
-      ],
+  "lint-staged":
+  {
+    "linters":
+    {
+      "*.js":
+      ["eslint --fix",
+        "git add"],
       "*.md": "node ./tools/scripts/lint/index.js",
       "*.css": [
         "prettier --write",
