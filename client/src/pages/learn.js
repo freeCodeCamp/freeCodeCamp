@@ -1,24 +1,21 @@
 import React from 'react';
-import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
+import { Grid } from '@freecodecamp/react-bootstrap';
 import PropTypes from 'prop-types';
 import { createSelector } from 'reselect';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
 
+import LearnLayout from '../components/layouts/Learn';
+import { dasherize } from '../../../utils/slugs';
+import Map from '../components/Map';
+import Intro from '../components/Intro';
 import {
   userFetchStateSelector,
   isSignedInSelector,
-  userSelector
+  userSelector,
+  hardGoTo as navigate
 } from '../redux';
-
-import LearnLayout from '../components/layouts/Learn';
-import Login from '../components/Header/components/Login';
-import { Link, Spacer } from '../components/helpers';
-import Map from '../components/Map';
-import Welcome from '../components/welcome';
-import { dasherize } from '../../../utils/slugs';
-
 import {
   ChallengeNode,
   AllChallengeNode,
@@ -50,26 +47,12 @@ const propTypes = {
   hash: PropTypes.string,
   isSignedIn: PropTypes.bool,
   location: PropTypes.object,
+  navigate: PropTypes.func.isRequired,
   state: PropTypes.object,
   user: PropTypes.shape({
-    name: PropTypes.string
+    name: PropTypes.string,
+    username: PropTypes.string
   })
-};
-
-const BigCallToAction = isSignedIn => {
-  if (!isSignedIn) {
-    return (
-      <>
-        <Row>
-          <Col sm={10} smOffset={1} xs={12}>
-            <Spacer />
-            <Login>Sign in to save your progress.</Login>
-          </Col>
-        </Row>
-      </>
-    );
-  }
-  return '';
 };
 
 // choose between the state from landing page and hash from url.
@@ -78,11 +61,16 @@ const hashValueSelector = (state, hash) => {
   else if (hash) return hash.substr(1);
   else return null;
 };
+const mapDispatchToProps = {
+  navigate
+};
 
 export const LearnPage = ({
   location: { hash = '', state = '' },
   isSignedIn,
-  user: { name = '' },
+  navigate,
+  fetchState: { pending, complete },
+  user: { name = '', username = '' },
   data: {
     challengeNode: {
       fields: { slug }
@@ -96,20 +84,19 @@ export const LearnPage = ({
     <LearnLayout>
       <Helmet title='Learn | freeCodeCamp.org' />
       <Grid>
-        <Welcome name={name} />
-        <Row className='text-center'>
-          <Col sm={10} smOffset={1} xs={12}>
-            {BigCallToAction(isSignedIn)}
-            <Spacer />
-            <h3>
-              If you are new to coding, we recommend you{' '}
-              <Link to={slug}>start at the beginning</Link>.
-            </h3>
-          </Col>
-        </Row>
+        <Intro
+          complete={complete}
+          isSignedIn={isSignedIn}
+          name={name}
+          navigate={navigate}
+          pending={pending}
+          slug={slug}
+          username={username}
+        />
         <Map
           hash={hashValue}
           introNodes={mdEdges.map(({ node }) => node)}
+          isSignedIn={isSignedIn}
           nodes={edges
             .map(({ node }) => node)
             .filter(({ isPrivate }) => !isPrivate)}
@@ -122,7 +109,10 @@ export const LearnPage = ({
 LearnPage.displayName = 'LearnPage';
 LearnPage.propTypes = propTypes;
 
-export default connect(mapStateToProps)(LearnPage);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(LearnPage);
 
 export const query = graphql`
   query FirstChallenge {
