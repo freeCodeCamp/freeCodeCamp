@@ -48,6 +48,7 @@ https://freecodecamp-org.netlify.com/*        https://www.freecodecamp.org/:spla
 /:username/data-visualization-certification   /certification/:username/legacy-data-visualization 301
 /:username/back-end-certification             /certification/:username/legacy-back-end 301
 /:username/full-stack-certification           /certification/:username/full-stack 301
+/certification/*                              /certification/index.html 200
 
 # unsubscribe redirects
 /u/*                                          https://api.example.com/u/:splat 200!
