@@ -20,7 +20,12 @@ exports[`<Footer /> matches snapshot 1`] = `
           Our mission: to help people learn to code for free. We accomplish this by creating thousands of videos, articles, and interactive coding lessons - all freely available to the public. We also have thousands of freeCodeCamp study groups around the world.
         </p>
         <p>
-          Donations to freeCodeCamp go toward our education initiatives, and help pay for servers, services, and staff. You can 
+          Donations to freeCodeCamp go toward our education initiatives, and help pay for servers, services, and staff.
+        </p>
+        <p
+          className="footer-donation"
+        >
+          You can 
           <a
             className="inline"
             href="/donate"
@@ -44,11 +49,6 @@ exports[`<Footer /> matches snapshot 1`] = `
           target="_blank"
         >
           About
-        </a>
-        <a
-          href="/donate"
-        >
-          Donate
         </a>
         <a
           href="/news/shop/"
@@ -127,7 +127,7 @@ exports[`<Footer /> matches snapshot 1`] = `
         <div
           className="col-header"
         >
-          Best Tutorials
+          Trending Guides
         </div>
         <a
           href="/news/best-python-tutorial/"
@@ -206,22 +206,13 @@ exports[`<Footer /> matches snapshot 1`] = `
         >
           WordPress Tutorial
         </a>
-        <a
-          href="/news/best-bootstrap-tutorial-responsive-web-design/"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          Bootstrap Tutorial
-        </a>
       </div>
       <div
         className="footer-col"
       >
         <div
-          className="col-header"
-        >
-          Best Examples
-        </div>
+          className="col-spacer"
+        />
         <a
           href="/news/python-example/"
           rel="noopener noreferrer"
@@ -244,46 +235,11 @@ exports[`<Footer /> matches snapshot 1`] = `
           React Example
         </a>
         <a
-          href="/news/linux-example-bash-command-line/"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          Linux Example
-        </a>
-        <a
-          href="/news/html-and-html5-example/"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          HTML Example
-        </a>
-        <a
           href="/news/css-example-css3/"
           rel="noopener noreferrer"
           target="_blank"
         >
           CSS Example
-        </a>
-        <a
-          href="/news/sql-example/"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          SQL Example
-        </a>
-        <a
-          href="/news/java-example/"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          Java Example
-        </a>
-        <a
-          href="/news/the-best-angular-examples/"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          Angular Example
         </a>
         <a
           href="/news/the-best-jquery-examples/"
@@ -306,15 +262,6 @@ exports[`<Footer /> matches snapshot 1`] = `
         >
           PHP Example
         </a>
-      </div>
-      <div
-        className="footer-col"
-      >
-        <div
-          className="col-header"
-        >
-          Trending Reference
-        </div>
         <a
           href="/news/2019-web-developer-roadmap/"
           rel="noopener noreferrer"
@@ -330,67 +277,11 @@ exports[`<Footer /> matches snapshot 1`] = `
           Linux Command Line Guide
         </a>
         <a
-          href="/news/the-ultimate-guide-to-git-reset-and-git-revert/"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          Git Reset and Git Revert
-        </a>
-        <a
-          href="/news/the-ultimate-guide-to-git-merge-and-git-rebase/"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          Git Merge and Git Rebase
-        </a>
-        <a
-          href="/news/the-ultimate-guide-to-javascript-array-methods-map/"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          JavaScript Array Map
-        </a>
-        <a
-          href="/news/the-ultimate-guide-to-javascript-array-methods-reduce/"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          JavaScript Array Reduce
-        </a>
-        <a
-          href="/news/the-ultimate-guide-to-javascript-date-and-moment-js/"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          JavaScript Date
-        </a>
-        <a
-          href="/news/the-ultimate-guide-to-javascript-string-methods-split/"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          JavaScript String Split
-        </a>
-        <a
           href="/news/understanding-flexbox-everything-you-need-to-know-b4013d4dc9af/"
           rel="noopener noreferrer"
           target="_blank"
         >
           CSS Flexbox Guide
-        </a>
-        <a
-          href="/news/11-things-i-learned-reading-the-css-grid-specification-fb3983aa5e0/"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          CSS Grid Guide
-        </a>
-        <a
-          href="/news/the-ultimate-guide-to-linux-creating-a-sudo-user/"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          Create a Linux Sudo User
         </a>
         <a
           href="/news/the-ultimate-guide-to-ssh-setting-up-ssh-keys/"
