@@ -6,7 +6,11 @@ import Link from '../helpers/Link';
 function FooterCol({ title, links }) {
   return (
     <div className='footer-col'>
-      <div className='col-header'>{title}</div>
+      {title ? (
+        <div className='col-header'>{title}</div>
+      ) : (
+        <div className='col-spacer'></div>
+      )}
       {links.map(({ to, text, internal }, i) => (
         <Link external={!internal} key={`link-${i}`} to={to}>
           {text}
