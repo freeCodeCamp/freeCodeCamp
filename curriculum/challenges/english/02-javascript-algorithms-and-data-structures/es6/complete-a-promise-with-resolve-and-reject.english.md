@@ -16,6 +16,7 @@ const myPromise = new Promise((resolve, reject) => {
   } else {
     reject("Promise was rejected");
   }
+});
 ```
 
 The example above uses strings for the argument of these functions, but it can really be anything. Often, it might be an object, that you would use data from, to put on your website or elsewhere.
