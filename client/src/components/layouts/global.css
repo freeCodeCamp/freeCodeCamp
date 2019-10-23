@@ -248,9 +248,10 @@ strong {
 }
 
 .form-control {
-  color: var(--theme-color);
+  color: var(--primary-color);
   outline: none;
   border-color: var(--quaternary-background);
+  background-color: var(--primary-background);
   -webkit-box-shadow: none !important;
   -moz-box-shadow: none !important;
   box-shadow: none !important;
