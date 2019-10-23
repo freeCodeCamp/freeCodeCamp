@@ -127,11 +127,11 @@ Nuestra comunidad además cuenta con:
 
 ### [Unite a nuestra comunidad aquí](https://www.freecodecamp.org/signin).
 
-### Encontraste un bug?
+### Informar bugs y problemas
 
-Si piensas que encontraste un bug, primero lee [How to Report a Bug](https://www.freecodecamp.org/forum/t/how-to-report-a-bug/19543) y sigue las instrucciones. Si estás seguro de que es un bug nuevo y has confirmado que afecta a otras personas, continúa y crea un ticket en GitHub. Asegúrate de incluir tanta información como sea posible para poder reproducir el bug..
+Si piensas que encontraste un bug, primero lee [How to Report a Bug](https://www.freecodecamp.org/forum/t/how-to-report-a-bug/19543) y sigue las instrucciones. Si estás seguro de que es un bug nuevo y has confirmado que afecta a otras personas, continúa y crea un ticket en GitHub. Asegúrate de incluir tanta información como sea posible para poder reproducir el bug.
 
-### Encontraste un problema de seguridad?
+### Informar problemas de seguridad
 
 Por favor, no crees un ticket en GitHub sobre problemas de seguridad. En cambio, envía un correo electrónico a `security @ freecodecamp.org` y lo veremos de inmediato.
 

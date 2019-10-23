@@ -83,9 +83,9 @@ export const loginRedirect = () => {
     const successRedirect = req => {
       if (!!req && req.session && req.session.returnTo) {
         delete req.session.returnTo;
-        return `${homeLocation}/`;
+        return `${homeLocation}/learn`;
       }
-      return `${homeLocation}/`;
+      return `${homeLocation}/learn`;
     };
 
     let redirect = url.parse(successRedirect(req), true);

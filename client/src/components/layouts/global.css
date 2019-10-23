@@ -10,7 +10,7 @@ body {
 
 .btn-cta-big {
   max-height: 100%;
-  font-size: 40px;
+  font-size: 27px;
   white-space: normal;
 }
 
@@ -154,6 +154,7 @@ input[type='submit']:hover,
   border-color: var(--secondary-color);
   background-color: var(--secondary-color);
   color: var(--secondary-background);
+  cursor: pointer;
 }
 
 .btn:active,
@@ -240,14 +241,18 @@ fieldset[disabled] .btn-primary.focus {
   color: inherit;
 }
 
+.button-group .btn:not(:last-child) {
+  margin-bottom: 10px;
+}
 strong {
   color: var(--secondary-color);
 }
 
 .form-control {
-  color: var(--theme-color);
+  color: var(--primary-color);
   outline: none;
   border-color: var(--quaternary-background);
+  background-color: var(--primary-background);
   -webkit-box-shadow: none !important;
   -moz-box-shadow: none !important;
   box-shadow: none !important;

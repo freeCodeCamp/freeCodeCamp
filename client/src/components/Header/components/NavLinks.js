@@ -16,19 +16,16 @@ function NavLinks({ displayMenu }) {
       >
         <li className='nav-news' role='menuitem'>
           <Link external={true} to='/news'>
-            News
+            /news
           </Link>
         </li>
         <li className='nav-forum' role='menuitem'>
           <Link external={true} to='/forum'>
-            Forum
+            /forum
           </Link>
         </li>
         <li className='nav-projects' role='menuitem'>
-          <Link to='/learn'>Projects</Link>
-        </li>
-        <li className='nav-portfolio' role='menuitem'>
-          <Link to='/portfolio'>Portfolio</Link>
+          <Link to='/learn'>/learn</Link>
         </li>
       </ul>
     </div>
