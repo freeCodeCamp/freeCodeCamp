@@ -36,10 +36,10 @@ exports[`<Footer /> matches snapshot 1`] = `
         </p>
       </div>
       <div
-        className="footer-col"
+        className="footer-col our-nonprofit"
       >
         <div
-          className="col-header"
+          className="col-header "
         >
           Our Nonprofit
         </div>
@@ -122,10 +122,10 @@ exports[`<Footer /> matches snapshot 1`] = `
         </a>
       </div>
       <div
-        className="footer-col"
+        className="footer-col trending-guides"
       >
         <div
-          className="col-header"
+          className="col-header "
         >
           Trending Guides
         </div>
@@ -208,7 +208,7 @@ exports[`<Footer /> matches snapshot 1`] = `
         </a>
       </div>
       <div
-        className="footer-col"
+        className="footer-col "
       >
         <div
           className="col-spacer"

@@ -22,7 +22,7 @@
 .footer-container p {
   font-family: 'Lato', sans-serif;
   margin: 0 0 1.45rem;
-  font-size: 18px;
+  font-size: 15px;
   line-height: 30px;
 }
 
@@ -31,9 +31,9 @@
 }
 
 .footer-container .col-header {
-  padding-bottom: 10px;
+  padding-bottom: 30px;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .footer-row {
@@ -48,12 +48,12 @@
   flex: 0 0 100%;
   padding-left: 15px;
   padding-right: 15px;
-  font-size: 18px;
-  margin: 0 0 1.45rem;
+  font-size: 15px;
+  margin: 0 0 3rem;
 }
 .footer-col a {
   text-decoration: none;
-  padding: 10px 0px 10px 0px;
+  padding: 5px 0px;
 }
 
 .footer-col a:hover {
@@ -66,6 +66,7 @@
   flex-direction: column;
   padding-left: 15px;
   padding-right: 15px;
+  margin-bottom: 30px;
 }
 
 .footer-desc-col a {
@@ -74,21 +75,25 @@
 
 p.footer-donation {
   font-weight: 700;
-  font-size: 20px;
+  font-size: 17px;
 }
 
 .footer-container .col-spacer {
-  margin-top: -1.45rem;
+  margin-top: -3rem;
 }
 
 @media (min-width: 500px) {
   .footer-col {
-    flex: 1 0 45%;
+    flex: 1 0 50%;
     height: auto;
     font-size: 16.5;
+    margin: 0 0 1.45rem;
   }
   .footer-col:last-of-type {
     margin-left: 50%;
+  }
+  .footer-container .col-spacer {
+    margin-top: -1.45rem;
   }
 }
 
@@ -97,16 +102,20 @@ p.footer-donation {
     width: 750px;
   }
   .footer-col {
-    flex: 1 0 100px;
+    flex: 1 0 25%;
     height: auto;
     font-size: 16.5;
   }
+
+  .our-nonprofit {
+    flex: 1 0 35%;
+  }
   .footer-col:last-of-type {
-    flex: 1 0 180px;
+    flex: 1 0 30%;
     margin-left: 0px;
   }
   .footer-container .col-spacer {
-    margin-top: 43px;
+    margin-top: 54px;
   }
 }
 
@@ -117,9 +126,6 @@ p.footer-donation {
 }
 
 @media (min-width: 1200px) {
-  .footer-container p {
-    line-height: 40px;
-  }
   .footer-container {
     width: 1170px;
   }
@@ -127,12 +133,18 @@ p.footer-donation {
     flex: 1 0 35%;
   }
   .footer-col {
-    flex: 1 0 15%;
+    flex: 1 0 10%;
   }
   .footer-col:last-of-type {
-    flex: 1 0 21%;
+    flex: 1 0 17%;
   }
+
+  .our-nonprofit {
+    flex: 1 0 20%;
+    padding: 0 35px 0 55px;
+  }
+
   p.footer-donation {
-    margin-top: 7px;
+    margin-top: 18px;
   }
 }
