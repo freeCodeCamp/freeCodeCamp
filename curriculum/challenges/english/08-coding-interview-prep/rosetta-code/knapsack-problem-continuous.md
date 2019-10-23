@@ -2,6 +2,7 @@
 id: 5a23c84252665b21eecc7ed3
 title: Knapsack problem/Continuous
 challengeType: 5
+forumTopicId: 323654
 ---
 
 ## Description
