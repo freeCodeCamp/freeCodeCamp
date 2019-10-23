@@ -6,8 +6,6 @@
   margin: 0 1.5em 0 0;
 }
 
-.social-media-icons > a:last-child {
-  margin: 0;
-  display: inline-block;
-  border-radius: 100%;
+.social-media-icons > a:hover {
+  background: transparent;
 }
