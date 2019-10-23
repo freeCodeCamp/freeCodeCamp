@@ -190,6 +190,7 @@ class InternetSettings extends Component {
               <ControlLabel>GitHub</ControlLabel>
               <FormControl
                 onChange={this.createHandleChange('githubProfile')}
+                placeholder='https://github.com/user-name'
                 type='url'
                 value={githubProfile}
               />
@@ -203,6 +204,7 @@ class InternetSettings extends Component {
               <ControlLabel>LinkedIn</ControlLabel>
               <FormControl
                 onChange={this.createHandleChange('linkedin')}
+                placeholder='https://www.linkedin.com/in/user-name'
                 type='url'
                 value={linkedin}
               />
@@ -216,6 +218,7 @@ class InternetSettings extends Component {
               <ControlLabel>Twitter</ControlLabel>
               <FormControl
                 onChange={this.createHandleChange('twitter')}
+                placeholder='https://twitter.com/user-name'
                 type='url'
                 value={twitter}
               />
@@ -229,6 +232,7 @@ class InternetSettings extends Component {
               <ControlLabel>Personal Website</ControlLabel>
               <FormControl
                 onChange={this.createHandleChange('website')}
+                placeholder='https://example.com'
                 type='url'
                 value={website}
               />
