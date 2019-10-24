@@ -11,7 +11,7 @@
     </tr>
 </table>
 
-# Pautas de Contribución
+#  Guía de Contribución
 
 Hola 👋!
 
@@ -66,7 +66,7 @@ Para obtener ayuda, busca un `esbozo de artículo` en nuestro [sitio web de la G
 
 Si no puedes encontrar un esbozo sobre el tema que deseas escribir, puedes abrir un PR (pull request) que crea el esbozo e incluye tu borrador del artículo.
 
-**Si deseas trabajar en ello, sigue estas pautas:**
+**Si deseas trabajar en ello, sigue estas  guías:**
 
 #### [Cómo trabajar en los artículos de Guía.](/docs/how-to-work-on-guide-articles.md)
 
@@ -76,7 +76,7 @@ Todos nuestros desafíos de codificación son curados por la comunidad, aportand
 
 Puedes ayudar a expandirlos y hacer que su redacción sea más clara. Puedes actualizar las historias de usuario para explicar mejor el concepto e incluso eliminar las redundantes. Es posible también que desees refactorizar las pruebas que no pasan con un código válido para las historias de usuario.
 
-**Si deseas trabajar en ello, sigue estas pautas:**
+**Si deseas trabajar en ello, sigue estas  guías:**
 
 #### [Cómo trabajar en desafíos de codificación.](/docs/how-to-work-on-coding-challenges.md)
 
@@ -92,7 +92,7 @@ Puedes ayudarnos a traducir nuestros artículos de Guía y desafíos de codifica
 
 La mayoría de estas versiones están traducidas automáticamente. Nos encantaría tu ayuda para mejorar la calidad de estas traducciones.
 
-**Si deseas trabajar en ello, sigue estas pautas:**
+**Si deseas trabajar en ello, sigue estas  guías:**
 
 **[POR HACER/TODO]** Estamos en el proceso de actualizar documentos para el flujo de trabajo de traducción. Siga [`#18313`](https://github.com/freeCodeCamp/freeCodeCamp/issues/18313) para ver el progreso.
 
@@ -112,7 +112,7 @@ Esencialmente, esperamos cierta familiaridad básica con algunas de las tecnolog
 
 Siéntete libre de hacernos preguntas, en los hilos relacionados con problemas, y estaremos encantados de aclarar. En caso de duda, puede comunicarse con Mrugesh Mohapatra [`@raisedadead`](https://github.com/raisedadead) o Stuart Taylor[`@bouncey`](https://github.com/bouncey) desde nuestra equipo de desarrollo de la plataforma para ayudarte con esto.
 
-**Si deseas trabajar en ello, siga estas pautas:**
+**Si deseas trabajar en ello, siga estas guías:**
 
 #### [Cómo configurar freeCodeCamp localmente.](/docs/how-to-setup-freecodecamp-locally.md)
 
