@@ -5,9 +5,9 @@
 
 # Como trabalhar em Artigos Guia
 
-Com a tua ajuda, nós podemos criar uma ferramenta de referência compreensiva que ajudará milhões de pessoas que estão a aprender código nos anos que aí vêm. 💛
+Com a tua ajuda, nós podemos criar uma ferramenta de referência compreensiva que ajudará milhões de pessoas que estão apremdemdo código nos anos que aí vêm. 💛
 
-Tu podes:
+Você pode:
 
 - [Ajudar-nos criando e Editando Artigos Guia](#steps-for-creating-and-editing-guide-articles).
 - [Ajudar-nos revendo <i>pull requests</i> para Artigos Guia]()
@@ -161,13 +161,13 @@ Este é comportamento pretendido, visto que permite-nos atualizar todos os <i>st
 
 Há uma comunidade de suporte de uma equipa inteira de contribuidores, com quem podes trocar ideias e pedir opiniões sobre a tua escrita.
 
-Mantém-te ativo no [chat room de contribuidores](https://gitter.im/freecodecamp/contributors) e faz muitas perguntas.
+Mantenha-se ativo no [chat room de contribuidores](https://gitter.im/freecodecamp/contributors) e faz muitas perguntas.
 
 ---
 
 ## Passos para rever <i>pull requests</i> para Artigos Guia
 
-> Esta secção é direccionada a revisores deste repositório.
+> Esta seção é direcionada a revisores deste repositório.
 
 ## Squash e Merge
 
@@ -237,7 +237,7 @@ Em português:
 ```markdown
 Olá @username
 
-Adoraria juntar as tuas mudanças mas parece que há um erro com o Travis CI build. ⚠️
+Adoraria mesclar as tuas mudanças mas parece que há um erro com o Travis CI build. ⚠️
 
 Assim que resolveres estes problemas, poderei rever o teu PR e juntar ao repositório. 😊
 
@@ -315,7 +315,7 @@ Assim que resolveres estes problemas, poderei rever o teu PR e juntar ao reposit
 > Também é uma boa prática no GitHub escrever uma breve descrição das tuas mudanças quando crias um PR. 📝
 ``````
 
-#### Conflictos de Merge
+#### Conflitos de Merge
 
 > Quando o PR tem conflitos de merge que necessitam de ser resolvidos.¹
 
