@@ -15,13 +15,13 @@ Divirta-se contribuindo 🎉!
 
 ## Esses são alguns jeitos divertidos de contribuir
 
-Você pode contribuir para qualquer área do seu interesse:
+Você pode contribuir em qualquer área do seu interesse:
 
 1. [Contribua para essa base de códigos abertos.](#contribua-para-essa-base-de-códigos-abertos)
 
     Nos ajude criando e editando [Artigos guia](https://www.freecodecamp.org/guide), [desafios de codificação](https://www.freecodecamp.org/learn), ou corrigindo bugs na plataforma de aprendizado.
 
-2. Ajude campistas em nosso [fórum público](https://www.freecodecamp.org/forum/).
+2. Ajude os campistas em nosso [fórum público](https://www.freecodecamp.org/forum/).
 
     - ❓ Ajude campistas [respondendo suas perguntas](https://www.freecodecamp.org/forum/?max_posts=1).
     - 💬 [Faça comentários](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1) em projetos dos campistas.
@@ -57,7 +57,7 @@ Nós agradecemos sua ajuda na escrita desses artigos. Você não precisa ser um 
 
 Para ajudar, encontre um `artigo provisório` na [página de Guias](https://www.freecodecamp.org/guide), escreva o artigo, e então abra um <i>pull request</i> (PR) para substituir o provisório pelo seu artigo. Um [<i>pull request</i>](https://help.github.com/articles/about-pull-requests/) é a forma como você vai sugerir mudanças. Ele permite que outros saibam das suas mudanças, revisem-nas e as adotem.
 
-Se você não consegue encontrar um artigo provisório do tópico sobre o qual você gostaria de escrever, você pode abrir um PR que cria o artigo provisório e então incluir o rascunho do seu artigo.
+Se você não consegue encontrar um artigo provisório do tópico sobre o qual você gostaria de escrever, você pode abrir um PR que cria o artigo provisório e então, incluir o rascunho do seu artigo.
 
 **Se você gostaria de trabalhar nisso, por favor, siga as seguintes recomendações:**
 
@@ -66,7 +66,7 @@ Se você não consegue encontrar um artigo provisório do tópico sobre o qual v
 ### Crie, Atualize e Corrija <i>Bugs</i> em nossos desafios de código
 
 Todos os nossos Desafios de código tem curadoria da comunidade, trazendo conhecimento especializado de voluntários como você.
-Entretanto, eles precisam ser constantemente refinados para melhor qualidade. Por exemplo, você pode querer atualizar suas instruções para melhorar seu palavreado. Você pode atualizar as histórias de usuário para explicar o conceito melhor ou mesmo evitar redundâncias. Você pode querer refatorar testes que não passam em códigos válidos das histórias de usuário.
+Entretanto, eles precisam ser constantemente refinados para melhor qualidade. Por exemplo, você pode desejar atualizar instruções para melhorar seu palavreado. Você pode atualizar as histórias de usuário para explicar o conceito melhor ou mesmo evitar redundâncias. Você pode refatorar testes que não passam em códigos válidos das histórias de usuário.
 
 **Se você gostaria de trabalhar nisso, por favor, siga as seguintes recomendações:**
 
