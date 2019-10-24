@@ -13,7 +13,11 @@ Let us know, if you have feedback or queries, and we will be happy to clarify.
 
 ## How do we build, test and deploy the codebase?
 
-Our codebase is continuously built, tested and deployed  to **separate sets of infrastructure (Servers, Databases, CDNs, etc.)**. This involves three steps to be followed in sequence: First, new changes are merged into our primary development branch (`master`)changes in form of pull requests. Next, these changes are run through a series of automated tests. And finally, once the tests pass we release the changes (or update them if needed) to deployments on our infrastructure.
+Our codebase is continuously built, tested and deployed  to **separate sets of infrastructure (Servers, Databases, CDNs, etc.)**. 
+
+This involves three steps to be followed in sequence: 
+
+First, new changes are merged into our primary development branch (`master`) in form of pull requests. Next, these changes are run through a series of automated tests. And finally, once the tests pass we release the changes (or update them if needed) to deployments on our infrastructure.
 
 ### Building the codebase - Mapping Git Branches to Deployments.
 
@@ -86,7 +90,7 @@ Currently, only members on the developer team can push to the production branche
 
     <details>
       <summary>
-        Check status on Travis CI
+        Checking status on Travis CI (screenshot)
       </summary>
       <br>
       <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/master/docs/images/devops/travis-build.png" alt="Check build status on Travis CI">
@@ -120,7 +124,7 @@ This makes each release from code push to being available on the staging applica
 
 The process is mostly the same as the staging applications, with a few extra checks in place. This is just to make sure, we do not break anything on freeCodeCamp.org which can see hundreds of users using it at any moment.
 
-> ### DO NOT execute these commands until you have verified that everything is working on the staging application. You should not bypass or skip any testing on staging before proceeding further.
+> #### DO NOT execute these commands until you have verified that everything is working on the staging application. You should not bypass or skip any testing on staging before proceeding further.
 
 1. Make sure your `production-staging` branch is pristine and in sync with the upstream.
 
@@ -142,19 +146,19 @@ The process is mostly the same as the staging applications, with a few extra che
 
 And that's it, this will automatically trigger a build on the build pipeline for the `production-current` branch. Typically this also takes ~20-25 minutes for the all the applications like previously.
 
-But here are some additional steps that need to be followed by a freeCodeCamp.org Staff developer. To prevent any accidental pushed we have a couple of manual approval steps configured on the pipelines.
+Here are some additional steps that need to be followed by a freeCodeCamp.org Staff developer. To prevent any accidental pushed we have a couple of manual approval steps configured on the pipelines.
 
 Once a build artifact is ready on the `production-current` branch, it will trigger a release on the release pipeline. Next, freeCodeCamp.org developer staff team will receive and email. They can approve the release or reject it. Approval or rejection depends on if changes were nicely working and tested on the staging application. Each approval lasts only for 4 hours to avoid queuing up. Post that limit it gets auto rejected.
-
-Once one of the members approve a release, the pipeline will push the changes live to freeCodeCamp.org's production CDN servers and API servers. They typically take ~15-20 mins for the client, and ~5 mins for the API servers to be available live.
-
-As a final step, a staff member will also manually click the publish deploy button on Netlify's deployment's dashboard.
 
 For staff use:
 
 | Approve Release | Publish or Rollback on Netlify |
 | :-------------: | :----------------------------: |
-| Check your email for a direct link or [Open this dashboard](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release?_a=releases&view=mine&definitionId=6) | [Open production deployments](https://app.netlify.com/sites/freecodecamp-org/deploys) |
+| Check your email for a direct link or [Open release dashboard](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release?_a=releases&view=mine&definitionId=6) | [Open Netlify deployments](https://app.netlify.com/sites/freecodecamp-org/deploys) |
+
+Once one of the members approves a release, the pipeline will push the changes live to freeCodeCamp.org's production CDN servers and API servers. They typically take ~15-20 mins for the client, and ~5 mins for the API servers to be available live.
+
+As a final step, a staff member will also manually click the publish deploy button on Netlify's deployment's dashboard.
 
 ## Build and Deployment Status
 
@@ -206,7 +210,7 @@ There will be some known limitations and tradeoffs when using the beta version o
 
 - #### There are no guarantees on the uptime and reliability of the beta applications.
 
-  Deployment is expected to be frequent and in rapid iterations, sometimes multiple times a day. As a result there will be unexpected downtime at times or broken functionality on the beta version. The dev team will usually notify for updates in the [Contributors Chat room](https://gitter.im/FreeCodeCamp/Contributors).
+  Deployment is expected to be frequent and in rapid iterations, sometimes multiple times a day. As a result there will be unexpected downtime at times or broken functionality on the beta version.
 
 - #### Do not send regular users to this site as a measure of confirming a fix
 
@@ -216,7 +220,7 @@ There will be some known limitations and tradeoffs when using the beta version o
 
   Google, GitHub and Facebook logins will NOT be available in this beta mode. This is simply a technical limitation, because we are using a separate `test domain` for this version. **Email logins will work just as fine.**
 
-  The sign page may look different than production (as a measure to isolate the development and the production databases.)
+  The sign page may look different than production.
 
 ## Reporting issues and leaving feedback
 
@@ -226,7 +230,7 @@ You may send an email to `dev@freecodecamp.org` if you have any queries. As alwa
 
 ---
 
-## Additional Workflows and commands for freeCodeCamp.org Staff
+## Additional workflows for freeCodeCamp.org Staff [WIP]
 
 ### Provisioning VMs with API Code and starting up services
 
@@ -268,4 +272,7 @@ You may send an email to `dev@freecodecamp.org` if you have any queries. As alwa
    pm2 reload all --update-env && pm2 logs
    ```
 
-### Todo: Configuring NGINX and DNS for the API VMs
+### Configuring NGINX and DNS for the API VMs
+
+  ...
+  
