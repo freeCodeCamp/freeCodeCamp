@@ -29,7 +29,7 @@ It is identical to our live production environment at `freeCodeCamp.org`, other 
 
 Once the developer team [`@freeCodeCamp/dev-team`](https://github.com/orgs/freeCodeCamp/teams/dev-team/members) is happy with the changes on the staging application, these changes are moved every few days to the [`production-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-current) branch.
 
-This is the final release that moves changes to our production platforms on freeCodeCamp.org
+This is the final release that moves changes to our production platforms on freeCodeCamp.org.
 
 ### Testing changes - Integration and User Acceptance Testing.
 
@@ -55,7 +55,7 @@ You can take a look and browse these here:
 The build pipeline triggers the release pipeline after a hold of 5 minutes for our staff to go in and intervene if necessary.
 The code/config is publicly accessible on Azure's Dev Dashboard. Write access to this is limited to the freeCodeCamp.org staff team.
 
-We recommend not pushing more than 3-4 builds to the development (`dot-dev-*`) pipelines within a day and not more than one within the hour. This is because our artifacts are quite large and would put a load on our servers when deploying.
+We recommend not pushing more than 3-4 builds to the pipelines within a day and not more than one within the hour. This is because our artifacts are quite large and would put a load on our servers when deploying.
 
 ## Triggering a build, test and deployment.
 
