@@ -7,7 +7,7 @@
 
 Thanks for your interest in learning more about how we do DevOps for the platform at freeCodeCamp.org.
 
-This guide will help you understand our infrastructure stack and how we maintain our platforms. While, this is guide does not have exhaustive details for all operations, it could be used as a reference for your understanding of the systems.
+This guide will help you understand our infrastructure stack and how we maintain our platforms. While this guide does not have exhaustive details for all operations, it could be used as a reference for your understanding of the systems.
 
 Let us know, if you have feedback or queries, and we will be happy to clarify.
 
