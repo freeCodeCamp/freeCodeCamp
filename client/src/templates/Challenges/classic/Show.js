@@ -237,7 +237,7 @@ class ShowClassic extends Component {
       <Output
         defaultOutput={`
 /**
-* Your test output will go here.
+* Your unit test output will go here.
 */
 `}
         output={output}
