@@ -117,7 +117,7 @@ Please don't create GitHub issues for security issues. Instead, please send an e
 
 ### License
 
-Copyright (c) 2018 freeCodeCamp.org
+Copyright © 2018 freeCodeCamp.org
 
 The content of this repository bound by the following licenses:
 
