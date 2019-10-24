@@ -48,6 +48,7 @@ export class DonatePage extends Component {
     this.handleStripeLoad = this.handleStripeLoad.bind(this);
     this.toggleOtherOptions = this.toggleOtherOptions.bind(this);
   }
+
   componentDidMount() {
     if (window.Stripe) {
       this.handleStripeLoad();
@@ -91,7 +92,8 @@ export class DonatePage extends Component {
     }
 
     if (!showLoading && !isSignedIn) {
-      return navigate(`${apiLocation}/signin`);
+      navigate(`${apiLocation}/signin?returnTo=donate`);
+      return <Loader fullScreen={true} />;
     }
 
     return (

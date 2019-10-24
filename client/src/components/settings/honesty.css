@@ -8,19 +8,7 @@
   padding-top: 15px;
 }
 
-.honesty-policy .agreed {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--quaternary-color);
-  color: #fff;
-}
-
-div .agreed p {
-  color: white;
-}
-
-.honesty-policy .agreed p {
+.honesty-policy .disabled-agreed p {
   margin-top: 0;
   margin-bottom: 0;
 }

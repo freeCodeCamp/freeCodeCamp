@@ -179,9 +179,20 @@ export const userSelector = state => {
 };
 
 export const sessionMetaSelector = state => state[ns].sessionMeta;
-export const activeDonationsSelector = state =>
-  Number(sessionMetaSelector(state).activeDonations) +
-  Number(PAYPAL_SUPPORTERS || 0);
+export const activeDonationsSelector = state => {
+  const donors =
+    Number(sessionMetaSelector(state).activeDonations) +
+    Number(PAYPAL_SUPPORTERS || 0) -
+    // Note 1:
+    // Offset the no of inactive donations, that are not yet normalized in db
+    // TODO: This data needs to be fetched and updated in db from Stripe
+    2500;
+  // Note 2:
+  // Due to the offset above, non-prod data needs to be adjusted for -ve values
+  return donors > 0
+    ? donors
+    : Number(sessionMetaSelector(state).activeDonations);
+};
 
 function spreadThePayloadOnUser(state, payload) {
   return {
