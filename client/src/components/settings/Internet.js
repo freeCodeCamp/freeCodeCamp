@@ -72,7 +72,7 @@ class InternetSettings extends Component {
     if (isURL(maybeURl)) {
       return {
         state: 'success',
-        message: ''
+        message: 'This URL is valid'
       };
     }
     return {
@@ -176,6 +176,7 @@ class InternetSettings extends Component {
               <ControlLabel>GitHub</ControlLabel>
               <FormControl
                 onChange={this.createHandleChange('githubProfile')}
+                placeholder='https://github.com/username'
                 type='url'
                 value={githubProfile}
               />
@@ -190,6 +191,7 @@ class InternetSettings extends Component {
               <ControlLabel>LinkedIn</ControlLabel>
               <FormControl
                 onChange={this.createHandleChange('linkedin')}
+                placeholder='https://www.linkedin.com/in/username'
                 type='url'
                 value={linkedin}
               />
@@ -204,6 +206,7 @@ class InternetSettings extends Component {
               <ControlLabel>Twitter</ControlLabel>
               <FormControl
                 onChange={this.createHandleChange('twitter')}
+                placeholder='https://twitter.com/username'
                 type='url'
                 value={twitter}
               />
@@ -218,6 +221,7 @@ class InternetSettings extends Component {
               <ControlLabel>Personal Website</ControlLabel>
               <FormControl
                 onChange={this.createHandleChange('website')}
+                placeholder='https://example.com'
                 type='url'
                 value={website}
               />

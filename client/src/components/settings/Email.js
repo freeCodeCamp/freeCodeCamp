@@ -97,7 +97,7 @@ class EmailSettings extends Component {
       };
     }
     if (isEmail(newEmail)) {
-      return { state: 'success', message: '' };
+      return { state: 'success', message: 'This email is valid' };
     } else {
       return {
         state: 'error',
@@ -123,7 +123,9 @@ class EmailSettings extends Component {
     if (maybeEmailRE.test(confirmNewEmail)) {
       return {
         state: isMatch ? 'success' : 'error',
-        message: isMatch ? '' : 'Both new email addresses must be the same'
+        message: isMatch
+          ? 'Both new email addresses are same and valid'
+          : 'Both new email addresses must be the same'
       };
     } else {
       return {
