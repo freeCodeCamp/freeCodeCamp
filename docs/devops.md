@@ -116,7 +116,7 @@ Currently, only members on the developer team can push to the production branche
 
 And that's it, this will automatically trigger a build on the build pipeline for the `production-staging` branch. Typically this takes ~20-25 minutes for the all the applications. Once the build is complete, it will save the artifacts as `.zip` files in a cold storage to be retrieved and used by the release pipeline.
 
-The release pipeline automatically triggers itself when a fresh artifact is available from the connected build pipeline. For the staging applications this is completely automated and the artifacts are pushed to the client CDN servers and the API servers. They typically take ~15-20 mins for the client, and ~5 mins for the API servers to be available live.
+The release pipeline automatically triggers itself when a fresh artifact is available from the connected build pipeline. For the staging applications this is completely automated and the artifacts are pushed to the client CDN and the API servers. They typically take ~15-20 mins for the client, and ~5 mins for the API servers to be available live.
 
 This makes each release from code push to being available on the staging applications ~60 mins.
 
@@ -144,11 +144,11 @@ The process is mostly the same as the staging applications, with a few extra che
 
    You will not be able to force push and if you have re-written the history in anyway these commands will error out. If they do, you may have done something incorrectly and you should just start over.
 
-And that's it, this will automatically trigger a build on the build pipeline for the `production-current` branch. Typically this also takes ~20-25 minutes for the all the applications like previously.
+And that's it, this will automatically trigger a build on the build pipeline for the `production-current` branch. Typically this also takes ~20-25 minutes for the all the applications like explained previously.
 
-Here are some additional steps that need to be followed by a freeCodeCamp.org Staff developer. To prevent any accidental pushed we have a couple of manual approval steps configured on the pipelines.
+Here are some additional steps that need to be followed by a freeCodeCamp.org Staff developer. To prevent any accidental pushes we have a couple of manual approval steps configured on the pipelines.
 
-Once a build artifact is ready on the `production-current` branch, it will trigger a release on the release pipeline. Next, freeCodeCamp.org developer staff team will receive and email. They can approve the release or reject it. Approval or rejection depends on if changes were nicely working and tested on the staging application. Each approval lasts only for 4 hours to avoid queuing up. Post that limit it gets auto rejected.
+Once a build artifact is ready on the `production-current` branch, it will trigger a release on the release pipeline. Next, freeCodeCamp.org developer staff team will receive an email. They can either *approve* or *reject* the release. Approval or rejection depends, if changes were nicely working and tested on the staging application. Each approval lasts only for 4 hours to avoid queuing up. Post the limit it gets auto rejected, wherein a staff will re-trigger the release pipeline manually.
 
 For staff use:
 
@@ -156,7 +156,7 @@ For staff use:
 | :-------------: | :----------------------------: |
 | Check your email for a direct link or [Open release dashboard](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release?_a=releases&view=mine&definitionId=6) | [Open Netlify deployments](https://app.netlify.com/sites/freecodecamp-org/deploys) |
 
-Once one of the members approves a release, the pipeline will push the changes live to freeCodeCamp.org's production CDN servers and API servers. They typically take ~15-20 mins for the client, and ~5 mins for the API servers to be available live.
+Once one of the members approves a release, the pipeline will push the changes live to freeCodeCamp.org's production CDN and API servers. They typically take ~15-20 mins for the client, and ~5 mins for the API servers to be available live.
 
 As a final step, a staff member will also manually click the publish deploy button on Netlify's deployment's dashboard.
 
