@@ -15,11 +15,11 @@ Creating these challenges requires immense creativity and attention to detail. B
 
 With your help, we can design an interactive coding curriculum that will help millions of people learn to code for years to come.
 
-The content for each challenge is stored in its own markdown file. This markdown file is later coverted using our tools, to webpage that you can interact with. You can find all of freeCodeCamp.org's curricular content in the [`/curriculum`](/curriculum) directory.
+The content for each challenge is stored in its own markdown file. This markdown file is later coverted using our tools, to a webpage that you can interact with. You can find all of freeCodeCamp.org's curricular content in the [`/curriculum`](/curriculum) directory.
 
 There are two ways you can work on these challenges:
 
-- We recommend, you clone the project and edit locally on your computer. For help with that, read our [contributing guidelines here](/CONTRIBUTING.md).
+- We recommend that you clone the project and edit locally on your computer. For help with that, read our [contributing guidelines here](/CONTRIBUTING.md).
 - Or optionally, you can modify a challenge within the GitHub interface, by clicking the pencil icon to start editing the file.
 
 ## Challenge Template
@@ -45,7 +45,7 @@ videoUrl: 'url of video explanation'
 
 ## Description
 <section id='description'>
-A Description of the challenge and what is required to pass
+A Description of the challenge and what is required to pass.
 </section>
 
 ## Instructions
@@ -155,7 +155,7 @@ Here are some example challenge names:
 
 ## Writing challenge descriptions/instructions
 
-Sentences should be clear and concise with minimal jargon. If used, jargon should be immediately defined in plain English.
+Sentences should be clear and concise with minimal jargon. If used, jargon should be defined immediately in plain English.
 
 Keep paragraphs short (around 1-4 sentences). People are more likely to read several short paragraphs over a wall of text.
 
@@ -225,7 +225,7 @@ The following is an example of code:
 
 Challenges should have the minimum number of tests necessary to verify that a camper understands a concept.
 
-Our goal is to communicate the single point that the challenge is trying to teach, and test that they have understood that point.
+Our goal is to communicate a single point per challenge, and test that the camper has understood that point.
 
 Challenge tests can make use of the Node.js and Chai.js assertion libraries. Also, if needed, user-generated code can be accessed in the `code` variable.
 
@@ -250,14 +250,14 @@ If you find a problem with an existing challenge's hints/solutions topic, you ca
 
 Take the following steps when adding a new challenge hints/solutions related topic.
 
-1. Start by following the same steps for [creating a new topic](creating-a-new-guide-topic) but review the next for creating the title.
+1. Start by following the steps for [creating a new topic](creating-a-new-guide-topic) but review the following steps to create the title:
 2. The title of the topic should start with "freeCodeCamp Challenge Guide: " concatenated with the actual title of the curriculum challenge. For example, if the challenge is named "Chunky Monkey", the topic title would be "freeCodeCamp Challenge Guide: Chunky Monkey".
 3. `camperbot` should be the owner of these topics/posts, so you will need to request an admin to change the ownership of the main post to `camperbot`.
 4. Once the new topic is created, a forum topic id is created.  It is located at the end of the forum topic URL.  This id must be added to the frontmatter of the curriculum challenge file via the normal pull request process for the `Get a Hint` button to link to the topic.
 
 ### Guidelines for content of hints and solutions topics
 
-When proposing a solution for a curriculum challenge related Guide topic, the full code must be added. This includes all the original seed code plus any changes needed to pass all the challenge tests.  The following template should be used when creating new hints/solutions topics:
+When proposing a solution for a curriculum challenge related Guide topic, the full code must be included. This includes all the original seed code plus any changes needed to pass all the challenge tests.  The following template should be used when creating new hints/solutions topics:
 
 ````md
 # Challenge Name Goes Here
@@ -265,7 +265,7 @@ When proposing a solution for a curriculum challenge related Guide topic, the fu
 ---
 ## Problem Explanation
 
-This summarizes what need to be done without just restating the challenge description and/or instructions.  This is an optional section
+This summarizes what needs to be done without simply restating the challenge description and/or instructions.  This is an optional section.
 
 #### Relevant Links
 - [Link Text](link_url_goes_here)
