@@ -7,88 +7,59 @@
 
 Thanks for your interest in learning more about how we do DevOps for the platform at freeCodeCamp.org.
 
-We have tried to keep the language in this guide as simple as possible for everyone. However, you may find some technical jargon in here. This is not an exhaustive guide for all operations, and is to be used just as a reference for your understanding of the systems.
+This guide will help you understand our infrastructure stack and how we maintain our platforms. While, this is guide does not have exhaustive details for all operations, it could be used as a reference for your understanding of the systems.
 
-## How we build and deploy the codebase?
+Let us know, if you have feedback or queries, and we will be happy to clarify.
 
-We continuously build and deploy [`master`](https://github.com/freeCodeCamp/freeCodeCamp/tree/master), our default development branch on a **separate set of servers**.
+## How do we build, test and deploy the codebase?
 
-Typically, the `master` branch is merged into the [`production-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) branch once a day and released into an isolated infrastructure. We call this our "staging/beta" application.
+Our codebase is continuously built, tested and deployed  to **separate sets of infrastructure (Servers, Databases, CDNs, etc.)**. This involves three steps to be followed in sequence: First, new changes are merged into our primary development branch (`master`)changes in form of pull requests. Next, these changes are run through a series of automated tests. And finally, once the tests pass we release the changes (or update them if needed) to deployments on our infrastructure.
 
-It is identical to our live production environment at `freeCodeCamp.org`, other than it using a separate set of databases, servers, web-proxy, etc. This isolation lets us test ongoing development and features in a "production like" scenario, without affecting regular users of freeCodeCamp.org's platforms.
+### Building the codebase - Mapping Git Branches to Deployments.
 
-Once the developer team [`@freeCodeCamp/dev-team`](https://github.com/orgs/freeCodeCamp/teams/dev-team/members) is happy with the changes on the staging application, these changes are moved every few days to the [`production-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-current) branch. We then release the changes to our live platforms on freeCodeCamp.org
+Typically, [`master`](https://github.com/freeCodeCamp/freeCodeCamp/tree/master) (the default development branch) is merged into the [`production-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) branch once a day and is released into an isolated infrastructure.
 
-We employ various levels of integration and acceptance testing to check on the quality of the code. All our tests are done through software like Travis and Azure Pipelines. Some of this automated, that is once changes are pushed to the corresponding branch, they get built and deployed on the platforms.
+This is an intermediate release for our developers and volunteer contributors. It also known as our "staging/beta" application.
 
-We welcome you to test these releases in a **"public beta testing"** mode and get early access to upcoming features to the platforms. Sometimes these features/changes are referred to as **next, beta, staging,** etc. interchangeably.
+It is identical to our live production environment at `freeCodeCamp.org`, other than it using a separate set of databases, servers, web-proxies, etc. This isolation lets us test ongoing development and features in a "production" like scenario, without affecting regular users of freeCodeCamp.org's main platforms.
 
-Your contributions via feedback and issue reports will help us in making the production platforms at `freeCodeCamp.org` more **resilient**, **consistent** and **stable** for everyone.
+Once the developer team [`@freeCodeCamp/dev-team`](https://github.com/orgs/freeCodeCamp/teams/dev-team/members) is happy with the changes on the staging application, these changes are moved every few days to the [`production-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-current) branch.
 
-We thank you for reporting bugs that you encounter and help in making freeCodeCamp.org better. You rock!
+This is the final release that moves changes to our production platforms on freeCodeCamp.org
 
-## Identifying the upcoming version of platform
+### Testing changes - Integration and User Acceptance Testing.
 
-The domain name will be different than **`freeCodeCamp.org`**. Currently this public beta testing version is available at:
+We employ various levels of integration and acceptance testing to check on the quality of the code. All our tests are done through software like [Travis CI](https://travis-ci.org/freeCodeCamp/freeCodeCamp) and [Azure Pipelines](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp).
 
-<h3 align="center"><a href='https://www.freecodecamp.dev' _target='blank'><code>www.freecodecamp.dev</code></a></h4>
+We have unit tests for testing our challenge solutions, Server APIs and Client User interfaces. These help us test the integration between different components.
 
-The dev-team merges changes from the `master` branch to `production-staging` when they release changes. Usually the top commit should be what you see live on the site. You can identify the exact version deployed by visiting the build and deployment logs available below in the status section.
+> Note: We are also in the process of writing end user tests which will help in replicating real world scenarios like updating an email or making a call to the API or third-party services.
 
-## Identifying the current version of platform
+Together these tests help in preventing issues from repeating themselves and ensure we do not introduce a bug while working on  another bug or a feature.
 
-**The current version of the platform is always available at [`freeCodeCamp.org`](https://www.freecodecamp.org).**
+### Deploying Changes - Pushing changes to servers.
 
-The dev-team merges changes from the `production-staging` branch to `production-current` when they release changes. The top commit should be what you see live on the site. You can identify the exact version deployed by visiting the build and deployment logs available below in the status section.
+We have configured continuous delivery software to push changes to our development and production servers. Once the changes are pushed to the protected release branches, these should trigger our build and release pipelines:
 
-## Provisioning VMs with API Code and Startup commands
+You can take a look and browse these here:
 
-1. Install Node LTS.
+| Build Pipeline | Release Pipeline |
+| :------------- | :--------------- |
+| Setup to build artifacts for deployments. | Setup to deploy artifacts to their destination servers. |
+| [Go to builds](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build) | [Go to releases](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release) |
 
-2. Update `npm` and install PM2 and setup logrotate and startup on boot 
-   
-   ```
-   npm i -g npm
-   npm i -g pm2
-   pm2 install pm2-logrotate   
-   pm2 startup
-   ```
-   
-3. Clone freeCodeCamp, setup env and keys, install dependencies, and make first build.
-   
-   ```
-   npm run ensure-env && npm run build:server
-   ```
+The build pipeline triggers the release pipeline after a hold of 5 minutes for our staff to go in and intervene if necessary.
+The code/config is publicly accessible on Azure's Dev Dashboard. Write access to this is limited to the freeCodeCamp.org staff team.
 
-4. Start Instances  
+We recommend not pushing more than 3-4 builds to the development (`dot-dev-*`) pipelines within a day and not more than one within the hour. This is because our artifacts are quite large and would put a load on our servers when deploying.
 
-   ```
-   cd api-server 
-   pm2 start production-start.js -i max --max-memory-restart 600M --name org
-   ```
-5. Logging, Monitoring and Reloading on updates to code changes
+## Triggering a build, test and deployment.
 
-   ```
-   pm2 logs
-   ```
-   
-   ```
-   pm2 monitor
-   ```
-   
-   ```
-   pm2 reload all --update-env && pm2 logs
-   ```
-
-## Build and Deployment Status
-
-We use Azure Pipelines and other CI software (Travis, GitHub Actions), to continuously test and deploy our applications.
-
-### Triggering a build
-
-Currently, only the developer team can push to the production branches, because of the automated deployments on live sites. The changes to the `production-*` branches can land only via fast-forward merge to the [`upstream`](https://github.com/freeCodeCamp/freeCodeCamp).
+Currently, only members on the developer team can push to the production branches. The changes to the `production-*` branches can land only via fast-forward merge to the [`upstream`](https://github.com/freeCodeCamp/freeCodeCamp).
 
 > Note: In the upcoming days we would improve this flow to be done via pull-requests, for better access management and transparency.
+
+### Pushing changes to Staging Applications.
 
 1. Configure your remotes correctly.
 
@@ -101,7 +72,7 @@ Currently, only the developer team can push to the production branches, because 
    upstream	git@github.com:freeCodeCamp/freeCodeCamp.git (push)
    ```
 
-2. Make sure your master is pristine and in sync with the upstream.
+2. Make sure your `master` branch is pristine and in sync with the upstream.
 
    ```sh
    git checkout master
@@ -109,11 +80,19 @@ Currently, only the developer team can push to the production branches, because 
    git reset --hard upstream/master
    ```
 
-3. Check that the Travis CI is passing on the master branch for upstream.
+3. Check that the Travis CI is passing on the `master` branch for upstream.
 
-   - [ ] https://travis-ci.org/freeCodeCamp/freeCodeCamp/branches should be Green.
+   The [continuous integration](https://travis-ci.org/freeCodeCamp/freeCodeCamp/branches) tests should be green and PASSING for the `master` branch.
 
-   ![Image - Check build status on Travis CI](/docs/images/devops/travis-build.png)
+    <details>
+      <summary>
+        Check status on Travis CI
+      </summary>
+      <br>
+      <img src="https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/master/docs/images/devops/travis-build.png" alt="Check build status on Travis CI">
+    </details>
+
+   If this is failing you should stop and investigate the errors.
 
 4. Confirm that you are able to build the repository locally.
 
@@ -121,7 +100,7 @@ Currently, only the developer team can push to the production branches, because 
    npm run clean-and-develop
    ```
 
-5. Move changes from master to `production-staging`
+5. Move changes from `master` to `production-staging` via a fast-forward merge
 
    ```
    git checkout production-staging
@@ -129,28 +108,57 @@ Currently, only the developer team can push to the production branches, because 
    git push upstream
    ```
 
-   You will not be able to force push and if you have re-written the history in anyway these commands will error out.
+   You will not be able to force push and if you have re-written the history in anyway these commands will error out. If they do, you may have done something incorrectly and you should just start over.
 
-### Triggering a deployment
+And that's it, this will automatically trigger a build on the build pipeline for the `production-staging` branch. Typically this takes ~20-25 minutes for the all the applications. Once the build is complete, it will save the artifacts as `.zip` files in a cold storage to be retrieved and used by the release pipeline.
 
-Once the changes are pushed to the production branches, these should trigger our build and release pipelines:
+The release pipeline automatically triggers itself when a fresh artifact is available from the connected build pipeline. For the staging applications this is completely automated and the artifacts are pushed to the client CDN servers and the API servers. They typically take ~15-20 mins for the client, and ~5 mins for the API servers to be available live.
 
-- Build Pipeline: https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build
+This makes each release from code push to being available on the staging applications ~60 mins.
 
-  This pipeline is setup to build artifacts for deployments.
+### Pushing changes to Production Applications.
 
+The process is mostly the same as the staging applications, with a few extra checks in place. This is just to make sure, we do not break anything on freeCodeCamp.org which can see hundreds of users using it at any moment.
 
-- Release Pipeline: https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release
+> ### DO NOT execute these commands until you have verified that everything is working on the staging application. You should not bypass or skip any testing on staging before proceeding further.
 
-  This pipeline is setup to deploy artifacts to their destination servers.
+1. Make sure your `production-staging` branch is pristine and in sync with the upstream.
 
-The build pipeline triggers the release pipeline after a hold of 15 minutes for our staff developers to go in and intervene if necessary. We would make these to have manual approvals in future for more faster builds.
+   ```sh
+   git checkout production-staging
+   git fetch --all --prune
+   git reset --hard upstream/production-staging
+   ```
 
-For now, you should not trigger more than one build within an hour, and wait for a previous build to complete.
+2. Move changes from `production-staging` to `production-current` via a fast-forward merge
 
-The code/config is publicly accessible on Azure's Dev Dashboard. Write access to this is limited to the freeCodeCamp.org staff team.
+   ```
+   git checkout production-current
+   git merge production-staging
+   git push upstream
+   ```
 
-> Note: The release pipeline is intentionally not deploying to production site currently, before the upcoming release. This should change when the guide goes live in a few days.
+   You will not be able to force push and if you have re-written the history in anyway these commands will error out. If they do, you may have done something incorrectly and you should just start over.
+
+And that's it, this will automatically trigger a build on the build pipeline for the `production-current` branch. Typically this also takes ~20-25 minutes for the all the applications like previously.
+
+But here are some additional steps that need to be followed by a freeCodeCamp.org Staff developer. To prevent any accidental pushed we have a couple of manual approval steps configured on the pipelines.
+
+Once a build artifact is ready on the `production-current` branch, it will trigger a release on the release pipeline. Next, freeCodeCamp.org developer staff team will receive and email. They can approve the release or reject it. Approval or rejection depends on if changes were nicely working and tested on the staging application. Each approval lasts only for 4 hours to avoid queuing up. Post that limit it gets auto rejected.
+
+Once one of the members approve a release, the pipeline will push the changes live to freeCodeCamp.org's production CDN servers and API servers. They typically take ~15-20 mins for the client, and ~5 mins for the API servers to be available live.
+
+As a final step, a staff member will also manually click the publish deploy button on Netlify's deployment's dashboard.
+
+For staff use:
+
+| Approve Release | Publish or Rollback on Netlify |
+| :-------------: | :----------------------------: |
+| Check your email for a direct link or [Open this dashboard](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release?_a=releases&view=mine&definitionId=6) | [Open production deployments](https://app.netlify.com/sites/freecodecamp-org/deploys) |
+
+## Build and Deployment Status
+
+Here is the current build and deployment status of the codebase.
 
 ### Build Status
 
@@ -167,6 +175,26 @@ The code/config is publicly accessible on Azure's Dev Dashboard. Write access to
 | API          | Beta/Next  | [![Azure Pipelines Deployment Status](https://vsrm.dev.azure.com/freeCodeCamp-org/_apis/public/Release/badge/4b80aded-11d9-49ea-9b7d-596e98ff07c4/4/9)](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release) |
 | Client       | Production | [![Azure Pipelines Deployment Status](https://vsrm.dev.azure.com/freeCodeCamp-org/_apis/public/Release/badge/4b80aded-11d9-49ea-9b7d-596e98ff07c4/6/22)](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release) |
 | API          | Production | [![Azure Pipelines Deployment Status](https://vsrm.dev.azure.com/freeCodeCamp-org/_apis/public/Release/badge/4b80aded-11d9-49ea-9b7d-596e98ff07c4/6/23)](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release) |
+
+## Early access and beta testing upcoming versions of freeCodeCamp.org's platform and curriculum
+
+We welcome you to test these releases in a **"public beta testing"** mode and get early access to upcoming features to the platforms. Sometimes these features/changes are referred to as **next, beta, staging,** etc. interchangeably.
+
+Your contributions via feedback and issue reports will help us in making the production platforms at `freeCodeCamp.org` more **resilient**, **consistent** and **stable** for everyone.
+
+We thank you for reporting bugs that you encounter and help in making freeCodeCamp.org better. You rock!
+
+## Identifying the upcoming version of platform
+
+The domain name will be different than **`freeCodeCamp.org`**. Currently this public beta testing version is available at:
+
+<h3 align="center"><a href='https://www.freecodecamp.dev' _target='blank'><code>www.freecodecamp.dev</code></a></h4>
+
+## Identifying the current version of platform
+
+**The current version of the platform is always available at [`freeCodeCamp.org`](https://www.freecodecamp.org).**
+
+The dev-team merges changes from the `production-staging` branch to `production-current` when they release changes. The top commit should be what you see live on the site. You can identify the exact version deployed by visiting the build and deployment logs available below in the status section.
 
 ## Known Limitations
 
@@ -195,3 +223,49 @@ There will be some known limitations and tradeoffs when using the beta version o
 Please open fresh issues for discussions and reporting bugs. You can label them as **[`release: next/beta`](https://github.com/freeCodeCamp/freeCodeCamp/labels/release%3A%20next%2Fbeta)** for triage.
 
 You may send an email to `dev@freecodecamp.org` if you have any queries. As always all security vulnerabilities should be reported to `security@freecodecamp.org` instead of the public tracker and forum.
+
+---
+
+## Additional Workflows and commands for freeCodeCamp.org Staff
+
+### Provisioning VMs with API Code and starting up services
+
+1. Install Node LTS.
+
+2. Update `npm` and install PM2 and setup logrotate and startup on boot
+
+   ```
+   npm i -g npm
+   npm i -g pm2
+   pm2 install pm2-logrotate
+   pm2 startup
+   ```
+
+3. Clone freeCodeCamp, setup env and keys, install dependencies, and make first build.
+
+   ```
+   npm run ensure-env && npm run build:server
+   ```
+
+4. Start Instances
+
+   ```
+   cd api-server
+   pm2 start production-start.js -i max --max-memory-restart 600M --name org
+   ```
+
+5. Logging, Monitoring and Reloading on updates to code changes
+
+   ```
+   pm2 logs
+   ```
+
+   ```
+   pm2 monitor
+   ```
+
+   ```
+   pm2 reload all --update-env && pm2 logs
+   ```
+
+### Todo: Configuring NGINX and DNS for the API VMs
