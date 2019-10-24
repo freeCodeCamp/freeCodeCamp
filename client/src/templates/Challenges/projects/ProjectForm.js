@@ -29,12 +29,6 @@ export class ProjectForm extends Component {
   componentDidMount() {
     this.props.updateProjectForm({});
   }
-  componentDidUpdate() {
-    this.props.updateProjectForm({});
-  }
-  componentWillUnmount() {
-    this.props.updateProjectForm({});
-  }
   handleSubmit(values) {
     this.props.updateProjectForm(values);
     this.props.onSubmit();
