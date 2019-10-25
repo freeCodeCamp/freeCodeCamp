@@ -93,7 +93,7 @@ Nie potrzebujesz żadnego zezwolenia dla spraw, które są oznaczone jako "pomoc
 
 ##### Jestem nowy w GitHubie i Open Source, od czego powinienem zacząć?
 
-Przeczytaj nasz [How to Contribute to Open Source Guide](https://github.com/freeCodeCamp/how-to-contribute-to-open-source).
+Przeczytaj nasz [Poradnik jak wnieść wkład do Open Source](https://github.com/freeCodeCamp/how-to-contribute-to-open-source).
 
 ##### Utknąłem na czymś, co nie jest zawarte w tej dokumentacji. Jak mogę uzyskać pomoc?
 
