@@ -95,7 +95,7 @@ Nie potrzebujesz żadnego zezwolenia dla spraw, które są oznaczone jako "pomoc
 
 Przeczytaj nasz [How to Contribute to Open Source Guide](https://github.com/freeCodeCamp/how-to-contribute-to-open-source).
 
-##### Utknęłam na czymś, co nie jest zawarte w tej dokumentacji. Jak mogę uzyskać pomoc?
+##### Utknąłem na czymś, co nie jest zawarte w tej dokumentacji. Jak mogę uzyskać pomoc?
 
 Możesz poprosić o pomoc:
 
