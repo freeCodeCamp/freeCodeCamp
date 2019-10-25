@@ -78,7 +78,7 @@ W przypadku literówek i innych zmian w słownictwie, możesz bezpośrednio otwi
 
 ##### Jak mogę dostać problem przypisany do mnie?
 
-Zazwyczaj nie przydziela się problemów nikomu innemu niż długoletni współpracownicy, aby uniknąć ambitnego nie pojawienia się na zajęciach. Zamiast tego postępujemy zgodnie z poniższą polityką, aby być sprawiedliwym dla wszystkich:
+Zazwyczaj nie przydziela się problemów nikomu innemu niż długoletnim współpracownikom, aby uniknąć ambitnego nie dostarczenia wyników. Zamiast tego postępujemy zgodnie z poniższą polityką, aby być sprawiedliwym dla wszystkich:
 
 1. Preferowane jest połączenie pierwszego wniosku o wyciągnięcie ręki w każdej sprawie.
 2. W przypadku wielokrotnych próśb o ten sam problem, dajemy pierwszeństwo jakości kodu w próśb o wyciągnięcie. 
