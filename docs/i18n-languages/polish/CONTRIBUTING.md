@@ -2,7 +2,7 @@
 
 Cześć. 👋
 
-funkcjonowanie freeCodeCamp.org jest możliwe dzięki tysiącom życzliwych wolontariuszy takich jak Ty. Jesteśmy wdzięczni za Twój wkład i cieszymy się, że możemy Cię powitać na pokładzie.
+Funkcjonowanie freeCodeCamp.org jest możliwe dzięki tysiącom życzliwych wolontariuszy takich jak Ty. Jesteśmy wdzięczni za Twój wkład i cieszymy się, że możemy powitać Cię na pokładzie.
 
 Ściśle egzekwujemy nasz [„Kodeks postępowania”](https://www.freecodecamp.org/code-of-conduct). Poświęć chwilę, aby go przeczytać. Ma tylko 196 słów.
 
