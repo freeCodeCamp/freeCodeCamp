@@ -822,7 +822,7 @@ export default function(User) {
         const allUser = {
           ..._.pick(user, publicUserProps),
           isGithub: !!user.githubProfile,
-          isLinkedIn: !!user.linkedIn,
+          isLinkedIn: !!user.linkedin,
           isTwitter: !!user.twitter,
           isWebsite: !!user.website,
           points: progressTimestamps.length,
