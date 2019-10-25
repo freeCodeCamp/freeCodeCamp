@@ -6,7 +6,7 @@
 
 ## ¡Bienvenido al plan de estudios y repositorio público de freeCodeCamp.org!
 
-[freeCodeCamp.org](https://www.freecodecamp.org) es una comunidad amigable donde puedes aprender a programar gratis. Es administrado por una organización sin fines de lucro respaldada por donantes ([donor-supported 501(c)(3) nonprofit](https://donate.freecodecamp.org)) y cuyo objetivo es ayudar a millones de adultos en la transición laboral a campos vinculados con la tecnología. Nuestra comunidad ya ha ayudado a más de 10,000 de personas a obtener su primer trabajo como desarrolladores.
+[freeCodeCamp.org](https://www.freecodecamp.org) es una comunidad amigable donde puedes aprender a programar gratis. Esta es administrada por una organización sin fines de lucro respaldada por donantes ([donor-supported 501(c)(3) nonprofit](https://donate.freecodecamp.org)) y cuyo objetivo es ayudar a millones de adultos en la transición laboral a campos vinculados con la tecnología. Nuestra comunidad ya ha ayudado a más de 10,000 personas a obtener su primer trabajo como desarrolladores.
 
 Nuestro plan de estudios de desarrollo web full-stack es completamente gratuito y cada uno puede hacerlo a su propio ritmo. Tenemos miles de desafíos inteactivos de programación para ayudarte a expandir tus habilidades.
 
@@ -14,8 +14,8 @@ Nuestro plan de estudios de desarrollo web full-stack es completamente gratuito 
 
 - [Certificaciones](#certificaciones)
 - [La plataforma de aprendizaje](#la-plataforma-de-aprendizaje)
-- [Encontraste un bug](#encontraste-un-bug)
-- [Encontraste un problema de seguridad](#encontraste-un-problema-de-seguridad)
+- [Informar de fallos y problemas](#Informar-bugs-y-problemas)
+- [Encontraste un problema de seguridad](#Informar-problemas-de-seguridad)
 - [Contribuciones](#contribuciones)
 - [Licencia](#licencia)
 
@@ -29,7 +29,7 @@ Puedes hacer un pull de estos test desde [freeCodeCamp's CDN](https://cdn.freeco
 
 Una vez que hayas conseguido una certificación, siempre la tendrás. Siempre tendrás permitido agregar el link a ella desde tu LinkedIn o tu CV. Y cuando tus futuros empleadores o clientes hagan click en ese link, verán tu certificación verificada.
 
-La única excepción a esto es en caso en que descubramos una violación a nuestras [Políticas de Honestidad Académica](https://www.freecodecamp.org/academic-honesty). Cuando atrapamos a las personas sin ambigüedad plagiando (presentando el código o los proyectos de otras personas como si fueran suyos sin citación), hacemos lo que deben hacer todas las instituciones de aprendizaje rigurosas: revocamos sus certificaciones y prohibimos a esas personas.
+La única excepción a esto es en caso en que descubramos una violación a nuestras [Políticas de Honestidad Académica](https://www.freecodecamp.org/academic-honesty). Cuando atrapamos a las personas plagiando inequivocamente (presentando el código o los proyectos de otras personas como si fueran suyos sin citación), hacemos lo que deben hacer todas las instituciones de aprendizaje rigurosas: revocamos sus certificaciones y prohibimos a esas personas.
 
 Éstas son nuestras seis principales certificaciones:
 
