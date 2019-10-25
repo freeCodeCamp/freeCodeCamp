@@ -8,7 +8,7 @@ funkcjonowanie freeCodeCamp.org jest możliwe dzięki tysiącom życzliwych wolo
 
 Szczęśliwego rozwijania kodu open source!
 
-## Oto kilka zabawnych sposobów, w które możesz pomóc
+## Oto kilka fajnych sposobów, w które możesz pomóc
 
 Możesz przyczynić się do jednego z tych rzeczy:
 
