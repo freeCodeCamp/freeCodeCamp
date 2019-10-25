@@ -16,7 +16,7 @@ Font Awesome - удобная библиотека икон. Эти значки
 
 ## Instructions
 <section id='instructions'>
-Use Font Awesome to add a <code>thumbs-up</code> icon to your like button by giving it an <code>i</code> element with the classes <code>fa</code> and <code>fa-thumbs-up</code>. Make sure to keep the text "Like" next to the icon.
+Используйте Font Awesome для добавления иконки <code>thumbs-up</code> к вашей кнопке «Нравится», добавив элементу <code>i</code>  классы <code>fa</code> и <code>fa-thumbs-up</code>. Обязательно сохраните текст «Like» рядом с значком.
 </section>
 
 ## Tests
@@ -24,13 +24,13 @@ Use Font Awesome to add a <code>thumbs-up</code> icon to your like button by giv
 
 ```yml
 tests:
-  - text: Add an <code>i</code> element with the classes <code>fas</code> and <code>fa-thumbs-up</code>.
+  - text: Добавьте элемент <code>i</code> с классами <code>fas</code> и <code>fa-thumbs-up</code>.
     testString: assert($("i").is(".fas.fa-thumbs-up") || $("span").is(".fas.fa-thumbs-up"));
-  - text: Your <code>fa-thumbs-up</code> icon should be located within the Like button.
+  - text: Ваша иконка <code>fa-thumbs-up</code>  должен находиться внутри вашей кнопки «Нравится».
     testString: assert(($("i.fa-thumbs-up").parent().text().match(/Like/gi) && $(".btn-primary > i").is(".fas.fa-thumbs-up")) || ($("span.fa-thumbs-up").parent().text().match(/Like/gi) && $(".btn-primary > span").is(".fas.fa-thumbs-up")));
-  - text: Nest your <code>i</code> element within your <code>button</code> element.
+  - text: Вставьте элемент <code>i</code> в ваш элемент <code>button</code>.
     testString: assert($("button").children("i").length > 0 || $("button").children("span").length > 0);
-  - text: Make sure your icon element has a closing tag.
+  - text: Убедитесь, что ваш значок элемента имеет закрывающий тег.
     testString: assert(code.match(/<\/i>|<\/span>/g));
 
 ```
