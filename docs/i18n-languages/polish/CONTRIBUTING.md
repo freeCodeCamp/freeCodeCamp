@@ -105,3 +105,13 @@ Możesz poprosić o pomoc:
 Jesteśmy podekscytowani, by pomóc Ci we wzięciu udziału we wszystkich tematach, nad którymi chciałbyś pracować. Zachęcamy do zadawania nam pytań na tematy pokrewne, a my chętnie udzielimy wyjaśnień. Upewnij się, że szukasz swojego zapytania przed wysłaniem nowego. Bądź uprzejmy i cierpliwy. Nasza społeczność wolontariuszy i moderatorów jest zawsze w pobliżu, aby poprowadzić Cię przez Twoje pytania.
 
 Jeśli masz wątpliwości, możesz skontaktować się z naszym zespołem programistów platformy, aby Ci w tym pomóc:
+
+
+| kontakt            | GitHub | Twitter |
+|:----------------|:-------|:--------|
+| Mrugesh Mohapatra | [`@raisedadead`](https://github.com/raisedadead) | [`@raisedadead`](https://twitter.com/raisedadead)|
+| Ahmad Abdolsaheb | [`@ahmadabdolsaheb`](https://github.com/ahmadabdolsaheb) | [`@Abdolsaheb`](https://twitter.com/Abdolsaheb) |
+| Kristofer Koishigawa | [`@scissorsneedfoodtoo`](https://github.com/scissorsneedfoodtoo) | [`@kriskoishigawa`](https://twitter.com/kriskoishigawa) |
+
+> **Email: `dev@freecodecamp.org`**
+
