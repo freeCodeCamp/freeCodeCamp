@@ -3,14 +3,14 @@ id: 587d7faa367417b2b2512bd6
 title: Add a Tooltip to a D3 Element
 challengeType: 6
 videoUrl: ''
-localeTitle: Añadir una información sobre herramientas a un elemento D3
+localeTitle: Añadir un tooltip a un elemento D3
 ---
 
 ## Description
-<section id="description"> Una información sobre herramientas muestra más información sobre un elemento en una página cuando el usuario se desplaza sobre ese elemento. Hay varias formas de agregar información sobre herramientas a una visualización, este desafío utiliza el elemento de <code>title</code> SVG. <code>title</code> combinan con el método <code>text()</code> para agregar dinámicamente datos a las barras. </section>
+<section id="description"> Un tooltip muestra más información sobre un elemento en una página cuando el usuario se desplaza sobre ese elemento. Hay varias formas de agregar tooltips a una visualización, este desafío utiliza el elemento de <code>title</code> SVG. <code>title</code> combina con el método <code>text()</code> para agregar datos a las barras dinámicamente. </section>
 
 ## Instructions
-<section id="instructions"> Agregue un elemento de <code>title</code> debajo de cada nodo <code>rect</code> . Luego llame al método <code>text()</code> con una función de devolución de llamada para que el texto muestre el valor de los datos. </section>
+<section id="instructions"> Agrega un elemento de <code>title</code> debajo de cada nodo <code>rect</code> . Luego, invoca al método <code>text()</code> con una función callback para que el texto muestre el valor de los datos. </section>
 
 ## Tests
 <section id='tests'>
@@ -19,23 +19,23 @@ localeTitle: Añadir una información sobre herramientas a un elemento D3
 tests:
   - text: Su código debe tener 9 elementos de <code>title</code> .
     testString: 'assert($("title").length == 9, "Your code should have 9 <code>title</code> elements.");'
-  - text: El primer elemento de <code>title</code> debe tener un texto de información sobre herramientas de 12.
+  - text: El primer elemento de <code>title</code> debe tener un texto de tooltip de 12.
     testString: 'assert($("title").eq(0).text() == "12", "The first <code>title</code> element should have tooltip text of 12.");'
-  - text: El segundo elemento del <code>title</code> debe tener un texto de información sobre herramientas de 31.
+  - text: El segundo elemento del <code>title</code> debe tener un texto de tooltip de 31.
     testString: 'assert($("title").eq(1).text() == "31", "The second <code>title</code> element should have tooltip text of 31.");'
-  - text: El tercer elemento del <code>title</code> debe tener un texto de información sobre herramientas de 22.
+  - text: El tercer elemento del <code>title</code> debe tener un texto de tooltip de 22.
     testString: 'assert($("title").eq(2).text() == "22", "The third <code>title</code> element should have tooltip text of 22.");'
-  - text: El cuarto elemento del <code>title</code> debe tener un texto de información sobre herramientas de 17.
+  - text: El cuarto elemento del <code>title</code> debe tener un texto de tooltip de 17.
     testString: 'assert($("title").eq(3).text() == "17", "The fourth <code>title</code> element should have tooltip text of 17.");'
-  - text: El quinto elemento del <code>title</code> debe tener un texto de información sobre herramientas de 25.
+  - text: El quinto elemento del <code>title</code> debe tener un texto de tooltip de 25.
     testString: 'assert($("title").eq(4).text() == "25", "The fifth <code>title</code> element should have tooltip text of 25.");'
-  - text: El sexto elemento del <code>title</code> debe tener un texto de información sobre herramientas de 18.
+  - text: El sexto elemento del <code>title</code> debe tener un texto de tooltip de 18.
     testString: 'assert($("title").eq(5).text() == "18", "The sixth <code>title</code> element should have tooltip text of 18.");'
-  - text: El séptimo elemento del <code>title</code> debe tener un texto de información sobre herramientas de 29.
+  - text: El séptimo elemento del <code>title</code> debe tener un texto de tooltip de 29.
     testString: 'assert($("title").eq(6).text() == "29", "The seventh <code>title</code> element should have tooltip text of 29.");'
-  - text: El octavo elemento del <code>title</code> debe tener un texto de información sobre herramientas de 14.
+  - text: El octavo elemento del <code>title</code> debe tener un texto de tooltip de 14.
     testString: 'assert($("title").eq(7).text() == "14", "The eighth <code>title</code> element should have tooltip text of 14.");'
-  - text: El noveno elemento de <code>title</code> debe tener un texto de información sobre herramientas de 9.
+  - text: El noveno elemento de <code>title</code> debe tener un texto de tooltip de 9.
     testString: 'assert($("title").eq(8).text() == "9", "The ninth <code>title</code> element should have tooltip text of 9.");'
 
 ```
