@@ -74,7 +74,7 @@ Są one do pobrania i nie musisz ubiegać się o pozwolenie przed rozpoczęciem 
 
 #### Znalazłem literówkę, czy powinienem zgłosić problem, zanim złożę prośbę o ciągnięcie?
 
-W przypadku literówek i innych zmian w słownictwie, możesz bezpośrednio otwierać żądania ciągnięcia bez wcześniejszego tworzenia problemu. Kwestie są bardziej przydatne do omówienia większych problemów związanych z kodem lub aspektami strukturalnymi programu nauczania.
+W przypadku literówek i innych zmian w słownictwie, możesz bezpośrednio otwierać żądania ciągnięcia bez wcześniejszego tworzenia problemu. Problemy są bardziej przydatne do omówienia większych problemów związanych z kodem lub aspektami strukturalnymi programu nauczania.
 
 ##### Jak mogę dostać problem przypisany do mnie?
 
