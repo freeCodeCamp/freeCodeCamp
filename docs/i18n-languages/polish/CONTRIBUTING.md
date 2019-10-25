@@ -100,7 +100,7 @@ Przeczytaj nasz [How to Contribute to Open Source Guide](https://github.com/free
 Możesz poprosić o pomoc:
 
 - [Kategoria "Współtwórcy" na naszym forum publicznym](https://www.freecodecamp.org/forum/c/contributors)
-- [Nasz publiczny współpracownik - chat room na Gitterze](https://gitter.im/FreeCodeCamp/Contributors)
+- [Nasz publiczny chat room dla współpracowników na Gitterze](https://gitter.im/FreeCodeCamp/Contributors)
 
 Jesteśmy podekscytowani, by pomóc Ci we wzięciu udziału we wszystkich tematach, nad którymi chciałbyś pracować. Zachęcamy do zadawania nam pytań na tematy pokrewne, a my chętnie udzielimy wyjaśnień. Upewnij się, że szukasz swojego zapytania przed wysłaniem nowego. Bądź uprzejmy i cierpliwy. Nasza społeczność wolontariuszy i moderatorów jest zawsze w pobliżu, aby poprowadzić Cię przez Twoje pytania.
 
