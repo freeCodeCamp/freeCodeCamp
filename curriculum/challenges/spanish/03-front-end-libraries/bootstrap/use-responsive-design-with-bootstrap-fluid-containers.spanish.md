@@ -7,7 +7,7 @@ localeTitle: Utilice un diseño responsivo con los contenedores de líquidos Boo
 ---
 
 ## Description
-<section id="description"> En la sección de HTML5 y CSS de freeCodeCamp construimos una aplicación Cat Photo. Ahora volvamos a ello. Esta vez, lo aplicaremos utilizando el popular marco de trabajo CSS que responde a Bootstrap. Bootstrap descubrirá qué tan ancha es su pantalla y responderá redimensionando sus elementos HTML, de ahí el nombre <code>Responsive Design</code> . Con un diseño receptivo, no es necesario diseñar una versión móvil de su sitio web. Se verá bien en dispositivos con pantallas de cualquier ancho. Puede agregar Bootstrap a cualquier aplicación agregando el siguiente código en la parte superior de su HTML: <code>&lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css&quot; integrity=&quot;sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u&quot; crossorigin=&quot;anonymous&quot;/&gt;</code> En este caso, ya lo hemos agregado para esta página detrás de las escenas. Tenga en cuenta que es aceptable usar <code>&gt;</code> o <code>/&gt;</code> para cerrar la etiqueta de <code>link</code> . Para comenzar, debemos anidar todo nuestro HTML (excepto la etiqueta de <code>link</code> y el elemento de <code>style</code> ) en un elemento <code>div</code> con la clase <code>container-fluid</code> . </section>
+<section id="description"> En la sección de HTML5 y CSS de freeCodeCamp construimos una aplicación, Cat Photo. Ahora volvamos a ello. Esta vez, lo aplicaremos utilizando el popular marco de trabajo CSS que responde a Bootstrap. Bootstrap descubrirá qué tan ancha es su pantalla y responderá redimensionando sus elementos HTML, de ahí el nombre <code>Responsive Design</code> . Con un diseño receptivo, no es necesario diseñar una versión móvil de su sitio web. Se verá bien en dispositivos con pantallas de cualquier ancho. Puedes agregar Bootstrap a cualquier aplicación agregando el siguiente código en la parte superior de su HTML: <code>&lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css&quot; integrity=&quot;sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u&quot; crossorigin=&quot;anonymous&quot;/&gt;</code> En este caso, ya lo hemos agregado para esta página detrás de las escenas. Tenga en cuenta que es aceptable usar <code>&gt;</code> o <code>/&gt;</code> para cerrar la etiqueta de <code>link</code> . Para comenzar, debemos anidar todo nuestro HTML (excepto la etiqueta de <code>link</code> y el elemento de <code>style</code> ) en un elemento <code>div</code> con la clase <code>container-fluid</code> . </section>
 
 ## Instructions
 <section id="instructions">
@@ -62,32 +62,32 @@ tests:
   }
 </style>
 
-<h2 class="red-text">CatPhotoApp</h2>
+<h2 class="red-text">AppFotosdeGatos</h2>
 
-<p>Click here for <a href="#">cat photos</a>.</p>
+<p>Haz clic aquí para <a href="#">fotos de gatos</a>.</p>
 
-<a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+<a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="Un tierno gato naranja acostado sobre su espalda."></a>
 
-<p>Things cats love:</p>
+<p>Cosas que los gatos aman:</p>
 <ul>
-  <li>cat nip</li>
-  <li>laser pointers</li>
-  <li>lasagna</li>
+  <li>hierba gatera</li>
+  <li>puntero laser</li>
+  <li>lasaña</li>
 </ul>
-<p>Top 3 things cats hate:</p>
+<p>Top 3 cosas que los gatos odian:</p>
 <ol>
-  <li>flea treatment</li>
-  <li>thunder</li>
-  <li>other cats</li>
+  <li>tratamiento de pulgas</li>
+  <li>truenos</li>
+  <li>otros gatos</li>
 </ol>
 <form action="/submit-cat-photo">
-  <label><input type="radio" name="indoor-outdoor"> Indoor</label>
-  <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
-  <label><input type="checkbox" name="personality"> Loving</label>
-  <label><input type="checkbox" name="personality"> Lazy</label>
-  <label><input type="checkbox" name="personality"> Crazy</label>
-  <input type="text" placeholder="cat photo URL" required>
-  <button type="submit">Submit</button>
+  <label><input type="radio" name="indoor-outdoor"> Interior</label>
+  <label><input type="radio" name="indoor-outdoor"> Al aire libre</label>
+  <label><input type="checkbox" name="personality"> Cariñoso</label>
+  <label><input type="checkbox" name="personality"> Perezoso</label>
+  <label><input type="checkbox" name="personality"> Loco</label>
+  <input type="text" placeholder="URL de foto de gato" required>
+  <button type="submit">Enviar</button>
 </form>
 
 ```
