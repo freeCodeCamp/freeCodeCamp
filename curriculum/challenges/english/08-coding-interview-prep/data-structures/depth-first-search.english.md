@@ -100,3 +100,14 @@ function dfs(graph, root) {
 ```
 
 </section>
+
+Python Program for DFS:
+
+def DFSUtil(self, v, visited): 
+        visited[v] = True
+        print(v, end = ' ') 
+            if visited[i] == False: 
+                self.DFSUtil(i, visited) 
+    def DFS(self, v): 
+        visited = [False] * (len(self.graph)) 
+        self.DFSUtil(v, visited) 
