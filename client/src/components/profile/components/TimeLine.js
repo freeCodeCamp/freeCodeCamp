@@ -100,14 +100,12 @@ class TimelineInner extends Component {
 
   nextPage() {
     this.setState(state => ({
-      ...state,
       pageNo: state.pageNo + 1
     }));
   }
 
   prevPage() {
     this.setState(state => ({
-      ...state,
       pageNo: state.pageNo - 1
     }));
   }
