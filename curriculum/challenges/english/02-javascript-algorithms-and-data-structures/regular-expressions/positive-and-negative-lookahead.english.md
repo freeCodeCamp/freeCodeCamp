@@ -60,6 +60,9 @@ tests:
     testString: assert(!pwRegex.test("1234"));
   - text: Your regex should not match <code>"8pass99"</code>
     testString: assert(!pwRegex.test("8pass99"));
+  - text: Your regex should not match <code>"12abcde"</code>
+    testString: assert(!pwRegex.test("12abcde"));
+
 
 
 ```
