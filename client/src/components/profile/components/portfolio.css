@@ -10,3 +10,15 @@
 .media {
   word-break: break-all;
 }
+
+/* Timeline pagination */
+.timeline-pagination_list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timeline-pagination_list_item {
+  margin: 0 5px;
+}

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import format from 'date-fns/format';
 import { find, reverse, sortBy } from 'lodash';
@@ -8,6 +8,8 @@ import { Link, useStaticQuery, graphql } from 'gatsby';
 import { FullWidthRow } from '../../helpers';
 import SolutionViewer from '../../settings/SolutionViewer';
 import { challengeTypes } from '../../../../utils/challengeTypes';
+// Items per page in timeline.
+const ITEMS_PER_PAGE = 15;
 
 const propTypes = {
   completedMap: PropTypes.arrayOf(
@@ -30,6 +32,18 @@ const propTypes = {
       challengeTitle: PropTypes.string
     })
   ),
+  sortedTimeline: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      completedDate: PropTypes.number,
+      files: PropTypes.arrayOf(
+        PropTypes.shape({
+          ext: PropTypes.string,
+          contents: PropTypes.string
+        })
+      )
+    })
+  ),
   username: PropTypes.string
 };
 
@@ -39,12 +53,15 @@ class TimelineInner extends Component {
 
     this.state = {
       solutionToView: null,
-      solutionOpen: false
+      solutionOpen: false,
+      pageNo: 1
     };
 
     this.closeSolution = this.closeSolution.bind(this);
     this.renderCompletion = this.renderCompletion.bind(this);
     this.viewSolution = this.viewSolution.bind(this);
+    this.prevPage = this.prevPage.bind(this);
+    this.nextPage = this.nextPage.bind(this);
   }
 
   renderCompletion(completed) {
@@ -81,9 +98,30 @@ class TimelineInner extends Component {
     }));
   }
 
+  nextPage() {
+    this.setState(state => ({
+      ...state,
+      pageNo: state.pageNo + 1
+    }));
+  }
+
+  prevPage() {
+    this.setState(state => ({
+      ...state,
+      pageNo: state.pageNo - 1
+    }));
+  }
+
   render() {
-    const { completedMap, idToNameMap, username } = this.props;
-    const { solutionToView: id, solutionOpen } = this.state;
+    const { completedMap, idToNameMap, username, sortedTimeline } = this.props;
+    const { solutionToView: id, solutionOpen, pageNo } = this.state;
+    let [startIndex, endIndex] = [0, ITEMS_PER_PAGE];
+    const totalPages = Math.floor(sortedTimeline.length / ITEMS_PER_PAGE);
+    // Calculate startIndex and endIndex
+    if (completedMap.length !== 0) {
+      startIndex = pageNo * ITEMS_PER_PAGE;
+      endIndex = (pageNo + 1) * ITEMS_PER_PAGE;
+    }
     return (
       <FullWidthRow>
         <h2 className='text-center'>Timeline</h2>
@@ -102,14 +140,9 @@ class TimelineInner extends Component {
               </tr>
             </thead>
             <tbody>
-              {reverse(
-                sortBy(completedMap, ['completedDate']).filter(challenge => {
-                  return (
-                    challenge.challengeType !== challengeTypes.step &&
-                    idToNameMap.has(challenge.id)
-                  );
-                })
-              ).map(this.renderCompletion)}
+              {sortedTimeline
+                .slice(startIndex, endIndex)
+                .map(this.renderCompletion)}
             </tbody>
           </Table>
         )}
@@ -138,6 +171,35 @@ class TimelineInner extends Component {
               <Button onClick={this.closeSolution}>Close</Button>
             </Modal.Footer>
           </Modal>
+        )}
+        {totalPages > 1 && (
+          <nav
+            aria-label='Timeline Pagination Navigation'
+            className='timeline-pagination'
+            role='navigation'
+          >
+            <ul className='timeline-pagination_list'>
+              {pageNo !== 1 && (
+                <li
+                  aria-label='Goto Previous page'
+                  className='timeline-pagination_list_item'
+                >
+                  <button onClick={this.prevPage}>&lt; Prev</button>
+                </li>
+              )}
+              <li>
+                {pageNo} of {totalPages}
+              </li>
+              {pageNo !== totalPages && (
+                <li
+                  aria-label='Goto Next page'
+                  className='timeline-pagination_list_item'
+                >
+                  <button onClick={this.nextPage}>Next &gt;</button>
+                </li>
+              )}
+            </ul>
+          </nav>
         )}
       </FullWidthRow>
     );
@@ -173,8 +235,30 @@ function useIdToNameMap() {
 
 const Timeline = props => {
   const idToNameMap = useIdToNameMap();
-  return <TimelineInner idToNameMap={idToNameMap} {...props} />;
+  const { completedMap } = props;
+  // Created memoized arrayof sorted timeline.
+  const sortedTimeline = useMemo(
+    () =>
+      reverse(
+        sortBy(completedMap, ['completedDate']).filter(challenge => {
+          return (
+            challenge.challengeType !== challengeTypes.step &&
+            idToNameMap.has(challenge.id)
+          );
+        })
+      ),
+    [completedMap, idToNameMap]
+  );
+  return (
+    <TimelineInner
+      idToNameMap={idToNameMap}
+      sortedTimeline={sortedTimeline}
+      {...props}
+    />
+  );
 };
+
+Timeline.propTypes = propTypes;
 
 Timeline.displayName = 'Timeline';
 
