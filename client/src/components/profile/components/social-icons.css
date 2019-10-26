@@ -10,7 +10,8 @@
   margin: 0 0 1.5em;
 }
 
-.social-media-icons > a:hover {
+.social-media-icons > a:hover,
+.social-media-icons > a:focus {
   background: transparent;
   color: var(--secondary-color);
 }
