@@ -7,16 +7,16 @@ forumTopicId: 17560
 localeTitle: Удаление свойства объекта JavaScript
 ---
 
-## Описание
+## Description
 <section id='description'>
 Мы также можем удалять свойства объектов - это делается так: <code>delete ourDog.bark;</code>
 </section>
 
-## Инструкции
+## Instructions
 <section id='instructions'>
 Удалите свойство <code>&quot;tails&quot;</code> из <code>myDog</code>. Можно использовать как точечную, так и скобочную запись.</section>
 
-## Тесты
+## Tests
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Начальные условия задачи
+## Challenge Seed
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -62,7 +62,7 @@ var myDog = {
 
 </div>
 
-### После тестов
+### After Test
 <div id='js-teardown'>
 
 ```js
@@ -74,7 +74,7 @@ var myDog = {
 
 </section>
 
-## Решение
+## Solution
 <section id='solution'>
 
 ```js
