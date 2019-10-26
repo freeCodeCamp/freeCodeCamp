@@ -72,7 +72,7 @@ echo 'export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin' >> ~/.profile
 source ~/.profile
 ```
 
-Finally, enter the commanads below to install and run MailHog.
+Finally, enter the commands below to install and run MailHog.
 
 ```bash
 go get github.com/mailhog/MailHog
