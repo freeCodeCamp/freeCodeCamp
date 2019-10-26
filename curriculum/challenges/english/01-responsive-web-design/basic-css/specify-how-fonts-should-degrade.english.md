@@ -39,7 +39,7 @@ tests:
     testString: assert(/\s*h2\s*\{\s*font-family\:\s*(\'|")?Lobster(\'|")?,\s*monospace\s*;\s*\}/gi.test(code));
   - text: Comment out your call to Google for the <code>Lobster</code> font by putting <code>&#60;!--</code> in front of it.
     testString: assert(new RegExp("<!--[^fc]", "gi").test(code));
-  - text: Be sure to close your comment by adding <code>--&#62;!</code>.
+  - text: Be sure to close your comment by adding <code>--&#62;</code>.
     testString: assert(new RegExp("[^fc]-->", "gi").test(code));
 
 ```
