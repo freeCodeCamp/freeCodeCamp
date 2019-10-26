@@ -7,17 +7,17 @@ forumTopicId: 18195
 localeTitle: Гольф-код
 ---
 
-## Description
+## Описание
 <section id='description'>
-В игре в <a href="https://en.wikipedia.org/wiki/Golf" target="_blank">гольф</a> каждое отверстие имеет <code>par</code> означая среднее число <code>strokes</code> игрок в гольф , как ожидается , чтобы сделать для того , чтобы утопить мяч в отверстие , чтобы закончить игру. В зависимости от того , насколько выше или ниже <code>par</code> ваши <code>strokes</code> , там есть другое прозвище. Ваша функция будет передана параметрам <code>par</code> и <code>strokes</code> . Верните правильную строку в соответствии с этой таблицей, которая отображает штрихи в порядке приоритета; верхняя (самая высокая) до нижней (самая низкая): <table class="table table-striped"><thead><tr><th> Штрихи </th><th> Вернуть </th></tr></thead><tbody><tr><td> 1 </td><td> &quot;Отверстие в одном!&quot; </td></tr><tr><td> &lt;= par - 2 </td><td> «Орел» </td></tr><tr><td> пар - 1 </td><td> &quot;Птичка&quot; </td></tr><tr><td> паритет </td><td> «Пар» </td></tr><tr><td> par + 1 </td><td> «Пугало» </td></tr><tr><td> par + 2 </td><td> &quot;Двойной Богей&quot; </td></tr><tr><td> &gt; = par + 3 </td><td> &quot;Иди домой!&quot; </td></tr></tbody></table> <code>par</code> и <code>strokes</code> всегда будут числовыми и положительными. Мы добавили массив всех имен для вашего удобства.
+В игре в <a href="https://en.wikipedia.org/wiki/Golf" target="_blank">гольф</a> каждая лунка имеет <code>par</code> (пар), т.е. среднее число <code>strokes</code> (ударов), за которое игрок должен пройти лунку. Существуют различные термины, обозначающие, насколько больше или меньше пара было сделано ударов. Вашей функции будут переданы параметры <code>par</code> и <code>strokes</code>. Нужно сделать так, чтобы она выводила правильный термин в соответствии с таблицей ниже, которая отображает удары в порядке приоритета, от верхних (самых лучших) до нижних (самых худших): <table class="table table-striped"><thead><tr><th> Удары </th><th> Обозначение </th></tr></thead><tbody><tr><td> 1 </td><td> &quot;Хол-ин-ван&quot; </td></tr><tr><td> &lt;= par - 2 </td><td> «Орел» </td></tr><tr><td> пар - 1 </td><td> &quot;Птичка&quot; </td></tr><tr><td> паритет </td><td> «Пар» </td></tr><tr><td> par + 1 </td><td> «Пугало» </td></tr><tr><td> par + 2 </td><td> &quot;Двойное Пугало&quot; </td></tr><tr><td> &gt; = par + 3 </td><td> &quot;Иди домой!&quot; </td></tr></tbody></table> <code>par</code> и <code>strokes</code> всегда будут положительными числами. Мы добавили массив всех терминов для вашего удобства.
 </section>
 
-## Instructions
+## Инструкции
 <section id='instructions'>
 
 </section>
 
-## Tests
+## Тесты
 <section id='tests'>
 
 ```yml
@@ -49,7 +49,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Начальные условия задания
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -73,7 +73,7 @@ golfScore(5, 4);
 
 </section>
 
-## Solution
+## Решение
 <section id='solution'>
 
 ```js
