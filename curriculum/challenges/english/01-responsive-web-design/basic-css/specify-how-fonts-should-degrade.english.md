@@ -37,9 +37,9 @@ tests:
     testString: assert($("h2").css("font-family").match(/^"?lobster/i));
   - text: Your h2 element should degrade to the font <code>monospace</code> when <code>Lobster</code> is not available.
     testString: assert(/\s*h2\s*\{\s*font-family\:\s*(\'|")?Lobster(\'|")?,\s*monospace\s*;\s*\}/gi.test(code));
-  - text: Comment out your call to Google for the <code>Lobster</code> font by putting <code>&#60;!--</code> in front of it.
+  - text: You should comment out your call to Google for the <code>Lobster</code> font by putting <code>&#60;!--</code> in front of it.
     testString: assert(new RegExp("<!--[^fc]", "gi").test(code));
-  - text: Be sure to close your comment by adding <code>--&#62;</code>.
+  - text: You should close your comment by adding <code>--&#62;</code>.
     testString: assert(new RegExp("[^fc]-->", "gi").test(code));
 
 ```
