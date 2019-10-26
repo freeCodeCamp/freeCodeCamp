@@ -112,3 +112,14 @@ function LinkedList() {
 ```
 
 </section>
+<section>
+Python Code to search an element in a linked list:
+
+def search(self, x): 
+        current = self.head 
+        while current != None: 
+            if current.data == x: 
+                return True # data found 
+            current = current.next
+        return False 
+</section>
