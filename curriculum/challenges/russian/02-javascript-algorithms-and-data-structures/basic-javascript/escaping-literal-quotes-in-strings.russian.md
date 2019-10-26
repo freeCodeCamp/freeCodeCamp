@@ -7,17 +7,17 @@ forumTopicId: 17568
 localeTitle: Экранирование кавычек в строках
 ---
 
-## Описание
+## Description
 <section id='description'>
 Когда вы определяете строку (string), вы должны заключить ее начало и конец в одиночные или двойные кавычки. Но что делать, если вам нужно вставить цитату, используя <code>&quot;</code> или <code>&#39;</code> внутри вашей строки? В JavaScript вы можете <dfn>избежать</dfn> распознавания кавычек как окончания строки, поместив <dfn>обратную косую черту</dfn> ( <code>\</code> ) перед цитатой (экранирование кавычек). <code>var sampleStr = &quot;Alan said, \&quot;Peter is learning JavaScript\&quot;.&quot;;</code> Это сообщает JavaScript, что следующие кавычки не являются концом строки и что они должны появляться внутри строки. Поэтому если мы выведем это в консоль, мы получим: <code>Alan said, &quot;Peter is learning JavaScript&quot;.</code>
 </section>
 
-## Инструкции
+## Instructions
 <section id='instructions'>
 Используя <dfn>обратную косую черту,</dfn> присвойте переменной <code>myStr</code> строку так, чтобы, если бы вы вывели ее в консоль, вы бы увидели: « <code>I am a &quot;double quoted&quot; string inside &quot;double quotes&quot;.</code>
 </section>
 
-## Тесты
+## Tests
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Начальное число задания
+## Challenge Seed
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -43,7 +43,7 @@ var myStr = ""; // Change this line
 
 </div>
 
-### После тестов
+### After Test
 <div id='js-teardown'>
 
 ```js
@@ -61,7 +61,7 @@ var myStr = ""; // Change this line
 
 </section>
 
-## Решение
+## Solution
 <section id='solution'>
 
 ```js
