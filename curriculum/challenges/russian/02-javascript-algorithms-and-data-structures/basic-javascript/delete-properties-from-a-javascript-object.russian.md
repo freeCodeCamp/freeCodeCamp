@@ -4,20 +4,19 @@ title: Delete Properties from a JavaScript Object
 challengeType: 1
 videoUrl: https://scrimba.com/c/cDqKdTv
 forumTopicId: 17560
-localeTitle: Удаление свойств из объекта JavaScript
+localeTitle: Удаление свойства объекта JavaScript
 ---
 
-## Description
+## Описание
 <section id='description'>
-Мы также можем удалить свойства из таких объектов: <code>delete ourDog.bark;</code>
+Мы также можем удалять свойства объектов - это делается так: <code>delete ourDog.bark;</code>
 </section>
 
-## Instructions
+## Инструкции
 <section id='instructions'>
-Удалите свойство <code>&quot;tails&quot;</code> из <code>myDog</code> . Вы можете использовать либо точечную, либо скобку.
-</section>
+Удалите свойство <code>&quot;tails&quot;</code> из <code>myDog</code>. Можно использовать как точечную, так и скобочную запись.</section>
 
-## Tests
+## Тесты
 <section id='tests'>
 
 ```yml
@@ -31,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Начальные условия задачи
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -63,7 +62,7 @@ var myDog = {
 
 </div>
 
-### After Tests
+### После тестов
 <div id='js-teardown'>
 
 ```js
@@ -75,7 +74,7 @@ var myDog = {
 
 </section>
 
-## Solution
+## Решение
 <section id='solution'>
 
 ```js
