@@ -7,17 +7,17 @@ forumTopicId: 18195
 localeTitle: Гольф-код
 ---
 
-## Описание
+## Description
 <section id='description'>
 В игре в <a href="https://en.wikipedia.org/wiki/Golf" target="_blank">гольф</a> каждая лунка имеет <code>par</code> (пар), т.е. среднее число <code>strokes</code> (ударов), за которое игрок должен пройти лунку. Существуют различные термины, обозначающие, насколько больше или меньше пара было сделано ударов. Вашей функции будут переданы параметры <code>par</code> и <code>strokes</code>. Нужно сделать так, чтобы она выводила правильный термин в соответствии с таблицей ниже, которая отображает удары в порядке приоритета, от верхних (самых лучших) до нижних (самых худших): <table class="table table-striped"><thead><tr><th> Удары </th><th> Обозначение </th></tr></thead><tbody><tr><td> 1 </td><td> &quot;Хол-ин-ван&quot; </td></tr><tr><td> &lt;= par - 2 </td><td> «Орел» </td></tr><tr><td> пар - 1 </td><td> &quot;Птичка&quot; </td></tr><tr><td> паритет </td><td> «Пар» </td></tr><tr><td> par + 1 </td><td> «Пугало» </td></tr><tr><td> par + 2 </td><td> &quot;Двойное Пугало&quot; </td></tr><tr><td> &gt; = par + 3 </td><td> &quot;Иди домой!&quot; </td></tr></tbody></table> <code>par</code> и <code>strokes</code> всегда будут положительными числами. Мы добавили массив всех терминов для вашего удобства.
 </section>
 
-## Инструкции
+## Instructions
 <section id='instructions'>
 
 </section>
 
-## Тесты
+## Tests
 <section id='tests'>
 
 ```yml
@@ -49,7 +49,7 @@ tests:
 
 </section>
 
-## Начальные условия задания
+## Challenge Seed
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -73,7 +73,7 @@ golfScore(5, 4);
 
 </section>
 
-## Решение
+## Solution
 <section id='solution'>
 
 ```js
