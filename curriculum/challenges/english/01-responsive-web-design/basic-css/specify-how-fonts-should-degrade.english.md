@@ -23,8 +23,8 @@ Generic font family names are not case-sensitive. Also, they do not need quotes 
 
 ## Instructions
 <section id='instructions'>
-To begin with, apply the <code>monospace</code> font to the <code>h2</code> element, so that it now has two fonts - <code>Lobster</code> and <code>monospace</code>.
-In the last challenge, you imported the <code>Lobster</code> font using the <code>link</code> tag. Now comment out that import of the <code>Lobster</code> font(using the HTML comments you learned before) from Google Fonts so that it isn't available anymore. Notice how your <code>h2</code> element degrades to the <code>monospace</code> font.
+To begin, apply the <code>monospace</code> font to the <code>h2</code> element, so that it now has two fonts - <code>Lobster</code> and <code>monospace</code>.
+In the last challenge, you imported the <code>Lobster</code> font using the <code>link</code> tag. Now comment out that import of the <code>Lobster</code> font (using the HTML comments you learned before) from Google Fonts so that it isn't available anymore. Notice how your <code>h2</code> element degrades to the <code>monospace</code> font.
 <strong>Note:</strong> If you have the Lobster font installed on your computer, you won't see the degradation because your browser is able to find the font.
 </section>
 
@@ -37,9 +37,9 @@ tests:
     testString: assert($("h2").css("font-family").match(/^"?lobster/i));
   - text: Your h2 element should degrade to the font <code>monospace</code> when <code>Lobster</code> is not available.
     testString: assert(/\s*h2\s*\{\s*font-family\:\s*(\'|")?Lobster(\'|")?,\s*monospace\s*;\s*\}/gi.test(code));
-  - text: Comment out your call to Google for the <code>Lobster</code> font by putting <code>&#60;!--</code> in front of it.
+  - text: You should comment out your call to Google for the <code>Lobster</code> font by putting <code>&#60;!--</code> in front of it.
     testString: assert(new RegExp("<!--[^fc]", "gi").test(code));
-  - text: Be sure to close your comment by adding <code>--&#62;!</code>.
+  - text: You should close your comment by adding <code>--&#62;</code>.
     testString: assert(new RegExp("[^fc]-->", "gi").test(code));
 
 ```
