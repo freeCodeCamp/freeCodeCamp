@@ -1,18 +1,18 @@
 # Developer Operations at freeCodeCamp.org
 
-Dziękujemy za zainteresowanie dowiedzeniem się więcej o tym, jak robimy DevOps dla platformy na freeCodeCamp.org.
+Dziękujemy za zainteresowanie dowiedzeniem się tym, jak robimy DevOps dla platformy na freeCodeCamp.org.
 
-Staraliśmy się, aby język w tym przewodniku był jak najprostszy dla wszystkich. Jednak tutaj możesz znaleźć jakiś techniczny żargon. Nie jest to wyczerpujący przewodnik po wszystkich operacjach i ma być wykorzystywany tylko jako punkt odniesienia dla zrozumienia systemów.
+Staraliśmy się, aby język w tym przewodniku był jak najprostszy dla wszystkich. Jednak tutaj możesz znaleźć  techniczny żargon. Nie jest to wyczerpujący przewodnik po wszystkich operacjach i ma być wykorzystywany tylko jako punkt odniesienia dla zrozumienia systemów.
 
 ## Jak budujemy i wdrażamy bazę danych?
 
 Nieprzerwanie budujemy i wdrażamy [`master`](https://github.com/freeCodeCamp/freeCodeCamp/tree/master), nasz domyślny dział rozwoju na osobnym zestawie serwerów**.
 
-Zazwyczaj gałąź `master` jest łączona w gałąź [`produkcyjny-stage`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) raz dziennie i wydawana w izolowanej infrastrukturze. Nazywamy to naszą aplikacją "staging/beta".
+Zazwyczaj gałąź `master` jest łączona w gałęzią [`produkcyjny-stage`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) raz dziennie i wydawana w izolowanej infrastrukturze. Nazywamy to naszą aplikacją "staging/beta".
 
 Jest ona identyczna z naszym środowiskiem produkcyjnym w `freeCodeCamp.org`, innym niż wykorzystującym osobny zestaw baz danych, serwerów, web-proxy, itp. Ta izolacja pozwala nam testować ciągły rozwój i funkcje w scenariuszu "production like", bez wpływu na zwykłych użytkowników platform freeCodeCamp.org.
 
-Gdy tylko zespół programistów [`@freeCodeCamp/dev-team`](https://github.com/orgs/freeCodeCamp/teams/dev-team/members) jest zadowolony ze zmian w aplikacji inscenizacyjnej, zmiany te są przenoszone co kilka dni do oddziału [`production-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-current). Następnie wydajemy zmiany w naszych platformach na żywo na freeCodeCamp.org.
+Gdy tylko zespół programistów [`@freeCodeCamp/dev-team`](https://github.com/orgs/freeCodeCamp/teams/dev-team/members) jest zadowolony ze zmian w aplikacji inscenizacyjnej, zmiany te są przenoszone co kilka dni do środowiska [`production-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-current). Następnie wydajemy zmiany w naszych platformach na żywo na freeCodeCamp.org.
 
 Stosujemy różne poziomy testów integracyjnych i akceptacyjnych, aby sprawdzić jakość kodu. Wszystkie nasze testy są wykonywane za pomocą oprogramowania, takiego jak Travis i Azure Pipelines. Niektóre z tych zautomatyzowanych, czyli po przeniesieniu zmian do odpowiedniego oddziału, są budowane i wdrażane na platformach.
 
