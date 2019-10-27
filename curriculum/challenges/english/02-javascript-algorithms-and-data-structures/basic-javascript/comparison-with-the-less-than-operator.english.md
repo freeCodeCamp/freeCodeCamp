@@ -23,7 +23,7 @@ The <dfn>less than</dfn> operator (<code>&lt;</code>) compares the values of two
 
 ## Instructions
 <section id='instructions'>
-Add the <code>less than</code> operator to the indicated lines so that the return statements make sense.
+Add the less than operator to the indicated lines so that the return statements make sense.
 </section>
 
 ## Tests
