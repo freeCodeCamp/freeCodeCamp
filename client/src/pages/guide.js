@@ -15,7 +15,7 @@ function Index() {
       </Helmet>
       <h2>freeCodeCamp Guide</h2>
       <p>
-        {'This website is full of articles about all things related to ' +
+        {'This website is full of articles and has all things related to ' +
           'programming. You can use the search bar above to find something ' +
           'you would like to learn about, or use the navigation to explore ' +
           'the content.'}
@@ -40,7 +40,7 @@ function Index() {
           >
           freeCodeCamp.org
         </a>
-        {'. It has a curriculum that starts from zero and helps you learn' +
+        {'. It has a curriculum that starts from scratch and helps you learn' +
           ' to code.'}
       </p>
       <h3>Contribute to the Guide</h3>
