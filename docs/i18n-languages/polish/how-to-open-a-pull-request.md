@@ -5,9 +5,9 @@
 
 # Jak otworzyć Pull Request
 
-# HJak pzygotowac dobry Pull Request title:
+# Jak przygotowac dobrą nazwę Pull Request:
 
-Przy otwieraniu Pull Request(PR), użyj poniższej tabeli zakresu, aby zdecydować, jaki tytuł ma nosić Twój PR w poniższym formacie:
+Przy otwieraniu Pull Request(PR), użyj poniższej tabeli, aby zdecydować, jaki tytuł ma nosić Twój PR w poniższym formacie:
 `fix/feat/chore/refactor/docs/perf (zakres): Tytuł PR
 
 Przykładem jest `fix(learn): Naprawiono testy dla do...while loop challenge`.
@@ -20,7 +20,7 @@ Przykładem jest `fix(learn): Naprawiono testy dla do...while loop challenge`.
 | `docs` | For Pull Requests making changes to the project's documentation. |
 
 
-# Gdy proponijesz Pull Request (PR)
+# Gdy proponuijesz Pull Request (PR)
 
 1. Po dokonaniu edycji zostanie wyświetlony monit o utworzenie żądania przeciągnięcia na stronie GitHub widelca.
 
