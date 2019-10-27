@@ -7,7 +7,7 @@ forumTopicId: 301334
 
 ## Description
 <section id='description'>
-There's a principle in programming called <code>Don't Repeat Yourself (DRY)</code>. The reason repeated code is a problem is because any change requires fixing code in multiple places. This usually means more work for programmers and more room for errors.
+There's a principle in programming called <dfn>Don't Repeat Yourself (DRY)</dfn>. The reason repeated code is a problem is because any change requires fixing code in multiple places. This usually means more work for programmers and more room for errors.
 Notice in the example below that the <code>describe</code> method is shared by <code>Bird</code> and <code>Dog</code>:
 
 ```js
@@ -26,7 +26,7 @@ Dog.prototype = {
 };
 ```
 
-The <code>describe</code> method is repeated in two places. The code can be edited to follow the <code>DRY</code> principle by creating a <code>supertype</code> (or parent) called <code>Animal</code>:
+The <code>describe</code> method is repeated in two places. The code can be edited to follow the DRY principle by creating a <code>supertype</code> (or parent) called <code>Animal</code>:
 
 ```js
 function Animal() { };
@@ -55,7 +55,7 @@ Dog.prototype = {
 
 ## Instructions
 <section id='instructions'>
-The <code>eat</code> method is repeated in both <code>Cat</code> and <code>Bear</code>. Edit the code in the spirit of <code>DRY</code> by moving the <code>eat</code> method to the <code>Animal</code> <code>supertype</code>.
+The <code>eat</code> method is repeated in both <code>Cat</code> and <code>Bear</code>. Edit the code in the spirit of DRY by moving the <code>eat</code> method to the <code>Animal</code> <code>supertype</code>.
 </section>
 
 ## Tests

@@ -8,7 +8,7 @@ forumTopicId: 16814
 
 ## Description
 <section id='description'>
-HTML has a special element for creating <code>unordered lists</code>, or bullet point style lists.
+HTML has a special element for creating <dfn>unordered lists</dfn>, or bullet point style lists.
 Unordered lists start with an opening <code>&#60;ul&#62;</code> element, followed by any number of <code>&#60;li&#62;</code> elements. Finally, unordered lists close with a <code>&#60;/ul&#62;</code>
 For example:
 
