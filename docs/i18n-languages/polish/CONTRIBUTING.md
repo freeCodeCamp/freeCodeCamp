@@ -89,7 +89,7 @@ Zazwyczaj nie przydziela się problemów nikomu innemu niż długoletnim współ
  - Podążał pan za listą kontrolną? 
  - Czy podałeś nazwę swojej listy kontrolnej w sposób znaczący?
 
-Nie potrzebujesz żadnego zezwolenia dla spraw, które są oznaczone jako "pomoc poszukiwana" lub "pierwsze powitanie czasowe", jak wyjaśniono wcześniej. Postępuj zgodnie z wytycznymi i otwórz prośbę o pomoc.
+Nie potrzebujesz żadnego zezwolenia dla spraw, które są oznaczone jako "potrzebna pomoc" lub "nowicjusze mile widziani", jak wyjaśniono wcześniej. Postępuj zgodnie z wytycznymi i otwórz prośbę o pomoc.
 
 ##### Jestem nowy w GitHubie i Open Source, od czego powinienem zacząć?
 
