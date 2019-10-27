@@ -37,13 +37,13 @@ We have a huge open source codebase of the thousands of [coding challenges](http
 
 You can help us:
 
-- [📝 Research, Write and Update our guide articles](#research-write-and-update-our-guide-articles)
+- [Research, Write and Update our guide articles](#research-write-and-update-our-guide-articles)
 
-- [💻 Create, Update and Fix Bugs in our coding challenges](#create-update-and-fix-bugs-in-our-coding-challenges)
+- [Create, Update and Fix Bugs in our coding challenges](#create-update-and-fix-bugs-in-our-coding-challenges)
 
-- [🌐 Translate guide articles and coding challenges](#translate-guide-articles-and-coding-challenges)
+- [Translate guide articles and coding challenges](#translate-guide-articles-and-coding-challenges)
 
-- [🛠 Help us fix bugs in freeCodeCamp.org's learning platform](#help-us-fix-bugs-in-freecodecamporgs-learning-platform)
+- [Help us fix bugs in freeCodeCamp.org's learning platform](#help-us-fix-bugs-in-freecodecamporgs-learning-platform)
 
 ### Research, Write and Update our guide articles
 
