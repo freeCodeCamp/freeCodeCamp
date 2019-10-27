@@ -13,7 +13,7 @@ Szczęśliwego rozwijania kodu open source!
 Możesz przyczynić się do jednego z tych rzeczy:
 
  
-1. [Przyczyniaj się do tej otwartej źródłowej bazy danych](#https://github.com/freeCodeCamp/freeCodeCamp/). Pomóż nam edytować wyzwania związane z kodowaniem lub naprawiaj błędy na platformie edukacyjnej.
+1. [Rozwijaj tę otwartoźródłową bazę danych](#https://github.com/freeCodeCamp/freeCodeCamp/). Pomóż nam edytować wyzwania związane z kodowaniem lub naprawiaj błędy na platformie edukacyjnej.
 
 2. Pomoc dla kamperów na naszym [forum publicznym](https://www.freecodecamp.org/forum/). [Odpowiedz na pytania dotyczące kodowania](https://www.freecodecamp.org/forum/?max_posts=1) lub [podaj im informacje zwrotne na temat ich projektów kodowania](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1).
 
