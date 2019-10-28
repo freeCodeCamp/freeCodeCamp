@@ -137,7 +137,8 @@ If you're confident it's a new bug and have confirmed that someone else is facin
 If you think you have found a vulnerability, please report responsibly. Don't create GitHub issues for security issues. Instead, please send an email to `security@freecodecamp.org` and we'll look into it immediately.
 
 ### Contributing
-
+<br />
+<br />
 > ### [Please follow these steps to contribute.](CONTRIBUTING.md)
 
 ### Platform, Build and Deployment Status
