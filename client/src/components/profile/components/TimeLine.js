@@ -26,12 +26,17 @@ const propTypes = {
       )
     })
   ),
+  username: PropTypes.string
+};
+
+const innerPropTypes = {
+  ...propTypes,
   idToNameMap: PropTypes.objectOf(
     PropTypes.shape({
       challengePath: PropTypes.string,
       challengeTitle: PropTypes.string
     })
-  ),
+  ).isRequired,
   sortedTimeline: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,
@@ -43,8 +48,7 @@ const propTypes = {
         })
       )
     })
-  ),
-  username: PropTypes.string
+  ).isRequired
 };
 
 class TimelineInner extends Component {
@@ -112,14 +116,11 @@ class TimelineInner extends Component {
 
   render() {
     const { completedMap, idToNameMap, username, sortedTimeline } = this.props;
-    const { solutionToView: id, solutionOpen, pageNo } = this.state;
-    let [startIndex, endIndex] = [0, ITEMS_PER_PAGE];
-    const totalPages = Math.floor(sortedTimeline.length / ITEMS_PER_PAGE);
-    // Calculate startIndex and endIndex
-    if (completedMap.length !== 0) {
-      startIndex = pageNo * ITEMS_PER_PAGE;
-      endIndex = (pageNo + 1) * ITEMS_PER_PAGE;
-    }
+    const { solutionToView: id, solutionOpen, pageNo = 1 } = this.state;
+    const totalPages = Math.ceil(sortedTimeline.length / ITEMS_PER_PAGE);
+    const startIndex = (pageNo - 1) * ITEMS_PER_PAGE;
+    const endIndex = pageNo * ITEMS_PER_PAGE;
+
     return (
       <FullWidthRow>
         <h2 className='text-center'>Timeline</h2>
@@ -204,7 +205,7 @@ class TimelineInner extends Component {
   }
 }
 
-TimelineInner.propTypes = propTypes;
+TimelineInner.propTypes = innerPropTypes;
 
 function useIdToNameMap() {
   const {
