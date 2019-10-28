@@ -7,7 +7,7 @@ localeTitle: Añadir clases con D3
 ---
 
 ## Description
-<section id="description"> Usar una gran cantidad de estilos en línea en elementos HTML es difícil de administrar, incluso para aplicaciones más pequeñas. Es más fácil agregar una clase a los elementos y diseñar esa clase una vez utilizando las reglas CSS. D3 tiene el método <code>attr()</code> para agregar cualquier atributo HTML a un elemento, incluido un nombre de clase. El método <code>attr()</code> funciona de la misma manera que el <code>style()</code> . Toma valores separados por comas y puede usar una función de devolución de llamada. Aquí hay un ejemplo para agregar una clase de &quot;contenedor&quot; a una selección: <code>selection.attr(&quot;class&quot;, &quot;container&quot;);</code> </section>
+<section id="description"> Usar una gran cantidad de estilos en línea en elementos HTML es difícil de administrar, incluso para aplicaciones más pequeñas. Es más fácil agregar una clase a los elementos y diseñar esa clase una vez utilizando las reglas CSS. D3 tiene el método <code>attr()</code> para agregar cualquier atributo HTML a un elemento, incluido un nombre de clase. El método <code>attr()</code> funciona de la misma manera que el <code>style()</code> . Toma valores separados por comas y puede usar una función callback. Aquí hay un ejemplo para agregar una clase de &quot;contenedor&quot; a una selección: <code>selection.attr(&quot;class&quot;, &quot;container&quot;);</code> </section>
 
 ## Instructions
 <section id="instructions"> Agregue el método <code>attr()</code> al código en el editor y coloque una clase de <code>bar</code> en los elementos <code>div</code> . </section>

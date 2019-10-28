@@ -7,7 +7,7 @@ localeTitle: 'Captura paréntesis, corchetes, llaves y citas sin cerrar'
 ---
 
 ## Description
-<section id="description"> Otro error de sintaxis a tener en cuenta es que todos los paréntesis de apertura, corchetes, llaves y comillas tienen un par de cierre. El olvido de una pieza suele suceder cuando edita el código existente e inserta elementos con uno de los tipos de pares. Además, tenga cuidado al anidar bloques de código en otros, como agregar una función de devolución de llamada como un argumento a un método. Una forma de evitar este error es tan pronto como se escribe el carácter de apertura, incluya inmediatamente la coincidencia de cierre, luego mueva el cursor hacia atrás y continúe la codificación. Afortunadamente, la mayoría de los editores de código modernos generan la segunda mitad del par automáticamente. </section>
+<section id="description"> Otro error de sintaxis a tener en cuenta es que todos los paréntesis de apertura, corchetes, llaves y comillas tienen un par de cierre. El olvido de una pieza suele suceder cuando edita el código existente e inserta elementos con uno de los tipos de pares. Además, tenga cuidado al anidar bloques de código en otros, como agregar una función callback como un argumento a un método. Una forma de evitar este error es tan pronto como se escribe el carácter de apertura, incluya inmediatamente la coincidencia de cierre, luego mueva el cursor hacia atrás y continúe la codificación. Afortunadamente, la mayoría de los editores de código modernos generan la segunda mitad del par automáticamente. </section>
 
 ## Instructions
 <section id="instructions"> Corregir los errores de dos pares en el código. </section>

@@ -10,7 +10,7 @@ localeTitle: Cambiar la presentación de un gráfico de barras
 <section id="description"> El último desafío creó un gráfico de barras, pero hay un par de cambios de formato que podrían mejorarlo: 1) Agregue espacio entre cada barra para separarlos visualmente, lo que se hace agregando un margen al CSS para la clase de <code>bar</code> 2) Aumentar la altura de las barras para mostrar mejor la diferencia en los valores, lo cual se hace multiplicando el valor por un número para escalar la altura </section>
 
 ## Instructions
-<section id="instructions"> Primero, agregue un <code>margin</code> de 2px a la clase de <code>bar</code> en la etiqueta de <code>style</code> . A continuación, cambie la función de devolución de llamada en el método <code>style()</code> para que devuelva un valor 10 veces el valor de los datos originales (más el &quot;px&quot;). <strong>Nota</strong> <br> Multiplicar cada punto de datos por la <em>misma</em> constante solo altera la escala. Es como acercarse y no cambia el significado de los datos subyacentes. </section>
+<section id="instructions"> Primero, agregue un <code>margin</code> de 2px a la clase de <code>bar</code> en la etiqueta de <code>style</code> . A continuación, cambie la función callback en el método <code>style()</code> para que devuelva un valor 10 veces el valor de los datos originales (más el &quot;px&quot;). <strong>Nota</strong> <br> Multiplicar cada punto de datos por la <em>misma</em> constante solo altera la escala. Es como acercarse y no cambia el significado de los datos subyacentes. </section>
 
 ## Tests
 <section id='tests'>

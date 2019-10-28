@@ -6,13 +6,13 @@ challengeType: 2
 ---
 
 ## Description
-<section id='description'> 
-Encuentre a todas las personas que tienen un nombre dado, usando Model.find () -&gt; [Persona] 
-En su uso más simple, Model.find () acepta un documento de consulta (un objeto JSON) como primer argumento, luego una devolución de llamada. Devuelve una serie de coincidencias. Es compatible con una amplia gama de opciones de búsqueda. Compruébalo en los documentos. Utilice la función argumento personName como clave de búsqueda. 
+<section id='description'>
+Encuentre a todas las personas que tienen un nombre dado, usando Model.find () -&gt; [Persona]
+En su uso más simple, Model.find () acepta un documento de consulta (un objeto JSON) como primer argumento, luego un callback. Devuelve una serie de coincidencias. Es compatible con una amplia gama de opciones de búsqueda. Compruébalo en los documentos. Utilice la función argumento personName como clave de búsqueda.
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 

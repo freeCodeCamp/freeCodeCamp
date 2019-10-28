@@ -7,10 +7,10 @@ localeTitle: Actualizar la altura de un elemento dinámicamente
 ---
 
 ## Description
-<section id="description"> Los desafíos anteriores cubrían cómo mostrar los datos de una matriz y cómo agregar clases de CSS. Puedes combinar estas lecciones para crear un gráfico de barras simple. Hay dos pasos para esto: 1) Crear un <code>div</code> para cada punto de datos en la matriz 2) Dar a cada <code>div</code> una altura dinámica, utilizando una función de devolución de llamada en el método <code>style()</code> que establece la altura igual al valor de los datos. establecer un estilo usando una función de devolución de llamada: <code>selection.style(&quot;cssProperty&quot;, (d) =&gt; d)</code> </section>
+<section id="description"> Los desafíos anteriores cubrían cómo mostrar los datos de una matriz y cómo agregar clases de CSS. Puedes combinar estas lecciones para crear un gráfico de barras simple. Hay dos pasos para esto: 1) Crear un <code>div</code> para cada punto de datos en la matriz 2) Dar a cada <code>div</code> una altura dinámica, utilizando una función callback en el método <code>style()</code> que establece la altura igual al valor de los datos. establecer un estilo usando una función callback: <code>selection.style(&quot;cssProperty&quot;, (d) =&gt; d)</code> </section>
 
 ## Instructions
-<section id="instructions"> Agregue el método <code>style()</code> al código en el editor para establecer la propiedad de <code>height</code> para cada elemento. Use una función de devolución de llamada para devolver el valor del punto de datos con la cadena &quot;px&quot; agregada. </section>
+<section id="instructions"> Agregue el método <code>style()</code> al código en el editor para establecer la propiedad de <code>height</code> para cada elemento. Use una función callback para devolver el valor del punto de datos con la cadena &quot;px&quot; agregada. </section>
 
 ## Tests
 <section id='tests'>

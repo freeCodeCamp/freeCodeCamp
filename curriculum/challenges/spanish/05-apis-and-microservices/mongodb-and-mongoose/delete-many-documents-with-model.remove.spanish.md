@@ -6,13 +6,13 @@ challengeType: 2
 ---
 
 ## Description
-<section id='description'> 
-Model.remove () es útil para eliminar todos los documentos que coincidan con los criterios dados. Elimine a todas las personas cuyo nombre es "Mary", usando Model.remove (). Pasarlo a un documento de consulta con el conjunto de campos "nombre" y, por supuesto, una devolución de llamada. 
-Nota: Model.remove () no devuelve el documento eliminado, sino un objeto JSON que contiene el resultado de la operación y el número de elementos afectados. No olvide pasarlo a la devolución de llamada done (), ya que lo usamos en las pruebas. 
+<section id='description'>
+Model.remove () es útil para eliminar todos los documentos que coincidan con los criterios dados. Elimine a todas las personas cuyo nombre es "Mary", usando Model.remove (). Pasarlo a un documento de consulta con el conjunto de campos "nombre" y, por supuesto, un callback.
+Nota: Model.remove () no devuelve el documento eliminado, sino un objeto JSON que contiene el resultado de la operación y el número de elementos afectados. No olvide pasarlo a el callback done (), ya que lo usamos en las pruebas.
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 

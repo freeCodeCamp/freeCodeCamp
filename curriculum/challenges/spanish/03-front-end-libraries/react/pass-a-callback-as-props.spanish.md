@@ -4,7 +4,7 @@ title: Pass a Callback as Props
 challengeType: 6
 isRequired: false
 videoUrl: ''
-localeTitle: Pasar una devolución de llamada como accesorios
+localeTitle: Pasar un callback como accesorios
 ---
 
 ## Description
