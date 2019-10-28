@@ -25,7 +25,7 @@ You can contribute to any of these:
 
 ## Contribute to this open-source codebase
 
-Our codebase has thousands of [coding challenges](https://learn.freecodecamp.org) and other source code that power our learning platform.
+Our codebase has thousands of [coding challenges](https://www.freecodecamp.org/learn/) and other source code that power our learning platform.
 
 ### Create, update and fix bugs in our coding challenges
 
