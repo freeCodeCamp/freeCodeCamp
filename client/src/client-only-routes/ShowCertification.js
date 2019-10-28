@@ -42,6 +42,10 @@ const propTypes = {
   validCertName: PropTypes.bool
 };
 
+const whiteTextStyle = {
+  color: 'white'
+}
+
 const mapStateToProps = (state, { certName }) => {
   const validCertName = validCertNames.some(name => name === certName);
   return createSelector(
@@ -123,7 +127,7 @@ class ShowCertification extends Component {
               <Col md={7} sm={12}>
                 <div className='issue-date'>
                   Issued&nbsp;
-                  <strong>{issueDate}</strong>
+                  <strong style={whiteTextStyle}>{issueDate}</strong>
                 </div>
               </Col>
             </header>
