@@ -10,14 +10,15 @@
 
 Nuestro plan de estudios de desarrollo web full-stack es completamente gratuito y cada uno puede hacerlo a su propio ritmo. Tenemos miles de desafíos inteactivos de programación para ayudarte a expandir tus habilidades.
 
-## Índice
+## Tabla de Contenidos
 
-- [Certificaciones](#certificaciones)
-- [La plataforma de aprendizaje](#la-plataforma-de-aprendizaje)
-- [Informar de fallos y problemas](#Informar-bugs-y-problemas)
-- [Encontraste un problema de seguridad](#Informar-problemas-de-seguridad)
-- [Contribuciones](#contribuciones)
-- [Licencia](#licencia)
+* [Certificaciones](#certificaciones)
+* [La plataforma de aprendizaje](#la-plataforma-de-aprendizaje)
+* [Informar de Bugs y problemas](#Informar-bugs-y-problemas)
+* [Encontraste un problema de seguridad](#Informar-problemas-de-seguridad)
+* [Contribuciones](#contribuciones)
+* [Plataforma, Creación y Estado de Desarrollo](#plataforma-creación-y-estado-de-desarrollo)
+* [Licencia](#licencia)
 
 ### Certificaciones
 
@@ -29,7 +30,7 @@ Puedes hacer un pull de estos test desde [freeCodeCamp's CDN](https://cdn.freeco
 
 Una vez que hayas conseguido una certificación, siempre la tendrás. Siempre tendrás permitido agregar el link a ella desde tu LinkedIn o tu CV. Y cuando tus futuros empleadores o clientes hagan click en ese link, verán tu certificación verificada.
 
-La única excepción a esto es en caso en que descubramos una violación a nuestras [Políticas de Honestidad Académica](https://www.freecodecamp.org/academic-honesty). Cuando atrapamos a las personas plagiando inequivocamente (presentando el código o los proyectos de otras personas como si fueran suyos sin citación), hacemos lo que deben hacer todas las instituciones de aprendizaje rigurosas: revocamos sus certificaciones y prohibimos a esas personas.
+La única excepción a esto es en caso en que descubramos una violación a nuestras [Políticas de Honestidad Académica](https://www.freecodecamp.org/academic-honesty). Cuando atrapamos a las personas plagiando inequivocamente (presentando el código o los proyectos de otras personas como si fueran suyos sin citación), hacemos lo que deben hacer todas las instituciones de aprendizaje rigurosas: revocamos sus certificaciones y prohibimos el acceso a esas personas.
 
 Éstas son nuestras seis principales certificaciones:
 
