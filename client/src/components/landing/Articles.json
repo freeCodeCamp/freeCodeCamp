@@ -1,0 +1,26 @@
+{
+  "Articles": [
+    {
+      "href": "https://freecodecamp.org/news/learn-css-in-this-free-6-hour-video-course/",
+      "title": "Learn CSS in this free 6-hour video course",
+      "image": "https://freecodecamp.org/news/content/images/size/w600/2019/10/css.png",
+      "date": "October 25, 2019",
+      "tagPage": "https://freecodecamp.org/news/tag/css/",
+      "tagName": "CSS",
+      "authorPage": "https://freecodecamp.org/news/author/beau/",
+      "authorName": "Beau Carnes",
+      "avatar": "https://www.gravatar.com/avatar/18db9fe1308ffbd0cbc9f420e1eb001f?s=250&amp;d=mm&amp;r=x"
+    },
+    {
+      "href": "https://freecodecamp.org/news/learn-css-in-this-free-6-hour-video-course/",
+      "title": "Learn CSS in this free 6-hour video course",
+      "image": "https://freecodecamp.org/news/content/images/size/w600/2019/10/css.png",
+      "date": "October 25, 2019",
+      "tagPage": "https://freecodecamp.org/news/tag/css/",
+      "tagName": "CSS",
+      "authorPage": "https://freecodecamp.org/news/author/beau/",
+      "authorName": "Beau Carnes",
+      "avatar": "https://www.gravatar.com/avatar/18db9fe1308ffbd0cbc9f420e1eb001f?s=250&amp;d=mm&amp;r=x"
+    }
+  ]
+}

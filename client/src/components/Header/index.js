@@ -52,7 +52,7 @@ export class Header extends React.Component {
         <Helmet>
           <style>{':root{--header-height: 38px}'}</style>
         </Helmet>
-        <header>
+        <header className='main-header'>
           <UniversalNav
             displayMenu={displayMenu}
             menuButtonRef={this.menuButtonRef}

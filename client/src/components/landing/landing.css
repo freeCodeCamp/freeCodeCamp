@@ -1,28 +1,390 @@
-.large-p {
-  font-size: 24px;
+.landing-page {
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
 }
 
-/* Buttons with a lot of text can overflow and mess up formatting on small
-   screens, this stops that unless the word itself is too large. */
-
-.btn {
-  white-space: pre-line;
+.landing-page .img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-size: cover;
 }
 
-.logo-row {
+.landing-page .hidden {
+  visibility: hidden;
+  position: absolute;
+  text-indent: -9999px;
+}
+
+.outer {
+  position: relative;
+  padding: 0 4vw;
+  padding-top: 0px;
+  padding-right: 4vw;
+  padding-bottom: 0px;
+  padding-left: 4vw;
+}
+
+.landing-page a {
+  text-decoration: none;
+}
+
+.landing-page a:hover {
+  text-decoration: underline;
+  background: transparent;
+}
+
+.landing-page h1 {
+  font-family: 'Lato', sans-serif;
+  font-size: 22px;
+  margin: 0 0 11px;
+}
+
+.landing-page h2 {
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+}
+
+.read-more-row {
   display: flex;
+  width: 100%;
   flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
   align-content: center;
+  justify-content: center;
+  padding-bottom: 2vw;
+  padding-top: 2vw;
+}
+/* 2. Layout - Page building blocks
+/* ---------------------------------------------------------- */
+
+.landing-page .site-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-.logo-row h2 {
-  height: 35px;
-  padding: 0 10px 0 10px;
+.landing-page {
+  z-index: 100;
+  flex-grow: 1;
+  margin-top: 42px;
 }
 
-.landing-page ul {
+/* Full width page blocks */
+.landing-page .outer {
+  position: relative;
+  padding: 0 4vw;
+}
+
+/* Centered content container blocks */
+.landing-page .inner {
+  margin: 0 auto;
+  max-width: 1040px;
+  width: 100%;
+}
+
+/* 6. Post Feed
+/* ---------------------------------------------------------- */
+
+.post-feed {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -20px;
+  max-width: 875px;
+  padding: 40px 0 0 0;
+}
+
+.post-card {
+  flex: 1 1 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin: 0 20px 50px;
+  min-height: 100px;
+  background-size: cover;
+}
+
+.post-card-image-link,
+.no-feature-image-offsetter {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.post-card-image {
+  width: 100%;
+  height: 200px;
+  background: var(--quaternary-background) no-repeat center center;
+  object-fit: cover;
+}
+
+.post-card-image-error {
+  height: 0px;
+  width: 100%;
+  background: transparent;
+}
+
+.post-card-content-link {
+  position: relative;
+  display: block;
+  padding: 5px 0px 0px 0px;
+  color: var(--primary-color);
+}
+
+.post-card-content-link:hover {
+  text-decoration: none;
+}
+
+.post-card-tags a {
+  margin-bottom: 1.3em;
+  color: var(--quaternary-color);
+  font-size: 13px;
+  line-height: 1.15em;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding-right: 15px;
+}
+
+.post-card-title {
+  margin-top: 0;
+}
+
+.post-card-title a {
+  color: var(--primary-color);
+}
+
+.post-card-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.post-card-excerpt {
+  font-family: 'Lato', sans-serif;
+}
+
+.post-card-meta {
+  display: flex;
+  align-items: flex-end;
+  padding: 0 25px 25px 4px;
+}
+
+.author-profile-image,
+.avatar-wrapper {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--quaternary-background);
+  object-fit: cover;
+}
+
+.post-card-meta .profile-image-wrapper,
+.post-card-meta .avatar-wrapper {
+  position: relative;
+}
+
+.author-list {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  margin: 0;
+  padding: 0;
   list-style: none;
-  padding-left: 0px;
+}
+
+.author-list-item {
+  position: relative;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.static-avatar {
+  display: block;
+  overflow: hidden;
+  margin: 0 -5px;
+  width: 34px;
+  height: 34px;
+}
+
+.moving-avatar {
+  display: block;
+  overflow: hidden;
+  margin: 0 -6px;
+  width: 56px;
+  height: 56px;
+  transition: all 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99) 0.7s;
+}
+
+@media (min-width: 800px) {
+  .author-list:hover .moving-avatar {
+    margin: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  }
+}
+
+.author-name-tooltip {
+  position: absolute;
+  bottom: 105%;
+  z-index: 999;
+  display: block;
+  padding: 2px 8px;
+  color: var(--secondary-background);
+  font-size: 13px;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+  background: var(--secondary-color);
+  box-shadow: rgba(39, 44, 49, 0.08) 0 13px 26px,
+    rgba(39, 44, 49, 0.03) 1px 3px 8px;
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  transform: translateY(6px);
+  pointer-events: none;
+}
+
+.author-list-item:hover .author-name-tooltip {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+@media (max-width: 650px) {
+  .author-name-tooltip {
+    display: none;
+  }
+}
+
+.meta-item,
+.reading-time {
+  flex-shrink: 0;
+  margin-left: 20px;
+  color: var(--quaternary-color);
+  font-size: 13px;
+  line-height: 33px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.meta-item-single {
+  flex-shrink: 0;
+  color: var(--quaternary-color);
+  font-size: 13px;
+  line-height: 33px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.post-meta-item-group {
+  height: 29px;
+  background: pink;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Special Styling for home page grid (below):
+
+The first post in the list is styled to be bigger than the others and take over
+the full width of the grid to give it more emphasis. Wrapped in a media query to
+make sure this only happens on large viewports / desktop-ish devices.
+
+ */
+@media (min-width: 450px) {
+  .post-card-image {
+    height: 300px;
+  }
+  .post-card-image-error {
+    height: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .post-feed {
+    margin: auto;
+    max-width: 875px;
+    align-self: center;
+  }
+  .post-card {
+    flex: 1 1 100%;
+    flex-direction: row;
+    box-shadow: none;
+  }
+
+  .post-card .post-card-image-link,
+  .no-feature-image-offsetter {
+    position: relative;
+    flex: 1 1 300px;
+    height: 166px;
+  }
+
+  .post-card .post-card-image,
+  .post-card .post-card-image-error {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  .post-card .post-card-content {
+    flex: 0 1 70%;
+  }
+
+  #landing-page h1 {
+    font-size: 50px;
+    margin: 0 0 25px;
+  }
+
+  .post-card h2 {
+    font-size: 26px;
+  }
+
+  .post-card p {
+    font-size: 1.8em;
+    line-height: 1.55em;
+  }
+
+  .post-card .post-card-content-link {
+    padding: 0px 0px 0px 30px;
+  }
+
+  .post-card .post-card-meta {
+    padding: 0 0px 0px 34px;
+  }
+}
+
+.home-template .site-header:after {
+  display: none;
+}
+
+/* Adjust some margins for smaller screens */
+@media (max-width: 650px) {
+  .post-feed {
+    padding-top: 5vw;
+  }
+  .post-card {
+    margin: 0 20px 5vw;
+  }
+}
+
+#readMoreBtn {
+  width: 50%;
+  min-height: 40px;
+  text-align: center;
+  vertical-align: middle;
+  outline: none;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border: 2px solid var(--secondary-color);
+  background: var(--quaternary-background);
+  color: var(--secondary-color);
+  font-size: 15px;
+}
+
+#readMoreBtn:hover {
+  border: 2px solid var(--secondary-background);
+  background: var(--secondary-color);
+  color: var(--quaternary-background);
+  text-decoration: none;
 }

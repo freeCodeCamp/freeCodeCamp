@@ -3,25 +3,19 @@ import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
 
 import { IndexPage } from '../../pages';
-import mockChallengeNodes from '../../__mocks__/challenge-nodes';
+import { Articles } from './Articles.json';
+import isValidArticle from '../../utils/isValidArticle';
 
 describe('<Landing />', () => {
-  it('renders when visiting index page and logged out', () => {
+  it('it renders', () => {
     const shallow = new ShallowRenderer();
-    shallow.render(<IndexPage {...loggedOutProps} />);
+    shallow.render(<IndexPage />);
     const result = shallow.getRenderOutput();
-    expect(result.type.displayName === 'Landing').toBeTruthy();
+    expect(result).toBeTruthy();
+  });
+
+  it('it has valid article objects', () => {
+    let articlesAreValid = Articles.every(isValidArticle);
+    expect(articlesAreValid).toBeTruthy();
   });
 });
-
-const loggedOutProps = {
-  data: { allChallengeNode: { edges: mockChallengeNodes } },
-  fetchState: {
-    complete: true,
-    error: null,
-    errored: false,
-    pending: false
-  },
-  isSignedIn: false,
-  user: {}
-};
