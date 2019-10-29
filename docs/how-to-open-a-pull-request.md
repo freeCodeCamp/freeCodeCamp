@@ -37,7 +37,7 @@ An example is `fix(learn): Fixed tests for the do...while loop challenge`.
 
     - You will be presented with a pull request template. This is a checklist that you should have followed before opening the pull request.
 
-    - Fill in the details as they seem fit you. This information will be reviewed and decide whether or not, your pull request is going to be accepted.
+    - Fill in the details where appropriate and/or necessary. This information will be reviewed and a decision will be made whether or not your pull request is going to be accepted.
 
     - If the PR is meant to fix an existing bug/issue then, at the end of
       your PR's description, append the keyword `closes` and #xxxx (where xxxx
