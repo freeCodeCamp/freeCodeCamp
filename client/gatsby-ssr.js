@@ -20,7 +20,8 @@ wrapRootElement.propTypes = {
 // TODO: put these in a common utils file.
 const mathJaxCdn = {
   address:
-    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_HTML',
+    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/' +
+    '2.7.4/MathJax.js?config=TeX-AMS_HTML',
   id: 'mathjax',
   key: 'mathjax',
   type: 'text/javascript'

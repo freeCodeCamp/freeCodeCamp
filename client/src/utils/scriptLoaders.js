@@ -29,7 +29,7 @@ export const mathJaxScriptLoader = onload =>
     onload,
     `MathJax.Hub.Config({
       tex2jax: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        inlineMath: [['$', '$'], ['\\\\(', '\\\\)']],
         processEscapes: true,
         processClass: 'rosetta-code'
       }

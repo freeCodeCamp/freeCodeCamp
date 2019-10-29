@@ -55,7 +55,8 @@ export class SidePanel extends Component {
     const mathJaxMountPoint = document.querySelector('#mathjax');
     const rosettaCodeChallenge = this.props.section === 'rosetta-code';
     if (MathJax) {
-      // Configure MathJax loaded through Gatsby SSR
+      // Configure MathJax when it's loaded and
+      // users navigate from another challenge
       MathJax.Hub.Config({
         tex2jax: {
           inlineMath: [['$', '$'], ['\\(', '\\)']],
