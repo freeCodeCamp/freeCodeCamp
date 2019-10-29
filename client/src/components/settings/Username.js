@@ -53,7 +53,7 @@ const valididationSuccess = { valid: true, error: null };
 const usernameTooShort = { valid: false, error: 'Username is too short' };
 
 const hex = '[0-9a-f]';
-const tempUserRegex = new RegExp(`^fcc${hex}{8}-\(${hex}{4}-\){3}${hex}{12}$`);
+const tempUserRegex = new RegExp(`^fcc${hex}{8}-(${hex}{4}-){3}${hex}{12}$`);
 
 class UsernameSettings extends Component {
   constructor(props) {
@@ -82,7 +82,7 @@ class UsernameSettings extends Component {
       return this.setState({
         isFormPristine: username === formValue,
         submitClicked: false,
-        isUserNew: tempUserRegex.test(formValue)
+        isUserNew: tempUserRegex.test(username)
       });
     }
     return null;
