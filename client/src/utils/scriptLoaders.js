@@ -19,14 +19,14 @@ export const stripeScriptLoader = onload =>
     onload
   );
 
-export const mathJaxScriptLoader = onload =>
+export const mathJaxScriptLoader = () =>
   scriptLoader(
     'mathjax',
     'mathjax',
     false,
     'https://cdnjs.cloudflare.com/ajax/libs/mathjax/' +
       '2.7.4/MathJax.js?config=TeX-AMS_HTML',
-    onload,
+    null,
     `MathJax.Hub.Config({
       tex2jax: {
         inlineMath: [['$', '$'], ['\\\\(', '\\\\)']],

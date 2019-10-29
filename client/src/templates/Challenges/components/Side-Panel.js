@@ -34,24 +34,8 @@ const propTypes = {
 };
 
 export class SidePanel extends Component {
-  constructor(...props) {
-    super(...props);
-    this.state = {
-      MathJax: global.MathJax
-    };
-    this.handleMathJaxLoad = this.handleMathJaxLoad.bind(this);
-  }
-
-  handleMathJaxLoad() {
-    console.info('MathJax has loaded');
-    this.setState(state => ({
-      ...state,
-      MathJax: global.MathJax
-    }));
-  }
-
   componentDidMount() {
-    const { MathJax } = this.state;
+    const MathJax = global.MathJax;
     const mathJaxMountPoint = document.querySelector('#mathjax');
     const rosettaCodeChallenge = this.props.section === 'rosetta-code';
     if (MathJax) {
@@ -69,17 +53,8 @@ export class SidePanel extends Component {
         MathJax.Hub,
         document.querySelector('.rosetta-code')
       ]);
-    } else if (mathJaxMountPoint && rosettaCodeChallenge) {
-      mathJaxMountPoint.addEventListener('load', this.handleMathJaxLoad);
-    } else if (rosettaCodeChallenge) {
-      mathJaxScriptLoader(this.handleMathJaxLoad);
-    }
-  }
-
-  componentWillUnmount() {
-    const mathJaxMountPoint = document.querySelector('#mathjax');
-    if (mathJaxMountPoint) {
-      mathJaxMountPoint.removeEventListener('load', this.handleMathJaxLoad);
+    } else if (!mathJaxMountPoint && rosettaCodeChallenge) {
+      mathJaxScriptLoader();
     }
   }
 
