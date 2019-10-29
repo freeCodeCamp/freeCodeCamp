@@ -157,7 +157,7 @@ class UsernameSettings extends Component {
     if (!validating && isValidUsername && this.state.isUserNew) {
       return (
         <FullWidthRow>
-          <Alert bsStyle='warning'>Username is available!</Alert>
+          <Alert bsStyle='success'>Username is available!</Alert>
         </FullWidthRow>
       );
     } else if (!validating && isValidUsername && !this.state.isUserNew) {
