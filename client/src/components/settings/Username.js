@@ -82,7 +82,7 @@ class UsernameSettings extends Component {
         isFormPristine: username === formValue,
         submitClicked: false,
         // eslint-disable-next-line max-len
-        isUserNew: /fcc([0-9|a-f]){8}-([0-9|a-f]){4}-([0-9|a-f]){4}-([0-9|a-f]){4}-([0-9|a-f]){12}$/g.test(
+        isUserNew: /^fcc[0-9|a-f]{8}-[0-9|a-f]{4}-[0-9|a-f]{4}-[0-9|a-f]{4}-[0-9|a-f]{12}$/.test(
           prevUsername
         )
       });
