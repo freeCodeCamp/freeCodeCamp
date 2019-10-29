@@ -52,6 +52,9 @@ const invlaidCharError = {
 const valididationSuccess = { valid: true, error: null };
 const usernameTooShort = { valid: false, error: 'Username is too short' };
 
+const hex = '[0-9a-f]';
+const tempUserRegex = new RegExp(`^fcc${hex}{8}-\(${hex}{4}-\){3}${hex}{12}$`);
+
 class UsernameSettings extends Component {
   constructor(props) {
     super(props);
@@ -61,10 +64,7 @@ class UsernameSettings extends Component {
       formValue: props.username,
       characterValidation: { valid: false, error: null },
       submitClicked: false,
-      // eslint-disable-next-line max-len
-      isUserNew: /^fcc[0-9|a-f]{8}-[0-9|a-f]{4}-[0-9|a-f]{4}-[0-9|a-f]{4}-[0-9|a-f]{12}$/.test(
-        props.username
-      )
+      isUserNew: tempUserRegex.test(props.username)
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -82,10 +82,7 @@ class UsernameSettings extends Component {
       return this.setState({
         isFormPristine: username === formValue,
         submitClicked: false,
-        // eslint-disable-next-line max-len
-        isUserNew: /^fcc[0-9|a-f]{8}-[0-9|a-f]{4}-[0-9|a-f]{4}-[0-9|a-f]{4}-[0-9|a-f]{12}$/.test(
-          formValue
-        )
+        isUserNew: tempUserRegex.test(formValue)
       });
     }
     return null;
