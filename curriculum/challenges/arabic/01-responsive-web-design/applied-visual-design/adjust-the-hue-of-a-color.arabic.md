@@ -3,7 +3,7 @@ id: 587d78a4367417b2b2512ad4
 title: Adjust the Hue of a Color
 challengeType: 0
 videoUrl: ''
-localeTitle: اضبط هوى اللون
+localeTitle: اضبط درجةاللون
 ---
 
 ## Description

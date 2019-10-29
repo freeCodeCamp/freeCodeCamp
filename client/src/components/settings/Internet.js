@@ -1,6 +1,7 @@
 import React, { Fragment, Component } from 'react';
 import PropTypes from 'prop-types';
 import {
+  HelpBlock,
   FormControl,
   FormGroup,
   ControlLabel
@@ -24,7 +25,6 @@ const propTypes = {
 class InternetSettings extends Component {
   constructor(props) {
     super(props);
-
     const {
       githubProfile = '',
       linkedin = '',
@@ -38,14 +38,49 @@ class InternetSettings extends Component {
     };
   }
 
+  componentDidUpdate() {
+    const {
+      githubProfile = '',
+      linkedin = '',
+      twitter = '',
+      website = ''
+    } = this.props;
+
+    const { originalValues } = this.state;
+
+    if (
+      githubProfile !== originalValues.githubProfile ||
+      linkedin !== originalValues.linkedin ||
+      twitter !== originalValues.twitter ||
+      website !== originalValues.website
+    ) {
+      /* eslint-disable-next-line react/no-did-update-set-state */
+      return this.setState({
+        originalValues: { githubProfile, linkedin, twitter, website }
+      });
+    }
+    return null;
+  }
+
   getValidationStateFor(maybeURl = '') {
     if (!maybeURl || !maybeUrlRE.test(maybeURl)) {
-      return null;
+      return {
+        state: null,
+        message: ''
+      };
     }
     if (isURL(maybeURl)) {
-      return 'success';
+      return {
+        state: 'success',
+        message: ''
+      };
     }
-    return 'error';
+    return {
+      state: 'error',
+      message:
+        'We could not validate your URL correctly, ' +
+        'please ensure it is correct'
+    };
   }
 
   createHandleChange = key => e => {
@@ -66,7 +101,20 @@ class InternetSettings extends Component {
   };
 
   isFormValid = () => {
-    const { formValues } = this.state;
+    const { formValues, originalValues } = this.state;
+    const valueReducer = obj => {
+      return Object.values(obj).reduce(
+        (acc, cur) => (acc ? acc : cur !== ''),
+        false
+      );
+    };
+
+    let formHasValues = valueReducer(formValues);
+    let OriginalHasValues = valueReducer(originalValues);
+
+    // check if user had values but wants to delete them all
+    if (OriginalHasValues && !formHasValues) return true;
+
     return Object.keys(formValues).reduce((bool, key) => {
       const maybeUrl = formValues[key];
       return maybeUrl ? isURL(maybeUrl) : bool;
@@ -76,10 +124,17 @@ class InternetSettings extends Component {
   handleSubmit = e => {
     e.preventDefault();
     if (!this.isFormPristine() && this.isFormValid()) {
-      // Only submit the form if is has changed, and if it is valid
+      // // Only submit the form if is has changed, and if it is valid
       const { formValues } = this.state;
+      const isSocial = {
+        isGithub: !!formValues.githubProfile,
+        isLinkedIn: !!formValues.linkedin,
+        isTwitter: !!formValues.twitter,
+        isWebsite: !!formValues.website
+      };
+
       const { updateInternetSettings } = this.props;
-      return updateInternetSettings(formValues);
+      return updateInternetSettings({ ...isSocial, ...formValues });
     }
     return null;
   };
@@ -88,6 +143,27 @@ class InternetSettings extends Component {
     const {
       formValues: { githubProfile, linkedin, twitter, website }
     } = this.state;
+
+    const {
+      state: githubProfileValidation,
+      message: githubProfileValidationMessage
+    } = this.getValidationStateFor(githubProfile);
+
+    const {
+      state: linkedinValidation,
+      message: linkedinValidationMessage
+    } = this.getValidationStateFor(linkedin);
+
+    const {
+      state: twitterValidation,
+      message: twitterValidationMessage
+    } = this.getValidationStateFor(twitter);
+
+    const {
+      state: websiteValidation,
+      message: websiteValidationMessage
+    } = this.getValidationStateFor(website);
+
     return (
       <Fragment>
         <SectionHeader>Your Internet Presence</SectionHeader>
@@ -95,61 +171,62 @@ class InternetSettings extends Component {
           <form id='internet-presence' onSubmit={this.handleSubmit}>
             <FormGroup
               controlId='internet-github'
-              validationState={this.getValidationStateFor(githubProfile)}
-              >
-              <ControlLabel>
-                <strong>GitHub</strong>
-              </ControlLabel>
+              validationState={githubProfileValidation}
+            >
+              <ControlLabel>GitHub</ControlLabel>
               <FormControl
                 onChange={this.createHandleChange('githubProfile')}
                 type='url'
                 value={githubProfile}
               />
+              {githubProfileValidationMessage ? (
+                <HelpBlock>{githubProfileValidationMessage}</HelpBlock>
+              ) : null}
             </FormGroup>
             <FormGroup
               controlId='internet-linkedin'
-              validationState={this.getValidationStateFor(linkedin)}
-              >
-              <ControlLabel>
-                <strong>LinkedIn</strong>
-              </ControlLabel>
+              validationState={linkedinValidation}
+            >
+              <ControlLabel>LinkedIn</ControlLabel>
               <FormControl
                 onChange={this.createHandleChange('linkedin')}
                 type='url'
                 value={linkedin}
               />
+              {linkedinValidationMessage ? (
+                <HelpBlock>{linkedinValidationMessage}</HelpBlock>
+              ) : null}
             </FormGroup>
             <FormGroup
               controlId='internet-picture'
-              validationState={this.getValidationStateFor(twitter)}
-              >
-              <ControlLabel>
-                <strong>Twitter</strong>
-              </ControlLabel>
+              validationState={twitterValidation}
+            >
+              <ControlLabel>Twitter</ControlLabel>
               <FormControl
                 onChange={this.createHandleChange('twitter')}
                 type='url'
                 value={twitter}
               />
+              {twitterValidationMessage ? (
+                <HelpBlock>{twitterValidationMessage}</HelpBlock>
+              ) : null}
             </FormGroup>
             <FormGroup
               controlId='internet-website'
-              validationState={this.getValidationStateFor(website)}
-              >
-              <ControlLabel>
-                <strong>Personal Website</strong>
-              </ControlLabel>
+              validationState={websiteValidation}
+            >
+              <ControlLabel>Personal Website</ControlLabel>
               <FormControl
                 onChange={this.createHandleChange('website')}
                 type='url'
                 value={website}
               />
+              {websiteValidationMessage ? (
+                <HelpBlock>{websiteValidationMessage}</HelpBlock>
+              ) : null}
             </FormGroup>
             <BlockSaveButton
-              disabled={
-                this.isFormPristine() ||
-                (!this.isFormPristine() && !this.isFormValid())
-              }
+              disabled={this.isFormPristine() || !this.isFormValid()}
             />
           </form>
         </FullWidthRow>

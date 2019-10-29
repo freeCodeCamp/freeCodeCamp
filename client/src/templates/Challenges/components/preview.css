@@ -1,8 +1,11 @@
-.challenge-preview, .challenge-preview-frame {
-  height: calc(100vh - 38px);
+.challenge-preview,
+.challenge-preview-frame {
+  height: 100%;
   width: 100%;
   padding: 0;
   margin: 0;
+  border: none;
+  background-color: white;
 }
 
 .enable-iframe {

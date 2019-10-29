@@ -2,25 +2,30 @@
 id: 5a9d7286424fe3d0e10cad13
 title: Attach a Fallback value to a CSS Variable
 challengeType: 0
-videoUrl: ''
+videoUrl: https://scrimba.com/c/c6bDNfp
+forumTopicId: 301084
 localeTitle: Прикрепите значение возврата к переменной CSS
 ---
 
 ## Description
-<section id="description"> При использовании переменной в качестве значения свойства CSS вы можете добавить резервное значение, которое ваш браузер вернет, если данная переменная недействительна. <strong>Примечание.</strong> Этот резерв не используется для повышения совместимости браузера, и он не будет работать в браузерах IE. Скорее, он используется, чтобы браузер отображал цвет, если он не может найти вашу переменную. Вот как вы это делаете: <blockquote> фон: var (- пингвин-кожа, черный); </blockquote> Это установит фон в черный, если ваша переменная не была установлена. Обратите внимание, что это может быть полезно для отладки. </section>
+<section id='description'>
+При использовании переменной в качестве значения свойства CSS вы можете добавить резервное значение, которое ваш браузер вернет, если данная переменная недействительна. <strong>Примечание.</strong> Этот резерв не используется для повышения совместимости браузера, и он не будет работать в браузерах IE. Скорее, он используется, чтобы браузер отображал цвет, если он не может найти вашу переменную. Вот как вы это делаете: <blockquote> фон: var (- пингвин-кожа, черный); </blockquote> Это установит фон в черный, если ваша переменная не была установлена. Обратите внимание, что это может быть полезно для отладки.
+</section>
 
 ## Instructions
-<section id="instructions"> Похоже, что существует проблема с переменными, <code>.penguin-top</code> в <code>.penguin-top</code> и <code>.penguin-bottom</code> . Вместо того, чтобы исправить опечатку, добавьте запасное значение <code>black</code> в свойство <code>background</code> <code>.penguin-top</code> и <code>.penguin-bottom</code> . </section>
+<section id='instructions'>
+Похоже, что существует проблема с переменными, <code>.penguin-top</code> в <code>.penguin-top</code> и <code>.penguin-bottom</code> . Вместо того, чтобы исправить опечатку, добавьте запасное значение <code>black</code> в свойство <code>background</code> <code>.penguin-top</code> и <code>.penguin-bottom</code> .
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: Примените запасное значение <code>black</code> к свойству <code>background</code> класса <code>penguin-top</code> .
-    testString: 'assert(code.match(/.penguin-top\s*?{[\s\S]*background\s*?:\s*?var\(\s*?--pengiun-skin\s*?,\s*?black\s*?\)\s*?;[\s\S]*}[\s\S]*.penguin-bottom\s{/gi), "Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-top</code> class.");'
-  - text: Примените запасное значение <code>black</code> к свойству <code>background</code> класса <code>penguin-bottom</code> .
-    testString: 'assert(code.match(/.penguin-bottom\s*?{[\s\S]*background\s*?:\s*?var\(\s*?--pengiun-skin\s*?,\s*?black\s*?\)\s*?;[\s\S]*}/gi), "Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-bottom</code> class.");'
+  - text: Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-top</code> class.
+    testString: assert(code.match(/.penguin-top\s*?{[\s\S]*background\s*?:\s*?var\(\s*?--pengiun-skin\s*?,\s*?black\s*?\)\s*?;[\s\S]*}[\s\S]*.penguin-bottom\s{/gi));
+  - text: Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-bottom</code> class.
+    testString: assert(code.match(/.penguin-bottom\s*?{[\s\S]*background\s*?:\s*?var\(\s*?--pengiun-skin\s*?,\s*?black\s*?\)\s*?;[\s\S]*}/gi));
 
 ```
 
@@ -241,14 +246,13 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+var code = ".penguin-top {background: var(--pengiun-skin, black);} .penguin-bottom {background: var(--pengiun-skin, black);}"
 ```
+
 </section>

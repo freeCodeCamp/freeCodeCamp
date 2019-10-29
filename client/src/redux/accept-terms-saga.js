@@ -18,7 +18,7 @@ function* acceptTermsSaga({ payload: quincyEmails }) {
 }
 
 function* acceptCompleteSaga() {
-  yield call(navigate, '/welcome');
+  yield call(navigate, '/');
 }
 
 export function createAcceptTermsSaga(types) {

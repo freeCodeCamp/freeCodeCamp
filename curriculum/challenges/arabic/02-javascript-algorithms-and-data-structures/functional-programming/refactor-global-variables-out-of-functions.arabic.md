@@ -3,14 +3,22 @@ id: 587d7b8f367417b2b2512b60
 title: Refactor Global Variables Out of Functions
 challengeType: 1
 videoUrl: ''
-localeTitle: ''
+localeTitle: برمجة وظيفية: اعد كتابة المتغيرات العالمية من الوظائف
 ---
 
 ## Description
-undefined
+<section id="description">:حتى الآن ، رأينا مبدأين مختلفين للبرمجة الوظيفية
+
+١) عدم تغيير متغير أو كائن - إنشاء متغيرات وكائنات جديدة وإعادتها إذا دعت الحاجة إلى ذلك من وظيفة
+
+٢) قم بتعريف وسيطات الدالة - أي حساب داخل دالة يعتمد فقط على الوسيطات ، وليس على أي كائن أو متغير عالمي
+
+إن إضافة رقم واحد إلى رقم ليس شيئًا مثيرًا جدًا ، ولكن يمكننا تطبيق هذه المبادئ عند التعامل مع المصفوفات أو الأجسام الأكثر تعقيدًا.  
+</section>
 
 ## Instructions
-undefined
+<section id="instructions"> اعد كتابتها بحيث لا يتم تغيير <code>booklist</code> مجموعة عالمية داخل أي وظيفة. الوظيفة الإضافية<code>add</code> يجب أن تضيف المعطى <code>bookName</code> إلى نهاية صفيف. الوظيفة <code>remove</code> يجب ان تضيف المعطي <code>bookName</code> من الصفيف. كلتا الوظيفتين يجب إرجاع الصفيف, وينبغي إضافة أي معلمات جديدة من قبل <code>bookName</code>. 
+</section>
 
 ## Tests
 <section id='tests'>

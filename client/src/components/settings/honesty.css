@@ -1,25 +1,18 @@
 .honesty-panel p {
   margin-left: 10px;
   margin-right: 10px;
+  font-family: 'Lato', sans-serif;
 }
 
 .honesty-panel {
   padding-top: 15px;
-
 }
 
-.honesty-panel .agreed {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40px;
-  background-color: rgba(0, 100, 0, 0.8);
-  color: #fff;
-  border-color: #006400;
-  margin-bottom: 0px;
-}
-
-.honesty-panel .agreed p {
+.honesty-policy .disabled-agreed p {
   margin-top: 0;
   margin-bottom: 0;
+}
+
+.honesty-panel .btn-invert {
+  color: var(--primary-background);
 }

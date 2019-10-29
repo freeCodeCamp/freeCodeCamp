@@ -2,11 +2,13 @@
 id: cf1111c1c11feddfaeb7bdef
 title: Nest one Array within Another Array
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/crZQZf8'
+forumTopicId: 18247
 ---
 
 ## Description
 <section id='description'>
-You can also nest arrays within other arrays, like this: <code>[["Bulls", 23], ["White Sox", 45]]</code>. This is also called a <dfn>Multi-dimensional Array<dfn>.
+You can also nest arrays within other arrays, like this: <code>[["Bulls", 23], ["White Sox", 45]]</code>. This is also called a <dfn>multi-dimensional arrray<dfn>.
 </section>
 
 ## Instructions
@@ -20,7 +22,7 @@ Create a nested array called <code>myArray</code>.
 ```yml
 tests:
   - text: <code>myArray</code> should have at least one array nested within another array.
-    testString: 'assert(Array.isArray(myArray) && myArray.some(Array.isArray), "<code>myArray</code> should have at least one array nested within another array.");'
+    testString: assert(Array.isArray(myArray) && myArray.some(Array.isArray));
 
 ```
 
@@ -47,7 +49,7 @@ var myArray = [];
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+if(typeof myArray !== "undefined"){(function(){return myArray;})();}
 ```
 
 </div>

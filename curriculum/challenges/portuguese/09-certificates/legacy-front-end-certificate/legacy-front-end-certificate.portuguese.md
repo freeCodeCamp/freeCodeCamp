@@ -4,7 +4,7 @@ title: Legacy Front End Certificate
 challengeType: 7
 isPrivate: true
 videoUrl: ''
-localeTitle: Certificado de front end herdado
+localeTitle: Certificado de Front End Legado
 ---
 
 ## Description

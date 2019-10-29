@@ -57,9 +57,11 @@ export const userPropsForSession = [
 export function normaliseUserFields(user) {
   const about = user.bio && !user.about ? user.bio : user.about;
   const picture = user.picture || addPlaceholderImage(user.username);
-  const twitter = user.twitter && isURL(user.twitter) ?
-    user.twitter :
-    user.twitter && `https://www.twitter.com/${user.twitter.replace(/^@/, '')}`;
+  const twitter =
+    user.twitter && isURL(user.twitter)
+      ? user.twitter
+      : user.twitter &&
+        `https://www.twitter.com/${user.twitter.replace(/^@/, '')}`;
   return { about, picture, twitter };
 }
 
@@ -69,7 +71,7 @@ export function getProgress(progressTimestamps, timezone = 'EST') {
     .reduce((data, timestamp) => {
       data[Math.floor(timestamp / 1000)] = 1;
       return data;
-  }, {});
+    }, {});
   const uniqueHours = prepUniqueDaysByHours(progressTimestamps, timezone);
   const streak = {
     longest: calcLongestStreak(uniqueHours, timezone),

@@ -1,4 +1,7 @@
-exports.onCreateNode = ({ node, reporter }, { predicate, identity }) => {
+exports.onCreateNode = function remarkNodeIdentityOnCreateNode(
+  { node, reporter, actions },
+  { predicate, identity }
+) {
   if (typeof predicate !== 'function') {
     reporter.panic(
       'Please supply a predicate function to `gatsby-plugin-identity`'
@@ -10,7 +13,9 @@ exports.onCreateNode = ({ node, reporter }, { predicate, identity }) => {
         'that match the predicate'
     );
   }
+  const { createNodeField } = actions;
   if (predicate(node)) {
-    node.internal.identity = identity;
+    createNodeField({ node, name: 'nodeIdentity', value: identity });
   }
+  return node;
 };

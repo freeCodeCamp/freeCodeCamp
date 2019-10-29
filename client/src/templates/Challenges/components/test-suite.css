@@ -2,7 +2,7 @@
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
-  margin-top: 15px;
+  margin: 15px 0;
 }
 
 .test-result {
@@ -12,20 +12,22 @@
 }
 
 .test-result:nth-child(odd) {
-  background-color: #eee;
+  background-color: var(--tertiary-background);
 }
 
 .test-output {
-  margin-left: 15px;
+  padding: 5px 10px;
 }
 
 .test-status-icon {
   display: flex;
   align-items: center;
-  margin-left: 3px;
+  justify-content: center;
+  min-width: 60px;
+  min-height: 60px;
 }
 
 .test-status-icon > svg {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
 }

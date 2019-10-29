@@ -1,10 +1,15 @@
 import { createAction, handleActions } from 'redux-actions';
 
 import { createTypes, createAsyncTypes } from '../../utils/createTypes';
+import { createDangerZoneSaga } from './danger-zone-saga';
 import { createSettingsSagas } from './settings-sagas';
 import { createUpdateMyEmailSaga } from './update-email-saga';
 
-const ns = 'settings';
+// prettier-ignore
+import { createUpdateLegacyCertSaga } from
+'./update-legacy-certificate-saga';
+
+export const ns = 'settings';
 
 const defaultFetchState = {
   pending: false,
@@ -26,16 +31,21 @@ export const types = createTypes(
     ...createAsyncTypes('submitNewAbout'),
     ...createAsyncTypes('submitNewUsername'),
     ...createAsyncTypes('updateMyEmail'),
+    ...createAsyncTypes('updateLegacyCert'),
     ...createAsyncTypes('updateUserFlag'),
     ...createAsyncTypes('submitProfileUI'),
-    ...createAsyncTypes('verifyCert')
+    ...createAsyncTypes('verifyCert'),
+    ...createAsyncTypes('resetProgress'),
+    ...createAsyncTypes('deleteAccount')
   ],
   ns
 );
 
 export const sagas = [
   ...createSettingsSagas(types),
-  ...createUpdateMyEmailSaga(types)
+  ...createUpdateMyEmailSaga(types),
+  ...createDangerZoneSaga(types),
+  ...createUpdateLegacyCertSaga(types)
 ];
 
 const checkForSuccessPayload = ({ type, payload }) =>
@@ -68,6 +78,12 @@ export const updateMyEmail = createAction(types.updateMyEmail);
 export const updateMyEmailComplete = createAction(types.updateMyEmailComplete);
 export const updateMyEmailError = createAction(types.updateMyEmailError);
 
+export const updateLegacyCert = createAction(types.updateLegacyCert);
+export const updateLegacyCertComplete = createAction(
+  types.updateLegacyCertComplete
+);
+export const updateLegacyCertError = createAction(types.updateLegacyCertError);
+
 export const updateUserFlag = createAction(types.updateUserFlag);
 export const updateUserFlagComplete = createAction(
   types.updateUserFlagComplete,
@@ -87,6 +103,12 @@ export const verifyCertComplete = createAction(
   checkForSuccessPayload
 );
 export const verifyCertError = createAction(types.verifyCertError);
+
+export const resetProgress = createAction(types.resetProgress);
+export const resetProgressError = createAction(types.resetProgressError);
+
+export const deleteAccount = createAction(types.deleteAccount);
+export const deleteAccountError = createAction(types.deleteAccountError);
 
 export const usernameValidationSelector = state => state[ns].usernameValidation;
 

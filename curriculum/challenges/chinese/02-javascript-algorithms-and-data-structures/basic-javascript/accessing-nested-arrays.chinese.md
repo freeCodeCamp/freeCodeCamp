@@ -2,7 +2,6 @@
 id: 56533eb9ac21ba0edf2244cd
 title: Accessing Nested Arrays
 challengeType: 1
-guideUrl: 'https://chinese.freecodecamp.org/guide/certificates/access-array-data-with-indexes'
 videoUrl: ''
 localeTitle: 访问嵌套数组
 ---

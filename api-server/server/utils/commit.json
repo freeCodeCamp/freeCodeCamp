@@ -5,7 +5,7 @@
     "donateUrl": "https://www.girldevelopit.com/donate",
     "description": "Girl Develop It provides in-person classes for women to learn to code.",
     "imgAlt": "Girl Develop It participants coding at tables.",
-    "imgUrl": "https://i.imgur.com/U1CyEuA.jpg"
+    "imgUrl": "https://cdn-media-1.freecodecamp.org/imgr/U1CyEuA.jpg"
   },
   {
     "name": "black girls code",
@@ -13,7 +13,7 @@
     "donateUrl": "http://www.blackgirlscode.com/",
     "description": "Black Girls CODE is devoted to showing the world that black girls can code, and do so much more.",
     "imgAlt": "Girls developing code with instructor",
-    "imgUrl": "https://i.imgur.com/HBVrdaj.jpg"
+    "imgUrl": "https://cdn-media-1.freecodecamp.org/imgr/HBVrdaj.jpg"
   },
   {
     "name": "coderdojo",
@@ -21,7 +21,7 @@
     "donateUrl": "https://www.globalgiving.org/projects/coderdojo-start-a-dojo-support/",
     "description": "CoderDojo is the global network of free computer programming clubs for young people.",
     "imgAlt": "Two adults help several kids program on their laptops.",
-    "imgUrl": "https://i.imgur.com/701RLfV.jpg"
+    "imgUrl": "https://cdn-media-1.freecodecamp.org/imgr/701RLfV.jpg"
   },
   {
     "name": "women who code",
@@ -29,7 +29,7 @@
     "donateUrl": "https://www.womenwhocode.com/donate",
     "description": "Women Who Code (WWCode) is a global leader in propelling women in the tech industry.",
     "imgAlt": "Four women sitting in a classroom together learning to code.",
-    "imgUrl": "https://i.imgur.com/tKUi6Rf.jpg"
+    "imgUrl": "https://cdn-media-1.freecodecamp.org/imgr/tKUi6Rf.jpg"
   },
   {
     "name": "girls who code",
@@ -37,7 +37,7 @@
     "donateUrl": "http://girlswhocode.com/",
     "description": "Girls Who Code programs work to inspire, educate, and equip girls with the computing skills to pursue 21st century opportunities.",
     "imgAlt": "Three women smiling while they code on a computer together.",
-    "imgUrl": "https://i.imgur.com/op8BVph.jpg"
+    "imgUrl": "https://cdn-media-1.freecodecamp.org/imgr/op8BVph.jpg"
   },
   {
     "name": "hack club",
@@ -45,6 +45,6 @@
     "donateUrl": "https://hackclub.com/donate",
     "description": "Hack Club helps high schoolers start after-school coding clubs.",
     "imgAlt": "A bunch of high school students posing for a photo in their Hack Club.",
-    "imgUrl": "https://i.imgur.com/G2YvPHf.jpg"
+    "imgUrl": "https://cdn-media-1.freecodecamp.org/imgr/G2YvPHf.jpg"
   }
 ]

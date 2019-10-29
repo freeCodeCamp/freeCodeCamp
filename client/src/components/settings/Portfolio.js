@@ -1,4 +1,4 @@
-import React, { PureComponent, Fragment } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import nanoid from 'nanoid';
 import {
@@ -16,8 +16,6 @@ import { hasProtocolRE } from '../../utils';
 import { FullWidthRow, ButtonSpacer, Spacer } from '../helpers';
 import SectionHeader from './SectionHeader';
 import BlockSaveButton from '../helpers/form/BlockSaveButton';
-
-import './portfolio.css';
 
 const propTypes = {
   picture: PropTypes.string,
@@ -51,7 +49,7 @@ const mockEvent = {
   preventDefault() {}
 };
 
-class PortfolioSettings extends PureComponent {
+class PortfolioSettings extends Component {
   constructor(props) {
     super(props);
 
@@ -177,7 +175,7 @@ class PortfolioSettings extends PureComponent {
     if (isImage && !maybeUrl) {
       return { state: null, message: '' };
     }
-    if (isImage && !(/\.(png|jpg|jpeg|gif)$/).test(maybeUrl)) {
+    if (isImage && !/\.(png|jpg|jpeg|gif)$/.test(maybeUrl)) {
       return {
         state: 'error',
         message: 'URL must link directly to an image file'
@@ -214,7 +212,7 @@ class PortfolioSettings extends PureComponent {
               validationState={
                 pristine || (!pristine && !title) ? null : titleState
               }
-              >
+            >
               <ControlLabel>Title</ControlLabel>
               <FormControl
                 onChange={this.createOnChangeHandler(id, 'title')}
@@ -229,7 +227,7 @@ class PortfolioSettings extends PureComponent {
               validationState={
                 pristine || (!pristine && !url) ? null : urlState
               }
-              >
+            >
               <ControlLabel>URL</ControlLabel>
               <FormControl
                 onChange={this.createOnChangeHandler(id, 'url')}
@@ -242,7 +240,7 @@ class PortfolioSettings extends PureComponent {
             <FormGroup
               controlId={`${id}-image`}
               validationState={pristine ? null : imageState}
-              >
+            >
               <ControlLabel>Image</ControlLabel>
               <FormControl
                 onChange={this.createOnChangeHandler(id, 'image')}
@@ -254,7 +252,7 @@ class PortfolioSettings extends PureComponent {
             <FormGroup
               controlId={`${id}-description`}
               validationState={pristine ? null : descriptionState}
-              >
+            >
               <ControlLabel>Description</ControlLabel>
               <FormControl
                 componentClass='textarea'
@@ -277,7 +275,7 @@ class PortfolioSettings extends PureComponent {
                   /* eslint-enable camelcase */
                 })
               }
-              >
+            >
               Save this portfolio item
             </BlockSaveButton>
             <ButtonSpacer />
@@ -285,10 +283,9 @@ class PortfolioSettings extends PureComponent {
               block={true}
               bsSize='lg'
               bsStyle='danger'
-              className='btn-delete-portfolio'
               onClick={() => this.handleRemoveItem(id)}
               type='button'
-              >
+            >
               Remove this portfolio item
             </Button>
           </form>
@@ -312,7 +309,7 @@ class PortfolioSettings extends PureComponent {
         <FullWidthRow>
           <div className='portfolio-settings-intro'>
             <p className='p-intro'>
-              Share your non-FreeCodeCamp projects, articles or accepted pull
+              Share your non-freeCodeCamp projects, articles or accepted pull
               requests.
             </p>
           </div>
@@ -325,7 +322,7 @@ class PortfolioSettings extends PureComponent {
             bsStyle='primary'
             onClick={this.handleAdd}
             type='button'
-            >
+          >
             Add a new portfolio Item
           </Button>
         </FullWidthRow>

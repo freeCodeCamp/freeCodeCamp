@@ -3,21 +3,21 @@ id: 587d774e367417b2b2512aa0
 title: Wrap Content in the article Element
 challengeType: 0
 videoUrl: ''
-localeTitle: Embrulhe conteúdo no artigo Elemento
+localeTitle: Envolva o Conteúdo no artigo Element
 ---
 
 ## Description
-<section id="description"> <code>article</code> é outro dos novos elementos HTML5 que adiciona significado semântico à sua marcação. <code>Article</code> é um elemento de corte e é usado para envolver conteúdo independente e independente. A tag funciona bem com entradas de blog, postagens no fórum ou artigos de notícias. Determinar se o conteúdo pode ficar sozinho é geralmente uma avaliação, mas existem alguns testes simples que você pode usar. Pergunte a si mesmo se você removeu todo o contexto circundante, esse conteúdo ainda faria sentido? Da mesma forma, para o texto, o conteúdo se sustentaria se estivesse em um feed RSS? Lembre-se de que as pessoas que usam tecnologias assistivas dependem de uma marcação organizada e significativa para compreender melhor seu trabalho. <strong>Nota sobre a <code>section</code> e <code>div</code></strong> <br> O elemento <code>section</code> também é novo no HTML5 e tem um significado semântico ligeiramente diferente do que o <code>article</code> . Um <code>article</code> é para conteúdo autônomo e uma <code>section</code> é para agrupar conteúdo relacionado tematicamente. Eles podem ser usados ​​uns dentro dos outros, conforme necessário. Por exemplo, se um livro é o <code>article</code> , então cada capítulo é uma <code>section</code> . Quando não houver relacionamento entre grupos de conteúdo, use um <code>div</code> . <blockquote> &lt;div&gt; - agrupa o conteúdo <br> &lt;section&gt; - agrupa conteúdo relacionado <br> &lt;article&gt; - agrupa conteúdo independente e autocontido <br></blockquote></section>
+<section id="description"> <code>article</code> é outro dos novos elementos HTML5 que adiciona significado semântico à sua marcação. <code>Article</code> é um elemento de segmentação e é usado para envolver conteúdo independente e autossufuciente. A tag funciona bem com publicações de blog, postagens em fóruns ou artigos de notícias. Determinar se o conteúdo pode ser isolado é geralmente uma questão de decisão, mas existem alguns testes simples que você pode utilizar. Pergunte a si mesmo se você removesse todo o contexto adjacente, esse conteúdo ainda faria sentido? Da mesma forma para texto, o conteúdo faria sentido se estivesse em um feed RSS? Lembre-se de que pessoas que usam tecnologias assistivas dependem de uma marcação organizada e semanticamente significativa para compreender melhor seu trabalho. <strong>Nota sobre <code>section</code> e <code>div</code></strong> <br> O elemento <code>section</code> também é novo no HTML5 e tem um significado semântico ligeiramente diferente de <code>article</code>. Um <code>article</code> é para conteúdo independente e um <code>section</code> é para agrupar conteúdos relacionados tematicamente. Eles podem ser usados uns dentro dos outros, conforme necessário. Por exemplo, se um livro é o <code>article</code> , então cada capítulo é um <code>section</code> . Quando não houver relação entre grupos de conteúdo, use um <code>div</code> . <blockquote> &lt;div&gt; - agrupa conteúdo <br> &lt;section&gt; - agrupa conteúdo relacionado <br> &lt;article&gt; - agrupa conteúdo independente e autossufuciente <br></blockquote></section>
 
 ## Instructions
-<section id="instructions"> Camper Cat usou tags de <code>article</code> para embrulhar as postagens em sua página do blog, mas ele se esqueceu de usá-las na parte superior. Altere a tag <code>div</code> para usar uma tag de <code>article</code> . </section>
+<section id="instructions"> Camper Cat usou tags <code>article</code> para envolver as postagens em sua página de blog, mas ele se esqueceu de usá-las na primeira postagem. Altere a tag <code>div</code> para usar uma tag <code>article</code> em seu lugar. </section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: Seu código deve ter três tags de <code>article</code> .
+  - text: Seu código deve ter três tags <code>article</code> .
     testString: 'assert($("article").length == 3, "Your code should have three <code>article</code> tags.");'
   - text: Seu código não deve ter tags <code>div</code> .
     testString: 'assert($("div").length == 0, "Your code should not have any <code>div</code> tags.");'
@@ -32,25 +32,25 @@ tests:
 <div id='html-seed'>
 
 ```html
-<h1>Deep Thoughts with Master Camper Cat</h1>
+<h1>Reflexões Profundas com o Mestre Camper Cat</h1>
 <main>
   <div>
-    <h2>The Garfield Files: Lasagna as Training Fuel?</h2>
-    <p>The internet is littered with varying opinions on nutritional paradigms, from catnip paleo to hairball cleanses. But let's turn our attention to an often overlooked fitness fuel, and examine the protein-carb-NOM trifecta that is lasagna...</p>
+    <h2>Os Arquivos Garfield: Lasanha como Combustível de Treinamento?</h2>
+    <p>A internet está repleta de diversas opiniões sobre paradigmas nutricionais, da dieta paleo de erva do gato a limpezas de bolas de pelo. Contudo, vamos voltar nossa atenção para um combustível fitness muitas vezes negligenciado e examinar a trifeta proteína-carboidrato-nhac que é a lasanha...</p>
   </div>
 
   <img src="samuraiSwords.jpeg" alt="">
 
   <article>
-    <h2>Defeating your Foe: the Red Dot is Ours!</h2>
-    <p>Felines the world over have been waging war on the most persistent of foes. This red nemesis combines both cunning stealth and lightening speed. But chin up, fellow fighters, our time for victory may soon be near...</p>
+    <h2>Derrotando seu Adversário: o Ponto Vermelho é Nosso!</h2>
+    <p>Felinos no mundo inteiro têm travado uma guerra contra o mais persistente dos inimigos. Esse nêmesis vermelho combina astúcia furtiva com velocidade da luz. Mas cabeça erguida, companheiros guerreiros, nosso tempo de vitória pode estar se aproximando...</p>
   </article>
 
   <img src="samuraiSwords.jpeg" alt="">
 
   <article>
-    <h2>Is Chuck Norris a Cat Person?</h2>
-    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is he a cat person?...</p>
+    <h2>Chuck Norris é gateiro?</h2>
+    <p>Chuck Norris é amplamente considerado como o principal artista marcial do planeta, e é uma completa coincidência que qualquer um que discorde com esse fato misteriosamente desapareça pouco tempo depois. Mas a verdadeira questão é: ele é gateiro?...</p>
   </article>
 </main>
 

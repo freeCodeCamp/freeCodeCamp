@@ -45,10 +45,22 @@ module.exports = function(UserCredential) {
     return findCred(query)
       .flatMap(_credentials => {
         const modified = new Date();
-        const updateUser = User.update$(
-          { id: userId },
-          createUserUpdatesFromProfile(provider, profile)
-        );
+        const updateUser = new Promise((resolve, reject) => {
+          User.find({ id: userId }, (err, user) => {
+            if (err) {
+              return reject(err);
+            }
+            return user.updateAttributes(
+              createUserUpdatesFromProfile(provider, profile),
+              updateErr => {
+                if (updateErr) {
+                  return reject(updateErr);
+                }
+                return resolve();
+              }
+            );
+          });
+        });
         let updateCredentials;
         if (!_credentials) {
           updateCredentials = createCred({
@@ -65,25 +77,18 @@ module.exports = function(UserCredential) {
           });
         } else {
           _credentials.credentials = credentials;
-          updateCredentials = observeQuery(
-          _credentials,
-            'updateAttributes',
-            {
-              profile: null,
-              credentials,
-              modified
-            }
-          );
+          updateCredentials = observeQuery(_credentials, 'updateAttributes', {
+            profile: null,
+            credentials,
+            modified
+          });
         }
         return Observable.combineLatest(
-          updateUser,
+          Observable.fromPromise(updateUser),
           updateCredentials,
           (_, credentials) => credentials
         );
       })
-      .subscribe(
-        credentials => cb(null, credentials),
-        cb
-      );
+      .subscribe(credentials => cb(null, credentials), cb);
   };
 };

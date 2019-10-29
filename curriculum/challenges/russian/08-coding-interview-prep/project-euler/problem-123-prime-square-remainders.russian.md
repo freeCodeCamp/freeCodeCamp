@@ -2,15 +2,18 @@
 id: 5900f3e71000cf542c50fefa
 challengeType: 5
 title: 'Problem 123: Prime square remainders'
-videoUrl: ''
+forumTopicId: 301750
 localeTitle: 'Задача 123: остатки Prime Square'
 ---
 
 ## Description
-<section id="description"> Пусть pn - n-е число простых чисел: 2, 3, 5, 7, 11, ... и r - остаток, когда (pn-1) n + (pn + 1) n делится на pn2. Например, когда n = 3, p3 = 5 и 43 + 63 = 280 ≡ 5 mod 25. Наименьшее значение n, для которого остаток сначала превышает 109, составляет 7037. Найдите наименьшее значение n, для которого остаток сначала превышает 1010. </section>
+<section id='description'>
+Пусть pn - n-е число простых чисел: 2, 3, 5, 7, 11, ... и r - остаток, когда (pn-1) n + (pn + 1) n делится на pn2. Например, когда n = 3, p3 = 5 и 43 + 63 = 280 ≡ 5 mod 25. Наименьшее значение n, для которого остаток сначала превышает 109, составляет 7037. Найдите наименьшее значение n, для которого остаток сначала превышает 1010.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +21,8 @@ localeTitle: 'Задача 123: остатки Prime Square'
 
 ```yml
 tests:
-  - text: <code>euler123()</code> должен вернуть 21035.
-    testString: 'assert.strictEqual(euler123(), 21035, "<code>euler123()</code> should return 21035.");'
+  - text: <code>euler123()</code> should return 21035.
+    testString: assert.strictEqual(euler123(), 21035);
 
 ```
 
@@ -42,8 +45,6 @@ euler123();
 
 </div>
 
-
-
 </section>
 
 ## Solution
@@ -52,4 +53,5 @@ euler123();
 ```js
 // solution required
 ```
+
 </section>

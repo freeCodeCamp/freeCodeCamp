@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Priorizar un estilo sobre otro
 ---
 
-## Description
+## Descripción
 <section id="description"> A veces, sus elementos HTML recibirán múltiples estilos que entren en conflicto entre sí. Por ejemplo, su elemento <code>h1</code> no puede ser verde y rosa al mismo tiempo. Veamos qué sucede cuando creamos una clase que hace que el texto sea rosa, luego lo aplicamos a un elemento. ¿Nuestra clase <em>anulará</em> el <code>color: green;</code> del elemento del <code>body</code> <code>color: green;</code> Propiedad CSS? </section>
 
-## Instructions
+## Instrucciones
 <section id="instructions"> Crea una clase de CSS llamada <code>pink-text</code> que le da a un elemento el color rosa. Dale a tu elemento <code>h1</code> la clase de <code>pink-text</code> . </section>
 
-## Tests
+## Pruebas
 <section id='tests'>
 
 ```yml
@@ -51,7 +51,7 @@ tests:
 
 </section>
 
-## Solution
+## Solución
 <section id='solution'>
 
 ```js

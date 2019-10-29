@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036148
 title: Connect Redux to the Messages App
 challengeType: 6
 isRequired: false
+forumTopicId: 301427
 ---
 
 ## Description
@@ -22,15 +23,15 @@ The code editor has all the code you've written in this section so far. The only
 ```yml
 tests:
   - text: The <code>AppWrapper</code> should render to the page.
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find("AppWrapper").length === 1; })(), "The <code>AppWrapper</code> should render to the page.");'
-  - text: 'The <code>Presentational</code> component should render an <code>h2</code>, <code>input</code>, <code>button</code>, and <code>ul</code> elements.'
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find("Presentational").length === 1; })(), "The <code>Presentational</code> component should render an <code>h2</code>, <code>input</code>, <code>button</code>, and <code>ul</code> elements.");'
-  - text: 'The <code>Presentational</code> component should render an <code>h2</code>, <code>input</code>, <code>button</code>, and <code>ul</code> elements.'
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const PresentationalComponent = mockedComponent.find("Presentational"); return ( PresentationalComponent.find("div").length === 1 && PresentationalComponent.find("h2").length === 1 && PresentationalComponent.find("button").length === 1 && PresentationalComponent.find("ul").length === 1 ); })(), "The <code>Presentational</code> component should render an <code>h2</code>, <code>input</code>, <code>button</code>, and <code>ul</code> elements.");'
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('AppWrapper').length === 1; })());
+  - text: The <code>Presentational</code> component should render an <code>h2</code>, <code>input</code>, <code>button</code>, and <code>ul</code> elements.
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('Presentational').length === 1; })());
+  - text: The <code>Presentational</code> component should render an <code>h2</code>, <code>input</code>, <code>button</code>, and <code>ul</code> elements.
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const PresentationalComponent = mockedComponent.find('Presentational'); return ( PresentationalComponent.find('div').length === 1 && PresentationalComponent.find('h2').length === 1 && PresentationalComponent.find('button').length === 1 && PresentationalComponent.find('ul').length === 1 ); })());
   - text: The <code>Presentational</code> component should receive <code>messages</code> from the Redux store as a prop.
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const PresentationalComponent = mockedComponent.find("Presentational"); const props = PresentationalComponent.props(); return Array.isArray(props.messages); })(), "The <code>Presentational</code> component should receive <code>messages</code> from the Redux store as a prop.");'
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const PresentationalComponent = mockedComponent.find('Presentational'); const props = PresentationalComponent.props(); return Array.isArray(props.messages); })());
   - text: The <code>Presentational</code> component should receive the <code>submitMessage</code> action creator as a prop.
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const PresentationalComponent = mockedComponent.find("Presentational"); const props = PresentationalComponent.props(); return typeof props.submitNewMessage === "function"; })(), "The <code>Presentational</code> component should receive the <code>submitMessage</code> action creator as a prop.");'
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const PresentationalComponent = mockedComponent.find('Presentational'); const props = PresentationalComponent.props(); return typeof props.submitNewMessage === 'function'; })());
 
 ```
 
@@ -71,7 +72,7 @@ class Presentational extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      input: ",
+      input: '',
       messages: []
     }
     this.handleChange = this.handleChange.bind(this);
@@ -85,7 +86,7 @@ class Presentational extends React.Component {
   submitMessage() {
     const currentMessage = this.state.input;
     this.setState({
-      input: ",
+      input: '',
       messages: this.state.messages.concat(currentMessage)
     });
   }
@@ -147,7 +148,7 @@ class AppWrapper extends React.Component {
 <div id='jsx-teardown'>
 
 ```js
-console.info('after the test');
+ReactDOM.render(<AppWrapper />, document.getElementById('root'))
 ```
 
 </div>
@@ -188,7 +189,7 @@ class Presentational extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      input: ",
+      input: '',
       messages: []
     }
  this.handleChange = this.handleChange.bind(this);
@@ -202,7 +203,7 @@ class Presentational extends React.Component {
   submitMessage() {
     const currentMessage = this.state.input;
     this.setState({
-      input: ",
+      input: '',
       messages: this.state.messages.concat(currentMessage)
     });
   }

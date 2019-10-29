@@ -3,14 +3,15 @@ id: bd7123c8c441eddfaeb5bdef
 title: Say Hello to HTML Elements
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cE8Gpt2'
+forumTopicId: 18276
 ---
 
 ## Description
 <section id='description'>
 Welcome to freeCodeCamp's HTML coding challenges. These will walk you through web development step-by-step.
-First, you'll start by building a simple web page using HTML. You can edit <code>code</code> in your <code>code editor</code>, which is embedded into this web page.
-Do you see the code in your code editor that says <code>&#60;h1&#62;Hello&#60;/h1&#62;</code>? That's an HTML <code>element</code>.
-Most HTML elements have an <code>opening tag</code> and a <code>closing tag</code>.
+First, you'll start by building a simple web page using HTML. You can edit code in your code editor, which is embedded into this web page.
+Do you see the code in your code editor that says <code>&#60;h1&#62;Hello&#60;/h1&#62;</code>? That's an HTML element.
+Most HTML elements have an opening tag and a closing tag.
 Opening tags look like this:
 <code>&#60;h1&#62;</code>
 Closing tags look like this:
@@ -30,7 +31,7 @@ To pass the test on this challenge, change your <code>h1</code> element's text t
 ```yml
 tests:
   - text: Your <code>h1</code> element should have the text "Hello World".
-    testString: 'assert.isTrue((/hello(\s)+world/gi).test($("h1").text()), "Your <code>h1</code> element should have the text "Hello World".");'
+    testString: assert.isTrue((/hello(\s)+world/gi).test($('h1').text()));
 
 ```
 
@@ -54,7 +55,8 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<h1>Hello World</h1>
 ```
+
 </section>

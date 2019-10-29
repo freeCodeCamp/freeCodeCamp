@@ -1,59 +1,25 @@
-import React, { Fragment, PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import MonacoEditor from 'react-monaco-editor';
+import sanitizeHtml from 'sanitize-html';
+
+import './output.css';
 
 const propTypes = {
   defaultOutput: PropTypes.string,
-  dimensions: PropTypes.object,
-  height: PropTypes.number,
   output: PropTypes.string
 };
 
-const options = {
-  lineNumbers: false,
-  minimap: {
-    enabled: false
-  },
-  readOnly: true,
-  wordWrap: 'on',
-  scrollBeyondLastLine: false,
-  scrollbar: {
-    horizontal: 'hidden',
-    vertical: 'visible',
-    verticalHasArrows: true
-  }
-};
-
-class Output extends PureComponent {
-  constructor() {
-    super();
-
-    this._editor = null;
-  }
-
-  editorDidMount(editor) {
-    this._editor = editor;
-  }
-
-  componentDidUpdate(prevProps) {
-    if (this.props.dimensions !== prevProps.dimensions && this._editor) {
-      this._editor.layout();
-    }
-  }
-
+class Output extends Component {
   render() {
-    const { output, defaultOutput, height } = this.props;
+    const { output, defaultOutput } = this.props;
+    const message = sanitizeHtml(output ? output : defaultOutput, {
+      allowedTags: ['b', 'i', 'em', 'strong', 'code', 'wbr']
+    });
     return (
-      <Fragment>
-        <base href='/' />
-        <MonacoEditor
-          className='challenge-output'
-          editorDidMount={::this.editorDidMount}
-          height={height}
-          options={options}
-          value={output ? output : defaultOutput}
-        />
-      </Fragment>
+      <pre
+        className='output-text'
+        dangerouslySetInnerHTML={{ __html: message }}
+      />
     );
   }
 }

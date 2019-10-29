@@ -3,14 +3,11 @@ import invariant from 'invariant';
 import { Observable } from 'rx';
 import castToObservable from '../../server/utils/cast-to-observable';
 
-
 // createFileStream(
 //   files: [...PolyVinyl]
 // ) => Observable[...Observable[...PolyVinyl]]
 export function createFileStream(files = []) {
-  return Observable.of(
-    Observable.from(files)
-  );
+  return Observable.of(Observable.from(files));
 }
 
 // Observable::pipe(
@@ -20,8 +17,8 @@ export function createFileStream(files = []) {
 // ) => Observable[...Observable[...PolyVinyl]]
 export function pipe(project) {
   const source = this;
-  return source.map(
-    files => files.flatMap(file => castToObservable(project(file)))
+  return source.map(files =>
+    files.flatMap(file => castToObservable(project(file)))
   );
 }
 
@@ -44,24 +41,10 @@ export function pipe(project) {
 //   contents: String,
 //   history?: [...String],
 // }) => PolyVinyl, throws
-export function createPoly({
-  name,
-  ext,
-  contents,
-  history,
-  ...rest
-} = {}) {
-  invariant(
-    typeof name === 'string',
-    'name must be a string but got %s',
-    name
-  );
+export function createPoly({ name, ext, contents, history, ...rest } = {}) {
+  invariant(typeof name === 'string', 'name must be a string but got %s', name);
 
-  invariant(
-    typeof ext === 'string',
-    'ext must be a string, but was %s',
-    ext
-  );
+  invariant(typeof ext === 'string', 'ext must be a string, but was %s', ext);
 
   invariant(
     typeof contents === 'string',
@@ -71,7 +54,7 @@ export function createPoly({
 
   return {
     ...rest,
-    history: Array.isArray(history) ? history : [ name + ext ],
+    history: Array.isArray(history) ? history : [name + ext],
     name,
     ext,
     path: name + '.' + ext,
@@ -83,11 +66,13 @@ export function createPoly({
 
 // isPoly(poly: Any) => Boolean
 export function isPoly(poly) {
-  return poly &&
+  return (
+    poly &&
     typeof poly.contents === 'string' &&
     typeof poly.name === 'string' &&
     typeof poly.ext === 'string' &&
-    Array.isArray(poly.history);
+    Array.isArray(poly.history)
+  );
 }
 
 // checkPoly(poly: Any) => Void, throws
@@ -125,7 +110,7 @@ export function setExt(ext, poly) {
     path: poly.name + '.' + ext,
     key: poly.name + ext
   };
-  newPoly.history = [ ...poly.history, newPoly.path ];
+  newPoly.history = [...poly.history, newPoly.path];
   return newPoly;
 }
 
@@ -138,7 +123,7 @@ export function setName(name, poly) {
     path: name + '.' + poly.ext,
     key: name + poly.ext
   };
-  newPoly.history = [ ...poly.history, newPoly.path ];
+  newPoly.history = [...poly.history, newPoly.path];
   return newPoly;
 }
 
@@ -177,10 +162,12 @@ export function appendToTail(tail, poly) {
 
 // compileHeadTail(padding: String, poly: PolyVinyl) => PolyVinyl
 export function compileHeadTail(padding = '', poly) {
-  return clearHeadTail(transformContents(
-    () => [ poly.head, poly.contents, poly.tail ].join(padding),
-    poly
-  ));
+  return clearHeadTail(
+    transformContents(
+      () => [poly.head, poly.contents, poly.tail].join(padding),
+      poly
+    )
+  );
 }
 
 // transformContents(
@@ -192,10 +179,7 @@ export function compileHeadTail(padding = '', poly) {
 // already contains a source, this version will continue as
 // the source property
 export function transformContents(wrap, poly) {
-  const newPoly = setContent(
-    wrap(poly.contents),
-    poly
-  );
+  const newPoly = setContent(wrap(poly.contents), poly);
   // if no source exist, set the original contents as source
   newPoly.source = poly.source || poly.contents;
   return newPoly;
@@ -207,10 +191,7 @@ export function transformContents(wrap, poly) {
 // ) => PolyVinyl
 export function transformHeadTailAndContents(wrap, poly) {
   return {
-    ...transformContents(
-      wrap,
-      poly
-    ),
+    ...transformContents(wrap, poly),
     head: wrap(poly.head),
     tail: wrap(poly.tail)
   };

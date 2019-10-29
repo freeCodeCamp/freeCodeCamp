@@ -16,7 +16,7 @@ function setTheme(currentTheme = defaultTheme, theme) {
   html.classList.add(theme);
 }
 
-function* updateLocalThemeSaga({ payload: {user, theme } }) {
+function* updateLocalThemeSaga({ payload: { user, theme } }) {
   const currentTheme = store.get(themeKey) || defaultTheme;
   if (user) {
     const { theme = defaultTheme } = user;

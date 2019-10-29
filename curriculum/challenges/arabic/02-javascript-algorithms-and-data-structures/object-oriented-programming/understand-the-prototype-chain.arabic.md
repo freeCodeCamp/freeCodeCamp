@@ -17,7 +17,7 @@ localeTitle: فهم سلسلة النموذج
 
 ```yml
 tests:
-  - text: يجب أن تُظهر الكود الخاص بك أن <code>Object.prototype</code> هو النموذج الأولي لـ <code>Dog.prototype</code> &quot;)
+  - text: يجب أن تُظهر الكود الخاص بك أن <code>Object.prototype</code> هو النموذج الأولي لـ <code>Dog.prototype</code>)
     testString: 'assert(/Object\.prototype\.isPrototypeOf/.test(code), "Your code should show that <code>Object.prototype</code> is the prototype of <code>Dog.prototype</code>");'
 
 ```

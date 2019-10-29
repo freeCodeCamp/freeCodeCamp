@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import noop from 'lodash/noop';
 import { connect } from 'react-redux';
@@ -6,9 +6,10 @@ import { createSelector } from 'reselect';
 import { Button, Modal } from '@freecodecamp/react-bootstrap';
 
 import ga from '../../../analytics';
-import GreenPass from './icons/GreenPass';
+import Login from '../../../components/Header/components/Login';
+import GreenPass from '../../../assets/icons/GreenPass';
 
-import { dasherize } from '../../../../utils';
+import { dasherize } from '../../../../../utils/slugs';
 
 import './completion-modal.css';
 
@@ -21,15 +22,19 @@ import {
   challengeMetaSelector
 } from '../redux';
 
+import { isSignedInSelector } from '../../../redux';
+
 const mapStateToProps = createSelector(
   challengeFilesSelector,
   challengeMetaSelector,
   isCompletionModalOpenSelector,
+  isSignedInSelector,
   successMessageSelector,
-  (files, { title }, isOpen, message) => ({
+  (files, { title }, isOpen, isSignedIn, message) => ({
     files,
     title,
     isOpen,
+    isSignedIn,
     message
   })
 );
@@ -39,6 +44,10 @@ const mapDispatchToProps = function(dispatch) {
     close: () => dispatch(closeModal('completion')),
     handleKeypress: e => {
       if (e.keyCode === 13 && (e.ctrlKey || e.metaKey)) {
+        e.preventDefault();
+        // Since Hotkeys also listens to Ctrl + Enter we have to stop this event
+        // getting to it.
+        e.stopPropagation();
         dispatch(submitChallenge());
       }
     },
@@ -54,35 +63,65 @@ const propTypes = {
   files: PropTypes.object.isRequired,
   handleKeypress: PropTypes.func.isRequired,
   isOpen: PropTypes.bool,
+  isSignedIn: PropTypes.bool.isRequired,
   message: PropTypes.string,
   submitChallenge: PropTypes.func.isRequired,
   title: PropTypes.string
 };
 
-export class CompletionModal extends PureComponent {
+export class CompletionModal extends Component {
+  state = {
+    downloadURL: null
+  };
+
+  static getDerivedStateFromProps(props, state) {
+    const { files, isOpen } = props;
+    if (!isOpen) {
+      return null;
+    }
+    const { downloadURL } = state;
+    if (downloadURL) {
+      URL.revokeObjectURL(downloadURL);
+    }
+    let newURL = null;
+    if (Object.keys(files).length) {
+      const filesForDownload = Object.keys(files)
+        .map(key => files[key])
+        .reduce(
+          (allFiles, { path, contents }) => ({
+            ...allFiles,
+            [path]: contents
+          }),
+          {}
+        );
+      const blob = new Blob([JSON.stringify(filesForDownload, null, 2)], {
+        type: 'text/json'
+      });
+      newURL = URL.createObjectURL(blob);
+    }
+    return { downloadURL: newURL };
+  }
+
+  componentWillUnmount() {
+    if (this.state.downloadURL) {
+      URL.revokeObjectURL(this.state.downloadURL);
+    }
+    this.props.close();
+  }
+
   render() {
     const {
       close,
       isOpen,
+      isSignedIn,
       submitChallenge,
       handleKeypress,
       message,
-      files = {},
       title
     } = this.props;
     if (isOpen) {
       ga.modalview('/completion-modal');
     }
-    const showDownloadButton = Object.keys(files).length;
-    const filesForDownload = Object.keys(files)
-      .map(key => files[key])
-      .reduce(
-        (allFiles, { path, contents }) => ({
-          ...allFiles,
-          [path]: contents
-        }),
-        {}
-      );
     const dashedName = dasherize(title);
     return (
       <Modal
@@ -93,11 +132,11 @@ export class CompletionModal extends PureComponent {
         onHide={close}
         onKeyDown={isOpen ? handleKeypress : noop}
         show={isOpen}
-        >
+      >
         <Modal.Header
           className='challenge-list-header fcc-modal'
           closeButton={true}
-          >
+        >
           <Modal.Title className='text-center'>{message}</Modal.Title>
         </Modal.Header>
         <Modal.Body className='completion-modal-body'>
@@ -111,20 +150,29 @@ export class CompletionModal extends PureComponent {
             bsSize='large'
             bsStyle='primary'
             onClick={submitChallenge}
-            >
-            Submit and go to next challenge (Ctrl + Enter)
+          >
+            {isSignedIn ? 'Submit and g' : 'G'}o to next challenge{' '}
+            <span className='hidden-xs'>(Ctrl + Enter)</span>
           </Button>
-          {showDownloadButton ? (
+          {isSignedIn ? null : (
+            <Login
+              block={true}
+              bsSize='lg'
+              bsStyle='primary'
+              className='btn-invert'
+            >
+              Sign in to save your progress
+            </Login>
+          )}
+          {this.state.downloadURL ? (
             <Button
               block={true}
               bsSize='lg'
               bsStyle='primary'
-              className='btn-primary-invert'
+              className='btn-invert'
               download={`${dashedName}.json`}
-              href={`data:text/json;charset=utf-8,${encodeURIComponent(
-                JSON.stringify(filesForDownload)
-              )}`}
-              >
+              href={this.state.downloadURL}
+            >
               Download my solution
             </Button>
           ) : null}
@@ -137,4 +185,7 @@ export class CompletionModal extends PureComponent {
 CompletionModal.displayName = 'CompletionModal';
 CompletionModal.propTypes = propTypes;
 
-export default connect(mapStateToProps, mapDispatchToProps)(CompletionModal);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CompletionModal);

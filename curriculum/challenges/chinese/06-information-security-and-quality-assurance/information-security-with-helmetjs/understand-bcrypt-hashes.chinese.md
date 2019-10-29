@@ -18,7 +18,7 @@ localeTitle: 了解BCrypt Hashes
 
 ```yml
 tests:
-  - text: BCyrpt是一个依赖
+  - text: BCrypt是一个依赖
     testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/package.json") .then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, "bcrypt", "Your project should list "bcrypt" as a dependency"); }, xhr => { throw new Error(xhr.statusText); })'
   - text: 已经适当地要求BCrypt
     testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js").then(data => {assert.match(data, /bcrypt.*=.*require.*("|")bcrypt("|")/gi, "You should correctly require and instantiate socket.io as io.");}, xhr => { throw new Error(xhr.statusText); })'

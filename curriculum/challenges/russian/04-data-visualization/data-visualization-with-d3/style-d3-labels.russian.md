@@ -1,28 +1,30 @@
 ---
 id: 587d7faa367417b2b2512bd3
 title: Style D3 Labels
-required:
-  - src: 'https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js'
 challengeType: 6
-videoUrl: ''
+forumTopicId: 301492
 localeTitle: Стильные этикетки D3
 ---
 
 ## Description
-<section id="description"> Методы D3 могут добавлять стили к ярлыкам бара. Атрибут <code>fill</code> устанавливает цвет текста для <code>text</code> узла. Метод <code>style()</code> устанавливает правила CSS для других стилей, таких как «font-family» или «font-size». </section>
+<section id='description'>
+Методы D3 могут добавлять стили к ярлыкам бара. Атрибут <code>fill</code> устанавливает цвет текста для <code>text</code> узла. Метод <code>style()</code> устанавливает правила CSS для других стилей, таких как «font-family» или «font-size».
+</section>
 
 ## Instructions
-<section id="instructions"> Установите <code>font-size</code> для <code>text</code> элементов на 25 пикселей, а цвет текста - красный. </section>
+<section id='instructions'>
+Установите <code>font-size</code> для <code>text</code> элементов на 25 пикселей, а цвет текста - красный.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: На этикетках должен быть красный цвет <code>fill</code> .
-    testString: 'assert($("text").css("fill") == "rgb(255, 0, 0)", "The labels should all have a <code>fill</code> color of red.");'
-  - text: Все метки должны иметь <code>font-size</code> 25 пикселей.
-    testString: 'assert($("text").css("font-size") == "25px", "The labels should all have a <code>font-size</code> of 25 pixels.");'
+  - text: The labels should all have a <code>fill</code> color of red.
+    testString: assert($('text').css('fill') == 'rgb(255, 0, 0)');
+  - text: The labels should all have a <code>font-size</code> of 25 pixels.
+    testString: assert($('text').css('font-size') == '25px');
 
 ```
 
@@ -75,14 +77,13 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>

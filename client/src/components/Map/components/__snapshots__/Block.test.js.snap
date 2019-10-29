@@ -4,15 +4,34 @@ exports[`<Block /> not expanded snapshot: block-not-expanded 1`] = `
 <li
   className="block "
 >
-  <div
+  <button
+    aria-expanded={false}
     className="map-title"
     onClick={[Function]}
   >
     <Caret />
-    <h5>
+    <h4>
       Block A
-    </h5>
-  </div>
+    </h4>
+    <div
+      className="map-title-completed"
+    >
+      <span>
+        <GreenNotCompleted
+          style={
+            Object {
+              "height": "15px",
+              "marginRight": "10px",
+              "width": "15px",
+            }
+          }
+        />
+      </span>
+      <span>
+        2/5
+      </span>
+    </div>
+  </button>
   <ul />
 </li>
 `;
@@ -21,31 +40,62 @@ exports[`<Block expanded snapshot: block-expanded 1`] = `
 <li
   className="block open"
 >
-  <div
+  <button
+    aria-expanded={true}
     className="map-title"
     onClick={[Function]}
   >
     <Caret />
-    <h5>
+    <h4>
       Block A
-    </h5>
-  </div>
+    </h4>
+    <div
+      className="map-title-completed"
+    >
+      <span>
+        <GreenNotCompleted
+          style={
+            Object {
+              "height": "15px",
+              "marginRight": "10px",
+              "width": "15px",
+            }
+          }
+        />
+      </span>
+      <span>
+        2/5
+      </span>
+    </div>
+  </button>
   <ul>
     <li
       className="map-challenge-title"
+      id="introduction-to-block-a"
     >
       <span
         className="badge map-badge"
-      />
-      <Unknown
+      >
+        <IntroInformation
+          style={
+            Object {
+              "height": "15px",
+              "marginRight": "10px",
+              "width": "15px",
+            }
+          }
+        />
+      </span>
+      <mockConstructor
         onClick={[Function]}
         to="/super-block-one/block-a"
       >
         Introduction to Block A
-      </Unknown>
+      </mockConstructor>
     </li>
     <li
       className="map-challenge-title map-challenge-title-completed"
+      id="challenge-one"
     >
       <span
         className="badge map-badge"
@@ -60,15 +110,16 @@ exports[`<Block expanded snapshot: block-expanded 1`] = `
           }
         />
       </span>
-      <Unknown
+      <mockConstructor
         onClick={[Function]}
         to="/super-block-one/block-a/challenge-one"
       >
         Challenge One
-      </Unknown>
+      </mockConstructor>
     </li>
     <li
       className="map-challenge-title"
+      id="challenge-two"
     >
       <span
         className="badge map-badge"
@@ -83,15 +134,16 @@ exports[`<Block expanded snapshot: block-expanded 1`] = `
           }
         />
       </span>
-      <Unknown
+      <mockConstructor
         onClick={[Function]}
         to="/super-block-one/block-a/challenge-two"
       >
         Challenge Two
-      </Unknown>
+      </mockConstructor>
     </li>
     <li
       className="map-challenge-title"
+      id="challenge-one"
     >
       <span
         className="badge map-badge"
@@ -106,15 +158,16 @@ exports[`<Block expanded snapshot: block-expanded 1`] = `
           }
         />
       </span>
-      <Unknown
+      <mockConstructor
         onClick={[Function]}
-        to="/super-block-one/block-a/challenge-one"
+        to="/super-block-two/block-a/challenge-one"
       >
         Challenge One
-      </Unknown>
+      </mockConstructor>
     </li>
     <li
       className="map-challenge-title map-challenge-title-completed"
+      id="challenge-two"
     >
       <span
         className="badge map-badge"
@@ -129,12 +182,36 @@ exports[`<Block expanded snapshot: block-expanded 1`] = `
           }
         />
       </span>
-      <Unknown
+      <mockConstructor
         onClick={[Function]}
-        to="/super-block-one/block-a/challenge-two"
+        to="/super-block-two/block-a/challenge-two"
       >
         Challenge Two
-      </Unknown>
+      </mockConstructor>
+    </li>
+    <li
+      className="map-challenge-title"
+      id="challenge-one"
+    >
+      <span
+        className="badge map-badge"
+      >
+        <GreenNotCompleted
+          style={
+            Object {
+              "height": "15px",
+              "marginRight": "10px",
+              "width": "15px",
+            }
+          }
+        />
+      </span>
+      <mockConstructor
+        onClick={[Function]}
+        to="/super-block-three/block-a/challenge-one"
+      >
+        Challenge One
+      </mockConstructor>
     </li>
   </ul>
 </li>

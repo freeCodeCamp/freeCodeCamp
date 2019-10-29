@@ -2,6 +2,11 @@ import dedent from 'dedent';
 import { validationResult } from 'express-validator/check';
 
 import { createValidatorErrorFormatter } from './create-handled-error.js';
+import { homeLocation } from '../../../config/env';
+import {
+  getAccessTokenFromRequest,
+  removeCookies
+} from './getSetAccessToken.js';
 
 export function ifNoUserRedirectTo(url, message, type = 'errors') {
   return function(req, res, next) {
@@ -50,11 +55,23 @@ export function ifNotVerifiedRedirectToUpdateEmail(req, res, next) {
   return next();
 }
 
-export function ifUserRedirectTo(path = '/', status) {
-  status = status === 302 ? 302 : 301;
+export function ifUserRedirectTo(path = `${homeLocation}/learn`, status) {
+  status = status === 301 ? 301 : 302;
   return (req, res, next) => {
-    if (req.user) {
+    const { accessToken } = getAccessTokenFromRequest(req);
+    if (req.user && accessToken) {
+      if (req.query && req.query.returnTo) {
+        return res.status(status).redirect(req.query.returnTo);
+      }
       return res.status(status).redirect(path);
+    }
+    if (req.user && !accessToken) {
+      // This request has an active auth session
+      // but there is no accessToken attached to the request
+      // perhaps the user cleared cookies?
+      // we need to remove the zombie auth session
+      removeCookies(req, res);
+      delete req.session.passport;
     }
     return next();
   };
@@ -62,8 +79,9 @@ export function ifUserRedirectTo(path = '/', status) {
 
 // for use with express-validator error formatter
 export const createValidatorErrorHandler = (...args) => (req, res, next) => {
-  const validation = validationResult(req)
-    .formatWith(createValidatorErrorFormatter(...args));
+  const validation = validationResult(req).formatWith(
+    createValidatorErrorFormatter(...args)
+  );
 
   if (!validation.isEmpty()) {
     const errors = validation.array();

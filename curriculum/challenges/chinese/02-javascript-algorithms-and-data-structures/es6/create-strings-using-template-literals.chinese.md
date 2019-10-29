@@ -7,7 +7,7 @@ localeTitle: 使用模板文字创建字符串
 ---
 
 ## Description
-<section id="description"> ES6的一个新功能是<dfn>模板文字</dfn> 。这是一种特殊类型的字符串，可以更轻松地创建复杂字符串。模板文字允许您创建多行字符串并使用字符串插值功能来创建字符串。考虑以下代码： <blockquote> const person = { <br>名称：“Zodiac Hasbro”， <br>年龄：56岁<br> }; <br><br> //具有多行和字符串插值的模板文字<br> const greeting =`您好，我的名字是$ {person.name}！ <br>我是$ {person.age}岁。 <br><br>的console.log（问候）; //打印<br> //你好，我的名字是Zodiac Hasbro！ <br> //我今年56岁<br></blockquote>那里发生了很多事情。首先，例如使用反引号（ <code>`</code> ），而不是引号（ <code>&#39;</code>或<code>&quot;</code> ），换行字符串。其次，请注意，该字符串是多线，无论是在代码和输出。这节省了插入<code>\n</code>串内。上面使用的<code>${variable}</code>语法是占位符。基本上，您不必再使用<code>+</code>运算符连接。要将变量添加到字符串，只需将变量放在模板字符串中并用<code>${</code>包装它<code>}</code>同样，您可以在您的字符串表达式的其他文字，例如<code>${a + b}</code>这个新创建的字符串的方式为您提供了更大的灵活性，以创建强大的字符串。 </section>
+<section id="description"> ES6的一个新功能是<dfn>模板文字</dfn> 。这是一种特殊类型的字符串，可以更轻松地创建复杂字符串。模板文字允许您创建多行字符串并使用字符串插值功能来创建字符串。考虑以下代码： <blockquote> const person = { <br>name: "Zodiac Hasbro"， <br>age: 56<br> }; <br><br> //具有多行和字符串插值的模板文字<br> const greeting =`您好，我的名字是${person.name}！ <br>我是${person.age}岁。` <br><br>的console.log(greeting); //打印<br> //你好，我的名字是Zodiac Hasbro！ <br> //我今年56岁<br></blockquote>那里发生了很多事情。首先，例如使用反引号（ <code>`</code> ），而不是引号（ <code>&#39;</code>或<code>&quot;</code> ），换行字符串。其次，请注意，该字符串是多线，无论是在代码和输出。这节省了插入<code>\n</code>串内。上面使用的<code>${variable}</code>语法是占位符。基本上，您不必再使用<code>+</code>运算符连接。要将变量添加到字符串，只需将变量放在模板字符串中并用<code>${</code>包装它<code>}</code>同样，您可以在您的字符串表达式的其他文字，例如<code>${a + b}</code>这个新创建的字符串的方式为您提供了更大的灵活性，以创建强大的字符串。 </section>
 
 ## Instructions
 <section id="instructions">使用带有反引号的模板文字语法来显示<code>result</code>对象的<code>failure</code>数组的每个条目。每个条目都应该包含在一个带有class属性<code>text-warning</code>的<code>li</code>元素中，并列在<code>resultDisplayArray</code> 。 </section>

@@ -2,25 +2,36 @@
 id: bd7123c9c441eddfaeb4bdef
 title: Comment Your JavaScript Code
 challengeType: 1
-videoUrl: ''
-localeTitle: Комментарий
+videoUrl: https://scrimba.com/c/c7ynnTp
+forumTopicId: 16783
+localeTitle: Комментарии в коде
 ---
 
 ## Description
-<section id="description"> Комментарии - это строки кода, которые JavaScript намеренно игнорирует. Комментарии - отличный способ оставить заметки для себя и для других людей, которым позже нужно будет выяснить, что делает этот код. Существует два способа написания комментариев в JavaScript: Использование <code>//</code> говорит JavaScript, чтобы игнорировать оставшуюся часть текста в текущей строке: <blockquote> // Это встроенный комментарий. </blockquote> Вы можете сделать многострочный комментарий, начинающийся с <code>/*</code> и заканчивающийся на <code>*/</code> : <blockquote> /* Это <br> многострочный комментарий * / </blockquote> <strong>Лучшая практика</strong> <br> Когда вы пишете код, вы должны регулярно добавлять комментарии, чтобы уточнить функцию частей вашего кода. Хороший комментарий может помочь сообщить о намерениях вашего кода - как для других, так <em>и</em> для вашего будущего. </section>
+<section id='description'>
+Комментарии представляют собой строки кода, которые JavaScript игнорирует. Использование комментариев является отличным способом оставить заметки себе или другим, кому придется разбираться в работе кода. 
+  Комментарии в JavaScript бывают двух видов : 
+  Два идущих подряд слэша <code>//</code> являются указанием игнорировать весь идущий за ними текст на этой строке: 
+  <blockquote> // Это комментарий в строке. </blockquote> 
+  Также можно сделать многострочный комментарий: он должен начинаться с <code>/*</code> и заканчиваться на <code>*/</code> : 
+  <blockquote> /* Это <br> многострочный комментарий * / </blockquote> 
+  <strong>Лучшая практика</strong> <br> В процессе написания кода имеет смысл регулярно добавлять комментарии, в которых будет описываться функциональность различных частей кода. Хороший комментарий может помочь разобраться в сути вашего кода - как другим людям, так <em>и</em> вам в будущем.
+</section>
 
 ## Instructions
-<section id="instructions"> Попробуйте создать один из комментариев каждого типа. </section>
+<section id='instructions'>
+Попробуйте создать один из комментариев каждого вида.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 'Создайте комментарий стиля <code>//</code> , содержащий не менее пяти букв.'
-    testString: 'assert(code.match(/(\/\/)...../g), "Create a <code>//</code> style comment that contains at least five letters.");'
-  - text: 'Создайте комментарий <code>/* */</code> style, содержащий не менее пяти букв.'
-    testString: 'assert(code.match(/(\/\*)([^\/]{5,})(?=\*\/)/gm), "Create a <code>/* */</code> style comment that contains at least five letters.");'
+  - text: Create a <code>//</code> style comment that contains at least five letters.
+    testString: assert(code.match(/(\/\/)...../g));
+  - text: Create a <code>/* */</code> style comment that contains at least five letters.
+    testString: assert(code.match(/(\/\*)([^\/]{5,})(?=\*\/)/gm));
 
 ```
 
@@ -37,14 +48,14 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
 ```js
-// solution required
+// Fake Comment
+/* Another Comment */
 ```
+
 </section>

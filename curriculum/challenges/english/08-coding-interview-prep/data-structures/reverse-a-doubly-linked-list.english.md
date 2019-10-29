@@ -2,6 +2,7 @@
 id: 587d825a367417b2b2512c88
 title: Reverse a Doubly Linked List
 challengeType: 1
+forumTopicId: 301714
 ---
 
 ## Description
@@ -20,17 +21,17 @@ Let's create one more method for our doubly linked list called reverse which rev
 ```yml
 tests:
   - text: The DoublyLinkedList data structure exists.
-    testString: 'assert((function() { var test = false; if (typeof DoublyLinkedList !== "undefined") { test = new DoublyLinkedList() }; return (typeof test == "object")})(), "The DoublyLinkedList data structure exists.");'
+    testString: assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; return (typeof test == 'object')})());
   - text: The DoublyLinkedList has a method called add.
-    testString: 'assert((function() { var test = false; if (typeof DoublyLinkedList !== "undefined") { test = new DoublyLinkedList() }; if (test.add == undefined) { return false; }; return (typeof test.add == "function")})(), "The DoublyLinkedList has a method called add.");'
+    testString: assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; if (test.add == undefined) { return false; }; return (typeof test.add == 'function')})());
   - text: The DoublyLinkedList has a method called reverse.
-    testString: 'assert((function() { var test = false; if (typeof DoublyLinkedList !== "undefined") { test = new DoublyLinkedList() }; if (test.reverse == undefined) { return false; }; return (typeof test.reverse == "function")})(), "The DoublyLinkedList has a method called reverse.");'
+    testString: assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; if (test.reverse == undefined) { return false; }; return (typeof test.reverse == 'function')})());
   - text: Reversing an empty list returns null.
-    testString: 'assert((function() { var test = false; if (typeof DoublyLinkedList !== "undefined") { test = new DoublyLinkedList() }; return (test.reverse() == null); })(), "Reversing an empty list returns null.");'
+    testString: assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; return (test.reverse() == null); })());
   - text: The reverse method reverses the list.
-    testString: 'assert((function() { var test = false; if (typeof DoublyLinkedList !== "undefined") { test = new DoublyLinkedList() }; test.add(58); test.add(61); test.add(32); test.reverse(); return (test.print().join("") == "326158"); })(), "The reverse method reverses the list.");'
+    testString: assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; test.add(58); test.add(61); test.add(32); test.reverse(); return (test.print().join('') == '326158'); })());
   - text: The next and previous references are correctly maintained when a list is reversed.
-    testString: 'assert((function() { var test = false; if (typeof DoublyLinkedList !== "undefined") { test = new DoublyLinkedList() }; test.add(11); test.add(22); test.add(33); test.reverse(); return (test.printReverse().join("") == "112233"); })(), "The next and previous references are correctly maintained when a list is reversed.");'
+    testString: assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; test.add(11); test.add(22); test.add(33); test.reverse(); return (test.printReverse().join('') == '112233'); })());
 
 ```
 
@@ -62,7 +63,52 @@ var DoublyLinkedList = function() {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+DoublyLinkedList.prototype = {
+  add(data) {
+    if (this.head == null) {
+      this.head = new Node(data, null);
+      this.tail = this.head;
+    } else {
+      var node = this.head;
+      var prev = null;
+      while (node.next != null) {
+        prev = node;
+        node = node.next;
+      };
+      var newNode = new Node(data, node);
+      node.next = newNode;
+      this.tail = newNode;
+    };
+  },
+  print() {
+    if (this.head == null) {
+      return null;
+    } else {
+      var result = new Array();
+      var node = this.head;
+      while (node.next != null) {
+        result.push(node.data);
+        node = node.next;
+      };
+      result.push(node.data);
+      return result;
+    };
+  },
+  printReverse() {
+    if (this.tail == null) {
+      return null;
+    } else {
+      var result = new Array();
+      var node = this.tail;
+      while (node.prev != null) {
+        result.push(node.data);
+        node = node.prev;
+      };
+      result.push(node.data);
+      return result;
+    };
+  }
+};
 ```
 
 </div>
@@ -75,4 +121,5 @@ console.info('after the test');
 ```js
 // solution required
 ```
+
 </section>

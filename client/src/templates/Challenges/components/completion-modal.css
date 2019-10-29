@@ -9,3 +9,9 @@
   height: 30vh;
   width: 30vh;
 }
+
+@media screen and (max-width: 767px) {
+  .challenge-success-modal .btn-lg {
+    font-size: 16px;
+  }
+}

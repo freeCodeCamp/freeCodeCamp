@@ -1,97 +1,170 @@
-import { combineLatest, of } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { flow } from 'lodash';
-
-import { throwers } from '../rechallenge/throwers';
-import {
-  challengeFilesSelector,
-  isJSEnabledSelector,
-  challengeMetaSelector,
-  backendFormValuesSelector
-} from '../redux';
-import { transformers, testJS$JSX } from '../rechallenge/transformers';
+import { transformers } from '../rechallenge/transformers';
 import { cssToHtml, jsToHtml, concatHtml } from '../rechallenge/builders.js';
-import { isPromise } from './polyvinyl';
+import { challengeTypes } from '../../../../utils/challengeTypes';
+import createWorker from './worker-executor';
+import {
+  createTestFramer,
+  runTestInTestFrame,
+  createMainFramer
+} from './frame';
 
-const jQueryCDN =
-  'https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js';
-const jQuery = `<script src='${jQueryCDN}' typ='text/javascript'></script>`;
-const frameRunner =
-  "<script src='/js/frame-runner.js' type='text/javascript'></script>";
+const frameRunner = [
+  {
+    src: '/js/frame-runner.js'
+  }
+];
 
 const globalRequires = [
   {
     link:
       'https://cdnjs.cloudflare.com/' +
       'ajax/libs/normalize/4.2.0/normalize.min.css'
-  },
-  {
-    src: jQueryCDN
   }
 ];
 
-function filterJSIfDisabled(state) {
-  const isJSEnabled = isJSEnabledSelector(state);
-  return file => !(testJS$JSX(file) && !isJSEnabled);
+const applyFunction = fn =>
+  async function(file) {
+    try {
+      if (file.error) {
+        return file;
+      }
+      const newFile = await fn.call(this, file);
+      if (typeof newFile !== 'undefined') {
+        return newFile;
+      }
+      return file;
+    } catch (error) {
+      return { ...file, error };
+    }
+  };
+
+const composeFunctions = (...fns) =>
+  fns.map(applyFunction).reduce((f, g) => x => f(x).then(g));
+
+function buildSourceMap(files) {
+  return files.reduce((sources, file) => {
+    sources[file.name] = file.source || file.contents;
+    return sources;
+  }, {});
 }
 
-const applyFunction = fn => file => {
-  if (file.error) {
-    return file;
+function checkFilesErrors(files) {
+  const errors = files.filter(({ error }) => error).map(({ error }) => error);
+  if (errors.length) {
+    throw errors;
   }
-  try {
-    let newFile = fn(file);
-    if (typeof newFile !== 'undefined') {
-      if (isPromise(newFile)) {
-        newFile = newFile.catch(() => {
-          // file.error = e.message;
-          return file;
-        });
-      }
-      return newFile;
-    }
-    return file;
-  } catch {
-    // file.error = e.message;
-    return file;
-  }
+  return files;
+}
+
+const buildFunctions = {
+  [challengeTypes.js]: buildJSChallenge,
+  [challengeTypes.bonfire]: buildJSChallenge,
+  [challengeTypes.html]: buildDOMChallenge,
+  [challengeTypes.modern]: buildDOMChallenge,
+  [challengeTypes.backend]: buildBackendChallenge,
+  [challengeTypes.backEndProject]: buildBackendChallenge
 };
 
-const applyFunctions = fns => file =>
-  fns.reduce((file, fn) => {
-    if (isPromise(file)) {
-      return file.then(applyFunction(fn));
-    }
-    return applyFunction(fn)(file);
-  }, file);
-const toHtml = [jsToHtml, cssToHtml];
-const pipeLine = flow(
-  applyFunctions(throwers),
-  applyFunctions(transformers),
-  applyFunctions(toHtml)
-);
-
-export function buildFromFiles(state) {
-  const files = challengeFilesSelector(state);
-  const { required = [], template } = challengeMetaSelector(state);
-  const finalRequires = [...globalRequires, ...required];
-  const requiredFiles = Object.keys(files)
-    .map(key => files[key])
-    .filter(filterJSIfDisabled(state))
-    .filter(Boolean);
-  const finalFiles = requiredFiles.map(pipeLine);
-  return concatHtml(finalRequires, template, finalFiles);
+export async function buildChallenge(challengeData) {
+  const { challengeType } = challengeData;
+  let build = buildFunctions[challengeType];
+  if (build) {
+    return build(challengeData);
+  }
+  throw new Error(`Cannot build challenge of type ${challengeType}`);
 }
 
-export function buildBackendChallenge(state) {
-  const {
-    solution: { value: url }
-  } = backendFormValuesSelector(state);
-  return combineLatest(of(frameRunner), of(jQuery)).pipe(
-    map(([frameRunner, jQuery]) => ({
-      build: jQuery + frameRunner,
-      sources: { url },
-      checkChallengePayload: { solution: url }
-    }))
+const testRunners = {
+  [challengeTypes.js]: getJSTestRunner,
+  [challengeTypes.html]: getDOMTestRunner,
+  [challengeTypes.backend]: getDOMTestRunner
+};
+export function getTestRunner(buildData, proxyLogger, document) {
+  const { challengeType } = buildData;
+  const testRunner = testRunners[challengeType];
+  if (testRunner) {
+    return testRunner(buildData, proxyLogger, document);
+  }
+  throw new Error(`Cannot get test runner for challenge type ${challengeType}`);
+}
+
+function getJSTestRunner({ build, sources }, proxyLogger) {
+  const code = sources && 'index' in sources ? sources['index'] : '';
+
+  const testWorker = createWorker('test-evaluator', { terminateWorker: true });
+
+  return (testString, testTimeout) => {
+    return testWorker
+      .execute({ build, testString, code, sources }, testTimeout)
+      .on('LOG', proxyLogger).done;
+  };
+}
+
+async function getDOMTestRunner(buildData, proxyLogger, document) {
+  await new Promise(resolve =>
+    createTestFramer(document, resolve, proxyLogger)(buildData)
+  );
+  return (testString, testTimeout) =>
+    runTestInTestFrame(document, testString, testTimeout);
+}
+
+export function buildDOMChallenge({ files, required = [], template = '' }) {
+  const finalRequires = [...globalRequires, ...required, ...frameRunner];
+  const loadEnzyme = Object.keys(files).some(key => files[key].ext === 'jsx');
+  const toHtml = [jsToHtml, cssToHtml];
+  const pipeLine = composeFunctions(...transformers, ...toHtml);
+  const finalFiles = Object.keys(files)
+    .map(key => files[key])
+    .map(pipeLine);
+  return Promise.all(finalFiles)
+    .then(checkFilesErrors)
+    .then(files => ({
+      challengeType: challengeTypes.html,
+      build: concatHtml({ required: finalRequires, template, files }),
+      sources: buildSourceMap(files),
+      loadEnzyme
+    }));
+}
+
+export function buildJSChallenge({ files }) {
+  const pipeLine = composeFunctions(...transformers);
+  const finalFiles = Object.keys(files)
+    .map(key => files[key])
+    .map(pipeLine);
+  return Promise.all(finalFiles)
+    .then(checkFilesErrors)
+    .then(files => ({
+      challengeType: challengeTypes.js,
+      build: files
+        .reduce(
+          (body, file) => [...body, file.head, file.contents, file.tail],
+          []
+        )
+        .join('\n'),
+      sources: buildSourceMap(files)
+    }));
+}
+
+export function buildBackendChallenge({ url }) {
+  return {
+    challengeType: challengeTypes.backend,
+    build: concatHtml({ required: frameRunner }),
+    sources: { url }
+  };
+}
+
+export function updatePreview(buildData, document) {
+  const { challengeType } = buildData;
+  if (challengeType === challengeTypes.html) {
+    createMainFramer(document)(buildData);
+  } else {
+    throw new Error(`Cannot show preview for challenge type ${challengeType}`);
+  }
+}
+
+export function challengeHasPreview({ challengeType }) {
+  return (
+    challengeType === challengeTypes.html ||
+    challengeType === challengeTypes.modern
   );
 }

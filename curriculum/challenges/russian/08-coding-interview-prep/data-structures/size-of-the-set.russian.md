@@ -7,10 +7,13 @@ localeTitle: Размер набора
 ---
 
 ## Description
-<section id="description"> В этом упражнении мы собираемся создать функцию размера для нашего Set. Эта функция должна быть названа <code>this.size</code> и она должна вернуть размер коллекции. </section>
+<section id='description'>
+В этом упражнении мы собираемся создать функцию размера для нашего Set. Эта функция должна быть названа <code>this.size</code> и она должна вернуть размер коллекции.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -22,7 +25,6 @@ tests:
     testString: 'assert((function(){var test = new Set(); return (typeof test.size === "function")}()), "Your <code>Set</code> class should have a <code>size</code> method.");'
   - text: Метод <code>size</code> должен возвращать количество элементов в коллекции.
     testString: 'assert((function(){var test = new Set(); test.add("a");test.add("b");test.remove("a");return (test.size() === 1)}()), "The <code>size</code> method should return the number of elements in the collection.");'
-
 ```
 
 </section>
@@ -69,8 +71,6 @@ function Set() {
 
 </div>
 
-
-
 </section>
 
 ## Solution
@@ -79,4 +79,5 @@ function Set() {
 ```js
 // solution required
 ```
+
 </section>

@@ -2,23 +2,28 @@
 id: 5a90373638fddaf9a66b5d39
 title: Use grid-row to Control Spacing
 challengeType: 0
-videoUrl: ''
-localeTitle: Использовать сетку-строку для управления интервалом
+videoUrl: https://scrimba.com/p/pByETK/c9WBLU4
+forumTopicId: 301137
+localeTitle: Использование grid-row для управления пространством
 ---
 
 ## Description
-<section id="description"> Разумеется, вы можете сделать элементы потребляющими несколько строк, как вы можете, с помощью столбцов. Необходимо определить горизонтальные линии , которые вы хотите пункт для запуска и остановки при помощи <code>grid-row</code> свойство на элементе сетки. </section>
+<section id='description'>
+Конечно, вы можете создать элементы, занимающие несколько строк, также как вы делали это со столбцами. Для этого необходимо определить горизонтальные линии, в которых вы хотите чтобы элемент начинался и заканчивался при помощи свойства <code>grid-row</code> на элементе грида.
+</section>
 
 ## Instructions
-<section id="instructions"> Сделайте элемент с классом <code>item5</code> двумя последними. </section>
+<section id='instructions'>
+Создайте элемент с классом <code>item5</code> , который занимает две последние строки грида.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: '<code>item5</code> класс должен иметь <code>grid-row</code> свойство , которое имеет значение <code>2 / 4</code> .'
-    testString: 'assert(code.match(/.item5\s*?{[\s\S]*grid-row\s*?:\s*?2\s*?\/\s*?4\s*?;[\s\S]*}/gi), "<code>item5</code> class should have a <code>grid-row</code> property that has the value of <code>2 / 4</code>.");'
+  - text: <code>item5</code> class should have a <code>grid-row</code> property that has the value of <code>2 / 4</code>.
+    testString: assert(code.match(/.item5\s*?{[\s\S]*grid-row\s*?:\s*?2\s*?\/\s*?4\s*?;[\s\S]*}/gi));
 
 ```
 
@@ -69,14 +74,13 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+var code = ".item5 {grid-row: 2 / 4;}"
 ```
+
 </section>

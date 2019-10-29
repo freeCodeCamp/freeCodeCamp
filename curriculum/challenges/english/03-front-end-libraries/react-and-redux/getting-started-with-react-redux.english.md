@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036141
 title: Getting Started with React Redux
 challengeType: 6
 isRequired: false
+forumTopicId: 301430
 ---
 
 ## Description
@@ -23,11 +24,11 @@ Start with a <code>DisplayMessages</code> component. Add a constructor to this c
 ```yml
 tests:
   - text: The <code>DisplayMessages</code> component should render an empty <code>div</code> element.
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); return mockedComponent.find("div").text() === "" })(), "The <code>DisplayMessages</code> component should render an empty <code>div</code> element.");'
-  - text: 'The <code>DisplayMessages</code> constructor should be called properly with <code>super</code>, passing in <code>props</code>.'
-    testString: 'getUserInput => assert((function() { const noWhiteSpace = getUserInput("index").replace(/\s/g,""); return noWhiteSpace.includes("constructor(props)") && noWhiteSpace.includes("super(props"); })(), "The <code>DisplayMessages</code> constructor should be called properly with <code>super</code>, passing in <code>props</code>.");'
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); return mockedComponent.find('div').text() === '' })());
+  - text: The <code>DisplayMessages</code> constructor should be called properly with <code>super</code>, passing in <code>props</code>.
+    testString: getUserInput => assert((function() { const noWhiteSpace = getUserInput('index').replace(/\s/g,''); return noWhiteSpace.includes('constructor(props)') && noWhiteSpace.includes('super(props'); })());
   - text: 'The <code>DisplayMessages</code> component should have an initial state equal to <code>{input: "", messages: []}</code>.'
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); const initialState = mockedComponent.state(); return typeof initialState === "object" && initialState.input === "" && Array.isArray(initialState.messages) && initialState.messages.length === 0; })(), "The <code>DisplayMessages</code> component should have an initial state equal to <code>{input: "", messages: []}</code>.");'
+    testString: "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); const initialState = mockedComponent.state(); return typeof initialState === 'object' && initialState.input === '' && Array.isArray(initialState.messages) && initialState.messages.length === 0; })());"
 
 ```
 
@@ -56,7 +57,7 @@ class DisplayMessages extends React.Component {
 <div id='jsx-teardown'>
 
 ```js
-console.info('after the test');
+ReactDOM.render(<DisplayMessages />, document.getElementById('root'))
 ```
 
 </div>
@@ -72,7 +73,7 @@ class DisplayMessages extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      input: ",
+      input: '',
       messages: []
     }
   }

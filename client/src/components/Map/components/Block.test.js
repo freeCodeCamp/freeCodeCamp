@@ -7,7 +7,7 @@ import Adapter from 'enzyme-adapter-react-16';
 import sinon from 'sinon';
 
 import { Block } from './Block';
-import mockNodes from '../../../__mocks__/map-nodes';
+import mockChallengeNodes from '../../../__mocks__/challenge-nodes';
 import mockIntroNodes from '../../../__mocks__/intro-nodes';
 import mockCompleted from '../../../__mocks__/completedChallengesMock';
 
@@ -20,7 +20,7 @@ test('<Block /> not expanded snapshot', () => {
   const componentToRender = (
     <Block
       blockDashedName='block-a'
-      challenges={mockNodes.filter(node => node.block === 'block-a')}
+      challenges={mockChallengeNodes.filter(node => node.block === 'block-a')}
       completedChallenges={mockCompleted}
       intro={mockIntroNodes[0]}
       isExpanded={false}
@@ -39,7 +39,7 @@ test('<Block expanded snapshot', () => {
   const componentToRender = (
     <Block
       blockDashedName='block-a'
-      challenges={mockNodes.filter(node => node.block === 'block-a')}
+      challenges={mockChallengeNodes.filter(node => node.block === 'block-a')}
       completedChallenges={mockCompleted}
       intro={mockIntroNodes[0]}
       isExpanded={true}
@@ -58,7 +58,7 @@ test('<Block />  should handle toggle clicks correctly', () => {
   const toggleMapSpy = sinon.spy();
   const props = {
     blockDashedName: 'block-a',
-    challenges: mockNodes.filter(node => node.block === 'block-a'),
+    challenges: mockChallengeNodes.filter(node => node.block === 'block-a'),
     completedChallenges: mockCompleted,
     intro: mockIntroNodes[0],
     isExpanded: false,
@@ -74,7 +74,7 @@ test('<Block />  should handle toggle clicks correctly', () => {
   expect(
     enzymeWrapper
       .find('.map-title')
-      .find('h5')
+      .find('h4')
       .text()
   ).toBe('Block A');
 
@@ -88,7 +88,7 @@ test('<Block />  should handle toggle clicks correctly', () => {
   expect(
     enzymeWrapper
       .find('.map-title')
-      .find('h5')
+      .find('h4')
       .text()
   ).toBe('Block A');
   expect(enzymeWrapper.find('ul').length).toBe(1);

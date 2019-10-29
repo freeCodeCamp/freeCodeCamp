@@ -2,6 +2,7 @@
 title: Gamma function
 id: 5a23c84252665b21eecc7e76
 challengeType: 5
+forumTopicId: 302271
 ---
 
 ## Description
@@ -22,19 +23,19 @@ The Gamma function can be defined as:
 ```yml
 tests:
   - text: <code>gamma</code> should be a function.
-    testString: 'assert(typeof gamma=="function","<code>gamma</code> should be a function.")'
-  - text: '<code>gamma("+tests[0]+")</code> should return a number.'
-    testString: 'assert(typeof gamma(tests[0])=="number","<code>gamma("+tests[0]+")</code> should return a number.")'
-  - text: '<code>gamma("+tests[0]+")</code> should return <code>"+results[0]+"</code>.'
-    testString: 'assert.equal(gamma(tests[0]),results[0],"<code>gamma("+tests[0]+")</code> should return <code>"+results[0]+"</code>.")'
-  - text: '<code>gamma("+tests[1]+")</code> should return <code>"+results[1]+"</code>.'
-    testString: 'assert.equal(gamma(tests[1]),results[1],"<code>gamma("+tests[1]+")</code> should return <code>"+results[1]+"</code>.")'
-  - text: '<code>gamma("+tests[2]+")</code> should return <code>"+results[2]+"</code>.'
-    testString: 'assert.equal(gamma(tests[2]),results[2],"<code>gamma("+tests[2]+")</code> should return <code>"+results[2]+"</code>.")'
-  - text: '<code>gamma("+tests[3]+")</code> should return <code>"+results[3]+"</code>.'
-    testString: 'assert.equal(gamma(tests[3]),results[3],"<code>gamma("+tests[3]+")</code> should return <code>"+results[3]+"</code>.")'
-  - text: '<code>gamma("+tests[4]+")</code> should return <code>"+results[4]+"</code>.'
-    testString: 'assert.equal(gamma(tests[4]),results[4],"<code>gamma("+tests[4]+")</code> should return <code>"+results[4]+"</code>.")'
+    testString: assert(typeof gamma=='function')
+  - text: <code>gamma(.1)</code> should return a number.
+    testString: assert(typeof gamma(.1)=='number')
+  - text: <code>gamma(.1)</code> should return <code>9.513507698668736</code>.
+    testString: assert.equal(round(gamma(.1)), round(9.513507698668736))
+  - text: <code>gamma(.2)</code> should return <code>4.590843711998803</code>.
+    testString: assert.equal(round(gamma(.2)), round(4.590843711998803))
+  - text: <code>gamma(.3)</code> should return <code>2.9915689876875904</code>.
+    testString: assert.equal(round(gamma(.3)), round(2.9915689876875904))
+  - text: <code>gamma(.4)</code> should return <code>2.218159543757687</code>.
+    testString: assert.equal(round(gamma(.4)), round(2.218159543757687))
+  - text: <code>gamma(.5)</code> should return <code>1.7724538509055159</code>.
+    testString: assert.equal(round(gamma(.5)), round(1.7724538509055159))
 
 ```
 
@@ -46,19 +47,20 @@ tests:
 <div id='js-seed'>
 
 ```js
-function gamma (x) {
+function gamma(x) {
   // Good luck!
 }
 ```
 
 </div>
 
-
 ### After Test
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+function round(x) {
+  return Number(x).toPrecision(13);
+}
 ```
 
 </div>

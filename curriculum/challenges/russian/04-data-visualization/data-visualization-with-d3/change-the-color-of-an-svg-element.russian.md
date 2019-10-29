@@ -1,26 +1,28 @@
 ---
 id: 587d7fa9367417b2b2512bd1
 title: Change the Color of an SVG Element
-required:
-  - src: 'https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js'
 challengeType: 6
-videoUrl: ''
+forumTopicId: 301480
 localeTitle: Изменение цвета элемента SVG
 ---
 
 ## Description
-<section id="description"> Бары находятся в правильном положении, но все они имеют черный цвет. SVG имеет способ изменить цвет баров. В SVG <code>rect</code> форма окрашена с атрибутом <code>fill</code> . Он поддерживает шестнадцатеричные коды, имена цветов и значения rgb, а также более сложные параметры, такие как градиенты и прозрачность. </section>
+<section id='description'>
+Бары находятся в правильном положении, но все они имеют черный цвет. SVG имеет способ изменить цвет баров. В SVG <code>rect</code> форма окрашена с атрибутом <code>fill</code> . Он поддерживает шестнадцатеричные коды, имена цветов и значения rgb, а также более сложные параметры, такие как градиенты и прозрачность.
+</section>
 
 ## Instructions
-<section id="instructions"> Добавьте метод <code>attr()</code> чтобы установить «заливку» всех баров на цвет «флот». </section>
+<section id='instructions'>
+Добавьте метод <code>attr()</code> чтобы установить «заливку» всех баров на цвет «флот».
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: Все бары должны иметь цвет <code>fill</code> флота.
-    testString: 'assert($("rect").css("fill") == "rgb(0, 0, 128)", "The bars should all have a <code>fill</code> color of navy.");'
+  - text: The bars should all have a <code>fill</code> color of navy.
+    testString: assert($('rect').css('fill') == "rgb(0, 0, 128)");
 
 ```
 
@@ -64,14 +66,13 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>

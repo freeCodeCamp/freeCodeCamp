@@ -2,23 +2,28 @@
 id: 5a90374338fddaf9a66b5d3a
 title: Align an Item Horizontally using justify-self
 challengeType: 0
-videoUrl: ''
-localeTitle: 'Выровнять элемент по горизонтали, используя оправдание'
+videoUrl: https://scrimba.com/p/pByETK/cJbpKHq
+forumTopicId: 301122
+localeTitle: Выравнивание элемента по горизонтали, используя justify-self
 ---
 
 ## Description
-<section id="description"> В CSS Grid содержимое каждого элемента находится в ящике, который называется <dfn>ячейкой</dfn> . Вы можете выравнивать позицию содержимого внутри своей ячейки по горизонтали, используя свойство <code>justify-self</code> для элемента сетки. По умолчанию это свойство имеет значение <code>stretch</code> , которое сделает содержимое заполнением всей ширины ячейки. Это свойство CSS Grid принимает и другие значения: <code>start</code> : выравнивает содержимое слева от ячейки, в <code>center</code> : выравнивает содержимое в центре ячейки, <code>end</code> : выравнивает содержимое справа от ячейки. </section>
+<section id='description'>
+В CSS Grid содержимое каждого элемента находится в так называемой <dfn>ячейке</dfn> . Вы можете выравнивать содержимое внутри ячейки по горизонтали, используя свойство <code>justify-self</code> для элемента грида. По умолчанию это свойство имеет значение <code>stretch</code> , т.е. содержимое заполняет всю ширину ячейки. Это свойство CSS Grid принимает и другие значения: <code>start</code> : выравнивает содержимое по левую сторону ячейки, <code>center</code> : выравнивает содержимое по центру ячейки, <code>end</code> : выравнивает содержимое по правую сторону ячейки.
+</section>
 
 ## Instructions
-<section id="instructions"> Используйте свойство <code>justify-self</code> для <code>item2</code> элемента с помощью <code>item2</code> . </section>
+<section id='instructions'>
+Используйте свойство <code>justify-self</code> для выравнивания элемента с классом <code>item2</code> по центру ячейки.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: класс <code>item2</code> должен иметь свойство <code>justify-self</code> которое имеет значение <code>center</code> .
-    testString: 'assert(code.match(/.item2\s*?{[\s\S]*justify-self\s*?:\s*?center\s*?;[\s\S]*}/gi), "<code>item2</code> class should have a <code>justify-self</code> property that has the value of <code>center</code>.");'
+  - text: <code>item2</code> class should have a <code>justify-self</code> property that has the value of <code>center</code>.
+    testString: assert(code.match(/.item2\s*?{[\s\S]*justify-self\s*?:\s*?center\s*?;[\s\S]*}/gi));
 
 ```
 
@@ -69,14 +74,13 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+var code = ".item2 {justify-self: center;}"
 ```
+
 </section>

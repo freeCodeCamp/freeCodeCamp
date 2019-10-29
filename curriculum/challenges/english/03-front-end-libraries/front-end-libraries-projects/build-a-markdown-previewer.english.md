@@ -3,6 +3,7 @@ id: bd7157d8c242eddfaeb5bd13
 title: Build a Markdown Previewer
 isRequired: true
 challengeType: 3
+forumTopicId: 301372
 ---
 
 ## Description
@@ -48,4 +49,5 @@ tests: []
 ```js
 // solution required
 ```
+
 </section>

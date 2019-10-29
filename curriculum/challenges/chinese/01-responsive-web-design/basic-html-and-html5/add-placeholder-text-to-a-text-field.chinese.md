@@ -2,7 +2,6 @@
 id: bad87fee1348bd9aedf08830
 title: Add Placeholder Text to a Text Field
 challengeType: 0
-guideUrl: 'https://chinese.freecodecamp.org/guide/certificates/add-placeholder-text-to-a-text-field'
 videoUrl: ''
 localeTitle: 将占位符文本添加到文本字段
 ---

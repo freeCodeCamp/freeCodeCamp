@@ -1,20 +1,33 @@
-import React, { PureComponent, Fragment } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { createSelector } from 'reselect';
 import isEmail from 'validator/lib/isEmail';
-
-import CardForm from './CardForm';
+import {
+  Button,
+  ControlLabel,
+  Form,
+  FormControl,
+  FormGroup,
+  Row,
+  Col
+} from '@freecodecamp/react-bootstrap';
 import { injectStripe } from 'react-stripe-elements';
-import postUpdate$ from '../../../templates/Challenges/utils/postUpdate$';
+
+import Spacer from '../../../components/helpers/Spacer';
+import StripeCardForm from './StripeCardForm';
+import DonateCompletion from './DonateCompletion';
+import { postChargeStripe } from '../../../utils/ajax';
+import { userSelector, isSignedInSelector } from '../../../redux';
 
 const propTypes = {
   email: PropTypes.string,
-  maybeButton: PropTypes.func.isRequired,
-  renderCompletion: PropTypes.func.isRequired,
+  isSignedIn: PropTypes.bool,
   stripe: PropTypes.shape({
     createToken: PropTypes.func.isRequired
   })
 };
-const initialSate = {
+const initialState = {
   donationAmount: 500,
   donationState: {
     processing: false,
@@ -23,33 +36,40 @@ const initialSate = {
   }
 };
 
-class DonateForm extends PureComponent {
+const mapStateToProps = createSelector(
+  userSelector,
+  isSignedInSelector,
+  ({ email }, isSignedIn) => ({ email, isSignedIn })
+);
+
+class DonateForm extends Component {
   constructor(...args) {
     super(...args);
-    const [props] = args;
 
     this.state = {
-      ...initialSate,
-      email: props.email
+      ...initialState,
+      email: null,
+      isFormValid: false
     };
 
-    this.buttonAmounts = [500, 1000, 3500, 5000, 25000];
-
-    this.handleAmountClick = this.handleAmountClick.bind(this);
+    this.getUserEmail = this.getUserEmail.bind(this);
+    this.getValidationState = this.getValidationState.bind(this);
     this.handleEmailChange = this.handleEmailChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.isActive = this.isActive.bind(this);
-    this.renderAmountButtons = this.renderAmountButtons.bind(this);
     this.postDonation = this.postDonation.bind(this);
     this.resetDonation = this.resetDonation.bind(this);
   }
 
-  handleAmountClick(e) {
-    e.preventDefault();
-    const donationAmount = parseInt(e.target.id, 10);
-    return this.setState(state => ({
+  getUserEmail() {
+    const { email: stateEmail } = this.state;
+    const { email: propsEmail } = this.props;
+    return stateEmail || propsEmail || '';
+  }
+
+  getValidationState(isFormValid) {
+    this.setState(state => ({
       ...state,
-      donationAmount
+      isFormValid
     }));
   }
 
@@ -61,15 +81,17 @@ class DonateForm extends PureComponent {
     }));
   }
 
-  handleSubmit() {
-    const { email } = this.state;
+  handleSubmit(e) {
+    e.preventDefault();
+    const email = this.getUserEmail();
     if (!email || !isEmail(email)) {
       return this.setState(state => ({
         ...state,
         donationState: {
           ...state.donationState,
           error:
-            'We need a valid email address to send your donation tax receipt to'
+            'We need a valid email address to which we can send your' +
+            ' donation tax receipt.'
         }
       }));
     }
@@ -89,12 +111,9 @@ class DonateForm extends PureComponent {
     });
   }
 
-  isActive(amount) {
-    return this.state.donationAmount === amount;
-  }
-
   postDonation(token) {
     const { donationAmount: amount } = this.state;
+    const { isSignedIn } = this.props;
     this.setState(state => ({
       ...state,
       donationState: {
@@ -102,96 +121,92 @@ class DonateForm extends PureComponent {
         processing: true
       }
     }));
-    return postUpdate$('/donate/charge-stripe', {
+
+    return postChargeStripe(isSignedIn, {
       token,
       amount
-    }).subscribe(
-      res =>
+    })
+      .then(response => {
+        const data = response && response.data;
         this.setState(state => ({
           ...state,
           donationState: {
             ...state.donationState,
             processing: false,
             success: true,
-            error: res.error
+            error: data.error ? data.error : null
           }
-        })),
-      err =>
+        }));
+      })
+      .catch(error => {
+        const data =
+          error.response && error.response.data
+            ? error.response.data
+            : {
+                error:
+                  'Something is not right. Please contact team@freecodecamp.org'
+              };
         this.setState(state => ({
           ...state,
           donationState: {
             ...state.donationState,
             processing: false,
             success: false,
-            error: err.error
+            error: data.error
           }
-        }))
-    );
-  }
-
-  renderAmountButtons() {
-    return this.buttonAmounts.map(amount => (
-      <li key={'amount-' + amount}>
-        <button
-          className={`amount-value ${this.isActive(amount) ? 'active' : ''}`}
-          id={amount}
-          onClick={this.handleAmountClick}
-          tabIndex='-1'
-          >{`$${amount / 100}`}</button>
-      </li>
-    ));
-  }
-
-  renderDonateForm() {
-    return (
-      <Fragment>
-        <p>
-          freeCodeCamp is completely free. But it costs our nonprofit a lot of
-          money to run it. Help us pay for servers. Set up a tax-deductible
-          monthly donation you can afford.
-        </p>
-        <div id='donate-amount-panel'>
-          <ul>{this.renderAmountButtons()}</ul>
-        </div>
-        {this.renderEmailInput()}
-        <CardForm
-          amount={this.state.donationAmount / 100}
-          handleSubmit={this.handleSubmit}
-        />
-        {this.props.maybeButton()}
-      </Fragment>
-    );
-  }
-
-  renderEmailInput() {
-    const { email } = this.state;
-    return (
-      <div className='donation-email-container'>
-        <label>
-          Email where we should send your donation tax receipt:
-          <input
-            onChange={this.handleEmailChange}
-            placeholder='email@example.com'
-            required={true}
-            type='email'
-            value={email}
-          />
-        </label>
-      </div>
-    );
+        }));
+      });
   }
 
   resetDonation() {
-    return this.setState(() => initialSate);
+    return this.setState({ ...initialState });
+  }
+
+  renderCompletion(props) {
+    return <DonateCompletion {...props} />;
+  }
+
+  renderDonateForm() {
+    const { isFormValid } = this.state;
+    return (
+      <Row>
+        <Col sm={10} smOffset={1} xs={12}>
+          <Form className='donation-form' onSubmit={this.handleSubmit}>
+            <FormGroup className='donation-email-container'>
+              <ControlLabel>
+                Email (we'll send you a tax-deductible donation receipt):
+              </ControlLabel>
+              <FormControl
+                onChange={this.handleEmailChange}
+                placeholder='me@example.com'
+                required={true}
+                type='text'
+                value={this.getUserEmail()}
+              />
+            </FormGroup>
+            <StripeCardForm getValidationState={this.getValidationState} />
+            <Button
+              block={true}
+              bsStyle='primary'
+              disabled={!isFormValid}
+              id='confirm-donation-btn'
+              type='submit'
+            >
+              Confirm your donation of $5 / month
+            </Button>
+            <Spacer />
+          </Form>
+        </Col>
+      </Row>
+    );
   }
 
   render() {
     const {
       donationState: { processing, success, error }
     } = this.state;
-    const { renderCompletion } = this.props;
     if (processing || success || error) {
-      return renderCompletion({
+      return this.renderCompletion({
         processing,
         success,
         error,
@@ -205,4 +220,4 @@ class DonateForm extends PureComponent {
 DonateForm.displayName = 'DonateForm';
 DonateForm.propTypes = propTypes;
 
-export default injectStripe(DonateForm);
+export default injectStripe(connect(mapStateToProps)(DonateForm));

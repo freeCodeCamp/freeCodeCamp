@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Adereços de acesso usando this.props
 ---
 
-## Description
-<section id="description"> Os últimos vários desafios cobriram as maneiras básicas de passar adereços aos componentes filhos. Mas e se o componente filho para o qual você está passando um prop for um componente de classe ES6, em vez de um componente funcional sem estado? O componente de classe ES6 usa uma convenção ligeiramente diferente para acessar adereços. Sempre que você se referir a um componente de classe em si, use a palavra <code>this</code> chave <code>this</code> . Para acessar adereços dentro de um componente de classe, você prefácio o código que você usa para acessá-lo com <code>this</code> . Por exemplo, se um componente de classe ES6 tiver um prop chamado <code>data</code> , você escreverá <code>{this.props.data}</code> no JSX. </section>
+## Descrição
+<section id="description"> Os últimos vários desafios cobriram as maneiras básicas de passar *props* (adereços) aos componentes filhos. Mas e se o componente filho para o qual você está passando um *prop* for um componente de classe ES6, em vez de um componente funcional sem estado? O componente de classe ES6 usa uma convenção ligeiramente diferente para acessar *props*. Sempre que você se referir a um componente de classe dentro dele mesmo, use a palavra-chave <code>this</code>. Para acessar *props* dentro de um componente de classe, você precede o código que você usa para acessá-lo com <code>this</code> . Por exemplo, se um componente de classe ES6 tiver um *prop* chamado <code>data</code> , você escreverá <code>{this.props.data}</code> no JSX. </section>
 
-## Instructions
-<section id="instructions"> Renderizar uma instância do componente <code>ReturnTempPassword</code> no componente pai <code>ResetPassword</code> . Aqui, dê a <code>ReturnTempPassword</code> um prop de <code>tempPassword</code> e atribua a ela um valor de uma string com pelo menos 8 caracteres. Dentro do filho, <code>ReturnTempPassword</code> , acesse o prop <code>tempPassword</code> dentro das tags <code>strong</code> para garantir que o usuário veja a senha temporária. </section>
+## Instruções
+<section id="instructions"> Renderizar uma instância do componente <code>ReturnTempPassword</code> no componente pai <code>ResetPassword</code> . Nesse caso, dê a <code>ReturnTempPassword</code> um prop de <code>tempPassword</code> e atribua a ela um valor de uma string com pelo menos 8 caracteres. Dentro do filho, <code>ReturnTempPassword</code> , acesse o *prop* <code>tempPassword</code> dentro das tags <code>strong</code> para garantir que o usuário veja a senha temporária. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -90,7 +90,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

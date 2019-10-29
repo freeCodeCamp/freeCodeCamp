@@ -3,15 +3,18 @@ id: af7588ade1100bde429baf20
 title: Missing letters
 isRequired: true
 challengeType: 5
-videoUrl: ''
+forumTopicId: 16023
 localeTitle: Пропущенные буквы
 ---
 
 ## Description
-<section id="description"> Найдите отсутствующую букву в пробе прошедшего письма и верните ее. Если все буквы присутствуют в диапазоне, верните undefined. Не забудьте использовать <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask,</a> если вы застряли. Попробуйте подключить программу. Напишите свой собственный код. </section>
+<section id='description'>
+Найдите отсутствующую букву в пробе прошедшего письма и верните ее. Если все буквы присутствуют в диапазоне, верните undefined. Не забудьте использовать <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask,</a> если вы застряли. Попробуйте подключить программу. Напишите свой собственный код.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -19,16 +22,16 @@ localeTitle: Пропущенные буквы
 
 ```yml
 tests:
-  - text: <code>fearNotLetter(&quot;abce&quot;)</code> должен возвращать «d».
-    testString: 'assert.deepEqual(fearNotLetter("abce"), "d", "<code>fearNotLetter("abce")</code> should return "d".");'
-  - text: <code>fearNotLetter(&quot;abcdefghjklmno&quot;)</code> должен вернуть &quot;i&quot;.
-    testString: 'assert.deepEqual(fearNotLetter("abcdefghjklmno"), "i", "<code>fearNotLetter("abcdefghjklmno")</code> should return "i".");'
-  - text: <code>fearNotLetter(&quot;stvwx&quot;)</code> должен вернуть «u».
-    testString: 'assert.deepEqual(fearNotLetter("stvwx"), "u", "<code>fearNotLetter("stvwx")</code> should return "u".");'
-  - text: <code>fearNotLetter(&quot;bcdf&quot;)</code> должен вернуть &quot;e&quot;.
-    testString: 'assert.deepEqual(fearNotLetter("bcdf"), "e", "<code>fearNotLetter("bcdf")</code> should return "e".");'
-  - text: <code>fearNotLetter(&quot;abcdefghijklmnopqrstuvwxyz&quot;)</code> должен возвращаться не определен.
-    testString: 'assert.isUndefined(fearNotLetter("abcdefghijklmnopqrstuvwxyz"), "<code>fearNotLetter("abcdefghijklmnopqrstuvwxyz")</code> should return undefined.");'
+  - text: <code>fearNotLetter("abce")</code> should return "d".
+    testString: assert.deepEqual(fearNotLetter('abce'), 'd');
+  - text: <code>fearNotLetter("abcdefghjklmno")</code> should return "i".
+    testString: assert.deepEqual(fearNotLetter('abcdefghjklmno'), 'i');
+  - text: <code>fearNotLetter("stvwx")</code> should return "u".
+    testString: assert.deepEqual(fearNotLetter('stvwx'), 'u');
+  - text: <code>fearNotLetter("bcdf")</code> should return "e".
+    testString: assert.deepEqual(fearNotLetter('bcdf'), 'e');
+  - text: <code>fearNotLetter("abcdefghijklmnopqrstuvwxyz")</code> should return undefined.
+    testString: assert.isUndefined(fearNotLetter('abcdefghijklmnopqrstuvwxyz'));
 
 ```
 
@@ -50,14 +53,22 @@ fearNotLetter("abce");
 
 </div>
 
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
 ```js
-// solution required
+function fearNotLetter (str) {
+  for (var i = str.charCodeAt(0); i <= str.charCodeAt(str.length - 1); i++) {
+    var letter = String.fromCharCode(i);
+    if (str.indexOf(letter) === -1) {
+      return letter;
+    }
+  }
+
+  return undefined;
+}
 ```
+
 </section>

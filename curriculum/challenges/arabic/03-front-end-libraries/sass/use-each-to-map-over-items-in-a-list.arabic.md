@@ -1,9 +1,6 @@
 ---
 id: 587d7dbf367417b2b2512bba
 title: Use @each to Map Over Items in a List
-required:
-  - src: 'https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.9/sass.sync.min.js'
-    raw: true
 challengeType: 0
 videoUrl: ''
 localeTitle: ''

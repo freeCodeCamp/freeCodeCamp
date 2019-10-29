@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Button, Panel } from '@freecodecamp/react-bootstrap';
 
-import FullWidthRow from '../helpers/FullWidthRow';
+import { FullWidthRow } from '../helpers';
 import SectionHeader from './SectionHeader';
-import academicPolicy from '../../resources/honesty-policy';
+import HonestyPolicy from '../../resources/honesty-policy';
 
 import './honesty.css';
 
@@ -24,9 +24,14 @@ class Honesty extends Component {
   );
 
   renderIsHonestAgreed = () => (
-    <Panel bsStyle='info' className='agreed btn'>
+    <Button
+      block={true}
+      bsStyle='primary'
+      className='disabled-agreed'
+      disabled={true}
+    >
       <p>You have accepted our Academic Honesty Policy.</p>
-    </Panel>
+    </Button>
   );
 
   render() {
@@ -37,10 +42,10 @@ class Honesty extends Component {
         <SectionHeader>Academic Honesty Policy</SectionHeader>
         <FullWidthRow>
           <Panel className='honesty-panel'>
-            {academicPolicy}
-            <br />
-            {isHonest ? this.renderIsHonestAgreed() : this.renderAgreeButton()}
+            <HonestyPolicy />
           </Panel>
+          <br />
+          {isHonest ? this.renderIsHonestAgreed() : this.renderAgreeButton()}
         </FullWidthRow>
       </section>
     );

@@ -1,8 +1,6 @@
 ---
 id: 587d7fac367417b2b2512bdc
 title: Use the d3.max and d3.min Functions to Find Minimum and Maximum Values in a Dataset
-required:
-  - src: 'https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js'
 challengeType: 6
 videoUrl: ''
 localeTitle: Use as funções d3.max e d3.min para localizar valores mínimos e máximos em um conjunto de dados

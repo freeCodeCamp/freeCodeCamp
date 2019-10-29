@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036177
 title: Write a Simple Counter
 challengeType: 6
 isRequired: false
+forumTopicId: 301425
 ---
 
 ## Description
@@ -21,16 +22,16 @@ The <code>Counter</code> component keeps track of a <code>count</code> value in 
 
 ```yml
 tests:
-  - text: '<code>Counter</code> should return a <code>div</code> element which contains three buttons with text content in this order <code>Increment!</code>, <code>Decrement!</code>, <code>Reset</code>.'
-    testString: 'assert((() => { const mockedComponent = Enzyme.mount(React.createElement(Counter)); return (mockedComponent.find(".inc").text() === "Increment!" && mockedComponent.find(".dec").text() === "Decrement!" && mockedComponent.find(".reset").text() === "Reset"); })(), "<code>Counter</code> should return a <code>div</code> element which contains three buttons with text content in this order <code>Increment!</code>, <code>Decrement!</code>, <code>Reset</code>.");'
+  - text: <code>Counter</code> should return a <code>div</code> element which contains three buttons with text content in this order <code>Increment!</code>, <code>Decrement!</code>, <code>Reset</code>.
+    testString: assert((() => { const mockedComponent = Enzyme.mount(React.createElement(Counter)); return (mockedComponent.find('.inc').text() === 'Increment!' && mockedComponent.find('.dec').text() === 'Decrement!' && mockedComponent.find('.reset').text() === 'Reset'); })());
   - text: The state of <code>Counter</code> should initialize with a <code>count</code> property set to <code>0</code>.
-    testString: 'assert.strictEqual(Enzyme.mount(React.createElement(Counter)).state("count"), 0, "The state of <code>Counter</code> should initialize with a <code>count</code> property set to <code>0</code>.");'
+    testString: 'const mockedComponent = Enzyme.mount(React.createElement(Counter)); assert(mockedComponent.find("h1").text() === "Current Count: 0")'
   - text: Clicking the increment button should increment the count by <code>1</code>.
-    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(Counter)); const first = () => { mockedComponent.setState({ count: 0 }); return waitForIt(() => mockedComponent.state("count")); }; const second = () => { mockedComponent.find(".inc").simulate("click"); return waitForIt(() => mockedComponent.state("count")); }; const firstValue = await first(); const secondValue = await second(); assert(firstValue === 0 && secondValue === 1, "Clicking the increment button should increment the count by <code>1</code>."); }; '
+    testString: 'const mockedComponent = Enzyme.mount(React.createElement(Counter)); mockedComponent.find(".inc").simulate("click"); assert(mockedComponent.find("h1").text() === "Current Count: 1")'
   - text: Clicking the decrement button should decrement the count by <code>1</code>.
-    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(Counter)); const first = () => { mockedComponent.setState({ count: 0 }); return waitForIt(() => mockedComponent.state("count")); }; const second = () => { mockedComponent.find(".dec").simulate("click"); return waitForIt(() => mockedComponent.state("count")); }; const firstValue = await first(); const secondValue = await second(); assert(firstValue === 0 && secondValue === -1, "Clicking the decrement button should decrement the count by <code>1</code>."); }; '
+    testString: 'const mockedComponent = Enzyme.mount(React.createElement(Counter)); mockedComponent.find(".dec").simulate("click"); assert(mockedComponent.find("h1").text() === "Current Count: -1")'
   - text: Clicking the reset button should reset the count to <code>0</code>.
-    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(Counter)); const init = () => { mockedComponent.setState({ count: 0 }); return waitForIt(() => mockedComponent.state("count")); }; const increment = () => { mockedComponent.find(".inc").simulate("click"); mockedComponent.find(".inc").simulate("click"); return waitForIt(() => mockedComponent.state("count")); }; const decrement = () => { mockedComponent.find(".dec").simulate("click"); return waitForIt(() => mockedComponent.state("count")); }; const reset = () => { mockedComponent.find(".reset").simulate("click"); return waitForIt(() => mockedComponent.state("count")); }; const firstValue = await init(); const secondValue = await increment(); const thirdValue = await decrement(); const fourthValue = await reset(); assert(firstValue === 0 && secondValue === 2 && thirdValue === 1 && fourthValue === 0, "Clicking the reset button should reset the count to <code>0</code>."); }; '
+    testString: 'const mockedComponent = Enzyme.mount(React.createElement(Counter)); mockedComponent.setState({ count: 5 }); const currentCountElement = mockedComponent.find("h1"); assert(currentCountElement.text() === "Current Count: 5"); mockedComponent.find(".reset").simulate("click"); assert(currentCountElement.text() === "Current Count: 0");'
 
 ```
 
@@ -75,7 +76,7 @@ class Counter extends React.Component {
 <div id='jsx-teardown'>
 
 ```js
-console.info('after the test');
+ReactDOM.render(<Counter />, document.getElementById('root'))
 ```
 
 </div>
@@ -103,14 +104,14 @@ class Counter extends React.Component {
     });
   }
   increment() {
-    this.setState({
-      count: this.state.count + 1
-    });
+    this.setState(state => ({
+      count: state.count + 1
+    }));
   }
   decrement() {
-    this.setState({
-      count: this.state.count - 1
-    });
+    this.setState(state => ({
+      count: state.count - 1
+    }));
   }
   render() {
     return (
