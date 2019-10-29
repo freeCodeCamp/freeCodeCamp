@@ -61,7 +61,9 @@ class UsernameSettings extends Component {
       formValue: props.username,
       characterValidation: { valid: false, error: null },
       submitClicked: false,
-      isUserNew: true
+      isUserNew: /^fcc[0-9|a-f]{8}-[0-9|a-f]{4}-[0-9|a-f]{4}-[0-9|a-f]{4}-[0-9|a-f]{12}$/.test(
+          prevUsername
+        )
     };
 
     this.handleChange = this.handleChange.bind(this);
