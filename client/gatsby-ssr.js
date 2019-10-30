@@ -22,6 +22,7 @@ const mathJaxCdn = {
   address:
     'https://cdnjs.cloudflare.com/ajax/libs/mathjax/' +
     '2.7.4/MathJax.js?config=TeX-AMS_HTML',
+  id: 'mathjax',
   key: 'mathjax',
   type: 'text/javascript'
 };
@@ -63,10 +64,11 @@ export const onRenderBody = ({
     />
   ];
 
-  if (pathname.includes('/learn/coding-interview-prep/rosetta-code/')) {
+  if (pathname.includes('/learn/coding-interview-prep/rosetta-code')) {
     scripts.push(
       <script
-        async={true}
+        async={false}
+        id={mathJaxCdn.id}
         key={mathJaxCdn.key}
         src={mathJaxCdn.address}
         type={mathJaxCdn.type}
@@ -81,6 +83,7 @@ export const onRenderBody = ({
         id={stripeScript.id}
         key={stripeScript.key}
         src={stripeScript.address}
+        type={stripeScript.type}
       />
     );
   }
