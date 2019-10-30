@@ -3,11 +3,11 @@
 |-|
 <!-- do not translate this -->
 
-# So erstellst du eine Pull Request
+# So erstellst du einen Pull Request
 
 ## Wie man einen guten Pull Request Titel vorbereitet:
 
-Wenn du eine Pull Request(PR) erstellst, verwende die folgende Tabelle, um zu entscheiden, wie du deine PR im folgenden Format benennen möchtest:
+Wenn du eine Pull Request(PR) erstellst, verwende die folgende Tabelle, um zu entscheiden, wie du deinen PR im folgenden Format benennen möchtest:
 `fix/feat/chore/refactor/docs/perf (scope): PR Title`
 
 Ein Beispiel ist `fix(learn): Fixed tests for the do...while loop challenge`.
@@ -19,13 +19,13 @@ Ein Beispiel ist `fix(learn): Fixed tests for the do...while loop challenge`.
 | `guide` | Für Pull-Requests, die Änderungen an dem Leitfaden vornehmen. |
 | `docs` | Für Pull-Requests, die Änderungen an der Projektdokumentation vornehmen. |
 
-## Vorschlag für eine Pull-Request (PR)
+## Vorschlag für einen Pull-Request (PR)
 
 1. Sobald die Änderungen bestätigt wurden, wirst du aufgefordert, eine Pull Request auf der GitHub-Seite deines Forks zu erstellen.
 
     ![Image - Compare pull request prompt on GitHub](/docs/images/github/compare-pull-request-prompt.png)
 
-2. Standardmäßig sollten alle Pull-Requests gegen den `master` Zweig des Hauptrepositories von freeCodeCamp, gerichtet sein.
+2. Standardmäßig sollten alle Pull-Requests gegen den `master` Zweig des Hauptrepositories von freeCodeCamp gerichtet sein.
 
     Stelle sicher, dass dein `base fork:` auf freeCodeCamp/freeCodeCamp eingestellt ist, wenn du eine Pull-Request auslöst.
 
