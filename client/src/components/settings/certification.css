@@ -20,3 +20,7 @@
 .table > tfoot > tr > td {
   border: none;
 }
+
+.modal {
+  overflow-y: auto;
+}
