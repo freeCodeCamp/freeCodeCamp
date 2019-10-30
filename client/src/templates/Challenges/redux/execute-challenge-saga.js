@@ -125,13 +125,15 @@ function* previewChallengeSaga() {
     return;
   }
   const challengeData = yield select(challengeDataSelector);
-  if (!challengeHasPreview(challengeData)) {
-    return;
-  }
 
   try {
     yield put(initConsole(''));
+    // try to build even if there's no preview so build errors will be reported.
     const ctx = yield buildChallengeData(challengeData);
+    // then only continue if there is a preview.
+    if (!challengeHasPreview(challengeData)) {
+      return;
+    }
     const document = yield getContext('document');
     yield call(updatePreview, ctx, document);
   } catch (err) {
