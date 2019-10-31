@@ -91,7 +91,7 @@
         "eslint --fix",
         "git add"
       ],
-      "*.md": "node ./tools/scripts/lint/index.js",
+      "./curriculum/challenges/**/*.md": "node ./tools/scripts/lint/index.js",
       "*.css": [
         "prettier --write",
         "git add"
