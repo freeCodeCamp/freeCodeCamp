@@ -9,6 +9,7 @@ import {
   getContext
 } from 'redux-saga/effects';
 import { channel } from 'redux-saga';
+import escape from 'lodash/escape';
 
 import {
   challengeDataSelector,
@@ -73,7 +74,7 @@ export function* executeChallengeSaga() {
 
 function* logToConsole(channel) {
   yield takeEvery(channel, function*(args) {
-    yield put(updateLogs(args));
+    yield put(updateLogs(escape(args)));
   });
 }
 
