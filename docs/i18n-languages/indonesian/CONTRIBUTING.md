@@ -73,7 +73,7 @@ Tolong jangan membuat masalah GitHub untuk masalah keamanan. Sebagai gantinya, s
 
 Moderator komunitas kami [triase](https://en.wikipedia.org/wiki/Software_bug#Bug_management) menerbitkan dan menarik permintaan berdasarkan prioritas, tingkat keparahan, dan faktor lainnya. Anda dapat [menemukan glosarium lengkap artinya di sini](https://github.com/freecodecamp/freecodecamp/labels).
 
-Anda harus melalui [**`bantuan diinginkan`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) atau isu [**`first timer diterima`**] (https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+welcome%22) untuk ikhtisar singkat tentang apa yang tersedia bagi Anda untuk kerjakan.
+Anda harus melalui [**`bantuan diinginkan`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) atau isu [**`first timer diterima`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+welcome%22) untuk ikhtisar singkat tentang apa yang tersedia bagi Anda untuk kerjakan.
 
 Ini untuk diperebutkan, dan Anda tidak perlu meminta izin sebelum mengerjakannya. Jika masalah ini kurang jelas tentang apa yang perlu dilakukan, jangan ragu untuk bertanya di komentar.
 
