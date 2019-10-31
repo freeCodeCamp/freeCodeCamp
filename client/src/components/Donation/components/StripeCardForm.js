@@ -10,12 +10,12 @@ import { ControlLabel, FormGroup } from '@freecodecamp/react-bootstrap';
 import '../Donation.css';
 
 const propTypes = {
-  getValidationState: PropTypes.func.isRequired
+  getValidationState: PropTypes.func.isRequired,
+  theme: PropTypes.string
 };
 
 const style = {
   base: {
-    color: '#0a0a23',
     fontSize: '18px'
   }
 };
@@ -74,6 +74,8 @@ class StripeCardForm extends Component {
   }
 
   render() {
+    // set color based on theme
+    style.base.color = this.props.theme === 'night' ? '#fff' : '#0a0a23';
     return (
       <div className='donation-elements'>
         <FormGroup>
