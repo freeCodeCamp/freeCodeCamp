@@ -97,6 +97,7 @@ const mapStateToProps = createSelector(
     theme: user.theme
   })
 );
+
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     { fetchUser, removeFlashMessage, onlineStatusChange },
