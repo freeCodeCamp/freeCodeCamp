@@ -14,7 +14,7 @@ Nuestro plan de estudios de desarrollo web full-stack es completamente gratuito 
 
 * [Certificaciones](#certificaciones)
 * [La plataforma de aprendizaje](#la-plataforma-de-aprendizaje)
-* [Informar de Bugs y problemas](#Informar-bugs-y-problemas)
+* [Informar de Bugs y problemas](#Informar-fallos-y-problemas)
 * [Encontraste un problema de seguridad](#Informar-problemas-de-seguridad)
 * [Contribuciones](#contribuciones)
 * [Plataforma, Creación y Estado de Desarrollo](#plataforma-creación-y-estado-de-desarrollo)
@@ -126,15 +126,15 @@ Nuestra comunidad además cuenta con:
 
 ### [Unite a nuestra comunidad aquí](https://www.freecodecamp.org/signin).
 
-### Informar bugs y problemas
+### Informar fallos y problemas
 
-Si piensas que encontraste un bug, primero lee [How to Report a Bug](https://www.freecodecamp.org/forum/t/how-to-report-a-bug/19543) y sigue las instrucciones. 
+Si piensas que encontraste un fallo, primero lee [How to Report a Bug](https://www.freecodecamp.org/forum/t/how-to-report-a-bug/19543) y sigue las instrucciones. 
 
-Si estás seguro de que es un bug nuevo y has confirmado que afecta a otras personas, continúa y crea un ticket en GitHub. Asegúrate de incluir tanta información como sea posible para poder reproducir el bug.
+Si estás seguro de que es un fallo nuevo y has confirmado que afecta a otras personas, continúa y crea un ticket en GitHub. Asegúrate de incluir tanta información como sea posible para poder reproducir el fallo.
 
 ### Informar problemas de seguridad
 
-Si crees haber encontrado una vulnerabulidad, por favor reportala responsablemente.No crees un ticket en GitHub para problemas de seguridad. En lugar de ello, envía un correo electrónico a `security @ freecodecamp.org` y lo veremos de inmediato.
+Si crees haber encontrado una vulnerabulidad, por favor, avisanos de manera responsable. No crees un ticket en GitHub para problemas de seguridad. En lugar de ello, envía un correo electrónico a `security @ freecodecamp.org` y lo veremos de inmediato.
 
 ### Contribuciones
 
