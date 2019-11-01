@@ -159,10 +159,13 @@ export function buildBackendChallenge({ url }) {
   };
 }
 
-export function updatePreview(buildData, document) {
+export async function updatePreview(buildData, document, proxyLogger) {
   const { challengeType } = buildData;
+
   if (challengeType === challengeTypes.html) {
-    createMainFramer(document)(buildData);
+    await new Promise(resolve =>
+      createMainFramer(document, resolve, proxyLogger)(buildData)
+    );
   } else {
     throw new Error(`Cannot show preview for challenge type ${challengeType}`);
   }

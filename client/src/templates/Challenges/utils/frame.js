@@ -91,13 +91,7 @@ const buildProxyConsole = proxyLogger => ctx => {
 };
 
 const initTestFrame = frameReady => ctx => {
-  const contentLoaded = new Promise(resolve => {
-    if (ctx.document.readyState === 'loading') {
-      ctx.document.addEventListener('DOMContentLoaded', resolve);
-    } else {
-      resolve();
-    }
-  });
+  const contentLoaded = new Promise(resolve => waitForFrame(resolve)(ctx));
   contentLoaded.then(async () => {
     const { sources, loadEnzyme } = ctx;
     // default for classic challenges
@@ -108,6 +102,15 @@ const initTestFrame = frameReady => ctx => {
     await ctx.document.__initTestFrame({ code, getUserInput, loadEnzyme });
     frameReady();
   });
+  return ctx;
+};
+
+const waitForFrame = frameReady => ctx => {
+  if (ctx.document.readyState === 'loading') {
+    ctx.document.addEventListener('DOMContentLoaded', frameReady);
+  } else {
+    frameReady();
+  }
   return ctx;
 };
 
@@ -123,18 +126,17 @@ const writeContentToFrame = ctx => {
   return ctx;
 };
 
-export const createMainFramer = document =>
-  flow(
-    createFrame(document, mainId),
-    mountFrame(document),
-    writeContentToFrame
-  );
+export const createMainFramer = (document, frameReady, proxyConsole) =>
+  createFramer(document, frameReady, proxyConsole, mainId, waitForFrame);
 
 export const createTestFramer = (document, frameReady, proxyConsole) =>
+  createFramer(document, frameReady, proxyConsole, testId, initTestFrame);
+
+const createFramer = (document, frameReady, proxyConsole, id, init) =>
   flow(
-    createFrame(document, testId),
+    createFrame(document, id),
     mountFrame(document),
     writeContentToFrame,
     buildProxyConsole(proxyConsole),
-    initTestFrame(frameReady)
+    init(frameReady)
   );
