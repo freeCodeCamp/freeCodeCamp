@@ -1,4 +1,5 @@
 import {
+  all,
   delay,
   put,
   select,
@@ -124,20 +125,30 @@ function* previewChallengeSaga() {
   if (!isBuildEnabled) {
     return;
   }
-  const challengeData = yield select(challengeDataSelector);
+
+  const consoleProxy = yield channel();
 
   try {
-    yield put(initConsole(''));
+    yield put(initLogs());
+    yield fork(logToConsole, consoleProxy);
+    const proxyLogger = args => consoleProxy.put(args);
+    const challengeData = yield select(challengeDataSelector);
+
     // try to build even if there's no preview so build errors will be reported.
-    const ctx = yield buildChallengeData(challengeData);
+    const buildData = yield buildChallengeData(challengeData);
     // then only continue if there is a preview.
     if (!challengeHasPreview(challengeData)) {
       return;
     }
     const document = yield getContext('document');
-    yield call(updatePreview, ctx, document);
+    yield call(updatePreview, buildData, document, proxyLogger);
+    // We don't want to see the default console, so we initialise and output in
+    // one call.
+    yield all([put(initConsole('')), put(logsToConsole('// console output'))]);
   } catch (err) {
     console.error(err);
+  } finally {
+    consoleProxy.close();
   }
 }
 
