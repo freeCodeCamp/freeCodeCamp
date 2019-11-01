@@ -22,6 +22,7 @@ const createHeader = (id = mainId) => `
     window.__frameId = '${id}';
     window.onerror = function(msg, url, ln, col, err) {
       window.__err = err;
+      console.log(msg);
       return true;
     };
     document.addEventListener('click', function(e) {
