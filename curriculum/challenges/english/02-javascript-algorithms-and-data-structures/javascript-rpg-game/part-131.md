@@ -1,6 +1,6 @@
 ---
-id: 5dbac2b06ef5fe3a704f8492
-title: Part 123
+id: 5dbba89e6ef5fe3a704f8499
+title: Part 131
 challengeType: 0
 isBeta: true
 ---
@@ -8,17 +8,14 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Now return `hit` from the `getMonsterAttackValue` function. The return value of this function is used in the `attack` function. 
+Use the `+=` operator to add "Your [last item in inventory array] breaks." to the end of `text.innerText`. Instead of the bracketed text, it should show the actual item name. 
 
-Here is an example of a function that returns a value:
+Use `inventory.pop()` to both remove the last element from the array AND return that element. For example:
 
 ```js
-function plusThree(num) {
-	let numPlusThree = num + 3;
-	return numPlusThree;
-}
-
-const answer = plusThree(5); // 8
+let shoppingList = ["milk", "apples", "cereal"];
+console.log("I bought " + shoppingList.pop() + "."); // Logs "I bought cereal."
+// shoppingList now equals ["milk", "apples"]
 ```
 
 </section>
@@ -34,7 +31,7 @@ const answer = plusThree(5); // 8
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(getMonsterAttackValue.toString().replace(/\s/g, '').includes('returnhit'));
+    testString: assert(attack.toString().replace(/\s/g, '').match(/if\(Math\.random\(\)\<\=0?\.1\)\{text\.innerText\+\=\"Your\"\+inventory\.pop\(\)\+\"breaks\.\"\;?\}/) || attack.toString().replace(/\s/g, '').match(/if\(Math\.random\(\)\<\=0?\.1\)\{text\.innerText\+\=\"Your\"\.concat\(inventory\.pop\(\)\,\"breaks\.\"\)\;?\}/));
 
 ```
 
@@ -246,19 +243,33 @@ function attack() {
 	text.innerText = "The " + monsters[fighting].name + " attacks.";
 	text.innerText += " You attack it with your " + weapons[currentWeapon].name + ".";
 	health -= getMonsterAttackValue(monsters[fighting].level);
-	monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
+
+	if (isMonsterHit()) {
+		monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
+	} else {
+		text.innerText += " You miss.";
+  }
 	healthText.innerText = health;
 	monsterHealthText.innerText = monsterHealth;
 	if (health <= 0) {
 		lose();
 	} else if (monsterHealth <= 0) {
-    fighting === 2 ? winGame() : defeatMonster();
-	}
+		fighting === 2 ? winGame() : defeatMonster();
+  }
+  
+  if (Math.random() <= .1) {
+
+  }
 }
 
 function getMonsterAttackValue(level) {
   const hit = (level * 5) - (Math.floor(Math.random() * xp));
   console.log(hit);
+  return hit > 0 ? hit : 0;
+}
+
+function isMonsterHit() {
+	return Math.random() > .2 || health < 20;
 }
 
 function dodge() {
@@ -587,19 +598,32 @@ function attack() {
 	text.innerText = "The " + monsters[fighting].name + " attacks.";
 	text.innerText += " You attack it with your " + weapons[currentWeapon].name + ".";
 	health -= getMonsterAttackValue(monsters[fighting].level);
-	monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
+
+	if (isMonsterHit()) {
+		monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
+	} else {
+		text.innerText += " You miss.";
+	}
 	healthText.innerText = health;
 	monsterHealthText.innerText = monsterHealth;
 	if (health <= 0) {
 		lose();
 	} else if (monsterHealth <= 0) {
-    fighting === 2 ? winGame() : defeatMonster();
-	}
+		fighting === 2 ? winGame() : defeatMonster();
+  }
+
+  if (Math.random() <= .1) {
+    text.innerText += " Your " +  inventory.pop() + " breaks.";
+  }
 }
 
 function getMonsterAttackValue(level) {
   const hit = (level * 5) - (Math.floor(Math.random() * xp));
-  return hit;
+  return hit > 0 ? hit : 0;
+}
+
+function isMonsterHit() {
+	return Math.random() > .2 || health < 20;
 }
 
 function dodge() {

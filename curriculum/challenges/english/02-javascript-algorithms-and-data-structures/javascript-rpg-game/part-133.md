@@ -1,6 +1,6 @@
 ---
-id: 5dbac2b06ef5fe3a704f8492
-title: Part 123
+id: 5dbbb00e6ef5fe3a704f849b
+title: Part 133
 challengeType: 0
 isBeta: true
 ---
@@ -8,17 +8,16 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Now return `hit` from the `getMonsterAttackValue` function. The return value of this function is used in the `attack` function. 
+We don't want a player's only weapon to break. 
 
-Here is an example of a function that returns a value:
+Use the "logical and" operator (`&&`) to add a second condition to the `if` expression you just wrote. A player's weapon should only be able to break if `inventory.length` does not equal (`!==`) one. 
+
+Here is an example of an `if` expression with the conditions that `firstName` equals "Quincy" AND `lastName` does NOT equal "Larson". With `&&`, both conditions must be true or else the entire statement evaluates to false.
 
 ```js
-function plusThree(num) {
-	let numPlusThree = num + 3;
-	return numPlusThree;
+if (firstName === "Quincy" && lastName !== "Larson") {
+	console.log("Cool name but not the creator of freeCodeCamp.org.")
 }
-
-const answer = plusThree(5); // 8
 ```
 
 </section>
@@ -34,7 +33,7 @@ const answer = plusThree(5); // 8
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(getMonsterAttackValue.toString().replace(/\s/g, '').includes('returnhit'));
+    testString: assert(attack.toString().replace(/\s/g, '').match(/if\(Math\.random\(\)\<\=0?\.1\&\&inventory\.length\!\=\=1\)\{text\.innerText\+\=\"Your\"\+inventory\.pop\(\)\+\"breaks\.\"\;?currentWeapon--\;?\}/));
 
 ```
 
@@ -246,19 +245,34 @@ function attack() {
 	text.innerText = "The " + monsters[fighting].name + " attacks.";
 	text.innerText += " You attack it with your " + weapons[currentWeapon].name + ".";
 	health -= getMonsterAttackValue(monsters[fighting].level);
-	monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
+
+	if (isMonsterHit()) {
+		monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
+	} else {
+		text.innerText += " You miss.";
+	}
 	healthText.innerText = health;
 	monsterHealthText.innerText = monsterHealth;
 	if (health <= 0) {
 		lose();
 	} else if (monsterHealth <= 0) {
-    fighting === 2 ? winGame() : defeatMonster();
-	}
+		fighting === 2 ? winGame() : defeatMonster();
+  }
+
+  if (Math.random() <= .1) {
+    text.innerText += " Your " +  inventory.pop() + " breaks.";
+    currentWeapon--;
+  }
 }
 
 function getMonsterAttackValue(level) {
   const hit = (level * 5) - (Math.floor(Math.random() * xp));
   console.log(hit);
+  return hit > 0 ? hit : 0;
+}
+
+function isMonsterHit() {
+	return Math.random() > .2 || health < 20;
 }
 
 function dodge() {
@@ -587,19 +601,32 @@ function attack() {
 	text.innerText = "The " + monsters[fighting].name + " attacks.";
 	text.innerText += " You attack it with your " + weapons[currentWeapon].name + ".";
 	health -= getMonsterAttackValue(monsters[fighting].level);
-	monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
+
+	if (isMonsterHit()) {
+		monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
+	} else {
+		text.innerText += " You miss.";
+	}
 	healthText.innerText = health;
 	monsterHealthText.innerText = monsterHealth;
 	if (health <= 0) {
 		lose();
 	} else if (monsterHealth <= 0) {
-    fighting === 2 ? winGame() : defeatMonster();
-	}
+		fighting === 2 ? winGame() : defeatMonster();
+  }
+  if (Math.random() <= .1 && inventory.length !== 1) {
+    text.innerText += " Your " +  inventory.pop() + " breaks.";
+    currentWeapon--;
+  }
 }
 
 function getMonsterAttackValue(level) {
   const hit = (level * 5) - (Math.floor(Math.random() * xp));
-  return hit;
+  return hit > 0 ? hit : 0;
+}
+
+function isMonsterHit() {
+	return Math.random() > .2 || health < 20;
 }
 
 function dodge() {

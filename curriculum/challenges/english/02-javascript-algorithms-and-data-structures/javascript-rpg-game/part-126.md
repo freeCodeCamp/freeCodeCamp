@@ -1,5 +1,5 @@
 ---
-id: 5dbae0446ef5fe3a704f8495
+id: 5dbaca566ef5fe3a704f8494
 title: Part 126
 challengeType: 0
 isBeta: true
@@ -8,7 +8,15 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Add an `else` expression to the `if` expression. Use the `+=` operator to add the text " You miss." onto the end of `text.innerText`.
+In the `attack` function, move the line `monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;` into the `if` block. 
+
+Here is an example of code in an `if` block that logs a message to the console:
+
+```js
+if (isTrue()) {
+	console.log("It's true!");
+}
+```
 
 </section>
 
@@ -23,7 +31,7 @@ Add an `else` expression to the `if` expression. Use the `+=` operator to add th
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(attack.toString().replace(/\s/g, '').match(/if\(isMonsterHit\(\)\)\{monsterHealth\-\=weapons\[currentWeapon\]\.power\+Math\.floor\(Math\.random\(\)\*xp\)\+1;?\}else\{text\.innerText\+\=[\'\"\`]Youmiss.[\'\"\`]\;?\}/));
+    testString: assert(attack.toString().replace(/\s/g, '').match(/if\(isMonsterHit\(\)\)\{monsterHealth\-\=weapons\[currentWeapon\]\.power\+Math\.floor\(Math\.random\(\)\*xp\)\+1;?\}/));
 
 ```
 
@@ -128,7 +136,13 @@ const locations = [
 		"button text": ["REPLAY?", "REPLAY?", "REPLAY?"],
 		"button functions": [restart, restart, restart],
 		text: "You die. ☠️"
-	}
+  },
+  { 
+    name: "win", 
+    "button text": ["Fight slime", "Fight fanged beast", "Go to town square"], 
+    "button functions": [restart, restart, restart], 
+    text: "You defeat the dragon! YOU WIN THE GAME! 🎉" 
+  }
 ];
 
 // initialize buttons
@@ -229,10 +243,11 @@ function attack() {
 	text.innerText = "The " + monsters[fighting].name + " attacks.";
 	text.innerText += " You attack it with your " + weapons[currentWeapon].name + ".";
   health -= getMonsterAttackValue(monsters[fighting].level);
-
+  
   if (isMonsterHit()) {
-    monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
+
   }
+	monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
 	healthText.innerText = health;
 	monsterHealthText.innerText = monsterHealth;
 	if (health <= 0) {
@@ -243,9 +258,9 @@ function attack() {
 }
 
 function getMonsterAttackValue(level) {
-  let hit = (level * 5) - (Math.floor(Math.random() * xp));
+  const hit = (level * 5) - (Math.floor(Math.random() * xp));
   console.log(hit);
-  return hit;
+  return hit > 0 ? hit : 0;
 }
 
 function dodge() {
@@ -262,6 +277,10 @@ function defeatMonster() {
 
 function lose() {
   update(locations[5]);
+}
+
+function winGame() {
+  update(locations[6]);
 }
 
 function restart() {
@@ -569,25 +588,22 @@ function goFight() {
 function attack() {
 	text.innerText = "The " + monsters[fighting].name + " attacks.";
 	text.innerText += " You attack it with your " + weapons[currentWeapon].name + ".";
-	health -= getMonsterAttackValue(monsters[fighting].level);
-
-	if (isMonsterHit()) {
-		monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
-	} else {
-		text.innerText += " You miss.";
+  health -= getMonsterAttackValue(monsters[fighting].level);
+  if (isMonsterHit()) {
+    monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
 	}
 	healthText.innerText = health;
 	monsterHealthText.innerText = monsterHealth;
 	if (health <= 0) {
 		lose();
 	} else if (monsterHealth <= 0) {
-		fighting === 2 ? winGame() : defeatMonster();
+    fighting === 2 ? winGame() : defeatMonster();
 	}
 }
 
 function getMonsterAttackValue(level) {
-  let hit = (level * 5) - (Math.floor(Math.random() * xp));
-  return hit;
+  const hit = (level * 5) - (Math.floor(Math.random() * xp));
+  return hit > 0 ? hit : 0;
 }
 
 function dodge() {

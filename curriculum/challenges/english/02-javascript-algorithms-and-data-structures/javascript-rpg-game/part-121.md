@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-The attack of the monster will be based on the monster's level and player's `xp`. In the `getMonsterAttackValue` function, use `let` to create a variable called `hit`. Set it to equal the equation `(level * 5) - (Math.floor(Math.random() * xp))`. 
+The attack of the monster will be based on the monster's level and player's `xp`. In the `getMonsterAttackValue` function, use `const` to create a variable called `hit`. Set it to equal the equation `(level * 5) - (Math.floor(Math.random() * xp))`. 
 
 </section>
 
@@ -128,7 +128,13 @@ const locations = [
 		"button text": ["REPLAY?", "REPLAY?", "REPLAY?"],
 		"button functions": [restart, restart, restart],
 		text: "You die. ☠️"
-	}
+  },
+  { 
+    name: "win", 
+    "button text": ["Fight slime", "Fight fanged beast", "Go to town square"], 
+    "button functions": [restart, restart, restart], 
+    text: "You defeat the dragon! YOU WIN THE GAME! 🎉" 
+  }
 ];
 
 // initialize buttons
@@ -257,6 +263,10 @@ function defeatMonster() {
 
 function lose() {
   update(locations[5]);
+}
+
+function winGame() {
+  update(locations[6]);
 }
 
 function restart() {
@@ -576,7 +586,7 @@ function attack() {
 }
 
 function getMonsterAttackValue(level) {
-  let hit = (level * 5) - (Math.floor(Math.random() * xp));
+  const hit = (level * 5) - (Math.floor(Math.random() * xp));
 }
 
 function dodge() {

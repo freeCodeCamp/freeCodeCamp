@@ -1,5 +1,5 @@
 ---
-id: 5dbac6176ef5fe3a704f8493
+id: 5dbbb5076ef5fe3a704f849d
 title: Part 124
 challengeType: 0
 isBeta: true
@@ -8,13 +8,15 @@ isBeta: true
 ## Description
 <section id='description'>
 
-In the `attack` function after the line `health -= getMonsterAttackValue(monsters[fighting].level);`, create an empty if expression. For the condition, put the function call `isMonsterHit()`. 
+If you play the game in its current state you might notice a bug. If your `xp` is high enough, the `getMonsterAttackValue` function will sometimes return a negative number, which will actually add to your total health when fighting a monster!
 
-Here is an example of an empty if expression with a function call as the condition:
+In `getMonsterAttackValue`, change `return hit` to a ternary operator that returns `hit` if `hit` is greater than 0, or returns 0 if it is not.
+
+For example, here's a function that returns 5 if `tickets` is greater than 3, or returns 0 if it is not: 
 
 ```js
-if (isTrue()) {
-
+function applyDiscount(tickets) {
+  return tickets > 2 : 5 : 0;
 }
 ```
 
@@ -31,7 +33,7 @@ if (isTrue()) {
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(attack.toString().replace(/\s/g, '').includes('if(isMonsterHit()){}'));
+    testString: assert(getMonsterAttackValue.toString().replace(/\s/g, '').includes('returnhit>0?hit:0'));
 
 ```
 
@@ -136,7 +138,13 @@ const locations = [
 		"button text": ["REPLAY?", "REPLAY?", "REPLAY?"],
 		"button functions": [restart, restart, restart],
 		text: "You die. ☠️"
-	}
+  },
+  { 
+    name: "win", 
+    "button text": ["Fight slime", "Fight fanged beast", "Go to town square"], 
+    "button functions": [restart, restart, restart], 
+    text: "You defeat the dragon! YOU WIN THE GAME! 🎉" 
+  }
 ];
 
 // initialize buttons
@@ -248,7 +256,7 @@ function attack() {
 }
 
 function getMonsterAttackValue(level) {
-  let hit = (level * 5) - (Math.floor(Math.random() * xp));
+  const hit = (level * 5) - (Math.floor(Math.random() * xp));
   console.log(hit);
   return hit;
 }
@@ -267,6 +275,10 @@ function defeatMonster() {
 
 function lose() {
   update(locations[5]);
+}
+
+function winGame() {
+  update(locations[6]);
 }
 
 function restart() {
@@ -574,9 +586,7 @@ function goFight() {
 function attack() {
 	text.innerText = "The " + monsters[fighting].name + " attacks.";
 	text.innerText += " You attack it with your " + weapons[currentWeapon].name + ".";
-  health -= getMonsterAttackValue(monsters[fighting].level);
-  if (isMonsterHit()) {
-	}
+	health -= getMonsterAttackValue(monsters[fighting].level);
 	monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
 	healthText.innerText = health;
 	monsterHealthText.innerText = monsterHealth;
@@ -588,8 +598,8 @@ function attack() {
 }
 
 function getMonsterAttackValue(level) {
-  let hit = (level * 5) - (Math.floor(Math.random() * xp));
-  return hit;
+  const hit = (level * 5) - (Math.floor(Math.random() * xp));
+  return hit > 0 ? hit : 0;
 }
 
 function dodge() {

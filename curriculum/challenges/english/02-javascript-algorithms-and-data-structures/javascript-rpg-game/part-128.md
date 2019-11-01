@@ -1,6 +1,6 @@
 ---
-id: 5dbac2b06ef5fe3a704f8492
-title: Part 123
+id: 5dbae1f66ef5fe3a704f8496
+title: Part 128
 challengeType: 0
 isBeta: true
 ---
@@ -8,17 +8,14 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Now return `hit` from the `getMonsterAttackValue` function. The return value of this function is used in the `attack` function. 
+Now create the `isMonsterHit` function. It will return a boolean to be used in the `if` expression. Return the result of the comparison `Math.random() > .2`.
 
-Here is an example of a function that returns a value:
+Here is a function that returns the result of a comparison:
 
 ```js
-function plusThree(num) {
-	let numPlusThree = num + 3;
-	return numPlusThree;
+function flipHeads() {
+	return Math.random() > .5;
 }
-
-const answer = plusThree(5); // 8
 ```
 
 </section>
@@ -34,7 +31,7 @@ const answer = plusThree(5); // 8
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(getMonsterAttackValue.toString().replace(/\s/g, '').includes('returnhit'));
+    testString: assert(isMonsterHit.toString().replace(/\s/g, '').includes('returnMath.random()>.2') || isMonsterHit.toString().replace(/\s/g, '').includes('returnMath.random()>0.2'));
 
 ```
 
@@ -246,19 +243,25 @@ function attack() {
 	text.innerText = "The " + monsters[fighting].name + " attacks.";
 	text.innerText += " You attack it with your " + weapons[currentWeapon].name + ".";
 	health -= getMonsterAttackValue(monsters[fighting].level);
-	monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
+
+	if (isMonsterHit()) {
+		monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
+	} else {
+		text.innerText += " You miss.";
+	}
 	healthText.innerText = health;
 	monsterHealthText.innerText = monsterHealth;
 	if (health <= 0) {
 		lose();
 	} else if (monsterHealth <= 0) {
-    fighting === 2 ? winGame() : defeatMonster();
+		fighting === 2 ? winGame() : defeatMonster();
 	}
 }
 
 function getMonsterAttackValue(level) {
   const hit = (level * 5) - (Math.floor(Math.random() * xp));
   console.log(hit);
+  return hit > 0 ? hit : 0;
 }
 
 function dodge() {
@@ -587,19 +590,28 @@ function attack() {
 	text.innerText = "The " + monsters[fighting].name + " attacks.";
 	text.innerText += " You attack it with your " + weapons[currentWeapon].name + ".";
 	health -= getMonsterAttackValue(monsters[fighting].level);
-	monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
+
+	if (isMonsterHit()) {
+		monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
+	} else {
+		text.innerText += " You miss.";
+	}
 	healthText.innerText = health;
 	monsterHealthText.innerText = monsterHealth;
 	if (health <= 0) {
 		lose();
 	} else if (monsterHealth <= 0) {
-    fighting === 2 ? winGame() : defeatMonster();
+		fighting === 2 ? winGame() : defeatMonster();
 	}
 }
 
 function getMonsterAttackValue(level) {
   const hit = (level * 5) - (Math.floor(Math.random() * xp));
-  return hit;
+  return hit > 0 ? hit : 0;
+}
+
+function isMonsterHit() {
+	return Math.random() > .2;
 }
 
 function dodge() {
