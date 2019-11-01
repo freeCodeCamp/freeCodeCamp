@@ -7,7 +7,9 @@ localeTitle: تغيير لون النص
 ---
 
 ## Description
-undefined
+لنقم الآن بتغيير لون جزءاً من النص. يمكننا فعل ذلك بتغيير <code>style</code> الخاص بالعنصر <code>h2</code>. الخاصية المسؤولة عن لون نص عنصر ما هي خاصية <code>color</code>. هكذا تغير لون نص عنصر <code>h2</code> إلى اللون الأزرق:
+ <code>&#60;h2 style="color: blue;"&#62;CatPhotoApp&#60;/h2&#62;</code>.
+ لاحظ أنه من الجيد التعود على إنهاء التصريح عن inline <code>style</code> بفاصلة منقوطة (;).
 
 ## Instructions
 undefined
