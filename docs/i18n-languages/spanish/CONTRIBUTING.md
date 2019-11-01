@@ -23,7 +23,7 @@ Puedes optar por contribuir a cualquier área de tu interés:
 
 2. Ayuda a los campistas en nuestro [foro público](https://www.freecodecamp.org/forum/):
 
-    - ❓ [Respondiendo sus cuestiones](https://www.freecodecamp.org/forum/?max_posts=1).
+    - ❓ [Respondiendo a sus cuestiones](https://www.freecodecamp.org/forum/?max_posts=1).
     - 💬 [Aportando comentarios a sus proyectos](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1).
 
 3. Ayúdanos a agregar subtítulos en nuestro [canal de YouTube](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ/videos).

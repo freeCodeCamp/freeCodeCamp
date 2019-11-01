@@ -30,7 +30,7 @@ Puedes hacer un pull de estos test desde [freeCodeCamp's CDN](https://cdn.freeco
 
 Una vez que hayas conseguido una certificación, siempre la tendrás. Siempre tendrás permitido agregar el link a ella desde tu LinkedIn o tu CV. Y cuando tus futuros empleadores o clientes hagan click en ese link, verán tu certificación verificada.
 
-La única excepción a esto es en caso en que descubramos una violación a nuestras [Políticas de Honestidad Académica](https://www.freecodecamp.org/academic-honesty). Cuando atrapamos a las personas plagiando inequivocamente (presentando el código o los proyectos de otras personas como si fueran suyos sin citación), hacemos lo que deben hacer todas las instituciones de aprendizaje rigurosas: revocamos sus certificaciones y prohibimos el acceso a esas personas.
+La única excepción a esto es en caso en que descubramos una violación a nuestras [Políticas de Honestidad Académica](https://www.freecodecamp.org/academic-honesty). Si descubrimos que una persona ha plagiado inequivocamente (presentando el código o los proyectos de otras personas como si fueran suyos sin citación), hacemos lo que deben hacer todas las instituciones de aprendizaje rigurosas: revocamos sus certificaciones y prohibimos el acceso a esas personas.
 
 Éstas son nuestras seis principales certificaciones:
 
