@@ -7,7 +7,9 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+Your line graph needs some scales so it knows how to translate the data into visual distances.
+
+Create a new `const` named `yScale`, and set it equal to `d3.scaleLinear()`. This will create a linear scale for the vertical or "y" axis.
 </section>
 
 ## Instructions
@@ -20,7 +22,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(typeof(yScale) === "function" && /yScale\s*=\s*d3\.scaleLinear/.test(code));
 
 ```
 
@@ -31,6 +33,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -43,13 +46,7 @@ const lineGraph = d3.select('.dashboard')
   .attr('width', svgWidth)
   .attr('height', svgHeight);
 
-
-  
-/*
-  Your line graph needs some scales so it knows how to translate the data into visual distances.
-  
-  Create a new `const` named `yScale`, and set it equal to `d3.scaleLinear()`. This will create a linear scale for the vertical or "y" axis.
-*/
+</script>
 ```
 
 </div>
