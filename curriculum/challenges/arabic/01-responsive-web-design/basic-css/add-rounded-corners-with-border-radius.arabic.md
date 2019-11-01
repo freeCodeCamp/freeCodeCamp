@@ -7,7 +7,7 @@ localeTitle: ''
 ---
 
 ## Description
-undefined
+إطار صورة قطتك حاليا لها زوايا حادة. يمكننا ان نجعل منها زوايا ناعمة بإستخدام خاصية في الـ CSS تدُعى <code>border-radius</code>
 
 ## Instructions
 undefined
