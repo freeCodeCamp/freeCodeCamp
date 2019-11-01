@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+`style` is a function similar to `attr` but is more for setting CSS styles rather than element attributes. Add a `style` function to the selection that sets the `font` to `10px verdana`.
 </section>
 
 ## Instructions
@@ -20,7 +21,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: 'assert($("g")[0].attributes.style.nodeValue === "font: 10px verdana;");'
 
 ```
 
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -58,11 +60,10 @@ const xAxis = d3.axisBottom(xScale)
 lineGraph.append('g')
   .call(yAxis)
   .attr('transform', `translate(${svgMargin}, 0)`)
-  
 
-  /*
-    `style` is a function similar to `attr` but is more for setting CSS styles rather than element attributes. Add a `style` function to the selection that sets the `font` to `10px verdana`.
-  */
+
+
+</script>
 ```
 
 </div>

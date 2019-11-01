@@ -21,7 +21,7 @@ isBeta: true
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($(".tick").length === 11 && /\.call\(\s*yAxis\s*\)/.test(code));
 
 ```
 

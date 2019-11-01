@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Use the `call` function on the selection and pass it the `xAxis` variable this time.
 </section>
 
 ## Instructions
@@ -20,7 +21,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($('g').length === 22);
 
 ```
 
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -63,9 +65,7 @@ lineGraph.append('g')
 lineGraph.append('g')
 
 
-  /*
-    Use the `call` function on the selection and pass it the `xAxis` variable this time.
-  */
+</script>
 ```
 
 </div>

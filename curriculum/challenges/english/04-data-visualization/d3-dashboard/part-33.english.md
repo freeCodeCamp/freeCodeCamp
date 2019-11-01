@@ -7,7 +7,7 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+On a new line, append another `g` element to your `lineGraph` variable like you did before. This one will be for the x-axis.
 </section>
 
 ## Instructions
@@ -20,7 +20,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($("g").length === 13);
 
 ```
 
@@ -31,6 +31,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -61,10 +62,8 @@ lineGraph.append('g')
   .style('font', '10px verdana');
 
 
-  
-/*
-  On a new line, append another `g` element to your `lineGraph` variable like you did before. This one will be for the x-axis.
-*/
+
+</script>
 ```
 
 </div>

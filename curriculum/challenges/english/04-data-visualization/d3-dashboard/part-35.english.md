@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+The axis has the right size and labels, but needs to be moved down. Use the `attr` function to set the `transform` to `translate(0, ${svgHeight - svgMargin})`. Be sure to use a template literal for the value again.
 </section>
 
 ## Instructions
@@ -20,7 +21,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($("svg > g")[1].attributes.transform.nodeValue === "translate(0, 440)");
 
 ```
 
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -64,9 +66,7 @@ lineGraph.append('g')
   .call(xAxis)
 
   
-  /*
-    The axis has the right size and labels, but needs to be moved down. Use the `attr` function to set the `transform` to `translate(0, ${svgHeight - svgMargin})`. Be sure to use a template literal for the value again.
-  */
+</script>
 ```
 
 </div>
