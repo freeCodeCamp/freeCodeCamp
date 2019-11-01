@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+`call` is another function to use with selections. Chain a `call` function to the selection and pass your `yAxis` variable to it.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -58,9 +60,7 @@ const xAxis = d3.axisBottom(xScale)
 lineGraph.append('g')
 
 
-  /*
-    `call` is another function to use with selections. Chain a `call` function to the selection and pass your `yAxis` variable to it. 
-  */
+</script>
 ```
 
 </div>

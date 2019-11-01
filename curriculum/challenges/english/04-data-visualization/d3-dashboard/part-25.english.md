@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+The "year" values of your data will be used for the x-scale. Chain the `domain` function to `xScale` and pass it an array with `2012` and `2020` as values since those are the years of the data.
 </section>
 
 ## Instructions
@@ -20,7 +21,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const domain = xScale.domain(); assert(domain.length === 2 && domain[0] === 2012 && domain[1] === 2020);
 
 ```
 
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -49,10 +51,7 @@ const yScale = d3.scaleLinear()
 
 const xScale = d3.scaleLinear()
 
-
-  /*
-    The "year" values of your data will be used for the x-scale. Chain the `domain` function to `xScale` and pass it an array with `2012` and `2020` as values since those are the years of the data.
-  */
+</script>
 ```
 
 </div>

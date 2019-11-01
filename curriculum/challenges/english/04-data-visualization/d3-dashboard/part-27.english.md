@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Now that you have some scales, you can create some axes using those scales. Create a new `const` named `yAxis` and set it equal to `d3.axisLeft(yScale)`. This will create an axis for the left of the graph; it uses the information from the `yScale` variable to build the axis.
 </section>
 
 ## Instructions
@@ -20,7 +21,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(typeof(yAxis) === "function" && /yAxis\s*=\s*d3\.axisLeft\(\s*yScale\)/.test(code));
 
 ```
 
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -51,11 +53,7 @@ const xScale = d3.scaleLinear()
   .domain([2012, 2020])
   .range([svgMargin, svgWidth - svgMargin]);
 
-  
-
-/*
-  Now that you have some scales, you can create some axes using those scales. Create a new `const` named `yAxis` and set it equal to `d3.axisLeft(yScale)`. This will create an axis for the left of the graph; it uses the information from the `yScale` variable to build the axis.
-*/
+</script>  
 ```
 
 </div>

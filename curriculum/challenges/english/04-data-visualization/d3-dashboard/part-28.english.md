@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Create a new `const` named `xAxis` and set the value equal to `d3.axisBottom(xScale)`. This will create another axis for the bottom of the graph using the information from `xScale`. Although the axes do not display yet, they have the information they need to display correctly.
 </section>
 
 ## Instructions
@@ -20,7 +21,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(typeof(xAxis) === "function" && /xAxis\s*=\s*d3\.axisBottom\(\s*xScale\)/.test(code));
 
 ```
 
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -53,11 +55,7 @@ const xScale = d3.scaleLinear()
 
 const yAxis = d3.axisLeft(yScale)
 
-
-
-/*
-  Create a new `const` named `xAxis` and set the value equal to `d3.axisBottom(xScale)`. This will create another axis for the bottom of the graph using the information from `xScale`. Although the axes do not display yet, they have the information they need to display correctly.
-*/
+</script>
 ```
 
 </div>

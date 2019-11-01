@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+The `range` for this scale will go from the left of your graph to the right. Add the `range` function, and pass it an array with the values: `svgMargin` and `svgWidth - svgMargin`.
 </section>
 
 ## Instructions
@@ -20,7 +21,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const range = xScale.range(); assert(range.length === 2 && range[0] === 60 && range[1] === 640);
 
 ```
 
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -50,10 +52,7 @@ const yScale = d3.scaleLinear()
 const xScale = d3.scaleLinear()
   .domain([2012, 2020])
   
-
-  /*
-    The `range` for this scale will go from the left of your graph to the right. Add the `range` function, and pass it an array with the values: `svgMargin` and `svgWidth - svgMargin`.
-  */
+</script>
 ```
 
 </div>

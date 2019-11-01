@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Create a new `const` named `xScale` use it to create another linear scale like you did for the y-scale. This will be the horizontal or "x" axis.
 </section>
 
 ## Instructions
@@ -20,7 +21,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(typeof(xScale) === "function" && /xScale\s*=\s*d3\.scaleLinear/.test(code));
 
 ```
 
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -47,11 +49,7 @@ const yScale = d3.scaleLinear()
   .domain([0, 5000])
   .range([svgHeight - svgMargin, svgMargin]);
 
-  
-
-/*
-  Create a new `const` named `xScale` use it to create another linear scale like you did for the y-scale. This will be the horizontal or "x" axis.
-*/
+</script>  
 ```
 
 </div>
