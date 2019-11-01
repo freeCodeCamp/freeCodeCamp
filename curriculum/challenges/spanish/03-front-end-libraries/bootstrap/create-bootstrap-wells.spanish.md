@@ -7,7 +7,7 @@ localeTitle: Crear Bootstrap Wells
 ---
 
 ## Description
-<section id="description"> Bootstrap tiene una clase llamada <code>well</code> que puede crear un sentido visual de profundidad para sus columnas. Anidar una <code>div</code> elemento con la clase <code>well</code> en cada uno de sus <code>col-xs-6</code> <code>div</code> elementos. </section>
+<section id="description"> Bootstrap tiene una clase llamada <code>well</code> que puede crear una sensación visual de profundidad para sus columnas. Anidar un elemento <code>div</code> con la clase <code>well</code> en cada uno de sus elementos <code>col-xs-6</code> <code>div</code>. </section>
 
 ## Instructions
 <section id="instructions">
