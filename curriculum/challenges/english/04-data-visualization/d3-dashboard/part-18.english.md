@@ -7,7 +7,14 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Your dashboard element is now "selected", D3 has bunch of other functions to use with a selection. One of them is `append`; it is used to add an element. Chain the `append` function to your selection and use it to add an `svg` element. Here's an example of how that might be done:
+
+```js
+const variableName = d3.select('selectedElement')
+  .append('elementToAdd')
+```
+
 </section>
 
 ## Instructions
@@ -20,7 +27,8 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(lineGraph._groups[0][0] === $("svg")[0]);
+
 
 ```
 
@@ -31,6 +39,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -40,16 +49,7 @@ const svgMargin = 60,
 
 const lineGraph = d3.select('.dashboard')
 
-
-  /*
-    Your dashboard element is now "selected", D3 has bunch of other functions to use with a selection. One of them is `append`; it is used to add an element. Chain the `append` function to your selection and use it to add an `svg` element. Here's an example of how that might be done:
-
-    `
-    const variableName = d3.select('selectedElement')
-      .append('elementToAdd')
-    `
-
-  */
+</script>
 ```
 
 </div>

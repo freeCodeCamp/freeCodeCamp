@@ -4,7 +4,11 @@
   "order": 4,
   "time": "5 hours",
   "template": "",
-  "required": [],
+  "required": [
+    {
+      "src": "https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.2/d3.min.js"
+    }
+  ],
   "superBlock": "responsive-web-design",
   "superOrder": 4,
   "challengeOrder": [

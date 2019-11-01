@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Chain another `attr` function; use it to set the `height` as the `svgHeight` variable you created.
 </section>
 
 ## Instructions
@@ -20,7 +21,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($("svg")[0].attributes.height.value === "500");
 
 ```
 
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -42,10 +44,7 @@ const lineGraph = d3.select('.dashboard')
   .append('svg')
   .attr('width', svgWidth)
 
-  
-  /*
-    Chain another `attr` function; use it to set the `height` as the `svgHeight` variable you created.
-  */
+</script>
 ```
 
 </div>

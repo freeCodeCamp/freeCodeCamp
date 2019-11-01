@@ -21,7 +21,7 @@ Add three more variables; `twitterColor` with a value of `'#7cd9d1'`, `tumblrCol
 ```yml
 tests:
   - text: test-text
-    testString: console.log(twitterColor); assert(twitterColor === '#7cd9d1' && tumblrColor === '#f6dd71' && instagramColor === '#fd9b98');
+    testString: assert(twitterColor === '#7cd9d1' && tumblrColor === '#f6dd71' && instagramColor === '#fd9b98');
 
 ```
 

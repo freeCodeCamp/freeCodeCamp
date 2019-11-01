@@ -21,7 +21,7 @@ When you added the D3 library earlier, it put an object named `d3` in your proje
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(lineGraph._groups[0][0] === $(".dashboard")[0]);
 
 ```
 
