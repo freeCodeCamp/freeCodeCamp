@@ -43,6 +43,7 @@ const __utils = (() => {
   };
 })();
 
+/* Run the test if there is one.  If not just evaluate the user code */
 self.onmessage = async e => {
   /* eslint-disable no-unused-vars */
   const { code = '' } = e.data;
@@ -64,10 +65,13 @@ self.onmessage = async e => {
       if (__userCodeWasExecuted) {
         // rethrow error, since test failed.
         throw err;
-      } else {
-        // report errors to dev console (not the editor console, since the test
-        // may still pass)
+      } else if (e.data.testString) {
+        // report errors to dev console if tests are running (since some
+        // challenges should pass with code that throws errors)
         __utils.oldLog(err);
+      } else {
+        // user is editing code, so both consoles should report errors
+        console.log(err.toString());
       }
       testResult = eval(e.data.testString);
     }
