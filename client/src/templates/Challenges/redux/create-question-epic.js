@@ -78,7 +78,7 @@ function createQuestionEpic(action$, state$, { window }) {
       );
 
       const category = window.encodeURIComponent(
-        helpCategory[challengeType] || 'Help'
+        helpCategory[challengeType] || 'certification projects'
       );
 
       const studentCode = window.encodeURIComponent(textMessage);

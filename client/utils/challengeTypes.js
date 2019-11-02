@@ -70,6 +70,6 @@ exports.submitTypes = {
 exports.helpCategory = {
   [html]: 'HTML-CSS',
   [js]: 'JavaScript',
-  [backend]: 'JavaScript',
-  [modern]: 'JavaScript'
+  [backend]: 'certification projects',
+  [modern]: 'certification projects'
 };
