@@ -58,14 +58,17 @@ class TimelineInner extends Component {
     this.state = {
       solutionToView: null,
       solutionOpen: false,
-      pageNo: 1
+      pageNo: 1,
+      totalPages: Math.ceil(props.sortedTimeline.length / ITEMS_PER_PAGE)
     };
 
     this.closeSolution = this.closeSolution.bind(this);
     this.renderCompletion = this.renderCompletion.bind(this);
     this.viewSolution = this.viewSolution.bind(this);
+    this.firstPage = this.firstPage.bind(this);
     this.prevPage = this.prevPage.bind(this);
     this.nextPage = this.nextPage.bind(this);
+    this.lastPage = this.lastPage.bind(this);
   }
 
   renderCompletion(completed) {
@@ -102,6 +105,11 @@ class TimelineInner extends Component {
     }));
   }
 
+  firstPage() {
+    this.setState({
+      pageNo: 1
+    });
+  }
   nextPage() {
     this.setState(state => ({
       pageNo: state.pageNo + 1
@@ -113,11 +121,19 @@ class TimelineInner extends Component {
       pageNo: state.pageNo - 1
     }));
   }
-
+  lastPage() {
+    this.setState(state => ({
+      pageNo: state.totalPages
+    }));
+  }
   render() {
     const { completedMap, idToNameMap, username, sortedTimeline } = this.props;
-    const { solutionToView: id, solutionOpen, pageNo = 1 } = this.state;
-    const totalPages = Math.ceil(sortedTimeline.length / ITEMS_PER_PAGE);
+    const {
+      solutionToView: id,
+      solutionOpen,
+      pageNo = 1,
+      totalPages = 1
+    } = this.state;
     const startIndex = (pageNo - 1) * ITEMS_PER_PAGE;
     const endIndex = pageNo * ITEMS_PER_PAGE;
 
@@ -178,34 +194,69 @@ class TimelineInner extends Component {
             role='navigation'
           >
             <ul className='timeline-pagination_list'>
+              {totalPages > 10 && (
+                <li
+                  className='timeline-pagination_list_item'
+                  style={{
+                    visibility: pageNo === 1 ? 'hidden' : 'unset'
+                  }}
+                >
+                  <button
+                    aria-label='Goto First page'
+                    disabled={pageNo === 1}
+                    onClick={this.firstPage}
+                  >
+                    &lt;&lt;
+                  </button>
+                </li>
+              )}
               <li
-                aria-label='Goto Previous page'
                 className='timeline-pagination_list_item'
                 style={{
                   visibility: pageNo === 1 ? 'hidden' : 'unset'
                 }}
               >
-                <button disabled={pageNo === 1} onClick={this.prevPage}>
-                  &lt; Prev
+                <button
+                  aria-label='Goto Previous page'
+                  disabled={pageNo === 1}
+                  onClick={this.prevPage}
+                >
+                  &lt;
                 </button>
               </li>
-              <li>
+              <li className='timeline-pagination_list_item'>
                 {pageNo} of {totalPages}
               </li>
               <li
-                aria-label='Goto Next page'
                 className='timeline-pagination_list_item'
                 style={{
                   visibility: pageNo === totalPages ? 'hidden' : 'unset'
                 }}
               >
                 <button
+                  aria-label='Goto Next page'
                   disabled={pageNo === totalPages}
                   onClick={this.nextPage}
                 >
-                  Next &gt;
+                  &gt;
                 </button>
               </li>
+              {totalPages > 10 && (
+                <li
+                  className='timeline-pagination_list_item'
+                  style={{
+                    visibility: pageNo === totalPages ? 'hidden' : 'unset'
+                  }}
+                >
+                  <button
+                    aria-label='Goto Last page'
+                    disabled={pageNo === totalPages}
+                    onClick={this.lastPage}
+                  >
+                    &gt;&gt;
+                  </button>
+                </li>
+              )}
             </ul>
           </nav>
         )}
