@@ -21,7 +21,7 @@ The axis labels are `text` elements within the `g`, you can use the `selectAll` 
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(/\.attr\('transform', `translate\(0, \$\{svgHeight - svgMargin\}\)`\)\s*\.selectAll\s*\(\s*('|"|`)text\1\s*\)/g.test(code));
 
 ```
 
