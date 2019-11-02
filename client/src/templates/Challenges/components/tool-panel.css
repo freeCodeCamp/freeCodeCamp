@@ -14,8 +14,30 @@
   padding: 0 2px;
 }
 
-.tool-panel-group-mobile .btn-block + .btn-block {
+.tool-panel-group-mobile > .btn-block {
   margin: 0 2px 0 0;
   padding-left: 8px;
   padding-right: 8px;
+}
+
+.tool-panel-group .btn-group {
+  display: block;
+  width: 100%;
+}
+
+.tool-panel-group-mobile .btn-group {
+  display: block;
+  width: 100%;
+  margin: 0 2px 0 2px;
+}
+
+.tool-panel-group-mobile .btn {
+  margin-bottom: 0 !important;
+}
+
+.tool-panel-group .dropdown-menu {
+  top: auto;
+  bottom: 100%;
+  width: 100%;
+  text-align: center;
 }
