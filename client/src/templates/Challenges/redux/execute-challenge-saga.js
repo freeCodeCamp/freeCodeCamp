@@ -29,7 +29,8 @@ import {
   buildChallenge,
   getTestRunner,
   challengeHasPreview,
-  updatePreview
+  updatePreview,
+  isJavaScriptChallenge
 } from '../utils/build';
 
 export function* executeChallengeSaga() {
@@ -118,6 +119,7 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
   return testResults;
 }
 
+// updates preview frame and the fcc console.
 function* previewChallengeSaga() {
   yield delay(700);
 
@@ -134,16 +136,17 @@ function* previewChallengeSaga() {
     const proxyLogger = args => consoleProxy.put(args);
     const challengeData = yield select(challengeDataSelector);
 
-    // try to build even if there's no preview so build errors will be reported.
     const buildData = yield buildChallengeData(challengeData);
-    // then only continue if there is a preview.
-    if (!challengeHasPreview(challengeData)) {
-      return;
+    // evaluate the user code in the preview frame or in the worker
+    if (challengeHasPreview(challengeData)) {
+      const document = yield getContext('document');
+      yield call(updatePreview, buildData, document, proxyLogger);
+    } else if (isJavaScriptChallenge(challengeData)) {
+      const runUserCode = getTestRunner(buildData, proxyLogger);
+      // without a testString the testRunner just evaluates the user's code
+      yield call(runUserCode, null, 5000);
     }
-    const document = yield getContext('document');
-    yield call(updatePreview, buildData, document, proxyLogger);
-    // We don't want to see the default console, so we initialise and output in
-    // one call.
+    // To avoid seeing the default console, initialise and output in one call.
     yield all([put(initConsole('')), put(logsToConsole('// console output'))]);
   } catch (err) {
     console.error(err);
