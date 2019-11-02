@@ -25,7 +25,8 @@ const propTypes = {
   isSignedIn: PropTypes.bool,
   stripe: PropTypes.shape({
     createToken: PropTypes.func.isRequired
-  })
+  }),
+  theme: PropTypes.string
 };
 const initialState = {
   donationAmount: 500,
@@ -39,7 +40,7 @@ const initialState = {
 const mapStateToProps = createSelector(
   userSelector,
   isSignedInSelector,
-  ({ email }, isSignedIn) => ({ email, isSignedIn })
+  ({ email, theme }, isSignedIn) => ({ email, theme, isSignedIn })
 );
 
 class DonateForm extends Component {
@@ -168,6 +169,7 @@ class DonateForm extends Component {
 
   renderDonateForm() {
     const { isFormValid } = this.state;
+    const { theme } = this.props;
     return (
       <Row>
         <Col sm={10} smOffset={1} xs={12}>
@@ -184,7 +186,10 @@ class DonateForm extends Component {
                 value={this.getUserEmail()}
               />
             </FormGroup>
-            <StripeCardForm getValidationState={this.getValidationState} />
+            <StripeCardForm
+              getValidationState={this.getValidationState}
+              theme={theme}
+            />
             <Button
               block={true}
               bsStyle='primary'
