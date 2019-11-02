@@ -73,7 +73,7 @@ class TimelineInner extends Component {
     const { id, completedDate } = completed;
     const { challengeTitle, challengePath } = idToNameMap.get(id);
     return (
-      <tr key={id}>
+      <tr className='timeline-row' key={id}>
         <td>
           <Link to={challengePath}>{challengeTitle}</Link>
         </td>
@@ -178,25 +178,34 @@ class TimelineInner extends Component {
             role='navigation'
           >
             <ul className='timeline-pagination_list'>
-              {pageNo !== 1 && (
-                <li
-                  aria-label='Goto Previous page'
-                  className='timeline-pagination_list_item'
-                >
-                  <button onClick={this.prevPage}>&lt; Prev</button>
-                </li>
-              )}
+              <li
+                aria-label='Goto Previous page'
+                className='timeline-pagination_list_item'
+                style={{
+                  visibility: pageNo === 1 ? 'hidden' : 'unset'
+                }}
+              >
+                <button disabled={pageNo === 1} onClick={this.prevPage}>
+                  &lt; Prev
+                </button>
+              </li>
               <li>
                 {pageNo} of {totalPages}
               </li>
-              {pageNo !== totalPages && (
-                <li
-                  aria-label='Goto Next page'
-                  className='timeline-pagination_list_item'
+              <li
+                aria-label='Goto Next page'
+                className='timeline-pagination_list_item'
+                style={{
+                  visibility: pageNo === totalPages ? 'hidden' : 'unset'
+                }}
+              >
+                <button
+                  disabled={pageNo === totalPages}
+                  onClick={this.nextPage}
                 >
-                  <button onClick={this.nextPage}>Next &gt;</button>
-                </li>
-              )}
+                  Next &gt;
+                </button>
+              </li>
             </ul>
           </nav>
         )}
