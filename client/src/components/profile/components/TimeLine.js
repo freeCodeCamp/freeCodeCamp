@@ -7,6 +7,7 @@ import sortBy from 'lodash/sortBy';
 import { Button, Modal, Table } from '@freecodecamp/react-bootstrap';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 
+import TimelinePagination from './TimelinePagination';
 import { FullWidthRow } from '../../helpers';
 import SolutionViewer from '../../settings/SolutionViewer';
 import { challengeTypes } from '../../../../utils/challengeTypes';
@@ -190,77 +191,14 @@ class TimelineInner extends Component {
           </Modal>
         )}
         {totalPages > 1 && (
-          <nav
-            aria-label='Timeline Pagination Navigation'
-            className='timeline-pagination'
-            role='navigation'
-          >
-            <ul className='timeline-pagination_list'>
-              {totalPages > 10 && (
-                <li
-                  className='timeline-pagination_list_item'
-                  style={{
-                    visibility: pageNo === 1 ? 'hidden' : 'unset'
-                  }}
-                >
-                  <button
-                    aria-label='Goto First page'
-                    disabled={pageNo === 1}
-                    onClick={this.firstPage}
-                  >
-                    &lt;&lt;
-                  </button>
-                </li>
-              )}
-              <li
-                className='timeline-pagination_list_item'
-                style={{
-                  visibility: pageNo === 1 ? 'hidden' : 'unset'
-                }}
-              >
-                <button
-                  aria-label='Goto Previous page'
-                  disabled={pageNo === 1}
-                  onClick={this.prevPage}
-                >
-                  &lt;
-                </button>
-              </li>
-              <li className='timeline-pagination_list_item'>
-                {pageNo} of {totalPages}
-              </li>
-              <li
-                className='timeline-pagination_list_item'
-                style={{
-                  visibility: pageNo === totalPages ? 'hidden' : 'unset'
-                }}
-              >
-                <button
-                  aria-label='Goto Next page'
-                  disabled={pageNo === totalPages}
-                  onClick={this.nextPage}
-                >
-                  &gt;
-                </button>
-              </li>
-              {totalPages > 10 && (
-                <li
-                  className='timeline-pagination_list_item'
-                  style={{
-                    visibility: pageNo === totalPages ? 'hidden' : 'unset'
-                  }}
-                >
-                  <button
-                    aria-label='Goto Last page'
-                    disabled={pageNo === totalPages}
-                    onClick={this.lastPage}
-                  >
-                    &gt;&gt;
-                  </button>
-                </li>
-              )}
-            </ul>
-          </nav>
+          <TimelinePagination
+            firstPage={this.firstPage}
+            lastPage={this.lastPage}
+            nextPage={this.nextPage}
+            pageNo={pageNo}
+            prevPage={this.prevPage}
+            totalPages={totalPages}
+          />
         )}
       </FullWidthRow>
     );
