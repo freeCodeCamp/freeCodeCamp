@@ -177,3 +177,7 @@ export function challengeHasPreview({ challengeType }) {
     challengeType === challengeTypes.modern
   );
 }
+
+export function isJavaScriptChallenge({ challengeType }) {
+  return challengeType === challengeTypes.js;
+}
