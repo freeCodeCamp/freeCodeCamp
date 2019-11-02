@@ -1,7 +1,9 @@
 import React, { Component, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import format from 'date-fns/format';
-import { find, reverse, sortBy } from 'lodash';
+import find from 'lodash/find';
+import reverse from 'lodash/reverse';
+import sortBy from 'lodash/sortBy';
 import { Button, Modal, Table } from '@freecodecamp/react-bootstrap';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 
