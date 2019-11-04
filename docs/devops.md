@@ -160,14 +160,7 @@ For staff use:
 
 Once one of the members approves a release, the pipeline will push the changes live to freeCodeCamp.org's production CDN and API servers. They typically take ~15-20 mins for the client, and ~5 mins for the API servers to be available live.
 
-As a final step, a staff member will also manually click the publish deploy button on Netlify's deployment's dashboard.
-
-For staff use:
-
-| Publish or Rollback on Netlify |
-| :----------------------------: |
-| [Open Netlify deployments](https://app.netlify.com/sites/freecodecamp-org/deploys) |
-
+As a final step, a staff member will also manually cleanup older builds from the client Virtual Machines.
 
 ## Build and Deployment Status
 
@@ -240,3 +233,51 @@ There will be some known limitations and tradeoffs when using the beta version o
 Please open fresh issues for discussions and reporting bugs. You can label them as **[`release: next/beta`](https://github.com/freeCodeCamp/freeCodeCamp/labels/release%3A%20next%2Fbeta)** for triage.
 
 You may send an email to `dev@freecodecamp.org` if you have any queries. As always all security vulnerabilities should be reported to `security@freecodecamp.org` instead of the public tracker and forum.
+
+---
+
+## Additional workflows for freeCodeCamp.org Staff
+
+### Provisioning VMs with API Code and starting up services
+
+1. Install Node LTS.
+
+2. Update `npm` and install PM2 and setup logrotate and startup on boot
+
+   ```
+   npm i -g npm
+   npm i -g pm2
+   pm2 install pm2-logrotate
+   pm2 startup
+   ```
+
+3. Clone freeCodeCamp, setup env and keys, install dependencies, and make first build.
+
+   ```
+   npm run ensure-env && npm run build:server
+   ```
+
+4. Start Instances
+
+   ```
+   cd api-server
+   pm2 start production-start.js -i max --max-memory-restart 600M --name org
+   ```
+
+5. Logging, Monitoring and Reloading on updates to code changes
+
+   ```
+   pm2 logs
+   ```
+
+   ```
+   pm2 monitor
+   ```
+
+   ```
+   pm2 reload all --update-env && pm2 logs
+   ```
+
+### Provisioning VMs with Client Code and starting up services
+
+...
