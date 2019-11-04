@@ -41,3 +41,7 @@
   width: 100%;
   text-align: center;
 }
+
+#get-help-dropdown > .caret {
+  transform: rotate(180deg);
+}
