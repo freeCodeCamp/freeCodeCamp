@@ -134,7 +134,7 @@ Si estás seguro de que es un fallo nuevo y has confirmado que afecta a otras pe
 
 ### Informar problemas de seguridad
 
-Si crees haber encontrado una vulnerabulidad, por favor, avisanos de manera responsable. No crees un ticket en GitHub para problemas de seguridad. En lugar de ello, envía un correo electrónico a `security @ freecodecamp.org` y lo veremos de inmediato.
+Si crees haber encontrado una vulnerabilidad, por favor, avisanos de manera responsable. No crees un ticket en GitHub para problemas de seguridad. En lugar de ello, envía un correo electrónico a `security @ freecodecamp.org` y lo veremos de inmediato.
 
 ### Contribuciones
 
