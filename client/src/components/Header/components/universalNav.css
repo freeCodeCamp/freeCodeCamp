@@ -19,6 +19,9 @@
 
 .universal-nav a {
   text-decoration: none;
+}
+
+.universal-nav .universal-nav-right a {
   font-family: 'Roboto Mono', monospace;
 }
 
