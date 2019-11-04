@@ -47,7 +47,7 @@ tests:
 
 ```js
 
-
+const myArray = [];
 //Only change code below this line
 function countdown(myArray, n){
   return;
