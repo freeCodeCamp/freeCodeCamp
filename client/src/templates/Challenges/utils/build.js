@@ -99,9 +99,9 @@ function getJSTestRunner({ build, sources }, proxyLogger) {
 
   const testWorker = createWorker(testEvaluator, { terminateWorker: true });
 
-  return (testString, testTimeout) => {
+  return (testString, testTimeout, firstTest = true) => {
     return testWorker
-      .execute({ build, testString, code, sources }, testTimeout)
+      .execute({ build, testString, code, sources, firstTest }, testTimeout)
       .on('LOG', proxyLogger).done;
   };
 }

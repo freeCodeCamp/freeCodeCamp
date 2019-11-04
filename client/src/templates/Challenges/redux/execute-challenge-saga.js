@@ -92,10 +92,18 @@ function* buildChallengeData(challengeData) {
 
 function* executeTests(testRunner, tests, testTimeout = 5000) {
   const testResults = [];
-  for (const { text, testString } of tests) {
+  for (let i = 0; i < tests.length; i++) {
+    const { text, testString } = tests[i];
     const newTest = { text, testString };
+    // only the last test outputs console.logs to avoid log duplication.
+    const firstTest = i === 1;
     try {
-      const { pass, err } = yield call(testRunner, testString, testTimeout);
+      const { pass, err } = yield call(
+        testRunner,
+        testString,
+        testTimeout,
+        firstTest
+      );
       if (pass) {
         newTest.pass = true;
       } else {
