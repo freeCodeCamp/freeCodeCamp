@@ -47,7 +47,7 @@ const mapDispatchToProps = dispatch =>
 const invalidCharsRE = /[/\s?:@=&"'<>#%{}|\\^~[\]`,.;!*()$]/;
 const invlaidCharError = {
   valid: false,
-  error: 'Username contains invalid characters'
+  error: 'Username contains invalid characters.'
 };
 const valididationSuccess = { valid: true, error: null };
 const usernameTooShort = { valid: false, error: 'Username is too short' };
@@ -143,29 +143,30 @@ class UsernameSettings extends Component {
     if (!validating && !isValidUsername) {
       return (
         <FullWidthRow>
-          <Alert bsStyle='warning'>Username not available</Alert>
+          <Alert bsStyle='warning'>Username not available.</Alert>
         </FullWidthRow>
       );
     }
     if (validating) {
       return (
         <FullWidthRow>
-          <Alert bsStyle='info'>Validating username</Alert>
+          <Alert bsStyle='info'>Validating username...</Alert>
         </FullWidthRow>
       );
     }
     if (!validating && isValidUsername && this.state.isUserNew) {
       return (
         <FullWidthRow>
-          <Alert bsStyle='success'>Username is available!</Alert>
+          <Alert bsStyle='success'>Username is available.</Alert>
         </FullWidthRow>
       );
     } else if (!validating && isValidUsername && !this.state.isUserNew) {
       return (
         <FullWidthRow>
-          <Alert bsStyle='warning'>
-            Username is available! <br /> NOTE: Changing your username will also
-            change the URL to your profile and your certifications.
+          <Alert bsStyle='success'>Username is available.</Alert>
+          <Alert bsStyle='info'>
+            Please note, changing your username will also change the URL to your
+            profile and your certifications.
           </Alert>
         </FullWidthRow>
       );
