@@ -179,5 +179,8 @@ export function challengeHasPreview({ challengeType }) {
 }
 
 export function isJavaScriptChallenge({ challengeType }) {
-  return challengeType === challengeTypes.js;
+  return (
+    challengeType === challengeTypes.js ||
+    challengeType === challengeTypes.bonfire
+  );
 }
