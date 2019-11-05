@@ -61,13 +61,17 @@ Essentially, we expect basic familiarity with some of the aforementioned technol
 
 We do intend to make the curriculum available in more languages, right now we do not have a timeline for this.
 
-We will begin by making the curriculum available in *Chinese* first to understand the caveats and the streamline the development and the deployment workflow and pipelines. China is one of the largest demographic regions in terms of an ideal candiate for the internationalization (i18n), and we have hundreds of thousands of users using a old version of the platform.
+We will begin by making the curriculum available in *Chinese* first. This will help us understand the caveats and the streamline the development workflows. China is one of the largest demographic regions in terms of our non-english audience. It is hence an ideal candiate for the internationalization (i18n). We currently have hundreds of thousands of users using an old version of the platform.
 
 The next languages to follow would be *Arabic, Portuguese, Russian and Spanish* in no particular order. For Portuguese and Spanish we will focus on latin america as our target demographic region based on the audience we have.
 
 While you may work on the translations, we are unable to launch them until later next year, other than Chinese which is tentatively planned for a early 2020 release.
 
-We **may** accept pull-requests in (high quality translations), depending on a case to case basis.
+We **may** accept pull requests (high quality human translations only), depending on a case to case basis.
+
+### Can I translate freeCodeCamp's codebase documentation?
+
+You are welcome to translate freeCodeCamp's codebase documentation into any language of your choice or improve and update the currently translated guidelines.
 
 ### How can I report a bug that is not on board?
 
