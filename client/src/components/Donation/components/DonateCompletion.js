@@ -19,7 +19,7 @@ function DonateCompletion({ processing, reset, success, error = null }) {
     ? 'We are processing your donation.'
     : success
     ? 'Your donation was successful.'
-    : 'Something went wrong with your donation';
+    : 'Something went wrong with your donation.';
   return (
     <Alert bsStyle={style} className='donation-completion'>
       <h4>
@@ -35,7 +35,16 @@ function DonateCompletion({ processing, reset, success, error = null }) {
           />
         )}
         {success && (
-          <p>Thank you for supporting the freeCodeCamp.org community.</p>
+          <div>
+            <p>
+              You can update your supporter status at any time from your account
+              settings.
+            </p>
+            <p>
+              Thank you for supporting free technology education for people all
+              over the world.
+            </p>
+          </div>
         )}
         {error && <p>{error}</p>}
       </div>

@@ -7,8 +7,6 @@ import {
 } from 'react-stripe-elements';
 import { ControlLabel, FormGroup } from '@freecodecamp/react-bootstrap';
 
-import '../Donation.css';
-
 const propTypes = {
   getValidationState: PropTypes.func.isRequired,
   theme: PropTypes.string
