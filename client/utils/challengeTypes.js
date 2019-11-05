@@ -13,6 +13,7 @@ const invalid = 9;
 // individual exports
 exports.backend = backend;
 exports.frontEndProject = frontEndProject;
+exports.backEndProject = backEndProject;
 
 exports.challengeTypes = {
   html,

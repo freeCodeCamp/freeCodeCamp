@@ -7,7 +7,7 @@ challengeType: 2
 
 ## Description
 <section id='description'> 
-Durante el proceso de desarrollo, es importante poder verificar lo que está pasando en su código. Nodo es solo un entorno de JavaScript. Al igual que JavaScript del lado del cliente, puede usar la consola para mostrar información útil de depuración. En su máquina local, vería la salida de la consola en un terminal. En Glitch puede abrir los registros en la parte inferior de la pantalla. Puede alternar el panel de registro con el botón 'Registros' (arriba a la izquierda, debajo del nombre de la aplicación). 
+Durante el proceso de desarrollo, es importante poder verificar lo que está pasando en tu código. Node es solo un entorno de JavaScript. Al igual que JavaScript del lado del cliente, puede usar la consola para mostrar información útil de depuración. En su máquina local, vería la salida de la consola en un terminal. En Glitch puede abrir los registros en la parte inferior de la pantalla. Puede alternar el panel de registro con el botón 'Registros' (arriba a la izquierda, debajo del nombre de la aplicación). 
 Para comenzar, simplemente imprima el clásico "Hello World" en la consola. Recomendamos mantener abierto el panel de registro mientras se trabaja en estos desafíos. Al leer los registros, puede estar al tanto de la naturaleza de los errores que pueden ocurrir. 
 </section>
 

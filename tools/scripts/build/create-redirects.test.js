@@ -4,8 +4,8 @@ const { createRedirects } = require('./create-redirects');
 
 const testLocations = {
   api: 'https://api.example.com',
-  news: 'https://news.example.com',
-  forum: 'https://forum.example.com'
+  newsProxy: 'https://news.example.com',
+  forumProxy: 'https://forum.example.com'
 };
 
 describe('createRedirects', () => {
@@ -33,21 +33,21 @@ describe('createRedirects', () => {
     expect(hasNewsPlaceholder).toBe(false);
     expect(hasForumPlaceholder).toBe(false);
 
-    const { api, forum } = testLocations;
+    const { api, forumProxy } = testLocations;
     expect(redirects.includes(`${api}/internal/:splat`)).toBe(true);
-    expect(redirects.includes(`${forum}`)).toBe(true);
+    expect(redirects.includes(`${forumProxy}`)).toBe(true);
   });
 
   it('throws when any location is missing', () => {
     expect.assertions(3);
 
     const api = 'api';
-    const news = 'news';
-    const forum = 'forum';
+    const newsProxy = 'newsProxy';
+    const forumProxy = 'forumProxy';
 
-    const noApi = { forum, news };
-    const noNews = { api, forum };
-    const noForum = { api, news };
+    const noApi = { forumProxy, newsProxy };
+    const noNews = { api, forumProxy };
+    const noForum = { api, newsProxy };
 
     expect(() => createRedirects(noApi)).toThrow();
     expect(() => createRedirects(noNews)).toThrow();

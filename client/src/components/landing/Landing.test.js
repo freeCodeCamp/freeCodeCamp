@@ -3,6 +3,7 @@ import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
 
 import { IndexPage } from '../../pages';
+import mockChallengeNodes from '../../__mocks__/challenge-nodes';
 
 describe('<Landing />', () => {
   it('renders when visiting index page and logged out', () => {
@@ -14,6 +15,7 @@ describe('<Landing />', () => {
 });
 
 const loggedOutProps = {
+  data: { allChallengeNode: { edges: mockChallengeNodes } },
   fetchState: {
     complete: true,
     error: null,

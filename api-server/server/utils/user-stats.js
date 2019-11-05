@@ -110,9 +110,7 @@ export function getUserById(id, User = loopback.getModelByType('User')) {
       if (err || isEmpty(instance)) {
         return reject(err || 'No user instance found');
       }
-      instance.points =
-        (instance.progressTimestamps && instance.progressTimestamps.length) ||
-        1;
+
       let completedChallengeCount = 0;
       let completedProjectCount = 0;
       if ('completedChallenges' in instance) {
@@ -126,12 +124,14 @@ export function getUserById(id, User = loopback.getModelByType('User')) {
           }
         });
       }
+
       instance.completedChallengeCount = completedChallengeCount;
       instance.completedProjectCount = completedProjectCount;
       instance.completedCertCount = getCompletedCertCount(instance);
       instance.completedLegacyCertCount = getLegacyCertCount(instance);
-      instance.completedChallenges = [];
-      delete instance.progressTimestamps;
+      instance.points =
+        (instance.progressTimestamps && instance.progressTimestamps.length) ||
+        1;
       return resolve(instance);
     })
   );

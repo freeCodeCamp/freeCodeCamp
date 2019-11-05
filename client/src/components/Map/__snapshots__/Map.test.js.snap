@@ -120,7 +120,7 @@ exports[`<Map /> snapshot: Map 1`] = `
                 "dashedName": "challenge-one",
                 "fields": Object {
                   "blockName": "Block A",
-                  "slug": "/super-block-one/block-a/challenge-one",
+                  "slug": "/super-block-two/block-a/challenge-one",
                 },
                 "id": "f",
                 "isPrivate": false,
@@ -133,7 +133,7 @@ exports[`<Map /> snapshot: Map 1`] = `
                 "dashedName": "challenge-two",
                 "fields": Object {
                   "blockName": "Block A",
-                  "slug": "/super-block-one/block-a/challenge-two",
+                  "slug": "/super-block-two/block-a/challenge-two",
                 },
                 "id": "g",
                 "isPrivate": false,
@@ -146,7 +146,7 @@ exports[`<Map /> snapshot: Map 1`] = `
                 "dashedName": "challenge-one",
                 "fields": Object {
                   "blockName": "Block B",
-                  "slug": "/super-block-one/block-b/challenge-one",
+                  "slug": "/super-block-two/block-b/challenge-one",
                 },
                 "id": "h",
                 "isPrivate": false,
@@ -159,12 +159,38 @@ exports[`<Map /> snapshot: Map 1`] = `
                 "dashedName": "challenge-two",
                 "fields": Object {
                   "blockName": "Block B",
-                  "slug": "/super-block-one/block-b/challenge-two",
+                  "slug": "/super-block-two/block-b/challenge-two",
                 },
                 "id": "i",
                 "isPrivate": false,
                 "isRequired": false,
                 "superBlock": "Super Block Two",
+                "title": "Challenge Two",
+              },
+              Object {
+                "block": "block-a",
+                "dashedName": "challenge-one",
+                "fields": Object {
+                  "blockName": "Block A",
+                  "slug": "/super-block-three/block-a/challenge-one",
+                },
+                "id": "j",
+                "isPrivate": false,
+                "isRequired": false,
+                "superBlock": "Super Block Three",
+                "title": "Challenge One",
+              },
+              Object {
+                "block": "block-c",
+                "dashedName": "challenge-two",
+                "fields": Object {
+                  "blockName": "Block C",
+                  "slug": "/super-block-three/block-c/challenge-two",
+                },
+                "id": "k",
+                "isPrivate": false,
+                "isRequired": false,
+                "superBlock": "Super Block Three",
                 "title": "Challenge Two",
               },
             ]
@@ -275,7 +301,7 @@ exports[`<Map /> snapshot: Map 1`] = `
                 "dashedName": "challenge-one",
                 "fields": Object {
                   "blockName": "Block A",
-                  "slug": "/super-block-one/block-a/challenge-one",
+                  "slug": "/super-block-two/block-a/challenge-one",
                 },
                 "id": "f",
                 "isPrivate": false,
@@ -288,7 +314,7 @@ exports[`<Map /> snapshot: Map 1`] = `
                 "dashedName": "challenge-two",
                 "fields": Object {
                   "blockName": "Block A",
-                  "slug": "/super-block-one/block-a/challenge-two",
+                  "slug": "/super-block-two/block-a/challenge-two",
                 },
                 "id": "g",
                 "isPrivate": false,
@@ -301,7 +327,7 @@ exports[`<Map /> snapshot: Map 1`] = `
                 "dashedName": "challenge-one",
                 "fields": Object {
                   "blockName": "Block B",
-                  "slug": "/super-block-one/block-b/challenge-one",
+                  "slug": "/super-block-two/block-b/challenge-one",
                 },
                 "id": "h",
                 "isPrivate": false,
@@ -314,7 +340,7 @@ exports[`<Map /> snapshot: Map 1`] = `
                 "dashedName": "challenge-two",
                 "fields": Object {
                   "blockName": "Block B",
-                  "slug": "/super-block-one/block-b/challenge-two",
+                  "slug": "/super-block-two/block-b/challenge-two",
                 },
                 "id": "i",
                 "isPrivate": false,
@@ -322,9 +348,216 @@ exports[`<Map /> snapshot: Map 1`] = `
                 "superBlock": "Super Block Two",
                 "title": "Challenge Two",
               },
+              Object {
+                "block": "block-a",
+                "dashedName": "challenge-one",
+                "fields": Object {
+                  "blockName": "Block A",
+                  "slug": "/super-block-three/block-a/challenge-one",
+                },
+                "id": "j",
+                "isPrivate": false,
+                "isRequired": false,
+                "superBlock": "Super Block Three",
+                "title": "Challenge One",
+              },
+              Object {
+                "block": "block-c",
+                "dashedName": "challenge-two",
+                "fields": Object {
+                  "blockName": "Block C",
+                  "slug": "/super-block-three/block-c/challenge-two",
+                },
+                "id": "k",
+                "isPrivate": false,
+                "isRequired": false,
+                "superBlock": "Super Block Three",
+                "title": "Challenge Two",
+              },
             ]
           }
           superBlock="Super Block Two"
+        />
+        <Connect(SuperBlock)
+          introNodes={
+            Array [
+              Object {
+                "fields": Object {
+                  "slug": "/super-block-one/block-a",
+                },
+                "frontmatter": Object {
+                  "block": "Block A",
+                  "title": "Introduction to Block A",
+                },
+              },
+              Object {
+                "fields": Object {
+                  "slug": "/super-block-one/block-b",
+                },
+                "frontmatter": Object {
+                  "block": "Block B",
+                  "title": "Introduction to Block B",
+                },
+              },
+              Object {
+                "fields": Object {
+                  "slug": "/super-block-one/block-c",
+                },
+                "frontmatter": Object {
+                  "block": "Block C",
+                  "title": "Introduction to Block C",
+                },
+              },
+            ]
+          }
+          nodes={
+            Array [
+              Object {
+                "block": "block-a",
+                "dashedName": "challenge-one",
+                "fields": Object {
+                  "blockName": "Block A",
+                  "slug": "/super-block-one/block-a/challenge-one",
+                },
+                "id": "a",
+                "isPrivate": false,
+                "isRequired": false,
+                "superBlock": "Super Block One",
+                "title": "Challenge One",
+              },
+              Object {
+                "block": "block-a",
+                "dashedName": "challenge-two",
+                "fields": Object {
+                  "blockName": "Block A",
+                  "slug": "/super-block-one/block-a/challenge-two",
+                },
+                "id": "b",
+                "isPrivate": false,
+                "isRequired": false,
+                "superBlock": "Super Block One",
+                "title": "Challenge Two",
+              },
+              Object {
+                "block": "block-b",
+                "dashedName": "challenge-one",
+                "fields": Object {
+                  "blockName": "Block B",
+                  "slug": "/super-block-one/block-b/challenge-one",
+                },
+                "id": "c",
+                "isPrivate": false,
+                "isRequired": false,
+                "superBlock": "Super Block One",
+                "title": "Challenge One",
+              },
+              Object {
+                "block": "block-b",
+                "dashedName": "challenge-two",
+                "fields": Object {
+                  "blockName": "Block B",
+                  "slug": "/super-block-one/block-b/challenge-two",
+                },
+                "id": "d",
+                "isPrivate": false,
+                "isRequired": false,
+                "superBlock": "Super Block One",
+                "title": "Challenge Two",
+              },
+              Object {
+                "block": "block-c",
+                "dashedName": "challenge-one",
+                "fields": Object {
+                  "blockName": "Block C",
+                  "slug": "/super-block-one/block-c/challenge-one",
+                },
+                "id": "e",
+                "isPrivate": true,
+                "isRequired": false,
+                "superBlock": "Super Block One",
+                "title": "Challenge One",
+              },
+              Object {
+                "block": "block-a",
+                "dashedName": "challenge-one",
+                "fields": Object {
+                  "blockName": "Block A",
+                  "slug": "/super-block-two/block-a/challenge-one",
+                },
+                "id": "f",
+                "isPrivate": false,
+                "isRequired": false,
+                "superBlock": "Super Block Two",
+                "title": "Challenge One",
+              },
+              Object {
+                "block": "block-a",
+                "dashedName": "challenge-two",
+                "fields": Object {
+                  "blockName": "Block A",
+                  "slug": "/super-block-two/block-a/challenge-two",
+                },
+                "id": "g",
+                "isPrivate": false,
+                "isRequired": false,
+                "superBlock": "Super Block Two",
+                "title": "Challenge Two",
+              },
+              Object {
+                "block": "block-b",
+                "dashedName": "challenge-one",
+                "fields": Object {
+                  "blockName": "Block B",
+                  "slug": "/super-block-two/block-b/challenge-one",
+                },
+                "id": "h",
+                "isPrivate": false,
+                "isRequired": false,
+                "superBlock": "Super Block Two",
+                "title": "Challenge One",
+              },
+              Object {
+                "block": "block-b",
+                "dashedName": "challenge-two",
+                "fields": Object {
+                  "blockName": "Block B",
+                  "slug": "/super-block-two/block-b/challenge-two",
+                },
+                "id": "i",
+                "isPrivate": false,
+                "isRequired": false,
+                "superBlock": "Super Block Two",
+                "title": "Challenge Two",
+              },
+              Object {
+                "block": "block-a",
+                "dashedName": "challenge-one",
+                "fields": Object {
+                  "blockName": "Block A",
+                  "slug": "/super-block-three/block-a/challenge-one",
+                },
+                "id": "j",
+                "isPrivate": false,
+                "isRequired": false,
+                "superBlock": "Super Block Three",
+                "title": "Challenge One",
+              },
+              Object {
+                "block": "block-c",
+                "dashedName": "challenge-two",
+                "fields": Object {
+                  "blockName": "Block C",
+                  "slug": "/super-block-three/block-c/challenge-two",
+                },
+                "id": "k",
+                "isPrivate": false,
+                "isRequired": false,
+                "superBlock": "Super Block Three",
+                "title": "Challenge Two",
+              },
+            ]
+          }
+          superBlock="Super Block Three"
         />
         <Spacer />
       </ul>

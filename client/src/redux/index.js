@@ -179,9 +179,20 @@ export const userSelector = state => {
 };
 
 export const sessionMetaSelector = state => state[ns].sessionMeta;
-export const activeDonationsSelector = state =>
-  Number(sessionMetaSelector(state).activeDonations) +
-  Number(PAYPAL_SUPPORTERS || 0);
+export const activeDonationsSelector = state => {
+  const donors =
+    Number(sessionMetaSelector(state).activeDonations) +
+    Number(PAYPAL_SUPPORTERS || 0) -
+    // Note 1:
+    // Offset the no of inactive donations, that are not yet normalized in db
+    // TODO: This data needs to be fetched and updated in db from Stripe
+    2500;
+  // Note 2:
+  // Due to the offset above, non-prod data needs to be adjusted for -ve values
+  return donors > 0
+    ? donors
+    : Number(sessionMetaSelector(state).activeDonations);
+};
 
 function spreadThePayloadOnUser(state, payload) {
   return {
@@ -311,9 +322,11 @@ export const reducer = handleActions(
       }
     }),
     [types.submitComplete]: (state, { payload: { id, challArray } }) => {
-      let submitedchallneges = [{ id }];
+      // TODO: possibly more of the payload (files?) should be added
+      // to the completedChallenges array.
+      let submittedchallenges = [{ id, completedDate: Date.now() }];
       if (challArray) {
-        submitedchallneges = challArray;
+        submittedchallenges = challArray;
       }
       const { appUsername } = state;
       return {
@@ -325,7 +338,7 @@ export const reducer = handleActions(
             ...state.user[appUsername],
             completedChallenges: uniqBy(
               [
-                ...submitedchallneges,
+                ...submittedchallenges,
                 ...state.user[appUsername].completedChallenges
               ],
               'id'
@@ -375,7 +388,20 @@ export const reducer = handleActions(
     [settingsTypes.updateUserFlagComplete]: (state, { payload }) =>
       payload ? spreadThePayloadOnUser(state, payload) : state,
     [settingsTypes.verifyCertComplete]: (state, { payload }) =>
-      payload ? spreadThePayloadOnUser(state, payload) : state
+      payload ? spreadThePayloadOnUser(state, payload) : state,
+    [settingsTypes.submitProfileUIComplete]: (state, { payload }) =>
+      payload
+        ? {
+            ...state,
+            user: {
+              ...state.user,
+              [state.appUsername]: {
+                ...state.user[state.appUsername],
+                profileUI: { ...payload }
+              }
+            }
+          }
+        : state
   },
   initialState
 );

@@ -7,7 +7,7 @@ forumTopicId: 301457
 
 ## Description
 <section id='description'>
-Sass allows <code>nesting</code> of CSS rules, which is a useful way of organizing a style sheet.
+Sass allows nesting of CSS rules, which is a useful way of organizing a style sheet.
 Normally, each element is targeted on a different line to style it, like so:
 
 ```scss
@@ -24,7 +24,7 @@ nav ul li {
 }
 ```
 
-For a large project, the CSS file will have many lines and rules. This is where <code>nesting</code> can help organize your code by placing child style rules within the respective parent elements:
+For a large project, the CSS file will have many lines and rules. This is where nesting can help organize your code by placing child style rules within the respective parent elements:
 
 ```scss
 nav {
@@ -45,7 +45,7 @@ nav {
 
 ## Instructions
 <section id='instructions'>
-Use the <code>nesting</code> technique shown above to re-organize the CSS rules for both children of <code>.blog-post</code> element. For testing purposes, the <code>h1</code> should come before the <code>p</code> element.
+Use the nesting technique shown above to re-organize the CSS rules for both children of <code>.blog-post</code> element. For testing purposes, the <code>h1</code> should come before the <code>p</code> element.
 </section>
 
 ## Tests

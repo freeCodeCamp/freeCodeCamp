@@ -1,23 +1,37 @@
 import React from 'react';
 import { Link } from '../../helpers';
 
-export function NavLinks() {
+import PropTypes from 'prop-types';
+
+const propTypes = {
+  displayMenu: PropTypes.bool
+};
+
+function NavLinks({ displayMenu }) {
   return (
     <div className='main-nav-group'>
-      <ul className={'nav-list display-flex'} role='menu'>
-        <li className='nav-theme' role='menuitem'>
-          <Link to='/learn'>Projects</Link>
+      <ul
+        className={'nav-list' + (displayMenu ? ' display-flex' : '')}
+        role='menu'
+      >
+        <li className='nav-news' role='menuitem'>
+          <Link external={true} to='/news'>
+            /news
+          </Link>
         </li>
-        <li className='nav-theme' role='menuitem'>
-          <Link to='/'>Light</Link>
+        <li className='nav-forum' role='menuitem'>
+          <Link external={true} to='/forum'>
+            /forum
+          </Link>
         </li>
-        <li className='nav-portfolio' role='menuitem'>
-          <Link to='/portfolio'>Portfolio</Link>
+        <li className='nav-projects' role='menuitem'>
+          <Link to='/learn'>/learn</Link>
         </li>
       </ul>
     </div>
   );
 }
 
+NavLinks.propTypes = propTypes;
 NavLinks.displayName = 'NavLinks';
 export default NavLinks;

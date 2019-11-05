@@ -10,6 +10,7 @@ import TestSuite from './Test-Suite';
 import { challengeTestsSelector, isChallengeCompletedSelector } from '../redux';
 import { createSelector } from 'reselect';
 import './side-panel.css';
+import { mathJaxScriptLoader } from '../../../utils/scriptLoaders';
 
 const mapStateToProps = createSelector(
   isChallengeCompletedSelector,
@@ -19,8 +20,6 @@ const mapStateToProps = createSelector(
     tests
   })
 );
-
-const MathJax = global.MathJax;
 
 const propTypes = {
   description: PropTypes.string,
@@ -36,7 +35,12 @@ const propTypes = {
 
 export class SidePanel extends Component {
   componentDidMount() {
+    const MathJax = global.MathJax;
+    const mathJaxMountPoint = document.querySelector('#mathjax');
+    const rosettaCodeChallenge = this.props.section === 'rosetta-code';
     if (MathJax) {
+      // Configure MathJax when it's loaded and
+      // users navigate from another challenge
       MathJax.Hub.Config({
         tex2jax: {
           inlineMath: [['$', '$'], ['\\(', '\\)']],
@@ -49,6 +53,8 @@ export class SidePanel extends Component {
         MathJax.Hub,
         document.querySelector('.rosetta-code')
       ]);
+    } else if (!mathJaxMountPoint && rosettaCodeChallenge) {
+      mathJaxScriptLoader();
     }
   }
 
@@ -65,7 +71,7 @@ export class SidePanel extends Component {
       videoUrl
     } = this.props;
     return (
-      <div className='instructions-panel' role='complementary'>
+      <div className='instructions-panel' role='complementary' tabIndex='-1'>
         <div>
           <ChallengeTitle isCompleted={isChallengeCompleted}>
             {title}

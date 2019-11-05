@@ -11,7 +11,7 @@ In addition to moving elements, you can also copy them from one place to another
 jQuery has a function called <code>clone()</code> that makes a copy of an element.
 For example, if we wanted to copy <code>target2</code> from our <code>left-well</code> to our <code>right-well</code>, we would use:
 <code>$("#target2").clone().appendTo("#right-well");</code>
-Did you notice this involves sticking two jQuery functions together? This is called <code>function chaining</code> and it's a convenient way to get things done with jQuery.
+Did you notice this involves sticking two jQuery functions together? This is called <dfn>function chaining</dfn> and it's a convenient way to get things done with jQuery.
 Clone your <code>target5</code> element and append it to your <code>left-well</code>.
 </section>
 

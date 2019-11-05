@@ -13,7 +13,8 @@ const preFormattedBlockNames = {
   'the-dom': 'The DOM',
   'apis-and-microservices': 'APIs and Microservices',
   'apis-and-microservices-projects': 'APIs and Microservices Projects',
-  'css-variables-skyline': 'CSS Variables Skyline'
+  'css-variables-skyline': 'CSS Variables Skyline',
+  'javascript-rpg-game': 'JavaScript RPG Game'
 };
 
 const noFormatting = ['and', 'for', 'of', 'the', 'up', 'with'];

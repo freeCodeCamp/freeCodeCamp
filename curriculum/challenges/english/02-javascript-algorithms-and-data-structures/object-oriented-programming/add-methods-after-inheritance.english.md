@@ -7,7 +7,7 @@ forumTopicId: 301315
 
 ## Description
 <section id='description'>
-A constructor function that inherits its <code>prototype</code> object from a <code>supertype</code> constructor function can still have its own methods in addition to inherited methods.
+A constructor function that inherits its <code>prototype</code> object from a supertype constructor function can still have its own methods in addition to inherited methods.
 For example, <code>Bird</code> is a constructor that inherits its <code>prototype</code> from <code>Animal</code>:
 
 ```js

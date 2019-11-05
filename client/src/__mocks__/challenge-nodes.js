@@ -67,7 +67,7 @@ export default [
   },
   {
     fields: {
-      slug: '/super-block-one/block-a/challenge-one',
+      slug: '/super-block-two/block-a/challenge-one',
       blockName: 'Block A'
     },
     id: 'f',
@@ -80,7 +80,7 @@ export default [
   },
   {
     fields: {
-      slug: '/super-block-one/block-a/challenge-two',
+      slug: '/super-block-two/block-a/challenge-two',
       blockName: 'Block A'
     },
     id: 'g',
@@ -93,7 +93,7 @@ export default [
   },
   {
     fields: {
-      slug: '/super-block-one/block-b/challenge-one',
+      slug: '/super-block-two/block-b/challenge-one',
       blockName: 'Block B'
     },
     id: 'h',
@@ -106,7 +106,7 @@ export default [
   },
   {
     fields: {
-      slug: '/super-block-one/block-b/challenge-two',
+      slug: '/super-block-two/block-b/challenge-two',
       blockName: 'Block B'
     },
     id: 'i',
@@ -115,6 +115,32 @@ export default [
     isRequired: false,
     isPrivate: false,
     superBlock: 'Super Block Two',
+    dashedName: 'challenge-two'
+  },
+  {
+    fields: {
+      slug: '/super-block-three/block-a/challenge-one',
+      blockName: 'Block A'
+    },
+    id: 'j',
+    block: 'block-a',
+    title: 'Challenge One',
+    isRequired: false,
+    isPrivate: false,
+    superBlock: 'Super Block Three',
+    dashedName: 'challenge-one'
+  },
+  {
+    fields: {
+      slug: '/super-block-three/block-c/challenge-two',
+      blockName: 'Block C'
+    },
+    id: 'k',
+    block: 'block-c',
+    title: 'Challenge Two',
+    isRequired: false,
+    isPrivate: false,
+    superBlock: 'Super Block Three',
     dashedName: 'challenge-two'
   }
 ];

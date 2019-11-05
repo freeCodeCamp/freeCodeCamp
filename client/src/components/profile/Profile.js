@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
+import { Grid, Row, Button } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
-import { Link } from 'gatsby';
+import Link from '../helpers/Link';
 
 import { CurrentChallengeLink, FullWidthRow, Spacer } from '../helpers';
 import Camper from './components/Camper';
@@ -10,9 +10,11 @@ import HeatMap from './components/HeatMap';
 import Certifications from './components/Certifications';
 import Portfolio from './components/Portfolio';
 import Timeline from './components/TimeLine';
+import { apiLocation } from '../../../config/env.json';
 
 const propTypes = {
   isSessionUser: PropTypes.bool,
+  navigate: PropTypes.func.isRequired,
   user: PropTypes.shape({
     profileUI: PropTypes.shape({
       isLocked: PropTypes.bool,
@@ -50,58 +52,48 @@ const propTypes = {
   })
 };
 
-function TakeMeToTheChallenges() {
-  return <CurrentChallengeLink>Take me to the Challenges</CurrentChallengeLink>;
-}
-
-function renderIsLocked(username, isSessionUser) {
-  return (
+function renderMessage(isSessionUser, username) {
+  return isSessionUser ? (
     <Fragment>
-      <Helmet>
-        <title>Profile | freeCodeCamp.org</title>
-      </Helmet>
-      <Spacer size={2} />
-      <Grid>
-        {isSessionUser ? renderSettingsButton() : null}
-        <FullWidthRow>
-          <h2 className='text-center'>
-            {username} has not made their profile public.
-          </h2>
-        </FullWidthRow>
-        <FullWidthRow>
-          <p className='alert alert-info'>
-            {username} needs to change their privacy setting in order for you to
-            view their profile
-          </p>
-        </FullWidthRow>
-        <FullWidthRow>
-          <TakeMeToTheChallenges />
-          <Spacer />
-        </FullWidthRow>
-      </Grid>
+      <FullWidthRow>
+        <h2 className='text-center'>
+          You have not made your portfolio public.
+        </h2>
+      </FullWidthRow>
+      <FullWidthRow>
+        <p className='alert alert-info'>
+          You need to change your privacy setting in order for your portfolio to
+          be seen by others. This is a preview of how your portfolio will look
+          when made public.
+        </p>
+      </FullWidthRow>
+      <Spacer />
+    </Fragment>
+  ) : (
+    <Fragment>
+      <FullWidthRow>
+        <h2 className='text-center' style={{ overflowWrap: 'break-word' }}>
+          {username} has not made their portfolio public.
+        </h2>
+      </FullWidthRow>
+      <FullWidthRow>
+        <p className='alert alert-info'>
+          {username} needs to change their privacy setting in order for you to
+          view their portfolio.
+        </p>
+      </FullWidthRow>
+      <Spacer />
+      <FullWidthRow>
+        <CurrentChallengeLink>Take me to the Challenges</CurrentChallengeLink>
+      </FullWidthRow>
+      <Spacer />
     </Fragment>
   );
 }
 
-function renderSettingsButton() {
-  return (
-    <Fragment>
-      <Row>
-        <Col sm={4} smOffset={4}>
-          <Link className='btn btn-lg btn-primary btn-block' to='/settings'>
-            Update my settings
-          </Link>
-        </Col>
-      </Row>
-      <Spacer size={2} />
-    </Fragment>
-  );
-}
-
-function Profile({ user, isSessionUser }) {
+function renderProfile(user) {
   const {
     profileUI: {
-      isLocked = true,
       showAbout = false,
       showCerts = false,
       showHeatMap = false,
@@ -132,40 +124,80 @@ function Profile({ user, isSessionUser }) {
     yearsTopContributor
   } = user;
 
-  if (isLocked) {
-    return renderIsLocked(username, isSessionUser);
-  }
+  return (
+    <Fragment>
+      <Camper
+        about={showAbout ? about : null}
+        githubProfile={githubProfile}
+        isGithub={isGithub}
+        isLinkedIn={isLinkedIn}
+        isTwitter={isTwitter}
+        isWebsite={isWebsite}
+        linkedin={linkedin}
+        location={showLocation ? location : null}
+        name={showName ? name : null}
+        picture={picture}
+        points={showPoints ? points : null}
+        twitter={twitter}
+        username={username}
+        website={website}
+        yearsTopContributor={yearsTopContributor}
+      />
+      {showHeatMap ? <HeatMap calendar={calendar} streak={streak} /> : null}
+      {showCerts ? <Certifications username={username} /> : null}
+      {showPortfolio ? <Portfolio portfolio={portfolio} /> : null}
+      {showTimeLine ? (
+        <Timeline completedMap={completedChallenges} username={username} />
+      ) : null}
+      <Spacer />
+    </Fragment>
+  );
+}
+
+function Profile({ user, isSessionUser, navigate }) {
+  const {
+    profileUI: { isLocked = true },
+    username
+  } = user;
+
+  const createHandleSignoutClick = navigate => e => {
+    e.preventDefault();
+    return navigate(`${apiLocation}/signout`);
+  };
+
   return (
     <Fragment>
       <Helmet>
         <title>Profile | freeCodeCamp.org</title>
       </Helmet>
-      <Spacer size={2} />
+      <Spacer />
       <Grid>
-        {isSessionUser ? renderSettingsButton() : null}
-        <Camper
-          about={showAbout ? about : null}
-          githubProfile={githubProfile}
-          isGithub={isGithub}
-          isLinkedIn={isLinkedIn}
-          isTwitter={isTwitter}
-          isWebsite={isWebsite}
-          linkedin={linkedin}
-          location={showLocation ? location : null}
-          name={showName ? name : null}
-          picture={picture}
-          points={showPoints ? points : null}
-          twitter={twitter}
-          username={username}
-          website={website}
-          yearsTopContributor={yearsTopContributor}
-        />
-        {showHeatMap ? <HeatMap calendar={calendar} streak={streak} /> : null}
-        {showCerts ? <Certifications username={username} /> : null}
-        {showPortfolio ? <Portfolio portfolio={portfolio} /> : null}
-        {showTimeLine ? (
-          <Timeline completedMap={completedChallenges} username={username} />
+        {isSessionUser ? (
+          <FullWidthRow className='button-group'>
+            <Link className='btn btn-lg btn-primary btn-block' to='/settings'>
+              Update my settings
+            </Link>
+            <Button
+              block={true}
+              bsSize='lg'
+              bsStyle='primary'
+              className='btn-invert'
+              href={'/signout'}
+              onClick={createHandleSignoutClick(navigate)}
+            >
+              Sign me out of freeCodeCamp
+            </Button>
+          </FullWidthRow>
         ) : null}
+        <Spacer />
+        {isLocked ? renderMessage(isSessionUser, username) : null}
+        {!isLocked || isSessionUser ? renderProfile(user) : null}
+        {isSessionUser ? null : (
+          <Row className='text-center'>
+            <Link to={`/user/${username}/report-user`}>Report This User</Link>
+          </Row>
+        )}
+        <Spacer />
       </Grid>
     </Fragment>
   );

@@ -56,6 +56,11 @@ checkPositive([1, 2, 3, -4, 5]);
 <section id='solution'>
 
 ```js
-// solution required
+function checkPositive(arr) {
+  // Add your code below this line
+  return arr.some(n => n > 0);
+  // Add your code above this line
+}
+checkPositive([1, 2, 3, -4, 5]);
 ```
 </section>

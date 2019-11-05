@@ -4,8 +4,8 @@ const HonestyPolicy = () => {
   return (
     <Fragment>
       <p key={1}>
-        Before we issue our verified certification to a camper, he or she must
-        accept our Academic Honesty Pledge, which reads:
+        Before you can claim a verified certification, you must accept our
+        Academic Honesty Pledge, which reads:
       </p>
       <p key={2}>
         "I understand that plagiarism means copying someone else’s work and
@@ -21,8 +21,8 @@ const HonestyPolicy = () => {
         "Aside from using open source libraries such as jQuery and Bootstrap,
         and short snippets of code which are clearly attributed to their
         original author, 100% of the code in my projects was written by me, or
-        along with another camper with whom I was pair programming in real
-        time."
+        along with another person going through the freeCodeCamp curriculum with
+        whom I was pair programming in real time."
       </p>
       <p key={5}>
         "I pledge that I did not plagiarize any of my freeCodeCamp.org work. I
@@ -31,7 +31,7 @@ const HonestyPolicy = () => {
       </p>
       <p key={6}>
         In the situations where we discover instances of unambiguous plagiarism,
-        we will replace the camper in question’s certification with a message
+        we will replace the person in question’s certification with a message
         that "Upon review, this account has been flagged for academic
         dishonesty."
       </p>

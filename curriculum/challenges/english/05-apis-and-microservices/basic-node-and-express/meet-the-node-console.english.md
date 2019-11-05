@@ -14,7 +14,7 @@ We recommend to keep the log panel open while working at these challenges. By re
 ## Instructions
 <section id='instructions'>
 
-If you have not already done so, please read the instructions in [the introduction](/learn/apis-and-microservices/basic-node-and-express/) and start a new project on Glitch using [this link](https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-express/).
+If you have not already done so, please read the instructions in [the introduction](/learn/apis-and-microservices/basic-node-and-express/) and start a new project on Glitch using [this link](https://glitch.com/edit/#!/remix/clone-from-repo?REPO_URL=https://github.com/freeCodeCamp/boilerplate-express/).
   
 Modify the <code>myApp.js</code> file to log "Hello World" to the console. 
 
@@ -41,7 +41,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
 
 </section>
