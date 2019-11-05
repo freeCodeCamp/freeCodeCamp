@@ -15,7 +15,7 @@ It's considered a best practice to set <code>propTypes</code> when you know the 
 In the example above, the <code>PropTypes.func</code> part checks that <code>handleClick</code> is a function. Adding <code>isRequired</code> tells React that <code>handleClick</code> is a required property for that component. You will see a warning if that prop isn't provided. Also notice that <code>func</code> represents <code>function</code>. Among the seven JavaScript primitive types, <code>function</code> and <code>boolean</code> (written as <code>bool</code>) are the only two that use unusual spelling. In addition to the primitive types, there are other types available. For example, you can check that a prop is a React element. Please refer to the [documentation](https://reactjs.org/docs/jsx-in-depth.html#specifying-the-react-element-type) for all of the options.
 
 <strong>Note:</strong> As of React v15.5.0, <code>PropTypes</code> is imported independently from React, like this:
-<code>import React, { PropTypes } from 'react';</code>
+<code>import PropTypes from 'prop-types';</code>
 </section>
 
 ## Instructions
