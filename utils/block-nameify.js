@@ -16,7 +16,8 @@ const preFormattedBlockNames = {
   'scientific-computing-with-python': 'Scientific Computing with Python',
   'data-analysis-with-python': 'Data Analysis with Python',
   'machine-learning-with-python': 'Machine Learning with Python',
-  'javascript-rpg-game': 'JavaScript RPG Game'
+  'javascript-rpg-game': 'JavaScript RPG Game',
+  'css-variables-skyline': 'CSS Variables Skyline'
 };
 
 const noFormatting = ['and', 'for', 'of', 'the', 'up', 'with'];
