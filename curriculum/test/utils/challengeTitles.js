@@ -13,9 +13,10 @@ class ChallengeTitles {
       throw new Error('Expected a title length greater than 0');
     }
     const isKnown = this.knownTitles.includes(titleToCheck);
-    if (isKnown) {
+    const isProjectCurriculumChallenge = title.match(/^Part\s*\d+/);
+    if (isKnown && !isProjectCurriculumChallenge) {
       throw new Error(`
-    All challenges must have a unique title.
+    All current curriculum challenges must have a unique title.
 
     The title ${title} is already assigned
     `);

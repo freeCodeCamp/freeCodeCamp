@@ -1,6 +1,6 @@
 ---
 id: 5d71f669e39bedcf8f0998fe
-title: Basic JavaScript RPG Game Part 91
+title: Part 91
 challengeType: 0
 isBeta: true
 ---

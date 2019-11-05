@@ -1,6 +1,6 @@
 ---
 id: 5d7e077e8360d21c6826a9b9
-title: Basic JavaScript RPG Game Part 103
+title: Part 103
 challengeType: 0
 isBeta: true
 ---

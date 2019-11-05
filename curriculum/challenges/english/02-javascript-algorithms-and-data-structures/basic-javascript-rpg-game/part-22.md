@@ -1,6 +1,6 @@
 ---
 id: 5d66093c4bab337fbb433885
-title: Basic JavaScript RPG Game Part 22
+title: Part 22
 challengeType: 0
 isBeta: true
 ---

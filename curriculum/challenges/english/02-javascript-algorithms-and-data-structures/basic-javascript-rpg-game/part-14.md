@@ -1,6 +1,6 @@
 ---
 id: 5d652e5a6e6bf7a6a27aa80a
-title: Basic JavaScript RPG Game Part 14
+title: Part 14
 challengeType: 0
 isBeta: true
 ---

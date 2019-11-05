@@ -1,6 +1,6 @@
 ---
 id: 5d822fd413a79914d39e98d6
-title: CSS Variables Skyline Part 14
+title: Part 14
 challengeType: 0
 isBeta: true
 ---

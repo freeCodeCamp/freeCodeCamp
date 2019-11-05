@@ -1,6 +1,6 @@
 ---
 id: 5d7deecc8360d21c6826a9b0
-title: Basic JavaScript RPG Game Part 95
+title: Part 95
 challengeType: 0
 isBeta: true
 ---

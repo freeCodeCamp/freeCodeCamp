@@ -1,6 +1,6 @@
 ---
 id: 5d6905ace0696bdec46938f3
-title: Basic JavaScript RPG Game Part 52
+title: Part 52
 challengeType: 0
 isBeta: true
 ---

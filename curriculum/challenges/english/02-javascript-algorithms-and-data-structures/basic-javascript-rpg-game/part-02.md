@@ -1,6 +1,6 @@
 ---
 id: 5d5a8dd907f328a948d398ce
-title: Basic JavaScript RPG Game Part 02
+title: Part 02
 challengeType: 0
 isBeta: true
 ---

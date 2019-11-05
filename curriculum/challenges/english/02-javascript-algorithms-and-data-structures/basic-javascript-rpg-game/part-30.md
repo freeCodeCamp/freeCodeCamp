@@ -1,6 +1,6 @@
 ---
 id: 5d674fd9e0696bdec46938dd
-title: Basic JavaScript RPG Game Part 30
+title: Part 30
 challengeType: 0
 isBeta: true
 ---

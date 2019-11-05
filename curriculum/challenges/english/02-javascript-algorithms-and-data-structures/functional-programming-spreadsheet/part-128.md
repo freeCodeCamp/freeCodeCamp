@@ -1,6 +1,6 @@
 ---
 id: 5d7925398a7184b41b12a0e0
-title: Functional Programming Spreadsheet Part 128
+title: Part 128
 challengeType: 0
 isBeta: true
 ---

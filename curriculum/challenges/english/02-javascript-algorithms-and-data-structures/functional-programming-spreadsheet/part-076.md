@@ -1,6 +1,6 @@
 ---
 id: 5d7925365d4035eeb2e395fd
-title: Functional Programming Spreadsheet Part 076
+title: Part 076
 challengeType: 0
 isBeta: true
 ---

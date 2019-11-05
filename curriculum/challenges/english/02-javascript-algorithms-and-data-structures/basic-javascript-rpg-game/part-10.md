@@ -1,6 +1,6 @@
 ---
 id: 5d5ab57f07f328a948d398d6
-title: Basic JavaScript RPG Game Part 10
+title: Part 10
 challengeType: 0
 isBeta: true
 ---

@@ -1,6 +1,6 @@
 ---
 id: 5d65f2c62012114c7d7c57eb
-title: Basic JavaScript RPG Game Part 18
+title: Part 18
 challengeType: 0
 isBeta: true
 ---

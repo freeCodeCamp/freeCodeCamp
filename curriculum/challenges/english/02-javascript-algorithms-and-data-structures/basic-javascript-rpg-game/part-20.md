@@ -1,6 +1,6 @@
 ---
 id: 5d65f6392012114c7d7c57ed
-title: Basic JavaScript RPG Game Part 20
+title: Part 20
 challengeType: 0
 isBeta: true
 ---

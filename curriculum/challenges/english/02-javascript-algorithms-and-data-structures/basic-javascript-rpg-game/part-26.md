@@ -1,6 +1,6 @@
 ---
 id: 5d66198de0696bdec46938d8
-title: Basic JavaScript RPG Game Part 26
+title: Part 26
 challengeType: 0
 isBeta: true
 ---

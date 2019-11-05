@@ -1,6 +1,6 @@
 ---
 id: 5dbbaeb56ef5fe3a704f849a
-title: Basic JavaScript RPG Game Part 132
+title: Part 132
 challengeType: 0
 isBeta: true
 ---

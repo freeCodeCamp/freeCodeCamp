@@ -1,6 +1,6 @@
 ---
 id: 5d7088d2066dac7142a6d79a
-title: Basic JavaScript RPG Game Part 72
+title: Part 72
 challengeType: 0
 isBeta: true
 ---

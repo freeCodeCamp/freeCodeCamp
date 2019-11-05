@@ -1,6 +1,6 @@
 ---
 id: 5d67b945e0696bdec46938e7
-title: Basic JavaScript RPG Game Part 40
+title: Part 40
 challengeType: 0
 isBeta: true
 ---
