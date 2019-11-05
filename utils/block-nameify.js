@@ -17,6 +17,7 @@ const preFormattedBlockNames = {
   'data-analysis-with-python': 'Data Analysis with Python',
   'machine-learning-with-python': 'Machine Learning with Python',
   'basic-javascript-rpg-game': 'Basic JavaScript RPG Game',
+  'basic-html-cat-photo-app': 'HTML Cat Photo App',
   'css-variables-skyline': 'CSS Variables Skyline',
   'javascript-spreadsheet': 'JavaScript Spreadsheet',
   'intermediate-javascript-calorie-counter':
