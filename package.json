@@ -48,7 +48,7 @@
     "test:search-indexing": "jest ./search-indexing",
     "test:server": "cd ./api-server && npm test && cd ../",
     "test:tools": "jest ./tools",
-    "test:utils": "jest ./utils/*.js"
+    "test:utils": "jest --rootDir ./utils"
   },
   "devDependencies": {
     "@freecodecamp/eslint-config": "^2.0.2",
