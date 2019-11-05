@@ -19,7 +19,8 @@ while(i < 5) {
   i++;
 }
 ```
-The code <code>ourArray.push(i)</code> and <code>i++</code> will continue to execute while <code>i</code> is less than 5. Thus, this <code>while</code> loop will run 5 times appending the numbers 0 through 4 to <code>ourArray</code>.
+
+In the code example above, the <code>while</code> loop will execute 5 times and append the numbers 0 through 4 to <code>ourArray</code>.
 
 Let's try getting a while loop to work by pushing values to an array.
 </section>
