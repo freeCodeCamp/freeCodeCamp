@@ -57,6 +57,18 @@ Essentially, we expect basic familiarity with some of the aforementioned technol
 
 ## Frequently Asked Questions
 
+### Can I translate freeCodeCamp's curriculum?
+
+We do intend to make the curriculum available in more languages, right now we do not have a timeline for this.
+
+We will begin by making the curriculum available in *Chinese* first to understand the caveats and the streamline the development and the deployment workflow and pipelines. China is one of the largest demographic regions in terms of an ideal candiate for the internationalization (i18n), and we have hundreds of thousands of users using a old version of the platform.
+
+The next languages to follow would be *Arabic, Portuguese, Russian and Spanish* in no particular order. For Portuguese and Spanish we will focus on latin america as our target demographic region based on the audience we have.
+
+While you may work on the translations, we are unable to launch them until later next year, other than Chinese which is tentatively planned for a early 2020 release.
+
+We **may** accept pull-requests in (high quality translations), depending on a case to case basis.
+
 ### How can I report a bug that is not on board?
 
 If you think you've found a bug, first read the ["Help I've Found a Bug"](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) article and follow its instructions.
