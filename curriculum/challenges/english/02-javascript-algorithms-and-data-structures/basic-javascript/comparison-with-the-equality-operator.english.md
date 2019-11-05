@@ -8,8 +8,8 @@ forumTopicId: 16784
 
 ## Description
 <section id='description'>
-There are many <dfn>Comparison Operators</dfn> in JavaScript. All of these operators return a boolean <code>true</code> or <code>false</code> value.
-The most basic operator is the equality operator <code>==</code>. The equality operator compares two values and returns <code>true</code> if they're equivalent or <code>false</code> if they are not. Note that equality is different from assignment (<code>=</code>), which assigns the value at the right of the operator to a variable on the left.
+There are many <dfn>comparison operators</dfn> in JavaScript. All of these operators return a boolean <code>true</code> or <code>false</code> value.
+The most basic operator is the equality operator <code>==</code>. The equality operator compares two values and returns <code>true</code> if they're equivalent or <code>false</code> if they are not. Note that equality is different from assignment (<code>=</code>), which assigns the value at the right of the operator to a variable in the left.
 
 ```js
 function equalityTest(myVal) {
@@ -21,7 +21,7 @@ function equalityTest(myVal) {
 ```
 
 If <code>myVal</code> is equal to <code>10</code>, the equality operator returns <code>true</code>, so the code in the curly braces will execute, and the function will return <code>"Equal"</code>. Otherwise, the function will return <code>"Not Equal"</code>.
-In order for JavaScript to compare two different <code>data types</code> (for example, <code>numbers</code> and <code>strings</code>), it must convert one type to another. This is known as "Type Coercion". Once it does, however, it can compare terms as follows:
+In order for JavaScript to compare two different <dfn>data types</dfn> (for example, <code>numbers</code> and <code>strings</code>), it must convert one type to another. This is known as "Type Coercion". Once it does, however, it can compare terms as follows:
 
 ```js
 1   ==  1   // true
@@ -34,7 +34,7 @@ In order for JavaScript to compare two different <code>data types</code> (for ex
 
 ## Instructions
 <section id='instructions'>
-Add the <code>equality operator</code> to the indicated line so that the function will return "Equal" when <code>val</code> is equivalent to <code>12</code>.
+Add the equality operator to the indicated line so that the function will return "Equal" when <code>val</code> is equivalent to <code>12</code>.
 </section>
 
 ## Tests

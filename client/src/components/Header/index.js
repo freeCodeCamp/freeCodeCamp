@@ -1,6 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
+import stripeObserver from './stripeIframesFix';
 import UniversalNav from './components/UniversalNav';
 
 import './header.css';
@@ -12,12 +13,17 @@ export class Header extends React.Component {
       displayMenu: false
     };
     this.menuButtonRef = React.createRef();
+    this.searchBarRef = React.createRef();
     this.handleClickOutside = this.handleClickOutside.bind(this);
     this.toggleDisplayMenu = this.toggleDisplayMenu.bind(this);
   }
 
   componentDidMount() {
     document.addEventListener('click', this.handleClickOutside);
+
+    // Remove stacking Stripe iframes with each navigation
+    // after visiting /donate
+    stripeObserver();
   }
 
   componentWillUnmount() {
@@ -29,7 +35,8 @@ export class Header extends React.Component {
       this.state.displayMenu &&
       this.menuButtonRef.current &&
       !this.menuButtonRef.current.contains(event.target) &&
-      event.target.id !== 'fcc_instantsearch'
+      this.searchBarRef.current &&
+      !this.searchBarRef.current.contains(event.target)
     ) {
       this.toggleDisplayMenu();
     }
@@ -48,7 +55,8 @@ export class Header extends React.Component {
         <header>
           <UniversalNav
             displayMenu={displayMenu}
-            ref={this.menuButtonRef}
+            menuButtonRef={this.menuButtonRef}
+            searchBarRef={this.searchBarRef}
             toggleDisplayMenu={this.toggleDisplayMenu}
           />
         </header>

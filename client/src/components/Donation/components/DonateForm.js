@@ -14,11 +14,10 @@ import {
 } from '@freecodecamp/react-bootstrap';
 import { injectStripe } from 'react-stripe-elements';
 
-import { apiLocation } from '../../../../config/env.json';
 import Spacer from '../../../components/helpers/Spacer';
 import StripeCardForm from './StripeCardForm';
 import DonateCompletion from './DonateCompletion';
-import { postJSON$ } from '../../../templates/Challenges/utils/ajax-stream.js';
+import { postChargeStripe } from '../../../utils/ajax';
 import { userSelector, isSignedInSelector } from '../../../redux';
 
 const propTypes = {
@@ -26,7 +25,8 @@ const propTypes = {
   isSignedIn: PropTypes.bool,
   stripe: PropTypes.shape({
     createToken: PropTypes.func.isRequired
-  })
+  }),
+  theme: PropTypes.string
 };
 const initialState = {
   donationAmount: 500,
@@ -40,7 +40,7 @@ const initialState = {
 const mapStateToProps = createSelector(
   userSelector,
   isSignedInSelector,
-  ({ email }, isSignedIn) => ({ email, isSignedIn })
+  ({ email, theme }, isSignedIn) => ({ email, theme, isSignedIn })
 );
 
 class DonateForm extends Component {
@@ -123,34 +123,40 @@ class DonateForm extends Component {
       }
     }));
 
-    const chargeStripePath = isSignedIn
-      ? '/internal/donate/charge-stripe'
-      : `${apiLocation}/unauthenticated/donate/charge-stripe`;
-    return postJSON$(chargeStripePath, {
+    return postChargeStripe(isSignedIn, {
       token,
       amount
-    }).subscribe(
-      res =>
+    })
+      .then(response => {
+        const data = response && response.data;
         this.setState(state => ({
           ...state,
           donationState: {
             ...state.donationState,
             processing: false,
             success: true,
-            error: res.error
+            error: data.error ? data.error : null
           }
-        })),
-      err =>
+        }));
+      })
+      .catch(error => {
+        const data =
+          error.response && error.response.data
+            ? error.response.data
+            : {
+                error:
+                  'Something is not right. Please contact team@freecodecamp.org'
+              };
         this.setState(state => ({
           ...state,
           donationState: {
             ...state.donationState,
             processing: false,
             success: false,
-            error: err.error
+            error: data.error
           }
-        }))
-    );
+        }));
+      });
   }
 
   resetDonation() {
@@ -163,6 +169,7 @@ class DonateForm extends Component {
 
   renderDonateForm() {
     const { isFormValid } = this.state;
+    const { theme } = this.props;
     return (
       <Row>
         <Col sm={10} smOffset={1} xs={12}>
@@ -179,7 +186,10 @@ class DonateForm extends Component {
                 value={this.getUserEmail()}
               />
             </FormGroup>
-            <StripeCardForm getValidationState={this.getValidationState} />
+            <StripeCardForm
+              getValidationState={this.getValidationState}
+              theme={theme}
+            />
             <Button
               block={true}
               bsStyle='primary'

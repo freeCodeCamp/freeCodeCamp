@@ -30,6 +30,13 @@
   font-family: 'Sax Mono', monospace;
 }
 
+/* center the certificate vertically */
+.certificate-outer-wrapper {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+}
+
 .certification-namespace header {
   width: 100%;
   height: 140px;

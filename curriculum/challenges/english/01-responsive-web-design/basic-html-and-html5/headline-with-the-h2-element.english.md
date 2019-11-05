@@ -15,7 +15,7 @@ This element tells the browser about the structure of your website. <code>h1</co
 
 ## Instructions
 <section id='instructions'>
-Add an <code>h2</code> tag that says "CatPhotoApp" to create a second HTML <code>element</code> below your "Hello World" <code>h1</code> element.
+Add an <code>h2</code> tag that says "CatPhotoApp" to create a second HTML element below your "Hello World" <code>h1</code> element.
 </section>
 
 ## Tests

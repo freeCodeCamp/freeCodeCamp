@@ -8,7 +8,7 @@ forumTopicId: 16822
 
 ## Description
 <section id='description'>
-You can use <code>radio button</code>s for questions where you want the user to only give you one answer out of multiple options.
+You can use <dfn>radio buttons</dfn> for questions where you want the user to only give you one answer out of multiple options.
 Radio buttons are a type of <code>input</code>.
 Each of your radio buttons can be nested within its own <code>label</code> element. By wrapping an <code>input</code> element inside of a <code>label</code> element it will automatically associate the radio button input with the label element surrounding it.
 All related radio buttons should have the same <code>name</code> attribute to create a radio button group. By creating a radio group, selecting any single radio button will automatically deselect the other buttons within the same group ensuring only one answer is provided by the user.

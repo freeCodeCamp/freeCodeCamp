@@ -15,7 +15,7 @@ To do this, just add the word "checked" to the inside of an input element. For e
 
 ## Instructions
 <section id='instructions'>
-Set the first of your <code>radio button</code>s and the first of your <code>checkbox</code>es to both be checked by default.
+Set the first of your radio buttons and the first of your checkboxes to both be checked by default.
 </section>
 
 ## Tests

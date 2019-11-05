@@ -9,7 +9,7 @@ forumTopicId: 18214
 <section id='description'>
 So far we have learned to use pure functions to avoid side effects in a program. Also, we have seen the value in having a function only depend on its input arguments.
 This is only the beginning. As its name suggests, functional programming is centered around a theory of functions.
-It would make sense to be able to pass them as arguments to other functions, and return a function from another function. Functions are considered <code>First Class Objects</code> in JavaScript, which means they can be used like any other object. They can be saved in variables, stored in an object, or passed as function arguments.
+It would make sense to be able to pass them as arguments to other functions, and return a function from another function. Functions are considered <dfn>first class objects</dfn> in JavaScript, which means they can be used like any other object. They can be saved in variables, stored in an object, or passed as function arguments.
 Let's start with some simple array functions, which are methods on the array object prototype. In this exercise we are looking at <code>Array.prototype.map()</code>, or more simply <code>map</code>.
 Remember that the <code>map</code> method is a way to iterate over each item in an array. It creates a new array (without changing the original one) after applying a callback function to every element.
 </section>

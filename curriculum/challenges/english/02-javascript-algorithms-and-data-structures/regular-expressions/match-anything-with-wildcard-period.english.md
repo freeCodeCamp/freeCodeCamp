@@ -14,8 +14,8 @@ The wildcard character <code>.</code> will match any one character. The wildcard
 let humStr = "I'll hum a song";
 let hugStr = "Bear hug";
 let huRegex = /hu./;
-humStr.test(huRegex); // Returns true
-hugStr.test(huRegex); // Returns true
+huRegex.test(humStr); // Returns true
+huRegex.test(hugStr); // Returns true
 ```
 
 </section>

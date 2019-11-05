@@ -7,7 +7,7 @@ forumTopicId: 301598
 
 ## Description
 <section id='description'>
-As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
+As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/edit/#!/remix/clone-from-repo?REPO_URL=https://github.com/freeCodeCamp/boilerplate-mochachai/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
 
 <code>.approximately(actual, expected, delta, [message])</code>
 Asserts that the actual is equal <code>expected</code>, to within a +/- <code>delta</code> range.
@@ -44,7 +44,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
 
 </section>

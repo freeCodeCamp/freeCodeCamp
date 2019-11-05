@@ -8,5 +8,8 @@
 }
 
 pre.output-text code {
-  color: #c7254e;
+  background-color: var(--quaternary-background);
+  color: var(--tertiary-color);
+  font-size: 90%;
+  padding: 2px 4px;
 }

@@ -61,7 +61,7 @@ Se você não consegue encontrar um artigo provisório do tópico sobre o qual v
 
 **Se você gostaria de trabalhar nisso, por favor, siga as seguintes recomendações:**
 
-#### [Como trabalhar em Artigos de guia.](/docs/portuguese/how-to-work-on-guide-articles.md)
+#### [Como trabalhar em Artigos de guia.](/docs/i18n-languages/portuguese/how-to-work-on-guide-articles.md)
 
 ### Crie, Atualize e Corrija <i>Bugs</i> em nossos desafios de código
 
@@ -70,7 +70,7 @@ Entretanto, eles precisam ser constantemente refinados para melhor qualidade. Po
 
 **Se você gostaria de trabalhar nisso, por favor, siga as seguintes recomendações:**
 
-#### [Como trabalhar em desafios de código.](/docs/portuguese/how-to-work-on-coding-challenges.md)
+#### [Como trabalhar em desafios de código.](/docs/i18n-languages/portuguese/how-to-work-on-coding-challenges.md)
 
 ### Traduza artigos de guia e desafios de código
 
@@ -106,7 +106,7 @@ Sinta-se livre para nos fazer qualquer pergunta nos tópicos de questões relaci
 
 **Se você gostaria de trabalhar nisso, por favor, siga as seguintes recomendações:**
 
-#### [Como configurar freeCodeCamp localmente.](/docs/portuguese/how-to-setup-freecodecamp-locally.md)
+#### [Como configurar freeCodeCamp localmente.](/docs/i18n-languages/portuguese/how-to-setup-freecodecamp-locally.md)
 
 ## Perguntas Frequentes
 

@@ -7,7 +7,7 @@ forumTopicId: 301579
 
 ## Description
 <section id='description'>
-As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-bcrypt/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-bcrypt/'>GitHub</a>.
+As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/edit/#!/remix/clone-from-repo?REPO_URL=https://github.com/freeCodeCamp/boilerplate-bcrypt/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-bcrypt/'>GitHub</a>.
 Hashing synchronously is just as easy to do but can cause lag if using it server side with a high cost or with hashing done very often. Hashing with this method is as easy as calling 
 
 ```js
@@ -51,7 +51,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
 
 </section>

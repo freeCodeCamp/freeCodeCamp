@@ -8,7 +8,7 @@ forumTopicId: 16821
 
 ## Description
 <section id='description'>
-Forms commonly use <code>checkboxes</code> for questions that may have more than one answer.
+Forms commonly use <dfn>checkboxes</dfn> for questions that may have more than one answer.
 Checkboxes are a type of <code>input</code>.
 Each of your checkboxes can be nested within its own <code>label</code> element. By wrapping an <code>input</code> element inside of a <code>label</code> element it will automatically associate the checkbox input with the label element surrounding it.
 All related checkbox inputs should have the same <code>name</code> attribute.

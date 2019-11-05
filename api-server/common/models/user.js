@@ -822,7 +822,7 @@ export default function(User) {
         const allUser = {
           ..._.pick(user, publicUserProps),
           isGithub: !!user.githubProfile,
-          isLinkedIn: !!user.linkedIn,
+          isLinkedIn: !!user.linkedin,
           isTwitter: !!user.twitter,
           isWebsite: !!user.website,
           points: progressTimestamps.length,
@@ -983,6 +983,12 @@ export default function(User) {
   });
 
   User.prototype.getPoints$ = function getPoints$() {
+    if (
+      Array.isArray(this.progressTimestamps) &&
+      this.progressTimestamps.length
+    ) {
+      return Observable.of(this.progressTimestamps);
+    }
     const id = this.getId();
     const filter = {
       where: { id },
@@ -994,6 +1000,12 @@ export default function(User) {
     });
   };
   User.prototype.getCompletedChallenges$ = function getCompletedChallenges$() {
+    if (
+      Array.isArray(this.completedChallenges) &&
+      this.completedChallenges.length
+    ) {
+      return Observable.of(this.completedChallenges);
+    }
     const id = this.getId();
     const filter = {
       where: { id },
