@@ -10,7 +10,6 @@ import {
   isSignedInSelector
 } from '../../redux';
 import createRedirect from '../../components/createRedirect';
-import DonateModal from '../Donation';
 
 import 'prismjs/themes/prism.css';
 import './prism.css';
@@ -48,7 +47,6 @@ function LearnLayout({
   return (
     <Fragment>
       <main id='learn-app-wrapper'>{children}</main>
-      <DonateModal />
     </Fragment>
   );
 }
