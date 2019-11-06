@@ -89,7 +89,7 @@ export class CompletionModal extends Component {
         .map(key => files[key])
         .reduce((allFiles, { path, contents }) => {
           const beforeText = `** start of ${path} **\n\n`;
-          const afterText = `\n** end of ${path} **\n\n`;
+          const afterText = `\n\n** end of ${path} **\n\n`;
           allFiles +=
             files.length > 1 ? beforeText + contents + afterText : contents;
           return allFiles;
