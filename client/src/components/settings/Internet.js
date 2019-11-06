@@ -1,5 +1,7 @@
 import React, { Fragment, Component } from 'react';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import {
   HelpBlock,
   FormControl,
@@ -139,6 +141,18 @@ class InternetSettings extends Component {
     return null;
   };
 
+  renderHelpBlock = validationMessage =>
+    validationMessage ? <HelpBlock>{validationMessage}</HelpBlock> : null;
+
+  renderCheck = (url, validation) =>
+    url && validation === 'success' ? (
+      <FormControl.Feedback>
+        <span>
+          <FontAwesomeIcon icon={faCheck} size='1x' />
+        </span>
+      </FormControl.Feedback>
+    ) : null;
+
   render() {
     const {
       formValues: { githubProfile, linkedin, twitter, website }
@@ -176,12 +190,12 @@ class InternetSettings extends Component {
               <ControlLabel>GitHub</ControlLabel>
               <FormControl
                 onChange={this.createHandleChange('githubProfile')}
+                placeholder='https://github.com/user-name'
                 type='url'
                 value={githubProfile}
               />
-              {githubProfileValidationMessage ? (
-                <HelpBlock>{githubProfileValidationMessage}</HelpBlock>
-              ) : null}
+              {this.renderCheck(githubProfile, githubProfileValidation)}
+              {this.renderHelpBlock(githubProfileValidationMessage)}
             </FormGroup>
             <FormGroup
               controlId='internet-linkedin'
@@ -190,12 +204,12 @@ class InternetSettings extends Component {
               <ControlLabel>LinkedIn</ControlLabel>
               <FormControl
                 onChange={this.createHandleChange('linkedin')}
+                placeholder='https://www.linkedin.com/in/user-name'
                 type='url'
                 value={linkedin}
               />
-              {linkedinValidationMessage ? (
-                <HelpBlock>{linkedinValidationMessage}</HelpBlock>
-              ) : null}
+              {this.renderCheck(linkedin, linkedinValidation)}
+              {this.renderHelpBlock(linkedinValidationMessage)}
             </FormGroup>
             <FormGroup
               controlId='internet-picture'
@@ -204,12 +218,12 @@ class InternetSettings extends Component {
               <ControlLabel>Twitter</ControlLabel>
               <FormControl
                 onChange={this.createHandleChange('twitter')}
+                placeholder='https://twitter.com/user-name'
                 type='url'
                 value={twitter}
               />
-              {twitterValidationMessage ? (
-                <HelpBlock>{twitterValidationMessage}</HelpBlock>
-              ) : null}
+              {this.renderCheck(twitter, twitterValidation)}
+              {this.renderHelpBlock(twitterValidationMessage)}
             </FormGroup>
             <FormGroup
               controlId='internet-website'
@@ -218,12 +232,12 @@ class InternetSettings extends Component {
               <ControlLabel>Personal Website</ControlLabel>
               <FormControl
                 onChange={this.createHandleChange('website')}
+                placeholder='https://example.com'
                 type='url'
                 value={website}
               />
-              {websiteValidationMessage ? (
-                <HelpBlock>{websiteValidationMessage}</HelpBlock>
-              ) : null}
+              {this.renderCheck(website, websiteValidation)}
+              {this.renderHelpBlock(websiteValidationMessage)}
             </FormGroup>
             <BlockSaveButton
               disabled={this.isFormPristine() || !this.isFormValid()}
