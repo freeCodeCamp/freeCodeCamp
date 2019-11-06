@@ -25,7 +25,7 @@ Let's try getting a while loop to work by pushing values to an array.
 
 ## Instructions
 <section id='instructions'>
-Push the numbers 5 through 0, in that order and including both the 5 and 0, to <code>myArray</code> using a <code>while</code> loop.
+Add the numbers 5 through 0 (inclusive) in descending order to <code>myArray</code> using a <code>while</code> loop.
 </section>
 
 ## Tests
