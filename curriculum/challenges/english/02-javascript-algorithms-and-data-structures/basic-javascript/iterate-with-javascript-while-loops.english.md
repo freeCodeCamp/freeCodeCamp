@@ -25,7 +25,7 @@ Let's try getting a while loop to work by pushing values to an array.
 
 ## Instructions
 <section id='instructions'>
-Push the numbers 0 through 4 to <code>myArray</code> using a <code>while</code> loop.
+Push the numbers 5 through 0, in that order and including both the 5 and 0, to <code>myArray</code> using a <code>while</code> loop.
 </section>
 
 ## Tests
@@ -35,8 +35,8 @@ Push the numbers 0 through 4 to <code>myArray</code> using a <code>while</code> 
 tests:
   - text: You should be using a <code>while</code> loop for this.
     testString: assert(code.match(/while/g));
-  - text: <code>myArray</code> should equal <code>[0,1,2,3,4]</code>.
-    testString: assert.deepEqual(myArray, [0,1,2,3,4]);
+  - text: <code>myArray</code> should equal <code>[5,4,3,2,1,0]</code>.
+    testString: assert.deepEqual(myArray, [5,4,3,2,1,0]);
 
 ```
 
