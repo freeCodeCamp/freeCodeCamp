@@ -12,14 +12,17 @@ import {
 } from '@freecodecamp/react-bootstrap';
 import { injectStripe } from 'react-stripe-elements';
 
-import Spacer from '../../helpers/Spacer';
 import StripeCardForm from './StripeCardForm';
 import DonateCompletion from './DonateCompletion';
 import { postChargeStripe } from '../../../utils/ajax';
 import { userSelector, isSignedInSelector } from '../../../redux';
 
 const propTypes = {
+  donationAmount: PropTypes.number.isRequired,
+  donationDuration: PropTypes.string.isRequired,
   email: PropTypes.string,
+  getDonationButtonLabel: PropTypes.func.isRequired,
+  hideAmountOptionsCB: PropTypes.func.isRequired,
   isSignedIn: PropTypes.bool,
   stripe: PropTypes.shape({
     createToken: PropTypes.func.isRequired
@@ -27,7 +30,6 @@ const propTypes = {
   theme: PropTypes.string
 };
 const initialState = {
-  donationAmount: 500,
   donationState: {
     processing: false,
     success: false,
@@ -47,6 +49,8 @@ class DonateFormChildViewForHOC extends Component {
 
     this.state = {
       ...initialState,
+      donationAmount: this.props.donationAmount,
+      donationDuration: this.props.donationDuration,
       email: null,
       isFormValid: false
     };
@@ -82,6 +86,7 @@ class DonateFormChildViewForHOC extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    this.hideAmountOptions(true);
     const email = this.getUserEmail();
     if (!email || !isEmail(email)) {
       return this.setState(state => ({
@@ -110,8 +115,13 @@ class DonateFormChildViewForHOC extends Component {
     });
   }
 
+  hideAmountOptions(hide) {
+    const { hideAmountOptionsCB } = this.props;
+    hideAmountOptionsCB(hide);
+  }
+
   postDonation(token) {
-    const { donationAmount: amount } = this.state;
+    const { donationAmount: amount, donationDuration: duration } = this.state;
     const { isSignedIn } = this.props;
     this.setState(state => ({
       ...state,
@@ -123,7 +133,8 @@ class DonateFormChildViewForHOC extends Component {
 
     return postChargeStripe(isSignedIn, {
       token,
-      amount
+      amount,
+      duration
     })
       .then(response => {
         const data = response && response.data;
@@ -167,7 +178,7 @@ class DonateFormChildViewForHOC extends Component {
 
   renderDonateForm() {
     const { isFormValid } = this.state;
-    const { theme } = this.props;
+    const { theme, getDonationButtonLabel } = this.props;
     return (
       <Form className='donation-form' onSubmit={this.handleSubmit}>
         <FormGroup className='donation-email-container'>
@@ -193,11 +204,14 @@ class DonateFormChildViewForHOC extends Component {
           id='confirm-donation-btn'
           type='submit'
         >
-          Confirm your donation of $5 / month
+          {getDonationButtonLabel()}
         </Button>
-        <Spacer />
       </Form>
     );
+  }
+
+  componentWillReceiveProps({ donationAmount, donationDuration }) {
+    this.setState({ donationAmount, donationDuration });
   }
 
   render() {
@@ -212,6 +226,7 @@ class DonateFormChildViewForHOC extends Component {
         reset: this.resetDonation
       });
     }
+    this.hideAmountOptions(false);
     return this.renderDonateForm();
   }
 }

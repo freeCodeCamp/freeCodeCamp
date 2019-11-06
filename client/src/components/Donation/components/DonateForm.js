@@ -2,9 +2,19 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Button } from '@freecodecamp/react-bootstrap';
+import {
+  Button,
+  Tabs,
+  Tab,
+  Row,
+  Col,
+  ToggleButtonGroup,
+  ToggleButton,
+  Radio
+} from '@freecodecamp/react-bootstrap';
 import { StripeProvider, Elements } from 'react-stripe-elements';
 import { apiLocation } from '../../../../config/env.json';
+import Spacer from '../../helpers/Spacer';
 import DonateFormChildViewForHOC from './DonateFormChildViewForHOC';
 import {
   userSelector,
@@ -14,8 +24,13 @@ import {
 } from '../../../redux';
 
 import '../Donation.css';
+import DonateCompletion from './DonateCompletion.js';
+
+const numToCommas = num =>
+  num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
 
 const propTypes = {
+  isDonating: PropTypes.bool,
   isSignedIn: PropTypes.bool,
   navigate: PropTypes.func.isRequired,
   showLoading: PropTypes.bool.isRequired,
@@ -28,11 +43,10 @@ const mapStateToProps = createSelector(
   userSelector,
   signInLoadingSelector,
   isSignedInSelector,
-  ({ email, theme }, showLoading, isSignedIn) => ({
-    email,
-    theme,
-    showLoading,
-    isSignedIn
+  ({ isDonating }, showLoading, isSignedIn) => ({
+    isDonating,
+    isSignedIn,
+    showLoading
   })
 );
 
@@ -44,66 +58,246 @@ const createOnClick = navigate => e => {
   e.preventDefault();
   return navigate(`${apiLocation}/signin?returnTo=donate`);
 };
+
 class DonateForm extends Component {
   constructor(...args) {
     super(...args);
 
     this.state = {
-      donationAmount: 500
+      processing: false,
+      isDonating: this.props.isDonating,
+      donationAmount: 5000,
+      donationDuration: 'month',
+      paymentType: 'Card'
     };
 
-    this.buttonSingleAmounts = [2500, 5000, 10000, 25000];
-    this.buttonMonthlyAmounts = [500, 1000, 2000];
-    this.buttonAnnualAmounts = [6000, 10000, 25000, 50000];
+    this.durations = {
+      year: 'yearly',
+      month: 'monthly',
+      onetime: 'one-time'
+    };
+    this.amounts = {
+      year: [100000, 25000, 3500],
+      month: [5000, 3500, 500],
+      onetime: [100000, 25000, 3500]
+    };
 
-    this.isActive = this.isActive.bind(this);
-    this.renderAmountButtons = this.renderAmountButtons.bind(this);
+    this.getActiveDonationAmount = this.getActiveDonationAmount.bind(this);
+    this.getDonationButtonLabel = this.getDonationButtonLabel.bind(this);
+    this.handleSelectAmount = this.handleSelectAmount.bind(this);
+    this.handleSelectDuration = this.handleSelectDuration.bind(this);
+    this.handleSelectPaymentType = this.handleSelectPaymentType.bind(this);
+    this.hideAmountOptionsCB = this.hideAmountOptionsCB.bind(this);
   }
 
-  isActive(amount) {
-    return this.state.donationAmount === amount;
+  getActiveDonationAmount(durationSelected, amountSelected) {
+    return this.amounts[durationSelected].includes(amountSelected)
+      ? amountSelected
+      : this.amounts[durationSelected][0];
   }
 
-  renderAmountButtons() {
-    return this.buttonAnnualAmounts.map(amount => (
-      <Button
-        className={`amount-value ${this.isActive(amount) ? 'active' : ''}`}
-        href=''
-        id={amount}
-        key={'amount-' + amount}
-        onClick={this.handleAmountClick}
-        tabIndex='-1'
+  convertToTimeContributed(amount) {
+    return `${numToCommas((amount / 100) * 50 * 60)} minutes`;
+  }
+
+  getFormatedAmountLabel(amount) {
+    return `$${numToCommas(amount / 100)}`;
+  }
+
+  getDonationButtonLabel() {
+    const { donationAmount, donationDuration } = this.state;
+    let donationBtnLabel = `Confirm your donation`;
+    if (donationDuration === 'onetime') {
+      donationBtnLabel = `Confirm your one-time donation of ${this.getFormatedAmountLabel(
+        donationAmount
+      )}`;
+    } else {
+      donationBtnLabel = `Confirm your donation of ${this.getFormatedAmountLabel(
+        donationAmount
+      )} ${donationDuration === 'month' ? 'per month' : 'per year'}`;
+    }
+    return donationBtnLabel;
+  }
+
+  handleSelectDuration(donationDuration) {
+    const donationAmount = this.getActiveDonationAmount(donationDuration, 0);
+    this.setState({ donationDuration, donationAmount });
+  }
+
+  handleSelectAmount(donationAmount) {
+    this.setState({ donationAmount });
+  }
+
+  handleSelectPaymentType(e) {
+    this.setState({
+      paymentType: e.currentTarget.value
+    });
+  }
+
+  renderAmountButtons(duration) {
+    return this.amounts[duration].map(amount => (
+      <ToggleButton
+        className='amount-value'
+        id={`${this.durations[duration]}-donation-${amount}`}
+        key={`${this.durations[duration]}-donation-${amount}`}
+        value={amount}
       >
-        {`$${amount / 100}`}
-      </Button>
+        {this.getFormatedAmountLabel(amount)}
+      </ToggleButton>
     ));
   }
 
-  render() {
-    const { isSignedIn, navigate, showLoading, stripe } = this.props;
+  renderDurationAmountOptions() {
+    const { donationAmount, donationDuration, processing } = this.state;
+    return !processing ? (
+      <div>
+        <h3>Duration and amount:</h3>
+        <Tabs
+          activeKey={donationDuration}
+          animation={false}
+          bsStyle='pills'
+          className='donate-tabs'
+          id='Duration'
+          onSelect={this.handleSelectDuration}
+        >
+          {Object.keys(this.durations).map(duration => (
+            <Tab
+              eventKey={duration}
+              key={duration}
+              title={this.durations[duration]}
+            >
+              <Spacer />
+              <div>
+                <ToggleButtonGroup
+                  animation={`false`}
+                  className='amount-values'
+                  name='amounts'
+                  onChange={this.handleSelectAmount}
+                  type='radio'
+                  value={this.getActiveDonationAmount(duration, donationAmount)}
+                >
+                  {this.renderAmountButtons(duration)}
+                </ToggleButtonGroup>
+                <Spacer />
+                <p>
+                  {`Your `}
+                  {this.getFormatedAmountLabel(donationAmount)}
+                  {` donation will provide `}
+                  {this.convertToTimeContributed(donationAmount)}
+                  {` of learning to people around the world `}
+                  {duration === 'one-time' ? `for one ` : `each `}
+                  {duration === 'monthly' ? `month.` : `year.`}
+                </p>
+              </div>
+            </Tab>
+          ))}
+        </Tabs>
+      </div>
+    ) : null;
+  }
 
-    if (!showLoading && !isSignedIn) {
+  hideAmountOptionsCB(hide) {
+    this.setState({ processing: hide });
+  }
+
+  renderDonationOptions() {
+    const { stripe } = this.props;
+    const {
+      donationAmount,
+      donationDuration,
+      paymentType,
+      processing
+    } = this.state;
+    return (
+      <div>
+        {!processing ? (
+          <div>
+            <Radio
+              checked={paymentType === 'Card'}
+              name='payment-method'
+              onChange={this.handleSelectPaymentType}
+              value='Card'
+            >
+              Donate using a Credit/Debit Card.
+            </Radio>
+            <Radio
+              checked={paymentType === 'PayPal'}
+              // disable the paypal integration for now
+              disabled={true}
+              name='payment-method'
+              onChange={this.handleSelectPaymentType}
+              value='PayPal'
+            >
+              Donate using PayPal. (Coming soon)
+            </Radio>
+            <Spacer />
+          </div>
+        ) : null}
+        {paymentType === 'Card' ? (
+          <StripeProvider stripe={stripe}>
+            <Elements>
+              <DonateFormChildViewForHOC
+                donationAmount={donationAmount}
+                donationDuration={donationDuration}
+                getDonationButtonLabel={this.getDonationButtonLabel}
+                hideAmountOptionsCB={this.hideAmountOptionsCB}
+              />
+            </Elements>
+          </StripeProvider>
+        ) : (
+          <p>
+            PayPal is currently unavailable. Please use a Credit/Debit card
+            instead.
+          </p>
+        )}
+      </div>
+    );
+  }
+
+  render() {
+    const { isSignedIn, navigate, showLoading, isDonating } = this.props;
+
+    if (isDonating) {
       return (
-        <div>
-          <Button
-            bsStyle='default'
-            className='btn btn-block'
-            onClick={createOnClick(navigate)}
-          >
-            Become a supporter
-          </Button>
-        </div>
+        <Row>
+          <Col sm={10} smOffset={1} xs={12}>
+            <DonateCompletion success={true} />
+          </Col>
+        </Row>
       );
     }
 
     return (
-      <div>
-        <StripeProvider stripe={stripe}>
-          <Elements>
-            <DonateFormChildViewForHOC />
-          </Elements>
-        </StripeProvider>
-      </div>
+      <Row>
+        <Col sm={10} smOffset={1} xs={12}>
+          {this.renderDurationAmountOptions()}
+        </Col>
+        <Col sm={10} smOffset={1} xs={12}>
+          {!showLoading && !isSignedIn ? (
+            <Button
+              bsStyle='default'
+              className='btn btn-block'
+              onClick={createOnClick(navigate)}
+            >
+              Become a supporter
+            </Button>
+          ) : (
+            this.renderDonationOptions()
+          )}
+        </Col>
+        <Col sm={10} smOffset={1} xs={12}>
+          <Spacer size={2} />
+          <h3 className='text-center'>Manage your existing donation</h3>
+          <Button block={true} bsStyle='primary' disabled={true}>
+            Update your existing donation
+          </Button>
+          <Spacer />
+          <Button block={true} bsStyle='primary' disabled={true}>
+            Download donation receipts
+          </Button>
+          <Spacer />
+        </Col>
+      </Row>
     );
   }
 }
