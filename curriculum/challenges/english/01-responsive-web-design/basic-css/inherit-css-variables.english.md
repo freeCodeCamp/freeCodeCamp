@@ -251,7 +251,7 @@ tests:
 
 
 ```js
-var code = ":root {--penguin-belly: pink;}"
+:root {--penguin-belly: pink;}
 ```
 
 </section>
