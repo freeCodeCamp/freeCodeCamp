@@ -76,10 +76,10 @@ if(typeof myArray !== "undefined"){(function(){return myArray;})();}
 
 ```js
 var myArray = [];
-var i = 0;
-while(i < 5) {
+var i = 5;
+while(i >= 0) {
   myArray.push(i);
-  i++;
+  i--;
 }
 ```
 
