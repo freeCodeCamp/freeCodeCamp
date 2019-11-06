@@ -18,7 +18,7 @@ function DonateCompletion({ processing, reset, success, error = null }) {
   const heading = processing
     ? 'We are processing your donation.'
     : success
-    ? 'Your donation was successful.'
+    ? 'Thank you for being a supporter.'
     : 'Something went wrong with your donation.';
   return (
     <Alert bsStyle={style} className='donation-completion'>
@@ -37,12 +37,12 @@ function DonateCompletion({ processing, reset, success, error = null }) {
         {success && (
           <div>
             <p>
-              You can update your supporter status at any time from your account
-              settings.
+              Your donation will support free technology education for people
+              all over the world.
             </p>
             <p>
-              Thank you for supporting free technology education for people all
-              over the world.
+              You can update your supporter status at any time from the 'manage
+              your existing donation' section on this page.
             </p>
           </div>
         )}

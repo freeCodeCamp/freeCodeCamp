@@ -1,5 +1,6 @@
 import Stripe from 'stripe';
 import debug from 'debug';
+import { isEmail, isNumeric } from 'validator';
 
 import keys from '../../../config/secrets';
 
@@ -10,41 +11,79 @@ export default function donateBoot(app, done) {
   const { User } = app.models;
   const api = app.loopback.Router();
   const donateRouter = app.loopback.Router();
-  const subscriptionPlans = [500, 1000, 3500, 5000, 25000].reduce(
-    (accu, current) => ({
-      ...accu,
-      [current]: {
-        amount: current,
-        interval: 'month',
-        product: {
-          name:
-            'Monthly Donation to freeCodeCamp.org - ' +
-            `Thank you ($${current / 100})`
-        },
-        currency: 'usd',
-        id: `monthly-donation-${current}`
-      }
-    }),
-    {}
+
+  const durationKeys = ['year', 'month', 'onetime'];
+  const donationOneTimeConfig = [100000, 25000, 3500];
+  const donationSubscriptionConfig = {
+    duration: {
+      year: 'Yearly',
+      month: 'Monthly'
+    },
+    plans: {
+      year: [100000, 25000, 3500],
+      month: [5000, 3500, 500]
+    }
+  };
+
+  const subscriptionPlans = Object.keys(
+    donationSubscriptionConfig.plans
+  ).reduce(
+    (prevDuration, duration) =>
+      prevDuration.concat(
+        donationSubscriptionConfig.plans[duration].reduce(
+          (prevAmount, amount) =>
+            prevAmount.concat({
+              amount: amount,
+              interval: duration,
+              product: {
+                name: `${
+                  donationSubscriptionConfig.duration[duration]
+                } Donation to freeCodeCamp.org - Thank you ($${amount / 100})`,
+                metadata: {
+                  /* eslint-disable camelcase */
+                  sb_service: `freeCodeCamp.org`,
+                  sb_tier: `${
+                    donationSubscriptionConfig.duration[duration]
+                  } $${amount / 100} Donation`
+                  /* eslint-enable camelcase */
+                }
+              },
+              currency: 'usd',
+              id: `${donationSubscriptionConfig.duration[
+                duration
+              ].toLowerCase()}-donation-${amount}`
+            }),
+          []
+        )
+      ),
+    []
   );
+
+  function validStripeForm(amount, duration, email) {
+    return isEmail('' + email) &&
+      isNumeric('' + amount) &&
+      durationKeys.includes(duration) &&
+      duration === 'onetime'
+      ? donationOneTimeConfig.includes(amount)
+      : donationSubscriptionConfig.plans[duration];
+  }
 
   function connectToStripe() {
     return new Promise(function(resolve) {
       // connect to stripe API
       stripe = Stripe(keys.stripe.secret);
       // parse stripe plans
-      stripe.plans.list({}, function(err, plans) {
+      stripe.plans.list({}, function(err, stripePlans) {
         if (err) {
           throw err;
         }
-        const requiredPlans = Object.keys(subscriptionPlans).map(
-          key => subscriptionPlans[key].id
-        );
-        const availablePlans = plans.data.map(plan => plan.id);
-        requiredPlans.forEach(planId => {
-          if (!availablePlans.includes(planId)) {
-            const key = planId.split('-').slice(-1)[0];
-            createStripePlan(subscriptionPlans[key]);
+        const requiredPlans = subscriptionPlans.map(plan => plan.id);
+        const availablePlans = stripePlans.data.map(plan => plan.id);
+        requiredPlans.forEach(requiredPlan => {
+          if (!availablePlans.includes(requiredPlan)) {
+            createStripePlan(
+              subscriptionPlans.find(plan => plan.id === requiredPlan)
+            );
           }
         });
       });
@@ -53,12 +92,12 @@ export default function donateBoot(app, done) {
   }
 
   function createStripePlan(plan) {
+    log(`Creating subscription plan: ${plan.product.name}`);
     stripe.plans.create(plan, function(err) {
       if (err) {
-        console.log(err);
-        throw err;
+        log(err);
       }
-      console.log(`${plan.id} created`);
+      log(`Created plan with plan id: ${plan.id}`);
       return;
     });
   }
@@ -66,14 +105,23 @@ export default function donateBoot(app, done) {
   function createStripeDonation(req, res) {
     const { user, body } = req;
 
-    if (!body || !body.amount) {
-      return res.status(400).send({ error: 'Amount Required' });
+    if (!body || !body.amount || !body.duration) {
+      return res.status(400).send({ error: 'Amount and duration Required.' });
     }
 
     const {
       amount,
+      duration,
       token: { email, id }
     } = body;
+
+    if (!validStripeForm(amount, duration, email)) {
+      return res
+        .status(500)
+        .send({ error: 'Invalid donation form values submitted' });
+    }
+
+    const isOneTime = duration === 'onetime' ? true : false;
 
     const fccUser = user
       ? Promise.resolve(user)
@@ -95,46 +143,85 @@ export default function donateBoot(app, done) {
     let donation = {
       email,
       amount,
+      duration,
       provider: 'stripe',
       startDate: new Date(Date.now()).toISOString()
     };
 
+    const createCustomer = user => {
+      donatingUser = user;
+      return stripe.customers.create({
+        email,
+        card: id
+      });
+    };
+
+    const createSubscription = customer => {
+      donation.customerId = customer.id;
+      return stripe.subscriptions.create({
+        customer: customer.id,
+        items: [
+          {
+            plan: `${donationSubscriptionConfig.duration[
+              duration
+            ].toLowerCase()}-donation-${amount}`
+          }
+        ]
+      });
+    };
+
+    const createOneTimeCharge = customer => {
+      donation.customerId = customer.id;
+      return stripe.charges.create({
+        amount: amount,
+        currency: 'usd',
+        customer: customer.id
+      });
+    };
+
+    const createAsyncUserDonation = () => {
+      donatingUser
+        .createDonation(donation)
+        .toPromise()
+        .catch(err => {
+          throw new Error(err);
+        });
+    };
+
     return fccUser
       .then(user => {
-        donatingUser = user;
-        return stripe.customers.create({
-          email,
-          card: id
-        });
+        const { isDonating } = user;
+        if (isDonating) {
+          throw {
+            message: `User already has active donation(s).`,
+            type: 'AlreadyDonatingError'
+          };
+        }
+        return user;
       })
+      .then(createCustomer)
       .then(customer => {
-        donation.customerId = customer.id;
-        return stripe.subscriptions.create({
-          customer: customer.id,
-          items: [
-            {
-              plan: `monthly-donation-${amount}`
-            }
-          ]
-        });
+        return isOneTime
+          ? createOneTimeCharge(customer).then(charge => {
+              donation.subscriptionId = 'one-time-charge-prefix-' + charge.id;
+              return res.send(charge);
+            })
+          : createSubscription(customer).then(subscription => {
+              donation.subscriptionId = subscription.id;
+              return res.send(subscription);
+            });
       })
-      .then(subscription => {
-        donation.subscriptionId = subscription.id;
-        return res.send(subscription);
-      })
-      .then(() => {
-        donatingUser
-          .createDonation(donation)
-          .toPromise()
-          .catch(err => {
-            throw new Error(err);
-          });
-      })
+      .then(createAsyncUserDonation)
       .catch(err => {
-        if (err.type === 'StripeCardError') {
+        if (
+          err.type === 'StripeCardError' ||
+          err.type === 'AlreadyDonatingError'
+        ) {
           return res.status(402).send({ error: err.message });
         }
-        return res.status(500).send({ error: 'Donation Failed' });
+        return res
+          .status(500)
+          .send({ error: 'Donation failed due to a server error.' });
       });
   }
 

@@ -28,6 +28,9 @@
       "required": true,
       "description": "The donation amount in cents"
     },
+    "duration": {
+      "type": "string"
+    },
     "startDate": {
       "type": "DateString",
       "required": true
