@@ -20,6 +20,8 @@ while(i < 5) {
 }
 ```
 
+In the code example above, the <code>while</code> loop will execute 5 times and append the numbers 0 through 4 to <code>ourArray</code>.
+
 Let's try getting a while loop to work by pushing values to an array.
 </section>
 
