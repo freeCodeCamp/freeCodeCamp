@@ -50,7 +50,7 @@ export function* executeChallengeSaga() {
     );
     yield put(updateTests(tests));
 
-    yield fork(logToConsole, consoleProxy);
+    yield fork(takeEveryLog, consoleProxy);
     const proxyLogger = args => consoleProxy.put(args);
 
     const challengeData = yield select(challengeDataSelector);
@@ -59,7 +59,7 @@ export function* executeChallengeSaga() {
     const testRunner = yield call(
       getTestRunner,
       buildData,
-      proxyLogger,
+      { proxyLogger },
       document
     );
     const testResults = yield executeTests(testRunner, tests);
@@ -74,9 +74,19 @@ export function* executeChallengeSaga() {
   }
 }
 
-function* logToConsole(channel) {
+function* takeEveryLog(channel) {
+  // TODO: move all stringifying and escaping into the reducer so there is a
+  // single place responsible for formatting the logs.
   yield takeEvery(channel, function*(args) {
     yield put(updateLogs(escape(args)));
+  });
+}
+
+function* takeEveryConsole(channel) {
+  // TODO: move all stringifying and escaping into the reducer so there is a
+  // single place responsible for formatting the console output.
+  yield takeEvery(channel, function*(args) {
+    yield put(updateConsole(escape(args)));
   });
 }
 
@@ -84,9 +94,8 @@ function* buildChallengeData(challengeData) {
   try {
     return yield call(buildChallenge, challengeData);
   } catch (e) {
-    yield put(disableBuildOnError(e));
-    // eslint-disable-next-line no-throw-literal
-    throw 'Build failed';
+    yield put(disableBuildOnError());
+    throw e;
   }
 }
 
@@ -136,30 +145,40 @@ function* previewChallengeSaga() {
     return;
   }
 
+  const logProxy = yield channel();
   const consoleProxy = yield channel();
+  const proxyLogger = args => logProxy.put(args);
+  const proxyUpdateConsole = args => consoleProxy.put(args);
 
   try {
     yield put(initLogs());
-    yield fork(logToConsole, consoleProxy);
-    const proxyLogger = args => consoleProxy.put(args);
-    const challengeData = yield select(challengeDataSelector);
+    yield fork(takeEveryLog, logProxy);
+    yield fork(takeEveryConsole, consoleProxy);
 
+    const challengeData = yield select(challengeDataSelector);
     const buildData = yield buildChallengeData(challengeData);
     // evaluate the user code in the preview frame or in the worker
     if (challengeHasPreview(challengeData)) {
       const document = yield getContext('document');
-      yield call(updatePreview, buildData, document, proxyLogger);
+      yield call(updatePreview, buildData, document, {
+        proxyLogger,
+        proxyUpdateConsole
+      });
     } else if (isJavaScriptChallenge(challengeData)) {
-      const runUserCode = getTestRunner(buildData, proxyLogger);
+      const runUserCode = getTestRunner(buildData, { proxyLogger });
       // without a testString the testRunner just evaluates the user's code
       yield call(runUserCode, null, 5000);
     }
+  } catch (err) {
+    console.log(err);
+    yield put(updateLogs(escape(err)));
+  } finally {
+    // consoleProxy is left open to record any errors triggered by user
+    // input.
+    logProxy.close();
+
     // To avoid seeing the default console, initialise and output in one call.
     yield all([put(initConsole('')), put(logsToConsole('// console output'))]);
-  } catch (err) {
-    console.error(err);
-  } finally {
-    consoleProxy.close();
   }
 }
 
