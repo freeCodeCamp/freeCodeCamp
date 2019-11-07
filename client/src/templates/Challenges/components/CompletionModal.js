@@ -87,14 +87,14 @@ export class CompletionModal extends Component {
     if (Object.keys(files).length) {
       const filesForDownload = Object.keys(files)
         .map(key => files[key])
-        .reduce(
-          (allFiles, { path, contents }) => ({
-            ...allFiles,
-            [path]: contents
-          }),
-          {}
-        );
-      const blob = new Blob([JSON.stringify(filesForDownload, null, 2)], {
+        .reduce((allFiles, { path, contents }) => {
+          const beforeText = `** start of ${path} **\n\n`;
+          const afterText = `\n\n** end of ${path} **\n\n`;
+          allFiles +=
+            files.length > 1 ? beforeText + contents + afterText : contents;
+          return allFiles;
+        }, '');
+      const blob = new Blob([filesForDownload], {
         type: 'text/json'
       });
       newURL = URL.createObjectURL(blob);
@@ -170,7 +170,7 @@ export class CompletionModal extends Component {
               bsSize='lg'
               bsStyle='primary'
               className='btn-invert'
-              download={`${dashedName}.json`}
+              download={`${dashedName}.txt`}
               href={this.state.downloadURL}
             >
               Download my solution
