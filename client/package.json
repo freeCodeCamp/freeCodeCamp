@@ -22,8 +22,6 @@
     "chai": "^4.2.0",
     "date-fns": "^1.30.1",
     "entities": "^1.1.2",
-    "enzyme": "^3.10.0",
-    "enzyme-adapter-react-16": "^1.15.1",
     "final-form": "^4.18.5",
     "gatsby": "^2.16.4",
     "gatsby-cli": "^2.8.2",
@@ -95,7 +93,7 @@
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^4.1.2",
-    "@testing-library/react": "^9.3.0",
+    "@testing-library/react": "^9.3.2",
     "autoprefixer": "^9.6.5",
     "babel-plugin-transform-imports": "^1.5.1",
     "chokidar": "^2.1.5",
