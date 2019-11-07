@@ -1,6 +1,6 @@
 ---
-id: 5dc17dc8f86c76b9248c6eb5
-title: Part 04
+id: 5dc2385ff86c76b9248c6eb7
+title: Part 06
 challengeType: 0
 isBeta: true
 ---
@@ -8,9 +8,9 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Commenting allows you to leave messages without affecting the output displayed to the end user. It also allows you to make code inactive. A comment in HTML starts with `<!--`, contains any number of lines of text, and ends with `-->`. 
+HTML5 has tags that identify different content areas. These tags make your HTML easier to read, and also help with Search Engine Optimization (SEO) and accessibility. 
 
-Add a comment above the `p` element with the text: "TODO: Add link to cat photos". For example the comment `<!-- TODO: Remove h1 -->` contains the text "TODO: Remove h1".
+Identify the main section of this page by adding a `<main>` opening tag after the h2 element. Add a `</main>` closing tag after the `p` element.
 
 </section>
 
@@ -26,7 +26,7 @@ Add a comment above the `p` element with the text: "TODO: Add link to cat photos
 tests:
   - text: See description above for instructions.
     testString: |
-      assert( code.replace(/\s/g, '').includes('<!--TODO:Addlinktocatphotos-->') );
+      assert( code.replace(/\s/g, '').includes('<main><!--TODO:Addlinktocatphotos--><p>Clickheretoviewmorecatphotos.</p></main>') );
 
 ```
 
@@ -41,8 +41,8 @@ tests:
 <!DOCTYPE html>
 <html>
   <body>
-    <h1>Hello World</h1>
     <h2>CatPhotoApp</h2>
+    <!-- TODO: Add link to cat photos -->
     <p>Click here to view more cat photos.</p>
   </body>
 </html>
@@ -58,10 +58,11 @@ tests:
 <!DOCTYPE html>
 <html>
   <body>
-    <h1>Hello World</h1>
     <h2>CatPhotoApp</h2>
+    <main>
     <!-- TODO: Add link to cat photos -->
     <p>Click here to view more cat photos.</p>
+    </main>
   </body>
 </html>
 ```

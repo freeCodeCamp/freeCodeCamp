@@ -1,7 +1,7 @@
 {
   "name": "Basic HTML Cat Photo App",
   "dashedName": "basic-html-cat-photo-app",
-  "order": 0,
+  "order": 9,
   "time": "5 hours",
   "template": "",
   "required": [],
@@ -11,19 +11,99 @@
   "challengeOrder": [
     [
       "5dc174fcf86c76b9248c6eb2",
-      "Basic HTML Cat Photo App Part 01"
+      "Part 01"
     ],
     [
       "5dc1798ff86c76b9248c6eb3",
-      "Basic HTML Cat Photo App Part 02"
+      "Part 02"
     ],
     [
       "5dc17d3bf86c76b9248c6eb4",
-      "Basic HTML Cat Photo App Part 03"
+      "Part 03"
     ],
     [
       "5dc17dc8f86c76b9248c6eb5",
-      "Basic HTML Cat Photo App Part 04"
+      "Part 04"
+    ],
+    [
+      "5dc23742f86c76b9248c6eb6",
+      "Part 05"
+    ],
+    [
+      "5dc2385ff86c76b9248c6eb7",
+      "Part 06"
+    ],
+    [
+      "5dc23991f86c76b9248c6eb8",
+      "Part 07"
+    ],
+    [
+      "5dc23ecef86c76b9248c6eb9",
+      "Part 08"
+    ],
+    [
+      "5dc23f9bf86c76b9248c6eba",
+      "Part 09"
+    ],
+    [
+      "5dc24073f86c76b9248c6ebb",
+      "Part 10"
+    ],
+    [
+      "5dc24165f86c76b9248c6ebc",
+      "Part 11"
+    ],
+    [
+      "5dc24614f86c76b9248c6ebd",
+      "Part 12"
+    ],
+    [
+      "5ddbd81294d8ddc1510a8e56",
+      "Part 13"
+    ],
+    [
+      "5dfa22d1b521be39a3de7be0",
+      "Part 14"
+    ],
+    [
+      "5dfa2407b521be39a3de7be1",
+      "Part 15"
+    ],
+    [
+      "5dfa2527b521be39a3de7be2",
+      "Part 16"
+    ],
+    [
+      "5dfa30b9eacea3f48c6300ad",
+      "Part 17"
+    ],
+    [
+      "5dfa3589eacea3f48c6300ae",
+      "Part 18"
+    ],
+    [
+      "5dfa371beacea3f48c6300af",
+      "Part 19"
+    ],
+    [
+      "5dfa37b9eacea3f48c6300b0",
+      "Part 20"
+    ],
+    [
+      "5dfb5ecbeacea3f48c6300b1",
+      "Part 21"
+    ],
+    [
+      "5dfb6250eacea3f48c6300b2",
+      "Part 22"
+    ],
+    [
+      "5dfb655eeacea3f48c6300b3",
+      "Part 23"
+    ],
+    [
+      "5dfb6a35eacea3f48c6300b4",
+      "Part 24"
     ]
   ],
   "helpRoom": "Help",

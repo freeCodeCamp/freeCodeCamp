@@ -1,6 +1,6 @@
 ---
-id: 5dc17d3bf86c76b9248c6eb4
-title: Part 03
+id: 5dc23ecef86c76b9248c6eb9
+title: Part 08
 challengeType: 0
 isBeta: true
 ---
@@ -8,9 +8,9 @@ isBeta: true
 ## Description
 <section id='description'>
 
-`p` elements are used to create paragraph text on websites. 
+This page will have a few different section. 
 
-Create a `p` element below your `h2` element, and give it the text "Click here to view more cat photos.".
+Indicate the first section by adding an `h3` element with the text "Cat Photos" above the comment.
 
 </section>
 
@@ -25,7 +25,8 @@ Create a `p` element below your `h2` element, and give it the text "Click here t
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert( document.querySelector('p').innerText === 'Click here to view more cat photos.' );
+    testString: |
+      assert( code.replace(/\s/g, '').includes('<main><h3>CatPhotos</h3><!--TODO:Addlinktocatphotos-->') );
 
 ```
 
@@ -40,8 +41,11 @@ tests:
 <!DOCTYPE html>
 <html>
   <body>
-    <h1>Hello World</h1>
     <h2>CatPhotoApp</h2>
+    <main>
+      <!-- TODO: Add link to cat photos -->
+      <p>Click here to view more cat photos.</p>
+    </main>
   </body>
 </html>
 ```
@@ -56,9 +60,12 @@ tests:
 <!DOCTYPE html>
 <html>
   <body>
-    <h1>Hello World</h1>
     <h2>CatPhotoApp</h2>
-    <p>Click here to view more cat photos.</p>
+    <main>
+      <h3>Cat Photos</h3>
+      <!-- TODO: Add link to cat photos -->
+      <p>Click here to view more cat photos.</p>
+    </main>
   </body>
 </html>
 ```

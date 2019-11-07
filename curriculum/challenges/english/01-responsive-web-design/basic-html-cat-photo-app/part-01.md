@@ -10,7 +10,7 @@ isBeta: true
 
 HTML elements have opening tags like `<h1>` and closing tags like `</h1>`.
 
-Find the h1 element and change the text between its opening and closing tags to say "Hello World".
+Find the `h1` element and change the text between its opening and closing tags to say "Hello World".
 
 </section>
 
@@ -25,7 +25,7 @@ Find the h1 element and change the text between its opening and closing tags to 
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(document.querySelector('h1').innerText === 'Hello World');
+    testString: assert( document.querySelector('h1').innerText === 'Hello World' );
 
 ```
 
