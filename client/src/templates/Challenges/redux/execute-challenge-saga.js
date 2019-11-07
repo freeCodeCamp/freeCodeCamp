@@ -1,5 +1,4 @@
 import {
-  all,
   delay,
   put,
   select,
@@ -146,24 +145,19 @@ function* previewChallengeSaga() {
   }
 
   const logProxy = yield channel();
-  const consoleProxy = yield channel();
   const proxyLogger = args => logProxy.put(args);
-  const proxyUpdateConsole = args => consoleProxy.put(args);
 
   try {
     yield put(initLogs());
-    yield fork(takeEveryLog, logProxy);
-    yield fork(takeEveryConsole, consoleProxy);
+    yield put(initConsole(''));
+    yield fork(takeEveryConsole, logProxy);
 
     const challengeData = yield select(challengeDataSelector);
     const buildData = yield buildChallengeData(challengeData);
     // evaluate the user code in the preview frame or in the worker
     if (challengeHasPreview(challengeData)) {
       const document = yield getContext('document');
-      yield call(updatePreview, buildData, document, {
-        proxyLogger,
-        proxyUpdateConsole
-      });
+      yield call(updatePreview, buildData, document, proxyLogger);
     } else if (isJavaScriptChallenge(challengeData)) {
       const runUserCode = getTestRunner(buildData, { proxyLogger });
       // without a testString the testRunner just evaluates the user's code
@@ -171,14 +165,7 @@ function* previewChallengeSaga() {
     }
   } catch (err) {
     console.log(err);
-    yield put(updateLogs(escape(err)));
-  } finally {
-    // consoleProxy is left open to record any errors triggered by user
-    // input.
-    logProxy.close();
-
-    // To avoid seeing the default console, initialise and output in one call.
-    yield all([put(initConsole('')), put(logsToConsole('// console output'))]);
+    yield put(updateConsole(escape(err)));
   }
 }
 
