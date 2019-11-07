@@ -11,17 +11,14 @@ const testId = 'fcc-test-frame';
 // append to the current challenge url
 // this also allows in-page anchors to work properly
 // rather than load another instance of the learn
-//
-// if an error occurs during initialization
-// the __err prop will be set
-// This is then picked up in client/frame-runner.js during
-// runTestsInTestFrame below
+
+// window.onerror is added here to catch any errors thrown during the building
+// of the frame.
 const createHeader = (id = mainId) => `
   <base href='' />
   <script>
     window.__frameId = '${id}';
-    window.onerror = function(msg, url, ln, col, err) {
-      window.__err = err;
+    window.onerror = function(msg) {
       console.log(msg);
       return true;
     };
@@ -91,8 +88,7 @@ const buildProxyConsole = proxyLogger => ctx => {
 };
 
 const initTestFrame = frameReady => ctx => {
-  const contentLoaded = new Promise(resolve => waitForFrame(resolve)(ctx));
-  contentLoaded.then(async () => {
+  waitForFrame(ctx).then(async () => {
     const { sources, loadEnzyme } = ctx;
     // default for classic challenges
     // should not be used for modern
@@ -105,13 +101,31 @@ const initTestFrame = frameReady => ctx => {
   return ctx;
 };
 
-const waitForFrame = frameReady => ctx => {
-  if (ctx.document.readyState === 'loading') {
-    ctx.document.addEventListener('DOMContentLoaded', frameReady);
-  } else {
+const initMainFrame = (frameReady, proxyUpdateConsole) => ctx => {
+  waitForFrame(ctx).then(() => {
+    // Overwriting the onerror added by createHeader to catch any errors thrown
+    // after the frame is ready. It has to be overwritten, as proxyUpdateConsole
+    // cannot be added as part of createHeader.
+    ctx.window.onerror = function(msg) {
+      console.log(msg);
+      if (proxyUpdateConsole) {
+        proxyUpdateConsole(msg);
+      }
+      return true;
+    };
     frameReady();
-  }
+  });
   return ctx;
+};
+
+const waitForFrame = ctx => {
+  return new Promise(resolve => {
+    if (ctx.document.readyState === 'loading') {
+      ctx.document.addEventListener('DOMContentLoaded', resolve);
+    } else {
+      resolve();
+    }
+  });
 };
 
 function writeToFrame(content, frame) {
@@ -126,17 +140,23 @@ const writeContentToFrame = ctx => {
   return ctx;
 };
 
-export const createMainFramer = (document, frameReady, proxyConsole) =>
-  createFramer(document, frameReady, proxyConsole, mainId, waitForFrame);
+export const createMainFramer = (document, frameReady, proxy) =>
+  createFramer(document, frameReady, proxy, mainId, initMainFrame);
 
-export const createTestFramer = (document, frameReady, proxyConsole) =>
-  createFramer(document, frameReady, proxyConsole, testId, initTestFrame);
+export const createTestFramer = (document, frameReady, proxy) =>
+  createFramer(document, frameReady, proxy, testId, initTestFrame);
 
-const createFramer = (document, frameReady, proxyConsole, id, init) =>
+const createFramer = (
+  document,
+  frameReady,
+  { proxyLogger, proxyUpdateConsole },
+  id,
+  init
+) =>
   flow(
     createFrame(document, id),
     mountFrame(document),
+    buildProxyConsole(proxyLogger),
     writeContentToFrame,
-    buildProxyConsole(proxyConsole),
-    init(frameReady)
+    init(frameReady, proxyUpdateConsole)
   );
