@@ -59,7 +59,6 @@ function tryTransform(wrap = identity) {
   return function transformWrappedPoly(source) {
     const result = attempt(wrap, source);
     if (isError(result)) {
-      console.error(result);
       // note(Bouncey): Error thrown here to collapse the build pipeline
       // At the minute, it will not bubble up
       // We collapse the pipeline so the app doesn't fall over trying

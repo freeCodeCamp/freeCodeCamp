@@ -330,9 +330,8 @@ export const reducer = handleActions(
       isBuildEnabled: true,
       isCodeLocked: false
     }),
-    [types.disableBuildOnError]: (state, { payload }) => ({
+    [types.disableBuildOnError]: state => ({
       ...state,
-      consoleOut: state.consoleOut + ' \n' + payload,
       isBuildEnabled: false
     }),
 

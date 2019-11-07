@@ -85,7 +85,7 @@ const testRunners = {
   [challengeTypes.html]: getDOMTestRunner,
   [challengeTypes.backend]: getDOMTestRunner
 };
-export function getTestRunner(buildData, proxyLogger, document) {
+export function getTestRunner(buildData, { proxyLogger }, document) {
   const { challengeType } = buildData;
   const testRunner = testRunners[challengeType];
   if (testRunner) {
