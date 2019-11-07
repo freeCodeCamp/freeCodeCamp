@@ -101,15 +101,15 @@ const initTestFrame = frameReady => ctx => {
   return ctx;
 };
 
-const initMainFrame = (frameReady, proxyUpdateConsole) => ctx => {
+const initMainFrame = (frameReady, proxyLogger) => ctx => {
   waitForFrame(ctx).then(() => {
     // Overwriting the onerror added by createHeader to catch any errors thrown
     // after the frame is ready. It has to be overwritten, as proxyUpdateConsole
     // cannot be added as part of createHeader.
     ctx.window.onerror = function(msg) {
       console.log(msg);
-      if (proxyUpdateConsole) {
-        proxyUpdateConsole(msg);
+      if (proxyLogger) {
+        proxyLogger(msg);
       }
       return true;
     };
@@ -140,23 +140,17 @@ const writeContentToFrame = ctx => {
   return ctx;
 };
 
-export const createMainFramer = (document, frameReady, proxy) =>
-  createFramer(document, frameReady, proxy, mainId, initMainFrame);
+export const createMainFramer = (document, frameReady, proxyLogger) =>
+  createFramer(document, frameReady, proxyLogger, mainId, initMainFrame);
 
-export const createTestFramer = (document, frameReady, proxy) =>
-  createFramer(document, frameReady, proxy, testId, initTestFrame);
+export const createTestFramer = (document, frameReady, proxyLogger) =>
+  createFramer(document, frameReady, proxyLogger, testId, initTestFrame);
 
-const createFramer = (
-  document,
-  frameReady,
-  { proxyLogger, proxyUpdateConsole },
-  id,
-  init
-) =>
+const createFramer = (document, frameReady, proxyLogger, id, init) =>
   flow(
     createFrame(document, id),
     mountFrame(document),
     buildProxyConsole(proxyLogger),
     writeContentToFrame,
-    init(frameReady, proxyUpdateConsole)
+    init(frameReady, proxyLogger)
   );
