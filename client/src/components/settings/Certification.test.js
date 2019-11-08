@@ -1,49 +1,57 @@
 /* global expect */
+
+import '@testing-library/jest-dom/extend-expect';
 import React from 'react';
-import Enzyme from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { render } from '@testing-library/react';
 
 import { CertificationSettings } from './Certification';
-
-Enzyme.configure({ adapter: new Adapter() });
 
 describe('<certification />', () => {
   // shallow rendering does not render children component
   // form buttons are not included in shallow render
   it('Should render show cert button for calimed legacy cert', () => {
-    const wrapper = Enzyme.shallow(
+    const { container } = render(
       <CertificationSettings {...defaultTestProps} />
     );
 
     expect(
-      wrapper.find('#button-legacy-data-visualization').props().children
-    ).toEqual('Show Certification');
+      container.querySelector('#button-legacy-data-visualization')
+    ).toHaveTextContent('Show Certification');
   });
 
   it('Should link show cert button to the calimed legacy cert', () => {
-    const wrapper = Enzyme.shallow(
+    const { container } = render(
       <CertificationSettings {...defaultTestProps} />
     );
 
     expect(
-      wrapper.find('#button-legacy-data-visualization').props().href
-    ).toEqual('/certification/developementuser/legacy-data-visualization');
+      container.querySelector('#button-legacy-data-visualization')
+    ).toHaveAttribute(
+      'href',
+      '/certification/developementuser/legacy-data-visualization'
+    );
   });
 
   // full forms with unclaimed certs should should not shallow render button
   it('Should not render show cert button for unclaimed full form', () => {
-    const wrapper = Enzyme.shallow(
+    const { container } = render(
       <CertificationSettings {...defaultTestProps} />
     );
-    expect(wrapper.exists('#button-legacy-back-end')).toEqual(false);
+
+    expect(
+      container.querySelector('#button-legacy-back-end')
+    ).not.toBeInTheDocument();
   });
 
   // empty forms with unclaimed certs should should not shallow render button
   it('Should not render show cert button for empty form', () => {
-    const wrapper = Enzyme.shallow(
+    const { container } = render(
       <CertificationSettings {...defaultTestProps} />
     );
-    expect(wrapper.exists('#button-legacy-front-end')).toEqual(false);
+
+    expect(
+      container.querySelector('#button-legacy-front-end')
+    ).not.toBeInTheDocument();
   });
 });
 

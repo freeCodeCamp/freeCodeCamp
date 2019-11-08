@@ -1,9 +1,10 @@
 /* global expect jest */
 
+import '@testing-library/jest-dom/extend-expect';
 import React from 'react';
-import ShallowRenderer from 'react-test-renderer/shallow';
-import Enzyme, { shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { render } from '@testing-library/react';
+import { Provider } from 'react-redux';
+import { createStore } from '../../redux/createStore';
 
 import { Map } from './';
 import mockChallengeNodes from '../../__mocks__/challenge-nodes';
@@ -11,8 +12,9 @@ import mockIntroNodes from '../../__mocks__/intro-nodes';
 
 import { dasherize } from '../../../../utils/slugs';
 
-Enzyme.configure({ adapter: new Adapter() });
-const renderer = new ShallowRenderer();
+function renderWithRedux(ui) {
+  return render(<Provider store={createStore()}>{ui}</Provider>);
+}
 
 const baseProps = {
   introNodes: mockIntroNodes,
@@ -27,7 +29,7 @@ const baseProps = {
 window.scrollTo = jest.fn();
 
 test('<Map /> snapshot', () => {
-  const componentToRender = (
+  const { container } = renderWithRedux(
     <Map
       introNodes={mockIntroNodes}
       nodes={mockChallengeNodes}
@@ -36,8 +38,8 @@ test('<Map /> snapshot', () => {
       toggleSuperBlock={() => {}}
     />
   );
-  const component = renderer.render(componentToRender);
-  expect(component).toMatchSnapshot('Map');
+
+  expect(container).toMatchSnapshot('Map');
 });
 
 describe('<Map/>', () => {
@@ -61,8 +63,9 @@ describe('<Map/>', () => {
         toggleBlock: blockSpy,
         toggleSuperBlock: superSpy
       };
-      const mapToRender = <Map {...props} />;
-      shallow(mapToRender);
+
+      renderWithRedux(<Map {...props} />);
+
       expect(blockSpy).toHaveBeenCalledTimes(1);
       expect(superSpy).toHaveBeenCalledTimes(1);
       expect(initializeSpy).toHaveBeenCalledTimes(1);
@@ -80,8 +83,7 @@ describe('<Map/>', () => {
         currentChallengeId
       };
 
-      const mapToRender = <Map {...props} />;
-      shallow(mapToRender);
+      renderWithRedux(<Map {...props} />);
 
       expect(blockSpy).toHaveBeenCalledTimes(1);
       // the block here should always be the first block of the superblock
@@ -102,8 +104,7 @@ describe('<Map/>', () => {
         currentChallengeId
       };
 
-      const mapToRender = <Map {...props} />;
-      shallow(mapToRender);
+      renderWithRedux(<Map {...props} />);
 
       expect(blockSpy).toHaveBeenCalledTimes(1);
       expect(blockSpy).toHaveBeenCalledWith(idNode.block);
@@ -120,8 +121,9 @@ describe('<Map/>', () => {
         toggleBlock: blockSpy,
         toggleSuperBlock: superSpy
       };
-      const mapToRender = <Map {...props} />;
-      shallow(mapToRender);
+
+      renderWithRedux(<Map {...props} />);
+
       expect(blockSpy).toHaveBeenCalledTimes(1);
       expect(blockSpy).toHaveBeenCalledWith(defaultNode.block);
 
@@ -135,8 +137,9 @@ describe('<Map/>', () => {
         ...baseProps,
         resetExpansion: expansionSpy
       };
-      const mapToRender = <Map {...props} />;
-      shallow(mapToRender);
+
+      renderWithRedux(<Map {...props} />);
+
       expect(expansionSpy).toHaveBeenCalledTimes(1);
     });
   });
