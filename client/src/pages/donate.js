@@ -74,16 +74,19 @@ export class DonatePage extends Component {
         <Grid>
           <Row>
             <Col sm={10} smOffset={1} xs={12}>
+              <Spacer />
               <h2 className='text-center'>Become a Supporter</h2>
               <Spacer />
             </Col>
           </Row>
           <Row>
-            <Col md={6}>
+            <Col sm={8} smOffset={2} xs={12}>
               <DonateText />
+              <Spacer />
             </Col>
-            <Col md={6}>
+            <Col sm={6} smOffset={3} xs={12}>
               <DonateForm stripe={stripe} />
+              <Spacer />
             </Col>
           </Row>
         </Grid>
