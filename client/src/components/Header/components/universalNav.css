@@ -59,8 +59,8 @@
 #universal-nav-logo svg {
   display: block;
   width: auto;
-  height: 25px;
-  margin-top: 7px;
+  height: 24px;
+  margin: 7px 0px;
 }
 
 .nav-list {
