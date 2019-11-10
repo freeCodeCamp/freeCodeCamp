@@ -76,7 +76,7 @@ Obecnie tylko zespół programistów może przesuwać się do oddziałów produk
    ```
    npm run clean-and-develop (Czyste i rozwojowe)
    ```
-5. Przesunięcie zmian z fazy master na fazę produkcji
+5. Przesuń zmianę z fazy master na fazę produkcji
 
    ```
    git checkout production-stageout git
