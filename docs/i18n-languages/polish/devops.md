@@ -8,7 +8,7 @@ Staraliśmy się, aby język w tym przewodniku był jak najprostszy dla wszystki
 
 Nieprzerwanie budujemy i wdrażamy [`master`](https://github.com/freeCodeCamp/freeCodeCamp/tree/master), nasz domyślny dział rozwoju na osobnym zestawie serwerów**.
 
-Zazwyczaj gałąź `master` jest łączona w gałęzią [`produkcyjny-stage`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) raz dziennie i wydawana w izolowanej infrastrukturze. Nazywamy to naszą aplikacją "staging/beta".
+Zazwyczaj gałąź `master` jest łączona z gałęzią [`produkcyjny-stage`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) raz dziennie i wydawana w izolowanej infrastrukturze. Nazywamy to naszą aplikacją "staging/beta".
 
 Jest ona identyczna z naszym środowiskiem produkcyjnym w `freeCodeCamp.org`, innym niż wykorzystującym osobny zestaw baz danych, serwerów, web-proxy, itp. Ta izolacja pozwala nam testować ciągły rozwój i funkcje w scenariuszu "production like", bez wpływu na zwykłych użytkowników platform freeCodeCamp.org.
 
