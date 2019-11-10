@@ -28,7 +28,7 @@ Nazwa domeny będzie inna niż **`freeCodeCamp.org`**. Obecnie ta publiczna wers
 
 <h3 align="center"><a href='https://www.freecodecamp.dev' _target='blank'><code>www.freecodecamp.dev</code></a></h4>>
 
-Zespół dev-team łączy zmiany z gałęzi `master` do `production-stage`, gdy tylko je wypuszczą. Zazwyczaj górny commit powinien być tym, co widzisz na żywo na stronie. Możesz określić dokładną wersję wdrożonej wersji, odwiedzając dzienniki budowy i wdrażania dostępne poniżej w sekcji status.
+Zespół dev-team łączy zmiany z gałęzi `master` do `production-stage` gdy tylko je wypuszczą. Zazwyczaj górny commit powinien być tym, co widzisz na żywo na stronie. Możesz określić dokładną wersję wdrożonej wersji odwiedzając dzienniki budowy i wdrażania dostępne poniżej w sekcji status.
 
 ## Identyfikacja aktualnej wersji platformy
 
