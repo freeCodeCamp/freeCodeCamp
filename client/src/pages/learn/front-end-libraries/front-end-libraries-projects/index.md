@@ -13,4 +13,4 @@ In this section you will complete the following projects with Bootstrap, jQuery,
 * A JavaScript Calculator
 * A Pomodoro Clock
 
-Have fun and remember to use the [Read-Search-Ask] (https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514) method if you get stuck.
+Have fun and remember to use the [Read-Search-Ask](https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514) method if you get stuck.
