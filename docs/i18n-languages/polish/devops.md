@@ -2,7 +2,7 @@
 
 Dziękujemy za zainteresowanie się tym, jak robimy DevOps dla platformy na freeCodeCamp.org.
 
-Staraliśmy się, aby język w tym przewodniku był jak najprostszy dla wszystkich. Jednak tutaj możesz znaleźć  techniczny żargon. Nie jest to wyczerpujący przewodnik po wszystkich operacjach i ma być wykorzystywany tylko jako punkt odniesienia dla zrozumienia systemów.
+Staraliśmy się, aby język w tym przewodniku był jak najprostszy dla wszystkich. Znaleźć możesz tutaj jednak techniczny żargon. Nie jest to wyczerpujący przewodnik po wszystkich operacjach i ma być wykorzystywany tylko jako punkt odniesienia dla zrozumienia systemów.
 
 ## Jak budujemy i wdrażamy bazę danych?
 
