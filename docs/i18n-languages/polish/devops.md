@@ -20,7 +20,7 @@ Zapraszamy do przetestowania tych wydań w trybie **"public beta testing "** i u
 
 Twój wkład poprzez opinie i raporty o wydaniach pomoże nam uczynić platformy produkcyjne na `freeCodeCamp.org` bardziej **odpornymi**, **zgodnymi** i **stabilnymi** dla każdego.
 
-Dziękujemy Ci za zgłaszanie błędów, które napotykasz i pomagamy w ulepszaniu freeCodeCamp.org. Rządzisz!
+Dziękujemy Ci za zgłaszanie błędów, które napotykasz, pomagasz w ten sposób w ulepszaniu freeCodeCamp.org. Rządzisz!
 
 ## Identyfikacja nadchodzącej wersji platformy
 
