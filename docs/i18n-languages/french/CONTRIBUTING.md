@@ -49,7 +49,7 @@ Vous pouvez trouver un [exemple d'article sur les éléments d'ancrage HTML ici]
 
 Nous vous invitons à nous aider à rédiger ces articles. Il n'est pas nécessaire d'être un expert en la matière pour écrire à ce sujet - ce guide est entièrement libre, donc même si vous faites une erreur, un autre contributeur la corrigera éventuellement.
 
-Pour vous aider, trouvez un article sur notre[Guide](https://guide.freecodecamp.org), écrivez l'article, puis ouvrez une demande de retrait pour remplacer le talon par votre article. Une[demande de retrait](https://help.github.com/articles/about-pull-requests/) est la façon dont vous suggérerez des changements. Il permet aux autres de connaître, d'examiner et, éventuellement, d'adopter vos changements.
+Pour vous aider, trouvez un article sur notre [Guide](https://guide.freecodecamp.org), écrivez l'article, puis ouvrez une demande de retrait pour remplacer le talon par votre article. Une [demande de retrait](https://help.github.com/articles/about-pull-requests/) est la façon dont vous suggérerez des changements. Il permet aux autres de connaître, d'examiner et, éventuellement, d'adopter vos changements.
 
 Si vous ne trouvez pas d'ébauche sur le sujet sur lequel vous aimeriez écrire, vous pouvez ouvrir un PR qui crée l'ébauche et inclut votre article provisoire.
 
@@ -90,9 +90,9 @@ Pour y contribuer, il faut une certaine compréhension des APIs, de la syntaxe E
 
 Essentiellement, nous nous attendons à une connaissance de base de certaines des technologies, outils et bibliothèques susmentionnés. Cela dit, il n'est pas nécessaire d'être un expert en la matière pour contribuer.
 
-N'hésitez pas à nous poser des questions sur les sujets connexes et nous serons heureux d'y répondre. En cas de doute, vous pouvez contacter Mrugesh Mohapatra[`@raisedadead`](https://github.com/raisedadead) ou Stuart Taylor[`@bouncey`](https://github.com/bouncey) de notre équipe de développement de plateforme pour vous aider.
+N'hésitez pas à nous poser des questions sur les sujets connexes et nous serons heureux d'y répondre. En cas de doute, vous pouvez contacter Mrugesh Mohapatra [`@raisedadead`](https://github.com/raisedadead) ou Stuart Taylor [`@bouncey`](https://github.com/bouncey) de notre équipe de développement de plateforme pour vous aider.
 
-Si vous voulez nous aider à améliorer notre base de code, voici[comment configurer freeCodeCamp localement](/docs/how-to-setup-freecodecamp-locally.md).
+Si vous voulez nous aider à améliorer notre base de code, voici [comment configurer freeCodeCamp localement](/docs/how-to-setup-freecodecamp-locally.md).
 
 ## Foire aux questions
 
@@ -125,7 +125,7 @@ Lisez notre guide [Comment contribuer à l'Open Source](https://github.com/freeC
 
 Nos modérateurs de communauté [triage](https://en.wikipedia.org/wiki/Software_bug#Bug#Bug_management) traitent les problèmes et les demandes de retrait en fonction de leur priorité, de leur gravité et d'autres facteurs. Vous pouvez [trouver un glossaire complet de leur signification ici](https://github.com/freecodecamp/freecodecamp/labels).
 
-Vous devriez passer en revue les ticket de **`Help Wanted`** ou **`first timers welcome`** pour avoir un aperçu rapide de ce qui est à votre disposition pour travailler dessus. Ils sont à votre disposition et vous n'avez pas besoin de demander la permission avant d'y travailler.
+Vous devriez passer en revue les tickets de **`Help Wanted`** ou **`first timers welcome`** pour avoir un aperçu rapide de ce qui est à votre disposition pour travailler dessus. Ils sont à votre disposition et vous n'avez pas besoin de demander la permission avant d'y travailler.
 
 Si ces questions manquent de clarté sur ce qui doit être fait, n'hésitez pas à poser des questions dans les commentaires.
 
