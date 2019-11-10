@@ -23,14 +23,14 @@ Puedes optar por contribuir a cualquier área de tu interés:
 
 2. Ayuda a los campistas en nuestro [foro público](https://www.freecodecamp.org/forum/):
 
-    - ❓ [Aportando una retroalimentación](https://www.freecodecamp.org/forum/?max_posts=1).
-    - 💬 [Aportando comentarios](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1) a sus proyectos.
+    - ❓ [Respondiendo a sus preguntas](https://www.freecodecamp.org/forum/?max_posts=1).
+    - 💬 [Aportando comentarios a sus proyectos](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1).
 
 3. Ayúdanos a agregar subtítulos en nuestro [canal de YouTube](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ/videos).
 
 ## Contribuye a esta base de código abierto
 
-Tenemos una gran base de código abierto con miles de [Desafíos de Codificación](https://www.freecodecamp.org/learn) y [Guías](https://www.freecodecamp.org/guide).
+Tenemos una gran base de código abierto con miles de [Desafíos de Codificación](https://www.freecodecamp.org/learn) y otras fuentes de codigo para fortalecer nuestra plataforma de aprendizaje.
 
 Puedes ayudarnos a:
 

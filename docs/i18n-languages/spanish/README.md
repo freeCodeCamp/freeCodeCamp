@@ -6,18 +6,19 @@
 
 ## ¡Bienvenido al plan de estudios y repositorio público de freeCodeCamp.org!
 
-[freeCodeCamp.org](https://www.freecodecamp.org) es una comunidad amigable donde puedes aprender a programar gratis. Es administrado por una organización sin fines de lucro respaldada por donantes ([donor-supported 501(c)(3) nonprofit](https://donate.freecodecamp.org)) y cuyo objetivo es ayudar a millones de adultos en la transición laboral a campos vinculados con la tecnología. Nuestra comunidad ya ha ayudado a más de 10,000 de personas a obtener su primer trabajo como desarrolladores.
+[freeCodeCamp.org](https://www.freecodecamp.org) es una comunidad amigable donde puedes aprender a programar gratis. Esta es administrada por una organización sin fines de lucro respaldada por donantes ([donor-supported 501(c)(3) nonprofit](https://donate.freecodecamp.org)) y cuyo objetivo es ayudar a millones de adultos en la transición laboral a campos vinculados con la tecnología. Nuestra comunidad ya ha ayudado a más de 10,000 personas a obtener su primer trabajo como desarrolladores.
 
 Nuestro plan de estudios de desarrollo web full-stack es completamente gratuito y cada uno puede hacerlo a su propio ritmo. Tenemos miles de desafíos inteactivos de programación para ayudarte a expandir tus habilidades.
 
-## Índice
+## Tabla de Contenidos
 
-- [Certificaciones](#certificaciones)
-- [La plataforma de aprendizaje](#la-plataforma-de-aprendizaje)
-- [Encontraste un bug](#encontraste-un-bug)
-- [Encontraste un problema de seguridad](#encontraste-un-problema-de-seguridad)
-- [Contribuciones](#contribuciones)
-- [Licencia](#licencia)
+* [Certificaciones](#certificaciones)
+* [La plataforma de aprendizaje](#la-plataforma-de-aprendizaje)
+* [Informar de Bugs y problemas](#Informar-fallos-y-problemas)
+* [Encontraste un problema de seguridad](#Informar-problemas-de-seguridad)
+* [Contribuciones](#contribuciones)
+* [Plataforma, Creación y Estado de Desarrollo](#plataforma-creación-y-estado-de-desarrollo)
+* [Licencia](#licencia)
 
 ### Certificaciones
 
@@ -29,7 +30,7 @@ Puedes hacer un pull de estos test desde [freeCodeCamp's CDN](https://cdn.freeco
 
 Una vez que hayas conseguido una certificación, siempre la tendrás. Siempre tendrás permitido agregar el link a ella desde tu LinkedIn o tu CV. Y cuando tus futuros empleadores o clientes hagan click en ese link, verán tu certificación verificada.
 
-La única excepción a esto es en caso en que descubramos una violación a nuestras [Políticas de Honestidad Académica](https://www.freecodecamp.org/academic-honesty). Cuando atrapamos a las personas sin ambigüedad plagiando (presentando el código o los proyectos de otras personas como si fueran suyos sin citación), hacemos lo que deben hacer todas las instituciones de aprendizaje rigurosas: revocamos sus certificaciones y prohibimos a esas personas.
+La única excepción a esto es en caso en que descubramos una violación a nuestras [Políticas de Honestidad Académica](https://www.freecodecamp.org/academic-honesty). Si descubrimos que una persona ha plagiado inequivocamente (presentando el código o los proyectos de otras personas como si fueran suyos sin citación), hacemos lo que deben hacer todas las instituciones de aprendizaje rigurosas: revocamos sus certificaciones y prohibimos el acceso a esas personas.
 
 Éstas son nuestras seis principales certificaciones:
 
@@ -103,7 +104,7 @@ La única excepción a esto es en caso en que descubramos una violación a nuest
 
 Una vez que hayas obtenido las 6 de estas certificaciones,podrás reclamar tu certificación de Desarrollo Full Stack de freeCodeCamp.org. Esta última distinción significa que has completado aproximadamente 1,800 horas de programación con una amplia gama de herramientas de desarrollo web.
 
-#### Legacy Certifications
+#### Certificaciones Legacy 
 
 Además contamos con 3 certificaciones legacy de nuestro plan de estudios del 2015, las cuales todavía se encuentran vigentes. Todos los proyectos requeridos para dichas certificaciones legacy permanecerán disponibles en freeCodeCamp.org.
 
@@ -113,31 +114,36 @@ Además contamos con 3 certificaciones legacy de nuestro plan de estudios del 20
 
 ### La plataforma de aprendizaje
 
-Este código impacta en [freeCodeCamp.org](https://www.freecodecamp.org).
+Este código está cobrando vida en [freeCodeCamp.org](https://www.freecodecamp.org).
 
 Nuestra comunidad además cuenta con:
 
 - Un [foro](https://www.freecodecamp.org/forum) donde a menudo puedes obtener ayuda en temas de programación o feedback sobre tus proyectos en cuestión de horas.
 - Un [canal de YouTube](https://youtube.com/freecodecamp) con cursos gratuitos sobre Python, SQL, Android, y una gran variedad de otras tecnologías.
 - Un [podcast](https://podcast.freecodecamp.org/) con noticias sobre tecnología e inspiradoras historias sobre programadores.
-- [Grupos de estudio locales](https://study-group-directory.freecodecamp.org/) alrededor del mundo, para que puedas reunirte y programar junto con otras personas.
-- Una completa [guía de miles de temas de programación](https://guide.freecodecamp.org/)
-- La [publicación técnica más extensa](https://medium.freecodecamp.org) de Medium.
-- Un [grupo de Facebook](https://www.facebook.com/groups/freeCodeCampEarth/permalink/428140994253892/) con más de 100,000 miembros alrededor del mundo.
+- [Noticias sobre desarrollo](https://www.freecodecamp.org/news) publicaciones, gratis, codigo abierto, sin publicidad donde podrás subir artículos de tu blog.
+
 
 ### [Unite a nuestra comunidad aquí](https://www.freecodecamp.org/signin).
 
-### Informar bugs y problemas
+### Informar fallos y problemas
 
-Si piensas que encontraste un bug, primero lee [How to Report a Bug](https://www.freecodecamp.org/forum/t/how-to-report-a-bug/19543) y sigue las instrucciones. Si estás seguro de que es un bug nuevo y has confirmado que afecta a otras personas, continúa y crea un ticket en GitHub. Asegúrate de incluir tanta información como sea posible para poder reproducir el bug.
+Si piensas que encontraste un fallo, primero lee [How to Report a Bug](https://www.freecodecamp.org/forum/t/how-to-report-a-bug/19543) y sigue las instrucciones. 
+
+Si estás seguro de que es un fallo nuevo y has confirmado que afecta a otras personas, continúa y crea un ticket en GitHub. Asegúrate de incluir tanta información como sea posible para poder reproducir el fallo.
 
 ### Informar problemas de seguridad
 
-Por favor, no crees un ticket en GitHub sobre problemas de seguridad. En cambio, envía un correo electrónico a `security @ freecodecamp.org` y lo veremos de inmediato.
+Si crees haber encontrado una vulnerabilidad, por favor, avisanos de manera responsable. No crees un ticket en GitHub para problemas de seguridad. En lugar de ello, envía un correo electrónico a `security @ freecodecamp.org` y lo veremos de inmediato.
 
 ### Contribuciones
 
-#### [Por favor seguir los siguientes pasos para contribuir.](CONTRIBUTING.md)
+> ### [Por favor seguir los siguientes pasos para contribuir.](CONTRIBUTING.md)
+
+
+### Plataforma, Creación y Estado de Desarrollo
+
+El estado general de la plataforma para todas nuestras aplicaciones está disponible en [`status.freecodecamp.org`](https://status.freecodecamp.org).El estado de creación y desarrollo para el código está disponible en [nuestra Guía de DevOps](/docs/devops.md).
 
 ### Licencia
 
