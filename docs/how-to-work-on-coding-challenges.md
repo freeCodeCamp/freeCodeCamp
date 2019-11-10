@@ -15,7 +15,7 @@ Creating these challenges requires immense creativity and attention to detail. B
 
 With your help, we can design an interactive coding curriculum that will help millions of people learn to code for years to come.
 
-The content for each challenge is stored in its own markdown file. This markdown file is later coverted using our tools, to webpage that you can interact with. You can find all of freeCodeCamp.org's curricular content in the [`/curriculum`](/curriculum) directory.
+The content for each challenge is stored in its own markdown file. This markdown file is later converted using our tools, to webpage that you can interact with. You can find all of freeCodeCamp.org's curricular content in the [`/curriculum`](/curriculum) directory.
 
 There are two ways you can work on these challenges:
 
@@ -321,7 +321,7 @@ Before you [create a pull request](how-to-open-a-pull-request.md) for your chang
 ```
 npm run test -- -g 'the full English title of the challenge'
 ```
-    
+
 Once you have verified that each challenge you've worked on passes the tests, please create a pull request.
 
 ### Useful Links
