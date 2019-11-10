@@ -51,7 +51,8 @@ const innerPropTypes = {
         })
       )
     })
-  ).isRequired
+  ).isRequired,
+  totalPages: PropTypes.number.isRequired
 };
 
 class TimelineInner extends Component {
