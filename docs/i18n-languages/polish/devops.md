@@ -65,7 +65,7 @@ Obecnie tylko zespół programistów może przesuwać się do oddziałów produk
    git reset --hard upstream/master
    ```
 
-3. Sprawdzić, czy urządzenie Travis CI przechodzi przez odgałęzienie główne w górę rzeki.
+3. Sprawdź, czy urządzenie Travis CI przechodzi przez odgałęzienie główne w górę rzeki.
 
    - [ ] https://travis-ci.org/freeCodeCamp/freeCodeCamp/branches should be Green.
 
