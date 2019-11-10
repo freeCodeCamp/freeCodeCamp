@@ -4,14 +4,14 @@
 <!-- do not translate this -->
 
 # Set up freeCodeCamp locally
-Follow these guidelines for getting freeCodeCamp locally on your system. This is highly recommended if you want to contribute regularly.
+Follow these guidelines for setting up freeCodeCamp locally on your system. This is highly recommended if you want to contribute regularly.
 
-Some of the contribution workflows, like previewing pages for the guide or the coding challenges, debugging and fixing bugs in the codebase, requires you to have freeCodeCamp running locally.
+Some of the contribution workflows, like previewing pages for the guide or the coding challenges, debugging and fixing bugs in the codebase, require you to have freeCodeCamp running locally.
 
 ## Fork the repository on GitHub
 ['Forking'](https://help.github.com/articles/about-forks/) is a step where you get your own copy of freeCodeCamp's main repository (a.k.a _repo_) on GitHub.
 
-This is essential as it allows you to work on your own copy of freeCodeCamp on GitHub, or to download (clone) your repository to work on locally. Later, you will be able to request changes to be pulled into the main repository from your fork via a pull request.
+This is essential as it allows you to work on your own copy of freeCodeCamp on GitHub, or to download (clone) your repository to work on locally. Later, you will be able to request changes to be pulled into the main repository from your fork via a pull request (PR).
 
 > **ProTip:**
 > The main repository at `https://github.com/freeCodeCamp/freeCodeCamp` is often referred to as the `upstream` repository.
@@ -316,7 +316,7 @@ You can now make changes to files and commit your changes to your local clone of
 
 Follow these steps:
 
-1. Validate that you are on the `master` branch
+1. Validate that you are on the `master` branch:
 
     ```sh
     git status
@@ -337,7 +337,7 @@ Follow these steps:
     git checkout master
     ```
 
-2. Sync the latest changes from the freeCodeCamp upstream `master` branch to your local master branch
+2. Sync the latest changes from the freeCodeCamp upstream `master` branch to your local master branch:
 
     **Note:** If you have any outstanding Pull Request that you made from the `master` branch of your fork, you will lose them at the end of this step. You should ensure your pull request is merged by a moderator before performing this step. To avoid this scenario, you should *always* work on a branch separate from master.
 
@@ -368,7 +368,7 @@ Follow these steps:
 
     The resulting output should be empty.
 
-3. Create a fresh new branch
+3. Create a fresh new branch:
 
     Working on a separate branch for each issue helps you keep your local work copy clean. You should never work on the `master`. This will soil your copy of freeCodeCamp and you may have to start over with a fresh clone or fork.
 
@@ -390,13 +390,13 @@ Follow these steps:
     translate/add-spanish-basic-html
     ```
 
-4. Edit pages and work on code in your favorite text editor
+4. Edit pages and work on code in your favorite text editor.
 
-5. Once you are happy with the changes you should optionally run freeCodeCamp locally to preview the changes
+5. Once you are happy with the changes you should optionally run freeCodeCamp locally to preview the changes.
 
-6. Make sure you fix any errors and check the formatting of your changes. We have style guides in the [docs](/docs/) section for the Guide articles and Coding challenges
+6. Make sure you fix any errors and check the formatting of your changes. We have style guides in the [docs](/docs/) section for the Guide articles and Coding challenges.
 
-7. Check and confirm the files you are updating
+7. Check and confirm the files you are updating:
 
     ```sh
     git status
@@ -419,7 +419,7 @@ Follow these steps:
     ...
     ```
 
-8. Stage the changes and make a commit
+8. Stage the changes and make a commit:
 
     In this step, you should only mark files that you have edited or added yourself. You can perform a reset and resolve files that you did not intend to change if needed.
 
@@ -493,7 +493,7 @@ Follow these steps:
 
     This will open up a default text editor like `nano` or `vi` where you can edit the commit message title and add/edit the description.
 
-10. Next, you can push your changes to your fork.
+10. Next, you can push your changes to your fork:
 
     ```sh
     git push origin branch/name-here
@@ -534,6 +534,20 @@ npm run seed
 npm run develop
 ```
 
-If you can't sign in, and instead, you see a banner with an error message saying that it'll be reported to freeCodeCamp, please double-check that your local port 3000 is not in use by a different program.
+If you can't sign in, and instead you see a banner with an error message that it will be reported to freeCodeCamp, please double-check that your local port 3000 is not in use by a different program.
+
+**On Windows - From Elevated PowerShell:**
+```powershell
+netstat -ab | Select-String "3000"
+
+TCP    0.0.0.0:3000           DESKTOP      LISTENING
+```
+
+**On MacOS - From Terminal:**
+```sh
+netstat -ab | grep "3000"
+
+tcp4    0   0    0.0.0.0:3000           DESKTOP      LISTEN
+```
 
 If you get errors while installing the dependencies, please make sure that you are not in a restricted network or your firewall settings do not prevent you from accessing resources. One solution would be to use a VPN service if possible and allowed in your environment.
