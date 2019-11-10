@@ -55,7 +55,7 @@ tests:
 
       if (res.ok) {
         const data = await res.json();
-        assert.isArray(data));
+        assert.isArray(data);
       } else {
         throw new Error(`${res.status} ${res.statusText}`);
       }
