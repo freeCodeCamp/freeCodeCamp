@@ -4,12 +4,8 @@ import PropTypes from 'prop-types';
 const TimelinePagination = props => {
   const { pageNo, totalPages, firstPage, prevPage, nextPage, lastPage } = props;
   return (
-    <nav
-      aria-label='Timeline Pagination Navigation'
-      className='timeline-pagination'
-      role='navigation'
-    >
-      <ul className='timeline-pagination_list'>
+    <nav aria-label='Timeline Pagination' role='navigation'>
+      <ul aria-hidden='true' className='timeline-pagination_list'>
         {totalPages > 10 && (
           <li
             className='timeline-pagination_list_item'
