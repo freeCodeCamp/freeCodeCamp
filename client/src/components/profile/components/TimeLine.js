@@ -125,9 +125,9 @@ class TimelineInner extends Component {
     }));
   }
   lastPage() {
-    this.setState({
-      pageNo: this.props.totalPages
-    });
+    this.setState((_, props) => ({
+      pageNo: props.totalPages
+    }));
   }
   render() {
     const {
