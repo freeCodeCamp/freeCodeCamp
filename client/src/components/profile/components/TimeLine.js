@@ -61,8 +61,7 @@ class TimelineInner extends Component {
     this.state = {
       solutionToView: null,
       solutionOpen: false,
-      pageNo: 1,
-      totalPages: Math.ceil(props.sortedTimeline.length / ITEMS_PER_PAGE)
+      pageNo: 1
     };
 
     this.closeSolution = this.closeSolution.bind(this);
@@ -125,18 +124,19 @@ class TimelineInner extends Component {
     }));
   }
   lastPage() {
-    this.setState(state => ({
-      pageNo: state.totalPages
-    }));
+    this.setState({
+      pageNo: this.props.totalPages
+    });
   }
   render() {
-    const { completedMap, idToNameMap, username, sortedTimeline } = this.props;
     const {
-      solutionToView: id,
-      solutionOpen,
-      pageNo = 1,
+      completedMap,
+      idToNameMap,
+      username,
+      sortedTimeline,
       totalPages = 1
-    } = this.state;
+    } = this.props;
+    const { solutionToView: id, solutionOpen, pageNo = 1 } = this.state;
     const startIndex = (pageNo - 1) * ITEMS_PER_PAGE;
     const endIndex = pageNo * ITEMS_PER_PAGE;
 
@@ -235,23 +235,24 @@ function useIdToNameMap() {
 const Timeline = props => {
   const idToNameMap = useIdToNameMap();
   const { completedMap } = props;
-  // Created memoized arrayof sorted timeline.
-  const sortedTimeline = useMemo(
-    () =>
-      reverse(
-        sortBy(completedMap, ['completedDate']).filter(challenge => {
-          return (
-            challenge.challengeType !== challengeTypes.step &&
-            idToNameMap.has(challenge.id)
-          );
-        })
-      ),
-    [completedMap, idToNameMap]
-  );
+  // Get the sorted timeline along with total page count.
+  const { sortedTimeline, totalPages } = useMemo(() => {
+    const sortedTimeline = reverse(
+      sortBy(completedMap, ['completedDate']).filter(challenge => {
+        return (
+          challenge.challengeType !== challengeTypes.step &&
+          idToNameMap.has(challenge.id)
+        );
+      })
+    );
+    const totalPages = Math.ceil(sortedTimeline.length / ITEMS_PER_PAGE);
+    return { sortedTimeline, totalPages };
+  }, [completedMap, idToNameMap]);
   return (
     <TimelineInner
       idToNameMap={idToNameMap}
       sortedTimeline={sortedTimeline}
+      totalPages={totalPages}
       {...props}
     />
   );

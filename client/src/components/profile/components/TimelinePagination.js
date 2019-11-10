@@ -18,7 +18,7 @@ const TimelinePagination = props => {
             }}
           >
             <button
-              aria-label='Goto First page'
+              aria-label='Go to First page'
               disabled={pageNo === 1}
               onClick={firstPage}
             >
@@ -33,7 +33,7 @@ const TimelinePagination = props => {
           }}
         >
           <button
-            aria-label='Goto Previous page'
+            aria-label='Go to Previous page'
             disabled={pageNo === 1}
             onClick={prevPage}
           >
@@ -50,7 +50,7 @@ const TimelinePagination = props => {
           }}
         >
           <button
-            aria-label='Goto Next page'
+            aria-label='Go to Next page'
             disabled={pageNo === totalPages}
             onClick={nextPage}
           >
@@ -65,7 +65,7 @@ const TimelinePagination = props => {
             }}
           >
             <button
-              aria-label='Goto Last page'
+              aria-label='Go to Last page'
               disabled={pageNo === totalPages}
               onClick={lastPage}
             >
