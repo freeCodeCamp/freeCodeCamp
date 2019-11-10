@@ -44,7 +44,7 @@ Używamy Azure Pipelines i innego oprogramowania CI (Travis, GitHub Actions) do 
 
 Obecnie tylko zespół programistów może przesuwać się do oddziałów produkcyjnych z powodu zautomatyzowanego wdrażania na żywo. Zmiany w oddziałach `production-*` mogą wylądować tylko poprzez szybkie łączenie się z [`upstream`](https://github.com/freeCodeCamp/freeCodeCamp).
 
-> Uwaga: W nadchodzących dniach usprawnilibyśmy ten przepływ, który można osiągnąć dzięki prośbom o wyciągnięcie, w celu lepszego zarządzania dostępem i przejrzystości.
+> Uwaga: W nadchodzących dniach usprawnimy ten przepływ, który można osiągnąć dzięki prośbom o wyciągnięcie, w celu lepszego zarządzania dostępem i przejrzystości.
 
 1. Skonfiguruj poprawnie swoje piloty.
 
