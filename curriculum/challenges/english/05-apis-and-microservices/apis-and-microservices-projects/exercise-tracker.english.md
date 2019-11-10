@@ -40,10 +40,9 @@ tests:
       });
 
       if (res.ok) {
-        res.json().then(data => {
-          assert.exists(data._id);
-          assert.exists(data.username);
-        });
+        const { _id, username } = await res.json();
+          assert.exists(_id);
+          assert.exists(username);
       } else {
         throw new Error(`${res.status} ${res.statusText}`);
       }
@@ -55,9 +54,10 @@ tests:
       const res = await fetch(url + '/api/exercise/users');
 
       if (res.ok) {
-        res.json().then(data => assert.isArray(data));
+        const data = await res.json();
+        assert.isArray(data));
       } else {
-        assert.fail(`${res.status} ${res.statusText}`);
+        throw new Error(`${res.status} ${res.statusText}`);
       }
     }
     "
