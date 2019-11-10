@@ -18,6 +18,7 @@ Example of a syntax error - often detected by the code editor:
 funtcion willNotWork( 
   console.log("Yuck");
 }
+// "function" keyword is misspelled and there's a missing parenthesis
 ```
 
 Here's an example of a runtime error - often detected while the program executes:
