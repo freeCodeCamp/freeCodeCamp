@@ -23,6 +23,13 @@ Start this project on Glitch using <a href='https://glitch.com/edit/#!/remix/clo
 
 ```yml
 tests:
+  - text: I can provide my own project, not the example url.
+    testString: "getUserInput => {
+      const url = getUserInput('url');
+      assert(!(new RegExp('.*/fuschia-custard\\.glitch\\.me\\.*')).test(getUserInput('url')));
+    }
+    "
+
   - text: I can create a user by posting form data username to /api/exercise/new-user and returned will be an object with username and <code>_id</code>.
     testString: "async getUserInput => {
       const url = getUserInput('url');
