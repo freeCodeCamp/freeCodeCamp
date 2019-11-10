@@ -1,6 +1,6 @@
 # Developer Operations at freeCodeCamp.org
 
-Dziękujemy za zainteresowanie dowiedzeniem się tym, jak robimy DevOps dla platformy na freeCodeCamp.org.
+Dziękujemy za zainteresowanie się tym, jak robimy DevOps dla platformy na freeCodeCamp.org.
 
 Staraliśmy się, aby język w tym przewodniku był jak najprostszy dla wszystkich. Jednak tutaj możesz znaleźć  techniczny żargon. Nie jest to wyczerpujący przewodnik po wszystkich operacjach i ma być wykorzystywany tylko jako punkt odniesienia dla zrozumienia systemów.
 
