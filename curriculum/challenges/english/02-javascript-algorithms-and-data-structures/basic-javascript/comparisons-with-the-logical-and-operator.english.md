@@ -33,7 +33,7 @@ return "No";
 
 ## Instructions
 <section id='instructions'>
-Combine the two if statements into one statement which will return <code>"Yes"</code> if <code>val</code> is less than or equal to <code>50</code> and greater than or equal to <code>25</code>. Otherwise, will return <code>"No"</code>.
+Replace the two if statements with one statement, using the && operator, which will return <code>"Yes"</code> if <code>val</code> is less than or equal to <code>50</code> and greater than or equal to <code>25</code>. Otherwise, will return <code>"No"</code>.
 </section>
 
 ## Tests
