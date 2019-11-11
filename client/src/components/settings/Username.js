@@ -9,7 +9,6 @@ import {
   Alert,
   FormGroup
 } from '@freecodecamp/react-bootstrap';
-import isAscii from 'validator/lib/isAscii';
 
 import {
   validateUsername,
@@ -18,6 +17,7 @@ import {
 } from '../../redux/settings';
 import BlockSaveButton from '../helpers/form/BlockSaveButton';
 import FullWidthRow from '../helpers/FullWidthRow';
+import { validate } from '../../../../utils/validate';
 
 const propTypes = {
   isValidUsername: PropTypes.bool,
@@ -43,14 +43,6 @@ const mapDispatchToProps = dispatch =>
     },
     dispatch
   );
-
-const invalidCharsRE = /[/\s?:@=&"'<>#%{}|\\^~[\]`,.;!*()$]/;
-const invlaidCharError = {
-  valid: false,
-  error: 'Username contains invalid characters.'
-};
-const valididationSuccess = { valid: true, error: null };
-const usernameTooShort = { valid: false, error: 'Username is too short' };
 
 const hex = '[0-9a-f]';
 const tempUserRegex = new RegExp(`^fcc${hex}{8}-(${hex}{4}-){3}${hex}{12}$`);
@@ -119,24 +111,14 @@ class UsernameSettings extends Component {
   }
 
   validateFormInput(formValue) {
-    if (formValue.length < 3) {
-      return usernameTooShort;
-    }
-
-    if (!isAscii(formValue)) {
-      return invlaidCharError;
-    }
-    if (invalidCharsRE.test(formValue)) {
-      return invlaidCharError;
-    }
-    return valididationSuccess;
+    return validate(formValue);
   }
 
   renderAlerts(validating, error, isValidUsername) {
     if (!validating && error) {
       return (
         <FullWidthRow>
-          <Alert bsStyle='danger'>{error}</Alert>
+          <Alert bsStyle='danger'>{'Username ' + error}</Alert>
         </FullWidthRow>
       );
     }
