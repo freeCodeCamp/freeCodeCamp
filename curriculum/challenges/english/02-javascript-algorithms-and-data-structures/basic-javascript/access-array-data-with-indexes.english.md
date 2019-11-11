@@ -9,7 +9,7 @@ forumTopicId: 16158
 ## Description
 <section id='description'>
 We can access the data inside arrays using <dfn>indexes</dfn>.
-Array indexes are written in the same bracket notation that strings use, except that instead of specifying a character, they are specifying an entry in the array. Like strings, arrays use <dfn>zero-based</dfn> indexing, so the first element in an array is element <code>0</code>.
+Array indexes are written in the same bracket notation that strings use, except that instead of specifying a character, they are specifying an entry in the array. Like strings, arrays use <dfn>zero-based</dfn> indexing, so the first element in an array has an index of <code>0</code>.
 <br />
 <strong>Example</strong>
 
