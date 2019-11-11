@@ -17,7 +17,7 @@ The callback function accepts four arguments.  The first argument is known as th
 
 In addition to the callback function, <code>reduce</code> has an additional parameter which takes an initial value for the accumulator.  If this second parameter is not used, then the first iteration is skipped and the second iteration gets passed the first element of the array as the accumulator.
 
-See below for an example using the <code>reduce</code> method on a <code>users</code> array containing objects to return the sum of all the users' ages. The example only uses the first and second arguments, but there are times when you may need to reference the third and/or fourth arguments.
+See below for an example using <code>reduce</code> on the <code>users</code> array to return the sum of all the users' ages. For simplicity, the example only uses the first and second arguments.
 
 ```js
 const users = [
