@@ -97,7 +97,7 @@ tests:
   }
 </style>
 <h1>Cat Photo Finder</h1>
-<p id="message box">
+<p id="message">
   The message will go here
 </p>
 <p>
