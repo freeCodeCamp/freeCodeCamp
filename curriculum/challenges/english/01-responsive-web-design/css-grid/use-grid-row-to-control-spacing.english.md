@@ -21,8 +21,10 @@ Make the element with the <code>item5</code> class consume the last two rows.
 
 ```yml
 tests:
-  - text: <code>item5</code> class should have a <code>grid-row</code> property that has the value of <code>2 / 4</code>.
-    testString: assert(code.match(/.item5\s*?{[\s\S]*grid-row\s*?:\s*?2\s*?\/\s*?4\s*?;[\s\S]*}/gi));
+  - text: <code>item5</code> class should have a <code>grid-row</code> property.
+    testString: assert($('style').text().replace(/\s/g, '').match(/\.item5{.*grid-row:.*}/g));
+  - text: <code>item5</code> class should have a <code>grid-row</code> property which results in it consuming the last two rows of the grid.
+    testString: const rowStart = getComputedStyle($('.item5')[0]).gridRowStart; const rowEnd = getComputedStyle($('.item5')[0]).gridRowEnd; const result = rowStart.toString() + rowEnd.toString(); assert(result === "24" || result === "2-1" || result === "2span 2" || result === "2span2" || result === "span 2-1" || result === "-12" || result === "span 2span 2" || result === "span 2auto" || result === "autospan 2");
 
 ```
 
