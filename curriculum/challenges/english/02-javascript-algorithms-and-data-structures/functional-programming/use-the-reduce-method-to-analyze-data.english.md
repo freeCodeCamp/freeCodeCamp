@@ -13,7 +13,7 @@ forumTopicId: 301313
 The <code>reduce</code> method allows for more general forms of array processing, and it's possible to show that both <code>filter</code> and <code>map</code> can be derived as special applications of <code>reduce</code>.
 The <code>reduce</code> method iterates over each item in an array and returns a single value (i.e. string, number, object, array).  This is achieved via a callback function that is called each iteration.
 
-The callback function accepts four arguments (with names of your choice).  While iterating over the array, the arguments can be referenced in the callback function.  The first argument is known as the accumulator, which gets assigned the return value of the callback function during each iteration.  The second argument is the current element being processed.  The third argument is the index of the current element being processed.  The fourth argument is the actual array upon which the <code>reduce</code> method was called.
+The callback function accepts four arguments.  The first argument is known as the accumulator, which gets assigned the return value of the callback function from the previous iteration.  The second is the current element being processed.  The third is the index of that element.  The fourth is the array upon which <code>reduce</code> was called.
 
 In addition to the callback function, the <code>reduce</code>method has an additional parameter which takes an initial value for the accumulator.  If this second parameter is not used, then the accumulator's initial value is the first element of the array and the second argument is the second element in the first iteration.
 
