@@ -10,7 +10,7 @@ forumTopicId: 301313
 
 <code>Array.prototype.reduce()</code>, or simply <code>reduce()</code>, is the most general of all array operations in JavaScript. You can solve almost any array processing problem using the <code>reduce</code> method.
 
-The <code>reduce</code> method allows for more general forms of array processing, and it's possible to show that both <code>filter</code> and <code>map</code> can be derived as a special application of <code>reduce</code>.
+The <code>reduce</code> method allows for more general forms of array processing, and it's possible to show that both <code>filter</code> and <code>map</code> can be derived as special applications of <code>reduce</code>.
 The <code>reduce</code> method iterates over each item in an array and returns a single value (i.e. string, number, object, array).  This is acheived via a callback function that returns a value created by the user's logic after each iteration.
 
 The callback function accepts four arguments (with names of your choice).  While iterating over the array, the arguments can be referenced in the callback function.  The first argument is known as the accumulator, which gets assigned the return value of the callback function during each iteration.  The second argument is the current element being processed.  The third argument is the index of the current element being processed.  The fourth argument is the actual array upon which the <code>reduce</code> method was called.
