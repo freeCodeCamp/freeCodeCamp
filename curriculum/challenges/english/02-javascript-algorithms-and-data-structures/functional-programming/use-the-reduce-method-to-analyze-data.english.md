@@ -15,7 +15,7 @@ The <code>reduce</code> method iterates over each item in an array and returns a
 
 The callback function accepts four arguments.  The first argument is known as the accumulator, which gets assigned the return value of the callback function from the previous iteration.  The second is the current element being processed.  The third is the index of that element.  The fourth is the array upon which <code>reduce</code> was called.
 
-In addition to the callback function, the <code>reduce</code>method has an additional parameter which takes an initial value for the accumulator.  If this second parameter is not used, then the accumulator's initial value is the first element of the array and the second argument is the second element in the first iteration.
+In addition to the callback function, <code>reduce</code> has an additional parameter which takes an initial value for the accumulator.  If this second parameter is not used, then the first iteration is skipped and the second iteration gets passed the first element of the array as the accumulator.
 
 See below for an example using the <code>reduce</code> method on a <code>users</code> array containing objects to return the sum of all the users' ages. The example only uses the first and second arguments, but there are times when you may need to reference the third and/or fourth arguments.
 
