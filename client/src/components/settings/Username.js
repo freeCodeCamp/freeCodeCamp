@@ -101,7 +101,8 @@ class UsernameSettings extends Component {
       {
         formValue: newValue,
         isFormPristine: username === newValue,
-        characterValidation: this.validateFormInput(newValue)
+        characterValidation: this.validateFormInput(newValue),
+        submitClicked: false
       },
       () =>
         this.state.isFormPristine || this.state.characterValidation.error
