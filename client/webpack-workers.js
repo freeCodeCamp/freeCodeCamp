@@ -13,7 +13,7 @@ module.exports = (env = {}) => {
     devtool: __DEV__ ? 'inline-source-map' : 'source-map',
     output: {
       publicPath: '/js/',
-      chunkFilename: '[name].js',
+      chunkFilename: '[name].[contenthash].js',
       path: path.join(__dirname, './static/js')
     },
     stats: {
