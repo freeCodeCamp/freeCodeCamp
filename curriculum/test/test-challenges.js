@@ -36,7 +36,12 @@ const { getChallengesForLang } = require('../getChallenges');
 const MongoIds = require('./utils/mongoIds');
 const ChallengeTitles = require('./utils/challengeTitles');
 const { challengeSchemaValidator } = require('../schema/challengeSchema');
-const { challengeTypes } = require('../../client/utils/challengeTypes');
+const {
+  challengeTypes,
+  helpCategory
+} = require('../../client/utils/challengeTypes');
+
+const { dasherize } = require('../../utils/slugs');
 
 const { testedLangs } = require('../utils');
 
@@ -148,6 +153,14 @@ async function getChallenges(lang) {
   return { lang, challenges };
 }
 
+function validateBlock(challenge) {
+  if (!helpCategory.hasOwnProperty(dasherize(challenge.block))) {
+    return `'${challenge.block}' block not found as a helpCategory in client/utils/challengeTypes.js file for the '${challenge.title}' challenge `;
+  } else {
+    return null;
+  }
+}
+
 function populateTestsForLang({ lang, challenges }) {
   const mongoIds = new MongoIds();
   const challengeTitles = new ChallengeTitles();
@@ -160,8 +173,13 @@ function populateTestsForLang({ lang, challenges }) {
       describe(challenge.title || 'No title', function() {
         it('Common checks', function() {
           const result = validateChallenge(challenge);
+          const invalidBlock = validateBlock(challenge);
+
           if (result.error) {
             throw new AssertionError(result.error);
+          }
+          if (challenge.challengeType !== 7 && invalidBlock) {
+            throw new AssertionError(invalidBlock);
           }
           const { id, title } = challenge;
           mongoIds.check(id, title);
