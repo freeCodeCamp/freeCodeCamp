@@ -154,8 +154,9 @@ async function getChallenges(lang) {
 }
 
 function validateBlock(challenge) {
-  if (!helpCategory.hasOwnProperty(dasherize(challenge.block))) {
-    return `'${challenge.block}' block not found as a helpCategory in client/utils/challengeTypes.js file for the '${challenge.title}' challenge `;
+  const dashedBlock = dasherize(challenge.block);
+  if (!helpCategory.hasOwnProperty(dashedBlock)) {
+    return `'${dashedBlock}' block not found as a helpCategory in client/utils/challengeTypes.js file for the '${challenge.title}' challenge`;
   } else {
     return null;
   }
