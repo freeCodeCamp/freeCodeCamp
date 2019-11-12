@@ -26,7 +26,7 @@ const users = [
   { name: 'camperCat', age: 10 }
 ];
 
-const u = users.reduce((sum, user) => sum + user.age, 0);
+const sumOfAges = users.reduce((sum, user) => sum + user.age, 0);
 console.log(sumOfAges); // 64
 ```
 
