@@ -8,7 +8,7 @@ forumTopicId: 18179
 ## Description
 <section id='description'>
 Another useful array function is <code>Array.prototype.filter()</code>, or simply <code>filter()</code>. 
-<code>filter</code> calls a function on each element of an array and returns a new array containing only the elements for which that function returns <code>true</code>.  In other words, it filters the array, based on the function passed to it.  Like <code>map</code> it does this without needing to modify the original array.
+<code>filter</code> calls a function on each element of an array and returns a new array containing only the elements for which that function returns <code>true</code>.  In other words, it filters the array, based on the function passed to it.  Like <code>map</code>, it does this without needing to modify the original array.
 The callback function accepts three arguments.  The first argument is the current element being processed.  The second is the index of that element and the third is the array upon which the <code>filter</code> method was called.
 See below for an example using the <code>filter</code> method on the <code>users</code> array to return a new array containing only the users under the age of 30. For simplicity, the example only uses the first argument of the callback.
 
