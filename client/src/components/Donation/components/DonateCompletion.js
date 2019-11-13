@@ -42,7 +42,7 @@ function DonateCompletion({ processing, reset, success, error = null }) {
             </p>
             <p>
               You can update your supporter status at any time from the 'manage
-              your existing donation' section on this page.
+              your existing donation' section below on this page.
             </p>
           </div>
         )}

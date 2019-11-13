@@ -54,6 +54,10 @@ export function postChargeStripe(body) {
   return post(`/donate/charge-stripe`, body);
 }
 
+export function postCreateHmacHash(body) {
+  return post(`/donate/create-hmac-hash`, body);
+}
+
 export function putUpdateLegacyCert(body) {
   return post('/update-my-projects', body);
 }

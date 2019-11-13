@@ -19,6 +19,14 @@ export const stripeScriptLoader = onload =>
     onload
   );
 
+export const servicebotScriptLoader = () =>
+  scriptLoader(
+    'servicebot-billing-settings-embed.js',
+    'servicebot-billing-settings-embed.js',
+    true,
+    'https://js.servicebot.io/embeds/servicebot-billing-settings-embed.js'
+  );
+
 export const mathJaxScriptLoader = () =>
   scriptLoader(
     'mathjax',

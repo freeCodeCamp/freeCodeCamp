@@ -30,8 +30,10 @@ const {
   ROLLBAR_APP_ID,
   ROLLBAR_CLIENT_ID,
 
-  STRIPE_PUBLIC,
-  STRIPE_SECRET
+  STRIPE_PUBLIC_KEY,
+  STRIPE_SECRET_KEY,
+  SERVICEBOT_ID,
+  SERVICEBOT_HMAC_SECRET_KEY
 } = process.env;
 
 module.exports = {
@@ -92,7 +94,12 @@ module.exports = {
   },
 
   stripe: {
-    public: STRIPE_PUBLIC,
-    secret: STRIPE_SECRET
+    public: STRIPE_PUBLIC_KEY,
+    secret: STRIPE_SECRET_KEY
+  },
+
+  servicebot: {
+    servicebotId: SERVICEBOT_ID,
+    hmacKey: SERVICEBOT_HMAC_SECRET_KEY
   }
 };

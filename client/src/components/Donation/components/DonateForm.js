@@ -30,6 +30,7 @@ const numToCommas = num =>
   num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
 
 const propTypes = {
+  enableDonationSettingsPage: PropTypes.func.isRequired,
   isDonating: PropTypes.bool,
   isSignedIn: PropTypes.bool,
   navigate: PropTypes.func.isRequired,
@@ -204,7 +205,7 @@ class DonateForm extends Component {
   }
 
   renderDonationOptions() {
-    const { stripe } = this.props;
+    const { stripe, enableDonationSettingsPage } = this.props;
     const {
       donationAmount,
       donationDuration,
@@ -242,6 +243,7 @@ class DonateForm extends Component {
               <DonateFormChildViewForHOC
                 donationAmount={donationAmount}
                 donationDuration={donationDuration}
+                enableDonationSettingsPage={enableDonationSettingsPage}
                 getDonationButtonLabel={this.getDonationButtonLabel}
                 hideAmountOptionsCB={this.hideAmountOptionsCB}
               />
@@ -287,18 +289,6 @@ class DonateForm extends Component {
           ) : (
             this.renderDonationOptions()
           )}
-        </Col>
-        <Col sm={10} smOffset={1} xs={12}>
-          <Spacer size={2} />
-          <h3 className='text-center'>Manage your existing donation</h3>
-          <Button block={true} bsStyle='primary' disabled={true}>
-            Update your existing donation
-          </Button>
-          <Spacer />
-          <Button block={true} bsStyle='primary' disabled={true}>
-            Download donation receipts
-          </Button>
-          <Spacer />
         </Col>
       </Row>
     );
