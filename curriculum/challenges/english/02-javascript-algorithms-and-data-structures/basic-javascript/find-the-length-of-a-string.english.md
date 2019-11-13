@@ -8,7 +8,7 @@ forumTopicId: 18182
 
 ## Description
 <section id='description'>
-You can find the length of a <code>String</code> value by writing <code>.length</code> after the string variable or string literal.
+You can find the length of a <code>String</code> value by writing <code>.length</code> after the string variable or string literal. The <code>.length</code> function includes spaces when calculating the length of a string.
 <code>"Alan Peter".length; // 10</code>
 For example, if we created a variable <code>var firstName = "Charles"</code>, we could find out how long the string <code>"Charles"</code> is by using the <code>firstName.length</code> property.
 </section>
