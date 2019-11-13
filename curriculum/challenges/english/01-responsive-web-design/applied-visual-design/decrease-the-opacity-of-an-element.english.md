@@ -24,7 +24,7 @@ Set the <code>opacity</code> of the anchor tags to 0.7 using <code>links</code> 
 ```yml
 tests:
   - text: Your code should set the <code>opacity</code> property to 0.7 on the anchor tags by selecting the class of <code>links</code>.
-    testString: assert(/\.links\s*\{[^}]+opacity\s*:\s*0.7;/.test(code));
+    testString: assert(getComputedStyle($('.links')[0]).opacity == '0.7');
 
 ```
 
