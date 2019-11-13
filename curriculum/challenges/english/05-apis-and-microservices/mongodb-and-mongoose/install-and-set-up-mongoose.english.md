@@ -14,7 +14,7 @@ Add mongodb and mongoose to the project’s package.json. Then require mongoose.
 Add mongodb and mongoose to the project’s <code>package.json</code>. Then require mongoose. Store your mLab database URI in the private <code>.env</code> file as <code>MONGO_URI</code>. Connect to the database using the following syntax:
 
 ```js
-mongoose.connect(&lt;Your URI&gt;, { useNewUrlParser: true, useUnifiedTopology: true }); 
+mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology: true }); 
 ```
 
 <section id='instructions'>
