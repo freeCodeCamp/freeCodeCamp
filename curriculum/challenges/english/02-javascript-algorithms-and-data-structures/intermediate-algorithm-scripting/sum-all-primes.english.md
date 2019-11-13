@@ -13,7 +13,7 @@ A prime number is a whole number greater than 1 with exactly two divisors: 1 and
 itself. For example, 2 is a prime number because it is only divisible by 1 and 2. In
 contrast, 4 is not prime since it is divisible by 1, 2 and 4.
 
-Rewrite sumPrimes to return the sum of all prime numbers that are less than or
+Rewrite `sumPrimes` so it returns the sum of all prime numbers that are less than or
 equal to num.
 
 Remember to use <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code.
