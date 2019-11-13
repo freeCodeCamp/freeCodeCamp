@@ -6,41 +6,42 @@
 # freeCodeCamp를 로컬 시스템에 설치하기
 로컬 시스템에(역주: 예를 들어서, 내 컴퓨터) freeCodeCamp를 설치하려고 하신다면 이 가이드라인을 따라 주세요. 주기적으로 기여(역주: 참여)해 주실 생각이라면 이를 추천드립니다.
 
-Some of the contribution workflows, like previewing pages for the guide or the coding challenges, debugging and fixing bugs in the codebase, requires you to have freeCodeCamp running locally.
+몇 가지 기여 흐름도는, 예를 들어서 가이드나 코딩챌린지 페이지 미리 보기라든지 코드를 디버깅하거나 버그를 고치는 등의 몇 가지 기여 흐름도는 여러분에게 freeCodeCamp를 로컬하게 진행하기를 기대합니다.
 
-## Fork the repository on GitHub
-['Forking'](https://help.github.com/articles/about-forks/) is a step where you get your own copy of freeCodeCamp's main repository (a.k.a _repo_) on GitHub.
+## GitHub에 있는 저장소를 복사하기
+['Forking'](https://help.github.com/articles/about-forks/)은 여러분만의 GitHubd에 있는 freeCodeCamp의 주요 저장소의 복사본을 갖게 해 줍니다.
 
-This is essential as it allows you to work on your own copy of freeCodeCamp on GitHub, or to download (clone) your repository to work on locally. Later, you will be able to request changes to be pulled into the main repository from your fork via a pull request.
+이는 아주 중요합니다. GitHub에 있는 freeCodeCamp의 복사본을 갖게 해 주거나 저장소를 다운받아 로컬하게 작업하도록 도와주기 때문입니다. 후에, 여러분이 로컬하게 작업한 결과물을 fork를 통해 여러분이 가지고 있는 복사본에서메인 저장소로 옮기는 것을 pull request를 통해 요청할 수 있습니다.
 
 > **ProTip:**
-> The main repository at `https://github.com/freeCodeCamp/freeCodeCamp` is often referred to as the `upstream` repository.
-> Your fork at `https://github.com/YOUR_USER_NAME/freeCodeCamp` is often referred to as the `origin` repository.
+> `https://github.com/freeCodeCamp/freeCodeCamp`에 있는 메인 저장소는 `upstream` 저장소로도 불리웁니다.
+> `https://github.com/YOUR_USER_NAME/freeCodeCamp`에 있는 fork(역주: 복사본)은 `origin`이라고 불리기도 합니다.
 
-#### Follow these steps to fork the `https://github.com/freeCodeCamp/freeCodeCamp` repository:
-1. Go to the freeCodeCamp repository on GitHub: <https://github.com/freeCodeCamp/freeCodeCamp>
-2. Click the "Fork" Button in the upper right-hand corner of the interface ([More Details Here](https://help.github.com/articles/fork-a-repo/))
-3. After the repository has been forked, you will be taken to your copy of the freeCodeCamp repository at `https://github.com/YOUR_USER_NAME/freeCodeCamp`
+#### 저장소 `https://github.com/freeCodeCamp/freeCodeCamp`를 fork하는 방법
+1. GitHub에 있는 freeCodeCamp 저장소로 갑니다: <https://github.com/freeCodeCamp/freeCodeCamp>
+2. 오른쪽 위에 위치한 "Fork" 버튼을 누릅니다. ([More Details Here](https://help.github.com/articles/fork-a-repo/))
+3. 저장소가 제대로 fork되었다면, `https://github.com/YOUR_USER_NAME/freeCodeCamp`에서 freeCodeCamp 저장소의 복사본을 확인하실 수 있습니다.
 
 ![GIF - How to fork freeCodeCamp on GitHub](/docs/images/github/how-to-fork-freeCodeCamp.gif)
 
-## Preparing the development environment
-Once you have the prerequisites installed, you need to prepare your development environment. This is common for many development workflows, and you will only need to do this once.
+## 개발환경 준비하기
+사전에 필요한 것들을 설치했다면 개발 환경을 준비해 봅시다. 이는 흔한 개발 작업 방식이며 한 번만 하시면 됩니다.
 
-#### Follow these steps to get your development environment ready:
-1. Install [Git](https://git-scm.com/) or your favorite Git client, if you haven't already. Update to the latest version; the version that came bundled with your OS may be outdated.
+#### 개발 환경 준비하는 방법:
+1. 아직 [Git](https://git-scm.com/)이나 Git 클라이언트(서버로부터 정보나 서비스를 받는 컴퓨터)가 없다면 설치하세요. 컴퓨터에 운영체제와 함께 깔려있던 버전이 오래된 것일 수 있으니 최신 버전으로 업데이트해 주세요.
 
-2. (Optional but recommended) [Setup an SSH Key](https://help.github.com/articles/generating-an-ssh-key/) for GitHub.
+2. (선택사항이나 추천드립니다) [GitHub에 SSH 키 셋업하기](https://help.github.com/articles/generating-an-ssh-key/)
 
-3. Install a code editor of your choice.
-
-    We highly recommend using [VS Code](https://code.visualstudio.com/) or [Atom](https://atom.io/). These are great, free and open source code editors.
+3. 자신에게 맞는코드에디터 설치하기
+    [VS Code](https://code.visualstudio.com/)나 [Atom](https://atom.io/)을 추천드립니다. 이 두 에디터는 잘 만들어졌으며 무료이고 오픈 소스 코드 에디터들입니다.
 
 4. Set up linting for your code editor.
 
     You should have [ESLint running in your editor](http://eslint.org/docs/user-guide/integrations.html), and it will highlight anything that doesn't conform to [freeCodeCamp's JavaScript Style Guide](http://forum.freecodecamp.org/t/free-code-camp-javascript-style-guide/19121).
 
     > Please do not ignore any linting errors. They are meant to **help** you and to ensure a clean and simple codebase.
+
+4. 
 
 ## Clone your copy of freeCodeCamp
 ['Cloning'](https://help.github.com/articles/cloning-a-repository/) is where you **download** a copy of a repository from a `remote` location that is either owned by you or by someone else. In your case, this remote location is your `fork` of freeCodeCamp's repository that should be available at `https://github.com/YOUR_USER_NAME/freeCodeCamp`.
