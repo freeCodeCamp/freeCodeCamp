@@ -1,5 +1,6 @@
 import Stripe from 'stripe';
 import debug from 'debug';
+import crypto from 'crypto';
 import { isEmail, isNumeric } from 'validator';
 
 import keys from '../../../config/secrets';
@@ -108,16 +109,10 @@ export default function donateBoot(app, done) {
   function createStripeDonation(req, res) {
     const { user, body } = req;
 
-    if (!user) {
+    if (!user || !body) {
       return res
         .status(500)
         .send({ error: 'User must be signed in for this request.' });
-    }
-
-    if (!body || !body.amount || !body.duration) {
-      return res.status(500).send({
-        error: 'The donation form had invalid values for this submission.'
-      });
     }
 
     const {
@@ -218,12 +213,54 @@ export default function donateBoot(app, done) {
       });
   }
 
+  function createHmacHash(req, res) {
+    const { user, body } = req;
+
+    if (!user || !body) {
+      return res
+        .status(500)
+        .send({ error: 'User must be signed in for this request.' });
+    }
+
+    const { email } = body;
+
+    if (!isEmail('' + email)) {
+      return res
+        .status(500)
+        .send({ error: 'The email is invalid for this request.' });
+    }
+
+    if (!user.donationEmails.includes(email)) {
+      return res.status(500).send({
+        error: `User does not have the email: ${email} associated with their donations.`
+      });
+    }
+
+    log(`creating HMAC hash for ${email}`);
+    return Promise.resolve(email)
+      .then(email =>
+        crypto
+          .createHmac('sha256', keys.servicebot.hmacKey)
+          .update(email)
+          .digest('hex')
+      )
+      .then(hash => res.status(200).json({ hash }))
+      .catch(() =>
+        res
+          .status(500)
+          .send({ error: 'Donation failed due to a server error.' })
+      );
+  }
+
   const pubKey = keys.stripe.public;
   const secKey = keys.stripe.secret;
-  const secretInvalid = !secKey || secKey === 'sk_from_stipe_dashboard';
-  const publicInvalid = !pubKey || pubKey === 'pk_from_stipe_dashboard';
+  const hmacKey = keys.servicebot.hmacKey;
+  const secretInvalid = !secKey || secKey === 'sk_from_stripe_dashboard';
+  const publicInvalid = !pubKey || pubKey === 'pk_from_stripe_dashboard';
+  const hmacKeyInvalid =
+    !hmacKey || hmacKey === 'secret_key_from_servicebot_dashboard';
 
-  if (secretInvalid || publicInvalid) {
+  if (secretInvalid || publicInvalid || hmacKeyInvalid) {
     if (process.env.FREECODECAMP_NODE_ENV === 'production') {
       throw new Error('Stripe API keys are required to boot the server!');
     }
@@ -231,6 +268,7 @@ export default function donateBoot(app, done) {
     done();
   } else {
     api.post('/charge-stripe', createStripeDonation);
+    api.post('/create-hmac-hash', createHmacHash);
     donateRouter.use('/donate', api);
     app.use(donateRouter);
     app.use('/internal', donateRouter);
