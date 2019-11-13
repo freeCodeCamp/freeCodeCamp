@@ -15,7 +15,7 @@ import { injectStripe } from 'react-stripe-elements';
 import StripeCardForm from './StripeCardForm';
 import DonateCompletion from './DonateCompletion';
 import { postChargeStripe } from '../../../utils/ajax';
-import { userSelector, isSignedInSelector } from '../../../redux';
+import { userSelector } from '../../../redux';
 
 const propTypes = {
   donationAmount: PropTypes.number.isRequired,
@@ -39,8 +39,7 @@ const initialState = {
 
 const mapStateToProps = createSelector(
   userSelector,
-  isSignedInSelector,
-  ({ email, theme }, isSignedIn) => ({ email, theme, isSignedIn })
+  ({ email, theme }) => ({ email, theme })
 );
 
 class DonateFormChildViewForHOC extends Component {
@@ -122,7 +121,6 @@ class DonateFormChildViewForHOC extends Component {
 
   postDonation(token) {
     const { donationAmount: amount, donationDuration: duration } = this.state;
-    const { isSignedIn } = this.props;
     this.setState(state => ({
       ...state,
       donationState: {
@@ -131,7 +129,7 @@ class DonateFormChildViewForHOC extends Component {
       }
     }));
 
-    return postChargeStripe(isSignedIn, {
+    return postChargeStripe({
       token,
       amount,
       duration

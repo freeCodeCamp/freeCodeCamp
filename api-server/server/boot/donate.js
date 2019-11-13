@@ -8,7 +8,6 @@ const log = debug('fcc:boot:donate');
 
 export default function donateBoot(app, done) {
   let stripe = false;
-  const { User } = app.models;
   const api = app.loopback.Router();
   const donateRouter = app.loopback.Router();
 
@@ -105,8 +104,16 @@ export default function donateBoot(app, done) {
   function createStripeDonation(req, res) {
     const { user, body } = req;
 
+    if (!user) {
+      return res
+        .status(500)
+        .send({ error: 'User must be signed in for this request.' });
+    }
+
     if (!body || !body.amount || !body.duration) {
-      return res.status(400).send({ error: 'Amount and duration Required.' });
+      return res.status(500).send({
+        error: 'The donation form had invalid values for this submission.'
+      });
     }
 
     const {
@@ -116,28 +123,10 @@ export default function donateBoot(app, done) {
     } = body;
 
     if (!validStripeForm(amount, duration, email)) {
-      return res
-        .status(500)
-        .send({ error: 'Invalid donation form values submitted' });
+      return res.status(500).send({
+        error: 'The donation form had invalid values for this submission.'
+      });
     }
-
-    const isOneTime = duration === 'onetime' ? true : false;
-
-    const fccUser = user
-      ? Promise.resolve(user)
-      : new Promise((resolve, reject) =>
-          User.findOrCreate(
-            { where: { email } },
-            { email },
-            (err, instance, isNew) => {
-              log('is new user instance: ', isNew);
-              if (err) {
-                return reject(err);
-              }
-              return resolve(instance);
-            }
-          )
-        );
 
     let donatingUser = {};
     let donation = {
@@ -188,20 +177,20 @@ export default function donateBoot(app, done) {
         });
     };
 
-    return fccUser
-      .then(user => {
-        const { isDonating } = user;
+    return Promise.resolve(user)
+      .then(nonDonatingUser => {
+        const { isDonating } = nonDonatingUser;
         if (isDonating) {
           throw {
             message: `User already has active donation(s).`,
             type: 'AlreadyDonatingError'
           };
         }
-        return user;
+        return nonDonatingUser;
       })
       .then(createCustomer)
       .then(customer => {
-        return isOneTime
+        return duration === 'onetime'
           ? createOneTimeCharge(customer).then(charge => {
               donation.subscriptionId = 'one-time-charge-prefix-' + charge.id;
               return res.send(charge);
@@ -241,7 +230,6 @@ export default function donateBoot(app, done) {
     donateRouter.use('/donate', api);
     app.use(donateRouter);
     app.use('/internal', donateRouter);
-    app.use('/unauthenticated', donateRouter);
     connectToStripe().then(done);
   }
 }
