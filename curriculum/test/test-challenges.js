@@ -49,6 +49,8 @@ const {
   createPoly
 } = require('../../client/src/templates/Challenges/utils/polyvinyl');
 
+const testEvaluator = require('../../client/config/test-evaluator').filename;
+
 const oldRunnerFail = Mocha.Runner.prototype.fail;
 Mocha.Runner.prototype.fail = function(test, err) {
   if (err instanceof AssertionError) {
@@ -327,7 +329,7 @@ async function createTestRunnerForJSChallenge({ files }, solution) {
   const { build, sources } = await buildJSChallenge({ files });
   const code = sources && 'index' in sources ? sources['index'] : '';
 
-  const testWorker = createWorker('test-evaluator', { terminateWorker: true });
+  const testWorker = createWorker(testEvaluator, { terminateWorker: true });
   return async ({ text, testString }) => {
     try {
       const { pass, err } = await testWorker.execute(
