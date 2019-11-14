@@ -81,7 +81,8 @@ const propTypes = {
   pathname: PropTypes.string.isRequired,
   removeFlashMessage: PropTypes.func.isRequired,
   showFooter: PropTypes.bool,
-  theme: PropTypes.string
+  theme: PropTypes.string,
+  useTheme: PropTypes.bool
 };
 
 const mapStateToProps = createSelector(
@@ -145,13 +146,16 @@ class DefaultLayout extends Component {
       isSignedIn,
       removeFlashMessage,
       showFooter = true,
-      theme = 'default'
+      theme = 'default',
+      useTheme = true
     } = this.props;
     return (
       <Fragment>
         <Helmet
           bodyAttributes={{
-            class: `${theme === 'default' ? 'light-palette' : 'dark-palette'}`
+            class: useTheme
+              ? `${theme === 'default' ? 'light-palette' : 'dark-palette'}`
+              : 'light-palette'
           }}
           meta={[
             {

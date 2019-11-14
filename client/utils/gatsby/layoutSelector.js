@@ -27,6 +27,13 @@ export default function layoutSelector({ element, props }) {
       </DefaultLayout>
     );
   }
+  if (/^\/donation(\/.*)*|^\/donate(\/.*)*/.test(pathname)) {
+    return (
+      <DefaultLayout pathname={pathname} useTheme={false}>
+        {element}
+      </DefaultLayout>
+    );
+  }
   return <DefaultLayout pathname={pathname}>{element}</DefaultLayout>;
 }
 

@@ -26,8 +26,7 @@ const propTypes = {
   isSignedIn: PropTypes.bool,
   stripe: PropTypes.shape({
     createToken: PropTypes.func.isRequired
-  }),
-  theme: PropTypes.string
+  })
 };
 const initialState = {
   donationState: {
@@ -39,7 +38,7 @@ const initialState = {
 
 const mapStateToProps = createSelector(
   userSelector,
-  ({ email, theme }) => ({ email, theme })
+  ({ email }) => ({ email })
 );
 
 class DonateFormChildViewForHOC extends Component {
@@ -176,7 +175,7 @@ class DonateFormChildViewForHOC extends Component {
 
   renderDonateForm() {
     const { isFormValid } = this.state;
-    const { theme, getDonationButtonLabel } = this.props;
+    const { getDonationButtonLabel } = this.props;
     return (
       <Form className='donation-form' onSubmit={this.handleSubmit}>
         <FormGroup className='donation-email-container'>
@@ -191,10 +190,7 @@ class DonateFormChildViewForHOC extends Component {
             value={this.getUserEmail()}
           />
         </FormGroup>
-        <StripeCardForm
-          getValidationState={this.getValidationState}
-          theme={theme}
-        />
+        <StripeCardForm getValidationState={this.getValidationState} />
         <Button
           block={true}
           bsStyle='primary'
