@@ -1,7 +1,7 @@
 {
   "root": true,
-  "extends": ["security","@freecodecamp/eslint-config", "prettier", "prettier/react"],
-  "plugins": ["plugin:security/recommended","prettier", "react-hooks"],
+  "extends": ["plugin:security/recommended","@freecodecamp/eslint-config", "prettier", "prettier/react"],
+  "plugins": ["security","prettier", "react-hooks"],
   "rules": {
     "max-len": [
       "error",
