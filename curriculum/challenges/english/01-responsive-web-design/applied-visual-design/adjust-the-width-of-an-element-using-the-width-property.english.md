@@ -30,7 +30,7 @@ Add a <code>width</code> property to the entire card and set it to an absolute v
 ```yml
 tests:
   - text: Your code should change the <code>width</code> property of the card to 245 pixels by using the <code>fullCard</code> class selector.
-    testString: assert(Math.round(document.querySelector('.fullCard').getBoundingClientRect().width) - 10 === 245 && /\.fullCard{\S*width:245px(;\S*}|})/.test($('style').text().replace(/\s/g ,'')));
+    testString: assert(/\.fullCard{\S*width:245px(;\S*}|})/.test($('style').text().replace(/\s/g ,'')));
 
 ```
 
