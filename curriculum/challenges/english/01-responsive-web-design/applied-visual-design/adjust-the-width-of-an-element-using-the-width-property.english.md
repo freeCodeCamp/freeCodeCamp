@@ -21,7 +21,6 @@ img {
 ## Instructions
 <section id='instructions'>
 Add a <code>width</code> property to the entire card and set it to an absolute value of 245px. Use the <code>fullCard</code> class to select the element.
-<strong>Note:</strong> You may need to be at 100% zoom to pass the test on this challenge.
 </section>
 
 ## Tests
