@@ -6,7 +6,7 @@
 # freeCodeCamp를 로컬 시스템에 설치하기
 로컬 시스템에(역주: 예를 들어서, 내 컴퓨터) freeCodeCamp를 설치하려고 하신다면 이 가이드라인을 따라 주세요. 주기적으로 기여(역주: 참여)해 주실 생각이라면 이를 추천드립니다.
 
-몇 가지 기여 흐름도는, 예를 들어서 가이드나 코딩챌린지 페이지 미리 보기라든지 코드를 디버깅하거나 버그를 고치는 등의 몇 가지 기여 흐름도는 여러분에게 freeCodeCamp를 로컬하게 진행하기를 기대합니다.
+예를 들어서 가이드나 코딩챌린지 페이지 미리 보기라든지 코드를 디버깅하거나 버그를 고치는 등의 몇 가지 기여 흐름도는 여러분에게 freeCodeCamp를 로컬하게 진행하기를 기대합니다.
 
 ## GitHub에 있는 저장소를 복사하기
 ['Forking'](https://help.github.com/articles/about-forks/)은 여러분만의 GitHubd에 있는 freeCodeCamp의 주요 저장소의 복사본을 갖게 해 줍니다.
@@ -35,59 +35,58 @@
 3. 자신에게 맞는코드에디터 설치하기
     [VS Code](https://code.visualstudio.com/)나 [Atom](https://atom.io/)을 추천드립니다. 이 두 에디터는 잘 만들어졌으며 무료이고 오픈 소스 코드 에디터들입니다.
 
-4. Set up linting for your code editor.
+4. 에디터에 linting 설치하기
+    반드시 [ESLint running in your editor](http://eslint.org/docs/user-guide/integrations.html)를 설치해 주세요. 이는 [freeCodeCamp의 자바스크립트 스타일 가이드](http://forum.freecodecamp.org/t/free-code-camp-javascript-style-guide/19121)와 일치하지 않는 부분을 표시해 줄 겁니다.
 
-    You should have [ESLint running in your editor](http://eslint.org/docs/user-guide/integrations.html), and it will highlight anything that doesn't conform to [freeCodeCamp's JavaScript Style Guide](http://forum.freecodecamp.org/t/free-code-camp-javascript-style-guide/19121).
+    > linting 에러들을 그냥 지나치지 말아 주세요. 이것들은 여러분을 **도와주려는** 목적이며, 간결한 코드를 유지하도록 해 줍니다.
 
-    > Please do not ignore any linting errors. They are meant to **help** you and to ensure a clean and simple codebase.
+## freeCodeCamp의 복사본을 복제하기
+['Cloning'](https://help.github.com/articles/cloning-a-repository/)은 여러분 혹은 다른 사람의 소유인 '원격(remote)' 장소에서 **다운로드**한 저장소의 복사본입니다. 여러분의 경우, 이 원격 장소는 freeCodeCamp 저장소의 '분기(fork)'로 `https://github.com/YOUR_USER_NAME/freeCodeCamp`에서 확인할 수 있어야 합니다.
 
-4. 
+내 컴퓨터에서 아래 명령어를 실행하세요:
 
-## Clone your copy of freeCodeCamp
-['Cloning'](https://help.github.com/articles/cloning-a-repository/) is where you **download** a copy of a repository from a `remote` location that is either owned by you or by someone else. In your case, this remote location is your `fork` of freeCodeCamp's repository that should be available at `https://github.com/YOUR_USER_NAME/freeCodeCamp`.
+1. 터미널을 열고 / 명령어 프롬프트 / 프로젝트 디렉토리에 있는 셸
 
-Run these commands on your local machine:
+    _예를 들어서: `/프로젝트 디렉토리/`_
 
-1. Open a Terminal / Command Prompt / Shell in your projects directory
-
-    _i.e.: `/yourprojectsdirectory/`_
-
-2. Clone your fork of freeCodeCamp, replacing `YOUR_USER_NAME` with your GitHub Username
+2. `YOUR_USER_NAME`을 여러분의 깃허브 아이디로 바꾼 다음에 freeCodeCamp의 복사본을 복제하세요.
 
     ```sh
     git clone --depth=1 https://github.com/YOUR_USER_NAME/freeCodeCamp.git
     ```
 
-This will download the entire freeCodeCamp repository to your projects directory.
+이는 전체 freeCodeCamp 저장소를 여러분의 디렉토리로 다운로드되도록 할 것입니다.
 
-Note: `--depth=1` creates a shallow clone of your fork, with only the most recent history/commit.
+노트: `--depth=1` 는 여러분이 복사한 저장소를 최근에 이루어진 히스토리와 커밋만을 겉핥기 식으로 복제합니다.
 
-## Setup an `upstream` to the main repository
-Now that you have downloaded a copy of your fork, you will need to set up an `upstream`.
 
-As mentioned earlier, the main repository at `https://github.com/freeCodeCamp/freeCodeCamp` is often referred to as the `upstream` repository. Your fork at `https://github.com/YOUR_USER_NAME/freeCodeCamp` is often referred to as the `origin` repository.
+## 메인 저장소에 `upstream` 설치하기
+지금까지 여러분은 fork의 복사본을 다운로드했고, 이제 `upstream`을 설치할 차례입니다.
 
-You need a reference from your local clone to the `upstream` repository in addition to the `origin` repository. This is so that you can sync changes from the main repository without the requirement of forking and cloning repeatedly.
+이전에도 언급했듯이, `https://github.com/freeCodeCamp/freeCodeCamp`에 있는 메인 저장소는 종종 `upstream` 저장소로도 종종 불리웁니다. `https://github.com/YOUR_USER_NAME/freeCodeCamp`에 있는 여러분의 fork(역주: 복사본)은 `origin` 저장소로도 불리울 겁니다. 
 
-1. Change directory to the new freeCodeCamp directory:
+`origin` 저장소 외에도 로컬 클론에서 `upstream` 저장소에 대한 참조가 필요합니다. 그럼으로써 여러분은 메인 저장소의 변경 사항을 번거롭게 복사와 복제를 매번 할 필요없이 동기화시킬 수 있습니다.
+
+
+1. 방금 복사한 freeCodeCamp 디렉토리로 갑니다:
 
     ```sh
     cd freeCodeCamp
     ```
 
-2. Add a remote reference to the main freeCodeCamp repository:
+2. freeCodeCamp 메인 저장소로의 원격 참조를 추가합니다:
 
     ```sh
     git remote add upstream https://github.com/freeCodeCamp/freeCodeCamp.git
     ```
 
-3. Ensure the configuration looks correct:
+3. 제대로 되었는지 확인합니다:
 
     ```sh
     git remote -v
     ```
 
-    The output should look something like below:
+    결과물이 아래와 비슷하여야 합니다:
 
     ```sh
     origin    https://github.com/YOUR_USER_NAME/freeCodeCamp.git (fetch)
