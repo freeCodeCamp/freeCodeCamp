@@ -1,8 +1,11 @@
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const { writeFileSync } = require('fs');
 
 module.exports = (env = {}) => {
   const __DEV__ = env.production !== true;
+  const staticPath = path.join(__dirname, './static/js');
+  const configPath = path.join(__dirname, './config');
   return {
     mode: __DEV__ ? 'development' : 'production',
     entry: {
@@ -13,8 +16,18 @@ module.exports = (env = {}) => {
     devtool: __DEV__ ? 'inline-source-map' : 'source-map',
     output: {
       publicPath: '/js/',
-      chunkFilename: '[name].js',
-      path: path.join(__dirname, './static/js')
+      filename: chunkData => {
+        // construct and output the filename here, so the client can use the
+        // json to find the file.
+        const filename = `${chunkData.chunk.name}.${chunkData.chunk.contentHash.javascript}`;
+        writeFileSync(
+          path.join(configPath, `${chunkData.chunk.name}.json`),
+          `{"filename": "${filename}"}`
+        );
+        return filename + '.js';
+      },
+      chunkFilename: '[name].[contenthash].js',
+      path: staticPath
     },
     stats: {
       // Display bailout reasons

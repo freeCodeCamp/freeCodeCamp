@@ -18,6 +18,10 @@ import protect from 'loop-protect';
 import * as vinyl from '../utils/polyvinyl.js';
 import createWorker from '../utils/worker-executor';
 
+// the config files are created during the build, but not before linting
+// eslint-disable-next-line import/no-unresolved
+import { filename as sassCompile } from '../../../../config/sass-compile';
+
 const protectTimeout = 100;
 Babel.registerPlugin('loopProtection', protect(protectTimeout));
 
@@ -89,7 +93,7 @@ export const babelTransformer = cond([
   [stubTrue, identity]
 ]);
 
-const sassWorker = createWorker('sass-compile');
+const sassWorker = createWorker(sassCompile);
 async function transformSASS(element) {
   const styleTags = element.querySelectorAll('style[type="text/sass"]');
   await Promise.all(

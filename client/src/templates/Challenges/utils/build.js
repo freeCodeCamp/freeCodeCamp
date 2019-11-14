@@ -8,9 +8,15 @@ import {
   createMainFramer
 } from './frame';
 
+// the config files are created during the build, but not before linting
+// eslint-disable-next-line import/no-unresolved
+import { filename as runner } from '../../../../config/frame-runner';
+// eslint-disable-next-line import/no-unresolved
+import { filename as testEvaluator } from '../../../../config/test-evaluator';
+
 const frameRunner = [
   {
-    src: '/js/frame-runner.js'
+    src: `/js/${runner}.js`
   }
 ];
 
@@ -91,7 +97,7 @@ export function getTestRunner(buildData, proxyLogger, document) {
 function getJSTestRunner({ build, sources }, proxyLogger) {
   const code = sources && 'index' in sources ? sources['index'] : '';
 
-  const testWorker = createWorker('test-evaluator', { terminateWorker: true });
+  const testWorker = createWorker(testEvaluator, { terminateWorker: true });
 
   return (testString, testTimeout) => {
     return testWorker
