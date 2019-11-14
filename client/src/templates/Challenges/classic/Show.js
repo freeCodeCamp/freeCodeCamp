@@ -23,7 +23,7 @@ import Hotkeys from '../components/Hotkeys';
 
 import { getGuideUrl } from '../utils';
 import { challengeTypes } from '../../../../utils/challengeTypes';
-import { ChallengeNode } from '../../../redux/propTypes';
+import { ChallengeNode, AllChallengeNode } from '../../../redux/propTypes';
 import { dasherize } from '../../../../../utils/slugs';
 import {
   createFiles,
@@ -63,7 +63,8 @@ const propTypes = {
   challengeMounted: PropTypes.func.isRequired,
   createFiles: PropTypes.func.isRequired,
   data: PropTypes.shape({
-    challengeNode: ChallengeNode
+    challengeNode: ChallengeNode,
+    allChallengeNode: AllChallengeNode
   }),
   executeChallenge: PropTypes.func.isRequired,
   files: PropTypes.shape({
@@ -252,8 +253,13 @@ class ShowClassic extends Component {
   }
 
   render() {
+    console.log('show.props');
+    console.log(this.props);
     const { forumTopicId, title } = this.getChallenge();
     const {
+      data: {
+        allChallengeNode: { edges }
+      },
       executeChallenge,
       pageContext: {
         challengeMeta: { introPath, nextChallengePath, prevChallengePath }
@@ -298,7 +304,11 @@ class ShowClassic extends Component {
               testOutput={this.renderTestOutput()}
             />
           </Media>
-          <CompletionModal />
+          <CompletionModal
+            allChallengeNodes={edges
+              .map(({ node }) => node)
+              .filter(({ isPrivate }) => !isPrivate)}
+          />
           <HelpModal />
           <VideoModal videoUrl={this.getVideoUrl()} />
           <ResetModal />
@@ -318,6 +328,16 @@ export default connect(
 
 export const query = graphql`
   query ClassicChallenge($slug: String!) {
+    allChallengeNode(sort: { fields: [superOrder, order, challengeOrder] }) {
+      edges {
+        node {
+          fields {
+            blockName
+          }
+          id
+        }
+      }
+    }
     challengeNode(fields: { slug: { eq: $slug } }) {
       title
       description

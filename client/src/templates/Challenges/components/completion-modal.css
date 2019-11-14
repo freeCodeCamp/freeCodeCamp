@@ -10,6 +10,21 @@
   width: 30vh;
 }
 
+.success-icon {
+  max-width: 30px;
+  max-height: 30px;
+  transform: scale(4);
+  opacity: 0;
+  animation: success-icon-animation 2s linear 100ms forwards;
+}
+
+@keyframes success-icon-animation {
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 @media screen and (max-width: 767px) {
   .challenge-success-modal .btn-lg {
     font-size: 16px;

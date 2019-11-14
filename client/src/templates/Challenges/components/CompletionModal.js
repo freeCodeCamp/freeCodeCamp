@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import noop from 'lodash/noop';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Button, Modal } from '@freecodecamp/react-bootstrap';
+import { Button, Modal, ProgressBar } from '@freecodecamp/react-bootstrap';
 
 import ga from '../../../analytics';
 import Login from '../../../components/Header/components/Login';
@@ -16,6 +16,7 @@ import './completion-modal.css';
 import {
   closeModal,
   submitChallenge,
+  completedChallengesIds,
   isCompletionModalOpenSelector,
   successMessageSelector,
   challengeFilesSelector,
@@ -27,12 +28,22 @@ import { isSignedInSelector } from '../../../redux';
 const mapStateToProps = createSelector(
   challengeFilesSelector,
   challengeMetaSelector,
+  completedChallengesIds,
   isCompletionModalOpenSelector,
   isSignedInSelector,
   successMessageSelector,
-  (files, { title }, isOpen, isSignedIn, message) => ({
+  (
+    files,
+    { title, id },
+    completedChallengesIds,
+    isOpen,
+    isSignedIn,
+    message
+  ) => ({
     files,
     title,
+    id,
+    completedChallengesIds,
     isOpen,
     isSignedIn,
     message
@@ -59,15 +70,46 @@ const mapDispatchToProps = function(dispatch) {
 };
 
 const propTypes = {
+  allChallengeNodes: PropTypes.array.isRequired,
   close: PropTypes.func.isRequired,
+  completedChallengesIds: PropTypes.array.isRequired,
   files: PropTypes.object.isRequired,
   handleKeypress: PropTypes.func.isRequired,
+  id: PropTypes.string.isRequired,
   isOpen: PropTypes.bool,
   isSignedIn: PropTypes.bool.isRequired,
   message: PropTypes.string,
   submitChallenge: PropTypes.func.isRequired,
   title: PropTypes.string
 };
+
+function getCurrentBlock(allChallengeNodes, currentChallengeId) {
+  return allChallengeNodes.find(node => node.id === currentChallengeId).fields
+    .blockName;
+}
+
+function getCompletedPercent(
+  allChallengeNodes,
+  completedChallengesIds,
+  currentBlock
+) {
+  const currentBlockNodes = allChallengeNodes.filter(
+    node => node.fields.blockName === currentBlock
+  );
+
+  const currentBlockLength = currentBlockNodes.length;
+
+  const completedChallengesInBlock =
+    currentBlockNodes.filter(node => {
+      return completedChallengesIds.includes(node.id);
+    }).length + 1;
+
+  const percentCompleted = Math.round(
+    (completedChallengesInBlock / currentBlockLength) * 100
+  );
+
+  return percentCompleted > 100 ? 100 : percentCompleted;
+}
 
 export class CompletionModal extends Component {
   state = {
@@ -110,8 +152,13 @@ export class CompletionModal extends Component {
   }
 
   render() {
+    console.log('CompletionProps');
+    console.log(this.props);
     const {
+      allChallengeNodes,
       close,
+      completedChallengesIds,
+      id,
       isOpen,
       isSignedIn,
       submitChallenge,
@@ -119,6 +166,14 @@ export class CompletionModal extends Component {
       message,
       title
     } = this.props;
+
+    const currentBlock = getCurrentBlock(allChallengeNodes, id);
+    const completedPercent = getCompletedPercent(
+      allChallengeNodes,
+      completedChallengesIds,
+      currentBlock
+    );
+
     if (isOpen) {
       ga.modalview('/completion-modal');
     }
@@ -141,7 +196,15 @@ export class CompletionModal extends Component {
         </Modal.Header>
         <Modal.Body className='completion-modal-body'>
           <div className='success-icon-wrapper'>
-            <GreenPass />
+            <span>{title}</span>
+            <GreenPass className='success-icon' />
+          </div>
+          <div>
+            {currentBlock}
+            <ProgressBar
+              label={`${completedPercent}%`}
+              now={completedPercent}
+            />
           </div>
         </Modal.Body>
         <Modal.Footer>

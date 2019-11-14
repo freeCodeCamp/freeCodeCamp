@@ -158,6 +158,13 @@ export const challengeFilesSelector = state => state[ns].challengeFiles;
 export const challengeMetaSelector = state => state[ns].challengeMeta;
 export const challengeTestsSelector = state => state[ns].challengeTests;
 export const consoleOutputSelector = state => state[ns].consoleOut;
+export const completedChallengesIds = state => {
+  const completedChallenges = completedChallengesSelector(state);
+  const completedChallengesIds = completedChallenges.map(node => node.id);
+  console.log('completedChallengesIds');
+  console.log(completedChallengesIds);
+  return completedChallengesIds;
+};
 export const isChallengeCompletedSelector = state => {
   const completedChallenges = completedChallengesSelector(state);
   const { id: currentChallengeId } = challengeMetaSelector(state);
