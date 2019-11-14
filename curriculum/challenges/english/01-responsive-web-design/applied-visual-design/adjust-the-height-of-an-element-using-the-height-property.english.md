@@ -21,7 +21,6 @@ img {
 ## Instructions
 <section id='instructions'>
 Add a <code>height</code> property to the <code>h4</code> tag and set it to 25px.
-<strong>Note:</strong> You may need to be at 100% zoom to pass the test on this challenge.
 </section>
 
 ## Tests
