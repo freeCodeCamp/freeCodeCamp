@@ -8,7 +8,7 @@ forumTopicId: 18277
 
 ## Description
 <section id='description'>
-If you have many options to choose from, use a <code>switch</code> statement. A <code>switch</code> statement tests a value and can have many <code>case</code> statements which define various possible values. Statements are executed from the first matched <code>case</code> value until a <code>break</code> is encountered.
+If you have many options to choose from, use a <dfn>switch</dfn> statement. A <code>switch</code> statement tests a value and can have many <dfn>case</dfn> statements which define various possible values. Statements are executed from the first matched <code>case</code> value until a <code>break</code> is encountered.
 A <code>switch</code> statement can be written as follows:
 
 ```js
