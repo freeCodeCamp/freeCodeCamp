@@ -23,7 +23,7 @@ where $count_i$ is the count of character $n_i$.
 
 ```yml
 tests:
-  - text: <code>entropy</code> is a function.
+  - text: <code>entropy</code> should be a function.
     testString: assert(typeof entropy === 'function');
   - text: <code>entropy("0")</code> should return <code>0</code>
     testString: assert.equal(entropy('0'), 0);

@@ -27,7 +27,7 @@ tests:
     testString: assert.strictEqual(multiplesOf3and5(49), 543);
   - text: <code>multiplesOf3and5(19564)</code> should return 89301183.
     testString: assert.strictEqual(multiplesOf3and5(19564), 89301183);
-  - text: Your function is not returning the correct result using our tests values.
+  - text: <code>multiplesOf3and5(8456)</code> should return 16687353.
     testString: assert.strictEqual(multiplesOf3and5(8456), 16687353);
 
 ```
