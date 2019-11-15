@@ -161,8 +161,6 @@ export const consoleOutputSelector = state => state[ns].consoleOut;
 export const completedChallengesIds = state => {
   const completedChallenges = completedChallengesSelector(state);
   const completedChallengesIds = completedChallenges.map(node => node.id);
-  console.log('completedChallengesIds');
-  console.log(completedChallengesIds);
   return completedChallengesIds;
 };
 export const isChallengeCompletedSelector = state => {

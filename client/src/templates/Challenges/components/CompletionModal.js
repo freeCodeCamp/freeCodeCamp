@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import noop from 'lodash/noop';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Button, Modal, ProgressBar } from '@freecodecamp/react-bootstrap';
+import { Button, Modal } from '@freecodecamp/react-bootstrap';
 
 import ga from '../../../analytics';
 import Login from '../../../components/Header/components/Login';
@@ -32,17 +32,9 @@ const mapStateToProps = createSelector(
   isCompletionModalOpenSelector,
   isSignedInSelector,
   successMessageSelector,
-  (
-    files,
-    { title, id },
-    completedChallengesIds,
-    isOpen,
-    isSignedIn,
-    message
-  ) => ({
+  (files, { title }, completedChallengesIds, isOpen, isSignedIn, message) => ({
     files,
     title,
-    id,
     completedChallengesIds,
     isOpen,
     isSignedIn,
@@ -71,11 +63,11 @@ const mapDispatchToProps = function(dispatch) {
 
 const propTypes = {
   allChallengeNodes: PropTypes.array.isRequired,
+  blockName: PropTypes.string.isRequired,
   close: PropTypes.func.isRequired,
   completedChallengesIds: PropTypes.array.isRequired,
   files: PropTypes.object.isRequired,
   handleKeypress: PropTypes.func.isRequired,
-  id: PropTypes.string.isRequired,
   isOpen: PropTypes.bool,
   isSignedIn: PropTypes.bool.isRequired,
   message: PropTypes.string,
@@ -83,18 +75,13 @@ const propTypes = {
   title: PropTypes.string
 };
 
-function getCurrentBlock(allChallengeNodes, currentChallengeId) {
-  return allChallengeNodes.find(node => node.id === currentChallengeId).fields
-    .blockName;
-}
-
 function getCompletedPercent(
   allChallengeNodes,
   completedChallengesIds,
-  currentBlock
+  blockName
 ) {
   const currentBlockNodes = allChallengeNodes.filter(
-    node => node.fields.blockName === currentBlock
+    node => node.fields.blockName === blockName
   );
 
   const currentBlockLength = currentBlockNodes.length;
@@ -154,11 +141,13 @@ export class CompletionModal extends Component {
   render() {
     console.log('CompletionProps');
     console.log(this.props);
+    console.log('CompletionState');
+    console.log(this.state);
     const {
-      allChallengeNodes,
+      allChallengeNodes = [],
+      blockName,
       close,
       completedChallengesIds,
-      id,
       isOpen,
       isSignedIn,
       submitChallenge,
@@ -167,11 +156,10 @@ export class CompletionModal extends Component {
       title
     } = this.props;
 
-    const currentBlock = getCurrentBlock(allChallengeNodes, id);
     const completedPercent = getCompletedPercent(
       allChallengeNodes,
       completedChallengesIds,
-      currentBlock
+      blockName
     );
 
     if (isOpen) {
@@ -195,16 +183,22 @@ export class CompletionModal extends Component {
           <Modal.Title className='text-center'>{message}</Modal.Title>
         </Modal.Header>
         <Modal.Body className='completion-modal-body'>
-          <div className='success-icon-wrapper'>
-            <span>{title}</span>
-            <GreenPass className='success-icon' />
+          <div className='completion-challenge-details'>
+            <div className='completion-challenge-name'>{title}</div>
+            <GreenPass className='completion-success-icon' />
           </div>
-          <div>
-            {currentBlock}
-            <ProgressBar
-              label={`${completedPercent}%`}
-              now={completedPercent}
-            />
+          <div className='completion-block-details'>
+            <div className='completion-block-name'>{blockName}</div>
+            <div className='progress-bar-wrap'>
+              <div className='progress-bar-background'>
+                {completedPercent}% complete
+              </div>
+              <div className='progress-bar-percent' style={{ width: '60%' }}>
+                <div className='progress-bar-foreground'>
+                  {completedPercent}% complete
+                </div>
+              </div>
+            </div>
           </div>
         </Modal.Body>
         <Modal.Footer>

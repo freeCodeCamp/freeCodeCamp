@@ -23,7 +23,7 @@ import Hotkeys from '../components/Hotkeys';
 
 import { getGuideUrl } from '../utils';
 import { challengeTypes } from '../../../../utils/challengeTypes';
-import { ChallengeNode, AllChallengeNode } from '../../../redux/propTypes';
+import { ChallengeNode } from '../../../redux/propTypes';
 import { dasherize } from '../../../../../utils/slugs';
 import {
   createFiles,
@@ -64,7 +64,9 @@ const propTypes = {
   createFiles: PropTypes.func.isRequired,
   data: PropTypes.shape({
     challengeNode: ChallengeNode,
-    allChallengeNode: AllChallengeNode
+    allChallengeNode: PropTypes.shape({
+      edges: PropTypes.array
+    })
   }),
   executeChallenge: PropTypes.func.isRequired,
   files: PropTypes.shape({
@@ -255,7 +257,11 @@ class ShowClassic extends Component {
   render() {
     console.log('show.props');
     console.log(this.props);
-    const { forumTopicId, title } = this.getChallenge();
+    const {
+      fields: { blockName },
+      forumTopicId,
+      title
+    } = this.getChallenge();
     const {
       data: {
         allChallengeNode: { edges }
@@ -305,9 +311,8 @@ class ShowClassic extends Component {
             />
           </Media>
           <CompletionModal
-            allChallengeNodes={edges
-              .map(({ node }) => node)
-              .filter(({ isPrivate }) => !isPrivate)}
+            allChallengeNodes={edges.map(({ node }) => node)}
+            blockName={blockName}
           />
           <HelpModal />
           <VideoModal videoUrl={this.getVideoUrl()} />

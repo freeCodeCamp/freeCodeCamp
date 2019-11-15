@@ -110,8 +110,6 @@ export class Map extends Component {
   }
 
   render() {
-    console.log('mapProps');
-    console.log(this.props);
     const { nodes } = this.props;
     const superBlocks = uniq(nodes.map(({ superBlock }) => superBlock));
     return (

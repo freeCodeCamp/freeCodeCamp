@@ -1,21 +1,37 @@
 .completion-modal-body {
-  height: 45vh;
+  min-height: 400px;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
+  flex-direction: column;
 }
 
-.success-icon-wrapper > svg {
-  height: 30vh;
-  width: 30vh;
+.completion-modal-body > div {
+  width: 100%;
 }
 
-.success-icon {
-  max-width: 30px;
-  max-height: 30px;
-  transform: scale(4);
+/* {
+  border: 1px solid red;
+  box-sizing: border-box;
+}*/
+
+.completion-challenge-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.completion-challenge-name {
+  text-align: right;
+  width: 60%;
+}
+
+.completion-success-icon {
+  width: 100px;
+  height: 100px;
+  transform: scale(3);
   opacity: 0;
-  animation: success-icon-animation 2s linear 100ms forwards;
+  animation: success-icon-animation 300ms linear 100ms forwards;
 }
 
 @keyframes success-icon-animation {
@@ -25,8 +41,58 @@
   }
 }
 
+.completion-block-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.progress-bar-wrap {
+  margin-top: 20px;
+  width: 400px;
+  height: 50px;
+  position: relative;
+}
+
+.progress-bar-background {
+  width: 400px;
+  height: 50px;
+  border: 3px solid var(--secondary-color);
+  background-color: var(--quaternary-background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.progress-bar-percent {
+  width: 0;
+  overflow: hidden;
+  position: relative;
+  transition: width 200ms linear;
+  background-color: var(--secondary-color);
+}
+
+.progress-bar-foreground {
+  color: white;
+  width: 400px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @media screen and (max-width: 767px) {
   .challenge-success-modal .btn-lg {
     font-size: 16px;
+  }
+
+  .progress-bar-wrap,
+  .progress-bar-background,
+  .progress-bar-foreground {
+    width: 260px;
+    height: 40px;
   }
 }
