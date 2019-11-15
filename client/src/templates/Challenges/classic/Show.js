@@ -63,10 +63,10 @@ const propTypes = {
   challengeMounted: PropTypes.func.isRequired,
   createFiles: PropTypes.func.isRequired,
   data: PropTypes.shape({
-    challengeNode: ChallengeNode,
     allChallengeNode: PropTypes.shape({
       edges: PropTypes.array
-    })
+    }),
+    challengeNode: ChallengeNode
   }),
   executeChallenge: PropTypes.func.isRequired,
   files: PropTypes.shape({
@@ -255,8 +255,6 @@ class ShowClassic extends Component {
   }
 
   render() {
-    console.log('show.props');
-    console.log(this.props);
     const {
       fields: { blockName },
       forumTopicId,

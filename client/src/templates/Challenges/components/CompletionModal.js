@@ -193,7 +193,10 @@ export class CompletionModal extends Component {
               <div className='progress-bar-background'>
                 {completedPercent}% complete
               </div>
-              <div className='progress-bar-percent' style={{ width: '60%' }}>
+              <div
+                className='progress-bar-percent'
+                style={{ width: completedPercent + '%' }}
+              >
                 <div className='progress-bar-foreground'>
                   {completedPercent}% complete
                 </div>
