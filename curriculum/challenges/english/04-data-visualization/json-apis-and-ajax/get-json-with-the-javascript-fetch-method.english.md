@@ -97,7 +97,7 @@ tests:
   }
 </style>
 <h1>Cat Photo Finder</h1>
-<p id="message">
+<p id="message" class="box">
   The message will go here
 </p>
 <p>
@@ -155,7 +155,7 @@ tests:
   }
 </style>
 <h1>Cat Photo Finder</h1>
-<p id="message">
+<p id="message" class="box">
   The message will go here
 </p>
 <p>

@@ -103,7 +103,7 @@ tests:
   }
 </style>
 <h1>Cat Friends</h1>
-<p class="message">
+<p class="message box">
   Reply from Server will be here
 </p>
 <p>
