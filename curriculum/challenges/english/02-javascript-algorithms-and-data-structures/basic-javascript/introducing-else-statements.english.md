@@ -42,7 +42,7 @@ tests:
     testString: assert(testElse(6) === "Bigger than 5");
   - text: <code>testElse(10)</code> should return "Bigger than 5"
     testString: assert(testElse(10) === "Bigger than 5");
-  - text: Do not change the code above or below the lines.
+  - text: You should not change the code above or below the specified comments.
     testString: assert(/var result = "";/.test(code) && /return result;/.test(code));
 
 ```
