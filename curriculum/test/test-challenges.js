@@ -180,7 +180,7 @@ function populateTestsForLang({ lang, challenges }) {
             throw new AssertionError(result.error);
           }
           if (challenge.challengeType !== 7 && invalidBlock) {
-            throw new AssertionError(invalidBlock);
+            throw new Error(invalidBlock);
           }
           const { id, title } = challenge;
           mongoIds.check(id, title);
