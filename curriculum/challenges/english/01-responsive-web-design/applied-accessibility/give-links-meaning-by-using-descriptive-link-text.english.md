@@ -24,8 +24,10 @@ The link text that Camper Cat is using is not very descriptive without the surro
 tests:
   - text: Your code should move the anchor <code>a</code> tags from around the words "Click here" to wrap around the words "information about batteries".
     testString: assert($('a').text().match(/^(information about batteries)$/g));
-  - text: Make sure your <code>a</code> element has a closing tag.
-    testString: assert(code.match(/<\/a>/g) && code.match(/<\/a>/g).length === code.match(/<a href=(''|"")>/g).length);
+  - text: Your <code>a</code> element should have an <code>href</code> attribute with a value of an empty string <code>""</code>.
+    testString: assert($('a').attr('href') === '');
+  - text: Your <code>a</code> element should have a closing tag.
+    testString: assert($('a').length === code.match(/<\/a>/g).length);
 
 ```
 
