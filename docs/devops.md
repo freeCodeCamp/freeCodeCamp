@@ -13,9 +13,9 @@ Let us know, if you have feedback or queries, and we will be happy to clarify.
 
 ## How do we build, test and deploy the codebase?
 
-Our codebase is continuously built, tested and deployed  to **separate sets of infrastructure (Servers, Databases, CDNs, etc.)**. 
+Our codebase is continuously built, tested and deployed  to **separate sets of infrastructure (Servers, Databases, CDNs, etc.)**.
 
-This involves three steps to be followed in sequence: 
+This involves three steps to be followed in sequence:
 
 First, new changes are merged into our primary development branch (`master`) in form of pull requests. Next, these changes are run through a series of automated tests. And finally, once the tests pass we release the changes (or update them if needed) to deployments on our infrastructure.
 
@@ -148,9 +148,9 @@ And that's it, this will automatically trigger a build on the build pipeline for
 
 Here are some additional steps that need to be followed by a freeCodeCamp.org Staff developer. To prevent any accidental pushes we have a couple of manual approval steps configured on the pipelines.
 
-Once a build artifact is ready on the `production-current` branch, it will trigger a release on the release pipeline. 
+Once a build artifact is ready on the `production-current` branch, it will trigger a release on the release pipeline.
 
-Next, freeCodeCamp.org developer staff team will receive an email. They can either *approve* or *reject* the release. Approval or rejection depends, if changes were nicely working and tested on the staging application. Each approval lasts only for 4 hours to avoid queuing up. Post the limit it gets auto rejected, wherein a staff will re-trigger the release pipeline manually.
+Next, the freeCodeCamp.org developer staff team will receive an email. They can either *approve* or *reject* the release. If the changes are working nicely and have been tested on the staging application, then it can be approved. This must happen within 4 hours of the release being triggered or it will automatically get rejected.  If this happens a staff member will need to re-trigger the release pipeline manually.
 
 For staff use:
 
