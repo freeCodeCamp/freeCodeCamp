@@ -1,29 +1,23 @@
 .completion-modal-body {
   min-height: 400px;
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
   flex-direction: column;
+  justify-content: space-evenly;
 }
-
-.completion-modal-body > div {
-  width: 100%;
-}
-
-/* {
-  border: 1px solid red;
-  box-sizing: border-box;
-}*/
 
 .completion-challenge-details {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
+  margin-bottom: 15px;
 }
 
 .completion-challenge-name {
-  text-align: right;
-  width: 60%;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
 }
 
 .completion-success-icon {
@@ -45,10 +39,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+}
+
+.completion-block-name {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
 }
 
 .progress-bar-wrap {
-  margin-top: 20px;
   width: 400px;
   height: 50px;
   position: relative;
@@ -57,7 +58,8 @@
 .progress-bar-background {
   width: 400px;
   height: 50px;
-  border: 3px solid var(--secondary-color);
+  color: var(--primary-color);
+  border: 3px solid var(--primary-color);
   background-color: var(--quaternary-background);
   display: flex;
   align-items: center;
@@ -72,11 +74,11 @@
   overflow: hidden;
   position: relative;
   transition: width 200ms linear;
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
 }
 
 .progress-bar-foreground {
-  color: white;
+  color: var(--primary-background);
   width: 400px;
   height: 50px;
   display: flex;
@@ -84,7 +86,7 @@
   justify-content: center;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 991px) {
   .challenge-success-modal .btn-lg {
     font-size: 16px;
   }
@@ -94,5 +96,16 @@
   .progress-bar-foreground {
     width: 260px;
     height: 40px;
+  }
+
+  .completion-success-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .completion-challenge-name,
+  .completion-block-name {
+    font-weight: 100;
+    font-size: 1rem;
   }
 }
