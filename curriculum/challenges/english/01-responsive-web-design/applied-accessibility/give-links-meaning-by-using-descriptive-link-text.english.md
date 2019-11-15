@@ -26,7 +26,7 @@ tests:
     testString: assert($('a').text().match(/^(information about batteries)$/g));
   - text: Your <code>a</code> element should have a <code>href</code> attribute with a value of an empty string <code>""</code>.
     testString: assert($('a').attr('href') === '');
-  - text: You <code>a</code> element should have a closing tag.
+  - text: Your <code>a</code> element should have a closing tag.
     testString: assert($('a').length === code.match(/<\/a>/g).length);
 
 ```
