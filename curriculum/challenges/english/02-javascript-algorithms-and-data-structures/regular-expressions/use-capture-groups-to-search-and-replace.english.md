@@ -28,7 +28,7 @@ You can also access capture groups in the replacement string with dollar signs (
 
 ## Instructions
 <section id='instructions'>
-Write a regex using capture groups that will search for the words <code>"one"</code>, <code>"two"</code>, and <code>"three"</code>. Then update the <code>replaceText</code> variable to replace <code>"one two three"</code> with <code>"three two one"</code>.
+Write a regex using three capture groups that will replace the string "one two three" with the string "three two one" and assign the result to the <code>replaceText</code> variable.
 </section>
 
 ## Tests
@@ -42,6 +42,8 @@ tests:
     testString: assert(result === "three two one");
   - text: You should not change the last line.
     testString: assert(code.match(/result\s*=\s*huhText\.replace\(.*?\)/));
+  - text: <code>fixRegex</code> should use at least three capture groups.
+    testString: assert((new RegExp(fixRegex.source + '|')).exec('').length - 1 >= 3);
 
 ```
 
