@@ -143,6 +143,7 @@ export class CompletionModal extends Component {
     console.log(this.props);
     console.log('CompletionState');
     console.log(this.state);
+    // new comment here
     const {
       allChallengeNodes = [],
       blockName,
