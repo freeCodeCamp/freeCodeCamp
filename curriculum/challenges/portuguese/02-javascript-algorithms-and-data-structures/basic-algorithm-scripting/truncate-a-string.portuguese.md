@@ -8,7 +8,7 @@ localeTitle: Truncar uma string
 ---
 
 ## Description
-<section id="description"> Truncar uma string (primeiro argumento) se for maior que o tamanho máximo da string (segundo argumento). Retorna a string truncada com um <code>...</code> terminando. Lembre-se de usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Escreva seu próprio código. </section>
+<section id="description"> Truncar uma string (primeiro argumento) se for maior que o tamanho máximo da string (segundo argumento). Retorna a string truncada com um <code>...</code> terminando. Lembre-se de usar <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Escreva seu próprio código. </section>
 
 ## Instructions
 <section id="instructions">
