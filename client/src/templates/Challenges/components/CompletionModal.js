@@ -4,6 +4,7 @@ import noop from 'lodash/noop';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Button, Modal } from '@freecodecamp/react-bootstrap';
+import { useStaticQuery, graphql } from 'gatsby';
 
 import ga from '../../../analytics';
 import Login from '../../../components/Header/components/Login';
@@ -66,6 +67,7 @@ const propTypes = {
   blockName: PropTypes.string.isRequired,
   close: PropTypes.func.isRequired,
   completedChallengesIds: PropTypes.array.isRequired,
+  currentBlockNodes: PropTypes.array,
   files: PropTypes.object.isRequired,
   handleKeypress: PropTypes.func.isRequired,
   isOpen: PropTypes.bool,
@@ -75,7 +77,7 @@ const propTypes = {
   title: PropTypes.string
 };
 
-function getCompletedPercent(
+/* function getCompletedPercent(
   allChallengeNodes,
   completedChallengesIds,
   blockName
@@ -96,9 +98,9 @@ function getCompletedPercent(
   );
 
   return percentCompleted > 100 ? 100 : percentCompleted;
-}
+}*/
 
-export class CompletionModal extends Component {
+export class CompletionModalInner extends Component {
   state = {
     downloadURL: null
   };
@@ -142,10 +144,10 @@ export class CompletionModal extends Component {
     console.log('CompletionProps');
     console.log(this.props);
     const {
-      allChallengeNodes = [],
       blockName,
       close,
-      completedChallengesIds,
+      // completedChallengesIds,
+      // currentBlockNodes,
       isOpen,
       isSignedIn,
       submitChallenge,
@@ -154,15 +156,16 @@ export class CompletionModal extends Component {
       title
     } = this.props;
 
-    // const completedPercent = 50;
-    const completedPercent = getCompletedPercent(
-      allChallengeNodes,
+    const completedPercent = 50;
+    /* const completedPercent = getCompletedPercent(
+      currentBlockNodes,
       completedChallengesIds,
       blockName
-    );
+    );*/
 
     if (isOpen) {
       ga.modalview('/completion-modal');
+      console.log('open');
     }
     const dashedName = dasherize(title);
     return (
@@ -239,6 +242,36 @@ export class CompletionModal extends Component {
     );
   }
 }
+
+CompletionModalInner.propTypes = propTypes;
+
+const GetCurrentBlockNodes = () => {
+  const {
+    allChallengeNode: { edges }
+  } = useStaticQuery(graphql`
+    query getCurrentBlockNodes {
+      allChallengeNode(sort: { fields: [superOrder, order, challengeOrder] }) {
+        edges {
+          node {
+            fields {
+              blockName
+            }
+            id
+          }
+        }
+      }
+    }
+  `);
+
+  return edges;
+};
+
+const CompletionModal = props => {
+  const currentBlockNodes = GetCurrentBlockNodes();
+  return (
+    <CompletionModalInner currentBlockNodes={currentBlockNodes} {...props} />
+  );
+};
 
 CompletionModal.displayName = 'CompletionModal';
 CompletionModal.propTypes = propTypes;

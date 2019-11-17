@@ -24,7 +24,7 @@
   height: 200px;
   transform: scale(3);
   opacity: 0;
-  animation: success-icon-animation 300ms linear 100ms forwards;
+  animation: success-icon-animation 250ms linear 100ms forwards;
 }
 
 @keyframes success-icon-animation {
@@ -72,8 +72,8 @@
   width: 0;
   overflow: hidden;
   position: relative;
-  transition: width 200ms linear;
   background-color: var(--primary-color);
+  transition: width 400ms linear 600ms forwards;
 }
 
 .progress-bar-foreground {

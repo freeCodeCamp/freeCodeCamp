@@ -42,9 +42,6 @@ import '../../components/test-frame.css';
 const propTypes = {
   challengeMounted: PropTypes.func.isRequired,
   data: PropTypes.shape({
-    allChallengeNode: PropTypes.shape({
-      edges: PropTypes.array
-    }),
     challengeNode: ChallengeNode
   }),
   description: PropTypes.string,
@@ -165,7 +162,6 @@ export class BackEnd extends Component {
   render() {
     const {
       data: {
-        allChallengeNode: { edges },
         challengeNode: {
           fields: { blockName },
           challengeType,
@@ -241,10 +237,7 @@ export class BackEnd extends Component {
                 <TestSuite tests={tests} />
                 <Spacer />
               </Col>
-              <CompletionModal
-                allChallengeNodes={edges.map(({ node }) => node)}
-                blockName={blockName}
-              />
+              <CompletionModal blockName={blockName} />
               <HelpModal />
             </Row>
           </Grid>
@@ -264,16 +257,6 @@ export default connect(
 
 export const query = graphql`
   query BackendChallenge($slug: String!) {
-    allChallengeNode(sort: { fields: [superOrder, order, challengeOrder] }) {
-      edges {
-        node {
-          fields {
-            blockName
-          }
-          id
-        }
-      }
-    }
     challengeNode(fields: { slug: { eq: $slug } }) {
       forumTopicId
       title

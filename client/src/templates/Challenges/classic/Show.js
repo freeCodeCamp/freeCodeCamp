@@ -63,9 +63,6 @@ const propTypes = {
   challengeMounted: PropTypes.func.isRequired,
   createFiles: PropTypes.func.isRequired,
   data: PropTypes.shape({
-    allChallengeNode: PropTypes.shape({
-      edges: PropTypes.array
-    }),
     challengeNode: ChallengeNode
   }),
   executeChallenge: PropTypes.func.isRequired,
@@ -261,9 +258,6 @@ class ShowClassic extends Component {
       title
     } = this.getChallenge();
     const {
-      data: {
-        allChallengeNode: { edges }
-      },
       executeChallenge,
       pageContext: {
         challengeMeta: { introPath, nextChallengePath, prevChallengePath }
@@ -308,10 +302,7 @@ class ShowClassic extends Component {
               testOutput={this.renderTestOutput()}
             />
           </Media>
-          <CompletionModal
-            allChallengeNodes={edges.map(({ node }) => node)}
-            blockName={blockName}
-          />
+          <CompletionModal blockName={blockName} />
           <HelpModal />
           <VideoModal videoUrl={this.getVideoUrl()} />
           <ResetModal />
@@ -331,16 +322,6 @@ export default connect(
 
 export const query = graphql`
   query ClassicChallenge($slug: String!) {
-    allChallengeNode(sort: { fields: [superOrder, order, challengeOrder] }) {
-      edges {
-        node {
-          fields {
-            blockName
-          }
-          id
-        }
-      }
-    }
     challengeNode(fields: { slug: { eq: $slug } }) {
       title
       description
