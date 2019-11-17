@@ -33,9 +33,17 @@ const mapStateToProps = createSelector(
   isCompletionModalOpenSelector,
   isSignedInSelector,
   successMessageSelector,
-  (files, { title }, completedChallengesIds, isOpen, isSignedIn, message) => ({
+  (
+    files,
+    { title, id },
+    completedChallengesIds,
+    isOpen,
+    isSignedIn,
+    message
+  ) => ({
     files,
     title,
+    id,
     completedChallengesIds,
     isOpen,
     isSignedIn,
@@ -66,9 +74,10 @@ const propTypes = {
   blockName: PropTypes.string.isRequired,
   close: PropTypes.func.isRequired,
   completedChallengesIds: PropTypes.array.isRequired,
-  currentBlockNodes: PropTypes.array,
+  currentBlockIds: PropTypes.array.isRequired,
   files: PropTypes.object.isRequired,
   handleKeypress: PropTypes.func.isRequired,
+  id: PropTypes.string.isRequired,
   isOpen: PropTypes.bool,
   isSignedIn: PropTypes.bool.isRequired,
   message: PropTypes.string,
@@ -76,28 +85,21 @@ const propTypes = {
   title: PropTypes.string
 };
 
-/* function getCompletedPercent(
-  allChallengeNodes,
-  completedChallengesIds,
-  blockName
-) {
-  const currentBlockNodes = allChallengeNodes.filter(
-    node => node.fields.blockName === blockName
+function getCompletedPercent(completedChallengesIds, currentBlockIds, id) {
+  if (!completedChallengesIds.includes(id)) {
+    completedChallengesIds.push(id);
+  }
+
+  const completedChallengesInBlock = completedChallengesIds.filter(id => {
+    return currentBlockIds.includes(id);
+  });
+
+  const completedPercent = Math.round(
+    (completedChallengesInBlock.length / currentBlockIds.length) * 100
   );
 
-  const currentBlockLength = currentBlockNodes.length;
-
-  const completedChallengesInBlock =
-    currentBlockNodes.filter(node => {
-      return completedChallengesIds.includes(node.id);
-    }).length + 1;
-
-  const percentCompleted = Math.round(
-    (completedChallengesInBlock / currentBlockLength) * 100
-  );
-
-  return percentCompleted > 100 ? 100 : percentCompleted;
-}*/
+  return completedPercent > 100 ? 100 : completedPercent;
+}
 
 export class CompletionModalInner extends Component {
   state = {
@@ -145,8 +147,9 @@ export class CompletionModalInner extends Component {
     const {
       blockName,
       close,
-      // completedChallengesIds,
-      // currentBlockNodes,
+      completedChallengesIds,
+      currentBlockIds,
+      id,
       isOpen,
       isSignedIn,
       submitChallenge,
@@ -155,16 +158,15 @@ export class CompletionModalInner extends Component {
       title
     } = this.props;
 
-    const completedPercent = 50;
-    /* const completedPercent = getCompletedPercent(
-      currentBlockNodes,
+    // const completedPercent = 50;
+    const completedPercent = getCompletedPercent(
       completedChallengesIds,
-      blockName
-    );*/
+      currentBlockIds,
+      id
+    );
 
     if (isOpen) {
       ga.modalview('/completion-modal');
-      console.log('open');
     }
     const dashedName = dasherize(title);
     return (
@@ -244,7 +246,7 @@ export class CompletionModalInner extends Component {
 
 CompletionModalInner.propTypes = propTypes;
 
-const GetCurrentBlockNodes = () => {
+const GetCurrentBlockIds = blockName => {
   const {
     allChallengeNode: { edges }
   } = useStaticQuery(graphql`
@@ -262,14 +264,15 @@ const GetCurrentBlockNodes = () => {
     }
   `);
 
-  return edges;
+  const currentBlockIds = edges
+    .filter(edge => edge.node.fields.blockName === blockName)
+    .map(edge => edge.node.id);
+  return currentBlockIds;
 };
 
 const CompletionModal = props => {
-  const currentBlockNodes = GetCurrentBlockNodes();
-  return (
-    <CompletionModalInner currentBlockNodes={currentBlockNodes} {...props} />
-  );
+  const currentBlockIds = GetCurrentBlockIds(props.blockName || '');
+  return <CompletionModalInner currentBlockIds={currentBlockIds} {...props} />;
 };
 
 CompletionModal.displayName = 'CompletionModal';
