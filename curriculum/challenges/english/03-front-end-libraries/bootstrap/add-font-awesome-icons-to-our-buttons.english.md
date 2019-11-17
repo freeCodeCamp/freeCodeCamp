@@ -21,7 +21,7 @@ Note that the <code>span</code> element is also acceptable for use with icons.
 
 ## Instructions
 <section id='instructions'>
-Use Font Awesome to add a <code>thumbs-up</code> icon to your like button by giving it an <code>i</code> element with the classes <code>fa</code> and <code>fa-thumbs-up</code>. Make sure to keep the text "Like" next to the icon.
+Use Font Awesome to add a <code>thumbs-up</code> icon to your like button by giving it an <code>i</code> element with the classes <code>fas</code> and <code>fa-thumbs-up</code>. Make sure to keep the text "Like" next to the icon.
 </section>
 
 ## Tests
