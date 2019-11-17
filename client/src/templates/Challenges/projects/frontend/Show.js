@@ -107,7 +107,6 @@ export class Project extends Component {
       },
       updateProjectFormValues
     } = this.props;
-
     const isFrontEnd = challengeType === frontEndProject;
 
     const blockNameTitle = `${blockName} - ${title}`;

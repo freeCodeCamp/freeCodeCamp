@@ -63,7 +63,6 @@ const mapDispatchToProps = function(dispatch) {
 };
 
 const propTypes = {
-  allChallengeNodes: PropTypes.array.isRequired,
   blockName: PropTypes.string.isRequired,
   close: PropTypes.func.isRequired,
   completedChallengesIds: PropTypes.array.isRequired,
