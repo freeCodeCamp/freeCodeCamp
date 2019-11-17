@@ -141,9 +141,6 @@ export class CompletionModal extends Component {
   render() {
     console.log('CompletionProps');
     console.log(this.props);
-    console.log('CompletionState');
-    console.log(this.state);
-    // new comment here
     const {
       allChallengeNodes = [],
       blockName,
@@ -157,6 +154,7 @@ export class CompletionModal extends Component {
       title
     } = this.props;
 
+    // const completedPercent = 50;
     const completedPercent = getCompletedPercent(
       allChallengeNodes,
       completedChallengesIds,
@@ -181,11 +179,10 @@ export class CompletionModal extends Component {
           className='challenge-list-header fcc-modal'
           closeButton={true}
         >
-          <Modal.Title className='text-center'>{message}</Modal.Title>
+          <Modal.Title className='completion-message'>{message}</Modal.Title>
         </Modal.Header>
         <Modal.Body className='completion-modal-body'>
           <div className='completion-challenge-details'>
-            <div className='completion-challenge-name'>{title}</div>
             <GreenPass className='completion-success-icon' />
           </div>
           <div className='completion-block-details'>
