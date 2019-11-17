@@ -9,7 +9,7 @@ forumTopicId: 16800
 ## Description
 <section id='description'>
 The <dfn>logical or</dfn> operator (<code>||</code>) returns <code>true</code> if either of the <dfn>operands</dfn> is <code>true</code>. Otherwise, it returns <code>false</code>.
-The <dfn>logical or</dfn> operator is composed of two pipe symbols (<code>|</code>). This can typically be found between your Backspace and Enter keys.
+The <dfn>logical or</dfn> operator is composed of two pipe symbols: (<code>||</code>). This can typically be found between your Backspace and Enter keys.
 The pattern below should look familiar from prior waypoints:
 
 ```js
