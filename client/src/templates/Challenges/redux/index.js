@@ -21,6 +21,7 @@ const initialState = {
   canFocusEditor: true,
   challengeFiles: {},
   challengeMeta: {
+    block: '',
     id: '',
     nextChallengePath: '/',
     prevChallengePath: '/',
