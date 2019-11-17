@@ -1,3 +1,9 @@
+.completion-message {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
 .completion-modal-body {
   min-height: 400px;
   display: flex;
@@ -13,16 +19,9 @@
   margin-bottom: 15px;
 }
 
-.completion-challenge-name {
-  text-align: center;
-  font-weight: 700;
-  font-size: 1.2rem;
-  margin-bottom: 15px;
-}
-
 .completion-success-icon {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   transform: scale(3);
   opacity: 0;
   animation: success-icon-animation 300ms linear 100ms forwards;
@@ -91,6 +90,10 @@
     font-size: 16px;
   }
 
+  .completion-modal-body {
+    min-height: 340px;
+  }
+
   .progress-bar-wrap,
   .progress-bar-background,
   .progress-bar-foreground {
@@ -99,13 +102,18 @@
   }
 
   .completion-success-icon {
-    width: 80px;
-    height: 80px;
+    width: 160px;
+    height: 160px;
+  }
+
+  .completion-message {
+    font-weight: 600;
+    font-size: 1.2rem;
   }
 
   .completion-challenge-name,
   .completion-block-name {
-    font-weight: 100;
+    font-weight: 400;
     font-size: 1rem;
   }
 }
