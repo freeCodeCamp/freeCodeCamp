@@ -71,13 +71,13 @@ const mapDispatchToProps = function(dispatch) {
 };
 
 const propTypes = {
-  blockName: PropTypes.string.isRequired,
+  blockName: PropTypes.string,
   close: PropTypes.func.isRequired,
-  completedChallengesIds: PropTypes.array.isRequired,
-  currentBlockIds: PropTypes.array.isRequired,
+  completedChallengesIds: PropTypes.array,
+  currentBlockIds: PropTypes.array,
   files: PropTypes.object.isRequired,
   handleKeypress: PropTypes.func.isRequired,
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
   isOpen: PropTypes.bool,
   isSignedIn: PropTypes.bool.isRequired,
   message: PropTypes.string,
@@ -145,11 +145,11 @@ export class CompletionModalInner extends Component {
     console.log('CompletionProps');
     console.log(this.props);
     const {
-      blockName,
+      blockName = '',
       close,
-      completedChallengesIds,
-      currentBlockIds,
-      id,
+      completedChallengesIds = [],
+      currentBlockIds = [],
+      id = '',
       isOpen,
       isSignedIn,
       submitChallenge,
