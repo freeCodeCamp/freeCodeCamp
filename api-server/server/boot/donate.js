@@ -3,6 +3,11 @@ import debug from 'debug';
 import crypto from 'crypto';
 import { isEmail, isNumeric } from 'validator';
 
+import {
+  durationKeysConfig,
+  donationOneTimeConfig,
+  donationSubscriptionConfig
+} from '../../../config/donation-settings';
 import keys from '../../../config/secrets';
 
 const log = debug('fcc:boot:donate');
@@ -11,19 +16,6 @@ export default function donateBoot(app, done) {
   let stripe = false;
   const api = app.loopback.Router();
   const donateRouter = app.loopback.Router();
-
-  const durationKeys = ['year', 'month', 'onetime'];
-  const donationOneTimeConfig = [100000, 25000, 3500];
-  const donationSubscriptionConfig = {
-    duration: {
-      year: 'Yearly',
-      month: 'Monthly'
-    },
-    plans: {
-      year: [100000, 25000, 3500],
-      month: [5000, 3500, 500]
-    }
-  };
 
   const subscriptionPlans = Object.keys(
     donationSubscriptionConfig.plans
@@ -62,7 +54,7 @@ export default function donateBoot(app, done) {
   function validStripeForm(amount, duration, email) {
     return isEmail('' + email) &&
       isNumeric('' + amount) &&
-      durationKeys.includes(duration) &&
+      durationKeysConfig.includes(duration) &&
       duration === 'onetime'
       ? donationOneTimeConfig.includes(amount)
       : donationSubscriptionConfig.plans[duration];

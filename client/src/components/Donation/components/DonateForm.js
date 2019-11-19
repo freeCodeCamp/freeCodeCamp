@@ -13,6 +13,12 @@ import {
   Radio
 } from '@freecodecamp/react-bootstrap';
 import { StripeProvider, Elements } from 'react-stripe-elements';
+
+import {
+  amountsConfig,
+  durationsConfig,
+  defaultStateConfig
+} from '../../../../../config/donation-settings';
 import { apiLocation } from '../../../../config/env.json';
 import Spacer from '../../helpers/Spacer';
 import DonateFormChildViewForHOC from './DonateFormChildViewForHOC';
@@ -64,23 +70,13 @@ class DonateForm extends Component {
   constructor(...args) {
     super(...args);
 
+    this.durations = durationsConfig;
+    this.amounts = amountsConfig;
+
     this.state = {
       processing: false,
       isDonating: this.props.isDonating,
-      donationAmount: 5000,
-      donationDuration: 'month',
-      paymentType: 'Card'
-    };
-
-    this.durations = {
-      year: 'yearly',
-      month: 'monthly',
-      onetime: 'one-time'
-    };
-    this.amounts = {
-      year: [100000, 25000, 3500],
-      month: [5000, 3500, 500],
-      onetime: [100000, 25000, 3500]
+      ...defaultStateConfig
     };
 
     this.getActiveDonationAmount = this.getActiveDonationAmount.bind(this);
