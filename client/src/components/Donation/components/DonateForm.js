@@ -184,7 +184,7 @@ class DonateForm extends Component {
                   {this.renderAmountButtons(duration)}
                 </ToggleButtonGroup>
                 <Spacer />
-                <p>
+                <p className='donation-description'>
                   {`Your `}
                   {this.getFormatedAmountLabel(donationAmount)}
                   {` donation will provide `}

@@ -3,7 +3,7 @@ import { Row, Col } from '@freecodecamp/react-bootstrap';
 
 const DonateText = () => {
   return (
-    <Row>
+    <Row className='donate-text'>
       <Col sm={10} smOffset={1} xs={12}>
         <p>freeCodeCamp is a highly efficient education nonprofit.</p>
         <p>
