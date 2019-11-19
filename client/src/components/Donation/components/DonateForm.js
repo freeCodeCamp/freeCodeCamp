@@ -96,8 +96,12 @@ class DonateForm extends Component {
       : this.amounts[durationSelected][0];
   }
 
-  convertToTimeContributed(amount) {
-    return `${numToCommas((amount / 100) * 50 * 60)} minutes`;
+  convertToTimeContributed(amount, duration) {
+    const timeContributed =
+      duration === 'month'
+        ? Math.round(((amount / 100) * 50) / 12)
+        : (amount / 100) * 50;
+    return `${numToCommas(timeContributed)} hours`;
   }
 
   getFormatedAmountLabel(amount) {
@@ -183,10 +187,9 @@ class DonateForm extends Component {
                   {`Your `}
                   {this.getFormatedAmountLabel(donationAmount)}
                   {` donation will provide `}
-                  {this.convertToTimeContributed(donationAmount)}
-                  {` of learning to people around the world `}
-                  {duration === 'one-time' ? `for one ` : `each `}
-                  {duration === 'monthly' ? `month.` : `year.`}
+                  {this.convertToTimeContributed(donationAmount, duration)}
+                  {` of learning to people around the world`}
+                  {duration === 'onetime' ? `.` : ` each ${duration}.`}
                 </p>
               </div>
             </Tab>
