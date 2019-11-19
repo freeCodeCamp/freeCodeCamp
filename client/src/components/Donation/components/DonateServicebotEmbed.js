@@ -37,7 +37,7 @@ export class DonationServicebotEmbed extends Component {
         disableCoupon: true,
         forceCard: true,
         disableTiers: [
-          'Monthly $10 Donation  - Unavailable',
+          'Monthly $10 Donation - Unavailable',
           'Monthly $3 Donation - Unavailable'
         ],
         card: {

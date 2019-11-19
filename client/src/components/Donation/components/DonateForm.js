@@ -73,9 +73,9 @@ class DonateForm extends Component {
     this.amounts = amountsConfig;
 
     this.state = {
+      ...defaultStateConfig,
       processing: false,
-      isDonating: this.props.isDonating,
-      ...defaultStateConfig
+      isDonating: this.props.isDonating
     };
 
     this.getActiveDonationAmount = this.getActiveDonationAmount.bind(this);
