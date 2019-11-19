@@ -26,15 +26,15 @@ export class CompletionModalBody extends Component {
     this.setState({ animateProgress: true }, () => {
       if (completedPercent > 100) completedPercent = 100;
       if (completedPercent < 0) completedPercent = 0;
-      const transitionLength = 650;
-      const intervalLength = 6.5;
-      const intervalsToFinish = transitionLength / intervalLength;
-      const amountPerInterval = completedPercent / intervalsToFinish;
+      const transitionLength = completedPercent * 6.5;
+      console.log('transitionLength = ' + transitionLength);
+      const intervalLength = transitionLength / completedPercent;
+      console.log('intervalLength = ' + intervalLength);
       let shownPercent = 0;
 
       const myInterval = setInterval(() => {
         console.log('interval');
-        shownPercent += amountPerInterval;
+        shownPercent += 1;
         if (shownPercent > 100) shownPercent = 100;
         if (shownPercent > completedPercent) shownPercent = completedPercent;
 
