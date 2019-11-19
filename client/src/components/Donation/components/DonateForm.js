@@ -9,7 +9,8 @@ import {
   Row,
   Col,
   ToggleButtonGroup,
-  ToggleButton
+  ToggleButton,
+  Radio
 } from '@freecodecamp/react-bootstrap';
 import { StripeProvider, Elements } from 'react-stripe-elements';
 
@@ -201,9 +202,35 @@ class DonateForm extends Component {
 
   renderDonationOptions() {
     const { stripe, enableDonationSettingsPage } = this.props;
-    const { donationAmount, donationDuration, paymentType } = this.state;
+    const {
+      donationAmount,
+      donationDuration,
+      paymentType,
+      processing
+    } = this.state;
     return (
       <div>
+        {!processing ? (
+          <div>
+            <Radio
+              checked={paymentType === 'Card'}
+              name='payment-method'
+              onChange={this.handleSelectPaymentType}
+              value='Card'
+            >
+              Donate using a Credit/Debit Card.
+            </Radio>
+            <Radio
+              checked={paymentType === 'PayPal'}
+              name='payment-method'
+              onChange={this.handleSelectPaymentType}
+              value='PayPal'
+            >
+              Donate using PayPal. (Coming soon)
+            </Radio>
+            <Spacer />
+          </div>
+        ) : null}
         {paymentType === 'Card' ? (
           <StripeProvider stripe={stripe}>
             <Elements>
