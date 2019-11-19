@@ -26,7 +26,7 @@ tests:
     testString: assert(($("h1").length === 0));
   - text: Your <code>h2</code> element should not be commented out so that it is visible on the page.
     testString: assert(($("h2").length > 0));
-  - text: Commenting out your <code>p</code> element should <code>p</code> element not visible on your page.
+  - text: Your <code>p</code> element should be commented out so that it is not visible on the page.
     testString: assert(($("p").length === 0));
   - text: Each of your comments should be closed with <code>--&#62;</code>.
     testString: assert(code.match(/[^fc]-->/g).length > 1);
