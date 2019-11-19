@@ -85,7 +85,6 @@ class DonateFormChildViewForHOC extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.hideAmountOptions(true);
     const email = this.getUserEmail();
     if (!email || !isEmail(email)) {
       return this.setState(state => ({
@@ -129,6 +128,10 @@ class DonateFormChildViewForHOC extends Component {
         processing: true
       }
     }));
+
+    // hide the donation options on the parent and scroll to top
+    this.hideAmountOptions(true);
+    window.scrollTo(0, 0);
 
     return postChargeStripe({
       token,
