@@ -78,13 +78,17 @@ export default function donateBoot(app, done) {
         }
         const requiredPlans = subscriptionPlans.map(plan => plan.id);
         const availablePlans = stripePlans.data.map(plan => plan.id);
-        requiredPlans.forEach(requiredPlan => {
-          if (!availablePlans.includes(requiredPlan)) {
-            createStripePlan(
-              subscriptionPlans.find(plan => plan.id === requiredPlan)
-            );
-          }
-        });
+        if (process.env.STRIPE_CREATE_PLANS === 'true') {
+          requiredPlans.forEach(requiredPlan => {
+            if (!availablePlans.includes(requiredPlan)) {
+              createStripePlan(
+                subscriptionPlans.find(plan => plan.id === requiredPlan)
+              );
+            }
+          });
+        } else {
+          log(`Skipping plan creation`);
+        }
       });
       resolve();
     });
