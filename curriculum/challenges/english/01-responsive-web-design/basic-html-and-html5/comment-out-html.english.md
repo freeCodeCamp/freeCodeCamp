@@ -24,7 +24,7 @@ Comment out your <code>h1</code> element and your <code>p</code> element, but no
 tests:
   - text: Your <code>h1</code> element should be commented out so that it is not visible on the page.
     testString: assert(($("h1").length === 0));
-  - text: Leaving your <code>h2</code> element uncommented should mke the <code>h2</code> element visible on your page.
+  - text: Your <code>h2</code> element should not be commented out so that it is visible on the page.
     testString: assert(($("h2").length > 0));
   - text: Commenting out your <code>p</code> element should <code>p</code> element not visible on your page.
     testString: assert(($("p").length === 0));
