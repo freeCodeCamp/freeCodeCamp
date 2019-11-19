@@ -104,8 +104,8 @@ const initTestFrame = frameReady => ctx => {
 const initMainFrame = (frameReady, proxyLogger) => ctx => {
   waitForFrame(ctx).then(() => {
     // Overwriting the onerror added by createHeader to catch any errors thrown
-    // after the frame is ready. It has to be overwritten, as proxyUpdateConsole
-    // cannot be added as part of createHeader.
+    // after the frame is ready. It has to be overwritten, as proxyLogger cannot
+    // be added as part of createHeader.
     ctx.window.onerror = function(msg) {
       console.log(msg);
       if (proxyLogger) {
