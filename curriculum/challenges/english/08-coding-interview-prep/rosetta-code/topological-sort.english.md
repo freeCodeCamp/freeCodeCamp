@@ -59,7 +59,7 @@ There are two popular algorithms for topological sorting:
 tests:
   - text: <code>topologicalSort</code> should be a function.
     testString: assert(typeof topologicalSort === 'function');
-  - text: <code>topologicalSort</code> should return correct library order..
+  - text: <code>topologicalSort</code> should return correct library order.
     testString: assert.deepEqual(topologicalSort(libsSimple), ['bbb', 'aaa']);
   - text: <code>topologicalSort</code> should return correct library order..
     testString: assert.deepEqual(topologicalSort(libsVHDL), solutionVHDL);
