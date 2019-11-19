@@ -27,7 +27,7 @@ Define the stateless Y combinator function and use it to compute <a href="https:
 
 ```yml
 tests:
-  - text: Y mushouldst return a function.
+  - text: Y should return a function.
     testString: assert.equal(typeof Y(f => n => n), 'function');
   - text: factorial(1) should return 1.
     testString: assert.equal(factorial(1), 1);
