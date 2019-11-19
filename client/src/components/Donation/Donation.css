@@ -153,3 +153,9 @@ li.disabled > a {
   border: 2px solid var(--gray-15) !important;
   color: var(--gray-15) !important;
 }
+
+.donate-text p,
+.donation-description,
+[name='payment-method'] {
+  font-family: 'Lato', sans-serif;
+}
