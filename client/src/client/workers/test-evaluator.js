@@ -38,7 +38,7 @@ const __utils = (() => {
     self.postMessage(data);
   }
 
-  function logToBoth(err) {
+  function log(err) {
     if (!(err instanceof chai.AssertionError)) {
       // report to both the browser and the fcc consoles, discarding the
       // stack trace via toString as it only useful to debug the site, not a
@@ -47,14 +47,14 @@ const __utils = (() => {
     }
   }
 
-  const toggleLogging = on => {
-    self.console.log = on ? proxyLog : () => {};
+  const toggleProxyLogger = on => {
+    self.console.log = on ? proxyLog : oldLog;
   };
 
   return {
     postResult,
-    logToBoth,
-    toggleLogging
+    log,
+    toggleProxyLogger
   };
 })();
 
@@ -66,7 +66,8 @@ self.onmessage = async e => {
   // Fake Deep Equal dependency
   const DeepEqual = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 
-  __utils.toggleLogging(e.data.firstTest);
+  // User code errors should be reported, but only once:
+  __utils.toggleProxyLogger(e.data.firstTest);
   /* eslint-enable no-unused-vars */
   try {
     let testResult;
@@ -84,7 +85,7 @@ self.onmessage = async e => {
         throw err;
       }
       // log build errors
-      __utils.logToBoth(err);
+      __utils.log(err);
       // the tests may not require working code, so they are evaluated even if
       // the user code does not get executed.
       testResult = eval(e.data.testString);
@@ -97,10 +98,11 @@ self.onmessage = async e => {
       pass: true
     });
   } catch (err) {
-    // report errors that happened during testing, so the user learns of
-    // execution errors and not just build errors.
-    __utils.toggleLogging(true);
-    __utils.logToBoth(err);
+    // Errors from testing go to the browser console only.
+    __utils.toggleProxyLogger(false);
+    // Report execution errors in case user code has errors that are only
+    // uncovered during testing.
+    __utils.log(err);
     // postResult flushes the logs and must be called after logging is finished.
     __utils.postResult({
       err: {

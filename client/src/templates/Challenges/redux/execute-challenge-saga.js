@@ -26,6 +26,7 @@ import {
 
 import {
   buildChallenge,
+  canBuildChallenge,
   getTestRunner,
   challengeHasPreview,
   updatePreview,
@@ -153,15 +154,17 @@ function* previewChallengeSaga() {
     yield fork(takeEveryConsole, logProxy);
 
     const challengeData = yield select(challengeDataSelector);
-    const buildData = yield buildChallengeData(challengeData);
-    // evaluate the user code in the preview frame or in the worker
-    if (challengeHasPreview(challengeData)) {
-      const document = yield getContext('document');
-      yield call(updatePreview, buildData, document, proxyLogger);
-    } else if (isJavaScriptChallenge(challengeData)) {
-      const runUserCode = getTestRunner(buildData, { proxyLogger });
-      // without a testString the testRunner just evaluates the user's code
-      yield call(runUserCode, null, 5000);
+    if (canBuildChallenge(challengeData)) {
+      const buildData = yield buildChallengeData(challengeData);
+      // evaluate the user code in the preview frame or in the worker
+      if (challengeHasPreview(challengeData)) {
+        const document = yield getContext('document');
+        yield call(updatePreview, buildData, document, proxyLogger);
+      } else if (isJavaScriptChallenge(challengeData)) {
+        const runUserCode = getTestRunner(buildData, { proxyLogger });
+        // without a testString the testRunner just evaluates the user's code
+        yield call(runUserCode, null, 5000);
+      }
     }
   } catch (err) {
     console.log(err);

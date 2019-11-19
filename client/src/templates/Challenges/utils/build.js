@@ -71,6 +71,11 @@ const buildFunctions = {
   [challengeTypes.backEndProject]: buildBackendChallenge
 };
 
+export function canBuildChallenge(challengeData) {
+  const { challengeType } = challengeData;
+  return buildFunctions.hasOwnProperty(challengeType);
+}
+
 export async function buildChallenge(challengeData) {
   const { challengeType } = challengeData;
   let build = buildFunctions[challengeType];
