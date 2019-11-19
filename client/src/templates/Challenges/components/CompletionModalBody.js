@@ -13,6 +13,7 @@ export class CompletionModalBody extends Component {
 
     this.state = {
       animateProgress: false,
+      progressInterval: null,
       shownPercent: 0
     };
 
@@ -20,11 +21,13 @@ export class CompletionModalBody extends Component {
   }
 
   animateProgressBar(completedPercent) {
+    // change this to test different values
+    // completedPercent = 100;
     this.setState({ animateProgress: true }, () => {
       if (completedPercent > 100) completedPercent = 100;
       if (completedPercent < 0) completedPercent = 0;
       const transitionLength = 650;
-      const intervalLength = 5;
+      const intervalLength = 6.5;
       const intervalsToFinish = transitionLength / intervalLength;
       const amountPerInterval = completedPercent / intervalsToFinish;
       let shownPercent = 0;
@@ -43,7 +46,15 @@ export class CompletionModalBody extends Component {
           clearInterval(myInterval);
         }
       }, intervalLength);
+
+      this.setState({
+        progressInterval: myInterval
+      });
     });
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.state.progressInterval);
   }
 
   render() {

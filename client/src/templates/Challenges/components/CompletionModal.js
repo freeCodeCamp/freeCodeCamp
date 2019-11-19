@@ -158,9 +158,6 @@ export class CompletionModalInner extends Component {
       title
     } = this.props;
 
-    // Use the variable below to test different values
-    // Use the function below to test actual values
-    // const completedPercent = 100;
     const completedPercent = getCompletedPercent(
       completedChallengesIds,
       currentBlockIds,
