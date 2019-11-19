@@ -8,7 +8,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 import ga from '../../../analytics';
 import Login from '../../../components/Header/components/Login';
-import GreenPass from '../../../assets/icons/GreenPass';
+import CompletionModalBody from './CompletionModalBody';
 
 import { dasherize } from '../../../../../utils/slugs';
 
@@ -142,8 +142,8 @@ export class CompletionModalInner extends Component {
   }
 
   render() {
-    console.log('CompletionProps');
-    console.log(this.props);
+    // console.log('CompletionModalProps');
+    // console.log(this.props);
     const {
       blockName = '',
       close,
@@ -158,7 +158,9 @@ export class CompletionModalInner extends Component {
       title
     } = this.props;
 
-    // const completedPercent = 50;
+    // Use the variable below to test different values
+    // Use the function below to test actual values
+    // const completedPercent = 100;
     const completedPercent = getCompletedPercent(
       completedChallengesIds,
       currentBlockIds,
@@ -186,25 +188,10 @@ export class CompletionModalInner extends Component {
           <Modal.Title className='completion-message'>{message}</Modal.Title>
         </Modal.Header>
         <Modal.Body className='completion-modal-body'>
-          <div className='completion-challenge-details'>
-            <GreenPass className='completion-success-icon' />
-          </div>
-          <div className='completion-block-details'>
-            <div className='completion-block-name'>{blockName}</div>
-            <div className='progress-bar-wrap'>
-              <div className='progress-bar-background'>
-                {completedPercent}% complete
-              </div>
-              <div
-                className='progress-bar-percent'
-                style={{ width: completedPercent + '%' }}
-              >
-                <div className='progress-bar-foreground'>
-                  {completedPercent}% complete
-                </div>
-              </div>
-            </div>
-          </div>
+          <CompletionModalBody
+            blockName={blockName}
+            completedPercent={completedPercent}
+          />
         </Modal.Body>
         <Modal.Footer>
           <Button
@@ -246,7 +233,7 @@ export class CompletionModalInner extends Component {
 
 CompletionModalInner.propTypes = propTypes;
 
-const GetCurrentBlockIds = blockName => {
+const useCurrentBlockIds = blockName => {
   const {
     allChallengeNode: { edges }
   } = useStaticQuery(graphql`
@@ -271,7 +258,7 @@ const GetCurrentBlockIds = blockName => {
 };
 
 const CompletionModal = props => {
-  const currentBlockIds = GetCurrentBlockIds(props.blockName || '');
+  const currentBlockIds = useCurrentBlockIds(props.blockName || '');
   return <CompletionModalInner currentBlockIds={currentBlockIds} {...props} />;
 };
 

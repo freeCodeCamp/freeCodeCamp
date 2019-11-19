@@ -73,7 +73,7 @@
   overflow: hidden;
   position: relative;
   background-color: var(--primary-color);
-  transition: width 400ms linear 600ms forwards;
+  transition: width 0ms linear;
 }
 
 .progress-bar-foreground {
