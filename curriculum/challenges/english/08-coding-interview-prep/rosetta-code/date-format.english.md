@@ -29,7 +29,7 @@ tests:
     testString: assert(typeof getDateFormats === 'function');
   - text: <code>getDateFormats</code> should return an object.
     testString: assert(typeof getDateFormats() === 'object');
-  - text: <code>getDateFormats</code> should returned an array with 2 elements.
+  - text: <code>getDateFormats</code> should return an array with 2 elements.
     testString: assert(getDateFormats().length === 2);
   - text: <code>getDateFormats</code> should return the correct date in the right format
     testString: assert.deepEqual(getDateFormats(), dates, equalsMessage);
