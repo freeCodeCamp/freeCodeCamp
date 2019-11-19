@@ -7,7 +7,7 @@ const DonateText = () => {
       <Col sm={10} smOffset={1} xs={12}>
         <p>freeCodeCamp is a highly efficient education nonprofit.</p>
         <p>
-          In 2019 alone, we provided 1,100,000,000 minutes of free education to
+          In 2019 alone, we provided 18 million hours of free education to
           people around the world.
         </p>
         <p>
