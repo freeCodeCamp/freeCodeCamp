@@ -65,7 +65,7 @@ tests:
     testString: assert.deepEqual(topologicalSort(libsVHDL), solutionVHDL);
   - text: <code>topologicalSort</code> should return correct library order.
     testString: assert.deepEqual(topologicalSort(libsCustom), solutionCustom);
-  - text: <code>topologicalSort</code> should ignore unorderable dependencies..
+  - text: <code>topologicalSort</code> should ignore unorderable dependencies.
     testString: assert.deepEqual(topologicalSort(libsUnorderable), solutionUnorderable);
 
 ```
