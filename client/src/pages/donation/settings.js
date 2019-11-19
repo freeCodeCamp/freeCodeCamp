@@ -85,7 +85,7 @@ export class DonationSettingsPage extends Component {
 
   renderServicebotEmbed() {
     const { currentSettingsEmail, hash } = this.state;
-    if (!hash && !currentSettingsEmail) {
+    if (!hash || !currentSettingsEmail) {
       return null;
     }
     return (
@@ -100,8 +100,8 @@ export class DonationSettingsPage extends Component {
     const { donationEmails } = this.props;
     return (
       <div>
-        {uniq(donationEmails).map((email, index) => (
-          <div key={email + '-' + index}>
+        {uniq(donationEmails).map(email => (
+          <div key={email}>
             <Button
               bsStyle='primary'
               className='btn btn-block'
@@ -124,12 +124,12 @@ export class DonationSettingsPage extends Component {
       return <Loader fullScreen={true} />;
     }
 
-    if (!showLoading && !isSignedIn) {
+    if (!isSignedIn) {
       navigate(`${apiLocation}/signin?returnTo=donation/settings`);
       return <Loader fullScreen={true} />;
     }
 
-    if (!showLoading && !isDonating) {
+    if (!isDonating) {
       navigate(`/donate`);
       return <Loader fullScreen={true} />;
     }
