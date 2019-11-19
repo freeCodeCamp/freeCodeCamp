@@ -37,7 +37,7 @@ tests:
     testString: assert($("#cat-photo-form").css("background-color") === "rgb(0, 128, 0)");
   - text: Your <code>form</code> element should have an <code>id</code> attribute.
     testString: assert(code.match(/<form.*cat-photo-form.*>/gi) && code.match(/<form.*cat-photo-form.*>/gi).length > 0);
-  - text: You should no give your <code>form</code> any <code>class</code> or <code>style</code> attributes.
+  - text: You should not give your <code>form</code> any <code>class</code> or <code>style</code> attributes.
     testString: assert(!code.match(/<form.*style.*>/gi) && !code.match(/<form.*class.*>/gi));
 
 ```
