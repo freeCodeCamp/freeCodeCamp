@@ -26,7 +26,7 @@ Convert the assignments for <code>a</code>, <code>b</code>, and <code>c</code> t
 tests:
   - text: <code>a</code> should equal <code>4</code>.
     testString: assert(a === 4);
-  - text: <code>b</code> should be equal <code>27</code>.
+  - text: <code>b</code> should equal <code>27</code>.
     testString: assert(b === 27);
   - text: <code>c</code> should equal <code>3</code>.
     testString: assert(c === 3);
