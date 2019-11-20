@@ -36,11 +36,11 @@ tests:
     testString: assert($("ul").length > 0);
   - text: You should have three <code>li</code> elements within your <code>ul</code> element.
     testString: assert($("ul li").length > 2);
-  - text: Make sure your <code>ul</code> element has a closing tag.
+  - text: Your <code>ul</code> element should have a closing tag.
     testString: assert(code.match(/<\/ul>/gi) && code.match(/<ul/gi) && code.match(/<\/ul>/gi).length === code.match(/<ul/gi).length);
-  - text: Make sure your <code>li</code> elements have closing tags.
+  - text: Your <code>li</code> elements should have closing tags.
     testString: assert(code.match(/<\/li>/gi) && code.match(/<li[\s>]/gi) && code.match(/<\/li>/gi).length === code.match(/<li[\s>]/gi).length);
-  - text: Make sure your <code>li</code> elements don’t contain an empty string or only white-space.
+  - text: Your <code>li</code> elements should not contain an empty string or only white-space.
     testString: assert($("ul li").filter((_, item) => !$(item).text().trim()).length === 0);
 ```
 

@@ -30,11 +30,11 @@ body {
 
 ```yml
 tests:
-  - text: Give your <code>body</code> element the <code>background-color</code> of black.
+  - text: Your <code>body</code> element should have the <code>background-color</code> of black.
     testString: assert($("body").css("background-color") === "rgb(0, 0, 0)");
-  - text: Make sure your CSS rule is properly formatted with both opening and closing curly brackets.
+  - text: Your CSS rule should be properly formatted with both opening and closing curly brackets.
     testString: assert(code.match(/<style>\s*body\s*\{\s*background.*\s*:\s*.*;\s*\}\s*<\/style>/i));
-  - text: Make sure your CSS rule ends with a semi-colon.
+  - text: Your CSS rule should end with a semi-colon.
     testString: assert(code.match(/<style>\s*body\s*\{\s*background.*\s*:\s*.*;\s*\}\s*<\/style>/i));
 
 ```

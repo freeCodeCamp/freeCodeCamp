@@ -39,9 +39,9 @@ tests:
     testString: assert($("img").hasClass("smaller-image"));
   - text: Your <code>img</code> element should have the class <code>thick-green-border</code>.
     testString: assert($("img").hasClass("thick-green-border"));
-  - text: Give your image a border width of <code>10px</code>.
+  - text: Your image should have a border width of <code>10px</code>.
     testString: assert($("img").hasClass("thick-green-border") && parseInt($("img").css("border-top-width"), 10) >= 8 && parseInt($("img").css("border-top-width"), 10) <= 12);
-  - text: Give your image a border style of <code>solid</code>.
+  - text: Your image should have a border style of <code>solid</code>.
     testString: assert($("img").css("border-right-style") === "solid");
   - text: The border around your <code>img</code> element should be green.
     testString: assert($("img").css("border-left-color") === "rgb(0, 128, 0)");

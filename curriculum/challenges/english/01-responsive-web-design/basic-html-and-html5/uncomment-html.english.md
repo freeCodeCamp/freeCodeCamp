@@ -23,13 +23,13 @@ Uncomment your <code>h1</code>, <code>h2</code> and <code>p</code> elements.
 
 ```yml
 tests:
-  - text: Make your <code>h1</code> element visible on your page by uncommenting it.
+  - text: Your <code>h1</code> element should be visible on your page by uncommenting it.
     testString: assert($("h1").length > 0);
-  - text: Make your <code>h2</code> element visible on your page by uncommenting it.
+  - text: Your <code>h2</code> element should be visible on your page by uncommenting it.
     testString: assert($("h2").length > 0);
-  - text: Make your <code>p</code> element visible on your page by uncommenting it.
+  - text: Your <code>p</code> element should be visible on your page by uncommenting it.
     testString: assert($("p").length > 0);
-  - text: Be sure to delete all trailing comment tags&#44; i.e. <code>--&#62;</code>.
+  - text: All trailing comment tags should be deleted&#44; i.e. <code>--&#62;</code>.
     testString: assert(!/[^fc]-->/gi.test(code.replace(/ *<!--[^fc]*\n/g,'')));
 
 ```

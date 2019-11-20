@@ -28,7 +28,7 @@ tests:
     testString: assert((/cat photos/gi).test($("a").text()));
   - text: You need an <code>a</code> element that links to <code>http&#58;//freecatphotoapp<wbr>.com</code>
     testString: assert(/http:\/\/(www\.)?freecatphotoapp\.com/gi.test($("a").attr("href")));
-  - text: Make sure your <code>a</code> element has a closing tag.
+  - text: Your <code>a</code> element should have a closing tag.
     testString: assert(code.match(/<\/a>/g) && code.match(/<\/a>/g).length === code.match(/<a/g).length);
 
 ```

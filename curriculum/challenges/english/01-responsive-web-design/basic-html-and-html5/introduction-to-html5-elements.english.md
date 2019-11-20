@@ -33,9 +33,9 @@ Then, create a <code>main</code> element and nest the two <code>p</code> element
 
 ```yml
 tests:
-  - text: You need 2 <code>p</code> elements with Kitty Ipsum text.
+  - text: You should have 2 <code>p</code> elements with Kitty Ipsum text.
     testString: assert($("p").length > 1);
-  - text: Make sure each of your <code>p</code> elements has a closing tag.
+  - text: Each of your <code>p</code> elements should have a closing tag.
     testString: assert(code.match(/<\/p>/g) && code.match(/<\/p>/g).length === code.match(/<p/g).length);
   - text: Your <code>p</code> element should contain the first few words of the provided additional <code>kitty ipsum text</code>.
     testString: assert.isTrue((/Purr\s+jump\s+eat/gi).test($("p").text()));

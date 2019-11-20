@@ -41,15 +41,15 @@ Delete your <code>h2</code> element's style attribute, and instead create a CSS 
 
 ```yml
 tests:
-  - text: Remove the style attribute from your <code>h2</code> element.
+  - text: The style attribute should be removed from your <code>h2</code> element.
     testString: assert(!$("h2").attr("style"));
-  - text: Create a <code>style</code> element.
+  - text: You should create a <code>style</code> element.
     testString: assert($("style") && $("style").length >= 1);
   - text: Your <code>h2</code> element should be blue.
     testString: assert($("h2").css("color") === "rgb(0, 0, 255)");
-  - text: Ensure that your stylesheet <code>h2</code> declaration is valid with a semicolon and closing brace.
+  - text: Your stylesheet <code>h2</code> declaration should be valid with a semicolon and closing brace.
     testString: assert(code.match(/h2\s*\{\s*color\s*:.*;\s*\}/g));
-  - text: Make sure all your <code>style</code> elements are valid and have a closing tag.
+  - text: All your <code>style</code> elements should be valid and have closing tags.
     testString: assert(code.match(/<\/style>/g) && code.match(/<\/style>/g).length === (code.match(/<style((\s)*((type|media|scoped|title|disabled)="[^"]*")?(\s)*)*>/g) || []).length);
 
 ```

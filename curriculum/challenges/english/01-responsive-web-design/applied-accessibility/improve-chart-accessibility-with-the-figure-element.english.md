@@ -44,7 +44,7 @@ tests:
     testString: assert($('p').length == 0);
   - text: The <code>figcaption</code> should be a child of the <code>figure</code> tag.
     testString: assert($('figure').children('figcaption').length == 1);
-  - text: Make sure your <code>figure</code> element has a closing tag.
+  - text: Your <code>figure</code> element should have a closing tag.
     testString: assert(code.match(/<\/figure>/g) && code.match(/<\/figure>/g).length === code.match(/<figure>/g).length);
 
 ```

@@ -38,13 +38,13 @@ tests:
     testString: assert($("h1").hasClass("pink-text"));
   - text: Your <code>h1</code> element should have the class <code>blue-text</code>.
     testString: assert($("h1").hasClass("blue-text"));
-  - text: Give your <code>h1</code> element the id of <code>orange-text</code>.
+  - text: Your <code>h1</code> element should have the id of <code>orange-text</code>.
     testString: assert($("h1").attr("id") === "orange-text");
   - text: There should be only one <code>h1</code> element.
     testString: assert(($("h1").length === 1));
-  - text: Create a CSS declaration for your <code>orange-text</code> id
+  - text: Your <code>orange-text</code> id should have a CSS declaration. 
     testString: assert(code.match(/#orange-text\s*{/gi));
-  - text: Do not give your <code>h1</code> any <code>style</code> attributes.
+  - text: Your <code>h1</code> should not have any <code>style</code> attributes.
     testString: assert(!code.match(/<h1.*style.*>/gi));
   - text: Your <code>h1</code> element should be orange.
     testString: assert($("h1").css("color") === "rgb(255, 165, 0)");

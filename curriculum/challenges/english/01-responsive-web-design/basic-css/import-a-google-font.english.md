@@ -28,11 +28,11 @@ Create a <code>font-family</code> CSS rule that uses the <code>Lobster</code> fo
 
 ```yml
 tests:
-  - text: Import the <code>Lobster</code> font.
+  - text: You should import the <code>Lobster</code> font.
     testString: assert(new RegExp("googleapis", "gi").test(code));
   - text: Your <code>h2</code> element should use the font <code>Lobster</code>.
     testString: assert($("h2").css("font-family").match(/lobster/i));
-  - text: Use an <code>h2</code> CSS selector to change the font.
+  - text: You should use an <code>h2</code> CSS selector to change the font.
     testString: 'assert(/\s*h2\s*\{\s*font-family\:\s*(\"|")?Lobster(\"|")?(.{0,})\s*;\s*\}/gi.test(code));'
   - text: Your <code>p</code> element should still use the font <code>monospace</code>.
     testString: assert($("p").css("font-family").match(/monospace/i));
