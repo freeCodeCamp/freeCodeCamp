@@ -13,7 +13,7 @@ A <dfn>palindrome</dfn> is a word or sentence that's spelled the same way both f
 <strong>Note</strong><br>You'll need to remove <strong>all non-alphanumeric characters</strong> (punctuation, spaces and symbols) and turn everything into the same case (lower or upper case) in order to check for palindromes.
 We'll pass strings with varying formats, such as <code>"racecar"</code>, <code>"RaceCar"</code>, and <code>"race CAR"</code> among others.
 We'll also pass strings with special symbols, such as <code>"2A3*3a2"</code>, <code>"2A3  3a2"</code>, and <code>"2_A3*3#A2"</code>.
-Remember to use <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> if you get stuck. Write your own code.
+Remember to use <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> if you get stuck. Write your own code.
 </section>
 
 ## Instructions

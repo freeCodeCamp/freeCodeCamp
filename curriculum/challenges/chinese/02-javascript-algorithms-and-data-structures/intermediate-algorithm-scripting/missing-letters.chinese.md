@@ -8,7 +8,7 @@ localeTitle: 遗失的信件
 ---
 
 ## Description
-<section id="description">在传递的字母范围内找到丢失的字母并将其返回。如果范围内存在所有字母，则返回undefined。如果卡住，请记得使用<a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> 。尝试配对程序。编写自己的代码。 </section>
+<section id="description">在传递的字母范围内找到丢失的字母并将其返回。如果范围内存在所有字母，则返回undefined。如果卡住，请记得使用<a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> 。尝试配对程序。编写自己的代码。 </section>
 
 ## Instructions
 <section id="instructions">

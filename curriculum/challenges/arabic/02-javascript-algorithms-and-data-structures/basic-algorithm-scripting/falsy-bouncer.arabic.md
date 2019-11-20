@@ -8,7 +8,7 @@ localeTitle: فلسى الحارس
 ---
 
 ## Description
-<section id="description"> قم بإزالة كافة قيم الفالسة من صفيف. تكون قيم Falsy في JavaScript <code>false</code> و <code>null</code> و <code>0</code> و <code>&quot;&quot;</code> و <code>undefined</code> و <code>NaN</code> . تلميح: حاول تحويل كل قيمة إلى قيمة منطقية. تذكر استخدام <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> إذا واجهتك مشكلة. اكتب الكود الخاص بك. </section>
+<section id="description"> قم بإزالة كافة قيم الفالسة من صفيف. تكون قيم Falsy في JavaScript <code>false</code> و <code>null</code> و <code>0</code> و <code>&quot;&quot;</code> و <code>undefined</code> و <code>NaN</code> . تلميح: حاول تحويل كل قيمة إلى قيمة منطقية. تذكر استخدام <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> إذا واجهتك مشكلة. اكتب الكود الخاص بك. </section>
 
 ## Instructions
 <section id="instructions">

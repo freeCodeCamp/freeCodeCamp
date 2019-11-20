@@ -9,7 +9,7 @@ localeTitle: Фальшивый вышибала
 
 ## Description
 <section id='description'>
-Удалите все значения фальши из массива. Значения фальши в JavaScript - <code>false</code> , <code>null</code> , <code>0</code> , <code>&quot;&quot;</code> , <code>undefined</code> и <code>NaN</code> . Подсказка: попробуйте преобразовать каждое значение в логическое. Не забудьте использовать <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask,</a> если вы застряли. Напишите свой собственный код.
+Удалите все значения фальши из массива. Значения фальши в JavaScript - <code>false</code> , <code>null</code> , <code>0</code> , <code>&quot;&quot;</code> , <code>undefined</code> и <code>NaN</code> . Подсказка: попробуйте преобразовать каждое значение в логическое. Не забудьте использовать <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask,</a> если вы застряли. Напишите свой собственный код.
 </section>
 
 ## Instructions

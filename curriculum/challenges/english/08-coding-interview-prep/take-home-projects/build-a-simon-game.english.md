@@ -19,7 +19,7 @@ Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_bl
 <strong>User Story:</strong> I can play in strict mode where if I get a button press wrong, it notifies me that I have done so, and the game restarts at a new random series of button presses.
 <strong>User Story:</strong> I can win the game by getting a series of 20 steps correct. I am notified of my victory, then the game starts over.
 <strong>Hint:</strong> Here are mp3s you can use for each button: <code>https://s3.amazonaws.com/freecodecamp/simonSound1.mp3</code>, <code>https://s3.amazonaws.com/freecodecamp/simonSound2.mp3</code>, <code>https://s3.amazonaws.com/freecodecamp/simonSound3.mp3</code>, <code>https://s3.amazonaws.com/freecodecamp/simonSound4.mp3</code>.
-Remember to use <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck.
+Remember to use <a href='https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514' target='_blank'>Read-Search-Ask</a> if you get stuck.
 When you are finished, click the "I've completed this challenge" button and include a link to your CodePen.
 You can get feedback on your project by sharing it with your friends on Facebook.
 </section>

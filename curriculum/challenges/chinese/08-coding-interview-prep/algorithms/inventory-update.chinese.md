@@ -7,7 +7,7 @@ localeTitle: 库存更新
 ---
 
 ## Description
-<section id="description">比较并更新存储在2D阵列中的库存与新交付的第二个2D阵列。更新当前现有库存物料数量（在<code>arr1</code> ）。如果找不到商品，请将新商品和数量添加到库存数组中。返回的库存数组应按项目的字母顺序排列。如果卡住，请记得使用<a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> 。尝试配对程序。编写自己的代码。 </section>
+<section id="description">比较并更新存储在2D阵列中的库存与新交付的第二个2D阵列。更新当前现有库存物料数量（在<code>arr1</code> ）。如果找不到商品，请将新商品和数量添加到库存数组中。返回的库存数组应按项目的字母顺序排列。如果卡住，请记得使用<a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> 。尝试配对程序。编写自己的代码。 </section>
 
 ## Instructions
 <section id="instructions">

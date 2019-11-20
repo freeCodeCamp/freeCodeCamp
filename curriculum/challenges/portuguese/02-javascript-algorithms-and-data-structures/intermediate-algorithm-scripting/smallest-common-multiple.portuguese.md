@@ -8,7 +8,7 @@ localeTitle: Menor Múltiplo Comum
 ---
 
 ## Description
-<section id="description"> Encontre o menor múltiplo comum dos parâmetros fornecidos que podem ser divididos igualmente por ambos, bem como por todos os números seqüenciais no intervalo entre esses parâmetros. O intervalo será uma matriz de dois números que não estarão necessariamente em ordem numérica. Por exemplo, se tiver 1 e 3, encontre o menor múltiplo comum de 1 e 3 que também é divisível por todos os números <em>entre</em> 1 e 3. A resposta aqui seria 6. Lembre-se de usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> se você obtiver preso. Tente emparelhar o programa. Escreva seu próprio código. </section>
+<section id="description"> Encontre o menor múltiplo comum dos parâmetros fornecidos que podem ser divididos igualmente por ambos, bem como por todos os números seqüenciais no intervalo entre esses parâmetros. O intervalo será uma matriz de dois números que não estarão necessariamente em ordem numérica. Por exemplo, se tiver 1 e 3, encontre o menor múltiplo comum de 1 e 3 que também é divisível por todos os números <em>entre</em> 1 e 3. A resposta aqui seria 6. Lembre-se de usar <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> se você obtiver preso. Tente emparelhar o programa. Escreva seu próprio código. </section>
 
 ## Instructions
 <section id="instructions">

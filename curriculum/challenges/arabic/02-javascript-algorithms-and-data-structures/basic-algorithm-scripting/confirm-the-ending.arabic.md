@@ -8,7 +8,7 @@ localeTitle: تأكيد الانتهاء
 ---
 
 ## Description
-<section id="description"> تحقق مما إذا كانت سلسلة (الوسيطة الأولى ، <code>str</code> ) تنتهي بسلسلة الهدف المحددة (الوسيطة الثانية ، <code>target</code> ). <em>يمكن</em> حل هذا التحدي باستخدام طريقة <code>.endsWith()</code> ، التي تم تقديمها في ES2015. ولكن لغرض هذا التحدي ، نود منك استخدام إحدى طرق السلسلة الفرعية JavaScript بدلاً من ذلك. تذكر استخدام <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> إذا واجهتك مشكلة. اكتب الكود الخاص بك. </section>
+<section id="description"> تحقق مما إذا كانت سلسلة (الوسيطة الأولى ، <code>str</code> ) تنتهي بسلسلة الهدف المحددة (الوسيطة الثانية ، <code>target</code> ). <em>يمكن</em> حل هذا التحدي باستخدام طريقة <code>.endsWith()</code> ، التي تم تقديمها في ES2015. ولكن لغرض هذا التحدي ، نود منك استخدام إحدى طرق السلسلة الفرعية JavaScript بدلاً من ذلك. تذكر استخدام <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> إذا واجهتك مشكلة. اكتب الكود الخاص بك. </section>
 
 ## Instructions
 <section id="instructions">

@@ -9,7 +9,7 @@ localeTitle: شريحة و لصق
 ---
 
 ## Description
-<section id="description"> يتم منحك صفيفين ومؤشر. استخدم <code>slice</code> الطرق <code>splice</code> لنسخ كل عنصر من المصفوفة الأولى في المصفوفة الثانية ، بالترتيب. ابدأ بإدخال عناصر في الفهرس <code>n</code> للمصفوفة الثانية. إرجاع الصفيف الناتج. يجب أن تظل صفائف الإدخال كما هي بعد تشغيل الدالة. تذكر استخدام <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> إذا واجهتك مشكلة. اكتب الكود الخاص بك. </section>
+<section id="description"> يتم منحك صفيفين ومؤشر. استخدم <code>slice</code> الطرق <code>splice</code> لنسخ كل عنصر من المصفوفة الأولى في المصفوفة الثانية ، بالترتيب. ابدأ بإدخال عناصر في الفهرس <code>n</code> للمصفوفة الثانية. إرجاع الصفيف الناتج. يجب أن تظل صفائف الإدخال كما هي بعد تشغيل الدالة. تذكر استخدام <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> إذا واجهتك مشكلة. اكتب الكود الخاص بك. </section>
 
 ## Instructions
 <section id="instructions">

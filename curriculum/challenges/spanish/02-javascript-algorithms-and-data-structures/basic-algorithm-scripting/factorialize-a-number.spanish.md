@@ -8,7 +8,7 @@ localeTitle: Factorializar un número
 ---
 
 ## Description
-<section id="description"> Devuelve el factorial del entero proporcionado. Si el número entero se representa con la letra n, un factorial es el producto de todos los números enteros positivos menores o iguales a n. Los factoriales a menudo se representan con la notación abreviada <code>n!</code> Por ejemplo: <code>5! = 1 * 2 * 3 * 4 * 5 = 120</code> Solo se proporcionarán a la función números enteros mayores o iguales a cero. Recuerda usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> si te atascas. Escribe tu propio código. </section>
+<section id="description"> Devuelve el factorial del entero proporcionado. Si el número entero se representa con la letra n, un factorial es el producto de todos los números enteros positivos menores o iguales a n. Los factoriales a menudo se representan con la notación abreviada <code>n!</code> Por ejemplo: <code>5! = 1 * 2 * 3 * 4 * 5 = 120</code> Solo se proporcionarán a la función números enteros mayores o iguales a cero. Recuerda usar <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> si te atascas. Escribe tu propio código. </section>
 
 ## Instructions
 <section id="instructions">

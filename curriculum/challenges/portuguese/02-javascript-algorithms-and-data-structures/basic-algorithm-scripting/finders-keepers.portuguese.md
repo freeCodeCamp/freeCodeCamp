@@ -8,7 +8,7 @@ localeTitle: Achado não é roubado
 ---
 
 ## Description
-<section id="description"> Crie uma função que examine uma matriz (primeiro argumento) e retorne o primeiro elemento da matriz que passa por um teste de verdade (segundo argumento). Se nenhum elemento passar no teste, retorne indefinido. Lembre-se de usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Tente programação em par. Escreva seu próprio código. </section>
+<section id="description"> Crie uma função que examine uma matriz (primeiro argumento) e retorne o primeiro elemento da matriz que passa por um teste de verdade (segundo argumento). Se nenhum elemento passar no teste, retorne indefinido. Lembre-se de usar <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Tente programação em par. Escreva seu próprio código. </section>
 
 ## Instructions
 <section id="instructions">

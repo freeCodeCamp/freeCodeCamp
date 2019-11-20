@@ -13,7 +13,7 @@ You are given two arrays and an index.
 Use the array methods <code>slice</code> and <code>splice</code> to copy each element of the first array into the second array, in order.
 Begin inserting elements at index <code>n</code> of the second array.
 Return the resulting array. The input arrays should remain the same after the function runs.
-Remember to use <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> if you get stuck. Write your own code.
+Remember to use <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> if you get stuck. Write your own code.
 </section>
 
 ## Instructions

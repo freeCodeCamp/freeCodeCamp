@@ -8,7 +8,7 @@ localeTitle: Largue
 ---
 
 ## Description
-<section id="description"> Dado o arranjo <code>arr</code> , percorra e remova cada elemento começando do primeiro elemento (o índice 0) até que a função <code>func</code> retorne <code>true</code> quando o elemento iterado passar por ele. Em seguida, retorne o restante da matriz quando a condição for satisfeita, caso contrário, o <code>arr</code> deverá ser retornado como uma matriz vazia. Lembre-se de usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Tente emparelhar o programa. Escreva seu próprio código. </section>
+<section id="description"> Dado o arranjo <code>arr</code> , percorra e remova cada elemento começando do primeiro elemento (o índice 0) até que a função <code>func</code> retorne <code>true</code> quando o elemento iterado passar por ele. Em seguida, retorne o restante da matriz quando a condição for satisfeita, caso contrário, o <code>arr</code> deverá ser retornado como uma matriz vazia. Lembre-se de usar <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Tente emparelhar o programa. Escreva seu próprio código. </section>
 
 ## Instructions
 <section id="instructions">

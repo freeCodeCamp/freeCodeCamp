@@ -8,7 +8,7 @@ localeTitle: Factorialize عدد
 ---
 
 ## Description
-<section id="description"> عودة المضروب من عدد صحيح المقدمة. إذا تم تمثيل العدد الصحيح بالحرف n ، فإن العامل الحاسوبي هو نتاج جميع الأعداد الصحيحة الموجبة أقل من أو يساوي n. غالبًا ما يتم تمثيل العوامل بعبارة الاختزال <code>n!</code> على سبيل المثال: <code>5! = 1 * 2 * 3 * 4 * 5 = 120</code> فقط تزويد الأعداد الصحيحة التي تزيد عن أو تساوي الصفر بالوظيفة. تذكر استخدام <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> إذا واجهتك مشكلة. اكتب الكود الخاص بك. </section>
+<section id="description"> عودة المضروب من عدد صحيح المقدمة. إذا تم تمثيل العدد الصحيح بالحرف n ، فإن العامل الحاسوبي هو نتاج جميع الأعداد الصحيحة الموجبة أقل من أو يساوي n. غالبًا ما يتم تمثيل العوامل بعبارة الاختزال <code>n!</code> على سبيل المثال: <code>5! = 1 * 2 * 3 * 4 * 5 = 120</code> فقط تزويد الأعداد الصحيحة التي تزيد عن أو تساوي الصفر بالوظيفة. تذكر استخدام <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> إذا واجهتك مشكلة. اكتب الكود الخاص بك. </section>
 
 ## Instructions
 <section id="instructions">

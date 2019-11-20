@@ -9,7 +9,7 @@ localeTitle: Мутации
 
 ## Description
 <section id='description'>
-Возвращает true, если строка в первом элементе массива содержит все буквы строки во втором элементе массива. Например, <code>[&quot;hello&quot;, &quot;Hello&quot;]</code> должен возвращать true, потому что все буквы во второй строке присутствуют в первом, игнорирующем случае. Аргументы <code>[&quot;hello&quot;, &quot;hey&quot;]</code> должны возвращать false, потому что строка &quot;hello&quot; не содержит &quot;y&quot;. Наконец, <code>[&quot;Alien&quot;, &quot;line&quot;]</code> должен возвращать true, потому что все буквы в «строке» присутствуют в «Alien». Не забудьте использовать <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask,</a> если вы застряли. Напишите свой собственный код.
+Возвращает true, если строка в первом элементе массива содержит все буквы строки во втором элементе массива. Например, <code>[&quot;hello&quot;, &quot;Hello&quot;]</code> должен возвращать true, потому что все буквы во второй строке присутствуют в первом, игнорирующем случае. Аргументы <code>[&quot;hello&quot;, &quot;hey&quot;]</code> должны возвращать false, потому что строка &quot;hello&quot; не содержит &quot;y&quot;. Наконец, <code>[&quot;Alien&quot;, &quot;line&quot;]</code> должен возвращать true, потому что все буквы в «строке» присутствуют в «Alien». Не забудьте использовать <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask,</a> если вы застряли. Напишите свой собственный код.
 </section>
 
 ## Instructions

@@ -8,7 +8,7 @@ localeTitle: الطفرات
 ---
 
 ## Description
-<section id="description"> إرجاع true إذا احتوت السلسلة في العنصر الأول من المصفوفة على كافة أحرف السلسلة في العنصر الثاني من الصفيف. على سبيل المثال ، يجب أن تعود <code>[&quot;hello&quot;, &quot;Hello&quot;]</code> ، true لأن كافة الأحرف الموجودة في السلسلة الثانية موجودة في الحالة الأولى ، مع تجاهل الحالة. يجب أن ترجع الوسيطة <code>[&quot;hello&quot;, &quot;hey&quot;]</code> false لأن السلسلة &quot;hello&quot; لا تحتوي على &quot;y&quot;. وأخيرًا ، يجب أن تعود <code>[&quot;Alien&quot;, &quot;line&quot;]</code> ، إلى true لأن جميع الأحرف في &quot;line&quot; موجودة في &quot;Alien&quot;. تذكر استخدام <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> إذا واجهتك مشكلة. اكتب الكود الخاص بك. </section>
+<section id="description"> إرجاع true إذا احتوت السلسلة في العنصر الأول من المصفوفة على كافة أحرف السلسلة في العنصر الثاني من الصفيف. على سبيل المثال ، يجب أن تعود <code>[&quot;hello&quot;, &quot;Hello&quot;]</code> ، true لأن كافة الأحرف الموجودة في السلسلة الثانية موجودة في الحالة الأولى ، مع تجاهل الحالة. يجب أن ترجع الوسيطة <code>[&quot;hello&quot;, &quot;hey&quot;]</code> false لأن السلسلة &quot;hello&quot; لا تحتوي على &quot;y&quot;. وأخيرًا ، يجب أن تعود <code>[&quot;Alien&quot;, &quot;line&quot;]</code> ، إلى true لأن جميع الأحرف في &quot;line&quot; موجودة في &quot;Alien&quot;. تذكر استخدام <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> إذا واجهتك مشكلة. اكتب الكود الخاص بك. </section>
 
 ## Instructions
 <section id="instructions">

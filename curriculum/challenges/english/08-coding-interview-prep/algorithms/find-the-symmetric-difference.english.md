@@ -9,7 +9,7 @@ forumTopicId: 301611
 <section id='description'>
 Create a function that takes two or more arrays and returns an array of the <dfn>symmetric difference</dfn> (<code>&xutri;</code> or <code>&oplus;</code>) of the provided arrays.
 Given two sets (for example set <code>A = {1, 2, 3}</code> and set <code>B = {2, 3, 4}</code>), the mathematical term "symmetric difference" of two sets is the set of elements which are in either of the two sets, but not in both (<code>A &xutri; B = C = {1, 4}</code>). For every additional symmetric difference you take (say on a set <code>D = {2, 3}</code>), you should get the set with elements which are in either of the two the sets but not both (<code>C &xutri; D = {1, 4} &xutri; {2, 3} = {1, 2, 3, 4}</code>). The resulting array must contain only unique values (<em>no duplicates</em>).
-Remember to use <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code.
+Remember to use <a href='https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code.
 </section>
 
 ## Instructions

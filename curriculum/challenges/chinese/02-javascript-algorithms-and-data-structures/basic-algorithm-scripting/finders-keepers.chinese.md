@@ -8,7 +8,7 @@ localeTitle: Finders Keepers
 ---
 
 ## Description
-<section id="description">创建一个查看数组（第一个参数）的函数，并返回数组中传递真值测试的第一个元素（第二个参数）。如果没有元素通过测试，则返回undefined。如果卡住，请记得使用<a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> 。尝试配对程序。编写自己的代码。 </section>
+<section id="description">创建一个查看数组（第一个参数）的函数，并返回数组中传递真值测试的第一个元素（第二个参数）。如果没有元素通过测试，则返回undefined。如果卡住，请记得使用<a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> 。尝试配对程序。编写自己的代码。 </section>
 
 ## Instructions
 <section id="instructions">

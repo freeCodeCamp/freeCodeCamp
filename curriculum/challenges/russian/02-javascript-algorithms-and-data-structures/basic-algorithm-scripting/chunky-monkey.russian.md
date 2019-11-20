@@ -9,7 +9,7 @@ localeTitle: Короткая обезьяна
 
 ## Description
 <section id='description'>
-Напишите функцию, которая разбивает массив (первый аргумент) на группы по длине <code>size</code> (второй аргумент) и возвращает их в виде двумерного массива. Не забудьте использовать <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask,</a> если вы застряли. Напишите свой собственный код.
+Напишите функцию, которая разбивает массив (первый аргумент) на группы по длине <code>size</code> (второй аргумент) и возвращает их в виде двумерного массива. Не забудьте использовать <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask,</a> если вы застряли. Напишите свой собственный код.
 </section>
 
 ## Instructions

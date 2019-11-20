@@ -8,7 +8,7 @@ localeTitle: 找到字符串中最长的单词
 ---
 
 ## Description
-<section id="description">返回所提供句子中最长单词的长度。您的回答应该是一个数字。如果卡住，请记得使用<a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> 。编写自己的代码。 </section>
+<section id="description">返回所提供句子中最长单词的长度。您的回答应该是一个数字。如果卡住，请记得使用<a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> 。编写自己的代码。 </section>
 
 ## Instructions
 <section id="instructions">

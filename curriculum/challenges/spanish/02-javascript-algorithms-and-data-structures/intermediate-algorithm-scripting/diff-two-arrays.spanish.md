@@ -8,7 +8,7 @@ localeTitle: Diferencia dos matrices
 ---
 
 ## Description
-<section id="description"> Compare dos matrices y devuelva una nueva matriz con cualquier elemento que solo se encuentre en una de las dos matrices, pero no en ambas. En otras palabras, devuelva la diferencia simétrica de las dos matrices. Recuerda usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> si te atascas. Trate de emparejar el programa. Escribe tu propio código. <strong>Nota</strong> <br> Puede devolver la matriz con sus elementos en cualquier orden. </section>
+<section id="description"> Compare dos matrices y devuelva una nueva matriz con cualquier elemento que solo se encuentre en una de las dos matrices, pero no en ambas. En otras palabras, devuelva la diferencia simétrica de las dos matrices. Recuerda usar <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> si te atascas. Trate de emparejar el programa. Escribe tu propio código. <strong>Nota</strong> <br> Puede devolver la matriz con sus elementos en cualquier orden. </section>
 
 ## Instructions
 <section id="instructions">

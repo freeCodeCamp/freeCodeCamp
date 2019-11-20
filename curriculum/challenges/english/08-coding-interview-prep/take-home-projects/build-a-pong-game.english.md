@@ -15,7 +15,7 @@ forumTopicId: 302353
 <strong>User Story:</strong> The computer can control the other paddle.
 <strong>User Story:</strong> The computer's paddle is unbeatable. It should never miss the ball.
 <strong>User Story:</strong> The game keeps track of the player and computer's score.
-Remember to use <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck.
+Remember to use <a href='https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514' target='_blank'>Read-Search-Ask</a> if you get stuck.
 When you are finished, click the "I've completed this challenge" button and include a link to your CodePen.
 You can get feedback on your project by sharing it with your friends on Facebook.
 </section>

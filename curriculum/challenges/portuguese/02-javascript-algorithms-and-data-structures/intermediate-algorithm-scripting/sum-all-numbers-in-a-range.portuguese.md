@@ -8,7 +8,7 @@ localeTitle: Soma todos os números em um intervalo
 ---
 
 ## Description
-<section id="description"> Nós vamos te passar uma matriz de dois números. Retorna a soma desses dois números mais a soma de todos os números entre eles. O número mais baixo nem sempre vem primeiro. Lembre-se de usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Tente emparelhar o programa. Escreva seu próprio código. </section>
+<section id="description"> Nós vamos te passar uma matriz de dois números. Retorna a soma desses dois números mais a soma de todos os números entre eles. O número mais baixo nem sempre vem primeiro. Lembre-se de usar <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Tente emparelhar o programa. Escreva seu próprio código. </section>
 
 ## Instructions
 <section id="instructions">

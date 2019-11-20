@@ -9,7 +9,7 @@ localeTitle: Усекать строку
 
 ## Description
 <section id='description'>
-Усечь строку (первый аргумент), если она длиннее заданной максимальной длины строки (второй аргумент). Возвращает усеченную строку с <code>...</code> окончанием. Не забудьте использовать <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask,</a> если вы застряли. Напишите свой собственный код.
+Усечь строку (первый аргумент), если она длиннее заданной максимальной длины строки (второй аргумент). Возвращает усеченную строку с <code>...</code> окончанием. Не забудьте использовать <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask,</a> если вы застряли. Напишите свой собственный код.
 </section>
 
 ## Instructions

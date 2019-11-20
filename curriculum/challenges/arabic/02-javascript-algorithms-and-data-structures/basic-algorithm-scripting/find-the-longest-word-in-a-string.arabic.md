@@ -8,7 +8,7 @@ localeTitle: ابحث عن أطول كلمة في سلسلة
 ---
 
 ## Description
-<section id="description"> إرجاع طول الكلمة الأطول في الجملة المتوفرة. يجب أن يكون ردك رقمًا. تذكر استخدام <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> إذا واجهتك مشكلة. اكتب الكود الخاص بك. </section>
+<section id="description"> إرجاع طول الكلمة الأطول في الجملة المتوفرة. يجب أن يكون ردك رقمًا. تذكر استخدام <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> إذا واجهتك مشكلة. اكتب الكود الخاص بك. </section>
 
 ## Instructions
 <section id="instructions">

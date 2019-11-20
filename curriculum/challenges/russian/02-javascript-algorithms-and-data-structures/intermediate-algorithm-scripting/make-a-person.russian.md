@@ -8,7 +8,7 @@ localeTitle: Сделать человека
 
 ## Description
 <section id='description'>
-Заполните конструктор объекта следующими способами: <blockquote> getFirstName () getLastName () getFullName () setFirstName (first) setLastName (последний) setFullName (firstAndLast) </blockquote> Запустите тесты, чтобы увидеть ожидаемый результат для каждого метода. Методы, принимающие аргумент, должны принимать только один аргумент и должны быть строкой. Эти методы должны быть единственным доступным средством взаимодействия с объектом. Не забудьте использовать <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask,</a> если вы застряли. Попробуйте подключить программу. Напишите свой собственный код.
+Заполните конструктор объекта следующими способами: <blockquote> getFirstName () getLastName () getFullName () setFirstName (first) setLastName (последний) setFullName (firstAndLast) </blockquote> Запустите тесты, чтобы увидеть ожидаемый результат для каждого метода. Методы, принимающие аргумент, должны принимать только один аргумент и должны быть строкой. Эти методы должны быть единственным доступным средством взаимодействия с объектом. Не забудьте использовать <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask,</a> если вы застряли. Попробуйте подключить программу. Напишите свой собственный код.
 </section>
 
 ## Instructions

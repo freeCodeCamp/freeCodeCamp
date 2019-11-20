@@ -8,7 +8,7 @@ localeTitle: Buscar y reemplazar
 ---
 
 ## Description
-<section id="description"> Realice una búsqueda y reemplace la oración utilizando los argumentos proporcionados y devuelva la nueva oración. El primer argumento es la oración para realizar la búsqueda y reemplazar. El segundo argumento es la palabra que reemplazará (antes). El tercer argumento es con lo que reemplazará el segundo argumento con (después). <strong>Nota</strong> <br> Conserve el caso del primer carácter en la palabra original cuando lo reemplace. Por ejemplo, si quiere reemplazar la palabra &quot;Libro&quot; con la palabra &quot;perro&quot;, debe ser reemplazada como &quot;Perro&quot; Recuerde usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Lectura-Búsqueda-Preguntar</a> si se atasca. Trate de emparejar el programa. Escribe tu propio código. </section>
+<section id="description"> Realice una búsqueda y reemplace la oración utilizando los argumentos proporcionados y devuelva la nueva oración. El primer argumento es la oración para realizar la búsqueda y reemplazar. El segundo argumento es la palabra que reemplazará (antes). El tercer argumento es con lo que reemplazará el segundo argumento con (después). <strong>Nota</strong> <br> Conserve el caso del primer carácter en la palabra original cuando lo reemplace. Por ejemplo, si quiere reemplazar la palabra &quot;Libro&quot; con la palabra &quot;perro&quot;, debe ser reemplazada como &quot;Perro&quot; Recuerde usar <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Lectura-Búsqueda-Preguntar</a> si se atasca. Trate de emparejar el programa. Escribe tu propio código. </section>
 
 ## Instructions
 <section id="instructions">

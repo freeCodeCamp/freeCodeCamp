@@ -13,7 +13,7 @@ If the integer is represented with the letter n, a factorial is the product of a
 Factorials are often represented with the shorthand notation <code>n!</code>
 For example: <code>5! = 1 * 2 * 3 * 4 * 5 = 120</code>
 Only integers greater than or equal to zero will be supplied to the function.
-Remember to use <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> if you get stuck. Write your own code.
+Remember to use <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> if you get stuck. Write your own code.
 </section>
 
 ## Instructions

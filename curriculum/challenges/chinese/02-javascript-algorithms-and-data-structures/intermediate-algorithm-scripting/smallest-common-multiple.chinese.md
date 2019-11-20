@@ -8,7 +8,7 @@ localeTitle: 最小的共同多重
 ---
 
 ## Description
-<section id="description">找到所提供参数的最小公倍数，可以均匀地除以这些参数，以及这些参数之间范围内的所有序号。范围将是两个数字的数组，不一定按数字顺序排列。例如，如果给定1和3，找到1和3的最小公倍数，它们也可以被1到3 <em>之间</em>的所有数字整除。这里的答案是6.记得使用<a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a>如果你得到卡住。尝试配对程序。编写自己的代码。 </section>
+<section id="description">找到所提供参数的最小公倍数，可以均匀地除以这些参数，以及这些参数之间范围内的所有序号。范围将是两个数字的数组，不一定按数字顺序排列。例如，如果给定1和3，找到1和3的最小公倍数，它们也可以被1到3 <em>之间</em>的所有数字整除。这里的答案是6.记得使用<a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a>如果你得到卡住。尝试配对程序。编写自己的代码。 </section>
 
 ## Instructions
 <section id="instructions">
