@@ -24,7 +24,7 @@ json.forEach(function(val) {
 });
 ```
 
-<strong>Note:</strong> For this challenge you need to add new html elements to the page, so you cannot rely on textContent. Instead you need to use innerHTML which can make a site vulnerable to cross site scripting attacks.
+<strong>Note:</strong> For this challenge you need to add new HTML elements to the page, so you cannot rely on `textContent`. Instead you need to use `innerHTML`, which can make a site vulnerable to cross site scripting attacks.
 </section>
 
 ## Instructions
