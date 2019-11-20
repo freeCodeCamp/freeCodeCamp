@@ -8,7 +8,7 @@ localeTitle: Diff Two Arrays
 ---
 
 ## Description
-<section id="description"> Compare dois arrays e retorne um novo array com todos os itens encontrados apenas em um dos dois arrays, mas não em ambos. Em outras palavras, retorne a diferença simétrica das duas matrizes. Lembre-se de usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Tente emparelhar o programa. Escreva seu próprio código. <strong>Nota</strong> <br> Você pode retornar o array com seus elementos em qualquer ordem. </section>
+<section id="description"> Compare dois arrays e retorne um novo array com todos os itens encontrados apenas em um dos dois arrays, mas não em ambos. Em outras palavras, retorne a diferença simétrica das duas matrizes. Lembre-se de usar <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Tente emparelhar o programa. Escreva seu próprio código. <strong>Nota</strong> <br> Você pode retornar o array com seus elementos em qualquer ordem. </section>
 
 ## Instructions
 <section id="instructions">
