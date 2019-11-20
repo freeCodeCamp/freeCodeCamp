@@ -29,7 +29,7 @@ tests:
     testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.isPresent == 'function')})());
   - text: The <code>isPresent</code> method should correctly check for the presence or absence of elements added to the tree.
     testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.isPresent !== 'function') { return false; }; test.add(4); test.add(7); test.add(411); test.add(452); return ( test.isPresent(452) && test.isPresent(411) && test.isPresent(7) && !test.isPresent(100) ); })());
-  - text: <code>isPresent</code> should handles cases where the tree is empty.
+  - text: <code>isPresent</code> should handle cases where the tree is empty.
     testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.isPresent !== 'function') { return false; }; return test.isPresent(5) == false; })());
 ```
 
