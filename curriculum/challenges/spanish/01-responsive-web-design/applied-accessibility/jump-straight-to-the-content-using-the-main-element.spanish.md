@@ -33,7 +33,7 @@ tests:
 
 ```html
 <header>
-  <h1>Weapons of the Ninja</h1>
+  <h1>Las Armas del Ninja</h1>
 </header>
 
 
@@ -52,6 +52,7 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+// solución requerida
 ```
+
 </section>

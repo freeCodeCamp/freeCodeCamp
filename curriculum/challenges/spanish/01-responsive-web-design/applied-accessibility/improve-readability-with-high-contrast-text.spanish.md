@@ -45,9 +45,9 @@ tests:
     <h1>Deep Thoughts with Master Camper Cat</h1>
   </header>
   <article>
-    <h2>A Word on the Recent Catnip Doping Scandal</h2>
-    <p>The influence that catnip has on feline behavior is well-documented, and its use as an herbal supplement in competitive ninja circles remains controversial. Once again, the debate to ban the substance is brought to the public's attention after the high-profile win of Kittytron, a long-time proponent and user of the green stuff, at the Claw of Fury tournament.</p>
-    <p>As I've stated in the past, I firmly believe a true ninja's skills must come from within, with no external influences. My own catnip use shall continue as purely recreational.</p>
+    <h2>Unas Palabras sobre el Reciente Escándalo de Doping de Catnip</h2>
+    <p>La influencia que tiene el catnip sobre el comportamiento felino ha sido bien documentada, y su uso como suplemento herbario en círculos ninja de competición sigue siendo controvertido aún hoy en día. Una vez más, el debate sobre la prohibición de la sustancia se ha presentado en la opinión pública luego de la gran victoria de Kittytron, acérrimo defensor y consumidor de la sustancia verde, en el Torneo de la Garra de la Furia.</p>
+    <p>Como ya me he pronunciado en el pasado, creo firmemente que las habilidades de un verdades ninja deben venir de su interior, sin ninguna influencia externa. Mi consumo personal de catnip es y seguirá siendo puramente recreativo.</p>
   </article>
 </body>
 
@@ -65,4 +65,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>
