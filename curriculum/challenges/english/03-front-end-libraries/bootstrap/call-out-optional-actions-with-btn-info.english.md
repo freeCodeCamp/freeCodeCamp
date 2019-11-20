@@ -28,7 +28,7 @@ tests:
     testString: assert($("button.btn-block.btn").length > 1);
   - text: Your new button should have the class <code>btn-info</code>.
     testString: assert($("button").hasClass("btn-info"));
-  - text: All your <code>button</code> elements should have closing tags.
+  - text: All of your <code>button</code> elements should have closing tags.
     testString: assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length);
 
 ```
