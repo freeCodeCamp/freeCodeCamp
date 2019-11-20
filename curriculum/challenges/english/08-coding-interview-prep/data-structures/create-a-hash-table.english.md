@@ -27,7 +27,7 @@ tests:
     testString: assert((function() { var test = false; if (typeof HashTable !== 'undefined') { test = new HashTable() }; return (typeof test === 'object')})());
   - text: The HashTable should have an add method.
     testString: assert((function() { var test = false; if (typeof HashTable !== 'undefined') { test = new HashTable() }; return ((typeof test.add) === 'function')})());
-  - text: The HashTable should have an remove method.
+  - text: The HashTable should have a remove method.
     testString: assert((function() { var test = false; if (typeof HashTable !== 'undefined') { test = new HashTable() }; return ((typeof test.remove) === 'function')})());
   - text: The HashTable should have an lookup method.
     testString: assert((function() { var test = false; if (typeof HashTable !== 'undefined') { test = new HashTable() }; return ((typeof test.lookup) === 'function')})());
