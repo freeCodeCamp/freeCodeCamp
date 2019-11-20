@@ -43,7 +43,7 @@ tests:
     testString: assert('totalUsers' in userActivity.data && 'online' in userActivity.data);
   - text: The <code>online</code> property nested in the <code>data</code> key of <code>userActivity</code> should be set to <code>45</code>
     testString: assert(userActivity.data.online === 45);
-  - text: The <code>online</code> property should be set using dot or bracket notation
+  - text: The <code>online</code> property should be set using dot or bracket notation.
     testString: 'assert.strictEqual(code.search(/online: 45/), -1);'
 
 ```
