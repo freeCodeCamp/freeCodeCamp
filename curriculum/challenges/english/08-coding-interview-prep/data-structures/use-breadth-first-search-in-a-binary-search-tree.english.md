@@ -21,19 +21,19 @@ Let's create a breadth-first search method in our tree called <code>levelOrder</
 
 ```yml
 tests:
-  - text: The <code>BinarySearchTree</code> data structure exists.
+  - text: The <code>BinarySearchTree</code> data structure should exist.
     testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() }; return (typeof test == 'object')})());
-  - text: The binary search tree has a method called <code>levelOrder</code>.
+  - text: The binary search tree should have a method called <code>levelOrder</code>.
     testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.levelOrder == 'function')})());
-  - text: The binary search tree has a method called <code>reverseLevelOrder</code>.
+  - text: The binary search tree should have a method called <code>reverseLevelOrder</code>.
     testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.reverseLevelOrder == 'function')})());
-  - text: The <code>levelOrder</code> method returns an array of the tree node values explored in level order.
+  - text: The <code>levelOrder</code> method should return an array of the tree node values explored in level order.
     testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.levelOrder !== 'function') { return false; }; test.add(7); test.add(1); test.add(9); test.add(0); test.add(3); test.add(8); test.add(10); test.add(2); test.add(5); test.add(4); test.add(6); return (test.levelOrder().join('') == '719038102546'); })());
-  - text: The <code>reverseLevelOrder</code> method returns an array of the tree node values explored in reverse level order.
+  - text: The <code>reverseLevelOrder</code> method should return an array of the tree node values explored in reverse level order.
     testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.reverseLevelOrder !== 'function') { return false; }; test.add(7); test.add(1); test.add(9); test.add(0); test.add(3); test.add(8); test.add(10); test.add(2); test.add(5); test.add(4); test.add(6); return (test.reverseLevelOrder().join('') == '791108305264'); })());
-  - text: The <code>levelOrder</code> method returns <code>null</code> for an empty tree.
+  - text: The <code>levelOrder</code> method should return <code>null</code> for an empty tree.
     testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.levelOrder !== 'function') { return false; }; return (test.levelOrder() == null); })());
-  - text: The <code>reverseLevelOrder</code> method returns <code>null</code> for an empty tree.
+  - text: The <code>reverseLevelOrder</code> method should return <code>null</code> for an empty tree.
     testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.reverseLevelOrder !== 'function') { return false; }; return (test.reverseLevelOrder() == null); })());
 ```
 

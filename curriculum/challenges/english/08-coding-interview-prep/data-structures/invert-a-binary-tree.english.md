@@ -20,13 +20,13 @@ Here will we create a function to invert a binary tree. Given a binary tree, we 
 
 ```yml
 tests:
-  - text: The <code>BinarySearchTree</code> data structure exists.
+  - text: The <code>BinarySearchTree</code> data structure should exist.
     testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() }; return (typeof test == 'object')})());
-  - text: The binary search tree has a method called <code>invert</code>.
+  - text: The binary search tree should have a method called <code>invert</code>.
     testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.invert == 'function')})());
-  - text: The <code>invert</code> method correctly inverts the tree structure.
+  - text: The <code>invert</code> method should correctly invert the tree structure.
     testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.invert !== 'function') { return false; }; test.add(4); test.add(1); test.add(7); test.add(87); test.add(34); test.add(45); test.add(73); test.add(8); test.invert(); return test.inorder().join('') == '877345348741'; })());
-  - text: Inverting an empty tree returns <code>null</code>.
+  - text: Inverting an empty tree should return <code>null</code>.
     testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.invert !== 'function') { return false; }; return (test.invert() == null); })());
 
 ```

@@ -23,7 +23,7 @@ For example, if <code>setA = ['a','b','c']</code> and <code>setB = ['a','b','d',
 tests:
   - text: Your <code>Set</code> class should have a <code>intersection</code> method.
     testString: assert((function(){var test = new Set(); return (typeof test.intersection === 'function')})());
-  - text: The proper collection was returned
+  - text: The proper collection should be returned.
     testString: assert((function(){  var setA = new Set();  var setB = new Set();  setA.add('a');  setA.add('b');  setA.add('c');  setB.add('c');  setB.add('d');  var intersectionSetAB = setA.intersection(setB); return (intersectionSetAB.size() === 1 && intersectionSetAB.values()[0] === 'c')})());
 
 ```

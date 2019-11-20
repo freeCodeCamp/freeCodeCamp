@@ -24,15 +24,15 @@ Instructions: Add a method to our max heap called remove. This method should ret
 
 ```yml
 tests:
-  - text: The MaxHeap data structure exists.
+  - text: The MaxHeap data structure should exist.
     testString: assert((function() { var test = false; if (typeof MaxHeap !== 'undefined') { test = new MaxHeap() }; return (typeof test == 'object')})());
-  - text: MaxHeap has a method called print.
+  - text: MaxHeap should have a method called print.
     testString: assert((function() { var test = false; if (typeof MaxHeap !== 'undefined') { test = new MaxHeap() } else { return false; }; return (typeof test.print == 'function')})());
-  - text: MaxHeap has a method called insert.
+  - text: MaxHeap should have a method called insert.
     testString: assert((function() { var test = false; if (typeof MaxHeap !== 'undefined') { test = new MaxHeap() } else { return false; }; return (typeof test.insert == 'function')})());
-  - text: MaxHeap has a method called remove.
+  - text: MaxHeap should have a method called remove.
     testString: assert((function() { var test = false; if (typeof MaxHeap !== 'undefined') { test = new MaxHeap() } else { return false; }; return (typeof test.remove == 'function')})());
-  - text: The remove method removes the greatest element from the max heap while maintaining the max heap property.
+  - text: The remove method should remove the greatest element from the max heap while maintaining the max heap property.
     testString: assert((function() { var test = false; if (typeof MaxHeap !== 'undefined') { test = new MaxHeap() } else { return false; }; test.insert(30); test.insert(300); test.insert(500); test.insert(10); let result = []; result.push(test.remove()); result.push(test.remove()); result.push(test.remove()); result.push(test.remove());  return (result.join('') == '5003003010') })());
 
 ```

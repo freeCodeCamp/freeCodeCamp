@@ -30,7 +30,7 @@ Now you've successfully learned how to use the ES6 <code>Set()</code> object, go
 
 ```yml
 tests:
-  - text: Your Set was returned correctly!
+  - text: <code>checkSet(new Set([1,2,3,4,5,6,7])</code> should return <code>[1, 2, 3, 4, 5, 6, 7]</code>.
     testString: 'assert((function(){var test = checkSet(new Set([1,2,3,4,5,6,7])); return DeepEqual(test, [ 1, 2, 3, 4, 5, 6, 7 ]);})());'
 
 ```

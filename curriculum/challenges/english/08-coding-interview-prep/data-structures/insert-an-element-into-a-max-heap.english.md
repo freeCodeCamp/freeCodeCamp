@@ -34,13 +34,13 @@ Finally, add a print method which returns an array of all the items that have be
 
 ```yml
 tests:
-  - text: The MaxHeap data structure exists.
+  - text: The MaxHeap data structure should exist.
     testString: assert((function() { var test = false; if (typeof MaxHeap !== 'undefined') { test = new MaxHeap() }; return (typeof test == 'object')})());
-  - text: MaxHeap has a method called insert.
+  - text: MaxHeap should have a method called insert.
     testString: assert((function() { var test = false; if (typeof MaxHeap !== 'undefined') { test = new MaxHeap() } else { return false; }; return (typeof test.insert == 'function')})());
-  - text: MaxHeap has a method called print.
+  - text: MaxHeap should have a method called print.
     testString: assert((function() { var test = false; if (typeof MaxHeap !== 'undefined') { test = new MaxHeap() } else { return false; }; return (typeof test.print == 'function')})());
-  - text: The insert method adds elements according to the max heap property.
+  - text: The insert method should add elements according to the max heap property.
     testString: 'assert((function() { var test = false; if (typeof MaxHeap !== ''undefined'') { test = new MaxHeap() } else { return false; }; test.insert(50); test.insert(100); test.insert(700); test.insert(32); test.insert(51); let result = test.print(); return ((result.length == 5) ? result[0] == 700 : result[1] == 700) })());'
 
 ```
