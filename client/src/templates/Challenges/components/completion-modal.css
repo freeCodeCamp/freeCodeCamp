@@ -22,9 +22,9 @@
 .completion-success-icon {
   width: 200px;
   height: 200px;
-  transform: scale(3);
+  transform: scale(1.5);
   opacity: 0;
-  animation: success-icon-animation 250ms linear 100ms forwards;
+  animation: success-icon-animation 150ms linear 100ms forwards;
 }
 
 @keyframes success-icon-animation {

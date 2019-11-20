@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import BezierEasing from 'bezier-easing';
 import GreenPass from '../../../assets/icons/GreenPass';
@@ -8,7 +8,7 @@ const propTypes = {
   completedPercent: PropTypes.number
 };
 
-export class CompletionModalBody extends Component {
+export class CompletionModalBody extends PureComponent {
   constructor(props) {
     super(props);
 
@@ -23,19 +23,23 @@ export class CompletionModalBody extends Component {
 
   animateProgressBar(completedPercent) {
     // change this to test different values
-    // completedPercent = 100;
-    const easing = BezierEasing(0.39, 0.575, 0.565, 1);
+    // or comment it out to see actual completed percent
+    completedPercent = 100;
+    const easing = BezierEasing(0.2, 0.5, 0.4, 1);
+
     this.setState({ animateProgress: true }, () => {
       if (completedPercent > 100) completedPercent = 100;
       if (completedPercent < 0) completedPercent = 0;
-      const transitionLength = completedPercent * 6.5;
-      console.log('transitionLength = ' + transitionLength);
-      const intervalLength = transitionLength / completedPercent;
-      console.log('intervalLength = ' + intervalLength);
+
+      const transitionLength = completedPercent * 10 + 750;
+      const intervalLength = 10;
+      const intervalsToFinish = transitionLength / intervalLength;
+      const amountPerInterval = completedPercent / intervalsToFinish;
       let percent = 0;
+
       const myInterval = setInterval(() => {
-        console.log('interval');
-        percent++;
+        percent += amountPerInterval;
+
         if (percent > 100) percent = 100;
         if (percent > completedPercent) percent = completedPercent;
 
@@ -45,9 +49,7 @@ export class CompletionModalBody extends Component {
           )
         });
 
-        if (percent >= completedPercent) {
-          clearInterval(myInterval);
-        }
+        if (percent >= completedPercent) clearInterval(myInterval);
       }, intervalLength);
 
       this.setState({
@@ -61,8 +63,6 @@ export class CompletionModalBody extends Component {
   }
 
   render() {
-    // console.log('CompletionModalBodyProps');
-    // console.log(this.props);
     const { blockName, completedPercent } = this.props;
 
     return (
@@ -73,7 +73,7 @@ export class CompletionModalBody extends Component {
             onAnimationEnd={() => {
               setTimeout(() => {
                 this.animateProgressBar(completedPercent);
-              }, 250);
+              }, 50);
             }}
           />
         </div>

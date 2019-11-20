@@ -142,8 +142,6 @@ export class CompletionModalInner extends Component {
   }
 
   render() {
-    // console.log('CompletionModalProps');
-    // console.log(this.props);
     const {
       blockName = '',
       close,
