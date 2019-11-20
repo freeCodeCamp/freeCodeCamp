@@ -27,7 +27,7 @@ tests:
     testString: assert(code.match(/\{\s*\}\);/g));
   - text: You should leave your <code>script</code> element intact.
     testString: assert(code.match(/<script>/g));
-  - text: YOu should leave your <code>$&#40document&#41.ready&#40function&#40&#41 {</code> to the beginning of your <code>script</code> element.
+  - text: You should leave your <code>$&#40document&#41.ready&#40function&#40&#41 {</code> at the beginning of your <code>script</code> element.
     testString: assert(code.match(/\$\(document\)\.ready\(function\(\)\s?\{/g));
   - text: You should leave your "document ready function" closing <code>&#125;&#41;</code> intact.
     testString: assert(code.match(/.*\s*\}\);/g));
