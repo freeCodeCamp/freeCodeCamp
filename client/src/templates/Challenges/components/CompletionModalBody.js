@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import BezierEasing from 'bezier-easing';
 import GreenPass from '../../../assets/icons/GreenPass';
 
 const propTypes = {
@@ -23,6 +24,7 @@ export class CompletionModalBody extends Component {
   animateProgressBar(completedPercent) {
     // change this to test different values
     // completedPercent = 100;
+    const easing = BezierEasing(0.39, 0.575, 0.565, 1);
     this.setState({ animateProgress: true }, () => {
       if (completedPercent > 100) completedPercent = 100;
       if (completedPercent < 0) completedPercent = 0;
@@ -30,19 +32,20 @@ export class CompletionModalBody extends Component {
       console.log('transitionLength = ' + transitionLength);
       const intervalLength = transitionLength / completedPercent;
       console.log('intervalLength = ' + intervalLength);
-      let shownPercent = 0;
-
+      let percent = 0;
       const myInterval = setInterval(() => {
         console.log('interval');
-        shownPercent += 1;
-        if (shownPercent > 100) shownPercent = 100;
-        if (shownPercent > completedPercent) shownPercent = completedPercent;
+        percent += 1;
+        if (percent > 100) percent = 100;
+        if (percent > completedPercent) percent = completedPercent;
 
         this.setState({
-          shownPercent: Math.round(shownPercent)
+          shownPercent: Math.round(
+            completedPercent * easing(percent / completedPercent)
+          )
         });
 
-        if (shownPercent >= completedPercent) {
+        if (percent >= completedPercent) {
           clearInterval(myInterval);
         }
       }, intervalLength);
