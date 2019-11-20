@@ -36,7 +36,7 @@ Implement a function that takes a string of four digits as its argument, with ea
 
 ```yml
 tests:
-  - text: <code>solve24</code> is a function.
+  - text: <code>solve24</code> should be a function.
     testString: assert(typeof solve24 === 'function');
   - text: <code>solve24("4878")</code> should return <code>(7-8/8)*4</code> or <code>4*(7-8/8)</code>
     testString: assert(include(answers[0], solve24(testCases[0])));

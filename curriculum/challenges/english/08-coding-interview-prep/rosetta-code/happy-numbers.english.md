@@ -21,7 +21,7 @@ Implement a function that returns true if the number is happy, or false if not.
 
 ```yml
 tests:
-  - text: <code>happy</code> is a function.
+  - text: <code>happy</code> should be a function.
     testString: assert(typeof happy === 'function');
   - text: <code>happy(1)</code> should return a boolean.
     testString: assert(typeof happy(1) === 'boolean');

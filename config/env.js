@@ -13,7 +13,8 @@ const {
   FORUM_PROXY: forumProxy,
   NEWS_PROXY: newsProxy,
   LOCALE: locale,
-  STRIPE_PUBLIC: stripePublicKey,
+  STRIPE_PUBLIC_KEY: stripePublicKey,
+  SERVICEBOT_ID: servicebotId,
   ALGOLIA_APP_ID: algoliaAppId,
   ALGOLIA_API_KEY: algoliaAPIKey
 } = process.env;
@@ -30,6 +31,7 @@ const locations = {
 module.exports = Object.assign(locations, {
   locale,
   stripePublicKey,
+  servicebotId,
   algoliaAppId:
     !algoliaAppId || algoliaAppId === 'Algolia app id from dashboard'
       ? null

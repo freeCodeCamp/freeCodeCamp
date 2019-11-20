@@ -21,7 +21,7 @@ These factors are the positive integers by which the number being factored can b
 
 ```yml
 tests:
-  - text: <code>factors</code> is a function.
+  - text: <code>factors</code> should be a function.
     testString: assert(typeof factors === 'function');
   - text: <code>factors(45)</code> should return <code>[1,3,5,9,15,45]</code>.
     testString: assert.deepEqual(factors(45), ans[0]);

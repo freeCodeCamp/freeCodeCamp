@@ -1,5 +1,5 @@
 .output-text {
-  white-space: pre-line;
+  white-space: pre-wrap;
   word-break: normal;
   padding-top: 0;
   height: 100%;

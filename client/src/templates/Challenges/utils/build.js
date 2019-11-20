@@ -71,6 +71,11 @@ const buildFunctions = {
   [challengeTypes.backEndProject]: buildBackendChallenge
 };
 
+export function canBuildChallenge(challengeData) {
+  const { challengeType } = challengeData;
+  return buildFunctions.hasOwnProperty(challengeType);
+}
+
 export async function buildChallenge(challengeData) {
   const { challengeType } = challengeData;
   let build = buildFunctions[challengeType];
@@ -85,7 +90,7 @@ const testRunners = {
   [challengeTypes.html]: getDOMTestRunner,
   [challengeTypes.backend]: getDOMTestRunner
 };
-export function getTestRunner(buildData, proxyLogger, document) {
+export function getTestRunner(buildData, { proxyLogger }, document) {
   const { challengeType } = buildData;
   const testRunner = testRunners[challengeType];
   if (testRunner) {
@@ -99,9 +104,9 @@ function getJSTestRunner({ build, sources }, proxyLogger) {
 
   const testWorker = createWorker(testEvaluator, { terminateWorker: true });
 
-  return (testString, testTimeout) => {
+  return (testString, testTimeout, firstTest = true) => {
     return testWorker
-      .execute({ build, testString, code, sources }, testTimeout)
+      .execute({ build, testString, code, sources, firstTest }, testTimeout)
       .on('LOG', proxyLogger).done;
   };
 }
@@ -159,10 +164,13 @@ export function buildBackendChallenge({ url }) {
   };
 }
 
-export function updatePreview(buildData, document) {
+export async function updatePreview(buildData, document, proxyLogger) {
   const { challengeType } = buildData;
+
   if (challengeType === challengeTypes.html) {
-    createMainFramer(document)(buildData);
+    await new Promise(resolve =>
+      createMainFramer(document, resolve, proxyLogger)(buildData)
+    );
   } else {
     throw new Error(`Cannot show preview for challenge type ${challengeType}`);
   }
@@ -172,5 +180,12 @@ export function challengeHasPreview({ challengeType }) {
   return (
     challengeType === challengeTypes.html ||
     challengeType === challengeTypes.modern
+  );
+}
+
+export function isJavaScriptChallenge({ challengeType }) {
+  return (
+    challengeType === challengeTypes.js ||
+    challengeType === challengeTypes.bonfire
   );
 }

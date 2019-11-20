@@ -37,11 +37,11 @@ Now nest the existing <code>a</code> element within a new <code>p</code> element
 
 ```yml
 tests:
-  - text: You need an <code>a</code> element that links to "http://freecatphotoapp.com".
+  - text: You should have an <code>a</code> element that links to "http://freecatphotoapp.com".
     testString: assert(($("a[href=\"http://freecatphotoapp.com\"]").length > 0 || $("a[href=\"http://www.freecatphotoapp.com\"]").length > 0));
   - text: Your <code>a</code> element should have the anchor text of "cat photos"
     testString: assert($("a").text().match(/cat\sphotos/gi));
-  - text: Create a new <code>p</code> element around your <code>a</code> element. There should be at least 3 total <code>p</code> tags in your HTML code.
+  - text: You should create a new <code>p</code> element around your <code>a</code> element. There should be at least 3 total <code>p</code> tags in your HTML code.
     testString: assert($("p") && $("p").length > 2);
   - text: Your <code>a</code> element should be nested within your new <code>p</code> element.
     testString: assert(($("a[href=\"http://freecatphotoapp.com\"]").parent().is("p") || $("a[href=\"http://www.freecatphotoapp.com\"]").parent().is("p")));
@@ -49,9 +49,9 @@ tests:
     testString: assert(($("a[href=\"http://freecatphotoapp.com\"]").parent().text().match(/View\smore\s/gi) || $("a[href=\"http://www.freecatphotoapp.com\"]").parent().text().match(/View\smore\s/gi)));
   - text: Your <code>a</code> element should <em>not</em> have the text "View more".
     testString: assert(!$("a").text().match(/View\smore/gi));
-  - text: Make sure each of your <code>p</code> elements has a closing tag.
+  - text: Each of your <code>p</code> elements should have a closing tag.
     testString: assert(code.match(/<\/p>/g) && code.match(/<p/g) && code.match(/<\/p>/g).length === code.match(/<p/g).length);
-  - text: Make sure each of your <code>a</code> elements has a closing tag.
+  - text: Each of your <code>a</code> elements should have a closing tag.
     testString: assert(code.match(/<\/a>/g) && code.match(/<a/g) && code.match(/<\/a>/g).length === code.match(/<a/g).length);
 
 ```

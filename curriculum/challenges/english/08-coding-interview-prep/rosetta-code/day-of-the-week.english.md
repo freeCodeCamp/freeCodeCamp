@@ -20,7 +20,7 @@ Write a function that takes a start year and an end year and return an array of 
 
 ```yml
 tests:
-  - text: <code>findXmasSunday</code> is a function.
+  - text: <code>findXmasSunday</code> should be a function.
     testString: assert(typeof findXmasSunday === 'function');
   - text: <code>findChristmasSunday(2000, 2100)</code> should return an array.
     testString: assert(typeof findXmasSunday(2000, 2100) === 'object');

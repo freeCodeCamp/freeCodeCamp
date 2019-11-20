@@ -24,9 +24,9 @@ Set the <code>placeholder</code> value of your text <code>input</code> to "cat p
 
 ```yml
 tests:
-  - text: Add a <code>placeholder</code> attribute to the existing text <code>input</code> element.
+  - text: You should add a <code>placeholder</code> attribute to the existing text <code>input</code> element.
     testString: assert($("input[placeholder]").length > 0);
-  - text: Set the value of your placeholder attribute to "cat photo URL".
+  - text: You should set the value of your placeholder attribute to "cat photo URL".
     testString: assert($("input") && $("input").attr("placeholder") && $("input").attr("placeholder").match(/cat\s+photo\s+URL/gi));
   - text: The finished <code>input</code> element should not have a closing tag.
     testString: assert(!code.match(/<input.*\/?>.*<\/input>/gi));
