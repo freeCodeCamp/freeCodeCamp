@@ -95,7 +95,7 @@ export class CompletionModalBody extends Component {
             )}
           </div>
         </div>
-      </span>
+      </>
     );
   }
 }
