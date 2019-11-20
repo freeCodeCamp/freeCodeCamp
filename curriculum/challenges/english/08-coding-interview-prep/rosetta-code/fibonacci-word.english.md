@@ -26,7 +26,7 @@ Write a function to return the Fibonacci Words up to <code>n</code>. <code>n</co
 
 ```yml
 tests:
-  - text: <code>fibWord</code> is a function.
+  - text: <code>fibWord</code> should be a function.
     testString: assert(typeof fibWord === 'function');
   - text: <code>fibWord(5)</code> should return an array.
     testString: assert(Array.isArray(fibWord(5)));

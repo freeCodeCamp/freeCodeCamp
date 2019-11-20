@@ -22,7 +22,7 @@ If it is not appropriate or possible to support a general collection, use a vect
 
 ```yml
 tests:
-  - text: <code>mode</code> is a function.
+  - text: <code>mode</code> should be a function.
     testString: assert(typeof mode === 'function');
   - text: <code>mode([1, 3, 6, 6, 6, 6, 7, 7, 12, 12, 17])</code> should equal <code>[6]</code>
     testString: assert.deepEqual(mode(arr1), [6]);

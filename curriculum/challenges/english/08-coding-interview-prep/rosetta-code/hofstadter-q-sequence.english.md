@@ -22,7 +22,7 @@ Implement the Hofstadter Q Sequence equation as a function. The function should 
 
 ```yml
 tests:
-  - text: <code>hofstadterQ</code> is a function.
+  - text: <code>hofstadterQ</code> should be a function.
     testString: assert(typeof hofstadterQ === 'function');
   - text: <code>hofstadterQ()</code> should return <code>integer</code>
     testString: assert(Number.isInteger(hofstadterQ(1000)));

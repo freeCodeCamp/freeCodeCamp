@@ -45,7 +45,7 @@ and using <code>|</code> as a separator and <code>^</code> as escape character, 
 
 ```yml
 tests:
-  - text: <code>tokenize</code> is a function.
+  - text: <code>tokenize</code> should be a function.
     testString: assert(typeof tokenize === 'function');
   - text: <code>tokenize</code> should return an array.
     testString: assert(typeof tokenize('a', 'b', 'c') === 'object');

@@ -32,7 +32,7 @@ Of course the tale is told in a world where the collection of any amount of coco
 
 ```yml
 tests:
-  - text: <code>splitCoconuts</code> is a function.
+  - text: <code>splitCoconuts</code> should be a function.
     testString: assert(typeof splitCoconuts === 'function');
   - text: <code>splitCoconuts(5)</code> should return 3121.
     testString: assert(splitCoconuts(5) === 3121);

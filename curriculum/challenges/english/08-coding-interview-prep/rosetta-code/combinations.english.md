@@ -34,7 +34,7 @@ Given non-negative integers <code>m</code> and <code>n</code>, generate all size
 
 ```yml
 tests:
-  - text: <code>combinations</code> is a function.
+  - text: <code>combinations</code> should be a function.
     testString: assert(typeof combinations === 'function');
   - text: <code>combinations(3, 5)</code> should return <code>[[0, 1, 2], [0, 1, 3], [0, 1, 4], [0, 2, 3], [0, 2, 4], [0, 3, 4], [1, 2, 3], [1, 2, 4], [1, 3, 4], [2, 3, 4]]</code>.
     testString: assert.deepEqual(combinations(testInput1[0], testInput1[1]), testOutput1);

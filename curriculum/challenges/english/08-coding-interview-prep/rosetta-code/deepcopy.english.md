@@ -31,11 +31,11 @@ tests:
     testString: assert(typeof deepcopy === 'function');
   - text: '<code>deepcopy({test: "test"})</code> should return an object.'
     testString: 'assert(typeof deepcopy(obj1) === ''object'');'
-  - text: Should not return the same object that was provided.
+  - text: <code>deepcopy</code> should not return the same object that was provided.
     testString: assert(deepcopy(obj2) != obj2);
-  - text: When passed an object containing an array, should return a deep copy of the object.
+  - text: When passed an object containing an array, <code>deepcopy</code> should return a deep copy of the object.
     testString: assert.deepEqual(deepcopy(obj2), obj2);
-  - text: When passed an object containing another object, should return a deep copy of the object.
+  - text: When passed an object containing another object, <code>deepcopy</code>  should return a deep copy of the object.
     testString: assert.deepEqual(deepcopy(obj3), obj3);
 
 ```

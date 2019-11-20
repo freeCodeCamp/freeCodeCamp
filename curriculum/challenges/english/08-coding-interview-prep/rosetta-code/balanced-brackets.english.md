@@ -30,7 +30,7 @@ Determine whether a generated string of brackets is balanced; that is, whether i
 
 ```yml
 tests:
-  - text: <code>isBalanced</code> is a function.
+  - text: <code>isBalanced</code> should be a function.
     testString: assert(typeof isBalanced === 'function');
   - text: <code>isBalanced("[]")</code> should return true.
     testString: assert(isBalanced(testCases[0]));

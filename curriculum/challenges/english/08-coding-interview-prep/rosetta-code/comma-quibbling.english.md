@@ -34,7 +34,7 @@ Test your function with the following series of inputs showing your output here 
 
 ```yml
 tests:
-  - text: <code>quibble</code> is a function.
+  - text: <code>quibble</code> should be a function.
     testString: assert(typeof quibble === 'function');
   - text: <code>quibble(["ABC"])</code> should return a string.
     testString: assert(typeof quibble(["ABC"]) === 'string');

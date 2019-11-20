@@ -29,17 +29,17 @@ Write a function that takes the size of the zig-zag matrix, and returns the corr
 
 ```yml
 tests:
-  - text: ZigZagMatrix must be a function
+  - text: ZigZagMatrix should be a function.
     testString: assert.equal(typeof ZigZagMatrix, 'function');
-  - text: ZigZagMatrix should return array
+  - text: ZigZagMatrix should return array.
     testString: assert.equal(typeof ZigZagMatrix(1), 'object');
-  - text: ZigZagMatrix should return an array of nested arrays
+  - text: ZigZagMatrix should return an array of nested arrays.
     testString: assert.equal(typeof ZigZagMatrix(1)[0], 'object');
-  - text: ZigZagMatrix(1) should return [[0]]
+  - text: ZigZagMatrix(1) should return [[0]].
     testString: assert.deepEqual(ZigZagMatrix(1), zm1);
-  - text: ZigZagMatrix(2) should return [[0, 1], [2, 3]]
+  - text: ZigZagMatrix(2) should return [[0, 1], [2, 3]].
     testString: assert.deepEqual(ZigZagMatrix(2), zm2);
-  - text: ZigZagMatrix(5) must return specified matrix
+  - text: ZigZagMatrix(5) should return specified matrix.
     testString: assert.deepEqual(ZigZagMatrix(5), zm5);
 
 ```

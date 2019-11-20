@@ -81,7 +81,7 @@ For the input, expect the argument to be an array of objects (points) with <code
 
 ```yml
 tests:
-  - text: <code>getClosestPair</code> is a function.
+  - text: <code>getClosestPair</code> should be a function.
     testString: assert(typeof getClosestPair === 'function');
   - text: Distance should be the following.
     testString: assert.equal(getClosestPair(points1).distance, answer1.distance);

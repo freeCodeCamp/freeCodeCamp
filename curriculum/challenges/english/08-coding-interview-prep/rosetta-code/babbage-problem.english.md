@@ -26,7 +26,7 @@ Implement a function to return the lowest integer that satisfies the Babbage pro
 
 ```yml
 tests:
-  - text: <code>babbage</code> is a function.
+  - text: <code>babbage</code> should be a function.
     testString: assert(typeof babbage === 'function');
   - text: <code>babbage(99736, 269696)</code> should not return 99736 (there is a smaller answer).
     testString: assert.equal(babbage(babbageAns, endDigits), answer);

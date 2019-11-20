@@ -41,7 +41,7 @@ solve for <big>$w$, $x$, $y$</big> and <big>$z$</big>, using Cramer's rule.
 
 ```yml
 tests:
-  - text: <code>cramersRule</code> is a function.
+  - text: <code>cramersRule</code> should be a function.
     testString: assert(typeof cramersRule === 'function');
   - text: <code>cramersRule([[2, -1, 5, 1], [3, 2, 2, -6], [1, 3, 3, -1], [5, -2, -3, 3]], [-3, -32, -47, 49])</code> should return <code>[2, -12, -4, 1]</code>.
     testString: assert.deepEqual(cramersRule(matrices[0], freeTerms[0]), answers[0]);

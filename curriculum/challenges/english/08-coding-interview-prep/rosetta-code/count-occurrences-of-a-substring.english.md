@@ -28,7 +28,7 @@ In general, this essentially means matching from left-to-right or right-to-left.
 
 ```yml
 tests:
-  - text: <code>countSubstring</code> is a function.
+  - text: <code>countSubstring</code> should be a function.
     testString: assert(typeof countSubstring === 'function');
   - text: <code>countSubstring("the three truths", "th")</code> should return <code>3</code>.
     testString: assert.equal(countSubstring(testCases[0], searchString[0]), results[0]);

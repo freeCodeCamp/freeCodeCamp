@@ -101,13 +101,13 @@ Write a routine to perform Zhang-Suen thinning on the provided image matrix.
 
 ```yml
 tests:
-  - text: <code>thinImage</code> must be a function
+  - text: <code>thinImage</code> should be a function.
     testString: assert.equal(typeof thinImage, 'function');
-  - text: <code>thinImage</code> must return an array
+  - text: <code>thinImage</code> should return an array.
     testString: assert(Array.isArray(result));
-  - text: <code>thinImage</code> must return an array of strings
+  - text: <code>thinImage</code> should return an array of strings.
     testString: assert.equal(typeof result[0], 'string');
-  - text: <code>thinImage</code> must return an array of strings
+  - text: <code>thinImage</code> should return an array of strings.
     testString: assert.deepEqual(result, expected);
 
 ```

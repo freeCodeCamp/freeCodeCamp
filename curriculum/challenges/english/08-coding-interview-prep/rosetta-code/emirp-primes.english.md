@@ -27,7 +27,7 @@ The function should accept two parameters. The first will receive <code>n</code>
 
 ```yml
 tests:
-  - text: <code>emirps</code> is a function.
+  - text: <code>emirps</code> should be a function.
     testString: assert(typeof emirps === 'function');
   - text: <code>emirps(20,true)</code> should return <code>[13,17,31,37,71,73,79,97,107,113,149,157,167,179,199,311,337,347,359,389]</code>
     testString: assert.deepEqual(emirps(20, true), [13, 17, 31, 37, 71, 73, 79, 97, 107, 113, 149, 157, 167, 179, 199, 311, 337, 347, 359, 389]);

@@ -20,7 +20,7 @@ Convert a given date from the  <a href="https://en.wikipedia.org/wiki/Gregorian 
 
 ```yml
 tests:
-  - text: <code>discordianDate</code> is a function.
+  - text: <code>discordianDate</code> should be a function.
     testString: assert(typeof discordianDate === 'function');
   - text: <code>discordianDate(new Date(2010, 6, 22))</code> should return <code>"Pungenday, the 57th day of Confusion in the YOLD 3176"</code>.
     testString: assert(discordianDate(new Date(2010, 6, 22)) === 'Pungenday, the 57th day of Confusion in the YOLD 3176');

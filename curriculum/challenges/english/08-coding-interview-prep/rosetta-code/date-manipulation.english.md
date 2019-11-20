@@ -22,7 +22,7 @@ Example output: <code>"March 8 2009 7:30am EST"</code>
 
 ```yml
 tests:
-  - text: <code>add12Hours</code> is a function.
+  - text: <code>add12Hours</code> should be a function.
     testString: assert(typeof add12Hours === 'function');
   - text: <code>add12Hours(dateString)</code> should return a string.
     testString: assert(typeof add12Hours('January 17 2017 11:43am EST') === 'string');

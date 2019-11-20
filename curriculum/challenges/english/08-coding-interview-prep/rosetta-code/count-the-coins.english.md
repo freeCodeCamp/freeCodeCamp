@@ -35,7 +35,7 @@ Implement a function to determine how many ways there are to make change for a d
 
 ```yml
 tests:
-  - text: <code>countCoins</code> is a function.
+  - text: <code>countCoins</code> should be a function.
     testString: assert(typeof countCoins === 'function');
   - text: <code>countCoints()</code> should return 242.
     testString: assert.equal(countCoins(), 242);

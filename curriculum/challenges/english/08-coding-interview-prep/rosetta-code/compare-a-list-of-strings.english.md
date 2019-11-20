@@ -24,29 +24,29 @@ Given a <a href="https://en.wikipedia.org/wiki/List_(abstract_data_type)" title=
 
 ```yml
 tests:
-  - text: <code>allEqual</code> is a function.
+  - text: <code>allEqual</code> should be a function.
     testString: assert(typeof allEqual === 'function');
-  - text: <code>azSorted</code> is a function.
+  - text: <code>azSorted</code> should be a function.
     testString: assert(typeof azSorted === 'function');
-  - text: <code>allEqual(["AA", "AA", "AA", "AA"])</code> returns true.
+  - text: <code>allEqual(["AA", "AA", "AA", "AA"])</code> should return true.
     testString: assert(allEqual(testCases[0]));
-  - text: <code>azSorted(["AA", "AA", "AA", "AA"])</code> returns false.
+  - text: <code>azSorted(["AA", "AA", "AA", "AA"])</code> should return false.
     testString: assert(!azSorted(testCases[0]));
-  - text: <code>allEqual(["AA", "ACB", "BB", "CC"])</code> returns false.
+  - text: <code>allEqual(["AA", "ACB", "BB", "CC"])</code> should return false.
     testString: assert(!allEqual(testCases[1]));
-  - text: <code>azSorted(["AA", "ACB", "BB", "CC"])</code> returns true.
+  - text: <code>azSorted(["AA", "ACB", "BB", "CC"])</code> should return true.
     testString: assert(azSorted(testCases[1]));
-  - text: <code>allEqual([])</code> returns true.
+  - text: <code>allEqual([])</code> should return true.
     testString: assert(allEqual(testCases[2]));
-  - text: <code>azSorted([])</code> returns true.
+  - text: <code>azSorted([])</code> should return true.
     testString: assert(azSorted(testCases[2]));
-  - text: <code>allEqual(["AA"])</code> returns true.
+  - text: <code>allEqual(["AA"])</code> should return true.
     testString: assert(allEqual(testCases[3]));
-  - text: <code>azSorted(["AA"])</code> returns true.
+  - text: <code>azSorted(["AA"])</code> should return true.
     testString: assert(azSorted(testCases[3]));
-  - text: <code>allEqual(["BB", "AA"])</code> returns false.
+  - text: <code>allEqual(["BB", "AA"])</code> should return false.
     testString: assert(!allEqual(testCases[4]));
-  - text: <code>azSorted(["BB", "AA"])</code> returns false.
+  - text: <code>azSorted(["BB", "AA"])</code> should return false.
     testString: assert(!azSorted(testCases[4]));
 
 ```

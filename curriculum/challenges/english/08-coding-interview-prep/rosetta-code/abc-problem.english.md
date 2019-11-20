@@ -47,7 +47,7 @@ Some rules to keep in mind:
 
 ```yml
 tests:
-  - text: <code>canMakeWord</code> is a function.
+  - text: <code>canMakeWord</code> should be a function.
     testString: assert(typeof canMakeWord === 'function');
   - text: <code>canMakeWord</code> should return a boolean.
     testString: assert(typeof canMakeWord('hi') === 'boolean');

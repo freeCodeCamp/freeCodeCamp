@@ -29,7 +29,7 @@ Implement a function based on Hero's formula that returns the first <code>n<sub>
 
 ```yml
 tests:
-  - text: <code>heronianTriangle</code> is a function.
+  - text: <code>heronianTriangle</code> should be a function.
     testString: assert(typeof heronianTriangle === 'function');
   - text: <code>heronianTriangle()</code> should return <code>[[3, 4, 5], [5, 5, 6], [5, 5, 8], [4, 13, 15], [5, 12, 13], [9, 10, 17], [3, 25, 26], [7, 15, 20], [10, 13, 13], [8, 15, 17]]</code>
     testString: assert.deepEqual(heronianTriangle(testCases[0]), res[0]);

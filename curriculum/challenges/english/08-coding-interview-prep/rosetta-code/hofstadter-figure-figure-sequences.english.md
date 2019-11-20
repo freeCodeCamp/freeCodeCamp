@@ -36,9 +36,9 @@ No maximum value for <code>n</code> should be assumed.
 
 ```yml
 tests:
-  - text: <code>ffr</code> is a function.
+  - text: <code>ffr</code> should be a function.
     testString: assert(typeof ffr === 'function');
-  - text: <code>ffs</code> is a function.
+  - text: <code>ffs</code> should be a function.
     testString: assert(typeof ffs === 'function');
   - text: <code>ffr</code> should return integer.
     testString: assert(Number.isInteger(ffr(1)));

@@ -41,7 +41,7 @@ Assume that the sequence may be very long.
 
 ```yml
 tests:
-  - text: <code>equilibrium</code> is a function.
+  - text: <code>equilibrium</code> should be a function.
     testString: assert(typeof equilibrium === 'function');
   - text: <code>equilibrium([-7, 1, 5, 2, -4, 3, 0])</code> should return <code>[3,6]</code>.
     testString: assert.deepEqual(equilibrium(equilibriumTests[0]), ans[0]);

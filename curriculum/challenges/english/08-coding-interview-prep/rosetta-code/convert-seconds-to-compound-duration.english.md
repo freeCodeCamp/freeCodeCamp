@@ -55,7 +55,7 @@ Demonstrate that it passes the following three test-cases:
 
 ```yml
 tests:
-  - text: <code>convertSeconds</code> is a function.
+  - text: <code>convertSeconds</code> should be a function.
     testString: assert(typeof convertSeconds === 'function');
   - text: <code>convertSeconds(7259)</code> should return <code>2 hr, 59 sec</code>.
     testString: assert.equal(convertSeconds(testCases[0]), results[0]);
