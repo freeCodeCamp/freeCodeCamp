@@ -21,8 +21,7 @@ const createHeader = (id = mainId) => `
     window.__frameId = '${id}';
     window.onerror = function(msg) {
       var string = msg.toLowerCase();
-      var substring = 'script error';
-      if (string.indexOf(substring) > -1) {
+      if (string.includes('script error')) {
         msg = 'Build error, open your browser console to learn more.';
       }
       console.log(msg);
@@ -114,8 +113,7 @@ const initMainFrame = (frameReady, proxyLogger) => ctx => {
     // be added as part of createHeader.
     ctx.window.onerror = function(msg) {
       var string = msg.toLowerCase();
-      var substring = 'script error';
-      if (string.indexOf(substring) > -1) {
+      if (string.includes('script error')) {
         msg = 'Error, open your browser console to learn more.';
       }
       if (proxyLogger) {
