@@ -7,7 +7,7 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+Add two more `style` functions; one to set the `cursor` to `pointer`, and another to set the `font` to `10px verdana`.
 </section>
 
 ## Instructions
@@ -20,7 +20,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($('.tick > text').filter((node, index) => index.style.cursor === 'pointer' && index.style.font === '10px verdana').length === 9);
 
 ```
 
@@ -31,6 +31,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -68,9 +69,7 @@ lineGraph.append('g')
   .style('text-anchor', 'end')
 
   
-  /*
-    Add two more `style` functions; one to set the `cursor` to `pointer`, and another to set the `font` to `10px verdana`.
-  */
+</script>
 ```
 
 </div>

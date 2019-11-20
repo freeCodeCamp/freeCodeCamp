@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Use another `style` function to set the `text-anchor` to `end`. This will change the spot that each text element rotates around to the `end` of the element so they will align better.
 </section>
 
 ## Instructions
@@ -20,7 +21,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($('.tick > text').filter((node, index) => index.style['text-anchor'] === 'end').length === 9);
 
 ```
 
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -67,9 +69,7 @@ lineGraph.append('g')
   .style('transform', 'translate(-12px, 0) rotate(-50deg)')
 
   
-  /*
-    Use another `style` function to set the `text-anchor` to `end`. This will change the spot that each text element rotates around to the `end` of the element so they will align better.
-  */
+</script>
 ```
 
 </div>

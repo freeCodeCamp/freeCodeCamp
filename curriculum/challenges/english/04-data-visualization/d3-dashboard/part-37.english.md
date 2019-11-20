@@ -21,7 +21,7 @@ I want the `text` elements to be rotated slightly. Use the `style` function to s
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($('.tick > text').filter((node, index) => index.style.transform === 'translate(-12px) rotate(-50deg)').length === 9);
 
 ```
 
