@@ -86,7 +86,9 @@ const propTypes = {
 };
 
 function getCompletedPercent(completedChallengesIds, currentBlockIds, id) {
-  if (!completedChallengesIds.includes(id)) {
+  completedChallengesIds = completedChallengesIds.includes(id)
+    ? completedChallengesIds
+    : [...completedChallengesIds, id];
     completedChallengesIds.push(id);
   }
 
