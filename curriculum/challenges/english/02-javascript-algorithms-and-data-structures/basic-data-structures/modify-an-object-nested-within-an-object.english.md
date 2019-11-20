@@ -37,7 +37,7 @@ Here we've defined an object, <code>userActivity</code>, which includes another 
 
 ```yml
 tests:
-  - text: <code>userActivity</code> should have <code>id</code>, <code>date</code> and <code>data</code> properties
+  - text: <code>userActivity</code> should have <code>id</code>, <code>date</code> and <code>data</code> properties.
     testString: assert('id' in userActivity && 'date' in userActivity && 'data' in userActivity);
   - text: <code>userActivity</code> should have a <code>data</code> key set to an object with keys <code>totalUsers</code> and <code>online</code>
     testString: assert('totalUsers' in userActivity.data && 'online' in userActivity.data);
