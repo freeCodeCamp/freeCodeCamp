@@ -22,9 +22,6 @@ export class CompletionModalBody extends PureComponent {
   }
 
   animateProgressBar(completedPercent) {
-    // change this to test different values
-    // or comment it out to see actual completed percent
-    completedPercent = 100;
     const easing = BezierEasing(0.2, 0.5, 0.4, 1);
 
     this.setState({ animateProgress: true }, () => {
