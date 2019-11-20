@@ -160,7 +160,6 @@ export const challengeTestsSelector = state => state[ns].challengeTests;
 export const consoleOutputSelector = state => state[ns].consoleOut;
 export const completedChallengesIds = state =>
   completedChallengesSelector(state).map(node => node.id);
-  const completedChallengesIds = completedChallenges.map(node => node.id);
   return completedChallengesIds;
 };
 export const isChallengeCompletedSelector = state => {
