@@ -26,13 +26,13 @@ Use <code>assert.isOk()</code> or <code>assert.isNotOk()</code> to make the test
 
 ```yml
 tests:
-  - text: All tests should pass
+  - text: All tests should pass.
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=2').then(data => {assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: Choose the right assertion - isOk vs. isNotOk
+  - text: You should choose the right assertion - isOk vs. isNotOk.
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=2').then(data => {  assert.equal(data.assertions[0].method, 'isNotOk', 'Null is falsey'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: Choose the right assertion - isOk vs. isNotOk
+  - text: You should choose the right assertion - isOk vs. isNotOk.
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=2').then(data => {  assert.equal(data.assertions[1].method, 'isOk','A string is truthy'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: Choose the right assertion - isOk vs. isNotOk
+  - text: You should choose the right assertion - isOk vs. isNotOk.
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=2').then(data => {  assert.equal(data.assertions[2].method, 'isOk', 'true is truthy'); }, xhr => { throw new Error(xhr.responseText); })
 
 ```

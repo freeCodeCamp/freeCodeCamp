@@ -25,11 +25,11 @@ Use <code>assert.include()</code> or <code>assert.notInclude()</code> to make th
 
 ```yml
 tests:
-  - text: All tests should pass
+  - text: All tests should pass.
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=13').then(data => { assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: Choose the right assertion - include vs. notInclude
+  - text: You should choose the right assertion - include vs. notInclude.
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=13').then(data => {  assert.equal(data.assertions[0].method, 'include', '\'Arrow\' contains \'row\'...'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: Choose the right assertion - include vs. notInclude
+  - text: You should choose the right assertion - include vs. notInclude.
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=13').then(data => {  assert.equal(data.assertions[1].method, 'notInclude', '... a \'dart\' doesn\'t contain a \'queue\''); }, xhr => { throw new Error(xhr.responseText); })
 
 ```

@@ -34,9 +34,9 @@ Submit your page when you think you've got it right. If you're running into erro
 
 ```yml
 tests:
-  - text: Route /auth/github correct
+  - text: Route /auth/github should be correct.
     testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /('|")\/auth\/github('|")[^]*get.*passport.authenticate.*github/gi, 'Route auth/github should only call passport.authenticate with github'); }, xhr => { throw new Error(xhr.statusText); })
-  - text: Route /auth/github/callback correct
+  - text: Route /auth/github/callback should be correct.
     testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /('|")\/auth\/github\/callback('|")[^]*get.*passport.authenticate.*github.*failureRedirect:( |)("|')\/("|')/gi, 'Route auth/github/callback should accept a get request and call passport.authenticate for github with a failure redirect to home'); }, xhr => { throw new Error(xhr.statusText); })
 
 ```

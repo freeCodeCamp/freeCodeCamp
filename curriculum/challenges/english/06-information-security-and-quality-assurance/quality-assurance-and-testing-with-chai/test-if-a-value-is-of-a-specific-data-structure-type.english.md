@@ -22,17 +22,17 @@ Use <code>assert.typeOf()</code> or <code>assert.notTypeOf()</code> to make the 
 
 ```yml
 tests:
-  - text: All tests should pass
+  - text: All tests should pass.
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=16').then(data => { assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: Choose the right assertion - typeOf vs. notTypeOf
+  - text: You should choose the right assertion - typeOf vs. notTypeOf.
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=16').then(data => { assert.equal(data.assertions[0].method, 'typeOf', 'myCar is typeOf Object'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: Choose the right assertion - typeOf vs. notTypeOf
+  - text: You should choose the right assertion - typeOf vs. notTypeOf.
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=16').then(data => { assert.equal(data.assertions[1].method, 'typeOf', 'Car.model is a String'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: Choose the right assertion - typeOf vs. notTypeOf
+  - text: You should choose the right assertion - typeOf vs. notTypeOf.
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=16').then(data => { assert.equal(data.assertions[2].method, 'notTypeOf', 'Plane.wings is a Number (not a String)'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: Choose the right assertion - typeOf vs. notTypeOf
+  - text: You should choose the right assertion - typeOf vs. notTypeOf.
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=16').then(data => { assert.equal(data.assertions[3].method, 'typeOf', 'Plane.engines is an Array'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: Choose the right assertion - typeOf vs. notTypeOf
+  - text: You should choose the right assertion - typeOf vs. notTypeOf.
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=16').then(data => { assert.equal(data.assertions[4].method, 'typeOf', 'Car.wheels is a Number'); }, xhr => { throw new Error(xhr.responseText); })
 
 ```

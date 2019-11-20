@@ -21,13 +21,13 @@ Use <code>assert.isDefined()</code> or <code>assert.isUndefined()</code> to make
 
 ```yml
 tests:
-  - text: All tests should pass
+  - text: All tests should pass.
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=1').then(data => {assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: Choose the right assertion - isDefined vs. isUndefined
+  - text: You should choose the right assertion - isDefined vs. isUndefined.
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=1').then(data => {  assert.equal(data.assertions[0].method, 'isDefined', 'Null is not undefined'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: Choose the right assertion - isDefined vs. isUndefined
+  - text: You should choose the right assertion - isDefined vs. isUndefined.
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=1').then(data => {  assert.equal(data.assertions[1].method, 'isUndefined', 'Undefined is undefined'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: Choose the right assertion - isDefined vs. isUndefined
+  - text: You should choose the right assertion - isDefined vs. isUndefined.
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=1').then(data => {  assert.equal(data.assertions[2].method, 'isDefined', 'A string is not undefined'); }, xhr => { throw new Error(xhr.responseText); })
 
 ```
