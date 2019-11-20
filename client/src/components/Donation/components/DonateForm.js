@@ -16,6 +16,7 @@ import { StripeProvider, Elements } from 'react-stripe-elements';
 import {
   amountsConfig,
   durationsConfig,
+  defaultAmount,
   defaultStateConfig
 } from '../../../../../config/donation-settings';
 import { apiLocation } from '../../../../config/env.json';
@@ -89,7 +90,7 @@ class DonateForm extends Component {
   getActiveDonationAmount(durationSelected, amountSelected) {
     return this.amounts[durationSelected].includes(amountSelected)
       ? amountSelected
-      : this.amounts[durationSelected][0];
+      : defaultAmount[durationSelected] || this.amounts[durationSelected][0];
   }
 
   convertToTimeContributed(amount, duration) {
