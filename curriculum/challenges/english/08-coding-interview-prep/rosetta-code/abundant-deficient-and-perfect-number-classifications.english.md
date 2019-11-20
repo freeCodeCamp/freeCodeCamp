@@ -31,7 +31,7 @@ Implement a function that calculates how many of the integers from <code>1</code
 
 ```yml
 tests:
-  - text: <code>getDPA</code> is a function.
+  - text: <code>getDPA</code> should be a function.
     testString: assert(typeof getDPA === 'function');
   - text: <code>getDPA</code> should return an array.
     testString: assert(Array.isArray(getDPA(100)));

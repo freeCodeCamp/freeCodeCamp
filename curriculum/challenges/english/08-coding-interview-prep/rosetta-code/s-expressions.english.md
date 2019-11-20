@@ -32,7 +32,7 @@ and turn it into a native data structure. (See the <a href="https://rosettacode.
 
 ```yml
 tests:
-  - text: <code>parseSexpr</code> is a function.
+  - text: <code>parseSexpr</code> should be a function.
     testString: assert(typeof parseSexpr === 'function');
   - text: <code>parseSexpr('(data1 data2 data3)')</code> should return <code>['data1', 'data2', 'data3']</code>
     testString: assert.deepEqual(parseSexpr(simpleSExpr), simpleSolution);
