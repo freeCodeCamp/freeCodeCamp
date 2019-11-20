@@ -23,7 +23,7 @@ Give your cat photo a <code>border-radius</code> of <code>50%</code>.
 tests:
   - text: Your image should have a border radius of <code>50%</code>, making it perfectly circular.
     testString: assert(parseInt($("img").css("border-top-left-radius")) > 48);
-  - text: Be sure to use a percentage value of <code>50%</code>.
+  - text: The <code>border-radius</code> value should use a percentage value of <code>50%</code>.
     testString: assert(code.match(/50%/g));
 
 ```

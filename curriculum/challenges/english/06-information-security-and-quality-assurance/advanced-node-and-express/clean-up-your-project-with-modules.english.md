@@ -36,7 +36,7 @@ Congratulations- you're at the end of this section of Advanced Node and Express 
 
 ```yml
 tests:
-  - text: Modules present
+  - text: Modules should be present.
     testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /require\s*\(('|")\.\/routes(\.js)?\1\)/gi, 'You should have required your new files'); assert.match(data, /mongo.connect[^]*routes/gi, 'Your new modules should be called after your connection to the database'); }, xhr => { throw new Error(xhr.statusText); })
 
 ```

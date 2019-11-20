@@ -25,7 +25,7 @@ tests:
     testString: assert($('s').length == 1);
   - text: A <code>s</code> tag should wrap around the Google text in the <code>h4</code> tag. It should not contain the word Alphabet.
     testString: assert($('h4 > s').text().match(/Google/gi) && !$('h4 > s').text().match(/Alphabet/gi));
-  - text: Include the word Alphabet in the <code>h4</code> tag, without strikethrough formatting.
+  - text: You should include the word "Alphabet" in the <code>h4</code> tag, without strikethrough formatting.
     testString: assert($('h4').html().match(/Alphabet/gi));
 
 ```

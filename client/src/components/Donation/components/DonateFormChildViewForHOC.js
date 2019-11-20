@@ -12,22 +12,24 @@ import {
 } from '@freecodecamp/react-bootstrap';
 import { injectStripe } from 'react-stripe-elements';
 
-import Spacer from '../../helpers/Spacer';
 import StripeCardForm from './StripeCardForm';
 import DonateCompletion from './DonateCompletion';
 import { postChargeStripe } from '../../../utils/ajax';
-import { userSelector, isSignedInSelector } from '../../../redux';
+import { userSelector } from '../../../redux';
 
 const propTypes = {
+  donationAmount: PropTypes.number.isRequired,
+  donationDuration: PropTypes.string.isRequired,
   email: PropTypes.string,
+  enableDonationSettingsPage: PropTypes.func.isRequired,
+  getDonationButtonLabel: PropTypes.func.isRequired,
+  hideAmountOptionsCB: PropTypes.func.isRequired,
   isSignedIn: PropTypes.bool,
   stripe: PropTypes.shape({
     createToken: PropTypes.func.isRequired
-  }),
-  theme: PropTypes.string
+  })
 };
 const initialState = {
-  donationAmount: 500,
   donationState: {
     processing: false,
     success: false,
@@ -37,8 +39,7 @@ const initialState = {
 
 const mapStateToProps = createSelector(
   userSelector,
-  isSignedInSelector,
-  ({ email, theme }, isSignedIn) => ({ email, theme, isSignedIn })
+  ({ email }) => ({ email })
 );
 
 class DonateFormChildViewForHOC extends Component {
@@ -47,6 +48,8 @@ class DonateFormChildViewForHOC extends Component {
 
     this.state = {
       ...initialState,
+      donationAmount: this.props.donationAmount,
+      donationDuration: this.props.donationDuration,
       email: null,
       isFormValid: false
     };
@@ -110,9 +113,14 @@ class DonateFormChildViewForHOC extends Component {
     });
   }
 
+  hideAmountOptions(hide) {
+    const { hideAmountOptionsCB } = this.props;
+    hideAmountOptionsCB(hide);
+  }
+
   postDonation(token) {
-    const { donationAmount: amount } = this.state;
-    const { isSignedIn } = this.props;
+    const { enableDonationSettingsPage } = this.props;
+    const { donationAmount: amount, donationDuration: duration } = this.state;
     this.setState(state => ({
       ...state,
       donationState: {
@@ -121,9 +129,14 @@ class DonateFormChildViewForHOC extends Component {
       }
     }));
 
-    return postChargeStripe(isSignedIn, {
+    // hide the donation options on the parent and scroll to top
+    this.hideAmountOptions(true);
+    window.scrollTo(0, 0);
+
+    return postChargeStripe({
       token,
-      amount
+      amount,
+      duration
     })
       .then(response => {
         const data = response && response.data;
@@ -136,6 +149,7 @@ class DonateFormChildViewForHOC extends Component {
             error: data.error ? data.error : null
           }
         }));
+        enableDonationSettingsPage();
       })
       .catch(error => {
         const data =
@@ -167,7 +181,7 @@ class DonateFormChildViewForHOC extends Component {
 
   renderDonateForm() {
     const { isFormValid } = this.state;
-    const { theme } = this.props;
+    const { getDonationButtonLabel } = this.props;
     return (
       <Form className='donation-form' onSubmit={this.handleSubmit}>
         <FormGroup className='donation-email-container'>
@@ -182,10 +196,7 @@ class DonateFormChildViewForHOC extends Component {
             value={this.getUserEmail()}
           />
         </FormGroup>
-        <StripeCardForm
-          getValidationState={this.getValidationState}
-          theme={theme}
-        />
+        <StripeCardForm getValidationState={this.getValidationState} />
         <Button
           block={true}
           bsStyle='primary'
@@ -193,11 +204,14 @@ class DonateFormChildViewForHOC extends Component {
           id='confirm-donation-btn'
           type='submit'
         >
-          Confirm your donation of $5 / month
+          {getDonationButtonLabel()}
         </Button>
-        <Spacer />
       </Form>
     );
+  }
+
+  componentWillReceiveProps({ donationAmount, donationDuration }) {
+    this.setState({ donationAmount, donationDuration });
   }
 
   render() {
@@ -212,6 +226,7 @@ class DonateFormChildViewForHOC extends Component {
         reset: this.resetDonation
       });
     }
+    this.hideAmountOptions(false);
     return this.renderDonateForm();
   }
 }

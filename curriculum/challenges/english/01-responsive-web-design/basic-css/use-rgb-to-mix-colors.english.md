@@ -22,21 +22,21 @@ Replace the hex codes in our <code>style</code> element with their correct RGB v
 
 ```yml
 tests:
-  - text: Give your <code>h1</code> element with the text <code>I am red!</code> the <code>color</code> red.
+  - text: Your <code>h1</code> element with the text <code>I am red!</code> should have the <code>color</code> red.
     testString: assert($('.red-text').css('color') === 'rgb(255, 0, 0)');
-  - text: Use <code>rgb</code> for the color red.
+  - text: You should use <code>rgb</code> for the color red.
     testString: assert(code.match(/\.red-text\s*?{\s*?color:\s*?rgb\(\s*?255\s*?,\s*?0\s*?,\s*?0\s*?\)\s*?;\s*?}/gi));
-  - text: Give your <code>h1</code> element with the text <code>I am orchid!</code> the <code>color</code> orchid.
+  - text: Your <code>h1</code> element with the text <code>I am orchid!</code> should have the <code>color</code> orchid.
     testString: assert($('.orchid-text').css('color') === 'rgb(218, 112, 214)');
-  - text: Use <code>rgb</code> for the color orchid.
+  - text: You should use <code>rgb</code> for the color orchid.
     testString: assert(code.match(/\.orchid-text\s*?{\s*?color:\s*?rgb\(\s*?218\s*?,\s*?112\s*?,\s*?214\s*?\)\s*?;\s*?}/gi));
-  - text: Give your <code>h1</code> element with the text <code>I am blue!</code> the <code>color</code> blue.
+  - text: Your <code>h1</code> element with the text <code>I am blue!</code> should have the <code>color</code> blue.
     testString: assert($('.blue-text').css('color') === 'rgb(0, 0, 255)');
-  - text: Use <code>rgb</code> for the color blue.
+  - text: You should use <code>rgb</code> for the color blue.
     testString: assert(code.match(/\.blue-text\s*?{\s*?color:\s*?rgb\(\s*?0\s*?,\s*?0\s*?,\s*?255\s*?\)\s*?;\s*?}/gi));
-  - text: Give your <code>h1</code> element with the text <code>I am sienna!</code> the <code>color</code> sienna.
+  - text: Your <code>h1</code> element with the text <code>I am sienna!</code> should have the <code>color</code> sienna.
     testString: assert($('.sienna-text').css('color') === 'rgb(160, 82, 45)');
-  - text: Use <code>rgb</code> for the color sienna.
+  - text: You should use <code>rgb</code> for the color sienna.
     testString: assert(code.match(/\.sienna-text\s*?{\s*?color:\s*?rgb\(\s*?160\s*?,\s*?82\s*?,\s*?45\s*?\)\s*?;\s*?}/gi));
 
 ```
