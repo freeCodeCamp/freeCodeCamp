@@ -28,7 +28,7 @@ tests:
     testString: assert(a === 4);
   - text: <code>b</code> should be equal <code>27</code>.
     testString: assert(b === 27);
-  - text: <code>c</code> should be equal <code>3</code>.
+  - text: <code>c</code> should equal <code>3</code>.
     testString: assert(c === 3);
   - text: You should use the <code>/=</code> operator for each variable.
     testString: assert(code.match(/\/=/g).length === 3);
