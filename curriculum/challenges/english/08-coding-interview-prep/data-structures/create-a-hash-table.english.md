@@ -29,7 +29,7 @@ tests:
     testString: assert((function() { var test = false; if (typeof HashTable !== 'undefined') { test = new HashTable() }; return ((typeof test.add) === 'function')})());
   - text: The HashTable should have a remove method.
     testString: assert((function() { var test = false; if (typeof HashTable !== 'undefined') { test = new HashTable() }; return ((typeof test.remove) === 'function')})());
-  - text: The HashTable should have an lookup method.
+  - text: The HashTable should have a lookup method.
     testString: assert((function() { var test = false; if (typeof HashTable !== 'undefined') { test = new HashTable() }; return ((typeof test.lookup) === 'function')})());
   - text: The add method should add key value pairs and the lookup method should return the values associated with a given key.
     testString: assert((function() { var test = false; if (typeof HashTable !== 'undefined') { test = new HashTable() }; test.add('key', 'value'); return (test.lookup('key') === 'value')})());
