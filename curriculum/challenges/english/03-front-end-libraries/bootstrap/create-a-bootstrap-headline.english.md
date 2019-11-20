@@ -23,7 +23,7 @@ Color your <code>h3</code> element with the <code>text-primary</code> Bootstrap 
 
 ```yml
 tests:
-  - text: You should add a <code>h3</code> element to your page.
+  - text: You should add an <code>h3</code> element to your page.
     testString: assert($("h3") && $("h3").length > 0);
   - text: Your <code>h3</code> element should have a closing tag.
     testString: assert(code.match(/<\/h3>/g) && code.match(/<h3/g) && code.match(/<\/h3>/g).length === code.match(/<h3/g).length);
