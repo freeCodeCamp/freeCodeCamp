@@ -89,7 +89,6 @@ function getCompletedPercent(completedChallengesIds, currentBlockIds, id) {
   completedChallengesIds = completedChallengesIds.includes(id)
     ? completedChallengesIds
     : [...completedChallengesIds, id];
-  }
 
   const completedChallengesInBlock = completedChallengesIds.filter(id => {
     return currentBlockIds.includes(id);
