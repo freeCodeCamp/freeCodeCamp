@@ -8,7 +8,7 @@ localeTitle: 排序联盟
 ---
 
 ## Description
-<section id="description">编写一个带有两个或更多数组的函数，并按原始提供的数组的顺序返回一个新的唯一值数组。换句话说，所有数组中存在的所有值都应包含在它们的原始顺序中，但在最终数组中没有重复。唯一编号应按其原始顺序排序，但最终数组不应按数字顺序排序。检查断言测试以获取示例。如果卡住，请记得使用<a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> 。尝试配对程序。编写自己的代码。 </section>
+<section id="description">编写一个带有两个或更多数组的函数，并按原始提供的数组的顺序返回一个新的唯一值数组。换句话说，所有数组中存在的所有值都应包含在它们的原始顺序中，但在最终数组中没有重复。唯一编号应按其原始顺序排序，但最终数组不应按数字顺序排序。检查断言测试以获取示例。如果卡住，请记得使用<a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> 。尝试配对程序。编写自己的代码。 </section>
 
 ## Instructions
 <section id="instructions">

@@ -47,7 +47,7 @@ You should be able to login to your app now- try it! Submit your page when you t
 
 ```yml
 tests:
-  - text: GitHub strategy setup complete
+  - text: GitHub strategy setup should be complete.
     testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /GitHubStrategy[^]*db.collection/gi, 'Strategy should use now use the database to search for the user'); assert.match(data, /GitHubStrategy[^]*socialusers/gi, 'Strategy should use "socialusers" as db collection'); assert.match(data, /GitHubStrategy[^]*return cb/gi, 'Strategy should return the callback function "cb"'); }, xhr => { throw new Error(xhr.statusText); })
 
 ```
@@ -63,7 +63,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
 
 </section>

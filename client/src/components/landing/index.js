@@ -24,6 +24,7 @@ const BigCallToAction = () => (
 
 export const Landing = ({ edges }) => {
   const superBlocks = uniq(edges.map(element => element.node.superBlock));
+  const interviewPrep = superBlocks.splice(6, 1);
   return (
     <Fragment>
       <Helmet>
@@ -38,10 +39,12 @@ export const Landing = ({ edges }) => {
                 Welcome to freeCodeCamp.org
               </h1>
               <Spacer />
-              <h2 className='medium-heading'>Learn to code.</h2>
-              <h2 className='medium-heading'>Build projects.</h2>
-              <h2 className='medium-heading'>Earn certifications.</h2>
-              <h2 className='medium-heading'>
+              <h2 className='medium-heading text-center'>Learn to code.</h2>
+              <h2 className='medium-heading text-center'>Build projects.</h2>
+              <h2 className='medium-heading text-center'>
+                Earn certifications.
+              </h2>
+              <h2 className='medium-heading text-center'>
                 Since 2014, more than 40,000 freeCodeCamp.org graduates have
                 gotten jobs at tech companies including:
               </h2>
@@ -68,6 +71,15 @@ export const Landing = ({ edges }) => {
                     </Link>
                   </li>
                 ))}
+              </ul>
+              <Spacer />
+              <h2 className='medium-heading'>Additional Learning:</h2>
+              <ul>
+                <li>
+                  <Link state={{ superBlock: interviewPrep }} to={`/learn`}>
+                    <h2 className='medium-heading'>{interviewPrep}</h2>
+                  </Link>
+                </li>
               </ul>
             </Col>
           </Row>

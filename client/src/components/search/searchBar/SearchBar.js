@@ -45,7 +45,7 @@ const mapDispatchToProps = dispatch =>
 
 const placeholder = 'Search 5,000+ tutorials';
 
-class SearchBar extends Component {
+export class SearchBar extends Component {
   constructor(props) {
     super(props);
 
@@ -62,8 +62,6 @@ class SearchBar extends Component {
   }
 
   componentDidMount() {
-    const searchInput = document.querySelector('.ais-SearchBox-input');
-    searchInput.id = 'fcc_instantsearch';
     document.addEventListener('click', this.handleFocus);
   }
 

@@ -40,7 +40,7 @@ Implement a function that returns the sum of the  $n$-th  row.
 
 ```yml
 tests:
-  - text: <code>numberOfNames</code> is a function.
+  - text: <code>numberOfNames</code> should be function.
     testString: assert(typeof numberOfNames === 'function');
   - text: <code>numberOfNames(5)</code> should equal 7.
     testString: assert.equal(numberOfNames(5), 7);

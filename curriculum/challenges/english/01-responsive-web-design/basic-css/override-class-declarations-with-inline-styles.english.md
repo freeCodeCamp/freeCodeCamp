@@ -14,7 +14,7 @@ There are other ways that you can override CSS. Do you remember inline styles?
 
 ## Instructions
 <section id='instructions'>
-Use an <code>inline style</code> to try to make our <code>h1</code> element white. Remember, in line styles look like this:
+Use an inline style to try to make our <code>h1</code> element white. Remember, in line styles look like this:
 <code>&#60;h1 style="color: green;"&#62;</code>
 Leave the <code>blue-text</code> and <code>pink-text</code> classes on your <code>h1</code> element.
 </section>
@@ -30,7 +30,7 @@ tests:
     testString: assert($("h1").hasClass("blue-text"));
   - text: Your <code>h1</code> element should have the id of <code>orange-text</code>.
     testString: assert($("h1").attr("id") === "orange-text");
-  - text: Give your <code>h1</code> element an inline style.
+  - text: Your <code>h1</code> element should have an inline style.
     testString: assert(document.querySelector('h1[style]'));
   - text: Your <code>h1</code> element should be white.
     testString: assert($("h1").css("color") === "rgb(255, 255, 255)");

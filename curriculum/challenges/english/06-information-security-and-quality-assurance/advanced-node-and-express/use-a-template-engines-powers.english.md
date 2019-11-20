@@ -27,7 +27,7 @@ Now refresh your page and you should see those values rendered in your view in t
 
 ```yml
 tests:
-  - text: Pug render variables correct
+  - text: Pug should correctly render variables.
     testString: getUserInput => $.get(getUserInput('url')+ '/') .then(data => { assert.match(data, /pug-variable("|')>Please login/gi, 'Your projects home page should now be rendered by pug with the projects .pug file unaltered'); }, xhr => { throw new Error(xhr.statusText); })
 
 ```
@@ -43,7 +43,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
 
 </section>

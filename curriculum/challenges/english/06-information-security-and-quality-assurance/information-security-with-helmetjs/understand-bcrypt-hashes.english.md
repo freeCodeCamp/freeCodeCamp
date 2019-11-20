@@ -23,9 +23,9 @@ Submit your page when you think you've got it right.
 
 ```yml
 tests:
-  - text: BCyrpt is a dependency
+  - text: BCrypt should be a dependency.
     testString: getUserInput => $.get(getUserInput('url')+ '/_api/package.json') .then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, 'bcrypt', 'Your project should list "bcrypt" as a dependency'); }, xhr => { throw new Error(xhr.statusText); })
-  - text: BCrypt has been properly required
+  - text: BCrypt should be properly required.
     testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js').then(data => {assert.match(data, /bcrypt.*=.*require.*('|")bcrypt('|")/gi, 'You should correctly require and instantiate socket.io as io.');}, xhr => { throw new Error(xhr.statusText); })
 
 ```
@@ -41,7 +41,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
 
 </section>

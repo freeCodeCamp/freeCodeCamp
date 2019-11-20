@@ -55,11 +55,14 @@ export function ifNotVerifiedRedirectToUpdateEmail(req, res, next) {
   return next();
 }
 
-export function ifUserRedirectTo(path = `${homeLocation}/`, status) {
-  status = status === 302 ? 302 : 301;
+export function ifUserRedirectTo(path = `${homeLocation}/learn`, status) {
+  status = status === 301 ? 301 : 302;
   return (req, res, next) => {
     const { accessToken } = getAccessTokenFromRequest(req);
     if (req.user && accessToken) {
+      if (req.query && req.query.returnTo) {
+        return res.status(status).redirect(req.query.returnTo);
+      }
       return res.status(status).redirect(path);
     }
     if (req.user && !accessToken) {

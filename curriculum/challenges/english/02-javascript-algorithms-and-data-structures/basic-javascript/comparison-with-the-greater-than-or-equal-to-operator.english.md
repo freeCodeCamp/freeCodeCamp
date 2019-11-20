@@ -8,7 +8,7 @@ forumTopicId: 16785
 
 ## Description
 <section id='description'>
-The <code>greater than or equal to</code> operator (<code>&gt;=</code>) compares the values of two numbers. If the number to the left is greater than or equal to the number to the right, it returns <code>true</code>. Otherwise, it returns <code>false</code>.
+The greater than or equal to operator (<code>&gt;=</code>) compares the values of two numbers. If the number to the left is greater than or equal to the number to the right, it returns <code>true</code>. Otherwise, it returns <code>false</code>.
 Like the equality operator, <code>greater than or equal to</code> operator will convert data types while comparing.
 <strong>Examples</strong>
 
@@ -23,7 +23,7 @@ Like the equality operator, <code>greater than or equal to</code> operator will 
 
 ## Instructions
 <section id='instructions'>
-Add the <code>greater than or equal to</code> operator to the indicated lines so that the return statements make sense.
+Add the greater than or equal to operator to the indicated lines so that the return statements make sense.
 </section>
 
 ## Tests

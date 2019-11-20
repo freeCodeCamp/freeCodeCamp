@@ -2,217 +2,267 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import isEmail from 'validator/lib/isEmail';
 import {
   Button,
-  ControlLabel,
-  Form,
-  FormControl,
-  FormGroup,
+  Tabs,
+  Tab,
   Row,
-  Col
+  Col,
+  ToggleButtonGroup,
+  ToggleButton
 } from '@freecodecamp/react-bootstrap';
-import { injectStripe } from 'react-stripe-elements';
+import { StripeProvider, Elements } from 'react-stripe-elements';
 
+import {
+  amountsConfig,
+  durationsConfig,
+  defaultAmount,
+  defaultStateConfig
+} from '../../../../../config/donation-settings';
 import { apiLocation } from '../../../../config/env.json';
-import Spacer from '../../../components/helpers/Spacer';
-import StripeCardForm from './StripeCardForm';
-import DonateCompletion from './DonateCompletion';
-import { postJSON$ } from '../../../templates/Challenges/utils/ajax-stream.js';
-import { userSelector, isSignedInSelector } from '../../../redux';
+import Spacer from '../../helpers/Spacer';
+import DonateFormChildViewForHOC from './DonateFormChildViewForHOC';
+import {
+  userSelector,
+  isSignedInSelector,
+  signInLoadingSelector,
+  hardGoTo as navigate
+} from '../../../redux';
+
+import '../Donation.css';
+import DonateCompletion from './DonateCompletion.js';
+
+const numToCommas = num =>
+  num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
 
 const propTypes = {
-  email: PropTypes.string,
+  enableDonationSettingsPage: PropTypes.func.isRequired,
+  isDonating: PropTypes.bool,
   isSignedIn: PropTypes.bool,
+  navigate: PropTypes.func.isRequired,
+  showLoading: PropTypes.bool.isRequired,
   stripe: PropTypes.shape({
     createToken: PropTypes.func.isRequired
   })
 };
-const initialState = {
-  donationAmount: 500,
-  donationState: {
-    processing: false,
-    success: false,
-    error: ''
-  }
-};
 
 const mapStateToProps = createSelector(
   userSelector,
+  signInLoadingSelector,
   isSignedInSelector,
-  ({ email }, isSignedIn) => ({ email, isSignedIn })
+  ({ isDonating }, showLoading, isSignedIn) => ({
+    isDonating,
+    isSignedIn,
+    showLoading
+  })
 );
+
+const mapDispatchToProps = {
+  navigate
+};
+
+const createOnClick = navigate => e => {
+  e.preventDefault();
+  return navigate(`${apiLocation}/signin?returnTo=donate`);
+};
 
 class DonateForm extends Component {
   constructor(...args) {
     super(...args);
 
+    this.durations = durationsConfig;
+    this.amounts = amountsConfig;
+
     this.state = {
-      ...initialState,
-      email: null,
-      isFormValid: false
+      ...defaultStateConfig,
+      processing: false,
+      isDonating: this.props.isDonating
     };
 
-    this.getUserEmail = this.getUserEmail.bind(this);
-    this.getValidationState = this.getValidationState.bind(this);
-    this.handleEmailChange = this.handleEmailChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.postDonation = this.postDonation.bind(this);
-    this.resetDonation = this.resetDonation.bind(this);
+    this.getActiveDonationAmount = this.getActiveDonationAmount.bind(this);
+    this.getDonationButtonLabel = this.getDonationButtonLabel.bind(this);
+    this.handleSelectAmount = this.handleSelectAmount.bind(this);
+    this.handleSelectDuration = this.handleSelectDuration.bind(this);
+    this.handleSelectPaymentType = this.handleSelectPaymentType.bind(this);
+    this.hideAmountOptionsCB = this.hideAmountOptionsCB.bind(this);
   }
 
-  getUserEmail() {
-    const { email: stateEmail } = this.state;
-    const { email: propsEmail } = this.props;
-    return stateEmail || propsEmail || '';
+  getActiveDonationAmount(durationSelected, amountSelected) {
+    return this.amounts[durationSelected].includes(amountSelected)
+      ? amountSelected
+      : defaultAmount[durationSelected] || this.amounts[durationSelected][0];
   }
 
-  getValidationState(isFormValid) {
-    this.setState(state => ({
-      ...state,
-      isFormValid
-    }));
+  convertToTimeContributed(amount) {
+    return `${numToCommas((amount / 100) * 50)} hours`;
   }
 
-  handleEmailChange(e) {
-    const newValue = e.target.value;
-    return this.setState(state => ({
-      ...state,
-      email: newValue
-    }));
+  getFormatedAmountLabel(amount) {
+    return `$${numToCommas(amount / 100)}`;
   }
 
-  handleSubmit(e) {
-    e.preventDefault();
-    const email = this.getUserEmail();
-    if (!email || !isEmail(email)) {
-      return this.setState(state => ({
-        ...state,
-        donationState: {
-          ...state.donationState,
-          error:
-            'We need a valid email address to which we can send your' +
-            ' donation tax receipt.'
-        }
-      }));
+  getDonationButtonLabel() {
+    const { donationAmount, donationDuration } = this.state;
+    let donationBtnLabel = `Confirm your donation`;
+    if (donationDuration === 'onetime') {
+      donationBtnLabel = `Confirm your one-time donation of ${this.getFormatedAmountLabel(
+        donationAmount
+      )}`;
+    } else {
+      donationBtnLabel = `Confirm your donation of ${this.getFormatedAmountLabel(
+        donationAmount
+      )} ${donationDuration === 'month' ? 'per month' : 'per year'}`;
     }
-    return this.props.stripe.createToken({ email }).then(({ error, token }) => {
-      if (error) {
-        return this.setState(state => ({
-          ...state,
-          donationState: {
-            ...state.donationState,
-            error:
-              'Something went wrong processing your donation. Your card' +
-              ' has not been charged.'
-          }
-        }));
-      }
-      return this.postDonation(token);
+    return donationBtnLabel;
+  }
+
+  handleSelectDuration(donationDuration) {
+    const donationAmount = this.getActiveDonationAmount(donationDuration, 0);
+    this.setState({ donationDuration, donationAmount });
+  }
+
+  handleSelectAmount(donationAmount) {
+    this.setState({ donationAmount });
+  }
+
+  handleSelectPaymentType(e) {
+    this.setState({
+      paymentType: e.currentTarget.value
     });
   }
 
-  postDonation(token) {
-    const { donationAmount: amount } = this.state;
-    const { isSignedIn } = this.props;
-    this.setState(state => ({
-      ...state,
-      donationState: {
-        ...state.donationState,
-        processing: true
-      }
-    }));
-
-    const chargeStripePath = isSignedIn
-      ? '/internal/donate/charge-stripe'
-      : `${apiLocation}/unauthenticated/donate/charge-stripe`;
-    return postJSON$(chargeStripePath, {
-      token,
-      amount
-    }).subscribe(
-      res =>
-        this.setState(state => ({
-          ...state,
-          donationState: {
-            ...state.donationState,
-            processing: false,
-            success: true,
-            error: res.error
-          }
-        })),
-      err =>
-        this.setState(state => ({
-          ...state,
-          donationState: {
-            ...state.donationState,
-            processing: false,
-            success: false,
-            error: err.error
-          }
-        }))
-    );
+  renderAmountButtons(duration) {
+    return this.amounts[duration].map(amount => (
+      <ToggleButton
+        className='amount-value'
+        id={`${this.durations[duration]}-donation-${amount}`}
+        key={`${this.durations[duration]}-donation-${amount}`}
+        value={amount}
+      >
+        {this.getFormatedAmountLabel(amount)}
+      </ToggleButton>
+    ));
   }
 
-  resetDonation() {
-    return this.setState({ ...initialState });
-  }
-
-  renderCompletion(props) {
-    return <DonateCompletion {...props} />;
-  }
-
-  renderDonateForm() {
-    const { isFormValid } = this.state;
-    return (
-      <Row>
-        <Col sm={10} smOffset={1} xs={12}>
-          <Form className='donation-form' onSubmit={this.handleSubmit}>
-            <FormGroup className='donation-email-container'>
-              <ControlLabel>
-                Email (we'll send you a tax-deductible donation receipt):
-              </ControlLabel>
-              <FormControl
-                onChange={this.handleEmailChange}
-                placeholder='me@example.com'
-                required={true}
-                type='text'
-                value={this.getUserEmail()}
-              />
-            </FormGroup>
-            <StripeCardForm getValidationState={this.getValidationState} />
-            <Button
-              block={true}
-              bsStyle='primary'
-              disabled={!isFormValid}
-              id='confirm-donation-btn'
-              type='submit'
+  renderDurationAmountOptions() {
+    const { donationAmount, donationDuration, processing } = this.state;
+    return !processing ? (
+      <div>
+        <h3>Duration and amount:</h3>
+        <Tabs
+          activeKey={donationDuration}
+          animation={false}
+          bsStyle='pills'
+          className='donate-tabs'
+          id='Duration'
+          onSelect={this.handleSelectDuration}
+        >
+          {Object.keys(this.durations).map(duration => (
+            <Tab
+              eventKey={duration}
+              key={duration}
+              title={this.durations[duration]}
             >
-              Confirm your donation of $5 / month
-            </Button>
-            <Spacer />
-          </Form>
-        </Col>
-      </Row>
+              <Spacer />
+              <div>
+                <ToggleButtonGroup
+                  animation={`false`}
+                  className='amount-values'
+                  name='amounts'
+                  onChange={this.handleSelectAmount}
+                  type='radio'
+                  value={this.getActiveDonationAmount(duration, donationAmount)}
+                >
+                  {this.renderAmountButtons(duration)}
+                </ToggleButtonGroup>
+                <Spacer />
+                <p className='donation-description'>
+                  {`Your `}
+                  {this.getFormatedAmountLabel(donationAmount)}
+                  {` donation will provide `}
+                  {this.convertToTimeContributed(donationAmount)}
+                  {` of learning to people around the world`}
+                  {duration === 'onetime' ? `.` : ` each ${duration}.`}
+                </p>
+              </div>
+            </Tab>
+          ))}
+        </Tabs>
+      </div>
+    ) : null;
+  }
+
+  hideAmountOptionsCB(hide) {
+    this.setState({ processing: hide });
+  }
+
+  renderDonationOptions() {
+    const { stripe, enableDonationSettingsPage } = this.props;
+    const { donationAmount, donationDuration, paymentType } = this.state;
+    return (
+      <div>
+        {paymentType === 'Card' ? (
+          <StripeProvider stripe={stripe}>
+            <Elements>
+              <DonateFormChildViewForHOC
+                donationAmount={donationAmount}
+                donationDuration={donationDuration}
+                enableDonationSettingsPage={enableDonationSettingsPage}
+                getDonationButtonLabel={this.getDonationButtonLabel}
+                hideAmountOptionsCB={this.hideAmountOptionsCB}
+              />
+            </Elements>
+          </StripeProvider>
+        ) : (
+          <p>
+            PayPal is currently unavailable. Please use a Credit/Debit card
+            instead.
+          </p>
+        )}
+      </div>
     );
   }
 
   render() {
-    const {
-      donationState: { processing, success, error }
-    } = this.state;
-    if (processing || success || error) {
-      return this.renderCompletion({
-        processing,
-        success,
-        error,
-        reset: this.resetDonation
-      });
+    const { isSignedIn, navigate, showLoading, isDonating } = this.props;
+
+    if (isDonating) {
+      return (
+        <Row>
+          <Col sm={10} smOffset={1} xs={12}>
+            <DonateCompletion success={true} />
+          </Col>
+        </Row>
+      );
     }
-    return this.renderDonateForm();
+
+    return (
+      <Row>
+        <Col sm={10} smOffset={1} xs={12}>
+          {this.renderDurationAmountOptions()}
+        </Col>
+        <Col sm={10} smOffset={1} xs={12}>
+          {!showLoading && !isSignedIn ? (
+            <Button
+              bsStyle='default'
+              className='btn btn-block'
+              onClick={createOnClick(navigate)}
+            >
+              Become a supporter
+            </Button>
+          ) : (
+            this.renderDonationOptions()
+          )}
+        </Col>
+      </Row>
+    );
   }
 }
 
 DonateForm.displayName = 'DonateForm';
 DonateForm.propTypes = propTypes;
 
-export default injectStripe(connect(mapStateToProps)(DonateForm));
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(DonateForm);

@@ -35,7 +35,7 @@ Submit your page when you think you've got it right.
 
 ```yml
 tests:
-  - text: Sync hash generated and correctly compared
+  - text: Sync hash should be generated and correctly compared.
     testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /START_SYNC[^]*hash.*=.*bcrypt.hashSync.*myPlaintextPassword( |),( |)saltRounds[^]*END_SYNC/gi, 'You should call bcrypt.hashSync on myPlaintextPassword with saltRounds'); assert.match(data, /START_SYNC[^]*result.*=.*bcrypt.compareSync.*myPlaintextPassword( |),( |)hash[^]*END_SYNC/gi, 'You should call bcrypt.compareSync on myPlaintextPassword with the hash generated in the last line'); }, xhr => { throw new Error(xhr.statusText); })
 
 ```
@@ -51,7 +51,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
 
 </section>

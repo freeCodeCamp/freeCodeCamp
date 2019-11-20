@@ -30,7 +30,7 @@ For example:
 
 ```yml
 tests:
-  - text: <code>factorial</code> is a function.
+  - text: <code>factorial</code> should be a function.
     testString: assert(typeof factorial === 'function');
   - text: <code>factorial(2)</code> should return a number.
     testString: assert(typeof factorial(2) === 'number');
