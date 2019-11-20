@@ -35,7 +35,7 @@ export class CompletionModalBody extends Component {
       let percent = 0;
       const myInterval = setInterval(() => {
         console.log('interval');
-        percent += 1;
+        percent++;
         if (percent > 100) percent = 100;
         if (percent > completedPercent) percent = completedPercent;
 
