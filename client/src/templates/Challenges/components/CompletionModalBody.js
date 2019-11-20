@@ -66,7 +66,7 @@ export class CompletionModalBody extends Component {
     const { blockName, completedPercent } = this.props;
 
     return (
-      <span>
+      <>
         <div className='completion-challenge-details'>
           <GreenPass
             className='completion-success-icon'
