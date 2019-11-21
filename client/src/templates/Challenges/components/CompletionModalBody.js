@@ -23,33 +23,31 @@ export class CompletionModalBody extends PureComponent {
   animateProgressBar(completedPercent) {
     const easing = BezierEasing(0.2, 0.5, 0.4, 1);
 
-    this.setState({ animateProgress: true }, () => {
-      if (completedPercent > 100) completedPercent = 100;
-      if (completedPercent < 0) completedPercent = 0;
+    if (completedPercent > 100) completedPercent = 100;
+    if (completedPercent < 0) completedPercent = 0;
 
-      const transitionLength = completedPercent * 10 + 750;
-      const intervalLength = 10;
-      const intervalsToFinish = transitionLength / intervalLength;
-      const amountPerInterval = completedPercent / intervalsToFinish;
-      let percent = 0;
+    const transitionLength = completedPercent * 10 + 750;
+    const intervalLength = 10;
+    const intervalsToFinish = transitionLength / intervalLength;
+    const amountPerInterval = completedPercent / intervalsToFinish;
+    let percent = 0;
 
-      const myInterval = setInterval(() => {
-        percent += amountPerInterval;
+    const myInterval = setInterval(() => {
+      percent += amountPerInterval;
 
-        if (percent > completedPercent) percent = completedPercent;
-
-        this.setState({
-          shownPercent: Math.round(
-            completedPercent * easing(percent / completedPercent)
-          )
-        });
-
-        if (percent >= completedPercent) clearInterval(myInterval);
-      }, intervalLength);
+      if (percent > completedPercent) percent = completedPercent;
 
       this.setState({
-        progressInterval: myInterval
+        shownPercent: Math.round(
+          completedPercent * easing(percent / completedPercent)
+        )
       });
+
+      if (percent >= completedPercent) clearInterval(myInterval);
+    }, intervalLength);
+
+    this.setState({
+      progressInterval: myInterval
     });
   }
 
@@ -78,16 +76,14 @@ export class CompletionModalBody extends PureComponent {
             <div className='progress-bar-background'>
               {this.state.shownPercent}% complete
             </div>
-            {this.state.animateProgress && (
-              <div
-                className='progress-bar-percent'
-                style={{ width: this.state.shownPercent + '%' }}
-              >
-                <div className='progress-bar-foreground'>
-                  {this.state.shownPercent}% complete
-                </div>
+            <div
+              className='progress-bar-percent'
+              style={{ width: this.state.shownPercent + '%' }}
+            >
+              <div className='progress-bar-foreground'>
+                {this.state.shownPercent}% complete
               </div>
-            )}
+            </div>
           </div>
         </div>
       </>
