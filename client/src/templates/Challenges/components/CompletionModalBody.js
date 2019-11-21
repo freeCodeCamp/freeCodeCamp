@@ -36,7 +36,6 @@ export class CompletionModalBody extends PureComponent {
       const myInterval = setInterval(() => {
         percent += amountPerInterval;
 
-        if (percent > 100) percent = 100;
         if (percent > completedPercent) percent = completedPercent;
 
         this.setState({
