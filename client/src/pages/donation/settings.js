@@ -3,7 +3,7 @@ import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Grid, Row, Col, Button } from '@freecodecamp/react-bootstrap';
+import { Grid, Button, Panel } from '@freecodecamp/react-bootstrap';
 import { uniq } from 'lodash';
 
 import { apiLocation } from '../../../config/env.json';
@@ -16,7 +16,8 @@ import {
 } from '../../redux';
 // eslint-disable-next-line max-len
 import DonateServicebotEmbed from '../../components/Donation/components/DonateServicebotEmbed';
-import { Loader, Spacer, Link } from '../../components/helpers';
+import { Loader, Spacer, Link, FullWidthRow } from '../../components/helpers';
+import SectionHeader from '../../components/settings/SectionHeader.js';
 
 const propTypes = {
   donationEmails: PropTypes.array,
@@ -85,36 +86,39 @@ export class DonationSettingsPage extends Component {
 
   renderServicebotEmbed() {
     const { currentSettingsEmail, hash } = this.state;
-    if (!hash || !currentSettingsEmail) {
-      return null;
-    }
     return (
-      <div>
-        <Spacer />
-        <DonateServicebotEmbed email={currentSettingsEmail} hash={hash} />
+      <div className='servicebot-embed-panel'>
+        {!hash || !currentSettingsEmail ? (
+          <Panel>
+            <Spacer />
+            <p className='text-center'>
+              Select the email associated to your donations above.
+            </p>
+          </Panel>
+        ) : (
+          <Panel>
+            <Spacer />
+            <DonateServicebotEmbed email={currentSettingsEmail} hash={hash} />
+            <Spacer />
+          </Panel>
+        )}
       </div>
     );
   }
 
   renderDonationEmailsList() {
     const { donationEmails } = this.props;
-    return (
-      <div>
-        {uniq(donationEmails).map(email => (
-          <div key={email}>
-            <Button
-              bsStyle='primary'
-              className='btn btn-block'
-              onClick={this.handleSelectDonationEmail}
-              value={email}
-            >
-              {`Show donations for your ${email} email address`}
-            </Button>
-            <Spacer />
-          </div>
-        ))}
-      </div>
-    );
+    return uniq(donationEmails).map(email => (
+      <Button
+        bsStyle='primary'
+        className='btn btn-block'
+        key={email}
+        onClick={this.handleSelectDonationEmail}
+        value={email}
+      >
+        {`Show donations for your ${email} email address`}
+      </Button>
+    ));
   }
 
   render() {
@@ -138,38 +142,42 @@ export class DonationSettingsPage extends Component {
       <Fragment>
         <Helmet title='Manage your donation | freeCodeCamp.org' />
         <Grid>
-          <Row>
-            <Col sm={6} smOffset={3} xs={12}>
-              <Spacer size={2} />
-              <Button block={true} bsStyle='primary' href='/donate'>
+          <main>
+            <Spacer size={2} />
+
+            <FullWidthRow className='button-group'>
+              <Link
+                className='btn-invert btn btn-lg btn-primary btn-block'
+                to={`/donate`}
+              >
                 Go to donate page
-              </Button>
-            </Col>
-          </Row>
-          <Row>
-            <Col sm={8} smOffset={2} xs={12}>
+              </Link>
+              <Link
+                className='btn-invert btn btn-lg btn-primary btn-block'
+                to={`/settings`}
+              >
+                Update my account settings
+              </Link>
+            </FullWidthRow>
+
+            <FullWidthRow>
               <Spacer />
               <h1 className='text-center'>Manage your donations</h1>
-              <Spacer />
-              <h3 className='text-center'>
-                Donations made using a credit or debit card
-              </h3>
-            </Col>
-          </Row>
-          <Row>
-            <Col sm={6} smOffset={3} xs={12}>
+            </FullWidthRow>
+
+            <Spacer />
+            <SectionHeader>
+              Donations made using a credit or debit card
+            </SectionHeader>
+            <FullWidthRow className='button-group'>
               {this.renderDonationEmailsList()}
-            </Col>
-          </Row>
-          <Row>
-            <Col sm={8} smOffset={2} xs={12}>
-              {this.renderServicebotEmbed()}
-            </Col>
-          </Row>
-          <Row>
-            <Col sm={8} smOffset={2} xs={12}>
-              <hr />
-              <h3 className='text-center'>Donations made using PayPal</h3>
+            </FullWidthRow>
+            <Spacer />
+            <FullWidthRow>{this.renderServicebotEmbed()}</FullWidthRow>
+
+            <Spacer />
+            <SectionHeader>Donations made using PayPal</SectionHeader>
+            <FullWidthRow>
               <p className='text-center'>
                 You can update your PayPal donation{' '}
                 <Link
@@ -180,20 +188,20 @@ export class DonationSettingsPage extends Component {
                 </Link>
                 .
               </p>
-            </Col>
-          </Row>
-          <Row>
-            <Col sm={8} smOffset={2} xs={12}>
-              <hr />
-              <h3 className='text-center'>Still need help?</h3>
+            </FullWidthRow>
+
+            <Spacer />
+            <SectionHeader>Still need help?</SectionHeader>
+            <FullWidthRow>
               <p>
                 If you can't see your donation here, forward a donation receipt
                 you have recieved in your email to team@freeCodeCamp.org and
                 tell us how we can help you with it.
               </p>
-              <Spacer />
-            </Col>
-          </Row>
+            </FullWidthRow>
+
+            <Spacer />
+          </main>
         </Grid>
       </Fragment>
     );

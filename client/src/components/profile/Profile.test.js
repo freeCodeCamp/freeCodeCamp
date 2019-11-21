@@ -59,7 +59,7 @@ describe('<Profile/>', () => {
   it('renders the settings button on your own profile', () => {
     const { getByText } = render(<Profile {...myProfileProps} />);
 
-    expect(getByText('Update my settings')).toHaveAttribute(
+    expect(getByText('Update my account settings')).toHaveAttribute(
       'href',
       '/settings'
     );

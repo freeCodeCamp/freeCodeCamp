@@ -57,7 +57,7 @@ function Intro({
               View my Portfolio
             </Link>
             <Link className='btn btn-lg btn-primary btn-block' to='/settings'>
-              Update my settings
+              Update my account settings
             </Link>
           </FullWidthRow>
         </Row>

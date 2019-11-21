@@ -3,10 +3,10 @@ import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Grid, Row, Col, Button } from '@freecodecamp/react-bootstrap';
+import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
 
 import { stripePublicKey } from '../../config/env.json';
-import { Spacer, Loader } from '../components/helpers';
+import { Spacer, Loader, FullWidthRow, Link } from '../components/helpers';
 import DonateForm from '../components/Donation/components/DonateForm';
 import DonateText from '../components/Donation/components/DonateText';
 import { signInLoadingSelector, userSelector } from '../redux';
@@ -85,46 +85,48 @@ export class DonatePage extends Component {
       <Fragment>
         <Helmet title='Support our nonprofit | freeCodeCamp.org' />
         <Grid>
-          <Spacer />
-          <Row>
-            <Col sm={10} smOffset={1} xs={12}>
+          <main>
+            <Spacer />
+            <FullWidthRow>
               <h1 className='text-center'>Become a Supporter</h1>
-              <Spacer />
-            </Col>
-          </Row>
-          <Row>
-            <Col md={6}>
-              <DonateForm
-                enableDonationSettingsPage={this.enableDonationSettingsPage}
-                stripe={stripe}
-              />
-              <Row>
-                <Col sm={10} smOffset={1} xs={12}>
-                  <Spacer size={2} />
-                  <h3 className='text-center'>Manage your existing donation</h3>
-                  {[
-                    `Update your existing donation`,
-                    `Download donation receipts`
-                  ].map(donationSettingOps => (
-                    <div key={donationSettingOps}>
-                      <Button
-                        block={true}
-                        bsStyle='primary'
-                        disabled={!isDonating && !enableSettings}
-                        href='/donation/settings'
-                      >
-                        {donationSettingOps}
-                      </Button>
-                      <Spacer />
+            </FullWidthRow>
+            <Spacer />
+            <Row>
+              <Col md={6}>
+                <DonateForm
+                  enableDonationSettingsPage={this.enableDonationSettingsPage}
+                  stripe={stripe}
+                />
+                <Row>
+                  <Col sm={10} smOffset={1} xs={12}>
+                    <Spacer size={2} />
+                    <h3 className='text-center'>
+                      Manage your existing donation
+                    </h3>
+                    <div className='button-group'>
+                      {[
+                        `Update your existing donation`,
+                        `Download donation receipts`
+                      ].map(donationSettingOps => (
+                        <Link
+                          className='btn btn-block'
+                          disabled={!isDonating && !enableSettings}
+                          key={donationSettingOps}
+                          to='/donation/settings'
+                        >
+                          {donationSettingOps}
+                        </Link>
+                      ))}
                     </div>
-                  ))}
-                </Col>
-              </Row>
-            </Col>
-            <Col md={6}>
-              <DonateText />
-            </Col>
-          </Row>
+                  </Col>
+                </Row>
+              </Col>
+              <Col md={6}>
+                <DonateText />
+              </Col>
+            </Row>
+            <Spacer />
+          </main>
         </Grid>
       </Fragment>
     );

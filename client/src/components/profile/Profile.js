@@ -175,7 +175,7 @@ function Profile({ user, isSessionUser, navigate }) {
         {isSessionUser ? (
           <FullWidthRow className='button-group'>
             <Link className='btn btn-lg btn-primary btn-block' to='/settings'>
-              Update my settings
+              Update my account settings
             </Link>
             <Button
               block={true}

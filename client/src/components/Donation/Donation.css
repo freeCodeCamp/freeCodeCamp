@@ -159,3 +159,6 @@ li.disabled > a {
 [name='payment-method'] {
   font-family: 'Lato', sans-serif;
 }
+.servicebot-embed-panel .panel {
+  padding: 20px;
+}
