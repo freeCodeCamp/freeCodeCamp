@@ -26,6 +26,9 @@ Since all instances automatically have the properties on the <code>prototype</co
 Note that the <code>prototype</code> for <code>duck</code> and <code>canary</code> is part of the <code>Bird</code> constructor as <code>Bird.prototype</code>. Nearly every object in JavaScript has a <code>prototype</code> property which is part of the constructor function that created it.
 </section>
 
+<strong>Hint</strong><br>Learn more about <a href="https://www.freecodecamp.org/news/prototype-in-js-busted-5547ec68872/" target="_blank">JavaScript Prototypes</a>.
+</section>
+
 ## Instructions
 <section id='instructions'>
 Add a <code>numLegs</code> property to the <code>prototype</code> of <code>Dog</code>
