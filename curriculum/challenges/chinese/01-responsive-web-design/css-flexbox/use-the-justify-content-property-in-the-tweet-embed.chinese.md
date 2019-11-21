@@ -17,8 +17,8 @@ localeTitle: 在Tweet Embed中使用justify-content属性
 
 ```yml
 tests:
-  - text: <code>.profile-name</code>元素应将<code>justify-content</code>属性设置为以下任何值：center，flex-start，flex-end，space-between或space-around。
-    testString: 'assert(code.match(/header\s.profile-name\s*{\s*?.*?\s*?.*?\s*?\s*?.*?\s*?justify-content\s*:\s*(center|flex-start|flex-end|space-between|space-around)\s*;/g), "The <code>.profile-name</code> element should have the <code>justify-content</code> property set to any of these values: center, flex-start, flex-end, space-between, or space-around.");'
+  - text: <code>.profile-name</code>元素应将<code>justify-content</code>属性设置为以下任何值：center，flex-start，flex-end，space-between，space-around或space-evenly。
+    testString: 'assert(code.match(/header\s.profile-name\s*{\s*?.*?\s*?.*?\s*?\s*?.*?\s*?justify-content\s*:\s*(center|flex-start|flex-end|space-between|space-around|space-evenly)\s*;/g), "The <code>.profile-name</code> element should have the <code>justify-content</code> property set to any of these values: center, flex-start, flex-end, space-between, space-around, or space-evenly.");'
 
 ```
 
