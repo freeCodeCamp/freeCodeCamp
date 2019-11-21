@@ -23,7 +23,7 @@ The `6` will set the number of ticks used to 6, and the `~s` will make the label
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const ticks = $('.tick > text'); assert(ticks[0].innerHTML === '0k' && ticks[1].innerHTML === '1k' && ticks[2].innerHTML === '2k' && ticks[3].innerHTML === '3k' && ticks[4].innerHTML === '4k' && ticks[5].innerHTML === '5k');
 
 ```
 

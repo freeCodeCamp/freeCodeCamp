@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+The axes and labels are looking good. Next, you will start to add some of the lines for the data. On a new line, create a new `const` named `twitterLine` and set it equal to `d3.line()`. `line` is a D3 function for creating a line.
 </section>
 
 ## Instructions
@@ -20,7 +21,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(/const\s*twitterLine\s*=\s*d3\s*\.\s*line\s*\(\s*\)/g.test(code));
 
 ```
 
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -73,10 +75,8 @@ lineGraph.append('g')
   .style('font', '10px verdana');
 
 
-  
-/*
-  The axes and labels are looking good. Next, you will start to add some of the lines for the data. On a new line, create a new `const` named `twitterLine` and set it equal to `d3.line()`. `line` is a D3 function for creating a line.
-*/
+
+</script>
 ```
 
 </div>

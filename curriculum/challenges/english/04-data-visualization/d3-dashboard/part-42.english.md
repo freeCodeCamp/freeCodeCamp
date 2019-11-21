@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Chain a `tickPadding` function to the `xAxis` and pass it `10`. This will add a little padding to the ticks.
 </section>
 
 ## Instructions
@@ -20,7 +21,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(/\.tickFormat\(d3\.format\((''\)\)\s*\.tickPadding\s*\(\s*10\s*\))/g.test(code));
 
 ```
 
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -57,10 +59,6 @@ const yAxis = d3.axisLeft(yScale)
 const xAxis = d3.axisBottom(xScale)
   .tickFormat(d3.format(''))
 
-  
-  /*
-    Chain a `tickPadding` function to the `xAxis` and pass it `10`. This will add a little padding to the ticks.
-  */
 
 lineGraph.append('g')
   .call(yAxis)
@@ -75,7 +73,8 @@ lineGraph.append('g')
   .style('text-anchor', 'end')
   .style('cursor', 'pointer')
   .style('font', '10px verdana');
-  ```
+</script>
+```
 
 </div>
 

@@ -7,7 +7,10 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+The problem here is that the `svg` is only 700 wide, so setting the `x` values to the year will put them off the chart. You need to pass each year to the `xScale` and it will create `x` values based on your scale.
+
+In the "`d` function", return the `xScale` function and pass it the year you already added.
 </section>
 
 ## Instructions
@@ -31,6 +34,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -75,11 +79,8 @@ lineGraph.append('g')
 const twitterLine = d3.line()
   .x(d => d.year)
 
-  /*
-    The problem here is that the `svg` is only 700 wide, so setting the `x` values to the year will put them off the chart. You need to pass each year to the `xScale` and it will create `x` values based on your scale.
 
-    In the "`d` function", return the `xScale` function and pass it the year you already added.
-  */
+</script>
 ```
 
 </div>

@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Chain a `tickFormat` function to your `xAxis` variable and pass it `d3.format('')`. This will remove the commas in the year labels of the x-axis.
 </section>
 
 ## Instructions
@@ -20,7 +21,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const ticks = $('.tick > text'); assert(ticks[6].innerHTML === '2012' && ticks[14].innerHTML === '2020');
 
 ```
 
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -57,10 +59,6 @@ const yAxis = d3.axisLeft(yScale)
 const xAxis = d3.axisBottom(xScale)
 
 
-  /*
-    Chain a `tickFormat` function to your `xAxis` variable and pass it `d3.format('')`. This will remove the commas in the year labels of the x-axis.
-  */
-
 lineGraph.append('g')
   .call(yAxis)
   .attr('transform', `translate(${svgMargin}, 0)`)
@@ -74,7 +72,7 @@ lineGraph.append('g')
   .style('text-anchor', 'end')
   .style('cursor', 'pointer')
   .style('font', '10px verdana');
-
+</script>
 
 ```
 
