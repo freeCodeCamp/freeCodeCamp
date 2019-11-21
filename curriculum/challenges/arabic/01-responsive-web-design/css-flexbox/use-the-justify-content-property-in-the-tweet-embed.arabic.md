@@ -18,7 +18,7 @@ localeTitle: استخدم خاصية theify-content في تطبيق Tweet Tweet
 ```yml
 tests:
   - text: 'يجب أن يكون لعنصر <code>.profile-name</code> خاصية ضبط <code>justify-content</code> المضبوطة على أي من هذه القيم: مركز ، أو بداية مرنة ، أو نهاية مرنة ، أو مسافة بينية ، أو مسافة.'
-    testString: 'assert(code.match(/header\s.profile-name\s*{\s*?.*?\s*?.*?\s*?\s*?.*?\s*?justify-content\s*:\s*(center|flex-start|flex-end|space-between|space-around)\s*;/g), "The <code>.profile-name</code> element should have the <code>justify-content</code> property set to any of these values: center, flex-start, flex-end, space-between, or space-around.");'
+    testString: 'assert(code.match(/header\s.profile-name\s*{\s*?.*?\s*?.*?\s*?\s*?.*?\s*?justify-content\s*:\s*(center|flex-start|flex-end|space-between|space-around|space-evenly)\s*;/g), "The <code>.profile-name</code> element should have the <code>justify-content</code> property set to any of these values: center, flex-start, flex-end, space-between, space-around, or space-evenly.");'
 
 ```
 
