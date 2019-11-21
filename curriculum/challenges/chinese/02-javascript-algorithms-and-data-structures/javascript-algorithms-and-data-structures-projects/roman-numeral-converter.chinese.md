@@ -8,7 +8,7 @@ localeTitle: 罗马数字转换器
 ---
 
 ## Description
-<section id="description">将给定数字转换为罗马数字。所有<a href="http://www.mathsisfun.com/roman-numerals.html" target="_blank">罗马数字</a>答案都应以大写字母提供。如果卡住，请记得使用<a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> 。尝试配对程序。编写自己的代码。 </section>
+<section id="description">将给定数字转换为罗马数字。所有<a href="http://www.mathsisfun.com/roman-numerals.html" target="_blank">罗马数字</a>答案都应以大写字母提供。如果卡住，请记得使用<a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> 。尝试配对程序。编写自己的代码。 </section>
 
 ## Instructions
 <section id="instructions">

@@ -1,34 +1,27 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { createSelector } from 'reselect';
 import { Row, Col } from '@freecodecamp/react-bootstrap';
 
-import { activeDonationsSelector } from '../../../redux';
-
-const propTypes = {
-  activeDonations: PropTypes.number
-};
-
-const mapStateToProps = createSelector(
-  activeDonationsSelector,
-  activeDonations => ({ activeDonations })
-);
-
-const DonateText = ({ activeDonations }) => {
-  const donationsLocale = activeDonations.toLocaleString();
+const DonateText = () => {
   return (
-    <Row>
+    <Row className='donate-text'>
       <Col sm={10} smOffset={1} xs={12}>
+        <p>freeCodeCamp is a highly efficient education nonprofit.</p>
         <p>
-          freeCodeCamp.org is a tiny nonprofit that's helping millions of people
-          learn to code for free.
+          In 2019 alone, we provided 18 million hours of free education to
+          people around the world.
         </p>
         <p>
-          Join <strong>{donationsLocale}</strong> supporters.
+          Since freeCodeCamp's total budget is only $373,000, that means every
+          dollar you donate to freeCodeCamp translates into 50 hours worth of
+          technology education.
         </p>
         <p>
-          Your $5 / month donation will help keep tech education free and open.
+          When you donate to freeCodeCamp, you help people learn new skills and
+          provide for their families.
+        </p>
+        <p>
+          You also help us create new resources for you to use to expand your
+          own technology skills.
         </p>
       </Col>
     </Row>
@@ -36,6 +29,5 @@ const DonateText = ({ activeDonations }) => {
 };
 
 DonateText.displayName = 'DonateText';
-DonateText.propTypes = propTypes;
 
-export default connect(mapStateToProps)(DonateText);
+export default DonateText;

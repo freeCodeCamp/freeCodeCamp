@@ -23,6 +23,12 @@
 
 #challenge-page-tabs .nav-tabs > li > a {
   padding: 5px 10px;
+  text-decoration: none;
+  font-size: 0.8em;
+}
+
+#challenge-page-tabs .nav-tabs > li > a:hover {
+  color: var(--gray-85);
 }
 
 #challenge-page-tabs .tab-content {
@@ -34,9 +40,8 @@
   height: 100%;
   overflow: hidden;
 }
-#challenge-page-tabs a {
-  text-decoration: none;
-}
-#challenge-page-tabs a:hover {
-  color: var(--secondary-background);
+
+#challenge-page-tabs .nav-tabs > li.active > a {
+  color: var(--quaternary-color);
+  background-color: var(--quaternary-background);
 }

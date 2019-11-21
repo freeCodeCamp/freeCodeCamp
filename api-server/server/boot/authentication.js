@@ -54,8 +54,19 @@ module.exports = function enableAuthentication(app) {
   } else {
     api.get(
       '/signin',
+      (req, res, next) => {
+        if (req && req.query && req.query.returnTo) {
+          req.query.returnTo = `${homeLocation}/${req.query.returnTo}`;
+        }
+        return next();
+      },
       ifUserRedirect,
-      passport.authenticate('auth0-login', {})
+      (req, res, next) => {
+        const state = req.query.returnTo
+          ? Buffer.from(req.query.returnTo).toString('base64')
+          : null;
+        return passport.authenticate('auth0-login', { state })(req, res, next);
+      }
     );
 
     api.get(
@@ -180,7 +191,7 @@ function createGetPasswordlessAuth(app) {
             'success',
             'Success! You have signed in to your account. Happy Coding!'
           );
-          return res.redirectWithFlash(`${homeLocation}`);
+          return res.redirectWithFlash(`${homeLocation}/learn`);
         })
         .subscribe(() => {}, next)
     );

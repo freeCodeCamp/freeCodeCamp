@@ -9,6 +9,7 @@ import {
   getContext
 } from 'redux-saga/effects';
 import { channel } from 'redux-saga';
+import escape from 'lodash/escape';
 
 import {
   challengeDataSelector,
@@ -25,9 +26,11 @@ import {
 
 import {
   buildChallenge,
+  canBuildChallenge,
   getTestRunner,
   challengeHasPreview,
-  updatePreview
+  updatePreview,
+  isJavaScriptChallenge
 } from '../utils/build';
 
 export function* executeChallengeSaga() {
@@ -47,7 +50,7 @@ export function* executeChallengeSaga() {
     );
     yield put(updateTests(tests));
 
-    yield fork(logToConsole, consoleProxy);
+    yield fork(takeEveryLog, consoleProxy);
     const proxyLogger = args => consoleProxy.put(args);
 
     const challengeData = yield select(challengeDataSelector);
@@ -56,7 +59,7 @@ export function* executeChallengeSaga() {
     const testRunner = yield call(
       getTestRunner,
       buildData,
-      proxyLogger,
+      { proxyLogger },
       document
     );
     const testResults = yield executeTests(testRunner, tests);
@@ -71,9 +74,19 @@ export function* executeChallengeSaga() {
   }
 }
 
-function* logToConsole(channel) {
+function* takeEveryLog(channel) {
+  // TODO: move all stringifying and escaping into the reducer so there is a
+  // single place responsible for formatting the logs.
   yield takeEvery(channel, function*(args) {
-    yield put(updateLogs(args));
+    yield put(updateLogs(escape(args)));
+  });
+}
+
+function* takeEveryConsole(channel) {
+  // TODO: move all stringifying and escaping into the reducer so there is a
+  // single place responsible for formatting the console output.
+  yield takeEvery(channel, function*(args) {
+    yield put(updateConsole(escape(args)));
   });
 }
 
@@ -81,18 +94,25 @@ function* buildChallengeData(challengeData) {
   try {
     return yield call(buildChallenge, challengeData);
   } catch (e) {
-    yield put(disableBuildOnError(e));
-    // eslint-disable-next-line no-throw-literal
-    throw 'Build failed';
+    yield put(disableBuildOnError());
+    throw e;
   }
 }
 
 function* executeTests(testRunner, tests, testTimeout = 5000) {
   const testResults = [];
-  for (const { text, testString } of tests) {
+  for (let i = 0; i < tests.length; i++) {
+    const { text, testString } = tests[i];
     const newTest = { text, testString };
+    // only the last test outputs console.logs to avoid log duplication.
+    const firstTest = i === 1;
     try {
-      const { pass, err } = yield call(testRunner, testString, testTimeout);
+      const { pass, err } = yield call(
+        testRunner,
+        testString,
+        testTimeout,
+        firstTest
+      );
       if (pass) {
         newTest.pass = true;
       } else {
@@ -116,6 +136,7 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
   return testResults;
 }
 
+// updates preview frame and the fcc console.
 function* previewChallengeSaga() {
   yield delay(700);
 
@@ -123,18 +144,31 @@ function* previewChallengeSaga() {
   if (!isBuildEnabled) {
     return;
   }
-  const challengeData = yield select(challengeDataSelector);
-  if (!challengeHasPreview(challengeData)) {
-    return;
-  }
+
+  const logProxy = yield channel();
+  const proxyLogger = args => logProxy.put(args);
 
   try {
+    yield put(initLogs());
     yield put(initConsole(''));
-    const ctx = yield buildChallengeData(challengeData);
-    const document = yield getContext('document');
-    yield call(updatePreview, ctx, document);
+    yield fork(takeEveryConsole, logProxy);
+
+    const challengeData = yield select(challengeDataSelector);
+    if (canBuildChallenge(challengeData)) {
+      const buildData = yield buildChallengeData(challengeData);
+      // evaluate the user code in the preview frame or in the worker
+      if (challengeHasPreview(challengeData)) {
+        const document = yield getContext('document');
+        yield call(updatePreview, buildData, document, proxyLogger);
+      } else if (isJavaScriptChallenge(challengeData)) {
+        const runUserCode = getTestRunner(buildData, { proxyLogger });
+        // without a testString the testRunner just evaluates the user's code
+        yield call(runUserCode, null, 5000);
+      }
+    }
   } catch (err) {
-    console.error(err);
+    console.log(err);
+    yield put(updateConsole(escape(err)));
   }
 }
 

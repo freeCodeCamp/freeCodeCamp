@@ -1,4 +1,4 @@
-require('dotenv').config();
+const env = require('../config/env');
 
 const { createFilePath } = require('gatsby-source-filesystem');
 
@@ -39,7 +39,18 @@ exports.onCreateNode = function onCreateNode({ node, actions, getNode }) {
   }
 };
 
-exports.createPages = function createPages({ graphql, actions }) {
+exports.createPages = function createPages({ graphql, actions, reporter }) {
+  if (!env.algoliaAPIKey || !env.algoliaAppId) {
+    if (process.env.FREECODECAMP_NODE_ENV === 'production') {
+      throw new Error(
+        'Algolia App id and API key are required to start the client!'
+      );
+    } else {
+      reporter.info(
+        'Algolia keys missing or invalid. Required for search to yield results.'
+      );
+    }
+  }
   const { createPage } = actions;
 
   return new Promise((resolve, reject) => {

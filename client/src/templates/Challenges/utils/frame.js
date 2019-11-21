@@ -11,17 +11,15 @@ const testId = 'fcc-test-frame';
 // append to the current challenge url
 // this also allows in-page anchors to work properly
 // rather than load another instance of the learn
-//
-// if an error occurs during initialization
-// the __err prop will be set
-// This is then picked up in client/frame-runner.js during
-// runTestsInTestFrame below
+
+// window.onerror is added here to catch any errors thrown during the building
+// of the frame.
 const createHeader = (id = mainId) => `
   <base href='' />
   <script>
     window.__frameId = '${id}';
-    window.onerror = function(msg, url, ln, col, err) {
-      window.__err = err;
+    window.onerror = function(msg) {
+      console.log(msg);
       return true;
     };
     document.addEventListener('click', function(e) {
@@ -83,21 +81,14 @@ const mountFrame = document => ({ element, ...rest }) => {
 const buildProxyConsole = proxyLogger => ctx => {
   const oldLog = ctx.window.console.log.bind(ctx.window.console);
   ctx.window.console.log = function proxyConsole(...args) {
-    proxyLogger(args.map(arg => JSON.stringify(arg)).join(' '));
+    proxyLogger(args.map(arg => '' + JSON.stringify(arg)).join(' '));
     return oldLog(...args);
   };
   return ctx;
 };
 
 const initTestFrame = frameReady => ctx => {
-  const contentLoaded = new Promise(resolve => {
-    if (ctx.document.readyState === 'loading') {
-      ctx.document.addEventListener('DOMContentLoaded', resolve);
-    } else {
-      resolve();
-    }
-  });
-  contentLoaded.then(async () => {
+  waitForFrame(ctx).then(async () => {
     const { sources, loadEnzyme } = ctx;
     // default for classic challenges
     // should not be used for modern
@@ -108,6 +99,33 @@ const initTestFrame = frameReady => ctx => {
     frameReady();
   });
   return ctx;
+};
+
+const initMainFrame = (frameReady, proxyLogger) => ctx => {
+  waitForFrame(ctx).then(() => {
+    // Overwriting the onerror added by createHeader to catch any errors thrown
+    // after the frame is ready. It has to be overwritten, as proxyLogger cannot
+    // be added as part of createHeader.
+    ctx.window.onerror = function(msg) {
+      console.log(msg);
+      if (proxyLogger) {
+        proxyLogger(msg);
+      }
+      return true;
+    };
+    frameReady();
+  });
+  return ctx;
+};
+
+const waitForFrame = ctx => {
+  return new Promise(resolve => {
+    if (ctx.document.readyState === 'loading') {
+      ctx.document.addEventListener('DOMContentLoaded', resolve);
+    } else {
+      resolve();
+    }
+  });
 };
 
 function writeToFrame(content, frame) {
@@ -122,18 +140,17 @@ const writeContentToFrame = ctx => {
   return ctx;
 };
 
-export const createMainFramer = document =>
-  flow(
-    createFrame(document, mainId),
-    mountFrame(document),
-    writeContentToFrame
-  );
+export const createMainFramer = (document, frameReady, proxyLogger) =>
+  createFramer(document, frameReady, proxyLogger, mainId, initMainFrame);
 
-export const createTestFramer = (document, frameReady, proxyConsole) =>
+export const createTestFramer = (document, frameReady, proxyLogger) =>
+  createFramer(document, frameReady, proxyLogger, testId, initTestFrame);
+
+const createFramer = (document, frameReady, proxyLogger, id, init) =>
   flow(
-    createFrame(document, testId),
+    createFrame(document, id),
     mountFrame(document),
+    buildProxyConsole(proxyLogger),
     writeContentToFrame,
-    buildProxyConsole(proxyConsole),
-    initTestFrame(frameReady)
+    init(frameReady, proxyLogger)
   );

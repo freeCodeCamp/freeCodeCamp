@@ -16,7 +16,7 @@ var sum = 0;
 function addSum(num) {
   sum = sum + num;
 }
-var returnedValue = addSum(3); // sum will be modified but returned value is undefined
+addSum(3); // sum will be modified but returned value is undefined
 ```
 
 <code>addSum</code> is a function without a <code>return</code> statement. The function will change the global <code>sum</code> variable but the returned value of the function is <code>undefined</code>.
@@ -34,12 +34,12 @@ Create a function <code>addFive</code> without any arguments. This function adds
 tests:
   - text: <code>addFive</code> should be a function
     testString: assert(typeof addFive === 'function');
-  - text: <code>sum</code> should be equal to 8
+  - text: Once both functions have ran, the <code>sum</code> should be equal to 8
     testString: assert(sum === 8);
   - text: Returned value from <code>addFive</code> should be <code>undefined</code>
     testString: assert(addFive() === undefined);
-  - text: Inside of your functions, add 5 to the <code>sum</code> variable
-    testString: assert(code.match(/(sum\s*\=\s*sum\s*\+\s*5)|(sum\s*\+\=\s*5)/g).length === 1);
+  - text: Inside the <code>addFive</code> function, add <code>5</code> to the <code>sum</code> variable
+    testString: assert(addFive.toString().replace(/\s/g, '').match(/sum=sum\+5|sum\+=5/));
 
 ```
 
@@ -59,37 +59,34 @@ function addThree() {
 
 // Only change code below this line
 
-
-
 // Only change code above this line
-var returnedValue = addFive();
-```
-
-</div>
-
-
-### After Test
-<div id='js-teardown'>
-
-```js
-var sum = 0;
-function addThree() {sum = sum + 3;}
 addThree();
 addFive();
 ```
 
 </div>
 
-</section>
 
 ## Solution
 <section id='solution'>
 
 
 ```js
-function addFive() {
- sum = sum + 5;
+// Example
+var sum = 0;
+function addThree() {
+  sum = sum + 3;
 }
+
+// Only change code below this line
+
+function addFive() {
+  sum = sum + 5;
+}
+
+// Only change code above this line
+addThree();
+addFive();
 ```
 
 </section>

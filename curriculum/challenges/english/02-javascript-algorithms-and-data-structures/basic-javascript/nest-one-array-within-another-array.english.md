@@ -8,7 +8,7 @@ forumTopicId: 18247
 
 ## Description
 <section id='description'>
-You can also nest arrays within other arrays, like this: <code>[["Bulls", 23], ["White Sox", 45]]</code>. This is also called a <dfn>Multi-dimensional Array<dfn>.
+You can also nest arrays within other arrays, like this: <code>[["Bulls", 23], ["White Sox", 45]]</code>. This is also called a <dfn>multi-dimensional arrray<dfn>.
 </section>
 
 ## Instructions

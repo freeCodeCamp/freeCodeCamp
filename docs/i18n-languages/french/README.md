@@ -9,7 +9,7 @@
 
 [freeCodeCamp.org](https://www.freecodecamp.org) est une communauté conviviale où vous pouvez apprendre à coder gratuitement. Elle est gérée par [un organisme à but non lucratif 501 (c) (3)](https://donate.freecodecamp.org) et soutenue par des donateurs dans le but d'aider des millions d'adultes à se reconvertir vers l'informatique. Notre communauté a déjà aidé plus de 10 000 personnes à décrocher leur premier emploi de développeur.
 
-Notre programme complet de développement Web est entièrement gratuit et à votre rythme. Nous avons des milliers de défis de codage interactif pour vous aider à développer vos compétences.
+Notre programme complet de développement Web est entièrement gratuit et vous permet d'étudier à votre rythme. Nous avons des milliers de défis de codage interactif pour vous aider à développer vos compétences.
 
 ## Table des matières
 
@@ -123,7 +123,7 @@ Notre communauté a aussi:
 - Un [podcast](https://podcast.freecodecamp.org/) avec des discussions techniques autour de nouvelles technologies et des histoires inspirantes de développeurs.
 - [Des groupes d'études locaux](https://study-group-directory.freecodecamp.org/), situés partout dans le monde et où vous pourrez programmer ensemble et en face en face.
 - Un [guide complet couvrant des milliers de sujets différents](https://guide.freecodecamp.org/)
-- Un [Feed de newws](https://www.freecodecamp.org/news), gratuit, open source et sans pub, où vous pourrez crossposter vos articles de blog.
+- Un [Feed de news](https://www.freecodecamp.org/news), gratuit, open source et sans pub, où vous pourrez crossposter vos articles de blog.
 - Un [groupe Facebook](https://www.facebook.com/groups/freeCodeCampEarth/permalink/428140994253892/) avec plus de 100 000 membres autour du monde.
     
 

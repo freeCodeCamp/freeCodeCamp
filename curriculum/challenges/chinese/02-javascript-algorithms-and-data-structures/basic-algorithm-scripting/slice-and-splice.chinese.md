@@ -9,7 +9,7 @@ localeTitle: 切片和拼接
 ---
 
 ## Description
-<section id="description">您将获得两个数组和一个索引。使用数组方法<code>slice</code>和<code>splice</code>按顺序将第一个数组的每个元素复制到第二个数组中。开始在第二个数组的索引<code>n</code>处插入元素。返回结果数组。函数运行后，输入数组应保持不变。如果卡住，请记得使用<a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> 。编写自己的代码。 </section>
+<section id="description">您将获得两个数组和一个索引。使用数组方法<code>slice</code>和<code>splice</code>按顺序将第一个数组的每个元素复制到第二个数组中。开始在第二个数组的索引<code>n</code>处插入元素。返回结果数组。函数运行后，输入数组应保持不变。如果卡住，请记得使用<a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> 。编写自己的代码。 </section>
 
 ## Instructions
 <section id="instructions">

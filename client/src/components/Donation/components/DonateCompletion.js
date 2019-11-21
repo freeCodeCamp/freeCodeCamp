@@ -18,26 +18,37 @@ function DonateCompletion({ processing, reset, success, error = null }) {
   const heading = processing
     ? 'We are processing your donation.'
     : success
-    ? 'Your donation was successful.'
-    : 'Something went wrong with your donation';
+    ? 'Thank you for being a supporter.'
+    : 'Something went wrong with your donation.';
   return (
     <Alert bsStyle={style} className='donation-completion'>
-      <h4>{heading}</h4>
+      <h4>
+        <b>{heading}</b>
+      </h4>
       <div className='donation-completion-body'>
         {processing && (
           <Spinner
             className='user-state-spinner'
-            color='#006400'
+            color='#0a0a23'
             fadeIn='none'
             name='line-scale'
           />
         )}
         {success && (
-          <p>Thank you for supporting the freeCodeCamp.org community.</p>
+          <div>
+            <p>
+              Your donation will support free technology education for people
+              all over the world.
+            </p>
+            <p>
+              You can update your supporter status at any time from the 'manage
+              your existing donation' section below on this page.
+            </p>
+          </div>
         )}
         {error && <p>{error}</p>}
       </div>
-      <p className='donation-completion-buttons'>
+      <div className='donation-completion-buttons'>
         {error && (
           <div>
             <Button bsStyle='primary' onClick={reset}>
@@ -45,7 +56,7 @@ function DonateCompletion({ processing, reset, success, error = null }) {
             </Button>
           </div>
         )}
-      </p>
+      </div>
     </Alert>
   );
 }

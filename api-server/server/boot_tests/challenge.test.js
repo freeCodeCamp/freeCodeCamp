@@ -28,7 +28,7 @@ import {
 } from './fixtures';
 
 describe('boot/challenge', () => {
-  xdescribe('backendChallengeCompleted');
+  xdescribe('backendChallengeCompleted', () => {});
 
   describe('buildUserUpdate', () => {
     it('returns an Object with a nested "completedChallenges" property', () => {
@@ -247,8 +247,8 @@ describe('boot/challenge', () => {
 
       isValidChallengeCompletion(req, res, next);
 
-      expect(res.sendStatus.called).toBe(true);
-      expect(res.sendStatus.getCall(0).args[0]).toBe(403);
+      expect(res.status.called).toBe(true);
+      expect(res.status.getCall(0).args[0]).toBe(403);
       expect(next.called).toBe(false);
     });
 
@@ -262,8 +262,8 @@ describe('boot/challenge', () => {
 
       isValidChallengeCompletion(req, res, next);
 
-      expect(res.sendStatus.called).toBe(true);
-      expect(res.sendStatus.getCall(0).args[0]).toBe(403);
+      expect(res.status.called).toBe(true);
+      expect(res.status.getCall(0).args[0]).toBe(403);
       expect(next.called).toBe(false);
     });
 
@@ -281,8 +281,8 @@ describe('boot/challenge', () => {
 
       isValidChallengeCompletion(req, res, next);
 
-      expect(res.sendStatus.called).toBe(true);
-      expect(res.sendStatus.getCall(0).args[0]).toBe(403);
+      expect(res.status.called).toBe(true);
+      expect(res.status.getCall(0).args[0]).toBe(403);
       expect(next.called).toBe(false);
     });
 
@@ -332,9 +332,9 @@ describe('boot/challenge', () => {
     });
   });
 
-  xdescribe('modernChallengeCompleted');
+  xdescribe('modernChallengeCompleted', () => {});
 
-  xdescribe('projectCompleted');
+  xdescribe('projectCompleted', () => {});
 
   describe('redirectToCurrentChallenge', () => {
     const mockHomeLocation = 'https://www.example.com';
