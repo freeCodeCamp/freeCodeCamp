@@ -13,7 +13,6 @@ export class CompletionModalBody extends PureComponent {
     super(props);
 
     this.state = {
-      animateProgress: false,
       progressInterval: null,
       shownPercent: 0
     };
