@@ -34,7 +34,7 @@ tests:
 ```html
 <body>
   <header>
-    <h1>Pensamiento Profundos con el Maestro Camper Cat</h1>
+    <h1>Pensamientos Profundos con el Maestro Camper Cat</h1>
   </header>
   <section>
     <form>

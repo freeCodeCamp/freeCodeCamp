@@ -7,7 +7,7 @@ localeTitle: Haga que los enlaces sean navegables con claves de acceso HTML
 ---
 
 ## Description
-<section id="description"> HTML ofrece la <code>accesskey</code> atributo para especificar una tecla de acceso directo para activar o traer el foco a un elemento. Esto puede hacer que la navegación sea más eficiente para usuarios que solo usan el teclado. HTML5 permite que este atributo se use en cualquier elemento, pero es particularmente útil cuando se usa con los interactivos. Esto incluye enlaces, botones y controles de formulario. Aquí hay un ejemplo: <code>&lt;button accesskey=&quot;b&quot;&gt;Important Button&lt;/button&gt;</code> </section>
+<section id="description"> HTML ofrece el atributo <code>accesskey</code> para especificar una tecla de acceso directo para activar o traer el foco a un elemento. Esto puede hacer que la navegación sea más eficiente para usuarios que solo usan el teclado. HTML5 permite que este atributo se use en cualquier elemento, pero es particularmente útil cuando se usa con los interactivos. Esto incluye enlaces, botones y controles de formulario. Aquí hay un ejemplo: <code>&lt;button accesskey=&quot;b&quot;&gt;Important Button&lt;/button&gt;</code> </section>
 
 ## Instructions
 <section id="instructions"> Camper Cat desea que los enlaces que se encuentran alrededor de los dos títulos de los artículos del blog tengan atajos de teclado para que los usuarios de su sitio puedan navegar rápidamente a la historia completa. Agregue un atributo de <code>accesskey</code> a ambos enlaces y establezca el primero en &quot;g&quot; (para Garfield) y el segundo en &quot;c&quot; (para Chuck Norris). </section>
@@ -43,18 +43,18 @@ tests:
   <article>
 
 
-    <h2><a id="first" href="">The Garfield Files: Lasagna as Training Fuel?</a></h2>
+    <h2><a id="first" href="">Los Archivos Garfield: ¿Lasagna como Combustible de Entrenamiento?</a></h2>
 
 
-    <p>The internet is littered with varying opinions on nutritional paradigms, from catnip paleo to hairball cleanses. But let's turn our attention to an often overlooked fitness fuel, and examine the protein-carb-NOM trifecta that is lasagna...</p>
+    <p>Internet está repleto de diversas opiniones sobre los paradigmas nutricionales, desde catnip paleo hasta limpieza de bolas de pelos. Pero pongamos ahora nuestra atención en un combustible del bienestar físico muchas veces olvidado, y examinemos la trifecta proteína-carbohidrato-NOM que es la lasagna...</p>
   </article>
   <article>
 
 
-    <h2><a id="second" href="">Is Chuck Norris a Cat Person?</a></h2>
+    <h2><a id="second" href="">Es Chuck Norris un Hombre Gato?</a></h2>
 
 
-    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is he a cat person?...</p>
+    <p>Chuck Norris es ampliamente reconocido como el primer artista marcial del planeta, y es una completa coincidencia que todo aquel que no opina lo mismo desaparece misteriosamente poco tiempo después. Pero la verdadera pregunta es: es un hombre gato?...</p>
   </article>
   <footer>&copy; 2018 Camper Cat</footer>
 </body>
@@ -71,6 +71,7 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+// solución requerida
 ```
+
 </section>
