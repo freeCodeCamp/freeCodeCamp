@@ -1,8 +1,8 @@
-/* global expect */
+/* global jest, expect */
 
 import '@testing-library/jest-dom/extend-expect';
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 
 import CompletionModalBody from './CompletionModalBody';
 
@@ -19,6 +19,9 @@ describe('<CompletionModalBody />', () => {
   });
 
   describe('progress-bar', () => {
+    beforeEach(() => {
+      jest.useFakeTimers();
+    });
     test('renders with 0% complete shown initially', () => {
       const { getAllByText } = render(<CompletionModalBody {...props} />);
       expect(getAllByText('0% complete').length).toBe(2);
@@ -33,25 +36,32 @@ describe('<CompletionModalBody />', () => {
     });
 
     test('shows the correct percent after animation', () => {
-      const { findAllByText } = render(<CompletionModalBody {...props} />);
+      const { container } = render(<CompletionModalBody {...props} />);
 
-      setTimeout(done => {
-        expect(findAllByText(`${props.completedPercent} complete`).length).toBe(
-          2
-        );
-        done();
-      }, 2000);
+      fireEvent.animationEnd(
+        container.querySelector('.completion-success-icon')
+      );
+
+      jest.runAllTimers();
+
+      expect(
+        container.querySelector('.progress-bar-foreground')
+      ).toHaveTextContent(`${props.completedPercent}% complete`);
     });
 
     test('has the correct width after animation', () => {
       const { container } = render(<CompletionModalBody {...props} />);
 
-      setTimeout(done => {
-        expect(
-          container.querySelector('.progress-bar-percent')
-        ).toHaveAttribute('style', `width: ${props.completedPercent}%;`);
-        done();
-      }, 2000);
+      fireEvent.animationEnd(
+        container.querySelector('.completion-success-icon')
+      );
+
+      jest.runAllTimers();
+
+      expect(container.querySelector('.progress-bar-percent')).toHaveAttribute(
+        'style',
+        `width: ${props.completedPercent}%;`
+      );
     });
   });
 });

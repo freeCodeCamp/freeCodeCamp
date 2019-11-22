@@ -85,10 +85,14 @@ const propTypes = {
   title: PropTypes.string
 };
 
-function getCompletedPercent(completedChallengesIds, currentBlockIds, id) {
-  completedChallengesIds = completedChallengesIds.includes(id)
+export function getCompletedPercent(
+  completedChallengesIds,
+  currentBlockIds,
+  currentChallengeId
+) {
+  completedChallengesIds = completedChallengesIds.includes(currentChallengeId)
     ? completedChallengesIds
-    : [...completedChallengesIds, id];
+    : [...completedChallengesIds, currentChallengeId];
 
   const completedChallengesInBlock = completedChallengesIds.filter(id => {
     return currentBlockIds.includes(id);
