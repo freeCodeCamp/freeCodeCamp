@@ -33,7 +33,7 @@ tests:
     testString: assert($("p span") && $("p span").text().match(/love/i) && !$("p span").text().match(/Things cats/i));
   - text: Your <code>span</code> element should have class <code>text-danger</code>.
     testString: assert($("span").hasClass("text-danger"));
-  - text: Make sure your <code>span</code> element has a closing tag.
+  - text: Your <code>span</code> element should have a closing tag.
     testString: assert(code.match(/<\/span>/g) && code.match(/<span/g) && code.match(/<\/span>/g).length === code.match(/<span/g).length);
 
 ```

@@ -21,7 +21,7 @@ Give each of your <code>button</code> elements the class <code>target</code>.
 
 ```yml
 tests:
-  - text: Apply the <code>target</code> class to each of your <code>button</code> elements.
+  - text: You should apply the <code>target</code> class to each of your <code>button</code> elements.
     testString: assert($(".target").length > 5);
 
 ```

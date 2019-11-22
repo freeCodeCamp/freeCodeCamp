@@ -25,9 +25,9 @@ Give the well on the left the id of <code>left-well</code>. Give the well on the
 
 ```yml
 tests:
-  - text: Give your left <code>well</code> the id of <code>left-well</code>.
+  - text: Your left <code>well</code> should have the id of <code>left-well</code>.
     testString: assert($(".col-xs-6").children("#left-well") && $(".col-xs-6").children("#left-well").length > 0);
-  - text: Give your right <code>well</code> the id of <code>right-well</code>.
+  - text: Your right <code>well</code> should have the id of <code>right-well</code>.
     testString: assert($(".col-xs-6").children("#right-well") && $(".col-xs-6").children("#right-well").length > 0);
 
 ```

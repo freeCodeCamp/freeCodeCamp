@@ -21,11 +21,11 @@ Nest one <code>div</code> element with the class <code>well</code> within each o
 
 ```yml
 tests:
-  - text: Add a <code>div</code> element with the class <code>well</code> inside each of your <code>div</code> elements with the class <code>"col-xs-6"</code>
+  - text: You should add a <code>div</code> element with the class <code>well</code> inside each of your <code>div</code> elements with the class <code>"col-xs-6"</code>
     testString: assert($("div.col-xs-6").not(":has(>div.well)").length < 1);
-  - text: Nest both of your <code>div</code> elements with the class <code>"col-xs-6"</code> within your <code>div</code> element with the class <code>"row"</code>.
+  - text: Both of your <code>div</code> elements with the class <code>"col-xs-6"</code> should be nested within your <code>div</code> element with the class <code>"row"</code>.
     testString: assert($("div.row > div.col-xs-6").length > 1);
-  - text: Make sure all your <code>div</code> elements have closing tags.
+  - text: All your <code>div</code> elements should have closing tags.
     testString: assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length);
 
 ```

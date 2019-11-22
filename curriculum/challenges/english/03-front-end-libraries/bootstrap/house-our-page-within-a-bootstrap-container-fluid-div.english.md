@@ -23,9 +23,9 @@ Let's nest your <code>h3</code> element within a <code>div</code> element with t
 tests:
   - text: Your <code>div</code> element should have the class <code>container-fluid</code>.
     testString: assert($("div").hasClass("container-fluid"));
-  - text: Make sure each of your <code>div</code> elements has a closing tag.
+  - text: Each of your <code>div</code> elements should have closing tags.
     testString: assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length);
-  - text: Nest your <code>h3</code> element inside a <code>div</code> element.
+  - text: Your <code>h3</code> element should be nested inside a <code>div</code> element.
     testString: assert($("div").children("h3").length >0);
 
 ```

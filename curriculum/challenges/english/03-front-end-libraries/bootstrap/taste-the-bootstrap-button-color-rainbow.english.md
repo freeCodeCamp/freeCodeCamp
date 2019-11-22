@@ -26,7 +26,7 @@ tests:
     testString: assert($("button").hasClass("btn-primary"));
   - text: Your button should still have the <code>btn</code> and <code>btn-block</code> classes.
     testString: assert($("button").hasClass("btn-block") && $("button").hasClass("btn"));
-  - text: Make sure all your <code>button</code> elements have a closing tag.
+  - text: All your <code>button</code> elements should have closing tags.
     testString: assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length);
 
 ```

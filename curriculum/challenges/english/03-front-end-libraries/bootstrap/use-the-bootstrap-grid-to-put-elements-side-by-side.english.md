@@ -29,9 +29,9 @@ tests:
     testString: assert($("div.row:has(button)").length > 0);
   - text: Each of your Bootstrap buttons should be nested within its own <code>div</code> element with the class <code>col-xs-4</code>.
     testString: assert($("div.col-xs-4:has(button)").length > 2);
-  - text: Make sure each of your <code>button</code> elements has a closing tag.
+  - text: Each of your <code>button</code> elements should have a closing tag.
     testString: assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length);
-  - text: Make sure each of your <code>div</code> elements has a closing tag.
+  - text: Each of your <code>div</code> elements should have a closing tag.
     testString: assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length);
 
 ```

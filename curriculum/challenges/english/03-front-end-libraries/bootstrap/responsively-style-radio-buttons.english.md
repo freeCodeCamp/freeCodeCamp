@@ -25,11 +25,11 @@ Nest both your radio buttons within a <code>&#60;div class="row"&#62;</code> ele
 
 ```yml
 tests:
-  - text: Nest all of your radio buttons inside one <code>div</code> with the class <code>row</code>.
+  - text: All of your radio buttons should be nested inside one <code>div</code> with the class <code>row</code>.
     testString: assert($("div.row:has(input[type=\"radio\"])").length > 0);
-  - text: Nest each of your radio buttons inside its own <code>div</code> with the class <code>col-xs-6</code>.
+  - text: Each of your radio buttons should be nested inside its own <code>div</code> with the class <code>col-xs-6</code>.
     testString: assert($("div.col-xs-6:has(input[type=\"radio\"])").length > 1);
-  - text: Make sure each of your <code>div</code> elements has a closing tag.
+  - text: All of your <code>div</code> elements should have closing tags.
     testString: assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length);
 
 ```

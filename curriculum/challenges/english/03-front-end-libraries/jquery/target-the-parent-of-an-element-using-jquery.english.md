@@ -31,7 +31,7 @@ tests:
     testString: assert(code.match(/\.parent\s*\(\s*\)\s*\.css/g));
   - text: The <code>&#46;parent&#40;&#41;</code> method should be called on the <code>&#35;target1</code> element.
     testString: assert(code.match(/\$\s*?\(\s*?(?:'|")\s*?#target1\s*?(?:'|")\s*?\)\s*?\.parent/gi));
-  - text: Only use jQuery to add these classes to the element.
+  - text: You should only use jQuery to add these classes to the element.
     testString: assert(code.match(/<div class="well" id="left-well">/g));
 
 ```

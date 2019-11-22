@@ -25,7 +25,7 @@ But let's do something more dramatic. Add the classes <code>animated</code> and 
 
 ```yml
 tests:
-  - text: Add the classes <code>animated</code> and <code>hinge</code> to your <code>body</code> element.
+  - text: You should add the classes <code>animated</code> and <code>hinge</code> to your <code>body</code> element.
     testString: assert($('body').hasClass('animated') && $('body').hasClass('hinge'));
 
 ```

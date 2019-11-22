@@ -29,13 +29,13 @@ Use Font Awesome to add a <code>thumbs-up</code> icon to your like button by giv
 
 ```yml
 tests:
-  - text: Add an <code>i</code> element with the classes <code>fas</code> and <code>fa-thumbs-up</code>.
+  - text: You should add an <code>i</code> element with the classes <code>fas</code> and <code>fa-thumbs-up</code>.
     testString: assert($("i").is(".fas.fa-thumbs-up") || $("span").is(".fas.fa-thumbs-up"));
   - text: Your <code>fa-thumbs-up</code> icon should be located within the Like button.
     testString: assert(($("i.fa-thumbs-up").parent().text().match(/Like/gi) && $(".btn-primary > i").is(".fas.fa-thumbs-up")) || ($("span.fa-thumbs-up").parent().text().match(/Like/gi) && $(".btn-primary > span").is(".fas.fa-thumbs-up")));
-  - text: Nest your <code>i</code> element within your <code>button</code> element.
+  - text: Your <code>i</code> element should be nested within your <code>button</code> element.
     testString: assert($("button").children("i").length > 0 || $("button").children("span").length > 0);
-  - text: Make sure your icon element has a closing tag.
+  - text: Your icon element should have a closing tag.
     testString: assert(code.match(/<\/i>|<\/span>/g));
 ```
 

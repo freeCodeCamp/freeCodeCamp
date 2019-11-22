@@ -29,7 +29,7 @@ tests:
     testString: assert($(".btn-info > i").is(".fas.fa-info-circle") || $(".btn-info > span").is(".fas.fa-info-circle"));
   - text: You should add a <code>&#60;i class="fas fa-trash"&#62;&#60;/i&#62;</code> within your delete button element.
     testString: assert($(".btn-danger > i").is(".fas.fa-trash") || $(".btn-danger > span").is(".fas.fa-trash"));
-  - text: Make sure each of your <code>i</code> elements has a closing tag and <code>&#60;i class="fas fa-thumbs-up"&#62;&#60;/i&#62;</code> is in your like button element.
+  - text: Each of your <code>i</code> elements should have a closing tag and <code>&#60;i class="fas fa-thumbs-up"&#62;&#60;/i&#62;</code> is in your like button element.
     testString: assert(code.match(/<\/i>|<\/span/g) && code.match(/<\/i|<\/span>/g).length > 2 && ($(".btn-primary > i").is(".fas.fa-thumbs-up") || $(".btn-primary > span").is(".fas.fa-thumbs-up")));
 
 ```

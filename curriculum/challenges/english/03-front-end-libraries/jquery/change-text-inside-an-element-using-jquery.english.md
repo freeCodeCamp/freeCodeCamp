@@ -27,15 +27,15 @@ Note that while the <code>&#60;i&#62;</code> tag has traditionally been used to 
 
 ```yml
 tests:
-  - text: Emphasize the text in your <code>target4</code> button by adding HTML tags.
+  - text: You should emphasize the text in your <code>target4</code> button by adding HTML tags.
     testString: assert.isTrue((/<em>|<i>\s*#target4\s*<\/em>|<\/i>/gi).test($("#target4").html()));
-  - text: Make sure the text is otherwise unchanged.
+  - text: The text should otherwise remain unchanged.
     testString: assert($("#target4") && $("#target4").text().trim() === '#target4');
-  - text: Do not alter any other text.
+  - text: You should not alter any other text.
     testString: assert.isFalse((/<em>|<i>/gi).test($("h3").html()));
-  - text: Make sure you are using <code>.html()</code> and not <code>.text()</code>.
+  - text: You should be using <code>.html()</code> and not <code>.text()</code>.
     testString: assert(code.match(/\.html\(/g));
-  - text: Make sure to select <code>button id="target4"</code> with jQuery.
+  - text: You should select <code>button id="target4"</code> with jQuery.
     testString: assert(code.match(/\$\(\s*?(\"|\')#target4(\"|\')\s*?\)\.html\(/));
 
 ```

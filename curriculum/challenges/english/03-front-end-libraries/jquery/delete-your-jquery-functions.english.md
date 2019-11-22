@@ -23,15 +23,15 @@ Delete all three of these jQuery functions from your <code>document ready functi
 
 ```yml
 tests:
-  - text: Delete all three of your jQuery functions from your <code>document ready function</code>.
+  - text: All three of your jQuery functions should be deleted from your <code>document ready function</code>.
     testString: assert(code.match(/\{\s*\}\);/g));
-  - text: Leave your <code>script</code> element intact.
+  - text: You should leave your <code>script</code> element intact.
     testString: assert(code.match(/<script>/g));
-  - text: Leave your <code>$&#40document&#41.ready&#40function&#40&#41 {</code> to the beginning of your <code>script</code> element.
+  - text: You should leave your <code>$&#40document&#41.ready&#40function&#40&#41 {</code> at the beginning of your <code>script</code> element.
     testString: assert(code.match(/\$\(document\)\.ready\(function\(\)\s?\{/g));
-  - text: Leave your "document ready function" closing <code>&#125;&#41;</code> intact.
+  - text: You should leave your "document ready function" closing <code>&#125;&#41;</code> intact.
     testString: assert(code.match(/.*\s*\}\);/g));
-  - text: Leave your <code>script</code> element closing tag intact.
+  - text: You should leave your <code>script</code> element closing tag intact.
     testString: assert(code.match(/<\/script>/g) && code.match(/<script/g) && code.match(/<\/script>/g).length === code.match(/<script/g).length);
 
 ```

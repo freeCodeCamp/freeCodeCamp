@@ -29,7 +29,7 @@ tests:
     testString: assert($("#right-well").children("#target5").length > 0);
   - text: A copy of your <code>target5</code> element should also be inside your <code>left-well</code>.
     testString: assert($("#left-well").children("#target5").length > 0);
-  - text: Only use jQuery to move these elements.
+  - text: You should only use jQuery to move these elements.
     testString: assert(!code.match(/class.*animated/g));
 
 ```
