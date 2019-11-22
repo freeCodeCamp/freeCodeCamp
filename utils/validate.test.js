@@ -12,7 +12,7 @@ function inRange(num, range) {
   return num >= range[0] && num <= range[1];
 }
 
-describe('validate', () => {
+describe('isValidUsername', () => {
   it('rejects strings with less than 3 characters', () => {
     expect(isValidUsername('')).toStrictEqual(usernameTooShort);
     expect(isValidUsername('12')).toStrictEqual(usernameTooShort);
@@ -25,6 +25,9 @@ describe('validate', () => {
   });
   it('rejects non-ASCII characters', () => {
     expect(isValidUsername('👀👂👄')).toStrictEqual(invalidCharError);
+  });
+  it('rejects with invalidCharError even if the string is too short', () => {
+    expect(isValidUsername('.')).toStrictEqual(invalidCharError);
   });
   it('accepts alphanumeric characters', () => {
     expect(
