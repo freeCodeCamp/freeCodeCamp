@@ -30,9 +30,9 @@ tests:
     testString: assert($("h2").hasClass("text-primary"));
   - text: Your paragraph elements should no longer use the font <code>Monospace</code>.
     testString: assert(!$("p").css("font-family").match(/monospace/i));
-  - text: Remove the <code>smaller-image</code> class from your top image.
+  - text: The <code>smaller-image</code> class should be removed from your top image.
     testString: assert(!$("img").hasClass("smaller-image"));
-  - text: Add the <code>img-responsive</code> class to your top image.
+  - text: You should add the <code>img-responsive</code> class to your top image.
     testString: assert($(".img-responsive").length > 1);
 
 ```

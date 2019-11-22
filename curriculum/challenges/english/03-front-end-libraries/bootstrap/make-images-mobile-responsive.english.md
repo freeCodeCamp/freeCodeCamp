@@ -30,7 +30,7 @@ tests:
     testString: assert(!$("img:eq(1)").hasClass("smaller-image"));
   - text: Your new image should have a <code>src</code> of <code>https&#58;//bit.ly/fcc-running-cats</code>.
     testString: assert($("img:eq(1)").attr("src") === "https://bit.ly/fcc-running-cats");
-  - text: Make sure your new <code>img</code> element has a closing angle bracket.
+  - text: Your new <code>img</code> element should have a closing angle bracket.
     testString: assert(code.match(/<img/g) && code.match(/<img[^<]*>/g).length === 2 && code.match(/<img/g).length === 2);
 
 ```
