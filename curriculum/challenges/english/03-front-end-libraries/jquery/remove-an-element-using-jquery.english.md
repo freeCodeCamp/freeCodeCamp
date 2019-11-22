@@ -22,9 +22,9 @@ Remove element <code>target4</code> from the page by using the <code>.remove()</
 
 ```yml
 tests:
-  - text: Use jQuery to remove your <code>target4</code> element from your page.
+  - text: You should use jQuery to remove your <code>target4</code> element from your page.
     testString: assert($("#target4").length === 0 && code.match(/\$\(["']#target4["']\).remove\(\)/g));
-  - text: Only use jQuery to remove this element.
+  - text: You should only use jQuery to remove this element.
     testString: assert(code.match(/id="target4/g) && !code.match(/<!--.*id="target4".*-->/g) && $("#right-well").length > 0);
 
 ```

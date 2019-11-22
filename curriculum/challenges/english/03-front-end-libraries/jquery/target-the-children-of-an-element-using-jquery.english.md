@@ -27,7 +27,7 @@ tests:
     testString: assert($("#right-well").children().css("color") === 'rgb(255, 165, 0)');
   - text: You should use the <code>children&#40&#41</code> function to modify these elements.
     testString: assert(code.match(/\.children\(\)\.css/g));
-  - text: Only use jQuery to add these classes to the element.
+  - text: You should only use jQuery to add these classes to the element.
     testString: assert(code.match(/<div class="well" id="right-well">/g));
 
 ```
