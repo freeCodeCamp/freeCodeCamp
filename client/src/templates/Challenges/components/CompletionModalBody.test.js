@@ -22,6 +22,7 @@ describe('<CompletionModalBody />', () => {
     beforeEach(() => {
       jest.useFakeTimers();
     });
+
     test('renders with 0% complete shown initially', () => {
       const { getAllByText } = render(<CompletionModalBody {...props} />);
       expect(getAllByText('0% complete').length).toBe(2);
