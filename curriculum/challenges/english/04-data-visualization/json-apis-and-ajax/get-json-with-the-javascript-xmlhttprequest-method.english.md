@@ -16,7 +16,7 @@ However, JSON transmitted by APIs are sent as <code>bytes</code>, and your appli
 You can request the JSON from freeCodeCamp's Cat Photo API. Here's the code you can put in your click event to do this:
 
 ```js
-const req=new XMLHttpRequest();
+const req = new XMLHttpRequest();
 req.open("GET",'/json/cats.json',true);
 req.send();
 req.onload=function(){
