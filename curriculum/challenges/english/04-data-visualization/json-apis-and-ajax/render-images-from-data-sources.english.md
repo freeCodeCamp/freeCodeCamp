@@ -43,7 +43,7 @@ tests:
       req.open("GET",'/json/cats.json',true);
       req.send();
        req.onload = function(){
-        const json=JSON.parse(req.responseText);
+        const json = JSON.parse(req.responseText);
         let html = "";
         json.forEach(function(val) {
           html += "<div class = 'cat'>";
