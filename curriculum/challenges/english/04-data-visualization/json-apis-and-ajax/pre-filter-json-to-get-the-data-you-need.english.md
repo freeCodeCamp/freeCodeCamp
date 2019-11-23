@@ -123,7 +123,7 @@ tests:
       req.open("GET",'/json/cats.json', true);
       req.send();
       req.onload = function(){
-        let json=JSON.parse(req.responseText);
+        let json = JSON.parse(req.responseText);
         let html = "";
         // Add your code below this line
         json = json.filter(function(val) {
