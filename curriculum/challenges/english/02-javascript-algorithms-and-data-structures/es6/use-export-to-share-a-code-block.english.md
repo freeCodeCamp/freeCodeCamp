@@ -7,7 +7,7 @@ forumTopicId: 301219
 
 ## Description
 <section id='description'>
-Imagine a file called <code>math_functions.js</code>, it contains several functions related to mathematical operations. One of them is stored in a variable, <code>add</code>, that takes in two numbers and returns the sum of them. You want to use this function in several different JavaScript files. In order to share it with the files, you need to first <code>export</code> it.
+Imagine a file called <code>math_functions.js</code> that contains several functions related to mathematical operations. One of them is stored in a variable, <code>add</code>, that takes in two numbers and returns their sum. You want to use this function in several different JavaScript files. In order to share it with these other files, you first need to <code>export</code> it.
 
 ```js
 export const add = (x, y) => {
@@ -25,7 +25,7 @@ const add = (x, y) => {
 export { add };
 ```
 
-After you export a variable or function, you can import it in another file to use without having to rewrite the code. You can export multiple things by repeating the first example for each thing you want to export, or by placing them all in the export statement of the second example like this:
+When you export a variable or function, you can import it in another file and use it without having to rewrite the code. You can export multiple things by repeating the first example for each thing you want to export, or by placing them all in the export statement of the second example, like this:
 
 ```js
 export { add, subtract };
@@ -35,7 +35,7 @@ export { add, subtract };
 
 ## Instructions
 <section id='instructions'>
-There are two functions related to strings in the editor. Export both of them using the method of your choice.
+There are two string-related functions in the editor. Export both of them using the method of your choice.
 </section>
 
 ## Tests
