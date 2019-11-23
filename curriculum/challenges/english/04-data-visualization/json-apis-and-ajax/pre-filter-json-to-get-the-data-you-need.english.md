@@ -122,7 +122,7 @@ tests:
       const req = new XMLHttpRequest();
       req.open("GET",'/json/cats.json', true);
       req.send();
-      req.onload=function(){
+      req.onload = function(){
         let json=JSON.parse(req.responseText);
         let html = "";
         // Add your code below this line
