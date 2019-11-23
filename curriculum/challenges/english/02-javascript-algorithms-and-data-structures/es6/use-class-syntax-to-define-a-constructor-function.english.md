@@ -18,7 +18,7 @@ var SpaceShuttle = function(targetPlanet){
 var zeus = new SpaceShuttle('Jupiter');
 ```
 
-The <code>class</code> syntax simply replaces the constructor function:
+The <code>class</code> syntax simply replaces the constructor function creation:
 
 ```js
 class SpaceShuttle {
@@ -38,7 +38,7 @@ It should be noted that the <code>class</code> keyword declares a new function, 
 ## Instructions
 <section id='instructions'>
 Use the <code>class</code> keyword and write a constructor to create the <code>Vegetable</code> class.
-The <code>Vegetable</code> class allows you to create a vegetable object with a property <code>name</code>, which is passed to the constructor.
+The <code>Vegetable</code> class allows you to create a vegetable object with a property <code>name</code> that gets passed to the constructor.
 </section>
 
 ## Tests
