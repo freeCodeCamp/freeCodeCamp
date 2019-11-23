@@ -185,9 +185,9 @@ copy sample.env .env
 
 **Docker Build:** Docker build를 이용하는데 Docker 설치가 Docker Toolbox (macOS와 Windows 오랜 버전에 적용되는)를 사용하도록 지시한다면, `.env` 파일 안에 있는 `DOCKER_HOST_LOCATION` 를 `docker-machine ip` 명령어의 결과물로 변경해 주셔야 합니다. 만약 Linux처럼 Docker를 지원하는 운영체제를 사용하거나 Docker 데스크탑을 (macOS나 Windows 10의 최신 버전) 사용 중이라면 `DOCKER_HOST_LOCATION`를 이미 설정된 값으로 남겨 두셔도 됩니다.
 
-#### Step 2: Install dependencies
+#### 두번째 단계: Dependencies 설치하기
 
-This step will install the dependencies required for the application to run:
+이 단계에서는 어플리케이션을 실행시키기 위해서 필요한 dependencies를 설치합니다.
 
 **Docker Build:**
 ```shell
@@ -196,15 +196,15 @@ npm run docker:install
 npm run docker:seed
 ```
 
-Each of the Docker commands above will take some time to complete. You should wait for each command to fully complete before running the next.
+위의 각 Docker 명령어는 실행을 완료하는데 시간이 좀 필요합니다. 다음 명령어를 실행하기 전에 각 명령어가 완전히 실행 완료될 때까지 기다리셔야 합니다.
 
-You will also need to install a few npm packages outside of Docker. You can skip this step if you are only running the app locally and will not use git.
+Docker 외에도 npm packages 몇 가지를 설치하셔야 합니다. git을 사용하지 않고 local에서만 app을 실행하실 예정이라면 건너뛰셔도 됩니다.
 
 ```shell
 npm ci
 ```
 
-All of the above needs to be run only the first time you set up the local dev environment.
+위의 모든 사항은 local 개발 환경을 설정할 때 한 번만 실행하시면 됩니다.
 
 **Local Build:**
 
@@ -213,41 +213,41 @@ All of the above needs to be run only the first time you set up the local dev en
 npm ci
 ```
 
-#### Step 3: Start MongoDB and seed the database (Local build only)
+#### 세번째 단계: MongoDB 시작하기 & 데이터베이스 준비하기 (local build만)
 
-This step applies to the Local build only; if you are using the Docker build please skip to Step 4.
+이 단계는 local build시에만 해당되니 Docker build를 사용하시면 네번째 단계로 가주세요.
 
-Unless you have MongoDB running in a setup different than the default, the URL stored as the `MONGOHQ_URL` value in the `.env` file should work fine.  If you are using a custom configuration, modify this value as needed.
+MongoDB가 설치될 때 자동으로 설정된 사항과 다르지 않은 한 `.env`파일에 있는 `MONGOHQ_URL`로 저장된 URL이 잘 작동되어야 합니다. 이전에 한 번 수정한 적이 있으면, 이 단계를 실행하기 위해서 필요한 값으로 재설정해 주셔야 합니다.
 
-Before you can run the application locally, you will need to start the MongoDB service:
+어플리케이션을 로컬에서 실행하기 전에, MongoDB를 먼저 시작해 주셔야 합니다:
 
-Start the MongoDB server in a separate terminal:
+각기 다른 터미널에서 MongoDB 서버 시작하기:
 - On macOS & Ubuntu:
 
     ```sh
     mongod
     ```
 
-- On Windows, you must specify the full path to the `mongod` binary
+- 윈도우스에서는 전체 경로를 'mongod' binary로 구체적으로 설정해 주셔야 합니다.
 
     ```sh
     "C:\Program Files\MongoDB\Server\3.6\bin\mongod"
     ```
 
-    Make sure to replace `3.6` with the version you have installed
+    `3.6`을 여러분의 컴퓨터에 설치된 버전으로 변경해 주세요.
 
 > ProTip:
-> You can avoid having to start MongoDB every time by installing it as a background service.
-> You can [learn more about it in their documentation for your OS](https://docs.mongodb.com/manual/administration/install-community/)
+> 바탕화면에 MongoDB를 설치하면 매번 시작해야하는 수고로움을 피할 수 있습니다.
+> [MongoDB 사이트에서 각 운영체제를 위한 문서 읽어보기](https://docs.mongodb.com/manual/administration/install-community/)
 
-Next, let's seed the database. In this step, we run the below command that fills the MongoDB server with some initial data sets that are required by services. These include a few schemas, among other things.
+다음으로는 데이트베이스를 준비해 봅니다. 이 단계에서는 서비스에 필요한 초기 데이터로 MongDB 서버를 채울 명령어를 실행합니다. 다른 것들과 함께 몇 가지 schemas를 포함합니다.
 
 ```sh
 npm run seed
 ```
 
-#### Step 4: Start the freeCodeCamp client application and API server
-You can now start up the API server and the client applications.
+#### 네번째 단계: freeCodeCamp client application와 API server 시작하기
+이제 API server와 client applications를 시작할 수 있습니다.
 
 **Docker Build:**
 ```shell
@@ -259,17 +259,17 @@ npm run docker:develop
 npm run develop
 ```
 
-This single command will fire up all the services, including the API server and the client applications available for you to work on.
+이 명령어 한 줄은 API server와 client applications를 포함해 모든 서비스를 여러분이 사용할 수 있도록 시작합니다. 
 
-Once ready, open a web browser and visit <http://localhost:8000>. If the app loads, congratulations – you're all set!
+일단 준비되면, 웹브라우저를 열어 <http://localhost:8000>로 방문하세요. app이 실행된다면 축하드립니다 - 다 하셨습니다!
 
 > ProTip:
-> The API Server serves APIs at `http://localhost:3000`
-> The Gatsby app serves the client application at `http://localhost:8000`
+> API Server는 APIs를 `http://localhost:3000`에서 지원합니다.
+> Gatsby app은 client application를 `http://localhost:8000`에서 지원합니다.
 
-If you visit <http://localhost:3000/explorer> you should see the available APIs.
+<http://localhost:3000/explorer>방문하시면 사용 가능한 APIs를 확인하실 수 있습니다.
 
-Congratulations  🎉🎉🎉! You now have a copy of freeCodeCamp's entire learning platform running on your local machine.
+축하드려요 🎉🎉🎉! 이제 여러분의 로컬 컴퓨터에서 freeCodeCamp 전체 학습 플랫폼의 복사본을 실행하실 수 있게 되었습니다.
 
 ## How to Sign in when working locally
 Your local setup automatically populates a local user in the database. Clicking the `Sign In` button will automatically authenticate you into the local application.
