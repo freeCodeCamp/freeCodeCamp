@@ -37,7 +37,7 @@ tests:
     testString: assert($("img").length);
   - text: Your image should have a <code>src</code> attribute that points to the kitten image.
     testString: assert(/^https:\/\/bit\.ly\/fcc-relaxing-cat$/i.test($("img").attr("src")));
-  - text: Your image element's <code>alt</code> attribute <strong>must</strong> not be empty.
+  - text: Your image element's <code>alt</code> attribute should not be empty.
     testString: assert($("img").attr("alt") && $("img").attr("alt").length && /<img\S*alt=(['"])(?!\1|>)\S+\1\S*\/?>/.test(code.replace(/\s/g,'')));
 
 ```

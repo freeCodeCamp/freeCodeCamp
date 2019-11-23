@@ -30,7 +30,7 @@ tests:
     testString: assert($("h1").hasClass("blue-text"));
   - text: Your <code>h1</code> element should have the id of <code>orange-text</code>.
     testString: assert($("h1").attr("id") === "orange-text");
-  - text: Give your <code>h1</code> element an inline style.
+  - text: Your <code>h1</code> element should have an inline style.
     testString: assert(document.querySelector('h1[style]'));
   - text: Your <code>h1</code> element should be white.
     testString: assert($("h1").css("color") === "rgb(255, 255, 255)");

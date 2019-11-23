@@ -35,7 +35,7 @@ Time to take a break from Camper Cat and meet fellow camper Zersiax (@zersiax), 
 tests:
   - text: Your code should have one <code>audio</code> tag.
     testString: assert($('audio').length === 1);
-  - text: Make sure your <code>audio</code> element has a closing tag.
+  - text: Your <code>audio</code> element should have a closing tag.
     testString: assert(code.match(/<\/audio>/g).length === 1 && code.match(/<audio.*>[\s\S]*<\/audio>/g));
   - text: The <code>audio</code> tag should have the <code>controls</code> attribute.
     testString: assert($('audio').attr('controls'));
