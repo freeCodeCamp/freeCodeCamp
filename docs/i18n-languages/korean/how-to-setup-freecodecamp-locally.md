@@ -271,46 +271,46 @@ npm run develop
 
 축하드려요 🎉🎉🎉! 이제 여러분의 로컬 컴퓨터에서 freeCodeCamp 전체 학습 플랫폼의 복사본을 실행하실 수 있게 되었습니다.
 
-## How to Sign in when working locally
-Your local setup automatically populates a local user in the database. Clicking the `Sign In` button will automatically authenticate you into the local application.
+## 로컬에서 작업할 때 로그인하는 방법
+로컬 설정이 자동으로 로컬 사용자를 데이터베이스에 생성합니다. `Sign In` 버튼을 클릭하면 local application으로 접속하게 해 줄겁니다.
 
-However, accessing the user portfolio page is a little tricky. In development, Gatsby takes over serving the client-side pages and hence you will get a `404` page for the user portfolio when working locally.
+하지만 사용자 포토폴리오 페이지에 접속하는 것은 조금 다릅니다. Gatsby가 client 측 페이지를 다루기 때문에 여러분의 컴퓨터에서 사용자 포토폴리오로 접속하면 `404`페이지를 보시게 될 겁니다.
 
-Simply clicking the `Preview Custom 404 Page` button will forward you to the correct page.
+`Preview Custom 404 Page` 버튼을 클릭하면 올바른 화면으로 이동시켜 줄 겁니다.
 
 ![Image - How to sign in when working locally](https://user-images.githubusercontent.com/1884376/52650951-48922e80-2f11-11e9-9eee-360a25ad28ad.gif)
 
-## Quick commands reference when working locally
+## 내 컴퓨터에서(when working locally) 개발할 때 참조하면 좋을 명령어들
 
-A quick reference to the commands that you will need when working locally.
+내 컴퓨터 작업 환경에서 유용하게 참조할 수 있는 명령어들
 
 **Docker Build:**
 
 | command | description |
 | ------- | ----------- |
-| `npm run docker:init` | Prepare containers for installation of dependencies. |
-| `npm run docker:install` | Install / re-install all dependencies and bootstraps the different services. |
-| `npm run docker:seed` | Parse all the challenge markdown files and inserts them into MongoDB. |
-| `npm run docker:develop` | Start the freeCodeCamp API Server and Client Applications. |
-| `npm run docker:test:init` | Bootstrap the test container, necessary for testing in docker. |
-| `npm run docker:test -- -c "npm run test` | Run all JS tests in the system, including client, server, lint and challenge tests. |
-| `npm run docker:test -- -c "npm run test:curriculum` | Run the curriculum test suite. |
-| `npm run docker:test -- -c "npm run test:client` | Run the client test suite. |
-| `npm run docker:test -- -c "npm run test:server` | Run the server test suite. |
-| `npm run docker:clean` | Uninstall all dependencies and cleans up caches. |
+| `npm run docker:init` | Dependencies를 설치할 자리 준비하기 |
+| `npm run docker:install` | 모든 dependencies 설치 / 재설치하기 및 다른 서비스 부트스트랩하기(불러오기) |
+| `npm run docker:seed` | 모든 challenge markdown 파일 분석해서 MongoDB에 넣기|
+| `npm run docker:develop` | freeCodeCamp API 서버와 Client 어플리케이션 시작하기 |
+| `npm run docker:test:init` | Docker에서 테스트하는데 필요한 것들을 데려옵니다. |
+| `npm run docker:test -- -c "npm run test` | Client, 서버, lint, challenge tests를 포함한 시스템에 있는 모든 JS tests 실행하기 |
+| `npm run docker:test -- -c "npm run test:curriculum` | 커리큘럼 테스트 suite를 실행하기 |
+| `npm run docker:test -- -c "npm run test:client` | Client 테스트 suite 실행하기 |
+| `npm run docker:test -- -c "npm run test:server` | Server 테스트 suite 실행하기 |
+| `npm run docker:clean` | 모든 dependencies 삭제하고 캐쉬 정리하기 |
 
 **Local Build:**
 
 | command | description |
 | ------- | ----------- |
-| `npm ci` | Installs / re-install all dependencies and bootstraps the different services. |
-| `npm run seed` | Parses all the challenge markdown files and inserts them into MongoDB. |
-| `npm run develop` | Starts the freeCodeCamp API Server and Client Applications. |
-| `npm test` |  Run all JS tests in the system, including client, server, lint and challenge tests. |
-| `npm run test:client` | Run the client test suite. |
-| `npm run test:curriculum` | Run the curriculum test suite. |
-| `npm run test:server` | Run the server test suite. |
-| `npm run clean` | Uninstalls all dependencies and cleans up caches. |
+| `npm ci` | 모든 dependencies 설치 / 재설치하기 및 다른 서비스 부트스트랩하기(불러오기) |
+| `npm run seed` | 모든 challenge markdown 파일 분석해서 MongoDB에 넣기 |
+| `npm run develop` | freeCodeCamp API 서버와 Client 어플리케이션 시작하기 |
+| `npm test` | Client, 서버, lint, challenge tests를 포함한 시스템에 있는 모든 JS tests 실행하기 |
+| `npm run test:client` | Client 테스트 suite 실행하기  |
+| `npm run test:curriculum` | 커리큘럼 테스트 suite를 실행하기 |
+| `npm run test:server` | Server 테스트 suite 실행하기 |
+| `npm run clean` | 모든 dependencies 삭제하고 캐쉬 정리하기 |
 
 ## Making changes to your clone of freeCodeCamp locally
 You can now make changes to files and commit your changes to your local clone of your fork.
