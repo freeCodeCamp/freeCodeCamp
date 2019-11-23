@@ -115,7 +115,7 @@ tests:
 <script>
   document.addEventListener('DOMContentLoaded', function(){
     document.getElementById('getMessage').onclick = function(){
-      const req=new XMLHttpRequest();
+      const req = new XMLHttpRequest();
       req.open("GET",'/json/cats.json', true);
       req.send();
       req.onload=function(){
