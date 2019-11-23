@@ -42,7 +42,7 @@ Getters and setters are important because they hide internal implementation deta
 Use the <code>class</code> keyword to create a Thermostat class. The constructor accepts a Fahrenheit temperature.
 Now create a <code>getter</code> and a <code>setter</code> in the class, to obtain the temperature in Celsius.
 Remember that <code>C = 5/9 * (F - 32)</code> and <code>F = C * 9.0 / 5 + 32</code>, where <code>F</code> is the value of temperature in Fahrenheit, and <code>C</code> is the value of the same temperature in Celsius.
-<strong>Note:</strong><br>When you implement this, you will track the temperature inside the class in one scale, either Fahrenheit or Celsius.
+<strong>Note:</strong> When you implement this, you will track the temperature inside the class in one scale, either Fahrenheit or Celsius.
 This is the power of a getter and a setter. You are creating an API for another user, who can get the correct result regardless of which one you track.
 In other words, you are abstracting implementation details from the user.
 </section>
