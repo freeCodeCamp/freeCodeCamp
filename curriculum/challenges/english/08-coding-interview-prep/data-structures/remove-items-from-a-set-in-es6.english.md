@@ -7,9 +7,9 @@ forumTopicId: 301713
 
 ## Description
 <section id='description'>
-Let's practice removimg items from an ES6 Set using the <code>delete</code> method.
+Let's practice removing items from an ES6 Set using the <code>delete</code> method.
 First, create an ES6 Set
-<code>var set = new Set([1,2,3]);</code>
+<code>const set = new Set([1,2,3]);</code>
 Now remove an item from your Set with the <code>delete</code> method.
 
 ```js
@@ -43,11 +43,14 @@ tests:
 
 ```js
 function checkSet(){
-   var set = //Create a set with values 1, 2, 3, 4, & 5
-   //Remove the value 2
-   //Remove the value 5
-   //Return the set
-   return set;
+  // change code below this line
+
+  const set = // Create a set with values 1, 2, 3, 4, & 5
+  // Remove the value 2
+  // Remove the value 5
+
+  // change code above this line
+  return set;
 }
 ```
 
@@ -59,10 +62,11 @@ function checkSet(){
 
 ```js
 function checkSet(){
-var set = new Set([1,2,3,4,5]);
-set.delete(2);
-set.delete(5);
-return set;}
+  const set = new Set([1,2,3,4,5]);
+  set.delete(2);
+  set.delete(5);
+  return set;
+}
 ```
 
 </section>
