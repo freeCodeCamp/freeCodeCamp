@@ -71,27 +71,23 @@ tests:
 
 ```js
 class Set {
-    constructor() {
-    // collection will hold our set
+  constructor() {
     this.collection = [];
-    }
-    // this method will check for the presence of an element and return true or false
-    has(element) {
-        return this.collection.indexOf(element) !== -1;
-    }
-    // this method will return all the values in the set
-    values() {
-        return this.collection;
-    }
-    // change code below this line
+  }
 
-    // write your add method here
+  has(element) {
+    return this.collection.indexOf(element) !== -1;
+  }
 
-    // write your remove method here
+  values() {
+    return this.collection;
+  }
+  // Add add method here
 
-    // write your size method here
+  // Add remove method here
 
-    // change code above this line
+  // Add size method here
+
 }
 ```
 
@@ -107,28 +103,32 @@ class Set {
   constructor() {
     this.collection = [];
   }
+
   has(element) {
     return this.collection.indexOf(element) !== -1;
   }
+
   values() {
     return this.collection;
   }
+
   add(element) {
     if (!this.has(element)) {
       this.collection.push(element);
       return true;
-    } else {
-      return false;
     }
+    return false;
   }
+
   remove(element) {
     if (this.has(element)) {
-      let i = this.collection.indexOf(element);
-      this.collection.splice(i, 1);
+      const index = this.collection.indexOf(element);
+      this.collection.splice(index, 1);
       return true;
     }
     return false;
   }
+
   size() {
     return this.collection.length;
   }
