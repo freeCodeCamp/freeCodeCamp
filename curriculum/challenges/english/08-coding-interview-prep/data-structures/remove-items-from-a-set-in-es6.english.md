@@ -14,7 +14,7 @@ Now remove an item from your Set with the <code>delete</code> method.
 
 ```js
 set.delete(1);
-console.log([...set]) // should return [ 2, 3 ]
+console.log([...set]) // output: [ 2, 3 ]
 ```
 
 </section>

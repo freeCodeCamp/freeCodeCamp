@@ -8,7 +8,7 @@ forumTopicId: 301716
 ## Description
 <section id='description'>
 Arrays are JavaScript objects that can hold a lot of different elements.
-<code>var complexArr = [1, 5, "2", "Word", {"name": "James"}];</code>
+<code>const complexArr = [1, 5, "2", "Word", {"name": "James"}];</code>
 Basically what happens in the background is that your browser will automatically give the right amount of memory space for that array. It will also change as needed if you add or remove data.
 However, in the world of high performance and different element types, sometimes you need to be more specific on how much memory is given to an array.
 <dfn>Typed arrays</dfn> are the answer to this problem. You are now able to say how much memory you want to give an array. Below is a basic overview of the different types of arrays available and the size in bytes for each element in that array.
@@ -16,7 +16,7 @@ However, in the world of high performance and different element types, sometimes
 There are two ways in creating these kind of arrays. One way is to create it directly. Below is how to create a 3 length <code>Int16Array</code>.
 
 ```js
-var i8 = new Int16Array(3);
+const i8 = new Int16Array(3);
 console.log(i8);
 // Returns [0, 0, 0]
 ```
@@ -26,9 +26,9 @@ You can also create a <dfn>buffer</dfn> to assign how much data (in bytes) you w
 
 ```js
 // Create same Int16Array array differently
-var byteSize = 6; // Needs to be multiple of 2
-var buffer = new ArrayBuffer(byteSize);
-var i8View = new Int16Array(buffer);
+const byteSize = 6; // Needs to be multiple of 2
+const buffer = new ArrayBuffer(byteSize);
+const i8View = new Int16Array(buffer);
 buffer.byteLength; // Returns 6
 i8View.byteLength; // Returns 6
 console.log(i8View); // Returns [0, 0, 0]
@@ -71,8 +71,8 @@ tests:
 <div id='js-seed'>
 
 ```js
-var buffer;
-var i32View;
+const buffer =
+const i32View =
 ```
 
 </div>
@@ -83,8 +83,8 @@ var i32View;
 <section id='solution'>
 
 ```js
-var buffer = new ArrayBuffer(64);
-var i32View = new Int32Array(buffer);
+const buffer = new ArrayBuffer(64);
+const i32View = new Int32Array(buffer);
 ```
 
 </section>

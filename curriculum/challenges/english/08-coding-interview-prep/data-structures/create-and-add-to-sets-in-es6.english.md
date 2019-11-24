@@ -7,24 +7,24 @@ forumTopicId: 301636
 
 ## Description
 <section id='description'>
-Now that you have worked through ES5, you are going to perform something similar in ES6. This will be considerably easier. ES6 contains a built-in data structure <code>Set</code> so many of the operations you wrote by hand are now included for you. Let's take a look:
+Now that you have created your own <code>Set</code>, you are going to perform something similar in ES6. This will be considerably easier. ES6 contains a built-in data structure <code>Set</code> so many of the operations you wrote by hand are now included for you. Let's take a look:
 To create a new empty set:
-<code>var set = new Set();</code>
+<code>const set = new Set();</code>
 You can create a set with a value:
-<code>var set = new Set(1);</code>
+<code>const set = new Set(1);</code>
 You can create a set with an array:
-<code>var set = new Set([1, 2, 3]);</code>
+<code>const set = new Set([1, 2, 3]);</code>
 Once you have created a set, you can add the values you wish using the <code>add</code> method:
 
 ```js
-var set = new Set([1, 2, 3]);
+const set = new Set([1, 2, 3]);
 set.add([4, 5, 6]);
 ```
 
 As a reminder, a set is a data structure that cannot contain duplicate values:
 
 ```js
-var set = new Set([1, 2, 3, 1, 2, 3]);
+const set = new Set([1, 2, 3, 1, 2, 3]);
 // set contains [1, 2, 3] only
 ```
 
