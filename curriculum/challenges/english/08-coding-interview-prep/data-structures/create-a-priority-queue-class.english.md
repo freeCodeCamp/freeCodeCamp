@@ -50,14 +50,24 @@ tests:
 <div id='js-seed'>
 
 ```js
-function PriorityQueue () {
+class PriorityQueue {
+  constructor() {
     this.collection = [];
-    this.printCollection = function() {
-      console.log(this.collection);
-    };
-    // Only change code below this line
+  }
 
-    // Only change code above this line
+  print() {
+    console.log(this.collection);
+  }
+  // Add enqueue method here
+
+  // Add dequeue method here
+
+  // Add front method here
+
+  // Add size method here
+
+  // Add isEmpty method here
+
 }
 ```
 
@@ -72,41 +82,45 @@ function PriorityQueue () {
 
 
 ```js
-function PriorityQueue () {
- this.collection = [];
- this.printCollection = function(){
- console.log(this.collection);
- };
- this.size = function() {
- return this.collection.length;
- };
- this.isEmpty = function() {
- return this.size() > 0 ? false : true;
- };
- this.enqueue = function (newitem) {
-  if (this.isEmpty()) {
-    return this.collection.push(newitem);
+class PriorityQueue {
+  constructor() {
+    this.collection = [];
   }
 
-  this.collection = this.collection.reverse();
-  var found_index = this.collection.findIndex(function (item) {
-    return newitem[1] >= item[1];
-  });
-  if (found_index === -1) {
-    this.collection.push(newitem);
-  } else {
-    this.collection.splice(found_index, 0, newitem);
+  print() {
+    console.log(this.collection);
   }
-  this.collection = this.collection.reverse();
-};
- this.dequeue = function() {
- if (!this.isEmpty()) {
- return this.collection.shift()[0];
- } else {
- return 'The queue is empty.'
- }
- };
- }
+
+  enqueue (newitem) {
+    const index = this.collection.findIndex(function (item) {
+      return newitem[1] < item[1];
+    });
+
+    if (index === -1) {
+      this.collection.push(newitem);
+    } else {
+      this.collection.splice(index, 0, newitem);
+    }
+  }
+
+  dequeue() {
+    if (!this.isEmpty()) {
+      return this.collection.shift()[0];
+    }
+  }
+
+  front() {
+    return this.collection[0];
+  }
+
+  size() {
+    return this.collection.length;
+  }
+
+  isEmpty() {
+    return this.size() === 0;
+  }
+}
 ```
 
 </section>
