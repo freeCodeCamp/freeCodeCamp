@@ -53,14 +53,24 @@ tests:
 <div id='js-seed'>
 
 ```js
-function Stack() {
-  var collection = [];
-  this.print = function() {
-    console.log(collection);
-  };
-  // Only change code below this line
+class Stack {
+  constructor() {
+    this.collection = [];
+  }
 
-  // Only change code above this line
+  print() {
+    console.log(this.collection);
+  }
+  // Add push method here
+
+  // Add pop method here
+
+  // Add peek method here
+
+  // Add isEmpty method here
+
+  // Add clear method here
+
 }
 ```
 
@@ -75,21 +85,27 @@ class Stack {
   constructor() {
     this.collection = [];
   }
+
   print() {
     console.log(this.collection);
   }
+
   push(val) {
     this.collection.push(val);
   }
+
   pop() {
     return this.collection.pop();
   }
+
   peek() {
     return this.collection[this.collection.length - 1];
   }
+
   isEmpty() {
     return this.collection.length === 0;
   }
+
   clear() {
     return (this.collection.length = 0);
   }
