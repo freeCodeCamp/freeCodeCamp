@@ -7,7 +7,7 @@ forumTopicId: 301212
 
 ## Description
 <section id='description'>
-ES6 provides new syntax to create objects, using the keyword <dfn>class</dfn>.
+ES6 provides new syntax to create objects, using the <dfn>class</dfn> keyword.
 It should be noted that the <code>class</code> syntax is just syntax, and not a full-fledged class-based implementation of an object-oriented paradigm, unlike in languages such as Java, Python, Ruby, etc.
 In ES5, we usually define a constructor function and use the <code>new</code> keyword to instantiate an object.
 
