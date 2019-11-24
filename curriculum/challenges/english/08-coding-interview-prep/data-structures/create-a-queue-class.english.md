@@ -51,14 +51,24 @@ tests:
 <div id='js-seed'>
 
 ```js
-function Queue() {
-  var collection = [];
-  this.print = function() {
-    console.log(collection);
-  };
-  // Only change code below this line
+class Queue {
+  constructor() {
+    this.collection = [];
+  }
 
-  // Only change code above this line
+  print() {
+    console.log(this.collection);
+  }
+  // Add enqueue method here
+
+  // Add dequeue method here
+
+  // Add front method here
+
+  // Add size method here
+
+  // Add isEmpty method here
+
 }
 ```
 
@@ -69,32 +79,34 @@ function Queue() {
 <section id='solution'>
 
 ```js
-function Queue () { 
-    var collection = [];
-    this.print = function() {
-        console.log(collection);
-    };
-    // Only change code below this line
-    this.enqueue = function(item) {
-        collection.push(item);
-    }
+class Queue {
+  constructor() {
+    this.collection = [];
+  }
 
-    this.dequeue = function() {
-        return collection.shift();
-    }
+  print() {
+    console.log(this.collection);
+  }
 
-    this.front = function() {
-        return collection[0];
-    }
+  enqueue(item) {
+    this.collection.push(item);
+  }
 
-    this.size = function(){
-        return collection.length;
-    }
+  dequeue() {
+    return this.collection.shift();
+  }
 
-    this.isEmpty = function() {
-        return collection.length === 0 ? true : false;
-    }
-    // Only change code above this line
+  front() {
+    return this.collection[0];
+  }
+
+  size() {
+      return this.collection.length;
+  }
+
+  isEmpty() {
+    return this.collection.length === 0;
+  }
 }
 ```
 
