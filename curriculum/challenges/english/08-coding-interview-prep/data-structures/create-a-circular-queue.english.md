@@ -79,34 +79,20 @@ tests:
 
 ```js
 class CircularQueue {
-   constructor(size) {
+  constructor(size) {
+    this.collection = Array(size).fill(null);
+    this.read = 0;
+    this.write = 0;
+    this.size = size;
+  }
 
-     this.queue = [];
-     this.read = 0;
-     this.write = 0;
-     this.max = size - 1;
+  print() {
+    return this.collection;
+  }
+  // Add enqueue method here
 
-     while (size > 0) {
-        this.queue.push(null);
-        size--;
-     }
-   }
+  // Add dequeue method here
 
-   print() {
-     return this.queue;
-   }
-
-   enqueue(item) {
-    // Only change code below this line
-
-    // Only change code above this line
-   }
-
-   dequeue() {
-    // Only change code below this line
-
-    // Only change code above this line
-   }
 }
 ```
 
@@ -120,48 +106,43 @@ class CircularQueue {
 ```js
 class CircularQueue {
   constructor(size) {
-    this.queue = [];
+    this.collection = Array(size).fill(null);
     this.read = 0;
     this.write = 0;
-    this.max = size - 1;
-
-    while (size > 0) {
-      this.queue.push(null);
-      size--;
-    }
+    this.size = size;
   }
 
   print() {
-    return this.queue;
+    return this.collection;
   }
 
   enqueue(item) {
-    // Only change code below this line
-    console.log(this.write, this.max);
-    if (this.queue[this.write] === null) {
-      this.queue[this.write++] = item;
-
-      if (this.write > this.max) {
-        this.write = 0;
-      }
-      return item;
+    if (this.collection[this.write] !== null) {
+      return null;
     }
-    return null;
-    // Only change code above this line
+
+    this.collection[this.write] = item;
+    this.write++
+
+    if (this.write >= this.size) {
+      this.write = 0;
+    }
+    return item;
   }
 
   dequeue() {
-    // Only change code below this line
-    if (this.queue[this.read] !== null) {
-      let item = this.queue[this.read];
-      this.queue[this.read++] = null;
-      if (this.read > this.max) {
-        this.read = 0;
-      }
-      return item;
+    if (this.collection[this.read] === null) {
+      return null;
     }
-    return null;
-    // Only change code above this line
+
+    const item = this.collection[this.read];
+    this.collection[this.read] = null;
+    this.read++
+
+    if (this.read >= this.size) {
+      this.read = 0;
+    }
+    return item;
   }
 }
 ```
