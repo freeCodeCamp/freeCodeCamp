@@ -34,41 +34,41 @@ tests:
 <div id='js-seed'>
 
 ```js
-function Set() {
-    // the var collection will hold the set
-    var collection = [];
-    // this method will check for the presence of an element and return true or false
-    this.has = function(element) {
-        return (collection.indexOf(element) !== -1);
-    };
-    // this method will return all the values in the set
-    this.values = function() {
-        return collection;
-    };
-    // this method will add an element to the set
-    this.add = function(element) {
-        if(!this.has(element)){
-            collection.push(element);
-            return true;
-        }
-        return false;
-    };
-   // this method will remove an element from a set
-    this.remove = function(element) {
-        if(this.has(element)){
-           var index = collection.indexOf(element);
-            collection.splice(index,1);
-            return true;
-        }
-        return false;
-    };
-    // this method will return the size of the set
-    this.size = function() {
-        return collection.length;
-    };
-    // change code below this line
+class Set {
+  constructor() {
+    this.collection = [];
+  }
 
-    // change code above this line
+  has(element) {
+    return this.collection.indexOf(element) !== -1;
+  }
+
+  values() {
+    return this.collection;
+  }
+
+  add(element) {
+    if (!this.has(element)) {
+      this.collection.push(element);
+      return true;
+    }
+    return false;
+  }
+
+  remove(element) {
+    if (this.has(element)) {
+      const index = this.collection.indexOf(element);
+      this.collection.splice(index, 1);
+      return true;
+    }
+    return false;
+  }
+
+  size() {
+    return this.collection.length;
+  }
+  // Add union method here
+
 }
 ```
 
@@ -79,45 +79,47 @@ function Set() {
 <section id='solution'>
 
 ```js
-function Set() {
-    var collection = [];
+class Set {
+  constructor() {
+    this.collection = [];
+  }
 
-    this.has = function(element) {
-        return (collection.indexOf(element) !== -1);
-    };
+  has(element) {
+    return this.collection.indexOf(element) !== -1;
+  }
 
-    this.values = function() {
-        return collection;
-    };
+  values() {
+    return this.collection;
+  }
 
-    this.add = function(element) {
-        if(!this.has(element)){
-            collection.push(element);
-            return true;
-        }
-        return false;
-    };
+  add(element) {
+    if (!this.has(element)) {
+      this.collection.push(element);
+      return true;
+    }
+    return false;
+  }
 
-    this.remove = function(element) {
-        if(this.has(element)){
-           var index = collection.indexOf(element);
-            collection.splice(index,1);
-            return true;
-        }
-        return false;
-    };
+  remove(element) {
+    if (this.has(element)) {
+      const index = this.collection.indexOf(element);
+      this.collection.splice(index, 1);
+      return true;
+    }
+    return false;
+  }
 
-    this.size = function() {
-        return collection.length;
-    };
+  size() {
+    return this.collection.length;
+  }
 
-    this.union = function(anotherSet){
-        const newSet = new Set();
-        const addToSet = el => newSet.add(el);
-        this.values().forEach(addToSet);
-        anotherSet.values().forEach(addToSet);
-        return newSet;
-    };
+  union(anotherSet){
+    const newSet = new Set();
+    const addToSet = (el) => newSet.add(el);
+    this.values().forEach(addToSet);
+    anotherSet.values().forEach(addToSet);
+    return newSet;
+  }
 }
 ```
 
