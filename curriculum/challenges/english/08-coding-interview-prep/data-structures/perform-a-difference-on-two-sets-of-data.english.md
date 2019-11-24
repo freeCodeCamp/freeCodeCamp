@@ -36,64 +36,60 @@ tests:
 <div id='js-seed'>
 
 ```js
-function Set() {
-    // the var collection will hold the set
-    var collection = [];
-    // this method will check for the presence of an element and return true or false
-    this.has = function(element) {
-        return (collection.indexOf(element) !== -1);
-    };
-    // this method will return all the values in the set
-    this.values = function() {
-        return collection;
-    };
-    // this method will add an element to the set
-    this.add = function(element) {
-        if(!this.has(element)){
-            collection.push(element);
-            return true;
-        }
-        return false;
-    };
-    // this method will remove an element from a set
-    this.remove = function(element) {
-        if(this.has(element)){
-           var index = collection.indexOf(element);
-            collection.splice(index,1);
-            return true;
-        }
-        return false;
-    };
-    // this method will return the size of the collection
-    this.size = function() {
-        return collection.length;
-    };
-    // this method will return the union of two sets
-    this.union = function(otherSet) {
-        var unionSet = new Set();
-        var firstSet = this.values();
-        var secondSet = otherSet.values();
-        firstSet.forEach(function(e){
-            unionSet.add(e);
-        });
-        secondSet.forEach(function(e){
-            unionSet.add(e);
-        });
-        return unionSet;
-    };
-    // this method will return the intersection of two sets as a new set
-    this.intersection = function(otherSet) {
-        var intersectionSet = new Set();
-        var firstSet = this.values();
-        firstSet.forEach(function(e){
-            if(otherSet.has(e)){
-                intersectionSet.add(e);
-            }
-        });
-        return intersectionSet;
-    };
-    // change code below this line
-    // change code above this line
+class Set {
+  constructor() {
+    this.collection = [];
+  }
+
+  has(element) {
+    return this.collection.indexOf(element) !== -1;
+  }
+
+  values() {
+    return this.collection;
+  }
+
+  add(element) {
+    if (!this.has(element)) {
+      this.collection.push(element);
+      return true;
+    }
+    return false;
+  }
+
+  remove(element) {
+    if (this.has(element)) {
+      const index = this.collection.indexOf(element);
+      this.collection.splice(index, 1);
+      return true;
+    }
+    return false;
+  }
+
+  size() {
+    return this.collection.length;
+  }
+
+  union(anotherSet){
+    const newSet = new Set();
+    const addToSet = (el) => newSet.add(el);
+    this.values().forEach(addToSet);
+    anotherSet.values().forEach(addToSet);
+    return newSet;
+  }
+
+  intersection(otherSet) {
+    const intersectionSet = new Set();
+    const firstSet = this.values();
+    firstSet.forEach(function(e) {
+      if (otherSet.has(e)) {
+        intersectionSet.add(e);
+      }
+    })
+    return intersectionSet;
+  }
+  // Add difference method here
+
 }
 ```
 
@@ -104,72 +100,69 @@ function Set() {
 <section id='solution'>
 
 ```js
-function Set() {
-    // the var collection will hold the set
-    var collection = [];
-    // this method will check for the presence of an element and return true or false
-    this.has = function(element) {
-        return (collection.indexOf(element) !== -1);
-    };
-    // this method will return all the values in the set
-    this.values = function() {
-        return collection;
-    };
-    // this method will add an element to the set
-    this.add = function(element) {
-        if(!this.has(element)){
-            collection.push(element);
-            return true;
-        }
-        return false;
-    };
-    // this method will remove an element from a set
-    this.remove = function(element) {
-        if(this.has(element)){
-           var index = collection.indexOf(element);
-            collection.splice(index,1);
-            return true;
-        }
-        return false;
-    };
-    // this method will return the size of the collection
-    this.size = function() {
-        return collection.length;
-    };
-    // this method will return the union of two sets
-    this.union = function(otherSet) {
-        var unionSet = new Set();
-        var firstSet = this.values();
-        var secondSet = otherSet.values();
-        firstSet.forEach(function(e){
-            unionSet.add(e);
-        });
-        secondSet.forEach(function(e){
-            unionSet.add(e);
-        });
-        return unionSet;
-    };
-    // this method will return the intersection of two sets as a new set
-    this.intersection = function(otherSet) {
-        var intersectionSet = new Set();
-        var firstSet = this.values();
-        firstSet.forEach(function(e){
-            if(otherSet.has(e)){
-                intersectionSet.add(e);
-            }
-        });
-        return intersectionSet;
-    };
-    this.difference = function(otherSet) {
-        var differenceSet = new Set();
-        var firstSet = this.values();
-        firstSet.forEach(function(e) {
-            if (!otherSet.has(e)) {
-                differenceSet.add(e);
-            }
-        });
-        return differenceSet;
+class Set {
+  constructor() {
+    this.collection = [];
+  }
+
+  has(element) {
+    return this.collection.indexOf(element) !== -1;
+  }
+
+  values() {
+    return this.collection;
+  }
+
+  add(element) {
+    if (!this.has(element)) {
+      this.collection.push(element);
+      return true;
     }
+    return false;
+  }
+
+  remove(element) {
+    if (this.has(element)) {
+      const index = this.collection.indexOf(element);
+      this.collection.splice(index, 1);
+      return true;
+    }
+    return false;
+  }
+
+  size() {
+    return this.collection.length;
+  }
+
+  union(anotherSet){
+    const newSet = new Set();
+    const addToSet = (el) => newSet.add(el);
+    this.values().forEach(addToSet);
+    anotherSet.values().forEach(addToSet);
+    return newSet;
+  }
+
+  intersection(otherSet) {
+    const intersectionSet = new Set();
+    const firstSet = this.values();
+    firstSet.forEach(function(e) {
+      if (otherSet.has(e)) {
+        intersectionSet.add(e);
+      }
+    })
+    return intersectionSet;
+  }
+
+  difference(otherSet) {
+    const differenceSet = new Set();
+    const firstSet = this.values();
+    firstSet.forEach(function(e) {
+      if (!otherSet.has(e)) {
+        differenceSet.add(e);
+      }
+    });
+    return differenceSet;
+  }
 }
 ```
 
