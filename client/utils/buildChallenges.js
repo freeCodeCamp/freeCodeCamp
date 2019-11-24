@@ -24,9 +24,11 @@ exports.buildChallenges = async function buildChallenges() {
   const curriculum = await getChallengesForLang(locale);
   const superBlocks = Object.keys(curriculum);
   const blocks = superBlocks
-    .map(superBlock => curriculum[superBlock].blocks)
+    .map(superBlock => curriculum[`${superBlock}`].blocks)
     .reduce((blocks, superBlock) => {
-      const currentBlocks = Object.keys(superBlock).map(key => superBlock[key]);
+      const currentBlocks = Object.keys(superBlock).map(
+        key => superBlock[`${key}`]
+      );
       return blocks.concat(_.flatten(currentBlocks));
     }, []);
 

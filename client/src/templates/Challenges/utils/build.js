@@ -78,7 +78,7 @@ export function canBuildChallenge(challengeData) {
 
 export async function buildChallenge(challengeData) {
   const { challengeType } = challengeData;
-  let build = buildFunctions[challengeType];
+  let build = buildFunctions[`${challengeType}`];
   if (build) {
     return build(challengeData);
   }
@@ -92,7 +92,7 @@ const testRunners = {
 };
 export function getTestRunner(buildData, { proxyLogger }, document) {
   const { challengeType } = buildData;
-  const testRunner = testRunners[challengeType];
+  const testRunner = testRunners[`${challengeType}`];
   if (testRunner) {
     return testRunner(buildData, proxyLogger, document);
   }
@@ -121,11 +121,13 @@ async function getDOMTestRunner(buildData, proxyLogger, document) {
 
 export function buildDOMChallenge({ files, required = [], template = '' }) {
   const finalRequires = [...globalRequires, ...required, ...frameRunner];
-  const loadEnzyme = Object.keys(files).some(key => files[key].ext === 'jsx');
+  const loadEnzyme = Object.keys(files).some(
+    key => files[`${key}`].ext === 'jsx'
+  );
   const toHtml = [jsToHtml, cssToHtml];
   const pipeLine = composeFunctions(...transformers, ...toHtml);
   const finalFiles = Object.keys(files)
-    .map(key => files[key])
+    .map(key => files[`${key}`])
     .map(pipeLine);
   return Promise.all(finalFiles)
     .then(checkFilesErrors)
@@ -140,7 +142,7 @@ export function buildDOMChallenge({ files, required = [], template = '' }) {
 export function buildJSChallenge({ files }) {
   const pipeLine = composeFunctions(...transformers);
   const finalFiles = Object.keys(files)
-    .map(key => files[key])
+    .map(key => files[`${key}`])
     .map(pipeLine);
   return Promise.all(finalFiles)
     .then(checkFilesErrors)

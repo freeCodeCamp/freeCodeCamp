@@ -39,7 +39,7 @@ async function buildCurriculum(file, curriculum) {
   if (depth === 1 && stat.isDirectory()) {
     // extract the superBlock info
     const { order, name: superBlock } = superBlockInfo(name);
-    curriculum[superBlock] = { superBlock, order, blocks: {} };
+    curriculum[`${superBlock}`] = { superBlock, order, blocks: {} };
     return;
   }
   if (depth === 2 && stat.isDirectory()) {
@@ -51,7 +51,7 @@ async function buildCurriculum(file, curriculum) {
     const blockMeta = require(metaPath);
     const { name: superBlock } = superBlockInfoFromPath(filePath);
     const blockInfo = { meta: blockMeta, challenges: [] };
-    curriculum[superBlock].blocks[name] = blockInfo;
+    curriculum[`${superBlock}`].blocks[`${name}`] = blockInfo;
     return;
   }
   if (name === 'meta.json' || name === '.DS_Store') {
@@ -62,7 +62,7 @@ async function buildCurriculum(file, curriculum) {
   const { name: superBlock } = superBlockInfoFromPath(filePath);
   let challengeBlock;
   try {
-    challengeBlock = curriculum[superBlock].blocks[block];
+    challengeBlock = curriculum[`${superBlock}`].blocks[`${block}`];
   } catch (e) {
     console.log(superBlock, block);
     // eslint-disable-next-line no-process-exit

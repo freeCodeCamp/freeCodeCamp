@@ -6,12 +6,12 @@ function getCompletedCertCount(user) {
     'isInfosecQaCert',
     'isJsAlgoDataStructCert',
     'isRespWebDesignCert'
-  ].reduce((sum, key) => (user[key] ? sum + 1 : sum), 0);
+  ].reduce((sum, key) => (user[`${key}`] ? sum + 1 : sum), 0);
 }
 
 function getLegacyCertCount(user) {
   return ['isFrontEndCert', 'isBackEndCert', 'isDataVisCert'].reduce(
-    (sum, key) => (user[key] ? sum + 1 : sum),
+    (sum, key) => (user[`${key}`] ? sum + 1 : sum),
     0
   );
 }

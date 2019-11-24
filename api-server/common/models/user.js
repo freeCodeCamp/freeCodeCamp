@@ -61,7 +61,7 @@ function ensureLowerCaseString(maybeString) {
 
 function buildCompletedChallengesUpdate(completedChallenges, project) {
   const key = Object.keys(project)[0];
-  const solutions = project[key];
+  const solutions = project[`${key}`];
   const solutionKeys = Object.keys(solutions);
   const currentCompletedChallenges = [
     ...completedChallenges.map(fixCompletedChallengeItem)
@@ -74,9 +74,9 @@ function buildCompletedChallengesUpdate(completedChallenges, project) {
     const indexOfCurrentId = _.findIndex(update, ({ id }) => id === currentId);
     const isCurrentlyCompleted = indexOfCurrentId !== -1;
     if (isCurrentlyCompleted) {
-      update[indexOfCurrentId] = {
+      update[`${indexOfCurrentId}`] = {
         ..._.find(update, ({ id }) => id === currentId),
-        solution: solutions[currentId]
+        solution: solutions[`${currentId}`]
       };
     }
     if (!isCurrentlyCompleted) {
@@ -84,7 +84,7 @@ function buildCompletedChallengesUpdate(completedChallenges, project) {
         ...update,
         {
           id: currentId,
-          solution: solutions[currentId],
+          solution: solutions[`${currentId}`],
           challengeType: 3,
           completedDate: now
         }
@@ -601,7 +601,7 @@ export default function(User) {
     const flagsToCheck = Object.keys(values);
     const valuesToCheck = _.pick({ ...this }, flagsToCheck);
     const flagsToUpdate = flagsToCheck.filter(
-      flag => !isTheSame(values[flag], valuesToCheck[flag])
+      flag => !isTheSame(values[`${flag}`], valuesToCheck[`${flag}`])
     );
     if (!flagsToUpdate.length) {
       return Observable.of(
@@ -613,7 +613,7 @@ export default function(User) {
       ).map(() => dedent`Your settings have not been updated.`);
     }
     const userUpdateData = flagsToUpdate.reduce((data, currentFlag) => {
-      data[currentFlag] = values[currentFlag];
+      data[`${currentFlag}`] = values[`${currentFlag}`];
       return data;
     }, {});
     log(userUpdateData);
@@ -650,7 +650,7 @@ export default function(User) {
       updatedPortfolio = currentPortfolio.concat([portfolioItem]);
     } else {
       updatedPortfolio = [...currentPortfolio];
-      updatedPortfolio[pIndex] = { ...portfolioItem };
+      updatedPortfolio[`${pIndex}`] = { ...portfolioItem };
     }
     const userUpdate = new Promise((resolve, reject) =>
       this.updateAttribute('portfolio', updatedPortfolio, err => {

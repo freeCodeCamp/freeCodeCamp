@@ -6,7 +6,7 @@ import { navigate as gatsbyNavigate } from 'gatsby';
 import { Button } from '@freecodecamp/react-bootstrap';
 
 import { hardGoTo as navigate, isSignedInSelector } from '../../../redux';
-import { apiLocation } from '../../../../config/env.json';
+import { apiLocation } from '../../../../../config/env';
 
 import { gtagReportConversion } from '../../../analytics/gtag';
 

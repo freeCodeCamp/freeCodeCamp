@@ -22,27 +22,27 @@ export default function donateBoot(app, done) {
   ).reduce(
     (prevDuration, duration) =>
       prevDuration.concat(
-        donationSubscriptionConfig.plans[duration].reduce(
+        donationSubscriptionConfig.plans[`${duration}`].reduce(
           (prevAmount, amount) =>
             prevAmount.concat({
               amount: amount,
               interval: duration,
               product: {
                 name: `${
-                  donationSubscriptionConfig.duration[duration]
+                  donationSubscriptionConfig.duration[`${duration}`]
                 } Donation to freeCodeCamp.org - Thank you ($${amount / 100})`,
                 metadata: {
                   /* eslint-disable camelcase */
                   sb_service: `freeCodeCamp.org`,
                   sb_tier: `${
-                    donationSubscriptionConfig.duration[duration]
+                    donationSubscriptionConfig.duration[`${duration}`]
                   } $${amount / 100} Donation`
                   /* eslint-enable camelcase */
                 }
               },
               currency: 'usd',
               id: `${donationSubscriptionConfig.duration[
-                duration
+                `${duration}`
               ].toLowerCase()}-donation-${amount}`
             }),
           []
@@ -57,7 +57,7 @@ export default function donateBoot(app, done) {
       durationKeysConfig.includes(duration) &&
       duration === 'onetime'
       ? donationOneTimeConfig.includes(amount)
-      : donationSubscriptionConfig.plans[duration];
+      : donationSubscriptionConfig.plans[`${duration}`];
   }
 
   function connectToStripe() {
@@ -93,7 +93,7 @@ export default function donateBoot(app, done) {
       if (err) {
         log(err);
       }
-      log(`Created plan with plan id: ${plan.id}`);
+      log(`Created plan with plan id: ${plan.id} `);
       return;
     });
   }
@@ -143,8 +143,8 @@ export default function donateBoot(app, done) {
         items: [
           {
             plan: `${donationSubscriptionConfig.duration[
-              duration
-            ].toLowerCase()}-donation-${amount}`
+              `${duration}`
+            ].toLowerCase()} -donation - ${amount} `
           }
         ]
       });

@@ -92,7 +92,7 @@ self.onmessage = async e => {
     }
     /* eslint-enable no-eval */
     if (typeof testResult === 'function') {
-      await testResult(fileName => __toString(e.data.sources[fileName]));
+      await testResult(fileName => __toString(e.data.sources[`${fileName}`]));
     }
     __utils.postResult({
       pass: true

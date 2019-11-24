@@ -12,12 +12,12 @@ function* parseMessagesSaga() {
       const flash = Object.keys(flashMap).reduce(
         (acc, type) => [
           ...acc,
-          ...flashMap[type].map(message => ({ type, message }))
+          ...flashMap[`${type}`].map(message => ({ type, message }))
         ],
         []
       );
       for (let i = 0; i < flash.length; i++) {
-        yield put(createFlashMessage(flash[i]));
+        yield put(createFlashMessage(flash[`${i}`]));
       }
     }
   }

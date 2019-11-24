@@ -14,7 +14,7 @@ import {
   toggleSearchDropdown,
   updateSearchQuery
 } from './redux';
-import { algoliaAppId, algoliaAPIKey } from '../../../config/env.json';
+import { algoliaAppId, algoliaAPIKey } from '../../../../config/env';
 
 import { createSelector } from 'reselect';
 

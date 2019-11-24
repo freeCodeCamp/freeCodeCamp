@@ -23,9 +23,9 @@ export default function() {
         return (
           !!keys.length &&
           // every key is a file
-          keys.every(key => isObject(value[key])) &&
+          keys.every(key => isObject(value[`${key}`])) &&
           // every file has contents
-          keys.map(key => value[key]).every(file => isPoly(file))
+          keys.map(key => value[`${key}`]).every(file => isPoly(file))
         );
       }
     },

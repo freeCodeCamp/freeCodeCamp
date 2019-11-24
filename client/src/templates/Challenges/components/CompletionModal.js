@@ -86,7 +86,7 @@ export class CompletionModal extends Component {
     let newURL = null;
     if (Object.keys(files).length) {
       const filesForDownload = Object.keys(files)
-        .map(key => files[key])
+        .map(key => files[`${key}`])
         .reduce((allFiles, { path, contents }) => {
           const beforeText = `** start of ${path} **\n\n`;
           const afterText = `\n\n** end of ${path} **\n\n`;

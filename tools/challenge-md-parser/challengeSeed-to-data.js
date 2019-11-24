@@ -25,12 +25,12 @@ function createCodeGetter(key, regEx, seeds) {
     const lang = id.match(regEx)[1];
     const code = select('code', container).children[0].value;
     if (lang in seeds) {
-      seeds[lang] = {
-        ...seeds[lang],
+      seeds[`${lang}`] = {
+        ...seeds[`${lang}`],
         [key]: code
       };
     } else {
-      seeds[lang] = {
+      seeds[`${lang}`] = {
         ...defaultFile(lang),
         [key]: code
       };
@@ -61,7 +61,7 @@ function createPlugin() {
 
         file.data = {
           ...file.data,
-          files: Object.keys(seeds).map(lang => seeds[lang])
+          files: Object.keys(seeds).map(lang => seeds[`${lang}`])
         };
       }
     }

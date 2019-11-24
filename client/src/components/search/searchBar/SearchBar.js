@@ -95,7 +95,7 @@ export class SearchBar extends Component {
     e.preventDefault();
     const { toggleSearchDropdown, updateSearchQuery } = this.props;
     const { index, hits } = this.state;
-    const selectedHit = hits[index];
+    const selectedHit = hits[`${index}`];
 
     // Disable the search dropdown
     toggleSearchDropdown(false);

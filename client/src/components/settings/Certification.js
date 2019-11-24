@@ -240,7 +240,10 @@ export class CertificationSettings extends Component {
           </tr>
         </thead>
         <tbody>
-          {this.renderProjectsFor(certName, this.getUserIsCertMap()[certName])}
+          {this.renderProjectsFor(
+            certName,
+            this.getUserIsCertMap()[`${certName}`]
+          )}
         </tbody>
       </Table>
     </FullWidthRow>
@@ -248,7 +251,7 @@ export class CertificationSettings extends Component {
 
   renderProjectsFor = (certName, isCert) => {
     const { username, isHonest, createFlashMessage, verifyCert } = this.props;
-    const { superBlock } = first(projectMap[certName]);
+    const { superBlock } = first(projectMap[`${certName}`]);
     const certLocation = `/certification/${username}/${superBlock}`;
     const createClickHandler = superBlock => e => {
       e.preventDefault();
@@ -259,7 +262,7 @@ export class CertificationSettings extends Component {
         ? verifyCert(superBlock)
         : createFlashMessage(honestyInfoMessage);
     };
-    return projectMap[certName]
+    return projectMap[`${certName}`]
       .map(({ link, title, id }) => (
         <tr className='project-row' key={id}>
           <td className='project-title col-sm-8'>
@@ -299,7 +302,7 @@ export class CertificationSettings extends Component {
     let certs = Object.keys(legacyProjectMap);
     let loopBreak = false;
     for (let certTitle of certs) {
-      for (let chalTitle of legacyProjectMap[certTitle]) {
+      for (let chalTitle of legacyProjectMap[`${certTitle}`]) {
         if (chalTitle.title === Object.keys(formChalObj)[0]) {
           superBlock = chalTitle.superBlock;
           loopBreak = true;
@@ -315,9 +318,9 @@ export class CertificationSettings extends Component {
     // make an object with keys as challenge ids and values as solutions
     let idsToSolutions = {};
     for (let i of Object.keys(formChalObj)) {
-      for (let j of legacyProjectMap[legacyTitle]) {
+      for (let j of legacyProjectMap[`${legacyTitle}`]) {
         if (i === j.title) {
-          idsToSolutions[j.id] = formChalObj[i];
+          idsToSolutions[j.id] = formChalObj[`${i}`];
           break;
         }
       }
@@ -331,16 +334,18 @@ export class CertificationSettings extends Component {
     for (let submittedChal of Object.keys(idsToSolutions)) {
       for (let i of completedChallenges) {
         if (i.id === submittedChal) {
-          if (idsToSolutions[submittedChal] !== i.solution) {
-            challengesToUpdate[submittedChal] = idsToSolutions[submittedChal];
+          if (idsToSolutions[`${submittedChal}`] !== i.solution) {
+            challengesToUpdate[`${submittedChal}`] =
+              idsToSolutions[`${submittedChal}`];
           }
           oldSubmissions++;
           newChalleneFound = false;
           break;
         }
       }
-      if (newChalleneFound && idsToSolutions[submittedChal] !== '') {
-        challengesToUpdate[submittedChal] = idsToSolutions[submittedChal];
+      if (newChalleneFound && idsToSolutions[`${submittedChal}`] !== '') {
+        challengesToUpdate[`${submittedChal}`] =
+          idsToSolutions[`${submittedChal}`];
       }
       newChalleneFound = true;
     }
@@ -361,13 +366,15 @@ export class CertificationSettings extends Component {
 
   renderLegacyCertifications = certName => {
     const { username, createFlashMessage, completedChallenges } = this.props;
-    const { superBlock } = first(legacyProjectMap[certName]);
+    const { superBlock } = first(legacyProjectMap[`${certName}`]);
     const certLocation = `/certification/${username}/${superBlock}`;
-    const challengeTitles = legacyProjectMap[certName].map(item => item.title);
-    const isCertClaimed = this.getUserIsCertMap()[certName];
+    const challengeTitles = legacyProjectMap[`${certName}`].map(
+      item => item.title
+    );
+    const isCertClaimed = this.getUserIsCertMap()[`${certName}`];
     const initialObject = {};
     let filledforms = 0;
-    legacyProjectMap[certName].forEach(project => {
+    legacyProjectMap[`${certName}`].forEach(project => {
       let completedProject = find(completedChallenges, function(challenge) {
         return challenge['id'] === project['id'];
       });
@@ -381,7 +388,7 @@ export class CertificationSettings extends Component {
 
     const options = challengeTitles.reduce(
       (options, current) => {
-        options.types[current] = 'url';
+        options.types[`${current}`] = 'url';
         return options;
       },
       { types: {} }

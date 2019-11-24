@@ -23,9 +23,9 @@ export const toggleBlock = createAction(types.toggleBlock);
 export const toggleSuperBlock = createAction(types.toggleSuperBlock);
 
 export const makeExpandedSuperBlockSelector = superBlock => state =>
-  !!state[ns].expandedState.superBlock[superBlock];
+  !!state[`${ns}`].expandedState.superBlock[`${superBlock}`];
 export const makeExpandedBlockSelector = block => state =>
-  !!state[ns].expandedState.block[block];
+  !!state[`${ns}`].expandedState.block[`${block}`];
 
 export const reducer = handleActions(
   {
@@ -42,7 +42,7 @@ export const reducer = handleActions(
         ...state.expandedState,
         block: {
           ...state.expandedState.block,
-          [payload]: !state.expandedState.block[payload]
+          [payload]: !state.expandedState.block[`${payload}`]
         }
       }
     }),
@@ -52,7 +52,7 @@ export const reducer = handleActions(
         ...state.expandedState,
         superBlock: {
           ...state.expandedState.superBlock,
-          [payload]: !state.expandedState.superBlock[payload]
+          [payload]: !state.expandedState.superBlock[`${payload}`]
         }
       }
     })

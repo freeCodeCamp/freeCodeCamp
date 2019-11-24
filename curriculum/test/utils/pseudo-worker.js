@@ -27,7 +27,7 @@ function createPseudoWorker(context) {
               queue.push(event);
             }
 
-            worker[eventName] = e => send(e);
+            worker[`${eventName}`] = e => send(e);
 
             const resolver = resolve => (callback = resolve);
             async function* produce() {
@@ -52,8 +52,8 @@ function createPseudoWorker(context) {
                   .then(({ value: { data, message } }) => ({ data, message })),
               producer
             );
-            if (this[eventName]) {
-              this[eventName](data);
+            if (this[`${eventName}`]) {
+              this[`${eventName}`](data);
             }
           } catch (err) {
             break;

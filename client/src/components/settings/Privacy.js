@@ -47,7 +47,7 @@ class PrivacySettings extends Component {
 
   toggleFlag = flag => () => {
     const privacyValues = { ...this.props.user.profileUI };
-    privacyValues[flag] = !privacyValues[flag];
+    privacyValues[`${flag}`] = !privacyValues[`${flag}`];
     this.props.submitProfileUI(privacyValues);
   };
 

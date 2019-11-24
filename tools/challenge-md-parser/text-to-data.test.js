@@ -52,14 +52,14 @@ describe('text-to-data', () => {
     const plugin = textToData([expectedField]);
     plugin(mockAST, file);
     const expectedText = 'Welcome to freeCodeCamp';
-    expect(file.data[expectedField].includes(expectedText)).toBe(true);
+    expect(file.data[`${expectedField}`].includes(expectedText)).toBe(true);
   });
 
   // eslint-disable-next-line max-len
   it('should add an empty string relating to the section id without data to `file.data`', () => {
     const plugin = textToData([otherExpectedField]);
     plugin(mockAST, file);
-    expect(file.data[otherExpectedField]).toEqual('');
+    expect(file.data[`${otherExpectedField}`]).toEqual('');
   });
 
   it('should preserve nested html', () => {
@@ -69,17 +69,17 @@ describe('text-to-data', () => {
 <p>Some text in a blockquote</p>
 <p>Some text in a blockquote, with <code>code</code></p>
 </blockquote>`;
-    expect(file.data[expectedField].includes(expectedText)).toBe(true);
+    expect(file.data[`${expectedField}`].includes(expectedText)).toBe(true);
   });
 
   // eslint-disable-next-line max-len
   it('should not add paragraphs when html elements are separated by whitespace', () => {
-    const plugin = textToData([expectedField]);
+    const plugin = textToData([`${expectedField}`]);
     plugin(adjacentTagsAST, file);
     const expectedText1 = `<code>code</code> <tag>with more after a space</tag>`;
     const expectedText2 = `another pair of <strong>elements</strong> <em>with a space</em>`;
-    expect(file.data[expectedField].includes(expectedText1)).toBe(true);
-    expect(file.data[expectedField].includes(expectedText2)).toBe(true);
+    expect(file.data[`${expectedField}`].includes(expectedText1)).toBe(true);
+    expect(file.data[`${expectedField}`].includes(expectedText2)).toBe(true);
   });
 
   it('should have an output to match the snapshot', () => {

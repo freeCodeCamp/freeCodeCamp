@@ -13,7 +13,7 @@ import {
 } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 
-import { apiLocation } from '../../config/env.json';
+import { apiLocation } from '../../../config/env';
 
 import {
   hardGoTo as navigate,

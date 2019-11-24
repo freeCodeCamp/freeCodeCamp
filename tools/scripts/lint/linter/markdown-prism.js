@@ -29,11 +29,11 @@ module.exports = {
 
 // Get the real name of a language given it or an alias
 const getBaseLanguageName = nameOrAlias => {
-  if (components.languages[nameOrAlias]) {
+  if (components.languages[`${nameOrAlias}`]) {
     return nameOrAlias;
   }
   return Object.keys(components.languages).find(language => {
-    const { alias } = components.languages[language];
+    const { alias } = components.languages[`${language}`];
     if (!alias) return false;
     if (Array.isArray(alias)) {
       return alias.includes(nameOrAlias);

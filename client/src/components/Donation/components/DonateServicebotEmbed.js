@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { servicebotId } from '../../../../config/env.json';
+import { servicebotId } from '../../../../../config/env';
 import { servicebotScriptLoader } from '../../../utils/scriptLoaders';
 
 import '../Donation.css';

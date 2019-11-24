@@ -27,14 +27,14 @@ export const saveUser = saveInstance;
 
 // observeQuery(Model: Object, methodName: String, query: Any) => Observable
 export function observeQuery(Model, methodName, query) {
-  return Rx.Observable.fromNodeCallback(Model[methodName], Model)(query);
+  return Rx.Observable.fromNodeCallback(Model[`${methodName}`], Model)(query);
 }
 
 // observeMethod(
 //   context: Object, methodName: String
 // ) => (query: Any) => Observable
 export function observeMethod(context, methodName) {
-  return Rx.Observable.fromNodeCallback(context[methodName], context);
+  return Rx.Observable.fromNodeCallback(context[`${methodName}`], context);
 }
 
 // must be bound to an observable instance

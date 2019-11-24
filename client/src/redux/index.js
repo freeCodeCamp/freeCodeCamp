@@ -132,18 +132,22 @@ export const updateCurrentChallengeId = createAction(
 
 export const completedChallengesSelector = state =>
   userSelector(state).completedChallenges || [];
-export const completionCountSelector = state => state[ns].completionCount;
-export const currentChallengeIdSelector = state => state[ns].currentChallengeId;
-export const donationRequestedSelector = state => state[ns].donationRequested;
+export const completionCountSelector = state => state[`${ns}`].completionCount;
+export const currentChallengeIdSelector = state =>
+  state[`${ns}`].currentChallengeId;
+export const donationRequestedSelector = state =>
+  state[`${ns}`].donationRequested;
 
-export const isOnlineSelector = state => state[ns].isOnline;
-export const isSignedInSelector = state => !!state[ns].appUsername;
-export const isDonationModalOpenSelector = state => state[ns].showDonationModal;
+export const isOnlineSelector = state => state[`${ns}`].isOnline;
+export const isSignedInSelector = state => !!state[`${ns}`].appUsername;
+export const isDonationModalOpenSelector = state =>
+  state[`${ns}`].showDonationModal;
 
 export const signInLoadingSelector = state =>
   userFetchStateSelector(state).pending;
-export const showCertSelector = state => state[ns].showCert;
-export const showCertFetchStateSelector = state => state[ns].showCertFetchState;
+export const showCertSelector = state => state[`${ns}`].showCert;
+export const showCertFetchStateSelector = state =>
+  state[`${ns}`].showCertFetchState;
 
 export const showDonationSelector = state => {
   const completedChallenges = completedChallengesSelector(state);
@@ -165,20 +169,20 @@ export const showDonationSelector = state => {
   return false;
 };
 export const userByNameSelector = username => state => {
-  const { user } = state[ns];
-  return username in user ? user[username] : {};
+  const { user } = state[`${ns}`];
+  return username in user ? user[`${username}`] : {};
 };
-export const userFetchStateSelector = state => state[ns].userFetchState;
+export const userFetchStateSelector = state => state[`${ns}`].userFetchState;
 export const userProfileFetchStateSelector = state =>
-  state[ns].userProfileFetchState;
-export const usernameSelector = state => state[ns].appUsername;
+  state[`${ns}`].userProfileFetchState;
+export const usernameSelector = state => state[`${ns}`].appUsername;
 export const userSelector = state => {
   const username = usernameSelector(state);
 
-  return state[ns].user[username] || {};
+  return state[`${ns}`].user[`${username}`] || {};
 };
 
-export const sessionMetaSelector = state => state[ns].sessionMeta;
+export const sessionMetaSelector = state => state[`${ns}`].sessionMeta;
 export const activeDonationsSelector = state => {
   const donors =
     Number(sessionMetaSelector(state).activeDonations) +
@@ -253,7 +257,7 @@ export const reducer = handleActions(
       { payload: { user, username } }
     ) => {
       const previousUserObject =
-        username in state.user ? state.user[username] : {};
+        username in state.user ? state.user[`${username}`] : {};
       return {
         ...state,
         user: {
@@ -335,11 +339,11 @@ export const reducer = handleActions(
         user: {
           ...state.user,
           [appUsername]: {
-            ...state.user[appUsername],
+            ...state.user[`${appUsername}`],
             completedChallenges: uniqBy(
               [
                 ...submittedchallenges,
-                ...state.user[appUsername].completedChallenges
+                ...state.user[`${appUsername}`].completedChallenges
               ],
               'id'
             )
@@ -359,9 +363,9 @@ export const reducer = handleActions(
         user: {
           ...state.user,
           [appUsername]: {
-            ...state.user[appUsername],
+            ...state.user[`${appUsername}`],
             completedChallenges: uniqBy(
-              [...state.user[appUsername].completedChallenges, payload],
+              [...state.user[`${appUsername}`].completedChallenges, payload],
               'id'
             )
           }

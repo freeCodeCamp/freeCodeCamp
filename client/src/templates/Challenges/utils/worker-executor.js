@@ -111,26 +111,26 @@ const eventify = self => {
   self._events = {};
 
   self.on = (event, listener) => {
-    if (typeof self._events[event] === 'undefined') {
-      self._events[event] = [];
+    if (typeof self._events[`${event}`] === 'undefined') {
+      self._events[`${event}`] = [];
     }
-    self._events[event].push(listener);
+    self._events[`${event}`].push(listener);
     return self;
   };
 
   self.removeListener = (event, listener) => {
-    if (typeof self._events[event] !== 'undefined') {
-      const index = self._events[event].indexOf(listener);
+    if (typeof self._events[`${event}`] !== 'undefined') {
+      const index = self._events[`${event}`].indexOf(listener);
       if (index !== -1) {
-        self._events[event].splice(index, 1);
+        self._events[`${event}`].splice(index, 1);
       }
     }
     return self;
   };
 
   self.emit = (event, ...args) => {
-    if (typeof self._events[event] !== 'undefined') {
-      self._events[event].forEach(listener => {
+    if (typeof self._events[`${event}`] !== 'undefined') {
+      self._events[`${event}`].forEach(listener => {
         listener.apply(self, args);
       });
     }

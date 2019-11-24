@@ -87,7 +87,7 @@ export function buildUserUpdate(
     completedChallenge = {
       ..._completedChallenge,
       files: Object.keys(files)
-        .map(key => files[key])
+        .map(key => files[`${key}`])
         .map(file =>
           pick(file, ['contents', 'key', 'index', 'name', 'path', 'ext'])
         )
@@ -366,7 +366,7 @@ export function createRedirectToLearn(
   return function redirectToLearn(req, res) {
     const maybeChallenge = last(req.path.split('/'));
     if (maybeChallenge in pathMigrations) {
-      const redirectPath = pathMigrations[maybeChallenge];
+      const redirectPath = pathMigrations[`${maybeChallenge}`];
       return res.status(302).redirect(`${base}${redirectPath}`);
     }
     return res.status(302).redirect(learn);

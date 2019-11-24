@@ -7,7 +7,7 @@ import { createUpdateMyEmailSaga } from './update-email-saga';
 
 // prettier-ignore
 import { createUpdateLegacyCertSaga } from
-'./update-legacy-certificate-saga';
+  './update-legacy-certificate-saga';
 
 export const ns = 'settings';
 
@@ -110,7 +110,8 @@ export const resetProgressError = createAction(types.resetProgressError);
 export const deleteAccount = createAction(types.deleteAccount);
 export const deleteAccountError = createAction(types.deleteAccountError);
 
-export const usernameValidationSelector = state => state[ns].usernameValidation;
+export const usernameValidationSelector = state =>
+  state[`${ns}`].usernameValidation;
 
 export const reducer = handleActions(
   {

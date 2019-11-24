@@ -38,7 +38,7 @@ const challengeFrontmatterValidator = file => frontmatter => {
     .map(
       prop =>
         has(frontmatter, prop) &&
-        (!isEmpty(frontmatter[prop]) || isNumber(frontmatter[prop]))
+        (!isEmpty(frontmatter[`${prop}`]) || isNumber(frontmatter[`${prop}`]))
     )
     .every(bool => bool);
 

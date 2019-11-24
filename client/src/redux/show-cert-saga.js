@@ -11,7 +11,7 @@ function* getShowCertSaga({ payload: { username, certName: cert } }) {
     const { messages } = response;
     if (messages && messages.length) {
       for (let i = 0; i < messages.length; i++) {
-        yield put(createFlashMessage(messages[i]));
+        yield put(createFlashMessage(messages[`${i}`]));
       }
       yield call(navigate, '/');
       return;

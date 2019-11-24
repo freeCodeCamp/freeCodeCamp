@@ -19,7 +19,7 @@ export const createFlashMessage = createAction(
 );
 export const removeFlashMessage = createAction(types.removeFlashMessage);
 
-export const flashMessageSelector = state => state[ns].message;
+export const flashMessageSelector = state => state[`${ns}`].message;
 
 export const reducer = handleActions(
   {

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, Spacer, Loader, FullWidthRow } from '../helpers';
 import { Row, Col } from '@freecodecamp/react-bootstrap';
-import { apiLocation } from '../../../config/env.json';
+import { apiLocation } from '../../../../config/env';
 import { randomQuote } from '../../utils/get-words';
 
 import './intro.css';

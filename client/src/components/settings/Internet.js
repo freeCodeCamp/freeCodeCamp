@@ -98,7 +98,7 @@ class InternetSettings extends Component {
   isFormPristine = () => {
     const { formValues, originalValues } = this.state;
     return Object.keys(originalValues)
-      .map(key => originalValues[key] === formValues[key])
+      .map(key => originalValues[`${key}`] === formValues[`${key}`])
       .every(bool => bool);
   };
 
@@ -118,7 +118,7 @@ class InternetSettings extends Component {
     if (OriginalHasValues && !formHasValues) return true;
 
     return Object.keys(formValues).reduce((bool, key) => {
-      const maybeUrl = formValues[key];
+      const maybeUrl = formValues[`${key}`];
       return maybeUrl ? isURL(maybeUrl) : bool;
     }, false);
   };

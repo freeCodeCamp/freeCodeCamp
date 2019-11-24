@@ -103,5 +103,10 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
+  },
+  "dependencies": {
+    "googleapis": "^45.0.0",
+    "moment": "^2.24.0",
+    "rollbar": "^2.14.4"
   }
 }

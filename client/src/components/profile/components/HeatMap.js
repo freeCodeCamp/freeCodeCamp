@@ -40,15 +40,15 @@ function HeatMap({ calendar, streak }) {
       timestamp = Number(timestamp * 1000) || null;
       if (timestamp) {
         const startOfTimestampDay = format(startOfDay(timestamp), 'YYYY-MM-DD');
-        calendarData[startOfTimestampDay] =
-          calendarData[startOfTimestampDay] + 1 || 1;
+        calendarData[`${startOfTimestampDay}`] =
+          calendarData[`${startOfTimestampDay}`] + 1 || 1;
       }
     }
   }
 
   const calendarValues = Object.keys(calendarData).map(key => ({
     date: key,
-    count: calendarData[key]
+    count: calendarData[`${key}`]
   }));
 
   return (

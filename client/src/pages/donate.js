@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
 
-import { stripePublicKey } from '../../config/env.json';
+import { stripePublicKey } from '../../../config/env';
 import { Spacer, Loader, FullWidthRow, Link } from '../components/helpers';
 import DonateForm from '../components/Donation/components/DonateForm';
 import DonateText from '../components/Donation/components/DonateText';

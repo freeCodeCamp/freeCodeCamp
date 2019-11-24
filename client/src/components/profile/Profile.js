@@ -10,7 +10,7 @@ import HeatMap from './components/HeatMap';
 import Certifications from './components/Certifications';
 import Portfolio from './components/Portfolio';
 import Timeline from './components/TimeLine';
-import { apiLocation } from '../../../config/env.json';
+import { apiLocation } from '../../../../config/env';
 
 const propTypes = {
   isSessionUser: PropTypes.bool,

@@ -37,9 +37,9 @@ function FormFields(props) {
           <Field key={`${name}-field`} name={name}>
             {({ input: { value, onChange }, meta: { pristine, error } }) => {
               const key = kebabCase(name);
-              const type = name in types ? types[name] : 'text';
+              const type = name in types ? types[`${name}`] : 'text';
               const placeholder =
-                name in placeholders ? placeholders[name] : '';
+                name in placeholders ? placeholders[`${name}`] : '';
               return (
                 <Col key={key} xs={12}>
                   <FormGroup>

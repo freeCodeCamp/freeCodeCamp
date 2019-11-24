@@ -202,7 +202,7 @@ it('Worker executor should emit LOG events', async () => {
 
   expect(logHandler).toBeCalledTimes(3);
   for (let i = 0; i < 3; i++) {
-    expect(logHandler.mock.calls[i][0]).toBe(i);
+    expect(logHandler.mock.calls[`${i}`][0]).toBe(i);
   }
 });
 

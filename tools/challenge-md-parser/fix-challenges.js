@@ -117,7 +117,7 @@ function testsToData() {
 function textToData(sectionIds) {
   return (tree, file) => {
     let indexId = 0;
-    let currentSection = sectionIds[indexId];
+    let currentSection = sectionIds[`${indexId}`];
     let inSection = false;
     let nodes = [];
     let findSection;
@@ -144,7 +144,7 @@ function textToData(sectionIds) {
           nodes = [];
           indexId++;
           if (indexId < sectionIds.length) {
-            currentSection = sectionIds[indexId];
+            currentSection = sectionIds[`${indexId}`];
           } else {
             return visit.EXIT;
           }
@@ -173,8 +173,8 @@ function createTranslateText(target, source = 'english') {
     russian: 'ru',
     spanish: 'es'
   };
-  const from = languageCodes[source];
-  const to = languageCodes[target];
+  const from = languageCodes[`${source}`];
+  const to = languageCodes[`${target}`];
   return async text => {
     if (!text) {
       return text;

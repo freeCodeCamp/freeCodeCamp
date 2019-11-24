@@ -24,7 +24,9 @@ const users = {
   }
 };
 const mockGetUserById = id =>
-  id in users ? Promise.resolve(users[id]) : Promise.reject('No user found');
+  id in users
+    ? Promise.resolve(users[`${id}`])
+    : Promise.reject('No user found');
 
 describe('request-authorization', () => {
   describe('isWhiteListedPath', () => {

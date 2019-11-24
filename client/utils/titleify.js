@@ -33,8 +33,8 @@ function prototyper(str) {
   if (noProto.length === 2) {
     const [first, second] = noProto;
     const secondLC = second.toLowerCase();
-    const finalSecond = preFormatted[secondLC]
-      ? preFormatted[secondLC]
+    const finalSecond = preFormatted[`${secondLC}`]
+      ? preFormatted[`${secondLC}`]
       : secondLC;
     return `${titleify(first)}.prototype.${finalSecond}`;
   }
@@ -63,7 +63,9 @@ function titleify(str, triedPrototyper) {
       if (stopWords.some(x => x === word) && i !== 0) {
         return word;
       }
-      return preFormatted[word] ? preFormatted[word] : titleCase(word);
+      return preFormatted[`${word}`]
+        ? preFormatted[`${word}`]
+        : titleCase(word);
     })
     .join(' ');
 }

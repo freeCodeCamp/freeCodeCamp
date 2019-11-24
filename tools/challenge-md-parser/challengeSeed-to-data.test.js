@@ -48,7 +48,7 @@ describe('challengeSeed-to-data plugin', () => {
     } = file;
     const testObject = files[0];
     Object.keys(testObject)
-      .map(key => testObject[key])
+      .map(key => testObject[`${key}`])
       .forEach(value => expect(typeof value).toEqual('string'));
   });
 

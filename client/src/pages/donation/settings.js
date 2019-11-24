@@ -6,7 +6,7 @@ import { createSelector } from 'reselect';
 import { Grid, Button, Panel } from '@freecodecamp/react-bootstrap';
 import { uniq } from 'lodash';
 
-import { apiLocation } from '../../../config/env.json';
+import { apiLocation } from '../../../../config/env';
 import { postCreateHmacHash } from '../../utils/ajax';
 import {
   signInLoadingSelector,

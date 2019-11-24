@@ -144,10 +144,10 @@ async function runTests() {
 async function getChallenges(lang) {
   const challenges = await getChallengesForLang(lang).then(curriculum =>
     Object.keys(curriculum)
-      .map(key => curriculum[key].blocks)
+      .map(key => curriculum[`${key}`].blocks)
       .reduce((challengeArray, superBlock) => {
         const challengesForBlock = Object.keys(superBlock).map(
-          key => superBlock[key].challenges
+          key => superBlock[`${key}`].challenges
         );
         return [...challengeArray, ...flatten(challengesForBlock)];
       }, [])
@@ -316,7 +316,7 @@ async function createTestRunnerForDOMChallenge(
   await context.evaluate(
     async (sources, loadEnzyme) => {
       const code = sources && 'index' in sources ? sources['index'] : '';
-      const getUserInput = fileName => sources[fileName];
+      const getUserInput = fileName => sources[`${fileName}`];
       await document.__initTestFrame({ code, getUserInput, loadEnzyme });
     },
     sources,

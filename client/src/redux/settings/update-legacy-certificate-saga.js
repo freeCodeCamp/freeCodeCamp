@@ -19,7 +19,7 @@ function* updateLegacyCertSaga({
   let reduxShape = [];
   for (let obj in challengesToUpdate) {
     if (challengesToUpdate.hasOwnProperty(obj)) {
-      reduxShape.push({ id: obj, solution: challengesToUpdate[obj] });
+      reduxShape.push({ id: obj, solution: challengesToUpdate[`${obj}`] });
     }
   }
 

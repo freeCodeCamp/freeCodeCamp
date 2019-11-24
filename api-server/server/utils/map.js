@@ -89,7 +89,7 @@ export function _cachedMap({ Block, Challenge }) {
   );
   const superBlocks = superBlockMap.map(superBlockMap => {
     return Object.keys(superBlockMap)
-      .map(key => superBlockMap[key])
+      .map(key => superBlockMap[`${key}`])
       .map(({ dashedName }) => dashedName);
   });
   return Observable.combineLatest(
@@ -128,8 +128,8 @@ export function getChallengeById(map, id) {
         entities: { challenge: challengeMap, challengeIdToName }
       } = map;
       let finalChallenge;
-      const dashedName = challengeIdToName[id];
-      finalChallenge = challengeMap[dashedName];
+      const dashedName = challengeIdToName[`${id}`];
+      finalChallenge = challengeMap[`${dashedName}`];
       if (!finalChallenge) {
         finalChallenge = getFirstChallenge(map);
       }
@@ -163,8 +163,8 @@ function loadComingSoonOrBetaChallenge({
 export function getChallenge(challengeDashedName, blockDashedName, map) {
   return map.flatMap(({ entities, result: { superBlocks } }) => {
     const superBlock = entities.superBlock;
-    const block = entities.block[blockDashedName];
-    const challenge = entities.challenge[challengeDashedName];
+    const block = entities.block[`${blockDashedName}`];
+    const challenge = entities.challenge[`${challengeDashedName}`];
     return Observable.if(
       () =>
         !blockDashedName ||
@@ -205,7 +205,7 @@ export function getChallengeByDashedName(dashedName, map) {
     .map(({ entities }) => entities.challenge)
     .flatMap(challengeMap => {
       return Observable.from(Object.keys(challengeMap)).map(
-        key => challengeMap[key]
+        key => challengeMap[`${key}`]
       );
     })
     .filter(challenge => {

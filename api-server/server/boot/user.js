@@ -107,7 +107,7 @@ function getUnlinkSocial(req, res, next) {
     return res.redirect('/' + username);
   }
 
-  if (!user[social]) {
+  if (!user[`${social}`]) {
     req.flash('danger', `No ${social} account associated`);
     return res.redirect('/' + username);
   }

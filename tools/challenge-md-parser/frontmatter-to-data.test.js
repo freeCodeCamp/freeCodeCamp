@@ -43,7 +43,7 @@ describe('frontmatter-to-data plugin', () => {
     const whitespaceRE = /(^\s\S+|\S\s$)/;
     const keys = Object.keys(file.data);
     keys.forEach(key => expect(whitespaceRE.test(key)).toBe(false));
-    const values = keys.map(key => file.data[key]);
+    const values = keys.map(key => file.data[`${key}`]);
     values
       .filter(value => typeof value === 'string')
       .forEach(value => expect(whitespaceRE.test(value)).toBe(false));

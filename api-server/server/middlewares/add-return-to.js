@@ -12,7 +12,6 @@ const pathsOfNoReturn = [
 ];
 
 const pathsWhiteList = ['challenges', 'map', 'commit'];
-
 const pathsOfNoReturnRegex = new RegExp(pathsOfNoReturn.join('|'), 'i');
 const whiteListRegex = new RegExp(pathsWhiteList.join('|'), 'i');
 

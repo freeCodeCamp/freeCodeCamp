@@ -17,8 +17,8 @@ export function callIfDefined(fn) {
 
 export function formatUrlValues(values, options) {
   return Object.keys(values).reduce((result, key) => {
-    let value = values[key];
-    if (value && options.types[key] === 'url') {
+    let value = values[`${key}`];
+    if (value && options.types[`${key}`] === 'url') {
       value = normalizeUrl(value, normalizeOptions);
     }
     return { ...result, [key]: value };
@@ -61,10 +61,10 @@ export function createFormValidator(fieldValidators) {
   return values =>
     fieldKeys
       .map(field => {
-        if (fieldValidators[field](values[field])) {
+        if (fieldValidators[`${field}`](values[`${field}`])) {
           return null;
         }
-        return { [field]: !fieldValidators[field](values[field]) };
+        return { [field]: !fieldValidators[`${field}`](values[`${field}`]) };
       })
       .filter(Boolean)
       .reduce((errors, error) => ({ ...errors, ...error }), {});

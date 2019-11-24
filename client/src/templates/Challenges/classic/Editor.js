@@ -206,7 +206,7 @@ class Editor extends Component {
           editorDidMount={this.editorDidMount}
           editorWillMount={this.editorWillMount}
           key={`${editorTheme}-${fileKey}`}
-          language={modeMap[ext]}
+          language={modeMap[`${ext}`]}
           onChange={this.onChange}
           options={this.options}
           theme={editorTheme}

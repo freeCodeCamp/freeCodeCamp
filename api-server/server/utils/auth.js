@@ -10,8 +10,8 @@ const providerHash = {
 };
 
 export function getUsernameFromProvider(provider, profile) {
-  return typeof providerHash[provider] === 'function'
-    ? providerHash[provider](profile)
+  return typeof providerHash[`${provider}`] === 'function'
+    ? providerHash[`${provider}`](profile)
     : null;
 }
 

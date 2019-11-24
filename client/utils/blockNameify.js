@@ -18,7 +18,7 @@ const preFormattedBlockNames = {
 const noFormatting = ['and', 'for', 'of', 'the', 'up', 'with'];
 
 exports.blockNameify = function blockNameify(phrase) {
-  const preFormatted = preFormattedBlockNames[phrase] || '';
+  const preFormatted = preFormattedBlockNames[`${phrase}`] || '';
   if (preFormatted) {
     return preFormatted;
   }

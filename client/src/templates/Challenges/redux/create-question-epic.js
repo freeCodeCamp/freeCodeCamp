@@ -8,12 +8,12 @@ import {
 } from '../redux';
 import { tap, mapTo } from 'rxjs/operators';
 import { helpCategory } from '../../../../utils/challengeTypes';
-import { forumLocation } from '../../../../../config/env.json';
+import { forumLocation } from '../../../../../config/env';
 
 function filesToMarkdown(files = {}) {
   const moreThenOneFile = Object.keys(files).length > 1;
   return Object.keys(files).reduce((fileString, key) => {
-    const file = files[key];
+    const file = files[`${key}`];
     if (!file) {
       return fileString;
     }
@@ -75,7 +75,9 @@ function createQuestionEpic(action$, state$, { window }) {
         \`\`\`\n${endingText}`
       );
 
-      const category = window.encodeURIComponent(helpCategory[block] || 'Help');
+      const category = window.encodeURIComponent(
+        helpCategory[`${block}`] || 'Help'
+      );
 
       const studentCode = window.encodeURIComponent(textMessage);
       const altStudentCode = window.encodeURIComponent(altTextMessage);

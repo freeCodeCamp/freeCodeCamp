@@ -135,7 +135,7 @@ export default function completionEpic(action$, state$) {
       let submitter = () => of({ type: 'no-user-signed-in' });
       if (
         !(challengeType in submitTypes) ||
-        !(submitTypes[challengeType] in submitters)
+        !(submitTypes[`${challengeType}`] in submitters)
       ) {
         throw new Error(
           'Unable to find the correct submit function for challengeType ' +
@@ -143,7 +143,7 @@ export default function completionEpic(action$, state$) {
         );
       }
       if (isSignedInSelector(state)) {
-        submitter = submitters[submitTypes[challengeType]];
+        submitter = submitters[submitTypes[`${challengeType}`]];
       }
 
       return submitter(type, state).pipe(

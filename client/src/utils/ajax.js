@@ -1,4 +1,4 @@
-import { apiLocation } from '../../config/env.json';
+import { apiLocation } from '../../../config/env';
 
 import axios from 'axios';
 

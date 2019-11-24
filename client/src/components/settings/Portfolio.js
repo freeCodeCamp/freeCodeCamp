@@ -68,8 +68,8 @@ class PortfolioSettings extends Component {
       const mutatblePortfolio = currentPortfolio.slice(0);
       const index = findIndex(currentPortfolio, p => p.id === id);
 
-      mutatblePortfolio[index] = {
-        ...mutatblePortfolio[index],
+      mutatblePortfolio[`${index}`] = {
+        ...mutatblePortfolio[`${index}`],
         [key]: userInput
       };
 

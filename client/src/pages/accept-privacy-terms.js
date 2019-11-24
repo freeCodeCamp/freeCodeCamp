@@ -49,7 +49,7 @@ class AcceptPrivacyTerms extends Component {
   createHandleChange(prop) {
     return () =>
       this.setState(prevState => ({
-        [prop]: !prevState[prop]
+        [prop]: !prevState[`${prop}`]
       }));
   }
 

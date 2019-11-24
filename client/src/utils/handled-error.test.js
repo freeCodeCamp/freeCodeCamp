@@ -30,7 +30,7 @@ describe('client/src utilities', () => {
 
       it('returns true for a handled error', () => {
         const handledError = new Error();
-        handledError[handledErrorSymbol] = {};
+        handledError[`${handledErrorSymbol}`] = {};
 
         expect(isHandledError(handledError)).toEqual(true);
       });
@@ -51,7 +51,9 @@ describe('client/src utilities', () => {
           new Error(),
           mockHandledErrorData
         );
-        expect(handledError[handledErrorSymbol]).toEqual(mockHandledErrorData);
+        expect(handledError[`${handledErrorSymbol}`]).toEqual(
+          mockHandledErrorData
+        );
       });
     });
 
@@ -66,7 +68,7 @@ describe('client/src utilities', () => {
 
       it('returns the data that was wrapped in the error', () => {
         const handledError = new Error();
-        handledError[handledErrorSymbol] = mockHandledErrorData;
+        handledError[`${handledErrorSymbol}`] = mockHandledErrorData;
         const unwrapped = unwrapHandledError(handledError);
         expect(unwrapped).toEqual(mockHandledErrorData);
       });

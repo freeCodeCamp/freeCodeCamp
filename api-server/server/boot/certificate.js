@@ -230,14 +230,14 @@ function createVerifyCert(certTypeIds, app) {
       user
     } = req;
     log(superBlock);
-    let certType = superBlockCertTypeMap[superBlock];
+    let certType = superBlockCertTypeMap[`${superBlock}`];
     log(certType);
     return user
       .getCompletedChallenges$()
-      .flatMap(() => certTypeIds[certType])
+      .flatMap(() => certTypeIds[`${certType}`])
       .flatMap(challenge => {
-        const certName = certText[certType];
-        if (user[certType]) {
+        const certName = certText[`${certType}`];
+        if (user[`${certType}`]) {
           return Observable.just(alreadyClaimedMessage(certName));
         }
 
@@ -248,7 +248,7 @@ function createVerifyCert(certTypeIds, app) {
         if (challenge) {
           const { id, tests, challengeType } = challenge;
           if (
-            !user[certType] &&
+            !user[`${certType}`] &&
             !isCertified(tests, user.completedChallenges)
           ) {
             return Observable.just(notCertifiedMessage(certName));
@@ -271,7 +271,7 @@ function createVerifyCert(certTypeIds, app) {
         }
         // set here so sendCertifiedEmail works properly
         // not used otherwise
-        user[certType] = true;
+        user[`${certType}`] = true;
         const updatePromise = new Promise((resolve, reject) =>
           user.updateAttributes(updateData, err => {
             if (err) {
@@ -323,10 +323,10 @@ function createShowCert(app) {
   return function showCert(req, res, next) {
     let { username, cert } = req.params;
     username = username.toLowerCase();
-    const certType = superBlockCertTypeMap[cert];
-    const certId = certIds[certType];
-    const certTitle = certText[certType];
-    const completionTime = completionHours[certType] || 300;
+    const certType = superBlockCertTypeMap[`${cert}`];
+    const certId = certIds[`${certType}`];
+    const certTitle = certText[`${certType}`];
+    const completionTime = completionHours[`${certType}`] || 300;
     return findUserByUsername$(username, {
       isCheater: true,
       isFrontEndCert: true,
@@ -428,7 +428,7 @@ function createShowCert(app) {
         });
       }
 
-      if (user[certType]) {
+      if (user[`${certType}`]) {
         const { completedChallenges = [] } = user;
         const certChallenge = _.find(
           completedChallenges,
@@ -464,7 +464,7 @@ function createShowCert(app) {
           {
             type: 'info',
             message: `
-It looks like user ${username} is not ${certText[certType]} certified
+It looks like user ${username} is not ${certText[`${certType}`]} certified
           `
           }
         ]

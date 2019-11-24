@@ -114,7 +114,7 @@ ${solution}
 
 function generateChallengeSeed(files) {
   return Object.keys(files)
-    .map(key => files[key])
+    .map(key => files[`${key}`])
     .map(file => {
       const { ext, contents = [], head = [], tail = [] } = file;
       return `

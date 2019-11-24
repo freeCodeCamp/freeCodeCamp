@@ -94,7 +94,7 @@ const initTestFrame = frameReady => ctx => {
     // should not be used for modern
     const code = sources && 'index' in sources ? sources['index'] : '';
     // provide the file name and get the original source
-    const getUserInput = fileName => toString(sources[fileName]);
+    const getUserInput = fileName => toString(sources[`${fileName}`]);
     await ctx.document.__initTestFrame({ code, getUserInput, loadEnzyme });
     frameReady();
   });

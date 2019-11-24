@@ -49,14 +49,14 @@ function getLegacyCode(legacy) {
 
 function legacyToFile(code, files, key) {
   if (isFilesAllPoly(files)) {
-    return { [key]: setContent(code, files[key]) };
+    return { [key]: setContent(code, files[`${key}`]) };
   }
   return false;
 }
 
 function isFilesAllPoly(files) {
   return Object.keys(files)
-    .map(key => files[key])
+    .map(key => files[`${key}`])
     .every(file => isPoly(file));
 }
 
@@ -106,7 +106,7 @@ function loadCodeEpic(action$, state$) {
       if (codeFound && isFilesAllPoly(codeFound)) {
         finalFiles = {
           ...fileKeys
-            .map(key => files[key])
+            .map(key => files[`${key}`])
             .reduce(
               (files, file) => ({
                 ...files,

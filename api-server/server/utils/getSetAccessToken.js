@@ -30,9 +30,9 @@ export function setAccessTokenToResponse(
 
 export function getAccessTokenFromRequest(req, jwtSecret = _jwtSecret) {
   const maybeToken =
-    (req.headers && req.headers[authHeaderNS]) ||
-    (req.signedCookies && req.signedCookies[jwtCookieNS]) ||
-    (req.cookie && req.cookie[jwtCookieNS]);
+    (req.headers && req.headers[`${authHeaderNS}`]) ||
+    (req.signedCookies && req.signedCookies[`${jwtCookieNS}`]) ||
+    (req.cookie && req.cookie[`${jwtCookieNS}`]);
   if (!maybeToken) {
     return {
       accessToken: null,

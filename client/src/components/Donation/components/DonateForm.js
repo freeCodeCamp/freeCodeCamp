@@ -19,7 +19,7 @@ import {
   defaultAmount,
   defaultStateConfig
 } from '../../../../../config/donation-settings';
-import { apiLocation } from '../../../../config/env.json';
+import { apiLocation } from '../../../../../config/env';
 import Spacer from '../../helpers/Spacer';
 import DonateFormChildViewForHOC from './DonateFormChildViewForHOC';
 import {
@@ -88,9 +88,10 @@ class DonateForm extends Component {
   }
 
   getActiveDonationAmount(durationSelected, amountSelected) {
-    return this.amounts[durationSelected].includes(amountSelected)
+    return this.amounts[`${durationSelected}`].includes(amountSelected)
       ? amountSelected
-      : defaultAmount[durationSelected] || this.amounts[durationSelected][0];
+      : defaultAmount[`${durationSelected}`] ||
+          this.amounts[`${durationSelected}`][0];
   }
 
   convertToTimeContributed(amount) {
@@ -132,11 +133,11 @@ class DonateForm extends Component {
   }
 
   renderAmountButtons(duration) {
-    return this.amounts[duration].map(amount => (
+    return this.amounts[`${duration}`].map(amount => (
       <ToggleButton
         className='amount-value'
-        id={`${this.durations[duration]}-donation-${amount}`}
-        key={`${this.durations[duration]}-donation-${amount}`}
+        id={`${this.durations[`${duration}`]}-donation-${amount}`}
+        key={`${this.durations[`${duration}`]}-donation-${amount}`}
         value={amount}
       >
         {this.getFormatedAmountLabel(amount)}
@@ -161,7 +162,7 @@ class DonateForm extends Component {
             <Tab
               eventKey={duration}
               key={duration}
-              title={this.durations[duration]}
+              title={this.durations[`${duration}`]}
             >
               <Spacer />
               <div>

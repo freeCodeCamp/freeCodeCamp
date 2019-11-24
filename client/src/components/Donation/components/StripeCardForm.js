@@ -67,7 +67,7 @@ class StripeCardForm extends Component {
   isValidInput() {
     const { validation } = this.state;
     return Object.keys(validation)
-      .map(key => validation[key])
+      .map(key => validation[`${key}`])
       .every(({ complete, error }) => complete && !error);
   }
 

@@ -68,7 +68,7 @@ class AboutSettings extends Component {
   isFormPristine = () => {
     const { formValues, originalValues } = this.state;
     return Object.keys(originalValues)
-      .map(key => originalValues[key] === formValues[key])
+      .map(key => originalValues[`${key}`] === formValues[`${key}`])
       .every(bool => bool);
   };
 

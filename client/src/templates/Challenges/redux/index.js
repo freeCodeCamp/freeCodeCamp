@@ -101,8 +101,8 @@ export const sagas = [
 
 export const createFiles = createAction(types.createFiles, challengeFiles =>
   Object.keys(challengeFiles)
-    .filter(key => challengeFiles[key])
-    .map(key => challengeFiles[key])
+    .filter(key => challengeFiles[`${key}`])
+    .map(key => challengeFiles[`${key}`])
     .reduce(
       (challengeFiles, file) => ({
         ...challengeFiles,
@@ -157,29 +157,29 @@ export const moveToTab = createAction(types.moveToTab);
 export const setEditorFocusability = createAction(types.setEditorFocusability);
 export const setAccessibilityMode = createAction(types.setAccessibilityMode);
 
-export const currentTabSelector = state => state[ns].currentTab;
-export const challengeFilesSelector = state => state[ns].challengeFiles;
-export const challengeMetaSelector = state => state[ns].challengeMeta;
-export const challengeTestsSelector = state => state[ns].challengeTests;
-export const consoleOutputSelector = state => state[ns].consoleOut;
+export const currentTabSelector = state => state[`${ns}`].currentTab;
+export const challengeFilesSelector = state => state[`${ns}`].challengeFiles;
+export const challengeMetaSelector = state => state[`${ns}`].challengeMeta;
+export const challengeTestsSelector = state => state[`${ns}`].challengeTests;
+export const consoleOutputSelector = state => state[`${ns}`].consoleOut;
 export const isChallengeCompletedSelector = state => {
   const completedChallenges = completedChallengesSelector(state);
   const { id: currentChallengeId } = challengeMetaSelector(state);
   return completedChallenges.some(({ id }) => id === currentChallengeId);
 };
-export const isCodeLockedSelector = state => state[ns].isCodeLocked;
+export const isCodeLockedSelector = state => state[`${ns}`].isCodeLocked;
 export const isCompletionModalOpenSelector = state =>
-  state[ns].modal.completion;
-export const isHelpModalOpenSelector = state => state[ns].modal.help;
-export const isVideoModalOpenSelector = state => state[ns].modal.video;
-export const isResetModalOpenSelector = state => state[ns].modal.reset;
-export const isBuildEnabledSelector = state => state[ns].isBuildEnabled;
-export const successMessageSelector = state => state[ns].successMessage;
+  state[`${ns}`].modal.completion;
+export const isHelpModalOpenSelector = state => state[`${ns}`].modal.help;
+export const isVideoModalOpenSelector = state => state[`${ns}`].modal.video;
+export const isResetModalOpenSelector = state => state[`${ns}`].modal.reset;
+export const isBuildEnabledSelector = state => state[`${ns}`].isBuildEnabled;
+export const successMessageSelector = state => state[`${ns}`].successMessage;
 
 export const backendFormValuesSelector = state =>
-  state[ns].backendFormValues || {};
+  state[`${ns}`].backendFormValues || {};
 export const projectFormValuesSelector = state =>
-  state[ns].projectFormValues || {};
+  state[`${ns}`].projectFormValues || {};
 
 export const challengeDataSelector = state => {
   const { challengeType } = challengeMetaSelector(state);
@@ -226,9 +226,9 @@ export const challengeDataSelector = state => {
   return challengeData;
 };
 
-export const canFocusEditorSelector = state => state[ns].canFocusEditor;
+export const canFocusEditorSelector = state => state[`${ns}`].canFocusEditor;
 export const inAccessibilityModeSelector = state =>
-  state[ns].inAccessibilityMode;
+  state[`${ns}`].inAccessibilityMode;
 
 const MAX_LOGS_SIZE = 64 * 1024;
 
@@ -243,7 +243,7 @@ export const reducer = handleActions(
       challengeFiles: {
         ...state.challengeFiles,
         [key]: {
-          ...state.challengeFiles[key],
+          ...state.challengeFiles[`${key}`],
           contents: editorValue
         }
       }
@@ -294,7 +294,7 @@ export const reducer = handleActions(
       currentTab: 2,
       challengeFiles: {
         ...Object.keys(state.challengeFiles)
-          .map(key => state.challengeFiles[key])
+          .map(key => state.challengeFiles[`${key}`])
           .reduce(
             (files, file) => ({
               ...files,

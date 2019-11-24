@@ -4,7 +4,7 @@ if (!self.crypto) {
   self.crypto = {
     getRandomValues: function(array) {
       for (var i = 0, l = array.length; i < l; i++) {
-        array[i] = Math.floor(Math.random() * 256);
+        array[`${i}`] = Math.floor(Math.random() * 256);
       }
       return array;
     }

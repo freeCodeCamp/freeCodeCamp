@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Grid, Panel, Button } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 
-import env from '../../config/env.json';
+import env from '../../../config/env';
 import FullWidthRow from '../components/helpers/FullWidthRow';
 import { Spacer } from '../components/helpers';
 

@@ -1,4 +1,4 @@
 export default ['auth', 'services', 'link'].reduce((throughs, route) => {
-  throughs[route] = true;
+  throughs[`${route}`] = true;
   return throughs;
 }, {});

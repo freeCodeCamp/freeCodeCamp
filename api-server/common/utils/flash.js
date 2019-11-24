@@ -5,4 +5,5 @@ export const alertTypes = _.keyBy(
   _.identity
 );
 
-export const normalizeAlertType = alertType => alertTypes[alertType] || 'info';
+export const normalizeAlertType = alertType =>
+  alertTypes[`${alertType}`] || 'info';

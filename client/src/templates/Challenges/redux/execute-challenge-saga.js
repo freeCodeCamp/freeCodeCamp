@@ -102,7 +102,7 @@ function* buildChallengeData(challengeData) {
 function* executeTests(testRunner, tests, testTimeout = 5000) {
   const testResults = [];
   for (let i = 0; i < tests.length; i++) {
-    const { text, testString } = tests[i];
+    const { text, testString } = tests[`${i}`];
     const newTest = { text, testString };
     // only the last test outputs console.logs to avoid log duplication.
     const firstTest = i === 1;

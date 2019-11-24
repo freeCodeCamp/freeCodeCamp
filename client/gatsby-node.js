@@ -126,7 +126,9 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
             return null;
           }
           try {
-            const pageBuilder = createByIdentityMap[nodeIdentity](createPage);
+            const pageBuilder = createByIdentityMap[`${nodeIdentity}`](
+              createPage
+            );
             return pageBuilder(edge);
           } catch (e) {
             console.log(`

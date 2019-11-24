@@ -70,7 +70,7 @@ exports.parseDirectory = function parseDirectory(dirLevel, cb) {
 
 exports.chunkDocument = function chunkDocument(doc, pickFields, chunkField) {
   const baseDoc = _.pick(doc, pickFields);
-  const chunks = doc[chunkField].match(/(?:[\n\s]+[\S]+){1,200}/g);
+  const chunks = doc[`${chunkField}`].match(/(?:[\n\s]+[\S]+){1,200}/g);
   if (!chunks) {
     return [doc];
   }

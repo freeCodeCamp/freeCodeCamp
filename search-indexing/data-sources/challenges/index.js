@@ -17,11 +17,11 @@ module.exports = function getChallenges() {
       const superBlocks = Object.keys(curriculum).filter(
         x => x !== 'certificates'
       );
-      return from(superBlocks.map(superBlock => curriculum[superBlock]));
+      return from(superBlocks.map(superBlock => curriculum[`${superBlock}`]));
     }),
     switchMap(superBlock => {
       const { blocks } = superBlock;
-      return from(Object.keys(blocks).map(block => blocks[block]));
+      return from(Object.keys(blocks).map(block => blocks[`${block}`]));
     }),
     switchMap(block => {
       const { meta, challenges } = block;

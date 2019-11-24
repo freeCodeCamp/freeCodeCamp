@@ -42,7 +42,8 @@ export function getFirstChallenge({
 export function createNameIdMap({ challenge }) {
   return {
     challengeIdToName: Object.keys(challenge).reduce((map, challengeName) => {
-      map[challenge[challengeName].id] = challenge[challengeName].dashedName;
+      map[challenge[`${challengeName}`].id] =
+        challenge[`${challengeName}`].dashedName;
       return map;
     }, {})
   };

@@ -45,10 +45,10 @@ MongoClient.connect(MONGOHQ_URL, { useNewUrlParser: true }, function(
     const curriculum = await getChallengesForLang(lang);
 
     const allChallenges = Object.keys(curriculum)
-      .map(key => curriculum[key].blocks)
+      .map(key => curriculum[`${key}`].blocks)
       .reduce((challengeArray, superBlock) => {
         const challengesForBlock = Object.keys(superBlock).map(
-          key => superBlock[key].challenges
+          key => superBlock[`${key}`].challenges
         );
         return [...challengeArray, ...flatten(challengesForBlock)];
       }, [])

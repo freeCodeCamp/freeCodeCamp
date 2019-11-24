@@ -42,7 +42,8 @@ const getPrevChallengePath = (node, index, nodeArray) => {
   return prev ? prev.node.fields.slug : '/learn';
 };
 
-const getTemplateComponent = challengeType => views[viewTypes[challengeType]];
+const getTemplateComponent = challengeType =>
+  views[viewTypes[`${challengeType}`]];
 
 const getIntroIfRequired = (node, index, nodeArray) => {
   const next = nodeArray[index + 1];

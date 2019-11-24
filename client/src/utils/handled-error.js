@@ -12,11 +12,11 @@ export function isHandledError(err) {
 }
 
 export function unwrapHandledError(err) {
-  return handledErrorSymbol in err ? err[handledErrorSymbol] : {};
+  return handledErrorSymbol in err ? err[`${handledErrorSymbol}`] : {};
 }
 
 export function wrapHandledError(err, { type, message, redirectTo }) {
-  err[handledErrorSymbol] = { type, message, redirectTo };
+  err[`${handledErrorSymbol}`] = { type, message, redirectTo };
   return err;
 }
 

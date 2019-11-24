@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import { apiLocation } from '../../../config/env.json';
+import { apiLocation } from '../../../../config/env';
 
 import { hardGoTo } from '../../redux';
 

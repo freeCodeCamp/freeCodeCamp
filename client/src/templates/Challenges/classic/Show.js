@@ -182,7 +182,7 @@ class ShowClassic extends Component {
 
   getChallengeFile() {
     const { files } = this.props;
-    return first(Object.keys(files).map(key => files[key]));
+    return first(Object.keys(files).map(key => files[`${key}`]));
   }
 
   hasPreview() {
@@ -218,7 +218,7 @@ class ShowClassic extends Component {
   renderEditor() {
     const { files } = this.props;
 
-    const challengeFile = first(Object.keys(files).map(key => files[key]));
+    const challengeFile = first(Object.keys(files).map(key => files[`${key}`]));
     return (
       challengeFile && (
         <Editor

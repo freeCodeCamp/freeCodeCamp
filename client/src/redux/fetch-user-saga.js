@@ -18,7 +18,7 @@ function* fetchSessionUser() {
     const {
       data: { user = {}, result = '', sessionMeta = {} }
     } = yield call(getSessionUser);
-    const appUser = user[result] || {};
+    const appUser = user[`${result}`] || {};
     yield put(
       fetchUserComplete({ user: appUser, username: result, sessionMeta })
     );
@@ -33,7 +33,7 @@ function* fetchOtherUser({ payload: maybeUser = '' }) {
     const { data } = yield call(getUserProfile, maybeUserLC);
 
     const { entities: { user = {} } = {}, result = '' } = data;
-    const otherUser = user[result] || {};
+    const otherUser = user[`${result}`] || {};
     yield put(
       fetchProfileForUserComplete({ user: otherUser, username: result })
     );
