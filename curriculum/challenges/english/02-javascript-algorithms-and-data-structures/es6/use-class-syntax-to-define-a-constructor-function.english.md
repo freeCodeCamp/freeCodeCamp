@@ -7,9 +7,9 @@ forumTopicId: 301212
 
 ## Description
 <section id='description'>
-ES6 provides a new syntax to help create objects, using the keyword <dfn>class</dfn>.
-This is to be noted, that the <code>class</code> syntax is just a syntax, and not a full-fledged class based implementation of object oriented paradigm, unlike in languages like Java, or Python, or Ruby etc.
-In ES5, we usually define a constructor function, and use the <code>new</code> keyword to instantiate an object.
+ES6 provides a new syntax to create objects, using the <dfn>class</dfn> keyword.
+It should be noted that the <code>class</code> syntax is just syntax, and not a full-fledged class-based implementation of an object-oriented paradigm, unlike in languages such as Java, Python, Ruby, etc.
+In ES5, we usually define a constructor function and use the <code>new</code> keyword to instantiate an object.
 
 ```js
 var SpaceShuttle = function(targetPlanet){
@@ -18,7 +18,7 @@ var SpaceShuttle = function(targetPlanet){
 var zeus = new SpaceShuttle('Jupiter');
 ```
 
-The class syntax simply replaces the constructor function creation:
+The <code>class</code> syntax simply replaces the constructor function creation:
 
 ```js
 class SpaceShuttle {
@@ -29,7 +29,7 @@ class SpaceShuttle {
 const zeus = new SpaceShuttle('Jupiter');
 ```
 
-Notice that the <code>class</code> keyword declares a new function, and a constructor was added, which would be invoked when <code>new</code> is called - to create a new object.<br>
+It should be noted that the <code>class</code> keyword declares a new function, to which a constructor is added. This constructor is invoked when <code>new</code> is called to create a new object.<br>
 <strong>Notes:</strong><br><ul>
 <li> UpperCamelCase should be used by convention for ES6 class names, as in <code>SpaceShuttle</code> used above.</li>
 <li> The constructor method is a special method for creating and initializing an object created with a class. You will learn more about it in the Object Oriented Programming section of the JavaScript Algorithms And Data Structures Certification.</li></ul>
@@ -37,8 +37,8 @@ Notice that the <code>class</code> keyword declares a new function, and a constr
 
 ## Instructions
 <section id='instructions'>
-Use <code>class</code> keyword and write a proper constructor to create the <code>Vegetable</code> class.
-The <code>Vegetable</code> lets you create a vegetable object, with a property <code>name</code>, to be passed to constructor.
+Use the <code>class</code> keyword and write a constructor to create the <code>Vegetable</code> class.
+The <code>Vegetable</code> class allows you to create a vegetable object with a property <code>name</code> that gets passed to the constructor.
 </section>
 
 ## Tests
