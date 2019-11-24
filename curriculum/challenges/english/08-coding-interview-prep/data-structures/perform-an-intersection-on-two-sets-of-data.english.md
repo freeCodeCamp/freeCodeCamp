@@ -134,7 +134,7 @@ class Set {
   intersection(otherSet) {
     const intersectionSet = new Set();
     const firstSet = this.values();
-    firstSet.forEach(function(e) {
+    firstSet.forEach(e => {
       if (otherSet.has(e)) {
         intersectionSet.add(e);
       }

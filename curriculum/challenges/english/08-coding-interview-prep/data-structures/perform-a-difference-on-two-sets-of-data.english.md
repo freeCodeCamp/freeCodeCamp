@@ -81,7 +81,7 @@ class Set {
   intersection(otherSet) {
     const intersectionSet = new Set();
     const firstSet = this.values();
-    firstSet.forEach(function(e) {
+    firstSet.forEach(e => {
       if (otherSet.has(e)) {
         intersectionSet.add(e);
       }
@@ -145,7 +145,7 @@ class Set {
   intersection(otherSet) {
     const intersectionSet = new Set();
     const firstSet = this.values();
-    firstSet.forEach(function(e) {
+    firstSet.forEach(e => {
       if (otherSet.has(e)) {
         intersectionSet.add(e);
       }
@@ -156,7 +156,7 @@ class Set {
   difference(otherSet) {
     const differenceSet = new Set();
     const firstSet = this.values();
-    firstSet.forEach(function(e) {
+    firstSet.forEach(e => {
       if (!otherSet.has(e)) {
         differenceSet.add(e);
       }
