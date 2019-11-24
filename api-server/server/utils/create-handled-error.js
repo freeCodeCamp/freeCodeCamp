@@ -1,18 +1,18 @@
-const _handledError = Symbol('handledError');
+const handledError = Symbol('handledError');
 
 export function isHandledError(err) {
-  return !!err[`${_handledError}`];
+  return !!err[`${handledError}`];
 }
 
 export function unwrapHandledError(err) {
-  return err[`${_handledError}`] || {};
+  return err[`${handledError}`] || {};
 }
 
 export function wrapHandledError(
   err,
   { type, message, redirectTo, status = 200 }
 ) {
-  err[`${_handledError}`] = { type, message, redirectTo, status };
+  err[`${handledError}`] = { type, message, redirectTo, status };
   return err;
 }
 
