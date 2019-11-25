@@ -14,7 +14,7 @@ Let's also implement a method that does the opposite: an <code>elementAt</code> 
 
 ## Instructions
 <section id='instructions'>
-Write an <code>isEmpty</code> method that checks if the linked list is empty, an <code>indexOf</code> method that returns the <code>index</code> of a given element, and an <code>elementAt</code> that returns an <code>element</code> at a given <code>index.
+Write an <code>isEmpty</code> method that checks if the linked list is empty, an <code>indexOf</code> method that returns the <code>index</code> of a given element, and an <code>elementAt</code> that returns an <code>element</code> at a given <code>index</code>.
 </section>
 
 ## Tests
@@ -26,8 +26,8 @@ tests:
     testString: assert((function(){var test = new LinkedList(); return (typeof test.indexOf === 'function')}()));
   - text: Your <code>LinkedList</code> class should have a <code>elementAt</code> method.
     testString: assert((function(){var test = new LinkedList(); return (typeof test.elementAt === 'function')}()));
-  - text: Your <code>size</code> method should return the length of the linked list
-    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten'); return test.size() === 3}()));
+  - text: Your <code>size</code> method should return the size of the linked list
+    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten'); return test.size === 3}()));
   - text: Your <code>indexOf</code> method should return the index of the given element.
     testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten'); return test.indexOf('kitten') === 2}()));
   - text: Your <code>elementAt</code> method should return at element at a given index.
@@ -43,60 +43,57 @@ tests:
 <div id='js-seed'>
 
 ```js
-function LinkedList() {
-  var length = 0;
-  var head = null;
-
-  var Node = function(element){ // {1}
+class Node {
+  constructor(element) {
     this.element = element;
     this.next = null;
-  };
+  }
+}
 
-  this.size = function() {
-    return length;
-  };
+class LinkedList {
+  constructor() {
+    this.size = 0;
+    this.head = null;
+  }
 
-  this.head = function(){
-    return head;
-  };
-
-  this.add = function(element){
-    var node = new Node(element);
-    if(head === null){
-        head = node;
+  add(element){
+    if (this.head === null) {
+      this.head = new Node(element);
     } else {
-        var currentNode = head;
+      let currentNode = this.head;
+      while (currentNode.next != null) {
+        currentNode = currentNode.next;
+      }
+      currentNode.next = new Node(element);
+    }
+    this.size++;
+  }
 
-        while(currentNode.next){
-            currentNode  = currentNode.next;
-        }
+  remove(element) {
+    let previous;
+    let currentNode = this.head;
 
-        currentNode.next = node;
+    while (currentNode !== null && currentNode.element !== element) {
+      previous = currentNode;
+      currentNode = currentNode.next;
     }
 
-    length++;
-  };
-
-  this.remove = function(element){
-    var currentNode = head;
-    var previousNode;
-    if(currentNode.element === element){
-        head = currentNode.next;
+    if (currentNode === null) {
+      return;
+    } else if (previous) {
+      previous.next = currentNode.next;
     } else {
-        while(currentNode.element !== element) {
-            previousNode = currentNode;
-            currentNode = currentNode.next;
-        }
-
-        previousNode.next = currentNode.next;
+      this.head = currentNode.next;
     }
 
-    length --;
-  };
+    this.size--;
+  }
+  // Add isEmpty method here
 
-  // Only change code below this line
+  // Add indexOf method here
 
-  // Only change code above this line
+  // Add elementAt method here
+
 }
 ```
 
@@ -108,7 +105,84 @@ function LinkedList() {
 <section id='solution'>
 
 ```js
-// solution required
+class Node {
+  constructor(element) {
+    this.element = element;
+    this.next = null;
+  }
+}
+
+class LinkedList {
+  constructor() {
+    this.size = 0;
+    this.head = null;
+  }
+
+  add(element){
+    if (this.head === null) {
+      this.head = new Node(element);
+    } else {
+      let currentNode = this.head;
+      while (currentNode.next != null) {
+        currentNode = currentNode.next;
+      }
+      currentNode.next = new Node(element);
+    }
+    this.size++;
+  }
+
+  remove(element) {
+    let previous;
+    let currentNode = this.head;
+
+    while (currentNode !== null && currentNode.element !== element) {
+      previous = currentNode;
+      currentNode = currentNode.next;
+    }
+
+    if (currentNode === null) {
+      return;
+    } else if (previous) {
+      previous.next = currentNode.next;
+    } else {
+      this.head = currentNode.next;
+    }
+
+    this.size--;
+  }
+
+  isEmpty() {
+    return this.size === 0;
+  }
+
+  indexOf(element) {
+    let currentNode = this.head;
+    let index = 0;
+    while (currentNode !== null && currentNode.element !== element) {
+      currentNode = currentNode.next;
+      index++;
+    }
+
+    if (currentNode === null) {
+      return -1;
+    }
+
+    return index;
+  }
+
+  elementAt(index) {
+    if (index < 0 || index >= this.size) {
+      return;
+    }
+
+    let currentNode = this.head;
+    for (let i = 0; i < index; i++) {
+      currentNode = currentNode.next;
+    }
+
+    return currentNode.element;
+  }
+}
 ```
 
 </section>
