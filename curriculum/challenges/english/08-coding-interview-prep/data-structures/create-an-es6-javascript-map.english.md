@@ -20,8 +20,8 @@ The new version of JavaScript provides us with a built-in Map object which provi
 
 ## Instructions
 <section id='instructions'>
-
-Define a JavaScript Map object and assign to it a variable called myMap. Add the key, value pair <code>freeCodeCamp</code>, <code>Awesome!</code> to it.
+Create a map object.
+Add the key, value pair <code>freeCodeCamp</code>, <code>Awesome!</code> then return the map.
 </section>
 
 ## Tests
@@ -29,10 +29,8 @@ Define a JavaScript Map object and assign to it a variable called myMap. Add the
 
 ```yml
 tests:
-  - text: The myMap object exists.
-    testString: assert(typeof myMap === 'object');
-  - text: myMap contains the key value pair <code>freeCodeCamp</code>, <code>Awesome!</code>.
-    testString: assert(myMap.get('freeCodeCamp') === 'Awesome!');
+  - text: Map contains the key value pair <code>freeCodeCamp</code>, <code>Awesome!</code>.
+    testString: assert((function(){var test = checkMap(); return test.get('freeCodeCamp') === 'Awesome!';})());
 ```
 
 </section>
@@ -43,7 +41,15 @@ tests:
 <div id='js-seed'>
 
 ```js
-// change code below this line
+function checkMap(){
+  // change code below this line
+
+  const map = // Create a map
+  // Set key, value pair here
+
+  // change code above this line
+  return map;
+}
 ```
 
 </div>
@@ -53,7 +59,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+function checkMap(){
+  const map = new Map();
+  map.set("freeCodeCamp", "Awesome!");
+  return map;
+}
 ```
 
 </section>
