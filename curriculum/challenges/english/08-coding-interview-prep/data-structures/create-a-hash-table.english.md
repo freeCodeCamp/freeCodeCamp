@@ -48,20 +48,27 @@ tests:
 <div id='js-seed'>
 
 ```js
-var called = 0;
-var hash = string => {
+let called = 0;
+function hash(string) {
   called++;
-  var hashed = 0;
-  for (var i = 0; i < string.length; i++) {
-    hashed += string.charCodeAt(i);
+  let hash = 0;
+  for (let i = 0; i < string.length; i++) {
+    hash += string.charCodeAt(i);
   }
-  return hashed;
-};
-var HashTable = function() {
-  this.collection = {};
-  // change code below this line
-  // change code above this line
-};
+  return hash;
+}
+
+class HashTable {
+  constructor() {
+    this.collection = {};
+  }
+  // Add add method here
+
+  // Add remove method here
+
+  // Add lookup method here
+
+}
 ```
 
 </div>
@@ -70,15 +77,15 @@ var HashTable = function() {
 <div id='js-setup'>
 
 ```js
-var called = 0;
-var hash = string => {
+let called = 0;
+function hash(string) {
   called++;
-  var hash = 0;
-  for (var i = 0; i < string.length; i++) {
+  let hash = 0;
+  for (let i = 0; i < string.length; i++) {
     hash += string.charCodeAt(i);
   }
   return hash;
-};
+}
 ```
 
 </div>
@@ -88,7 +95,67 @@ var hash = string => {
 <section id='solution'>
 
 ```js
-// solution required
+let called = 0;
+function hash(string) {
+  called++;
+  let hash = 0;
+  for (let i = 0; i < string.length; i++) {
+    hash += string.charCodeAt(i);
+  }
+  return hash;
+}
+
+class HashTable {
+  constructor() {
+    this.collection = {};
+  }
+
+  add(key, value) {
+    const keyHash = hash(key);
+    if (!(keyHash in this.collection)) {
+      this.collection[keyHash] = [[key, value]];
+      return;
+    }
+
+    for (let i = 0; i < this.collection[keyHash].length; i++) {
+      if (this.collection[keyHash][i][0] === key) {
+        this.collection[keyHash][i][1] = value;
+        return;
+      }
+    }
+
+    this.collection[keyHash].push([key, value]);
+  }
+
+  remove(key) {
+    const keyHash = hash(key);
+    if (!(keyHash in this.collection)) {
+      return;
+    }
+
+    for (let i = 0; i < this.collection[keyHash].length; i++) {
+      if (this.collection[keyHash][i][0] === key) {
+        this.collection[keyHash].splice(i, 1);
+        return;
+      }
+    }
+  }
+
+  lookup(key) {
+    const keyHash = hash(key);
+    if (!(keyHash in this.collection)) {
+      return null;
+    }
+
+    for (let i = 0; i < this.collection[keyHash].length; i++) {
+      if (this.collection[keyHash][i][0] === key) {
+        return this.collection[keyHash][i][1];
+      }
+    }
+
+    return null;
+  }
+}
 ```
 
 </section>
