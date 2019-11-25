@@ -12,8 +12,8 @@ Do you remember the ES6 spread operator <code>...</code>?
 Let's create a Set, and check out the spread function.
 
 ```js
-var set = new Set([1,2,3]);
-var setToArr = [...set]
+const set = new Set([1,2,3]);
+const setToArr = [...set]
 console.log(setToArr) // returns [ 1, 2, 3 ]
 ```
 
@@ -60,7 +60,8 @@ function checkSet(set){
 
 ```js
 function checkSet(set){
-return [...set];}
+  return [...set];
+}
 ```
 
 </section>
