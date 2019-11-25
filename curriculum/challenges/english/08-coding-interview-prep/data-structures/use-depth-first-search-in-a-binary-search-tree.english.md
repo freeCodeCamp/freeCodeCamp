@@ -12,7 +12,7 @@ We know how to search a binary search tree for a specific value. But what if we 
 In-order: Begin the search at the left-most node and end at the right-most node.
 Pre-order: Explore all the roots before the leaves.
 Post-order: Explore all the leaves before the roots.
-As you may guess, you may choose different search methods depending on what type of data your tree is storing and what you are looking for. For a binary search tree, an inorder traversal returns the nodes in sorted order.
+As you may guess, you may choose different search methods depending on what type of data your tree is storing and what you are looking for. For a binary search tree, an In-order traversal returns the nodes in sorted order.
 </section>
 
 ## Instructions
@@ -57,55 +57,56 @@ tests:
 <div id='js-seed'>
 
 ```js
-var displayTree = tree => console.log(JSON.stringify(tree, null, 2));
-function Node(value) {
-  this.value = value;
-  this.left = null;
-  this.right = null;
-}
-function BinarySearchTree() {
-  this.root = null;
-  // change code below this line
-  // change code above this line
-}
-```
+function displayTree(tree) { console.log(JSON.stringify(tree, null, 2)); }
 
-</div>
-
-### After Test
-<div id='js-teardown'>
-
-```js
-BinarySearchTree.prototype = {
-  add: function(value) {
-    var node = this.root;
-    if (node == null) {
-      this.root = new Node(value);
-      return;
-    } else {
-      function searchTree(node) {
-        if (value < node.value) {
-          if (node.left == null) {
-            node.left = new Node(value);
-            return;
-          } else if (node.left != null) {
-            return searchTree(node.left);
-          }
-        } else if (value > node.value) {
-          if (node.right == null) {
-            node.right = new Node(value);
-            return;
-          } else if (node.right != null) {
-            return searchTree(node.right);
-          }
-        } else {
-          return null;
-        }
-      }
-      return searchTree(node);
-    }
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
   }
-};
+}
+
+class BinarySearchTree {
+  constructor() {
+    this.root = null;
+  }
+
+  add(element) {
+    if (this.root === null) {
+      this.root = new Node(element);
+      return;
+    }
+
+    function searchTree(current) {
+      if (current.value > element) {
+        if (current.left) {
+          return searchTree(current.left);
+        }
+        current.left = new Node(element);
+        return;
+      }
+
+      if (current.value < element) {
+        if (current.right) {
+          return searchTree(current.right);
+        }
+        current.right = new Node(element);
+        return;
+      }
+
+      return null;
+    }
+
+    return searchTree(this.root);
+  }
+  // Add inorder method here
+
+  // Add preorder method here
+
+  // Add postorder method here
+
+}
 ```
 
 </div>
@@ -115,44 +116,94 @@ BinarySearchTree.prototype = {
 <section id='solution'>
 
 ```js
-var displayTree = tree => console.log(JSON.stringify(tree, null, 2));
-function Node(value) {
-  this.value = value;
-  this.left = null;
-  this.right = null;
+function displayTree(tree) { console.log(JSON.stringify(tree, null, 2)); }
+
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
 }
-function BinarySearchTree() {
-  this.root = null;
-  this.result = [];
 
-  this.inorder = function(node) {
-    if (!node) node = this.root;
-    if (!node) return null;
+class BinarySearchTree {
+  constructor() {
+    this.root = null;
+  }
 
-    if (node.left) this.inorder(node.left);
-    this.result.push(node.value);
-    if (node.right) this.inorder(node.right);
-    return this.result;
-  };
-  this.preorder = function(node) {
-    if (!node) node = this.root;
-    if (!node) return null;
+  add(element) {
+    if (this.root === null) {
+      this.root = new Node(element);
+      return;
+    }
 
-    this.result.push(node.value);
-    if (node.left) this.preorder(node.left);
-    if (node.right) this.preorder(node.right);
-    return this.result;
-  };
-  this.postorder = function(node) {
-    if (!node) node = this.root;
-    if (!node) return null;
+    function searchTree(current) {
+      if (current.value > element) {
+        if (current.left) {
+          return searchTree(current.left);
+        }
+        current.left = new Node(element);
+        return;
+      }
 
-    if (node.left) this.postorder(node.left);
-    if (node.right) this.postorder(node.right);
-    this.result.push(node.value);
+      if (current.value < element) {
+        if (current.right) {
+          return searchTree(current.right);
+        }
+        current.right = new Node(element);
+        return;
+      }
 
-    return this.result;
-  };
+      return null;
+    }
+
+    return searchTree(this.root);
+  }
+
+  inorder() {
+    if (this.root === null) {
+      return null;
+    }
+
+    const results = [];
+    function order(node) {
+      if (node.left) order(node.left);
+      results.push(node.value);
+      if (node.right) order(node.right);
+    }
+    order(this.root);
+    return results;
+  }
+
+  preorder() {
+    if (this.root === null) {
+      return null;
+    }
+
+    const results = [];
+    function order(node) {
+      results.push(node.value);
+      if (node.left) order(node.left);
+      if (node.right) order(node.right);
+    }
+    order(this.root);
+    return results;
+  }
+
+  postorder() {
+    if (this.root === null) {
+      return null;
+    }
+
+    const results = [];
+    function order(node) {
+      if (node.left) order(node.left);
+      if (node.right) order(node.right);
+      results.push(node.value);
+    }
+    order(this.root);
+    return results;
+  }
 }
 ```
 
