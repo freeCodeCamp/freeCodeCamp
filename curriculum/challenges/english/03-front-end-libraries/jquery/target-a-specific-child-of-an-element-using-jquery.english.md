@@ -33,7 +33,7 @@ tests:
     testString: assert($(".animated.bounce").length === 2);
   - text: You should use the <code>&#58;nth-child&#40&#41</code> selector to modify these elements.
     testString: assert(code.match(/\:nth-child\(/g));
-  - text: Only use jQuery to add these classes to the element.
+  - text: You should only use jQuery to add these classes to the element.
     testString: assert(code.match(/\$\(".target:nth-child\(2\)"\)/g) || code.match(/\$\('.target:nth-child\(2\)'\)/g) || code.match(/\$\(".target"\).filter\(":nth-child\(2\)"\)/g) || code.match(/\$\('.target'\).filter\(':nth-child\(2\)'\)/g));
 
 ```

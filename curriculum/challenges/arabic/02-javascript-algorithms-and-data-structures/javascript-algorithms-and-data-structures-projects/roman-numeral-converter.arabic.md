@@ -8,7 +8,7 @@ localeTitle: تحويل الأرقام الرومانية
 ---
 
 ## Description
-<section id="description"> تحويل الرقم المحدد إلى رقم روماني. يجب تقديم جميع إجابات <a href="http://www.mathsisfun.com/roman-numerals.html" target="_blank">الأرقام الرومانية</a> في الحالة العليا. تذكر استخدام <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> إذا واجهتك مشكلة. حاول إقران البرنامج. اكتب الكود الخاص بك. </section>
+<section id="description"> تحويل الرقم المحدد إلى رقم روماني. يجب تقديم جميع إجابات <a href="http://www.mathsisfun.com/roman-numerals.html" target="_blank">الأرقام الرومانية</a> في الحالة العليا. تذكر استخدام <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> إذا واجهتك مشكلة. حاول إقران البرنامج. اكتب الكود الخاص بك. </section>
 
 ## Instructions
 <section id="instructions">

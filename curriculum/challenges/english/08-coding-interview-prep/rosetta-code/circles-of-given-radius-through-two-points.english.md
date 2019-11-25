@@ -42,7 +42,7 @@ Implement a function that takes two points and a radius and returns the two circ
 
 ```yml
 tests:
-  - text: <code>getCircles</code> is a function.
+  - text: <code>getCircles</code> should be a function.
     testString: assert(typeof getCircles === 'function');
   - text: <code>getCircles([0.1234, 0.9876], [0.8765, 0.2345], 2.0)</code> should return <code>[[1.8631, 1.9742], [-0.8632, -0.7521]]</code>.
     testString: assert.deepEqual(getCircles(...testCases[0]), answers[0]);

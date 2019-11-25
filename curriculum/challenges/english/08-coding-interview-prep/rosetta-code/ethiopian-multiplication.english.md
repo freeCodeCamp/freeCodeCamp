@@ -73,7 +73,7 @@ Use these functions to create a function that does Ethiopian multiplication.
 
 ```yml
 tests:
-  - text: <code>eth_mult</code> is a function.
+  - text: <code>eth_mult</code> should be a function.
     testString: assert(typeof eth_mult === 'function');
   - text: <code>eth_mult(17,34)</code> should return <code>578</code>.
     testString: assert.equal(eth_mult(17, 34), 578);

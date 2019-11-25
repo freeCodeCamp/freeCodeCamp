@@ -22,13 +22,13 @@ Use <code>assert.property()</code> or <code>assert.notProperty()</code> to make 
 
 ```yml
 tests:
-  - text: All tests should pass
+  - text: All tests should pass.
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=15').then(data => { assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: Choose the right assertion - property vs. notProperty
+  - text: You should choose the right assertion - property vs. notProperty.
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=15').then(data => { assert.equal(data.assertions[0].method, 'notProperty', 'A car has not wings'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: Choose the right assertion - property vs. notProperty
+  - text: You should choose the right assertion - property vs. notProperty.
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=15').then(data => { assert.equal(data.assertions[1].method, 'property', 'planes have engines'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: Choose the right assertion - property vs. notProperty
+  - text: You should choose the right assertion - property vs. notProperty.
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=15').then(data => { assert.equal(data.assertions[2].method, 'property', 'Cars have wheels'); }, xhr => { throw new Error(xhr.responseText); })
 
 ```

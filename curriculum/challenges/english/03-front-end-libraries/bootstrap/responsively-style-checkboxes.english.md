@@ -23,11 +23,11 @@ Nest all three of your checkboxes in a <code>&#60;div class="row"&#62;</code> el
 
 ```yml
 tests:
-  - text: Nest all of your checkboxes inside one <code>div</code> with the class <code>row</code>.
+  - text: All of your checkboxes should be nested inside one <code>div</code> with the class <code>row</code>.
     testString: assert($("div.row:has(input[type=\"checkbox\"])").length > 0);
-  - text: Nest each of your checkboxes inside its own <code>div</code> with the class <code>col-xs-4</code>.
+  - text: Each of your checkboxes should be nested inside its own <code>div</code> with the class <code>col-xs-4</code>.
     testString: assert($("div.col-xs-4:has(input[type=\"checkbox\"])").length > 2);
-  - text: Make sure each of your <code>div</code> elements has a closing tag.
+  - text: All of your <code>div</code> elements should have closing tags.
     testString: assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length);
 
 ```
