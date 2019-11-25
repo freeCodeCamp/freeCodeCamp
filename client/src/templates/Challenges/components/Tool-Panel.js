@@ -66,7 +66,7 @@ function ToolPanel({
           bsStyle='primary'
           className='btn-invert'
           id='get-help-dropdown'
-          title='Get Help'
+          title={isMobile ? 'Help' : 'Get Help'}
         >
           {guideUrl ? (
             <MenuItem
@@ -75,7 +75,7 @@ function ToolPanel({
               href={guideUrl}
               target='_blank'
             >
-              {isMobile ? 'Hint' : 'Get a hint'}
+              {'Get a Hint'}
             </MenuItem>
           ) : null}
           {videoUrl ? (
@@ -84,7 +84,7 @@ function ToolPanel({
               className='btn-invert'
               onClick={openVideoModal}
             >
-              {isMobile ? 'Video' : 'Watch a video'}
+              {'Watch a video'}
             </MenuItem>
           ) : null}
           <MenuItem
@@ -92,7 +92,7 @@ function ToolPanel({
             className='btn-invert'
             onClick={openHelpModal}
           >
-            {isMobile ? 'Help' : 'Ask for help'}
+            {'Ask for help'}
           </MenuItem>
         </DropdownButton>
       </div>

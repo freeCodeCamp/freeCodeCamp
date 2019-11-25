@@ -11,13 +11,12 @@
 .tool-panel-group-mobile {
   display: flex;
   flex-direction: row-reverse;
-  padding: 0 2px;
 }
 
-.tool-panel-group-mobile > .btn-block {
+.tool-panel-group-mobile > .btn-block,
+.tool-panel-group-mobile > .dropdown > .btn-block {
   margin: 0 2px 0 0;
-  padding-left: 8px;
-  padding-right: 8px;
+  padding: 5px 0px;
 }
 
 .tool-panel-group .btn-group {
@@ -39,8 +38,14 @@
 .tool-panel-group .dropdown-menu {
   top: auto;
   bottom: 100%;
-  width: 100%;
+  width: calc(100% + 2px);
   text-align: center;
+  min-width: 240px;
+  left: -1px;
+}
+
+.tool-panel-group .dropdown-menu a {
+  padding: 0.5rem;
 }
 
 #get-help-dropdown > .caret {
