@@ -50,11 +50,12 @@ export function getArticleById(shortId) {
 }
 
 /** POST **/
-export function postChargeStripe(isSignedIn, body) {
-  const donatePath = '/donate/charge-stripe';
-  return isSignedIn
-    ? post(donatePath, body)
-    : postUnauthenticated(donatePath, body);
+export function postChargeStripe(body) {
+  return post(`/donate/charge-stripe`, body);
+}
+
+export function postCreateHmacHash(body) {
+  return post(`/donate/create-hmac-hash`, body);
 }
 
 export function putUpdateLegacyCert(body) {

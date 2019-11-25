@@ -42,7 +42,7 @@ Write a function to generate Fibonacci $n$-step number sequences and Lucas seque
 
 ```yml
 tests:
-  - text: <code>fib_luc</code> is a function.
+  - text: <code>fib_luc</code> should be a function.
     testString: assert(typeof fib_luc === 'function');
   - text: <code>fib_luc(2,10,"f")</code> should return <code>[1,1,2,3,5,8,13,21,34,55]</code>.
     testString: assert.deepEqual(fib_luc(2,10,"f"),ans[0]);

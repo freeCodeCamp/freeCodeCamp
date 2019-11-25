@@ -23,7 +23,7 @@ Give your cat photo a <code>border-radius</code> of <code>50%</code>.
 tests:
   - text: Your image should have a border radius of <code>50%</code>, making it perfectly circular.
     testString: assert(parseInt($("img").css("border-top-left-radius")) > 48);
-  - text: Be sure to use a percentage value of <code>50%</code>.
+  - text: The <code>border-radius</code> value should use a percentage value of <code>50%</code>.
     testString: assert(code.match(/50%/g));
 
 ```
@@ -137,9 +137,9 @@ tests:
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
   <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
-  
+
   <a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-  
+
   <div>
     <p>Things cats love:</p>
     <ul>
@@ -154,7 +154,7 @@ tests:
       <li>other cats</li>
     </ol>
   </div>
-  
+
   <form action="/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>

@@ -21,6 +21,7 @@ const initialState = {
   canFocusEditor: true,
   challengeFiles: {},
   challengeMeta: {
+    block: '',
     id: '',
     nextChallengePath: '/',
     prevChallengePath: '/',
@@ -29,6 +30,7 @@ const initialState = {
   },
   challengeTests: [],
   consoleOut: '',
+  inAccessibilityMode: false,
   isCodeLocked: false,
   isBuildEnabled: true,
   modal: {
@@ -78,7 +80,8 @@ export const types = createTypes(
 
     'moveToTab',
 
-    'setEditorFocusability'
+    'setEditorFocusability',
+    'setAccessibilityMode'
   ],
   ns
 );
@@ -152,6 +155,7 @@ export const submitChallenge = createAction(types.submitChallenge);
 export const moveToTab = createAction(types.moveToTab);
 
 export const setEditorFocusability = createAction(types.setEditorFocusability);
+export const setAccessibilityMode = createAction(types.setAccessibilityMode);
 
 export const currentTabSelector = state => state[ns].currentTab;
 export const challengeFilesSelector = state => state[ns].challengeFiles;
@@ -223,6 +227,8 @@ export const challengeDataSelector = state => {
 };
 
 export const canFocusEditorSelector = state => state[ns].canFocusEditor;
+export const inAccessibilityModeSelector = state =>
+  state[ns].inAccessibilityMode;
 
 const MAX_LOGS_SIZE = 64 * 1024;
 
@@ -324,9 +330,8 @@ export const reducer = handleActions(
       isBuildEnabled: true,
       isCodeLocked: false
     }),
-    [types.disableBuildOnError]: (state, { payload }) => ({
+    [types.disableBuildOnError]: state => ({
       ...state,
-      consoleOut: state.consoleOut + ' \n' + payload,
       isBuildEnabled: false
     }),
 
@@ -359,6 +364,10 @@ export const reducer = handleActions(
     [types.setEditorFocusability]: (state, { payload }) => ({
       ...state,
       canFocusEditor: payload
+    }),
+    [types.setAccessibilityMode]: (state, { payload }) => ({
+      ...state,
+      inAccessibilityMode: payload
     })
   },
   initialState

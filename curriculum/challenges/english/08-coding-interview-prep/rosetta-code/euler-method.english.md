@@ -72,7 +72,7 @@ and to compare with the analytical solution.
 
 ```yml
 tests:
-  - text: <code>eulersMethod</code> is a function.
+  - text: <code>eulersMethod</code> should be a function.
     testString: assert(typeof eulersMethod === 'function');
   - text: <code>eulersMethod(0, 100, 100, 10)</code> should return a number.
     testString: assert(typeof eulersMethod(0, 100, 100, 10) === 'number');

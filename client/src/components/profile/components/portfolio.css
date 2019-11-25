@@ -10,3 +10,29 @@
 .media {
   word-break: break-all;
 }
+
+/* Timeline pagination */
+.timeline-pagination_list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timeline-pagination_list_item {
+  margin: 0 5px;
+}
+
+.timeline-pagination_list_item > button {
+  outline: none;
+}
+
+/* Timeline table styles */
+.timeline-row {
+  height: 60px;
+}
+
+.timeline-row > td {
+  vertical-align: middle !important;
+}

@@ -20,11 +20,11 @@ Implement a function to determine the state of the doors after the last pass. Re
 
 ```yml
 tests:
-  - text: <code>getFinalOpenedDoors</code> is a function.
+  - text: <code>getFinalOpenedDoors</code> should be a function.
     testString: assert(typeof getFinalOpenedDoors === 'function');
   - text: <code>getFinalOpenedDoors</code> should return an array.
     testString: assert(Array.isArray(getFinalOpenedDoors(100)));
-  - text: <code>getFinalOpenedDoors</code> did not produce the correct results.
+  - text: <code>getFinalOpenedDoors</code> should produce the correct result.
     testString: assert.deepEqual(getFinalOpenedDoors(100), solution);
 
 ```

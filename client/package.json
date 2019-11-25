@@ -95,7 +95,7 @@
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^4.1.2",
-    "@testing-library/react": "^9.3.0",
+    "@testing-library/react": "^9.3.2",
     "autoprefixer": "^9.6.5",
     "babel-plugin-transform-imports": "^1.5.1",
     "chokidar": "^2.1.5",

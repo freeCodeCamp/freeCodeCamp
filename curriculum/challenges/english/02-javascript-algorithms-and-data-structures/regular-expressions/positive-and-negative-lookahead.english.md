@@ -58,6 +58,12 @@ tests:
     testString: assert(!pwRegex.test("123"));
   - text: Your regex should not match <code>"1234"</code>
     testString: assert(!pwRegex.test("1234"));
+  - text: Your regex should not match <code>"8pass99"</code>
+    testString: assert(!pwRegex.test("8pass99"));
+  - text: Your regex should not match <code>"12abcde"</code>
+    testString: assert(!pwRegex.test("12abcde"));
+
+
 
 ```
 
@@ -85,7 +91,7 @@ let result = pwRegex.test(sampleWord);
 
 
 ```js
-var pwRegex = /(?=\w{6})(?=\D*\d{2})/;
+var pwRegex = /^(?=\w{6})(?=\D+\d{2})/;
 ```
 
 </section>

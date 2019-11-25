@@ -8,7 +8,7 @@ localeTitle: El múltiplo común más pequeño
 ---
 
 ## Description
-<section id="description"> Encuentre el múltiplo común más pequeño de los parámetros provistos que se pueden dividir en partes iguales por ambos, así como por todos los números secuenciales en el rango entre estos parámetros. El rango será una matriz de dos números que no necesariamente estarán en orden numérico. Por ejemplo, si le dan 1 y 3, encuentre el múltiplo común más pequeño de 1 y 3 que también sea divisible por todos los números <em>entre</em> 1 y 3. La respuesta aquí sería 6. Recuerde usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Lectura-Búsqueda-Preguntar</a> si obtiene atascado. Trate de emparejar el programa. Escribe tu propio código. </section>
+<section id="description"> Encuentre el múltiplo común más pequeño de los parámetros provistos que se pueden dividir en partes iguales por ambos, así como por todos los números secuenciales en el rango entre estos parámetros. El rango será una matriz de dos números que no necesariamente estarán en orden numérico. Por ejemplo, si le dan 1 y 3, encuentre el múltiplo común más pequeño de 1 y 3 que también sea divisible por todos los números <em>entre</em> 1 y 3. La respuesta aquí sería 6. Recuerde usar <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Lectura-Búsqueda-Preguntar</a> si obtiene atascado. Trate de emparejar el programa. Escribe tu propio código. </section>
 
 ## Instructions
 <section id="instructions">

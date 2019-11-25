@@ -28,7 +28,7 @@ tests:
     testString: assert(($("p").length > 0));
   - text: Your <code>p</code> element should have the text "Hello Paragraph".
     testString: assert.isTrue((/hello(\s)+paragraph/gi).test($("p").text()));
-  - text: Make sure your <code>p</code> element has a closing tag.
+  - text: Your <code>p</code> element should have a closing tag.
     testString: assert(code.match(/<\/p>/g) && code.match(/<\/p>/g).length === code.match(/<p/g).length);
 
 ```
