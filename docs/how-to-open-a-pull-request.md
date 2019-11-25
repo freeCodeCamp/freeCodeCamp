@@ -37,13 +37,13 @@ An example is `fix(learn): Fixed tests for the do...while loop challenge`.
 
     - You will be presented with a pull request template. This is a checklist that you should have followed before opening the pull request.
 
-    - Fill in the details as they seem fit you. This information will be reviewed and decide whether or not, your pull request is going to be accepted.
+    - Fill in the details as you see fit. This information will be reviewed and the reviewers will decide whether or not your pull request is accepted.
 
-    - If the PR is meant to fix an existing bug/issue then, at the end of
-      your PR's description, append the keyword `closes` and #xxxx (where xxxx
-      is the issue number). Example: `closes #1337`. This tells GitHub to
-      automatically close the existing issue, if the PR is accepted and merged.
+    - If the PR is meant to address an existing GitHub Issue then, at the end of
+      your PR's description body, use the keyword _Closes_ with the issue number to [automatically close that issue if the PR is accepted and merged](https://help.github.com/en/articles/closing-issues-using-keywords).
+      
+      > Example: `Closes #123` will close issue 123
 
 5. Indicate if you have tested on a local copy of the site or not.
 
-    This is very important when you are making changes that are not just making edits to text content such as a Guide article verbiage. Examples of changes needing local testing would include JavaScript, CSS, or HTML which could change the functionality or layout of a page.
+    This is very important when making changes that are not just edits to text content like documentation or a challenge description. Examples of changes that need local testing include JavaScript, CSS, or HTML which could change the functionality or layout of a page.
