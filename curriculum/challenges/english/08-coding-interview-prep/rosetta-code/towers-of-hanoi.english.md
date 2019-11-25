@@ -23,7 +23,7 @@ For example, the array <code>[['A', 'C'], ['B', 'A']]</code> indicates that the 
 
 ```yml
 tests:
-  - text: <code>towerOfHanoi</code> is a function.
+  - text: <code>towerOfHanoi</code> should be a function.
     testString: assert(typeof towerOfHanoi === 'function');
   - text: <code>towerOfHanoi(3, ...)</code> should return 7 moves.
     testString: assert(res3.length === 7);
@@ -31,7 +31,7 @@ tests:
     testString: assert.deepEqual(towerOfHanoi(3, 'A', 'B', 'C'), res3Moves);
   - text: <code>towerOfHanoi(5, "X", "Y", "Z")</code> 10th move should be Y -> X.
     testString: assert.deepEqual(res5[9], ['Y', 'X']);
-  - text: <code>towerOfHanoi(7, 'A', 'B', 'C')</code> first ten moves are <code>[['A','B'], ['A','C'], ['B','C'], ['A','B'], ['C','A'], ['C','B'], ['A','B'], ['A','C'], ['B','C'], ['B','A']]</code>
+  - text: <code>towerOfHanoi(7, 'A', 'B', 'C')</code> first ten moves should be <code>[['A','B'], ['A','C'], ['B','C'], ['A','B'], ['C','A'], ['C','B'], ['A','B'], ['A','C'], ['B','C'], ['B','A']]</code>
     testString: assert.deepEqual(towerOfHanoi(7, 'A', 'B', 'C').slice(0, 10), res7First10Moves);
 
 ```

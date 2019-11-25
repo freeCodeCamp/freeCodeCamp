@@ -3,9 +3,16 @@
   justify-content: space-around;
   flex-direction: row-reverse;
   margin-bottom: 0px;
+  padding-top: 3px;
+  padding-bottom: 3px;
   position: fixed;
   width: 100%;
   z-index: 1000;
+}
+
+.flash-message div {
+  max-width: 100%;
+  overflow-wrap: break-word;
 }
 
 .flash-message-enter {

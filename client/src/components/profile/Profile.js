@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
+import { Grid, Row, Button } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 import Link from '../helpers/Link';
 
@@ -10,9 +10,11 @@ import HeatMap from './components/HeatMap';
 import Certifications from './components/Certifications';
 import Portfolio from './components/Portfolio';
 import Timeline from './components/TimeLine';
+import { apiLocation } from '../../../config/env.json';
 
 const propTypes = {
   isSessionUser: PropTypes.bool,
+  navigate: PropTypes.func.isRequired,
   user: PropTypes.shape({
     profileUI: PropTypes.shape({
       isLocked: PropTypes.bool,
@@ -54,12 +56,14 @@ function renderMessage(isSessionUser, username) {
   return isSessionUser ? (
     <Fragment>
       <FullWidthRow>
-        <h2 className='text-center'>You have not made your profile public.</h2>
+        <h2 className='text-center'>
+          You have not made your portfolio public.
+        </h2>
       </FullWidthRow>
       <FullWidthRow>
         <p className='alert alert-info'>
-          You need to change your privacy setting in order for your profile to
-          be seen by others. This is a preview of how your profile will look
+          You need to change your privacy setting in order for your portfolio to
+          be seen by others. This is a preview of how your portfolio will look
           when made public.
         </p>
       </FullWidthRow>
@@ -68,14 +72,14 @@ function renderMessage(isSessionUser, username) {
   ) : (
     <Fragment>
       <FullWidthRow>
-        <h2 className='text-center'>
-          {username} has not made their profile public.
+        <h2 className='text-center' style={{ overflowWrap: 'break-word' }}>
+          {username} has not made their portfolio public.
         </h2>
       </FullWidthRow>
       <FullWidthRow>
         <p className='alert alert-info'>
           {username} needs to change their privacy setting in order for you to
-          view their profile.
+          view their portfolio.
         </p>
       </FullWidthRow>
       <Spacer />
@@ -150,11 +154,16 @@ function renderProfile(user) {
   );
 }
 
-function Profile({ user, isSessionUser }) {
+function Profile({ user, isSessionUser, navigate }) {
   const {
     profileUI: { isLocked = true },
     username
   } = user;
+
+  const createHandleSignoutClick = navigate => e => {
+    e.preventDefault();
+    return navigate(`${apiLocation}/signout`);
+  };
 
   return (
     <Fragment>
@@ -164,13 +173,21 @@ function Profile({ user, isSessionUser }) {
       <Spacer />
       <Grid>
         {isSessionUser ? (
-          <Row>
-            <Col sm={4} smOffset={4}>
-              <Link className='btn btn-lg btn-primary btn-block' to='/settings'>
-                Update my settings
-              </Link>
-            </Col>
-          </Row>
+          <FullWidthRow className='button-group'>
+            <Link className='btn btn-lg btn-primary btn-block' to='/settings'>
+              Update my account settings
+            </Link>
+            <Button
+              block={true}
+              bsSize='lg'
+              bsStyle='primary'
+              className='btn-invert'
+              href={'/signout'}
+              onClick={createHandleSignoutClick(navigate)}
+            >
+              Sign me out of freeCodeCamp
+            </Button>
+          </FullWidthRow>
         ) : null}
         <Spacer />
         {isLocked ? renderMessage(isSessionUser, username) : null}

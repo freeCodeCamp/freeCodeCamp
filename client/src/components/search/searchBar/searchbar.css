@@ -18,8 +18,8 @@
   padding: 1px 10px 1px 30px;
   font-size: 18px;
   display: inline-block;
-  width: calc(100vw - 10px);
   margin-top: 6px;
+  height: 26px;
 }
 
 .fcc_searchBar .ais-SearchBox-input,
@@ -30,7 +30,7 @@
 }
 
 .fcc_searchBar .ais-Hits {
-  top: 71px;
+  top: 70px;
   width: calc(100vw - 30px);
   left: 15px;
 }
@@ -94,6 +94,14 @@
   background-color: var(--blue-dark);
 }
 
+/* Override for rule in global.css to prevent
+multiple highlighted hits with the mouse
+and arrow keys */
+.fcc_suggestion_item:focus,
+.fcc_suggestion_item:hover {
+  background-color: transparent;
+}
+
 /* Dropdown footer */
 .fcc_suggestion_footer {
   border-top: 1.5px solid var(--gray-00);
@@ -114,10 +122,9 @@
   right: 15px;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 1000px) {
   .ais-SearchBox-input {
     width: 100%;
-    margin-top: 6px;
     max-width: 500px;
   }
   .fcc_searchBar {

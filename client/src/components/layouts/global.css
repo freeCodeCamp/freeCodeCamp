@@ -10,7 +10,7 @@ body {
 
 .btn-cta-big {
   max-height: 100%;
-  font-size: 40px;
+  font-size: 27px;
   white-space: normal;
 }
 
@@ -63,11 +63,16 @@ p {
 
 .big-heading {
   font-size: 2.5rem !important;
+  overflow-wrap: break-word;
 }
 
 .medium-heading {
   font-size: 1.5rem !important;
   font-weight: normal;
+}
+
+.medium-heading.text-center {
+  margin-bottom: 50px;
 }
 
 @media (max-width: 500px) {
@@ -99,11 +104,6 @@ p {
   color: var(--secondary-color);
 }
 
-a:not(.fcc_suggestion_item):hover {
-  color: var(--tertiary-color);
-  background-color: var(--tertiary-background);
-}
-
 a {
   color: inherit;
   text-decoration: underline;
@@ -112,6 +112,8 @@ a {
 a:hover,
 a:focus {
   text-decoration: none;
+  color: var(--tertiary-color);
+  background-color: var(--tertiary-background);
 }
 /* modal */
 
@@ -138,17 +140,8 @@ a:focus {
   border-color: var(--secondary-color);
 }
 
-/* button */
 button,
-input[type='submit'] {
-  background-color: var(--quaternary-background);
-  color: var(--secondary-color);
-  border-width: 2px;
-  border-style: outset;
-  border-color: buttonface;
-  border-image: initial;
-}
-
+input[type='submit'],
 .btn {
   background-color: var(--quaternary-background);
   border-width: 3px;
@@ -156,14 +149,16 @@ input[type='submit'] {
   color: var(--secondary-color);
   border-radius: 0px;
   text-decoration: none;
-  /* outline: none; */
 }
 
+button:hover,
+input[type='submit']:hover,
 .btn:hover,
 .btn-primary:hover {
   border-color: var(--secondary-color);
   background-color: var(--secondary-color);
   color: var(--secondary-background);
+  cursor: pointer;
 }
 
 .btn:active,
@@ -233,15 +228,35 @@ fieldset[disabled] .btn-primary.focus {
   background-image: none;
   box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.3);
 }
+.btn-link,
+.btn-link:focus,
+.btn-link:active {
+  color: inherit;
+  border: none;
+  text-decoration: underline;
+  background: transparent;
+  padding: 0;
+  outline: 0;
+}
+.btn-link:hover,
+.btn-link:focus:active {
+  background: var(--tertiary-background);
+  text-decoration: none;
+  color: inherit;
+}
 
+.button-group .btn:not(:last-child) {
+  margin-bottom: 10px;
+}
 strong {
   color: var(--secondary-color);
 }
 
 .form-control {
-  color: var(--theme-color);
+  color: var(--primary-color);
   outline: none;
   border-color: var(--quaternary-background);
+  background-color: var(--primary-background);
   -webkit-box-shadow: none !important;
   -moz-box-shadow: none !important;
   box-shadow: none !important;
@@ -255,6 +270,10 @@ input {
   -moz-box-shadow: none !important;
   box-shadow: none !important;
   border-radius: 0px;
+}
+
+textarea {
+  resize: vertical;
 }
 
 form {
@@ -370,6 +389,31 @@ pre {
   color: var(--highlight-color);
 }
 
+.has-error .help-block,
+.has-error .control-label,
+.has-error .radio,
+.has-error .checkbox,
+.has-error .radio-inline,
+.has-error .checkbox-inline,
+.has-error.radio label,
+.has-error.checkbox label,
+.has-error.radio-inline label,
+.has-error.checkbox-inline label {
+  color: var(--danger-color);
+}
+
+.has-error .form-control,
+.has-warning .form-control,
+.has-success .form-control {
+  border-color: var(--quaternary-background);
+}
+
+.has-error .form-control:focus,
+.has-warning .form-control:focus,
+.has-success .form-control:focus {
+  border-color: var(--tertiary-color);
+}
+
 .panel-primary {
   border-color: var(--primary-color);
 }
@@ -392,28 +436,10 @@ blockquote .small {
 
 .alert {
   border-radius: 0px;
+  overflow-wrap: break-word;
 }
 
-/* gatsby 404 page */
-.default-layout > div > :nth-child(3) > button,
-input[type='submit'] {
-  background-color: var(--quaternary-background);
-}
-
-.default-layout > div > :nth-child(3) > button:hover,
-input[type='submit']:hover {
-  background-color: var(--secundary-background);
-}
-
-.default-layout > div > :nth-child(3) > button:active,
-input[type='submit']:active {
-  background: var(--primary-color);
-  color: var(--secondary-background);
-  outline: 0;
-  outline-color: none;
-  outline-color: var(--secundary-background);
-  border: none;
-}
+/* gatsby 404 */
 #search {
   background-color: var(--quaternary-background);
   color: var(--primary-color);

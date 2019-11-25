@@ -16,7 +16,7 @@ Using <code>//</code> will tell JavaScript to ignore the remainder of the text o
 // This is an in-line comment.
 ```
 
-You can make a multi-line comment beginning with <code>/*</code> and ending with <code>*/</code>:
+You can make a multi-line comment beginning with <code>/\*</code> and ending with <code>\*/</code>:
 
 ```js
 /* This is a

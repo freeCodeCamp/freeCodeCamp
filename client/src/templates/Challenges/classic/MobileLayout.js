@@ -33,6 +33,9 @@ const propTypes = {
 };
 
 class MobileLayout extends Component {
+  componentDidMount() {
+    if (this.props.currentTab !== 1) this.props.moveToTab(1);
+  }
   render() {
     const {
       currentTab,

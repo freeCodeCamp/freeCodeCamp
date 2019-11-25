@@ -1,7 +1,5 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { bindActionCreators } from 'redux';
-import { navigate } from '@reach/router';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import {
@@ -18,6 +16,7 @@ import Helmet from 'react-helmet';
 import { apiLocation } from '../../config/env.json';
 
 import {
+  hardGoTo as navigate,
   isSignedInSelector,
   userFetchStateSelector,
   userSelector,
@@ -49,14 +48,10 @@ const mapStateToProps = createSelector(
   })
 );
 
-const mapDispatchToProps = dispatch =>
-  bindActionCreators(
-    {
-      navigate,
-      reportUser
-    },
-    dispatch
-  );
+const mapDispatchToProps = {
+  navigate,
+  reportUser
+};
 
 class ShowUser extends Component {
   constructor(props) {
@@ -153,14 +148,14 @@ class ShowUser extends Component {
     return (
       <Fragment>
         <Helmet>
-          <title>Report a users profile | freeCodeCamp.org</title>
+          <title>Report a users portfolio | freeCodeCamp.org</title>
         </Helmet>
         <Spacer size={2} />
         <Row className='text-center'>
           <Col sm={8} smOffset={2} xs={12}>
             <h2>
               Do you want to report {username}
-              's profile for abuse?
+              's portfolio for abuse?
             </h2>
           </Col>
         </Row>

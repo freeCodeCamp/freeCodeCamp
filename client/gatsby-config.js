@@ -6,18 +6,12 @@ const {
   localeChallengesRootDir
 } = require('./utils/buildChallenges');
 
-const { API_PROXY: proxyUrl = 'http://localhost:3000' } = process.env;
-
 const curriculumIntroRoot = path.resolve(__dirname, './src/pages');
 
 module.exports = {
   siteMetadata: {
     title: 'freeCodeCamp',
     siteUrl: 'https://www.freecodecamp.org'
-  },
-  proxy: {
-    prefix: '/internal',
-    url: proxyUrl
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -135,12 +129,6 @@ module.exports = {
         /* eslint-enable camelcase */
         display: 'minimal-ui',
         icon: 'src/assets/images/square_puck.png'
-      }
-    },
-    {
-      resolve: 'gatsby-plugin-google-fonts',
-      options: {
-        fonts: ['Lato:300,400,400i,500,700', 'Roboto Mono:400,700']
       }
     },
     'gatsby-plugin-remove-serviceworker'

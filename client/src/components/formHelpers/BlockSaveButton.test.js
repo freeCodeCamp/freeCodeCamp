@@ -1,30 +1,26 @@
 /* global expect */
 
+import '@testing-library/jest-dom/extend-expect';
 import React from 'react';
-import renderer from 'react-test-renderer';
-import Enzyme from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { render } from '@testing-library/react';
 
 import BlockSaveButton from './BlockSaveButton';
 
-Enzyme.configure({ adapter: new Adapter() });
-
 test('<BlockSaveButton /> snapshot', () => {
-  const component = renderer.create(<BlockSaveButton />);
-  let tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  const { container } = render(<BlockSaveButton />);
+
+  expect(container).toMatchSnapshot();
 });
 
 test('Button text should default to "Save"', () => {
-  const enzymeWrapper = Enzyme.render(<BlockSaveButton />);
+  const { getByRole } = render(<BlockSaveButton />);
 
-  expect(enzymeWrapper.text()).toBe('Save');
+  expect(getByRole('button')).toHaveTextContent('Save');
 });
 
 test('Button text should match "children"', () => {
-  const enzymeWrapper = Enzyme.render(
-    <BlockSaveButton>My Text Here</BlockSaveButton>
-  );
+  const testText = 'My Text Here';
+  const { getByRole } = render(<BlockSaveButton>{testText}</BlockSaveButton>);
 
-  expect(enzymeWrapper.text()).toBe('My Text Here');
+  expect(getByRole('button')).toHaveTextContent(testText);
 });

@@ -16,7 +16,7 @@ These four values work like a clock: top, right, bottom, left, and will produce 
 
 ## Instructions
 <section id='instructions'>
-Use <code>Clockwise Notation</code> to give the element with the <code>blue-box</code> class a margin of <code>40px</code> on its top and left side, but only <code>20px</code> on its bottom and right side.
+Use Clockwise Notation to give the element with the <code>blue-box</code> class a margin of <code>40px</code> on its top and left side, but only <code>20px</code> on its bottom and right side.
 </section>
 
 ## Tests

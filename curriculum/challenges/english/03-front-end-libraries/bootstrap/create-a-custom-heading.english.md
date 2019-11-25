@@ -25,11 +25,11 @@ Notice how the image is now just the right size to fit along the text?
 tests:
   - text: Your <code>h2</code> element and topmost <code>img</code> element should both be nested together within a <code>div</code> element with the class <code>row</code>.
     testString: assert($("div.row:has(h2)").length > 0 && $("div.row:has(img)").length > 0);
-  - text: Nest your topmost <code>img</code> element within a <code>div</code> with the class <code>col-xs-4</code>.
+  - text: Your topmost <code>img</code> element should be nested within a <code>div</code> with the class <code>col-xs-4</code>.
     testString: assert($("div.col-xs-4:has(img)").length > 0 && $("div.col-xs-4:has(div)").length === 0);
-  - text: Nest your <code>h2</code> element within a <code>div</code> with the class <code>col-xs-8</code>.
+  - text: Your <code>h2</code> element should be nested within a <code>div</code> with the class <code>col-xs-8</code>.
     testString: assert($("div.col-xs-8:has(h2)").length > 0 && $("div.col-xs-8:has(div)").length === 0);
-  - text: Make sure each of your <code>div</code> elements has a closing tag.
+  - text: All of your <code>div</code> elements should have closing tags.
     testString: assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length);
 
 ```

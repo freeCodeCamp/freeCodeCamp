@@ -29,7 +29,7 @@ tests:
     testString: assert($('header').children('h1').length == 1);
   - text: Your code should not have any <code>div</code> tags.
     testString: assert($('div').length == 0);
-  - text: Make sure your <code>header</code> element has a closing tag.
+  - text: Your <code>header</code> element should have a closing tag.
     testString: assert(code.match(/<\/header>/g) && code.match(/<\/header>/g).length === code.match(/<header>/g).length);
 
 ```

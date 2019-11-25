@@ -8,7 +8,7 @@ forumTopicId: 301179
 
 ## Description
 <section id='description'>
-In the previous challenge, you used a single <code>conditional operator</code>. You can also chain them together to check for multiple conditions.
+In the previous challenge, you used a single conditional operator. You can also chain them together to check for multiple conditions.
 The following function uses if, else if, and else statements to check multiple conditions:
 
 ```js
@@ -25,7 +25,7 @@ function findGreaterOrEqual(a, b) {
 }
 ```
 
-The above function can be re-written using multiple <code>conditional operators</code>:
+The above function can be re-written using multiple conditional operators:
 
 ```js
 function findGreaterOrEqual(a, b) {
@@ -35,7 +35,7 @@ function findGreaterOrEqual(a, b) {
 }
 ```
 
-However, this should be used with care as using multiple <code>conditional operators</code> without proper indentation may make your code hard to read. For example:
+However, this should be used with care as using multiple conditional operators without proper indentation may make your code hard to read. For example:
 
 ```js
 function findGreaterOrEqual(a, b) {
@@ -47,7 +47,7 @@ function findGreaterOrEqual(a, b) {
 
 ## Instructions
 <section id='instructions'>
-Use multiple <code>conditional operators</code> in the <code>checkSign</code> function to check if a number is positive, negative or zero. The function should return "positive", "negative" or "zero".
+Use multiple conditional operators in the <code>checkSign</code> function to check if a number is positive, negative or zero. The function should return "positive", "negative" or "zero".
 </section>
 
 ## Tests
@@ -55,7 +55,7 @@ Use multiple <code>conditional operators</code> in the <code>checkSign</code> fu
 
 ```yml
 tests:
-  - text: <code>checkSign</code> should use multiple <code>conditional operators</code>
+  - text: <code>checkSign</code> should use multiple conditional operators
     testString: assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?\s*?\?\s*?.+?\s*?:\s*?.+?/gi.test(code));
   - text: <code>checkSign(10)</code> should return "positive". Note that capitalization matters
     testString: assert(checkSign(10) === 'positive');

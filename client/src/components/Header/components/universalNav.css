@@ -21,6 +21,10 @@
   text-decoration: none;
 }
 
+.universal-nav .universal-nav-right a {
+  font-family: 'Roboto Mono', monospace;
+}
+
 .universal-nav-middle {
   display: flex;
   align-items: center;
@@ -48,12 +52,15 @@
   text-decoration: none;
   background-color: var(--theme-color);
 }
+#universal-nav-logo:focus {
+  background-color: inherit;
+}
 
 #universal-nav-logo svg {
   display: block;
   width: auto;
-  height: 25px;
-  margin-top: 7px;
+  height: 24px;
+  margin: 7px 0px;
 }
 
 .nav-list {
@@ -76,20 +83,27 @@
 .nav-list li a {
   display: block;
   margin: 0;
-  padding: 8px 15px;
+  padding: 6px 15px;
   color: var(--gray-00);
   opacity: 1;
   white-space: nowrap;
-}
-
-.nav-list li:hover {
-  background: var(--gray-00);
+  height: 38px;
 }
 
 .nav-list li a:hover {
   color: var(--theme-color);
   text-decoration: none;
-  background: var(--gray-00);
+  background: white;
+}
+
+.nav-list li a:focus {
+  background: var(--theme-color);
+  color: white;
+}
+
+.nav-list li a:focus:hover {
+  color: var(--theme-color);
+  background: white;
 }
 
 .universal-nav-right {
@@ -113,13 +127,20 @@
   height: auto;
 }
 
-@media (max-width: 265px) {
+.toggle-button-nav:hover {
+  background-color: var(--theme-color);
+  color: var(--gray-00);
+  border: 1px solid var(--gray-00);
+}
+
+@media (max-width: 300px) {
   .nav-list li a {
     width: 50vw;
+    text-align: center;
   }
 }
 
-@media (max-width: 799px) {
+@media (max-width: 999px) {
   .site-header {
     padding-right: 0;
     padding-left: 0;
@@ -155,19 +176,28 @@
   .expand-nav {
     min-height: calc(3 * var(--header-height));
   }
+
   .reverse-toggle-color {
     background-color: var(--gray-00);
     color: var(--theme-color);
   }
+
+  .reverse-toggle-color:hover {
+    background-color: var(--gray-00);
+    color: var(--theme-color);
+  }
+
   .universal-nav-left form {
     display: none;
   }
+
   .fcc_searchBar .ais-SearchBox-form {
     display: flex;
     position: absolute;
     top: var(--header-height);
     left: 15px;
   }
+
   #universal-nav-logo {
     display: flex;
     position: absolute;
@@ -176,7 +206,7 @@
   }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 1000px) {
   .universal-nav-middle {
     flex: 1 0 30%;
     margin-right: 0px;
