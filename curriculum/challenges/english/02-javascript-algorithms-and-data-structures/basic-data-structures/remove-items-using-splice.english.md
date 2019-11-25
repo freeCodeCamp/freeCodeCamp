@@ -31,7 +31,9 @@ let newArray = array.splice(3, 2);
 
 ## Instructions
 <section id='instructions'>
-We've defined a function, <code>sumOfTen</code>, which takes an array as an argument and returns the sum of that array's elements. Modify the function, using <code>splice()</code>, so that it returns a value of <code>10</code>.
+
+We've initialized an array `arr`. Use `splice()` to modify `arr`, so that it only contains elements that sum to the value of <code>10</code>.
+
 </section>
 
 ## Tests
@@ -39,11 +41,12 @@ We've defined a function, <code>sumOfTen</code>, which takes an array as an argu
 
 ```yml
 tests:
-  - text: <code>sumOfTen</code> should return 10
-    testString: assert.strictEqual(sumOfTen([2, 5, 1, 5, 2, 1]), 10);
-  - text: The <code>sumOfTen</code> function should utilize the <code>splice()</code> method
-    testString: assert.notStrictEqual(sumOfTen.toString().search(/\.splice\(/), -1);
-
+  - text: You should not change the original line of <code>const arr = [2, 5, 1, 5, 2, 1];</code>.
+    testString: assert(code.replace(/\s/g, '').match(/constarr=\[2,5,1,5,2,1\];?/));
+  - text: <code>arr</code> should only contain elements that sum to <code>10</code>.
+    testString: assert.strictEqual(arr.reduce((a, b) => a + b), 10);
+  - text: Your code should utilize the <code>splice()</code> method on <code>arr</code>.
+    testString: assert(code.replace(/\s/g, '').match(/arr\.splice\(/));
 ```
 
 </section>
@@ -54,15 +57,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function sumOfTen(arr) {
-  // change code below this line
 
-  // change code above this line
-  return arr.reduce((a, b) => a + b);
-}
+const arr = [2, 5, 1, 5, 2, 1];
+// only change code below this line
 
-// do not change code below this line
-console.log(sumOfTen([2, 5, 1, 5, 2, 1]));
+// only change code above this line
+console.log(arr);
 ```
 
 </div>
@@ -75,10 +75,8 @@ console.log(sumOfTen([2, 5, 1, 5, 2, 1]));
 <section id='solution'>
 
 ```js
-function sumOfTen(arr) {
-  arr.splice(2,2);
-  return arr.reduce((a, b) => a + b);
-}
+const arr = [2, 5, 1, 5, 2, 1];
+arr.splice(2, 2);
 ```
 
 </section>
