@@ -13,7 +13,7 @@ In this method, we start by adding the root node to a queue. Then we begin a loo
 
 ## Instructions
 <section id='instructions'>
-Let's create a breadth-first search method in our tree called <code>levelOrder</code>. This method should return an array containing the values of all the tree nodes, explored in a breadth-first manner. Be sure to return the values in the array, not the nodes themselves. A level should be traversed from left to right. Next, let's write a similar method called <code>reverseLevelOrder</code> which performs the same search but in the reverse direction (right to left) at each level.
+Let's create a breadth-first search method in our tree called <code>levelOrder</code>. This method should return an array containing the values of all the tree nodes, explored in a breadth-first manner. Be sure to return the values in the array, not the nodes themselves. A level should be traversed from left to right. Next, let's write a similar method called <code>reverseLevelOrder</code> which performs the same search but in the reverse direction (right to left) at each level. Finally, return <code>null</code> if the tree is empty.
 </section>
 
 ## Tests
@@ -45,55 +45,54 @@ tests:
 <div id='js-seed'>
 
 ```js
-var displayTree = tree => console.log(JSON.stringify(tree, null, 2));
-function Node(value) {
-  this.value = value;
-  this.left = null;
-  this.right = null;
-}
-function BinarySearchTree() {
-  this.root = null;
-  // change code below this line
-  // change code above this line
-}
-```
+function displayTree(tree) { console.log(JSON.stringify(tree, null, 2)); }
 
-</div>
-
-### After Test
-<div id='js-teardown'>
-
-```js
-BinarySearchTree.prototype = {
-  add: function(value) {
-    var node = this.root;
-    if (node == null) {
-      this.root = new Node(value);
-      return;
-    } else {
-      function searchTree(node) {
-        if (value < node.value) {
-          if (node.left == null) {
-            node.left = new Node(value);
-            return;
-          } else if (node.left != null) {
-            return searchTree(node.left);
-          }
-        } else if (value > node.value) {
-          if (node.right == null) {
-            node.right = new Node(value);
-            return;
-          } else if (node.right != null) {
-            return searchTree(node.right);
-          }
-        } else {
-          return null;
-        }
-      }
-      return searchTree(node);
-    }
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
   }
-};
+}
+
+class BinarySearchTree {
+  constructor() {
+    this.root = null;
+  }
+
+  add(element) {
+    if (this.root === null) {
+      this.root = new Node(element);
+      return;
+    }
+
+    function searchTree(current) {
+      if (current.value > element) {
+        if (current.left) {
+          return searchTree(current.left);
+        }
+        current.left = new Node(element);
+        return;
+      }
+
+      if (current.value < element) {
+        if (current.right) {
+          return searchTree(current.right);
+        }
+        current.right = new Node(element);
+        return;
+      }
+
+      return null;
+    }
+
+    return searchTree(this.root);
+  }
+  // Add levelOrder method here
+
+  // Add reverseLevelOrder method here
+
+}
 ```
 
 </div>
@@ -103,7 +102,90 @@ BinarySearchTree.prototype = {
 <section id='solution'>
 
 ```js
-// solution required
+function displayTree(tree) { console.log(JSON.stringify(tree, null, 2)); }
+
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+class BinarySearchTree {
+  constructor() {
+    this.root = null;
+  }
+
+  add(element) {
+    if (this.root === null) {
+      this.root = new Node(element);
+      return;
+    }
+
+    function searchTree(current) {
+      if (current.value > element) {
+        if (current.left) {
+          return searchTree(current.left);
+        }
+        current.left = new Node(element);
+        return;
+      }
+
+      if (current.value < element) {
+        if (current.right) {
+          return searchTree(current.right);
+        }
+        current.right = new Node(element);
+        return;
+      }
+
+      return null;
+    }
+
+    return searchTree(this.root);
+  }
+
+  levelOrder() {
+    if (this.root === null) {
+      return null;
+    }
+
+    let queue = [this.root];
+    let results = [];
+    while (queue.length > 0) {
+      let node = queue.shift();
+      results.push(node.value);
+      if (node.left !== null) {
+        queue.push(node.left);
+      }
+      if (node.right !== null) {
+        queue.push(node.right);
+      }
+    }
+    return results;
+  }
+
+  reverseLevelOrder() {
+    if (this.root === null) {
+      return null;
+    }
+
+    let queue = [this.root];
+    let results = [];
+    while (queue.length > 0) {
+      let node = queue.shift();
+      results.push(node.value);
+      if (node.right !== null) {
+        queue.push(node.right);
+      }
+      if (node.left !== null) {
+        queue.push(node.left);
+      }
+    }
+    return results;
+  }
+}
 ```
 
 </section>
