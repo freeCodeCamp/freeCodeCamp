@@ -36,15 +36,18 @@ tests:
 <div id='js-seed'>
 
 ```js
-var Node = function(element) {
-  this.element = element;
-  this.next = null;
-};
-var Kitten = new Node('Kitten');
-var Puppy = new Node('Puppy');
+class Node {
+  constructor(element) {
+    this.element = element;
+    this.next = null;
+  }
+}
 
+const Kitten = new Node('Kitten');
+
+const Puppy = new Node('Puppy');
 Kitten.next = Puppy;
-// only add code below this line
+// change code below this line
 
 // test your code
 console.log(Kitten.next);
@@ -57,7 +60,23 @@ console.log(Kitten.next);
 <section id='solution'>
 
 ```js
-// solution required
+class Node {
+  constructor(element) {
+    this.element = element;
+    this.next = null;
+  }
+}
+
+const Kitten = new Node('Kitten');
+
+const Puppy = new Node('Puppy');
+Kitten.next = Puppy;
+
+const Cat = new Node('Cat');
+Puppy.next = Cat;
+
+const Dog = new Node('Dog');
+Cat.next = Dog;
 ```
 
 </section>
