@@ -118,8 +118,7 @@ tests:
         json.forEach(function(val) {
           html += "<div class = 'cat'>";
           // Add your code below this line
-html += "<img src = '" + val.imageLink + "' " + "alt='" + val.altText + "'>";
-
+          html += "<img src = '" + val.imageLink + "' " + "alt='" + val.altText + "'>";
           // Add your code above this line
           html += "</div><br>";
         });
