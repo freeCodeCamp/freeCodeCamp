@@ -47,55 +47,56 @@ tests:
 <div id='js-seed'>
 
 ```js
-var displayTree = tree => console.log(JSON.stringify(tree, null, 2));
-function Node(value) {
-  this.value = value;
-  this.left = null;
-  this.right = null;
-}
-function BinarySearchTree() {
-  this.root = null;
-  // change code below this line
-  // change code above this line
-}
-```
+function displayTree(tree) { console.log(JSON.stringify(tree, null, 2)); }
 
-</div>
-
-### After Test
-<div id='js-teardown'>
-
-```js
-BinarySearchTree.prototype = {
-  add: function(value) {
-    var node = this.root;
-    if (node == null) {
-      this.root = new Node(value);
-      return;
-    } else {
-      function searchTree(node) {
-        if (value < node.value) {
-          if (node.left == null) {
-            node.left = new Node(value);
-            return;
-          } else if (node.left != null) {
-            return searchTree(node.left);
-          }
-        } else if (value > node.value) {
-          if (node.right == null) {
-            node.right = new Node(value);
-            return;
-          } else if (node.right != null) {
-            return searchTree(node.right);
-          }
-        } else {
-          return null;
-        }
-      }
-      return searchTree(node);
-    }
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
   }
-};
+}
+
+class BinarySearchTree {
+  constructor() {
+    this.root = null;
+  }
+
+  add(element) {
+    if (this.root === null) {
+      this.root = new Node(element);
+      return;
+    }
+
+    function searchTree(current) {
+      if (current.value > element) {
+        if (current.left) {
+          return searchTree(current.left);
+        }
+        current.left = new Node(element);
+        return;
+      }
+
+      if (current.value < element) {
+        if (current.right) {
+          return searchTree(current.right);
+        }
+        current.right = new Node(element);
+        return;
+      }
+
+      return null;
+    }
+
+    return searchTree(this.root);
+  }
+  // Add findMinHeight method here
+
+  // Add findMaxHeight method here
+
+  // Add isBalanced method here
+
+}
 ```
 
 </div>
@@ -105,78 +106,77 @@ BinarySearchTree.prototype = {
 <section id='solution'>
 
 ```js
-var displayTree = tree => console.log(JSON.stringify(tree, null, 2));
-function Node(value) {
-  this.value = value;
-  this.left = null;
-  this.right = null;
+function displayTree(tree) { console.log(JSON.stringify(tree, null, 2)); }
+
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
 }
-function BinarySearchTree() {
-  this.root = null;
-  // change code below this line
-  // change code above this line
-  this.findMinHeight = function(root = this.root) {
-    // empty tree.
-    if (root === null) {
-      return -1;
-    }
-    // leaf node.
-    if (root.left === null && root.right === null) {
-      return 0;
-    }
-    if (root.left === null) {
-      return this.findMinHeight(root.right) + 1;
-    }
-    if (root.right === null) {
-      return this.findMinHeight(root.left) + 1;
-    }
-    const lHeight = this.findMinHeight(root.left);
-    const rHeight = this.findMinHeight(root.right);
-    return Math.min(lHeight, rHeight) + 1;
-  };
-  this.findMaxHeight = function(root = this.root) {
-    // empty tree.
-    if (root === null) {
-      return -1;
-    }
-    // leaf node.
-    if (root.left === null && root.right === null) {
-      return 0;
-    }
-    if (root.left === null) {
-      return this.findMaxHeight(root.right) + 1;
-    }
-    if (root.right === null) {
-      return this.findMaxHeight(root.left) + 1;
-    }
-    const lHeight = this.findMaxHeight(root.left);
-    const rHeight = this.findMaxHeight(root.right);
-    return Math.max(lHeight, rHeight) + 1;
-  };
-  this.isBalanced = function(root = this.root) {
-    if (root === null) {
-      return true;
+
+class BinarySearchTree {
+  constructor() {
+    this.root = null;
+  }
+
+  add(element) {
+    if (this.root === null) {
+      this.root = new Node(element);
+      return;
     }
 
-    if (root.left === null && root.right === null) {
-      return true;
+    function searchTree(current) {
+      if (current.value > element) {
+        if (current.left) {
+          return searchTree(current.left);
+        }
+        current.left = new Node(element);
+        return;
+      }
+
+      if (current.value < element) {
+        if (current.right) {
+          return searchTree(current.right);
+        }
+        current.right = new Node(element);
+        return;
+      }
+
+      return null;
     }
 
-    if (root.left === null) {
-      return this.findMaxHeight(root.right) <= 0;
-    }
+    return searchTree(this.root);
+  }
 
-    if (root.right === null) {
-      return this.findMaxHeight(root.left) <= 0;
+  findMinHeight() {
+    function minHeight(node) {
+      if (node === null) {
+        return -1;
+      }
+      const leftHeight = minHeight(node.left);
+      const rightHeight = minHeight(node.right);
+      return Math.min(leftHeight, rightHeight) + 1;
     }
+    return minHeight(this.root);
+  }
 
-    const lHeight = this.findMaxHeight(root.left);
-    const rHeight = this.findMaxHeight(root.right);
-    if (Math.abs(lHeight - rHeight) > 1) {
-      return false;
+  findMaxHeight() {
+    function maxHeight(node) {
+      if (node === null) {
+        return -1;
+      }
+      const leftHeight = maxHeight(node.left);
+      const rightHeight = maxHeight(node.right);
+      return Math.max(leftHeight, rightHeight) + 1;
     }
-    return this.isBalanced(root.left) && this.isBalanced(root.right);
-  };
+    return maxHeight(this.root);
+  }
+
+  isBalanced() {
+    return this.findMaxHeight() - this.findMinHeight() <= 1;
+  }
 }
 ```
 
