@@ -56,11 +56,25 @@ tests:
 <div id='js-seed'>
 
 ```js
-var Map = function() {
-  this.collection = {};
-  // change code below this line
-  // change code above this line
-};
+class Map {
+  constructor() {
+    this.collection = {};
+  }
+  // Add add method here
+
+  // Add remove method here
+
+  // Add get method here
+
+  // Add has method here
+
+  // Add values method here
+
+  // Add size method here
+
+  // Add clear method here
+
+}
 ```
 
 </div>
@@ -70,7 +84,39 @@ var Map = function() {
 <section id='solution'>
 
 ```js
-// solution required
+class Map {
+  constructor() {
+    this.collection = {};
+  }
+
+  add(key, value) {
+    this.collection[key] = value;
+  }
+
+  remove(key) {
+    delete this.collection[key];
+  }
+
+  get(key) {
+    return this.collection[key];
+  }
+
+  has(key) {
+    return (key in this.collection);
+  }
+
+  values() {
+    return Object.values(this.collection);
+  }
+
+  size() {
+    return this.values().length
+  }
+
+  clear() {
+    this.collection = {};
+  }
+}
 ```
 
 </section>
