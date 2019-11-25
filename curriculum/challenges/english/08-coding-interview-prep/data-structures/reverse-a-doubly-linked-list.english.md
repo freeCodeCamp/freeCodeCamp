@@ -12,7 +12,7 @@ Let's create one more method for our doubly linked list called reverse which rev
 
 ## Instructions
 <section id='instructions'>
-
+Add a method called <code>reverse</code> that reverses the list. Trying to reverse an empty list should return <code>null</code>.
 </section>
 
 ## Tests
@@ -29,9 +29,9 @@ tests:
   - text: Reversing an empty list returns null.
     testString: assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; return (test.reverse() == null); })());
   - text: The reverse method reverses the list.
-    testString: assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; test.add(58); test.add(61); test.add(32); test.reverse(); return (test.print().join('') == '326158'); })());
+    testString: assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; test.add(58); test.add(61); test.add(32); test.reverse(); return (print(test) == '32,61,58'); })());
   - text: The next and previous references are correctly maintained when a list is reversed.
-    testString: assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; test.add(11); test.add(22); test.add(33); test.reverse(); return (test.printReverse().join('') == '112233'); })());
+    testString: assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; test.add(11); test.add(22); test.add(33); test.reverse(); return (printReverse(test) == '11,22,33'); })());
 
 ```
 
@@ -43,17 +43,59 @@ tests:
 <div id='js-seed'>
 
 ```js
-var Node = function(data, prev) {
-  this.data = data;
-  this.prev = prev;
-  this.next = null;
-};
-var DoublyLinkedList = function() {
-  this.head = null;
-  this.tail = null;
-  // change code below this line
-  // change code above this line
-};
+class Node {
+  constructor(data) {
+    this.data = data;
+    this.prev = null;
+    this.next = null;
+  }
+}
+
+class DoublyLinkedList {
+  constructor() {
+    this.head = null;
+    this.tail = null;
+  }
+
+  add(data) {
+    const newNode = new Node(data, null);
+    if (this.head === null) {
+      this.head = newNode;
+      this.tail = newNode;
+      return;
+    }
+
+    this.tail.next = newNode;
+    newNode.prev = this.tail;
+    this.tail = newNode;
+  }
+
+  remove(data) {
+    if (this.head === null) {
+      return null;
+    }
+
+    let currentNode = this.head;
+    while (currentNode !== null) {
+      if (currentNode.data === data) {
+        if (this.head === currentNode) {
+          this.head = currentNode.next;
+        } else {
+          currentNode.prev.next = currentNode.next;
+        }
+
+        if (this.tail === currentNode) {
+          this.tail = currentNode.prev;
+        } else {
+          currentNode.next.prev = currentNode.prev;
+        }
+      }
+      currentNode = currentNode.next;
+    }
+  }
+  // Add reverse method here
+
+}
 ```
 
 </div>
@@ -63,52 +105,30 @@ var DoublyLinkedList = function() {
 <div id='js-teardown'>
 
 ```js
-DoublyLinkedList.prototype = {
-  add(data) {
-    if (this.head == null) {
-      this.head = new Node(data, null);
-      this.tail = this.head;
-    } else {
-      var node = this.head;
-      var prev = null;
-      while (node.next != null) {
-        prev = node;
-        node = node.next;
-      };
-      var newNode = new Node(data, node);
-      node.next = newNode;
-      this.tail = newNode;
-    };
-  },
-  print() {
-    if (this.head == null) {
-      return null;
-    } else {
-      var result = new Array();
-      var node = this.head;
-      while (node.next != null) {
-        result.push(node.data);
-        node = node.next;
-      };
-      result.push(node.data);
-      return result;
-    };
-  },
-  printReverse() {
-    if (this.tail == null) {
-      return null;
-    } else {
-      var result = new Array();
-      var node = this.tail;
-      while (node.prev != null) {
-        result.push(node.data);
-        node = node.prev;
-      };
-      result.push(node.data);
-      return result;
-    };
+function print(list) {
+  if (list.head === null) {
+    return null;
   }
-};
+  const result = [];
+  let node = list.head;
+  while (node !== null) {
+    result.push(node.data);
+    node = node.next;
+  }
+  return result.join(',');
+}
+function printReverse(list) {
+  if (list.tail === null) {
+    return null;
+  }
+  const result = [];
+  let node = list.tail;
+  while (node !== null) {
+    result.push(node.data);
+    node = node.prev;
+  }
+  return result.join(',');
+}
 ```
 
 </div>
@@ -119,7 +139,70 @@ DoublyLinkedList.prototype = {
 <section id='solution'>
 
 ```js
-// solution required
+class Node {
+  constructor(data) {
+    this.data = data;
+    this.prev = null;
+    this.next = null;
+  }
+}
+
+class DoublyLinkedList {
+  constructor() {
+    this.head = null;
+    this.tail = null;
+  }
+
+  add(data) {
+    const newNode = new Node(data, null);
+    if (this.head === null) {
+      this.head = newNode;
+      this.tail = newNode;
+      return;
+    }
+
+    this.tail.next = newNode;
+    newNode.prev = this.tail;
+    this.tail = newNode;
+  }
+
+  remove(data) {
+    if (this.head === null) {
+      return null;
+    }
+
+    let currentNode = this.head;
+    while (currentNode !== null) {
+      if (currentNode.data === data) {
+        if (this.head === currentNode) {
+          this.head = currentNode.next;
+        } else {
+          currentNode.prev.next = currentNode.next;
+        }
+
+        if (this.tail === currentNode) {
+          this.tail = currentNode.prev;
+        } else {
+          currentNode.next.prev = currentNode.prev;
+        }
+      }
+      currentNode = currentNode.next;
+    }
+  }
+
+  reverse() {
+    if (this.head === null) {
+      return null;
+    }
+
+    [this.head, this.tail] = [this.tail, this.head];
+    let currentNode = this.head;
+    while (currentNode !== null) {
+      [currentNode.next, currentNode.prev] = [currentNode.prev, currentNode.next];
+      currentNode = currentNode.next;
+    }
+  }
+}
 ```
 
 </section>
