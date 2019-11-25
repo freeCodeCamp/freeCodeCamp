@@ -29,13 +29,13 @@ tests:
   - text: Trying to remove an element that does not exist returns <code>null</code>.
     testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; return (test.remove(100) == null); })());
   - text: If the root node has no children, deleting it sets the root to <code>null</code>.
-    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; test.add(500); test.remove(500); return (test.inorder() == null); })());
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; test.add(500); test.remove(500); return treeEquals(test, null); })());
   - text: The <code>remove</code> method removes leaf nodes from the tree
-    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; test.add(5); test.add(3); test.add(7); test.add(6); test.add(10); test.add(12); test.remove(3); test.remove(12); test.remove(10); return (test.inorder().join('') == '567'); })());
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; test.add(5); test.add(3); test.add(7); test.add(6); test.add(10); test.add(12); test.remove(3); test.remove(12); test.remove(10); return treeEquals(test, '5,6,7'); })());
   - text: The <code>remove</code> method removes nodes with one child.
-    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; test.add(-1); test.add(3); test.add(7); test.add(16); test.remove(16); test.remove(7); test.remove(3); return (test.inorder().join('') == '-1'); })());
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; test.add(-1); test.add(3); test.add(7); test.add(16); test.remove(16); test.remove(7); test.remove(3); return treeEquals(test, '-1'); })());
   - text: Removing the root in a tree with two nodes sets the second to be the root.
-    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; test.add(15); test.add(27); test.remove(15); return (test.inorder().join('') == '27'); })());
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; test.add(15); test.add(27); test.remove(15); return treeEquals(test, '27'); })());
 ```
 
 </section>
@@ -46,57 +46,81 @@ tests:
 <div id='js-seed'>
 
 ```js
-var displayTree = tree => console.log(JSON.stringify(tree, null, 2));
-function Node(value) {
-  this.value = value;
-  this.left = null;
-  this.right = null;
+function displayTree(tree) { console.log(JSON.stringify(tree, null, 2)); }
+
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
 }
 
-function BinarySearchTree() {
-  this.root = null;
-  this.remove = function(value) {
+class BinarySearchTree {
+  constructor() {
+    this.root = null;
+  }
+
+  add(element) {
     if (this.root === null) {
-      return null;
+      this.root = new Node(element);
+      return;
     }
-    var target;
-    var parent = null;
-    // find the target value and its parent
-    (function findValue(node = this.root) {
-      if (value == node.value) {
-        target = node;
-      } else if (value < node.value && node.left !== null) {
-        parent = node;
-        return findValue(node.left);
-      } else if (value < node.value && node.left === null) {
-        return null;
-      } else if (value > node.value && node.right !== null) {
-        parent = node;
-        return findValue(node.right);
-      } else {
-        return null;
-      }
-    }.bind(this)());
-    if (target === null) {
-      return null;
-    }
-    // count the children of the target to delete
-    var children =
-      (target.left !== null ? 1 : 0) + (target.right !== null ? 1 : 0);
-    // case 1: target has no children
-    if (children === 0) {
-      if (target == this.root) {
-        this.root = null;
-      } else {
-        if (parent.left == target) {
-          parent.left = null;
-        } else {
-          parent.right = null;
+
+    function searchTree(current) {
+      if (current.value > element) {
+        if (current.left) {
+          return searchTree(current.left);
         }
+        current.left = new Node(element);
+        return;
+      }
+
+      if (current.value < element) {
+        if (current.right) {
+          return searchTree(current.right);
+        }
+        current.right = new Node(element);
+        return;
+      }
+
+      return null;
+    }
+
+    return searchTree(this.root);
+  }
+
+  remove(value) {
+    let parent = null;
+    let target = this.root;
+    while (target && target.value !== value) {
+      if (value < target.value) {
+        parent = target;
+        target = target.left;
+      } else {
+        parent = target;
+        target = target.right;
       }
     }
-    // case 2: target has one child, change code below this line
-  };
+    if (target === null) {
+      return null
+    }
+    // count number of children
+    const children = (target.left === null ? 0 : 1) + (target.right === null ? 0 : 1);
+
+    if (children === 0) {
+      if (parent === null) {
+        this.root = null;
+      } else if (parent.left === target) {
+        parent.left = null;
+      } else {
+        parent.right = null;
+      }
+    } else if (children === 1) {
+      // case 2: target has one child
+
+    }
+  }
 }
 ```
 
@@ -106,81 +130,24 @@ function BinarySearchTree() {
 <div id='js-teardown'>
 
 ```js
-BinarySearchTree.prototype = {
-  add: function(value) {
-    var node = this.root;
-    if (node == null) {
-      this.root = new Node(value);
-      return;
-    } else {
-      function searchTree(node) {
-        if (value < node.value) {
-          if (node.left == null) {
-            node.left = new Node(value);
-            return;
-          } else if (node.left != null) {
-            return searchTree(node.left);
-          }
-        } else if (value > node.value) {
-          if (node.right == null) {
-            node.right = new Node(value);
-            return;
-          } else if (node.right != null) {
-            return searchTree(node.right);
-          }
-        } else {
-          return null;
-        }
-      }
-      return searchTree(node);
+function treeEquals(tree, string) {
+  if (tree.root === null) {
+    return string === null;
+  }
+
+  const values = [];
+  function traverseInOrder(node) {
+    if (node.left != null) {
+      traverseInOrder(node.left);
     }
-  },
-  inorder: function() {
-    if (this.root == null) {
-      return null;
-    } else {
-      var result = new Array();
-      function traverseInOrder(node) {
-        if (node.left != null) {
-          traverseInOrder(node.left);
-        }
-        result.push(node.value);
-        if (node.right != null) {
-          traverseInOrder(node.right);
-        }
-      }
-      traverseInOrder(this.root);
-      return result;
-    }
-  },
-  isBinarySearchTree() {
-    if (this.root == null) {
-      return null;
-    } else {
-      var check = true;
-      function checkTree(node) {
-        if (node.left != null) {
-          var left = node.left;
-          if (left.value > node.value) {
-            check = false;
-          } else {
-            checkTree(left);
-          }
-        }
-        if (node.right != null) {
-          var right = node.right;
-          if (right.value < node.value) {
-            check = false;
-          } else {
-            checkTree(right);
-          }
-        }
-      }
-      checkTree(this.root);
-      return check;
+    values.push(node.value);
+    if (node.right != null) {
+      traverseInOrder(node.right);
     }
   }
-};
+  traverseInOrder(tree.root);
+  return values.join(",") === string;
+}
 ```
 
 </div>
@@ -190,7 +157,88 @@ BinarySearchTree.prototype = {
 <section id='solution'>
 
 ```js
-// solution required
+function displayTree(tree) { console.log(JSON.stringify(tree, null, 2)); }
+
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+class BinarySearchTree {
+  constructor() {
+    this.root = null;
+  }
+
+  add(element) {
+    if (this.root === null) {
+      this.root = new Node(element);
+      return;
+    }
+
+    function searchTree(current) {
+      if (current.value > element) {
+        if (current.left) {
+          return searchTree(current.left);
+        }
+        current.left = new Node(element);
+        return;
+      }
+
+      if (current.value < element) {
+        if (current.right) {
+          return searchTree(current.right);
+        }
+        current.right = new Node(element);
+        return;
+      }
+
+      return null;
+    }
+
+    return searchTree(this.root);
+  }
+
+  remove(value) {
+    let parent = null;
+    let target = this.root;
+    while (target && target.value !== value) {
+      if (value < target.value) {
+        parent = target;
+        target = target.left;
+      } else {
+        parent = target;
+        target = target.right;
+      }
+    }
+    if (target === null) {
+      return null
+    }
+    // count number of children
+    const children = (target.left === null ? 0 : 1) + (target.right === null ? 0 : 1);
+
+    if (children === 0) {
+      if (parent === null) {
+        this.root = null;
+      } else if (parent.left === target) {
+        parent.left = null;
+      } else {
+        parent.right = null;
+      }
+    } else if (children === 1) {
+      const child = (target.left || target.right);
+      if (parent === null) {
+        this.root = child;
+      } else if (parent.left === target) {
+        parent.left = child;
+      } else {
+        parent.right = child;
+      }
+    }
+  }
+}
 ```
 
 </section>
