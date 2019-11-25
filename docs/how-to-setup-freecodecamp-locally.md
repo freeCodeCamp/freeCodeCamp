@@ -6,12 +6,12 @@
 # Set up freeCodeCamp locally
 Follow these guidelines for setting up freeCodeCamp locally on your system. This is highly recommended if you want to contribute regularly.
 
-Some of the contribution workflows, like previewing pages for the guide or the coding challenges, debugging and fixing bugs in the codebase, require you to have freeCodeCamp running locally.
+For some of the contribution workflows, you need to have freeCodeCamp running locally. For example, previewing coding challenges or debugging and fixing bugs in the codebase.
 
 ## Fork the repository on GitHub
 ['Forking'](https://help.github.com/articles/about-forks/) is a step where you get your own copy of freeCodeCamp's main repository (a.k.a _repo_) on GitHub.
 
-This is essential as it allows you to work on your own copy of freeCodeCamp on GitHub, or to download (clone) your repository to work on locally. Later, you will be able to request changes to be pulled into the main repository from your fork via a pull request (PR).
+This is essential, as it allows you to work on your own copy of freeCodeCamp on GitHub, or to download (clone) your repository to work on locally. Later, you will be able to request changes to be pulled into the main repository from your fork via a pull request (PR).
 
 > **ProTip:**
 > The main repository at `https://github.com/freeCodeCamp/freeCodeCamp` is often referred to as the `upstream` repository.
@@ -102,7 +102,7 @@ Now that you have a local copy of freeCodeCamp, you can follow these instruction
 - Work on UI related issues and enhancements.
 - Debug and fix issues with the application servers and client apps.
 
-You can skip running freeCodeCamp locally if you are simply editing files, performing a `rebase` or resolving `merge` conflicts. You can always return to this part of the instructions later.
+You can skip running freeCodeCamp locally if you are simply editing files, performing a `rebase`, or resolving `merge` conflicts. You can always return to this part of the instructions later.
 
 [Skip running freeCodeCamp locally](#making-changes-to-your-clone-of-freecodecamp-locally)
 
@@ -112,7 +112,7 @@ There are currently two methods to run freeCodeCamp locally:
 
 You are required to follow any **one** of the above methods.
 
-The Docker setup will ideally result in fewer errors during the installation process and aims to have the best developer experience. We use Docker to install and run the additional software dependencies behind the scenes. This should make it hassle-free and consistent experience across most device/OS types.
+The Docker setup will ideally result in fewer errors during the installation process and aims to have the best developer experience. We use Docker to install and run the additional software dependencies behind the scenes. This should make it a hassle-free and consistent experience across most device/OS types.
 
 If you are having issues using one method, try using the other. If you do run into issues with either method, first perform a web search for your issue and see if it has already been answered. If you cannot find a solution, please search our GitHub [issues](https://github.com/freeCodeCamp/freeCodeCamp/issues) page for a solution and report the issue if it has not yet been reported.
 
