@@ -8,7 +8,7 @@ import CompletionModalBody from './CompletionModalBody';
 
 const props = {
   blockName: 'Basic HTML and HTML5',
-  completedPercent: Math.floor(Math.random() * (101 - 0))
+  completedPercent: Math.floor(Math.random() * 101)
 };
 
 describe('<CompletionModalBody />', () => {
@@ -37,17 +37,17 @@ describe('<CompletionModalBody />', () => {
     });
 
     test('shows the correct percent after animation', () => {
-      const { container } = render(<CompletionModalBody {...props} />);
-
+      const { container, getAllByText } = render(
+        <CompletionModalBody {...props} />
+      );
+      const progressBars = getAllByText('0% complete');
       fireEvent.animationEnd(
         container.querySelector('.completion-success-icon')
       );
-
       jest.runAllTimers();
-
-      expect(
-        container.querySelector('.progress-bar-foreground')
-      ).toHaveTextContent(`${props.completedPercent}% complete`);
+      progressBars.forEach(bar =>
+        expect(bar).toHaveTextContent(`${props.completedPercent}% complete`)
+      );
     });
 
     test('has the correct width after animation', () => {
