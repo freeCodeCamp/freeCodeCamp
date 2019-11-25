@@ -24,8 +24,10 @@ In this challenge, you will create a utility for your tree. Write a JavaScript m
 
 ```yml
 tests:
-  - text: Your Binary Search Tree should return true when checked with <code>isBinarySearchTree()</code>.
-    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; test.push(3); test.push(4); test.push(5); return isBinarySearchTree(test) == true})());
+  - text: A Binary Search Tree should return true when checked with <code>isBinarySearchTree()</code>.
+    testString: assert((function() { var test = new BinarySearchTree(); test.add(5); test.add(3); test.add(4); return isBinarySearchTree(test) === true})());
+  - text: A Non-Binary Search Tree should return false when checked with <code>isBinarySearchTree()</code>.
+    testString: assert((function() { var test = new NonBinarySearchTree(); test.add(5); test.add(3); test.add(4); return isBinarySearchTree(test) === false})());
 ```
 
 </section>
@@ -37,17 +39,9 @@ tests:
 <div id='js-seed'>
 
 ```js
-var displayTree = (tree) => console.log(JSON.stringify(tree, null, 2));
-function Node(value) {
-  this.value = value;
-  this.left = null;
-  this.right = null;
-}
-function BinarySearchTree() {
-  this.root = null;
-}
 function isBinarySearchTree(tree) {
   // change code below this line
+
   // change code above this line
 }
 ```
@@ -58,35 +52,67 @@ function isBinarySearchTree(tree) {
 <div id='js-teardown'>
 
 ```js
-BinarySearchTree.prototype.push = function(val) {
-  var root = this.root;
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
 
-  if (!root) {
-    this.root = new Node(val);
-    return;
+class BinarySearchTree {
+  constructor() {
+    this.root = null;
   }
 
-  var currentNode = root;
-  var newNode = new Node(val);
-
-  while (currentNode) {
-    if (val < currentNode.value) {
-      if (!currentNode.left) {
-        currentNode.left = newNode;
-        break;
-      } else {
-        currentNode = currentNode.left;
-      }
-    } else {
-      if (!currentNode.right) {
-        currentNode.right = newNode;
-        break;
-      } else {
-        currentNode = currentNode.right;
-      }
+  add(element) {
+    if (this.root === null) {
+      this.root = new Node(element);
+      return;
     }
+
+    function searchTree(current) {
+      if (current.value > element) {
+        if (current.left) {
+          return searchTree(current.left);
+        }
+        current.left = new Node(element);
+        return;
+      }
+
+      if (current.value < element) {
+        if (current.right) {
+          return searchTree(current.right);
+        }
+        current.right = new Node(element);
+        return;
+      }
+
+      return null;
+    }
+
+    return searchTree(this.root);
   }
-};
+}
+
+class NonBinarySearchTree {
+  constructor() {
+    this.root = null;
+  }
+
+  add(element) {
+    if (this.root === null) {
+      this.root = new Node(element);
+      return;
+    }
+
+    let current = this.root;
+    while (current.left) {
+      current = current.left;
+    }
+    current.left = new Node(element);
+  }
+}
 ```
 
 </div>
@@ -98,42 +124,26 @@ BinarySearchTree.prototype.push = function(val) {
 <section id='solution'>
 
 ```js
-var displayTree = (tree) => console.log(JSON.stringify(tree, null, 2));
-function Node(value) {
-  this.value = value;
-  this.left = null;
-  this.right = null;
-}
-function BinarySearchTree() {
-  this.root = null;
-}
 function isBinarySearchTree(tree) {
-  if (tree.root == null) {
+  if (tree.root === null) {
     return null;
-  } else {
-    let isBST = true;
-    function checkTree(node) {
-      if (node.left != null) {
-        const left = node.left;
-        if (left.value > node.value) {
-          isBST = false;
-        } else {
-          checkTree(left);
-        }
-      }
-      if (node.right != null) {
-        const right = node.right;
-        if (right.value < node.value) {
-          isBST = false;
-        } else {
-          checkTree(right);
-        }
+  }
+
+  function isBST(node) {
+    if (node.left !== null) {
+      if (node.left.value > node.value || !isBST(node.left)) {
+        return false;
       }
     }
-    checkTree(tree.root);
-    return isBST;
+    if (node.right !== null) {
+      if (node.right.value < node.value || !isBST(node.right)) {
+        return false;
+      }
+    }
+    return true;
   }
-};
+  return isBST(tree.root);
+}
 ```
 
 </section>
