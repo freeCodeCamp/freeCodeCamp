@@ -17,7 +17,7 @@ Here is an example of an <code>incidence matrix</code> with 4 edges and 4 nodes.
 Below is a JavaScript implementation of the same thing.
 
 ```js
-var incMat = [
+const incMat = [
   [0, 1, 1, 1],
   [1, 1, 0, 0],
   [1, 0, 0, 1],
@@ -28,7 +28,7 @@ var incMat = [
 To make a directed graph, use <code>-1</code> for an edge leaving a particular node and <code>1</code> for an edge entering a node.
 
 ```js
-var incMatDirected = [
+const incMatDirected = [
   [ 0, -1,  1, -1],
   [-1,  1,  0,  0],
   [ 1,  0,  0,  1],
@@ -70,7 +70,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-var incMatUndirected = [
+const incMatUndirected = [
 
 ];
 ```
@@ -84,9 +84,14 @@ var incMatUndirected = [
 ## Solution
 <section id='solution'>
 
-
 ```js
-var incMatUndirected = [[1, 0, 0, 0],[1, 1, 0, 1],[0, 1, 1, 0],[0, 0, 0, 1],[0, 0, 1, 0]];
+const incMatUndirected = [
+  [1, 0, 0, 0],
+  [1, 1, 0, 1],
+  [0, 1, 1, 0],
+  [0, 0, 0, 1],
+  [0, 0, 1, 0]
+];
 ```
 
 </section>
