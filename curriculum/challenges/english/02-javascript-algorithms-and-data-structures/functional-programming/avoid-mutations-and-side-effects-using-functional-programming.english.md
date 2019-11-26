@@ -11,7 +11,7 @@ If you haven't already figured it out, the issue in the previous challenge was w
 This is a small example of a much larger pattern - you call a function on a variable, array, or an object, and the function changes the variable or something in the object.
 One of the core principles of functional programming is to not change things. Changes lead to bugs. It's easier to prevent bugs knowing that your functions don't change anything, including the function arguments or any global variable.
 The previous example didn't have any complicated operations but the <code>splice</code> method changed the original array, and resulted in a bug.
-Recall that in functional programming, changing or altering things is called <code>mutation</code>, and the outcome is called a <code>side effect</code>. A function, ideally, should be a <code>pure function</code>, meaning that it does not cause any side effects.
+Recall that in functional programming, changing or altering things is called <dfn>mutation</dfn>, and the outcome is called a <dfn>side effect</dfn>. A function, ideally, should be a <dfn>pure function</dfn>, meaning that it does not cause any side effects.
 Let's try to master this discipline and not alter any variable or object in our code.
 </section>
 

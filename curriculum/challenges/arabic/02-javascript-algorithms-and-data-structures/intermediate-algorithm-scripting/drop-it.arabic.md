@@ -8,7 +8,7 @@ localeTitle: أسقطها
 ---
 
 ## Description
-<section id="description"> بالنظر إلى صفيف <code>arr</code> ، قم بالتمرير عبر كل عنصر بدءًا من العنصر الأول (مؤشر 0) وإزالته إلى أن تعود الدالة <code>func</code> إلى <code>true</code> عند تمرير العنصر المتكرر عبرها. ثم أعد بقية المصفوفة بمجرد استيفاء الشرط ، وإلا ، يجب إرجاع <code>arr</code> كصفيف فارغ. تذكر استخدام <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> إذا واجهتك مشكلة. حاول إقران البرنامج. اكتب الكود الخاص بك. </section>
+<section id="description"> بالنظر إلى صفيف <code>arr</code> ، قم بالتمرير عبر كل عنصر بدءًا من العنصر الأول (مؤشر 0) وإزالته إلى أن تعود الدالة <code>func</code> إلى <code>true</code> عند تمرير العنصر المتكرر عبرها. ثم أعد بقية المصفوفة بمجرد استيفاء الشرط ، وإلا ، يجب إرجاع <code>arr</code> كصفيف فارغ. تذكر استخدام <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> إذا واجهتك مشكلة. حاول إقران البرنامج. اكتب الكود الخاص بك. </section>
 
 ## Instructions
 <section id="instructions">

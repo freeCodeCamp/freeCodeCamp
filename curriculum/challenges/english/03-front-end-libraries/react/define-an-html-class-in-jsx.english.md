@@ -26,7 +26,7 @@ Apply a class of <code>myDiv</code> to the <code>div</code> provided in the JSX 
 tests:
   - text: The constant <code>JSX</code> should return a <code>div</code> element.
     testString: assert.strictEqual(JSX.type, 'div');
-  - text: The <code>div</code> has a class of <code>myDiv</code>.
+  - text: The <code>div</code> should have a class of <code>myDiv</code>.
     testString: assert.strictEqual(JSX.props.className, 'myDiv');
 
 ```

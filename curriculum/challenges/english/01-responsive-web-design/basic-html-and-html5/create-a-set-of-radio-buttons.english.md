@@ -8,7 +8,7 @@ forumTopicId: 16822
 
 ## Description
 <section id='description'>
-You can use <code>radio button</code>s for questions where you want the user to only give you one answer out of multiple options.
+You can use <dfn>radio buttons</dfn> for questions where you want the user to only give you one answer out of multiple options.
 Radio buttons are a type of <code>input</code>.
 Each of your radio buttons can be nested within its own <code>label</code> element. By wrapping an <code>input</code> element inside of a <code>label</code> element it will automatically associate the radio button input with the label element surrounding it.
 All related radio buttons should have the same <code>name</code> attribute to create a radio button group. By creating a radio group, selecting any single radio button will automatically deselect the other buttons within the same group ensuring only one answer is provided by the user.
@@ -42,11 +42,11 @@ Add a pair of radio buttons to your form, each nested in its own <code>label</co
 tests:
   - text: Your page should have two radio button elements.
     testString: assert($('input[type="radio"]').length > 1);
-  - text: Give your radio buttons the <code>name</code> attribute of <code>indoor-outdoor</code>.
+  - text: Your radio buttons should be given the <code>name</code> attribute of <code>indoor-outdoor</code>.
     testString: assert($('input[type="radio"]').filter("[name='indoor-outdoor']").length > 1);
   - text: Each of your two radio button elements should be nested in its own <code>label</code> element.
     testString: assert($('label > input[type="radio"]:only-child').length > 1);
-  - text: Make sure each of your <code>label</code> elements has a closing tag.
+  - text: Each of your <code>label</code> elements should have a closing tag.
     testString: assert((code.match(/<\/label>/g) && code.match(/<label/g) && code.match(/<\/label>/g).length === code.match(/<label/g).length));
   - text: One of your radio buttons should have the label <code>indoor</code>.
     testString: assert($("label").text().match(/indoor/gi));

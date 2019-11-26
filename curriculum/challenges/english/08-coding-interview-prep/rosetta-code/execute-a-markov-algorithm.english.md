@@ -142,7 +142,7 @@ into
 
 ```yml
 tests:
-  - text: <code>markov</code> is a function.
+  - text: <code>markov</code> should be a function.
     testString: assert(typeof markov === 'function');
   - text: <code>markov(["A -> apple","B -> bag","S -> shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],"I bought a B of As from T S.")</code> should return "I bought a bag of apples from my brother.".
     testString: assert.deepEqual(markov(rules[0],tests[0]),outputs[0]);

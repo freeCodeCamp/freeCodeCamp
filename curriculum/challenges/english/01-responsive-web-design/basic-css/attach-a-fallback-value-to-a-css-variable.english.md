@@ -30,9 +30,9 @@ It looks like there is a problem with the variables supplied to the <code>.pengu
 
 ```yml
 tests:
-  - text: Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-top</code> class.
+  - text: The fallback value of <code>black</code> should be used in the <code>background</code> property of the <code>penguin-top</code> class.
     testString: assert(code.match(/.penguin-top\s*?{[\s\S]*background\s*?:\s*?var\(\s*?--pengiun-skin\s*?,\s*?black\s*?\)\s*?;[\s\S]*}[\s\S]*.penguin-bottom\s{/gi));
-  - text: Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-bottom</code> class.
+  - text: The fallback value of <code>black</code> should be used in <code>background</code> property of the <code>penguin-bottom</code> class.
     testString: assert(code.match(/.penguin-bottom\s*?{[\s\S]*background\s*?:\s*?var\(\s*?--pengiun-skin\s*?,\s*?black\s*?\)\s*?;[\s\S]*}/gi));
 
 ```
