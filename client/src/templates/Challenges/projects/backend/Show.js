@@ -236,7 +236,7 @@ export class BackEnd extends Component {
                 <TestSuite tests={tests} />
                 <Spacer />
               </Col>
-              <CompletionModal blockName={blockName} />
+              <CompletionModal />
               <HelpModal />
             </Row>
           </Grid>
