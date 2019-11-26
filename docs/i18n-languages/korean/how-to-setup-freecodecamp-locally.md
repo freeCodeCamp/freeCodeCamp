@@ -312,18 +312,19 @@ npm run develop
 | `npm run test:server` | Server 테스트 suite 실행하기 |
 | `npm run clean` | 모든 dependencies 삭제하고 캐쉬 정리하기 |
 
-## Making changes to your clone of freeCodeCamp locally
-You can now make changes to files and commit your changes to your local clone of your fork.
 
-Follow these steps:
+## 여러분의 컴퓨터에서 freeCodeCamp 복사본을 수정하기
+이제 여러분은 파일을 수정하고 커밋할 수 있습니다.
 
-1. Validate that you are on the `master` branch
+아래 단계를 따라하세요:
+
+1. `master` 브랜치에 있는지 확인하세요.
 
     ```sh
     git status
     ```
 
-    You should get an output like this:
+    아래와 같은 메시지가 보여야 합니다:
 
     ```sh
     On branch master
@@ -332,56 +333,56 @@ Follow these steps:
     nothing to commit, working directory clean
     ```
 
-    If you are not on master or your working directory is not clean, resolve any outstanding files/commits and checkout `master`:
+    master에 있지 않거나 working directory에 처리해야 할 무언가가 있으면, 그게 파일이든 커밋이든 간에 처리한다음 `master` 브랜치로 갑니다:
 
     ```sh
     git checkout master
     ```
 
-2. Sync the latest changes from the freeCodeCamp upstream `master` branch to your local master branch
+2. freeCodeCamp upstream `master` 브랜치의 최신 변경사항을 여러분의 지역 저장소(역주: 내 컴퓨터)에 있는 master 브랜치와 동일하게 만드세요.
 
-    **Note:** If you have any outstanding Pull Request that you made from the `master` branch of your fork, you will lose them at the end of this step. You should ensure your pull request is merged by a moderator before performing this step. To avoid this scenario, you should *always* work on a branch separate from master.
+    **노트:** 만약에 여러분이 fork한 master 브랜치에 만든 Pull Request가 아직 미해결 상태이면, 이 단계 마지막에서 그 부분을 잃게 될 겁니다. 이 단계를 진행하기 전에 moderator로부터 해당 pull request가 병합될 수 있도록 하세요. 이런 일을 방지하려면 *언제나* master가 아닌 개별 브랜치에서 개발을 진행하셔야 합니다.
 
-    This step **will sync the latest changes** from the main repository of freeCodeCamp. It is important that you rebase your branch on top of the latest `upstream/master` as often as possible to avoid conflicts later.
+    이 단계는 freeCodeCamp의 메인 저장소의 **최신 변경사항으로 동기화시킵니다**. 나중에 생길 수 있는 충돌을 피하기 위해서는 `upstream/master`로 여러분의 브랜치를 자주 리베이스시키는 게 중요합니다.
 
-    Update your local copy of the freeCodeCamp upstream repository:
+    freeCodeCamp 원격 저장소를 복사한 여러분의 지역 저장소를 업데이트합니다:
     ```sh
     git fetch upstream
     ```
 
-    Hard reset your master branch with the freeCodeCamp master:
+    여러분의 master 브랜치를 freeCodeCamp 원격 저장소의 master 브랜치와 하드리셋합니다:
 
     ```sh
     git reset --hard upstream/master
     ```
 
-    Push your master branch to your origin to have a clean history on your fork on GitHub:
+    GitHub에 있는 여러분의 fork 히스토리가 깨끗하도록 여러분의 master 브랜치를 원격 저장소로 push합니다:
 
     ```sh
     git push origin master --force
     ```
 
-    You can validate your current master matches the upstream/master by performing a diff:
+    diff를 사용해서 여러분의 현재 master가 upstream/master와 일치하는지 확인할 수 있습니다:
 
     ```sh
     git diff upstream/master
     ```
 
-    The resulting output should be empty.
+    결과물로 아무것도 없어야 합니다.
 
-3. Create a fresh new branch
+3. 새로운 브랜치를 생성하세요.
 
-    Working on a separate branch for each issue helps you keep your local work copy clean. You should never work on the `master`. This will soil your copy of freeCodeCamp and you may have to start over with a fresh clone or fork.
+    각 이슈마다 브랜치를 따로 만들어 일하는게 여러분이 개발을 깔끔하게 하도록 도와줍니다. `master`에서 절대 일을 진행하지 마세요. 이는 freeCodeCamp 복사본을 엉망으로 만들어 새로운 clone이나 fork 복사본에서 일을 다시 하게 만들 수 있습니다. 
 
-    Check that you are on `master` as explained previously, and branch off from there:
+    앞에서 설명했듯이 `master`에 있는지 확인하신 다음, 거기에다 다른 브랜치를 만드세요: 
 
     ```sh
     git checkout -b fix/update-guide-for-xyz
     ```
 
-    Your branch name should start with a `fix/`, `feat/`, `docs/`, etc. Avoid using issue numbers in branches. Keep them short, meaningful and unique.
+    브랜치 이름은 반드시 `fix/`, `feat/`, `docs/`, 등으로 시작해야 합니다. 브랜치와 연동되어 있는 issue numbers는 사용하지 않도록 합니다. 짧고, 읽었을 때 무엇을 하려는지 짐작할 수 있으면서 다른 이름과 헷갈리지 않도록 합니다.
 
-    Some examples of good branch names are:
+    몇가지 좋은 브랜치 이름의 예로는:
 
     ```md
     fix/update-challenges-for-react
@@ -391,19 +392,19 @@ Follow these steps:
     translate/add-spanish-basic-html
     ```
 
-4. Edit pages and work on code in your favorite text editor
+4. 여러분이 사용하는 텍스트 에디터에서 페이지 및 코드를 수정하세요.
 
-5. Once you are happy with the changes you should optionally run freeCodeCamp locally to preview the changes
+5. 수정사항이 마음에 들면 여러분의 컴퓨터에서 freeCodeCamp에 어떻게 반영되는지 미리 보기 하도록 하세요.
 
-6. Make sure you fix any errors and check the formatting of your changes. We have style guides in the [docs](/docs/) section for the Guide articles and Coding challenges
+6. 여러분의 수정사항에 에러는 없는지 전체 구성이 올바른지 확인하세요. 저희는 [docs](/docs/)에 가이드 문서와 코딩 챌린지에 대한 스타일 가이드가 따로 있습니다.
 
-7. Check and confirm the files you are updating
+7. 업데이트한 파일을 확인하세요.
 
     ```sh
     git status
     ```
 
-    This should show a list of `unstaged` files that you have edited.
+    이는 여러분이 수정하였으나 아직 `unstaged` 상태의 파일 목록을 보여줍니다.
 
     ```sh
     On branch feat/documentation
@@ -420,21 +421,21 @@ Follow these steps:
     ...
     ```
 
-8. Stage the changes and make a commit
+8. 변경사항을 stage화하고 commit합니다.
 
-    In this step, you should only mark files that you have edited or added yourself. You can perform a reset and resolve files that you did not intend to change if needed.
+    이 단계에서 여러분은 여러분이 만들었거나 수정한 파일만을 작업해야 합니다. 필요한 파일만 선택적으로 작업할 수 있습니다.
 
     ```sh
     git add path/to/my/changed/file.ext
     ```
 
-    Or you can add all the `unstaged` files to the staging area:
+    아니면 모든 `unstaged` 파일을 staging area로 올릴 수 있습니다:
 
     ```sh
     git add .
     ```
 
-    Only the files that were moved to the staging area will be added when you make a commit.
+    staging area에 올라 온 파일들만을 commit할 수 있습니다.
 
     ```sh
     git status
@@ -454,24 +455,24 @@ Follow these steps:
         modified:   docs/how-to-work-on-guide-articles.md
     ```
 
-    Now, you can commit your changes with a short message like so:
+    아래처럼 짧은 메시지와 함께 변경사항을 commit할 수 있습니다:
 
     ```sh
-    git commit -m "fix: my short commit message"
+    git commit -m "fix: 짧은 commit 메시지"
     ```
 
-    Some examples:
+    몇가지 예:
 
     ```md
     fix: update guide article for Java - for loop
     feat: add guide article for alexa skills
     ```
 
-    Optional:
+    선택사항:
 
-    We highly recommend making a conventional commit message. This is a good practice that you will see on some of the popular Open Source repositories. As a developer, this encourages you to follow standard practices.
+    이미 다른 개발자들이 사용하고 있는 commit 메시지를 여러분도 사용할 것을 권해드립니다. 현재 활발하게 진행 중인 오픈 소스 저장소들에서 확인하실 수 있을 겁니다. 개발자로서 이는 권장될 만한 연습방법입니다.
 
-    Some examples of conventional commit messages are:
+    자주 볼 수 있는 commit 메시지의 몇 가지 예:
 
     ```md
     fix: update HTML guide article
@@ -480,36 +481,36 @@ Follow these steps:
     docs: update contributing guidelines
     ```
 
-    Keep these short, not more than 50 characters. You can always add additional information in the description of the commit message.
+    50글자 이상으로 넘어가지 않도록 짧게 만듭니다. 비교적 긴 부가 설명이 필요하면 commit 메시지 외에 description을 사용하면 됩니다.
 
     This does not take any additional time than an unconventional message like 'update file' or 'add index.md'
 
-    You can learn more about why you should use conventional commits [here](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#why-use-conventional-commits).
+    왜 이러한 commits을 이용해야하는지 더 궁금하면 [here](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#why-use-conventional-commits)를 읽어보세요.
 
-9. If you realise that you need to edit a file or update the commit message after making a commit you can do so after editing the files with:
+9. commit 이후에 파일을 수정하거나 commit 메시지를 업데이트하고 싶으면:
 
     ```sh
     git commit --amend
     ```
 
-    This will open up a default text editor like `nano` or `vi` where you can edit the commit message title and add/edit the description.
+    이는 `nano`나 `vi` 같이 자동 설정된 텍스트 에디터를 열어 여러분이 commit 메시지나 제목, 설명란을 추가하거나 수정할 수 있게 해 줍니다.
 
-10. Next, you can push your changes to your fork.
+10. 다음으로, 변경사항을 여러분의 fork로 push할 수 있습니다.
 
     ```sh
     git push origin branch/name-here
     ```
 
-## Proposing a Pull Request (PR)
-After you've committed your changes, check here for [how to open a Pull Request](/docs/how-to-open-a-pull-request.md).
+## Pull Request (PR) 요청하기
+변경사항을 commit 하신 다음에는 [Pull Request 만들기](/docs/how-to-open-a-pull-request.md)를 읽어 보세요.
 
-## Getting Help
-If you are stuck and need help, let us know by asking in the ['Contributors' category on our forum](https://www.freecodecamp.org/forum/c/contributors) or the [Contributors chat room](https://gitter.im/FreeCodeCamp/Contributors) on Gitter.
+## 도움 요청하기
+도움이 필요하시면 ['Contributors' category on our forum](https://www.freecodecamp.org/forum/c/contributors)이나 Gitter에 있는 [Contributors chat room](https://gitter.im/FreeCodeCamp/Contributors)으로 질문을 남겨 주세요.
 
-There might be an error in the console of your browser or in Bash / Terminal / Command Line that will help identify the problem. Provide this error message in your problem description so others can more easily identify the issue and help you find a resolution.
+문제가 무언지 식별하도록 도와줄 브라우저 콘솔이나 Bash / 터미널 / 명령어에 에러가 있을 수 있습니다. 이러한 에러 메시지를 질문할 때 포함시켜 주세요. 이는 다른 이들이 여러분이 직면한 문제가 무엇인지 보다 쉽게 파악해서 도움을 줄 수 있습니다. 
 
 ### Troubleshooting
-If the app launches but you are encountering UI errors such as fonts not being loaded or the code editor not displaying properly, see the following depending on your local setup:
+앱은 실행되는데 보여야할 폰트가 안 보이는 UI 쪽에 문제가 있거나 코드 에디터가 제대로 보이지 않으면 여러분의 컴퓨터(로컬)에 설정한 거에 따라 아래를 참조하세요:
 
 **Docker Build:**
 ```sh
@@ -535,6 +536,7 @@ npm run seed
 npm run develop
 ```
 
-If you can't sign in, and instead, you see a banner with an error message saying that it'll be reported to freeCodeCamp, please double-check that your local port 3000 is not in use by a different program.
+로그인되는 대신 freeCodeCamp에 보고될 거라는 에러 메시지가 있는 창을 보게 되면 내 컴퓨터 내에서 포트 3000이 다른 프로그램에 의해 사용되고 있지는 않은지 꼭 확인해 보세요.
 
-If you get errors while installing the dependencies, please make sure that you are not in a restricted network or your firewall settings do not prevent you from accessing resources. One solution would be to use a VPN service if possible and allowed in your environment.
+
+dependencies 설치하는 동안에 에러가 생기면 제한된 네트워크 환경에 있지는 않은지, 해당 자원에 접근하지 못하도록 방화벽이 설정되진 않았는지 확인해 보세요. 한 가지 해결책으로는 VPN 서비스를 해당 환경에서 사용할 수 있도록 허용하는 겁니다.
