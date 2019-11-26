@@ -15,7 +15,7 @@ Above is a very simple, undirected graph where you have three nodes, where the f
 Below is a JavaScript implementation of the same thing.
 
 ```js
-var adjMat = [
+const adjMat = [
   [0, 1, 1],
   [1, 0, 0],
   [1, 0, 0]
@@ -26,7 +26,7 @@ Unlike an adjacency list, each "row" of the matrix has to have the same number o
 A directed graph would look similar. Below is a graph where the first node has an edge pointing toward the second node, and then the second node has an edge pointing to the third node.
 
 ```js
-var adjMatDirected = [
+const adjMatDirected = [
   [0, 1, 0],
   [0, 0, 1],
   [0, 0, 0]
@@ -67,7 +67,9 @@ tests:
 <div id='js-seed'>
 
 ```js
-var adjMatUndirected = [];
+const adjMatUndirected = [
+
+];
 ```
 
 </div>
@@ -77,7 +79,7 @@ var adjMatUndirected = [];
 <section id='solution'>
 
 ```js
-var adjMatUndirected = [
+const adjMatUndirected = [
   [0, 0, 1, 1, 0],
   [0, 0, 0, 0, 0],
   [1, 0, 0, 0, 1],
