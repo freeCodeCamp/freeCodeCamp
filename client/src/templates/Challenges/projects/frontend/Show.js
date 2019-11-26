@@ -136,7 +136,7 @@ export class Project extends Component {
                 <br />
                 <Spacer />
               </Col>
-              <CompletionModal blockName={blockName} />
+              <CompletionModal />
               <HelpModal />
             </Row>
           </Grid>
