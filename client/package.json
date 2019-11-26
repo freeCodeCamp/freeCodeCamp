@@ -18,7 +18,6 @@
     "@reach/router": "^1.2.1",
     "algoliasearch": "^3.35.1",
     "axios": "^0.19.0",
-    "bezier-easing": "^2.1.0",
     "browser-cookies": "^1.2.0",
     "chai": "^4.2.0",
     "date-fns": "^1.30.1",
