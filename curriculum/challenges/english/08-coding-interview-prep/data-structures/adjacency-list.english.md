@@ -15,7 +15,7 @@ Above is an undirected graph because <code>Node1</code> is connected to <code>No
 We can represent the undirected graph above as an adjacency list by putting it within a JavaScript object.
 
 ```js
-var undirectedG = {
+const undirectedG = {
   Node1: ["Node2", "Node3"],
   Node2: ["Node1"],
   Node3: ["Node1"]
@@ -25,7 +25,7 @@ var undirectedG = {
 This can also be more simply represented as an array where the nodes just have numbers rather than string labels.
 
 ```js
-var undirectedGArr = [
+const undirectedGArr = [
   [1, 2], // Node1
   [0],    // Node2
   [0]     // Node3
@@ -36,7 +36,6 @@ var undirectedGArr = [
 
 ## Instructions
 <section id='instructions'>
-
 Create a social network as an undirected graph with 4 nodes/people named <code>James</code>, <code>Jill</code>, <code>Jenny</code>, and <code>Jeff</code>. There are edges/relationships between James and Jeff, Jill and Jenny, and Jeff and Jenny.
 </section>
 
@@ -63,7 +62,9 @@ tests:
 <div id='js-seed'>
 
 ```js
-var undirectedAdjList = {};
+const undirectedAdjList = {
+
+};
 ```
 
 </div>
@@ -73,7 +74,7 @@ var undirectedAdjList = {};
 <section id='solution'>
 
 ```js
-var undirectedAdjList = {
+const undirectedAdjList = {
   James: ['Jeff'],
   Jill: ['Jenny'],
   Jenny: ['Jill', 'Jeff'],
