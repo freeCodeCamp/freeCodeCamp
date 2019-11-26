@@ -43,20 +43,27 @@ tests:
 ```js
 // check if array is sorted
 function isSorted(arr) {
-  var check = i =>
-    i == arr.length - 1 ? true : arr[i] > arr[i + 1] ? false : check(i + 1);
-  return check(0);
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] > arr[i + 1]) {
+      return false;
+    }
+  }
+  return true;
 }
 // generate a randomly filled array
-var array = new Array();
-(function createArray(size = 5) {
-  array.push(+(Math.random() * 100).toFixed(0));
-  return size > 1 ? createArray(size - 1) : undefined;
-})(25);
-var MinHeap = function() {
-  // change code below this line
-  // change code above this line
-};
+const array = Array(25).fill().map(() => Math.floor(Math.random() * 100));
+
+class MinHeap {
+  constructor() {
+    this.heap = [null];
+  }
+  // Add insert method here
+
+  // Add remove method here
+
+  // Add sort method here
+
+}
 ```
 
 </div>
@@ -66,7 +73,78 @@ var MinHeap = function() {
 <section id='solution'>
 
 ```js
-// solution required
+// check if array is sorted
+function isSorted(arr) {
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] > arr[i + 1]) {
+      return false;
+    }
+  }
+  return true;
+}
+// generate a randomly filled array
+const array = Array(25).fill().map(() => Math.floor(Math.random() * 100));
+
+class MinHeap {
+  constructor() {
+    this.heap = [null];
+  }
+
+  insert(value) {
+    let index = this.heap.length;
+    let parent = Math.floor(index / 2);
+    while (index > 1 && value < this.heap[parent]) {
+      this.heap[index] = this.heap[parent];
+      index = parent;
+      parent = Math.floor(index / 2);
+    }
+    this.heap[index] = value;
+  }
+
+  remove() {
+    if (this.heap.length === 1) {
+      return null;
+    }
+    if (this.heap.length === 2) {
+      return this.heap.pop();
+    }
+
+    const value = this.heap[1];
+    const lastValue = this.heap.pop();
+    let index = 1;
+    let leftIndex = index * 2;
+    let rightIndex = index * 2 + 1;
+    while ((leftIndex < this.heap.length && this.heap[leftIndex] < lastValue) || (rightIndex < this.heap.length && this.heap[rightIndex] < lastValue)) {
+      let maxIndex;
+      if (leftIndex >= this.heap.length) {
+        maxIndex = rightIndex;
+      } else if (rightIndex >= this.heap.length) {
+        maxIndex = leftIndex;
+      } else if (this.heap[rightIndex] < this.heap[leftIndex]) {
+        maxIndex = rightIndex;
+      } else {
+        maxIndex = leftIndex;
+      }
+      this.heap[index] = this.heap[maxIndex];
+      index = maxIndex;
+      leftIndex = index * 2;
+      rightIndex = index * 2 + 1;
+    }
+
+    this.heap[index] = lastValue
+
+    return value;
+  }
+
+  sort() {
+    const values = [];
+    let value;
+    while (value = this.remove()) {
+      values.push(value);
+    }
+    return values;
+  }
+}
 ```
 
 </section>
