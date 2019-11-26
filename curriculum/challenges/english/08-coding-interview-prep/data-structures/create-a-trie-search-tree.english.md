@@ -9,15 +9,15 @@ forumTopicId: 301634
 <section id='description'>
 
 Here we will move on from binary search trees and take a look at another type of tree structure called a trie. A trie is an ordered search tree commonly used to hold strings, or more generically associative arrays or dynamic datasets in which the keys are strings. They are very good at storing sets of data when many keys will have overlapping prefixes, for example, all the words in a dictionary.
-Unlike a binary tree, nodes are not associated with actual values. Instead, the path to a node represents a specific key. For instance, if we wanted to store the string code in a trie, we would have four nodes, one for each letter: c — o — d — e. Following that path through all these nodes will then create code as a string — that path is the key we stored. Then, if we wanted to add the string coding, it would share the first three nodes of code before branching away after the d. In this way, large datasets can be stored very compactly. In addition, search can be very quick because it is effectively limited to the length of the string you are storing. Furthermore, unlike binary trees a node can store any number of child nodes.
-As you might have guessed from the above example, some metadata is commonly stored at nodes that hold the end of a key so that on later traversals that key can still be retrieved. For instance, if we added codes in our example above we would need some way to know that the e in code represents the end of a key that was previously entered. Otherwise, this information would effectively be lost when we add codes.
+Unlike a binary tree, nodes are not associated with actual values. Instead, the path to a node represents a specific key. For instance, if we wanted to store the string "code" in a trie, we would have four nodes, one for each letter: "c" — "o" — "d" — "e". Following that path through all these nodes will then create "code" as a string — that path is the key we stored. Then, if we wanted to add the string "coding", it would share the first three nodes of "code" before branching away after the "d". In this way, large datasets can be stored very compactly. In addition, search can be very quick because it is effectively limited to the length of the string you are storing. Furthermore, unlike binary trees a node can store any number of child nodes.
+As you might have guessed from the above example, some metadata is commonly stored at nodes that hold the end of a key so that on later traversals that key can still be retrieved. For instance, if we added "codes" in our example above we would need some way to know that the e in code represents the end of a key that was previously entered. Otherwise, this information would effectively be lost when we add "codes".
 </section>
 
 ## Instructions
 <section id='instructions'>
 
-Let's create a trie to store words. It will accept words through an <code>add</code> method and store these in a trie data structure. It will also allow us to query if a given string is a word with an <code>isWord</code> method, and retrieve all the words entered into the trie with a <code>print</code> method. <code>isWord</code> should return a boolean value and print should return an array of all these words as string values.
-In order for us to verify that this data structure is implemented correctly, we've provided a <code>Node</code> structure for each node in the tree. Each node will be an object with a <code>keys</code> property which is a JavaScript Map object. This will hold the individual letters that are valid keys of each node. We've also created an <code>end</code> property on the nodes that can be set to <code>true</code> if the node represents the termination of a word.
+Let's create a trie to store words. It will accept words through an <code>add</code> method and store these in a trie data structure. It will also allow us to query if a given string is a word with an <code>isWord</code> method, and retrieve all the words entered into the trie with a <code>print</code> method. <code>isWord</code> should return a boolean value and <code>print</code> should return an array of all these words as string values.
+In order for us to verify that this data structure is implemented correctly, we've provided a <code>Node</code> structure for each node in the tree. Each node will be an object with a <code>keys</code> property which is a JavaScript Map object. This will hold the individual letters that are valid keys of each +node. We've also created an <code>end</code> property on the nodes that can be set to <code>true</code> if the node represents the termination of a word.
 </section>
 
 ## Tests
@@ -45,21 +45,24 @@ tests:
 <div id='js-seed'>
 
 ```js
-var displayTree = tree => console.log(JSON.stringify(tree, null, 2));
-var Node = function() {
-  this.keys = new Map();
-  this.end = false;
-  this.setEnd = function() {
-    this.end = true;
-  };
-  this.isEnd = function() {
-    return this.end;
-  };
-};
-var Trie = function() {
-  // change code below this line
-  // change code above this line
-};
+class Node {
+  constructor() {
+    this.keys = new Map();
+    this.end = false;
+  }
+}
+
+class Trie {
+  constructor() {
+    this.root = new Node();
+  }
+  // Add add method here
+
+  // Add isWord method here
+
+  // Add print method here
+
+}
 ```
 
 </div>
@@ -69,7 +72,69 @@ var Trie = function() {
 <section id='solution'>
 
 ```js
-// solution required
+class Node {
+  constructor() {
+    this.keys = new Map();
+    this.end = false;
+  }
+}
+
+class Trie {
+  constructor() {
+    this.root = new Node();
+  }
+
+  add(word) {
+    function addNode(node, chars) {
+      if (chars.length === 0) {
+        node.end = true;
+        return;
+      }
+
+      const letter = chars.shift();
+      let letterNode = node.keys.get(letter);
+      if (!letterNode) {
+        letterNode = new Node();
+        node.keys.set(letter, letterNode);
+      }
+      return addNode(letterNode, chars);
+    }
+    return addNode(this.root, Array.from(word));
+  }
+
+  isWord(word) {
+    function hasNode(node, chars) {
+      if (chars.length === 0) {
+        return node.end;
+      }
+
+      const letter = chars.shift();
+      let letterNode = node.keys.get(letter);
+      if (!letterNode) {
+        return false;
+      }
+      return hasNode(letterNode, chars);
+
+    }
+    return hasNode(this.root, Array.from(word));
+  }
+
+  print() {
+    const words = [];
+
+    function getWords(node, word) {
+      if (node.end) {
+        words.push(word)
+      }
+      node.keys.forEach((letterNode, letter) => {
+        getWords(letterNode, word + letter);
+      });
+    }
+    getWords(this.root, "");
+
+    return words;
+  }
+}
 ```
 
 </section>
