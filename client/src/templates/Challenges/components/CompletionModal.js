@@ -160,11 +160,9 @@ export class CompletionModalInner extends Component {
       title
     } = this.props;
 
-    const completedPercent = getCompletedPercent(
-      completedChallengesIds,
-      currentBlockIds,
-      id
-    );
+    const completedPercent = !isSignedIn
+      ? 0
+      : getCompletedPercent(completedChallengesIds, currentBlockIds, id);
 
     if (isOpen) {
       ga.modalview('/completion-modal');
