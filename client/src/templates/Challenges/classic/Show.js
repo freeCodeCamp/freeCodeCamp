@@ -252,7 +252,11 @@ class ShowClassic extends Component {
   }
 
   render() {
-    const { forumTopicId, title } = this.getChallenge();
+    const {
+      fields: { blockName },
+      forumTopicId,
+      title
+    } = this.getChallenge();
     const {
       executeChallenge,
       pageContext: {
@@ -298,7 +302,7 @@ class ShowClassic extends Component {
               testOutput={this.renderTestOutput()}
             />
           </Media>
-          <CompletionModal />
+          <CompletionModal blockName={blockName} />
           <HelpModal />
           <VideoModal videoUrl={this.getVideoUrl()} />
           <ResetModal />
