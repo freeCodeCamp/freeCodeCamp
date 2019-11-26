@@ -32,7 +32,7 @@ let newArray = array.splice(3, 2);
 ## Instructions
 <section id='instructions'>
 
-We've initialized an array `arr`. Use `splice()` to remove elements `arr`, so that it only contains elements that sum to the value of <code>10</code>.
+We've initialized an array `arr`. Use `splice()` to remove elements from `arr`, so that it only contains elements that sum to the value of <code>10</code>.
 
 </section>
 
