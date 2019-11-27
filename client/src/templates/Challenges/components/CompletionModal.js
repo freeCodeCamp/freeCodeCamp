@@ -22,7 +22,7 @@ import {
   successMessageSelector,
   challengeFilesSelector,
   challengeMetaSelector,
-  blockCompletion
+  lastBlockChalSubmitted
 } from '../redux';
 
 import { isSignedInSelector } from '../../../redux';
@@ -58,15 +58,14 @@ const mapDispatchToProps = function(dispatch) {
     submitChallenge: () => {
       dispatch(submitChallenge());
     },
-    blockCompletion: () => {
-      dispatch(blockCompletion());
+    lastBlockChalSubmitted: () => {
+      dispatch(lastBlockChalSubmitted());
     }
   };
   return () => dispatchers;
 };
 
 const propTypes = {
-  blockCompletion: PropTypes.func,
   blockName: PropTypes.string,
   close: PropTypes.func.isRequired,
   completedChallengesIds: PropTypes.array,
@@ -75,6 +74,7 @@ const propTypes = {
   id: PropTypes.string,
   isOpen: PropTypes.bool,
   isSignedIn: PropTypes.bool.isRequired,
+  lastBlockChalSubmitted: PropTypes.func,
   message: PropTypes.string,
   submitChallenge: PropTypes.func.isRequired,
   title: PropTypes.string
@@ -109,14 +109,7 @@ export class CompletionModalInner extends Component {
 
   state = {
     downloadURL: null,
-    completedPercent: this.props.isSignedIn
-      ? getCompletedPercent(
-          this.props.completedChallengesIds,
-          this.props.currentBlockIds,
-          this.props.id,
-          false
-        )
-      : 0
+    completedPercent: 0
   };
 
   static getDerivedStateFromProps(props, state) {
@@ -144,7 +137,12 @@ export class CompletionModalInner extends Component {
       });
       newURL = URL.createObjectURL(blob);
     }
-    return { downloadURL: newURL };
+
+    const { completedChallengesIds, currentBlockIds, id, isSignedIn } = props;
+    let completedPercent = isSignedIn
+      ? getCompletedPercent(completedChallengesIds, currentBlockIds, id)
+      : 0;
+    return { downloadURL: newURL, completedPercent: completedPercent };
   }
 
   handleKeypress(e) {
@@ -166,9 +164,9 @@ export class CompletionModalInner extends Component {
   checkBlockCompletion() {
     if (
       this.state.completedPercent === 100 &&
-      this.props.completedChallengesIds.includes(this.props.id)
+      !this.props.completedChallengesIds.includes(this.props.id)
     ) {
-      this.props.blockCompletion();
+      this.props.lastBlockChalSubmitted();
     }
   }
 

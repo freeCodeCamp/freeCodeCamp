@@ -57,6 +57,6 @@ export function createCurrentChallengeSaga(types) {
   return [
     takeEvery(types.challengeMounted, currentChallengeSaga),
     takeEvery(types.challengeMounted, updateSuccessMessageSaga),
-    takeEvery(types.blockCompletion, showDonateModalSaga)
+    takeEvery(types.lastBlockChalSubmitted, showDonateModalSaga)
   ];
 }

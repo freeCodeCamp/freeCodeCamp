@@ -83,7 +83,7 @@ export const types = createTypes(
     'setEditorFocusability',
     'setAccessibilityMode',
 
-    'blockCompletion'
+    'lastBlockChalSubmitted'
   ],
   ns
 );
@@ -159,7 +159,9 @@ export const moveToTab = createAction(types.moveToTab);
 export const setEditorFocusability = createAction(types.setEditorFocusability);
 export const setAccessibilityMode = createAction(types.setAccessibilityMode);
 
-export const blockCompletion = createAction(types.blockCompletion);
+export const lastBlockChalSubmitted = createAction(
+  types.lastBlockChalSubmitted
+);
 
 export const currentTabSelector = state => state[ns].currentTab;
 export const challengeFilesSelector = state => state[ns].challengeFiles;
