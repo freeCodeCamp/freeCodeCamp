@@ -33,9 +33,8 @@ import {
   isJavaScriptChallenge
 } from '../utils/build';
 
-// How long before bailing out of a preview. 100ms should be long enough
-// to let most operations complete, but short enough to avoid OOM errors.
-const previewTimeout = 100;
+// How long before bailing out of a preview.
+const previewTimeout = 2500;
 
 export function* executeChallengeSaga() {
   const isBuildEnabled = yield select(isBuildEnabledSelector);
@@ -94,9 +93,9 @@ function* takeEveryConsole(channel) {
   });
 }
 
-function* buildChallengeData(challengeData) {
+function* buildChallengeData(challengeData, preview) {
   try {
-    return yield call(buildChallenge, challengeData);
+    return yield call(buildChallenge, challengeData, preview);
   } catch (e) {
     yield put(disableBuildOnError());
     throw e;
@@ -159,7 +158,7 @@ function* previewChallengeSaga() {
 
     const challengeData = yield select(challengeDataSelector);
     if (canBuildChallenge(challengeData)) {
-      const buildData = yield buildChallengeData(challengeData);
+      const buildData = yield buildChallengeData(challengeData, true);
       // evaluate the user code in the preview frame or in the worker
       if (challengeHasPreview(challengeData)) {
         const document = yield getContext('document');
