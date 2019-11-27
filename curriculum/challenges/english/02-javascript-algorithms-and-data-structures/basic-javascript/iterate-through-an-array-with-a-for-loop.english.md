@@ -30,13 +30,13 @@ Declare and initialize a variable <code>total</code> to <code>0</code>. Use a <c
 
 ```yml
 tests:
-  - text: <code>total</code> should be declared and initialized to 0
+  - text: <code>total</code> should be declared and initialized to 0.
     testString: assert(code.match(/(var|let|const)\s*?total\s*=\s*0.*?;?/));
-  - text: <code>total</code> should equal 20
+  - text: <code>total</code> should equal 20.
     testString: assert(total === 20);
-  - text: You should use a <code>for</code> loop to iterate through <code>myArr</code>
+  - text: You should use a <code>for</code> loop to iterate through <code>myArr</code>.
     testString: assert(code.match(/for\s*\(/g).length > 1 && code.match(/myArr\s*\[/));
-  - text: Do not set <code>total</code> to 20 directly
+  - text: You should not set <code>total</code> to 20 directly.
     testString: assert(!code.match(/total[\s\+\-]*=\s*(0(?!\s*[;,]?$)|[1-9])/gm));
 ```
 
