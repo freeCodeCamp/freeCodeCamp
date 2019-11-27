@@ -126,8 +126,8 @@ class ShowCertification extends Component {
     } = cert;
 
     let conditionalDonationMessage = '';
+
     if (signedInUserName === username && !isDonating && !isDonationRequested) {
-      donationRequested();
       conditionalDonationMessage = (
         <Grid>
           <Row className='certification-donation text-center'>
@@ -138,7 +138,9 @@ class ShowCertification extends Component {
               around the world. Make a tax-deductible supporting donation to our
               nonprofit today.
             </p>
-            <Link>Check out our donation dashboard</Link>
+            <Link onClick={donationRequested} to={'/donate'}>
+              Check out our donation dashboard
+            </Link>
           </Row>
         </Grid>
       );
