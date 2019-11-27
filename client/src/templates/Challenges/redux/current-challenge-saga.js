@@ -1,4 +1,4 @@
-import { put, select, call, takeEvery, take } from 'redux-saga/effects';
+import { put, select, call, takeEvery, take, delay } from 'redux-saga/effects';
 import store from 'store';
 
 import {
@@ -40,10 +40,10 @@ function* showDonateModalSaga() {
   /* wait for the newchallenge to be mounted to avoid mounting
     the donation modal twice, once for the old chall and once for the new one
     */
-  yield take(challTypes.challengeMounted);
-
   let shouldRequestDonation = yield select(shouldRequestDonationSelector);
   if (shouldRequestDonation) {
+    yield take(challTypes.closeModal);
+    yield delay(1000);
     yield put(openDonationModal());
     yield put(donationRequested());
   }
