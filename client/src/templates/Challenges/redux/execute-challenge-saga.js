@@ -33,6 +33,10 @@ import {
   isJavaScriptChallenge
 } from '../utils/build';
 
+// How long before bailing out of a preview. 500ms should be long enough
+// to let most operations complete, but short enough to avoid OOM errors.
+const previewTimeout = 500;
+
 export function* executeChallengeSaga() {
   const isBuildEnabled = yield select(isBuildEnabledSelector);
   if (!isBuildEnabled) {
@@ -163,10 +167,14 @@ function* previewChallengeSaga() {
       } else if (isJavaScriptChallenge(challengeData)) {
         const runUserCode = getTestRunner(buildData, { proxyLogger });
         // without a testString the testRunner just evaluates the user's code
-        yield call(runUserCode, null, 5000);
+        yield call(runUserCode, null, previewTimeout);
       }
     }
   } catch (err) {
+    if (err === 'timeout') {
+      // eslint-disable-next-line no-ex-assign
+      err = `The code you have written is taking longer than the ${previewTimeout}ms our challenges allow. You may have created an infinite loop or need to rewrite an inefficient algorithm`;
+    }
     console.log(err);
     yield put(updateConsole(escape(err)));
   }
