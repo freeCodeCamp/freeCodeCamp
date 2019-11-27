@@ -25,7 +25,9 @@ import { filename as sassCompile } from '../../../../config/sass-compile';
 const protectTimeout = 100;
 
 function loopProtectCB(line) {
-  throw Error(`Potentially infinite loop detected on line ${line}`);
+  console.log(
+    `Potentially infinite loop detected on line ${line}. Tests may fail if this is not changed`
+  );
 }
 
 Babel.registerPlugin('loopProtection', protect(protectTimeout, loopProtectCB));
