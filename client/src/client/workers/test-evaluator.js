@@ -38,12 +38,11 @@ const __utils = (() => {
     self.postMessage(data);
   }
 
-  function log(err) {
-    if (!(err instanceof chai.AssertionError)) {
-      // report to both the browser and the fcc consoles, discarding the
-      // stack trace via toString as it only useful to debug the site, not a
-      // specific challenge.
-      console.log(err.toString());
+  function log(msg) {
+    if (!(msg instanceof chai.AssertionError)) {
+      // discards the stack trace via toString as it only useful to debug the
+      // site, not a specific challenge.
+      console.log(msg.toString());
     }
   }
 
@@ -66,7 +65,7 @@ self.onmessage = async e => {
   // Fake Deep Equal dependency
   const DeepEqual = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 
-  // User code errors should be reported, but only once:
+  // Build errors should be reported, but only once:
   __utils.toggleProxyLogger(e.data.firstTest);
   /* eslint-enable no-unused-vars */
   try {
@@ -74,9 +73,12 @@ self.onmessage = async e => {
     let __userCodeWasExecuted = false;
     /* eslint-disable no-eval */
     try {
+      // Logging is proxyed after the build to catch console.log messages
+      // generated during testing.
       testResult = eval(`
         ${e.data.build}
         __userCodeWasExecuted = true;
+        __utils.toggleProxyLogger(true);
         ${e.data.testString}
       `);
     } catch (err) {
