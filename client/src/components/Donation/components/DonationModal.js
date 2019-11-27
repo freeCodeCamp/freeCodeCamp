@@ -67,6 +67,7 @@ class DonateModal extends Component {
         <Modal.Footer>
           <Link
             className='btn-invert btn btn-lg btn-primary btn-block'
+            onClick={this.props.closeDonationModal}
             to={`/donate`}
           >
             Support our nonprofit
