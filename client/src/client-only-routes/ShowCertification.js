@@ -8,7 +8,11 @@ import { Grid, Row, Col, Image } from '@freecodecamp/react-bootstrap';
 import {
   showCertSelector,
   showCertFetchStateSelector,
-  showCert
+  showCert,
+  usernameSelector,
+  isDonatingSelector,
+  isDonationRequestedSelector,
+  donationRequested
 } from '../redux';
 import validCertNames from '../../utils/validCertNames';
 import { createFlashMessage } from '../components/Flash/redux';
@@ -16,7 +20,7 @@ import standardErrorMessage from '../utils/standardErrorMessage';
 import reallyWeirdErrorMessage from '../utils/reallyWeirdErrorMessage';
 
 import RedirectHome from '../components/RedirectHome';
-import { Loader } from '../components/helpers';
+import { Loader, Link } from '../components/helpers';
 
 const propTypes = {
   cert: PropTypes.shape({
@@ -30,13 +34,17 @@ const propTypes = {
   certDashedName: PropTypes.string,
   certName: PropTypes.string,
   createFlashMessage: PropTypes.func.isRequired,
+  donationRequested: PropTypes.func,
   fetchState: PropTypes.shape({
     pending: PropTypes.bool,
     complete: PropTypes.bool,
     errored: PropTypes.bool
   }),
+  isDonating: PropTypes.bool,
+  isDonationRequested: PropTypes.bool,
   issueDate: PropTypes.string,
   showCert: PropTypes.func.isRequired,
+  signedInUserName: PropTypes.string,
   userFullName: PropTypes.string,
   username: PropTypes.string,
   validCertName: PropTypes.bool
@@ -47,16 +55,25 @@ const mapStateToProps = (state, { certName }) => {
   return createSelector(
     showCertSelector,
     showCertFetchStateSelector,
-    (cert, fetchState) => ({
+    usernameSelector,
+    isDonatingSelector,
+    isDonationRequestedSelector,
+    (cert, fetchState, signedInUserName, isDonating, isDonationRequested) => ({
       cert,
       fetchState,
-      validCertName
+      validCertName,
+      signedInUserName,
+      isDonating,
+      isDonationRequested
     })
   );
 };
 
 const mapDispatchToProps = dispatch =>
-  bindActionCreators({ createFlashMessage, showCert }, dispatch);
+  bindActionCreators(
+    { createFlashMessage, showCert, donationRequested },
+    dispatch
+  );
 
 class ShowCertification extends Component {
   componentDidMount() {
@@ -72,7 +89,11 @@ class ShowCertification extends Component {
       fetchState,
       validCertName,
       createFlashMessage,
-      certName
+      certName,
+      donationRequested,
+      signedInUserName,
+      isDonating,
+      isDonationRequested
     } = this.props;
 
     if (!validCertName) {
@@ -103,8 +124,29 @@ class ShowCertification extends Component {
       certTitle,
       completionTime
     } = cert;
+
+    let conditionalDonationMessage = '';
+    if (signedInUserName === username && !isDonating && !isDonationRequested) {
+      donationRequested();
+      conditionalDonationMessage = (
+        <Grid>
+          <Row className='certification-donation text-center'>
+            <p>
+              Only you can see this message. Congratulationson earning this
+              certification. It’s no easy task. Running freeCodeCamp isn’t easy
+              either. Nor is it cheap. Help us help you and many other people
+              around the world. Make a tax-deductible supporting donation to our
+              nonprofit today.
+            </p>
+            <Link>Check out our donation dashboard</Link>
+          </Row>
+        </Grid>
+      );
+    }
+
     return (
       <div className='certificate-outer-wrapper'>
+        {conditionalDonationMessage}
         <Grid className='certificate-wrapper certification-namespace'>
           <Row>
             <header>

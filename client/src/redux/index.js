@@ -53,9 +53,9 @@ const initialState = {
 export const types = createTypes(
   [
     'appMount',
+    'hardGoTo',
     'closeDonationModal',
     'donationRequested',
-    'hardGoTo',
     'openDonationModal',
     'onlineStatusChange',
     'resetUserData',
@@ -134,7 +134,8 @@ export const completedChallengesSelector = state =>
   userSelector(state).completedChallenges || [];
 export const completionCountSelector = state => state[ns].completionCount;
 export const currentChallengeIdSelector = state => state[ns].currentChallengeId;
-export const donationRequestedSelector = state => state[ns].donationRequested;
+export const isDonationRequestedSelector = state => state[ns].donationRequested;
+export const isDonatingSelector = state => userSelector(state).isDonating;
 
 export const isOnlineSelector = state => state[ns].isOnline;
 export const isSignedInSelector = state => !!state[ns].appUsername;
@@ -145,21 +146,10 @@ export const signInLoadingSelector = state =>
 export const showCertSelector = state => state[ns].showCert;
 export const showCertFetchStateSelector = state => state[ns].showCertFetchState;
 
-export const showDonationSelector = state => {
-  const completedChallenges = completedChallengesSelector(state);
-  const completionCount = completionCountSelector(state);
-  const currentCompletedLength = completedChallenges.length;
-  const donationRequested = donationRequestedSelector(state);
-  // the user has not completed 9 challenges in total yet
-  if (currentCompletedLength < 9) {
-    return false;
-  }
-  // this will mean we are on the 10th submission in total for the user
-  if (completedChallenges.length === 9 && donationRequested === false) {
-    return true;
-  }
-  // this will mean we are on the 3rd submission for this browser session
-  if (completionCount === 2 && donationRequested === false) {
+export const shouldRequestDonationSelector = state => {
+  const isDonationRequested = isDonationRequestedSelector(state);
+  const isDonating = isDonatingSelector(state);
+  if (isDonationRequested === false && isDonating === false) {
     return true;
   }
   return false;

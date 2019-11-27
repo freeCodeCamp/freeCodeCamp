@@ -35,6 +35,20 @@
   display: flex;
   align-items: center;
   min-height: 100vh;
+  flex-direction: column;
+}
+
+.certificate-outer-wrapper .certification-donation {
+  padding: 15px 0px;
+}
+.certificate-outer-wrapper .certification-donation a {
+  padding: 5px 10px;
+}
+
+.certificate-outer-wrapper .certification-donation a:hover {
+  cursor: pointer;
+  background: var(--theme-color);
+  color: white;
 }
 
 .certification-namespace header {

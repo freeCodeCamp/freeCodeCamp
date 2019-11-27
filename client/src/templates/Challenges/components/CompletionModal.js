@@ -21,7 +21,8 @@ import {
   isCompletionModalOpenSelector,
   successMessageSelector,
   challengeFilesSelector,
-  challengeMetaSelector
+  challengeMetaSelector,
+  blockCompletion
 } from '../redux';
 
 import { isSignedInSelector } from '../../../redux';
@@ -54,29 +55,23 @@ const mapStateToProps = createSelector(
 const mapDispatchToProps = function(dispatch) {
   const dispatchers = {
     close: () => dispatch(closeModal('completion')),
-    handleKeypress: e => {
-      if (e.keyCode === 13 && (e.ctrlKey || e.metaKey)) {
-        e.preventDefault();
-        // Since Hotkeys also listens to Ctrl + Enter we have to stop this event
-        // getting to it.
-        e.stopPropagation();
-        dispatch(submitChallenge());
-      }
-    },
     submitChallenge: () => {
       dispatch(submitChallenge());
+    },
+    blockCompletion: () => {
+      dispatch(blockCompletion());
     }
   };
   return () => dispatchers;
 };
 
 const propTypes = {
+  blockCompletion: PropTypes.func,
   blockName: PropTypes.string,
   close: PropTypes.func.isRequired,
   completedChallengesIds: PropTypes.array,
   currentBlockIds: PropTypes.array,
   files: PropTypes.object.isRequired,
-  handleKeypress: PropTypes.func.isRequired,
   id: PropTypes.string,
   isOpen: PropTypes.bool,
   isSignedIn: PropTypes.bool.isRequired,
@@ -86,8 +81,8 @@ const propTypes = {
 };
 
 export function getCompletedPercent(
-  completedChallengesIds,
-  currentBlockIds,
+  completedChallengesIds = [],
+  currentBlockIds = [],
   currentChallengeId
 ) {
   completedChallengesIds = completedChallengesIds.includes(currentChallengeId)
@@ -106,8 +101,22 @@ export function getCompletedPercent(
 }
 
 export class CompletionModalInner extends Component {
+  constructor(props) {
+    super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleKeypress = this.handleKeypress.bind(this);
+  }
+
   state = {
-    downloadURL: null
+    downloadURL: null,
+    completedPercent: this.props.isSignedIn
+      ? getCompletedPercent(
+          this.props.completedChallengesIds,
+          this.props.currentBlockIds,
+          this.props.id,
+          false
+        )
+      : 0
   };
 
   static getDerivedStateFromProps(props, state) {
@@ -138,6 +147,31 @@ export class CompletionModalInner extends Component {
     return { downloadURL: newURL };
   }
 
+  handleKeypress(e) {
+    if (e.keyCode === 13 && (e.ctrlKey || e.metaKey)) {
+      e.preventDefault();
+      // Since Hotkeys also listens to Ctrl + Enter we have to stop this event
+      // getting to it.
+      e.stopPropagation();
+      this.handleSubmit();
+    }
+  }
+
+  handleSubmit() {
+    this.props.submitChallenge();
+    this.checkBlockCompletion();
+  }
+
+  // check block completion for donation
+  checkBlockCompletion() {
+    if (
+      this.state.completedPercent === 100 &&
+      this.props.completedChallengesIds.includes(this.props.id)
+    ) {
+      this.props.blockCompletion();
+    }
+  }
+
   componentWillUnmount() {
     if (this.state.downloadURL) {
       URL.revokeObjectURL(this.state.downloadURL);
@@ -149,20 +183,13 @@ export class CompletionModalInner extends Component {
     const {
       blockName = '',
       close,
-      completedChallengesIds = [],
-      currentBlockIds = [],
-      id = '',
       isOpen,
-      isSignedIn,
-      submitChallenge,
-      handleKeypress,
       message,
-      title
+      title,
+      isSignedIn
     } = this.props;
 
-    const completedPercent = !isSignedIn
-      ? 0
-      : getCompletedPercent(completedChallengesIds, currentBlockIds, id);
+    const { completedPercent } = this.state;
 
     if (isOpen) {
       ga.modalview('/completion-modal');
@@ -175,7 +202,7 @@ export class CompletionModalInner extends Component {
         dialogClassName='challenge-success-modal'
         keyboard={true}
         onHide={close}
-        onKeyDown={isOpen ? handleKeypress : noop}
+        onKeyDown={isOpen ? this.handleKeypress : noop}
         show={isOpen}
       >
         <Modal.Header
@@ -195,7 +222,7 @@ export class CompletionModalInner extends Component {
             block={true}
             bsSize='large'
             bsStyle='primary'
-            onClick={submitChallenge}
+            onClick={this.handleSubmit}
           >
             {isSignedIn ? 'Submit and g' : 'G'}o to next challenge{' '}
             <span className='hidden-xs'>(Ctrl + Enter)</span>
