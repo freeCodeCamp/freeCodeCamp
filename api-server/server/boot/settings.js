@@ -4,7 +4,7 @@ import { check } from 'express-validator/check';
 import { ifNoUser401, createValidatorErrorHandler } from '../utils/middleware';
 import { themes } from '../../common/utils/themes.js';
 import { alertTypes } from '../../common/utils/flash.js';
-import { validate } from '../../../utils/validate';
+import { isValidUsername } from '../../../utils/validate';
 
 const log = debug('fcc:boot:settings');
 
@@ -200,7 +200,7 @@ function createUpdateMyUsername(app) {
         message: 'Username is already associated with this account'
       });
     }
-    const validation = validate(username);
+    const validation = isValidUsername(username);
 
     if (!validation.valid) {
       return res.json({
