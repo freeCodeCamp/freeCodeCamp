@@ -26,7 +26,7 @@ const protectTimeout = 100;
 
 function loopProtectCB(line) {
   console.log(
-    `Potentially infinite loop detected on line ${line}. Tests may fail if this is not changed`
+    `Potentially infinite loop detected on line ${line}. Tests may fail if this is not changed.`
   );
 }
 
