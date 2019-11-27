@@ -25,13 +25,13 @@ Change the code to use the <code>--</code> operator on <code>myVar</code>.
 
 ```yml
 tests:
-  - text: <code>myVar</code> should equal <code>10</code>
+  - text: <code>myVar</code> should equal <code>10</code>.
     testString: assert(myVar === 10);
-  - text: <code>myVar = myVar - 1;</code> should be changed
+  - text: <code>myVar = myVar - 1;</code> should be changed.
     testString: assert(/var\s*myVar\s*=\s*11;\s*\/*.*\s*([-]{2}\s*myVar|myVar\s*[-]{2});/.test(code));
-  - text: Use the <code>--</code> operator on <code>myVar</code>
+  - text: You should use the <code>--</code> operator on <code>myVar</code>.
     testString: assert(/[-]{2}\s*myVar|myVar\s*[-]{2}/.test(code));
-  - text: Do not change code above the line
+  - text: You should not change code above the specified comment.
     testString: assert(/var myVar = 11;/.test(code));
 
 ```

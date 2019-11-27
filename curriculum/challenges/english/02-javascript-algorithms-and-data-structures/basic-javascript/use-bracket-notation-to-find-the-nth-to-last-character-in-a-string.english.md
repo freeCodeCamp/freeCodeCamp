@@ -25,7 +25,7 @@ Use <dfn>bracket notation</dfn> to find the second-to-last character in the <cod
 tests:
   - text: <code>secondToLastLetterOfLastName</code> should be "c".
     testString: assert(secondToLastLetterOfLastName === 'c');
-  - text: You have to use <code>.length</code> to get the second last letter.
+  - text: You should use <code>.length</code> to get the second last letter.
     testString: assert(code.match(/\.length/g).length === 2);
 
 ```

@@ -35,9 +35,9 @@ Correct the assignment to <code>myStr</code> so it contains the string value of 
 
 ```yml
 tests:
-  - text: <code>myStr</code> should have a value of <code>Hello World</code>
+  - text: <code>myStr</code> should have a value of <code>Hello World</code>.
     testString: assert(myStr === "Hello World");
-  - text: Do not change the code above the line
+  - text: You should not change the code above the specified comment.
     testString: assert(/myStr = "Jello World"/.test(code));
 
 ```

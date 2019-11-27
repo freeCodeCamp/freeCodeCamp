@@ -23,7 +23,7 @@ Define a variable <code>a</code> with <code>var</code> and initialize it to a va
 
 ```yml
 tests:
-  - text: Initialize <code>a</code> to a value of <code>9</code>
+  - text: You should initialize <code>a</code> to a value of <code>9</code>.
     testString: assert(/var\s+a\s*=\s*9\s*/.test(code));
 
 ```

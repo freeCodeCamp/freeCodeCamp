@@ -24,7 +24,7 @@ Build <code>myStr</code> over several lines by concatenating these two strings: 
 tests:
   - text: <code>myStr</code> should have a value of <code>This is the first sentence. This is the second sentence.</code>
     testString: assert(myStr === "This is the first sentence. This is the second sentence.");
-  - text: Use the <code>+=</code> operator to build <code>myStr</code>
+  - text: You should use the <code>+=</code> operator to build <code>myStr</code>.
     testString: assert(code.match(/\w\s*\+=\s*["']/g).length > 1 && code.match(/\w\s*\=\s*["']/g).length > 1);
 
 ```

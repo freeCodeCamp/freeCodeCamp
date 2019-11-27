@@ -47,7 +47,7 @@ Create a new instance of the <code>House</code> constructor, calling it <code>my
 tests:
   - text: <code>myHouse</code> should have a <code>numBedrooms</code> attribute set to a number.
     testString: assert(typeof myHouse.numBedrooms === 'number');
-  - text: Be sure to verify that <code>myHouse</code> is an instance of <code>House</code> using the <code>instanceof</code> operator.
+  - text: You should verify that <code>myHouse</code> is an instance of <code>House</code> using the <code>instanceof</code> operator.
     testString: assert(/myHouse\s*instanceof\s*House/.test(code));
 
 ```

@@ -44,7 +44,7 @@ Copy all contents of <code>arr1</code> into another array <code>arr2</code> usin
 tests:
   - text: <code>arr2</code> should be correct copy of <code>arr1</code>.
     testString: assert(arr2.every((v, i) => v === arr1[i]));
-  - text: <code>...</code> spread operator was used to duplicate <code>arr1</code>.
+  - text: <code>...</code> spread operator should be used to duplicate <code>arr1</code>.
     testString: assert(code.match(/Array\(\s*\.\.\.arr1\s*\)|\[\s*\.\.\.arr1\s*\]/));
   - text: <code>arr2</code> should remain unchanged when <code>arr1</code> is changed.
     testString: assert((arr1, arr2) => {arr1.push('JUN'); return arr2.length < arr1.length});

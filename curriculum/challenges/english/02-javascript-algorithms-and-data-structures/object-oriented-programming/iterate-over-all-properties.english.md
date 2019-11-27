@@ -53,7 +53,7 @@ tests:
     testString: assert(ownProps.indexOf('name') !== -1);
   - text: The <code>prototypeProps</code> array should include <code>"numLegs"</code>.
     testString: assert(prototypeProps.indexOf('numLegs') !== -1);
-  - text: Solve this challenge without using the built in method <code>Object.keys()</code>.
+  - text: You should solve this challenge without using the built in method <code>Object.keys()</code>.
     testString: assert(!/\Object.keys/.test(code));
 
 ```

@@ -34,13 +34,13 @@ In this challenge you are going to use <code>Object.freeze</code> to prevent mat
 
 ```yml
 tests:
-  - text: Do not replace <code>const</code> keyword.
+  - text: You should not replace <code>const</code> keyword.
     testString: getUserInput => assert(getUserInput('index').match(/const/g));
   - text: <code>MATH_CONSTANTS</code> should be a constant variable (by using <code>const</code>).
     testString: getUserInput => assert(getUserInput('index').match(/const\s+MATH_CONSTANTS/g));
-  - text: Do not change original <code>MATH_CONSTANTS</code>.
+  - text: You should not change original <code>MATH_CONSTANTS</code>.
     testString: getUserInput => assert(getUserInput('index').match(/const\s+MATH_CONSTANTS\s+=\s+{\s+PI:\s+3.14\s+};/g));
-  - text: <code>PI</code> equals <code>3.14</code>.
+  - text: <code>PI</code> should equal <code>3.14</code>.
     testString: assert(PI === 3.14);
 
 ```

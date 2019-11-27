@@ -20,9 +20,9 @@ Finish writing the <code>getArrayOfUsers</code> function so that it returns an a
 
 ```yml
 tests:
-  - text: The <code>users</code> object only contains the keys <code>Alan</code>, <code>Jeff</code>, <code>Sarah</code>, and <code>Ryan</code>
+  - text: The <code>users</code> object should only contain the keys <code>Alan</code>, <code>Jeff</code>, <code>Sarah</code>, and <code>Ryan</code>
     testString: assert('Alan' in users && 'Jeff' in users && 'Sarah' in users && 'Ryan' in users && Object.keys(users).length === 4);
-  - text: The <code>getArrayOfUsers</code> function returns an array which contains all the keys in the <code>users</code> object
+  - text: The <code>getArrayOfUsers</code> function should return an array which contains all the keys in the <code>users</code> object
     testString: assert((function() { users.Sam = {}; users.Lewis = {}; let R = getArrayOfUsers(users); return (R.indexOf('Alan') !== -1 && R.indexOf('Jeff') !== -1 && R.indexOf('Sarah') !== -1 && R.indexOf('Ryan') !== -1 && R.indexOf('Sam') !== -1 && R.indexOf('Lewis') !== -1); })() === true);
 
 ```

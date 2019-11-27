@@ -49,9 +49,9 @@ Add the <code>own</code> properties of <code>canary</code> to the array <code>ow
 tests:
   - text: <code>ownProps</code> should include the values <code>"numLegs"</code> and <code>"name"</code>.
     testString: assert(ownProps.indexOf('name') !== -1 && ownProps.indexOf('numLegs') !== -1);
-  - text: Solve this challenge without using the built in method <code>Object.keys()</code>.
+  - text: You should solve this challenge without using the built in method <code>Object.keys()</code>.
     testString: assert(!/Object(\.keys|\[(['"`])keys\2\])/.test(code));
-  - text: Solve this challenge without hardcoding the <code>ownProps</code> array.
+  - text: You should solve this challenge without hardcoding the <code>ownProps</code> array.
     testString: assert(!/\[\s*(?:'|")(?:name|numLegs)|(?:push|concat)\(\s*(?:'|")(?:name|numLegs)/.test(code));
 
 ```

@@ -22,9 +22,9 @@ Delete the <code>"tails"</code> property from <code>myDog</code>. You may use ei
 
 ```yml
 tests:
-  - text: Delete the property <code>"tails"</code> from <code>myDog</code>.
+  - text: You should delete the property <code>"tails"</code> from <code>myDog</code>.
     testString: assert(typeof myDog === "object" && myDog.tails === undefined);
-  - text: Do not modify the <code>myDog</code> setup
+  - text: You should not modify the <code>myDog</code> setup.
     testString: 'assert(code.match(/"tails": 1/g).length > 1);'
 
 ```
