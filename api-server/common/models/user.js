@@ -127,6 +127,8 @@ function nextTick(fn) {
 const getRandomNumber = () => Math.random();
 
 function populateRequiredFields(user) {
+  // by default, the displayUsername will have
+  // the same value as the username
   user.displayUsername = user.username;
   user.username = user.username.trim().toLowerCase();
   user.email =
@@ -193,9 +195,6 @@ export default function(User) {
         }
         // assign random username to new users
         user.username = 'fcc' + uuid();
-        // by default, the displayUsername will have
-        // the same value as the username
-        user.displayUsername = user.username;
         populateRequiredFields(user);
         return Observable.fromPromise(User.doesExist(null, user.email)).do(
           exists => {
