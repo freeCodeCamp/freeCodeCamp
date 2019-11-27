@@ -1,5 +1,4 @@
 import { combineReducers } from 'redux';
-import { reducer as formReducer } from 'redux-form';
 
 import { reducer as app, ns as appNameSpace } from './';
 import {
@@ -25,7 +24,6 @@ export default combineReducers({
   [challengeNameSpace]: challenge,
   [curriculumMapNameSpace]: curriculumMap,
   [flashNameSpace]: flash,
-  form: formReducer,
   [searchNameSpace]: search,
   [settingsNameSpace]: settings
 });

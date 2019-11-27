@@ -1,8 +1,8 @@
-require('dotenv').config();
+const env = require('../config/env');
 
 const { createFilePath } = require('gatsby-source-filesystem');
 
-const { dasherize } = require('./utils');
+const { dasherize } = require('../utils/slugs');
 const { blockNameify } = require('./utils/blockNameify');
 const {
   createChallengePages,
@@ -39,7 +39,18 @@ exports.onCreateNode = function onCreateNode({ node, actions, getNode }) {
   }
 };
 
-exports.createPages = function createPages({ graphql, actions }) {
+exports.createPages = function createPages({ graphql, actions, reporter }) {
+  if (!env.algoliaAPIKey || !env.algoliaAppId) {
+    if (process.env.FREECODECAMP_NODE_ENV === 'production') {
+      throw new Error(
+        'Algolia App id and API key are required to start the client!'
+      );
+    } else {
+      reporter.info(
+        'Algolia keys missing or invalid. Required for search to yield results.'
+      );
+    }
+  }
   const { createPage } = actions;
 
   return new Promise((resolve, reject) => {
@@ -137,7 +148,7 @@ exports.createPages = function createPages({ graphql, actions }) {
 
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 
-exports.onCreateWebpackConfig = ({ stage, plugins, actions }) => {
+exports.onCreateWebpackConfig = ({ plugins, actions }) => {
   actions.setWebpackConfig({
     node: {
       fs: 'empty'
@@ -153,24 +164,10 @@ exports.onCreateWebpackConfig = ({ stage, plugins, actions }) => {
           process.env.FREECODECAMP_NODE_ENV || 'development'
         ),
         PAYPAL_SUPPORTERS: JSON.stringify(process.env.PAYPAL_SUPPORTERS || 404)
-      })
+      }),
+      new MonacoWebpackPlugin()
     ]
   });
-  if (stage !== 'build-html') {
-    actions.setWebpackConfig({
-      plugins: [new MonacoWebpackPlugin()]
-    });
-  }
-  if (stage === 'build-html') {
-    actions.setWebpackConfig({
-      plugins: [
-        plugins.normalModuleReplacement(
-          /react-monaco-editor/,
-          require.resolve('./src/__mocks__/monacoEditorMock.js')
-        )
-      ]
-    });
-  }
 };
 
 exports.onCreateBabelConfig = ({ actions }) => {

@@ -30,7 +30,7 @@ tests:
     testString: assert($('.target:even').hasClass('animated') && $('.target:even').hasClass('shake'));
   - text: You should use the <code>&#58;even</code> selector to modify these elements.
     testString: assert(code.match(/\:even/g));
-  - text: Only use jQuery to add these classes to the element.
+  - text: You should only use jQuery to add these classes to the element.
     testString: assert(code.match(/\$\(".target:even"\)/g) || code.match(/\$\('.target:even'\)/g) || code.match(/\$\(".target"\).filter\(":even"\)/g) || code.match(/\$\('.target'\).filter\(':even'\)/g));
 
 ```

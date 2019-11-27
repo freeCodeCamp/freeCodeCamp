@@ -7,7 +7,7 @@ forumTopicId: 301560
 
 ## Description
 <section id='description'>
-As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a>.
+As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/edit/#!/remix/clone-from-repo?REPO_URL=https://github.com/freeCodeCamp/boilerplate-advancednode/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a>.
 Creating the logout logic is easy. The route should just unauthenticate the user and redirect to the home page instead of rendering any view.
 In passport, unauthenticating a user is as easy as just calling <code>req.logout();</code> before redirecting.
 
@@ -42,9 +42,9 @@ Submit your page when you think you've got it right.
 
 ```yml
 tests:
-  - text: Logout route
-    testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /req.logout/gi, 'You should be call req.logout() in youre /logout route'); }, xhr => { throw new Error(xhr.statusText); })
-  - text: Logout should redirect to the home page /
+  - text: <code>req.Logout</code> should be called in your <code>/logout</code> route.
+    testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /req.logout/gi, 'You should be calling req.logout() in your /logout route'); }, xhr => { throw new Error(xhr.statusText); })
+  - text: Logout should redirect to the home page.
     testString: getUserInput => $.get(getUserInput('url')+ '/logout') .then(data => { assert.match(data, /Home page/gi, 'When a user logs out they should be redirected to the homepage'); }, xhr => { throw new Error(xhr.statusText); })
 
 ```
@@ -60,7 +60,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
 
 </section>

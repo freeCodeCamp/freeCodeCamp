@@ -1,18 +1,19 @@
 ---
 id: 587d7fb7367417b2b2512c0a
 title: Create Many Records with model.create()
-localeTitle: Создать много записей с model.create ()
 challengeType: 2
+forumTopicId: 301537
+localeTitle: Создать много записей с model.create()
 ---
 
 ## Description
-<section id='description'> 
-Иногда вам нужно создать множество экземпляров ваших моделей, например, при заполнении базы данных исходными данными. Model.create () принимает массив объектов, таких как [{name: 'John', ...}, {...}, ...], в качестве первого аргумента и сохраняет их все в БД. Создайте много людей с Model.create (), используя аргумент функции arrayOfPeople. 
+<section id='description'>
+Иногда вам нужно создать множество экземпляров ваших моделей, например, при заполнении базы данных исходными данными. Model.create() принимает массив объектов, таких как [{name: 'John', ...}, {...}, ...], в качестве первого аргумента и сохраняет их все в БД. Создайте много людей с Model.create(), используя аргумент функции arrayOfPeople.
 </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id='instructions'>
+Создайте много людей с <code>Model.create()</code>, используя аргумент функции <code>arrayOfPeople</code>.
 </section>
 
 ## Tests
@@ -25,17 +26,4 @@ tests:
 
 ```
 
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-</section>
-
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
 </section>

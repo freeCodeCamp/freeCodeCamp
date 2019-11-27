@@ -1,7 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 const matter = require('gray-matter');
-const { dasherize } = require('../../../client/utils');
+const { dasherize } = require('../../../utils/slugs');
 
 const pass = true;
 

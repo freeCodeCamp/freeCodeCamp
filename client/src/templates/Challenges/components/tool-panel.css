@@ -5,7 +5,7 @@
 
 .tool-panel-group-mobile button,
 .tool-panel-group-mobile a {
-  font-size: 16px;
+  font-size: 0.8rem;
 }
 
 .tool-panel-group-mobile {
@@ -16,4 +16,6 @@
 
 .tool-panel-group-mobile .btn-block + .btn-block {
   margin: 0 2px 0 0;
+  padding-left: 8px;
+  padding-right: 8px;
 }

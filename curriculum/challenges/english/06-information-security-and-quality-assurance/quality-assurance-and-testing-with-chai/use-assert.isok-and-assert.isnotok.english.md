@@ -8,7 +8,7 @@ forumTopicId: 301607
 ## Description
 <section id='description'>
 
-As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
+As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/edit/#!/remix/clone-from-repo?REPO_URL=https://github.com/freeCodeCamp/boilerplate-mochachai/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
 
 <code>isOk()</code> will test for a truthy value and <code>isNotOk()</code> will test for a falsy value.
 [Truthy reference](https://developer.mozilla.org/en-US/docs/Glossary/Truthy)
@@ -26,13 +26,13 @@ Use <code>assert.isOk()</code> or <code>assert.isNotOk()</code> to make the test
 
 ```yml
 tests:
-  - text: All tests should pass
+  - text: All tests should pass.
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=2').then(data => {assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: Choose the right assertion - isOk vs. isNotOk
+  - text: You should choose the right assertion - isOk vs. isNotOk.
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=2').then(data => {  assert.equal(data.assertions[0].method, 'isNotOk', 'Null is falsey'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: Choose the right assertion - isOk vs. isNotOk
+  - text: You should choose the right assertion - isOk vs. isNotOk.
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=2').then(data => {  assert.equal(data.assertions[1].method, 'isOk','A string is truthy'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: Choose the right assertion - isOk vs. isNotOk
+  - text: You should choose the right assertion - isOk vs. isNotOk.
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=2').then(data => {  assert.equal(data.assertions[2].method, 'isOk', 'true is truthy'); }, xhr => { throw new Error(xhr.responseText); })
 
 ```
@@ -48,7 +48,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
 
 </section>

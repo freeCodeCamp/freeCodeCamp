@@ -25,7 +25,7 @@ You can use HTML, JavaScript, CSS, and the D3 svg-based visualization library. T
 For this project you can use any of the following datasets:<br><ul><li><strong>Kickstarter Pledges:</strong> <code>https://cdn.freecodecamp.org/testable-projects-fcc/data/tree_map/kickstarter-funding-data.json</code></li><li><strong>Movie Sales:</strong> <code>https://cdn.freecodecamp.org/testable-projects-fcc/data/tree_map/movie-data.json</code></li><li><strong>Video Game Sales:</strong> <code>https://cdn.freecodecamp.org/testable-projects-fcc/data/tree_map/video-game-sales-data.json</code></li></ul>
 You can build your project by forking <a href='https://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code>
 Once you're done, submit the URL to your working project with all its tests passing.
-Remember to use the <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck.
+Remember to use the <a href='https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck.
 </section>
 
 ## Instructions

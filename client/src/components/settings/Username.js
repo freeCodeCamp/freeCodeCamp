@@ -9,7 +9,6 @@ import {
   Alert,
   FormGroup
 } from '@freecodecamp/react-bootstrap';
-import isAscii from 'validator/lib/isAscii';
 
 import {
   validateUsername,
@@ -18,6 +17,7 @@ import {
 } from '../../redux/settings';
 import BlockSaveButton from '../helpers/form/BlockSaveButton';
 import FullWidthRow from '../helpers/FullWidthRow';
+import { isValidUsername } from '../../../../utils/validate';
 
 const propTypes = {
   displayUsername: PropTypes.string,
@@ -45,13 +45,8 @@ const mapDispatchToProps = dispatch =>
     dispatch
   );
 
-const invalidCharsRE = /[/\s?:@=&"'<>#%{}|\\^~[\]`,.;!*()$]/;
-const invlaidCharError = {
-  valid: false,
-  error: 'Username contains invalid characters'
-};
-const valididationSuccess = { valid: true, error: null };
-const usernameTooShort = { valid: false, error: 'Username is too short' };
+const hex = '[0-9a-f]';
+const tempUserRegex = new RegExp(`^fcc${hex}{8}-(${hex}{4}-){3}${hex}{12}$`);
 
 class UsernameSettings extends Component {
   constructor(props) {
@@ -64,7 +59,8 @@ class UsernameSettings extends Component {
         ? props.displayUsername
         : props.username,
       characterValidation: { valid: false, error: null },
-      submitClicked: false
+      submitClicked: false,
+      isUserNew: tempUserRegex.test(props.username)
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -81,7 +77,8 @@ class UsernameSettings extends Component {
       /* eslint-disable-next-line react/no-did-update-set-state */
       return this.setState({
         isFormPristine: username === formValue,
-        submitClicked: false
+        submitClicked: false,
+        isUserNew: tempUserRegex.test(username)
       });
     }
     return null;
@@ -110,7 +107,8 @@ class UsernameSettings extends Component {
         formDisplayValue: newDisplayUsernameValue,
         formValue: newValue,
         isFormPristine: username === newValue,
-        characterValidation: this.validateFormInput(newValue)
+        characterValidation: this.validateFormInput(newValue),
+        submitClicked: false
       },
       () =>
         this.state.isFormPristine || this.state.characterValidation.error
@@ -120,45 +118,45 @@ class UsernameSettings extends Component {
   }
 
   validateFormInput(formValue) {
-    if (formValue.length < 3) {
-      return usernameTooShort;
-    }
-
-    if (!isAscii(formValue)) {
-      return invlaidCharError;
-    }
-    if (invalidCharsRE.test(formValue)) {
-      return invlaidCharError;
-    }
-    return valididationSuccess;
+    return isValidUsername(formValue);
   }
 
   renderAlerts(validating, error, isValidUsername) {
     if (!validating && error) {
       return (
         <FullWidthRow>
-          <Alert bsStyle='danger'>{error}</Alert>
+          <Alert bsStyle='danger'>{'Username ' + error}</Alert>
         </FullWidthRow>
       );
     }
     if (!validating && !isValidUsername) {
       return (
         <FullWidthRow>
-          <Alert bsStyle='warning'>Username not available</Alert>
+          <Alert bsStyle='warning'>Username not available.</Alert>
         </FullWidthRow>
       );
     }
     if (validating) {
       return (
         <FullWidthRow>
-          <Alert bsStyle='info'>Validating username</Alert>
+          <Alert bsStyle='info'>Validating username...</Alert>
         </FullWidthRow>
       );
     }
-    if (!validating && isValidUsername) {
+    if (!validating && isValidUsername && this.state.isUserNew) {
       return (
         <FullWidthRow>
-          <Alert bsStyle='success'>Username is available</Alert>
+          <Alert bsStyle='success'>Username is available.</Alert>
+        </FullWidthRow>
+      );
+    } else if (!validating && isValidUsername && !this.state.isUserNew) {
+      return (
+        <FullWidthRow>
+          <Alert bsStyle='success'>Username is available.</Alert>
+          <Alert bsStyle='info'>
+            Please note, changing your username will also change the URL to your
+            profile and your certifications.
+          </Alert>
         </FullWidthRow>
       );
     }

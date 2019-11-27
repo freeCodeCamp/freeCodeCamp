@@ -1,12 +1,17 @@
-# Set up freeCodeCamp locally
-Follow these guidelines for getting freeCodeCamp locally on your system. This is highly recommended if you want to contribute regularly.
+<!-- do not translate this -->
+| [Read these guidelines in other languages](/docs/i18n-languages) |
+|-|
+<!-- do not translate this -->
 
-Some of the contribution workflows, like previewing pages for the guide or the coding challenges, debugging and fixing bugs in codebase, requires you to have freeCodeCamp running locally.
+# Set up freeCodeCamp locally
+Follow these guidelines for setting up freeCodeCamp locally on your system. This is highly recommended if you want to contribute regularly.
+
+For some of the contribution workflows, you need to have freeCodeCamp running locally. For example, previewing coding challenges or debugging and fixing bugs in the codebase.
 
 ## Fork the repository on GitHub
 ['Forking'](https://help.github.com/articles/about-forks/) is a step where you get your own copy of freeCodeCamp's main repository (a.k.a _repo_) on GitHub.
 
-This is essential as it allows you to work on your own copy of freeCodeCamp on GitHub, or to download (clone) your repository to work on locally. Later, you will be able to request changes to be pulled into the main repository from your fork via a pull request.
+This is essential, as it allows you to work on your own copy of freeCodeCamp on GitHub, or to download (clone) your repository to work on locally. Later, you will be able to request changes to be pulled into the main repository from your fork via a pull request (PR).
 
 > **ProTip:**
 > The main repository at `https://github.com/freeCodeCamp/freeCodeCamp` is often referred to as the `upstream` repository.
@@ -14,7 +19,7 @@ This is essential as it allows you to work on your own copy of freeCodeCamp on G
 
 #### Follow these steps to fork the `https://github.com/freeCodeCamp/freeCodeCamp` repository:
 1. Go to the freeCodeCamp repository on GitHub: <https://github.com/freeCodeCamp/freeCodeCamp>
-2. Click the "Fork" Button in the upper right hand corner of the interface ([More Details Here](https://help.github.com/articles/fork-a-repo/))
+2. Click the "Fork" Button in the upper right-hand corner of the interface ([More Details Here](https://help.github.com/articles/fork-a-repo/))
 3. After the repository has been forked, you will be taken to your copy of the freeCodeCamp repository at `https://github.com/YOUR_USER_NAME/freeCodeCamp`
 
 ![GIF - How to fork freeCodeCamp on GitHub](/docs/images/github/how-to-fork-freeCodeCamp.gif)
@@ -29,13 +34,13 @@ Once you have the prerequisites installed, you need to prepare your development 
 
 3. Install a code editor of your choice.
 
-    We highly recommend using [VS Code](https://code.visualstudio.com/) or [Atom](https://atom.io/). These are great free and open source code editors.
+    We highly recommend using [VS Code](https://code.visualstudio.com/) or [Atom](https://atom.io/). These are great, free and open source code editors.
 
-4. Setup linting for your code editor.
+4. Set up linting for your code editor.
 
-    You should have [ESLint running in your editor](http://eslint.org/docs/user-guide/integrations.html), and it will highlight anything doesn't conform to [freeCodeCamp's JavaScript Style Guide](http://forum.freecodecamp.org/t/free-code-camp-javascript-style-guide/19121).
+    You should have [ESLint running in your editor](http://eslint.org/docs/user-guide/integrations.html), and it will highlight anything that doesn't conform to [freeCodeCamp's JavaScript Style Guide](http://forum.freecodecamp.org/t/free-code-camp-javascript-style-guide/19121).
 
-    > Please do not ignore any linting errors. They are meant to **help** you and to ensure a clean and simple code base.
+    > Please do not ignore any linting errors. They are meant to **help** you and to ensure a clean and simple codebase.
 
 ## Clone your copy of freeCodeCamp
 ['Cloning'](https://help.github.com/articles/cloning-a-repository/) is where you **download** a copy of a repository from a `remote` location that is either owned by you or by someone else. In your case, this remote location is your `fork` of freeCodeCamp's repository that should be available at `https://github.com/YOUR_USER_NAME/freeCodeCamp`.
@@ -57,7 +62,7 @@ This will download the entire freeCodeCamp repository to your projects directory
 Note: `--depth=1` creates a shallow clone of your fork, with only the most recent history/commit.
 
 ## Setup an `upstream` to the main repository
-Now that you have downloaded a copy of your fork, you will need to setup an `upstream`.
+Now that you have downloaded a copy of your fork, you will need to set up an `upstream`.
 
 As mentioned earlier, the main repository at `https://github.com/freeCodeCamp/freeCodeCamp` is often referred to as the `upstream` repository. Your fork at `https://github.com/YOUR_USER_NAME/freeCodeCamp` is often referred to as the `origin` repository.
 
@@ -97,7 +102,7 @@ Now that you have a local copy of freeCodeCamp, you can follow these instruction
 - Work on UI related issues and enhancements.
 - Debug and fix issues with the application servers and client apps.
 
-You can skip running freeCodeCamp locally if you are simply editing files, performing a `rebase` or resolving `merge` conflicts. You can always return to this part of the instructions later.
+You can skip running freeCodeCamp locally if you are simply editing files, performing a `rebase`, or resolving `merge` conflicts. You can always return to this part of the instructions later.
 
 [Skip running freeCodeCamp locally](#making-changes-to-your-clone-of-freecodecamp-locally)
 
@@ -107,7 +112,7 @@ There are currently two methods to run freeCodeCamp locally:
 
 You are required to follow any **one** of the above methods.
 
-The Docker setup will ideally result in fewer errors during the installation process and aims to have the best developer experience. We use Docker to install and run the additional software dependencies behind the scenes. This should make it hassle-free and consistent experience across most device/OS types.
+The Docker setup will ideally result in fewer errors during the installation process and aims to have the best developer experience. We use Docker to install and run the additional software dependencies behind the scenes. This should make it a hassle-free and consistent experience across most device/OS types.
 
 If you are having issues using one method, try using the other. If you do run into issues with either method, first perform a web search for your issue and see if it has already been answered. If you cannot find a solution, please search our GitHub [issues](https://github.com/freeCodeCamp/freeCodeCamp/issues) page for a solution and report the issue if it has not yet been reported.
 
@@ -147,8 +152,8 @@ npm -v
 
 If you have a different version, please install the recommended version. We can only support installation issues for recommended versions.
 
-Windows users:  
-> Make sure the command line tool you use (e.g., cmd, PowerShell, Git Bash for Windows, WSL) has the correct user privileges. If possible, you should launch the tool with Administrator's privilege. On Windows you should be able to launch as administrator by right-clicking the application and selecting `Launch as an Administrator`.
+Windows users:
+> Make sure the command line tool you use (e.g., cmd, PowerShell, Git Bash for Windows, WSL) has the correct user privileges. If possible, you should launch the tool with the Administrator's privilege. On Windows, you should be able to launch as administrator by right-clicking the application and selecting `Launch as an Administrator`.
 
 #### I am having issues with installing the recommended prerequisites. What should I do?
 We regularly develop on the latest or most popular operating systems like macOS 10.12 or later, Ubuntu 16.04 or later and Windows 10. It is recommended to research your specific issue on resources such as Google, Stack Overflow and Stack Exchange. There is a good chance that someone has faced the same issue and there is already an answer to your specific query.
@@ -177,7 +182,7 @@ The keys in the `.env` file are *not* required to be changed to run the app loca
 
 Keep in mind if you want to use additional services, you'll have to acquire your own API keys for those services and edit the entries accordingly in the `.env` file.
 
-**Docker Build:** If using the Docker build and the Docker installation instructed you to use Docker Toolbox (applies to older versions of macOS and Windows), you need to change `DOCKER_HOST_LOCATION` in your `.env` file var to the output from the `docker-machine ip` command. If you use any Docker supported flavor of Linux or if you use Docker Desktop (new versions of macOS and Windows 10) you can leave `DOCKER_HOST_LOCATION` to the default value.
+**Docker Build:** If using the Docker build and the Docker installation instructed you to use Docker Toolbox (applies to older versions of macOS and Windows), you need to change `DOCKER_HOST_LOCATION` in your `.env` file var to the output from the `docker-machine ip` command. If you use any Docker supported the flavor of Linux or if you use Docker Desktop (new versions of macOS and Windows 10) you can leave `DOCKER_HOST_LOCATION` to the default value.
 
 #### Step 2: Install dependencies
 
@@ -234,7 +239,7 @@ Start the MongoDB server in a separate terminal:
 > You can avoid having to start MongoDB every time by installing it as a background service.
 > You can [learn more about it in their documentation for your OS](https://docs.mongodb.com/manual/administration/install-community/)
 
-Next, let's seed the database. In this step, we run the below command that fills the MongoDB server with some initial data sets that are required by services. This include a few schemas, among other things.
+Next, let's seed the database. In this step, we run the below command that fills the MongoDB server with some initial data sets that are required by services. These include a few schemas, among other things.
 
 ```sh
 npm run seed
@@ -268,21 +273,50 @@ Congratulations  🎉🎉🎉! You now have a copy of freeCodeCamp's entire lear
 ## How to Sign in when working locally
 Your local setup automatically populates a local user in the database. Clicking the `Sign In` button will automatically authenticate you into the local application.
 
-However, accessing the user portfolio page is a little tricky. In development, Gatsby takes over serving the client side pages and hence you will get a `404` page for the user portfolio when working locally.
+However, accessing the user portfolio page is a little tricky. In development, Gatsby takes over serving the client-side pages and hence you will get a `404` page for the user portfolio when working locally.
 
 Simply clicking the `Preview Custom 404 Page` button will forward you to the correct page.
 
 ![Image - How to sign in when working locally](https://user-images.githubusercontent.com/1884376/52650951-48922e80-2f11-11e9-9eee-360a25ad28ad.gif)
 
 ## Quick commands reference when working locally
-[Here is a quick reference](/docs/README.md) to a list of commands that you may occasionally need locally.
+
+A quick reference to the commands that you will need when working locally.
+
+**Docker Build:**
+
+| command | description |
+| ------- | ----------- |
+| `npm run docker:init` | Prepare containers for installation of dependencies. |
+| `npm run docker:install` | Install / re-install all dependencies and bootstraps the different services. |
+| `npm run docker:seed` | Parse all the challenge markdown files and inserts them into MongoDB. |
+| `npm run docker:develop` | Start the freeCodeCamp API Server and Client Applications. |
+| `npm run docker:test:init` | Bootstrap the test container, necessary for testing in docker. |
+| `npm run docker:test -- -c "npm run test` | Run all JS tests in the system, including client, server, lint and challenge tests. |
+| `npm run docker:test -- -c "npm run test:curriculum` | Run the curriculum test suite. |
+| `npm run docker:test -- -c "npm run test:client` | Run the client test suite. |
+| `npm run docker:test -- -c "npm run test:server` | Run the server test suite. |
+| `npm run docker:clean` | Uninstall all dependencies and cleans up caches. |
+
+**Local Build:**
+
+| command | description |
+| ------- | ----------- |
+| `npm ci` | Installs / re-install all dependencies and bootstraps the different services. |
+| `npm run seed` | Parses all the challenge markdown files and inserts them into MongoDB. |
+| `npm run develop` | Starts the freeCodeCamp API Server and Client Applications. |
+| `npm test` |  Run all JS tests in the system, including client, server, lint and challenge tests. |
+| `npm run test:client` | Run the client test suite. |
+| `npm run test:curriculum` | Run the curriculum test suite. |
+| `npm run test:server` | Run the server test suite. |
+| `npm run clean` | Uninstalls all dependencies and cleans up caches. |
 
 ## Making changes to your clone of freeCodeCamp locally
 You can now make changes to files and commit your changes to your local clone of your fork.
 
 Follow these steps:
 
-1. Validate that you are on the `master` branch
+1. Validate that you are on the `master` branch:
 
     ```sh
     git status
@@ -303,9 +337,9 @@ Follow these steps:
     git checkout master
     ```
 
-2. Sync the latest changes from the freeCodeCamp upstream `master` branch to your local master branch
+2. Sync the latest changes from the freeCodeCamp upstream `master` branch to your local master branch:
 
-    **Note:** If you have any outstanding Pull Request that you made from the `master` branch of your fork, you will lose them at the end of this step. You should ensure your pull request is merged by a moderator prior to performing this step. To avoid this scenario, you should *always* work on a branch separate from master.
+    **Note:** If you have any outstanding Pull Request that you made from the `master` branch of your fork, you will lose them at the end of this step. You should ensure your pull request is merged by a moderator before performing this step. To avoid this scenario, you should *always* work on a branch separate from master.
 
     This step **will sync the latest changes** from the main repository of freeCodeCamp. It is important that you rebase your branch on top of the latest `upstream/master` as often as possible to avoid conflicts later.
 
@@ -334,9 +368,9 @@ Follow these steps:
 
     The resulting output should be empty.
 
-3. Create a fresh new branch
+3. Create a fresh new branch:
 
-    Working on a separate branch for each individual issue helps you keep your local work copy clean. You should never work on the `master`. This will soil your copy of freeCodeCamp and you may have to start over with a fresh clone or fork.
+    Working on a separate branch for each issue helps you keep your local work copy clean. You should never work on the `master`. This will soil your copy of freeCodeCamp and you may have to start over with a fresh clone or fork.
 
     Check that you are on `master` as explained previously, and branch off from there:
 
@@ -356,13 +390,13 @@ Follow these steps:
     translate/add-spanish-basic-html
     ```
 
-4. Edit pages and work on code in your favorite text editor
+4. Edit pages and work on code in your favorite text editor.
 
-5. Once you are happy with the changes you should optionally run freeCodeCamp locally to preview the changes
+5. Once you are happy with the changes you should optionally run freeCodeCamp locally to preview the changes.
 
-6. Make sure you fix any errors, and check the formatting of your changes. We have style guides in the [docs](/docs/) section for the Guide articles and Coding challenges
+6. Make sure you fix any errors and check the formatting of your changes. We have style guides in the [docs](/docs/) section for the Guide articles and Coding challenges.
 
-7. Check and confirm the files you are updating
+7. Check and confirm the files you are updating:
 
     ```sh
     git status
@@ -385,15 +419,15 @@ Follow these steps:
     ...
     ```
 
-8. Stage the changes and make a commit
+8. Stage the changes and make a commit:
 
-    In this step you should only mark files that you have edited or added yourself. You can perform a reset and resolve files that you did not intend to change, if needed.
+    In this step, you should only mark files that you have edited or added yourself. You can perform a reset and resolve files that you did not intend to change if needed.
 
     ```sh
     git add path/to/my/changed/file.ext
     ```
 
-    Or, alternatively you can add all the `unstaged` files to the staging area:
+    Or you can add all the `unstaged` files to the staging area:
 
     ```sh
     git add .
@@ -457,9 +491,9 @@ Follow these steps:
     git commit --amend
     ```
 
-    This will open up a default text editor like `nano` or `vi` where you can edit the commit message title and add/edit description.
+    This will open up a default text editor like `nano` or `vi` where you can edit the commit message title and add/edit the description.
 
-10. Next, you can push your changes to your fork.
+10. Next, you can push your changes to your fork:
 
     ```sh
     git push origin branch/name-here
@@ -469,7 +503,7 @@ Follow these steps:
 After you've committed your changes, check here for [how to open a Pull Request](/docs/how-to-open-a-pull-request.md).
 
 ## Getting Help
-If you are stuck, and need help, let us know by asking in the ['Contributors' category on our forum](https://www.freecodecamp.org/forum/c/contributors) or the [Contributors chat room](https://gitter.im/FreeCodeCamp/Contributors) on Gitter.
+If you are stuck and need help, let us know by asking in the ['Contributors' category on our forum](https://www.freecodecamp.org/forum/c/contributors) or the [Contributors chat room](https://gitter.im/FreeCodeCamp/Contributors) on Gitter.
 
 There might be an error in the console of your browser or in Bash / Terminal / Command Line that will help identify the problem. Provide this error message in your problem description so others can more easily identify the issue and help you find a resolution.
 
@@ -500,6 +534,20 @@ npm run seed
 npm run develop
 ```
 
-If you can't sign in, and instead, you see a banner with an error message saying that it'll be reported to freeCodeCamp, please double-check that your local port 3000 is not in use by a different program.
+If you can't sign in, and instead you see a banner with an error message that it will be reported to freeCodeCamp, please double-check that your local port 3000 is not in use by a different program.
+
+**On Windows - From Elevated PowerShell:**
+```powershell
+netstat -ab | Select-String "3000"
+
+TCP    0.0.0.0:3000           DESKTOP      LISTENING
+```
+
+**On MacOS - From Terminal:**
+```sh
+netstat -ab | grep "3000"
+
+tcp4    0   0    0.0.0.0:3000           DESKTOP      LISTEN
+```
 
 If you get errors while installing the dependencies, please make sure that you are not in a restricted network or your firewall settings do not prevent you from accessing resources. One solution would be to use a VPN service if possible and allowed in your environment.

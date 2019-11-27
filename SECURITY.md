@@ -1,13 +1,13 @@
 # Security Policy
 
-This document outlines our security policy for the codebase, and how to report vulnerability.
+This document outlines our security policy for the codebase, and how to report vulnerabilities.
 
 ## Versions
 
 | Version     | Branch                   | Supported          | Website active   |
 | ----------- | ------------------------ | ------------------ | ---------------- |
-| production  | `production-legacy-2018` | :white_check_mark: | freecodecamp.org |
-| beta        | `master`                 |                    |                  |
+| production  | `production-current`     | :white_check_mark: | freecodecamp.org |
+| beta        | `production-staging`     | :white_check_mark: | freecodecamp.dev |
 | development | `master`                 |                    |                  |
 
 ## Reporting a Vulnerability

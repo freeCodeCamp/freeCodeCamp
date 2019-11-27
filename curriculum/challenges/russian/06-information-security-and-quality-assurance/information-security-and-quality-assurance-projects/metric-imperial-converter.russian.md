@@ -3,15 +3,18 @@ id: 587d8249367417b2b2512c41
 title: Metric-Imperial Converter
 challengeType: 4
 isRequired: true
-videoUrl: ''
+forumTopicId: 301570
 localeTitle: Метрично-имперский конвертер
 ---
 
 ## Description
-<section id="description"> Создайте полное приложение JavaScript для стека, которое функционально похоже на это: <a href="https://hard-twilight.glitch.me/" target="_blank">https://hard-twilight.glitch.me/</a> . Работа над этим проектом предполагает, что вы будете писать свой код на Glitch в нашем стартовом проекте. После завершения этого проекта вы можете скопировать свой общедоступный URL-адрес глюка (на домашнюю страницу вашего приложения) на этот экран, чтобы проверить его! При желании вы можете написать свой проект на другой платформе, но он должен быть общедоступным для нашего тестирования. Запустите этот проект на Glitch, используя <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-project-metricimpconverter/">эту ссылку</a> или клонируйте <a href="https://github.com/freeCodeCamp/boilerplate-project-metricimpconverter/">этот репозиторий</a> на GitHub! Если вы используете Glitch, не забудьте сохранить ссылку на ваш проект где-нибудь в безопасности! </section>
+<section id='description'>
+Создайте полное приложение JavaScript для стека, которое функционально похоже на это: <a href="https://incongruous-beard.glitch.me/" target="_blank">https://incongruous-beard.glitch.me/</a> . Работа над этим проектом предполагает, что вы будете писать свой код на Glitch в нашем стартовом проекте. После завершения этого проекта вы можете скопировать свой общедоступный URL-адрес глюка (на домашнюю страницу вашего приложения) на этот экран, чтобы проверить его! При желании вы можете написать свой проект на другой платформе, но он должен быть общедоступным для нашего тестирования. Запустите этот проект на Glitch, используя <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-project-metricimpconverter/">эту ссылку</a> или клонируйте <a href="https://github.com/freeCodeCamp/boilerplate-project-metricimpconverter/">этот репозиторий</a> на GitHub! Если вы используете Glitch, не забудьте сохранить ссылку на ваш проект где-нибудь в безопасности!
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -19,46 +22,33 @@ localeTitle: Метрично-имперский конвертер
 
 ```yml
 tests:
-  - text: Я буду препятствовать клиенту пытаться угадать (обнюхивать) тип MIME.
+  - text: I will prevent the client from trying to guess(sniff) the MIME type.
     testString: ''
-  - text: Я предотвращу атаки на межсайтовый скриптинг (XSS).
+  - text: I will prevent cross-site scripting (XSS) attacks.
     testString: ''
-  - text: 'Я могу GET / api / convert с единственным параметром, содержащим принятое число и единицу, и преобразовать его. (Подсказка: разделите вход, ища индекс первого символа, который отметит начало устройства)'
+  - text: 'I can GET /api/convert with a single parameter containing an accepted number and unit and have it converted. (Hint: Split the input by looking for the index of the first character which will mark the start of the unit)'
     testString: ''
-  - text: 'Я могу преобразовать ''gal'' в ''L'' и наоборот. (1 галлон до 3,78541 л)'
+  - text: I can convert 'gal' to 'L' and vice versa. (1 gal to 3.78541 L)
     testString: ''
-  - text: 'Я могу преобразовать ''lbs'' в ''kg'' и наоборот. (От 1 фунта до 0,453592 кг)'
+  - text: I can convert 'lbs' to 'kg' and vice versa. (1 lbs to 0.453592 kg)
     testString: ''
-  - text: 'Я могу преобразовать ''mi'' в ''km'' и наоборот. (1 мили до 1,60934 км)'
+  - text: I can convert 'mi' to 'km' and vice versa. (1 mi to 1.60934 km)
     testString: ''
-  - text: 'Если моя единица измерения недействительна, то возвращается «Недействительная единица».'
+  - text: If my unit of measurement is invalid, returned will be 'invalid unit'.
     testString: ''
-  - text: 'Если мой номер недействителен, возвращается с «недопустимым номером».'
+  - text: If my number is invalid, returned with will 'invalid number'.
     testString: ''
-  - text: 'Если оба значения недействительны, возврат будет «недопустимым числом и единицей».'
+  - text: If both are invalid, return will be 'invalid number and unit'.
     testString: ''
-  - text: 'Я могу использовать дроби, десятичные знаки или оба в моем параметре (т. Е. 5, 1/2, 2.5 / 6), но если ничего не предусмотрено, оно будет по умолчанию равно 1.'
+  - text: I can use fractions, decimals or both in my parameter(ie. 5, 1/2, 2.5/6), but if nothing is provided it will default to 1.
     testString: ''
-  - text: 'Мое возвращение будет состоять из initNum, initUnit, returnNum, returnUnit и строковых орфографических единиц в формате «{initNum} {initial_Units} преобразуется в {returnNum} {return_Units}", результат округляется до 5 десятичных знаков в строке.'
+  - text: My return will consist of the initNum, initUnit, returnNum, returnUnit, and string spelling out units in format '{initNum} {initial_Units} converts to {returnNum} {return_Units}' with the result rounded to 5 decimals in the string.
     testString: ''
-  - text: Все 16 модульных тестов завершены и проходят.
+  - text: All 16 unit tests are complete and passing.
     testString: ''
-  - text: Все 5 функциональных тестов завершены и проходят.
+  - text: All 5 functional tests are complete and passing.
     testString: ''
 
 ```
 
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-</section>
-
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
 </section>

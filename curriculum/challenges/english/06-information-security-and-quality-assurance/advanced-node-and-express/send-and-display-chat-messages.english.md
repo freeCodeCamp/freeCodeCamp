@@ -7,7 +7,7 @@ forumTopicId: 301562
 
 ## Description
 <section id='description'>
-As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-socketio/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-socketio/'>GitHub</a>.
+As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/edit/#!/remix/clone-from-repo?REPO_URL=https://github.com/freeCodeCamp/boilerplate-socketio/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-socketio/'>GitHub</a>.
 It's time you start allowing clients to send a chat message to the server to emit to all the clients! Already in your client.js file you should see there is already a block of code handling when the message form is submitted. (<code>$('form').submit(function(){ /*logic*/ });</code>)
 <hr>Within the form submit code, you should emit an event after you define 'messageToSend' but before you clear the text box <code>#m</code>. The event should be named 'chat message' and the data should just be 'messageToSend'. <code>socket.emit('chat message', messageToSend);</code>
 Now on your server you should be listening to the socket for the event 'chat message' with the data being named 'message'. Once the event is received it should then emit the event 'chat message' to all sockets <code>io.emit</code> with the data being an object containing 'name' and 'message'.
@@ -25,9 +25,9 @@ At this point the chat should be fully functional and sending messages across al
 
 ```yml
 tests:
-  - text: Server listens for 'chat message' then emits it properly
+  - text: Server should listen for 'chat message' and then emit it properly.
     testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /socket.on.*('|")chat message('|")[^]*io.emit.*('|")chat message('|").*name.*message/gi, 'Your server should listen to the socket for "chat message" then emit to all users "chat message" with name and message in the data object'); }, xhr => { throw new Error(xhr.statusText); })
-  - text: Client properly handling and displaying the new data from event 'chat message'
+  - text: Client should properly handle and display the new data from event 'chat message'.
     testString: "getUserInput => $.get(getUserInput('url')+ '/public/client.js') .then(data => { assert.match(data, /socket.on.*('|\")chat message('|\")[^]*messages.*li/gi, 'You should append a list item to #messages on your client within the \"chat message\" event listener to display the new message'); }, xhr => { throw new Error(xhr.statusText); })"
 
 ```
@@ -43,7 +43,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
 
 </section>

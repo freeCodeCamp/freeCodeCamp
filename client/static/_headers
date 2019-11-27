@@ -1,0 +1,18 @@
+/css/*
+  Cache-Control: public, s-max-age=604800
+/fonts/*
+  Cache-Control: public, s-max-age=604800
+/json/*
+  Cache-Control: public, s-max-age=604800
+/learn/*
+  X-Robots-Tag: none
+/*.css
+  Cache-Control: public, s-max-age=604800
+/sw.js
+  Cache-control: public, s-max-age=0, no-cache, no-store, must-revalidate
+/*.worker.js
+  Cache-Control: public, s-max-age=604800
+/*.js
+  Cache-Control: public, s-max-age=604800
+/static/*
+  Cache-Control: public, s-max-age=604800

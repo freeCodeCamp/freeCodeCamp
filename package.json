@@ -10,6 +10,7 @@
     "build:server": "cd ./api-server && npm run build",
     "bootstrap": "lerna bootstrap --ci",
     "clean": "npm-run-all clean:gatsby-site clean:packages",
+    "clean-and-develop": "npm run clean && npm ci && npm run develop",
     "clean:root-deps": "shx rm -rf node_modules",
     "clean:packages": "lerna clean -y",
     "clean:gatsby-site": "cd ./client && npm run clean",
@@ -38,6 +39,7 @@
     "seed": "npm-run-all -p seed:*",
     "seed:auth-user": "cross-env DEBUG=fcc:* node ./tools/scripts/seed/seedAuthUser",
     "seed:challenges": "cross-env DEBUG=fcc:* node ./tools/scripts/seed/seedChallenges",
+    "serve:client": "cd ./client && npm run serve",
     "test": "npm-run-all -p test:*",
     "test:client": "cd ./client && npm test && cd ../",
     "test:curriculum": "cd ./curriculum && npm test && cd ../",
@@ -45,7 +47,8 @@
     "test:lint": "echo 'Warning: TODO - Define Linting tests.'",
     "test:search-indexing": "jest ./search-indexing",
     "test:server": "cd ./api-server && npm test && cd ../",
-    "test:tools": "jest ./tools"
+    "test:tools": "jest ./tools",
+    "test:utils": "jest --rootDir ./utils"
   },
   "devDependencies": {
     "@freecodecamp/eslint-config": "^2.0.2",
@@ -88,7 +91,7 @@
         "eslint --fix",
         "git add"
       ],
-      "*.md": "node ./tools/scripts/lint/index.js",
+      "./curriculum/challenges/**/*.md": "node ./tools/scripts/lint/index.js",
       "*.css": [
         "prettier --write",
         "git add"

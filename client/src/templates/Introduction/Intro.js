@@ -57,7 +57,7 @@ function IntroductionPage({ data: { markdownRemark, allChallengeNode } }) {
             Go to the first lesson
           </Link>
           <ButtonSpacer />
-          <Link class='btn btn-lg btn-primary btn-block' to='/learn'>
+          <Link className='btn btn-lg btn-primary btn-block' to='/learn'>
             View the curriculum
           </Link>
           <ButtonSpacer />

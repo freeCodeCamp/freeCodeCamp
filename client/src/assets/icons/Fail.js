@@ -13,17 +13,17 @@ function RedFail() {
         <circle
           cx='100'
           cy='99'
-          fill='#858591'
+          fill='var(--primary-color)'
           r='95'
-          stroke='#858591'
+          stroke='(var--primary-color)'
           strokeDasharray='null'
           strokeLinecap='null'
           strokeLinejoin='null'
         />
         <rect
-          fill='#ffffff'
+          fill='var(--primary-background)'
           height='30'
-          stroke='#ffffff'
+          stroke='var(--primary-background)'
           strokeDasharray='null'
           strokeLinecap='null'
           strokeLinejoin='null'
@@ -33,9 +33,9 @@ function RedFail() {
           y='88'
         />
         <rect
-          fill='#ffffff'
+          fill='var(--primary-background)'
           height='30'
-          stroke='#ffffff'
+          stroke='var(--primary-background)'
           strokeDasharray='null'
           strokeLinecap='null'
           strokeLinejoin='null'

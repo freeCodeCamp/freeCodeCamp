@@ -20,7 +20,7 @@ export function wrapHandledError(err, { type, message, redirectTo }) {
   return err;
 }
 
-export function handle400Error(e, options = { redirectTo: '/welcome' }) {
+export function handle400Error(e, options = { redirectTo: '/' }) {
   const {
     response: { status }
   } = e;
@@ -54,7 +54,7 @@ export function handle400Error(e, options = { redirectTo: '/welcome' }) {
 export function handle500Error(
   e,
   options = {
-    redirectTo: '/welcome'
+    redirectTo: '/'
   },
   _reportClientSideError = reportClientSideError
 ) {

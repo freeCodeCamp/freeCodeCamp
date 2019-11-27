@@ -15,7 +15,7 @@ import isURL from 'validator/lib/isURL';
 import { homeLocation } from '../../../config/env';
 
 import { ifNoUserSend } from '../utils/middleware';
-import { dasherize } from '../utils';
+import { dasherize } from '../../../utils/slugs';
 import _pathMigrations from '../resources/pathMigration.json';
 import { fixCompletedChallengeItem } from '../../common/utils';
 
@@ -195,17 +195,22 @@ export function isValidChallengeCompletion(req, res, next) {
     body: { id, challengeType, solution }
   } = req;
 
+  const isValidChallengeCompletionErrorMsg = {
+    type: 'error',
+    message: 'That does not appear to be a valid challenge submission.'
+  };
+
   if (!ObjectID.isValid(id)) {
     log('isObjectId', id, ObjectID.isValid(id));
-    return res.sendStatus(403);
+    return res.status(403).json(isValidChallengeCompletionErrorMsg);
   }
   if ('challengeType' in req.body && !isNumeric(String(challengeType))) {
     log('challengeType', challengeType, isNumeric(challengeType));
-    return res.sendStatus(403);
+    return res.status(403).json(isValidChallengeCompletionErrorMsg);
   }
   if ('solution' in req.body && !isURL(solution)) {
     log('isObjectId', id, ObjectID.isValid(id));
-    return res.sendStatus(403);
+    return res.status(403).json(isValidChallengeCompletionErrorMsg);
   }
   return next();
 }
@@ -261,11 +266,11 @@ function projectCompleted(req, res, next) {
     // only basejumps require github links
     (completedChallenge.challengeType === 4 && !completedChallenge.githubLink)
   ) {
-    req.flash(
-      'danger',
-      "You haven't supplied the necessary URLs for us to inspect your work."
-    );
-    return res.sendStatus(403);
+    return res.status(403).json({
+      type: 'error',
+      message:
+        'You have not provided the valid links for us to inspect your work.'
+    });
   }
 
   return user

@@ -8,7 +8,7 @@ forumTopicId: 301349
 ## Description
 <section id='description'>
 Prior challenges showed that regular expressions can be used to look for a number of matches. They are also used to search for patterns in specific positions in strings.
-In an earlier challenge, you used the <code>caret</code> character (<code>^</code>) inside a <code>character set</code> to create a <code>negated character set</code> in the form <code>[^thingsThatWillNotBeMatched]</code>. Outside of a <code>character set</code>, the <code>caret</code> is used to search for patterns at the beginning of strings.
+In an earlier challenge, you used the caret character (<code>^</code>) inside a character set to create a negated character set in the form <code>[^thingsThatWillNotBeMatched]</code>. Outside of a character set, the caret is used to search for patterns at the beginning of strings.
 
 ```js
 let firstString = "Ricky is first and can be found.";
@@ -24,7 +24,7 @@ firstRegex.test(notFirst);
 
 ## Instructions
 <section id='instructions'>
-Use the <code>caret</code> character in a regex to find <code>"Cal"</code> only in the beginning of the string <code>rickyAndCal</code>.
+Use the caret character in a regex to find <code>"Cal"</code> only in the beginning of the string <code>rickyAndCal</code>.
 </section>
 
 ## Tests

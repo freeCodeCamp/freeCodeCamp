@@ -11,13 +11,6 @@ export default function layoutSelector({ element, props }) {
   const {
     location: { pathname }
   } = props;
-  if (pathname === '/') {
-    return (
-      <DefaultLayout landingPage={true} pathname={pathname}>
-        {element}
-      </DefaultLayout>
-    );
-  }
   if (element.type === FourOhFourPage) {
     return <DefaultLayout pathname={pathname}>{element}</DefaultLayout>;
   }
@@ -30,6 +23,13 @@ export default function layoutSelector({ element, props }) {
   if (/^\/learn(\/.*)*/.test(pathname)) {
     return (
       <DefaultLayout pathname={pathname} showFooter={false}>
+        {element}
+      </DefaultLayout>
+    );
+  }
+  if (/^\/donation(\/.*)*|^\/donate(\/.*)*/.test(pathname)) {
+    return (
+      <DefaultLayout pathname={pathname} useTheme={false}>
         {element}
       </DefaultLayout>
     );

@@ -2,15 +2,18 @@
 id: 587d8249367417b2b2512c3e
 title: Disable Client-Side Caching with helmet.noCache()
 challengeType: 2
-videoUrl: ''
+forumTopicId: 301576
 localeTitle: Отключить кэширование на стороне клиента с помощью helmet.noCache ()
 ---
 
 ## Description
-<section id="description"> Напомним, что этот проект строится на следующем стартовом проекте <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-infosec/">Glitch</a> или клонируется из <a href="https://github.com/freeCodeCamp/boilerplate-infosec/">GitHub</a> . Если вы выпускаете обновление для своего сайта и хотите, чтобы пользователи всегда загружали более новую версию, вы можете (попытаться) отключить кеширование в браузере клиента. Это может быть полезно и в разработке. Кэширование имеет преимущества производительности, которые вы потеряете, поэтому используйте эту опцию только тогда, когда есть настоящая необходимость. </section>
+<section id='description'>
+Напомним, что этот проект строится на следующем стартовом проекте <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-infosec/">Glitch</a> или клонируется из <a href="https://github.com/freeCodeCamp/boilerplate-infosec/">GitHub</a> . Если вы выпускаете обновление для своего сайта и хотите, чтобы пользователи всегда загружали более новую версию, вы можете (попытаться) отключить кеширование в браузере клиента. Это может быть полезно и в разработке. Кэширование имеет преимущества производительности, которые вы потеряете, поэтому используйте эту опцию только тогда, когда есть настоящая необходимость.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,22 +21,9 @@ localeTitle: Отключить кэширование на стороне кл�
 
 ```yml
 tests:
-  - text: Средство шлема helmet.noCache () должно быть правильно установлено
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/app-info").then(data => { assert.include(data.appStack, "nocache"); assert.equal(data.headers["cache-control"], "no-store, no-cache, must-revalidate, proxy-revalidate"); }, xhr => { throw new Error(xhr.responseText); })'
+  - text: helmet.noCache() middleware should be mounted correctly
+    testString: getUserInput => $.get(getUserInput('url') + '/_api/app-info').then(data => { assert.include(data.appStack, 'nocache'); assert.equal(data.headers['cache-control'], 'no-store, no-cache, must-revalidate, proxy-revalidate'); }, xhr => { throw new Error(xhr.responseText); })
 
 ```
 
-</section>
-
-## Challenge Seed
-<section id='challengeSeed'>
-
-</section>
-
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
 </section>

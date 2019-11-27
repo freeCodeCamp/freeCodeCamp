@@ -5,12 +5,9 @@ const {
   createChallenge,
   getChallengesDirForLang
 } = require('../../curriculum/getChallenges');
-const utils = require('./');
+const { dasherize, nameify } = require('../../utils/slugs');
 const { locale } = require('../config/env.json');
 const { blockNameify } = require('./blockNameify');
-
-const dasherize = utils.dasherize;
-const nameify = utils.nameify;
 
 const arrToString = arr =>
   Array.isArray(arr) ? arr.join('\n') : _.toString(arr);

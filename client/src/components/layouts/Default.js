@@ -23,9 +23,19 @@ import OfflineWarning from '../OfflineWarning';
 import Flash from '../Flash';
 import Header from '../Header';
 import Footer from '../Footer';
+// preload common fonts
+import latoLightURL from '../../../static/fonts/lato/Lato-Light.woff';
+import latoRegularURL from '../../../static/fonts/lato/Lato-Regular.woff';
+import latoBoldURL from '../../../static/fonts/lato/Lato-Bold.woff';
+// eslint-disable-next-line max-len
+import robotoRegularURL from '../../../static/fonts/roboto-mono/RobotoMono-Regular.woff';
+// eslint-disable-next-line max-len
+import robotoBoldURL from '../../../static/fonts/roboto-mono/RobotoMono-Bold.woff';
+// eslint-disable-next-line max-len
+import robotoItalicURL from '../../../static/fonts/roboto-mono/RobotoMono-Italic.woff';
 
+import './fonts.css';
 import './global.css';
-import './layout.css';
 import './variables.css';
 
 fontawesome.config = {
@@ -67,12 +77,12 @@ const propTypes = {
   hasMessage: PropTypes.bool,
   isOnline: PropTypes.bool.isRequired,
   isSignedIn: PropTypes.bool,
-  landingPage: PropTypes.bool,
   onlineStatusChange: PropTypes.func.isRequired,
   pathname: PropTypes.string.isRequired,
   removeFlashMessage: PropTypes.func.isRequired,
   showFooter: PropTypes.bool,
-  theme: PropTypes.string
+  theme: PropTypes.string,
+  useTheme: PropTypes.bool
 };
 
 const mapStateToProps = createSelector(
@@ -88,6 +98,7 @@ const mapStateToProps = createSelector(
     theme: user.theme
   })
 );
+
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     { fetchUser, removeFlashMessage, onlineStatusChange },
@@ -133,16 +144,18 @@ class DefaultLayout extends Component {
       flashMessage,
       isOnline,
       isSignedIn,
-      landingPage,
       removeFlashMessage,
       showFooter = true,
-      theme
+      theme = 'default',
+      useTheme = true
     } = this.props;
     return (
       <Fragment>
         <Helmet
           bodyAttributes={{
-            class: `${theme === 'default' ? 'light-palette' : 'dark-palette'}`
+            class: useTheme
+              ? `${theme === 'default' ? 'light-palette' : 'dark-palette'}`
+              : 'light-palette'
           }}
           meta={[
             {
@@ -154,14 +167,53 @@ class DefaultLayout extends Component {
             { name: 'keywords', content: metaKeywords.join(', ') }
           ]}
         >
+          <link
+            as='font'
+            crossOrigin='anonymous'
+            href={latoRegularURL}
+            rel='preload'
+            type='font/woff'
+          />
+          <link
+            as='font'
+            crossOrigin='anonymous'
+            href={latoLightURL}
+            rel='preload'
+            type='font/woff'
+          />
+          <link
+            as='font'
+            crossOrigin='anonymous'
+            href={latoBoldURL}
+            rel='preload'
+            type='font/woff'
+          />
+          <link
+            as='font'
+            crossOrigin='anonymous'
+            href={robotoRegularURL}
+            rel='preload'
+            type='font/woff'
+          />
+          <link
+            as='font'
+            crossOrigin='anonymous'
+            href={robotoBoldURL}
+            rel='preload'
+            type='font/woff'
+          />
+          <link
+            as='font'
+            crossOrigin='anonymous'
+            href={robotoItalicURL}
+            rel='preload'
+            type='font/woff'
+          />
           <style>{fontawesome.dom.css()}</style>
         </Helmet>
         <WithInstantSearch>
-          <Header disableSettings={landingPage} />
-          <div
-            className={`default-layout
-          ${landingPage ? 'landing-page' : ''}`}
-          >
+          <Header />
+          <div className={`default-layout`}>
             <OfflineWarning isOnline={isOnline} isSignedIn={isSignedIn} />
             {hasMessage && flashMessage ? (
               <Flash flashMessage={flashMessage} onClose={removeFlashMessage} />

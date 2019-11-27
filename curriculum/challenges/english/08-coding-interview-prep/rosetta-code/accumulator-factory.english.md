@@ -24,7 +24,7 @@ Closures save outer state.
 
 ```yml
 tests:
-  - text: <code>accumulator</code> is a function.
+  - text: <code>accumulator</code> should be a function.
     testString: assert(typeof accumulator === 'function');
   - text: <code>accumulator(0)</code> should return a function.
     testString: assert(typeof accumulator(0) === 'function');

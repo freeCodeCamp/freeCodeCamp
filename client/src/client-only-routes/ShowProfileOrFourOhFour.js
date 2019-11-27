@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { isEmpty } from 'lodash';
 
@@ -9,7 +8,8 @@ import {
   userByNameSelector,
   userProfileFetchStateSelector,
   fetchProfileForUser,
-  usernameSelector
+  usernameSelector,
+  hardGoTo as navigate
 } from '../redux';
 import FourOhFourPage from '../components/FourOhFour';
 import Profile from '../components/profile/Profile';
@@ -19,6 +19,7 @@ const propTypes = {
   fetchProfileForUser: PropTypes.func.isRequired,
   isSessionUser: PropTypes.bool,
   maybeUser: PropTypes.string,
+  navigate: PropTypes.func.isRequired,
   requestedUser: PropTypes.shape({
     username: PropTypes.string,
     displayUsername: PropTypes.string,
@@ -44,8 +45,10 @@ const makeMapStateToProps = () => (state, props) => {
   };
 };
 
-const mapDispatchToProps = dispatch =>
-  bindActionCreators({ fetchProfileForUser }, dispatch);
+const mapDispatchToProps = {
+  fetchProfileForUser,
+  navigate
+};
 
 class ShowProfileOrFourOhFour extends Component {
   componentDidMount() {
@@ -60,7 +63,7 @@ class ShowProfileOrFourOhFour extends Component {
       return null;
     }
 
-    const { isSessionUser, requestedUser, showLoading } = this.props;
+    const { isSessionUser, requestedUser, showLoading, navigate } = this.props;
     if (isEmpty(requestedUser)) {
       if (showLoading) {
         // We don't know if /:maybeUser is a user or not, we will show
@@ -75,7 +78,13 @@ class ShowProfileOrFourOhFour extends Component {
 
     // We have a response from the API, and we have some state in the
     // store for /:maybeUser, we now handover rendering to the Profile component
-    return <Profile isSessionUser={isSessionUser} user={requestedUser} />;
+    return (
+      <Profile
+        isSessionUser={isSessionUser}
+        navigate={navigate}
+        user={requestedUser}
+      />
+    );
   }
 }
 

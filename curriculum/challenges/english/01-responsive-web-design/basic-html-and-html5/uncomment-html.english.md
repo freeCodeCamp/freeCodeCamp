@@ -10,7 +10,7 @@ forumTopicId: 18329
 <section id='description'>
 Commenting is a way that you can leave comments for other developers within your code without affecting the resulting output that is displayed to the end user.
 Commenting is also a convenient way to make code inactive without having to delete it entirely.
-Comments in HTML starts with <code>&#60;!--</code>, and ends with a <code>--&#62;</code>
+Comments in HTML start with <code>&#60;!--</code> and end with a <code>--&#62;</code>
 </section>
 
 ## Instructions
@@ -23,13 +23,13 @@ Uncomment your <code>h1</code>, <code>h2</code> and <code>p</code> elements.
 
 ```yml
 tests:
-  - text: Make your <code>h1</code> element visible on your page by uncommenting it.
+  - text: Your <code>h1</code> element should be visible on your page by uncommenting it.
     testString: assert($("h1").length > 0);
-  - text: Make your <code>h2</code> element visible on your page by uncommenting it.
+  - text: Your <code>h2</code> element should be visible on your page by uncommenting it.
     testString: assert($("h2").length > 0);
-  - text: Make your <code>p</code> element visible on your page by uncommenting it.
+  - text: Your <code>p</code> element should be visible on your page by uncommenting it.
     testString: assert($("p").length > 0);
-  - text: Be sure to delete all trailing comment tags&#44; i.e. <code>--&#62;</code>.
+  - text: All trailing comment tags should be deleted&#44; i.e. <code>--&#62;</code>.
     testString: assert(!/[^fc]-->/gi.test(code.replace(/ *<!--[^fc]*\n/g,'')));
 
 ```

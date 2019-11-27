@@ -47,7 +47,7 @@ export default function(UserIdent) {
         : '';
     if (!isEmail('' + email)) {
       throw wrapHandledError(
-        new Error('invalid or empty email recieved from auth0'),
+        new Error('invalid or empty email received from auth0'),
         {
           message: dedent`
     ${provider} did not return a valid email address.
