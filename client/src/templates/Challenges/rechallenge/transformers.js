@@ -13,7 +13,7 @@ import {
 import * as Babel from '@babel/standalone';
 import presetEnv from '@babel/preset-env';
 import presetReact from '@babel/preset-react';
-import protect from 'loop-protect';
+import protect from '@freecodecamp/loop-protect';
 
 import * as vinyl from '../utils/polyvinyl.js';
 import createWorker from '../utils/worker-executor';
@@ -23,7 +23,26 @@ import createWorker from '../utils/worker-executor';
 import { filename as sassCompile } from '../../../../config/sass-compile';
 
 const protectTimeout = 100;
-Babel.registerPlugin('loopProtection', protect(protectTimeout));
+const testProtectTimeout = 1500;
+const loopsPerTimeoutCheck = 2000;
+
+function loopProtectCB(line) {
+  console.log(
+    `Potential infinite loop detected on line ${line}. Tests may fail if this is not changed.`
+  );
+}
+
+function testLoopProtectCB(line) {
+  console.log(
+    `Potential infinite loop detected on line ${line}. Tests may be failing because of this.`
+  );
+}
+
+Babel.registerPlugin('loopProtection', protect(protectTimeout, loopProtectCB));
+Babel.registerPlugin(
+  'testLoopProtection',
+  protect(testProtectTimeout, testLoopProtectCB, loopsPerTimeoutCheck)
+);
 
 const babelOptionsJSX = {
   plugins: ['loopProtection'],
@@ -31,7 +50,13 @@ const babelOptionsJSX = {
 };
 
 const babelOptionsJS = {
+  plugins: ['testLoopProtection'],
   presets: [presetEnv]
+};
+
+const babelOptionsJSPreview = {
+  ...babelOptionsJS,
+  plugins: ['loopProtection']
 };
 
 const babelTransformCode = options => code =>
@@ -69,28 +94,31 @@ function tryTransform(wrap = identity) {
   };
 }
 
-export const babelTransformer = cond([
-  [
-    testJS,
-    flow(
-      partial(
-        vinyl.transformHeadTailAndContents,
-        tryTransform(babelTransformCode(babelOptionsJS))
+const babelTransformer = (preview = false) =>
+  cond([
+    [
+      testJS,
+      flow(
+        partial(
+          vinyl.transformHeadTailAndContents,
+          tryTransform(
+            babelTransformCode(preview ? babelOptionsJSPreview : babelOptionsJS)
+          )
+        )
       )
-    )
-  ],
-  [
-    testJSX,
-    flow(
-      partial(
-        vinyl.transformHeadTailAndContents,
-        tryTransform(babelTransformCode(babelOptionsJSX))
-      ),
-      partial(vinyl.setExt, 'js')
-    )
-  ],
-  [stubTrue, identity]
-]);
+    ],
+    [
+      testJSX,
+      flow(
+        partial(
+          vinyl.transformHeadTailAndContents,
+          tryTransform(babelTransformCode(babelOptionsJSX))
+        ),
+        partial(vinyl.setExt, 'js')
+      )
+    ],
+    [stubTrue, identity]
+  ]);
 
 const sassWorker = createWorker(sassCompile);
 async function transformSASS(element) {
@@ -141,7 +169,14 @@ export const htmlTransformer = cond([
 
 export const transformers = [
   replaceNBSP,
-  babelTransformer,
+  babelTransformer(),
+  composeHTML,
+  htmlTransformer
+];
+
+export const transformersPreview = [
+  replaceNBSP,
+  babelTransformer(true),
   composeHTML,
   htmlTransformer
 ];

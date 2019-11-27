@@ -33,6 +33,9 @@ import {
   isJavaScriptChallenge
 } from '../utils/build';
 
+// How long before bailing out of a preview.
+const previewTimeout = 2500;
+
 export function* executeChallengeSaga() {
   const isBuildEnabled = yield select(isBuildEnabledSelector);
   if (!isBuildEnabled) {
@@ -90,9 +93,9 @@ function* takeEveryConsole(channel) {
   });
 }
 
-function* buildChallengeData(challengeData) {
+function* buildChallengeData(challengeData, preview) {
   try {
-    return yield call(buildChallenge, challengeData);
+    return yield call(buildChallenge, challengeData, preview);
   } catch (e) {
     yield put(disableBuildOnError());
     throw e;
@@ -155,7 +158,7 @@ function* previewChallengeSaga() {
 
     const challengeData = yield select(challengeDataSelector);
     if (canBuildChallenge(challengeData)) {
-      const buildData = yield buildChallengeData(challengeData);
+      const buildData = yield buildChallengeData(challengeData, true);
       // evaluate the user code in the preview frame or in the worker
       if (challengeHasPreview(challengeData)) {
         const document = yield getContext('document');
@@ -163,10 +166,14 @@ function* previewChallengeSaga() {
       } else if (isJavaScriptChallenge(challengeData)) {
         const runUserCode = getTestRunner(buildData, { proxyLogger });
         // without a testString the testRunner just evaluates the user's code
-        yield call(runUserCode, null, 5000);
+        yield call(runUserCode, null, previewTimeout);
       }
     }
   } catch (err) {
+    if (err === 'timeout') {
+      // eslint-disable-next-line no-ex-assign
+      err = `The code you have written is taking longer than the ${previewTimeout}ms our challenges allow. You may have created an infinite loop or need to write a more efficient algorithm`;
+    }
     console.log(err);
     yield put(updateConsole(escape(err)));
   }
