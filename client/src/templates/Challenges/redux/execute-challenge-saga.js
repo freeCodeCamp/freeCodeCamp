@@ -33,9 +33,9 @@ import {
   isJavaScriptChallenge
 } from '../utils/build';
 
-// How long before bailing out of a preview. 500ms should be long enough
+// How long before bailing out of a preview. 100ms should be long enough
 // to let most operations complete, but short enough to avoid OOM errors.
-const previewTimeout = 500;
+const previewTimeout = 100;
 
 export function* executeChallengeSaga() {
   const isBuildEnabled = yield select(isBuildEnabledSelector);
