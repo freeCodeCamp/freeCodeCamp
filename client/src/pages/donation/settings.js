@@ -85,6 +85,10 @@ export class DonationSettingsPage extends Component {
   }
 
   renderServicebotEmbed() {
+    const { donationEmails } = this.props;
+    if (!donationEmails || donationEmails.length === 0) {
+      return null;
+    }
     const { currentSettingsEmail, hash } = this.state;
     return (
       <div className='servicebot-embed-panel'>
@@ -92,7 +96,7 @@ export class DonationSettingsPage extends Component {
           <Panel>
             <Spacer />
             <p className='text-center'>
-              Select the email associated to your donations above.
+              Select the email associated with your donations above.
             </p>
           </Panel>
         ) : (
@@ -108,6 +112,14 @@ export class DonationSettingsPage extends Component {
 
   renderDonationEmailsList() {
     const { donationEmails } = this.props;
+    if (!donationEmails || donationEmails.length === 0) {
+      return (
+        <p>
+          Some of the data associated with your donation is unavailable. Please
+          contact team@freeCodeCamp.org to get your donation updated manually.
+        </p>
+      );
+    }
     return uniq(donationEmails).map(email => (
       <Button
         bsStyle='primary'
