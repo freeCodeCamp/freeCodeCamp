@@ -1,7 +1,11 @@
 const path = require('path');
+const fs = require('fs');
 
 if (process.env.FREECODECAMP_NODE_ENV !== 'production') {
   const envPath = path.resolve(__dirname, '../.env');
+  if (!fs.existsSync(envPath)) {
+    throw Error('.env not found, please copy sample.env to .env.');
+  }
   require('dotenv').config({ path: envPath });
 }
 

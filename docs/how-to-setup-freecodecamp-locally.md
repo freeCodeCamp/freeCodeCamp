@@ -191,12 +191,10 @@ This step will install the dependencies required for the application to run:
 
 **Docker Build:**
 ```shell
-npm run docker:init
-npm run docker:install
-npm run docker:seed
+npm run docker:run-once
 ```
 
-Each of the Docker commands above will take some time to complete. You should wait for each command to fully complete before running the next.
+There is a lot to install, this step may take a few minutes.
 
 You will also need to install a few npm packages outside of Docker. You can skip this step if you are only running the app locally and will not use git.
 
