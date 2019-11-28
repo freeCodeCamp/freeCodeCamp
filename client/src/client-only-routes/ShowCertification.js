@@ -132,7 +132,7 @@ class ShowCertification extends Component {
         <Grid>
           <Row className='certification-donation text-center'>
             <p>
-              Only you can see this message. Congratulationson earning this
+              Only you can see this message. Congratulations on earning this
               certification. It’s no easy task. Running freeCodeCamp isn’t easy
               either. Nor is it cheap. Help us help you and many other people
               around the world. Make a tax-deductible supporting donation to our
