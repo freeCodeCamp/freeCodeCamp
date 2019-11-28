@@ -17,20 +17,20 @@ Cumplimos estrictamente nuestro ["Código de conducta"](https://www.freecodecamp
 
 Puedes optar por contribuir a cualquier área de tu interés:
 
-1. [Contribuir a esta base de código fuente abierto.](#contribuye-a-esta-base-de-código-abierto)
+1. [Contribuir a esta base de código abierto.](#contribuye-a-esta-base-de-código-abierto)
 
-    Ayúdanos a crear o editar [artículos de guía](https://www.freecodecamp.org/guide), [desafíos de codificación](https://www.freecodecamp.org/learn) o a corregir errores en la plataforma de aprendizaje.
+    Ayúdanos a crear o editar [artículos de guía](https://www.freecodecamp.org/guide), [desafíos de código](https://www.freecodecamp.org/learn) o a corregir errores en la plataforma de aprendizaje.
 
 2. Ayuda a los campistas en nuestro [foro público](https://www.freecodecamp.org/forum/):
 
-    - ❓ [Respondiendo a sus preguntas](https://www.freecodecamp.org/forum/?max_posts=1).
-    - 💬 [Aportando comentarios a sus proyectos](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1).
+    - ❓ [Aportando tu opinión](https://www.freecodecamp.org/forum/?max_posts=1).
+    - 💬 [Aportando comentarios](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1) a sus proyectos.
 
 3. Ayúdanos a agregar subtítulos en nuestro [canal de YouTube](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ/videos).
 
 ## Contribuye a esta base de código abierto
 
-Tenemos una gran base de código abierto con miles de [Desafíos de Codificación](https://www.freecodecamp.org/learn) y otras fuentes de codigo para fortalecer nuestra plataforma de aprendizaje.
+Tenemos una gran base de código abierto con miles de [Desafíos de Código](https://www.freecodecamp.org/learn) y [Guías](https://www.freecodecamp.org/guide).
 
 Puedes ayudarnos a:
 
@@ -46,7 +46,7 @@ Puedes ayudarnos a:
 
 **¿Qué son los artículos de guía?**
 
-Los artículos de guía te ayudan a comprender rápidamente un concepto de tecnología. Son explicaciones breves y sencillas que puedes leer antes de ir a recursos más profundos.
+Los artículos de guía te ayudan a comprender rápidamente un concepto de tecnología. Son explicaciones breves y sencillas que puedes leer antes de ir a recursos más detallados.
 
 Puedes encontrar un [artículo de ejemplo sobre elementos HTML aquí](./client/src/pages/html/elements/index.md).
 
@@ -54,23 +54,23 @@ Puedes encontrar un [artículo de ejemplo sobre elementos HTML aquí](./client/s
 
 Agradecemos tu ayuda al escribir estos artículos. No tienes que ser un experto en un tema para escribir sobre él; toda esta guía es de código abierto, por lo que incluso si cometes un error, otro colaborador lo corregirá.
 
-Para obtener ayuda, busca un `esbozo` de cualquier artículo en nuestra [guía](https://www.freecodecamp.org/guide), escribe el artículo y luego abre una solicitud para reemplazar el esbozo con tu artículo. Una solicitud o [pull request](https://help.github.com/articles/about-pull-requests/) es la forma en que sugerirán los cambios. Permite a otros conocer tus cambios, revisarlos y adóptarlos.
+Para obtener ayuda, busca un `esbozo` de cualquier artículo en nuestra [guía](https://www.freecodecamp.org/guide), escribe el artículo y luego abre una solicitud para reemplazar el esbozo con tu artículo. Una solicitud o [_pull request_](https://help.github.com/articles/about-pull-requests/) es la forma en que sugerirán los cambios. Permite a otros conocer tus cambios, revisarlos y adóptarlos.
 
-Si no puedes encontrar un esbozo sobre el tema que deseas escribir, puedes abrir un PR (pull request) que crea el esbozo e incluye tu borrador del artículo.
+Si no puedes encontrar un esbozo sobre el tema que deseas escribir, puedes abrir un PR (_Pull Request_) que crea el esbozo e incluye tu borrador del artículo.
 
 **Si deseas trabajar en ello, sigue estas pautas:**
 
-#### [cómo trabajar en los artículos de guía.](/docs/how-to-work-on-guide-articles.md)
+#### [Cómo trabajar en los artículos de guía.](/docs/how-to-work-on-guide-articles.md)
 
-### Crear, actualizar y corregir errores en nuestros desafíos de codificación
+### Crear, actualizar y corregir errores en nuestros desafíos de código
 
-Todos nuestros desafíos de codificación son curados por la comunidad, aportando conocimiento experto de voluntarios como tú.
+Todos nuestros desafíos de código son seleccionados por la comunidad, aportando conocimiento experto de voluntarios como tú.
 
 Puedes ayudar a expandirlos y hacer que su redacción sea más clara. Puedes actualizar las historias de usuario para explicar mejor el concepto e incluso eliminar las redundantes. También puedes mejorar las pruebas para que sean más precisas al valorar el código de los usuarios.
 
 **Si deseas trabajar en ello, sigue estas pautas:**
 
-#### [cómo trabajar en desafíos de codificación.](/docs/how-to-work-on-coding-challenges.md)
+#### [Cómo trabajar en desafíos de codificación.](/docs/how-to-work-on-coding-challenges.md)
 
 ### Traducir artículos de guía y desafíos de codificación
 
@@ -108,7 +108,7 @@ Si deseas trabajar en mejorar nuestra base de código, aqui tienes [cómo config
 
 Si crees que has encontrado un error, primero lee el artículo ["Ayuda, he encontrado un error"](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) y sigue las instrucciones.
 
-Si estás seguro de que es un error nuevo, siga adelante y crea un nuevo problema o Issue en GitHub. Asegúrate de incluir la mayor cantidad de información posible para que podamos reproducir el error. Tenemos una plantilla de problemas predefinida para ayudarte a documentar esto.
+Si estás seguro de que es un error nuevo, siga adelante y crea un nuevo problema o _Issue_ en GitHub. Asegúrate de incluir la mayor cantidad de información posible para que podamos reproducir el error. Tenemos una plantilla de problemas predefinida para ayudarte a documentar esto.
 
 Ten en cuenta que cualquier problema que se registre para resolver dudas sobre la codificación de un desafío se cerrará. El rastreador de problemas es estrictamente para los temas y discusiones relacionados con el código base. Deberías [buscar ayuda en el foro](https://www.freecodecamp.org/forum) antes de reportar un problema en caso de duda.
 **¿Cómo puedo reportar un problema de seguridad?**
@@ -132,10 +132,10 @@ Lee nuestra [Guía de cómo contribuir al código abierto](https://github.com/fr
 
 Los moderadores de nuestra comunidad [evalúan](https://en.wikipedia.org/wiki/Software_bug#Bug_management) problemas y solicitudes y los etiquetan según la prioridad, la gravedad y otros factores. Puedes [encontrar un glosario completo de sus significados aquí](https://github.com/freecodecamp/freecodecamp/labels).
 
-Debes revisar los problemas **`Help Wanted`** o **`first timers welcome`** para una búsqueda rápida de lo que está disponible para que trabajes. Estos están libres para todos y no necesita permisos antes de trabajar en ellos.
+Debes buscar los problemas con las etiquetas **`Help Wanted`** o **`first timers welcome`** para localizar rápidamente lo que está disponible para que trabajes. Estos están libres para todos y no necesitan permisos antes de trabajar en ellos.
 
 Si estos temas carecen de claridad sobre lo que debe hacerse, no dudes en hacer preguntas en los comentarios.
 
-**Encontré un error tipográfico, ¿debo reportar de un problema antes de poder hacer un pull request?**
+**Encontré un error tipográfico, ¿debo reportar de un problema antes de poder hacer un _Pull Request_?**
 
-Para los errores tipográficos y otros cambios de redacción, puedes abrir directamente los pull request sin crear primero issues. Los issues son más bien para discutir problemas más grandes asociados con el código, o aspectos más estructurales del currículo.
+Para los errores tipográficos y otros cambios de redacción, puedes abrir directamente los pull request sin crear primero un _issue_. Los _issues_ son más bien para discutir problemas más grandes asociados con el código, o aspectos más estructurales del contenido.
