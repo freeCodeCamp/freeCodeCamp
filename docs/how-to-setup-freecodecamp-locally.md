@@ -258,7 +258,8 @@ npm run docker:develop
 npm run develop
 ```
 
-If you experience an error while executing this command relating to the `sharp` module, go to `PROJECT_ROOT/client/node_modules` and delete the `sharp` folder. Then move up to `PROJECT_ROOT/client` and issue `npm install`. After that move up to `PROJECT_ROOT` and issue `npm run develop` again.
+>**Note:** If you experience an error while executing this command relating to the `sharp` module, go to `freeCodeCamp/client/node_modules` and delete the `sharp` folder. Then move up to `freeCodeCamp/client` and issue `npm install`. After that move up to `freeCodeCamp` and issue `npm run develop` again.
+
 This single command will fire up all the services, including the API server and the client applications available for you to work on.
 
 Once ready, open a web browser and visit <http://localhost:8000>. If the app loads, congratulations – you're all set!
