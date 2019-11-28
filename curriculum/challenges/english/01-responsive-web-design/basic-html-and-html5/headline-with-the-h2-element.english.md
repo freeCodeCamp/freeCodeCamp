@@ -15,7 +15,7 @@ This element tells the browser about the structure of your website. <code>h1</co
 
 ## Instructions
 <section id='instructions'>
-Add an <code>h2</code> tag that says "CatPhotoApp" to create a second HTML <code>element</code> below your "Hello World" <code>h1</code> element.
+Add an <code>h2</code> tag that says "CatPhotoApp" to create a second HTML element below your "Hello World" <code>h1</code> element.
 </section>
 
 ## Tests
@@ -23,9 +23,9 @@ Add an <code>h2</code> tag that says "CatPhotoApp" to create a second HTML <code
 
 ```yml
 tests:
-  - text: Create an <code>h2</code> element.
+  - text: You should create an <code>h2</code> element.
     testString: assert(($("h2").length > 0));
-  - text: Make sure your <code>h2</code> element has a closing tag.
+  - text: Your <code>h2</code> element should have a closing tag.
     testString: assert(code.match(/<\/h2>/g) && code.match(/<\/h2>/g).length === code.match(/<h2>/g).length);
   - text: Your <code>h2</code> element should have the text "CatPhotoApp".
     testString: assert.isTrue((/cat(\s)?photo(\s)?app/gi).test($("h2").text()));

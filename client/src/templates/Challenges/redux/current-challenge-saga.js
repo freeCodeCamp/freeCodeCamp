@@ -3,12 +3,8 @@ import store from 'store';
 
 import {
   isSignedInSelector,
-  openDonationModal,
-  showDonationSelector,
-  donationRequested,
   updateComplete,
-  updateFailed,
-  userSelector
+  updateFailed
 } from '../../../redux';
 
 import { post } from '../../../utils/ajax';
@@ -41,26 +37,9 @@ function* updateSuccessMessageSaga() {
   yield put(updateSuccessMessage(randomCompliment()));
 }
 
-function* showDonateModalSaga() {
-  let { isDonating } = yield select(userSelector);
-  let shouldShowDonate = yield select(showDonationSelector);
-  /**
-   *  We are disabling donation modals for now.
-   */
-  shouldShowDonate = false;
-  /**
-   *  We are disabling donation modals for now.
-   */
-  if (!isDonating && shouldShowDonate) {
-    yield put(openDonationModal());
-    yield put(donationRequested());
-  }
-}
-
 export function createCurrentChallengeSaga(types) {
   return [
     takeEvery(types.challengeMounted, currentChallengeSaga),
-    takeEvery(types.challengeMounted, updateSuccessMessageSaga),
-    takeEvery(types.challengeMounted, showDonateModalSaga)
+    takeEvery(types.challengeMounted, updateSuccessMessageSaga)
   ];
 }

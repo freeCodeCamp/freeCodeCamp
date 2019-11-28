@@ -27,6 +27,7 @@ const propTypes = {
       })
     })
   ),
+  isSignedIn: PropTypes.bool,
   nodes: PropTypes.arrayOf(ChallengeNode),
   resetExpansion: PropTypes.func,
   toggleBlock: PropTypes.func.isRequired,
@@ -68,9 +69,11 @@ export class Map extends Component {
       nodes,
       resetExpansion,
       toggleBlock,
-      toggleSuperBlock
+      toggleSuperBlock,
+      isSignedIn
     } = this.props;
     resetExpansion();
+
     let node;
 
     // find the challenge that has the same superblock with hash
@@ -78,13 +81,17 @@ export class Map extends Component {
       node = nodes.find(node => dasherize(node.superBlock) === hash);
     }
 
-    // if there is no hash or the hash did not match any challenge superblock
-    // and there was a currentChallengeId
-    if (!node && currentChallengeId) {
-      node = nodes.find(node => node.id === currentChallengeId);
+    // whitout hash only expand when signed in
+    if (isSignedIn) {
+      // if there is no hash or the hash did not match any challenge superblock
+      // and there was a currentChallengeId
+      if (!node && currentChallengeId) {
+        node = nodes.find(node => node.id === currentChallengeId);
+      }
+      if (!node) node = nodes[0];
     }
 
-    if (!node) node = nodes[0];
+    if (!node) return;
 
     toggleBlock(node.block);
     toggleSuperBlock(node.superBlock);

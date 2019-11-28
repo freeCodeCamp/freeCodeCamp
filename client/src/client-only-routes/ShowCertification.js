@@ -104,69 +104,71 @@ class ShowCertification extends Component {
       completionTime
     } = cert;
     return (
-      <Grid className='certificate-wrapper certification-namespace'>
-        <Row>
-          <header>
-            <Col md={5} sm={12}>
-              <div className='logo'>
+      <div className='certificate-outer-wrapper'>
+        <Grid className='certificate-wrapper certification-namespace'>
+          <Row>
+            <header>
+              <Col md={5} sm={12}>
+                <div className='logo'>
+                  <Image
+                    alt="freeCodeCamp.org's Logo"
+                    responsive={true}
+                    src={
+                      'https://s3.amazonaws.com/freecodecamp/freecodecamp_logo' +
+                      '.svg'
+                    }
+                  />
+                </div>
+              </Col>
+              <Col md={7} sm={12}>
+                <div className='issue-date'>
+                  Issued&nbsp;
+                  <strong>{issueDate}</strong>
+                </div>
+              </Col>
+            </header>
+
+            <main className='information'>
+              <div className='information-container'>
+                <h3>This certifies that</h3>
+                <h1>
+                  <strong>{userFullName}</strong>
+                </h1>
+                <h3>has successfully completed the freeCodeCamp.org</h3>
+                <h1>
+                  <strong>{certTitle} Certification</strong>
+                </h1>
+                <h4>
+                  Developer Certification, representing approximately{' '}
+                  {completionTime} hours of coursework
+                </h4>
+              </div>
+            </main>
+            <footer>
+              <div className='row signatures'>
                 <Image
-                  alt="freeCodeCamp.org's Logo"
-                  responsive={true}
+                  alt="Quincy Larson's Signature"
                   src={
-                    'https://s3.amazonaws.com/freecodecamp/freecodecamp_logo' +
-                    '.svg'
+                    'https://cdn.freecodecamp.org' +
+                    '/platform/english/images/quincy-larson-signature.svg'
                   }
                 />
+                <p>
+                  <strong>Quincy Larson</strong>
+                </p>
+                <p>Executive Director, freeCodeCamp.org</p>
               </div>
-            </Col>
-            <Col md={7} sm={12}>
-              <div className='issue-date'>
-                Issued&nbsp;
-                <strong>{issueDate}</strong>
-              </div>
-            </Col>
-          </header>
-
-          <main className='information'>
-            <div className='information-container'>
-              <h3>This certifies that</h3>
-              <h1>
-                <strong>{userFullName}</strong>
-              </h1>
-              <h3>has successfully completed the freeCodeCamp.org</h3>
-              <h1>
-                <strong>{certTitle} Certification</strong>
-              </h1>
-              <h4>
-                Developer Certification, representing approximately{' '}
-                {completionTime} hours of coursework
-              </h4>
-            </div>
-          </main>
-          <footer>
-            <div className='row signatures'>
-              <Image
-                alt="Quincy Larson's Signature"
-                src={
-                  'https://cdn.freecodecamp.org' +
-                  '/platform/english/images/quincy-larson-signature.svg'
-                }
-              />
-              <p>
-                <strong>Quincy Larson</strong>
-              </p>
-              <p>Executive Director, freeCodeCamp.org</p>
-            </div>
-            <Row>
-              <p className='verify'>
-                Verify this certification at:
-                https://www.freecodecamp.org/certification/
-                {username}/{certName}
-              </p>
-            </Row>
-          </footer>
-        </Row>
-      </Grid>
+              <Row>
+                <p className='verify'>
+                  Verify this certification at:
+                  https://www.freecodecamp.org/certification/
+                  {username}/{certName}
+                </p>
+              </Row>
+            </footer>
+          </Row>
+        </Grid>
+      </div>
     );
   }
 }

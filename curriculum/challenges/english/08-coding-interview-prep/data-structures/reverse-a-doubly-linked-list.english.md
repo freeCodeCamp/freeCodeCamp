@@ -20,17 +20,17 @@ Let's create one more method for our doubly linked list called reverse which rev
 
 ```yml
 tests:
-  - text: The DoublyLinkedList data structure exists.
+  - text: The DoublyLinkedList data structure should exist.
     testString: assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; return (typeof test == 'object')})());
-  - text: The DoublyLinkedList has a method called add.
+  - text: The DoublyLinkedList should have a method called add.
     testString: assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; if (test.add == undefined) { return false; }; return (typeof test.add == 'function')})());
-  - text: The DoublyLinkedList has a method called reverse.
+  - text: The DoublyLinkedList should have a method called reverse.
     testString: assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; if (test.reverse == undefined) { return false; }; return (typeof test.reverse == 'function')})());
-  - text: Reversing an empty list returns null.
+  - text: Reversing an empty list should return null.
     testString: assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; return (test.reverse() == null); })());
-  - text: The reverse method reverses the list.
+  - text: The reverse method should reverse the list.
     testString: assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; test.add(58); test.add(61); test.add(32); test.reverse(); return (test.print().join('') == '326158'); })());
-  - text: The next and previous references are correctly maintained when a list is reversed.
+  - text: The next and previous references should be correctly maintained when a list is reversed.
     testString: assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; test.add(11); test.add(22); test.add(33); test.reverse(); return (test.printReverse().join('') == '112233'); })());
 
 ```

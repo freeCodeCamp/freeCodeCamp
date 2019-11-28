@@ -21,7 +21,7 @@ longHand.test(varNames); // Returns true
 shortHand.test(varNames); // Returns true
 ```
 
-These shortcut character classes are also known as <code>shorthand character classes</code>.
+These shortcut character classes are also known as <dfn>shorthand character classes</dfn>.
 </section>
 
 ## Instructions

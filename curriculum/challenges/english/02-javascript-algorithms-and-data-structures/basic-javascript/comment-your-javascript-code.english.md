@@ -16,7 +16,7 @@ Using <code>//</code> will tell JavaScript to ignore the remainder of the text o
 // This is an in-line comment.
 ```
 
-You can make a multi-line comment beginning with <code>/*</code> and ending with <code>*/</code>:
+You can make a multi-line comment beginning with <code>/\*</code> and ending with <code>\*/</code>:
 
 ```js
 /* This is a
@@ -36,9 +36,9 @@ Try creating one of each type of comment.
 
 ```yml
 tests:
-  - text: Create a <code>//</code> style comment that contains at least five letters.
+  - text: You should create a <code>//</code> style comment that contains at least five letters.
     testString: assert(code.match(/(\/\/)...../g));
-  - text: Create a <code>/* */</code> style comment that contains at least five letters.
+  - text: You should create a <code>/* */</code> style comment that contains at least five letters.
     testString: assert(code.match(/(\/\*)([^\/]{5,})(?=\*\/)/gm));
 
 ```

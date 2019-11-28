@@ -43,7 +43,7 @@ or$center$justified$within$its$column.
 
 ```yml
 tests:
-  - text: <code>formatText</code> is a function.
+  - text: <code>formatText</code> should be a function.
     testString: assert(typeof formatText === 'function');
   - text: '<code>formatText</code> with the above input and "right" justification should produce the following: '
     testString: 'assert.strictEqual(formatText(testInput, ''right''), rightAligned);'

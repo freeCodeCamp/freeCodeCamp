@@ -5,7 +5,7 @@ import { createSelector } from 'reselect';
 import { navigate as gatsbyNavigate } from 'gatsby';
 import { Button } from '@freecodecamp/react-bootstrap';
 
-import { hardGoTo, isSignedInSelector } from '../../../redux';
+import { hardGoTo as navigate, isSignedInSelector } from '../../../redux';
 import { apiLocation } from '../../../../config/env.json';
 
 import { gtagReportConversion } from '../../../analytics/gtag';
@@ -18,9 +18,9 @@ const mapStateToProps = createSelector(
     isSignedIn
   })
 );
-const mapDispatchToProps = dispatch => ({
-  navigate: location => dispatch(hardGoTo(location))
-});
+const mapDispatchToProps = {
+  navigate
+};
 
 const createOnClick = (navigate, isSignedIn) => e => {
   e.preventDefault();

@@ -20,7 +20,7 @@ function Bird() {
 let blueBird = new Bird();
 ```
 
-Notice that the <code>new</code> operator is used when calling a constructor. This tells JavaScript to create a new <code>instance</code> of <code>Bird</code> called <code>blueBird</code>. Without the <code>new</code> operator, <code>this</code> inside the constructor would not point to the newly created object, giving unexpected results.
+Notice that the <code>new</code> operator is used when calling a constructor. This tells JavaScript to create a new instance of <code>Bird</code> called <code>blueBird</code>. Without the <code>new</code> operator, <code>this</code> inside the constructor would not point to the newly created object, giving unexpected results.
 Now <code>blueBird</code> has all the properties defined inside the <code>Bird</code> constructor:
 
 ```js
@@ -50,7 +50,7 @@ Use the <code>Dog</code> constructor from the last lesson to create a new instan
 tests:
   - text: <code>hound</code> should be created using the <code>Dog</code> constructor.
     testString: assert(hound instanceof Dog);
-  - text: Your code should use the <code>new</code> operator to create an <code>instance</code> of <code>Dog</code>.
+  - text: Your code should use the <code>new</code> operator to create an instance of <code>Dog</code>.
     testString: assert(code.match(/new/g));
 
 ```

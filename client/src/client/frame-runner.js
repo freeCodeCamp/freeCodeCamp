@@ -40,11 +40,13 @@ async function initTestFrame(e = {}) {
   if (e.loadEnzyme) {
     let Adapter16;
     /* eslint-disable no-inline-comments */
+
     [{ default: Enzyme }, { default: Adapter16 }] = await Promise.all([
       import(/* webpackChunkName: "enzyme" */ 'enzyme'),
       import(/* webpackChunkName: "enzyme-adapter" */ 'enzyme-adapter-react-16')
     ]);
     /* eslint-enable no-inline-comments */
+
     Enzyme.configure({ adapter: new Adapter16() });
   }
 

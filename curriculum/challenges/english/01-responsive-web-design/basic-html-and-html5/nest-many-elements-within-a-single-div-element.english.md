@@ -24,13 +24,13 @@ Hint: Try putting your opening <code>div</code> tag above your "Things cats love
 
 ```yml
 tests:
-  - text: Nest your <code>p</code> elements inside your <code>div</code> element.
+  - text: Your <code>p</code> elements should be nested inside your <code>div</code> element.
     testString: assert($("div").children("p").length > 1);
-  - text: Nest your <code>ul</code> element inside your <code>div</code> element.
+  - text: Your <code>ul</code> element should be nested inside your <code>div</code> element.
     testString: assert($("div").children("ul").length > 0);
-  - text: Nest your <code>ol</code> element inside your <code>div</code> element.
+  - text: Your <code>ol</code> element should be nested inside your <code>div</code> element.
     testString: assert($("div").children("ol").length > 0);
-  - text: Make sure your <code>div</code> element has a closing tag.
+  - text: Your <code>div</code> element should have a closing tag.
     testString: assert(code.match(/<\/div>/g) && code.match(/<\/div>/g).length === code.match(/<div>/g).length);
 
 ```

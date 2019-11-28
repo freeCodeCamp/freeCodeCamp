@@ -31,7 +31,7 @@ while (i < 5) {
 }
 ```
 
-In this example, we initialize the value of <code>myArray</code> to an empty array and the value of <code>i</code> to 5. When we execute the <code>while</code> loop, the condition evaluates to <code>false</code> because <code>i</code> is not less than 5, so we do not execute the code inside the loop. The result is that <code>ourArray</code> will end up with no values added to it, and it will still look like <code>[]</code> when all of the code in the example above has completed running.
+In this example, we initialize the value of <code>ourArray</code> to an empty array and the value of <code>i</code> to 5. When we execute the <code>while</code> loop, the condition evaluates to <code>false</code> because <code>i</code> is not less than 5, so we do not execute the code inside the loop. The result is that <code>ourArray</code> will end up with no values added to it, and it will still look like <code>[]</code> when all of the code in the example above has completed running.
 Now, take a look at a <code>do...while</code> loop:
 
 ```js

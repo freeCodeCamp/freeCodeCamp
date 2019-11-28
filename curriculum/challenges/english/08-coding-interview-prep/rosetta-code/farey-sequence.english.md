@@ -34,7 +34,7 @@ Write a function that returns the Farey sequence of order <code>n</code>. The fu
 
 ```yml
 tests:
-  - text: <code>farey</code> is a function.
+  - text: <code>farey</code> should be a function.
     testString: assert(typeof farey === 'function');
   - text: <code>farey(3)</code> should return an array
     testString: assert(Array.isArray(farey(3)));
