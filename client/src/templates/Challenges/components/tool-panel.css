@@ -48,14 +48,6 @@
   padding: 0.5rem;
 }
 
-/* Prevent 'sticky hover' effects for mobile devices */
-@media (hover: none) {
-  .dropdown-toggle.btn-primary:hover {
-    color: var(--secondary-color);
-    background-color: var(--quaternary-background);
-  }
-}
-
 #get-help-dropdown > .caret {
   transform: rotate(180deg);
 }
