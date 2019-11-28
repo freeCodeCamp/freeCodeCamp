@@ -54,10 +54,13 @@ tests:
 
 ```js
 function dfs(graph, root) {
+  // Visited nodes returned
+  const visited = [];
 
+  return visited;
 }
 
-var exDFSGraph = [
+const exDFSGraph = [
   [0, 1, 0, 0],
   [1, 0, 1, 0],
   [0, 1, 0, 1],
@@ -78,24 +81,22 @@ console.log(dfs(exDFSGraph, 3));
 
 ```js
 function dfs(graph, root) {
-	var stack = [];
-	var tempV;
-	var visited = [];
-	var tempVNeighbors = [];
-	stack.push(root);
-	while (stack.length > 0) {
-		tempV = stack.pop();
-		if (visited.indexOf(tempV) == -1) {
-			visited.push(tempV);
-			tempVNeighbors = graph[tempV];
-			for (var i = 0; i < tempVNeighbors.length; i++) {
-				if (tempVNeighbors[i] == 1) {
-					stack.push(i);
-				}
-			}
-		}
-	}
-	return visited;
+  const visited = [];
+  const stack = [];
+  stack.push(root);
+  while (stack.length > 0) {
+    const node = stack.pop();
+    if (!visited.includes(node)) {
+      visited.push(node);
+      const connectedNodes = graph[node];
+      for (let i = 0; i < connectedNodes.length; i++) {
+        if (connectedNodes[i] === 1) {
+          stack.push(i);
+        }
+      }
+    }
+  }
+  return visited;
 }
 ```
 
