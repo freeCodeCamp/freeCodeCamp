@@ -210,7 +210,6 @@ fieldset[disabled] .btn-primary.focus {
 .btn-cta {
   background-color: #ffac33;
   background-image: linear-gradient(#ffcc4d, #ffac33);
-  -ms-filter: 'progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffcc4d,  endColorstr=#ffac33,  GradientType=0)';
   border-color: #f1a02a;
   color: #0a0a23 !important;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
@@ -221,7 +220,6 @@ fieldset[disabled] .btn-primary.focus {
 .btn-cta:active:hover {
   background-color: #e99110;
   background-image: linear-gradient(#ffcc4d, #e99110);
-  -ms-filter: 'progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffcc4d,  endColorstr=#e99110,  GradientType=0)';
   color: #0a0a23 !important;
 }
 .btn-cta:active {
@@ -319,11 +317,18 @@ hr {
   border-radius: 0px;
 }
 
+.dropdown-menu {
+  background-color: var(--secondary-color);
+}
+
 .dropdown-menu > li > a {
   color: var(--secondary-background);
 }
-.dropdown-menu {
-  background-color: var(--secondary-color);
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+  color: var(--secondary-color);
+  background-color: var(--secondary-background);
 }
 
 .table-striped > tbody > tr:nth-child(2n + 1) > td,
