@@ -9,6 +9,7 @@ import {
   showCertSelector,
   showCertFetchStateSelector,
   showCert,
+  userFetchStateSelector,
   usernameSelector,
   isDonatingSelector,
   isDonationRequestedSelector,
@@ -45,6 +46,9 @@ const propTypes = {
   issueDate: PropTypes.string,
   showCert: PropTypes.func.isRequired,
   signedInUserName: PropTypes.string,
+  userFetchState: PropTypes.shape({
+    complete: PropTypes.bool
+  }),
   userFullName: PropTypes.string,
   username: PropTypes.string,
   validCertName: PropTypes.bool
@@ -56,13 +60,22 @@ const mapStateToProps = (state, { certName }) => {
     showCertSelector,
     showCertFetchStateSelector,
     usernameSelector,
+    userFetchStateSelector,
     isDonatingSelector,
     isDonationRequestedSelector,
-    (cert, fetchState, signedInUserName, isDonating, isDonationRequested) => ({
+    (
+      cert,
+      fetchState,
+      signedInUserName,
+      userFetchState,
+      isDonating,
+      isDonationRequested
+    ) => ({
       cert,
       fetchState,
       validCertName,
       signedInUserName,
+      userFetchState,
       isDonating,
       isDonationRequested
     })
@@ -93,7 +106,8 @@ class ShowCertification extends Component {
       donationRequested,
       signedInUserName,
       isDonating,
-      isDonationRequested
+      isDonationRequested,
+      userFetchState
     } = this.props;
 
     if (!validCertName) {
@@ -102,6 +116,7 @@ class ShowCertification extends Component {
     }
 
     const { pending, complete, errored } = fetchState;
+    const { complete: userComplete } = userFetchState;
 
     if (pending) {
       return <Loader fullScreen={true} />;
@@ -127,7 +142,12 @@ class ShowCertification extends Component {
 
     let conditionalDonationMessage = '';
 
-    if (signedInUserName === username && !isDonating && !isDonationRequested) {
+    if (
+      userComplete &&
+      signedInUserName === username &&
+      !isDonating &&
+      !isDonationRequested
+    ) {
       conditionalDonationMessage = (
         <Grid>
           <Row className='certification-donation text-center'>
