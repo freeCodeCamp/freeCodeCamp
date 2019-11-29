@@ -126,7 +126,7 @@ Nos emociona ayudarte a contribuir con cualquiera de los temas en los que te gus
 
 **Soy nuevo en GitHub y Open Source en general:**
 
-Lee nuestra [Guía de cómo contribuir al código abierto](https://github.com/freeCodeCamp/how-to-contribute-to-open-source).
+Lee nuestra [Guía de cómo contribuir al código abierto](https://github.com/freeCodeCamp/how-to-contribute-to-open-source/blob/master/README-ES.md).
 
 **¿Qué significan las diferentes etiquetas, que aparecen en los problemas?**
 
