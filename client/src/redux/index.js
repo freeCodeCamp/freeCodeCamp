@@ -32,6 +32,7 @@ export const defaultFetchState = {
 
 const initialState = {
   appUsername: '',
+  canRequestDonation: false,
   completionCount: 0,
   currentChallengeId: store.get(CURRENT_CHALLENGE_KEY),
   donationRequested: false,
@@ -55,6 +56,7 @@ export const types = createTypes(
   [
     'appMount',
     'hardGoTo',
+    'canRequestDonation',
     'closeDonationModal',
     'donationRequested',
     'openDonationModal',
@@ -91,6 +93,7 @@ export const appMount = createAction(types.appMount);
 export const tryToShowDonationModal = createAction(
   types.tryToShowDonationModal
 );
+export const canRequestDonation = createAction(types.canRequestDonation);
 export const closeDonationModal = createAction(types.closeDonationModal);
 export const openDonationModal = createAction(types.openDonationModal);
 export const donationRequested = createAction(types.donationRequested);
@@ -155,7 +158,11 @@ export const showCertFetchStateSelector = state => state[ns].showCertFetchState;
 export const shouldRequestDonationSelector = state => {
   const isDonationRequested = isDonationRequestedSelector(state);
   const isDonating = isDonatingSelector(state);
-  if (isDonationRequested === false && isDonating === false) {
+  if (
+    isDonationRequested === false &&
+    isDonating === false &&
+    state[ns].canRequestDonation
+  ) {
     return true;
   }
   return false;
@@ -205,6 +212,10 @@ function spreadThePayloadOnUser(state, payload) {
 
 export const reducer = handleActions(
   {
+    [types.canRequestDonation]: state => ({
+      ...state,
+      canRequestDonation: true
+    }),
     [types.fetchUser]: state => ({
       ...state,
       userFetchState: { ...defaultFetchState }

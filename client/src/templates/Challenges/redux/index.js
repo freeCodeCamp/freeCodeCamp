@@ -30,6 +30,7 @@ const initialState = {
   },
   challengeTests: [],
   consoleOut: '',
+  hasCompletedBlock: false,
   inAccessibilityMode: false,
   isCodeLocked: false,
   isBuildEnabled: true,
