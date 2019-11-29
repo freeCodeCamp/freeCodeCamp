@@ -51,6 +51,19 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
       );
     }
   }
+
+  if (!env.stripePublicKey || !env.servicebotId) {
+    if (process.env.FREECODECAMP_NODE_ENV === 'production') {
+      throw new Error(
+        'Stripe public key and Servicebot id are required to start the client!'
+      );
+    } else {
+      reporter.info(
+        'Stripe public key or Servicebot id missing or invalid. Required for' +
+          ' donations.'
+      );
+    }
+  }
   const { createPage } = actions;
 
   return new Promise((resolve, reject) => {

@@ -60,6 +60,7 @@ class DonateFormChildViewForHOC extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.postDonation = this.postDonation.bind(this);
     this.resetDonation = this.resetDonation.bind(this);
+    this.hideAmountOptions(false);
   }
 
   getUserEmail() {
@@ -226,7 +227,6 @@ class DonateFormChildViewForHOC extends Component {
         reset: this.resetDonation
       });
     }
-    this.hideAmountOptions(false);
     return this.renderDonateForm();
   }
 }
