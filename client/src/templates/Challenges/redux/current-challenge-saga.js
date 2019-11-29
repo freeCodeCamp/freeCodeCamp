@@ -1,19 +1,16 @@
-import { put, select, call, takeEvery, take, delay } from 'redux-saga/effects';
+import { put, select, call, takeEvery } from 'redux-saga/effects';
 import store from 'store';
 
 import {
   isSignedInSelector,
   updateComplete,
-  updateFailed,
-  openDonationModal,
-  shouldRequestDonationSelector,
-  donationRequested
+  updateFailed
 } from '../../../redux';
 
 import { post } from '../../../utils/ajax';
 
 import { randomCompliment } from '../utils/get-words';
-import { updateSuccessMessage, types as challTypes } from './';
+import { updateSuccessMessage } from './';
 
 export const CURRENT_CHALLENGE_KEY = 'currentChallengeId';
 
@@ -36,19 +33,6 @@ export function* currentChallengeSaga({ payload: id }) {
   }
 }
 
-function* showDonateModalSaga() {
-  /* wait for the newchallenge to be mounted to avoid mounting
-    the donation modal twice, once for the old chall and once for the new one
-    */
-  let shouldRequestDonation = yield select(shouldRequestDonationSelector);
-  if (shouldRequestDonation) {
-    yield take(challTypes.closeModal);
-    yield delay(1000);
-    yield put(openDonationModal());
-    yield put(donationRequested());
-  }
-}
-
 export function* updateSuccessMessageSaga() {
   yield put(updateSuccessMessage(randomCompliment()));
 }
@@ -56,7 +40,6 @@ export function* updateSuccessMessageSaga() {
 export function createCurrentChallengeSaga(types) {
   return [
     takeEvery(types.challengeMounted, currentChallengeSaga),
-    takeEvery(types.challengeMounted, updateSuccessMessageSaga),
-    takeEvery(types.lastBlockChalSubmitted, showDonateModalSaga)
+    takeEvery(types.challengeMounted, updateSuccessMessageSaga)
   ];
 }

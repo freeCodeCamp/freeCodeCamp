@@ -10,6 +10,7 @@ import { createAppMountSaga } from './app-mount-saga';
 import { createReportUserSaga } from './report-user-saga';
 import { createShowCertSaga } from './show-cert-saga';
 import { createNightModeSaga } from './night-mode-saga';
+import { createDonationSaga } from './donation-saga';
 
 import hardGoToEpic from './hard-go-to-epic';
 import failedUpdatesEpic from './failed-updates-epic';
@@ -59,6 +60,7 @@ export const types = createTypes(
     'openDonationModal',
     'onlineStatusChange',
     'resetUserData',
+    'tryToShowDonationModal',
     'submitComplete',
     'updateComplete',
     'updateCurrentChallengeId',
@@ -77,6 +79,7 @@ export const epics = [hardGoToEpic, failedUpdatesEpic, updateCompleteEpic];
 export const sagas = [
   ...createAcceptTermsSaga(types),
   ...createAppMountSaga(types),
+  ...createDonationSaga(types),
   ...createFetchUserSaga(types),
   ...createShowCertSaga(types),
   ...createReportUserSaga(types),
@@ -85,6 +88,9 @@ export const sagas = [
 
 export const appMount = createAction(types.appMount);
 
+export const tryToShowDonationModal = createAction(
+  types.tryToShowDonationModal
+);
 export const closeDonationModal = createAction(types.closeDonationModal);
 export const openDonationModal = createAction(types.openDonationModal);
 export const donationRequested = createAction(types.donationRequested);
