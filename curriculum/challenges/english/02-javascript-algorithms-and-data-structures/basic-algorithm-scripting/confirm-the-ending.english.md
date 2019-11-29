@@ -43,7 +43,7 @@ tests:
     testString: assert(confirmEnding("If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing", "mountain") === false);
   - text: <code>confirmEnding("Abstraction", "action")</code> should return true.
     testString: assert(confirmEnding("Abstraction", "action") === true);
-  - text: Do not use the built-in method <code>.endsWith()</code> to solve the challenge.
+  - text: Your code should not use the built-in method <code>.endsWith()</code> to solve the challenge.
     testString: assert(!(/\.endsWith\(.*?\)\s*?;?/.test(code)) && !(/\['endsWith'\]/.test(code)));
 
 ```

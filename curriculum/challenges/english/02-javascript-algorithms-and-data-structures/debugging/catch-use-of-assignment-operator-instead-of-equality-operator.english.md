@@ -36,7 +36,7 @@ Fix the condition so the program runs the right branch, and the appropriate valu
 tests:
   - text: Your code should fix the condition so it checks for equality, instead of using assignment.
     testString: assert(result == "Not equal!");
-  - text: The condition can use either <code>==</code> or <code>===</code> to test for equality.
+  - text: The condition should use either <code>==</code> or <code>===</code> to test for equality.
     testString: assert(code.match(/x\s*?===?\s*?y/g));
 
 ```
