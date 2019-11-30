@@ -41,14 +41,17 @@
 .certificate-outer-wrapper .certification-donation {
   padding: 15px 0px;
 }
-.certificate-outer-wrapper .certification-donation a {
-  padding: 5px 10px;
+
+.certificate-outer-wrapper .certification-donation .btn {
+  background-color: var(--gray-15);
+  border-color: var(--gray-85);
+  color: var(--gray-85);
 }
 
-.certificate-outer-wrapper .certification-donation a:hover {
-  cursor: pointer;
-  background: var(--theme-color);
-  color: white;
+.certificate-outer-wrapper .certification-donation .btn:hover {
+  border-color: var(--gray-85);
+  background-color: var(--gray-85);
+  color: var(--gray-05);
 }
 
 .certification-namespace header {

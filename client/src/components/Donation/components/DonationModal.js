@@ -6,6 +6,7 @@ import { createSelector } from 'reselect';
 import { Modal, Button } from '@freecodecamp/react-bootstrap';
 import { Spacer, Link } from '../../../components/helpers';
 import { blockNameify } from '../../../../utils/blockNameify';
+import Heart from '../../../assets/icons/Heart';
 
 import ga from '../../../analytics';
 import {
@@ -59,6 +60,7 @@ class DonateModal extends Component {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
+          <Heart />
           <Spacer />
           <p>Nicely done. You just completed {blockNameify(block)}.</p>
           <p>Help us create even more learning resources like this.</p>
@@ -66,7 +68,7 @@ class DonateModal extends Component {
         </Modal.Body>
         <Modal.Footer>
           <Link
-            className='btn-invert btn btn-lg btn-primary btn-block'
+            className='btn-invert btn btn-lg btn-primary btn-block btn-cta'
             onClick={this.props.closeDonationModal}
             to={`/donate`}
           >

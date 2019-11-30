@@ -158,7 +158,7 @@ class ShowCertification extends Component {
               around the world. Make a tax-deductible supporting donation to our
               nonprofit today.
             </p>
-            <Link onClick={donationRequested} to={'/donate'}>
+            <Link className={'btn'} onClick={donationRequested} to={'/donate'}>
               Check out our donation dashboard
             </Link>
           </Row>
