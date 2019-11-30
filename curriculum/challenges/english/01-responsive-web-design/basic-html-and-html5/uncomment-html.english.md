@@ -30,7 +30,7 @@ tests:
   - text: Your <code>p</code> element should be visible on the page by uncommenting it.
     testString: assert($("p").length > 0);
   - text: No trailing comment tags should be visible on the page (i.e. <code>--></code>).
-    testString: console.log($('*:contains("-->")')[1]);assert(!$('*:contains("-->")')[1]);
+    testString: assert(!$('*:contains("-->")')[1]);
 
 ```
 
