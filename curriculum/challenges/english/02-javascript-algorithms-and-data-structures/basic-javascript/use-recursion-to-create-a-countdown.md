@@ -12,7 +12,7 @@ In a [previous challenge](/learn/javascript-algorithms-and-data-structures/basic
 
 As mentioned in the previous challenge, there will be a <dfn>base case</dfn>.  The base case tells the recursive function when it no longer needs to call itself.  It is a simple case where the return value is already known. There will also be a <dfn>recursive call</dfn> which executes the original function with different arguments. If the function is written correctly, eventually the base case will be reached.
 
-For example, say you want to write a recursive function that returns an array containing the numbers 1 through n.  This function will need to accept an argument <code>n</code> representing the final number. Then it will need to call itself with progressively smaller values of <code>n</code> until it reaches 1. You could write the function as follows:
+For example, say you want to write a recursive function that returns an array containing the numbers <code>1</code> through <code>n</code>.  This function will need to accept an argument, <code>n</code>, representing the final number. Then it will need to call itself with progressively smaller values of <code>n</code> until it reaches <code>1</code>. You could write the function as follows:
 
 ```javascript
 function count(n) {
