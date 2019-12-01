@@ -109,19 +109,9 @@ class Editor extends Component {
         useShadows: false,
         verticalScrollbarSize: 5
       },
-      quickSuggestions: {
-        other: false,
-        comments: false,
-        strings: false
-      },
       parameterHints: {
         enabled: false
-      },
-      ordBasedSuggestions: false,
-      suggestOnTriggerCharacters: false,
-      acceptSuggestionOnEnter: 'off',
-      tabCompletion: 'off',
-      wordBasedSuggestions: false
+      }
     };
 
     this._editor = null;
