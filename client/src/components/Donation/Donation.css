@@ -163,16 +163,12 @@ li.disabled > a {
   padding: 20px;
 }
 
-.donation-modal p {
-  margin: 0;
-}
-
 .heart-icon-contaier {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 30px;
+  margin: 40px;
 }
 
 .heart-icon {
@@ -193,5 +189,32 @@ li.disabled > a {
   100% {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+.donation-modal p {
+  margin: 0;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.donation-modal .modal-title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 991px) {
+  .heart-icon-contaier {
+    margin: 30px;
+  }
+  .donation-modal p {
+    font-weight: 400;
+    font-size: 1rem;
+  }
+  .donation-modal .modal-title {
+    font-weight: 600;
+    font-size: 1.2rem;
   }
 }

@@ -55,7 +55,7 @@ class DonateModal extends Component {
     return (
       <Modal bsSize='lg' className='donation-modal' show={show}>
         <Modal.Header className='fcc-modal'>
-          <Modal.Title className='text-center'>
+          <Modal.Title className='modal-title text-center'>
             <strong>Support freeCodeCamp.org</strong>
           </Modal.Title>
         </Modal.Header>
