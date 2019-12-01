@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Modal, Button } from '@freecodecamp/react-bootstrap';
-import { Spacer, Link } from '../../../components/helpers';
+import { Link } from '../../../components/helpers';
 import { blockNameify } from '../../../../utils/blockNameify';
 import Heart from '../../../assets/icons/Heart';
 
@@ -60,11 +60,15 @@ class DonateModal extends Component {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Heart />
-          <Spacer />
-          <p>Nicely done. You just completed {blockNameify(block)}.</p>
-          <p>Help us create even more learning resources like this.</p>
-          <Spacer />
+          <p className='text-center'>
+            Nicely done. You just completed {blockNameify(block)}.
+          </p>
+          <div className='heart-icon-contaier'>
+            <Heart className='heart-icon' />
+          </div>
+          <p className='text-center'>
+            Help us create even more learning resources like this.
+          </p>
         </Modal.Body>
         <Modal.Footer>
           <Link

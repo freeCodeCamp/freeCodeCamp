@@ -15,7 +15,7 @@ function GreenNotCompleted(props) {
         {...props}
       >
         <g fill='none' fillRule='evenodd'>
-          <g fill='#F25050'>
+          <g fill='var(--love-color)'>
             <ellipse cx='140.5' cy={59} id='a' rx='59.5' ry={59} />
             <circle cx={59} cy={59} r={59} />
             <rect
