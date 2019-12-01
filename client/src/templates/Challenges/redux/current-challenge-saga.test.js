@@ -1,14 +1,12 @@
-// import {
-//   canRequestDonationSaga,
-//   createCurrentChallengeSaga
-// } from './current-challenge-saga';
-// import { types as challTypes } from './';
+/* global  expect */
+import { canRequestDonationSaga } from './current-challenge-saga';
+import { types as appTypes } from '../../../redux';
 
-// describe('current-challenge-saga', () => {
-//   it('should call canRequestDonation after lastBlockChalSubmitted', () => {
-//     //const gen = canRequestDonationSaga();
-//     console.log(createCurrentChallengeSaga(challTypes)[2].payload);
-//     //console.log(gen.next().value);
-//     expect(true).toEqual(true);
-//   });
-// });
+describe('canRequestDonationSaga', () => {
+  it('should call canRequestDonation', () => {
+    const gen = canRequestDonationSaga();
+    expect(gen.next().value.payload.action.type).toEqual(
+      appTypes.canRequestDonation
+    );
+  });
+});
