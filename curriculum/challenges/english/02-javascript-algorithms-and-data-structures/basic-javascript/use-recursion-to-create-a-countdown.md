@@ -21,7 +21,7 @@ function countup(n) {
   } else {
     const countArray = countup(n - 1);
     countArray.push(n);
-    return countArray ;
+    return countArray;
   }
 }
 console.log(countup(5)); // [ 1, 2, 3, 4, 5 ]
