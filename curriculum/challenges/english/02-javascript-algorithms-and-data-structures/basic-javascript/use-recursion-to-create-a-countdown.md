@@ -34,7 +34,7 @@ At first this is counterintuitive since the value of `n` <em>decreases</em>, but
 ## Instructions
 <section id='instructions'>
 
-We have defined a function called <code>countdown</code> with one parameter <code>n</code>.  The function should use recurion to return an array containing the integers n through 1 based on the <code>n</code> parameter. If the function is called with a number less than 1, the function should return an empty array. 
+We have defined a function called <code>countdown</code> with one parameter (<code>n</code>).  The function should use recursion to return an array containing the integers <code>n</code> through <code>1</code> based on the <code>n</code> parameter. If the function is called with a number less than 1, the function should return an empty array. 
 For example, calling this function with <code>n = 5</code> should return the array <code>[5, 4, 3, 2, 1]</code>.
 Your function must use recursion by calling itself and must not use loops of any kind.
 
