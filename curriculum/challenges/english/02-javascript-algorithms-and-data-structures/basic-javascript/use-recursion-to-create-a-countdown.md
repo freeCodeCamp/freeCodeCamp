@@ -15,7 +15,7 @@ As mentioned in the previous challenge, there will be a <dfn>base case</dfn>.  T
 For example, say you want to write a recursive function that returns an array containing the numbers <code>1</code> through <code>n</code>.  This function will need to accept an argument, <code>n</code>, representing the final number. Then it will need to call itself with progressively smaller values of <code>n</code> until it reaches <code>1</code>. You could write the function as follows:
 
 ```javascript
-function count(n) {
+function countup(n) {
   if (n < 1) {
     return [];
   } else {
