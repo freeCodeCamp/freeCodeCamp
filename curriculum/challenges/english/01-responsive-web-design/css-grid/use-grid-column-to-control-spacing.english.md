@@ -34,8 +34,14 @@ Make the item with the class <code>item5</code> consume the last two columns of 
 tests:
   - text: <code>item5</code> class should have a <code>grid-column</code> property.
     testString: assert($('style').text().replace(/\s/g, '').match(/\.item5{.*grid-column:.*}/g));
-  - text: <code>item5</code> class should have a <code>grid-column</code> property which results in the <code>div</code> with the <code>item5</code> consuming the last two columns of the grid.
-    testString: assert(hasCorrectSpacing());
+  - text: <code>item5</code> class should have a <code>grid-column</code> property which results in it consuming the last two columns of the grid.
+    testString: "
+      const colStart = getComputedStyle($('.item5')[0]).gridColumnStart;
+      const colEnd = getComputedStyle($('.item5')[0]).gridColumnEnd;
+      const result = colStart.toString() + colEnd.toString();
+      const correctResults = ['24', '2-1', '2span 2', '2span2', 'span 2-1', '-12', 'span 2span 2', 'span 2auto', 'autospan 2'];
+      assert(correctResults.includes(result));
+    "
 
 ```
 
@@ -83,24 +89,6 @@ tests:
 ```
 
 </div>
-
-### Before Test
-<div id='html-setup'>
-
-```html
-<script>
-const hasCorrectSpacing = () => {
-  const contTwoPlusThreePlusGapWidth = $('.item2').width() * 2 + 10;
-  const item5Width = $('.item5').width();
-  const diff = Math.abs(contTwoPlusThreePlusGapWidth - item5Width);
-  /* To avoid rounding errors the largest allowed diff is set at 0.01px */
-  return diff <= 0.01; 
-};
-</script>
-```
-
-</div> 
-
 </section>
 
 ## Solution
