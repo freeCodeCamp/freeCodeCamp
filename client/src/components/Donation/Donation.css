@@ -163,7 +163,7 @@ li.disabled > a {
   padding: 20px;
 }
 
-.heart-icon-contaier {
+.heart-icon-container {
   display: flex;
   flex-direction: column;
   align-items: center;
