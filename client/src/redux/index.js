@@ -56,7 +56,7 @@ export const types = createTypes(
   [
     'appMount',
     'hardGoTo',
-    'canRequestDonation',
+    'allowDonationRequests',
     'closeDonationModal',
     'donationRequested',
     'openDonationModal',
