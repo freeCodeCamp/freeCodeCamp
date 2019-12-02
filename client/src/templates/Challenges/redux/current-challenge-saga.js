@@ -39,7 +39,7 @@ export function* updateSuccessMessageSaga() {
 }
 
 export function* canRequestDonationSaga() {
-  yield put(canRequestDonation());
+  yield put(allowDonationRequests());
 }
 
 export function createCurrentChallengeSaga(types) {
