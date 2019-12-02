@@ -122,11 +122,19 @@ a:focus {
   color: var(--secondary-color);
 }
 
-.fcc-modal .close {
-  color: var(--secondary-color);
-  opacity: 100%;
+button.close {
+  color: inherit;
+  background-color: transparent;
   font-size: 28px;
+  opacity: 0.5;
   text-shadow: none;
+}
+
+button.close:hover,
+button.close:focus {
+  color: inherit;
+  opacity: 1;
+  background-color: transparent;
 }
 
 .modal-content {
