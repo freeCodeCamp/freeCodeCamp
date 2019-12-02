@@ -5,7 +5,7 @@ import {
   isSignedInSelector,
   updateComplete,
   updateFailed,
-  canRequestDonation
+  allowDonationRequests
 } from '../../../redux';
 
 import { post } from '../../../utils/ajax';
