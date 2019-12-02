@@ -38,7 +38,7 @@ export function* updateSuccessMessageSaga() {
   yield put(updateSuccessMessage(randomCompliment()));
 }
 
-export function* canRequestDonationSaga() {
+export function* allowDonationRequestsSaga() {
   yield put(allowDonationRequests());
 }
 
