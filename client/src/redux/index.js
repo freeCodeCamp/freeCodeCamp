@@ -212,7 +212,7 @@ function spreadThePayloadOnUser(state, payload) {
 
 export const reducer = handleActions(
   {
-    [types.canRequestDonation]: state => ({
+    [types.allowDonationRequests]: state => ({
       ...state,
       canRequestDonation: true
     }),
