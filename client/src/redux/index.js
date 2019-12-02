@@ -93,7 +93,7 @@ export const appMount = createAction(types.appMount);
 export const tryToShowDonationModal = createAction(
   types.tryToShowDonationModal
 );
-export const canRequestDonation = createAction(types.canRequestDonation);
+export const allowDonationRequests = createAction(types.allowDonationRequests);
 export const closeDonationModal = createAction(types.closeDonationModal);
 export const openDonationModal = createAction(types.openDonationModal);
 export const donationRequested = createAction(types.donationRequested);
