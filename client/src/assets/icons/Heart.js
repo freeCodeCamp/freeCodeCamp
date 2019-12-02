@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 
 const propTypes = {};
 
-function GreenNotCompleted(props) {
+function Heart(props) {
   return (
     <Fragment>
       <span className='sr-only'>Heart</span>
