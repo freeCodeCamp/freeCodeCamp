@@ -162,3 +162,59 @@ li.disabled > a {
 .servicebot-embed-panel .panel {
   padding: 20px;
 }
+
+.heart-icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 40px;
+}
+
+.heart-icon {
+  width: 150px;
+  height: auto;
+  transform: scale(1.5);
+  opacity: 0;
+  animation: heart-icon-animation 1s linear 100ms forwards;
+}
+
+@keyframes heart-icon-animation {
+  33% {
+    transform: scale(1.2);
+  }
+  66% {
+    transform: scale(1.25);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.donation-modal p {
+  margin: 0;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.donation-modal .modal-title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 991px) {
+  .heart-icon-container {
+    margin: 30px;
+  }
+  .donation-modal p {
+    font-weight: 400;
+    font-size: 1rem;
+  }
+  .donation-modal .modal-title {
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+}
