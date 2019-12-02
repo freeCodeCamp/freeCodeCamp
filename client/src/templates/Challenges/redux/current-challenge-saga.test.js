@@ -1,5 +1,5 @@
 /* global  expect */
-import { canRequestDonationSaga } from './current-challenge-saga';
+import { allowDonationRequestsSaga } from './current-challenge-saga';
 import { types as appTypes } from '../../../redux';
 
 describe('allowDonationRequestsSaga', () => {
