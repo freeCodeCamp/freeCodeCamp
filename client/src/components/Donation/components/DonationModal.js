@@ -42,7 +42,6 @@ const propTypes = {
 };
 
 class DonateModal extends Component {
-  }
   render() {
     const { show, block } = this.props;
     if (show) {
