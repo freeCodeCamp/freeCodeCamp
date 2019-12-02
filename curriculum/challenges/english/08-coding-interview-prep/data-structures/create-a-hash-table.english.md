@@ -36,7 +36,7 @@ tests:
   - text: The remove method should accept a key as input and should remove the associated key value pair.
     testString: assert((function() { var test = false; if (typeof HashTable !== 'undefined') { test = new HashTable() }; test.add('key', 'value'); test.remove('key'); return (test.lookup('key') === null)})());
   - text: Items should be added using the hash function.
-    testString: assert((function() { var test = false; if (typeof HashTable !== 'undefined') { test = new HashTable() }; called = 0; test.add('key1','value1'); test.add('key2','value2'); test.add('key3','value3'); return (called === 3)})());
+    testString: assert((function() { var test = false; if (typeof HashTable !== 'undefined') { test = new HashTable() }; called = 0; test.add('key1','value1'); test.add('key2','value2'); test.add('key3','value3'); return (called >= 3 && called % 3 === 0)})());
   - text: The hash table should handle collisions.
     testString: assert((function() { var test = false; if (typeof HashTable !== 'undefined') { test = new HashTable() }; called = 0; test.add('key1','value1'); test.add('1key','value2'); test.add('ke1y','value3'); return (test.lookup('key1') === 'value1' && test.lookup('1key') == 'value2' && test.lookup('ke1y') == 'value3')})());
 ```
@@ -88,7 +88,45 @@ var hash = string => {
 <section id='solution'>
 
 ```js
-// solution required
+var called = 0;
+var hash = (string) => {
+  called++;
+  var hash = 0;
+  for (var i = 0; i < string.length; i++) { hash += string.charCodeAt(i); }
+  return hash;
+};
+var HashTable = function() {
+  this.collection = {};
+  // change code below this line
+
+  this.add = function(key, val) {
+    var theHash = hash(key);
+    if (!this.collection.hasOwnProperty(theHash)) {
+      this.collection[theHash] = {};
+    }
+    this.collection[theHash][key] = val;
+  }
+
+  this.remove = function(key) {
+    var theHash = hash(key);
+    var hashedObj = this.collection[theHash];
+    if (hashedObj.hasOwnProperty(key)) {
+      delete hashedObj[key];
+    }
+    if (!Object.keys(hashedObj).length) {
+      delete this.collection[theHash];
+    }
+  }
+
+  this.lookup = function(key) {
+    var theHash = hash(key);
+    if (this.collection.hasOwnProperty(theHash)) {
+      return this.collection[theHash][key];
+    }
+    return null
+  }
+  // change code above this line
+};
 ```
 
 </section>
