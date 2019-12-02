@@ -33,6 +33,6 @@ function Heart(props) {
 }
 
 Heart.displayName = 'Heart';
-GreenNotCompleted.propTypes = propTypes;
+Heart.propTypes = propTypes;
 
 export default Heart;
