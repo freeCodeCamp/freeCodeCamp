@@ -32,11 +32,11 @@ Each time the function is called it will print out the message <code>"Hello Worl
 
 ```yml
 tests:
-  - text: <code>reusableFunction</code> should be a function
+  - text: <code>reusableFunction</code> should be a function.
     testString: assert(typeof reusableFunction === 'function');
-  - text: <code>reusableFunction</code> should output "Hi World" to the dev console
+  - text: <code>reusableFunction</code> should output "Hi World" to the dev console.
     testString: assert(hiWorldWasLogged);
-  - text: Call <code>reusableFunction</code> after you define it
+  - text: You should call <code>reusableFunction</code> after you define it.
     testString: assert(/^\s*reusableFunction\(\)\s*/m.test(code));
 
 ```

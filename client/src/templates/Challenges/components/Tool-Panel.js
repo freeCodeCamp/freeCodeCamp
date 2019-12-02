@@ -3,7 +3,11 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import { Button } from '@freecodecamp/react-bootstrap';
+import {
+  Button,
+  DropdownButton,
+  MenuItem
+} from '@freecodecamp/react-bootstrap';
 
 import './tool-panel.css';
 import { openModal, executeChallenge } from '../redux';
@@ -42,7 +46,7 @@ function ToolPanel({
   return (
     <Fragment>
       <div
-        className={`tool-panel-group ${
+        className={`tool-panel-group button-group ${
           isMobile ? 'tool-panel-group-mobile' : ''
         }`}
       >
@@ -57,35 +61,40 @@ function ToolPanel({
         >
           {isMobile ? 'Reset' : 'Reset All Code'}
         </Button>
-        {guideUrl ? (
-          <Button
-            block={true}
-            bsStyle='primary'
-            className='btn-invert'
-            href={guideUrl}
-            target='_blank'
-          >
-            {isMobile ? 'Hint' : 'Get a hint'}
-          </Button>
-        ) : null}
-        {videoUrl ? (
-          <Button
-            block={true}
-            bsStyle='primary'
-            className='btn-invert'
-            onClick={openVideoModal}
-          >
-            {isMobile ? 'Video' : 'Watch a video'}
-          </Button>
-        ) : null}
-        <Button
+        <DropdownButton
           block={true}
           bsStyle='primary'
           className='btn-invert'
-          onClick={openHelpModal}
+          id='get-help-dropdown'
+          title={isMobile ? 'Help' : 'Get Help'}
         >
-          {isMobile ? 'Help' : 'Ask for help'}
-        </Button>
+          {guideUrl ? (
+            <MenuItem
+              bsStyle='primary'
+              className='btn-invert'
+              href={guideUrl}
+              target='_blank'
+            >
+              {'Get a Hint'}
+            </MenuItem>
+          ) : null}
+          {videoUrl ? (
+            <MenuItem
+              bsStyle='primary'
+              className='btn-invert'
+              onClick={openVideoModal}
+            >
+              {'Watch a video'}
+            </MenuItem>
+          ) : null}
+          <MenuItem
+            bsStyle='primary'
+            className='btn-invert'
+            onClick={openHelpModal}
+          >
+            {'Ask for help'}
+          </MenuItem>
+        </DropdownButton>
       </div>
     </Fragment>
   );
