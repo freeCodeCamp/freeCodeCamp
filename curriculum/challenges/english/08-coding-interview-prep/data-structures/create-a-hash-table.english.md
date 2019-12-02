@@ -108,7 +108,8 @@ var HashTable = function() {
   }
 
   this.remove = function(key) {
-    var hashedObj = this.collection[hash(key)];
+    var theHash = hash(key);
+    var hashedObj = this.collection[theHash];
     if (hashedObj.hasOwnProperty(key)) {
       delete hashedObj[key];
     }
