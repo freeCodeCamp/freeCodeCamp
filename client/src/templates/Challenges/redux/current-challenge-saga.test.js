@@ -4,7 +4,7 @@ import { types as appTypes } from '../../../redux';
 
 describe('canRequestDonationSaga', () => {
   it('should call canRequestDonation', () => {
-    const gen = canRequestDonationSaga();
+    const gen = allowDonationRequestsSaga();
     expect(gen.next().value.payload.action.type).toEqual(
       appTypes.canRequestDonation
     );
