@@ -180,7 +180,7 @@ for(var i=0; i < watchList.length; i++){
 
 // Add your code above this line
 
-console.log(JSON.stringify(rating));
+console.log(JSON.stringify(ratings));
 ```
 
 </div>
