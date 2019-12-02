@@ -13,7 +13,7 @@ import {
   usernameSelector,
   isDonatingSelector,
   isDonationRequestedSelector,
-  donationRequested
+  preventDonationRequests
 } from '../redux';
 import validCertNames from '../../utils/validCertNames';
 import { createFlashMessage } from '../components/Flash/redux';
@@ -35,7 +35,6 @@ const propTypes = {
   certDashedName: PropTypes.string,
   certName: PropTypes.string,
   createFlashMessage: PropTypes.func.isRequired,
-  donationRequested: PropTypes.func,
   fetchState: PropTypes.shape({
     pending: PropTypes.bool,
     complete: PropTypes.bool,
@@ -44,6 +43,7 @@ const propTypes = {
   isDonating: PropTypes.bool,
   isDonationRequested: PropTypes.bool,
   issueDate: PropTypes.string,
+  preventDonationRequests: PropTypes.func,
   showCert: PropTypes.func.isRequired,
   signedInUserName: PropTypes.string,
   userFetchState: PropTypes.shape({
@@ -84,7 +84,7 @@ const mapStateToProps = (state, { certName }) => {
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
-    { createFlashMessage, showCert, donationRequested },
+    { createFlashMessage, showCert, preventDonationRequests },
     dispatch
   );
 
@@ -103,7 +103,7 @@ class ShowCertification extends Component {
       validCertName,
       createFlashMessage,
       certName,
-      donationRequested,
+      preventDonationRequests,
       signedInUserName,
       isDonating,
       isDonationRequested,
@@ -158,7 +158,11 @@ class ShowCertification extends Component {
               around the world. Make a tax-deductible supporting donation to our
               nonprofit today.
             </p>
-            <Link className={'btn'} onClick={donationRequested} to={'/donate'}>
+            <Link
+              className={'btn'}
+              onClick={preventDonationRequests}
+              to={'/donate'}
+            >
               Check out our donation dashboard
             </Link>
           </Row>
