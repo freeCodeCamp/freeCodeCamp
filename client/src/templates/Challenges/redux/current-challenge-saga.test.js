@@ -6,7 +6,7 @@ describe('canRequestDonationSaga', () => {
   it('should call allowDonationRequests', () => {
     const gen = allowDonationRequestsSaga();
     expect(gen.next().value.payload.action.type).toEqual(
-      appTypes.canRequestDonation
+      appTypes.allowDonationRequests
     );
   });
 });
