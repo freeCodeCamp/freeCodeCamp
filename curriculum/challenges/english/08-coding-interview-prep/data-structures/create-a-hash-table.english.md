@@ -114,7 +114,7 @@ var HashTable = function() {
       delete hashedObj[key];
     }
     if (!Object.keys(hashedObj).length) {
-      delete this.collection[hash(key)];
+      delete this.collection[theHash];
     }
   }
 
