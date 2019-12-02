@@ -63,7 +63,7 @@ class DonateModal extends Component {
           <p className='text-center'>
             Nicely done. You just completed {blockNameify(block)}.
           </p>
-          <div className='heart-icon-contaier'>
+          <div className='heart-icon-container'>
             <Heart className='heart-icon' />
           </div>
           <p className='text-center'>
