@@ -35,4 +35,4 @@ function Heart(props) {
 Heart.displayName = 'Heart';
 GreenNotCompleted.propTypes = propTypes;
 
-export default GreenNotCompleted;
+export default Heart;
