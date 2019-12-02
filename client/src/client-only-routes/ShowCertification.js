@@ -8,7 +8,12 @@ import { Grid, Row, Col, Image } from '@freecodecamp/react-bootstrap';
 import {
   showCertSelector,
   showCertFetchStateSelector,
-  showCert
+  showCert,
+  userFetchStateSelector,
+  usernameSelector,
+  isDonatingSelector,
+  isDonationRequestedSelector,
+  preventDonationRequests
 } from '../redux';
 import validCertNames from '../../utils/validCertNames';
 import { createFlashMessage } from '../components/Flash/redux';
@@ -16,7 +21,7 @@ import standardErrorMessage from '../utils/standardErrorMessage';
 import reallyWeirdErrorMessage from '../utils/reallyWeirdErrorMessage';
 
 import RedirectHome from '../components/RedirectHome';
-import { Loader } from '../components/helpers';
+import { Loader, Link } from '../components/helpers';
 
 const propTypes = {
   cert: PropTypes.shape({
@@ -35,8 +40,15 @@ const propTypes = {
     complete: PropTypes.bool,
     errored: PropTypes.bool
   }),
+  isDonating: PropTypes.bool,
+  isDonationRequested: PropTypes.bool,
   issueDate: PropTypes.string,
+  preventDonationRequests: PropTypes.func,
   showCert: PropTypes.func.isRequired,
+  signedInUserName: PropTypes.string,
+  userFetchState: PropTypes.shape({
+    complete: PropTypes.bool
+  }),
   userFullName: PropTypes.string,
   username: PropTypes.string,
   validCertName: PropTypes.bool
@@ -47,16 +59,34 @@ const mapStateToProps = (state, { certName }) => {
   return createSelector(
     showCertSelector,
     showCertFetchStateSelector,
-    (cert, fetchState) => ({
+    usernameSelector,
+    userFetchStateSelector,
+    isDonatingSelector,
+    isDonationRequestedSelector,
+    (
       cert,
       fetchState,
-      validCertName
+      signedInUserName,
+      userFetchState,
+      isDonating,
+      isDonationRequested
+    ) => ({
+      cert,
+      fetchState,
+      validCertName,
+      signedInUserName,
+      userFetchState,
+      isDonating,
+      isDonationRequested
     })
   );
 };
 
 const mapDispatchToProps = dispatch =>
-  bindActionCreators({ createFlashMessage, showCert }, dispatch);
+  bindActionCreators(
+    { createFlashMessage, showCert, preventDonationRequests },
+    dispatch
+  );
 
 class ShowCertification extends Component {
   componentDidMount() {
@@ -72,7 +102,12 @@ class ShowCertification extends Component {
       fetchState,
       validCertName,
       createFlashMessage,
-      certName
+      certName,
+      preventDonationRequests,
+      signedInUserName,
+      isDonating,
+      isDonationRequested,
+      userFetchState
     } = this.props;
 
     if (!validCertName) {
@@ -81,6 +116,7 @@ class ShowCertification extends Component {
     }
 
     const { pending, complete, errored } = fetchState;
+    const { complete: userComplete } = userFetchState;
 
     if (pending) {
       return <Loader fullScreen={true} />;
@@ -103,8 +139,40 @@ class ShowCertification extends Component {
       certTitle,
       completionTime
     } = cert;
+
+    let conditionalDonationMessage = '';
+
+    if (
+      userComplete &&
+      signedInUserName === username &&
+      !isDonating &&
+      !isDonationRequested
+    ) {
+      conditionalDonationMessage = (
+        <Grid>
+          <Row className='certification-donation text-center'>
+            <p>
+              Only you can see this message. Congratulations on earning this
+              certification. It’s no easy task. Running freeCodeCamp isn’t easy
+              either. Nor is it cheap. Help us help you and many other people
+              around the world. Make a tax-deductible supporting donation to our
+              nonprofit today.
+            </p>
+            <Link
+              className={'btn'}
+              onClick={preventDonationRequests}
+              to={'/donate'}
+            >
+              Check out our donation dashboard
+            </Link>
+          </Row>
+        </Grid>
+      );
+    }
+
     return (
       <div className='certificate-outer-wrapper'>
+        {conditionalDonationMessage}
         <Grid className='certificate-wrapper certification-namespace'>
           <Row>
             <header>

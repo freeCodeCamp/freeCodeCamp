@@ -15,7 +15,9 @@ export default function layoutSelector({ element, props }) {
     return <DefaultLayout pathname={pathname}>{element}</DefaultLayout>;
   }
   if (/^\/certification(\/.*)*/.test(pathname)) {
-    return <CertificationLayout>{element}</CertificationLayout>;
+    return (
+      <CertificationLayout pathname={pathname}>{element}</CertificationLayout>
+    );
   }
   if (/^\/guide(\/.*)*/.test(pathname)) {
     console.log('Hitting guide for some reason. Need a redirect.');

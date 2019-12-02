@@ -132,6 +132,7 @@ export default function completionEpic(action$, state$) {
       const meta = challengeMetaSelector(state);
       const { nextChallengePath, introPath, challengeType } = meta;
       const closeChallengeModal = of(closeModal('completion'));
+
       let submitter = () => of({ type: 'no-user-signed-in' });
       if (
         !(challengeType in submitTypes) ||

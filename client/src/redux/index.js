@@ -10,6 +10,7 @@ import { createAppMountSaga } from './app-mount-saga';
 import { createReportUserSaga } from './report-user-saga';
 import { createShowCertSaga } from './show-cert-saga';
 import { createNightModeSaga } from './night-mode-saga';
+import { createDonationSaga } from './donation-saga';
 
 import hardGoToEpic from './hard-go-to-epic';
 import failedUpdatesEpic from './failed-updates-epic';
@@ -31,6 +32,7 @@ export const defaultFetchState = {
 
 const initialState = {
   appUsername: '',
+  canRequestDonation: false,
   completionCount: 0,
   currentChallengeId: store.get(CURRENT_CHALLENGE_KEY),
   donationRequested: false,
@@ -53,12 +55,14 @@ const initialState = {
 export const types = createTypes(
   [
     'appMount',
-    'closeDonationModal',
-    'donationRequested',
     'hardGoTo',
+    'allowDonationRequests',
+    'closeDonationModal',
+    'preventDonationRequests',
     'openDonationModal',
     'onlineStatusChange',
     'resetUserData',
+    'tryToShowDonationModal',
     'submitComplete',
     'updateComplete',
     'updateCurrentChallengeId',
@@ -77,6 +81,7 @@ export const epics = [hardGoToEpic, failedUpdatesEpic, updateCompleteEpic];
 export const sagas = [
   ...createAcceptTermsSaga(types),
   ...createAppMountSaga(types),
+  ...createDonationSaga(types),
   ...createFetchUserSaga(types),
   ...createShowCertSaga(types),
   ...createReportUserSaga(types),
@@ -85,9 +90,15 @@ export const sagas = [
 
 export const appMount = createAction(types.appMount);
 
+export const tryToShowDonationModal = createAction(
+  types.tryToShowDonationModal
+);
+export const allowDonationRequests = createAction(types.allowDonationRequests);
 export const closeDonationModal = createAction(types.closeDonationModal);
 export const openDonationModal = createAction(types.openDonationModal);
-export const donationRequested = createAction(types.donationRequested);
+export const preventDonationRequests = createAction(
+  types.preventDonationRequests
+);
 
 export const onlineStatusChange = createAction(types.onlineStatusChange);
 
@@ -134,7 +145,8 @@ export const completedChallengesSelector = state =>
   userSelector(state).completedChallenges || [];
 export const completionCountSelector = state => state[ns].completionCount;
 export const currentChallengeIdSelector = state => state[ns].currentChallengeId;
-export const donationRequestedSelector = state => state[ns].donationRequested;
+export const isDonationRequestedSelector = state => state[ns].donationRequested;
+export const isDonatingSelector = state => userSelector(state).isDonating;
 
 export const isOnlineSelector = state => state[ns].isOnline;
 export const isSignedInSelector = state => !!state[ns].appUsername;
@@ -145,21 +157,14 @@ export const signInLoadingSelector = state =>
 export const showCertSelector = state => state[ns].showCert;
 export const showCertFetchStateSelector = state => state[ns].showCertFetchState;
 
-export const showDonationSelector = state => {
-  const completedChallenges = completedChallengesSelector(state);
-  const completionCount = completionCountSelector(state);
-  const currentCompletedLength = completedChallenges.length;
-  const donationRequested = donationRequestedSelector(state);
-  // the user has not completed 9 challenges in total yet
-  if (currentCompletedLength < 9) {
-    return false;
-  }
-  // this will mean we are on the 10th submission in total for the user
-  if (completedChallenges.length === 9 && donationRequested === false) {
-    return true;
-  }
-  // this will mean we are on the 3rd submission for this browser session
-  if (completionCount === 2 && donationRequested === false) {
+export const shouldRequestDonationSelector = state => {
+  const isDonationRequested = isDonationRequestedSelector(state);
+  const isDonating = isDonatingSelector(state);
+  if (
+    isDonationRequested === false &&
+    isDonating === false &&
+    state[ns].canRequestDonation
+  ) {
     return true;
   }
   return false;
@@ -209,6 +214,10 @@ function spreadThePayloadOnUser(state, payload) {
 
 export const reducer = handleActions(
   {
+    [types.allowDonationRequests]: state => ({
+      ...state,
+      canRequestDonation: true
+    }),
     [types.fetchUser]: state => ({
       ...state,
       userFetchState: { ...defaultFetchState }
@@ -288,7 +297,7 @@ export const reducer = handleActions(
       ...state,
       showDonationModal: true
     }),
-    [types.donationRequested]: state => ({
+    [types.preventDonationRequests]: state => ({
       ...state,
       donationRequested: true
     }),
