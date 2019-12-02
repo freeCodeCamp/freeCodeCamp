@@ -28,7 +28,7 @@ You can also access capture groups in the replacement string with dollar signs (
 
 ## Instructions
 <section id='instructions'>
-Write a regex using three capture groups that will replace the string "one two three" with the string "three two one" and assign the result to the <code>replaceText</code> variable.
+Write a regex using three capture groups that will replace the string "one two three" with the string "three two one" and assign the result to the <code>result</code> variable.
 </section>
 
 ## Tests
@@ -47,7 +47,7 @@ tests:
   - text: <code>replaceText</code> should use parenthesized submatch string(s).
     testString: '{
       const re = /(\$\d{1,2})+(?:[\D]|\b)/g;
-      assert(replaceText.match(re));
+      assert(replaceText.match(re).length >= 3);
     }'
 
 ```
