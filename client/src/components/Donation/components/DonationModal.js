@@ -42,7 +42,6 @@ const propTypes = {
 };
 
 class DonateModal extends Component {
-  constructor(...props) {
     super(...props);
   }
 
