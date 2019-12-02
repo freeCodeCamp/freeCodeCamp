@@ -46,6 +46,6 @@ export function createCurrentChallengeSaga(types) {
   return [
     takeEvery(types.challengeMounted, currentChallengeSaga),
     takeEvery(types.challengeMounted, updateSuccessMessageSaga),
-    takeEvery(types.lastBlockChalSubmitted, canRequestDonationSaga)
+    takeEvery(types.lastBlockChalSubmitted, allowDonationRequestsSaga)
   ];
 }
