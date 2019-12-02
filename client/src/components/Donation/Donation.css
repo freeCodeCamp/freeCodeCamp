@@ -206,7 +206,7 @@ li.disabled > a {
 }
 
 @media screen and (max-width: 991px) {
-  .heart-icon-contaier {
+  .heart-icon-container {
     margin: 30px;
   }
   .donation-modal p {
