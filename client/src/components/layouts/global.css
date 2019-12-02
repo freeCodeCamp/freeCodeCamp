@@ -123,7 +123,7 @@ a:focus {
 }
 
 button.close {
-  color: var(--secondary-color);
+  color: inherit;
   background-color: transparent;
   font-size: 28px;
   opacity: 0.5;
@@ -132,7 +132,7 @@ button.close {
 
 button.close:hover,
 button.close:focus {
-  color: var(--secondary-color);
+  color: inherit;
   opacity: 1;
   background-color: transparent;
 }
