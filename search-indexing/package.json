@@ -9,7 +9,9 @@
     "init": "node init",
     "build:server": "npx babel server --out-dir lib --ignore spec.js,test.js",
     "format": "prettier --single-quote es5 --write './!(packages|www)/**/*.js'",
-    "test": "jest"
+    "test": "jest",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -34,17 +36,19 @@
     "dotenv": "^6.2.0",
     "file": "^0.2.2",
     "fs-extra": "^7.0.1",
-    "googleapis": "^37.2.0",
+    "googleapis": "^39.1.0",
     "gray-matter": "^4.0.2",
     "lodash": "^4.17.15",
     "readdirp-walk": "^1.7.0",
     "rxjs": "^6.4.0",
     "secure-compare": "^3.0.1",
-    "validator": "^10.11.0"
+    "validator": "^10.11.0",
+    "snyk": "^1.256.0"
   },
   "devDependencies": {
     "html-entities": "^1.2.1",
     "jest": "^24.8.0",
     "striptags": "^3.1.1"
-  }
+  },
+  "snyk": true
 }
