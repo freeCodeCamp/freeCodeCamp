@@ -78,7 +78,11 @@
   font-size: 20px;
   text-align: right;
   margin-right: 100px;
-  color: #fff;
+  color: var(--gray-00);
+}
+
+.certification-namespace .issue-date strong {
+  color: var(--gray-00);
 }
 
 .certification-namespace .information {
