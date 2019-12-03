@@ -25,13 +25,13 @@ All textual <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, and <code
 
 ```yml
 tests:
-  - text: Give the submit button in your form the classes <code>btn btn-primary</code>.
+  - text: The submit button in your form should have the classes <code>btn btn-primary</code>.
     testString: assert($("button[type=\"submit\"]").hasClass("btn btn-primary"));
-  - text: Add a <code>&#60;i class="fa fa-paper-plane"&#62;&#60;/i&#62;</code> within your submit <code>button</code> element.
+  - text: You should add a <code>&#60;i class="fa fa-paper-plane"&#62;&#60;/i&#62;</code> within your submit <code>button</code> element.
     testString: assert($("button[type=\"submit\"]:has(i.fa.fa-paper-plane)").length > 0);
-  - text: Give the text <code>input</code> in your form the class <code>form-control</code>.
+  - text: The text <code>input</code> in your form should have the class <code>form-control</code>.
     testString: assert($("input[type=\"text\"]").hasClass("form-control"));
-  - text: Make sure each of your <code>i</code> elements has a closing tag.
+  - text: Each of your <code>i</code> elements should have a closing tag.
     testString: assert(code.match(/<\/i>/g) && code.match(/<\/i/g).length > 3);
 
 ```

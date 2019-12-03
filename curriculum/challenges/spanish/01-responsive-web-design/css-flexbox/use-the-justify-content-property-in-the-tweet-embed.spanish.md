@@ -18,7 +18,7 @@ localeTitle: Use la propiedad justify-content en el Tweet Insertar
 ```yml
 tests:
   - text: 'El elemento <code>.profile-name</code> debe tener la propiedad <code>.profile-name</code> <code>justify-content</code> establecida en cualquiera de estos valores: centro, inicio flexible, final flexible, espacio intermedio o espacio-alrededor.'
-    testString: 'assert(code.match(/header\s.profile-name\s*{\s*?.*?\s*?.*?\s*?\s*?.*?\s*?justify-content\s*:\s*(center|flex-start|flex-end|space-between|space-around)\s*;/g), "The <code>.profile-name</code> element should have the <code>justify-content</code> property set to any of these values: center, flex-start, flex-end, space-between, or space-around.");'
+    testString: 'assert(code.match(/header\s.profile-name\s*{\s*?.*?\s*?.*?\s*?\s*?.*?\s*?justify-content\s*:\s*(center|flex-start|flex-end|space-between|space-around|space-evenly)\s*;/g), "The <code>.profile-name</code> element should have the <code>justify-content</code> property set to any of these values: center, flex-start, flex-end, space-between, space-around, or space-evenly.");'
 
 ```
 

@@ -28,9 +28,9 @@ To get started, we should nest all of our HTML (except the <code>link</code> tag
 tests:
   - text: Your <code>div</code> element should have the class <code>container-fluid</code>.
     testString: assert($("div").hasClass("container-fluid"));
-  - text: Make sure your <code>div</code> element has a closing tag.
+  - text: Your <code>div</code> element should have a closing tag.
     testString: assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length);
-  - text: Make sure you have nested all HTML elements after the closing <code>style</code> tag in <code>.container-fluid</code>.
+  - text: All HTML elements after the closing <code>style</code> tag should be nested in <code>.container-fluid</code>.
     testString: assert($(".container-fluid").children().length >= 8);
 
 ```
