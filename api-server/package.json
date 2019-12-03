@@ -9,17 +9,19 @@
     "build": "babel server --out-dir lib --ignore 'node_modules /**/*','/**/*.test.js' --copy-files",
     "ensure-env": "node ../tools/scripts/build/ensure-env.js",
     "start": "cross-env DEBUG=fcc* node production-start.js",
-    "test": "jest"
+    "test": "jest",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "license": "BSD-3-Clause",
   "dependencies": {
-    "@freecodecamp/loopback-component-passport": "^1.1.0",
+    "@freecodecamp/loopback-component-passport": "^1.2.0",
     "accepts": "^1.3.7",
     "auth0-js": "^9.11.3",
     "body-parser": "^1.19.0",
     "chai": "~3.4.1",
     "compression": "^1.7.4",
-    "connect-mongo": "^1.3.2",
+    "connect-mongo": "^3.0.0",
     "cookie-parser": "^1.4.4",
     "cors": "^2.8.5",
     "csurf": "^1.10.0",
@@ -31,7 +33,7 @@
     "express-flash": "~0.0.2",
     "express-session": "^1.17.0",
     "express-state": "^1.2.0",
-    "express-validator": "^5.3.1",
+    "express-validator": "^6.0.0",
     "googleapis": "^42.0.0",
     "helmet": "^3.21.1",
     "helmet-csp": "^2.9.3",
@@ -64,7 +66,8 @@
     "shortid": "^2.2.15",
     "stripe": "^6.1.0",
     "uuid": "^3.3.3",
-    "validator": "^9.4.1"
+    "validator": "^9.4.1",
+    "snyk": "^1.256.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.4",
@@ -92,5 +95,6 @@
   },
   "resolutions": {
     "babel-core": "7.0.0-bridge.0"
-  }
+  },
+  "snyk": true
 }
