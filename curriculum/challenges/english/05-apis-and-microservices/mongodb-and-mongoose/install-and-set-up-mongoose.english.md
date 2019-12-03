@@ -7,11 +7,14 @@ forumTopicId: 301540
 
 ## Description
 <section id='description'>
-Add mongodb and mongoose to the project’s package.json. Then require mongoose. Store your mLab database URI in the private <code>.env</code> file as MONGO_URI. Connect to the database using <code>mongoose.connect(&lt;Your URI&gt;)</code>
+Add mongodb and mongoose to the project’s package.json. Then require mongoose. Store your MongoDB Atlas database URI in the private <code>.env</code> file as MONGO_URI. Connect to the database using the following syntax:
+
+```js
+mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology: true }); 
+```
+
 </section>
 
-## Instructions
-Add mongodb and mongoose to the project’s <code>package.json</code>. Then require mongoose. Store your mLab database URI in the private <code>.env</code> file as <code>MONGO_URI</code>. Connect to the database using <code>mongoose.connect(&lt;Your URI&gt;)</code>
 <section id='instructions'>
 
 </section>
