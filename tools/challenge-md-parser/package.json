@@ -8,7 +8,9 @@
   },
   "scripts": {
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "author": "",
   "license": "ISC",
@@ -29,6 +31,8 @@
     "remark-stringify": "^6.0.4",
     "to-vfile": "^5.0.1",
     "unified": "^7.0.0",
-    "unist-util-visit": "^1.4.0"
-  }
+    "unist-util-visit": "^1.4.0",
+    "snyk": "^1.256.0"
+  },
+  "snyk": true
 }
