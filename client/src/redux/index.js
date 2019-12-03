@@ -158,13 +158,8 @@ export const showCertSelector = state => state[ns].showCert;
 export const showCertFetchStateSelector = state => state[ns].showCertFetchState;
 
 export const shouldRequestDonationSelector = state => {
-  const isDonationRequested = isDonationRequestedSelector(state);
   const isDonating = isDonatingSelector(state);
-  if (
-    isDonationRequested === false &&
-    isDonating === false &&
-    state[ns].canRequestDonation
-  ) {
+  if (isDonating === false && state[ns].canRequestDonation) {
     return true;
   }
   return false;
