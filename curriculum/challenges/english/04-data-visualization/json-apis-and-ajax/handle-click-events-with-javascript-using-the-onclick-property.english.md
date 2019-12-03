@@ -10,7 +10,7 @@ forumTopicId: 301503
 You want your code to execute only once your page has finished loading. For that purpose, you can attach a JavaScript event to the document called <code>DOMContentLoaded</code>. Here's the code that does this:
 
 ```js
-document.addEventListener('DOMContentLoaded',function() {
+document.addEventListener('DOMContentLoaded', function() {
 
 });
 ```
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded',function() {
 You can implement event handlers that go inside of the <code>DOMContentLoaded</code> function. You can implement an <code>onclick</code> event handler which triggers when the user clicks on the element with id <code>getMessage</code>, by adding the following code:
 
 ```js
-document.getElementById('getMessage').onclick=function(){};
+document.getElementById('getMessage').onclick = function(){};
 ```
 
 </section>
@@ -49,13 +49,14 @@ tests:
 
 ```html
 <script>
-  document.addEventListener('DOMContentLoaded',function(){
+  document.addEventListener('DOMContentLoaded', function(){
     // Add your code below this line
 
 
     // Add your code above this line
   });
 </script>
+
 <style>
   body {
     text-align: center;
@@ -102,14 +103,15 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 <script>
-  document.addEventListener('DOMContentLoaded',function(){
+  document.addEventListener('DOMContentLoaded', function(){
     // Add your code below this line
-    document.getElementById('getMessage').onclick=function(){}
+    document.getElementById('getMessage').onclick = function(){ };
     // Add your code above this line
   });
 </script>
+
 <style>
   body {
     text-align: center;

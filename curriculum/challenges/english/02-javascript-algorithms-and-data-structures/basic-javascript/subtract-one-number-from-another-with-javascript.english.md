@@ -34,7 +34,6 @@ tests:
     testString: assert(difference === 12);
   - text: You should only subtract one number from 45.
     testString: assert(/difference=45-33;?/.test(code.replace(/\s/g, '')));
-
 ```
 
 </section>

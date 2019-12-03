@@ -16,12 +16,12 @@ However, JSON transmitted by APIs are sent as <code>bytes</code>, and your appli
 You can request the JSON from freeCodeCamp's Cat Photo API. Here's the code you can put in your click event to do this:
 
 ```js
-req=new XMLHttpRequest();
+const req = new XMLHttpRequest();
 req.open("GET",'/json/cats.json',true);
 req.send();
-req.onload=function(){
-  json=JSON.parse(req.responseText);
-  document.getElementsByClassName('message')[0].innerHTML=JSON.stringify(json);
+req.onload = function(){
+  const json = JSON.parse(req.responseText);
+  document.getElementsByClassName('message')[0].innerHTML = JSON.stringify(json);
 };
 ```
 
@@ -64,8 +64,8 @@ tests:
 
 ```html
 <script>
-  document.addEventListener('DOMContentLoaded',function(){
-    document.getElementById('getMessage').onclick=function(){
+  document.addEventListener('DOMContentLoaded', function(){
+    document.getElementById('getMessage').onclick = function(){
       // Add your code below this line
 
 
@@ -73,6 +73,7 @@ tests:
     };
   });
 </script>
+
 <style>
   body {
     text-align: center;
@@ -99,6 +100,7 @@ tests:
     border: 1px solid #0F5897;
   }
 </style>
+
 <h1>Cat Photo Finder</h1>
 <p class="message box">
   The message will go here
@@ -119,11 +121,11 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 <script>
   document.addEventListener('DOMContentLoaded',function(){
-    document.getElementById('getMessage').onclick=function(){
+    document.getElementById('getMessage').onclick = function(){
       const req = new XMLHttpRequest();
       req.open('GET', '/json/cats.json', true);
       req.send();
@@ -134,6 +136,7 @@ tests:
     };
   });
 </script>
+
 <style>
   body {
     text-align: center;
@@ -160,6 +163,7 @@ tests:
     border: 1px solid #0F5897;
   }
 </style>
+
 <h1>Cat Photo Finder</h1>
 <p class="message box">
   The message will go here
