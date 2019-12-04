@@ -32,9 +32,9 @@ tests:
   - text: The HashTable should have a lookup method.
     testString: assert((function() { var test = false; if (typeof HashTable !== 'undefined') { test = new HashTable() }; return ((typeof test.lookup) === 'function')})());
   - text: The add method should add key value pairs and the lookup method should return the values associated with a given key.
-    testString: assert((function() { var test = false; if (typeof HashTable !== 'undefined') { test = new HashTable() }; test.add('key', 'value'); return (test.lookup('key') === 'value')})());
+    testString: assert(function(){ var test = false; if (typeof HashTable !== 'undefined') { test = new HashTable(); }; test.add('key', 'value'); const lookup = function(key){ let theHash = hash(key); if (this.collection.hasOwnProperty(theHash)) { return this.collection[theHash][key]; }; return null; }; return (lookup('key') === 'value')});
   - text: The remove method should accept a key as input and should remove the associated key value pair.
-    testString: assert((function() { var test = false; if (typeof HashTable !== 'undefined') { test = new HashTable() }; test.add('key', 'value'); test.remove('key'); return (test.lookup('key') === null)})());
+    testString: assert(function() { let test = false; if (typeof HashTable !== 'undefined') { test = new HashTable() }; test.add('key', 'value'); test.remove('key'); const lookup = function(key){ let theHash = hash(key); if (this.collection.hasOwnProperty(theHash)) { return this.collection[theHash][key]; }; return null; };return ( lookup('key') === null)});
   - text: Items should be added using the hash function.
     testString: assert((function() { var test = false; if (typeof HashTable !== 'undefined') { test = new HashTable() }; called = 0; test.add('key1','value1'); test.add('key2','value2'); test.add('key3','value3'); return (called >= 3 && called % 3 === 0)})());
   - text: The hash table should handle collisions.
