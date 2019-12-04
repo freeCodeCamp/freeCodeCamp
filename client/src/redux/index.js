@@ -35,7 +35,6 @@ const initialState = {
   canRequestDonation: false,
   completionCount: 0,
   currentChallengeId: store.get(CURRENT_CHALLENGE_KEY),
-  donationRequested: false,
   showCert: {},
   showCertFetchState: {
     ...defaultFetchState
@@ -145,7 +144,6 @@ export const completedChallengesSelector = state =>
   userSelector(state).completedChallenges || [];
 export const completionCountSelector = state => state[ns].completionCount;
 export const currentChallengeIdSelector = state => state[ns].currentChallengeId;
-export const isDonationRequestedSelector = state => state[ns].donationRequested;
 export const isDonatingSelector = state => userSelector(state).isDonating;
 
 export const isOnlineSelector = state => state[ns].isOnline;
@@ -294,7 +292,7 @@ export const reducer = handleActions(
     }),
     [types.preventDonationRequests]: state => ({
       ...state,
-      donationRequested: true
+      canRequestDonation: false
     }),
     [types.resetUserData]: state => ({
       ...state,
