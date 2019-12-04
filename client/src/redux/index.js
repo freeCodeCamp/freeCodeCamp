@@ -155,13 +155,9 @@ export const signInLoadingSelector = state =>
 export const showCertSelector = state => state[ns].showCert;
 export const showCertFetchStateSelector = state => state[ns].showCertFetchState;
 
-export const shouldRequestDonationSelector = state => {
-  const isDonating = isDonatingSelector(state);
-  if (isDonating === false && state[ns].canRequestDonation) {
-    return true;
-  }
-  return false;
-};
+export const shouldRequestDonationSelector = state =>
+  !isDonatingSelector(state) && state[ns].canRequestDonation;
+
 export const userByNameSelector = username => state => {
   const { user } = state[ns];
   return username in user ? user[username] : {};
