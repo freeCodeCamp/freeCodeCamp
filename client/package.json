@@ -40,7 +40,7 @@
     "gatsby-transformer-remark": "^2.6.30",
     "jquery": "^3.4.1",
     "lodash": "^4.17.15",
-    "loop-protect": "https://github.com/jsbin/loop-protect/archive/893ff8f56f0df9f9484227ee7089ef01eac02b4c.tar.gz",
+    "loop-protect": "https://github.com/ojeytonwilliams/loop-protect/archive/9888f2271d4199699c425bb8354aa2be9d2ed8ba.tar.gz",
     "monaco-editor": "^0.18.1",
     "monaco-editor-webpack-plugin": "^1.7.0",
     "nanoid": "^1.2.2",

@@ -23,6 +23,7 @@ import createWorker from '../utils/worker-executor';
 import { filename as sassCompile } from '../../../../config/sass-compile';
 
 const protectTimeout = 100;
+const testProtectTimeout = 3000;
 
 function loopProtectCB(line) {
   console.log(
@@ -30,7 +31,17 @@ function loopProtectCB(line) {
   );
 }
 
+function testLoopProtectCB(line) {
+  console.log(
+    `Potentially infinite loop detected on line ${line}. Tests may be failing because of this.`
+  );
+}
+
 Babel.registerPlugin('loopProtection', protect(protectTimeout, loopProtectCB));
+Babel.registerPlugin(
+  'testLoopProtection',
+  protect(testProtectTimeout, testLoopProtectCB, 2000)
+);
 
 const babelOptionsJSX = {
   plugins: ['loopProtection'],
@@ -38,6 +49,7 @@ const babelOptionsJSX = {
 };
 
 const babelOptionsJS = {
+  plugins: ['testLoopProtection'],
   presets: [presetEnv]
 };
 
