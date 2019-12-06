@@ -101,16 +101,28 @@ let singMixin = function(obj) {
 
 
 ```js
-const funModule = (function () {
-  return {
-    isCuteMixin: obj => {
-      obj.isCute = () => true;
-    },
-    singMixin: obj => {
-      obj.sing = () => console.log("Singing to an awesome tune");
-    }
+
+let isCuteMixin = function(obj) {
+  obj.isCute = function() {
+    return true;
   };
+};
+let singMixin = function(obj) {
+  obj.sing = function() {
+    console.log("Singing to an awesome tune");
+  };
+};
+
+let funModule = (function () {
+  return {
+    isCuteMixin,
+    singMixin
+  }
 })();
+
 ```
+
+
+
 
 </section>
