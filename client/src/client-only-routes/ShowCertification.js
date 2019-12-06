@@ -11,9 +11,7 @@ import {
   showCert,
   userFetchStateSelector,
   usernameSelector,
-  isDonatingSelector,
-  isDonationRequestedSelector,
-  preventDonationRequests
+  isDonatingSelector
 } from '../redux';
 import validCertNames from '../../utils/validCertNames';
 import { createFlashMessage } from '../components/Flash/redux';
@@ -41,9 +39,7 @@ const propTypes = {
     errored: PropTypes.bool
   }),
   isDonating: PropTypes.bool,
-  isDonationRequested: PropTypes.bool,
   issueDate: PropTypes.string,
-  preventDonationRequests: PropTypes.func,
   showCert: PropTypes.func.isRequired,
   signedInUserName: PropTypes.string,
   userFetchState: PropTypes.shape({
@@ -62,31 +58,19 @@ const mapStateToProps = (state, { certName }) => {
     usernameSelector,
     userFetchStateSelector,
     isDonatingSelector,
-    isDonationRequestedSelector,
-    (
-      cert,
-      fetchState,
-      signedInUserName,
-      userFetchState,
-      isDonating,
-      isDonationRequested
-    ) => ({
+    (cert, fetchState, signedInUserName, userFetchState, isDonating) => ({
       cert,
       fetchState,
       validCertName,
       signedInUserName,
       userFetchState,
-      isDonating,
-      isDonationRequested
+      isDonating
     })
   );
 };
 
 const mapDispatchToProps = dispatch =>
-  bindActionCreators(
-    { createFlashMessage, showCert, preventDonationRequests },
-    dispatch
-  );
+  bindActionCreators({ createFlashMessage, showCert }, dispatch);
 
 class ShowCertification extends Component {
   componentDidMount() {
@@ -103,10 +87,8 @@ class ShowCertification extends Component {
       validCertName,
       createFlashMessage,
       certName,
-      preventDonationRequests,
       signedInUserName,
       isDonating,
-      isDonationRequested,
       userFetchState
     } = this.props;
 
@@ -142,12 +124,7 @@ class ShowCertification extends Component {
 
     let conditionalDonationMessage = '';
 
-    if (
-      userComplete &&
-      signedInUserName === username &&
-      !isDonating &&
-      !isDonationRequested
-    ) {
+    if (userComplete && signedInUserName === username && !isDonating) {
       conditionalDonationMessage = (
         <Grid>
           <Row className='certification-donation text-center'>
@@ -158,11 +135,7 @@ class ShowCertification extends Component {
               around the world. Make a tax-deductible supporting donation to our
               nonprofit today.
             </p>
-            <Link
-              className={'btn'}
-              onClick={preventDonationRequests}
-              to={'/donate'}
-            >
+            <Link className={'btn'} to={'/donate'}>
               Check out our donation dashboard
             </Link>
           </Row>
