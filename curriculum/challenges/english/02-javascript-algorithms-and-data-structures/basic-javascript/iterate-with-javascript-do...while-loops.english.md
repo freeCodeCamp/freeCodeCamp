@@ -76,11 +76,11 @@ tests:
 ```js
 // Setup
 var myArray = [];
-var i = 10;
+var i = 0;
 
 // Only change code below this line
-while (i < 5) {
-  myArray.push(i);
+while (i <= 5) {
+  myArray.unshift(i);
   i++;
 }
 ```
