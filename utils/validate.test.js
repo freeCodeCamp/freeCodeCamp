@@ -1,36 +1,42 @@
 /* global describe expect it */
 
-const { validate } = require('./validate');
-
-const invalidCharError = {
-  valid: false,
-  error: 'contains invalid characters'
-};
-const validationSuccess = { valid: true, error: null };
-const usernameTooShort = { valid: false, error: 'is too short' };
+const {
+  isValidUsername,
+  usernameTooShort,
+  validationSuccess,
+  usernameIsHttpStatusCode,
+  invalidCharError
+} = require('./validate');
 
 function inRange(num, range) {
   return num >= range[0] && num <= range[1];
 }
 
-describe('validate', () => {
+describe('isValidUsername', () => {
   it('rejects strings with less than 3 characters', () => {
-    expect(validate('')).toStrictEqual(usernameTooShort);
-    expect(validate('12')).toStrictEqual(usernameTooShort);
-    expect(validate('a')).toStrictEqual(usernameTooShort);
-    expect(validate('123')).toStrictEqual(validationSuccess);
+    expect(isValidUsername('')).toStrictEqual(usernameTooShort);
+    expect(isValidUsername('12')).toStrictEqual(usernameTooShort);
+    expect(isValidUsername('a')).toStrictEqual(usernameTooShort);
+    expect(isValidUsername('12a')).toStrictEqual(validationSuccess);
+  });
+  it('rejects strings which are http response status codes 100-599', () => {
+    expect(isValidUsername('429')).toStrictEqual(usernameIsHttpStatusCode);
+    expect(isValidUsername('789')).toStrictEqual(validationSuccess);
   });
   it('rejects non-ASCII characters', () => {
-    expect(validate('👀👂👄')).toStrictEqual(invalidCharError);
+    expect(isValidUsername('👀👂👄')).toStrictEqual(invalidCharError);
+  });
+  it('rejects with invalidCharError even if the string is too short', () => {
+    expect(isValidUsername('.')).toStrictEqual(invalidCharError);
   });
   it('accepts alphanumeric characters', () => {
-    expect(validate('abcdefghijklmnopqrstuvwxyz0123456789')).toStrictEqual(
-      validationSuccess
-    );
+    expect(
+      isValidUsername('abcdefghijklmnopqrstuvwxyz0123456789')
+    ).toStrictEqual(validationSuccess);
   });
   it('accepts hyphens and underscores', () => {
-    expect(validate('a-b')).toStrictEqual(validationSuccess);
-    expect(validate('a_b')).toStrictEqual(validationSuccess);
+    expect(isValidUsername('a-b')).toStrictEqual(validationSuccess);
+    expect(isValidUsername('a_b')).toStrictEqual(validationSuccess);
   });
 
   it('rejects all other ASCII characters', () => {
@@ -48,7 +54,7 @@ describe('validate', () => {
       if (inRange(code, numbers)) expected = validationSuccess;
       if (inRange(code, upperCase)) expected = validationSuccess;
       if (inRange(code, lowerCase)) expected = validationSuccess;
-      expect(validate(base + char)).toStrictEqual(expected);
+      expect(isValidUsername(base + char)).toStrictEqual(expected);
     }
   });
 });

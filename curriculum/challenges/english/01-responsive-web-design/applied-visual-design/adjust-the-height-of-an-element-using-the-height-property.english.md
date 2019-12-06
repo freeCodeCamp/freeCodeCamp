@@ -21,6 +21,7 @@ img {
 ## Instructions
 <section id='instructions'>
 Add a <code>height</code> property to the <code>h4</code> tag and set it to 25px.
+<strong>Note:</strong> You may need to be at 100% zoom to pass the test on this challenge.
 </section>
 
 ## Tests
@@ -29,7 +30,7 @@ Add a <code>height</code> property to the <code>h4</code> tag and set it to 25px
 ```yml
 tests:
   - text: Your code should change the <code>h4</code> <code>height</code> property to a value of 25 pixels.
-    testString: assert(document.querySelector('h4').offsetHeight === 25 && /h4{\S*height:25px(;\S*}|})/.test($('style').text().replace(/\s/g ,'')));
+    testString: assert(Math.round(document.querySelector('h4').getBoundingClientRect().height) === 25 && /h4{\S*height:25px(;\S*}|})/.test($('style').text().replace(/\s/g ,'')));
 
 ```
 

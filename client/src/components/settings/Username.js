@@ -17,7 +17,7 @@ import {
 } from '../../redux/settings';
 import BlockSaveButton from '../helpers/form/BlockSaveButton';
 import FullWidthRow from '../helpers/FullWidthRow';
-import { validate } from '../../../../utils/validate';
+import { isValidUsername } from '../../../../utils/validate';
 
 const propTypes = {
   isValidUsername: PropTypes.bool,
@@ -112,7 +112,7 @@ class UsernameSettings extends Component {
   }
 
   validateFormInput(formValue) {
-    return validate(formValue);
+    return isValidUsername(formValue);
   }
 
   renderAlerts(validating, error, isValidUsername) {

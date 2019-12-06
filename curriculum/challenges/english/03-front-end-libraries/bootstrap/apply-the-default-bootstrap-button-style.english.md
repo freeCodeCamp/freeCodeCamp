@@ -21,9 +21,9 @@ Apply both the <code>btn</code> and <code>btn-default</code> classes to each of 
 
 ```yml
 tests:
-  - text: Apply the <code>btn</code> class to each of your <code>button</code> elements.
+  - text: You should apply the <code>btn</code> class to each of your <code>button</code> elements.
     testString: assert($(".btn").length > 5);
-  - text: Apply the <code>btn-default</code> class to each of your <code>button</code> elements.
+  - text: You should apply the <code>btn-default</code> class to each of your <code>button</code> elements.
     testString: assert($(".btn-default").length > 5);
 
 ```

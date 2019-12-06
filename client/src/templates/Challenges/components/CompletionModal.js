@@ -4,10 +4,11 @@ import noop from 'lodash/noop';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Button, Modal } from '@freecodecamp/react-bootstrap';
+import { useStaticQuery, graphql } from 'gatsby';
 
 import ga from '../../../analytics';
 import Login from '../../../components/Header/components/Login';
-import GreenPass from '../../../assets/icons/GreenPass';
+import CompletionModalBody from './CompletionModalBody';
 
 import { dasherize } from '../../../../../utils/slugs';
 
@@ -16,10 +17,12 @@ import './completion-modal.css';
 import {
   closeModal,
   submitChallenge,
+  completedChallengesIds,
   isCompletionModalOpenSelector,
   successMessageSelector,
   challengeFilesSelector,
-  challengeMetaSelector
+  challengeMetaSelector,
+  lastBlockChalSubmitted
 } from '../redux';
 
 import { isSignedInSelector } from '../../../redux';
@@ -27,12 +30,22 @@ import { isSignedInSelector } from '../../../redux';
 const mapStateToProps = createSelector(
   challengeFilesSelector,
   challengeMetaSelector,
+  completedChallengesIds,
   isCompletionModalOpenSelector,
   isSignedInSelector,
   successMessageSelector,
-  (files, { title }, isOpen, isSignedIn, message) => ({
+  (
+    files,
+    { title, id },
+    completedChallengesIds,
+    isOpen,
+    isSignedIn,
+    message
+  ) => ({
     files,
     title,
+    id,
+    completedChallengesIds,
     isOpen,
     isSignedIn,
     message
@@ -42,36 +55,61 @@ const mapStateToProps = createSelector(
 const mapDispatchToProps = function(dispatch) {
   const dispatchers = {
     close: () => dispatch(closeModal('completion')),
-    handleKeypress: e => {
-      if (e.keyCode === 13 && (e.ctrlKey || e.metaKey)) {
-        e.preventDefault();
-        // Since Hotkeys also listens to Ctrl + Enter we have to stop this event
-        // getting to it.
-        e.stopPropagation();
-        dispatch(submitChallenge());
-      }
-    },
     submitChallenge: () => {
       dispatch(submitChallenge());
+    },
+    lastBlockChalSubmitted: () => {
+      dispatch(lastBlockChalSubmitted());
     }
   };
   return () => dispatchers;
 };
 
 const propTypes = {
+  blockName: PropTypes.string,
   close: PropTypes.func.isRequired,
+  completedChallengesIds: PropTypes.array,
+  currentBlockIds: PropTypes.array,
   files: PropTypes.object.isRequired,
-  handleKeypress: PropTypes.func.isRequired,
+  id: PropTypes.string,
   isOpen: PropTypes.bool,
   isSignedIn: PropTypes.bool.isRequired,
+  lastBlockChalSubmitted: PropTypes.func,
   message: PropTypes.string,
   submitChallenge: PropTypes.func.isRequired,
   title: PropTypes.string
 };
 
-export class CompletionModal extends Component {
+export function getCompletedPercent(
+  completedChallengesIds = [],
+  currentBlockIds = [],
+  currentChallengeId
+) {
+  completedChallengesIds = completedChallengesIds.includes(currentChallengeId)
+    ? completedChallengesIds
+    : [...completedChallengesIds, currentChallengeId];
+
+  const completedChallengesInBlock = completedChallengesIds.filter(id => {
+    return currentBlockIds.includes(id);
+  });
+
+  const completedPercent = Math.round(
+    (completedChallengesInBlock.length / currentBlockIds.length) * 100
+  );
+
+  return completedPercent > 100 ? 100 : completedPercent;
+}
+
+export class CompletionModalInner extends Component {
+  constructor(props) {
+    super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleKeypress = this.handleKeypress.bind(this);
+  }
+
   state = {
-    downloadURL: null
+    downloadURL: null,
+    completedPercent: 0
   };
 
   static getDerivedStateFromProps(props, state) {
@@ -99,7 +137,37 @@ export class CompletionModal extends Component {
       });
       newURL = URL.createObjectURL(blob);
     }
-    return { downloadURL: newURL };
+
+    const { completedChallengesIds, currentBlockIds, id, isSignedIn } = props;
+    let completedPercent = isSignedIn
+      ? getCompletedPercent(completedChallengesIds, currentBlockIds, id)
+      : 0;
+    return { downloadURL: newURL, completedPercent: completedPercent };
+  }
+
+  handleKeypress(e) {
+    if (e.keyCode === 13 && (e.ctrlKey || e.metaKey)) {
+      e.preventDefault();
+      // Since Hotkeys also listens to Ctrl + Enter we have to stop this event
+      // getting to it.
+      e.stopPropagation();
+      this.handleSubmit();
+    }
+  }
+
+  handleSubmit() {
+    this.props.submitChallenge();
+    this.checkBlockCompletion();
+  }
+
+  // check block completion for donation
+  checkBlockCompletion() {
+    if (
+      this.state.completedPercent === 100 &&
+      !this.props.completedChallengesIds.includes(this.props.id)
+    ) {
+      this.props.lastBlockChalSubmitted();
+    }
   }
 
   componentWillUnmount() {
@@ -111,14 +179,16 @@ export class CompletionModal extends Component {
 
   render() {
     const {
+      blockName = '',
       close,
       isOpen,
-      isSignedIn,
-      submitChallenge,
-      handleKeypress,
       message,
-      title
+      title,
+      isSignedIn
     } = this.props;
+
+    const { completedPercent } = this.state;
+
     if (isOpen) {
       ga.modalview('/completion-modal');
     }
@@ -130,26 +200,27 @@ export class CompletionModal extends Component {
         dialogClassName='challenge-success-modal'
         keyboard={true}
         onHide={close}
-        onKeyDown={isOpen ? handleKeypress : noop}
+        onKeyDown={isOpen ? this.handleKeypress : noop}
         show={isOpen}
       >
         <Modal.Header
           className='challenge-list-header fcc-modal'
           closeButton={true}
         >
-          <Modal.Title className='text-center'>{message}</Modal.Title>
+          <Modal.Title className='completion-message'>{message}</Modal.Title>
         </Modal.Header>
         <Modal.Body className='completion-modal-body'>
-          <div className='success-icon-wrapper'>
-            <GreenPass />
-          </div>
+          <CompletionModalBody
+            blockName={blockName}
+            completedPercent={completedPercent}
+          />
         </Modal.Body>
         <Modal.Footer>
           <Button
             block={true}
             bsSize='large'
             bsStyle='primary'
-            onClick={submitChallenge}
+            onClick={this.handleSubmit}
           >
             {isSignedIn ? 'Submit and g' : 'G'}o to next challenge{' '}
             <span className='hidden-xs'>(Ctrl + Enter)</span>
@@ -181,6 +252,37 @@ export class CompletionModal extends Component {
     );
   }
 }
+
+CompletionModalInner.propTypes = propTypes;
+
+const useCurrentBlockIds = blockName => {
+  const {
+    allChallengeNode: { edges }
+  } = useStaticQuery(graphql`
+    query getCurrentBlockNodes {
+      allChallengeNode(sort: { fields: [superOrder, order, challengeOrder] }) {
+        edges {
+          node {
+            fields {
+              blockName
+            }
+            id
+          }
+        }
+      }
+    }
+  `);
+
+  const currentBlockIds = edges
+    .filter(edge => edge.node.fields.blockName === blockName)
+    .map(edge => edge.node.id);
+  return currentBlockIds;
+};
+
+const CompletionModal = props => {
+  const currentBlockIds = useCurrentBlockIds(props.blockName || '');
+  return <CompletionModalInner currentBlockIds={currentBlockIds} {...props} />;
+};
 
 CompletionModal.displayName = 'CompletionModal';
 CompletionModal.propTypes = propTypes;

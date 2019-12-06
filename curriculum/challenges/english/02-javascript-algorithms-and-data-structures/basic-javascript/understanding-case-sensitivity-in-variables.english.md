@@ -32,11 +32,11 @@ Modify the existing declarations and assignments so their names use <dfn>camelCa
 
 ```yml
 tests:
-  - text: <code>studlyCapVar</code> is defined and has a value of <code>10</code>
+  - text: <code>studlyCapVar</code> should be defined and have a value of <code>10</code>.
     testString: assert(typeof studlyCapVar !== 'undefined' && studlyCapVar === 10);
-  - text: <code>properCamelCase</code> is defined and has a value of <code>"A String"</code>
+  - text: <code>properCamelCase</code> should be defined and have a value of <code>"A String"</code>.
     testString: assert(typeof properCamelCase !== 'undefined' && properCamelCase === "A String");
-  - text: <code>titleCaseOver</code> is defined and has a value of <code>9000</code>
+  - text: <code>titleCaseOver</code> should be defined and have a value of <code>9000</code>.
     testString: assert(typeof titleCaseOver !== 'undefined' && titleCaseOver === 9000);
   - text: <code>studlyCapVar</code> should use camelCase in both declaration and assignment sections.
     testString: assert(code.match(/studlyCapVar/g).length === 2);
