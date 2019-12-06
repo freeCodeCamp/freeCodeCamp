@@ -134,6 +134,7 @@ Software required for both Docker and Local builds:
 | ------------ | ------- | ----- |
 | [Docker CE](https://docs.docker.com/install/) | `Stable` | - |
 | [Docker Compose](https://docs.docker.com/compose/install/) | `Stable` | Must be installed separately if not using macOS or Windows |
+| [Docker Toolbox](https://docs.docker.com/toolbox/toolbox_install_windows/) | `v19.03.1` | If using Windows 10 Home, use this instead - instructions [here](/docs/how-to-use-docker-on-windows-home.md)
 
 **Local Build additional prerequisite:**
 
