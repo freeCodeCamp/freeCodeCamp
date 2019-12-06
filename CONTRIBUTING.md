@@ -57,6 +57,12 @@ Essentially, we expect basic familiarity with some of the aforementioned technol
 
 ## Frequently Asked Questions
 
+### Where are the Guide articles (guide.freecodecamp.org)? How can I contribute to them?
+
+We will not have the general guide articles anymore. Instead we intend to publish these as tutorials that are curated by the editorial team. These would then be published by them on the Developer News.
+
+The challenge hints and articles will still be available on the forum which we have already migrated.
+
 ### Can I translate freeCodeCamp's curriculum?
 
 We do intend to make the curriculum available in more languages, right now we do not have a timeline for this.

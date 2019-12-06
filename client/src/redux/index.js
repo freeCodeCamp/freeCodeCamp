@@ -35,7 +35,6 @@ const initialState = {
   canRequestDonation: false,
   completionCount: 0,
   currentChallengeId: store.get(CURRENT_CHALLENGE_KEY),
-  donationRequested: false,
   showCert: {},
   showCertFetchState: {
     ...defaultFetchState
@@ -145,7 +144,6 @@ export const completedChallengesSelector = state =>
   userSelector(state).completedChallenges || [];
 export const completionCountSelector = state => state[ns].completionCount;
 export const currentChallengeIdSelector = state => state[ns].currentChallengeId;
-export const isDonationRequestedSelector = state => state[ns].donationRequested;
 export const isDonatingSelector = state => userSelector(state).isDonating;
 
 export const isOnlineSelector = state => state[ns].isOnline;
@@ -157,18 +155,9 @@ export const signInLoadingSelector = state =>
 export const showCertSelector = state => state[ns].showCert;
 export const showCertFetchStateSelector = state => state[ns].showCertFetchState;
 
-export const shouldRequestDonationSelector = state => {
-  const isDonationRequested = isDonationRequestedSelector(state);
-  const isDonating = isDonatingSelector(state);
-  if (
-    isDonationRequested === false &&
-    isDonating === false &&
-    state[ns].canRequestDonation
-  ) {
-    return true;
-  }
-  return false;
-};
+export const shouldRequestDonationSelector = state =>
+  !isDonatingSelector(state) && state[ns].canRequestDonation;
+
 export const userByNameSelector = username => state => {
   const { user } = state[ns];
   return username in user ? user[username] : {};
@@ -299,7 +288,7 @@ export const reducer = handleActions(
     }),
     [types.preventDonationRequests]: state => ({
       ...state,
-      donationRequested: true
+      canRequestDonation: false
     }),
     [types.resetUserData]: state => ({
       ...state,
