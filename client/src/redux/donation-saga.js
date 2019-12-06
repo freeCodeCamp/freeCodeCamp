@@ -2,8 +2,8 @@ import { put, select, takeEvery, delay } from 'redux-saga/effects';
 
 import {
   openDonationModal,
-  shouldRequestDonationSelector,
-  preventDonationRequests
+  preventDonationRequests,
+  shouldRequestDonationSelector
 } from './';
 
 function* showDonateModalSaga() {
