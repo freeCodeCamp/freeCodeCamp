@@ -216,3 +216,12 @@
     margin-top: 20px;
   }
 }
+
+/* Temporary styles for certifications. To be removed when routing fixed */
+:root {
+  --header-height: 0;
+}
+
+.light-palette {
+  --secondary-background: #fff;
+}
