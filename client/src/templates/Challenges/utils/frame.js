@@ -1,4 +1,5 @@
 import { toString, flow } from 'lodash';
+import { format } from '../../../utils/format';
 
 // we use two different frames to make them all essentially pure functions
 // main iframe is responsible rendering the preview and is where we proxy the
@@ -81,7 +82,7 @@ const mountFrame = document => ({ element, ...rest }) => {
 const buildProxyConsole = proxyLogger => ctx => {
   const oldLog = ctx.window.console.log.bind(ctx.window.console);
   ctx.window.console.log = function proxyConsole(...args) {
-    proxyLogger(args.map(arg => '' + JSON.stringify(arg)).join(' '));
+    proxyLogger(args.map(arg => format(arg)).join(' '));
     return oldLog(...args);
   };
   return ctx;

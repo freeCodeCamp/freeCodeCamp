@@ -163,6 +163,19 @@ li.disabled > a {
   padding: 20px;
 }
 
+@media (max-width: 991px) {
+  .donate-text {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 400px) {
+  .donate-tabs > .nav-pills > li > a {
+    font-size: 0.8rem;
+    padding: 10px 5px;
+  }
+}
+
 .heart-icon-container {
   display: flex;
   flex-direction: column;
