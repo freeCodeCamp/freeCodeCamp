@@ -1,6 +1,6 @@
 ---
-id: 5ddb965c65d27e1512d44ddc
-title: Part 69
+id: 5ddb965c65d27e1512d44de2
+title: Part 75
 challengeType: 0
 isBeta: true
 ---
@@ -9,7 +9,9 @@ isBeta: true
 
 <section id='description'>
 
-Create a variable named `clearForm` and set it equal to a blank arrow function like you did with `clearOutput`.
+Finally, it's time to clear the other calories that may have been entered for Breakfast, Lunch, and Dinner. This can be achieved by calling the `reset()` method on the form.
+
+Get a reference to the document element with the `id` of `calorie-form` and chain the `reset()` method to it.
 
 </section>
 
@@ -25,7 +27,7 @@ Create a variable named `clearForm` and set it equal to a blank arrow function l
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert( typeof clearForm === "function")
+    testString: assert( code.replace(/\s/g, '').match(/document\.getElementById\([\'\"\`]calorie-form[\'\"\`]\).reset\(\)/) );
 ```
 
 </section>
@@ -106,6 +108,20 @@ tests:
   const clearOutput = () => {
     document.getElementById('output').innerHTML = '';
     document.getElementById('output').classList.remove('bordered-class');
+  };
+
+  const clearForm = () => {
+    const foodInputs = Array.from(
+      document.getElementsByClassName('food-control')
+    );
+
+    foodInputs.forEach(input => input.remove());
+
+    const calInputs = Array.from(
+      document.getElementsByClassName('extra-cal-control')
+    );
+
+    calInputs.forEach(input => input.remove());
   };
 </script>
 ```
@@ -265,7 +281,21 @@ tests:
     document.getElementById('output').classList.remove('bordered-class');
   };
 
-  const clearForm = () => {};
+  const clearForm = () => {
+    const foodInputs = Array.from(
+      document.getElementsByClassName('food-control')
+    );
+
+    foodInputs.forEach(input => input.remove());
+
+    const calInputs = Array.from(
+      document.getElementsByClassName('extra-cal-control')
+    );
+
+    calInputs.forEach(input => input.remove());
+
+    document.getElementById('calorie-form').reset();
+  };
 </script>
 ```
 

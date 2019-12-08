@@ -1,5 +1,5 @@
 ---
-id: 5ddb965c65d27e1512d44db9
+id: 5ddb965c65d27e1512d44db7
 title: Part 32
 challengeType: 0
 isBeta: true
@@ -9,9 +9,11 @@ isBeta: true
 
 <section id='description'>
 
-Next we want to add the text from the `surplusOrDeficit` variable that we previously created.
+Notice how if `total` is less than `maxCalories`, `difference` is a negative number.
 
-Inside the parentheses of `.createTextNode()` add `+ surplusOrDeficit` after `Math.abs(difference) + ' Calorie '`.
+We want to show the absolute value of the difference so it displays "300" rather than "-300".
+
+Wrap the `difference` in a `Math.abs()` function.
 
 </section>
 
@@ -27,7 +29,7 @@ Inside the parentheses of `.createTextNode()` add `+ surplusOrDeficit` after `Ma
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(/const\s*resultText\s*=\s*document\.createTextNode\(\s*Math\.abs\(\s*difference\s*\)\s*\+\s*[\'\"\`]\s*Calorie\s*[\'\"\`]\s*\+\s*surplusOrDeficit\s*\)/.test(code));
+    testString: assert(/const\s*resultText\s*=\s*document\.createTextNode\(\s*Math\.abs\(\s*difference\s*\)\s*\)/.test(code));
 ```
 
 </section>
@@ -58,9 +60,7 @@ tests:
     const output = document.getElementById('output');
 
     const result = document.createElement('h3');
-    const resultText = document.createTextNode(
-      Math.abs(difference) + ' Calorie '
-    );
+    const resultText = document.createTextNode(difference);
   }
 </script>
 ```
@@ -168,9 +168,7 @@ tests:
     const output = document.getElementById('output');
 
     const result = document.createElement('h3');
-    const resultText = document.createTextNode(
-      Math.abs(difference) + ' Calorie ' + surplusOrDeficit
-    );
+    const resultText = document.createTextNode(Math.abs(difference));
   }
 </script>
 ```

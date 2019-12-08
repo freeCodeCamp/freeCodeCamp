@@ -1,5 +1,5 @@
 ---
-id: 5ddb965c65d27e1512d44db1
+id: 5ddb965c65d27e1512d44daf
 title: Part 24
 challengeType: 0
 isBeta: true
@@ -9,9 +9,9 @@ isBeta: true
 
 <section id='description'>
 
-Now that we have `total` and `maxCalories`, we need to find out the difference between them.
+Inspect the Female radio button again and notice that it has a `checked` attribute if it's checked: `<input type="radio" name="sex" id="female" value="F" checked>`
 
-Create a variable named `difference` and set it equal to `total - maxCalories`
+Check to see if the Female radio button is checked or not by chaining on the `.checked` attribute to `document.getElementById('female')`.
 
 </section>
 
@@ -27,7 +27,7 @@ Create a variable named `difference` and set it equal to `total - maxCalories`
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(/const\s*difference\s*\=\s*total\s*\-\s*maxCalories?/.test(code));
+    testString: assert(/const\s*maxCalories\s*=\s*document\.getElementById\([\'\"\`]female[\'\"\`]\)\.checked/.test(code));
 ```
 
 </section>
@@ -49,7 +49,7 @@ tests:
       .map(meal => Number(meal.value))
       .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 
-    const maxCalories = document.getElementById('female').checked ? 2000 : 2500;
+    const maxCalories = document.getElementById('female');
   }
 </script>
 ```
@@ -148,9 +148,7 @@ tests:
       .map(meal => Number(meal.value))
       .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 
-    const maxCalories = document.getElementById('female').checked ? 2000 : 2500;
-
-    const difference = total - maxCalories;
+    const maxCalories = document.getElementById('female').checked;
   }
 </script>
 ```

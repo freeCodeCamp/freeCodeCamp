@@ -1,5 +1,5 @@
 ---
-id: 5ddb965c65d27e1512d44dd1
+id: 5ddb965c65d27e1512d44dcf
 title: Part 56
 challengeType: 0
 isBeta: true
@@ -9,9 +9,11 @@ isBeta: true
 
 <section id='description'>
 
-Use the `setAttribute()` method of `calorieInput` to set the `type` of this input to `number`.
+Notice that parent container of all of the inputs has an `id` of `entries`: `<div class="grid" id="entries">`.
 
-This is similar to how to set the class of the `output` element previously.
+Get a reference to the document element with the `id` attribute `entries` and append the `foodInput` element to it by chaining on the `.appendChild()` function.
+
+This is similar to the other `appendChild()` methods that you have used previously.
 
 </section>
 
@@ -27,7 +29,7 @@ This is similar to how to set the class of the `output` element previously.
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert( code.replace(/\s/g, '').match(/calorieInput\.setAttribute\([\'\"\`]type[\'\"\`]\,[\'\"\`]number[\'\"\`]\)/) );
+    testString: assert( code.replace(/\s/g, '').match(/document\.getElementById\([\'\"\`]entries[\'\"\`]\)\.appendChild\(foodInput\)/) );
 ```
 
 </section>
@@ -89,9 +91,6 @@ tests:
     const foodInput = document.createElement('input');
     foodInput.placeholder = 'food name';
     foodInput.classList.add('food-control');
-    document.getElementById('entries').appendChild(foodInput);
-
-    const calorieInput = document.createElement('input');
   };
 </script>
 ```
@@ -231,9 +230,6 @@ tests:
     foodInput.placeholder = 'food name';
     foodInput.classList.add('food-control');
     document.getElementById('entries').appendChild(foodInput);
-
-    const calorieInput = document.createElement('input');
-    calorieInput.setAttribute('type', 'number');
   };
 </script>
 ```

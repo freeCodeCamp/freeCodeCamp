@@ -1,5 +1,5 @@
 ---
-id: 5ddb965c65d27e1512d44dbc
+id: 5ddb965c65d27e1512d44dba
 title: Part 35
 challengeType: 0
 isBeta: true
@@ -9,9 +9,15 @@ isBeta: true
 
 <section id='description'>
 
-Similarly, append the `result` to the `output` element with the `appendChild()` method.
+The data that we currently pass to `createTextNode()` is `Math.abs(difference) + ' Calorie ' + surplusOrDeficit`.
 
-Now if you enter in data and push the Calculate button, you will see the text added to the HTML document!
+Some people consider this a little cumbersome and prefer to use template literals instead.
+
+Template literals are enclosed in backticks (\`\`), and JavaScript expressions and variables can be embedded by enclosing them in `${}`.
+
+For example, ``console.log(`Hello ${firstName}, today is ${Date.now()}`)`` is the same as writing `console.log('Hello ' + firstName + ', today is ' + Date.now())`.
+
+Convert the data inside of `createTextNode()` to be a template literal.
 
 </section>
 
@@ -27,7 +33,7 @@ Now if you enter in data and push the Calculate button, you will see the text ad
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert( code.replace(/\s/g, '').match(/output\.appendChild\(result\)/) );
+    testString: assert( code.replace(/\s/g, '').match(/document\.createTextNode\(\`\$\{Math\.abs\(difference\)\}Calorie\$\{surplusOrDeficit\}\`/) );
 ```
 
 </section>
@@ -59,10 +65,8 @@ tests:
 
     const result = document.createElement('h3');
     const resultText = document.createTextNode(
-      `${Math.abs(difference)} Calorie ${surplusOrDeficit}`
+      Math.abs(difference) + ' Calorie ' + surplusOrDeficit
     );
-
-    result.appendChild(resultText);
   }
 </script>
 ```
@@ -173,9 +177,6 @@ tests:
     const resultText = document.createTextNode(
       `${Math.abs(difference)} Calorie ${surplusOrDeficit}`
     );
-
-    result.appendChild(resultText);
-    output.appendChild(result);
   }
 </script>
 ```

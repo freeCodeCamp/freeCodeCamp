@@ -1,5 +1,5 @@
 ---
-id: 5ddb965c65d27e1512d44db5
+id: 5ddb965c65d27e1512d44db3
 title: Part 28
 challengeType: 0
 isBeta: true
@@ -9,15 +9,11 @@ isBeta: true
 
 <section id='description'>
 
-Next, we will create a text node that we will later append to the `result` element.
+If you look near the bottom of the HTML page, notice that there is currently an empty `div` element: `<div id="output"></div>`.
 
-JavaScript has a function called `createTextNode()` to accomplish this. For example:
+We will be inserting output inside this `div`, telling the user if they are in a calorie surplus or deficit.
 
-```js
-const myText = document.createTextNode("Hello world!")
-```
-
-Create a variable named `resultText` and set it equal to a text node. Leave the string empty for now.
+Create a variable named `output` and set it equal to this division element with the `id` of `output`.
 
 </section>
 
@@ -33,7 +29,7 @@ Create a variable named `resultText` and set it equal to a text node. Leave the 
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(/const\s*resultText\s*=\s*document\.createTextNode\([\'\"\`]?\s*[\'\"\`]?\)/.test(code));
+    testString: assert(/const\s*output\s*=\s*document\.getElementById\([\'\"\`]output[\'\"\`]\)/.test(code))
 ```
 
 </section>
@@ -60,10 +56,6 @@ tests:
     const difference = total - maxCalories;
 
     const surplusOrDeficit = difference > 0 ? 'Surplus' : 'Deficit';
-
-    const output = document.getElementById('output');
-
-    const result = document.createElement('h3');
   }
 </script>
 ```
@@ -169,9 +161,6 @@ tests:
     const surplusOrDeficit = difference > 0 ? 'Surplus' : 'Deficit';
 
     const output = document.getElementById('output');
-
-    const result = document.createElement('h3');
-    const resultText = document.createTextNode();
   }
 </script>
 ```
