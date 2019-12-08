@@ -19,7 +19,9 @@ const preFormattedBlockNames = {
   tensorflow: 'TensorFlow',
   'basic-javascript-rpg-game': 'Basic JavaScript RPG Game',
   'css-variables-skyline': 'CSS Variables Skyline',
-  'javascript-spreadsheet': 'JavaScript Spreadsheet'
+  'javascript-spreadsheet': 'JavaScript Spreadsheet',
+  'intermediate-javascript-calorie-counter':
+    'Intermediate JavaScript Calorie Counter'
 };
 
 const noFormatting = ['and', 'for', 'of', 'the', 'up', 'with'];
