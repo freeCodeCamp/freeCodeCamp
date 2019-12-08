@@ -1,5 +1,5 @@
 ---
-id: 5ddb965c65d27e1512d44db3
+id: 5ddb965c65d27e1512d44db1
 title: Part 26
 challengeType: 0
 isBeta: true
@@ -9,11 +9,9 @@ isBeta: true
 
 <section id='description'>
 
-If you look near the bottom of the HTML page, notice that there is currently an empty `div` element: `<div id="output"></div>`.
+Now that we have `total` and `maxCalories`, we need to find out the difference between them.
 
-We will be inserting output inside this `div`, telling the user if they are in a calorie surplus or deficit.
-
-Create a variable named `output` and set it equal to this division element with the `id` of `output`.
+Create a variable named `difference` and set it equal to `total - maxCalories`
 
 </section>
 
@@ -29,7 +27,7 @@ Create a variable named `output` and set it equal to this division element with 
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(/const\s*output\s*=\s*document\.getElementById\([\'\"\`]output[\'\"\`]\)/.test(code))
+    testString: assert(/const\s*difference\s*\=\s*total\s*\-\s*maxCalories?/.test(code));
 ```
 
 </section>
@@ -52,10 +50,6 @@ tests:
       .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 
     const maxCalories = document.getElementById('female').checked ? 2000 : 2500;
-
-    const difference = total - maxCalories;
-
-    const surplusOrDeficit = difference > 0 ? 'Surplus' : 'Deficit';
   }
 </script>
 ```
@@ -157,10 +151,6 @@ tests:
     const maxCalories = document.getElementById('female').checked ? 2000 : 2500;
 
     const difference = total - maxCalories;
-
-    const surplusOrDeficit = difference > 0 ? 'Surplus' : 'Deficit';
-
-    const output = document.getElementById('output');
   }
 </script>
 ```

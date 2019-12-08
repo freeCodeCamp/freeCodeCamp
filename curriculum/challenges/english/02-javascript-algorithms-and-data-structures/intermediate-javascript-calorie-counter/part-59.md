@@ -1,5 +1,5 @@
 ---
-id: 5ddb965c65d27e1512d44dd4
+id: 5ddb965c65d27e1512d44dd2
 title: Part 59
 challengeType: 0
 isBeta: true
@@ -9,9 +9,9 @@ isBeta: true
 
 <section id='description'>
 
-Later we will want to remove these extra `calorieInput` elements that we added. This will happen when the user pushes the "Clear" button.
+The `calorieInput` element should only accept numbers that are 0 or above.
 
-To keep track of them, add the class name `extra-cal-control` to the `calorieInput` element.
+Set the `min` attribute of `calorieInput` to `0`.
 
 </section>
 
@@ -27,7 +27,7 @@ To keep track of them, add the class name `extra-cal-control` to the `calorieInp
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert( code.replace(/\s/g, '').match(/calorieInput\.classList\.add\([\'\"\`]extra-cal\-control[\'\"\`]\)/) );
+    testString: assert( code.replace(/\s/g, '').match(/calorieInput\.setAttribute\([\'\"\`]min[\'\"\`]\,[\'\"\`]0[\'\"\`]\)/) );
 ```
 
 </section>
@@ -93,8 +93,6 @@ tests:
 
     const calorieInput = document.createElement('input');
     calorieInput.setAttribute('type', 'number');
-    calorieInput.setAttribute('min', '0');
-    calorieInput.classList.add('cal-control');
   };
 </script>
 ```
@@ -238,8 +236,6 @@ tests:
     const calorieInput = document.createElement('input');
     calorieInput.setAttribute('type', 'number');
     calorieInput.setAttribute('min', '0');
-    calorieInput.classList.add('cal-control');
-    calorieInput.classList.add('extra-cal-control');
   };
 </script>
 ```

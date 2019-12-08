@@ -1,5 +1,5 @@
 ---
-id: 5ddb965c65d27e1512d44dd9
+id: 5ddb965c65d27e1512d44dd7
 title: Part 64
 challengeType: 0
 isBeta: true
@@ -9,9 +9,7 @@ isBeta: true
 
 <section id='description'>
 
-We need to remove the contents inside of element with the `id` of `output`.
-
-In the body of the `clearOutput()` function, set the `innerHTML` property of that element equal to an empty string, `''`.
+Inside the `function` body, instruct your code to call two other functions, `clearOutput()` and `clearForm()`. We will create these functions shortly.
 
 </section>
 
@@ -27,7 +25,7 @@ In the body of the `clearOutput()` function, set the `innerHTML` property of tha
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert( code.replace(/\s/g, '').match(/document\.getElementById\([\'\"\`]output[\'\"\`]\)\.innerHTML\=[\'\"\`][\'\"\`]/) );
+    testString: assert(/clearOutput\(\)/.test(code) && /clearForm\(\)/.test(code) )
 ```
 
 </section>
@@ -99,12 +97,7 @@ tests:
     document.getElementById('entries').appendChild(calorieInput);
   };
 
-  document.getElementById('clear').onclick = function() {
-    clearOutput();
-    clearForm();
-  };
-
-  const clearOutput = () => {};
+  document.getElementById('clear').onclick = function() {};
 </script>
 ```
 
@@ -255,10 +248,6 @@ tests:
   document.getElementById('clear').onclick = function() {
     clearOutput();
     clearForm();
-  };
-
-  const clearOutput = () => {
-    document.getElementById('output').innerHTML = '';
   };
 </script>
 ```

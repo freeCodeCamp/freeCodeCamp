@@ -9,25 +9,24 @@ isBeta: true
 
 <section id='description'>
 
-We want to sum up all of the numbers in the `total` array.
+Let's says we have an array `[1, 3, 5]` named `arr` and we want to sum up all the numbers.
 
-As an example, let's says we have an array `[1,3,5]` named `arr` and we want to sum up all the numbers.
+We can use the reduce function as follows:
 
-We can use the reduce function as follows
-`arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0);`
+```js
+arr.reduce((accumulator, currentValue) => {
+  return accumulator + currentValue;
+}, 0);
+```
 
-At `arr[0]`, the function is `(0, 1) => 0 + 1`,
-since `arr[0] = 1 = currentValue`
+At `arr[0]`, the function is `(0, 1) => { return 0 + 1 }`,
+since `arr[0] = 1 = currentValue`.
 
-Note that the `accumulator` starts at `0` because that is what we provide as the initial value argument. After running `0 + 1`, the accumulator is now `1`, which is passed to next invocation of the callback function at
+At `arr[1]`, the function is `(1, 3) => 1 + 3`,
 
-arr[1], the function is `(1, 3) => 1 + 3`,
+Finally at `arr[2]`, the function is `(4, 5) => 4 + 5`. Now the accumulator is `9` and since we have gone through all of the items in `arr`, the `reduce()` method will return `9`.
 
-arr[2], the function is `(4, 5) => 4 + 5`, now the accumulator is `9` and we have gone through all of the items in `arr`, the reduce function will return `9`.
-
-Replace the whole body of the callback function (`{/*code to run*\/}`) with `accumulator + currentValue`.
-
-If you desire, you can now check your progress by adding `console.log(total)`, entering in values in the form, and then push the Calculate button. You will see that the console will log the sum of the inputs that you entered, this is awesome!
+In the body of the callback function, replace `/* code to run */` with `return accumulator + currentValue`.
 
 </section>
 
@@ -43,7 +42,7 @@ If you desire, you can now check your progress by adding `console.log(total)`, e
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert( code.replace(/\s/g, '').match(/reduce\(\(accumulator\,currentValue\)\=\>accumulator\+currentValue\,0\)/) );
+    testString: assert( code.replace(/\s/g, '').match(/reduce\(\(accumulator\,currentValue\)\=\>{returnaccumulator\+currentValue\;?},0\)/) );
 ```
 
 </section>
@@ -64,7 +63,7 @@ tests:
     const total = Array.from(document.getElementsByClassName('cal-control'))
       .map(meal => Number(meal.value))
       .reduce((accumulator, currentValue) => {
-        /*code to run*/
+        /* code to run */
       }, 0);
   }
 </script>
@@ -162,7 +161,9 @@ tests:
 
     const total = Array.from(document.getElementsByClassName('cal-control'))
       .map(meal => Number(meal.value))
-      .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+      .reduce((accumulator, currentValue) => {
+        return accumulator + currentValue;
+      }, 0);
   }
 </script>
 ```
