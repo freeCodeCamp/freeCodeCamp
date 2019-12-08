@@ -114,5 +114,7 @@ exports.helpCategory = {
   'project-euler': 'JavaScript',
   'css-variables-skyline': 'HTML-CSS',
   'basic-javascript-rpg-game': 'JavaScript',
-  'functional-programming-spreadsheet': 'JavaScript'
+  'functional-programming-spreadsheet': 'JavaScript',
+  'intermediate-javascript-calorie-counter':
+    'Intermediate JavaScript Calorie Counter'
 };
