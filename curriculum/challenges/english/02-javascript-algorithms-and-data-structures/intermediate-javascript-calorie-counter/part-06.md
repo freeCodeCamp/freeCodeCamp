@@ -6,47 +6,56 @@ isBeta: true
 ---
 
 ## Description
-<section id='description'>
 
+<section id='description'>
 
 When a form is submitted, the browser will try to submit it to a server and reload the page.
 We want to prevent this from happening and do our own processing on the client side.
 Prevent the default behavior of the form submit event by calling `e.preventDefault()` inside of the `calculate` function.
 
-
 </section>
 
-
 ## Instructions
+
 <section id='instructions'>
 </section>
 
-
 ## Tests
+
 <section id='tests'>
 
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(code.match());
-
+    # testString: assert(code.match());
+    # testString: assert((() => { calculate(); return calculate.toString().match(/button3\.onclick\s*\=\s*fightDragon\;?/)})());
+    # testString: assert((() => { calculate(); return calculate.toString().match(/button3\.onclick\s*\=\s*fightDragon\;?/)})());
+    # testString: assert(calculate.toString().match(/function calculate\(\s*e\)\s*\{\s*\}/));
+    testString: assert(calculate.toString().match(/e\.preventDefault\(\s*\)/));
+    # testString: assert((() => { goStore(); return button1.innerText === "Buy 10 health (10 gold)" })());
+    # testString: assert(calculate.toString().match(/function calculate\(\s*b\)\s*\{\s*\}/));
 ```
 
 </section>
 
-
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
 
 ```html
+<script>
+  document.getElementById('calorie-form').onsubmit = calculate;
+
+  function calculate(e) {}
+</script>
 ```
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -80,8 +89,15 @@ tests:
           </div>
         </div>
         <div class="grid" id="entries">
-          Breakfast <input type="number" min="0" class="cal-control" id="breakfast" /><br>
-          Lunch <input type="number" min="0" class="cal-control" id="lunch" /><br>
+          Breakfast
+          <input
+            type="number"
+            min="0"
+            class="cal-control"
+            id="breakfast"
+          /><br />
+          Lunch
+          <input type="number" min="0" class="cal-control" id="lunch" /><br />
           Dinner <input type="number" min="0" class="cal-control" id="dinner" />
         </div>
         <button type="button" class="btn-add" id="add">
@@ -96,12 +112,14 @@ tests:
       </form>
       <div id="output"></div>
     </div>
+  </body>
+</html>
 ```
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -113,11 +131,18 @@ tests:
 
 </section>
 
-
 ## Solution
+
 <section id='solution'>
 
 ```html
+<script>
+  document.getElementById('calorie-form').onsubmit = calculate;
+
+  function calculate(e) {
+    e.preventDefault();
+  }
+</script>
 ```
 
 </section>

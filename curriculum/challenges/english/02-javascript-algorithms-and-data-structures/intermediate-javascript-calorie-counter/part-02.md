@@ -6,8 +6,8 @@ isBeta: true
 ---
 
 ## Description
-<section id='description'>
 
+<section id='description'>
 
 In our HTML document, we have a form element with an `id` attribute: `<form id="calorie-form">`
 
@@ -15,16 +15,15 @@ To reference and access this particular form in JavaScript, we can use the getEl
 
 The code `document.getElementById('my-form')` gets a reference to an HTML element with an `id` of `my-form`. Get a reference to the HTML element with the `id` of `calorie-form`.
 
-
 </section>
 
-
 ## Instructions
+
 <section id='instructions'>
 </section>
 
-
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -32,28 +31,26 @@ tests:
   - text: See description above for instructions.
     # testString: assert(/^document\.getElementById\(\s*[\'\"\`]calorie\-form[\'\"\`]\s*\)/m.test(code));
     testString: assert( code.replace(/\s/g, '').match(/document\.getElementById\([\'\"\`]calorie\-form[\'\"\`]\)/) );
-
 ```
 
 </section>
 
-
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
 
 ```html
 <script>
-console.log(document);
-
+  //console.log(document);
 </script>
 ```
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -87,8 +84,15 @@ console.log(document);
           </div>
         </div>
         <div class="grid" id="entries">
-          Breakfast <input type="number" min="0" class="cal-control" id="breakfast" /><br>
-          Lunch <input type="number" min="0" class="cal-control" id="lunch" /><br>
+          Breakfast
+          <input
+            type="number"
+            min="0"
+            class="cal-control"
+            id="breakfast"
+          /><br />
+          Lunch
+          <input type="number" min="0" class="cal-control" id="lunch" /><br />
           Dinner <input type="number" min="0" class="cal-control" id="dinner" />
         </div>
         <button type="button" class="btn-add" id="add">
@@ -103,12 +107,14 @@ console.log(document);
       </form>
       <div id="output"></div>
     </div>
+  </body>
+</html>
 ```
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -120,14 +126,14 @@ console.log(document);
 
 </section>
 
-
 ## Solution
+
 <section id='solution'>
 
 ```html
 <script>
-console.log(document);
-document.getElementById('calorie-form');
+  //console.log(document);
+  document.getElementById('calorie-form');
 </script>
 ```
 

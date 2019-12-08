@@ -6,6 +6,7 @@ isBeta: true
 ---
 
 ## Description
+
 <section id='description'>
 
 Now we need to specify what should be done with the form when the user submits it by clicking the Calculate button.
@@ -16,17 +17,17 @@ For example, in `document.getElementById('my-form').onsubmit = processForm;`, th
 
 Assign a function named `calculate` to the `onsubmit` event of your form.
 
-You will create the `calculate` function later. 
+You will create the `calculate` function later.
 
 </section>
 
-
 ## Instructions
+
 <section id='instructions'>
 </section>
 
-
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -34,29 +35,26 @@ tests:
   - text: See description above for instructions.
     # testString: assert(/^document\.getElementById\(\s*[\'\"\`]calorie\-form[\'\"\`]\s*\)\.onsubmit\s+\=\s+calculate/m.test(code));
     testString: assert( code.replace(/\s/g, '').match(/document\.getElementById\([\'\"\`]calorie\-form[\'\"\`]\)\.onsubmit\=calculate/) );
-
 ```
 
 </section>
 
-
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
 
 ```html
 <script>
-console.log(document);
-document.getElementById('calorie-form');
-
+  document.getElementById('calorie-form');
 </script>
 ```
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -90,8 +88,15 @@ document.getElementById('calorie-form');
           </div>
         </div>
         <div class="grid" id="entries">
-          Breakfast <input type="number" min="0" class="cal-control" id="breakfast" /><br>
-          Lunch <input type="number" min="0" class="cal-control" id="lunch" /><br>
+          Breakfast
+          <input
+            type="number"
+            min="0"
+            class="cal-control"
+            id="breakfast"
+          /><br />
+          Lunch
+          <input type="number" min="0" class="cal-control" id="lunch" /><br />
           Dinner <input type="number" min="0" class="cal-control" id="dinner" />
         </div>
         <button type="button" class="btn-add" id="add">
@@ -106,12 +111,14 @@ document.getElementById('calorie-form');
       </form>
       <div id="output"></div>
     </div>
+  </body>
+</html>
 ```
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -123,15 +130,13 @@ document.getElementById('calorie-form');
 
 </section>
 
-
 ## Solution
+
 <section id='solution'>
 
 ```html
 <script>
-console.log(document);
-document.getElementById('calorie-form');
-document.getElementById('calorie-form').onsubmit = calculate;
+  document.getElementById('calorie-form').onsubmit = calculate;
 </script>
 ```
 

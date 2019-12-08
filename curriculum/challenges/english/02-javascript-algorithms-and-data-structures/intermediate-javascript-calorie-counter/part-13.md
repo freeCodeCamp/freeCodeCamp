@@ -6,53 +6,62 @@ isBeta: true
 ---
 
 ## Description
-<section id='description'>
 
+<section id='description'>
 
 Now we need to provide a function to `map()` that will be performed on each item of the array.
 
-This function will take the original item as an argument, in our case we'll call it `meal`.  Inside the `.map()` parentheses, insert an empty function that takes `meal` as a parameter, like:
-```
-function(meal){
-}
+This function will take the original item as an argument, in our case we'll call it `meal`. Inside the `.map()` parentheses, insert an empty function that takes `meal` as a parameter, like:
+
+```js
+function(meal){}
 ```
 
 Enter in the above function as an argument in between the parentheses of the `.map()` function.
 
-
 </section>
 
-
 ## Instructions
+
 <section id='instructions'>
 </section>
 
-
 ## Tests
+
 <section id='tests'>
 
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(code.match());
-
+    #testString: assert(code.match());
+    testString: assert( code.replace(/\s/g, '').match(/map\(function\(\s*meal\)\s*\{\s*\}\)/) );
 ```
 
 </section>
 
-
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
 
 ```html
+<script>
+  document.getElementById('calorie-form').onsubmit = calculate;
+
+  function calculate(e) {
+    e.preventDefault();
+    const total = Array.from(
+      document.getElementsByClassName('cal-control').map()
+    );
+  }
+</script>
 ```
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -86,8 +95,15 @@ tests:
           </div>
         </div>
         <div class="grid" id="entries">
-          Breakfast <input type="number" min="0" class="cal-control" id="breakfast" /><br>
-          Lunch <input type="number" min="0" class="cal-control" id="lunch" /><br>
+          Breakfast
+          <input
+            type="number"
+            min="0"
+            class="cal-control"
+            id="breakfast"
+          /><br />
+          Lunch
+          <input type="number" min="0" class="cal-control" id="lunch" /><br />
           Dinner <input type="number" min="0" class="cal-control" id="dinner" />
         </div>
         <button type="button" class="btn-add" id="add">
@@ -102,12 +118,14 @@ tests:
       </form>
       <div id="output"></div>
     </div>
+  </body>
+</html>
 ```
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -119,11 +137,21 @@ tests:
 
 </section>
 
-
 ## Solution
+
 <section id='solution'>
 
 ```html
+<script>
+  document.getElementById('calorie-form').onsubmit = calculate;
+
+  function calculate(e) {
+    e.preventDefault();
+    const total = Array.from(
+      document.getElementsByClassName('cal-control').map(function(meal) {})
+    );
+  }
+</script>
 ```
 
 </section>

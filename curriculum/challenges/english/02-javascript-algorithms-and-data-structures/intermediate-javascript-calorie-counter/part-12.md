@@ -6,8 +6,8 @@ isBeta: true
 ---
 
 ## Description
-<section id='description'>
 
+<section id='description'>
 
 We need a way to iterate through all the `meal` items in the `total` array and return the values that the user entered as an array.
 
@@ -16,40 +16,49 @@ The `map()` method allows us to do exactly that.
 Delete `const meal = total[0];` and chain the `.map()` method to the end of your `Array.from()` method.
 Here's an example of `.map()` chained to an array: `[3, 2, 1].map()`
 
-
 </section>
 
-
 ## Instructions
+
 <section id='instructions'>
 </section>
 
-
 ## Tests
+
 <section id='tests'>
 
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(code.match());
-
+    # testString: assert(code.match());
+    testString: assert( code.replace(/\s/g, '').match(/Array\.from\(document\.getElementsByClassName\([\'\"\`]cal\-control[\'\"\`]\)\)\.map\(\)/) );
 ```
 
 </section>
 
-
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
 
 ```html
+<script>
+  document.getElementById('calorie-form').onsubmit = calculate;
+
+  function calculate(e) {
+    e.preventDefault();
+    const total = Array.from(document.getElementsByClassName('cal-control'));
+    const meal = total[0];
+    // console.log(meal.value);
+  }
+</script>
 ```
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -83,8 +92,15 @@ tests:
           </div>
         </div>
         <div class="grid" id="entries">
-          Breakfast <input type="number" min="0" class="cal-control" id="breakfast" /><br>
-          Lunch <input type="number" min="0" class="cal-control" id="lunch" /><br>
+          Breakfast
+          <input
+            type="number"
+            min="0"
+            class="cal-control"
+            id="breakfast"
+          /><br />
+          Lunch
+          <input type="number" min="0" class="cal-control" id="lunch" /><br />
           Dinner <input type="number" min="0" class="cal-control" id="dinner" />
         </div>
         <button type="button" class="btn-add" id="add">
@@ -99,12 +115,14 @@ tests:
       </form>
       <div id="output"></div>
     </div>
+  </body>
+</html>
 ```
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -116,11 +134,21 @@ tests:
 
 </section>
 
-
 ## Solution
+
 <section id='solution'>
 
 ```html
+<script>
+  document.getElementById('calorie-form').onsubmit = calculate;
+
+  function calculate(e) {
+    e.preventDefault();
+    const total = Array.from(
+      document.getElementsByClassName('cal-control').map()
+    );
+  }
+</script>
 ```
 
 </section>
