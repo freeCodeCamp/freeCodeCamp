@@ -1,5 +1,5 @@
 ---
-id: 5ddb965c65d27e1512d44dda
+id: 5ddb965c65d27e1512d44dd8
 title: Part 65
 challengeType: 0
 isBeta: true
@@ -9,13 +9,13 @@ isBeta: true
 
 <section id='description'>
 
-Now notice that if you click the "Clear" button, the `output` element is empty, but it still has a border around it. This is because we previously added the `bordered-class` class to this element.
-
-Remove the `bordered-class` class. For example:
+Create a variable named `clearOutput` and set it equal to a blank arrow function: 
 
 ```js
-document.getElementById('my-div').classList.remove('my-class')
+const clearOutput = () => {}
 ```
+
+This is similar to `function clearOutput () {}`.
 
 </section>
 
@@ -31,7 +31,7 @@ document.getElementById('my-div').classList.remove('my-class')
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert( code.replace(/\s/g, '').match(/document\.getElementById\([\'\"\`]output[\'\"\`]\)\.classList\.remove\([\'\"\`]bordered-class[\'\"\`]\)/) );
+    testString: assert( typeof clearOutput === "function" );
 ```
 
 </section>
@@ -106,10 +106,6 @@ tests:
   document.getElementById('clear').onclick = function() {
     clearOutput();
     clearForm();
-  };
-
-  const clearOutput = () => {
-    document.getElementById('output').innerHTML = '';
   };
 </script>
 ```
@@ -263,10 +259,7 @@ tests:
     clearForm();
   };
 
-  const clearOutput = () => {
-    document.getElementById('output').innerHTML = '';
-    document.getElementById('output').classList.remove('bordered-class');
-  };
+  const clearOutput = () => {};
 </script>
 ```
 

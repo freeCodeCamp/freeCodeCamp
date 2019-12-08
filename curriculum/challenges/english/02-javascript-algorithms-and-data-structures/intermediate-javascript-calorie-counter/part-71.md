@@ -1,5 +1,5 @@
 ---
-id: 5ddb965c65d27e1512d44de0
+id: 5ddb965c65d27e1512d44dde
 title: Part 71
 challengeType: 0
 isBeta: true
@@ -9,11 +9,9 @@ isBeta: true
 
 <section id='description'>
 
-We also need to remove all elements with the class name `extra-cal-control` that are added when the user clicks the "Add" button.
+To remove the items `foodInputs` array, we will iterate through them by using the `forEach()` function.
 
-Create a variable named `calInputs` and set it equal to an array of elements with the class name `extra-cal-control`.
-
-This is similar to how you declared the `foodInputs` variable previously.
+Add `foodInputs.forEach()`.
 
 </section>
 
@@ -29,7 +27,7 @@ This is similar to how you declared the `foodInputs` variable previously.
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert( code.replace(/\s/g, '').match(/const\s*calInputs\s*=Array\.from\(document\.getElementsByClassName\([\'\"\`]extra-cal-control[\'\"\`]\)\)/) );
+    testString: assert( code.replace(/\s/g, '').match(/foodInputs.forEach\(\)/) )
 ```
 
 </section>
@@ -116,8 +114,6 @@ tests:
     const foodInputs = Array.from(
       document.getElementsByClassName('food-control')
     );
-
-    foodInputs.forEach(input => input.remove());
   };
 </script>
 ```
@@ -282,11 +278,7 @@ tests:
       document.getElementsByClassName('food-control')
     );
 
-    foodInputs.forEach(input => input.remove());
-
-    const calInputs = Array.from(
-      document.getElementsByClassName('extra-cal-control')
-    );
+    foodInputs.forEach();
   };
 </script>
 ```

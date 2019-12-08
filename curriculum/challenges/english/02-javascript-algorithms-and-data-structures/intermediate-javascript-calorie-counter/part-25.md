@@ -1,5 +1,5 @@
 ---
-id: 5ddb965c65d27e1512d44db2
+id: 5ddb965c65d27e1512d44db0
 title: Part 25
 challengeType: 0
 isBeta: true
@@ -9,13 +9,19 @@ isBeta: true
 
 <section id='description'>
 
-If `difference` is positive, the total calories the user ate is more than the `maxCalories` recommended, or a calories surplus -- otherwise, if `difference` is negative, the user has a calorie deficit.
+Use a ternary operator to assign the value of `maxCalories`. A ternary operator has the following syntax: `condition ? expressionTrue : expressionFalse`.
 
-To determine if this is a calorie surplus or deficit, create a variable named `surplusOrDeficit` to determine if the difference is positive (`difference > 0`).
+For example, `(5 - 3 === 4) ? "Yes" : "No"` does the same thing as the following if else statement:
 
-If it is positive, `surplusOrDeficit` should be set equal to the string "Surplus", and "Deficit" if negative.
+```js
+if (5 - 3 === 4) {
+  return 'Yes';
+} else {
+  return 'No';
+}
+```
 
-Use the same ternary syntax that you used to determine `maxCalories`.
+`document.getElementById('female').checked` will return either `true` if it is checked or `false` if it isn't. Use a ternary operator to return 2000 if it is is checked and 2500 if it is not.
 
 </section>
 
@@ -31,7 +37,7 @@ Use the same ternary syntax that you used to determine `maxCalories`.
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(/const\s*surplusOrDeficit\s*\=\s*difference\s*\>\s*0\s*\?\s*[\'\"\`]Surplus[\'\"\`]\s*\:\s*[\'\"\`]Deficit[\'\"\`]/.test(code));
+    testString: assert(/const\s*maxCalories\s*=\s*document\.getElementById\([\'\"\`]female[\'\"\`]\)\.checked\s*\?\s*2000\s*\:\s*2500/.test(code));
 ```
 
 </section>
@@ -53,9 +59,7 @@ tests:
       .map(meal => Number(meal.value))
       .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 
-    const maxCalories = document.getElementById('female').checked ? 2000 : 2500;
-
-    const difference = total - maxCalories;
+    const maxCalories = document.getElementById('female').checked;
   }
 </script>
 ```
@@ -155,10 +159,6 @@ tests:
       .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 
     const maxCalories = document.getElementById('female').checked ? 2000 : 2500;
-
-    const difference = total - maxCalories;
-
-    const surplusOrDeficit = difference > 0 ? 'Surplus' : 'Deficit';
   }
 </script>
 ```

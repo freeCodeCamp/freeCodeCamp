@@ -1,5 +1,5 @@
 ---
-id: 5ddb965c65d27e1512d44dca
+id: 5ddb965c65d27e1512d44dc8
 title: Part 49
 challengeType: 0
 isBeta: true
@@ -9,15 +9,11 @@ isBeta: true
 
 <section id='description'>
 
-When the user clicks the "Add Entry" button, they should be provided with additional text inputs to enter in a food name and calorie amount. These will be included in the `calculate()` function.
+You can also add styling with the `setAttribute()` method. This method takes two arguments: the name of the attribute and the value that the attribute should be.
 
-In the HTML document, notice that the "Add Entry" button has the `id` attribute `add`: 
+For example, if you want to set the `width` of an `input` element to 100px, you would write `input.setAttribute('width', '100px')`.
 
-```html
-<button type="button" class="btn-add" id="add">
-```
-
-Get a reference to the `document` element with the `id` attribute `add`. This is similar to the reference to the `calorie-form` element that you wrote near the top of this document.
+Set the `class` attribute of the `output` element equal to a class named `bordered-class`.
 
 </section>
 
@@ -33,7 +29,7 @@ Get a reference to the `document` element with the `id` attribute `add`. This is
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert( code.replace(/\s/g, '').match(/document\.getElementById\([\'\"\`]add[\'\"\`]\)/) );
+    testString: assert( code.replace(/\s/g, '').match(/output\.setAttribute\([\'\"\`]class[\'\"\`]\,[\'\"\`]bordered-class[\'\"\`]\)/) );
 ```
 
 </section>
@@ -87,8 +83,7 @@ tests:
     consumed.innerHTML = `${total} Consumed Calories`;
     output.appendChild(consumed);
 
-    output.setAttribute('class', 'bordered-class');
-    output.style.backgroundColor = '#FFF9C4';
+    //put your code here
   }
 </script>
 ```
@@ -220,10 +215,7 @@ tests:
     output.appendChild(consumed);
 
     output.setAttribute('class', 'bordered-class');
-    output.style.backgroundColor = '#FFF9C4';
   }
-
-  document.getElementById('add');
 </script>
 ```
 

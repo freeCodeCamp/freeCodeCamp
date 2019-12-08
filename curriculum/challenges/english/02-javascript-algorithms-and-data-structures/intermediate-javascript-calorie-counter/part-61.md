@@ -1,5 +1,5 @@
 ---
-id: 5ddb965c65d27e1512d44dd6
+id: 5ddb965c65d27e1512d44dd4
 title: Part 61
 challengeType: 0
 isBeta: true
@@ -9,9 +9,9 @@ isBeta: true
 
 <section id='description'>
 
-Next we need a way to reset the form back to its original state. To do this, we specify what to do when the user clicks the "Clear" button.
+Later we will want to remove these extra `calorieInput` elements that we added. This will happen when the user pushes the "Clear" button.
 
-Get a reference to the `document` element with the `id` of `clear` and set its `onclick` property to equal to an empty function, `function(){}`.
+To keep track of them, add the class name `extra-cal-control` to the `calorieInput` element.
 
 </section>
 
@@ -27,7 +27,7 @@ Get a reference to the `document` element with the `id` of `clear` and set its `
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert( code.replace(/\s/g, '').match(/document\.getElementById\([\'\"\`]clear[\'\"\`]\)\.onclick\=function\(\)\{\}/) );
+    testString: assert( code.replace(/\s/g, '').match(/calorieInput\.classList\.add\([\'\"\`]extra-cal\-control[\'\"\`]\)/) );
 ```
 
 </section>
@@ -95,8 +95,6 @@ tests:
     calorieInput.setAttribute('type', 'number');
     calorieInput.setAttribute('min', '0');
     calorieInput.classList.add('cal-control');
-    calorieInput.classList.add('extra-cal-control');
-    document.getElementById('entries').appendChild(calorieInput);
   };
 </script>
 ```
@@ -242,10 +240,7 @@ tests:
     calorieInput.setAttribute('min', '0');
     calorieInput.classList.add('cal-control');
     calorieInput.classList.add('extra-cal-control');
-    document.getElementById('entries').appendChild(calorieInput);
   };
-
-  document.getElementById('clear').onclick = function() {};
 </script>
 ```
 

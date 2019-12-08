@@ -1,5 +1,5 @@
 ---
-id: 5ddb965c65d27e1512d44dc2
+id: 5ddb965c65d27e1512d44dc0
 title: Part 41
 challengeType: 0
 isBeta: true
@@ -9,9 +9,9 @@ isBeta: true
 
 <section id='description'>
 
-Append the `recommendedText` node to the `recommended` element.
+Create a text node and assign it to a variable named `recommendedText`.
 
-This is similar to how the `resultText` is appended to `result` previously.
+This is similar to how your created the `resultText` element previously.
 
 </section>
 
@@ -27,7 +27,7 @@ This is similar to how the `resultText` is appended to `result` previously.
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert( code.replace(/\s/g, '').match(/recommended\.appendChild\(recommendedText\)/) );
+    testString: assert(/const\s*recommendedText\s*=\s*document\.createTextNode\([\'\"\`]?\s*[\'\"\`]?\)/.test(code));
 ```
 
 </section>
@@ -69,9 +69,6 @@ tests:
     output.appendChild(line);
 
     const recommended = document.createElement('h4');
-    const recommendedText = document.createTextNode(
-      `${maxCalories} Recommended Calories`
-    );
   }
 </script>
 ```
@@ -190,11 +187,7 @@ tests:
     output.appendChild(line);
 
     const recommended = document.createElement('h4');
-    const recommendedText = document.createTextNode(
-      `${maxCalories} Recommended Calories`
-    );
-
-    recommended.appendChild(recommendedText);
+    const recommendedText = document.createTextNode();
   }
 </script>
 ```

@@ -1,5 +1,5 @@
 ---
-id: 5ddb965c65d27e1512d44dc3
+id: 5ddb965c65d27e1512d44dc1
 title: Part 42
 challengeType: 0
 isBeta: true
@@ -9,7 +9,11 @@ isBeta: true
 
 <section id='description'>
 
-Append the `recommended` element to `output`.
+We want the `recommendedText` to say "XX Calories Recommended" where "XX" is the `maxCalories` variable that was previously created.
+
+Update text of `recommendedText` to use the `maxCalories` variable in a template literal along with the text "Calories Recommended".
+
+This is similar to template literal syntax previously used to create `resultText`.
 
 </section>
 
@@ -25,7 +29,7 @@ Append the `recommended` element to `output`.
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert( code.replace(/\s/g, '').match(/output\.appendChild\(recommended\)/) );
+    testString: assert( code.replace(/\s/g, '').match(/document\.createTextNode\(\`\$\{maxCalories\}RecommendedCalories\`/) );
 ```
 
 </section>
@@ -67,11 +71,7 @@ tests:
     output.appendChild(line);
 
     const recommended = document.createElement('h4');
-    const recommendedText = document.createTextNode(
-      `${maxCalories} Recommended Calories`
-    );
-
-    recommended.appendChild(recommendedText);
+    const recommendedText = document.createTextNode();
   }
 </script>
 ```
@@ -193,9 +193,6 @@ tests:
     const recommendedText = document.createTextNode(
       `${maxCalories} Recommended Calories`
     );
-
-    recommended.appendChild(recommendedText);
-    output.appendChild(recommended);
   }
 </script>
 ```

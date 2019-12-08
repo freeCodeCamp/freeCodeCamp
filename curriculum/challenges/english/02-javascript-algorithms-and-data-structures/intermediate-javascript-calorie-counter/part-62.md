@@ -1,5 +1,5 @@
 ---
-id: 5ddb965c65d27e1512d44dd7
+id: 5ddb965c65d27e1512d44dd5
 title: Part 62
 challengeType: 0
 isBeta: true
@@ -9,7 +9,9 @@ isBeta: true
 
 <section id='description'>
 
-Inside the `function` body, instruct your code to call two other functions, `clearOutput()` and `clearForm()`. We will create these functions shortly.
+Add the `calorieInput` element to the element with the `id` of `entries` by using the `appendChild()` method.
+
+The Add Entry functionality is now finished. You can test it by clicking the "Add Entry" button, entering in food names and their calories, and then clicking the "Calculate" button.
 
 </section>
 
@@ -25,7 +27,7 @@ Inside the `function` body, instruct your code to call two other functions, `cle
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(/clearOutput\(\)/.test(code) && /clearForm\(\)/.test(code) )
+    testString: assert( code.replace(/\s/g, '').match(/document\.getElementById\([\'\"\`]entries[\'\"\`]\)\.appendChild\(calorieInput\)/) );
 ```
 
 </section>
@@ -94,10 +96,7 @@ tests:
     calorieInput.setAttribute('min', '0');
     calorieInput.classList.add('cal-control');
     calorieInput.classList.add('extra-cal-control');
-    document.getElementById('entries').appendChild(calorieInput);
   };
-
-  document.getElementById('clear').onclick = function() {};
 </script>
 ```
 
@@ -243,11 +242,6 @@ tests:
     calorieInput.classList.add('cal-control');
     calorieInput.classList.add('extra-cal-control');
     document.getElementById('entries').appendChild(calorieInput);
-  };
-
-  document.getElementById('clear').onclick = function() {
-    clearOutput();
-    clearForm();
   };
 </script>
 ```

@@ -1,5 +1,5 @@
 ---
-id: 5ddb965c65d27e1512d44dc5
+id: 5ddb965c65d27e1512d44dc3
 title: Part 44
 challengeType: 0
 isBeta: true
@@ -9,15 +9,7 @@ isBeta: true
 
 <section id='description'>
 
-Another way that we can set the text of the `consumed` element is to set the `innerHTML` property.
-
-For example:
-
-```js 
-consumed.innerHTML = `Hello world`;
-```
-
-Set the inner HTML of `consumed` to "XX Consumed Calories", where "XX" is the `total` variable that was previously created. Use template literals.
+Append the `recommended` element to `output`.
 
 </section>
 
@@ -33,7 +25,7 @@ Set the inner HTML of `consumed` to "XX Consumed Calories", where "XX" is the `t
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert( code.replace(/\s/g, '').match(/consumed\.innerHTML\=\`\$\{total\}ConsumedCalories\`/) );
+    testString: assert( code.replace(/\s/g, '').match(/output\.appendChild\(recommended\)/) );
 ```
 
 </section>
@@ -80,9 +72,6 @@ tests:
     );
 
     recommended.appendChild(recommendedText);
-    output.appendChild(recommended);
-
-    const consumed = document.createElement('h4');
   }
 </script>
 ```
@@ -207,9 +196,6 @@ tests:
 
     recommended.appendChild(recommendedText);
     output.appendChild(recommended);
-
-    const consumed = document.createElement('h4');
-    consumed.innerHTML = `${total} Consumed Calories`;
   }
 </script>
 ```

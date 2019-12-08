@@ -1,5 +1,5 @@
 ---
-id: 5ddb965c65d27e1512d44de2
+id: 5ddb965c65d27e1512d44de0
 title: Part 73
 challengeType: 0
 isBeta: true
@@ -9,9 +9,11 @@ isBeta: true
 
 <section id='description'>
 
-Finally, it's time to clear the other calories that may have been entered for Breakfast, Lunch, and Dinner. This can be achieved by calling the `reset()` method on the form.
+We also need to remove all elements with the class name `extra-cal-control` that are added when the user clicks the "Add" button.
 
-Get a reference to the document element with the `id` of `calorie-form` and chain the `reset()` method to it.
+Create a variable named `calInputs` and set it equal to an array of elements with the class name `extra-cal-control`.
+
+This is similar to how you declared the `foodInputs` variable previously.
 
 </section>
 
@@ -27,7 +29,7 @@ Get a reference to the document element with the `id` of `calorie-form` and chai
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert( code.replace(/\s/g, '').match(/document\.getElementById\([\'\"\`]calorie-form[\'\"\`]\).reset\(\)/) );
+    testString: assert( code.replace(/\s/g, '').match(/const\s*calInputs\s*=Array\.from\(document\.getElementsByClassName\([\'\"\`]extra-cal-control[\'\"\`]\)\)/) );
 ```
 
 </section>
@@ -116,12 +118,6 @@ tests:
     );
 
     foodInputs.forEach(input => input.remove());
-
-    const calInputs = Array.from(
-      document.getElementsByClassName('extra-cal-control')
-    );
-
-    calInputs.forEach(input => input.remove());
   };
 </script>
 ```
@@ -291,10 +287,6 @@ tests:
     const calInputs = Array.from(
       document.getElementsByClassName('extra-cal-control')
     );
-
-    calInputs.forEach(input => input.remove());
-
-    document.getElementById('calorie-form').reset();
   };
 </script>
 ```

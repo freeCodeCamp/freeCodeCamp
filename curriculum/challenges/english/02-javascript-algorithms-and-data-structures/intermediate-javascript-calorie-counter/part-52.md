@@ -1,5 +1,5 @@
 ---
-id: 5ddb965c65d27e1512d44dcd
+id: 5ddb965c65d27e1512d44dcb
 title: Part 52
 challengeType: 0
 isBeta: true
@@ -9,7 +9,13 @@ isBeta: true
 
 <section id='description'>
 
-Set the `placeholder` property of the `foodInput` equal to `'food name'`.
+We want a function to run every time the user clicks the "Add Entry" button.
+
+Chain the `onclick` property to the end of `document.getElementById('add')` and set it equal to an empty function: 
+
+```js
+function() {}
+```
 
 </section>
 
@@ -25,7 +31,7 @@ Set the `placeholder` property of the `foodInput` equal to `'food name'`.
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert( code.replace(/\s/g, '').match(/foodInput\.placeholder\=[\'\"\`]foodname[\'\"\`]/) );
+    testString: assert( code.replace(/\s/g, '').match(/document\.getElementById\([\'\"\`]add[\'\"\`]\)\.onclick\=function\(\)\{\}/) );
 ```
 
 </section>
@@ -83,9 +89,7 @@ tests:
     output.style.backgroundColor = '#FFF9C4';
   }
 
-  document.getElementById('add').onclick = function() {
-    const foodInput = document.createElement('input');
-  };
+  document.getElementById('add');
 </script>
 ```
 
@@ -219,10 +223,7 @@ tests:
     output.style.backgroundColor = '#FFF9C4';
   }
 
-  document.getElementById('add').onclick = function() {
-    const foodInput = document.createElement('input');
-    foodInput.placeholder = 'food name';
-  };
+  document.getElementById('add').onclick = function() {};
 </script>
 ```
 
