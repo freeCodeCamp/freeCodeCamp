@@ -1,6 +1,6 @@
 ---
-id: 5ddb965c65d27e1512d44ddc
-title: Part 69
+id: 5ddb965c65d27e1512d44de3
+title: Part 76
 challengeType: 0
 isBeta: true
 ---
@@ -9,7 +9,7 @@ isBeta: true
 
 <section id='description'>
 
-Create a variable named `clearForm` and set it equal to a blank arrow function like you did with `clearOutput`.
+Congratulations! Have fun playing with your completed calorie counter.
 
 </section>
 
@@ -25,7 +25,7 @@ Create a variable named `clearForm` and set it equal to a blank arrow function l
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert( typeof clearForm === "function")
+    testString: ''
 ```
 
 </section>
@@ -106,6 +106,22 @@ tests:
   const clearOutput = () => {
     document.getElementById('output').innerHTML = '';
     document.getElementById('output').classList.remove('bordered-class');
+  };
+
+  const clearForm = () => {
+    const foodInputs = Array.from(
+      document.getElementsByClassName('food-control')
+    );
+
+    foodInputs.forEach(input => input.remove());
+
+    const calInputs = Array.from(
+      document.getElementsByClassName('extra-cal-control')
+    );
+
+    calInputs.forEach(input => input.remove());
+
+    document.getElementById('calorie-form').reset();
   };
 </script>
 ```
@@ -194,79 +210,9 @@ tests:
 <section id='solution'>
 
 ```html
-<script>
-  document.getElementById('calorie-form').onsubmit = calculate;
 
-  function calculate(e) {
-    e.preventDefault();
-    clearOutput();
+<!-- Solution not necessary for the last step -->
 
-    const total = Array.from(document.getElementsByClassName('cal-control'))
-      .map(meal => Number(meal.value))
-      .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
-
-    const maxCalories = document.getElementById('female').checked ? 2000 : 2500;
-
-    const difference = total - maxCalories;
-
-    const surplusOrDeficit = difference > 0 ? 'Surplus' : 'Deficit';
-
-    const output = document.getElementById('output');
-
-    const result = document.createElement('h3');
-    result.className = 'green-text';
-    const resultText = document.createTextNode(
-      `${Math.abs(difference)} Calorie ${surplusOrDeficit}`
-    );
-
-    result.appendChild(resultText);
-    output.appendChild(result);
-
-    const line = document.createElement('hr');
-    output.appendChild(line);
-
-    const recommended = document.createElement('h4');
-    const recommendedText = document.createTextNode(
-      `${maxCalories} Recommended Calories`
-    );
-
-    recommended.appendChild(recommendedText);
-    output.appendChild(recommended);
-
-    const consumed = document.createElement('h4');
-    consumed.innerHTML = `${total} Consumed Calories`;
-    output.appendChild(consumed);
-
-    output.setAttribute('class', 'bordered-class');
-    output.style.backgroundColor = '#FFF9C4';
-  }
-
-  document.getElementById('add').onclick = function() {
-    const foodInput = document.createElement('input');
-    foodInput.placeholder = 'food name';
-    foodInput.classList.add('food-control');
-    document.getElementById('entries').appendChild(foodInput);
-
-    const calorieInput = document.createElement('input');
-    calorieInput.setAttribute('type', 'number');
-    calorieInput.setAttribute('min', '0');
-    calorieInput.classList.add('cal-control');
-    calorieInput.classList.add('extra-cal-control');
-    document.getElementById('entries').appendChild(calorieInput);
-  };
-
-  document.getElementById('clear').onclick = function() {
-    clearOutput();
-    clearForm();
-  };
-
-  const clearOutput = () => {
-    document.getElementById('output').innerHTML = '';
-    document.getElementById('output').classList.remove('bordered-class');
-  };
-
-  const clearForm = () => {};
-</script>
 ```
 
 </section>

@@ -15,7 +15,7 @@ Here is an example of a `reduce()` method with an empty object as its initial va
 
 ```js
 arr.reduce((accumulator, currentValue) => {
-  /*code to run*/
+  /* code to run */
 }, {});
 ```
 

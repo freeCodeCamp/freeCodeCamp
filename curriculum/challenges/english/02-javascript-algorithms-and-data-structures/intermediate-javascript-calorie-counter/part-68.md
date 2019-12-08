@@ -1,5 +1,5 @@
 ---
-id: 5ddb965c65d27e1512d44ddd
+id: 5ddb965c65d27e1512d44ddb
 title: Part 68
 challengeType: 0
 isBeta: true
@@ -9,11 +9,9 @@ isBeta: true
 
 <section id='description'>
 
-We need to remove all elements with the class name `food-control` that are added when the user clicks the "Add" button.
+The `clearOutput` function is called when the user clicks the "Clear" button. But it also needs to be run when the user clicks the "Calculate" button.
 
-Inside the function body of `clearForm`, create a variable named `foodInputs` and set it equal to an array of elements with the class name `food-control`.
-
-This is similar to how you declared the `total` variable previously in the `calculate` method.
+In the `calculate()` function, right after `event.preventDefault()`, call the `clearOutput` function.
 
 </section>
 
@@ -29,7 +27,7 @@ This is similar to how you declared the `total` variable previously in the `calc
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert( code.replace(/\s/g, '').match(/const\s*foodInputs\s*=Array\.from\(document\.getElementsByClassName\([\'\"\`]food\-control[\'\"\`]\)\)/) );
+    testString: assert( calculate.toString().match(/clearOutput\(\)/) );
 ```
 
 </section>
@@ -46,7 +44,7 @@ tests:
 
   function calculate(e) {
     e.preventDefault();
-    clearOutput();
+    //put your code here
 
     const total = Array.from(document.getElementsByClassName('cal-control'))
       .map(meal => Number(meal.value))
@@ -111,8 +109,6 @@ tests:
     document.getElementById('output').innerHTML = '';
     document.getElementById('output').classList.remove('bordered-class');
   };
-
-  const clearForm = () => {};
 </script>
 ```
 
@@ -269,12 +265,6 @@ tests:
   const clearOutput = () => {
     document.getElementById('output').innerHTML = '';
     document.getElementById('output').classList.remove('bordered-class');
-  };
-
-  const clearForm = () => {
-    const foodInputs = Array.from(
-      document.getElementsByClassName('food-control')
-    );
   };
 </script>
 ```

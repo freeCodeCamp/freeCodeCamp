@@ -1,5 +1,5 @@
 ---
-id: 5ddb965c65d27e1512d44dd2
+id: 5ddb965c65d27e1512d44dd0
 title: Part 57
 challengeType: 0
 isBeta: true
@@ -9,9 +9,7 @@ isBeta: true
 
 <section id='description'>
 
-The `calorieInput` element should only accept numbers that are 0 or above.
-
-Set the `min` attribute of `calorieInput` to `0`.
+Create a variable named `calorieInput` and set it equal to another `input` document element. This is similar to how you created the `foodInput`.
 
 </section>
 
@@ -27,7 +25,7 @@ Set the `min` attribute of `calorieInput` to `0`.
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert( code.replace(/\s/g, '').match(/calorieInput\.setAttribute\([\'\"\`]min[\'\"\`]\,[\'\"\`]0[\'\"\`]\)/) );
+    testString: assert(/const\s*calorieInput\s*=\s*document\.createElement\([\'\"\`]input[\'\"\`]\)/.test(code));
 ```
 
 </section>
@@ -90,9 +88,6 @@ tests:
     foodInput.placeholder = 'food name';
     foodInput.classList.add('food-control');
     document.getElementById('entries').appendChild(foodInput);
-
-    const calorieInput = document.createElement('input');
-    calorieInput.setAttribute('type', 'number');
   };
 </script>
 ```
@@ -234,8 +229,6 @@ tests:
     document.getElementById('entries').appendChild(foodInput);
 
     const calorieInput = document.createElement('input');
-    calorieInput.setAttribute('type', 'number');
-    calorieInput.setAttribute('min', '0');
   };
 </script>
 ```

@@ -1,5 +1,5 @@
 ---
-id: 5ddb965c65d27e1512d44dbe
+id: 5ddb965c65d27e1512d44dbc
 title: Part 37
 challengeType: 0
 isBeta: true
@@ -9,7 +9,9 @@ isBeta: true
 
 <section id='description'>
 
-Add the `line` to the `output` element using the `appendChild()` method.
+Similarly, append the `result` to the `output` element with the `appendChild()` method.
+
+Now if you enter in data and push the Calculate button, you will see the text added to the HTML document!
 
 </section>
 
@@ -25,7 +27,7 @@ Add the `line` to the `output` element using the `appendChild()` method.
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert( code.replace(/\s/g, '').match(/output\.appendChild\(line\)/) );
+    testString: assert( code.replace(/\s/g, '').match(/output\.appendChild\(result\)/) );
 ```
 
 </section>
@@ -61,9 +63,6 @@ tests:
     );
 
     result.appendChild(resultText);
-    output.appendChild(result);
-    
-    const line = document.createElement('hr');
   }
 </script>
 ```
@@ -177,9 +176,6 @@ tests:
 
     result.appendChild(resultText);
     output.appendChild(result);
-
-    const line = document.createElement('hr');
-    output.appendChild(line);
   }
 </script>
 ```

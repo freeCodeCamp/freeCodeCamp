@@ -1,5 +1,5 @@
 ---
-id: 5ddb965c65d27e1512d44ddb
+id: 5ddb965c65d27e1512d44dd9
 title: Part 66
 challengeType: 0
 isBeta: true
@@ -9,9 +9,9 @@ isBeta: true
 
 <section id='description'>
 
-The `clearOutput` function is called when the user clicks the "Clear" button. But it also needs to be run when the user clicks the "Calculate" button.
+We need to remove the contents inside of element with the `id` of `output`.
 
-In the `calculate()` function, right after `event.preventDefault()`, call the `clearOutput` function.
+In the body of the `clearOutput()` function, set the `innerHTML` property of that element equal to an empty string, `''`.
 
 </section>
 
@@ -27,7 +27,7 @@ In the `calculate()` function, right after `event.preventDefault()`, call the `c
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert( calculate.toString().match(/clearOutput\(\)/) );
+    testString: assert( code.replace(/\s/g, '').match(/document\.getElementById\([\'\"\`]output[\'\"\`]\)\.innerHTML\=[\'\"\`][\'\"\`]/) );
 ```
 
 </section>
@@ -44,7 +44,6 @@ tests:
 
   function calculate(e) {
     e.preventDefault();
-    //put your code here
 
     const total = Array.from(document.getElementsByClassName('cal-control'))
       .map(meal => Number(meal.value))
@@ -105,10 +104,7 @@ tests:
     clearForm();
   };
 
-  const clearOutput = () => {
-    document.getElementById('output').innerHTML = '';
-    document.getElementById('output').classList.remove('bordered-class');
-  };
+  const clearOutput = () => {};
 </script>
 ```
 
@@ -201,7 +197,6 @@ tests:
 
   function calculate(e) {
     e.preventDefault();
-    clearOutput();
 
     const total = Array.from(document.getElementsByClassName('cal-control'))
       .map(meal => Number(meal.value))
@@ -264,7 +259,6 @@ tests:
 
   const clearOutput = () => {
     document.getElementById('output').innerHTML = '';
-    document.getElementById('output').classList.remove('bordered-class');
   };
 </script>
 ```

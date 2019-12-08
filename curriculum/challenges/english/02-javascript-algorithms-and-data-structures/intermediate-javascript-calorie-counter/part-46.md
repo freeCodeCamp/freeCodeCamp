@@ -1,5 +1,5 @@
 ---
-id: 5ddb965c65d27e1512d44dc7
+id: 5ddb965c65d27e1512d44dc5
 title: Part 46
 challengeType: 0
 isBeta: true
@@ -9,13 +9,15 @@ isBeta: true
 
 <section id='description'>
 
-Now it's time to add some styling which can be added directly as attributes or classes.
+Another way that we can set the text of the `consumed` element is to set the `innerHTML` property.
 
-In our CSS file, we have a styling rule for any elements with the class name `green-text`.
+For example:
 
-On line **20**, right after creating the `result` element, set the `className` property of `result` to be equal to `'green-text'`.
+```js 
+consumed.innerHTML = `Hello world`;
+```
 
-Now if you submit the form again and inspect the `result` element, you will see it as `<h3 class="green-text">` and notice that the text is now green.
+Set the inner HTML of `consumed` to "XX Consumed Calories", where "XX" is the `total` variable that was previously created. Use template literals.
 
 </section>
 
@@ -31,7 +33,7 @@ Now if you submit the form again and inspect the `result` element, you will see 
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert( code.replace(/\s/g, '').match(/result\.className\=[\'\"\`]green-text[\'\"\`]/) );
+    testString: assert( code.replace(/\s/g, '').match(/consumed\.innerHTML\=\`\$\{total\}ConsumedCalories\`/) );
 ```
 
 </section>
@@ -62,7 +64,6 @@ tests:
     const output = document.getElementById('output');
 
     const result = document.createElement('h3');
-    //put your code here
     const resultText = document.createTextNode(
       `${Math.abs(difference)} Calorie ${surplusOrDeficit}`
     );
@@ -82,8 +83,6 @@ tests:
     output.appendChild(recommended);
 
     const consumed = document.createElement('h4');
-    consumed.innerHTML = `${total} Consumed Calories`;
-    output.appendChild(consumed);
   }
 </script>
 ```
@@ -191,7 +190,6 @@ tests:
     const output = document.getElementById('output');
 
     const result = document.createElement('h3');
-    result.className = 'green-text';
     const resultText = document.createTextNode(
       `${Math.abs(difference)} Calorie ${surplusOrDeficit}`
     );
@@ -212,7 +210,6 @@ tests:
 
     const consumed = document.createElement('h4');
     consumed.innerHTML = `${total} Consumed Calories`;
-    output.appendChild(consumed);
   }
 </script>
 ```

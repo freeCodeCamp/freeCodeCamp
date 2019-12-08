@@ -15,7 +15,7 @@ The `reduce()` method takes a callback function with at least two arguments, an 
 
 or using arrow functions:
 
-`(accumulator, currentValue) => { /*code to run*/ }`
+`(accumulator, currentValue) => { /* code to run */ }`
 
 Insert the above callback function as an argument in the `.reduce()` method.
 

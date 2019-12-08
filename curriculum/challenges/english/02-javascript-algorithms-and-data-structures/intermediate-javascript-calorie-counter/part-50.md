@@ -1,5 +1,5 @@
 ---
-id: 5ddb965c65d27e1512d44dcb
+id: 5ddb965c65d27e1512d44dc9
 title: Part 50
 challengeType: 0
 isBeta: true
@@ -9,13 +9,11 @@ isBeta: true
 
 <section id='description'>
 
-We want a function to run every time the user clicks the "Add Entry" button.
+Another way to add styling is to use the `style` property directly, like `output.style.width = '300px'`.
 
-Chain the `onclick` property to the end of `document.getElementById('add')` and set it equal to an empty function: 
+Add a `backgroundColor` style to `output` and set it equal to `'#FFF9C4'`.
 
-```js
-function() {}
-```
+The `calculate()` function is now finished!
 
 </section>
 
@@ -31,7 +29,7 @@ function() {}
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert( code.replace(/\s/g, '').match(/document\.getElementById\([\'\"\`]add[\'\"\`]\)\.onclick\=function\(\)\{\}/) );
+    testString: assert( code.replace(/\s/g, '').match(/output\.style\.backgroundColor\=[\'\"\`]\#FFF9C4[\'\"\`]/) );
 ```
 
 </section>
@@ -86,10 +84,7 @@ tests:
     output.appendChild(consumed);
 
     output.setAttribute('class', 'bordered-class');
-    output.style.backgroundColor = '#FFF9C4';
   }
-
-  document.getElementById('add');
 </script>
 ```
 
@@ -222,8 +217,6 @@ tests:
     output.setAttribute('class', 'bordered-class');
     output.style.backgroundColor = '#FFF9C4';
   }
-
-  document.getElementById('add').onclick = function() {};
 </script>
 ```
 

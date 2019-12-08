@@ -1,5 +1,5 @@
 ---
-id: 5ddb965c65d27e1512d44dbd
+id: 5ddb965c65d27e1512d44dbb
 title: Part 36
 challengeType: 0
 isBeta: true
@@ -9,9 +9,11 @@ isBeta: true
 
 <section id='description'>
 
-Next, let's create and add a horizontal rule (`hr`) element to the output.
+Now you can append the `resultText` to the `result` with the `appendChild()` method, like this:
 
-Create an `hr` element and assign it to a variable named `line`.
+```js
+result.appendChild(resultText);
+```
 
 </section>
 
@@ -27,7 +29,7 @@ Create an `hr` element and assign it to a variable named `line`.
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(/const\s*line\s*=\s*document\.createElement\([\'\"\`]hr[\'\"\`]\)/.test(code))
+    testString: assert( code.replace(/\s/g, '').match(/result\.appendChild\(resultText\)/) );
 ```
 
 </section>
@@ -61,9 +63,6 @@ tests:
     const resultText = document.createTextNode(
       `${Math.abs(difference)} Calorie ${surplusOrDeficit}`
     );
-
-    result.appendChild(resultText);
-    output.appendChild(result);
   }
 </script>
 ```
@@ -176,9 +175,6 @@ tests:
     );
 
     result.appendChild(resultText);
-    output.appendChild(result);
-
-    const line = document.createElement('hr');
   }
 </script>
 ```

@@ -1,5 +1,5 @@
 ---
-id: 5ddb965c65d27e1512d44ddf
+id: 5ddb965c65d27e1512d44ddd
 title: Part 70
 challengeType: 0
 isBeta: true
@@ -9,11 +9,11 @@ isBeta: true
 
 <section id='description'>
 
-We need to provide a callback function in the parentheses of `forEach()`.
+We need to remove all elements with the class name `food-control` that are added when the user clicks the "Add" button.
 
-This function will take each input item, in our case we'll call it `input`, as an argument. Then inside the function body, we need to call the `remove()` method.
+Inside the function body of `clearForm`, create a variable named `foodInputs` and set it equal to an array of elements with the class name `food-control`.
 
-In between the parentheses of the `.forEach()` function, enter `input => input.remove()`.
+This is similar to how you declared the `total` variable previously in the `calculate` method.
 
 </section>
 
@@ -29,7 +29,7 @@ In between the parentheses of the `.forEach()` function, enter `input => input.r
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert( code.replace(/\s/g, '').match(/foodInputs.forEach\(input=>input.remove\(\)\)/) )
+    testString: assert( code.replace(/\s/g, '').match(/const\s*foodInputs\s*=Array\.from\(document\.getElementsByClassName\([\'\"\`]food\-control[\'\"\`]\)\)/) );
 ```
 
 </section>
@@ -112,13 +112,7 @@ tests:
     document.getElementById('output').classList.remove('bordered-class');
   };
 
-  const clearForm = () => {
-    const foodInputs = Array.from(
-      document.getElementsByClassName('food-control')
-    );
-
-    foodInputs.forEach();
-  };
+  const clearForm = () => {};
 </script>
 ```
 
@@ -281,8 +275,6 @@ tests:
     const foodInputs = Array.from(
       document.getElementsByClassName('food-control')
     );
-
-    foodInputs.forEach(input => input.remove());
   };
 </script>
 ```

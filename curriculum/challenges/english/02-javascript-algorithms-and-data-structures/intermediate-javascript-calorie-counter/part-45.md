@@ -1,5 +1,5 @@
 ---
-id: 5ddb965c65d27e1512d44dc6
+id: 5ddb965c65d27e1512d44dc4
 title: Part 45
 challengeType: 0
 isBeta: true
@@ -9,7 +9,9 @@ isBeta: true
 
 <section id='description'>
 
-Append the `consumed` element to `output`.
+Similar to the `recommended` element, we are going to create a `consumed` element that will display the amount of calories consumed.
+
+Create an `h4` element and assign it to a variable named `consumed`.
 
 </section>
 
@@ -25,7 +27,7 @@ Append the `consumed` element to `output`.
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert( code.replace(/\s/g, '').match(/output\.appendChild\(consumed\)/) );
+    testString: assert(/const\s*consumed\s*=\s*document\.createElement\([\'\"\`]h4[\'\"\`]\)/.test(code));
 ```
 
 </section>
@@ -73,9 +75,6 @@ tests:
 
     recommended.appendChild(recommendedText);
     output.appendChild(recommended);
-
-    const consumed = document.createElement('h4');
-    consumed.innerHTML = `${total} Consumed Calories`;
   }
 </script>
 ```
@@ -202,8 +201,6 @@ tests:
     output.appendChild(recommended);
 
     const consumed = document.createElement('h4');
-    consumed.innerHTML = `${total} Consumed Calories`;
-    output.appendChild(consumed);
   }
 </script>
 ```

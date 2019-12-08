@@ -1,5 +1,5 @@
 ---
-id: 5ddb965c65d27e1512d44dc4
+id: 5ddb965c65d27e1512d44dc2
 title: Part 43
 challengeType: 0
 isBeta: true
@@ -9,9 +9,9 @@ isBeta: true
 
 <section id='description'>
 
-Similar to the `recommended` element, we are going to create a `consumed` element that will display the amount of calories consumed.
+Append the `recommendedText` node to the `recommended` element.
 
-Create an `h4` element and assign it to a variable named `consumed`.
+This is similar to how the `resultText` is appended to `result` previously.
 
 </section>
 
@@ -27,7 +27,7 @@ Create an `h4` element and assign it to a variable named `consumed`.
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(/const\s*consumed\s*=\s*document\.createElement\([\'\"\`]h4[\'\"\`]\)/.test(code));
+    testString: assert( code.replace(/\s/g, '').match(/recommended\.appendChild\(recommendedText\)/) );
 ```
 
 </section>
@@ -72,9 +72,6 @@ tests:
     const recommendedText = document.createTextNode(
       `${maxCalories} Recommended Calories`
     );
-
-    recommended.appendChild(recommendedText);
-    output.appendChild(recommended);
   }
 </script>
 ```
@@ -198,9 +195,6 @@ tests:
     );
 
     recommended.appendChild(recommendedText);
-    output.appendChild(recommended);
-
-    const consumed = document.createElement('h4');
   }
 </script>
 ```

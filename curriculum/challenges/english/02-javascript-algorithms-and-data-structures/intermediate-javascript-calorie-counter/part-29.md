@@ -1,5 +1,5 @@
 ---
-id: 5ddb965c65d27e1512d44db6
+id: 5ddb965c65d27e1512d44db4
 title: Part 29
 challengeType: 0
 isBeta: true
@@ -9,11 +9,15 @@ isBeta: true
 
 <section id='description'>
 
-We can now use the `difference` variable that we created above.
+Now it's time to create the HTML elements that we will add inside of `output`.
 
-Insert the `difference` variable inside the parentheses of `.createTextNode()`
+To create an element, use `createElement()`. For example:
 
-If you want to see what the text currently looks like, try `console.log(resultText)`.
+```js
+const myHeading1 = document.createElement('h1')
+```
+
+Create an `h3` element and assign it to a variable named `result`.
 
 </section>
 
@@ -29,7 +33,7 @@ If you want to see what the text currently looks like, try `console.log(resultTe
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(/const\s*resultText\s*=\s*document\.createTextNode\(\s*difference\s*?\)/.test(code));
+    testString: assert(/const\s*result\s*=\s*document\.createElement\([\'\"\`]h3[\'\"\`]\)/.test(code));
 ```
 
 </section>
@@ -58,9 +62,6 @@ tests:
     const surplusOrDeficit = difference > 0 ? 'Surplus' : 'Deficit';
 
     const output = document.getElementById('output');
-
-    const result = document.createElement('h3');
-    const resultText = document.createTextNode();
   }
 </script>
 ```
@@ -168,7 +169,6 @@ tests:
     const output = document.getElementById('output');
 
     const result = document.createElement('h3');
-    const resultText = document.createTextNode(difference);
   }
 </script>
 ```

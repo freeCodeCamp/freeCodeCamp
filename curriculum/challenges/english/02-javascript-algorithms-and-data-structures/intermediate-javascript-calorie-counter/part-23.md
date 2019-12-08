@@ -1,5 +1,5 @@
 ---
-id: 5ddb965c65d27e1512d44db0
+id: 5ddb965c65d27e1512d44dae
 title: Part 23
 challengeType: 0
 isBeta: true
@@ -9,19 +9,13 @@ isBeta: true
 
 <section id='description'>
 
-Use a ternary operator to assign the value of `maxCalories`. A ternary operator has the following syntax: `condition ? expressionTrue : expressionFalse`.
+Now that we have the `total` number of calories that the user entered, we need to determine the maximum calories they should consume.
 
-For example, `(5 - 3 === 4) ? "Yes" : "No"` does the same thing as the following if else statement:
+Look at the form and notice that there are radio buttons for Female and Male. If Female is selected, the maximum calories consumed should be 2000, and if Male is selected, the maximum should be 2500.
 
-```javascript
-if (5 - 3 === 4) {
-  return 'Yes';
-} else {
-  return 'No';
-}
-```
+If you inspect the Female radio button you will notice its id: `<input type="radio" name="sex" id="female" value="F" checked="">`
 
-`document.getElementById('female').checked` will return either `true` if it is checked or `false` if it isn't. Use a ternary operator to return 2000 if it is is checked and 2500 if it is not.
+Create a variable named `maxCalories` and set it equal to the document element with the id of `female`.
 
 </section>
 
@@ -37,7 +31,8 @@ if (5 - 3 === 4) {
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(/const\s*maxCalories\s*=\s*document\.getElementById\([\'\"\`]female[\'\"\`]\)\.checked\s*\?\s*2000\s*\:\s*2500/.test(code));
+    # testString: assert(code.match());
+    testString: assert(/const\s*maxCalories\s*=\s*document\.getElementById\([\'\"\`]female[\'\"\`]\)/.test(code));
 ```
 
 </section>
@@ -58,8 +53,6 @@ tests:
     const total = Array.from(document.getElementsByClassName('cal-control'))
       .map(meal => Number(meal.value))
       .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
-
-    const maxCalories = document.getElementById('female').checked;
   }
 </script>
 ```
@@ -158,7 +151,7 @@ tests:
       .map(meal => Number(meal.value))
       .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 
-    const maxCalories = document.getElementById('female').checked ? 2000 : 2500;
+    const maxCalories = document.getElementById('female');
   }
 </script>
 ```

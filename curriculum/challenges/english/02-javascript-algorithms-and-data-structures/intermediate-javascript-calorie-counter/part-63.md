@@ -1,5 +1,5 @@
 ---
-id: 5ddb965c65d27e1512d44dd8
+id: 5ddb965c65d27e1512d44dd6
 title: Part 63
 challengeType: 0
 isBeta: true
@@ -9,13 +9,9 @@ isBeta: true
 
 <section id='description'>
 
-Create a variable named `clearOutput` and set it equal to a blank arrow function: 
+Next we need a way to reset the form back to its original state. To do this, we specify what to do when the user clicks the "Clear" button.
 
-```js
-const clearOutput = () => {}
-```
-
-This is similar to `function clearOutput () {}`.
+Get a reference to the `document` element with the `id` of `clear` and set its `onclick` property to equal to an empty function, `function(){}`.
 
 </section>
 
@@ -31,7 +27,7 @@ This is similar to `function clearOutput () {}`.
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert( typeof clearOutput === "function" );
+    testString: assert( code.replace(/\s/g, '').match(/document\.getElementById\([\'\"\`]clear[\'\"\`]\)\.onclick\=function\(\)\{\}/) );
 ```
 
 </section>
@@ -101,11 +97,6 @@ tests:
     calorieInput.classList.add('cal-control');
     calorieInput.classList.add('extra-cal-control');
     document.getElementById('entries').appendChild(calorieInput);
-  };
-
-  document.getElementById('clear').onclick = function() {
-    clearOutput();
-    clearForm();
   };
 </script>
 ```
@@ -254,12 +245,7 @@ tests:
     document.getElementById('entries').appendChild(calorieInput);
   };
 
-  document.getElementById('clear').onclick = function() {
-    clearOutput();
-    clearForm();
-  };
-
-  const clearOutput = () => {};
+  document.getElementById('clear').onclick = function() {};
 </script>
 ```
 

@@ -1,5 +1,5 @@
 ---
-id: 5ddb965c65d27e1512d44dd5
+id: 5ddb965c65d27e1512d44dd3
 title: Part 60
 challengeType: 0
 isBeta: true
@@ -9,9 +9,9 @@ isBeta: true
 
 <section id='description'>
 
-Add the `calorieInput` element to the element with the `id` of `entries` by using the `appendChild()` method.
+Add a class named `cal-control` to the `calorieInput` element. This is similar to how you added a class name to the `foodInput` element previously.
 
-The Add Entry functionality is now finished. You can test it by clicking the "Add Entry" button, entering in food names and their calories, and then clicking the "Calculate" button.
+We are adding this class name because in the `calculate()` function you created previously, the `total` is calculated from the elements with the class name `cal-control`.
 
 </section>
 
@@ -27,7 +27,7 @@ The Add Entry functionality is now finished. You can test it by clicking the "Ad
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert( code.replace(/\s/g, '').match(/document\.getElementById\([\'\"\`]entries[\'\"\`]\)\.appendChild\(calorieInput\)/) );
+    testString: assert( code.replace(/\s/g, '').match(/calorieInput\.classList\.add\([\'\"\`]cal\-control[\'\"\`]\)/) );
 ```
 
 </section>
@@ -94,8 +94,6 @@ tests:
     const calorieInput = document.createElement('input');
     calorieInput.setAttribute('type', 'number');
     calorieInput.setAttribute('min', '0');
-    calorieInput.classList.add('cal-control');
-    calorieInput.classList.add('extra-cal-control');
   };
 </script>
 ```
@@ -240,8 +238,6 @@ tests:
     calorieInput.setAttribute('type', 'number');
     calorieInput.setAttribute('min', '0');
     calorieInput.classList.add('cal-control');
-    calorieInput.classList.add('extra-cal-control');
-    document.getElementById('entries').appendChild(calorieInput);
   };
 </script>
 ```

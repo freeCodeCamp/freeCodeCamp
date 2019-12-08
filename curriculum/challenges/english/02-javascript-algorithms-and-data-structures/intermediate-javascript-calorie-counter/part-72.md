@@ -1,5 +1,5 @@
 ---
-id: 5ddb965c65d27e1512d44de1
+id: 5ddb965c65d27e1512d44ddf
 title: Part 72
 challengeType: 0
 isBeta: true
@@ -9,7 +9,11 @@ isBeta: true
 
 <section id='description'>
 
-Similar to how you removed each `foodInputs` elements, use the `forEach()` function to remove each `calInputs` element.
+We need to provide a callback function in the parentheses of `forEach()`.
+
+This function will take each input item, in our case we'll call it `input`, as an argument. Then inside the function body, we need to call the `remove()` method.
+
+In between the parentheses of the `.forEach()` function, enter `input => input.remove()`.
 
 </section>
 
@@ -25,7 +29,7 @@ Similar to how you removed each `foodInputs` elements, use the `forEach()` funct
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert( code.replace(/\s/g, '').match(/calInputs.forEach\(input=>input.remove\(\)\)/) )
+    testString: assert( code.replace(/\s/g, '').match(/foodInputs.forEach\(input=>input.remove\(\)\)/) )
 ```
 
 </section>
@@ -113,11 +117,7 @@ tests:
       document.getElementsByClassName('food-control')
     );
 
-    foodInputs.forEach(input => input.remove());
-
-    const calInputs = Array.from(
-      document.getElementsByClassName('extra-cal-control')
-    );
+    foodInputs.forEach();
   };
 </script>
 ```
@@ -283,12 +283,6 @@ tests:
     );
 
     foodInputs.forEach(input => input.remove());
-
-    const calInputs = Array.from(
-      document.getElementsByClassName('extra-cal-control')
-    );
-
-    calInputs.forEach(input => input.remove());
   };
 </script>
 ```

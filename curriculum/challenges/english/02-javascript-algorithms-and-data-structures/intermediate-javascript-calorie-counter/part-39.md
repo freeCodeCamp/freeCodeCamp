@@ -1,5 +1,5 @@
 ---
-id: 5ddb965c65d27e1512d44dc0
+id: 5ddb965c65d27e1512d44dbe
 title: Part 39
 challengeType: 0
 isBeta: true
@@ -9,9 +9,7 @@ isBeta: true
 
 <section id='description'>
 
-Create a text node and assign it to a variable named `recommendedText`.
-
-This is similar to how your created the `resultText` element previously.
+Add the `line` to the `output` element using the `appendChild()` method.
 
 </section>
 
@@ -27,7 +25,7 @@ This is similar to how your created the `resultText` element previously.
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(/const\s*recommendedText\s*=\s*document\.createTextNode\([\'\"\`]?\s*[\'\"\`]?\)/.test(code));
+    testString: assert( code.replace(/\s/g, '').match(/output\.appendChild\(line\)/) );
 ```
 
 </section>
@@ -64,11 +62,8 @@ tests:
 
     result.appendChild(resultText);
     output.appendChild(result);
-
+    
     const line = document.createElement('hr');
-    output.appendChild(line);
-
-    const recommended = document.createElement('h4');
   }
 </script>
 ```
@@ -185,9 +180,6 @@ tests:
 
     const line = document.createElement('hr');
     output.appendChild(line);
-
-    const recommended = document.createElement('h4');
-    const recommendedText = document.createTextNode();
   }
 </script>
 ```

@@ -1,5 +1,5 @@
 ---
-id: 5ddb965c65d27e1512d44db8
+id: 5ddb965c65d27e1512d44db6
 title: Part 31
 challengeType: 0
 isBeta: true
@@ -9,7 +9,11 @@ isBeta: true
 
 <section id='description'>
 
-Inside the parentheses of `.createTextNode()`, add `+ ' Calorie '` after `Math.abs(difference))`.
+We can now use the `difference` variable that we created above.
+
+Insert the `difference` variable inside the parentheses of `.createTextNode()`
+
+If you want to see what the text currently looks like, try `console.log(resultText)`.
 
 </section>
 
@@ -25,7 +29,7 @@ Inside the parentheses of `.createTextNode()`, add `+ ' Calorie '` after `Math.a
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(/const\s*resultText\s*=\s*document\.createTextNode\(\s*Math\.abs\(\s*difference\s*\)\s*\+\s*[\'\"\`]\s*Calorie\s*[\'\"\`]\s*\)/.test(code));
+    testString: assert(/const\s*resultText\s*=\s*document\.createTextNode\(\s*difference\s*?\)/.test(code));
 ```
 
 </section>
@@ -56,7 +60,7 @@ tests:
     const output = document.getElementById('output');
 
     const result = document.createElement('h3');
-    const resultText = document.createTextNode(Math.abs(difference));
+    const resultText = document.createTextNode();
   }
 </script>
 ```
@@ -164,9 +168,7 @@ tests:
     const output = document.getElementById('output');
 
     const result = document.createElement('h3');
-    const resultText = document.createTextNode(
-      Math.abs(difference) + ' Calorie '
-    );
+    const resultText = document.createTextNode(difference);
   }
 </script>
 ```

@@ -1,5 +1,5 @@
 ---
-id: 5ddb965c65d27e1512d44dae
+id: 5e302e80e003129199103c78
 title: Part 21
 challengeType: 0
 isBeta: true
@@ -9,13 +9,11 @@ isBeta: true
 
 <section id='description'>
 
-Now that we have the `total` number of calories that the user entered. We need to determine the maximum calories they should consume.
+To track how the `reduce()` function works, log the values of the `accumulator` and `currentValue` in the callback function before the `return` statement like this: `console.log({ accumulator })`
 
-Look at the form and notice that there are radio buttons for Female and Male. If Female is selected, the maximum calories a normal Female should consume is 2000. If Male is selected, the maximum is 2500.
+You can also check your progress by adding `console.log({ total })` at the end of the `calculate()` function.
 
-If you inspect the Female radio button you will notice its `id` attribute: `<input type="radio" name="sex" id="female" value="F" checked="">`
-
-Create a variable named `maxCalories` and set it equal to the document element with the `id` of `female`. This is similar to how you reference the element with the `id` of `calorie-form` at the beginning of this file.
+When you enter calorie values in the form and push the Calculate button, you will see the values of `accumulator` and `currentValue` in each iteration of the `reduce()` callback function.
 
 </section>
 
@@ -31,7 +29,7 @@ Create a variable named `maxCalories` and set it equal to the document element w
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(/const\s*maxCalories\s*=\s*document\.getElementById\([\'\"\`]female[\'\"\`]\)/.test(code));
+    testString: assert( code.replace(/\s/g, '').match(/console.log\({accumulator}\)/) );
 ```
 
 </section>
@@ -51,7 +49,12 @@ tests:
 
     const total = Array.from(document.getElementsByClassName('cal-control'))
       .map(meal => Number(meal.value))
-      .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+      .reduce((accumulator, currentValue) => {
+        // log the values of the `accumulator` and `currentValue` here
+        return accumulator + currentValue;
+      }, 0);
+
+    // log the value of `total` here
   }
 </script>
 ```
@@ -148,9 +151,13 @@ tests:
 
     const total = Array.from(document.getElementsByClassName('cal-control'))
       .map(meal => Number(meal.value))
-      .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+      .reduce((accumulator, currentValue) => {
+        console.log({ accumulator });
+        console.log({ currentValue });
+        return accumulator + currentValue;
+      }, 0);
 
-    const maxCalories = document.getElementById('female');
+    console.log({ total });
   }
 </script>
 ```

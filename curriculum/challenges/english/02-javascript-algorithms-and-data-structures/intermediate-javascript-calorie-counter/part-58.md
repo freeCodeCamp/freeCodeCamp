@@ -1,5 +1,5 @@
 ---
-id: 5ddb965c65d27e1512d44dd3
+id: 5ddb965c65d27e1512d44dd1
 title: Part 58
 challengeType: 0
 isBeta: true
@@ -9,9 +9,9 @@ isBeta: true
 
 <section id='description'>
 
-Add a class named `cal-control` to the `calorieInput` element. This is similar to how you added a class name to the `foodInput` element previously.
+Use the `setAttribute()` method of `calorieInput` to set the `type` of this input to `number`.
 
-We are adding this class name because in the `calculate()` function you created previously, the `total` is calculated from the elements with the class name `cal-control`.
+This is similar to how to set the class of the `output` element previously.
 
 </section>
 
@@ -27,7 +27,7 @@ We are adding this class name because in the `calculate()` function you created 
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert( code.replace(/\s/g, '').match(/calorieInput\.classList\.add\([\'\"\`]cal\-control[\'\"\`]\)/) );
+    testString: assert( code.replace(/\s/g, '').match(/calorieInput\.setAttribute\([\'\"\`]type[\'\"\`]\,[\'\"\`]number[\'\"\`]\)/) );
 ```
 
 </section>
@@ -92,8 +92,6 @@ tests:
     document.getElementById('entries').appendChild(foodInput);
 
     const calorieInput = document.createElement('input');
-    calorieInput.setAttribute('type', 'number');
-    calorieInput.setAttribute('min', '0');
   };
 </script>
 ```
@@ -236,8 +234,6 @@ tests:
 
     const calorieInput = document.createElement('input');
     calorieInput.setAttribute('type', 'number');
-    calorieInput.setAttribute('min', '0');
-    calorieInput.classList.add('cal-control');
   };
 </script>
 ```

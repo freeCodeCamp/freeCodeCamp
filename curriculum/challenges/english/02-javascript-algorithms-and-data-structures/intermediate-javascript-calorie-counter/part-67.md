@@ -1,5 +1,5 @@
 ---
-id: 5ddb965c65d27e1512d44ddc
+id: 5ddb965c65d27e1512d44dda
 title: Part 67
 challengeType: 0
 isBeta: true
@@ -9,7 +9,13 @@ isBeta: true
 
 <section id='description'>
 
-Create a variable named `clearForm` and set it equal to a blank arrow function like you did with `clearOutput`.
+Now notice that if you click the "Clear" button, the `output` element is empty, but it still has a border around it. This is because we previously added the `bordered-class` class to this element.
+
+Remove the `bordered-class` class. For example:
+
+```js
+document.getElementById('my-div').classList.remove('my-class')
+```
 
 </section>
 
@@ -25,7 +31,7 @@ Create a variable named `clearForm` and set it equal to a blank arrow function l
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert( typeof clearForm === "function")
+    testString: assert( code.replace(/\s/g, '').match(/document\.getElementById\([\'\"\`]output[\'\"\`]\)\.classList\.remove\([\'\"\`]bordered-class[\'\"\`]\)/) );
 ```
 
 </section>
@@ -42,7 +48,6 @@ tests:
 
   function calculate(e) {
     e.preventDefault();
-    clearOutput();
 
     const total = Array.from(document.getElementsByClassName('cal-control'))
       .map(meal => Number(meal.value))
@@ -105,7 +110,6 @@ tests:
 
   const clearOutput = () => {
     document.getElementById('output').innerHTML = '';
-    document.getElementById('output').classList.remove('bordered-class');
   };
 </script>
 ```
@@ -199,7 +203,6 @@ tests:
 
   function calculate(e) {
     e.preventDefault();
-    clearOutput();
 
     const total = Array.from(document.getElementsByClassName('cal-control'))
       .map(meal => Number(meal.value))
@@ -264,8 +267,6 @@ tests:
     document.getElementById('output').innerHTML = '';
     document.getElementById('output').classList.remove('bordered-class');
   };
-
-  const clearForm = () => {};
 </script>
 ```
 

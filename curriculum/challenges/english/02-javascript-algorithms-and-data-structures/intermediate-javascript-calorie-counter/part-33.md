@@ -1,5 +1,5 @@
 ---
-id: 5ddb965c65d27e1512d44dba
+id: 5ddb965c65d27e1512d44db8
 title: Part 33
 challengeType: 0
 isBeta: true
@@ -9,15 +9,7 @@ isBeta: true
 
 <section id='description'>
 
-The data that we currently pass to `createTextNode()` is `Math.abs(difference) + ' Calorie ' + surplusOrDeficit`.
-
-Some people consider this a little cumbersome and prefer to use template literals instead.
-
-Template literals are enclosed in backticks (\`\`), and JavaScript expressions and variables can be embedded by enclosing them in `${}`.
-
-For example, `` console.log(`Hello ${firstName}, today is ${Date.now()}`) ``is the same as writing `console.log('Hello ' + firstName + ', today is ' + Date.now())`.
-
-Convert the data inside of `createTextNode()` to be a template literal.
+Inside the parentheses of `.createTextNode()`, add `+ ' Calorie '` after `Math.abs(difference))`.
 
 </section>
 
@@ -33,7 +25,7 @@ Convert the data inside of `createTextNode()` to be a template literal.
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert( code.replace(/\s/g, '').match(/document\.createTextNode\(\`\$\{Math\.abs\(difference\)\}Calorie\$\{surplusOrDeficit\}\`/) );
+    testString: assert(/const\s*resultText\s*=\s*document\.createTextNode\(\s*Math\.abs\(\s*difference\s*\)\s*\+\s*[\'\"\`]\s*Calorie\s*[\'\"\`]\s*\)/.test(code));
 ```
 
 </section>
@@ -64,9 +56,7 @@ tests:
     const output = document.getElementById('output');
 
     const result = document.createElement('h3');
-    const resultText = document.createTextNode(
-      Math.abs(difference) + ' Calorie ' + surplusOrDeficit
-    );
+    const resultText = document.createTextNode(Math.abs(difference));
   }
 </script>
 ```
@@ -175,7 +165,7 @@ tests:
 
     const result = document.createElement('h3');
     const resultText = document.createTextNode(
-      `${Math.abs(difference)} Calorie ${surplusOrDeficit}`
+      Math.abs(difference) + ' Calorie '
     );
   }
 </script>

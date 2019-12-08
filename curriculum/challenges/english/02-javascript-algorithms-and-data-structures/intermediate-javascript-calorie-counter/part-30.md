@@ -1,5 +1,5 @@
 ---
-id: 5ddb965c65d27e1512d44db7
+id: 5ddb965c65d27e1512d44db5
 title: Part 30
 challengeType: 0
 isBeta: true
@@ -9,11 +9,15 @@ isBeta: true
 
 <section id='description'>
 
-Notice how if `total` is less than `maxCalories`, `difference` is a negative number.
+Next, we will create a text node that we will later append to the `result` element.
 
-We want to show the absolute value of the difference so it displays "300" rather than "-300".
+JavaScript has a function called `createTextNode()` to accomplish this. For example:
 
-Wrap the `difference` in a `Math.abs()` function.
+```js
+const myText = document.createTextNode("Hello world!")
+```
+
+Create a variable named `resultText` and set it equal to a text node. Leave the string empty for now.
 
 </section>
 
@@ -29,7 +33,7 @@ Wrap the `difference` in a `Math.abs()` function.
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(/const\s*resultText\s*=\s*document\.createTextNode\(\s*Math\.abs\(\s*difference\s*\)\s*\)/.test(code));
+    testString: assert(/const\s*resultText\s*=\s*document\.createTextNode\([\'\"\`]?\s*[\'\"\`]?\)/.test(code));
 ```
 
 </section>
@@ -60,7 +64,6 @@ tests:
     const output = document.getElementById('output');
 
     const result = document.createElement('h3');
-    const resultText = document.createTextNode(difference);
   }
 </script>
 ```
@@ -168,7 +171,7 @@ tests:
     const output = document.getElementById('output');
 
     const result = document.createElement('h3');
-    const resultText = document.createTextNode(Math.abs(difference));
+    const resultText = document.createTextNode();
   }
 </script>
 ```

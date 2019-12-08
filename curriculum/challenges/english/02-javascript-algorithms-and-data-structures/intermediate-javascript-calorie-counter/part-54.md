@@ -1,5 +1,5 @@
 ---
-id: 5ddb965c65d27e1512d44dcf
+id: 5ddb965c65d27e1512d44dcd
 title: Part 54
 challengeType: 0
 isBeta: true
@@ -9,11 +9,7 @@ isBeta: true
 
 <section id='description'>
 
-Notice that parent container of all of the inputs has an `id` of `entries`: `<div class="grid" id="entries">`.
-
-Get a reference to the document element with the `id` attribute `entries` and append the `foodInput` element to it by chaining on the `.appendChild()` function.
-
-This is similar to the other `appendChild()` methods that you have used previously.
+Set the `placeholder` property of the `foodInput` equal to `'food name'`.
 
 </section>
 
@@ -29,7 +25,7 @@ This is similar to the other `appendChild()` methods that you have used previous
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert( code.replace(/\s/g, '').match(/document\.getElementById\([\'\"\`]entries[\'\"\`]\)\.appendChild\(foodInput\)/) );
+    testString: assert( code.replace(/\s/g, '').match(/foodInput\.placeholder\=[\'\"\`]foodname[\'\"\`]/) );
 ```
 
 </section>
@@ -89,8 +85,6 @@ tests:
 
   document.getElementById('add').onclick = function() {
     const foodInput = document.createElement('input');
-    foodInput.placeholder = 'food name';
-    foodInput.classList.add('food-control');
   };
 </script>
 ```
@@ -228,8 +222,6 @@ tests:
   document.getElementById('add').onclick = function() {
     const foodInput = document.createElement('input');
     foodInput.placeholder = 'food name';
-    foodInput.classList.add('food-control');
-    document.getElementById('entries').appendChild(foodInput);
   };
 </script>
 ```

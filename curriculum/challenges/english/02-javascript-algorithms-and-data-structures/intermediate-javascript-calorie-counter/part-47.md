@@ -1,5 +1,5 @@
 ---
-id: 5ddb965c65d27e1512d44dc8
+id: 5ddb965c65d27e1512d44dc6
 title: Part 47
 challengeType: 0
 isBeta: true
@@ -9,11 +9,7 @@ isBeta: true
 
 <section id='description'>
 
-You can also add styling with the `setAttribute()` method. This method takes two arguments: the name of the attribute and the value that the attribute should be.
-
-For example, if you want to set the `width` of an `input` element to 100px, you would write `input.setAttribute('width', '100px')`.
-
-Set the `class` attribute of the `output` element equal to a class named `bordered-class`.
+Append the `consumed` element to `output`.
 
 </section>
 
@@ -29,7 +25,7 @@ Set the `class` attribute of the `output` element equal to a class named `border
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert( code.replace(/\s/g, '').match(/output\.setAttribute\([\'\"\`]class[\'\"\`]\,[\'\"\`]bordered-class[\'\"\`]\)/) );
+    testString: assert( code.replace(/\s/g, '').match(/output\.appendChild\(consumed\)/) );
 ```
 
 </section>
@@ -60,7 +56,6 @@ tests:
     const output = document.getElementById('output');
 
     const result = document.createElement('h3');
-    result.className = 'green-text';
     const resultText = document.createTextNode(
       `${Math.abs(difference)} Calorie ${surplusOrDeficit}`
     );
@@ -81,9 +76,6 @@ tests:
 
     const consumed = document.createElement('h4');
     consumed.innerHTML = `${total} Consumed Calories`;
-    output.appendChild(consumed);
-
-    //put your code here
   }
 </script>
 ```
@@ -191,7 +183,6 @@ tests:
     const output = document.getElementById('output');
 
     const result = document.createElement('h3');
-    result.className = 'green-text';
     const resultText = document.createTextNode(
       `${Math.abs(difference)} Calorie ${surplusOrDeficit}`
     );
@@ -213,8 +204,6 @@ tests:
     const consumed = document.createElement('h4');
     consumed.innerHTML = `${total} Consumed Calories`;
     output.appendChild(consumed);
-
-    output.setAttribute('class', 'bordered-class');
   }
 </script>
 ```

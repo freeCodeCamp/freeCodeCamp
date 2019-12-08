@@ -1,5 +1,5 @@
 ---
-id: 5ddb965c65d27e1512d44daf
+id: 5e302e8ce003129199103c79
 title: Part 22
 challengeType: 0
 isBeta: true
@@ -9,9 +9,13 @@ isBeta: true
 
 <section id='description'>
 
-Inspect the Female radio button again and notice that it has a `checked` attribute if it's checked: `<input type="radio" name="sex" id="female" value="F" checked>`
+Now let's simplify the `reduce()` callback function by refactoring it.
 
-Check to see if the Female radio button is checked or not by chaining on the `.checked` attribute to `document.getElementById('female')`.
+Essentially, the current callback function is `(accumulator, currentValue) => { return accumulator + currentValue }`. Since there's only one expression in the function body, we can omit the `{}`. Additionally, we can omit the `return` keyword since that is implicit when using arrow function syntax.
+
+So the function can be simplified to just `(accumulator, currentValue) => accumulator + currentValue`.
+
+Replace the current callback function argument in the `reduce()` function with the simplified callback function from above.
 
 </section>
 
@@ -27,7 +31,7 @@ Check to see if the Female radio button is checked or not by chaining on the `.c
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(/const\s*maxCalories\s*=\s*document\.getElementById\([\'\"\`]female[\'\"\`]\)\.checked/.test(code));
+    testString: assert( code.replace(/\s/g, '').match(/reduce\(\(accumulator\,currentValue\)\=\>accumulator\+currentValue\,0\)/) );
 ```
 
 </section>
@@ -47,9 +51,13 @@ tests:
 
     const total = Array.from(document.getElementsByClassName('cal-control'))
       .map(meal => Number(meal.value))
-      .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+      .reduce((accumulator, currentValue) => {
+        //console.log({ accumulator });
+        //console.log({ currentValue });
+        return accumulator + currentValue;
+      }, 0);
 
-    const maxCalories = document.getElementById('female');
+    //console.log({ total });
   }
 </script>
 ```
@@ -147,8 +155,6 @@ tests:
     const total = Array.from(document.getElementsByClassName('cal-control'))
       .map(meal => Number(meal.value))
       .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
-
-    const maxCalories = document.getElementById('female').checked;
   }
 </script>
 ```

@@ -1,5 +1,5 @@
 ---
-id: 5ddb965c65d27e1512d44dbf
+id: 5ddb965c65d27e1512d44dbd
 title: Part 38
 challengeType: 0
 isBeta: true
@@ -9,9 +9,9 @@ isBeta: true
 
 <section id='description'>
 
-Let's create a few more HTML elements to add to the `output`.
+Next, let's create and add a horizontal rule (`hr`) element to the output.
 
-Create an `h4` element and assign it to a variable named `recommended`.
+Create an `hr` element and assign it to a variable named `line`.
 
 </section>
 
@@ -27,7 +27,7 @@ Create an `h4` element and assign it to a variable named `recommended`.
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(/const\s*recommended\s*=\s*document\.createElement\([\'\"\`]h4[\'\"\`]\)/.test(code));
+    testString: assert(/const\s*line\s*=\s*document\.createElement\([\'\"\`]hr[\'\"\`]\)/.test(code))
 ```
 
 </section>
@@ -64,9 +64,6 @@ tests:
 
     result.appendChild(resultText);
     output.appendChild(result);
-
-    const line = document.createElement('hr');
-    output.appendChild(line);
   }
 </script>
 ```
@@ -182,9 +179,6 @@ tests:
     output.appendChild(result);
 
     const line = document.createElement('hr');
-    output.appendChild(line);
-
-    const recommended = document.createElement('h4');
   }
 </script>
 ```

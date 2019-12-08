@@ -1,5 +1,5 @@
 ---
-id: 5ddb965c65d27e1512d44dbb
+id: 5ddb965c65d27e1512d44db9
 title: Part 34
 challengeType: 0
 isBeta: true
@@ -9,11 +9,9 @@ isBeta: true
 
 <section id='description'>
 
-Now you can append the `resultText` to the `result` with the `appendChild()` method, like this:
+Next we want to add the text from the `surplusOrDeficit` variable that we previously created.
 
-```js
-result.appendChild(resultText);
-```
+Inside the parentheses of `.createTextNode()` add `+ surplusOrDeficit` after `Math.abs(difference) + ' Calorie '`.
 
 </section>
 
@@ -29,7 +27,7 @@ result.appendChild(resultText);
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert( code.replace(/\s/g, '').match(/result\.appendChild\(resultText\)/) );
+    testString: assert(/const\s*resultText\s*=\s*document\.createTextNode\(\s*Math\.abs\(\s*difference\s*\)\s*\+\s*[\'\"\`]\s*Calorie\s*[\'\"\`]\s*\+\s*surplusOrDeficit\s*\)/.test(code));
 ```
 
 </section>
@@ -61,7 +59,7 @@ tests:
 
     const result = document.createElement('h3');
     const resultText = document.createTextNode(
-      `${Math.abs(difference)} Calorie ${surplusOrDeficit}`
+      Math.abs(difference) + ' Calorie '
     );
   }
 </script>
@@ -171,10 +169,8 @@ tests:
 
     const result = document.createElement('h3');
     const resultText = document.createTextNode(
-      `${Math.abs(difference)} Calorie ${surplusOrDeficit}`
+      Math.abs(difference) + ' Calorie ' + surplusOrDeficit
     );
-
-    result.appendChild(resultText);
   }
 </script>
 ```

@@ -1,5 +1,5 @@
 ---
-id: 5ddb965c65d27e1512d44db4
+id: 5ddb965c65d27e1512d44db2
 title: Part 27
 challengeType: 0
 isBeta: true
@@ -9,15 +9,13 @@ isBeta: true
 
 <section id='description'>
 
-Now it's time to create the HTML elements that we will add inside of `output`.
+If `difference` is positive, the total calories the user ate is more than the `maxCalories` recommended, or a calories surplus -- otherwise, if `difference` is negative, the user has a calorie deficit.
 
-To create an element, use `createElement()`. For example:
+To determine if this is a calorie surplus or deficit, create a variable named `surplusOrDeficit` to determine if the difference is positive (`difference > 0`).
 
-```js
-const myHeading1 = document.createElement('h1')
-```
+If it is positive, `surplusOrDeficit` should be set equal to the string "Surplus", and "Deficit" if negative.
 
-Create an `h3` element and assign it to a variable named `result`.
+Use the same ternary syntax that you used to determine `maxCalories`.
 
 </section>
 
@@ -33,7 +31,7 @@ Create an `h3` element and assign it to a variable named `result`.
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(/const\s*result\s*=\s*document\.createElement\([\'\"\`]h3[\'\"\`]\)/.test(code));
+    testString: assert(/const\s*surplusOrDeficit\s*\=\s*difference\s*\>\s*0\s*\?\s*[\'\"\`]Surplus[\'\"\`]\s*\:\s*[\'\"\`]Deficit[\'\"\`]/.test(code));
 ```
 
 </section>
@@ -58,10 +56,6 @@ tests:
     const maxCalories = document.getElementById('female').checked ? 2000 : 2500;
 
     const difference = total - maxCalories;
-
-    const surplusOrDeficit = difference > 0 ? 'Surplus' : 'Deficit';
-
-    const output = document.getElementById('output');
   }
 </script>
 ```
@@ -165,10 +159,6 @@ tests:
     const difference = total - maxCalories;
 
     const surplusOrDeficit = difference > 0 ? 'Surplus' : 'Deficit';
-
-    const output = document.getElementById('output');
-
-    const result = document.createElement('h3');
   }
 </script>
 ```

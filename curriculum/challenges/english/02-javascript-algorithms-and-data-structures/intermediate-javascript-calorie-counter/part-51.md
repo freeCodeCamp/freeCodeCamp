@@ -1,5 +1,5 @@
 ---
-id: 5ddb965c65d27e1512d44dcc
+id: 5ddb965c65d27e1512d44dca
 title: Part 51
 challengeType: 0
 isBeta: true
@@ -9,9 +9,15 @@ isBeta: true
 
 <section id='description'>
 
-Inside the function, create an `input` document element and assign it to a variable named `foodInput`.
+When the user clicks the "Add Entry" button, they should be provided with additional text inputs to enter in a food name and calorie amount. These will be included in the `calculate()` function.
 
-This is similar to how you created the `result` element previously.
+In the HTML document, notice that the "Add Entry" button has the `id` attribute `add`: 
+
+```html
+<button type="button" class="btn-add" id="add">
+```
+
+Get a reference to the `document` element with the `id` attribute `add`. This is similar to the reference to the `calorie-form` element that you wrote near the top of this document.
 
 </section>
 
@@ -27,7 +33,7 @@ This is similar to how you created the `result` element previously.
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(/const\s*foodInput\s*=\s*document\.createElement\([\'\"\`]input[\'\"\`]\)/.test(code));
+    testString: assert( code.replace(/\s/g, '').match(/document\.getElementById\([\'\"\`]add[\'\"\`]\)/) );
 ```
 
 </section>
@@ -84,8 +90,6 @@ tests:
     output.setAttribute('class', 'bordered-class');
     output.style.backgroundColor = '#FFF9C4';
   }
-
-  document.getElementById('add').onclick = function() {};
 </script>
 ```
 
@@ -219,9 +223,7 @@ tests:
     output.style.backgroundColor = '#FFF9C4';
   }
 
-  document.getElementById('add').onclick = function() {
-    const foodInput = document.createElement('input');
-  };
+  document.getElementById('add');
 </script>
 ```
 
