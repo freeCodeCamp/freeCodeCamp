@@ -6,7 +6,7 @@ import { createSelector } from 'reselect';
 import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
 
 import { stripePublicKey } from '../../config/env.json';
-import { Spacer, Loader, FullWidthRow, Link } from '../components/helpers';
+import { Spacer, Loader, FullWidthRow } from '../components/helpers';
 import DonateForm from '../components/Donation/components/DonateForm';
 import DonateText from '../components/Donation/components/DonateText';
 import { signInLoadingSelector, userSelector } from '../redux';
@@ -30,13 +30,9 @@ export class DonatePage extends Component {
   constructor(...props) {
     super(...props);
     this.state = {
-      stripe: null,
-      enableSettings: false
+      stripe: null
     };
 
-    this.enableDonationSettingsPage = this.enableDonationSettingsPage.bind(
-      this
-    );
     this.handleStripeLoad = this.handleStripeLoad.bind(this);
   }
 
@@ -69,14 +65,9 @@ export class DonatePage extends Component {
     }
   }
 
-  enableDonationSettingsPage(enableSettings = true) {
-    this.setState({ enableSettings });
-  }
-
   render() {
     const { stripe } = this.state;
-    const { showLoading, isDonating } = this.props;
-    const { enableSettings } = this.state;
+    const { showLoading } = this.props;
 
     if (showLoading) {
       return <Loader fullScreen={true} />;
@@ -94,33 +85,7 @@ export class DonatePage extends Component {
             <Spacer />
             <Row>
               <Col md={6}>
-                <DonateForm
-                  enableDonationSettingsPage={this.enableDonationSettingsPage}
-                  stripe={stripe}
-                />
-                <Row>
-                  <Col sm={10} smOffset={1} xs={12}>
-                    <Spacer size={2} />
-                    <h3 className='text-center'>
-                      Manage your existing donation
-                    </h3>
-                    <div className='button-group'>
-                      {[
-                        `Update your existing donation`,
-                        `Download donation receipts`
-                      ].map(donationSettingOps => (
-                        <Link
-                          className='btn btn-block'
-                          disabled={!isDonating && !enableSettings}
-                          key={donationSettingOps}
-                          to='/donation/settings'
-                        >
-                          {donationSettingOps}
-                        </Link>
-                      ))}
-                    </div>
-                  </Col>
-                </Row>
+                <DonateForm stripe={stripe} />
               </Col>
               <Col md={6}>
                 <DonateText />
