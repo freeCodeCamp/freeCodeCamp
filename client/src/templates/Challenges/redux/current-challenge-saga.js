@@ -5,7 +5,7 @@ import {
   isSignedInSelector,
   updateComplete,
   updateFailed,
-  allowDonationRequests
+  allowBlockDonationRequests
 } from '../../../redux';
 
 import { post } from '../../../utils/ajax';
@@ -38,14 +38,14 @@ export function* updateSuccessMessageSaga() {
   yield put(updateSuccessMessage(randomCompliment()));
 }
 
-export function* allowDonationRequestsSaga() {
-  yield put(allowDonationRequests());
+export function* allowBlockDonationRequestsSaga() {
+  yield put(allowBlockDonationRequests());
 }
 
 export function createCurrentChallengeSaga(types) {
   return [
     takeEvery(types.challengeMounted, currentChallengeSaga),
     takeEvery(types.challengeMounted, updateSuccessMessageSaga),
-    takeEvery(types.lastBlockChalSubmitted, allowDonationRequestsSaga)
+    takeEvery(types.lastBlockChalSubmitted, allowBlockDonationRequestsSaga)
   ];
 }

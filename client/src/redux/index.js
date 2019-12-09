@@ -32,7 +32,8 @@ export const defaultFetchState = {
 
 const initialState = {
   appUsername: '',
-  canRequestDonation: false,
+  canRequestBlockDonation: false,
+  canRequestProgressDonation: true,
   completionCount: 0,
   currentChallengeId: store.get(CURRENT_CHALLENGE_KEY),
   showCert: {},
@@ -48,6 +49,7 @@ const initialState = {
   },
   sessionMeta: { activeDonations: 0 },
   showDonationModal: false,
+  isBlockDonationModal: false,
   isOnline: true
 };
 
@@ -55,9 +57,10 @@ export const types = createTypes(
   [
     'appMount',
     'hardGoTo',
-    'allowDonationRequests',
+    'allowBlockDonationRequests',
     'closeDonationModal',
-    'preventDonationRequests',
+    'preventBlockDonationRequests',
+    'preventProgressDonationRequests',
     'openDonationModal',
     'onlineStatusChange',
     'resetUserData',
@@ -92,11 +95,16 @@ export const appMount = createAction(types.appMount);
 export const tryToShowDonationModal = createAction(
   types.tryToShowDonationModal
 );
-export const allowDonationRequests = createAction(types.allowDonationRequests);
+export const allowBlockDonationRequests = createAction(
+  types.allowBlockDonationRequests
+);
 export const closeDonationModal = createAction(types.closeDonationModal);
 export const openDonationModal = createAction(types.openDonationModal);
-export const preventDonationRequests = createAction(
-  types.preventDonationRequests
+export const preventBlockDonationRequests = createAction(
+  types.preventBlockDonationRequests
+);
+export const preventProgressDonationRequests = createAction(
+  types.preventProgressDonationRequests
 );
 
 export const onlineStatusChange = createAction(types.onlineStatusChange);
@@ -149,14 +157,41 @@ export const isDonatingSelector = state => userSelector(state).isDonating;
 export const isOnlineSelector = state => state[ns].isOnline;
 export const isSignedInSelector = state => !!state[ns].appUsername;
 export const isDonationModalOpenSelector = state => state[ns].showDonationModal;
+export const canRequestBlockDonationSelector = state =>
+  state[ns].canRequestBlockDonation;
+export const isBlockDonationModalSelector = state =>
+  state[ns].isBlockDonationModal;
 
 export const signInLoadingSelector = state =>
   userFetchStateSelector(state).pending;
 export const showCertSelector = state => state[ns].showCert;
 export const showCertFetchStateSelector = state => state[ns].showCertFetchState;
 
-export const shouldRequestDonationSelector = state =>
-  !isDonatingSelector(state) && state[ns].canRequestDonation;
+export const shouldRequestDonationSelector = state => {
+  const completedChallenges = completedChallengesSelector(state);
+  const completionCount = completionCountSelector(state);
+  const canRequestProgressDonation = state[ns].canRequestProgressDonation;
+  const isDonating = isDonatingSelector(state);
+  const canRequestBlockDonation = canRequestBlockDonationSelector(state);
+
+  // don't request donation if already donating
+  if (isDonating) return false;
+
+  // a block has been completed
+  if (canRequestBlockDonation) return true;
+
+  // a donation has already been requested
+  if (!canRequestProgressDonation) return false;
+
+  // donations only appear after the user has completed ten challenges (i.e.
+  // not before the 11th challenge has mounted)
+  if (completedChallenges.length < 10) {
+    return false;
+  }
+  // this will mean we have completed 3 or more challenges this browser session
+  // and enough challenges overall to not be new
+  return completionCount >= 3;
+};
 
 export const userByNameSelector = username => state => {
   const { user } = state[ns];
@@ -203,9 +238,9 @@ function spreadThePayloadOnUser(state, payload) {
 
 export const reducer = handleActions(
   {
-    [types.allowDonationRequests]: state => ({
+    [types.allowBlockDonationRequests]: state => ({
       ...state,
-      canRequestDonation: true
+      canRequestBlockDonation: true
     }),
     [types.fetchUser]: state => ({
       ...state,
@@ -282,13 +317,18 @@ export const reducer = handleActions(
       ...state,
       showDonationModal: false
     }),
-    [types.openDonationModal]: state => ({
+    [types.openDonationModal]: (state, { payload }) => ({
       ...state,
-      showDonationModal: true
+      showDonationModal: true,
+      isBlockDonationModal: payload
     }),
-    [types.preventDonationRequests]: state => ({
+    [types.preventBlockDonationRequests]: state => ({
       ...state,
-      canRequestDonation: false
+      canRequestBlockDonation: false
+    }),
+    [types.preventProgressDonationRequests]: state => ({
+      ...state,
+      canRequestProgressDonation: false
     }),
     [types.resetUserData]: state => ({
       ...state,
