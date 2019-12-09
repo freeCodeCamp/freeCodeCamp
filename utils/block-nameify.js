@@ -13,9 +13,15 @@ const preFormattedBlockNames = {
   'the-dom': 'The DOM',
   'apis-and-microservices': 'APIs and Microservices',
   'apis-and-microservices-projects': 'APIs and Microservices Projects',
+<<<<<<< HEAD:utils/block-nameify.js
   'scientific-computing-with-python': 'Scientific Computing with Python',
   'data-analysis-with-python': 'Data Analysis with Python',
   'machine-learning-with-python': 'Machine Learning with Python'
+=======
+  'javascript-spreadsheet': 'JavaScript Spreadsheet',
+  'css-variables-skyline': 'CSS Variables Skyline',
+  'basic-javascript-rpg-game': 'Basic JavaScript RPG Game'
+>>>>>>> fix: renamed files and titles in the frontmatter for consitency (#37792):client/utils/blockNameify.js
 };
 
 const noFormatting = ['and', 'for', 'of', 'the', 'up', 'with'];
