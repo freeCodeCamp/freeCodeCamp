@@ -79,6 +79,7 @@ https://freecodecamp-org.netlify.com/*        https://www.freecodecamp.org/:spla
 /agile                                        / 301
 /all-stories                                  / 301
 /chat                                         https://gitter.im/FreeCodeCamp/FreeCodeCamp 301
+/donation/settings                            /donate 302
 /field-guide/*                                / 301
 /how-nonprofit-projects-work                  / 301
 /learn-to-code                                /learn 301
