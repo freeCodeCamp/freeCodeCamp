@@ -111,5 +111,8 @@ exports.helpCategory = {
   'data-structures': 'JavaScript',
   'take-home-projects': 'Certification Projects',
   'rosetta-code': 'JavaScript',
-  'project-euler': 'JavaScript'
+  'project-euler': 'JavaScript',
+  'css-variables-skyline': 'HTML-CSS',
+  'basic-javascript-rpg-game': 'JavaScript',
+  'functional-programming-spreadsheet': 'JavaScript'
 };
