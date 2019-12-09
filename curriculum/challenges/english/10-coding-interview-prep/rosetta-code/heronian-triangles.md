@@ -7,10 +7,10 @@ forumTopicId: 302285
 
 ## Description
 <section id='description'>
-<a href="https://en.wikipedia.org/wiki/Heron's formula" title="wp: Heron's formula" target="_blank">Hero's formula</a> for the area of a triangle given the length of its three sides <big> a,</big> <big>b,</big> and <big>c</big> is given by:
-<span style="margin-left: 2em;"><big>$A = \sqrt{s(s-a)(s-b)(s-c)},$</big></span>
-where <big>s</big> is half the perimeter of the triangle; that is,
-<span style="margin-left: 2em;"><big>$s=\frac{a+b+c}{2}.$</big></span>
+<a href="https://en.wikipedia.org/wiki/Heron's formula" title="wp: Heron's formula" target="_blank">Hero's formula</a> for the area of a triangle given the length of its three sides <code> a</code>, <code>b</code>, and <code>c</code> is given by:
+$A = \sqrt{s(s-a)(s-b)(s-c)},$
+where <code>s</code> is half the perimeter of the triangle; that is,
+$s=\frac{a+b+c}{2}.$
 Heronian triangles are triangles whose sides and area are all integers.
 An example is the triangle with sides <code>3, 4, 5</code> whose area is <code>6</code> (and whose perimeter is <code>12</code>).
 Note that any triangle whose sides are all an integer multiple of <code>3, 4, 5</code>; such as <code>6, 8, 10,</code> will also be a Heronian triangle.

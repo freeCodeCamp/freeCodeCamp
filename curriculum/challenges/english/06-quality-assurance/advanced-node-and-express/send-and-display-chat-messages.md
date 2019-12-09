@@ -40,7 +40,6 @@ Submit your page when you think you've got it right. If you're running into erro
 </section>
 
 ## Tests
-
 <section id='tests'>
 
 ```yml

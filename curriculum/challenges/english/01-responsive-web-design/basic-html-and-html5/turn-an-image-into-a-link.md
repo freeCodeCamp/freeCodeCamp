@@ -10,8 +10,11 @@ forumTopicId: 18327
 <section id='description'>
 You can make elements into links by nesting them within an <code>a</code> element.
 Nest your image within an <code>a</code> element. Here's an example:
-<code>&#60;a href="#"&#62;&#60;img src="https://bit.ly/fcc-running-cats" alt="Three kittens running towards the camera."&#62;&#60;/a&#62;</code>
+
+`<a href="#"><img src="https://bit.ly/fcc-running-cats" alt="Three kittens running towards the camera."></a>`
+
 Remember to use <code>#</code> as your <code>a</code> element's <code>href</code> property in order to turn it into a dead link.
+
 </section>
 
 ## Instructions

@@ -10,8 +10,11 @@ forumTopicId: 18226
 <section id='description'>
 You can use <code>a</code> (<i>anchor</i>) elements to link to content outside of your web page.
 <code>a</code> elements need a destination web address called an <code>href</code> attribute. They also need anchor text. Here's an example:
-<code>&#60;a href="https://freecodecamp.org">this links to freecodecamp.org&#60;/a&#62;</code>
-Then your browser will display the text <strong>"this links to freecodecamp.org"</strong> as a link you can click. And that link will take you to the web address <strong>https://www.freecodecamp.org</strong>.
+
+`<a href="https://freecodecamp.org">this links to freecodecamp.org</a>`
+
+Then your browser will display the text <strong>"this links to freecodecamp.org"</strong> as a link you can click. And that link will take you to the web address <strong>`https://www.freecodecamp.org`</strong>.
+
 </section>
 
 ## Instructions

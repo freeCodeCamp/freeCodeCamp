@@ -9,10 +9,15 @@ forumTopicId: 18371
 <section id='description'>
 Bootstrap uses a responsive 12-column grid system, which makes it easy to put elements into rows and specify each element's relative width. Most of Bootstrap's classes can be applied to a <code>div</code> element.
 Bootstrap has different column width attributes that it uses depending on how wide the user's screen is. For example, phones have narrow screens, and laptops have wider screens.
-Take for example Bootstrap's <code>col-md-*</code> class. Here, <code>md</code> means medium, and <code>*</code> is a number specifying how many columns wide the element should be. In this case, the column width of an element on a medium-sized screen, such as a laptop, is being specified.
-In the Cat Photo App that we're building, we'll use <code>col-xs-*</code>, where <code>xs</code> means extra small (like an extra-small mobile phone screen), and <code>*</code> is the number of columns specifying how many columns wide the element should be.
+
+Take for example Bootstrap's `col-md-*` class. Here, <code>md</code> means medium, and `*` is a number specifying how many columns wide the element should be. In this case, the column width of an element on a medium-sized screen, such as a laptop, is being specified.
+
+In the Cat Photo App that we're building, we'll use `col-xs-*`, where <code>xs</code> means extra small (like an extra-small mobile phone screen), and `*` is the number of columns specifying how many columns wide the element should be.
+
 Put the <code>Like</code>, <code>Info</code> and <code>Delete</code> buttons side-by-side by nesting all three of them within one <code>&#60;div class="row"&#62;</code> element, then each of them within a <code>&#60;div class="col-xs-4"&#62;</code> element.
+
 The <code>row</code> class is applied to a <code>div</code>, and the buttons themselves can be nested within it.
+
 </section>
 
 ## Instructions
