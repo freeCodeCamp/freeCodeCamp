@@ -82,13 +82,13 @@ function freeCodeCampLogo() {
             <g>
               <use
                 fill='#fff'
-                fill-opacity='1'
+                fillOpacity='1'
                 opacity='1'
                 xlinkHref='#aTZImEIR'
               />
               <g>
                 <use
-                  fill-opacity='0'
+                  fillOpacity='0'
                   stroke='#000'
                   stroke-opacity='0'
                   stroke-width='1'
@@ -100,13 +100,13 @@ function freeCodeCampLogo() {
             <g>
               <use
                 fill='#fff'
-                fill-opacity='1'
+                fillOpacity='1'
                 opacity='1'
                 xlinkHref='#a1reJuC17o'
               />
               <g>
                 <use
-                  fill-opacity='0'
+                  fillOpacity='0'
                   stroke='#000'
                   stroke-opacity='0'
                   stroke-width='1'
@@ -118,13 +118,13 @@ function freeCodeCampLogo() {
             <g>
               <use
                 fill='#fff'
-                fill-opacity='1'
+                fillOpacity='1'
                 opacity='1'
                 xlinkHref='#b3CiUzYJD1'
               />
               <g>
                 <use
-                  fill-opacity='0'
+                  fillOpacity='0'
                   stroke='#000'
                   stroke-opacity='0'
                   stroke-width='1'
@@ -136,13 +136,13 @@ function freeCodeCampLogo() {
             <g>
               <use
                 fill='#fff'
-                fill-opacity='1'
+                fillOpacity='1'
                 opacity='1'
                 xlinkHref='#a27fjRDZiD'
               />
               <g>
                 <use
-                  fill-opacity='0'
+                  fillOpacity='0'
                   stroke='#000'
                   stroke-opacity='0'
                   stroke-width='1'
@@ -154,13 +154,13 @@ function freeCodeCampLogo() {
             <g>
               <use
                 fill='#fff'
-                fill-opacity='1'
+                fillOpacity='1'
                 opacity='1'
                 xlinkHref='#fO2LoynhC'
               />
               <g>
                 <use
-                  fill-opacity='0'
+                  fillOpacity='0'
                   stroke='#000'
                   stroke-opacity='0'
                   stroke-width='1'
@@ -172,13 +172,13 @@ function freeCodeCampLogo() {
             <g>
               <use
                 fill='#fff'
-                fill-opacity='1'
+                fillOpacity='1'
                 opacity='1'
                 xlinkHref='#ovQ1ILSSG'
               />
               <g>
                 <use
-                  fill-opacity='0'
+                  fillOpacity='0'
                   stroke='#000'
                   stroke-opacity='0'
                   stroke-width='1'
@@ -190,13 +190,13 @@ function freeCodeCampLogo() {
             <g>
               <use
                 fill='#fff'
-                fill-opacity='1'
+                fillOpacity='1'
                 opacity='1'
                 xlinkHref='#bidTnXnUH'
               />
               <g>
                 <use
-                  fill-opacity='0'
+                  fillOpacity='0'
                   stroke='#000'
                   stroke-opacity='0'
                   stroke-width='1'
@@ -208,13 +208,13 @@ function freeCodeCampLogo() {
             <g>
               <use
                 fill='#fff'
-                fill-opacity='1'
+                fillOpacity='1'
                 opacity='1'
                 xlinkHref='#cNUomkEDc'
               />
               <g>
                 <use
-                  fill-opacity='0'
+                  fillOpacity='0'
                   stroke='#000'
                   stroke-opacity='0'
                   stroke-width='1'
@@ -226,13 +226,13 @@ function freeCodeCampLogo() {
             <g>
               <use
                 fill='#fff'
-                fill-opacity='1'
+                fillOpacity='1'
                 opacity='1'
                 xlinkHref='#b5Iz46OVaX'
               />
               <g>
                 <use
-                  fill-opacity='0'
+                  fillOpacity='0'
                   stroke='#000'
                   stroke-opacity='0'
                   stroke-width='1'
@@ -244,13 +244,13 @@ function freeCodeCampLogo() {
             <g>
               <use
                 fill='#fff'
-                fill-opacity='1'
+                fillOpacity='1'
                 opacity='1'
                 xlinkHref='#a1Z8HXsFzs'
               />
               <g>
                 <use
-                  fill-opacity='0'
+                  fillOpacity='0'
                   stroke='#000'
                   stroke-opacity='0'
                   stroke-width='1'
@@ -262,13 +262,13 @@ function freeCodeCampLogo() {
             <g>
               <use
                 fill='#fff'
-                fill-opacity='1'
+                fillOpacity='1'
                 opacity='1'
                 xlinkHref='#c704sxfG2q'
               />
               <g>
                 <use
-                  fill-opacity='0'
+                  fillOpacity='0'
                   stroke='#000'
                   stroke-opacity='0'
                   stroke-width='1'
@@ -280,13 +280,13 @@ function freeCodeCampLogo() {
             <g>
               <use
                 fill='#fff'
-                fill-opacity='1'
+                fillOpacity='1'
                 opacity='1'
                 xlinkHref='#a2dF9UjJYG'
               />
               <g>
                 <use
-                  fill-opacity='0'
+                  fillOpacity='0'
                   stroke='#000'
                   stroke-opacity='0'
                   stroke-width='1'
@@ -298,13 +298,13 @@ function freeCodeCampLogo() {
             <g>
               <use
                 fill='#fff'
-                fill-opacity='1'
+                fillOpacity='1'
                 opacity='1'
                 xlinkHref='#a3HkJ42x2Q'
               />
               <g>
                 <use
-                  fill-opacity='0'
+                  fillOpacity='0'
                   stroke='#000'
                   stroke-opacity='0'
                   stroke-width='1'
@@ -316,13 +316,13 @@ function freeCodeCampLogo() {
             <g>
               <use
                 fill='#fff'
-                fill-opacity='1'
+                fillOpacity='1'
                 opacity='1'
                 xlinkHref='#d2iPJF0rB9'
               />
               <g>
                 <use
-                  fill-opacity='0'
+                  fillOpacity='0'
                   stroke='#000'
                   stroke-opacity='0'
                   stroke-width='1'
@@ -334,13 +334,13 @@ function freeCodeCampLogo() {
             <g>
               <use
                 fill='#fff'
-                fill-opacity='1'
+                fillOpacity='1'
                 opacity='1'
                 xlinkHref='#dzhlmAMnT'
               />
               <g>
                 <use
-                  fill-opacity='0'
+                  fillOpacity='0'
                   stroke='#000'
                   stroke-opacity='0'
                   stroke-width='1'
@@ -359,3 +359,4 @@ function freeCodeCampLogo() {
 freeCodeCampLogo.displayName = 'freeCodeCampLogo';
 
 export default freeCodeCampLogo;
+
