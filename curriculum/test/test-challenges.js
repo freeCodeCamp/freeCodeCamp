@@ -184,9 +184,11 @@ function populateTestsForLang({ lang, challenges }) {
           if (challenge.challengeType !== 7 && invalidBlock) {
             throw new Error(invalidBlock);
           }
-          const { id, title } = challenge;
+          const { id, title, block, dashedName } = challenge;
+          const dashedBlock = dasherize(block);
+          const pathAndTitle = `${dashedBlock}/${dashedName}`;
           mongoIds.check(id, title);
-          challengeTitles.check(title);
+          challengeTitles.check(title, pathAndTitle);
         });
 
         const { challengeType } = challenge;
