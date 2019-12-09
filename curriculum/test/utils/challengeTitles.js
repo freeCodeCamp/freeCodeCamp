@@ -2,7 +2,7 @@ class ChallengeTitles {
   constructor() {
     this.knownTitles = [];
   }
-  check(title) {
+  check(title, pathAndTitle) {
     if (typeof title !== 'string') {
       throw new Error(
         `Expected a valid string for ${title}, but got a(n) ${typeof title}`
@@ -12,15 +12,19 @@ class ChallengeTitles {
     if (titleToCheck.length === 0) {
       throw new Error('Expected a title length greater than 0');
     }
-    const isKnown = this.knownTitles.includes(titleToCheck);
+    const isProjectCurriculumChallenge = title.match(/^Part\s*\d+/);
+    const titleToAdd = isProjectCurriculumChallenge
+      ? pathAndTitle
+      : titleToCheck;
+    const isKnown = this.knownTitles.includes(titleToAdd);
     if (isKnown) {
       throw new Error(`
-    All challenges must have a unique title.
+    All current curriculum challenges must have a unique title.
 
-    The title ${title} is already assigned
+    The title ${title} (at ${pathAndTitle}) is already assigned
     `);
     }
-    this.knownTitles = [...this.knownTitles, titleToCheck];
+    this.knownTitles = [...this.knownTitles, titleToAdd];
   }
 }
 
