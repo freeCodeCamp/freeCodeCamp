@@ -131,5 +131,8 @@ exports.helpCategory = {
   'how-neural-networks-work': 'Python',
   numpy: 'Python',
   'data-analysis-with-python-course': 'Python',
-  'python-for-penetration-testing': 'Python'
+  'python-for-penetration-testing': 'Python',
+  'css-variables-skyline': 'HTML-CSS',
+  'basic-javascript-rpg-game': 'JavaScript',
+  'functional-programming-spreadsheet': 'JavaScript'
 };
