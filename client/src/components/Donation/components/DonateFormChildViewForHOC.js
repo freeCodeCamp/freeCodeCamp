@@ -18,15 +18,16 @@ import { postChargeStripe } from '../../../utils/ajax';
 import { userSelector } from '../../../redux';
 
 const propTypes = {
+  changeCloseBtnLabel: PropTypes.func,
   donationAmount: PropTypes.number.isRequired,
   donationDuration: PropTypes.string.isRequired,
   email: PropTypes.string,
   getDonationButtonLabel: PropTypes.func.isRequired,
-  hideAmountOptionsCB: PropTypes.func.isRequired,
   isSignedIn: PropTypes.bool,
   stripe: PropTypes.shape({
     createToken: PropTypes.func.isRequired
-  })
+  }),
+  theme: PropTypes.string
 };
 const initialState = {
   donationState: {
@@ -38,7 +39,7 @@ const initialState = {
 
 const mapStateToProps = createSelector(
   userSelector,
-  ({ email }) => ({ email })
+  ({ email, theme }) => ({ email, theme })
 );
 
 class DonateFormChildViewForHOC extends Component {
@@ -59,7 +60,6 @@ class DonateFormChildViewForHOC extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.postDonation = this.postDonation.bind(this);
     this.resetDonation = this.resetDonation.bind(this);
-    this.hideAmountOptions(false);
   }
 
   getUserEmail() {
@@ -113,11 +113,6 @@ class DonateFormChildViewForHOC extends Component {
     });
   }
 
-  hideAmountOptions(hide) {
-    const { hideAmountOptionsCB } = this.props;
-    hideAmountOptionsCB(hide);
-  }
-
   postDonation(token) {
     const { donationAmount: amount, donationDuration: duration } = this.state;
     this.setState(state => ({
@@ -128,9 +123,11 @@ class DonateFormChildViewForHOC extends Component {
       }
     }));
 
-    // hide the donation options on the parent and scroll to top
-    this.hideAmountOptions(true);
+    // scroll to top
     window.scrollTo(0, 0);
+
+    // change the donation modal button to close
+    this.props.changeCloseBtnLabel();
 
     return postChargeStripe({
       token,
@@ -179,7 +176,7 @@ class DonateFormChildViewForHOC extends Component {
 
   renderDonateForm() {
     const { isFormValid } = this.state;
-    const { getDonationButtonLabel } = this.props;
+    const { getDonationButtonLabel, theme } = this.props;
     return (
       <Form className='donation-form' onSubmit={this.handleSubmit}>
         <FormGroup className='donation-email-container'>
@@ -194,7 +191,10 @@ class DonateFormChildViewForHOC extends Component {
             value={this.getUserEmail()}
           />
         </FormGroup>
-        <StripeCardForm getValidationState={this.getValidationState} />
+        <StripeCardForm
+          getValidationState={this.getValidationState}
+          theme={theme}
+        />
         <Button
           block={true}
           bsStyle='primary'

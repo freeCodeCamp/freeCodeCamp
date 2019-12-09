@@ -11,7 +11,7 @@ const amountsConfig = {
 };
 const defaultAmount = {
   year: 25000,
-  month: 3500,
+  month: 500,
   onetime: 25000
 };
 const defaultStateConfig = {
