@@ -15,7 +15,7 @@ const preFormattedBlockNames = {
   'apis-and-microservices-projects': 'APIs and Microservices Projects',
   'javascript-spreadsheet': 'JavaScript Spreadsheet',
   'css-variables-skyline': 'CSS Variables Skyline',
-  'javascript-rpg-game': 'JavaScript RPG Game'
+  'basic-javascript-rpg-game': 'Basic JavaScript RPG Game'
 };
 
 const noFormatting = ['and', 'for', 'of', 'the', 'up', 'with'];
