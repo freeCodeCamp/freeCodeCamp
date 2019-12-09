@@ -90,7 +90,7 @@ function freeCodeCampLogo() {
                 <use
                   fillOpacity='0'
                   stroke='#000'
-                  stroke-opacity='0'
+                  strokeOpacity='0'
                   stroke-width='1'
                   opacity='1'
                   xlinkHref='#aTZImEIR'
@@ -108,7 +108,7 @@ function freeCodeCampLogo() {
                 <use
                   fillOpacity='0'
                   stroke='#000'
-                  stroke-opacity='0'
+                  strokeOpacity='0'
                   stroke-width='1'
                   opacity='1'
                   xlinkHref='#a1reJuC17o'
@@ -126,7 +126,7 @@ function freeCodeCampLogo() {
                 <use
                   fillOpacity='0'
                   stroke='#000'
-                  stroke-opacity='0'
+                  strokeOpacity='0'
                   stroke-width='1'
                   opacity='1'
                   xlinkHref='#b3CiUzYJD1'
@@ -144,7 +144,7 @@ function freeCodeCampLogo() {
                 <use
                   fillOpacity='0'
                   stroke='#000'
-                  stroke-opacity='0'
+                  strokeOpacity='0'
                   stroke-width='1'
                   opacity='1'
                   xlinkHref='#a27fjRDZiD'
@@ -162,7 +162,7 @@ function freeCodeCampLogo() {
                 <use
                   fillOpacity='0'
                   stroke='#000'
-                  stroke-opacity='0'
+                  strokeOpacity='0'
                   stroke-width='1'
                   opacity='1'
                   xlinkHref='#fO2LoynhC'
@@ -180,7 +180,7 @@ function freeCodeCampLogo() {
                 <use
                   fillOpacity='0'
                   stroke='#000'
-                  stroke-opacity='0'
+                  strokeOpacity='0'
                   stroke-width='1'
                   opacity='1'
                   xlinkHref='#ovQ1ILSSG'
@@ -198,7 +198,7 @@ function freeCodeCampLogo() {
                 <use
                   fillOpacity='0'
                   stroke='#000'
-                  stroke-opacity='0'
+                  strokeOpacity='0'
                   stroke-width='1'
                   opacity='1'
                   xlinkHref='#bidTnXnUH'
@@ -216,7 +216,7 @@ function freeCodeCampLogo() {
                 <use
                   fillOpacity='0'
                   stroke='#000'
-                  stroke-opacity='0'
+                  strokeOpacity='0'
                   stroke-width='1'
                   opacity='1'
                   xlinkHref='#cNUomkEDc'
@@ -234,7 +234,7 @@ function freeCodeCampLogo() {
                 <use
                   fillOpacity='0'
                   stroke='#000'
-                  stroke-opacity='0'
+                  strokeOpacity='0'
                   stroke-width='1'
                   opacity='1'
                   xlinkHref='#b5Iz46OVaX'
@@ -252,7 +252,7 @@ function freeCodeCampLogo() {
                 <use
                   fillOpacity='0'
                   stroke='#000'
-                  stroke-opacity='0'
+                  strokeOpacity='0'
                   stroke-width='1'
                   opacity='1'
                   xlinkHref='#a1Z8HXsFzs'
@@ -270,7 +270,7 @@ function freeCodeCampLogo() {
                 <use
                   fillOpacity='0'
                   stroke='#000'
-                  stroke-opacity='0'
+                  strokeOpacity='0'
                   stroke-width='1'
                   opacity='1'
                   xlinkHref='#c704sxfG2q'
@@ -288,7 +288,7 @@ function freeCodeCampLogo() {
                 <use
                   fillOpacity='0'
                   stroke='#000'
-                  stroke-opacity='0'
+                  strokeOpacity='0'
                   stroke-width='1'
                   opacity='1'
                   xlinkHref='#a2dF9UjJYG'
@@ -306,7 +306,7 @@ function freeCodeCampLogo() {
                 <use
                   fillOpacity='0'
                   stroke='#000'
-                  stroke-opacity='0'
+                  strokeOpacity='0'
                   stroke-width='1'
                   opacity='1'
                   xlinkHref='#a3HkJ42x2Q'
@@ -324,7 +324,7 @@ function freeCodeCampLogo() {
                 <use
                   fillOpacity='0'
                   stroke='#000'
-                  stroke-opacity='0'
+                  strokeOpacity='0'
                   stroke-width='1'
                   opacity='1'
                   xlinkHref='#d2iPJF0rB9'
@@ -342,7 +342,7 @@ function freeCodeCampLogo() {
                 <use
                   fillOpacity='0'
                   stroke='#000'
-                  stroke-opacity='0'
+                  strokeOpacity='0'
                   stroke-width='1'
                   opacity='1'
                   xlinkHref='#dzhlmAMnT'
@@ -359,4 +359,3 @@ function freeCodeCampLogo() {
 freeCodeCampLogo.displayName = 'freeCodeCampLogo';
 
 export default freeCodeCampLogo;
-
