@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
 import Helmet from 'react-helmet';
-import { ListGroup, ListGroupItem } from '@freecodecamp/react-bootstrap';
+import { Grid, ListGroup, ListGroupItem } from '@freecodecamp/react-bootstrap';
 
 import LearnLayout from '../../components/layouts/Learn';
 import FullWidthRow from '../../components/helpers/FullWidthRow';
@@ -42,7 +42,7 @@ function IntroductionPage({ data: { markdownRemark, allChallengeNode } }) {
       <Helmet>
         <title>{block} | freeCodeCamp.org</title>
       </Helmet>
-      <div className='intro-layout-container'>
+      <Grid className='intro-layout-container'>
         <FullWidthRow>
           <div
             className='intro-layout'
@@ -69,7 +69,7 @@ function IntroductionPage({ data: { markdownRemark, allChallengeNode } }) {
             {allChallengeNode ? renderMenuItems(allChallengeNode) : null}
           </ListGroup>
         </FullWidthRow>
-      </div>
+      </Grid>
     </LearnLayout>
   );
 }
