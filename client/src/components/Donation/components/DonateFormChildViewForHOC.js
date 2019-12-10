@@ -19,6 +19,7 @@ import { userSelector } from '../../../redux';
 
 const propTypes = {
   changeCloseBtnLabel: PropTypes.func,
+  defaultTheme: PropTypes.string,
   donationAmount: PropTypes.number.isRequired,
   donationDuration: PropTypes.string.isRequired,
   email: PropTypes.string,
@@ -176,7 +177,7 @@ class DonateFormChildViewForHOC extends Component {
 
   renderDonateForm() {
     const { isFormValid } = this.state;
-    const { getDonationButtonLabel, theme } = this.props;
+    const { getDonationButtonLabel, theme, defaultTheme } = this.props;
     return (
       <Form className='donation-form' onSubmit={this.handleSubmit}>
         <FormGroup className='donation-email-container'>
@@ -193,7 +194,7 @@ class DonateFormChildViewForHOC extends Component {
         </FormGroup>
         <StripeCardForm
           getValidationState={this.getValidationState}
-          theme={theme}
+          theme={defaultTheme ? defaultTheme : theme}
         />
         <Button
           block={true}

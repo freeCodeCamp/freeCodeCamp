@@ -29,6 +29,7 @@ const numToCommas = num =>
 
 const propTypes = {
   changeCloseBtnLabel: PropTypes.func,
+  defaultTheme: PropTypes.string,
   isDonating: PropTypes.bool,
   isSignedIn: PropTypes.bool,
   navigate: PropTypes.func.isRequired,
@@ -137,7 +138,7 @@ class ModalDonateForm extends Component {
       stripe
     } = this.state;
 
-    const { changeCloseBtnLabel } = this.props;
+    const { changeCloseBtnLabel, defaultTheme } = this.props;
     return (
       <div>
         {paymentType === 'Card' ? (
@@ -145,6 +146,7 @@ class ModalDonateForm extends Component {
             <Elements>
               <DonateFormChildViewForHOC
                 changeCloseBtnLabel={changeCloseBtnLabel}
+                defaultTheme={defaultTheme}
                 donationAmount={donationAmount}
                 donationDuration={donationDuration}
                 getDonationButtonLabel={this.getDonationButtonLabel}
