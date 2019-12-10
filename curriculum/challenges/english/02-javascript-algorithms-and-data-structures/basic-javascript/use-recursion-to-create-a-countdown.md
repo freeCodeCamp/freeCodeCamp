@@ -54,7 +54,7 @@ tests:
   - text: Your code should not rely on any kind of loops (<code>for</code>, <code>while</code> or higher order functions such as <code>forEach</code>, <code>map</code>, <code>filter</code>, and <code>reduce</code>).
     testString: assert(!removeJSComments(code).match(/for|while|forEach|map|filter|reduce/g));
   - text: You should use recursion to solve this problem.
-    testString: assert(removeJSComments(countdown.toString()).match(/countdown\s*\(.+\)\;/));
+    testString: assert(removeJSComments(countdown.toString()).match(/countdown\s*\(.+\)/));
 ```
 
 </section>

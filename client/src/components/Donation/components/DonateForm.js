@@ -36,7 +36,6 @@ const numToCommas = num =>
   num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
 
 const propTypes = {
-  enableDonationSettingsPage: PropTypes.func.isRequired,
   isDonating: PropTypes.bool,
   isSignedIn: PropTypes.bool,
   navigate: PropTypes.func.isRequired,
@@ -197,7 +196,7 @@ class DonateForm extends Component {
   }
 
   renderDonationOptions() {
-    const { stripe, enableDonationSettingsPage } = this.props;
+    const { stripe } = this.props;
     const { donationAmount, donationDuration, paymentType } = this.state;
     return (
       <div>
@@ -207,7 +206,6 @@ class DonateForm extends Component {
               <DonateFormChildViewForHOC
                 donationAmount={donationAmount}
                 donationDuration={donationDuration}
-                enableDonationSettingsPage={enableDonationSettingsPage}
                 getDonationButtonLabel={this.getDonationButtonLabel}
                 hideAmountOptionsCB={this.hideAmountOptionsCB}
               />

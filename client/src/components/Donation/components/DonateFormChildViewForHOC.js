@@ -21,7 +21,6 @@ const propTypes = {
   donationAmount: PropTypes.number.isRequired,
   donationDuration: PropTypes.string.isRequired,
   email: PropTypes.string,
-  enableDonationSettingsPage: PropTypes.func.isRequired,
   getDonationButtonLabel: PropTypes.func.isRequired,
   hideAmountOptionsCB: PropTypes.func.isRequired,
   isSignedIn: PropTypes.bool,
@@ -120,7 +119,6 @@ class DonateFormChildViewForHOC extends Component {
   }
 
   postDonation(token) {
-    const { enableDonationSettingsPage } = this.props;
     const { donationAmount: amount, donationDuration: duration } = this.state;
     this.setState(state => ({
       ...state,
@@ -150,7 +148,6 @@ class DonateFormChildViewForHOC extends Component {
             error: data.error ? data.error : null
           }
         }));
-        enableDonationSettingsPage();
       })
       .catch(error => {
         const data =

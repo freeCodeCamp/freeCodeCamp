@@ -163,7 +163,20 @@ li.disabled > a {
   padding: 20px;
 }
 
-.heart-icon-container {
+@media (max-width: 991px) {
+  .donate-text {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 400px) {
+  .donate-tabs > .nav-pills > li > a {
+    font-size: 0.8rem;
+    padding: 10px 5px;
+  }
+}
+
+.donation-icon-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -171,15 +184,15 @@ li.disabled > a {
   margin: 40px;
 }
 
-.heart-icon {
+.donation-icon {
   width: 150px;
   height: auto;
   transform: scale(1.5);
   opacity: 0;
-  animation: heart-icon-animation 1s linear 100ms forwards;
+  animation: donation-icon-animation 1s linear 100ms forwards;
 }
 
-@keyframes heart-icon-animation {
+@keyframes donation-icon-animation {
   33% {
     transform: scale(1.2);
   }
@@ -193,10 +206,9 @@ li.disabled > a {
 }
 
 .donation-modal p {
-  margin: 0;
   text-align: center;
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 .donation-modal .modal-title {
@@ -206,7 +218,7 @@ li.disabled > a {
 }
 
 @media screen and (max-width: 991px) {
-  .heart-icon-container {
+  .donation-icon-container {
     margin: 30px;
   }
   .donation-modal p {

@@ -24,7 +24,6 @@ import Portfolio from '../components/settings/Portfolio';
 import Honesty from '../components/settings/Honesty';
 import Certification from '../components/settings/Certification';
 import DangerZone from '../components/settings/DangerZone';
-import SectionHeader from '../components/settings/SectionHeader.js';
 
 const propTypes = {
   createFlashMessage: PropTypes.func.isRequired,
@@ -55,7 +54,6 @@ const propTypes = {
     isApisMicroservicesCert: PropTypes.bool,
     isBackEndCert: PropTypes.bool,
     isDataVisCert: PropTypes.bool,
-    isDonating: PropTypes.bool,
     isEmailVerified: PropTypes.bool,
     isFrontEndCert: PropTypes.bool,
     isFrontEndLibsCert: PropTypes.bool,
@@ -124,7 +122,6 @@ export function ShowSettings(props) {
     user: {
       completedChallenges,
       email,
-      isDonating,
       is2018DataVisCert,
       isApisMicroservicesCert,
       isJsAlgoDataStructCert,
@@ -218,20 +215,6 @@ export function ShowSettings(props) {
             updateQuincyEmail={updateQuincyEmail}
           />
           <Spacer />
-          {isDonating ? (
-            <div>
-              <SectionHeader>Donation Settings</SectionHeader>
-              <FullWidthRow className='button-group'>
-                <Link
-                  className='btn-invert btn btn-lg btn-primary btn-block'
-                  to={`/donation/settings`}
-                >
-                  Manage your existing donations
-                </Link>
-              </FullWidthRow>
-              <Spacer />
-            </div>
-          ) : null}
           <Internet
             githubProfile={githubProfile}
             linkedin={linkedin}
