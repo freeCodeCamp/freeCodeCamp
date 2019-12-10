@@ -38,8 +38,8 @@
   flex-direction: column;
 }
 
-.certificate-outer-wrapper .certification-donation {
-  padding: 15px 0px;
+.certificate-outer-wrapper .donation-section {
+  padding: 20px 0px;
 }
 
 .certificate-outer-wrapper .certification-donation .btn {
@@ -52,6 +52,13 @@
   border-color: var(--gray-85);
   background-color: var(--gray-85);
   color: var(--gray-05);
+}
+
+.certificate-outer-wrapper .btn[disabled],
+.certificate-outer-wrapper .btn[disabled]:hover {
+  background-color: var(--gray-15);
+  border-color: var(--quaternary-color);
+  color: var(--quaternary-color);
 }
 
 .certification-namespace header {
