@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-sort-props */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
@@ -79,7 +80,7 @@ class ShowCertification extends Component {
     super(...args);
 
     this.state = {
-      showCloseBtn: false,
+      closeBtn: false,
       donationClosed: false
     };
 
@@ -100,11 +101,10 @@ class ShowCertification extends Component {
   }
 
   showDonationCloseBtn() {
-    this.setState({ showCloseBtn: true });
+    this.setState({ closeBtn: true });
   }
 
   render() {
-    console.log(this.props);
     const {
       cert,
       fetchState,
@@ -116,7 +116,7 @@ class ShowCertification extends Component {
       userFetchState
     } = this.props;
 
-    const { donationClosed, showCloseBtn } = this.state;
+    const { donationClosed, closeBtn } = this.state;
 
     if (!validCertName) {
       createFlashMessage(standardErrorMessage);
@@ -159,7 +159,7 @@ class ShowCertification extends Component {
           bsStyle='primary'
           onClick={this.hideDonationSection}
         >
-          close
+          Close.
         </Button>
       </div>
     );
@@ -184,12 +184,12 @@ class ShowCertification extends Component {
             </Col>
           </Row>
           <MinimalDonateForm
-            changeCloseBtnLabel={this.showDonationCloseBtn}
+            showCloseBtn={this.showDonationCloseBtn}
             defaultTheme='light'
           />
           <Row className='certification-donation'>
             <Col sm={10} smOffset={1} xs={12}>
-              {showCloseBtn ? donationCloseBtn : ''}
+              {closeBtn ? donationCloseBtn : ''}
             </Col>
           </Row>
         </Grid>
