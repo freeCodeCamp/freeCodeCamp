@@ -13,7 +13,7 @@ import {
 import * as Babel from '@babel/standalone';
 import presetEnv from '@babel/preset-env';
 import presetReact from '@babel/preset-react';
-import protect from 'loop-protect/lib/';
+import protect from '@freecodecamp/loop-protect';
 
 import * as vinyl from '../utils/polyvinyl.js';
 import createWorker from '../utils/worker-executor';
@@ -23,7 +23,8 @@ import createWorker from '../utils/worker-executor';
 import { filename as sassCompile } from '../../../../config/sass-compile';
 
 const protectTimeout = 100;
-const testProtectTimeout = 3000;
+const testProtectTimeout = 2500;
+const loopsPerTimeoutCheck = 2000;
 
 function loopProtectCB(line) {
   console.log(
@@ -40,7 +41,7 @@ function testLoopProtectCB(line) {
 Babel.registerPlugin('loopProtection', protect(protectTimeout, loopProtectCB));
 Babel.registerPlugin(
   'testLoopProtection',
-  protect(testProtectTimeout, testLoopProtectCB, 2000)
+  protect(testProtectTimeout, testLoopProtectCB, loopsPerTimeoutCheck)
 );
 
 const babelOptionsJSX = {
