@@ -217,11 +217,6 @@
   }
 }
 
-/* Temporary styles for certifications. To be removed when routing fixed */
-:root {
-  --header-height: 0;
-}
-
-.light-palette {
-  --secondary-background: #fff;
+.certificate-outer-wrapper {
+  margin-top: calc(-1 * var(--header-height));
 }
