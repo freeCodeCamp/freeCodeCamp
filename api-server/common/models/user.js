@@ -127,6 +127,9 @@ function nextTick(fn) {
 const getRandomNumber = () => Math.random();
 
 function populateRequiredFields(user) {
+  // by default, the displayUsername will have
+  // the same value as the username
+  user.displayUsername = user.username;
   user.username = user.username.trim().toLowerCase();
   user.email =
     typeof user.email === 'string'
@@ -347,6 +350,7 @@ export default function(User) {
     if (!username && (!email || !isEmail(email))) {
       return Promise.resolve(false);
     }
+    username = username.toLowerCase();
     log('checking existence');
 
     // check to see if username is on blacklist
@@ -395,6 +399,7 @@ export default function(User) {
         cb(null, {});
       });
     }
+    username = username.toLowerCase();
     return User.findOne({ where: { username } }, (err, user) => {
       if (err) {
         return cb(err);
@@ -724,13 +729,13 @@ export default function(User) {
 
   User.prototype.updateMyUsername = function updateMyUsername(newUsername) {
     return Observable.defer(() => {
-      const isOwnUsername = isTheSame(newUsername, this.username);
+      const isOwnUsername = isTheSame(newUsername.toLowerCase(), this.username);
       if (isOwnUsername) {
         return Observable.of(dedent`
           ${newUsername} is already associated with this account.
           `);
       }
-      return Observable.fromPromise(User.doesExist(newUsername));
+      return Observable.fromPromise(User.doesExist(newUsername.toLowerCase()));
     }).flatMap(boolOrMessage => {
       if (typeof boolOrMessage === 'string') {
         return Observable.of(boolOrMessage);
@@ -741,14 +746,20 @@ export default function(User) {
         `);
       }
 
-      const usernameUpdate = new Promise((resolve, reject) =>
-        this.updateAttribute('username', newUsername, err => {
-          if (err) {
-            return reject(err);
+      const usernameUpdate = new Promise((resolve, reject) => {
+        this.updateAttributes(
+          {
+            username: newUsername.toLowerCase(),
+            displayUsername: newUsername
+          },
+          err => {
+            if (err) {
+              return reject(err);
+            }
+            return resolve();
           }
-          return resolve();
-        })
-      );
+        );
+      });
 
       return Observable.fromPromise(usernameUpdate).map(
         () => dedent`

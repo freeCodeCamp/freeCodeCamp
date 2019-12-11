@@ -194,7 +194,7 @@ function createUpdateMyUsername(app) {
       user,
       body: { username }
     } = req;
-    if (username === user.username) {
+    if (username.toLowerCase() === user.username) {
       return res.json({
         type: 'info',
         message: 'Username is already associated with this account'
@@ -209,7 +209,7 @@ function createUpdateMyUsername(app) {
       });
     }
 
-    const exists = await User.doesExist(username);
+    const exists = await User.doesExist(username.toLowerCase());
 
     if (exists) {
       return res.json({
@@ -218,16 +218,19 @@ function createUpdateMyUsername(app) {
       });
     }
 
-    return user.updateAttribute('username', username, err => {
-      if (err) {
-        res.status(500).json(standardErrorMessage);
-        return next(err);
+    return user.updateAttributes(
+      { username: username.toLowerCase(), displayUsername: username },
+      err => {
+        if (err) {
+          res.status(500).json(standardErrorMessage);
+          return next(err);
+        }
+        return res.status(200).json({
+          type: 'success',
+          message: `We have updated your username to ${username}`
+        });
       }
-      return res.status(200).json({
-        type: 'success',
-        message: `We have updated your username to ${username}`
-      });
-    });
+    );
   };
 }
 
