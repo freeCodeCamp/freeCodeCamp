@@ -50,8 +50,8 @@ const propTypes = {
 };
 
 function DonateModal({ show, block, isBlockDonation, closeDonationModal }) {
-  const [showCloseLabel, setCloseLabel] = React.useState(false);
-  const changeCloseBtnLabel = () => {
+  const [closeLabel, setCloseLabel] = React.useState(false);
+  const showCloseBtn = () => {
     setCloseLabel(true);
   };
 
@@ -97,7 +97,7 @@ function DonateModal({ show, block, isBlockDonation, closeDonationModal }) {
       <Modal.Body>
         {isBlockDonation ? blockDonationText : progressDonationText}
         <Spacer />
-        <MinimalDonateForm changeCloseBtnLabel={changeCloseBtnLabel} />
+        <MinimalDonateForm showCloseBtn={showCloseBtn} />
         <Spacer />
         <Row>
           <Col sm={10} smOffset={1} xs={12}>
@@ -108,7 +108,7 @@ function DonateModal({ show, block, isBlockDonation, closeDonationModal }) {
               className='btn-link'
               onClick={closeDonationModal}
             >
-              {showCloseLabel ? 'close' : 'Please ask me later.'}
+              {closeLabel ? 'Close.' : 'Please ask me later.'}
             </Button>
           </Col>
         </Row>

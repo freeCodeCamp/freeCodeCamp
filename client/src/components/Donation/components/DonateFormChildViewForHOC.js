@@ -1,3 +1,4 @@
+/* eslint-disable react/sort-prop-types */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -18,7 +19,7 @@ import { postChargeStripe } from '../../../utils/ajax';
 import { userSelector } from '../../../redux';
 
 const propTypes = {
-  changeCloseBtnLabel: PropTypes.func,
+  showCloseBtn: PropTypes.func,
   defaultTheme: PropTypes.string,
   donationAmount: PropTypes.number.isRequired,
   donationDuration: PropTypes.string.isRequired,
@@ -127,8 +128,11 @@ class DonateFormChildViewForHOC extends Component {
     // scroll to top
     window.scrollTo(0, 0);
 
-    // change the donation modal button to close
-    this.props.changeCloseBtnLabel();
+    // change the donation modal button label to close
+    // or display the close button for the cert donation section
+    if (this.props.showCloseBtn) {
+      this.props.showCloseBtn();
+    }
 
     return postChargeStripe({
       token,

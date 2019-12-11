@@ -1,8 +1,10 @@
+/* eslint-disable react/sort-prop-types */
+/* eslint-disable react/jsx-sort-props */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Button, Row, Col } from '@freecodecamp/react-bootstrap';
+import { Row, Col } from '@freecodecamp/react-bootstrap';
 import { StripeProvider, Elements } from 'react-stripe-elements';
 
 import {
@@ -10,14 +12,8 @@ import {
   durationsConfig,
   defaultStateConfig
 } from '../../../../../config/donation-settings';
-import { apiLocation } from '../../../../config/env.json';
 import DonateFormChildViewForHOC from './DonateFormChildViewForHOC';
-import {
-  userSelector,
-  isSignedInSelector,
-  signInLoadingSelector,
-  hardGoTo as navigate
-} from '../../../redux';
+import { userSelector } from '../../../redux';
 
 import '../Donation.css';
 import DonateCompletion from './DonateCompletion.js';
@@ -28,12 +24,9 @@ const numToCommas = num =>
   num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
 
 const propTypes = {
-  changeCloseBtnLabel: PropTypes.func,
+  showCloseBtn: PropTypes.func,
   defaultTheme: PropTypes.string,
   isDonating: PropTypes.bool,
-  isSignedIn: PropTypes.bool,
-  navigate: PropTypes.func.isRequired,
-  showLoading: PropTypes.bool.isRequired,
   stripe: PropTypes.shape({
     createToken: PropTypes.func.isRequired
   })
@@ -41,23 +34,10 @@ const propTypes = {
 
 const mapStateToProps = createSelector(
   userSelector,
-  signInLoadingSelector,
-  isSignedInSelector,
-  ({ isDonating }, showLoading, isSignedIn) => ({
-    isDonating,
-    isSignedIn,
-    showLoading
+  ({ isDonating }) => ({
+    isDonating
   })
 );
-
-const mapDispatchToProps = {
-  navigate
-};
-
-const createOnClick = navigate => e => {
-  e.preventDefault();
-  return navigate(`${apiLocation}/signin?returnTo=donate`);
-};
 
 class ModalDonateForm extends Component {
   constructor(...args) {
@@ -138,14 +118,14 @@ class ModalDonateForm extends Component {
       stripe
     } = this.state;
 
-    const { changeCloseBtnLabel, defaultTheme } = this.props;
+    const { showCloseBtn, defaultTheme } = this.props;
     return (
       <div>
         {paymentType === 'Card' ? (
           <StripeProvider stripe={stripe}>
             <Elements>
               <DonateFormChildViewForHOC
-                changeCloseBtnLabel={changeCloseBtnLabel}
+                showCloseBtn={showCloseBtn}
                 defaultTheme={defaultTheme}
                 donationAmount={donationAmount}
                 donationDuration={donationDuration}
@@ -164,7 +144,7 @@ class ModalDonateForm extends Component {
   }
 
   render() {
-    const { isSignedIn, navigate, showLoading, isDonating } = this.props;
+    const { isDonating } = this.props;
 
     if (isDonating) {
       return (
@@ -179,17 +159,7 @@ class ModalDonateForm extends Component {
     return (
       <Row>
         <Col sm={10} smOffset={1} xs={12}>
-          {!showLoading && !isSignedIn ? (
-            <Button
-              bsStyle='default'
-              className='btn btn-block'
-              onClick={createOnClick(navigate)}
-            >
-              Become a supporter
-            </Button>
-          ) : (
-            this.renderDonationOptions()
-          )}
+          {this.renderDonationOptions()}
         </Col>
       </Row>
     );
@@ -201,5 +171,5 @@ ModalDonateForm.propTypes = propTypes;
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  null
 )(ModalDonateForm);
