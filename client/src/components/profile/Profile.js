@@ -27,6 +27,7 @@ const propTypes = {
       showPortfolio: PropTypes.bool,
       showTimeLine: PropTypes.bool
     }),
+    displayUsername: PropTypes.string,
     calendar: PropTypes.object,
     streak: PropTypes.shape({
       current: PropTypes.number,
@@ -121,13 +122,15 @@ function renderProfile(user) {
     picture,
     portfolio,
     about,
-    yearsTopContributor
+    yearsTopContributor,
+    displayUsername
   } = user;
 
   return (
     <Fragment>
       <Camper
         about={showAbout ? about : null}
+        displayUsername={displayUsername}
         githubProfile={githubProfile}
         isGithub={isGithub}
         isLinkedIn={isLinkedIn}
@@ -147,7 +150,11 @@ function renderProfile(user) {
       {showCerts ? <Certifications username={username} /> : null}
       {showPortfolio ? <Portfolio portfolio={portfolio} /> : null}
       {showTimeLine ? (
-        <Timeline completedMap={completedChallenges} username={username} />
+        <Timeline
+          completedMap={completedChallenges}
+          displayUsername={displayUsername}
+          username={username}
+        />
       ) : null}
       <Spacer />
     </Fragment>
