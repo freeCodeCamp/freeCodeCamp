@@ -22,3 +22,6 @@ patch:
         patched: '2019-12-03T22:47:46.464Z'
     - googleapis > googleapis-common > google-auth-library > gtoken > gaxios > https-proxy-agent:
         patched: '2019-12-03T22:47:46.464Z'
+  SNYK-JS-TREEKILL-536781:
+    - snyk > snyk-sbt-plugin > tree-kill:
+        patched: '2019-12-12T17:10:00.378Z'
