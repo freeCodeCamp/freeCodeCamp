@@ -108,7 +108,7 @@ function DonateModal({ show, block, isBlockDonation, closeDonationModal }) {
               className='btn-link'
               onClick={closeDonationModal}
             >
-              {closeLabel ? 'Close.' : 'Please ask me later.'}
+              {closeLabel ? 'Close.' : 'Ask me later.'}
             </Button>
           </Col>
         </Row>
