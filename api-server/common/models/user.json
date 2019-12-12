@@ -74,10 +74,6 @@
       },
       "require": true
     },
-    "displayUsername": {
-      "type": "string",
-      "default":""
-    },
     "about": {
       "type": "string",
       "default": ""

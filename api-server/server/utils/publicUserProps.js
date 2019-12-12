@@ -11,7 +11,6 @@ export const publicUserProps = [
   'about',
   'calendar',
   'completedChallenges',
-  'displayUsername',
   'githubProfile',
   'isApisMicroservicesCert',
   'isBackEndCert',
