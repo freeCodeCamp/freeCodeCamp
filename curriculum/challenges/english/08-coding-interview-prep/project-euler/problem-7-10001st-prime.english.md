@@ -61,21 +61,22 @@ nthPrime(10001);
 
 
 ```js
-const nthPrime = (number)=>{
- let pN = 2;
- let step = 0;
- while (step<number) {
-   let isPrime = true;
-   for(let i = 2;i<pN;i++){
-      if(!(pN%i)){
+const nthPrime = n => {
+  let pN = 2;
+  let step = 0;
+  while (step < n) {
+    let isPrime = true;
+    let rootN = Math.sqrt(pN);
+    for (let i = 2; i <= rootN; i++) {
+      if (!(pN % i)) {
         isPrime = false;
         break;
       }
-   }
-   isPrime ? step++ : '';
+    }
+    isPrime ? step++ : '';
     pN++;
- }
- return pN-1;
+  }
+  return pN - 1;
 }
 ```
 
