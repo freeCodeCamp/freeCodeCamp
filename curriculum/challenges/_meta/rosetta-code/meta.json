@@ -345,6 +345,10 @@
       "Largest int from concatenated ints"
     ],
     [
+      "5a23c84252665b21eecc7edd",
+      "Last letter-first letter"
+    ],
+    [
       "5a23c84252665b21eecc7edc",
       "Last Friday of each month"
     ],
@@ -359,6 +363,22 @@
     [
       "5a23c84252665b21eecc7ee0",
       "Left factorials"
+    ],
+    [
+      "5a23c84252665b21eecc7ee1",
+      "Letter frequency"
+    ],
+    [
+      "5a23c84252665b21eecc7ee2",
+      "Levenshtein distance"
+    ],
+    [
+      "5a23c84252665b21eecc7ee3",
+      "Linear congruential generator"
+    ],
+    [
+      "5a23c84252665b21eecc7eec",
+      "Long multiplication"
     ],
     [
       "59da22823d04c95919d46269",
