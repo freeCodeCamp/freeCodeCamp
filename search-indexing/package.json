@@ -43,7 +43,7 @@
     "rxjs": "^6.4.0",
     "secure-compare": "^3.0.1",
     "validator": "^10.11.0",
-    "snyk": "^1.256.0"
+    "snyk": "^1.259.0"
   },
   "devDependencies": {
     "html-entities": "^1.2.1",
