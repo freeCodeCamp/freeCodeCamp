@@ -32,7 +32,7 @@
     "to-vfile": "^5.0.1",
     "unified": "^7.0.0",
     "unist-util-visit": "^1.4.0",
-    "snyk": "^1.256.0"
+    "snyk": "^1.258.2"
   },
   "snyk": true
 }

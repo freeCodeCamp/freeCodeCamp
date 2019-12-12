@@ -14,3 +14,6 @@ patch:
         patched: '2019-12-03T22:56:29.664Z'
     - '@google-cloud/translate > @google-cloud/common > google-auth-library > gtoken > gaxios > https-proxy-agent':
         patched: '2019-12-03T22:56:29.664Z'
+  SNYK-JS-TREEKILL-536781:
+    - snyk > snyk-sbt-plugin > tree-kill:
+        patched: '2019-12-12T06:40:13.090Z'
