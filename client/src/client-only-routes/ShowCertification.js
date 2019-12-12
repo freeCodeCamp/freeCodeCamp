@@ -177,7 +177,7 @@ class ShowCertification extends Component {
                 </h1>
                 <h3>has successfully completed the freeCodeCamp.org</h3>
                 <h1>
-                  <strong>{certTitle} Certification</strong>
+                  <strong>{certTitle}</strong>
                 </h1>
                 <h4>
                   Developer Certification, representing approximately{' '}
