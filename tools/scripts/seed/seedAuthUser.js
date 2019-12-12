@@ -45,7 +45,6 @@ MongoClient.connect(MONGOHQ_URL, { useNewUrlParser: true }, function(
         isBanned: false,
         isCheater: false,
         username: 'developmentuser',
-        displayUsername: 'DevelopmentUser',
         about: '',
         name: 'Development User',
         location: '',

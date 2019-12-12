@@ -27,7 +27,6 @@ const propTypes = {
       )
     })
   ),
-  displayUsername: PropTypes.string,
   username: PropTypes.string
 };
 
@@ -131,7 +130,6 @@ class TimelineInner extends Component {
   render() {
     const {
       completedMap,
-      displayUsername,
       idToNameMap,
       username,
       sortedTimeline,
@@ -173,9 +171,9 @@ class TimelineInner extends Component {
           >
             <Modal.Header closeButton={true}>
               <Modal.Title id='contained-modal-title'>
-                {`${
-                  displayUsername ? displayUsername : username
-                }'s Solution to ${idToNameMap.get(id).challengeTitle}`}
+                {`${username}'s Solution to ${
+                  idToNameMap.get(id).challengeTitle
+                }`}
               </Modal.Title>
             </Modal.Header>
             <Modal.Body>
