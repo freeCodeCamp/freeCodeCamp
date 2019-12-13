@@ -34,7 +34,7 @@ function loopProtectCB(line) {
 
 function testLoopProtectCB(line) {
   console.log(
-    `Potentially infinite loop detected on line ${line}. Tests may be failing because of this.`
+    `Potential infinite loop detected on line ${line}. Tests may be failing because of this.`
   );
 }
 
