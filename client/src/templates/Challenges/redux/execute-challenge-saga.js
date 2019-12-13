@@ -172,7 +172,7 @@ function* previewChallengeSaga() {
   } catch (err) {
     if (err === 'timeout') {
       // eslint-disable-next-line no-ex-assign
-      err = `The code you have written is taking longer than the ${previewTimeout}ms our challenges allow. You may have created an infinite loop or need to write an efficient algorithm`;
+      err = `The code you have written is taking longer than the ${previewTimeout}ms our challenges allow. You may have created an infinite loop or need to write a more efficient algorithm`;
     }
     console.log(err);
     yield put(updateConsole(escape(err)));
