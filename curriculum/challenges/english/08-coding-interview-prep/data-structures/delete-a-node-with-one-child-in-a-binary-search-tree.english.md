@@ -154,33 +154,6 @@ BinarySearchTree.prototype = Object.assign(
         traverseInOrder(this.root);
         return result;
       }
-    },
-    isBinarySearchTree() {
-      if (this.root == null) {
-        return null;
-      } else {
-        var check = true;
-        function checkTree(node) {
-          if (node.left != null) {
-            var left = node.left;
-            if (left.value > node.value) {
-              check = false;
-            } else {
-              checkTree(left);
-            }
-          }
-          if (node.right != null) {
-            var right = node.right;
-            if (right.value < node.value) {
-              check = false;
-            } else {
-              checkTree(right);
-            }
-          }
-        }
-        checkTree(this.root);
-        return check;
-      }
     }
   }
 );

@@ -63,23 +63,6 @@ function BinarySearchTree() {
 BinarySearchTree.prototype = Object.assign(
   BinarySearchTree.prototype,
   {
-    isBinarySearchTree(node = this.root, min = null, max = null) {
-      if (!node) return true;
-      if (node.left != null && node.left.value > node.value) {
-        return false;
-      }
-
-      if (node.right != null && node.right.value < node.value) {
-        return false;
-      }
-
-      if (!isBST(node.left) || !isBST(node.right)) {
-        return false;
-      }
-
-      return true;
-    },
-
     inOrder() {
       if (!this.root) {
         return null;
