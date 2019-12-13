@@ -76,13 +76,10 @@ function BinarySearchTree() {
 <div id='js-teardown'>
 
 ```js
-BinarySearchTree.prototype = {
-  add: function(value) {
-    var node = this.root;
-    if (node == null) {
-      this.root = new Node(value);
-      return;
-    } else {
+BinarySearchTree.prototype = Object.assign(
+  BinarySearchTree.prototype,
+  {
+    add: function(value) {
       function searchTree(node) {
         if (value < node.value) {
           if (node.left == null) {
@@ -102,10 +99,18 @@ BinarySearchTree.prototype = {
           return null;
         }
       }
-      return searchTree(node);
+
+      var node = this.root;
+      if (node == null) {
+        this.root = new Node(value);
+        return;
+      } else {
+        return searchTree(node);
+      }
     }
   }
-};
+);
+
 ```
 
 </div>

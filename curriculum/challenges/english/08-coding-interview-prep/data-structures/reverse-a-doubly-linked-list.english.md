@@ -63,52 +63,55 @@ var DoublyLinkedList = function() {
 <div id='js-teardown'>
 
 ```js
-DoublyLinkedList.prototype = {
-  add(data) {
-    if (this.head == null) {
-      this.head = new Node(data, null);
-      this.tail = this.head;
-    } else {
-      var node = this.head;
-      var prev = null;
-      while (node.next != null) {
-        prev = node;
-        node = node.next;
+DoublyLinkedList.prototype = Object.assign(
+  DoublyLinkedList.prototype,
+  {
+    add(data) {
+      if (this.head == null) {
+        this.head = new Node(data, null);
+        this.tail = this.head;
+      } else {
+        var node = this.head;
+        var prev = null;
+        while (node.next != null) {
+          prev = node;
+          node = node.next;
+        };
+        var newNode = new Node(data, node);
+        node.next = newNode;
+        this.tail = newNode;
       };
-      var newNode = new Node(data, node);
-      node.next = newNode;
-      this.tail = newNode;
-    };
-  },
-  print() {
-    if (this.head == null) {
-      return null;
-    } else {
-      var result = new Array();
-      var node = this.head;
-      while (node.next != null) {
+    },
+    print() {
+      if (this.head == null) {
+        return null;
+      } else {
+        var result = new Array();
+        var node = this.head;
+        while (node.next != null) {
+          result.push(node.data);
+          node = node.next;
+        };
         result.push(node.data);
-        node = node.next;
+        return result;
       };
-      result.push(node.data);
-      return result;
-    };
-  },
-  printReverse() {
-    if (this.tail == null) {
-      return null;
-    } else {
-      var result = new Array();
-      var node = this.tail;
-      while (node.prev != null) {
+    },
+    printReverse() {
+      if (this.tail == null) {
+        return null;
+      } else {
+        var result = new Array();
+        var node = this.tail;
+        while (node.prev != null) {
+          result.push(node.data);
+          node = node.prev;
+        };
         result.push(node.data);
-        node = node.prev;
+        return result;
       };
-      result.push(node.data);
-      return result;
-    };
+    }
   }
-};
+);
 ```
 
 </div>
