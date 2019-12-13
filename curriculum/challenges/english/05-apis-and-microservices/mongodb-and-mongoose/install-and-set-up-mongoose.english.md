@@ -7,7 +7,7 @@ forumTopicId: 301540
 
 ## Description
 <section id='description'>
-Add mongodb and mongoose to the project’s package.json. Then require mongoose. Store your MongoDB Atlas database URI in the private <code>.env</code> file as MONGO_URI. Connect to the database using the following syntax:
+Add mongodb and mongoose to the project’s package.json. Then require mongoose. Store your MongoDB Atlas database URI in the private <code>.env</code> file as MONGO_URI. Surround the the URI with single or double quotes and make sure no space exists between both the variable and the `=` and the value and `=`. Connect to the database using the following syntax:
 
 ```js
 mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology: true }); 
