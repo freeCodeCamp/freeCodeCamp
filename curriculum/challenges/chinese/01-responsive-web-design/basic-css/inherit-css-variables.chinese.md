@@ -1,24 +1,30 @@
 ---
 id: 5a9d7295424fe3d0e10cad14
-title: Cascading CSS variables
+title: Inherit CSS Variables
 challengeType: 0
-videoUrl: ''
-localeTitle: 级联CSS变量
+videoUrl: 'https://scrimba.com/c/cyLZZhZ'
+forumTopicId: 301088
+localTitle: 继承 CSS 变量
 ---
 
 ## Description
-<section id="description">创建变量时，您可以在创建变量的元素内使用它。它也可以在嵌套在其中的任何元素中使用。这种效应称为<dfn>级联</dfn> 。由于级联，CSS变量通常在<dfn>：root</dfn>元素中定义。 <code>:root</code>是一个<dfn>伪类</dfn>选择器，它匹配文档的根元素，通常是<code></code>元件。通过在<code>:root</code>创建变量，它们将在全局可用，并且可以在样式表中的任何其他选择器中访问。 </section>
+<section id='description'>
+当创建一个变量时，变量会在创建的选择器里可用。同时，在这个选择器的后代里面也是可用的。这是因为 CSS 变量是可继承的，和普通的属性一样。
+CSS 变量经常会定义在  <dfn>:root</dfn> 元素内，这样就可被所有选择器继承。<code>:root</code> 是一个 <dfn>pseudo-class</dfn> 选择器匹配文档的根选择器，通常指 <code>html</code> 元素。通过在 <code>:root</code> 里创建变量，变量在全局可用，以及在 style 样式的选择器里也生效。
+</section>
 
 ## Instructions
-<section id="instructions">在<code>:root</code>选择器中定义一个名为<code>--penguin-belly</code>的变量，并为其赋值<code>pink</code> 。然后，您可以在任何使用该变量的位置查看该值将如何级联以将值更改为粉红色。 </section>
+<section id='instructions'>
+在 <code>:root</code> 选择器里定义变量 <code>--penguin-belly</code> 并赋值 <code>pink</code>。会发现变量被继承，所有使用该变量的子元素都会有 pink 背景。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: '在<code>:root</code>声明<code>--penguin-belly</code>变量并将其指定为<code>pink</code> 。'
-    testString: 'assert(code.match(/:root\s*?{[\s\S]*--penguin-belly\s*?:\s*?pink\s*?;[\s\S]*}/gi), "declare the <code>--penguin-belly</code> variable in the <code>:root</code> and assign it to <code>pink</code>.");'
+  - text: '应该在 <code>:root</code> 里声明 <code>--penguin-belly</code> 变量并赋值 <code>pink</code>。'
+    testString: assert(code.match(/:root\s*?{[\s\S]*--penguin-belly\s*?:\s*?pink\s*?;[\s\S]*}/gi));
 
 ```
 
@@ -232,7 +238,6 @@ tests:
     <div class="beak-bottom"></div>
   </div>
 </div>
-
 ```
 
 </div>
@@ -244,7 +249,9 @@ tests:
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+var code = ":root {--penguin-belly: pink;}"
 ```
+
 </section>
