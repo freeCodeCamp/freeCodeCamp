@@ -44,7 +44,7 @@ tests:
     testString: assert(code.match(/result\s*=\s*str\.replace\(.*?\)/));
   - text: <code>fixRegex</code> should use at least three capture groups.
     testString: assert((new RegExp(fixRegex.source + '|')).exec('').length - 1 >= 3);
-  - text: <code>replaceText</code> should use parenthesized submatch string(s).
+  - text: <code>replaceText</code> should use parenthesized submatch string(s) (i.e. the nth parenthesized submatch string, $n, corresponds to the nth capture group).
     testString: '{
       const re = /(\$\d{1,2})+(?:[\D]|\b)/g;
       assert(replaceText.match(re).length >= 3);
