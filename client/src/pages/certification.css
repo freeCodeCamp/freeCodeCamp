@@ -219,4 +219,11 @@
 
 .certificate-outer-wrapper {
   margin-top: calc(-1 * var(--header-height));
+  background-color: #fff;
+}
+
+.certificate-outer-wrapper .row,
+.certificate-outer-wrapper .information,
+.certificate-outer-wrapper .verify {
+  background-color: #fff;
 }
