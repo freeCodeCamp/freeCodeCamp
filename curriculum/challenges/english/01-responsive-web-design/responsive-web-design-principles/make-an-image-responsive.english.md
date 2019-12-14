@@ -78,7 +78,7 @@ img {
 }
 
 img {
-  width: 500px;
+  width: 600px;
 }
 </style>
 
