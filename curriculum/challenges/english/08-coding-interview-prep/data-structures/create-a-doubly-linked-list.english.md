@@ -68,7 +68,11 @@ var DoublyLinkedList = function() {
 <div id='js-teardown'>
 
 ```js
-DoublyLinkedList.prototype = {
+
+DoublyLinkedList.prototype = Object.assign(
+  DoublyLinkedList.prototype,
+  {
+  
   print() {
     if (this.head == null) {
       return null;
@@ -96,8 +100,8 @@ DoublyLinkedList.prototype = {
       result.push(node.data);
       return result;
     };
-  } 
-};
+  }
+});
 ```
 
 </div>
