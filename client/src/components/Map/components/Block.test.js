@@ -9,7 +9,7 @@ import mockChallengeNodes from '../../../__mocks__/challenge-nodes';
 import mockIntroNodes from '../../../__mocks__/intro-nodes';
 import mockCompleted from '../../../__mocks__/completedChallengesMock';
 
-test('<Block /> not expanded snapshot', () => {
+test('<Block /> not expanded snapshot for logged in users', () => {
   const { container } = render(
     <Block
       blockDashedName='block-a'
@@ -17,15 +17,33 @@ test('<Block /> not expanded snapshot', () => {
       completedChallenges={mockCompleted}
       intro={mockIntroNodes[0]}
       isExpanded={false}
+      isSignedIn={true}
       toggleBlock={() => {}}
       toggleMapModal={() => {}}
     />
   );
 
-  expect(container).toMatchSnapshot('block-not-expanded');
+  expect(container).toMatchSnapshot('block-not-expanded-logged-in');
 });
 
-test('<Block expanded snapshot', () => {
+test('<Block /> not expanded snapshot if not logged in', () => {
+  const { container } = render(
+    <Block
+      blockDashedName='block-a'
+      challenges={mockChallengeNodes.filter(node => node.block === 'block-a')}
+      completedChallenges={mockCompleted}
+      intro={mockIntroNodes[0]}
+      isExpanded={false}
+      isSignedIn={false}
+      toggleBlock={() => {}}
+      toggleMapModal={() => {}}
+    />
+  );
+
+  expect(container).toMatchSnapshot('block-not-expanded-not-logged-in');
+});
+
+test('<Block /> expanded snapshot for logged in users', () => {
   const { container } = render(
     <Block
       blockDashedName='block-a'
@@ -33,12 +51,30 @@ test('<Block expanded snapshot', () => {
       completedChallenges={mockCompleted}
       intro={mockIntroNodes[0]}
       isExpanded={true}
+      isSignedIn={true}
       toggleBlock={() => {}}
       toggleMapModal={() => {}}
     />
   );
 
-  expect(container).toMatchSnapshot('block-expanded');
+  expect(container).toMatchSnapshot('block-expanded-logged-in');
+});
+
+test('<Block /> expanded snapshot if not logged in', () => {
+  const { container } = render(
+    <Block
+      blockDashedName='block-a'
+      challenges={mockChallengeNodes.filter(node => node.block === 'block-a')}
+      completedChallenges={mockCompleted}
+      intro={mockIntroNodes[0]}
+      isExpanded={true}
+      isSignedIn={false}
+      toggleBlock={() => {}}
+      toggleMapModal={() => {}}
+    />
+  );
+
+  expect(container).toMatchSnapshot('block-expanded-not-logged-in');
 });
 
 test('<Block />  should handle toggle clicks correctly', async () => {

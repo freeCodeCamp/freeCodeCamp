@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Block /> not expanded snapshot: block-not-expanded 1`] = `
+exports[`<Block /> not expanded snapshot for logged in users: block-not-expanded-logged-in 1`] = `
 <div>
   <li
     class="block "
@@ -66,7 +66,7 @@ exports[`<Block /> not expanded snapshot: block-not-expanded 1`] = `
 </div>
 `;
 
-exports[`<Block expanded snapshot: block-expanded 1`] = `
+exports[`<Block /> expanded snapshot for logged in users: block-expanded-logged-in 1`] = `
 <div>
   <li
     class="block open"
@@ -437,6 +437,123 @@ exports[`<Block expanded snapshot: block-expanded 1`] = `
             </g>
           </svg>
         </span>
+        <a
+          href="/super-block-three/block-a/challenge-one"
+        >
+          Challenge One
+        </a>
+      </li>
+    </ul>
+  </li>
+</div>
+`;
+
+exports[`<Block /> not expanded snapshot if not logged in: block-not-expanded-not-logged-in 1`] = `
+<div>
+  <li
+    class="block "
+  >
+    <button
+      aria-expanded="false"
+      class="map-title"
+    >
+      <svg
+        viewBox="0 0 100 100"
+        width="25px"
+      >
+        <polygon
+          points="-6.04047,17.1511 81.8903,58.1985 -3.90024,104.196"
+          style="stroke: var(--primary-color); fill: var(--primary-color); stroke-width: 1px;"
+          transform="matrix(0.999729, 0.023281, -0.023281, 0.999729, 7.39321, -10.0425)"
+        />
+      </svg>
+      <h4>
+        Block A
+      </h4>
+    </button>
+    <ul />
+  </li>
+</div>
+`;
+
+exports[`<Block /> expanded snapshot if not logged in: block-expanded-not-logged-in 1`] = `
+<div>
+  <li
+    class="block open"
+  >
+    <button
+      aria-expanded="true"
+      class="map-title"
+    >
+      <svg
+        viewBox="0 0 100 100"
+        width="25px"
+      >
+        <polygon
+          points="-6.04047,17.1511 81.8903,58.1985 -3.90024,104.196"
+          style="stroke: var(--primary-color); fill: var(--primary-color); stroke-width: 1px;"
+          transform="matrix(0.999729, 0.023281, -0.023281, 0.999729, 7.39321, -10.0425)"
+        />
+      </svg>
+      <h4>
+        Block A
+      </h4>
+    </button>
+    <ul>
+      <li
+        class="map-challenge-title"
+        id="introduction-to-block-a"
+      >
+        <a
+          href="/super-block-one/block-a"
+        >
+          Introduction to Block A
+        </a>
+      </li>
+      <li
+        class="map-challenge-title map-challenge-title-completed"
+        id="challenge-one"
+      >
+        <a
+          href="/super-block-one/block-a/challenge-one"
+        >
+          Challenge One
+        </a>
+      </li>
+      <li
+        class="map-challenge-title"
+        id="challenge-two"
+      >
+        <a
+          href="/super-block-one/block-a/challenge-two"
+        >
+          Challenge Two
+        </a>
+      </li>
+      <li
+        class="map-challenge-title"
+        id="challenge-one"
+      >
+        <a
+          href="/super-block-two/block-a/challenge-one"
+        >
+          Challenge One
+        </a>
+      </li>
+      <li
+        class="map-challenge-title map-challenge-title-completed"
+        id="challenge-two"
+      >
+        <a
+          href="/super-block-two/block-a/challenge-two"
+        >
+          Challenge Two
+        </a>
+      </li>
+      <li
+        class="map-challenge-title"
+        id="challenge-one"
+      >
         <a
           href="/super-block-three/block-a/challenge-one"
         >

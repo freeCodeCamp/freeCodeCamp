@@ -14,32 +14,64 @@ function renderWithRedux(ui) {
   return render(<Provider store={createStore()}>{ui}</Provider>);
 }
 
-test('<SuperBlock /> not expanded snapshot', () => {
+test('<SuperBlock /> not expanded snapshot for logged in users', () => {
   const props = {
     introNodes: mockIntroNodes,
     isExpanded: false,
     nodes: mockChallengeNodes,
     superBlock: 'Super Block One',
-    toggleSuperBlock: () => {}
+    toggleSuperBlock: () => {},
+    isSignedIn: true
   };
 
   const { container } = render(<SuperBlock {...props} />);
 
-  expect(container).toMatchSnapshot('superBlock-not-expanded');
+  expect(container).toMatchSnapshot('superBlock-not-expanded-logged-in');
 });
 
-test('<SuperBlock /> expanded snapshot', () => {
+test('<SuperBlock /> not expanded snapshot if not logged in', () => {
+  const props = {
+    introNodes: mockIntroNodes,
+    isExpanded: false,
+    nodes: mockChallengeNodes,
+    superBlock: 'Super Block One',
+    toggleSuperBlock: () => {},
+    isSignedIn: false
+  };
+
+  const { container } = render(<SuperBlock {...props} />);
+
+  expect(container).toMatchSnapshot('superBlock-not-expanded-not-logged-in');
+});
+
+test('<SuperBlock /> expanded snapshot for logged in users', () => {
   const props = {
     introNodes: mockIntroNodes,
     isExpanded: true,
     nodes: mockChallengeNodes,
     superBlock: 'Super Block One',
-    toggleSuperBlock: () => {}
+    toggleSuperBlock: () => {},
+    isSignedIn: true
   };
 
   const { container } = renderWithRedux(<SuperBlock {...props} />);
 
-  expect(container).toMatchSnapshot('superBlock-expanded');
+  expect(container).toMatchSnapshot('superBlock-expanded-logged-in');
+});
+
+test('<SuperBlock /> expanded snapshot if not logged in', () => {
+  const props = {
+    introNodes: mockIntroNodes,
+    isExpanded: true,
+    nodes: mockChallengeNodes,
+    superBlock: 'Super Block One',
+    toggleSuperBlock: () => {},
+    isSignedIn: true
+  };
+
+  const { container } = renderWithRedux(<SuperBlock {...props} />);
+
+  expect(container).toMatchSnapshot('superBlock-expanded-not-logged-in');
 });
 
 test('<SuperBlock should handle toggle clicks correctly', () => {
