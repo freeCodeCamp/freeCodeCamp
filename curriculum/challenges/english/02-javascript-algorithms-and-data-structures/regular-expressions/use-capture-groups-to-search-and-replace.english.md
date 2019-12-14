@@ -28,7 +28,7 @@ You can also access capture groups in the replacement string with dollar signs (
 
 ## Instructions
 <section id='instructions'>
-Write a regex so that it will search for the string <code>"good"</code>. Then update the <code>replaceText</code> variable to replace <code>"good"</code> with <code>"okey-dokey"</code>.
+Write a regex <code>fixRegex</code> using three capture groups that will search for each word in the string "one two three". Then update the <code>replaceText</code> variable to replace "one two three" with the string "three two one" and assign the result to the <code>result</code> variable. Make sure you are utilizing capture groups in the replacement string using the dollar sign (<code>$</code>) syntax.
 </section>
 
 ## Tests
@@ -38,10 +38,17 @@ Write a regex so that it will search for the string <code>"good"</code>. Then up
 tests:
   - text: You should use <code>.replace()</code> to search and replace.
     testString: assert(code.match(/\.replace\(.*\)/));
-  - text: Your regex should change <code>"This sandwich is good."</code> to <code>"This sandwich is okey-dokey."</code>
-    testString: assert(result == "This sandwich is okey-dokey." && replaceText === "okey-dokey");
+  - text: Your regex should change <code>"one two three"</code> to <code>"three two one"</code>
+    testString: assert(result === "three two one");
   - text: You should not change the last line.
-    testString: assert(code.match(/result\s*=\s*huhText\.replace\(.*?\)/));
+    testString: assert(code.match(/result\s*=\s*str\.replace\(.*?\)/));
+  - text: <code>fixRegex</code> should use at least three capture groups.
+    testString: assert((new RegExp(fixRegex.source + '|')).exec('').length - 1 >= 3);
+  - text: <code>replaceText</code> should use parenthesized submatch string(s) (i.e. the nth parenthesized submatch string, $n, corresponds to the nth capture group).
+    testString: '{
+      const re = /(\$\d{1,2})+(?:[\D]|\b)/g;
+      assert(replaceText.match(re).length >= 3);
+    }'
 
 ```
 
@@ -53,10 +60,10 @@ tests:
 <div id='js-seed'>
 
 ```js
-let huhText = "This sandwich is good.";
+let str = "one two three";
 let fixRegex = /change/; // Change this line
 let replaceText = ""; // Change this line
-let result = huhText.replace(fixRegex, replaceText);
+let result = str.replace(fixRegex, replaceText);
 ```
 
 </div>
@@ -69,10 +76,10 @@ let result = huhText.replace(fixRegex, replaceText);
 <section id='solution'>
 
 ```js
-let huhText = "This sandwich is good.";
-let fixRegex = /good/g; // Change this line
-let replaceText = "okey-dokey"; // Change this line
-let result = huhText.replace(fixRegex, replaceText);
+let str = "one two three";
+let fixRegex = /(\w+) (\w+) (\w+)/g; // Change this line
+let replaceText = "$3 $2 $1"; // Change this line
+let result = str.replace(fixRegex, replaceText);
 ```
 
 </section>
