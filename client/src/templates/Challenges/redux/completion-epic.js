@@ -79,7 +79,7 @@ function submitProject(type, state) {
     return empty();
   }
 
-  const { solution, githubLink } = projectFormValuesSelector(state);
+  const { solution, githubLink = 'empty' } = projectFormValuesSelector(state);
   const { id, challengeType } = challengeMetaSelector(state);
   const { username } = userSelector(state);
   const challengeInfo = { id, challengeType, solution };

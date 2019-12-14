@@ -190,14 +190,16 @@ export class CertificationSettings extends Component {
             >
               Front End
             </MenuItem>
-            <MenuItem
-              bsStyle='primary'
-              href={githubLink}
-              rel='noopener noreferrer'
-              target='_blank'
-            >
-              Back End
-            </MenuItem>
+            {githubLink !== 'empty' && (
+              <MenuItem
+                bsStyle='primary'
+                href={githubLink}
+                rel='noopener noreferrer'
+                target='_blank'
+              >
+                Back End
+              </MenuItem>
+            )}
           </DropdownButton>
         </div>
       );
