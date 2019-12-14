@@ -4,18 +4,18 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Modal, Button } from '@freecodecamp/react-bootstrap';
-import { Link } from '../../../components/helpers';
+import { Modal, Button, Col, Row } from '@freecodecamp/react-bootstrap';
+import { Spacer } from '../../../components/helpers';
 import { blockNameify } from '../../../../utils/blockNameify';
 import Heart from '../../../assets/icons/Heart';
 import Cup from '../../../assets/icons/Cup';
+import MinimalDonateForm from './MinimalDonateForm';
 
 import ga from '../../../analytics';
 import {
   closeDonationModal,
   isDonationModalOpenSelector,
-  isBlockDonationModalSelector,
-  activeDonationsSelector
+  isBlockDonationModalSelector
 } from '../../../redux';
 
 import { challengeMetaSelector } from '../../../templates/Challenges/redux';
@@ -26,12 +26,10 @@ const mapStateToProps = createSelector(
   isDonationModalOpenSelector,
   challengeMetaSelector,
   isBlockDonationModalSelector,
-  activeDonationsSelector,
-  (show, { block }, isBlockDonation, activeDonors) => ({
+  (show, { block }, isBlockDonation) => ({
     show,
     block,
-    isBlockDonation,
-    activeDonors
+    isBlockDonation
   })
 );
 
@@ -51,13 +49,12 @@ const propTypes = {
   show: PropTypes.bool
 };
 
-function DonateModal({
-  show,
-  block,
-  activeDonors,
-  isBlockDonation,
-  closeDonationModal
-}) {
+function DonateModal({ show, block, isBlockDonation, closeDonationModal }) {
+  const [closeLabel, setCloseLabel] = React.useState(false);
+  const showCloseBtn = () => {
+    setCloseLabel(true);
+  };
+
   if (show) {
     ga.modalview('/donation-modal');
   }
@@ -66,12 +63,12 @@ function DonateModal({
       <div className='donation-icon-container'>
         <Cup className='donation-icon' />
       </div>
-      <p className='text-center'>
-        Nicely done. You just completed {blockNameify(block)}.
-      </p>
-      <p className='text-center'>
-        Help us create even more learning resources like this.
-      </p>
+      <Row>
+        <Col sm={10} smOffset={1} xs={12}>
+          <p>Nicely done. You just completed {blockNameify(block)}.</p>
+          <p>Help us create even more learning resources like this.</p>
+        </Col>
+      </Row>
     </div>
   );
 
@@ -80,14 +77,13 @@ function DonateModal({
       <div className='donation-icon-container'>
         <Heart className='donation-icon' />
       </div>
-      <p>
-        freeCodeCamp.org is a tiny nonprofit that's helping millions of people
-        learn to code for free.
-      </p>
-      <p>
-        Join <strong>{activeDonors}</strong> supporters.
-      </p>
-      <p>Your donation will help keep tech education free and open.</p>
+      <Row>
+        <Col sm={10} smOffset={1} xs={12}>
+          <p>
+            Help us create even more learning resources for you and your family.
+          </p>
+        </Col>
+      </Row>
     </div>
   );
 
@@ -95,30 +91,28 @@ function DonateModal({
     <Modal bsSize='lg' className='donation-modal' show={show}>
       <Modal.Header className='fcc-modal'>
         <Modal.Title className='modal-title text-center'>
-          <strong>Support freeCodeCamp.org</strong>
+          <strong>Become a Supporter</strong>
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
         {isBlockDonation ? blockDonationText : progressDonationText}
+        <Spacer />
+        <MinimalDonateForm showCloseBtn={showCloseBtn} />
+        <Spacer />
+        <Row>
+          <Col sm={10} smOffset={1} xs={12}>
+            <Button
+              block={true}
+              bsSize='sm'
+              bsStyle='primary'
+              className='btn-link'
+              onClick={closeDonationModal}
+            >
+              {closeLabel ? 'Close.' : 'Ask me later.'}
+            </Button>
+          </Col>
+        </Row>
       </Modal.Body>
-      <Modal.Footer>
-        <Link
-          className='btn-invert btn btn-lg btn-primary btn-block btn-cta'
-          onClick={closeDonationModal}
-          to={`/donate`}
-        >
-          Support our nonprofit
-        </Link>
-        <Button
-          block={true}
-          bsSize='lg'
-          bsStyle='primary'
-          className='btn-invert'
-          onClick={closeDonationModal}
-        >
-          Ask me later
-        </Button>
-      </Modal.Footer>
     </Modal>
   );
 }

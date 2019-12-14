@@ -40,10 +40,6 @@ function DonateCompletion({ processing, reset, success, error = null }) {
               Your donation will support free technology education for people
               all over the world.
             </p>
-            <p>
-              You can update your supporter status at any time from the 'manage
-              your existing donation' section below on this page.
-            </p>
           </div>
         )}
         {error && <p>{error}</p>}
