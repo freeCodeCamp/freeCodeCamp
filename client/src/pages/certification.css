@@ -227,3 +227,9 @@
 .certificate-outer-wrapper .verify {
   background-color: #fff;
 }
+
+.certificate-outer-wrapper .donation-completion-buttons button {
+  background-color: transparent;
+  color: #a94442;
+  border-color: #a94442;
+}
