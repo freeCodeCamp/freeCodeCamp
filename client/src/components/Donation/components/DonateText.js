@@ -39,7 +39,7 @@ const DonateText = () => {
         We earned the 2019 Platinum Seal of Transparency from Guidestar.org. You
         can view all our nonprofit's details and download our accounting
         documents{' '}
-        <Link to={'https://www.guidestar.org/profile/82-0779546'}>there.</Link>
+        <Link to='https://www.guidestar.org/profile/82-0779546'>there.</Link>
       </p>
       <Spacer />
 
