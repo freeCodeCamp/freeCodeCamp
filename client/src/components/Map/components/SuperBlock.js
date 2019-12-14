@@ -41,6 +41,7 @@ const propTypes = {
     })
   ),
   isExpanded: PropTypes.bool,
+  isSignedIn: PropTypes.bool,
   nodes: PropTypes.arrayOf(ChallengeNode),
   superBlock: PropTypes.string,
   toggleSuperBlock: PropTypes.func.isRequired
@@ -56,7 +57,7 @@ function createSuperBlockTitle(str) {
 
 export class SuperBlock extends Component {
   renderBlock(superBlock) {
-    const { nodes, introNodes } = this.props;
+    const { nodes, introNodes, isSignedIn } = this.props;
     const blocksForSuperBlock = nodes.filter(
       node => node.superBlock === superBlock
     );
@@ -79,6 +80,7 @@ export class SuperBlock extends Component {
                   .split(' ')
                   .join('-') === blockDashedName
             )}
+            isSignedIn={isSignedIn}
             key={blockDashedName}
           />
         ))}

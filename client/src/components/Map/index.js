@@ -98,10 +98,11 @@ export class Map extends Component {
   }
 
   renderSuperBlocks(superBlocks) {
-    const { nodes, introNodes } = this.props;
+    const { nodes, introNodes, isSignedIn } = this.props;
     return superBlocks.map(superBlock => (
       <SuperBlock
         introNodes={introNodes}
+        isSignedIn={isSignedIn}
         key={superBlock}
         nodes={nodes}
         superBlock={superBlock}

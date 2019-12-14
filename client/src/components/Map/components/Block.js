@@ -43,6 +43,7 @@ const propTypes = {
     })
   }),
   isExpanded: PropTypes.bool,
+  isSignedIn: PropTypes.bool,
   toggleBlock: PropTypes.func.isRequired
 };
 
@@ -86,6 +87,7 @@ export class Block extends Component {
   renderChallenges(intro = {}, challenges = []) {
     // TODO: Split this into a Challenge Component and add tests
     // TODO: The styles badge and map-badge on the completion span do not exist
+    const { isSignedIn } = this.props;
     return [intro].concat(challenges).map((challenge, i) => {
       const completedClass = challenge.isCompleted
         ? ' map-challenge-title-completed'
@@ -100,13 +102,15 @@ export class Block extends Component {
           }
           key={'map-challenge' + challenge.fields.slug}
         >
-          <span className='badge map-badge'>
-            {i === 0 ? (
-              <IntroInformation style={mapIconStyle} />
-            ) : (
-              this.renderCheckMark(challenge.isCompleted)
-            )}
-          </span>
+          {isSignedIn ? (
+            <span className='badge map-badge'>
+              {i === 0 ? (
+                <IntroInformation style={mapIconStyle} />
+              ) : (
+                this.renderCheckMark(challenge.isCompleted)
+              )}
+            </span>
+          ) : null}
           <Link
             onClick={this.handleChallengeClick(challenge.fields.slug)}
             to={challenge.fields.slug}
@@ -124,7 +128,8 @@ export class Block extends Component {
       completedChallenges,
       challenges,
       isExpanded,
-      intro
+      intro,
+      isSignedIn
     } = this.props;
     let completedCount = 0;
     const challengesWithCompleted = challenges.map(challenge => {
@@ -147,14 +152,18 @@ export class Block extends Component {
         >
           <Caret />
           <h4>{blockNameify(blockDashedName)}</h4>
-          <div className='map-title-completed'>
-            <span>
-              {this.renderCheckMark(
-                completedCount === challengesWithCompleted.length
-              )}
-            </span>
-            <span>{`${completedCount}/${challengesWithCompleted.length}`}</span>
-          </div>
+          {isSignedIn ? (
+            <div className='map-title-completed'>
+              <span>
+                {this.renderCheckMark(
+                  completedCount === challengesWithCompleted.length
+                )}
+              </span>
+              <span>
+                {`${completedCount}/${challengesWithCompleted.length}`}
+              </span>
+            </div>
+          ) : null}
         </button>
         <ul>
           {isExpanded
