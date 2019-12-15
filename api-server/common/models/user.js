@@ -792,7 +792,6 @@ export default function(User) {
         username
       };
     }
-
     return {
       ...user,
       about: showAbout ? about : '',
