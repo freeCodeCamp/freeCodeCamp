@@ -105,3 +105,17 @@ test('<SuperBlock should handle toggle clicks correctly', () => {
 
   expect(container.querySelector('ul')).toBeInTheDocument();
 });
+
+test('renders without the circle when not signed in', () => {
+  const props = {
+    introNodes: mockIntroNodes,
+    isExpanded: true,
+    nodes: mockChallengeNodes,
+    superBlock: 'Super Block One',
+    toggleSuperBlock: () => {},
+    isSignedIn: false
+  };
+  const { container } = renderWithRedux(<SuperBlock {...props} />);
+
+  expect(container.querySelector('svg circle')).toBeNull();
+});
