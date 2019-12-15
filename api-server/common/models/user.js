@@ -792,11 +792,21 @@ export default function(User) {
         username
       };
     }
+
     return {
       ...user,
       about: showAbout ? about : '',
       calendar: showHeatMap ? calendar : {},
-      completedChallenges: showCerts && showTimeLine ? completedChallenges : [],
+      completedChallenges: (function() {
+        if (showCerts && showTimeLine) {
+          return completedChallenges;
+        } else if (showTimeLine) {
+          return completedChallenges.filter(
+            challenge => challenge.challengeType !== 7
+          );
+        }
+        return [];
+      })(),
       isDonating: showDonation ? isDonating : null,
       location: showLocation ? location : '',
       name: showName ? name : '',
