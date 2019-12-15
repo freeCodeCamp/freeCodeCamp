@@ -109,3 +109,19 @@ test('<Block />  should handle toggle clicks correctly', async () => {
     props.challenges.length + (props.intro ? 1 : 0)
   );
 });
+
+test('renders without the circle when not signed in', () => {
+  const { container } = render(
+    <Block
+      blockDashedName='block-a'
+      challenges={mockChallengeNodes.filter(node => node.block === 'block-a')}
+      completedChallenges={mockCompleted}
+      intro={mockIntroNodes[0]}
+      isExpanded={true}
+      isSignedIn={false}
+      toggleBlock={() => {}}
+      toggleMapModal={() => {}}
+    />
+  );
+  expect(container.querySelector('svg circle')).toBeNull();
+});
