@@ -75,9 +75,10 @@
   margin-left: 100px;
 }
 
-.certification-namespace .logo img {
-  max-width: 500px;
+.certification-namespace .logo svg {
+  height: 100%;
   width: 100%;
+  max-width: 500px;
 }
 
 .certification-namespace .issue-date {
@@ -151,6 +152,36 @@
 }
 
 /*mobile media queries*/
+@media screen and (max-width: 675px) {
+  .certification-namespaces.issue-date {
+    padding: 0;
+    border: 0;
+  }
+
+  .certification-namespace header {
+    height: 190px;
+  }
+
+  .certification-namespace h3 {
+    font-size: 15px;
+  }
+
+  .certification-namespace h1 {
+    font-size: 17px;
+  }
+
+  .certification-namespace h4 {
+    font-size: 15px;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .certificate-outer-wrapper .donation-section {
+    padding: 20px 20px;
+  }
+}
+
 @media screen and (max-width: 992px) {
   .certification-namespace header {
     height: 160px;
@@ -163,7 +194,7 @@
     height: 80px;
   }
 
-  .certification-namespace .logo img {
+  .certification-namespace .logo svg {
     margin-top: 20px;
   }
 
@@ -197,29 +228,5 @@
 
   .certification-namespace h1 {
     font-size: 28px;
-  }
-}
-
-@media screen and (max-width: 675px) {
-  .certification-namespaces.issue-date {
-    padding: 0;
-    border: 0;
-  }
-
-  .certification-namespace header {
-    height: 190px;
-  }
-
-  .certification-namespace h3 {
-    font-size: 15px;
-  }
-
-  .certification-namespace h1 {
-    font-size: 17px;
-  }
-
-  .certification-namespace h4 {
-    font-size: 15px;
-    margin-top: 20px;
   }
 }

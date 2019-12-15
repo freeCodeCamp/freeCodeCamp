@@ -48,19 +48,18 @@ function Intro({
             </h1>
             <Spacer />
           </Col>
-
-          <FullWidthRow className='button-group'>
-            <Link
-              className='btn btn-lg btn-primary btn-block'
-              to={`/${username}`}
-            >
-              View my Portfolio
-            </Link>
-            <Link className='btn btn-lg btn-primary btn-block' to='/settings'>
-              Update my account settings
-            </Link>
-          </FullWidthRow>
         </Row>
+        <FullWidthRow className='button-group'>
+          <Link
+            className='btn btn-lg btn-primary btn-block'
+            to={`/${username}`}
+          >
+            View my Portfolio
+          </Link>
+          <Link className='btn btn-lg btn-primary btn-block' to='/settings'>
+            Update my account settings
+          </Link>
+        </FullWidthRow>
         <Spacer />
         <Row className='text-center quote-partial'>
           <Col sm={10} smOffset={1} xs={12}>
