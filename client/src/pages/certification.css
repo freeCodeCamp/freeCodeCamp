@@ -35,6 +35,30 @@
   display: flex;
   align-items: center;
   min-height: 100vh;
+  flex-direction: column;
+}
+
+.certificate-outer-wrapper .donation-section {
+  padding: 20px 0px;
+}
+
+.certificate-outer-wrapper .certification-donation .btn {
+  background-color: var(--gray-15);
+  border-color: var(--gray-85);
+  color: var(--gray-85);
+}
+
+.certificate-outer-wrapper .certification-donation .btn:hover {
+  border-color: var(--gray-85);
+  background-color: var(--gray-85);
+  color: var(--gray-05);
+}
+
+.certificate-outer-wrapper .btn[disabled],
+.certificate-outer-wrapper .btn[disabled]:hover {
+  background-color: var(--gray-15);
+  border-color: var(--quaternary-color);
+  color: var(--quaternary-color);
 }
 
 .certification-namespace header {
@@ -61,7 +85,11 @@
   font-size: 20px;
   text-align: right;
   margin-right: 100px;
-  color: #fff;
+  color: var(--gray-00);
+}
+
+.certification-namespace .issue-date strong {
+  color: var(--gray-00);
 }
 
 .certification-namespace .information {

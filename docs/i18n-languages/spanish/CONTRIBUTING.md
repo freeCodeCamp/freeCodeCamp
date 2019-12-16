@@ -98,7 +98,7 @@ Contribuir a esto requiere cierta comprensión de las API, la sintaxis de ES6 y 
 
 Esencialmente, esperamos cierta familiaridad básica con algunas de las tecnologías, herramientas y librerías mencionadas anteriormente. Dicho esto, no es necesario que seas un experto en ello.
 
-Siéntete libre de hacernos preguntas, en los hilos relacionados con problemas, y estaremos encantados de aclarar. En caso de duda, puede comunicarse con Mrugesh Mohapatra [`@raisedadead`](https://github.com/raisedadead) o Stuart Taylor[`@bouncey`](https://github.com/bouncey) de nuestra equipo de desarrollo de la plataforma para ayudarte con esto.
+Siéntete libre de hacernos preguntas, en los hilos relacionados con problemas, y estaremos encantados de aclarar. En caso de duda, puede comunicarse con Mrugesh Mohapatra [`@raisedadead`](https://github.com/raisedadead) o Stuart Taylor[`@bouncey`](https://github.com/bouncey) de nuestro equipo de desarrollo de la plataforma para ayudarte con esto.
 
 Si deseas trabajar en mejorar nuestra base de código, aqui tienes [cómo configurar freeCodeCamp localmente.](/docs/how-to-setup-freecodecamp-locally.md)
 
@@ -126,7 +126,7 @@ Nos emociona ayudarte a contribuir con cualquiera de los temas en los que te gus
 
 **Soy nuevo en GitHub y Open Source en general:**
 
-Lee nuestra [Guía de cómo contribuir al código abierto](https://github.com/freeCodeCamp/how-to-contribute-to-open-source).
+Lee nuestra [Guía de cómo contribuir al código abierto](https://github.com/freeCodeCamp/how-to-contribute-to-open-source/blob/master/README-ES.md).
 
 **¿Qué significan las diferentes etiquetas, que aparecen en los problemas?**
 

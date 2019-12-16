@@ -4,7 +4,8 @@ import store from 'store';
 import {
   isSignedInSelector,
   updateComplete,
-  updateFailed
+  updateFailed,
+  allowBlockDonationRequests
 } from '../../../redux';
 
 import { post } from '../../../utils/ajax';
@@ -33,13 +34,18 @@ export function* currentChallengeSaga({ payload: id }) {
   }
 }
 
-function* updateSuccessMessageSaga() {
+export function* updateSuccessMessageSaga() {
   yield put(updateSuccessMessage(randomCompliment()));
+}
+
+export function* allowBlockDonationRequestsSaga() {
+  yield put(allowBlockDonationRequests());
 }
 
 export function createCurrentChallengeSaga(types) {
   return [
     takeEvery(types.challengeMounted, currentChallengeSaga),
-    takeEvery(types.challengeMounted, updateSuccessMessageSaga)
+    takeEvery(types.challengeMounted, updateSuccessMessageSaga),
+    takeEvery(types.lastBlockChalSubmitted, allowBlockDonationRequestsSaga)
   ];
 }
