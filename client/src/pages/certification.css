@@ -221,9 +221,3 @@
   margin-top: calc(-1 * var(--header-height));
   background-color: #fff;
 }
-
-.certificate-outer-wrapper .donation-completion-buttons button {
-  background-color: transparent;
-  color: #a94442;
-  border-color: #a94442;
-}
