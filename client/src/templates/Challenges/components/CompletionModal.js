@@ -216,6 +216,16 @@ export class CompletionModalInner extends Component {
           />
         </Modal.Body>
         <Modal.Footer>
+          {isSignedIn ? null : (
+            <Login
+              block={true}
+              bsSize='lg'
+              bsStyle='primary'
+              className='btn-cta'
+            >
+              Sign in to save your progress
+            </Login>
+          )}
           <Button
             block={true}
             bsSize='large'
@@ -225,16 +235,6 @@ export class CompletionModalInner extends Component {
             {isSignedIn ? 'Submit and g' : 'G'}o to next challenge{' '}
             <span className='hidden-xs'>(Ctrl + Enter)</span>
           </Button>
-          {isSignedIn ? null : (
-            <Login
-              block={true}
-              bsSize='lg'
-              bsStyle='primary'
-              className='btn-invert'
-            >
-              Sign in to save your progress
-            </Login>
-          )}
           {this.state.downloadURL ? (
             <Button
               block={true}
