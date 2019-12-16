@@ -801,7 +801,7 @@ export default function(User) {
           return showCerts
             ? completedChallenges
             : completedChallenges.filter(
-                challenge => challenge.challengeType !== 7
+                ({ challengeType }) => challengeType !== 7
               );
         } else {
           return [];
