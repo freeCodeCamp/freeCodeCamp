@@ -797,14 +797,15 @@ export default function(User) {
       about: showAbout ? about : '',
       calendar: showHeatMap ? calendar : {},
       completedChallenges: (function() {
-        if (showCerts && showTimeLine) {
-          return completedChallenges;
-        } else if (showTimeLine) {
-          return completedChallenges.filter(
-            challenge => challenge.challengeType !== 7
-          );
+        if (showTimeLine) {
+          return showCerts
+            ? completedChallenges
+            : completedChallenges.filter(
+                challenge => challenge.challengeType !== 7
+              );
+        } else {
+          return [];
         }
-        return [];
       })(),
       isDonating: showDonation ? isDonating : null,
       location: showLocation ? location : '',
