@@ -141,6 +141,7 @@ class YearEndDonationForm extends Component {
                 donationAmount={donationAmount}
                 donationDuration={donationDuration}
                 getDonationButtonLabel={this.getDonationButtonLabel}
+                yearEndGift={true}
               />
             </Elements>
           </StripeProvider>
