@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Tell the path what data to use. Add an `attr` function and set the `d` to `twitterLine(data)`. This will the build the path out of the data using the `twitterLine` function you created.
 </section>
 
 ## Instructions
@@ -20,7 +21,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($('svg path')[2].getAttribute('d').length > 100 && /\.attr\((`|'|")d\1\s*,\s*twitterLine\s*\(data\s*\)\)/g.test(code));
 
 ```
 
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -79,9 +81,7 @@ const twitterLine = d3.line()
 lineGraph.append('path')
 
 
-  /*
-    Tell the path what data to use. Add an `attr` function and set the `d` to `twitterLine(data)`. This will the build the path out of the data using the `twitterLine` function you created.
-  */
+</script>
 ```
 
 </div>
@@ -115,6 +115,20 @@ lineGraph.append('path')
 
   <body>
     <div class="dashboard"></div>
+
+    <script>
+      const data = [ 
+        { year: 2012, followers: { twitter: 2594, tumblr:  401, instagram:   83 }},
+        { year: 2013, followers: { twitter: 3049, tumblr:  440, instagram:  192 }},
+        { year: 2014, followers: { twitter: 3511, tumblr:  415, instagram:  511 }},
+        { year: 2015, followers: { twitter: 3619, tumblr:  492, instagram: 1014 }},
+        { year: 2016, followers: { twitter: 4046, tumblr:  543, instagram: 2066 }},
+        { year: 2017, followers: { twitter: 3991, tumblr:  701, instagram: 3032 }},
+        { year: 2018, followers: { twitter: 3512, tumblr: 1522, instagram: 4512 }},
+        { year: 2019, followers: { twitter: 3274, tumblr: 1989, instagram: 4715 }},
+        { year: 2020, followers: { twitter: 2845, tumblr: 2040, instagram: 4801 }}
+      ];
+    </script>
   </body>
 </html>
 ```

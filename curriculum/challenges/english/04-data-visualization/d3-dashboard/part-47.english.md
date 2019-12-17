@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+The first line is created, now you need to display it. On a new line, `append` a `path` to your `lineGraph` variable, similar to how you appended the `g` before.
 </section>
 
 ## Instructions
@@ -20,7 +21,7 @@ Placeholder Description
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($('svg path').length === 3 && /lineGraph\.append\((`|'|")path\1\)/gi.test(code));
 
 ```
 
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -78,9 +80,7 @@ const twitterLine = d3.line()
 
 
   
-/*
-  The first line is created, now you need to display it. On a new line, `append` a `path` to your `lineGraph` variable, similar to how you appended the `g` before.
-*/
+</script>
 ```
 
 </div>
