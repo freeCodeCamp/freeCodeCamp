@@ -25,23 +25,23 @@ Add the <code>style()</code> method to the code in the editor to set the <code>h
 ```yml
 tests:
   - text: The first <code>div</code> should have a <code>height</code> of 12 pixels.
-    testString: assert($('div').eq(0).css('height') == '12px');
+    testString: assert($('div').eq(0)[0].style.height === '12px');
   - text: The second <code>div</code> should have a <code>height</code> of 31 pixels.
-    testString: assert($('div').eq(1).css('height') == '31px');
+    testString: assert($('div').eq(1)[0].style.height === '31px');
   - text: The third <code>div</code> should have a <code>height</code> of 22 pixels.
-    testString: assert($('div').eq(2).css('height') == '22px');
+    testString: assert($('div').eq(2)[0].style.height === '22px');
   - text: The fourth <code>div</code> should have a <code>height</code> of 17 pixels.
-    testString: assert($('div').eq(3).css('height') == '17px');
+    testString: assert($('div').eq(3)[0].style.height === '17px');
   - text: The fifth <code>div</code> should have a <code>height</code> of 25 pixels.
-    testString: assert($('div').eq(4).css('height') == '25px');
+    testString: assert($('div').eq(4)[0].style.height === '25px');
   - text: The sixth <code>div</code> should have a <code>height</code> of 18 pixels.
-    testString: assert($('div').eq(5).css('height') == '18px');
+    testString: assert($('div').eq(5)[0].style.height === '18px');
   - text: The seventh <code>div</code> should have a <code>height</code> of 29 pixels.
-    testString: assert($('div').eq(6).css('height') == '29px');
+    testString: assert($('div').eq(6)[0].style.height === '29px');
   - text: The eighth <code>div</code> should have a <code>height</code> of 14 pixels.
-    testString: assert($('div').eq(7).css('height') == '14px');
+    testString: assert($('div').eq(7)[0].style.height === '14px');
   - text: The ninth <code>div</code> should have a <code>height</code> of 9 pixels.
-    testString: assert($('div').eq(8).css('height') == '9px');
+    testString: assert($('div').eq(8)[0].style.height === '9px');
 
 ```
 
@@ -88,8 +88,27 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style>
+  .bar {
+    width: 25px;
+    height: 100px;
+    display: inline-block;
+    background-color: blue;
+  }
+</style>
+<body>
+  <script>
+    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+
+    d3.select("body").selectAll("div")
+      .data(dataset)
+      .enter()
+      .append("div")
+      .attr("class", "bar")
+      .style('height', d => `${d}px`)
+  </script>
+</body>
 ```
 
 </section>
