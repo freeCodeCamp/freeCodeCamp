@@ -23,7 +23,7 @@ In the "`d` function", return the `xScale` function and pass it the year you alr
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(/\.x\s*\(d\s*=>\s*xScale\s*\(\s*d\.year\s*\)\s*\)/g.test(code));
 
 ```
 
