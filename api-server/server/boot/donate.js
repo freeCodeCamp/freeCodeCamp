@@ -5,7 +5,7 @@ import { isEmail, isNumeric } from 'validator';
 
 import {
   durationKeysConfig,
-  donationOneTimeConfig,
+  // donationOneTimeConfig,
   donationSubscriptionConfig
 } from '../../../config/donation-settings';
 import keys from '../../../config/secrets';
@@ -56,7 +56,8 @@ export default function donateBoot(app, done) {
       isNumeric('' + amount) &&
       durationKeysConfig.includes(duration) &&
       duration === 'onetime'
-      ? donationOneTimeConfig.includes(amount)
+      ? // eslint-disable-next-line no-inline-comments
+        amount > 1 // donationOneTimeConfig.includes(amount)
       : donationSubscriptionConfig.plans[duration];
   }
 
