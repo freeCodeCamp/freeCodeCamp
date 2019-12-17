@@ -111,11 +111,6 @@ lineGraph.append('path')
         align-items: center;
       }
     </style>
-  </head>
-
-  <body>
-    <div class="dashboard"></div>
-
     <script>
       const data = [ 
         { year: 2012, followers: { twitter: 2594, tumblr:  401, instagram:   83 }},
@@ -129,6 +124,10 @@ lineGraph.append('path')
         { year: 2020, followers: { twitter: 2845, tumblr: 2040, instagram: 4801 }}
       ];
     </script>
+  </head>
+
+  <body>
+    <div class="dashboard"></div>
   </body>
 </html>
 ```
