@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Add a `mouseover` event to the `tumblr-circles` and `instagram-circles` in the same way that you did for the `twitter-circles`.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 function drawDashboard(year) {
   d3.select('.dashboard').html('');
   const index = data.findIndex(d => d.year === year);
@@ -142,9 +144,7 @@ function drawDashboard(year) {
     .style('cursor', 'pointer')
 
 
-    /*
-      Add a `mouseover` event to the `tumblr-circles` and `instagram-circles` in the same way that you did for the `twitter-circles`.
-    */
+
 
   const rightDashboard = d3.select('.dashboard')
     .append('div');
@@ -225,6 +225,7 @@ function drawDashboard(year) {
 }
 
 drawDashboard(2020);
+</script>
 ```
 
 </div>

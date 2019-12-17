@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Create another variable named `percent` and set it equal to `d.data.value` divided by your `sum` variable.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -174,10 +176,8 @@ pieGraphData.selectAll('pieSliceText')
     const sum = d3.sum(values);
 
 
-    /*
-      Create another variable named `percent` and set it equal to `d.data.value` divided by your `sum` variable.
-    */
   })
+</script>
 ```
 
 </div>

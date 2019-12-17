@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Set the `align` attribute to `left` for this column.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -206,9 +208,8 @@ legendRows.append('td')
   .text(d => d.value)
 
 
-  /*
-    Set the `align` attribute to `left` for this column.
-  */
+
+</script>
 ```
 
 </div>

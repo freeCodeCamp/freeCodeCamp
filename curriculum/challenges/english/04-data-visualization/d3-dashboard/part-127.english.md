@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+On a new line, append another `td` element to your `legendRows` variable. This will be for colored squares in the center column.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -197,9 +199,8 @@ legendRows.append('td')
 
 
 
-  /*
-    On a new line, append another `td` element to your `legendRows` variable. This will be for colored squares in the center column.
-  */
+
+</script>
 ```
 
 </div>

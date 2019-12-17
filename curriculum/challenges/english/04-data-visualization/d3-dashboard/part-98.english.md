@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+On a new line, `append` a `path` element to your `pieGraphData` variable. This is what will actually draw the pie graph.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -160,9 +162,7 @@ const pieGraphData = pieGraph.selectAll('pieSlices')
 
   
 
-/*
-  On a new line, `append` a `path` element to your `pieGraphData` variable. This is what will actually draw the pie graph.
-*/
+</script>
 ```
 
 </div>

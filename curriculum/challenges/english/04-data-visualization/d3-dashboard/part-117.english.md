@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+`append` a `tr` element to the selection and then append a `th` element right after it. `tr` is for defining a row of the table, and `th` is for defining the header cells of the table.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -182,9 +184,8 @@ const legend = rightDashboard.append('table')
 const legendTitle = legend.append('thead')
 
 
-  /*
-    `append` a `tr` element to the selection and then append a `th` element right after it. `tr` is for defining a row of the table, and `th` is for defining the header cells of the table.
-  */
+
+</script>
 ```
 
 </div>

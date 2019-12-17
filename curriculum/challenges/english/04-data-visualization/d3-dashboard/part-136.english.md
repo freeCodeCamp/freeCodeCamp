@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+The legend and pie graph look a little off as well. On your `legend` variable, add a `position` of `relative` and a `top` of `30px` using `style` functions.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -180,9 +182,7 @@ const legend = rightDashboard.append('table')
   .style('font', '12px verdana')
 
 
-  /*
-    The legend and pie graph look a little off as well. On your `legend` variable, add a `position` of `relative` and a `top` of `30px` using `style` functions.
-  */
+
 
 const legendTitle = legend.append('thead')
   .append('tr')
@@ -212,6 +212,7 @@ legendRows.append('td')
 legendRows.append('td')
   .text(d => d.value)
   .attr('align', 'left');
+</script>
 ```
 
 </div>

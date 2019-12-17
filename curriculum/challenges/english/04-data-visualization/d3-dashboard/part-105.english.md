@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Add the `enter` and `append` functions in that order. Add `text` elements with the `append`.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -169,9 +171,8 @@ pieGraphData.selectAll('pieSliceText')
   .data(pie(d3.entries(data[8].followers)))
 
 
-  /*
-    Add the `enter` and `append` functions in that order. Add `text` elements with the `append`.
-  */
+
+</script>
 ```
 
 </div>

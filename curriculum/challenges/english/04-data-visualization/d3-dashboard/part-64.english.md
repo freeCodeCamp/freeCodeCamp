@@ -7,7 +7,10 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Next, add the `enter` function like this: `.enter()`. The `enter` function identifies elements that need to be added when the `data` array is longer than the selection array. This is why you want the `selectAll` to return an empty array.
+    
+In this case, the `twitter-circles` selection has a length of 0, and the `data` array has a length of 9. So nine elements will be added when you use `append` in the next step.
 </section>
 
 ## Instructions
@@ -31,6 +34,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -105,12 +109,9 @@ lineGraph.append('path')
 lineGraph.selectAll('twitter-circles')
   .data(data)
 
-  
-  /*
-    Next, add the `enter` function like this: `.enter()`. The `enter` function identifies elements that need to be added when the `data` array is longer than the selection array. This is why you want the `selectAll` to return an empty array.
-    
-    In this case, the `twitter-circles` selection has a length of 0, and the `data` array has a length of 9. So nine elements will be added when you use `append` in the next step.
-  */
+
+
+</script> 
 ```
 
 </div>

@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Set the `cx` and `cy` attributes for this selection. Pass in the same functions to them that you used for the other two sets of circles, use `d.followers.instagram` this time for the `cy` return value.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -130,9 +132,8 @@ lineGraph.selectAll('instagram-circles')
   .append('circle')
   
   
-  /*
-    Set the `cx` and `cy` attributes for this selection. Pass in the same functions to them that you used for the other two sets of circles, use `d.followers.instagram` this time for the `cy` return value.
-  */
+
+</script>
 ```
 
 </div>

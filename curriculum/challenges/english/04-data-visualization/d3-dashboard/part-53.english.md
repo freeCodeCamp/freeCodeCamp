@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+On a new line, `append` a `path` element to the `lineGraph` variable. This one will be for displaying the `tumblrLine`.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -88,9 +90,8 @@ const tumblrLine = d3.line()
 
 
   
-/*
-  On a new line, `append` a `path` element to the `lineGraph` variable. This one will be for displaying the `tumblrLine`.
-*/
+
+</script>
 ```
 
 </div>

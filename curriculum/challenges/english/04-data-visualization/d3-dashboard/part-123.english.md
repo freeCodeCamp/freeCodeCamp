@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Add the `enter` and `append` function to the selection. Pass the string `tr` to the `append` function.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -190,9 +192,8 @@ const legendRows = legend.append('tbody')
   .data(d3.entries(data[8].followers))
 
 
-  /*
-    Add the `enter` and `append` function to the selection. Pass the string `tr` to the `append` function.
-  */
+
+</script>
 ```
 
 </div>

@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Create another `mouseover` event for when you hover one of the `twitter-circles`. It will look like the other `mouseover` event you created except the `drawDashboard` function will take `d.year` instead of `d`.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 function drawDashboard(year) {
   d3.select('.dashboard').html('');
   const index = data.findIndex(d => d.year === year);
@@ -118,9 +120,9 @@ function drawDashboard(year) {
     .attr('stroke', twitterColor)
     .style('cursor', 'pointer')
 
-    /*
-      Create another `mouseover` event for when you hover one of the `twitter-circles`. It will look like the other `mouseover` event you created except the `drawDashboard` function will take `d.year` instead of `d`.
-    */
+ 
+
+
 
   lineGraph.selectAll('tumblr-circles')
     .data(data)
@@ -223,6 +225,7 @@ function drawDashboard(year) {
 }
 
 drawDashboard(2020);
+</script>
 ```
 
 </div>

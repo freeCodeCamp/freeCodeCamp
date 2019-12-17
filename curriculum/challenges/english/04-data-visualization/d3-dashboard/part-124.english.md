@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+On a new line, `append` a `td` to your `legendRows`. `td` is for an individual cell in the row of the table.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -193,9 +195,8 @@ const legendRows = legend.append('tbody')
 
 
 
-  /*
-    On a new line, `append` a `td` to your `legendRows`. `td` is for an individual cell in the row of the table.
-  */
+
+</script>
 ```
 
 </div>

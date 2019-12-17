@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Set the `cursor` to `pointer` using the `style` function.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -123,10 +125,9 @@ lineGraph.selectAll('tumblr-circles')
   .attr('fill', 'white')
   .attr('stroke', tumblrColor)
 
-  
-  /*
-    Set the `cursor` to `pointer` using the `style` function.
-  */
+
+
+</script>
 ```
 
 </div>

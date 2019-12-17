@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+On a new line, add another `selectAll` function to your `lineGraph` variable and pass it the string: `instagram-circles`. These will be circles for the Instagram line.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -126,9 +128,7 @@ lineGraph.selectAll('tumblr-circles')
 
   
 
-/*
-  On a new line, add another `selectAll` function to your `lineGraph` variable and pass it the string: `instagram-circles`. These will be circles for the Instagram line.
-*/
+</script>
 ```
 
 </div>

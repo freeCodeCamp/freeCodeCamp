@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Add three `attr` functions to the selection; one to set the `stroke` to your `tumblrColor` variable, another to set the `stroke-width` to `3`, and a third to set the `fill` to `transparent`.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -90,9 +92,8 @@ lineGraph.append('path')
   .attr('d', tumblrLine(data))
 
   
-  /*
-    Add three `attr` functions to the selection; one to set the `stroke` to your `tumblrColor` variable, another to set the `stroke-width` to `3`, and a third to set the `fill` to `transparent`.
-  */
+
+</script>
 ```
 
 </div>

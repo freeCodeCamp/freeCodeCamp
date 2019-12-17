@@ -7,7 +7,16 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+There are five places in the file where you used `data[8]` to set data to the year 2020. Change all five of them to `data[index]` so you can pass in any year to the function to change the year that is displayed.
+
+The five spots are:
+
+The `domain` for `pieColors`.
+The `data` for `pieGraphData`.
+The `data` for your `pieSliceText`.
+The `text` for your `pieSliceText`.
+The `data` for your `legendRows`.
 </section>
 
 ## Instructions
@@ -31,6 +40,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 function drawDashboard(year) {
   const index = data.findIndex(d => d.year === year);
 
@@ -217,17 +227,7 @@ function drawDashboard(year) {
 }
 
 drawDashboard(2020);
-
-/*
-  There are five places in the file where you used `data[8]` to set data to the year 2020. Change all five of them to `data[index]` so you can pass in any year to the function to change the year that is displayed.
-
-  The five spots are:
-  1. The `domain` for `pieColors`
-  2. The `data` for `pieGraphData`
-  3. The `data` for your `pieSliceText`
-  4. The `text` for your `pieSliceText`
-  5. The `data` for your `legendRows`
-*/
+</script>
 ```
 
 </div>

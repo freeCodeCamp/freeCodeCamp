@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Add a `selectAll` function to the selection and pass it the string `tr`.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -188,9 +190,8 @@ const legendTitle = legend.append('thead')
 const legendRows = legend.append('tbody')
 
 
-  /*
-    Add a `selectAll` function to the selection and pass it the string `tr`.
-  */
+
+</script>
 ```
 
 </div>

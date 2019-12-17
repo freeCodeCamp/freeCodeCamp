@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Create a new `const` named `legendRows` and use it to `append` a `tbody` element to your `legend` variable. The `tbody` is for the rest of the content of the table.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -187,9 +189,7 @@ const legendTitle = legend.append('thead')
 
   
 
-/*
-  Create a new `const` named `legendRows` and use it to `append` a `tbody` element to your `legend` variable. The `tbody` is for the rest of the content of the table.
-*/
+</script>
 ```
 
 </div>

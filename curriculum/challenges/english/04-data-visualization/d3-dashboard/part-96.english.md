@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Add the `enter` function to the current selection.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -157,9 +159,8 @@ const pieGraphData = pieGraph.selectAll('pieSlices')
   .data(pie(d3.entries(data[8].followers)))
 
 
-  /*
-    Add the `enter` function to the current selection.
-  */
+
+</script>
 ```
 
 </div>

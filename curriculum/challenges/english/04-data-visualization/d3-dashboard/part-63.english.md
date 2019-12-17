@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Add the `data` function to your selection and pass it the data variable like this: `.data(data)`.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -105,9 +107,8 @@ lineGraph.append('path')
 lineGraph.selectAll('twitter-circles')  
 
 
-  /*
-    Add the `data` function to your selection and pass it the data variable like this: `.data(data)`.
-  */
+
+</script>
 ```
 
 </div>

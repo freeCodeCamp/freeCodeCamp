@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Set these attributes: `stroke` to your `instagramColor` variable, `stroke-width` to `3`, and `fill` to `transparent`.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -100,9 +102,8 @@ lineGraph.append('path')
   .attr('d', instagramLine(data))
 
   
-  /*
-    Set these attributes: `stroke` to your `instagramColor` variable, `stroke-width` to `3`, and `fill` to `transparent`.
-  */
+
+</script>
 ```
 
 </div>

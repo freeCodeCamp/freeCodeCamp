@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Set the `text` of the `td` to the `key` of each data point using a `d` function to return `d.key`.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -194,9 +196,8 @@ const legendRows = legend.append('tbody')
 legendRows.append('td')
 
 
-  /*
-    Set the `text` of the `td` to the `key` of each data point using a `d` function to return `d.key`.
-  */
+
+</script>
 ```
 
 </div>

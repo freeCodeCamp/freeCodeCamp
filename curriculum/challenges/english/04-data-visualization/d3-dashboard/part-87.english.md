@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Chain the function `innerRadius(0)` to the arc. This is set to zero to make a traditional pie chart, you would use a larger number to create a doughnut chart.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -146,9 +148,8 @@ const pieArc = d3.arc()
   .outerRadius(100)
   
 
-  /*
-    Chain the function `innerRadius(0)` to the arc. This is set to zero to make a traditional pie chart, you would use a larger number to create a doughnut chart.
-  */
+
+</script>
 ```
 
 </div>

@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Chain a `value` function to `pie` and pass it `d => d.value`. Each piece of data(`d`) passed to `pie` will have a `key`(platform) and a `value`(number of followers), you want to return the value.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -153,9 +155,8 @@ const pieColors = d3.scaleOrdinal()
 const pie = d3.pie()
 
 
-  /*
-    Chain a `value` function to `pie` and pass it `d => d.value`. Each piece of data(`d`) passed to `pie` will have a `key`(platform) and a `value`(number of followers), you want to return the value.
-  */
+
+</script>
 ```
 
 </div>

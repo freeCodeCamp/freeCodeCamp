@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Set the `width` to `16px` and the `height` to `16px` using the `style` function.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -200,9 +202,8 @@ legendRows.append('td')
   .append('div')
 
 
-  /*
-    Set the `width` to `16px` and the `height` to `16px` using the `style` function.
-  */
+
+</script>
 ```
 
 </div>

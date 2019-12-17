@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Create a new `const` named `legendTitle` and use it to `append` a `thead` to your `legend` variable. `thead` is for use with the HTML table element and is for the top row of the table.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -181,9 +183,7 @@ const legend = rightDashboard.append('table')
 
   
 
-/*
-  Create a new `const` named `legendTitle` and use it to `append` a `thead` to your `legend` variable. `thead` is for use with the HTML table element and is for the top row of the table.
-*/
+</script>
 ```
 
 </div>

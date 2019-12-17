@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Set the `cx` and `cy` attributes for this selection. Pass the same functions to them that you used for the `twitter-circles`, except use `d.followers.tumblr` for the `cy` return value.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -119,9 +121,8 @@ lineGraph.selectAll('tumblr-circles')
   .append('circle')
 
   
-  /*
-    Set the `cx` and `cy` attributes for this selection. Pass the same functions to them that you used for the `twitter-circles`, except use `d.followers.tumblr` for the `cy` return value.
-  */
+
+</script>
 ```
 
 </div>

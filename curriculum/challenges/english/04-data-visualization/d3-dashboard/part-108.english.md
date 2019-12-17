@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+The next thing you want to do is add all those values together. `d3.sum` will add the values of an array together. Create a new `const` named `sum` and set it equal to `d3.sum(values)`.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -173,10 +175,8 @@ pieGraphData.selectAll('pieSliceText')
     const values = d3.values(data[8].followers);
 
 
-    /*
-      The next thing you want to do is add all those values together. `d3.sum` will add the values of an array together. Create a new `const` named `sum` and set it equal to `d3.sum(values)`.
-    */
   })
+</script>
 ```
 
 </div>

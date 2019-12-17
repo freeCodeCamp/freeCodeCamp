@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Use the `style` function to set the `cursor` to `pointer`. This style added on the different elements will a visual indicator for hover events you will add later.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -113,9 +115,8 @@ lineGraph.selectAll('twitter-circles')
   .attr('stroke', twitterColor)
 
   
-  /*
-    Use the `style` function to set the `cursor` to `pointer`. This style added on the different elements will a visual indicator for hover events you will add later.
-  */
+
+</script>
 ```
 
 </div>

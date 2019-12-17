@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Use the `attr` function to set the `r` to `6`, the `fill` to `white`, and the `stroke` to your `tumblrColor` variable.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -121,9 +123,8 @@ lineGraph.selectAll('tumblr-circles')
   .attr('cy', d => yScale(d.followers.tumblr))
 
   
-  /*
-    Use the `attr` function to set the `r` to `6`, the `fill` to `white`, and the `stroke` to your `tumblrColor` variable.
-  */
+
+</script>
 ```
 
 </div>

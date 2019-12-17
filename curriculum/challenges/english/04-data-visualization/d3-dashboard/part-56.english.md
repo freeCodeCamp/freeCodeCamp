@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Only one more line to add for the Instagram followers. On a new line, create a new `const` named `instagramLine` and set it equal to `d3.line()`.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -93,10 +95,7 @@ lineGraph.append('path')
   .attr('fill', 'transparent');
 
 
-  
-/*
-  Only one more line to add for the Instagram followers. On a new line, create a new `const` named `instagramLine` and set it equal to `d3.line()`.
-*/
+</script>
 ```
 
 </div>

@@ -7,7 +7,26 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+You want the array passed to `pie` to be an array of key/value objects for the 2020 followers. `d3.entries` will build that array for you. Here's how that looks:
+
+```js
+d3.entries(data[8].followers))
+```
+
+The array that the `d3.entries` function builds looks like this:
+
+```js
+[
+  { key: 'twitter', value: 2845 },
+  { key: 'tumblr', value: 2040 },
+  { key: 'instagram', value: 4801 }
+]
+```
+
+This is where the `value` comes from in your `pie` variable.
+
+Add the `d3.entries` function as your `pie` argument. Use it to create the above array.
 </section>
 
 ## Instructions
@@ -31,6 +50,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -157,27 +177,8 @@ const pieGraphData = pieGraph.selectAll('pieSlices')
   .data(pie([]))
 
 
-  /*
-    You want the array passed to `pie` to be an array of key/value objects for the 2020 followers. `d3.entries` will build that array for you. Here's how that looks:
 
-    `
-    d3.entries(data[8].followers))
-    `
-
-    The array that the `d3.entries` function builds looks like this:
-
-    `
-    [
-      { key: 'twitter', value: 2845 },
-      { key: 'tumblr', value: 2040 },
-      { key: 'instagram', value: 4801 }
-    ]
-    `
-
-    This is where the `value` comes from in your `pie` variable.
-    
-    Add the `d3.entries` function as your `pie` argument. Use it to create the above array.
-  */
+</script>
 ```
 
 </div>

@@ -7,7 +7,10 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+The dashboard is looking pretty good, but it is stuck on displaying only the data from 2020. Next you will make it so you can see the data from whatever year you want.
+
+Wrap all the code in this file in a function named `drawDashboard` and give it a parameter named `year`. Then, at the bottom, call the function you created and pass it `2020`.
 </section>
 
 ## Instructions
@@ -31,6 +34,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -214,11 +218,8 @@ legendRows.append('td')
 
 
 
-/*
-  The dashboard is looking pretty good, but it is stuck on displaying only the data from 2020. Next you will make it so you can see the data from whatever year you want.
 
-  Wrap all the code in this file in a function named `drawDashboard` and give it a parameter named `year`. Then, at the bottom, call the function you created and pass it `2020`.
-*/
+</script>
 ```
 
 </div>

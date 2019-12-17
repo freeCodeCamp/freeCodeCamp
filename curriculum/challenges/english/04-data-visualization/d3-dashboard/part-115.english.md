@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Change the `style` of the `table` to have a `font` of `12px verdana`.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -179,9 +181,8 @@ const legend = rightDashboard.append('table')
   .attr('height', 120)
 
 
-  /*
-    Change the `style` of the `table` to have a `font` of `12px verdana`.
-  */
+
+</script>
 ```
 
 </div>

@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Create a new `const` variable named `pieGraph` and set it equal to `rightDashboard.append('svg')`. This will be another `svg` element for the pie graph.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -140,9 +142,7 @@ const rightDashboard = d3.select('.dashboard')
 
   
 
-/*
-  Create a new `const` variable named `pieGraph` and set it equal to `rightDashboard.append('svg')`. This will be another `svg` element for the pie graph.
-*/
+</script>
 ```
 
 </div>

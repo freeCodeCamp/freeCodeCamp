@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+On a new line, use the `selectAll` function on your `lineGraph` variable again and pass it the string `tumblr-circles`.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -115,9 +117,7 @@ lineGraph.selectAll('twitter-circles')
 
   
 
-/*
-  On a new line, use the `selectAll` function on your `lineGraph` variable again and pass it the string `tumblr-circles`.
-*/
+</script>
 ```
 
 </div>

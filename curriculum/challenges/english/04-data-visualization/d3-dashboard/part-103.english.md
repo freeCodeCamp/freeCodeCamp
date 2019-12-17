@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Now you are going to add some labels to the pie chart. On a new line type `pieGraphData.selectAll('pieSliceText')`.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -166,10 +168,9 @@ pieGraphData.append('path')
   .attr('stroke-width', 2);
 
 
-  
-/*
-  Now you are going to add some labels to the pie chart. On a new line type `pieGraphData.selectAll('pieSliceText')`.
-*/
+
+
+</script>
 ```
 
 </div>

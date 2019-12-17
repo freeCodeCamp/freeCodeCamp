@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+The title looks a little misaligned. On your `legendTitle` variable, set the `position` to `relative` and the `left` to `20px` using `style` functions.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -186,9 +188,8 @@ const legendTitle = legend.append('thead')
   .attr('colspan', 3)
 
 
-  /*
-    The title looks a little misaligned. On your `legendTitle` variable, set the `position` to `relative` and the `left` to `20px` using `style` functions.
-  */
+
+
 
 const legendRows = legend.append('tbody')
   .selectAll('tr')
@@ -210,6 +211,7 @@ legendRows.append('td')
 legendRows.append('td')
   .text(d => d.value)
   .attr('align', 'left');
+</script>
 ```
 
 </div>

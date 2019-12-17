@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+    
+Set the `d` attribute to your `pieArc` variable.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -160,10 +162,9 @@ const pieGraphData = pieGraph.selectAll('pieSlices')
 
 pieGraphData.append('path')
 
-  
-  /*
-    Set the `d` attribute to your `pieArc` variable. 
-  */
+
+
+</script>
 ```
 
 </div>

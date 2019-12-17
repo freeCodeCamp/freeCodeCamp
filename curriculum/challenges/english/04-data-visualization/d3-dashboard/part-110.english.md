@@ -7,7 +7,13 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Your `percent` value is a number less than one. You will need to multiply it by 100, round of the decimals, and add a `%` sign. Use a template literal to return this to the `text` function:
+
+```js
+${Math.round(percent*100)}%
+```
+
 </section>
 
 ## Instructions
@@ -31,6 +37,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -175,15 +182,8 @@ pieGraphData.selectAll('pieSliceText')
     const percent = d.data.value/sum;
 
 
-    /*
-      Your `percent` value is a number less than one. You will need to multiply it by 100, round of the decimals, and add a `%` sign. Use a template literal to return this to the `text` function:
-
-      `
-      ${Math.round(percent*100)}%
-      `
-
-    */
   })
+</script>
 ```
 
 </div>

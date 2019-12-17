@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Create a new `const` named `pieGraphData` and set the value equal to `pieGraph.selectAll('pieSlices')`. This is similar to the circles you created earlier.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -155,9 +157,7 @@ const pie = d3.pie()
 
   
   
-/*
-  Create a new `const` named `pieGraphData` and set the value equal to `pieGraph.selectAll('pieSlices')`. This is similar to the circles you created earlier.
-*/
+</script>
 ```
 
 </div>

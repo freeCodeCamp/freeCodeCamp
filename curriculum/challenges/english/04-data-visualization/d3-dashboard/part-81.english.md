@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+The line graph is looking good. Next, you are going to add a `div` to put the pie graph and legend in. Create a new `const` variable named `rightDashboard` and set equal to `d3.select('.dashboard')`.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -136,10 +138,8 @@ lineGraph.selectAll('instagram-circles')
   .style('cursor', 'pointer')
 
 
-  
-/*
-  The line graph is looking good. Next, you are going to add a `div` to put the pie graph and legend in. Create a new `const` variable named `rightDashboard` and set equal to `d3.select('.dashboard')`.
-*/
+
+</script>
 ```
 
 </div>

@@ -7,7 +7,16 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Chain a `text` function to set the text of each pie slice to a percentage. Set the value to a `d` function with curly brackets and leave the function empty. It should look like this:
+
+```js
+.text(d => {
+
+})
+```
+
+The method for getting the percent of each slice will take a few steps.
 </section>
 
 ## Instructions
@@ -31,6 +40,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -171,17 +181,8 @@ pieGraphData.selectAll('pieSliceText')
   .append('text')
 
 
-  /*
-    Chain a `text` function to set the text of each pie slice to a percentage. Set the value to a `d` function with curly brackets and leave the function empty. It should look like this:
 
-    `
-    .text(d => {
-
-    })
-    `
-
-    The method for getting the percent of each slice will take a few steps.
-  */
+</script>
 ```
 
 </div>

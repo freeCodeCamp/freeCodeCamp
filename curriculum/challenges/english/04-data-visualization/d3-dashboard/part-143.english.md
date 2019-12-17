@@ -7,7 +7,10 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+There's a problem, each time you call the function it adds more elements to the container. If you empty all the elements out of the container at the top of the function, it will redraw them where they need to be.
+
+Use `d3.select` to select the `.dashboard` element and chain the `html` function to it with an empty string as it parameter.
 </section>
 
 ## Instructions
@@ -31,14 +34,11 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 function drawDashboard(year) {
 
 
-  /*
-    There's a problem, each time you call the function it adds more elements to the container. If you empty all the elements out of the container at the top of the function, it will redraw them where they need to be.
 
-    Use `d3.select` to select the `.dashboard` element and chain the `html` function to it with an empty string as it parameter.
-  */
 
   const index = data.findIndex(d => d.year === year);
 
@@ -226,6 +226,7 @@ function drawDashboard(year) {
 }
 
 drawDashboard(2020);
+</script>
 ```
 
 </div>

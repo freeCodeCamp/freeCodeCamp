@@ -7,7 +7,10 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+The pie graph is being drawn at the `0, 0` coordinates of the `svg`. On your `pieGraphData` variable, add an attribute that changes the `transform` to `translate(100, 100)`.
+    
+Since the pie chart has a radius of 100, this will move it so its center is in the center of the `svg`.
 </section>
 
 ## Instructions
@@ -31,6 +34,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -159,14 +163,9 @@ const pieGraphData = pieGraph.selectAll('pieSlices')
   .append('g')
 
 
-  /*
-    The pie graph is being drawn at the `0, 0` coordinates of the `svg`. On your `pieGraphData` variable, add an attribute that changes the `transform` to `translate(100, 100)`.
-    
-    Since the pie chart has a radius of 100, this will move it so its center is in the center of the `svg`.
-  */
-
 pieGraphData.append('path')
   .attr('d', pieArc)
+</script>
 ```
 
 </div>

@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Similar to how you made the text bold for the label of the displayed year; change the `fill` of the `twitter-circles` to use a `d` function that returns the `twitterColor` when `d.year` equals `year`, and leave it `white` if it doesn't.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 function drawDashboard(year) {
   d3.select('.dashboard').html('');
   const index = data.findIndex(d => d.year === year);
@@ -116,9 +118,7 @@ function drawDashboard(year) {
     .attr('r', 6)
     .attr('fill', 'white')
 
-    /*
-      Similar to how you made the text bold for the label of the displayed year; change the `fill` of the `twitter-circles` to use a `d` function that returns the `twitterColor` when `d.year` equals `year`, and leave it `white` if it doesn't.
-    */
+
    
     .attr('stroke', twitterColor)
     .style('cursor', 'pointer')
@@ -225,6 +225,7 @@ function drawDashboard(year) {
 }
 
 drawDashboard(2020);
+</script>
 ```
 
 </div>

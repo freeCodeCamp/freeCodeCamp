@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Use `append` to add a `div` element to the selection.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -138,9 +140,8 @@ lineGraph.selectAll('instagram-circles')
 const rightDashboard = d3.select('.dashboard')
 
 
-  /*
-    Use `append` to add a `div` element to the selection.
-  */
+
+</script>
 ```
 
 </div>

@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+The data for the labels will be the same as for the slices themselves. Add the `data` function and pass the same `pie(d3.entries(data[8].followers))` value that you gave the `pieSlices` data.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -168,9 +170,8 @@ pieGraphData.append('path')
 pieGraphData.selectAll('pieSliceText')
 
 
-  /*
-    The data for the labels will be the same as for the slices themselves. Add the `data` function and pass the same `pie(d3.entries(data[8].followers))` value that you gave the `pieSlices` data.
-  */
+
+</script>
 ```
 
 </div>

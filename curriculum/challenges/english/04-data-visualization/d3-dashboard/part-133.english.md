@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Set the `text` to a "`d` function" that returns `d.value`.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -205,9 +207,8 @@ legendRows.append('td')
 legendRows.append('td')
 
 
-  /*
-    Set the `text` to a "`d` function" that returns `d.value`.
-  */
+
+</script>
 ```
 
 </div>

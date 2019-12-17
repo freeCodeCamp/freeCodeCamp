@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Finally, on your `pieGraph` variable, add a `position` of `relative` and a `left` of `20px` using `style` functions.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -143,9 +145,6 @@ const pieGraph = rightDashboard.append('svg')
   .attr('height', 200)
 
 
-  /*
-    Finally, on your `pieGraph` variable, add a `position` of `relative` and a `left` of `20px` using `style` functions.
-  */
 
 const pieArc = d3.arc()
   .outerRadius(100)
@@ -214,6 +213,7 @@ legendRows.append('td')
 legendRows.append('td')
   .text(d => d.value)
   .attr('align', 'left');
+</script>  
 ```
 
 </div>

@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Chain the function `outerRadius(100)` to the arc. This will set the outer radius of the pie chart to 100.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -145,9 +147,8 @@ const pieGraph = rightDashboard.append('svg')
 const pieArc = d3.arc()
 
 
-  /*
-    Chain the function `outerRadius(100)` to the arc. This will set the outer radius of the pie chart to 100.
-  */
+
+</script>
 ```
 
 </div>

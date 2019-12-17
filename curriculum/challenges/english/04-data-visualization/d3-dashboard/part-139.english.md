@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+At the top of the function create a new `const` named `index`. You are going to use it to find the item in the `data` array with the year that is the same as the one passed to the function.
 </section>
 
 ## Instructions
@@ -31,12 +32,11 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 function drawDashboard(year) {
 
 
-  /*
-    At the top of the function create a new `const` named `index`. You are going to use it to find the item in the `data` array with the year that is the same as the one passed to the function.
-  */
+
 
   const svgMargin = 60,
     svgWidth = 700,
@@ -221,6 +221,7 @@ function drawDashboard(year) {
 }
 
 drawDashboard(2020);
+</script>
 ```
 
 </div>

@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Append a `div` element to the selection.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -199,9 +201,9 @@ legendRows.append('td')
   .attr('align', 'center')
 
 
-  /*
-    Append a `div` element to the selection.
-  */
+
+
+</script>
 ```
 
 </div>

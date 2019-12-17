@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Add the `data` function to the selection. Pass it your `pie` function with an empty array for now. The next step will get the correct array to put there.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -156,9 +158,8 @@ const pie = d3.pie()
 const pieGraphData = pieGraph.selectAll('pieSlices')
 
 
-  /*
-    Add the `data` function to the selection. Pass it your `pie` function with an empty array for now. The next step will get the correct array to put there.
-  */
+
+</script>
 ```
 
 </div>

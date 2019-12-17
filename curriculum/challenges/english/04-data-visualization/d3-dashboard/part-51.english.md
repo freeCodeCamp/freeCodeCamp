@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Set the `x` values for `tumblrLine` by using a "`d` function" that returns the `value` for each data point.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -85,9 +87,7 @@ lineGraph.append('path')
 const tumblrLine = d3.line()
 
 
-  /*
-    Set the `x` values for `tumblrLine` by using a "`d` function" that returns the `value` for each data point.
-  */
+</script>
 ```
 
 </div>

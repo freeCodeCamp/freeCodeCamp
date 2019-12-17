@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Set the `fill` attribute to the function `d => pieColors(d.data.key)`. This will send the key (platform) of each data point to the `pieColors` function and return the range value that key is mapped to.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -163,9 +165,8 @@ pieGraphData.append('path')
   .attr('d', pieArc)
 
 
-  /*
-    Set the `fill` attribute to the function `d => pieColors(d.data.key)`. This will send the key (platform) of each data point to the `pieColors` function and return the range value that key is mapped to.
-  */
+
+</script>
 ```
 
 </div>

@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Using the `style` function again, set the `background-color` to a `d` function that returns `pieColors(d.key)`. This will pass the `key` to `pieColor` and return the color. So `twitter` will return `twitterColor`.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -202,9 +204,8 @@ legendRows.append('td')
   .style('height', '16px')
 
 
-  /*
-    Using the `style` function again, set the `background-color` to a `d` function that returns `pieColors(d.key)`. This will pass the `key` to `pieColor` and return the color. So `twitter` will return `twitterColor`.
-  */
+
+</script>
 ```
 
 </div>

@@ -7,7 +7,10 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+The lines look a little plain, the next series of code additions will add circles to each point on each line. First is the Twitter line. On a new line, chain the `selectAll` function to `lineGraph` and pass it the string `twitter-circles`.
+
+`twitter-circles` don't exist and this selection will return an empty array, but it's needed. For now, you can just think of this name as a reference, similar to a variable name, so you know what data you are working with.
 </section>
 
 ## Instructions
@@ -31,6 +34,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -104,11 +108,7 @@ lineGraph.append('path')
   
 
   
-/*
-  The lines look a little plain, the next series of code additions will add circles to each point on each line. First is the Twitter line. On a new line, chain the `selectAll` function to `lineGraph` and pass it the string `twitter-circles`.
-
-  `twitter-circles` don't exist and this selection will return an empty array, but it's needed. For now, you can just think of this name as a reference, similar to a variable name, so you know what data you are working with.
-*/
+</script>
 ```
 
 </div>

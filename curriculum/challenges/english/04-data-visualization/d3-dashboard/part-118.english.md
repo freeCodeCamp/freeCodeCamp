@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Use the `text` function to set the text of the selection to `2020 followers`.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -184,9 +186,8 @@ const legendTitle = legend.append('thead')
   .append('th')
 
 
-  /*
-    Use the `text` function to set the text of the selection to `2020 followers`.
-  */
+
+</script>
 ```
 
 </div>

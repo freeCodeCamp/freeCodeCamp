@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Each circle needs a `cx` and `cy` attribute so it knows where to display on the `svg`. Use the `attr` function to set the `cx` to `d => xScale(d.year)`. This is the same as you did before, it passes the year of each piece of data to the `xScale` function to figure out the `cx` value.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -108,9 +110,8 @@ lineGraph.selectAll('twitter-circles')
   .append('circle')
 
   
-  /*
-    Each circle needs a `cx` and `cy` attribute so it knows where to display on the `svg`. Use the `attr` function to set the `cx` to `d => xScale(d.year)`. This is the same as you did before, it passes the year of each piece of data to the `xScale` function to figure out the `cx` value.
-  */
+
+</script>
 ```
 
 </div>

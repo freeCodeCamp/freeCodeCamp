@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+For the new `path`, set the `d` attribute to `tumblrLine(data)` using the `attr` function.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -89,9 +91,7 @@ const tumblrLine = d3.line()
 lineGraph.append('path')
 
 
-  /*
-    For the new `path`, set the `d` attribute to `tumblrLine(data)` using the `attr` function.
-  */
+</script>
 ```
 
 </div>

@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+This is the first column of your table. Set the `align` attribute to `right` to align the text to the right of each cell.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -195,9 +197,8 @@ legendRows.append('td')
   .text(d => d.key)
 
 
-  /*
-    This is the first column of your table. Set the `align` attribute to `right` to align the text to the right of each cell.
-  */
+
+</script>
 ```
 
 </div>

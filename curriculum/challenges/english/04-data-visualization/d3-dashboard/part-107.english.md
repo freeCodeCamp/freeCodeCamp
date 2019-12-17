@@ -7,7 +7,13 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+In the function you just created, create a `const` named `values`. Use the `d3.values` function to get the values of the 2020 followers and set the result to your `values` variable. Here's how to get the values:
+
+```js
+d3.values(data[8].followers)
+```
+
 </section>
 
 ## Instructions
@@ -31,6 +37,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -172,17 +179,9 @@ pieGraphData.selectAll('pieSliceText')
   .text(d => {
 
 
-    /*
-      In the function you just created, create a `const` named `values`. Use the `d3.values` function to get the values of the 2020 followers and set the result to your `values` variable. Here's how to get the values:
 
-      `
-      d3.values(data[8].followers)
-      `
-
-    */
   })
-
-
+</script>
 ```
 
 </div>

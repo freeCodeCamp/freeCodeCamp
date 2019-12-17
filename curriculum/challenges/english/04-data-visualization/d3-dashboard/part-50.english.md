@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+On a new line, create a new `const` named `tumblrLine` and set it equal to `d3.line()`.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -83,10 +85,8 @@ lineGraph.append('path')
   .attr('fill', 'transparent');
 
 
-  
-/*
-  On a new line, create a new `const` named `tumblrLine` and set it equal to `d3.line()`.
-*/
+
+</script>
 ```
 
 </div>

@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Set the `d` attribute to `instagramLine(data)`.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -99,9 +101,8 @@ const instagramLine = d3.line()
 lineGraph.append('path')
 
 
-  /*
-    Set the `d` attribute to `instagramLine(data)`.
-  */
+
+</script>
 ```
 
 </div>

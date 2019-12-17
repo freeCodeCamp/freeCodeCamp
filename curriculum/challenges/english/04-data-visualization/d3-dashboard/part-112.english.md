@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Change the `style` of the text to give it a `text-anchor` of `middle` and a `font` of `10px verdana`.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -172,10 +174,9 @@ pieGraphData.selectAll('pieSliceText')
   .text(d => `${Math.round(d.data.value/d3.sum(d3.values(data[8].followers))*100)}%`)
   .attr('transform', d => `translate(${pieArc.centroid(d)})`)
 
-  
-  /*
-    Change the `style` of the text to give it a `text-anchor` of `middle` and a `font` of `10px verdana`.
-  */
+
+
+</script>
 ```
 
 </div>

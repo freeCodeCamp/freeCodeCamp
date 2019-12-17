@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Add the same `data`, `enter`, and `append` functions here that you added for the other two, passing in the same arguments and in the same order.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -127,9 +129,8 @@ lineGraph.selectAll('tumblr-circles')
 lineGraph.selectAll('instagram-circles')
 
 
-  /*
-    Add the same `data`, `enter`, and `append` functions here that you added for the other two, passing in the same arguments and in the same order.
-  */
+
+</script>
 ```
 
 </div>

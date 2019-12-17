@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Change the `fill` of the `tumblr-circles` and `instagram-circles` to use a "`d` function" that returns their respective color variables when `d.year` equals `year`, leave it `white` when they don't.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 function drawDashboard(year) {
   d3.select('.dashboard').html('');
   const index = data.findIndex(d => d.year === year);
@@ -140,9 +142,7 @@ function drawDashboard(year) {
     .attr('r', 6)
     .attr('fill', 'white')
 
-    /*
-      Change the `fill` of the `tumblr-circles` and `instagram-circles` to use a "`d` function" that returns their respective colors variables when `d.year` equals `year`, leave it `white` when they don't.
-    */
+
 
     .attr('stroke', instagramColor)
     .style('cursor', 'pointer')
@@ -227,6 +227,7 @@ function drawDashboard(year) {
 }
 
 drawDashboard(2020);
+</script>
 ```
 
 </div>

@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Create a new `const` named `pie` and set it equal to `d3.pie()`. This is the D3 pie chart generator.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -151,10 +153,8 @@ const pieColors = d3.scaleOrdinal()
   .range([twitterColor, tumblrColor, instagramColor]);
 
 
-  
-/*
-  Create a new `const` named `pie` and set it equal to `d3.pie()`. This is the D3 pie chart generator.
-*/
+
+</script>
 ```
 
 </div>

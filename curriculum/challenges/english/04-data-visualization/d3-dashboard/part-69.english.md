@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Set two more attributes; the `fill` to `white` and the `stroke` to your `twitterColor` variable.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -111,9 +113,8 @@ lineGraph.selectAll('twitter-circles')
   .attr('r', 6)
   
 
-  /*
-    Set two more attributes; the `fill` to `white` and the `stroke` to your `twitterColor` variable.
-  */
+
+</script>
 ```
 
 </div>

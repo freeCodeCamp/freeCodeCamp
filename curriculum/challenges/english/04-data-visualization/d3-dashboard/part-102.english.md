@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Next, set the `stroke` attribute to `white` and the `stroke-width` attribute to `2`.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -164,9 +166,8 @@ pieGraphData.append('path')
   .attr('fill', d => pieColors(d.data.key))
 
 
-  /*
-    Next, set the `stroke` attribute to `white` and the `stroke-width` attribute to `2`.
-  */
+
+</script>
 ```
 
 </div>

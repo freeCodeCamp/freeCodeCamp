@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Set the `x` values for the `instagramLine`. Use a "`d` function" to return the `value` of each data point.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -95,9 +97,8 @@ lineGraph.append('path')
 const instagramLine = d3.line()  
 
 
-/*
-  Set the `x` values for the `instagramLine`. Use a "`d` function" to return the `value` of each data point.
-*/
+
+</script>
 ```
 
 </div>

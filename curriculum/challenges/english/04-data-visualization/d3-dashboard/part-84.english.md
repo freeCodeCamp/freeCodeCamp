@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Add two `attr` functions that set the `width` to `200` and the `height` to `200` of the `svg`.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -141,9 +143,8 @@ const rightDashboard = d3.select('.dashboard')
 const pieGraph = rightDashboard.append('svg')
 
 
-  /*
-    Add two `attr` functions that set the `width` to `200` and the `height` to `200` of the `svg`.
-  */
+
+</script>
 ```
 
 </div>

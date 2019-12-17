@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Use the `append` function to add a `g` element for each point of data.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -158,9 +160,8 @@ const pieGraphData = pieGraph.selectAll('pieSlices')
   .enter()
 
 
-  /*
-    Use the `append` function to add a `g` element for each point of data.
-  */
+
+</script>
 ```
 
 </div>

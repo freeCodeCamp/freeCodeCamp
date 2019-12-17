@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Add `.append('circle')` below the `enter` function. This will add the nine `circle` elements.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -107,9 +109,8 @@ lineGraph.selectAll('twitter-circles')
   .enter()
 
   
-  /*
-    Add `.append('circle')` below the `enter` function. This will add the nine `circle` elements.
-  */
+
+</script>
 ```
 
 </div>

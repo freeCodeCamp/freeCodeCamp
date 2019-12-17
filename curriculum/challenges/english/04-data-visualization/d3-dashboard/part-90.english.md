@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Since the domain has three items, the range also needs to have three items. If it had less, the values would repeat, putting the same color on the pie chart multiple times. Add the `range` function to the scale and pass it this array: `[twitterColor, tumblrColor, instagramColor]`.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -149,10 +151,9 @@ const pieArc = d3.arc()
 const pieColors = d3.scaleOrdinal()  
   .domain(data[8].followers)
 
-  
-  /*
-    Since the domain has three items, the range also needs to have three items. If it had less, the values would repeat, putting the same color on the pie chart multiple times. Add the `range` function to the scale and pass it this array: `[twitterColor, tumblrColor, instagramColor]`.
-  */
+
+
+</script>
 ```
 
 </div>

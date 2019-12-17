@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Circles also need an `r` (radius) attribute. Use the `attr` function to set the `r` to `6`.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -110,9 +112,8 @@ lineGraph.selectAll('twitter-circles')
   .attr('cy', d => yScale(d.followers.twitter))
   
 
-  /*
-    Circles also need an `r` (radius) attribute. Use the `attr` function to set the `r` to `6`.
-  */
+
+</script>
 ```
 
 </div>

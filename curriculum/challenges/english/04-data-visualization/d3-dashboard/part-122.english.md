@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Use the `data` function to set the data for the rows to an array of your followers. To get the array use `d3.entries(data[8].followers)`. Remember, this will create an array of key/value pairs of your followers.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -189,9 +191,8 @@ const legendRows = legend.append('tbody')
   .selectAll('tr')
 
 
-  /*
-    Use the `data` function to set the data for the rows to an array of your followers. To get the array use `d3.entries(data[8].followers)`. Remember, this will create an array of key/value pairs of your followers.
-  */
+
+</script>
 ```
 
 </div>

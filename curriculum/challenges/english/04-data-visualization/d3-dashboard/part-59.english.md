@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+On a new line, `append` another `path` element to your `lineGraph`, like you did for the other two lines.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -97,10 +99,9 @@ const instagramLine = d3.line()
   .y(d => yScale(d.followers.instagram));
 
 
-  
-/*
-  On a new line, `append` another `path` element to your `lineGraph`, like you did for the other two lines.
-*/
+
+
+</script>
 ```
 
 </div>

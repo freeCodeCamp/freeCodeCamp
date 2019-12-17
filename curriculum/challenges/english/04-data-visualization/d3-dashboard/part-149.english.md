@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Change the `text` of the `legendTitle` to this string literal `${year} followers`. That's it, your dashboard is finished!
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 function drawDashboard(year) {
   d3.select('.dashboard').html('');
   const index = data.findIndex(d => d.year === year);
@@ -196,9 +198,7 @@ function drawDashboard(year) {
     .append('th')
     .text('2020 followers')
 
-    /*
-      Change the `text` of the `legendTitle` to this string literal `${year} followers`. That's it, your dashboard is finished!
-    */
+
 
     .attr('colspan', 3)
     .style('position', 'relative')
@@ -227,6 +227,7 @@ function drawDashboard(year) {
 }
 
 drawDashboard(2020);
+</script>
 ```
 
 </div>

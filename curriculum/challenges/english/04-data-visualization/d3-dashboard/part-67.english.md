@@ -7,7 +7,8 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Use `attr` to set the `cy` to `d => yScale(d.followers.twitter)`.
 </section>
 
 ## Instructions
@@ -31,6 +32,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 const svgMargin = 60,
   svgWidth = 700,
   svgHeight = 500,
@@ -109,9 +111,8 @@ lineGraph.selectAll('twitter-circles')
   .attr('cx', d => xScale(d.year))
   
   
-  /*
-    Use `attr` to set the `cy` to `d => yScale(d.followers.twitter)`.
-  */
+
+</script>
 ```
 
 </div>

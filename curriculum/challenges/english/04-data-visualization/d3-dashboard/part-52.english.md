@@ -7,7 +7,10 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Set the `y` values for the `tumblrLine` by using a "`d` function" that returns your Tumblr followers for each data point.
+
+So you can see that the `x` values for each line will be the same, but the `y` values will use the data from the different platforms.
 </section>
 
 ## Instructions
@@ -87,11 +90,6 @@ const tumblrLine = d3.line()
   .x(d => xScale(d.year))
   
 
-  /*
-    Set the `y` values for the `tumblrLine` by using a "`d` function" that returns your Tumblr followers for each data point.
-
-    So you can see that the `x` values for each line will be the same, but the `y` values will use the data from the different platforms.
-  */
 </script>
 ```
 

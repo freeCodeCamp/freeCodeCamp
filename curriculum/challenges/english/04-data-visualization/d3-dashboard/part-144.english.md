@@ -7,7 +7,12 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Now when you hover a label, you can see the data for the different years.
+
+Where you created the `text` elements for the x-axis labels, change the font to `bold 10px verdana` for the currently displayed year.
+
+To do this, create a "`d` function" in the `font` value argument and return the above sting if `d` equals `year`, if not, return the string that is currently there. It's easiest to use a ternary operator for this.
 </section>
 
 ## Instructions
@@ -31,6 +36,7 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 function drawDashboard(year) {
   d3.select('.dashboard').html('');
   const index = data.findIndex(d => d.year === year);
@@ -76,13 +82,7 @@ function drawDashboard(year) {
     .style('cursor', 'pointer')
     .style('font', '10px verdana')
 
-  /*
-    Now when you hover a label, you can see the data for the different years.
 
-    Where you created the `text` elements for the x-axis labels, change the font to `bold 10px verdana` for the currently displayed year.
-
-    To do this, create a "`d` function" in the `font` value argument and return the above sting if `d` equals `year`, if not, return the string that is currently there. It's easiest to use a ternary operator for this.
-  */
  
     .on('mouseover', d => drawDashboard(d));
 
@@ -228,6 +228,7 @@ function drawDashboard(year) {
 }
 
 drawDashboard(2020);
+</script>
 ```
 
 </div>

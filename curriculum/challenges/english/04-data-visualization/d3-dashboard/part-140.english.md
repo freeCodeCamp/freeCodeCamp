@@ -7,7 +7,14 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Placeholder Description
+
+Use JavaScript's `findIndex` function to set your `index` variable to the index of the item in the `data` array where the year is the same as the year passed to your `drawDashboard` function. Here's an example:
+
+```js
+array.findIndex(d => return the year here)
+```
+
+After this, you can use `data[index]` to get that item in the array.
 </section>
 
 ## Instructions
@@ -31,19 +38,13 @@ tests:
 <div id='html-seed'>
 
 ```html
+<script>
 function drawDashboard(year) {
   const index;
 
-  /*
-    Use JavaScript's `findIndex` function to set your `index` variable to the index of the item in the `data` array where the year is the same as the year passed to your `drawDashboard` function. Here's an example:
 
-  `
-  array.findIndex(d => return the year here)
-  `
 
-    After this, you can use `data[index]` to get that item in the array.
-  */
-  
+
   const svgMargin = 60,
     svgWidth = 700,
     svgHeight = 500,
@@ -227,7 +228,8 @@ function drawDashboard(year) {
 }
 
 drawDashboard(2020);
-  ```
+</script>
+```
 
 </div>
 
