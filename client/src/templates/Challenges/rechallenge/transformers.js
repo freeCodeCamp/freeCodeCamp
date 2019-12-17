@@ -23,7 +23,7 @@ import createWorker from '../utils/worker-executor';
 import { filename as sassCompile } from '../../../../config/sass-compile';
 
 const protectTimeout = 100;
-const testProtectTimeout = 2500;
+const testProtectTimeout = 1500;
 const loopsPerTimeoutCheck = 2000;
 
 function loopProtectCB(line) {
