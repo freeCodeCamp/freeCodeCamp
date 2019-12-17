@@ -29,7 +29,8 @@ const propTypes = {
   stripe: PropTypes.shape({
     createToken: PropTypes.func.isRequired
   }),
-  theme: PropTypes.string
+  theme: PropTypes.string,
+  yearEndGift: PropTypes.bool
 };
 const initialState = {
   donationState: {
@@ -117,6 +118,7 @@ class DonateFormChildViewForHOC extends Component {
 
   postDonation(token) {
     const { donationAmount: amount, donationDuration: duration } = this.state;
+    const { yearEndGift } = this.props;
     this.setState(state => ({
       ...state,
       donationState: {
@@ -134,7 +136,7 @@ class DonateFormChildViewForHOC extends Component {
       this.props.showCloseBtn();
     }
 
-    return postChargeStripe({
+    return postChargeStripe(yearEndGift, {
       token,
       amount,
       duration
