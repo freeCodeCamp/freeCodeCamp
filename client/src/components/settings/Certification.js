@@ -190,7 +190,7 @@ export class CertificationSettings extends Component {
             >
               Front End
             </MenuItem>
-            {githubLink !== 'empty' && (
+            {githubLink && (
               <MenuItem
                 bsStyle='primary'
                 href={githubLink}
