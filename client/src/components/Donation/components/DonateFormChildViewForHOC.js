@@ -223,12 +223,14 @@ class DonateFormChildViewForHOC extends Component {
     const {
       donationState: { processing, success, error }
     } = this.state;
+    const { yearEndGift } = this.props;
     if (processing || success || error) {
       return this.renderCompletion({
         processing,
         success,
         error,
-        reset: this.resetDonation
+        reset: this.resetDonation,
+        yearEndGift
       });
     }
     return this.renderDonateForm();
