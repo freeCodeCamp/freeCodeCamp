@@ -13,7 +13,7 @@ function YearEndGiftPage() {
         <main>
           <Spacer />
           <FullWidthRow>
-            <YearEndDonationForm />
+            <YearEndDonationForm defaultTheme='light' />
           </FullWidthRow>
           <Spacer />
           <Spacer />
