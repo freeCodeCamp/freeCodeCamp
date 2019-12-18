@@ -9,16 +9,25 @@ const propTypes = {
   error: PropTypes.string,
   processing: PropTypes.bool,
   reset: PropTypes.func.isRequired,
-  success: PropTypes.bool
+  success: PropTypes.bool,
+  yearEndGift: PropTypes.bool
 };
 
-function DonateCompletion({ processing, reset, success, error = null }) {
+function DonateCompletion({
+  processing,
+  reset,
+  success,
+  error = null,
+  yearEndGift = false
+}) {
   /* eslint-disable no-nested-ternary */
   const style = processing ? 'info' : success ? 'success' : 'danger';
   const heading = processing
     ? 'We are processing your donation.'
     : success
-    ? 'Thank you for being a supporter.'
+    ? yearEndGift
+      ? 'Thank you for your donation.'
+      : 'Thank you for being a supporter.'
     : 'Something went wrong with your donation.';
   return (
     <Alert bsStyle={style} className='donation-completion'>
@@ -34,12 +43,17 @@ function DonateCompletion({ processing, reset, success, error = null }) {
             name='line-scale'
           />
         )}
-        {success && (
+        {success && !yearEndGift && (
           <div>
             <p>
               Your donation will support free technology education for people
               all over the world.
             </p>
+          </div>
+        )}
+        {success && yearEndGift && (
+          <div>
+            <p>You should receive a receipt in your email.</p>
           </div>
         )}
         {error && <p>{error}</p>}
