@@ -15,7 +15,7 @@ localeTitle: 给网站添加图片
 注意：<code>img</code>元素是没有结束标记的。
 所有的<code>img</code>元素必须有<code>alt</code>属性，<code>alt</code>属性的文本是当图片无法加载时显示的替代文本，这对于通过屏幕阅读器来浏览网页的用户非常重要。
 注意：如果图片是纯装饰性的，用一个空的<code>alt</code>是最佳实践。
-理想情况下，<code>alt</code>属性不应该包含特殊字符，除非需要。
+理想情况下，<code>alt</code>属性不应该包含特殊字符，除非必要。
 让我们给上面例子的<code>img</code>添加<code>alt</code>属性。
 <code>&#60img src="https://www.your-image-source.com/your-image.jpg" alt="作者站在沙滩上竖起两个大拇指"&#62</code>
 </section>
@@ -36,7 +36,7 @@ localeTitle: 给网站添加图片
 tests:
   - text: '网页应该有一张图片。'
     testString: assert($("img").length > 0);
-  - text: '这张图片应该是一只小猫。'
+  - text: '图片 src 属性应该为 https://bit.ly/fcc-relaxing-cat。'
     testString: assert(/^https:\/\/bit\.ly\/fcc-relaxing-cat$/i.test($("img").attr("src")));
   - text: '图片必须有<code>alt</code>属性。'
     testString: assert(code.match(/alt\s*?=\s*?(\"|\').*(\"|\')/));
@@ -56,7 +56,7 @@ tests:
   
   
   <p>在大家心目中，猫是慵懒和可爱的化身，它可以睡饱了再起来吃饭，可以逗趣小耗子，可以卖得了萌，使得了坏，这样百变的小怪兽就集结在一只宠物上，怎能不惹人怜爱。</p>
-  <p>养猫有的时候，就是介于爱与恨之间，当你钦羡别人萌宠这么可爱的时候，你一定没有想过，猫咪会到处掉毛，甚至会屯老鼠，啃鞋子，用爪子爬门，你不理它，它就挠你，你要对它发脾气，它会比你更来劲。所以，猫咪慎入，没有一定的准备，切勿随便去侍养动物。它们一旦认定你了，你就是它们的主人，如果你抛弃它们，它们必定心中重创。</p>
+  <p>养猫有的时候，就是介于爱与恨之间，当你钦羡别人萌宠这么可爱的时候，你一定没有想过，猫咪会到处掉毛，甚至会囤老鼠，啃鞋子，用爪子爬门，你不理它，它就挠你，你要对它发脾气，它会比你更来劲。所以，没有一定的准备，切勿随便去侍养动物。它们一旦认定你了，你就是它们的主人，如果你抛弃它们，它们必定心中重创。</p>
 </main>
 ```
 

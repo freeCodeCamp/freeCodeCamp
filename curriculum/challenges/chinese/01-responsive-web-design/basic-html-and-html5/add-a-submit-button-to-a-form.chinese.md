@@ -9,7 +9,7 @@ localeTitle: 给表单添加提交按钮
 
 ## Description
 <section id='description'>
-让我们来给表单添加一个<code>submit</code>提交按钮，当点击提交按钮时，表单中的数据将会被发送到<code>action</code>属性指定的地址上。
+让我们来给表单添加一个<code>submit</code>提交按钮，当点击提交按钮时，表单中的数据将会被发送到<code>action</code>属性指定的 URL 上。
 例如：
 <code>&#60;button type="submit"&#62;this button submits the form&#60;/button&#62;</code>
 </section>
@@ -45,19 +45,19 @@ tests:
 ```html
 <h2>CatPhotoApp</h2>
 <main>
-<p>点击查看更多<a href="#">猫咪图片</a>。</p>
+  <p>点击查看更多<a href="#">猫咪图片</a>。</p>
   
-  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="一只仰卧着的萌猫"></a>
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="一只仰卧着的橘猫"></a>
   
   <p>猫咪最喜欢的三件东西：</p>
   <ul>
     <li>猫薄荷</li>
     <li>激光笔</li>
-    <li>千层饼</li>
+    <li>千层面</li>
   </ul>
   <p>猫咪最讨厌的三件东西：</p>
   <ol>
-    <li>跳蚤</li>
+    <li>祛跳蚤</li>
     <li>打雷</li>
     <li>同类</li>
   </ol>
