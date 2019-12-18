@@ -217,6 +217,11 @@ li.disabled > a {
   font-size: 1.5rem;
 }
 
+.donation-modal .btn-link:focus {
+  outline-width: 1px;
+  outline-style: solid;
+}
+
 @media screen and (max-width: 991px) {
   .donation-icon-container {
     margin: 30px;

@@ -107,6 +107,7 @@ function DonateModal({ show, block, isBlockDonation, closeDonationModal }) {
               bsStyle='primary'
               className='btn-link'
               onClick={closeDonationModal}
+              tabIndex='0'
             >
               {closeLabel ? 'Close.' : 'Ask me later.'}
             </Button>
