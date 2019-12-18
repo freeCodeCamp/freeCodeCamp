@@ -273,16 +273,6 @@ export default function donateBoot(app, done) {
     };
 
     return Promise.resolve(fccUser)
-      .then(nonDonatingUser => {
-        const { isDonating } = nonDonatingUser;
-        if (isDonating) {
-          throw {
-            message: `User already has active donation(s).`,
-            type: 'AlreadyDonatingError'
-          };
-        }
-        return nonDonatingUser;
-      })
       .then(createCustomer)
       .then(customer => {
         return createOneTimeCharge(customer).then(charge => {
@@ -292,10 +282,7 @@ export default function donateBoot(app, done) {
       })
       .then(createAsyncUserDonation)
       .catch(err => {
-        if (
-          err.type === 'StripeCardError' ||
-          err.type === 'AlreadyDonatingError'
-        ) {
+        if (err.type === 'StripeCardError') {
           return res.status(402).send({ error: err.message });
         }
         return res

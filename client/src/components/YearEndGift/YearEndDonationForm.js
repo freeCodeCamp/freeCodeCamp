@@ -2,8 +2,6 @@
 /* eslint-disable react/jsx-sort-props */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { createSelector } from 'reselect';
 import {
   Row,
   Col,
@@ -17,19 +15,11 @@ import { Spacer } from '../helpers';
 
 // eslint-disable-next-line max-len
 import DonateFormChildViewForHOC from '../Donation/components/DonateFormChildViewForHOC';
-import { userSelector } from '../../redux';
 
 import './YearEndGift.css';
 import '../Donation/Donation.css';
-import DonateCompletion from '../Donation/components/DonateCompletion.js';
 import { stripePublicKey } from '../../../../config/env.json';
 import { stripeScriptLoader } from '../../utils/scriptLoaders';
-
-const defaultYearEndStateConfig = {
-  donationAmount: 25000,
-  donationDuration: 'onetime',
-  paymentType: 'Card'
-};
 
 const numToCommas = num =>
   num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
@@ -43,23 +33,14 @@ const propTypes = {
   })
 };
 
-const mapStateToProps = createSelector(
-  userSelector,
-  ({ isDonating }) => ({
-    isDonating
-  })
-);
-
 class YearEndDonationForm extends Component {
   constructor(...args) {
     super(...args);
     this.state = {
-      ...defaultYearEndStateConfig,
+      donationAmount: 25000,
       showOtherAmounts: false,
-      isDonating: this.props.isDonating,
       stripe: null
     };
-    this.handleSelectPaymentType = this.handleSelectPaymentType.bind(this);
     this.handleStripeLoad = this.handleStripeLoad.bind(this);
     this.getDonationButtonLabel = this.getDonationButtonLabel.bind(this);
     this.handleSelectAmount = this.handleSelectAmount.bind(this);
@@ -96,61 +77,33 @@ class YearEndDonationForm extends Component {
     }
   }
 
-  handleSelectPaymentType(e) {
-    this.setState({
-      paymentType: e.currentTarget.value
-    });
-  }
-
-  getFormatedAmountLabel(amount) {
-    return `$${numToCommas(amount / 100)}`;
-  }
-
   getDonationButtonLabel() {
-    const { donationAmount, donationDuration } = this.state;
+    const { donationAmount } = this.state;
     let donationBtnLabel = `Confirm your donation`;
-    if (donationDuration === 'onetime') {
-      donationBtnLabel = `Confirm your one-time donation of ${this.getFormatedAmountLabel(
-        donationAmount
-      )}`;
-    } else {
-      donationBtnLabel = `Confirm your donation of ${this.getFormatedAmountLabel(
-        donationAmount
-      )} ${donationDuration === 'month' ? 'per month' : 'per year'}`;
-    }
+    donationBtnLabel = `Confirm your one-time donation of $${numToCommas(
+      donationAmount / 100
+    )}`;
     return donationBtnLabel;
   }
 
   renderDonationOptions() {
-    const {
-      donationAmount,
-      donationDuration,
-      paymentType,
-      stripe
-    } = this.state;
+    const { donationAmount, stripe } = this.state;
 
     const { showCloseBtn, defaultTheme } = this.props;
     return (
       <div>
-        {paymentType === 'Card' ? (
-          <StripeProvider stripe={stripe}>
-            <Elements>
-              <DonateFormChildViewForHOC
-                showCloseBtn={showCloseBtn}
-                defaultTheme={defaultTheme}
-                donationAmount={donationAmount}
-                donationDuration={donationDuration}
-                getDonationButtonLabel={this.getDonationButtonLabel}
-                yearEndGift={true}
-              />
-            </Elements>
-          </StripeProvider>
-        ) : (
-          <p>
-            PayPal is currently unavailable. Please use a Credit/Debit card
-            instead.
-          </p>
-        )}
+        <StripeProvider stripe={stripe}>
+          <Elements>
+            <DonateFormChildViewForHOC
+              showCloseBtn={showCloseBtn}
+              defaultTheme={defaultTheme}
+              donationAmount={donationAmount}
+              donationDuration='onetime'
+              getDonationButtonLabel={this.getDonationButtonLabel}
+              yearEndGift={true}
+            />
+          </Elements>
+        </StripeProvider>
       </div>
     );
   }
@@ -238,9 +191,9 @@ class YearEndDonationForm extends Component {
           type='submit'
           name='submit'
           className='btn btn-block'
-          title='PayPal - The safer, easier way to pay online!'
-          alt='Donate with PayPal button'
-          value='Make a PayPal donation'
+          title='Donate to freeCodeCamp.org using PayPal'
+          alt='Donate to freeCodeCamp.org using PayPal'
+          value='Donate using PayPal'
         />
       </form>
     );
@@ -285,25 +238,12 @@ class YearEndDonationForm extends Component {
   }
 
   render() {
-    const { isDonating } = this.props;
-    if (isDonating) {
-      return (
-        <Row>
-          <Col sm={10} smOffset={1} xs={12}>
-            <DonateCompletion success={true} />
-          </Col>
-        </Row>
-      );
-    }
-
-    console.log(this.state.donationAmount);
-
     return (
       <Row>
         <Col sm={10} smOffset={1} xs={12}>
           <b>
-            Thank you again for supporting freeCodeCamp.org with a one-time year
-            end gift. Please enter your credit card information below.
+            Thank you again for supporting freeCodeCamp.org with a one-time
+            year-end gift. Please enter your credit card information below.
           </b>
           <Spacer />
         </Col>
@@ -342,7 +282,4 @@ class YearEndDonationForm extends Component {
 YearEndDonationForm.displayName = 'YearEndDonationForm';
 YearEndDonationForm.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  null
-)(YearEndDonationForm);
+export default YearEndDonationForm;

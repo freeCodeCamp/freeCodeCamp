@@ -1,12 +1,24 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import YearEndGift from '../components/YearEndGift';
+import { Grid } from '@freecodecamp/react-bootstrap';
+
+import { Spacer, FullWidthRow } from '../components/helpers';
+import YearEndDonationForm from '../components/YearEndGift/YearEndDonationForm';
 
 function YearEndGiftPage() {
   return (
     <>
       <Helmet title='Support our nonprofit | freeCodeCamp.org' />
-      <YearEndGift />
+      <Grid>
+        <main>
+          <Spacer />
+          <FullWidthRow>
+            <YearEndDonationForm />
+          </FullWidthRow>
+          <Spacer />
+          <Spacer />
+        </main>
+      </Grid>
     </>
   );
 }
