@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Grid, Row, Col, Image, Button } from '@freecodecamp/react-bootstrap';
+import FreeCodeCampLogo from '../assets/icons/freeCodeCampLogo';
 // eslint-disable-next-line max-len
 import MinimalDonateForm from '../components/Donation/components/MinimalDonateForm';
 
@@ -204,14 +205,7 @@ class ShowCertification extends Component {
             <header>
               <Col md={5} sm={12}>
                 <div className='logo'>
-                  <Image
-                    alt="freeCodeCamp.org's Logo"
-                    responsive={true}
-                    src={
-                      'https://s3.amazonaws.com/freecodecamp/freecodecamp_logo' +
-                      '.svg'
-                    }
-                  />
+                  <FreeCodeCampLogo />
                 </div>
               </Col>
               <Col md={7} sm={12}>
