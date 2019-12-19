@@ -8,7 +8,8 @@ import {
   ControlLabel,
   FormControl,
   FormGroup,
-  Button
+  Button,
+  Image
 } from '@freecodecamp/react-bootstrap';
 import { StripeProvider, Elements } from 'react-stripe-elements';
 import { Spacer } from '../helpers';
@@ -255,7 +256,6 @@ class YearEndDonationForm extends Component {
             ? this.renderCustomAmountInput()
             : this.renderOtherPaymentButton()}
         </Col>
-
         <Col sm={10} smOffset={1} xs={12}>
           {this.renderDonationOptions()}
           <Spacer />
@@ -264,10 +264,22 @@ class YearEndDonationForm extends Component {
           <b>Or give using PayPal:</b>
         </Col>
         <Col sm={10} smOffset={1} xs={12}>
+          <Image
+            alt='payment options'
+            src={
+              'https://cdn.freecodecamp.org' +
+              '/platform/universal/payment-methods-large.png'
+            }
+            style={{
+              height: '30px',
+              marginBottom: '15px',
+              marginTop: '10px',
+              width: '260px'
+            }}
+          />
           {this.renderPayPalDonations()}
           <Spacer />
         </Col>
-
         <Col sm={10} smOffset={1} xs={12}>
           <b>
             If you need a receipt from your taxes, reply to Quincy's email he
