@@ -23,7 +23,7 @@ In this case, the `twitter-circles` selection has a length of 0, and the `data` 
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(/\.data\(data\)\s*\.enter\s*\(\s*\)/g.test(code));
 
 ```
 

@@ -21,7 +21,7 @@ For the new `path`, set the `d` attribute to `tumblrLine(data)` using the `attr`
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($('svg path')[3].getAttribute('d').length === 135);
 
 ```
 

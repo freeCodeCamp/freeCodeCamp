@@ -21,7 +21,7 @@ Set these attributes: `stroke` to your `instagramColor` variable, `stroke-width`
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const instagramPath = $('svg path')[4]; assert(instagramPath.getAttribute('stroke') === '#fd9b98' && instagramPath.getAttribute('stroke-width') == '3' && instagramPath.getAttribute('fill') === 'transparent');
 
 ```
 

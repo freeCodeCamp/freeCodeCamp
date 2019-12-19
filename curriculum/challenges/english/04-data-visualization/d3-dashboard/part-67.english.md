@@ -21,7 +21,7 @@ Use `attr` to set the `cy` to `d => yScale(d.followers.twitter)`.
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($('svg circle')[0].getAttribute('cy') == '242.856');
 
 ```
 

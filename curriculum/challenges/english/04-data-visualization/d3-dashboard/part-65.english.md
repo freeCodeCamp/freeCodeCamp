@@ -21,7 +21,7 @@ Add `.append('circle')` below the `enter` function. This will add the nine `circ
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($('svg circle').length === 9);
 
 ```
 

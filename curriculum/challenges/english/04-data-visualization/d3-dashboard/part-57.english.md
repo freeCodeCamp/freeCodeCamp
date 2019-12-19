@@ -21,7 +21,7 @@ Set the `x` values for the `instagramLine`. Use a "`d` function" to return the `
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(/const instagramLine = d3\.line\(\)\s*\.x\s*\(\s*d\s*=>\s*xScale\s*\(\s*d\.year\s*\)\s*\)/g.test(code));
 
 ```
 

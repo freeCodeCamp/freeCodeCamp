@@ -25,7 +25,7 @@ These "`d` functions" use implicit returns; but if you add curly brackets and a 
 ```yml
 tests:
   - text: test-text
-    testString: assert(/\.y\s*\(\s*d\s*=>\s*yScale\s*\(\s*d\.followers.twitter\s*\)/g.test(code));
+    testString: assert(/\.y\s*\(\s*d\s*=>\s*yScale\s*\(\s*d\.followers.twitter\s*\)\s*\)/g.test(code));
 
 ```
 

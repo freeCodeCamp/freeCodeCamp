@@ -21,7 +21,7 @@ Each circle needs a `cx` and `cy` attribute so it knows where to display on the 
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($('svg circle')[0].getAttribute('cx') == '60');
 
 ```
 

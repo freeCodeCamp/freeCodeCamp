@@ -21,7 +21,7 @@ On a new line, `append` another `path` element to your `lineGraph`, like you did
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($('svg path').length === 5 && code.match(/lineGraph\.append\((`|'|")path\1\)/gi).length === 3);
 
 ```
 

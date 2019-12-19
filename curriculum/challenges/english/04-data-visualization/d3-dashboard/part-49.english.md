@@ -21,7 +21,7 @@ Add three more `attr` functions to the `path`; one to set the `stroke` to your `
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const twitterPath = $('svg path')[2]; assert(twitterPath.getAttribute('stroke') === '#7cd9d1' && twitterPath.getAttribute('stroke-width') == '3' && twitterPath.getAttribute('fill') === 'transparent');
 
 ```
 

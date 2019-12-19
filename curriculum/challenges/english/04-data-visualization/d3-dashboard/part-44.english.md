@@ -30,7 +30,7 @@ This is the first place you will see a "`d` function". These are common in D3 to
 ```yml
 tests:
   - text: test-text
-    testString: assert(/const twitterLine = d3\.line\(\)\s*\.x\s*\(\s*d\s*=>\s*d\.year\s*\)/g.test(code));
+    testString: assert(/const twitterLine = d3\.line\(\)\s*\.x\s*\(\s*d\s*=>\s*d\.year\s*\)\s*\)/g.test(code));
 
 ```
 

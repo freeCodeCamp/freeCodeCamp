@@ -23,7 +23,7 @@ The lines look a little plain, the next series of code additions will add circle
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(/lineGraph\s*\.\s*selectAll\s*\((`|'|")\s*twitter-circles\1\s*\)/g.test(code));
 
 ```
 

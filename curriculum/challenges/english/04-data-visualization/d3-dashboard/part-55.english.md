@@ -21,7 +21,7 @@ Add three `attr` functions to the selection; one to set the `stroke` to your `tu
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const tumblrPath = $('svg path')[3]; assert(tumblrPath.getAttribute('stroke') === '#f6dd71' && tumblrPath.getAttribute('stroke-width') == '3' && tumblrPath.getAttribute('fill') === 'transparent');
 
 ```
 

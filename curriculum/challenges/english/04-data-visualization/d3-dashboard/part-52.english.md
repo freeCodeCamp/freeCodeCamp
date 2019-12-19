@@ -23,7 +23,7 @@ So you can see that the `x` values for each line will be the same, but the `y` v
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(/\.y\s*\(\s*d\s*=>\s*yScale\s*\(\s*d\.followers.tumblr\s*\)\s*\)/g.test(code));
 
 ```
 

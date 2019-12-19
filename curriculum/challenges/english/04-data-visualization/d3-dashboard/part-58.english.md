@@ -21,7 +21,7 @@ Set the `y` values for the `instagramLine`. Use a "`d` function" to return the v
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(/\.y\s*\(\s*d\s*=>\s*yScale\s*\(\s*d\.followers.instagram\s*\)\s*\)/g.test(code));
 
 ```
 

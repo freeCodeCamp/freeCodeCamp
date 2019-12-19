@@ -21,7 +21,7 @@ Only one more line to add for the Instagram followers. On a new line, create a n
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(/const\s*instagramLine\s*=\s*d3\s*\.\s*line\s*\(\s*\)/g.test(code));
 
 ```
 

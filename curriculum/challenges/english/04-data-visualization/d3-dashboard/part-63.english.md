@@ -21,7 +21,7 @@ Add the `data` function to your selection and pass it the data variable like thi
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(/\.data\s*\(\s*data\s*\)/g.test(code));
 
 ```
 

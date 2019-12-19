@@ -21,7 +21,7 @@ Set the `d` attribute to `instagramLine(data)`.
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($('svg path')[4].getAttribute('d').length === 167);
 
 ```
 

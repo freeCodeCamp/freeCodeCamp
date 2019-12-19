@@ -21,7 +21,7 @@ Circles also need an `r` (radius) attribute. Use the `attr` function to set the 
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($('svg circle')[0].getAttribute('r') == '6');
 
 ```
 

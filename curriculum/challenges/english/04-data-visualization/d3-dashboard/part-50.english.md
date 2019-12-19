@@ -21,7 +21,7 @@ On a new line, create a new `const` named `tumblrLine` and set it equal to `d3.l
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(/const\s*tumblrLine\s*=\s*d3\s*\.\s*line\s*\(\s*\)/g.test(code));
 
 ```
 

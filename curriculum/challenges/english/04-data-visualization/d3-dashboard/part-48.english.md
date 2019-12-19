@@ -21,7 +21,7 @@ Tell the path what data to use. Add an `attr` function and set the `d` to `twitt
 ```yml
 tests:
   - text: test-text
-    testString: assert($('svg path')[2].getAttribute('d').length > 100 && /\.attr\((`|'|")d\1\s*,\s*twitterLine\s*\(data\s*\)\)/g.test(code));
+    testString: assert($('svg path')[2].getAttribute('d').length === 170);
 
 ```
 

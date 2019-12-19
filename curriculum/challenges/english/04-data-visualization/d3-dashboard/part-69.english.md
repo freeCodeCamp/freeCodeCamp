@@ -21,7 +21,7 @@ Set two more attributes; the `fill` to `white` and the `stroke` to your `twitter
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($('svg circle')[0].getAttribute('fill') === 'white' && $('svg circle')[0].getAttribute('stroke') === '#7cd9d1');
 
 ```
 
