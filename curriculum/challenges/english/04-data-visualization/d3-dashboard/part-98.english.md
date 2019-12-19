@@ -21,7 +21,7 @@ On a new line, `append` a `path` element to your `pieGraphData` variable. This i
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(/pieGraphData\s*\.\s*append\s*\((`|'|")path\1\s*\)/g.test(code));
 
 ```
 

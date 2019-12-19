@@ -21,7 +21,7 @@ Add the `data` function to the selection. Pass it your `pie` function with an em
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(/const pieGraphData = pieGraph\.selectAll\((`|'|")pieSlices\1\)\s*\.\s*data\s*\(pie\s*\(\s*\[\s*\]\s*\)\s*\)/g.test(code));
 
 ```
 

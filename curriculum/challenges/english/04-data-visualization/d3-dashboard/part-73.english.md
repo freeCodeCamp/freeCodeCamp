@@ -21,7 +21,7 @@ Set the `cx` and `cy` attributes for this selection. Pass the same functions to 
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($('svg circle')[9].getAttribute('cx') == '60' && $('svg circle')[9].getAttribute('cy') == '409.524');
 
 ```
 

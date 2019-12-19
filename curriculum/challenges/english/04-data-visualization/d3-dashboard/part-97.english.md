@@ -21,7 +21,7 @@ Use the `append` function to add a `g` element for each point of data.
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($('svg g').length === 20);
 
 ```
 

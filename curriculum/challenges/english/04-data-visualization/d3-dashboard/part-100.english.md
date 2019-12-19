@@ -23,7 +23,7 @@ Since the pie chart has a radius of 100, this will move it so its center is in t
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($('.dashboard div svg g')[0].getAttribute('transform') === 'translate(100, 100)');
 
 ```
 

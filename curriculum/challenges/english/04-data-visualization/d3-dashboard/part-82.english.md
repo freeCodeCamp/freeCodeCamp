@@ -21,7 +21,7 @@ Use `append` to add a `div` element to the selection.
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(/const rightDashboard = d3\.select\((`|'|")\.dashboard\1\)\s*\.append\s*\(\s*(`|'|")div\2\)/g.test(code));
 
 ```
 

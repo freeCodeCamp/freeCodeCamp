@@ -21,7 +21,7 @@ Use the `attr` function to set the `r` to `6`, the `fill` to `white`, and the `s
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($('svg circle')[9].getAttribute('r') == '6' && $('svg circle')[9].getAttribute('fill') === 'white' && $('svg circle')[9].getAttribute('stroke') === '#f6dd71');
 
 ```
 

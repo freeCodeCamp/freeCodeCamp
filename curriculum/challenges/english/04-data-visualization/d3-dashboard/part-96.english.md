@@ -21,7 +21,7 @@ Add the `enter` function to the current selection.
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(/\.data\(pie\(d3\.entries\(data\[8\]\.followers\)\)\)\s*\.\s*enter\s*\(\s*\)/g.test(code));
 
 ```
 

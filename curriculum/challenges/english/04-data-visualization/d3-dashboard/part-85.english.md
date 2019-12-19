@@ -21,7 +21,7 @@ Add a new `const` named `pieArc` and set it equal to `d3.arc()`. This will be us
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(/const\s*pieArc\s*=\s*d3\s*\.\s*arc\s*\(\s*\)/g.test(code));
 
 ```
 

@@ -21,7 +21,7 @@ Set the `cursor` to `pointer` using the `style` function.
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($('svg circle')[18].style.cursor === 'pointer');
 
 ```
 

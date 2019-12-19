@@ -21,7 +21,7 @@ Add the same `data`, `enter`, and `append` functions here that you added for the
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($('svg circle').length === 18);
 
 ```
 

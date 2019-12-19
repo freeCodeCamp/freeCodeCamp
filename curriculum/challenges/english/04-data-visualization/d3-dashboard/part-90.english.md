@@ -21,7 +21,7 @@ Since the domain has three items, the range also needs to have three items. If i
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(/\.domain\(data\[8\]\.followers\)\s*\.\s*range\s*\(\s*\[\s*twitterColor\s*,\s*tumblrColor\s*,\s*instagramColor\s*\]\s*\)/g.test(code));
 
 ```
 

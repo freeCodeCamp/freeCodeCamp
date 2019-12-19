@@ -23,7 +23,7 @@ In this case, each platform of followers you have will map directly to a single 
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(/const\s*pieColors\s*=\s*d3\s*\.\s*scaleOrdinal\s*\(\s*\)/g.test(code));
 
 ```
 

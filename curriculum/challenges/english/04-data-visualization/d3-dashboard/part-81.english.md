@@ -21,7 +21,7 @@ The line graph is looking good. Next, you are going to add a `div` to put the pi
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(/const\s*rightDashboard\s*=\s*d3\.select\s*\((`|'|")\.dashboard\1\s*\)/g.test(code));
 
 ```
 

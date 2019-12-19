@@ -21,7 +21,7 @@ Create a new `const` variable named `pieGraph` and set it equal to `rightDashboa
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(/const\s*pieGraph\s*=\s*rightDashboard\s*\.\s*append\s*\((`|'|")svg\1\s*\)/g.test(code));
 
 ```
 

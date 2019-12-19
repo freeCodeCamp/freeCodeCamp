@@ -21,7 +21,7 @@ Add two `attr` functions that set the `width` to `200` and the `height` to `200`
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($('svg')[1].getAttribute('width') == '200' && $('svg')[1].getAttribute('height') == '200');
 
 ```
 

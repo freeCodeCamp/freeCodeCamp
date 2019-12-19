@@ -21,7 +21,7 @@ Use the `attr` function to set the `r` to `6`, the `fill` to `white`, and the `s
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($('svg circle')[18].getAttribute('r') == '6' && $('svg circle')[18].getAttribute('fill') === 'white' && $('svg circle')[18].getAttribute('stroke') === '#fd9b98');
 
 ```
 
@@ -50,7 +50,7 @@ const yScale = d3.scaleLinear()
   .range([svgHeight - svgMargin, svgMargin]);
 
 const xScale = d3.scaleLinear()
-  .domain([2011, 2019])
+  .domain([2012, 2020])
   .range([svgMargin, svgWidth - svgMargin]);
 
 const yAxis = d3.axisLeft(yScale)

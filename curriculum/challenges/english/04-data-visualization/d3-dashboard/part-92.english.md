@@ -21,7 +21,7 @@ Chain a `value` function to `pie` and pass it `d => d.value`. Each piece of data
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(/const pie = d3\.pie\(\)\s*\.\s*value\s*\(\s*d\s*=>\s*d\.value\s*\)/g.test(code));
 
 ```
 

@@ -21,7 +21,7 @@ Chain the function `outerRadius(100)` to the arc. This will set the outer radius
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(/const pieArc = d3\.arc\(\)\s*\.\s*outerRadius\s*\(\s*100\s*\)/g.test(code));
 
 ```
 

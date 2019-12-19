@@ -21,7 +21,7 @@ Set the `d` attribute to your `pieArc` variable.
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($('.dashboard div svg path')[0].getAttribute('d').length === 94);
 
 ```
 

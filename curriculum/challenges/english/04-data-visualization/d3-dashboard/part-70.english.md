@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Use the `style` function to set the `cursor` to `pointer`. This style added on the different elements will a visual indicator for hover events you will add later.
+Use the `style` function to set the `cursor` to `pointer`. This style added on the circle elements will be a visual indicator for hover events you will add later.
 </section>
 
 ## Instructions
@@ -21,7 +21,7 @@ Use the `style` function to set the `cursor` to `pointer`. This style added on t
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($('svg circle')[0].style.cursor === 'pointer');
 
 ```
 

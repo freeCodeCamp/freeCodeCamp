@@ -21,7 +21,7 @@ On a new line, use the `selectAll` function on your `lineGraph` variable again a
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(/lineGraph\s*\.\s*selectAll\s*\((`|'|")\s*tumblr-circles\1\s*\)/g.test(code));
 
 ```
 

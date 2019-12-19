@@ -21,7 +21,7 @@ Chain the function `innerRadius(0)` to the arc. This is set to zero to make a tr
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(/const pieArc = d3\.arc\(\)\s*\.outerRadius\(100\)\s*\.\s*innerRadius\s*\(\s*0\s*\)/g.test(code));
 
 ```
 

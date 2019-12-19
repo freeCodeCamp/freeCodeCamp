@@ -21,7 +21,7 @@ Create a new `const` named `pie` and set it equal to `d3.pie()`. This is the D3 
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(/const\s*pie\s*=\s*d3\s*\.\s*pie\s*\(\s*\)/g.test(code));
 
 ```
 

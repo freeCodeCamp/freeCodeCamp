@@ -21,7 +21,7 @@ Create a new `const` named `pieGraphData` and set the value equal to `pieGraph.s
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(/const\s*pieGraphData\s*=\s*pieGraph\s*\.\s*selectAll\s*\(\s*(`|'|")pieSlices\1\s*\)/g.test(code));
 
 ```
 
