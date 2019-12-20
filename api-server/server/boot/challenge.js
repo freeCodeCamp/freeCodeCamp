@@ -261,11 +261,7 @@ function projectCompleted(req, res, next) {
   ]);
   completedChallenge.completedDate = Date.now();
 
-  if (
-    !completedChallenge.solution ||
-    // only basejumps require github links
-    (completedChallenge.challengeType === 4 && !completedChallenge.githubLink)
-  ) {
+  if (!completedChallenge.solution) {
     return res.status(403).json({
       type: 'error',
       message:

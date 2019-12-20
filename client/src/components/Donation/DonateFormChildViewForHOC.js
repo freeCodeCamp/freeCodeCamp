@@ -1,3 +1,4 @@
+/* eslint-disable react/sort-prop-types */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -14,20 +15,22 @@ import { injectStripe } from 'react-stripe-elements';
 
 import StripeCardForm from './StripeCardForm';
 import DonateCompletion from './DonateCompletion';
-import { postChargeStripe } from '../../../utils/ajax';
-import { userSelector } from '../../../redux';
+import { postChargeStripe } from '../../utils/ajax';
+import { userSelector } from '../../redux';
 
 const propTypes = {
+  showCloseBtn: PropTypes.func,
+  defaultTheme: PropTypes.string,
   donationAmount: PropTypes.number.isRequired,
   donationDuration: PropTypes.string.isRequired,
   email: PropTypes.string,
-  enableDonationSettingsPage: PropTypes.func.isRequired,
   getDonationButtonLabel: PropTypes.func.isRequired,
-  hideAmountOptionsCB: PropTypes.func.isRequired,
   isSignedIn: PropTypes.bool,
   stripe: PropTypes.shape({
     createToken: PropTypes.func.isRequired
-  })
+  }),
+  theme: PropTypes.string,
+  yearEndGift: PropTypes.bool
 };
 const initialState = {
   donationState: {
@@ -39,7 +42,7 @@ const initialState = {
 
 const mapStateToProps = createSelector(
   userSelector,
-  ({ email }) => ({ email })
+  ({ email, theme }) => ({ email, theme })
 );
 
 class DonateFormChildViewForHOC extends Component {
@@ -60,7 +63,6 @@ class DonateFormChildViewForHOC extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.postDonation = this.postDonation.bind(this);
     this.resetDonation = this.resetDonation.bind(this);
-    this.hideAmountOptions(false);
   }
 
   getUserEmail() {
@@ -114,14 +116,9 @@ class DonateFormChildViewForHOC extends Component {
     });
   }
 
-  hideAmountOptions(hide) {
-    const { hideAmountOptionsCB } = this.props;
-    hideAmountOptionsCB(hide);
-  }
-
   postDonation(token) {
-    const { enableDonationSettingsPage } = this.props;
     const { donationAmount: amount, donationDuration: duration } = this.state;
+    const { yearEndGift } = this.props;
     this.setState(state => ({
       ...state,
       donationState: {
@@ -130,11 +127,16 @@ class DonateFormChildViewForHOC extends Component {
       }
     }));
 
-    // hide the donation options on the parent and scroll to top
-    this.hideAmountOptions(true);
+    // scroll to top
     window.scrollTo(0, 0);
 
-    return postChargeStripe({
+    // change the donation modal button label to close
+    // or display the close button for the cert donation section
+    if (this.props.showCloseBtn) {
+      this.props.showCloseBtn();
+    }
+
+    return postChargeStripe(yearEndGift, {
       token,
       amount,
       duration
@@ -150,7 +152,6 @@ class DonateFormChildViewForHOC extends Component {
             error: data.error ? data.error : null
           }
         }));
-        enableDonationSettingsPage();
       })
       .catch(error => {
         const data =
@@ -182,7 +183,7 @@ class DonateFormChildViewForHOC extends Component {
 
   renderDonateForm() {
     const { isFormValid } = this.state;
-    const { getDonationButtonLabel } = this.props;
+    const { getDonationButtonLabel, theme, defaultTheme } = this.props;
     return (
       <Form className='donation-form' onSubmit={this.handleSubmit}>
         <FormGroup className='donation-email-container'>
@@ -197,7 +198,10 @@ class DonateFormChildViewForHOC extends Component {
             value={this.getUserEmail()}
           />
         </FormGroup>
-        <StripeCardForm getValidationState={this.getValidationState} />
+        <StripeCardForm
+          getValidationState={this.getValidationState}
+          theme={defaultTheme ? defaultTheme : theme}
+        />
         <Button
           block={true}
           bsStyle='primary'
@@ -219,12 +223,14 @@ class DonateFormChildViewForHOC extends Component {
     const {
       donationState: { processing, success, error }
     } = this.state;
+    const { yearEndGift } = this.props;
     if (processing || success || error) {
       return this.renderCompletion({
         processing,
         success,
         error,
-        reset: this.resetDonation
+        reset: this.resetDonation,
+        yearEndGift
       });
     }
     return this.renderDonateForm();

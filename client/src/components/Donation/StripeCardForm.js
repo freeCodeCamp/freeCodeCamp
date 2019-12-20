@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {
-  CardNumberElement,
-  CardExpiryElement,
-  CardCVCElement
-} from 'react-stripe-elements';
+import { CardNumberElement, CardExpiryElement } from 'react-stripe-elements';
 import { ControlLabel, FormGroup } from '@freecodecamp/react-bootstrap';
 
 const propTypes = {
@@ -29,10 +25,6 @@ class StripeCardForm extends Component {
           error: null
         },
         cardExpiry: {
-          complete: false,
-          error: null
-        },
-        cardCvc: {
           complete: false,
           error: null
         }
@@ -87,14 +79,6 @@ class StripeCardForm extends Component {
         <FormGroup>
           <ControlLabel>Your Card Expiration Month:</ControlLabel>
           <CardExpiryElement
-            className='form-control donate-input-element'
-            onChange={this.handleInputChange}
-            style={style}
-          />
-        </FormGroup>
-        <FormGroup>
-          <ControlLabel>Your Card CVC (3-digit security number):</ControlLabel>
-          <CardCVCElement
             className='form-control donate-input-element'
             onChange={this.handleInputChange}
             style={style}
