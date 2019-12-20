@@ -57,13 +57,19 @@ Essentially, we expect basic familiarity with some of the aforementioned technol
 
 ## Frequently Asked Questions
 
+### Where are the Guide articles (guide.freecodecamp.org)? How can I contribute to them?
+
+We will not have the general guide articles anymore. Instead we intend to publish these as tutorials that are curated by the editorial team. These would then be published by them on the Developer News.
+
+The challenge hints and articles will still be available on the forum which we have already migrated.
+
 ### Can I translate freeCodeCamp's curriculum?
 
 We do intend to make the curriculum available in more languages, right now we do not have a timeline for this.
 
 We will begin by making the curriculum available in *Chinese* first. This will help us understand the caveats and the streamline the development workflows. China is one of the largest demographic regions in terms of our non-english audience. It is hence an ideal candiate for the internationalization (i18n). We currently have hundreds of thousands of users using an old version of the platform.
 
-The next languages to follow would be *Arabic, Portuguese, Russian and Spanish* in no particular order. For Portuguese and Spanish we will focus on latin america as our target demographic region based on the audience we have.
+The next languages to follow would be *Arabic, Portuguese, Russian and Spanish* in no particular order. For Portuguese and Spanish we will focus on Latin America as our target demographic region based on the audience we have.
 
 While you may work on the translations, we are unable to launch them until later next year, other than Chinese which is tentatively planned for a early 2020 release.
 

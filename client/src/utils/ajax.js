@@ -50,8 +50,10 @@ export function getArticleById(shortId) {
 }
 
 /** POST **/
-export function postChargeStripe(body) {
-  return post(`/donate/charge-stripe`, body);
+export function postChargeStripe(yearEndGift, body) {
+  return yearEndGift
+    ? postUnauthenticated('/donate/charge-stripe-year-end', body)
+    : post('/donate/charge-stripe', body);
 }
 
 export function postCreateHmacHash(body) {

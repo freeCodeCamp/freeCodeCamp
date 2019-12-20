@@ -7,7 +7,7 @@ localeTitle: Probar si un objeto es una instancia de un constructor
 ---
 
 ## Description
-<section id="description"> Como recordatorio, este proyecto se está construyendo sobre el siguiente proyecto de inicio en <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/">Glitch</a> , o clonado desde <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/">GitHub</a> . #instanceOf afirma que un objeto es una instancia de un constructor. Use #instanceOf o #notInstanceOf cuando sea apropiado </section>
+<section id="description"> Como recordatorio, este proyecto se está construyendo a partir del siguiente proyecto inicial en <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/">Glitch</a> , o clonado desde <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/">GitHub</a> . #instanceOf afirma que un objeto es una instancia de un constructor. Use #instanceOf o #notInstanceOf cuando sea apropiado </section>
 
 ## Instructions
 <section id="instructions">

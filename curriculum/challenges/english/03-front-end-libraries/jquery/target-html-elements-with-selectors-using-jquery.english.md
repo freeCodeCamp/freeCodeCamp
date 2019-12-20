@@ -27,9 +27,9 @@ Note that we've already included both the jQuery library and the Animate.css lib
 
 ```yml
 tests:
-  - text: 'Use the jQuery <code>addClass&#40&#41</code> function to give the classes <code>animated</code> and <code>bounce</code> to your <code>button</code> elements.'
+  - text: 'You should use the jQuery <code>addClass&#40&#41</code> function to give the classes <code>animated</code> and <code>bounce</code> to your <code>button</code> elements.'
     testString: 'assert($("button").hasClass("animated") && $("button").hasClass("bounce"));'
-  - text: Only use jQuery to add these classes to the element.
+  - text: You should only use jQuery to add these classes to the element.
     testString: 'assert(!code.match(/class.*animated/g));'
   - text: Your jQuery code should be within the <code>$(document).ready();</code> function.
     testString: assert(code.match(/\$\(document\)\.ready\(function.*(\s|\n)*.*button.*.addClass.*\);/g));

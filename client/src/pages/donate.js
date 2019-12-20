@@ -3,12 +3,12 @@ import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Grid, Row, Col, Button } from '@freecodecamp/react-bootstrap';
+import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
 
 import { stripePublicKey } from '../../config/env.json';
 import { Spacer, Loader } from '../components/helpers';
-import DonateForm from '../components/Donation/components/DonateForm';
-import DonateText from '../components/Donation/components/DonateText';
+import DonateForm from '../components/Donation/DonateForm';
+import DonateText from '../components/Donation/DonateText';
 import { signInLoadingSelector, userSelector } from '../redux';
 import { stripeScriptLoader } from '../utils/scriptLoaders';
 
@@ -34,9 +34,6 @@ export class DonatePage extends Component {
       enableSettings: false
     };
 
-    this.enableDonationSettingsPage = this.enableDonationSettingsPage.bind(
-      this
-    );
     this.handleStripeLoad = this.handleStripeLoad.bind(this);
   }
 
@@ -68,14 +65,9 @@ export class DonatePage extends Component {
     }));
   }
 
-  enableDonationSettingsPage(enableSettings = true) {
-    this.setState({ enableSettings });
-  }
-
   render() {
     const { stripe } = this.state;
-    const { showLoading, isDonating } = this.props;
-    const { enableSettings } = this.state;
+    const { showLoading } = this.props;
 
     if (showLoading) {
       return <Loader fullScreen={true} />;
@@ -98,33 +90,12 @@ export class DonatePage extends Component {
                 enableDonationSettingsPage={this.enableDonationSettingsPage}
                 stripe={stripe}
               />
-              <Row>
-                <Col sm={10} smOffset={1} xs={12}>
-                  <Spacer size={2} />
-                  <h3 className='text-center'>Manage your existing donation</h3>
-                  {[
-                    `Update your existing donation`,
-                    `Download donation receipts`
-                  ].map(donationSettingOps => (
-                    <div key={donationSettingOps}>
-                      <Button
-                        block={true}
-                        bsStyle='primary'
-                        disabled={!isDonating && !enableSettings}
-                        href='/donation/settings'
-                      >
-                        {donationSettingOps}
-                      </Button>
-                      <Spacer />
-                    </div>
-                  ))}
-                </Col>
-              </Row>
             </Col>
             <Col md={6}>
               <DonateText />
             </Col>
           </Row>
+          <Spacer />
         </Grid>
       </Fragment>
     );
