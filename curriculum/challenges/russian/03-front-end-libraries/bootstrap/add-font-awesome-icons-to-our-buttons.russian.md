@@ -6,17 +6,17 @@ required:
     raw: true
 challengeType: 0
 forumTopicId: 16638
-localeTitle: Добавить шрифт Удивительные значки на наши кнопки
+localeTitle: Добавить иконки Font Awesome к вашим кнопкам
 ---
 
 ## Description
 <section id='description'>
-Font Awesome - удобная библиотека икон. Эти значки являются векторной графикой, хранящейся в формате <code>.svg</code> файла. Эти значки обрабатываются так же, как шрифты. Вы можете указать их размер с помощью пикселей, и они будут предполагать размер шрифта своих родительских элементов HTML. Вы можете включить Font Awesome в любое приложение, добавив следующий код в начало вашего HTML: <code>&lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css&quot; integrity=&quot;sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+&quot; crossorigin=&quot;anonymous&quot;&gt;</code> В этом случае мы уже добавили его для вас на эту страницу за кулисами. Элемент <code>i</code> изначально использовался, чтобы сделать другие элементы курсивом, но теперь он обычно используется для значков. Вы можете добавить классы Font Awesome к элементу <code>i</code> чтобы превратить его в значок, например: <code>&lt;i class=&quot;fa fa-info-circle&quot;&gt;&lt;/i&gt;</code> Обратите внимание, что элемент <code>span</code> также подходит для использования с значками , Используйте Font Awesome, чтобы добавить значок <code>thumbs-up</code> в вашу кнопку, предоставив ему элемент <code>i</code> с классами <code>fa</code> и <code>fa-thumbs-up</code> ; обязательно сохраните текст «Like» рядом с значком.
+Font Awesome - удобная библиотека иконок. Эти значки являются векторной графикой, хранящейся в формате <code>.svg</code> файла и  обрабатываются так же, как шрифты. Вы можете указать их размер с помощью пикселей, и они будут предполагать размер шрифта своих родительских элементов HTML. Вы можете включить Font Awesome в любое приложение, добавив следующий код в начало вашего HTML: <code>&lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css&quot; integrity=&quot;sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+&quot; crossorigin=&quot;anonymous&quot;&gt;</code> В этом случае мы уже добавили его для вас на эту страницу. Элемент <code>i</code> изначально использовался, чтобы сделать другие элементы курсивом, но теперь он обычно используется для иконок. Вы можете добавить классы Font Awesome к элементу <code>i</code> чтобы превратить его в иконку, например: <code>&lt;i class=&quot;fa fa-info-circle&quot;&gt;&lt;/i&gt;</code> Обратите внимание, что элемент <code>span</code> также подходит для использования с иконками.
 </section>
 
 ## Instructions
 <section id='instructions'>
-Use Font Awesome to add a <code>thumbs-up</code> icon to your like button by giving it an <code>i</code> element with the classes <code>fa</code> and <code>fa-thumbs-up</code>. Make sure to keep the text "Like" next to the icon.
+Используйте Font Awesome, чтобы добавить <code>thumbs-up</code>-иконку в вашу кнопку "Like" путём вставки в неё элемента <code>i</code> с классами <code>fa</code> и <code>fa-thumbs-up</code>. Убедитесь, что текст "Like" стоит после иконки.
 </section>
 
 ## Tests
@@ -24,11 +24,11 @@ Use Font Awesome to add a <code>thumbs-up</code> icon to your like button by giv
 
 ```yml
 tests:
-  - text: Add an <code>i</code> element with the classes <code>fas</code> and <code>fa-thumbs-up</code>.
+  - text: Добавьте <code>i</code>-элемент с классами <code>fas</code> и <code>fa-thumbs-up</code>.
     testString: assert($("i").is(".fas.fa-thumbs-up") || $("span").is(".fas.fa-thumbs-up"));
-  - text: Your <code>fa-thumbs-up</code> icon should be located within the Like button.
+  - text: Ваша <code>fa-thumbs-up</code>-иконка должна находиться внутри кнопки "Like".
     testString: assert(($("i.fa-thumbs-up").parent().text().match(/Like/gi) && $(".btn-primary > i").is(".fas.fa-thumbs-up")) || ($("span.fa-thumbs-up").parent().text().match(/Like/gi) && $(".btn-primary > span").is(".fas.fa-thumbs-up")));
-  - text: Nest your <code>i</code> element within your <code>button</code> element.
+  - text: Поместите ваш <code>i</code>-элемент внутрь вашего <code>button</code>-элемента.
     testString: assert($("button").children("i").length > 0 || $("button").children("span").length > 0);
   - text: Make sure your icon element has a closing tag.
     testString: assert(code.match(/<\/i>|<\/span>/g));
