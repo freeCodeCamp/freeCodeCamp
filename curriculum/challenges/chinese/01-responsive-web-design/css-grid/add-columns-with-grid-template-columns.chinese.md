@@ -9,7 +9,7 @@ localTitle: 使用 grid-template-columns 添加多列
 
 ## Description
 <section id='description'>
-简单地添加一个网格元素并不能取得很大的进展。你还需要明确网格的结构。在一个网格容器中使用<code>grid-template-columns</code>属性可以添加一些列，示例如下：
+简单地添加一个网格元素并不会有任何明显的效果。你还需要明确网格的结构。在一个网格容器中使用<code>grid-template-columns</code>属性可以添加一些列，示例如下：
 
 ```css
 .container {
@@ -24,7 +24,7 @@ localTitle: 使用 grid-template-columns 添加多列
 
 ## Instructions
 <section id='instructions'>
-给网格容器放置三个列，每列宽度均为<code>100px</code>。
+给网格容器设置三个列，每列宽度均为<code>100px</code>。
 </section>
 
 ## Tests
