@@ -1,4 +1,4 @@
-import { transformers } from '../rechallenge/transformers';
+import { transformers, transformersPreview } from '../rechallenge/transformers';
 import { cssToHtml, jsToHtml, concatHtml } from '../rechallenge/builders.js';
 import { challengeTypes } from '../../../../utils/challengeTypes';
 import createWorker from './worker-executor';
@@ -76,11 +76,11 @@ export function canBuildChallenge(challengeData) {
   return buildFunctions.hasOwnProperty(challengeType);
 }
 
-export async function buildChallenge(challengeData) {
+export async function buildChallenge(challengeData, preview = false) {
   const { challengeType } = challengeData;
   let build = buildFunctions[challengeType];
   if (build) {
-    return build(challengeData);
+    return build(challengeData, preview);
   }
   throw new Error(`Cannot build challenge of type ${challengeType}`);
 }
@@ -137,8 +137,10 @@ export function buildDOMChallenge({ files, required = [], template = '' }) {
     }));
 }
 
-export function buildJSChallenge({ files }) {
-  const pipeLine = composeFunctions(...transformers);
+export function buildJSChallenge({ files }, preview = false) {
+  const pipeLine = preview
+    ? composeFunctions(...transformersPreview)
+    : composeFunctions(...transformers);
   const finalFiles = Object.keys(files)
     .map(key => files[key])
     .map(pipeLine);
