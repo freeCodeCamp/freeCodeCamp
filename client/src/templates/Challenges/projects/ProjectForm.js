@@ -18,7 +18,7 @@ const options = {
     solution: 'url',
     githubLink: 'url'
   },
-  required: ['solution', 'githubLink']
+  required: ['solution']
 };
 
 export class ProjectForm extends Component {
