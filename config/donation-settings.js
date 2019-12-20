@@ -11,11 +11,16 @@ const amountsConfig = {
 };
 const defaultAmount = {
   year: 25000,
-  month: 500,
+  month: 3500,
   onetime: 25000
 };
 const defaultStateConfig = {
   donationAmount: defaultAmount['month'],
+  donationDuration: 'month',
+  paymentType: 'Card'
+};
+const modalDefaultStateConfig = {
+  donationAmount: 500,
   donationDuration: 'month',
   paymentType: 'Card'
 };
@@ -41,5 +46,6 @@ module.exports = {
   defaultStateConfig,
   durationKeysConfig,
   donationOneTimeConfig,
-  donationSubscriptionConfig
+  donationSubscriptionConfig,
+  modalDefaultStateConfig
 };

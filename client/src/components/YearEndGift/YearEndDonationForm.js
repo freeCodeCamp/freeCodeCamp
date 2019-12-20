@@ -14,7 +14,7 @@ import { StripeProvider, Elements } from 'react-stripe-elements';
 import { Spacer } from '../helpers';
 
 // eslint-disable-next-line max-len
-import DonateFormChildViewForHOC from '../Donation/components/DonateFormChildViewForHOC';
+import DonateFormChildViewForHOC from '../Donation/DonateFormChildViewForHOC';
 
 import './YearEndGift.css';
 import '../Donation/Donation.css';

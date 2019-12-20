@@ -7,7 +7,7 @@ import { createSelector } from 'reselect';
 import { Grid, Row, Col, Image, Button } from '@freecodecamp/react-bootstrap';
 import FreeCodeCampLogo from '../assets/icons/freeCodeCampLogo';
 // eslint-disable-next-line max-len
-import MinimalDonateForm from '../components/Donation/components/MinimalDonateForm';
+import MinimalDonateForm from '../components/Donation/MinimalDonateForm';
 
 import {
   showCertSelector,
