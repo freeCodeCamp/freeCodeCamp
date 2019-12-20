@@ -199,6 +199,7 @@ class DonateForm extends Component {
           <StripeProvider stripe={stripe}>
             <Elements>
               <DonateFormChildViewForHOC
+                defaultTheme='default'
                 donationAmount={donationAmount}
                 donationDuration={donationDuration}
                 getDonationButtonLabel={this.getDonationButtonLabel}
