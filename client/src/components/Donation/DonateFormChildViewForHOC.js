@@ -15,8 +15,8 @@ import { injectStripe } from 'react-stripe-elements';
 
 import StripeCardForm from './StripeCardForm';
 import DonateCompletion from './DonateCompletion';
-import { postChargeStripe } from '../../../utils/ajax';
-import { userSelector } from '../../../redux';
+import { postChargeStripe } from '../../utils/ajax';
+import { userSelector } from '../../redux';
 
 const propTypes = {
   showCloseBtn: PropTypes.func,
