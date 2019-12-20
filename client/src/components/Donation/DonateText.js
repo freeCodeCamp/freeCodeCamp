@@ -25,11 +25,11 @@ const DonateText = () => {
         </p>
         <hr />
         <h4>
-          <b>Need help with your existing or past donations?</b>
+          <b>Need help with your current or past donations?</b>
         </h4>
         <p>
-          Send an email to team@freeCodeCamp.org with a copy of your donation
-          receipt and we will be happy to resolve your query.
+          Forward a copy of your donation receipt to team@freeCodeCamp.org and
+          tell us how we can help.
         </p>
       </Col>
     </Row>
