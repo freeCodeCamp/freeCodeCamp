@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Alert, Button } from '@freecodecamp/react-bootstrap';
 import Spinner from 'react-spinkit';
 
-import '../Donation.css';
+import './Donation.css';
 
 const propTypes = {
   error: PropTypes.string,
