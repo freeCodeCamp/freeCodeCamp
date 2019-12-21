@@ -35,8 +35,8 @@ tests:
     testString: assert.strictEqual(longestCollatzSequence(46500), 35655);
   - text: <code>longestCollatzSequence(54512)</code> should return 52527.
     testString: assert.strictEqual(longestCollatzSequence(54512), 52527);
-  - text: <code>longestCollatzSequence(100000)</code> should return 77031.
-    testString: assert.strictEqual(longestCollatzSequence(100000), 77031);
+  - text: <code>longestCollatzSequence(1000000)</code> should return 837799.
+    testString: assert.strictEqual(longestCollatzSequence(1000000), 837799);
 
 ```
 
