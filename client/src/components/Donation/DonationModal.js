@@ -5,22 +5,22 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Modal, Button, Col, Row } from '@freecodecamp/react-bootstrap';
-import { Spacer } from '../../../components/helpers';
-import { blockNameify } from '../../../../utils/blockNameify';
-import Heart from '../../../assets/icons/Heart';
-import Cup from '../../../assets/icons/Cup';
+import { Spacer } from '../helpers';
+import { blockNameify } from '../../../utils/blockNameify';
+import Heart from '../../assets/icons/Heart';
+import Cup from '../../assets/icons/Cup';
 import MinimalDonateForm from './MinimalDonateForm';
 
-import ga from '../../../analytics';
+import ga from '../../analytics';
 import {
   closeDonationModal,
   isDonationModalOpenSelector,
   isBlockDonationModalSelector
-} from '../../../redux';
+} from '../../redux';
 
-import { challengeMetaSelector } from '../../../templates/Challenges/redux';
+import { challengeMetaSelector } from '../../templates/Challenges/redux';
 
-import '../Donation.css';
+import './Donation.css';
 
 const mapStateToProps = createSelector(
   isDonationModalOpenSelector,
