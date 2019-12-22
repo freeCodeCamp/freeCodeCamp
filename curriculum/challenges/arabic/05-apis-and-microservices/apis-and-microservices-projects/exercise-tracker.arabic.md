@@ -12,7 +12,7 @@ isRequired: true
  
 سيتطلب عملك كتابة برنامجك على مشروعنا المبدأي في Glitch. بعد الانتهاء من هذا المشروع ، يمكنك نسخ عنوان URL الافتراضي الخاص بك (إلى الصفحة الرئيسية لتطبيقك) في هذه الشاشة لاختباره!
 يمكنك أيضا اختياريا كتابة مشروعك على نظام أساسي آخر ، ولكن يجب أن يكون مرئيًا بشكل عام لاختبارنا. 
-ابدأ هذا المشروع على Glitch باستخدام <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-project-exercisetracker/' target='_blank'>هذا الرابط</a> أو استنساخ <a href='https://github.com/freeCodeCamp/boilerplate-project-exercisetracker/'>هذا المشروع</a> على GitHub! إذا كنت تستخدم Glitch ، تذكر لحفظ الرابط لمشروعك في مكان آمن! 
+ابدأ هذا المشروع على Glitch باستخدام <a href='https://glitch.com/edit/#!/remix/clone-from-repo?REPO_URL=https://github.com/freeCodeCamp/boilerplate-project-exercisetracker/' target='_blank'>هذا الرابط</a> أو استنساخ <a href='https://github.com/freeCodeCamp/boilerplate-project-exercisetracker/'>هذا المشروع</a> على GitHub! إذا كنت تستخدم Glitch ، تذكر لحفظ الرابط لمشروعك في مكان آمن! 
 </section>
 
 ## Instructions
