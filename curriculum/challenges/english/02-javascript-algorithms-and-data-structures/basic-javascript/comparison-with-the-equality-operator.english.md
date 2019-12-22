@@ -9,7 +9,7 @@ forumTopicId: 16784
 ## Description
 <section id='description'>
 There are many <dfn>comparison operators</dfn> in JavaScript. All of these operators return a boolean <code>true</code> or <code>false</code> value.
-The most basic operator is the equality operator <code>==</code>. The equality operator compares two values and returns <code>true</code> if they're equivalent or <code>false</code> if they are not. Note that equality is different from assignment (<code>=</code>), which assigns the value at the right of the operator to a variable in the left.
+The most basic operator is the "equality operator" <code>==</code>. The two values being compared (on either side of the equality operator) are called "operands". If the operands are of two different data types (i.e. - <code>a number</code> & <code>a string</code>), the equality operator will only compare the two values after it has succesfully converted both operands into the same data type. During a comparison of the two values, it returns <code>true</code> if they're equivalent or <code>false</code> if they are not. Note that the "equality operator" is different from "assignment operator" (<code>=</code>), which assigns the value at the right of the operator to the variable on the left.
 
 ```js
 function equalityTest(myVal) {
