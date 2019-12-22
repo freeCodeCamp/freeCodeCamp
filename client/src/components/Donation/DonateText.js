@@ -23,11 +23,17 @@ const DonateText = () => {
           You also help us create new resources for you to use to expand your
           own technology skills.
         </p>
+        <hr />
+        <h4>
+          <b>Need help with your current or past donations?</b>
+        </h4>
+        <p>
+          Forward a copy of your donation receipt to team@freeCodeCamp.org and
+          tell us how we can help.
+        </p>
       </Col>
     </Row>
   );
 };
-
 DonateText.displayName = 'DonateText';
-
 export default DonateText;

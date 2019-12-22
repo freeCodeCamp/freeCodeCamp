@@ -134,6 +134,7 @@ Software required for both Docker and Local builds:
 | ------------ | ------- | ----- |
 | [Docker CE](https://docs.docker.com/install/) | `Stable` | - |
 | [Docker Compose](https://docs.docker.com/compose/install/) | `Stable` | Must be installed separately if not using macOS or Windows |
+| [Docker Toolbox](https://docs.docker.com/toolbox/toolbox_install_windows/) | `v19.03.1` | If using Windows 10 Home, use this instead - instructions [here](/docs/how-to-use-docker-on-windows-home.md)
 
 **Local Build additional prerequisite:**
 
@@ -190,12 +191,10 @@ This step will install the dependencies required for the application to run:
 
 **Docker Build:**
 ```shell
-npm run docker:init
-npm run docker:install
-npm run docker:seed
+npm run docker:run-once
 ```
 
-Each of the Docker commands above will take some time to complete. You should wait for each command to fully complete before running the next.
+There is a lot to install, this step may take a few minutes.
 
 You will also need to install a few npm packages outside of Docker. You can skip this step if you are only running the app locally and will not use git.
 

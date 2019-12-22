@@ -1,4 +1,5 @@
 import { toString, flow } from 'lodash';
+import { format } from '../../../utils/format';
 
 // we use two different frames to make them all essentially pure functions
 // main iframe is responsible rendering the preview and is where we proxy the
@@ -12,13 +13,18 @@ const testId = 'fcc-test-frame';
 // this also allows in-page anchors to work properly
 // rather than load another instance of the learn
 
-// window.onerror is added here to catch any errors thrown during the building
-// of the frame.
+// window.onerror is added here to report any errors thrown during the building
+// of the frame.  React dom errors already appear in the console, so onerror
+// does not need to pass them on to the default error handler.
 const createHeader = (id = mainId) => `
   <base href='' />
   <script>
     window.__frameId = '${id}';
     window.onerror = function(msg) {
+      var string = msg.toLowerCase();
+      if (string.includes('script error')) {
+        msg = 'Build error, open your browser console to learn more.';
+      }
       console.log(msg);
       return true;
     };
@@ -81,7 +87,7 @@ const mountFrame = document => ({ element, ...rest }) => {
 const buildProxyConsole = proxyLogger => ctx => {
   const oldLog = ctx.window.console.log.bind(ctx.window.console);
   ctx.window.console.log = function proxyConsole(...args) {
-    proxyLogger(args.map(arg => '' + JSON.stringify(arg)).join(' '));
+    proxyLogger(args.map(arg => format(arg)).join(' '));
     return oldLog(...args);
   };
   return ctx;
@@ -107,11 +113,16 @@ const initMainFrame = (frameReady, proxyLogger) => ctx => {
     // after the frame is ready. It has to be overwritten, as proxyLogger cannot
     // be added as part of createHeader.
     ctx.window.onerror = function(msg) {
-      console.log(msg);
+      var string = msg.toLowerCase();
+      if (string.includes('script error')) {
+        msg = 'Error, open your browser console to learn more.';
+      }
       if (proxyLogger) {
         proxyLogger(msg);
       }
-      return true;
+      // let the error propagate so it appears in the browser console, otherwise
+      // an error from a cross origin script just appears as 'Script error.'
+      return false;
     };
     frameReady();
   });

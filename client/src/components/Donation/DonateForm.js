@@ -18,25 +18,22 @@ import {
   durationsConfig,
   defaultAmount,
   defaultStateConfig
-} from '../../../../../config/donation-settings';
+} from '../../../../config/donation-settings';
 import { apiLocation } from '../../../../config/env.json';
-import Spacer from '../../helpers/Spacer';
+import Spacer from '../helpers/Spacer';
 import DonateFormChildViewForHOC from './DonateFormChildViewForHOC';
 import {
-  userSelector,
   isSignedInSelector,
   signInLoadingSelector,
   hardGoTo as navigate
-} from '../../../redux';
+} from '../../redux';
 
-import '../Donation.css';
-import DonateCompletion from './DonateCompletion.js';
+import './Donation.css';
 
 const numToCommas = num =>
   num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
 
 const propTypes = {
-  enableDonationSettingsPage: PropTypes.func.isRequired,
   isDonating: PropTypes.bool,
   isSignedIn: PropTypes.bool,
   navigate: PropTypes.func.isRequired,
@@ -47,11 +44,9 @@ const propTypes = {
 };
 
 const mapStateToProps = createSelector(
-  userSelector,
   signInLoadingSelector,
   isSignedInSelector,
-  ({ isDonating }, showLoading, isSignedIn) => ({
-    isDonating,
+  (showLoading, isSignedIn) => ({
     isSignedIn,
     showLoading
   })
@@ -75,8 +70,7 @@ class DonateForm extends Component {
 
     this.state = {
       ...defaultStateConfig,
-      processing: false,
-      isDonating: this.props.isDonating
+      processing: false
     };
 
     this.getActiveDonationAmount = this.getActiveDonationAmount.bind(this);
@@ -197,7 +191,7 @@ class DonateForm extends Component {
   }
 
   renderDonationOptions() {
-    const { stripe, enableDonationSettingsPage } = this.props;
+    const { stripe } = this.props;
     const { donationAmount, donationDuration, paymentType } = this.state;
     return (
       <div>
@@ -205,9 +199,9 @@ class DonateForm extends Component {
           <StripeProvider stripe={stripe}>
             <Elements>
               <DonateFormChildViewForHOC
+                defaultTheme='default'
                 donationAmount={donationAmount}
                 donationDuration={donationDuration}
-                enableDonationSettingsPage={enableDonationSettingsPage}
                 getDonationButtonLabel={this.getDonationButtonLabel}
                 hideAmountOptionsCB={this.hideAmountOptionsCB}
               />
@@ -224,17 +218,7 @@ class DonateForm extends Component {
   }
 
   render() {
-    const { isSignedIn, navigate, showLoading, isDonating } = this.props;
-
-    if (isDonating) {
-      return (
-        <Row>
-          <Col sm={10} smOffset={1} xs={12}>
-            <DonateCompletion success={true} />
-          </Col>
-        </Row>
-      );
-    }
+    const { isSignedIn, navigate, showLoading } = this.props;
 
     return (
       <Row>
