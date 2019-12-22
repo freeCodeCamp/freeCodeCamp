@@ -19,7 +19,7 @@ console.log(camper);
 
 Como você pode ver no código acima, a variável `camper` é declarada originalmente como `James` e, em seguida, sobrescrita como sendo `David`.
 Em um aplicativo pequeno, você pode não encontrar esse tipo de problema, mas quando seu código se torna maior, você pode sobrescrever acidentalmente uma variável que não pretendia sobrescrever.
-Como esse comportamento não gera um erro, a pesquisa e a correção de erros se tornam mais difíceis. Because this behavior does not throw an error, searching and fixing bugs becomes more difficult.<br>
+Como esse comportamento não gera um erro, a pesquisa e a correção de erros se tornam mais difíceis.
 Uma nova palavra-chave chamada <code>let</code> foi introduzida no ES6 para resolver esse possível problema com a palavra-chave <code>var</code>.
 Se você substituísse <code>var</code> por <code>let</code> nas declarações de variáveis do código acima, o resultado seria um erro.
 
