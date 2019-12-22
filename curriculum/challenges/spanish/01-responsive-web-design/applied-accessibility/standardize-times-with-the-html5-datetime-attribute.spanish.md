@@ -7,7 +7,10 @@ localeTitle: Estandarizar los tiempos con el atributo datetime HTML5
 ---
 
 ## Description
-undefined
+<section id='description'>
+Continuando con el tema de la fecha, HTML5 también introdujo el elemento <code>time</code> junto con un atributo <code>datetime</code> para estandarizar el tiempo. <code>time</code> es un elemento <code>inline</code> que puede contener una fecha o una hora en la página web. El atributo <code>datetime</code> contiene un formato válido de fecha. Este es el valor al que se accede a través de dispositivos de asistencia. Ayuda a evitar cualquier confusión al mantener una versión estandarizada del tiempo, incluso si en el texto está escrito de manera informal o coloquial. Aquí hay un ejemplo:
+<code>&lt;p&gt;El Maestro Camper Cat presentó la pelea en la jaula entre Goro y Scorpion &lt;time datetime=&quot;2013-02-13&quot;&gt;el miércoles pasado&lt;/time&gt;, que terminó en un empate.&lt;/p&gt;</code>
+</section>
 
 ## Instructions
 <section id="instructions"> ¡Los resultados de la encuesta de Mortal Kombat realizada por Camper Cat están aquí! Envuelve con una etiqueta de <code>time</code> el texto &quot;Jueves, 15 de septiembre &lt;sup&gt; th &lt;/sup&gt;&quot; y agrega un atributo de <code>datetime</code> con el valor &quot;2016-09-15&quot;. </section>
@@ -38,30 +41,30 @@ tests:
 ```html
 <body>
   <header>
-    <h1>Tournaments</h1>
+    <h1>Torneos</h1>
   </header>
   <article>
-    <h2>Mortal Kombat Tournament Survey Results</h2>
+    <h2>Resultados de la Encuestra del Torneo de Mortal Kombat</h2>
 
-    <!-- Add your code below this line -->
+    <!-- Agrega tu código debajo de esta línea -->
 
-    <p>Thank you to everyone for responding to Master Camper Cat's survey. The best day to host the vaunted Mortal Kombat tournament is Thursday, September 15<sup>th</sup>. May the best ninja win!</p>
+    <p>Gracias a todos por participar de la encuesta del Maestro Camper Cat. El mejor día para llevar a cabo el tan espero torneo de Mortal Kombat es el jueves 15 de septiembre. ¡Qué gane el mejor ninja! </p>
 
-    <!-- Add your code above this line -->
+    <!-- Agrega tu código por encima de esta línea -->
 
     <section>
-      <h3>Comments:</h3>
+      <h3>Comentarios:</h3>
       <article>
-        <p>Posted by: Sub-Zero on <time datetime="2016-08-13T20:01Z">August 13<sup>th</sup></time></p>
-        <p>Johnny Cage better be there, I'll finish him!</p>
+        <p>Posteado por: Sub-Zero el <time datetime="2016-08-13T20:01Z">13 de agosto</time></p>
+        <p>Johnny Cage más te vale que estés allí, lo destruiré!</p>
       </article>
       <article>
-        <p>Posted by: Doge on <time datetime="2016-08-15T08:12Z">August 15<sup>th</sup></time></p>
-        <p>Wow, much combat, so mortal.</p>
+        <p>Posteado por: Doge el <time datetime="2016-08-15T08:12Z">15 de agosto</time></p>
+        <p>Wow, much combate, so mortal.</p>
       </article>
       <article>
-        <p>Posted by: The Grim Reaper on <time datetime="2016-08-16T00:00Z">August 16<sup>th</sup></time></p>
-        <p>Looks like I'll be busy that day.</p>
+        <p>Posteado por: la Parca el <time datetime="2016-08-16T00:00Z">16 de agosto</time></p>
+        <p>Parece que estaré bastante ocupada ese día.</p>
       </article>
     </section>
   </article>
@@ -80,6 +83,7 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+// solución requerida
 ```
+
 </section>
