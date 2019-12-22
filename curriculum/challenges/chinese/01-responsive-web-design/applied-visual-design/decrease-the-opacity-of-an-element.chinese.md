@@ -4,19 +4,19 @@ title: Decrease the Opacity of an Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c7aKqu4'
 forumTopicId: 301055
-localTitle: 降低元素的 opactiy
+localeTitle: 降低元素的 opactiy
 ---
 
 ## Description
 <section id='description'>
-CSS 里的<code>opacity</code>属性用来设置元素的透明度。
+CSS 里的 <code>opacity</code> 属性用来设置元素的透明度。
 <blockquote>值 1 代表完全不透明。<br>值 0.5 代表半透明。<br>值 0 代表完全透明。</blockquote>
 透明度会应用到元素内的所有内容，不论是图片，还是文本，或是背景色。
 </section>
 
 ## Instructions
 <section id='instructions'>
-使用<code>links</code>class 选择所有的超链接并设置其<code>opacity</code>值为 0.7。
+使用 <code>links</code> class 选择所有的超链接并设置其 <code>opacity</code> 值为 0.7。
 </section>
 
 ## Tests
@@ -24,8 +24,8 @@ CSS 里的<code>opacity</code>属性用来设置元素的透明度。
 
 ```yml
 tests:
-  - text: '你应该使用<code>links</code>class 选择所有的超链接并设置其<code>opacity</code>值为 0.7。'
-    testString: assert.approximately(parseFloat($('.links').css('opacity')), 0.7, 0.1, '你应该使用<code>links</code>class 选择所有的超链接并设置其<code>opacity</code>值为 0.7。');
+  - text: '你应该使用 <code>links</code> class 选择所有的超链接并设置其 <code>opacity</code> 值为 0.7。'
+    testString: assert.approximately(parseFloat($('.links').css('opacity')), 0.7, 0.1, '你应该使用 <code>links</code> class 选择所有的超链接并设置其 <code>opacity</code> 值为 0.7。');
 
 ```
 

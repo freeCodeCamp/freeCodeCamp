@@ -4,23 +4,23 @@ title: Add a box-shadow to a Card-like Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cvVZdUd'
 forumTopicId: 301031
-localTitle: 给卡片元素添加 box-shadow
+localeTitle: 给卡片元素添加 box-shadow
 ---
 
 ## Description
 <section id='description'>
-<code>box-shadow</code>属性用来给元素添加阴影，该属性值是由逗号分隔的一个或多个阴影列表。
-<code>box-shadow</code>属性的阴影依次由下面这些值描述：
+<code>box-shadow</code> 属性用来给元素添加阴影，该属性值是由逗号分隔的一个或多个阴影列表。
+<code>box-shadow</code> 属性的阴影依次由下面这些值描述：
 <ul>
-  <li><code>offset-x</code>阴影的水平偏移量；</li>
-  <li><code>offset-y</code>阴影的垂直偏移量;</li>
-  <li><code>blur-radius</code>模糊距离；</li>
-  <li><code>spread-radius</code>阴影尺寸；</li>
+  <li><code>offset-x</code> 阴影的水平偏移量；</li>
+  <li><code>offset-y</code> 阴影的垂直偏移量；</li>
+  <li><code>blur-radius</code> 模糊半径；</li>
+  <li><code>spread-radius</code> 阴影扩展半径；</li>
   <li>颜色。</li>
 </ul>
-其中<code>blur-raduis</code>和<code>spread-raduis</code>是可选的。
+其中 <code>blur-radius</code> 和 <code>spread-radius</code> 是可选的。
 可以通过逗号分隔每个 <code>box-shadow</code> 元素的属性来添加多个 box-shadow。
-下面是创建了多个阴影的 CSS 例子，阴影加了模糊效果，颜色是透明度很高的黑色:
+如下为添加了模糊效果的例子，它使用了透明度较高的黑色作为阴影：
 
 ```css
 box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
@@ -30,7 +30,7 @@ box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 
 ## Instructions
 <section id='instructions'>
-现在卡片已经添加了 id<code>thumbnail</code>。把上面的<code>box-shadow</code>值赋给卡片。
+现在该卡片添加了值为 <code>thumbnail</code> 的 id 属性。把上面的 <code>box-shadow</code> 值赋给卡片。
 </section>
 
 ## Tests
@@ -38,10 +38,10 @@ box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 
 ```yml
 tests:
-  - text: '你应该给 id 为<code>thumbnail</code>的元素添加<code>box-shadow</code>属性。'
-    testString: assert(code.match(/#thumbnail\s*?{\s*?box-shadow/g), '你应该给 id 为<code>thumbnail</code>的元素添加<code>box-shadow</code>属性。');
-  - text: '<code>box-shadow</code>值应该是指定的 CSS 值。'
-    testString: 'assert(code.match(/box-shadow:\s*?0\s+?10px\s+?20px\s+?rgba\(\s*?0\s*?,\s*?0\s*?,\s*?0\s*?,\s*?0?\.19\),\s*?0\s+?6px\s+?6px\s+?rgba\(\s*?0\s*?,\s*?0\s*?,\s*?0\s*?,\s*?0?\.23\)/gi), ''<code>box-shadow</code>值应该是指定的 CSS 值。'');'
+  - text: '你应该给 id 为 <code>thumbnail</code> 的元素添加 <code>box-shadow</code> 属性。'
+    testString: assert(code.match(/#thumbnail\s*?{\s*?box-shadow/g), '你应该给 id 为 <code>thumbnail</code> 的元素添加 <code> box-shadow</code> 属性。');
+  - text: '<code>box-shadow</code> 值应该是指定的 CSS 值。'
+    testString: 'assert(code.match(/box-shadow:\s*?0\s+?10px\s+?20px\s+?rgba\(\s*?0\s*?,\s*?0\s*?,\s*?0\s*?,\s*?0?\.19\),\s*?0\s+?6px\s+?6px\s+?rgba\(\s*?0\s*?,\s*?0\s*?,\s*?0\s*?,\s*?0?\.23\)/gi), ''<code>box-shadow</code> 值应该是指定的 CSS 值。'');'
 
 ```
 

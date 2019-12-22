@@ -4,7 +4,7 @@ title: Learn about Complementary Colors
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c2MD3Tr'
 forumTopicId: 301056
-localTitle: 了解互补色
+localeTitle: 了解互补色
 ---
 
 ## Description
@@ -19,7 +19,7 @@ localTitle: 了解互补色
 
 ## Instructions
 <section id='instructions'>
-把<code>blue</code>和<code>yellow</code>class 的<code>background-color</code>属性改成相应的颜色。注意观察它们之间的编码区别以及和它们和白色的编码区别。
+把 <code>blue</code> 和 <code>yellow</code> class 的 <code>background-color</code> 属性改成相应的颜色。注意观察它们之间的编码区别以及和它们和白色的编码区别。
 </section>
 
 ## Tests
@@ -27,10 +27,10 @@ localTitle: 了解互补色
 
 ```yml
 tests:
-  - text: 'class 为<code>blue</code>的<code>div</code>元素应该有值为蓝色的<code>background-color</code>CSS 属性。'
-    testString: assert($('.blue').css('background-color') == 'rgb(0, 0, 255)', 'class 为<code>blue</code>的<code>div</code>元素应该有值为蓝色的<code>background-color</code>CSS 属性。');
-  - text: 'class 为<code>yellow</code>的<code>div</code>元素应该有值为黄色的<code>background-color</code>CSS 属性。'
-    testString: assert($('.yellow').css('background-color') == 'rgb(255, 255, 0)', 'class 为<code>yellow</code>的<code>div</code>元素应该有值为黄色的<code>background-color</code>CSS 属性。');
+  - text: 'class 为 <code>blue</code> 的 <code>div</code> 元素应该有值为蓝色的 <code>background-color</code> CSS 属性。'
+    testString: assert($('.blue').css('background-color') == 'rgb(0, 0, 255)', 'class 为 <code>blue</code> 的 <code>div</code> 元素应该有值为蓝色的 <code>background-color</code> CSS 属性。');
+  - text: 'class 为 <code>yellow</code> 的 <code>div</code> 元素应该有值为黄色的 <code>background-color</code> CSS 属性。'
+    testString: assert($('.yellow').css('background-color') == 'rgb(255, 255, 0)', 'class 为 <code>yellow</code> 的 <code>div</code> 元素应该有值为黄色的 <code>background-color</code> CSS 属性。');
 
 ```
 

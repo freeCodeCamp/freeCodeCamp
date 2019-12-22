@@ -4,19 +4,19 @@ title: Create a Horizontal Line Using the hr Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c3bR8t7'
 forumTopicId: 301049
-localTitle: 使用 hr 标签创建水平线
+localeTitle: 使用 hr 标签创建水平线
 ---
 
 ## Description
 <section id='description'>
 术语：Horizontal Rule => hr => 水平线。
-你可以用<code>hr</code>标签来创建一条宽度撑满父元素的水平线。它一般用来表示文档主题的改变，在视觉上将文档分隔成几个部分。
+你可以用 <code>hr</code> 标签来创建一条宽度撑满父元素的水平线。它一般用来表示文档主题的改变，在视觉上将文档分隔成几个部分。
 </section>
 
 ## Instructions
 <section id='instructions'>
-在包含卡片标题的<code>h4</code>下面添加一个<code>hr</code>标签。
-<strong>注意</strong><br>在 HTML 里，<code>hr</code>是自关闭标签，所以不需要一个单独的关闭标签。
+在包含卡片标题的 <code>h4</code> 下面添加一个 <code>hr</code> 标签。
+<strong>注意</strong><br>在 HTML 里，<code>hr</code> 是自关闭标签，所以不需要一个单独的关闭标签。
 </section>
 
 ## Tests
@@ -24,10 +24,10 @@ localTitle: 使用 hr 标签创建水平线
 
 ```yml
 tests:
-  - text: '你应该添加一个<code>hr</code>标签。'
-    testString: assert($('hr').length == 1, '你应该添加一个<code>hr</code>标签。');
-  - text: '<code>hr</code>标签应该在标题和段落之间。'
-    testString: assert(code.match(/<\/h4>\s*?<hr(>|\s*?\/>)\s*?<p>/gi), '<code>hr</code>标签应该在标题和段落之间。');
+  - text: '你应该添加一个 <code>hr</code> 标签。'
+    testString: assert($('hr').length == 1, '你应该添加一个 <code>hr</code> 标签。');
+  - text: '<code>hr</code> 标签应该在标题和段落之间。'
+    testString: assert(code.match(/<\/h4>\s*?<hr(>|\s*?\/>)\s*?<p>/gi), '<code>hr</code> 标签应该在标题和段落之间。');
 
 ```
 

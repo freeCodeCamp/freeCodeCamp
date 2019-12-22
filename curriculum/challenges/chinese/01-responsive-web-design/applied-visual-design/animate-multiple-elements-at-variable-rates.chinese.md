@@ -4,18 +4,18 @@ title: Animate Multiple Elements at Variable Rates
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cnpWZc9'
 forumTopicId: 301042
-localTitle: 以可变速率来给多个元素添加动画
+localeTitle: 以可变速率来给多个元素添加动画
 ---
 
 ## Description
 <section id='description'>
-在前面的关卡里，你通过改变<code>@keyframes</code>改变了两个相似动画元素的频率。你也可以通过改变多个元素的<code>animation-duration</code>来达到同样的效果。
-在编辑器代码运行的动画里，天空中有三个以同样频率不停的闪烁的星星。你可以设置每一个星星的<code>animation-duration</code>属性为不同的值来使其具有不同的闪烁频率。
+在前面的关卡里，你通过改变 <code>@keyframes</code> 改变了两个相似动画元素的频率。你也可以通过改变多个元素的 <code>animation-duration</code> 来达到同样的效果。
+在编辑器代码运行的动画里，天空中有三个以同样频率不停的闪烁的星星。你可以设置每一个星星的 <code>animation-duration</code> 属性为不同的值来使其具有不同的闪烁频率。
 </section>
 
 ## Instructions
 <section id='instructions'>
-依次设置 class 为<code>star-1</code>、<code>star-2</code>、<code>star-3</code>的<code>animation-duration</code>为 1s、0.9s、1.1s。
+依次设置 class 为 <code>star-1</code>、<code>star-2</code>、<code>star-3</code> 的 <code>animation-duration</code> 为 1s、0.9s、1.1s。
 </section>
 
 ## Tests
@@ -23,12 +23,12 @@ localTitle: 以可变速率来给多个元素添加动画
 
 ```yml
 tests:
-  - text: 'class 为<code>star-1</code>的<code>animation-duration</code>属性值应该 1s。'
-    testString: assert($('.star-1').css('animation-duration') == '1s', 'class 为<code>star-1</code>的<code>animation-duration</code>属性值应该 1s。');
-  - text: 'class 为<code>star-2</code>的<code>animation-duration</code>属性值应该 0.9s。'
-    testString: assert($('.star-2').css('animation-duration') == '0.9s', 'class 为<code>star-2</code>的<code>animation-duration</code>属性值应该 0.9s。');
-  - text: 'class 为<code>star-3</code>的<code>animation-duration</code>属性值应该 1.1s。'
-    testString: assert($('.star-3').css('animation-duration') == '1.1s', 'class 为<code>star-3</code>的<code>animation-duration</code>属性值应该 1.1s。');
+  - text: 'class 为 <code>star-1</code> 的 <code>animation-duration</code> 属性值应该 1s。'
+    testString: assert($('.star-1').css('animation-duration') == '1s', 'class 为 <code>star-1</code> 的 <code>animation-duration</code> 属性值应该 1s。');
+  - text: 'class 为 <code>star-2</code> 的 <code>animation-duration</code> 属性值应该 0.9s。'
+    testString: assert($('.star-2').css('animation-duration') == '0.9s', 'class 为 <code>star-2</code> 的 <code>animation-duration</code> 属性值应该 0.9s。');
+  - text: 'class 为 <code>star-3</code> 的 <code>animation-duration</code> 属性值应该 1.1s。'
+    testString: assert($('.star-3').css('animation-duration') == '1.1s', 'class 为 <code>star-3</code> 的 <code>animation-duration</code> 属性值应该 1.1s。');
 
 ```
 

@@ -4,17 +4,17 @@ title: Set the line-height of Paragraphs
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/crVWdcv'
 forumTopicId: 301070
-localTitle: 设置段落的 line-height
+localeTitle: 设置段落的 line-height
 ---
 
 ## Description
 <section id='description'>
-CSS 提供<code>line-height</code>属性来设置行间的距离。行高，顾名思义，用来设置每行文字所占据的垂直空间。
+CSS 提供 <code>line-height</code> 属性来设置行间的距离。行高，顾名思义，用来设置每行文字所占据的垂直空间。
 </section>
 
 ## Instructions
 <section id='instructions'>
-给<code>p</code>标签添加<code>line-height</code>属性并赋值 25px。
+给 <code>p</code> 标签添加 <code>line-height</code> 属性并赋值 25px。
 </section>
 
 ## Tests
@@ -22,8 +22,8 @@ CSS 提供<code>line-height</code>属性来设置行间的距离。行高，顾�
 
 ```yml
 tests:
-  - text: '你应该给<code>p</code>标签添加<code>line-height</code>属性并赋值<code>25px</code>。'
-    testString: assert($('p').css('line-height') == '25px', '你应该给<code>p</code>标签添加<code>line-height</code>属性并赋值<code>25px</code>。');
+  - text: '你应该给 <code>p</code> 标签添加 <code>line-height</code> 属性并赋值 <code>25px</code>。'
+    testString: assert($('p').css('line-height') == '25px', '你应该给 <code>p</code> 标签添加 <code>line-height</code> 属性并赋值 <code>25px</code>。');
 
 ```
 

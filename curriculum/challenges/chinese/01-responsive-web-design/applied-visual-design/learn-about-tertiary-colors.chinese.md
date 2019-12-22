@@ -4,7 +4,7 @@ title: Learn about Tertiary Colors
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c3bRDAb'
 forumTopicId: 301057
-localTitle: 了解三原色
+localeTitle: 了解三原色
 ---
 
 ## Description
@@ -18,7 +18,7 @@ localTitle: 了解三原色
 
 ## Instructions
 <section id='instructions'>
-把 class 为<code>orange</code>、<code>cyan</code>和<code>rasberry</code>的<code>background-color</code>改成其对应的颜色。由于 rasberry 不在浏览器 17 种标准色之内，不能直接用作颜色名，所以要使用 HEX 颜色码。
+把 class 为 <code>orange</code>、<code>cyan</code> 和 <code>rasberry</code> 的 <code>background-color</code> 改成其对应的颜色。由于 rasberry 不在浏览器 17 种标准色之内，不能直接用作颜色名，所以要使用 HEX 颜色码。
 </section>
 
 ## Tests
@@ -26,12 +26,12 @@ localTitle: 了解三原色
 
 ```yml
 tests:
-  - text: 'class 为<code>orange</code>的<code>div</code>应该有值为橙色的<code>background-color</code>CSS 属性。'
-    testString: assert($('.orange').css('background-color') == 'rgb(255, 125, 0)', 'class 为<code>orange</code>的<code>div</code>应该有值为橙色的<code>background-color</code>CSS 属性。');
-  - text: 'class 为<code>cyan</code>的<code>div</code>应该有值为蓝绿色的<code>background-color</code>CSS 属性。'
-    testString: assert($('.cyan').css('background-color') == 'rgb(0, 255, 255)', 'class 为<code>cyan</code>的<code>div</code>应该有值为蓝绿色的<code>background-color</code>CSS 属性。');
-  - text: 'class 为<code>raspberry</code>的<code>div</code>应该有值为树莓红色的<code>background-color</code>CSS 属性。'
-    testString: assert($('.raspberry').css('background-color') == 'rgb(255, 0, 125)', 'class 为<code>raspberry</code>的<code>div</code>应该有值为树莓红色的<code>background-color</code>CSS 属性。');
+  - text: 'class 为 <code>orange</code> 的 <code>div</code> 应该有值为橙色的 <code>background-color</code> CSS 属性。'
+    testString: assert($('.orange').css('background-color') == 'rgb(255, 125, 0)', 'class 为 <code>orange</code> 的 <code>div</code> 应该有值为橙色的 <code>background-color</code> CSS 属性。');
+  - text: 'class 为 <code>cyan</code> 的 <code>div</code> 应该有值为蓝绿色的 <code>background-color</code> CSS 属性。'
+    testString: assert($('.cyan').css('background-color') == 'rgb(0, 255, 255)', 'class 为 <code>cyan</code> 的 <code>div</code> 应该有值为蓝绿色的 <code>background-color</code> CSS 属性。');
+  - text: 'class 为 <code>raspberry</code> 的 <code>div</code> 应该有值为树莓红色的 <code>background-color</code> CSS 属性。'
+    testString: assert($('.raspberry').css('background-color') == 'rgb(255, 0, 125)', 'class 为 <code>raspberry</code> 的 <code>div</code> 应该有值为树莓红色的 <code>background-color</code> CSS 属性。');
   - text: 'corlor classes 里的所有的 <code>background-color</code> 应该是 HEX 颜色码而不是颜色名称。'
     testString: assert(!/background-color:\s(orange|cyan|raspberry)/.test(code));
 

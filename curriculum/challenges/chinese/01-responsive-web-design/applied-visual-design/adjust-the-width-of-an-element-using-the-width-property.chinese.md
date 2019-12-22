@@ -4,12 +4,12 @@ title: Adjust the Width of an Element Using the width Property
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cvVLPtN'
 forumTopicId: 301039
-localTitle: 使用 width 属性调整元素的宽度
+localeTitle: 使用 width 属性调整元素的宽度
 ---
 
 ## Description
 <section id='description'>
-你可以使用 CSS 里面的<code>width</code>属性来指定元素的宽度。属性值可以是相对单位（比如 em），绝对单位（比如 px），或者包含块（父元素）宽度的百分比。下面这个例子把图片的宽度设置为 220px：
+你可以使用 CSS 里面的 <code>width</code> 属性来指定元素的宽度。属性值可以是相对单位（比如 em），绝对单位（比如 px），或者包含块（父元素）宽度的百分比。下面这个例子把图片的宽度设置为 220px：
 
 ```css
 img {
@@ -21,7 +21,7 @@ img {
 
 ## Instructions
 <section id='instructions'>
-给卡片添加<code>width</code>属性，设置它的宽度为 245px。使用<code>fullCard</code> class 来选择元素。
+给卡片添加 <code>width</code> 属性，设置它的宽度为 245px。使用 <code>fullCard</code> class 来选择元素。
 </section>
 
 ## Tests
@@ -29,8 +29,8 @@ img {
 
 ```yml
 tests:
-  - text: '你应该使用<code>fullCard</code> class 选择器将卡片的<code>width</code>宽度属性更改为<code>245px</code>。'
-    testString: 'assert(code.match(/.fullCard\s*{[\s\S][^}]*\n*^\s*width\s*:\s*245px\s*;/gm), ''你应该使用<code>fullCard</code> class 选择器将卡片的<code>width</code>宽度属性更改为<code>245px</code>。'');'
+  - text: '你应该使用 <code>fullCard</code> class 选择器将卡片的 <code>width</code> 宽度属性更改为 <code>245px</code>。'
+    testString: 'assert(code.match(/.fullCard\s*{[\s\S][^}]*\n*^\s*width\s*:\s*245px\s*;/gm), ''你应该使用 <code>fullCard</code> class 选择器将卡片的 <code>width</code> 宽度属性更改为 <code>245px</code>。'');'
 
 ```
 

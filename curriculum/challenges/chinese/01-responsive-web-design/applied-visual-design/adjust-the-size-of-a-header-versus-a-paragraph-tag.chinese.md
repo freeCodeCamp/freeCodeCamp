@@ -4,17 +4,17 @@ title: Adjust the Size of a Header Versus a Paragraph Tag
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c3bRPTz'
 forumTopicId: 301037
-localTitle: 调整标题与段落的大小
+localeTitle: 调整标题与段落的大小
 ---
 
 ## Description
 <section id='description'>
-标题（<code>h1</code>到<code>h6</code>）的文字应该比段落的文字大，这样可以让用户更直观的看到页面的布局，同时能区别出不同元素的重要程度，更方便用户捕捉关键的信息。你可以使用<code>font-size</code>属性来设置元素内文字的大小。
+标题（<code>h1</code> 到 <code>h6</code>）的文字应该比段落的文字大，这样可以让用户更直观的看到页面的布局，同时能区别出不同元素的重要程度，更方便用户捕捉关键的信息。你可以使用 <code>font-size</code> 属性来设置元素内文字的大小。
 </section>
 
 ## Instructions
 <section id='instructions'>
-把<code>h4</code>标签的<code>font-size</code>改成 27 像素，让标题更醒目。
+把 <code>h4</code> 标签的 <code>font-size</code >改成 27 像素，让标题更醒目。
 </section>
 
 ## Tests
@@ -22,8 +22,8 @@ localTitle: 调整标题与段落的大小
 
 ```yml
 tests:
-  - text: '你应该给<code>h4</code>元素添加一个<code>font-size</code>属性并且赋值<code>27px</code>。'
-    testString: assert($('h4').css('font-size') == '27px', '你应该给<code>h4</code>元素添加一个<code>font-size</code>属性并且赋值<code>27px</code>。');
+  - text: '你应该给 <code>h4</code> 元素添加一个 <code>font-size</code> 属性并且赋值 <code>27px</code>。'
+    testString: assert($('h4').css('font-size') == '27px', '你应该给 <code>h4</code> 元素添加一个 <code>font-size</code> 属性并且赋值 <code>27px</code>。');
 
 ```
 

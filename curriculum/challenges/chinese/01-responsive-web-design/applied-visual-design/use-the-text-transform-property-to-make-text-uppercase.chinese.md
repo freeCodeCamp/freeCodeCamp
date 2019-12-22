@@ -4,19 +4,19 @@ title: Use the text-transform Property to Make Text Uppercase
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cvVZQSP'
 forumTopicId: 301081
-localTitle: 使用 text-transform 属性给文本添加大写效果
+localeTitle: 使用 text-transform 属性给文本添加大写效果
 ---
 
 ## Description
 <section id='description'>
-CSS 里面的<code>text-transform</code>属性来改变英文中字母的大小写。它通常用来统一页面里英文的显示，且无需直接改变 HTML 元素中的文本。
-下面的表格展示了<code>text-transform</code>的不同值对文字 “Transform me” 的影响。
-<table class="table table-striped"><thead><th>Value<th>Result<tbody><tr><td><code>lowercase</code><td>"transform me"<tr><td><code>uppercase</code><td>"TRANSFORM ME"<tr><td><code>capitalize</code><td>"Transform Me"<tr><td><code>initial</code><td>使用默认值<tr><td><code>inherit</code><td>使用父元素的<code>text-transform</code>值。<tr><td><code>none</code><td><strong>Default:</strong>不改变文字。</td></table>
+CSS 里面的 <code>text-transform</code> 属性来改变英文中字母的大小写。它通常用来统一页面里英文的显示，且无需直接改变 HTML 元素中的文本。
+下面的表格展示了<code>text-transform</code> 的不同值对文字 “Transform me” 的影响。
+<table class="table table-striped"><thead><th>Value<th>Result<tbody><tr><td><code>lowercase</code><td>"transform me"<tr><td><code>uppercase</code><td>"TRANSFORM ME"<tr><td><code>capitalize</code><td>"Transform Me"<tr><td><code>initial</code><td>使用默认值<tr><td><code>inherit</code><td>使用父元素的 <code>text-transform</code> 值。<tr><td><code>none</code><td><strong>Default:</strong>不改变文字。</td></table>
 </section>
 
 ## Instructions
 <section id='instructions'>
-使用<code>text-transform</code>属性把<code>h4</code>内的英文的所有字母变成大写。
+使用 <code>text-transform</code> 属性把 <code>h4</code> 内的英文的所有字母变成大写。
 </section>
 
 ## Tests
@@ -24,10 +24,10 @@ CSS 里面的<code>text-transform</code>属性来改变英文中字母的大小�
 
 ```yml
 tests:
-  - text: '<code>h4</code>内的英文的所有字母应该为大写。'
-    testString: assert($('h4').css('text-transform') === 'uppercase', '<code>h4</code>内的英文的所有字母应该为大写。');
-  - text: '<code>h4</code>内的原文不能被改变。'
-    testString: assert(($('h4').text() !== $('h4').text().toUpperCase()), '<code>h4</code>内的原文不能被改变。');
+  - text: '<code>h4</code> 内的英文的所有字母应该为大写。'
+    testString: assert($('h4').css('text-transform') === 'uppercase', '<code>h4</code> 内的英文的所有字母应该为大写。');
+  - text: '<code>h4</code> 内的原文不能被改变。'
+    testString: assert(($('h4').text() !== $('h4').text().toUpperCase()), '<code>h4</code> 内的原文不能被改变。');
 
 ```
 

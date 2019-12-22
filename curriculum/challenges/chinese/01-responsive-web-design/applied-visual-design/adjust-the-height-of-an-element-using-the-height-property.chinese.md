@@ -4,12 +4,12 @@ title: Adjust the Height of an Element Using the height Property
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cEDaDTN'
 forumTopicId: 301034
-localTitle: 使用 height 属性调整元素的宽度
+localeTitle: 使用 height 属性调整元素的宽度
 ---
 
 ## Description
 <section id='description'>
-和<code>width</code>属性类似，你可以使用 CSS 里面的<code>height</code>属性来指定元素的高度。下面这个例子把图片的高度设置为 20px：
+和 <code>width</code> 属性类似，你可以使用 CSS 里面的 <code>height</code> 属性来指定元素的高度。下面这个例子把图片的高度设置为 20px：
 
 ```css
 img {
@@ -21,7 +21,7 @@ img {
 
 ## Instructions
 <section id='instructions'>
-给<code>h4</code>标签添加<code>height</code>属性并设置值为 25px。
+给 <code>h4</code> 标签添加 <code>height</code> 属性并设置值为 25px。
 <strong>注意：</strong> 可能需要将浏览器的缩放比调整为 100% 才能通过这一挑战。
 </section>
 
@@ -30,8 +30,8 @@ img {
 
 ```yml
 tests:
-  - text: '你应该设置<code>h4</code>的<code>height</code>属性，使其值为<code>25px</code>。'
-    testString: assert($('h4').css('height') == '25px', '你应该设置<code>h4</code>的<code>height</code>属性，使其值为<code>25px</code>。');
+  - text: '你应该设置 <code>h4</code> 的 <code>height</code> 属性，使其值为 <code>25px</code>。'
+    testString: assert($('h4').css('height') == '25px', '你应该设置 <code>h4</code> 的 <code>height</code> 属性，使其值为 <code>25px</code>。');
 
 ```
 

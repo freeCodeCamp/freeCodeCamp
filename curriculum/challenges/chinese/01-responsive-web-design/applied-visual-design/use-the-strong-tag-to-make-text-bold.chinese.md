@@ -4,18 +4,18 @@ title: Use the strong Tag to Make Text Bold
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/ceJNBSb'
 forumTopicId: 1
-localTitle: 使用 strong 标签加粗文本
+localeTitle: 使用 strong 标签加粗文本
 ---
 
 ## Description
 <section id='description'>
 术语：Strong => s => 加粗。
-你可以使用<code>strong</code>标签来加粗文字。添加了<code>strong</code>标签后，浏览器会自动给元素应用<code>font-weight:bold;</code>。
+你可以使用 <code>strong</code> 标签来加粗文字。添加了 <code>strong</code> 标签后，浏览器会自动给元素应用 <code>font-weight:bold;</code>。
 </section>
 
 ## Instructions
 <section id='instructions'>
-在<code>p</code>标签里的 “斯坦福大学” 外面添加<code>strong</code>标签。
+在 <code>p</code> 标签里的 “斯坦福大学” 外面添加 <code>strong</code> 标签。
 </section>
 
 ## Tests
@@ -23,12 +23,12 @@ localTitle: 使用 strong 标签加粗文本
 
 ```yml
 tests:
-  - text: '你应该有一个<code>strong</code>标签。'
-    testString: assert($('strong').length == 1, '你应该有一个<code>strong</code>标签。');
-  - text: '<code>strong</code>标签应该在<code>p</code>标签里。'
-    testString: assert($('p').children('strong').length == 1, '<code>strong</code>标签应该在<code>p</code>标签里。');
-  - text: '<code>strong</code>标签应该包围 “斯坦福大学”。'
-    testString: assert($('strong').text().match(/^斯坦福大学$/gi), '<code>strong</code>标签应该包围 “斯坦福大学”。');
+  - text: '你应该有一个 <code>strong</code> 标签。'
+    testString: assert($('strong').length == 1, '你应该有一个 <code>strong</code> 标签。');
+  - text: '<code>strong</code> 标签应该在 <code>p</code> 标签里。'
+    testString: assert($('p').children('strong').length == 1, '<code>strong</code> 标签应该在 <code>p</code> 标签里。');
+  - text: '<code>strong</code> 标签应该包围 “斯坦福大学”。'
+    testString: assert($('strong').text().match(/^斯坦福大学$/gi), '<code>strong</code> 标签应该包围 “斯坦福大学”。');
 
 ```
 

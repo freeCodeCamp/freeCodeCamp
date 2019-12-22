@@ -4,22 +4,22 @@ title: Create Visual Balance Using the text-align Property
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c3b4EAp'
 forumTopicId: 301053
-localTitle: 使用 text-align 属性创建视觉平衡
+localeTitle: 使用 text-align 属性创建视觉平衡
 ---
 
 ## Description
 <section id='description'>
 这部分课程主要关于应用视觉设计。开始的挑战展示了一些核心的原则，代码基于一个指定的卡片布局。
-web 内容大部分都是文本。CSS 里面的<code>text-align</code>属性可以控制文本的对齐方式。
-<code>text-align: justify;</code>可以让除最后一行之外的文字两端对齐，即每行的左右两端都紧贴行的边缘。
-<code>text-align: center;</code>可以让文本居中对齐。
-<code>text-align: right;</code>可以让文本右对齐。
-<code>text-align: left;</code>是<code>text-align</code>的默认值，它可以让文本左对齐。
+web 内容大部分都是文本。CSS 里面的 <code>text-align</code> 属性可以控制文本的对齐方式。
+<code>text-align: justify;</code> 可以让除最后一行之外的文字两端对齐，即每行的左右两端都紧贴行的边缘。
+<code>text-align: center;</code> 可以让文本居中对齐。
+<code>text-align: right;</code> 可以让文本右对齐。
+<code>text-align: left;</code> 是 <code>text-align</code> 的默认值，它可以让文本左对齐。
 </section>
 
 ## Instructions
 <section id='instructions'>
-居中对齐<code>h4</code>标签文本，文本内容为 “Google”。两端对齐段落标签文本，文本介绍了 Google 的创立。
+居中对齐 <code>h4</code> 标签文本，文本内容为 “Google”。两端对齐段落标签文本，文本介绍了 Google 的创立。
 </section>
 
 ## Tests
@@ -27,10 +27,10 @@ web 内容大部分都是文本。CSS 里面的<code>text-align</code>属性可�
 
 ```yml
 tests:
-  - text: '你应该在<code>h4</code>标签上使用 text-align 属性设置文本居中对齐。'
-    testString: assert($('h4').css('text-align') == 'center', '你应该在<code>h4</code>标签上使用 text-align 属性设置文本居中对齐。');
-  - text: '你应该在<code>p</code>标签上使用 text-align 属性设置文本两端对齐。'
-    testString: assert($('p').css('text-align') == 'justify', '你应该在<code>p</code>标签上使用 text-align 属性设置文本两端对齐。');
+  - text: '你应该在 <code>h4</code> 标签上使用 text-align 属性设置文本居中对齐。'
+    testString: assert($('h4').css('text-align') == 'center', '你应该在 <code>h4</code> 标签上使用 text-align 属性设置文本居中对齐。');
+  - text: '你应该在 <code>p</code> 标签上使用 text-align 属性设置文本两端对齐。'
+    testString: assert($('p').css('text-align') == 'justify', '你应该在 <code>p</code> 标签上使用 text-align 属性设置文本两端对齐。');
 
 ```
 

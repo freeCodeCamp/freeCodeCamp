@@ -4,18 +4,18 @@ title: Animate Elements at Variable Rates
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cZ89WA4'
 forumTopicId: 301040
-localTitle: 以可变速率来给元素添加动画
+localeTitle: 以可变速率来给元素添加动画
 ---
 
 ## Description
 <section id='description'>
-改变相似元素的动画频率的方法有很多。目前接触到的就有<code>animation-iteration-count</code>和<code>@keyframes</code>。
-举例说明，右边的动画包含了两个小星星，每个小星星都在 20%<code>@keyframes</code>处变小并且 opacity 变为 20%，也就是一闪一闪的动画效果。你可以通过改变其中一个星星的<code>@keyframes</code>规则以使两个小星星以不同的频率闪烁。
+改变相似元素的动画频率的方法有很多。目前接触到的就有 <code>animation-iteration-count</code> 和 <code>@keyframes</code>。
+举例说明，右边的动画包含了两个小星星，每个小星星都在 20% <code>@keyframes</code> 处变小并且 opacity 变为 20%，也就是一闪一闪的动画效果。你可以通过改变其中一个星星的 <code>@keyframes</code> 规则以使两个小星星以不同的频率闪烁。
 </section>
 
 ## Instructions
 <section id='instructions'>
-通过改变 class 为<code>star-1</code>的元素的<code>@keyframes</code>为 50% 以改变其动画频率。
+通过改变 class 为 <code>star-1</code> 的元素的 <code>@keyframes</code> 为 50% 以改变其动画频率。
 </section>
 
 ## Tests
@@ -23,8 +23,8 @@ localTitle: 以可变速率来给元素添加动画
 
 ```yml
 tests:
-  - text: '<code>star-1</code>class 的<code>@keyframes</code>规则应该为50%。'
-    testString: assert(code.match(/twinkle-1\s*?{\s*?50%/g), '<code>star-1</code>class 的<code>@keyframes</code>规则应该为50%。');
+  - text: '<code>star-1</code> class 的 <code>@keyframes</code> 规则应该为50%。'
+    testString: assert(code.match(/twinkle-1\s*?{\s*?50%/g), '<code>star-1</code>class 的 <code>@keyframes</code> 规则应该为50%。');
 
 ```
 

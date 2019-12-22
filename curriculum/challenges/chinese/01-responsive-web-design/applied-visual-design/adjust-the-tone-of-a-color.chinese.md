@@ -4,17 +4,17 @@ title: Adjust the Tone of a Color
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cEDJvT7'
 forumTopicId: 301038
-localTitle: 调整颜色的色调
+localeTitle: 调整颜色的色调
 ---
 
 ## Description
 <section id='description'>
-<code>hsl()</code>使 CSS 更改色调更方便。给纯色添加白色可以创造更浅的色调，添加黑色可以创造更深的色调。另外，还可以通过给纯色添加灰色来同时改变颜色的深浅和明暗。回忆下<code>hsl()</code>里面的 ‘s’ 和 ‘l’ 分辨代表饱和度和亮度。饱和度代表灰色的占比，亮度代表白色和黑色的占比。这在当你有了一个基色调却需要微调时非常有用。
+<code>hsl()</code> 使 CSS 更改色调更方便。给纯色添加白色可以创造更浅的色调，添加黑色可以创造更深的色调。另外，还可以通过给纯色添加灰色来同时改变颜色的深浅和明暗。回忆下 <code>hsl()</code> 里面的 ‘s’ 和 ‘l’ 分辨代表饱和度和亮度。饱和度代表灰色的占比，亮度代表白色和黑色的占比。这在当你有了一个基色调却需要微调时非常有用。
 </section>
 
 ## Instructions
 <section id='instructions'>
-页面的导航栏目前继承了<code>header</code>的<code>background-color</code>。改变<code>nav</code>元素的<code>background-color</code>，保留基色蓝绿色，调整它的色调和明暗使它具有 80% 的饱和度以及 25% 的亮度。
+页面的导航栏目前继承了 <code>header</code> 的 <code>background-color</code>。改变 <code>nav</code> 元素的 <code>background-color</code>，保留基色蓝绿色，调整它的色调和明暗使它具有 80% 的饱和度以及 25% 的亮度。
 </section>
 
 ## Tests
@@ -22,8 +22,8 @@ localTitle: 调整颜色的色调
 
 ```yml
 tests:
-  - text: '<code>nav</code>元素应该有一个使用<code>hsl()</code>属性调节蓝绿色调的<code>background-color</code>CSS 属性。'
-    testString: 'assert(code.match(/nav\s*?{\s*?background-color:\s*?hsl\(180,\s*?80%,\s*?25%\)/gi), ''<code>nav</code>元素应该有一个使用<code>hsl()</code>调节蓝绿色调的<code>background-color</code>CSS 属性。'');'
+  - text: '<code>nav</code> 元素应该有一个使用 <code>hsl()</code> 属性调节蓝绿色调的 <code>background-color</code> CSS 属性。'
+    testString: 'assert(code.match(/nav\s*?{\s*?background-color:\s*?hsl\(180,\s*?80%,\s*?25%\)/gi), ''<code>nav</code> 元素应该有一个使用 <code>hsl()</code> 调节蓝绿色调的 <code>background-color</code> CSS 属性。'');'
 
 ```
 

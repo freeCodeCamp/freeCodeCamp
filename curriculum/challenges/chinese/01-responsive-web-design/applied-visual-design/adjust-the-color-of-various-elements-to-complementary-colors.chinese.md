@@ -4,7 +4,7 @@ title: Adjust the Color of Various Elements to Complementary Colors
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cWmPpud'
 forumTopicId: 301033
-localTitle: 将各种元素的颜色调整为互补色
+localeTitle: 将各种元素的颜色调整为互补色
 ---
 
 ## Description
@@ -14,7 +14,7 @@ localTitle: 将各种元素的颜色调整为互补色
 
 ## Instructions
 <section id='instructions'>
-使用深青色（<code>#09A7A1</code>）做为页面主色，用其补色橙色（<code>#FF790E</code>）来装饰登录按钮。把<code>header</code>和<code>footer</code>的<code>background-color</code>从黑色改成深青色。然后把<code>h2</code>的文字<code>color</code>也改成深青色。最后，把<code>button</code>的<code>background-color</code>改成橙色。
+使用深青色（<code>#09A7A1</code>）做为页面主色，用其补色橙色（<code>#FF790E</code>）来装饰登录按钮。把 <code>header</code> 和 <code>footer</code> 的 <code>background-color</code> 从黑色改成深青色。然后把 <code>h2</code> 的文字 <code>color</code> 也改成深青色。最后，把 <code>button</code> 的 <code>background-color</code> 改成橙色。
 </section>
 
 ## Tests
@@ -22,14 +22,14 @@ localTitle: 将各种元素的颜色调整为互补色
 
 ```yml
 tests:
-  - text: '<code>header</code>元素应该有一个值为<code>#09A7A1</code>的<code>background-color</code>CSS 属性。'
-    testString: assert($('header').css('background-color') == 'rgb(9, 167, 161)', '<code>header</code>元素应该有一个值为<code>#09A7A1</code>的<code>background-color</code>CSS 属性。');
-  - text: '<code>footer</code>元素应该有一个值为<code>#09A7A1</code>的<code>background-color</code>CSS 属性。'
-    testString: assert($('footer').css('background-color') == 'rgb(9, 167, 161)', '<code>footer</code>元素应该有一个值为<code>#09A7A1</code>的<code>background-color</code>CSS 属性。');
-  - text: '<code>h2</code>元素应该有一个值为<code>#09A7A1</code>的<code>color</code>CSS 属性。'
-    testString: assert($('h2').css('color') == 'rgb(9, 167, 161)', '<code>h2</code>元素应该有一个值为<code>#09A7A1</code>的<code>color</code>CSS 属性。');
-  - text: '<code>button</code>元素应该有一个值为<code>#FF790E</code>的<code>background-color</code>CSS 属性。'
-    testString: assert($('button').css('background-color') == 'rgb(255, 121, 14)', '<code>button</code>元素应该有一个值为<code>#FF790E</code>的<code>background-color</code>CSS 属性。');
+  - text: '<code>header</code> 元素应该有一个值为 <code>#09A7A1</code> 的 <code>background-color</code> CSS 属性。'
+    testString: assert($('header').css('background-color') == 'rgb(9, 167, 161)', '<code>header</code> 元素应该有一个值为 <code>#09A7A1</code> 的 <code>background-color</code> CSS 属性。');
+  - text: '<code>footer</code> 元素应该有一个值为 <code>#09A7A1</code> 的 <code>background-color</code>CSS 属性。'
+    testString: assert($('footer').css('background-color') == 'rgb(9, 167, 161)', '<code>footer</code> 元素应该有一个值为 <code>#09A7A1</code> 的 <code>background-color</code> CSS 属性。');
+  - text: '<code>h2</code> 元素应该有一个值为 <code>#09A7A1</code> 的 <code>color</code> CSS 属性。'
+    testString: assert($('h2').css('color') == 'rgb(9, 167, 161)', '<code>h2</code> 元素应该有一个值为 <code>#09A7A1</code> 的 <code>color</code> CSS 属性。');
+  - text: '<code>button</code> 元素应该有一个值为 <code>#FF790E</code> 的 <code>background-color</code> CSS 属性。'
+    testString: assert($('button').css('background-color') == 'rgb(255, 121, 14)', '<code>button</code> 元素应该有一个值为 <code>#FF790E</code> 的 <code>background-color</code> CSS 属性。');
 
 ```
 

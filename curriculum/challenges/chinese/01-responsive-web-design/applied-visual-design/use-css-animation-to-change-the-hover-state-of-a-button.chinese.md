@@ -4,12 +4,12 @@ title: Use CSS Animation to Change the Hover State of a Button
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cg4vZAa'
 forumTopicId: 301073
-localTitle: 使用CSS动画更改按钮的悬停状态
+localeTitle: 使用CSS动画更改按钮的悬停状态
 ---
 
 ## Description
 <section id='description'>
-你可以在按钮悬停时使用<code>@keyframes</code>改变按钮的颜色。
+你可以在按钮悬停时使用 <code>@keyframes</code> 改变按钮的颜色。
 下面是在图片悬停时改变图片宽度的例子：
 
 ```html
@@ -33,8 +33,8 @@ localTitle: 使用CSS动画更改按钮的悬停状态
 
 ## Instructions
 <section id='instructions'>
-注意<code>ms</code>代表毫秒，1000ms 等于 1s。
-使用<code>@keyframes</code>来改变<code>button</code>元素的<code>background-color</code>，使其当悬停时变成<code>#4791d0</code>。<code>@keyframes</code>规则应该只有一个<code>100%</code>条目。
+注意 <code>ms</code> 代表毫秒，1000ms 等于 1s。
+使用 <code>@keyframes</code> 来改变 <code>button</code> 元素的 <code>background-color</code>，使其当悬停时变成 <code>#4791d0</code>。<code>@keyframes</code> 规则应该只有一个 <code>100%</code> 条目。
 </section>
 
 ## Tests
@@ -42,10 +42,10 @@ localTitle: 使用CSS动画更改按钮的悬停状态
 
 ```yml
 tests:
-  - text: '<code>@keyframes</code>规则的<code>animation-name</code>应该是 background-color。'
-    testString: assert(code.match(/@keyframes\s+?background-color\s*?{/g), '<code>@keyframes</code>规则的<code>animation-name</code>应该是 background-color。');
-  - text: '在<code>@keyframes</code>的<code>100%</code>条目里应该把<code>background-color</code>改成<code>#4791d0</code>。'
-    testString: 'assert(code.match(/100%\s*?{\s*?background-color:\s*?#4791d0;\s*?}/gi), ''在<code>@keyframes</code>的<code>100%</code>条目里应该把<code>background-color</code>改成<code>#4791d0</code>。'');'
+  - text: '<code>@keyframes</code> 规则的 <code>animation-name</code> 应该是 background-color。'
+    testString: assert(code.match(/@keyframes\s+?background-color\s*?{/g), '<code>@keyframes</code> 规则的 <code>animation-name</code> 应该是 background-color。');
+  - text: '在 <code>@keyframes</code> 的 <code>100%</code> 条目里应该把 <code>background-color</code> 改成 <code>#4791d0</code>。'
+    testString: 'assert(code.match(/100%\s*?{\s*?background-color:\s*?#4791d0;\s*?}/gi), ''在 <code>@keyframes</code> 的 <code>100%</code> 条目里应该把 <code>background-color</code> 改成 <code>#4791d0</code>。'');'
 
 ```
 

@@ -4,17 +4,17 @@ title: Set the font-size of Paragraph Text
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cVJ36Cr'
 forumTopicId: 301068
-localTitle: 设置段落文本的 font-size
+localeTitle: 设置段落文本的 font-size
 ---
 
 ## Description
 <section id='description'>
-CSS 里面的<code>font-size</code>属性不只限于标题，它可以应用于任何包含文字的元素内。
+CSS 里面的 <code>font-size</code> 属性不只限于标题，它可以应用于任何包含文字的元素内。
 </section>
 
 ## Instructions
 <section id='instructions'>
-把段落的<code>font-size</code>设置为 16px 让它看起来更清晰。
+把段落的 <code>font-size</code> 设置为 16px 让它看起来更清晰。
 </section>
 
 ## Tests
@@ -22,8 +22,8 @@ CSS 里面的<code>font-size</code>属性不只限于标题，它可以应用于
 
 ```yml
 tests:
-  - text: '你的<code>p</code>标签应该包含一个<code>font-size</code>属性并且值为<code>16px</code>。'
-    testString: assert($('p').css('font-size') == '16px', '你的<code>p</code>标签应该包含一个<code>font-size</code>属性并且值为<code>16px</code>。');
+  - text: '你的 <code>p</code> 标签应该包含一个 <code>font-size</code> 属性并且值为 <code>16px</code>。'
+    testString: assert($('p').css('font-size') == '16px', '你的 <code>p</code> 标签应该包含一个 <code>font-size</code> 属性并且值为 <code>16px</code>。');
 
 ```
 

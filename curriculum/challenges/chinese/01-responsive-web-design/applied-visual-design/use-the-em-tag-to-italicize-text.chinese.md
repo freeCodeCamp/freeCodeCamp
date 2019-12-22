@@ -4,18 +4,18 @@ title: Use the em Tag to Italicize Text
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cVJRBtp'
 forumTopicId: 301078
-localTitle: 使用 em 标签强调文本
+localeTitle: 使用 em 标签强调文本
 ---
 
 ## Description
 <section id='description'>
 术语：emphasis => em => 强调。
-你可以使用<code>em</code>标签来强调文本。由于浏览器会自动给元素应用<code>font-style: italic;</code>，所以文本会显示为斜体。
+你可以使用 <code>em</code> 标签来强调文本。由于浏览器会自动给元素应用 <code>font-style: italic;</code>，所以文本会显示为斜体。
 </section>
 
 ## Instructions
 <section id='instructions'>
-在<code>p</code>标签里面嵌套<code>em</code>标签来强调文本。
+在 <code>p</code> 标签里面嵌套 <code>em</code> 标签来强调文本。
 </section>
 
 ## Tests
@@ -23,10 +23,10 @@ localTitle: 使用 em 标签强调文本
 
 ```yml
 tests:
-  - text: '你应该添加一个<code>em</code>标签。'
-    testString: assert($('em').length == 1, '你应该添加一个<code>em</code>标签。');
-  - text: '<code>em</code>标签应该嵌套在<code>p</code>标签里面。'
-    testString: assert($('p').children().length == 1 && $('em').children().length == 2, '<code>em</code>标签应该嵌套在<code>p</code>标签里面。');
+  - text: '你应该添加一个 <code>em</code> 标签。'
+    testString: assert($('em').length == 1, '你应该添加一个 <code>em</code> 标签。');
+  - text: '<code>em</code> 标签应该嵌套在 <code>p</code> 标签里面。'
+    testString: assert($('p').children().length == 1 && $('em').children().length == 2, '<code>em</code> 标签应该嵌套在 <code>p</code> 标签里面。');
 
 ```
 
