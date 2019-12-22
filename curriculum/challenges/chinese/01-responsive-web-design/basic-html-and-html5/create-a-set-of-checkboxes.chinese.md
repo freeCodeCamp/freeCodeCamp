@@ -10,7 +10,7 @@ localeTitle: 创建一组复选框
 ## Description
 <section id='description'>
 <code>checkboxes</code>（复选框）就好比多项选择题，正确答案有多个。
-复选框是<code>input</code>输入框的另一种类型。
+复选框是<code>input</code>选择框的另一种类型。
 每一个复选框都应该嵌套在它自己的<code>label</code>（标签）元素中。
 所有关联的复选框应该拥有相同的<code>name</code>属性。
 最佳实践是在<code>label</code>元素上设置<code>for</code>属性，让其值与复选框的<code>id</code>属性值相等，这样就在<code>label</code>元素和它的子元素复选框之间创建了一种链接关系。例如：
@@ -20,7 +20,7 @@ localeTitle: 创建一组复选框
 
 ## Instructions
 <section id='instructions'>
-给表单添加三个复选框，每个复选框都被嵌套进<code>label</code>元素中，并且它的<code>name</code>属性均为<code>personality</code>。
+给表单添加三个复选框，每个复选框都被嵌套进<code>label</code>元素中，并且它的<code>name</code>属性均为<code>personality</code>，它们的内容可以随意指定。
 </section>
 
 ## Tests

@@ -9,8 +9,7 @@ localeTitle: 给单选按钮和复选框添加默认选中项
 
 ## Description
 <section id='description'>
-通过添加<code>checked</code>属性，你可以设置某个单选按钮或多选按钮被默认选中。
-为此，只需给<code>input</code>元素添加 "checked" 属性。 例如:
+如果想设置某个单选按钮或多选按钮默认被选中，只需给<code>input</code>元素添加 "checked" 属性。 例如:
 <code>&#60;input type="radio" name="test-name" checked&#62;</code>
 </section>
 

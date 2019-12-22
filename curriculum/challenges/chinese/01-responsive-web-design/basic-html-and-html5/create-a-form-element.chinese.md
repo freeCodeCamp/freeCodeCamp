@@ -9,7 +9,7 @@ localeTitle: 创建一个表单
 
 ## Description
 <section id='description'>
-通过给<code>form</code>表单添加一个<code>action</code>属性，你可以使用纯 HTML 来构建向服务器提交数据的 Web 表单。
+如果想使用 HTML 向服务器提交数据，可以给<code>form</code>添加<code>action</code>属性。
 例如:
 <code>&#60;form action="/url-where-you-want-to-submit-form-data"&#62;&#60;/form&#62;</code>
 </section>

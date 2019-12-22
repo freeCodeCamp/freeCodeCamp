@@ -26,7 +26,7 @@ HTML 有一个特定的元素用于创建有序列表<code>ordered lists（缩�
 
 ## Instructions
 <section id='instructions'>
-创建一个有序列表，内容是猫咪最讨厌的三件东西。
+创建一个有序列表，内容是猫咪最讨厌的三件东西，内容可以任意指定。
 </section>
 
 ## Tests

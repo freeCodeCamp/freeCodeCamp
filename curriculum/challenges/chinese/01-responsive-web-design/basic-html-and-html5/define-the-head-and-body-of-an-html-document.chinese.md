@@ -4,7 +4,7 @@ title: Define the Head and Body of an HTML Document
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cra9bfP'
 forumTopicId: 301096
-localeTitle: 定义 HTML 文档的标题和正文
+localeTitle: 定义 HTML 文档的 head 和 body
 ---
 
 ## Description

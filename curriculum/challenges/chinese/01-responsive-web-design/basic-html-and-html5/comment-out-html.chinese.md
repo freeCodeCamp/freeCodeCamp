@@ -15,7 +15,7 @@ localeTitle: 给 HTML 添加注释
 
 ## Instructions
 <section id='instructions'>
-任务：<code>h1</code>元素和<code>p</code>元素都注释掉，<code>h2</code>元素保留。
+任务：注释掉<code>h1</code>元素和<code>p</code>元素，保留<code>h2</code>元素。
 </section>
 
 ## Tests

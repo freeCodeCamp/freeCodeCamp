@@ -9,7 +9,7 @@ localeTitle: 用占位符文本填充空白
 
 ## Description
 <section id='description'>
-Web 开发者通常用<a href='http://www.ruanyifeng.com/blog/2009/04/lorem_ipsum.html'>lorem ipsum text</a>来做占位符，占位符就是占着位置的一些文字，没有实际意义。
+Web 开发者通常用<a href='https://baike.baidu.com/item/Lorem%20ipsum/3684081'>lorem ipsum text</a>来做占位符，占位符就是占着位置的一些文字，没有实际意义。
 为什么叫<code>lorem ipsum text</code>呢?是因为<code>lorem ipsum</code>是古罗马西塞罗谚语的前两个单词。
 从公元16世纪开始<code>lorem ipsum text</code>就被当做占位符了，这种传统延续到了互联网时代。与此同时，孙悟空也在五指山下被压了500年，然后就进化成程序猿了，是不是很巧合。^_^
 </section>

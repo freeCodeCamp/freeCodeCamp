@@ -16,7 +16,7 @@ localeTitle: 给输入框添加占位符文本
 
 ## Instructions
 <section id='instructions'>
-把<code>input</code>输入框的<code>placeholder</code>占位符文本设置为 "猫咪图片地址"。
+把<code>input</code>输入框的<code>placeholder</code>占位符文本设置为 “猫咪图片地址”。
 </section>
 
 ## Tests
@@ -26,7 +26,7 @@ localeTitle: 给输入框添加占位符文本
 tests:
   - text: '给现有的<code>input</code>输入框添加一个<code>placeholder</code>属性。'
     testString: assert($("input[placeholder]").length > 0);
-  - text: '设置<code>placeholder</code>属性的值为 "猫咪图片地址"。'
+  - text: '设置<code>placeholder</code>属性的值为 ”猫咪图片地址“。'
     testString: assert($("input") && $("input").attr("placeholder") && $("input").attr("placeholder").match(/猫咪图片地址/gi));
   - text: '<code>input</code>输入框的语法必须正确。'
     testString: 'assert($("input[type=text]").length > 0 && code.match(/<input((\s+\w+(\s*=\s*(?:".*?"|''.*?''|[\^''">\s]+))?)+\s*|\s*)\/?>/gi));'

@@ -10,7 +10,7 @@ localeTitle: 创建一组单选按钮
 ## Description
 <section id='description'>
 <code>radio buttons</code>（单选按钮）就好比单项选择题，正确答案只有一个。
-单选按钮只是<code>input</code>输入框的一种类型。
+单选按钮是<code>input</code>选择框的一种类型。
 每一个单选按钮都应该嵌套在它自己的<code>label</code>（标签）元素中。
 所有关联的单选按钮应该拥有相同的<code>name</code>属性。
 下面是一个单选按钮的例子：
@@ -33,7 +33,7 @@ localeTitle: 创建一组单选按钮
 
 ## Instructions
 <section id='instructions'>
-给表单添加两个单选按钮，一个叫<code>indoor</code>，另一个叫<code>outdoor</code>。
+给表单添加两个单选按钮，一个叫<code>indoor</code>，另一个叫<code>outdoor</code>，单选按钮的 <code>name</code> 为 <code>indoor-outdoor</code>。
 </section>
 
 ## Tests

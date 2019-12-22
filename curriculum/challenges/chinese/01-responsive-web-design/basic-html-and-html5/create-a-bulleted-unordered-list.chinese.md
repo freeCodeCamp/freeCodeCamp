@@ -25,7 +25,7 @@ HTML 有一个特定的元素用于创建无序列表<code>unordered lists（缩
 
 ## Instructions
 <section id='instructions'>
-删除页面底部的两个<code>p</code>元素，然后在底部创建一个无序列表，其中包含猫咪最喜欢的三件东西。
+删除页面底部的两个<code>p</code>元素，然后在底部创建一个无序列表，其中包含你认为猫咪最喜欢的三件东西。
 </section>
 
 ## Tests
