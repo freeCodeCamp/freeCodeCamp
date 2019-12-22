@@ -9,14 +9,14 @@ localeTitle: Evita Problemas de Daltonismo Usando Suficiente Contraste
 ## Descripción
 <section id="description"> El color es una parte muy importante del diseño visual, pero su uso presenta dos problemas de accesibilidad. Primero, no debe usarse solo el color como la única forma de transmitir información importante porque los lectores de pantalla no pueden detectarlo. En segundo lugar, los colores de fondo y de primer plano necesitan el contraste suficiente para que los usuarios con daltonismo los puedan distinguir. 
   
-Los desafíos anteriores cubren alternativas para el primer problema. El último desafío introdujo herramientas de comprobación de contraste para ayudar a resolver el segundo. La WCAG recomienda una proporción de contraste de 4.5:1, aplica tanto para uso con colores como para uso con escala de grises.
+Los desafíos anteriores cubren alternativas para el primer problema. El último desafío introdujo herramientas de comprobación de contraste para ayudar a resolver el segundo. La  proporción de contraste de 4.5:1 recomendada por la WCAG aplica tanto para su uso con colores como para su uso con escala de grises.
 
-Los usuarios con daltonismo tienen problemas para distinguir algunos colores de otros, usualmente en el matíz pero también puede suceder con el brillo. Tal vez recuerdes que el contraste se calcula usando los valores del brillo relativo del color de fondo y del color en el primer plano. 
+Los usuarios con daltonismo tienen problemas para distinguir algunos colores de otros, usualmente en el matiz pero también puede suceder con el brillo. Tal vez recuerdes que el contraste se calcula usando los valores del brillo relativo del color de fondo y del color en el primer plano. 
 
 En la práctica la proporción de 4.5:1 puede obtenerse oscureciendo el color más oscuro y aclarando el más claro con la ayuda de una herramienta de comprobación de contraste. Los colores más oscuros en la rueda de colores son los azules, violetas, magentas y rojos, mientras que los colores más claros son los naranjas, amarillos, verdes y verde-azules. </section>
 
 ## Instrucciones
-<section id="instructions"> Gato camper está experimentando con el uso de color de fondo y color de texto de su blog, pero su combinación actual de un color de fondo verdoso <code>background-color</code> con un color de texto marrón <code>color</code> tiene una proporción de 2.5:1 de contraste.  Puedes ajustar fácilmente el brillo de los colores gracias a que usó la propiedad CSS <code>hsl()</code> para declararlos modificando el valor del tercer argumento (hsl viene de: hue, saturation, lightness. Que significa: matiz, saturación, brillo). Aumenta el brillo del <code>background-color</code> de 35% a 55%, y reduce el brillo del <code>color</code> de 20% a 15%. Esto mejora la proporción de contraste a 5.9:1. </section>
+<section id="instructions"> Camper Cat está experimentando con el uso de color de fondo y color de texto de su blog, pero su combinación actual de un color de fondo verdoso <code>background-color</code> con un color de texto marrón <code>color</code> tiene una proporción de 2.5:1 de contraste. Puedes ajustar fácilmente el brillo de los colores ya que usó la propiedad CSS <code>hsl()</code> para declararlos modificando el valor del tercer argumento (hsl viene de: hue, saturation, lightness; en español, matiz, saturación y brillo). Aumenta el brillo del <code>background-color</code> de 35% a 55%, y reduce el brillo del <code>color</code> de 20% a 15%. Esto mejorará la proporción de contraste a 5.9:1. </section>
 
 ## Tests
 <section id='tests'>
@@ -48,12 +48,12 @@ tests:
 </head>
 <body>
   <header>
-    <h1>Deep Thoughts with Master Camper Cat</h1>
+    <h1>Pensamientos profundos con el maestro Camper Cat</h1>
   </header>
   <article>
-    <h2>A Word on the Recent Catnip Doping Scandal</h2>
-    <p>The influence that catnip has on feline behavior is well-documented, and its use as an herbal supplement in competitive ninja circles remains controversial. Once again, the debate to ban the substance is brought to the public's attention after the high-profile win of Kittytron, a long-time proponent and user of the green stuff, at the Claw of Fury tournament.</p>
-    <p>As I've stated in the past, I firmly believe a true ninja's skills must come from within, with no external influences. My own catnip use shall continue as purely recreational.</p>
+    <h2>Unas Palabras sobre el Reciente Escándalo de Doping de Catnip</h2>
+    <p>La influencia que tiene el catnip sobre el comportamiento felino ha sido bien documentada, y su uso como suplemento herbario en círculos ninja de competición sigue siendo controvertido aún hoy en día. Una vez más, el debate sobre la prohibición de la sustancia se ha presentado en la opinión pública luego de la gran victoria de Kittytron, acérrimo defensor y consumidor de la sustancia verde, en el Torneo de la Garra de la Furia.</p>
+    <p>Como ya me he pronunciado en el pasado, creo firmemente que las habilidades de un verdades ninja deben venir de su interior, sin ninguna influencia externa. Mi consumo personal de catnip es y seguirá siendo puramente recreativo.</p>
   </article>
 </body>
 
@@ -69,6 +69,7 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+// solución requerida
 ```
+
 </section>

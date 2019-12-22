@@ -7,7 +7,7 @@ localeTitle: Haga que la navegación del lector de pantalla sea más fácil con 
 ---
 
 ## Description
-<section id="description"> El siguiente elemento HTML5 que agrega un significado semántico y mejora la accesibilidad es la etiqueta del <code>header</code> . Se usa para envolver información introductoria o enlaces de navegación para su etiqueta principal, y funciona bien con el contenido que se repite en la parte superior de varias páginas. <code>header</code> comparte la característica de hito incorporada que vio con <code>main</code> , permitiendo que las tecnologías de asistencia naveguen rápidamente hacia ese contenido. <strong>Nota</strong> <br> <code>header</code> está diseñado para su uso en la etiqueta del <code>body</code> de su documento HTML. Esto es diferente al elemento de <code>head</code> , que contiene el título de la página, metainformación, etc. </section>
+<section id="description"> El siguiente elemento HTML5 que agrega un significado semántico y mejora la accesibilidad es la etiqueta del <code>header</code> . Se usa para envolver información introductoria o enlaces de navegación para su etiqueta principal, y funciona bien con el contenido que se repite en la parte superior de varias páginas. El <code>header</code> comparte la característica de hito incorporada que vio con <code>main</code> , permitiendo que las tecnologías de asistencia naveguen rápidamente hacia ese contenido. <strong>Nota</strong> <br> <code>header</code> está diseñado para su uso en la etiqueta del <code>body</code> de su documento HTML. Esto es diferente al elemento de <code>head</code> , que contiene el título de la página, metainformación, etc. </section>
 
 ## Instructions
 <section id="instructions"> Camper Cat está escribiendo algunos artículos geniales sobre el entrenamiento de ninja y desea agregar una página para ellos en su sitio. Cambie la <code>div</code> superior que actualmente contiene el <code>h1</code> a una etiqueta de <code>header</code> . </section>
@@ -75,6 +75,7 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+// solución requerida
 ```
+
 </section>

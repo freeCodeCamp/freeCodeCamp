@@ -42,7 +42,7 @@ tests:
   </header>
   <main>
     <section>
-      <h2>Encuesta para el Toneo de Mortal Kombat</h2>
+      <h2>Encuesta para el Torneo de Mortal Kombat</h2>
       <form>
         <p>Indicanos la mejor fecha para esta competencia</p>
         <label for="pickdate">Fecha preferida:</label>
@@ -72,6 +72,7 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+// solución requerida
 ```
+
 </section>
