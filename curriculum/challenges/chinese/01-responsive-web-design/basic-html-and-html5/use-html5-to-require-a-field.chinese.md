@@ -10,13 +10,12 @@ localeTitle: 给表单添加一个必填字段
 ## Description
 <section id='description'>
 当你设计表单时，你可以指定某些字段为必填项(required)，只有当用户填写了该字段后，才可以提交表单。
-如果你想把文本输入框设置为必填项，在<code>input</code>元素中加上required属性就可以了，例如：<code>&#60;input type="text" required&#62;</code>
+如果你想把文本输入框设置为必填项，在<code>input</code>元素中加上 required 属性就可以了，例如：<code>&#60;input type="text" required&#62;</code>
 </section>
 
 ## Instructions
 <section id='instructions'>
-确保<code>input</code>元素中有<code>required</code>属性，否则无法提交表单。
-试试输入框不填写任何文本，直接点击<code>Submit</code>按钮提交表单，看看浏览器是如何提示的。
+给<code>input</code>元素加上<code>required</code>属性，这样用户就必须先在输入框里填入内容，然后才可以提交表单。
 </section>
 
 ## Tests

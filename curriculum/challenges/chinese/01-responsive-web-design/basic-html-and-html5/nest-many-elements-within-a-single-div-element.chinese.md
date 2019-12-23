@@ -9,7 +9,7 @@ localeTitle: 元素嵌套
 
 ## Description
 <section id='description'>
-<code>div</code>元素，也叫division（层）元素，是一个盛装其他元素的通用容器。
+<code>div</code>元素，也叫 Content Division Element（内容划分元素）元素，是一个包裹其他元素的通用容器。
 它也是 HTML 中出现频率最高的元素。
 和其他普通元素一样，你可以用<code>&#60;div&#62;</code>来标记一个<code>div</code>元素的开始，用<code>&#60;/div&#62;</code>来标记一个<code>div</code>元素的结束。
 </section>
@@ -17,7 +17,7 @@ localeTitle: 元素嵌套
 ## Instructions
 <section id='instructions'>
 把无序列表、有序列表和段落都嵌套进同一个<code>div</code>元素。
-提示：试着在第一个<code>&#60p&#62</code>之前插入<code>div</code>开始标记，在<code>&#60/ol&#62</code>之后插入<code>div</code>结束标记，这样，所有的列表都位于<code>div</code>之内。
+提示：你可以在第一个<code>&#60p&#62</code>之前插入<code>div</code>开始标记，在<code>&#60/ol&#62</code>之后插入<code>div</code>结束标记，这样，所有的列表都位于<code>div</code>之内。
 </section>
 
 ## Tests

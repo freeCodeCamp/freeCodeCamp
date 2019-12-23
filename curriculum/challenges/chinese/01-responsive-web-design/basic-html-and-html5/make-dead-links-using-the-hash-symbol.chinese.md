@@ -4,18 +4,18 @@ title: Make Dead Links Using the Hash Symbol
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cMdkytL'
 forumTopicId: 18230
-localeTitle: '用 # 号来创建固定链接'
+localeTitle: '用 # 号来创建链接占位符'
 ---
 
 ## Description
 <section id='description'>
-有时你想为网站添加一个锚点，但如果你还不确定要将它链接到哪儿，这时可以使用固定链接。
+有时你想为网站添加一个 <code>a</code>，但如果你还不确定要将它链接到哪儿，这时可以使用链接占位符。
 在后面的课程中我们会学到：如何轻松通过<code>JavaScript</code>更改链接指向的地址。
 </section>
 
 ## Instructions
 <section id='instructions'>
-<code>href</code>属性的当前值是指向 "http://freecatphotoapp.com"，将<code>href</code>属性的值替换为<code>#</code>，也称为井号，就可以创建固定链接。
+<code>href</code>属性的当前值是指向 "http://freecatphotoapp.com"，将<code>href</code>属性的值替换为<code>#</code>，就可以创建固定链接。
 例如: <code>href="#"</code>
 </section>
 
@@ -24,7 +24,7 @@ localeTitle: '用 # 号来创建固定链接'
 
 ```yml
 tests:
-  - text: '锚点的<code>href</code>属性应为 "#"。'
+  - text: ' <code>a</code> 的<code>href</code>属性应为 "#"。'
     testString: assert($("a").attr("href") === "#");
 
 ```
@@ -39,7 +39,7 @@ tests:
 ```html
 <h2>CatPhotoApp</h2>
 <main>
-  <p>点击这里可以获取更多<a href="http://freecatphotoapp.com" target="_blank">猫图</a>。</p>
+  <p>点击这里可以获取更多<a href="http://freecatphotoapp.com" target="_blank">猫咪图片</a>。</p>
   
   <img src="https://bit.ly/fcc-relaxing-cat" alt="一只仰卧着的萌猫">
   

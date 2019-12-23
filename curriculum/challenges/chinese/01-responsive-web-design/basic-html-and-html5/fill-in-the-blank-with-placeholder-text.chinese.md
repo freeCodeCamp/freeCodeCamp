@@ -16,7 +16,7 @@ Web 开发者通常用<a href='https://baike.baidu.com/item/Lorem%20ipsum/368408
 
 ## Instructions
 <section id='instructions'>
-把<code>p</code>元素的内容更换为：<code>Monkey code 猴哥猴哥，你真了不得，金箍棒在手，问世间谁是英雄。</code>
+把<code>p</code>元素的内容更换为：<code>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</code>
 </section>
 
 ## Tests

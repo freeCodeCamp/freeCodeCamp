@@ -10,7 +10,7 @@ localeTitle: 向 HTML 元素问好
 ## Description
 <section id='description'>
 欢迎参加 freeCodeCamp 的编程挑战赛，这些挑战将会帮助你逐步掌握 Web 开发。
-HTML 是英文 Hyper Text Markup Language（超文本标记语言）的缩写。首先，使用 HTML 来制作一个简单的网页，你可以直接在网页内置的代码编辑器中编辑代码。
+HTML 是英文 Hyper Text Markup Language（超文本标记语言）的缩写。首先，我们来用 HTML 制作一个简单的网页，你可以直接在网页内置的代码编辑器中编辑代码。
 你看到代码编辑器中的<code>&#60;h1&#62;Hello&#60;/h1&#62;</code>了吗? 那就是一个 HTML 元素。
 大部分 HTML 元素都有一个<code>开始标记</code>和一个<code>结束标记</code>。
 开始标记像这样：<code>&#60;h1&#62;</code>

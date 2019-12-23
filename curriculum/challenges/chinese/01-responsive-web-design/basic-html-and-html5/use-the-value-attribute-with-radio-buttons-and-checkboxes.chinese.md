@@ -8,7 +8,7 @@ localeTitle: 使用单选框和复选框的 value 属性
 
 ## Description
 <section id='description'>
-当表单提交时，所有的数据会发送到服务端。包括 options 的已选值。<code>radio</code> 和 <code>checkbox</code> 取其 <code>value</code> 属性的值。
+当表单提交时，包括 options 已选值在内的数据会发送给服务端。<code>radio</code>和<code>checkbox</code>的<code>value</code>值决定了发送到服务端的实际内容。
 
 例如：
 
@@ -28,7 +28,7 @@ localeTitle: 使用单选框和复选框的 value 属性
 
 ## Instructions
 <section id='instructions'>
-给每一个 <code>radio</code> 和 <code>checkbox</code> 输入框指定 <code>value</code> 属性。使用 input 标签文字，转换为小写，作为 value 的值。
+给每一个<code>radio</code>和<code>checkbox</code>输入框添加<code>value</code>属性。请把每个<code>input</code>对应的<code>label</code>文本转换为小写（如 Outdoor 应转换为 outdoor），设置其为 value 的值（即 <code>value="outdoor"</code>）。
 </section>
 
 ## Tests
@@ -97,34 +97,6 @@ tests:
 
 ```html
 // solution required
-<h2>CatPhotoApp</h2>
-<main>
-  <p>点击查看更多<a href="#">猫咪照片</a>。</p>
-  
-  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="一个可爱的橘猫躺在地上"></a>
-  
-  <p>猫咪最喜欢的三件东西：</p>
-  <ul>
-    <li>猫薄荷</li>
-    <li>激光笔</li>
-    <li>千层饼</li>
-  </ul>
-  <p>猫咪最讨厌的三件东西：</p>
-  <ol>
-    <li>跳蚤</li>
-    <li>打雷</li>
-    <li>同类</li>
-  </ol>
-  <form action="/submit-cat-photo">
-    <label><input type="radio" name="indoor-outdoor" value="indoor"> Indoor</label>
-    <label><input type="radio" name="indoor-outdoor" value="outdoor"> Outdoor</label><br>
-    <label><input type="checkbox" name="personality" value="loving"> Loving</label>
-    <label><input type="checkbox" name="personality" value="lazy"> Lazy</label>
-    <label><input type="checkbox" name="personality" value="energetic"> Energetic</label><br>
-    <input type="text" placeholder="cat photo URL" required>
-    <button type="submit">Submit</button>
-  </form>
-</main>
 ```
 
 </section>

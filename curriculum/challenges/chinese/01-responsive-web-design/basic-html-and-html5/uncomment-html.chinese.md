@@ -10,13 +10,13 @@ localeTitle: 去除 HTML 的注释
 ## Description
 <section id='description'>
 注释的作用是给代码添加一些说明，方便团队合作或日后自己查看，但又不影响代码本身。
-注释也可以用来在不删除代码的前提下，让代码不起作用。
+注释的另一个用途就是在不删除代码的前提下，让代码不起作用。
 在 HTML 中，注释的开始标记是<code>&#60;!--</code>，结束标记是<code>--&#62;</code>。
 </section>
 
 ## Instructions
 <section id='instructions'>
-现在我们反其道而行之，干掉<code>h1</code>元素、<code>h2</code>元素、<code>p</code>元素的注释。
+现在我们反其道而行之，去掉<code>h1</code>元素、<code>h2</code>元素、<code>p</code>元素的注释。
 </section>
 
 ## Tests
@@ -48,7 +48,7 @@ tests:
 
 <h2>CatPhotoApp</h2>
 
-<p>Monkey code 猴哥猴哥，你真了不得，金箍棒在手，问世间谁是英雄。</p>
+<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
 -->
 ```
 

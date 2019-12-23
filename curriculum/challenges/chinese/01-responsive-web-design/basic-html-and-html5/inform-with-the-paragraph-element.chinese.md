@@ -9,7 +9,7 @@ localeTitle: 用 p 元素代表段落
 
 ## Description
 <section id='description'>
-<code>p</code>是<code>paragraph</code>的缩写，通常被用来创建一个段落，就和你写作文一样。
+<code>p</code>是<code>paragraph</code>的缩写，通常用来创建一个段落，就和你写作文一样。
 你可以像这样创建一个段落：
 <code>&#60;p&#62;I'm a p tag!&#60;/p&#62;</code>
 </section>

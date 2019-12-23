@@ -9,15 +9,15 @@ localeTitle: 给图片添加链接
 
 ## Description
 <section id='description'>
-你可以通过把元素嵌套进锚点里使其变成一个链接。
-把你的图片嵌套进锚点。举例如下：
+你可以通过把元素嵌套进 <code>a</code> 里使其变成一个链接。
+把你的图片嵌套进 <code>a</code> 。举例如下：
 <code>&#60;a href="#"&#62;&#60;img src="http://cdn.freecodecamp.cn/running-cats.jpg" alt="三只萌萌的小猫"&#62;&#60;/a&#62;</code>
-把锚点的<code>href</code>属性设置为<code>#</code>，就可以创建固定链接。
+把 <code>a</code> 的<code>href</code>属性设置为<code>#</code>，就可以创建固定链接。
 </section>
 
 ## Instructions
 <section id='instructions'>
-把现存的图片嵌套进锚点中。
+把现存的图片嵌套进 <code>a</code> 中。
 当鼠标悬停在图片上时，鼠标的光标如果从箭头指针变成手形指针，那么此时图片就是一个链接了。
 </section>
 
@@ -26,11 +26,11 @@ localeTitle: 给图片添加链接
 
 ```yml
 tests:
-  - text: '把现存的图片嵌套进锚点中。'
+  - text: '把现存的图片嵌套进 <code>a</code> 中。'
     testString: assert($("a").children("img").length > 0);
-  - text: '锚点的<code>href</code>属性应为<code>#</code>。'
+  - text: ' <code>a</code> 的<code>href</code>属性应为<code>#</code>。'
     testString: assert(new RegExp("#").test($("a").children("img").parent().attr("href")));
-  - text: '确保每个锚点都有结束标记。'
+  - text: '确保每个 <code>a</code> 都有结束标记。'
     testString: assert(code.match(/<\/a>/g) && code.match(/<a/g) && code.match(/<\/a>/g).length === code.match(/<a/g).length);
 
 ```
