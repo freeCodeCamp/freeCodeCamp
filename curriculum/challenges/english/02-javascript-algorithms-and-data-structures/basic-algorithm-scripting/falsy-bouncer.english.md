@@ -30,10 +30,8 @@ tests:
     testString: assert.deepEqual(bouncer(["a", "b", "c"]), ["a", "b", "c"]);
   - text: <code>bouncer([false, null, 0, NaN, undefined, ""])</code> should return <code>[]</code>.
     testString: assert.deepEqual(bouncer([false, null, 0, NaN, undefined, ""]), []);
-  - text: <code>bouncer([1, null, NaN, 2, undefined])</code> should return <code>[1, 2]</code>.
-    testString: assert.deepEqual(bouncer([1, null, NaN, 2, undefined]), [1, 2]);
-  - text: <code>bouncer(["", NaN, true, 0, 1])</code> should return <code>[true,1]</code>. 
-    testString: assert.deepEqual(bouncer(["", NaN, true, 0, 1]),[true,1])
+  - text: <code>bouncer([null, NaN, 1, 2, undefined])</code> should return <code>[1, 2]</code>.
+    testString: assert.deepEqual(bouncer([null, NaN, 1, 2, undefined]), [1, 2]);
 ```
 
 </section>
