@@ -13,7 +13,7 @@ localeTitle: Получите данные геолокации, чтобы на
 
 ## Instructions
 <section id='instructions'>
-Add the example code inside the <code>script</code> tags to check a user's current location and insert it into the HTML.
+Добавьте образец кода в тег <code>script</code> для проверки геолокации пользователя и вставки полученного значения в HTML.
 </section>
 
 ## Tests
@@ -21,13 +21,13 @@ Add the example code inside the <code>script</code> tags to check a user's curre
 
 ```yml
 tests:
-  - text: Your code should use <code>navigator.geolocation</code> to access the user&#39;s current location.
+  - text: Ваш код должен использовать <code>navigator.geolocation</code> для доступа к текущей локации user&#39;s.
     testString: assert(code.match(/navigator\.geolocation\.getCurrentPosition/g));
-  - text: Your code should use <code>position.coords.latitude</code> to display the user&#39;s latitudinal location.
+  - text: Ваш код должен использовать <code>position.coords.latitude</code> для отображения широты геолокации user&#39;s.
     testString: assert(code.match(/position\.coords\.latitude/g));
-  - text: Your code should use <code>position.coords.longitude</code> to display the user&#39;s longitudinal location.
+  - text: Ваш код должен использовать <code>position.coords.longitude</code> для отображения широты долготы user&#39;s.
     testString: assert(code.match(/position\.coords\.longitude/g));
-  - text: You should display the user&#39;s position within the <code>data</code> div element.
+  - text: Вы должны отобразить геолокацию user&#39;s с помощью div-элемента <code>data</code>.
     testString: assert(code.match(/document\.getElementById\(\s*?('|")data\1\s*?\)\.innerHTML/g));
 
 ```
