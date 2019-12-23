@@ -8,13 +8,13 @@ localeTitle: Помощники поискового запроса цепочк
 
 ## Description
 <section id='description'>
-Если вы не передадите обратный вызов в качестве последнего аргумента для Model.find () (или для других методов поиска), запрос не будет выполнен. Вы можете сохранить запрос в переменной для дальнейшего использования. Этот тип объекта позволяет создавать запрос с использованием синтаксиса цепочки. Фактический поиск в БД выполняется, когда вы, наконец, связываете метод .exec (). Передайте обратный вызов этому последнему методу. Есть много помощников запросов, здесь мы будем использовать самые «известные». 
+Если вы не передадите обратный вызов в качестве последнего аргумента для Model.find()(или для других методов поиска), запрос не будет выполнен. Вы можете сохранить запрос в переменной для дальнейшего использования. Этот тип объекта позволяет создавать запрос с использованием синтаксиса цепочки. Фактический поиск в БД выполняется, когда вы, наконец, связываете метод .exec(). Передайте обратный вызов этому последнему методу. Есть много помощников запросов, здесь мы будем использовать самые «известные». 
 Найди людей которые любят «буррито». Сортируйте их по имени, ограничьте результаты двумя документами и скройте их возраст. Цепочка .find (), .sort (), .limit (), .select (), а затем .exec (). Передайте обратный вызов done (err, data) в exec ().
 </section>
 
 ## Instructions
 <section id='instructions'>
-Find people who like <code>burrito</code>. Sort them by name, limit the results to two documents, and hide their age. Chain <code>.find()</code>, <code>.sort()</code>, <code>.limit()</code>, <code>.select()</code>, and then <code>.exec()</code>. Pass the <code>done(err, data)</code> callback to <code>exec()</code>.
+Найди людей которые любят <code>burrito</code>. Сортируйте их по имени, ограничьте результаты двумя документами и скройте их возраст. Цепочка <code>.find()</code>, <code>.sort()</code>, <code>.limit()</code>, <code>.select()</code>, а затем <code>.exec()</code>. Передайте обратный вызов <code>done(err, data)</code> в <code>exec()</code>.
 </section>
 
 ## Tests
@@ -22,7 +22,7 @@ Find people who like <code>burrito</code>. Sort them by name, limit the results 
 
 ```yml
 tests:
-  - text: Chaining query helpers should succeed
+  - text: Помощники цепочки запросов должны быть успешными
     testString: 'getUserInput => $.ajax({url: getUserInput(''url'') + ''/_api/query-tools'', type: ''POST'', contentType:''application/json'', data: JSON.stringify([{name: ''Pablo'', age: 26, favoriteFoods: [''burrito'', ''hot-dog'']}, {name: ''Bob'', age: 23, favoriteFoods: [''pizza'', ''nachos'']}, {name: ''Ashley'', age: 32, favoriteFoods: [''steak'', ''burrito'']}, {name: ''Mario'', age: 51, favoriteFoods: [''burrito'', ''prosciutto'']} ]) }).then(data => { assert.isArray(data, ''the response should be an Array''); assert.equal(data.length, 2, ''the data array length is not what expected''); assert.notProperty(data[0], ''age'', ''The returned first item has too many properties''); assert.equal(data[0].name, ''Ashley'', ''The returned first item name is not what expected''); assert.notProperty(data[1], ''age'', ''The returned second item has too many properties''); assert.equal(data[1].name, ''Mario'', ''The returned second item name is not what expected'');}, xhr => { throw new Error(xhr.responseText); })'
 
 ```
