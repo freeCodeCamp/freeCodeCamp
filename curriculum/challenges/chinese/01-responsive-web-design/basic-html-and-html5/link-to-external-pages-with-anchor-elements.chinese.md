@@ -10,14 +10,14 @@ localeTitle: 用 a 实现网页间的跳转
 ## Description
 <section id='description'>
 你可以用 <code>a</code>（Anchor，简写 a）来实现网页间的跳转。
- <code>a</code> 需要一个<code>href</code>属性指向目的地，它还需要有 <code>a</code> 文本，例如：
+<code>a</code> 需要一个<code>href</code>属性指向目的地，它还需要有 <code>a</code> 文本，例如：
 <code>&#60;a href="https://freecodecamp.org">传送至 freecodecamp.org&#60;/a&#62;</code>
 然后你的浏览器会显示一个可以点击的文本，点击该文本就会跳转到<code>https://freecodecamp.org</code>。
 </section>
 
 ## Instructions
 <section id='instructions'>
-创建一个 <code>a</code> ，它的<code>href</code>属性为<code>http://freecatphotoapp.com</code> ，它的文本为<code>cat photos</code>。
+创建一个 <code>a</code>，它的<code>href</code>属性为<code>http://freecatphotoapp.com</code> ，它的文本为<code>cat photos</code>。
 </section>
 
 ## Tests

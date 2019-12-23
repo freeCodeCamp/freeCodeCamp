@@ -9,8 +9,8 @@ localeTitle: 用 a 实现网页内部跳转
 
 ## Description
 <section id='description'>
- <code>a</code> 同样也可以用来在网页内不同区域的跳转。
-<code>a</code>元素还可以用来实现页面内不同区域的跳转，只需要把<code>a</code>元素的<code>href</code>值设置为井号<code>#</code>加欲跳转区域对应的<code>id</code>值即可。<code>id</code>是描述网页元素的一个属性，它的值在整个页面中唯一。
+<code>a</code> 同样也可以用来在网页内不同区域的跳转。
+<code>a</code> 元素还可以用来实现页面内不同区域的跳转，只需要把<code>a</code>元素的<code>href</code>值设置为井号<code>#</code>加欲跳转区域对应的<code>id</code>值即可。<code>id</code>是描述网页元素的一个属性，它的值在整个页面中唯一。
 下面是用来创建内部 <code>a</code> 的例子：
 
 ```html
@@ -25,7 +25,7 @@ localeTitle: 用 a 实现网页内部跳转
 ## Instructions
 <section id='instructions'>
 通过修改<code>href</code>属性为<code>#footer</code>来更改外部链接为内部链接，同时修改文本<code>cat photos</code>为<code>Jump to Bottom</code>。
-移除target="_blank"属性，它会使得链接在新标签页中打开。
+移除 target="_blank" 属性，它会使得链接在新标签页中打开。
 然后添加一个<code>&lt;footer&gt;</code>元素，它的<code>id</code>值为<code>footer</code>。
 </section>
 
@@ -38,11 +38,11 @@ tests:
     testString: assert($('a').length == 1);
   - text: '页面中应该只有一个<code>footer</code>元素。'
     testString: assert($('footer').length == 1);
-  - text: ' <code>a</code> 的<code>href</code>属性应为 "#footer"。'
+  - text: '<code>a</code> 的<code>href</code>属性应为 "#footer"。'
     testString: assert($('a').eq(0).attr('href') == "#footer");
-  - text: ' <code>a</code> 不应该有<code>target</code>属性。'
+  - text: '<code>a</code> 不应该有<code>target</code>属性。'
     testString: assert(typeof $('a').eq(0).attr('target') == typeof undefined || $('a').eq(0).attr('target') == true);
-  - text: ' <code>a</code> 的文本应为<code>Jump to Bottom</code>。'
+  - text: '<code>a</code> 的文本应为<code>Jump to Bottom</code>。'
     testString: assert($('a').eq(0).text().match(/Jump to Bottom/gi));
   - text: '<code>footer</code>元素的<code>id</code>属性应为 "footer"。'
     testString: assert($('footer').eq(0).attr('id') == "footer");

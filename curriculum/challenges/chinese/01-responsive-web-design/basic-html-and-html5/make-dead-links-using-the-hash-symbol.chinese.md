@@ -24,7 +24,7 @@ localeTitle: '用 # 号来创建链接占位符'
 
 ```yml
 tests:
-  - text: ' <code>a</code> 的<code>href</code>属性应为 "#"。'
+  - text: '<code>a</code> 的<code>href</code>属性应为 "#"。'
     testString: assert($("a").attr("href") === "#");
 
 ```
