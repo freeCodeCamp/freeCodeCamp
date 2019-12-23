@@ -176,14 +176,6 @@ li.disabled > a {
   }
 }
 
-.donation-icon-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 40px;
-}
-
 .donation-icon {
   width: 150px;
   height: auto;
@@ -205,33 +197,79 @@ li.disabled > a {
   }
 }
 
-.donation-modal p {
-  text-align: center;
-  font-weight: 700;
-  font-size: 1.1rem;
-}
-
-.donation-modal .modal-title {
-  text-align: center;
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-
 .donation-modal .btn-link:focus {
   outline-width: 1px;
   outline-style: solid;
 }
 
-@media screen and (max-width: 991px) {
+.donation-modal .modal-title {
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.donation-modal p,
+.donation-modal b {
+  text-align: center;
+  font-size: 1rem;
+}
+
+.donation-icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 30px;
+}
+
+.form-payments-wrapper {
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 15px;
+  height: auto;
+}
+
+.form-payment-methods {
+  height: 20px;
+  width: 200px;
+}
+
+@media screen and (min-width: 355px) {
+  .form-payment-methods {
+    height: 30px;
+    width: 300px;
+  }
+}
+
+@media screen and (min-width: 991px) {
+  .form-payments-wrapper {
+    justify-content: flex-end;
+    margin-top: 0;
+    height: 39px;
+  }
+  .donate-page-wrapper .form-payment-methods {
+    height: 22px;
+    width: 220px;
+  }
   .donation-icon-container {
-    margin: 30px;
+    margin: 40px;
   }
+
   .donation-modal p {
-    font-weight: 400;
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
+
   .donation-modal .modal-title {
-    font-weight: 600;
-    font-size: 1.2rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .donate-page-wrapper .form-payment-methods {
+    height: 25px;
+    width: 250px;
   }
 }

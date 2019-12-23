@@ -58,16 +58,25 @@ function DonateModal({ show, block, isBlockDonation, closeDonationModal }) {
   if (show) {
     ga.modalview('/donation-modal');
   }
+
+  const donationText = (
+    <b>
+      Become a supporter and help us create even more learning resources for
+      you.
+    </b>
+  );
   const blockDonationText = (
     <div className='block-modal-text'>
       <div className='donation-icon-container'>
         <Cup className='donation-icon' />
       </div>
       <Row>
-        <Col sm={10} smOffset={1} xs={12}>
-          <p>Nicely done. You just completed {blockNameify(block)}.</p>
-          <p>Help us create even more learning resources like this.</p>
-        </Col>
+        {!closeLabel && (
+          <Col sm={10} smOffset={1} xs={12}>
+            <b>Nicely done. You just completed {blockNameify(block)}.</b>
+            {donationText}
+          </Col>
+        )}
       </Row>
     </div>
   );
@@ -78,29 +87,24 @@ function DonateModal({ show, block, isBlockDonation, closeDonationModal }) {
         <Heart className='donation-icon' />
       </div>
       <Row>
-        <Col sm={10} smOffset={1} xs={12}>
-          <p>
-            Help us create even more learning resources for you and your family.
-          </p>
-        </Col>
+        {!closeLabel && (
+          <Col sm={10} smOffset={1} xs={12}>
+            {donationText}
+          </Col>
+        )}
       </Row>
     </div>
   );
 
   return (
     <Modal bsSize='lg' className='donation-modal' show={show}>
-      <Modal.Header className='fcc-modal'>
-        <Modal.Title className='modal-title text-center'>
-          <strong>Become a Supporter</strong>
-        </Modal.Title>
-      </Modal.Header>
       <Modal.Body>
         {isBlockDonation ? blockDonationText : progressDonationText}
         <Spacer />
         <MinimalDonateForm showCloseBtn={showCloseBtn} />
         <Spacer />
         <Row>
-          <Col sm={10} smOffset={1} xs={12}>
+          <Col sm={4} smOffset={4} xs={8} xsOffset={2}>
             <Button
               block={true}
               bsSize='sm'
@@ -109,7 +113,7 @@ function DonateModal({ show, block, isBlockDonation, closeDonationModal }) {
               onClick={closeDonationModal}
               tabIndex='0'
             >
-              {closeLabel ? 'Close.' : 'Ask me later.'}
+              {closeLabel ? 'Close' : 'Ask me later'}
             </Button>
           </Col>
         </Row>

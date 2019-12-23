@@ -76,7 +76,7 @@ export class DonatePage extends Component {
     return (
       <Fragment>
         <Helmet title='Support our nonprofit | freeCodeCamp.org' />
-        <Grid>
+        <Grid className='donate-page-wrapper'>
           <Spacer />
           <Row>
             <Col sm={10} smOffset={1} xs={12}>
