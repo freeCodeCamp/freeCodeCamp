@@ -9,6 +9,7 @@ import TimelinePagination from './TimelinePagination';
 import { FullWidthRow } from '../../helpers';
 import SolutionViewer from '../../settings/SolutionViewer';
 import { getCertIds, getPathFromID, getTitleFromId } from '../utils';
+import CertificationIcon from '../../../assets/icons/CertificationIcon';
 
 // Items per page in timeline.
 const ITEMS_PER_PAGE = 15;
@@ -80,13 +81,17 @@ class TimelineInner extends Component {
     return (
       <tr className='timeline-row' key={id}>
         <td>
-          <Link
-            to={
-              certPath ? `certification/${username}/${certPath}` : challengePath
-            }
-          >
-            {challengeTitle}
-          </Link>
+          {certPath ? (
+            <Link
+              className='timeline-cert-link'
+              to={`certification/${username}/${certPath}`}
+            >
+              {challengeTitle}
+              <CertificationIcon />
+            </Link>
+          ) : (
+            <Link to={challengePath}>{challengeTitle}</Link>
+          )}
         </td>
         <td className='text-center'>
           <time dateTime={format(completedDate, 'YYYY-MM-DDTHH:MM:SSZ')}>
