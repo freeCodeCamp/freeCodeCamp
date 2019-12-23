@@ -17,10 +17,10 @@ localeTitle: Tamanho suas imagens
 
 ```yml
 tests:
-  - text: Seu elemento <code>img</code> deve ter a classe <code>smaller-image</code> .
-    testString: 'assert($("img[src="https://bit.ly/fcc-relaxing-cat"]").attr("class") === "smaller-image", "Your <code>img</code> element should have the class <code>smaller-image</code>.");'
+  - text: Seu elemento <code>img</code> deveria ter a classe <code>smaller-image</code>.
+    testString: assert($("img[src='https://bit.ly/fcc-relaxing-cat']").attr('class') === "smaller-image");
   - text: Sua imagem deve ter 100 pixels de largura. O zoom do navegador deve estar em 100%.
-    testString: 'assert($("img").width() === 100, "Your image should be 100 pixels wide. Browser zoom should be at 100%.");'
+    testString: assert($("img").width() === 100);
 
 ```
 
@@ -94,4 +94,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>
