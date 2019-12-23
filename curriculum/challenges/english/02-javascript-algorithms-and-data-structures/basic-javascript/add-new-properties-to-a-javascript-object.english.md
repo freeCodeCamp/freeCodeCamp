@@ -26,9 +26,9 @@ Add a <code>"bark"</code> property to <code>myDog</code> and set it to a dog sou
 
 ```yml
 tests:
-  - text: Add the property <code>"bark"</code> to <code>myDog</code>.
+  - text: You should add the property <code>"bark"</code> to <code>myDog</code>.
     testString: assert(myDog.bark !== undefined);
-  - text: Do not add <code>"bark"</code> to the setup section
+  - text: You should not add <code>"bark"</code> to the setup section.
     testString: assert(!/bark[^\n]:/.test(code));
 
 ```

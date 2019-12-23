@@ -7,7 +7,7 @@ forumTopicId: 301455
 
 ## Description
 <section id='description'>
-In Sass, a <code>mixin</code> is a group of CSS declarations that can be reused throughout the style sheet.
+In Sass, a <dfn>mixin</dfn> is a group of CSS declarations that can be reused throughout the style sheet.
 Newer CSS features take time before they are fully adopted and ready to use in all browsers. As features are added to browsers, CSS rules using them may need vendor prefixes. Consider "box-shadow":
 
 ```scss
@@ -20,7 +20,7 @@ div {
 ```
 
 It's a lot of typing to re-write this rule for all the elements that have a <code>box-shadow</code>, or to change each value to test different effects.
-<code>Mixins</code> are like functions for CSS. Here is how to write one:
+Mixins are like functions for CSS. Here is how to write one:
 
 ```scss
 @mixin box-shadow($x, $y, $blur, $c){ 
@@ -32,7 +32,7 @@ It's a lot of typing to re-write this rule for all the elements that have a <cod
 ```
 
 The definition starts with <code>@mixin</code> followed by a custom name. The parameters (the <code>$x</code>, <code>$y</code>, <code>$blur</code>, and <code>$c</code> in the example above) are optional.
-Now any time a <code>box-shadow</code> rule is needed, only a single line calling the <code>mixin</code> replaces having to type all the vendor prefixes. A <code>mixin</code> is called with the <code>@include</code> directive:
+Now any time a <code>box-shadow</code> rule is needed, only a single line calling the mixin replaces having to type all the vendor prefixes. A mixin is called with the <code>@include</code> directive:
 
 ```scss
 div {
@@ -44,7 +44,7 @@ div {
 
 ## Instructions
 <section id='instructions'>
-Write a <code>mixin</code> for <code>border-radius</code> and give it a <code>$radius</code> parameter. It should use all the vendor prefixes from the example. Then use the <code>border-radius</code> <code>mixin</code> to give the <code>#awesome</code> element a border radius of 15px.
+Write a mixin for <code>border-radius</code> and give it a <code>$radius</code> parameter. It should use all the vendor prefixes from the example. Then use the <code>border-radius</code> mixin to give the <code>#awesome</code> element a border radius of 15px.
 </section>
 
 ## Tests
@@ -52,7 +52,7 @@ Write a <code>mixin</code> for <code>border-radius</code> and give it a <code>$r
 
 ```yml
 tests:
-  - text: Your code should declare a <code>mixin</code> named <code>border-radius</code> which has a parameter named <code>$radius</code>.
+  - text: Your code should declare a mixin named <code>border-radius</code> which has a parameter named <code>$radius</code>.
     testString: assert(code.match(/@mixin\s+?border-radius\s*?\(\s*?\$radius\s*?\)\s*?{/gi));
   - text: Your code should include the <code>-webkit-border-radius</code> vender prefix that uses the <code>$radius</code> parameter.
     testString: assert(code.match(/-webkit-border-radius:\s*?\$radius;/gi));

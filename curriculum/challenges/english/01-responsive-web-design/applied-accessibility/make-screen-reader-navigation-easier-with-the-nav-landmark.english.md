@@ -28,7 +28,7 @@ tests:
     testString: assert($('nav').children('ul').length == 1);
   - text: Your code should not have any <code>div</code> tags.
     testString: assert($('div').length == 0);
-  - text: Make sure your <code>nav</code> element has a closing tag.
+  - text: Your <code>nav</code> element should have a closing tag.
     testString: assert(code.match(/<\/nav>/g) && code.match(/<\/nav>/g).length === code.match(/<nav>/g).length);
 
 ```

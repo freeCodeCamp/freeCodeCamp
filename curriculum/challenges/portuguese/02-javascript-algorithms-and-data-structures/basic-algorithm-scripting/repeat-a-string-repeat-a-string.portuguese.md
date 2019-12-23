@@ -8,7 +8,7 @@ localeTitle: Repetir uma String Repetir uma String
 ---
 
 ## Description
-<section id="description"> Repetir uma string <code>str</code> (primeiro argumento) para <code>num</code> times (segundo argumento). Retorna uma string vazia se <code>num</code> não for um número positivo. Lembre-se de usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Escreva seu próprio código. </section>
+<section id="description"> Repetir uma string <code>str</code> (primeiro argumento) para <code>num</code> times (segundo argumento). Retorna uma string vazia se <code>num</code> não for um número positivo. Lembre-se de usar <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Escreva seu próprio código. </section>
 
 ## Instructions
 <section id="instructions">

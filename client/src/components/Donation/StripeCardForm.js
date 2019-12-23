@@ -1,21 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {
-  CardNumberElement,
-  CardExpiryElement,
-  CardCVCElement
-} from 'react-stripe-elements';
+import { CardNumberElement, CardExpiryElement } from 'react-stripe-elements';
 import { ControlLabel, FormGroup } from '@freecodecamp/react-bootstrap';
 
-import '../Donation.css';
-
 const propTypes = {
-  getValidationState: PropTypes.func.isRequired
+  getValidationState: PropTypes.func.isRequired,
+  theme: PropTypes.string
 };
 
 const style = {
   base: {
-    color: '#0a0a23',
     fontSize: '18px'
   }
 };
@@ -31,10 +25,6 @@ class StripeCardForm extends Component {
           error: null
         },
         cardExpiry: {
-          complete: false,
-          error: null
-        },
-        cardCvc: {
           complete: false,
           error: null
         }
@@ -74,6 +64,8 @@ class StripeCardForm extends Component {
   }
 
   render() {
+    // set color based on theme
+    style.base.color = this.props.theme === 'night' ? '#fff' : '#0a0a23';
     return (
       <div className='donation-elements'>
         <FormGroup>
@@ -87,14 +79,6 @@ class StripeCardForm extends Component {
         <FormGroup>
           <ControlLabel>Your Card Expiration Month:</ControlLabel>
           <CardExpiryElement
-            className='form-control donate-input-element'
-            onChange={this.handleInputChange}
-            style={style}
-          />
-        </FormGroup>
-        <FormGroup>
-          <ControlLabel>Your Card CVC (3-digit security number):</ControlLabel>
-          <CardCVCElement
             className='form-control donate-input-element'
             onChange={this.handleInputChange}
             style={style}

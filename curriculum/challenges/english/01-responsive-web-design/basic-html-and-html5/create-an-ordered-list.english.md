@@ -8,7 +8,7 @@ forumTopicId: 16824
 
 ## Description
 <section id='description'>
-HTML has another special element for creating <code>ordered lists</code>, or numbered lists.
+HTML has another special element for creating <dfn>ordered lists</dfn>, or numbered lists.
 Ordered lists start with an opening <code>&#60;ol&#62;</code> element, followed by any number of <code>&#60;li&#62;</code> elements. Finally, ordered lists are closed with the <code>&#60;/ol&#62;</code> tag.
 
 For example:
@@ -45,11 +45,11 @@ tests:
     testString: assert.equal($("ul li").length, 3);
   - text: You should have three <code>li</code> elements within your <code>ol</code> element.
     testString: assert.equal($("ol li").length, 3);
-  - text: Make sure your <code>ul</code> element has a closing tag.
+  - text: Your <code>ul</code> element should have a closing tag.
     testString: assert(code.match(/<\/ul>/g) && code.match(/<\/ul>/g).length === code.match(/<ul>/g).length);
-  - text: Make sure your <code>ol</code> element has a closing tag.
+  - text: Your <code>ol</code> element should have a closing tag.
     testString: assert(code.match(/<\/ol>/g) && code.match(/<\/ol>/g).length === code.match(/<ol>/g).length);
-  - text: Make sure your <code>li</code> element has a closing tag.
+  - text: Your <code>li</code> element should have a closing tag.
     testString: assert(code.match(/<\/li>/g) && code.match(/<li>/g) && code.match(/<\/li>/g).length === code.match(/<li>/g).length);
   - text: The <code>li</code> elements in your unordered list should not be empty.
     testString: $('ul li').each((i, val) => assert(val.textContent.replace(/\s/g, '')));

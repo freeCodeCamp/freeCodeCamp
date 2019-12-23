@@ -9,9 +9,9 @@ forumTopicId: 18276
 ## Description
 <section id='description'>
 Welcome to freeCodeCamp's HTML coding challenges. These will walk you through web development step-by-step.
-First, you'll start by building a simple web page using HTML. You can edit <code>code</code> in your <code>code editor</code>, which is embedded into this web page.
-Do you see the code in your code editor that says <code>&#60;h1&#62;Hello&#60;/h1&#62;</code>? That's an HTML <code>element</code>.
-Most HTML elements have an <code>opening tag</code> and a <code>closing tag</code>.
+First, you'll start by building a simple web page using HTML. You can edit code in your code editor, which is embedded into this web page.
+Do you see the code in your code editor that says <code>&#60;h1&#62;Hello&#60;/h1&#62;</code>? That's an HTML element.
+Most HTML elements have an opening tag and a closing tag.
 Opening tags look like this:
 <code>&#60;h1&#62;</code>
 Closing tags look like this:

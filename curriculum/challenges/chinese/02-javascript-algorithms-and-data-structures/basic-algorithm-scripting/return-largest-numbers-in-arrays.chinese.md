@@ -8,7 +8,7 @@ localeTitle: 返回数组中的最大数字
 ---
 
 ## Description
-<section id="description">返回一个数组，该数组由每个提供的子数组中的最大数字组成。为简单起见，提供的数组将包含4个子数组。请记住，您可以使用简单的for循环遍历数组，并使用数组语法<code>arr[i]</code>访问每个成员。如果卡住，请记得使用<a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> 。编写自己的代码。 </section>
+<section id="description">返回一个数组，该数组由每个提供的子数组中的最大数字组成。为简单起见，提供的数组将包含4个子数组。请记住，您可以使用简单的for循环遍历数组，并使用数组语法<code>arr[i]</code>访问每个成员。如果卡住，请记得使用<a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> 。编写自己的代码。 </section>
 
 ## Instructions
 <section id="instructions">

@@ -9,7 +9,7 @@ forumTopicId: 301336
 <section id='description'>
 Since <code>numLegs</code> will probably have the same value for all instances of <code>Bird</code>, you essentially have a duplicated variable <code>numLegs</code> inside each <code>Bird</code> instance.
 This may not be an issue when there are only two instances, but imagine if there are millions of instances. That would be a lot of duplicated variables.
-A better way is to use <code>Bird’s</code> <code>prototype</code>. The <code>prototype</code> is an object that is shared among ALL instances of <code>Bird</code>. Here's how to add <code>numLegs</code> to the <code>Bird prototype</code>:
+A better way is to use <code>Bird’s</code> <code>prototype</code>. Properties in the <code>prototype</code> are shared among ALL instances of <code>Bird</code>. Here's how to add <code>numLegs</code> to the <code>Bird prototype</code>:
 
 ```js
 Bird.prototype.numLegs = 2;
@@ -25,6 +25,7 @@ console.log(canary.numLegs);  // prints 2
 Since all instances automatically have the properties on the <code>prototype</code>, think of a <code>prototype</code> as a "recipe" for creating objects.
 Note that the <code>prototype</code> for <code>duck</code> and <code>canary</code> is part of the <code>Bird</code> constructor as <code>Bird.prototype</code>. Nearly every object in JavaScript has a <code>prototype</code> property which is part of the constructor function that created it.
 </section>
+
 
 ## Instructions
 <section id='instructions'>

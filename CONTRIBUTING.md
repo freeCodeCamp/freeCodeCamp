@@ -9,7 +9,7 @@ Hello. 👋
 
 freeCodeCamp.org is possible, thanks to thousands of kind volunteers like you. We are grateful for your contributions and are excited to welcome you aboard.
 
-We strictly enforce our ["Code of Conduct"](https://www.freecodecamp.org/code-of-conduct). Please take a moment to read it. It's only 196 words long.
+We strictly enforce our ["Code of Conduct"](https://www.freecodecamp.org/code-of-conduct). Please take a moment to read it. It takes only two minutes to read.
 
 Happy contributing.
 
@@ -25,7 +25,7 @@ You can contribute to any of these:
 
 ## Contribute to this open-source codebase
 
-Our codebase has thousands of [coding challenges](https://learn.freecodecamp.org) and other source code that power our learning platform.
+Our codebase has thousands of [coding challenges](https://www.freecodecamp.org/learn/) and other source code that power our learning platform.
 
 ### Create, update and fix bugs in our coding challenges
 
@@ -56,6 +56,28 @@ Essentially, we expect basic familiarity with some of the aforementioned technol
 (Starts a ready-to-code dev environment for freecodecamp in your browser.)
 
 ## Frequently Asked Questions
+
+### Where are the Guide articles (guide.freecodecamp.org)? How can I contribute to them?
+
+We will not have the general guide articles anymore. Instead we intend to publish these as tutorials that are curated by the editorial team. These would then be published by them on the Developer News.
+
+The challenge hints and articles will still be available on the forum which we have already migrated.
+
+### Can I translate freeCodeCamp's curriculum?
+
+We do intend to make the curriculum available in more languages, right now we do not have a timeline for this.
+
+We will begin by making the curriculum available in *Chinese* first. This will help us understand the caveats and the streamline the development workflows. China is one of the largest demographic regions in terms of our non-english audience. It is hence an ideal candiate for the internationalization (i18n). We currently have hundreds of thousands of users using an old version of the platform.
+
+The next languages to follow would be *Arabic, Portuguese, Russian and Spanish* in no particular order. For Portuguese and Spanish we will focus on Latin America as our target demographic region based on the audience we have.
+
+While you may work on the translations, we are unable to launch them until later next year, other than Chinese which is tentatively planned for a early 2020 release.
+
+We **may** accept pull requests (high quality human translations only), depending on a case to case basis.
+
+### Can I translate freeCodeCamp's codebase documentation?
+
+You are welcome to translate freeCodeCamp's codebase documentation into any language of your choice or improve and update the currently translated guidelines.
 
 ### How can I report a bug that is not on board?
 

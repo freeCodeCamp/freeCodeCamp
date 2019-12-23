@@ -1,4 +1,5 @@
 import { toString, flow } from 'lodash';
+import { format } from '../../../utils/format';
 
 // we use two different frames to make them all essentially pure functions
 // main iframe is responsible rendering the preview and is where we proxy the
@@ -11,17 +12,20 @@ const testId = 'fcc-test-frame';
 // append to the current challenge url
 // this also allows in-page anchors to work properly
 // rather than load another instance of the learn
-//
-// if an error occurs during initialization
-// the __err prop will be set
-// This is then picked up in client/frame-runner.js during
-// runTestsInTestFrame below
+
+// window.onerror is added here to report any errors thrown during the building
+// of the frame.  React dom errors already appear in the console, so onerror
+// does not need to pass them on to the default error handler.
 const createHeader = (id = mainId) => `
   <base href='' />
   <script>
     window.__frameId = '${id}';
-    window.onerror = function(msg, url, ln, col, err) {
-      window.__err = err;
+    window.onerror = function(msg) {
+      var string = msg.toLowerCase();
+      if (string.includes('script error')) {
+        msg = 'Build error, open your browser console to learn more.';
+      }
+      console.log(msg);
       return true;
     };
     document.addEventListener('click', function(e) {
@@ -83,21 +87,14 @@ const mountFrame = document => ({ element, ...rest }) => {
 const buildProxyConsole = proxyLogger => ctx => {
   const oldLog = ctx.window.console.log.bind(ctx.window.console);
   ctx.window.console.log = function proxyConsole(...args) {
-    proxyLogger(args.map(arg => '' + JSON.stringify(arg)).join(' '));
+    proxyLogger(args.map(arg => format(arg)).join(' '));
     return oldLog(...args);
   };
   return ctx;
 };
 
 const initTestFrame = frameReady => ctx => {
-  const contentLoaded = new Promise(resolve => {
-    if (ctx.document.readyState === 'loading') {
-      ctx.document.addEventListener('DOMContentLoaded', resolve);
-    } else {
-      resolve();
-    }
-  });
-  contentLoaded.then(async () => {
+  waitForFrame(ctx).then(async () => {
     const { sources, loadEnzyme } = ctx;
     // default for classic challenges
     // should not be used for modern
@@ -108,6 +105,38 @@ const initTestFrame = frameReady => ctx => {
     frameReady();
   });
   return ctx;
+};
+
+const initMainFrame = (frameReady, proxyLogger) => ctx => {
+  waitForFrame(ctx).then(() => {
+    // Overwriting the onerror added by createHeader to catch any errors thrown
+    // after the frame is ready. It has to be overwritten, as proxyLogger cannot
+    // be added as part of createHeader.
+    ctx.window.onerror = function(msg) {
+      var string = msg.toLowerCase();
+      if (string.includes('script error')) {
+        msg = 'Error, open your browser console to learn more.';
+      }
+      if (proxyLogger) {
+        proxyLogger(msg);
+      }
+      // let the error propagate so it appears in the browser console, otherwise
+      // an error from a cross origin script just appears as 'Script error.'
+      return false;
+    };
+    frameReady();
+  });
+  return ctx;
+};
+
+const waitForFrame = ctx => {
+  return new Promise(resolve => {
+    if (ctx.document.readyState === 'loading') {
+      ctx.document.addEventListener('DOMContentLoaded', resolve);
+    } else {
+      resolve();
+    }
+  });
 };
 
 function writeToFrame(content, frame) {
@@ -122,18 +151,17 @@ const writeContentToFrame = ctx => {
   return ctx;
 };
 
-export const createMainFramer = document =>
-  flow(
-    createFrame(document, mainId),
-    mountFrame(document),
-    writeContentToFrame
-  );
+export const createMainFramer = (document, frameReady, proxyLogger) =>
+  createFramer(document, frameReady, proxyLogger, mainId, initMainFrame);
 
-export const createTestFramer = (document, frameReady, proxyConsole) =>
+export const createTestFramer = (document, frameReady, proxyLogger) =>
+  createFramer(document, frameReady, proxyLogger, testId, initTestFrame);
+
+const createFramer = (document, frameReady, proxyLogger, id, init) =>
   flow(
-    createFrame(document, testId),
+    createFrame(document, id),
     mountFrame(document),
+    buildProxyConsole(proxyLogger),
     writeContentToFrame,
-    buildProxyConsole(proxyConsole),
-    initTestFrame(frameReady)
+    init(frameReady, proxyLogger)
   );

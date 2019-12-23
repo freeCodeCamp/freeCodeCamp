@@ -14,8 +14,9 @@ Then, loop through the JSON, adding HTML to the variable that wraps the key name
 Here's the code that does this:
 
 ```js
+let html = "";
 json.forEach(function(val) {
-  var keys = Object.keys(val);
+  const keys = Object.keys(val);
   html += "<div class = 'cat'>";
   keys.forEach(function(key) {
     html += "<strong>" + key + "</strong>: " + val[key] + "<br>";
@@ -24,6 +25,7 @@ json.forEach(function(val) {
 });
 ```
 
+<strong>Note:</strong> For this challenge, you need to add new HTML elements to the page, so you cannot rely on `textContent`. Instead, you need to use `innerHTML`, which can make a site vulnerable to Cross-site scripting attacks.
 </section>
 
 ## Instructions
@@ -68,24 +70,24 @@ tests:
 
 ```html
 <script>
-  document.addEventListener('DOMContentLoaded',function(){
-    document.getElementById('getMessage').onclick=function(){
-      req=new XMLHttpRequest();
+  document.addEventListener('DOMContentLoaded', function(){
+    document.getElementById('getMessage').onclick = function(){
+      const req = new XMLHttpRequest();
       req.open("GET",'/json/cats.json',true);
       req.send();
-      req.onload=function(){
-        json=JSON.parse(req.responseText);
-        var html = "";
+      req.onload = function(){
+        const json = JSON.parse(req.responseText);
+        let html = "";
         // Add your code below this line
 
 
-
         // Add your code above this line
-        document.getElementsByClassName('message')[0].innerHTML=html;
+        document.getElementsByClassName('message')[0].innerHTML = html;
       };
     };
   });
 </script>
+
 <style>
   body {
     text-align: center;
@@ -112,8 +114,9 @@ tests:
     border: 1px solid #0F5897;
   }
 </style>
+
 <h1>Cat Photo Finder</h1>
-<p class="message">
+<p class="message box">
   The message will go here
 </p>
 <p>
@@ -125,15 +128,73 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    document.getElementById('getMessage').onclick = function(){
+      const req = new XMLHttpRequest();
+      req.open("GET",'/json/cats.json',true);
+      req.send();
+      req.onload = function(){
+        const json = JSON.parse(req.responseText);
+        let html = "";
+        // Add your code below this line
+        json.forEach(function(val) {
+          var keys = Object.keys(val);
+          html += "<div class = 'cat'>";
+          keys.forEach(function(key) {
+          html += "<strong>" + key + "</strong>: " + val[key] + "<br>";
+        });
+        html += "</div><br>";
+        });
+        // Add your code above this line
+        document.getElementsByClassName('message')[0].innerHTML = html;
+      };
+    };
+  });
+</script>
+
+<style>
+  body {
+    text-align: center;
+    font-family: "Helvetica", sans-serif;
+  }
+  h1 {
+    font-size: 2em;
+    font-weight: bold;
+  }
+  .box {
+    border-radius: 5px;
+    background-color: #eee;
+    padding: 20px 5px;
+  }
+  button {
+    color: white;
+    background-color: #4791d0;
+    border-radius: 5px;
+    border: 1px solid #4791d0;
+    padding: 5px 10px 8px 10px;
+  }
+  button:hover {
+    background-color: #0F5897;
+    border: 1px solid #0F5897;
+  }
+</style>
+
+<h1>Cat Photo Finder</h1>
+<p class="message">
+  The message will go here
+</p>
+<p>
+  <button id="getMessage">
+    Get Message
+  </button>
+</p>
 ```
 
 </section>

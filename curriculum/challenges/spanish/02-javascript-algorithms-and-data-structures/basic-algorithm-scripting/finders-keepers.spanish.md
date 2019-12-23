@@ -8,7 +8,7 @@ localeTitle: Buscadores guardianes
 ---
 
 ## Description
-<section id="description"> Cree una función que examine una matriz (primer argumento) y devuelva el primer elemento de la matriz que pase una prueba de verdad (segundo argumento). Si ningún elemento pasa la prueba, devuelva indefinido. Recuerda usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> si te atascas. Trate de emparejar el programa. Escribe tu propio código. </section>
+<section id="description"> Cree una función que examine una matriz (primer argumento) y devuelva el primer elemento de la matriz que pase una prueba de verdad (segundo argumento). Si ningún elemento pasa la prueba, devuelva indefinido. Recuerda usar <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> si te atascas. Trate de emparejar el programa. Escribe tu propio código. </section>
 
 ## Instructions
 <section id="instructions">

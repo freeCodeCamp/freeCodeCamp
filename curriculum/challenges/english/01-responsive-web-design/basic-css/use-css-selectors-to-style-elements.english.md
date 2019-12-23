@@ -8,9 +8,9 @@ forumTopicId: 18349
 
 ## Description
 <section id='description'>
-With CSS, there are hundreds of CSS <code>properties</code> that you can use to change the way an element looks on your page.
-When you entered <code>&#60;h2 style="color: red;"&#62;CatPhotoApp&#60;/h2&#62;</code>, you were styling that individual <code>h2</code> element with <code>inline CSS</code>, which stands for <code>Cascading Style Sheets</code>.
-That's one way to specify the style of an element, but there's a better way to apply <code>CSS</code>.
+With CSS, there are hundreds of CSS properties that you can use to change the way an element looks on your page.
+When you entered <code>&#60;h2 style="color: red;"&#62;CatPhotoApp&#60;/h2&#62;</code>, you were styling that individual <code>h2</code> element with inline CSS, which stands for Cascading Style Sheets.
+That's one way to specify the style of an element, but there's a better way to apply CSS.
 At the top of your code, create a <code>style</code> block like this:
 
 ```html
@@ -18,7 +18,7 @@ At the top of your code, create a <code>style</code> block like this:
 </style>
 ```
 
-Inside that style block, you can create a <code>CSS selector</code> for all <code>h2</code> elements. For example, if you wanted all <code>h2</code> elements to be red, you would add a style rule that looks like this:
+Inside that style block, you can create a <dfn>CSS selector</dfn> for all <code>h2</code> elements. For example, if you wanted all <code>h2</code> elements to be red, you would add a style rule that looks like this:
 
 ```html
 <style>
@@ -41,15 +41,15 @@ Delete your <code>h2</code> element's style attribute, and instead create a CSS 
 
 ```yml
 tests:
-  - text: Remove the style attribute from your <code>h2</code> element.
+  - text: The style attribute should be removed from your <code>h2</code> element.
     testString: assert(!$("h2").attr("style"));
-  - text: Create a <code>style</code> element.
+  - text: You should create a <code>style</code> element.
     testString: assert($("style") && $("style").length >= 1);
   - text: Your <code>h2</code> element should be blue.
     testString: assert($("h2").css("color") === "rgb(0, 0, 255)");
-  - text: Ensure that your stylesheet <code>h2</code> declaration is valid with a semicolon and closing brace.
+  - text: Your stylesheet <code>h2</code> declaration should be valid with a semicolon and closing brace.
     testString: assert(code.match(/h2\s*\{\s*color\s*:.*;\s*\}/g));
-  - text: Make sure all your <code>style</code> elements are valid and have a closing tag.
+  - text: All your <code>style</code> elements should be valid and have closing tags.
     testString: assert(code.match(/<\/style>/g) && code.match(/<\/style>/g).length === (code.match(/<style((\s)*((type|media|scoped|title|disabled)="[^"]*")?(\s)*)*>/g) || []).length);
 
 ```

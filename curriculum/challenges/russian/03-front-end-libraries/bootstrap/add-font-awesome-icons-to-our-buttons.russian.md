@@ -6,17 +6,19 @@ required:
     raw: true
 challengeType: 0
 forumTopicId: 16638
-localeTitle: Добавить шрифт Удивительные значки на наши кнопки
+localeTitle: Добавить иконки Font Awesome к вашим кнопкам
 ---
 
 ## Description
 <section id='description'>
-Font Awesome - удобная библиотека икон. Эти значки являются векторной графикой, хранящейся в формате <code>.svg</code> файла. Эти значки обрабатываются так же, как шрифты. Вы можете указать их размер с помощью пикселей, и они будут предполагать размер шрифта своих родительских элементов HTML. Вы можете включить Font Awesome в любое приложение, добавив следующий код в начало вашего HTML: <code>&lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css&quot; integrity=&quot;sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+&quot; crossorigin=&quot;anonymous&quot;&gt;</code> В этом случае мы уже добавили его для вас на эту страницу за кулисами. Элемент <code>i</code> изначально использовался, чтобы сделать другие элементы курсивом, но теперь он обычно используется для значков. Вы можете добавить классы Font Awesome к элементу <code>i</code> чтобы превратить его в значок, например: <code>&lt;i class=&quot;fa fa-info-circle&quot;&gt;&lt;/i&gt;</code> Обратите внимание, что элемент <code>span</code> также подходит для использования с значками , Используйте Font Awesome, чтобы добавить значок <code>thumbs-up</code> в вашу кнопку, предоставив ему элемент <code>i</code> с классами <code>fa</code> и <code>fa-thumbs-up</code> ; обязательно сохраните текст «Like» рядом с значком.
+Font Awesome - удобная библиотека иконок. Эти значки являются векторной графикой, хранящейся в формате <code>.svg</code> файла и  обрабатываются так же, как шрифты. Вы можете указать их размер с помощью пикселей, и они будут предполагать размер шрифта своих родительских элементов HTML. Вы можете включить Font Awesome в любое приложение, добавив следующий код в начало вашего HTML: <code>&lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css&quot; integrity=&quot;sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+&quot; crossorigin=&quot;anonymous&quot;&gt;</code> В этом случае мы уже добавили его для вас на эту страницу. Элемент <code>i</code> изначально использовался, чтобы сделать другие элементы курсивом, но теперь он обычно используется для иконок. Вы можете добавить классы Font Awesome к элементу <code>i</code> чтобы превратить его в иконку, например: <code>&lt;i class=&quot;fa fa-info-circle&quot;&gt;&lt;/i&gt;</code> Обратите внимание, что элемент <code>span</code> также подходит для использования с иконками.
 </section>
 
 ## Instructions
 <section id='instructions'>
-Используйте Font Awesome для добавления иконки <code>thumbs-up</code> к вашей кнопке «Нравится», добавив элементу <code>i</code>  классы <code>fa</code> и <code>fa-thumbs-up</code>. Обязательно сохраните текст «Like» рядом с значком.
+
+Используйте Font Awesome, чтобы добавить <code>thumbs-up</code>-иконку в вашу кнопку "Like" путём вставки в неё элемента <code>i</code> с классами <code>fa</code> и <code>fa-thumbs-up</code>. Убедитесь, что текст "Like" стоит после иконки.
+
 </section>
 
 ## Tests
@@ -24,11 +26,13 @@ Font Awesome - удобная библиотека икон. Эти значки
 
 ```yml
 tests:
+
   - text: Добавьте элемент <code>i</code> с классами <code>fas</code> и <code>fa-thumbs-up</code>.
     testString: assert($("i").is(".fas.fa-thumbs-up") || $("span").is(".fas.fa-thumbs-up"));
   - text: Ваша иконка <code>fa-thumbs-up</code>  должен находиться внутри вашей кнопки «Нравится».
     testString: assert(($("i.fa-thumbs-up").parent().text().match(/Like/gi) && $(".btn-primary > i").is(".fas.fa-thumbs-up")) || ($("span.fa-thumbs-up").parent().text().match(/Like/gi) && $(".btn-primary > span").is(".fas.fa-thumbs-up")));
   - text: Вставьте элемент <code>i</code> в ваш элемент <code>button</code>.
+
     testString: assert($("button").children("i").length > 0 || $("button").children("span").length > 0);
   - text: Убедитесь, что ваш значок элемента имеет закрывающий тег.
     testString: assert(code.match(/<\/i>|<\/span>/g));

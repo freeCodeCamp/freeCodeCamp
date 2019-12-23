@@ -1,7 +1,11 @@
 const path = require('path');
+const fs = require('fs');
 
 if (process.env.FREECODECAMP_NODE_ENV !== 'production') {
   const envPath = path.resolve(__dirname, '../.env');
+  if (!fs.existsSync(envPath)) {
+    throw Error('.env not found, please copy sample.env to .env.');
+  }
   require('dotenv').config({ path: envPath });
 }
 
@@ -13,7 +17,8 @@ const {
   FORUM_PROXY: forumProxy,
   NEWS_PROXY: newsProxy,
   LOCALE: locale,
-  STRIPE_PUBLIC: stripePublicKey,
+  STRIPE_PUBLIC_KEY: stripePublicKey,
+  SERVICEBOT_ID: servicebotId,
   ALGOLIA_APP_ID: algoliaAppId,
   ALGOLIA_API_KEY: algoliaAPIKey
 } = process.env;
@@ -29,7 +34,14 @@ const locations = {
 
 module.exports = Object.assign(locations, {
   locale,
-  stripePublicKey,
+  stripePublicKey:
+    !stripePublicKey || stripePublicKey === 'pk_from_stripe_dashboard'
+      ? null
+      : stripePublicKey,
+  servicebotId:
+    !servicebotId || servicebotId === 'servicebot_id_from_servicebot_dashboard'
+      ? null
+      : servicebotId,
   algoliaAppId:
     !algoliaAppId || algoliaAppId === 'Algolia app id from dashboard'
       ? null

@@ -19,6 +19,8 @@
   --green-dark: #00471b;
   --red-light: #ffadad;
   --red-dark: #850000;
+  --love-light: #f8577c;
+  --love-dark: #f82153;
 }
 
 .dark-palette {
@@ -36,6 +38,7 @@
   --success-background: var(--green-dark);
   --danger-color: var(--red-light);
   --danger-background: var(--red-dark);
+  --love-color: var(--love-light);
 }
 
 .light-palette {
@@ -53,4 +56,5 @@
   --success-background: var(--green-light);
   --danger-color: var(--red-dark);
   --danger-background: var(--red-light);
+  --love-color: var(--love-dark);
 }

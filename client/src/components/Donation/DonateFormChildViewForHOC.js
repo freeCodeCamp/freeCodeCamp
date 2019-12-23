@@ -1,3 +1,4 @@
+/* eslint-disable react/sort-prop-types */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -8,27 +9,30 @@ import {
   ControlLabel,
   Form,
   FormControl,
-  FormGroup,
-  Row,
-  Col
+  FormGroup
 } from '@freecodecamp/react-bootstrap';
 import { injectStripe } from 'react-stripe-elements';
 
-import Spacer from '../../../components/helpers/Spacer';
 import StripeCardForm from './StripeCardForm';
 import DonateCompletion from './DonateCompletion';
-import { postChargeStripe } from '../../../utils/ajax';
-import { userSelector, isSignedInSelector } from '../../../redux';
+import { postChargeStripe } from '../../utils/ajax';
+import { userSelector } from '../../redux';
 
 const propTypes = {
+  showCloseBtn: PropTypes.func,
+  defaultTheme: PropTypes.string,
+  donationAmount: PropTypes.number.isRequired,
+  donationDuration: PropTypes.string.isRequired,
   email: PropTypes.string,
+  getDonationButtonLabel: PropTypes.func.isRequired,
   isSignedIn: PropTypes.bool,
   stripe: PropTypes.shape({
     createToken: PropTypes.func.isRequired
-  })
+  }),
+  theme: PropTypes.string,
+  yearEndGift: PropTypes.bool
 };
 const initialState = {
-  donationAmount: 500,
   donationState: {
     processing: false,
     success: false,
@@ -38,16 +42,17 @@ const initialState = {
 
 const mapStateToProps = createSelector(
   userSelector,
-  isSignedInSelector,
-  ({ email }, isSignedIn) => ({ email, isSignedIn })
+  ({ email, theme }) => ({ email, theme })
 );
 
-class DonateForm extends Component {
+class DonateFormChildViewForHOC extends Component {
   constructor(...args) {
     super(...args);
 
     this.state = {
       ...initialState,
+      donationAmount: this.props.donationAmount,
+      donationDuration: this.props.donationDuration,
       email: null,
       isFormValid: false
     };
@@ -112,8 +117,8 @@ class DonateForm extends Component {
   }
 
   postDonation(token) {
-    const { donationAmount: amount } = this.state;
-    const { isSignedIn } = this.props;
+    const { donationAmount: amount, donationDuration: duration } = this.state;
+    const { yearEndGift } = this.props;
     this.setState(state => ({
       ...state,
       donationState: {
@@ -122,9 +127,19 @@ class DonateForm extends Component {
       }
     }));
 
-    return postChargeStripe(isSignedIn, {
+    // scroll to top
+    window.scrollTo(0, 0);
+
+    // change the donation modal button label to close
+    // or display the close button for the cert donation section
+    if (this.props.showCloseBtn) {
+      this.props.showCloseBtn();
+    }
+
+    return postChargeStripe(yearEndGift, {
       token,
-      amount
+      amount,
+      duration
     })
       .then(response => {
         const data = response && response.data;
@@ -168,56 +183,63 @@ class DonateForm extends Component {
 
   renderDonateForm() {
     const { isFormValid } = this.state;
+    const { getDonationButtonLabel, theme, defaultTheme } = this.props;
     return (
-      <Row>
-        <Col sm={10} smOffset={1} xs={12}>
-          <Form className='donation-form' onSubmit={this.handleSubmit}>
-            <FormGroup className='donation-email-container'>
-              <ControlLabel>
-                Email (we'll send you a tax-deductible donation receipt):
-              </ControlLabel>
-              <FormControl
-                onChange={this.handleEmailChange}
-                placeholder='me@example.com'
-                required={true}
-                type='text'
-                value={this.getUserEmail()}
-              />
-            </FormGroup>
-            <StripeCardForm getValidationState={this.getValidationState} />
-            <Button
-              block={true}
-              bsStyle='primary'
-              disabled={!isFormValid}
-              id='confirm-donation-btn'
-              type='submit'
-            >
-              Confirm your donation of $5 / month
-            </Button>
-            <Spacer />
-          </Form>
-        </Col>
-      </Row>
+      <Form className='donation-form' onSubmit={this.handleSubmit}>
+        <FormGroup className='donation-email-container'>
+          <ControlLabel>
+            Email (we'll send you a tax-deductible donation receipt):
+          </ControlLabel>
+          <FormControl
+            onChange={this.handleEmailChange}
+            placeholder='me@example.com'
+            required={true}
+            type='text'
+            value={this.getUserEmail()}
+          />
+        </FormGroup>
+        <StripeCardForm
+          getValidationState={this.getValidationState}
+          theme={defaultTheme ? defaultTheme : theme}
+        />
+        <Button
+          block={true}
+          bsStyle='primary'
+          disabled={!isFormValid}
+          id='confirm-donation-btn'
+          type='submit'
+        >
+          {getDonationButtonLabel()}
+        </Button>
+      </Form>
     );
+  }
+
+  componentWillReceiveProps({ donationAmount, donationDuration }) {
+    this.setState({ donationAmount, donationDuration });
   }
 
   render() {
     const {
       donationState: { processing, success, error }
     } = this.state;
+    const { yearEndGift } = this.props;
     if (processing || success || error) {
       return this.renderCompletion({
         processing,
         success,
         error,
-        reset: this.resetDonation
+        reset: this.resetDonation,
+        yearEndGift
       });
     }
     return this.renderDonateForm();
   }
 }
 
-DonateForm.displayName = 'DonateForm';
-DonateForm.propTypes = propTypes;
+DonateFormChildViewForHOC.displayName = 'DonateFormChildViewForHOC';
+DonateFormChildViewForHOC.propTypes = propTypes;
 
-export default injectStripe(connect(mapStateToProps)(DonateForm));
+export default injectStripe(
+  connect(mapStateToProps)(DonateFormChildViewForHOC)
+);

@@ -11,7 +11,7 @@ forumTopicId: 18216
 A common task in JavaScript is to iterate through the contents of an array. One way to do that is with a <code>for</code> loop. This code will output each element of the array <code>arr</code> to the console:
 
 ```js
-var arr = [10,9,8,7,6];
+var arr = [10, 9, 8, 7, 6];
 for (var i = 0; i < arr.length; i++) {
    console.log(arr[i]);
 }
@@ -30,14 +30,14 @@ Declare and initialize a variable <code>total</code> to <code>0</code>. Use a <c
 
 ```yml
 tests:
-  - text: <code>total</code> should be declared and initialized to 0
+  - text: <code>total</code> should be declared and initialized to 0.
     testString: assert(code.match(/(var|let|const)\s*?total\s*=\s*0.*?;?/));
-  - text: <code>total</code> should equal 20
+  - text: <code>total</code> should equal 20.
     testString: assert(total === 20);
-  - text: You should use a <code>for</code> loop to iterate through <code>myArr</code>
+  - text: You should use a <code>for</code> loop to iterate through <code>myArr</code>.
     testString: assert(code.match(/for\s*\(/g).length > 1 && code.match(/myArr\s*\[/));
-  - text: Do not set <code>total</code> to 20 directly
-    testString: assert(!code.match(/total[\s\+\-]*=\s*(0(?!\s*[;,]?$)|[1-9])/gm));
+  - text: You should not attempt to directly assign the value 20 to <code>total</code>.
+    testString: assert(!code.replace(/\s/g, '').match(/total[=+-]0*[1-9]+/gm));
 ```
 
 </section>

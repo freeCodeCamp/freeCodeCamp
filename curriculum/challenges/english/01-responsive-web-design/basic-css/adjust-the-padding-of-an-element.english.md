@@ -104,7 +104,7 @@ tests:
     background-color: yellow;
     padding: 10px;
   }
-  
+
   .red-box {
     background-color: crimson;
     color: #fff;
