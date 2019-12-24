@@ -4,7 +4,7 @@ title: Divide the Grid Into an Area Template
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cLLpGAy'
 forumTopicId: 301130
-localTitle: 将网格划分为区域模板
+localeTitle: 将网格划分为区域模板
 ---
 
 ## Description

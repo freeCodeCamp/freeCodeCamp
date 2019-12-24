@@ -4,7 +4,7 @@ title: Add Gaps Faster with grid-gap
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/ca2qVtv'
 forumTopicId: 1301118
-localTitle: 使用 grid-gap 为网格添加间距
+localeTitle: 使用 grid-gap 为网格添加间距
 ---
 
 ## Description

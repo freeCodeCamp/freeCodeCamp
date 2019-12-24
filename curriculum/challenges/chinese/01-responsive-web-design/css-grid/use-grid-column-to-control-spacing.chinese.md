@@ -4,7 +4,7 @@ title: Use grid-column to Control Spacing
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cnzkDSr'
 forumTopicId: 301136
-localTitle: 使用 grid-column 来控制剩余部分
+localeTitle: 使用 grid-column 来控制剩余部分
 ---
 
 ## Description
@@ -35,7 +35,7 @@ grid-column: 1 / 3;
 tests:
   - text: '<code>item5</code>类应该有<code>grid-column</code>属性且其值为<code>2 / 4</code>。'
     testString: 'assert(code.match(/.item5\s*?{[\s\S]*grid-column\s*?:\s*?2\s*?\/\s*?4\s*?;[\s\S]*}/gi), ''<code>item5</code>类应该有<code>grid-column</code>属性且其值为<code>2 / 4</code>。'');'
-  - text: '<code>item5</code> class 应该有 <code>grid-column</code> 属性使其占用网格最后两列。'
+  - text: '<code>item5</code> 类应该有 <code>grid-column</code> 属性使其占用网格最后两列。'
     testString: "
       const colStart = getComputedStyle($('.item5')[0]).gridColumnStart;
       const colEnd = getComputedStyle($('.item5')[0]).gridColumnEnd;

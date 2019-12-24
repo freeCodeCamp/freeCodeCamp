@@ -4,7 +4,7 @@ title: Reduce Repetition Using the repeat Function
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cQvqyHR'
 forumTopicId: 301133
-localTitle: 使用 repeat 函数减少重复
+localeTitle: 使用 repeat 函数减少重复
 ---
 
 ## Description
@@ -34,7 +34,7 @@ grid-template-columns: 1fr 50px 1fr 50px 20px;
 
 ## Instructions
 <section id='instructions'>
-用<code>repeat</code>代替<code>grid-template-columns</code>属性的值中的重复代码。
+用<code>repeat</code>代替<code>grid-template-columns</code>属性值中的重复代码。
 </section>
 
 ## Tests
@@ -42,8 +42,8 @@ grid-template-columns: 1fr 50px 1fr 50px 20px;
 
 ```yml
 tests:
-  - text: '<code>container</code>类应该有<code>grid-template-columns</code>属性且设置重复 3 列，宽为<code>1fr</code>。'
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?repeat\s*?\(\s*?3\s*?,\s*?1fr\s*?\)\s*?;[\s\S]*}/gi), ''<code>container</code>类应该有<code>grid-template-columns</code>属性且设置重复 3 列，宽为<code>1fr</code>。'');'
+  - text: '<code>container</code>类应该带有<code>grid-template-columns</code>属性且设置为重复 3 列，宽为<code>1fr</code>。'
+    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?repeat\s*?\(\s*?3\s*?,\s*?1fr\s*?\)\s*?;[\s\S]*}/gi), ''<code>container</code>类应该带有<code>grid-template-columns</code>属性且设置为重复 3 列，宽为<code>1fr</code>。'');'
 
 ```
 

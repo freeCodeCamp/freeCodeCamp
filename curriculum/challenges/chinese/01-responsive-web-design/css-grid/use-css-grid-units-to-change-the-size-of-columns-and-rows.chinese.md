@@ -4,7 +4,7 @@ title: Use CSS Grid units to Change the Size of Columns and Rows
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cvE8phd'
 forumTopicId: 301134
-localTitle: 使用 CSS 网格单位来更改列和行的大小
+localeTitle: 使用 CSS 网格单位来更改列和行的大小
 ---
 
 ## Description
@@ -19,7 +19,7 @@ localTitle: 使用 CSS 网格单位来更改列和行的大小
 grid-template-columns: auto 50px 10% 2fr 1fr;
 ```
 
-这段代添加了五个列。第一列的宽与它的内容宽度相等；第二列宽 50px；第三列宽是它容器的 10%；最后两列，将剩余的宽度平均分成三份，第四列占两份，第五列占一份。
+这段代码添加了五个列。第一列的宽与它的内容宽度相等；第二列宽 50px；第三列宽是它容器的 10%；最后两列，将剩余的宽度平均分成三份，第四列占两份，第五列占一份。
 </section>
 
 ## Instructions

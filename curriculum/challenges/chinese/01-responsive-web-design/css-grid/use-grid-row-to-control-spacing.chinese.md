@@ -4,7 +4,7 @@ title: Use grid-row to Control Spacing
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/c9WBLU4'
 forumTopicId: 301137
-localTitle: 使用 grid-row 来控制剩余部分
+localeTitle: 使用 grid-row 来控制剩余部分
 ---
 
 ## Description

@@ -4,7 +4,7 @@ title: Create Grids within Grids
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/c6N78Ap'
 forumTopicId: 301128
-localTitle: 在网格中创建网格
+localeTitle: 在网格中创建网格
 ---
 
 ## Description

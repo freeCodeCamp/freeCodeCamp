@@ -4,7 +4,7 @@ title: Use grid-area Without Creating an Areas Template
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/c6N7VhK'
 forumTopicId: 301135
-localTitle: 使用 grid-area 创建区域模板
+localeTitle: 使用 grid-area 创建区域模板
 ---
 
 ## Description

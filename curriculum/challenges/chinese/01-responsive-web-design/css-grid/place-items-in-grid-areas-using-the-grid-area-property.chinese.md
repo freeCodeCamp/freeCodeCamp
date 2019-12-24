@@ -4,12 +4,12 @@ title: Place Items in Grid Areas Using the grid-area Property
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cRrqmtV'
 forumTopicId: 301132
-localTitle: 使用 grid-area 属性将项目放置在网格区域中
+localeTitle: 使用 grid-area 属性将项目放置在网格区域中
 ---
 
 ## Description
 <section id='description'>
-像上一个挑战那样，在为网格容添加区域模板后，你可以通过添加你定义的名称将网格项放入自定义区域。为此，你需要对网格项使用<code>grid-area</code>：
+像上一个挑战那样，在为网格添加区域模板后，你可以通过添加你定义的名称将网格项放入自定义区域。为此，你需要对网格项使用<code>grid-area</code>：
 
 ```css
 .item1 {

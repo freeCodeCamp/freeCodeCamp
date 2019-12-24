@@ -4,7 +4,7 @@ title: Align All Items Horizontally using justify-items
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cJbpECn'
 forumTopicId: 301120
-localTitle: 使用 justify-items 水平对齐所有项目
+localeTitle: 使用 justify-items 水平对齐所有项目
 ---
 
 ## Description

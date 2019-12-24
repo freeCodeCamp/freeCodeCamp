@@ -4,7 +4,7 @@ title: Limit Item Size Using the minmax Function
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cD97RTv'
 forumTopicId: 301131
-localTitle: 使用 minmax 函数限制项目大小
+localeTitle: 使用 minmax 函数限制项目大小
 ---
 
 ## Description

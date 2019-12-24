@@ -4,7 +4,7 @@ title: Align All Items Vertically using align-items
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/ckzPeUv'
 forumTopicId: 301121
-localTitle: 使用 align-items 垂直对齐所有项目
+localeTitle: 使用 align-items 垂直对齐所有项目
 ---
 
 ## Description

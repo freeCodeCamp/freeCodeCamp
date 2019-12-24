@@ -4,7 +4,7 @@ title: Add Columns with grid-template-columns
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/c7NzDHv'
 forumTopicId: 301117
-localTitle: 使用 grid-template-columns 添加多列
+localeTitle: 使用 grid-template-columns 添加多列
 ---
 
 ## Description
