@@ -60,41 +60,41 @@ tests:
     </nav>
   </header>
   <section>
-    <h2>Master Camper Cat's Beginner Three Week Training Program</h2>
+    <h2>El Programa de Entrenamiento para Principantes de Tres Semanas del Maestro Camper Cat</h2>
     <figure>
-      <!-- Stacked bar chart of weekly training-->
+      <!-- Gráfico de barras de entrenamiento semanal-->
       <p>[Stacked bar chart]</p>
       <br />
-      <figcaption>Breakdown per week of time to spend training in stealth, combat, and weapons.</figcaption>
+      <figcaption>Desglose semanal del tiempo de entrenamiento en sigilo, combate y armas.</figcaption>
     </figure>
     <table class="sr-only">
-      <caption>Hours of Weekly Training in Stealth, Combat, and Weapons</caption>
+      <caption>Horas de entrenamiento en sigilo, combate y armas</caption>
       <thead>
         <tr>
           <th></th>
-          <th scope="col">Stealth &amp; Agility</th>
-          <th scope="col">Combat</th>
-          <th scope="col">Weapons</th>
+          <th scope="col">Sigilo y Agilidad</th>
+          <th scope="col">Combate</th>
+          <th scope="col">Armas</th>
           <th scope="col">Total</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <th scope="row">Week One</th>
+          <th scope="row">Semana Uno</th>
           <td>3</td>
           <td>5</td>
           <td>2</td>
           <td>10</td>
         </tr>
         <tr>
-          <th scope="row">Week Two</th>
+          <th scope="row">Semana Dos</th>
           <td>4</td>
           <td>5</td>
           <td>3</td>
           <td>12</td>
         </tr>
         <tr>
-          <th scope="row">Week Three</th>
+          <th scope="row">Semana Tres</th>
           <td>4</td>
           <td>6</td>
           <td>3</td>
@@ -104,19 +104,19 @@ tests:
     </table>
   </section>
   <section id="stealth">
-    <h2>Stealth &amp; Agility Training</h2>
-    <article><h3>Climb foliage quickly using a minimum spanning tree approach</h3></article>
-    <article><h3>No training is NP-complete without parkour</h3></article>
+    <h2>Entrenamiento Sigilo &amp; Agilidad</h2>
+    <article><h3>Trepa el follaje rápidamente usando la técnica del árbol recubridor mínimo (Minimum Spanning Tree)</h3></article>
+    <article><h3>Ningún entrenamiento es NP-completo sin parkour</h3></article>
   </section>
   <section id="combat">
-    <h2>Combat Training</h2>
-    <article><h3>Dispatch multiple enemies with multithreaded tactics</h3></article>
-    <article><h3>Goodbye, world: 5 proven ways to knock out an opponent</h3></article>
+    <h2>Entrenamiento de Combate</h2>
+    <article><h3>Despacha múltiples enemigos con tácticas multi-hilo</h3></article>
+    <article><h3>Adiós, mundo: 5 maneras comprobadas de aniquilar a tu oponente</h3></article>
   </section>
   <section id="weapons">
-    <h2>Weapons Training</h2>
-    <article><h3>Swords: the best tool to literally divide and conquer</h3></article>
-    <article><h3>Breadth-first or depth-first in multi-weapon training?</h3></article>
+    <h2>Entrenamiento de Armas</h2>
+    <article><h3>Espadas: la mejor herramienta para literalmente dividir y triunfar</h3></article>
+    <article><h3>Breadth-first (amplitud) o depth-first (profundidad) en entrenamiento multi-arma?</h3></article>
   </section>
   <footer>&copy; 2018 Camper Cat</footer>
 </body>
@@ -133,6 +133,7 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+// solución requerida
 ```
+
 </section>

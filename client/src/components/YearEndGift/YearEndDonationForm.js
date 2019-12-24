@@ -255,7 +255,6 @@ class YearEndDonationForm extends Component {
             ? this.renderCustomAmountInput()
             : this.renderOtherPaymentButton()}
         </Col>
-
         <Col sm={10} smOffset={1} xs={12}>
           {this.renderDonationOptions()}
           <Spacer />
@@ -267,7 +266,6 @@ class YearEndDonationForm extends Component {
           {this.renderPayPalDonations()}
           <Spacer />
         </Col>
-
         <Col sm={10} smOffset={1} xs={12}>
           <b>
             If you need a receipt from your taxes, reply to Quincy's email he
