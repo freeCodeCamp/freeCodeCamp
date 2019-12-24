@@ -9,7 +9,6 @@ localeTitle: 用 a 实现网页内部跳转
 
 ## Description
 <section id='description'>
-<code>a</code> 同样也可以用来在网页内不同区域的跳转。
 <code>a</code> 元素还可以用来实现页面内不同区域的跳转，只需要把<code>a</code>元素的<code>href</code>值设置为井号<code>#</code>加欲跳转区域对应的<code>id</code>值即可。<code>id</code>是描述网页元素的一个属性，它的值在整个页面中唯一。
 下面是用来创建内部 <code>a</code> 的例子：
 
