@@ -52,7 +52,7 @@ tests:
   }
   h2 {
     color: black;
-  }  
+  }
   button {
     background-color: white;
   }
@@ -63,22 +63,22 @@ tests:
   }
 </style>
 <header>
-  <h1>FCC 中国</h1>
+  <h1>freeCodeCamp 中国</h1>
 </header>
 <main>
   <article>
-    <h2>FCC 成都社区</h2>
-    <p>【FCC成都社区】是一个非营利性的公益性技术社区，由一群编程技术爱好者，利用业余时间搭建的一个友好的交流、学习、互助的平台，帮助开发者、技术爱好者提升个人技术能力，同时帮助企业解决人才问题。</p>
+    <h2>freeCodeCamp 成都社区</h2>
+    <p>【freeCodeCamp 成都社区】是一个非营利性的公益性技术社区，由一群编程技术爱好者利用业余时间搭建的一个友好的交流、学习、互助的平台，帮助开发者、技术爱好者提升个人技术能力，同时帮助企业解决人才问题。</p>
     <button><a href="https://freecodecamp-chengdu.github.io/" target="_blank">更多</a></button>
   </article>
   <article>
-    <h2>FCC 深圳社区</h2>
-    <p>【FCC 深圳社区】全称 freeCodeCamp 深圳社区，面向深圳所有有意学习编程、热爱编程、甚至想要通过编程找到一份好工作的学生和社会群众，传承 freeCodeCamp 中文社区的主旨思想，倡导人人皆可编程。</p>
+    <h2>freeCodeCamp 深圳社区</h2>
+    <p>【freeCodeCamp 深圳社区】面向深圳所有有意学习编程、热爱编程、甚至想要通过编程找到一份好工作的学生和社会群众，传承 freeCodeCamp 中文社区的主旨思想，倡导人人皆可编程。</p>
     <button><a href="https://freecodecamp-shenzhen.github.io/" target="_blank">更多</a></button>
   </article>
 </main>
 <br>
-<footer>&copy;2018 FCC 中国</footer>
+<footer>&copy;2020 freeCodeCamp 中国</footer>
 ```
 
 </div>
