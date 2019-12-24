@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { CardNumberElement, CardExpiryElement } from 'react-stripe-elements';
-import { ControlLabel, FormGroup } from '@freecodecamp/react-bootstrap';
+import {
+  Row,
+  Col,
+  ControlLabel,
+  FormGroup,
+  Image
+} from '@freecodecamp/react-bootstrap';
 
 const propTypes = {
   getValidationState: PropTypes.func.isRequired,
@@ -77,12 +83,26 @@ class StripeCardForm extends Component {
           />
         </FormGroup>
         <FormGroup>
-          <ControlLabel>Your Card Expiration Month:</ControlLabel>
-          <CardExpiryElement
-            className='form-control donate-input-element'
-            onChange={this.handleInputChange}
-            style={style}
-          />
+          <ControlLabel>Expiration Date:</ControlLabel>
+          <Row>
+            <Col md={5} xs={12}>
+              <CardExpiryElement
+                className='form-control donate-input-element'
+                onChange={this.handleInputChange}
+                style={style}
+              />
+            </Col>
+            <Col className='form-payments-wrapper' md={7} xs={12}>
+              <Image
+                alt='payment options'
+                className='form-payment-methods'
+                src={
+                  'https://cdn.freecodecamp.org' +
+                  '/platform/universal/form-payments.png'
+                }
+              />
+            </Col>
+          </Row>
         </FormGroup>
       </div>
     );

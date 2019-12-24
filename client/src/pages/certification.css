@@ -42,13 +42,13 @@
   padding: 20px 0px;
 }
 
-.certificate-outer-wrapper .certification-donation .btn {
+.certificate-outer-wrapper .btn {
   background-color: var(--gray-15);
   border-color: var(--gray-85);
   color: var(--gray-85);
 }
 
-.certificate-outer-wrapper .certification-donation .btn:hover {
+.certificate-outer-wrapper .btn:hover {
   border-color: var(--gray-85);
   background-color: var(--gray-85);
   color: var(--gray-05);
