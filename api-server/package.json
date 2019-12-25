@@ -67,7 +67,7 @@
     "stripe": "^6.1.0",
     "uuid": "^3.3.3",
     "validator": "^9.4.1",
-    "snyk": "^1.256.0"
+    "snyk": "^1.266.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.4",
