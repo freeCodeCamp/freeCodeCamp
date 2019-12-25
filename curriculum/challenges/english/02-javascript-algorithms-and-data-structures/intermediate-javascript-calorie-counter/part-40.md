@@ -6,8 +6,8 @@ isBeta: true
 ---
 
 ## Description
-<section id='description'>
 
+<section id='description'>
 
 We want the `recommendedText` to say "XX Calories Recommended" where "XX" is the `maxCalories` variable that was previously created.
 
@@ -15,40 +15,71 @@ Update text of `recommendedText` to use the `maxCalories` variable in a template
 
 This is similar to template literal syntax previously used to create `resultText`.
 
-
 </section>
 
-
 ## Instructions
+
 <section id='instructions'>
 </section>
 
-
 ## Tests
+
 <section id='tests'>
 
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(code.match());
-
+    testString: assert( code.replace(/\s/g, '').match(/document\.createTextNode\(\`\$\{maxCalories\}RecommendedCalories\`/) );
 ```
 
 </section>
 
-
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
 
 ```html
+<script>
+  document.getElementById('calorie-form').onsubmit = calculate;
+
+  function calculate(e) {
+    e.preventDefault();
+
+    const total = Array.from(document.getElementsByClassName('cal-control'))
+      .map(meal => Number(meal.value))
+      .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+
+    const maxCalories = document.getElementById('female').checked ? 2000 : 2500;
+
+    const difference = total - maxCalories;
+
+    const surplusOrDeficit = difference > 0 ? 'Surplus' : 'Deficit';
+
+    const output = document.getElementById('output');
+
+    const result = document.createElement('h3');
+    const resultText = document.createTextNode(
+      `${Math.abs(difference)} Calorie ${surplusOrDeficit}`
+    );
+
+    result.appendChild(resultText);
+    output.appendChild(result);
+
+    const line = document.createElement('hr');
+    output.appendChild(line);
+
+    const recommended = document.createElement('h4');
+    const recommendedText = document.createTextNode();
+  }
+</script>
 ```
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -82,8 +113,15 @@ tests:
           </div>
         </div>
         <div class="grid" id="entries">
-          Breakfast <input type="number" min="0" class="cal-control" id="breakfast" /><br>
-          Lunch <input type="number" min="0" class="cal-control" id="lunch" /><br>
+          Breakfast
+          <input
+            type="number"
+            min="0"
+            class="cal-control"
+            id="breakfast"
+          /><br />
+          Lunch
+          <input type="number" min="0" class="cal-control" id="lunch" /><br />
           Dinner <input type="number" min="0" class="cal-control" id="dinner" />
         </div>
         <button type="button" class="btn-add" id="add">
@@ -98,12 +136,14 @@ tests:
       </form>
       <div id="output"></div>
     </div>
+  </body>
+</html>
 ```
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -115,11 +155,46 @@ tests:
 
 </section>
 
-
 ## Solution
+
 <section id='solution'>
 
 ```html
+<script>
+  document.getElementById('calorie-form').onsubmit = calculate;
+
+  function calculate(e) {
+    e.preventDefault();
+
+    const total = Array.from(document.getElementsByClassName('cal-control'))
+      .map(meal => Number(meal.value))
+      .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+
+    const maxCalories = document.getElementById('female').checked ? 2000 : 2500;
+
+    const difference = total - maxCalories;
+
+    const surplusOrDeficit = difference > 0 ? 'Surplus' : 'Deficit';
+
+    const output = document.getElementById('output');
+
+    const result = document.createElement('h3');
+    const resultText = document.createTextNode(
+      `${Math.abs(difference)} Calorie ${surplusOrDeficit}`
+    );
+
+    result.appendChild(resultText);
+    output.appendChild(result);
+
+    const line = document.createElement('hr');
+    output.appendChild(line);
+
+    const recommended = document.createElement('h4');
+    const recommendedText = document.createTextNode(
+      `${maxCalories} Recommended Calories`
+    );
+  }
+</script>
 ```
 
 </section>

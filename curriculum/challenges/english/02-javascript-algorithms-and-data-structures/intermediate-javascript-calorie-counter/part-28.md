@@ -6,50 +6,69 @@ isBeta: true
 ---
 
 ## Description
-<section id='description'>
 
+<section id='description'>
 
 Next, we create a text node that we will later append to the `result` element.
 
-JavaScript has a function called `createTextNode()` to accomplish this.  For example:
+JavaScript has a function called `createTextNode()` to accomplish this. For example:
 `const myText = document.createTextNode("Hello world!")`
 
 Create a variable named `resultText` and set it equal to a text node, leave the string empty for now.
 
-
 </section>
 
-
 ## Instructions
+
 <section id='instructions'>
 </section>
 
-
 ## Tests
+
 <section id='tests'>
 
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(code.match());
-
+    testString: assert(/const\s*resultText\s*=\s*document\.createTextNode\([\'\"\`]?\s*[\'\"\`]?\)/.test(code));
 ```
 
 </section>
 
-
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
 
 ```html
+<script>
+  document.getElementById('calorie-form').onsubmit = calculate;
+
+  function calculate(e) {
+    e.preventDefault();
+
+    const total = Array.from(document.getElementsByClassName('cal-control'))
+      .map(meal => Number(meal.value))
+      .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+
+    const maxCalories = document.getElementById('female').checked ? 2000 : 2500;
+
+    const difference = total - maxCalories;
+
+    const surplusOrDeficit = difference > 0 ? 'Surplus' : 'Deficit';
+
+    const output = document.getElementById('output');
+
+    const result = document.createElement('h3');
+  }
+</script>
 ```
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -83,8 +102,15 @@ tests:
           </div>
         </div>
         <div class="grid" id="entries">
-          Breakfast <input type="number" min="0" class="cal-control" id="breakfast" /><br>
-          Lunch <input type="number" min="0" class="cal-control" id="lunch" /><br>
+          Breakfast
+          <input
+            type="number"
+            min="0"
+            class="cal-control"
+            id="breakfast"
+          /><br />
+          Lunch
+          <input type="number" min="0" class="cal-control" id="lunch" /><br />
           Dinner <input type="number" min="0" class="cal-control" id="dinner" />
         </div>
         <button type="button" class="btn-add" id="add">
@@ -99,12 +125,14 @@ tests:
       </form>
       <div id="output"></div>
     </div>
+  </body>
+</html>
 ```
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -116,11 +144,33 @@ tests:
 
 </section>
 
-
 ## Solution
+
 <section id='solution'>
 
 ```html
+<script>
+  document.getElementById('calorie-form').onsubmit = calculate;
+
+  function calculate(e) {
+    e.preventDefault();
+
+    const total = Array.from(document.getElementsByClassName('cal-control'))
+      .map(meal => Number(meal.value))
+      .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+
+    const maxCalories = document.getElementById('female').checked ? 2000 : 2500;
+
+    const difference = total - maxCalories;
+
+    const surplusOrDeficit = difference > 0 ? 'Surplus' : 'Deficit';
+
+    const output = document.getElementById('output');
+
+    const result = document.createElement('h3');
+    const resultText = document.createTextNode();
+  }
+</script>
 ```
 
 </section>

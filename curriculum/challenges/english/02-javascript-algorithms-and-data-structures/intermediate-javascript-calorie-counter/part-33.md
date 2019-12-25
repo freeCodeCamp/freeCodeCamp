@@ -6,53 +6,75 @@ isBeta: true
 ---
 
 ## Description
-<section id='description'>
 
+<section id='description'>
 
 The data that we currently pass to `createTextNode()` is `Math.abs(difference) + ' Calorie ' + surplusOrDeficit`
 
-Some people consider this a little cumbersome and prefer to use template literals instead.  
+Some people consider this a little cumbersome and prefer to use template literals instead.
 
-Template literals are enclosed in backticks (`/`/``), and JavaScript expressions and variables can be embedded by enclosing them in `${}`.
+Template literals are enclosed in backticks (\`\`), and JavaScript expressions and variables can be embedded by enclosing them in `${}`.
 
-For example, `console.log(`Hello ${firstName}, today is ${Date.now()}`)` is the same as writing `console.log('Hello ' + firstName + ', today is ' + Date.now())`.
+For example, `` console.log(`Hello ${firstName}, today is ${Date.now()}`) ``is the same as writing`console.log('Hello ' + firstName + ', today is ' + Date.now())`.
 
 Convert the data inside of `createTextNode()` to be a template literal.
 
-
 </section>
 
-
 ## Instructions
+
 <section id='instructions'>
 </section>
 
-
 ## Tests
+
 <section id='tests'>
 
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(code.match());
-
+    testString: assert( code.replace(/\s/g, '').match(/document\.createTextNode\(\`\$\{Math\.abs\(difference\)\}Calorie\$\{surplusOrDeficit\}\`/) );
 ```
 
 </section>
 
-
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
 
 ```html
+<script>
+  document.getElementById('calorie-form').onsubmit = calculate;
+
+  function calculate(e) {
+    e.preventDefault();
+
+    const total = Array.from(document.getElementsByClassName('cal-control'))
+      .map(meal => Number(meal.value))
+      .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+
+    const maxCalories = document.getElementById('female').checked ? 2000 : 2500;
+
+    const difference = total - maxCalories;
+
+    const surplusOrDeficit = difference > 0 ? 'Surplus' : 'Deficit';
+
+    const output = document.getElementById('output');
+
+    const result = document.createElement('h3');
+    const resultText = document.createTextNode(
+      Math.abs(difference) + ' Calorie ' + surplusOrDeficit
+    );
+  }
+</script>
 ```
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -86,8 +108,15 @@ tests:
           </div>
         </div>
         <div class="grid" id="entries">
-          Breakfast <input type="number" min="0" class="cal-control" id="breakfast" /><br>
-          Lunch <input type="number" min="0" class="cal-control" id="lunch" /><br>
+          Breakfast
+          <input
+            type="number"
+            min="0"
+            class="cal-control"
+            id="breakfast"
+          /><br />
+          Lunch
+          <input type="number" min="0" class="cal-control" id="lunch" /><br />
           Dinner <input type="number" min="0" class="cal-control" id="dinner" />
         </div>
         <button type="button" class="btn-add" id="add">
@@ -102,12 +131,14 @@ tests:
       </form>
       <div id="output"></div>
     </div>
+  </body>
+</html>
 ```
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -119,11 +150,35 @@ tests:
 
 </section>
 
-
 ## Solution
+
 <section id='solution'>
 
 ```html
+<script>
+  document.getElementById('calorie-form').onsubmit = calculate;
+
+  function calculate(e) {
+    e.preventDefault();
+
+    const total = Array.from(document.getElementsByClassName('cal-control'))
+      .map(meal => Number(meal.value))
+      .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+
+    const maxCalories = document.getElementById('female').checked ? 2000 : 2500;
+
+    const difference = total - maxCalories;
+
+    const surplusOrDeficit = difference > 0 ? 'Surplus' : 'Deficit';
+
+    const output = document.getElementById('output');
+
+    const result = document.createElement('h3');
+    const resultText = document.createTextNode(
+      `${Math.abs(difference)} Calorie ${surplusOrDeficit}`
+    );
+  }
+</script>
 ```
 
 </section>

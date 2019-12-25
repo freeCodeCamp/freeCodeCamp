@@ -25,7 +25,7 @@ arr[1], the function is `(1, 3) => 1 + 3`,
 
 arr[2], the function is `(4, 5) => 4 + 5`, now the accumulator is `9` and we have gone through all of the items in `arr`, the reduce function will return `9`.
 
-Replace the body of the callback function (`{/*code to run*\/}`) with `accumulator + currentValue`.
+Replace the whole body of the callback function (`{/*code to run*\/}`) with `accumulator + currentValue`.
 
 If you desire, you can now check your progress by adding `console.log(total)`, entering in values in the form, and then push the Calculate button. You will see that the console will log the sum of the inputs that you entered, this is awesome!
 \*/
@@ -156,7 +156,19 @@ tests:
 <section id='solution'>
 
 ```html
+<script>
+  document.getElementById('calorie-form').onsubmit = calculate;
 
+  function calculate(e) {
+    e.preventDefault();
+
+    const total = Array.from(document.getElementsByClassName('cal-control'))
+      .map(meal => Number(meal.value))
+      .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+
+    //  console.log(total);
+  }
+</script>
 ```
 
 </section>

@@ -6,52 +6,63 @@ isBeta: true
 ---
 
 ## Description
+
 <section id='description'>
 
+Now that we have the `total` number of calories that the user entered. We need to determine the maximum calories they should consume.
 
-Now that we have the `total` number of calories that the user entered.  We need to determine the maximum calories they should consume.
-
-Look at the form and notice that there are radio buttons for Female and Male.  If Female is selected, the maximum calories a normal Female should consume is 2000.  If Male is selected, the maximum is 2500.
+Look at the form and notice that there are radio buttons for Female and Male. If Female is selected, the maximum calories a normal Female should consume is 2000. If Male is selected, the maximum is 2500.
 
 If you inspect the Female radio button you will notice its id: `<input type="radio" name="sex" id="female" value="F" checked="">`
 
-Create a variable named `maxCalories` and set it equal to the document element with the id of `female`.  This is similar to how you reference the element with the `id` of `calorie-form` at the beginning of this file.
-
-
+Create a variable named `maxCalories` and set it equal to the document element with the id of `female`. This is similar to how you reference the element with the `id` of `calorie-form` at the beginning of this file.
 
 </section>
 
-
 ## Instructions
+
 <section id='instructions'>
 </section>
 
-
 ## Tests
+
 <section id='tests'>
 
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(code.match());
-
+    # testString: assert(code.match());
+    testString: assert(/const\s*maxCalories\s*=\s*document\.getElementById\([\'\"\`]female[\'\"\`]\)/.test(code));
 ```
 
 </section>
 
-
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
 
 ```html
+<script>
+  document.getElementById('calorie-form').onsubmit = calculate;
+
+  function calculate(e) {
+    e.preventDefault();
+
+    const total = Array.from(document.getElementsByClassName('cal-control'))
+      .map(meal => Number(meal.value))
+      .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+
+    //  console.log(total);
+  }
+</script>
 ```
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -85,8 +96,15 @@ tests:
           </div>
         </div>
         <div class="grid" id="entries">
-          Breakfast <input type="number" min="0" class="cal-control" id="breakfast" /><br>
-          Lunch <input type="number" min="0" class="cal-control" id="lunch" /><br>
+          Breakfast
+          <input
+            type="number"
+            min="0"
+            class="cal-control"
+            id="breakfast"
+          /><br />
+          Lunch
+          <input type="number" min="0" class="cal-control" id="lunch" /><br />
           Dinner <input type="number" min="0" class="cal-control" id="dinner" />
         </div>
         <button type="button" class="btn-add" id="add">
@@ -101,12 +119,14 @@ tests:
       </form>
       <div id="output"></div>
     </div>
+  </body>
+</html>
 ```
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -118,11 +138,24 @@ tests:
 
 </section>
 
-
 ## Solution
+
 <section id='solution'>
 
 ```html
+<script>
+  document.getElementById('calorie-form').onsubmit = calculate;
+
+  function calculate(e) {
+    e.preventDefault();
+
+    const total = Array.from(document.getElementsByClassName('cal-control'))
+      .map(meal => Number(meal.value))
+      .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+
+    const maxCalories = document.getElementById('female');
+  }
+</script>
 ```
 
 </section>

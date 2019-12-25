@@ -6,45 +6,84 @@ isBeta: true
 ---
 
 ## Description
-<section id='description'>
 
+<section id='description'>
 
 Append the the `consumed` element to `output`.
 
-
 </section>
 
-
 ## Instructions
+
 <section id='instructions'>
 </section>
 
-
 ## Tests
+
 <section id='tests'>
 
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(code.match());
-
+    testString: assert( code.replace(/\s/g, '').match(/output\.appendChild\(consumed\)/) );
 ```
 
 </section>
 
-
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
 
 ```html
+<script>
+  document.getElementById('calorie-form').onsubmit = calculate;
+
+  function calculate(e) {
+    e.preventDefault();
+
+    const total = Array.from(document.getElementsByClassName('cal-control'))
+      .map(meal => Number(meal.value))
+      .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+
+    const maxCalories = document.getElementById('female').checked ? 2000 : 2500;
+
+    const difference = total - maxCalories;
+
+    const surplusOrDeficit = difference > 0 ? 'Surplus' : 'Deficit';
+
+    const output = document.getElementById('output');
+
+    const result = document.createElement('h3');
+    const resultText = document.createTextNode(
+      `${Math.abs(difference)} Calorie ${surplusOrDeficit}`
+    );
+
+    result.appendChild(resultText);
+    output.appendChild(result);
+
+    const line = document.createElement('hr');
+    output.appendChild(line);
+
+    const recommended = document.createElement('h4');
+    const recommendedText = document.createTextNode(
+      `${maxCalories} Recommended Calories`
+    );
+
+    recommended.appendChild(recommendedText);
+    output.appendChild(recommended);
+
+    const consumed = document.createElement('h4');
+    consumed.innerHTML = `${total} Consumed Calories`;
+  }
+</script>
 ```
 
 </div>
 
-
 ### Before Test
+
 <div id='html-setup'>
 
 ```html
@@ -78,8 +117,15 @@ tests:
           </div>
         </div>
         <div class="grid" id="entries">
-          Breakfast <input type="number" min="0" class="cal-control" id="breakfast" /><br>
-          Lunch <input type="number" min="0" class="cal-control" id="lunch" /><br>
+          Breakfast
+          <input
+            type="number"
+            min="0"
+            class="cal-control"
+            id="breakfast"
+          /><br />
+          Lunch
+          <input type="number" min="0" class="cal-control" id="lunch" /><br />
           Dinner <input type="number" min="0" class="cal-control" id="dinner" />
         </div>
         <button type="button" class="btn-add" id="add">
@@ -94,12 +140,14 @@ tests:
       </form>
       <div id="output"></div>
     </div>
+  </body>
+</html>
 ```
 
 </div>
 
-
 ### After Test
+
 <div id='html-teardown'>
 
 ```html
@@ -111,11 +159,53 @@ tests:
 
 </section>
 
-
 ## Solution
+
 <section id='solution'>
 
 ```html
+<script>
+  document.getElementById('calorie-form').onsubmit = calculate;
+
+  function calculate(e) {
+    e.preventDefault();
+
+    const total = Array.from(document.getElementsByClassName('cal-control'))
+      .map(meal => Number(meal.value))
+      .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+
+    const maxCalories = document.getElementById('female').checked ? 2000 : 2500;
+
+    const difference = total - maxCalories;
+
+    const surplusOrDeficit = difference > 0 ? 'Surplus' : 'Deficit';
+
+    const output = document.getElementById('output');
+
+    const result = document.createElement('h3');
+    const resultText = document.createTextNode(
+      `${Math.abs(difference)} Calorie ${surplusOrDeficit}`
+    );
+
+    result.appendChild(resultText);
+    output.appendChild(result);
+
+    const line = document.createElement('hr');
+    output.appendChild(line);
+
+    const recommended = document.createElement('h4');
+    const recommendedText = document.createTextNode(
+      `${maxCalories} Recommended Calories`
+    );
+
+    recommended.appendChild(recommendedText);
+    output.appendChild(recommended);
+
+    const consumed = document.createElement('h4');
+    consumed.innerHTML = `${total} Consumed Calories`;
+    output.appendChild(consumed);
+  }
+</script>
 ```
 
 </section>
