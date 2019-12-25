@@ -42,20 +42,20 @@
   padding: 20px 0px;
 }
 
-.certificate-outer-wrapper .btn {
+.certificate-outer-wrapper .donation-completion .btn {
   background-color: var(--gray-15);
   border-color: var(--gray-85);
   color: var(--gray-85);
 }
 
-.certificate-outer-wrapper .btn:hover {
+.certificate-outer-wrapper .donation-completion .btn:hover {
   border-color: var(--gray-85);
   background-color: var(--gray-85);
   color: var(--gray-05);
 }
 
-.certificate-outer-wrapper .btn[disabled],
-.certificate-outer-wrapper .btn[disabled]:hover {
+.certificate-outer-wrapper .donation-completion .btn[disabled],
+.certificate-outer-wrapper .donation-completion .btn[disabled]:hover {
   background-color: var(--gray-15);
   border-color: var(--quaternary-color);
   color: var(--quaternary-color);
