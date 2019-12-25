@@ -9,12 +9,12 @@ localeTitle: 使用 justify-items 水平对齐所有项目
 
 ## Description
 <section id='description'>
-有时你想让 CSS 网格中的网格项共享对齐方式。你可以像之前学习的那样单独使他们对齐，也可以对网格容器使用<code>justify-items</code>使它们一次性沿行轴对齐。对于这个属性你能使用在之前的两个挑战中学到的所有值，与之前不同的是，它将使网格中<b>所有</b>的网格项按所设置的方式对齐。
+有时你想让 CSS 网格中的网格项共享对齐方式。你可以像之前学习的那样分别设置它们的对齐方式，也可以对网格容器使用<code>justify-items</code>使它们一次性沿行轴对齐。对于这个属性你能使用在之前的两个挑战中学到的所有值，与之前不同的是，它将使网格中<b>所有</b>的网格项按所设置的方式对齐。
 </section>
 
 ## Instructions
 <section id='instructions'>
-使用本次挑战所学的属性让所有网格项水平居中。
+使用<code>justify-items</code>属性设置所有网格项水平居中。
 </section>
 
 ## Tests

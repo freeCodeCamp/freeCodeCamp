@@ -4,7 +4,7 @@ title: Use grid-column to Control Spacing
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cnzkDSr'
 forumTopicId: 301136
-localeTitle: 使用 grid-column 来控制剩余部分
+localeTitle: 使用 grid-column 来控制空间大小
 ---
 
 ## Description

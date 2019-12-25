@@ -10,7 +10,7 @@ localeTitle: 使用 repeat 函数减少重复
 ## Description
 <section id='description'>
 当使用<code>grid-template-columns</code>和<code>grid-template-rows</code>定义网格结构时，你需要为添加的每一行和每一列都输入一个值。
-如果要添加带 100 行高度相同的网格，单独放入 100 个值不太实际。幸运的是，有一种更好的方法——使用<code>repeat</code>方法指定行或列的重复次数，后面加上逗号以及需要重复的值。
+如果一个网格共有 100 行，每行高度相同，就得输入 100 个值，这不太实际。幸运的是，有一种更好的方法——使用<code>repeat</code>方法指定行或列的重复次数，后面加上逗号以及需要重复的值。
 这里有一个添加 100 行网格的例子，使每行高度均为 50px：
 
 ```css

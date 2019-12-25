@@ -9,12 +9,12 @@ localeTitle: 使用 grid-gap 为网格添加间距
 
 ## Description
 <section id='description'>
-<code>grid-gap</code>是<code>grid-row-gap</code>和<code>grid-column-gap</code>的简写，它更方便使用。如果<code>grid-gap</code>有一个值，行与行之间和列与列之间将添加等于该值的间隙。但是，如果有两个值，第一个值将作为行间隙的高度值，第二个值是列间隙的宽度值。
+<code>grid-gap</code>属性是前两个挑战中的<code>grid-row-gap</code>属性和<code>grid-column-gap</code>属性的简写，它更方便使用。如果<code>grid-gap</code>只有一个值，那么这个值表示行与行之间、列与列之间的间距。如果<code>grid-gap</code>有两个值，那么第一个值表示行间距，第二个值表示列间距。
 </section>
 
 ## Instructions
 <section id='instructions'>
-使用<code>grid-gap</code>在行之间添加<code>10px</code>的间隙，在列之间添加<code>20px</code>的间隙。
+使用<code>grid-gap</code>属性设置行间距为<code>10px</code>，设置列间距为<code>20px</code>。
 </section>
 
 ## Tests
@@ -22,8 +22,8 @@ localeTitle: 使用 grid-gap 为网格添加间距
 
 ```yml
 tests:
-  - text: '<code>container</code>类应该有<code>grid-gap</code>属性，在行之间引入<code>10px</code>的间隙，在列之间引入<code>20px</code>的间隙。'
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-gap\s*?:\s*?10px\s*?20px\s*?;[\s\S]*}/gi), ''<code>container</code>类应该有<code>grid-gap</code>属性，在行之间引入<code>10px</code>的间隙，在列之间引入<code>20px</code>的间隙。'');'
+  - text: '<code>container</code>类应该有<code>grid-gap</code>属性，在行之间设置<code>10px</code>的间距，在列之间设置<code>20px</code>的间距。'
+    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-gap\s*?:\s*?10px\s*?20px\s*?;[\s\S]*}/gi), ''<code>container</code>类应该有<code>grid-gap</code>属性，在行之间设置<code>10px</code>的间距，在列之间设置<code>20px</code>的间距。'');'
 
 ```
 

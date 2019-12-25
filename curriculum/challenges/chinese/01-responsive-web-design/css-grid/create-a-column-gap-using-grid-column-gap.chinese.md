@@ -9,19 +9,19 @@ localeTitle: 使用 grid-column-gap 创建多列之间的间距
 
 ## Description
 <section id='description'>
-到目前为止，在你所建立的网格中列都相互紧挨着。如果需要在列与列之间添加一些间隙，我们可以使用<code>grid-column-gap</code>：
+到目前为止，在你所建立的网格中列都相互紧挨着。如果需要在列与列之间添加一些间距，我们可以使用<code>grid-column-gap</code>：
 
 
 ```css
 grid-column-gap: 10px;
 ```
 
-这会在我们创建的所有列之间添加 10px 的空白间隙。
+这会在我们创建的所有列之间添加 10px 的空白间距。
 </section>
 
 ## Instructions
 <section id='instructions'>
-为网格中的列添加宽度为<code>20px</code>的间隙。
+为网格中的列添加宽度为<code>20px</code>的间距。
 </section>
 
 ## Tests

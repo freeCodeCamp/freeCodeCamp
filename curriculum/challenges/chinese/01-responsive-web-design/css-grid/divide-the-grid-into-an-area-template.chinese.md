@@ -20,7 +20,7 @@ grid-template-areas:
 
 上面的代码将顶部三个单元格合并成一个名为<code>header</code>的区域，将底部三个单元格合并为一个名为<code>footer</code>的区域，并在中间行生成两个区域————<code>advert</code>和<code>content</code>。
 <strong>注意：</strong><br>在代码中，每个单词代表一个网格单元格，每对引号代表一行。
-除了自定义标签，你还能使用句点（<code>.</code>）来表示一个空单元格
+除了自定义标签，你还能使用句点（<code>.</code>）来表示一个空单元格。
 </section>
 
 ## Instructions

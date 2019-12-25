@@ -15,18 +15,18 @@ localeTitle: 使用 grid-area 创建区域模板
 item1 { grid-area: 1/1/2/4; }
 ```
 
-这里使用了你之前学习的线号来定义网格项的区域。上例中数字代表这些值：
+这里使用了你之前学习的网格线编号来定义网格项的区域。上例中数字代表这些值：
 
 ```css
 grid-area: horizontal line to start at / vertical line to start at / horizontal line to end at / vertical line to end at;
 ```
 
-因此，示例中的网格项将占用第 1 条和第 2 条水平线之间的行及第 1 条和第 4 条垂直线之间的列。
+因此，示例中的网格项将占用第 1 条水平网格线（起始）和第 2 条水平网格线（终止）之间的行，及第 1 条垂直网格线（起始）和第 4 条垂直网格线（终止）之间的列。
 </section>
 
 ## Instructions
 <section id='instructions'>
-请用<code>grid-area</code>属性将类为<code>item5</code>的元素放置在第 3 条和第 4 条水平线及第 1 条和第 4 条垂直线之间的区域内。
+请用<code>grid-area</code>属性将类为<code>item5</code>的元素放置在第 3 条和第 4 条水平网格线及第 1 条和第 4 条水平网格线之间的区域内。
 </section>
 
 ## Tests

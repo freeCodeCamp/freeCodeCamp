@@ -4,12 +4,12 @@ title: Use grid-row to Control Spacing
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/c9WBLU4'
 forumTopicId: 301137
-localeTitle: 使用 grid-row 来控制剩余部分
+localeTitle: 使用 grid-row 来控制空间大小
 ---
 
 ## Description
 <section id='description'>
-当然，你可以像列一样使网格项跨越多行。对于一个网格项，你可以用<code>grid-row</code>属性来确定开始和结束的水平线。
+当然，和设置一个网格项占用多列一样，你也可以设置它占用多行。你可以使用<code>grid-row</code>属性来定义一个网格项开始和结束的水平线。
 </section>
 
 ## Instructions

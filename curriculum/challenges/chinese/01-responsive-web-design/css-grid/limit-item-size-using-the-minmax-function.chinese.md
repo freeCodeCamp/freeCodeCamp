@@ -15,7 +15,7 @@ localeTitle: 使用 minmax 函数限制项目大小
 grid-template-columns: 100px minmax(50px, 200px);
 ```
 
-在上面的代码中，<code>grid-template-columns</code>被设置为添加两列，第一列 100px 宽，第二列宽度最小值是 50px，最大值是 200px。
+在上面的代码中，通过<code>grid-template-columns</code>添加两列，第一列宽度为 100px，第二列宽度最小值是 50px，最大值是 200px。
 </section>
 
 ## Instructions

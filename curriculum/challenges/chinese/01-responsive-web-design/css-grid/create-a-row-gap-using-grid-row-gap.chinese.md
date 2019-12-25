@@ -9,12 +9,12 @@ localeTitle: 使用 grid-row-gap 创建多行之间的间距
 
 ## Description
 <section id='description'>
-和上个挑战在两列之间添加间隙一样，你可以用<code>grid-row-gap</code>在两行之间添加间隙。
+和上个挑战在两列之间添加间距一样，你可以用<code>grid-row-gap</code>在两行之间设置间距。
 </section>
 
 ## Instructions
 <section id='instructions'>
-为网格中的行添加高度为<code>5px</code>的间隙。
+为网格中的行添加高度为<code>5px</code>的间距。
 </section>
 
 ## Tests

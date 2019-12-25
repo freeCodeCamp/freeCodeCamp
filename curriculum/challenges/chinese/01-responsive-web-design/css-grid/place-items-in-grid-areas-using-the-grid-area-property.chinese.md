@@ -9,7 +9,7 @@ localeTitle: 使用 grid-area 属性将项目放置在网格区域中
 
 ## Description
 <section id='description'>
-像上一个挑战那样，在为网格添加区域模板后，你可以通过添加你定义的名称将网格项放入自定义区域。为此，你需要对网格项使用<code>grid-area</code>：
+像上一个挑战那样，在为网格添加区域模板后，你可以通过引用你所定义的区域的名称，将元素放入相应的区域。为此，你需要对网格项使用<code>grid-area</code>：
 
 ```css
 .item1 {
@@ -17,7 +17,7 @@ localeTitle: 使用 grid-area 属性将项目放置在网格区域中
 }
 ```
 
-这样，类名为<code>item1</code>的网格项就被放到了<code>header</code>区域里。这种情况下，网格项将使用整个顶行，因为这一行被名为 header 区域。
+这样，类名为<code>item1</code>的网格项就被放到了<code>header</code>区域里。在这个示例中，网格项将占用整个顶行，因为这一整行都被命名为 header 区域。
 </section>
 
 ## Instructions

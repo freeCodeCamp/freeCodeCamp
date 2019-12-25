@@ -14,7 +14,7 @@ localeTitle: 使用 align-items 垂直对齐所有项目
 
 ## Instructions
 <section id='instructions'>
-请使用它让所有网格项移动到单元格的末尾。
+请使用<code>align-items</code>属性将所有网格项移动到单元格的末尾。
 </section>
 
 ## Tests

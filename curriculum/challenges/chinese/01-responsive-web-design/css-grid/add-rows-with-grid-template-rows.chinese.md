@@ -9,7 +9,7 @@ localeTitle: 使用 grid-template-rows 添加多行
 
 ## Description
 <section id='description'>
-在上次挑战中，你创建的网格会自动设置行数。你可以像用<code>grid-template-columns</code>设置网格的列一样，用<code>grid-template-rows</code>为网格设置行数。
+在上个挑战中，你创建的网格会自动设置行数。你可以像用<code>grid-template-columns</code>设置网格的列一样，用<code>grid-template-rows</code>设置网格的行。
 </section>
 
 ## Instructions
@@ -22,8 +22,8 @@ localeTitle: 使用 grid-template-rows 添加多行
 
 ```yml
 tests:
-  - text: '<code>container</code>类应该有<code>grid-template-rows</code>属性，且值为两个<code>50px</code>。'
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-template-rows\s*?:\s*?50px\s*?50px\s*?;[\s\S]*}/gi), ''<code>container</code>类应该有<code>grid-template-rows</code>属性，且值为两个<code>50px</code>。'');'
+  - text: '<code>container</code>类应该有<code>grid-template-rows</code>属性，且该属性的两个值均为<code>50px</code>'
+    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-template-rows\s*?:\s*?50px\s*?50px\s*?;[\s\S]*}/gi), ''<code>container</code>类应该有<code>grid-template-rows</code>属性，且该属性的两个值均为<code>50px</code>'');'
 
 ```
 
