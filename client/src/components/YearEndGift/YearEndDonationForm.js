@@ -20,6 +20,7 @@ import './YearEndGift.css';
 import '../Donation/Donation.css';
 import { stripePublicKey } from '../../../../config/env.json';
 import { stripeScriptLoader } from '../../utils/scriptLoaders';
+import ga from '../../analytics';
 
 const numToCommas = num =>
   num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
@@ -46,6 +47,7 @@ class YearEndDonationForm extends Component {
     this.handleSelectAmount = this.handleSelectAmount.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.handlePaypalSubmission = this.handlePaypalSubmission.bind(this);
   }
 
   componentDidMount() {
@@ -178,12 +180,20 @@ class YearEndDonationForm extends Component {
     );
   }
 
+  handlePaypalSubmission() {
+    ga.event({
+      category: 'donation',
+      action: 'year end gift paypal button click'
+    });
+  }
+
   renderPayPalDonations() {
     return (
       <form
         action='https://www.paypal.com/cgi-bin/webscr'
         method='post'
         target='_top'
+        onSubmit={this.handlePaypalSubmission}
       >
         <input type='hidden' name='cmd' value='_s-xclick' />
         <input type='hidden' name='hosted_button_id' value='9C73W6CWSLNPW' />
