@@ -33,7 +33,7 @@ grid-template-columns: auto 50px 10% 2fr 1fr;
 ```yml
 tests:
   - text: '<code>container</code>类应该有<code>grid-template-columns</code>属性，且生成宽为<code>1fr, 100px</code>和<code>2fr</code>的三列。'
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?1fr\s*?100px\s*?2fr\s*?;[\s\S]*}/gi), ''<code>container</code>类应该有<code>grid-template-columns</code>属性，且生成宽为<code>1fr, 100px</code>和<code>2fr</code>的三列。'');'
+    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?1fr\s*?100px\s*?2fr\s*?;[\s\S]*}/gi));'
 
 ```
 
