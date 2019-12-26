@@ -51,7 +51,13 @@ const propTypes = {
 
 function DonateModal({ show, block, isBlockDonation, closeDonationModal }) {
   const [closeLabel, setCloseLabel] = React.useState(false);
-  const handleProcessing = () => {
+  const handleProcessing = (duration, amount) => {
+    ga.event({
+      category: 'donation',
+      action: 'Modal strip form submission',
+      label: duration,
+      value: amount
+    });
     setCloseLabel(true);
   };
 

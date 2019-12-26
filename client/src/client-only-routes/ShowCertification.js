@@ -131,10 +131,10 @@ class ShowCertification extends Component {
     this.setState({ isDonationDisplayed: false, isDonationClosed: true });
   }
 
-  handleProcessing(amount, duration) {
+  handleProcessing(duration, amount) {
     ga.event({
       category: 'donation',
-      action: 'stripe form submission from certificate',
+      action: 'certificate stripe form submission',
       label: duration,
       value: amount
     });

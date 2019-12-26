@@ -134,8 +134,8 @@ class DonateFormChildViewForHOC extends Component {
     // or display the close button for the cert donation section
     if (this.props.handleProcessing) {
       this.props.handleProcessing(
-        this.state.donationAmount,
-        this.state.donationDuration
+        this.state.donationDuration,
+        this.state.donationAmount
       );
     }
 
