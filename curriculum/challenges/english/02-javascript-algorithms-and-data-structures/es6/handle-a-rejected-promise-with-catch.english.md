@@ -38,8 +38,8 @@ tests:
     testString: assert(codeWithoutSpaces.match(/(makeServerRequest|\))\.catch\(/g));
   - text: Your <code>catch</code> method should have a callback function with <code>error</code> as its parameter.
     testString: assert(errorIsParameter);
-  - text: You should use <code>console.error</code> to log the <code>error</code> to the console.
-    testString: assert(errorIsParameter && codeWithoutSpaces.match(/\.catch\(.*?error.*?console.error\(error\).*?\)/));
+  - text: You should log <code>error</code> to the console.
+    testString: assert(errorIsParameter && codeWithoutSpaces.match(/\.catch\(.*?error.*?console.(log|error)\(error\).*?\)/));
 ```
 
 </section>
