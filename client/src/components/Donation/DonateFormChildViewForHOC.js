@@ -135,7 +135,7 @@ class DonateFormChildViewForHOC extends Component {
     if (this.props.handleProcessing) {
       this.props.handleProcessing(
         this.state.donationDuration,
-        this.state.donationAmount
+        Math.round(this.state.donationAmount / 100)
       );
     }
 

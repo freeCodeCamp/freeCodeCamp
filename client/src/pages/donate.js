@@ -11,6 +11,7 @@ import DonateForm from '../components/Donation/DonateForm';
 import DonateText from '../components/Donation/DonateText';
 import { signInLoadingSelector, userSelector } from '../redux';
 import { stripeScriptLoader } from '../utils/scriptLoaders';
+import ga from '../analytics';
 
 const propTypes = {
   isDonating: PropTypes.bool,
@@ -33,7 +34,7 @@ export class DonatePage extends Component {
       stripe: null,
       enableSettings: false
     };
-
+    this.handleProcessing = this.handleProcessing.bind(this);
     this.handleStripeLoad = this.handleStripeLoad.bind(this);
   }
 
@@ -54,6 +55,15 @@ export class DonatePage extends Component {
     if (stripeMountPoint) {
       stripeMountPoint.removeEventListener('load', this.handleStripeLoad);
     }
+  }
+
+  handleProcessing(duration, amount) {
+    ga.event({
+      category: 'donation',
+      action: 'donate page stripe form submission',
+      label: duration,
+      value: amount
+    });
   }
 
   handleStripeLoad() {
@@ -88,6 +98,7 @@ export class DonatePage extends Component {
             <Col md={6}>
               <DonateForm
                 enableDonationSettingsPage={this.enableDonationSettingsPage}
+                handleProcessing={this.handleProcessing}
                 stripe={stripe}
               />
             </Col>
