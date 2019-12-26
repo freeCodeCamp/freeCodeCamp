@@ -1,51 +1,65 @@
 ---
 id: 5a9036ee38fddaf9a66b5d35
-title: Create a Column Gap Using grid-column-gap
+title: Create a Column Gap Using column-gap
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cVZ8vfD'
 forumTopicId: 301124
 ---
 
 ## Description
+
 <section id='description'>
-So far in the grids you have created, the columns have all been tight up against each other. Sometimes you want a gap in between the columns. To add a gap between the columns, use the <code>grid-column-gap</code> property like this:
+So far in the grids you have created, the columns have all been tight up against each other. Sometimes you want a gap in between the columns. To add a gap between the columns, use the <code>column-gap</code> property like this:
 
 ```css
-grid-column-gap: 10px;
+column-gap: 10px;
 ```
 
 This creates 10px of empty space between all of our columns.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 Give the columns in the grid a <code>20px</code> gap.
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>container</code> class should have a <code>grid-column-gap</code> property that has the value of <code>20px</code>.
-    testString: assert(code.match(/.container\s*?{[\s\S]*grid-column-gap\s*?:\s*?20px\s*?;[\s\S]*}/gi));
-
+  - text: <code>container</code> class should have a <code>column-gap</code> property that has the value of <code>20px</code>.
+    testString: assert(code.match(/.container\s*?{[\s\S]*column-gap\s*?:\s*?20px\s*?;[\s\S]*}/gi));
 ```
 
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
 
 ```html
 <style>
-  .d1{background:LightSkyBlue;}
-  .d2{background:LightSalmon;}
-  .d3{background:PaleTurquoise;}
-  .d4{background:LightPink;}
-  .d5{background:PaleGreen;}
+  .d1 {
+    background: LightSkyBlue;
+  }
+  .d2 {
+    background: LightSalmon;
+  }
+  .d3 {
+    background: PaleTurquoise;
+  }
+  .d4 {
+    background: LightPink;
+  }
+  .d5 {
+    background: PaleGreen;
+  }
 
   .container {
     font-size: 40px;
@@ -56,7 +70,6 @@ tests:
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     /* add your code below this line */
-
 
     /* add your code above this line */
   }
@@ -73,16 +86,14 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
-
 ```js
-var code = ".container {grid-column-gap: 20px;}"
+var code = '.container {column-gap: 20px;}';
 ```
 
 </section>

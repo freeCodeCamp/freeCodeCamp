@@ -60,7 +60,7 @@ tests:
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    grid-gap: 10px;
+    gap: 10px;
     /* change code below this line */
 
     grid-template-areas:
@@ -105,7 +105,7 @@ tests:
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    grid-gap: 10px;
+    gap: 10px;
 
     grid-template-areas:
       "header header header"

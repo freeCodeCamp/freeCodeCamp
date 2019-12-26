@@ -7,12 +7,15 @@ localeTitle: 在网格中创建网格
 ---
 
 ## Description
+
 <section id="description">将元素转换为网格只会影响其直接后代的行为。因此，通过将直接后代转换为网格，您在网格中有一个网格。例如，通过使用<code>item3</code>类设置元素的<code>display</code>和<code>grid-template-columns</code>属性，可以在网格中创建网格。 </section>
 
 ## Instructions
+
 <section id="instructions">使用<code>item3</code>类将元素转换为网格，其中两列的宽度为<code>auto</code> ， <code>1fr</code>使用<code>display</code>和<code>grid-template-columns</code> 。 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -21,12 +24,12 @@ tests:
     testString: 'assert(code.match(/.item3\s*?{[\s\S]*grid-template-columns\s*?:\s*?auto\s*?1fr\s*?;[\s\S]*}/gi), "<code>item3</code> class should have a <code>grid-template-columns</code> property with <code>auto</code> and <code>1fr</code> as values.");'
   - text: <code>item3</code>类应该具有<code>grid</code>值的<code>display</code>属性。
     testString: 'assert(code.match(/.item3\s*?{[\s\S]*display\s*?:\s*?grid\s*?;[\s\S]*}/gi), "<code>item3</code> class should have a <code>display</code> property with the value of <code>grid</code>.");'
-
 ```
 
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -41,11 +44,11 @@ tests:
     display: grid;
     grid-template-columns: auto 1fr;
     grid-template-rows: auto 1fr auto;
-    grid-gap: 10px;
+    gap: 10px;
     grid-template-areas:
-      "advert header"
-      "advert content"
-      "advert footer";
+      'advert header'
+      'advert content'
+      'advert footer';
   }
   .item1 {
     background: LightSkyBlue;
@@ -62,7 +65,6 @@ tests:
     grid-area: content;
     /* enter your code below this line */
 
-
     /* enter your code above this line */
   }
 
@@ -78,7 +80,6 @@ tests:
   .itemTwo {
     background: BlanchedAlmond;
   }
-
 </style>
 
 <div class="container">
@@ -90,19 +91,18 @@ tests:
   </div>
   <div class="item4">footer</div>
 </div>
-
 ```
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js
 // solution required
 ```
+
 </section>

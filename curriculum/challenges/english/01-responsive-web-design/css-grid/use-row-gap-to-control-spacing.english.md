@@ -1,29 +1,32 @@
 ---
 id: 5a90373638fddaf9a66b5d39
-title: Use grid-row to Control Spacing
+title: Use row-gap to Control Spacing
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/c9WBLU4'
 forumTopicId: 301137
 ---
 
 ## Description
+
 <section id='description'>
-Of course, you can make items consume multiple rows just like you can with columns. You define the horizontal lines you want an item to start and stop at using the <code>grid-row</code> property on a grid item.
+Of course, you can make items consume multiple rows just like you can with columns. You define the horizontal lines you want an item to start and stop at using the <code>row-gap</code> property on a grid item.
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 Make the element with the <code>item5</code> class consume the last two rows.
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>item5</code> class should have a <code>grid-row</code> property.
-    testString: assert($('style').text().replace(/\s/g, '').match(/\.item5{.*grid-row:.*}/g));
-  - text: <code>item5</code> class should have a <code>grid-row</code> property which results in it consuming the last two rows of the grid.
+  - text: <code>item5</code> class should have a <code>row-gap</code> property.
+    testString: assert($('style').text().replace(/\s/g, '').match(/\.item5{.*row-gap:.*}/g));
+  - text: <code>item5</code> class should have a <code>row-gap</code> property which results in it consuming the last two rows of the grid.
     testString: "
       const rowStart = getComputedStyle($('.item5')[0]).gridRowStart;
       const rowEnd = getComputedStyle($('.item5')[0]).gridRowEnd;
@@ -37,22 +40,30 @@ tests:
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
 
 ```html
 <style>
-  .item1{background:LightSkyBlue;}
-  .item2{background:LightSalmon;}
-  .item3{background:PaleTurquoise;}
-  .item4{background:LightPink;}
+  .item1 {
+    background: LightSkyBlue;
+  }
+  .item2 {
+    background: LightSalmon;
+  }
+  .item3 {
+    background: PaleTurquoise;
+  }
+  .item4 {
+    background: LightPink;
+  }
 
   .item5 {
     background: PaleGreen;
-    grid-column: 2 / 4;
+    column-gap: 2 / 4;
     /* add your code below this line */
-
 
     /* add your code above this line */
   }
@@ -65,7 +76,7 @@ tests:
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    grid-gap: 10px;
+    gap: 10px;
   }
 </style>
 
@@ -80,26 +91,32 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```html
 <style>
-  .item1{background:LightSkyBlue;}
-  .item2{background:LightSalmon;}
-  .item3{background:PaleTurquoise;}
-  .item4{background:LightPink;}
+  .item1 {
+    background: LightSkyBlue;
+  }
+  .item2 {
+    background: LightSalmon;
+  }
+  .item3 {
+    background: PaleTurquoise;
+  }
+  .item4 {
+    background: LightPink;
+  }
 
   .item5 {
     background: PaleGreen;
-    grid-column: 2 / 4;
+    column-gap: 2 / 4;
     /* add your code below this line */
-    grid-row: 2 / 4;
+    row-gap: 2 / 4;
     /* add your code above this line */
   }
 
@@ -111,7 +128,7 @@ tests:
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    grid-gap: 10px;
+    gap: 10px;
   }
 </style>
 

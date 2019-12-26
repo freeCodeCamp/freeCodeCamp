@@ -46,7 +46,7 @@ tests:
     display: grid;
     grid-template-columns: auto 1fr;
     grid-template-rows: auto 1fr auto;
-    grid-gap: 10px;
+    gap: 10px;
     grid-template-areas:
       "advert header"
       "advert content"

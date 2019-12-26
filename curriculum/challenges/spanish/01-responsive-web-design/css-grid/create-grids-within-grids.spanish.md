@@ -7,12 +7,15 @@ localeTitle: Crear cuadrículas dentro de cuadrículas
 ---
 
 ## Description
+
 <section id="description"> Convertir un elemento en una cuadrícula solo afecta el comportamiento de sus descendientes directos. Entonces, al convertir un descendiente directo en una cuadrícula, tiene una cuadrícula dentro de una cuadrícula. Por ejemplo, al configurar las propiedades de <code>display</code> y <code>grid-template-columns</code> del elemento con la clase <code>item3</code> , creará una cuadrícula dentro de su cuadrícula. </section>
 
 ## Instructions
+
 <section id="instructions"> Convierta el elemento con la clase <code>item3</code> en una cuadrícula con dos columnas con un ancho de <code>auto</code> y <code>1fr</code> usando las <code>1fr</code> <code>display</code> y <code>grid-template-columns</code> . </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -21,12 +24,12 @@ tests:
     testString: 'assert(code.match(/.item3\s*?{[\s\S]*grid-template-columns\s*?:\s*?auto\s*?1fr\s*?;[\s\S]*}/gi), "<code>item3</code> class should have a <code>grid-template-columns</code> property with <code>auto</code> and <code>1fr</code> as values.");'
   - text: <code>item3</code> clase <code>item3</code> debe tener una propiedad de <code>display</code> con el valor de <code>grid</code> .
     testString: 'assert(code.match(/.item3\s*?{[\s\S]*display\s*?:\s*?grid\s*?;[\s\S]*}/gi), "<code>item3</code> class should have a <code>display</code> property with the value of <code>grid</code>.");'
-
 ```
 
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -41,11 +44,11 @@ tests:
     display: grid;
     grid-template-columns: auto 1fr;
     grid-template-rows: auto 1fr auto;
-    grid-gap: 10px;
+    gap: 10px;
     grid-template-areas:
-      "advert header"
-      "advert content"
-      "advert footer";
+      'advert header'
+      'advert content'
+      'advert footer';
   }
   .item1 {
     background: LightSkyBlue;
@@ -62,7 +65,6 @@ tests:
     grid-area: content;
     /* enter your code below this line */
 
-
     /* enter your code above this line */
   }
 
@@ -78,7 +80,6 @@ tests:
   .itemTwo {
     background: BlanchedAlmond;
   }
-
 </style>
 
 <div class="container">
@@ -90,19 +91,18 @@ tests:
   </div>
   <div class="item4">footer</div>
 </div>
-
 ```
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js
 // solution required
 ```
+
 </section>

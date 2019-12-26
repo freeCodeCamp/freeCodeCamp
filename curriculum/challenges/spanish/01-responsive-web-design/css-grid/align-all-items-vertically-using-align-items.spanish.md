@@ -7,35 +7,48 @@ localeTitle: Alinear todos los elementos verticalmente utilizando elementos de a
 ---
 
 ## Description
+
 <section id="description"> El uso de la propiedad <code>align-items</code> en un contenedor de cuadrícula establecerá la alineación vertical para todos los elementos en nuestra cuadrícula. </section>
 
 ## Instructions
+
 <section id="instructions"> Úselo ahora para mover todos los elementos al final de cada celda. </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
 tests:
   - text: <code>container</code> clase <code>container</code> debe tener una propiedad <code>align-items</code> que tenga el valor de <code>end</code> .
     testString: 'assert(code.match(/.container\s*?{[\s\S]*align-items\s*?:\s*?end\s*?;[\s\S]*}/gi), "<code>container</code> class should have a <code>align-items</code> property that has the value of <code>end</code>.");'
-
 ```
 
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
 
 ```html
 <style>
-  .item1{background:LightSkyBlue;}
-  .item2{background:LightSalmon;}
-  .item3{background:PaleTurquoise;}
-  .item4{background:LightPink;}
-  .item5{background:PaleGreen;}
+  .item1 {
+    background: LightSkyBlue;
+  }
+  .item2 {
+    background: LightSalmon;
+  }
+  .item3 {
+    background: PaleTurquoise;
+  }
+  .item4 {
+    background: LightPink;
+  }
+  .item5 {
+    background: PaleGreen;
+  }
 
   .container {
     font-size: 40px;
@@ -45,9 +58,8 @@ tests:
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    grid-gap: 10px;
+    gap: 10px;
     /* add your code below this line */
-
 
     /* add your code above this line */
   }
@@ -60,19 +72,18 @@ tests:
   <div class="item4">4</div>
   <div class="item5">5</div>
 </div>
-
 ```
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js
 // solution required
 ```
+
 </section>

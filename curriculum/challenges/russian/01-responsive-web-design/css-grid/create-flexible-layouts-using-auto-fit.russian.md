@@ -50,7 +50,7 @@ tests:
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
     grid-template-rows: 1fr 1fr 1fr;
-    grid-gap: 10px;
+    gap: 10px;
   }
 
   .container2 {
@@ -65,7 +65,7 @@ tests:
 
     /* change the code above this line */
     grid-template-rows: 1fr 1fr 1fr;
-    grid-gap: 10px;
+    gap: 10px;
   }
 </style>
 

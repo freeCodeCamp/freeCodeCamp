@@ -7,12 +7,15 @@ localeTitle: إنشاء شبكات داخل شبكات
 ---
 
 ## Description
+
 <section id="description"> تحويل عنصر إلى شبكة يؤثر فقط على سلوك أحفادها مباشرة. لذا من خلال تحويل سليل مباشر إلى شبكة ، يكون لديك شبكة داخل الشبكة. على سبيل المثال ، من خلال تعيين خصائص <code>grid-template-columns</code> <code>display</code> <code>grid-template-columns</code> للعنصر مع فئة <code>item3</code> ، تقوم بإنشاء شبكة داخل الشبكة. </section>
 
 ## Instructions
+
 <section id="instructions"> قم <code>item3</code> العنصر مع فئة <code>item3</code> إلى شبكة ذات عمودين مع عرض <code>auto</code> و <code>1fr</code> باستخدام <code>1fr</code> <code>display</code> <code>grid-template-columns</code> . </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -21,12 +24,12 @@ tests:
     testString: 'assert(code.match(/.item3\s*?{[\s\S]*grid-template-columns\s*?:\s*?auto\s*?1fr\s*?;[\s\S]*}/gi), "<code>item3</code> class should have a <code>grid-template-columns</code> property with <code>auto</code> and <code>1fr</code> as values.");'
   - text: يجب أن يكون فئة <code>item3</code> خاصية <code>display</code> بقيمة <code>grid</code> .
     testString: 'assert(code.match(/.item3\s*?{[\s\S]*display\s*?:\s*?grid\s*?;[\s\S]*}/gi), "<code>item3</code> class should have a <code>display</code> property with the value of <code>grid</code>.");'
-
 ```
 
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -41,11 +44,11 @@ tests:
     display: grid;
     grid-template-columns: auto 1fr;
     grid-template-rows: auto 1fr auto;
-    grid-gap: 10px;
+    gap: 10px;
     grid-template-areas:
-      "advert header"
-      "advert content"
-      "advert footer";
+      'advert header'
+      'advert content'
+      'advert footer';
   }
   .item1 {
     background: LightSkyBlue;
@@ -62,7 +65,6 @@ tests:
     grid-area: content;
     /* enter your code below this line */
 
-
     /* enter your code above this line */
   }
 
@@ -78,7 +80,6 @@ tests:
   .itemTwo {
     background: BlanchedAlmond;
   }
-
 </style>
 
 <div class="container">
@@ -90,19 +91,18 @@ tests:
   </div>
   <div class="item4">footer</div>
 </div>
-
 ```
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js
 // solution required
 ```
+
 </section>

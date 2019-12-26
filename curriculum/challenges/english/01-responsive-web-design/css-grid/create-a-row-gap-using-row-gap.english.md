@@ -1,45 +1,58 @@
 ---
 id: 5a9036ee38fddaf9a66b5d36
-title: Create a Row Gap using grid-row-gap
+title: Create a Row Gap using row-gap
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cPbJ2Cv'
 forumTopicId: 301125
 ---
 
 ## Description
+
 <section id='description'>
-You can add a gap in between the rows of a grid using <code>grid-row-gap</code> in the same way that you added a gap in between columns in the previous challenge.
+You can add a gap in between the rows of a grid using <code>row-gap</code> in the same way that you added a gap in between columns in the previous challenge.
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 Create a gap for the rows that is <code>5px</code> tall.
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>container</code> class should have a <code>grid-row-gap</code> property that has the value of <code>5px</code>.
-    testString: assert(code.match(/.container\s*?{[\s\S]*grid-row-gap\s*?:\s*?5px\s*?;[\s\S]*}/gi));
-
+  - text: <code>container</code> class should have a <code>row-gap</code> property that has the value of <code>5px</code>.
+    testString: assert(code.match(/.container\s*?{[\s\S]*row-gap\s*?:\s*?5px\s*?;[\s\S]*}/gi));
 ```
 
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
 
 ```html
 <style>
-  .d1{background:LightSkyBlue;}
-  .d2{background:LightSalmon;}
-  .d3{background:PaleTurquoise;}
-  .d4{background:LightPink;}
-  .d5{background:PaleGreen;}
+  .d1 {
+    background: LightSkyBlue;
+  }
+  .d2 {
+    background: LightSalmon;
+  }
+  .d3 {
+    background: PaleTurquoise;
+  }
+  .d4 {
+    background: LightPink;
+  }
+  .d5 {
+    background: PaleGreen;
+  }
 
   .container {
     font-size: 40px;
@@ -50,7 +63,6 @@ tests:
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     /* add your code below this line */
-
 
     /* add your code above this line */
   }
@@ -67,16 +79,14 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
-
 ```js
-var code = ".container {grid-row-gap: 5px;}"
+var code = '.container {row-gap: 5px;}';
 ```
 
 </section>

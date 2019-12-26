@@ -64,7 +64,7 @@ tests:
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 50px auto 1fr auto;
-    grid-gap: 10px;
+    gap: 10px;
     grid-template-areas:
       "header"
       "advert"
@@ -143,7 +143,7 @@ tests:
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 50px auto 1fr auto;
-    grid-gap: 10px;
+    gap: 10px;
     grid-template-areas:
       "header"
       "advert"
