@@ -5,8 +5,9 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Grid, Row, Col, Image, Button } from '@freecodecamp/react-bootstrap';
+import FreeCodeCampLogo from '../assets/icons/freeCodeCampLogo';
 // eslint-disable-next-line max-len
-import MinimalDonateForm from '../components/Donation/components/MinimalDonateForm';
+import MinimalDonateForm from '../components/Donation/MinimalDonateForm';
 
 import {
   showCertSelector,
@@ -22,7 +23,7 @@ import standardErrorMessage from '../utils/standardErrorMessage';
 import reallyWeirdErrorMessage from '../utils/reallyWeirdErrorMessage';
 
 import RedirectHome from '../components/RedirectHome';
-import { Loader, Spacer } from '../components/helpers';
+import { Loader } from '../components/helpers';
 
 const propTypes = {
   cert: PropTypes.shape({
@@ -152,14 +153,13 @@ class ShowCertification extends Component {
 
     const donationCloseBtn = (
       <div>
-        <Spacer />
         <Button
           block={true}
           bsSize='sm'
           bsStyle='primary'
           onClick={this.hideDonationSection}
         >
-          Close.
+          Close
         </Button>
       </div>
     );
@@ -172,23 +172,25 @@ class ShowCertification extends Component {
     ) {
       conditionalDonationSection = (
         <Grid className='donation-section'>
-          <Row className='certification-donation'>
-            <Col sm={10} smOffset={1} xs={12}>
-              <p>
-                Only you can see this message. Congratulations on earning this
-                certification. It’s no easy task. Running freeCodeCamp isn’t
-                easy either. Nor is it cheap. Help us help you and many other
-                people around the world. Make a tax-deductible supporting
-                donation to our nonprofit today.
-              </p>
-            </Col>
-          </Row>
+          {!closeBtn && (
+            <Row>
+              <Col sm={10} smOffset={1} xs={12}>
+                <p>
+                  Only you can see this message. Congratulations on earning this
+                  certification. It’s no easy task. Running freeCodeCamp isn’t
+                  easy either. Nor is it cheap. Help us help you and many other
+                  people around the world. Make a tax-deductible supporting
+                  donation to our nonprofit today.
+                </p>
+              </Col>
+            </Row>
+          )}
           <MinimalDonateForm
             showCloseBtn={this.showDonationCloseBtn}
             defaultTheme='light'
           />
-          <Row className='certification-donation'>
-            <Col sm={10} smOffset={1} xs={12}>
+          <Row>
+            <Col sm={4} smOffset={4} xs={6} xsOffset={3}>
               {closeBtn ? donationCloseBtn : ''}
             </Col>
           </Row>
@@ -204,14 +206,7 @@ class ShowCertification extends Component {
             <header>
               <Col md={5} sm={12}>
                 <div className='logo'>
-                  <Image
-                    alt="freeCodeCamp.org's Logo"
-                    responsive={true}
-                    src={
-                      'https://s3.amazonaws.com/freecodecamp/freecodecamp_logo' +
-                      '.svg'
-                    }
-                  />
+                  <FreeCodeCampLogo />
                 </div>
               </Col>
               <Col md={7} sm={12}>
