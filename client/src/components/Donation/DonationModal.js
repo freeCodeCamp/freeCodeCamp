@@ -51,7 +51,7 @@ const propTypes = {
 
 function DonateModal({ show, block, isBlockDonation, closeDonationModal }) {
   const [closeLabel, setCloseLabel] = React.useState(false);
-  const showCloseBtn = () => {
+  const handleProcessing = () => {
     setCloseLabel(true);
   };
 
@@ -101,7 +101,7 @@ function DonateModal({ show, block, isBlockDonation, closeDonationModal }) {
       <Modal.Body>
         {isBlockDonation ? blockDonationText : progressDonationText}
         <Spacer />
-        <MinimalDonateForm showCloseBtn={showCloseBtn} />
+        <MinimalDonateForm handleProcessing={handleProcessing} />
         <Spacer />
         <Row>
           <Col sm={4} smOffset={4} xs={8} xsOffset={2}>

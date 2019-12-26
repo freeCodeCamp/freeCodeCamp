@@ -86,7 +86,7 @@ class ShowCertification extends Component {
     };
 
     this.hideDonationSection = this.hideDonationSection.bind(this);
-    this.showDonationCloseBtn = this.showDonationCloseBtn.bind(this);
+    this.handleProcessing = this.handleProcessing.bind(this);
   }
 
   componentDidMount() {
@@ -101,7 +101,7 @@ class ShowCertification extends Component {
     this.setState({ donationClosed: true });
   }
 
-  showDonationCloseBtn() {
+  handleProcessing() {
     this.setState({ closeBtn: true });
   }
 
@@ -186,7 +186,7 @@ class ShowCertification extends Component {
             </Row>
           )}
           <MinimalDonateForm
-            showCloseBtn={this.showDonationCloseBtn}
+            handleProcessing={this.handleProcessing}
             defaultTheme='light'
           />
           <Row>

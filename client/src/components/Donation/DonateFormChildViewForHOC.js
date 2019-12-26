@@ -19,7 +19,7 @@ import { postChargeStripe } from '../../utils/ajax';
 import { userSelector } from '../../redux';
 
 const propTypes = {
-  showCloseBtn: PropTypes.func,
+  handleProcessing: PropTypes.func,
   defaultTheme: PropTypes.string,
   donationAmount: PropTypes.number.isRequired,
   donationDuration: PropTypes.string.isRequired,
@@ -132,8 +132,8 @@ class DonateFormChildViewForHOC extends Component {
 
     // change the donation modal button label to close
     // or display the close button for the cert donation section
-    if (this.props.showCloseBtn) {
-      this.props.showCloseBtn();
+    if (this.props.handleProcessing) {
+      this.props.handleProcessing();
     }
 
     return postChargeStripe(yearEndGift, {

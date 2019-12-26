@@ -25,7 +25,7 @@ const numToCommas = num =>
   num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
 
 const propTypes = {
-  showCloseBtn: PropTypes.func,
+  handleProcessing: PropTypes.func,
   defaultTheme: PropTypes.string,
   isDonating: PropTypes.bool,
   stripe: PropTypes.shape({
@@ -89,13 +89,13 @@ class YearEndDonationForm extends Component {
   renderDonationOptions() {
     const { donationAmount, stripe } = this.state;
 
-    const { showCloseBtn, defaultTheme } = this.props;
+    const { handleProcessing, defaultTheme } = this.props;
     return (
       <div>
         <StripeProvider stripe={stripe}>
           <Elements>
             <DonateFormChildViewForHOC
-              showCloseBtn={showCloseBtn}
+              handleProcessing={handleProcessing}
               defaultTheme={defaultTheme}
               donationAmount={donationAmount}
               donationDuration='onetime'
