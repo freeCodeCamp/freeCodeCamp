@@ -1,6 +1,6 @@
 ---
 id: 5a90373638fddaf9a66b5d39
-title: Use row-gap to Control Spacing
+title: Use grid-row to Control Spacing
 challengeType: 0
 videoUrl: ''
 localeTitle: Usa la fila de la rejilla para controlar el espaciado
@@ -8,7 +8,7 @@ localeTitle: Usa la fila de la rejilla para controlar el espaciado
 
 ## Description
 
-<section id="description"> Por supuesto, puede hacer que los artículos consuman varias filas al igual que con las columnas. Define las líneas horizontales en las que desea que comience y se detenga un elemento utilizando la propiedad de la <code>row-gap</code> la <code>row-gap</code> en un elemento de la cuadrícula. </section>
+<section id="description"> Por supuesto, puede hacer que los artículos consuman varias filas al igual que con las columnas. Define las líneas horizontales en las que desea que comience y se detenga un elemento utilizando la propiedad de la <code>grid-row</code> la <code>grid-row</code> en un elemento de la cuadrícula. </section>
 
 ## Instructions
 
@@ -20,8 +20,8 @@ localeTitle: Usa la fila de la rejilla para controlar el espaciado
 
 ```yml
 tests:
-  - text: <code>item5</code> clase debe tener una <code>row-gap</code> propiedad que tiene el valor de <code>2 / 4</code> .
-    testString: 'assert(code.match(/.item5\s*?{[\s\S]*row-gap\s*?:\s*?2\s*?\/\s*?4\s*?;[\s\S]*}/gi), "<code>item5</code> class should have a <code>row-gap</code> property that has the value of <code>2 / 4</code>.");'
+  - text: <code>item5</code> clase debe tener una <code>grid-row</code> propiedad que tiene el valor de <code>2 / 4</code> .
+    testString: 'assert(code.match(/.item5\s*?{[\s\S]*grid-row\s*?:\s*?2\s*?\/\s*?4\s*?;[\s\S]*}/gi), "<code>item5</code> class should have a <code>grid-row</code> property that has the value of <code>2 / 4</code>.");'
 ```
 
 </section>
@@ -49,7 +49,7 @@ tests:
 
   .item5 {
     background: PaleGreen;
-    column-gap: 2 / 4;
+    grid-column: 2 / 4;
     /* add your code below this line */
 
     /* add your code above this line */

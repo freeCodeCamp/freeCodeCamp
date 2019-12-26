@@ -18,8 +18,8 @@
     ["5a9036ee38fddaf9a66b5d35", "Create a Column Gap Using column-gap"],
     ["5a9036ee38fddaf9a66b5d36", "Create a Row Gap using row-gap"],
     ["5a9036ee38fddaf9a66b5d37", "Add Gaps Faster with gap"],
-    ["5a90372638fddaf9a66b5d38", "Use column-gap to Control Spacing"],
-    ["5a90373638fddaf9a66b5d39", "Use row-gap to Control Spacing"],
+    ["5a90372638fddaf9a66b5d38", "Use grid-column to Control Spacing"],
+    ["5a90373638fddaf9a66b5d39", "Use grid-row to Control Spacing"],
     [
       "5a90374338fddaf9a66b5d3a",
       "Align an Item Horizontally using justify-self"

@@ -1,18 +1,18 @@
 ---
 id: 5a90373638fddaf9a66b5d39
-title: Use row-gap to Control Spacing
+title: Use grid-row to Control Spacing
 challengeType: 0
 videoUrl: ''
-localeTitle: استخدم row-gap إلى Control Spacing
+localeTitle: 使用网格行控制间距
 ---
 
 ## Description
 
-<section id="description"> بالطبع ، يمكنك جعل العناصر تستهلك صفوفًا متعددة تمامًا كما تفعل مع الأعمدة. يمكنك تحديد الأسطر الأفقية التي تريد أن يبدأ عنصرها ثم يتوقف عند استخدام خاصية <code>row-gap</code> على عنصر شبكة. </section>
+<section id="description">当然，像网格列一样，您也可以使一个项目同时占据多个网格行。您可以使用<code>grid-row</code>属性来定义项目开始和结束的网格行。 </section>
 
 ## Instructions
 
-<section id="instructions"> جعل العنصر مع فئة <code>item5</code> تستهلك الصفوف الأخيرة. </section>
+<section id="instructions">让带有<code>item5</code>class选择器的元素占有最后两排网格行。 </section>
 
 ## Tests
 
@@ -20,8 +20,8 @@ localeTitle: استخدم row-gap إلى Control Spacing
 
 ```yml
 tests:
-  - text: يجب أن تحتوي فئة <code>item5</code> على خاصية <code>row-gap</code> لها قيمة <code>2 / 4</code> .
-    testString: 'assert(code.match(/.item5\s*?{[\s\S]*row-gap\s*?:\s*?2\s*?\/\s*?4\s*?;[\s\S]*}/gi), "<code>item5</code> class should have a <code>row-gap</code> property that has the value of <code>2 / 4</code>.");'
+  - text: <code>item5</code>class应该有一个具有<code>2 / 4</code>值属性的<code>grid-row</code>.
+    testString: 'assert(code.match(/.item5\s*?{[\s\S]*grid-row\s*?:\s*?2\s*?\/\s*?4\s*?;[\s\S]*}/gi), "<code>item5</code> class should have a <code>grid-row</code> property that has the value of <code>2 / 4</code>.");'
 ```
 
 </section>
@@ -49,7 +49,7 @@ tests:
 
   .item5 {
     background: PaleGreen;
-    column-gap: 2 / 4;
+    grid-column: 2 / 4;
     /* add your code below this line */
 
     /* add your code above this line */

@@ -1,18 +1,18 @@
 ---
 id: 5a90373638fddaf9a66b5d39
-title: Use row-gap to Control Spacing
+title: Use grid-row to Control Spacing
 challengeType: 0
 videoUrl: ''
-localeTitle: Use row-gap para controlar o espaçamento
+localeTitle: استخدم grid-row إلى Control Spacing
 ---
 
 ## Description
 
-<section id="description"> Claro, você pode fazer itens consumirem várias linhas, assim como você pode com colunas. Você define as linhas horizontais que deseja que um item inicie e pare ao usar a propriedade da <code>row-gap</code> grade em um item da grade. </section>
+<section id="description"> بالطبع ، يمكنك جعل العناصر تستهلك صفوفًا متعددة تمامًا كما تفعل مع الأعمدة. يمكنك تحديد الأسطر الأفقية التي تريد أن يبدأ عنصرها ثم يتوقف عند استخدام خاصية <code>grid-row</code> على عنصر شبكة. </section>
 
 ## Instructions
 
-<section id="instructions"> Faça com que o elemento com a classe <code>item5</code> consuma as duas últimas linhas. </section>
+<section id="instructions"> جعل العنصر مع فئة <code>item5</code> تستهلك الصفوف الأخيرة. </section>
 
 ## Tests
 
@@ -20,8 +20,8 @@ localeTitle: Use row-gap para controlar o espaçamento
 
 ```yml
 tests:
-  - text: <code>item5</code> classe deve ter um <code>row-gap</code> propriedade que tem o valor de <code>2 / 4</code> .
-    testString: 'assert(code.match(/.item5\s*?{[\s\S]*row-gap\s*?:\s*?2\s*?\/\s*?4\s*?;[\s\S]*}/gi), "<code>item5</code> class should have a <code>row-gap</code> property that has the value of <code>2 / 4</code>.");'
+  - text: يجب أن تحتوي فئة <code>item5</code> على خاصية <code>grid-row</code> لها قيمة <code>2 / 4</code> .
+    testString: 'assert(code.match(/.item5\s*?{[\s\S]*grid-row\s*?:\s*?2\s*?\/\s*?4\s*?;[\s\S]*}/gi), "<code>item5</code> class should have a <code>grid-row</code> property that has the value of <code>2 / 4</code>.");'
 ```
 
 </section>
@@ -49,7 +49,7 @@ tests:
 
   .item5 {
     background: PaleGreen;
-    column-gap: 2 / 4;
+    grid-column: 2 / 4;
     /* add your code below this line */
 
     /* add your code above this line */

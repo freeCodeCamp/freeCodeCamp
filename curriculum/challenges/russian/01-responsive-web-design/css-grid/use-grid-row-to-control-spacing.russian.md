@@ -1,16 +1,16 @@
 ---
 id: 5a90373638fddaf9a66b5d39
-title: Use row-gap to Control Spacing
+title: Use grid-row to Control Spacing
 challengeType: 0
 videoUrl: https://scrimba.com/p/pByETK/c9WBLU4
 forumTopicId: 301137
-localeTitle: Использование row-gap для управления пространством
+localeTitle: Использование grid-row для управления пространством
 ---
 
 ## Description
 
 <section id='description'>
-Конечно, вы можете создать элементы, занимающие несколько строк, также как вы делали это со столбцами. Для этого необходимо определить горизонтальные линии, в которых вы хотите чтобы элемент начинался и заканчивался при помощи свойства <code>row-gap</code> на элементе грида.
+Конечно, вы можете создать элементы, занимающие несколько строк, также как вы делали это со столбцами. Для этого необходимо определить горизонтальные линии, в которых вы хотите чтобы элемент начинался и заканчивался при помощи свойства <code>grid-row</code> на элементе грида.
 </section>
 
 ## Instructions
@@ -25,8 +25,8 @@ localeTitle: Использование row-gap для управления пр
 
 ```yml
 tests:
-  - text: <code>item5</code> class should have a <code>row-gap</code> property that has the value of <code>2 / 4</code>.
-    testString: assert(code.match(/.item5\s*?{[\s\S]*row-gap\s*?:\s*?2\s*?\/\s*?4\s*?;[\s\S]*}/gi));
+  - text: <code>item5</code> class should have a <code>grid-row</code> property that has the value of <code>2 / 4</code>.
+    testString: assert(code.match(/.item5\s*?{[\s\S]*grid-row\s*?:\s*?2\s*?\/\s*?4\s*?;[\s\S]*}/gi));
 ```
 
 </section>
@@ -54,7 +54,7 @@ tests:
 
   .item5 {
     background: PaleGreen;
-    column-gap: 2 / 4;
+    grid-column: 2 / 4;
     /* add your code below this line */
 
     /* add your code above this line */
@@ -90,7 +90,7 @@ tests:
 <section id='solution'>
 
 ```html
-var code = ".item5 {row-gap: 2 / 4;}"
+var code = ".item5 {grid-row: 2 / 4;}"
 ```
 
 </section>
