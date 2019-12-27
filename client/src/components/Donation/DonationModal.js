@@ -15,7 +15,8 @@ import ga from '../../analytics';
 import {
   closeDonationModal,
   isDonationModalOpenSelector,
-  isBlockDonationModalSelector
+  isBlockDonationModalSelector,
+  reportGaEvent
 } from '../../redux';
 
 import { challengeMetaSelector } from '../../templates/Challenges/redux';
@@ -36,7 +37,8 @@ const mapStateToProps = createSelector(
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
-      closeDonationModal
+      closeDonationModal,
+      reportGaEvent
     },
     dispatch
   );
@@ -46,13 +48,20 @@ const propTypes = {
   block: PropTypes.string,
   closeDonationModal: PropTypes.func.isRequired,
   isBlockDonation: PropTypes.bool,
+  reportGaEvent: PropTypes.func,
   show: PropTypes.bool
 };
 
-function DonateModal({ show, block, isBlockDonation, closeDonationModal }) {
+function DonateModal({
+  show,
+  block,
+  isBlockDonation,
+  closeDonationModal,
+  reportGaEvent
+}) {
   const [closeLabel, setCloseLabel] = React.useState(false);
   const handleProcessing = (duration, amount) => {
-    ga.event({
+    reportGaEvent({
       category: 'donation',
       action: 'Modal strip form submission',
       label: duration,
@@ -63,6 +72,13 @@ function DonateModal({ show, block, isBlockDonation, closeDonationModal }) {
 
   if (show) {
     ga.modalview('/donation-modal');
+    reportGaEvent({
+      category: 'Donation',
+      action: `Displayed ${
+        isBlockDonation ? 'block' : 'progress'
+      } donation modal`,
+      nonInteraction: true
+    });
   }
 
   const donationText = (
