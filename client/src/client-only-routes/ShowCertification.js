@@ -8,7 +8,6 @@ import { Grid, Row, Col, Image, Button } from '@freecodecamp/react-bootstrap';
 import FreeCodeCampLogo from '../assets/icons/freeCodeCampLogo';
 // eslint-disable-next-line max-len
 import MinimalDonateForm from '../components/Donation/MinimalDonateForm';
-import ga from '../analytics';
 
 import {
   showCertSelector,
@@ -16,7 +15,8 @@ import {
   showCert,
   userFetchStateSelector,
   usernameSelector,
-  isDonatingSelector
+  isDonatingSelector,
+  reportGaEvent
 } from '../redux';
 import validCertNames from '../../utils/validCertNames';
 import { createFlashMessage } from '../components/Flash/redux';
@@ -33,7 +33,8 @@ const propTypes = {
     certName: PropTypes.string,
     certTitle: PropTypes.string,
     completionTime: PropTypes.number,
-    date: PropTypes.string
+    date: PropTypes.string,
+    reportGaEvent: PropTypes.func
   }),
   certDashedName: PropTypes.string,
   certName: PropTypes.string,
@@ -45,6 +46,7 @@ const propTypes = {
   }),
   isDonating: PropTypes.bool,
   issueDate: PropTypes.string,
+  reportGaEvent: PropTypes.func,
   showCert: PropTypes.func.isRequired,
   signedInUserName: PropTypes.string,
   userFetchState: PropTypes.shape({
@@ -75,7 +77,7 @@ const mapStateToProps = (state, { certName }) => {
 };
 
 const mapDispatchToProps = dispatch =>
-  bindActionCreators({ createFlashMessage, showCert }, dispatch);
+  bindActionCreators({ createFlashMessage, showCert, reportGaEvent }, dispatch);
 
 class ShowCertification extends Component {
   constructor(...args) {
@@ -104,7 +106,8 @@ class ShowCertification extends Component {
       userFetchState: { complete: userComplete },
       signedInUserName,
       isDonating,
-      cert: { username = '' }
+      cert: { username = '' },
+      reportGaEvent
     } = nextProps;
     const { isDonationDisplayed } = this.state;
 
@@ -118,7 +121,7 @@ class ShowCertification extends Component {
         isDonationDisplayed: true
       });
 
-      ga.event({
+      reportGaEvent({
         category: 'Donation',
         action: 'Displayed Certificate Donation',
         nonInteraction: true
@@ -132,7 +135,7 @@ class ShowCertification extends Component {
   }
 
   handleProcessing(duration, amount) {
-    ga.event({
+    this.props.reportGaEvent({
       category: 'donation',
       action: 'certificate stripe form submission',
       label: duration,
