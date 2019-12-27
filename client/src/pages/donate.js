@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
@@ -9,12 +10,12 @@ import { stripePublicKey } from '../../config/env.json';
 import { Spacer, Loader } from '../components/helpers';
 import DonateForm from '../components/Donation/DonateForm';
 import DonateText from '../components/Donation/DonateText';
-import { signInLoadingSelector, userSelector } from '../redux';
+import { signInLoadingSelector, userSelector, reportGaEvent } from '../redux';
 import { stripeScriptLoader } from '../utils/scriptLoaders';
-import ga from '../analytics';
 
 const propTypes = {
   isDonating: PropTypes.bool,
+  reportGaEvent: PropTypes.func,
   showLoading: PropTypes.bool.isRequired
 };
 
@@ -26,6 +27,14 @@ const mapStateToProps = createSelector(
     showLoading
   })
 );
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      reportGaEvent
+    },
+    dispatch
+  );
 
 export class DonatePage extends Component {
   constructor(...props) {
@@ -39,6 +48,11 @@ export class DonatePage extends Component {
   }
 
   componentDidMount() {
+    this.props.reportGaEvent({
+      category: 'Donation',
+      action: `Displayed donate page`,
+      nonInteraction: true
+    });
     if (window.Stripe) {
       this.handleStripeLoad();
     } else if (document.querySelector('#stripe-js')) {
@@ -58,7 +72,7 @@ export class DonatePage extends Component {
   }
 
   handleProcessing(duration, amount) {
-    ga.event({
+    this.props.reportGaEvent({
       category: 'donation',
       action: 'donate page stripe form submission',
       label: duration,
@@ -116,4 +130,7 @@ export class DonatePage extends Component {
 DonatePage.displayName = 'DonatePage';
 DonatePage.propTypes = propTypes;
 
-export default connect(mapStateToProps)(DonatePage);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(DonatePage);
