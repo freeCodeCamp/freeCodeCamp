@@ -5,9 +5,8 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Link } from 'gatsby';
 
-import ga from '../../../analytics';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
-import { completedChallengesSelector } from '../../../redux';
+import { completedChallengesSelector, reportGaEvent } from '../../../redux';
 import Caret from '../../../assets/icons/Caret';
 import { blockNameify } from '../../../../utils/blockNameify';
 import GreenPass from '../../../assets/icons/GreenPass';
@@ -29,7 +28,7 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch =>
-  bindActionCreators({ toggleBlock }, dispatch);
+  bindActionCreators({ toggleBlock, reportGaEvent }, dispatch);
 
 const propTypes = {
   blockDashedName: PropTypes.string,
@@ -43,6 +42,7 @@ const propTypes = {
     })
   }),
   isExpanded: PropTypes.bool,
+  reportGaEvent: PropTypes.func,
   toggleBlock: PropTypes.func.isRequired
 };
 
@@ -58,8 +58,8 @@ export class Block extends Component {
   }
 
   handleBlockClick() {
-    const { blockDashedName, toggleBlock } = this.props;
-    ga.event({
+    const { blockDashedName, toggleBlock, reportGaEvent } = this.props;
+    reportGaEvent({
       category: 'Map Block Click',
       action: blockDashedName
     });
@@ -68,7 +68,7 @@ export class Block extends Component {
 
   handleChallengeClick(slug) {
     return () => {
-      return ga.event({
+      return this.props.reportGaEvent({
         category: 'Map Challenge Click',
         action: slug
       });
