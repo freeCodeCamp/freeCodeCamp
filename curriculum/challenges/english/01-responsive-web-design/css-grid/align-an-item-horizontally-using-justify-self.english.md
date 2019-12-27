@@ -7,6 +7,7 @@ forumTopicId: 301122
 ---
 
 ## Description
+
 <section id='description'>
 In CSS Grid, the content of each item is located in a box which is referred to as a <dfn>cell</dfn>. You can align the content's position within its cell horizontally using the <code>justify-self</code> property on a grid item. By default, this property has a value of <code>stretch</code>, which will make the content fill the whole width of the cell. This CSS Grid property accepts other values as well:
 <code>start</code>: aligns the content at the left of the cell,
@@ -15,42 +16,51 @@ In CSS Grid, the content of each item is located in a box which is referred to a
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 Use the <code>justify-self</code> property to center the item with the class <code>item2</code>.
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
 tests:
   - text: <code>item2</code> class should have a <code>justify-self</code> property that has the value of <code>center</code>.
     testString: assert(code.match(/.item2\s*?{[\s\S]*justify-self\s*?:\s*?center\s*?;[\s\S]*}/gi));
-
 ```
 
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
 
 ```html
 <style>
-  .item1{background: LightSkyBlue;}
+  .item1 {
+    background: LightSkyBlue;
+  }
 
   .item2 {
     background: LightSalmon;
     /* add your code below this line */
 
-
     /* add your code above this line */
   }
 
-  .item3{background:PaleTurquoise;}
-  .item4{background:LightPink;}
-  .item5{background:PaleGreen;}
+  .item3 {
+    background: PaleTurquoise;
+  }
+  .item4 {
+    background: LightPink;
+  }
+  .item5 {
+    background: PaleGreen;
+  }
 
   .container {
     font-size: 40px;
@@ -60,7 +70,7 @@ tests:
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    grid-gap: 10px;
+    gap: 10px;
   }
 </style>
 
@@ -75,16 +85,14 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
-
 ```js
-var code = ".item2 {justify-self: center;}"
+var code = '.item2 {justify-self: center;}';
 ```
 
 </section>

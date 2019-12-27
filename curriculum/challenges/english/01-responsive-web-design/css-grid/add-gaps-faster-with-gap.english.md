@@ -1,21 +1,21 @@
 ---
-id: 5a9036ee38fddaf9a66b5d36
-title: Create a Row Gap using row-gap
+id: 5a9036ee38fddaf9a66b5d37
+title: Add Gaps Faster with gap
 challengeType: 0
-videoUrl: 'https://scrimba.com/p/pByETK/cPbJ2Cv'
-forumTopicId: 301125
+videoUrl: 'https://scrimba.com/p/pByETK/ca2qVtv'
+forumTopicId: 301118
 ---
 
 ## Description
 
 <section id='description'>
-You can add a gap in between the rows of a grid using <code>row-gap</code> in the same way that you added a gap in between columns in the previous challenge.
+<code>gap</code> is a shorthand property for <code>row-gap</code> and <code>column-gap</code> from the previous two challenges that's more convenient to use. If <code>gap</code> has one value, it will create a gap between all rows and columns. However, if there are two values, it will use the first one to set the gap between the rows and the second value for the columns.
 </section>
 
 ## Instructions
 
 <section id='instructions'>
-Create a gap for the rows that is <code>5px</code> tall.
+Use <code>gap</code> to introduce a <code>10px</code> gap between the rows and <code>20px</code> gap between the columns.
 </section>
 
 ## Tests
@@ -24,8 +24,8 @@ Create a gap for the rows that is <code>5px</code> tall.
 
 ```yml
 tests:
-  - text: <code>container</code> class should have a <code>row-gap</code> property that has the value of <code>5px</code>.
-    testString: assert(code.match(/.container\s*?{[\s\S]*row-gap\s*?:\s*?5px\s*?;[\s\S]*}/gi));
+  - text: <code>container</code> class should have a <code>gap</code> property that introduces <code>10px</code> gap between the rows and <code>20px</code> gap between the columns.
+    testString: assert(code.match(/.container\s*?{[\s\S]*gap\s*?:\s*?10px\s+?20px\s*?;[\s\S]*}/gi));
 ```
 
 </section>
@@ -67,7 +67,6 @@ tests:
     /* add your code above this line */
   }
 </style>
-
 <div class="container">
   <div class="d1">1</div>
   <div class="d2">2</div>
@@ -86,7 +85,7 @@ tests:
 <section id='solution'>
 
 ```js
-var code = '.container {row-gap: 5px;}';
+var code = '.container {gap: 10px 20px;}';
 ```
 
 </section>

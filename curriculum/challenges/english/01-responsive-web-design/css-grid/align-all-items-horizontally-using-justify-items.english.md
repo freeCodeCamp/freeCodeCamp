@@ -7,39 +7,52 @@ forumTopicId: 301120
 ---
 
 ## Description
+
 <section id='description'>
 Sometimes you want all the items in your CSS Grid to share the same alignment. You can use the previously learned properties and align them individually, or you can align them all at once horizontally by using <code>justify-items</code> on your grid container. This property can accept all the same values you learned about in the previous two challenges, the difference being that it will move <b>all</b> the items in our grid to the desired alignment.
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 Use this property to center all our items horizontally.
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
 tests:
   - text: <code>container</code> class should have a <code>justify-items</code> property that has the value of <code>center</code>.
     testString: assert(code.match(/.container\s*?{[\s\S]*justify-items\s*?:\s*?center\s*?;[\s\S]*}/gi));
-
 ```
 
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
 
 ```html
 <style>
-  .item1{background:LightSkyBlue;}
-  .item2{background:LightSalmon;}
-  .item3{background:PaleTurquoise;}
-  .item4{background:LightPink;}
-  .item5{background:PaleGreen;}
+  .item1 {
+    background: LightSkyBlue;
+  }
+  .item2 {
+    background: LightSalmon;
+  }
+  .item3 {
+    background: PaleTurquoise;
+  }
+  .item4 {
+    background: LightPink;
+  }
+  .item5 {
+    background: PaleGreen;
+  }
 
   .container {
     font-size: 40px;
@@ -49,9 +62,8 @@ tests:
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    grid-gap: 10px;
+    gap: 10px;
     /* add your code below this line */
-
 
     /* add your code above this line */
   }
@@ -68,16 +80,14 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
-
 ```js
-var code = ".container {justify-items: center;}"
+var code = '.container {justify-items: center;}';
 ```
 
 </section>
