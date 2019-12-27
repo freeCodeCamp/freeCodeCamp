@@ -20,7 +20,6 @@ import './YearEndGift.css';
 import '../Donation/Donation.css';
 import { stripePublicKey } from '../../../../config/env.json';
 import { stripeScriptLoader } from '../../utils/scriptLoaders';
-import ga from '../../analytics';
 
 const numToCommas = num =>
   num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
@@ -29,6 +28,7 @@ const propTypes = {
   handleProcessing: PropTypes.func,
   defaultTheme: PropTypes.string,
   isDonating: PropTypes.bool,
+  reportGaEvent: PropTypes.func,
   stripe: PropTypes.shape({
     createToken: PropTypes.func.isRequired
   })
@@ -90,7 +90,6 @@ class YearEndDonationForm extends Component {
 
   renderDonationOptions() {
     const { donationAmount, stripe } = this.state;
-
     const { handleProcessing, defaultTheme } = this.props;
     return (
       <div>
@@ -181,7 +180,7 @@ class YearEndDonationForm extends Component {
   }
 
   handlePaypalSubmission() {
-    ga.event({
+    this.props.reportGaEvent({
       category: 'donation',
       action: 'year end gift paypal button click'
     });

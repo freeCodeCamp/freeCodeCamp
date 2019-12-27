@@ -47,6 +47,7 @@ function YearEndGiftPage({ reportGaEvent }) {
             <YearEndDonationForm
               defaultTheme='light'
               handleProcessing={handleProcessing}
+              reportGaEvent={reportGaEvent}
             />
           </FullWidthRow>
           <Spacer />
