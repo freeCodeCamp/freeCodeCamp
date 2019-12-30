@@ -3,7 +3,7 @@ import React, { Fragment } from 'react';
 
 const propTypes = {};
 
-function Paypal(props) {
+function DonateWithPayPal(props) {
   return (
     <Fragment>
       <span className='sr-only'>Donate with PayPal</span>
@@ -52,7 +52,7 @@ function Paypal(props) {
   );
 }
 
-Paypal.displayName = 'Paypal';
-Paypal.propTypes = propTypes;
+DonateWithPayPal.displayName = 'DonateWithPayPal';
+DonateWithPayPal.propTypes = propTypes;
 
-export default Paypal;
+export default DonateWithPayPal;

@@ -20,7 +20,7 @@ import './YearEndGift.css';
 import '../Donation/Donation.css';
 import { stripePublicKey } from '../../../../config/env.json';
 import { stripeScriptLoader } from '../../utils/scriptLoaders';
-import Paypal from '../../assets/icons/Payapl';
+import DonateWithPayPal from '../../assets/icons/DonateWithPayPal';
 
 const numToCommas = num =>
   num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
@@ -194,7 +194,7 @@ class YearEndDonationForm extends Component {
           className='btn btn-block btn-cta paypal-button'
           alt='donate with paypal'
         >
-          <Paypal />
+          <DonateWithPayPal />
         </button>
       </form>
     );
