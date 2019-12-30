@@ -4,7 +4,7 @@ title: Use the flex-wrap Property to Wrap a Row or Column
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cQv9ZtG'
 forumTopicId: 301114
-localTitle: 使用 flex-wrap 属性包裹一行或一列
+localeTitle: 使用 flex-wrap 属性包裹一行或一列
 ---
 
 ## Description
@@ -12,7 +12,7 @@ localTitle: 使用 flex-wrap 属性包裹一行或一列
 CSS flexbox 有一个把 flex 子元素拆分为多行（或多列）的特性。默认情况下，flex 容器会调整项目大小，把它们都塞到一起。如果是行的话，所有项目都会在一条直线上。
 不过，使用<code>flex-wrap</code>属性可以使项目换行。这意味着多出来的项目会被移到新的行或列。换行发生的断点由项目和容器的大小决定。
 换行方向的可选值有这些：
-<ul><li><code>nowrap</code>：默认值，不换行。</li><li><code>wrap</code>：行从上到下排，列从左到又排。</li><li><code>wrap-reverse</code>：行从下到上排，列从右到左排。</li></ul>
+<ul><li><code>nowrap</code>：默认值，不换行。</li><li><code>wrap</code>：行从上到下排，列从左到又排。</li><li><code>wrap-reverse</code>：行从下到上排，列从左到右排。</li></ul>
 </section>
 
 ## Instructions

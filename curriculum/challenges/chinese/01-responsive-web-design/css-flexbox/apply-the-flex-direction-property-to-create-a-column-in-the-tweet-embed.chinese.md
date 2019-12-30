@@ -4,12 +4,12 @@ title: Apply the flex-direction Property to Create a Column in the Tweet Embed
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cnzdVC9'
 forumTopicId: 301103
-localTitle: 在推文中使用 flex-direction 创建多列
+localeTitle: 使用 flex-direction 在嵌入推文中创建一列
 ---
 
 ## Description
 <section id='description'>
-上面，内嵌推文的<code>header</code>和<code>footer</code>把<code>flex-direction</code>属性设为 row。相似地，<code>.profile-name</code>里的元素或许竖着排列会好看一点。
+在上一个挑战中，把嵌入推文的<code>header</code>和<code>footer</code>的<code>flex-direction</code>属性值设为 row（行）。相似地，把<code>.profile-name</code>选择器对应的元素竖着排列会好看一点。
 </section>
 
 ## Instructions

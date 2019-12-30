@@ -4,16 +4,16 @@ title: Align Elements Using the align-items Property
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/c8aggtk'
 forumTopicId: 301101
-localTitle: 使用 align-items 属性对齐元素
+localeTitle: 使用 align-items 属性对齐元素
 ---
 
 ## Description
 <section id='description'>
 <code>align-items</code>属性与<code>justify-content</code>类似。回忆一下，<code>justify-content</code>属性使 flex 子元素沿主轴排列。行的主轴是水平线，列的主轴是垂直线。
 Flex 容器中，与主轴垂直的叫做 <strong>cross axis（交叉轴）</strong>。行的交叉轴是垂直的，列的交叉轴是水平的。
-CSS 提供了<code>align-items</code>属性，可以用于在交叉轴调整 flex 子元素。对于行，它规定了项目在容器中应该靠上还是靠下，而对于列，就是靠左或靠右。
+使用 CSS 中的<code>align-items</code>属性定义 flex 子元素沿交叉轴的对齐方式，对行来说，将行中的项目在容器中往上或往下移动；对列来说，将列中的项目在容器中往左或往右移动。
 <code>align-items</code>的可选值包括：
-<ul><li><code>flex-start</code>：从 flex 容器的前端开始排列项目。对行来说是把项目都靠顶部放，对于列是把项目都靠左放。</li><li><code>flex-end</code>：从 flex 容器的后端开始排列项目。对行来说是把项目都靠底部放，对于列是把项目都靠右放。</li><li><code>center</code>：把项目的位置调整到中间。对于行，垂直居中（项目上下方空间相等）。对于列，水平居中（项目左右方空间相等）。</li><li><code>stretch</code>：拉伸项目，填满 flex 容器。例如，排成行的项目从容器顶部拉伸到底部。</li><li><code>baseline</code>：基线对齐地排列。基线是字体相关的概念，可以认为字体坐落在基线上。</li></ul>
+<ul><li><code>flex-start</code>：从 flex 容器的起始位置开始对齐项目。对行来说，把项目移至容器顶部；对列来说，是把项目移至容器左边。</li><li><code>flex-end</code>：从 flex 容器的终止位置开始对齐项目。对行来说，把项目移至容器底部；对列来说，把项目移至容器右边。</li><li><code>center</code>：把项目居中放置。对行来说，垂直居中（项目距离顶部和底部的距离相等）；对列来说，水平居中（项目距离左边和右边的距离相等）。</li><li><code>stretch</code>：拉伸项目，填满 flex 容器。例如，排成行的项目从容器顶部拉伸到底部。如未设置<code>align-items</code>的值，那么默认值是<code>stretch</code>。</li><li><code>baseline</code>：沿基线对齐。基线是文本相关的概念，可以认为它是字母排列的下端基准线。</li></ul>
 </section>
 
 ## Instructions

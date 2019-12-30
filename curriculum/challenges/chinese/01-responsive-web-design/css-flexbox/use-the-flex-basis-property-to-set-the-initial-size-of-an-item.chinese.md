@@ -4,18 +4,18 @@ title: Use the flex-basis Property to Set the Initial Size of an Item
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/c3d9nCa'
 forumTopicId: 301108
-localTitle: 使用 flex-basic 属性设置项目的初始大小
+localeTitle: 使用 flex-basis 属性设置项目的初始大小
 ---
 
 ## Description
 <section id='description'>
-<code>flex-basis</code>属性指定了项目在 CSS 进行<code>flex-shrink</code>或<code>flex-grow</code>调整前的初始大小。
-<code>flex-basis</code>属性的单位与其他 size 属性一致（<code>px</code>、<code>em</code>、<code>%</code>等）。如果值为<code>auto</code>，项目的大小依赖于自身内容。
+<code>flex-basis</code>属性定义了在使用 CSS 的<code>flex-shrink</code>或<code>flex-grow</code>属性对项目进行调整前，项目的初始大小。
+<code>flex-basis</code>属性的单位与其他表示尺寸的属性的单位一致（<code>px</code>、<code>em</code>、<code>%</code>等）。如果值为<code>auto</code>，则项目的尺寸随内容调整。
 </section>
 
 ## Instructions
 <section id='instructions'>
-使用<code>flex-basis</code>为盒子设置原始值。在<code>#box-1</code>和<code>#box-2</code>添加 CSS  属性<code>flex-basis</code>。设置<code>#box-1</code>为<code>10em</code>，<code>#box-2</code>为<code>20em</code>。
+使用<code>flex-basis</code>为盒子设置初始值。给<code>#box-1</code>和<code>#box-2</code>添加 CSS 属性<code>flex-basis</code>。设置<code>#box-1</code>的尺寸初始值为<code>10em</code>，<code>#box-2</code>的尺寸初始值为<code>20em</code>。
 </section>
 
 ## Tests

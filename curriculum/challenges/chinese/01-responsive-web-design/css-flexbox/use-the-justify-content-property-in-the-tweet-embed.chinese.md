@@ -4,7 +4,7 @@ title: Use the justify-content Property in the Tweet Embed
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/c43GgTa'
 forumTopicId: 301115
-localTitle: 在推文中使用 justify-content 属性
+localeTitle: 在推文中使用 justify-content 属性
 ---
 
 ## Description

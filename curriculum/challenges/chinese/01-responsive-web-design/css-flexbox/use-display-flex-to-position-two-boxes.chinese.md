@@ -4,12 +4,12 @@ title: 'Use display: flex to Position Two Boxes'
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cgz3QS7'
 forumTopicId: 301105
-localTitle: '使用 display: flex 定位两个盒子'
+localeTitle: '使用 display: flex 定位两个盒子'
 ---
 
 ## Description
 <section id='description'>
-这节会使用一种不同的挑战方式来学习一下如何更灵活地使用 CSS 布局元素。首先，我们会先用一个挑战解释原理，然后使用“弹性盒子”（flexbox）调整一个推文组件的样式来完成挑战。
+这节会使用一种不同的挑战方式来学习一下如何使用 CSS 更灵活地布局元素。首先通过一个挑战来理解原理，然后通过操作一个简单的推文组件来应用“弹性盒子”（flexbox）。
 只要在一个元素的 CSS 中添加<code>display: flex;</code>，就可以使用其它 flex 属性来构建响应式页面了。
 </section>
 

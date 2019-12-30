@@ -4,12 +4,12 @@ title: Apply the flex-direction Property to Create Rows in the Tweet Embed
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cJb8yuq'
 forumTopicId: 301104
-localTitle: 在推文中使用 flex-direction 创建多行
+localeTitle: 使用 flex-direction 在嵌入推文中创建多行
 ---
 
 ## Description
 <section id='description'>
-内嵌推文样例中的<code>header</code>和<code>footer</code>有自己的子元素，使用<code>flex-direction</code>属性可以把这些子元素排列成一行。这个属性告诉 CSS 需要将这个元素的子元素水平排列。
+嵌入推文示例中的<code>header</code>和<code>footer</code>有自己的子元素，使用<code>flex-direction</code>属性可以把这些子元素排成行。这个属性告诉 CSS 需要将这些子元素水平排列。
 </section>
 
 ## Instructions

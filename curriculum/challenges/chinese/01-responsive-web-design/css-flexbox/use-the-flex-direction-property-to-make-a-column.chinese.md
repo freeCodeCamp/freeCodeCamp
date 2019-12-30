@@ -4,12 +4,12 @@ title: Use the flex-direction Property to Make a Column
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cZmWeA4'
 forumTopicId: 301109
-localTitle: 使用 flex-direction 属性创建一列
+localeTitle: 使用 flex-direction 属性创建一列
 ---
 
 ## Description
 <section id='description'>
-之前两项挑战把<code>flex-direction</code>设为 row。这个属性还能创建一个列，让子元素垂直排列在 flex 容器中。
+之前两个挑战使用<code>flex-direction</code>属性创建行（row）。这个属性还能创建一个列，让子元素垂直排列在 flex 容器中。
 </section>
 
 ## Instructions

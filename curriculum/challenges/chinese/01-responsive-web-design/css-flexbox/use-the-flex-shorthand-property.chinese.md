@@ -4,7 +4,7 @@ title: Use the flex Shorthand Property
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cbpW2tE'
 forumTopicId: 301112
-localTitle: 使用 flex 短方法属性
+localeTitle: 使用 flex 短方法属性
 ---
 
 ## Description
@@ -16,8 +16,8 @@ localTitle: 使用 flex 短方法属性
 
 ## Instructions
 <section id='instructions'>
-在<code>#box-1</code>和<code>#box-2</code>添加<code>flex</code>属性。把<code>#box-1</code>设置成<code>flex-grow</code>为 2，<code>flex-shrink</code>为 2，<code>flex-basis</code>为 150px。把<code>#box-2</code>设置成<code>flex-grow</code>为 1，<code>flex-shrink</code>为 1，<code>flex-basis</code>为 150px。
-上面设置的属性，在容器大于 300px 时，会让<code>#box-1</code>填充倍率为<code>#box-2</code>的两倍；在容器小于 300px 时，缩小倍率为<code>#box-2</code>的两倍。300px 是两个盒子的<code>flex-basis</code>的值之和。
+在<code>#box-1</code>和<code>#box-2</code>添加<code>flex</code>属性。为<code>#box-1</code>设置<code>flex-grow</code>属性值为 2，<code>flex-shrink</code>属性值为 2，<code>flex-basis</code>属性值为 150px。为<code>#box-2</code>设置<code>flex-grow</code>属性值为 1，<code>flex-shrink</code>属性值为 1，<code>flex-basis</code>属性值为 150px。
+通过上面的设置，在容器大于 300px 时，<code>#box-1</code>扩大的空间是<code>#box-2</code>扩大空间的两倍；在容器小于 300px 时，<code>#box-1</code>缩小的空间<code>#box-2</code>缩小空间的两倍。300px 是两个盒子的<code>flex-basis</code>的值之和。
 </section>
 
 ## Tests

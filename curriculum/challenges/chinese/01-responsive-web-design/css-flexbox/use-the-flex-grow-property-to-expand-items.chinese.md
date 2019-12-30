@@ -4,13 +4,13 @@ title: Use the flex-grow Property to Expand Items
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/c2p78cg'
 forumTopicId: 1301111
-localTitle: 使用 flex-grow 属性扩展项目
+localeTitle: 使用 flex-grow 属性扩展项目
 ---
 
 ## Description
 <section id='description'>
 与<code>flex-shrink</code>相对的是<code>flex-grow</code>。你应该还记得，<code>flex-shrink</code>会在容器太小时对元素作出调整。相应地，<code>flex-grow</code>会在容器太大时对元素作出调整。
-例子与上一个挑战相似，如果一个项目<code>flex-grow</code>属性的值为 1，另一个<code>flex-grow</code>为 3，那么 3 的会比 1 的扩大三倍。
+例子与上一个挑战相似，如果一个项目的<code>flex-grow</code>属性值为 1，另一个项目的<code>flex-grow</code>属性值为 3，那么后者会较前者扩大三倍。
 </section>
 
 ## Instructions

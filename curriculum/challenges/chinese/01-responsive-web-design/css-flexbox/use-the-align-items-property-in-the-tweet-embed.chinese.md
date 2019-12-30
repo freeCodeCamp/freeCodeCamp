@@ -4,12 +4,12 @@ title: Use the align-items Property in the Tweet Embed
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cd3PNfq'
 forumTopicId: 301106
-localTitle: 在推文中使用 align-items 属性
+localeTitle: 在推文中使用 align-items 属性
 ---
 
 ## Description
 <section id='description'>
-上一个挑战介绍了<code>align-items</code>并给出了例子。这个属性可以应用在不少元素上，调整它们的子元素的位置。
+上一个挑战介绍了<code>align-items</code>属性并给出了例子。可以对嵌入推文的一些元素使用这个属性，以调整其中 flex 子元素的位置。
 </section>
 
 ## Instructions

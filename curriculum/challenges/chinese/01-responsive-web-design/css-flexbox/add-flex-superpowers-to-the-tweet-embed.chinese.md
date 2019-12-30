@@ -4,17 +4,17 @@ title: Add Flex Superpowers to the Tweet Embed
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/c9W7MhM'
 forumTopicId: 301100
-localTitle: 在推文中添加弹性盒子布局
+localeTitle: 在推文中添加弹性盒子布局
 ---
 
 ## Description
 <section id='description'>
-我们以右边的内嵌推文为基础开始实践。一些元素换一个布局方式或许更好看。上一个挑战演示了<code>display: flex</code>，现在你需要把它添加到推文内嵌的多个组件中，调整它们的位置。
+ 我们以右边的嵌入推文为例。一些元素换一个布局方式或许更好看。上一个挑战演示了<code>display: flex</code>，现在你需要把它添加到推文内嵌的多个组件中，调整它们的位置。
 </section>
 
 ## Instructions
 <section id='instructions'>
-为下列项目添加 CSS 属性<code>display: flex</code>—— 注意，选择器已在 CSS 中给出：
+为下列项目添加 CSS 属性<code>display: flex</code>。注意，CSS 选择器已写好：
 <code>header</code>、header 的<code>.profile-name</code>、header 的<code>.follow-btn</code>、header 的<code>h3</code>和<code>h4</code>、<code>footer</code>以及 footer 的<code>.stats</code>。
 </section>
 

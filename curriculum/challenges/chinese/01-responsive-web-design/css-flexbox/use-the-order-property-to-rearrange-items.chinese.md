@@ -4,7 +4,7 @@ title: Use the order Property to Rearrange Items
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cMbvNAG'
 forumTopicId: 301116
-localTitle: 使用 order 属性重新排列项目
+localeTitle: 使用 order 属性重新排列项目
 ---
 
 ## Description
@@ -14,7 +14,7 @@ localTitle: 使用 order 属性重新排列项目
 
 ## Instructions
 <section id='instructions'>
-在<code>#box-1</code>和<code>#box-2</code>添加 CSS 属性<code>order</code>。<code>#box-1</code>设为 2，<code>#box-2</code>设为 1。
+给<code>#box-1</code>和<code>#box-2</code>添加 CSS 属性<code>order</code>，<code>#box-1</code>的<code>order</code>属性值设为 2，<code>#box-2</code>的<code>order</code>属性值设为 1。
 </section>
 
 ## Tests
