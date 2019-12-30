@@ -20,6 +20,7 @@ import './YearEndGift.css';
 import '../Donation/Donation.css';
 import { stripePublicKey } from '../../../../config/env.json';
 import { stripeScriptLoader } from '../../utils/scriptLoaders';
+import DonateWithPayPal from '../../assets/icons/DonateWithPayPal';
 
 const numToCommas = num =>
   num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
@@ -187,14 +188,14 @@ class YearEndDonationForm extends Component {
       >
         <input type='hidden' name='cmd' value='_s-xclick' />
         <input type='hidden' name='hosted_button_id' value='9C73W6CWSLNPW' />
-        <input
+        <button
           type='submit'
           name='submit'
-          className='btn btn-block'
-          title='Donate to freeCodeCamp.org using PayPal'
-          alt='Donate to freeCodeCamp.org using PayPal'
-          value='Donate using PayPal'
-        />
+          className='btn btn-block btn-cta paypal-button'
+          alt='donate with paypal'
+        >
+          <DonateWithPayPal />
+        </button>
       </form>
     );
   }
