@@ -4,7 +4,7 @@ title: Make an Image Responsive
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cPp7VfD'
 forumTopicId: 1
-localTitle: 使图片根据设备尺寸自如响应
+localeTitle: 使图片根据设备尺寸自如响应
 ---
 
 ## Description
@@ -13,7 +13,7 @@ localTitle: 使图片根据设备尺寸自如响应
 <code>img { width: 720px; }</code>
 你应该使用：
 <blockquote>img {<br>&nbsp;&nbsp;max-width: 100%;<br>&nbsp;&nbsp;display: block;<br>&nbsp;&nbsp;height: auto;<br>}</blockquote>
-<code>max-width</code> 属性能让图片以 100% 的最大宽度适应其父容器的宽度，但图片不会拉伸得比原始宽度还宽。将 <code>display</code> 属性设置为 <code>block</code> 可以让 image 标签从内联元素（默认值）更改为块级元素。设置 <code>height</code> 属性为 auto 保持图片的原始宽高比。
+<code>max-width</code> 属性能让图片以 100% 的最大宽度适应其父容器的宽度，但图片不会拉伸得比原始宽度还宽。把 <code>display</code> 属性值设置为 block，将 image 标签从内联元素（默认值）更改为块级元素。设置 <code>height</code> 属性为 auto 保持图片的原始宽高比。
 
 </section>
 

@@ -4,15 +4,16 @@ title: Make Typography Responsive
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cPp7VfD'
 forumTopicId: 1
-localTitle: 使排版根据设备尺寸自如响应
+localeTitle: 使排版根据设备尺寸自如响应
 ---
 
 ## Description
 <section id='description'>
-除了用 <code>em</code> 或 <code>px</code> 去设置文本大小, 你还可以用视窗单位来做响应式排版。视窗单位还有百分比，它们都是相对单位，但却基于不同的参照物。视窗单位相对于设备的视窗尺寸 (宽度或高度) ，百分比是相对于父级元素的大小。
+除了使用 <code>em</code> 或 <code>px</code> 设置文本大小，你还可以用视窗单位来做响应式排版。视窗单位和百分比都是相对单位，但它们是基于不同的参照物。视窗单位是相对于设备的视窗尺寸（宽度或高度），百分比是相对于父级元素的大小。
 四个不同的视窗单位分别是：
-<ul><li><code>vw</code>：如 <code>10vw</code> 的意思是视窗宽度的 10%。</li><li><code>vh：</code> 如 <code>3vh</code> 的意思是视窗高度的 3%。</li><li><code>vmin：</code> 如 <code>70vmin</code> 的意思是视窗中较小尺寸的 70% (高度 VS 宽度)。</li><li><code>vmax：</code> 如 <code>100vmax</code> 的意思是视窗中较大尺寸的 100% (高度 VS 宽度)。</li></ul>
-
+<ul><li><code>vw</code>：如 <code>10vw</code> 的意思是视窗宽度的 10%。</li><li><code>vh：</code> 如 <code>3vh</code> 的意思是视窗高度的 3%。</li><li><code>vmin：</code> 如 <code>70vmin</code> 的意思是视窗的高度和宽度中较小一个的 70%。</li><li><code>vmax：</code> 如 <code>100vmax</code> 的意思是视窗的高度和宽度中较大一个的 100%。</li></ul>
+下面这个例子是设置 body 标签的宽度为视窗宽度的 30%。
+<code>body { width: 30vw; }</code>
 </section>
 
 ## Instructions
