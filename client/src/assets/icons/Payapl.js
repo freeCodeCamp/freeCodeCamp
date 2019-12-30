@@ -6,7 +6,7 @@ const propTypes = {};
 function Paypal(props) {
   return (
     <Fragment>
-      <span className='sr-only'>Donate with payapl</span>
+      <span className='sr-only'>Donate with PayPal</span>
       <svg
         height={31}
         version='1.1'
