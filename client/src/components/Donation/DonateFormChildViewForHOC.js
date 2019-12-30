@@ -55,7 +55,7 @@ class DonateFormChildViewForHOC extends Component {
       donationDuration: this.props.donationDuration,
       isSubmitionValid: null,
       email: null,
-      isEmailVaild: true,
+      isEmailValid: true,
       isFormValid: false
     };
 
@@ -85,16 +85,16 @@ class DonateFormChildViewForHOC extends Component {
     return this.setState({
       email: newValue,
       // reset validation
-      isEmailVaild: true
+      isEmailValid: true
     });
   }
 
   handleSubmit(e) {
     e.preventDefault();
 
-    const { isEmailVaild, isFormValid } = this.state;
+    const { isEmailValid, isFormValid } = this.state;
 
-    if ((!isEmailVaild, !isFormValid)) {
+    if ((!isEmailValid, !isFormValid)) {
       return this.setState({
         isSubmitionValid: false
       });
@@ -201,21 +201,21 @@ class DonateFormChildViewForHOC extends Component {
     const emailValue = this.state.email;
     const newValidation = isEmail(emailValue);
     return this.setState({
-      isEmailVaild: newValidation
+      isEmailValid: newValidation
     });
   }
 
   renderErrorMessage() {
-    const { isEmailVaild, isFormValid } = this.state;
+    const { isEmailValid, isFormValid } = this.state;
     let message = '';
-    if (!isEmailVaild && !isFormValid)
+    if (!isEmailValid && !isFormValid)
       message = (
         <p>
           Please enter valid email address, credit card number, and expiration
           date.
         </p>
       );
-    else if (!isEmailVaild)
+    else if (!isEmailValid)
       message = <p>Please enter a valid email address.</p>;
     else
       message = (
@@ -226,7 +226,7 @@ class DonateFormChildViewForHOC extends Component {
   }
 
   renderDonateForm() {
-    const { isEmailVaild, isSubmitionValid, email } = this.state;
+    const { isEmailValid, isSubmitionValid, email } = this.state;
     const { getDonationButtonLabel, theme, defaultTheme } = this.props;
 
     return (
@@ -237,7 +237,7 @@ class DonateFormChildViewForHOC extends Component {
             Email (we'll send you a tax-deductible donation receipt):
           </ControlLabel>
           <FormControl
-            className={!isEmailVaild && email ? 'email--invalid' : ''}
+            className={!isEmailValid && email ? 'email--invalid' : ''}
             key='3'
             onBlur={this.handleEmailBlur}
             onChange={this.handleEmailChange}
