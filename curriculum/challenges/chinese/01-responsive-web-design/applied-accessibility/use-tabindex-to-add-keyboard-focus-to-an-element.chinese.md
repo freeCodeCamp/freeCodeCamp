@@ -4,7 +4,7 @@ title: Use tabindex to Add Keyboard Focus to an Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cmzMDHW'
 forumTopicId: 301027
-localTitle: 使用 tabindex 将键盘焦点添加到元素中
+localeTitle: 使用 tabindex 将键盘焦点添加到元素中
 ---
 
 ## Description
@@ -26,9 +26,9 @@ Camper Cat 新建了一个调查，用来收集他的用户的信息。他知道
 ```yml
 tests:
   - text: '你应该为表单中的<code>p</code>标签添加<code>tabindex</code>属性。'
-    testString: assert($('p').attr('tabindex'), '你应该为表单中的<code>p</code>标签添加<code>tabindex</code>属性。');
+    testString: assert($('p').attr('tabindex'));
   - text: '你应该将<code>p</code>标签的<code>tabindex</code>属性值设置为 0。'
-    testString: assert($('p').attr('tabindex') == '0', '你应该将<code>p</code>标签的<code>tabindex</code>属性值设置为 0。');
+    testString: assert($('p').attr('tabindex') == '0');
 
 ```
 

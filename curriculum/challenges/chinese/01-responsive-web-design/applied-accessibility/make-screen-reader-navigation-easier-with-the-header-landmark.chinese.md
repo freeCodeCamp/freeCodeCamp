@@ -4,7 +4,7 @@ title: Make Screen Reader Navigation Easier with the header Landmark
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cB76vtv'
 forumTopicId: 301023
-localTitle: 使用 header 元素使屏幕阅读器更容易导航
+localeTitle: 使用 header 元素使屏幕阅读器更容易导航
 ---
 
 ## Description
@@ -25,13 +25,13 @@ Camper Cat 正在写一些训练忍者的精彩文章，并为它们建立一个
 ```yml
 tests:
   - text: '你的代码应该包含 1 个<code>header</code>标签。'
-    testString: assert($('header').length == 1, '你的代码应该包含 1 个<code>header</code>标签。');
+    testString: assert($('header').length == 1);
   - text: '你的<code>header</code>标签应该包含<code>h1</code>。'
-    testString: assert($('header').children('h1').length == 1, '你的<code>header</code>标签应该包含<code>h1</code>。');
+    testString: assert($('header').children('h1').length == 1);
   - text: '你的代码不应有任何<code>div</code>标签。'
-    testString: assert($('div').length == 0, '你的代码不应有任何<code>div</code>标签。');
+    testString: assert($('div').length == 0);
   - text: '确保你的<code>header</code>标签是闭合的。'
-    testString: assert(code.match(/<\/header>/g) && code.match(/<\/header>/g).length === code.match(/<header>/g).length, '确保你的<code>header</code>标签是闭合的。');
+    testString: assert(code.match(/<\/header>/g) && code.match(/<\/header>/g).length === code.match(/<header>/g).length);
 
 ```
 

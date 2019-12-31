@@ -4,7 +4,7 @@ title: Add an Accessible Date Picker
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cR3bRbCV'
 forumTopicId: 301008
-localTitle: 添加可访问的日期选择器
+localeTitle: 添加可访问的日期选择器
 ---
 
 ## Description
@@ -23,7 +23,7 @@ localTitle: 添加可访问的日期选择器
 
 ## Instructions
 <section id='instructions'>
-Camper Cat 想举办一场比武大会，他想收集参赛者的最佳参赛时间。请为 Camper Cat 的页面添加一个<code>type</code>属性且值为 date，<code>id</code>属性为 pickdate，<code>name</code>属性为 date 的<code>input</code>标签。
+Camper Cat 想举办一场比武大会，他想收集参赛者的最佳参赛时间。请为 Camper Cat 的页面添加一个<code>input</code>标签，其<code>type</code>属性值为 date，<code>id</code>属性为 pickdate，<code>name</code>属性为 date。
 </section>
 
 ## Tests
@@ -32,13 +32,13 @@ Camper Cat 想举办一场比武大会，他想收集参赛者的最佳参赛时
 ```yml
 tests:
   - text: '你的代码中应该有 1 个<code>input</code>标签。'
-    testString: assert($('input').length == 2, '你的代码中应该有 1 个<code>input</code>标签。');
+    testString: assert($('input').length == 2);
   - text: '你的<code>input</code>标签的<code>type</code>属性值应该为 date。'
-    testString: assert($('input').attr('type') == 'date', '你的<code>input</code>标签的<code>type</code>属性值应该为 date。');
+    testString: assert($('input').attr('type') == 'date');
   - text: '你的<code>input</code>标签的<code>id</code>属性值应该为 pickdate。'
-    testString: assert($('input').attr('id') == 'pickdate', '你的<code>input</code>标签的<code>id</code>属性值应该为 pickdate。');
+    testString: assert($('input').attr('id') == 'pickdate');
   - text: '你的<code>input</code>标签的<code>name</code>属性值应该为 date。'
-    testString: assert($('input').attr('name') == 'date', '你的<code>input</code>标签的<code>name</code>属性值应该为 date。');
+    testString: assert($('input').attr('name') == 'date');
 
 ```
 

@@ -4,7 +4,7 @@ title: Know When Alt Text Should be Left Blank
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cM9P4t2'
 forumTopicId: 301019
-localTitle: 知道 Alt 文本何时应该留空
+localeTitle: 知道 Alt 文本何时应该留空
 ---
 
 ## Description
@@ -27,9 +27,9 @@ Camper Cat 已经大体写好了博客页面。他打算使用忍者刀图片作
 ```yml
 tests:
   - text: '你的<code>img</code>标签应该包含<code>alt</code>属性。'
-    testString: assert(!($('img').attr('alt') == undefined), '你的<code>img</code>标签应该包含<code>alt</code>属性。');
+    testString: assert(!($('img').attr('alt') == undefined));
   - text: '<code>alt</code>属性对应的值应该为空。'
-    testString: assert($('img').attr('alt') == '', '<code>alt</code>属性对应的值应该为空。');
+    testString: assert($('img').attr('alt') == '');
 
 ```
 

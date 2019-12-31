@@ -4,13 +4,13 @@ title: Avoid Colorblindness Issues by Carefully Choosing Colors that Convey Info
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c437as3'
 forumTopicId: 301011
-localTitle: 通过仔细选择传达信息的颜色来避免色盲问题
+localeTitle: 考虑色盲用户的需求仔细选择传达信息的颜色
 ---
 
 ## Description
 <section id='description'>
 色盲的形式有很多种，它的表现可以从对特定波长光波的感知度较低，到几乎无法看到颜色。最常见的形式是对绿色的低感知度。
-例如：如果内容的前景色与背景色是两种相近的绿色，那么色盲用户可能会无法识别它们。可以将色轮上相邻的颜色认为是相近的，我们不应用这些颜色来表示重要的信息。
+例如：如果内容的前景色与背景色是两种相近的绿色，那么色盲用户可能会无法识别它们。可以认为色轮上相邻的颜色是相近的，在表示重要信息的时候应避免使用这些颜色的组合。
 <strong>注意：</strong><br>一些在线颜色拾取器有色盲模拟功能，可以模拟颜色在不同形式色盲的视觉中的呈现结果，它们和在线对比度检查器一样，都是很好的工具。
 </section>
 
@@ -25,7 +25,7 @@ Camper Cat 正在用不同样式测试一个重要按钮。在色轮上，黄色
 ```yml
 tests:
   - text: '<code>button</code>的文本<code>color</code>应该是深蓝色。'
-    testString: assert($('button').css('color') == 'rgb(0, 51, 102)', '<code>button</code>的文本<code>color</code>应该是深蓝色。');
+    testString: assert($('button').css('color') == 'rgb(0, 51, 102)');
 
 ```
 

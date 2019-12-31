@@ -4,7 +4,7 @@ title: Improve Accessibility of Audio Content with the audio Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cVJVkcZ'
 forumTopicId: 301014
-localTitle: 使用 audio 元素提高音频内容的可访问性
+localeTitle: 使用 audio 元素提高音频内容的可访问性
 ---
 
 ## Description
@@ -35,19 +35,19 @@ HTML5 的<code>audio</code>标签用于呈现音频内容，它也具有语义�
 ```yml
 tests:
   - text: '你的代码应该包含一个<code>audio</code>标签。'
-    testString: assert($('audio').length === 1, '你的代码应该包含一个<code>audio</code>标签。');
+    testString: assert($('audio').length === 1);
   - text: '确保你的<code>audio</code>标签是闭合的。'
-    testString: assert(code.match(/<\/audio>/g).length === 1 && code.match(/<audio.*>[\s\S]*<\/audio>/g), '确保你的<code>audio</code>标签是闭合的。');
+    testString: assert(code.match(/<\/audio>/g).length === 1 && code.match(/<audio.*>[\s\S]*<\/audio>/g));
   - text: '<code>audio</code>标签应具有<code>controls</code>属性。'
-    testString: assert($('audio').attr('controls'), '<code>audio</code>标签应具有<code>controls</code>属性。');
+    testString: assert($('audio').attr('controls'));
   - text: '你的代码应具有<code>source</code>标签。'
-    testString: assert($('source').length === 1, '你的代码应具有<code>source</code>标签。');
+    testString: assert($('source').length === 1);
   - text: '<code>source</code>标签应该在<code>audio</code>标签中。'
-    testString: assert($('audio').children('source').length === 1, '<code>source</code>标签应该在<code>audio</code>标签中。');
+    testString: assert($('audio').children('source').length === 1);
   - text: '<code>source</code>标签中<code>src</code>属性的值应该与教程中的链接一致。'
-    testString: 'assert($(''source'').attr(''src'') === ''https://s3.amazonaws.com/freecodecamp/screen-reader.mp3'', ''<code>source</code>标签中<code>src</code>属性的值应该与教程中的链接一致。'');'
+    testString: 'assert($(''source'').attr(''src'') === ''https://s3.amazonaws.com/freecodecamp/screen-reader.mp3'');'
   - text: '<code>source</code>标签中应具有<code>type</code>属性，其值为 audio/mpeg。'
-    testString: assert($('source').attr('type') === 'audio/mpeg', '<code>source</code>标签中应具有<code>type</code>属性，其值为 audio/mpeg。');
+    testString: assert($('source').attr('type') === 'audio/mpeg');
 
 ```
 

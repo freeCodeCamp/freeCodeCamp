@@ -4,7 +4,7 @@ title: Make Elements Only Visible to a Screen Reader by Using Custom CSS
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cJ8QGkhJ'
 forumTopicId: 301020
-localTitle: 使用自定义 CSS 让元素仅对屏幕阅读器可见
+localeTitle: 使用自定义 CSS 让元素仅对屏幕阅读器可见
 ---
 
 ## Description
@@ -42,13 +42,13 @@ Camper Cat 为他的训练页面创建了一个十分酷炫的条形图，并将
 ```yml
 tests:
   - text: '<code>sr-only</code>类中的<code>position</code>属性的值应为 absolute。'
-    testString: assert($('.sr-only').css('position') == 'absolute', '<code>sr-only</code>类中的<code>position</code>属性的值应为 absolute。');
+    testString: assert($('.sr-only').css('position') == 'absolute');
   - text: '<code>sr-only</code>类中的<code>left</code>属性的值应为 -10000px。'
-    testString: assert($('.sr-only').css('left') == '-10000px', '<code>sr-only</code>类中的<code>left</code>属性的值应为 -10000px。');
+    testString: assert($('.sr-only').css('left') == '-10000px');
   - text: '<code>sr-only</code>类中的<code>width</code>属性的值应为 1px。'
-    testString: 'assert(code.match(/width:\s*?1px/gi), ''<code>sr-only</code>类中的<code>sr-only</code>属性的值应为 1px。'');'
+    testString: 'assert(code.match(/width:\s*?1px/gi));'
   - text: '<code>sr-only</code>类中的<code>height</code>属性的值应为 1px。'
-    testString: 'assert(code.match(/height:\s*?1px/gi), ''<code>sr-only</code>类中的<code>height</code>属性的值应为 1px。'');'
+    testString: 'assert(code.match(/height:\s*?1px/gi));'
 
 ```
 

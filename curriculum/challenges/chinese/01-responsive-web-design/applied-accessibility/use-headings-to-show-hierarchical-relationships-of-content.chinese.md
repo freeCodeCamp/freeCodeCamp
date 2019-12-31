@@ -4,7 +4,7 @@ title: Use Headings to Show Hierarchical Relationships of Content
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cqVEktm'
 forumTopicId: 301026
-localTitle: 使用标题显示内容的层次关系
+localeTitle: 使用标题显示内容的层次关系
 ---
 
 ## Description
@@ -28,9 +28,9 @@ Camper Cat 希望他的网站有一个介绍如何成为忍者页面。请帮助
 ```yml
 tests:
   - text: '你的代码应该包含 6 个<code>h3</code>标签。'
-    testString: assert($('h3').length === 6, '你的代码应该包含 6 个<code>h3</code>标签。');
+    testString: assert($('h3').length === 6);
   - text: '你的代码不应包含 <code>h5</code> 标签。'
-    testString: assert($('h5').length === 0, '你的代码不应包含 <code>h5</code> 标签。');
+    testString: assert($('h5').length === 0);
   - text: '代码不应该包含 <code>h5</code> 标记.'
     testString: assert($("h5").length === 0);
   - text: '代码不应该包含 <code>h5</code> 结束标记。'

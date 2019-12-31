@@ -4,7 +4,7 @@ title: Make Screen Reader Navigation Easier with the nav Landmark
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/czVwWSv'
 forumTopicId: 301024
-localTitle: 使用 nav 元素使屏幕阅读器更容易导航
+localeTitle: 使用 nav 元素使屏幕阅读器更容易导航
 ---
 
 ## Description
@@ -24,13 +24,13 @@ Camper Cat 在他的忍者训练页面顶端使用了很多导航链接，但把
 ```yml
 tests:
   - text: '你的代码应该有 1 个<code>nav</code>标签。'
-    testString: assert($('nav').length == 1, '你的代码应该有 1 个<code>nav</code>标签。');
+    testString: assert($('nav').length == 1);
   - text: '你的<code>nav</code>标签应该包含<code>ul</code>标签及其列表项。'
-    testString: assert($('nav').children('ul').length == 1, '你的<code>nav</code>标签应该包含<code>ul</code>标签及其列表项。');
+    testString: assert($('nav').children('ul').length == 1);
   - text: '你的代码不应包含<code>div</code>标签。'
-    testString: assert($('div').length == 0, '你的代码不应包含<code>div</code>标签。');
+    testString: assert($('div').length == 0);
   - text: '确保你的<code>nav</code>标签是闭合的。'
-    testString: assert(code.match(/<\/nav>/g) && code.match(/<\/nav>/g).length === code.match(/<nav>/g).length, '确保你的<code>nav</code>标签是闭合的。');
+    testString: assert(code.match(/<\/nav>/g) && code.match(/<\/nav>/g).length === code.match(/<nav>/g).length);
 
 ```
 

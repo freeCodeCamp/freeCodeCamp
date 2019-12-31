@@ -4,7 +4,7 @@ title: Give Links Meaning by Using Descriptive Link Text
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c437DcV'
 forumTopicId: 301013
-localTitle: 使用描述性链接文本赋予链接含义
+localeTitle: 使用描述性链接文本赋予链接含义
 ---
 
 ## Description
@@ -24,9 +24,9 @@ Camper Cat 在链接中使用的文本在脱离上下文的情况下，描述性
 ```yml
 tests:
   - text: '请修改<code>a</code>标签，将其包含的文本从 "click here" 改为 "information about batteries"。'
-    testString: assert($('a').text().match(/^(information about batteries)$/g), '请修改<code>a</code>标签，将其包含的文本从 "click here" 改为 "information about batteries"。');
+    testString: assert($('a').text().match(/^(information about batteries)$/g));
   - text: '确保<code>a</code>标签是闭合的。'
-    testString: assert(code.match(/<\/a>/g) && code.match(/<\/a>/g).length === code.match(/<a href=(''|"")>/g).length, '确保<code>a</code>标签是闭合的。');
+    testString: assert(code.match(/<\/a>/g) && code.match(/<\/a>/g).length === code.match(/<a href=(''|"")>/g).length);
   - text: '<code>a</code> 元素应该有一个结束标记'
     testString: assert(code.match(/<\/a>/g) && code.match(/<\/a>/g).length === code.match(/<a href=(''|"")>/g).length);
 

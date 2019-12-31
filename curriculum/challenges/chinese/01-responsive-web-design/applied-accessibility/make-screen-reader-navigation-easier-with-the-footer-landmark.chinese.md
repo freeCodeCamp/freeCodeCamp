@@ -4,7 +4,7 @@ title: Make Screen Reader Navigation Easier with the footer Landmark
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/crVrDh8'
 forumTopicId: 301022
-localTitle: 使用 footer 元素使屏幕阅读器更容易导航
+localeTitle: 使用 footer 元素使屏幕阅读器更容易导航
 ---
 
 ## Description
@@ -23,11 +23,11 @@ Camper Cat 的忍者训练页面进展顺利。请将他在页面底部呈现版
 ```yml
 tests:
   - text: '你的代码中应该包含 1 个<code>footer</code>标签。'
-    testString: assert($('footer').length == 1, '你的代码中应该包含 1 个<code>footer</code>标签。');
+    testString: assert($('footer').length == 1);
   - text: '你的代码中不应包含<code>div</code>标签。'
-    testString: assert($('div').length == 0, '你的代码应不应包含<code>div</code>标签。');
+    testString: assert($('div').length == 0);
   - text: '你代码中的<code>footer</code>应该是闭合的。'
-    testString: assert(code.match(/<footer>\s*&copy; 2020 Camper Cat\s*<\/footer>/g), '你代码中的<code>footer</code>应该是闭合的。');
+    testString: assert(code.match(/<footer>\s*&copy; 2020 Camper Cat\s*<\/footer>/g));
 
 ```
 

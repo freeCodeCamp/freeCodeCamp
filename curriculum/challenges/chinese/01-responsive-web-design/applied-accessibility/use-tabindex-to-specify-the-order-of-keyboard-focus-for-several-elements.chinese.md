@@ -4,7 +4,7 @@ title: Use tabindex to Specify the Order of Keyboard Focus for Several Elements
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cmzRRcb'
 forumTopicId: 301028
-localTitle: 使用 tabindex 指定多个元素的键盘焦点顺序
+localeTitle: 使用 tabindex 指定多个元素的键盘焦点顺序
 ---
 
 ## Description
@@ -28,13 +28,13 @@ Camper Cat 在他的励志名言页面中有一个搜索区域，他打算使用
 ```yml
 tests:
   - text: '你应该为搜索<code>input</code>标签添加<code>tabindex</code>属性。'
-    testString: assert($('#search').attr('tabindex'), '你应该为搜索<code>input</code>标签添加<code>tabindex</code>属性。');
+    testString: assert($('#search').attr('tabindex'));
   - text: '你应该为提交<code>input</code>标签添加<code>tabindex</code>属性。'
-    testString: assert($('#submit').attr('tabindex'), '你应该为提交<code>input</code>标签添加<code>tabindex</code>属性。');
+    testString: assert($('#submit').attr('tabindex'));
   - text: '搜索<code>input</code>标签的<code>tabindex</code>属性值应该为 1。'
-    testString: assert($('#search').attr('tabindex') == '1', '搜索<code>input</code>标签的<code>tabindex</code>属性值应该为 1。');
+    testString: assert($('#search').attr('tabindex') == '1');
   - text: '提交<code>input</code>标签的<code>tabindex</code>属性值应该为 2。'
-    testString: assert($('#submit').attr('tabindex') == '2', '提交<code>input</code>标签的<code>tabindex</code>属性值应该为 2。');
+    testString: assert($('#submit').attr('tabindex') == '2');
 
 ```
 

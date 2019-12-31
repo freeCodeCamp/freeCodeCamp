@@ -4,7 +4,7 @@ title: Wrap Radio Buttons in a fieldset Element for Better Accessibility
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cVJVefw'
 forumTopicId: 301030
-localTitle: 将单选按钮包裹在 fieldset 元素中以获得更好的可访问性
+localeTitle: 将单选按钮包裹在 fieldset 元素中以获得更好的可访问性
 ---
 
 ## Description
@@ -41,15 +41,15 @@ localTitle: 将单选按钮包裹在 fieldset 元素中以获得更好的可访�
 ```yml
 tests:
   - text: '你的代码应该使用 1 个<code>fieldset</code>标签包含单选按钮组。'
-    testString: assert($('fieldset').length == 1, '你的代码应该使用 1 个<code>fieldset</code>标签包含单选按钮组。');
+    testString: assert($('fieldset').length == 1);
   - text: '确保<code>fieldset</code>标签是闭合的。'
-    testString: assert(code.match(/<\/fieldset>/g) && code.match(/<\/fieldset>/g).length === code.match(/<fieldset>/g).length, '确保<code>fieldset</code>标签是闭合的。');
+    testString: assert(code.match(/<\/fieldset>/g) && code.match(/<\/fieldset>/g).length === code.match(/<fieldset>/g).length);
   - text: '你的代码应该有 1 个包含询问用户忍者等级文字的<code>legend</code>标签。'
-    testString: assert($('legend').length == 1, '你的代码应该有 1 个包含询问用户忍者等级文字的<code>legend</code>标签。');
+    testString: assert($('legend').length == 1);
   - text: '你的代码不应该含有<code>div</code>标签。'
-    testString: assert($('div').length == 0, '你的代码不应该含有<code>div</code>标签。');
+    testString: assert($('div').length == 0);
   - text: '你的代码不应该有包含询问用户忍者等级文字的<code>p</code>标签。'
-    testString: assert($('p').length == 4, '你的代码不应该有包含询问用户忍者等级文字的<code>p</code>标签。');
+    testString: assert($('p').length == 4);
 
 ```
 

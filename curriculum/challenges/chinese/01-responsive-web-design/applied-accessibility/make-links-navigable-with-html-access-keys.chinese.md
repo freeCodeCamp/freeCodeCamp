@@ -4,7 +4,7 @@ title: Make Links Navigable with HTML Access Keys
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cQvmaTp'
 forumTopicId: 1
-localTitle: 通过给元素添加 accesskey 属性来让用户可以在链接之间快速导航
+localeTitle: 通过给元素添加 accesskey 属性来让用户可以在链接之间快速导航
 ---
 
 ## Description
@@ -26,13 +26,13 @@ Camper Cat 希望为他的两篇博客的标题的链接设置快捷键，以使
 ```yml
 tests:
   - text: '你应该为<code>id</code>是 "first" 的<code>a</code>标签添加<code>accesskey</code>属性。'
-    testString: assert($('#first').attr('accesskey'), '你应该为<code>id</code>是 "first" 的<code>a</code>标签添加<code>accesskey</code>属性。');
+    testString: assert($('#first').attr('accesskey'));
   - text: '你应该为<code>id</code>是 "second" 的<code>a</code>标签添加<code>accesskey</code>属性。'
-    testString: assert($('#second').attr('accesskey'), '你应该为<code>id</code>是 "second" 的<code>a</code>标签添加<code>accesskey</code>属性。');
+    testString: assert($('#second').attr('accesskey'));
   - text: '你应该将<code>id</code>是 "first" 的<code>a</code>标签的<code>accesskey</code>属性值设置为小写 "g"。'
-    testString: assert($('#first').attr('accesskey') == 'g', '你应该将<code>id</code>是 "first" 的<code>a</code>标签的<code>accesskey</code>属性值设置为小写 "g"。');
+    testString: assert($('#first').attr('accesskey') == 'g');
   - text: '你应该将<code>id</code>是 "second" 的<code>a</code>标签的<code>accesskey</code>属性值设置为小写 "c"。'
-    testString: assert($('#second').attr('accesskey') == 'c', '你应该将<code>id</code>是 "second" 的<code>a</code>标签的<code>accesskey</code>属性值设置为小写 "c"。')
+    testString: assert($('#second').attr('accesskey') == 'c')
 
 ```
 

@@ -4,7 +4,7 @@ title: Jump Straight to the Content Using the main Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cPp7zuE'
 forumTopicId: 301018
-localTitle: 使用 main 元素包裹主题内容
+localeTitle: 使用 main 元素包裹主题内容
 ---
 
 ## Description
@@ -26,9 +26,9 @@ Camper Cat 对他的忍者武器页面有一些新的想法，请帮助他在<co
 ```yml
 tests:
   - text: '你的代码应该有一个<code>main</code>标签。'
-    testString: assert($('main').length == 1, '你的代码应该有一个<code>main</code>标签。');
+    testString: assert($('main').length == 1);
   - text: '<code>main</code>标签应该在<code>header</code>标签与<code>footer</code>标签之间。'
-    testString: assert(code.match(/<\/header>\s*?<main>\s*?<\/main>/gi), '<code>main</code>标签应该在<code>header</code>标签与<code>footer</code>标签之间。');
+    testString: assert(code.match(/<\/header>\s*?<main>\s*?<\/main>/gi));
 
 ```
 

@@ -4,7 +4,7 @@ title: Standardize Times with the HTML5 datetime Attribute
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cmzMgtz'
 forumTopicId: 301025
-localTitle: 使用 HTML5 的 datatime 属性标准化时间
+localeTitle: 使用 HTML5 的 datatime 属性标准化时间
 ---
 
 ## Description
@@ -25,13 +25,13 @@ Camper Cat 的比武大会的时间确定了！请使用<code>time</code>标签�
 ```yml
 tests:
   - text: '<code>time</code>标签应该包含文本"Thursday, September 15&lt;sup&gt;th&lt;/sup&gt;"。'
-    testString: assert($('time').text().match(/Thursday, September 15th/g), '<code>time</code>标签应该包含文本"Thursday, September 15&lt;sup&gt;th&lt;/sup&gt;"。');
+    testString: assert($('time').text().match(/Thursday, September 15th/g));
   - text: '<code>time</code>标签应该有 1 个非空的<code>datetime</code>属性。'
-    testString: assert($('time').attr('datetime'), '<code>time</code>标签应该有 1 个非空的<code>datetime</code>属性。');
+    testString: assert($('time').attr('datetime'));
   - text: '<code>datetime</code>属性的值应该为 2016-09-15。'
-    testString: assert($('time').attr('datetime') === "2016-09-15", '<code>datetime</code>属性的值应该为 2016-09-15。');
+    testString: assert($('time').attr('datetime') === "2016-09-15");
   - text: '确保<code>time</code>标签是闭合的。'
-    testString: assert(code.match(/<\/time>/g) && code.match(/<\/time>/g).length === 4, '确保<code>time</code>标签是闭合的。');
+    testString: assert(code.match(/<\/time>/g) && code.match(/<\/time>/g).length === 4);
 ```
 
 </section>

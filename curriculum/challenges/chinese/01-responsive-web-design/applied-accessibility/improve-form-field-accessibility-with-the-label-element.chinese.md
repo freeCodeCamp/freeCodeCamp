@@ -4,7 +4,7 @@ title: Improve Form Field Accessibility with the label Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cGJMMAN'
 forumTopicId: 301016
-localTitle: 使用 label 元素提高表单的可访问性
+localeTitle: 使用 label 元素提高表单的可访问性
 ---
 
 ## Description
@@ -34,9 +34,9 @@ Camper Cat 希望他的博客文章能有很多订阅，他想添加一个电子
 ```yml
 tests:
   - text: '你的<code>label</code>标签应该有 1 个非空的<code>for</code>属性。'
-    testString: assert($('label').attr('for'), '你的<code>label</code>标签应该有 1 个非空的<code>for</code>属性。');
+    testString: assert($('label').attr('for'));
   - text: '<code>for</code>属性的值应该与<code>input</code>标签的 id 值 email 相同。'
-    testString: assert($('label').attr('for') == 'email', '<code>for</code>属性的值应该与<code>input</code>标签的 id 值 email 相同。');
+    testString: assert($('label').attr('for') == 'email');
 
 ```
 

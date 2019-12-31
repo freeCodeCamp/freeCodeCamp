@@ -4,7 +4,7 @@ title: Improve Readability with High Contrast Text
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cKb3nCq'
 forumTopicId: 301017
-localTitle: 使用高对比度文本提高可读性
+localeTitle: 使用高对比度文本提高可读性
 ---
 
 ## Description
@@ -24,9 +24,9 @@ Camper Cat 为他的博客选择了白色背景，浅灰色文字，对比度为
 ```yml
 tests:
   - text: '你应该将<code>body</code>的<code>color</code>修改为深灰色。'
-    testString: assert($('body').css('color') == 'rgb(99, 99, 99)', '你应该将<code>body</code>的<code>color</code>修改为深灰色。');
+    testString: assert($('body').css('color') == 'rgb(99, 99, 99)');
   - text: '你不应该修改<code>body</code>的<code>background-color</code>。'
-    testString: assert($('body').css('background-color') == 'rgb(255, 255, 255)', '你不应该修改<code>body</code>的<code>background-color</code>。');
+    testString: assert($('body').css('background-color') == 'rgb(255, 255, 255)');
 
 ```
 

@@ -4,7 +4,7 @@ title: Wrap Content in the article Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cPp79S3'
 forumTopicId: 301029
-localTitle: 使用 article 元素包裹文章内容
+localeTitle: 使用 article 元素包裹文章内容
 ---
 
 ## Description
@@ -33,9 +33,9 @@ Camper Cat 打算使用<code>article</code>标签来呈现他的博客页面里�
 ```yml
 tests:
   - text: '你的代码中应该有 3 个<code>article</code>标签。'
-    testString: assert($('article').length == 3, '你的代码中应该有 3 个<code>article</code>标签。');
+    testString: assert($('article').length == 3);
   - text: '你的代码不应包含<code>div</code>标签。'
-    testString: assert($('div').length == 0, '你的代码不应包含<code>div</code>标签。');
+    testString: assert($('div').length == 0);
 
 ```
 

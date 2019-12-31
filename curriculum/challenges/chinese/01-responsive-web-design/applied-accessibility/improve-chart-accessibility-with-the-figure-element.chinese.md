@@ -4,7 +4,7 @@ title: Improve Chart Accessibility with the figure Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cGJMqtE'
 forumTopicId: 301015
-localTitle: 使用 figure 元素提高图表的可访问性
+localeTitle: 使用 figure 元素提高图表的可访问性
 ---
 
 ## Description
@@ -36,17 +36,17 @@ Camper Cat 正在努力创建一张条形图，用来显示每周用于隐形、
 ```yml
 tests:
   - text: '你的代码应该有 1 个<code>figure</code>标签。'
-    testString: assert($('figure').length == 1, '你的代码应该有 1 个<code>figure</code>标签。');
+    testString: assert($('figure').length == 1);
   - text: '你的代码应该有 1 个<code>figcaption</code>标签。'
-    testString: assert($('figcaption').length == 1, '你的代码应该有 1 个<code>figcaption</code>标签。');
+    testString: assert($('figcaption').length == 1);
   - text: '你的代码不应有<code>div</code>标签。'
-    testString: assert($('div').length == 0, '你的代码不应有<code>div</code>标签。');
+    testString: assert($('div').length == 0);
   - text: '你的代码不应有<code>p</code>标签。'
-    testString: assert($('p').length == 0, '你的代码不应有<code>div</code>标签。');
+    testString: assert($('p').length == 0);
   - text: '<code>figcaption</code>应该为<code>figure</code>的子标签。'
-    testString: assert($('figure').children('figcaption').length == 1, '<code>figcaption</code>应该为<code>figure</code>的子标签。');
+    testString: assert($('figure').children('figcaption').length == 1);
   - text: '请确保你的<code>figure</code>标签是闭合的。'
-    testString: assert(code.match(/<\/figure>/g) && code.match(/<\/figure>/g).length === code.match(/<figure>/g).length, '请确保你的<code>figure</code>标签是闭合的。');
+    testString: assert(code.match(/<\/figure>/g) && code.match(/<\/figure>/g).length === code.match(/<figure>/g).length);
 
 ```
 
