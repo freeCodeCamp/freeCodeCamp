@@ -33,8 +33,7 @@ const propTypes = {
     certName: PropTypes.string,
     certTitle: PropTypes.string,
     completionTime: PropTypes.number,
-    date: PropTypes.string,
-    executeGA: PropTypes.func
+    date: PropTypes.string
   }),
   certDashedName: PropTypes.string,
   certName: PropTypes.string,

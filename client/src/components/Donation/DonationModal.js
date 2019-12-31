@@ -11,7 +11,6 @@ import Heart from '../../assets/icons/Heart';
 import Cup from '../../assets/icons/Cup';
 import MinimalDonateForm from './MinimalDonateForm';
 
-import ga from '../../analytics';
 import {
   closeDonationModal,
   isDonationModalOpenSelector,
@@ -74,7 +73,7 @@ function DonateModal({
   };
 
   if (show) {
-    ga.modalview('/donation-modal');
+    executeGA({ type: 'modal', data: '/donation-modal' });
     executeGA({
       type: 'event',
       data: {

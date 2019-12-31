@@ -3,7 +3,6 @@ import ga from '../analytics';
 
 function* callGaEvent({ payload: { type, data } }) {
   const GaTypes = { event: ga.event, page: ga.pageview, modal: ga.modalview };
-  console.log('hello');
   GaTypes[type](data);
 }
 
