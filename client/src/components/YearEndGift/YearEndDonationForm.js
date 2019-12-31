@@ -28,7 +28,7 @@ const propTypes = {
   handleProcessing: PropTypes.func,
   defaultTheme: PropTypes.string,
   isDonating: PropTypes.bool,
-  reportGaEvent: PropTypes.func,
+  executeGA: PropTypes.func,
   stripe: PropTypes.shape({
     createToken: PropTypes.func.isRequired
   })
@@ -180,9 +180,12 @@ class YearEndDonationForm extends Component {
   }
 
   handlePaypalSubmission() {
-    this.props.reportGaEvent({
-      category: 'donation',
-      action: 'year end gift paypal button click'
+    this.props.executeGA({
+      type: 'event',
+      data: {
+        category: 'donation',
+        action: 'year end gift paypal button click'
+      }
     });
   }
 

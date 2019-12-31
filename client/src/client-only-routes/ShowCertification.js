@@ -16,7 +16,7 @@ import {
   userFetchStateSelector,
   usernameSelector,
   isDonatingSelector,
-  reportGaEvent
+  executeGA
 } from '../redux';
 import validCertNames from '../../utils/validCertNames';
 import { createFlashMessage } from '../components/Flash/redux';
@@ -34,11 +34,12 @@ const propTypes = {
     certTitle: PropTypes.string,
     completionTime: PropTypes.number,
     date: PropTypes.string,
-    reportGaEvent: PropTypes.func
+    executeGA: PropTypes.func
   }),
   certDashedName: PropTypes.string,
   certName: PropTypes.string,
   createFlashMessage: PropTypes.func.isRequired,
+  executeGA: PropTypes.func,
   fetchState: PropTypes.shape({
     pending: PropTypes.bool,
     complete: PropTypes.bool,
@@ -46,7 +47,6 @@ const propTypes = {
   }),
   isDonating: PropTypes.bool,
   issueDate: PropTypes.string,
-  reportGaEvent: PropTypes.func,
   showCert: PropTypes.func.isRequired,
   signedInUserName: PropTypes.string,
   userFetchState: PropTypes.shape({
@@ -77,7 +77,7 @@ const mapStateToProps = (state, { certName }) => {
 };
 
 const mapDispatchToProps = dispatch =>
-  bindActionCreators({ createFlashMessage, showCert, reportGaEvent }, dispatch);
+  bindActionCreators({ createFlashMessage, showCert, executeGA }, dispatch);
 
 class ShowCertification extends Component {
   constructor(...args) {
@@ -107,7 +107,7 @@ class ShowCertification extends Component {
       signedInUserName,
       isDonating,
       cert: { username = '' },
-      reportGaEvent
+      executeGA
     } = nextProps;
     const { isDonationDisplayed } = this.state;
 
@@ -121,10 +121,13 @@ class ShowCertification extends Component {
         isDonationDisplayed: true
       });
 
-      reportGaEvent({
-        category: 'Donation',
-        action: 'Displayed Certificate Donation',
-        nonInteraction: true
+      executeGA({
+        type: 'event',
+        data: {
+          category: 'Donation',
+          action: 'Displayed Certificate Donation',
+          nonInteraction: true
+        }
       });
     }
     return true;
@@ -135,11 +138,14 @@ class ShowCertification extends Component {
   }
 
   handleProcessing(duration, amount) {
-    this.props.reportGaEvent({
-      category: 'donation',
-      action: 'certificate stripe form submission',
-      label: duration,
-      value: amount
+    this.props.executeGA({
+      type: 'event',
+      data: {
+        category: 'donation',
+        action: 'certificate stripe form submission',
+        label: duration,
+        value: amount
+      }
     });
     this.setState({ isDonationSubmitted: true });
   }

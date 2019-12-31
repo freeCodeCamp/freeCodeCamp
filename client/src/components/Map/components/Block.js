@@ -6,7 +6,7 @@ import { createSelector } from 'reselect';
 import { Link } from 'gatsby';
 
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
-import { completedChallengesSelector, reportGaEvent } from '../../../redux';
+import { completedChallengesSelector, executeGA } from '../../../redux';
 import Caret from '../../../assets/icons/Caret';
 import { blockNameify } from '../../../../utils/blockNameify';
 import GreenPass from '../../../assets/icons/GreenPass';
@@ -28,12 +28,13 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch =>
-  bindActionCreators({ toggleBlock, reportGaEvent }, dispatch);
+  bindActionCreators({ toggleBlock, executeGA }, dispatch);
 
 const propTypes = {
   blockDashedName: PropTypes.string,
   challenges: PropTypes.array,
   completedChallenges: PropTypes.arrayOf(PropTypes.string),
+  executeGA: PropTypes.func,
   intro: PropTypes.shape({
     fields: PropTypes.shape({ slug: PropTypes.string.isRequired }),
     frontmatter: PropTypes.shape({
@@ -42,7 +43,6 @@ const propTypes = {
     })
   }),
   isExpanded: PropTypes.bool,
-  reportGaEvent: PropTypes.func,
   toggleBlock: PropTypes.func.isRequired
 };
 
@@ -58,19 +58,25 @@ export class Block extends Component {
   }
 
   handleBlockClick() {
-    const { blockDashedName, toggleBlock, reportGaEvent } = this.props;
-    reportGaEvent({
-      category: 'Map Block Click',
-      action: blockDashedName
+    const { blockDashedName, toggleBlock, executeGA } = this.props;
+    executeGA({
+      type: 'event',
+      data: {
+        category: 'Map Block Click',
+        action: blockDashedName
+      }
     });
     return toggleBlock(blockDashedName);
   }
 
   handleChallengeClick(slug) {
     return () => {
-      return this.props.reportGaEvent({
-        category: 'Map Challenge Click',
-        action: slug
+      return this.props.executeGA({
+        type: 'event',
+        data: {
+          category: 'Map Challenge Click',
+          action: slug
+        }
       });
     };
   }

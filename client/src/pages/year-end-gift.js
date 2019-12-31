@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import Helmet from 'react-helmet';
 import { Grid } from '@freecodecamp/react-bootstrap';
 import { connect } from 'react-redux';
-import { reportGaEvent } from '../redux';
+import { executeGA } from '../redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 
@@ -12,29 +12,35 @@ import YearEndDonationForm from '../components/YearEndGift/YearEndDonationForm';
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
-      reportGaEvent
+      executeGA
     },
     dispatch
   );
 
 const propTypes = {
-  reportGaEvent: PropTypes.func
+  executeGA: PropTypes.func
 };
 
-function YearEndGiftPage({ reportGaEvent }) {
+function YearEndGiftPage({ executeGA }) {
   useEffect(() => {
-    reportGaEvent({
-      category: 'Donation',
-      action: `Displayed year end gift page`,
-      nonInteraction: true
+    executeGA({
+      type: 'event',
+      data: {
+        category: 'Donation',
+        action: `Displayed year end gift page`,
+        nonInteraction: true
+      }
     });
-  }, [reportGaEvent]);
+  }, [executeGA]);
   const handleProcessing = (duration, amount) => {
-    reportGaEvent({
-      category: 'donation',
-      action: 'year-end-gift strip form submission',
-      label: duration,
-      value: amount
+    executeGA({
+      type: 'event',
+      data: {
+        category: 'donation',
+        action: 'year-end-gift strip form submission',
+        label: duration,
+        value: amount
+      }
     });
   };
   return (
@@ -46,8 +52,8 @@ function YearEndGiftPage({ reportGaEvent }) {
           <FullWidthRow>
             <YearEndDonationForm
               defaultTheme='light'
+              executeGA={executeGA}
               handleProcessing={handleProcessing}
-              reportGaEvent={reportGaEvent}
             />
           </FullWidthRow>
           <Spacer />

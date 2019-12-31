@@ -10,12 +10,12 @@ import { stripePublicKey } from '../../config/env.json';
 import { Spacer, Loader } from '../components/helpers';
 import DonateForm from '../components/Donation/DonateForm';
 import DonateText from '../components/Donation/DonateText';
-import { signInLoadingSelector, userSelector, reportGaEvent } from '../redux';
+import { signInLoadingSelector, userSelector, executeGA } from '../redux';
 import { stripeScriptLoader } from '../utils/scriptLoaders';
 
 const propTypes = {
+  executeGA: PropTypes.func,
   isDonating: PropTypes.bool,
-  reportGaEvent: PropTypes.func,
   showLoading: PropTypes.bool.isRequired
 };
 
@@ -31,7 +31,7 @@ const mapStateToProps = createSelector(
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
-      reportGaEvent
+      executeGA
     },
     dispatch
   );
@@ -48,10 +48,13 @@ export class DonatePage extends Component {
   }
 
   componentDidMount() {
-    this.props.reportGaEvent({
-      category: 'Donation',
-      action: `Displayed donate page`,
-      nonInteraction: true
+    this.props.executeGA({
+      type: 'event',
+      data: {
+        category: 'Donation',
+        action: `Displayed donate page`,
+        nonInteraction: true
+      }
     });
     if (window.Stripe) {
       this.handleStripeLoad();
@@ -72,11 +75,14 @@ export class DonatePage extends Component {
   }
 
   handleProcessing(duration, amount) {
-    this.props.reportGaEvent({
-      category: 'donation',
-      action: 'donate page stripe form submission',
-      label: duration,
-      value: amount
+    this.props.executeGA({
+      type: 'event',
+      data: {
+        category: 'donation',
+        action: 'donate page stripe form submission',
+        label: duration,
+        value: amount
+      }
     });
   }
 
