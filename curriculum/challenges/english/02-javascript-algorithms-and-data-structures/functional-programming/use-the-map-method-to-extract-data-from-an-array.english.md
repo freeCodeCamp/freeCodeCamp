@@ -45,7 +45,7 @@ tests:
   - text: Your code should use the <code>map</code> method.
     testString: assert(code.match(/\.map/g));
   - text: <code>ratings</code> should equal <code>[{"title":"Inception","rating":"8.8"},{"title":"Interstellar","rating":"8.6"},{"title":"The Dark Knight","rating":"9.0"},{"title":"Batman Begins","rating":"8.3"},{"title":"Avatar","rating":"7.9"}]</code>.
-    testString: assert(JSON.stringify(ratings) === JSON.stringify([{"title":"Inception","rating":"8.8"},{"title":"Interstellar","rating":"8.6"},{"title":"The Dark Knight","rating":"9.0"},{"title":"Batman Begins","rating":"8.3"},{"title":"Avatar","rating":"7.9"}]));
+    testString: assert.deepEqual(ratings, [{"title":"Inception","rating":"8.8"},{"title":"Interstellar","rating":"8.6"},{"title":"The Dark Knight","rating":"9.0"},{"title":"Batman Begins","rating":"8.3"},{"title":"Avatar","rating":"7.9"}]);
 
 ```
 
