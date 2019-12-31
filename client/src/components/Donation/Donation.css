@@ -41,19 +41,34 @@
   font-weight: normal;
 }
 
-.donation-form .btn {
+.donation-form .btn-cta,
+.btn-cta.paypal-button {
   white-space: normal;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 .donate-input-element {
   padding-top: 8px;
 }
 
+.donation-form .form-control::placeholder {
+  color: #707070;
+}
+
+.donation-form .form-control:focus,
 .StripeElement--focus {
   border-color: #66afe9;
   outline: 0;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
     0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+.donation-form .email--invalid.form-control:focus,
+.donation-form .email--invalid,
+.donation-form .StripeElement--invalid {
+  border-color: #eb1c26;
+  color: #eb1c26;
 }
 
 .wallet {
@@ -234,6 +249,17 @@ li.disabled > a {
 .form-payment-methods {
   height: 20px;
   width: 200px;
+}
+
+.paypal-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.paypal-button svg {
+  margin-top: 5px;
+  height: 22px;
 }
 
 @media screen and (min-width: 355px) {

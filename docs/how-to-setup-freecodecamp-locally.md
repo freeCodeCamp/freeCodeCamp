@@ -276,7 +276,7 @@ However, accessing the user portfolio page is a little tricky. In development, G
 
 Simply clicking the `Preview Custom 404 Page` button will forward you to the correct page.
 
-![Image - How to sign in when working locally](https://user-images.githubusercontent.com/1884376/52650951-48922e80-2f11-11e9-9eee-360a25ad28ad.gif)
+![Image - How to sign in when working locally](https://user-images.githubusercontent.com/29990697/71541249-f63cdf00-2923-11ea-8a85-cefb6f9c9977.gif)
 
 ## Quick commands reference when working locally
 
