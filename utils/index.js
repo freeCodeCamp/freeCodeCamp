@@ -1,4 +1,4 @@
-import { dasherize } from '../../../../../utils/slugs';
+import { dasherize } from './slugs';
 
 const idToTitle = new Map(
   Object.entries({

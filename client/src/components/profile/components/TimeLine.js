@@ -8,7 +8,11 @@ import { Link, useStaticQuery, graphql } from 'gatsby';
 import TimelinePagination from './TimelinePagination';
 import { FullWidthRow } from '../../helpers';
 import SolutionViewer from '../../settings/SolutionViewer';
-import { getCertIds, getPathFromID, getTitleFromId } from '../utils';
+import {
+  getCertIds,
+  getPathFromID,
+  getTitleFromId
+} from '../../../../../utils';
 import CertificationIcon from '../../../assets/icons/CertificationIcon';
 
 // Items per page in timeline.
