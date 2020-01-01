@@ -118,7 +118,7 @@ No necesitas permiso para _issues_ que estén marcados con `help wanted` o `firs
 
 ### Soy nuevo en GitHub y en Open Source en general
 
-Lee nuestra [Guía de cómo contribuir al código abierto](https://github.com/freeCodeCamp/how-to-contribute-to-open-source).
+Lee nuestra [Guía de cómo contribuir al código abierto](https://github.com/freeCodeCamp/how-to-contribute-to-open-source/blob/master/README-ES.md).
 
 ### Estoy atascado en algo que no está en esta documentación. ¿Cómo puedo obtener ayuda?
 

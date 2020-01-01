@@ -6,9 +6,9 @@ import { createSelector } from 'reselect';
 import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
 
 import { stripePublicKey } from '../../config/env.json';
-import { Spacer, Loader, FullWidthRow, Link } from '../components/helpers';
-import DonateForm from '../components/Donation/components/DonateForm';
-import DonateText from '../components/Donation/components/DonateText';
+import { Spacer, Loader } from '../components/helpers';
+import DonateForm from '../components/Donation/DonateForm';
+import DonateText from '../components/Donation/DonateText';
 import { signInLoadingSelector, userSelector } from '../redux';
 import { stripeScriptLoader } from '../utils/scriptLoaders';
 
@@ -34,9 +34,6 @@ export class DonatePage extends Component {
       enableSettings: false
     };
 
-    this.enableDonationSettingsPage = this.enableDonationSettingsPage.bind(
-      this
-    );
     this.handleStripeLoad = this.handleStripeLoad.bind(this);
   }
 
@@ -68,14 +65,9 @@ export class DonatePage extends Component {
     }));
   }
 
-  enableDonationSettingsPage(enableSettings = true) {
-    this.setState({ enableSettings });
-  }
-
   render() {
     const { stripe } = this.state;
-    const { showLoading, isDonating } = this.props;
-    const { enableSettings } = this.state;
+    const { showLoading } = this.props;
 
     if (showLoading) {
       return <Loader fullScreen={true} />;
@@ -84,49 +76,26 @@ export class DonatePage extends Component {
     return (
       <Fragment>
         <Helmet title='Support our nonprofit | freeCodeCamp.org' />
-        <Grid>
-          <main>
-            <Spacer />
-            <FullWidthRow>
+        <Grid className='donate-page-wrapper'>
+          <Spacer />
+          <Row>
+            <Col sm={10} smOffset={1} xs={12}>
               <h1 className='text-center'>Become a Supporter</h1>
-            </FullWidthRow>
-            <Spacer />
-            <Row>
-              <Col md={6}>
-                <DonateForm
-                  enableDonationSettingsPage={this.enableDonationSettingsPage}
-                  stripe={stripe}
-                />
-                <Row>
-                  <Col sm={10} smOffset={1} xs={12}>
-                    <Spacer size={2} />
-                    <h3 className='text-center'>
-                      Manage your existing donation
-                    </h3>
-                    <div className='button-group'>
-                      {[
-                        `Update your existing donation`,
-                        `Download donation receipts`
-                      ].map(donationSettingOps => (
-                        <Link
-                          className='btn btn-block'
-                          disabled={!isDonating && !enableSettings}
-                          key={donationSettingOps}
-                          to='/donation/settings'
-                        >
-                          {donationSettingOps}
-                        </Link>
-                      ))}
-                    </div>
-                  </Col>
-                </Row>
-              </Col>
-              <Col md={6}>
-                <DonateText />
-              </Col>
-            </Row>
-            <Spacer />
-          </main>
+              <Spacer />
+            </Col>
+          </Row>
+          <Row>
+            <Col md={6}>
+              <DonateForm
+                enableDonationSettingsPage={this.enableDonationSettingsPage}
+                stripe={stripe}
+              />
+            </Col>
+            <Col md={6}>
+              <DonateText />
+            </Col>
+          </Row>
+          <Spacer />
         </Grid>
       </Fragment>
     );

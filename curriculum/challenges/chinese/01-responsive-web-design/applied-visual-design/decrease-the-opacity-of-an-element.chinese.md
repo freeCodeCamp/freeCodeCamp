@@ -17,7 +17,7 @@ localeTitle: 降低元素的不透明度
 
 ```yml
 tests:
-  - text: 您的代码应通过选择<code>links</code>类将锚点标记上的<code>opacity</code>属性设置为0.7。
+  - text: 您的代码应通过选择<code>links</code>类将 <code>a</code> 标记上的<code>opacity</code>属性设置为0.7。
     testString: 'assert.approximately(parseFloat($(".links").css("opacity")), 0.7, 0.1, "Your code should set the <code>opacity</code> property to 0.7 on the anchor tags by selecting the class of <code>links</code>.");'
 
 ```
