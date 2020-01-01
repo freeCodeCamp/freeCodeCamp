@@ -11,11 +11,11 @@ import Heart from '../../assets/icons/Heart';
 import Cup from '../../assets/icons/Cup';
 import MinimalDonateForm from './MinimalDonateForm';
 
-import ga from '../../analytics';
 import {
   closeDonationModal,
   isDonationModalOpenSelector,
-  isBlockDonationModalSelector
+  isBlockDonationModalSelector,
+  executeGA
 } from '../../redux';
 
 import { challengeMetaSelector } from '../../templates/Challenges/redux';
@@ -36,7 +36,8 @@ const mapStateToProps = createSelector(
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
-      closeDonationModal
+      closeDonationModal,
+      executeGA
     },
     dispatch
   );
@@ -45,18 +46,44 @@ const propTypes = {
   activeDonors: PropTypes.number,
   block: PropTypes.string,
   closeDonationModal: PropTypes.func.isRequired,
+  executeGA: PropTypes.func,
   isBlockDonation: PropTypes.bool,
   show: PropTypes.bool
 };
 
-function DonateModal({ show, block, isBlockDonation, closeDonationModal }) {
+function DonateModal({
+  show,
+  block,
+  isBlockDonation,
+  closeDonationModal,
+  executeGA
+}) {
   const [closeLabel, setCloseLabel] = React.useState(false);
-  const showCloseBtn = () => {
+  const handleProcessing = (duration, amount) => {
+    executeGA({
+      type: 'event',
+      data: {
+        category: 'donation',
+        action: 'Modal strip form submission',
+        label: duration,
+        value: amount
+      }
+    });
     setCloseLabel(true);
   };
 
   if (show) {
-    ga.modalview('/donation-modal');
+    executeGA({ type: 'modal', data: '/donation-modal' });
+    executeGA({
+      type: 'event',
+      data: {
+        category: 'Donation',
+        action: `Displayed ${
+          isBlockDonation ? 'block' : 'progress'
+        } donation modal`,
+        nonInteraction: true
+      }
+    });
   }
 
   const donationText = (
@@ -101,7 +128,7 @@ function DonateModal({ show, block, isBlockDonation, closeDonationModal }) {
       <Modal.Body>
         {isBlockDonation ? blockDonationText : progressDonationText}
         <Spacer />
-        <MinimalDonateForm showCloseBtn={showCloseBtn} />
+        <MinimalDonateForm handleProcessing={handleProcessing} />
         <Spacer />
         <Row>
           <Col sm={4} smOffset={4} xs={8} xsOffset={2}>

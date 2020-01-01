@@ -5,13 +5,14 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Button, Modal } from '@freecodecamp/react-bootstrap';
 
-import ga from '../../../analytics';
 import { isResetModalOpenSelector, closeModal, resetChallenge } from '../redux';
+import { executeGA } from '../../../redux';
 
 import './reset-modal.css';
 
 const propTypes = {
   close: PropTypes.func.isRequired,
+  executeGA: PropTypes.func,
   isOpen: PropTypes.bool.isRequired,
   reset: PropTypes.func.isRequired
 };
@@ -25,7 +26,11 @@ const mapStateToProps = createSelector(
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
-    { close: () => closeModal('reset'), reset: () => resetChallenge() },
+    {
+      close: () => closeModal('reset'),
+      executeGA,
+      reset: () => resetChallenge()
+    },
     dispatch
   );
 
@@ -35,7 +40,7 @@ function withActions(...fns) {
 
 function ResetModal({ reset, close, isOpen }) {
   if (isOpen) {
-    ga.modalview('/reset-modal');
+    executeGA({ type: 'modal', data: '/reset-modal' });
   }
   return (
     <Modal
