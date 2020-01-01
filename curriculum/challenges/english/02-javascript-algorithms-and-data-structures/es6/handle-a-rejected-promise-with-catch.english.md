@@ -48,12 +48,8 @@ tests:
 const makeServerRequest = new Promise((resolve, reject) => {
   // responseFromServer is set to false to represent an unsuccessful response from a server
   let responseFromServer = false;
-	
-  if(responseFromServer) {
-    resolve("We got the data");
-  } else {	
-    reject("Data not received");
-  }
+  responseFromServer ?  resolve("We got the data") : reject("Data not received");
+
 });
 
 makeServerRequest.then(result => {
@@ -82,12 +78,8 @@ const errorIsParameter = /\.catch\((function\(error\){|error|\(error\)=>)/.test(
 const makeServerRequest = new Promise((resolve, reject) => {
   // responseFromServer is set to false to represent an unsuccessful response from a server
   let responseFromServer = false;
-	
-  if(responseFromServer) {
-    resolve("We got the data");
-  } else {	
-    reject("Data not received");
-  }
+	responseFromServer ?  resolve("We got the data") : reject("Data not received");
+
 });
 
 makeServerRequest.then(result => {
@@ -95,7 +87,7 @@ makeServerRequest.then(result => {
 });
 
 makeServerRequest.catch(error => {
-  console.log(error);
+  console.error(error);
 });
 ```
 
