@@ -11,6 +11,7 @@ import { createReportUserSaga } from './report-user-saga';
 import { createShowCertSaga } from './show-cert-saga';
 import { createNightModeSaga } from './night-mode-saga';
 import { createDonationSaga } from './donation-saga';
+import { createGaSaga } from './ga-saga';
 
 import hardGoToEpic from './hard-go-to-epic';
 import failedUpdatesEpic from './failed-updates-epic';
@@ -65,6 +66,7 @@ export const types = createTypes(
     'onlineStatusChange',
     'resetUserData',
     'tryToShowDonationModal',
+    'executeGA',
     'submitComplete',
     'updateComplete',
     'updateCurrentChallengeId',
@@ -84,6 +86,7 @@ export const sagas = [
   ...createAcceptTermsSaga(types),
   ...createAppMountSaga(types),
   ...createDonationSaga(types),
+  ...createGaSaga(types),
   ...createFetchUserSaga(types),
   ...createShowCertSaga(types),
   ...createReportUserSaga(types),
@@ -95,6 +98,9 @@ export const appMount = createAction(types.appMount);
 export const tryToShowDonationModal = createAction(
   types.tryToShowDonationModal
 );
+
+export const executeGA = createAction(types.executeGA);
+
 export const allowBlockDonationRequests = createAction(
   types.allowBlockDonationRequests
 );
