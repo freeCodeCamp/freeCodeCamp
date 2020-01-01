@@ -4,22 +4,21 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Button, Modal } from '@freecodecamp/react-bootstrap';
 
+import ga from '../../../analytics';
 import { createQuestion, closeModal, isHelpModalOpenSelector } from '../redux';
-import { executeGA } from '../../../redux';
 
 import './help-modal.css';
 
 const mapStateToProps = state => ({ isOpen: isHelpModalOpenSelector(state) });
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
-    { createQuestion, executeGA, closeHelpModal: () => closeModal('help') },
+    { createQuestion, closeHelpModal: () => closeModal('help') },
     dispatch
   );
 
 const propTypes = {
   closeHelpModal: PropTypes.func.isRequired,
   createQuestion: PropTypes.func.isRequired,
-  executeGA: PropTypes.func,
   isOpen: PropTypes.bool
 };
 
@@ -28,9 +27,9 @@ const RSA =
 
 export class HelpModal extends Component {
   render() {
-    const { isOpen, closeHelpModal, createQuestion, executeGA } = this.props;
+    const { isOpen, closeHelpModal, createQuestion } = this.props;
     if (isOpen) {
-      executeGA({ type: 'modal', data: '/help-modal' });
+      ga.modalview('/help-modal');
     }
     return (
       <Modal dialogClassName='help-modal' onHide={closeHelpModal} show={isOpen}>

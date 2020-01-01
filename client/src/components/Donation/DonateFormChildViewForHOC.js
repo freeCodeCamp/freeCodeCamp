@@ -24,7 +24,6 @@ const propTypes = {
   donationDuration: PropTypes.string.isRequired,
   email: PropTypes.string,
   getDonationButtonLabel: PropTypes.func.isRequired,
-  handleProcessing: PropTypes.func,
   isSignedIn: PropTypes.bool,
   showCloseBtn: PropTypes.func,
   stripe: PropTypes.shape({
@@ -149,11 +148,8 @@ class DonateFormChildViewForHOC extends Component {
 
     // change the donation modal button label to close
     // or display the close button for the cert donation section
-    if (this.props.handleProcessing) {
-      this.props.handleProcessing(
-        this.state.donationDuration,
-        Math.round(this.state.donationAmount / 100)
-      );
+    if (this.props.showCloseBtn) {
+      this.props.showCloseBtn();
     }
 
     return postChargeStripe(yearEndGift, {

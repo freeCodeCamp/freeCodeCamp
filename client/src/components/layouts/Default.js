@@ -6,13 +6,13 @@ import { createSelector } from 'reselect';
 import Helmet from 'react-helmet';
 import fontawesome from '@fortawesome/fontawesome';
 
+import ga from '../../analytics';
 import {
   fetchUser,
   isSignedInSelector,
   onlineStatusChange,
   isOnlineSelector,
-  userSelector,
-  executeGA
+  userSelector
 } from '../../redux';
 import { flashMessageSelector, removeFlashMessage } from '../Flash/redux';
 
@@ -68,7 +68,6 @@ const metaKeywords = [
 
 const propTypes = {
   children: PropTypes.node.isRequired,
-  executeGA: PropTypes.func,
   fetchUser: PropTypes.func.isRequired,
   flashMessage: PropTypes.shape({
     id: PropTypes.string,
@@ -102,27 +101,27 @@ const mapStateToProps = createSelector(
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
-    { fetchUser, removeFlashMessage, onlineStatusChange, executeGA },
+    { fetchUser, removeFlashMessage, onlineStatusChange },
     dispatch
   );
 
 class DefaultLayout extends Component {
   componentDidMount() {
-    const { isSignedIn, fetchUser, pathname, executeGA } = this.props;
+    const { isSignedIn, fetchUser, pathname } = this.props;
     if (!isSignedIn) {
       fetchUser();
     }
-    executeGA({ type: 'page', data: pathname });
+    ga.pageview(pathname);
 
     window.addEventListener('online', this.updateOnlineStatus);
     window.addEventListener('offline', this.updateOnlineStatus);
   }
 
   componentDidUpdate(prevProps) {
-    const { pathname, executeGA } = this.props;
+    const { pathname } = this.props;
     const { pathname: prevPathname } = prevProps;
     if (pathname !== prevPathname) {
-      executeGA({ type: 'page', data: pathname });
+      ga.pageview(pathname);
     }
   }
 
