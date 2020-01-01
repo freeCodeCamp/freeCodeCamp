@@ -32,7 +32,7 @@ tests:
     testString: assert.deepStrictEqual(rangeOfNumbers(1, 5), [1, 2, 3, 4, 5]);
   - text: <code>rangeOfNumbers(6, 9)</code> should return <code>[6, 7, 8, 9]</code>.
     testString: assert.deepStrictEqual(rangeOfNumbers(6, 9), [6, 7, 8, 9]);
-  - text: <code>rangeOfNumbers(4, 4)</code> should should return <code>[4]</code>.
+  - text: <code>rangeOfNumbers(4, 4)</code> should return <code>[4]</code>.
     testString: assert.deepStrictEqual(rangeOfNumbers(4, 4), [4]);
 ```
 
