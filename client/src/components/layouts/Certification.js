@@ -2,7 +2,8 @@ import React, { Fragment, Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import { fetchUser, isSignedInSelector, executeGA } from '../../redux';
+import ga from '../../analytics';
+import { fetchUser, isSignedInSelector } from '../../redux';
 import { createSelector } from 'reselect';
 
 const mapStateToProps = createSelector(
@@ -12,7 +13,7 @@ const mapStateToProps = createSelector(
   })
 );
 
-const mapDispatchToProps = { fetchUser, executeGA };
+const mapDispatchToProps = { fetchUser };
 
 class CertificationLayout extends Component {
   componentDidMount() {
@@ -20,7 +21,7 @@ class CertificationLayout extends Component {
     if (!isSignedIn) {
       fetchUser();
     }
-    this.props.executeGA({ type: 'page', data: pathname });
+    ga.pageview(pathname);
   }
   render() {
     return <Fragment>{this.props.children}</Fragment>;
@@ -30,7 +31,6 @@ class CertificationLayout extends Component {
 CertificationLayout.displayName = 'CertificationLayout';
 CertificationLayout.propTypes = {
   children: PropTypes.any,
-  executeGA: PropTypes.func,
   fetchUser: PropTypes.func.isRequired,
   isSignedIn: PropTypes.bool,
   pathname: PropTypes.string.isRequired
