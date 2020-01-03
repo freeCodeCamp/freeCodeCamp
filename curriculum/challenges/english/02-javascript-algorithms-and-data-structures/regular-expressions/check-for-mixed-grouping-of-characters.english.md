@@ -13,7 +13,7 @@ Then check whether the desired string groups are in the test string by using the
 
 ```js
 let testStr = "Pumpkin";
-let testRegex = /P(engu|umpk)in/g;
+let testRegex = /P(engu|umpk)in/;
 testRegex.test(testStr);
 // Returns true
 ```
@@ -32,11 +32,11 @@ Then fix the code so that the regex that you have created is checked against <co
 ```yml
 tests:
   - text: Your regex <code>myRegex</code> should return <code>true</code> for the string <code>Franklin D. Roosevelt</code>
-    testString: assert(myRegex.test('Franklin D. Roosevelt'));
+    testString: myRegex.lastIndex = 0; assert(myRegex.test('Franklin D. Roosevelt'));
   - text: Your regex <code>myRegex</code> should return <code>true</code> for the string <code>Eleanor Roosevelt</code>
-    testString: assert(myRegex.test('Eleanor Roosevelt'));
+    testString: myRegex.lastIndex = 0; assert(myRegex.test('Eleanor Roosevelt'));
   - text: Your regex <code>myRegex</code> should return <code>false</code> for the string <code>Franklin Rosevelt</code>
-    testString: assert(!myRegex.test('Franklin Rosevelt'));
+    testString: myRegex.lastIndex = 0; assert(!myRegex.test('Franklin Rosevelt'));
   - text: You should use <code>.test()</code> to test the regex.
     testString: assert(code.match(/myRegex.test\(\s*myString\s*\)/));
   - text: Your result should return <code>true</code>.
