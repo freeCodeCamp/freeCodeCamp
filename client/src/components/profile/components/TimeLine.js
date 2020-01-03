@@ -8,7 +8,13 @@ import { Link, useStaticQuery, graphql } from 'gatsby';
 import TimelinePagination from './TimelinePagination';
 import { FullWidthRow } from '../../helpers';
 import SolutionViewer from '../../settings/SolutionViewer';
-import { challengeTypes } from '../../../../utils/challengeTypes';
+import {
+  getCertIds,
+  getPathFromID,
+  getTitleFromId
+} from '../../../../../utils';
+import CertificationIcon from '../../../assets/icons/CertificationIcon';
+
 // Items per page in timeline.
 const ITEMS_PER_PAGE = 15;
 
@@ -73,13 +79,23 @@ class TimelineInner extends Component {
   }
 
   renderCompletion(completed) {
-    const { idToNameMap } = this.props;
+    const { idToNameMap, username } = this.props;
     const { id, completedDate } = completed;
-    const { challengeTitle, challengePath } = idToNameMap.get(id);
+    const { challengeTitle, challengePath, certPath } = idToNameMap.get(id);
     return (
       <tr className='timeline-row' key={id}>
         <td>
-          <Link to={challengePath}>{challengeTitle}</Link>
+          {certPath ? (
+            <Link
+              className='timeline-cert-link'
+              to={`certification/${username}/${certPath}`}
+            >
+              {challengeTitle}
+              <CertificationIcon />
+            </Link>
+          ) : (
+            <Link to={challengePath}>{challengeTitle}</Link>
+          )}
         </td>
         <td className='text-center'>
           <time dateTime={format(completedDate, 'YYYY-MM-DDTHH:MM:SSZ')}>
@@ -225,6 +241,12 @@ function useIdToNameMap() {
     }
   `);
   const idToNameMap = new Map();
+  for (let id of getCertIds()) {
+    idToNameMap.set(id, {
+      challengeTitle: `${getTitleFromId(id)} Certification`,
+      certPath: getPathFromID(id)
+    });
+  }
   edges.forEach(({ node: { id, title, fields: { slug } } }) => {
     idToNameMap.set(id, { challengeTitle: title, challengePath: slug });
   });
@@ -238,10 +260,7 @@ const Timeline = props => {
   const { sortedTimeline, totalPages } = useMemo(() => {
     const sortedTimeline = reverse(
       sortBy(completedMap, ['completedDate']).filter(challenge => {
-        return (
-          challenge.challengeType !== challengeTypes.step &&
-          idToNameMap.has(challenge.id)
-        );
+        return idToNameMap.has(challenge.id);
       })
     );
     const totalPages = Math.ceil(sortedTimeline.length / ITEMS_PER_PAGE);
