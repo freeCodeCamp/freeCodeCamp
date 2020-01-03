@@ -26,10 +26,9 @@ const numToCommas = num =>
   num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
 
 const propTypes = {
-  handleProcessing: PropTypes.func,
+  showCloseBtn: PropTypes.func,
   defaultTheme: PropTypes.string,
   isDonating: PropTypes.bool,
-  executeGA: PropTypes.func,
   stripe: PropTypes.shape({
     createToken: PropTypes.func.isRequired
   })
@@ -48,7 +47,6 @@ class YearEndDonationForm extends Component {
     this.handleSelectAmount = this.handleSelectAmount.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
-    this.handlePaypalSubmission = this.handlePaypalSubmission.bind(this);
   }
 
   componentDidMount() {
@@ -91,13 +89,14 @@ class YearEndDonationForm extends Component {
 
   renderDonationOptions() {
     const { donationAmount, stripe } = this.state;
-    const { handleProcessing, defaultTheme } = this.props;
+
+    const { showCloseBtn, defaultTheme } = this.props;
     return (
       <div>
         <StripeProvider stripe={stripe}>
           <Elements>
             <DonateFormChildViewForHOC
-              handleProcessing={handleProcessing}
+              showCloseBtn={showCloseBtn}
               defaultTheme={defaultTheme}
               donationAmount={donationAmount}
               donationDuration='onetime'
@@ -180,23 +179,12 @@ class YearEndDonationForm extends Component {
     );
   }
 
-  handlePaypalSubmission() {
-    this.props.executeGA({
-      type: 'event',
-      data: {
-        category: 'donation',
-        action: 'year end gift paypal button click'
-      }
-    });
-  }
-
   renderPayPalDonations() {
     return (
       <form
         action='https://www.paypal.com/cgi-bin/webscr'
         method='post'
         target='_top'
-        onSubmit={this.handlePaypalSubmission}
       >
         <input type='hidden' name='cmd' value='_s-xclick' />
         <input type='hidden' name='hosted_button_id' value='9C73W6CWSLNPW' />
