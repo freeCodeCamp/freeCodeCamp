@@ -14,7 +14,7 @@ One key difference between the <code>fixed</code> and <code>absolute</code> posi
 
 ## Instructions
 <section id='instructions'>
-The navigation bar in the code is labeled with an id of <code>navbar</code>. Change its <code>position</code> to <code>fixed</code>, and offset it 0 pixels from the <code>top</code> and 0 pixels from the <code>left</code>. Notice the (lack of) impact to the <code>h1</code> position, it hasn't been pushed down to accommodate the navigation bar and would need to be adjusted separately.
+The navigation bar in the code is labeled with an id of <code>navbar</code>. Change its <code>position</code> to <code>fixed</code>, and offset it 0 pixels from the <code>top</code> and 0 pixels from the <code>left</code>. After you have added the code, scroll the preview window to see how the navigation stays in place.
 </section>
 
 ## Tests
@@ -40,6 +40,9 @@ tests:
 
 ```html
 <style>
+  body {
+    min-height: 150vh;
+  }
   #navbar {
 
 
@@ -84,6 +87,9 @@ tests:
 
 ```html
 <style>
+  body {
+    min-height: 150vh;
+  }
   #navbar {
     position: fixed;
     top: 0;
