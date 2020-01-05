@@ -29,7 +29,7 @@ The method for getting the percent of each slice will take a few steps.
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(/\.append\('text'\)\s*\.text\s*\(\s*d\s*=>\s*\{\s*\}\s*\)/g.test(code));
 
 ```
 

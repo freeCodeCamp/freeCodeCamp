@@ -23,7 +23,7 @@ This will use the `centroid` function of the `d3.pie` API to move the text towar
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const transform = $('.dashboard div svg g text')[0].getAttribute('transform').replace('translate(','').replace(')','').split(','); assert(transform[0] < 39 && transform[1] > 31);
 
 ```
 

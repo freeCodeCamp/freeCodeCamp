@@ -21,7 +21,7 @@ The data for the labels will be the same as for the slices themselves. Add the `
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(/pieGraphData\.selectAll\((`|'|")pieSliceText\1\)\s*\.\s*data\s*\(pie\s*\(\s*d3\s*\.\s*entries\s*\(\s*data\s*\[\s*8\s*\]\s*\.\s*followers\s*\)\s*\)\s*\)/g.test(code));
 
 ```
 

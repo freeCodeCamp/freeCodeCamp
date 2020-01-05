@@ -26,7 +26,7 @@ ${Math.round(percent*100)}%
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(/return\s*`\$\{\s*Math\s*\.\s*round\s*\(\s*percent\s*\*\s*100\s*\)\s*\}%`;?\s*\}\s*\)/g.test(code));
 
 ```
 

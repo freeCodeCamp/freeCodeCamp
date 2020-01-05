@@ -7,7 +7,7 @@ isBeta: true
 
 ## Description
 <section id='description'>
-    
+
 Set the `attributes` of the table to have a `width` of `200` and a `height` of `120`.
 </section>
 
@@ -21,7 +21,7 @@ Set the `attributes` of the table to have a `width` of `200` and a `height` of `
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const table = $('.dashboard div table')[0]; assert(table.getAttribute('width') == 200 && table.getAttribute('height') == 120);
 
 ```
 

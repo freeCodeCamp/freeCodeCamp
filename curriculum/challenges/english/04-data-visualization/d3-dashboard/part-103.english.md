@@ -21,7 +21,7 @@ Now you are going to add some labels to the pie chart. On a new line type `pieGr
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(/pieGraphData\s*\.\s*selectAll\s*\((`|'|")pieSliceText\1\s*\)/g.test(code));
 
 ```
 

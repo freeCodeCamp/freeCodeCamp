@@ -21,7 +21,7 @@ Use the `text` function to set the text of the selection to `2020 followers`.
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($('.dashboard div table thead tr th').text() === '2020 followers');
 
 ```
 

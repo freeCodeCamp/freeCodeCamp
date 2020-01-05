@@ -21,7 +21,7 @@ The last component you are going to add it a legend to display the name of each 
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(/const\s*legend\s*=\s*rightDashboard\s*\.\s*append\s*\(\s*('|"|`)\s*table\s*\1\s*\)/g.test(code));
 
 ```
 

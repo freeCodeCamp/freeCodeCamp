@@ -21,7 +21,7 @@ Next, set the `stroke` attribute to `white` and the `stroke-width` attribute to 
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const pathsArr = $('.dashboard div svg g path'); assert(pathsArr[0].getAttribute('stroke') === 'white' && pathsArr[0].getAttribute('stroke-width') == 2);
 
 ```
 

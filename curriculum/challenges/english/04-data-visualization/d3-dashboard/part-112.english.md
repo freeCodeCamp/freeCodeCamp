@@ -21,7 +21,7 @@ Change the `style` of the text to give it a `text-anchor` of `middle` and a `fon
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const text = $('.dashboard div svg g text')[0]; assert(text.style.textAnchor === 'middle' && text.style.font.toLowerCase() === '10px verdana');
 
 ```
 

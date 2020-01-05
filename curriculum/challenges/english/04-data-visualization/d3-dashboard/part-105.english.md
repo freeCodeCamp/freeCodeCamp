@@ -21,7 +21,7 @@ Add the `enter` and `append` functions in that order. Add `text` elements with t
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($('.dashboard div svg g text').length === 9);
 
 ```
 

@@ -21,7 +21,7 @@ Change the `style` of the `table` to have a `font` of `12px verdana`.
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($('.dashboard div table')[0].style.font.toLowerCase() === '12px verdana');
 
 ```
 

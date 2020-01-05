@@ -21,7 +21,7 @@ isBeta: true
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($('.dashboard div table thead tr th').length === 1);
 
 ```
 

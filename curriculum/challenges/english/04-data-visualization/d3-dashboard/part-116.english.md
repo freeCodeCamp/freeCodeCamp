@@ -21,7 +21,7 @@ Create a new `const` named `legendTitle` and use it to `append` a `thead` to you
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(/const\s*legendTitle\s*=\s*legend\s*\.\s*append\s*\(\s*('|"|`)\s*thead\s*\1\s*\)/g.test(code));
 
 ```
 

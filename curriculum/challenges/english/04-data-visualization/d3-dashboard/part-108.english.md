@@ -21,7 +21,7 @@ The next thing you want to do is add all those values together. `d3.sum` will ad
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(/const\s*sum\s*=\s*d3\s*\.\s*sum\s*\(\s*values\s*\)\s*;?\s*\}\s*\)/g.test(code));
 
 ```
 

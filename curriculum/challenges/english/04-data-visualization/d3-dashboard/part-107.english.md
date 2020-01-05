@@ -26,7 +26,7 @@ d3.values(data[8].followers)
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(/const\s*values\s*=\s*d3\s*\.\s*values\s*\(\s*data\s*\[\s*8\s*\]\s*\.\s*followers\s*\);?\s*\}\s*\)/g.test(code));
 
 ```
 
