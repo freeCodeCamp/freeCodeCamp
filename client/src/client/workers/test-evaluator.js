@@ -47,7 +47,8 @@ const __utils = (() => {
   return {
     postResult,
     log,
-    toggleProxyLogger
+    toggleProxyLogger,
+    flushLogs
   };
 })();
 
@@ -71,6 +72,7 @@ self.onmessage = async e => {
       // generated during testing.
       testResult = eval(`
         ${e.data.build}
+        __utils.flushLogs();
         __userCodeWasExecuted = true;
         __utils.toggleProxyLogger(true);
         ${e.data.testString}
