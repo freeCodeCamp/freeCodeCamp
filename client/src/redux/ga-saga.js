@@ -1,12 +1,12 @@
-import { takeEvery } from 'redux-saga/effects';
+import { takeEvery, call, all } from 'redux-saga/effects';
 import ga from '../analytics';
 
+const GaTypes = { event: ga.event, page: ga.pageview, modal: ga.modalview };
+
 function* callGaType({ payload: { type, data } }) {
-  const GaTypes = { event: ga.event, page: ga.pageview, modal: ga.modalview };
-  GaTypes[type](data);
-  yield;
+  yield call(GaTypes[type], data);
 }
 
-export function createGaSaga(types) {
-  return [takeEvery(types.executeGA, callGaType)];
+export function* createGaSaga(types) {
+  yield all([takeEvery(types.executeGA, callGaType)]);
 }
