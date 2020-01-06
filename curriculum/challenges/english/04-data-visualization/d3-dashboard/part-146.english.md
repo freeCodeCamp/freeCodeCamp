@@ -1,6 +1,6 @@
 ---
-id: 5d8a4cfbe6b6180ed9a1ca6f
-title: Part 146
+id: 5d8a4cfbe6b6180ed9a1ca70
+title: Part 147
 challengeType: 0
 isBeta: true
 ---
@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Similar to how you made the text bold for the label of the displayed year; change the `fill` of the `twitter-circles` to use a `d` function that returns the `twitterColor` when `d.year` equals `year`, and leave it `white` if it doesn't.
+Add a `mouseover` event to the `tumblr-circles` and `instagram-circles` in the same way that you did for the `twitter-circles`.
 </section>
 
 ## Instructions
@@ -116,10 +116,7 @@ function drawDashboard(year) {
     .attr('cx', d => xScale(d.year))
     .attr('cy', d => yScale(d.followers.twitter))
     .attr('r', 6)
-    .attr('fill', 'white')
-
-
-   
+    .attr('fill', d => d.year === year ? twitterColor : 'white')
     .attr('stroke', twitterColor)
     .style('cursor', 'pointer')
     .on('mouseover', d => drawDashboard(d.year));
@@ -145,6 +142,9 @@ function drawDashboard(year) {
     .attr('fill', 'white')
     .attr('stroke', instagramColor)
     .style('cursor', 'pointer')
+
+
+
 
   const rightDashboard = d3.select('.dashboard')
     .append('div');

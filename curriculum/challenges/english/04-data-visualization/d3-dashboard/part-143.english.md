@@ -1,6 +1,6 @@
 ---
-id: 5d8a4cfbe6b6180ed9a1ca6c
-title: Part 143
+id: 5d8a4cfbe6b6180ed9a1ca6d
+title: Part 144
 challengeType: 0
 isBeta: true
 ---
@@ -8,9 +8,11 @@ isBeta: true
 ## Description
 <section id='description'>
 
-There's a problem, each time you call the function it adds more elements to the container. If you empty all the elements out of the container at the top of the function, it will redraw them where they need to be.
+Now when you hover a label, you can see the data for the different years.
 
-Use `d3.select` to select the `.dashboard` element and chain the `html` function to it with an empty string as it parameter.
+Where you created the `text` elements for the x-axis labels, change the font to `bold 10px verdana` for the currently displayed year.
+
+To do this, create a "`d` function" in the `font` value argument and return the above sting if `d` equals `year`, if not, return the string that is currently there. It's easiest to use a ternary operator for this.
 </section>
 
 ## Instructions
@@ -36,10 +38,7 @@ tests:
 ```html
 <script>
 function drawDashboard(year) {
-
-
-
-
+  d3.select('.dashboard').html('');
   const index = data.findIndex(d => d.year === year);
 
   const svgMargin = 60,
@@ -82,6 +81,9 @@ function drawDashboard(year) {
     .style('text-anchor', 'end')
     .style('cursor', 'pointer')
     .style('font', '10px verdana')
+
+
+ 
     .on('mouseover', d => drawDashboard(d));
 
   const twitterLine = d3.line()

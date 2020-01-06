@@ -1,6 +1,6 @@
 ---
-id: 5d8a4cfbe6b6180ed9a1ca6a
-title: Part 141
+id: 5d8a4cfbe6b6180ed9a1ca6b
+title: Part 142
 challengeType: 0
 isBeta: true
 ---
@@ -8,15 +8,13 @@ isBeta: true
 ## Description
 <section id='description'>
 
-There are five places in the file where you used `data[8]` to set data to the year 2020. Change all five of them to `data[index]` so you can pass in any year to the function to change the year that is displayed.
+Create a `mouseover` event for your x-axis labels. Chain the `on` function to them and pass it the string `mouseover` and give it a value of a "`d` function" that calls the `drawDashboard` function with `d` as the argument. It will look like this:
 
-The five spots are:
+```js
+.on('mouseover', d => drawDashboard(d))
+```
 
-The `domain` for `pieColors`.
-The `data` for `pieGraphData`.
-The `data` for your `pieSliceText`.
-The `text` for your `pieSliceText`.
-The `data` for your `legendRows`.
+So now, when you hover a label, the function will be called with the year that is being hovered.
 </section>
 
 ## Instructions
@@ -84,6 +82,9 @@ function drawDashboard(year) {
     .style('text-anchor', 'end')
     .style('cursor', 'pointer')
     .style('font', '10px verdana')
+
+
+
 
   const twitterLine = d3.line()
     .x(d => xScale(d.year))
@@ -162,14 +163,14 @@ function drawDashboard(year) {
     .innerRadius(0);
 
   const pieColors = d3.scaleOrdinal()  
-    .domain(data[8].followers)
+    .domain(data[index].followers)
     .range([twitterColor, tumblrColor, instagramColor]);
 
   const pie = d3.pie()
     .value(d => d.value);
     
   const pieGraphData = pieGraph.selectAll('pieSlices')
-    .data(pie(d3.entries(data[8].followers)))
+    .data(pie(d3.entries(data[index].followers)))
     .enter()
     .append('g')
     .attr('transform', 'translate(100, 100)');
@@ -181,10 +182,10 @@ function drawDashboard(year) {
     .attr('stroke-width', 2);
 
   pieGraphData.selectAll('pieSliceText')
-    .data(pie(d3.entries(data[8].followers)))
+    .data(pie(d3.entries(data[index].followers)))
     .enter()
     .append('text')
-    .text(d => `${Math.round(d.data.value/d3.sum(d3.values(data[8].followers))*100)}%`)
+    .text(d => `${Math.round(d.data.value/d3.sum(d3.values(data[index].followers))*100)}%`)
     .attr('transform', d => `translate(${pieArc.centroid(d)})`)
     .style('text-anchor', 'middle')
     .style('font', '10px verdana');
@@ -206,7 +207,7 @@ function drawDashboard(year) {
 
   const legendRows = legend.append('tbody')
     .selectAll('tr')
-    .data(d3.entries(data[8].followers))
+    .data(d3.entries(data[index].followers))
     .enter()
     .append('tr');
 

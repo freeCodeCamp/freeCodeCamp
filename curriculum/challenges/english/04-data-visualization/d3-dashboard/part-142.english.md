@@ -1,6 +1,6 @@
 ---
-id: 5d8a4cfbe6b6180ed9a1ca6b
-title: Part 142
+id: 5d8a4cfbe6b6180ed9a1ca6c
+title: Part 143
 challengeType: 0
 isBeta: true
 ---
@@ -8,13 +8,9 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Create a `mouseover` event for your x-axis labels. Chain the `on` function to them and pass it the string `mouseover` and give it a value of a "`d` function" that calls the `drawDashboard` function with `d` as the argument. It will look like this:
+There's a problem, each time you call the function it adds more elements to the container. If you empty all the elements out of the container at the top of the function, it will redraw them where they need to be.
 
-```js
-.on('mouseover', d => drawDashboard(d))
-```
-
-So now, when you hover a label, the function will be called with the year that is being hovered.
+Use `d3.select` to select the `.dashboard` element and chain the `html` function to it with an empty string as it parameter.
 </section>
 
 ## Instructions
@@ -40,6 +36,10 @@ tests:
 ```html
 <script>
 function drawDashboard(year) {
+
+
+
+
   const index = data.findIndex(d => d.year === year);
 
   const svgMargin = 60,
@@ -82,9 +82,7 @@ function drawDashboard(year) {
     .style('text-anchor', 'end')
     .style('cursor', 'pointer')
     .style('font', '10px verdana')
-
-
-
+    .on('mouseover', d => drawDashboard(d));
 
   const twitterLine = d3.line()
     .x(d => xScale(d.year))

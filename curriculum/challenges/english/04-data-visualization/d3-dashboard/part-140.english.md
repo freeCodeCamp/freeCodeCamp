@@ -1,6 +1,6 @@
 ---
-id: 5d8a4cfbe6b6180ed9a1ca69
-title: Part 140
+id: 5d8a4cfbe6b6180ed9a1ca6a
+title: Part 141
 challengeType: 0
 isBeta: true
 ---
@@ -8,13 +8,15 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Use JavaScript's `findIndex` function to set your `index` variable to the index of the item in the `data` array where the year is the same as the year passed to your `drawDashboard` function. Here's an example:
+There are five places in the file where you used `data[8]` to set data to the year 2020. Change all five of them to `data[index]` so you can pass in any year to the function to change the year that is displayed.
 
-```js
-array.findIndex(d => return the year here)
-```
+The five spots are:
 
-After this, you can use `data[index]` to get that item in the array.
+The `domain` for `pieColors`.
+The `data` for `pieGraphData`.
+The `data` for your `pieSliceText`.
+The `text` for your `pieSliceText`.
+The `data` for your `legendRows`.
 </section>
 
 ## Instructions
@@ -40,10 +42,7 @@ tests:
 ```html
 <script>
 function drawDashboard(year) {
-  const index;
-
-
-
+  const index = data.findIndex(d => d.year === year);
 
   const svgMargin = 60,
     svgWidth = 700,

@@ -1,6 +1,6 @@
 ---
-id: 5d8a4cfbe6b6180ed9a1ca70
-title: Part 147
+id: 5d8a4cfbe6b6180ed9a1ca71
+title: Part 148
 challengeType: 0
 isBeta: true
 ---
@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Add a `mouseover` event to the `tumblr-circles` and `instagram-circles` in the same way that you did for the `twitter-circles`.
+Change the `fill` of the `tumblr-circles` and `instagram-circles` to use a "`d` function" that returns their respective color variables when `d.year` equals `year`, leave it `white` when they don't.
 </section>
 
 ## Instructions
@@ -131,6 +131,7 @@ function drawDashboard(year) {
     .attr('fill', 'white')
     .attr('stroke', tumblrColor)
     .style('cursor', 'pointer')
+    .on('mouseover', d => drawDashboard(d.year));
 
   lineGraph.selectAll('instagram-circles')
     .data(data)
@@ -140,11 +141,12 @@ function drawDashboard(year) {
     .attr('cy', d => yScale(d.followers.instagram))
     .attr('r', 6)
     .attr('fill', 'white')
+
+
+
     .attr('stroke', instagramColor)
     .style('cursor', 'pointer')
-
-
-
+    .on('mouseover', d => drawDashboard(d.year));
 
   const rightDashboard = d3.select('.dashboard')
     .append('div');

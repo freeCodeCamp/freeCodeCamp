@@ -1,6 +1,6 @@
 ---
-id: 5d8a4cfbe6b6180ed9a1ca6d
-title: Part 144
+id: 5d8a4cfbe6b6180ed9a1ca6e
+title: Part 145
 challengeType: 0
 isBeta: true
 ---
@@ -8,11 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Now when you hover a label, you can see the data for the different years.
-
-Where you created the `text` elements for the x-axis labels, change the font to `bold 10px verdana` for the currently displayed year.
-
-To do this, create a "`d` function" in the `font` value argument and return the above sting if `d` equals `year`, if not, return the string that is currently there. It's easiest to use a ternary operator for this.
+Create another `mouseover` event for when you hover one of the `twitter-circles`. It will look like the other `mouseover` event you created except the `drawDashboard` function will take `d.year` instead of `d`.
 </section>
 
 ## Instructions
@@ -80,10 +76,7 @@ function drawDashboard(year) {
     .style('transform', 'translate(-12px, 0) rotate(-50deg)')
     .style('text-anchor', 'end')
     .style('cursor', 'pointer')
-    .style('font', '10px verdana')
-
-
- 
+    .style('font', d => d === year ? 'bold 10px verdana' : '10px verdana')
     .on('mouseover', d => drawDashboard(d));
 
   const twitterLine = d3.line()
@@ -126,6 +119,10 @@ function drawDashboard(year) {
     .attr('fill', 'white')
     .attr('stroke', twitterColor)
     .style('cursor', 'pointer')
+
+ 
+
+
 
   lineGraph.selectAll('tumblr-circles')
     .data(data)

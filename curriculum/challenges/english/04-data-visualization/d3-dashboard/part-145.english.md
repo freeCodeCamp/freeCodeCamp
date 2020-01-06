@@ -1,6 +1,6 @@
 ---
-id: 5d8a4cfbe6b6180ed9a1ca6e
-title: Part 145
+id: 5d8a4cfbe6b6180ed9a1ca6f
+title: Part 146
 challengeType: 0
 isBeta: true
 ---
@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Create another `mouseover` event for when you hover one of the `twitter-circles`. It will look like the other `mouseover` event you created except the `drawDashboard` function will take `d.year` instead of `d`.
+Similar to how you made the text bold for the label of the displayed year; change the `fill` of the `twitter-circles` to use a `d` function that returns the `twitterColor` when `d.year` equals `year`, and leave it `white` if it doesn't.
 </section>
 
 ## Instructions
@@ -117,12 +117,12 @@ function drawDashboard(year) {
     .attr('cy', d => yScale(d.followers.twitter))
     .attr('r', 6)
     .attr('fill', 'white')
+
+
+   
     .attr('stroke', twitterColor)
     .style('cursor', 'pointer')
-
- 
-
-
+    .on('mouseover', d => drawDashboard(d.year));
 
   lineGraph.selectAll('tumblr-circles')
     .data(data)

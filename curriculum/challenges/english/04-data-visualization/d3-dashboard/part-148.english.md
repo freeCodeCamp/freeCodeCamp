@@ -1,6 +1,6 @@
 ---
-id: 5d8a4cfbe6b6180ed9a1ca71
-title: Part 148
+id: 5d8a4cfbe6b6180ed9a1ca72
+title: Part 149
 challengeType: 0
 isBeta: true
 ---
@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Change the `fill` of the `tumblr-circles` and `instagram-circles` to use a "`d` function" that returns their respective color variables when `d.year` equals `year`, leave it `white` when they don't.
+Change the `text` of the `legendTitle` to this string literal `${year} followers`. That's it, your dashboard is finished!
 </section>
 
 ## Instructions
@@ -128,7 +128,7 @@ function drawDashboard(year) {
     .attr('cx', d => xScale(d.year))
     .attr('cy', d => yScale(d.followers.tumblr))
     .attr('r', 6)
-    .attr('fill', 'white')
+    .attr('fill', d => d.year === year ? tumblrColor : 'white')
     .attr('stroke', tumblrColor)
     .style('cursor', 'pointer')
     .on('mouseover', d => drawDashboard(d.year));
@@ -140,10 +140,7 @@ function drawDashboard(year) {
     .attr('cx', d => xScale(d.year))
     .attr('cy', d => yScale(d.followers.instagram))
     .attr('r', 6)
-    .attr('fill', 'white')
-
-
-
+    .attr('fill', d => d.year === year ? instagramColor : 'white')
     .attr('stroke', instagramColor)
     .style('cursor', 'pointer')
     .on('mouseover', d => drawDashboard(d.year));
@@ -200,6 +197,9 @@ function drawDashboard(year) {
     .append('tr')
     .append('th')
     .text('2020 followers')
+
+
+
     .attr('colspan', 3)
     .style('position', 'relative')
     .style('left', '20px');
