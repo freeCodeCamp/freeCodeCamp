@@ -1,6 +1,6 @@
 ---
 id: 5d8a4cfbe6b6180ed9a1ca6a
-title: Part 141
+title: Part 140
 challengeType: 0
 isBeta: true
 ---
@@ -29,7 +29,7 @@ The `data` for your `legendRows`.
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(!/data\[8\]/g.test(code) && code.match(/data\s*\[\s*index\s*\]/g).length === 5);
 
 ```
 

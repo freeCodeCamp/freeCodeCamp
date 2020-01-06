@@ -29,7 +29,7 @@ After this, you can use `data[index]` to get that item in the array.
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const script = $('.dashboard').siblings('script')[1].innerHTML; assert(/var index = data.findIndex\(function \(d\) \{\s*return (year === d\.year|d.year === year);\s*\}\);/g.test(script));
 
 ```
 

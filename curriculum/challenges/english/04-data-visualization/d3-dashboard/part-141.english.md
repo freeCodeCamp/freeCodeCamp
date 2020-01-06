@@ -1,6 +1,6 @@
 ---
 id: 5d8a4cfbe6b6180ed9a1ca6b
-title: Part 142
+title: Part 141
 challengeType: 0
 isBeta: true
 ---
@@ -27,7 +27,7 @@ So now, when you hover a label, the function will be called with the year that i
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const script = $('.dashboard').siblings('script')[1].innerHTML; assert(/\.on\(('|"|`)mouseover\1, function \(d\) \{\s*return drawDashboard\(d\);\s*\}\)/g.test(script));
 
 ```
 

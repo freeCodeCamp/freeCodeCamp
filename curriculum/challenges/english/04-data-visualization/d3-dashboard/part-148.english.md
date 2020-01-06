@@ -1,6 +1,6 @@
 ---
 id: 5d8a4cfbe6b6180ed9a1ca72
-title: Part 149
+title: Part 148
 challengeType: 0
 isBeta: true
 ---
@@ -21,7 +21,7 @@ Change the `text` of the `legendTitle` to this string literal `${year} followers
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert();
 
 ```
 

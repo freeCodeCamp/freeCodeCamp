@@ -1,6 +1,6 @@
 ---
 id: 5d8a4cfbe6b6180ed9a1ca6c
-title: Part 143
+title: Part 142
 challengeType: 0
 isBeta: true
 ---
@@ -23,7 +23,7 @@ Use `d3.select` to select the `.dashboard` element and chain the `html` function
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const script = $('.dashboard').siblings('script')[1].innerHTML; assert(/d3\.select\(('|"|`)\.dashboard\1\)\.html\(('|"|`)\2\)/g.test(script));
 
 ```
 
