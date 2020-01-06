@@ -23,7 +23,7 @@ Wrap all the code in this file in a function named `drawDashboard` and give it a
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(typeof(drawDashboard) === 'function' && /^\s*<script>\s*function\s*drawDashboard\s*\(\s*year\s*\)\s*\{/g.test(code) && /\}\s*drawDashboard\s*\(\s*2020\s*\)\s*;?\s*<\/script>\s*$/g.test(code));
 
 ```
 

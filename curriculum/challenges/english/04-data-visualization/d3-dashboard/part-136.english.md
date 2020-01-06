@@ -21,7 +21,7 @@ The legend and pie graph look a little off as well. On your `legend` variable, a
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const table = $('.dashboard div table')[0]; assert(table.style.position === 'relative' && table.style.top === '30px');
 
 ```
 

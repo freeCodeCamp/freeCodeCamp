@@ -21,7 +21,7 @@ The title looks a little misaligned. On your `legendTitle` variable, set the `po
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const th = $('.dashboard div table thead tr th')[0]; assert(th.style.position === 'relative' && th.style.left === '20px');
 
 ```
 

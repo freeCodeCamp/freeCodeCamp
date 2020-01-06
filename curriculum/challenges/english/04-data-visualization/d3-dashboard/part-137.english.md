@@ -21,7 +21,7 @@ Finally, on your `pieGraph` variable, add a `position` of `relative` and a `left
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const pieGraph = $('.dashboard div svg')[0]; assert(pieGraph.style.position === 'relative' && pieGraph.style.left === '20px');
 
 ```
 
