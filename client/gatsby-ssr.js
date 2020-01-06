@@ -76,6 +76,18 @@ export const onRenderBody = ({
     );
   }
 
+  if (pathname.includes('/learn/coding-interview-prep/project-euler')) {
+    scripts.push(
+      <script
+        async={false}
+        id={mathJaxCdn.id}
+        key={mathJaxCdn.key}
+        src={mathJaxCdn.address}
+        type={mathJaxCdn.type}
+      />
+    );
+  }
+
   if (challengeRE.test(pathname) || donateRE.test(pathname)) {
     scripts.push(
       <script
