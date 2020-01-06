@@ -21,7 +21,7 @@ Set the `text` to a "`d` function" that returns `d.value`.
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($('.dashboard div table tbody tr td')[2].innerHTML === '2845');
 
 ```
 

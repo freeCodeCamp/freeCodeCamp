@@ -21,7 +21,7 @@ Add a `selectAll` function to the selection and pass it the string `tr`.
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(/const legendRows = legend\.append\('tbody\s*'\)\s*\.\s*selectAll\s*\(\s*('|"|`)\s*tr\s*\1\s*\)/g.test(code));
 
 ```
 

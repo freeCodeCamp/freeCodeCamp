@@ -21,7 +21,7 @@ Create a new `const` named `legendRows` and use it to `append` a `tbody` element
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(/const\s*legendRows\s*=\s*legend\s*\.\s*append\s*\(\s*('|"|`)\s*tbody\s*\1\s*\)/g.test(code));
 
 ```
 

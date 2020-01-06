@@ -21,7 +21,7 @@ Set the `width` to `16px` and the `height` to `16px` using the `style` function.
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const div = $('.dashboard div table tbody tr td div')[0]; assert(div.style.width == '16px' && div.style.height === '16px');
 
 ```
 

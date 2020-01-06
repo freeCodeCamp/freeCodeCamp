@@ -21,7 +21,7 @@ Set the `text` of the `td` to the `key` of each data point using a `d` function 
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($('.dashboard div table tbody tr td').text() === 'twittertumblrinstagram');
 
 ```
 

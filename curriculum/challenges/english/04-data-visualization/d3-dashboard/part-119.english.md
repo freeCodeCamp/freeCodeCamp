@@ -21,7 +21,7 @@ Your table is going to have three columns, one for the platform name, one for th
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($('.dashboard div table thead tr th')[0].getAttribute('colspan') == 3);
 
 ```
 

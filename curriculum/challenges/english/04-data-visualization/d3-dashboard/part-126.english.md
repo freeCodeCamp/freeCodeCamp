@@ -21,7 +21,7 @@ This is the first column of your table. Set the `align` attribute to `right` to 
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($('.dashboard div table tbody tr td')[0].getAttribute('align').toLowerCase() === 'right');
 
 ```
 

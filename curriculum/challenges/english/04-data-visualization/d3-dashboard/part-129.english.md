@@ -21,7 +21,7 @@ Append a `div` element to the selection.
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($('.dashboard div table tbody tr td div').length === 3);
 
 ```
 

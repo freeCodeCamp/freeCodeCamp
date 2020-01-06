@@ -21,7 +21,7 @@ On a new line, `append` a `td` to your `legendRows`. `td` is for an individual c
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($('.dashboard div table tbody tr td').length === 3);
 
 ```
 

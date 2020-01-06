@@ -21,7 +21,7 @@ Using the `style` function again, set the `background-color` to a `d` function t
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($('.dashboard div table tbody tr td div')[0].style.backgroundColor === 'rgb(124, 217, 209)');
 
 ```
 

@@ -21,7 +21,7 @@ Add the `enter` and `append` function to the selection. Pass the string `tr` to 
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($('.dashboard div table tbody tr').length === 3);
 
 ```
 

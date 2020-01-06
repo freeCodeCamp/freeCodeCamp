@@ -21,7 +21,7 @@ Use the `data` function to set the data for the rows to an array of your followe
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(/\.selectAll\('tr'\)\s*\.\s*data\s*\(\s*d3\s*\.\s*entries\s*\(\s*data\s*\[\s*8\s*\]\s*\.\s*followers\s*\)\s*\)/g.test(code));
 
 ```
 

@@ -21,7 +21,7 @@ Set the `align` attribute to `left` for this column.
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($('.dashboard div table tbody tr td')[2].getAttribute('align').toLowerCase() === 'left');
 
 ```
 

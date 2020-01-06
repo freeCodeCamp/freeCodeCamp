@@ -21,7 +21,7 @@ Set the `align` attribute to `center`.
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert($('.dashboard div table tbody tr td')[1].getAttribute('align').toLowerCase() === 'center');
 
 ```
 
