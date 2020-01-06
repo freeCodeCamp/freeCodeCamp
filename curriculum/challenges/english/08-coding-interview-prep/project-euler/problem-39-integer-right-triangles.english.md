@@ -7,9 +7,13 @@ forumTopicId: 302054
 
 ## Description
 <section id='description'>
-If p is the perimeter of a right angle triangle with integral length sides, {a,b,c}, there are exactly three solutions for p = 120.
+
+If <var>p</var> is the perimeter of a right angle triangle with integral length sides, {a,b,c}, there are exactly three solutions for p = 120.
+
 {20,48,52}, {24,45,51}, {30,40,50}
-For which value of p ≤ n, is the number of solutions maximised?
+
+For which value of <var>p</var> ≤ `n`, is the number of solutions maximized?
+
 </section>
 
 ## Instructions

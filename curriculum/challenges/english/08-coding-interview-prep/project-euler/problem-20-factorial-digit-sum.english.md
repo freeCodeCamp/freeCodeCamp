@@ -9,7 +9,7 @@ forumTopicId: 301839
 <section id='description'>
 <var>n</var>! means <var>n</var> × (<var>n</var> − 1) × ... × 3 × 2 × 1
 For example, 10! = 10 × 9 × ... × 3 × 2 × 1 = 3628800,<br>and the sum of the digits in the number 10! is 3 + 6 + 2 + 8 + 8 + 0 + 0 = 27.
-Find the sum of the digits <var>n</var>!
+Find the sum of the digits <code>n</code>!
 </section>
 
 ## Instructions
