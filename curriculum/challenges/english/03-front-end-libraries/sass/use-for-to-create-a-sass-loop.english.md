@@ -41,7 +41,7 @@ This is a powerful way to create a grid layout. Now you have twelve options for 
 ## Instructions
 <section id='instructions'>
 Write a <code>@for</code> directive that takes a variable <code>$j</code> that goes from 1 <b>to</b> 6.
-It should create 5 classes called <code>.text-1</code> to <code>.text-5</code> where each has a <code>font-size</code> set to 10px multiplied by the index.
+It should create 5 classes called <code>.text-1</code> to <code>.text-5</code> where each has a <code>font-size</code> set to 15px multiplied by the index.
 </section>
 
 ## Tests
@@ -51,16 +51,16 @@ It should create 5 classes called <code>.text-1</code> to <code>.text-5</code> w
 tests:
   - text: Your code should use the <code>@for</code> directive.
     testString: assert(code.match(/@for /g));
-  - text: Your <code>.text-1</code> class should have a <code>font-size</code> of 10px.
-    testString: assert($('.text-1').css('font-size') == '10px');
-  - text: Your <code>.text-2</code> class should have a <code>font-size</code> of 20px.
-    testString: assert($('.text-2').css('font-size') == '20px');
-  - text: Your <code>.text-3</code> class should have a <code>font-size</code> of 30px.
-    testString: assert($('.text-3').css('font-size') == '30px');
-  - text: Your <code>.text-4</code> class should have a <code>font-size</code> of 40px.
-    testString: assert($('.text-4').css('font-size') == '40px');
-  - text: Your <code>.text-5</code> class should have a <code>font-size</code> of 50px.
-    testString: assert($('.text-5').css('font-size') == '50px');
+  - text: Your <code>.text-1</code> class should have a <code>font-size</code> of 15px.
+    testString: assert($('.text-1').css('font-size') == '15px');
+  - text: Your <code>.text-2</code> class should have a <code>font-size</code> of 30px.
+    testString: assert($('.text-2').css('font-size') == '30px');
+  - text: Your <code>.text-3</code> class should have a <code>font-size</code> of 45px.
+    testString: assert($('.text-3').css('font-size') == '45px');
+  - text: Your <code>.text-4</code> class should have a <code>font-size</code> of 60px.
+    testString: assert($('.text-4').css('font-size') == '60px');
+  - text: Your <code>.text-5</code> class should have a <code>font-size</code> of 75px.
+    testString: assert($('.text-5').css('font-size') == '75px');
 
 ```
 
@@ -98,7 +98,7 @@ tests:
 <style type='text/sass'>
 
 @for $i from 1 through 5 {
-  .text-#{$i} { font-size: 10px * $i; }
+  .text-#{$i} { font-size: 15px * $i; }
 }
 
 </style>
@@ -114,7 +114,7 @@ tests:
 <style type='text/sass'>
 
 @for $i from 1 to 6 {
-  .text-#{$i} { font-size: 10px * $i; }
+  .text-#{$i} { font-size: 15px * $i; }
 }
 
 </style>
