@@ -22,8 +22,10 @@ Find the smallest prime which, by replacing part of the number (not necessarily 
 
 ```yml
 tests:
-  - text: <code>euler51()</code> should return 121313.
-    testString: assert.strictEqual(euler51(), 121313);
+  - text: <code>primeDigitReplacements()</code> should return a number.
+    testString: assert(typeof primeDigitReplacements() === 'number');
+  - text: <code>primeDigitReplacements()</code> should return 121313.
+    testString: assert.strictEqual(primeDigitReplacements(), 121313);
 
 ```
 
@@ -35,12 +37,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function euler51() {
+function primeDigitReplacements() {
   // Good luck!
   return true;
 }
 
-euler51();
+primeDigitReplacements();
 ```
 
 </div>

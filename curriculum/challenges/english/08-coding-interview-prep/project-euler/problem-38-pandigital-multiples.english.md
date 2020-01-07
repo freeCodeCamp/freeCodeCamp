@@ -29,6 +29,8 @@ What is the largest 1 to 9 pandigital 9-digit number that can be formed as the c
 
 ```yml
 tests:
+  - text: <code>pandigitalMultiples()</code> should return a number.
+    testString: assert(typeof pandigitalMultiples() === 'number');
   - text: <code>pandigitalMultiples()</code> should return 932718654.
     testString: assert.strictEqual(pandigitalMultiples(), 932718654);
 

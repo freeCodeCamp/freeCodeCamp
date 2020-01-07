@@ -22,6 +22,8 @@ Find the sum of the digits <code>n</code>!
 
 ```yml
 tests:
+  - text: <code>sumFactorialDigits(10)</code> should return a number.
+    testString: assert(typeof sumFactorialDigits(10) === 'number');
   - text: <code>sumFactorialDigits(10)</code> should return 27.
     testString: assert.strictEqual(sumFactorialDigits(10), 27);
   - text: <code>sumFactorialDigits(25)</code> should return 72.

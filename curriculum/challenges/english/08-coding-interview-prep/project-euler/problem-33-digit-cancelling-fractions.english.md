@@ -23,6 +23,8 @@ If the product of these four fractions is given in its lowest common terms, find
 
 ```yml
 tests:
+  - text: <code>digitCancellingFractions()</code> should return a number.
+    testString: assert(typeof digitCancellingFractions() === 'number');
   - text: <code>digitCancellingFractions()</code> should return 100.
     testString: assert.strictEqual(digitCancellingFractions(), 100);
 

@@ -28,6 +28,8 @@ How many Sundays fell on the first of the month during the twentieth century (1 
 
 ```yml
 tests:
+  - text: <code>countingSundays(1943, 1946)</code> should return a number.
+    testString: assert(typeof countingSundays(1943, 1946) === 'number');
   - text: <code>countingSundays(1943, 1946)</code> should return 6.
     testString: assert.strictEqual(countingSundays(1943, 1946), 6);
   - text: <code>countingSundays(1995, 2000)</code> should return 10.

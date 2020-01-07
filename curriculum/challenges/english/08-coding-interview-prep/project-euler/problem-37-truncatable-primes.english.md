@@ -26,6 +26,8 @@ NOTE: 2, 3, 5, and 7 are not considered to be truncatable primes.
 
 ```yml
 tests:
+  - text: <code>truncatablePrimes(8)</code> should return a number.
+    testString: assert(typeof truncatablePrimes(8) === 'number');
   - text: <code>truncatablePrimes(8)</code> should return 1986.
     testString: assert(truncatablePrimes(8) == 1986);
   - text: <code>truncatablePrimes(9)</code> should return 5123.

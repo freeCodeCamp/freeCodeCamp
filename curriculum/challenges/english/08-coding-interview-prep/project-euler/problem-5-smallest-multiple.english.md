@@ -21,6 +21,8 @@ What is the smallest positive number that is evenly divisible by all of the numb
 
 ```yml
 tests:
+  - text: <code>smallestMult(5)</code> should return a number.
+    testString: assert(typeof smallestMult(5) === 'number');
   - text: <code>smallestMult(5)</code> should return 60.
     testString: assert.strictEqual(smallestMult(5), 60);
   - text: <code>smallestMult(7)</code> should return 420.

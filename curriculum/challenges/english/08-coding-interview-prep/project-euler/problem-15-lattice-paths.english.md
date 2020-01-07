@@ -24,6 +24,8 @@ How many such routes are there through a given <code>gridSize</code>?
 
 ```yml
 tests:
+  - text: <code>latticePaths(4)</code> should return a number.
+    testString: assert(typeof latticePaths(4) === 'number');
   - text: <code>latticePaths(4)</code> should return 70.
     testString: assert.strictEqual(latticePaths(4), 70);
   - text: <code>latticePaths(9)</code> should return 48620.

@@ -122,8 +122,10 @@ If, instead of using two 6-sided dice, two 4-sided dice are used, find the six-d
 
 ```yml
 tests:
-  - text: <code>euler84()</code> should return 101524.
-    testString: assert.strictEqual(euler84(), 101524);
+  - text: <code>monopolyOdds()</code> should return a number.
+    testString: assert(typeof monopolyOdds() === 'number');
+  - text: <code>monopolyOdds()</code> should return 101524.
+    testString: assert.strictEqual(monopolyOdds(), 101524);
 
 ```
 
@@ -135,12 +137,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function euler84() {
+function monopolyOdds() {
   // Good luck!
   return true;
 }
 
-euler84();
+monopolyOdds();
 ```
 
 </div>

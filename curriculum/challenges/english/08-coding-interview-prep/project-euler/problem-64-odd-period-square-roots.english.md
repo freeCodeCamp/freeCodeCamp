@@ -57,7 +57,7 @@ If we continue we would get the following expansion:
 
 8 + ...
 
-The process can be summarised as follows:
+The process can be summarized as follows:
 
 a0 = 4,
 
@@ -143,8 +143,10 @@ How many continued fractions for N ≤ 10000 have an odd period?
 
 ```yml
 tests:
-  - text: <code>euler64()</code> should return 1322.
-    testString: assert.strictEqual(euler64(), 1322);
+  - text: <code>oddPeriodSqrts()</code> should return a number.
+    testString: assert(typeof oddPeriodSqrts() === 'number');
+  - text: <code>oddPeriodSqrts()</code> should return 1322.
+    testString: assert.strictEqual(oddPeriodSqrts(), 1322);
 
 ```
 
@@ -156,12 +158,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function euler64() {
+function oddPeriodSqrts() {
   // Good luck!
   return true;
 }
 
-euler64();
+oddPeriodSqrts();
 ```
 
 </div>

@@ -23,8 +23,10 @@ Although there exists no rectangular grid that contains exactly two million rect
 
 ```yml
 tests:
-  - text: <code>euler85()</code> should return 2772.
-    testString: assert.strictEqual(euler85(), 2772);
+  - text: <code>countingRectangles()</code> should return a number.
+    testString: assert(typeof countingRectangles() === 'number');
+  - text: <code>countingRectangles()</code> should return 2772.
+    testString: assert.strictEqual(countingRectangles(), 2772);
 
 ```
 
@@ -36,12 +38,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function euler85() {
+function countingRectangles() {
   // Good luck!
   return true;
 }
 
-euler85();
+countingRectangles();
 ```
 
 </div>

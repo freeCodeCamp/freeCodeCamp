@@ -28,6 +28,8 @@ Using words array of `n`-length, how many are triangle words?
 
 ```yml
 tests:
+  - text: <code>codedTriangleNumbers(1400)</code> should return a number.
+    testString: assert(typeof codedTriangleNumbers(1400) === 'number');
   - text: <code>codedTriangleNumbers(1400)</code> should return 129.
     testString: assert(codedTriangleNumbers(1400) == 129);
   - text: <code>codedTriangleNumbers(1500)</code> should return 137.

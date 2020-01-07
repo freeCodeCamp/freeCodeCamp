@@ -24,8 +24,10 @@ How many elements would be contained in the set of reduced proper fractions for 
 
 ```yml
 tests:
-  - text: <code>euler72()</code> should return 303963552391.
-    testString: assert.strictEqual(euler72(), 303963552391);
+  - text: <code>countingFractions()</code> should return a number.
+    testString: assert(typeof countingFractions() === 'number');
+  - text: <code>countingFractions()</code> should return 303963552391.
+    testString: assert.strictEqual(countingFractions(), 303963552391);
 
 ```
 
@@ -37,12 +39,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function euler72() {
+function countingFractions() {
   // Good luck!
   return true;
 }
 
-euler72();
+countingFractions();
 ```
 
 </div>

@@ -33,8 +33,10 @@ Find the minimal path sum, in matrix.txt (right click and "Save Link/Target As..
 
 ```yml
 tests:
-  - text: <code>euler82()</code> should return 260324.
-    testString: assert.strictEqual(euler82(), 260324);
+  - text: <code>pathSumThreeWays()</code> should return a number.
+    testString: assert(typeof pathSumThreeWays() === 'number');
+  - text: <code>pathSumThreeWays()</code> should return 260324.
+    testString: assert.strictEqual(pathSumThreeWays(), 260324);
 
 ```
 
@@ -46,12 +48,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function euler82() {
+function pathSumThreeWays() {
   // Good luck!
   return true;
 }
 
-euler82();
+pathSumThreeWays();
 ```
 
 </div>

@@ -26,6 +26,8 @@ Find the sum of all numbers, less than n, whereas 1000 ≤ `n` ≤ 1000000, whic
 
 ```yml
 tests:
+  - text: <code>doubleBasePalindromes(1000)</code> should return a number.
+    testString: assert(typeof doubleBasePalindromes(1000) === 'number');
   - text: <code>doubleBasePalindromes(1000)</code> should return 1772.
     testString: assert(doubleBasePalindromes(1000) == 1772);
   - text: <code>doubleBasePalindromes(50000)</code> should return 105795.

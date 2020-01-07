@@ -22,6 +22,8 @@ What is the <code>n</code>th lexicographic permutation of the digits 0, 1, 2, 3,
 
 ```yml
 tests:
+  - text: <code>lexicographicPermutations(699999)</code> should return a number.
+    testString: assert(typeof lexicographicPermutations(699999) === 'number');
   - text: <code>lexicographicPermutations(699999)</code> should return 1938246570.
     testString: assert(lexicographicPermutations(699999) == 1938246570);
   - text: <code>lexicographicPermutations(899999)</code> should return 2536987410.

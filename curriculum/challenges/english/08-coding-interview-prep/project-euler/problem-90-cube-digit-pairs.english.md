@@ -40,8 +40,10 @@ How many distinct arrangements of the two cubes allow for all of the square numb
 
 ```yml
 tests:
-  - text: <code>euler90()</code> should return 1217.
-    testString: assert.strictEqual(euler90(), 1217);
+  - text: <code>cubeDigitPairs()</code> should return a number.
+    testString: assert(typeof cubeDigitPairs() === 'number');
+  - text: <code>cubeDigitPairs()</code> should return 1217.
+    testString: assert.strictEqual(cubeDigitPairs(), 1217);
 
 ```
 
@@ -53,12 +55,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function euler90() {
+function cubeDigitPairs() {
   // Good luck!
   return true;
 }
 
-euler90();
+cubeDigitPairs();
 ```
 
 </div>

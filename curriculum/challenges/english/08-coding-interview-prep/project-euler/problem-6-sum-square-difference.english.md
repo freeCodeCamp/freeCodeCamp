@@ -25,6 +25,8 @@ Find the difference between the sum of the squares of the first <code>n</code> n
 
 ```yml
 tests:
+  - text: <code>sumSquareDifference(10)</code> should return a number.
+    testString: assert(typeof sumSquareDifference(10) === 'number');
   - text: <code>sumSquareDifference(10)</code> should return 2640.
     testString: assert.strictEqual(sumSquareDifference(10), 2640);
   - text: <code>sumSquareDifference(20)</code> should return 41230.

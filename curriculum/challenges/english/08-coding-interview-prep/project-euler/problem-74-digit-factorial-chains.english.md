@@ -31,8 +31,10 @@ How many chains, with a starting number below one million, contain exactly sixty
 
 ```yml
 tests:
-  - text: <code>euler74()</code> should return 402.
-    testString: assert.strictEqual(euler74(), 402);
+  - text: <code>digitFactorialChains()</code> should return a number.
+    testString: assert(typeof digitFactorialChains() === 'number');
+  - text: <code>digitFactorialChains()</code> should return 402.
+    testString: assert.strictEqual(digitFactorialChains(), 402);
 
 ```
 
@@ -44,12 +46,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function euler74() {
+function digitFactorialChains() {
   // Good luck!
   return true;
 }
 
-euler74();
+digitFactorialChains();
 ```
 
 </div>

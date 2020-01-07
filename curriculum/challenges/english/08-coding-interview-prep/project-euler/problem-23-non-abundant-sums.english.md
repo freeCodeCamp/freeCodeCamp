@@ -23,6 +23,8 @@ Find the sum of all positive integers <= <code>n</code> which cannot be written 
 
 ```yml
 tests:
+  - text: <code>sumOfNonAbundantNumbers(10000)</code> should return a number.
+    testString: assert(typeof sumOfNonAbundantNumbers(10000) === 'number');
   - text: <code>sumOfNonAbundantNumbers(10000)</code> should return 3731004.
     testString: assert(sumOfNonAbundantNumbers(10000) === 3731004);
   - text: <code>sumOfNonAbundantNumbers(15000)</code> should return 4039939.

@@ -24,6 +24,8 @@ How many different ways can £<code>n</code> be made using any number of coins?
 
 ```yml
 tests:
+  - text: <code>coinSums(50)</code> should return a number.
+    testString: assert(typeof coinSums(50) === 'number');
   - text: <code>coinSums(50)</code> should return 451.
     testString: assert(coinSums(50) == 451);
   - text: <code>coinSums(100)</code> should return 4563.

@@ -24,8 +24,10 @@ Given that L is the length of the wire, for how many values of L ≤ 1,500,000 c
 
 ```yml
 tests:
-  - text: <code>euler75()</code> should return 161667.
-    testString: assert.strictEqual(euler75(), 161667);
+  - text: <code>singularIntRightTriangles()</code> should return a number.
+    testString: assert(typeof singularIntRightTriangles() === 'number');
+  - text: <code>singularIntRightTriangles()</code> should return 161667.
+    testString: assert.strictEqual(singularIntRightTriangles(), 161667);
 
 ```
 
@@ -37,12 +39,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function euler75() {
+function singularIntRightTriangles() {
   // Good luck!
   return true;
 }
 
-euler75();
+singularIntRightTriangles();
 ```
 
 </div>

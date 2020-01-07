@@ -25,8 +25,10 @@ Find the smallest member of the longest amicable chain with no element exceeding
 
 ```yml
 tests:
-  - text: <code>euler95()</code> should return 14316.
-    testString: assert.strictEqual(euler95(), 14316);
+  - text: <code>amicableChains()</code> should return a number.
+    testString: assert(typeof amicableChains() === 'number');
+  - text: <code>amicableChains()</code> should return 14316.
+    testString: assert.strictEqual(amicableChains(), 14316);
 
 ```
 
@@ -38,12 +40,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function euler95() {
+function amicableChains() {
   // Good luck!
   return true;
 }
 
-euler95();
+amicableChains();
 ```
 
 </div>

@@ -50,6 +50,8 @@ How many hands does Player 1 win?
 
 ```yml
 tests:
+  - text: <code>pokerHands(testArr)</code> should return a number.
+    testString: assert(typeof pokerHands(testArr) === 'number');
   - text: <code>pokerHands(testArr)</code> should return 2.
     testString: assert.strictEqual(pokerHands(testArr), 2);
   - text: <code>pokerHands(handsArr)</code> should return 376.

@@ -25,6 +25,8 @@ Find the next triangle number that is also pentagonal and hexagonal.
 
 ```yml
 tests:
+  - text: <code>triPentaHexa(40756)</code> should return a number.
+    testString: assert(typeof triPentaHexa(40756) === 'number');
   - text: <code>triPentaHexa(40756)</code> should return 1533776805.
     testString: assert.strictEqual(triPentaHexa(40756), 1533776805);
 

@@ -24,8 +24,10 @@ How many fractions lie between 1/3 and 1/2 in the sorted set of reduced proper f
 
 ```yml
 tests:
-  - text: <code>euler73()</code> should return 7295372.
-    testString: assert.strictEqual(euler73(), 7295372);
+  - text: <code>countingFractionsInARange()</code> should return a number.
+    testString: assert(typeof countingFractionsInARange() === 'number');
+  - text: <code>countingFractionsInARange()</code> should return 7295372.
+    testString: assert.strictEqual(countingFractionsInARange(), 7295372);
 
 ```
 
@@ -37,12 +39,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function euler73() {
+function countingFractionsInARange() {
   // Good luck!
   return true;
 }
 
-euler73();
+countingFractionsInARange();
 ```
 
 </div>

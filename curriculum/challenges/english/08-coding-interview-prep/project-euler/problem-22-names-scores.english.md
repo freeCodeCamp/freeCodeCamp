@@ -22,6 +22,8 @@ What is the total of all the name scores in the file?
 
 ```yml
 tests:
+  - text: <code>namesScores(test1)</code> should return a number.
+    testString: assert(typeof namesScores(test1) === 'number');
   - text: <code>namesScores(test1)</code> should return 791.
     testString: assert.strictEqual(namesScores(test1), 791);
   - text: <code>namesScores(test2)</code> should return 1468.

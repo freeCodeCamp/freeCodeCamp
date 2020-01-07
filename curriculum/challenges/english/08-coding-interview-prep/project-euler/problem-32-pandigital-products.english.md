@@ -26,8 +26,8 @@ HINT: Some products can be obtained in more than one way so be sure to only incl
 
 ```yml
 tests:
-  - text: <code>pandigitalProducts()</code> should be a function.
-    testString: assert(typeof pandigitalProducts === 'function');
+  - text: <code>pandigitalProducts()</code> should return a number.
+    testString: assert(typeof pandigitalProducts() === 'number');
   - text: <code>pandigitalProducts()</code> should return 45228.
     testString: assert.strictEqual(pandigitalProducts(), 45228);
 

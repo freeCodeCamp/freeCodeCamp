@@ -23,6 +23,8 @@ Evaluate the sum of all the amicable numbers under <code>n</code>.
 
 ```yml
 tests:
+  - text: <code>sumAmicableNum(1000)</code> should return a number.
+    testString: assert(typeof sumAmicableNum(1000) === 'number');
   - text: <code>sumAmicableNum(1000)</code> should return 504.
     testString: assert.strictEqual(sumAmicableNum(1000), 504);
   - text: <code>sumAmicableNum(2000)</code> should return 2898.

@@ -21,6 +21,8 @@ What is the <code>n</code>th prime number?
 
 ```yml
 tests:
+  - text: <code>nthPrime(6)</code> should return a number.
+    testString: assert(typeof nthPrime(6) === 'number');
   - text: <code>nthPrime(6)</code> should return 13.
     testString: assert.strictEqual(nthPrime(6), 13);
   - text: <code>nthPrime(10)</code> should return 29.

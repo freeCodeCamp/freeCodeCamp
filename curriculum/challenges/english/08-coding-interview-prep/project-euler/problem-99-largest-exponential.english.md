@@ -23,8 +23,10 @@ NOTE: The first two lines in the file represent the numbers in the example given
 
 ```yml
 tests:
-  - text: <code>euler99()</code> should return 709.
-    testString: assert.strictEqual(euler99(), 709);
+  - text: <code>largestExponential()</code> should return a number.
+    testString: assert(typeof largestExponential() === 'number');
+  - text: <code>largestExponential()</code> should return 709.
+    testString: assert.strictEqual(largestExponential(), 709);
 
 ```
 
@@ -36,12 +38,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function euler99() {
+function largestExponential() {
   // Good luck!
   return true;
 }
 
-euler99();
+largestExponential();
 ```
 
 </div>

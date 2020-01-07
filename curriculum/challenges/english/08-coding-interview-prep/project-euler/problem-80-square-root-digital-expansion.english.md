@@ -22,8 +22,10 @@ For the first one hundred natural numbers, find the total of the digital sums of
 
 ```yml
 tests:
-  - text: <code>euler80()</code> should return 40886.
-    testString: assert.strictEqual(euler80(), 40886);
+  - text: <code>sqrtDigitalExpansion()</code> should return a number.
+    testString: assert(typeof sqrtDigitalExpansion() === 'number');
+  - text: <code>sqrtDigitalExpansion()</code> should return 40886.
+    testString: assert.strictEqual(sqrtDigitalExpansion(), 40886);
 
 ```
 
@@ -35,12 +37,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function euler80() {
+function sqrtDigitalExpansion() {
   // Good luck!
   return true;
 }
 
-euler80();
+sqrtDigitalExpansion();
 ```
 
 </div>

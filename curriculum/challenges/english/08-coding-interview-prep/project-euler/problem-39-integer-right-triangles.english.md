@@ -26,6 +26,8 @@ For which value of <var>p</var> ≤ `n`, is the number of solutions maximized?
 
 ```yml
 tests:
+  - text: <code>intRightTriangles(500)</code> should return a number.
+    testString: assert(typeof intRightTriangles(500) === 'number');
   - text: <code>intRightTriangles(500)</code> should return 420.
     testString: assert(intRightTriangles(500) == 420);
   - text: <code>intRightTriangles(800)</code> should return 720.

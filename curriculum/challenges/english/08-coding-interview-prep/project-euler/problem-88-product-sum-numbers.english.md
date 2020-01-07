@@ -26,8 +26,10 @@ What is the sum of all the minimal product-sum numbers for 2≤k≤12000?
 
 ```yml
 tests:
-  - text: <code>euler88()</code> should return 7587457.
-    testString: assert.strictEqual(euler88(), 7587457);
+  - text: <code>productSumNumbers()</code> should return a number.
+    testString: assert(typeof productSumNumbers() === 'number');
+  - text: <code>productSumNumbers()</code> should return 7587457.
+    testString: assert.strictEqual(productSumNumbers(), 7587457);
 
 ```
 
@@ -39,12 +41,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function euler88() {
+function productSumNumbers() {
   // Good luck!
   return true;
 }
 
-euler88();
+productSumNumbers();
 ```
 
 </div>

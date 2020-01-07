@@ -21,8 +21,10 @@ Find the smallest cube for which exactly five permutations of its digits are cub
 
 ```yml
 tests:
-  - text: <code>euler62()</code> should return 127035954683.
-    testString: assert.strictEqual(euler62(), 127035954683);
+  - text: <code>cubicPermutations()</code> should return a number.
+    testString: assert(typeof cubicPermutations() === 'number');
+  - text: <code>cubicPermutations()</code> should return 127035954683.
+    testString: assert.strictEqual(cubicPermutations(), 127035954683);
 
 ```
 
@@ -34,12 +36,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function euler62() {
+function cubicPermutations() {
   // Good luck!
   return true;
 }
 
-euler62();
+cubicPermutations();
 ```
 
 </div>

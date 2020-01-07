@@ -23,8 +23,10 @@ NOTE: All anagrams formed must be contained in the given text file.
 
 ```yml
 tests:
-  - text: <code>euler98()</code> should return 18769.
-    testString: assert.strictEqual(euler98(), 18769);
+  - text: <code>anagramicSquares()</code> should return a number.
+    testString: assert(typeof anagramicSquares() === 'number');
+  - text: <code>anagramicSquares()</code> should return 18769.
+    testString: assert.strictEqual(anagramicSquares(), 18769);
 
 ```
 
@@ -36,12 +38,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function euler98() {
+function anagramicSquares() {
   // Good luck!
   return true;
 }
 
-euler98();
+anagramicSquares();
 ```
 
 </div>

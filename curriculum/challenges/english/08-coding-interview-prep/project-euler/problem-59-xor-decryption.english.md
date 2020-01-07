@@ -24,8 +24,10 @@ Your task has been made easy, as the encryption key consists of three lower case
 
 ```yml
 tests:
-  - text: <code>euler59()</code> should return 107359.
-    testString: assert.strictEqual(euler59(), 107359);
+  - text: <code>XORDecryption()</code> should return a number.
+    testString: assert(typeof XORDecryption() === 'number');
+  - text: <code>XORDecryption()</code> should return 107359.
+    testString: assert.strictEqual(XORDecryption(), 107359);
 
 ```
 
@@ -37,12 +39,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function euler59() {
+function XORDecryption() {
   // Good luck!
   return true;
 }
 
-euler59();
+XORDecryption();
 ```
 
 </div>

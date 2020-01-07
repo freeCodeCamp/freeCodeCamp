@@ -27,6 +27,8 @@ Find the first four consecutive integers to have four distinct prime factors eac
 
 ```yml
 tests:
+  - text: <code>distinctPrimeFactors(2, 2)</code> should return a number.
+    testString: assert(typeof distinctPrimeFactors(2, 2) === 'number');
   - text: <code>distinctPrimeFactors(2, 2)</code> should return 14.
     testString: assert.strictEqual(distinctPrimeFactors(2, 2), 14);
   - text: <code>distinctPrimeFactors(3, 3)</code> should return 644.

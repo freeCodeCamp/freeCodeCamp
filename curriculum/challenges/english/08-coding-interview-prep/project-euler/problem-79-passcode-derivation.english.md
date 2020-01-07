@@ -22,8 +22,10 @@ Given that the three characters are always asked for in order, analyse the file 
 
 ```yml
 tests:
-  - text: <code>euler79()</code> should return 73162890.
-    testString: assert.strictEqual(euler79(), 73162890);
+  - text: <code>passcodeDerivation()</code> should return a number.
+    testString: assert(typeof passcodeDerivation() === 'number');
+  - text: <code>passcodeDerivation()</code> should return 73162890.
+    testString: assert.strictEqual(passcodeDerivation(), 73162890);
 
 ```
 
@@ -35,12 +37,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function euler79() {
+function passcodeDerivation() {
   // Good luck!
   return true;
 }
 
-euler79();
+passcodeDerivation();
 ```
 
 </div>

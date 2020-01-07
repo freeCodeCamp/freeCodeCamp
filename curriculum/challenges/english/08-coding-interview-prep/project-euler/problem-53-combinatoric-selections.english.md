@@ -30,6 +30,8 @@ How many, not necessarily distinct, values of  $\displaystyle \binom n r$ for $
 
 ```yml
 tests:
+  - text: <code>combinatoricSelections(1000)</code> should return a number.
+    testString: assert(typeof combinatoricSelections(1000) === 'number');
   - text: <code>combinatoricSelections(1000)</code> should return 4626.
     testString: assert.strictEqual(combinatoricSelections(1000), 4626);
   - text: <code>combinatoricSelections(10000)</code> should return 4431.

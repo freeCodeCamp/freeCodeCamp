@@ -28,8 +28,10 @@ Find the set of four distinct digits, a < b < c < d, for which the longest set o
 
 ```yml
 tests:
-  - text: <code>euler93()</code> should return 1258.
-    testString: assert.strictEqual(euler93(), 1258);
+  - text: <code>arithmeticExpressions()</code> should return a number.
+    testString: assert(typeof arithmeticExpressions() === 'number');
+  - text: <code>arithmeticExpressions()</code> should return 1258.
+    testString: assert.strictEqual(arithmeticExpressions(), 1258);
 
 ```
 
@@ -41,12 +43,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function euler93() {
+function arithmeticExpressions() {
   // Good luck!
   return true;
 }
 
-euler93();
+arithmeticExpressions();
 ```
 
 </div>

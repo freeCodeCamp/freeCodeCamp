@@ -24,8 +24,10 @@ By listing the set of reduced proper fractions for d ≤ 1,000,000 in ascending 
 
 ```yml
 tests:
-  - text: <code>euler71()</code> should return 428570.
-    testString: assert.strictEqual(euler71(), 428570);
+  - text: <code>orderedFractions()</code> should return a number.
+    testString: assert(typeof orderedFractions() === 'number');
+  - text: <code>orderedFractions()</code> should return 428570.
+    testString: assert.strictEqual(orderedFractions(), 428570);
 
 ```
 
@@ -37,12 +39,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function euler71() {
+function orderedFractions() {
   // Good luck!
   return true;
 }
 
-euler71();
+orderedFractions();
 ```
 
 </div>

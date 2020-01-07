@@ -28,8 +28,10 @@ In the first one-thousand expansions, how many fractions contain a numerator wit
 
 ```yml
 tests:
-  - text: <code>euler57()</code> should return 153.
-    testString: assert.strictEqual(euler57(), 153);
+  - text: <code>squareRootConvergents()</code> should return a number.
+    testString: assert(typeof squareRootConvergents() === 'number');
+  - text: <code>squareRootConvergents()</code> should return 153.
+    testString: assert.strictEqual(squareRootConvergents(), 153);
 
 ```
 
@@ -41,12 +43,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function euler57() {
+function squareRootConvergents() {
   // Good luck!
   return true;
 }
 
-euler57();
+squareRootConvergents();
 ```
 
 </div>

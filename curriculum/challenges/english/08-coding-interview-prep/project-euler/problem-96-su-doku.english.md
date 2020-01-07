@@ -115,8 +115,10 @@ By solving all fifty puzzles find the sum of the 3-digit numbers found in the to
 
 ```yml
 tests:
-  - text: <code>euler96()</code> should return 24702.
-    testString: assert.strictEqual(euler96(), 24702);
+  - text: <code>suDoku()</code> should return a number.
+    testString: assert(typeof suDoku() === 'number');
+  - text: <code>suDoku()</code> should return 24702.
+    testString: assert.strictEqual(suDoku(), 24702);
 
 ```
 
@@ -128,12 +130,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function euler96() {
+function suDoku() {
   // Good luck!
   return true;
 }
 
-euler96();
+suDoku();
 ```
 
 </div>

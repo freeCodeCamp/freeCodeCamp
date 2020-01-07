@@ -28,8 +28,10 @@ If one complete new layer is wrapped around the spiral above, a square spiral wi
 
 ```yml
 tests:
-  - text: <code>euler58()</code> should return 26241.
-    testString: assert.strictEqual(euler58(), 26241);
+  - text: <code>spiralPrimes()</code> should return a number.
+    testString: assert(typeof spiralPrimes() === 'number');
+  - text: <code>spiralPrimes()</code> should return 26241.
+    testString: assert.strictEqual(spiralPrimes(), 26241);
 
 ```
 
@@ -41,12 +43,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function euler58() {
+function spiralPrimes() {
   // Good luck!
   return true;
 }
 
-euler58();
+spiralPrimes();
 ```
 
 </div>

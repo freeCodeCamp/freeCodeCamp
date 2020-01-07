@@ -22,6 +22,8 @@ By considering the terms in the Fibonacci sequence whose values do not exceed <c
 
 ```yml
 tests:
+  - text: <code>fiboEvenSum(10)</code> should return a number.
+    testString: assert(typeof fiboEvenSum(10) === 'number');
   - text: <code>fiboEvenSum(10)</code> should return 10.
     testString: assert.strictEqual(fiboEvenSum(10), 10);
   - text: <code>fiboEvenSum(60)</code> should return 44.

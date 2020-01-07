@@ -29,6 +29,8 @@ What is the sum of the numbers on the diagonals in an <code>n</code> by <code>n<
 
 ```yml
 tests:
+  - text: <code>spiralDiagonals(101)</code> should return a number.
+    testString: assert(typeof spiralDiagonals(101) === 'number');
   - text: <code>spiralDiagonals(101)</code> should return 692101.
     testString: assert(spiralDiagonals(101) == 692101);
   - text: <code>spiralDiagonals(303)</code> should return 18591725.

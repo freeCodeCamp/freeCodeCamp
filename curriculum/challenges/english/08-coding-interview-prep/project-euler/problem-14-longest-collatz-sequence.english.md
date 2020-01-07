@@ -27,6 +27,8 @@ NOTE: Once the chain starts the terms are allowed to go above one million.
 
 ```yml
 tests:
+  - text: <code>longestCollatzSequence(14)</code> should return a number.
+    testString: assert(typeof longestCollatzSequence(14) === 'number');
   - text: <code>longestCollatzSequence(14)</code> should return 9.
     testString: assert.strictEqual(longestCollatzSequence(14), 9);
   - text: <code>longestCollatzSequence(5847)</code> should return 3711.

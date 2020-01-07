@@ -25,8 +25,10 @@ Find the least value of M such that the number of solutions first exceeds one mi
 
 ```yml
 tests:
-  - text: <code>euler86()</code> should return 1818.
-    testString: assert.strictEqual(euler86(), 1818);
+  - text: <code>cuboidRoute()</code> should return a number.
+    testString: assert(typeof cuboidRoute() === 'number');
+  - text: <code>cuboidRoute()</code> should return 1818.
+    testString: assert.strictEqual(cuboidRoute(), 1818);
 
 ```
 
@@ -38,12 +40,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function euler86() {
+function cuboidRoute() {
   // Good luck!
   return true;
 }
 
-euler86();
+cuboidRoute();
 ```
 
 </div>

@@ -22,6 +22,8 @@ If all the numbers from 1 to given <code>limit</code> inclusive were written out
 
 ```yml
 tests:
+  - text: <code>numberLetterCounts(5)</code> should return a number.
+    testString: assert(typeof numberLetterCounts(5) === 'number');
   - text: <code>numberLetterCounts(5)</code> should return 19.
     testString: assert.strictEqual(numberLetterCounts(5), 19);
   - text: <code>numberLetterCounts(150)</code> should return 1903.

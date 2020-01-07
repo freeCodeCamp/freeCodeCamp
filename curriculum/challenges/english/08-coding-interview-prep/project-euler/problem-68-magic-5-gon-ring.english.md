@@ -42,8 +42,10 @@ Using the numbers 1 to 10, and depending on arrangements, it is possible to form
 
 ```yml
 tests:
-  - text: <code>euler68()</code> should return 6531031914842725.
-    testString: assert.strictEqual(euler68(), 6531031914842725);
+  - text: <code>magic5GonRing()</code> should return a number.
+    testString: assert(typeof magic5GonRing() === 'number');
+  - text: <code>magic5GonRing()</code> should return 6531031914842725.
+    testString: assert.strictEqual(magic5GonRing(), 6531031914842725);
 
 ```
 
@@ -55,12 +57,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function euler68() {
+function magic5GonRing() {
   // Good luck!
   return true;
 }
 
-euler68();
+magic5GonRing();
 ```
 
 </div>

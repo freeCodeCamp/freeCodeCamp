@@ -46,10 +46,12 @@ What is the greatest product of four adjacent numbers in the same direction (up,
 
 ```yml
 tests:
-  - text: <code>largestGridProduct(grid)</code> should return 70600674.
-    testString: assert.strictEqual(largestGridProduct(grid), 70600674);
+  - text: <code>largestGridProduct(testGrid)</code> should return a number.
+    testString: assert(typeof largestGridProduct(testGrid) === 'number');
   - text: <code>largestGridProduct(testGrid)</code> should return 14169081.
     testString: assert.strictEqual(largestGridProduct(testGrid), 14169081);
+  - text: <code>largestGridProduct(grid)</code> should return 70600674.
+    testString: assert.strictEqual(largestGridProduct(grid), 70600674);
 
 ```
 
@@ -63,7 +65,7 @@ tests:
 ```js
 function largestGridProduct(arr) {
   // Good luck!
-  return arr;
+  return true;
 }
 
 // Only change code above this line

@@ -30,6 +30,8 @@ Circular primes individual rotation can exceed `n`.
 
 ```yml
 tests:
+  - text: <code>circularPrimes(100)</code> should return a number.
+    testString: assert(typeof circularPrimes(100) === 'number');
   - text: <code>circularPrimes(100)</code> should return 13.
     testString: assert(circularPrimes(100) == 13);
   - text: <code>circularPrimes(100000)</code> should return 43.

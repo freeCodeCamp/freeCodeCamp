@@ -22,8 +22,10 @@ By finding the first arrangement to contain over 1012 = 1,000,000,000,000 discs 
 
 ```yml
 tests:
-  - text: <code>euler100()</code> should return 756872327473.
-    testString: assert.strictEqual(euler100(), 756872327473);
+  - text: <code>arrangedProbability()</code> should return a number.
+    testString: assert(typeof arrangedProbability() === 'number');
+  - text: <code>arrangedProbability()</code> should return 756872327473.
+    testString: assert.strictEqual(arrangedProbability(), 756872327473);
 
 ```
 
@@ -35,12 +37,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function euler100() {
+function arrangedProbability() {
   // Good luck!
   return true;
 }
 
-euler100();
+arrangedProbability();
 ```
 
 </div>

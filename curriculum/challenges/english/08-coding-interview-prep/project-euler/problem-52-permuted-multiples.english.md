@@ -21,6 +21,8 @@ Find the smallest positive integer, <var>x</var>, such that <var>2x</var>, <var>
 
 ```yml
 tests:
+  - text: <code>permutedMultiples()</code> should return a number.
+    testString: assert(typeof permutedMultiples() === 'number');
   - text: <code>permutedMultiples()</code> should return 142857.
     testString: assert.strictEqual(permutedMultiples(), 142857);
 

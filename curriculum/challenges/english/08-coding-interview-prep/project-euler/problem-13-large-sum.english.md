@@ -123,6 +123,8 @@ Work out the first ten digits of the sum of the following one-hundred 50-digit n
 
 ```yml
 tests:
+  - text: <code>largeSum(testNums)</code> should return a number.
+    testString: assert(typeof largeSum(testNums) === 'number');
   - text: <code>largeSum(testNums)</code> should return 8348422521.
     testString: assert.strictEqual(largeSum(testNums), 8348422521);
   - text: <code>largeSum(fiftyDigitNums)</code> should return 5537376230.

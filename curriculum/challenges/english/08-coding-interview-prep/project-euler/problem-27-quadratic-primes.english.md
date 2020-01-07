@@ -32,6 +32,8 @@ Find the product of the coefficients, $a$ and $b$, for the quadratic expression 
 
 ```yml
 tests:
+  - text: <code>quadraticPrimes(200)</code> should return a number.
+    testString: assert(typeof quadraticPrimes(200) === 'number');
   - text: <code>quadraticPrimes(200)</code> should return -4925.
     testString: assert(quadraticPrimes(200) == -4925);
   - text: <code>quadraticPrimes(500)</code> should return -18901.

@@ -22,8 +22,10 @@ Find the value of n, 1 < n < 107, for which φ(n) is a permutation of n and the 
 
 ```yml
 tests:
-  - text: <code>euler70()</code> should return 8319823.
-    testString: assert.strictEqual(euler70(), 8319823);
+  - text: <code>totientPermutation()</code> should return a number.
+    testString: assert(typeof totientPermutation() === 'number');
+  - text: <code>totientPermutation()</code> should return 8319823.
+    testString: assert.strictEqual(totientPermutation(), 8319823);
 
 ```
 
@@ -35,12 +37,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function euler70() {
+function totientPermutation() {
   // Good luck!
   return true;
 }
 
-euler70();
+totientPermutation();
 ```
 
 </div>

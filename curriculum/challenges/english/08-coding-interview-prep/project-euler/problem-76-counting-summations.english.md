@@ -27,8 +27,10 @@ How many different ways can one hundred be written as a sum of at least two posi
 
 ```yml
 tests:
-  - text: <code>euler76()</code> should return 190569291.
-    testString: assert.strictEqual(euler76(), 190569291);
+  - text: <code>countingSummations()</code> should return a number.
+    testString: assert(typeof countingSummations() === 'number');
+  - text: <code>countingSummations()</code> should return 190569291.
+    testString: assert.strictEqual(countingSummations(), 190569291);
 
 ```
 
@@ -40,12 +42,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function euler76() {
+function countingSummations() {
   // Good luck!
   return true;
 }
 
-euler76();
+countingSummations();
 ```
 
 </div>

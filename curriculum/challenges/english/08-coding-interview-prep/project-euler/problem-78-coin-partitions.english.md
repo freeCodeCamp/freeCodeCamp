@@ -38,8 +38,10 @@ Find the least value of n for which p(n) is divisible by one million.
 
 ```yml
 tests:
-  - text: <code>euler78()</code> should return 55374.
-    testString: assert.strictEqual(euler78(), 55374);
+  - text: <code>coinPartitions()</code> should return a number.
+    testString: assert(typeof coinPartitions() === 'number');
+  - text: <code>coinPartitions()</code> should return 55374.
+    testString: assert.strictEqual(coinPartitions(), 55374);
 
 ```
 
@@ -51,12 +53,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function euler78() {
+function coinPartitions() {
   // Good luck!
   return true;
 }
 
-euler78();
+coinPartitions();
 ```
 
 </div>

@@ -21,8 +21,10 @@ Considering natural numbers of the form, ab, where a, b < 100, what is the maxim
 
 ```yml
 tests:
-  - text: <code>euler56()</code> should return 972.
-    testString: assert.strictEqual(euler56(), 972);
+  - text: <code>powerfulDigitSum()</code> should return a number.
+    testString: assert(typeof powerfulDigitSum() === 'number');
+  - text: <code>powerfulDigitSum()</code> should return 972.
+    testString: assert.strictEqual(powerfulDigitSum(), 972);
 
 ```
 
@@ -34,12 +36,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function euler56() {
+function powerfulDigitSum() {
   // Good luck!
   return true;
 }
 
-euler56();
+powerfulDigitSum();
 ```
 
 </div>

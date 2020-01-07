@@ -30,8 +30,10 @@ Given that 0 ≤ x1, y1, x2, y2 ≤ 50, how many right triangles can be formed?
 
 ```yml
 tests:
-  - text: <code>euler91()</code> should return 14234.
-    testString: assert.strictEqual(euler91(), 14234);
+  - text: <code>rightTrianglesIntCoords()</code> should return a number.
+    testString: assert(typeof rightTrianglesIntCoords() === 'number');
+  - text: <code>rightTrianglesIntCoords()</code> should return 14234.
+    testString: assert.strictEqual(rightTrianglesIntCoords(), 14234);
 
 ```
 
@@ -43,12 +45,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function euler91() {
+function rightTrianglesIntCoords() {
   // Good luck!
   return true;
 }
 
-euler91();
+rightTrianglesIntCoords();
 ```
 
 </div>

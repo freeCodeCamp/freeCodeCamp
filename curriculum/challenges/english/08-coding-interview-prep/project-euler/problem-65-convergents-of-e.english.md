@@ -109,8 +109,10 @@ Find the sum of digits in the numerator of the 100th convergent of the continued
 
 ```yml
 tests:
-  - text: <code>euler65()</code> should return 272.
-    testString: assert.strictEqual(euler65(), 272);
+  - text: <code>convergentsOfE()</code> should return a number.
+    testString: assert(typeof convergentsOfE() === 'number');
+  - text: <code>convergentsOfE()</code> should return 272.
+    testString: assert.strictEqual(convergentsOfE(), 272);
 
 ```
 
@@ -122,12 +124,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function euler65() {
+function convergentsOfE() {
   // Good luck!
   return true;
 }
 
-euler65();
+convergentsOfE();
 ```
 
 </div>

@@ -30,8 +30,10 @@ Find the value of D ≤ 1000 in minimal solutions of x for which the largest val
 
 ```yml
 tests:
-  - text: <code>euler66()</code> should return 661.
-    testString: assert.strictEqual(euler66(), 661);
+  - text: <code>diophantineEquation()</code> should return a number.
+    testString: assert(typeof diophantineEquation() === 'number');
+  - text: <code>diophantineEquation()</code> should return 661.
+    testString: assert.strictEqual(diophantineEquation(), 661);
 
 ```
 
@@ -43,12 +45,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function euler66() {
+function diophantineEquation() {
   // Good luck!
   return true;
 }
 
-euler66();
+diophantineEquation();
 ```
 
 </div>

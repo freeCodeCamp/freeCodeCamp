@@ -25,6 +25,8 @@ Find the maximum total from top to bottom of the triangle below:
 
 ```yml
 tests:
+  - text: <code>maximumPathSumI(testTriangle)</code> should return a number.
+    testString: assert(typeof maximumPathSumI(testTriangle) === 'number');
   - text: <code>maximumPathSumI(testTriangle)</code> should return 23.
     testString: assert.strictEqual(maximumPathSumI(testTriangle), 23);
   - text: <code>maximumPathSumI(numTriangle)</code> should return 1074.

@@ -23,6 +23,8 @@ Find the value of <var>d</var> < <var>n</var> for which <sup>1</sup>/<sub>d</sub
 
 ```yml
 tests:
+  - text: <code>reciprocalCycles(700)</code> should return a number.
+    testString: assert(typeof reciprocalCycles(700) === 'number');
   - text: <code>reciprocalCycles(700)</code> should return 659.
     testString: assert(reciprocalCycles(700) == 659);
   - text: <code>reciprocalCycles(800)</code> should return 743.

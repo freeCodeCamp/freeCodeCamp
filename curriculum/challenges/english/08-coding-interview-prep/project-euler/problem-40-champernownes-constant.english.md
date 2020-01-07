@@ -24,6 +24,8 @@ If <i>d<sub>n</sub></i> represents the <i>n</i><sup>th</sup> digit of the fracti
 
 ```yml
 tests:
+  - text: <code>champernownesConstant(100)</code> should return a number.
+    testString: assert(typeof champernownesConstant(100) === 'number');
   - text: <code>champernownesConstant(100)</code> should return 5.
     testString: assert.strictEqual(champernownesConstant(100), 5);
   - text: <code>champernownesConstant(1000)</code> should return 15.

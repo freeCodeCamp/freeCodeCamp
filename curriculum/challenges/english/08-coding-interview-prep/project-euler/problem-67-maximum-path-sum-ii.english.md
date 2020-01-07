@@ -26,8 +26,10 @@ NOTE: This is a much more difficult version of Problem 18. It is not possible to
 
 ```yml
 tests:
-  - text: <code>euler67()</code> should return 7273.
-    testString: assert.strictEqual(euler67(), 7273);
+  - text: <code>maximumPathSumII()</code> should return a number.
+    testString: assert(typeof maximumPathSumII() === 'number');
+  - text: <code>maximumPathSumII()</code> should return 7273.
+    testString: assert.strictEqual(maximumPathSumII(), 7273);
 
 ```
 
@@ -39,12 +41,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function euler67() {
+function maximumPathSumII() {
   // Good luck!
   return true;
 }
 
-euler67();
+maximumPathSumII();
 ```
 
 </div>

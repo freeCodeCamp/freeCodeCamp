@@ -21,6 +21,8 @@ Find the sum of all the primes below <code>n</code>.
 
 ```yml
 tests:
+  - text: <code>primeSummation(17)</code> should return a number.
+    testString: assert(typeof primeSummation(17) === 'number');
   - text: <code>primeSummation(17)</code> should return 41.
     testString: assert.strictEqual(primeSummation(17), 41);
   - text: <code>primeSummation(2001)</code> should return 277050.

@@ -31,6 +31,8 @@ What is the value of the first triangle number to have over <code>n</code> divis
 
 ```yml
 tests:
+  - text: <code>divisibleTriangleNumber(5)</code> should return a number.
+    testString: assert(typeof divisibleTriangleNumber(5) === 'number');
   - text: <code>divisibleTriangleNumber(5)</code> should return 28.
     testString: assert.strictEqual(divisibleTriangleNumber(5), 28);
   - text: <code>divisibleTriangleNumber(23)</code> should return 630.

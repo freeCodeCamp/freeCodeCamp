@@ -25,6 +25,8 @@ What is the index of the first term in the Fibonacci sequence to contain <code>n
 
 ```yml
 tests:
+  - text: <code>digitFibonacci(5)</code> should return a number.
+    testString: assert(typeof digitFibonacci(5) === 'number');
   - text: <code>digitFibonacci(5)</code> should return 21.
     testString: assert.strictEqual(digitFibonacci(5), 21);
   - text: <code>digitFibonacci(10)</code> should return 45.

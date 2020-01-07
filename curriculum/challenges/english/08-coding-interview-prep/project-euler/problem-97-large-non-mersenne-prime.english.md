@@ -22,8 +22,10 @@ Find the last ten digits of this prime number.
 
 ```yml
 tests:
-  - text: <code>euler97()</code> should return 8739992577.
-    testString: assert.strictEqual(euler97(), 8739992577);
+  - text: <code>lrgNonMersennePrime()</code> should return a number.
+    testString: assert(typeof lrgNonMersennePrime() === 'number');
+  - text: <code>lrgNonMersennePrime()</code> should return 8739992577.
+    testString: assert.strictEqual(lrgNonMersennePrime(), 8739992577);
 
 ```
 
@@ -35,12 +37,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function euler97() {
+function lrgNonMersennePrime() {
   // Good luck!
   return true;
 }
 
-euler97();
+lrgNonMersennePrime();
 ```
 
 </div>

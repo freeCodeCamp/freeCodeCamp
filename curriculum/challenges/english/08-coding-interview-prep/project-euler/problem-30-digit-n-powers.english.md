@@ -28,6 +28,8 @@ Find the sum of all the numbers that can be written as the sum of <code>n</code>
 
 ```yml
 tests:
+  - text: <code>digitnPowers(2)</code> should return a number.
+    testString: assert(typeof digitnPowers(2) === 'number');
   - text: <code>digitnPowers(2)</code> should return 0.
     testString: assert(digitnPowers(2) == 0);
   - text: <code>digitnPowers(3)</code> should return 1301.

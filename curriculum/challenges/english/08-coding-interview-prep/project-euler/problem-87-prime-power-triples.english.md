@@ -25,8 +25,10 @@ How many numbers below fifty million can be expressed as the sum of a prime squa
 
 ```yml
 tests:
-  - text: <code>euler87()</code> should return 1097343.
-    testString: assert.strictEqual(euler87(), 1097343);
+  - text: <code>primePowerTriples()</code> should return a number.
+    testString: assert(typeof primePowerTriples() === 'number');
+  - text: <code>primePowerTriples()</code> should return 1097343.
+    testString: assert.strictEqual(primePowerTriples(), 1097343);
 
 ```
 
@@ -38,12 +40,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function euler87() {
+function primePowerTriples() {
   // Good luck!
   return true;
 }
 
-euler87();
+primePowerTriples();
 ```
 
 </div>

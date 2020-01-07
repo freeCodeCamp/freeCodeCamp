@@ -21,6 +21,8 @@ Find the last ten digits of the series, 1<sup>1</sup> + 2<sup>2</sup> + 3<sup>3<
 
 ```yml
 tests:
+  - text: <code>selfPowers(10, 3)</code> should return a number.
+    testString: assert(typeof selfPowers(10, 3) === 'number');
   - text: <code>selfPowers(10, 3)</code> should return 317.
     testString: assert.strictEqual(selfPowers(10, 3), 317);
   - text: <code>selfPowers(150, 6)</code> should return 29045.
