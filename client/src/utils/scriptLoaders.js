@@ -39,12 +39,13 @@ export const mathJaxScriptLoader = () =>
       tex2jax: {
         inlineMath: [['$', '$'], ['\\\\(', '\\\\)']],
         processEscapes: true,
-        processClass: 'rosetta-code'
+        processClass: 'rosetta-code|project-euler'
       }
     });
     MathJax.Hub.Queue([
       'Typeset',
       MathJax.Hub,
-      document.querySelector('.rosetta-code')
+      document.querySelector('.rosetta-code'),
+      document.querySelector('.project-euler')
     ]);`
   );
