@@ -7,8 +7,11 @@ forumTopicId: 301723
 
 ## Description
 <section id='description'>
+
 The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
-Find the sum of all the primes below <code>n</code>.
+
+Find the sum of all the primes below `n`.
+
 </section>
 
 ## Instructions

@@ -7,7 +7,9 @@ forumTopicId: 302165
 
 ## Description
 <section id='description'>
+
 In the card game poker, a hand consists of five cards and are ranked, from lowest to highest, in the following way:
+
 <ul>
   <li>High Card: Highest value card.</li>
   <li>One Pair: Two cards of the same value.</li>

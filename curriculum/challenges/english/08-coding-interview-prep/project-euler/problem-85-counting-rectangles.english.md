@@ -7,10 +7,13 @@ forumTopicId: 302199
 
 ## Description
 <section id='description'>
+
 By counting carefully it can be seen that a rectangular grid measuring 3 by 2 contains eighteen rectangles:
 
+<img class="img-responsive center-block" alt="a diagram of the different rectangles found within a 3 by 2 rectangular grid" src="https://cdn-media-1.freecodecamp.org/project-euler/counting-rectangles.png" style="background-color: white; padding: 10px;">
 
 Although there exists no rectangular grid that contains exactly two million rectangles, find the area of the grid with the nearest solution.
+
 </section>
 
 ## Instructions

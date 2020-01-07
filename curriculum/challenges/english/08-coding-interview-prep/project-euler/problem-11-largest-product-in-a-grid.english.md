@@ -7,6 +7,7 @@ forumTopicId: 301734
 
 ## Description
 <section id='description'>
+
 In the 20×20 grid below, four numbers along a diagonal line have been marked in red.
 
 <div style='text-align: center;'>
@@ -33,7 +34,9 @@ In the 20×20 grid below, four numbers along a diagonal line have been marked in
 </div>
 
 The product of these numbers is 26 × 63 × 78 × 14 = 1788696.
-What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in a given <code>arr</code> grid?
+
+What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in a given `arr` grid?
+
 </section>
 
 ## Instructions

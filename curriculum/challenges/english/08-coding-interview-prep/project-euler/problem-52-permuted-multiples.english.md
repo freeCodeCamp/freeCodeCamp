@@ -7,8 +7,11 @@ forumTopicId: 302163
 
 ## Description
 <section id='description'>
+
 It can be seen that the number, 125874, and its double, 251748, contain exactly the same digits, but in a different order.
+
 Find the smallest positive integer, <var>x</var>, such that <var>2x</var>, <var>3x</var>, <var>4x</var>, <var>5x</var>, and <var>6x</var>, contain the same digits.
+
 </section>
 
 ## Instructions

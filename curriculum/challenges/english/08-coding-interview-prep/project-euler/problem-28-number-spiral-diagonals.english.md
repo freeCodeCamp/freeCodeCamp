@@ -7,7 +7,9 @@ forumTopicId: 301930
 
 ## Description
 <section id='description'>
+
 Starting with the number 1 and moving to the right in a clockwise direction a 5 by 5 spiral is formed as follows:
+
 <div style='padding-left: 4em;'>
   <div style='color: red; display: inline;'>21</div> 22 23 24 <div style='color: red; display: inline;'>25</div><br>
   20  <div style='color: red; display: inline;'>7</div>  8  <div style='color: red; display: inline;'>9</div> 10<br>
@@ -15,8 +17,11 @@ Starting with the number 1 and moving to the right in a clockwise direction a 5 
   18  <div style='color: red; display: inline;'>5</div>  4  <div style='color: red; display: inline;'>3</div> 12<br>
   <div style='color: red; display: inline;'>17</div> 16 15 14 <div style='color: red; display: inline;'>13</div><br>
 </div>
+
 It can be verified that the sum of the numbers on the diagonals is 101.
-What is the sum of the numbers on the diagonals in an <code>n</code> by <code>n</code> spiral formed in the same way?
+
+What is the sum of the numbers on the diagonals in an `n` by `n` spiral formed in the same way?
+
 </section>
 
 ## Instructions

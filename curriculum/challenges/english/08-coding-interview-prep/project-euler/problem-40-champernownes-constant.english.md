@@ -7,11 +7,17 @@ forumTopicId: 302066
 
 ## Description
 <section id='description'>
+
 An irrational decimal fraction is created by concatenating the positive integers:
+
 <span style='display: block; text-align: center;'>0.12345678910<b style='color: red;'>1</b>112131415161718192021...</span>
+
 It can be seen that the 12<sup>th</sup> digit of the fractional part is 1.
+
 If <i>d<sub>n</sub></i> represents the <i>n</i><sup>th</sup> digit of the fractional part, find the value of the following expression.
+
 <span style='display: block; text-align: center;'>d<sub>1</sub> × d<sub>10</sub> × d<sub>100</sub> × d<sub>1000</sub> × d<sub>10000</sub> × d<sub>100000</sub> × d<sub>1000000</sub></span>
+
 </section>
 
 ## Instructions

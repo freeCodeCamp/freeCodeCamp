@@ -87,7 +87,7 @@ function intRightTriangles(n) {
   for (let p in triangles) {
     if (max < triangles[p]) {
       max = triangles[p];
-      maxp = p;
+      maxp = parseInt(p);
     }
   }
   return maxp;
