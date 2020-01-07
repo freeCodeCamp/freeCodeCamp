@@ -3,135 +3,136 @@
 |-|
 <!-- do not translate this -->
 
-# Contribution Guidelines
 
-Hello. 👋
+# コントリビューション ガイドライン
 
-freeCodeCamp.org is possible, thanks to thousands of kind volunteers like you. We are grateful for your contributions and are excited to welcome you aboard.
+こんにちは！ 👋
 
-We strictly enforce our ["Code of Conduct"](https://www.freecodecamp.org/code-of-conduct). Please take a moment to read it. It takes only two minutes to read.
+freeCodeCamp.org が実現できたのは、あなたのような数千人のボランティアが協力してくれたおかげです！ 私たちはあなたのコントリビューションに感謝します。そして、あなたが仲間になってくれるのを歓迎します。
+
+私たちは参加者全員に対して、私たちの[「行動規範」("Code of Conduct")](https://www.freecodecamp.org/code-of-conduct)を守ることを厳格に求めています。時間をとって必ず読んでください。読むのには2分もかかりません。
 
 Happy contributing.
 
-## Here are some fun ways that you can help
+## プロジェクトを助けることができる3つの方法
 
-You can contribute to any of these:
+次のどれかの方法でコントリビューションができます。
 
-1. [Contribute to this open-source codebase](#contribute-to-this-open-source-codebase). Help us edit coding challenges, or fix bugs on the learning platform.
+1. [このオープンソースのコードベースにコントリビュートする](#contribute-to-this-open-source-codebase)。コーディングチャレンジの編集をしたり、学習プラットフォームのバグ修正をして助けてください。
 
-2. Help campers on our [public forum](https://www.freecodecamp.org/forum/). [Answer their coding questions](https://www.freecodecamp.org/forum/?max_posts=1) or [give them feedback on their coding projects](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1).
+2. 他のキャンプ参加者を [public forum](https://www.freecodecamp.org/forum/) で助けてください。[他の参加者のコーディングに関する質問に答えたり](https://www.freecodecamp.org/forum/?max_posts=1)、[他の参加者のコーディングプロジェクトにフィードバックを返してあげてください](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1)。
 
-3. Help us add subtitles (closed captions) to our [YouTube channel videos](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ/videos).
+3. 私たちの [YouTube チャンネルの動画](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ/videos) の字幕 (closed captions) を作成するのを助けてください。
 
-## Contribute to this open-source codebase
+## このオープンソースのコードベースにコントリビュートする
 
-Our codebase has thousands of [coding challenges](https://www.freecodecamp.org/learn/) and other source code that power our learning platform.
+私たちのコードベースには、学習プラットフォームを支えている数千の[コーディング・チャレンジ](https://www.freecodecamp.org/learn/)やその他のソースコードがあります。
 
-### Create, update and fix bugs in our coding challenges
+### コーディングチャレンジの作成・アップデート・バグ修正をする
 
-All our coding challenges are curated by the community, bringing in expert knowledge from volunteers like you.
+私たちが提供しているすべてのコーディング・チャレンジは、コミュニティメンバーによって提供されたものです。あなたのような専門家の知識を集めて作られました。
 
-You can help expand them and make their wording better. You can also update the user stories to explain the concept better or remove redundant ones and improve the challenge tests to make them more accurately test people's code.
+あなたはさらにコンテンツを充実させたり、よりよい説明文に改善するのを助けることができます。コンセプトをよりよく説明するユーザーストーリーをアップデートしたり、冗長なユーザーストーリーを削除することでも貢献できます。ユーザーのコードをより正確にテストできるように、チャレンジのテストを改善することもできます。
 
-**If you're interested in improving these coding challenges, here's [how to work on coding challenges](/docs/how-to-work-on-coding-challenges.md).**
+**もしあなたがコーディングチャレンジを改善することに興味があるなら、[how to work on coding challenges](/docs/how-to-work-on-coding-challenges.md) を読んでください。**
 
-### Help us fix bugs in freeCodeCamp.org's learning platform
+### freeCodeCamp.org の学習プラットフォームのバグ修正を助ける
 
-Our learning platform runs on a modern JavaScript stack. It has various components, tools, and libraries, including but not limited to, Node.js, MongoDB, LoopBack, OAuth 2.0, React, Gatsby, Webpack, and more.
+私たちの学習プラットフォームはモダンな JavaScript スタックで構築されています。さまざまなコンポーネント、ツール、ライブラリがあり、Node.js、MongoDB、LoopBack、OAuth 2.0、React、Gatsby、Webpack などが使用されています。
 
-Broadly,
+大まかに言うと、freeCodeCamp は次の3つのコンポーネントからなります。
 
-- We have a Node.js based API server.
-- A set of React-based client applications.
-- A script that we use to evaluate our front-end projects.
+- Node.js を使用したベースとなる API サーバー。
+- React ベースの一連のクライアントアプリケーション。
+- フロントエンドプロジェクトを評価するのに使用しているスクリプト。
 
-Contributing to this requires some understanding of APIs, ES6 Syntax, and a lot of curiosity.
+これらのプロジェクトに貢献するには、API、ES6 の構文、そして、たくさんの好奇心が必要です。
 
-Essentially, we expect basic familiarity with some of the aforementioned technologies, tools, and libraries. With that being said, you are not required to be an expert on them to contribute.
+本質的には、私たちはコントリビュータに対して、前述の技術、ツール、ライブラリの一部には慣れていることを期待します。そうは言っても、コントリビュートするのにそれらの技術のエキスパートである必要はありません。
 
-**If you want to help us improve our codebase, you can either [set up freeCodeCamp locally](/docs/how-to-setup-freecodecamp-locally.md) or use Gitpod, a free online dev environment.**
+**もし、あなたがコードベースを改善することに興味があるなら、[ローカル環境で freeCodeCamp をセットアップする](/docs/how-to-setup-freecodecamp-locally.md)か、無料のオンライン開発環境の Gitpod を利用してください。**
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
-(Starts a ready-to-code dev environment for freecodecamp in your browser.)
+(ボタンをクリックすると、ブラウザ上で freecodecamp 用のコードを書く準備ができた開発環境が立ち上がります。)
 
-## Frequently Asked Questions
+## よくある質問
 
-### Where are the Guide articles (guide.freecodecamp.org)? How can I contribute to them?
+### ガイド (Guide) の記事 (guide.freecodecamp.org) はどこにありますか？ どのようにコントリビュートできますか？
 
-We will not have the general guide articles anymore. Instead we intend to publish these as tutorials that are curated by the editorial team. These would then be published by them on the Developer News.
+現在は、一般的なガイドの記事は作成していません。その代わり、ガイドは編集チームが編集したチュートリアルとして公開しています。これらの記事は、その後、Developer News 上で公開されます。
 
-The challenge hints and articles will still be available on the forum which we have already migrated.
+チャレンジに関するヒントと記事は、フォーラム上でまだ利用可能です。これらはすでにマイグレーションが行われました。
 
-### Can I translate freeCodeCamp's curriculum?
+### freeCodeCamp のカリキュラムを翻訳できますか？
 
-We do intend to make the curriculum available in more languages, right now we do not have a timeline for this.
+私たちはカリキュラムをもっと多くの言語で提供したいと考えています。しかし、現時点では予定は決まっていません。
 
-We will begin by making the curriculum available in *Chinese* first. This will help us understand the caveats and the streamline the development workflows. China is one of the largest demographic regions in terms of our non-english audience. It is hence an ideal candiate for the internationalization (i18n). We currently have hundreds of thousands of users using an old version of the platform.
+まず最初に、カリキュラムを*中国語*で利用できるようにする予定です。注意点と開発のワークフローの流れを理解する助けとなると考えているからです。中国は非英語圏で地理的に最も大きな地域の1つであるため、国際化 (internationalization; i18n) に最適な候補です。現在は古いバージョンのプラットフォームで数十万人のユーザーがいます。
 
-The next languages to follow would be *Arabic, Portuguese, Russian and Spanish* in no particular order. For Portuguese and Spanish we will focus on Latin America as our target demographic region based on the audience we have.
+次の言語の候補は、*アラビア語、ポルトガル語、ロシア語、スペイン語*ですが、順序は決まっていません。現在のユーザーの地理的な分散から、ポルトガル語とスペイン語に集中する予定です。
 
-While you may work on the translations, we are unable to launch them until later next year, other than Chinese which is tentatively planned for a early 2020 release.
+すでに翻訳作業を行っているかもしれませんが、来年末までは公開することは難しいです。確定ではありませんが、中国語版の公開は2020年初めを予定しています。
 
-We **may** accept pull requests (high quality human translations only), depending on a case to case basis.
+私たちは、プルリクエストを受け付ける**かもしれません** (高品質な人間による翻訳だけです) が、基本的にはケースバイケースです。
 
-### Can I translate freeCodeCamp's codebase documentation?
+### freeCodeCamp のコードベースのドキュメントを翻訳できますか？
 
-You are welcome to translate freeCodeCamp's codebase documentation into any language of your choice or improve and update the currently translated guidelines.
+freeCodeCamp のコードベースのドキュメントを他の言語に翻訳したり、現在の翻訳済みのガイドラインを改善・アップデートするのは歓迎です。
 
-### How can I report a bug that is not on board?
+### まだ報告されていないバグを報告するにはどうすればいいですか？
 
-If you think you've found a bug, first read the ["Help I've Found a Bug"](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) article and follow its instructions.
+もしあなたがバグを見つけたと思ったときは、まず最初に ["Help I've Found a Bug"](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) の記事を読んで、その指示に従ってください。
 
-If you're confident it's a new bug, go ahead and create a new GitHub issue. Be sure to include as much information as possible so that we can reproduce the bug. We have a pre-defined issue template to help you through this.
+新しいバグである革新がある場合、GitHub に新しい issue を作ってください。私たちが同じバグを再現するのに十分な情報を必ず含めてください。あなたの報告作業を助けるために issue のテンプレートを定義しています。
 
-Please note that any issues that seek coding help on a challenge will be closed. The issue tracker is strictly for codebase related issues and discussions. Whenever in doubt, you should [seek assistance on the forum](https://www.freecodecamp.org/forum) before making a report.
+チャレンジのコーディングの助けを求める issue を作っても close されます。issue トラッカーは厳密にコードベースに関連する問題や議論のために用意されています。少しでも疑問があるときは、報告をする前に[フォーラムで助けてくれる人を探してください](https://www.freecodecamp.org/forum)。
 
-### How can I report a security issue?
+### セキュリティ上の問題を報告するにはどうすればいいですか？
 
-Please don't create GitHub issues for security issues. Instead, please send an email to `security@freecodecamp.org` and we'll look into it immediately.
+セキュリティ上の問題に関する GitHub issue は作成しないでください。代わりに、`security@freecodecamp.org` にメールを送信してください。すぐに確認します。
 
-### What do these different labels that are tagged on issues mean?
+### issue に付けられたラベルにはどのような違いがありますか？
 
-Our community moderators [triage](https://en.wikipedia.org/wiki/Software_bug#Bug_management) issues and pull requests based on their priority, severity, and other factors. You can [find a complete glossary of their meanings here](https://github.com/freecodecamp/freecodecamp/labels).
+コミュニティのモデレーターは、issue とプルリクエストを、彼らの優先度や深刻度などの要因に基づいて[トリアージ (triage)](https://en.wikipedia.org/wiki/Software_bug#Bug_management) します。[ラベルの意味が書かれた完全な用語集はこちら](https://github.com/freecodecamp/freecodecamp/labels)です。
 
-You should go through [**`help wanted`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) or [**`first timers welcome`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+welcome%22) issues for a quick overview of what is available for you to work on.
+現在あなたが作業できることをすぐに見つけるには、[**`help wanted`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) または [**`first timers welcome`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+welcome%22) の issue を確認してください。
 
-These are up for grabs, and you do not need to seek permission before working on them. If these issues lack clarity on what needs to be done, feel free to ask questions in the comments.
+これらの issue は誰でも作業して構わないので、作業前に許可を求める必要はありません。issue に作業するのに必要な情報が足りない場合は、気軽にコメントで質問してください。
 
-### I found a typo, should I report an issue before I can make a pull request?
+### 誤字を発見しました。プルリクエストを送る前に issue で報告しなければいけませんか？
 
-For typos and other wording changes, you can directly open pull requests without first creating an issue. Issues are more for discussing larger problems associated with code or structural aspects of the curriculum.
+誤字やその他の文言の変更などの場合、直接プルリクエストを出すことができます。issue は、カリキュラムのコードや構造的な側面に関する、もっと大きな問題について議論するために使用しています。
 
-### How do I get an issue assigned to me?
+### 自分に assign された issue を見るにはどうすればいいですか？
 
-We typically do not assign issues to anyone other than long-time contributors to avoid ambiguous no-shows. Instead, we follow the below policy to be fair to everyone:
+assign した後に作業者が現れなくなる問題を避けるため、通常、長期間参加しているコントリビュータ以外には issue を assign しません。代わりに、すべての人に平等であるように以下のようなポリシーに従っています。
 
-1. The first pull-request for any issue is preferred to be merged.
-2. In the case of multiple pull-requests for the same issue, we give priority to the quality of the code in the pull-requests.
-   - Did you include tests?
-   - Did you catch all use-cases?
-   - Did you ensure all tests pass, and you confirmed everything works locally?
-3. Finally, we favor pull-requests which follow our recommended guidelines.
-   - Did you follow the pull-request checklist?
-   - Did you name your pull-request title meaningfully?
+1. どの issue に対しても、最初に作られたプルリクエストを優先的にマージする。
+2. 複数のプルリクエストが作られた場合には、以下の点に基づいて、プルリクエストのコードの品質に優先度を付ける。
+   - テストが含まれているか？
+   - すべてのユースケースをカバーしているか？
+   - すべてのテストが通ることを確認したか？ また、すべてがローカルで動作することを確認したか？
+3. 最後に、推奨するガイドラインに従ったプルリクエストを優先する。
+   - プルリクエストのチェックリストに従っているか？
+   - プルリクエストのタイトルが意味のあるものになっているか？
 
-You do not need any permission for issues that are marked `help wanted` or `first timers welcome` as explained earlier. Follow the guidelines carefully and open a pull-request.
+後で説明するように、`help wanted` または `first timers welcome` のラベルが付けられた issue には許可は必要がありません。ガイドラインに従ってプルリクエストを作ってください。
 
-### I am new to GitHub and Open Source, where should I start?
+### GitHub やオープンソースの初心者です。どこから始めればいいですか？
 
-Read our [How to Contribute to Open Source Guide](https://github.com/freeCodeCamp/how-to-contribute-to-open-source).
+[オープンソースガイドにコントリビュートする方法](https://github.com/freeCodeCamp/how-to-contribute-to-open-source) を読んでください。
 
-### I am stuck on something that is not included in this documentation. How can I get help?
+### このドキュメントに書かれていないことで困ったことがあります。どうしたら助けてもらえますか？
 
-Feel free to ask for help in:
+助けがほしいときは、次の場所で気軽に質問してください。
 
-- [The "Contributors" category of our public forum](https://www.freecodecamp.org/forum/c/contributors)
-- [Our public contributors chat room on Gitter](https://gitter.im/FreeCodeCamp/Contributors)
+- [公開フォーラムの「Contributors」カテゴリ](https://www.freecodecamp.org/forum/c/contributors)
+- [Gitter 上の公開コントリビュータのチャットルーム](https://gitter.im/FreeCodeCamp/Contributors)
 
-We are excited to help you contribute to any of the topics that you would like to work on. Feel free to ask us questions on the related issue threads, and we will be glad to clarify. Make sure you search for your query before posting a new one. Be polite and patient. Our community of volunteers and moderators are always around to guide you through your queries.
+作業したいのがどんなトピックでも、私たちはあなたのコントリビューションを嬉しく思います。関連する issue のスレッドで自由に質問してくれれば、喜んで疑問点を明らかにします。新しい issue を作る前には、必ず検索を行ってすでに同じ issue がないか確認してください。誠実に、忍耐強くあることをお願いします。私たちのコミュニティはボランティアからなっていて、モデレーターはあなたの質問に必ず案内します。
 
-When in doubt, you can reach out to our platform dev team to help you with this:
+さらに疑問点があるときは、プラットフォームの開発チームに連絡してください。
 
 | Name            | GitHub | Twitter |
 |:----------------|:-------|:--------|
