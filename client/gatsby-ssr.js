@@ -64,19 +64,10 @@ export const onRenderBody = ({
     />
   ];
 
-  if (pathname.includes('/learn/coding-interview-prep/rosetta-code')) {
-    scripts.push(
-      <script
-        async={false}
-        id={mathJaxCdn.id}
-        key={mathJaxCdn.key}
-        src={mathJaxCdn.address}
-        type={mathJaxCdn.type}
-      />
-    );
-  }
-
-  if (pathname.includes('/learn/coding-interview-prep/project-euler')) {
+  if (
+    pathname.includes('/learn/coding-interview-prep/rosetta-code') ||
+    pathname.includes('/learn/coding-interview-prep/project-euler')
+  ) {
     scripts.push(
       <script
         async={false}
