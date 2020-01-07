@@ -13,7 +13,7 @@ The last two challenges used the <code>flex-direction</code> property set to row
 
 ## Instructions
 <section id='instructions'>
-Add the CSS property <code>flex-direction</code> to the <code>#box-container</code> element, and give it a value of column.
+Add the CSS property <code>flex-direction</code> to the <code>#box-container</code> element, and give it a value of <code>column</code>.
 </section>
 
 ## Tests
