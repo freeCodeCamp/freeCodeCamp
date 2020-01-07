@@ -25,7 +25,7 @@ To do this, create a "`d` function" in the `font` value argument and return the 
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: assert(Object.values($('.dashboard svg g text')).filter(el => el.style && el.style.font.toLowerCase() === 'bold 10px verdana').length === 1);
 
 ```
 

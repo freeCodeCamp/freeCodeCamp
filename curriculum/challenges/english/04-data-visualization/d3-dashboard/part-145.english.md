@@ -21,7 +21,7 @@ Similar to how you made the text bold for the label of the displayed year; chang
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: console.log(Object.values($('.dashboard svg circle')).filter(el => el.getAttribute('fill') && el.getAttribute('fill') === '#7cd9d1')); assert(Object.values($('.dashboard svg circle')).filter(el => el.getAttribute('fill') === '#7cd9d1').length === 1);
 
 ```
 

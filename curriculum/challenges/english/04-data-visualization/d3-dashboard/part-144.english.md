@@ -21,7 +21,7 @@ Create another `mouseover` event for when you hover one of the `twitter-circles`
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const script = $('.dashboard').siblings('script')[1].innerHTML; assert(/\.on\(('|"|`)mouseover\1, function \(d\) \{\s*return drawDashboard\(d\.year\);\s*\}\)/g.test(script));
 
 ```
 
