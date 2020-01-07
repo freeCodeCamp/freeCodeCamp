@@ -83,7 +83,7 @@ class Set {
     values() {
         return this.collection;
     }
-    // change code below this line
+    // Only change code below this line
 
     // write your add method here
 
@@ -91,7 +91,7 @@ class Set {
 
     // write your size method here
 
-    // change code above this line
+    // Only change code above this line
 }
 ```
 

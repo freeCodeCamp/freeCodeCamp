@@ -54,13 +54,13 @@ tests:
 ```js
 const createPerson = (name, age, gender) => {
   "use strict";
-  // change code below this line
+  // Only change code below this line
   return {
     name: name,
     age: age,
     gender: gender
   };
-  // change code above this line
+  // Only change code above this line
 };
 console.log(createPerson("Zodiac Hasbro", 56, "male")); // returns a proper object
 ```

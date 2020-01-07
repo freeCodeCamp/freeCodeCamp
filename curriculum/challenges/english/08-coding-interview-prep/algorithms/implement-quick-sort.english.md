@@ -43,9 +43,9 @@ tests:
 
 ```js
 function quickSort(array) {
-  // change code below this line
+  // Only change code below this line
 
-  // change code above this line
+  // Only change code above this line
   return array;
 }
 

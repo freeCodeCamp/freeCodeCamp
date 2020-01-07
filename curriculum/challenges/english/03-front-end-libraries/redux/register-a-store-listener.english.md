@@ -54,9 +54,9 @@ const store = Redux.createStore(reducer);
 // global count variable:
 let count = 0;
 
-// change code below this line
+// Only change code below this line
 
-// change code above this line
+// Only change code above this line
 
 store.dispatch({type: ADD});
 console.log(count);
@@ -98,7 +98,7 @@ const reducer = (state = 0, action) => {
 
 const store = Redux.createStore(reducer);
  let count = 0;
-// change code below this line
+// Only change code below this line
 
 store.subscribe( () =>
  {
@@ -106,7 +106,7 @@ store.subscribe( () =>
  }
 );
 
-// change code above this line
+// Only change code above this line
 
 store.dispatch({type: ADD});
 store.dispatch({type: ADD});

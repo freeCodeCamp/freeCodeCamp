@@ -50,9 +50,9 @@ const defaultState = {
 };
 
 const authReducer = (state = defaultState, action) => {
-  // change code below this line
+  // Only change code below this line
 
-  // change code above this line
+  // Only change code above this line
 };
 
 const store = Redux.createStore(authReducer);

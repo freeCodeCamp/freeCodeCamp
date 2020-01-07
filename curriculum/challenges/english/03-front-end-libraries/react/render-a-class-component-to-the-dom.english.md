@@ -59,7 +59,7 @@ class TypesOfFood extends React.Component {
   }
 };
 
-// change code below this line
+// Only change code below this line
 
 ```
 
@@ -133,7 +133,7 @@ class TypesOfFood extends React.Component {
   }
 };
 
-// change code below this line
+// Only change code below this line
 ReactDOM.render(<TypesOfFood />, document.getElementById('challenge-node'));
 ```
 

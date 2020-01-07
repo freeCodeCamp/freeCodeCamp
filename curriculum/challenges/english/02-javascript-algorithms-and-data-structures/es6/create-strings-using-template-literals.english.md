@@ -71,9 +71,9 @@ const result = {
 function makeList(arr) {
   "use strict";
 
-  // change code below this line
+  // Only change code below this line
   const resultDisplayArray = null;
-  // change code above this line
+  // Only change code above this line
 
   return resultDisplayArray;
 }

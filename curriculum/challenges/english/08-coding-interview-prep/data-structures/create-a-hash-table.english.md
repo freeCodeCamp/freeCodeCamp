@@ -59,8 +59,8 @@ var hash = string => {
 };
 var HashTable = function() {
   this.collection = {};
-  // change code below this line
-  // change code above this line
+  // Only change code below this line
+  // Only change code above this line
 };
 ```
 
@@ -97,7 +97,7 @@ var hash = (string) => {
 };
 var HashTable = function() {
   this.collection = {};
-  // change code below this line
+  // Only change code below this line
 
   this.add = function(key, val) {
     var theHash = hash(key);
@@ -125,7 +125,7 @@ var HashTable = function() {
     }
     return null
   }
-  // change code above this line
+  // Only change code above this line
 };
 ```
 

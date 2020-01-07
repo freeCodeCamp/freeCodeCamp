@@ -79,7 +79,7 @@ const store = Redux.createStore(messageReducer);
 const Provider = ReactRedux.Provider;
 const connect = ReactRedux.connect;
 
-// Change code below this line
+// Only change code below this line
 class Presentational extends React.Component {
   constructor(props) {
     super(props);
@@ -121,7 +121,7 @@ class Presentational extends React.Component {
     );
   }
 };
-// Change code above this line
+// Only change code above this line
 
 const mapStateToProps = (state) => {
   return {messages: state}
@@ -195,7 +195,7 @@ const store = Redux.createStore(messageReducer);
 const Provider = ReactRedux.Provider;
 const connect = ReactRedux.connect;
 
-// Change code below this line
+// Only change code below this line
 class Presentational extends React.Component {
   constructor(props) {
     super(props);
@@ -236,7 +236,7 @@ class Presentational extends React.Component {
     );
   }
 };
-// Change code above this line
+// Only change code above this line
 
 const mapStateToProps = (state) => {
   return {messages: state}

@@ -51,8 +51,8 @@ var Node = function(data, prev) {
 var DoublyLinkedList = function() {
   this.head = null;
   this.tail = null;
-  // change code below this line
-  // change code above this line
+  // Only change code below this line
+  // Only change code above this line
 };
 ```
 

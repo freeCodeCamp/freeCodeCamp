@@ -48,9 +48,9 @@ class MyComponent extends React.Component {
     this.state = {
       text: "Hello"
     };
-    // change code below this line
+    // Only change code below this line
 
-    // change code above this line
+    // Only change code above this line
   }
   handleClick() {
     this.setState({

@@ -57,7 +57,7 @@ const addMessage = (message) => {
   }
 };
 
-// change code below this line
+// Only change code below this line
 
 ```
 
@@ -79,7 +79,7 @@ const addMessage = (message) => {
   }
 };
 
-// change code below this line
+// Only change code below this line
 
 const mapDispatchToProps = (dispatch) => {
   return {

@@ -49,9 +49,9 @@ tests:
 <div id='jsx-seed'>
 
 ```jsx
-// change code below this line
+// Only change code below this line
 
-// change code above this line
+// Only change code above this line
 
 const defaultState = {
   authenticated: false

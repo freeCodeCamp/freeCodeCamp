@@ -42,9 +42,9 @@ tests:
 
 ```js
 function selectionSort(array) {
-  // change code below this line
+  // Only change code below this line
   return array;
-  // change code above this line
+  // Only change code above this line
 }
 
 

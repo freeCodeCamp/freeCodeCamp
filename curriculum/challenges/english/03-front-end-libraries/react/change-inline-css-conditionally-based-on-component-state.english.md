@@ -59,9 +59,9 @@ class GateKeeper extends React.Component {
     let inputStyle = {
       border: '1px solid black'
     };
-    // change code below this line
+    // Only change code below this line
 
-    // change code above this line
+    // Only change code above this line
     return (
       <div>
         <h3>Don't Type Too Much:</h3>

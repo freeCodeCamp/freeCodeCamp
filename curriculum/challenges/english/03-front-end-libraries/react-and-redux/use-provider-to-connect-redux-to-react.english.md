@@ -125,7 +125,7 @@ const Provider = ReactRedux.Provider;
 class AppWrapper extends React.Component {
   // render the Provider here
 
-  // change code above this line
+  // Only change code above this line
 };
 ```
 
@@ -220,7 +220,7 @@ class DisplayMessages extends React.Component {
 const Provider = ReactRedux.Provider;
 
 class AppWrapper extends React.Component {
-  // change code below this line
+  // Only change code below this line
   render() {
     return (
       <Provider store = {store}>
@@ -228,7 +228,7 @@ class AppWrapper extends React.Component {
       </Provider>
     );
   }
-  // change code above this line
+  // Only change code above this line
 };
 ```
 

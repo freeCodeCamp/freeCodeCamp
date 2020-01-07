@@ -57,9 +57,9 @@ const textAreaStyles = {
 class MyToDoList extends React.Component {
   constructor(props) {
     super(props);
-    // change code below this line
+    // Only change code below this line
 
-    // change code above this line
+    // Only change code above this line
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }

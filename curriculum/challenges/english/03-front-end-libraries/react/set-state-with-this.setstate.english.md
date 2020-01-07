@@ -58,9 +58,9 @@ class MyComponent extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
   handleClick() {
-    // change code below this line
+    // Only change code below this line
 
-    // change code above this line
+    // Only change code above this line
   }
   render() {
     return (
@@ -101,11 +101,11 @@ class MyComponent extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
   handleClick() {
-     // change code below this line
+     // Only change code below this line
     this.setState({
       name: 'React Rocks!'
     });
-    // change code above this line
+    // Only change code above this line
   }
   render() {
     return (

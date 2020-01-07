@@ -48,13 +48,13 @@ class ControlledInput extends React.Component {
     this.state = {
       input: ''
     };
-    // change code below this line
+    // Only change code below this line
 
-    // change code above this line
+    // Only change code above this line
   }
-  // change code below this line
+  // Only change code below this line
 
-  // change code above this line
+  // Only change code above this line
   render() {
     return (
       <div>

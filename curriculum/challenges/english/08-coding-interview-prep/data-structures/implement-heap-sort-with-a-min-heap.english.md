@@ -54,8 +54,8 @@ var array = new Array();
   return size > 1 ? createArray(size - 1) : undefined;
 })(25);
 var MinHeap = function() {
-  // change code below this line
-  // change code above this line
+  // Only change code below this line
+  // Only change code above this line
 };
 ```
 
