@@ -21,7 +21,7 @@ Change the `text` of the `legendTitle` to this string literal `${year} followers
 ```yml
 tests:
   - text: test-text
-    testString: assert();
+    testString: assert(/\.text\s*\(\s*`\s*\$\{\s*year\s*\} followers`\s*\)/g.test(code));
 
 ```
 

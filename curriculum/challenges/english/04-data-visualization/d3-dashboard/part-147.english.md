@@ -21,7 +21,7 @@ Change the `fill` of the `tumblr-circles` and `instagram-circles` to use a "`d` 
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const circles = Object.values($('.dashboard svg circle')); assert(circles.filter(el => el.getAttribute && (el.getAttribute('fill') === '#7cd9d1' || el.getAttribute('fill') === '#f6dd71' || el.getAttribute('fill') === '#fd9b98')).length === 3);
 
 ```
 

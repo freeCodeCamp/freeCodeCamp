@@ -21,7 +21,7 @@ Add a `mouseover` event to the `tumblr-circles` and `instagram-circles` in the s
 ```yml
 tests:
   - text: test-text
-    testString: assert(code.match());
+    testString: const script = $('.dashboard').siblings('script')[1].innerHTML; assert(script.match(/\.on\(('|"|`)mouseover\1, function \(d\) \{\s*return drawDashboard\(d\.year\);\s*\}\)/g).length === 3);
 
 ```
 
