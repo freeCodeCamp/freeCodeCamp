@@ -1626,11 +1626,6 @@
     },
     {
       "quote":
-        "Saying that Java is nice because it works on all OSes is like saying that anal sex is nice because it works on all genders.",
-      "author": "Alanna"
-    },
-    {
-      "quote":
         "Fine, Java MIGHT be a good example of what a programming language should be like. But Java applications are good examples of what applications SHOULDN'T be like.",
       "author": "pixadel"
     },
@@ -1638,10 +1633,6 @@
       "quote":
         "If Java had true garbage collection, most programs would delete themselves upon execution.",
       "author": "Robert Sewell"
-    },
-    {
-      "quote": "Software is like sex: It's better when it's free.",
-      "author": "Linus Torvalds"
     },
     {
       "quote":
@@ -1701,11 +1692,6 @@
       "quote":
         "I don't care if it works on your machine! We are not shipping your machine!",
       "author": "Vidiu Platon"
-    },
-    {
-      "quote":
-        "Programming is like sex: one mistake and you're providing support for a lifetime.",
-      "author": "Michael Sinz"
     },
     {
       "quote":
@@ -2242,11 +2228,6 @@
       "quote":
         "Some people, when confronted with a problem, think ‘I know, I’ll use regular expressions.’ Now they have two problems.",
       "author": "Jamie Zawinski"
-    },
-    {
-      "quote":
-        "Programming is like sex: one mistake and you have to support it for the rest of your life.",
-      "author": "Michael Sinz"
     },
     {
       "quote":
