@@ -52,8 +52,7 @@ tests:
 
 ```js
 function kdNN(fpoints, fpoint) {
-  // Good luck!
-}
+  }
 ```
 
 </div>

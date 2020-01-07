@@ -51,8 +51,7 @@ tests:
 
 ```js
 function countLychrelNumbers(num) {
-  // Good luck!
-  return true;
+    return true;
 }
 
 countLychrelNumbers(10000);

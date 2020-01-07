@@ -37,8 +37,7 @@ tests:
 
 ```js
 function digitCancellingFractions() {
-  // Good luck!
-  return true;
+    return true;
 }
 
 digitCancellingFractions();

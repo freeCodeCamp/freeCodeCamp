@@ -53,8 +53,7 @@ tests:
 
 ```js
 function ZigZagMatrix(n) {
-  // Good luck!
-  return [[], []];
+    return [[], []];
 }
 ```
 

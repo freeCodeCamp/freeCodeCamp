@@ -41,8 +41,7 @@ tests:
 
 ```js
 function knapContinuous (items, maxweight) {
-  // Good luck!
-}
+  }
 ```
 
 </div>

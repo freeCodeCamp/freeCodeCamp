@@ -64,8 +64,7 @@ tests:
 
 ```js
 function gnomeSort(a) {
-  // Good luck!
-}
+  }
 ```
 
 </div>

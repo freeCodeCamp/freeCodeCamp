@@ -56,8 +56,7 @@ tests:
 
 ```js
 function leftFactorial(n) {
-  // Good luck!
-}
+  }
 ```
 
 </div>

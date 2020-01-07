@@ -44,8 +44,7 @@ tests:
 
 ```js
 function lengthSorter(arr) {
-  // Good luck!
-}
+  }
 ```
 
 </div>

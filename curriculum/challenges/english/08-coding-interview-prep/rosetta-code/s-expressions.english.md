@@ -50,8 +50,7 @@ tests:
 
 ```js
 function parseSexpr(str) {
-  // Good luck!
-  return true;
+    return true;
 }
 ```
 

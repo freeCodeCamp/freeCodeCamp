@@ -42,8 +42,7 @@ tests:
 
 ```js
 function babbage(babbageNum, endDigits) {
-  // Good luck!
-  return true;
+    return true;
 }
 ```
 

@@ -90,8 +90,7 @@ tests:
 
 ```js
 function telephoneCheck(str) {
-  // Good luck!
-  return true;
+    return true;
 }
 
 telephoneCheck("555-555-5555");

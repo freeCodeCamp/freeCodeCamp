@@ -41,8 +41,7 @@ tests:
 
 ```js
 function findBestPack(data, maxweight) {
-  // Good luck!
-}
+  }
 ```
 
 </div>

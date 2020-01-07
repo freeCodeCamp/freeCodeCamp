@@ -45,8 +45,7 @@ tests:
 
 ```js
 function digitFibonacci(n) {
-  // Good luck!
-  return n;
+    return n;
 }
 
 digitFibonacci(20);

@@ -40,8 +40,7 @@ tests:
 
 ```js
 function mode(arr) {
-  // Good luck!
-  return true;
+    return true;
 }
 ```
 

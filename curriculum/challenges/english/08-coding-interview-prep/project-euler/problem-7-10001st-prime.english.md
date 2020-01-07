@@ -43,8 +43,7 @@ tests:
 
 ```js
 function nthPrime(n) {
-  // Good luck!
-  return true;
+    return true;
 }
 
 nthPrime(10001);

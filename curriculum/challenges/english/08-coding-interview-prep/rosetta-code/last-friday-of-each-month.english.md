@@ -52,8 +52,7 @@ tests:
 
 ```js
 function lastFriday(year, month) {
-  // Good luck!
-}
+  }
 ```
 
 </div>

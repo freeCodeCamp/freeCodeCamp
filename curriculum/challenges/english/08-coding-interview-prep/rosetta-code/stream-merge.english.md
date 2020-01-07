@@ -46,8 +46,7 @@ tests:
 
 ```js
 function mergeLists(lists) {
-  // Good luck!
-}
+  }
 ```
 
 </div>

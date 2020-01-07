@@ -82,8 +82,7 @@ tests:
 
 ```js
 function combSort(arr) {
-  // Good luck!
-}
+  }
 ```
 
 </div>

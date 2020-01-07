@@ -46,8 +46,7 @@ tests:
 
 ```js
 function lascii(cFrom, cTo) {
-  // Good luck!
-}
+  }
 ```
 
 </div>

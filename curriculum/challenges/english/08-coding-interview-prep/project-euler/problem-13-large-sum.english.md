@@ -137,7 +137,6 @@ tests:
 
 ```js
 function largeSum(arr) {
-  // Good luck!
   return true;
 }
 

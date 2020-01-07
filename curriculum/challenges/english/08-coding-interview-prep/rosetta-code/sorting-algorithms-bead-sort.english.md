@@ -47,8 +47,7 @@ tests:
 
 ```js
 function beadSort(arr) {
-  // Good luck!
-}
+  }
 ```
 
 </div>

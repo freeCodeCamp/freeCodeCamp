@@ -157,8 +157,7 @@ tests:
 
 ```js
 function euler64() {
-  // Good luck!
-  return true;
+    return true;
 }
 
 euler64();

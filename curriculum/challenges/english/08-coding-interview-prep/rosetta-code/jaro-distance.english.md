@@ -65,8 +65,7 @@ tests:
 
 ```js
 function jaro(s, t) {
-  // Good luck!
-}
+  }
 ```
 
 </div>

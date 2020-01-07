@@ -42,8 +42,7 @@ tests:
 
 ```js
 function lexicographicPermutations(n) {
-  // Good luck!
-  return n;
+    return n;
 }
 
 lexicographicPermutations(999999);

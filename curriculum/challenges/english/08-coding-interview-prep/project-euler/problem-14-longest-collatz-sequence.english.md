@@ -49,8 +49,7 @@ tests:
 
 ```js
 function longestCollatzSequence(limit) {
-  // Good luck!
-  return true;
+    return true;
 }
 
 longestCollatzSequence(14);

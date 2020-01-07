@@ -45,8 +45,7 @@ tests:
 
 ```js
 function largestPrimeFactor(number) {
-  // Good luck!
-  return true;
+    return true;
 }
 
 largestPrimeFactor(13195);

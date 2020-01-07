@@ -53,8 +53,7 @@ tests:
 
 ```js
 function euler404() {
-  // Good luck!
-  return true;
+    return true;
 }
 
 euler404();

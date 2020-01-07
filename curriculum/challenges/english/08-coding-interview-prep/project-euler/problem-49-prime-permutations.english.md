@@ -36,8 +36,7 @@ tests:
 
 ```js
 function primePermutations() {
-  // Good luck!
-  return true;
+    return true;
 }
 
 primePermutations();

@@ -48,8 +48,7 @@ tests:
 
 ```js
 function clip(subjectPolygon, clipPolygon) {
-  // Good luck!
-}
+  }
 ```
 
 </div>

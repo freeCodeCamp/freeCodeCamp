@@ -39,8 +39,7 @@ tests:
 
 ```js
 function rms(arr) {
-  // Good luck!
-}
+  }
 ```
 
 </div>

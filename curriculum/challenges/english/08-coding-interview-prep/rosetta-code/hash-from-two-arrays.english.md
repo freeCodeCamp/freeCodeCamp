@@ -50,8 +50,7 @@ tests:
 
 ```js
 function arrToObj (keys, vals) {
-  // Good luck!
-  return true;
+    return true;
 }
 ```
 

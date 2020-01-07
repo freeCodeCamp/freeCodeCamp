@@ -52,8 +52,7 @@ tests:
 
 ```js
 function combinations(m, n) {
-  // Good luck!
-  return true;
+    return true;
 }
 ```
 

@@ -37,8 +37,7 @@ tests:
 
 ```js
 function pandigitalPrime(n) {
-  // Good luck!
-  return n;
+    return n;
 }
 
 pandigitalPrime(7);

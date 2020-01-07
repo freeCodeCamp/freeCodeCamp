@@ -49,8 +49,7 @@ tests:
 
 ```js
 function circularPrimes(n) {
-  // Good luck!
-  return n;
+    return n;
 }
 
 circularPrimes(1000000);

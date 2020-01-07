@@ -49,8 +49,7 @@ tests:
 
 ```js
 function entropy(s) {
-  // Good luck!
-}
+  }
 ```
 
 </div>

@@ -48,8 +48,7 @@ tests:
 
 ```js
 function gamma(x) {
-  // Good luck!
-}
+  }
 ```
 
 </div>

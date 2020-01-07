@@ -42,8 +42,7 @@ tests:
 
 ```js
 function latticePaths(gridSize) {
-  // Good luck!
-  return true;
+    return true;
 }
 
 latticePaths(4);

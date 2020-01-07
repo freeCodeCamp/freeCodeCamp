@@ -53,8 +53,7 @@ tests:
 ```js
 // noprotect
 function splitCoconuts(intSailors) {
-  // Good luck!
-  return true;
+    return true;
 }
 ```
 

@@ -46,8 +46,7 @@ tests:
 
 ```js
 function maxCombine(xs) {
-  // Good luck!
-}
+  }
 ```
 
 </div>

@@ -46,8 +46,7 @@ tests:
 
 ```js
 function euler219() {
-  // Good luck!
-  return true;
+    return true;
 }
 
 euler219();

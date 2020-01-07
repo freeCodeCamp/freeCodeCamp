@@ -40,8 +40,7 @@ tests:
 
 ```js
 function findXmasSunday(start, end) {
-  // Good luck!
-  return true;
+    return true;
 }
 ```
 

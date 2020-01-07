@@ -47,8 +47,7 @@ tests:
 
 ```js
 function sumTo100(n) {
-  // Good luck!
-}
+  }
 ```
 
 </div>

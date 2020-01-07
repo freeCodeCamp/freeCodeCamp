@@ -50,8 +50,7 @@ tests:
 
 ```js
 function exponentialGenerator(n) {
-  // Good luck!
-}
+  }
 ```
 
 </div>

@@ -58,8 +58,7 @@ tests:
 
 ```js
 function quibble(words) {
-  // Good luck!
-  return true;
+    return true;
 }
 ```
 

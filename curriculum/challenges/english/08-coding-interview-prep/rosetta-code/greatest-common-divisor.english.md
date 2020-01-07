@@ -48,8 +48,7 @@ tests:
 
 ```js
 function gcd(a, b) {
-  // Good luck!
-}
+  }
 ```
 
 </div>

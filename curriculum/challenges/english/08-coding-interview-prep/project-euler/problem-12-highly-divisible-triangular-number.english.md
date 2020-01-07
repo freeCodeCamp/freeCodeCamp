@@ -53,8 +53,7 @@ tests:
 
 ```js
 function divisibleTriangleNumber(n) {
-  // Good luck!
-  return true;
+    return true;
 }
 
 divisibleTriangleNumber(500);

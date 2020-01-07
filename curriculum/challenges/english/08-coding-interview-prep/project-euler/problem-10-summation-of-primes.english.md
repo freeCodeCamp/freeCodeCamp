@@ -41,8 +41,7 @@ tests:
 
 ```js
 function primeSummation(n) {
-  // Good luck!
-  return true;
+    return true;
 }
 
 primeSummation(2000000);

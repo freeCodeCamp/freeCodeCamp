@@ -44,8 +44,7 @@ tests:
 
 ```js
 function euler379() {
-  // Good luck!
-  return true;
+    return true;
 }
 
 euler379();

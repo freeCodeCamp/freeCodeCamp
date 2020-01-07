@@ -42,8 +42,7 @@ tests:
 
 ```js
 function truncatablePrimes(n) {
-  // Good luck!
-  return n;
+    return n;
 }
 
 truncatablePrimes(11);

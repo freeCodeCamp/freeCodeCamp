@@ -45,8 +45,7 @@ tests:
 
 ```js
 function distinctPrimeFactors(targetNumPrimes, targetConsecutive) {
-  // Good luck!
-  return true;
+    return true;
 }
 
 distinctPrimeFactors(4, 4);

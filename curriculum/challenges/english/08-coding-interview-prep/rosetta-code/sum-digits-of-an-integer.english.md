@@ -52,8 +52,7 @@ tests:
 
 ```js
 function sumDigits(n) {
-  // Good luck!
-}
+  }
 ```
 
 </div>

@@ -59,8 +59,7 @@ tests:
 
 ```js
 function cramersRule(matrix, freeTerms) {
-  // Good luck!
-  return true;
+    return true;
 }
 ```
 

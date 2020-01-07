@@ -51,8 +51,7 @@ tests:
 
 ```js
 function spiralArray(n) {
-  // Good luck!
-}
+  }
 ```
 
 </div>

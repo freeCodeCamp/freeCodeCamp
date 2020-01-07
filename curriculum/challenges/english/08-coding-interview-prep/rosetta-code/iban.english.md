@@ -53,8 +53,7 @@ tests:
 
 ```js
 function isValid(iban) {
-  // Good luck!
-}
+  }
 ```
 
 </div>

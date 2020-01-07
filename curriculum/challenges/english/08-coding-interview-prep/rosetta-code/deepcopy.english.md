@@ -49,8 +49,7 @@ tests:
 
 ```js
 function deepcopy(obj) {
-  // Good luck!
-  return true;
+    return true;
 }
 ```
 

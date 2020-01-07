@@ -46,8 +46,7 @@ tests:
 
 ```js
 function dotProduct(ary1, ary2) {
-  // Good luck!
-}
+  }
 ```
 
 </div>

@@ -46,8 +46,7 @@ tests:
 
 ```js
 function binom(n, k) {
-  // Good luck!
-}
+  }
 ```
 
 </div>

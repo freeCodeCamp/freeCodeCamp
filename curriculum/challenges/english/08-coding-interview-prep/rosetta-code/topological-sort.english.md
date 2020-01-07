@@ -79,8 +79,7 @@ tests:
 
 ```js
 function topologicalSort(libs) {
-  // Good luck!
-  return true;
+    return true;
 }
 ```
 

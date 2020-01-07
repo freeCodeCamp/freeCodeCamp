@@ -45,8 +45,7 @@ tests:
 
 ```js
 function getDateFormats() {
-  // Good luck!
-  return true;
+    return true;
 }
 ```
 

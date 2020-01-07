@@ -51,8 +51,7 @@ tests:
 
 ```js
 function countCoins() {
-  // Good luck!
-  return true;
+    return true;
 }
 ```
 

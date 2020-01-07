@@ -59,8 +59,7 @@ tests:
 
 ```js
 function euler256() {
-  // Good luck!
-  return true;
+    return true;
 }
 
 euler256();

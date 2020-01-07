@@ -42,8 +42,7 @@ tests:
 
 ```js
 function goldbachsOtherConjecture() {
-  // Good luck!
-  return true;
+    return true;
 }
 
 goldbachsOtherConjecture();

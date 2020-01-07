@@ -43,8 +43,7 @@ tests:
 
 ```js
 function sumAmicableNum(n) {
-  // Good luck!
-  return n;
+    return n;
 }
 
 sumAmicableNum(10000);

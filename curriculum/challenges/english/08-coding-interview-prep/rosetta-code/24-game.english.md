@@ -58,8 +58,7 @@ tests:
 
 ```js
 function solve24 (numStr) {
-  // Good luck!
-  return true;
+    return true;
 }
 ```
 

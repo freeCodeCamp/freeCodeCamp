@@ -52,8 +52,7 @@ tests:
 ```js
 function Y(f) {
   return function() {
-  // Good luck!
-  };
+    };
 }
 
 var factorial = Y(function(f) {

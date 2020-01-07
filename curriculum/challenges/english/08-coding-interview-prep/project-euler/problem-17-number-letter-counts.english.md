@@ -40,8 +40,7 @@ tests:
 
 ```js
 function numberLetterCounts(limit) {
-  // Good luck!
-  return true;
+    return true;
 }
 
 numberLetterCounts(5);

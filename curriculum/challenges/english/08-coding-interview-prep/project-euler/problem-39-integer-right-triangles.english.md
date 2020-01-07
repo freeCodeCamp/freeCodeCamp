@@ -42,8 +42,7 @@ tests:
 
 ```js
 function intRightTriangles(n) {
-  // Good luck!
-  return n;
+    return n;
 }
 
 console.log(intRightTriangles(500)); // 420

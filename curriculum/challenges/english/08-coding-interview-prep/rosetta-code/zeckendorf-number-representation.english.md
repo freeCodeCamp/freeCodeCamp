@@ -37,8 +37,7 @@ tests:
 
 ```js
 function zeckendorf(n) {
-  // good luck!
-}
+  }
 ```
 
 </div>

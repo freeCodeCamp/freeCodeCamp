@@ -66,8 +66,7 @@ tests:
 
 ```js
 function cocktailSort(arr) {
-  // Good luck!
-}
+  }
 ```
 
 </div>

@@ -48,8 +48,7 @@ tests:
 
 ```js
 function discordianDate(date) {
-  // Good luck!
-  return true;
+    return true;
 }
 ```
 

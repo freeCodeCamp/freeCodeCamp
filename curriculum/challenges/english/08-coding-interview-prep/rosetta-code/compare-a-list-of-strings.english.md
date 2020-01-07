@@ -60,13 +60,11 @@ tests:
 
 ```js
 function allEqual(arr) {
-  // Good luck!
-  return true;
+    return true;
 }
 
 function azSorted(arr) {
-  // Good luck!
-  return true;
+    return true;
 }
 ```
 

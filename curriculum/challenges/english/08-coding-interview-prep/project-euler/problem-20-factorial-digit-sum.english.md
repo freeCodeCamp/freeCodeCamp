@@ -44,8 +44,7 @@ tests:
 
 ```js
 function sumFactorialDigits(n) {
-  // Good luck!
-  return n;
+    return n;
 }
 
 sumFactorialDigits(100);

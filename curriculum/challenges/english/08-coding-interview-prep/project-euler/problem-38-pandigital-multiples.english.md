@@ -40,8 +40,7 @@ tests:
 
 ```js
 function pandigitalMultiples() {
-  // Good luck!
-  return true;
+    return true;
 }
 
 pandigitalMultiples();

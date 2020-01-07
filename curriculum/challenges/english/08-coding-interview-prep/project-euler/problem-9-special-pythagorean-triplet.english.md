@@ -42,8 +42,7 @@ tests:
 ```js
 function specialPythagoreanTriplet(n) {
  let sumOfabc = n;
- // Good luck!
- return true;
+  return true;
 }
 
 specialPythagoreanTriplet(1000);

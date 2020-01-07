@@ -44,8 +44,7 @@ tests:
 
 ```js
 function coinSums(n) {
-  // Good luck!
-  return n;
+    return n;
 }
 
 coinSums(200);

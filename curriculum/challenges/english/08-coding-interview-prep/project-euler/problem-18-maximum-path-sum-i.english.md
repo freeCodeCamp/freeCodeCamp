@@ -41,8 +41,7 @@ tests:
 
 ```js
 function maximumPathSumI(triangle) {
-  // Good luck!
-  return true;
+    return true;
 }
 
 const testTriangle = [[3, 0, 0, 0],

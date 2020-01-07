@@ -40,8 +40,7 @@ tests:
 
 ```js
 function countingSundays(firstYear, lastYear) {
-  // Good luck!
-  return true;
+    return true;
 }
 
 countingSundays(1943, 1946);

@@ -43,8 +43,7 @@ tests:
 
 ```js
 function reciprocalCycles(n) {
-  // Good luck!
-  return n;
+    return n;
 }
 
 reciprocalCycles(1000);

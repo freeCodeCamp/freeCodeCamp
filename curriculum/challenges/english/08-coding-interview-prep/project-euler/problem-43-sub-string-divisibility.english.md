@@ -43,8 +43,7 @@ tests:
 
 ```js
 function substringDivisibility() {
-  // Good luck!
-  return [];
+    return [];
 }
 
 substringDivisibility();

@@ -43,7 +43,6 @@ tests:
 
 ```js
 function codedTriangleNumbers(n) {
-  // Good luck!
   return 1;
 }
 // Only change code above this line

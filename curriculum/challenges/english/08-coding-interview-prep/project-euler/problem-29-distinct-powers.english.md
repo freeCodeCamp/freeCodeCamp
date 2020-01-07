@@ -47,8 +47,7 @@ tests:
 
 ```js
 function distinctPowers(n) {
-  // Good luck!
-  return n;
+    return n;
 }
 
 distinctPowers(30);

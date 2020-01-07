@@ -80,8 +80,7 @@ tests:
 
 ```js
 function isBalanced(str) {
-  // Good luck!
-  return true;
+    return true;
 }
 ```
 

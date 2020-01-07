@@ -60,8 +60,7 @@ tests:
 
 ```js
 function largestGridProduct(arr) {
-  // Good luck!
-  return arr;
+    return arr;
 }
 
 // Only change code above this line

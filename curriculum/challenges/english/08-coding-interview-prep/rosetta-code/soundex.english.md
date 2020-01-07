@@ -62,8 +62,7 @@ tests:
 
 ```js
 function soundex(s) {
-  // Good luck!
-}
+  }
 ```
 
 </div>

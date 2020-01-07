@@ -43,8 +43,7 @@ tests:
 
 ```js
 function sumSquareDifference(n) {
-  // Good luck!
-  return true;
+    return true;
 }
 
 sumSquareDifference(100);

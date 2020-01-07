@@ -58,8 +58,7 @@ tests:
 
 ```js
 function IBeforeExceptC(word) {
-  // Good luck!
-}
+  }
 ```
 
 </div>

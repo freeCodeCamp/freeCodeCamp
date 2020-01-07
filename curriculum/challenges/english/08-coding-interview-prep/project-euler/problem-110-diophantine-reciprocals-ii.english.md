@@ -37,8 +37,7 @@ tests:
 
 ```js
 function diophantineTwo() {
-  // Good luck!
-  return true;
+    return true;
 }
 
 diophantineTwo();

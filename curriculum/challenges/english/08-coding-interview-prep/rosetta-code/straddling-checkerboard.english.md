@@ -53,12 +53,10 @@ tests:
 
 ```js
 function straddle(message, alphabet) {
-  // Good luck!
-}
+  }
 
 function unstraddle(message, alphabet) {
-  // Good luck!
-}
+  }
 ```
 
 </div>

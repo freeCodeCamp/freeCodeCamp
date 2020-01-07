@@ -36,8 +36,7 @@ tests:
 
 ```js
 function digitFactorial() {
-  // Good luck!
-  var sum = 0;
+    var sum = 0;
   var numbers = [];
   return { sum, numbers };
 }

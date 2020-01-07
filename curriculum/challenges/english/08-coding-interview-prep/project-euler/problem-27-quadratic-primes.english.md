@@ -48,8 +48,7 @@ tests:
 
 ```js
 function quadraticPrimes(range) {
-  // Good luck!
-  return range;
+    return range;
 }
 
 quadraticPrimes(1000);

@@ -37,8 +37,7 @@ tests:
 
 ```js
 function largestPalindromeProduct(n) {
-  // Good luck!
-  return true;
+    return true;
 }
 
 largestPalindromeProduct(3);

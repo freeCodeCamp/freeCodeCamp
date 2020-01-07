@@ -40,8 +40,7 @@ tests:
 
 ```js
 function namesScores(arr) {
-  // Good luck!
-  return arr;
+    return arr;
 }
 
 // Only change code above this line

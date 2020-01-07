@@ -52,8 +52,7 @@ tests:
 
 ```js
 function factorial(n) {
-  // Good luck!
-}
+  }
 ```
 
 </div>

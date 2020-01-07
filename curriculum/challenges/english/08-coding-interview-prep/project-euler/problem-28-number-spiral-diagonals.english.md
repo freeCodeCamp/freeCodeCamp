@@ -47,8 +47,7 @@ tests:
 
 ```js
 function spiralDiagonals(n) {
-  // Good luck!
-  return n;
+    return n;
 }
 
 spiralDiagonals(1001);

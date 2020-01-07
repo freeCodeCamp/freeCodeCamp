@@ -39,8 +39,7 @@ tests:
 
 ```js
 function powerDigitSum(exponent) {
-  // Good luck!
-  return true;
+    return true;
 }
 
 powerDigitSum(15);

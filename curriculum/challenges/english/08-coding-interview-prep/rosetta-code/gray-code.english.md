@@ -70,8 +70,7 @@ tests:
 
 ```js
 function gray(enc, number) {
- // Good luck!
-}
+ }
 ```
 
 </div>

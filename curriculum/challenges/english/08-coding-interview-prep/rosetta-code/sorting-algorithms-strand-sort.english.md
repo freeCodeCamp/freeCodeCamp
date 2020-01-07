@@ -45,8 +45,7 @@ tests:
 
 ```js
 function strandSort(list) {
-  // Good luck!
-}
+  }
 ```
 
 </div>

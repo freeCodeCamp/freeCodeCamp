@@ -162,8 +162,7 @@ tests:
 
 ```js
 function hashJoin(hash1, hash2) {
-  // Good luck!
-  return [];
+    return [];
 }
 ```
 

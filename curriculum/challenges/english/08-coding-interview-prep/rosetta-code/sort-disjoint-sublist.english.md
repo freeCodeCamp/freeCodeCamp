@@ -49,8 +49,7 @@ tests:
 
 ```js
 function sortDisjoint(values, indices) {
-  // Good luck!
-}
+  }
 ```
 
 </div>

@@ -41,8 +41,7 @@ tests:
 
 ```js
 function factors(num) {
-  // Good luck!
-}
+  }
 ```
 
 </div>

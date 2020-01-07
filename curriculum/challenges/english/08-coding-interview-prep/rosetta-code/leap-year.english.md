@@ -48,8 +48,7 @@ tests:
 
 ```js
 function isLeapYear(year) {
-  // Good luck!
-}
+  }
 ```
 
 </div>

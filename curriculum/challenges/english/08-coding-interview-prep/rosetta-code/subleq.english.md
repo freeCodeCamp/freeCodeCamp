@@ -75,8 +75,7 @@ tests:
 
 ```js
 function Subleq(mem) {
-  // Good luck!
-}
+  }
 ```
 
 </div>

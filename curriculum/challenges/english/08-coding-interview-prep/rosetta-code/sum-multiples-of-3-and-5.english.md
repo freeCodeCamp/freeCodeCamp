@@ -46,8 +46,7 @@ tests:
 
 ```js
 function sumMults(n) {
-  // Good luck!
-}
+  }
 ```
 
 </div>

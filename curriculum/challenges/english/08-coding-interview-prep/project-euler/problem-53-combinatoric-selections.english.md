@@ -50,8 +50,7 @@ tests:
 
 ```js
 function combinatoricSelections(limit) {
-  // Good luck!
-  return 1;
+    return 1;
 }
 
 combinatoricSelections(1000000);

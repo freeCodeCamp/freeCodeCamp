@@ -47,8 +47,7 @@ tests:
 
 ```js
 function necklace(n) {
-  // Good luck!
-  return true;
+    return true;
 }
 
 necklace(1000000000)

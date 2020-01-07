@@ -35,8 +35,7 @@ tests:
 
 ```js
 function permutedMultiples() {
-  // Good luck!
-  return true;
+    return true;
 }
 
 permutedMultiples();

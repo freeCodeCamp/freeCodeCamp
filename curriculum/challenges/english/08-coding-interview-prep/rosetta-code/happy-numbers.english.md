@@ -59,8 +59,7 @@ tests:
 
 ```js
 function happy(number) {
-  // Good luck!
-}
+  }
 ```
 
 </div>

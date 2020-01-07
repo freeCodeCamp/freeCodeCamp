@@ -49,8 +49,7 @@ tests:
 
 ```js
 function strip(s) {
-  // Good luck!
-}
+  }
 ```
 
 </div>

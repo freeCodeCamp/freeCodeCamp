@@ -123,8 +123,7 @@ tests:
 
 ```js
 function euler65() {
-  // Good luck!
-  return true;
+    return true;
 }
 
 euler65();

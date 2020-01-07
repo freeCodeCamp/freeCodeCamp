@@ -52,8 +52,7 @@ tests:
 
 ```js
 function stableSort(arr) {
-  // Good luck!
-}
+  }
 ```
 
 </div>

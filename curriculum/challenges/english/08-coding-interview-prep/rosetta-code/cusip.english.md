@@ -52,8 +52,7 @@ tests:
 
 ```js
 function isCusip(s) {
-  // Good luck!
-}
+  }
 ```
 
 </div>

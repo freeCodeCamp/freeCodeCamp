@@ -51,8 +51,7 @@ tests:
 
 ```js
 function LCM(A) {
-  // Good luck!
-}
+  }
 ```
 
 </div>
