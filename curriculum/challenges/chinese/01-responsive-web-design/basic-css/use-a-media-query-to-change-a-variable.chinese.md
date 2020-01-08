@@ -4,7 +4,7 @@ title: Use a media query to change a variable
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cWmL8UP'
 forumTopicId: 301091
-localTitle: 使用媒体查询更改变量
+localeTitle: 使用媒体查询更改变量
 ---
 
 ## Description
@@ -24,9 +24,9 @@ CSS 变量可以简化媒体查询的方式。
 ```yml
 tests:
   - text: '<code>:root</code>中的<code>--penguin-size</code>值应为<code>200px</code>。'
-    testString: 'assert(code.match(/media\s*?\(\s*?max-width\s*?:\s*?350px\s*?\)\s*?{[\s\S]*:root\s*?{[\s\S]*--penguin-size\s*?:\s*?200px\s*?;[\s\S]*}[\s\S]*}/gi), ''<code>:root</code>中的<code>--penguin-size</code>值应为<code>200px</code>。'');'
+    testString: 'assert(code.match(/media\s*?\(\s*?max-width\s*?:\s*?350px\s*?\)\s*?{[\s\S]*:root\s*?{[\s\S]*--penguin-size\s*?:\s*?200px\s*?;[\s\S]*}[\s\S]*}/gi));'
   - text: '<code>:root</code>中的<code>--penguin-skin</code>值应为<code>black</code>。'
-    testString: 'assert(code.match(/media\s*?\(\s*?max-width\s*?:\s*?350px\s*?\)\s*?{[\s\S]*:root\s*?{[\s\S]*--penguin-skin\s*?:\s*?black\s*?;[\s\S]*}[\s\S]*}/gi), ''<code>:root</code>中的<code>--penguin-skin</code>值应为<code>black</code>。'');'
+    testString: 'assert(code.match(/media\s*?\(\s*?max-width\s*?:\s*?350px\s*?\)\s*?{[\s\S]*:root\s*?{[\s\S]*--penguin-skin\s*?:\s*?black\s*?;[\s\S]*}[\s\S]*}/gi));'
 
 ```
 

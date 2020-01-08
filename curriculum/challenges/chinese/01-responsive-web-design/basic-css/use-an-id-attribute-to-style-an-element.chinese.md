@@ -4,14 +4,14 @@ title: Use an id Attribute to Style an Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cakyZfL'
 forumTopicId: 18339
-localTitle: 使用 id 属性来设定元素的样式
+localeTitle: 使用 id 属性来设定元素的样式
 ---
 
 ## Description
 <section id='description'>
 通过<code>id</code>属性，你可以做一些很酷的事情，例如，就像 class 一样，你可以使用 CSS 来设置他们的样式
 可是，<code>id</code>不可以重用，只应用于一个元素上。同时，在 CSS 里，<code>id</code>的优先级要高于<code>class</code>，如果一个元素同时应用了<code>class</code>和<code>id</code>，并设置样式有冲突，会优先应用<code>id</code>的样式。
-选择<code>id</code>为<code>cat-photo-element</code>的元素，并设置它的背景样式为<code>green</code>，可以在你的<code>style</code>标签里这样写：
+选择<code>id</code>为<code>cat-photo-element</code>的元素，并设置它的背景样式为<code>green</code>，可以在<code>style</code>标签里这样写：
 
 ```css
 #cat-photo-element {
@@ -33,13 +33,13 @@ localTitle: 使用 id 属性来设定元素的样式
 ```yml
 tests:
   - text: '设置<code>form</code>元素的 id 为<code>cat-photo-form</code>。'
-    testString: assert($("form").attr("id") === "cat-photo-form", '设置<code>form</code>元素的 id 为<code>cat-photo-form</code>。');
-  - text: '你的<code>form</code>元素应该含有<code>background-color</code>css 属性并且值为 <code>green</code>。'
-    testString: assert($("#cat-photo-form").css("background-color") === "rgb(0, 128, 0)", '你的<code>form</code>元素应该含有<code>background-color</code>css 属性并且值为 <code>green</code>。');
-  - text: '确保你的<code>form</code>元素含有<code>id</code>属性。'
-    testString: assert(code.match(/<form.*cat-photo-form.*>/gi) && code.match(/<form.*cat-photo-form.*>/gi).length > 0, '确保你的<code>form</code>元素含有<code>id</code>属性。');
+    testString: assert($("form").attr("id") === "cat-photo-form");
+  - text: '<code>form</code>元素应该含有<code>background-color</code>css 属性并且值为 <code>green</code>。'
+    testString: assert($("#cat-photo-form").css("background-color") === "rgb(0, 128, 0)");
+  - text: '确保<code>form</code>元素含有<code>id</code>属性。'
+    testString: assert(code.match(/<form.*cat-photo-form.*>/gi) && code.match(/<form.*cat-photo-form.*>/gi).length > 0);
   - text: '不要在<code>form</code>元素上添加其他<code>class</code>属性或者<code>style</code>行内样式。'
-    testString: assert(!code.match(/<form.*style.*>/gi) && !code.match(/<form.*class.*>/gi), '不要在<code>form</code>元素上添加其他<code>class</code>属性或者<code>style</code>行内样式。');
+    testString: assert(!code.match(/<form.*style.*>/gi) && !code.match(/<form.*class.*>/gi));
 
 ```
 

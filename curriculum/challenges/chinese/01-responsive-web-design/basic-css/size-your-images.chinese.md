@@ -4,7 +4,7 @@ title: Size Your Images
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cM9MmCP'
 forumTopicId: 18282
-localTitle: 调整图片的大小
+localeTitle: 调整图片的大小
 ---
 
 ## Description
@@ -34,9 +34,9 @@ CSS 的<code>width</code>属性可以控制元素的宽度。图片的<code>widt
 ```yml
 tests:
   - text: '<code>img</code>元素应该含有<code>smaller-image</code> class。'
-    testString: 'assert($("img[src=''https://bit.ly/fcc-relaxing-cat'']").attr(''class'') === "smaller-image", ''<code>img</code>元素应该含有<code>smaller-image</code> class。'');'
+    testString: 'assert($("img[src=''https://bit.ly/fcc-relaxing-cat'']").attr(''class'') === "smaller-image");'
   - text: '图片宽度应为 100px（像素），且浏览器缩放应为默认 100%。'
-    testString: assert($("img").width() === 100, '你的图片应为 100px（像素），且浏览器缩放应为默认 100%。');
+    testString: assert($("img").width() === 100);
 
 ```
 

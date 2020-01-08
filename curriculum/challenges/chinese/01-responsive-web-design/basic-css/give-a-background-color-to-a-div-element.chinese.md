@@ -4,13 +4,13 @@ title: Give a Background Color to a div Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cdRKMCk'
 forumTopicId: 18190
-localTitle: 给 div 元素添加背景色
+localeTitle: 给 div 元素添加背景色
 ---
 
 ## Description
 <section id='description'>
 <code>background-color</code>属性可以设置元素的背景颜色。
-例如，你想将一个元素的背景颜色改为<code>green</code>，可以在你的<code>style</code>里面这样写：
+例如，你想将一个元素的背景颜色改为<code>green</code>，可以在<code>style</code>里面这样写：
 
 ```css
 .green-background {
@@ -31,9 +31,9 @@ localTitle: 给 div 元素添加背景色
 ```yml
 tests:
   - text: '<code>div</code>元素应有<code>silver-background</code> class。'
-    testString: assert($("div").hasClass("silver-background"), '<code>div</code>元素应有<code>silver-background</code> class。');
+    testString: assert($("div").hasClass("silver-background"));
   - text: '<code>div</code>元素背景颜色应设置为<code>silver</code>。'
-    testString: assert($("div").css("background-color") === "rgb(192, 192, 192)", '<code>div</code>元素背景颜色应设置为<code>silver</code>。');
+    testString: assert($("div").css("background-color") === "rgb(192, 192, 192)");
   - text: 'class 名 <code>silver-background</code> 应该定义在 <code>style</code> 元素内，<code>silver</code> 的值应该指定 <code>background-color</code> 属性'
     testString: assert(code.match(/\.silver-background\s*{\s*background-color:\s*silver;\s*}/));
 

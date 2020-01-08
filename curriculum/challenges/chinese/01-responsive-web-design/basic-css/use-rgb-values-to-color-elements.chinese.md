@@ -4,7 +4,7 @@ title: Use RGB values to Color Elements
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cRkp2fr'
 forumTopicId: 18369
-localTitle: 使用 RGB 值为元素上色
+localeTitle: 使用 RGB 值为元素上色
 ---
 
 ## Description
@@ -37,9 +37,9 @@ body {
 ```yml
 tests:
   - text: '<code>body</code>元素的背景颜色应该是黑色的。'
-    testString: assert($("body").css("background-color") === "rgb(0, 0, 0)", '<code>body</code>元素的背景颜色应该是黑色的。');
+    testString: assert($("body").css("background-color") === "rgb(0, 0, 0)");
   - text: '<code>body</code>元素的背景颜色的黑色值应该为<code>RGB</code>值。'
-    testString: assert(code.match(/rgb\s*\(\s*0\s*,\s*0\s*,\s*0\s*\)/ig), '<code>body</code>元素的背景颜色的黑色值应该为<code>RGB</code>值。');
+    testString: assert(code.match(/rgb\s*\(\s*0\s*,\s*0\s*,\s*0\s*\)/ig)
 
 ```
 

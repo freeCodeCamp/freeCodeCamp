@@ -4,7 +4,7 @@ title: Adjust the Padding of an Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cED8ZC2'
 forumTopicId: 301083
-localTitle: 调整元素的内边距
+localeTitle: 调整元素的内边距
 ---
 
 ## Description
@@ -13,13 +13,13 @@ localTitle: 调整元素的内边距
 你可能已经注意到了，所有的 HTML 元素基本都是以矩形为基础。
 每个 HTML 元素周围的矩形空间由三个重要的属性来控制：<code>padding（内边距）</code>，<code>margin（外边距）</code>和<code>border（边框）</code>。
 <code>padding</code>控制着元素内容与<code>border</code>之间的空隙大小。
-在这里，我们可以看到蓝色盒子和红色盒子都在黄色盒子里面。可以发现，红色盒子比蓝色盒子有着更多的<code>padding</code>填充空间。
-当你增加蓝色盒子的<code>padding</code>值，文本内容与边框的距离会逐渐拉大。
+在这里，我们可以看到蓝色框和红色框都在黄色框里面。可以发现，红色框比蓝色框有着更多的<code>padding</code>填充空间。
+当你增加蓝色框的<code>padding</code>值，文本内容与边框的距离会逐渐拉大。
 </section>
 
 ## Instructions
 <section id='instructions'>
-蓝色的盒子<code>padding</code>的值要跟红色盒子的一样大小。
+蓝色的框<code>padding</code>的值要跟红色框的一样大小。
 </section>
 
 ## Tests
@@ -27,8 +27,8 @@ localTitle: 调整元素的内边距
 
 ```yml
 tests:
-  - text: '你的<code>blue-box</code> class 的<code>padding</code>值应为<code>20px</code>。'
-    testString: assert($(".blue-box").css("padding-top") === "20px", '你的<code>blue-box</code> class 的<code>padding</code>值应为<code>20px</code>。');
+  - text: '<code>blue-box</code> class 的<code>padding</code>值应为<code>20px</code>。'
+    testString: assert($(".blue-box").css("padding-top") === "20px");
 
 ```
 
