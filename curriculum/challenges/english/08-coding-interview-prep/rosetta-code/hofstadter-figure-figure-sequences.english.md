@@ -71,7 +71,6 @@ tests:
 <div id='js-seed'>
 
 ```js
-// noprotect
 function ffr(n) {
   return n;
 }
@@ -102,7 +101,6 @@ const ffsParamRes = [[10, 14], [50, 59], [100, 112], [1000, 1041]];
 
 
 ```js
-// noprotect
 const R = [null, 1];
 const S = [null, 2];
 

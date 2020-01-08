@@ -50,7 +50,6 @@ tests:
 <div id='js-seed'>
 
 ```js
-// noprotect
 function heronianTriangle(n) {
   
   return [];
@@ -83,7 +82,6 @@ const res = [
 
 
 ```js
-// noprotect
 function heronianTriangle(n) {
   const list = [];
   const result = [];

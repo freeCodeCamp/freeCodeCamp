@@ -63,7 +63,6 @@ function emirps(n) {
 
 
 ```js
-// noprotect
 function emirps(num, showEmirps)
 {
   const is_prime = function(n)

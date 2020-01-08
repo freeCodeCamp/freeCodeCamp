@@ -98,8 +98,6 @@ function include(ansArr, res) {
 
 
 ```js
-// noprotect
-
 function solve24(numStr) {
   const digitsArr = numStr.split('');
   const answers = [];
