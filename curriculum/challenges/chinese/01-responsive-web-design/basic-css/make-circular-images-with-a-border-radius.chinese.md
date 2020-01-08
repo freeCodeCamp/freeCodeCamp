@@ -4,7 +4,7 @@ title: Make Circular Images with a border-radius
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c2MvrcB'
 forumTopicId: 18229
-localTitle: 用 border-radius 制作圆形图片
+localeTitle: 用 border-radius 制作圆形图片
 ---
 
 ## Description
@@ -23,7 +23,7 @@ localTitle: 用 border-radius 制作圆形图片
 ```yml
 tests:
   - text: '你图片的边框圆角应设置为<code>50%</code>，让它看起来就像一个完整的圆。'
-    testString: assert(parseInt($("img").css("border-top-left-radius")) > 48, '你图片的边框圆角应设置为<code>50%</code>，让它看起来就像一个完整的圆。');
+    testString: assert(parseInt($("img").css("border-top-left-radius")) > 48);
   - text: '请确保百分值为<code>50%</code>。'
     testString: assert(code.match(/50%/g), '请确保百分值为<code>50%</code>。');
 

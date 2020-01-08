@@ -4,7 +4,7 @@ title: Change the Font Size of an Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cPp7VfD'
 forumTopicId: 1
-localTitle: 更改元素的字体大小
+localeTitle: 更改元素的字体大小
 ---
 
 ## Description
@@ -30,7 +30,7 @@ h1 {
 ```yml
 tests:
   - text: '在<code>style</code>样式声明区域里，<code>p</code>元素的<code>font-size</code>的值应为<code>16px</code>，浏览器和文本缩放应设置为 100％。'
-    testString: 'assert(code.match(/p\s*{\s*font-size\s*:\s*16\s*px\s*;\s*}/i), ''在<code>style</code>样式声明区域里，<code>p</code>元素的<code>font-size</code>的值应为<code>16px</code>，浏览器和文本缩放应设置为 100％。'');'
+    testString: 'assert(code.match(/p\s*{\s*font-size\s*:\s*16\s*px\s*;\s*}/i));'
 
 ```
 

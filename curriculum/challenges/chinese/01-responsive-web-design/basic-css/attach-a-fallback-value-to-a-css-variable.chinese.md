@@ -4,7 +4,7 @@ title: Attach a Fallback value to a CSS Variable
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c6bDNfp'
 forumTopicId: 301084
-localTitle: 给 CSS 变量附加回退值
+localeTitle: 给 CSS 变量附加回退值
 ---
 
 ## Description
@@ -16,7 +16,7 @@ localTitle: 给 CSS 变量附加回退值
 background: var(--penguin-skin, black);
 ```
 
-这样，当你的变量有问题的时候，它会设置你的背景颜色为黑色。
+这样，当变量有问题的时候，它会设置背景颜色为黑色。
 提示：这对调试会很有帮助。
 </section>
 
@@ -32,9 +32,9 @@ background: var(--penguin-skin, black);
 ```yml
 tests:
   - text: '<code>penguin-top</code> class 的<code>background</code>属性应设置一个<code>black</code>备用颜色。'
-    testString: 'assert(code.match(/.penguin-top\s*?{[\s\S]*background\s*?:\s*?var\(\s*?--pengiun-skin\s*?,\s*?black\s*?\)\s*?;[\s\S]*}[\s\S]*.penguin-bottom\s{/gi), ''<code>penguin-top</code> class 的<code>background</code>属性应设置一个<code>black</code>备用颜色。'');'
+    testString: 'assert(code.match(/.penguin-top\s*?{[\s\S]*background\s*?:\s*?var\(\s*?--pengiun-skin\s*?,\s*?black\s*?\)\s*?;[\s\S]*}[\s\S]*.penguin-bottom\s{/gi));'
   - text: '<code>penguin-bottom</code> class 的<code>background</code>属性应设置一个<code>black</code>备用颜色。'
-    testString: 'assert(code.match(/.penguin-bottom\s*?{[\s\S]*background\s*?:\s*?var\(\s*?--pengiun-skin\s*?,\s*?black\s*?\)\s*?;[\s\S]*}/gi), ''<code>penguin-bottom</code> class 的<code>background</code>属性应设置一个<code>black</code>备用颜色。'');'
+    testString: 'assert(code.match(/.penguin-bottom\s*?{[\s\S]*background\s*?:\s*?var\(\s*?--pengiun-skin\s*?,\s*?black\s*?\)\s*?;[\s\S]*}/gi));'
 
 ```
 

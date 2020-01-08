@@ -4,7 +4,7 @@ title: Use Clockwise Notation to Specify the Padding of an Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cB7mBS9'
 forumTopicId: 18346
-localTitle: 使用顺时针方向指定元素的内边距
+localeTitle: 使用顺时针方向指定元素的内边距
 ---
 
 ## Description
@@ -25,15 +25,15 @@ localTitle: 使用顺时针方向指定元素的内边距
 ```yml
 tests:
   - text: '<code>blue-box</code> class 的上内边距应为<code>40px</code>。'
-    testString: assert($(".blue-box").css("padding-top") === "40px", '<code>blue-box</code> class 的上内边距应为<code>40px</code>。');
+    testString: assert($(".blue-box").css("padding-top") === "40px");
   - text: '<code>blue-box</code> class 的右内边距应为<code>20px</code>。'
-    testString: assert($(".blue-box").css("padding-right") === "20px", '<code>blue-box</code> class 的右内边距应为<code>40px</code>。');
+    testString: assert($(".blue-box").css("padding-right") === "20px");
   - text: '<code>blue-box</code> class 的下内边距应为<code>20px</code>。'
-    testString: assert($(".blue-box").css("padding-bottom") === "20px", '<code>blue-box</code> class 的下内边距应为<code>20px</code>。');
+    testString: assert($(".blue-box").css("padding-bottom") === "20px");
   - text: '<code>blue-box</code> class 的左内边距应为<code>40px</code>。'
-    testString: assert($(".blue-box").css("padding-left") === "40px", '<code>blue-box</code> class 的左内边距应为<code>40px</code>。');
+    testString: assert($(".blue-box").css("padding-left") === "40px");
   - text: '你应该按照顺时针排序，汇总声明的方式来设置<code>blue-box</code>的<code>padding</code>值。'
-    testString: assert(!/padding-top|padding-right|padding-bottom|padding-left/.test(code), '你应该按照顺时针排序，汇总声明的方式来设置<code>blue-box</code>的<code>padding</code>值。');
+    testString: assert(!/padding-top|padding-right|padding-bottom|padding-left/.test(code));
 
 ```
 

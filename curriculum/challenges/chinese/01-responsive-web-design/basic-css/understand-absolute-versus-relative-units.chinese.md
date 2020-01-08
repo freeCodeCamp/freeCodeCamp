@@ -4,7 +4,7 @@ title: Understand Absolute versus Relative Units
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cN66JSL'
 forumTopicId: 301089
-localTitle: 理解绝对单位与相对单位
+localeTitle: 理解绝对单位与相对单位
 ---
 
 ## Description
@@ -26,9 +26,9 @@ localTitle: 理解绝对单位与相对单位
 ```yml
 tests:
   - text: '<code>red-box</code> class 应该含有<code>padding</code>属性。'
-    testString: assert($('.red-box').css('padding-top') != '0px' && $('.red-box').css('padding-right') != '0px' && $('.red-box').css('padding-bottom') != '0px' && $('.red-box').css('padding-left') != '0px', '<code>red-box</code> class 应该含有<code>padding</code>属性。');
+    testString: assert($('.red-box').css('padding-top') != '0px' && $('.red-box').css('padding-right') != '0px' && $('.red-box').css('padding-bottom') != '0px' && $('.red-box').css('padding-left') != '0px');
   - text: '<code>red-box</code> class 的<code>padding</code>值应为 1.5em。'
-    testString: 'assert(code.match(/\.red-box\s*?{\s*?.*?\s*?.*?\s*?padding:\s*?1\.5em/gi), ''<code>red-box</code> class 的<code>padding</code>值应为 1.5em。'');'
+    testString: 'assert(code.match(/\.red-box\s*?{\s*?.*?\s*?.*?\s*?padding:\s*?1\.5em/gi));'
 
 ```
 

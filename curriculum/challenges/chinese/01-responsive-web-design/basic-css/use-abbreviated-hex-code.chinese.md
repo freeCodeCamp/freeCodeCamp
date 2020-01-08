@@ -4,7 +4,7 @@ title: Use Abbreviated Hex Code
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cRkpKAm'
 forumTopicId: 18338
-localTitle: 使用缩写的十六进制编码
+localeTitle: 使用缩写的十六进制编码
 ---
 
 ## Description
@@ -26,21 +26,21 @@ localTitle: 使用缩写的十六进制编码
 ```yml
 tests:
   - text: '文本内容为<code>I am red!</code>的<code>h1</code>元素的字体颜色应该为<code>red</code>。'
-    testString: assert($('.red-text').css('color') === 'rgb(255, 0, 0)', '文本内容为<code>I am red!</code>的<code>h1</code>元素的字体颜色应该为<code>red</code>。');
+    testString: assert($('.red-text').css('color') === 'rgb(255, 0, 0)');
   - text: '要使用缩写的<code>red</code>的<code>十六进制编码</code>，而不是<code>#FF0000</code>。'
-    testString: 'assert(code.match(/\.red-text\s*?{\s*?color:\s*?#F00\s*?;\s*?}/gi), ''要使用缩写的<code>red</code>的<code>十六进制编码</code>，而不是<code>#FF0000</code>。'');'
+    testString: 'assert(code.match(/\.red-text\s*?{\s*?color:\s*?#F00\s*?;\s*?}/gi));'
   - text: '文本内容为<code>I am green!</code>的<code>h1</code>元素的字体颜色应该为<code>green</code>。'
-    testString: assert($('.green-text').css('color') === 'rgb(0, 255, 0)', '文本内容为<code>I am green!</code>的<code>h1</code>元素的字体颜色应该为<code>green</code>。');
+    testString: assert($('.green-text').css('color') === 'rgb(0, 255, 0)');
   - text: '要使用缩写的<code>green</code>的<code>十六进制编码</code>，而不是<code>#00FF00</code>的十六进制编码。'
-    testString: 'assert(code.match(/\.green-text\s*?{\s*?color:\s*?#0F0\s*?;\s*?}/gi), ''要使用缩写的<code>green</code>的<code>十六进制编码</code>，而不是<code>#00FF00</code>。'');'
+    testString: 'assert(code.match(/\.green-text\s*?{\s*?color:\s*?#0F0\s*?;\s*?}/gi));'
   - text: '文本内容为<code>I am cyan!</code>的<code>h1</code>元素的字体颜色应该为<code>cyan</code>。'
-    testString: assert($('.cyan-text').css('color') === 'rgb(0, 255, 255)', '文本内容为<code>I am cyan!</code>的<code>h1</code>元素的字体颜色应该为<code>cyan</code>。');
+    testString: assert($('.cyan-text').css('color') === 'rgb(0, 255, 255)');
   - text: '要使用缩写的<code>cyan</code>的<code>十六进制编码</code>，而不是<code>#00FFFF</code>的十六进制编码。'
-    testString: 'assert(code.match(/\.cyan-text\s*?{\s*?color:\s*?#0FF\s*?;\s*?}/gi), ''要使用缩写的<code>cyan</code>的<code>十六进制编码</code>，而不是<code>#00FFFF</code>。'');'
+    testString: 'assert(code.match(/\.cyan-text\s*?{\s*?color:\s*?#0FF\s*?;\s*?}/gi));'
   - text: '文本内容为<code>I am fuchsia!</code>的<code>h1</code>元素的字体颜色应该为<code>fuchsia</code>。'
-    testString: assert($('.fuchsia-text').css('color') === 'rgb(255, 0, 255)', '文本内容为<code>I am fuchsia!</code>的<code>h1</code>元素的字体颜色应该为<code>fuchsia</code>。');
+    testString: assert($('.fuchsia-text').css('color') === 'rgb(255, 0, 255)');
   - text: '要使用缩写的<code>fuchsia</code>的<code>十六进制编码</code>，而不是<code>#FF00FF</code>的十六进制编码。'
-    testString: 'assert(code.match(/\.fuchsia-text\s*?{\s*?color:\s*?#F0F\s*?;\s*?}/gi), ''要使用缩写的<code>fuchsia</code>的<code>十六进制编码</code>，而不是<code>#FF00FF</code>。'');'
+    testString: 'assert(code.match(/\.fuchsia-text\s*?{\s*?color:\s*?#F0F\s*?;\s*?}/gi));'
 
 ```
 

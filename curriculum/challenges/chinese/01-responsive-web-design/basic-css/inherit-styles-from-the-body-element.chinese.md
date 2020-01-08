@@ -4,7 +4,7 @@ title: Inherit Styles from the Body Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c9bmdtR'
 forumTopicId: 18204
-localTitle: 从 Body 元素继承样式
+localeTitle: 从 Body 元素继承样式
 ---
 
 ## Description
@@ -26,19 +26,19 @@ localTitle: 从 Body 元素继承样式
 ```yml
 tests:
   - text: '创建一个<code>h1</code>元素。'
-    testString: assert(($("h1").length > 0), '创建一个<code>h1</code>元素。');
+    testString: assert(($("h1").length > 0));
   - text: '<code>h1</code>元素的文本内容应该为<code>Hello World</code>。'
-    testString: assert(($("h1").length > 0 && $("h1").text().match(/hello world/i)), '<code>h1</code>元素的文本内容应该为<code>Hello World</code>。');
-  - text: '确保你的<code>h1</code>元素具有结束标记。'
-    testString: assert(code.match(/<\/h1>/g) && code.match(/<h1/g) && code.match(/<\/h1>/g).length === code.match(/<h1/g).length, '确保你的<code>h1</code>元素具有结束标记。');
+    testString: assert(($("h1").length > 0 && $("h1").text().match(/hello world/i)));
+  - text: '确保<code>h1</code>元素具有结束标记。'
+    testString: assert(code.match(/<\/h1>/g) && code.match(/<h1/g) && code.match(/<\/h1>/g).length === code.match(/<h1/g).length, '确保<code>h1</code>元素具有结束标记。');
   - text: '<code>body</code>元素的<code>color</code>属性值应为<code>green</code>。'
-    testString: assert(($("body").css("color") === "rgb(0, 128, 0)"), '<code>body</code>元素的<code>color</code>属性值应为<code>green</code>。');
+    testString: assert(($("body").css("color") === "rgb(0, 128, 0)"));
   - text: '<code>body</code>元素的<code>font-family</code>属性值应为<code>monospace</code>。'
-    testString: assert(($("body").css("font-family").match(/monospace/i)), '<code>body</code>元素的<code>font-family</code>属性值应为<code>monospace</code>。');
+    testString: assert(($("body").css("font-family").match(/monospace/i)));
   - text: '<code>h1</code>元素应该继承<code>body</code>的<code>monospace</code>字体属性。'
-    testString: assert(($("h1").length > 0 && $("h1").css("font-family").match(/monospace/i)), '<code>h1</code>元素应该继承<code>body</code>的<code>monospace</code>字体属性。');
+    testString: assert(($("h1").length > 0 && $("h1").css("font-family").match(/monospace/i)));
   - text: '<code>h1</code>元素的字体颜色也应该继承<code>body</code>元素的绿色。'
-    testString: assert(($("h1").length > 0 && $("h1").css("color") === "rgb(0, 128, 0)"), '<code>h1</code>元素的字体颜色也应该继承<code>body</code>元素的绿色。');
+    testString: assert(($("h1").length > 0 && $("h1").css("color") === "rgb(0, 128, 0)"));
 
 ```
 

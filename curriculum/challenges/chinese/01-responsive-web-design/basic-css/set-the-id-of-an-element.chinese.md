@@ -4,7 +4,7 @@ title: Set the id of an Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cN6MEc2'
 forumTopicId: 18279
-localTitle: 设置元素的 id
+localeTitle: 设置元素的 id
 ---
 
 ## Description
@@ -26,8 +26,8 @@ localTitle: 设置元素的 id
 
 ```yml
 tests:
-  - text: '你的<code>form</code>元素的 id 应为<code>cat-photo-form</code>。'
-    testString: assert($("form").attr("id") === "cat-photo-form", '你的<code>form</code>元素的 id 应为<code>cat-photo-form</code>。');
+  - text: '<code>form</code>元素的 id 应为<code>cat-photo-form</code>。'
+    testString: assert($("form").attr("id") === "cat-photo-form");
 
 ```
 

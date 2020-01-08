@@ -4,7 +4,7 @@ title: Override Class Declarations with Inline Styles
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cGJDRha'
 forumTopicId: 18252
-localTitle: 内联样式的优先级高于 ID 选择器
+localeTitle: 内联样式的优先级高于 ID 选择器
 ---
 
 ## Description
@@ -17,7 +17,7 @@ localTitle: 内联样式的优先级高于 ID 选择器
 <section id='instructions'>
 使用行内样式尝试让<code>h1</code>的字体颜色变白。像下面这样使用：
 <code>&#60;h1 style="color: green"&#62;</code>
-你的<code>h1</code>元素需继续保留<code>blue-text</code>和<code>pink-text</code>class。
+<code>h1</code>元素需继续保留<code>blue-text</code>和<code>pink-text</code>class。
 </section>
 
 ## Tests
@@ -26,15 +26,15 @@ localTitle: 内联样式的优先级高于 ID 选择器
 ```yml
 tests:
   - text: '<code>h1</code>元素应该包含<code>pink-text</code> class。'
-    testString: assert($("h1").hasClass("pink-text"), '<code>h1</code>元素应该包含<code>pink-text</code> class。');
+    testString: assert($("h1").hasClass("pink-text"));
   - text: '<code>h1</code>元素应该包含<code>blue-text</code> class。'
-    testString: assert($("h1").hasClass("blue-text"), '<code>h1</code>元素应该包含<code>blue-text</code> class。');
+    testString: assert($("h1").hasClass("blue-text"));
   - text: '<code>h1</code>元素应该包含一个名为<code>orange-text</code>的id。'
-    testString: assert($("h1").attr("id") === "orange-text", '<code>h1</code>元素应该包含一个名为<code>orange-text</code>的id。');
+    testString: assert($("h1").attr("id") === "orange-text");
   - text: '<code>h1</code>元素应该含有行内样式。'
-    testString: assert(document.querySelector('h1[style]'), '<code>h1</code>元素应该含有行内样式。');
+    testString: assert(document.querySelector('h1[style]'));
   - text: '<code>h1</code>元素的字体颜色应该为白色。'
-    testString: assert($("h1").css("color") === "rgb(255, 255, 255)", '<code>h1</code>元素的字体颜色应该为白色。');
+    testString: assert($("h1").css("color") === "rgb(255, 255, 255)");
 
 ```
 
