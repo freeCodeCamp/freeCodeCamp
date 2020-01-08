@@ -17,8 +17,8 @@ The different values available for <code>align-items</code> include:
 
 ## Instructions
 <section id='instructions'>
-An example helps show this property in action. Add the CSS property <code>align-items</code> to the <code>#box-container</code> element, and give it a value of center.
-<strong>Bonus</strong><br>Try the other options for the <code>align-items</code> property in the code editor to see their differences. But note that a value of center is the only one that will pass this challenge.
+An example helps show this property in action. Add the CSS property <code>align-items</code> to the <code>#box-container</code> element, and give it a value of <code>center</code>.
+<strong>Bonus</strong><br>Try the other options for the <code>align-items</code> property in the code editor to see their differences. But note that a value of <code>center</code> is the only one that will pass this challenge.
 </section>
 
 ## Tests
@@ -26,7 +26,7 @@ An example helps show this property in action. Add the CSS property <code>align-
 
 ```yml
 tests:
-  - text: The <code>#box-container</code> element should have an <code>align-items</code> property set to a value of center.
+  - text: The <code>#box-container</code> element should have an <code>align-items</code> property set to a value of <code>center</code>.
     testString: assert($('#box-container').css('align-items') == 'center');
 
 ```

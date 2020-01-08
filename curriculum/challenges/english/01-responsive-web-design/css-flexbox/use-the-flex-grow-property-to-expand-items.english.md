@@ -9,12 +9,12 @@ forumTopicId: 301111
 ## Description
 <section id='description'>
 The opposite of <code>flex-shrink</code> is the <code>flex-grow</code> property. Recall that <code>flex-shrink</code> controls the size of the items when the container shrinks. The <code>flex-grow</code> property controls the size of items when the parent container expands.
-Using a similar example from the last challenge, if one item has a <code>flex-grow</code> value of 1 and the other has a <code>flex-grow</code> value of 3, the one with the value of 3 will grow three times as much as the other.
+Using a similar example from the last challenge, if one item has a <code>flex-grow</code> value of <code>1</code> and the other has a <code>flex-grow</code> value of <code>3</code>, the one with the value of <code>3</code> will grow three times as much as the other.
 </section>
 
 ## Instructions
 <section id='instructions'>
-Add the CSS property <code>flex-grow</code> to both <code>#box-1</code> and <code>#box-2</code>. Give <code>#box-1</code> a value of 1 and <code>#box-2</code> a value of 2.
+Add the CSS property <code>flex-grow</code> to both <code>#box-1</code> and <code>#box-2</code>. Give <code>#box-1</code> a value of <code>1</code> and <code>#box-2</code> a value of <code>2</code>.
 </section>
 
 ## Tests
@@ -22,9 +22,9 @@ Add the CSS property <code>flex-grow</code> to both <code>#box-1</code> and <cod
 
 ```yml
 tests:
-  - text: The <code>#box-1</code> element should have the <code>flex-grow</code> property set to a value of 1.
+  - text: The <code>#box-1</code> element should have the <code>flex-grow</code> property set to a value of <code>1</code>.
     testString: assert($('#box-1').css('flex-grow') == '1');
-  - text: The <code>#box-2</code> element should have the <code>flex-grow</code> property set to a value of 2.
+  - text: The <code>#box-2</code> element should have the <code>flex-grow</code> property set to a value of <code>2</code>.
     testString: assert($('#box-2').css('flex-grow') == '2');
 
 ```

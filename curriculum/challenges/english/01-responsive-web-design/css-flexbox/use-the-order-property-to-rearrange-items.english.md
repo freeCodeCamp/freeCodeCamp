@@ -13,7 +13,7 @@ The <code>order</code> property is used to tell CSS the order of how flex items 
 
 ## Instructions
 <section id='instructions'>
-Add the CSS property <code>order</code> to both <code>#box-1</code> and <code>#box-2</code>. Give <code>#box-1</code> a value of 2 and give <code>#box-2</code> a value of 1.
+Add the CSS property <code>order</code> to both <code>#box-1</code> and <code>#box-2</code>. Give <code>#box-1</code> a value of <code>2</code> and give <code>#box-2</code> a value of <code>1</code>.
 </section>
 
 ## Tests
@@ -21,9 +21,9 @@ Add the CSS property <code>order</code> to both <code>#box-1</code> and <code>#b
 
 ```yml
 tests:
-  - text: The <code>#box-1</code> element should have the <code>order</code> property set to a value of 2.
+  - text: The <code>#box-1</code> element should have the <code>order</code> property set to a value of <code>2</code>.
     testString: assert($('#box-1').css('order') == '2');
-  - text: The <code>#box-2</code> element should have the <code>order</code> property set to a value of 1.
+  - text: The <code>#box-2</code> element should have the <code>order</code> property set to a value of <code>1</code>.
     testString: assert($('#box-2').css('order') == '1');
 
 ```

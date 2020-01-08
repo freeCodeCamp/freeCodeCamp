@@ -16,7 +16,7 @@ CSS also has options for the direction of the wrap:
 
 ## Instructions
 <section id='instructions'>
-The current layout has too many boxes for one row. Add the CSS property <code>flex-wrap</code> to the <code>#box-container</code> element, and give it a value of wrap.
+The current layout has too many boxes for one row. Add the CSS property <code>flex-wrap</code> to the <code>#box-container</code> element, and give it a value of <code>wrap</code>.
 </section>
 
 ## Tests
@@ -24,7 +24,7 @@ The current layout has too many boxes for one row. Add the CSS property <code>fl
 
 ```yml
 tests:
-  - text: The <code>#box-container</code> element should have the <code>flex-wrap</code> property set to a value of wrap.
+  - text: The <code>#box-container</code> element should have the <code>flex-wrap</code> property set to a value of <code>wrap</code>.
     testString: assert($('#box-container').css('flex-wrap') == 'wrap');
 
 ```
