@@ -49,6 +49,7 @@ const lineGraph = d3.select('.dashboard')
 const yScale = d3.scaleLinear()
   .domain([0, 5000])
 
+
 </script>
 ```
 

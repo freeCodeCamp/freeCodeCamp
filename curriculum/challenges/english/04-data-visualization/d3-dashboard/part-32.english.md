@@ -62,7 +62,6 @@ lineGraph.append('g')
   .attr('transform', `translate(${svgMargin}, 0)`)
 
 
-
 </script>
 ```
 

@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Chain another `attr` function; use it to set the `height` as the `svgHeight` variable you created.
+Chain another `attr` function that sets the `height` as the `svgHeight` variable you created.
 </section>
 
 ## Instructions
@@ -43,6 +43,7 @@ const svgMargin = 60,
 const lineGraph = d3.select('.dashboard')
   .append('svg')
   .attr('width', svgWidth)
+
 
 </script>
 ```

@@ -9,7 +9,7 @@ isBeta: true
 <section id='description'>
 Your line graph needs some scales so it knows how to translate the data into visual distances.
 
-Create a new `const` named `yScale`, and set it equal to `d3.scaleLinear()`. This will create a linear scale for the vertical or "y" axis.
+Create a new `const` named `yScale`, and set it equal to `d3.scaleLinear()`. This will be a linear scale for the vertical or "y" axis of the line graph.
 </section>
 
 ## Instructions
@@ -45,6 +45,7 @@ const lineGraph = d3.select('.dashboard')
   .append('svg')
   .attr('width', svgWidth)
   .attr('height', svgHeight);
+
 
 </script>
 ```

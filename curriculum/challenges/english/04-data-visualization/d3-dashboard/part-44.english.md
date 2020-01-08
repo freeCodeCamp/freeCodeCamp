@@ -11,13 +11,12 @@ isBeta: true
 The line needs `x` and `y` values for each point of data. Chain `x` to the line and pass it a "`d` function". Here's how that will look:
 
 ```js
-const twitterLine = d3.line()
-  .x(d => d.year)
+.x(d => d.year)
 ```
 
 You will be passing your `data` array to this line function, where it will go through each item(`d`) and create an `x` value equal to the year(`d.year`).
 
-This is the first place you will see a "`d` function". These are common in D3 to set data and that is how I will refer to them throughout this project.
+This is the first place you will see a "`d` function". These are common in D3 and that is how I will refer to them throughout this project.
 </section>
 
 ## Instructions

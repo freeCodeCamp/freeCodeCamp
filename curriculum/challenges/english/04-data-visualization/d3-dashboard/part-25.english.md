@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-The "year" values of your data will be used for the x-scale. Chain the `domain` function to `xScale` and pass it an array with `2012` and `2020` as values since those are the years of the data.
+The "year" values of your data will be used for the x-scale. Chain the `domain` function to `xScale` and pass it an array with the first and last years of your data.
 </section>
 
 ## Instructions
@@ -50,6 +50,7 @@ const yScale = d3.scaleLinear()
   .range([svgHeight - svgMargin, svgMargin]);
 
 const xScale = d3.scaleLinear()
+
 
 </script>
 ```

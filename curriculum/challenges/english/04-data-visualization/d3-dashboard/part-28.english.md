@@ -55,6 +55,7 @@ const xScale = d3.scaleLinear()
 
 const yAxis = d3.axisLeft(yScale)
 
+
 </script>
 ```
 

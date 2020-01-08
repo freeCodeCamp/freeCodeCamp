@@ -58,6 +58,7 @@ const xScale = d3.scaleLinear()
 const yAxis = d3.axisLeft(yScale)
 
 
+
 const xAxis = d3.axisBottom(xScale)
 
 lineGraph.append('g')

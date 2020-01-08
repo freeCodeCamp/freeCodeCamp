@@ -10,7 +10,7 @@ isBeta: true
 
 The problem here is that the `svg` is only 700 wide, so setting the `x` values to the year will put them off the chart. You need to pass each year to the `xScale` and it will create `x` values based on your scale.
 
-In the "`d` function", return the `xScale` function and pass it the year you already added.
+In the "`d` function", return the `xScale` function and pass it the `d.year` that's already there.
 </section>
 
 ## Instructions

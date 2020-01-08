@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-On a new line, append a new `g` element to your `lineGraph` variable. `lineGraph.append('g')` will do that for you. This will add a `g` to your `svg` and be for displaying the y-axis; `g` stands for "group".
+On a new line, append a new `g` element to your `lineGraph` variable. `lineGraph.append('g')` will do that for you. This will add a `g` to your `svg` and be for displaying the y-axis. `g` is an SVG element that stands for "group".
 </section>
 
 ## Instructions
@@ -56,7 +56,6 @@ const xScale = d3.scaleLinear()
 const yAxis = d3.axisLeft(yScale)
 
 const xAxis = d3.axisBottom(xScale)
-
 
 
 </script>

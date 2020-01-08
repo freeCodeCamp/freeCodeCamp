@@ -60,6 +60,7 @@ const xAxis = d3.axisBottom(xScale)
   .tickFormat(d3.format(''))
 
 
+
 lineGraph.append('g')
   .call(yAxis)
   .attr('transform', `translate(${svgMargin}, 0)`)

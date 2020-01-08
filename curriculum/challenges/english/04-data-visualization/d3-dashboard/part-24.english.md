@@ -49,6 +49,7 @@ const yScale = d3.scaleLinear()
   .domain([0, 5000])
   .range([svgHeight - svgMargin, svgMargin]);
 
+
 </script>  
 ```
 

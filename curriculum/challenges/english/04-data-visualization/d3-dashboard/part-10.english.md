@@ -34,6 +34,8 @@ tests:
 <style>
 body {
   background-color: #ccc;
+
+  
 }
 
 .dashboard {

@@ -40,6 +40,8 @@ body {
 .dashboard {
   width: 980px;
   height: 500px;
+
+  
 }
 </style>
 

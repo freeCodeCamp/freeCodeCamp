@@ -62,7 +62,6 @@ lineGraph.append('g')
   .style('font', '10px verdana');
 
 
-
 </script>
 ```
 

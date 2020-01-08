@@ -51,7 +51,8 @@ const yScale = d3.scaleLinear()
 
 const xScale = d3.scaleLinear()
   .domain([2012, 2020])
-  
+
+
 </script>
 ```
 

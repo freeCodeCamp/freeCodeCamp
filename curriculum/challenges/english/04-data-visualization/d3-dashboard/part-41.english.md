@@ -59,6 +59,7 @@ const yAxis = d3.axisLeft(yScale)
 const xAxis = d3.axisBottom(xScale)
 
 
+
 lineGraph.append('g')
   .call(yAxis)
   .attr('transform', `translate(${svgMargin}, 0)`)

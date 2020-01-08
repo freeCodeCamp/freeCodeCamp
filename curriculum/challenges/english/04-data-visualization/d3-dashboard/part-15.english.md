@@ -7,8 +7,9 @@ isBeta: true
 
 ## Description
 <section id='description'>
+This file is the script you just added. It will contain the rest of your JavaScript code to create the dashboard.
 
-This file is the script you just added. Create three `const` variables at the top of this file; `svgMargin` with a value of `70`, `svgWidth` with a value of `700`, and `svgHeight` equal to `500`. You will be making a line graph which uses these variables as its dimensions.
+Create three `const` variables; `svgMargin` with a value of `70`, `svgWidth` with a value of `700`, and `svgHeight` equal to `500`. The line graph will use these variables as its dimensions.
 </section>
 
 ## Instructions
@@ -33,6 +34,7 @@ tests:
 
 ```html
 <script>
+
 
 
 </script>
