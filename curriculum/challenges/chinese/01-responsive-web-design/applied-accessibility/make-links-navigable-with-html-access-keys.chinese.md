@@ -9,8 +9,8 @@ localeTitle: 通过给元素添加 accesskey 属性来让用户可以在链接�
 
 ## Description
 <section id='description'>
-HTML 提供<code>accesskey</code>属性，用于指定激活标签或者使标签获得焦点的快捷键，这可以使键盘用户的导航更加有效。
-HTML5 允许在任何标签上使用这个属性。该属性对于交互类标签（如链接、按钮、表单控件等）十分有用。
+HTML 提供<code>accesskey</code>属性，用于指定激活标签或者使标签获得焦点的快捷键，这可以使键盘用户的导航更加便捷。
+HTML5 允许在任何标签上使用这个属性。该属性  （如链接、按钮、表单控件等）十分有用。
 举个例子：
 <code>&lt;button accesskey=&quot;b&quot;&gt;Important Button&lt;/button&gt;</code>
 </section>
@@ -64,7 +64,7 @@ tests:
     
     <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is he a cat person?...</p>
   </article>
-  <footer>&copy; 2020 Camper Cat</footer>
+  <footer>&copy; 2018 Camper Cat</footer>
 </body>
 ```
 

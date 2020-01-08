@@ -27,7 +27,7 @@ tests:
   - text: '你的代码中不应包含<code>div</code>标签。'
     testString: assert($('div').length == 0);
   - text: '你代码中的<code>footer</code>应该是闭合的。'
-    testString: assert(code.match(/<footer>\s*&copy; 2020 Camper Cat\s*<\/footer>/g));
+    testString: assert(code.match(/<footer>\s*&copy; 2018 Camper Cat\s*<\/footer>/g));
 
 ```
 
@@ -69,7 +69,7 @@ tests:
   </main>
 
 
-  <div>&copy; 2020 Camper Cat</div>
+  <div>&copy; 2018 Camper Cat</div>
 
 
 </body>

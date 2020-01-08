@@ -9,10 +9,10 @@ localeTitle: 使用 main 元素包裹主题内容
 
 ## Description
 <section id='description'>
-HTML5 添加了诸如<code>main</code>、<code>header</code>、<code>footer</code>、<code>nav</code>、<code>article</code>、<code>section</code>等大量新标签，这些新标签为开发人员提供更多的选择和辅助特性。
+HTML5 添加了诸如<code>main</code>、<code>header</code>、<code>footer</code>、<code>nav</code>、<code>article</code>、<code>section</code>等大量新标签，开发人员提供更多的选择，也兼顾了无障碍特性。
 默认情况下，浏览器呈现这些新标签的方式与<code>div</code>相似。然而，合理地使用它们，可以使你的标签更加的语义化。辅助技术（如：屏幕阅读器）可以通过这些标签为用户提供更加准确的、易于理解的页面信息。
 <code>main</code>标签用于呈现网页的主体内容，且每个页面只能有一个。这意味着它只应包含与页面中心主题相关的信息，而不应包含如导航连接、网页横幅等可以在多个页面中重复出现的内容。
-<code>main</code>标签的语义化特性可以使辅助技术快速定位到页面的主体。有些页面中有 “跳转到主要内容” 的链接，使用<code>main</code>标签可以使辅助设备自动获得这个功能。
+<code>main</code>标签的语义化特性可以使辅助技术快速定位到页面的主体。 如果页面顶部有一个 “跳转到主要内容” 的链接，那么辅助设备会自动识别<code>main</code>标签，实现这个功能。
 </section>
 
 ## Instructions

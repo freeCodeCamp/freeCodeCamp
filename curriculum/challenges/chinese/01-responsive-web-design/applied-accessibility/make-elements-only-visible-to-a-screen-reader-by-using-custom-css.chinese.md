@@ -142,7 +142,7 @@ tests:
     <article><h3>Swords: the best tool to literally divide and conquer</h3></article>
     <article><h3>Breadth-first or depth-first in multi-weapon training?</h3></article>
   </section>
-  <footer>&copy; 2020 Camper Cat</footer>
+  <footer>&copy; 2018 Camper Cat</footer>
 </body>
 ```
 

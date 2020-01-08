@@ -16,7 +16,7 @@ localeTitle: 考虑色盲用户的需求仔细选择传达信息的颜色
 
 ## Instructions
 <section id='instructions'>
-Camper Cat 正在用不同样式测试一个重要按钮。在色轮上，黄色（<code>#FFFF33</code>）的<code>background-color</code>和绿色（<code>#33FF33</code>）的文本<code>color</code>是相邻的色调，一些色盲用户几乎无法区分它们，而它们相近的亮度会使对比度测试失败。为了解决这两个问题，请将文本的<code>color</code>修改为深蓝色（<code>#003366</code>）。
+Camper Cat 正在测试一个重要按钮的不同样式。在色轮上，黄色（<code>#FFFF33</code>）的<code>background-color</code>和绿色（<code>#33FF33</code>）的文本<code>color</code>是相邻的色调，一些色盲用户几乎无法区分它们，而且这两个颜色的亮度相近，对比度太小。为了解决这两个问题，请将文本的<code>color</code>修改为深蓝色（<code>#003366</code>）。
 </section>
 
 ## Tests

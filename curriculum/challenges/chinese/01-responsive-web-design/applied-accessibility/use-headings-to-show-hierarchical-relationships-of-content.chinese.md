@@ -19,7 +19,7 @@ localeTitle: 使用标题显示内容的层次关系
 
 ## Instructions
 <section id='instructions'>
-Camper Cat 希望他的网站有一个介绍如何成为忍者页面。请帮助他修改标题标签，使它们语义化且顺序正确。你需要将所有的<code>h5</code>标题标签调整为恰当的级别，使它们是<code>h2</code>标题标签的子级。
+Camper Cat 希望他的网站有一个介绍如何成为忍者的页面。请帮助他修改标题标签，使它们语义化且顺序正确。你需要将所有的<code>h5</code>标题标签调整为恰当的级别（即<code>h3</code>标题标签），使它们是<code>h2</code>标题标签的子级。
 </section>
 
 ## Tests

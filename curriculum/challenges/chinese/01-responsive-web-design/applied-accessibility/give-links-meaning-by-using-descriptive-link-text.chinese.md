@@ -9,13 +9,13 @@ localeTitle: 使用描述性链接文本赋予链接含义
 
 ## Description
 <section id='description'>
-屏幕阅读器用户可以选择其设备读取的内容的类型，这包括跳转到（或跳过）标志标签，以便跳转到主要内容，或者从标题中获取页面摘要，还可以选择只听取页面中的有效链接。
-屏幕阅读器通过阅读链接文本或者锚点标签（<code>a</code>）之间的内容来完成这个操作。拥有 "click here" 或者 "read more" 列表并没有什么用处。相反地，应该在<code>a</code>标签中使用简洁的描述性语言来为用户提供更多的信息。
+屏幕阅读器用户可以选择其设备读取的内容的类型，这包括跳转到（或跳过）标志标签，跳转到主要内容，或者从标题中获取页面摘要，还可以选择只听取页面中的有效链接。
+屏幕阅读器通过阅读链接文本或者锚点标签（<code>a</code>）之间的内容来完成这个操作。使用 "click here" 或者 "read more" 作为链接文本并没有多少帮助。相反地，应该在<code>a</code>标签中使用简洁的描述性语言来为用户提供更多的信息。
 </section>
 
 ## Instructions
 <section id='instructions'>
-Camper Cat 在链接中使用的文本在脱离上下文的情况下，描述性不是很好。请修改锚点标签（<code>a</code>），使其包含的文本从 "click here" 变为 "information about batteries"。
+Camper Cat 在链接中使用的文本在脱离上下文的情况下，描述性不是很好。请修改锚点标签（<code>a</code>），将其包含的文本从 "click here" 改为 "information about batteries"。
 </section>
 
 ## Tests
@@ -25,8 +25,8 @@ Camper Cat 在链接中使用的文本在脱离上下文的情况下，描述性
 tests:
   - text: '请修改<code>a</code>标签，将其包含的文本从 "click here" 改为 "information about batteries"。'
     testString: assert($('a').text().match(/^(information about batteries)$/g));
-  - text: '确保<code>a</code>标签是闭合的。'
-    testString: assert(code.match(/<\/a>/g) && code.match(/<\/a>/g).length === code.match(/<a href=(''|"")>/g).length);
+  - text: '<code>a</code>元素应该有一个<code>href</code>属性，且值为空字符串'
+    testString: assert($('a').attr('href') === '');
   - text: '<code>a</code> 元素应该有一个结束标记'
     testString: assert(code.match(/<\/a>/g) && code.match(/<\/a>/g).length === code.match(/<a href=(''|"")>/g).length);
 

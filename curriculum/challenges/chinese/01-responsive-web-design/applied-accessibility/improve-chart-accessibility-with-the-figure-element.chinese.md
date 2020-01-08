@@ -9,8 +9,8 @@ localeTitle: 使用 figure 元素提高图表的可访问性
 
 ## Description
 <section id='description'>
-HTML5 引入了<code>figure</code>标签以及与之相关的<code>figcaption</code>标签。它们一起用于展示可视化信息（如：图片、图表）及其标题。这样通过语义化对内容进行分组并配以用于解释<code>figure</code>的文字，可以极大的提升内容的可访问性。
-对于图表之类的可视化数据，标题可以为屏幕阅读器用户提供简要的说明。但是这里有一个难点，如何处理那些超出屏幕可视范围（使用 CSS ）的表格版本的图表数据，以使屏幕阅读器用户也可以获取信息。
+HTML5 引入了<code>figure</code>标签以及与之相关的<code>figcaption</code>标签。它们一起用于展示可视化信息（如：图片、图表）及其标题。这样通过语义化对内容进行分组并配以用于解释<code>figure</code>的文字，可以极大地提升内容的可访问性。
+对于图表之类的可视化数据，标题可以为屏幕阅读器用户提供简要的说明。但是这里有一个难点，如何处理那些超出屏幕可视范围（使用 CSS）的表格版本的图表数据，以使屏幕阅读器用户也可以获取信息。
 举个例子——注意<code>figcaption</code>包含在<code>figure</code>标签中，并且可以与其他标签组合使用：
 
 ```html
@@ -97,7 +97,7 @@ tests:
       <article><h3>Breadth-first or depth-first in multi-weapon training?</h3></article>
     </section>
   </main>
-  <footer>&copy; 2020 Camper Cat</footer>
+  <footer>&copy; 2018 Camper Cat</footer>
 </body>
 ```
 

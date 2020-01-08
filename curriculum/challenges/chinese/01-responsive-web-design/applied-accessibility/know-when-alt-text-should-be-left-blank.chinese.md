@@ -12,7 +12,7 @@ localeTitle: 知道 Alt 文本何时应该留空
 在上一个挑战中，我们了解到<code>img</code>标签必须有一个<code>alt</code>属性。在图片已经有了文字说明，或者仅仅为了美化页面的情况下，<code>alt</code>属性似乎有些多余。
 即便如此，我们仍然需要为<code>img</code>标签添加<code>alt</code>属性，这时可以把它设为空，例如：
 <code>&lt;img src=&quot;visualDecoration.jpeg&quot; alt=&quot;&quot;&gt;</code>
-对于背景图片，它们通常起装饰作用，而且含有 CSS 类，所以背景图片不会被屏幕阅读器处理。
+背景图片通常起装饰作用，而且含有 CSS 类，所以屏幕阅读器无法读取。
 <strong>注意：</strong><br>对于有标题的图片，我们依然需要添加<code>alt</code>属性，因为这样有助于搜索引擎记录图片内容。
 </section>
 

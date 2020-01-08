@@ -10,7 +10,7 @@ localeTitle: 使用 nav 元素使屏幕阅读器更容易导航
 ## Description
 <section id='description'>
 <code>nav</code>也是一个具有语义化特性的 HTML5 标签，用于呈现页面中的主导航链接。它可以使屏幕阅读器快速识别页面中的导航信息。
-对于页面底部辅助性质的站点链接，不需要使用<code>nav</code>，用<code>footer</code>（在下个挑战中介绍）会更好。
+对于在多个页面底部出现的站点链接，不需要使用<code>nav</code>，用<code>footer</code>（在下个挑战中介绍）会更好。
 </section>
 
 ## Instructions
