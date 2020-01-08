@@ -4,7 +4,7 @@ title: Specify How Fonts Should Degrade
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cpVKBfQ'
 forumTopicId: 18304
-localTitle: 字体如何优雅降级
+localeTitle: 字体如何优雅降级
 ---
 
 ## Description
@@ -25,8 +25,8 @@ p {
 ## Instructions
 <section id='instructions'>
 首先，添加<code>monospace</code>字体到<code>h2</code>元素里，它现在拥有着<code>Lobster</code>和<code>monospace</code>两种字体。
-在上一个挑战里，你已经通过<code>link</code>标签引入谷歌<code>Lobster</code>字体。现在让我们注释掉谷歌<code>Lobster</code>字体的引入（使用我们之前学过的<code>HTML</code>注释），使字体失效。你会发现你的<code>h2</code>元素降级到了<code>monospace</code>字体。
-<strong>注意：</strong><br>如果你的电脑已经安装了<code>Lobster</code>字体，你将看不到这个降级过程，因为你的浏览器会找到该字体。
+在上一个挑战里，你已经通过<code>link</code>标签引入谷歌<code>Lobster</code>字体。现在让我们注释掉谷歌<code>Lobster</code>字体的引入（使用我们之前学过的<code>HTML</code>注释），使字体失效。你会发现<code>h2</code>元素降级到了<code>monospace</code>字体。
+<strong>注意：</strong><br>如果电脑已经安装了<code>Lobster</code>字体，你将看不到这个降级过程，因为浏览器会找到该字体。
 </section>
 
 ## Tests
@@ -35,13 +35,13 @@ p {
 ```yml
 tests:
   - text: '<code>h2</code>元素应该含有<code>Lobster</code>字体。'
-    testString: assert($("h2").css("font-family").match(/^"?lobster/i), '<code>h2</code>元素应该含有<code>Lobster</code>字体。');
+    testString: assert($("h2").css("font-family").match(/^"?lobster/i));
   - text: '当<code>Lobster</code>字体失效时，<code>h2</code>元素应该降级使用<code>monospace</code>字体。'
-    testString: 'assert(/\s*h2\s*\{\s*font-family\:\s*(\''|")?Lobster(\''|")?,\s*monospace\s*;\s*\}/gi.test(code), ''当<code>Lobster</code>字体失效时，<code>h2</code>元素应该降级使用<code>monospace</code>字体。'');'
+    testString: 'assert(/\s*h2\s*\{\s*font-family\:\s*(\''|")?Lobster(\''|")?,\s*monospace\s*;\s*\}/gi.test(code));'
   - text: '通过添加<code>&#60!--</code>，注释掉谷歌<code>Lobster</code>字体的引入。'
-    testString: assert(new RegExp("<!--[^fc]", "gi").test(code), '通过添加<code>&#60!--</code>，注释掉谷歌<code>Lobster</code>字体的引入。');
+    testString: assert(new RegExp("<!--[^fc]", "gi").test(code));
   - text: '确保注释要以<code>--&#62;</code>结束。'
-    testString: assert(new RegExp("[^fc]-->", "gi").test(code), '确保注释要以<code>--&#62;</code>结束。');
+    testString: assert(new RegExp("[^fc]-->", "gi").test(code));
 
 ```
 

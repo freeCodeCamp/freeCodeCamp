@@ -4,7 +4,7 @@ title: Use a CSS Class to Style an Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c2MvDtV'
 forumTopicId: 18337
-localTitle: 使用 class 选择器设置单个元素的样式
+localeTitle: 使用 class 选择器设置单个元素的样式
 ---
 
 ## Description
@@ -38,13 +38,13 @@ CSS 的<code>class</code>具有可重用性，可应用于各种 HTML 元素。
 ```yml
 tests:
   - text: '<code>h2</code>元素应该为红色。'
-    testString: assert($("h2").css("color") === "rgb(255, 0, 0)", '<code>h2</code>元素应该为红色。');
+    testString: assert($("h2").css("color") === "rgb(255, 0, 0)");
   - text: '<code>h2</code>元素应含有<code>red-text</code> class 选择器。'
-    testString: assert($("h2").hasClass("red-text"), '<code>h2</code>元素应含有<code>red-text</code> class 选择器。');
+    testString: assert($("h2").hasClass("red-text"));
   - text: '<code>style</code>样式声明区域里应该包含一个<code>red-text</code> class 选择器，并且它的颜色应为红色。'
-    testString: 'assert(code.match(/\.red-text\s*\{\s*color\s*:\s*red;\s*\}/g), ''<code>style</code>样式声明区域里应该包含一个<code>red-text</code> class 选择器，并且它的颜色应为红色。'');'
+    testString: 'assert(code.match(/\.red-text\s*\{\s*color\s*:\s*red;\s*\}/g));'
   - text: '不要在<code>h2</code>元素里使用行内样式：<code>style="color&#58; red"</code>。'
-    testString: assert($("h2").attr("style") === undefined, '不要在<code>h2</code>元素里使用行内样式：<code>style="color&#58; red"</code>。');
+    testString: assert($("h2").attr("style") === undefined);
 
 ```
 

@@ -4,7 +4,7 @@ title: Add Different Padding to Each Side of an Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cB7mwUw'
 forumTopicId: 16634
-localTitle: 给元素的每一侧添加不同的内边距
+localeTitle: 给元素的每一侧添加不同的内边距
 ---
 
 ## Description
@@ -15,7 +15,7 @@ CSS 允许你使用<code>padding-top</code>，<code>padding-right</code>， <cod
 
 ## Instructions
 <section id='instructions'>
-蓝色盒子的顶部和左侧的<code>padding</code>值设置为<code>40px</code>，底部和右侧设置为<code>20px</code>。
+蓝色框的顶部和左侧的<code>padding</code>值设置为<code>40px</code>，底部和右侧设置为<code>20px</code>。
 </section>
 
 ## Tests
@@ -23,14 +23,14 @@ CSS 允许你使用<code>padding-top</code>，<code>padding-right</code>， <cod
 
 ```yml
 tests:
-  - text: '你的<code>blue-box</code> class 的顶部<code>padding</code>（上内边距）值应为<code>40px</code>。'
-    testString: assert($(".blue-box").css("padding-top") === "40px", '你的<code>blue-box</code> class 的顶部<code>padding</code>（上内边距）值应为<code>40px</code>。');
-  - text: '你的<code>blue-box</code> class 的右侧<code>padding</code>（右内边距）值应为<code>20px</code>。'
-    testString: assert($(".blue-box").css("padding-right") === "20px", '你的<code>blue-box</code> class 的右侧<code>padding</code>（右内边距）值应为<code>20px</code>。');
-  - text: '你的<code>blue-box</code> class 的底部<code>padding</code>（下内边距）值应为<code>20px</code>。'
-    testString: assert($(".blue-box").css("padding-bottom") === "20px", '你的<code>blue-box</code> class 的底部<code>padding</code>（下内边距）值应为<code>20px</code>。');
-  - text: '你的<code>blue-box</code> class 的左侧<code>padding</code>（左内边距）值应为<code>40px</code>。'
-    testString: assert($(".blue-box").css("padding-left") === "40px", '你的<code>blue-box</code> class 的左侧<code>padding</code>（左内边距）值应为<code>40px</code>。');
+  - text: '<code>blue-box</code> class 的顶部<code>padding</code>（上内边距）值应为<code>40px</code>。'
+    testString: assert($(".blue-box").css("padding-top") === "40px");
+  - text: '<code>blue-box</code> class 的右侧<code>padding</code>（右内边距）值应为<code>20px</code>。'
+    testString: assert($(".blue-box").css("padding-right") === "20px");
+  - text: '<code>blue-box</code> class 的底部<code>padding</code>（下内边距）值应为<code>20px</code>。'
+    testString: assert($(".blue-box").css("padding-bottom") === "20px");
+  - text: '<code>blue-box</code> class 的左侧<code>padding</code>（左内边距）值应为<code>40px</code>。'
+    testString: assert($(".blue-box").css("padding-left") === "40px");
 
 ```
 

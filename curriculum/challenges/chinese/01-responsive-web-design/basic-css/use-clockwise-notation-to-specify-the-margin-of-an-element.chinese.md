@@ -4,7 +4,7 @@ title: Use Clockwise Notation to Specify the Margin of an Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cnpybAd'
 forumTopicId: 18345
-localTitle: 使用顺时针方向指定元素的外边距
+localeTitle: 使用顺时针方向指定元素的外边距
 ---
 
 ## Description
@@ -26,13 +26,13 @@ localTitle: 使用顺时针方向指定元素的外边距
 ```yml
 tests:
   - text: '<code>blue-box</code> class 的上外边距应为<code>40px</code>。'
-    testString: assert($(".blue-box").css("margin-top") === "40px", '<code>blue-box</code> class 的上外边距应为<code>40px</code>。');
+    testString: assert($(".blue-box").css("margin-top") === "40px");
   - text: '<code>blue-box</code> class 的右外边距应为<code>20px</code>。'
     testString: assert($(".blue-box").css("margin-right") === "20px", '<code>blue-box</code> class 的右外边距应为<code>20px</code>。');
   - text: '<code>blue-box</code> class 的下外边距应为<code>20px</code>。'
     testString: assert($(".blue-box").css("margin-bottom") === "20px", '<code>blue-box</code> class 的下外边距应为<code>20px</code>。');
   - text: '<code>blue-box</code> class 的左外边距应为<code>40px</code>。'
-    testString: assert($(".blue-box").css("margin-left") === "40px", '<code>blue-box</code> class 的左外边距应为<code>40px</code>。');
+    testString: assert($(".blue-box").css("margin-left") === "40px");
 
 ```
 

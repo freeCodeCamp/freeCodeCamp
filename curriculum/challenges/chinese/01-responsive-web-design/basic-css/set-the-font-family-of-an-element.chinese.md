@@ -4,7 +4,7 @@ title: Set the Font Family of an Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c3bvpCg'
 forumTopicId: 18278
-localTitle: 设置元素的字体家族
+localeTitle: 设置元素的字体家族
 ---
 
 ## Description
@@ -31,7 +31,7 @@ h2 {
 ```yml
 tests:
   - text: '<code>p</code>元素应该使用<code>monospace</code>字体。'
-    testString: assert($("p").not(".red-text").css("font-family").match(/monospace/i), '<code>p</code>元素应该使用<code>monospace</code>字体。');
+    testString: assert($("p").not(".red-text").css("font-family").match(/monospace/i));
 
 ```
 

@@ -4,7 +4,7 @@ title: Override Styles in Subsequent CSS
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cGJDQug'
 forumTopicId: 18253
-localTitle: Class 选择器的优先级高于继承样式
+localeTitle: Class 选择器的优先级高于继承样式
 ---
 
 ## Description
@@ -29,13 +29,13 @@ HTML 同时应用多个 class 属性需以空格来间隔，例子如下:
 ```yml
 tests:
   - text: '<code>h1</code>元素应该包含<code>pink-text</code> class。'
-    testString: assert($("h1").hasClass("pink-text"), '<code>h1</code>元素应该包含<code>pink-text</code> class。');
+    testString: assert($("h1").hasClass("pink-text"));
   - text: '<code>h1</code>元素应该包含<code>blue-text</code> class。'
-    testString: assert($("h1").hasClass("blue-text"), '<code>h1</code>元素应该包含<code>blue-text</code> class。');
+    testString: assert($("h1").hasClass("blue-text"));
   - text: '<code>blue-text</code>和<code>pink-text</code>需同时应用于<code>h1</code>元素上。'
-    testString: assert($(".pink-text").hasClass("blue-text"), '<code>blue-text</code>和<code>pink-text</code>需同时应用于<code>h1</code>元素上。');
+    testString: assert($(".pink-text").hasClass("blue-text"));
   - text: '<code>h1</code>元素的颜色应为蓝色。'
-    testString: assert($("h1").css("color") === "rgb(0, 0, 255)", '<code>h1</code>元素的颜色应为蓝色。');
+    testString: assert($("h1").css("color") === "rgb(0, 0, 255)");
 
 ```
 

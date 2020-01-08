@@ -4,13 +4,13 @@ title: Add Borders Around Your Elements
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c2MvnHZ'
 forumTopicId: 16630
-localTitle: 在元素周围添加边框
+localeTitle: 在元素周围添加边框
 ---
 
 ## Description
 <section id='description'>
 CSS 边框具有<code>style</code>，<code>color</code>和<code>width</code>属性。
-假如，我们想要创建一个 5px 的红色实线边框包围一个 HTML 元素，我们可以这样做：
+假如我们想要创建一个 5px 的红色实线边框包围一个 HTML 元素，我们可以这样做：
 
 ```html
 <style>
@@ -26,8 +26,8 @@ CSS 边框具有<code>style</code>，<code>color</code>和<code>width</code>属�
 
 ## Instructions
 <section id='instructions'>
-创建一个<code>thick-green-border</code> CSS class，该 class 应在 HTML 元素周围添加一个 10px 的绿色实线边框，将它应用在你的猫咪照片上。
-记得，在一个元素上可以同时应用多个<code>class</code>，通过使用空格来分隔。例子如下：
+创建一个<code>thick-green-border</code> CSS class，该 class 应在 HTML 元素周围添加一个 10px 的绿色实线边框，将它应用在猫咪照片上。
+记得在一个元素上可以同时应用多个<code>class</code>，通过使用空格来分隔。例子如下：
 <code>&lt;img class="class1 class2"&gt;</code>
 </section>
 
@@ -36,16 +36,16 @@ CSS 边框具有<code>style</code>，<code>color</code>和<code>width</code>属�
 
 ```yml
 tests:
-  - text: '你的<code>img</code>元素应该含有<code>smaller-image</code> class。'
-    testString: assert($("img").hasClass("smaller-image"), '你的<code>img</code>元素应该含有<code>smaller-image</code> class。');
-  - text: '同时，你的<code>img</code>元素应该含有<code>thick-green-border</code> class。'
-    testString: assert($("img").hasClass("thick-green-border"), '同时，你的<code>img</code>元素应该含有<code>thick-green-border</code> class。');
-  - text: '设置你的图片边框为<code>10px</code>。'
-    testString: assert($("img").hasClass("thick-green-border") && parseInt($("img").css("border-top-width"), 10) >= 8 && parseInt($("img").css("border-top-width"), 10) <= 12, '设置你的图片边框为<code>10px</code>。');
-  - text: '设置你的图片边框为<code>solid</code>实线。'
-    testString: assert($("img").css("border-right-style") === "solid", '设置你的图片边框为<code>solid</code>实线。');
+  - text: '<code>img</code>元素应该含有<code>smaller-image</code> class。'
+    testString: assert($("img").hasClass("smaller-image"));
+  - text: '<code>img</code>元素应该含有<code>thick-green-border</code> class。'
+    testString: assert($("img").hasClass("thick-green-border"));
+  - text: '设置图片边框为<code>10px</code>。'
+    testString: assert($("img").hasClass("thick-green-border") && parseInt($("img").css("border-top-width"), 10) >= 8 && parseInt($("img").css("border-top-width"), 10) <= 12);
+  - text: '设置图片边框为<code>solid</code>实线。'
+    testString: assert($("img").css("border-right-style") === "solid");
   - text: '<code>img</code>元素的边框颜色应该为绿色。'
-    testString: assert($("img").css("border-left-color") === "rgb(0, 128, 0)", '<code>img</code>元素的边框颜色应该为绿色。');
+    testString: assert($("img").css("border-left-color") === "rgb(0, 128, 0)");
 
 ```
 
@@ -79,7 +79,7 @@ tests:
 
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
-  <p class="red-text">点击查看更多<a href="#">猫图</a>.</p>
+  <p class="red-text">点击查看更多<a href="#">猫图</a>。</p>
   
   <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="一只仰卧着的萌猫" class="smaller-image"></a>
   

@@ -4,17 +4,17 @@ title: Add Rounded Corners with border-radius
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cbZm2hg'
 forumTopicId: 16649
-localTitle: 用 border-radius 添加圆角边框
+localeTitle: 用 border-radius 添加圆角边框
 ---
 
 ## Description
 <section id='description'>
-你的猫咪图片边角很尖锐，我们可以使用<code>border-radius</code>属性来让它变得圆润。
+猫咪图片边角很尖锐，我们可以使用<code>border-radius</code>属性来让它变得圆润。
 </section>
 
 ## Instructions
 <section id='instructions'>
-<code>border-radius</code>可以用<code>px</code>像素单位来赋值。给你的猫咪图片设置 10px 的<code>border-radius</code>。
+<code>border-radius</code>可以用<code>px</code>像素单位来赋值。给猫咪图片设置 10px 的<code>border-radius</code>。
 注意：这个挑战有多个解决方法。例如，添加<code>border-radius</code>属性到<code>.thick-green-border</code>class 或<code>.smaller-image</code>class 里都是可行的。
 </section>
 
@@ -23,10 +23,10 @@ localTitle: 用 border-radius 添加圆角边框
 
 ```yml
 tests:
-  - text: '你的图片元素应具有 "thick-green-border" class 属性。'
-    testString: assert($("img").hasClass("thick-green-border"), '你的图片元素应具有 "thick-green-border" class 属性。');
-  - text: '你的图片应含有<code>10px</code>的边框圆角。'
-    testString: assert(parseInt($("img").css("border-top-left-radius")) > 8, '你的图片应含有<code>10px</code>的边框圆角。');
+  - text: '图片元素应具有 "thick-green-border" class 属性。'
+    testString: assert($("img").hasClass("thick-green-border"));
+  - text: '图片应含有<code>10px</code>的边框圆角。'
+    testString: assert(parseInt($("img").css("border-top-left-radius")) > 8);
 
 ```
 

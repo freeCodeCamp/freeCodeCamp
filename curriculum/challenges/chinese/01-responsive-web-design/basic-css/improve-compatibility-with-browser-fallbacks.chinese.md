@@ -4,7 +4,7 @@ title: Improve Compatibility with Browser Fallbacks
 challengeType: 0
 videoUrl: ''
 forumTopicId: 301087
-localTitle: 通过浏览器降级提高兼容性
+localeTitle: 通过浏览器降级提高兼容性
 ---
 
 ## Description

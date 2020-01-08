@@ -4,7 +4,7 @@ title: Create a custom CSS Variable
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cQd27Hr'
 forumTopicId: 301086
-localTitle: 创建一个自定义的 CSS 变量
+localeTitle: 创建一个自定义的 CSS 变量
 ---
 
 ## Description
@@ -30,7 +30,7 @@ localTitle: 创建一个自定义的 CSS 变量
 ```yml
 tests:
   - text: '<code>penguin</code> class 里应声明<code>--penguin-skin</code>变量，且赋值为<code>gray</code>。'
-    testString: 'assert(code.match(/.penguin\s*?{[\s\S]*--penguin-skin\s*?:\s*?gray\s*?;[\s\S]*}/gi), ''<code>penguin</code> class 里应声明<code>--penguin-skin</code>变量，且赋值为<code>gray</code>。'');'
+    testString: 'assert(code.match(/.penguin\s*?{[\s\S]*--penguin-skin\s*?:\s*?gray\s*?;[\s\S]*}/gi));'
 
 ```
 

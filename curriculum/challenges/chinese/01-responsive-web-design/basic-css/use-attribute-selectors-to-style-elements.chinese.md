@@ -4,7 +4,7 @@ title: Use Attribute Selectors to Style Elements
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cnpymfJ'
 forumTopicId: 301092
-localTitle: 使用属性选择器来设置元素的样式
+localeTitle: 使用属性选择器来设置元素的样式
 ---
 
 ## Description
@@ -32,11 +32,11 @@ localTitle: 使用属性选择器来设置元素的样式
 ```yml
 tests:
   - text: '使用<code>type</code>属性选择器来匹配复选框。'
-    testString: assert(code.match(/<style>[\s\S]*?\[type=("|')checkbox\1\]\s*?{[\s\S]*?}[\s\S]*?<\/style>/gi),'使用<code>type</code>属性选择器来匹配复选框。');
+    testString: assert(code.match(/<style>[\s\S]*?\[type=("|')checkbox\1\]\s*?{[\s\S]*?}[\s\S]*?<\/style>/gi));
   - text: '复选框的上外边距应为 10px。'
-    testString: assert((function() {var count=0; $("[type='checkbox']").each(function() { if($(this).css('marginTop') === '10px') {count++;}});return (count===3)}()),'复选框的上外边距应为 10px。');
+    testString: assert((function() {var count=0; $("[type='checkbox']").each(function() { if($(this).css('marginTop') === '10px') {count++;}});return (count===3)}()));
   - text: '复选框的下外边距应为 15px。'
-    testString: assert((function() {var count=0; $("[type='checkbox']").each(function() { if($(this).css('marginBottom') === '15px') {count++;}});return (count===3)}()),'复选框的下外边距应为 15px。');
+    testString: assert((function() {var count=0; $("[type='checkbox']").each(function() { if($(this).css('marginBottom') === '15px') {count++;}});return (count===3)}()));
 
 ```
 

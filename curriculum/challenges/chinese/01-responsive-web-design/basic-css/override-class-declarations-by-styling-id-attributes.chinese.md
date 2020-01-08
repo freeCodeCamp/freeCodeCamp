@@ -4,7 +4,7 @@ title: Override Class Declarations by Styling ID Attributes
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cRkpDhB'
 forumTopicId: 18251
-localTitle: ID 选择器优先级高于 Class 选择器
+localeTitle: ID 选择器优先级高于 Class 选择器
 ---
 
 ## Description
@@ -36,19 +36,19 @@ localTitle: ID 选择器优先级高于 Class 选择器
 ```yml
 tests:
   - text: '<code>h1</code>元素应该包含<code>pink-text</code> class。'
-    testString: assert($("h1").hasClass("pink-text"), '<code>h1</code>元素应该包含<code>pink-text</code> class。');
+    testString: assert($("h1").hasClass("pink-text"));
   - text: '<code>h1</code>元素应该包含<code>blue-text</code> class。'
-    testString: assert($("h1").hasClass("blue-text"), '<code>h1</code>元素应该包含<code>blue-text</code> class。');
+    testString: assert($("h1").hasClass("blue-text"));
   - text: '<code>h1</code>的 id 属性值为<code>orange-text</code>。'
-    testString: assert($("h1").attr("id") === "orange-text", '<code>h1</code>的 id 属性值为<code>orange-text</code>。');
+    testString: assert($("h1").attr("id") === "orange-text");
   - text: '应该只有一个<code>h1</code>元素。'
-    testString: assert(($("h1").length === 1), '应该只有一个<code>h1</code>元素。');
+    testString: assert(($("h1").length === 1));
   - text: '创建名为<code>orange-text</code>的 id 选择器。'
-    testString: assert(code.match(/#orange-text\s*{/gi), '创建名为<code>orange-text</code>的 id 选择器。');
+    testString: assert(code.match(/#orange-text\s*{/gi));
   - text: '不要在<code>h1</code>元素里面使用<code>style（行内样式）</code>。'
-    testString: assert(!code.match(/<h1.*style.*>/gi), '不要在<code>h1</code>元素里面使用<code>style（行内样式）</code>。');
+    testString: assert(!code.match(/<h1.*style.*>/gi));
   - text: '<code>h1</code>元素的字体颜色应为橘色。'
-    testString: assert($("h1").css("color") === "rgb(255, 165, 0)", '<code>h1</code>元素的字体颜色应为橘色。');
+    testString: assert($("h1").css("color") === "rgb(255, 165, 0)");
 
 ```
 

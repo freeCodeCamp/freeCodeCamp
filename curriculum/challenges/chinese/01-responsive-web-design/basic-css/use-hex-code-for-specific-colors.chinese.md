@@ -4,7 +4,7 @@ title: Use Hex Code for Specific Colors
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c8W9mHM'
 forumTopicId: 18350
-localTitle: 使用十六进制编码获得指定颜色
+localeTitle: 使用十六进制编码获得指定颜色
 ---
 
 ## Description
@@ -32,9 +32,9 @@ body {
 ```yml
 tests:
   - text: '<code>body</code>元素的背景颜色应该是黑色。'
-    testString: assert($("body").css("background-color") === "rgb(0, 0, 0)", '<code>body</code>元素的背景颜色应该是黑色。');
+    testString: assert($("body").css("background-color") === "rgb(0, 0, 0)";
   - text: '使用<code>十六进制编码</code>来替换<code>black</code>的写法。'
-    testString: 'assert(code.match(/body\s*{(([\s\S]*;\s*?)|\s*?)background.*\s*:\s*?#000(000)?((\s*})|(;[\s\S]*?}))/gi), ''使用<code>十六进制编码</code>来替换<code>black</code>的写法。'');'
+    testString: 'assert(code.match(/body\s*{(([\s\S]*;\s*?)|\s*?)background.*\s*:\s*?#000(000)?((\s*})|(;[\s\S]*?}))/gi));'
 
 ```
 

@@ -4,7 +4,7 @@ title: Use CSS Selectors to Style Elements
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cJKMBT2'
 forumTopicId: 18349
-localTitle: 使用元素选择器来设置元素的样式
+localeTitle: 使用元素选择器来设置元素的样式
 ---
 
 ## Description
@@ -43,13 +43,13 @@ localTitle: 使用元素选择器来设置元素的样式
 ```yml
 tests:
   - text: '删除<code>h2</code>元素的行内样式。'
-    testString: assert(!$("h2").attr("style"), '删除<code>h2</code>元素的行内样式。');
+    testString: assert(!$("h2").attr("style"));
   - text: '创建一个<code>style</code>样式声明区域。'
-    testString: assert($("style") && $("style").length >= 1, '创建一个<code>style</code>样式声明区域。');
+    testString: assert($("style") && $("style").length >= 1);
   - text: '<code>h2</code>元素颜色应为蓝色。'
-    testString: assert($("h2").css("color") === "rgb(0, 0, 255)", '<code>h2</code>元素颜色应为蓝色。');
+    testString: assert($("h2").css("color") === "rgb(0, 0, 255)");
   - text: '确保<code>h2</code>选择器的内容被花括号所围绕，并且样式规则以分号结束。'
-    testString: 'assert(code.match(/h2\s*\{\s*color\s*:.*;\s*\}/g), ''确保<code>h2</code>选择器的内容被花括号所围绕，并且样式规则以分号结束。'');'
+    testString: 'assert(code.match(/h2\s*\{\s*color\s*:.*;\s*\}/g));'
 
 ```
 

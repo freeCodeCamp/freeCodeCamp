@@ -4,7 +4,7 @@ title: Style Multiple Elements with a CSS Class
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cRkVbsQ'
 forumTopicId: 18311
-localTitle: 使用 class 选择器设置多个元素的样式
+localeTitle: 使用 class 选择器设置多个元素的样式
 ---
 
 ## Description
@@ -23,15 +23,15 @@ localTitle: 使用 class 选择器设置多个元素的样式
 ```yml
 tests:
   - text: '<code>h2</code>元素应该是红色的。'
-    testString: assert($("h2").css("color") === "rgb(255, 0, 0)", '<code>h2</code>元素应该是红色的。');
+    testString: assert($("h2").css("color") === "rgb(255, 0, 0)");
   - text: '<code>h2</code>元素应该含有<code>red-text</code> class 选择器。'
-    testString: assert($("h2").hasClass("red-text"), '<code>h2</code>元素应该含有<code>red-text</code> class 选择器。');
+    testString: assert($("h2").hasClass("red-text"));
   - text: '第一个<code>p</code>元素应该为红色。'
-    testString: 'assert($("p:eq(0)").css("color") === "rgb(255, 0, 0)", ''第一个<code>p</code>元素应该为红色。'');'
+    testString: 'assert($("p:eq(0)").css("color") === "rgb(255, 0, 0)");'
   - text: '第二和第三个<code>p</code>元素不应该为红色。'
-    testString: 'assert(!($("p:eq(1)").css("color") === "rgb(255, 0, 0)") && !($("p:eq(2)").css("color") === "rgb(255, 0, 0)"), ''第二和第三个<code>p</code>元素不应该为红色。'');'
+    testString: 'assert(!($("p:eq(1)").css("color") === "rgb(255, 0, 0)") && !($("p:eq(2)").css("color") === "rgb(255, 0, 0)"));'
   - text: '第一个<code>p</code>元素应该包含<code>red-text</code> class 选择器。'
-    testString: 'assert($("p:eq(0)").hasClass("red-text"), ''第一个<code>p</code>元素应该包含<code>red-text</code> class 选择器。'');'
+    testString: 'assert($("p:eq(0)").hasClass("red-text"));'
 
 ```
 
