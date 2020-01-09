@@ -67,7 +67,7 @@ export class DonatePage extends Component {
 
   render() {
     const { stripe } = this.state;
-    const { showLoading } = this.props;
+    const { showLoading, isDonating } = this.props;
 
     if (showLoading) {
       return <Loader fullScreen={true} />;
@@ -80,20 +80,32 @@ export class DonatePage extends Component {
           <Spacer />
           <Row>
             <Col sm={10} smOffset={1} xs={12}>
-              <h1 className='text-center'>Become a Supporter</h1>
+              <h1 className='text-center'>
+                {isDonating
+                  ? 'Thank You for Your Support'
+                  : 'Become a Supporter'}
+              </h1>
               <Spacer />
             </Col>
           </Row>
           <Row>
-            <Col md={6}>
-              <DonateForm
-                enableDonationSettingsPage={this.enableDonationSettingsPage}
-                stripe={stripe}
-              />
-            </Col>
-            <Col md={6}>
-              <DonateText />
-            </Col>
+            {isDonating ? (
+              <Col md={6} mdOffset={3}>
+                <DonateText />
+              </Col>
+            ) : (
+              <Fragment>
+                <Col md={6}>
+                  <DonateForm
+                    enableDonationSettingsPage={this.enableDonationSettingsPage}
+                    stripe={stripe}
+                  />
+                </Col>
+                <Col md={6}>
+                  <DonateText />
+                </Col>
+              </Fragment>
+            )}
           </Row>
           <Spacer />
         </Grid>
