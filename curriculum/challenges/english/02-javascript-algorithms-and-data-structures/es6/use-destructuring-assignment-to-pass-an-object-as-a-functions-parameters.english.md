@@ -68,7 +68,8 @@ const stats = {
 };
 
 // change code below this line
-const half = (stats) => (stats.max + stats.min) / 2.0; // use function argument destructuring
+// use function argument destructuring
+const half = (stats) => (stats.max + stats.min) / 2.0; 
 // change code above this line
 
 console.log(stats); // should be object
