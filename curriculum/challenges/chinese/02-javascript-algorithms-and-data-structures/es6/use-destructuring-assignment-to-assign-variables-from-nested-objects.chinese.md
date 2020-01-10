@@ -2,63 +2,102 @@
 id: 587d7b89367417b2b2512b4a
 title: Use Destructuring Assignment to Assign Variables from Nested Objects
 challengeType: 1
-videoUrl: ''
-localeTitle: 使用解构分配从嵌套对象分配变量
+forumTopicId: 301214
+localeTitle: 使用解构赋值从嵌套对象中分配变量
 ---
 
 ## Description
-<section id="description">我们可以类似地将<em>嵌套</em>对象解构为变量。请考虑以下代码： <blockquote> const a = { <br>开始：{x：5，y：6}， <br>结束：{x：6，y：-9} <br> }; <br> const {start：{x：startX，y：startY}} = a; <br> console.log（startX，startY）; // 5,6 </blockquote>在上面的示例中，变量<code>start</code>被赋予<code>a.start</code>的值，该值也是一个对象。 </section>
+<section id='description'>
+同样，我们可以将 <em>嵌套的对象</em>解构到变量中。
+
+请看以下代码：
+
+```js
+const user = {
+  johnDoe: { 
+    age: 34,
+    email: 'johnDoe@freeCodeCamp.com'
+  }
+};
+```
+
+这是解构对象的属性并赋值给相同名字的变量：
+
+```js
+const { johnDoe: { age, email }} = user;
+```
+
+这是将对象的属性值指定给一个不同的名字：
+
+```js
+const { johnDoe: { age: userAge, email: userEmail }} = user;
+```
+
+</section>
 
 ## Instructions
-<section id="instructions">用解构赋值来获得<code>max</code>的<code>forecast.tomorrow</code>并将其分配给<code>maxOfTomorrow</code> 。 </section>
+<section id='instructions'>
+将两个赋值语句替换成等价的解构赋值。<code>lowToday</code> 和 <code>highToday</code> 应该为 <code>LOCAL_FORECAST</code> 中 <code>today.low</code> 和 <code>today.high</code> 的值。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>maxOfTomorrow</code>等于<code>84.6</code>
-    testString: 'assert(getMaxOfTmrw(LOCAL_FORECAST) === 84.6, "<code>maxOfTomorrow</code> equals <code>84.6</code>");'
-  - text: 使用嵌套解构
-    testString: 'getUserInput => assert(getUserInput("index").match(/\{\s*tomorrow\s*:\s*\{\s*max\s*:\s*maxOfTomorrow\s*\}\s*\}\s*=\s*forecast/g),"nested destructuring was used");'
-
+  - text: 不能使用 ES5 的赋值语句。
+    testString: assert(!code.match(/lowToday = LOCAL_FORECAST\.today\.low/g) && !code.match(/highToday = LOCAL_FORECAST\.today.high/g))
+  - text: 应该使用解构创建 <code>lowToday</code> 变量。
+    testString: assert(code.match(/(var|const|let)\s*{\s*today\s*:\s*{\s*(low\s*:\s*lowToday[^}]*|[^,]*,\s*low\s*:\s*lowToday\s*)}\s*}\s*=\s*LOCAL_FORECAST(;|\s+|\/\/)/g));
+  - text: 应该使用解构创建 <code>highToday</code> 变量。
+    testString: assert(code.match(/(var|const|let)\s*{\s*today\s*:\s*{\s*(high\s*:\s*highToday[^}]*|[^,]*,\s*high\s*:\s*highToday\s*)}\s*}\s*=\s*LOCAL_FORECAST(;|\s+|\/\/)/g));
 ```
 
 </section>
 
 ## Challenge Seed
 <section id='challengeSeed'>
-
 <div id='js-seed'>
 
 ```js
 const LOCAL_FORECAST = {
-  today: { min: 72, max: 83 },
-  tomorrow: { min: 73.3, max: 84.6 }
+  yesterday: { low: 61, high: 75 },
+  today: { low: 64, high: 77 },
+  tomorrow: { low: 68, high: 80 }
 };
 
-function getMaxOfTmrw(forecast) {
-  "use strict";
-  // change code below this line
-  const maxOfTomorrow = undefined; // change this line
-  // change code above this line
-  return maxOfTomorrow;
-}
+// change code below this line
+  
+const lowToday = LOCAL_FORECAST.today.low;
+const highToday = LOCAL_FORECAST.today.high;
 
-console.log(getMaxOfTmrw(LOCAL_FORECAST)); // should be 84.6
+// change code above this line
 
+console.log(lowToday); // should be 64
+console.log(highToday); // should be 77
 ```
 
 </div>
-
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
 ```js
-// solution required
+const LOCAL_FORECAST = {
+  yesterday: { low: 61, high: 75 },
+  today: { low: 64, high: 77 },
+  tomorrow: { low: 68, high: 80 }
+};
+
+// change code below this line
+  
+const { today: { low: lowToday, high: highToday }} = LOCAL_FORECAST;
+
+// change code above this line
+
+console.log(highToday); // should be 77
+console.log(highTomorrow); // should be 80
 ```
+
 </section>

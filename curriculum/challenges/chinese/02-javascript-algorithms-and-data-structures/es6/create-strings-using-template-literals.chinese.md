@@ -2,28 +2,58 @@
 id: 587d7b8a367417b2b2512b4e
 title: Create Strings using Template Literals
 challengeType: 1
-videoUrl: ''
-localeTitle: 使用模板文字创建字符串
+forumTopicId: 301200
+localeTitle: 使用模板字面量创建字符串
 ---
 
 ## Description
-<section id="description"> ES6的一个新功能是<dfn>模板文字</dfn> 。这是一种特殊类型的字符串，可以更轻松地创建复杂字符串。模板文字允许您创建多行字符串并使用字符串插值功能来创建字符串。考虑以下代码： <blockquote> const person = { <br>name: "Zodiac Hasbro"， <br>age: 56<br> }; <br><br> //具有多行和字符串插值的模板文字<br> const greeting =`您好，我的名字是${person.name}！ <br>我是${person.age}岁。` <br><br>的console.log(greeting); //打印<br> //你好，我的名字是Zodiac Hasbro！ <br> //我今年56岁<br></blockquote>那里发生了很多事情。首先，例如使用反引号（ <code>`</code> ），而不是引号（ <code>&#39;</code>或<code>&quot;</code> ），换行字符串。其次，请注意，该字符串是多线，无论是在代码和输出。这节省了插入<code>\n</code>串内。上面使用的<code>${variable}</code>语法是占位符。基本上，您不必再使用<code>+</code>运算符连接。要将变量添加到字符串，只需将变量放在模板字符串中并用<code>${</code>包装它<code>}</code>同样，您可以在您的字符串表达式的其他文字，例如<code>${a + b}</code>这个新创建的字符串的方式为您提供了更大的灵活性，以创建强大的字符串。 </section>
+<section id='description'>
+模板字符串是 ES6 的另外一项新的功能。这是一种可以轻松构建复杂字符串的方法。
+模板字符串可以使用多行字符串和字符串插值功能。
+请看以下代码：
+
+```js
+const person = {
+  name: "Zodiac Hasbro",
+  age: 56
+};
+
+// Template literal with multi-line and string interpolation
+const greeting = `Hello, my name is ${person.name}!
+I am ${person.age} years old.`;
+
+console.log(greeting); // prints
+// Hello, my name is Zodiac Hasbro!
+// I am 56 years old.
+
+```
+
+这段代码有许多的不同：
+首先，上面的例子使用了反引号（<code>`</code>）而不是引号（<code>'</code> 或者 <code>"</code>）定义字符串。
+其次，注意字符串是多行的，不管是代码还是输出。这是因为在字符串内插入了 <code>\n</code>。
+上面使用的<code>${variable}</code>语法是一个占位符。这样一来，你将不再需要使用<code>+</code>运算符来连接字符串。当需要在字符串里增加变量的时候，你只需要在变量的外面括上<code>${</code>和<code>}</code>，并将其放在字符串里就可以了。
+这个新的方式使你可以更灵活的创建复杂的字符串。
+</section>
 
 ## Instructions
-<section id="instructions">使用带有反引号的模板文字语法来显示<code>result</code>对象的<code>failure</code>数组的每个条目。每个条目都应该包含在一个带有class属性<code>text-warning</code>的<code>li</code>元素中，并列在<code>resultDisplayArray</code> 。 </section>
+<section id='instructions'>
+使用模板字符串的反引号的语法来展示<code>result</code>对象的<code>failure</code>数组内的每个条目。每个条目应该括在带有<code>text-warning</code>类属性的<code>li</code>标签中，并赋值给<code>resultDisplayArray</code>。
+使用遍历方法（可以是任意形式的循环）输出指定值。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>resultDisplayArray</code>是一个包含<code>result failure</code>消息的数组。
-    testString: 'assert(typeof makeList(result.failure) === "object" && resultDisplayArray.length === 3, "<code>resultDisplayArray</code> is a list containing <code>result failure</code> messages.");'
-  - text: <code>resultDisplayArray</code>是所需的输出。
-    testString: 'assert(makeList(result.failure).every((v, i) => v === `<li class="text-warning">${result.failure[i]}</li>` || v === `<li class="text-warning">${result.failure[i]}</li>`), "<code>resultDisplayArray</code> is the desired output.");'
-  - text: 使用了模板字符串
-    testString: 'getUserInput => assert(getUserInput("index").match(/`.*`/g), "Template strings were not used");'
-
+  - text: <code>resultDisplayArray</code> 是一个包含了 <code>result failure</code> 内的消息的数组。
+    testString: assert(typeof makeList(result.failure) === 'object' && resultDisplayArray.length === 3);
+  - text: <code>resultDisplayArray</code> 要有正确的输出。
+    testString: assert(makeList(result.failure).every((v, i) => v === `<li class="text-warning">${result.failure[i]}</li>` || v === `<li class='text-warning'>${result.failure[i]}</li>`));
+  - text: 应使用模板字符串。
+    testString: getUserInput => assert(getUserInput('index').match(/(`.*\${.*}.*`)/));
+  - text: 应该遍历。
+    testString: getUserInput => assert(getUserInput('index').match(/for|map|reduce|forEach|while/));
 ```
 
 </section>
@@ -55,7 +85,6 @@ function makeList(arr) {
  *   `<li class="text-warning">linebreak</li>` ]
  **/
 const resultDisplayArray = makeList(result.failure);
-
 ```
 
 </div>
@@ -68,6 +97,25 @@ const resultDisplayArray = makeList(result.failure);
 <section id='solution'>
 
 ```js
-// solution required
+const result = {
+  success: ["max-length", "no-amd", "prefer-arrow-functions"],
+  failure: ["no-var", "var-on-top", "linebreak"],
+  skipped: ["id-blacklist", "no-dup-keys"]
+};
+function makeList(arr) {
+  "use strict";
+  
+  const resultDisplayArray = arr.map(val => `<li class="text-warning">${val}</li>`);
+  
+  return resultDisplayArray;
+}
+/**
+ * makeList(result.failure) should return:
+ * [ `<li class="text-warning">no-var</li>`,
+ *   `<li class="text-warning">var-on-top</li>`,
+ *   `<li class="text-warning">linebreak</li>` ]
+ **/
+const resultDisplayArray = makeList(result.failure);
 ```
+
 </section>
