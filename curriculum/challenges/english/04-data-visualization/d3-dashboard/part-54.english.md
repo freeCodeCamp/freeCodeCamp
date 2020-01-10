@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-For the new `path`, set the `d` attribute to `tumblrLine(data)` using the `attr` function.
+For the new path, set the `d` attribute to `tumblrLine(data)` using the `attr` function.
 </section>
 
 ## Instructions

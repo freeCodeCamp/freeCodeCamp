@@ -10,7 +10,7 @@ isBeta: true
 
 Set the `y` values for the `tumblrLine` by using a "`d` function" that returns your Tumblr followers for each data point.
 
-So you can see that the `x` values for each line will be the same, but the `y` values will use the data from the different platforms.
+You should see that the `x` values for each line will be the same, but the `y` values will use the data from the different platforms.
 </section>
 
 ## Instructions

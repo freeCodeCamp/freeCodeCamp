@@ -89,7 +89,6 @@ const tumblrLine = d3.line()
   .y(d => yScale(d.followers.tumblr));
 
 
-  
 
 </script>
 ```

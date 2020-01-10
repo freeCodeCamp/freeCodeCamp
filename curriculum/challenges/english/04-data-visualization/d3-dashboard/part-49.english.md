@@ -80,7 +80,7 @@ const twitterLine = d3.line()
 
 lineGraph.append('path')
   .attr('d', twitterLine(data))
-  
+
 
 
 </script>
