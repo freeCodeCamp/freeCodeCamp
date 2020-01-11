@@ -2,31 +2,70 @@
 id: 587d7b7e367417b2b2512b20
 title: Use an Array to Store a Collection of Data
 challengeType: 1
-videoUrl: ''
+forumTopicId: 301167
 localeTitle: 使用数组存储数据集合
 ---
 
 ## Description
-<section id="description">以下是阵列数据结构最简单实现的示例。这被称为<dfn>一维数组</dfn> ，意味着它只有一个级别，或者它没有嵌套在其中的任何其他数组。请注意，它包含<dfn>布尔值</dfn> ， <dfn>字符串</dfn>和<dfn>数字</dfn> ，以及其他有效的JavaScript数据类型： <blockquote> let simpleArray = [&#39;one&#39;，2，&#39;three&#39;，true，false，undefined，null]; <br>的console.log（simpleArray.length）; <br> //记录7 </blockquote>所有数组都有一个length属性，如上所示，可以使用语法<code>Array.length</code>轻松访问<code>Array.length</code> 。下面可以看到更复杂的数组实现。这称为<dfn>多维数组</dfn> ，或包含其他数组的数组。请注意，此数组还包含JavaScript <dfn>对象</dfn> ，我们将在下一节中详细介绍，但是现在，您需要知道的是，数组也能够存储复杂对象。 <blockquote>让complexArray = [ <br> [ <br> { <br>一：1， <br>二：2 <br> }， <br> { <br>三：3， <br>四：4 <br> } <br> ] <br> [ <br> { <br> a：“a”， <br> b：“b” <br> }， <br> { <br> c：“c”， <br> d：“d” <br> } <br> ] <br> ]。 </blockquote></section>
+<section id='description'>
+以下是<dfn>数组（Array）</dfn>数据结构的最简单的实现例子。这是一个<dfn>一维数组（one-dimensional array）</dfn>，它只有一层，或者说在它里面没有包含其它的数组结构。可以看到它里面包含了<dfn>布尔值（booleans）</dfn>、<dfn>字符串（strings）</dfn>、<dfn>数字（numbers）</dfn>以及一些其他的 JavaScript 语言中合法的数据类型：
+
+```js
+let simpleArray = ['one', 2, 'three', true, false, undefined, null];
+console.log(simpleArray.length);
+// logs 7
+```
+
+可以在上述例子中看到，所有数组都有一个<dfn>长度（length）</dfn>属性。可以简单地使用<code>Array.length</code>方法来访问它。
+下面是一个关于数组的更复杂的例子。这是一个<dfn>多维数组（multi-dimensional Array</dfn>），或者说是一个包含了其他数组的数组。可以注意到，在它的内部还包含了 JavaScript 中的<dfn>对象（objects）</dfn>结构。我们会在后面的小节中讨论该数据结构，但现在你只需要知道数组能够存储复杂的对象类型数据。
+
+```js
+let complexArray = [
+  [
+    {
+      one: 1,
+      two: 2
+    },
+    {
+      three: 3,
+      four: 4
+    }
+  ],
+  [
+    {
+      a: "a",
+      b: "b"
+    },
+    {
+      c: "c",
+      d: "d"
+    }
+  ]
+];
+```
+
+</section>
 
 ## Instructions
-<section id="instructions">我们定义了一个名为<code>yourArray</code>的变量。通过为<code>yourArray</code>变量指定长度至少为5个元素的数组来完成该语句。您的数组应至少包含一个<dfn>字符串</dfn> ，一个<dfn>数字</dfn>和一个<dfn>布尔值</dfn> 。 </section>
+<section id='instructions'>
+我们已经定义了一个名为<code>yourArray</code>的变量。请修改题目中的语句，将一个含有至少 5 个元素的数组赋值给<code>yourArray</code>变量。你的数组应该包含至少一个 <dfn>string</dfn> 类型的数据、一个 <dfn>number</dfn> 类型的数据和一个 <dfn>boolean</dfn> 类型的数据。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: yourArray是一个数组
-    testString: 'assert.strictEqual(Array.isArray(yourArray), true, "yourArray is an array");'
-  - text: <code>yourArray</code>至少有5个元素
-    testString: 'assert.isAtLeast(yourArray.length, 5, "<code>yourArray</code> is at least 5 elements long");'
-  - text: <code>yourArray</code>至少包含一个<code>boolean</code>
-    testString: 'assert(yourArray.filter( el => typeof el === "boolean").length >= 1, "<code>yourArray</code> contains at least one <code>boolean</code>");'
-  - text: <code>yourArray</code>至少包含一个<code>number</code>
-    testString: 'assert(yourArray.filter( el => typeof el === "number").length >= 1, "<code>yourArray</code> contains at least one <code>number</code>");'
-  - text: <code>yourArray</code>至少包含一个<code>string</code>
-    testString: 'assert(yourArray.filter( el => typeof el === "string").length >= 1, "<code>yourArray</code> contains at least one <code>string</code>");'
+  - text: yourArray 应该是一个数组。
+    testString: assert.strictEqual(Array.isArray(yourArray), true);
+  - text: <code>yourArray</code>至少要包含 5 个元素。
+    testString: assert.isAtLeast(yourArray.length, 5);
+  - text: <code>yourArray</code>应该包含至少一个<code>boolean</code>。
+    testString: assert(yourArray.filter( el => typeof el === 'boolean').length >= 1);
+  - text: <code>yourArray</code>应该包含至少一个<code>number</code>。
+    testString: assert(yourArray.filter( el => typeof el === 'number').length >= 1);
+  - text: <code>yourArray</code>应该包含至少一个<code>string</code>。
+    testString: assert(yourArray.filter( el => typeof el === 'string').length >= 1);
 
 ```
 
@@ -39,7 +78,6 @@ tests:
 
 ```js
 let yourArray; // change this line
-
 ```
 
 </div>
@@ -52,6 +90,7 @@ let yourArray; // change this line
 <section id='solution'>
 
 ```js
-// solution required
+let yourArray = ['a string', 100, true, ['one', 2], 'another string'];
 ```
+
 </section>

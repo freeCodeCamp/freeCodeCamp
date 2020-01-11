@@ -2,29 +2,50 @@
 id: 587d7b7c367417b2b2512b19
 title: Modify an Object Nested Within an Object
 challengeType: 1
-videoUrl: ''
+forumTopicId: 301164
 localeTitle: 修改嵌套在对象中的对象
 ---
 
 ## Description
-<section id="description">现在让我们来看一个稍微复杂的对象。对象属性可以嵌套到任意深度，它们的值可以是JavaScript支持的任何类型的数据，包括数组甚至其他对象。考虑以下： <blockquote>让nestedObject = { <br> id：28802695164， <br>日期：&#39;2016年12月31日&#39;， <br>数据：{ <br>总用户：99， <br>在线：80， <br> onlineStatus：{ <br>活跃：67， <br>离开：13 <br> } <br> } <br> }; </blockquote> <code>nestedObject</code>有三个唯一的键： <code>id</code> ，其值为数字， <code>date</code>为字符串的<code>data</code> ， <code>data</code> ，其值为另一个嵌套在其中的对象。虽然结构很快就会变得复杂，但我们仍然可以使用相同的符号来访问我们需要的信息。 </section>
+<section id='description'>
+现在我们来看一个稍微复杂一点的对象。对象中也可以嵌套任意层的对象。对象的属性值可以是 JavaScript 支持的任意类型，包括数组和其他对象。请看以下例子：
+
+```js
+let nestedObject = {
+  id: 28802695164,
+  date: 'December 31, 2016',
+  data: {
+    totalUsers: 99,
+    online: 80,
+    onlineStatus: {
+      active: 67,
+      away: 13
+    }
+  }
+};
+```
+
+<code>nestedObject</code>有 3 个唯一的键：值为一个数字的<code>id</code>、值为一个字符串的<code>date</code>和值为一个嵌套了其他对象的对象的<code>data</code>。虽然对象中的数据可能很复杂，我们仍能使用上一个挑战中讲的符号来访问我们需要的信息。
+</section>
 
 ## Instructions
-<section id="instructions">在这里，我们定义了一个对象<code>userActivity</code> ，其中包含嵌套在其中的另一个对象。您可以像修改上一个挑战中的属性一样修改此嵌套对象的属性。将<code>online</code>密钥的值设置为<code>45</code> 。 </section>
+<section id='instructions'>
+我们已经定义了一个<code>userActivity</code>对象，它包含了另一个对象。你可以用上一个挑战中那样的方式来修改被嵌套的对象的属性。请将<code>online</code>属性设为<code>45</code>。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>userActivity</code>具有<code>id</code> ， <code>date</code>和<code>data</code>属性
-    testString: 'assert("id" in userActivity && "date" in userActivity && "data" in userActivity, "<code>userActivity</code> has <code>id</code>, <code>date</code> and <code>data</code> properties");'
-  - text: <code>userActivity</code>具有设置为具有密钥<code>totalUsers</code>和<code>online</code>的对象的<code>data</code>密钥
-    testString: 'assert("totalUsers" in userActivity.data && "online" in userActivity.data, "<code>userActivity</code> has a <code>data</code> key set to an object with keys <code>totalUsers</code> and <code>online</code>");'
-  - text: 嵌套在<code>userActivity</code> <code>data</code>键中的<code>online</code>属性应设置为<code>45</code>
-    testString: 'assert(userActivity.data.online === 45, "The <code>online</code> property nested in the <code>data</code> key of <code>userActivity</code> should be set to <code>45</code>");'
-  - text: <code>online</code>属性使用点或括号表示法设置
-    testString: 'assert.strictEqual(code.search(/online: 45/), -1, "The <code>online</code> property is set using dot or bracket notation");'
+  - text: <code>userActivity</code>应该含有<code>id</code>、<code>date</code>和<code>data</code>属性。
+    testString: assert('id' in userActivity && 'date' in userActivity && 'data' in userActivity);
+  - text: <code>userActivity</code>应该有一个<code>data</code>属性，该属性要是一个含有<code>totalUsers</code>和<code>online</code>属性的对象。
+    testString: assert('totalUsers' in userActivity.data && 'online' in userActivity.data);
+  - text: <code>userActivity</code>的<code>data</code>属性值中的<code>online</code>属性应该被设为<code>45</code>。
+    testString: assert(userActivity.data.online === 45);
+  - text: 你应该用点符号或者方括号符号来设置<code>online</code>属性。
+    testString: 'assert.strictEqual(code.search(/online: 45/), -1);'
 
 ```
 
@@ -50,7 +71,6 @@ let userActivity = {
 // change code above this line
 
 console.log(userActivity);
-
 ```
 
 </div>
@@ -63,6 +83,16 @@ console.log(userActivity);
 <section id='solution'>
 
 ```js
-// solution required
+let userActivity = {
+  id: 23894201352,
+  date: 'January 1, 2017',
+  data: {
+    totalUsers: 51,
+    online: 42
+  }
+};
+
+userActivity.data.online = 45;
 ```
+
 </section>
