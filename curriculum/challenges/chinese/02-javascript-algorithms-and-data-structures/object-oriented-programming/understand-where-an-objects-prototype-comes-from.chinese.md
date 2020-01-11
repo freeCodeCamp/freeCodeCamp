@@ -2,23 +2,43 @@
 id: 587d7db0367417b2b2512b81
 title: Understand Where an Object’s Prototype Comes From
 challengeType: 1
-videoUrl: ''
-localeTitle: 了解对象原型的来源
+forumTopicId: 301330
+localeTitle: 了解对象的原型来自哪里
 ---
 
 ## Description
-<section id="description">就像人们从父母那里继承基因一样，一个对象直接从创建它的构造函数继承它的<code>prototype</code> 。例如， <code>Bird</code>构造函数在这里创建<code>duck</code>对象： <blockquote> function Bird（name）{ <br> this.name = name; <br> } <br><br>让鸭子=新鸟（“唐纳德”）; </blockquote> <code>duck</code>从<code>Bird</code>构造函数继承了它的<code>prototype</code> 。您可以使用<code>isPrototypeOf</code>方法显示此关系： <blockquote> Bird.prototype.isPrototypeOf（鸭）; <br> //返回true </blockquote></section>
+<section id='description'>
+就像人们从父母那里继承基因一样，对象也可直接从创建它的构造函数那里继承其<code>原型</code>。请看下面的例子：<code>Bird</code>构造函数创建了一个<code>duck</code>对象：
+
+```js
+function Bird(name) {
+  this.name = name;
+}
+
+let duck = new Bird("Donald");
+```
+
+<code>duck</code>从<code>Bird</code>构造函数那里继承了它的<code>原型</code>，你可以使用<code>isPrototypeOf</code>方法来验证他们之间的关系：
+
+```js
+Bird.prototype.isPrototypeOf(duck);
+// 返回 true
+```
+
+</section>
 
 ## Instructions
-<section id="instructions">使用<code>isPrototypeOf</code>检查<code>prototype</code>的<code>beagle</code> 。 </section>
+<section id='instructions'>
+使用<code>isPrototypeOf</code>方法验证<code>beagle</code>是否继承了<code>Dog</code>构造函数的<code>原型</code>。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 证明<code>Dog.prototype</code>是<code>beagle</code>的<code>prototype</code>
-    testString: 'assert(/Dog\.prototype\.isPrototypeOf\(beagle\)/.test(code), "Show that <code>Dog.prototype</code> is the <code>prototype</code> of <code>beagle</code>");'
+  - text: <code>Dog.prototype</code>应该是<code>beagle</code>的<code>原型</code>。
+    testString: assert(/Dog\.prototype\.isPrototypeOf\(beagle\)/.test(code));
 
 ```
 
@@ -38,6 +58,7 @@ let beagle = new Dog("Snoopy");
 
 // Add your code below this line
 
+
 ```
 
 </div>
@@ -49,7 +70,13 @@ let beagle = new Dog("Snoopy");
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+function Dog(name) {
+  this.name = name;
+}
+let beagle = new Dog("Snoopy");
+Dog.prototype.isPrototypeOf(beagle);
 ```
+
 </section>

@@ -2,25 +2,68 @@
 id: 587d7db1367417b2b2512b88
 title: Override Inherited Methods
 challengeType: 1
-videoUrl: ''
-localeTitle: ''
+forumTopicId: 301322
+localeTitle: 重写继承的方法
 ---
 
 ## Description
-<section id="description">在前面的课程中，您了解到一个对象可以通过克隆其<code>prototype</code>对象从另一个对象继承其行为（方法）： <blockquote> ChildObject.prototype = Object.create（ParentObject.prototype）; </blockquote>然后， <code>ChildObject</code>通过将它们链接到其<code>prototype</code> <code>ChildObject</code>获得自己的方法： <blockquote> ChildObject.prototype.methodName = function（）{...}; </blockquote>可以覆盖继承的方法。它以相同的方式完成 - 通过使用与要覆盖的方法名称相同的方法名称向<code>ChildObject.prototype</code>添加方法。以下是<code>Bird</code>重写从<code>Animal</code>继承的<code>eat()</code>方法的示例： <blockquote> function Animal（）{} <br> Animal.prototype.eat = function（）{ <br>返回“nom nom nom”; <br> }; <br>函数Bird（）{} <br><br> //继承Animal的所有方法<br> Bird.prototype = Object.create（Animal.prototype）; <br><br> // Bird.eat（）重写Animal.eat（） <br> Bird.prototype.eat = function（）{ <br>返回“peck peck peck”; <br> }; </blockquote>如果你有一个实例，请<code>let duck = new Bird();</code>你调用<code>duck.eat()</code> ，这就是JavaScript在<code>duck&#39;s</code> <code>prototype</code>链上寻找方法的方法： <code>duck.eat()</code> =&gt;这里定义了eat（）吗？ No. 2. Bird =&gt;这里定义了eat（）吗？ =&gt;是的。执行它并停止搜索。 3. Animal =&gt; eat（）也被定义，但JavaScript在达到此级别之前停止搜索。 4. Object =&gt; JavaScript在达到此级别之前停止搜索。 </section>
+<section id='description'>
+
+在上一个挑战中，我们学习了一个对象可以通过复制另一个对象的<code>原型</code>来继承其属性和行为（或方法）：
+
+```js
+ChildObject.prototype = Object.create(ParentObject.prototype);
+```
+
+然后，<code>ChildObject</code>将自己的方法链接到它的<code>原型</code>中：
+
+```js
+ChildObject.prototype.methodName = function() {...};
+```
+
+我们还可以重写继承的方法。以同样的方式——通过使用一个与需要重写的方法相同的方法名，向<code>ChildObject.prototype</code>中添加方法。
+请看下面的举例：<code>Bird</code>重写了从<code>Animal</code>继承来的<code>eat()</code>方法：
+
+```js
+function Animal() { }
+Animal.prototype.eat = function() {
+  return "nom nom nom";
+};
+function Bird() { }
+
+// 继承了 Animal 的所有方法
+Bird.prototype = Object.create(Animal.prototype);
+
+// Bird.eat() 重写了 Animal.eat() 方法
+Bird.prototype.eat = function() {
+  return "peck peck peck";
+};
+```
+
+如果你有一个实例：<code>let duck = new Bird();</code>，然后你调用了<code>duck.eat()</code>，以下就是 JavaScript 在<code>duck</code>的<code>原型</code>链上寻找方法的过程：
+
+1. duck => 这里定义了 eat() 方法吗？没有。
+2. Bird => 这里定义了 eat() 方法吗？=> 是的。执行它并停止往上搜索。
+3. Animal => 这里也定义了 eat() 方法，但是 JavaScript 在到达这层原型链之前已停止了搜索。
+4. Object => JavaScript 在到达这层原型链之前也已经停止了搜索。
+
+</section>
 
 ## Instructions
-<section id="instructions">覆盖<code>Penguin</code>的<code>fly()</code>方法，使其返回“唉，这是一只不会飞的鸟”。 </section>
+<section id='instructions'>
+
+重写<code>Penguin</code>的<code>fly()</code>方法，使其返回 "Alas, this is a flightless bird."
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>penguin.fly()</code>应该返回字符串“唉，这是一只不会飞的鸟”。
-    testString: 'assert(penguin.fly() === "Alas, this is a flightless bird.", "<code>penguin.fly()</code> should return the string "Alas, this is a flightless bird."");'
-  - text: <code>bird.fly()</code>方法应该返回“我正在飞行！”
-    testString: 'assert((new Bird()).fly() === "I am flying!", "The <code>bird.fly()</code> method should return "I am flying!"");'
+  - text: "<code>penguin.fly()</code>方法应该返回字符串：'Alas, this is a flightless bird.'"
+    testString: assert(penguin.fly() === "Alas, this is a flightless bird.");
+  - text: "The <code>bird.fly()</code>方法应该返回 'I am flying!'"
+    testString: assert((new Bird()).fly() === "I am flying!");
 
 ```
 
@@ -48,7 +91,6 @@ Penguin.prototype.constructor = Penguin;
 
 let penguin = new Penguin();
 console.log(penguin.fly());
-
 ```
 
 </div>
@@ -60,7 +102,18 @@ console.log(penguin.fly());
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+function Bird() { }
+
+Bird.prototype.fly = function() { return "I am flying!"; };
+
+function Penguin() { }
+Penguin.prototype = Object.create(Bird.prototype);
+Penguin.prototype.constructor = Penguin;
+Penguin.prototype.fly = () => 'Alas, this is a flightless bird.';
+let penguin = new Penguin();
+console.log(penguin.fly());
 ```
+
 </section>
