@@ -14,7 +14,7 @@ const Suggestion = ({ hit, handleMouseEnter, handleMouseLeave }) => {
       }
       href={
         dropdownFooter
-          ? `https://freecodecamp.org/news/search/?query=${encodeURIComponent(
+          ? `https://www.freecodecamp.org/news/search/?query=${encodeURIComponent(
               hit.query
             )}`
           : hit.url

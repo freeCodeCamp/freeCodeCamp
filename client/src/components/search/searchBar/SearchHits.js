@@ -17,7 +17,7 @@ const CustomHits = connectHits(
       {
         objectID: `default-hit-${searchQuery}`,
         query: searchQuery,
-        url: `https://freecodecamp.org/news/search/?query=${encodeURIComponent(
+        url: `https://www.freecodecamp.org/news/search/?query=${encodeURIComponent(
           searchQuery
         )}`,
         title: `See all results for ${searchQuery}`,
