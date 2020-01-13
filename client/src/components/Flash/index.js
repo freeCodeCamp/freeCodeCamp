@@ -11,7 +11,7 @@ function Flash({ flashMessage, onClose }) {
     <TransitionGroup>
       <CSSTransition classNames='flash-message' key={id} timeout={500}>
         <Alert bsStyle={type} className='flash-message' onDismiss={onClose}>
-          <div dangerouslySetInnerHTML={{ __html: message }} />
+          {message}
         </Alert>
       </CSSTransition>
     </TransitionGroup>
