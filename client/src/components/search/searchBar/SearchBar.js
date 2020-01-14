@@ -115,7 +115,7 @@ export class SearchBar extends Component {
     // when non-empty search input submitted
     return query
       ? window.location.assign(
-          `https://freecodecamp.org/news/search/?query=${encodeURIComponent(
+          `https://www.freecodecamp.org/news/search/?query=${encodeURIComponent(
             query
           )}`
         )
@@ -188,7 +188,7 @@ export class SearchBar extends Component {
                 onChange={this.handleChange}
                 onFocus={this.handleFocus}
                 onSubmit={this.handleSearch}
-                showLoadingIndicator={true}
+                showLoadingIndicator={false}
                 translations={{ placeholder }}
               />
             </ObserveKeys>
