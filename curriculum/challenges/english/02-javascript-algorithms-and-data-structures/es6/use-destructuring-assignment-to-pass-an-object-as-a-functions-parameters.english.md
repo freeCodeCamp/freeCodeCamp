@@ -67,8 +67,8 @@ const stats = {
   average: 35.85
 };
 
-// change code below this line
 // use function argument destructuring
+// change code below this line
 const half = (stats) => (stats.max + stats.min) / 2.0; 
 // change code above this line
 
