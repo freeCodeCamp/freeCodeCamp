@@ -14,7 +14,7 @@ As a reminder, this project is being built upon the following starter project on
 ## Instructions
 <section id='instructions'>
 Replace <code>assert.fail()</code>. Test the status and the <code>text.response</code>. Make the test pass.
-Send you name in the query appending <code>?name=&ltyour_name&gt</code>, the endpoint with responds with <code>'hello &ltyour_name&gt'</code>. 
+Send your name in the query appending <code>?name=&ltyour_name&gt</code>, the endpoint responds with <code>'hello &ltyour_name&gt'</code>. 
 </section>
 
 ## Tests
