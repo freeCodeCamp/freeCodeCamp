@@ -10,9 +10,6 @@ import {
   stubTrue
 } from 'lodash';
 
-import * as Babel from '@babel/standalone';
-import presetEnv from '@babel/preset-env';
-import presetReact from '@babel/preset-react';
 import protect from '@freecodecamp/loop-protect';
 
 import * as vinyl from '../utils/polyvinyl.js';
@@ -38,30 +35,49 @@ function testLoopProtectCB(line) {
   );
 }
 
-Babel.registerPlugin('loopProtection', protect(protectTimeout, loopProtectCB));
-Babel.registerPlugin(
-  'testLoopProtection',
-  protect(testProtectTimeout, testLoopProtectCB, loopsPerTimeoutCheck)
-);
+// hold Babel, presets and options so we don't try to import them multiple times
 
-const babelOptionsJSBase = {
-  presets: [presetEnv]
-};
+let Babel;
+let presetEnv, presetReact;
+let babelOptionsJSBase, babelOptionsJS, babelOptionsJSX, babelOptionsJSPreview;
 
-const babelOptionsJSX = {
-  plugins: ['loopProtection'],
-  presets: [presetEnv, presetReact]
-};
-
-const babelOptionsJS = {
-  ...babelOptionsJSBase,
-  plugins: ['testLoopProtection']
-};
-
-const babelOptionsJSPreview = {
-  ...babelOptionsJSBase,
-  plugins: ['loopProtection']
-};
+async function loadBabel() {
+  if (Babel) return;
+  /* eslint-disable no-inline-comments */
+  Babel = await import(
+    /* webpackChunkName: "@babel/standalone" */ '@babel/standalone'
+  );
+  presetEnv = await import(
+    /* webpackChunkName: "@babel/preset-env" */ '@babel/preset-env'
+  );
+  presetReact = await import(
+    /* webpackChunkName: "@babel/preset-react" */ '@babel/preset-react'
+  );
+  /* eslint-enable no-inline-comments */
+  Babel.registerPlugin(
+    'loopProtection',
+    protect(protectTimeout, loopProtectCB)
+  );
+  Babel.registerPlugin(
+    'testLoopProtection',
+    protect(testProtectTimeout, testLoopProtectCB, loopsPerTimeoutCheck)
+  );
+  babelOptionsJSBase = {
+    presets: [presetEnv]
+  };
+  babelOptionsJSX = {
+    plugins: ['loopProtection'],
+    presets: [presetEnv, presetReact]
+  };
+  babelOptionsJS = {
+    ...babelOptionsJSBase,
+    plugins: ['testLoopProtection']
+  };
+  babelOptionsJSPreview = {
+    ...babelOptionsJSBase,
+    plugins: ['loopProtection']
+  };
+}
 
 const babelTransformCode = options => code =>
   Babel.transform(code, options).code;
@@ -110,22 +126,26 @@ const babelTransformer = ({ preview = false, protect = true }) => {
   return cond([
     [
       testJS,
-      flow(
-        partial(
+      async code => {
+        await loadBabel();
+        return partial(
           vinyl.transformHeadTailAndContents,
           tryTransform(babelTransformCode(options))
-        )
-      )
+        )(code);
+      }
     ],
     [
       testJSX,
-      flow(
-        partial(
-          vinyl.transformHeadTailAndContents,
-          tryTransform(babelTransformCode(babelOptionsJSX))
-        ),
-        partial(vinyl.setExt, 'js')
-      )
+      async code => {
+        await loadBabel();
+        return flow(
+          partial(
+            vinyl.transformHeadTailAndContents,
+            tryTransform(babelTransformCode(babelOptionsJSX))
+          ),
+          partial(vinyl.setExt, 'js')
+        )(code);
+      }
     ],
     [stubTrue, identity]
   ]);
@@ -142,7 +162,8 @@ async function transformSASS(element) {
   );
 }
 
-function transformScript(element) {
+async function transformScript(element) {
+  await loadBabel();
   const scriptTags = element.querySelectorAll('script');
   scriptTags.forEach(script => {
     script.innerHTML = tryTransform(babelTransformCode(babelOptionsJSX))(
