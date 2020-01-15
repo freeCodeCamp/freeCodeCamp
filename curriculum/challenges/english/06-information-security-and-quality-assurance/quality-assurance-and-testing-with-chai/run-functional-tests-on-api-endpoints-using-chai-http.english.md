@@ -13,8 +13,8 @@ As a reminder, this project is being built upon the following starter project on
 
 ## Instructions
 <section id='instructions'>
-Replace <code>assert.fail()</code>. Test the status and the text.response. Make the test pass.
-Don't send a name in the query, the endpoint with responds with <code>'hello Guest'</code>.
+Replace <code>assert.fail()</code>. Test the status and the <code>text.response</code>. Make the test pass.
+Don't send a name in the query, the endpoint responds with "hello Guest".
 </section>
 
 ## Tests
