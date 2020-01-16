@@ -4,16 +4,7 @@ import { Highlight } from 'react-instantsearch-dom';
 
 const Suggestion = ({ hit, handleMouseEnter, handleMouseLeave }) => {
   const dropdownFooter = hit.objectID.includes('footer-');
-  const noHits = hit.title === 'No tutorials found';
-  return noHits ? (
-    <div
-      className={'no-hits-footer fcc_suggestion_item'}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      <span className='hit-name'>{hit.title}</span>
-    </div>
-  ) : (
+  return (
     <a
       className={
         dropdownFooter
