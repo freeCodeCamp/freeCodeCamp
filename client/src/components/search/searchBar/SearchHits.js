@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connectStateResults, connectHits } from 'react-instantsearch-dom';
 import isEmpty from 'lodash/isEmpty';
 import Suggestion from './SearchSuggestion';
+import NoHitsSuggestion from './NoHitsSuggestion';
 
 const CustomHits = connectHits(
   ({
@@ -14,6 +15,7 @@ const CustomHits = connectHits(
     handleHits
   }) => {
     const noHits = isEmpty(hits);
+    const noHitsTitle = 'No tutorials found';
     const footer = [
       {
         objectID: `footer-${searchQuery}`,
@@ -23,13 +25,11 @@ const CustomHits = connectHits(
           : `https://www.freecodecamp.org/news/search/?query=${encodeURIComponent(
               searchQuery
             )}`,
-        title: noHits
-          ? 'No tutorials found'
-          : `See all results for ${searchQuery}`,
+        title: noHits ? noHitsTitle : `See all results for ${searchQuery}`,
         _highlightResult: {
           query: {
             value: noHits
-              ? 'No tutorials found'
+              ? noHitsTitle
               : `
               <ais-highlight-0000000000>
                 See all results for
@@ -56,11 +56,19 @@ const CustomHits = connectHits(
               data-fccobjectid={hit.objectID}
               key={hit.objectID}
             >
-              <Suggestion
-                handleMouseEnter={handleMouseEnter}
-                handleMouseLeave={handleMouseLeave}
-                hit={hit}
-              />
+              {noHits ? (
+                <NoHitsSuggestion
+                  handleMouseEnter={handleMouseEnter}
+                  handleMouseLeave={handleMouseLeave}
+                  title={noHitsTitle}
+                />
+              ) : (
+                <Suggestion
+                  handleMouseEnter={handleMouseEnter}
+                  handleMouseLeave={handleMouseLeave}
+                  hit={hit}
+                />
+              )}
             </li>
           ))}
         </ul>
