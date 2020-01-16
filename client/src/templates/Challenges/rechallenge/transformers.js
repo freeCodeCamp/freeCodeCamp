@@ -47,12 +47,6 @@ async function loadBabel() {
   Babel = await import(
     /* webpackChunkName: "@babel/standalone" */ '@babel/standalone'
   );
-  presetEnv = await import(
-    /* webpackChunkName: "@babel/preset-env" */ '@babel/preset-env'
-  );
-  presetReact = await import(
-    /* webpackChunkName: "@babel/preset-react" */ '@babel/preset-react'
-  );
   /* eslint-enable no-inline-comments */
   Babel.registerPlugin(
     'loopProtection',
@@ -62,12 +56,18 @@ async function loadBabel() {
     'testLoopProtection',
     protect(testProtectTimeout, testLoopProtectCB, loopsPerTimeoutCheck)
   );
+}
+
+async function loadPresetEnv() {
+  if (presetEnv) return;
+  /* eslint-disable no-inline-comments */
+  presetEnv = await import(
+    /* webpackChunkName: "@babel/preset-env" */ '@babel/preset-env'
+  );
+  /* eslint-enable no-inline-comments */
+
   babelOptionsJSBase = {
     presets: [presetEnv]
-  };
-  babelOptionsJSX = {
-    plugins: ['loopProtection'],
-    presets: [presetEnv, presetReact]
   };
   babelOptionsJS = {
     ...babelOptionsJSBase,
@@ -76,6 +76,23 @@ async function loadBabel() {
   babelOptionsJSPreview = {
     ...babelOptionsJSBase,
     plugins: ['loopProtection']
+  };
+}
+
+async function loadPresetReact() {
+  if (presetReact) return;
+  /* eslint-disable no-inline-comments */
+  presetReact = await import(
+    /* webpackChunkName: "@babel/preset-react" */ '@babel/preset-react'
+  );
+  if (!presetEnv)
+    presetEnv = await import(
+      /* webpackChunkName: "@babel/preset-env" */ '@babel/preset-env'
+    );
+  /* eslint-enable no-inline-comments */
+  babelOptionsJSX = {
+    plugins: ['loopProtection'],
+    presets: [presetEnv, presetReact]
   };
 }
 
@@ -128,6 +145,7 @@ const babelTransformer = ({ preview = false, protect = true }) => {
       testJS,
       async code => {
         await loadBabel();
+        await loadPresetEnv();
         return partial(
           vinyl.transformHeadTailAndContents,
           tryTransform(babelTransformCode(options))
@@ -138,6 +156,7 @@ const babelTransformer = ({ preview = false, protect = true }) => {
       testJSX,
       async code => {
         await loadBabel();
+        await loadPresetReact();
         return flow(
           partial(
             vinyl.transformHeadTailAndContents,
@@ -164,6 +183,7 @@ async function transformSASS(element) {
 
 async function transformScript(element) {
   await loadBabel();
+  await loadPresetReact();
   const scriptTags = element.querySelectorAll('script');
   scriptTags.forEach(script => {
     script.innerHTML = tryTransform(babelTransformCode(babelOptionsJSX))(
