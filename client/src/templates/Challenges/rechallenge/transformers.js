@@ -183,10 +183,10 @@ async function transformSASS(element) {
 
 async function transformScript(element) {
   await loadBabel();
-  await loadPresetReact();
+  await loadPresetEnv();
   const scriptTags = element.querySelectorAll('script');
   scriptTags.forEach(script => {
-    script.innerHTML = tryTransform(babelTransformCode(babelOptionsJSX))(
+    script.innerHTML = tryTransform(babelTransformCode(babelOptionsJS))(
       script.innerHTML
     );
   });
