@@ -10,7 +10,7 @@ forumTopicId: 18246
 <section id='description'>
 The <code>div</code> element, also known as a division element, is a general purpose container for other elements.
 The <code>div</code> element is probably the most commonly used HTML element of all.
-Just like any other non-self-closing element, you can open a <code>div</code> element with <code>&#60;div&#62;</code> and close it on another line with <code>&#60;/div&#62;</code>.
+Just like any other non-self-closing element, you can open a <code>div</code> element with <code>&#60;div&#62;</code> and close it on another (or the same) line with <code>&#60;/div&#62;</code>.
 </section>
 
 ## Instructions
