@@ -136,6 +136,10 @@ If you're confident it's a new bug and have confirmed that someone else is facin
 
 If you think you have found a vulnerability, please report responsibly. Don't create GitHub issues for security issues. Instead, please send an email to `security@freecodecamp.org` and we'll look into it immediately.
 
+### Setting Up Project Locally
+
+> ### [To setup a local instance of this project, please follow the documentation](docs/how-to-setup-freecodecamp-locally.md)
+
 ### Contributing
 
 > ### [Please follow these steps to contribute.](CONTRIBUTING.md)
