@@ -1,11 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Highlight } from 'react-instantsearch-dom';
-import { isEmpty } from 'lodash';
 
 const Suggestion = ({ hit, handleMouseEnter, handleMouseLeave }) => {
-  const dropdownFooter = hit.objectID.includes('default-hit-');
-  return isEmpty(hit) || isEmpty(hit.objectID) ? null : (
+  const dropdownFooter = hit.objectID.includes('footer-');
+  const noHits = hit.title === 'No tutorials found';
+  return noHits ? (
+    <div
+      className={'no-hits-footer fcc_suggestion_item'}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <span className='hit-name'>{hit.title}</span>
+    </div>
+  ) : (
     <a
       className={
         dropdownFooter

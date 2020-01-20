@@ -112,8 +112,9 @@ export class SearchBar extends Component {
     // return navigate('/search');
 
     // Temporary redirect to News search results page
-    // when non-empty search input submitted
-    return query
+    // when non-empty search input submitted and there
+    // are hits besides the footer
+    return query && hits.length > 1
       ? window.location.assign(
           `https://www.freecodecamp.org/news/search/?query=${encodeURIComponent(
             query
