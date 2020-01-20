@@ -42,9 +42,7 @@ function Intro({
           <Col sm={10} smOffset={1} xs={12}>
             <Spacer />
             <h1 className='text-center big-heading'>
-              {name
-                ? 'Welcome back, ' + name + '.'
-                : 'Welcome to freeCodeCamp.org'}
+              {name ? `Welcome back, ${name}.` : `Welcome to freeCodeCamp.org`}
             </h1>
             <Spacer />
           </Col>
