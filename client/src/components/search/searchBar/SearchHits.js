@@ -51,7 +51,9 @@ const CustomHits = connectHits(
           {allHits.map((hit, i) => (
             <li
               className={
-                i === selectedIndex ? 'ais-Hits-item selected' : 'ais-Hits-item'
+                !noHits && i === selectedIndex
+                  ? 'ais-Hits-item selected'
+                  : 'ais-Hits-item'
               }
               data-fccobjectid={hit.objectID}
               key={hit.objectID}
