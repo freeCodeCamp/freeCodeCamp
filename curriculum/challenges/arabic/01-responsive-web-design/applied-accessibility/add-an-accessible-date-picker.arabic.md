@@ -13,6 +13,7 @@ localeTitle: إضافة منتقي تاريخ يسهل الوصول إليه
 <label for="input1">أدخل تاريخًا:</label>
 <input type="date" id="input1" name="input1">
 ```
+</section>
 
 ## Instructions
 <section id="instructions"> يقوم كامبر كات بإعداد بطولة مورتال كومبات ويريد أن يطلب من منافسيه معرفة التاريخ الأفضل. إضافة علامة <code>input</code> تحتوي على سمة <code>type</code> من &quot;date&quot; ، وسمة <code>id</code> من &quot;pickdate&quot; ، وسمة <code>name</code> من &quot;date&quot;. </section>
