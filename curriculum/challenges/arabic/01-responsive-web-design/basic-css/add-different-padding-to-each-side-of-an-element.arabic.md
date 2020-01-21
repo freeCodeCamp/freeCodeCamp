@@ -7,7 +7,7 @@ localeTitle: ''
 ---
 
 ## Description
-احياناً تحتاج إلى إجراء تعديل على عنصر ما بحيث أن يكون كل واحد من جهاته له <code>padding</code> بِسُمكٍ مختلف عن الآخر. تتيح لك الـ CSS بالتحكم بِسُمك الـ padding الخاص بكل جهة بِشكل مستقل عن الآخر بإستخدام الخواص <code>padding-top</code>، <code>padding-right</code>، <code>padding-bottom</code> و <code>padding-left</code>.
+undefined
 
 ## Instructions
 undefined
