@@ -89,7 +89,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 <style>
   .bar {
     width: 25px;
