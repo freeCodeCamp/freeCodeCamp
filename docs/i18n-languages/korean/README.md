@@ -140,7 +140,7 @@ freeCodeCamp.org 커리큘럼의 30개의 프로젝트에는 각각 휼륭한 �
 
 **라이선스**
 
-Copyright © 2019 freeCodeCamp.org
+Copyright © 2020 freeCodeCamp.org
 
 이 저장소는 다음 라이선스에 의해 구속됩니다.
 

@@ -147,7 +147,7 @@ freeCodeCamp.org のカリキュラムにある30のプロジェクトそれぞ�
 
 ### ライセンス
 
-Copyright © 2019 freeCodeCamp.org
+Copyright © 2020 freeCodeCamp.org
 
 このリポジトリの内容は以下のライセンスにより法的に拘束されてます。
 
