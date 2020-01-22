@@ -27,7 +27,7 @@ function delay(time = 0, fn) {
   return setTimeout(fn, time);
 }
 
-// check if backenEndProjects have a solution
+// check if backendEndProjects have a solution
 const isSubmitable = failure =>
   failure.payload.challengeType !== backEndProject || failure.payload.solution;
 
