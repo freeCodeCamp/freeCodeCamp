@@ -37,6 +37,8 @@ tests:
     testString: myRegex.lastIndex = 0; assert(myRegex.test('Eleanor Roosevelt'));
   - text: Your regex <code>myRegex</code> should return <code>false</code> for the string <code>Franklin Rosevelt</code>
     testString: myRegex.lastIndex = 0; assert(!myRegex.test('Franklin Rosevelt'));
+  - text: Your regex <code>myRegex</code> should return <code>false</code> for the string <code>Frank Roosevelt</code>
+    testString: myRegex.lastIndex = 0; assert(!myRegex.test('Frank Roosevelt'));
   - text: You should use <code>.test()</code> to test the regex.
     testString: assert(code.match(/myRegex.test\(\s*myString\s*\)/));
   - text: Your result should return <code>true</code>.
