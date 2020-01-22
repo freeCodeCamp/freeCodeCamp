@@ -133,7 +133,7 @@ Si prega di non creare problemi GitHub per i problemi di sicurezza. Invece, si p
 
 ### Licenza
 
-Copyright © 2018 freeCodeCamp.org
+Copyright © 2020 freeCodeCamp.org
 
 Il contenuto di questa repository è vincolato dalle seguenti licenze:
 
