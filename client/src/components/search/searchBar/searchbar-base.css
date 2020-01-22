@@ -626,10 +626,6 @@ a[class^='ais-'] {
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-.ais-SearchBox-submit {
-  left: 0.3rem;
-  top: 57%;
-}
 .ais-SearchBox-reset {
   right: 0.3rem;
 }
