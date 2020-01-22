@@ -16,8 +16,8 @@ console.log(a, b); // 1, 2
 console.log(arr); // [3, 4, 5, 7]
 ```
 
-Variables <code>a</code> and <code>b</code> take the first and second values from the array. After that, because of rest parameter's presence, <code>arr</code> gets rest of the values in the form of an array.
-The rest element only works correctly as the last variable in the list. As in, you cannot use the rest parameter to catch a subarray that leaves out last element of the original array.
+Variables <code>a</code> and <code>b</code> take the first and second values from the array. After that, because of the rest parameter's presence, <code>arr</code> gets the rest of the values in the form of an array.
+The rest element only works correctly as the last variable in the list. As in, you cannot use the rest parameter to catch a subarray that leaves out the last element of the original array.
 </section>
 
 ## Instructions

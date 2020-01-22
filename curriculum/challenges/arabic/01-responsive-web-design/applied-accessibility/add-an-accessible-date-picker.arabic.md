@@ -7,7 +7,13 @@ localeTitle: إضافة منتقي تاريخ يسهل الوصول إليه
 ---
 
 ## Description
-<section id="description"> غالبًا ما تتضمن النماذج حقل <code>input</code> ، والذي يمكن استخدامه لإنشاء عدة عناصر تحكم مختلفة في النموذج. تشير السمة <code>type</code> على هذا العنصر إلى نوع الإدخال الذي سيتم إنشاؤه. كنت قد لاحظت في <code>text</code> و <code>submit</code> أنواع المدخلات في التحديات السابقة، وعرض HTML5 خيار لتحديد <code>date</code> المجال. اعتمادًا على دعم المتصفح ، يظهر منتقي التاريخ في حقل <code>input</code> عندما يكون في التركيز ، مما يجعل ملء النموذج أكثر سهولة لجميع المستخدمين. بالنسبة إلى المتصفحات الأقدم ، سيكون <code>text</code> افتراضيًا <code>text</code> ، لذلك يساعد على إظهار تنسيق التاريخ المتوقع للمستخدمين في التصنيف أو كنص موضع مؤقت في حالة الأحرف فقط. إليك مثال على ذلك: <blockquote style=";text-align:right;direction:rtl"> &lt;label for = &quot;input1&quot;&gt; أدخل تاريخًا: &lt;/ label&gt; <br> &lt;input type = &quot;date&quot; id = &quot;input1&quot; name = &quot;input1&quot;&gt; <br></blockquote></section>
+<section id="description"> تشتمل النماذج غالبًا على حقل <code>input</code> ، والذي يمكن استخدامه لإنشاء عدة عناصر تحكم مختلفة. تشير السمة <code>type</code> في هذا العنصر إلى نوع الإدخال الذي سيتم إنشاؤه. ربما لاحظت <code>text</code> و <code>input</code> أنواع المدخلات في التحديات السابقة، وقدم HTML5 خيارًا لتحديد حقل <code>date</code>. اعتمادًا على دعم المتصفح، يظهر منتقي التاريخ في حقل <code>input</code> عندما يكون في التركيز، مما يجعل ملء نموذج أسهل لجميع المستخدمين. بالنسبة للمتصفحات القديمة، سيتم الكتابة افتراضيًا على <code>text</code>، لذلك يساعد على عرض تنسيق التاريخ المتوقع للمستخدمين في التصنيف أو كنص نائب للعنصر فقط. إليك مثال:
+  
+```html
+<label for="input1">أدخل تاريخًا:</label>
+<input type="date" id="input1" name="input1">
+```
+</section>
 
 ## Instructions
 <section id="instructions"> يقوم كامبر كات بإعداد بطولة مورتال كومبات ويريد أن يطلب من منافسيه معرفة التاريخ الأفضل. إضافة علامة <code>input</code> تحتوي على سمة <code>type</code> من &quot;date&quot; ، وسمة <code>id</code> من &quot;pickdate&quot; ، وسمة <code>name</code> من &quot;date&quot;. </section>
