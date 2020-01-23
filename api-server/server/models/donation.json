@@ -46,7 +46,7 @@
     "customerId": {
       "type": "string",
       "required": true,
-      "description": "The providers reference for the donator"
+      "description": "The providers reference for the donor"
     }
   },
   "validations": [
