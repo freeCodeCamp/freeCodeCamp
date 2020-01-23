@@ -28,7 +28,7 @@ describe('<certification />', () => {
       container.querySelector('#button-legacy-data-visualization')
     ).toHaveAttribute(
       'href',
-      '/certification/developementuser/legacy-data-visualization'
+      '/certification/developmentuser/legacy-data-visualization'
     );
   });
 
@@ -152,7 +152,7 @@ const defaultTestProps = {
   isJsAlgoDataStructCert: false,
   isRespWebDesignCert: false,
   updateLegacyCert: () => {},
-  username: 'developementuser',
+  username: 'developmentuser',
   verifyCert: () => {},
   errors: {},
   submit: () => {}
