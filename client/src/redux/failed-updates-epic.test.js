@@ -9,7 +9,7 @@ import store from 'store';
 const key = 'fcc-failed-updates';
 
 describe('failed-updates-epic', () => {
-  it('should remove falty backend challenges from localStorage', async () => {
+  it('should remove faulty backend challenges from localStorage', async () => {
     store.set(key, failedSubmitions);
 
     const action$ = ActionsObservable.of({
