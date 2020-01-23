@@ -50,7 +50,7 @@
 * **challenges:** rephrased wording in applied visual design ([#268](https://github.com/freeCodeCamp/curriculum/issues/268)) ([d560d58](https://github.com/freeCodeCamp/curriculum/commit/d560d58))
 * **challenges:** replaced em tags with code tags ([68daaf7](https://github.com/freeCodeCamp/curriculum/commit/68daaf7)), closes [#18048](https://github.com/freeCodeCamp/curriculum/issues/18048)
 * **challenges:** reword test text and improve test accuracy ([f834a98](https://github.com/freeCodeCamp/curriculum/commit/f834a98))
-* **challenges:** small edit to correct sematic issues ([322bf80](https://github.com/freeCodeCamp/curriculum/commit/322bf80))
+* **challenges:** small edit to correct semantic issues ([322bf80](https://github.com/freeCodeCamp/curriculum/commit/322bf80))
 * clickjacking challenge description ([037990c](https://github.com/freeCodeCamp/curriculum/commit/037990c))
 * **challenges:** spelling and grammar errors addressed ([8f17adf](https://github.com/freeCodeCamp/curriculum/commit/8f17adf))
 * **challenges:** typo ([4f7faba](https://github.com/freeCodeCamp/curriculum/commit/4f7faba))
