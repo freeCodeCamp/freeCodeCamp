@@ -106,7 +106,7 @@ function circularPrimes(n) {
           continue;
         }
         else if (!primes[x]) {
-          // If the rotated value is 0 then its not a ciruclar prime, break the loop
+          // If the rotated value is 0 then its not a circular prime, break the loop
           tmp = 0;
           break;
         }
