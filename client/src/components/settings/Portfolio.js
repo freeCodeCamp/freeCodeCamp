@@ -135,14 +135,14 @@ class PortfolioSettings extends Component {
     if (charsLeft < 0) {
       return {
         state: 'error',
-        message: 'There is a maxiumum limit of 288 characters, you have 0 left'
+        message: 'There is a maximum limit of 288 characters, you have 0 left'
       };
     }
     if (charsLeft < 41 && charsLeft > 0) {
       return {
         state: 'warning',
         message:
-          'There is a maxiumum limit of 288 characters, you have ' +
+          'There is a maximum limit of 288 characters, you have ' +
           charsLeft +
           ' left'
       };
