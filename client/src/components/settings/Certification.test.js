@@ -9,7 +9,7 @@ import { CertificationSettings } from './Certification';
 describe('<certification />', () => {
   // shallow rendering does not render children component
   // form buttons are not included in shallow render
-  it('Should render show cert button for calimed legacy cert', () => {
+  it('Should render show cert button for claimed legacy cert', () => {
     const { container } = render(
       <CertificationSettings {...defaultTestProps} />
     );
@@ -19,7 +19,7 @@ describe('<certification />', () => {
     ).toHaveTextContent('Show Certification');
   });
 
-  it('Should link show cert button to the calimed legacy cert', () => {
+  it('Should link show cert button to the claimed legacy cert', () => {
     const { container } = render(
       <CertificationSettings {...defaultTestProps} />
     );
