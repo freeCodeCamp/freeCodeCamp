@@ -22,7 +22,7 @@
 * **challenges:** adding code tags to description ([57d5b55](https://github.com/freeCodeCamp/curriculum/commit/57d5b55)), closes [#17911](https://github.com/freeCodeCamp/curriculum/issues/17911)
 * **challenges:** adding negative integer to challenge to improve tests ([#211](https://github.com/freeCodeCamp/curriculum/issues/211)) ([2adc516](https://github.com/freeCodeCamp/curriculum/commit/2adc516))
 * **challenges:** allow user to comment out undesired code ([72c2407](https://github.com/freeCodeCamp/curriculum/commit/72c2407))
-* **challenges:** challenge description is formatted and concised ([dcd8e45](https://github.com/freeCodeCamp/curriculum/commit/dcd8e45))
+* **challenges:** challenge description is formatted and concise ([dcd8e45](https://github.com/freeCodeCamp/curriculum/commit/dcd8e45))
 * **challenges:** change challengeType to fix help button ([ddcc661](https://github.com/freeCodeCamp/curriculum/commit/ddcc661))
 * **challenges:** change definition of complementary colors ([#299](https://github.com/freeCodeCamp/curriculum/issues/299)) ([c022dff](https://github.com/freeCodeCamp/curriculum/commit/c022dff))
 * **challenges:** check for shorthand character in regex ([#238](https://github.com/freeCodeCamp/curriculum/issues/238)) ([0bf8d32](https://github.com/freeCodeCamp/curriculum/commit/0bf8d32))
