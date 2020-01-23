@@ -536,7 +536,7 @@ export class CertificationSettings extends Component {
       solutionViewer: { files, solution, isOpen, projectTitle }
     } = this.state;
     return (
-      <section id='certifcation-settings'>
+      <section id='certification-settings'>
         <SectionHeader>Certifications</SectionHeader>
         {certifications.map(this.renderCertifications)}
         {this.renderFullStack()}
