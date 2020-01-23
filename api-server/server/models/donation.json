@@ -1,6 +1,6 @@
 {
   "name": "Donation",
-  "description": "A representaion of a donation to freeCodeCamp",
+  "description": "A representation of a donation to freeCodeCamp",
   "plural": "donations",
   "base": "PersistedModel",
   "idInjection": true,
