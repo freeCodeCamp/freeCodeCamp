@@ -14,7 +14,7 @@ localeTitle: Центрировать элемент горизонтально 
 
 ## Instructions
 <section id='instructions'>
-<code>div</code> на странице, добавив свойство <code>margin</code> со значением auto.
+Отцентрируйте <code>div</code> на странице, добавив свойство <code>margin</code> со значением auto.
 </section>
 
 ## Tests
