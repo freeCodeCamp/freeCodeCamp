@@ -14,7 +14,7 @@ localeTitle: Изменение времени анимации с помощь�
 
 ## Instructions
 <section id='instructions'>
-For the elements with id of <code>ball1</code> and <code>ball2</code>, add an <code>animation-timing-function</code> property to each, and set <code>#ball1</code> to <code>linear</code>, and <code>#ball2</code> to <code>ease-out</code>. Notice the difference between how the elements move during the animation but end together, since they share the same <code>animation-duration</code> of 2 seconds.
+Для элементов с id <code>ball1</code> и <code>ball2</code>, добавьте свойство <code>animation-timing-function</code> каждому из них, и установите <code>#ball1</code> к <code>linear</code>, и <code>#ball2</code> к <code>ease-out</code>. Обратите внимание на разницу между тем, как элементы движутся во время анимации, но заканчиваются вместе, так как у них обоих установлено <code>animation-duration</code> 2 секунды.
 </section>
 
 ## Tests
