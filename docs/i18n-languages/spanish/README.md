@@ -147,7 +147,7 @@ El estado general de la plataforma para todas nuestras aplicaciones está dispon
 
 ### Licencia
 
-Copyright © 2019 freeCodeCamp.org
+Copyright © 2020 freeCodeCamp.org
 
 El contenido de este repositorio está sujeto a las siguientes licencias:
 
