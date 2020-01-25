@@ -8,12 +8,12 @@ localeTitle: Утвердить глубокое равенство с .deepEqua
 
 ## Description
 <section id='description'>
-Напомним, что этот проект строится на следующем стартовом проекте <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/">Glitch</a> или клонируется из <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/">GitHub</a> . .deepEqual (), .notDeepEqual () .deepEqual () утверждает, что два объекта имеют глубокую равность
+Напомним, что этот проект строится на следующем стартовом проекте <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/">Glitch</a> или клонируется из <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/">GitHub</a>. .deepEqual (), .notDeepEqual () .deepEqual () утверждает, что два объекта имеют глубокую равность
 </section>
 
 ## Instructions
 <section id='instructions'>
-Use <code>assert.deepEqual()</code> or <code>assert.notDeepEqual()</code> to make the tests pass.
+Используйте <code>assert.deepEqual()</code> или <code>assert.notDeepEqual()</code> чтобы пройти тесты.
 </section>
 
 ## Tests
@@ -21,11 +21,11 @@ Use <code>assert.deepEqual()</code> or <code>assert.notDeepEqual()</code> to mak
 
 ```yml
 tests:
-  - text: All tests should pass
+  - text: Все тесты должны быть пройдены
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=6').then(data => {assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: Choose the right assertion - deepEqual vs. notDeepEqual
+  - text: Выберите правильный оператор - deepEqual или notDeepEqual
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=6').then(data => {  assert.equal(data.assertions[0].method, 'deepEqual', 'The order of the keys does not matter'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: Choose the right assertion - deepEqual vs. notDeepEqual
+  - text: Используйте правильный оператор - deepEqual или notDeepEqual
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=6').then(data => {  assert.equal(data.assertions[1].method, 'notDeepEqual', 'The position of elements within an array does matter'); }, xhr => { throw new Error(xhr.responseText); })
 
 ```

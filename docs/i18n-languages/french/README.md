@@ -143,7 +143,7 @@ Veuillez ne pas créer une "issue" sur Github pour des problèmes de sécurité.
 
 ### Licence
 
-Copyright © 2019 freeCodeCamp.org
+Copyright © 2020 freeCodeCamp.org
 
 Le contenu de ce référentiel est protégé par les licences suivantes:
 
