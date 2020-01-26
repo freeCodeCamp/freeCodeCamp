@@ -7,7 +7,7 @@ localeTitle: 从函数返回布尔值
 ---
 
 ## Description
-<section id="description">您可以从<a href="learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank">与Equality运算符的比较中</a>回忆一下，所有比较运算符都返回布尔值<code>true</code>或<code>false</code>值。有时人们使用if / else语句进行比较，如下所示： <blockquote> function isEqual（a，b）{ <br> if（a === b）{ <br>返回true; <br> } else { <br>返回虚假; <br> } <br> } </blockquote>但是有一种更好的方法可以做到这一点。由于<code>===</code>返回<code>true</code>或<code>false</code> ，我们可以返回比较结果： <blockquote> function isEqual（a，b）{ <br>返回a === b; <br> } </blockquote></section>
+<section id="description">您可以从<a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank">与Equality运算符的比较中</a>回忆一下，所有比较运算符都返回布尔值<code>true</code>或<code>false</code>值。有时人们使用if / else语句进行比较，如下所示： <blockquote> function isEqual（a，b）{ <br> if（a === b）{ <br>返回true; <br> } else { <br>返回虚假; <br> } <br> } </blockquote>但是有一种更好的方法可以做到这一点。由于<code>===</code>返回<code>true</code>或<code>false</code> ，我们可以返回比较结果： <blockquote> function isEqual（a，b）{ <br>返回a === b; <br> } </blockquote></section>
 
 ## Instructions
 <section id="instructions">修复函数<code>isLess</code>以删除<code>if/else</code>语句。 </section>
