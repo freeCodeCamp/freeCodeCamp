@@ -8,7 +8,7 @@ forumTopicId: 18273
 
 ## Description
 <section id='description'>
-You may recall from <a href="learn/javascript-algorithms-and-data-structures/basic-javascript/comparison-with-the-equality-operator" target="_blank">Comparison with the Equality Operator</a> that all comparison operators return a boolean <code>true</code> or <code>false</code> value.
+You may recall from <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/comparison-with-the-equality-operator" target="_blank">Comparison with the Equality Operator</a> that all comparison operators return a boolean <code>true</code> or <code>false</code> value.
 Sometimes people use an if/else statement to do a comparison, like this:
 
 ```js
