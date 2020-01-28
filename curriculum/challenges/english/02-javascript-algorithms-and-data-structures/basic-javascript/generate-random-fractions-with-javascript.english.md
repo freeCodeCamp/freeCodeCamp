@@ -10,7 +10,7 @@ forumTopicId: 18185
 <section id='description'>
 Random numbers are useful for creating random behavior.
 JavaScript has a <code>Math.random()</code> function that generates a random decimal number between <code>0</code> (inclusive) and not quite up to <code>1</code> (exclusive). Thus <code>Math.random()</code> can return a <code>0</code> but never quite return a <code>1</code>
-<strong>Note</strong><br>Like <a href='learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator' target='_blank'>Storing Values with the Equal Operator</a>, all function calls will be resolved before the <code>return</code> executes, so we can <code>return</code> the value of the <code>Math.random()</code> function.
+<strong>Note</strong><br>Like <a href='/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator' target='_blank'>Storing Values with the Equal Operator</a>, all function calls will be resolved before the <code>return</code> executes, so we can <code>return</code> the value of the <code>Math.random()</code> function.
 </section>
 
 ## Instructions
