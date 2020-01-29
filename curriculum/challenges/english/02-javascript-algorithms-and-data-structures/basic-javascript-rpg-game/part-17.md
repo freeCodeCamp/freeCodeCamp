@@ -12,7 +12,7 @@ For now, make the `goStore` function output the message "Going to store." to the
 
 ```js
 function functionName() {
-	console.log("Hello World");
+  console.log("Hello World");
 }
 ```
 

@@ -188,7 +188,7 @@ function goStore() {
 }
 
 function goCave() {
-	console.log("Going to cave.");
+  console.log("Going to cave.");
 }
 </script>
 ```
