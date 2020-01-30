@@ -26,7 +26,7 @@ function HeatMap({ calendar, streak }) {
   // see this https://github.com/kevinsqi/react-calendar-heatmap/issues/112
   // I have added one day in the marked places to account for the offset
 
-  // this logic adds a day to all the timestamps (remove is issue gets fixed)
+  // this logic adds a day to all the timestamps (remove if issue gets fixed)
   let tempCalendar = {};
   const secondsInADay = 60 * 60 * 24;
   for (let timestamp in calendar) {
