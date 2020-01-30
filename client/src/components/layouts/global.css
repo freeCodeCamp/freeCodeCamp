@@ -33,7 +33,7 @@ h1 {
 h2 {
   color: var(--secondary-color);
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   font-family: 'Roboto Mono', monospace;
   margin: 0.6rem 0;
 }
@@ -68,7 +68,7 @@ p {
 }
 
 .medium-heading {
-  font-size: 1.1rem !important;
+  font-size: 1.25rem !important;
   font-weight: normal;
 }
 
@@ -81,16 +81,16 @@ p {
     font-size: 1.2rem !important;
   }
   .medium-heading {
-    font-size: 1rem !important;
+    font-size: 1.1rem !important;
   }
   h1 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
   h2 {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
   h3 {
-    font-size: 0.8rem;
+    font-size: 1.1rem;
   }
   .btn-cta {
     font-size: 1rem;
