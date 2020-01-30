@@ -22,7 +22,22 @@ const propTypes = {
 };
 
 function HeatMap({ calendar, streak }) {
-  const startOfToday = startOfDay(Date.now());
+  // an issue with react-calendar-heatmap makes the days off by one
+  // see this https://github.com/kevinsqi/react-calendar-heatmap/issues/112
+  // I have added one day in the marked places to account for the offset
+
+  // this logic adds a day to all the timestamps (remove is issue gets fixed)
+  let tempCalendar = {};
+  const secondsInADay = 60 * 60 * 24;
+  for (let timestamp in calendar) {
+    if (timestamp) {
+      tempCalendar[parseInt(timestamp, 10) + secondsInADay] = 1;
+    }
+  }
+  calendar = tempCalendar;
+
+  // the addDays of 1 to startOfToday (remove if issue gets fixed)
+  const startOfToday = addDays(startOfDay(Date.now()), 1);
   const sixMonthsAgo = addMonths(startOfToday, -6);
   const startOfCalendar = format(addDays(sixMonthsAgo, -1), 'YYYY-MM-DD');
   const endOfCalendar = format(startOfToday, 'YYYY-MM-DD');
@@ -46,6 +61,7 @@ function HeatMap({ calendar, streak }) {
     }
   }
 
+  // create an object in the format needed for react-calendar-heatmap
   const calendarValues = Object.keys(calendarData).map(key => ({
     date: key,
     count: calendarData[key]
