@@ -19,7 +19,7 @@ localeTitle: 给对象添加新属性
 
 ## Instructions
 <section id='instructions'>
-给<code>myDog</code>添加一个<code>"bark"</code>属性，设置它的值为狗的声音，例如："woof"。
+给<code>myDog</code>添加一个<code>"bark"</code>属性，设置它的值为狗的声音，例如："woof"。你可以使用点或中括号操作符。
 </section>
 
 ## Tests

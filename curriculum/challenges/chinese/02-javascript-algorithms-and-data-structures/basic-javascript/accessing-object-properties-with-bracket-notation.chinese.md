@@ -29,7 +29,7 @@ myObj["NoSpace"];    // USS Enterprise
 
 ## Instructions
 <section id='instructions'>
-用中括号操作符读取对象<code>testObj</code>的属性<code>"an entree"</code>值和属性<code>"the drink"</code>值，并赋给<code>entreeValue</code>和<code>drinkValue</code>。
+用中括号操作符读取对象<code>testObj</code>的<code>an entree</code>属性值和<code>the drink</code>属性值，并分别赋值给<code>entreeValue</code>和<code>drinkValue</code>。
 </section>
 
 ## Tests

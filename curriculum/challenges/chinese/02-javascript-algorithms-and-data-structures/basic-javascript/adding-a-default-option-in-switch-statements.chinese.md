@@ -31,7 +31,7 @@ switch (num) {
 
 ## Instructions
 <section id='instructions'>
-写一个根据下面的条件来设置<code>answer</code>的switch语句：<br><code>"a"</code> - "apple"<br><code>"b"</code> - "bird"<br><code>"c"</code> - "cat"<br><code>default</code> - "stuff"
+写一个 switch 语句，根据下面的条件来设置<code>answer</code>的switch语句：<br><code>"a"</code> - "apple"<br><code>"b"</code> - "bird"<br><code>"c"</code> - "cat"<br><code>default</code> - "stuff"
 </section>
 
 ## Tests

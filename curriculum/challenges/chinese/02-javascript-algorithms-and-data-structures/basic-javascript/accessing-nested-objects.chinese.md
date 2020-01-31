@@ -33,7 +33,7 @@ ourStorage.desk.drawer; // "stapler"
 
 ## Instructions
 <section id='instructions'>
-检索对象<code>myStorage</code>中嵌套属性<code>glove box</code>的值。因为属性的名字带有空格，请使用中括号操作符来访问属性的值。
+读取<code>myStorage</code>对象，将<code>glove box</code>属性的内容赋值给变量<code>gloveBoxContents</code>。在适用的地方使用点操作符来访问属性，否则使用中括号操作符。
 </section>
 
 ## Tests

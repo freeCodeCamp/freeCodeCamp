@@ -24,12 +24,12 @@ arr[3][0]; // equals [10,11,12]
 arr[3][0][1]; // equals 11
 ```
 
-<strong>提示</strong><br>数组名称和方括号之间不应该有任何空格，如<code>array [0][0]</code>甚至是这样<code>array [0] [0]</code>尽管 JavaScript 能够正确处理，但可能会让看你代码的其他程序员感到困惑。
+<strong>提示</strong><br>数组名称和方括号之间不应该有任何空格，如<code>array [0][0]</code>，甚至<code>array [0] [0]</code>，都是不正确的。尽管 JavaScript 能够处理，但可能会让看你代码的其他程序员感到困惑。
 </section>
 
 ## Instructions
 <section id='instructions'>
-使用恰当的<code>[index]</code>访问<code>myArray</code>，使得<code>myData</code>的值为<code>8</code>
+使用索引从<code>myArray</code>选择一个元素，使得<code>myData</code>的值为<code>8</code>。
 </section>
 
 ## Tests

@@ -9,7 +9,7 @@ localeTitle: 将变量附加到字符串
 
 ## Description
 <section id='description'>
-我们不仅可以创建出多行的字符串，还可以使用加等号(<code>+=</code>)运算符来追加变量到字符串上。
+我们不仅可以创建出多行的字符串，还可以使用加等号(<code>+=</code>)运算符来将变量追加到字符串。
 </section>
 
 ## Instructions
