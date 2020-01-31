@@ -24,8 +24,8 @@ For which value of p ≤ n, is the number of solutions maximised?
 tests:
   - text: <code>intRightTriangles(500)</code> should return 420.
     testString: assert(intRightTriangles(500) == 420);
-  - text: <code>intRightTriangles(800)</code> should return 420.
-    testString: assert(intRightTriangles(800) == 420);
+  - text: <code>intRightTriangles(800)</code> should return 720.
+    testString: assert(intRightTriangles(800) == 720);
   - text: <code>intRightTriangles(900)</code> should return 840.
     testString: assert(intRightTriangles(900) == 840);
   - text: <code>intRightTriangles(1000)</code> should return 840.
@@ -46,7 +46,7 @@ function intRightTriangles(n) {
   return n;
 }
 
-intRightTriangles(1000);
+console.log(intRightTriangles(500)); // 420
 ```
 
 </div>
@@ -59,7 +59,30 @@ intRightTriangles(1000);
 <section id='solution'>
 
 ```js
-// solution required
+function intRightTriangles(n) {
+  let i = 0;
+  let count = 0;
+  let pMax = 12;
+  for(let p = 12; p <= n; p++){
+    let pCount = 0;
+    // shortest side: a, starting from a 3,4,5 triangle
+    for(let a = 3; a <= p/2; a++){
+      // hypotenuse, h, after substituting for o = p - h -a 
+      // in h*h = a*a + o*o;
+      let h = 1/2 * (-Math.sqrt(a*a + 2*a*p - p*p) - a + p)
+      // is integer:
+      if ((h | 0) === h) {
+        pCount++;   
+      }
+    }
+    if(pCount > count) {
+      pMax = p;
+      count = pCount;
+    }
+  }
+  return pMax;
+}
+
 ```
 
 </section>
