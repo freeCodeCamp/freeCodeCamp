@@ -14,7 +14,7 @@ Placing the CSS property <code>display: flex;</code> on an element allows you to
 
 ## Instructions
 <section id='instructions'>
-Add the CSS property <code>display</code> to <code>#box-container</code> and set its value to flex.
+Add the CSS property <code>display</code> to <code>#box-container</code> and set its value to <code>flex</code>.
 </section>
 
 ## Tests
@@ -22,7 +22,7 @@ Add the CSS property <code>display</code> to <code>#box-container</code> and set
 
 ```yml
 tests:
-  - text: <code>#box-container</code> should have the <code>display</code> property set to a value of flex.
+  - text: <code>#box-container</code> should have the <code>display</code> property set to a value of <code>flex</code>.
     testString: assert($('#box-container').css('display') == 'flex');
 
 ```

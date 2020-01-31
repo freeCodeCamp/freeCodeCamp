@@ -17,16 +17,16 @@ localeTitle: Use seletores CSS para elementos de estilo
 
 ```yml
 tests:
-  - text: Remova o atributo style do seu elemento <code>h2</code> .
-    testString: 'assert(!$("h2").attr("style"), "Remove the style attribute from your <code>h2</code> element.");'
-  - text: Crie um elemento de <code>style</code> .
-    testString: 'assert($("style") && $("style").length > 1, "Create a <code>style</code> element.");'
-  - text: Seu elemento <code>h2</code> deve ser azul.
-    testString: 'assert($("h2").css("color") === "rgb(0, 0, 255)", "Your <code>h2</code> element should be blue.");'
-  - text: Certifique-se de que a declaração <code>h2</code> sua folha de estilo seja válida com um ponto-e-vírgula e uma chave de fechamento.
-    testString: 'assert(code.match(/h2\s*\{\s*color\s*:.*;\s*\}/g), "Ensure that your stylesheet <code>h2</code> declaration is valid with a semicolon and closing brace.");'
-  - text: Certifique-se de que todos os seus elementos de <code>style</code> sejam válidos e tenham uma tag de fechamento.
-    testString: 'assert(code.match(/<\/style>/g) && code.match(/<\/style>/g).length === (code.match(/<style((\s)*((type|media|scoped|title|disabled)="[^"]*")?(\s)*)*>/g) || []).length, "Make sure all your <code>style</code> elements are valid and have a closing tag.");'
+  - text: Remova o atributo style do seu elemento <code>h2</code>.
+    testString: assert(!$("h2").attr("style"));
+  - text: Crie um elemento <code>style</code>.
+    testString: assert($("style") && $("style").length >= 1);
+  - text: Seu elemento <code>h2</code> deveria ser azul.
+    testString: assert($("h2").css("color") === "rgb(0, 0, 255)");
+  - text: Certifique-se de que sua declaração <code> h2 </code> da folha de estilo seja válida com um ponto-e-vírgula e uma chave de fechamento.
+    testString: assert(code.match(/h2\s*\{\s*color\s*:.*;\s*\}/g));
+  - text: Verifique se todos os seus elementos <code> style </code> são válidos e têm uma tag de fechamento.
+    testString: assert(code.match(/<\/style>/g) && code.match(/<\/style>/g).length === (code.match(/<style((\s)*((type|media|scoped|title|disabled)="[^"]*")?(\s)*)*>/g) || []).length);
 
 ```
 
@@ -120,4 +120,5 @@ tests:
   </form>
 </main>
 ```
+
 </section>

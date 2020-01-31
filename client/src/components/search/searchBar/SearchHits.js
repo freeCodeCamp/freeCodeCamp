@@ -13,22 +13,29 @@ const CustomHits = connectHits(
     selectedIndex,
     handleHits
   }) => {
+    const noHits = isEmpty(hits);
     const footer = [
       {
-        objectID: `default-hit-${searchQuery}`,
+        objectID: `footer-${searchQuery}`,
         query: searchQuery,
-        url: `https://freecodecamp.org/news/search/?query=${encodeURIComponent(
-          searchQuery
-        )}`,
-        title: `See all results for ${searchQuery}`,
+        url: noHits
+          ? null
+          : `https://www.freecodecamp.org/news/search/?query=${encodeURIComponent(
+              searchQuery
+            )}`,
+        title: noHits
+          ? 'No tutorials found'
+          : `See all results for ${searchQuery}`,
         _highlightResult: {
           query: {
-            value: `
-            See all results for
-            <ais-highlight-0000000000>
-            ${searchQuery}
-            </ais-highlight-0000000000>
-          `
+            value: noHits
+              ? 'No tutorials found'
+              : `
+              <ais-highlight-0000000000>
+                See all results for
+                ${searchQuery}
+              </ais-highlight-0000000000>
+            `
           }
         }
       }

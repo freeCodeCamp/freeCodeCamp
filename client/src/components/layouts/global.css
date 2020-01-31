@@ -12,6 +12,7 @@ body {
   max-height: 100%;
   font-size: 27px;
   white-space: normal;
+  width: 100%;
 }
 
 .default-layout {
@@ -162,6 +163,8 @@ input[type='submit'],
 button:hover,
 input[type='submit']:hover,
 .btn:hover,
+.btn-default.active:hover,
+.btn-default.active,
 .btn-primary:hover {
   border-color: var(--secondary-color);
   background-color: var(--secondary-color);

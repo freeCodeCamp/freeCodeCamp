@@ -6,9 +6,9 @@ import { createSelector } from 'reselect';
 import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
 
 import { stripePublicKey } from '../../config/env.json';
-import { Spacer, Loader, FullWidthRow } from '../components/helpers';
-import DonateForm from '../components/Donation/components/DonateForm';
-import DonateText from '../components/Donation/components/DonateText';
+import { Spacer, Loader } from '../components/helpers';
+import DonateForm from '../components/Donation/DonateForm';
+import DonateText from '../components/Donation/DonateText';
 import { signInLoadingSelector, userSelector } from '../redux';
 import { stripeScriptLoader } from '../utils/scriptLoaders';
 
@@ -30,7 +30,8 @@ export class DonatePage extends Component {
   constructor(...props) {
     super(...props);
     this.state = {
-      stripe: null
+      stripe: null,
+      enableSettings: false
     };
 
     this.handleStripeLoad = this.handleStripeLoad.bind(this);
@@ -57,17 +58,16 @@ export class DonatePage extends Component {
 
   handleStripeLoad() {
     // Create Stripe instance once Stripe.js loads
-    if (stripePublicKey) {
-      this.setState(state => ({
-        ...state,
-        stripe: window.Stripe(stripePublicKey)
-      }));
-    }
+    console.info('stripe has loaded');
+    this.setState(state => ({
+      ...state,
+      stripe: window.Stripe(stripePublicKey)
+    }));
   }
 
   render() {
     const { stripe } = this.state;
-    const { showLoading } = this.props;
+    const { showLoading, isDonating } = this.props;
 
     if (showLoading) {
       return <Loader fullScreen={true} />;
@@ -76,23 +76,38 @@ export class DonatePage extends Component {
     return (
       <Fragment>
         <Helmet title='Support our nonprofit | freeCodeCamp.org' />
-        <Grid>
-          <main>
-            <Spacer />
-            <FullWidthRow>
-              <h1 className='text-center'>Become a Supporter</h1>
-            </FullWidthRow>
-            <Spacer />
-            <Row>
-              <Col md={6}>
-                <DonateForm stripe={stripe} />
-              </Col>
-              <Col md={6}>
+        <Grid className='donate-page-wrapper'>
+          <Spacer />
+          <Row>
+            <Col sm={10} smOffset={1} xs={12}>
+              <h1 className='text-center'>
+                {isDonating
+                  ? 'Thank You for Your Support'
+                  : 'Become a Supporter'}
+              </h1>
+              <Spacer />
+            </Col>
+          </Row>
+          <Row>
+            {isDonating ? (
+              <Col md={6} mdOffset={3}>
                 <DonateText />
               </Col>
-            </Row>
-            <Spacer />
-          </main>
+            ) : (
+              <Fragment>
+                <Col md={6}>
+                  <DonateForm
+                    enableDonationSettingsPage={this.enableDonationSettingsPage}
+                    stripe={stripe}
+                  />
+                </Col>
+                <Col md={6}>
+                  <DonateText />
+                </Col>
+              </Fragment>
+            )}
+          </Row>
+          <Spacer />
         </Grid>
       </Fragment>
     );
