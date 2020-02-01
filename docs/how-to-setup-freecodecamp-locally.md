@@ -291,10 +291,10 @@ A quick reference to the commands that you will need when working locally.
 | `npm run docker:seed` | Parse all the challenge markdown files and inserts them into MongoDB. |
 | `npm run docker:develop` | Start the freeCodeCamp API Server and Client Applications. |
 | `npm run docker:test:init` | Bootstrap the test container, necessary for testing in docker. |
-| `npm run docker:test -- -c "npm run test` | Run all JS tests in the system, including client, server, lint and challenge tests. |
-| `npm run docker:test -- -c "npm run test:curriculum` | Run the curriculum test suite. |
-| `npm run docker:test -- -c "npm run test:client` | Run the client test suite. |
-| `npm run docker:test -- -c "npm run test:server` | Run the server test suite. |
+| `npm run docker:test -- -c "npm run test"` | Run all JS tests in the system, including client, server, lint and challenge tests. |
+| `npm run docker:test -- -c "npm run test:curriculum"` | Run the curriculum test suite. |
+| `npm run docker:test -- -c "npm run test:client"` | Run the client test suite. |
+| `npm run docker:test -- -c "npm run test:server"` | Run the server test suite. |
 | `npm run docker:clean` | Uninstall all dependencies and cleans up caches. |
 
 **Local Build:**
