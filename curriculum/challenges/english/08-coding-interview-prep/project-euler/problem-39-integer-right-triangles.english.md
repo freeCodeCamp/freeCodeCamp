@@ -60,27 +60,27 @@ console.log(intRightTriangles(500)); // 420
 
 ```js
 function intRightTriangles(n) {
-  let i = 0;
-  let count = 0;
-  let pMax = 12;
-  for(let p = 12; p <= n; p++){
-    let pCount = 0;
-    // shortest side: a, starting from a 3,4,5 triangle
-    for(let a = 3; a <= p/2; a++){
-      // hypotenuse, h, after substituting for o = p - h -a 
-      // in h*h = a*a + o*o;
-      let h = 1/2 * (-Math.sqrt(a*a + 2*a*p - p*p) - a + p)
-      // is integer:
-      if ((h | 0) === h) {
-        pCount++;   
+  // store the number of triangles with a given perimeter
+  let triangles = {};
+  // a is the shortest side
+  for (let a = 3; a < n / 3; a++)
+  // o is the opposite side and is at least as long as a
+    for (let o = a; o < n / 2; o++) {
+      let h = Math.sqrt(a * a + o * o); // hypotenuse
+      let p = a + o + h;  // perimeter
+      if ((h % 1) === 0 && p <= n) {
+        triangles[p] = (triangles[p] || 0) + 1;
       }
     }
-    if(pCount > count) {
-      pMax = p;
-      count = pCount;
+
+  let max = 0, maxp = null;
+  for (let p in triangles) {
+    if (max < triangles[p]) {
+      max = triangles[p];
+      maxp = p;
     }
   }
-  return pMax;
+  return maxp;
 }
 
 ```
