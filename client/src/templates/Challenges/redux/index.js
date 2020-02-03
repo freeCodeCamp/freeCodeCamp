@@ -60,6 +60,7 @@ export const types = createTypes(
     'updateSuccessMessage',
     'updateTests',
     'updateLogs',
+    'cancelTests',
 
     'logsToConsole',
 
@@ -121,6 +122,7 @@ export const createFiles = createAction(types.createFiles, challengeFiles =>
 export const createQuestion = createAction(types.createQuestion);
 export const initTests = createAction(types.initTests);
 export const updateTests = createAction(types.updateTests);
+export const cancelTests = createAction(types.cancelTests);
 
 export const initConsole = createAction(types.initConsole);
 export const initLogs = createAction(types.initLogs);
