@@ -59,6 +59,10 @@ console.log(intRightTriangles(500)); // 420
 <section id='solution'>
 
 ```js
+
+// Original idea for this solution came from
+// https://www.xarg.org/puzzle/project-euler/problem-39/
+
 function intRightTriangles(n) {
   // store the number of triangles with a given perimeter
   let triangles = {};
