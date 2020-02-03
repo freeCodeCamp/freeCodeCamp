@@ -134,7 +134,7 @@ function updateMyTheme(req, res, next) {
   return req.user
     .updateTheme(theme)
     .then(
-      () => res.sendFlash(alertTypes.info, 'Your theme has been updated'),
+      () => res.sendFlash(alertTypes.info, 'Your theme has been updated!'),
       next
     );
 }
@@ -249,7 +249,7 @@ const updatePrivacyTerms = (req, res, next) => {
       type: 'success',
       message:
         'We have updated your preferences. ' +
-        'You can now continue using freeCodeCamp.'
+        'You can now continue using freeCodeCamp!'
     });
   });
 };
