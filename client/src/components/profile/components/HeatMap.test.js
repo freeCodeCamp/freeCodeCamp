@@ -1,4 +1,4 @@
-/* global expect */
+/* global expect jest */
 
 import '@testing-library/jest-dom/extend-expect';
 import React from 'react';
@@ -17,10 +17,21 @@ const props = {
   }
 };
 
+let dateNowMockFn;
+
+beforeEach(() => {
+  dateNowMockFn = jest
+    .spyOn(Date, 'now')
+    .mockImplementation(() => 1580729769714);
+});
+
+afterEach(() => {
+  dateNowMockFn.mockRestore();
+});
+
 describe('<HeatMap/>', () => {
   it('renders correctly', () => {
     const { container } = render(<HeatMap {...props} />);
-
     expect(container).toMatchSnapshot();
   });
 });

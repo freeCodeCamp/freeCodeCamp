@@ -24,45 +24,45 @@ exports[`<HeatMap/> renders correctly 1`] = `
             >
               <text
                 class="react-calendar-heatmap-month-label"
-                x="0"
-                y="10"
-              >
-                Aug
-              </text>
-              <text
-                class="react-calendar-heatmap-month-label"
-                x="44"
+                x="33"
                 y="10"
               >
                 Sep
               </text>
               <text
                 class="react-calendar-heatmap-month-label"
-                x="99"
+                x="88"
                 y="10"
               >
                 Oct
               </text>
               <text
                 class="react-calendar-heatmap-month-label"
-                x="143"
+                x="132"
                 y="10"
               >
                 Nov
               </text>
               <text
                 class="react-calendar-heatmap-month-label"
-                x="187"
+                x="176"
                 y="10"
               >
                 Dec
               </text>
               <text
                 class="react-calendar-heatmap-month-label"
-                x="242"
+                x="231"
                 y="10"
               >
                 Jan
+              </text>
+              <text
+                class="react-calendar-heatmap-month-label"
+                x="275"
+                y="10"
+              >
+                Feb
               </text>
             </g>
             <g
@@ -72,44 +72,6 @@ exports[`<HeatMap/> renders correctly 1`] = `
               <g
                 class="react-calendar-heatmap-week"
                 transform="translate(0, 0)"
-              >
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Aug 1, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="44"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Aug 2, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="55"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Aug 3, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="66"
-                >
-                  <title />
-                </rect>
-              </g>
-              <g
-                class="react-calendar-heatmap-week"
-                transform="translate(11, 0)"
               >
                 <rect
                   class="color-empty"
@@ -191,7 +153,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
               </g>
               <g
                 class="react-calendar-heatmap-week"
-                transform="translate(22, 0)"
+                transform="translate(11, 0)"
               >
                 <rect
                   class="color-empty"
@@ -273,7 +235,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
               </g>
               <g
                 class="react-calendar-heatmap-week"
-                transform="translate(33, 0)"
+                transform="translate(22, 0)"
               >
                 <rect
                   class="color-empty"
@@ -355,7 +317,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
               </g>
               <g
                 class="react-calendar-heatmap-week"
-                transform="translate(44, 0)"
+                transform="translate(33, 0)"
               >
                 <rect
                   class="color-empty"
@@ -437,7 +399,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
               </g>
               <g
                 class="react-calendar-heatmap-week"
-                transform="translate(55, 0)"
+                transform="translate(44, 0)"
               >
                 <rect
                   class="color-empty"
@@ -519,7 +481,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
               </g>
               <g
                 class="react-calendar-heatmap-week"
-                transform="translate(66, 0)"
+                transform="translate(55, 0)"
               >
                 <rect
                   class="color-empty"
@@ -601,7 +563,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
               </g>
               <g
                 class="react-calendar-heatmap-week"
-                transform="translate(77, 0)"
+                transform="translate(66, 0)"
               >
                 <rect
                   class="color-empty"
@@ -683,7 +645,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
               </g>
               <g
                 class="react-calendar-heatmap-week"
-                transform="translate(88, 0)"
+                transform="translate(77, 0)"
               >
                 <rect
                   class="color-empty"
@@ -765,7 +727,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
               </g>
               <g
                 class="react-calendar-heatmap-week"
-                transform="translate(99, 0)"
+                transform="translate(88, 0)"
               >
                 <rect
                   class="color-empty"
@@ -847,7 +809,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
               </g>
               <g
                 class="react-calendar-heatmap-week"
-                transform="translate(110, 0)"
+                transform="translate(99, 0)"
               >
                 <rect
                   class="color-empty"
@@ -929,7 +891,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
               </g>
               <g
                 class="react-calendar-heatmap-week"
-                transform="translate(121, 0)"
+                transform="translate(110, 0)"
               >
                 <rect
                   class="color-empty"
@@ -1011,7 +973,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
               </g>
               <g
                 class="react-calendar-heatmap-week"
-                transform="translate(132, 0)"
+                transform="translate(121, 0)"
               >
                 <rect
                   class="color-empty"
@@ -1093,7 +1055,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
               </g>
               <g
                 class="react-calendar-heatmap-week"
-                transform="translate(143, 0)"
+                transform="translate(132, 0)"
               >
                 <rect
                   class="color-empty"
@@ -1175,7 +1137,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
               </g>
               <g
                 class="react-calendar-heatmap-week"
-                transform="translate(154, 0)"
+                transform="translate(143, 0)"
               >
                 <rect
                   class="color-empty"
@@ -1257,7 +1219,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
               </g>
               <g
                 class="react-calendar-heatmap-week"
-                transform="translate(165, 0)"
+                transform="translate(154, 0)"
               >
                 <rect
                   class="color-empty"
@@ -1339,7 +1301,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
               </g>
               <g
                 class="react-calendar-heatmap-week"
-                transform="translate(176, 0)"
+                transform="translate(165, 0)"
               >
                 <rect
                   class="color-empty"
@@ -1421,7 +1383,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
               </g>
               <g
                 class="react-calendar-heatmap-week"
-                transform="translate(187, 0)"
+                transform="translate(176, 0)"
               >
                 <rect
                   class="color-empty"
@@ -1503,7 +1465,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
               </g>
               <g
                 class="react-calendar-heatmap-week"
-                transform="translate(198, 0)"
+                transform="translate(187, 0)"
               >
                 <rect
                   class="color-empty"
@@ -1585,7 +1547,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
               </g>
               <g
                 class="react-calendar-heatmap-week"
-                transform="translate(209, 0)"
+                transform="translate(198, 0)"
               >
                 <rect
                   class="color-empty"
@@ -1667,7 +1629,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
               </g>
               <g
                 class="react-calendar-heatmap-week"
-                transform="translate(220, 0)"
+                transform="translate(209, 0)"
               >
                 <rect
                   class="color-empty"
@@ -1749,7 +1711,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
               </g>
               <g
                 class="react-calendar-heatmap-week"
-                transform="translate(231, 0)"
+                transform="translate(220, 0)"
               >
                 <rect
                   class="color-empty"
@@ -1831,7 +1793,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
               </g>
               <g
                 class="react-calendar-heatmap-week"
-                transform="translate(242, 0)"
+                transform="translate(231, 0)"
               >
                 <rect
                   class="color-empty"
@@ -1913,7 +1875,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
               </g>
               <g
                 class="react-calendar-heatmap-week"
-                transform="translate(253, 0)"
+                transform="translate(242, 0)"
               >
                 <rect
                   class="color-empty"
@@ -1995,7 +1957,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
               </g>
               <g
                 class="react-calendar-heatmap-week"
-                transform="translate(264, 0)"
+                transform="translate(253, 0)"
               >
                 <rect
                   class="color-empty"
@@ -2077,7 +2039,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
               </g>
               <g
                 class="react-calendar-heatmap-week"
-                transform="translate(275, 0)"
+                transform="translate(264, 0)"
               >
                 <rect
                   class="color-empty"
@@ -2159,7 +2121,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
               </g>
               <g
                 class="react-calendar-heatmap-week"
-                transform="translate(286, 0)"
+                transform="translate(275, 0)"
               >
                 <rect
                   class="color-empty"
@@ -2206,9 +2168,9 @@ exports[`<HeatMap/> renders correctly 1`] = `
                   <title />
                 </rect>
                 <rect
-                  class="color-scale-1"
+                  class="color-empty"
                   currentItem="false"
-                  data-tip="<b>2 points</b> on Jan 30, 2020"
+                  data-tip="<b>No points</b> on Jan 30, 2020"
                   height="10"
                   width="10"
                   x="0"
@@ -2217,9 +2179,9 @@ exports[`<HeatMap/> renders correctly 1`] = `
                   <title />
                 </rect>
                 <rect
-                  class="color-empty"
+                  class="color-scale-1"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Jan 31, 2020"
+                  data-tip="<b>2 points</b> on Jan 31, 2020"
                   height="10"
                   width="10"
                   x="0"
@@ -2235,6 +2197,44 @@ exports[`<HeatMap/> renders correctly 1`] = `
                   width="10"
                   x="0"
                   y="66"
+                >
+                  <title />
+                </rect>
+              </g>
+              <g
+                class="react-calendar-heatmap-week"
+                transform="translate(286, 0)"
+              >
+                <rect
+                  class="color-empty"
+                  currentItem="false"
+                  data-tip="<b>No points</b> on Feb 2, 2020"
+                  height="10"
+                  width="10"
+                  x="0"
+                  y="0"
+                >
+                  <title />
+                </rect>
+                <rect
+                  class="color-empty"
+                  currentItem="false"
+                  data-tip="<b>No points</b> on Feb 3, 2020"
+                  height="10"
+                  width="10"
+                  x="0"
+                  y="11"
+                >
+                  <title />
+                </rect>
+                <rect
+                  class="color-empty"
+                  currentItem="false"
+                  data-tip="<b>No points</b> on Feb 4, 2020"
+                  height="10"
+                  width="10"
+                  x="0"
+                  y="22"
                 >
                   <title />
                 </rect>
