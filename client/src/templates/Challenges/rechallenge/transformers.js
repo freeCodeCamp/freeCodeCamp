@@ -44,18 +44,22 @@ Babel.registerPlugin(
   protect(testProtectTimeout, testLoopProtectCB, loopsPerTimeoutCheck)
 );
 
+const babelOptionsJSBase = {
+  presets: [presetEnv]
+};
+
 const babelOptionsJSX = {
   plugins: ['loopProtection'],
   presets: [presetEnv, presetReact]
 };
 
 const babelOptionsJS = {
-  plugins: ['testLoopProtection'],
-  presets: [presetEnv]
+  ...babelOptionsJSBase,
+  plugins: ['testLoopProtection']
 };
 
 const babelOptionsJSPreview = {
-  ...babelOptionsJS,
+  ...babelOptionsJSBase,
   plugins: ['loopProtection']
 };
 
@@ -94,16 +98,22 @@ function tryTransform(wrap = identity) {
   };
 }
 
-const babelTransformer = (preview = false) =>
-  cond([
+const babelTransformer = ({ preview = false, protect = true }) => {
+  let options = babelOptionsJSBase;
+  // we always protect the preview, since it evaluates as the user types and
+  // they may briefly have infinite looping code accidentally
+  if (protect) {
+    options = preview ? babelOptionsJSPreview : babelOptionsJS;
+  } else {
+    options = preview ? babelOptionsJSPreview : options;
+  }
+  return cond([
     [
       testJS,
       flow(
         partial(
           vinyl.transformHeadTailAndContents,
-          tryTransform(
-            babelTransformCode(preview ? babelOptionsJSPreview : babelOptionsJS)
-          )
+          tryTransform(babelTransformCode(options))
         )
       )
     ],
@@ -119,6 +129,7 @@ const babelTransformer = (preview = false) =>
     ],
     [stubTrue, identity]
   ]);
+};
 
 const sassWorker = createWorker(sassCompile);
 async function transformSASS(element) {
@@ -167,16 +178,9 @@ export const htmlTransformer = cond([
   [stubTrue, identity]
 ]);
 
-export const transformers = [
+export const getTransformers = config => [
   replaceNBSP,
-  babelTransformer(),
-  composeHTML,
-  htmlTransformer
-];
-
-export const transformersPreview = [
-  replaceNBSP,
-  babelTransformer(true),
+  babelTransformer(config ? config : {}),
   composeHTML,
   htmlTransformer
 ];
