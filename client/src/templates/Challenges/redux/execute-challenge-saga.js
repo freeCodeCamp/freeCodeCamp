@@ -6,7 +6,9 @@ import {
   takeLatest,
   takeEvery,
   fork,
-  getContext
+  getContext,
+  take,
+  cancel
 } from 'redux-saga/effects';
 import { channel } from 'redux-saga';
 import escape from 'lodash/escape';
@@ -21,7 +23,8 @@ import {
   logsToConsole,
   updateTests,
   isBuildEnabledSelector,
-  disableBuildOnError
+  disableBuildOnError,
+  types
 } from './';
 
 import {
@@ -35,6 +38,13 @@ import {
 
 // How long before bailing out of a preview.
 const previewTimeout = 2500;
+
+export function* executeCancellableChallengeSaga() {
+  const task = yield fork(executeChallengeSaga);
+
+  yield take(types.cancelTests);
+  yield cancel(task);
+}
 
 export function* executeChallengeSaga() {
   const isBuildEnabled = yield select(isBuildEnabledSelector);
@@ -181,7 +191,7 @@ function* previewChallengeSaga() {
 
 export function createExecuteChallengeSaga(types) {
   return [
-    takeLatest(types.executeChallenge, executeChallengeSaga),
+    takeLatest(types.executeChallenge, executeCancellableChallengeSaga),
     takeLatest(
       [
         types.updateFile,
