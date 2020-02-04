@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
@@ -9,10 +10,11 @@ import { stripePublicKey } from '../../config/env.json';
 import { Spacer, Loader } from '../components/helpers';
 import DonateForm from '../components/Donation/DonateForm';
 import DonateText from '../components/Donation/DonateText';
-import { signInLoadingSelector, userSelector } from '../redux';
+import { signInLoadingSelector, userSelector, executeGA } from '../redux';
 import { stripeScriptLoader } from '../utils/scriptLoaders';
 
 const propTypes = {
+  executeGA: PropTypes.func,
   isDonating: PropTypes.bool,
   showLoading: PropTypes.bool.isRequired
 };
@@ -26,6 +28,14 @@ const mapStateToProps = createSelector(
   })
 );
 
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      executeGA
+    },
+    dispatch
+  );
+
 export class DonatePage extends Component {
   constructor(...props) {
     super(...props);
@@ -33,11 +43,19 @@ export class DonatePage extends Component {
       stripe: null,
       enableSettings: false
     };
-
+    this.handleProcessing = this.handleProcessing.bind(this);
     this.handleStripeLoad = this.handleStripeLoad.bind(this);
   }
 
   componentDidMount() {
+    this.props.executeGA({
+      type: 'event',
+      data: {
+        category: 'Donation',
+        action: `Displayed donate page`,
+        nonInteraction: true
+      }
+    });
     if (window.Stripe) {
       this.handleStripeLoad();
     } else if (document.querySelector('#stripe-js')) {
@@ -54,6 +72,18 @@ export class DonatePage extends Component {
     if (stripeMountPoint) {
       stripeMountPoint.removeEventListener('load', this.handleStripeLoad);
     }
+  }
+
+  handleProcessing(duration, amount) {
+    this.props.executeGA({
+      type: 'event',
+      data: {
+        category: 'donation',
+        action: 'donate page stripe form submission',
+        label: duration,
+        value: amount
+      }
+    });
   }
 
   handleStripeLoad() {
@@ -98,6 +128,7 @@ export class DonatePage extends Component {
                 <Col md={6}>
                   <DonateForm
                     enableDonationSettingsPage={this.enableDonationSettingsPage}
+                    handleProcessing={this.handleProcessing}
                     stripe={stripe}
                   />
                 </Col>
@@ -117,4 +148,7 @@ export class DonatePage extends Component {
 DonatePage.displayName = 'DonatePage';
 DonatePage.propTypes = propTypes;
 
-export default connect(mapStateToProps)(DonatePage);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(DonatePage);

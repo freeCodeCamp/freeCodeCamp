@@ -19,8 +19,8 @@ import './Donation.css';
 
 const propTypes = {
   defaultTheme: PropTypes.string,
+  handleProcessing: PropTypes.func,
   isDonating: PropTypes.bool,
-  showCloseBtn: PropTypes.func,
   stripe: PropTypes.shape({
     createToken: PropTypes.func.isRequired
   })
@@ -79,7 +79,7 @@ class MinimalDonateForm extends Component {
 
   render() {
     const { donationAmount, donationDuration, stripe } = this.state;
-    const { showCloseBtn, defaultTheme } = this.props;
+    const { handleProcessing, defaultTheme } = this.props;
 
     return (
       <Row>
@@ -93,7 +93,7 @@ class MinimalDonateForm extends Component {
                 getDonationButtonLabel={() =>
                   `Confirm your donation of $5 per month`
                 }
-                showCloseBtn={showCloseBtn}
+                handleProcessing={handleProcessing}
               />
             </Elements>
           </StripeProvider>
