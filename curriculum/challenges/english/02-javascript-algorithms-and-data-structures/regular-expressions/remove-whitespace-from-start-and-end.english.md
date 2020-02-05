@@ -23,8 +23,8 @@ Write a regex and use the appropriate string methods to remove whitespace at the
 tests:
   - text: <code>result</code> should equal to <code>"Hello, World!"</code>
     testString: assert(result == "Hello, World!");
-  - text: You should not use the <code>.trim()</code> method.
-    testString: assert(!code.match(/\.trim\(.*?\)/));
+  - text: Your solution should not use the <code>String.prototype.trim()</code> method.
+    testString: assert(!code.match(/\.trim\([\s\S]*?\)/));
   - text: The <code>result</code> variable should not be set equal to a string.
     testString: assert(!code.match(/result\s*=\s*".*?"/));
 
