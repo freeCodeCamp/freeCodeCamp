@@ -7,20 +7,19 @@
 
 ## freeCodeCamp.org's open-source codebase and curriculum
 
-[freeCodeCamp.org](https://www.freecodecamp.org) is a friendly community where you can learn to code for free. It is run by a [donor-supported 501(c)(3) nonprofit](https://donate.freecodecamp.org) to help  millions of busy adults transition into tech. Our community has already helped more than 10,000 people get their first developer job.
+[freeCodeCamp.org](https://www.freecodecamp.org) is a friendly community where you can learn to code for free. It is run by a [donor-supported 501(c)(3) nonprofit](https://donate.freecodecamp.org) to help millions of busy adults transition into tech. Our community has already helped more than 10,000 people get their first developer job.
 
 Our full-stack web development curriculum is completely free and self-paced. We have thousands of interactive coding challenges to help you expand your skills.
 
 ## Table of Contents
 
-* [Certifications](#certifications)
-* [The Learning Platform](#the-learning-platform)
-* [Reporting Bugs and Issues](#reporting-bugs-and-issues)
-* [Reporting Security Issues](#reporting-security-issues)
-* [Contributing](#contributing)
-* [Platform, Build and Deployment Status](#platform-build-and-deployment-status)
-* [License](#license)
-
+- [Certifications](#certifications)
+- [The Learning Platform](#the-learning-platform)
+- [Reporting Bugs and Issues](#reporting-bugs-and-issues)
+- [Reporting Security Issues](#reporting-security-issues)
+- [Contributing](#contributing)
+- [Platform, Build and Deployment Status](#platform-build-and-deployment-status)
+- [License](#license)
 
 ### Certifications
 
@@ -128,6 +127,7 @@ Our community also has:
 > ### [Join our community here](https://www.freecodecamp.org/signin).
 
 ### Reporting Bugs and Issues
+
 If you think you've found a bug, first read the [how to report a bug](https://www.freecodecamp.org/forum/t/how-to-report-a-bug/19543) article and follow its instructions.
 
 If you're confident it's a new bug and have confirmed that someone else is facing the same issue, go ahead and create a new GitHub issue. Be sure to include as much information as possible so we can reproduce the bug.
@@ -152,3 +152,9 @@ The content of this repository is bound by the following licenses:
 
 - The computer software is licensed under the [BSD-3-Clause](LICENSE.md) license.
 - The learning resources in the [`/curriculum`](/curriculum) directory including their subdirectories thereon are licensed under the [CC-BY-SA-4.0](/curriculum/LICENSE.md) license.
+
+# Responsible Disclosure
+
+freeCodeCamp appreciates any responsible disclosure of vulnerabilities which might impact the integrity of the platform or the users associated with it. Although we do not offer any bounties or swags at the moment, we'll be happy to list your name in our Hall of Fame list below:
+
+1. Mehul Mohan from [codedamn](https://codedamn.com) ([@mehulmpt](https://twitter.com/mehulmpt)) - [Vulnerability Fix](https://github.com/freeCodeCamp/freeCodeCamp/blob/bb5a9e815313f1f7c91338e171bfe5acb8f3e346/client/src/components/Flash/index.js)
