@@ -1,12 +1,34 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { HotKeys, GlobalHotKeys } from 'react-hotkeys';
+import {
+  HotKeys,
+  GlobalHotKeys,
+  getApplicationKeyMap,
+  ObserveKeys
+} from 'react-hotkeys';
 import { navigate } from 'gatsby';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
 import { canFocusEditorSelector, setEditorFocusability } from '../redux';
 import './hotkeys.css';
+
+const styles = {
+  DIALOG: {
+    width: 600,
+    position: 'fixed',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    padding: '0 24',
+    backgroundColor: 'white',
+    zIndex: 100,
+    color: 'rgba(0,0,0,0.87)'
+  },
+  KEYMAP_TABLE_CELL: {
+    padding: 8
+  }
+};
 
 const mapStateToProps = createSelector(
   canFocusEditorSelector,
@@ -18,11 +40,25 @@ const mapStateToProps = createSelector(
 const mapDispatchToProps = { setEditorFocusability };
 
 const keyMap = {
-  NAVIGATION_MODE: 'escape',
-  EXECUTE_CHALLENGE: ['ctrl+enter', 'command+enter'],
-  FOCUS_EDITOR: 'e',
-  NAVIGATE_PREV: ['p'],
-  NAVIGATE_NEXT: ['n']
+  NAVIGATION_MODE: { name: 'Navigation mode', sequence: 'alt+n' },
+  EXECUTE_CHALLENGE: {
+    name: 'Execute challenge:',
+    sequences: ['ctrl+enter', 'command+enter']
+  },
+  FOCUS_EDITOR: { name: 'Focus editor', sequence: 'e' },
+  NAVIGATE_PREV: { name: 'Previous challenge', sequence: 'p' },
+  NAVIGATE_NEXT: { name: 'Next challenge', sequence: 'n' }
+};
+
+const globalKeyMap = {
+  SHOW_DIALOG: {
+    name: 'Display keyboard shortcuts',
+    sequence: 'shift+?'
+  },
+  CLOSE_DIALOG: {
+    name: 'Dismiss dialog',
+    sequence: 'Escape'
+  }
 };
 
 const propTypes = {
@@ -37,56 +73,127 @@ const propTypes = {
   setEditorFocusability: PropTypes.func.isRequired
 };
 
-function Hotkeys({
-  canFocusEditor,
-  children,
-  editorRef,
-  executeChallenge,
-  introPath,
-  innerRef,
-  nextChallengePath,
-  prevChallengePath,
-  setEditorFocusability
-}) {
-  const handlers = {
-    EXECUTE_CHALLENGE: e => {
-      // the 'enter' part of 'ctrl+enter' stops HotKeys from listening, so it
-      // needs to be prevented.
-      // TODO: 'enter' on its own also disables HotKeys, but default behaviour
-      // should not be prevented in that case.
-      e.preventDefault();
-      if (executeChallenge) executeChallenge();
-    },
-    FOCUS_EDITOR: e => {
-      e.preventDefault();
-      if (editorRef && editorRef.current) {
-        editorRef.current.getWrappedInstance().focusOnEditor();
-      }
-    },
-    NAVIGATION_MODE: () => setEditorFocusability(false),
-    NAVIGATE_PREV: () => {
-      if (!canFocusEditor) navigate(prevChallengePath);
-    },
-    NAVIGATE_NEXT: () => {
-      if (!canFocusEditor) navigate(introPath ? introPath : nextChallengePath);
+class Hotkeys extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      showDialog: false,
+      filter: ''
+    };
+  }
+
+  renderDialog() {
+    if (this.state.showDialog) {
+      const keyMap = getApplicationKeyMap();
+      const { filter } = this.state;
+      const _filter = filter.toUpperCase();
+
+      return (
+        <div style={styles.DIALOG}>
+          <h2>Keyboard shortcuts</h2>
+
+          <ObserveKeys only={'Escape'}>
+            <input
+              autoFocus={true}
+              onChange={({ target: { value } }) =>
+                this.setState({ filter: value })
+              }
+              placeholder='Filter'
+              value={filter}
+            />
+          </ObserveKeys>
+
+          <table>
+            <tbody>
+              {Object.keys(keyMap).reduce((memo, actionName) => {
+                if (filter.length === 0 || actionName.indexOf(_filter) !== -1) {
+                  const { sequences, name } = keyMap[actionName];
+
+                  memo.push(
+                    <tr key={name || actionName}>
+                      <td style={styles.KEYMAP_TABLE_CELL}>{name}</td>
+                      <td style={styles.KEYMAP_TABLE_CELL}>
+                        {sequences.map(({ sequence }) => (
+                          <span key={sequence}>{sequence}</span>
+                        ))}
+                      </td>
+                    </tr>
+                  );
+                }
+
+                return memo;
+              }, [])}
+            </tbody>
+          </table>
+        </div>
+      );
+    } else {
+      return null;
     }
-  };
-  // GlobalHotKeys is always mounted and tracks all keypresses. Without it,
-  // keyup events can be missed and react-hotkeys assumes that that key is still
-  // being pressed.
-  // allowChanges is necessary if the handlers depend on props (in this case
-  // canFocusEditor)
-  return (
-    <HotKeys
-      allowChanges={true}
-      handlers={handlers}
-      innerRef={innerRef}
-      keyMap={keyMap}
-    >
-      {children}
-      <GlobalHotKeys />
-    </HotKeys>
-  );
+  }
+
+  render() {
+    const {
+      canFocusEditor,
+      children,
+      editorRef,
+      executeChallenge,
+      introPath,
+      innerRef,
+      nextChallengePath,
+      prevChallengePath,
+      setEditorFocusability
+    } = this.props;
+
+    const globalHandlers = {
+      SHOW_DIALOG: () => this.setState({ showDialog: !this.state.showDialog }),
+      CLOSE_DIALOG: () => this.setState({ showDialog: false })
+    };
+
+    const handlers = {
+      EXECUTE_CHALLENGE: e => {
+        // the 'enter' part of 'ctrl+enter' stops HotKeys from listening, so
+        // it needs to be prevented.
+        // TODO: 'enter' on its own also disables HotKeys, but default
+        // behaviour should not be prevented in that case.
+        e.preventDefault();
+        if (executeChallenge) executeChallenge();
+      },
+      FOCUS_EDITOR: e => {
+        e.preventDefault();
+        if (editorRef && editorRef.current) {
+          editorRef.current.getWrappedInstance().focusOnEditor();
+        }
+      },
+      NAVIGATION_MODE: () => setEditorFocusability(false),
+      NAVIGATE_PREV: () => {
+        if (!canFocusEditor) navigate(prevChallengePath);
+      },
+      NAVIGATE_NEXT: () => {
+        if (!canFocusEditor)
+          navigate(introPath ? introPath : nextChallengePath);
+      }
+    };
+
+    // GlobalHotKeys is always mounted and tracks all keypresses. Without it,
+    // keyup events can be missed and react-hotkeys assumes that that key is
+    // still being pressed.
+    // allowChanges is necessary if the handlers depend on props (in this case
+    // canFocusEditor)
+    return (
+      <HotKeys
+        allowChanges={true}
+        handlers={handlers}
+        innerRef={innerRef}
+        keyMap={keyMap}
+      >
+        {this.renderDialog()}
+        {children}
+        <GlobalHotKeys handlers={globalHandlers} keyMap={globalKeyMap} />
+      </HotKeys>
+    );
+  }
 }
 
 Hotkeys.displayName = 'Hotkeys';

@@ -147,7 +147,7 @@ class Editor extends Component {
     this._editor.addAction({
       id: 'leave-editor',
       label: 'Leave editor',
-      keybindings: [monaco.KeyCode.Escape],
+      keybindings: [monaco.KeyMod.Alt | monaco.KeyCode.KEY_N],
       run: () => {
         this.focusOnHotkeys();
         this.props.setEditorFocusability(false);
