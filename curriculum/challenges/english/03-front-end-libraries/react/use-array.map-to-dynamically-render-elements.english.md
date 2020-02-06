@@ -29,7 +29,7 @@ tests:
   - text: The first child of <code>MyToDoList</code> should be a <code>textarea</code> element.
     testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyToDoList)); return mockedComponent.find('MyToDoList').children().childAt(0).type() === 'textarea'; })());
   - text: The second child of <code>MyToDoList</code> should be a <code>button</code> element.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyToDoList)); return mockedComponent.find('MyToDoList').children().childAt(1).type() === 'button'; })());
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyToDoList)); return mockedComponent.find('MyToDoList').children().childAt(2).type() === 'button'; })());
   - text: The state of <code>MyToDoList</code> should be initialized with <code>toDoList</code> as an empty array.
     testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyToDoList)); const initialState = mockedComponent.state(); return Array.isArray(initialState.toDoList) === true && initialState.toDoList.length === 0; })());
   - text: The state of <code>MyToDoList</code> should be initialized with <code>userInput</code> as an empty string.
