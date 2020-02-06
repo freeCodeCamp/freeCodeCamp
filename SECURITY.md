@@ -12,6 +12,8 @@ This document outlines our security policy for the codebase, and how to report v
 
 ## Reporting a Vulnerability
 
-Security issues should be emailed to security@freecodecamp.org, please do not create a public GitHub issue.
+If you think you have found a vulnerability, *please report responsibly*. Don't create GitHub issues for security issues. Instead, please send an email to `security@freecodecamp.org` and we'll look into it immediately.
+
+We appreciate any responsible disclosure of vulnerabilities that might impact the integrity of our platforms and users. While we do not offer any bounties or swags at the moment, we'll be happy to list your name in our [Hall of Fame](HoF.md) list.
 
 Ensure that you are using the **latest**, **stable** and **updated** version of the Operating System and Web Browser available to you on your machine.
