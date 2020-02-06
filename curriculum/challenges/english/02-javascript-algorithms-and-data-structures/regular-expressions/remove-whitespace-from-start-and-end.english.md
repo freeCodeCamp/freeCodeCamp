@@ -13,7 +13,7 @@ Sometimes whitespace characters around strings are not wanted but are there. Typ
 ## Instructions
 <section id='instructions'>
 Write a regex and use the appropriate string methods to remove whitespace at the beginning and end of strings.
-<strong>Note</strong><br>The <code>.trim()</code> method would work here, but you'll need to complete this challenge using regular expressions.
+<strong>Note:</strong> The <code>String.prototype.trim()</code> method would work here, but you'll need to complete this challenge using regular expressions.
 </section>
 
 ## Tests
