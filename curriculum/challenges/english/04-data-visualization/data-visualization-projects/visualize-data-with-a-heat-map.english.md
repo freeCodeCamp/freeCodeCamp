@@ -31,7 +31,6 @@ You can use HTML, JavaScript, CSS, and the D3 svg-based visualization library. R
 Here is the dataset you will need to complete this project: <code>https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/global-temperature.json</code>
 You can build your project by forking <a href='https://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code>
 Once you're done, submit the URL to your working project with all its tests passing.
-Remember to use the <a href='https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck.
 </section>
 
 ## Instructions

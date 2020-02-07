@@ -8,7 +8,6 @@ forumTopicId: 16019
 ## Description
 <section id='description'>
 Compare and update the inventory stored in a 2D array against a second 2D array of a fresh delivery. Update the current existing inventory item quantities (in <code>arr1</code>). If an item cannot be found, add the new item and quantity into the inventory array. The returned inventory array should be in alphabetical order by item.
-Remember to use <a href='https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code.
 </section>
 
 ## Instructions

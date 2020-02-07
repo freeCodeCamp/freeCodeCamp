@@ -24,7 +24,6 @@ You can use any mix of HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux, and
 <strong>User Story #11:</strong> The <code>#quote-box</code> wrapper element should be horizontally centered. Please run tests with browser's zoom level at 100% and page maximized.
 You can build your project by forking <a href='http://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code>
 Once you're done, submit the URL to your working project with all its tests passing.
-Remember to use the <a href='https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck.
 </section>
 
 ## Instructions

@@ -10,7 +10,6 @@ forumTopicId: 16046
 <section id='description'>
 You will be provided with an initial array (the first argument in the destroyer function), followed by one or more arguments. Remove all elements from the initial array that are of the same value as these arguments.
 <strong>Note</strong><br> You have to use the <code>arguments</code> object.
-Remember to use <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> if you get stuck. Write your own code.
 </section>
 
 ## Instructions

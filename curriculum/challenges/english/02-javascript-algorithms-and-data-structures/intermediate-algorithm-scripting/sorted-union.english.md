@@ -12,7 +12,6 @@ Write a function that takes two or more arrays and returns a new array of unique
 In other words, all values present from all arrays should be included in their original order, but with no duplicates in the final array.
 The unique numbers should be sorted by their original order, but the final array should not be sorted in numerical order.
 Check the assertion tests for examples.
-Remember to use <a href='https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code.
 </section>
 
 ## Instructions

@@ -14,7 +14,6 @@ Calling this returned function with a single argument will then return the sum:
 <code>var sumTwoAnd = addTogether(2);</code>
 <code>sumTwoAnd(3)</code> returns <code>5</code>.
 If either argument isn't a valid number, return undefined.
-Remember to use <a href='https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code.
 </section>
 
 ## Instructions

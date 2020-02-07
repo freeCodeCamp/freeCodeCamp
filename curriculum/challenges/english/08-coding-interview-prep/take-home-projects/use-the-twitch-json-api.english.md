@@ -16,7 +16,6 @@ Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_bl
 <strong>Hint:</strong> The relevant documentation about Twitch.tv's JSON API is here: <a href='https://dev.twitch.tv/docs/api/reference/#get-streams' target='_blank'>https://dev.twitch.tv/docs/api/reference/#get-streams</a>.
 <strong>Hint:</strong> Here's an array of the Twitch.tv usernames of people who regularly stream: <code>["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas"]</code>
 <strong>UPDATE:</strong> Due to a change in conditions on API usage, Twitch.tv requires an API key, but we've built a workaround. Use <a href='https://wind-bow.glitch.me' target='_blank'>https://wind-bow.glitch.me/helix</a> instead of twitch's API base URL (i.e. https://api.twitch.tv/helix ) and you'll still be able to get account information, without needing to sign up for an API key.
-Remember to use <a href='https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514' target='_blank'>Read-Search-Ask</a> if you get stuck.
 When you are finished, click the "I've completed this challenge" button and include a link to your CodePen.
 You can get feedback on your project by sharing it with your friends on Facebook.
 </section>

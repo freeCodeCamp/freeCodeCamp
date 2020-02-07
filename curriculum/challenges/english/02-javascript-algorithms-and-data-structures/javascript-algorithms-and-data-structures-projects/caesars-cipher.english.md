@@ -12,7 +12,6 @@ One of the simplest and most widely known <dfn>ciphers</dfn> is a <dfn>Caesar ci
 A common modern use is the <a href="https://en.wikipedia.org/wiki/ROT13" target='_blank'>ROT13</a> cipher, where the values of the letters are shifted by 13 places. Thus 'A' &harr; 'N', 'B' &harr;  'O' and so on.
 Write a function which takes a <a href="https://en.wikipedia.org/wiki/ROT13" target='_blank'>ROT13</a> encoded string as input and returns a decoded string.
 All letters will be uppercase. Do not transform any non-alphabetic character (i.e. spaces, punctuation), but do pass them on.
-Remember to use <a href='https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code.
 </section>
 
 ## Instructions

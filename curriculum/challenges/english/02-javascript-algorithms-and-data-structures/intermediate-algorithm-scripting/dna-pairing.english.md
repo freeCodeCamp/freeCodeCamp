@@ -13,7 +13,6 @@ The DNA strand is missing the pairing element. Take each character, get its pair
 Return the provided character as the first element in each array.
 For example, for the input GCG, return [["G", "C"], ["C","G"],["G", "C"]]
 The character and its pair are paired up in an array, and all the arrays are grouped into one encapsulating array.
-Remember to use <a href='https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code.
 </section>
 
 ## Instructions

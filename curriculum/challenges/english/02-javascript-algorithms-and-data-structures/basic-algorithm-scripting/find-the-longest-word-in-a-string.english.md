@@ -10,7 +10,6 @@ forumTopicId: 16015
 <section id='description'>
 Return the length of the longest word in the provided sentence.
 Your response should be a number.
-Remember to use <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> if you get stuck. Write your own code.
 </section>
 
 ## Instructions

@@ -9,7 +9,6 @@ forumTopicId: 16007
 ## Description
 <section id='description'>
 Convert the characters <code>&</code>, <code><</code>, <code>></code>, <code>"</code> (double quote), and <code>'</code> (apostrophe), in a string to their corresponding HTML entities.
-Remember to use <a href='https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code.
 </section>
 
 ## Instructions

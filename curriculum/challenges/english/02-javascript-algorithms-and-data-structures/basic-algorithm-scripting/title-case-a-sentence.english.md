@@ -10,7 +10,6 @@ forumTopicId: 16088
 <section id='description'>
 Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case.
 For the purpose of this exercise, you should also capitalize connecting words like "the" and "of".
-Remember to use <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> if you get stuck. Write your own code.
 </section>
 
 ## Instructions
