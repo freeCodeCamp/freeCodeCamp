@@ -12,7 +12,6 @@ The array will contain objects in the format <code>{name: 'name', avgAlt: avgAlt
 You can read about orbital periods <a href="http://en.wikipedia.org/wiki/Orbital_period" target='_blank'>on Wikipedia</a>.
 The values should be rounded to the nearest whole number. The body being orbited is Earth.
 The radius of the earth is 6367.4447 kilometers, and the GM value of earth is 398600.4418 km<sup>3</sup>s<sup>-2</sup>.
-Remember to use <a href='https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code.
 </section>
 
 ## Instructions

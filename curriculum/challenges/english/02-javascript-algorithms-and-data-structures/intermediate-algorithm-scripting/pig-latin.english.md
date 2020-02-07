@@ -13,7 +13,6 @@ Translate the provided string to pig latin.
 If a word begins with a vowel you just add "way" to the end.
 If a word does not contain a vowel, just add "ay" to the end.
 Input strings are guaranteed to be English words in all lowercase.
-Remember to use <a href='https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code.
 </section>
 
 ## Instructions
