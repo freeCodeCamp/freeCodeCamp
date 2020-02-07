@@ -9,55 +9,83 @@ forumTopicId: 302198
 <section id='description'>
 In the game, Monopoly, the standard board is set up in the following way:
 
-GO
-A1
-CC1
-A2
-T1
-R1
-B1
-CH1
-B2
-B3
-JAIL
-H2
-
-C1
-T2
-
-U1
-H1
-
-C2
-CH3
-
-C3
-R4
-
-R2
-G3
-
-D1
-CC3
-
-CC2
-G2
-
-D2
-G1
-
-D3
-G2J
-F3
-U2
-F2
-F1
-R3
-E3
-E2
-CH2
-E1
-FP
+<div style="text-align: center;">
+  <table cellspacing="1" cellpadding="5" border="0" style="background-color: black; color: black;" align="center">
+    <tbody>
+      <tr>
+        <td style="background-color: #ffffff; color: black; padding: 5px; border: 1px solid black;">GO</td>
+        <td style="background-color: #ffffff; color: black; padding: 5px; border: 1px solid black;">A1</td>
+        <td style="background-color: #ffffff; color: black; padding: 5px; border: 1px solid black;">CC1</td>
+        <td style="background-color: #ffffff; color: black; padding: 5px; border: 1px solid black;">A2</td>
+        <td style="background-color: #ffffff; color: black; padding: 5px; border: 1px solid black;">T1</td>
+        <td style="background-color: #ffffff; color: black; padding: 5px; border: 1px solid black;">R1</td>
+        <td style="background-color: #ffffff; color: black; padding: 5px; border: 1px solid black;">B1</td>
+        <td style="background-color: #ffffff; color: black; padding: 5px; border: 1px solid black;">CH1</td>
+        <td style="background-color: #ffffff; color: black; padding: 5px; border: 1px solid black;">B2</td>
+        <td style="background-color: #ffffff; color: black; padding: 5px; border: 1px solid black;">B3</td>
+        <td style="background-color: #ffffff; color: black; padding: 5px; border: 1px solid black;">JAIL</td>
+      </tr>
+      <tr>
+        <td style="background-color: #ffffff; color: black; padding: 5px; border: 1px solid black;">H2</td>
+        <td colspan="9">&nbsp;</td>
+        <td style="background-color: #ffffff; color: black; padding: 5px; border: 1px solid black;">C1</td>
+      </tr>
+      <tr>
+        <td style="background-color: #ffffff; color: black; padding: 5px; border: 1px solid black;">T2</td>
+        <td colspan="9">&nbsp;</td>
+        <td style="background-color: #ffffff; color: black; padding: 5px; border: 1px solid black;">U1</td>
+      </tr>
+      <tr>
+        <td style="background-color: #ffffff; color: black; padding: 5px; border: 1px solid black;">H1</td>
+        <td colspan="9">&nbsp;</td>
+        <td style="background-color: #ffffff; color: black; padding: 5px; border: 1px solid black;">C2</td>
+      </tr>
+      <tr>
+        <td style="background-color: #ffffff; color: black; padding: 5px; border: 1px solid black;">CH3</td>
+        <td colspan="9">&nbsp;</td>
+        <td style="background-color: #ffffff; color: black; padding: 5px; border: 1px solid black;">C3</td>
+      </tr>
+      <tr>
+        <td style="background-color: #ffffff; color: black; padding: 5px; border: 1px solid black;">R4</td>
+        <td colspan="9">&nbsp;</td>
+        <td style="background-color: #ffffff; color: black; padding: 5px; border: 1px solid black;">R2</td>
+      </tr>
+      <tr>
+        <td style="background-color: #ffffff; color: black; padding: 5px; border: 1px solid black;">G3</td>
+        <td colspan="9">&nbsp;</td>
+        <td style="background-color: #ffffff; color: black; padding: 5px; border: 1px solid black;">D1</td>
+      </tr>
+      <tr>
+        <td style="background-color: #ffffff; color: black; padding: 5px; border: 1px solid black;">CC3</td>
+        <td colspan="9">&nbsp;</td>
+        <td style="background-color: #ffffff; color: black; padding: 5px; border: 1px solid black;">CC2</td>
+      </tr>
+      <tr>
+        <td style="background-color: #ffffff; color: black; padding: 5px; border: 1px solid black;">G2</td>
+        <td colspan="9">&nbsp;</td>
+        <td style="background-color: #ffffff; color: black; padding: 5px; border: 1px solid black;">D2</td>
+      </tr>
+      <tr>
+        <td style="background-color: #ffffff; color: black; padding: 5px; border: 1px solid black;">G1</td>
+        <td colspan="9">&nbsp;</td>
+        <td style="background-color: #ffffff; color: black; padding: 5px; border: 1px solid black;">D3</td>
+      </tr>
+      <tr>
+        <td style="background-color: #ffffff; color: black; padding: 5px; border: 1px solid black;">G2J</td>
+        <td style="background-color: #ffffff; color: black; padding: 5px; border: 1px solid black;">F3</td>
+        <td style="background-color: #ffffff; color: black; padding: 5px; border: 1px solid black;">U2</td>
+        <td style="background-color: #ffffff; color: black; padding: 5px; border: 1px solid black;">F2</td>
+        <td style="background-color: #ffffff; color: black; padding: 5px; border: 1px solid black;">F1</td>
+        <td style="background-color: #ffffff; color: black; padding: 5px; border: 1px solid black;">R3</td>
+        <td style="background-color: #ffffff; color: black; padding: 5px; border: 1px solid black;">E3</td>
+        <td style="background-color: #ffffff; color: black; padding: 5px; border: 1px solid black;">E2</td>
+        <td style="background-color: #ffffff; color: black; padding: 5px; border: 1px solid black;">CH2</td>
+        <td style="background-color: #ffffff; color: black; padding: 5px; border: 1px solid black;">E1</td>
+        <td style="background-color: #ffffff; color: black; padding: 5px; border: 1px solid black;">FP</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 A player starts on the GO square and adds the scores on two 6-sided dice to determine the number of squares they advance in a clockwise direction. Without any further rules we would expect to visit each square with equal probability: 2.5%. However, landing on G2J (Go To Jail), CC (community chest), and CH (chance) changes this distribution.
 In addition to G2J, and one card from each of CC and CH, that orders the player to go directly to jail, if a player rolls three consecutive doubles, they do not advance the result of their 3rd roll. Instead they proceed directly to jail.
