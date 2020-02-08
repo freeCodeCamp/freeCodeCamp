@@ -36,7 +36,7 @@ export const legacyProjectMap = {
     },
     {
       id: 'bd7158d8c442eddfaeb5bd17',
-      title: 'Build a Javascript Calculator',
+      title: 'Build a JavaScript Calculator',
       link: `${legacyFrontEndBase}/build-a-javascript-calculator`,
       superBlock: 'legacy-front-end'
     },

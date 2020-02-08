@@ -32,8 +32,8 @@ tests:
     testString: assert.deepEqual(lengthSorter(["Mine", "is", "going", "great"]), ["going", "great", "Mine", "is"], '<code>lengthSorter(["Mine", "is", "going", "great"])</code> should return <code>["going", "great", "Mine", "is"]</code>.');
   - text: <code>lengthSorter(["Have", "fun", "sorting", "!!"])</code> should return <code>["sorting", "Have", "fun", "!!"]</code>.
     testString: assert.deepEqual(lengthSorter(["Have", "fun", "sorting", "!!"]), ["sorting", "Have", "fun", "!!"], '<code>lengthSorter(["Have", "fun", "sorting", "!!"])</code> should return <code>["sorting", "Have", "fun", "!!"]</code>.');
-  - text: <code>lengthSorter(["Everthing", "is", "good", "!!"])</code> should return <code>["Everthing", "good", "!!", "is"]</code>.
-    testString: assert.deepEqual(lengthSorter(["Everthing", "is", "good", "!!"]), ["Everthing", "good", "!!", "is"], '<code>lengthSorter(["Everthing", "is", "good", "!!"])</code> should return <code>["Everthing", "good", "!!", "is"]</code>.');
+  - text: <code>lengthSorter(["Everything", "is", "good", "!!"])</code> should return <code>["Everything", "good", "!!", "is"]</code>.
+    testString: assert.deepEqual(lengthSorter(["Everything", "is", "good", "!!"]), ["Everything", "good", "!!", "is"], '<code>lengthSorter(["Everything", "is", "good", "!!"])</code> should return <code>["Everything", "good", "!!", "is"]</code>.');
 ```
 
 </section>

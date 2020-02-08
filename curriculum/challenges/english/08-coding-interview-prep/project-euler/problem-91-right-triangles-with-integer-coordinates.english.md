@@ -7,12 +7,12 @@ forumTopicId: 302208
 
 ## Description
 <section id='description'>
-The points P (x1, y1) and Q (x2, y2) are plotted at integer co-ordinates and are joined to the origin, O(0,0), to form ΔOPQ.
+The points P (x1, y1) and Q (x2, y2) are plotted at integer coordinates and are joined to the origin, O(0,0), to form ΔOPQ.
 
 
 
 
-There are exactly fourteen triangles containing a right angle that can be formed when each co-ordinate lies between 0 and 2 inclusive; that is,0 ≤ x1, y1, x2, y2 ≤ 2.
+There are exactly fourteen triangles containing a right angle that can be formed when each coordinate lies between 0 and 2 inclusive; that is,0 ≤ x1, y1, x2, y2 ≤ 2.
 
 
 

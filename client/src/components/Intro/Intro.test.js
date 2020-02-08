@@ -24,7 +24,7 @@ describe('<Intro />', () => {
 const loggedInProps = {
   complete: true,
   isSignedIn: true,
-  name: 'Developement User',
+  name: 'Development User',
   navigate: () => {},
   pending: false,
   slug: '/',

@@ -12,7 +12,7 @@ There are thirteen such primes below 100: 2, 3, 5, 7, 11, 13, 17, 31, 37, 71, 73
 How many circular primes are there below n, whereas 100 <= n <= 1000000?
   
 <br><strong>Note:</strong><br>
-Circular primes individual rotation can exceeed `n`.
+Circular primes individual rotation can exceed `n`.
 </section>
 
 ## Instructions
@@ -106,7 +106,7 @@ function circularPrimes(n) {
           continue;
         }
         else if (!primes[x]) {
-          // If the rotated value is 0 then its not a ciruclar prime, break the loop
+          // If the rotated value is 0 then it isn't a circular prime, break the loop
           tmp = 0;
           break;
         }

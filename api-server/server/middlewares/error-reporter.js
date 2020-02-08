@@ -33,7 +33,7 @@ export function reportError(err) {
     : console.error(err);
 }
 
-export default function errrorReporter() {
+export default function errorReporter() {
   if (
     process.env.FREECODECAMP_NODE_ENV !== 'production' &&
     process.env.ERROR_REPORTER === 'true'

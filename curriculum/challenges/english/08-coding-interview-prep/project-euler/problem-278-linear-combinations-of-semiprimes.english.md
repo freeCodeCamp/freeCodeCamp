@@ -7,7 +7,7 @@ forumTopicId: 301928
 
 ## Description
 <section id='description'>
-Given the values of integers 1 < a1 < a2 <... < an, consider the linear combinationq1a1 + q2a2 + ... + qnan = b, using only integer values qk ≥ 0.
+Given the values of integers 1 < a1 < a2 <... < an, consider the linear combination q1a1 + q2a2 + ... + qnan = b, using only integer values qk ≥ 0.
 
 
 Note that for a given set of ak, it may be that not all values of b are possible.

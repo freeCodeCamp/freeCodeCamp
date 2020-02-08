@@ -71,12 +71,12 @@ permAlone('aab');
 
 ```js
 function permAlone(str) {
-  return permutor(str).filter(function(perm) {
+  return permuter(str).filter(function(perm) {
     return !perm.match(/(.)\1/g);
   }).length;
 }
 
-function permutor(str) {
+function permuter(str) {
   // http://staff.roguecc.edu/JMiller/JavaScript/permute.html
   //permArr: Global array which holds the list of permutations
   //usedChars: Global utility array which holds a list of "currently-in-use" characters

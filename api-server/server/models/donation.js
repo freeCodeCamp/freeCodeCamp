@@ -43,7 +43,7 @@ export default function(Donation) {
   function seedTheCache() {
     return new Promise((resolve, reject) =>
       Observable.defer(activeDonationsQuery$).subscribe(count => {
-        log('activeDonator count: %d', count);
+        log('activeDonor count: %d', count);
         activeDonationCountCache.update(() => count);
         return resolve();
       }, reject)
@@ -55,7 +55,7 @@ export default function(Donation) {
       () =>
         Observable.defer(activeDonationsQuery$).subscribe(
           count => {
-            log('activeDonator count: %d', count);
+            log('activeDonor count: %d', count);
             return activeDonationCountCache.update(() => count);
           },
           err => {

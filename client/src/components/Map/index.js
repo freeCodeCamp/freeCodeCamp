@@ -81,7 +81,7 @@ export class Map extends Component {
       node = nodes.find(node => dasherize(node.superBlock) === hash);
     }
 
-    // whitout hash only expand when signed in
+    // without hash only expand when signed in
     if (isSignedIn) {
       // if there is no hash or the hash did not match any challenge superblock
       // and there was a currentChallengeId

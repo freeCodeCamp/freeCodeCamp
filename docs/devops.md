@@ -203,7 +203,7 @@ The domain name will be different than **`freeCodeCamp.org`**. Currently this pu
 
 <h3 align="center"><a href='https://www.freecodecamp.dev' _target='blank'><code>www.freecodecamp.dev</code></a></h4>
 
-To prevent accidental indexing on search engines and users accidenatly using this site (without knowledge of it being a developement site) is closed off with a simple password:
+To prevent accidental indexing on search engines and users accidentally using this site (without knowledge of it being a development site) is closed off with a simple password:
 
 <h3 align="center"><code>freecodecamp-is-awesome</code></h4>
 

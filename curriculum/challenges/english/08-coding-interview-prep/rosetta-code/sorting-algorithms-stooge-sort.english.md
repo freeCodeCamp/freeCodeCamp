@@ -7,7 +7,7 @@ forumTopicId: 302318
 
 ## Description
 <section id='description'>
-Write a function to permform <a href="https://en.wikipedia.org/wiki/Stooge sort" target="_blank">Stooge Sort</a> on an array of integers. The function should return a sorted array.
+Write a function to perform <a href="https://en.wikipedia.org/wiki/Stooge sort" target="_blank">Stooge Sort</a> on an array of integers. The function should return a sorted array.
 The Stooge Sort algorithm is as follows:
 <pre>
 <b>algorithm</b> stoogesort(<b>array</b> L, i = 0, j = <b>length</b>(L)-1)
