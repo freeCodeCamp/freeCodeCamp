@@ -7,8 +7,8 @@ forumTopicId: 301713
 
 ## Description
 <section id='description'>
-Let's practice removimg items from an ES6 Set using the <code>delete</code> method.
-First, create an ES6 Set
+Let's practice removing items from an ES6 Set using the <code>delete</code> method.
+First, create an ES6 Set:
 <code>var set = new Set([1,2,3]);</code>
 Now remove an item from your Set with the <code>delete</code> method.
 

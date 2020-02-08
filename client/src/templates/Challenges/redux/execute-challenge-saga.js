@@ -15,6 +15,7 @@ import escape from 'lodash/escape';
 
 import {
   challengeDataSelector,
+  challengeMetaSelector,
   challengeTestsSelector,
   initConsole,
   updateConsole,
@@ -33,7 +34,8 @@ import {
   getTestRunner,
   challengeHasPreview,
   updatePreview,
-  isJavaScriptChallenge
+  isJavaScriptChallenge,
+  isLoopProtected
 } from '../utils/build';
 
 // How long before bailing out of a preview.
@@ -67,7 +69,12 @@ export function* executeChallengeSaga() {
     const proxyLogger = args => consoleProxy.put(args);
 
     const challengeData = yield select(challengeDataSelector);
-    const buildData = yield buildChallengeData(challengeData);
+    const challengeMeta = yield select(challengeMetaSelector);
+    const protect = isLoopProtected(challengeMeta);
+    const buildData = yield buildChallengeData(challengeData, {
+      preview: false,
+      protect
+    });
     const document = yield getContext('document');
     const testRunner = yield call(
       getTestRunner,
@@ -103,9 +110,9 @@ function* takeEveryConsole(channel) {
   });
 }
 
-function* buildChallengeData(challengeData, preview) {
+function* buildChallengeData(challengeData, options) {
   try {
-    return yield call(buildChallenge, challengeData, preview);
+    return yield call(buildChallenge, challengeData, options);
   } catch (e) {
     yield put(disableBuildOnError());
     throw e;
@@ -167,8 +174,14 @@ function* previewChallengeSaga() {
     yield fork(takeEveryConsole, logProxy);
 
     const challengeData = yield select(challengeDataSelector);
+
     if (canBuildChallenge(challengeData)) {
-      const buildData = yield buildChallengeData(challengeData, true);
+      const challengeMeta = yield select(challengeMetaSelector);
+      const protect = isLoopProtected(challengeMeta);
+      const buildData = yield buildChallengeData(challengeData, {
+        preview: true,
+        protect
+      });
       // evaluate the user code in the preview frame or in the worker
       if (challengeHasPreview(challengeData)) {
         const document = yield getContext('document');

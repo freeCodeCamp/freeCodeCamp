@@ -79,6 +79,10 @@
   cursor: pointer;
 }
 
+.no-hits-footer.fcc_suggestion_item:hover {
+  cursor: default;
+}
+
 .fcc_sr_only {
   position: absolute;
   width: 1px;

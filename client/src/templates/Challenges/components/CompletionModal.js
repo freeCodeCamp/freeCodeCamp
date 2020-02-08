@@ -6,10 +6,8 @@ import { createSelector } from 'reselect';
 import { Button, Modal } from '@freecodecamp/react-bootstrap';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import ga from '../../../analytics';
 import Login from '../../../components/Header/components/Login';
 import CompletionModalBody from './CompletionModalBody';
-
 import { dasherize } from '../../../../../utils/slugs';
 
 import './completion-modal.css';
@@ -25,7 +23,7 @@ import {
   lastBlockChalSubmitted
 } from '../redux';
 
-import { isSignedInSelector } from '../../../redux';
+import { isSignedInSelector, executeGA } from '../../../redux';
 
 const mapStateToProps = createSelector(
   challengeFilesSelector,
@@ -60,7 +58,8 @@ const mapDispatchToProps = function(dispatch) {
     },
     lastBlockChalSubmitted: () => {
       dispatch(lastBlockChalSubmitted());
-    }
+    },
+    executeGA
   };
   return () => dispatchers;
 };
@@ -70,6 +69,7 @@ const propTypes = {
   close: PropTypes.func.isRequired,
   completedChallengesIds: PropTypes.array,
   currentBlockIds: PropTypes.array,
+  executeGA: PropTypes.func,
   files: PropTypes.object.isRequired,
   id: PropTypes.string,
   isOpen: PropTypes.bool,
@@ -190,7 +190,7 @@ export class CompletionModalInner extends Component {
     const { completedPercent } = this.state;
 
     if (isOpen) {
-      ga.modalview('/completion-modal');
+      executeGA({ type: 'modal', data: '/completion-modal' });
     }
     const dashedName = dasherize(title);
     return (
