@@ -13,23 +13,6 @@ import { createSelector } from 'reselect';
 import { canFocusEditorSelector, setEditorFocusability } from '../redux';
 import './hotkeys.css';
 
-const styles = {
-  DIALOG: {
-    width: 600,
-    position: 'fixed',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    padding: '0 24',
-    backgroundColor: 'white',
-    zIndex: 100,
-    color: 'rgba(0,0,0,0.87)'
-  },
-  KEYMAP_TABLE_CELL: {
-    padding: 8
-  }
-};
-
 const mapStateToProps = createSelector(
   canFocusEditorSelector,
   canFocusEditor => ({
@@ -40,10 +23,10 @@ const mapStateToProps = createSelector(
 const mapDispatchToProps = { setEditorFocusability };
 
 const keyMap = {
-  NAVIGATION_MODE: { name: 'Navigation mode', sequence: 'alt+n' },
+  NAVIGATION_MODE: { name: 'Navigation mode', sequence: 'Alt+n' },
   EXECUTE_CHALLENGE: {
-    name: 'Execute challenge:',
-    sequences: ['ctrl+enter', 'command+enter']
+    name: 'Execute challenge',
+    sequences: ['Ctrl+Enter', 'Command+Enter']
   },
   FOCUS_EDITOR: { name: 'Focus editor', sequence: 'e' },
   NAVIGATE_PREV: { name: 'Previous challenge', sequence: 'p' },
@@ -52,8 +35,8 @@ const keyMap = {
 
 const globalKeyMap = {
   SHOW_DIALOG: {
-    name: 'Display keyboard shortcuts',
-    sequence: 'shift+?'
+    name: 'Show keyboard shortcuts',
+    sequence: 'Shift+?'
   },
   CLOSE_DIALOG: {
     name: 'Dismiss dialog',
@@ -89,8 +72,12 @@ class Hotkeys extends Component {
       const { filter } = this.state;
       const _filter = filter.toUpperCase();
 
+      // TODO: from an accessibility standpoint, this should probably be an h1,
+      // since there is not currently a top level header in the page. The whole
+      // site should be audited, though, and the header layout fixed.
+      // TODO: for consistency, should this be a bootstrap modal?
       return (
-        <div style={styles.DIALOG}>
+        <div className='hotkeys-dialog'>
           <h2>Keyboard shortcuts</h2>
 
           <ObserveKeys only={'Escape'}>
@@ -103,21 +90,24 @@ class Hotkeys extends Component {
               value={filter}
             />
           </ObserveKeys>
-
           <table>
-            <tbody>
+            <tbody className='hotkeys-table'>
+              <th>Action</th> <th>Shortcut</th>
               {Object.keys(keyMap).reduce((memo, actionName) => {
                 if (filter.length === 0 || actionName.indexOf(_filter) !== -1) {
                   const { sequences, name } = keyMap[actionName];
-
+                  const commaSeparatedSequences = sequences.flatMap(
+                    ({ sequence }) => [
+                      <span key={sequence}>{sequence}</span>,
+                      <span key={sequence + 'comma'}>, </span>
+                    ]
+                  );
+                  // remove trailing comma
+                  commaSeparatedSequences.pop();
                   memo.push(
                     <tr key={name || actionName}>
-                      <td style={styles.KEYMAP_TABLE_CELL}>{name}</td>
-                      <td style={styles.KEYMAP_TABLE_CELL}>
-                        {sequences.map(({ sequence }) => (
-                          <span key={sequence}>{sequence}</span>
-                        ))}
-                      </td>
+                      <td>{name}</td>
+                      <td>{commaSeparatedSequences}</td>
                     </tr>
                   );
                 }

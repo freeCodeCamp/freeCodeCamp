@@ -2,3 +2,51 @@
 div[tabindex='-1']:focus {
   outline: none;
 }
+
+div.hotkeys-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0 1em 0.5em 1em;
+  background-color: var(--secondary-background);
+  z-index: 101;
+  border: solid 2px;
+  border-color: var(--secondary-color);
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.hotkeys-dialog td {
+  padding: 8px;
+}
+
+.hotkeys-dialog table {
+  display: block;
+  overflow: auto;
+  border-collapse: separate;
+  border-spacing: 0.2em;
+}
+
+.hotkeys-dialog .scrollable {
+  overflow: auto;
+}
+
+.hotkeys-dialog th {
+  font-weight: 700;
+  padding: 0.2em;
+}
+
+.hotkeys-dialog h2 {
+  padding: 0.2em;
+  margin: 0.4em;
+}
+
+.hotkeys-dialog tbody > tr:nth-child(odd) {
+  background-color: var(--quaternary-background);
+}
+
+.hotkeys-dialog tbody > tr:nth-child(even) {
+  background-color: var(--tertiary-background);
+}
