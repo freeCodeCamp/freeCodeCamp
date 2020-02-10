@@ -41,7 +41,7 @@ tests:
   - text: The <code>watchList</code> variable should not change.
     testString: assert(watchList[0].Title === "Inception" && watchList[4].Director == "James Cameron");
   - text: Your code should not use a <code>for</code> loop.
-    testString: assert(!removeJSComments(code).match(/for\s*?\(.*?\)/));
+    testString: assert(!removeJSComments(code).match(/for\s*?\([\s\S]*?\)/));
   - text: Your code should use the <code>map</code> method.
     testString: assert(code.match(/\.map/g));
   - text: <code>ratings</code> should equal <code>[{"title":"Inception","rating":"8.8"},{"title":"Interstellar","rating":"8.6"},{"title":"The Dark Knight","rating":"9.0"},{"title":"Batman Begins","rating":"8.3"},{"title":"Avatar","rating":"7.9"}]</code>.
