@@ -1,6 +1,6 @@
 const apiPlaceholderRE = /#\{\{API\}\}/g;
 const newsPlaceholderRE = /#\{\{NEWS\}\}/g;
-const forumPlacehilderRE = /#\{\{FORUM\}\}/g;
+const forumPlaceholderRE = /#\{\{FORUM\}\}/g;
 
 exports.createRedirects = function createRedirects(locations) {
   const { api, newsProxy, forumProxy } = locations;
@@ -18,7 +18,7 @@ exports.createRedirects = function createRedirects(locations) {
   return template
     .replace(apiPlaceholderRE, api)
     .replace(newsPlaceholderRE, newsProxy)
-    .replace(forumPlacehilderRE, forumProxy);
+    .replace(forumPlaceholderRE, forumProxy);
 };
 
 /* eslint-disable max-len */

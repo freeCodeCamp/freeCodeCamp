@@ -40,7 +40,7 @@ tests:
   - text: Your code should use the <code>filter</code> method.
     testString: assert(code.match(/\.filter/g));
   - text: Your code should not use a <code>for</code> loop.
-    testString: assert(!code.match(/for\s*?\(.+?\)/g));
+    testString: assert(!code.match(/for\s*?\([\s\S]*?\)/g));
   - text: '<code>filteredList</code> should equal <code>[{"title": "Inception","rating": "8.8"},{"title": "Interstellar","rating": "8.6"},{"title": "The Dark Knight","rating": "9.0"},{"title": "Batman Begins","rating": "8.3"}]</code>.'
     testString: 'assert.deepEqual(filteredList, [{"title": "Inception","rating": "8.8"},{"title": "Interstellar","rating": "8.6"},{"title": "The Dark Knight","rating": "9.0"},{"title": "Batman Begins","rating": "8.3"}]);'
 

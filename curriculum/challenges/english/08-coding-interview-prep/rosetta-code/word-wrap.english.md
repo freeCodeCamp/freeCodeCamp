@@ -67,7 +67,7 @@ const text =
 `Wrap text using a more sophisticated algorithm such as the Knuth and Plass TeX algorithm.
 If your language provides this, you get easy extra credit,
 but you ''must reference documentation'' indicating that the algorithm
-is something better than a simple minimimum length algorithm.`;
+is something better than a simple minimum length algorithm.`;
 
 const wrapped80 = wrap(text, 80);
 const wrapped42 = wrap(text, 42);
