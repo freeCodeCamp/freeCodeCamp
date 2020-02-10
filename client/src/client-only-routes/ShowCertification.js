@@ -114,7 +114,6 @@ class ShowCertification extends Component {
       !isDonationDisplayed &&
       userComplete &&
       signedInUserName &&
-      username &&
       signedInUserName === username &&
       !isDonating
     ) {
