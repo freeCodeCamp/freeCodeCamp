@@ -58,7 +58,7 @@ const preFormatted = {
   ignorecase: 'ignoreCase',
   io: 'IO',
   isarray: 'isArray',
-  isealed: 'isSealed',
+  issealed: 'isSealed',
   isextensible: 'isExtensible',
   isfinite: 'isFinite',
   isfrozen: 'isFrozen',

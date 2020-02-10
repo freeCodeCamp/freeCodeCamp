@@ -7,20 +7,19 @@
 
 ## freeCodeCamp.org's open-source codebase and curriculum
 
-[freeCodeCamp.org](https://www.freecodecamp.org) is a friendly community where you can learn to code for free. It is run by a [donor-supported 501(c)(3) nonprofit](https://donate.freecodecamp.org) to help  millions of busy adults transition into tech. Our community has already helped more than 10,000 people get their first developer job.
+[freeCodeCamp.org](https://www.freecodecamp.org) is a friendly community where you can learn to code for free. It is run by a [donor-supported 501(c)(3) nonprofit](https://donate.freecodecamp.org) to help millions of busy adults transition into tech. Our community has already helped more than 10,000 people get their first developer job.
 
 Our full-stack web development curriculum is completely free and self-paced. We have thousands of interactive coding challenges to help you expand your skills.
 
 ## Table of Contents
 
-* [Certifications](#certifications)
-* [The Learning Platform](#the-learning-platform)
-* [Reporting Bugs and Issues](#reporting-bugs-and-issues)
-* [Reporting Security Issues](#reporting-security-issues)
-* [Contributing](#contributing)
-* [Platform, Build and Deployment Status](#platform-build-and-deployment-status)
-* [License](#license)
-
+- [Certifications](#certifications)
+- [The Learning Platform](#the-learning-platform)
+- [Reporting Bugs and Issues](#reporting-bugs-and-issues)
+- [Reporting Security Issues and Responsible Disclosure](#reporting-security-issues-and-responsible-disclosure)
+- [Contributing](#contributing)
+- [Platform, Build and Deployment Status](#platform-build-and-deployment-status)
+- [License](#license)
 
 ### Certifications
 
@@ -128,13 +127,16 @@ Our community also has:
 > ### [Join our community here](https://www.freecodecamp.org/signin).
 
 ### Reporting Bugs and Issues
+
 If you think you've found a bug, first read the [how to report a bug](https://www.freecodecamp.org/forum/t/how-to-report-a-bug/19543) article and follow its instructions.
 
 If you're confident it's a new bug and have confirmed that someone else is facing the same issue, go ahead and create a new GitHub issue. Be sure to include as much information as possible so we can reproduce the bug.
 
-### Reporting Security Issues
+### Reporting Security Issues and Responsible Disclosure
 
-If you think you have found a vulnerability, please report responsibly. Don't create GitHub issues for security issues. Instead, please send an email to `security@freecodecamp.org` and we'll look into it immediately.
+If you think you have found a vulnerability, *please report responsibly*. Don't create GitHub issues for security issues. Instead, please send an email to `security@freecodecamp.org` and we'll look into it immediately.
+
+We appreciate any responsible disclosure of vulnerabilities that might impact the integrity of our platforms and users. While we do not offer any bounties or swags at the moment, we'll be happy to list your name in our [Hall of Fame](HoF.md) list.
 
 ### Contributing
 

@@ -53,7 +53,7 @@ class DonateFormChildViewForHOC extends Component {
       ...initialState,
       donationAmount: this.props.donationAmount,
       donationDuration: this.props.donationDuration,
-      isSubmitionValid: null,
+      isSubmissionValid: null,
       email: null,
       isEmailValid: true,
       isFormValid: false
@@ -96,12 +96,12 @@ class DonateFormChildViewForHOC extends Component {
 
     if ((!isEmailValid, !isFormValid)) {
       return this.setState({
-        isSubmitionValid: false
+        isSubmissionValid: false
       });
     }
 
     this.setState({
-      isSubmitionValid: null
+      isSubmissionValid: null
     });
 
     const email = this.getUserEmail();
@@ -228,12 +228,12 @@ class DonateFormChildViewForHOC extends Component {
   }
 
   renderDonateForm() {
-    const { isEmailValid, isSubmitionValid, email } = this.state;
+    const { isEmailValid, isSubmissionValid, email } = this.state;
     const { getDonationButtonLabel, theme, defaultTheme } = this.props;
 
     return (
       <Form className='donation-form' onSubmit={this.handleSubmit}>
-        <div>{isSubmitionValid !== null ? this.renderErrorMessage() : ''}</div>
+        <div>{isSubmissionValid !== null ? this.renderErrorMessage() : ''}</div>
         <FormGroup className='donation-email-container'>
           <ControlLabel>
             Email (we'll send you a tax-deductible donation receipt):
