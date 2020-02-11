@@ -2,35 +2,41 @@
 id: 587d78ab367417b2b2512af1
 title: Add Flex Superpowers to the Tweet Embed
 challengeType: 0
-videoUrl: ''
-localeTitle: 添加Flex Superpowers到Tweet Embed
+videoUrl: 'https://scrimba.com/p/pVaDAv/c9W7MhM'
+forumTopicId: 301100
+localeTitle: 在推文中添加弹性盒子布局
 ---
 
 ## Description
-<section id="description">右侧是推文嵌入，将用作实际示例。使用不同的布局，一些元素看起来会更好。最后的挑战展示了<code>display: flex</code> 。在这里，您将把它添加到嵌入的推文中的几个组件，以开始调整它们的位置。 </section>
+<section id='description'>
+ 我们以右边的嵌入推文为例。一些元素换一个布局方式或许更好看。上一个挑战演示了<code>display: flex</code>，现在你需要把它添加到推文内嵌的多个组件中，调整它们的位置。
+</section>
 
 ## Instructions
-<section id="instructions">将CSS属性<code>display: flex</code>添加到以下所有项目中 - 请注意，选择器已经设置在CSS： <code>header</code> ，标题的<code>.profile-name</code> ，标题的<code>.follow-btn</code> ，标题的<code>h3</code>和<code>h4</code> ， <code>footer</code>和页脚的<code>.stats</code> 。 </section>
+<section id='instructions'>
+为下列项目添加 CSS 属性<code>display: flex</code>。注意，CSS 选择器已写好：
+<code>header</code>、header 的<code>.profile-name</code>、header 的<code>.follow-btn</code>、header 的<code>h3</code>和<code>h4</code>、<code>footer</code>以及 footer 的<code>.stats</code>。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您的<code>header</code>应该具有设置为flex的<code>display</code>属性。
-    testString: 'assert($("header").css("display") == "flex", "Your <code>header</code> should have a <code>display</code> property set to flex.");'
-  - text: 您的<code>footer</code>应该具有设置为flex的<code>display</code>属性。
-    testString: 'assert($("footer").css("display") == "flex", "Your <code>footer</code> should have a <code>display</code> property set to flex.");'
-  - text: 你的<code>h3</code>应该有一个<code>display</code>属性设置为flex。
-    testString: 'assert($("h3").css("display") == "flex", "Your <code>h3</code> should have a <code>display</code> property set to flex.");'
-  - text: 你的<code>h4</code>应该有一个<code>display</code>属性设置为flex。
-    testString: 'assert($("h4").css("display") == "flex", "Your <code>h4</code> should have a <code>display</code> property set to flex.");'
-  - text: 您的<code>.profile-name</code>应该将<code>display</code>属性设置为flex。
-    testString: 'assert($(".profile-name").css("display") == "flex", "Your <code>.profile-name</code> should have a <code>display</code> property set to flex.");'
-  - text: 你的<code>.follow-btn</code>应该有一个<code>display</code>属性设置为flex。
-    testString: 'assert($(".follow-btn").css("display") == "flex", "Your <code>.follow-btn</code> should have a <code>display</code> property set to flex.");'
-  - text: 您的<code>.stats</code>应该将<code>display</code>属性设置为flex。
-    testString: 'assert($(".stats").css("display") == "flex", "Your <code>.stats</code> should have a <code>display</code> property set to flex.");'
+  - text: '<code>header</code>的<code>display</code>属性应为 flex。'
+    testString: assert($('header').css('display') == 'flex', '<code>header</code>的<code>display</code>属性应为 flex。');
+  - text: '<code>footer</code>的<code>display</code>属性应为 flex。'
+    testString: assert($('footer').css('display') == 'flex', '<code>footer</code>的<code>display</code>属性应为 flex。');
+  - text: '<code>h3</code>的<code>display</code>属性应为 flex。'
+    testString: assert($('h3').css('display') == 'flex', '<code>h3</code>的<code>display</code>属性应为 flex。');
+  - text: '<code>h4</code>的<code>display</code>属性应为 flex。'
+    testString: assert($('h4').css('display') == 'flex', '<code>h4</code>的<code>display</code>属性应为 flex。');
+  - text: '<code>.profile-name</code>的<code>display</code>属性应为 flex。'
+    testString: assert($('.profile-name').css('display') == 'flex', '<code>.profile-name</code>的<code>display</code>属性应为 flex。');
+  - text: '<code>.follow-btn</code>的<code>display</code>属性应为 flex。'
+    testString: assert($('.follow-btn').css('display') == 'flex', '<code>.follow-btn</code>的<code>display</code>属性应为 flex。');
+  - text: '<code>.stats</code>的<code>display</code>属性应为 flex。'
+    testString: assert($('.stats').css('display') == 'flex', '<code>.stats</code>的<code>display</code>属性应为 flex。');
 
 ```
 
@@ -47,7 +53,7 @@ tests:
     font-family: Arial, sans-serif;
   }
   header {
-
+    
   }
   header .profile-thumbnail {
     width: 50px;
@@ -55,11 +61,11 @@ tests:
     border-radius: 4px;
   }
   header .profile-name {
-
+    
     margin-left: 10px;
   }
   header .follow-btn {
-
+    
     margin: 0 0 0 auto;
   }
   header .follow-btn button {
@@ -68,7 +74,7 @@ tests:
     padding: 5px;
   }
   header h3, header h4 {
-
+    
     margin: 0;
   }
   #inner p {
@@ -81,10 +87,10 @@ tests:
     opacity: 0.1;
   }
   footer {
-
+    
   }
   footer .stats {
-
+    
     font-size: 15px;
   }
   footer .stats strong {
@@ -131,7 +137,6 @@ tests:
     <button class="like-btn">Like</button>
   </div>
 </footer>
-
 ```
 
 </div>
@@ -143,7 +148,9 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>
+              
