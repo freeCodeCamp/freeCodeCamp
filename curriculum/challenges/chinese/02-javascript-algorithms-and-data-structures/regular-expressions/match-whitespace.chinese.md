@@ -25,7 +25,7 @@ tests:
     testString: 'assert("Men are from Mars and women are from Venus.".match(countWhiteSpace).length == 8, "Your regex should find eight spaces in <code>"Men are from Mars and women are from Venus."</code>");'
   - text: '你的正则表达式应该在<code>&quot;Space: the final frontier.&quot;</code>找到三个空格<code>&quot;Space: the final frontier.&quot;</code>'
     testString: 'assert("Space: the final frontier.".match(countWhiteSpace).length == 3, "Your regex should find three spaces in <code>"Space: the final frontier."</code>");'
-  - text: ''
+  - text: 您的正则表达式应该在<code>"MindYourPersonalSpace"</code>中找不到空格
     testString: 'assert("MindYourPersonalSpace".match(countWhiteSpace) == null, "Your regex should find no spaces in <code>"MindYourPersonalSpace"</code>");'
 
 ```

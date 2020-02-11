@@ -3,7 +3,7 @@ id: 587d7db1367417b2b2512b88
 title: Override Inherited Methods
 challengeType: 1
 videoUrl: ''
-localeTitle: ''
+localeTitle: 重写继承的方法
 ---
 
 ## Description

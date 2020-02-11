@@ -7,7 +7,25 @@ localeTitle: 从带有开关语句的多个选项中进行选择
 ---
 
 ## Description
-undefined
+<section id="description">
+
+如果您有很多选择，请使用<dfn> switch </dfn>语句。 <code> switch </code>语句测试一个值，并且可以包含许多定义各种可能值的<dfn> case </dfn>语句。 从第一个匹配的<code> case </code>值开始执行语句，直到遇到<code> break </code>。
+这是<code> switch </code>语句的示例：
+
+```js
+switch(lowercaseLetter) {
+  case "a":
+    console.log("A");
+    break;
+  case "b":
+    console.log("B");
+    break;
+}
+```
+
+<code> case </code>值以严格相等性（<code> === </code>）进行测试。 <code> break </code>告诉JavaScript停止执行语句。 如果省略<code> break </code>，将执行下一条语句。
+
+</section>
 
 ## Instructions
 <section id="instructions">编写一个switch语句，测试<code>val</code>并设置以下条件的<code>answer</code> ： <br> <code>1</code> - “alpha” <br> <code>2</code> - “beta” <br> <code>3</code> - “伽玛” <br> <code>4</code> - “三角洲” </section>

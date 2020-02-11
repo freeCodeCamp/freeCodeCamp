@@ -21,7 +21,7 @@ tests:
     testString: 'assert(!getUserInput("index").match(/function/),"Traditional <code>function</code> expression was not used.");'
   - text: <code>setGear</code>是一个声明函数。
     testString: 'assert(typeof bicycle.setGear === "function" && getUserInput("index").match(/setGear\s*\(.+\)\s*\{/), "<code>setGear</code> is a declarative function.");'
-  - text: ''
+  - text: <code>bicycle.setGear(48)</code>应该返回48。
     testString: 'assert((new bicycle.setGear(48)).gear === 48, "<code>bicycle.setGear(48)</code> changes the <code>gear</code> value to 48.");'
 
 ```

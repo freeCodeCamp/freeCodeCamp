@@ -3,14 +3,22 @@ id: 5900f51e1000cf542c510030
 challengeType: 5
 title: 'Problem 432: Totient sum'
 videoUrl: ''
-localeTitle: ''
+localeTitle: 问题432欧拉
 ---
 
 ## Description
-undefined
+<section id="description">
+令S（n，m）= ∑φ（n×i）且1≤i≤m。 （φ是欧拉的上位函数）
+给出S（510510,106）= 45480596821125120。
+
+
+找出S（510510,1011）。
+输入答案的最后9位数字。
+</section>
 
 ## Instructions
-undefined
+<section id="instructions">
+</section>
 
 ## Tests
 <section id='tests'>

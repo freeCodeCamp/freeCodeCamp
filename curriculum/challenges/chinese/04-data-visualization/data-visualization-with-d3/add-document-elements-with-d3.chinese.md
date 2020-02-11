@@ -20,7 +20,7 @@ tests:
   - text: <code>body</code>应该有一个<code>h1</code>元素。
     testString: 'assert($("body").children("h1").length == 1, "The <code>body</code> should have one <code>h1</code> element.");'
   - text: <code>h1</code>元素应该包含文本“Learning D3”。
-    testString: 'assert($("h1").text() == "Learning D3", "The <code>h1</code> element should have the text "Learning D3" in it.");'
+    testString: assert($("h1").text() == "Learning D3");
   - text: 您的代码应该访问<code>d3</code>对象。
     testString: 'assert(code.match(/d3/g), "Your code should access the <code>d3</code> object.");'
   - text: 您的代码应该使用<code>select</code>方法。

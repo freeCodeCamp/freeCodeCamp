@@ -1,9 +1,9 @@
 ---
 id: 5900f4071000cf542c50ff19
 challengeType: 5
-title: 'Problem 154: Exploring Pascal"s pyramid'
+title: 'Problem 154: Exploring Pascal''s pyramid'
 videoUrl: ''
-localeTitle: ''
+localeTitle: 问题154：探索帕斯卡的金字塔
 ---
 
 ## Description

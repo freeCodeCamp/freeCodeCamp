@@ -7,7 +7,10 @@ localeTitle: 问题16：电源数字总和
 ---
 
 ## Description
-undefined
+<section id="description">
+2 <sup> 15 </ sup> = 32768，其位数之和为3 + 2 + 7 + 6 + 8 = 26。
+2 <sup> <code>指数</ code> </ sup>的数字总和是多少？
+</section>
 
 ## Instructions
 <section id="instructions">
