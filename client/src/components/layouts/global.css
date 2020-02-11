@@ -238,6 +238,9 @@ fieldset[disabled] .btn-primary.focus {
   background-image: none;
   box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.3);
 }
+.btn-cta[disabled] {
+  background-image: none;
+}
 .btn-link,
 .btn-link:focus,
 .btn-link:active {

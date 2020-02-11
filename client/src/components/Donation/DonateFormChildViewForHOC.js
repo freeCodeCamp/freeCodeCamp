@@ -92,7 +92,7 @@ class DonateFormChildViewForHOC extends Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    const { isEmailValid, isFormValid } = this.state;
+    const { isEmailValid, isFormValid, donationState } = this.state;
 
     if ((!isEmailValid, !isFormValid)) {
       return this.setState({
@@ -100,9 +100,16 @@ class DonateFormChildViewForHOC extends Component {
       });
     }
 
-    this.setState({
-      isSubmissionValid: null
-    });
+    if (donationState.processing) {
+      return this.setState(state => ({
+        ...state,
+        donationState: {
+          ...state.donationState,
+          error:
+            'Another payment is being processed,' + ' Please try again later.'
+        }
+      }));
+    }
 
     const email = this.getUserEmail();
     if (!email || !isEmail(email)) {
@@ -228,7 +235,12 @@ class DonateFormChildViewForHOC extends Component {
   }
 
   renderDonateForm() {
-    const { isEmailValid, isSubmissionValid, email } = this.state;
+    const {
+      isEmailValid,
+      isSubmissionValid,
+      email,
+      donationState
+    } = this.state;
     const { getDonationButtonLabel, theme, defaultTheme } = this.props;
 
     return (
@@ -257,6 +269,7 @@ class DonateFormChildViewForHOC extends Component {
           block={true}
           bsStyle='primary'
           className='btn-cta'
+          disabled={donationState.processing}
           id='confirm-donation-btn'
           type='submit'
         >
