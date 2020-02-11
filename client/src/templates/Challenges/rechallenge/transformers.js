@@ -131,24 +131,17 @@ function tryTransform(wrap = identity) {
   };
 }
 
-const babelTransformer = ({ preview = false, protect = true }) => {
-  let options = babelOptionsJSBase;
-  // we always protect the preview, since it evaluates as the user types and
-  // they may briefly have infinite looping code accidentally
-  if (protect) {
-    options = preview ? babelOptionsJSPreview : babelOptionsJS;
-  } else {
-    options = preview ? babelOptionsJSPreview : options;
-  }
+const babelTransformer = options => {
   return cond([
     [
       testJS,
       async code => {
         await loadBabel();
         await loadPresetEnv();
+        const babelOptions = getBabelOptions(options);
         return partial(
           vinyl.transformHeadTailAndContents,
-          tryTransform(babelTransformCode(options))
+          tryTransform(babelTransformCode(babelOptions))
         )(code);
       }
     ],
@@ -170,6 +163,18 @@ const babelTransformer = ({ preview = false, protect = true }) => {
   ]);
 };
 
+function getBabelOptions({ preview = false, protect = true }) {
+  let options = babelOptionsJSBase;
+  // we always protect the preview, since it evaluates as the user types and
+  // they may briefly have infinite looping code accidentally
+  if (protect) {
+    options = preview ? babelOptionsJSPreview : babelOptionsJS;
+  } else {
+    options = preview ? babelOptionsJSPreview : options;
+  }
+  return options;
+}
+
 const sassWorker = createWorker(sassCompile);
 async function transformSASS(element) {
   const styleTags = element.querySelectorAll('style[type="text/sass"]');
@@ -189,6 +194,7 @@ async function transformScript(element) {
     script.innerHTML = tryTransform(babelTransformCode(babelOptionsJS))(
       script.innerHTML
     );
+    console.log('transformed:', script.innerHTML);
   });
 }
 
@@ -219,9 +225,9 @@ export const htmlTransformer = cond([
   [stubTrue, identity]
 ]);
 
-export const getTransformers = config => [
+export const getTransformers = options => [
   replaceNBSP,
-  babelTransformer(config ? config : {}),
+  babelTransformer(options ? options : {}),
   composeHTML,
   htmlTransformer
 ];
