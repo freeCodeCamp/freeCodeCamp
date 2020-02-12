@@ -94,8 +94,11 @@ class Hotkeys extends Component {
             <tbody className='hotkeys-table'>
               <th>Action</th> <th>Shortcut</th>
               {Object.keys(keyMap).reduce((memo, actionName) => {
-                if (filter.length === 0 || actionName.indexOf(_filter) !== -1) {
-                  const { sequences, name } = keyMap[actionName];
+                const { sequences, name } = keyMap[actionName];
+                if (
+                  filter.length === 0 ||
+                  name.toUpperCase().indexOf(_filter) !== -1
+                ) {
                   const commaSeparatedSequences = sequences.flatMap(
                     ({ sequence }) => [
                       <span key={sequence}>{sequence}</span>,
