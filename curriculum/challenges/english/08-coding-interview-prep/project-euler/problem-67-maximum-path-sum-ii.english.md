@@ -11,10 +11,10 @@ forumTopicId: 302179
 By starting at the top of the triangle below and moving to adjacent numbers on the row below, the maximum total from top to bottom is 23.
 
 <div style='text-align: center;'>
-  <strong><span style='color: red;'>3</span></strong><br>
-  <strong><span style='color: red;'>7</span></strong> 4<br>
-  2 <strong><span style='color: red;'>4</span></strong> 6<br>
-  8 5 <strong><span style='color: red;'>9</span></strong> 3
+  <strong style='color: red;'>3</strong><br>
+  <strong style='color: red;'>7</strong> 4<br>
+  2 <strong style='color: red;'>4</strong> 6<br>
+  8 5 <strong style='color: red;'>9</strong> 3
 </div>
 
 That is, 3 + 7 + 4 + 9 = 23.
@@ -37,6 +37,8 @@ Find the maximum total from top to bottom in `numTriangle`, a 2D array defined i
 tests:
   - text: <code>maximumPathSumII()</code> should return a number.
     testString: assert(typeof maximumPathSumII() === 'number');
+  - text: <code>maximumPathSumI(testTriangle)</code> should return 23.
+    testString: assert.strictEqual(maximumPathSumI(testTriangle), 23);
   - text: <code>maximumPathSumII()</code> should return 7273.
     testString: assert.strictEqual(maximumPathSumII(), 7273);
 

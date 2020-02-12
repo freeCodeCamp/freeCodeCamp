@@ -8,7 +8,7 @@ forumTopicId: 302198
 ## Description
 <section id='description'>
 
-In the game, Monopoly, the standard board is set up in the following way:
+In the game, <i>Monopoly</i>, the standard board is set up in the following way:
 
 <div style="text-align: center;">
   <table cellspacing="1" cellpadding="5" border="0" style="background-color: black; color: black;" align="center">

@@ -10,7 +10,12 @@ forumTopicId: 301815
 
 By starting at the top of the triangle below and moving to adjacent numbers on the row below, the maximum total from top to bottom is 23.
 
-<span style='display: block; text-align: center;'><b style='color: red;'>3</b><br><b style='color: red;'>7</b> 4<br>2 <b style='color: red;'>4</b> 6<br>8 5 <b style='color: red;'>9</b> 3</span>
+<span style='display: block; text-align: center;'>
+  <strong style='color: red;'>3</strong><br>
+  <strong style='color: red;'>7</strong> 4<br>
+  2 <strong style='color: red;'>4</strong> 6<br>
+  8 5 <strong style='color: red;'>9</strong> 3
+</span>
 
 That is, 3 + 7 + 4 + 9 = 23.
 

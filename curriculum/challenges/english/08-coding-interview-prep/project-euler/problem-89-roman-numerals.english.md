@@ -27,7 +27,7 @@ The array, `roman`, contains one thousand numbers written in valid, but not nece
 
 Find the number of characters saved by writing each of these in their minimal form.
 
-**Note:** You can assume that all the Roman numerals in the file contain no more than four consecutive identical units.
+**Note:** You can assume that all the Roman numerals in the array contain no more than four consecutive identical units.
 
 </section>
 
