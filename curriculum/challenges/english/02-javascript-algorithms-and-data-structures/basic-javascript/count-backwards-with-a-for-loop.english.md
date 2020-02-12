@@ -20,7 +20,7 @@ for (var i=10; i > 0; i-=2) {
 ```
 
 <code>ourArray</code> will now contain <code>[10,8,6,4,2]</code>.
-Let's change our <code>initialization</code> and <code>final-expression</code> so we can count backward by twos by odd numbers.
+Let's change our <code>initialization</code> and <code>condition</code> so we can count backward by twos by odd numbers.
 </section>
 
 ## Instructions
