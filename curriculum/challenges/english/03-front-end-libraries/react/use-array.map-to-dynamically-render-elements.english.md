@@ -80,7 +80,8 @@ class MyToDoList extends React.Component {
           onChange={this.handleChange}
           value={this.state.userInput}
           style={textAreaStyles}
-          placeholder="Separate Items With Commas" /><br />
+          placeholder="Separate Items With Commas" />
+          <br />
         <button onClick={this.handleSubmit}>Create List</button>
         <h1>My "To Do" List:</h1>
         <ul>
