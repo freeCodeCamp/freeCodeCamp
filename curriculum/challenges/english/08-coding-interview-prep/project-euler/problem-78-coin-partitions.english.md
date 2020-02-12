@@ -11,7 +11,6 @@ forumTopicId: 302191
 Let p(n) represent the number of different ways in which n coins can be separated into piles. For example, five coins can be separated into piles in exactly seven different ways, so p(5)=7.
 
 <div style='text-align: center;'>
-<<<<<<< HEAD
 
   |Coin piles|
   |--- |
@@ -23,9 +22,6 @@ Let p(n) represent the number of different ways in which n coins can be separate
   |OO   O   O   O|
   |O   O   O   O   O|
 
-=======
-  <table cellpadding='10'><tbody><tr><td>OOOOO</td></tr><tr><td>OOOO&nbsp; &nbsp;O</td></tr><tr><td>OOO&nbsp; &nbsp;OO</td></tr><tr><td>OOO&nbsp; &nbsp;O&nbsp; &nbsp;O</td></tr><tr><td>OO&nbsp; &nbsp;OO&nbsp; &nbsp;O</td></tr><tr><td>OO&nbsp; &nbsp;O&nbsp; &nbsp;O&nbsp; &nbsp;O</td></tr><tr><td>O&nbsp; &nbsp;O&nbsp; &nbsp;O&nbsp; &nbsp;O&nbsp; &nbsp;O</td></tr></tbody></table>
->>>>>>> fix: continue fixing test descriptions and adding "before test" sections
 </div>
 
 Find the least value of <var>n</var> for which p(<var>n</var>) is divisible by one million.

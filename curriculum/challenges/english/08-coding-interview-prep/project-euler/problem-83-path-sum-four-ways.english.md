@@ -22,7 +22,7 @@ In the 5 by 5 matrix below, the minimal path sum from the top left to the bottom
   \end{pmatrix}$
 </div>
 
-Find the minimal path sum from the top left to the bottom right by moving left, right, up, and down in `matrix`, a 2D array containing an 80 by 80 matrix.
+Find the minimal path sum from the top left to the bottom right by moving left, right, up, and down in `matrix`, a 2D array defined in the background, containing an 80 by 80 matrix.
 
 </section>
 

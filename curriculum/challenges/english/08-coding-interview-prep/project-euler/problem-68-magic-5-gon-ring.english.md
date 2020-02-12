@@ -17,7 +17,6 @@ Working <strong>clockwise</strong>, and starting from the group of three with th
 It is possible to complete the ring with four different totals: 9, 10, 11, and 12. There are eight solutions in total.
 
 <div style='text-align: center;'>
-<<<<<<< HEAD
 
   |<div style='width: 100px;'>Total</div>|<div style='width: 250px;'>Solution Set</div>|
   |--- |--- |
@@ -30,9 +29,6 @@ It is possible to complete the ring with four different totals: 9, 10, 11, and 1
   |12|1,5,6; 2,6,4; 3,4,5|
   |12|1,6,5; 3,5,4; 2,4,6|
 
-=======
-  <table width='400'><tbody><tr><td width='100'><b>Total</b></td><td width='300'><b>Solution Set</b></td></tr><tr><td>9</td><td>4,2,3; 5,3,1; 6,1,2</td></tr><tr><td>9</td><td>4,3,2; 6,2,1; 5,1,3</td></tr><tr><td>10</td><td>2,3,5; 4,5,1; 6,1,3</td></tr><tr><td>10</td><td>2,5,3; 6,3,1; 4,1,5</td></tr><tr><td>11</td><td>1,4,6; 3,6,2; 5,2,4</td></tr><tr><td>11</td><td>1,6,4; 5,4,2; 3,2,6</td></tr><tr><td>12</td><td>1,5,6; 2,6,4; 3,4,5</td></tr><tr><td>12</td><td>1,6,5; 3,5,4; 2,4,6</td></tr></tbody></table>
->>>>>>> fix: continue fixing test descriptions and adding "before test" sections
 </div>
 
 By concatenating each group it is possible to form 9-digit strings; the maximum string for a 3-gon ring is 432621513.

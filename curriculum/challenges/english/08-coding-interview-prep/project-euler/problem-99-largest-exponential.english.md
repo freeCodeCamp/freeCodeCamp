@@ -12,7 +12,7 @@ Comparing two numbers written in index form like 2<sup>11</sup> and 3<sup>7</sup
 
 However, confirming that 632382<sup>518061</sup> > 519432<sup>525806</sup> would be much more difficult, as both numbers contain over three million digits.
 
-Using `baseExp`, a 2D array containing one thousand inner arrays with a base/exponent pair, determine which pair has the greatest numerical value.
+Using the included 2D array of base/exponent pairs, determine which pair has the greatest numerical value.
 
 **Note:** The first array in `baseExp` represent the numbers in the example given above.
 

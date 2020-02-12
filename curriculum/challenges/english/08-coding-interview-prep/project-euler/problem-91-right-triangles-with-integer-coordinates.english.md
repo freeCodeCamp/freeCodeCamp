@@ -14,7 +14,7 @@ The points P (<var>x</var><sub>1</sub>, <var>y</var><sub>1</sub>) and Q (<var>x<
 
 There are exactly fourteen triangles containing a right angle that can be formed when each co-ordinate lies between 0 and 2 inclusive; that is, 0 ≤ <var>x</var><sub>1</sub>, <var>y</var><sub>1</sub>, <var>x</var><sub>2</sub>, <var>y</var><sub>2</sub> ≤ 2.
 
-<img class="img-responsive center-block" alt="a diagram showing the 14 triangles containing a right angle that can be formed when each coordinate is between 0 and 2" src="https://cdn-media-1.freecodecamp.org/project-euler/right-triangles-integer-coordinates-1.png" style="background-color: white; padding: 10px;">
+<img class="img-responsive center-block" alt="a diagram showing the 14 triangles containing a right angle that can be formed when each coordinate is between 0 and 2" src="https://cdn-media-1.freecodecamp.org/project-euler/right-triangles-integer-coordinates-2.png" style="background-color: white; padding: 10px;">
 
 Given that 0 ≤ <var>x</var><sub>1</sub>, <var>y</var><sub>1</sub>, <var>x</var><sub>2</sub>, <var>y</var><sub>2</sub> ≤ 50, how many right triangles can be formed?
 

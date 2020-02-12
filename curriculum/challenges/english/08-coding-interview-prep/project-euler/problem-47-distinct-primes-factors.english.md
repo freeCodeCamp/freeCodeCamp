@@ -18,7 +18,7 @@ The first two consecutive numbers to have two distinct prime factors are:
 The first three consecutive numbers to have three distinct prime factors are:
 
 <div style='padding-left: 4em;'>
-  644 = 2² × 7 × 23<br>
+  644 = 2<sup>2</sup> × 7 × 23<br>
   645 = 3 × 5 × 43<br>
   646 = 2 × 17 × 19
 </div>
