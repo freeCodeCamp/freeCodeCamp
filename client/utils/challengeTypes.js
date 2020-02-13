@@ -111,5 +111,6 @@ exports.helpCategory = {
   'data-structures': 'JavaScript',
   'take-home-projects': 'Certification Projects',
   'rosetta-code': 'JavaScript',
-  'project-euler': 'JavaScript'
+  'project-euler': 'JavaScript',
+  'scientific-computing-python': 'Python'
 };

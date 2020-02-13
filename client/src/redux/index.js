@@ -215,7 +215,8 @@ export const certificatesByNameSelector = username => state => {
     isFrontEndCert,
     isBackEndCert,
     isDataVisCert,
-    isFullStackCert
+    isFullStackCert,
+    isSciPyCert
   } = userByNameSelector(username)(state);
   return {
     hasModernCert:
@@ -225,7 +226,8 @@ export const certificatesByNameSelector = username => state => {
       isJsAlgoDataStructCert ||
       isApisMicroservicesCert ||
       isInfosecQaCert ||
-      isFullStackCert,
+      isFullStackCert ||
+      isSciPyCert,
     hasLegacyCert: isFrontEndCert || isBackEndCert || isDataVisCert,
     currentCerts: [
       {
@@ -262,6 +264,11 @@ export const certificatesByNameSelector = username => state => {
         show: isInfosecQaCert,
         title: 'Information Security and Quality Assurance Certification',
         showURL: 'information-security-and-quality-assurance'
+      },
+      {
+        show: isSciPyCert,
+        title: 'Scientific Computing with Python Certification',
+        showURL: 'scientific-computing-python'
       }
     ],
     legacyCerts: [

@@ -10,6 +10,8 @@ const apiMicroBase =
 const infoSecBase =
   '/learn/information-security-and-quality-assurance/' +
   'information-security-and-quality-assurance-projects';
+const sciPyBase =
+  '/learn/scientific-computing-python/scientific-computing-python-projects';
 const legacyFrontEndBase = '';
 const legacyBackEndBase = '';
 const legacyDataVisBase = '';
@@ -394,6 +396,38 @@ export const projectMap = {
       title: 'Anonymous Message Board',
       link: `${infoSecBase}/anonymous-message-board`,
       superBlock: 'information-security-and-quality-assurance'
+    }
+  ],
+  'Scientific Computing in Python': [
+    {
+      id: '5e44412c903586ffb414c94c',
+      title: 'Arithmetic Formatter',
+      link: `${sciPyBase}/arithmetic-formatter`,
+      superBlock: 'scientific-computing-python'
+    },
+    {
+      id: '5e444136903586ffb414c94d',
+      title: 'Time Calculator',
+      link: `${sciPyBase}/time-calculator`,
+      superBlock: 'scientific-computing-python'
+    },
+    {
+      id: '5e44413e903586ffb414c94e',
+      title: 'Budget App',
+      link: `${sciPyBase}/budget-app`,
+      superBlock: 'scientific-computing-python'
+    },
+    {
+      id: '5e444147903586ffb414c94f',
+      title: 'Polygon Area Calculator',
+      link: `${sciPyBase}/polygon-area-calculator`,
+      superBlock: 'scientific-computing-python'
+    },
+    {
+      id: '5e44414f903586ffb414c950',
+      title: 'Probability Calculator',
+      link: `${sciPyBase}/probability-calculator`,
+      superBlock: 'scientific-computing-python'
     }
   ]
 };

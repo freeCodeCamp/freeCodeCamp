@@ -25,6 +25,7 @@ export const publicUserProps = [
   'isInfosecQaCert',
   'isJsAlgoDataStructCert',
   'isRespWebDesignCert',
+  'isSciPyCert',
   'linkedin',
   'location',
   'name',

@@ -134,6 +134,26 @@ const defaultTestProps = {
       solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
     },
     {
+      id: '5e444147903586ffb414c94c',
+      solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
+    },
+    {
+      id: '5e444147903586ffb414c94d',
+      solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
+    },
+    {
+      id: '5e444147903586ffb414c94e',
+      solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
+    },
+    {
+      id: '5e444147903586ffb414c94f',
+      solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
+    },
+    {
+      id: '5e44414f903586ffb414c950',
+      solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
+    },
+    {
       id: 'bd7157d8c242eddfaeb5bd13',
       completedDate: 1554272923799,
       solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
@@ -151,6 +171,7 @@ const defaultTestProps = {
   isInfosecQaCert: false,
   isJsAlgoDataStructCert: false,
   isRespWebDesignCert: false,
+  isSciPyCert: false,
   updateLegacyCert: () => {},
   username: 'developmentuser',
   verifyCert: () => {},

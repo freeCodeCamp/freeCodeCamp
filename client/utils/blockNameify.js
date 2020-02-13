@@ -12,7 +12,8 @@ const preFormattedBlockNames = {
   'mongodb-and-mongoose': 'MongoDB and Mongoose',
   'the-dom': 'The DOM',
   'apis-and-microservices': 'APIs and Microservices',
-  'apis-and-microservices-projects': 'APIs and Microservices Projects'
+  'apis-and-microservices-projects': 'APIs and Microservices Projects',
+  'python-scientific-computing': 'Scientific Computing with Python'
 };
 
 const noFormatting = ['and', 'for', 'of', 'the', 'up', 'with'];

@@ -172,6 +172,11 @@
       "description": "Camper is full stack certified (2018)",
       "default": false
     },
+    "isSciPyCert": {
+      "type": "boolean",
+      "description": "Camper is scientific computing with python certified",
+      "default": false
+    },
     "completedChallenges": {
       "type": [
         {

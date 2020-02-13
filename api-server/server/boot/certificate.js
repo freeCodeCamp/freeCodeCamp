@@ -163,7 +163,8 @@ function sendCertifiedEmail(
     isJsAlgoDataStructCert,
     isDataVisCert,
     isApisMicroservicesCert,
-    isInfosecQaCert
+    isInfosecQaCert,
+    isSciPyCert
   },
   send$
 ) {
@@ -174,7 +175,8 @@ function sendCertifiedEmail(
     !isJsAlgoDataStructCert ||
     !isDataVisCert ||
     !isApisMicroservicesCert ||
-    !isInfosecQaCert
+    !isInfosecQaCert ||
+    !isSciPyCert
   ) {
     return Observable.just(false);
   }
@@ -205,7 +207,8 @@ function getUserIsCertMap(user) {
     isFrontEndCert = false,
     isBackEndCert = false,
     isDataVisCert = false,
-    isFullStackCert = false
+    isFullStackCert = false,
+    isSciPyCert = false
   } = user;
 
   return {
@@ -218,7 +221,8 @@ function getUserIsCertMap(user) {
     isFrontEndCert,
     isBackEndCert,
     isDataVisCert,
-    isFullStackCert
+    isFullStackCert,
+    isSciPyCert
   };
 }
 
@@ -339,6 +343,7 @@ function createShowCert(app) {
       is2018DataVisCert: true,
       isApisMicroservicesCert: true,
       isInfosecQaCert: true,
+      isSciPyCert: true,
       isHonest: true,
       username: true,
       name: true,

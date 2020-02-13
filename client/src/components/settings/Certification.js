@@ -52,6 +52,7 @@ const propTypes = {
   isInfosecQaCert: PropTypes.bool,
   isJsAlgoDataStructCert: PropTypes.bool,
   isRespWebDesignCert: PropTypes.bool,
+  isSciPyCert: PropTypes.bool,
   updateLegacyCert: PropTypes.func.isRequired,
   username: PropTypes.string,
   verifyCert: PropTypes.func.isRequired
@@ -69,7 +70,8 @@ const isCertSelector = ({
   isInfosecQaCert,
   isFrontEndLibsCert,
   isFullStackCert,
-  isRespWebDesignCert
+  isRespWebDesignCert,
+  isSciPyCert
 }) => ({
   is2018DataVisCert,
   isApisMicroservicesCert,
@@ -80,7 +82,8 @@ const isCertSelector = ({
   isInfosecQaCert,
   isFrontEndLibsCert,
   isFullStackCert,
-  isRespWebDesignCert
+  isRespWebDesignCert,
+  isSciPyCert
 });
 
 const isCertMapSelector = createSelector(
@@ -94,7 +97,8 @@ const isCertMapSelector = createSelector(
     isRespWebDesignCert,
     isDataVisCert,
     isFrontEndCert,
-    isBackEndCert
+    isBackEndCert,
+    isSciPyCert
   }) => ({
     'Responsive Web Design': isRespWebDesignCert,
     'JavaScript Algorithms and Data Structures': isJsAlgoDataStructCert,
@@ -102,6 +106,7 @@ const isCertMapSelector = createSelector(
     'Data Visualization': is2018DataVisCert,
     "API's and Microservices": isApisMicroservicesCert,
     'Information Security And Quality Assurance': isInfosecQaCert,
+    'Scientific Computing with Python': isSciPyCert,
     'Legacy Front End': isFrontEndCert,
     'Legacy Data Visualization': isDataVisCert,
     'Legacy Back End': isBackEndCert

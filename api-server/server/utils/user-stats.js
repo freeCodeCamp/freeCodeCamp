@@ -144,7 +144,8 @@ function getCompletedCertCount(user) {
     'isFrontEndLibsCert',
     'isInfosecQaCert',
     'isJsAlgoDataStructCert',
-    'isRespWebDesignCert'
+    'isRespWebDesignCert',
+    'isSciPyCert'
   ].reduce((sum, key) => (user[key] ? sum + 1 : sum), 0);
 }
 

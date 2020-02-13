@@ -64,6 +64,7 @@ MongoClient.connect(MONGOHQ_URL, { useNewUrlParser: true }, function(
         isApisMicroservicesCert: false,
         isInfosecQaCert: false,
         is2018FullStackCert: false,
+        isSciPyCert: false,
         completedChallenges: [],
         portfolio: [],
         yearsTopContributor: [],
