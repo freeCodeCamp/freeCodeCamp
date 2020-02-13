@@ -29,7 +29,7 @@ tests:
   - text: Your <code>h2</code> element should have a <code>style</code> declaration.
     testString: assert($("h2").attr('style'));
   - text: Your <code>h2</code> element should be red.
-    testString: assert($("h2").css("color") === "rgb(255, 0, 0)");
+    testString: assert($("h2")[0].style.color === "red");
   - text: Your <code>style</code> declaration should end with a <code>;</code> .
     testString: assert($("h2").attr('style') && $("h2").attr('style').endsWith(';'));
 
