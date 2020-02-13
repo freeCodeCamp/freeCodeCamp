@@ -75,7 +75,6 @@ class Hotkeys extends Component {
       // TODO: from an accessibility standpoint, this should probably be an h1,
       // since there is not currently a top level header in the page. The whole
       // site should be audited, though, and the header layout fixed.
-      // TODO: for consistency, should this be a bootstrap modal?
       return (
         <div className='hotkeys-dialog'>
           <h2>Keyboard shortcuts</h2>
@@ -91,8 +90,13 @@ class Hotkeys extends Component {
             />
           </ObserveKeys>
           <table>
-            <tbody className='hotkeys-table'>
-              <th>Action</th> <th>Shortcut</th>
+            <thead>
+              <tr>
+                <th>Action</th> <th>Shortcut</th>
+              </tr>
+            </thead>
+
+            <tbody>
               {Object.keys(keyMap).reduce((memo, actionName) => {
                 const { sequences, name } = keyMap[actionName];
                 if (

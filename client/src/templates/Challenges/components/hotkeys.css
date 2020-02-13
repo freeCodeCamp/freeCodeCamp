@@ -5,15 +5,16 @@ div[tabindex='-1']:focus {
 
 div.hotkeys-dialog {
   position: fixed;
-  top: 50%;
+  top: 3em;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%);
   padding: 0 1em 0.5em 1em;
   background-color: var(--secondary-background);
   z-index: 101;
   border: solid 2px;
   border-color: var(--secondary-color);
   max-height: 80vh;
+  min-width: 300px;
   display: flex;
   flex-direction: column;
 }
@@ -36,6 +37,7 @@ div.hotkeys-dialog {
 .hotkeys-dialog th {
   font-weight: 700;
   padding: 0.2em;
+  text-align: center;
 }
 
 .hotkeys-dialog h2 {
