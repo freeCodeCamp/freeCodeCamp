@@ -13,7 +13,9 @@ const preFormattedBlockNames = {
   'the-dom': 'The DOM',
   'apis-and-microservices': 'APIs and Microservices',
   'apis-and-microservices-projects': 'APIs and Microservices Projects',
-  'python-scientific-computing': 'Scientific Computing with Python'
+  'python-scientific-computing': 'Scientific Computing with Python',
+  'python-scientific-computing-projects':
+    'Scientific Computing with Python Projects'
 };
 
 const noFormatting = ['and', 'for', 'of', 'the', 'up', 'with'];
