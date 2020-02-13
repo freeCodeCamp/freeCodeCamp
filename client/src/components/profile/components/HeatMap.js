@@ -39,55 +39,22 @@ function getTooltipString(date) {
   return `${months[date[1]]} ${date[2]}, ${date[0]}`;
 }
 
-const tempDate = new Date();
-const timezoneOffsetInMinutes = tempDate.getTimezoneOffset();
-const msOffset = timezoneOffsetInMinutes * 1000 * 60;
-console.log('msOffset=' + msOffset);
 // this formats a timestamp to YYYY-MM-DD e.g. "2020-12-1"
-// and sets it to UTC
+// for the UTC day of that timestamp
 function formatDate(timestamp) {
-  let log = false;
-  if (timestamp > 1581652127779) {
-    log = true;
-  }
-  timestamp += msOffset;
-
-  if (log) {
-    console.log('adjustedTimestamp');
-    console.log(timestamp);
-  }
-
   const date = new Date(timestamp);
   const year = date.getUTCFullYear();
   const month = date.getUTCMonth() + 1;
   const day = date.getUTCDate();
 
-  if (log) {
-    console.log(year + month + day);
-  }
-
   return `${year}-${month}-${day}`;
 }
 
 function HeatMap({ calendar, streak }) {
-  // an issue with react-calendar-heatmap makes the days off by one
-  // see this https://github.com/kevinsqi/react-calendar-heatmap/issues/112
-  // I have added one day in the marked places to account for the offset
-  // this logic adds a day to all the timestamps (remove if issue gets fixed)
-  if (msOffset < 0) {
-    let tempCalendar = {};
-    const secondsInADay = 60 * 60 * 24;
-    for (let timestamp of Object.keys(calendar)) {
-      tempCalendar[parseInt(timestamp, 10) + secondsInADay] = 1;
-    }
-
-    calendar = tempCalendar;
-  }
-
   const msInDay = 1000 * 60 * 60 * 24;
   const msInWeek = msInDay * 7;
 
-  const today = Date.now() + msInDay;
+  const today = Date.now();
   const halfYearAgo = today - msInWeek * 26;
   const startOfCalendar = formatDate(halfYearAgo);
   const endOfCalendar = formatDate(today);
@@ -132,6 +99,7 @@ function HeatMap({ calendar, streak }) {
             return 'color-empty';
           }}
           endDate={endOfCalendar}
+          showWeekdayLabels={true}
           startDate={startOfCalendar}
           tooltipDataAttrs={value => {
             let valueCount;
