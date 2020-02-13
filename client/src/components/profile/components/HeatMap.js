@@ -35,8 +35,11 @@ const months = [
 
 // this is displayed in the tooltip e.g. "Dec 1, 2020"
 function getTooltipString(date) {
-  date = date.split('-');
-  return `${months[date[1]]} ${date[2]}, ${date[0]}`;
+  if (date) {
+    date = date.split('-');
+    return `${months[date[1]]} ${date[2]}, ${date[0]}`;
+  }
+  return null;
 }
 
 // this formats a timestamp to YYYY-MM-DD e.g. "2020-12-1"

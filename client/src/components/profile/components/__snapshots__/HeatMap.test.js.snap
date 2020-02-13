@@ -16,11 +16,11 @@ exports[`<HeatMap/> renders correctly 1`] = `
         >
           <svg
             class="react-calendar-heatmap"
-            viewBox="0 0 296 90"
+            viewBox="0 0 326 120"
           >
             <g
               class="react-calendar-heatmap-month-labels"
-              transform="translate(0, 0)"
+              transform="translate(30, 0)"
             >
               <text
                 class="react-calendar-heatmap-month-label"
@@ -67,23 +67,12 @@ exports[`<HeatMap/> renders correctly 1`] = `
             </g>
             <g
               class="react-calendar-heatmap-all-weeks"
-              transform="translate(0, 14)"
+              transform="translate(30, 14)"
             >
               <g
                 class="react-calendar-heatmap-week"
                 transform="translate(0, 0)"
               >
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Aug 4, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="0"
-                >
-                  <title />
-                </rect>
                 <rect
                   class="color-empty"
                   currentItem="false"
@@ -847,7 +836,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Oct 9, 2019"
+                  data-tip="<b>No points</b> on Oct 10, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -858,7 +847,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Oct 10, 2019"
+                  data-tip="<b>No points</b> on Oct 11, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -869,7 +858,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Oct 11, 2019"
+                  data-tip="<b>No points</b> on Oct 12, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -880,7 +869,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Oct 12, 2019"
+                  data-tip="<b>No points</b> on Oct 13, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -896,7 +885,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Oct 13, 2019"
+                  data-tip="<b>No points</b> on Oct 14, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -907,7 +896,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Oct 14, 2019"
+                  data-tip="<b>No points</b> on Oct 15, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -918,7 +907,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Oct 15, 2019"
+                  data-tip="<b>No points</b> on Oct 16, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -929,7 +918,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Oct 16, 2019"
+                  data-tip="<b>No points</b> on Oct 17, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -940,7 +929,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Oct 17, 2019"
+                  data-tip="<b>No points</b> on Oct 18, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -951,7 +940,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Oct 18, 2019"
+                  data-tip="<b>No points</b> on Oct 19, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -962,7 +951,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Oct 19, 2019"
+                  data-tip="<b>No points</b> on Oct 20, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -978,7 +967,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Oct 20, 2019"
+                  data-tip="<b>No points</b> on Oct 21, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -989,7 +978,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Oct 21, 2019"
+                  data-tip="<b>No points</b> on Oct 22, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1000,7 +989,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Oct 22, 2019"
+                  data-tip="<b>No points</b> on Oct 23, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1011,7 +1000,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Oct 23, 2019"
+                  data-tip="<b>No points</b> on Oct 24, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1022,7 +1011,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Oct 24, 2019"
+                  data-tip="<b>No points</b> on Oct 25, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1033,7 +1022,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Oct 25, 2019"
+                  data-tip="<b>No points</b> on Oct 26, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1044,7 +1033,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Oct 26, 2019"
+                  data-tip="<b>No points</b> on Oct 27, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1060,7 +1049,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Oct 27, 2019"
+                  data-tip="<b>No points</b> on Oct 28, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1071,7 +1060,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Oct 28, 2019"
+                  data-tip="<b>No points</b> on Oct 29, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1082,7 +1071,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Oct 29, 2019"
+                  data-tip="<b>No points</b> on Oct 30, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1093,7 +1082,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Oct 30, 2019"
+                  data-tip="<b>No points</b> on Oct 31, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1104,7 +1093,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Oct 31, 2019"
+                  data-tip="<b>No points</b> on null"
                   height="10"
                   width="10"
                   x="0"
@@ -1208,7 +1197,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Nov 9, 2019"
+                  data-tip="<b>No points</b> on Nov 10, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1224,7 +1213,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Nov 10, 2019"
+                  data-tip="<b>No points</b> on Nov 11, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1235,7 +1224,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Nov 11, 2019"
+                  data-tip="<b>No points</b> on Nov 12, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1246,7 +1235,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Nov 12, 2019"
+                  data-tip="<b>No points</b> on Nov 13, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1257,7 +1246,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Nov 13, 2019"
+                  data-tip="<b>No points</b> on Nov 14, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1268,7 +1257,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Nov 14, 2019"
+                  data-tip="<b>No points</b> on Nov 15, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1279,7 +1268,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Nov 15, 2019"
+                  data-tip="<b>No points</b> on Nov 16, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1290,7 +1279,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Nov 16, 2019"
+                  data-tip="<b>No points</b> on Nov 17, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1306,7 +1295,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Nov 17, 2019"
+                  data-tip="<b>No points</b> on Nov 18, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1317,7 +1306,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Nov 18, 2019"
+                  data-tip="<b>No points</b> on Nov 19, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1328,7 +1317,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Nov 19, 2019"
+                  data-tip="<b>No points</b> on Nov 20, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1339,7 +1328,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Nov 20, 2019"
+                  data-tip="<b>No points</b> on Nov 21, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1350,7 +1339,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Nov 21, 2019"
+                  data-tip="<b>No points</b> on Nov 22, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1361,7 +1350,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Nov 22, 2019"
+                  data-tip="<b>No points</b> on Nov 23, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1372,7 +1361,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Nov 23, 2019"
+                  data-tip="<b>No points</b> on Nov 24, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1388,7 +1377,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Nov 24, 2019"
+                  data-tip="<b>No points</b> on Nov 25, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1399,7 +1388,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Nov 25, 2019"
+                  data-tip="<b>No points</b> on Nov 26, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1410,7 +1399,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Nov 26, 2019"
+                  data-tip="<b>No points</b> on Nov 27, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1421,7 +1410,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Nov 27, 2019"
+                  data-tip="<b>No points</b> on Nov 28, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1432,7 +1421,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Nov 28, 2019"
+                  data-tip="<b>No points</b> on Nov 29, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1443,7 +1432,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Nov 29, 2019"
+                  data-tip="<b>No points</b> on Nov 30, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1454,7 +1443,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Nov 30, 2019"
+                  data-tip="<b>No points</b> on null"
                   height="10"
                   width="10"
                   x="0"
@@ -1563,7 +1552,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Dec 9, 2019"
+                  data-tip="<b>No points</b> on Dec 10, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1574,7 +1563,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Dec 10, 2019"
+                  data-tip="<b>No points</b> on Dec 11, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1585,7 +1574,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Dec 11, 2019"
+                  data-tip="<b>No points</b> on Dec 12, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1596,7 +1585,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Dec 12, 2019"
+                  data-tip="<b>No points</b> on Dec 13, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1607,7 +1596,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Dec 13, 2019"
+                  data-tip="<b>No points</b> on Dec 14, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1618,7 +1607,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Dec 14, 2019"
+                  data-tip="<b>No points</b> on Dec 15, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1634,7 +1623,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Dec 15, 2019"
+                  data-tip="<b>No points</b> on Dec 16, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1645,7 +1634,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Dec 16, 2019"
+                  data-tip="<b>No points</b> on Dec 17, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1656,7 +1645,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Dec 17, 2019"
+                  data-tip="<b>No points</b> on Dec 18, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1667,7 +1656,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Dec 18, 2019"
+                  data-tip="<b>No points</b> on Dec 19, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1678,7 +1667,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Dec 19, 2019"
+                  data-tip="<b>No points</b> on Dec 20, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1689,7 +1678,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Dec 20, 2019"
+                  data-tip="<b>No points</b> on Dec 21, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1700,7 +1689,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Dec 21, 2019"
+                  data-tip="<b>No points</b> on Dec 22, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1716,7 +1705,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Dec 22, 2019"
+                  data-tip="<b>No points</b> on Dec 23, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1727,7 +1716,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Dec 23, 2019"
+                  data-tip="<b>No points</b> on Dec 24, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1738,7 +1727,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Dec 24, 2019"
+                  data-tip="<b>No points</b> on Dec 25, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1749,7 +1738,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Dec 25, 2019"
+                  data-tip="<b>No points</b> on Dec 26, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1760,7 +1749,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Dec 26, 2019"
+                  data-tip="<b>No points</b> on Dec 27, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1771,7 +1760,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Dec 27, 2019"
+                  data-tip="<b>No points</b> on Dec 28, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1782,7 +1771,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Dec 28, 2019"
+                  data-tip="<b>No points</b> on Dec 29, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1798,7 +1787,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Dec 29, 2019"
+                  data-tip="<b>No points</b> on Dec 30, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1809,7 +1798,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Dec 30, 2019"
+                  data-tip="<b>No points</b> on Dec 31, 2019"
                   height="10"
                   width="10"
                   x="0"
@@ -1820,7 +1809,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 <rect
                   class="color-empty"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Dec 31, 2019"
+                  data-tip="<b>No points</b> on null"
                   height="10"
                   width="10"
                   x="0"
@@ -2168,9 +2157,9 @@ exports[`<HeatMap/> renders correctly 1`] = `
                   <title />
                 </rect>
                 <rect
-                  class="color-empty"
+                  class="color-scale-1"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Jan 30, 2020"
+                  data-tip="<b>2 points</b> on Jan 30, 2020"
                   height="10"
                   width="10"
                   x="0"
@@ -2179,9 +2168,9 @@ exports[`<HeatMap/> renders correctly 1`] = `
                   <title />
                 </rect>
                 <rect
-                  class="color-scale-1"
+                  class="color-empty"
                   currentItem="false"
-                  data-tip="<b>2 points</b> on Jan 31, 2020"
+                  data-tip="<b>No points</b> on Jan 31, 2020"
                   height="10"
                   width="10"
                   x="0"
@@ -2227,23 +2216,34 @@ exports[`<HeatMap/> renders correctly 1`] = `
                 >
                   <title />
                 </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Feb 4, 2020"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="22"
-                >
-                  <title />
-                </rect>
               </g>
             </g>
             <g
               class="react-calendar-heatmap-weekday-labels"
               transform="translate(10, 14)"
-            />
+            >
+              <text
+                class=" react-calendar-heatmap-weekday-label"
+                x="0"
+                y="21"
+              >
+                Mon
+              </text>
+              <text
+                class=" react-calendar-heatmap-weekday-label"
+                x="0"
+                y="43"
+              >
+                Wed
+              </text>
+              <text
+                class=" react-calendar-heatmap-weekday-label"
+                x="0"
+                y="65"
+              >
+                Fri
+              </text>
+            </g>
           </svg>
           <div
             class="__react_component_tooltip place-top type-dark "
