@@ -2,10 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import CalendarHeatMap from 'react-calendar-heatmap';
 import ReactTooltip from 'react-tooltip';
-import addDays from 'date-fns/add_days';
-import addMonths from 'date-fns/add_months';
-import startOfDay from 'date-fns/start_of_day';
-import format from 'date-fns/format';
 
 import FullWidthRow from '../../helpers/FullWidthRow';
 import Spacer from '../../helpers/Spacer';
@@ -21,49 +17,102 @@ const propTypes = {
   })
 };
 
+const months = [
+  '',
+  'Jan',
+  'Feb',
+  'Mar',
+  'Apr',
+  'May',
+  'Jun',
+  'Jul',
+  'Aug',
+  'Sep',
+  'Oct',
+  'Nov',
+  'Dec'
+];
+
+// this is displayed in the tooltip e.g. "Dec 1, 2020"
+function getTooltipString(date) {
+  date = date.split('-');
+  return `${months[date[1]]} ${date[2]}, ${date[0]}`;
+}
+
+const tempDate = new Date();
+const timezoneOffsetInMinutes = tempDate.getTimezoneOffset();
+const msOffset = timezoneOffsetInMinutes * 1000 * 60;
+console.log('msOffset=' + msOffset);
+// this formats a timestamp to YYYY-MM-DD e.g. "2020-12-1"
+// and sets it to UTC
+function formatDate(timestamp) {
+  let log = false;
+  if (timestamp > 1581652127779) {
+    log = true;
+  }
+  timestamp += msOffset;
+
+  if (log) {
+    console.log('adjustedTimestamp');
+    console.log(timestamp);
+  }
+
+  const date = new Date(timestamp);
+  const year = date.getUTCFullYear();
+  const month = date.getUTCMonth() + 1;
+  const day = date.getUTCDate();
+
+  if (log) {
+    console.log(year + month + day);
+  }
+
+  return `${year}-${month}-${day}`;
+}
+
 function HeatMap({ calendar, streak }) {
   // an issue with react-calendar-heatmap makes the days off by one
   // see this https://github.com/kevinsqi/react-calendar-heatmap/issues/112
   // I have added one day in the marked places to account for the offset
-
   // this logic adds a day to all the timestamps (remove if issue gets fixed)
-  let tempCalendar = {};
-  const secondsInADay = 60 * 60 * 24;
-  for (let timestamp of Object.keys(calendar)) {
-    tempCalendar[parseInt(timestamp, 10) + secondsInADay] = 1;
+  if (msOffset < 0) {
+    let tempCalendar = {};
+    const secondsInADay = 60 * 60 * 24;
+    for (let timestamp of Object.keys(calendar)) {
+      tempCalendar[parseInt(timestamp, 10) + secondsInADay] = 1;
+    }
+
+    calendar = tempCalendar;
   }
 
-  calendar = tempCalendar;
+  const msInDay = 1000 * 60 * 60 * 24;
+  const msInWeek = msInDay * 7;
 
-  // the addDays of 1 to startOfToday (remove if issue gets fixed)
-  const startOfToday = addDays(startOfDay(Date.now()), 1);
-  const sixMonthsAgo = addMonths(startOfToday, -6);
-  const startOfCalendar = format(addDays(sixMonthsAgo, -1), 'YYYY-MM-DD');
-  const endOfCalendar = format(startOfToday, 'YYYY-MM-DD');
+  const today = Date.now() + msInDay;
+  const halfYearAgo = today - msInWeek * 26;
+  const startOfCalendar = formatDate(halfYearAgo);
+  const endOfCalendar = formatDate(today);
 
   let calendarData = [];
-  let dayCounter = sixMonthsAgo;
+  let dayCounter = halfYearAgo;
 
-  // create a data point for each day of the calendar period (six months)
-  while (dayCounter <= startOfToday) {
+  // create a data point for each day of the calendar period (half a year)
+  while (dayCounter <= today) {
     // this is the format needed for react-calendar-heatmap
     const newDay = {
-      date: format(dayCounter, 'YYYY-MM-DD'),
+      date: formatDate(dayCounter),
       count: 0
     };
 
     calendarData.push(newDay);
-    dayCounter = addDays(dayCounter, 1);
+    dayCounter += msInDay;
   }
 
   // this adds one to the count of the day for each timestamp
   for (let timestamp of Object.keys(calendar)) {
     timestamp = Number(timestamp * 1000) || null;
     if (timestamp) {
-      const startOfTimestampDay = format(startOfDay(timestamp), 'YYYY-MM-DD');
-      const index = calendarData.findIndex(
-        day => day.date === startOfTimestampDay
-      );
+      const timestampDay = formatDate(timestamp);
+      const index = calendarData.findIndex(day => day.date === timestampDay);
 
       if (index >= 0) {
         calendarData[index].count++;
@@ -94,13 +143,9 @@ function HeatMap({ calendar, streak }) {
               valueCount = 'No points';
             }
             return {
-              'data-tip': `<b>${valueCount}</b> on ${new Date(
+              'data-tip': `<b>${valueCount}</b> on ${getTooltipString(
                 value.date
-              ).toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'short',
-                day: 'numeric'
-              })}`
+              )}`
             };
           }}
           values={calendarData}
