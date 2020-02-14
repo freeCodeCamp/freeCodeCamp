@@ -41,15 +41,15 @@ localeTitle: FreeCell的交易卡
 ```yml
 tests:
   - text: <code>dealFreeCell</code>是一个功能。
-    testString: assert(typeof dealFreeCell === "function");
+    testString: assert(typeof dealFreeCell === 'function');
   - text: <code>dealFreeCell(seed)</code>应该返回一个对象。
-    testString: assert(typeof dealFreeCell(1) === "object");
+    testString: assert(typeof dealFreeCell(1) === 'object');
   - text: <code>dealFreeCell(seed)</code>应该返回一个长度为7的数组。
     testString: assert(dealFreeCell(1).length === 7);
   - text: <code>dealFreeCell(1)</code>应该返回一个与示例“Game＃1”相同的数组
-    testString: assert.deepEqual(dealFreeCell(1), game1);
+    testString: "assert.deepEqual(dealFreeCell(1), game1);"
   - text: <code>dealFreeCell(617)</code>应该返回一个与示例“Game＃617”相同的数组
-    testString: assert.deepEqual(dealFreeCell(617), game617);
+    testString: "assert.deepEqual(dealFreeCell(617), game617);"
 
 ```
 

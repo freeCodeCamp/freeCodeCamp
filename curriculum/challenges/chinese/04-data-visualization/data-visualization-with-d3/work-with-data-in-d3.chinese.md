@@ -18,9 +18,9 @@ localeTitle: 在D3中使用数据
 ```yml
 tests:
   - text: 您的文档应该有9个<code>h2</code>元素。
-    testString: 'assert($("h2").length == 9, "Your document should have 9 <code>h2</code> elements.");'
+    testString: assert($('h2').length == 9);
   - text: <code>h2</code>元素中的文本应该是“New Title”。大写和间距应完全匹配。
-    testString: assert($("h2").text().match(/New Title/g).length == 9);
+    testString: assert($('h2').text().match(/New Title/g).length == 9);
   - text: 您的代码应该使用<code>data()</code>方法。
     testString: assert(code.match(/\.data/g));
   - text: 您的代码应使用<code>enter()</code>方法。

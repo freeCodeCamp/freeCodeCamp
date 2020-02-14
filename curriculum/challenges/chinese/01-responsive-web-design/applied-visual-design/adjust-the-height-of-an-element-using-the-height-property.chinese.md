@@ -31,7 +31,7 @@ img {
 ```yml
 tests:
   - text: '你应该设置 <code>h4</code> 的 <code>height</code> 属性，使其值为 <code>25px</code>。'
-    testString: assert($('h4').css('height') == '25px', '你应该设置 <code>h4</code> 的 <code>height</code> 属性，使其值为 <code>25px</code>。');
+    testString: assert(Math.round(document.querySelector('h4').getBoundingClientRect().height) === 25 && /h4{\S*height:25px(;\S*}|})/.test($('style').text().replace(/\s/g ,'')));
 
 ```
 

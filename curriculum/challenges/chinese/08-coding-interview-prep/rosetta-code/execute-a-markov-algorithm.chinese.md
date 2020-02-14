@@ -75,7 +75,7 @@ _ + _  - >
 ```yml
 tests:
   - text: <code>markov</code>是一个功能。
-    testString: assert(typeof markov === "function");
+    testString: assert(typeof markov === 'function');
   - text: <code>markov(["A -> apple","B -> bag","S -> shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],"I bought a B of As from T S.")</code>应该回复“我从我兄弟那里买了一袋苹果”。
     testString: assert.deepEqual(markov(rules[0],tests[0]),outputs[0]);
   - text: <code>markov(["A -> apple","B -> bag","S -> .shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],"I bought a B of As from T S.")</code>应该回来“我从T商店买了一袋苹果。”

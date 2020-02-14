@@ -19,7 +19,7 @@ localeTitle: 斐波那契n步数序列
 ```yml
 tests:
   - text: <code>fib_luc</code>是一个功能。
-    testString: assert(typeof fib_luc === "function");
+    testString: assert(typeof fib_luc === 'function');
   - text: <code>fib_luc(2,10,"f")</code>应返回<code>[1,1,2,3,5,8,13,21,34,55]</code> 。
     testString: assert.deepEqual(fib_luc(2,10,"f"),ans[0]);
   - text: <code>fib_luc(3,15,"f")</code>应返回<code>[1,1,2,4,7,13,24,44,81,149,274,504,927,1705,3136]</code> 。

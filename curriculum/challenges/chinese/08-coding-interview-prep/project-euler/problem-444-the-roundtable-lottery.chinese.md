@@ -19,7 +19,7 @@ localeTitle: 问题444：圆桌会议彩票
 ```yml
 tests:
   - text: <code>euler444()</code>应该返回1.200856722e+263。
-    testString: 'assert.strictEqual(euler444(), 1.200856722e+263, "<code>euler444()</code> should return 1.200856722e+263.");'
+    testString: assert.strictEqual(euler444(), 1.200856722e+263);
 
 ```
 

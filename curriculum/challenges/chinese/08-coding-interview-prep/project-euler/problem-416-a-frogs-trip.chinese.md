@@ -26,7 +26,7 @@ localeTitle: 问题416：青蛙的旅行
 ```yml
 tests:
   - text: <code>euler416()</code>应该返回898082747。
-    testString: 'assert.strictEqual(euler416(), 898082747, "<code>euler416()</code> should return 898082747.");'
+    testString: assert.strictEqual(euler416(), 898082747);
 
 ```
 

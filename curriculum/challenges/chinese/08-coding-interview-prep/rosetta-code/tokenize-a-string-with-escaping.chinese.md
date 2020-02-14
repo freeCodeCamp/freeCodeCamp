@@ -20,13 +20,13 @@ localeTitle: 使用转义标记字符串
 ```yml
 tests:
   - text: <code>tokenize</code>是一个函数。
-    testString: assert(typeof tokenize === "function");
+    testString: assert(typeof tokenize === 'function');
   - text: <code>tokenize</code>应该返回一个数组。
-    testString: assert(typeof tokenize("a", "b", "c") === "object");
+    testString: assert(typeof tokenize('a', 'b', 'c') === 'object');
   - text: <code>tokenize("one^|uno||three^^^^|four^^^|^cuatro|", "|", "^")</code>应返回[“one | uno”，“”，“three ^^” ，“四个^ | cuatro”，“”]“）
-    testString: assert.deepEqual(tokenize(testStr1, "|", "^"), res1);
+    testString: assert.deepEqual(tokenize(testStr1, '|', '^'), res1);
   - text: '<code>tokenize("a@&amp;bcd&amp;ef&amp;&amp;@@hi", "&amp;", "@")</code>应返回<code>["a&amp;bcd", "ef", "", "@hi"]</code>'
-    testString: assert.deepEqual(tokenize(testStr2, "&", "@"), res2);
+    testString: assert.deepEqual(tokenize(testStr2, '&', '@'), res2);
 
 ```
 

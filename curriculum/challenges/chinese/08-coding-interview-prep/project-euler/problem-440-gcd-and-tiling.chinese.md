@@ -35,7 +35,7 @@ S（4）模数987898789 = 670616280。
 ```yml
 tests:
   - text: <code>euler440()</code>应该返回970746056。
-    testString: 'assert.strictEqual(euler440(), 970746056, "<code>euler440()</code> should return 970746056.");'
+    testString: assert.strictEqual(euler440(), 970746056);
 
 ```
 

@@ -28,7 +28,7 @@ localeTitle: 问题204：广义汉明数
 ```yml
 tests:
   - text: <code>euler204()</code>应返回2944730。
-    testString: 'assert.strictEqual(euler204(), 2944730, "<code>euler204()</code> should return 2944730.");'
+    testString: assert.strictEqual(euler204(), 2944730);
 
 ```
 

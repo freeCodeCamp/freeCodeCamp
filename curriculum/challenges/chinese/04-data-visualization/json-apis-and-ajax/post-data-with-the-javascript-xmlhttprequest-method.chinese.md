@@ -20,15 +20,15 @@ tests:
   - text: 您的代码应该创建一个新的<code>XMLHttpRequest</code> 。
     testString: assert(code.match(/new\s+?XMLHttpRequest\(\s*?\)/g));
   - text: 您的代码应使用<code>open</code>方法初始化对服务器的“POST”请求。
-    testString: assert(code.match(/\.open\(\s*?("|")POST\1\s*?,\s*?url\s*?,\s*?true\s*?\)/g));
+    testString: assert(code.match(/\.open\(\s*?('|")POST\1\s*?,\s*?url\s*?,\s*?true\s*?\)/g));
   - text: 您的代码应使用<code>setRequestHeader</code>方法。
-    testString: assert(code.match(/\.setRequestHeader\(\s*?("|")Content-Type\1\s*?,\s*?("|")text\/plain\2\s*?\)/g));
+    testString: assert(code.match(/\.setRequestHeader\(\s*?('|")Content-Type\1\s*?,\s*?('|")application\/json;\s*charset=UTF-8\2\s*?\)/g));
   - text: 您的代码应该将<code>onreadystatechange</code>事件处理程序设置为函数。
     testString: assert(code.match(/\.onreadystatechange\s*?=/g));
   - text: 您的代码应该获取带有类<code>message</code>的元素，并将其内部HTML更改为<code>responseText</code> 。
-    testString: assert(code.match(/document\.getElementsByClassName\(\s*?("|")message\1\s*?\)\[0\]\.innerHTML\s*?=\s*?.+?\.responseText/g));
+    testString: assert(code.match(/document\.getElementsByClassName\(\s*?('|")message\1\s*?\)\[0\]\.textContent\s*?=\s*?.+?\.userName\s*?\+\s*?.+?\.suffix/g));
   - text: 您的代码应使用<code>send</code>方法。
-    testString: assert(code.match(/\.send\(\s*?userName\s*?\)/g));
+    testString: assert(code.match(/\.send\(\s*?body\s*?\)/g));
 
 ```
 

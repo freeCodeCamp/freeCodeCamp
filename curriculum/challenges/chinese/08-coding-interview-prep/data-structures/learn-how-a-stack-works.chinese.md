@@ -22,7 +22,7 @@ tests:
   - text: <code>homeworkStack</code>的最后一个元素应该是<code>"CS50"</code> 。
     testString: assert(homeworkStack[3] === 'CS50');
   - text: <code>homeworkStack</code>不应包含<code>"PSY44"</code> 。
-    testString: assert(homeworkStack.indexOf("PSY44") === -1);
+    testString: assert(homeworkStack.indexOf('PSY44') === -1);
   - text: 不应更改<code>homeworkStack</code>的初始声明。
     testString: assert(code.match(/=/g).length === 1 && /homeworkStack\s*=\s*\["BIO12"\s*,\s*"HIS80"\s*,\s*"MAT122"\s*,\s*"PSY44"\]/.test(code));
 

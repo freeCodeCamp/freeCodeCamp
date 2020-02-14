@@ -30,7 +30,7 @@ d8d9d10 = 289被17整除
 ```yml
 tests:
   - text: <code>substringDivisibility()</code>应该返回[1430952867, 1460357289, 1406357289, 4130952867, 4160357289, 4106357289]。
-    testString: 'assert.deepEqual(substringDivisibility(), [ 1430952867, 1460357289, 1406357289, 4130952867, 4160357289, 4106357289 ], "<code>substringDivisibility()</code> should return [ 1430952867, 1460357289, 1406357289, 4130952867, 4160357289, 4106357289 ].");'
+    testString: assert.deepEqual(substringDivisibility(), [ 1430952867, 1460357289, 1406357289, 4130952867, 4160357289, 4106357289 ]);
 
 ```
 

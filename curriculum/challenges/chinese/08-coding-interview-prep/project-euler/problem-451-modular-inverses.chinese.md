@@ -19,7 +19,7 @@ localeTitle: 问题451：模逆
 ```yml
 tests:
   - text: <code>euler451()</code>应该返回153651073760956。
-    testString: 'assert.strictEqual(euler451(), 153651073760956, "<code>euler451()</code> should return 153651073760956.");'
+    testString: assert.strictEqual(euler451(), 153651073760956);
 
 ```
 

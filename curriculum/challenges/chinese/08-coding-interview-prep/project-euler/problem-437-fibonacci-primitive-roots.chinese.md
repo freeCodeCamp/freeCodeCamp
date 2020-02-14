@@ -19,7 +19,7 @@ localeTitle: 问题437：斐波那契原始根
 ```yml
 tests:
   - text: <code>euler437()</code>应该返回74204709657207。
-    testString: 'assert.strictEqual(euler437(), 74204709657207, "<code>euler437()</code> should return 74204709657207.");'
+    testString: assert.strictEqual(euler437(), 74204709657207);
 
 ```
 

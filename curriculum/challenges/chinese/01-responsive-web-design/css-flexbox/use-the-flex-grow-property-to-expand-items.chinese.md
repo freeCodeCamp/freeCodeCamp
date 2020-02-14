@@ -24,9 +24,9 @@ localeTitle: 使用 flex-grow 属性扩展项目
 ```yml
 tests:
   - text: '<code>#box-1</code>元素应有<code>flex-grow</code>属性，其值应为 1。'
-    testString: assert($('#box-1').css('flex-grow') == '1', '<code>#box-1</code>元素应有<code>flex-grow</code>属性，其值应为 1。');
+    testString: assert($('#box-1').css('flex-grow') == '1');
   - text: '<code>#box-2</code>元素应有<code>flex-grow</code>属性，其值应为 2。'
-    testString: assert($('#box-2').css('flex-grow') == '2', '<code>#box-2</code>元素应有<code>flex-grow</code>属性，其值应为 2。');
+    testString: assert($('#box-2').css('flex-grow') == '2');
 
 ```
 

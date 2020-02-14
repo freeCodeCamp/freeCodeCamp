@@ -19,9 +19,9 @@ localeTitle: 梅森数的因素
 ```yml
 tests:
   - text: <code>check_mersenne</code>是一个函数。
-    testString: assert(typeof check_mersenne === "function");
+    testString: assert(typeof check_mersenne === 'function');
   - text: <code>check_mersenne(3)</code>应该返回一个字符串。
-    testString: assert(typeof check_mersenne(3) == "string");
+    testString: assert(typeof check_mersenne(3) == 'string');
   - text: <code>check_mersenne(3)</code>应该返回“M3 = 2 ^ 3-1是素数”。
     testString: assert.equal(check_mersenne(3),"M3 = 2^3-1 is prime");
   - text: <code>check_mersenne(23)</code>应返回“M23 = 2 ^ 23-1与因子47复合”。

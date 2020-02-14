@@ -19,7 +19,7 @@ localeTitle: 问题161：Triominoes
 ```yml
 tests:
   - text: <code>euler161()</code>应该返回20574308184277972。
-    testString: 'assert.strictEqual(euler161(), 20574308184277972, "<code>euler161()</code> should return 20574308184277972.");'
+    testString: assert.strictEqual(euler161(), 20574308184277972);
 
 ```
 

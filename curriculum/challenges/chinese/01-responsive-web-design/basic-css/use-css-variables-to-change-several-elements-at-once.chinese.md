@@ -24,11 +24,11 @@ localeTitle: 使用 CSS 变量一次更改多个元素
 ```yml
 tests:
   - text: '<code>penguin</code> class 声明的<code>--penguin-skin</code>变量的值应为<code>gray</code>。'
-    testString: 'assert(code.match(/.penguin\s*?{[\s\S]*--penguin-skin\s*?:\s*?gray\s*?;[\s\S]*}/gi));'
+    testString: assert(code.match(/.penguin\s*?{[\s\S]*--penguin-skin\s*?:\s*?gray\s*?;[\s\S]*}/gi));
   - text: '<code>penguin</code> class 声明的<code>--penguin-belly</code>变量的值应为<code>white</code>。'
-    testString: 'assert(code.match(/.penguin\s*?{[\s\S]*--penguin-belly\s*?:\s*?white\s*?;[\s\S]*}/gi));'
+    testString: assert(code.match(/.penguin\s*?{[\s\S]*--penguin-belly\s*?:\s*?white\s*?;[\s\S]*}/gi));
   - text: '<code>penguin</code> class 声明的<code>--penguin-beak</code>变量的值应为<code>orange</code>。'
-    testString: 'assert(code.match(/.penguin\s*?{[\s\S]*--penguin-beak\s*?:\s*?orange\s*?;[\s\S]*}/gi));'
+    testString: assert(code.match(/.penguin\s*?{[\s\S]*--penguin-beak\s*?:\s*?orange\s*?;[\s\S]*}/gi));
 
 ```
 

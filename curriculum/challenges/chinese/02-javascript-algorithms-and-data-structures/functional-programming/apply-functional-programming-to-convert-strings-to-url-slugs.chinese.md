@@ -18,17 +18,17 @@ localeTitle: 应用函数式编程将字符串转换为URL Slugs
 ```yml
 tests:
   - text: <code>globalTitle</code>变量不应该更改。
-    testString: 'assert(globalTitle === "Winter Is Coming", "The <code>globalTitle</code> variable should not change.");'
+    testString: assert(globalTitle === "Winter Is Coming");
   - text: 您的代码不应使用<code>replace</code>方法来应对此挑战。
-    testString: 'assert(!code.match(/\.replace/g), "Your code should not use the <code>replace</code> method for this challenge.");'
+    testString: assert(!code.match(/\.replace/g));
   - text: <code>urlSlug(&quot;Winter Is Coming&quot;)</code>应该回归<code>&quot;winter-is-coming&quot;</code> 。
-    testString: 'assert(urlSlug("Winter Is Coming") === "winter-is-coming", "<code>urlSlug("Winter Is Coming")</code> should return <code>"winter-is-coming"</code>.");'
+    testString: assert(urlSlug("Winter Is Coming") === "winter-is-coming");
   - text: <code>urlSlug(&quot; Winter Is  Coming&quot;)</code>应该回归<code>&quot;winter-is-coming&quot;</code> 。
-    testString: 'assert(urlSlug(" Winter Is  Coming") === "winter-is-coming", "<code>urlSlug(" Winter Is  &nbsp;Coming")</code> should return <code>"winter-is-coming"</code>.");'
+    testString: assert(urlSlug(" Winter Is  Coming") === "winter-is-coming");
   - text: <code>urlSlug(&quot;A Mind Needs Books Like A Sword Needs A Whetstone&quot;)</code>应该回归<code>&quot;a-mind-needs-books-like-a-sword-needs-a-whetstone&quot;</code> 。
-    testString: 'assert(urlSlug("A Mind Needs Books Like A Sword Needs A Whetstone") === "a-mind-needs-books-like-a-sword-needs-a-whetstone", "<code>urlSlug("A Mind Needs Books Like A Sword Needs A Whetstone")</code> should return <code>"a-mind-needs-books-like-a-sword-needs-a-whetstone"</code>.");'
+    testString: assert(urlSlug("A Mind Needs Books Like A Sword Needs A Whetstone") === "a-mind-needs-books-like-a-sword-needs-a-whetstone");
   - text: <code>urlSlug(&quot;Hold The Door&quot;)</code>应该返回<code>&quot;hold-the-door&quot;</code> 。
-    testString: 'assert(urlSlug("Hold The Door") === "hold-the-door", "<code>urlSlug("Hold The Door")</code> should return <code>"hold-the-door"</code>.");'
+    testString: assert(urlSlug("Hold The Door") === "hold-the-door");
 
 ```
 

@@ -27,9 +27,9 @@ localeTitle: 更改文本的颜色
 ```yml
 tests:
   - text: '<code>h2</code>元素应该为红色。'
-    testString: assert($("h2").css("color") === "rgb(255, 0, 0)");
+    testString: assert($("h2").attr('style'));
   - text: '<code>h2</code>元素的<code>style</code>属性值应该以<code>;</code>结束。'
-    testString: 'assert(code.match(/<h2\s+style\s*=\s*(\''|")\s*color\s*:\s*(?:rgb\(\s*255\s*,\s*0\s*,\s*0\s*\)|rgb\(\s*100%\s*,\s*0%\s*,\s*0%\s*\)|red|#ff0000|#f00|hsl\(\s*0\s*,\s*100%\s*,\s*50%\s*\))\s*\;(\''|")>\s*CatPhotoApp\s*<\/h2>/));'
+    testString: assert($("h2").css("color") === "rgb(255, 0, 0)");
   - text: '<code>style</code> 声明应该以 <code>;</code> 结尾'
     testString: assert($("h2").attr('style') && $("h2").attr('style').endsWith(';'));
 
@@ -88,5 +88,6 @@ tests:
 ```html
 // solution required
 ```
+
 </section>
               

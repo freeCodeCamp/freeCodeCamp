@@ -44,7 +44,7 @@ localeTitle: 问题157：解决丢番图方程
 ```yml
 tests:
   - text: <code>euler157()</code>应返回53490。
-    testString: 'assert.strictEqual(euler157(), 53490, "<code>euler157()</code> should return 53490.");'
+    testString: assert.strictEqual(euler157(), 53490);
 
 ```
 

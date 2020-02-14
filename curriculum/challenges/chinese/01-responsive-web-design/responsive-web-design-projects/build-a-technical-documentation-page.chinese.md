@@ -4,7 +4,7 @@ title: Build a Technical Documentation Page
 isRequired: true
 challengeType: 3
 forumTopicId: 301146
-localTitle: 制作一个技术文档页面
+localeTitle: 制作一个技术文档页面
 ---
 
 ## Description

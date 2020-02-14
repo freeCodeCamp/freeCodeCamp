@@ -19,7 +19,7 @@ localeTitle: 来自两个数组的哈希
 ```yml
 tests:
   - text: <code>arrToObj</code>是一个功能。
-    testString: assert(typeof arrToObj === "function");
+    testString: assert(typeof arrToObj === 'function');
   - text: '<code>arrToObj([1, 2, 3, 4, 5], ["a", "b", "c", "d", "e"])</code>应返回<code>{ 1: "a", 2: "b", 3: "c", 4: "d", 5: "e" }</code>'
     testString: assert.deepEqual(arrToObj(...testCases[0]), res[0]);
   - text: '<code>arrToObj([1, 2, 3, 4, 5], ["a", "b", "c", "d"])</code>应返回<code>{ 1: "a", 2: "b", 3: "c", 4: "d", 5: undefined }</code>'

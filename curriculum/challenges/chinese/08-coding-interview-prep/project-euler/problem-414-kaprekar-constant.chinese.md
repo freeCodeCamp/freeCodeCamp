@@ -19,7 +19,7 @@ localeTitle: 问题414：标题常量
 ```yml
 tests:
   - text: <code>euler414()</code>应该返回552506775824935500。
-    testString: 'assert.strictEqual(euler414(), 552506775824935500, "<code>euler414()</code> should return 552506775824935500.");'
+    testString: assert.strictEqual(euler414(), 552506775824935500);
 
 ```
 

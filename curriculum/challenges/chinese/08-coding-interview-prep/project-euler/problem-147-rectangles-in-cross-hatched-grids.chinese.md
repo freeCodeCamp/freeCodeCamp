@@ -19,7 +19,7 @@ localeTitle: 问题147：交叉阴影网格中的矩形
 ```yml
 tests:
   - text: <code>euler147()</code>应该返回846910284。
-    testString: 'assert.strictEqual(euler147(), 846910284, "<code>euler147()</code> should return 846910284.");'
+    testString: assert.strictEqual(euler147(), 846910284);
 
 ```
 

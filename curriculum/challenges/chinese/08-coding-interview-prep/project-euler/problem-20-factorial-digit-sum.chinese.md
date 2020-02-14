@@ -19,15 +19,15 @@ localeTitle: 问题20：因子数字和
 ```yml
 tests:
   - text: <code>sumFactorialDigits(10)</code>应该返回27。
-    testString: 'assert.strictEqual(sumFactorialDigits(10), 27, "<code>sumFactorialDigits(10)</code> should return 27.");'
+    testString: assert.strictEqual(sumFactorialDigits(10), 27);
   - text: <code>sumFactorialDigits(25)</code>应该返回72。
-    testString: 'assert.strictEqual(sumFactorialDigits(25), 72, "<code>sumFactorialDigits(25)</code> should return 72.");'
+    testString: assert.strictEqual(sumFactorialDigits(25), 72);
   - text: <code>sumFactorialDigits(50)</code>应该返回216。
-    testString: 'assert.strictEqual(sumFactorialDigits(50), 216, "<code>sumFactorialDigits(50)</code> should return 216.");'
+    testString: assert.strictEqual(sumFactorialDigits(50), 216);
   - text: <code>sumFactorialDigits(75)</code>应该返回432。
-    testString: 'assert.strictEqual(sumFactorialDigits(75), 432, "<code>sumFactorialDigits(75)</code> should return 432.");'
+    testString: assert.strictEqual(sumFactorialDigits(75), 432);
   - text: <code>sumFactorialDigits(100)</code>应该返回648。
-    testString: 'assert.strictEqual(sumFactorialDigits(100), 648, "<code>sumFactorialDigits(100)</code> should return 648.");'
+    testString: assert.strictEqual(sumFactorialDigits(100), 648);
 
 ```
 

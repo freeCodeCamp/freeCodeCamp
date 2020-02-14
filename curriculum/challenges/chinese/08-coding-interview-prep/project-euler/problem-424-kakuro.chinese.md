@@ -41,7 +41,7 @@ A =或从A到J的大写字母中的任何一个都由已解决难题中的等效
 ```yml
 tests:
   - text: <code>euler424()</code>应该返回1059760019628。
-    testString: 'assert.strictEqual(euler424(), 1059760019628, "<code>euler424()</code> should return 1059760019628.");'
+    testString: assert.strictEqual(euler424(), 1059760019628);
 
 ```
 

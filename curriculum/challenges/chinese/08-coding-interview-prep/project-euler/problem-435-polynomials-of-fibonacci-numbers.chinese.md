@@ -24,7 +24,7 @@ localeTitle: 问题435：斐波那契数的多项式
 ```yml
 tests:
   - text: <code>euler435()</code>252541322550。
-    testString: 'assert.strictEqual(euler435(), 252541322550, "<code>euler435()</code> should return 252541322550.");'
+    testString: assert.strictEqual(euler435(), 252541322550);
 
 ```
 

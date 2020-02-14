@@ -21,7 +21,7 @@ localeTitle: S-表达式
 ```yml
 tests:
   - text: <code>parseSexpr</code>是一个函数。
-    testString: assert(typeof parseSexpr === "function");
+    testString: assert(typeof parseSexpr === 'function');
   - text: <code>parseSexpr("(data1 data2 data3)")</code>应返回[“data1”，“data2”，“data3”]“）
     testString: assert.deepEqual(parseSexpr(simpleSExpr), simpleSolution);
   - text: <code>parseSexpr("(data1 data2 data3)")</code>应该返回一个包含3个元素的数组“）'

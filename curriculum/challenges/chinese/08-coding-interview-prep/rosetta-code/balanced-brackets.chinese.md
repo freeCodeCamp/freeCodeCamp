@@ -19,7 +19,7 @@ localeTitle: 平衡括号
 ```yml
 tests:
   - text: <code>isBalanced</code>是一个函数。
-    testString: assert(typeof isBalanced === "function");
+    testString: assert(typeof isBalanced === 'function');
   - text: <code>isBalanced(&quot;[]&quot;)</code>应该返回true。
     testString: assert(isBalanced(testCases[0]));
   - text: <code>isBalanced(&quot;]][[[][][][]][&quot;)</code>应该返回false。

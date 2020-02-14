@@ -38,7 +38,7 @@ localeTitle: 问题425：主要连接
 ```yml
 tests:
   - text: <code>euler425()</code>应该返回46479497324。
-    testString: 'assert.strictEqual(euler425(), 46479497324, "<code>euler425()</code> should return 46479497324.");'
+    testString: assert.strictEqual(euler425(), 46479497324);
 
 ```
 

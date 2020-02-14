@@ -19,7 +19,7 @@ localeTitle: 问题163：阴影线三角形
 ```yml
 tests:
   - text: <code>euler163()</code>应返回343047。
-    testString: 'assert.strictEqual(euler163(), 343047, "<code>euler163()</code> should return 343047.");'
+    testString: assert.strictEqual(euler163(), 343047);
 
 ```
 

@@ -18,9 +18,9 @@ localeTitle: 用JavaScript划分一个号码
 ```yml
 tests:
   - text: 使变量<code>quotient</code>等于2。
-    testString: 'assert(quotient === 2, "Make the variable <code>quotient</code> equal to 2.");'
+    testString: assert(quotient === 2);
   - text: 使用<code>/</code>运算符
-    testString: 'assert(/\d+\s*\/\s*\d+/.test(code), "Use the <code>/</code> operator");'
+    testString: assert(/\d+\s*\/\s*\d+/.test(code));
 
 ```
 

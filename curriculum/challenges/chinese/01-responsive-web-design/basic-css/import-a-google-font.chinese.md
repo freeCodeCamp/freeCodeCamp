@@ -30,11 +30,11 @@ localeTitle: 引入谷歌字体
 ```yml
 tests:
   - text: '引入<code>Lobster</code>字体。'
-    testString: assert(new RegExp("gdgdocs|googleapis", "gi").test(code));
+    testString: assert(new RegExp("googleapis", "gi").test(code));
   - text: '<code>h2</code>元素必须使用<code>Lobster</code>字体。'
     testString: assert($("h2").css("font-family").match(/lobster/i));
   - text: '使用<code>h2</code>选择器去改变字体样式。'
-    testString: 'assert(/\s*h2\s*\{\s*font-family\:\s*(\''|")?Lobster(\''|")?\s*;\s*\}/gi.test(code));'
+    testString: 'assert(/\s*h2\s*\{\s*font-family\:\s*(\"|")?Lobster(\"|")?(.{0,})\s*;\s*\}/gi.test(code));'
   - text: '<code>p</code>元素应该保持使用<code>monospace</code>字体。'
     testString: assert($("p").css("font-family").match(/monospace/i));
 

@@ -29,7 +29,7 @@ tests:
   - text: '保持“文档就绪功能”关闭<code>})</code>完好无损。'
     testString: assert(code.match(/.*\s*\}\);/g));
   - text: 保持<code>script</code>元素结束标记不变。
-    testString: assert(code.match(/<\/script>/g) && code.match(/<script/g));
+    testString: assert(code.match(/<\/script>/g) && code.match(/<script/g) && code.match(/<\/script>/g).length === code.match(/<script/g).length);
 
 ```
 

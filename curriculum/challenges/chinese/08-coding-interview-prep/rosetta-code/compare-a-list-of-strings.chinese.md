@@ -19,9 +19,9 @@ localeTitle: 比较字符串列表
 ```yml
 tests:
   - text: <code>allEqual</code>是一个函数。
-    testString: assert(typeof allEqual === "function");
+    testString: assert(typeof allEqual === 'function');
   - text: <code>azSorted</code>是一个函数。
-    testString: assert(typeof azSorted === "function");
+    testString: assert(typeof azSorted === 'function');
   - text: <code>allEqual(["AA", "AA", "AA", "AA"])</code>返回true。
     testString: assert(allEqual(testCases[0]));
   - text: <code>azSorted(["AA", "AA", "AA", "AA"])</code>返回false。

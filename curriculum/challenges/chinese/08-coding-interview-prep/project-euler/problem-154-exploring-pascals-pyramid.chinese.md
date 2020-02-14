@@ -19,7 +19,7 @@ localeTitle: 问题154：探索帕斯卡的金字塔
 ```yml
 tests:
   - text: <code>euler154()</code>应该返回479742450。
-    testString: 'assert.strictEqual(euler154(), 479742450, "<code>euler154()</code> should return 479742450.");'
+    testString: assert.strictEqual(euler154(), 479742450);
 
 ```
 

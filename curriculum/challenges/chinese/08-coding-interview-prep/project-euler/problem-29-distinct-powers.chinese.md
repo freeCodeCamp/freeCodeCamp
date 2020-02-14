@@ -28,13 +28,13 @@ localeTitle: 问题29：不同的权力
 ```yml
 tests:
   - text: <code>distinctPowers(15)</code>应该返回177。
-    testString: 'assert.strictEqual(distinctPowers(15), 177, "<code>distinctPowers(15)</code> should return 177.");'
+    testString: assert.strictEqual(distinctPowers(15), 177);
   - text: <code>distinctPowers(20)</code>应该返回324。
-    testString: 'assert.strictEqual(distinctPowers(20), 324, "<code>distinctPowers(20)</code> should return 324.");'
+    testString: assert.strictEqual(distinctPowers(20), 324);
   - text: <code>distinctPowers(25)</code>应该返回519。
-    testString: 'assert.strictEqual(distinctPowers(25), 519, "<code>distinctPowers(25)</code> should return 519.");'
+    testString: assert.strictEqual(distinctPowers(25), 519);
   - text: <code>distinctPowers(30)</code>应该返回755。
-    testString: 'assert.strictEqual(distinctPowers(30), 755, "<code>distinctPowers(30)</code> should return 755.");'
+    testString: assert.strictEqual(distinctPowers(30), 755);
 
 ```
 

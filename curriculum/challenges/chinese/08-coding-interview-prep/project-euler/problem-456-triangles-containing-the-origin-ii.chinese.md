@@ -19,7 +19,7 @@ localeTitle: 问题456：包含原点II的三角形
 ```yml
 tests:
   - text: <code>euler456()</code>应返回333333208685971500。
-    testString: 'assert.strictEqual(euler456(), 333333208685971500, "<code>euler456()</code> should return 333333208685971500.");'
+    testString: assert.strictEqual(euler456(), 333333208685971500);
 
 ```
 

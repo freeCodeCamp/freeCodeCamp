@@ -27,9 +27,9 @@ localeTitle: 问题32：Pandigital产品
 ```yml
 tests:
   - text: <code>pandigitalProducts()</code>是一个函数。
-    testString: 'assert(typeof pandigitalProducts === "function", "<code>pandigitalProducts()</code> is a function.");'
+    testString: assert(typeof pandigitalProducts === 'function');
   - text: <code>pandigitalProducts()</code>应该返回45228。
-    testString: 'assert.strictEqual(pandigitalProducts(), 45228, "<code>pandigitalProducts()</code> should return 45228.");'
+    testString: assert.strictEqual(pandigitalProducts(), 45228);
 
 ```
 

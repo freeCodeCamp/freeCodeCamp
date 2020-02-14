@@ -29,11 +29,11 @@ localeTitle: 使图片根据设备尺寸自如响应
 ```yml
 tests:
   - text: '<code>img</code> 标签应设置 <code>max-width</code> 为 100%。'
-    testString: 'assert(code.match(/max-width:\s*?100%;/g), ''<code>img</code> 标签应设置 <code>max-width</code> 为 100%。'');'
+    testString: assert(code.match(/max-width:\s*?100%;/g));
   - text: '<code>img</code> 标签应设置 <code>display</code> 为 block。'
-    testString: assert($('img').css('display') == 'block', '<code>img</code> 标签应设置 <code>display</code> 为 block。');
+    testString: assert($('img').css('display') == 'block');
   - text: '<code>img</code> 标签应设置 <code>height</code> 为 auto。'
-    testString: 'assert(code.match(/height:\s*?auto;/g), ''<code>img</code> 标签应设置 <code>height</code> 为 auto。'');'
+    testString: assert(code.match(/height:\s*?auto;/g));
 
 ```
 

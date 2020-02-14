@@ -27,13 +27,13 @@ localeTitle: 问题30：数字n次方
 ```yml
 tests:
   - text: <code>digitnPowers(2)</code>应该返回0。
-    testString: 'assert(digitnPowers(2) == 0, "<code>digitnPowers(2)</code> should return 0.");'
+    testString: assert(digitnPowers(2) == 0);
   - text: <code>digitnPowers(3)</code>应该返回1301。
-    testString: 'assert(digitnPowers(3) == 1301, "<code>digitnPowers(3)</code> should return 1301.");'
+    testString: assert(digitnPowers(3) == 1301);
   - text: <code>digitnPowers(4)</code>应该返回19316。
-    testString: 'assert(digitnPowers(4) == 19316, "<code>digitnPowers(4)</code> should return 19316.");'
+    testString: assert(digitnPowers(4) == 19316);
   - text: <code>digitnPowers(5)</code>应该返回443839。
-    testString: 'assert(digitnPowers(5) == 443839, "<code>digitnPowers(5)</code> should return 443839.");'
+    testString: assert(digitnPowers(5) == 443839);
 
 ```
 

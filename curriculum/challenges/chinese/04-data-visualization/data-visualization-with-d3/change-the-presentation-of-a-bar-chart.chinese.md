@@ -18,23 +18,23 @@ localeTitle: 更改条形图的演示文稿
 ```yml
 tests:
   - text: 第一个<code>div</code>的<code>height</code>应为120像素， <code>margin</code>为2像素。
-    testString: 'assert($("div").eq(0).css("height") == "120px" && $("div").eq(0).css("margin-right") == "2px", "The first <code>div</code> should have a <code>height</code> of 120 pixels and a <code>margin</code> of 2 pixels.");'
+    testString: assert($('div').eq(0).css('height') == '120px' && $('div').eq(0).css('margin-right') == '2px');
   - text: 第二个<code>div</code>的<code>height</code>应为310像素， <code>margin</code>为2像素。
-    testString: 'assert($("div").eq(1).css("height") == "310px" && $("div").eq(1).css("margin-right") == "2px", "The second <code>div</code> should have a <code>height</code> of 310 pixels and a <code>margin</code> of 2 pixels.");'
+    testString: assert($('div').eq(1).css('height') == '310px' && $('div').eq(1).css('margin-right') == '2px');
   - text: 第三个<code>div</code>的<code>height</code>应为220像素， <code>margin</code>为2像素。
-    testString: 'assert($("div").eq(2).css("height") == "220px" && $("div").eq(2).css("margin-right") == "2px", "The third <code>div</code> should have a <code>height</code> of 220 pixels and a <code>margin</code> of 2 pixels.");'
+    testString: assert($('div').eq(2).css('height') == '220px' && $('div').eq(2).css('margin-right') == '2px');
   - text: 第四个<code>div</code>的<code>height</code>应为170像素， <code>margin</code>为2像素。
-    testString: 'assert($("div").eq(3).css("height") == "170px" && $("div").eq(3).css("margin-right") == "2px", "The fourth <code>div</code> should have a <code>height</code> of 170 pixels and a <code>margin</code> of 2 pixels.");'
+    testString: assert($('div').eq(3).css('height') == '170px' && $('div').eq(3).css('margin-right') == '2px');
   - text: 第五个<code>div</code>的<code>height</code>应为250像素， <code>margin</code>为2像素。
-    testString: 'assert($("div").eq(4).css("height") == "250px" && $("div").eq(4).css("margin-right") == "2px", "The fifth <code>div</code> should have a <code>height</code> of 250 pixels and a <code>margin</code> of 2 pixels.");'
+    testString: assert($('div').eq(4).css('height') == '250px' && $('div').eq(4).css('margin-right') == '2px');
   - text: 第六个<code>div</code>的<code>height</code>应为180像素， <code>margin</code>为2像素。
-    testString: 'assert($("div").eq(5).css("height") == "180px" && $("div").eq(5).css("margin-right") == "2px", "The sixth <code>div</code> should have a <code>height</code> of 180 pixels and a <code>margin</code> of 2 pixels.");'
+    testString: assert($('div').eq(5).css('height') == '180px' && $('div').eq(5).css('margin-right') == '2px');
   - text: 第七个<code>div</code>的<code>height</code>应为290像素， <code>margin</code>为2像素。
-    testString: 'assert($("div").eq(6).css("height") == "290px" && $("div").eq(6).css("margin-right") == "2px", "The seventh <code>div</code> should have a <code>height</code> of 290 pixels and a <code>margin</code> of 2 pixels.");'
+    testString: assert($('div').eq(6).css('height') == '290px' && $('div').eq(6).css('margin-right') == '2px');
   - text: 第八个<code>div</code>的<code>height</code>应为140像素， <code>margin</code>为2像素。
-    testString: 'assert($("div").eq(7).css("height") == "140px" && $("div").eq(7).css("margin-right") == "2px", "The eighth <code>div</code> should have a <code>height</code> of 140 pixels and a <code>margin</code> of 2 pixels.");'
+    testString: assert($('div').eq(7).css('height') == '140px' && $('div').eq(7).css('margin-right') == '2px');
   - text: 第九个<code>div</code>的<code>height</code>应为90像素， <code>margin</code>为2像素。
-    testString: 'assert($("div").eq(8).css("height") == "90px" && $("div").eq(8).css("margin-right") == "2px", "The ninth <code>div</code> should have a <code>height</code> of 90 pixels and a <code>margin</code> of 2 pixels.");'
+    testString: assert($('div').eq(8).css('height') == '90px' && $('div').eq(8).css('margin-right') == '2px');
 
 ```
 

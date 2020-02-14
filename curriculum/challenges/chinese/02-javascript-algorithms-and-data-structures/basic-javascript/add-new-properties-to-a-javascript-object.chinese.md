@@ -18,9 +18,9 @@ localeTitle: 将新属性添加到JavaScript对象
 ```yml
 tests:
   - text: 将属性<code>&quot;bark&quot;</code>添加到<code>myDog</code> 。
-    testString: 'assert(myDog.bark !== undefined, "Add the property <code>"bark"</code> to <code>myDog</code>.");'
+    testString: assert(myDog.bark !== undefined);
   - text: 不要在设置部分添加<code>&quot;bark&quot;</code>
-    testString: 'assert(!/bark[^\n]:/.test(code), "Do not add <code>"bark"</code> to the setup section");'
+    testString: assert(!/bark[^\n]:/.test(code));
 
 ```
 

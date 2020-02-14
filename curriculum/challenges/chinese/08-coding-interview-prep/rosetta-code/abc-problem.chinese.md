@@ -19,9 +19,9 @@ localeTitle: ABC问题
 ```yml
 tests:
   - text: <code>canMakeWord</code>是一个功能。
-    testString: assert(typeof canMakeWord === "function");
+    testString: assert(typeof canMakeWord === 'function');
   - text: <code>canMakeWord</code>应该返回一个布尔值。
-    testString: assert(typeof canMakeWord("hi") === "boolean");
+    testString: assert(typeof canMakeWord('hi') === 'boolean');
   - text: <code>canMakeWord(&quot;bark&quot;)</code>应该返回true。
     testString: assert(canMakeWord(words[0]));
   - text: <code>canMakeWord(&quot;BooK&quot;)</code>应该返回false。

@@ -31,7 +31,7 @@ localeTitle: 问题427：n序列
 ```yml
 tests:
   - text: <code>euler427()</code>应该返回97138867。
-    testString: 'assert.strictEqual(euler427(), 97138867, "<code>euler427()</code> should return 97138867.");'
+    testString: assert.strictEqual(euler427(), 97138867);
 
 ```
 

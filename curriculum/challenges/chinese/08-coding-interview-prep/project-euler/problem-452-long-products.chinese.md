@@ -24,7 +24,7 @@ F（106，106）mod 1234567891 = 252903833。
 ```yml
 tests:
   - text: <code>euler452()</code>应该返回345558983。
-    testString: 'assert.strictEqual(euler452(), 345558983, "<code>euler452()</code> should return 345558983.");'
+    testString: assert.strictEqual(euler452(), 345558983);
 
 ```
 

@@ -24,7 +24,7 @@ localeTitle: 创建你的第一个 CSS 网格
 ```yml
 tests:
   - text: '<code>container</code>类应该有<code>display</code>属性且值为<code>grid</code>。'
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*display\s*?:\s*?grid\s*?;[\s\S]*}/gi));'
+    testString: assert(code.match(/.container\s*?{[\s\S]*display\s*?:\s*?grid\s*?;[\s\S]*}/gi));
 
 ```
 

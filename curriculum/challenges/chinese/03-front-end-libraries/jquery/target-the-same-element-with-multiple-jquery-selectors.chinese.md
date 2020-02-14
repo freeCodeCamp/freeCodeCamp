@@ -21,15 +21,15 @@ localeTitle: 使用多个jQuery选择器定位相同的元素
 ```yml
 tests:
   - text: 使用<code>$(&quot;button&quot;)</code>选择器。
-    testString: assert(code.match(/\$\s*?\(\s*?(?:"|")\s*?button\s*?(?:"|")/gi));
+    testString: assert(code.match(/\$\s*?\(\s*?(?:'|")\s*?button\s*?(?:'|")/gi));
   - text: 使用<code>$(&quot;.btn&quot;)</code>选择器。
-    testString: assert(code.match(/\$\s*?\(\s*?(?:"|")\s*?\.btn\s*?(?:"|")/gi));
+    testString: assert(code.match(/\$\s*?\(\s*?(?:'|")\s*?\.btn\s*?(?:'|")/gi));
   - text: '使用<code>$(&quot;#target1&quot;)</code>选择器。'
-    testString: assert(code.match(/\$\s*?\(\s*?(?:"|")\s*?#target1\s*?(?:"|")/gi));
+    testString: assert(code.match(/\$\s*?\(\s*?(?:'|")\s*?#target1\s*?(?:'|")/gi));
   - text: 只为每个三个选择器添加一个类。
-    testString: assert(code.match(/addClass/g) && code.match(/addClass\s*?\(\s*?("|")\s*?[\w-]+\s*?\1\s*?\)/g).length > 2);
+    testString: assert(code.match(/addClass/g) && code.match(/addClass\s*?\(\s*?('|")\s*?[\w-]+\s*?\1\s*?\)/g).length > 2);
   - text: '你的<code>#target1</code>元素应该有<code>animated</code>类， <code>shake</code>和<code>btn-primary</code> 。'
-    testString: assert($("#target1").hasClass("animated") && $("#target1").hasClass("shake") && $("#target1").hasClass("btn-primary"));
+    testString: assert($('#target1').hasClass('animated') && $('#target1').hasClass('shake') && $('#target1').hasClass('btn-primary'));
   - text: 只使用jQuery将这些类添加到元素中。
     testString: assert(!code.match(/class.*animated/g));
 

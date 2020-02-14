@@ -38,7 +38,7 @@ localeTitle: 问题423：连续死球
 ```yml
 tests:
   - text: <code>euler423()</code>应该返回653972374。
-    testString: 'assert.strictEqual(euler423(), 653972374, "<code>euler423()</code> should return 653972374.");'
+    testString: assert.strictEqual(euler423(), 653972374);
 
 ```
 

@@ -25,7 +25,7 @@ localeTitle: 问题152：将一半写为倒数平方和
 ```yml
 tests:
   - text: '<code>euler152()</ code>应该返回301。'
-    testString: 'assert.strictEqual(euler152(), 301, "<code>euler152()</code> should return 301.");'
+    testString: assert.strictEqual(euler152(), 301);
 
 ```
 

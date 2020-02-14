@@ -33,7 +33,7 @@ localeTitle: 问题420：2x2正整数矩阵
 ```yml
 tests:
   - text: <code>euler420()</code>应该返回145159332。
-    testString: 'assert.strictEqual(euler420(), 145159332, "<code>euler420()</code> should return 145159332.");'
+    testString: assert.strictEqual(euler420(), 145159332);
 
 ```
 

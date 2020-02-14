@@ -19,13 +19,13 @@ localeTitle: 整数因子
 ```yml
 tests:
   - text: <code>factors</code>是一种功能。
-    testString: 'assert(typeof factors === "function", "<code>factors</code> is a function.");'
+    testString: assert(typeof factors === 'function');
   - text: '<code>factors(45)</code>应该返回<code>[1,3,5,9,15,45]</code> 。'
-    testString: 'assert.deepEqual(factors(45), ans[0], "<code>factors(45)</code> should return <code>[1,3,5,9,15,45]</code>.");'
+    testString: assert.deepEqual(factors(45), ans[0]);
   - text: '<code>factors(53)</code>应该返回<code>[1,53]</code> 。'
-    testString: 'assert.deepEqual(factors(53), ans[1], "<code>factors(53)</code> should return <code>[1,53]</code>.");'
+    testString: assert.deepEqual(factors(53), ans[1]);
   - text: '<code>factors(64)</code>应该返回<code>[1,2,4,8,16,32,64]</code> 。'
-    testString: 'assert.deepEqual(factors(64), ans[2], "<code>factors(64)</code> should return <code>[1,2,4,8,16,32,64]</code>.");'
+    testString: assert.deepEqual(factors(64), ans[2]);
 
 ```
 

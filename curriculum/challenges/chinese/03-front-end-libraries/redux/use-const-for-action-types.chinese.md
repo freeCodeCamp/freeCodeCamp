@@ -19,9 +19,9 @@ localeTitle: 将const用于Action Types
 ```yml
 tests:
   - text: 调用函数<code>loginUser</code>应该返回一个对象，其<code>type</code>属性设置为字符串<code>LOGIN</code> 。
-    testString: assert(loginUser().type === "LOGIN");
+    testString: assert(loginUser().type === 'LOGIN');
   - text: 调用函数<code>logoutUser</code>应该返回一个对象，其<code>type</code>属性设置为字符串<code>LOGOUT</code> 。
-    testString: assert(logoutUser().type === "LOGOUT");
+    testString: assert(logoutUser().type === 'LOGOUT');
   - text: 应使用属性<code>login</code>设置为<code>false</code>的对象初始化存储。
     testString: assert(store.getState().authenticated === false);
   - text: 调度<code>loginUser</code>应该将store状态中的<code>login</code>属性更新为<code>true</code> 。

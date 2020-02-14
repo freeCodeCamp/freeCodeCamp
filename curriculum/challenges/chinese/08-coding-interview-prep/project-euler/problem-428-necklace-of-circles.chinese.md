@@ -33,7 +33,7 @@ localeTitle: 问题428：圆圈项链
 ```yml
 tests:
   - text: <code>necklace(1000000000)</code>应该返回747215561862。
-    testString: 'assert.strictEqual(necklace(1000000000), 747215561862, "<code>necklace(1000000000)</code> should return 747215561862.");'
+    testString: assert.strictEqual(necklace(1000000000), 747215561862);
 
 ```
 

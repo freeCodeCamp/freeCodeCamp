@@ -36,7 +36,7 @@ localeTitle: 问题434：刚性图
 ```yml
 tests:
   - text: <code>euler434()</code>应该返回863253606。
-    testString: 'assert.strictEqual(euler434(), 863253606, "<code>euler434()</code> should return 863253606.");'
+    testString: assert.strictEqual(euler434(), 863253606);
 
 ```
 

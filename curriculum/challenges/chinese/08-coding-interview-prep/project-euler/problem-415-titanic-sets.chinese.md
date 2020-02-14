@@ -30,7 +30,7 @@ localeTitle: 问题415：泰坦尼克号集
 ```yml
 tests:
   - text: <code>euler415()</code>应该返回55859742。
-    testString: 'assert.strictEqual(euler415(), 55859742, "<code>euler415()</code> should return 55859742.");'
+    testString: assert.strictEqual(euler415(), 55859742);
 
 ```
 

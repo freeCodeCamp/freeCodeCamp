@@ -25,13 +25,13 @@ localeTitle: 问题31：硬币总和
 ```yml
 tests:
   - text: <code>digitnPowers(50)</code>应该返回451。
-    testString: 'assert(coinSums(50) == 451, "<code>coinSums(50)</code> should return 451.");'
+    testString: assert(coinSums(50) == 451);
   - text: <code>digitnPowers(100)</code>应该返回4563。
-    testString: 'assert(coinSums(100) == 4563, "<code>coinSums(100)</code> should return 4563.");'
+    testString: assert(coinSums(100) == 4563);
   - text: <code>digitnPowers(150)</code>应该返回21873。
-    testString: 'assert(coinSums(150) == 21873, "<code>coinSums(150)</code> should return 21873.");'
+    testString: assert(coinSums(150) == 21873);
   - text: <code>digitnPowers(200)</code>应该返回73682。
-    testString: 'assert(coinSums(200) == 73682, "<code>coinSums(200)</code> should return 73682.");'
+    testString: assert(coinSums(200) == 73682);
 
 ```
 

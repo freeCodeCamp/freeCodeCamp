@@ -19,7 +19,7 @@ localeTitle: 问题118：Pandigital prime set
 ```yml
 tests:
   - text: <code>euler118()</code>应返回44680。
-    testString: 'assert.strictEqual(euler118(), 44680, "<code>euler118()</code> should return 44680.");'
+    testString: assert.strictEqual(euler118(), 44680);
 
 ```
 

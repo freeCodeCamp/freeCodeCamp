@@ -21,13 +21,13 @@ tests:
   - text: 通过添加HTML标记强调<code>target4</code>按钮中的文本。
     testString: assert.isTrue((/<em>|<i>\s*#target4\s*<\/em>|<\/i>/gi).test($("#target4").html()));
   - text: 确保文本不变。
-    testString: assert($("#target4") && $("#target4").text().trim() === "#target4");
+    testString: assert($("#target4") && $("#target4").text().trim() === '#target4');
   - text: 不要改变任何其他文字。
     testString: assert.isFalse((/<em>|<i>/gi).test($("h3").html()));
   - text: 确保使用<code>.html()</code>而不是<code>.text()</code> 。
     testString: assert(code.match(/\.html\(/g));
   - text: 确保使用jQuery选择<code>button id=&quot;target4&quot;</code> 。
-    testString: assert(code.match(/\$\(\s*?(\"|\")#target4(\"|\")\s*?\)\.html\(/));
+    testString: assert(code.match(/\$\(\s*?(\"|\')#target4(\"|\')\s*?\)\.html\(/));
 
 ```
 

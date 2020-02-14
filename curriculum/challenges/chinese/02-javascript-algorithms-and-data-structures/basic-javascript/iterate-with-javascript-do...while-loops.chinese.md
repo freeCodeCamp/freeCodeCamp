@@ -18,11 +18,11 @@ localeTitle: 使用JavaScript迭代...循环
 ```yml
 tests:
   - text: 你应该使用<code>do...while</code>循环。
-    testString: 'assert(code.match(/do/g), "You should be using a <code>do...while</code> loop for this.");'
+    testString: assert(code.match(/do/g));
   - text: '<code>myArray</code>应该等于<code>[10]</code> 。'
-    testString: 'assert.deepEqual(myArray, [10], "<code>myArray</code> should equal <code>[10]</code>.");'
+    testString: assert.deepEqual(myArray, [10]);
   - text: <code>i</code>应该等于<code>11</code>
-    testString: 'assert.deepEqual(i, 11, "<code>i</code> should equal <code>11</code>");'
+    testString: assert.equal(i, 11);
 
 ```
 

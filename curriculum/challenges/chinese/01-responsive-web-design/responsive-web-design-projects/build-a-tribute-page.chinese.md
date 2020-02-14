@@ -4,7 +4,7 @@ title: Build a Tribute Page
 isRequired: true
 challengeType: 3
 forumTopicId: 301147
-localTitle: 制作一个致敬页
+localeTitle: 制作一个致敬页
 ---
 
 ## Description

@@ -19,7 +19,7 @@ localeTitle: 问题151：标准尺寸的纸张：期望值问题
 ```yml
 tests:
   - text: '<code>euler151()</ code>应该返回0.464399。'
-    testString: 'assert.strictEqual(euler151(), 0.464399, "<code>euler151()</code> should return 0.464399.");'
+    testString: assert.strictEqual(euler151(), 0.464399);
 
 ```
 

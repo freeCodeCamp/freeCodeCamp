@@ -19,15 +19,15 @@ localeTitle: SEDOLs
 ```yml
 tests:
   - text: <code>sedol</code>是一个功能。
-    testString: assert(typeof sedol === "function");
+    testString: assert(typeof sedol === 'function');
   - text: <code>sedol('a')</code>应该返回null。
     testString: assert(sedol('a') === null);
   - text: <code>sedol('710889')</code>应返回'7108899'。
-    testString: assert(sedol('710889') === "7108899");
+    testString: assert(sedol('710889') === '7108899');
   - text: <code>sedol('BOATER')</code>应该返回null。
     testString: assert(sedol('BOATER') === null);
   - text: <code>sedol('228276')</code>应该返回'228276'。
-    testString: assert(sedol('228276') === "2282765");
+    testString: assert(sedol('228276') === '2282765');
 
 ```
 

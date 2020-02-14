@@ -19,9 +19,9 @@ localeTitle: 计算子字符串的出现次数
 ```yml
 tests:
   - text: <code>countSubstring</code>是一个函数。
-    testString: assert(typeof countSubstring === "function");
+    testString: assert(typeof countSubstring === 'function');
   - text: <code>countSubstring("the three truths", "th")</code>应该返回<code>3</code> 。
-    testString: assert.equal(countSubstring(testCases[0], searchString[0]), results[0], );
+    testString: assert.equal(countSubstring(testCases[0], searchString[0]), results[0]);
   - text: <code>countSubstring("ababababab", "abab")</code>应返回<code>2</code> 。
     testString: assert.equal(countSubstring(testCases[1], searchString[1]), results[1]);
   - text: <code>countSubstring("abaabba*bbaba*bbab", "a*b")</code>应返回<code>2</code> 。

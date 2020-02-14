@@ -26,7 +26,7 @@ localeTitle: 问题280：蚂蚁和种子
 ```yml
 tests:
   - text: '<code>euler280()</code>应该返回430.088247。'
-    testString: 'assert.strictEqual(euler280(), 430.088247, "<code>euler280()</code> should return 430.088247.");'
+    testString: assert.strictEqual(euler280(), 430.088247);
 
 ```
 

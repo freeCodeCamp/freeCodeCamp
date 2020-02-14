@@ -19,9 +19,9 @@ localeTitle: 我在E之前除了C之后
 ```yml
 tests:
   - text: <code>IBeforeExceptC</code>应该是一个函数。
-    testString: assert(typeof IBeforeExceptC=="function","<code>IBeforeExceptC</code> should be a function.");
+    testString: assert(typeof IBeforeExceptC=='function');
   - text: <code>IBeforeExceptC("receive")</code>应该返回一个布尔值。
-    testString: 'assert(typeof IBeforeExceptC("receive")=="boolean");'
+    testString: assert(typeof IBeforeExceptC("receive")=='boolean');
   - text: <code>IBeforeExceptC("receive")</code>应该返回<code>true</code> 。
     testString: assert.equal(IBeforeExceptC("receive"),true);
   - text: <code>IBeforeExceptC("science")</code>应该返回<code>false</code> 。

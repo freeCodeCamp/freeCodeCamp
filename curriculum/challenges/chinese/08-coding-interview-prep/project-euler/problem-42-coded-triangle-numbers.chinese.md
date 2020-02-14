@@ -24,13 +24,13 @@ localeTitle: 问题42：编码的三角形数字
 ```yml
 tests:
   - text: <code>codedTriangleNumbers(1400)</code>应该返回129。
-    testString: 'assert(codedTriangleNumbers(1400) == 129, "<code>codedTriangleNumbers(1400)</code> should return 129.");'
+    testString: assert(codedTriangleNumbers(1400) == 129);
   - text: <code>codedTriangleNumbers(1500)</code>应该返回137。
-    testString: 'assert(codedTriangleNumbers(1500) == 137, "<code>codedTriangleNumbers(1500)</code> should return 137.");'
+    testString: assert(codedTriangleNumbers(1500) == 137);
   - text: <code>codedTriangleNumbers(1600)</code>应该返回141。
-    testString: 'assert(codedTriangleNumbers(1600) == 141, "<code>codedTriangleNumbers(1600)</code> should return 141.");'
+    testString: assert(codedTriangleNumbers(1600) == 141);
   - text: <code>codedTriangleNumbers(1786)</code>应该返回162。
-    testString: 'assert(codedTriangleNumbers(1786) == 162, "<code>codedTriangleNumbers(1786)</code> should return 162.");'
+    testString: assert(codedTriangleNumbers(1786) == 162);
 
 ```
 

@@ -19,19 +19,19 @@ localeTitle: 他们
 ```yml
 tests:
   - text: <code>isValid</code>应该是一个函数。
-    testString: assert(typeof isValid=="function");
+    testString: assert(typeof isValid=='function');
   - text: <code>isValid(""+tests[0]+"")</code>应该返回一个布尔值。
-    testString: assert(typeof isValid(tests[0])=="boolean");
+    testString: assert(typeof isValid('GB82 WEST 1234 5698 7654 32')=='boolean');
   - text: <code>isValid(""+tests[0]+"")</code>应该返回<code>true</code> 。
-    testString: assert.equal(isValid(tests[0]),true);
+    testString: assert.equal(isValid('GB82 WEST 1234 5698 7654 32'),true);
   - text: <code>isValid(""+tests[1]+"")</code>应返回<code>false</code> 。
-    testString: assert.equal(isValid(tests[1]),false);
+    testString: assert.equal(isValid('GB82 WEST 1.34 5698 7654 32'),false);
   - text: <code>isValid(""+tests[2]+"")</code>应返回<code>false</code> 。
-    testString: assert.equal(isValid(tests[2]),false);
+    testString: assert.equal(isValid('GB82 WEST 1234 5698 7654 325'),false);
   - text: <code>isValid(""+tests[3]+"")</code>应该返回<code>false</code> 。
-    testString: assert.equal(isValid(tests[3]),false);
+    testString: assert.equal(isValid('GB82 TEST 1234 5698 7654 32'),false);
   - text: <code>isValid(""+tests[4]+"")</code>应该返回<code>true</code> 。
-    testString: assert.equal(isValid(tests[4]),true);
+    testString: assert.equal(isValid('SA03 8000 0000 6080 1016 7519'),true);
 
 ```
 

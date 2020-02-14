@@ -19,7 +19,7 @@ localeTitle: Farey序列
 ```yml
 tests:
   - text: <code>farey</code>是一种功能。
-    testString: assert(typeof farey === "function");
+    testString: assert(typeof farey === 'function');
   - text: <code>farey(3)</code>应该返回一个数组
     testString: assert(Array.isArray(farey(3)));
   - text: <code>farey(3)</code>应该返回<code>["1/3","1/2","2/3"]</code>

@@ -29,7 +29,7 @@ flex 子元素有时不能充满整个 flex 容器，所以我们经常需要告
 ```yml
 tests:
   - text: '<code>#box-container</code>应有<code>justify-content</code>属性，其值应为 center。'
-    testString: assert($('#box-container').css('justify-content') == 'center', '<code>#box-container</code>应有<code>justify-content</code>属性，其值应为 center。');
+    testString: assert($('#box-container').css('justify-content') == 'center');
 
 ```
 

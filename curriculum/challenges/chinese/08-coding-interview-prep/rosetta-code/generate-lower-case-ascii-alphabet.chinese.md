@@ -19,9 +19,9 @@ localeTitle: 生成小写ASCII字母表
 ```yml
 tests:
   - text: <code>lascii</code>应该是一个功能。
-    testString: assert(typeof lascii=="function");
+    testString: assert(typeof lascii=='function');
   - text: <code>lascii("a","d")</code>应该返回一个数组。
-    testString: assert(Array.isArray(lascii("a","d")));
+    testString: assert(Array.isArray(lascii('a','d')));
   - text: <code>lascii("a","d")</code>应该返回<code>[ "a", "b", "c", "d" ]</code> 。
     testString: assert.deepEqual(lascii("a","d"),results[0]);
   - text: <code>lascii("c","i")</code>应该返回<code>[ "c", "d", "e", "f", "g", "h", "i" ]</code> 。

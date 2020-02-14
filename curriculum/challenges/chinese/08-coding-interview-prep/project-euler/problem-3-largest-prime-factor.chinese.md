@@ -22,17 +22,17 @@ localeTitle: 问题3：最大素数
 ```yml
 tests:
   - text: <code>largestPrimeFactor(2)</code>应该返回2。
-    testString: 'assert.strictEqual(largestPrimeFactor(2), 2, "<code>largestPrimeFactor(2)</code> should return 2.");'
+    testString: assert.strictEqual(largestPrimeFactor(2), 2);
   - text: <code>largestPrimeFactor(3)</code>应该返回3。
-    testString: 'assert.strictEqual(largestPrimeFactor(3), 3, "<code>largestPrimeFactor(3)</code> should return 3.");'
+    testString: assert.strictEqual(largestPrimeFactor(3), 3);
   - text: <code>largestPrimeFactor(5)</code>应该返回5。
-    testString: 'assert.strictEqual(largestPrimeFactor(5), 5, "<code>largestPrimeFactor(5)</code> should return 5.");'
+    testString: assert.strictEqual(largestPrimeFactor(5), 5);
   - text: <code>largestPrimeFactor(7)</code>应该返回7。
-    testString: 'assert.strictEqual(largestPrimeFactor(7), 7, "<code>largestPrimeFactor(7)</code> should return 7.");'
+    testString: assert.strictEqual(largestPrimeFactor(7), 7);
   - text: <code>largestPrimeFactor(13195)</code>应该返回29。
-    testString: 'assert.strictEqual(largestPrimeFactor(13195), 29, "<code>largestPrimeFactor(13195)</code> should return 29.");'
+    testString: assert.strictEqual(largestPrimeFactor(13195), 29);
   - text: <code>largestPrimeFactor(600851475143)</code>应该返回6857。
-    testString: 'assert.strictEqual(largestPrimeFactor(600851475143), 6857, "<code>largestPrimeFactor(600851475143)</code> should return 6857.");'
+    testString: assert.strictEqual(largestPrimeFactor(600851475143), 6857);
 
 ```
 

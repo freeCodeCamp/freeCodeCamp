@@ -24,7 +24,7 @@ localeTitle: 问题44：五角大楼数字
 ```yml
 tests:
   - text: <code>pentagonNumbers()</code>应该返回5482660。
-    testString: 'assert.strictEqual(pentagonNumbers(), 5482660, "<code>pentagonNumbers()</code> should return 5482660.");'
+    testString: assert.strictEqual(pentagonNumbers(), 5482660);
 
 ```
 

@@ -24,13 +24,13 @@ localeTitle: 使用 flex-basis 属性设置项目的初始大小
 ```yml
 tests:
   - text: '<code>#box-1</code>元素应有<code>flex-basis</code>属性。'
-    testString: assert($('#box-1').css('flex-basis') != 'auto', '<code>#box-1</code>元素应有<code>flex-basis</code>属性。');
+    testString: assert($('#box-1').css('flex-basis') != 'auto');
   - text: '<code>#box-1</code>的<code>flex-basis</code>应为<code>10em</code>。'
-    testString: 'assert(code.match(/#box-1\s*?{\s*?.*?\s*?.*?\s*?flex-basis:\s*?10em;/g), ''<code>#box-1</code>的<code>flex-basis</code>应为<code>10em</code>。'');'
+    testString: assert(code.match(/#box-1\s*?{\s*?.*?\s*?.*?\s*?flex-basis:\s*?10em;/g));
   - text: '<code>#box-2</code>元素应有<code>flex-basis</code>属性。'
-    testString: assert($('#box-2').css('flex-basis') != 'auto', '<code>#box-2</code>元素应有<code>flex-basis</code>属性。');
+    testString: assert($('#box-2').css('flex-basis') != 'auto');
   - text: '<code>#box-2</code>的<code>flex-basis</code>应为<code>20em</code>。'
-    testString: 'assert(code.match(/#box-2\s*?{\s*?.*?\s*?.*?\s*?flex-basis:\s*?20em;/g), ''<code>#box-2</code>的<code>flex-basis</code>应为<code>20em</code>。'');'
+    testString: assert(code.match(/#box-2\s*?{\s*?.*?\s*?.*?\s*?flex-basis:\s*?20em;/g));
 
 ```
 

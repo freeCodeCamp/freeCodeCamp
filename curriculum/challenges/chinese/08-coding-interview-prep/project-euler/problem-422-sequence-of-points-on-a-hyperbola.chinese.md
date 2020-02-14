@@ -33,7 +33,7 @@ localeTitle: 问题422：双曲线上的点序列
 ```yml
 tests:
   - text: <code>euler422()</code>应该返回92060460。
-    testString: 'assert.strictEqual(euler422(), 92060460, "<code>euler422()</code> should return 92060460.");'
+    testString: assert.strictEqual(euler422(), 92060460);
 
 ```
 

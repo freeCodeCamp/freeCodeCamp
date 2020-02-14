@@ -19,7 +19,7 @@ localeTitle: 问题431：方形筒仓
 ```yml
 tests:
   - text: <code>euler431()</code>应该返回23.386029052。
-    testString: 'assert.strictEqual(euler431(), 23.386029052, "<code>euler431()</code> should return 23.386029052.");'
+    testString: assert.strictEqual(euler431(), 23.386029052);
 
 ```
 

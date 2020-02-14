@@ -19,7 +19,7 @@ localeTitle: 问题156：计数数字
 ```yml
 tests:
   - text: <code>euler156</code>应该返回21295121502550。
-    testString: 'assert.strictEqual(euler156(), 21295121502550, "<code>euler156()</code> should return 21295121502550.");'
+    testString: assert.strictEqual(euler156(), 21295121502550);
 
 ```
 

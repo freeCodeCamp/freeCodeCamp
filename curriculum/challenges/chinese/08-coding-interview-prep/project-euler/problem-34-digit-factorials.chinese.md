@@ -19,7 +19,7 @@ localeTitle: 问题34：数字阶乘
 ```yml
 tests:
   - text: '<code>digitFactorial()</code>应该返回{sum：40730，数字：[145,40585]}。'
-    testString: 'assert.deepEqual(digitFactorial(), { sum: 40730, numbers: [145, 40585] }, "<code>digitFactorial()</code> should return { sum: 40730, numbers: [145, 40585] }.");'
+    testString: "assert.deepEqual(digitFactorial(), { sum: 40730, numbers: [145, 40585] });"
 
 ```
 

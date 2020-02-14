@@ -18,7 +18,7 @@ localeTitle: 从ES6中的集中删除项目
 ```yml
 tests:
   - text: '您的集应包含值1,3和4'
-    testString: 'assert(function(){var test = checkSet(); return test.has(1) && test.has(3) && test.has(4) && test.size === 3}, "Your Set should contain the values 1, 3, & 4");'
+    testString: assert((function(){var test = checkSet(); return test.has(1) && test.has(3) && test.has(4) && test.size === 3;})());
 
 ```
 

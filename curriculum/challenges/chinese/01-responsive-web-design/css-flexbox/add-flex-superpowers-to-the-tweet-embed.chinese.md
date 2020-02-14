@@ -24,19 +24,19 @@ localeTitle: 在推文中添加弹性盒子布局
 ```yml
 tests:
   - text: '<code>header</code>的<code>display</code>属性应为 flex。'
-    testString: assert($('header').css('display') == 'flex', '<code>header</code>的<code>display</code>属性应为 flex。');
+    testString: assert($('header').css('display') == 'flex');
   - text: '<code>footer</code>的<code>display</code>属性应为 flex。'
-    testString: assert($('footer').css('display') == 'flex', '<code>footer</code>的<code>display</code>属性应为 flex。');
+    testString: assert($('footer').css('display') == 'flex');
   - text: '<code>h3</code>的<code>display</code>属性应为 flex。'
-    testString: assert($('h3').css('display') == 'flex', '<code>h3</code>的<code>display</code>属性应为 flex。');
+    testString: assert($('h3').css('display') == 'flex');
   - text: '<code>h4</code>的<code>display</code>属性应为 flex。'
-    testString: assert($('h4').css('display') == 'flex', '<code>h4</code>的<code>display</code>属性应为 flex。');
+    testString: assert($('h4').css('display') == 'flex');
   - text: '<code>.profile-name</code>的<code>display</code>属性应为 flex。'
-    testString: assert($('.profile-name').css('display') == 'flex', '<code>.profile-name</code>的<code>display</code>属性应为 flex。');
+    testString: assert($('.profile-name').css('display') == 'flex');
   - text: '<code>.follow-btn</code>的<code>display</code>属性应为 flex。'
-    testString: assert($('.follow-btn').css('display') == 'flex', '<code>.follow-btn</code>的<code>display</code>属性应为 flex。');
+    testString: assert($('.follow-btn').css('display') == 'flex');
   - text: '<code>.stats</code>的<code>display</code>属性应为 flex。'
-    testString: assert($('.stats').css('display') == 'flex', '<code>.stats</code>的<code>display</code>属性应为 flex。');
+    testString: assert($('.stats').css('display') == 'flex');
 
 ```
 

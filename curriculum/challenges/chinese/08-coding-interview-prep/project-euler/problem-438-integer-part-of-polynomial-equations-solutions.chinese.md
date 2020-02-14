@@ -19,7 +19,7 @@ localeTitle: 问题438：多项式方程解的整数部分
 ```yml
 tests:
   - text: <code>euler438()</code>应该返回2046409616809。
-    testString: 'assert.strictEqual(euler438(), 2046409616809, "<code>euler438()</code> should return 2046409616809.");'
+    testString: assert.strictEqual(euler438(), 2046409616809);
 
 ```
 

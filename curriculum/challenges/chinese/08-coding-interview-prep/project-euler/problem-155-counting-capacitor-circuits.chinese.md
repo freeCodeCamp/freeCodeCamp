@@ -19,7 +19,7 @@ localeTitle: 问题155：计算电容器电路
 ```yml
 tests:
   - text: <code>euler155()</code>应返回3857447。
-    testString: 'assert.strictEqual(euler155(), 3857447, "<code>euler155()</code> should return 3857447.");'
+    testString: assert.strictEqual(euler155(), 3857447);
 
 ```
 

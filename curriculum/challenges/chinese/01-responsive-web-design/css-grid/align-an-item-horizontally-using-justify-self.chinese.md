@@ -26,7 +26,7 @@ localeTitle: 使用 justify-self 水平对齐项目
 ```yml
 tests:
   - text: '<code>item2</code>类应该有<code>justify-self</code>属性且值为<code>center</code>。'
-    testString: 'assert(code.match(/.item2\s*?{[\s\S]*justify-self\s*?:\s*?center\s*?;[\s\S]*}/gi));'
+    testString: assert(code.match(/.item2\s*?{[\s\S]*justify-self\s*?:\s*?center\s*?;[\s\S]*}/gi));
 
 ```
 

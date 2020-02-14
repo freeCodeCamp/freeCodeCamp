@@ -19,7 +19,7 @@ localeTitle: 问题336：Maximix安排
 ```yml
 tests:
   - text: <code>euler336()</code>应该返回CAGBIHEFJDK。
-    testString: 'assert.strictEqual(euler336(), CAGBIHEFJDK, "<code>euler336()</code> should return CAGBIHEFJDK.");'
+    testString: assert.strictEqual(euler336(), CAGBIHEFJDK);
 
 ```
 

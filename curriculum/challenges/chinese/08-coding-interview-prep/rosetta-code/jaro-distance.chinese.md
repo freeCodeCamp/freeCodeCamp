@@ -19,19 +19,19 @@ localeTitle: Jaro距离
 ```yml
 tests:
   - text: <code>jaro</code>应该是一个功能。
-    testString: assert(typeof jaro=="function");
+    testString: assert(typeof jaro=='function');
   - text: <code>jaro(""+tests[0][0]+"",""+tests[0][1]+"")</code>应返回一个数字。
-    testString: assert(typeof jaro(tests[0][0],tests[0][1])=="number");
+    testString: assert(typeof jaro('MARTHA', 'MARHTA')=='number');
   - text: <code>jaro(""+tests[0][0]+"",""+tests[0][1]+"")</code>应该返回<code>"+results[0]+"</code> 。
-    testString: assert.equal(jaro(tests[0][0],tests[0][1]),results[0]);
+    testString: assert.equal(jaro('MARTHA', 'MARHTA'), 0.9444444444444445);
   - text: <code>jaro(""+tests[1][0]+"",""+tests[1][1]+"")</code>应返回<code>"+results[1]+"</code> 。
-    testString: assert.equal(jaro(tests[1][0],tests[1][1]),results[1]);
+    testString: assert.equal(jaro('DIXON', 'DICKSONX'), 0.7666666666666666);
   - text: <code>jaro(""+tests[2][0]+"",""+tests[2][1]+"")</code>应返回<code>"+results[2]+"</code> 。
-    testString: assert.equal(jaro(tests[2][0],tests[2][1]),results[2]);
+    testString: assert.equal(jaro('JELLYFISH', 'SMELLYFISH'), 0.8962962962962964);
   - text: <code>jaro(""+tests[3][0]+"",""+tests[3][1]+"")</code>应返回<code>"+results[3]+"</code> 。
-    testString: assert.equal(jaro(tests[3][0],tests[3][1]),results[3]);
+    testString: assert.equal(jaro('HELLOS', 'CHELLO'), 0.888888888888889);
   - text: <code>jaro(""+tests[4][0]+"",""+tests[4][1]+"")</code>应该返回<code>"+results[4]+"</code> 。
-    testString: assert.equal(jaro(tests[4][0],tests[4][1]),results[4]);
+    testString: assert.equal(jaro('ABCD', 'BCDA'), 0.8333333333333334);
 
 ```
 

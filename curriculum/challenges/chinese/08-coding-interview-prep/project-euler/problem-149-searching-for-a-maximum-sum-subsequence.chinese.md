@@ -37,7 +37,7 @@ localeTitle: 问题149：搜索最大和子序列
 ```yml
 tests:
   - text: <code>euler149()</code>应该返回52852124。
-    testString: 'assert.strictEqual(euler149(), 52852124, "<code>euler149()</code> should return 52852124.");'
+    testString: assert.strictEqual(euler149(), 52852124);
 
 ```
 

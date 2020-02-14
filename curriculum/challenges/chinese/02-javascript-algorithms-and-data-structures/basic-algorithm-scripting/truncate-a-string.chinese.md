@@ -20,17 +20,17 @@ localeTitle: 截断字符串
 ```yml
 tests:
   - text: '<code>truncateString(&quot;A-tisket a-tasket A green and yellow basket&quot;, 8)</code>应该返回“A-tisket ......”。'
-    testString: 'assert(truncateString("A-tisket a-tasket A green and yellow basket", 8) === "A-tisket...", "<code>truncateString("A-tisket a-tasket A green and yellow basket", 8)</code> should return "A-tisket...".");'
+    testString: assert(truncateString("A-tisket a-tasket A green and yellow basket", 8) === "A-tisket...");
   - text: '<code>truncateString(&quot;Peter Piper picked a peck of pickled peppers&quot;, 11)</code>应该回归“Peter Piper ......”。'
-    testString: 'assert(truncateString("Peter Piper picked a peck of pickled peppers", 11) === "Peter Piper...", "<code>truncateString("Peter Piper picked a peck of pickled peppers", 11)</code> should return "Peter Piper...".");'
+    testString: assert(truncateString("Peter Piper picked a peck of pickled peppers", 11) === "Peter Piper...");
   - text: '<code>truncateString(&quot;A-tisket a-tasket A green and yellow basket&quot;, &quot;A-tisket a-tasket A green and yellow basket&quot;.length)</code>应该返回“A-tisket a-tasket A green and yellow basket”。'
-    testString: 'assert(truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length) === "A-tisket a-tasket A green and yellow basket", "<code>truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length)</code> should return "A-tisket a-tasket A green and yellow basket".");'
+    testString: assert(truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length) === "A-tisket a-tasket A green and yellow basket");
   - text: '<code>truncateString(&quot;A-tisket a-tasket A green and yellow basket&quot;, &quot;A-tisket a-tasket A green and yellow basket&quot;.length + 2)</code>应返回“A-tisket a-tasket A green and yellow basket”。'
-    testString: 'assert(truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length + 2) === "A-tisket a-tasket A green and yellow basket", "<code>truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length + 2)</code> should return "A-tisket a-tasket A green and yellow basket".");'
+    testString: assert(truncateString('A-tisket a-tasket A green and yellow basket', 'A-tisket a-tasket A green and yellow basket'.length + 2) === 'A-tisket a-tasket A green and yellow basket');
   - text: '<code>truncateString(&quot;A-&quot;, 1)</code>应返回“A ...”。'
-    testString: 'assert(truncateString("A-", 1) === "A...", "<code>truncateString("A-", 1)</code> should return "A...".");'
+    testString: assert(truncateString("A-", 1) === "A...");
   - text: '<code>truncateString(&quot;Absolutely Longer&quot;, 2)</code>应返回“Ab ...”。'
-    testString: 'assert(truncateString("Absolutely Longer", 2) === "Ab...", "<code>truncateString("Absolutely Longer", 2)</code> should return "Ab...".");'
+    testString: assert(truncateString("Absolutely Longer", 2) === "Ab...");
 
 ```
 

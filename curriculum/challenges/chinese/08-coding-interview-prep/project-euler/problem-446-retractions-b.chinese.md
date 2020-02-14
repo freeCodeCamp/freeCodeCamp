@@ -19,7 +19,7 @@ localeTitle: 问题446：撤回B.
 ```yml
 tests:
   - text: <code>euler446()</code>应该返回907803852。
-    testString: 'assert.strictEqual(euler446(), 907803852, "<code>euler446()</code> should return 907803852.");'
+    testString: assert.strictEqual(euler446(), 907803852);
 
 ```
 

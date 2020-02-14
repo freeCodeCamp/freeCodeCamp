@@ -18,13 +18,13 @@ localeTitle: 用Plus运算符连接字符串
 ```yml
 tests:
   - text: <code>myStr</code>应该有一个值<code>This is the start. This is the end.</code>
-    testString: 'assert(myStr === "This is the start. This is the end.", "<code>myStr</code> should have a value of <code>This is the start. This is the end.</code>");'
+    testString: assert(myStr === "This is the start. This is the end.");
   - text: 使用<code>+</code>运算符构建<code>myStr</code>
-    testString: 'assert(code.match(/([""]).*([""])\s*\+\s*([""]).*([""])/g).length > 1, "Use the <code>+</code> operator to build <code>myStr</code>");'
+    testString: assert(code.match(/(["']).*(["'])\s*\+\s*(["']).*(["'])/g).length > 1);
   - text: 应使用<code>var</code>关键字创建<code>myStr</code> 。
-    testString: 'assert(/var\s+myStr/.test(code), "<code>myStr</code> should be created using the <code>var</code> keyword.");'
+    testString: assert(/var\s+myStr/.test(code));
   - text: 确保将结果分配给<code>myStr</code>变量。
-    testString: 'assert(/myStr\s*=/.test(code), "Make sure to assign the result to the <code>myStr</code> variable.");'
+    testString: assert(/myStr\s*=/.test(code));
 
 ```
 

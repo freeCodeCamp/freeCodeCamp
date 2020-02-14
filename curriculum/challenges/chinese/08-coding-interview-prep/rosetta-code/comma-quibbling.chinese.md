@@ -19,9 +19,9 @@ localeTitle: 逗号狡猾
 ```yml
 tests:
   - text: <code>quibble</code>是一种功能。
-    testString: assert(typeof quibble === "function");
+    testString: assert(typeof quibble === 'function');
   - text: <code>quibble(["ABC"])</code>应该返回一个字符串。
-    testString: assert(typeof quibble(["ABC"]) === "string");
+    testString: assert(typeof quibble(["ABC"]) === 'string');
   - text: <code>quibble([])</code>应返回“{}”。
     testString: assert.equal(quibble(testCases[0]), results[0]);
   - text: <code>quibble(["ABC"])</code>应该返回“{ABC}”。

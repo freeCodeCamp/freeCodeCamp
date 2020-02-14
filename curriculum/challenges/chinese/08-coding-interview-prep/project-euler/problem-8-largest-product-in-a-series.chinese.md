@@ -19,9 +19,9 @@ localeTitle: 问题8：系列中最大的产品
 ```yml
 tests:
   - text: <code>largestProductinaSeries(4)</code>应该返回5832。
-    testString: 'assert.strictEqual(largestProductinaSeries(4), 5832, "<code>largestProductinaSeries(4)</code> should return 5832.");'
+    testString: assert.strictEqual(largestProductinaSeries(4), 5832);
   - text: <code>largestProductinaSeries(13)</code>应返回23514624000。
-    testString: 'assert.strictEqual(largestProductinaSeries(13), 23514624000, "<code>largestProductinaSeries(13)</code> should return 23514624000.");'
+    testString: assert.strictEqual(largestProductinaSeries(13), 23514624000);
 
 ```
 

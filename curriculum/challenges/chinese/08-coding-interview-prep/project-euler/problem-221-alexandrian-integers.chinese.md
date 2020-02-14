@@ -19,7 +19,7 @@ localeTitle: 问题221：亚历山大整数
 ```yml
 tests:
   - text: <code>euler221()</code>应该返回1884161251122450。
-    testString: 'assert.strictEqual(euler221(), 1884161251122450, "<code>euler221()</code> should return 1884161251122450.");'
+    testString: assert.strictEqual(euler221(), 1884161251122450);
 
 ```
 

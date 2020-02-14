@@ -24,7 +24,7 @@ localeTitle: '使用 display: flex 定位两个盒子'
 ```yml
 tests:
   - text: '<code>#box-container</code>应有<code>display</code>属性，其值应为 flex。'
-    testString: assert($('#box-container').css('display') == 'flex', '<code>#box-container</code>应有<code>display</code>属性，其值应为 flex。');
+    testString: assert($('#box-container').css('display') == 'flex');
 
 ```
 

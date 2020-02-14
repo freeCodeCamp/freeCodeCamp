@@ -35,7 +35,7 @@ N个磁盘连续放置，从左到右从1到N索引。
 ```yml
 tests:
   - text: <code>euler430()</code>应该返回5000624921.38。
-    testString: 'assert.strictEqual(euler430(), 5000624921.38, "<code>euler430()</code> should return 5000624921.38.");'
+    testString: assert.strictEqual(euler430(), 5000624921.38);
 
 ```
 
