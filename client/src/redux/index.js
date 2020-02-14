@@ -268,7 +268,7 @@ export const certificatesByNameSelector = username => state => {
       {
         show: isSciPyCert,
         title: 'Scientific Computing with Python Certification',
-        showURL: 'scientific-computing-python'
+        showURL: 'scientific-computing-with-python'
       }
     ],
     legacyCerts: [

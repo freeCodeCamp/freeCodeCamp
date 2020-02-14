@@ -13,8 +13,8 @@ const preFormattedBlockNames = {
   'the-dom': 'The DOM',
   'apis-and-microservices': 'APIs and Microservices',
   'apis-and-microservices-projects': 'APIs and Microservices Projects',
-  'scientific-computing-python': 'Scientific Computing with Python',
-  'scientific-computing-python-projects':
+  'scientific-computing-with-python': 'Scientific Computing with Python',
+  'scientific-computing-with-python-projects':
     'Scientific Computing with Python Projects'
 };
 
