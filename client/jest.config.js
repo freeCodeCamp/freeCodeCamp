@@ -12,6 +12,7 @@ module.exports = {
   globals: {
     __PATH_PREFIX__: ''
   },
+  globalSetup: './jest-timezone-setup.js',
   verbose: true,
   transform: {
     '^.+\\.js$': '<rootDir>/jest.transform.js'
