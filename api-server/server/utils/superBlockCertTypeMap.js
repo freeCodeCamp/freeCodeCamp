@@ -14,7 +14,9 @@ const superBlockCertTypeMap = {
   'apis-and-microservices': certTypes.apisMicroservices,
   'information-security-and-quality-assurance': certTypes.infosecQa,
   'full-stack': certTypes.fullStack,
-  'scientific-computing-with-python': certTypes.sciPy
+  'scientific-computing-with-python': certTypes.sciPy,
+  'data-analysis-with-python': certTypes.dataAnalysisPy,
+  'machine-learning': certTypes.machineLearning
 };
 
 export default superBlockCertTypeMap;

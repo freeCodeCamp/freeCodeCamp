@@ -9,5 +9,7 @@
   "apisMicroservices": "isApisMicroservicesCert",
   "infosecQa": "isInfosecQaCert",
   "fullStack": "isFullStackCert",
-  "sciPy": "isSciPyCert"
+  "sciPy": "isSciPyCert",
+  "dataAnalysisPy": "isDataAnalysisPyCert",
+  "machineLearning": "isMachineLearningCert"
 }
