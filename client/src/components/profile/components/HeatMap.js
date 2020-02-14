@@ -5,7 +5,7 @@ import ReactTooltip from 'react-tooltip';
 import addDays from 'date-fns/add_days';
 import addMonths from 'date-fns/add_months';
 import startOfDay from 'date-fns/start_of_day';
-import format from 'date-fns/format';
+import isEqual from 'date-fns/is_equal';
 
 import FullWidthRow from '../../helpers/FullWidthRow';
 import Spacer from '../../helpers/Spacer';
@@ -22,33 +22,17 @@ const propTypes = {
 };
 
 function HeatMap({ calendar, streak }) {
-  // an issue with react-calendar-heatmap makes the days off by one
-  // see this https://github.com/kevinsqi/react-calendar-heatmap/issues/112
-  // I have added one day in the marked places to account for the offset
-
-  // this logic adds a day to all the timestamps (remove if issue gets fixed)
-  let tempCalendar = {};
-  const secondsInADay = 60 * 60 * 24;
-  for (let timestamp of Object.keys(calendar)) {
-    tempCalendar[parseInt(timestamp, 10) + secondsInADay] = 1;
-  }
-
-  calendar = tempCalendar;
-
-  // the addDays of 1 to startOfToday (remove if issue gets fixed)
-  const startOfToday = addDays(startOfDay(Date.now()), 1);
-  const sixMonthsAgo = addMonths(startOfToday, -6);
-  const startOfCalendar = format(addDays(sixMonthsAgo, -1), 'YYYY-MM-DD');
-  const endOfCalendar = format(startOfToday, 'YYYY-MM-DD');
+  const endOfCalendar = startOfDay(Date.now());
+  const startOfCalendar = addMonths(endOfCalendar, -6);
 
   let calendarData = [];
-  let dayCounter = sixMonthsAgo;
+  let dayCounter = startOfCalendar;
 
   // create a data point for each day of the calendar period (six months)
-  while (dayCounter <= startOfToday) {
+  while (dayCounter <= endOfCalendar) {
     // this is the format needed for react-calendar-heatmap
     const newDay = {
-      date: format(dayCounter, 'YYYY-MM-DD'),
+      date: startOfDay(dayCounter),
       count: 0
     };
 
@@ -56,13 +40,11 @@ function HeatMap({ calendar, streak }) {
     dayCounter = addDays(dayCounter, 1);
   }
 
-  // this adds one to the count of the day for each timestamp
   for (let timestamp of Object.keys(calendar)) {
     timestamp = Number(timestamp * 1000) || null;
     if (timestamp) {
-      const startOfTimestampDay = format(startOfDay(timestamp), 'YYYY-MM-DD');
-      const index = calendarData.findIndex(
-        day => day.date === startOfTimestampDay
+      const index = calendarData.findIndex(day =>
+        isEqual(day.date, startOfDay(timestamp))
       );
 
       if (index >= 0) {
@@ -93,14 +75,16 @@ function HeatMap({ calendar, streak }) {
             } else {
               valueCount = 'No points';
             }
+            const dateFormatted = value.date
+              ? 'on ' +
+                value.date.toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'short',
+                  day: 'numeric'
+                })
+              : '';
             return {
-              'data-tip': `<b>${valueCount}</b> on ${new Date(
-                value.date
-              ).toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'short',
-                day: 'numeric'
-              })}`
+              'data-tip': `<b>${valueCount}</b> ${dateFormatted}`
             };
           }}
           values={calendarData}

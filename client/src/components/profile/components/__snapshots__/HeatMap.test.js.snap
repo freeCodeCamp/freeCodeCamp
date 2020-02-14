@@ -2168,9 +2168,9 @@ exports[`<HeatMap/> renders correctly 1`] = `
                   <title />
                 </rect>
                 <rect
-                  class="color-empty"
+                  class="color-scale-1"
                   currentItem="false"
-                  data-tip="<b>No points</b> on Jan 30, 2020"
+                  data-tip="<b>2 points</b> on Jan 30, 2020"
                   height="10"
                   width="10"
                   x="0"
@@ -2179,9 +2179,9 @@ exports[`<HeatMap/> renders correctly 1`] = `
                   <title />
                 </rect>
                 <rect
-                  class="color-scale-1"
+                  class="color-empty"
                   currentItem="false"
-                  data-tip="<b>2 points</b> on Jan 31, 2020"
+                  data-tip="<b>No points</b> on Jan 31, 2020"
                   height="10"
                   width="10"
                   x="0"
@@ -2224,17 +2224,6 @@ exports[`<HeatMap/> renders correctly 1`] = `
                   width="10"
                   x="0"
                   y="11"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Feb 4, 2020"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="22"
                 >
                   <title />
                 </rect>
