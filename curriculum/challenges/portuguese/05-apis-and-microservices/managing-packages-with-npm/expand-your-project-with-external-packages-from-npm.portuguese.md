@@ -10,8 +10,8 @@ challengeType: 2
 Um dos maiores motivos para usar um gerenciador de pacotes é seu poderoso gerenciamento de dependências. Em vez de ter que certificar-se de que você obtém todas as dependências manualmente sempre que você configura um projeto em um novo computador, o npm instala automaticamente tudo para você. Mas como pode o npm saber exatamente o que seu projeto precisa? Conheça a seção de dependências do seu package.json. 
 Na seção dependencies, os pacotes que o seu projeto requer são armazenados usando o seguinte formato: 
 <code>"dependencies": {</code> 
-<code>"package-name": "version",</code> 
-<code>"express": "4.14.0"</code> 
+<code>"package-name": "express",</code> 
+<code>"version": "4.14.0"</code> 
 <code>}</code> 
 Instruções 
 Adicione a versão 2.14.0 do momento do pacote ao campo dependencies do seu pacote.json 

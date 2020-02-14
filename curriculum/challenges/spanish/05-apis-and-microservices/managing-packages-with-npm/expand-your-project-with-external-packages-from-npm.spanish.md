@@ -10,8 +10,8 @@ challengeType: 2
 Una de las razones más importantes para usar un administrador de paquetes es su poderosa administración de dependencias. En lugar de tener que asegurarse manualmente de que obtiene todas las dependencias cada vez que configura un proyecto en una computadora nueva, npm instala automáticamente todo por usted. Pero, ¿cómo puede npm saber exactamente lo que necesita su proyecto? Conoce la sección de dependencias de tu package.json. 
 En la sección de dependencias, los paquetes que requiere su proyecto se almacenan con el siguiente formato: 
 <code>"dependencies": {</code> 
-<code>"package-name": "version",</code> 
-<code>"express": "4.14.0"</code> 
+<code>"package-name": "express",</code> 
+<code>"version": "4.14.0"</code> 
 <code>}</code> 
 Instrucciones 
 Agregue la versión 2.14.0 del momento del paquete al campo de dependencias de su paquete.json 
