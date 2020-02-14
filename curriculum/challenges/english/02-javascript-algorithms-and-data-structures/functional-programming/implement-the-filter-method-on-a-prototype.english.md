@@ -24,7 +24,7 @@ tests:
   - text: <code>new_s</code> should equal <code>[23, 65, 5]</code>.
     testString: assert(JSON.stringify(new_s) === JSON.stringify([23, 65, 5]));
   - text: Your code should not use the <code>filter</code> method.
-    testString: assert(!code.match(/\.filter/g));
+    testString: assert(!code.match(/\.?[\s\S]*?filter/g));
 
 ```
 

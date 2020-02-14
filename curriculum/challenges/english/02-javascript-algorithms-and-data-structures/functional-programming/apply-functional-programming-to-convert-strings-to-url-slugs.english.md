@@ -29,7 +29,7 @@ tests:
   - text: The <code>globalTitle</code> variable should not change.
     testString: assert(globalTitle === "Winter Is Coming");
   - text: Your code should not use the <code>replace</code> method for this challenge.
-    testString: assert(!code.match(/\.replace/g));
+    testString: assert(!code.match(/\.?[\s\S]*?replace/g));
   - text: <code>urlSlug("Winter Is Coming")</code> should return <code>"winter-is-coming"</code>.
     testString: assert(urlSlug("Winter Is Coming") === "winter-is-coming");
   - text: <code>urlSlug(" Winter Is  &nbsp;Coming")</code> should return <code>"winter-is-coming"</code>.
