@@ -13,7 +13,7 @@ Sometimes whitespace characters around strings are not wanted but are there. Typ
 ## Instructions
 <section id='instructions'>
 Write a regex and use the appropriate string methods to remove whitespace at the beginning and end of strings.
-<strong>Note</strong><br>The <code>.trim()</code> method would work here, but you'll need to complete this challenge using regular expressions.
+<strong>Note:</strong> The <code>String.prototype.trim()</code> method would work here, but you'll need to complete this challenge using regular expressions.
 </section>
 
 ## Tests
@@ -23,8 +23,8 @@ Write a regex and use the appropriate string methods to remove whitespace at the
 tests:
   - text: <code>result</code> should equal to <code>"Hello, World!"</code>
     testString: assert(result == "Hello, World!");
-  - text: You should not use the <code>.trim()</code> method.
-    testString: assert(!code.match(/\.trim\(.*?\)/));
+  - text: Your solution should not use the <code>String.prototype.trim()</code> method.
+    testString: assert(!code.match(/\.trim\([\s\S]*?\)/));
   - text: The <code>result</code> variable should not be set equal to a string.
     testString: assert(!code.match(/result\s*=\s*".*?"/));
 

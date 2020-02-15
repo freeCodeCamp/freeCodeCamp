@@ -2,29 +2,36 @@
 id: 587d7787367417b2b2512aa1
 title: Make Screen Reader Navigation Easier with the header Landmark
 challengeType: 0
-videoUrl: ''
-localeTitle: 使用标题Landmark使屏幕阅读器导航更轻松
+videoUrl: 'https://scrimba.com/c/cB76vtv'
+forumTopicId: 301023
+localeTitle: 使用 header 元素使屏幕阅读器更容易导航
 ---
 
 ## Description
-<section id="description">下一个添加语义含义并提高可访问性的HTML5元素是<code>header</code>标记。它用于为其父标记包装介绍性信息或导航链接，并且可以很好地处理在多个页面顶部重复的内容。 <code>header</code>分享了您在<code>main</code>看到的嵌入式地标功能，允许辅助技术快速导航到该内容。 <strong>注意</strong> <br> <code>header</code>适用于HTML文档的<code>body</code>标记。这与<code>head</code>元素不同， <code>head</code>元素包含页面标题，元信息等。 </section>
+<section id='description'>
+<code>header</code>也是一个具有语义化的、提升页面可访问性的 HTML5 标签。它可以为父级标签呈现简介信息或者导航链接，适用于那些在多个页面顶部重复出现的内容。
+与<code>main</code>类似，<code>header</code>的语义化特性也可以使辅助技术快速定位到它的内容。
+<strong>注意：</strong><br><code>header</code>用在 HTML 文档的<code>body</code>标签中。这点与包含页面标题、元信息的<code>head</code>标签不同。
+</section>
 
 ## Instructions
-<section id="instructions"> Camper Cat正在撰写一些关于忍者训练的精彩文章，并希望为他们的网站添加一个页面。将当前包含<code>h1</code>的顶部<code>div</code>更改为<code>header</code>标记。 </section>
+<section id='instructions'>
+Camper Cat 正在写一些训练忍者的精彩文章，并为它们建立一个新的页面。请使用<code>header</code>替换页面顶端包含<code>h1</code>的<code>div</code>标签。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您的代码应该有一个<code>header</code>标记。
-    testString: 'assert($("header").length == 1, "Your code should have one <code>header</code> tag.");'
-  - text: 您的<code>header</code>标记应该环绕<code>h1</code> 。
-    testString: 'assert($("header").children("h1").length == 1, "Your <code>header</code> tags should wrap around the <code>h1</code>.");'
-  - text: 您的代码不应包含任何<code>div</code>标记。
-    testString: 'assert($("div").length == 0, "Your code should not have any <code>div</code> tags.");'
-  - text: 确保您的<code>header</code>元素具有结束标记。
-    testString: 'assert(code.match(/<\/header>/g) && code.match(/<\/header>/g).length === code.match(/<header>/g).length, "Make sure your <code>header</code> element has a closing tag.");'
+  - text: '你的代码应该包含 1 个<code>header</code>标签。'
+    testString: assert($('header').length == 1);
+  - text: '你的<code>header</code>标签应该包含<code>h1</code>。'
+    testString: assert($('header').children('h1').length == 1);
+  - text: '你的代码不应有任何<code>div</code>标签。'
+    testString: assert($('div').length == 0);
+  - text: '确保你的<code>header</code>标签是闭合的。'
+    testString: assert(code.match(/<\/header>/g) && code.match(/<\/header>/g).length === code.match(/<header>/g).length);
 
 ```
 
@@ -61,7 +68,6 @@ tests:
     </section>
   </main>
 </body>
-
 ```
 
 </div>
@@ -73,7 +79,9 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>
+              
