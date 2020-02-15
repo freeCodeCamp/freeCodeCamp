@@ -2,29 +2,43 @@
 id: 587d778b367417b2b2512aa8
 title: Add an Accessible Date Picker
 challengeType: 0
-videoUrl: ''
-localeTitle: 添加无障碍日期选择器
+videoUrl: 'https://scrimba.com/c/cR3bRbCV'
+forumTopicId: 301008
+localeTitle: 添加可访问的日期选择器
 ---
 
 ## Description
-<section id="description">表单通常包含<code>input</code>字段，可用于创建多个不同的表单控件。此元素的<code>type</code>属性指示将创建哪种输入。您可能已经注意到<code>text</code>并在先前的挑战中<code>submit</code>输入类型，HTML5引入了一个指定<code>date</code>字段的选项。根据浏览器支持，当日期选择器处于焦点时，它会在<code>input</code>字段中显示，这使得所有用户都可以更轻松地填写表单。对于旧版浏览器，该类型将默认为<code>text</code> ，因此有助于向用户显示标签中的预期日期格式或以及占位符文本以防万一。这是一个例子： <blockquote> &lt;label for =“input1”&gt;输入日期：&lt;/ label&gt; <br> &lt;input type =“date”id =“input1”name =“input1”&gt; <br></blockquote></section>
+<section id='description'>
+表单中经常出现<code>input</code>标签，它可以用来创建多种表单控件。它的<code>type</code>属性指定了所要创建的<code>input</code>标签类型。
+在以前的挑战中，你可能已经见过<code>text</code>与<code>submit</code>类型的<code>input</code>标签，HTML5 引入了<code>date</code>类型来创建时间选择器。依赖于浏览器的支持，当点击<code>input</code>标签时，时间选择器会显示出来，这可以让用户填写表单更加容易。
+对于旧版本的浏览器，<code>type</code>属性的默认值是<code>text</code>。这种情况下，可以利用<code>label</code>标签或者占位文本来提示用户<code>input</code>标签的输入类型为日期。
+举个例子：
+
+```html
+<label for="input1">Enter a date:</label>
+<input type="date" id="input1" name="input1">
+```
+
+</section>
 
 ## Instructions
-<section id="instructions"> Camper Cat正在举办一场真人快打比赛，并想让他的竞争对手看看哪个日期效果最佳。添加一个<code>input</code>标记，其<code>type</code>属性为“date”， <code>id</code>属性为“pickdate”， <code>name</code>属性为“date”。 </section>
+<section id='instructions'>
+Camper Cat 想举办一场比武大会，他想收集参赛者的最佳参赛时间。请为 Camper Cat 的页面添加一个<code>input</code>标签，其<code>type</code>属性值为 date，<code>id</code>属性为 pickdate，<code>name</code>属性为 date。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您的代码应为日期选择器字段添加一个<code>input</code>标记。
-    testString: 'assert($("input").length == 2, "Your code should add one <code>input</code> tag for the date selector field.");'
-  - text: 您的<code>input</code>标记应具有值为date的<code>type</code>属性。
-    testString: 'assert($("input").attr("type") == "date", "Your <code>input</code> tag should have a <code>type</code> attribute with a value of date.");'
-  - text: 您的<code>input</code>标记应具有值为pickdate的<code>id</code>属性。
-    testString: 'assert($("input").attr("id") == "pickdate", "Your <code>input</code> tag should have an <code>id</code> attribute with a value of pickdate.");'
-  - text: 您的<code>input</code>标记应具有值为date的<code>name</code>属性。
-    testString: 'assert($("input").attr("name") == "date", "Your <code>input</code> tag should have a <code>name</code> attribute with a value of date.");'
+  - text: '你的代码中应该有 1 个<code>input</code>标签。'
+    testString: assert($('input').length == 2);
+  - text: '你的<code>input</code>标签的<code>type</code>属性值应该为 date。'
+    testString: assert($('input').attr('type') == 'date');
+  - text: '你的<code>input</code>标签的<code>id</code>属性值应该为 pickdate。'
+    testString: assert($('input').attr('id') == 'pickdate');
+  - text: '你的<code>input</code>标签的<code>name</code>属性值应该为 date。'
+    testString: assert($('input').attr('name') == 'date');
 
 ```
 
@@ -46,20 +60,19 @@ tests:
       <form>
         <p>Tell us the best date for the competition</p>
         <label for="pickdate">Preferred Date:</label>
-
+        
         <!-- Add your code below this line -->
 
 
 
         <!-- Add your code above this line -->
-
+        
         <input type="submit" name="submit" value="Submit">
       </form>
     </section>
   </main>
   <footer>&copy; 2018 Camper Cat</footer>
 </body>
-
 ```
 
 </div>
@@ -71,7 +84,9 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>
+              

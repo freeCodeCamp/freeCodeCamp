@@ -53,7 +53,7 @@ Essentially, we expect basic familiarity with some of the aforementioned technol
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
-(Starts a ready-to-code dev environment for freecodecamp in your browser.)
+(Starts a ready-to-code dev environment for freeCodeCamp in your browser.)
 
 ## Frequently Asked Questions
 
