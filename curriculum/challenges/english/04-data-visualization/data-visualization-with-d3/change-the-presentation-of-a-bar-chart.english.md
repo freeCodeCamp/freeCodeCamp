@@ -89,14 +89,12 @@ tests:
 ## Solution
 <section id='solution'>
 
-```html
+```js
 <style>
   .bar {
     width: 25px;
     height: 100px;
-    /* Add your code below this line */
     margin: 2px;
-    /* Add your code above this line */
     display: inline-block;
     background-color: blue;
   }
@@ -110,13 +108,10 @@ tests:
       .enter()
       .append("div")
       .attr("class", "bar")
-      // Add your code below this line
-      .style("height", (d) => (d*10 + "px"))
-
-
-      // Add your code above this line
+      .style("height", (d) => (d * 10 + "px"))
   </script>
 </body>
+
 ```
 
 </section>
