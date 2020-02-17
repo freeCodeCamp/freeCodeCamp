@@ -4,7 +4,7 @@ title: Build a Personal Portfolio Webpage
 isRequired: true
 challengeType: 3
 forumTopicId: 301143
-localTitle: 制作一个个人作品集网页
+localeTitle: 制作一个个人作品集网页
 ---
 
 ## Description

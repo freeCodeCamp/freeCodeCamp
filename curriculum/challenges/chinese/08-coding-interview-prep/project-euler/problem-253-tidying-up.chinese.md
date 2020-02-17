@@ -19,7 +19,7 @@ localeTitle: 问题253：整理
 ```yml
 tests:
   - text: <code>euler253()</code>应返回11.492847。
-    testString: 'assert.strictEqual(euler253(), 11.492847, "<code>euler253()</code> should return 11.492847.");'
+    testString: assert.strictEqual(euler253(), 11.492847);
 
 ```
 

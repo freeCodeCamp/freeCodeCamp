@@ -23,7 +23,7 @@ localeTitle: 使用 grid-row-gap 创建多行之间的间距
 ```yml
 tests:
   - text: '<code>container</code>类应该有<code>grid-row-gap</code>属性且值为<code>5px</code>。'
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-row-gap\s*?:\s*?5px\s*?;[\s\S]*}/gi));'
+    testString: assert(code.match(/.container\s*?{[\s\S]*grid-row-gap\s*?:\s*?5px\s*?;[\s\S]*}/gi));
 
 ```
 

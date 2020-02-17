@@ -69,13 +69,13 @@ localeTitle: 张素细化算法
 ```yml
 tests:
   - text: <code>thinImage</code>必须是一个函数
-    testString: 'assert.equal(typeof thinImage, "function", "<code>thinImage</code> must be a function");'
+    testString: assert.equal(typeof thinImage, 'function');
   - text: <code>thinImage</code>必须返回一个数组
-    testString: 'assert(Array.isArray(result), "<code>thinImage</code> must return an array");'
+    testString: assert(Array.isArray(result));
   - text: <code>thinImage</code>必须返回一个字符串数组
-    testString: 'assert.equal(typeof result[0], "string", "<code>thinImage</code> must return an array of strings");'
+    testString: assert.equal(typeof result[0], 'string');
   - text: <code>thinImage</code>必须返回一个字符串数组
-    testString: 'assert.deepEqual(result, expected, "<code>thinImage</code> must return an array of strings");'
+    testString: assert.deepEqual(result, expected);
 
 ```
 

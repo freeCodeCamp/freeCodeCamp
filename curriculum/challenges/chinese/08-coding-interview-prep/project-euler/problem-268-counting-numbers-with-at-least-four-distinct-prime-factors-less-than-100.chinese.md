@@ -19,7 +19,7 @@ localeTitle: 问题268：计算至少有四个不同素因子小于100的数字
 ```yml
 tests:
   - text: <code>euler268()</code>应该返回785478606870985。
-    testString: 'assert.strictEqual(euler268(), 785478606870985, "<code>euler268()</code> should return 785478606870985.");'
+    testString: assert.strictEqual(euler268(), 785478606870985);
 
 ```
 

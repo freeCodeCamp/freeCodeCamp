@@ -19,7 +19,7 @@ localeTitle: 问题351：六角形果园
 ```yml
 tests:
   - text: <code>euler351()</code>应该返回11762187201804552。
-    testString: 'assert.strictEqual(euler351(), 11762187201804552, "<code>euler351()</code> should return 11762187201804552.");'
+    testString: assert.strictEqual(euler351(), 11762187201804552);
 
 ```
 

@@ -19,7 +19,7 @@ localeTitle: 问题353：危险的月亮
 ```yml
 tests:
   - text: <code>euler353()</code>应返回1.2759860331。
-    testString: 'assert.strictEqual(euler353(), 1.2759860331, "<code>euler353()</code> should return 1.2759860331.");'
+    testString: assert.strictEqual(euler353(), 1.2759860331);
 
 ```
 

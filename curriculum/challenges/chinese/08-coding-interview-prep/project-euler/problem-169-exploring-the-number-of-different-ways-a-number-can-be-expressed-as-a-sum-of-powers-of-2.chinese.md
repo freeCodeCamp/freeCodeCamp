@@ -19,7 +19,7 @@ localeTitle: 问题169：探索数字可以表示为2的幂之和的不同方式
 ```yml
 tests:
   - text: <code>euler169()</code>应该返回178653872807。
-    testString: 'assert.strictEqual(euler169(), 178653872807, "<code>euler169()</code> should return 178653872807.");'
+    testString: assert.strictEqual(euler169(), 178653872807);
 
 ```
 

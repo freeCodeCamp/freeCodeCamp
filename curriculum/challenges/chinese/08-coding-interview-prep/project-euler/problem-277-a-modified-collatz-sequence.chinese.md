@@ -19,7 +19,7 @@ localeTitle: 问题277：修改的Collat​​z序列
 ```yml
 tests:
   - text: <code>euler277()</code>应该返回1125977393124310。
-    testString: 'assert.strictEqual(euler277(), 1125977393124310, "<code>euler277()</code> should return 1125977393124310.");'
+    testString: assert.strictEqual(euler277(), 1125977393124310);
 
 ```
 

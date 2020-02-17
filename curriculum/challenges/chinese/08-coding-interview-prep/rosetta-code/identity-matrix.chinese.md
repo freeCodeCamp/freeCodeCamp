@@ -19,17 +19,17 @@ localeTitle: 身份矩阵
 ```yml
 tests:
   - text: <code>idMatrix</code>应该是一个功能。
-    testString: 'assert(typeof idMatrix=="function","<code>idMatrix</code> should be a function.");'
+    testString: assert(typeof idMatrix=='function');
   - text: <code>idMatrix(1)</code>应该返回一个数组。
-    testString: 'assert(Array.isArray(idMatrix(1)),"<code>idMatrix(1)</code> should return an array.");'
+    testString: assert(Array.isArray(idMatrix(1)));
   - text: '<code>idMatrix(1)</code>应返回<code>&quot;+JSON.stringify(results[0])+&quot;</code> 。'
-    testString: 'assert.deepEqual(idMatrix(1),results[0],"<code>idMatrix(1)</code> should return <code>"+JSON.stringify(results[0])+"</code>.");'
+    testString: assert.deepEqual(idMatrix(1),results[0]);
   - text: '<code>idMatrix(2)</code>应返回<code>&quot;+JSON.stringify(results[1])+&quot;</code> 。'
-    testString: 'assert.deepEqual(idMatrix(2),results[1],"<code>idMatrix(2)</code> should return <code>"+JSON.stringify(results[1])+"</code>.");'
+    testString: assert.deepEqual(idMatrix(2),results[1]);
   - text: '<code>idMatrix(3)</code>应返回<code>&quot;+JSON.stringify(results[2])+&quot;</code> 。'
-    testString: 'assert.deepEqual(idMatrix(3),results[2],"<code>idMatrix(3)</code> should return <code>"+JSON.stringify(results[2])+"</code>.");'
+    testString: assert.deepEqual(idMatrix(3),results[2]);
   - text: '<code>idMatrix(4)</code>应返回<code>&quot;+JSON.stringify(results[3])+&quot;</code> 。'
-    testString: 'assert.deepEqual(idMatrix(4),results[3],"<code>idMatrix(4)</code> should return <code>"+JSON.stringify(results[3])+"</code>.");'
+    testString: assert.deepEqual(idMatrix(4),results[3]);
 
 ```
 

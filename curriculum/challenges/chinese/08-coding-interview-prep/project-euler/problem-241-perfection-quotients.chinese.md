@@ -19,7 +19,7 @@ localeTitle: 问题241：完美商数
 ```yml
 tests:
   - text: <code>euler241()</code>应该返回482316491800641150。
-    testString: 'assert.strictEqual(euler241(), 482316491800641150, "<code>euler241()</code> should return 482316491800641150.");'
+    testString: assert.strictEqual(euler241(), 482316491800641150);
 
 ```
 

@@ -19,7 +19,7 @@ localeTitle: 问题256：无榻榻米房间
 ```yml
 tests:
   - text: <code>euler256()</code>应该返回85765680。
-    testString: 'assert.strictEqual(euler256(), 85765680, "<code>euler256()</code> should return 85765680.");'
+    testString: assert.strictEqual(euler256(), 85765680);
 
 ```
 

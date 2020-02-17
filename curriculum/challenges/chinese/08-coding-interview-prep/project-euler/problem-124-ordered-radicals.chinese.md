@@ -19,7 +19,7 @@ localeTitle: 问题124：有序的激进分子
 ```yml
 tests:
   - text: <code>euler124()</code>应返回21417。
-    testString: 'assert.strictEqual(euler124(), 21417, "<code>euler124()</code> should return 21417.");'
+    testString: assert.strictEqual(euler124(), 21417);
 
 ```
 

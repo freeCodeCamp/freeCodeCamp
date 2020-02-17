@@ -23,7 +23,7 @@ localeTitle: 在推文中使用 justify-content 属性
 ```yml
 tests:
   - text: '<code>.profile-name</code>元素的<code>justify-content</code>属性可选以下值：center、flex-start、flex-end、space-between、space-around。'
-    testString: 'assert(code.match(/header\s.profile-name\s*{\s*?.*?\s*?.*?\s*?\s*?.*?\s*?justify-content\s*:\s*(center|flex-start|flex-end|space-between|space-around)\s*;/g), ''<code>.profile-name</code>元素的<code>justify-content</code>属性可选以下值：center、flex-start、flex-end、space-between、space-around。'');'
+    testString: 'assert(code.match(/header\s.profile-name\s*{\s*?.*?\s*?.*?\s*?\s*?.*?\s*?justify-content\s*:\s*(center|flex-start|flex-end|space-between|space-around|space-evenly)\s*;/g));'
 
 ```
 

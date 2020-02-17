@@ -19,7 +19,7 @@ localeTitle: 问题87：Prime power三倍
 ```yml
 tests:
   - text: <code>euler87()</code>应该返回1097343。
-    testString: 'assert.strictEqual(euler87(), 1097343, "<code>euler87()</code> should return 1097343.");'
+    testString: assert.strictEqual(euler87(), 1097343);
 
 ```
 

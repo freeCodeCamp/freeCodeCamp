@@ -19,17 +19,17 @@ localeTitle: 逗号狡猾
 ```yml
 tests:
   - text: <code>quibble</code>是一种功能。
-    testString: 'assert(typeof quibble === "function", "<code>quibble</code> is a function.");'
-  - text: '<code>quibble([&quot;ABC&quot;])</code>应该返回一个字符串。'
-    testString: 'assert(typeof quibble(["ABC"]) === "string", "<code>quibble(["ABC"])</code> should return a string.");'
-  - text: '<code>quibble([])</code>应返回“{}”。'
-    testString: 'assert.equal(quibble(testCases[0]), results[0], "<code>quibble([])</code> should return "{}".");'
-  - text: '<code>quibble([&quot;ABC&quot;])</code>应该返回“{ABC}”。'
-    testString: 'assert.equal(quibble(testCases[1]), results[1], "<code>quibble(["ABC"])</code> should return "{ABC}".");'
-  - text: '<code>quibble([&quot;ABC&quot;, &quot;DEF&quot;])</code>应返回“{ABC和DEF}”。'
-    testString: 'assert.equal(quibble(testCases[2]), results[2], "<code>quibble(["ABC", "DEF"])</code> should return "{ABC and DEF}".");'
-  - text: '<code>quibble([&quot;ABC&quot;, &quot;DEF&quot;, &quot;G&quot;, &quot;H&quot;])</code>应返回“{ABC，DEF，G和H}”。'
-    testString: 'assert.equal(quibble(testCases[3]), results[3], "<code>quibble(["ABC", "DEF", "G", "H"])</code> should return "{ABC,DEF,G and H}".");'
+    testString: assert(typeof quibble === 'function');
+  - text: <code>quibble(["ABC"])</code>应该返回一个字符串。
+    testString: assert(typeof quibble(["ABC"]) === 'string');
+  - text: <code>quibble([])</code>应返回“{}”。
+    testString: assert.equal(quibble(testCases[0]), results[0]);
+  - text: <code>quibble(["ABC"])</code>应该返回“{ABC}”。
+    testString: assert.equal(quibble(testCases[1]), results[1]);
+  - text: <code>quibble(["ABC", "DEF"])</code>应返回“{ABC和DEF}”。
+    testString: assert.equal(quibble(testCases[2]), results[2]);
+  - text: <code>quibble(["ABC", "DEF", "G", "H"])</code>应返回“{ABC，DEF，G和H}”。
+    testString: assert.equal(quibble(testCases[3]), results[3]);
 
 ```
 

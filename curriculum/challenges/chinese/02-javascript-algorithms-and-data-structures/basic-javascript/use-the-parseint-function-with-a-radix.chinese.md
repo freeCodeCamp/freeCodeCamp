@@ -18,15 +18,15 @@ localeTitle: 将parseInt函数与Radix一起使用
 ```yml
 tests:
   - text: <code>convertToInteger</code>应该使用<code>parseInt()</code>函数
-    testString: 'assert(/parseInt/g.test(code), "<code>convertToInteger</code> should use the <code>parseInt()</code> function");'
+    testString: assert(/parseInt/g.test(code));
   - text: <code>convertToInteger(&quot;10011&quot;)</code>应该返回一个数字
-    testString: 'assert(typeof(convertToInteger("10011")) === "number", "<code>convertToInteger("10011")</code> should return a number");'
+    testString: assert(typeof(convertToInteger("10011")) === "number");
   - text: <code>convertToInteger(&quot;10011&quot;)</code>应该返回19
-    testString: 'assert(convertToInteger("10011") === 19, "<code>convertToInteger("10011")</code> should return 19");'
+    testString: assert(convertToInteger("10011") === 19);
   - text: <code>convertToInteger(&quot;111001&quot;)</code>应该返回57
-    testString: 'assert(convertToInteger("111001") === 57, "<code>convertToInteger("111001")</code> should return 57");'
+    testString: assert(convertToInteger("111001") === 57);
   - text: <code>convertToInteger(&quot;JamesBond&quot;)</code>应该返回NaN
-    testString: 'assert.isNaN(convertToInteger("JamesBond"), "<code>convertToInteger("JamesBond")</code> should return NaN");'
+    testString: assert.isNaN(convertToInteger("JamesBond"));
 
 ```
 

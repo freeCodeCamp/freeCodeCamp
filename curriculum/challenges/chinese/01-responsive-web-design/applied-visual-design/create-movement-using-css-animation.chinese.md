@@ -42,11 +42,11 @@ localeTitle: 使用 CSS 动画创建运动
 ```yml
 tests:
   - text: '<code>0%</code> 的 <code>@keyframes</code> 规则应该为向 <code>left</code> 偏移 <code>0px</code>。'
-    testString: 'assert(code.match(/0%\s*?{\s*?background-color:\s*?blue;\s*?top:\s*?0px;\s*?left:\s*?0px;\s*?}/gi), ''<code>0%</code> 的 <code>@keyframes</code> 规则应该为向 <code>left</code> 偏移 <code>0px</code>。'');'
+    testString: assert(code.match(/0%\s*?{\s*?background-color:\s*?blue;\s*?top:\s*?0(px)?;\s*?left:\s*?0(px)?;\s*?}/gi));
   - text: '<code>50%</code> 的 <code>@keyframes</code> 规则应该为向 <code>left</code> 偏移<code>25px</code>。'
-    testString: 'assert(code.match(/50%\s*?{\s*?background-color:\s*?green;\s*?top:\s*?50px;\s*?left:\s*?25px;\s*?}/gi), ''<code>50%</code> 的 <code>@keyframes</code> 规则应该为向<code>left</code> 偏移 <code>25px</code>。'');'
+    testString: assert(code.match(/50%\s*?{\s*?background-color:\s*?green;\s*?top:\s*?50px;\s*?left:\s*?25px;\s*?}/gi));
   - text: '<code>100%</code> 的 <code>@keyframes</code> 规则应该为向 <code>left</code> 偏移<code>-25px</code>。'
-    testString: 'assert(code.match(/100%\s*?{\s*?background-color:\s*?yellow;\s*?top:\s*?0px;\s*?left:\s*?-25px;\s*?}/gi), ''<code>100%</code> 的 <code>@keyframes</code> 规则应该为向<code>left</code> 偏移 <code>-25px</code>。'');'
+    testString: assert(code.match(/100%\s*?{\s*?background-color:\s*?yellow;\s*?top:\s*?0(px)?;\s*?left:\s*?-25px;\s*?}/gi));
 
 ```
 

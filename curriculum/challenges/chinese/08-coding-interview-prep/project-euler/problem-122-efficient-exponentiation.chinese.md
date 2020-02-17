@@ -19,7 +19,7 @@ localeTitle: 问题122：有效取幂
 ```yml
 tests:
   - text: <code>euler122()</code>应返回1582。
-    testString: 'assert.strictEqual(euler122(), 1582, "<code>euler122()</code> should return 1582.");'
+    testString: assert.strictEqual(euler122(), 1582);
 
 ```
 

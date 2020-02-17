@@ -20,26 +20,26 @@ localeTitle: 旧数据可视化证书
 
 ```yml
 tests:
-  - text: ''
-    testString: !<tag:yaml.org,2002:js/undefined> ''
-  - text: ''
-    testString: !<tag:yaml.org,2002:js/undefined> ''
-  - text: ''
-    testString: !<tag:yaml.org,2002:js/undefined> ''
-  - text: ''
-    testString: !<tag:yaml.org,2002:js/undefined> ''
-  - text: ''
-    testString: !<tag:yaml.org,2002:js/undefined> ''
-  - text: ''
-    testString: !<tag:yaml.org,2002:js/undefined> ''
-  - text: ''
-    testString: !<tag:yaml.org,2002:js/undefined> ''
-  - text: ''
-    testString: !<tag:yaml.org,2002:js/undefined> ''
-  - text: ''
-    testString: !<tag:yaml.org,2002:js/undefined> ''
-  - text: ''
-    testString: !<tag:yaml.org,2002:js/undefined> ''
+  - id: bd7157d8c242eddfaeb5bd13
+    title: Build a Markdown Previewer
+  - id: bd7156d8c242eddfaeb5bd13
+    title: Build a Camper Leaderboard
+  - id: bd7155d8c242eddfaeb5bd13
+    title: Build a Recipe Box
+  - id: bd7154d8c242eddfaeb5bd13
+    title: Build the Game of Life
+  - id: bd7153d8c242eddfaeb5bd13
+    title: Build a Roguelike Dungeon Crawler Game
+  - id: bd7168d8c242eddfaeb5bd13
+    title: Visualize Data with a Bar Chart
+  - id: bd7178d8c242eddfaeb5bd13
+    title: Visualize Data with a Scatterplot Graph
+  - id: bd7188d8c242eddfaeb5bd13
+    title: Visualize Data with a Heat Map
+  - id: bd7198d8c242eddfaeb5bd13
+    title: Show National Contiguity with a Force Directed Graph
+  - id: bd7108d8c242eddfaeb5bd13
+    title: Map Data Across the Globe
 
 ```
 

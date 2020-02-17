@@ -19,7 +19,7 @@ localeTitle: 问题473：数字基数
 ```yml
 tests:
   - text: <code>euler473()</code>应该返回35856681704365。
-    testString: 'assert.strictEqual(euler473(), 35856681704365, "<code>euler473()</code> should return 35856681704365.");'
+    testString: assert.strictEqual(euler473(), 35856681704365);
 
 ```
 

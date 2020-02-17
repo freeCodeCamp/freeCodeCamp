@@ -19,7 +19,7 @@ localeTitle: 问题391：跳跃游戏
 ```yml
 tests:
   - text: <code>euler391()</code>应该返回61029882288。
-    testString: 'assert.strictEqual(euler391(), 61029882288, "<code>euler391()</code> should return 61029882288.");'
+    testString: assert.strictEqual(euler391(), 61029882288);
 
 ```
 

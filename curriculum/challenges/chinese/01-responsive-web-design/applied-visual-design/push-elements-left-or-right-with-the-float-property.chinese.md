@@ -23,9 +23,9 @@ localeTitle: 使用 float 属性将元素左浮动或右浮动
 ```yml
 tests:
   - text: 'id 为 <code>left</code> 的元素应该有一个值为 <code>left</code> 的 <code>float</code> CSS 属性。'
-    testString: assert($('#left').css('float') == 'left', 'id 为 <code>left</code> 的元素应该有一个值为 <code>left</code> 的 <code>float</code> CSS 属性。');
+    testString: assert($('#left').css('float') == 'left');
   - text: 'id 为 <code>right</code> 的元素应该有一个值为 <code>right</code> 的 <code>float</code> CSS 属性。'
-    testString: assert($('#right').css('float') == 'right', 'id 为 <code>right</code> 的元素应该有一个值为 <code>right</code> 的 <code>float</code> CSS 属性。');
+    testString: assert($('#right').css('float') == 'right');
 
 ```
 

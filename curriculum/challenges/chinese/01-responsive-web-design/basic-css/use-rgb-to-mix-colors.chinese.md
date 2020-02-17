@@ -26,19 +26,19 @@ tests:
   - text: '文本内容为<code>I am red!</code>的<code>h1</code>元素的字体颜色应该为<code>red</code>。'
     testString: assert($('.red-text').css('color') === 'rgb(255, 0, 0)');
   - text: '<code>red</code>颜色应使用<code>RGB</code>值。'
-    testString: 'assert(code.match(/\.red-text\s*?{\s*?color:\s*?rgb\(\s*?255\s*?,\s*?0\s*?,\s*?0\s*?\)\s*?;\s*?}/gi));'
+    testString: assert(code.match(/\.red-text\s*?{\s*?color:\s*?rgb\(\s*?255\s*?,\s*?0\s*?,\s*?0\s*?\)\s*?;\s*?}/gi));
   - text: '文本内容为<code>I am orchid!</code>的<code>h1</code>元素的字体颜色应该为<code>orchid</code>。'
     testString: assert($('.orchid-text').css('color') === 'rgb(218, 112, 214)');
   - text: '<code>orchid</code>颜色应使用<code>RGB</code>值。'
-    testString: 'assert(code.match(/\.orchid-text\s*?{\s*?color:\s*?rgb\(\s*?218\s*?,\s*?112\s*?,\s*?214\s*?\)\s*?;\s*?}/gi));'
+    testString: assert(code.match(/\.orchid-text\s*?{\s*?color:\s*?rgb\(\s*?218\s*?,\s*?112\s*?,\s*?214\s*?\)\s*?;\s*?}/gi));
   - text: '文本内容为<code>I am blue!</code>的<code>h1</code>元素的字体颜色应该为<code>blue</code>。'
-    testString: assert($('.blue-text').css('color') === 'rgb(0, 0, 255)', '文本内容为<code>I am blue!</code>的<code>h1</code>元素的字体颜色应该为<code>blue</code>。');
+    testString: assert($('.blue-text').css('color') === 'rgb(0, 0, 255)');
   - text: '<code>blue</code>颜色应使用<code>RGB</code>值。'
-    testString: 'assert(code.match(/\.blue-text\s*?{\s*?color:\s*?rgb\(\s*?0\s*?,\s*?0\s*?,\s*?255\s*?\)\s*?;\s*?}/gi));'
+    testString: assert(code.match(/\.blue-text\s*?{\s*?color:\s*?rgb\(\s*?0\s*?,\s*?0\s*?,\s*?255\s*?\)\s*?;\s*?}/gi));
   - text: '文本内容为<code>I am sienna!</code>的<code>h1</code>元素的字体颜色应该为<code>sienna</code>。'
-    testString: assert($('.sienna-text').css('color') === 'rgb(160, 82, 45)', '文本内容为<code>I am sienna!</code>的<code>h1</code>元素的字体颜色应该为<code>sienna</code>。');
+    testString: assert($('.sienna-text').css('color') === 'rgb(160, 82, 45)');
   - text: '<code>sienna</code>颜色应使用<code>RGB</code>值。'
-    testString: 'assert(code.match(/\.sienna-text\s*?{\s*?color:\s*?rgb\(\s*?160\s*?,\s*?82\s*?,\s*?45\s*?\)\s*?;\s*?}/gi));'
+    testString: assert(code.match(/\.sienna-text\s*?{\s*?color:\s*?rgb\(\s*?160\s*?,\s*?82\s*?,\s*?45\s*?\)\s*?;\s*?}/gi));
 
 ```
 

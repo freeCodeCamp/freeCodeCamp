@@ -18,13 +18,13 @@ localeTitle: Currying和Partial Application简介
 ```yml
 tests:
   - text: <code>add(10)(20)(30)</code>应该返回<code>60</code> 。
-    testString: 'assert(add(10)(20)(30) === 60, "<code>add(10)(20)(30)</code> should return <code>60</code>.");'
+    testString: assert(add(10)(20)(30) === 60);
   - text: <code>add(1)(2)(3)</code>应该返回<code>6</code> 。
-    testString: 'assert(add(1)(2)(3) === 6, "<code>add(1)(2)(3)</code> should return <code>6</code>.");'
+    testString: assert(add(1)(2)(3) === 6);
   - text: <code>add(11)(22)(33)</code>应该返回<code>66</code> 。
-    testString: 'assert(add(11)(22)(33) === 66, "<code>add(11)(22)(33)</code> should return <code>66</code>.");'
+    testString: assert(add(11)(22)(33) === 66);
   - text: 您的代码应包含返回<code>x + y + z</code>的final语句。
-    testString: 'assert(code.match(/[xyz]\s*?\+\s*?[xyz]\s*?\+\s*?[xyz]/g), "Your code should include a final statement that returns <code>x + y + z</code>.");'
+    testString: assert(code.match(/[xyz]\s*?\+\s*?[xyz]\s*?\+\s*?[xyz]/g));
 
 ```
 

@@ -19,7 +19,7 @@ localeTitle: 问题220：高速公路龙
 ```yml
 tests:
   - text: '<code>euler220()</code>应返回139776,963904。'
-    testString: 'assert.strictEqual(euler220(), 139776, 963904, "<code>euler220()</code> should return 139776, 963904.");'
+    testString: assert.strictEqual(euler220(), 139776, 963904);
 
 ```
 

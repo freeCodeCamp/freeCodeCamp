@@ -18,15 +18,15 @@ localeTitle: 与严格不等式算子的比较
 ```yml
 tests:
   - text: <code>testStrictNotEqual(17)</code>应返回“Equal”
-    testString: 'assert(testStrictNotEqual(17) === "Equal", "<code>testStrictNotEqual(17)</code> should return "Equal"");'
+    testString: assert(testStrictNotEqual(17) === "Equal");
   - text: <code>testStrictNotEqual(&quot;17&quot;)</code>应返回“Not Equal”
-    testString: 'assert(testStrictNotEqual("17") === "Not Equal", "<code>testStrictNotEqual("17")</code> should return "Not Equal"");'
+    testString: assert(testStrictNotEqual("17") === "Not Equal");
   - text: <code>testStrictNotEqual(12)</code>应该返回“Not Equal”
-    testString: 'assert(testStrictNotEqual(12) === "Not Equal", "<code>testStrictNotEqual(12)</code> should return "Not Equal"");'
+    testString: assert(testStrictNotEqual(12) === "Not Equal");
   - text: <code>testStrictNotEqual(&quot;bob&quot;)</code>应返回“Not Equal”
-    testString: 'assert(testStrictNotEqual("bob") === "Not Equal", "<code>testStrictNotEqual("bob")</code> should return "Not Equal"");'
+    testString: assert(testStrictNotEqual("bob") === "Not Equal");
   - text: 你应该使用<code>!==</code>运算符
-    testString: 'assert(code.match(/(val\s*!==\s*\d+)|(\d+\s*!==\s*val)/g).length > 0, "You should use the <code>!==</code> operator");'
+    testString: assert(code.match(/(val\s*!==\s*\d+)|(\d+\s*!==\s*val)/g).length > 0);
 
 ```
 

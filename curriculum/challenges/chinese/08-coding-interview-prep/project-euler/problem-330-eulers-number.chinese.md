@@ -19,7 +19,7 @@ localeTitle: 问题330：欧拉数
 ```yml
 tests:
   - text: <code>euler330()</code>应该返回15955822。
-    testString: 'assert.strictEqual(euler330(), 15955822, "<code>euler330()</code> should return 15955822.");'
+    testString: assert.strictEqual(euler330(), 15955822);
 
 ```
 

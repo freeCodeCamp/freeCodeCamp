@@ -19,7 +19,7 @@ localeTitle: 问题106：特殊子集和：元测试
 ```yml
 tests:
   - text: <code>euler106()</code>应返回21384。
-    testString: 'assert.strictEqual(euler106(), 21384, "<code>euler106()</code> should return 21384.");'
+    testString: assert.strictEqual(euler106(), 21384);
 
 ```
 

@@ -19,7 +19,7 @@ localeTitle: 问题56：强大的数字总和
 ```yml
 tests:
   - text: <code>euler56()</code>应返回972。
-    testString: 'assert.strictEqual(euler56(), 972, "<code>euler56()</code> should return 972.");'
+    testString: assert.strictEqual(euler56(), 972);
 
 ```
 

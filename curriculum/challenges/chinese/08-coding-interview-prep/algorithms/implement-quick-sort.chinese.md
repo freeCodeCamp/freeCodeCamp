@@ -19,13 +19,13 @@ localeTitle: 实施快速排序
 ```yml
 tests:
   - text: <code>quickSort</code>是一个功能。
-    testString: 'assert(typeof quickSort == "function", "<code>quickSort</code> is a function.");'
+    testString: assert(typeof quickSort == 'function');
   - text: <code>quickSort</code>返回一个排序数组（从最小到最大）。
-    testString: 'assert(isSorted(quickSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])), "<code>quickSort</code> returns a sorted array (least to greatest).");'
+    testString: assert(isSorted(quickSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])));
   - text: <code>quickSort</code>返回一个除订单外没有变化的数组。
-    testString: 'assert.sameMembers(quickSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]), [1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92], "<code>quickSort</code> returns an array that is unchanged except for order.");'
+    testString: assert.sameMembers(quickSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]), [1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]);
   - text: <code>quickSort</code>不应使用内置的<code>.sort()</code>方法。
-    testString: 'assert.strictEqual(code.search(/\.sort\(/), -1, "<code>quickSort</code> should not use the built-in <code>.sort()</code> method.");'
+    testString: assert.strictEqual(code.search(/\.sort\(/), -1);
 
 ```
 

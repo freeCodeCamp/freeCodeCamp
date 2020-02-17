@@ -19,7 +19,7 @@ localeTitle: 问题129：重新划分可分性
 ```yml
 tests:
   - text: <code>euler129()</code>应该返回1000023。
-    testString: 'assert.strictEqual(euler129(), 1000023, "<code>euler129()</code> should return 1000023.");'
+    testString: assert.strictEqual(euler129(), 1000023);
 
 ```
 

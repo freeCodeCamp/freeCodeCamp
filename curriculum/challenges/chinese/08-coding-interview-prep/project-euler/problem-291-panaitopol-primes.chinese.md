@@ -3,22 +3,28 @@ id: 5900f48f1000cf542c50ffa2
 challengeType: 5
 title: 'Problem 291: Panaitopol Primes'
 videoUrl: ''
-localeTitle: ''
+localeTitle: 问题291：Panaitopol素数
 ---
 
 ## Description
-undefined
+<section id="description">
+如果对于某些正整数x和y，素数p称为Panaitopol素数。
+
+
+找出多少个Panaitopol素数小于5×1015。
+</section>
 
 ## Instructions
-undefined
+<section id="instructions">
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: ''
-    testString: 'assert.strictEqual(euler291(), 4037526, "<code>euler291()</code> should return 4037526.");'
+  - text: <code>euler291()</code>应该返回4037526。
+    testString: assert.strictEqual(euler291(), 4037526);
 
 ```
 

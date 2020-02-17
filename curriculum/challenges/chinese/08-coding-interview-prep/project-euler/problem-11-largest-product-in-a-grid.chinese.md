@@ -19,9 +19,9 @@ localeTitle: 问题11：网格中最大的产品
 ```yml
 tests:
   - text: <code>largestGridProduct(grid)</code>应该返回70600674。
-    testString: 'assert.strictEqual(largestGridProduct(grid), 70600674, "<code>largestGridProduct(grid)</code> should return 70600674.");'
+    testString: assert.strictEqual(largestGridProduct(grid), 70600674);
   - text: <code>largestGridProduct(testGrid)</code>应该返回14169081。
-    testString: 'assert.strictEqual(largestGridProduct(testGrid), 14169081, "<code>largestGridProduct(testGrid)</code> should return 14169081.");'
+    testString: assert.strictEqual(largestGridProduct(testGrid), 14169081);
 
 ```
 

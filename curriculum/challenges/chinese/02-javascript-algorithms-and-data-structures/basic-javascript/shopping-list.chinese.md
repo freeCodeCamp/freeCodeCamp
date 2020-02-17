@@ -19,13 +19,13 @@ localeTitle: 购物清单
 ```yml
 tests:
   - text: <code>myList</code>应该是一个数组
-    testString: 'assert(isArray, "<code>myList</code> should be an array");'
+    testString: assert(isArray);
   - text: 每个子数组中的第一个元素都必须是字符串
-    testString: 'assert(hasString, "The first elements in each of your sub-arrays must all be strings");'
+    testString: assert(hasString);
   - text: 每个子数组中的第二个元素都必须是数字
-    testString: 'assert(hasNumber, "The second elements in each of your sub-arrays must all be numbers");'
+    testString: assert(hasNumber);
   - text: 您的列表中必须至少有5个项目
-    testString: 'assert(count > 4, "You must have at least 5 items in your list");'
+    testString: assert(count > 4);
 
 ```
 

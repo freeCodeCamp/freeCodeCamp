@@ -19,7 +19,7 @@ localeTitle: 问题209：循环逻辑
 ```yml
 tests:
   - text: <code>euler209()</code>应该返回15964587728784。
-    testString: 'assert.strictEqual(euler209(), 15964587728784, "<code>euler209()</code> should return 15964587728784.");'
+    testString: assert.strictEqual(euler209(), 15964587728784);
 
 ```
 

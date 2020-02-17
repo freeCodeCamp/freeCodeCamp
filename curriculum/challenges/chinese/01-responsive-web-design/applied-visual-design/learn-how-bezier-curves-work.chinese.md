@@ -27,9 +27,9 @@ localeTitle: 学习贝塞尔曲线的原理
 ```yml
 tests:
   - text: 'id 为 <code>ball1</code> 的元素的 <code>animation-timing-function</code> 属性值应该为和 linear 预定值等价的贝塞尔函数值。'
-    testString: assert($('#ball1').css('animation-timing-function') == 'cubic-bezier(0.25, 0.25, 0.75, 0.75)', 'id 为 <code>ball1</code> 的元素的 <code>animation-timing-function</code> 属性应该为和 linear 预定值等价的贝塞尔函数值。');
+    testString: assert($('#ball1').css('animation-timing-function') == 'cubic-bezier(0.25, 0.25, 0.75, 0.75)');
   - text: 'id 为 <code>ball2</code> 元素的 <code>animation-timing-function</code> 属性值应该保持不变。'
-    testString: assert($('#ball2').css('animation-timing-function') == 'ease-out', 'id 为 <code>ball2</code> 元素的 <code>animation-timing-function</code> 属性值应该保持不变。');
+    testString: const ball2Animation = $('#ball2').css('animation-timing-function').replace(/\s/g, ''); assert(ball2Animation == 'ease-out' || ball2Animation == 'cubic-bezier(0,0,0.58,1)');
 
 ```
 

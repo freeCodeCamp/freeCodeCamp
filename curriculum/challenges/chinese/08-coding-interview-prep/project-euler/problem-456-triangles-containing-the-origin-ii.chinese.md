@@ -3,7 +3,7 @@ id: 5900f5351000cf542c510047
 challengeType: 5
 title: 'Problem 456: Triangles containing the origin II'
 videoUrl: ''
-localeTitle: ''
+localeTitle: 问题456：包含原点II的三角形
 ---
 
 ## Description
@@ -19,7 +19,7 @@ localeTitle: ''
 ```yml
 tests:
   - text: <code>euler456()</code>应返回333333208685971500。
-    testString: 'assert.strictEqual(euler456(), 333333208685971500, "<code>euler456()</code> should return 333333208685971500.");'
+    testString: assert.strictEqual(euler456(), 333333208685971500);
 
 ```
 

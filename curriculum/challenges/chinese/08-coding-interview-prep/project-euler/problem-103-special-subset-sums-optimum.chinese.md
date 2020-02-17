@@ -19,7 +19,7 @@ localeTitle: 问题103：特殊子集和：最佳
 ```yml
 tests:
   - text: <code>euler103()</code>应该返回20313839404245。
-    testString: 'assert.strictEqual(euler103(), 20313839404245, "<code>euler103()</code> should return 20313839404245.");'
+    testString: assert.strictEqual(euler103(), 20313839404245);
 
 ```
 

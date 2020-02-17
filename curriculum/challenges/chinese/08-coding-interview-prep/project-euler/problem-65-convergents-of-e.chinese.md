@@ -19,7 +19,7 @@ localeTitle: 问题65：e的收敛
 ```yml
 tests:
   - text: <code>euler65()</code>应该返回272。
-    testString: 'assert.strictEqual(euler65(), 272, "<code>euler65()</code> should return 272.");'
+    testString: assert.strictEqual(euler65(), 272);
 
 ```
 

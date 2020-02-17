@@ -19,7 +19,7 @@ localeTitle: 问题261：Pivotal Square Sums
 ```yml
 tests:
   - text: <code>euler261()</code>应该返回238890850232021。
-    testString: 'assert.strictEqual(euler261(), 238890850232021, "<code>euler261()</code> should return 238890850232021.");'
+    testString: assert.strictEqual(euler261(), 238890850232021);
 
 ```
 

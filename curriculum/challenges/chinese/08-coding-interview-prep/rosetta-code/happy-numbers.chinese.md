@@ -19,31 +19,31 @@ localeTitle: 快乐的数字
 ```yml
 tests:
   - text: <code>happy</code>是一种功能。
-    testString: 'assert(typeof happy === "function", "<code>happy</code> is a function.");'
+    testString: assert(typeof happy === 'function');
   - text: <code>happy(1)</code>应该返回一个布尔值。
-    testString: 'assert(typeof happy(1) === "boolean", "<code>happy(1)</code> should return a boolean.");'
+    testString: assert(typeof happy(1) === 'boolean');
   - text: <code>happy(1)</code>应该回归真实。
-    testString: 'assert(happy(1), "<code>happy(1)</code> should return true.");'
+    testString: assert(happy(1));
   - text: <code>happy(2)</code>应该返回虚假。
-    testString: 'assert(!happy(2), "<code>happy(2)</code> should return false.");'
+    testString: assert(!happy(2));
   - text: <code>happy(7)</code>应该回归真实。
-    testString: 'assert(happy(7), "<code>happy(7)</code> should return true.");'
+    testString: assert(happy(7));
   - text: <code>happy(10)</code>应该回归真实。
-    testString: 'assert(happy(10), "<code>happy(10)</code> should return true.");'
+    testString: assert(happy(10));
   - text: <code>happy(13)</code>应该回归真实。
-    testString: 'assert(happy(13), "<code>happy(13)</code> should return true.");'
+    testString: assert(happy(13));
   - text: <code>happy(19)</code>应该回归真实。
-    testString: 'assert(happy(19), "<code>happy(19)</code> should return true.");'
+    testString: assert(happy(19));
   - text: <code>happy(23)</code>应该回归真实。
-    testString: 'assert(happy(23), "<code>happy(23)</code> should return true.");'
+    testString: assert(happy(23));
   - text: <code>happy(28)</code>应该回归真实。
-    testString: 'assert(happy(28), "<code>happy(28)</code> should return true.");'
+    testString: assert(happy(28));
   - text: <code>happy(31)</code>应该回归真实。
-    testString: 'assert(happy(31), "<code>happy(31)</code> should return true.");'
+    testString: assert(happy(31));
   - text: <code>happy(32)</code>应该回归真实：
-    testString: 'assert(happy(32), "<code>happy(32)</code> should return true:.");'
+    testString: assert(happy(32));
   - text: <code>happy(33)</code>应该返回虚假。
-    testString: 'assert(!happy(33), "<code>happy(33)</code> should return false.");'
+    testString: assert(!happy(33));
 
 ```
 

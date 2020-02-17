@@ -18,11 +18,11 @@ localeTitle: 使用JavaScript将另一个十进制除以另一个
 ```yml
 tests:
   - text: 变<code>quotient</code>应该等于<code>2.2</code>
-    testString: 'assert(quotient === 2.2, "The variable <code>quotient</code> should equal <code>2.2</code>");'
+    testString: assert(quotient === 2.2);
   - text: 您应该使用<code>/</code>运算符将4.4除以2
-    testString: 'assert(/4\.40*\s*\/\s*2\.*0*/.test(code), "You should use the <code>/</code> operator to divide 4.4 by 2");'
+    testString: assert(/4\.40*\s*\/\s*2\.*0*/.test(code));
   - text: 商数变量只应分配一次
-    testString: 'assert(code.match(/quotient/g).length === 1, "The quotient variable should only be assigned once");'
+    testString: assert(code.match(/quotient/g).length === 1);
 
 ```
 

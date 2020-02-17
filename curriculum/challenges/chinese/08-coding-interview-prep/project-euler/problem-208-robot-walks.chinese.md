@@ -19,7 +19,7 @@ localeTitle: 问题208：机器人走路
 ```yml
 tests:
   - text: <code>euler208()</code>应该返回331951449665644800。
-    testString: 'assert.strictEqual(euler208(), 331951449665644800, "<code>euler208()</code> should return 331951449665644800.");'
+    testString: assert.strictEqual(euler208(), 331951449665644800);
 
 ```
 

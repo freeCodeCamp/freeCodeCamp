@@ -26,7 +26,7 @@ CSS flexbox 有一个把 flex 子元素拆分为多行（或多列）的特性�
 ```yml
 tests:
   - text: '<code>#box-container</code>元素应有<code>flex-wrap</code>属性，其值应为 wrap。'
-    testString: assert($('#box-container').css('flex-wrap') == 'wrap', '<code>#box-container</code>元素应有<code>flex-wrap</code>属性，其值为 wrap。');
+    testString: assert($('#box-container').css('flex-wrap') == 'wrap');
 
 ```
 

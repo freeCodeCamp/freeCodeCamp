@@ -19,7 +19,7 @@ localeTitle: 问题234：半透明数字
 ```yml
 tests:
   - text: <code>euler234()</code>应该返回1259187438574927000。
-    testString: 'assert.strictEqual(euler234(), 1259187438574927000, "<code>euler234()</code> should return 1259187438574927000.");'
+    testString: assert.strictEqual(euler234(), 1259187438574927000);
 
 ```
 

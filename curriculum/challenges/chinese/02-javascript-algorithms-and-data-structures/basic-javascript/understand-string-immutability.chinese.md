@@ -18,9 +18,9 @@ localeTitle: 理解字符串不变性
 ```yml
 tests:
   - text: <code>myStr</code>应该具有<code>Hello World</code>的值
-    testString: 'assert(myStr === "Hello World", "<code>myStr</code> should have a value of <code>Hello World</code>");'
+    testString: assert(myStr === "Hello World");
   - text: 不要更改行上方的代码
-    testString: 'assert(/myStr = "Jello World"/.test(code), "Do not change the code above the line");'
+    testString: assert(/myStr = "Jello World"/.test(code));
 
 ```
 

@@ -23,9 +23,9 @@ localeTitle: 使用 flex-direction 在嵌入推文中创建多行
 ```yml
 tests:
   - text: '<code>header</code>应有<code>flex-direction</code>属性，其值应为 row。'
-    testString: 'assert(code.match(/header\s*?{\s*?.*?\s*?.*?\s*?flex-direction:\s*?row;/g), ''<code>header</code>应有<code>flex-direction</code>属性，其值应为 row。'');'
+    testString: assert(code.match(/header\s*?{[^}]*?flex-direction:\s*?row;/g));
   - text: '<code>footer</code>应有<code>flex-direction</code>属性，其值应为 row。'
-    testString: 'assert(code.match(/footer\s*?{\s*?.*?\s*?.*?\s*?flex-direction:\s*?row;/g), ''<code>footer</code>应有<code>flex-direction</code>属性，其值应为 row。'');'
+    testString: assert(code.match(/footer\s*?{[^}]*?flex-direction:\s*?row;/g));
 
 ```
 

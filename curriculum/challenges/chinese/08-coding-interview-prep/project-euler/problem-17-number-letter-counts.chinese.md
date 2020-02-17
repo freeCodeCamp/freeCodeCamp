@@ -19,11 +19,11 @@ localeTitle: 问题17：数字字母计数
 ```yml
 tests:
   - text: <code>numberLetterCounts(5)</code>应返回19。
-    testString: 'assert.strictEqual(numberLetterCounts(5), 19, "<code>numberLetterCounts(5)</code> should return 19.");'
+    testString: assert.strictEqual(numberLetterCounts(5), 19);
   - text: <code>numberLetterCounts(150)</code>应该返回1903。
-    testString: 'assert.strictEqual(numberLetterCounts(150), 1903, "<code>numberLetterCounts(150)</code> should return 1903.");'
+    testString: assert.strictEqual(numberLetterCounts(150), 1903);
   - text: <code>numberLetterCounts(1000)</code>应该返回21124。
-    testString: 'assert.strictEqual(numberLetterCounts(1000), 21124, "<code>numberLetterCounts(1000)</code> should return 21124.");'
+    testString: assert.strictEqual(numberLetterCounts(1000), 21124);
 
 ```
 

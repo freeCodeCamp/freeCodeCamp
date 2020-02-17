@@ -18,11 +18,11 @@ localeTitle: 使用push（）和unshift（）将项添加到数组
 ```yml
 tests:
   - text: '<code>mixedNumbers([&quot;IV&quot;, 5, &quot;six&quot;])</code>现在应该返回<code>[&quot;I&quot;, 2, &quot;three&quot;, &quot;IV&quot;, 5, &quot;six&quot;, 7, &quot;VIII&quot;, 9]</code>'
-    testString: 'assert.deepEqual(mixedNumbers(["IV", 5, "six"]), ["I", 2, "three", "IV", 5, "six", 7, "VIII", 9], "<code>mixedNumbers(["IV", 5, "six"])</code> should now return <code>["I", 2, "three", "IV", 5, "six", 7, "VIII", 9]</code>");'
+    testString: assert.deepEqual(mixedNumbers(['IV', 5, 'six']), ['I', 2, 'three', 'IV', 5, 'six', 7, 'VIII', 9]);
   - text: <code>mixedNumbers</code>函数应该使用<code>push()</code>方法
-    testString: 'assert.notStrictEqual(mixedNumbers.toString().search(/\.push\(/), -1, "The <code>mixedNumbers</code> function should utilize the <code>push()</code> method");'
+    testString: assert(mixedNumbers.toString().match(/\.push/));
   - text: <code>mixedNumbers</code>函数应该使用<code>unshift()</code>方法
-    testString: 'assert.notStrictEqual(mixedNumbers.toString().search(/\.unshift\(/), -1, "The <code>mixedNumbers</code> function should utilize the <code>unshift()</code> method");'
+    testString: assert(mixedNumbers.toString().match(/\.unshift/));
 
 ```
 

@@ -23,7 +23,7 @@ localeTitle: 使用 grid-template-rows 添加多行
 ```yml
 tests:
   - text: '<code>container</code>类应该有<code>grid-template-rows</code>属性，且该属性的两个值均为<code>50px</code>'
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-template-rows\s*?:\s*?50px\s*?50px\s*?;[\s\S]*}/gi));'
+    testString: assert(code.match(/.container\s*?{[\s\S]*grid-template-rows\s*?:\s*?50px\s*?50px\s*?;[\s\S]*}/gi));
 
 ```
 

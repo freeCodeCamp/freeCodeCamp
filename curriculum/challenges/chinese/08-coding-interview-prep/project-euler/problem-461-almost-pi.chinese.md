@@ -19,7 +19,7 @@ localeTitle: 问题461：几乎是Pi
 ```yml
 tests:
   - text: <code>euler461()</code>应该返回159820276。
-    testString: 'assert.strictEqual(euler461(), 159820276, "<code>euler461()</code> should return 159820276.");'
+    testString: assert.strictEqual(euler461(), 159820276);
 
 ```
 

@@ -19,7 +19,7 @@ localeTitle: 问题144：研究激光束的多次反射
 ```yml
 tests:
   - text: <code>euler144()</code>应返回354。
-    testString: 'assert.strictEqual(euler144(), 354, "<code>euler144()</code> should return 354.");'
+    testString: assert.strictEqual(euler144(), 354);
 
 ```
 

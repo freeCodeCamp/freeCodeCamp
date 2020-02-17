@@ -19,7 +19,7 @@ localeTitle: 问题326：模数汇总
 ```yml
 tests:
   - text: <code>euler326()</code>应该返回1966666166408794400。
-    testString: 'assert.strictEqual(euler326(), 1966666166408794400, "<code>euler326()</code> should return 1966666166408794400.");'
+    testString: assert.strictEqual(euler326(), 1966666166408794400);
 
 ```
 

@@ -33,7 +33,7 @@ tests:
   - text: '<code>blue-box</code> class 的左内边距应为<code>40px</code>。'
     testString: assert($(".blue-box").css("padding-left") === "40px");
   - text: '你应该按照顺时针排序，汇总声明的方式来设置<code>blue-box</code>的<code>padding</code>值。'
-    testString: assert(!/padding-top|padding-right|padding-bottom|padding-left/.test(code));
+    testString: const removeCssComments = str => str.replace(/\/\*[\s\S]+?\*\//g, '');assert(/\.blue-box\s*{[\s\S]*padding[\s]*:\s*\d+px\s+\d+px\s+\d+px\s+\d+px(;\s*[^}]+\s*}|;?\s*})/.test(removeCssComments($('style').text())));
 
 ```
 

@@ -25,7 +25,7 @@ CSS 里的 <code>opacity</code> 属性用来设置元素的透明度。
 ```yml
 tests:
   - text: '你应该使用 <code>links</code> class 选择所有的超链接并设置其 <code>opacity</code> 值为 0.7。'
-    testString: assert.approximately(parseFloat($('.links').css('opacity')), 0.7, 0.1, '你应该使用 <code>links</code> class 选择所有的超链接并设置其 <code>opacity</code> 值为 0.7。');
+    testString: assert(/\.links\s*{([\s\S]*?;)*\s*opacity\s*:\s*0*\.70*\s*(;[\s\S]*?|\s*)}/.test($('style').text()));
 
 ```
 

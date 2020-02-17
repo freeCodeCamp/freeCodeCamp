@@ -23,7 +23,7 @@ localeTitle: 在推文中使用 align-items 属性
 ```yml
 tests:
   - text: '<code>.follow-btn</code>应有<code>align-items</code>属性，其值应为 center.'
-    testString: assert($('.follow-btn').css('align-items') == 'center', '<code>.follow-btn</code>应有<code>align-items</code>属性，其值应为 center.');
+    testString: assert($('.follow-btn').css('align-items') == 'center');
 
 ```
 

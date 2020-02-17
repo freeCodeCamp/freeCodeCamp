@@ -18,11 +18,11 @@ localeTitle: 测试属性的对象
 ```yml
 tests:
   - text: <code>checkObj(&quot;gift&quot;)</code>应该返回<code>&quot;pony&quot;</code> 。
-    testString: 'assert(checkObj("gift") === "pony", "<code>checkObj("gift")</code> should return  <code>"pony"</code>.");'
+    testString: assert(checkObj("gift") === "pony");
   - text: <code>checkObj(&quot;pet&quot;)</code>应该返回<code>&quot;kitten&quot;</code> 。
-    testString: 'assert(checkObj("pet") === "kitten", "<code>checkObj("pet")</code> should return  <code>"kitten"</code>.");'
+    testString: assert(checkObj("pet") === "kitten");
   - text: <code>checkObj(&quot;house&quot;)</code>应该返回<code>&quot;Not Found&quot;</code> 。
-    testString: 'assert(checkObj("house") === "Not Found", "<code>checkObj("house")</code> should return  <code>"Not Found"</code>.");'
+    testString: assert(checkObj("house") === "Not Found");
 
 ```
 

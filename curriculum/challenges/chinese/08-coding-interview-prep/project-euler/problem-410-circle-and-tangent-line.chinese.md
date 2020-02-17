@@ -19,7 +19,7 @@ localeTitle: 问题410：圆和切线
 ```yml
 tests:
   - text: <code>euler410()</code>应该返回799999783589946600。
-    testString: 'assert.strictEqual(euler410(), 799999783589946600, "<code>euler410()</code> should return 799999783589946600.");'
+    testString: assert.strictEqual(euler410(), 799999783589946600);
 
 ```
 

@@ -18,13 +18,13 @@ localeTitle: 使用过滤器方法从数组中提取数据
 ```yml
 tests:
   - text: <code>watchList</code>变量不应该更改。
-    testString: 'assert(watchList[0].Title === "Inception" && watchList[4].Director == "James Cameron", "The <code>watchList</code> variable should not change.");'
+    testString: assert(watchList[0].Title === "Inception" && watchList[4].Director == "James Cameron");
   - text: 您的代码应该使用<code>filter</code>方法。
-    testString: 'assert(code.match(/\.filter/g), "Your code should use the <code>filter</code> method.");'
+    testString: assert(code.match(/\.filter/g));
   - text: 您的代码不应使用<code>for</code>循环。
-    testString: 'assert(!code.match(/for\s*?\(.+?\)/g), "Your code should not use a <code>for</code> loop.");'
+    testString: assert(!code.match(/for\s*?\([\s\S]*?\)/g));
   - text: '<code>filteredList</code>应该等于<code>[{&quot;title&quot;: &quot;Inception&quot;,&quot;rating&quot;: &quot;8.8&quot;},{&quot;title&quot;: &quot;Interstellar&quot;,&quot;rating&quot;: &quot;8.6&quot;},{&quot;title&quot;: &quot;The Dark Knight&quot;,&quot;rating&quot;: &quot;9.0&quot;},{&quot;title&quot;: &quot;Batman Begins&quot;,&quot;rating&quot;: &quot;8.3&quot;}]</code> 。'
-    testString: 'assert.deepEqual(filteredList, [{"title": "Inception","rating": "8.8"},{"title": "Interstellar","rating": "8.6"},{"title": "The Dark Knight","rating": "9.0"},{"title": "Batman Begins","rating": "8.3"}], "<code>filteredList</code> should equal <code>[{"title": "Inception","rating": "8.8"},{"title": "Interstellar","rating": "8.6"},{"title": "The Dark Knight","rating": "9.0"},{"title": "Batman Begins","rating": "8.3"}]</code>.");'
+    testString: 'assert.deepEqual(filteredList, [{"title": "Inception","rating": "8.8"},{"title": "Interstellar","rating": "8.6"},{"title": "The Dark Knight","rating": "9.0"},{"title": "Batman Begins","rating": "8.3"}]);'
 
 ```
 

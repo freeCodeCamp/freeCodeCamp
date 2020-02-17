@@ -26,11 +26,11 @@ localeTitle: 使用 flex 短方法属性
 ```yml
 tests:
   - text: '<code>#box-1</code>元素应有<code>flex</code>属性，其值应为 2 2 150px。'
-    testString: assert($('#box-1').css('flex-grow') == '2' && $('#box-1').css('flex-shrink') == '2' && $('#box-1').css('flex-basis') == '150px', '<code>#box-1</code>元素应有<code>flex</code>属性，其值应为 2 2 150px。');
+    testString: assert($('#box-1').css('flex-grow') == '2' && $('#box-1').css('flex-shrink') == '2' && $('#box-1').css('flex-basis') == '150px');
   - text: '<code>#box-2</code>元素应有<code>flex</code>属性，其值应为 1 1 150px。'
-    testString: assert($('#box-2').css('flex-grow') == '1' && $('#box-2').css('flex-shrink') == '1' && $('#box-2').css('flex-basis') == '150px', '<code>#box-2</code>元素应有<code>flex</code>属性，其值应为 1 1 150px。');
+    testString: assert($('#box-2').css('flex-grow') == '1' && $('#box-2').css('flex-shrink') == '1' && $('#box-2').css('flex-basis') == '150px');
   - text: '应对<code>#box-1</code>和<code>#box-2</code>使用<code>flex</code>属性。'
-    testString: 'assert(code.match(/flex:\s*?\d\s+?\d\s+?150px;/g).length == 2, ''应对<code>#box-1</code>和<code>#box-2</code>使用<code>flex</code>属性。'');'
+    testString: assert(code.match(/flex:\s*?\d\s+?\d\s+?150px;/g).length == 2);
 
 ```
 

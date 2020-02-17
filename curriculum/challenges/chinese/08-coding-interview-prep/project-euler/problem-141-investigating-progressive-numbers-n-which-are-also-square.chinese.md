@@ -19,7 +19,7 @@ localeTitle: 问题141：调查渐进数n，它们也是正方形
 ```yml
 tests:
   - text: <code>euler141()</code>应该返回878454337159。
-    testString: 'assert.strictEqual(euler141(), 878454337159, "<code>euler141()</code> should return 878454337159.");'
+    testString: assert.strictEqual(euler141(), 878454337159);
 
 ```
 

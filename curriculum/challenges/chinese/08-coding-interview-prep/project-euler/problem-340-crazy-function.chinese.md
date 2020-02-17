@@ -19,7 +19,7 @@ localeTitle: 问题340：疯狂的功能
 ```yml
 tests:
   - text: <code>euler340()</code>应返回291504964。
-    testString: 'assert.strictEqual(euler340(), 291504964, "<code>euler340()</code> should return 291504964.");'
+    testString: assert.strictEqual(euler340(), 291504964);
 
 ```
 

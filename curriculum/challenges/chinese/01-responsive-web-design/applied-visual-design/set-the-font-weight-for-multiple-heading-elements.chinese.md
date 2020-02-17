@@ -24,17 +24,17 @@ localeTitle: 设置多个标题元素的 font-weight
 ```yml
 tests:
   - text: '你应该设置 <code>h1</code> 标签的 <code>font-weight</code> 为 800。'
-    testString: assert($('h1').css('font-weight') == '800', '你应该设置 <code>h1</code> 标签的 <code>font-weight</code> 为 800。');
+    testString: assert($('h1').css('font-weight') == '800');
   - text: '你应该设置 <code>h2</code> 标签的 <code>font-weight</code> 为 600。'
-    testString: assert($('h2').css('font-weight') == '600', '你应该设置 <code>h2</code> 标签的 <code>font-weight</code> 为 600。');
+    testString: assert($('h2').css('font-weight') == '600');
   - text: '你应该设置 <code>h3</code> 标签的 <code>font-weight</code> 为 500。'
-    testString: assert($('h3').css('font-weight') == '500', '你应该设置 <code>h3</code> 标签的 <code>font-weight</code> 为 500。');
+    testString: assert($('h3').css('font-weight') == '500');
   - text: '你应该设置 <code>h4</code> 标签的 <code>font-weight</code> 为 400。'
-    testString: assert($('h4').css('font-weight') == '400', '你应该设置 <code>h4</code> 标签的 <code>font-weight</code> 为 400。');
+    testString: assert($('h4').css('font-weight') == '400');
   - text: '你应该设置 <code>h5</code> 标签的 <code>font-weight</code> 为 300。'
-    testString: assert($('h5').css('font-weight') == '300', '你应该设置 <code>h5</code> 标签的 <code>font-weight</code> 为 300。');
+    testString: assert($('h5').css('font-weight') == '300');
   - text: '你应该设置 <code>h6</code> 标签的 <code>font-weight</code> 为 200。'
-    testString: assert($('h6').css('font-weight') == '200', '你应该设置 <code>h6</code> 标签的 <code>font-weight</code> 为 200。');
+    testString: assert($('h6').css('font-weight') == '200');
 
 ```
 

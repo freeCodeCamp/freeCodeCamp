@@ -19,13 +19,13 @@ localeTitle: 问题23：非丰富的总和
 ```yml
 tests:
   - text: <code>sumOfNonAbundantNumbers(10000)</code>应返回3731004。
-    testString: 'assert(sumOfNonAbundantNumbers(10000) === 3731004, "<code>sumOfNonAbundantNumbers(10000)</code> should return 3731004.");'
+    testString: assert(sumOfNonAbundantNumbers(10000) === 3731004);
   - text: <code>sumOfNonAbundantNumbers(15000)</code>应该返回4039939。
-    testString: 'assert(sumOfNonAbundantNumbers(15000) === 4039939, "<code>sumOfNonAbundantNumbers(15000)</code> should return 4039939.");'
+    testString: assert(sumOfNonAbundantNumbers(15000) === 4039939);
   - text: <code>sumOfNonAbundantNumbers(20000)</code>应返回4159710。
-    testString: 'assert(sumOfNonAbundantNumbers(20000) === 4159710, "<code>sumOfNonAbundantNumbers(20000)</code> should return 4159710.");'
+    testString: assert(sumOfNonAbundantNumbers(20000) === 4159710);
   - text: <code>sumOfNonAbundantNumbers(28123)</code>应该返回4179871。
-    testString: 'assert(sumOfNonAbundantNumbers(28123) === 4179871, "<code>sumOfNonAbundantNumbers(28123)</code> should return 4179871.");'
+    testString: assert(sumOfNonAbundantNumbers(28123) === 4179871);
 
 ```
 

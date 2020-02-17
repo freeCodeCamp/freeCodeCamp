@@ -19,7 +19,7 @@ localeTitle: 问题359：希尔伯特的新酒店
 ```yml
 tests:
   - text: <code>euler359()</code>应该返回40632119。
-    testString: 'assert.strictEqual(euler359(), 40632119, "<code>euler359()</code> should return 40632119.");'
+    testString: assert.strictEqual(euler359(), 40632119);
 
 ```
 

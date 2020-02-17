@@ -18,7 +18,7 @@ localeTitle: 使用Partials将您的样式拆分为较小的块
 ```yml
 tests:
   - text: 您的代码应使用<code>@import</code>指令，并且不应在文件名中包含下划线。
-    testString: 'assert(code.match(/@import\s+?("|")variables\1/gi), "Your code should use the <code>@import</code> directive, and should not include the underscore in the file name.");'
+    testString: assert(code.match(/@import\s+?('|")variables\1/gi));
 
 ```
 

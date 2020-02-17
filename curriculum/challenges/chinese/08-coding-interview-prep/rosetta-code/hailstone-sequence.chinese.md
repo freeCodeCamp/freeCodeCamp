@@ -19,9 +19,9 @@ localeTitle: 冰雹序列
 ```yml
 tests:
   - text: <code>hailstoneSequence</code>是一个函数。
-    testString: 'assert(typeof hailstoneSequence === "function", "<code>hailstoneSequence</code> is a function.");'
+    testString: assert(typeof hailstoneSequence === 'function');
   - text: '<code>[[27,82,41,124,8,4,2,1], [351, 77031]]</code> <code>hailstoneSequence()</code>应返回<code>[[27,82,41,124,8,4,2,1], [351, 77031]]</code>'
-    testString: 'assert.deepEqual(hailstoneSequence(), res, "<code>hailstoneSequence()</code> should return <code>[[27,82,41,124,8,4,2,1], [351, 77031]]</code>");'
+    testString: assert.deepEqual(hailstoneSequence(), res);
 
 ```
 

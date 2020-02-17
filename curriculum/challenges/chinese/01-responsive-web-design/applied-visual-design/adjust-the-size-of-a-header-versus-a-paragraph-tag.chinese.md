@@ -23,7 +23,7 @@ localeTitle: 调整标题与段落的大小
 ```yml
 tests:
   - text: '你应该给 <code>h4</code> 元素添加一个 <code>font-size</code> 属性并且赋值 <code>27px</code>。'
-    testString: assert($('h4').css('font-size') == '27px', '你应该给 <code>h4</code> 元素添加一个 <code>font-size</code> 属性并且赋值 <code>27px</code>。');
+    testString: assert($('h4').css('font-size') == '27px');
 
 ```
 

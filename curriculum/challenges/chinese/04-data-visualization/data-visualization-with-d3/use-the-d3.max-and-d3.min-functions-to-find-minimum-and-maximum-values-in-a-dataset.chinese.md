@@ -18,9 +18,9 @@ localeTitle: 使用d3.max和d3.min函数查找数据集中的最小值和最大�
 ```yml
 tests:
   - text: <code>h2</code>的文本应为8。
-    testString: 'assert(output == 8 && $("h2").text() == "8", "The text in the <code>h2</code> should be 8.");'
+    testString: assert(output == 8 && $('h2').text() == '8');
   - text: 您的代码应使用<code>max()</code>方法。
-    testString: 'assert(code.match(/\.max/g), "Your code should use the <code>max()</code> method.")'
+    testString: assert(code.match(/\.max/g), 'Your code should use the <code>max()</code> method.')
 
 ```
 

@@ -18,13 +18,13 @@ localeTitle: 使用类语法定义构造函数
 ```yml
 tests:
   - text: <code>Vegetable</code>应该是一个<code>class</code>具有限定<code>constructor</code>方法。
-    testString: 'assert(typeof Vegetable === "function" && typeof Vegetable.constructor === "function", "<code>Vegetable</code> should be a <code>class</code> with a defined <code>constructor</code> method.");'
+    testString: assert(typeof Vegetable === 'function' && typeof Vegetable.constructor === 'function');
   - text: <code>class</code>关键字。
-    testString: 'getUserInput => assert(getUserInput("index").match(/class/g),"<code>class</code> keyword was used.");'
+    testString: assert(code.match(/class/g));
   - text: <code>Vegetable</code>可以实例化。
-    testString: 'assert(() => {const a = new Vegetable("apple"); return typeof a === "object";},"<code>Vegetable</code> can be instantiated.");'
+    testString: assert(() => {const a = new Vegetable("apple"); return typeof a === 'object';});
   - text: <code>carrot.name</code>应该返回<code>carrot</code> 。
-    testString: 'assert(carrot.name=="carrot","<code>carrot.name</code> should return <code>carrot</code>.");'
+    testString: assert(carrot.name=='carrot');
 
 ```
 

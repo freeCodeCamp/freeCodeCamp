@@ -18,15 +18,15 @@ localeTitle: 使用点表示法访问对象属性
 ```yml
 tests:
   - text: <code>hatValue</code>应该是一个字符串
-    testString: 'assert(typeof hatValue === "string" , "<code>hatValue</code> should be a string");'
+    testString: assert(typeof hatValue === 'string' );
   - text: <code>hatValue</code>的值应该是<code>&quot;ballcap&quot;</code>
-    testString: 'assert(hatValue === "ballcap" , "The value of <code>hatValue</code> should be <code>"ballcap"</code>");'
+    testString: assert(hatValue === 'ballcap' );
   - text: <code>shirtValue</code>应该是一个字符串
-    testString: 'assert(typeof shirtValue === "string" , "<code>shirtValue</code> should be a string");'
+    testString: assert(typeof shirtValue === 'string' );
   - text: <code>shirtValue</code>的值应该是<code>&quot;jersey&quot;</code>
-    testString: 'assert(shirtValue === "jersey" , "The value of <code>shirtValue</code> should be <code>"jersey"</code>");'
+    testString: assert(shirtValue === 'jersey' );
   - text: 你应该使用点符号两次
-    testString: 'assert(code.match(/testObj\.\w+/g).length > 1, "You should use dot notation twice");'
+    testString: assert(code.match(/testObj\.\w+/g).length > 1);
 
 ```
 

@@ -24,11 +24,11 @@ localeTitle: 以可变速率来给多个元素添加动画
 ```yml
 tests:
   - text: 'class 为 <code>star-1</code> 的 <code>animation-duration</code> 属性值应该 1s。'
-    testString: assert($('.star-1').css('animation-duration') == '1s', 'class 为 <code>star-1</code> 的 <code>animation-duration</code> 属性值应该 1s。');
+    testString: assert($('.star-1').css('animation-duration') == '1s');
   - text: 'class 为 <code>star-2</code> 的 <code>animation-duration</code> 属性值应该 0.9s。'
-    testString: assert($('.star-2').css('animation-duration') == '0.9s', 'class 为 <code>star-2</code> 的 <code>animation-duration</code> 属性值应该 0.9s。');
+    testString: assert($('.star-2').css('animation-duration') == '0.9s');
   - text: 'class 为 <code>star-3</code> 的 <code>animation-duration</code> 属性值应该 1.1s。'
-    testString: assert($('.star-3').css('animation-duration') == '1.1s', 'class 为 <code>star-3</code> 的 <code>animation-duration</code> 属性值应该 1.1s。');
+    testString: assert($('.star-3').css('animation-duration') == '1.1s');
 
 ```
 

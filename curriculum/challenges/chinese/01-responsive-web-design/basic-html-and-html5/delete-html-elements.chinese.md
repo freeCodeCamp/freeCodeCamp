@@ -24,11 +24,11 @@ localeTitle: 删除 HTML 元素
 ```yml
 tests:
   - text: '删除<code>h1</code>元素。'
-    testString: assert(($("h1").length == 0));
+    testString: assert(!code.match(/<h1>/gi) && !code.match(/<\/h1>/gi));
   - text: '保留<code>h2</code>元素。'
-    testString: assert(($("h2").length > 0));
+    testString: assert(code.match(/<h2>[\w\W]*<\/h2>/gi));
   - text: '保留<code>p</code>元素。'
-    testString: assert(($("p").length > 0));
+    testString: assert(code.match(/<p>[\w\W]*<\/p>/gi));
 
 ```
 

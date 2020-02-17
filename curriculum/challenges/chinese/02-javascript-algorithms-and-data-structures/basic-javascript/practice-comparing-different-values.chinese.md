@@ -18,11 +18,11 @@ localeTitle: 练习比较不同的值
 ```yml
 tests:
   - text: '<code>compareEquality(10, &quot;10&quot;)</code>应返回“Not Equal”'
-    testString: 'assert(compareEquality(10, "10") === "Not Equal", "<code>compareEquality(10, "10")</code> should return "Not Equal"");'
+    testString: assert(compareEquality(10, "10") === "Not Equal");
   - text: '<code>compareEquality(&quot;20&quot;, 20)</code>应该返回“Not Equal”'
-    testString: 'assert(compareEquality("20", 20) === "Not Equal", "<code>compareEquality("20", 20)</code> should return "Not Equal"");'
+    testString: assert(compareEquality("20", 20) === "Not Equal");
   - text: 您应该使用<code>===</code>运算符
-    testString: 'assert(code.match(/===/g), "You should use the <code>===</code> operator");'
+    testString: assert(code.match(/===/g));
 
 ```
 

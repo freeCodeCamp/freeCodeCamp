@@ -34,9 +34,9 @@ tests:
   - text: '<code>body</code>元素的<code>background-color</code>应该是黑色的。'
     testString: assert($("body").css("background-color") === "rgb(0, 0, 0)");
   - text: '确保 CSS 规则格式书写正确，需要开关大括号。'
-    testString: 'assert(code.match(/<style>\s*body\s*\{\s*background.*\s*:\s*.*;\s*\}\s*<\/style>/i));'
+    testString: assert(code.match(/<style>\s*body\s*\{\s*background.*\s*:\s*.*;\s*\}\s*<\/style>/i));
   - text: '确保 CSS 规则要以分号结尾。'
-    testString: 'assert(code.match(/<style>\s*body\s*\{\s*background.*\s*:\s*.*;\s*\}\s*<\/style>/i));'
+    testString: assert(code.match(/<style>\s*body\s*\{\s*background.*\s*:\s*.*;\s*\}\s*<\/style>/i));
 
 ```
 

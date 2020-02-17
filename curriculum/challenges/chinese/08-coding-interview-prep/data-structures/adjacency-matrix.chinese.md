@@ -18,15 +18,15 @@ localeTitle: 邻接矩阵
 ```yml
 tests:
   - text: <code>undirectedAdjList</code>应该只包含五个节点。
-    testString: 'assert((adjMatUndirected.length === 5) && adjMatUndirected.map(function(x) { return x.length === 5 }).reduce(function(a, b) { return a && b }) , "<code>undirectedAdjList</code> should only contain five nodes.");'
+    testString: assert((adjMatUndirected.length === 5) && adjMatUndirected.map(function(x) { return x.length === 5 }).reduce(function(a, b) { return a && b }) );
   - text: 第一个和第四个节点之间应该有一条边。
-    testString: 'assert((adjMatUndirected[0][3] === 1) && (adjMatUndirected[3][0] === 1), "There should be an edge between the first and fourth node.");'
+    testString: assert((adjMatUndirected[0][3] === 1) && (adjMatUndirected[3][0] === 1));
   - text: 第一个和第三个节点之间应该有一条边。
-    testString: 'assert((adjMatUndirected[0][2] === 1) && (adjMatUndirected[2][0] === 1), "There should be an edge between the first and third node.");'
+    testString: assert((adjMatUndirected[0][2] === 1) && (adjMatUndirected[2][0] === 1));
   - text: 第三个和第五个节点之间应该有一条边。
-    testString: 'assert((adjMatUndirected[2][4] === 1) && (adjMatUndirected[4][2] === 1), "There should be an edge between the third and fifth node.");'
+    testString: assert((adjMatUndirected[2][4] === 1) && (adjMatUndirected[4][2] === 1));
   - text: 第四个和第五个节点之间应该有一条边。
-    testString: 'assert((adjMatUndirected[3][4] === 1) && (adjMatUndirected[4][3] === 1), "There should be an edge between the fourth and fifth node.");'
+    testString: assert((adjMatUndirected[3][4] === 1) && (adjMatUndirected[4][3] === 1));
 
 ```
 

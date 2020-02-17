@@ -18,9 +18,9 @@ localeTitle: 理解立即调用的函数表达式（IIFE）
 ```yml
 tests:
   - text: 该功能应该是匿名的。
-    testString: 'assert(/\(\s*?function\s*?\(\s*?\)\s*?{/.test(code), "The function should be anonymous.");'
+    testString: assert(/\((function|\(\))(=>|\(\)){/.test(code.replace(/\s/g, "")));
   - text: 您的函数应在表达式的末尾加上括号以立即调用它。
-    testString: 'assert(/}\s*?\)\s*?\(\s*?\)/.test(code), "Your function should have parentheses at the end of the expression to call it immediately.");'
+    testString: assert(/}\)\(\)/.test(code.replace(/\s/g, "")));
 
 ```
 

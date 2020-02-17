@@ -19,19 +19,19 @@ localeTitle: 熵
 ```yml
 tests:
   - text: <code>entropy</code>是一种功能。
-    testString: 'assert(typeof entropy === "function", "<code>entropy</code> is a function.");'
-  - text: <code>entropy(&quot;0&quot;)</code>应该返回<code>0</code>
-    testString: 'assert.equal(entropy("0"), 0, "<code>entropy("0")</code> should return <code>0</code>");'
-  - text: <code>entropy(&quot;01&quot;)</code>应该返回<code>1</code>
-    testString: 'assert.equal(entropy("01"), 1, "<code>entropy("01")</code> should return <code>1</code>");'
-  - text: <code>entropy(&quot;0123&quot;)</code>应该返回<code>2</code>
-    testString: 'assert.equal(entropy("0123"), 2, "<code>entropy("0123")</code> should return <code>2</code>");'
-  - text: <code>entropy(&quot;01234567&quot;)</code>应该返回<code>3</code>
-    testString: 'assert.equal(entropy("01234567"), 3, "<code>entropy("01234567")</code> should return <code>3</code>");'
-  - text: <code>entropy(&quot;0123456789abcdef&quot;)</code>应返回<code>4</code>
-    testString: 'assert.equal(entropy("0123456789abcdef"), 4, "<code>entropy("0123456789abcdef")</code> should return <code>4</code>");'
-  - text: <code>entropy(&quot;1223334444&quot;)</code>应返回<code>1.8464393446710154</code>
-    testString: 'assert.equal(entropy("1223334444"), 1.8464393446710154, "<code>entropy("1223334444")</code> should return <code>1.8464393446710154</code>");'
+    testString: assert(typeof entropy === 'function');
+  - text: <code>entropy("0")</code>应该返回<code>0</code>
+    testString: assert.equal(entropy('0'), 0);
+  - text: <code>entropy("01")</code>应该返回<code>1</code>
+    testString: assert.equal(entropy('01'), 1);
+  - text: <code>entropy("0123")</code>应该返回<code>2</code>
+    testString: assert.equal(entropy('0123'), 2);
+  - text: <code>entropy("01234567")</code>应该返回<code>3</code>
+    testString: assert.equal(entropy('01234567'), 3);
+  - text: <code>entropy("0123456789abcdef")</code>应返回<code>4</code>
+    testString: assert.equal(entropy('0123456789abcdef'), 4);
+  - text: <code>entropy("1223334444")</code>应返回<code>1.8464393446710154</code>
+    testString: assert.equal(entropy('1223334444'), 1.8464393446710154);
 
 ```
 

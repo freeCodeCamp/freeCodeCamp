@@ -24,11 +24,11 @@ localeTitle: 使用 s 标签给文本添加删除线
 ```yml
 tests:
   - text: '你应该添加一个 <code>s</code> 标签。'
-    testString: assert($('s').length == 1, '你应该添加一个<code>s</code>标签。');
+    testString: assert($('s').length == 1);
   - text: ' <code>s</code> 标签应该在 <code>h4</code> 标签内的 Google 文字外面，它不应该包含单词 Alphabet。'
-    testString: assert($('s').text().match(/Google/gi) && !$('s').text().match(/Alphabet/gi), '<code>s</code> 标签应该在 <code>h4</code> 标签内的 Google 文字外面，它不应该包含单词 Alphabet。');
+    testString: assert($('h4 > s').text().match(/Google/gi) && !$('h4 > s').text().match(/Alphabet/gi));
   - text: '<code>h4</code> 标签内应该有单词 Alphabet，Alphabet 应该没有删除线样式。'
-    testString: assert($('h4').html().match(/Alphabet/gi), '<code>h4</code> 标签内应该有单词 Alphabet，Alphabet 应该没有删除线样式。');
+    testString: assert($('h4').html().match(/Alphabet/gi));
 
 ```
 

@@ -24,11 +24,11 @@ localeTitle: 固定定位的参照物是浏览器的窗口
 ```yml
 tests:
   - text: '<code>>#navbar</code> 元素应当有一个值为 <code>fixed</code> 的 <code>position</code> CSS 属性'
-    testString: assert($('#navbar').css('position') == 'fixed', '<code>#navbar</code> 元素应当有一个值为 <code>fixed</code> 的 <code>position</code> CSS 属性');
+    testString: assert($('#navbar').css('position') == 'fixed');
   - text: '你的 <code>#navbar</code> 元素应当有值为 <code>0px</code> 的 <code>top</code> CSS 属性。'
-    testString: assert($('#navbar').css('top') == '0px', '你的 <code>#navbar</code> 元素应当有值为 <code>0px</code> 的 <code>top</code> CSS 属性。');
+    testString: assert($('#navbar').css('top') == '0px');
   - text: '你的 <code>#navbar</code> 元素应当有值为 <code>0px</code> 的 <code>left</code> CSS 属性。'
-    testString: assert($('#navbar').css('left') == '0px', '你的 <code>#navbar</code> 元素应当有值为 <code>0px</code> 的 <code>left</code> CSS 属性。');
+    testString: assert($('#navbar').css('left') == '0px');
 
 ```
 

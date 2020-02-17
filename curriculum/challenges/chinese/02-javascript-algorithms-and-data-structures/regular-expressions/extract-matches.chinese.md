@@ -18,11 +18,11 @@ localeTitle: 提取匹配
 ```yml
 tests:
   - text: <code>result</code>应该有单词<code>coding</code>
-    testString: 'assert(result.join() === "coding", "The <code>result</code> should have the word <code>coding</code>");'
+    testString: assert(result.join() === "coding");
   - text: 你的regex <code>codingRegex</code>应该搜索<code>coding</code>
-    testString: 'assert(codingRegex.source === "coding", "Your regex <code>codingRegex</code> should search for <code>coding</code>");'
+    testString: assert(codingRegex.source === "coding");
   - text: 您应该使用<code>.match()</code>方法。
-    testString: 'assert(code.match(/\.match\(.*\)/), "You should use the <code>.match()</code> method.");'
+    testString: assert(code.match(/\.match\(.*\)/));
 
 ```
 

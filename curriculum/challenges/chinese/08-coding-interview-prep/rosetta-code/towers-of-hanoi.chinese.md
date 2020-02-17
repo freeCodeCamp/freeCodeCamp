@@ -19,15 +19,15 @@ localeTitle: 河内的塔
 ```yml
 tests:
   - text: <code>towerOfHanoi</code>是一个功能。
-    testString: 'assert(typeof towerOfHanoi === "function", "<code>towerOfHanoi</code> is a function.");'
-  - text: ''
-    testString: 'assert(res3.length === 7, "<code>towerOfHanoi(3, ...)</code> should return 7 moves.");'
-  - text: '<code>towerOfHanoi(3, &quot;A&quot;, &quot;B&quot;, &quot;C&quot;)</code>应返回[[“A”，“B”]，[“A”，“C”]，[“B”，“C”]，[ “A”， “B”]，[ “C”， “A”]，[ “C”， “B”]，[ “A”， “B”]]“）。'
-    testString: 'assert.deepEqual(towerOfHanoi(3, "A", "B", "C"), res3Moves, "<code>towerOfHanoi(3, "A", "B", "C")</code> should return [["A","B"],["A","C"],["B","C"],["A","B"],["C","A"],["C","B"],["A","B"]].");'
-  - text: '<code>towerOfHanoi(5, &quot;X&quot;, &quot;Y&quot;, &quot;Z&quot;)</code>第10 <code>towerOfHanoi(5, &quot;X&quot;, &quot;Y&quot;, &quot;Z&quot;)</code>应为Y  - &gt; X.'
-    testString: 'assert.deepEqual(res5[9], ["Y", "X"], "<code>towerOfHanoi(5, "X", "Y", "Z")</code> 10th move should be Y -> X.");'
-  - text: '<code>towerOfHanoi(7, &quot;A&quot;, &quot;B&quot;, &quot;C&quot;)</code>前十个动作是[[“A”，“B”]，[“A”，“C”]，[“B”，“C”] [ “A”， “B”]，[ “C”， “A”]，[ “C”， “B”]，[ “A”， “B”]，[ “A”， “C”] [ “B”， “C”]，[ “B”， “A”]]“）。'
-    testString: 'assert.deepEqual(towerOfHanoi(7, "A", "B", "C").slice(0, 10), res7First10Moves, "<code>towerOfHanoi(7, "A", "B", "C")</code> first ten moves are [["A","B"],["A","C"],["B","C"],["A","B"],["C","A"],["C","B"],["A","B"],["A","C"],["B","C"],["B","A"]].");'
+    testString: assert(typeof towerOfHanoi === 'function');
+  - text: <code>towerOfHanoi(3, ...)</code> 应该返回7招。
+    testString: assert(res3.length === 7);
+  - text: <code>towerOfHanoi(3, "A", "B", "C")</code>应返回[[“A”，“B”]，[“A”，“C”]，[“B”，“C”]，[ “A”， “B”]，[ “C”， “A”]，[ “C”， “B”]，[ “A”， “B”]]“）。
+    testString: assert.deepEqual(towerOfHanoi(3, 'A', 'B', 'C'), res3Moves);
+  - text: <code>towerOfHanoi(5, "X", "Y", "Z")</code>第10 <code>towerOfHanoi(5, "X", "Y", "Z")</code>应为Y  - &gt; X.
+    testString: assert.deepEqual(res5[9], ['Y', 'X']);
+  - text: <code>towerOfHanoi(7, "A", "B", "C")</code>前十个动作是[[“A”，“B”]，[“A”，“C”]，[“B”，“C”] [ “A”， “B”]，[ “C”， “A”]，[ “C”， “B”]，[ “A”， “B”]，[ “A”， “C”] [ “B”， “C”]，[ “B”， “A”]]“）。
+    testString: assert.deepEqual(towerOfHanoi(7, 'A', 'B', 'C').slice(0, 10), res7First10Moves);
 
 ```
 

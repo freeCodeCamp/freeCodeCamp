@@ -18,15 +18,15 @@ localeTitle: 匹配出现零次或多次的字符
 ```yml
 tests:
   - text: 您正则表达式<code>chewieRegex</code>应该使用<code>*</code>字符匹配零个或多个<code>a</code>字符。
-    testString: 'assert(/\*/.test(chewieRegex.source), "Your regex <code>chewieRegex</code> should use the <code>*</code> character to match zero or more <code>a</code> characters.");'
+    testString: assert(/\*/.test(chewieRegex.source));
   - text: 你的正则表达式<code>chewieRegex</code>应匹配16个字符。
-    testString: 'assert(result[0].length === 16, "Your regex <code>chewieRegex</code> should match 16 characters.");'
+    testString: assert(result[0].length === 16);
   - text: 你的正则表达式应该匹配<code>&quot;Aaaaaaaaaaaaaaaa&quot;</code> 。
-    testString: 'assert(result[0] === "Aaaaaaaaaaaaaaaa", "Your regex should match <code>"Aaaaaaaaaaaaaaaa"</code>.");'
+    testString: assert(result[0] === "Aaaaaaaaaaaaaaaa");
   - text: '你的正则表达式不应该与<code>&quot;He made a fair move. Screaming about it can&#39;t help you.&quot;</code>中的任何角色相匹配<code>&quot;He made a fair move. Screaming about it can&#39;t help you.&quot;</code>'
-    testString: 'assert(!"He made a fair move. Screaming about it can\"t help you.".match(chewieRegex), "Your regex should not match any characters in <code>"He made a fair move. Screaming about it can&#39t help you."</code>");'
+    testString: assert(!"He made a fair move. Screaming about it can\"t help you.".match(chewieRegex));
   - text: '你的正则表达式不应该与<code>&quot;Let him have it. It&#39;s not wise to upset a Wookiee.&quot;</code>中的任何角色相匹配<code>&quot;Let him have it. It&#39;s not wise to upset a Wookiee.&quot;</code>'
-    testString: 'assert(!"Let him have it. It\"s not wise to upset a Wookiee.".match(chewieRegex), "Your regex should not match any characters in <code>"Let him have it. It&#39s not wise to upset a Wookiee."</code>");'
+    testString: assert(!"Let him have it. It\"s not wise to upset a Wookiee.".match(chewieRegex));
 
 ```
 

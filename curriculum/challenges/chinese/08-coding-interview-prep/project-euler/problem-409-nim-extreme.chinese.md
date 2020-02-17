@@ -19,7 +19,7 @@ localeTitle: 问题409：Nim Extreme
 ```yml
 tests:
   - text: <code>euler409()</code>应该返回253223948。
-    testString: 'assert.strictEqual(euler409(), 253223948, "<code>euler409()</code> should return 253223948.");'
+    testString: assert.strictEqual(euler409(), 253223948);
 
 ```
 

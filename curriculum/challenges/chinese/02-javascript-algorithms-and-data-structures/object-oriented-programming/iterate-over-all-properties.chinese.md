@@ -18,11 +18,11 @@ localeTitle: 迭代所有属性
 ```yml
 tests:
   - text: <code>ownProps</code>数组应包含<code>&quot;name&quot;</code> 。
-    testString: 'assert(ownProps.indexOf("name") !== -1, "The <code>ownProps</code> array should include <code>"name"</code>.");'
+    testString: assert(ownProps.indexOf('name') !== -1);
   - text: <code>prototypeProps</code>数组应该包含<code>&quot;numLegs&quot;</code> 。
-    testString: 'assert(prototypeProps.indexOf("numLegs") !== -1, "The <code>prototypeProps</code> array should include <code>"numLegs"</code>.");'
+    testString: assert(prototypeProps.indexOf('numLegs') !== -1);
   - text: 无需使用内置方法<code>Object.keys()</code>即可解决此挑战。
-    testString: 'assert(!/\Object.keys/.test(code), "Solve this challenge without using the built in method <code>Object.keys()</code>.");'
+    testString: assert(!/\Object.keys/.test(code));
 
 ```
 

@@ -19,7 +19,7 @@ localeTitle: 问题173：使用多达一百万个瓷砖可以形成多少个不�
 ```yml
 tests:
   - text: <code>euler173()</code>应该返回1572729。
-    testString: 'assert.strictEqual(euler173(), 1572729, "<code>euler173()</code> should return 1572729.");'
+    testString: assert.strictEqual(euler173(), 1572729);
 
 ```
 

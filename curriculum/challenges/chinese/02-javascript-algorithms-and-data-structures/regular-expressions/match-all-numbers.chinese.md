@@ -18,21 +18,21 @@ localeTitle: 匹配所有号码
 ```yml
 tests:
   - text: 您的正则表达式应使用快捷方式字符来匹配数字字符
-    testString: 'assert(/\\d/.test(numRegex.source), "Your regex should use the shortcut character to match digit characters");'
+    testString: assert(/\\d/.test(numRegex.source));
   - text: 你的正则表达式应该使用全局标志。
-    testString: 'assert(numRegex.global, "Your regex should use the global flag.");'
+    testString: assert(numRegex.global);
   - text: 你的正则表达式应该在<code>&quot;9&quot;</code>找到1位数。
-    testString: 'assert("9".match(numRegex).length == 1, "Your regex should find 1 digit in <code>"9"</code>.");'
+    testString: assert("9".match(numRegex).length == 1);
   - text: 你的正则表达式应该在<code>&quot;Catch 22&quot;</code>找到2位数字。
-    testString: 'assert("Catch 22".match(numRegex).length == 2, "Your regex should find 2 digits in <code>"Catch 22"</code>.");'
+    testString: assert("Catch 22".match(numRegex).length == 2);
   - text: 你的正则表达式应该在<code>&quot;101 Dalmatians&quot;</code>找到3位数字。
-    testString: 'assert("101 Dalmatians".match(numRegex).length == 3, "Your regex should find 3 digits in <code>"101 Dalmatians"</code>.");'
+    testString: assert("101 Dalmatians".match(numRegex).length == 3);
   - text: '你的正则表达式应该在<code>&quot;One, Two, Three&quot;</code>找不到数字。'
-    testString: 'assert("One, Two, Three".match(numRegex) == null, "Your regex should find no digits in <code>"One, Two, Three"</code>.");'
+    testString: assert("One, Two, Three".match(numRegex) == null);
   - text: 您的正则表达式应该在<code>&quot;21 Jump Street&quot;</code>找到2位数字。
-    testString: 'assert("21 Jump Street".match(numRegex).length == 2, "Your regex should find 2 digits in <code>"21 Jump Street"</code>.");'
+    testString: assert("21 Jump Street".match(numRegex).length == 2);
   - text: '你的正则表达式应该在<code>&quot;2001: A Space Odyssey&quot;</code>找到4位数字。'
-    testString: 'assert("2001: A Space Odyssey".match(numRegex).length == 4, "Your regex should find 4 digits in <code>"2001: A Space Odyssey"</code>.");'
+    testString: 'assert("2001: A Space Odyssey".match(numRegex).length == 4);'
 
 ```
 

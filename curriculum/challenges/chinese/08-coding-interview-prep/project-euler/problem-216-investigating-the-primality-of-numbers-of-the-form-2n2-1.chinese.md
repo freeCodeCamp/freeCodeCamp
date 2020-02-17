@@ -19,7 +19,7 @@ localeTitle: 问题216：调查2n2-1形式的数字的素数
 ```yml
 tests:
   - text: <code>euler216()</code>应该返回5437849。
-    testString: 'assert.strictEqual(euler216(), 5437849, "<code>euler216()</code> should return 5437849.");'
+    testString: assert.strictEqual(euler216(), 5437849);
 
 ```
 

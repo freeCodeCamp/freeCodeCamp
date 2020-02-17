@@ -34,15 +34,15 @@ std_cell_lib ieee std_cell_lib
 ```yml
 tests:
   - text: <code>topologicalSort</code>是一个函数。
-    testString: 'assert(typeof topologicalSort === "function", "<code>topologicalSort</code> is a function.");'
+    testString: assert(typeof topologicalSort === 'function');
   - text: <code>topologicalSort</code>必须返回正确的库顺序..
-    testString: 'assert.deepEqual(topologicalSort(libsSimple), ["bbb", "aaa"], "<code>topologicalSort</code> must return correct library order..");'
+    testString: assert.deepEqual(topologicalSort(libsSimple), ['bbb', 'aaa']);
   - text: <code>topologicalSort</code>必须返回正确的库顺序..
-    testString: 'assert.deepEqual(topologicalSort(libsVHDL), solutionVHDL, "<code>topologicalSort</code> must return correct library order..");'
+    testString: assert.deepEqual(topologicalSort(libsVHDL), solutionVHDL);
   - text: <code>topologicalSort</code>必须返回正确的库顺序..
-    testString: 'assert.deepEqual(topologicalSort(libsCustom), solutionCustom, "<code>topologicalSort</code> must return correct library order..");'
+    testString: assert.deepEqual(topologicalSort(libsCustom), solutionCustom);
   - text: <code>topologicalSort</code>必须忽略不可共享的依赖项。
-    testString: 'assert.deepEqual(topologicalSort(libsUnorderable), solutionUnorderable, "<code>topologicalSort</code> must ignore unorderable dependencies..");'
+    testString: assert.deepEqual(topologicalSort(libsUnorderable), solutionUnorderable);
 
 ```
 

@@ -3,7 +3,7 @@ id: 5900f5311000cf542c510042
 challengeType: 5
 title: 'Problem 451: Modular inverses'
 videoUrl: ''
-localeTitle: ''
+localeTitle: 问题451：模逆
 ---
 
 ## Description
@@ -18,8 +18,8 @@ localeTitle: ''
 
 ```yml
 tests:
-  - text: ''
-    testString: 'assert.strictEqual(euler451(), 153651073760956, "<code>euler451()</code> should return 153651073760956.");'
+  - text: <code>euler451()</code>应该返回153651073760956。
+    testString: assert.strictEqual(euler451(), 153651073760956);
 
 ```
 

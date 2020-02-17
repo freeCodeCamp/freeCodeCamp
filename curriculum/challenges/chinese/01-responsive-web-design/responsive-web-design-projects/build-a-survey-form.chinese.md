@@ -4,7 +4,7 @@ title: Build a Survey Form
 isRequired: true
 challengeType: 3
 forumTopicId: 301145
-localTitle: 制作一个调查表格
+localeTitle: 制作一个调查表格
 ---
 
 ## Description

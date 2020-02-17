@@ -18,9 +18,9 @@ localeTitle: 在对象上创建方法
 ```yml
 tests:
   - text: <code>dog.sayLegs()</code>应该是一个函数。
-    testString: 'assert(typeof(dog.sayLegs) === "function", "<code>dog.sayLegs()</code> should be a function.");'
+    testString: assert(typeof(dog.sayLegs) === 'function');
   - text: <code>dog.sayLegs()</code>应返回给定的字符串 - 请注意标点符号和间距很重要。
-    testString: 'assert(dog.sayLegs() === "This dog has 4 legs.", "<code>dog.sayLegs()</code> should return the given string - note that punctuation and spacing matter.");'
+    testString: assert(dog.sayLegs() === 'This dog has 4 legs.');
 
 ```
 

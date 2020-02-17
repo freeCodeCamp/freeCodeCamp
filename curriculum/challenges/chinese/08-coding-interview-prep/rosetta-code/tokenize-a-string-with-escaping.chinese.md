@@ -20,13 +20,13 @@ localeTitle: 使用转义标记字符串
 ```yml
 tests:
   - text: <code>tokenize</code>是一个函数。
-    testString: 'assert(typeof tokenize === "function", "<code>tokenize</code> is a function.");'
+    testString: assert(typeof tokenize === 'function');
   - text: <code>tokenize</code>应该返回一个数组。
-    testString: 'assert(typeof tokenize("a", "b", "c") === "object", "<code>tokenize</code> should return an array.");'
-  - text: '<code>tokenize(&quot;one^|uno||three^^^^|four^^^|^cuatro|&quot;, &quot;|&quot;, &quot;^&quot;)</code>应返回[“one | uno”，“”，“three ^^” ，“四个^ | cuatro”，“”]“）'
-    testString: 'assert.deepEqual(tokenize(testStr1, "|", "^"), res1, "<code>tokenize("one^|uno||three^^^^|four^^^|^cuatro|", "|", "^") </code> should return ["one|uno", "", "three^^", "four^|cuatro", ""]");'
-  - text: '<code>tokenize(&quot;a@&amp;bcd&amp;ef&amp;&amp;@@hi&quot;, &quot;&amp;&quot;, &quot;@&quot;)</code>应返回<code>[&quot;a&amp;bcd&quot;, &quot;ef&quot;, &quot;&quot;, &quot;@hi&quot;]</code>'
-    testString: 'assert.deepEqual(tokenize(testStr2, "&", "@"), res2, "<code>tokenize("a@&bcd&ef&&@@hi", "&", "@")</code> should return <code>["a&bcd", "ef", "", "@hi"]</code>");'
+    testString: assert(typeof tokenize('a', 'b', 'c') === 'object');
+  - text: <code>tokenize("one^|uno||three^^^^|four^^^|^cuatro|", "|", "^")</code>应返回[“one | uno”，“”，“three ^^” ，“四个^ | cuatro”，“”]“）
+    testString: assert.deepEqual(tokenize(testStr1, '|', '^'), res1);
+  - text: '<code>tokenize("a@&amp;bcd&amp;ef&amp;&amp;@@hi", "&amp;", "@")</code>应返回<code>["a&amp;bcd", "ef", "", "@hi"]</code>'
+    testString: assert.deepEqual(tokenize(testStr2, '&', '@'), res2);
 
 ```
 

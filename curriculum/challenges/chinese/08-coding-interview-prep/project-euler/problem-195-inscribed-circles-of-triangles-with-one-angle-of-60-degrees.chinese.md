@@ -19,7 +19,7 @@ localeTitle: 问题195：内切三角形的圆形，一个角度为60度
 ```yml
 tests:
   - text: <code>euler195()</code>应返回75085391。
-    testString: 'assert.strictEqual(euler195(), 75085391, "<code>euler195()</code> should return 75085391.");'
+    testString: assert.strictEqual(euler195(), 75085391);
 
 ```
 

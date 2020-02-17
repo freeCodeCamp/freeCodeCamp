@@ -18,9 +18,9 @@ localeTitle: 了解功能编程
 ```yml
 tests:
   - text: <code>tea4TeamFCC</code>变量应该为团队提供40杯茶。
-    testString: 'assert(tea4TeamFCC.length === 40, "The <code>tea4TeamFCC</code> variable should hold 40 cups of tea for the team.");'
+    testString: assert(tea4TeamFCC.length === 40);
   - text: <code>tea4TeamFCC</code>变量应该拿着一杯绿茶。
-    testString: 'assert(tea4TeamFCC[0] === "greenTea", "The <code>tea4TeamFCC</code> variable should hold cups of green tea.");'
+    testString: assert(tea4TeamFCC[0] === 'greenTea');
 
 ```
 

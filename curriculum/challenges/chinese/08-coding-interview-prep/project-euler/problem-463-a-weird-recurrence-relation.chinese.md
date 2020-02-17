@@ -19,7 +19,7 @@ localeTitle: 问题463：一种奇怪的复发关系
 ```yml
 tests:
   - text: <code>euler463()</code>应该返回808981553。
-    testString: 'assert.strictEqual(euler463(), 808981553, "<code>euler463()</code> should return 808981553.");'
+    testString: assert.strictEqual(euler463(), 808981553);
 
 ```
 

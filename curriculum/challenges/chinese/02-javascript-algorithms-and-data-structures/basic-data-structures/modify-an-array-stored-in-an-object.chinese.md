@@ -18,11 +18,11 @@ localeTitle: 修改存储在对象中的数组
 ```yml
 tests:
   - text: <code>user</code>对象具有<code>name</code> ， <code>age</code>和<code>data</code>键
-    testString: 'assert("name" in user && "age" in user && "data" in user, "The <code>user</code> object has <code>name</code>, <code>age</code>, and <code>data</code> keys");'
+    testString: assert('name' in user && 'age' in user && 'data' in user);
   - text: <code>addFriend</code>函数接受<code>user</code>对象和<code>friend</code>字符串作为参数，并将朋友添加到<code>user</code>对象中的<code>friends</code>数组
-    testString: 'assert((function() { let L1 = user.data.friends.length; addFriend(user, "Sean"); let L2 = user.data.friends.length; return (L2 === L1 + 1); })(), "The <code>addFriend</code> function accepts a <code>user</code> object and a <code>friend</code> string as arguments and adds the friend to the array of <code>friends</code> in the <code>user</code> object");'
+    testString: assert((function() { let L1 = user.data.friends.length; addFriend(user, 'Sean'); let L2 = user.data.friends.length; return (L2 === L1 + 1); })());
   - text: '<code>addFriend(user, &quot;Pete&quot;)</code>应该返回<code>[&quot;Sam&quot;, &quot;Kira&quot;, &quot;Tomo&quot;, &quot;Pete&quot;]</code>'
-    testString: 'assert.deepEqual((function() { delete user.data.friends; user.data.friends = ["Sam", "Kira", "Tomo"]; return addFriend(user, "Pete") })(), ["Sam", "Kira", "Tomo", "Pete"], "<code>addFriend(user, "Pete")</code> should return <code>["Sam", "Kira", "Tomo", "Pete"]</code>");'
+    testString: assert.deepEqual((function() { delete user.data.friends; user.data.friends = ['Sam', 'Kira', 'Tomo']; return addFriend(user, 'Pete') })(), ['Sam', 'Kira', 'Tomo', 'Pete']);
 
 ```
 

@@ -18,7 +18,7 @@ localeTitle: 使用*从文件导入所有内容
 ```yml
 tests:
   - text: 正确使用<code>import * as</code>语法。
-    testString: 'assert(code.match(/import\s+\*\s+as\s+[a-zA-Z0-9_$]+\s+from\s*"\s*capitalize_strings\s*"\s*;/gi), "Properly uses <code>import * as</code> syntax.");'
+    testString: assert(code.match(/import\s*\*\s*as\s+stringFunctions\s+from\s*('|")\.\/string_functions\.js\1/g));
 
 ```
 

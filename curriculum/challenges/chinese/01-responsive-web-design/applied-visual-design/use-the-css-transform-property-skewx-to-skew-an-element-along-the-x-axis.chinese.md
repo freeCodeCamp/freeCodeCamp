@@ -31,7 +31,7 @@ p {
 ```yml
 tests:
   - text: 'id 为 <code>bottom</code> 的元素应该沿着 X 轴翻转 24 度。'
-    testString: 'assert(code.match(/#bottom\s*?{\s*?.*?\s*?transform:\s*?skewX\(24deg\);/g), ''id 为 <code>bottom</code> 的元素应该沿着 X 轴翻转 24 度。'');'
+    testString: assert(code.match(/#bottom\s*?{\s*?.*?\s*?transform:\s*?skewX\(24deg\);/g));
 
 ```
 

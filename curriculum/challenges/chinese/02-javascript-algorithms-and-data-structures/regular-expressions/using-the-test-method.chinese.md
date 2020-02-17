@@ -18,9 +18,9 @@ localeTitle: 使用测试方法
 ```yml
 tests:
   - text: 你应该使用<code>.test()</code>来测试正则表达式。
-    testString: 'assert(code.match(/myRegex.test\(\s*myString\s*\)/), "You should use <code>.test()</code> to test the regex.");'
+    testString: assert(code.match(/myRegex.test\(\s*myString\s*\)/));
   - text: 您的结果应该返回<code>true</code> 。
-    testString: 'assert(result === true, "Your result should return <code>true</code>.");'
+    testString: assert(result === true);
 
 ```
 

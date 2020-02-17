@@ -19,7 +19,7 @@ localeTitle: 问题199：迭代圆包装
 ```yml
 tests:
   - text: <code>euler199()</code>应该返回0.00396087。
-    testString: 'assert.strictEqual(euler199(), 0.00396087, "<code>euler199()</code> should return 0.00396087.");'
+    testString: assert.strictEqual(euler199(), 0.00396087);
 
 ```
 

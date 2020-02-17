@@ -19,7 +19,7 @@ localeTitle: 问题61：循环图号
 ```yml
 tests:
   - text: <code>euler61()</code>应返回28684。
-    testString: 'assert.strictEqual(euler61(), 28684, "<code>euler61()</code> should return 28684.");'
+    testString: assert.strictEqual(euler61(), 28684);
 
 ```
 

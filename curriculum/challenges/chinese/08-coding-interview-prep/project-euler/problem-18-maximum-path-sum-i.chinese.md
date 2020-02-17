@@ -19,9 +19,9 @@ localeTitle: 问题18：最大路径总和I.
 ```yml
 tests:
   - text: <code>maximumPathSumI(testTriangle)</code>应该返回23。
-    testString: 'assert.strictEqual(maximumPathSumI(testTriangle), 23, "<code>maximumPathSumI(testTriangle)</code> should return 23.");'
+    testString: assert.strictEqual(maximumPathSumI(testTriangle), 23);
   - text: <code>maximumPathSumI(numTriangle)</code>应该返回1074。
-    testString: 'assert.strictEqual(maximumPathSumI(numTriangle), 1074, "<code>maximumPathSumI(numTriangle)</code> should return 1074.");'
+    testString: assert.strictEqual(maximumPathSumI(numTriangle), 1074);
 
 ```
 

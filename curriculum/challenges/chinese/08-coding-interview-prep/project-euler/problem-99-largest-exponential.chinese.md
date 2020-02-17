@@ -19,7 +19,7 @@ localeTitle: 问题99：最大的指数
 ```yml
 tests:
   - text: <code>euler99()</code>应该返回709。
-    testString: 'assert.strictEqual(euler99(), 709, "<code>euler99()</code> should return 709.");'
+    testString: assert.strictEqual(euler99(), 709);
 
 ```
 

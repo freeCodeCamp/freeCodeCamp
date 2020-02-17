@@ -19,7 +19,7 @@ localeTitle: 问题49：主要排列
 ```yml
 tests:
   - text: <code>primePermutations()</code>应该返回296962999629。
-    testString: 'assert.strictEqual(primePermutations(), 296962999629, "<code>primePermutations()</code> should return 296962999629.");'
+    testString: assert.strictEqual(primePermutations(), 296962999629);
 
 ```
 

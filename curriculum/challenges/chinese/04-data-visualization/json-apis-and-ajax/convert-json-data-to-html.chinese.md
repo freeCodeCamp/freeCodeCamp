@@ -18,11 +18,11 @@ localeTitle: 将JSON数据转换为HTML
 ```yml
 tests:
   - text: 您的代码应该将数据存储在<code>html</code>变量中
-    testString: 'assert(code.match(/html\s+?(\+=|=\shtml\s\+)/g), "Your code should store the data in the <code>html</code> variable");'
+    testString: assert(code.match(/html\s+?(\+=|=\shtml\s\+)/g));
   - text: 您的代码应该使用<code>forEach</code>方法来循环API中的JSON数据。
-    testString: 'assert(code.match(/json\.forEach/g), "Your code should use a <code>forEach</code> method to loop over the JSON data from the API.");'
+    testString: assert(code.match(/json\.forEach/g));
   - text: 您的代码应将密钥名称包装在<code>strong</code>标记中。
-    testString: 'assert(code.match(/<strong>.+<\/strong>/g), "Your code should wrap the key names in <code>strong</code> tags.");'
+    testString: assert(code.match(/<strong>.+<\/strong>/g));
 
 ```
 

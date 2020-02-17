@@ -19,7 +19,7 @@ localeTitle: 问题278：半正定的线性组合
 ```yml
 tests:
   - text: <code>euler278()</code>应该返回1228215747273908500。
-    testString: 'assert.strictEqual(euler278(), 1228215747273908500, "<code>euler278()</code> should return 1228215747273908500.");'
+    testString: assert.strictEqual(euler278(), 1228215747273908500);
 
 ```
 

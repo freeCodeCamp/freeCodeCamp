@@ -18,19 +18,19 @@ localeTitle: 匹配具有不同可能性的文字字符串
 ```yml
 tests:
   - text: 你的正则表达式<code>petRegex</code>应该为字符串<code>&quot;John has a pet dog.&quot;</code>返回<code>true</code> <code>&quot;John has a pet dog.&quot;</code>
-    testString: 'assert(petRegex.test("John has a pet dog."), "Your regex <code>petRegex</code> should return <code>true</code> for the string <code>"John has a pet dog."</code>");'
+    testString: assert(petRegex.test('John has a pet dog.'));
   - text: 你的正则表达式<code>petRegex</code>应该为字符串<code>&quot;Emma has a pet rock.&quot;</code>返回<code>false</code> <code>&quot;Emma has a pet rock.&quot;</code>
-    testString: 'assert(!petRegex.test("Emma has a pet rock."), "Your regex <code>petRegex</code> should return <code>false</code> for the string <code>"Emma has a pet rock."</code>");'
+    testString: assert(!petRegex.test('Emma has a pet rock.'));
   - text: 你的正则表达式<code>petRegex</code>应该为字符串<code>&quot;Emma has a pet bird.&quot;</code>返回<code>true</code> <code>&quot;Emma has a pet bird.&quot;</code>
-    testString: 'assert(petRegex.test("Emma has a pet bird."), "Your regex <code>petRegex</code> should return <code>true</code> for the string <code>"Emma has a pet bird."</code>");'
+    testString: assert(petRegex.test('Emma has a pet bird.'));
   - text: 你的正则表达式<code>petRegex</code>应该返回<code>true</code>为字符串<code>&quot;Liz has a pet cat.&quot;</code>
-    testString: 'assert(petRegex.test("Liz has a pet cat."), "Your regex <code>petRegex</code> should return <code>true</code> for the string <code>"Liz has a pet cat."</code>");'
+    testString: assert(petRegex.test('Liz has a pet cat.'));
   - text: 你的正则表达式<code>petRegex</code>应该返回<code>false</code>为<code>&quot;Kara has a pet dolphin.&quot;</code>的字符串<code>&quot;Kara has a pet dolphin.&quot;</code>
-    testString: 'assert(!petRegex.test("Kara has a pet dolphin."), "Your regex <code>petRegex</code> should return <code>false</code> for the string <code>"Kara has a pet dolphin."</code>");'
+    testString: assert(!petRegex.test('Kara has a pet dolphin.'));
   - text: 你的正则表达式<code>petRegex</code>应该返回<code>true</code>为字符串<code>&quot;Alice has a pet fish.&quot;</code>
-    testString: 'assert(petRegex.test("Alice has a pet fish."), "Your regex <code>petRegex</code> should return <code>true</code> for the string <code>"Alice has a pet fish."</code>");'
+    testString: assert(petRegex.test('Alice has a pet fish.'));
   - text: 你的正则表达式<code>petRegex</code>应该返回<code>false</code>为字符串<code>&quot;Jimmy has a pet computer.&quot;</code>
-    testString: 'assert(!petRegex.test("Jimmy has a pet computer."), "Your regex <code>petRegex</code> should return <code>false</code> for the string <code>"Jimmy has a pet computer."</code>");'
+    testString: assert(!petRegex.test('Jimmy has a pet computer.'));
 
 ```
 

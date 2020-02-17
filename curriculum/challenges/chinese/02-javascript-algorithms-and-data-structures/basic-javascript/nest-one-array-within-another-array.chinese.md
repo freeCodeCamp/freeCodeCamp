@@ -18,7 +18,7 @@ localeTitle: 将一个Array嵌套在另一个Array中
 ```yml
 tests:
   - text: <code>myArray</code>应至少有一个嵌套在另一个数组中的数组。
-    testString: 'assert(Array.isArray(myArray) && myArray.some(Array.isArray), "<code>myArray</code> should have at least one array nested within another array.");'
+    testString: assert(Array.isArray(myArray) && myArray.some(Array.isArray));
 
 ```
 

@@ -32,7 +32,7 @@ tests:
   - text: '确保每一个注释都以<code>--&#62;</code>结尾。'
     testString: assert(code.match(/[^fc]-->/g).length > 1);
   - text: '不要更改<code>h1</code>元素、<code>h2</code> 元素、<code>p</code>元素的顺序。'
-    testString: assert((code.match(/<([a-z0-9]){1,2}>/g)[0]==="<h1>" && code.match(/<([a-z0-9]){1,2}>/g)[1]==="<h2>" && code.match(/<([a-z0-9]){1,2}>/g)[2]==="<p>"));
+    testString: assert((code.match(/<([a-z0-9]){1,2}>/g)[0]==="<h1>" && code.match(/<([a-z0-9]){1,2}>/g)[1]==="<h2>" && code.match(/<([a-z0-9]){1,2}>/g)[2]==="<p>") );
 
 ```
 

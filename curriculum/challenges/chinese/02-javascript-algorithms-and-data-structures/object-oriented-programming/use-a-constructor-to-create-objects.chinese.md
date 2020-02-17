@@ -18,9 +18,9 @@ localeTitle: 使用构造函数创建对象
 ```yml
 tests:
   - text: 应该使用<code>Dog</code>构造函数创建<code>hound</code> 。
-    testString: 'assert(hound instanceof Dog, "<code>hound</code> should be created using the <code>Dog</code> constructor.");'
+    testString: assert(hound instanceof Dog);
   - text: 您的代码应该使用<code>new</code>运算符来创建<code>Dog</code>的<code>instance</code> 。
-    testString: 'assert(code.match(/new/g), "Your code should use the <code>new</code> operator to create an <code>instance</code> of <code>Dog</code>.");'
+    testString: assert(code.match(/new/g));
 
 ```
 

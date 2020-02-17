@@ -18,13 +18,13 @@ localeTitle: 了解从函数返回的未定义值
 ```yml
 tests:
   - text: <code>addFive</code>应该是一个函数
-    testString: 'assert(typeof addFive === "function", "<code>addFive</code> should be a function");'
+    testString: assert(typeof addFive === 'function');
   - text: <code>sum</code>应该等于8
-    testString: 'assert(sum === 8, "<code>sum</code> should be equal to 8");'
+    testString: assert(sum === 8);
   - text: <code>addFive</code>返回值应该是<code>undefined</code>
-    testString: 'assert(addFive() === undefined, "Returned value from <code>addFive</code> should be <code>undefined</code>");'
+    testString: assert(addFive() === undefined);
   - text: 在函数内部，向<code>sum</code>变量添加5
-    testString: 'assert(code.match(/(sum\s*\=\s*sum\s*\+\s*5)|(sum\s*\+\=\s*5)/g).length === 1, "Inside of your functions, add 5 to the <code>sum</code> variable");'
+    testString: assert(addFive.toString().replace(/\s/g, '').match(/sum=sum\+5|sum\+=5/));
 
 ```
 

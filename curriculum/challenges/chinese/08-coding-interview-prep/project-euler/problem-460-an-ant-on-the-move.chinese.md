@@ -19,7 +19,7 @@ localeTitle: 问题460：移动中的蚂蚁
 ```yml
 tests:
   - text: <code>euler460()</code>应该返回18.420738199。
-    testString: 'assert.strictEqual(euler460(), 18.420738199, "<code>euler460()</code> should return 18.420738199.");'
+    testString: assert.strictEqual(euler460(), 18.420738199);
 
 ```
 

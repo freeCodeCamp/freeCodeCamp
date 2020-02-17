@@ -19,15 +19,15 @@ localeTitle: 创建Trie搜索树
 ```yml
 tests:
   - text: Trie有一个add方法。
-    testString: 'assert((function testTrie() { var test = false; if (typeof Trie !== "undefined") { test = new Trie() } else { return false; }; return (typeof test.add == "function") }()), "The Trie has an add method.");'
+    testString: assert((function testTrie() { var test = false; if (typeof Trie !== 'undefined') { test = new Trie() } else { return false; }; return (typeof test.add == 'function') }()));
   - text: Trie有一种打印方法。
-    testString: 'assert((function testTrie() { var test = false; if (typeof Trie !== "undefined") { test = new Trie() } else { return false; }; return (typeof test.print == "function") }()), "The Trie has a print method.");'
+    testString: assert((function testTrie() { var test = false; if (typeof Trie !== 'undefined') { test = new Trie() } else { return false; }; return (typeof test.print == 'function') }()));
   - text: Trie有一个isWord方法。
-    testString: 'assert((function testTrie() { var test = false; if (typeof Trie !== "undefined") { test = new Trie() } else { return false; }; return (typeof test.isWord == "function") }()), "The Trie has an isWord method.");'
+    testString: assert((function testTrie() { var test = false; if (typeof Trie !== 'undefined') { test = new Trie() } else { return false; }; return (typeof test.isWord == 'function') }()));
   - text: print方法将添加到trie的所有项目作为数组中的字符串返回。
-    testString: 'assert((function testTrie() { var test = false; if (typeof Trie !== "undefined") { test = new Trie() } else { return false; }; test.add("jump"); test.add("jumps"); test.add("jumped"); test.add("house"); test.add("mouse"); var added = test.print(); return (added.indexOf("jump") != -1 && added.indexOf("jumps") != -1 && added.indexOf("jumped") != -1 && added.indexOf("house") != -1 && added.indexOf("mouse") != -1 && added.length == 5); }()), "The print method returns all items added to the trie as strings in an array.");'
+    testString: assert((function testTrie() { var test = false; if (typeof Trie !== 'undefined') { test = new Trie() } else { return false; }; test.add('jump'); test.add('jumps'); test.add('jumped'); test.add('house'); test.add('mouse'); var added = test.print(); return (added.indexOf('jump') != -1 && added.indexOf('jumps') != -1 && added.indexOf('jumped') != -1 && added.indexOf('house') != -1 && added.indexOf('mouse') != -1 && added.length == 5); }()));
   - text: isWord方法仅对添加到trie的单词返回true，对所有其他单词返回false。
-    testString: 'assert((function testTrie() { var test = false; if (typeof Trie !== "undefined") { test = new Trie() } else { return false; }; test.add("hop"); test.add("hops"); test.add("hopped"); test.add("hoppy"); test.add("hope"); return (test.isWord("hop") && !test.isWord("ho") && test.isWord("hopped") && !test.isWord("hopp") && test.isWord("hoppy") && !test.isWord("hoping")); }()), "The isWord method returns true only for words added to the trie and false for all other words.");'
+    testString: assert((function testTrie() { var test = false; if (typeof Trie !== 'undefined') { test = new Trie() } else { return false; }; test.add('hop'); test.add('hops'); test.add('hopped'); test.add('hoppy'); test.add('hope'); return (test.isWord('hop') && !test.isWord('ho') && test.isWord('hopped') && !test.isWord('hopp') && test.isWord('hoppy') && !test.isWord('hoping')); }()));
 
 ```
 

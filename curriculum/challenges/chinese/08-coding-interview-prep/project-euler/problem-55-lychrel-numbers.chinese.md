@@ -19,15 +19,15 @@ localeTitle: 问题55：Lychrel数字
 ```yml
 tests:
   - text: <code>countLychrelNumbers(1000)</code>应该返回13。
-    testString: 'assert.strictEqual(countLychrelNumbers(1000), 13, "<code>countLychrelNumbers(1000)</code> should return 13.");'
+    testString: assert.strictEqual(countLychrelNumbers(1000), 13);
   - text: <code>countLychrelNumbers(5000)</code>应该返回76。
-    testString: 'assert.strictEqual(countLychrelNumbers(5000), 76, "<code>countLychrelNumbers(5000)</code> should return 76.");'
+    testString: assert.strictEqual(countLychrelNumbers(5000), 76);
   - text: <code>countLychrelNumbers(10000)</code>应该返回249。
-    testString: 'assert.strictEqual(countLychrelNumbers(10000), 249, "<code>countLychrelNumbers(10000)</code> should return 249.");'
+    testString: assert.strictEqual(countLychrelNumbers(10000), 249);
   - text: 你的函数应该计算所有Lychrel数。
-    testString: 'assert.strictEqual(countLychrelNumbers(3243), 39, "Your function should count all Lychrel numbers.");'
+    testString: assert.strictEqual(countLychrelNumbers(3243), 39);
   - text: 您的函数应该通过所有测试用例。
-    testString: 'assert.strictEqual(countLychrelNumbers(7654), 140, "Your function should pass all test cases.");'
+    testString: assert.strictEqual(countLychrelNumbers(7654), 140);
 
 ```
 

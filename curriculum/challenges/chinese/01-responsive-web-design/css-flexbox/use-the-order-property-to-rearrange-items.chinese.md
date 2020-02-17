@@ -23,9 +23,9 @@ localeTitle: 使用 order 属性重新排列项目
 ```yml
 tests:
   - text: '<code>#box-1</code>元素应有<code>order</code>属性，其值应为 2。'
-    testString: assert($('#box-1').css('order') == '2', '<code>#box-1</code>元素应有<code>order</code>属性，其值应为 2。');
+    testString: assert($('#box-1').css('order') == '2');
   - text: '<code>#box-2</code>元素应有<code>order</code>属性，其值应为 1。'
-    testString: assert($('#box-2').css('order') == '1', '<code>#box-2</code>元素应有<code>order</code>属性，其值应为 1。');
+    testString: assert($('#box-2').css('order') == '1');
 
 ```
 

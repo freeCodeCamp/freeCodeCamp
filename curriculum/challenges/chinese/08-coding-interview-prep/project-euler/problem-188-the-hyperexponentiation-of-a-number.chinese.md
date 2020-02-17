@@ -19,7 +19,7 @@ localeTitle: 问题188：数字的过度扩展
 ```yml
 tests:
   - text: <code>euler188()</code>应该返回95962097。
-    testString: 'assert.strictEqual(euler188(), 95962097, "<code>euler188()</code> should return 95962097.");'
+    testString: assert.strictEqual(euler188(), 95962097);
 
 ```
 

@@ -19,9 +19,9 @@ localeTitle: 巴贝奇问题
 ```yml
 tests:
   - text: <code>babbage</code>是一种功能。
-    testString: 'assert(typeof babbage === "function", "<code>babbage</code> is a function.");'
+    testString: assert(typeof babbage === 'function');
   - text: '<code>babbage(99736, 269696)</code>不应该返回99736（答案较小）。'
-    testString: 'assert.equal(babbage(babbageAns, endDigits), answer, "<code>babbage(99736, 269696)</code> should not return 99736 (there is a smaller answer).");'
+    testString: assert.equal(babbage(babbageAns, endDigits), answer);
 
 ```
 

@@ -19,7 +19,7 @@ localeTitle: 问题96：苏杜库
 ```yml
 tests:
   - text: <code>euler96()</code>应返回24702。
-    testString: 'assert.strictEqual(euler96(), 24702, "<code>euler96()</code> should return 24702.");'
+    testString: assert.strictEqual(euler96(), 24702);
 
 ```
 

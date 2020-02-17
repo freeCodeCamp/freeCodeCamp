@@ -19,7 +19,7 @@ localeTitle: 问题385：三角形内的椭圆
 ```yml
 tests:
   - text: <code>euler385()</code>应该返回3776957309612154000。
-    testString: 'assert.strictEqual(euler385(), 3776957309612154000, "<code>euler385()</code> should return 3776957309612154000.");'
+    testString: assert.strictEqual(euler385(), 3776957309612154000);
 
 ```
 

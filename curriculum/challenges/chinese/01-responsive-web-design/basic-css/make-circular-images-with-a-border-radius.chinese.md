@@ -25,7 +25,7 @@ tests:
   - text: '你图片的边框圆角应设置为<code>50%</code>，让它看起来就像一个完整的圆。'
     testString: assert(parseInt($("img").css("border-top-left-radius")) > 48);
   - text: '请确保百分值为<code>50%</code>。'
-    testString: assert(code.match(/50%/g), '请确保百分值为<code>50%</code>。');
+    testString: assert(code.match(/50%/g));
 
 ```
 

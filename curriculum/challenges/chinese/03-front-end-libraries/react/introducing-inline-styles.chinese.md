@@ -19,11 +19,11 @@ localeTitle: 介绍内联样式
 ```yml
 tests:
   - text: 该组件应呈现<code>div</code>元素。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Colorful)); return mockedComponent.children().type() === "div"; })(), "The component should render a <code>div</code> element.");'
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Colorful)); return mockedComponent.children().type() === 'div'; })());
   - text: <code>div</code>元素应该是<code>red</code> 。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Colorful)); return mockedComponent.children().props().style.color === "red"; })(), "The <code>div</code> element should have a color of <code>red</code>.");'
-  - text: ''
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Colorful)); return (mockedComponent.children().props().style.fontSize === 72 || mockedComponent.children().props().style.fontSize === "72" || mockedComponent.children().props().style.fontSize === "72px"); })(), "The <code>div</code> element should have a font size of <code>72px</code>.");'
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Colorful)); return mockedComponent.children().props().style.color === 'red'; })());
+  - text: <code>div</code>元素的字体大小应为<code>72px</code>。
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Colorful)); return (mockedComponent.children().props().style.fontSize === 72 || mockedComponent.children().props().style.fontSize === '72' || mockedComponent.children().props().style.fontSize === '72px'); })());
 
 ```
 

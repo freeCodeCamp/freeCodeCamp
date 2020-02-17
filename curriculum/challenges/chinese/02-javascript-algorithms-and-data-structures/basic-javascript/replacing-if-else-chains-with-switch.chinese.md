@@ -18,25 +18,25 @@ localeTitle: 如果用交换机替换其他链条
 ```yml
 tests:
   - text: 您不应该在编辑器中的任何位置使用任何<code>else</code>语句
-    testString: 'assert(!/else/g.test(code), "You should not use any <code>else</code> statements anywhere in the editor");'
+    testString: assert(!/else/g.test(code));
   - text: 您不应在编辑器中的任何位置使用任何<code>if</code>语句
-    testString: 'assert(!/if/g.test(code), "You should not use any <code>if</code> statements anywhere in the editor");'
+    testString: assert(!/if/g.test(code));
   - text: 你应该至少有四个<code>break</code>语句
-    testString: 'assert(code.match(/break/g).length >= 4, "You should have at least four <code>break</code> statements");'
+    testString: assert(code.match(/break/g).length >= 4);
   - text: <code>chainToSwitch(&quot;bob&quot;)</code>应该是“Marley”
-    testString: 'assert(chainToSwitch("bob") === "Marley", "<code>chainToSwitch("bob")</code> should be "Marley"");'
+    testString: assert(chainToSwitch("bob") === "Marley");
   - text: <code>chainToSwitch(42)</code>应该是“答案”
-    testString: 'assert(chainToSwitch(42) === "The Answer", "<code>chainToSwitch(42)</code> should be "The Answer"");'
+    testString: assert(chainToSwitch(42) === "The Answer");
   - text: <code>chainToSwitch(1)</code>应该是“没有＃1”
-    testString: 'assert(chainToSwitch(1) === "There is no #1", "<code>chainToSwitch(1)</code> should be "There is no #1"");'
+    testString: "assert(chainToSwitch(1) === \"There is no #1\");"
   - text: <code>chainToSwitch(99)</code>应该是“错过了我这么多！”
-    testString: 'assert(chainToSwitch(99) === "Missed me by this much!", "<code>chainToSwitch(99)</code> should be "Missed me by this much!"");'
+    testString: assert(chainToSwitch(99) === "Missed me by this much!");
   - text: <code>chainToSwitch(7)</code>应该是“Ate Nine”
-    testString: 'assert(chainToSwitch(7) === "Ate Nine", "<code>chainToSwitch(7)</code> should be "Ate Nine"");'
+    testString: assert(chainToSwitch(7) === "Ate Nine");
   - text: <code>chainToSwitch(&quot;John&quot;)</code>应为“”（空字符串）
-    testString: 'assert(chainToSwitch("John") === "", "<code>chainToSwitch("John")</code> should be "" (empty string)");'
+    testString: assert(chainToSwitch("John") === "");
   - text: <code>chainToSwitch(156)</code>应为“”（空字符串）
-    testString: 'assert(chainToSwitch(156) === "", "<code>chainToSwitch(156)</code> should be "" (empty string)");'
+    testString: assert(chainToSwitch(156) === "");
 
 ```
 

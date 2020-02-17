@@ -18,13 +18,13 @@ localeTitle: 使用JavaScript增加数字
 ```yml
 tests:
   - text: <code>myVar</code>应该等于<code>88</code>
-    testString: 'assert(myVar === 88, "<code>myVar</code> should equal <code>88</code>");'
+    testString: assert(myVar === 88);
   - text: <code>myVar = myVar + 1;</code>应该改变
-    testString: 'assert(/var\s*myVar\s*=\s*87;\s*\/*.*\s*([+]{2}\s*myVar|myVar\s*[+]{2});/.test(code), "<code>myVar = myVar + 1;</code> should be changed");'
+    testString: assert(/var\s*myVar\s*=\s*87;\s*\/*.*\s*([+]{2}\s*myVar|myVar\s*[+]{2});/.test(code));
   - text: 使用<code>++</code>运算符
-    testString: 'assert(/[+]{2}\s*myVar|myVar\s*[+]{2}/.test(code), "Use the <code>++</code> operator");'
+    testString: assert(/[+]{2}\s*myVar|myVar\s*[+]{2}/.test(code));
   - text: 不要更改行上方的代码
-    testString: 'assert(/var myVar = 87;/.test(code), "Do not change code above the line");'
+    testString: assert(/var myVar = 87;/.test(code));
 
 ```
 

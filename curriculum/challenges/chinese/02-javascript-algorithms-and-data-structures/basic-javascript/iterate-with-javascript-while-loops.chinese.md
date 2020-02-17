@@ -18,9 +18,9 @@ localeTitle: 在循环时使用JavaScript进行迭代
 ```yml
 tests:
   - text: 你应该使用<code>while</code>循环。
-    testString: 'assert(code.match(/while/g), "You should be using a <code>while</code> loop for this.");'
+    testString: assert(code.match(/while/g));
   - text: '<code>myArray</code>应该等于<code>[0,1,2,3,4]</code> 。'
-    testString: 'assert.deepEqual(myArray, [0,1,2,3,4], "<code>myArray</code> should equal <code>[0,1,2,3,4]</code>.");'
+    testString: assert.deepEqual(myArray, [5,4,3,2,1,0]);
 
 ```
 

@@ -23,7 +23,7 @@ localeTitle: 使用 grid-row 来控制空间大小
 ```yml
 tests:
   - text: '<code>item5</code>类应该有<code>grid-row</code>属性且值为<code>2 / 4</code>。'
-    testString: 'assert(code.match(/.item5\s*?{[\s\S]*grid-row\s*?:\s*?2\s*?\/\s*?4\s*?;[\s\S]*}/gi));'
+    testString: assert($('style').text().replace(/\s/g, '').match(/\.item5{.*grid-row:.*}/g));
   - text: '<code>item5</code> class 应该有 <code>grid-row</code> 属性使其占用网格最后两行。'
     testString: "
       const rowStart = getComputedStyle($('.item5')[0]).gridRowStart;

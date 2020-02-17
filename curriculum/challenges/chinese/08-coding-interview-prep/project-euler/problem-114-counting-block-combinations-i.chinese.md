@@ -19,7 +19,7 @@ localeTitle: 问题114：计数块组合I
 ```yml
 tests:
   - text: <code>euler114()</code>应该返回16475640049。
-    testString: 'assert.strictEqual(euler114(), 16475640049, "<code>euler114()</code> should return 16475640049.");'
+    testString: assert.strictEqual(euler114(), 16475640049);
 
 ```
 

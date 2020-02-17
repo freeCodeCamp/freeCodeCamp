@@ -19,7 +19,7 @@ localeTitle: 问题62：立方排列
 ```yml
 tests:
   - text: <code>euler62()</code>应该返回127035954683。
-    testString: 'assert.strictEqual(euler62(), 127035954683, "<code>euler62()</code> should return 127035954683.");'
+    testString: assert.strictEqual(euler62(), 127035954683);
 
 ```
 

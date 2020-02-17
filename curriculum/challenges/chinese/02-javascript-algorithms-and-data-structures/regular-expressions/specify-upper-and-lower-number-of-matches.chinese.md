@@ -18,19 +18,19 @@ localeTitle: 指定上下匹配数
 ```yml
 tests:
   - text: 你的正则表达式应该使用大括号。
-    testString: 'assert(ohRegex.source.match(/{.*?}/).length > 0, "Your regex should use curly brackets.");'
+    testString: assert(ohRegex.source.match(/{.*?}/).length > 0);
   - text: 你的正则表达式不应该匹配<code>&quot;Ohh no&quot;</code>
-    testString: 'assert(!ohRegex.test("Ohh no"), "Your regex should not match <code>"Ohh no"</code>");'
+    testString: assert(!ohRegex.test("Ohh no"));
   - text: 你的正则表达式应该匹配<code>&quot;Ohhh no&quot;</code>
-    testString: 'assert(ohRegex.test("Ohhh no"), "Your regex should match <code>"Ohhh no"</code>");'
+    testString: assert("Ohhh no".match(ohRegex)[0].length === 7);
   - text: 你的正则表达式应该匹配<code>&quot;Ohhhh no&quot;</code>
-    testString: 'assert(ohRegex.test("Ohhhh no"), "Your regex should match <code>"Ohhhh no"</code>");'
+    testString: assert("Ohhhh no".match(ohRegex)[0].length === 8);
   - text: 你的正则表达式应该匹配<code>&quot;Ohhhhh no&quot;</code>
-    testString: 'assert(ohRegex.test("Ohhhhh no"), "Your regex should match <code>"Ohhhhh no"</code>");'
+    testString: assert("Ohhhhh no".match(ohRegex)[0].length === 9);
   - text: 你的正则表达式应该匹配<code>&quot;Ohhhhhh no&quot;</code>
-    testString: 'assert(ohRegex.test("Ohhhhhh no"), "Your regex should match <code>"Ohhhhhh no"</code>");'
+    testString: assert("Ohhhhhh no".match(ohRegex)[0].length === 10);
   - text: 你的正则表达式不应该匹配<code>&quot;Ohhhhhhh no&quot;</code>
-    testString: 'assert(!ohRegex.test("Ohhhhhhh no"), "Your regex should not match <code>"Ohhhhhhh no"</code>");'
+    testString: assert(!ohRegex.test("Ohhhhhhh no"));
 
 ```
 

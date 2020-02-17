@@ -19,7 +19,7 @@ localeTitle: 问题374：最大整数分区产品
 ```yml
 tests:
   - text: <code>euler374()</code>应该返回334420941。
-    testString: 'assert.strictEqual(euler374(), 334420941, "<code>euler374()</code> should return 334420941.");'
+    testString: assert.strictEqual(euler374(), 334420941);
 
 ```
 

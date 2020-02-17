@@ -18,11 +18,11 @@ localeTitle: 匹配文字字符串
 ```yml
 tests:
   - text: 你的正则表达式<code>waldoRegex</code>应该找到<code>&quot;Waldo&quot;</code>
-    testString: 'assert(waldoRegex.test(waldoIsHiding), "Your regex <code>waldoRegex</code> should find <code>"Waldo"</code>");'
+    testString: assert(waldoRegex.test(waldoIsHiding));
   - text: 你的正则表达式<code>waldoRegex</code>不应该搜索任何其他内容。
-    testString: 'assert(!waldoRegex.test("Somewhere is hiding in this text."), "Your regex <code>waldoRegex</code> should not search for anything else.");'
+    testString: assert(!waldoRegex.test('Somewhere is hiding in this text.'));
   - text: 您应该与正则表达式执行文字字符串匹配。
-    testString: 'assert(!/\/.*\/i/.test(code), "You should perform a literal string match with your regex.");'
+    testString: assert(!/\/.*\/i/.test(code));
 
 ```
 

@@ -19,7 +19,7 @@ localeTitle: 问题275：平衡雕塑
 ```yml
 tests:
   - text: <code>euler275()</code>应返回15030564。
-    testString: 'assert.strictEqual(euler275(), 15030564, "<code>euler275()</code> should return 15030564.");'
+    testString: assert.strictEqual(euler275(), 15030564);
 
 ```
 

@@ -19,7 +19,7 @@ localeTitle: 问题324：建造一座塔楼
 ```yml
 tests:
   - text: <code>euler324()</code>应该返回96972774。
-    testString: 'assert.strictEqual(euler324(), 96972774, "<code>euler324()</code> should return 96972774.");'
+    testString: assert.strictEqual(euler324(), 96972774);
 
 ```
 

@@ -19,7 +19,7 @@ localeTitle: 问题397：抛物线上的三角形
 ```yml
 tests:
   - text: <code>euler397()</code>应该返回141630459461893730。
-    testString: 'assert.strictEqual(euler397(), 141630459461893730, "<code>euler397()</code> should return 141630459461893730.");'
+    testString: assert.strictEqual(euler397(), 141630459461893730);
 
 ```
 

@@ -18,9 +18,9 @@ localeTitle: 使用括号表示法查找字符串中的第一个字符
 ```yml
 tests:
   - text: <code>firstLetterOfLastName</code>变量的值应为<code>L</code>
-    testString: 'assert(firstLetterOfLastName === "L", "The <code>firstLetterOfLastName</code> variable should have the value of <code>L</code>.");'
+    testString: assert(firstLetterOfLastName === 'L');
   - text: 您应该使用括号表示法。
-    testString: 'assert(code.match(/firstLetterOfLastName\s*?=\s*?lastName\[.*?\]/), "You should use bracket notation.");'
+    testString: assert(code.match(/firstLetterOfLastName\s*?=\s*?lastName\[.*?\]/));
 
 ```
 

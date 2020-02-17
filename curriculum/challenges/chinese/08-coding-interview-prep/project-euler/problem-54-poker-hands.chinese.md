@@ -19,7 +19,7 @@ localeTitle: 问题54：扑克手
 ```yml
 tests:
   - text: <code>euler54()</code>应该返回376。
-    testString: 'assert.strictEqual(euler54(), 376, "<code>euler54()</code> should return 376.");'
+    testString: assert.strictEqual(euler54(), 376);
 
 ```
 

@@ -23,7 +23,7 @@ localeTitle: 使用 flex-direction 在嵌入推文中创建一列
 ```yml
 tests:
   - text: '<code>.profile-name</code>应有<code>flex-direction</code>属性，其值应为 column。'
-    testString: assert($('.profile-name').css('flex-direction') == 'column', '<code>.profile-name</code>应有<code>flex-direction</code>属性，其值应为 column。');
+    testString: assert($('.profile-name').css('flex-direction') == 'column');
 
 ```
 

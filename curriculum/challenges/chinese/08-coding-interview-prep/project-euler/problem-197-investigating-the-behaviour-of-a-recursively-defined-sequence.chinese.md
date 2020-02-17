@@ -19,7 +19,7 @@ localeTitle: 问题197：研究递归定义的序列的行为
 ```yml
 tests:
   - text: <code>euler197()</code>应该返回1.710637717。
-    testString: 'assert.strictEqual(euler197(), 1.710637717, "<code>euler197()</code> should return 1.710637717.");'
+    testString: assert.strictEqual(euler197(), 1.710637717);
 
 ```
 

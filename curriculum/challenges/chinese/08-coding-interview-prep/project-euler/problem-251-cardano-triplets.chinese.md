@@ -19,7 +19,7 @@ localeTitle: 问题251：卡尔达诺三胞胎
 ```yml
 tests:
   - text: <code>euler251()</code>应该返回18946051。
-    testString: 'assert.strictEqual(euler251(), 18946051, "<code>euler251()</code> should return 18946051.");'
+    testString: assert.strictEqual(euler251(), 18946051);
 
 ```
 

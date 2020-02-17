@@ -18,9 +18,9 @@ localeTitle: 从JavaScript对象中删除属性
 ```yml
 tests:
   - text: 从<code>myDog</code>删除属性<code>&quot;tails&quot;</code> 。
-    testString: 'assert(typeof myDog === "object" && myDog.tails === undefined, "Delete the property <code>"tails"</code> from <code>myDog</code>.");'
+    testString: assert(typeof myDog === "object" && myDog.tails === undefined);
   - text: 不要修改<code>myDog</code>设置
-    testString: 'assert(code.match(/"tails": 1/g).length > 1, "Do not modify the <code>myDog</code> setup");'
+    testString: 'assert(code.match(/"tails": 1/g).length > 1);'
 
 ```
 

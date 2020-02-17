@@ -19,7 +19,7 @@ localeTitle: 问题470：超级拉姆沃克
 ```yml
 tests:
   - text: <code>euler470()</code>应该返回147668794。
-    testString: 'assert.strictEqual(euler470(), 147668794, "<code>euler470()</code> should return 147668794.");'
+    testString: assert.strictEqual(euler470(), 147668794);
 
 ```
 

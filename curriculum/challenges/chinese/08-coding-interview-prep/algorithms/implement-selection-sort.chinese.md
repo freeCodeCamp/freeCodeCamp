@@ -19,13 +19,13 @@ localeTitle: 实施选择排序
 ```yml
 tests:
   - text: <code>selectionSort</code>是一个函数。
-    testString: 'assert(typeof selectionSort == "function", "<code>selectionSort</code> is a function.");'
+    testString: assert(typeof selectionSort == 'function');
   - text: <code>selectionSort</code>返回一个排序数组（从最小到最大）。
-    testString: 'assert(isSorted(selectionSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])), "<code>selectionSort</code> returns a sorted array (least to greatest).");'
+    testString: assert(isSorted(selectionSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])));
   - text: <code>selectionSort</code>返回一个除订单外没有变化的数组。
-    testString: 'assert.sameMembers(selectionSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]), [1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92], "<code>selectionSort</code> returns an array that is unchanged except for order.");'
+    testString: assert.sameMembers(selectionSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]), [1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]);
   - text: <code>selectionSort</code>不应使用内置的<code>.sort()</code>方法。
-    testString: 'assert.strictEqual(code.search(/\.sort\(/), -1, "<code>selectionSort</code> should not use the built-in <code>.sort()</code> method.");'
+    testString: assert.strictEqual(code.search(/\.sort\(/), -1);
 
 ```
 

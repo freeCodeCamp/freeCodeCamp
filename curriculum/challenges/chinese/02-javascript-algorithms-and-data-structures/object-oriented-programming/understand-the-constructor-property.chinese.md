@@ -18,11 +18,11 @@ localeTitle: 理解构造函数属性
 ```yml
 tests:
   - text: <code>joinDogFraternity</code>应该被定义为一个函数。
-    testString: 'assert(typeof(joinDogFraternity) === "function", "<code>joinDogFraternity</code> should be defined as a function.");'
+    testString: assert(typeof(joinDogFraternity) === 'function');
   - text: 如果<code>candidate</code>是<code>Dog</code>一个实例， <code>joinDogFraternity</code>应该返回true。
-    testString: 'assert(joinDogFraternity(new Dog("")) === true, "<code>joinDogFraternity</code> should return true if<code>candidate</code> is an instance of <code>Dog</code>.");'
+    testString: assert(joinDogFraternity(new Dog("")) === true);
   - text: <code>joinDogFraternity</code>应该使用<code>constructor</code>属性。
-    testString: 'assert(/\.constructor/.test(code) && !/instanceof/.test(code), "<code>joinDogFraternity</code> should use the <code>constructor</code> property.");'
+    testString: assert(/\.constructor/.test(code) && !/instanceof/.test(code));
 
 ```
 

@@ -19,7 +19,7 @@ localeTitle: 问题350：约束最小和最小
 ```yml
 tests:
   - text: <code>euler350()</code>应该返回84664213。
-    testString: 'assert.strictEqual(euler350(), 84664213, "<code>euler350()</code> should return 84664213.");'
+    testString: assert.strictEqual(euler350(), 84664213);
 
 ```
 

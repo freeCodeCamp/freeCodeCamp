@@ -24,9 +24,9 @@ flex 子项目的最后一个属性是<code>align-self</code>。这个属性允�
 ```yml
 tests:
   - text: '<code>#box-1</code>元素应有<code>align-self</code>属性，其值应为 center。'
-    testString: assert($('#box-1').css('align-self') == 'center', '<code>#box-1</code>元素应有<code>align-self</code>属性，其值应为 center。');
+    testString: assert($('#box-1').css('align-self') == 'center');
   - text: '<code>#box-2</code>元素应有<code>align-self</code>属性，其值应为 flex-end。'
-    testString: assert($('#box-2').css('align-self') == 'flex-end', '<code>#box-2</code>元素应有<code>align-self</code>属性，其值应为 flex-end。');
+    testString: assert($('#box-2').css('align-self') == 'flex-end');
 
 ```
 

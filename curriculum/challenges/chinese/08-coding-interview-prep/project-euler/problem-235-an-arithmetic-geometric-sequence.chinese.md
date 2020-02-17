@@ -19,7 +19,7 @@ localeTitle: 问题235：算术几何序列
 ```yml
 tests:
   - text: <code>euler235()</code>应该返回1.002322108633。
-    testString: 'assert.strictEqual(euler235(), 1.002322108633, "<code>euler235()</code> should return 1.002322108633.");'
+    testString: assert.strictEqual(euler235(), 1.002322108633);
 
 ```
 

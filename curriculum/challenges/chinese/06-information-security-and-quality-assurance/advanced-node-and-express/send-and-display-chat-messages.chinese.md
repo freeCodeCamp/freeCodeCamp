@@ -19,9 +19,9 @@ localeTitle: 发送和显示聊天消息
 ```yml
 tests:
   - text: 服务器侦听“聊天消息”，然后正确发出
-    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /socket.on.*("|")chat message("|")[^]*io.emit.*("|")chat message("|").*name.*message/gi, "Your server should listen to the socket for "chat message" then emit to all users "chat message" with name and message in the data object"); }, xhr => { throw new Error(xhr.statusText); })'
+    testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /socket.on.*('|")chat message('|")[^]*io.emit.*('|")chat message('|").*name.*message/gi, 'Your server should listen to the socket for "chat message" then emit to all users "chat message" with name and message in the data object'); }, xhr => { throw new Error(xhr.statusText); })
   - text: 客户端正确处理和显示事件“聊天消息”中的新数据
-    testString: 'getUserInput => $.get(getUserInput("url")+ "/public/client.js") .then(data => { assert.match(data, /socket.on.*("|")chat message("|")[^]*messages.*li/gi, "You should append a list item to #messages on your client within the "chat message" event listener to display the new message"); }, xhr => { throw new Error(xhr.statusText); })'
+    testString: "getUserInput => $.get(getUserInput('url')+ '/public/client.js') .then(data => { assert.match(data, /socket.on.*('|\")chat message('|\")[^]*messages.*li/gi, 'You should append a list item to #messages on your client within the \"chat message\" event listener to display the new message'); }, xhr => { throw new Error(xhr.statusText); })"
 
 ```
 

@@ -18,11 +18,11 @@ localeTitle: 匹配字母的字母
 ```yml
 tests:
   - text: 你的正则表达式<code>alphabetRegex</code>应该匹配35项。
-    testString: 'assert(result.length == 35, "Your regex <code>alphabetRegex</code> should match 35 items.");'
+    testString: assert(result.length == 35);
   - text: 你的正则表达式<code>alphabetRegex</code>应该使用全局标志。
-    testString: 'assert(alphabetRegex.flags.match(/g/).length == 1, "Your regex <code>alphabetRegex</code> should use the global flag.");'
+    testString: assert(alphabetRegex.flags.match(/g/).length == 1);
   - text: 你的正则表达式<code>alphabetRegex</code>应该使用不区分大小写的标志。
-    testString: 'assert(alphabetRegex.flags.match(/i/).length == 1, "Your regex <code>alphabetRegex</code> should use the case insensitive flag.");'
+    testString: assert(alphabetRegex.flags.match(/i/).length == 1);
 
 ```
 

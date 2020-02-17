@@ -31,7 +31,7 @@ localeTitle: 使用 grid-area 属性将项目放置在网格区域中
 ```yml
 tests:
   - text: '<code>item5</code>类应该有<code>grid-area</code>属性且值为<code>footer</code>。'
-    testString: 'assert(code.match(/.item5\s*?{[\s\S]*grid-area\s*?:\s*?footer\s*?;[\s\S]*}/gi));'
+    testString: assert(code.match(/.item5\s*?{[\s\S]*grid-area\s*?:\s*?footer\s*?;[\s\S]*}/gi));
 
 ```
 

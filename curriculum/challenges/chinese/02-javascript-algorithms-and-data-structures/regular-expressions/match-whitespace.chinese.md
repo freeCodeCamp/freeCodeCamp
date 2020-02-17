@@ -18,15 +18,15 @@ localeTitle: 匹配空白
 ```yml
 tests:
   - text: 你的正则表达式应该使用全局标志。
-    testString: 'assert(countWhiteSpace.global, "Your regex should use the global flag.");'
+    testString: assert(countWhiteSpace.global);
   - text: 你的正则表达式应该使用速记字符
-    testString: 'assert(/\\s/.test(countWhiteSpace.source), "Your regex should use the shorthand character <code>\s</code> to match all whitespace characters.");'
+    testString: assert(/\\s/.test(countWhiteSpace.source));
   - text: 你的正则表达式应该在<code>&quot;Men are from Mars and women are from Venus.&quot;</code>找到八个空格<code>&quot;Men are from Mars and women are from Venus.&quot;</code>
-    testString: 'assert("Men are from Mars and women are from Venus.".match(countWhiteSpace).length == 8, "Your regex should find eight spaces in <code>"Men are from Mars and women are from Venus."</code>");'
+    testString: assert("Men are from Mars and women are from Venus.".match(countWhiteSpace).length == 8);
   - text: '你的正则表达式应该在<code>&quot;Space: the final frontier.&quot;</code>找到三个空格<code>&quot;Space: the final frontier.&quot;</code>'
-    testString: 'assert("Space: the final frontier.".match(countWhiteSpace).length == 3, "Your regex should find three spaces in <code>"Space: the final frontier."</code>");'
-  - text: ''
-    testString: 'assert("MindYourPersonalSpace".match(countWhiteSpace) == null, "Your regex should find no spaces in <code>"MindYourPersonalSpace"</code>");'
+    testString: 'assert("Space: the final frontier.".match(countWhiteSpace).length == 3);'
+  - text: 您的正则表达式应该在<code>"MindYourPersonalSpace"</code>中找不到空格
+    testString: assert("MindYourPersonalSpace".match(countWhiteSpace) == null);
 
 ```
 

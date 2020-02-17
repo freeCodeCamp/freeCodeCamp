@@ -19,7 +19,7 @@ localeTitle: 问题178：步骤编号
 ```yml
 tests:
   - text: <code>euler178()</code>应该返回126461847755。
-    testString: 'assert.strictEqual(euler178(), 126461847755, "<code>euler178()</code> should return 126461847755.");'
+    testString: assert.strictEqual(euler178(), 126461847755);
 
 ```
 

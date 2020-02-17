@@ -25,9 +25,9 @@ CSS 里面的 <code>text-transform</code> 属性来改变英文中字母的大�
 ```yml
 tests:
   - text: '<code>h4</code> 内的英文的所有字母应该为大写。'
-    testString: assert($('h4').css('text-transform') === 'uppercase', '<code>h4</code> 内的英文的所有字母应该为大写。');
+    testString: assert($('h4').css('text-transform') === 'uppercase');
   - text: '<code>h4</code> 内的原文不能被改变。'
-    testString: assert(($('h4').text() !== $('h4').text().toUpperCase()), '<code>h4</code> 内的原文不能被改变。');
+    testString: assert(($('h4').text() !== $('h4').text().toUpperCase()));
 
 ```
 

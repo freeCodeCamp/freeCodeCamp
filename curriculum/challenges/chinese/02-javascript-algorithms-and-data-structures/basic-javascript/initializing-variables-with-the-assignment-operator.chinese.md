@@ -18,7 +18,7 @@ localeTitle: 使用赋值运算符初始化变量
 ```yml
 tests:
   - text: 将<code>a</code>初始化为值<code>9</code>
-    testString: 'assert(/var\s+a\s*=\s*9\s*/.test(code), "Initialize <code>a</code> to a value of <code>9</code>");'
+    testString: assert(/var\s+a\s*=\s*9\s*/.test(code));
 
 ```
 

@@ -26,9 +26,9 @@ Camper Cat 正在尝试为他的博客文本与背景使用颜色，但是他目
 ```yml
 tests:
   - text: '你应该将<code>color</code>属性的亮度值设置为 15%。'
-    testString: 'assert(code.match(/color:\s*?hsl\(0,\s*?55%,\s*?15%\)/gi));'
+    testString: assert(code.match(/color:\s*?hsl\(0,\s*?55%,\s*?15%\)/gi));
   - text: '你应该将<code>background-color</code>属性的亮度值设置为 55%。'
-    testString: 'assert(code.match(/background-color:\s*?hsl\(120,\s*?25%,\s*?55%\)/gi));'
+    testString: assert(code.match(/background-color:\s*?hsl\(120,\s*?25%,\s*?55%\)/gi));
 
 ```
 

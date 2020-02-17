@@ -19,7 +19,7 @@ localeTitle: 问题175：涉及不同方式的数量的分数数字可以表示�
 ```yml
 tests:
   - text: '<code>euler175()</code>应该返回1,13717420,8。'
-    testString: 'assert.strictEqual(euler175(), 1, 13717420, 8, "<code>euler175()</code> should return 1, 13717420, 8.");'
+    testString: assert.strictEqual(euler175(), 1, 13717420, 8);
 
 ```
 

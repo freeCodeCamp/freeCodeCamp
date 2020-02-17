@@ -19,7 +19,7 @@ localeTitle: 问题259：可达号码
 ```yml
 tests:
   - text: <code>euler259()</code>应返回20101196798。
-    testString: 'assert.strictEqual(euler259(), 20101196798, "<code>euler259()</code> should return 20101196798.");'
+    testString: assert.strictEqual(euler259(), 20101196798);
 
 ```
 

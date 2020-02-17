@@ -30,7 +30,7 @@ HTML 是英文 Hyper Text Markup Language（超文本标记语言）的缩写。
 ```yml
 tests:
   - text: '<code>h1</code>元素的内容应该为：<code>Hello World</code>。'
-    testString: assert.isTrue((/^hello(\s)+world$/gi).test($('h1').text()));
+    testString: assert.isTrue((/hello(\s)+world/gi).test($('h1').text()));
 
 ```
 

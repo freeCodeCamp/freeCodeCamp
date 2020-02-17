@@ -18,7 +18,7 @@ localeTitle: 请记住在更改原型时设置构造函数属性
 ```yml
 tests:
   - text: <code>Dog.prototype</code>应该设置<code>constructor</code>属性。
-    testString: 'assert(Dog.prototype.constructor === Dog, "<code>Dog.prototype</code> should set the <code>constructor</code> property.");'
+    testString: assert(Dog.prototype.constructor === Dog);
 
 ```
 

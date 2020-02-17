@@ -18,9 +18,9 @@ localeTitle: 了解布尔值
 ```yml
 tests:
   - text: <code>welcomeToBooleans()</code>函数应该返回一个布尔值（true / false）。
-    testString: 'assert(typeof welcomeToBooleans() === "boolean", "The <code>welcomeToBooleans()</code> function should return a boolean &#40;true/false&#41; value.");'
+    testString: assert(typeof welcomeToBooleans() === 'boolean');
   - text: <code>welcomeToBooleans()</code>应该返回true。
-    testString: 'assert(welcomeToBooleans() === true, "<code>welcomeToBooleans()</code> should return true.");'
+    testString: assert(welcomeToBooleans() === true);
 
 ```
 

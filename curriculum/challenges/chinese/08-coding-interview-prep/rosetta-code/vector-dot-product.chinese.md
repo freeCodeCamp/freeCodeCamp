@@ -19,17 +19,17 @@ localeTitle: 矢量点积
 ```yml
 tests:
   - text: dotProduct必须是一个函数
-    testString: 'assert.equal(typeof dotProduct, "function", "dotProduct must be a function");'
+    testString: assert.equal(typeof dotProduct, 'function');
   - text: dotProduct（）必须返回null
-    testString: 'assert.equal(dotProduct(), null, "dotProduct() must return null");'
+    testString: assert.equal(dotProduct(), null);
   - text: 'dotProduct（[[1]，[1]]）必须返回1。'
-    testString: 'assert.equal(dotProduct([1], [1]), 1, "dotProduct([[1], [1]]) must return 1.");'
+    testString: assert.equal(dotProduct([1], [1]), 1);
   - text: 'dotProduct（[[1]，[1,2]]）必须返回null。'
-    testString: 'assert.equal(dotProduct([1], [1, 2]), null, "dotProduct([[1], [1, 2]]) must return null.");'
+    testString: assert.equal(dotProduct([1], [1, 2]), null);
   - text: 'dotProduct（[1,3，-5]，[4，-2，-1]）必须返回3。'
-    testString: 'assert.equal(dotProduct([1, 3, -5], [4, -2, -1]), 3, "dotProduct([1, 3, -5], [4, -2, -1]) must return 3.");'
+    testString: assert.equal(dotProduct([1, 3, -5], [4, -2, -1]), 3);
   - text: <code>dotProduct(...nVectors)</code>应该返回<code>dotProduct(...nVectors)</code>
-    testString: 'assert.equal(dotProduct([ 0, 1, 2, 3, 4 ], [ 0, 2, 4, 6, 8 ], [ 0, 3, 6, 9, 12 ], [ 0, 4, 8, 12, 16 ], [ 0, 5, 10, 15, 20 ]), 156000, "<code>dotProduct(...nVectors)</code> should return 156000");'
+    testString: assert.equal(dotProduct([ 0, 1, 2, 3, 4 ], [ 0, 2, 4, 6, 8 ], [ 0, 3, 6, 9, 12 ], [ 0, 4, 8, 12, 16 ], [ 0, 5, 10, 15, 20 ]), 156000);
 
 ```
 

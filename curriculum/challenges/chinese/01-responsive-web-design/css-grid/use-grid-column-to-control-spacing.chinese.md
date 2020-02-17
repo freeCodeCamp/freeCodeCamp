@@ -34,7 +34,7 @@ grid-column: 1 / 3;
 ```yml
 tests:
   - text: '<code>item5</code>类应该有<code>grid-column</code>属性且其值为<code>2 / 4</code>。'
-    testString: 'assert(code.match(/.item5\s*?{[\s\S]*grid-column\s*?:\s*?2\s*?\/\s*?4\s*?;[\s\S]*}/gi));'
+    testString: assert($('style').text().replace(/\s/g, '').match(/\.item5{.*grid-column:.*}/g));
   - text: '<code>item5</code> 类应该有 <code>grid-column</code> 属性使其占用网格最后两列。'
     testString: "
       const colStart = getComputedStyle($('.item5')[0]).gridColumnStart;

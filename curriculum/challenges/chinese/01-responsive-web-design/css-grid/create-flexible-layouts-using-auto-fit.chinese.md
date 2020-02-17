@@ -24,7 +24,7 @@ localeTitle: 使用 auto-fit 创建弹性布局
 ```yml
 tests:
   - text: '<code>container2</code>类应该有<code>grid-template-columns</code>属性，且使用<code>repeat</code>和<code>auto-fit</code>以便将最小宽度为<code>60px</code>，最大宽度为<code>1fr</code>的列放入网格。'
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?repeat\s*?\(\s*?auto-fit\s*?,\s*?minmax\s*?\(\s*?60px\s*?,\s*?1fr\s*?\)\s*?\)\s*?;[\s\S]*}/gi));'
+    testString: assert(code.match(/.container2\s*?{[\s\S]*grid-template-columns\s*?:\s*?repeat\s*?\(\s*?auto-fit\s*?,\s*?minmax\s*?\(\s*?60px\s*?,\s*?1fr\s*?\)\s*?\)\s*?;[\s\S]*}/gi));
 
 ```
 

@@ -18,11 +18,11 @@ localeTitle: 匹配出现一次或多次的字符
 ```yml
 tests:
   - text: 你的正则表达式<code>myRegex</code>应该使用<code>+</code>符号来匹配一个或多个<code>s</code>字符。
-    testString: 'assert(/\+/.test(myRegex.source), "Your regex <code>myRegex</code> should use the <code>+</code> sign to match one or more <code>s</code> characters.");'
+    testString: assert(/\+/.test(myRegex.source));
   - text: 你的正则表达式<code>myRegex</code>应该匹配2个项目。
-    testString: 'assert(result.length == 2, "Your regex <code>myRegex</code> should match 2 items.");'
+    testString: assert(result.length == 2);
   - text: <code>result</code>变量应该是一个包含两个匹配<code>&quot;ss&quot;</code>的数组
-    testString: 'assert(result[0] == "ss" && result[1] == "ss", "The <code>result</code> variable should be an array with two matches of <code>"ss"</code>");'
+    testString: assert(result[0] == 'ss' && result[1] == 'ss');
 
 ```
 

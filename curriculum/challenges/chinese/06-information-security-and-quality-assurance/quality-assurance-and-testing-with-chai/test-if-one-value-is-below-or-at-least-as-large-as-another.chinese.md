@@ -19,15 +19,15 @@ localeTitle: 测试一个值是否低于或低至另一个值
 ```yml
 tests:
   - text: 所有测试都应该通过
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=8").then(data => {assert.equal(data.state,"passed"); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=8').then(data => {assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })
   - text: 选择正确的断言 -  isBelow vs. isAtLeast
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=8").then(data => {  assert.equal(data.assertions[0].method, "isAtLeast", "5 is at least (>=) 5"); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=8').then(data => {  assert.equal(data.assertions[0].method, 'isAtLeast', '5 is at least (>=) 5'); }, xhr => { throw new Error(xhr.responseText); })
   - text: 选择正确的断言 -  isBelow vs. isAtLeast
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=8").then(data => {  assert.equal(data.assertions[1].method, "isAtLeast", "2 * Math.random() is at least 0"); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=8').then(data => {  assert.equal(data.assertions[1].method, 'isAtLeast', '2 * Math.random() is at least 0'); }, xhr => { throw new Error(xhr.responseText); })
   - text: 选择正确的断言 -  isBelow vs. isAtLeast
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=8").then(data => {  assert.equal(data.assertions[2].method, "isBelow", "1 is smaller than 2"); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=8').then(data => {  assert.equal(data.assertions[2].method, 'isBelow', '1 is smaller than 2'); }, xhr => { throw new Error(xhr.responseText); })
   - text: 选择正确的断言 -  isBelow vs. isAtLeast
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=8").then(data => {  assert.equal(data.assertions[3].method, "isBelow", "2/3 (0.6666) is smaller than 1"); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=8').then(data => {  assert.equal(data.assertions[3].method, 'isBelow', '2/3 (0.6666) is smaller than 1'); }, xhr => { throw new Error(xhr.responseText); })
 
 ```
 

@@ -35,11 +35,11 @@ localeTitle: 给网站添加图片
 ```yml
 tests:
   - text: '网页应该有一张图片。'
-    testString: assert($("img").length > 0);
+    testString: assert($("img").length);
   - text: '图片 src 属性应该为 https://bit.ly/fcc-relaxing-cat。'
     testString: assert(/^https:\/\/bit\.ly\/fcc-relaxing-cat$/i.test($("img").attr("src")));
   - text: '图片必须有<code>alt</code>属性。'
-    testString: assert(code.match(/alt\s*?=\s*?(\"|\').*(\"|\')/));
+    testString: assert($("img").attr("alt") && $("img").attr("alt").length && /<img\S*alt=(['"])(?!\1|>)\S+\1\S*\/?>/.test(code.replace(/\s/g,'')));
 
 ```
 

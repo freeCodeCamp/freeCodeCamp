@@ -18,23 +18,23 @@ localeTitle: 动态设置每个条形的坐标
 ```yml
 tests:
   - text: 第一个<code>rect</code>的<code>x</code>值应为0。
-    testString: 'assert($("rect").eq(0).attr("x") == "0", "The first <code>rect</code> should have an <code>x</code> value of 0.");'
+    testString: assert($('rect').eq(0).attr('x') == '0');
   - text: 第二个<code>rect</code>的<code>x</code>值应为30。
-    testString: 'assert($("rect").eq(1).attr("x") == "30", "The second <code>rect</code> should have an <code>x</code> value of 30.");'
+    testString: assert($('rect').eq(1).attr('x') == '30');
   - text: 第三个<code>rect</code>的<code>x</code>值应为60。
-    testString: 'assert($("rect").eq(2).attr("x") == "60", "The third <code>rect</code> should have an <code>x</code> value of 60.");'
+    testString: assert($('rect').eq(2).attr('x') == '60');
   - text: 第四个<code>rect</code>的<code>x</code>值应为90。
-    testString: 'assert($("rect").eq(3).attr("x") == "90", "The fourth <code>rect</code> should have an <code>x</code> value of 90.");'
+    testString: assert($('rect').eq(3).attr('x') == '90');
   - text: 第五个<code>rect</code>的<code>x</code>值应为120。
-    testString: 'assert($("rect").eq(4).attr("x") == "120", "The fifth <code>rect</code> should have an <code>x</code> value of 120.");'
+    testString: assert($('rect').eq(4).attr('x') == '120');
   - text: 第六个<code>rect</code>的<code>x</code>值应为150。
-    testString: 'assert($("rect").eq(5).attr("x") == "150", "The sixth <code>rect</code> should have an <code>x</code> value of 150.");'
+    testString: assert($('rect').eq(5).attr('x') == '150');
   - text: 第七个<code>rect</code>的<code>x</code>值应为180。
-    testString: 'assert($("rect").eq(6).attr("x") == "180", "The seventh <code>rect</code> should have an <code>x</code> value of 180.");'
+    testString: assert($('rect').eq(6).attr('x') == '180');
   - text: 第八个<code>rect</code>的<code>x</code>值应为210。
-    testString: 'assert($("rect").eq(7).attr("x") == "210", "The eighth <code>rect</code> should have an <code>x</code> value of 210.");'
+    testString: assert($('rect').eq(7).attr('x') == '210');
   - text: 第九个<code>rect</code>的<code>x</code>值应为240。
-    testString: 'assert($("rect").eq(8).attr("x") == "240", "The ninth <code>rect</code> should have an <code>x</code> value of 240.");'
+    testString: assert($('rect').eq(8).attr('x') == '240');
 
 ```
 

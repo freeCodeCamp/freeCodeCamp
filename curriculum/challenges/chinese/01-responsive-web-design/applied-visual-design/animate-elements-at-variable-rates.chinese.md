@@ -24,7 +24,7 @@ localeTitle: 以可变速率来给元素添加动画
 ```yml
 tests:
   - text: '<code>star-1</code> class 的 <code>@keyframes</code> 规则应该为50%。'
-    testString: assert(code.match(/twinkle-1\s*?{\s*?50%/g), '<code>star-1</code>class 的 <code>@keyframes</code> 规则应该为50%。');
+    testString: assert(code.match(/twinkle-1\s*?{\s*?50%/g));
 
 ```
 

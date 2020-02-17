@@ -18,13 +18,13 @@ localeTitle: 创建链接列表类
 ```yml
 tests:
   - text: 您的<code>LinkedList</code>类应该有一个<code>add</code>方法。
-    testString: 'assert((function(){var test = new LinkedList(); return (typeof test.add === "function")}()), "Your <code>LinkedList</code> class should have a <code>add</code> method.");'
+    testString: assert((function(){var test = new LinkedList(); return (typeof test.add === 'function')}()));
   - text: 您的<code>LinkedList</code>类应该为添加的第一个节点分配<code>head</code> 。
-    testString: 'assert((function(){var test = new LinkedList(); test.add("cat"); return test.head().element === "cat"}()), "Your <code>LinkedList</code> class should assign <code>head</code> to the first node added.");'
+    testString: assert((function(){var test = new LinkedList(); test.add('cat'); return test.head().element === 'cat'}()));
   - text: <code>LinkedList</code>类中的上一个<code>node</code>应该引用创建的最新节点。
-    testString: 'assert((function(){var test = new LinkedList(); test.add("cat"); test.add("dog"); return test.head().next.element === "dog"}()), "The previous <code>node</code> in your <code>LinkedList</code> class should have reference to the newest node created.");'
+    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); return test.head().next.element === 'dog'}()));
   - text: <code>LinkedList</code>类的<code>size</code>应该等于<code>LinkedList</code>的节点数量。
-    testString: 'assert((function(){var test = new LinkedList(); test.add("cat"); test.add("dog"); return test.size() === 2}()), "The  <code>size</code> of your <code>LinkedList</code> class should equal the amount of nodes in the linked list.");'
+    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); return test.size() === 2}()));
 
 ```
 

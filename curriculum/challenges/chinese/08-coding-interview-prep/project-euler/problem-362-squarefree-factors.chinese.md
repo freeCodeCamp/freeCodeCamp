@@ -19,7 +19,7 @@ localeTitle: 问题362：无广义因子
 ```yml
 tests:
   - text: <code>euler362()</code>应该返回457895958010。
-    testString: 'assert.strictEqual(euler362(), 457895958010, "<code>euler362()</code> should return 457895958010.");'
+    testString: assert.strictEqual(euler362(), 457895958010);
 
 ```
 

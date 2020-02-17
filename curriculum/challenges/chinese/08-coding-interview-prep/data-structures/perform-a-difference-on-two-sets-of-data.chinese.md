@@ -19,9 +19,9 @@ localeTitle: 对两组数据执行差异
 ```yml
 tests:
   - text: 你的<code>Set</code>类应该有一个<code>difference</code>方法。
-    testString: 'assert(function(){var test = new Set(); return (typeof test.difference === "function")}, "Your <code>Set</code> class should have a <code>difference</code> method.");'
+    testString: assert((function(){var test = new Set(); return (typeof test.difference === 'function')})());
   - text: 收回了适当的收藏
-    testString: 'assert(function(){var setA = new Set(); var setB = new Set(); setA.add("a"); setA.add("b"); setA.add("c"); setB.add("c"); setB.add("d"); var differenceSetAB = setA.difference(setB); return (differenceSetAB.size() === 2) && (differenceSetAB.values() === [ "a", "b" ])}, "The proper collection was returned");'
+    testString: assert((function(){var setA = new Set(); var setB = new Set(); setA.add('a'); setA.add('b'); setA.add('c'); setB.add('c'); setB.add('d'); var differenceSetAB = setA.difference(setB); return (differenceSetAB.size() === 2) && DeepEqual(differenceSetAB.values(), [ 'a', 'b' ])})());
 
 ```
 

@@ -28,9 +28,9 @@ localeTitle: 使排版根据设备尺寸自如响应
 ```yml
 tests:
   - text: '<code>h2</code> 标签 <code>width</code> 应为 80vw。'
-    testString: 'assert(code.match(/h2\s*?{\s*?width:\s*?80vw;\s*?}/g), ''<code>h2</code> 标签的 <code>width</code> 应为 80vw。'');'
+    testString: assert(code.match(/h2\s*?{\s*?width:\s*?80vw;\s*?}/g));
   - text: '<code>p</code> 标签 <code>width</code> 应为 75vmin。'
-    testString: 'assert(code.match(/p\s*?{\s*?width:\s*?75vmin;\s*?}/g), ''<code>p</code> 标签的 <code>width</code> 应为 75vmin。'');'
+    testString: assert(code.match(/p\s*?{\s*?width:\s*?75vmin;\s*?}/g));
 
 ```
 

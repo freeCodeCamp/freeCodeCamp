@@ -19,7 +19,7 @@ localeTitle: 问题458：项目的排列
 ```yml
 tests:
   - text: <code>euler458()</code>应该返回423341841。
-    testString: 'assert.strictEqual(euler458(), 423341841, "<code>euler458()</code> should return 423341841.");'
+    testString: assert.strictEqual(euler458(), 423341841);
 
 ```
 

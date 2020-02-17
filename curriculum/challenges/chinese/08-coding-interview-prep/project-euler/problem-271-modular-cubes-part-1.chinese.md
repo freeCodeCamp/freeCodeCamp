@@ -19,7 +19,7 @@ localeTitle: 问题271：模块化立方体，第1部分
 ```yml
 tests:
   - text: <code>euler271()</code>应返回4617456485273130000。
-    testString: 'assert.strictEqual(euler271(), 4617456485273130000, "<code>euler271()</code> should return 4617456485273130000.");'
+    testString: assert.strictEqual(euler271(), 4617456485273130000);
 
 ```
 

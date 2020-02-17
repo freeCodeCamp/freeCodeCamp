@@ -19,7 +19,7 @@ localeTitle: 问题369：Badugi
 ```yml
 tests:
   - text: <code>euler369()</code>应该返回862400558448。
-    testString: 'assert.strictEqual(euler369(), 862400558448, "<code>euler369()</code> should return 862400558448.");'
+    testString: assert.strictEqual(euler369(), 862400558448);
 
 ```
 

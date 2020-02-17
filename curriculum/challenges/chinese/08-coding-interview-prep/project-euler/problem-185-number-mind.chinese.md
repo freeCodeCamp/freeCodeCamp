@@ -19,7 +19,7 @@ localeTitle: 问题185：数字思维
 ```yml
 tests:
   - text: <code>euler185()</code>应该返回4640261571849533。
-    testString: 'assert.strictEqual(euler185(), 4640261571849533, "<code>euler185()</code> should return 4640261571849533.");'
+    testString: assert.strictEqual(euler185(), 4640261571849533);
 
 ```
 

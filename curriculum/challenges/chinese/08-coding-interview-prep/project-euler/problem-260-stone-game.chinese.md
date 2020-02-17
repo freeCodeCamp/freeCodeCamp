@@ -19,7 +19,7 @@ localeTitle: 问题260：石头游戏
 ```yml
 tests:
   - text: <code>euler260()</code>应该返回167542057。
-    testString: 'assert.strictEqual(euler260(), 167542057, "<code>euler260()</code> should return 167542057.");'
+    testString: assert.strictEqual(euler260(), 167542057);
 
 ```
 

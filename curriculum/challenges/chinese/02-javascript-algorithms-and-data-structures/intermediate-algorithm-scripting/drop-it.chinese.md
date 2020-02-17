@@ -20,17 +20,17 @@ localeTitle: 算了吧
 ```yml
 tests:
   - text: '<code>dropElements([1, 2, 3, 4], function(n) {return n &gt;= 3;})</code>应该返回<code>[3, 4]</code> 。'
-    testString: 'assert.deepEqual(dropElements([1, 2, 3, 4], function(n) {return n >= 3;}), [3, 4], "<code>dropElements([1, 2, 3, 4], function(n) {return n >= 3;})</code> should return <code>[3, 4]</code>.");'
+    testString: assert.deepEqual(dropElements([1, 2, 3, 4], function(n) {return n >= 3;}), [3, 4]);
   - text: '<code>dropElements([0, 1, 0, 1], function(n) {return n === 1;})</code>应该返回<code>[1, 0, 1]</code> <code>dropElements([0, 1, 0, 1], function(n) {return n === 1;})</code> <code>[1, 0, 1]</code> 。'
-    testString: 'assert.deepEqual(dropElements([0, 1, 0, 1], function(n) {return n === 1;}), [1, 0, 1], "<code>dropElements([0, 1, 0, 1], function(n) {return n === 1;})</code> should return <code>[1, 0, 1]</code>.");'
+    testString: assert.deepEqual(dropElements([0, 1, 0, 1], function(n) {return n === 1;}), [1, 0, 1]);
   - text: '<code>dropElements([1, 2, 3], function(n) {return n &gt; 0;})</code>应该返回<code>[1, 2, 3]</code> 。'
-    testString: 'assert.deepEqual(dropElements([1, 2, 3], function(n) {return n > 0;}), [1, 2, 3], "<code>dropElements([1, 2, 3], function(n) {return n > 0;})</code> should return <code>[1, 2, 3]</code>.");'
+    testString: assert.deepEqual(dropElements([1, 2, 3], function(n) {return n > 0;}), [1, 2, 3]);
   - text: '<code>dropElements([1, 2, 3, 4], function(n) {return n &gt; 5;})</code>应返回<code>[]</code> 。'
-    testString: 'assert.deepEqual(dropElements([1, 2, 3, 4], function(n) {return n > 5;}), [], "<code>dropElements([1, 2, 3, 4], function(n) {return n > 5;})</code> should return <code>[]</code>.");'
+    testString: assert.deepEqual(dropElements([1, 2, 3, 4], function(n) {return n > 5;}), []);
   - text: '<code>dropElements([1, 2, 3, 7, 4], function(n) {return n &gt; 3;})</code>应该返回<code>[7, 4]</code> <code>dropElements([1, 2, 3, 7, 4], function(n) {return n &gt; 3;})</code> <code>[7, 4]</code> 。'
-    testString: 'assert.deepEqual(dropElements([1, 2, 3, 7, 4], function(n) {return n > 3;}), [7, 4], "<code>dropElements([1, 2, 3, 7, 4], function(n) {return n > 3;})</code> should return <code>[7, 4]</code>.");'
+    testString: assert.deepEqual(dropElements([1, 2, 3, 7, 4], function(n) {return n > 3;}), [7, 4]);
   - text: '<code>dropElements([1, 2, 3, 9, 2], function(n) {return n &gt; 2;})</code>应该返回<code>[3, 9, 2]</code> <code>dropElements([1, 2, 3, 9, 2], function(n) {return n &gt; 2;})</code> <code>[3, 9, 2]</code> 。'
-    testString: 'assert.deepEqual(dropElements([1, 2, 3, 9, 2], function(n) {return n > 2;}), [3, 9, 2], "<code>dropElements([1, 2, 3, 9, 2], function(n) {return n > 2;})</code> should return <code>[3, 9, 2]</code>.");'
+    testString: assert.deepEqual(dropElements([1, 2, 3, 9, 2], function(n) {return n > 2;}), [3, 9, 2]);
 
 ```
 

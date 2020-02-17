@@ -3,7 +3,7 @@ id: 5900f5241000cf542c510036
 challengeType: 5
 title: 'Problem 437: Fibonacci primitive roots'
 videoUrl: ''
-localeTitle: ''
+localeTitle: 问题437：斐波那契原始根
 ---
 
 ## Description
@@ -18,8 +18,8 @@ localeTitle: ''
 
 ```yml
 tests:
-  - text: ''
-    testString: 'assert.strictEqual(euler437(), 74204709657207, "<code>euler437()</code> should return 74204709657207.");'
+  - text: <code>euler437()</code>应该返回74204709657207。
+    testString: assert.strictEqual(euler437(), 74204709657207);
 
 ```
 

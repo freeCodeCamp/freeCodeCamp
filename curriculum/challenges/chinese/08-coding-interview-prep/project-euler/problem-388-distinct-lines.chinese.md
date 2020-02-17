@@ -19,7 +19,7 @@ localeTitle: 问题388：不同的线条
 ```yml
 tests:
   - text: <code>euler388()</code>应该返回831907372805130000。
-    testString: 'assert.strictEqual(euler388(), 831907372805130000, "<code>euler388()</code> should return 831907372805130000.");'
+    testString: assert.strictEqual(euler388(), 831907372805130000);
 
 ```
 

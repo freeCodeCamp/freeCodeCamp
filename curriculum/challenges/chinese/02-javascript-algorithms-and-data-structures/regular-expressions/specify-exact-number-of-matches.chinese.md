@@ -18,17 +18,17 @@ localeTitle: 指定完全匹配数
 ```yml
 tests:
   - text: 你的正则表达式应该使用大括号。
-    testString: 'assert(timRegex.source.match(/{.*?}/).length > 0, "Your regex should use curly brackets.");'
+    testString: assert(timRegex.source.match(/{.*?}/).length > 0);
   - text: 你的正则表达式不应该与<code>&quot;Timber&quot;</code>匹配
-    testString: 'assert(!timRegex.test("Timber"), "Your regex should not match <code>"Timber"</code>");'
+    testString: assert(!timRegex.test("Timber"));
   - text: 你的正则表达式不应该匹配<code>&quot;Timmber&quot;</code>
-    testString: 'assert(!timRegex.test("Timmber"), "Your regex should not match <code>"Timmber"</code>");'
+    testString: assert(!timRegex.test("Timmber"));
   - text: 你的正则表达式不应该匹配<code>&quot;Timmmber&quot;</code>
-    testString: 'assert(!timRegex.test("Timmmber"), "Your regex should not match <code>"Timmmber"</code>");'
+    testString: assert(!timRegex.test("Timmmber"));
   - text: 你的正则表达式应该匹配<code>&quot;Timmmmber&quot;</code>
-    testString: 'assert(timRegex.test("Timmmmber"), "Your regex should match <code>"Timmmmber"</code>");'
+    testString: assert(timRegex.test("Timmmmber"));
   - text: 你的正则表达式不应该与30 <code>m</code>的<code>&quot;Timber&quot;</code>相匹配。
-    testString: 'assert(!timRegex.test("Ti" + "m".repeat(30) + "ber"), "Your regex should not match <code>"Timber"</code> with 30 <code>m</code>\"s in it.");'
+    testString: assert(!timRegex.test("Ti" + "m".repeat(30) + "ber"));
 
 ```
 

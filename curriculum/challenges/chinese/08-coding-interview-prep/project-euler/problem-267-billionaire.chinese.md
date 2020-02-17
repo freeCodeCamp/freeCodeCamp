@@ -19,7 +19,7 @@ localeTitle: 问题267：亿万富翁
 ```yml
 tests:
   - text: <code>euler267()</code>应返回0.999992836187。
-    testString: 'assert.strictEqual(euler267(), 0.999992836187, "<code>euler267()</code> should return 0.999992836187.");'
+    testString: assert.strictEqual(euler267(), 0.999992836187);
 
 ```
 

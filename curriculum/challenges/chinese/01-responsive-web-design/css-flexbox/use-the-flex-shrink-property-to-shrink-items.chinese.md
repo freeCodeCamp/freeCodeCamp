@@ -25,9 +25,9 @@ localeTitle: 使用 flex-shrink 属性收缩项目
 ```yml
 tests:
   - text: '<code>#box-1</code>元素应有<code>flex-shrink</code>属性，其值应为 1.'
-    testString: assert($('#box-1').css('flex-shrink') == '1', '<code>#box-1</code>元素应有<code>flex-shrink</code>属性，其值应为 1.');
+    testString: assert($('#box-1').css('flex-shrink') == '1');
   - text: '<code>#box-2</code>元素应有<code>flex-shrink</code>属性，其值应为 2.'
-    testString: assert($('#box-2').css('flex-shrink') == '2', '<code>#box-2</code>元素应有<code>flex-shrink</code>属性，其值应为 2.');
+    testString: assert($('#box-2').css('flex-shrink') == '2');
 
 ```
 

@@ -22,13 +22,13 @@ localeTitle: 问题1：3和5的倍数
 ```yml
 tests:
   - text: <code>multiplesOf3and5(1000)</code>应该返回233168。
-    testString: 'assert.strictEqual(multiplesOf3and5(1000), 233168, "<code>multiplesOf3and5(1000)</code> should return 233168.");'
+    testString: assert.strictEqual(multiplesOf3and5(1000), 233168);
   - text: <code>multiplesOf3and5(49)</code>应该返回543。
-    testString: 'assert.strictEqual(multiplesOf3and5(49), 543, "<code>multiplesOf3and5(49)</code> should return 543.");'
+    testString: assert.strictEqual(multiplesOf3and5(49), 543);
   - text: <code>multiplesOf3and5(19564)</code>应该返回89301183。
-    testString: 'assert.strictEqual(multiplesOf3and5(19564), 89301183, "<code>multiplesOf3and5(19564)</code> should return 89301183.");'
+    testString: assert.strictEqual(multiplesOf3and5(19564), 89301183);
   - text: 您的函数未使用我们的测试值返回正确的结果。
-    testString: 'assert.strictEqual(multiplesOf3and5(8456), 16687353, "Your function is not returning the correct result using our tests values.");'
+    testString: assert.strictEqual(multiplesOf3and5(8456), 16687353);
 
 ```
 

@@ -18,9 +18,9 @@ localeTitle: 使用删除关键字删除对象属性
 ```yml
 tests:
   - text: <code>foods</code>对象只有三个键： <code>apples</code> ， <code>grapes</code>和<code>bananas</code>
-    testString: 'assert(!foods.hasOwnProperty("oranges") && !foods.hasOwnProperty("plums") && !foods.hasOwnProperty("strawberries") && Object.keys(foods).length === 3, "The <code>foods</code> object only has three keys: <code>apples</code>, <code>grapes</code>, and <code>bananas</code>");'
+    testString: 'assert(!foods.hasOwnProperty(''oranges'') && !foods.hasOwnProperty(''plums'') && !foods.hasOwnProperty(''strawberries'') && Object.keys(foods).length === 3);'
   - text: 使用<code>delete</code> <code>oranges</code> ， <code>plums</code>和<code>strawberries</code>键
-    testString: 'assert(code.search(/oranges:/) !== -1 && code.search(/plums:/) !== -1 && code.search(/strawberries:/) !== -1, "The <code>oranges</code>, <code>plums</code>, and <code>strawberries</code> keys are removed using <code>delete</code>");'
+    testString: assert(code.search(/oranges:/) !== -1 && code.search(/plums:/) !== -1 && code.search(/strawberries:/) !== -1);
 
 ```
 

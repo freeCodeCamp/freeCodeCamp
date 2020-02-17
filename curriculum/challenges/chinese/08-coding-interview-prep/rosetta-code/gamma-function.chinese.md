@@ -19,19 +19,19 @@ localeTitle: 伽玛功能
 ```yml
 tests:
   - text: <code>gamma</code>应该是一个功能。
-    testString: 'assert(typeof gamma=="function","<code>gamma</code> should be a function.")'
+    testString: assert(typeof gamma=='function')
   - text: '<code>gamma(&quot;+tests[0]+&quot;)</code>应该返回一个数字。'
-    testString: 'assert(typeof gamma(tests[0])=="number","<code>gamma("+tests[0]+")</code> should return a number.")'
+    testString: assert(typeof gamma(.1)=='number')
   - text: '<code>gamma(&quot;+tests[0]+&quot;)</code>应该返回<code>&quot;+results[0]+&quot;</code> 。'
-    testString: 'assert.equal(gamma(tests[0]),results[0],"<code>gamma("+tests[0]+")</code> should return <code>"+results[0]+"</code>.")'
+    testString: assert.equal(round(gamma(.1)), round(9.513507698668736))
   - text: '<code>gamma(&quot;+tests[1]+&quot;)</code>应该返回<code>&quot;+results[1]+&quot;</code> 。'
-    testString: 'assert.equal(gamma(tests[1]),results[1],"<code>gamma("+tests[1]+")</code> should return <code>"+results[1]+"</code>.")'
+    testString: assert.equal(round(gamma(.2)), round(4.590843711998803))
   - text: '<code>gamma(&quot;+tests[2]+&quot;)</code>应该返回<code>&quot;+results[2]+&quot;</code> 。'
-    testString: 'assert.equal(gamma(tests[2]),results[2],"<code>gamma("+tests[2]+")</code> should return <code>"+results[2]+"</code>.")'
+    testString: assert.equal(round(gamma(.3)), round(2.9915689876875904))
   - text: '<code>gamma(&quot;+tests[3]+&quot;)</code>应该返回<code>&quot;+results[3]+&quot;</code> 。'
-    testString: 'assert.equal(gamma(tests[3]),results[3],"<code>gamma("+tests[3]+")</code> should return <code>"+results[3]+"</code>.")'
+    testString: assert.equal(round(gamma(.4)), round(2.218159543757687))
   - text: '<code>gamma(&quot;+tests[4]+&quot;)</code>应返回<code>&quot;+results[4]+&quot;</code> 。'
-    testString: 'assert.equal(gamma(tests[4]),results[4],"<code>gamma("+tests[4]+")</code> should return <code>"+results[4]+"</code>.")'
+    testString: assert.equal(round(gamma(.5)), round(1.7724538509055159))
 
 ```
 

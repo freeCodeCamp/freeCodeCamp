@@ -19,7 +19,7 @@ localeTitle: 问题176：共用一个cathetus的直角三角形
 ```yml
 tests:
   - text: <code>euler176()</code>应返回96818198400000。
-    testString: 'assert.strictEqual(euler176(), 96818198400000, "<code>euler176()</code> should return 96818198400000.");'
+    testString: assert.strictEqual(euler176(), 96818198400000);
 
 ```
 

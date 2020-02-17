@@ -3,7 +3,7 @@ id: 5900f4091000cf542c50ff1b
 challengeType: 5
 title: 'Problem 156: Counting Digits'
 videoUrl: ''
-localeTitle: ''
+localeTitle: 问题156：计数数字
 ---
 
 ## Description
@@ -18,8 +18,8 @@ localeTitle: ''
 
 ```yml
 tests:
-  - text: ''
-    testString: 'assert.strictEqual(euler156(), 21295121502550, "<code>euler156()</code> should return 21295121502550.");'
+  - text: <code>euler156</code>应该返回21295121502550。
+    testString: assert.strictEqual(euler156(), 21295121502550);
 
 ```
 

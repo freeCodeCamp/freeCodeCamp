@@ -18,11 +18,11 @@ localeTitle: 用函数编写可重用的JavaScript
 ```yml
 tests:
   - text: <code>reusableFunction</code>应该是一个函数
-    testString: 'assert(typeof reusableFunction === "function", "<code>reusableFunction</code> should be a function");'
+    testString: assert(typeof reusableFunction === 'function');
   - text: <code>reusableFunction</code>应该将“Hi World”输出到开发控制台
-    testString: 'assert("Hi World" === logOutput, "<code>reusableFunction</code> should output "Hi World" to the dev console");'
+    testString: assert(hiWorldWasLogged);
   - text: 定义后调用<code>reusableFunction</code>
-    testString: 'assert(/^\s*reusableFunction\(\)\s*;/m.test(code), "Call <code>reusableFunction</code> after you define it");'
+    testString: assert(/^\s*reusableFunction\(\)\s*/m.test(code));
 
 ```
 

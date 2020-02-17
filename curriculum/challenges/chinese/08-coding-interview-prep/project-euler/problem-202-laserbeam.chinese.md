@@ -19,7 +19,7 @@ localeTitle: 问题202：Laserbeam
 ```yml
 tests:
   - text: <code>euler202()</code>应返回1209002624。
-    testString: 'assert.strictEqual(euler202(), 1209002624, "<code>euler202()</code> should return 1209002624.");'
+    testString: assert.strictEqual(euler202(), 1209002624);
 
 ```
 

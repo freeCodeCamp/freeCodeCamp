@@ -20,16 +20,16 @@ localeTitle: 信息，安全和质量保证证书
 
 ```yml
 tests:
-  - text: ''
-    testString: !<tag:yaml.org,2002:js/undefined> ''
-  - text: ''
-    testString: !<tag:yaml.org,2002:js/undefined> ''
-  - text: ''
-    testString: !<tag:yaml.org,2002:js/undefined> ''
-  - text: ''
-    testString: !<tag:yaml.org,2002:js/undefined> ''
-  - text: ''
-    testString: !<tag:yaml.org,2002:js/undefined> ''
+  - id: 587d8249367417b2b2512c42
+    title: Issue Tracker
+  - id: 587d8249367417b2b2512c41
+    title: Metric-Imperial Converter
+  - id: 587d824a367417b2b2512c43
+    title: Personal Library
+  - id: 587d824a367417b2b2512c44
+    title: Stock Price Checker
+  - id: 587d824a367417b2b2512c45
+    title: Anonymous Message Board
 
 ```
 

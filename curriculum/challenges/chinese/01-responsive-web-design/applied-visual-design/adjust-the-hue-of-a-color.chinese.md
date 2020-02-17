@@ -28,17 +28,17 @@ HSL 色彩空间模型是一种将 RGB 色彩模型中的点放在圆柱坐标�
 ```yml
 tests:
   - text: '你应该使用 <code>hsl()</code> 属性来表示绿色。'
-    testString: 'assert(code.match(/\.green\s*?{\s*?background-color:\s*?hsl/gi), ''你应该使用 <code>hsl()</code> 属性来表示绿色。'');'
+    testString: assert(code.match(/\.green\s*?{\s*?background-color:\s*?hsl/gi));
   - text: '你应该使用 <code>hsl()</code> 属性来表示蓝绿色。'
-    testString: 'assert(code.match(/\.cyan\s*?{\s*?background-color:\s*?hsl/gi), ''你应该使用 <code>hsl()</code> 属性来表示蓝绿色。'');'
+    testString: assert(code.match(/\.cyan\s*?{\s*?background-color:\s*?hsl/gi));
   - text: '你应该使用 <code>hsl()</code> 属性来表示蓝色。'
-    testString: 'assert(code.match(/\.blue\s*?{\s*?background-color:\s*?hsl/gi), ''你应该使用 <code>hsl()</code> 属性来表示蓝色。'');'
+    testString: assert(code.match(/\.blue\s*?{\s*?background-color:\s*?hsl/gi));
   - text: 'class 为 <code>green</code> 的 <code>div</code> 应该有绿色的 <code>background-color</code> CSS 属性。'
-    testString: assert($('.green').css('background-color') == 'rgb(0, 255, 0)', 'class 为 <code>green</code> 的 <code>div</code> 应该有绿色的 <code>background-color</code> CSS 属性。');
+    testString: assert($('.green').css('background-color') == 'rgb(0, 255, 0)');
   - text: 'class 为 <code>cyan</code> 的 <code>div</code> 应该有蓝绿色的 <code>background-color</code> CSS 属性。'
-    testString: assert($('.cyan').css('background-color') == 'rgb(0, 255, 255)', 'class 为 <code>cyan</code> 的 <code>div</code> 应该有蓝绿色的 <code>background-color</code> CSS 属性。');
+    testString: assert($('.cyan').css('background-color') == 'rgb(0, 255, 255)');
   - text: 'class 为 <code>blue</code> 的 <code>div</code> 应该有蓝色的 <code>background-color</code> CSS 属性。'
-    testString: assert($('.blue').css('background-color') == 'rgb(0, 0, 255)', 'class 为 <code>cyan</code> 的 <code>div</code> 应该有蓝色的 <code>background-color</code> CSS 属性。');
+    testString: assert($('.blue').css('background-color') == 'rgb(0, 0, 255)');
 
 ```
 

@@ -18,11 +18,11 @@ localeTitle: 在JavaScript中查找剩余内容
 ```yml
 tests:
   - text: 应该初始化变量<code>remainder</code>
-    testString: 'assert(/var\s+?remainder/.test(code), "The variable <code>remainder</code> should be initialized");'
+    testString: assert(/var\s+?remainder/.test(code));
   - text: <code>remainder</code>的值应为<code>2</code>
-    testString: 'assert(remainder === 2, "The value of <code>remainder</code> should be <code>2</code>");'
+    testString: assert(remainder === 2);
   - text: 您应该使用<code>%</code>运算符
-    testString: 'assert(/\s+?remainder\s*?=\s*?.*%.*;/.test(code), "You should use the <code>%</code> operator");'
+    testString: assert(/\s+?remainder\s*?=\s*?.*%.*;/.test(code));
 
 ```
 

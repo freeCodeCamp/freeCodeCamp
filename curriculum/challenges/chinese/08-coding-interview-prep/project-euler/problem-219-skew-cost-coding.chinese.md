@@ -19,7 +19,7 @@ localeTitle: 问题219：偏差成本编码
 ```yml
 tests:
   - text: <code>euler219()</code>应返回64564225042。
-    testString: 'assert.strictEqual(euler219(), 64564225042, "<code>euler219()</code> should return 64564225042.");'
+    testString: assert.strictEqual(euler219(), 64564225042);
 
 ```
 

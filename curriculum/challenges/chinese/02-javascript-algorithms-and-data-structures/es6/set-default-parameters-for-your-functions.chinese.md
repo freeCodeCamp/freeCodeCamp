@@ -18,11 +18,11 @@ localeTitle: 设置函数的默认参数
 ```yml
 tests:
   - text: '<code>increment(5, 2)</code>应为<code>7</code> 。'
-    testString: 'assert(increment(5, 2) === 7, "The result of <code>increment(5, 2)</code> should be <code>7</code>.");'
+    testString: assert(increment(5, 2) === 7);
   - text: <code>increment(5)</code>的结果应为<code>6</code> 。
-    testString: 'assert(increment(5) === 6, "The result of <code>increment(5)</code> should be <code>6</code>.");'
+    testString: assert(increment(5) === 6);
   - text: 默认参数<code>1</code>用于<code>value</code> 。
-    testString: 'getUserInput => assert(getUserInput("index").match(/value\s*=\s*1/g), "default parameter <code>1</code> was used for <code>value</code>.");'
+    testString: assert(code.match(/value\s*=\s*1/g));
 
 ```
 

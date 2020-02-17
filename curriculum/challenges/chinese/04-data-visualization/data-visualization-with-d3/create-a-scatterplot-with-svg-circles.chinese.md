@@ -18,7 +18,7 @@ localeTitle: 使用SVG圈创建散点图
 ```yml
 tests:
   - text: 您的代码应该有10个<code>circle</code>元素。
-    testString: 'assert($("circle").length == 10, "Your code should have 10 <code>circle</code> elements.");'
+    testString: assert($('circle').length == 10);
 
 ```
 

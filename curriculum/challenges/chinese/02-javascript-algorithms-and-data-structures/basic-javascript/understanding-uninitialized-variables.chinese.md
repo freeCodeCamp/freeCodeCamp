@@ -18,13 +18,13 @@ localeTitle: 了解未初始化的变量
 ```yml
 tests:
   - text: <code>a</code>应定义并评估其值为<code>6</code>
-    testString: 'assert(typeof a === "number" && a === 6, "<code>a</code> should be defined and evaluated to have the value of <code>6</code>");'
+    testString: assert(typeof a === 'number' && a === 6);
   - text: 应定义和评估<code>b</code>的值为<code>15</code>
-    testString: 'assert(typeof b === "number" && b === 15, "<code>b</code> should be defined and evaluated to have the value of <code>15</code>");'
+    testString: assert(typeof b === 'number' && b === 15);
   - text: <code>c</code>不应该包含<code>undefined</code>并且值应为“我是一个字符串！”
-    testString: 'assert(!/undefined/.test(c) && c === "I am a String!", "<code>c</code> should not contain <code>undefined</code> and should have a value of "I am a String!"");'
+    testString: assert(!/undefined/.test(c) && c === "I am a String!");
   - text: 不要更改行下方的代码
-    testString: 'assert(/a = a \+ 1;/.test(code) && /b = b \+ 5;/.test(code) && /c = c \+ " String!";/.test(code), "Do not change code below the line");'
+    testString: assert(/a = a \+ 1;/.test(code) && /b = b \+ 5;/.test(code) && /c = c \+ " String!";/.test(code));
 
 ```
 

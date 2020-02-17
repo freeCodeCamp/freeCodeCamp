@@ -34,9 +34,9 @@ p {
 ```yml
 tests:
   - text: '<code>h2</code> 元素应该添加 <code>position</code> 属性并赋值 <code>relative</code>。'
-    testString: assert($('h2').css('position') == 'relative', '<code>h2</code> 元素应该添加<code>position</code> 属性并赋值 <code>relative</code>。');
+    testString: assert($('h2').css('position') == 'relative');
   - text: '你应该使用 CSS 属性调整 <code>h2</code> 的位置使其从原来的位置向下偏移 <code>15px</code>。'
-    testString: assert($('h2').css('top') == '15px', '你应该使用 CSS 属性调整 <code>h2</code> 的位置使其从原来的位置向下偏移 <code>15px</code>。');
+    testString: assert($('h2').css('top') == '15px');
 
 ```
 

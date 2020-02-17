@@ -19,7 +19,7 @@ localeTitle: 问题95：友好的链条
 ```yml
 tests:
   - text: <code>euler95()</code>应返回14316。
-    testString: 'assert.strictEqual(euler95(), 14316, "<code>euler95()</code> should return 14316.");'
+    testString: assert.strictEqual(euler95(), 14316);
 
 ```
 

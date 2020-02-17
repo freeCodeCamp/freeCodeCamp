@@ -19,11 +19,11 @@ localeTitle: 克莱默的统治
 ```yml
 tests:
   - text: <code>cramersRule</code>是一个函数。
-    testString: 'assert(typeof cramersRule === "function", "<code>cramersRule</code> is a function.");'
+    testString: assert(typeof cramersRule === 'function');
   - text: '<code>cramersRule([[2, -1, 5, 1], [3, 2, 2, -6], [1, 3, 3, -1], [5, -2, -3, 3]], [-3, -32, -47, 49])</code>应返回<code>[2, -12, -4, 1]</code> 。'
-    testString: 'assert.deepEqual(cramersRule(matrices[0], freeTerms[0]), answers[0], "<code>cramersRule([[2, -1, 5, 1], [3, 2, 2, -6], [1, 3, 3, -1], [5, -2, -3, 3]], [-3, -32, -47, 49])</code> should return <code>[2, -12, -4, 1]</code>.");'
+    testString: assert.deepEqual(cramersRule(matrices[0], freeTerms[0]), answers[0]);
   - text: '<code>cramersRule([[3, 1, 1], [2, 2, 5], [1, -3, -4]], [3, -1, 2])</code>应返回<code>[1, 1, -1]</code> 。'
-    testString: 'assert.deepEqual(cramersRule(matrices[1], freeTerms[1]), answers[1], "<code>cramersRule([[3, 1, 1], [2, 2, 5], [1, -3, -4]], [3, -1, 2])</code> should return <code>[1, 1, -1]</code>.");'
+    testString: assert.deepEqual(cramersRule(matrices[1], freeTerms[1]), answers[1]);
 
 ```
 

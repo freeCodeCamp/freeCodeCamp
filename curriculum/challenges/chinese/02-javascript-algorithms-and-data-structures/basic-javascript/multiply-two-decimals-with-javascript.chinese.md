@@ -18,9 +18,9 @@ localeTitle: 使用JavaScript乘以两个小数
 ```yml
 tests:
   - text: 变量<code>product</code>应该等于<code>5.0</code> 。
-    testString: 'assert(product === 5.0, "The variable <code>product</code> should equal <code>5.0</code>.");'
+    testString: assert(product === 5.0);
   - text: 你应该使用<code>*</code>运算符
-    testString: 'assert(/\*/.test(code), "You should use the <code>*</code> operator");'
+    testString: assert(/\*/.test(code));
 
 ```
 

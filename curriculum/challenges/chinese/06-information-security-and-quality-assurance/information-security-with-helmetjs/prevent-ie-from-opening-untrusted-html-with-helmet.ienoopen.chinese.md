@@ -19,7 +19,7 @@ localeTitle: 使用helmet.ieNoOpen（）阻止IE打开不受信任的HTML
 ```yml
 tests:
   - text: helmet.ieNoOpen（）中间件应正确安装
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/app-info").then(data => { assert.include(data.appStack, "ienoopen"); assert.equal(data.headers["x-download-options"], "noopen"); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: getUserInput => $.get(getUserInput('url') + '/_api/app-info').then(data => { assert.include(data.appStack, 'ienoopen'); assert.equal(data.headers['x-download-options'], 'noopen'); }, xhr => { throw new Error(xhr.responseText); })
 
 ```
 

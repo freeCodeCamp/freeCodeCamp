@@ -33,7 +33,7 @@ p:hover {
 ```yml
 tests:
   - text: '<code>div</code> 元素在悬停时大小应该缩放到原始大小的 1.1 倍。'
-    testString: 'assert(code.match(/div:hover\s*?{\s*?transform:\s*?scale\(1\.1\);/gi), ''<code>div</code> 元素在悬停时大小应该缩放到原始大小的 1.1 倍。'');'
+    testString: assert(code.match(/div:hover\s*?{\s*?transform:\s*?scale\(1\.1\);/gi));
 
 ```
 

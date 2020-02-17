@@ -18,9 +18,9 @@ localeTitle: 用变量构造字符串
 ```yml
 tests:
   - text: <code>myName</code>应设置为至少3个字符长的字符串
-    testString: 'assert(typeof myName !== "undefined" && myName.length > 2, "<code>myName</code> should be set to a string at least 3 characters long");'
+    testString: assert(typeof myName !== 'undefined' && myName.length > 2);
   - text: 使用两个<code>+</code>运算符在其中构建<code>myStr</code> with <code>myName</code>
-    testString: 'assert(code.match(/[""]\s*\+\s*myName\s*\+\s*[""]/g).length > 0, "Use two <code>+</code> operators to build <code>myStr</code> with <code>myName</code> inside it");'
+    testString: assert(code.match(/["']\s*\+\s*myName\s*\+\s*["']/g).length > 0);
 
 ```
 

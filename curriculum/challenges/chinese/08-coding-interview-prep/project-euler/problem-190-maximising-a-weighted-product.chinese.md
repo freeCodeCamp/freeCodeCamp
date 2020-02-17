@@ -19,7 +19,7 @@ localeTitle: 问题190：最大化加权产品
 ```yml
 tests:
   - text: <code>euler190()</code>应该返回371048281。
-    testString: 'assert.strictEqual(euler190(), 371048281, "<code>euler190()</code> should return 371048281.");'
+    testString: assert.strictEqual(euler190(), 371048281);
 
 ```
 

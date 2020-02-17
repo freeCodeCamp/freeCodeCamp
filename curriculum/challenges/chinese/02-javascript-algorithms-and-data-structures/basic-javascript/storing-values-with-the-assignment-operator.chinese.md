@@ -18,13 +18,13 @@ localeTitle: 使用赋值运算符存储值
 ```yml
 tests:
   - text: 不要更改行上方的代码
-    testString: 'assert(/var a;/.test(code) && /var b = 2;/.test(code), "Do not change code above the line");'
+    testString: assert(/var a;/.test(code) && /var b = 2;/.test(code));
   - text: <code>a</code>的值应为7
-    testString: 'assert(typeof a === "number" && a === 7, "<code>a</code> should have a value of 7");'
+    testString: assert(typeof a === 'number' && a === 7);
   - text: <code>b</code>的值应为7
-    testString: 'assert(typeof b === "number" && b === 7, "<code>b</code> should have a value of 7");'
+    testString: assert(typeof b === 'number' && b === 7);
   - text: <code>a</code>应分配给<code>b</code> <code>=</code>
-    testString: 'assert(/b\s*=\s*a\s*;/g.test(code), "<code>a</code> should be assigned to <code>b</code> with <code>=</code>");'
+    testString: assert(/b\s*=\s*a\s*;/g.test(code));
 
 ```
 

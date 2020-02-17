@@ -19,7 +19,7 @@ localeTitle: 问题396：弱Goodstein序列
 ```yml
 tests:
   - text: <code>euler396()</code>应该返回173214653。
-    testString: 'assert.strictEqual(euler396(), 173214653, "<code>euler396()</code> should return 173214653.");'
+    testString: assert.strictEqual(euler396(), 173214653);
 
 ```
 

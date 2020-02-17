@@ -18,13 +18,13 @@ localeTitle: 返回排序数组而不更改原始数组
 ```yml
 tests:
   - text: 您的代码应该使用<code>sort</code>方法。
-    testString: 'assert(code.match(/\.sort/g), "Your code should use the <code>sort</code> method.");'
+    testString: assert(nonMutatingSort.toString().match(/\.sort/g));
   - text: 您的代码应使用<code>concat</code>方法。
-    testString: 'assert(code.match(/\.concat/g), "Your code should use the <code>concat</code> method.");'
+    testString: assert(JSON.stringify(globalArray) === JSON.stringify([5, 6, 3, 2, 9]));
   - text: <code>globalArray</code>变量不应该更改。
-    testString: 'assert(JSON.stringify(globalArray) === JSON.stringify([5, 6, 3, 2, 9]), "The <code>globalArray</code> variable should not change.");'
+    testString: assert(JSON.stringify(nonMutatingSort(globalArray)) === JSON.stringify([2, 3, 5, 6, 9]));
   - text: '<code>nonMutatingSort(globalArray)</code>应该返回<code>[2, 3, 5, 6, 9]</code> <code>nonMutatingSort(globalArray)</code> <code>[2, 3, 5, 6, 9]</code> 。'
-    testString: 'assert(JSON.stringify(nonMutatingSort(globalArray)) === JSON.stringify([2, 3, 5, 6, 9]), "<code>nonMutatingSort(globalArray)</code> should return <code>[2, 3, 5, 6, 9]</code>.");'
+    testString: assert(!nonMutatingSort.toString().match(/[23569]/g));    
 
 ```
 

@@ -19,7 +19,7 @@ localeTitle: 问题116：红色，绿色或蓝色瓷砖
 ```yml
 tests:
   - text: <code>euler116()</code>应该返回20492570929。
-    testString: 'assert.strictEqual(euler116(), 20492570929, "<code>euler116()</code> should return 20492570929.");'
+    testString: assert.strictEqual(euler116(), 20492570929);
 
 ```
 

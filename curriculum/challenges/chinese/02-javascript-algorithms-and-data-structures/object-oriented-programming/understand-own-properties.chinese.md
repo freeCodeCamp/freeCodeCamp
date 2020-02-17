@@ -18,9 +18,9 @@ localeTitle: 了解自己的属性
 ```yml
 tests:
   - text: <code>ownProps</code>应包含值<code>&quot;numLegs&quot;</code>和<code>&quot;name&quot;</code> 。
-    testString: 'assert(ownProps.indexOf("name") !== -1 && ownProps.indexOf("numLegs") !== -1, "<code>ownProps</code> should include the values <code>"numLegs"</code> and <code>"name"</code>.");'
+    testString: assert(ownProps.indexOf("name") !== -1 && ownProps.indexOf("numLegs") !== -1);
   - text: 无需使用内置方法<code>Object.keys()</code>即可解决此挑战。
-    testString: 'assert(!/\Object.keys/.test(code), "Solve this challenge without using the built in method <code>Object.keys()</code>.");'
+    testString: assert(!/\Object.keys/.test(code));
 
 ```
 

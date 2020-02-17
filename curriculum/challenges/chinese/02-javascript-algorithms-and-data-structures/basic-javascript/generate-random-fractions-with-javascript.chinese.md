@@ -18,11 +18,11 @@ localeTitle: 使用JavaScript生成随机分数
 ```yml
 tests:
   - text: <code>randomFraction</code>应该返回一个随机数。
-    testString: 'assert(typeof randomFraction() === "number", "<code>randomFraction</code> should return a random number.");'
+    testString: assert(typeof randomFraction() === "number");
   - text: <code>randomFraction</code>返回的<code>randomFraction</code>应该是小数。
-    testString: 'assert((randomFraction()+""). match(/\./g), "The number returned by <code>randomFraction</code> should be a decimal.");'
+    testString: assert((randomFraction()+''). match(/\./g));
   - text: 您应该使用<code>Math.random</code>来生成随机十进制数。
-    testString: 'assert(code.match(/Math\.random/g).length >= 0, "You should be using <code>Math.random</code> to generate the random decimal number.");'
+    testString: assert(code.match(/Math\.random/g).length >= 0);
 
 ```
 

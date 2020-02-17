@@ -28,9 +28,9 @@ Camper Cat 希望他的网站有一个介绍如何成为忍者的页面。请帮
 ```yml
 tests:
   - text: '你的代码应该包含 6 个<code>h3</code>标签。'
-    testString: assert($('h3').length === 6);
+    testString: assert($("h3").length === 6);
   - text: '你的代码不应包含 <code>h5</code> 标签。'
-    testString: assert($('h5').length === 0);
+    testString: assert((code.match(/\/h3/g) || []).length===6);
   - text: '代码不应该包含 <code>h5</code> 标记.'
     testString: assert($("h5").length === 0);
   - text: '代码不应该包含 <code>h5</code> 结束标记。'

@@ -18,7 +18,7 @@ localeTitle: 将悬停效果添加到D3元素
 ```yml
 tests:
   - text: 你的<code>rect</code>元素应该有一类<code>bar</code> 。
-    testString: 'assert($("rect").attr("class") == "bar", "Your <code>rect</code> elements should have a class of <code>bar</code>.");'
+    testString: assert($('rect').attr('class') == "bar");
 
 ```
 

@@ -18,15 +18,15 @@ localeTitle: 使用Spread Operator复制数组
 ```yml
 tests:
   - text: '<code>copyMachine([true, false, true], 2)</code>应返回<code>[[true, false, true], [true, false, true]]</code>'
-    testString: 'assert.deepEqual(copyMachine([true, false, true], 2), [[true, false, true], [true, false, true]], "<code>copyMachine([true, false, true], 2)</code> should return <code>[[true, false, true], [true, false, true]]</code>");'
+    testString: assert.deepEqual(copyMachine([true, false, true], 2), [[true, false, true], [true, false, true]]);
   - text: '<code>copyMachine([1, 2, 3], 5)</code>应返回<code>[[1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3]]</code>'
-    testString: 'assert.deepEqual(copyMachine([1, 2, 3], 5), [[1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3]], "<code>copyMachine([1, 2, 3], 5)</code> should return <code>[[1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3]]</code>");'
+    testString: assert.deepEqual(copyMachine([1, 2, 3], 5), [[1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3]]);
   - text: '<code>copyMachine([true, true, null], 1)</code>应该返回<code>[[true, true, null]]</code>'
-    testString: 'assert.deepEqual(copyMachine([true, true, null], 1), [[true, true, null]], "<code>copyMachine([true, true, null], 1)</code> should return <code>[[true, true, null]]</code>");'
+    testString: assert.deepEqual(copyMachine([true, true, null], 1), [[true, true, null]]);
   - text: '<code>copyMachine([&quot;it works&quot;], 3)</code>应该返回<code>[[&quot;it works&quot;], [&quot;it works&quot;], [&quot;it works&quot;]]</code>'
-    testString: 'assert.deepEqual(copyMachine(["it works"], 3), [["it works"], ["it works"], ["it works"]], "<code>copyMachine(["it works"], 3)</code> should return <code>[["it works"], ["it works"], ["it works"]]</code>");'
+    testString: assert.deepEqual(copyMachine(['it works'], 3), [['it works'], ['it works'], ['it works']]);
   - text: <code>copyMachine</code>函数应该使用带有数组<code>arr</code>的<code>spread operator</code>
-    testString: 'assert.notStrictEqual(copyMachine.toString().indexOf(".concat(_toConsumableArray(arr))"), -1, "The <code>copyMachine</code> function should utilize the <code>spread operator</code> with array <code>arr</code>");'
+    testString: assert(removeJSComments(code).match(/\.\.\.arr/));
 
 ```
 

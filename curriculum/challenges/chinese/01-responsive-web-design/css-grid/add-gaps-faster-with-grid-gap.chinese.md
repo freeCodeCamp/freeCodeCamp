@@ -23,7 +23,7 @@ localeTitle: 使用 grid-gap 为网格添加间距
 ```yml
 tests:
   - text: '<code>container</code>类应该有<code>grid-gap</code>属性，在行之间设置<code>10px</code>的间距，在列之间设置<code>20px</code>的间距。'
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-gap\s*?:\s*?10px\s*?20px\s*?;[\s\S]*}/gi));'
+    testString: assert(code.match(/.container\s*?{[\s\S]*grid-gap\s*?:\s*?10px\s+?20px\s*?;[\s\S]*}/gi));
 
 ```
 

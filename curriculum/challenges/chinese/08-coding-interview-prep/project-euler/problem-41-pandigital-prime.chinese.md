@@ -19,9 +19,9 @@ localeTitle: 问题41：Pandigital prime
 ```yml
 tests:
   - text: <code>pandigitalPrime(4)</code>应该返回4231。
-    testString: 'assert(pandigitalPrime(4) == 4231, "<code>pandigitalPrime(4)</code> should return 4231.");'
+    testString: assert(pandigitalPrime(4) == 4231);
   - text: <code>pandigitalPrime(7)</code>应该返回7652413。
-    testString: 'assert(pandigitalPrime(7) == 7652413, "<code>pandigitalPrime(7)</code> should return 7652413.");'
+    testString: assert(pandigitalPrime(7) == 7652413);
 
 ```
 

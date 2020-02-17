@@ -24,7 +24,7 @@ localeTitle: 通过从左到右淡化元素来创建视觉方向
 ```yml
 tests:
   - text: '50% 处 <code>keyframes</code> 规则应该设置 <code>opacity</code> 属性值为 0.1 以使其渐隐。'
-    testString: 'assert(code.match(/@keyframes fade\s*?{\s*?50%\s*?{\s*?(?:left:\s*?60%;\s*?opacity:\s*?0?\.1;|opacity:\s*?0?\.1;\s*?left:\s*?60%;)/gi), ''50% 处 <code>keyframes</code> 规则应该设置 <code>opacity</code> 属性值为 0.1 以使其渐隐。'');'
+    testString: assert(code.match(/@keyframes fade\s*?{\s*?50%\s*?{\s*?(?:left:\s*?60%;\s*?opacity:\s*?0?\.1;|opacity:\s*?0?\.1;\s*?left:\s*?60%;)/gi));
 
 ```
 

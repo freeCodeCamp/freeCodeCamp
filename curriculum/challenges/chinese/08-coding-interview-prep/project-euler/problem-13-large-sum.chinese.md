@@ -19,9 +19,9 @@ localeTitle: 问题13：大笔金额
 ```yml
 tests:
   - text: <code>largeSum(testNums)</code>应该返回8348422521。
-    testString: 'assert.strictEqual(largeSum(testNums), 8348422521, "<code>largeSum(testNums)</code> should return 8348422521.");'
+    testString: assert.strictEqual(largeSum(testNums), 8348422521);
   - text: <code>largeSum(fiftyDigitNums)</code>应返回5537376230。
-    testString: 'assert.strictEqual(largeSum(fiftyDigitNums), 5537376230, "<code>largeSum(fiftyDigitNums)</code> should return 5537376230.");'
+    testString: assert.strictEqual(largeSum(fiftyDigitNums), 5537376230);
 
 ```
 

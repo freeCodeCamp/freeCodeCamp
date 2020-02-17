@@ -32,9 +32,9 @@ body {
 ```yml
 tests:
   - text: '<code>body</code>元素的背景颜色应该是黑色。'
-    testString: assert($("body").css("background-color") === "rgb(0, 0, 0)";
+    testString: assert($("body").css("background-color") === "rgb(0, 0, 0)");
   - text: '使用<code>十六进制编码</code>来替换<code>black</code>的写法。'
-    testString: 'assert(code.match(/body\s*{(([\s\S]*;\s*?)|\s*?)background.*\s*:\s*?#000(000)?((\s*})|(;[\s\S]*?}))/gi));'
+    testString: assert(code.match(/body\s*{(([\s\S]*;\s*?)|\s*?)background.*\s*:\s*?#000(000)?((\s*})|(;[\s\S]*?}))/gi));
 
 ```
 
@@ -65,5 +65,6 @@ tests:
 ```html
 // solution required
 ```
+
 </section>
               

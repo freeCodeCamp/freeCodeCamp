@@ -18,13 +18,13 @@ localeTitle: 重置继承的构造函数属性
 ```yml
 tests:
   - text: <code>Bird.prototype</code>应该是<code>Animal</code>一个实例。
-    testString: 'assert(Animal.prototype.isPrototypeOf(Bird.prototype), "<code>Bird.prototype</code> should be an instance of <code>Animal</code>.");'
+    testString: assert(Animal.prototype.isPrototypeOf(Bird.prototype));
   - text: <code>duck.constructor</code>应该返回<code>Bird</code> 。
-    testString: 'assert(duck.constructor === Bird, "<code>duck.constructor</code> should return <code>Bird</code>.");'
+    testString: assert(duck.constructor === Bird);
   - text: <code>Dog.prototype</code>应该是<code>Animal</code>一个实例。
-    testString: 'assert(Animal.prototype.isPrototypeOf(Dog.prototype), "<code>Dog.prototype</code> should be an instance of <code>Animal</code>.");'
+    testString: assert(Animal.prototype.isPrototypeOf(Dog.prototype));
   - text: <code>beagle.constructor</code>应该返回<code>Dog</code> 。
-    testString: 'assert(beagle.constructor === Dog, "<code>beagle.constructor</code> should return <code>Dog</code>.");'
+    testString: assert(beagle.constructor === Dog);
 
 ```
 

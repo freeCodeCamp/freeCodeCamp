@@ -18,13 +18,13 @@ localeTitle: 将值传递给带参数的函数
 ```yml
 tests:
   - text: <code>functionWithArgs</code>应该是一个函数
-    testString: 'assert(typeof functionWithArgs === "function", "<code>functionWithArgs</code> should be a function");'
+    testString: assert(typeof functionWithArgs === 'function');
   - text: '<code>functionWithArgs(1,2)</code>应该输出<code>3</code>'
-    testString: 'if(typeof functionWithArgs === "function") { capture(); functionWithArgs(1,2); uncapture(); } assert(logOutput == 3, "<code>functionWithArgs(1,2)</code> should output <code>3</code>");'
+    testString: if(typeof functionWithArgs === "function") { capture(); functionWithArgs(1,2); uncapture(); } assert(logOutput == 3);
   - text: '<code>functionWithArgs(7,9)</code>应该输出<code>16</code>'
-    testString: 'if(typeof functionWithArgs === "function") { capture(); functionWithArgs(7,9); uncapture(); } assert(logOutput == 16, "<code>functionWithArgs(7,9)</code> should output <code>16</code>");'
+    testString: if(typeof functionWithArgs === "function") { capture(); functionWithArgs(7,9); uncapture(); } assert(logOutput == 16);
   - text: 定义后，使用两个数字调用<code>functionWithArgs</code> 。
-    testString: 'assert(/^\s*functionWithArgs\s*\(\s*\d+\s*,\s*\d+\s*\)\s*;/m.test(code), "Call <code>functionWithArgs</code> with two numbers after you define it.");'
+    testString: assert(/^\s*functionWithArgs\s*\(\s*\d+\s*,\s*\d+\s*\)\s*/m.test(code));
 
 ```
 

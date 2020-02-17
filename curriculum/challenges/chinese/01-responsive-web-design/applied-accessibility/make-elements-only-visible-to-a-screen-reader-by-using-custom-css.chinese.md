@@ -46,9 +46,9 @@ tests:
   - text: '<code>sr-only</code>类中的<code>left</code>属性的值应为 -10000px。'
     testString: assert($('.sr-only').css('left') == '-10000px');
   - text: '<code>sr-only</code>类中的<code>width</code>属性的值应为 1px。'
-    testString: 'assert(code.match(/width:\s*?1px/gi));'
+    testString: assert(code.match(/width:\s*?1px/gi));
   - text: '<code>sr-only</code>类中的<code>height</code>属性的值应为 1px。'
-    testString: 'assert(code.match(/height:\s*?1px/gi));'
+    testString: assert(code.match(/height:\s*?1px/gi));
 
 ```
 

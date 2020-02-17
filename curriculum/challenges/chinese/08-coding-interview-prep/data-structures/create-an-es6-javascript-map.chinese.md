@@ -19,9 +19,9 @@ localeTitle: 创建ES6 JavaScript地图
 ```yml
 tests:
   - text: myMap对象存在。
-    testString: 'assert(typeof myMap === "object", "The myMap object exists.");'
+    testString: assert(typeof myMap === 'object');
   - text: myMap包含键值对<code>freeCodeCamp</code> ， <code>Awesome!</code> 。
-    testString: 'assert(myMap.get("freeCodeCamp") === "Awesome!", "myMap contains the key value pair <code>freeCodeCamp</code>, <code>Awesome!</code>.");'
+    testString: assert(myMap.get('freeCodeCamp') === 'Awesome!');
 
 ```
 

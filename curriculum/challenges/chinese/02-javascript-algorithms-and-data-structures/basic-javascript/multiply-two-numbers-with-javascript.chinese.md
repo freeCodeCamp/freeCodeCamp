@@ -18,9 +18,9 @@ localeTitle: 使用JavaScript将两个数字相乘
 ```yml
 tests:
   - text: 使变量<code>product</code>等于80
-    testString: 'assert(product === 80,"Make the variable <code>product</code> equal 80");'
+    testString: assert(product === 80);
   - text: 使用<code>*</code>运算符
-    testString: 'assert(/\*/.test(code), "Use the <code>*</code> operator");'
+    testString: assert(/\*/.test(code));
 
 ```
 

@@ -19,13 +19,13 @@ localeTitle: 实施冒泡排序
 ```yml
 tests:
   - text: <code>bubbleSort</code>是一个功能。
-    testString: 'assert(typeof bubbleSort == "function", "<code>bubbleSort</code> is a function.");'
+    testString: assert(typeof bubbleSort == 'function');
   - text: <code>bubbleSort</code>返回一个已排序的数组（从最小到最大）。
-    testString: 'assert(isSorted(bubbleSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])), "<code>bubbleSort</code> returns a sorted array (least to greatest).");'
+    testString: assert(isSorted(bubbleSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])));
   - text: <code>bubbleSort</code>返回一个除订单外没有变化的数组。
-    testString: 'assert.sameMembers(bubbleSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]), [1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92], "<code>bubbleSort</code> returns an array that is unchanged except for order.");'
+    testString: assert.sameMembers(bubbleSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]), [1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]);
   - text: <code>bubbleSort</code>不应使用内置的<code>.sort()</code>方法。
-    testString: 'assert.strictEqual(code.search(/\.sort\(/), -1, "<code>bubbleSort</code> should not use the built-in <code>.sort()</code> method.");'
+    testString: assert.strictEqual(code.search(/\.sort\(/), -1);
 
 ```
 

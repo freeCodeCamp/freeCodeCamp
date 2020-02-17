@@ -33,7 +33,7 @@ localeTitle: 使用 grid-template-columns 添加多列
 ```yml
 tests:
   - text: '<code>container</code>类应该有<code>grid-template-columns</code>属性，该属性有三个值，均为<code>100px</code>。'
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?100px\s*?100px\s*?100px\s*?;[\s\S]*}/gi));'
+    testString: assert(code.match(/.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?100px\s*?100px\s*?100px\s*?;[\s\S]*}/gi));
 
 ```
 

@@ -19,7 +19,7 @@ localeTitle: 问题406：猜猜游戏
 ```yml
 tests:
   - text: <code>euler406()</code>应返回36813.12757207。
-    testString: 'assert.strictEqual(euler406(), 36813.12757207, "<code>euler406()</code> should return 36813.12757207.");'
+    testString: assert.strictEqual(euler406(), 36813.12757207);
 
 ```
 

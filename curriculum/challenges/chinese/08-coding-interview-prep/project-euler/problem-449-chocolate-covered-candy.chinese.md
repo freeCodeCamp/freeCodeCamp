@@ -19,7 +19,7 @@ localeTitle: 问题449：巧克力糖果
 ```yml
 tests:
   - text: <code>euler449()</code>应返回103.37870096。
-    testString: 'assert.strictEqual(euler449(), 103.37870096, "<code>euler449()</code> should return 103.37870096.");'
+    testString: assert.strictEqual(euler449(), 103.37870096);
 
 ```
 

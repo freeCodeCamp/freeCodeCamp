@@ -19,29 +19,29 @@ localeTitle: Hofstadter图 - 图序列
 ```yml
 tests:
   - text: <code>ffr</code>是一个功能。
-    testString: 'assert(typeof ffr === "function", "<code>ffr</code> is a function.");'
+    testString: assert(typeof ffr === 'function');
   - text: <code>ffs</code>是一个函数。
-    testString: 'assert(typeof ffs === "function", "<code>ffs</code> is a function.");'
+    testString: assert(typeof ffs === 'function');
   - text: <code>ffr</code>应该返回整数。
-    testString: 'assert(Number.isInteger(ffr(1)), "<code>ffr</code> should return integer.");'
+    testString: assert(Number.isInteger(ffr(1)));
   - text: <code>ffs</code>应该返回整数。
-    testString: 'assert(Number.isInteger(ffs(1)), "<code>ffs</code> should return integer.");'
+    testString: assert(Number.isInteger(ffs(1)));
   - text: <code>ffr()</code>应该返回<code>69</code>
-    testString: 'assert.equal(ffr(ffrParamRes[0][0]), ffrParamRes[0][1], "<code>ffr()</code> should return <code>69</code>");'
+    testString: assert.equal(ffr(ffrParamRes[0][0]), ffrParamRes[0][1]);
   - text: <code>ffr()</code>应返回<code>1509</code>
-    testString: 'assert.equal(ffr(ffrParamRes[1][0]), ffrParamRes[1][1], "<code>ffr()</code> should return <code>1509</code>");'
+    testString: assert.equal(ffr(ffrParamRes[1][0]), ffrParamRes[1][1]);
   - text: <code>ffr()</code>应返回<code>5764</code>
-    testString: 'assert.equal(ffr(ffrParamRes[2][0]), ffrParamRes[2][1], "<code>ffr()</code> should return <code>5764</code>");'
+    testString: assert.equal(ffr(ffrParamRes[2][0]), ffrParamRes[2][1]);
   - text: <code>ffr()</code>应返回<code>526334</code>
-    testString: 'assert.equal(ffr(ffrParamRes[3][0]), ffrParamRes[3][1], "<code>ffr()</code> should return <code>526334</code>");'
+    testString: assert.equal(ffr(ffrParamRes[3][0]), ffrParamRes[3][1]);
   - text: <code>ffs()</code>应该返回<code>14</code>
-    testString: 'assert.equal(ffs(ffsParamRes[0][0]), ffsParamRes[0][1], "<code>ffs()</code> should return <code>14</code>");'
+    testString: assert.equal(ffs(ffsParamRes[0][0]), ffsParamRes[0][1]);
   - text: <code>ffs()</code>应该返回<code>59</code>
-    testString: 'assert.equal(ffs(ffsParamRes[1][0]), ffsParamRes[1][1], "<code>ffs()</code> should return <code>59</code>");'
+    testString: assert.equal(ffs(ffsParamRes[1][0]), ffsParamRes[1][1]);
   - text: <code>ffs()</code>应该返回<code>112</code>
-    testString: 'assert.equal(ffs(ffsParamRes[2][0]), ffsParamRes[2][1], "<code>ffs()</code> should return <code>112</code>");'
+    testString: assert.equal(ffs(ffsParamRes[2][0]), ffsParamRes[2][1]);
   - text: <code>ffs()</code>应该返回<code>1041</code>
-    testString: 'assert.equal(ffs(ffsParamRes[3][0]), ffsParamRes[3][1], "<code>ffs()</code> should return <code>1041</code>");'
+    testString: assert.equal(ffs(ffsParamRes[3][0]), ffsParamRes[3][1]);
 
 ```
 

@@ -20,59 +20,59 @@ localeTitle: 电话号码验证器
 ```yml
 tests:
   - text: <code>telephoneCheck(&quot;555-555-5555&quot;)</code>应该返回一个布尔值。
-    testString: 'assert(typeof telephoneCheck("555-555-5555") === "boolean", "<code>telephoneCheck("555-555-5555")</code> should return a boolean.");'
+    testString: assert(typeof telephoneCheck("555-555-5555") === "boolean");
   - text: <code>telephoneCheck(&quot;1 555-555-5555&quot;)</code>应该返回true。
-    testString: 'assert(telephoneCheck("1 555-555-5555") === true, "<code>telephoneCheck("1 555-555-5555")</code> should return true.");'
+    testString: assert(telephoneCheck("1 555-555-5555") === true);
   - text: <code>telephoneCheck(&quot;1 (555) 555-5555&quot;)</code>应该返回true。
-    testString: 'assert(telephoneCheck("1 (555) 555-5555") === true, "<code>telephoneCheck("1 (555) 555-5555")</code> should return true.");'
+    testString: assert(telephoneCheck("1 (555) 555-5555") === true);
   - text: <code>telephoneCheck(&quot;5555555555&quot;)</code>应该返回true。
-    testString: 'assert(telephoneCheck("5555555555") === true, "<code>telephoneCheck("5555555555")</code> should return true.");'
+    testString: assert(telephoneCheck("5555555555") === true);
   - text: <code>telephoneCheck(&quot;555-555-5555&quot;)</code>应该返回true。
-    testString: 'assert(telephoneCheck("555-555-5555") === true, "<code>telephoneCheck("555-555-5555")</code> should return true.");'
+    testString: assert(telephoneCheck("555-555-5555") === true);
   - text: <code>telephoneCheck(&quot;(555)555-5555&quot;)</code>应该返回true。
-    testString: 'assert(telephoneCheck("(555)555-5555") === true, "<code>telephoneCheck("(555)555-5555")</code> should return true.");'
+    testString: assert(telephoneCheck("(555)555-5555") === true);
   - text: <code>telephoneCheck(&quot;1(555)555-5555&quot;)</code>应该返回true。
-    testString: 'assert(telephoneCheck("1(555)555-5555") === true, "<code>telephoneCheck("1(555)555-5555")</code> should return true.");'
+    testString: assert(telephoneCheck("1(555)555-5555") === true);
   - text: <code>telephoneCheck(&quot;555-5555&quot;)</code>应该返回false。
-    testString: 'assert(telephoneCheck("555-5555") === false, "<code>telephoneCheck("555-5555")</code> should return false.");'
+    testString: assert(telephoneCheck("555-5555") === false);
   - text: <code>telephoneCheck(&quot;5555555&quot;)</code>应该返回false。
-    testString: 'assert(telephoneCheck("5555555") === false, "<code>telephoneCheck("5555555")</code> should return false.");'
+    testString: assert(telephoneCheck("5555555") === false);
   - text: <code>telephoneCheck(&quot;1 555)555-5555&quot;)</code>应该返回false。
-    testString: 'assert(telephoneCheck("1 555)555-5555") === false, "<code>telephoneCheck("1 555)555-5555")</code> should return false.");'
+    testString: assert(telephoneCheck("1 555)555-5555") === false);
   - text: <code>telephoneCheck(&quot;1 555 555 5555&quot;)</code>应该返回true。
-    testString: 'assert(telephoneCheck("1 555 555 5555") === true, "<code>telephoneCheck("1 555 555 5555")</code> should return true.");'
+    testString: assert(telephoneCheck("1 555 555 5555") === true);
   - text: <code>telephoneCheck(&quot;1 456 789 4444&quot;)</code>应该返回true。
-    testString: 'assert(telephoneCheck("1 456 789 4444") === true, "<code>telephoneCheck("1 456 789 4444")</code> should return true.");'
+    testString: assert(telephoneCheck("1 456 789 4444") === true);
   - text: '<code>telephoneCheck(&quot;123**&amp;!!asdf#&quot;)</code>应该返回false。'
-    testString: 'assert(telephoneCheck("123**&!!asdf#") === false, "<code>telephoneCheck("123**&!!asdf#")</code> should return false.");'
+    testString: assert(telephoneCheck("123**&!!asdf#") === false);
   - text: <code>telephoneCheck(&quot;55555555&quot;)</code>应该返回false。
-    testString: 'assert(telephoneCheck("55555555") === false, "<code>telephoneCheck("55555555")</code> should return false.");'
+    testString: assert(telephoneCheck("55555555") === false);
   - text: <code>telephoneCheck(&quot;(6054756961)&quot;)</code>应该返回false
-    testString: 'assert(telephoneCheck("(6054756961)") === false, "<code>telephoneCheck("(6054756961)")</code> should return false");'
+    testString: assert(telephoneCheck("(6054756961)") === false);
   - text: <code>telephoneCheck(&quot;2 (757) 622-7382&quot;)</code>应该返回false。
-    testString: 'assert(telephoneCheck("2 (757) 622-7382") === false, "<code>telephoneCheck("2 (757) 622-7382")</code> should return false.");'
+    testString: assert(telephoneCheck("2 (757) 622-7382") === false);
   - text: <code>telephoneCheck(&quot;0 (757) 622-7382&quot;)</code>应该返回false。
-    testString: 'assert(telephoneCheck("0 (757) 622-7382") === false, "<code>telephoneCheck("0 (757) 622-7382")</code> should return false.");'
+    testString: assert(telephoneCheck("0 (757) 622-7382") === false);
   - text: <code>telephoneCheck(&quot;-1 (757) 622-7382&quot;)</code>应该返回false
-    testString: 'assert(telephoneCheck("-1 (757) 622-7382") === false, "<code>telephoneCheck("-1 (757) 622-7382")</code> should return false");'
+    testString: assert(telephoneCheck("-1 (757) 622-7382") === false);
   - text: <code>telephoneCheck(&quot;2 757 622-7382&quot;)</code>应该返回false。
-    testString: 'assert(telephoneCheck("2 757 622-7382") === false, "<code>telephoneCheck("2 757 622-7382")</code> should return false.");'
+    testString: assert(telephoneCheck("2 757 622-7382") === false);
   - text: <code>telephoneCheck(&quot;10 (757) 622-7382&quot;)</code>应该返回false。
-    testString: 'assert(telephoneCheck("10 (757) 622-7382") === false, "<code>telephoneCheck("10 (757) 622-7382")</code> should return false.");'
+    testString: assert(telephoneCheck("10 (757) 622-7382") === false);
   - text: <code>telephoneCheck(&quot;27576227382&quot;)</code>应该返回false。
-    testString: 'assert(telephoneCheck("27576227382") === false, "<code>telephoneCheck("27576227382")</code> should return false.");'
+    testString: assert(telephoneCheck("27576227382") === false);
   - text: <code>telephoneCheck(&quot;(275)76227382&quot;)</code>应该返回false。
-    testString: 'assert(telephoneCheck("(275)76227382") === false, "<code>telephoneCheck("(275)76227382")</code> should return false.");'
+    testString: assert(telephoneCheck("(275)76227382") === false);
   - text: <code>telephoneCheck(&quot;2(757)6227382&quot;)</code>应该返回false。
-    testString: 'assert(telephoneCheck("2(757)6227382") === false, "<code>telephoneCheck("2(757)6227382")</code> should return false.");'
+    testString: assert(telephoneCheck("2(757)6227382") === false);
   - text: <code>telephoneCheck(&quot;2(757)622-7382&quot;)</code>应该返回false。
-    testString: 'assert(telephoneCheck("2(757)622-7382") === false, "<code>telephoneCheck("2(757)622-7382")</code> should return false.");'
+    testString: assert(telephoneCheck("2(757)622-7382") === false);
   - text: <code>telephoneCheck(&quot;555)-555-5555&quot;)</code>应该返回false。
-    testString: 'assert(telephoneCheck("555)-555-5555") === false, "<code>telephoneCheck("555)-555-5555")</code> should return false.");'
+    testString: assert(telephoneCheck("555)-555-5555") === false);
   - text: <code>telephoneCheck(&quot;(555-555-5555&quot;)</code>应该返回false。
-    testString: 'assert(telephoneCheck("(555-555-5555") === false, "<code>telephoneCheck("(555-555-5555")</code> should return false.");'
+    testString: assert(telephoneCheck("(555-555-5555") === false);
   - text: <code>telephoneCheck(&quot;(555)5(55?)-5555&quot;)</code>应该返回false。
-    testString: 'assert(telephoneCheck("(555)5(55?)-5555") === false, "<code>telephoneCheck("(555)5(55?)-5555")</code> should return false.");'
+    testString: assert(telephoneCheck("(555)5(55?)-5555") === false);
 
 ```
 

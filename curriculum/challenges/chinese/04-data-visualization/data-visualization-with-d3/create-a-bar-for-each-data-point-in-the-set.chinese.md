@@ -18,13 +18,13 @@ localeTitle: 为集合中的每个数据点创建一个条
 ```yml
 tests:
   - text: 您的文档应该有9个<code>rect</code>元素。
-    testString: 'assert($("rect").length == 9, "Your document should have 9 <code>rect</code> elements.");'
+    testString: assert($('rect').length == 9);
   - text: 您的代码应该使用<code>data()</code>方法。
-    testString: 'assert(code.match(/\.data/g), "Your code should use the <code>data()</code> method.");'
+    testString: assert(code.match(/\.data/g));
   - text: 您的代码应使用<code>enter()</code>方法。
-    testString: 'assert(code.match(/\.enter/g), "Your code should use the <code>enter()</code> method.");'
+    testString: assert(code.match(/\.enter/g));
   - text: 您的代码应使用<code>append()</code>方法。
-    testString: 'assert(code.match(/\.append/g), "Your code should use the <code>append()</code> method.");'
+    testString: assert(code.match(/\.append/g));
 
 ```
 

@@ -39,9 +39,9 @@ box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 ```yml
 tests:
   - text: '你应该给 id 为 <code>thumbnail</code> 的元素添加 <code>box-shadow</code> 属性。'
-    testString: assert(code.match(/#thumbnail\s*?{\s*?box-shadow/g), '你应该给 id 为 <code>thumbnail</code> 的元素添加 <code> box-shadow</code> 属性。');
+    testString: assert(code.match(/#thumbnail\s*?{\s*?box-shadow/g));
   - text: '<code>box-shadow</code> 值应该是指定的 CSS 值。'
-    testString: 'assert(code.match(/box-shadow:\s*?0\s+?10px\s+?20px\s+?rgba\(\s*?0\s*?,\s*?0\s*?,\s*?0\s*?,\s*?0?\.19\),\s*?0\s+?6px\s+?6px\s+?rgba\(\s*?0\s*?,\s*?0\s*?,\s*?0\s*?,\s*?0?\.23\)/gi), ''<code>box-shadow</code> 值应该是指定的 CSS 值。'');'
+    testString: assert(code.match(/box-shadow:\s*?0\s+?10px\s+?20px\s+?rgba\(\s*?0\s*?,\s*?0\s*?,\s*?0\s*?,\s*?0?\.19\)\s*?,\s*?0\s+?6px\s+?6px\s+?rgba\(\s*?0\s*?,\s*?0\s*?,\s*?0\s*?,\s*?0?\.23\)/gi));
 
 ```
 

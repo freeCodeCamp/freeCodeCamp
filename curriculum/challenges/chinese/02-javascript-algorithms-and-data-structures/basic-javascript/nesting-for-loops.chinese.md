@@ -18,11 +18,11 @@ localeTitle: 嵌套循环
 ```yml
 tests:
   - text: '<code>multiplyAll([[1],[2],[3]])</code>应该返回<code>6</code>'
-    testString: 'assert(multiplyAll([[1],[2],[3]]) === 6, "<code>multiplyAll([[1],[2],[3]])</code> should return <code>6</code>");'
+    testString: assert(multiplyAll([[1],[2],[3]]) === 6);
   - text: '<code>multiplyAll([[1,2],[3,4],[5,6,7]])</code>应返回<code>5040</code>'
-    testString: 'assert(multiplyAll([[1,2],[3,4],[5,6,7]]) === 5040, "<code>multiplyAll([[1,2],[3,4],[5,6,7]])</code> should return <code>5040</code>");'
+    testString: assert(multiplyAll([[1,2],[3,4],[5,6,7]]) === 5040);
   - text: '<code>multiplyAll([[5,1],[0.2, 4, 0.5],[3, 9]])</code>应该返回<code>54</code>'
-    testString: 'assert(multiplyAll([[5,1],[0.2, 4, 0.5],[3, 9]]) === 54, "<code>multiplyAll([[5,1],[0.2, 4, 0.5],[3, 9]])</code> should return <code>54</code>");'
+    testString: assert(multiplyAll([[5,1],[0.2, 4, 0.5],[3, 9]]) === 54);
 
 ```
 

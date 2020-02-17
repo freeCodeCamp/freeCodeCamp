@@ -19,21 +19,21 @@ localeTitle: 格雷码
 ```yml
 tests:
   - text: <code>gray</code>应该是一个功能。
-    testString: 'assert(typeof gray=="function","<code>gray</code> should be a function.");'
+    testString: assert(typeof gray=='function');
   - text: '<code>gray(true,177)</code>应该返回一个数字。'
-    testString: 'assert(typeof gray(true,177)=="number","<code>gray(true,177)</code> should return a number.");'
+    testString: assert(typeof gray(true,177)=='number');
   - text: '<code>gray(true,177)</code>应该返回<code>233</code> 。'
-    testString: 'assert.equal(gray(true,177),233,"<code>gray(true,177)</code> should return <code>233</code>.");'
+    testString: assert.equal(gray(true,177),233);
   - text: '<code>gray(true,425)</code>应该返回<code>381</code> 。'
-    testString: 'assert.equal(gray(true,425),381,"<code>gray(true,425)</code> should return <code>381</code>.");'
+    testString: assert.equal(gray(true,425),381);
   - text: '<code>gray(true,870)</code>应该返回<code>725</code> 。'
-    testString: 'assert.equal(gray(true,870),725,"<code>gray(true,870)</code> should return <code>725</code>.");'
+    testString: assert.equal(gray(true,870),725);
   - text: '<code>gray(false,233)</code>应该返回<code>177</code> 。'
-    testString: 'assert.equal(gray(false,233),177,"<code>gray(false,233)</code> should return <code>177</code>.");'
+    testString: assert.equal(gray(false,233),177);
   - text: '<code>gray(false,381)</code>应该返回<code>425</code> 。'
-    testString: 'assert.equal(gray(false,381),425,"<code>gray(false,381)</code> should return <code>425</code>.");'
+    testString: assert.equal(gray(false,381),425);
   - text: '<code>gray(false,725)</code>应该返回<code>870</code> 。'
-    testString: 'assert.equal(gray(false,725),870,"<code>gray(false,725)</code> should return <code>870</code>.");'
+    testString: assert.equal(gray(false,725),870);
 
 ```
 

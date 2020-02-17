@@ -18,13 +18,13 @@ localeTitle: 使用某些方法检查阵列中的任何元素是否符合条件
 ```yml
 tests:
   - text: 您的代码应该使用<code>some</code>方法。
-    testString: 'assert(code.match(/\.some/g), "Your code should use the <code>some</code> method.");'
+    testString: assert(code.match(/\.some/g));
   - text: '<code>checkPositive([1, 2, 3, -4, 5])</code>应该返回<code>true</code> 。'
-    testString: 'assert(checkPositive([1, 2, 3, -4, 5]), "<code>checkPositive([1, 2, 3, -4, 5])</code> should return <code>true</code>.");'
+    testString: assert(checkPositive([1, 2, 3, -4, 5]));
   - text: '<code>checkPositive([1, 2, 3, 4, 5])</code>应该返回<code>true</code> 。'
-    testString: 'assert(checkPositive([1, 2, 3, 4, 5]), "<code>checkPositive([1, 2, 3, 4, 5])</code> should return <code>true</code>.");'
+    testString: assert(checkPositive([1, 2, 3, 4, 5]));
   - text: '<code>checkPositive([-1, -2, -3, -4, -5])</code>应该返回<code>false</code> 。'
-    testString: 'assert(!checkPositive([-1, -2, -3, -4, -5]), "<code>checkPositive([-1, -2, -3, -4, -5])</code> should return <code>false</code>.");'
+    testString: assert(!checkPositive([-1, -2, -3, -4, -5]));
 
 ```
 

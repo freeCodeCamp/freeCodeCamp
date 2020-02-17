@@ -19,7 +19,7 @@ localeTitle: 问题108：丢番图互惠I
 ```yml
 tests:
   - text: diophantineOne <code>diophantineOne()</code>应返回180180。
-    testString: 'assert.strictEqual(diophantineOne(), 180180, "<code>diophantineOne()</code> should return 180180.");'
+    testString: assert.strictEqual(diophantineOne(), 180180);
 
 ```
 

@@ -19,7 +19,7 @@ localeTitle: 问题166：克里斯十字架
 ```yml
 tests:
   - text: <code>euler166()</code>应返回7130034。
-    testString: 'assert.strictEqual(euler166(), 7130034, "<code>euler166()</code> should return 7130034.");'
+    testString: assert.strictEqual(euler166(), 7130034);
 
 ```
 

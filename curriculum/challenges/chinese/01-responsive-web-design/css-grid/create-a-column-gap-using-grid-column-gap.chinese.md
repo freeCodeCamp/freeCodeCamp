@@ -30,7 +30,7 @@ grid-column-gap: 10px;
 ```yml
 tests:
   - text: '<code>container</code>类应该有<code>grid-column-gap</code>属性且值为<code>20px</code>。'
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-column-gap\s*?:\s*?20px\s*?;[\s\S]*}/gi));'
+    testString: assert(code.match(/.container\s*?{[\s\S]*grid-column-gap\s*?:\s*?20px\s*?;[\s\S]*}/gi));
 
 ```
 

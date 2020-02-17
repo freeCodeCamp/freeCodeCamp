@@ -19,7 +19,7 @@ localeTitle: 问题150：在三角形阵列中搜索具有最小和的子三角�
 ```yml
 tests:
   - text: <code>euler150()</code>应返回-271248680。
-    testString: 'assert.strictEqual(euler150(), -271248680, "<code>euler150()</code> should return -271248680.");'
+    testString: assert.strictEqual(euler150(), -271248680);
 
 ```
 

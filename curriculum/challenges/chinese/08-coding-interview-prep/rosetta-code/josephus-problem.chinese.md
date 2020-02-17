@@ -19,19 +19,19 @@ localeTitle: 约瑟夫斯问题
 ```yml
 tests:
   - text: <code>josephus</code>应该是一个功能。
-    testString: 'assert(typeof josephus=="function","<code>josephus</code> should be a function.");'
+    testString: assert(typeof josephus=='function');
   - text: '<code>josephus(30,3)</code>应该返回一个数字。'
-    testString: 'assert(typeof josephus(30,3)=="number","<code>josephus(30,3)</code> should return a number.");'
+    testString: assert(typeof josephus(30,3)=='number');
   - text: '<code>josephus(30,3)</code>应该回<code>29</code> 。'
-    testString: 'assert.equal(josephus(30,3),29,"<code>josephus(30,3)</code> should return <code>29</code>.");'
+    testString: assert.equal(josephus(30,3),29);
   - text: '<code>josephus(30,5)</code>应该返回<code>3</code> 。'
-    testString: 'assert.equal(josephus(30,5),3,"<code>josephus(30,5)</code> should return <code>3</code>.");'
+    testString: assert.equal(josephus(30,5),3);
   - text: '<code>josephus(20,2)</code>应该返回<code>9</code> 。'
-    testString: 'assert.equal(josephus(20,2),9,"<code>josephus(20,2)</code> should return <code>9</code>.");'
+    testString: assert.equal(josephus(20,2),9);
   - text: '<code>josephus(17,6)</code>应该回归<code>2</code> 。'
-    testString: 'assert.equal(josephus(17,6),2,"<code>josephus(17,6)</code> should return <code>2</code>.");'
+    testString: assert.equal(josephus(17,6),2);
   - text: '<code>josephus(29,4)</code>应该返回<code>2</code> 。'
-    testString: 'assert.equal(josephus(29,4),2,"<code>josephus(29,4)</code> should return <code>2</code>.");'
+    testString: assert.equal(josephus(29,4),2);
 
 ```
 

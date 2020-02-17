@@ -28,9 +28,9 @@ web 内容大部分都是文本。CSS 里面的 <code>text-align</code> 属性�
 ```yml
 tests:
   - text: '你应该在 <code>h4</code> 标签上使用 text-align 属性设置文本居中对齐。'
-    testString: assert($('h4').css('text-align') == 'center', '你应该在 <code>h4</code> 标签上使用 text-align 属性设置文本居中对齐。');
+    testString: assert($('h4').css('text-align') == 'center');
   - text: '你应该在 <code>p</code> 标签上使用 text-align 属性设置文本两端对齐。'
-    testString: assert($('p').css('text-align') == 'justify', '你应该在 <code>p</code> 标签上使用 text-align 属性设置文本两端对齐。');
+    testString: assert($('p').css('text-align') == 'justify');
 
 ```
 

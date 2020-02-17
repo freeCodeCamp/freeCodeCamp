@@ -19,13 +19,13 @@ localeTitle: 一周中的天
 ```yml
 tests:
   - text: <code>findXmasSunday</code>是一个函数。
-    testString: 'assert(typeof findXmasSunday === "function", "<code>findXmasSunday</code> is a function.");'
+    testString: assert(typeof findXmasSunday === 'function');
   - text: '<code>findChristmasSunday(2000, 2100)</code>应该返回一个数组。'
-    testString: 'assert(typeof findXmasSunday(2000, 2100) === "object", "<code>findChristmasSunday(2000, 2100)</code> should return an array.");'
+    testString: assert(typeof findXmasSunday(2000, 2100) === 'object');
   - text: '<code>findChristmasSunday(2008, 2121</code>应该回归[1977,1983,1988,1994,2005,2011,2016]'
-    testString: 'assert.deepEqual(findXmasSunday(1970, 2017), firstSolution, "<code>findChristmasSunday(2008, 2121</code> should return [1977, 1983, 1988, 1994, 2005, 2011, 2016]");'
+    testString: assert.deepEqual(findXmasSunday(1970, 2017), firstSolution);
   - text: '<code>findChristmasSunday(2008, 2121</code>应该返回[2011,2016,2022,2033,2039,2044,2050,2061,2067,2072,2078,2089,2095,2101,2107,2112,2118]'
-    testString: 'assert.deepEqual(findXmasSunday(2008, 2121), secondSolution, "<code>findChristmasSunday(2008, 2121</code> should return [2011, 2016, 2022, 2033, 2039, 2044, 2050, 2061, 2067, 2072, 2078, 2089, 2095, 2101, 2107, 2112, 2118]");'
+    testString: assert.deepEqual(findXmasSunday(2008, 2121), secondSolution);
 
 ```
 

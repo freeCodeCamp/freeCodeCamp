@@ -19,7 +19,7 @@ localeTitle: 问题254：数字因子的总和
 ```yml
 tests:
   - text: <code>euler254()</code>应该返回8184523820510。
-    testString: 'assert.strictEqual(euler254(), 8184523820510, "<code>euler254()</code> should return 8184523820510.");'
+    testString: assert.strictEqual(euler254(), 8184523820510);
 
 ```
 

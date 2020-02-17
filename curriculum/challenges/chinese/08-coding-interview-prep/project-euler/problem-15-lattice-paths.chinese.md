@@ -19,11 +19,11 @@ localeTitle: 问题15：格子路径
 ```yml
 tests:
   - text: <code>latticePaths(4)</code>应该返回70。
-    testString: 'assert.strictEqual(latticePaths(4), 70, "<code>latticePaths(4)</code> should return 70.");'
+    testString: assert.strictEqual(latticePaths(4), 70);
   - text: <code>latticePaths(9)</code>应该返回48620。
-    testString: 'assert.strictEqual(latticePaths(9), 48620, "<code>latticePaths(9)</code> should return 48620.");'
+    testString: assert.strictEqual(latticePaths(9), 48620);
   - text: <code>latticePaths(20)</code>应该返回137846528820。
-    testString: 'assert.strictEqual(latticePaths(20), 137846528820, "<code>latticePaths(20)</code> should return 137846528820.");'
+    testString: assert.strictEqual(latticePaths(20), 137846528820);
 
 ```
 

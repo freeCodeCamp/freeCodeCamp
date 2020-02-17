@@ -27,11 +27,11 @@ tests:
   - text: '<code>h2</code>元素应该含有<code>red-text</code> class 选择器。'
     testString: assert($("h2").hasClass("red-text"));
   - text: '第一个<code>p</code>元素应该为红色。'
-    testString: 'assert($("p:eq(0)").css("color") === "rgb(255, 0, 0)");'
+    testString: assert($("p:eq(0)").css("color") === "rgb(255, 0, 0)");
   - text: '第二和第三个<code>p</code>元素不应该为红色。'
-    testString: 'assert(!($("p:eq(1)").css("color") === "rgb(255, 0, 0)") && !($("p:eq(2)").css("color") === "rgb(255, 0, 0)"));'
+    testString: assert(!($("p:eq(1)").css("color") === "rgb(255, 0, 0)") && !($("p:eq(2)").css("color") === "rgb(255, 0, 0)"));
   - text: '第一个<code>p</code>元素应该包含<code>red-text</code> class 选择器。'
-    testString: 'assert($("p:eq(0)").hasClass("red-text"));'
+    testString: assert($("p:eq(0)").hasClass("red-text"));
 
 ```
 
@@ -51,10 +51,10 @@ tests:
 
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
-  <p class="red-text">点击查看更多<a href="#">猫图</a>.</p>
-  
+  <p>点击查看更多<a href="#">猫图</a>.</p>
+
   <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="一只仰卧着的萌猫"></a>
-  
+
   <div>
     <p>猫咪最喜欢的三件东西：</p>
     <ul>
@@ -69,7 +69,7 @@ tests:
       <li>同类</li>
     </ol>
   </div>
-  
+
   <form action="/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor">室内</label>
     <label><input type="radio" name="indoor-outdoor">室外</label><br>

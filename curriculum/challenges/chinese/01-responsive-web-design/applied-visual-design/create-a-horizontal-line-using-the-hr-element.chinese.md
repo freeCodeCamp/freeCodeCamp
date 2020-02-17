@@ -25,9 +25,9 @@ localeTitle: 使用 hr 标签创建水平线
 ```yml
 tests:
   - text: '你应该添加一个 <code>hr</code> 标签。'
-    testString: assert($('hr').length == 1, '你应该添加一个 <code>hr</code> 标签。');
+    testString: assert($('hr').length == 1);
   - text: '<code>hr</code> 标签应该在标题和段落之间。'
-    testString: assert(code.match(/<\/h4>\s*?<hr(>|\s*?\/>)\s*?<p>/gi), '<code>hr</code> 标签应该在标题和段落之间。');
+    testString: assert(code.match(/<\/h4>\s*?<hr(>|\s*?\/>)\s*?<p>/gi));
 
 ```
 

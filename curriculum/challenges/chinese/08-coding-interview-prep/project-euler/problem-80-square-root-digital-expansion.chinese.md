@@ -19,7 +19,7 @@ localeTitle: 问题80：平方根数字扩展
 ```yml
 tests:
   - text: <code>euler80()</code>应返回40886。
-    testString: 'assert.strictEqual(euler80(), 40886, "<code>euler80()</code> should return 40886.");'
+    testString: assert.strictEqual(euler80(), 40886);
 
 ```
 

@@ -19,7 +19,7 @@ localeTitle: 问题343：分数序列
 ```yml
 tests:
   - text: <code>euler343()</code>应该返回269533451410884200。
-    testString: 'assert.strictEqual(euler343(), 269533451410884200, "<code>euler343()</code> should return 269533451410884200.");'
+    testString: assert.strictEqual(euler343(), 269533451410884200);
 
 ```
 

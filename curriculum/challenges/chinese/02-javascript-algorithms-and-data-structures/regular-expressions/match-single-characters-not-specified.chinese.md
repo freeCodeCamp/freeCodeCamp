@@ -18,11 +18,11 @@ localeTitle: 匹配未指定的单个字符
 ```yml
 tests:
   - text: 你的正则表达式<code>myRegex</code>应匹配9项。
-    testString: 'assert(result.length == 9, "Your regex <code>myRegex</code> should match 9 items.");'
+    testString: assert(result.length == 9);
   - text: 你的正则表达式<code>myRegex</code>应该使用全局标志。
-    testString: 'assert(myRegex.flags.match(/g/).length == 1, "Your regex <code>myRegex</code> should use the global flag.");'
+    testString: assert(myRegex.flags.match(/g/).length == 1);
   - text: 你的正则表达式<code>myRegex</code>应该使用不区分大小写的标志。
-    testString: 'assert(myRegex.flags.match(/i/).length == 1, "Your regex <code>myRegex</code> should use the case insensitive flag.");'
+    testString: assert(myRegex.flags.match(/i/).length == 1);
 
 ```
 

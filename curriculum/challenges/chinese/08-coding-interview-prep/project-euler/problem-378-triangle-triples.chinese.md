@@ -19,7 +19,7 @@ localeTitle: 问题378：三角形三元组
 ```yml
 tests:
   - text: <code>euler378()</code>应该返回147534623725724700。
-    testString: 'assert.strictEqual(euler378(), 147534623725724700, "<code>euler378()</code> should return 147534623725724700.");'
+    testString: assert.strictEqual(euler378(), 147534623725724700);
 
 ```
 

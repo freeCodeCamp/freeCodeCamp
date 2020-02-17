@@ -43,7 +43,7 @@ grid-template-columns: 1fr 50px 1fr 50px 20px;
 ```yml
 tests:
   - text: '<code>container</code>类应该带有<code>grid-template-columns</code>属性且设置为重复 3 列，宽为<code>1fr</code>。'
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?repeat\s*?\(\s*?3\s*?,\s*?1fr\s*?\)\s*?;[\s\S]*}/gi));'
+    testString: assert(code.match(/.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?repeat\s*?\(\s*?3\s*?,\s*?1fr\s*?\)\s*?;[\s\S]*}/gi));
 
 ```
 

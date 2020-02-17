@@ -18,31 +18,31 @@ localeTitle: 链接如果其他声明
 ```yml
 tests:
   - text: 你应该至少有四个<code>else</code>语句
-    testString: 'assert(code.match(/else/g).length > 3, "You should have at least four <code>else</code> statements");'
+    testString: assert(code.match(/else/g).length > 3);
   - text: 你应该至少有四个<code>if</code>语句
-    testString: 'assert(code.match(/if/g).length > 3, "You should have at least four <code>if</code> statements");'
+    testString: assert(code.match(/if/g).length > 3);
   - text: 你应该至少有一个<code>return</code>语句
-    testString: 'assert(code.match(/return/g).length >= 1, "You should have at least one <code>return</code> statement");'
+    testString: assert(code.match(/return/g).length >= 1);
   - text: <code>testSize(0)</code>应该返回“Tiny”
-    testString: 'assert(testSize(0) === "Tiny", "<code>testSize(0)</code> should return "Tiny"");'
+    testString: assert(testSize(0) === "Tiny");
   - text: <code>testSize(4)</code>应该返回“Tiny”
-    testString: 'assert(testSize(4) === "Tiny", "<code>testSize(4)</code> should return "Tiny"");'
+    testString: assert(testSize(4) === "Tiny");
   - text: <code>testSize(5)</code>应返回“Small”
-    testString: 'assert(testSize(5) === "Small", "<code>testSize(5)</code> should return "Small"");'
+    testString: assert(testSize(5) === "Small");
   - text: <code>testSize(8)</code>应该返回“Small”
-    testString: 'assert(testSize(8) === "Small", "<code>testSize(8)</code> should return "Small"");'
+    testString: assert(testSize(8) === "Small");
   - text: <code>testSize(10)</code>应该返回“Medium”
-    testString: 'assert(testSize(10) === "Medium", "<code>testSize(10)</code> should return "Medium"");'
+    testString: assert(testSize(10) === "Medium");
   - text: <code>testSize(14)</code>应返回“Medium”
-    testString: 'assert(testSize(14) === "Medium", "<code>testSize(14)</code> should return "Medium"");'
+    testString: assert(testSize(14) === "Medium");
   - text: <code>testSize(15)</code>应该返回“Large”
-    testString: 'assert(testSize(15) === "Large", "<code>testSize(15)</code> should return "Large"");'
+    testString: assert(testSize(15) === "Large");
   - text: <code>testSize(17)</code>应该返回“Large”
-    testString: 'assert(testSize(17) === "Large", "<code>testSize(17)</code> should return "Large"");'
+    testString: assert(testSize(17) === "Large");
   - text: <code>testSize(20)</code>应该返回“巨大”
-    testString: 'assert(testSize(20) === "Huge", "<code>testSize(20)</code> should return "Huge"");'
+    testString: assert(testSize(20) === "Huge");
   - text: <code>testSize(25)</code>应该返回“巨大”
-    testString: 'assert(testSize(25) === "Huge", "<code>testSize(25)</code> should return "Huge"");'
+    testString: assert(testSize(25) === "Huge");
 
 ```
 

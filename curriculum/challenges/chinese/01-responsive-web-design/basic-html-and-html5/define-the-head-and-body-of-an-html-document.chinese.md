@@ -48,7 +48,7 @@ tests:
   - text: '<code>title</code>应该是<code>head</code>的子元素。'
     testString: assert(code.match(/<head>\s*?<title>\s*?.*?\s*?<\/title>\s*?<\/head>/gi));
   - text: '<code>h1</code>和<code>p</code>都应该是<code>body</code>的子元素。'
-    testString: assert($('body').children('h1').length == 1 && $('body').children('p').length == 1);
+    testString: assert(code.match(/<body>\s*?(((<h1>\s*?.*?\s*?<\/h1>\s*?)(<p>(.*\s*)*?<\/p>\s*?))|((<p>\s*?.*?\s*?<\/p>\s*?)(<h1>(.*\s*)*?<\/h1>\s*?)))<\/body>/gi));		
 
 ```
 

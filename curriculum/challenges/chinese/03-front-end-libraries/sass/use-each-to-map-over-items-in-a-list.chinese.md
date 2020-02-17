@@ -18,13 +18,13 @@ localeTitle: 使用@each映射列表中的项目
 ```yml
 tests:
   - text: 您的代码应该使用<code>@each</code>指令。
-    testString: 'assert(code.match(/@each /g), "Your code should use the <code>@each</code> directive.");'
+    testString: assert(code.match(/@each /g));
   - text: 您的<code>.blue-bg</code>类应该具有蓝色的<code>background-color</code> 。
-    testString: 'assert($(".blue-bg").css("background-color") == "rgb(0, 0, 255)", "Your <code>.blue-bg</code> class should have a <code>background-color</code> of blue.");'
+    testString: assert($('.blue-bg').css('background-color') == 'rgb(0, 0, 255)');
   - text: 你的<code>.black-bg</code>类的<code>background-color</code>为黑色。
-    testString: 'assert($(".black-bg").css("background-color") == "rgb(0, 0, 0)", "Your <code>.black-bg</code> class should have a <code>background-color</code> of black.");'
+    testString: assert($('.black-bg').css('background-color') == 'rgb(0, 0, 0)');
   - text: 您的<code>.red-bg</code>类应该具有红色的<code>background-color</code> 。
-    testString: 'assert($(".red-bg").css("background-color") == "rgb(255, 0, 0)", "Your <code>.red-bg</code> class should have a <code>background-color</code> of red.");'
+    testString: assert($('.red-bg').css('background-color') == 'rgb(255, 0, 0)');
 
 ```
 

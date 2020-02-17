@@ -31,11 +31,11 @@ tests:
   - text: '表单应该有三个复选框。'
     testString: assert($('input[type="checkbox"]').length > 2);
   - text: '每个复选框都应该被嵌套进<code>label</code>元素中。'
-    testString: 'assert($(''label > input[type="checkbox"]:only-child'').length > 2);'
+    testString: assert($('label > input[type="checkbox"]:only-child').length > 2);
   - text: '确保<code>label</code>元素有结束标记。'
     testString: assert(code.match(/<\/label>/g) && code.match(/<label/g) && code.match(/<\/label>/g).length === code.match(/<label/g).length);
   - text: '设置复选框的<code>name</code>属性均为<code>personality</code>。'
-    testString: assert($('label > input[type="checkbox"]').filter("[name='personality']").length > 2);
+    testString: assert($('label > input[type="checkbox"]').filter('[name="personality"]').length > 2);
   - text: '每个复选框都应该在 <code>form</code> 标签内。'
     testString: assert($('label').parent().get(0).tagName.match('FORM'));
 

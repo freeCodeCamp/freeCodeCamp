@@ -18,7 +18,7 @@ localeTitle: 将Child的Prototype设置为Parent的实例
 ```yml
 tests:
   - text: <code>Dog.prototype</code>应该是<code>Animal</code>一个实例。
-    testString: 'assert(Animal.prototype.isPrototypeOf(Dog.prototype), "<code>Dog.prototype</code> should be an instance of <code>Animal</code>.");'
+    testString: assert(Animal.prototype.isPrototypeOf(Dog.prototype));
 
 ```
 

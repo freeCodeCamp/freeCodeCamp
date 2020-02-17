@@ -34,7 +34,7 @@ CSS 的<code>width</code>属性可以控制元素的宽度。图片的<code>widt
 ```yml
 tests:
   - text: '<code>img</code>元素应该含有<code>smaller-image</code> class。'
-    testString: 'assert($("img[src=''https://bit.ly/fcc-relaxing-cat'']").attr(''class'') === "smaller-image");'
+    testString: assert($("img[src='https://bit.ly/fcc-relaxing-cat']").attr('class') === "smaller-image");
   - text: '图片宽度应为 100px（像素），且浏览器缩放应为默认 100%。'
     testString: assert($("img").width() === 100);
 

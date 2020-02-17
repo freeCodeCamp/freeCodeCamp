@@ -19,7 +19,7 @@ localeTitle: 问题395：毕达哥拉斯树
 ```yml
 tests:
   - text: <code>euler395()</code>应返回28.2453753155。
-    testString: 'assert.strictEqual(euler395(), 28.2453753155, "<code>euler395()</code> should return 28.2453753155.");'
+    testString: assert.strictEqual(euler395(), 28.2453753155);
 
 ```
 

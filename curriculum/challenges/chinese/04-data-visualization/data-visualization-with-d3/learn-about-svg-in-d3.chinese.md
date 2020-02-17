@@ -18,11 +18,11 @@ localeTitle: 在D3中了解SVG
 ```yml
 tests:
   - text: 您的文档应该有1个<code>svg</code>元素。
-    testString: 'assert($("svg").length == 1, "Your document should have 1 <code>svg</code> element.");'
+    testString: assert($('svg').length == 1);
   - text: <code>svg</code>元素的<code>width</code>属性应设置为500。
-    testString: 'assert($("svg").attr("width") == "500", "The <code>svg</code> element should have a <code>width</code> attribute set to 500.");'
+    testString: assert($('svg').attr('width') == '500'||$('svg').css('width') == '500px');
   - text: <code>svg</code>元素的<code>height</code>属性应设置为100。
-    testString: 'assert($("svg").attr("height") == "100", "The <code>svg</code> element should have a <code>height</code> attribute set to 100.");'
+    testString: assert($('svg').attr('height') == '100'||$('svg').css('height') == '100px');
 
 ```
 

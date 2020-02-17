@@ -37,7 +37,7 @@ tests:
   - text: '<code>h2</code>元素应该含有<code>Lobster</code>字体。'
     testString: assert($("h2").css("font-family").match(/^"?lobster/i));
   - text: '当<code>Lobster</code>字体失效时，<code>h2</code>元素应该降级使用<code>monospace</code>字体。'
-    testString: 'assert(/\s*h2\s*\{\s*font-family\:\s*(\''|")?Lobster(\''|")?,\s*monospace\s*;\s*\}/gi.test(code));'
+    testString: assert(/\s*h2\s*\{\s*font-family\:\s*(\'|")?Lobster(\'|")?,\s*monospace\s*;\s*\}/gi.test(code));
   - text: '通过添加<code>&#60!--</code>，注释掉谷歌<code>Lobster</code>字体的引入。'
     testString: assert(new RegExp("<!--[^fc]", "gi").test(code));
   - text: '确保注释要以<code>--&#62;</code>结束。'

@@ -19,7 +19,7 @@ localeTitle: 问题237：在4 x n游戏板上游览
 ```yml
 tests:
   - text: <code>euler237()</code>应该返回15836928。
-    testString: 'assert.strictEqual(euler237(), 15836928, "<code>euler237()</code> should return 15836928.");'
+    testString: assert.strictEqual(euler237(), 15836928);
 
 ```
 

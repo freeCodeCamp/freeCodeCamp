@@ -44,9 +44,9 @@ tests:
   - text: '页面上应该有两个单选按钮元素。'
     testString: assert($('input[type="radio"]').length > 1);
   - text: '设置单选按钮的<code>name</code>属性为<code>indoor-outdoor</code>。'
-    testString: assert($('label > input[type="radio"]').filter("[name='indoor-outdoor']").length > 1);
+    testString: assert($('input[type="radio"]').filter("[name='indoor-outdoor']").length > 1);
   - text: '每一个单选按钮都应该嵌套进它自己的<code>label</code>元素中。'
-    testString: 'assert($(''label > input[type="radio"]:only-child'').length > 1);'
+    testString: assert($('label > input[type="radio"]:only-child').length > 1);
   - text: '每一个<code>label</code>元素都有结束标记。'
     testString: assert((code.match(/<\/label>/g) && code.match(/<label/g) && code.match(/<\/label>/g).length === code.match(/<label/g).length));
   - text: '其中一个<code>label</code>元素的文本为<code>indoor</code>。'

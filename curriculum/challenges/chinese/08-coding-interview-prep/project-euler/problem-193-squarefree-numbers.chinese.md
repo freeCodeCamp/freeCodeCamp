@@ -19,7 +19,7 @@ localeTitle: 问题193：无广场数字
 ```yml
 tests:
   - text: <code>euler193()</code>应该返回684465067343069。
-    testString: 'assert.strictEqual(euler193(), 684465067343069, "<code>euler193()</code> should return 684465067343069.");'
+    testString: assert.strictEqual(euler193(), 684465067343069);
 
 ```
 

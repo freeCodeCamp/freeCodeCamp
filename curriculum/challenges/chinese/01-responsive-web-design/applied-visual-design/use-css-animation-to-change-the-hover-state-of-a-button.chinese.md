@@ -43,9 +43,9 @@ localeTitle: 使用CSS动画更改按钮的悬停状态
 ```yml
 tests:
   - text: '<code>@keyframes</code> 规则的 <code>animation-name</code> 应该是 background-color。'
-    testString: assert(code.match(/@keyframes\s+?background-color\s*?{/g), '<code>@keyframes</code> 规则的 <code>animation-name</code> 应该是 background-color。');
+    testString: assert(code.match(/@keyframes\s+?background-color\s*?{/g));
   - text: '在 <code>@keyframes</code> 的 <code>100%</code> 条目里应该把 <code>background-color</code> 改成 <code>#4791d0</code>。'
-    testString: 'assert(code.match(/100%\s*?{\s*?background-color:\s*?#4791d0;\s*?}/gi), ''在 <code>@keyframes</code> 的 <code>100%</code> 条目里应该把 <code>background-color</code> 改成 <code>#4791d0</code>。'');'
+    testString: assert(code.match(/100%\s*?{\s*?background-color:\s*?#4791d0;\s*?}/gi));
 
 ```
 

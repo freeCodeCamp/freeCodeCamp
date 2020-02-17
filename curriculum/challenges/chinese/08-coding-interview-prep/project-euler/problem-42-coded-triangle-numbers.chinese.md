@@ -3,11 +3,16 @@ id: 5900f3961000cf542c50fea9
 challengeType: 5
 title: 'Problem 42: Coded triangle numbers'
 videoUrl: ''
-localeTitle: ''
+localeTitle: 问题42：编码的三角形数字
 ---
 
 ## Description
-undefined
+<section id="description">
+三角形编号序列的第n个项由下式给出：tn =½n（n +1）; 所以前十个三角形数字是：
+1，3，6，10，15，21，28，36，45，55，...
+通过将单词中的每个字母转换为与其字母位置相对应的数字并添加这些值，我们形成了单词值。 例如，SKY的单词值为19 + 11 + 25 = 55 = t10。 如果单词值是一个三角形数字，那么我们将其称为三角形单词。
+使用n长度的单词数组，三角形单词有几个？
+</section>
 
 ## Instructions
 <section id="instructions">
@@ -18,14 +23,14 @@ undefined
 
 ```yml
 tests:
-  - text: ''
-    testString: 'assert(codedTriangleNumbers(1400) == 129, "<code>codedTriangleNumbers(1400)</code> should return 129.");'
-  - text: ''
-    testString: 'assert(codedTriangleNumbers(1500) == 137, "<code>codedTriangleNumbers(1500)</code> should return 137.");'
-  - text: ''
-    testString: 'assert(codedTriangleNumbers(1600) == 141, "<code>codedTriangleNumbers(1600)</code> should return 141.");'
-  - text: ''
-    testString: 'assert(codedTriangleNumbers(1786) == 162, "<code>codedTriangleNumbers(1786)</code> should return 162.");'
+  - text: <code>codedTriangleNumbers(1400)</code>应该返回129。
+    testString: assert(codedTriangleNumbers(1400) == 129);
+  - text: <code>codedTriangleNumbers(1500)</code>应该返回137。
+    testString: assert(codedTriangleNumbers(1500) == 137);
+  - text: <code>codedTriangleNumbers(1600)</code>应该返回141。
+    testString: assert(codedTriangleNumbers(1600) == 141);
+  - text: <code>codedTriangleNumbers(1786)</code>应该返回162。
+    testString: assert(codedTriangleNumbers(1786) == 162);
 
 ```
 

@@ -19,7 +19,7 @@ localeTitle: 问题392：陷入困境的单位圆
 ```yml
 tests:
   - text: <code>euler392()</code>应返回3.1486734435。
-    testString: 'assert.strictEqual(euler392(), 3.1486734435, "<code>euler392()</code> should return 3.1486734435.");'
+    testString: assert.strictEqual(euler392(), 3.1486734435);
 
 ```
 

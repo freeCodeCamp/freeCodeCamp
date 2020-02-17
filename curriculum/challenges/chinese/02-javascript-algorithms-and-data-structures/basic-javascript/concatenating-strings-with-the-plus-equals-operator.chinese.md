@@ -18,9 +18,9 @@ localeTitle: 使用Plus Equals运算符连接字符串
 ```yml
 tests:
   - text: <code>myStr</code>应该有一个值<code>This is the first sentence. This is the second sentence.</code>
-    testString: 'assert(myStr === "This is the first sentence. This is the second sentence.", "<code>myStr</code> should have a value of <code>This is the first sentence. This is the second sentence.</code>");'
+    testString: assert(myStr === "This is the first sentence. This is the second sentence.");
   - text: 使用<code>+=</code>运算符构建<code>myStr</code>
-    testString: 'assert(code.match(/\w\s*\+=\s*[""]/g).length > 1 && code.match(/\w\s*\=\s*[""]/g).length > 1, "Use the <code>+=</code> operator to build <code>myStr</code>");'
+    testString: assert(code.match(/\w\s*\+=\s*["']/g).length > 1 && code.match(/\w\s*\=\s*["']/g).length > 1);
 
 ```
 

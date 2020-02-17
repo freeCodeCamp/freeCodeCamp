@@ -24,9 +24,9 @@ localeTitle: 使用 em 标签强调文本
 ```yml
 tests:
   - text: '你应该添加一个 <code>em</code> 标签。'
-    testString: assert($('em').length == 1, '你应该添加一个 <code>em</code> 标签。');
+    testString: assert($('em').length == 1);
   - text: '<code>em</code> 标签应该嵌套在 <code>p</code> 标签里面。'
-    testString: assert($('p').children().length == 1 && $('em').children().length == 2, '<code>em</code> 标签应该嵌套在 <code>p</code> 标签里面。');
+    testString: assert($('p').children().length == 1 && $('em').children().length == 2);
 
 ```
 

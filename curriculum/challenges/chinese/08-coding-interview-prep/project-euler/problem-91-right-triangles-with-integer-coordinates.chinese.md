@@ -19,7 +19,7 @@ localeTitle: 问题91：带有整数坐标的直角三角形
 ```yml
 tests:
   - text: <code>euler91()</code>应返回<code>euler91()</code> 。
-    testString: 'assert.strictEqual(euler91(), 14234, "<code>euler91()</code> should return 14234.");'
+    testString: assert.strictEqual(euler91(), 14234);
 
 ```
 

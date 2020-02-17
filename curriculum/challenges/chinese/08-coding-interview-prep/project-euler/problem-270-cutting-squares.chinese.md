@@ -19,7 +19,7 @@ localeTitle: 问题270：切割方块
 ```yml
 tests:
   - text: <code>euler270()</code>应该返回82282080。
-    testString: 'assert.strictEqual(euler270(), 82282080, "<code>euler270()</code> should return 82282080.");'
+    testString: assert.strictEqual(euler270(), 82282080);
 
 ```
 

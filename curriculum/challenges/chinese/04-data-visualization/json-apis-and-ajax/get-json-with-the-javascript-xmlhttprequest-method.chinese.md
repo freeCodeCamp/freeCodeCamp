@@ -18,17 +18,17 @@ localeTitle: 使用JavaScript XMLHttpRequest方法获取JSON
 ```yml
 tests:
   - text: 您的代码应该创建一个新的<code>XMLHttpRequest</code> 。
-    testString: 'assert(code.match(/new\s+?XMLHttpRequest\(\s*?\)/g), "Your code should create a new <code>XMLHttpRequest</code>.");'
+    testString: assert(code.match(/new\s+?XMLHttpRequest\(\s*?\)/g));
   - text: 您的代码应该使用<code>open</code>方法初始化对freeCodeCamp Cat Photo API的“GET”请求。
-    testString: 'assert(code.match(/\.open\(\s*?("|")GET\1\s*?,\s*?("|")\/json\/cats\.json\2\s*?,\s*?true\s*?\)/g), "Your code should use the <code>open</code> method to initialize a "GET" request to the freeCodeCamp Cat Photo API.");'
+    testString: assert(code.match(/\.open\(\s*?('|")GET\1\s*?,\s*?('|")\/json\/cats\.json\2\s*?,\s*?true\s*?\)/g));
   - text: 您的代码应使用<code>send</code>方法发送请求。
-    testString: 'assert(code.match(/\.send\(\s*\)/g), "Your code should use the <code>send</code> method to send the request.");'
+    testString: assert(code.match(/\.send\(\s*\)/g));
   - text: 您的代码应该有一个设置为函数的<code>onload</code>事件处理程序。
-    testString: 'assert(code.match(/\.onload\s*=\s*function\(\s*?\)\s*?{/g), "Your code should have an <code>onload</code> event handler set to a function.");'
+    testString: assert(code.match(/\.onload\s*=\s*(function|\(\s*?\))\s*?(\(\s*?\)|\=\>)\s*?{/g));
   - text: 您的代码应该使用<code>JSON.parse</code>方法来解析<code>responseText</code> 。
-    testString: 'assert(code.match(/JSON\.parse\(.*\.responseText\)/g), "Your code should use the <code>JSON.parse</code> method to parse the <code>responseText</code>.");'
+    testString: assert(code.match(/JSON\s*\.parse\(\s*.*\.responseText\s*\)/g));
   - text: 您的代码应该获取带有类<code>message</code>的元素，并将其内部HTML更改为JSON数据字符串。
-    testString: 'assert(code.match(/document\.getElementsByClassName\(\s*?("|")message\1\s*?\)\[0\]\.innerHTML\s*?=\s*?JSON\.stringify\(.+?\)/g), "Your code should get the element with class <code>message</code> and change its inner HTML to the string of JSON data.");'
+    testString: assert(code.match(/document\s*\.getElementsByClassName\(\s*?('|")message\1\s*?\)\[0\]\s*\.innerHTML\s*?=\s*?JSON\.stringify\(.+?\)/g));
 
 ```
 

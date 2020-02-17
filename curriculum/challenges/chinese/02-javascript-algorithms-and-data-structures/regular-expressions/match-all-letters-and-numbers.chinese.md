@@ -18,17 +18,17 @@ localeTitle: 匹配所有字母和数字
 ```yml
 tests:
   - text: 你的正则表达式应该使用全局标志。
-    testString: 'assert(alphabetRegexV2.global, "Your regex should use the global flag.");'
+    testString: assert(alphabetRegexV2.global);
   - text: 你的正则表达式应该使用速记字符
-    testString: 'assert(/\\w/.test(alphabetRegexV2.source), "Your regex should use the shorthand character <code>\w</code> to match all characters which are alphanumeric.");'
+    testString: assert(/\\w/.test(alphabetRegexV2.source));
   - text: 你的正则表达式应该在<code>&quot;The five boxing wizards jump quickly.&quot;</code>找到31个字母数字字符<code>&quot;The five boxing wizards jump quickly.&quot;</code>
-    testString: 'assert("The five boxing wizards jump quickly.".match(alphabetRegexV2).length === 31, "Your regex should find 31 alphanumeric characters in <code>"The five boxing wizards jump quickly."</code>");'
+    testString: assert("The five boxing wizards jump quickly.".match(alphabetRegexV2).length === 31);
   - text: 你的正则表达式应该在<code>&quot;Pack my box with five dozen liquor jugs.&quot;</code>找到32个字母数字字符<code>&quot;Pack my box with five dozen liquor jugs.&quot;</code>
-    testString: 'assert("Pack my box with five dozen liquor jugs.".match(alphabetRegexV2).length === 32, "Your regex should find 32 alphanumeric characters in <code>"Pack my box with five dozen liquor jugs."</code>");'
+    testString: assert("Pack my box with five dozen liquor jugs.".match(alphabetRegexV2).length === 32);
   - text: 你的正则表达式应该在<code>&quot;How vexingly quick daft zebras jump!&quot;</code>找到30个字母数字字符<code>&quot;How vexingly quick daft zebras jump!&quot;</code>
-    testString: 'assert("How vexingly quick daft zebras jump!".match(alphabetRegexV2).length === 30, "Your regex should find 30 alphanumeric characters in <code>"How vexingly quick daft zebras jump!"</code>");'
+    testString: assert("How vexingly quick daft zebras jump!".match(alphabetRegexV2).length === 30);
   - text: 你的正则表达式应该在<code>&quot;123 456 7890 ABC def GHI jkl MNO pqr STU vwx YZ.&quot;</code>找到36个字母数字字符<code>&quot;123 456 7890 ABC def GHI jkl MNO pqr STU vwx YZ.&quot;</code>
-    testString: 'assert("123 456 7890 ABC def GHI jkl MNO pqr STU vwx YZ.".match(alphabetRegexV2).length === 36, "Your regex should find 36 alphanumeric characters in <code>"123 456 7890 ABC def GHI jkl MNO pqr STU vwx YZ."</code>");'
+    testString: assert("123 456 7890 ABC def GHI jkl MNO pqr STU vwx YZ.".match(alphabetRegexV2).length === 36);
 
 ```
 

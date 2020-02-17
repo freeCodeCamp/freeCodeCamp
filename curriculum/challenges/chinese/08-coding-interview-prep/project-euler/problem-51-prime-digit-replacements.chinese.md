@@ -19,7 +19,7 @@ localeTitle: 问题51：主要数字替换
 ```yml
 tests:
   - text: <code>euler51()</code>应返回121313。
-    testString: 'assert.strictEqual(euler51(), 121313, "<code>euler51()</code> should return 121313.");'
+    testString: assert.strictEqual(euler51(), 121313);
 
 ```
 

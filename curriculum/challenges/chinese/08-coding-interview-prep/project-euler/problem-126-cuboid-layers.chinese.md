@@ -19,7 +19,7 @@ localeTitle: 问题126：长方体层
 ```yml
 tests:
   - text: <code>euler126()</code>应返回18522。
-    testString: 'assert.strictEqual(euler126(), 18522, "<code>euler126()</code> should return 18522.");'
+    testString: assert.strictEqual(euler126(), 18522);
 
 ```
 
