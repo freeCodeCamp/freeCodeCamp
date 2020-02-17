@@ -28,7 +28,7 @@ tests:
   - text: '<code>red-box</code> class 应该含有<code>padding</code>属性。'
     testString: assert($('.red-box').css('padding-top') != '0px' && $('.red-box').css('padding-right') != '0px' && $('.red-box').css('padding-bottom') != '0px' && $('.red-box').css('padding-left') != '0px');
   - text: '<code>red-box</code> class 的<code>padding</code>值应为 1.5em。'
-    testString: 'assert(code.match(/\.red-box\s*?{\s*?.*?\s*?.*?\s*?padding:\s*?1\.5em/gi));'
+    testString: assert(code.match(/\.red-box\s*?{[\s\S]*padding:\s*?1\.5em/gi));
 
 ```
 

@@ -19,7 +19,7 @@ localeTitle: 问题252：凸孔
 ```yml
 tests:
   - text: <code>euler252()</code>应该返回104924。
-    testString: 'assert.strictEqual(euler252(), 104924, "<code>euler252()</code> should return 104924.");'
+    testString: assert.strictEqual(euler252(), 104924);
 
 ```
 

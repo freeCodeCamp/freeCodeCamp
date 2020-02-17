@@ -25,7 +25,7 @@ localeTitle: 使用无限的动画计数制作永不停止的动画
 ```yml
 tests:
   - text: '<code>animation-iteration-count</code> 属性值应该为 infinite。'
-    testString: assert($('#ball').css('animation-iteration-count') == 'infinite', '<code>animation-iteration-count</code> 属性值应该为 infinite。');
+    testString: assert($('#ball').css('animation-iteration-count') == 'infinite');
 
 ```
 

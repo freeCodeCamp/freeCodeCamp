@@ -34,9 +34,9 @@ localeTitle: 针对高分辨率屏幕应使用视网膜图片
 ```yml
 tests:
   - text: '<code>img</code> 标签的 <code>width</code> 值应为 100px。'
-    testString: assert($('img').css('width') == '100px', '<code>img</code> 标签的 <code>width</code> 值应为 100px。');
+    testString: assert($('img').css('width') == '100px');
   - text: '<code>img</code> 标签的 <code>height</code> 值应为 100px。'
-    testString: assert($('img').css('height') == '100px', '<code>img</code> 标签的 <code>height</code> 值应为 100px。');
+    testString: assert($('img').css('height') == '100px');
 
 ```
 

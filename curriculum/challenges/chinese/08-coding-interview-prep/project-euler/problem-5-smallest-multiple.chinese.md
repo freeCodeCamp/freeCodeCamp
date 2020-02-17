@@ -19,15 +19,15 @@ localeTitle: 问题5：最小的倍数
 ```yml
 tests:
   - text: <code>smallestMult(5)</code>应该返回60。
-    testString: 'assert.strictEqual(smallestMult(5), 60, "<code>smallestMult(5)</code> should return 60.");'
+    testString: assert.strictEqual(smallestMult(5), 60);
   - text: <code>smallestMult(7)</code>应该返回420。
-    testString: 'assert.strictEqual(smallestMult(7), 420, "<code>smallestMult(7)</code> should return 420.");'
+    testString: assert.strictEqual(smallestMult(7), 420);
   - text: <code>smallestMult(10)</code>应返回2520。
-    testString: 'assert.strictEqual(smallestMult(10), 2520, "<code>smallestMult(10)</code> should return 2520.");'
+    testString: assert.strictEqual(smallestMult(10), 2520);
   - text: <code>smallestMult(13)</code>应返回360360。
-    testString: 'assert.strictEqual(smallestMult(13), 360360, "<code>smallestMult(13)</code> should return 360360.");'
+    testString: assert.strictEqual(smallestMult(13), 360360);
   - text: <code>smallestMult(20)</code>应该返回232792560。
-    testString: 'assert.strictEqual(smallestMult(20), 232792560, "<code>smallestMult(20)</code> should return 232792560.");'
+    testString: assert.strictEqual(smallestMult(20), 232792560);
 
 ```
 

@@ -4,7 +4,7 @@ title: Build a Product Landing Page
 isRequired: true
 challengeType: 3
 forumTopicId: 301144
-localTitle: 制作一个产品登录页
+localeTitle: 制作一个产品登录页
 ---
 
 ## Description

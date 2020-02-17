@@ -19,7 +19,7 @@ localeTitle: 问题386：反链的最大长度
 ```yml
 tests:
   - text: <code>euler386()</code>应该返回528755790。
-    testString: 'assert.strictEqual(euler386(), 528755790, "<code>euler386()</code> should return 528755790.");'
+    testString: assert.strictEqual(euler386(), 528755790);
 
 ```
 

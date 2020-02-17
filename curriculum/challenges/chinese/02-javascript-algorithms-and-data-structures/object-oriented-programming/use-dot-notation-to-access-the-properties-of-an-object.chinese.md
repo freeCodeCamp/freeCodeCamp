@@ -18,9 +18,9 @@ localeTitle: 使用点表示法访问对象的属性
 ```yml
 tests:
   - text: 您应该使用<code>console.log</code>来打印<code>dog</code>对象的<code>name</code>属性的值。
-    testString: 'assert(/console.log\(.*dog\.name.*\)/g.test(code), "Your should use <code>console.log</code> to print the value for the <code>name</code> property of the <code>dog</code> object.");'
+    testString: assert(/console.log\(.*dog\.name.*\)/g.test(code));
   - text: 您应该使用<code>console.log</code>来打印<code>dog</code>对象的<code>numLegs</code>属性的值。
-    testString: 'assert(/console.log\(.*dog\.numLegs.*\)/g.test(code), "Your should use <code>console.log</code> to print the value for the <code>numLegs</code> property of the <code>dog</code> object.");'
+    testString: assert(/console.log\(.*dog\.numLegs.*\)/g.test(code));
 
 ```
 

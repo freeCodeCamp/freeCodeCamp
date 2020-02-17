@@ -19,19 +19,19 @@ localeTitle: 计数卡
 ```yml
 tests:
   - text: 牌序列<code>5 Bet</code>应该返回<code>5 Bet</code>
-    testString: 'assert((function(){ count = 0; cc(2);cc(3);cc(4);cc(5);var out = cc(6); if(out === "5 Bet") {return true;} return false; })(), "Cards Sequence 2, 3, 4, 5, 6 should return <code>5 Bet</code>");'
+    testString: assert((function(){ count = 0; cc(2);cc(3);cc(4);cc(5);var out = cc(6); if(out === "5 Bet") {return true;} return false; })());
   - text: '卡片序列7,8,9应返回<code>0 Hold</code>'
-    testString: 'assert((function(){ count = 0; cc(7);cc(8);var out = cc(9); if(out === "0 Hold") {return true;} return false; })(), "Cards Sequence 7, 8, 9 should return <code>0 Hold</code>");'
+    testString: assert((function(){ count = 0; cc(7);cc(8);var out = cc(9); if(out === "0 Hold") {return true;} return false; })());
   - text: 卡序列10，J，Q，K，A应返回<code>-5 Hold</code>
-    testString: 'assert((function(){ count = 0; cc(10);cc("J");cc("Q");cc("K");var out = cc("A"); if(out === "-5 Hold") {return true;} return false; })(), "Cards Sequence 10, J, Q, K, A should return <code>-5 Hold</code>");'
+    testString: assert((function(){ count = 0; cc(10);cc('J');cc('Q');cc('K');var out = cc('A'); if(out === "-5 Hold") {return true;} return false; })());
   - text: '卡序列3,7，Q，8，A应返回<code>-1 Hold</code>'
-    testString: 'assert((function(){ count = 0; cc(3);cc(7);cc("Q");cc(8);var out = cc("A"); if(out === "-1 Hold") {return true;} return false; })(), "Cards Sequence 3, 7, Q, 8, A should return <code>-1 Hold</code>");'
+    testString: assert((function(){ count = 0; cc(3);cc(7);cc('Q');cc(8);var out = cc('A'); if(out === "-1 Hold") {return true;} return false; })());
   - text: 牌序列2，J， <code>1 Bet</code>应该返回<code>1 Bet</code>
-    testString: 'assert((function(){ count = 0; cc(2);cc("J");cc(9);cc(2);var out = cc(7); if(out === "1 Bet") {return true;} return false; })(), "Cards Sequence 2, J, 9, 2, 7 should return <code>1 Bet</code>");'
+    testString: assert((function(){ count = 0; cc(2);cc('J');cc(9);cc(2);var out = cc(7); if(out === "1 Bet") {return true;} return false; })());
   - text: 牌序列<code>1 Bet</code>应该返回<code>1 Bet</code>
-    testString: 'assert((function(){ count = 0; cc(2);cc(2);var out = cc(10); if(out === "1 Bet") {return true;} return false; })(), "Cards Sequence 2, 2, 10 should return <code>1 Bet</code>");'
+    testString: assert((function(){ count = 0; cc(2);cc(2);var out = cc(10); if(out === "1 Bet") {return true;} return false; })());
   - text: '卡序列3,2，A，10，K应返回<code>-1 Hold</code>'
-    testString: 'assert((function(){ count = 0; cc(3);cc(2);cc("A");cc(10);var out = cc("K"); if(out === "-1 Hold") {return true;} return false; })(), "Cards Sequence 3, 2, A, 10, K should return <code>-1 Hold</code>");'
+    testString: assert((function(){ count = 0; cc(3);cc(2);cc('A');cc(10);var out = cc('K'); if(out === "-1 Hold") {return true;} return false; })());
 
 ```
 

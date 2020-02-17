@@ -36,11 +36,11 @@ HTML5 引入了很多更具描述性的 HTML 元素，例如：<code>header</cod
 ```yml
 tests:
   - text: '页面中应该有两个段落。'
-    testString: assert($("p").length > 1, '页面中应该有两个段落。');
+    testString: assert($("p").length > 1);
   - text: '确保每个段落都有结束标记。'
     testString: assert(code.match(/<\/p>/g) && code.match(/<\/p>/g).length === code.match(/<p/g).length);
   - text: '新建的段落应该包含关键词：猫咪。'
-    testString: assert.isTrue((/猫咪/).test($("p").text()));
+    testString: assert.isTrue((/Purr\s+jump\s+eat/gi).test($("p").text()));
   - text: '代码中应该包含<code>main</code>元素。'
     testString: assert($('main').length === 1);
   - text: '<code>main</code>元素应有两个 <code>p</code>元素作为它的子元素。'

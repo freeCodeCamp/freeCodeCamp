@@ -18,13 +18,13 @@ localeTitle: 使用splice（）添加项目
 ```yml
 tests:
   - text: '<code>htmlColorNames</code>应该返回<code>[&quot;DarkSalmon&quot;, &quot;BlanchedAlmond&quot;, &quot;LavenderBlush&quot;, &quot;PaleTurqoise&quot;, &quot;FireBrick&quot;]</code>'
-    testString: 'assert.deepEqual(htmlColorNames(["DarkGoldenRod", "WhiteSmoke", "LavenderBlush", "PaleTurqoise", "FireBrick"]), ["DarkSalmon", "BlanchedAlmond", "LavenderBlush", "PaleTurqoise", "FireBrick"], "<code>htmlColorNames</code> should return <code>["DarkSalmon", "BlanchedAlmond", "LavenderBlush", "PaleTurqoise", "FireBrick"]</code>");'
+    testString: assert.deepEqual(htmlColorNames(['DarkGoldenRod', 'WhiteSmoke', 'LavenderBlush', 'PaleTurquoise', 'FireBrick']), ['DarkSalmon', 'BlanchedAlmond', 'LavenderBlush', 'PaleTurquoise', 'FireBrick']);
   - text: <code>htmlColorNames</code>函数应该使用<code>splice()</code>方法
-    testString: 'assert(/.splice/.test(code), "The <code>htmlColorNames</code> function should utilize the <code>splice()</code> method");'
+    testString: assert(/.splice/.test(code));
   - text: 你不应该使用<code>shift()</code>或<code>unshift()</code> 。
-    testString: 'assert(!/shift|unshift/.test(code), "You should not use <code>shift()</code> or <code>unshift()</code>.");'
+    testString: assert(!/shift|unshift/.test(code));
   - text: 您不应该使用数组括号表示法。
-    testString: 'assert(!/\[\d\]\s*=/.test(code), "You should not use array bracket notation.");'
+    testString: assert(!/\[\d\]\s*=/.test(code));
 
 ```
 

@@ -31,7 +31,7 @@ repeat(auto-fill, minmax(60px, 1fr));
 ```yml
 tests:
   - text: '<code>container</code>类应该有<code>grid-template-columns</code>属性且使用<code>repeat</code>和<code>auto-fill</code>，以便将最小宽度为<code>60px</code>，最大宽度为<code>1fr</code>的列填充至网格。'
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?repeat\s*?\(\s*?auto-fill\s*?,\s*?minmax\s*?\(\s*?60px\s*?,\s*?1fr\s*?\)\s*?\)\s*?;[\s\S]*}/gi));'
+    testString: assert(code.match(/.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?repeat\s*?\(\s*?auto-fill\s*?,\s*?minmax\s*?\(\s*?60px\s*?,\s*?1fr\s*?\)\s*?\)\s*?;[\s\S]*}/gi));
 
 ```
 

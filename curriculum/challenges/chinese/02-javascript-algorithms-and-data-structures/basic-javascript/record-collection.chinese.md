@@ -19,19 +19,19 @@ localeTitle: 记录收集
 ```yml
 tests:
   - text: '在<code>updateRecords(5439, &quot;artist&quot;, &quot;ABBA&quot;)</code> ， <code>artist</code>应该是<code>&quot;ABBA&quot;</code>'
-    testString: 'collection = collectionCopy; assert(updateRecords(5439, "artist", "ABBA")[5439]["artist"] === "ABBA", "After <code>updateRecords(5439, "artist", "ABBA")</code>, <code>artist</code> should be <code>"ABBA"</code>");'
+    testString: collection = collectionCopy; assert(updateRecords(5439, "artist", "ABBA")[5439]["artist"] === "ABBA");
   - text: '在<code>updateRecords(5439, &quot;tracks&quot;, &quot;Take a Chance on Me&quot;)</code> ， <code>tracks</code>应该以<code>&quot;Take a Chance on Me&quot;</code>作为最后一个元素。'
-    testString: 'assert(updateRecords(5439, "tracks", "Take a Chance on Me")[5439]["tracks"].pop() === "Take a Chance on Me", "After <code>updateRecords(5439, "tracks", "Take a Chance on Me")</code>, <code>tracks</code> should have <code>"Take a Chance on Me"</code> as the last element.");'
+    testString: assert(updateRecords(5439, "tracks", "Take a Chance on Me")[5439]["tracks"].pop() === "Take a Chance on Me");
   - text: '在<code>updateRecords(2548, &quot;artist&quot;, &quot;&quot;)</code> ，不应该设置<code>artist</code>'
-    testString: 'updateRecords(2548, "artist", ""); assert(!collection[2548].hasOwnProperty("artist"), "After <code>updateRecords(2548, "artist", "")</code>, <code>artist</code> should not be set");'
+    testString: updateRecords(2548, "artist", ""); assert(!collection[2548].hasOwnProperty("artist"));
   - text: '在<code>updateRecords(1245, &quot;tracks&quot;, &quot;Addicted to Love&quot;)</code> ， <code>tracks</code>应该将<code>&quot;Addicted to Love&quot;</code>作为最后一个元素。'
-    testString: 'assert(updateRecords(1245, "tracks", "Addicted to Love")[1245]["tracks"].pop() === "Addicted to Love", "After <code>updateRecords(1245, "tracks", "Addicted to Love")</code>, <code>tracks</code> should have <code>"Addicted to Love"</code> as the last element.");'
+    testString: assert(updateRecords(1245, "tracks", "Addicted to Love")[1245]["tracks"].pop() === "Addicted to Love");
   - text: '在<code>updateRecords(2468, &quot;tracks&quot;, &quot;Free&quot;)</code> ， <code>tracks</code>应该以<code>&quot;1999&quot;</code>作为第一个元素。'
-    testString: 'assert(updateRecords(2468, "tracks", "Free")[2468]["tracks"][0] === "1999", "After <code>updateRecords(2468, "tracks", "Free")</code>, <code>tracks</code> should have <code>"1999"</code> as the first element.");'
+    testString: assert(updateRecords(2468, "tracks", "Free")[2468]["tracks"][0] === "1999");
   - text: '在<code>updateRecords(2548, &quot;tracks&quot;, &quot;&quot;)</code> ，不应设置<code>tracks</code>'
-    testString: 'updateRecords(2548, "tracks", ""); assert(!collection[2548].hasOwnProperty("tracks"), "After <code>updateRecords(2548, "tracks", "")</code>, <code>tracks</code> should not be set");'
+    testString: updateRecords(2548, "tracks", ""); assert(!collection[2548].hasOwnProperty("tracks"));
   - text: '在<code>updateRecords(1245, &quot;album&quot;, &quot;Riptide&quot;)</code> ， <code>album</code>应该是<code>&quot;Riptide&quot;</code>'
-    testString: 'assert(updateRecords(1245, "album", "Riptide")[1245]["album"] === "Riptide", "After <code>updateRecords(1245, "album", "Riptide")</code>, <code>album</code> should be <code>"Riptide"</code>");'
+    testString: assert(updateRecords(1245, "album", "Riptide")[1245]["album"] === "Riptide");
 
 ```
 

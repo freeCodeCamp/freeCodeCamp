@@ -23,13 +23,13 @@ localeTitle: 将各种元素的颜色调整为互补色
 ```yml
 tests:
   - text: '<code>header</code> 元素应该有一个值为 <code>#09A7A1</code> 的 <code>background-color</code> CSS 属性。'
-    testString: assert($('header').css('background-color') == 'rgb(9, 167, 161)', '<code>header</code> 元素应该有一个值为 <code>#09A7A1</code> 的 <code>background-color</code> CSS 属性。');
+    testString: "assert($('header').css('background-color') == 'rgb(9, 167, 161)');"
   - text: '<code>footer</code> 元素应该有一个值为 <code>#09A7A1</code> 的 <code>background-color</code>CSS 属性。'
-    testString: assert($('footer').css('background-color') == 'rgb(9, 167, 161)', '<code>footer</code> 元素应该有一个值为 <code>#09A7A1</code> 的 <code>background-color</code> CSS 属性。');
+    testString: "assert($('footer').css('background-color') == 'rgb(9, 167, 161)');"
   - text: '<code>h2</code> 元素应该有一个值为 <code>#09A7A1</code> 的 <code>color</code> CSS 属性。'
-    testString: assert($('h2').css('color') == 'rgb(9, 167, 161)', '<code>h2</code> 元素应该有一个值为 <code>#09A7A1</code> 的 <code>color</code> CSS 属性。');
+    testString: "assert($('h2').css('color') == 'rgb(9, 167, 161)');"
   - text: '<code>button</code> 元素应该有一个值为 <code>#FF790E</code> 的 <code>background-color</code> CSS 属性。'
-    testString: assert($('button').css('background-color') == 'rgb(255, 121, 14)', '<code>button</code> 元素应该有一个值为 <code>#FF790E</code> 的 <code>background-color</code> CSS 属性。');
+    testString: "assert($('button').css('background-color') == 'rgb(255, 121, 14)');"
 
 ```
 

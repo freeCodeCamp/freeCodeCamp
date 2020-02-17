@@ -23,7 +23,7 @@ localeTitle: 使用 flex-direction 属性创建一列
 ```yml
 tests:
   - text: '<code>#box-container</code>应有<code>flex-direction</code>属性，其值应为 column。'
-    testString: assert($('#box-container').css('flex-direction') == 'column', '<code>#box-container</code>应有<code>flex-direction</code>属性，其值应为 column。');
+    testString: assert($('#box-container').css('flex-direction') == 'column');
 
 ```
 

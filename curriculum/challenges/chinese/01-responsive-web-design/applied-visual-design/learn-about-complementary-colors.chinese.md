@@ -28,9 +28,9 @@ localeTitle: 了解互补色
 ```yml
 tests:
   - text: 'class 为 <code>blue</code> 的 <code>div</code> 元素应该有值为蓝色的 <code>background-color</code> CSS 属性。'
-    testString: assert($('.blue').css('background-color') == 'rgb(0, 0, 255)', 'class 为 <code>blue</code> 的 <code>div</code> 元素应该有值为蓝色的 <code>background-color</code> CSS 属性。');
+    testString: assert($('.blue').css('background-color') == 'rgb(0, 0, 255)');
   - text: 'class 为 <code>yellow</code> 的 <code>div</code> 元素应该有值为黄色的 <code>background-color</code> CSS 属性。'
-    testString: assert($('.yellow').css('background-color') == 'rgb(255, 255, 0)', 'class 为 <code>yellow</code> 的 <code>div</code> 元素应该有值为黄色的 <code>background-color</code> CSS 属性。');
+    testString: assert($('.yellow').css('background-color') == 'rgb(255, 255, 0)');
 
 ```
 

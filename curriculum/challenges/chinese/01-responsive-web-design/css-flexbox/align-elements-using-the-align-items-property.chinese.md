@@ -28,7 +28,7 @@ Flex 容器中，与主轴垂直的叫做 <strong>cross axis（交叉轴）</str
 ```yml
 tests:
   - text: '<code>#box-container</code>元素应有<code>align-items</code>属性，其值应为 center。'
-    testString: assert($('#box-container').css('align-items') == 'center', '<code>#box-container</code>元素应有<code>align-items</code>属性，其值应为 center。');
+    testString: assert($('#box-container').css('align-items') == 'center');
 
 ```
 

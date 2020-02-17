@@ -32,9 +32,9 @@ background: var(--penguin-skin, black);
 ```yml
 tests:
   - text: '<code>penguin-top</code> class 的<code>background</code>属性应设置一个<code>black</code>备用颜色。'
-    testString: 'assert(code.match(/.penguin-top\s*?{[\s\S]*background\s*?:\s*?var\(\s*?--pengiun-skin\s*?,\s*?black\s*?\)\s*?;[\s\S]*}[\s\S]*.penguin-bottom\s{/gi));'
+    testString: assert(code.match(/.penguin-top\s*?{[\s\S]*background\s*?:\s*?var\(\s*?--pengiun-skin\s*?,\s*?black\s*?\)\s*?;[\s\S]*}[\s\S]*.penguin-bottom\s{/gi));
   - text: '<code>penguin-bottom</code> class 的<code>background</code>属性应设置一个<code>black</code>备用颜色。'
-    testString: 'assert(code.match(/.penguin-bottom\s*?{[\s\S]*background\s*?:\s*?var\(\s*?--pengiun-skin\s*?,\s*?black\s*?\)\s*?;[\s\S]*}/gi));'
+    testString: assert(code.match(/.penguin-bottom\s*?{[\s\S]*background\s*?:\s*?var\(\s*?--pengiun-skin\s*?,\s*?black\s*?\)\s*?;[\s\S]*}/gi));
 
 ```
 

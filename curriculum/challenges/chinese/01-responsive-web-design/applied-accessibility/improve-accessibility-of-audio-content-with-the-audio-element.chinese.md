@@ -45,7 +45,7 @@ tests:
   - text: '<code>source</code>标签应该在<code>audio</code>标签中。'
     testString: assert($('audio').children('source').length === 1);
   - text: '<code>source</code>标签中<code>src</code>属性的值应该与教程中的链接一致。'
-    testString: 'assert($(''source'').attr(''src'') === ''https://s3.amazonaws.com/freecodecamp/screen-reader.mp3'');'
+    testString: assert($('source').attr('src') === 'https://s3.amazonaws.com/freecodecamp/screen-reader.mp3');
   - text: '<code>source</code>标签中应具有<code>type</code>属性，其值为 audio/mpeg。'
     testString: assert($('source').attr('type') === 'audio/mpeg');
 

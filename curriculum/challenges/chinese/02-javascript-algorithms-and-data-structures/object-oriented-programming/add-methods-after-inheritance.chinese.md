@@ -18,15 +18,15 @@ localeTitle: 继承后添加方法
 ```yml
 tests:
   - text: <code>Animal</code>不应该响应<code>bark()</code>方法。
-    testString: 'assert(typeof Animal.prototype.bark == "undefined", "<code>Animal</code> should not respond to the <code>bark()</code> method.");'
+    testString: assert(typeof Animal.prototype.bark == "undefined");
   - text: <code>Dog</code>应该继承<code>Animal</code>的<code>eat()</code>方法。
-    testString: 'assert(typeof Dog.prototype.eat == "function", "<code>Dog</code> should inherit the <code>eat()</code> method from <code>Animal</code>.");'
+    testString: assert(typeof Dog.prototype.eat == "function");
   - text: <code>Dog</code>应该将<code>bark()</code>方法作为<code>own</code>属性。
-    testString: 'assert(Dog.prototype.hasOwnProperty("bark"), "<code>Dog</code> should have the <code>bark()</code> method as an <code>own</code> property.");'
+    testString: assert(Dog.prototype.hasOwnProperty('bark'));
   - text: <code>beagle</code>应该是<code>Animal</code>一个<code>instanceof</code> 。
-    testString: 'assert(beagle instanceof Animal, "<code>beagle</code> should be an <code>instanceof</code> <code>Animal</code>.");'
+    testString: assert(beagle instanceof Animal);
   - text: <code>beagle</code>的构造函数应该设置为<code>Dog</code> 。
-    testString: 'assert(beagle.constructor === Dog, "The constructor for <code>beagle</code> should be set to <code>Dog</code>.");'
+    testString: assert(beagle.constructor === Dog);
 
 ```
 

@@ -19,7 +19,7 @@ localeTitle: 问题194：彩色配置
 ```yml
 tests:
   - text: <code>euler194()</code>应该返回61190912。
-    testString: 'assert.strictEqual(euler194(), 61190912, "<code>euler194()</code> should return 61190912.");'
+    testString: assert.strictEqual(euler194(), 61190912);
 
 ```
 

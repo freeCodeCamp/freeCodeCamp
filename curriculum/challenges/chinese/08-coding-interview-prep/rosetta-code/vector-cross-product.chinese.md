@@ -19,11 +19,11 @@ localeTitle: 矢量交叉产品
 ```yml
 tests:
   - text: dotProduct必须是一个函数
-    testString: 'assert.equal(typeof crossProduct, "function", "dotProduct must be a function");'
+    testString: assert.equal(typeof crossProduct, 'function');
   - text: dotProduct（）必须返回null
-    testString: 'assert.equal(crossProduct(), null, "dotProduct() must return null");'
+    testString: assert.equal(crossProduct(), null);
   - text: 'crossProduct（[1,2,3]，[4,5,6]）必须返回[-3,6，-3]。'
-    testString: 'assert.deepEqual(res12, exp12, "crossProduct([1, 2, 3], [4, 5, 6]) must return [-3, 6, -3].");'
+    testString: assert.deepEqual(res12, exp12);
 
 ```
 

@@ -28,7 +28,7 @@ HTML 元素的背景色并不局限于单色。CSS 还提供了颜色过渡，�
 ```yml
 tests:
   - text: '<code>div</code> 元素应该有一个指定方向和颜色的 <code>linear-gradient</code> <code>background</code>渐变色。'
-    testString: 'assert(code.match(/background:\s*?linear-gradient\(35deg,\s*?(#CCFFFF|#CFF),\s*?(#FFCCCC|#FCC)\);/gi), ''<code>div</code> 元素应该有一个指定方向和颜色的 <code>linear-gradient</code> <code>background</code> 渐变色。'');'
+    testString: assert($('div').css('background-image').match(/linear-gradient\(35deg, rgb\(204, 255, 255\), rgb\(255, 204, 204\)\)/gi));
 
 ```
 

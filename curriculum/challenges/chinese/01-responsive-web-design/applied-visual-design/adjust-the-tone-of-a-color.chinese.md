@@ -23,7 +23,7 @@ localeTitle: 调整颜色的色调
 ```yml
 tests:
   - text: '<code>nav</code> 元素应该有一个使用 <code>hsl()</code> 属性调节蓝绿色调的 <code>background-color</code> CSS 属性。'
-    testString: 'assert(code.match(/nav\s*?{\s*?background-color:\s*?hsl\(180,\s*?80%,\s*?25%\)/gi), ''<code>nav</code> 元素应该有一个使用 <code>hsl()</code> 调节蓝绿色调的 <code>background-color</code> CSS 属性。'');'
+    testString: assert(code.match(/nav\s*?{\s*?background-color:\s*?hsl\(180,\s*?80%,\s*?25%\)/gi));
 
 ```
 

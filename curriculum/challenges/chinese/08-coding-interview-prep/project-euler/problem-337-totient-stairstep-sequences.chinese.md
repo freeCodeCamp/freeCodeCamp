@@ -19,7 +19,7 @@ localeTitle: 问题337欧拉序列阶梯
 ```yml
 tests:
   - text: <code>euler337()</code>应该返回85068035。
-    testString: 'assert.strictEqual(euler337(), 85068035, "<code>euler337()</code> should return 85068035.");'
+    testString: assert.strictEqual(euler337(), 85068035);
 
 ```
 

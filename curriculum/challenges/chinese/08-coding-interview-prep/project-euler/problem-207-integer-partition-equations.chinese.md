@@ -19,7 +19,7 @@ localeTitle: 问题207：整数分区方程
 ```yml
 tests:
   - text: <code>euler207()</code>应该返回44043947822。
-    testString: 'assert.strictEqual(euler207(), 44043947822, "<code>euler207()</code> should return 44043947822.");'
+    testString: assert.strictEqual(euler207(), 44043947822);
 
 ```
 

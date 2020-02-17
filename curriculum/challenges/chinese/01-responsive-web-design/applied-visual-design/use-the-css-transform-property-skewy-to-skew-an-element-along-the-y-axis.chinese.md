@@ -23,7 +23,7 @@ localeTitle: 使用 CSS Transform skex 属性沿Y轴倾斜元素
 ```yml
 tests:
   - text: 'id 为 <code>top</code> 的元素应该沿着 Y 轴翻转 -10 度。'
-    testString: 'assert(code.match(/#top\s*?{\s*?.*?\s*?transform:\s*?skewY\(-10deg\);/g), ''id 为 <code>top</code> 的元素应该沿着 Y 轴翻转 -10 度。'');'
+    testString: assert(code.match(/#top\s*?{\s*?.*?\s*?transform:\s*?skewY\(-10deg\);/g));
 
 ```
 

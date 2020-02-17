@@ -27,11 +27,11 @@ localeTitle: 使用 CSS 创建一个图形
 ```yml
 tests:
   - text: '<code>background-color</code> 属性应该取值 <code>transparent</code>。'
-    testString: 'assert(code.match(/background-color:\s*?transparent;/gi), ''<code>background-color</code> 属性应该取值 <code>transparent</code>。'');'
+    testString: assert(code.match(/background-color:\s*?transparent;/gi));
   - text: '<code>border-radius</code> 属性应该取值 <code>50%</code>。'
-    testString: 'assert(code.match(/border-radius:\s*?50%;/gi), ''<code>border-radius</code>属性应该取值<code>50%</code>。'');'
+    testString: assert(code.match(/border-radius:\s*?50%;/gi));
   - text: '<code>box-shadow</code> 属性的 <code>offset-x</code>、<code>offset-y</code>、<code>blur-radius</code>、<code>spread-radius</code> 和 <code>color</code> 应该依次取值<code>25px</code>、<code>10px</code>、<code>0</code>、<code>0</code> 和 <code>blue</code>。'
-    testString: 'assert(code.match(/box-shadow:\s*?25px\s+?10px\s+?0(px)?\s+?0(px)?\s+?blue\s*?;/gi), ''<code>box-shadow</code> 属性的 <code>offset-x</code>、<code>offset-y</code>、<code>blur-radius</code>、<code>spread-radius</code> 和 <code>color</code> 应该依次取值<code>25px</code>、<code>10px</code>、<code>0</code>、<code>0</code> 和 <code>blue</code>。'');'
+    testString: assert(code.match(/box-shadow:\s*?25px\s+?10px\s+?0(px)?\s+?0(px)?\s+?blue\s*?;/gi));
 
 ```
 

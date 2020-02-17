@@ -18,11 +18,11 @@ localeTitle: 使用JavaScript数组在一个变量中存储多个值
 ```yml
 tests:
   - text: <code>myArray</code>应该是一个<code>array</code> 。
-    testString: 'assert(typeof myArray == "object", "<code>myArray</code> should be an <code>array</code>.");'
+    testString: assert(typeof myArray == 'object');
   - text: <code>myArray</code>的第一项应该是一个<code>string</code> 。
-    testString: 'assert(typeof myArray[0] !== "undefined" && typeof myArray[0] == "string", "The first item in <code>myArray</code> should be a <code>string</code>.");'
+    testString: assert(typeof myArray[0] !== 'undefined' && typeof myArray[0] == 'string');
   - text: <code>myArray</code>的第二项应该是一个<code>number</code> 。
-    testString: 'assert(typeof myArray[1] !== "undefined" && typeof myArray[1] == "number", "The second item in <code>myArray</code> should be a <code>number</code>.");'
+    testString: assert(typeof myArray[1] !== 'undefined' && typeof myArray[1] == 'number');
 
 ```
 

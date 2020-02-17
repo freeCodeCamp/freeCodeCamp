@@ -27,11 +27,11 @@ RGB 值可以在 0 到 255 之间。alpha 值可以在 0 到 1 之间，其中 0
 ```yml
 tests:
   - text: '你应该给 <code>h4</code> 元素添加一个 <code>background-color</code> 属性并且赋值 <code>rgba(45, 45, 45, 0.1)</code>。'
-    testString: 'assert(code.match(/background-color:\s*?rgba\(\s*?45\s*?,\s*?45\s*?,\s*?45\s*?,\s*?0?\.1\s*?\)/gi), ''你应该给 <code>h4</code> 元素添加一个 <code>background-color</code> 属性并且赋值 <code>rgba(45, 45, 45, 0.1)</code>。'');'
+    testString: assert(code.match(/(background-color|background):\s*?rgba\(\s*?45\s*?,\s*?45\s*?,\s*?45\s*?,\s*?0?\.1\s*?\);/gi));
   - text: '你应该给 <code>h4</code> 元素添加一个 <code>padding</code> 属性并且赋值 <code>10px</code>。'
-    testString: assert($('h4').css('padding-top') == '10px' && $('h4').css('padding-right') == '10px' && $('h4').css('padding-bottom') == '10px' && $('h4').css('padding-left') == '10px', '你应该给 <code>h4</code> 元素添加一个 <code>padding</code> 属性并且赋值 <code>10px</code>。');
+    testString: assert($('h4').css('padding-top') == '10px' && $('h4').css('padding-right') == '10px' && $('h4').css('padding-bottom') == '10px' && $('h4').css('padding-left') == '10px');
   - text: '<code>h4</code> 元素的 <code>height</code> 属性应该被移除。'
-    testString: assert(!($('h4').css('height') == '25px'), '<code>h4</code> 元素的 <code>height</code> 属性应该被移除。');
+    testString: assert(!($('h4').css('height') == '25px'));
 
 ```
 
