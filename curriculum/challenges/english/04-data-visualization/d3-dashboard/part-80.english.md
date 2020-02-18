@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Set the `cursor` to `pointer` using the `style` function.
+Appropriately set the `cursor` style for these circles.
 </section>
 
 ## Instructions

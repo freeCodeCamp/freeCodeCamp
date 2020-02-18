@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-On a new line, add another `selectAll` function to your `lineGraph` variable and pass it the string: `instagram-circles`. These will be circles for the Instagram line.
+The circles have been added to two of the lines and look good, on to the last one. On a new line, create another empty selection like you did before. Use the string: `instagram-circles` this time.
 </section>
 
 ## Instructions

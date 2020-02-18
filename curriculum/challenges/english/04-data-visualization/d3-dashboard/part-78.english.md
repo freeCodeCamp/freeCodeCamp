@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Set the `cx` and `cy` attributes for this selection. Pass in the same functions to them that you used for the other two sets of circles, use `d.followers.instagram` this time for the `cy` return value.
+Appropriately set the `cx` and `cy` attributes for this selection.
 </section>
 
 ## Instructions

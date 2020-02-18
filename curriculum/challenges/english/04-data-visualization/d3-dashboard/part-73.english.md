@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Set the `cx` and `cy` attributes for this selection. Pass the same functions to them that you used for the `twitter-circles`, except use `d.followers.tumblr` for the `cy` return value.
+Set the `cx` and `cy` attributes for the circles to their appropriate values.
 </section>
 
 ## Instructions

@@ -9,6 +9,8 @@ isBeta: true
 <section id='description'>
 
 Add the same `data`, `enter`, and `append` functions here that you added for the `twitter-circles`, passing in the same arguments. Make sure they are in the same order.
+
+Remember that this will take the difference in length between the `twitter-circles`(0) and the `data`(9) and append that many `circle` elements.
 </section>
 
 ## Instructions

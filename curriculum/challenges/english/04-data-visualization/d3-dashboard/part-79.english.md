@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Use the `attr` function to set the `r` to `6`, the `fill` to `white`, and the `stroke` to your `instagramColor` variable.
+Appropriately set the radius (`r`), `fill`, and `stroke` for these circles.
 </section>
 
 ## Instructions
