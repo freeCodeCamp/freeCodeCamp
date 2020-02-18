@@ -6,7 +6,7 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-You are given a string and your task is to calculate frequency of each character.
+Given a string, calculate the frequency of each character.
 All characters should be counted. This includes lower and upper case letters, digits, whitespace, special characters, or any other distinct characters.
 </section>
 
@@ -48,7 +48,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function letterFrequency (txt) {
+function letterFrequency(txt) {
   // Good luck!
 }
 ```
@@ -61,7 +61,7 @@ function letterFrequency (txt) {
 <section id='solution'>
 
 ```js
-function letterFrequency (txt) {
+function letterFrequency(txt) {
     var cs = txt.split(''),
         i = cs.length,
         dct =  {},
