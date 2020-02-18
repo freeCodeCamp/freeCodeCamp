@@ -6,19 +6,21 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-In information theory and computer science, the <b>Levenshtein distance</b> is a <a href="https://en.wikipedia.org/wiki/string metric">metric</a> for measuring the amount of difference between two sequences (i.e. an <a href="https://en.wikipedia.org/wiki/edit distance">edit distance</a>). The Levenshtein distance between two strings is defined as the minimum number of edits needed to transform one string into the other, with the allowable edit operations being insertion, deletion, or substitution of a single character.
+In information theory and computer science, the <strong>Levenshtein distance</strong> is a <a href="https://en.wikipedia.org/wiki/string metric">metric</a> for measuring the amount of difference between two sequences (i.e. an <a href="https://en.wikipedia.org/wiki/edit distance">edit distance</a>). The Levenshtein distance between two strings is defined as the minimum number of edits needed to transform one string into the other, with the allowable edit operations being insertion, deletion, or substitution of a single character.
 Example:
-The Levenshtein distance between "<b>kitten</b>" and "<b>sitting</b>" is 3, since the following three edits change one into the other, and there isn't a way to do it with fewer than three edits:
-<b>k</b>itten   <b>s</b>itten      (substitution of 'k' with 's')</b>
-sitt<b>e</b>n   sitt<b>i</b>n      (substitution of 'e' with 'i')</b>
-sittin         sittin<b>g</b>     (insert 'g' at the end).</b>
-''The Levenshtein distance between  "<b>rosettacode</b>",  "<b>raisethysword</b>"  is  <b>8</b>.
+The Levenshtein distance between "<strong>kitten</strong>" and "<strong>sitting</strong>" is 3, since the following three edits change one into the other, and there isn't a way to do it with fewer than three edits:
+<ul>
+  <li><strong>k</strong>itten &nbsp; <strong>s</strong>itten &nbsp;&nbsp; (substitution of 'k' with 's')</strong></li>
+  <li>sitt<strong>e</strong>n &nbsp; sitt<strong>i</strong>n &nbsp;&nbsp; (substitution of 'e' with 'i')</strong></li>
+  <li>sittin &nbsp; sittin<strong>g</strong> &nbsp;&nbsp; (insert 'g' at the end).</strong></li>
+</ul>
+<i>The Levenshtein distance between &nbsp; "<strong>rosettacode</strong>", &nbsp; "<strong>raisethysword</strong>" &nbsp; is  <strong>8</strong>.</i>
 <i>The distance between two strings is same as that when both strings are reversed.</i>
 </section>
 
 ## Instructions
 <section id='instructions'>
-Write a function that returns the Levenshtein distance between two strings given as parameters .
+Write a function that returns the Levenshtein distance between two strings given as parameters.
 </section>
 
 ## Tests
@@ -52,7 +54,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function levenshtein (a, b) {
+function levenshtein(a, b) {
   // Good luck!
 }
 ```
@@ -65,7 +67,7 @@ function levenshtein (a, b) {
 <section id='solution'>
 
 ```js
-function levenshtein (a, b) {
+function levenshtein(a, b) {
   var t = [], u, i, j, m = a.length, n = b.length;
   if (!m) { return n; }
   if (!n) { return m; }

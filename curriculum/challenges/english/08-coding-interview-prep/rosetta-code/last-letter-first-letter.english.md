@@ -19,7 +19,7 @@ Child 2: snake
 
 ## Instructions
 <section id='instructions'>
-Write a function that takes an input array of words. The function should return an array of words where the first letter of each word is the same as the last letter of the previous word. The first word in the return array can be anything. Use only the words in the input array, and once a word is used it cannot be repeated. The words in the return array should be selected and sequenced so that that the length of the array is maximized.
+Write a function that takes an input array of words. The function should return an array of words where the first letter of each word is the same as the last letter of the previous word. Only use the words in the input array, and once a word is used it cannot be repeated. The words in the return array should be selected and sequenced so that that its length is maximized.
 </section>
 
 ## Tests
@@ -51,7 +51,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function findLongestChain (items) {
+function findLongestChain(items) {
   // Good luck!
 }
 ```
@@ -64,7 +64,7 @@ function findLongestChain (items) {
 <section id='solution'>
 
 ```js
-function findLongestChain (items) {
+function findLongestChain(items) {
   function Ref(index, first_char, last_char) {
     this.index = index;
     this.first_char = first_char;
