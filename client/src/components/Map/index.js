@@ -5,7 +5,6 @@ import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import uniq from 'lodash/uniq';
 import { createSelector } from 'reselect';
-import { scroller } from 'react-scroll';
 
 import SuperBlock from './components/SuperBlock';
 import Spacer from '../helpers/Spacer';
@@ -28,6 +27,7 @@ const propTypes = {
       })
     })
   ),
+  isSignedIn: PropTypes.bool,
   nodes: PropTypes.arrayOf(ChallengeNode),
   resetExpansion: PropTypes.func,
   toggleBlock: PropTypes.func.isRequired,
@@ -57,19 +57,7 @@ function mapDispatchToProps(dispatch) {
 export class Map extends Component {
   constructor(props) {
     super(props);
-    this.state = { idToScrollto: null };
     this.initializeExpandedState();
-  }
-
-  componentDidMount() {
-    if (this.state.idToScrollto) {
-      window.scrollTo(0, 0);
-      scroller.scrollTo(this.state.idToScrollto, {
-        duration: 1500,
-        smooth: 'easeInOutQuint',
-        offset: -35
-      });
-    }
   }
 
   // As this happens in the constructor, it's necessary to manipulate state
@@ -81,27 +69,29 @@ export class Map extends Component {
       nodes,
       resetExpansion,
       toggleBlock,
-      toggleSuperBlock
+      toggleSuperBlock,
+      isSignedIn
     } = this.props;
     resetExpansion();
+
     let node;
 
     // find the challenge that has the same superblock with hash
     if (hash) {
       node = nodes.find(node => dasherize(node.superBlock) === hash);
-      // eslint-disable-next-line react/no-direct-mutation-state
-      if (node) this.state = { idToScrollto: dasherize(node.superBlock) };
     }
 
-    // if there is no hash or the hash did not match any challenge superblock
-    // and there was a currentChallengeId
-    if (!node && currentChallengeId) {
-      node = nodes.find(node => node.id === currentChallengeId);
-      // eslint-disable-next-line react/no-direct-mutation-state
-      if (node) this.state = { idToScrollto: dasherize(node.title) };
+    // without hash only expand when signed in
+    if (isSignedIn) {
+      // if there is no hash or the hash did not match any challenge superblock
+      // and there was a currentChallengeId
+      if (!node && currentChallengeId) {
+        node = nodes.find(node => node.id === currentChallengeId);
+      }
+      if (!node) node = nodes[0];
     }
 
-    if (!node) node = nodes[0];
+    if (!node) return;
 
     toggleBlock(node.block);
     toggleSuperBlock(node.superBlock);

@@ -1,4 +1,4 @@
-require('dotenv').config();
+const env = require('../config/env');
 
 const { createFilePath } = require('gatsby-source-filesystem');
 
@@ -39,7 +39,31 @@ exports.onCreateNode = function onCreateNode({ node, actions, getNode }) {
   }
 };
 
-exports.createPages = function createPages({ graphql, actions }) {
+exports.createPages = function createPages({ graphql, actions, reporter }) {
+  if (!env.algoliaAPIKey || !env.algoliaAppId) {
+    if (process.env.FREECODECAMP_NODE_ENV === 'production') {
+      throw new Error(
+        'Algolia App id and API key are required to start the client!'
+      );
+    } else {
+      reporter.info(
+        'Algolia keys missing or invalid. Required for search to yield results.'
+      );
+    }
+  }
+
+  if (!env.stripePublicKey || !env.servicebotId) {
+    if (process.env.FREECODECAMP_NODE_ENV === 'production') {
+      throw new Error(
+        'Stripe public key and Servicebot id are required to start the client!'
+      );
+    } else {
+      reporter.info(
+        'Stripe public key or Servicebot id missing or invalid. Required for' +
+          ' donations.'
+      );
+    }
+  }
   const { createPage } = actions;
 
   return new Promise((resolve, reject) => {
@@ -137,25 +161,31 @@ exports.createPages = function createPages({ graphql, actions }) {
 
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 
-exports.onCreateWebpackConfig = ({ plugins, actions }) => {
+exports.onCreateWebpackConfig = ({ stage, plugins, actions }) => {
+  const newPlugins = [
+    plugins.define({
+      HOME_PATH: JSON.stringify(
+        process.env.HOME_PATH || 'http://localhost:3000'
+      ),
+      STRIPE_PUBLIC_KEY: JSON.stringify(process.env.STRIPE_PUBLIC_KEY || ''),
+      ROLLBAR_CLIENT_ID: JSON.stringify(process.env.ROLLBAR_CLIENT_ID || ''),
+      ENVIRONMENT: JSON.stringify(
+        process.env.FREECODECAMP_NODE_ENV || 'development'
+      ),
+      PAYPAL_SUPPORTERS: JSON.stringify(process.env.PAYPAL_SUPPORTERS || 404)
+    })
+  ];
+  // The monaco editor relies on some browser only globals so should not be
+  // involved in SSR. Also, if the plugin is used during the 'build-html' stage
+  // it overwrites the minfied files with ordinary ones.
+  if (stage !== 'build-html') {
+    newPlugins.push(new MonacoWebpackPlugin());
+  }
   actions.setWebpackConfig({
     node: {
       fs: 'empty'
     },
-    plugins: [
-      plugins.define({
-        HOME_PATH: JSON.stringify(
-          process.env.HOME_PATH || 'http://localhost:3000'
-        ),
-        STRIPE_PUBLIC_KEY: JSON.stringify(process.env.STRIPE_PUBLIC_KEY || ''),
-        ROLLBAR_CLIENT_ID: JSON.stringify(process.env.ROLLBAR_CLIENT_ID || ''),
-        ENVIRONMENT: JSON.stringify(
-          process.env.FREECODECAMP_NODE_ENV || 'development'
-        ),
-        PAYPAL_SUPPORTERS: JSON.stringify(process.env.PAYPAL_SUPPORTERS || 404)
-      }),
-      new MonacoWebpackPlugin()
-    ]
+    plugins: newPlugins
   });
 };
 

@@ -18,7 +18,7 @@ const options = {
     solution: 'url',
     githubLink: 'url'
   },
-  required: ['solution', 'githubLink']
+  required: ['solution']
 };
 
 export class ProjectForm extends Component {
@@ -27,12 +27,6 @@ export class ProjectForm extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   componentDidMount() {
-    this.props.updateProjectForm({});
-  }
-  componentDidUpdate() {
-    this.props.updateProjectForm({});
-  }
-  componentWillUnmount() {
     this.props.updateProjectForm({});
   }
   handleSubmit(values) {

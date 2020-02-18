@@ -111,7 +111,7 @@ Questo codice è in esecuzione in diretta su [freeCodeCamp.org](https://www.free
 
 La nostra comunità ha tra l'altro:
 
-- Un forum molto attivo [forum](https://www.freecodecamp.org/forum)
+- Un [forum](https://www.freecodecamp.org/forum) molto attivo
 - Migliaia di [gruppi di studio locali](https://study-group-directory.freecodecamp.org/) in tutto il mondo, dove è possibile programmare insieme di persona
 - Una pubblicazione di [Developer News](https://www.freecodecamp.org/news), un sito gratuito, open source e senza pubblicità per il cross-post degli articoli del tuo blog.
 - Un popolare [canale YouTube](https://youtube.com/freecodecamp)
@@ -133,7 +133,7 @@ Si prega di non creare problemi GitHub per i problemi di sicurezza. Invece, si p
 
 ### Licenza
 
-Copyright © 2018 freeCodeCamp.org
+Copyright © 2020 freeCodeCamp.org
 
 Il contenuto di questa repository è vincolato dalle seguenti licenze:
 

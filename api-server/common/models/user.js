@@ -796,7 +796,17 @@ export default function(User) {
       ...user,
       about: showAbout ? about : '',
       calendar: showHeatMap ? calendar : {},
-      completedChallenges: showCerts && showTimeLine ? completedChallenges : [],
+      completedChallenges: (function() {
+        if (showTimeLine) {
+          return showCerts
+            ? completedChallenges
+            : completedChallenges.filter(
+                ({ challengeType }) => challengeType !== 7
+              );
+        } else {
+          return [];
+        }
+      })(),
       isDonating: showDonation ? isDonating : null,
       location: showLocation ? location : '',
       name: showName ? name : '',
@@ -822,7 +832,7 @@ export default function(User) {
         const allUser = {
           ..._.pick(user, publicUserProps),
           isGithub: !!user.githubProfile,
-          isLinkedIn: !!user.linkedIn,
+          isLinkedIn: !!user.linkedin,
           isTwitter: !!user.twitter,
           isWebsite: !!user.website,
           points: progressTimestamps.length,
@@ -983,6 +993,12 @@ export default function(User) {
   });
 
   User.prototype.getPoints$ = function getPoints$() {
+    if (
+      Array.isArray(this.progressTimestamps) &&
+      this.progressTimestamps.length
+    ) {
+      return Observable.of(this.progressTimestamps);
+    }
     const id = this.getId();
     const filter = {
       where: { id },
@@ -994,6 +1010,12 @@ export default function(User) {
     });
   };
   User.prototype.getCompletedChallenges$ = function getCompletedChallenges$() {
+    if (
+      Array.isArray(this.completedChallenges) &&
+      this.completedChallenges.length
+    ) {
+      return Observable.of(this.completedChallenges);
+    }
     const id = this.getId();
     const filter = {
       where: { id },

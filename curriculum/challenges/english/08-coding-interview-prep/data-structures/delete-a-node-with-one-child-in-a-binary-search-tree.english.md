@@ -22,19 +22,19 @@ We've provided some code in our <code>remove</code> method that accomplishes the
 
 ```yml
 tests:
-  - text: The <code>BinarySearchTree</code> data structure exists.
+  - text: The <code>BinarySearchTree</code> data structure should exist.
     testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() }; return (typeof test == 'object')})());
-  - text: The binary search tree has a method called <code>remove</code>.
+  - text: The binary search tree should have a method called <code>remove</code>.
     testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.remove == 'function')})());
-  - text: Trying to remove an element that does not exist returns <code>null</code>.
+  - text: Trying to remove an element that does not exist should return <code>null</code>.
     testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; return (test.remove(100) == null); })());
-  - text: If the root node has no children, deleting it sets the root to <code>null</code>.
+  - text: If the root node has no children, deleting it should set the root to <code>null</code>.
     testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; test.add(500); test.remove(500); return (test.inorder() == null); })());
-  - text: The <code>remove</code> method removes leaf nodes from the tree
+  - text: The <code>remove</code> method should remove leaf nodes from the tree.
     testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; test.add(5); test.add(3); test.add(7); test.add(6); test.add(10); test.add(12); test.remove(3); test.remove(12); test.remove(10); return (test.inorder().join('') == '567'); })());
-  - text: The <code>remove</code> method removes nodes with one child.
+  - text: The <code>remove</code> method should remove nodes with one child.
     testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; test.add(-1); test.add(3); test.add(7); test.add(16); test.remove(16); test.remove(7); test.remove(3); return (test.inorder().join('') == '-1'); })());
-  - text: Removing the root in a tree with two nodes sets the second to be the root.
+  - text: Removing the root in a tree with two nodes should set the second to be the root.
     testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; test.add(15); test.add(27); test.remove(15); return (test.inorder().join('') == '27'); })());
 ```
 
@@ -106,81 +106,57 @@ function BinarySearchTree() {
 <div id='js-teardown'>
 
 ```js
-BinarySearchTree.prototype = {
-  add: function(value) {
-    var node = this.root;
-    if (node == null) {
-      this.root = new Node(value);
-      return;
-    } else {
-      function searchTree(node) {
-        if (value < node.value) {
-          if (node.left == null) {
-            node.left = new Node(value);
-            return;
-          } else if (node.left != null) {
-            return searchTree(node.left);
-          }
-        } else if (value > node.value) {
-          if (node.right == null) {
-            node.right = new Node(value);
-            return;
-          } else if (node.right != null) {
-            return searchTree(node.right);
-          }
-        } else {
-          return null;
-        }
-      }
-      return searchTree(node);
-    }
-  },
-  inorder: function() {
-    if (this.root == null) {
-      return null;
-    } else {
-      var result = new Array();
-      function traverseInOrder(node) {
-        if (node.left != null) {
-          traverseInOrder(node.left);
-        }
-        result.push(node.value);
-        if (node.right != null) {
-          traverseInOrder(node.right);
-        }
-      }
-      traverseInOrder(this.root);
-      return result;
-    }
-  },
-  isBinarySearchTree() {
-    if (this.root == null) {
-      return null;
-    } else {
-      var check = true;
-      function checkTree(node) {
-        if (node.left != null) {
-          var left = node.left;
-          if (left.value > node.value) {
-            check = false;
+BinarySearchTree.prototype = Object.assign(
+  BinarySearchTree.prototype,
+  {
+    add: function(value) {
+      var node = this.root;
+      if (node == null) {
+        this.root = new Node(value);
+        return;
+      } else {
+        function searchTree(node) {
+          if (value < node.value) {
+            if (node.left == null) {
+              node.left = new Node(value);
+              return;
+            } else if (node.left != null) {
+              return searchTree(node.left);
+            }
+          } else if (value > node.value) {
+            if (node.right == null) {
+              node.right = new Node(value);
+              return;
+            } else if (node.right != null) {
+              return searchTree(node.right);
+            }
           } else {
-            checkTree(left);
+            return null;
           }
         }
-        if (node.right != null) {
-          var right = node.right;
-          if (right.value < node.value) {
-            check = false;
-          } else {
-            checkTree(right);
-          }
-        }
+        return searchTree(node);
       }
-      checkTree(this.root);
-      return check;
+    },
+    inorder: function() {
+      if (this.root == null) {
+        return null;
+      } else {
+        var result = new Array();
+        function traverseInOrder(node) {
+          if (node.left != null) {
+            traverseInOrder(node.left);
+          }
+          result.push(node.value);
+          if (node.right != null) {
+            traverseInOrder(node.right);
+          }
+        }
+        traverseInOrder(this.root);
+        return result;
+      }
     }
   }
-};
+);
 ```
 
 </div>

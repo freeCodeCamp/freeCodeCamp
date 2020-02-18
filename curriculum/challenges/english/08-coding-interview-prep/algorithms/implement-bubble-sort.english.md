@@ -24,11 +24,11 @@ This method requires multiple iterations through the array and for average and w
 
 ```yml
 tests:
-  - text: <code>bubbleSort</code> is a function.
+  - text: <code>bubbleSort</code> should be a function.
     testString: assert(typeof bubbleSort == 'function');
-  - text: <code>bubbleSort</code> returns a sorted array (least to greatest).
+  - text: <code>bubbleSort</code> should return a sorted array (least to greatest).
     testString: assert(isSorted(bubbleSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])));
-  - text: <code>bubbleSort</code> returns an array that is unchanged except for order.
+  - text: <code>bubbleSort</code> should return an array that is unchanged except for order.
     testString: assert.sameMembers(bubbleSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]), [1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]);
   - text: <code>bubbleSort</code> should not use the built-in <code>.sort()</code> method.
     testString: assert.strictEqual(code.search(/\.sort\(/), -1);

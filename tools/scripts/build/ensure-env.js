@@ -13,12 +13,7 @@ const log = debug('fcc:tools:ensure-env');
 
 const { FREECODECAMP_NODE_ENV } = process.env;
 
-const {
-  apiLocation: api,
-  forumLocation: forum,
-  locale,
-  newsLocation: news
-} = env;
+const { apiLocation: api, locale, forumProxy, newsProxy } = env;
 
 const apiPath = path.resolve(__dirname, '../../../api-server');
 const clientPath = path.resolve(__dirname, '../../../client');
@@ -26,7 +21,7 @@ const clientStaticPath = path.resolve(clientPath, 'static');
 const globalConfigPath = path.resolve(__dirname, '../../../config');
 
 if (FREECODECAMP_NODE_ENV === 'production') {
-  const redirects = createRedirects({ api, news, forum });
+  const redirects = createRedirects({ api, newsProxy, forumProxy });
   fs.writeFile(`${clientStaticPath}/_redirects`, redirects, function(err) {
     if (err) {
       log('Error');

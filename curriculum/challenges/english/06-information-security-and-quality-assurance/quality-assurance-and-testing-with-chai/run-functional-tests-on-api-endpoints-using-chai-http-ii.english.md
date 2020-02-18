@@ -7,14 +7,14 @@ forumTopicId: 301592
 
 ## Description
 <section id='description'>
-As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
+As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/edit/#!/remix/clone-from-repo?REPO_URL=https://github.com/freeCodeCamp/boilerplate-mochachai/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
 
 </section>
 
 ## Instructions
 <section id='instructions'>
 Replace <code>assert.fail()</code>. Test the status and the <code>text.response</code>. Make the test pass.
-Send you name in the query appending <code>?name=&ltyour_name&gt</code>, the endpoint with responds with <code>'hello &ltyour_name&gt'</code>. 
+Send your name in the query appending <code>?name=&ltyour_name&gt</code>, the endpoint responds with <code>'hello &ltyour_name&gt'</code>. 
 </section>
 
 ## Tests
@@ -42,7 +42,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
 
 </section>

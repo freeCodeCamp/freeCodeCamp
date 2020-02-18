@@ -2,11 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Link from '../helpers/Link';
+import { dasherize } from '../../../../utils/slugs';
 
 function FooterCol({ title, links }) {
   return (
-    <div className='footer-col'>
-      <div className='col-header'>{title}</div>
+    <div className={`footer-col ${dasherize(title)}`}>
+      {title ? (
+        <div className={`col-header `}>{title}</div>
+      ) : (
+        <div className='col-spacer'></div>
+      )}
       {links.map(({ to, text, internal }, i) => (
         <Link external={!internal} key={`link-${i}`} to={to}>
           {text}

@@ -15,7 +15,7 @@ Creating these challenges requires immense creativity and attention to detail. B
 
 With your help, we can design an interactive coding curriculum that will help millions of people learn to code for years to come.
 
-The content for each challenge is stored in its own markdown file. This markdown file is later coverted using our tools, to webpage that you can interact with. You can find all of freeCodeCamp.org's curricular content in the [`/curriculum`](/curriculum) directory.
+The content for each challenge is stored in its own markdown file. This markdown file is later converted using our tools, to webpage that you can interact with. You can find all of freeCodeCamp.org's curricular content in the [`/curriculum`](/curriculum) directory.
 
 There are two ways you can work on these challenges:
 
@@ -303,6 +303,26 @@ function myFunc() {
 
 </details>
 ````
+
+## Testing Challenges
+
+Before you [create a pull request](how-to-open-a-pull-request.md) for your changes, you need to validate that the changes you have made do not inadvertently cause problems with the challenge.  To test all challenges run `npm run test:curriculum`. To save time you can limit the tests to one challenge by performing the following steps:
+
+1. In the `.env` file, set the environment variable `TEST_CHALLENGES_FOR_LANGS` to the language of the challenge(s) you need to test.  The currently accepted values are `english`, `arabic`, `chinese`, `portuguese`, `russian` and `spanish`.
+
+2.  Switch to the `curriculum` directory:
+
+```
+  cd curriculum
+```
+
+3. Run the following for each challenge file for which you have changed any `testString`s or added solutions:
+
+```
+npm run test -- -g 'the full English title of the challenge'
+```
+
+Once you have verified that each challenge you've worked on passes the tests, please create a pull request.
 
 ### Useful Links
 

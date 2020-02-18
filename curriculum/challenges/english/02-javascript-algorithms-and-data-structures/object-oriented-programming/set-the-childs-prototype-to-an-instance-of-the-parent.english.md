@@ -7,8 +7,8 @@ forumTopicId: 301325
 
 ## Description
 <section id='description'>
-In the previous challenge you saw the first step for inheriting behavior from the <code>supertype</code> (or parent) <code>Animal</code>: making a new instance of <code>Animal</code>.
-This challenge covers the next step: set the <code>prototype</code> of the <code>subtype</code> (or child)&mdash;in this case, <code>Bird</code>&mdash;to be an instance of <code>Animal</code>.
+In the previous challenge you saw the first step for inheriting behavior from the supertype (or parent) <code>Animal</code>: making a new instance of <code>Animal</code>.
+This challenge covers the next step: set the <code>prototype</code> of the subtype (or child)&mdash;in this case, <code>Bird</code>&mdash;to be an instance of <code>Animal</code>.
 
 ```js
 Bird.prototype = Object.create(Animal.prototype);

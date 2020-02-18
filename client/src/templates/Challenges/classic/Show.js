@@ -34,7 +34,8 @@ import {
   updateChallengeMeta,
   challengeMounted,
   consoleOutputSelector,
-  executeChallenge
+  executeChallenge,
+  cancelTests
 } from '../redux';
 
 import './classic.css';
@@ -54,12 +55,14 @@ const mapDispatchToProps = dispatch =>
       initTests,
       updateChallengeMeta,
       challengeMounted,
-      executeChallenge
+      executeChallenge,
+      cancelTests
     },
     dispatch
   );
 
 const propTypes = {
+  cancelTests: PropTypes.func.isRequired,
   challengeMounted: PropTypes.func.isRequired,
   createFiles: PropTypes.func.isRequired,
   data: PropTypes.shape({
@@ -105,6 +108,7 @@ class ShowClassic extends Component {
     };
 
     this.containerRef = React.createRef();
+    this.editorRef = React.createRef();
   }
   onResize() {
     this.setState({ resizing: true });
@@ -163,8 +167,9 @@ class ShowClassic extends Component {
   }
 
   componentWillUnmount() {
-    const { createFiles } = this.props;
+    const { createFiles, cancelTests } = this.props;
     createFiles({});
+    cancelTests();
   }
 
   getChallenge = () => this.props.data.challengeNode;
@@ -222,6 +227,7 @@ class ShowClassic extends Component {
       challengeFile && (
         <Editor
           containerRef={this.containerRef}
+          ref={this.editorRef}
           {...challengeFile}
           fileKey={challengeFile.key}
         />
@@ -250,7 +256,11 @@ class ShowClassic extends Component {
   }
 
   render() {
-    const { forumTopicId, title } = this.getChallenge();
+    const {
+      fields: { blockName },
+      forumTopicId,
+      title
+    } = this.getChallenge();
     const {
       executeChallenge,
       pageContext: {
@@ -259,6 +269,7 @@ class ShowClassic extends Component {
     } = this.props;
     return (
       <Hotkeys
+        editorRef={this.editorRef}
         executeChallenge={executeChallenge}
         innerRef={this.containerRef}
         introPath={introPath}
@@ -295,7 +306,7 @@ class ShowClassic extends Component {
               testOutput={this.renderTestOutput()}
             />
           </Media>
-          <CompletionModal />
+          <CompletionModal blockName={blockName} />
           <HelpModal />
           <VideoModal videoUrl={this.getVideoUrl()} />
           <ResetModal />

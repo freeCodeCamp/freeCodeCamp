@@ -29,9 +29,7 @@ function createQuestionEpic(action$, state$, { window }) {
     tap(() => {
       const state = state$.value;
       const files = challengeFilesSelector(state);
-      const { title: challengeTitle, challengeType } = challengeMetaSelector(
-        state
-      );
+      const { block, title: challengeTitle } = challengeMetaSelector(state);
       const {
         navigator: { userAgent },
         location: { href }
@@ -77,9 +75,7 @@ function createQuestionEpic(action$, state$, { window }) {
         \`\`\`\n${endingText}`
       );
 
-      const category = window.encodeURIComponent(
-        helpCategory[challengeType] || 'Help'
-      );
+      const category = window.encodeURIComponent(helpCategory[block] || 'Help');
 
       const studentCode = window.encodeURIComponent(textMessage);
       const altStudentCode = window.encodeURIComponent(altTextMessage);

@@ -8,7 +8,7 @@ localeTitle: Macaco Robusto
 ---
 
 ## Description
-<section id="description"> Escreva uma função que divide um array (primeiro argumento) em grupos com o tamanho do <code>size</code> (segundo argumento) e os retorna como um array bidimensional. Lembre-se de usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Escreva seu próprio código. </section>
+<section id="description"> Escreva uma função que divide um array (primeiro argumento) em grupos com o tamanho do <code>size</code> (segundo argumento) e os retorna como um array bidimensional. Lembre-se de usar <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Escreva seu próprio código. </section>
 
 ## Instructions
 <section id="instructions">

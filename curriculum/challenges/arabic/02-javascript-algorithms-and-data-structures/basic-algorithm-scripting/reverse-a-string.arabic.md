@@ -8,7 +8,7 @@ localeTitle: عكس سلسلة
 ---
 
 ## Description
-<section id="description"> عكس السلسلة المقدمة. قد تحتاج إلى تحويل السلسلة إلى مصفوفة قبل أن تتمكن من عكسها. يجب أن تكون النتيجة الخاصة بك سلسلة. تذكر استخدام <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> إذا واجهتك مشكلة. اكتب الكود الخاص بك. </section>
+<section id="description"> عكس السلسلة المقدمة. قد تحتاج إلى تحويل السلسلة إلى مصفوفة قبل أن تتمكن من عكسها. يجب أن تكون النتيجة الخاصة بك سلسلة. تذكر استخدام <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> إذا واجهتك مشكلة. اكتب الكود الخاص بك. </section>
 
 ## Instructions
 <section id="instructions">

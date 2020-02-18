@@ -61,6 +61,8 @@ const getIntroIfRequired = (node, index, nodeArray) => {
 
 exports.createChallengePages = createPage => ({ node }, index, thisArray) => {
   const {
+    superBlock,
+    block,
     fields: { slug },
     required = [],
     template,
@@ -76,6 +78,8 @@ exports.createChallengePages = createPage => ({ node }, index, thisArray) => {
     component: getTemplateComponent(challengeType),
     context: {
       challengeMeta: {
+        superBlock,
+        block: block,
         introPath: getIntroIfRequired(node, index, thisArray),
         template,
         required,

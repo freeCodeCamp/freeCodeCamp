@@ -17,12 +17,12 @@ localeTitle: Use Seletores de Atributo para Elementos de Estilo
 
 ```yml
 tests:
-  - text: O seletor de atributo de <code>type</code> deve ser usado para selecionar as caixas de seleção.
-    testString: 'assert(code.match(/<style>[\s\S]*?\[type=("|")checkbox\1\]\s*?{[\s\S]*?}[\s\S]*?<\/style>/gi),"The <code>type</code> attribute selector should be used to select the checkboxes.");'
+  - text: O seletor de atributo <code>type</code> deve ser usado para selecionar as caixas de seleção.
+    testString: assert(code.match(/<style>[\s\S]*?\[type=("|")checkbox\1\]\s*?{[\s\S]*?}[\s\S]*?<\/style>/gi));
   - text: As margens superiores das caixas de seleção devem ser 10px.
-    testString: 'assert((function() {var count=0; $("[type="checkbox"]").each(function() { if($(this).css("marginTop") === "10px") {count++;}});return (count===3)}()),"The top margins of the checkboxes should be 10px.");'
-  - text: As margens inferiores das caixas de seleção devem ser de 15px.
-    testString: 'assert((function() {var count=0; $("[type="checkbox"]").each(function() { if($(this).css("marginBottom") === "15px") {count++;}});return (count===3)}()),"The bottom margins of the checkboxes should be 15px.");'
+    testString: assert((function() {var count=0; $("[type=\"checkbox\"]").each(function() { if($(this).css("marginTop") === "10px") {count++;}});return (count===3)}()));
+  - text: As margens inferiores das caixas de seleção devem ser 15px.
+    testString: assert((function() {var count=0; $("[type=\"checkbox\"]").each(function() { if($(this).css("marginBottom") === "15px") {count++;}});return (count===3)}()));
 
 ```
 
@@ -111,4 +111,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

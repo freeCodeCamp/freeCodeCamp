@@ -17,10 +17,11 @@
     "develop": "npm-run-all ensure-env -p develop:*",
     "develop:client": "cd ./client && npm run develop",
     "develop:server": "cd ./api-server && npm run develop",
+    "docker:run-once": "npm run docker:init && npm run docker:install && npm run docker:seed",
     "docker:clean": "docker-compose run -u root --rm freecodecamp bash -c \"rm -rf **/node_modules/* **/node_modules/..?* **/node_modules/.[!.]* node_modules/* node_modules/..?* node_modules/.[!.]*\"",
     "docker:develop": "docker-compose up client api-server",
     "docker:init": "docker-compose run -u root --rm freecodecamp bash change_volumes_owner.sh && docker-compose run -u root --rm client bash -c \"cd .. && bash change_volumes_owner.sh\" && docker-compose run -u root --rm api-server bash -c \"cd .. && bash change_volumes_owner.sh\"",
-    "docker:install": "docker-compose run -u root --rm freecodecamp bash patch_npm_and_install.sh",
+    "docker:install": "docker-compose run --rm freecodecamp npm ci",
     "docker:seed": "docker-compose run --rm freecodecamp npm run seed",
     "docker:test": "docker-compose -f docker-compose.tests.yml run --rm tests bash",
     "docker:test:init": "docker-compose -f docker-compose.tests.yml run -u root --rm tests bash change_volumes_owner.sh",
@@ -39,6 +40,7 @@
     "seed": "npm-run-all -p seed:*",
     "seed:auth-user": "cross-env DEBUG=fcc:* node ./tools/scripts/seed/seedAuthUser",
     "seed:challenges": "cross-env DEBUG=fcc:* node ./tools/scripts/seed/seedChallenges",
+    "serve:client": "cd ./client && npm run serve",
     "test": "npm-run-all -p test:*",
     "test:client": "cd ./client && npm test && cd ../",
     "test:curriculum": "cd ./curriculum && npm test && cd ../",
@@ -47,7 +49,7 @@
     "test:search-indexing": "jest ./search-indexing",
     "test:server": "cd ./api-server && npm test && cd ../",
     "test:tools": "jest ./tools",
-    "test:utils": "jest ./utils/*.js"
+    "test:utils": "jest --rootDir ./utils"
   },
   "devDependencies": {
     "@freecodecamp/eslint-config": "^2.0.2",
@@ -90,7 +92,7 @@
         "eslint --fix",
         "git add"
       ],
-      "*.md": "node ./tools/scripts/lint/index.js",
+      "./curriculum/challenges/**/*.md": "node ./tools/scripts/lint/index.js",
       "*.css": [
         "prettier --write",
         "git add"

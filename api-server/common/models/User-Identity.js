@@ -61,9 +61,7 @@ export default function(UserIdent) {
     }
 
     if (provider === 'email') {
-      return User.findOne$({
-        where: { email: new RegExp(email.replace('.', '\\.'), 'i') }
-      })
+      return User.findOne$({ where: { email } })
         .flatMap(user => {
           return user
             ? Observable.of(user)

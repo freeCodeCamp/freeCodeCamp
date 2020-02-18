@@ -7,7 +7,7 @@ forumTopicId: 301232
 
 ## Description
 <section id='description'>
-The <code>arity</code> of a function is the number of arguments it requires. <code>Currying</code> a function means to convert a function of N <code>arity</code> into N functions of <code>arity</code> 1.
+The <dfn>arity</dfn> of a function is the number of arguments it requires. <dfn>Currying</dfn> a function means to convert a function of N arity into N functions of arity 1.
 In other words, it restructures a function so it takes one argument, then returns another function that takes the next argument, and so on.
 Here's an example:
 
@@ -29,7 +29,7 @@ const curried = x => y => x + y
 curried(1)(2) // Returns 3
 ```
 
-This is useful in your program if you can't supply all the arguments to a function at one time. You can save each function call into a variable, which will hold the returned function reference that takes the next argument when it's available. Here's an example using the <code>curried</code> function in the example above:
+This is useful in your program if you can't supply all the arguments to a function at one time. You can save each function call into a variable, which will hold the returned function reference that takes the next argument when it's available. Here's an example using the curried function in the example above:
 
 ```js
 // Call a curried function in parts:
@@ -37,7 +37,7 @@ var funcForY = curried(1);
 console.log(funcForY(2)); // Prints 3
 ```
 
-Similarly, <code>partial application</code> can be described as applying a few arguments to a function at a time and returning another function that is applied to more arguments.
+Similarly, <dfn>partial application</dfn> can be described as applying a few arguments to a function at a time and returning another function that is applied to more arguments.
 Here's an example:
 
 ```js

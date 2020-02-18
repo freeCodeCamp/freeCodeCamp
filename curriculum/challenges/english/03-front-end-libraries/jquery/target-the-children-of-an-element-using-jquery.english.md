@@ -7,7 +7,7 @@ forumTopicId: 18320
 
 ## Description
 <section id='description'>
-When HTML elements are placed one level below another they are called <code>children</code> of that element. For example, the button elements in this challenge with the text "#target1", "#target2", and "#target3" are all <code>children</code> of the <code>&#60;div class="well" id="left-well"&#62;</code> element.
+When HTML elements are placed one level below another they are called <dfn>children</dfn> of that element. For example, the button elements in this challenge with the text "#target1", "#target2", and "#target3" are all children of the <code>&#60;div class="well" id="left-well"&#62;</code> element.
 jQuery has a function called <code>children()</code> that allows you to access the children of whichever element you've selected.
 Here's an example of how you would use the <code>children()</code> function to give the children of your <code>left-well</code> element the color <code>blue</code>:
 <code>$("#left-well").children().css("color", "blue")</code>
@@ -27,7 +27,7 @@ tests:
     testString: assert($("#right-well").children().css("color") === 'rgb(255, 165, 0)');
   - text: You should use the <code>children&#40&#41</code> function to modify these elements.
     testString: assert(code.match(/\.children\(\)\.css/g));
-  - text: Only use jQuery to add these classes to the element.
+  - text: You should only use jQuery to add these classes to the element.
     testString: assert(code.match(/<div class="well" id="right-well">/g));
 
 ```

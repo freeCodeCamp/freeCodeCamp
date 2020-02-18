@@ -28,7 +28,7 @@ tests:
     testString: assert($("#left-well").children("#target2").length === 0);
   - text: Your <code>target2</code> element should be inside your <code>right-well</code>.
     testString: assert($("#right-well").children("#target2").length > 0);
-  - text: Only use jQuery to move these elements.
+  - text: You should only use jQuery to move these elements.
     testString: assert(!code.match(/class.*animated/g));
 
 ```

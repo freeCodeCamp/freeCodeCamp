@@ -1,6 +1,6 @@
 {
   "name": "Donation",
-  "description": "A representaion of a donation to freeCodeCamp",
+  "description": "A representation of a donation to freeCodeCamp",
   "plural": "donations",
   "base": "PersistedModel",
   "idInjection": true,
@@ -28,6 +28,9 @@
       "required": true,
       "description": "The donation amount in cents"
     },
+    "duration": {
+      "type": "string"
+    },
     "startDate": {
       "type": "DateString",
       "required": true
@@ -43,7 +46,7 @@
     "customerId": {
       "type": "string",
       "required": true,
-      "description": "The providers reference for the donator"
+      "description": "The providers reference for the donor"
     }
   },
   "validations": [

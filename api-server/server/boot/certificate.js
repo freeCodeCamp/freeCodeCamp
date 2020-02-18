@@ -70,7 +70,7 @@ function ifNoSuperBlock404(req, res, next) {
   return res.status(404).end();
 }
 
-const renderCertifedEmail = loopback.template(
+const renderCertifiedEmail = loopback.template(
   path.join(__dirname, '..', 'views', 'emails', 'certified.ejs')
 );
 
@@ -186,7 +186,7 @@ function sendCertifiedEmail(
       Congratulations on completing all of the
       freeCodeCamp certifications!
     `,
-    text: renderCertifedEmail({
+    text: renderCertifiedEmail({
       username,
       name
     })
@@ -391,8 +391,8 @@ function createShowCert(app) {
             {
               type: 'info',
               message: dedent`
-              ${username} has chosen to make their profile
-                private. They will need to make their profile public
+              ${username} has chosen to make their portfolio
+                private. They will need to make their portfolio public
                 in order for others to be able to view their certification.
             `
             }

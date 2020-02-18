@@ -7,7 +7,7 @@ forumTopicId: 301596
 
 ## Description
 <section id='description'>
-As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
+As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/edit/#!/remix/clone-from-repo?REPO_URL=https://github.com/freeCodeCamp/boilerplate-mochachai/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
 
 <code>isTrue()</code> will test for the boolean value true and <code>isNotTrue()</code> will pass when given anything but the boolean value of true.
 
@@ -31,13 +31,13 @@ Use <code>assert.isTrue()</code> or <code>assert.isNotTrue()</code> to make the 
 
 ```yml
 tests:
-  - text: All tests should pass
+  - text: All tests should pass.
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=3').then(data => {assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: Choose the right assertion - isTrue vs. isNotTrue
+  - text: You should choose the right assertion - isTrue vs. isNotTrue.
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=3').then(data => {  assert.equal(data.assertions[0].method, 'isTrue', 'True is true'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: Choose the right assertion - isTrue vs. isNotTrue
+  - text: You should choose the right assertion - isTrue vs. isNotTrue.
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=3').then(data => {  assert.equal(data.assertions[1].method, 'isTrue', 'Double negation of a truthy value is true'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: Choose the right assertion - isTrue vs. isNotTrue
+  - text: You should choose the right assertion - isTrue vs. isNotTrue.
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=3').then(data => {  assert.equal(data.assertions[2].method, 'isNotTrue', 'A truthy object is not true - neither is a false one'); }, xhr => { throw new Error(xhr.responseText); })
 
 ```
@@ -53,7 +53,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
 
 </section>

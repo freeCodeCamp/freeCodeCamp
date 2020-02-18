@@ -27,15 +27,16 @@ ${JSON.stringify(error, null, 2)}
 };
 
 export function reportError(err) {
-  return process.env.FREECODECAMP_NODE_ENV === 'production'
+  return process.env.FREECODECAMP_NODE_ENV === 'production' &&
+    process.env.ERROR_REPORTER === 'true'
     ? reporter.error(err.message, err)
     : console.error(err);
 }
 
-export default function errrorReporter() {
+export default function errorReporter() {
   if (
     process.env.FREECODECAMP_NODE_ENV !== 'production' &&
-    process.env.ERROR_REPORTER
+    process.env.ERROR_REPORTER === 'true'
   ) {
     return (err, req, res, next) => {
       console.error(errTemplate(err, req));

@@ -42,7 +42,7 @@ tests:
     testString: assert($("h2").hasClass("red-text"));
   - text: Your stylesheet should declare a <code>red-text</code> class and have its color set to red.
     testString: assert(code.match(/\.red-text\s*\{\s*color\s*:\s*red;\s*\}/g));
-  - text: Do not use inline style declarations like <code>style="color&#58; red"</code> in your <code>h2</code> element.
+  - text: You should not use inline style declarations like <code>style="color&#58; red"</code> in your <code>h2</code> element.
     testString: assert($("h2").attr("style") === undefined);
 
 ```

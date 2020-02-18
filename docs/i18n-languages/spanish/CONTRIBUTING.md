@@ -23,14 +23,14 @@ Puedes optar por contribuir a cualquier área de tu interés:
 
 2. Ayuda a los campistas en nuestro [foro público](https://www.freecodecamp.org/forum/):
 
-    - ❓ [Aportando una retroalimentación](https://www.freecodecamp.org/forum/?max_posts=1).
-    - 💬 [Aportando comentarios](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1) a sus proyectos.
+    - ❓ [Respondiendo a sus preguntas](https://www.freecodecamp.org/forum/?max_posts=1).
+    - 💬 [Aportando comentarios a sus proyectos](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1).
 
 3. Ayúdanos a agregar subtítulos en nuestro [canal de YouTube](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ/videos).
 
 ## Contribuye a esta base de código abierto
 
-Tenemos una gran base de código abierto con miles de [Desafíos de Codificación](https://www.freecodecamp.org/learn) y [Guías](https://www.freecodecamp.org/guide).
+Tenemos una gran base de código abierto con miles de [Desafíos de Codificación](https://www.freecodecamp.org/learn) y otras fuentes de codigo para fortalecer nuestra plataforma de aprendizaje.
 
 Puedes ayudarnos a:
 
@@ -98,7 +98,7 @@ Contribuir a esto requiere cierta comprensión de las API, la sintaxis de ES6 y 
 
 Esencialmente, esperamos cierta familiaridad básica con algunas de las tecnologías, herramientas y librerías mencionadas anteriormente. Dicho esto, no es necesario que seas un experto en ello.
 
-Siéntete libre de hacernos preguntas, en los hilos relacionados con problemas, y estaremos encantados de aclarar. En caso de duda, puede comunicarse con Mrugesh Mohapatra [`@raisedadead`](https://github.com/raisedadead) o Stuart Taylor[`@bouncey`](https://github.com/bouncey) de nuestra equipo de desarrollo de la plataforma para ayudarte con esto.
+Siéntete libre de hacernos preguntas, en los hilos relacionados con problemas, y estaremos encantados de aclarar. En caso de duda, puede comunicarse con Mrugesh Mohapatra [`@raisedadead`](https://github.com/raisedadead) o Stuart Taylor[`@bouncey`](https://github.com/bouncey) de nuestro equipo de desarrollo de la plataforma para ayudarte con esto.
 
 Si deseas trabajar en mejorar nuestra base de código, aqui tienes [cómo configurar freeCodeCamp localmente.](/docs/how-to-setup-freecodecamp-locally.md)
 
@@ -126,7 +126,7 @@ Nos emociona ayudarte a contribuir con cualquiera de los temas en los que te gus
 
 **Soy nuevo en GitHub y Open Source en general:**
 
-Lee nuestra [Guía de cómo contribuir al código abierto](https://github.com/freeCodeCamp/how-to-contribute-to-open-source).
+Lee nuestra [Guía de cómo contribuir al código abierto](https://github.com/freeCodeCamp/how-to-contribute-to-open-source/blob/master/README-ES.md).
 
 **¿Qué significan las diferentes etiquetas, que aparecen en los problemas?**
 
