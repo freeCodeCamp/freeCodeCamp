@@ -7,6 +7,7 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 Move the container down a little by adding a `padding` of `100px 10px` to the `body` element.
 </section>
 

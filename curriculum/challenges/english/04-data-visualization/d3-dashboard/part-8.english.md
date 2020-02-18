@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Give the dashboard a `background-color` of `white` and a `box-shadow` of `5px 5px 5px 5px #888`.
+Give the dashboard a `background-color` of `white` and a `box-shadow` of `5px 5px 5px 5px #888` to give it a little depth.
 </section>
 
 ## Instructions

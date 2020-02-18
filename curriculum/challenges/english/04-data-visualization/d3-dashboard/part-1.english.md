@@ -8,9 +8,9 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Welcome to the dashboard project! You will be using the JavaScript data visualization library, `D3`, for this project.
+Welcome to the dashboard project! You will be using the JavaScript data visualization library, `D3`, for this project to build a visualization of your social media followers.
   
-Start by making the bare bones of an HTML document. Add `<!DOCTYPE html>` at the top of the file to tell the browser what type of document it's reading.
+Start by adding the `<!DOCTYPE html>` declaration at the top of the file to tell the browser what type of document it's reading.
 </section>
 
 ## Instructions
