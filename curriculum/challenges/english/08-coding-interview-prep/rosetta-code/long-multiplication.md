@@ -8,12 +8,12 @@ challengeType: 5
 <section id='description'>
 Explicitly implement  <a href="https://en.wikipedia.org/wiki/long multiplication">long multiplication</a>.
 This is one possible approach to arbitrary-precision integer algebra.
-Note: In JavaScript, arithmetic operations are inaccurate with large numbers, so you will have to implement precise multiplication yourself.
 </section>
 
 ## Instructions
 <section id='instructions'>
 Write a function that takes two strings of large numbers as parameters. Your function should return the product of these two large numbers as a string.
+<strong>Note:</strong> In JavaScript, arithmetic operations are inaccurate with large numbers, so you will have to implement precise multiplication yourself.
 </section>
 
 ## Tests
@@ -45,7 +45,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function mult (strNum1, strNum2) {
+function mult(strNum1, strNum2) {
   // Good luck!
 }
 ```

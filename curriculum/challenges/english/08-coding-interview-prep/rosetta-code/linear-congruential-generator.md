@@ -52,7 +52,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function linearCongGenerator (r0, a, c, m, n) {
+function linearCongGenerator(r0, a, c, m, n) {
   // Good luck!
 }
 ```
