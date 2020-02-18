@@ -28,7 +28,7 @@ Change your <code>h2</code> element's style so that its text color is red.
 tests:
   - text: Your <code>h2</code> element should have a <code>style</code> declaration.
     testString: assert($("h2").attr('style'));
-  - text: Your <code>h2</code> element should be red.
+  - text: Your <code>h2</code> element should have color set to <code>red</code>.
     testString: assert($("h2")[0].style.color === "red");
   - text: Your <code>style</code> declaration should end with a <code>;</code> .
     testString: assert($("h2").attr('style') && $("h2").attr('style').endsWith(';'));
