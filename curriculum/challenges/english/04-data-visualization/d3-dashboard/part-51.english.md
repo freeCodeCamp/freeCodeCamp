@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Set the `x` values for `tumblrLine` by using a "`d` function" that returns the `value` for each data point.
+Set the `x` values for `tumblrLine` using a "`d` function" again. Use your `xScale` and the `d.year` to calculcate their values just like you did for the Twitter line.
 </section>
 
 ## Instructions

@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Use `attr` to set the `cy` to `d => yScale(d.followers.twitter)`.
+Next, set the `cy` attribute using the Twitter data like you did for the `y` of `twitterLine`.
 </section>
 
 ## Instructions

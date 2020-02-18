@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Only one more line to add for the Instagram followers. On a new line, create a new `const` named `instagramLine` and set it equal to `d3.line()`.
+Two lines down, only one more to add for the Instagram followers. On a new line, create a new `const` named `instagramLine` and set it equal to `d3.line()`.
 </section>
 
 ## Instructions

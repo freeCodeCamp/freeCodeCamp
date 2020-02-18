@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Set the `d` attribute to `instagramLine(data)`.
+Use `instagramLine` and your data to set the `d` attribute for this path.
 </section>
 
 ## Instructions

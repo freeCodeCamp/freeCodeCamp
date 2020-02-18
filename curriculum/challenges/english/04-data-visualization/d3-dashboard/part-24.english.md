@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Create a new `const` named `xScale` use it to create another linear scale like you did for the y-scale. This will be the horizontal or "x" axis.
+Create a new `const` named `xScale`. Use it to create another linear scale like you did for the y-scale. This will be the horizontal or "x" axis.
 </section>
 
 ## Instructions

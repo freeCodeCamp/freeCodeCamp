@@ -8,7 +8,12 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Add the `data` function to your selection and pass it the data variable like this: `.data(data)`.
+Add the `data` function to your selection and pass it the data variable like this: 
+
+```js
+.data(data)
+```
+
 </section>
 
 ## Instructions

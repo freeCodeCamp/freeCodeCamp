@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-The axis has the right size and labels, but needs to be moved down. Use the `attr` function to set the `transform` to `translate(0, ${svgHeight - svgMargin})`. Be sure to use a template literal for the value again.
+The axis has the right size and labels, but needs to be moved down. Use the `attr` function to set the `transform` like you did before. This time move it down your `svgHeight` minus the `svgMargin`.
 </section>
 
 ## Instructions

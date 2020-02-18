@@ -8,9 +8,9 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Set the `y` values for the `tumblrLine` by using a "`d` function" that returns your Tumblr followers for each data point.
+Set the `y` values for `tumblrLine` using a "`d` function" again. Use your `yScale` and `d.followers.tumblr` to calculcate their values just like you did for the Twitter line.
 
-You should see that the `x` values for each line will be the same, but the `y` values will use the data from the different platforms.
+The `x` values for each line will be the same, but the `y` values will use the data from the different platforms.
 </section>
 
 ## Instructions

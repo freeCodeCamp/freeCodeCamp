@@ -14,9 +14,9 @@ The line needs `x` and `y` values for each point of data. Chain `x` to the line 
 .x(d => d.year)
 ```
 
-You will be passing your `data` array to this line function, where it will go through each item(`d`) and create an `x` value equal to the year(`d.year`).
+You will be passing your `data` array to this line function, where it will go through each item in the array(`d`) and create an `x` value equal to the year(`d.year`).
 
-This is the first place you will see a "`d` function". These are common in D3 and that is how I will refer to them throughout this project.
+This is the first place you have seen a "`d` function". These are common in D3 and that is how I will refer to them throughout this project.
 </section>
 
 ## Instructions
@@ -29,7 +29,7 @@ This is the first place you will see a "`d` function". These are common in D3 an
 ```yml
 tests:
   - text: test-text
-    testString: assert(/const twitterLine = d3\.line\(\)\s*\.x\s*\(\s*d\s*=>\s*d\.year\s*\)\s*\)/g.test(code));
+    testString: assert(/const twitterLine = d3\.line\(\)\s*\.x\s*\(\s*d\s*=>\s*d\.year\s*\)/g.test(code));
 
 ```
 

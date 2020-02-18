@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-The `range` for this scale will go from the left of your graph to the right. Add the `range` function, and pass it an array with the values: `svgMargin` and `svgWidth - svgMargin`.
+The range for this scale will go from the left of your graph to the right, with 2012 on the left and 2020 on the right. Add the `range` function to the `xScale` and pass it an array with the values: `svgMargin` and `svgWidth - svgMargin`.
 </section>
 
 ## Instructions

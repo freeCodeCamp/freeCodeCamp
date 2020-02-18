@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Set the `x` values for the `instagramLine`. Use a "`d` function" to return the `value` of each data point.
+Set the `x` values for `instagramLine` like you did for the other two.
 </section>
 
 ## Instructions

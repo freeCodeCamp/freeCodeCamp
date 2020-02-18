@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-There are a number of D3 functions to work with how the "ticks" or axis labels are displayed; one of them is `ticks`. Chain a `ticks` function to your `yAxis` variable and pass it `6, '~s'`.
+There are a number of D3 functions to work with how the "ticks" or axis labels are displayed; one of them is `ticks`. Go back to where you defined the `yAxis` and chain a `ticks` function to it and pass it `6, '~s'`.
 
 The `6` will set the number of ticks used to 6, and the `~s` will make the labels display the number of thousands followed by a `k`. For example, `4000` will become `4k`.
 </section>
@@ -69,7 +69,6 @@ tests:
     .range([svgMargin, svgWidth - svgMargin]);
 
   const yAxis = d3.axisLeft(yScale)
-
 
 
   const xAxis = d3.axisBottom(xScale)

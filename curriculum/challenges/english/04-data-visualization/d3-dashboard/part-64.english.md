@@ -8,7 +8,13 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Next, add the `enter` function like this: `.enter()`. The `enter` function identifies elements that need to be added when the `data` array is longer than the selection array. This is why you want the `selectAll` to return an empty array.
+Next, chain the `enter` function to the selection like this: 
+
+```js
+.enter()
+```
+
+The `enter` function identifies elements that need to be added when the `data` array is longer than the selection array. This is why you wanted the `selectAll` to return an empty array before.
     
 In this case, the `twitter-circles` selection has a length of 0, and the `data` array has a length of 9. So nine elements will be added when you use `append` in the next step.
 </section>

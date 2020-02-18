@@ -8,9 +8,9 @@ isBeta: true
 ## Description
 <section id='description'>
 
-The lines look a little plain, the next series of code additions will add circles to each point on each line. First is the Twitter line. On a new line, chain the `selectAll` function to `lineGraph` and pass it the string `twitter-circles`.
+Okay, your graph is coming along. All the lines are drawn, but they look a little plain. The next series of code additions will add circles to each point on each line. First is the Twitter line. On a new line, chain the `selectAll` function to `lineGraph` and pass it the string `twitter-circles`.
 
-`twitter-circles` don't exist and this selection will return an empty array, but it's needed. For now, you can just think of this name as a reference, similar to a variable name, so you know what data you are working with.
+`twitter-circles` don't exist and this selection will return an empty array, but it's needed. For now, you can just think of this string as a reference, similar to a variable name, so you know what data you are working with.
 </section>
 
 ## Instructions

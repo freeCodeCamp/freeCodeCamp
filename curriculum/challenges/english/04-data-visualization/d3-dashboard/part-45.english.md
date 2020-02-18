@@ -8,9 +8,9 @@ isBeta: true
 ## Description
 <section id='description'>
 
-The problem here is that the `svg` is only 700 wide, so setting the `x` values to the year will put them off the chart. You need to pass each year to the `xScale` and it will create `x` values based on your scale.
+The problem here is that the `svg` is only 700 wide, so setting the `x` values for each data point to the year will put them off the chart. You need to pass each year to the `xScale` you created and it will create `x` values based on your scale. So instead of the `x` for 2012 being `2012`, it will be `60` (or your `svgMargin`) since that's where your graph starts and that's where the scale will tell it to be.
 
-In the "`d` function", return the `xScale` function and pass it the `d.year` that's already there.
+In the "`d` function" you created, return `xScale(d.year)` instead of `d.year`.
 </section>
 
 ## Instructions

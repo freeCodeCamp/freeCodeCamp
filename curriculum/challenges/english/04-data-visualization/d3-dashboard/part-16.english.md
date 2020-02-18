@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Add three more variables; `twitterColor` with a value of `'#7cd9d1'`, `tumblrColor` equal to `'#f6dd71'`, and `instagramColor` at `'#fd9b98'`. These will be color values used to represent the different platforms throughout the project.
+Add three more variables; `twitterColor` with a value of `#7cd9d1`, `tumblrColor` equal to `#f6dd71`, and `instagramColor` at `#fd9b98`. Make sure those Hex values are strings. These will be colors used to represent the different platforms throughout the project.
 </section>
 
 ## Instructions

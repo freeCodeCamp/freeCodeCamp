@@ -7,6 +7,7 @@ isBeta: true
 
 ## Description
 <section id='description'>
+
 On a new line, append another `g` element to your `lineGraph` variable like you did before. This one will be for the x-axis.
 </section>
 

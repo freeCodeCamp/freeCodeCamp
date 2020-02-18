@@ -8,7 +8,9 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Tell the path what data to use. Add an `attr` function and set the `d` to `twitterLine(data)`. This will the build the path out of the data using the `twitterLine` function you created.
+Tell the path what data to use. Add an `attr` function and set the `d` to `twitterLine(data)`. This will the build the path using the `twitterLine` function you created and your `data` variable.
+
+Note that the `d` in this case is a `path` attribute for drawing a line and is different from the "`d` functions" you have been using.
 </section>
 
 ## Instructions

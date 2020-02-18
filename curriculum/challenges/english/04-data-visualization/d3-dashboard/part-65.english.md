@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Add `.append('circle')` below the `enter` function. This will add the nine `circle` elements.
+Chain the `append` function to the selection to append `circle` elements. This will add the nine `circle` elements.
 </section>
 
 ## Instructions

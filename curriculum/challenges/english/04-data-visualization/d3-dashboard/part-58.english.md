@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Set the `y` values for the `instagramLine`. Use a "`d` function" to return the value of your Instagram followers for each data point.
+Set the `y` values for `instagramLine` like you did for the other two. Use your Instagram followers to calculate the values this time.
 </section>
 
 ## Instructions

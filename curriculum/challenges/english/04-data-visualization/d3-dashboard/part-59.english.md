@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-On a new line, `append` another `path` element to your `lineGraph`, like you did for the other two lines.
+On a new line, `append` another `path` element to `lineGraph` like you did for the other two lines.
 </section>
 
 ## Instructions

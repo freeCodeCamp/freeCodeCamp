@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Set two more attributes; the `fill` to `white` and the `stroke` to your `twitterColor` variable.
+The circles are now visible, but they look a little rough. Set the `fill` to `white` and the `stroke` to your `twitterColor` variable.
 </section>
 
 ## Instructions

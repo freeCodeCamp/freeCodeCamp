@@ -8,7 +8,12 @@ isBeta: true
 ## Description
 <section id='description'>
 
-The axis labels are `text` elements within the `g`, you can use the `selectAll` function to select them. Chain the `selectAll` function to select the `text` elements in this group. You can do that like this: `.selectAll('text')`.
+The axis labels are `text` elements within the `g`, you can use the `selectAll` function to select them. Chain the `selectAll` function to select the `text` elements in this group. You can do that like this: 
+
+```js
+.selectAll('element')
+```
+
 </section>
 
 ## Instructions

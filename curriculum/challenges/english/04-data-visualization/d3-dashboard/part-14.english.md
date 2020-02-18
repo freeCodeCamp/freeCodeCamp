@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Add a third script just before the closing body tag. It will be the javascript file you will use to create the rest of the dashboard. Give the script a `src` attribute of `./dashboard.js`.
+Add a third script just before the closing body tag. It will be the JavaScript file you will use to create the rest of the dashboard. Give the script a `src` of `./dashboard.js`.
 </section>
 
 ## Instructions

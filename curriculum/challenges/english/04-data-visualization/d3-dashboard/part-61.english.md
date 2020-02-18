@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Set these attributes: `stroke` to your `instagramColor` variable, `stroke-width` to `3`, and `fill` to `transparent`.
+Set the `stroke`, `stroke-width`, and `fill` attributes to their appropriate values for this line. The `stroke-width` and `fill` are the same as the other two.
 </section>
 
 ## Instructions

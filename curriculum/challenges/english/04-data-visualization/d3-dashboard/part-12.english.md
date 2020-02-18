@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Add a `script` tag at the bottom of the head element and give it a `src` attribute of `./d3-5.9.2.min.js`. Don't forget the closing tag. This will add the d3 library to your project from a copy you have downloaded.
+Back in the HTML file, add a `script` tag at the bottom of the head element and give it a `src` attribute of `./d3-5.9.2.min.js`. Don't forget the closing tag. This will add the d3 library to your project from a downloaded copy.
 </section>
 
 ## Instructions

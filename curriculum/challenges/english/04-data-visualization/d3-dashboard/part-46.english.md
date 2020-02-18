@@ -12,7 +12,7 @@ Add the `y` function to the line and pass it a "`d` function" that returns your 
 
 This is similar to how you set the `x` values; it will use the values of your Twitter followers to set the `y` value for each item.
 
-These "`d` functions" use implicit returns; but if you add curly brackets and a return statement, you can put any functionality in there that you want, including `console.log` statements that can be useful for debugging.
+These "`d` functions" use implicit returns. But if you add curly brackets and a return statement, you can put any functionality in there that you want, including `console.log` statements that can be useful for debugging.
 </section>
 
 ## Instructions

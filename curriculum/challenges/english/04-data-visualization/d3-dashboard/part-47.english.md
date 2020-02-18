@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-The first line is created, now you need to display it. On a new line, `append` a `path` to your `lineGraph` variable, similar to how you appended the `g` before.
+The first line is created and ready to be displayed, which will take a couple steps. On a new line, `append` a `path` element to your `lineGraph` variable. This is similar to how you appended the `g` before.
 </section>
 
 ## Instructions

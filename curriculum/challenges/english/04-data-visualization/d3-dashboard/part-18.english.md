@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Your dashboard element is now "selected", D3 has bunch functions for working with a selection. One of them is `append`. It is used to add an element. Chain the `append` function to your selection and use it to add an `svg` element. Here's an example of how that might be done:
+Your dashboard element is now "selected". D3 has a number of functions for working with a selection; one of them is `append`. It is used to add an element. Chain the `append` function to your selection and use it to add an `svg` element. Here's an example of how that might be done:
 
 ```js
 const variableName = d3.select('selectedElement')

@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-The script at the top is the `data.js` file you added. I have placed it here so you can see the data. The second script is the one you just added. The rest of the JavaScript you created will be in it.
+The script at the top is the `data.js` file you added. I have placed it here so you can see the data. The second script is the one you just added and where you will build the rest of the project.
 
 Create three `const` variables; `svgMargin` with a value of `70`, `svgWidth` with a value of `700`, and `svgHeight` equal to `500`. The first part of the dashboard will be a line graph. It will use these variables as its dimensions.
 </section>

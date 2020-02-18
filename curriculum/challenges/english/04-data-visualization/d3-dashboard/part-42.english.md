@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Chain a `tickPadding` function to the `xAxis` and pass it `10`. This will add a little padding to the ticks.
+In the same spot, chain the `tickPadding` function to the `xAxis` and pass it `10`. This will add a little padding to the ticks so the labels are better aligned.
 </section>
 
 ## Instructions
@@ -71,7 +71,6 @@ tests:
 
   const xAxis = d3.axisBottom(xScale)
     .tickFormat(d3.format(''))
-
 
 
   lineGraph.append('g')

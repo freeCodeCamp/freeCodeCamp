@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Chain a `tickFormat` function to your `xAxis` variable and pass it `d3.format('')`. This will remove the commas in the year labels of the x-axis.
+Go back to where you defined your `xAis` variable and chain the `tickFormat` function to it. Pass it `d3.format('')`. This will remove the commas in the year labels of the x-axis.
 </section>
 
 ## Instructions
@@ -70,7 +70,6 @@ tests:
     .ticks(6, '~s');
 
   const xAxis = d3.axisBottom(xScale)
-
 
 
   lineGraph.append('g')

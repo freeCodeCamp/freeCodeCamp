@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-When you appended the `svg` element, it became the "selection". So any functions you add after it will be used on the `svg` element. 
+You can't see it, but there is now an `svg` element nested in your dashboard container. When you appended it, it became the "selection" for this area of code. Any functions you chain after it will be used on this selection.
 
 `attr` is a function to set attributes. You need to pass it the attribute you want to set, and the value you want to give it. Here's an example of how to chain `attr` to a selection:
 
