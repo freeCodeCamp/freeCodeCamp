@@ -94,7 +94,22 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>D3 Dashboard</title>
+    <link rel="stylesheet" href="./dashboard.css">
+    <script src="./d3-5.9.2.min.js"></script>
+    <script src="./data.js"></script>
+  </head>
+
+  <body>
+    <div class="dashboard"></div>
+
+    <script src="dashboard.js"></script>
+  </body>
+</html>
 ```
 
 </section>
