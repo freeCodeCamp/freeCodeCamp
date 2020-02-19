@@ -53,51 +53,47 @@
   },
   "devDependencies": {
     "@freecodecamp/eslint-config": "^2.0.2",
-    "babel-eslint": "^10.0.2",
-    "cross-env": "^5.2.0",
+    "babel-eslint": "^10.0.3",
+    "cross-env": "^7.0.0",
     "debug": "^4.1.1",
-    "dotenv": "^6.2.0",
-    "eslint": "^5.16.0",
-    "eslint-config-prettier": "^4.3.0",
+    "dotenv": "^8.2.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-babel": "^5.3.0",
-    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-prefer-object-spread": "^1.2.1",
-    "eslint-plugin-prettier": "^3.1.0",
-    "eslint-plugin-react": "^7.14.3",
-    "eslint-plugin-react-hooks": "^2.0.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.18.3",
+    "eslint-plugin-react-hooks": "^2.4.0",
     "faker": "^4.1.0",
     "gray-matter": "^4.0.2",
     "gulp": "^4.0.2",
-    "husky": "^1.3.1",
-    "jest": "^24.8.0",
+    "husky": "^4.2.3",
+    "jest": "^25.1.0",
     "js-yaml": "^3.13.0",
-    "lerna": "^3.16.4",
-    "lint-staged": "^8.2.1",
+    "lerna": "^3.20.2",
+    "lint-staged": "^10.0.7",
     "lodash": "^4.17.15",
-    "markdownlint": "^0.15.0",
+    "markdownlint": "^0.19.0",
     "npm-run-all": "^4.1.5",
-    "ora": "^3.4.0",
-    "prettier": "^1.18.2",
-    "prismjs": "^1.17.1",
+    "ora": "^4.0.3",
+    "prettier": "^1.19.1",
+    "prismjs": "^1.19.0",
     "readdirp-walk": "^1.7.0",
-    "shortid": "^2.2.14",
+    "shortid": "^2.2.15",
     "shx": "^0.3.2",
-    "sinon": "^7.4.1",
-    "sinon-express-mock": "^2.2.0",
+    "sinon": "^9.0.0",
+    "sinon-express-mock": "^2.2.1",
     "slugg": "^1.2.1"
   },
   "lint-staged": {
-    "linters": {
-      "*.js": [
-        "eslint --fix",
-        "git add"
-      ],
-      "./curriculum/challenges/**/*.md": "node ./tools/scripts/lint/index.js",
-      "*.css": [
-        "prettier --write",
-        "git add"
-      ]
-    }
+    "*.js": [
+      "eslint --fix"
+    ],
+    "./curriculum/challenges/**/*.md": "node ./tools/scripts/lint/index.js",
+    "*.css": [
+      "prettier --write"
+    ]
   },
   "husky": {
     "hooks": {
