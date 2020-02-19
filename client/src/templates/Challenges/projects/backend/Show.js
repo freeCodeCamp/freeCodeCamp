@@ -166,6 +166,7 @@ export class BackEnd extends Component {
           challengeType,
           forumTopicId,
           title,
+          localeTitle,
           description,
           instructions
         }
@@ -183,7 +184,7 @@ export class BackEnd extends Component {
     const buttonCopy = isSignedIn
       ? 'Submit and go to my next challenge'
       : "I've completed this challenge";
-    const blockNameTitle = `${blockName} - ${title}`;
+    const blockNameTitle = `${blockName} - ${localeTitle || title}`;
 
     return (
       <Hotkeys
@@ -259,6 +260,7 @@ export const query = graphql`
     challengeNode(fields: { slug: { eq: $slug } }) {
       forumTopicId
       title
+      localeTitle
       description
       instructions
       challengeType

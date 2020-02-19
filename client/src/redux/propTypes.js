@@ -41,6 +41,7 @@ export const ChallengeNode = PropTypes.shape({
   isLocked: PropTypes.bool,
   isPrivate: PropTypes.bool,
   isRequired: PropTypes.bool,
+  localeTitle: PropTypes.string,
   name: PropTypes.string,
   order: PropTypes.number,
   required: PropTypes.arrayOf(

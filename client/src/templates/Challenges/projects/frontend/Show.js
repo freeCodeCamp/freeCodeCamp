@@ -98,6 +98,7 @@ export class Project extends Component {
           fields: { blockName },
           forumTopicId,
           title,
+          localeTitle,
           description
         }
       },
@@ -109,7 +110,7 @@ export class Project extends Component {
     } = this.props;
     const isFrontEnd = challengeType === frontEndProject;
 
-    const blockNameTitle = `${blockName} - ${title}`;
+    const blockNameTitle = `${blockName} - ${localeTitle || title}`;
     return (
       <Hotkeys
         innerRef={c => (this._container = c)}
@@ -159,6 +160,7 @@ export const query = graphql`
     challengeNode(fields: { slug: { eq: $slug } }) {
       forumTopicId
       title
+      localeTitle
       description
       challengeType
       fields {

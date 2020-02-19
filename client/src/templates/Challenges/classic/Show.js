@@ -177,9 +177,10 @@ class ShowClassic extends Component {
   getBlockNameTitle() {
     const {
       fields: { blockName },
-      title
+      title,
+      localeTitle
     } = this.getChallenge();
-    return `${blockName}: ${title}`;
+    return `${blockName}: ${localeTitle || title}`;
   }
 
   getVideoUrl = () => this.getChallenge().videoUrl;
@@ -328,6 +329,7 @@ export const query = graphql`
   query ClassicChallenge($slug: String!) {
     challengeNode(fields: { slug: { eq: $slug } }) {
       title
+      localeTitle
       description
       instructions
       challengeType
