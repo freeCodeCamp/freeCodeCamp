@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
@@ -9,10 +10,11 @@ import { stripePublicKey } from '../../config/env.json';
 import { Spacer, Loader } from '../components/helpers';
 import DonateForm from '../components/Donation/DonateForm';
 import DonateText from '../components/Donation/DonateText';
-import { signInLoadingSelector, userSelector } from '../redux';
+import { signInLoadingSelector, userSelector, executeGA } from '../redux';
 import { stripeScriptLoader } from '../utils/scriptLoaders';
 
 const propTypes = {
+  executeGA: PropTypes.func,
   isDonating: PropTypes.bool,
   showLoading: PropTypes.bool.isRequired
 };
@@ -26,6 +28,14 @@ const mapStateToProps = createSelector(
   })
 );
 
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      executeGA
+    },
+    dispatch
+  );
+
 export class DonatePage extends Component {
   constructor(...props) {
     super(...props);
@@ -33,11 +43,19 @@ export class DonatePage extends Component {
       stripe: null,
       enableSettings: false
     };
-
+    this.handleProcessing = this.handleProcessing.bind(this);
     this.handleStripeLoad = this.handleStripeLoad.bind(this);
   }
 
   componentDidMount() {
+    this.props.executeGA({
+      type: 'event',
+      data: {
+        category: 'Donation',
+        action: `Displayed donate page`,
+        nonInteraction: true
+      }
+    });
     if (window.Stripe) {
       this.handleStripeLoad();
     } else if (document.querySelector('#stripe-js')) {
@@ -56,6 +74,18 @@ export class DonatePage extends Component {
     }
   }
 
+  handleProcessing(duration, amount) {
+    this.props.executeGA({
+      type: 'event',
+      data: {
+        category: 'donation',
+        action: 'donate page stripe form submission',
+        label: duration,
+        value: amount
+      }
+    });
+  }
+
   handleStripeLoad() {
     // Create Stripe instance once Stripe.js loads
     console.info('stripe has loaded');
@@ -67,7 +97,7 @@ export class DonatePage extends Component {
 
   render() {
     const { stripe } = this.state;
-    const { showLoading } = this.props;
+    const { showLoading, isDonating } = this.props;
 
     if (showLoading) {
       return <Loader fullScreen={true} />;
@@ -80,20 +110,33 @@ export class DonatePage extends Component {
           <Spacer />
           <Row>
             <Col sm={10} smOffset={1} xs={12}>
-              <h1 className='text-center'>Become a Supporter</h1>
+              <h1 className='text-center'>
+                {isDonating
+                  ? 'Thank You for Your Support'
+                  : 'Become a Supporter'}
+              </h1>
               <Spacer />
             </Col>
           </Row>
           <Row>
-            <Col md={6}>
-              <DonateForm
-                enableDonationSettingsPage={this.enableDonationSettingsPage}
-                stripe={stripe}
-              />
-            </Col>
-            <Col md={6}>
-              <DonateText />
-            </Col>
+            {isDonating ? (
+              <Col md={6} mdOffset={3}>
+                <DonateText />
+              </Col>
+            ) : (
+              <Fragment>
+                <Col md={6}>
+                  <DonateForm
+                    enableDonationSettingsPage={this.enableDonationSettingsPage}
+                    handleProcessing={this.handleProcessing}
+                    stripe={stripe}
+                  />
+                </Col>
+                <Col md={6}>
+                  <DonateText />
+                </Col>
+              </Fragment>
+            )}
           </Row>
           <Spacer />
         </Grid>
@@ -105,4 +148,7 @@ export class DonatePage extends Component {
 DonatePage.displayName = 'DonatePage';
 DonatePage.propTypes = propTypes;
 
-export default connect(mapStateToProps)(DonatePage);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(DonatePage);

@@ -17,7 +17,7 @@ If you already have  <i>gcd</i>  for <a href="https://rosettacode.org/wiki/great
 ## Instructions
 <section id='instructions'>
 
-Compute the least common multiple of an array of intergers.
+Compute the least common multiple of an array of integers.
 Given  <i>m</i>  and  <i>n</i>,  the least common multiple is the smallest positive integer that has both  <i>m</i>  and  <i>n</i>  as factors.
 </section>
 

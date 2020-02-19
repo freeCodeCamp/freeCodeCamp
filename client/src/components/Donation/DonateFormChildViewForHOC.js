@@ -24,13 +24,13 @@ const propTypes = {
   donationDuration: PropTypes.string.isRequired,
   email: PropTypes.string,
   getDonationButtonLabel: PropTypes.func.isRequired,
+  handleProcessing: PropTypes.func,
   isSignedIn: PropTypes.bool,
   showCloseBtn: PropTypes.func,
   stripe: PropTypes.shape({
     createToken: PropTypes.func.isRequired
   }),
-  theme: PropTypes.string,
-  yearEndGift: PropTypes.bool
+  theme: PropTypes.string
 };
 const initialState = {
   donationState: {
@@ -53,7 +53,7 @@ class DonateFormChildViewForHOC extends Component {
       ...initialState,
       donationAmount: this.props.donationAmount,
       donationDuration: this.props.donationDuration,
-      isSubmitionValid: null,
+      isSubmissionValid: null,
       email: null,
       isEmailValid: true,
       isFormValid: false
@@ -96,12 +96,12 @@ class DonateFormChildViewForHOC extends Component {
 
     if ((!isEmailValid, !isFormValid)) {
       return this.setState({
-        isSubmitionValid: false
+        isSubmissionValid: false
       });
     }
 
     this.setState({
-      isSubmitionValid: null
+      isSubmissionValid: null
     });
 
     const email = this.getUserEmail();
@@ -134,7 +134,6 @@ class DonateFormChildViewForHOC extends Component {
 
   postDonation(token) {
     const { donationAmount: amount, donationDuration: duration } = this.state;
-    const { yearEndGift } = this.props;
     this.setState(state => ({
       ...state,
       donationState: {
@@ -148,11 +147,14 @@ class DonateFormChildViewForHOC extends Component {
 
     // change the donation modal button label to close
     // or display the close button for the cert donation section
-    if (this.props.showCloseBtn) {
-      this.props.showCloseBtn();
+    if (this.props.handleProcessing) {
+      this.props.handleProcessing(
+        this.state.donationDuration,
+        Math.round(this.state.donationAmount / 100)
+      );
     }
 
-    return postChargeStripe(yearEndGift, {
+    return postChargeStripe({
       token,
       amount,
       duration
@@ -226,12 +228,12 @@ class DonateFormChildViewForHOC extends Component {
   }
 
   renderDonateForm() {
-    const { isEmailValid, isSubmitionValid, email } = this.state;
+    const { isEmailValid, isSubmissionValid, email } = this.state;
     const { getDonationButtonLabel, theme, defaultTheme } = this.props;
 
     return (
       <Form className='donation-form' onSubmit={this.handleSubmit}>
-        <div>{isSubmitionValid !== null ? this.renderErrorMessage() : ''}</div>
+        <div>{isSubmissionValid !== null ? this.renderErrorMessage() : ''}</div>
         <FormGroup className='donation-email-container'>
           <ControlLabel>
             Email (we'll send you a tax-deductible donation receipt):
@@ -275,14 +277,12 @@ class DonateFormChildViewForHOC extends Component {
     const {
       donationState: { processing, success, error }
     } = this.state;
-    const { yearEndGift } = this.props;
     if (processing || success || error) {
       return this.renderCompletion({
         processing,
         success,
         error,
-        reset: this.resetDonation,
-        yearEndGift
+        reset: this.resetDonation
       });
     }
     return this.renderDonateForm();

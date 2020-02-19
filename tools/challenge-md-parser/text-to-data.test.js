@@ -6,7 +6,7 @@ const textToData = require('./text-to-data');
 describe('text-to-data', () => {
   const expectedField = 'description';
   const otherExpectedField = 'instructions';
-  const unexpectedField = 'does-not-exis';
+  const unexpectedField = 'does-not-exist';
   let file = { data: {} };
 
   beforeEach(() => {

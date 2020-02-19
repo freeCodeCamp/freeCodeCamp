@@ -108,6 +108,9 @@ class Editor extends Component {
         verticalHasArrows: false,
         useShadows: false,
         verticalScrollbarSize: 5
+      },
+      parameterHints: {
+        enabled: false
       }
     };
 

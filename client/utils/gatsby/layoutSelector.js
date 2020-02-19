@@ -29,11 +29,7 @@ export default function layoutSelector({ element, props }) {
       </DefaultLayout>
     );
   }
-  if (
-    /^\/donation(\/.*)*|^\/donate(\/.*)*/.test(pathname) ||
-    /^\/year-end-gift-successful(\/.*)*/.test(pathname) ||
-    /^\/year-end-gift(\/.*)*/.test(pathname)
-  ) {
+  if (/^\/donation(\/.*)*|^\/donate(\/.*)*/.test(pathname)) {
     return (
       <DefaultLayout pathname={pathname} useTheme={false}>
         {element}

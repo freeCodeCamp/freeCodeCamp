@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Highlight } from 'react-instantsearch-dom';
-import { isEmpty } from 'lodash';
 
 const Suggestion = ({ hit, handleMouseEnter, handleMouseLeave }) => {
-  const dropdownFooter = hit.objectID.includes('default-hit-');
-  return isEmpty(hit) || isEmpty(hit.objectID) ? null : (
+  const dropdownFooter = hit.objectID.includes('footer-');
+  return (
     <a
       className={
         dropdownFooter
@@ -14,7 +13,7 @@ const Suggestion = ({ hit, handleMouseEnter, handleMouseLeave }) => {
       }
       href={
         dropdownFooter
-          ? `https://freecodecamp.org/news/search/?query=${encodeURIComponent(
+          ? `https://www.freecodecamp.org/news/search/?query=${encodeURIComponent(
               hit.query
             )}`
           : hit.url
