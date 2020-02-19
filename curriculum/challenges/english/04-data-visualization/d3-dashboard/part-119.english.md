@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Your table is going to have three columns, one for the platform name, one for the color it is using on your dashboard, and a third to display the number of followers. So you want the title to take up all three columns. Set the `colspan` attribute to `3` so it spans all three columns.
+Your table is going to have three columns, one for the platform name, one for the color it is using on your dashboard, and a third to display the number of followers. So you want the title to take up all three columns. Set the `colspan` attribute of the `th` to `3` so it spans all three of these columns.
 </section>
 
 ## Instructions
@@ -184,7 +184,12 @@ tests:
     .data(pie(d3.entries(data[8].followers)))
     .enter()
     .append('text')
-    .text(d => `${Math.round(d.data.value/d3.sum(d3.values(data[8].followers))*100)}%`)
+    .text(d => {
+      const values = d3.values(data[8].followers);
+      const sum = d3.sum(values);
+      const percent = d.data.value/sum;
+      return `${ Math.round(percent*100) }%`;
+    })
     .attr('transform', d => `translate(${pieArc.centroid(d)})`)
     .style('text-anchor', 'middle')
     .style('font', '10px verdana');

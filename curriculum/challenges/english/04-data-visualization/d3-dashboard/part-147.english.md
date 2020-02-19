@@ -9,6 +9,8 @@ isBeta: true
 <section id='description'>
 
 Change the `fill` of the `tumblr-circles` and `instagram-circles` to use a "`d` function" that returns their respective color variables when `d.year` equals `year`, leave it `white` when they don't.
+
+Then, all of the circles will get filled in for the currently displayed year.
 </section>
 
 ## Instructions
@@ -142,6 +144,8 @@ tests:
       .attr('cy', d => yScale(d.followers.tumblr))
       .attr('r', 6)
       .attr('fill', 'white')
+
+
       .attr('stroke', tumblrColor)
       .style('cursor', 'pointer')
       .on('mouseover', d => drawDashboard(d.year));
@@ -154,7 +158,6 @@ tests:
       .attr('cy', d => yScale(d.followers.instagram))
       .attr('r', 6)
       .attr('fill', 'white')
-
 
 
       .attr('stroke', instagramColor)
@@ -197,7 +200,12 @@ tests:
       .data(pie(d3.entries(data[index].followers)))
       .enter()
       .append('text')
-      .text(d => `${Math.round(d.data.value/d3.sum(d3.values(data[index].followers))*100)}%`)
+      .text(d => {
+        const values = d3.values(data[8].followers);
+        const sum = d3.sum(values);
+        const percent = d.data.value/sum;
+        return `${ Math.round(percent*100) }%`;
+      })
       .attr('transform', d => `translate(${pieArc.centroid(d)})`)
       .style('text-anchor', 'middle')
       .style('font', '10px verdana');

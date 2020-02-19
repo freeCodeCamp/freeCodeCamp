@@ -9,8 +9,7 @@ isBeta: true
 
 <section id='description'>
 
-Set the `fill` attribute to the function `d => pieColors(d.data.key)`. This will send the key (platform) of each data point to the `pieColors` function and return the range value that key is mapped to.
-
+Back at the bottom, where you draw the chart. Set the `fill` attribute to a "`d` function" that uses your `pieColors` scale to get the color value for `d.data.key`. The key is the platform.
 </section>
 
 ## Instructions
@@ -195,7 +194,10 @@ tests:
     .append('g')
     .attr('transform', 'translate(100, 100)');
 
-  pieGraphData.append('path').attr('d', pieArc);
+  pieGraphData.append('path')
+    .attr('d', pieArc)
+
+
 </script>
 ```
 

@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Use the `domain` function on the scale and pass it the value `data[8].followers`. This will be an array of the data from 2020 that contains three items, one for each platform. It could just as easily be any array of length 3, but if anything were to ever get added to the `data`, you won't have to go change this.
+Set the `domain` of the scale to `data[8].followers`. This will be an array of the data from 2020 that contains three items, one for each platform.
 </section>
 
 ## Instructions

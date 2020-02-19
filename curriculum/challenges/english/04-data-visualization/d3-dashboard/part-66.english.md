@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Each circle needs a `cx` and `cy` attribute so it knows where to display on the `svg`. These are the same as the `x` and `y` values for the lines and will be calculated in the same way to be placed in the same spots.
+Each circle needs a `cx` and `cy` attribute so it knows where to display on the `svg`. These are similar to the `x` and `y` values for the lines and will be calculated in the same way to be placed in the same spots.
 
 Use the `attr` function to set the `cx` to `d => xScale(d.year)`. 
 </section>

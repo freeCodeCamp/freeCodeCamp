@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-The line graph is looking good. Next, you are going to add a `div` to put the pie graph and legend in. Create a new `const` variable named `rightDashboard` and set equal to `d3.select('.dashboard')`.
+The line graph is looking good. All that empty space to the right will be for a pie graph and a legend. First, you are going to add a `div` for them. Create a new `const` named `rightDashboard` and set equal to `d3.select('.dashboard')`.
 </section>
 
 ## Instructions

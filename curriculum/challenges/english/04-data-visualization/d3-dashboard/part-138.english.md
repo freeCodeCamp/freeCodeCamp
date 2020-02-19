@@ -8,9 +8,9 @@ isBeta: true
 ## Description
 <section id='description'>
 
-The dashboard is looking pretty good, but it is stuck on displaying only the data from 2020. Next you will make it so you can see the data from whatever year you want.
+Finally! You have all the elements displayed and they look good. The only problem is it is stuck on displaying the data from 2020. Next you will make it so you can see the data from whatever year you want.
 
-Wrap all the code in this file in a function named `drawDashboard` and give it a parameter named `year`. Then, at the bottom, call the function you created and pass it `2020`.
+Wrap all the code in the script you've been working with in a function named `drawDashboard` and give it a parameter named `year`. Then, at the bottom of the script, call the function you created and pass it the number `2020`.
 </section>
 
 ## Instructions
@@ -23,7 +23,7 @@ Wrap all the code in this file in a function named `drawDashboard` and give it a
 ```yml
 tests:
   - text: test-text
-    testString: assert(typeof(drawDashboard) === 'function' && /^\s*<script>\s*function\s*drawDashboard\s*\(\s*year\s*\)\s*\{/g.test(code) && /\}\s*drawDashboard\s*\(\s*2020\s*\)\s*;?\s*<\/script>\s*$/g.test(code));
+    testString: assert(typeof(drawDashboard) === 'function' && /<\/script>\s*<script>\s*function\s*drawDashboard\s*\(\s*year\s*\)\s*\{/g.test(code) && /\}\s*drawDashboard\s*\(\s*2020\s*\)\s*;?\s*<\/script>\s*$/g.test(code));
 
 ```
 
@@ -48,6 +48,8 @@ tests:
   ];
 </script>
 <script>
+
+
   const svgMargin = 60,
     svgWidth = 700,
     svgHeight = 500,
@@ -188,7 +190,12 @@ tests:
     .data(pie(d3.entries(data[8].followers)))
     .enter()
     .append('text')
-    .text(d => `${Math.round(d.data.value/d3.sum(d3.values(data[8].followers))*100)}%`)
+    .text(d => {
+      const values = d3.values(data[8].followers);
+      const sum = d3.sum(values);
+      const percent = d.data.value/sum;
+      return `${ Math.round(percent*100) }%`;
+    })
     .attr('transform', d => `translate(${pieArc.centroid(d)})`)
     .style('text-anchor', 'middle')
     .style('font', '10px verdana');

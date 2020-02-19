@@ -9,6 +9,8 @@ isBeta: true
 <section id='description'>
 
 Add a `mouseover` event to the `tumblr-circles` and `instagram-circles` in the same way that you did for the `twitter-circles`.
+
+After that, you will be able hover any of the circles or year labels to get the information for that year.
 </section>
 
 ## Instructions
@@ -145,6 +147,8 @@ tests:
       .attr('stroke', tumblrColor)
       .style('cursor', 'pointer')
 
+
+
     lineGraph.selectAll('instagram-circles')
       .data(data)
       .enter()
@@ -155,7 +159,6 @@ tests:
       .attr('fill', 'white')
       .attr('stroke', instagramColor)
       .style('cursor', 'pointer')
-
 
 
 
@@ -195,7 +198,12 @@ tests:
       .data(pie(d3.entries(data[index].followers)))
       .enter()
       .append('text')
-      .text(d => `${Math.round(d.data.value/d3.sum(d3.values(data[index].followers))*100)}%`)
+      .text(d => {
+        const values = d3.values(data[8].followers);
+        const sum = d3.sum(values);
+        const percent = d.data.value/sum;
+        return `${ Math.round(percent*100) }%`;
+      })
       .attr('transform', d => `translate(${pieArc.centroid(d)})`)
       .style('text-anchor', 'middle')
       .style('font', '10px verdana');

@@ -8,15 +8,18 @@ isBeta: true
 ## Description
 <section id='description'>
 
-At the top of the function create a new `const` named `index`. You are going to use it to find the item in the `data` array with the year that is the same as the one passed to the function.
-&&
+At the top of the function create a new `const` named `index`. You are going to use it to find the item in the `data` array with the year that is passed to the function.
+
 Use JavaScript's `findIndex` function to set your `index` variable to the index of the item in the `data` array where the year is the same as the year passed to your `drawDashboard` function. Here's an example:
 
 ```js
-array.findIndex(d => return the year here)
+array.findIndex(d => 
+  // find where the year passed to drawDashboard
+  // equals the year of the array
+)
 ```
 
-After this, you can use `data[index]` to get that item in the array.
+After this, you will be able to use `data[index]` to get that item in the array.
 </section>
 
 ## Instructions
@@ -55,7 +58,6 @@ tests:
 </script>
 <script>
   function drawDashboard(year) {
-
 
 
 
@@ -199,7 +201,12 @@ tests:
       .data(pie(d3.entries(data[8].followers)))
       .enter()
       .append('text')
-      .text(d => `${Math.round(d.data.value/d3.sum(d3.values(data[8].followers))*100)}%`)
+      .text(d => {
+        const values = d3.values(data[8].followers);
+        const sum = d3.sum(values);
+        const percent = d.data.value/sum;
+        return `${ Math.round(percent*100) }%`;
+      })
       .attr('transform', d => `translate(${pieArc.centroid(d)})`)
       .style('text-anchor', 'middle')
       .style('font', '10px verdana');

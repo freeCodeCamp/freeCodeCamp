@@ -21,7 +21,7 @@ Create another variable named `percent` and set it equal to `d.data.value` divid
 ```yml
 tests:
   - text: test-text
-    testString: assert(/const\s*percent\s*=\s*d\s*\.\s*data\s*\.\s*value\s*\/\s*sum;?\s*\}\s*\)/g.test(code));
+    testString: assert(/const\s*percent\s*=\s*d\s*\.\s*data\s*\.\s*value\s*\/\s*sum;?/g.test(code));
 
 ```
 

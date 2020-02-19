@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-The last component you are going to add it a legend to display the name of each platform and the number of followers for the year. Create a new `const` named `legend` and use it to `append` a `table` to your `rightDashboard` variable. This looks similar to the code where you created your `pieGraph` variable.
+The last component you are going to add is a legend to display the name of each platform and the number of followers for the year. Create a new `const` named `legend` and use it to `append` a `table` to your `rightDashboard` variable. This looks similar to the code where you created your `pieGraph` variable.
 </section>
 
 ## Instructions
@@ -184,7 +184,12 @@ tests:
     .data(pie(d3.entries(data[8].followers)))
     .enter()
     .append('text')
-    .text(d => `${Math.round(d.data.value/d3.sum(d3.values(data[8].followers))*100)}%`)
+    .text(d => {
+      const values = d3.values(data[8].followers);
+      const sum = d3.sum(values);
+      const percent = d.data.value/sum;
+      return `${ Math.round(percent*100) }%`;
+    })
     .attr('transform', d => `translate(${pieArc.centroid(d)})`)
     .style('text-anchor', 'middle')
     .style('font', '10px verdana');

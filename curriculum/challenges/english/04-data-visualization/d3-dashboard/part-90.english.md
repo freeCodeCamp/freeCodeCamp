@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Since the domain has three items, the range also needs to have three items. If it had less, the values would repeat, putting the same color on the pie chart multiple times. Add the `range` function to the scale and pass it this array: `[twitterColor, tumblrColor, instagramColor]`.
+Since the domain has three items, the range also needs to have three items. If it had less, the values would repeat, putting the same color on the pie chart multiple times. Add the `range` function to the scale and pass it an array with your three color variables. Put them in the same order in which they are defined.
 </section>
 
 ## Instructions

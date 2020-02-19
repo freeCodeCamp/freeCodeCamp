@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-On a new line, `append` a `path` element to your `pieGraphData` variable. This is what will actually draw the pie graph.
+On a new line, `append` a `path` element to your `pieGraphData` variable. This is where you will start to draw the pie.
 </section>
 
 ## Instructions

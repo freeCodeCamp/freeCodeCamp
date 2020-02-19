@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-The next thing you want to do is add all those values together. `d3.sum` will add the values of an array together. Create a new `const` named `sum` and set it equal to `d3.sum(values)`.
+Since you want to find what percent each of those `values` is, you first need to add them all up. `d3.sum` will do that for you. Create a new `const` named `sum` and set it equal to `d3.sum(values)`.
 </section>
 
 ## Instructions
@@ -21,7 +21,7 @@ The next thing you want to do is add all those values together. `d3.sum` will ad
 ```yml
 tests:
   - text: test-text
-    testString: assert(/const\s*sum\s*=\s*d3\s*\.\s*sum\s*\(\s*values\s*\)\s*;?\s*\}\s*\)/g.test(code));
+    testString: assert(/const\s*sum\s*=\s*d3\s*\.\s*sum\s*\(\s*values\s*\)\s*;?/g.test(code));
 
 ```
 

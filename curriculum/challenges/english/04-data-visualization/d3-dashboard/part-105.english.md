@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Add the `enter` and `append` functions in that order. Add `text` elements with the `append`.
+Next, use the `enter` and `append` functions to add `text` elements to the graph.
 </section>
 
 ## Instructions

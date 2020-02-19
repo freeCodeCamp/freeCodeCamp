@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Add the `data` function to the selection. Pass it your `pie` function with an empty array for now. The next step will get the correct array to put there.
+Add the `data` function to the selection. Pass it your `pie` variable with an empty array for now. The next step will get the correct array to put there.
 </section>
 
 ## Instructions

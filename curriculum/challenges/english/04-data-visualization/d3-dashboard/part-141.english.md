@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Create a `mouseover` event for your x-axis labels. Chain the `on` function to them and pass it the string `mouseover` and give it a value of a "`d` function" that calls the `drawDashboard` function with `d` as the argument. It will look like this:
+Go to where you `call` the `xAxis` and create a `mouseover` event for the labels. Chain the `on` function to them, pass it the string `mouseover`, and give it a value of a "`d` function" that calls `drawDashboard` with `d` as the argument. It will look like this:
 
 ```js
 .on('mouseover', d => drawDashboard(d))
@@ -198,7 +198,12 @@ tests:
       .data(pie(d3.entries(data[index].followers)))
       .enter()
       .append('text')
-      .text(d => `${Math.round(d.data.value/d3.sum(d3.values(data[index].followers))*100)}%`)
+      .text(d => {
+        const values = d3.values(data[8].followers);
+        const sum = d3.sum(values);
+        const percent = d.data.value/sum;
+        return `${ Math.round(percent*100) }%`;
+      })
       .attr('transform', d => `translate(${pieArc.centroid(d)})`)
       .style('text-anchor', 'middle')
       .style('font', '10px verdana');

@@ -8,9 +8,9 @@ isBeta: true
 ## Description
 <section id='description'>
 
-There's a problem, each time you call the function it adds more elements to the container. If you empty all the elements out of the container at the top of the function, it will redraw them where they need to be.
+There's a problem, each time you hover a label it adds all the elements to the container again. If you empty the container at the top of the function, it will redraw them where they need to be.
 
-Use `d3.select` to select the `.dashboard` element and chain the `html` function to it with an empty string as it parameter.
+Go back to the top of the function and use `d3.select` to select the `.dashboard` element and chain the `html` function to it with an empty string as it parameter. Empty means no spaces.
 </section>
 
 ## Instructions
@@ -49,7 +49,6 @@ tests:
 </script>
 <script>
   function drawDashboard(year) {
-
 
 
 
@@ -196,7 +195,12 @@ tests:
       .data(pie(d3.entries(data[index].followers)))
       .enter()
       .append('text')
-      .text(d => `${Math.round(d.data.value/d3.sum(d3.values(data[index].followers))*100)}%`)
+      .text(d => {
+        const values = d3.values(data[8].followers);
+        const sum = d3.sum(values);
+        const percent = d.data.value/sum;
+        return `${ Math.round(percent*100) }%`;
+      })
       .attr('transform', d => `translate(${pieArc.centroid(d)})`)
       .style('text-anchor', 'middle')
       .style('font', '10px verdana');

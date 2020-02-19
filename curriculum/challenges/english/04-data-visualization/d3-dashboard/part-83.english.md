@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Create a new `const` variable named `pieGraph` and set it equal to `rightDashboard.append('svg')`. This will be another `svg` element for the pie graph.
+Create a new `const` named `pieGraph` and set it equal to `rightDashboard.append('svg')`. This will add another `svg` element for the pie graph.
 </section>
 
 ## Instructions

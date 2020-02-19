@@ -8,8 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Add the `enter` function to the current selection.
-</section>
+Add the `enter` function to the current selection. Just like before, the initial selection here has a length of zero and the `data` has a length of three now. So when you append elements in the next step, three will be created.</section>
 
 ## Instructions
 <section id='instructions'>

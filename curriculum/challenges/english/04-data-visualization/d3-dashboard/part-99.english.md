@@ -7,7 +7,7 @@ isBeta: true
 
 ## Description
 <section id='description'>
-    
+
 Set the `d` attribute to your `pieArc` variable.
 </section>
 

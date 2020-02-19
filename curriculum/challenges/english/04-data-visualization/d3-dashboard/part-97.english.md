@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Use the `append` function to add a `g` element for each point of data.
+Use `append` to add three `g` elements.
 </section>
 
 ## Instructions

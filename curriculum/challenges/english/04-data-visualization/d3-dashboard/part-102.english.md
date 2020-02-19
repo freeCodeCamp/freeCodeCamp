@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Next, set the `stroke` attribute to `white` and the `stroke-width` attribute to `2`.
+Next, set the `stroke` to `white` and the `stroke-width` to `2`.
 </section>
 
 ## Instructions
@@ -177,7 +177,6 @@ tests:
   pieGraphData.append('path')
     .attr('d', pieArc)
     .attr('fill', d => pieColors(d.data.key))
-
 
 
 </script>

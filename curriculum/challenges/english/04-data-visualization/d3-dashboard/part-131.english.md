@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Using the `style` function again, set the `background-color` to a `d` function that returns `pieColors(d.key)`. This will pass the `key` to `pieColor` and return the color. So `twitter` will return `twitterColor`.
+Using the `style` function again, set the `background-color` to a "`d` function". Use the "`d` function" to pass the `key` of each data point to your `pieColors` scale so it knows what color to use.
 </section>
 
 ## Instructions
@@ -184,7 +184,12 @@ tests:
     .data(pie(d3.entries(data[8].followers)))
     .enter()
     .append('text')
-    .text(d => `${Math.round(d.data.value/d3.sum(d3.values(data[8].followers))*100)}%`)
+    .text(d => {
+      const values = d3.values(data[8].followers);
+      const sum = d3.sum(values);
+      const percent = d.data.value/sum;
+      return `${ Math.round(percent*100) }%`;
+    })
     .attr('transform', d => `translate(${pieArc.centroid(d)})`)
     .style('text-anchor', 'middle')
     .style('font', '10px verdana');

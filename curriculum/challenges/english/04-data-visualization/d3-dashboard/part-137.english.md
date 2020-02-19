@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Finally, on your `pieGraph` variable, add a `position` of `relative` and a `left` of `20px` using `style` functions.
+Lastly, where you created your `pieGraph` variable, add a `position` of `relative` and a `left` of `20px` using `style` functions.
 </section>
 
 ## Instructions
@@ -186,7 +186,12 @@ tests:
     .data(pie(d3.entries(data[8].followers)))
     .enter()
     .append('text')
-    .text(d => `${Math.round(d.data.value/d3.sum(d3.values(data[8].followers))*100)}%`)
+    .text(d => {
+      const values = d3.values(data[8].followers);
+      const sum = d3.sum(values);
+      const percent = d.data.value/sum;
+      return `${ Math.round(percent*100) }%`;
+    })
     .attr('transform', d => `translate(${pieArc.centroid(d)})`)
     .style('text-anchor', 'middle')
     .style('font', '10px verdana');

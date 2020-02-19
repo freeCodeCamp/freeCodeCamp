@@ -135,8 +135,6 @@ tests:
 
   
 
-
-
     lineGraph.selectAll('tumblr-circles')
       .data(data)
       .enter()
@@ -195,7 +193,12 @@ tests:
       .data(pie(d3.entries(data[index].followers)))
       .enter()
       .append('text')
-      .text(d => `${Math.round(d.data.value/d3.sum(d3.values(data[index].followers))*100)}%`)
+      .text(d => {
+        const values = d3.values(data[8].followers);
+        const sum = d3.sum(values);
+        const percent = d.data.value/sum;
+        return `${ Math.round(percent*100) }%`;
+      })
       .attr('transform', d => `translate(${pieArc.centroid(d)})`)
       .style('text-anchor', 'middle')
       .style('font', '10px verdana');

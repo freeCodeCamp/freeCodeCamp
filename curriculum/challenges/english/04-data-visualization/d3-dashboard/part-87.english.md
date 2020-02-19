@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Chain the function `innerRadius(0)` to the arc. This is set to zero to make a traditional pie chart, you would use a larger number to create a doughnut chart.
+Chain the `innerRadius` to the arc and pass it `0` (zero). This is set to zero to make a traditional pie chart, you would use a larger number to create a doughnut chart.
 </section>
 
 ## Instructions

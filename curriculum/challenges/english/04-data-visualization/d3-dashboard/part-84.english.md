@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Add two `attr` functions that set the `width` to `200` and the `height` to `200` of the `svg`.
+Add two `attr` functions that set the `width` and `height` of the `svg` to `200`.
 </section>
 
 ## Instructions

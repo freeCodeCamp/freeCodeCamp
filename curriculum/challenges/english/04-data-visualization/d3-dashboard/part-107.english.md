@@ -14,6 +14,7 @@ In the function you just created, create a `const` named `values`. Use the `d3.v
 d3.values(data[8].followers)
 ```
 
+Note that this "`d` function" has curly brackets. So you could `console.log(values)` in there to see it's value.
 </section>
 
 ## Instructions
@@ -26,7 +27,7 @@ d3.values(data[8].followers)
 ```yml
 tests:
   - text: test-text
-    testString: assert(/const\s*values\s*=\s*d3\s*\.\s*values\s*\(\s*data\s*\[\s*8\s*\]\s*\.\s*followers\s*\);?\s*\}\s*\)/g.test(code));
+    testString: assert(/const\s*values\s*=\s*d3\s*\.\s*values\s*\(\s*data\s*\[\s*8\s*\]\s*\.\s*followers\s*\);?/g.test(code));
 
 ```
 

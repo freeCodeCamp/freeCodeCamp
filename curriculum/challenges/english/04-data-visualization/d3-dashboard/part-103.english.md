@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Now you are going to add some labels to the pie chart. On a new line type `pieGraphData.selectAll('pieSliceText')`.
+Your chart needs some labels in each slice. On a new line, use the `selectAll` method on your `pieGraphData` variable and pass it the string: `pieSliceText`.
 </section>
 
 ## Instructions
@@ -179,7 +179,6 @@ tests:
     .attr('fill', d => pieColors(d.data.key))
     .attr('stroke', 'white')
     .attr('stroke-width', 2);
-
 
 
 

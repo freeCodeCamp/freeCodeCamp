@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-The legend and pie graph look a little off as well. On your `legend` variable, add a `position` of `relative` and a `top` of `30px` using `style` functions.
+The legend and pie graph look a little off as well. Go to where you created your `legend` variable and add a `position` of `relative` and a `top` of `30px` using `style` functions.
 </section>
 
 ## Instructions
@@ -184,7 +184,12 @@ tests:
     .data(pie(d3.entries(data[8].followers)))
     .enter()
     .append('text')
-    .text(d => `${Math.round(d.data.value/d3.sum(d3.values(data[8].followers))*100)}%`)
+    .text(d => {
+      const values = d3.values(data[8].followers);
+      const sum = d3.sum(values);
+      const percent = d.data.value/sum;
+      return `${ Math.round(percent*100) }%`;
+    })
     .attr('transform', d => `translate(${pieArc.centroid(d)})`)
     .style('text-anchor', 'middle')
     .style('font', '10px verdana');
@@ -193,8 +198,6 @@ tests:
     .attr('width', 200)
     .attr('height', 120)
     .style('font', '12px verdana')
-
-
 
 
   const legendTitle = legend.append('thead')

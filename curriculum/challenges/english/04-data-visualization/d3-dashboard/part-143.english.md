@@ -10,9 +10,16 @@ isBeta: true
 
 Now when you hover a label, you can see the data for the different years.
 
-Where you created the `text` elements for the x-axis labels, change the font to `bold 10px verdana` for the currently displayed year.
+Where you created the `text` elements for the x-axis labels, change the `font` to `bold 10px verdana` for the currently displayed year.
 
-To do this, create a "`d` function" in the `font` value argument and return the above sting if `d` equals `year`, if not, return the string that is currently there. It's easiest to use a ternary operator for this.
+To do this, create a "`d` function" in the `font` value area and return the above sting if `d` equals `year`. Otherwise, return the string that is currently there (`10px verdana`). It's easiest to use a ternary operator for this.
+
+Here's a hint: 
+
+```js
+.style('font', d => d === year ? )
+```
+
 </section>
 
 ## Instructions
@@ -96,7 +103,6 @@ tests:
       .style('font', '10px verdana')
 
 
-  
       .on('mouseover', d => drawDashboard(d));
 
     const twitterLine = d3.line()
@@ -198,7 +204,12 @@ tests:
       .data(pie(d3.entries(data[index].followers)))
       .enter()
       .append('text')
-      .text(d => `${Math.round(d.data.value/d3.sum(d3.values(data[index].followers))*100)}%`)
+      .text(d => {
+        const values = d3.values(data[8].followers);
+        const sum = d3.sum(values);
+        const percent = d.data.value/sum;
+        return `${ Math.round(percent*100) }%`;
+      })
       .attr('transform', d => `translate(${pieArc.centroid(d)})`)
       .style('text-anchor', 'middle')
       .style('font', '10px verdana');
