@@ -116,5 +116,6 @@ exports.helpCategory = {
   'basic-javascript-rpg-game': 'JavaScript',
   'functional-programming-spreadsheet': 'JavaScript',
   'intermediate-javascript-calorie-counter':
-    'Intermediate JavaScript Calorie Counter'
+    'Intermediate JavaScript Calorie Counter',
+  'd3-dashboard-project': 'JavaScript'
 };
