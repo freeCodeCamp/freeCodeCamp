@@ -8,24 +8,22 @@ forumTopicId: 301140
 
 ## Description
 <section id='description'>
-Making images responsive with CSS is actually very simple. Instead of applying an absolute width to an element:
-<code>img { width: 720px; }</code>
-You can use:
+Making images responsive with CSS is actually very simple. You just need to add these properties to an image:
 
 ```css
 img {
   max-width: 100%;
-  display: block;
   height: auto;
 }
 ```
 
-The <code>max-width</code> property of 100% scales the image to fit the width of its container, but the image won't stretch wider than its original width. Setting the <code>display</code> property to block changes the image from an inline element (its default), to a block element on its own line. The <code>height</code> property of auto keeps the original aspect ratio of the image.
+The `max-width` of `100%` will make sure the image is never wider than the container it is in, and the `height` of `auto` will make the image keep its original aspect ratio.
 </section>
 
 ## Instructions
 <section id='instructions'>
-Add style rules for the <code>img</code> tag to make it responsive to the size of its container. It should display as a block-level element, it should fit the full width of its container without stretching, and it should keep its original aspect ratio.
+
+Add the style rules to the `responsive-img` class to make it responsive. It should never be wider than its container (in this case, it's the preview window) and it should keep its original aspect ratio. After you have added your code, resize the preview to see how your images behave.
 </section>
 
 ## Tests
@@ -33,11 +31,9 @@ Add style rules for the <code>img</code> tag to make it responsive to the size o
 
 ```yml
 tests:
-  - text: Your <code>img</code> tag should have a <code>max-width</code> set to 100%.
-    testString: assert(code.match(/max-width:\s*?100%;/g));
-  - text: Your <code>img</code> tag should have a <code>display</code> set to block.
-    testString: assert($('img').css('display') == 'block');
-  - text: Your <code>img</code> tag should have a <code>height</code> set to auto.
+  - text: Your <code>responsive-img</code> class should have a <code>max-width</code> set to <code>100%</code>.
+    testString: assert(getComputedStyle($('.responsive-img')[0]).maxWidth === '100%');
+  - text: Your <code>responsive-img</code> class should have a <code>height</code> set to <code>auto</code>.
     testString: assert(code.match(/height:\s*?auto;/g));
 
 ```
@@ -51,9 +47,17 @@ tests:
 
 ```html
 <style>
+.responsive-img {
 
+
+}
+
+img {
+  width: 600px;
+}
 </style>
 
+<img class="responsive-img" src="https://s3.amazonaws.com/freecodecamp/FCCStickerPack.jpg" alt="freeCodeCamp stickers set">
 <img src="https://s3.amazonaws.com/freecodecamp/FCCStickerPack.jpg" alt="freeCodeCamp stickers set">
 ```
 
@@ -68,13 +72,17 @@ tests:
 
 ```html
 <style>
- img {
-   max-width: 100%;
-   display: block;
-   height: auto;
- }
+.responsive-img {
+  max-width: 100%;
+  height: auto;
+}
+
+img {
+  width: 600px;
+}
 </style>
 
+<img class="responsive-img" src="https://s3.amazonaws.com/freecodecamp/FCCStickerPack.jpg" alt="freeCodeCamp stickers set">
 <img src="https://s3.amazonaws.com/freecodecamp/FCCStickerPack.jpg" alt="freeCodeCamp stickers set">
 ```
 
