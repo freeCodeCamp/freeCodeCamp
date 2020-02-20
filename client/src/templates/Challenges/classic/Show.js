@@ -319,10 +319,7 @@ class ShowClassic extends Component {
 ShowClassic.displayName = 'ShowClassic';
 ShowClassic.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(ShowClassic);
+export default connect(mapStateToProps, mapDispatchToProps)(ShowClassic);
 
 export const query = graphql`
   query ClassicChallenge($slug: String!) {

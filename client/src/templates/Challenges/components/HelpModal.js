@@ -78,7 +78,4 @@ export class HelpModal extends Component {
 HelpModal.displayName = 'HelpModal';
 HelpModal.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(HelpModal);
+export default connect(mapStateToProps, mapDispatchToProps)(HelpModal);

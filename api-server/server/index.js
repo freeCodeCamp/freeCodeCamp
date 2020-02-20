@@ -50,7 +50,10 @@ boot(app, __dirname, err => {
 setupPassport(app);
 
 const { db } = app.datasources;
-db.on('connected', _.once(() => log('db connected')));
+db.on(
+  'connected',
+  _.once(() => log('db connected'))
+);
 app.start = _.once(function() {
   const server = app.listen(app.get('port'), function() {
     app.emit('started');

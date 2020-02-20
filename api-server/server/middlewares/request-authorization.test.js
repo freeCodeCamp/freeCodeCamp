@@ -1,4 +1,4 @@
-/* global describe it expect */
+/* global expect */
 import sinon from 'sinon';
 import { mockReq, mockRes } from 'sinon-express-mock';
 import jwt from 'jsonwebtoken';

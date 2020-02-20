@@ -35,11 +35,7 @@ const padContentWithHTMLCatch = partial(compileHeadTail, htmlCatch);
 export const jsToHtml = cond([
   [
     matchesProperty('ext', 'js'),
-    flow(
-      padContentWithJsCatch,
-      wrapInScript,
-      setExtToHTML
-    )
+    flow(padContentWithJsCatch, wrapInScript, setExtToHTML)
   ],
   [stubTrue, identity]
 ]);
@@ -47,11 +43,7 @@ export const jsToHtml = cond([
 export const cssToHtml = cond([
   [
     matchesProperty('ext', 'css'),
-    flow(
-      padContentWithHTMLCatch,
-      wrapInStyle,
-      setExtToHTML
-    )
+    flow(padContentWithHTMLCatch, wrapInStyle, setExtToHTML)
   ],
   [stubTrue, identity]
 ]);

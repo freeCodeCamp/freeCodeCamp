@@ -109,10 +109,7 @@ export const LearnPage = ({
 LearnPage.displayName = 'LearnPage';
 LearnPage.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(LearnPage);
+export default connect(mapStateToProps, mapDispatchToProps)(LearnPage);
 
 export const query = graphql`
   query FirstChallenge {

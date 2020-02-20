@@ -1,4 +1,4 @@
-/* global describe it expect beforeEach */
+/* global expect */
 const { isObject } = require('lodash');
 
 const mockAST = require('./fixtures/challenge-md-ast.json');

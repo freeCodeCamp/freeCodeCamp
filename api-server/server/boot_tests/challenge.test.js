@@ -1,4 +1,4 @@
-/* global describe xdescribe it expect */
+/* global expect */
 import { isEqual, first, find } from 'lodash';
 import sinon from 'sinon';
 import { mockReq, mockRes } from 'sinon-express-mock';

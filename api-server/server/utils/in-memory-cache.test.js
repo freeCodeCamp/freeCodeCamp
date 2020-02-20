@@ -1,4 +1,4 @@
-/* global describe beforeEach expect it */
+/* global expect */
 import inMemoryCache from './in-memory-cache';
 import sinon from 'sinon';
 

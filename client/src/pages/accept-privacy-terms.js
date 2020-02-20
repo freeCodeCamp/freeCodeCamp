@@ -158,7 +158,4 @@ class AcceptPrivacyTerms extends Component {
 
 AcceptPrivacyTerms.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(AcceptPrivacyTerms);
+export default connect(mapStateToProps, mapDispatchToProps)(AcceptPrivacyTerms);

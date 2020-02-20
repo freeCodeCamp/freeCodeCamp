@@ -1,4 +1,4 @@
-/* global describe expect it */
+/* global expect */
 
 const slugs = require('./slugs');
 

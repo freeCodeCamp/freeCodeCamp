@@ -1,4 +1,4 @@
-/* global describe it expect beforeEach */
+/* global expect */
 const mockAST = require('./fixtures/challenge-html-ast.json');
 const solutionToData = require('./solution-to-data');
 

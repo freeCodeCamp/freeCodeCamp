@@ -301,7 +301,4 @@ class ShowCertification extends Component {
 ShowCertification.displayName = 'ShowCertification';
 ShowCertification.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(ShowCertification);
+export default connect(mapStateToProps, mapDispatchToProps)(ShowCertification);

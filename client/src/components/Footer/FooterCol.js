@@ -10,7 +10,7 @@ function FooterCol({ title, links }) {
       {title ? (
         <div className={`col-header `}>{title}</div>
       ) : (
-        <div className='col-spacer'></div>
+        <div className='col-spacer' />
       )}
       {links.map(({ to, text, internal }, i) => (
         <Link external={!internal} key={`link-${i}`} to={to}>

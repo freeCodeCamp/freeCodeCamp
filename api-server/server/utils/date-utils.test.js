@@ -1,4 +1,4 @@
-/* global describe expect it */
+/* global expect */
 import moment from 'moment-timezone';
 
 import { dayCount } from './date-utils';

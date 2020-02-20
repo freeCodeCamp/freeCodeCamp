@@ -35,12 +35,9 @@ const propTypes = {
 };
 
 const mapStateToProps = state => {
-  return createSelector(
-    currentChallengeIdSelector,
-    currentChallengeId => ({
-      currentChallengeId
-    })
-  )(state);
+  return createSelector(currentChallengeIdSelector, currentChallengeId => ({
+    currentChallengeId
+  }))(state);
 };
 
 function mapDispatchToProps(dispatch) {
@@ -130,7 +127,4 @@ export class Map extends Component {
 Map.displayName = 'Map';
 Map.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Map);
+export default connect(mapStateToProps, mapDispatchToProps)(Map);

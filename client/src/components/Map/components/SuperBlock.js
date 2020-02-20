@@ -15,10 +15,9 @@ import { ChallengeNode } from '../../../redux/propTypes';
 const mapStateToProps = (state, ownProps) => {
   const expandedSelector = makeExpandedSuperBlockSelector(ownProps.superBlock);
 
-  return createSelector(
-    expandedSelector,
-    isExpanded => ({ isExpanded })
-  )(state);
+  return createSelector(expandedSelector, isExpanded => ({ isExpanded }))(
+    state
+  );
 };
 
 function mapDispatchToProps(dispatch) {
@@ -110,7 +109,4 @@ export class SuperBlock extends Component {
 SuperBlock.displayName = 'SuperBlock';
 SuperBlock.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(SuperBlock);
+export default connect(mapStateToProps, mapDispatchToProps)(SuperBlock);

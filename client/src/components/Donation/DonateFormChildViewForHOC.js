@@ -40,10 +40,10 @@ const initialState = {
   }
 };
 
-const mapStateToProps = createSelector(
-  userSelector,
-  ({ email, theme }) => ({ email, theme })
-);
+const mapStateToProps = createSelector(userSelector, ({ email, theme }) => ({
+  email,
+  theme
+}));
 
 class DonateFormChildViewForHOC extends Component {
   constructor(...args) {

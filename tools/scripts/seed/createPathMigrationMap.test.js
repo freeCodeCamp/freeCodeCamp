@@ -1,4 +1,4 @@
-/* global describe expect */
+/* global expect */
 const { isPlainObject } = require('lodash');
 
 const { createPathMigrationMap } = require('./createPathMigrationMap');

@@ -40,7 +40,4 @@ class SearchPage extends Component {
 SearchPage.displayName = 'SearchPage';
 SearchPage.propTypes = propTypes;
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(SearchPage);
+export default connect(null, mapDispatchToProps)(SearchPage);

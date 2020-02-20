@@ -103,7 +103,4 @@ function ToolPanel({
 ToolPanel.displayName = 'ToolPanel';
 ToolPanel.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(ToolPanel);
+export default connect(mapStateToProps, mapDispatchToProps)(ToolPanel);

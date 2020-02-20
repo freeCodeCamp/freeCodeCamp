@@ -13,12 +13,9 @@ import Spacer from '../helpers/Spacer';
 import ToggleSetting from './ToggleSetting';
 import SectionHeader from './SectionHeader';
 
-const mapStateToProps = createSelector(
-  userSelector,
-  user => ({
-    user
-  })
-);
+const mapStateToProps = createSelector(userSelector, user => ({
+  user
+}));
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators({ submitProfileUI }, dispatch);
@@ -186,7 +183,4 @@ class PrivacySettings extends Component {
 PrivacySettings.displayName = 'PrivacySettings';
 PrivacySettings.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(PrivacySettings);
+export default connect(mapStateToProps, mapDispatchToProps)(PrivacySettings);

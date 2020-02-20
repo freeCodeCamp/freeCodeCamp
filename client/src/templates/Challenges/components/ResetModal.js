@@ -17,12 +17,9 @@ const propTypes = {
   reset: PropTypes.func.isRequired
 };
 
-const mapStateToProps = createSelector(
-  isResetModalOpenSelector,
-  isOpen => ({
-    isOpen
-  })
-);
+const mapStateToProps = createSelector(isResetModalOpenSelector, isOpen => ({
+  isOpen
+}));
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
@@ -81,7 +78,4 @@ function ResetModal({ reset, close, isOpen }) {
 ResetModal.displayName = 'ResetModal';
 ResetModal.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(ResetModal);
+export default connect(mapStateToProps, mapDispatchToProps)(ResetModal);

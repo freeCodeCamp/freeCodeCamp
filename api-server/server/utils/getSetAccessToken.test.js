@@ -1,4 +1,4 @@
-/* global describe it expect */
+/* global expect */
 import {
   getAccessTokenFromRequest,
   errorTypes,

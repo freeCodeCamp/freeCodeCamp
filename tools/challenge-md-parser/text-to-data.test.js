@@ -1,4 +1,4 @@
-/* global describe it expect */
+/* global expect */
 const mockAST = require('./fixtures/challenge-html-ast.json');
 const adjacentTagsAST = require('./fixtures/adjacent-tags-ast.json');
 const textToData = require('./text-to-data');

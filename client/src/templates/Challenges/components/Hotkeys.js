@@ -92,7 +92,4 @@ function Hotkeys({
 Hotkeys.displayName = 'Hotkeys';
 Hotkeys.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Hotkeys);
+export default connect(mapStateToProps, mapDispatchToProps)(Hotkeys);

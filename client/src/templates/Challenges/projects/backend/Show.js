@@ -249,10 +249,7 @@ export class BackEnd extends Component {
 BackEnd.displayName = 'BackEnd';
 BackEnd.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToActions
-)(BackEnd);
+export default connect(mapStateToProps, mapDispatchToActions)(BackEnd);
 
 export const query = graphql`
   query BackendChallenge($slug: String!) {

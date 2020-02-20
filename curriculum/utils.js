@@ -12,9 +12,9 @@ const supportedLangs = [
 
 exports.testedLangs = function testedLangs() {
   if (process.env.TEST_CHALLENGES_FOR_LANGS) {
-    const filterLangs = process.env.TEST_CHALLENGES_FOR_LANGS.split(',').map(
-      lang => lang.trim().toLowerCase()
-    );
+    const filterLangs = process.env.TEST_CHALLENGES_FOR_LANGS.split(
+      ','
+    ).map(lang => lang.trim().toLowerCase());
     return supportedLangs.filter(lang => filterLangs.includes(lang));
   } else {
     return [...supportedLangs];

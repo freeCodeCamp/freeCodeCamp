@@ -191,7 +191,4 @@ class ShowUser extends Component {
 ShowUser.displayName = 'ShowUser';
 ShowUser.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(ShowUser);
+export default connect(mapStateToProps, mapDispatchToProps)(ShowUser);

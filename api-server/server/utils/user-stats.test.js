@@ -1,4 +1,4 @@
-/* global describe it expect afterAll  */
+/* global expect afterAll  */
 import moment from 'moment-timezone';
 import sinon from 'sinon';
 

@@ -175,7 +175,4 @@ export class Block extends Component {
 Block.displayName = 'Block';
 Block.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Block);
+export default connect(mapStateToProps, mapDispatchToProps)(Block);
