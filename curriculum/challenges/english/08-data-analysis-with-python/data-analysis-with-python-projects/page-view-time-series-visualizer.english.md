@@ -9,7 +9,11 @@ isRequired: true
 <section id='description'>
 For this project you will visualize time series data using a line chart, bar chart, and box plots. You will use Pandas, matplotlib, and seaborn to visualize a dataset containing the number of page views each day on the freeCodeCamp.org forum from 2016-05-09 to 2019-12-03. The data visualizations will help you understand the patterns in visits and identify yearly and monthly growth.
 
-You can access <a href='https://repl.it/@BeauCarnes/fcc-time-series-visualizer' target='_blank'>the full project description and starter code on repl.it</a>. After going to that link, fork the project. Once you complete the project based on the instructions in 'README.md', submit your project link below.
+You can access <a href='https://repl.it/@freeCodeCamp/fcc-time-series-visualizer' target='_blank'>the full project description and starter code on repl.it</a>.
+
+After going to that link, fork the project. Once you complete the project based on the instructions in 'README.md', submit your project link below.
+
+We are still developing the interactive instructional part of the data analysis with Python curriculum. For now, you will have to use other resources to learn how to pass this challenge.
 </section>
 
 ## Instructions

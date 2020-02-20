@@ -1,6 +1,6 @@
 ---
 id: 561add10cb82ac38a17213bc
-title: 'Information, Securtiy and Quality Assurance Certificate'
+title: 'Information Security and Quality Assurance Certificate'
 challengeType: 7
 isPrivate: true
 ---

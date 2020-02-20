@@ -185,6 +185,14 @@ export class BackEnd extends Component {
       : "I've completed this challenge";
     const blockNameTitle = `${blockName} - ${title}`;
 
+    let externalSite = '';
+    if (description.includes('repl.it')) {
+      externalSite = 'replit';
+    }
+    if (description.includes('Colaboratory')) {
+      externalSite = 'Colaboratory';
+    }
+
     return (
       <Hotkeys
         innerRef={c => (this._container = c)}
@@ -213,6 +221,7 @@ export class BackEnd extends Component {
                   />
                 ) : (
                   <ProjectForm
+                    externalSite={externalSite}
                     isFrontEnd={false}
                     onSubmit={executeChallenge}
                     updateProjectForm={updateProjectFormValues}
