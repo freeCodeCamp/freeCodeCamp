@@ -3,7 +3,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 // import ShallowRenderer from 'react-test-renderer/shallow';
 
-import 'jest-dom/extend-expect';
+import '@testing-library/jest-dom/extend-expect';
 
 import Intro from './';
 

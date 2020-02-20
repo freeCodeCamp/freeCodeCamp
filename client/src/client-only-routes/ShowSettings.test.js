@@ -1,6 +1,6 @@
 /* global jest, expect */
 import React from 'react';
-import 'jest-dom/extend-expect';
+import '@testing-library/jest-dom/extend-expect';
 import ShallowRenderer from 'react-test-renderer/shallow';
 import { apiLocation } from '../../config/env.json';
 
