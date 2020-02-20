@@ -8,7 +8,7 @@ forumTopicId: 18254
 
 ## Description
 <section id='description'>
-<dfn>Parameters</dfn> are variables that act as placeholders for the values that are to be input to a function when it is called. When a function is defined, it is typically defined along with one or more parameters. The actual values that are input (or <dfn>"passed"</dfn>) into a function when it is called are known as <dfn>arguments</dfn>.
+<dfn>Parameters</dfn> are variables that act as placeholders for the values that are to be inputted to a function when it is called. When a function is defined, it is typically defined along with one or more parameters. The actual values that are input (or <dfn>"passed"</dfn>) into a function when it is called are known as <dfn>arguments</dfn>.
 Here is a function with two parameters, <code>param1</code> and <code>param2</code>:
 
 ```js
