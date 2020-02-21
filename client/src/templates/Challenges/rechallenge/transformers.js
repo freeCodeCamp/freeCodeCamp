@@ -194,7 +194,6 @@ async function transformScript(element) {
     script.innerHTML = tryTransform(babelTransformCode(babelOptionsJS))(
       script.innerHTML
     );
-    console.log('transformed:', script.innerHTML);
   });
 }
 
