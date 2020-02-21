@@ -114,5 +114,6 @@ exports.helpCategory = {
   'project-euler': 'JavaScript',
   'scientific-computing-with-python': 'Certification Projects',
   'data-analysis-with-python': 'Certification Projects',
-  'machine-learning': 'Certification Projects'
+  'machine-learning': 'Certification Projects',
+  'machine-learning-projects': 'Certification Projects'
 };
