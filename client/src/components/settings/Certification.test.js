@@ -154,6 +154,26 @@ const defaultTestProps = {
       solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
     },
     {
+      id: '5e46f7e5ac417301a38fb928',
+      solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
+    },
+    {
+      id: '5e46f7e5ac417301a38fb929',
+      solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
+    },
+    {
+      id: '5e46f7f8ac417301a38fb92a',
+      solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
+    },
+    {
+      id: '5e46f802ac417301a38fb92b',
+      solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
+    },
+    {
+      id: '5e4f5c4b570f7e3a4949899f',
+      solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
+    },
+    {
       id: 'bd7157d8c242eddfaeb5bd13',
       completedDate: 1554272923799,
       solution: 'https://github.com/freeCodeCamp/freeCodeCamp'

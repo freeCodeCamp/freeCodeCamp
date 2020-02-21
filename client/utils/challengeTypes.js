@@ -112,7 +112,7 @@ exports.helpCategory = {
   'take-home-projects': 'Certification Projects',
   'rosetta-code': 'JavaScript',
   'project-euler': 'JavaScript',
-  'scientific-computing-with-python': 'Python',
-  'data-analysis-with-python': 'Python',
-  'machine-learning': 'Python'
+  'scientific-computing-with-python': 'Certification Projects',
+  'data-analysis-with-python': 'Certification Projects',
+  'machine-learning': 'Certification Projects'
 };

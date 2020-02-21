@@ -28,7 +28,7 @@ tests:
     title: Medical Data Visualizer
   - id: 5e46f802ac417301a38fb92b
     title: Page View Time Series Visualizer
-  - id: 5e46f802ac417301a38fb92b
+  - id: 5e4f5c4b570f7e3a4949899f
     title: Sea Level Predictor
 ```
 

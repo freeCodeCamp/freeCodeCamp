@@ -15,8 +15,7 @@ const sciPyBase =
   'scientific-computing-with-python-projects';
 const dataAnalysisPyBase =
   '/learn/data-analysis-with-python/data-analysis-with-python-projects';
-const machineLearningBase =
-  '/learn/machine-learniong/machine-learniong-projects';
+const machineLearningBase = '/learn/machine-learning/machine-learning-projects';
 const legacyFrontEndBase = '';
 const legacyBackEndBase = '';
 const legacyDataVisBase = '';
@@ -473,7 +472,7 @@ export const projectMap = {
       superBlock: 'data-analysis-with-python'
     },
     {
-      id: '5e46f802ac417301a38fb92b',
+      id: '5e4f5c4b570f7e3a4949899f',
       title: 'Sea Level Predictor',
       link: `${dataAnalysisPyBase}/sea-level-predictor`,
       superBlock: 'scientific-computing-with-python'

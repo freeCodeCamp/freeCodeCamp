@@ -183,7 +183,7 @@ function sendCertifiedEmail(
     isApisMicroservicesCert,
     isInfosecQaCert,
     isSciPyCert,
-    isDataAnalyisisPyCert,
+    isDataAnalysisPyCert,
     isMachineLearningCert
   },
   send$
@@ -197,7 +197,7 @@ function sendCertifiedEmail(
     !isApisMicroservicesCert ||
     !isInfosecQaCert ||
     !isSciPyCert ||
-    !isDataAnalyisisPyCert ||
+    !isDataAnalysisPyCert ||
     !isMachineLearningCert
   ) {
     return Observable.just(false);
@@ -370,7 +370,7 @@ function createShowCert(app) {
       isApisMicroservicesCert: true,
       isInfosecQaCert: true,
       isSciPyCert: true,
-      isDataAnalyisisPyCert: true,
+      isDataAnalysisPyCert: true,
       isMachineLearningCert: true,
       isHonest: true,
       username: true,
