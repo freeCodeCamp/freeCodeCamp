@@ -38,7 +38,7 @@ In this <code>prototype</code> chain, <code>Bird</code> is the <code>supertype</
 
 ## Instructions
 <section id='instructions'>
-Modify the code to show the correct prototype chain.
+Modify the code to show the correct prototype chain. Fix the code where specified ow so the statement evaluates to <code>true</code>.
 </section>
 
 ## Tests
@@ -65,11 +65,11 @@ function Dog(name) {
 
 let beagle = new Dog("Snoopy");
 
-Dog.prototype.isPrototypeOf(beagle);  // => true
+Dog.prototype.isPrototypeOf(beagle);
 
-// Fix the code below so that it evaluates to true
+// Only change code below this line
 ???.isPrototypeOf(Dog.prototype);
-
+// Only change code above this line
 ```
 
 </div>

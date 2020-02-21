@@ -41,20 +41,22 @@ tests:
 <div id='js-seed'>
 
 ```js
-// check if array is sorted
 function isSorted(arr) {
   var check = i =>
     i == arr.length - 1 ? true : arr[i] > arr[i + 1] ? false : check(i + 1);
   return check(0);
 }
-// generate a randomly filled array
-var array = new Array();
-(function createArray(size = 5) {
-  array.push(+(Math.random() * 100).toFixed(0));
-  return size > 1 ? createArray(size - 1) : undefined;
-})(25);
+
+function createArrayWithRandomlIntegers(size = 5, arr = new Array()) {
+  arr.push(+(Math.random() * 100).toFixed(0));
+  return size > 1 ? createArrayWithRandomlIntegers(size - 1, arr) : arr;
+}
+
+var array = createArrayWithRandomlIntegers();
+
 var MinHeap = function() {
   // Only change code below this line
+
   // Only change code above this line
 };
 ```

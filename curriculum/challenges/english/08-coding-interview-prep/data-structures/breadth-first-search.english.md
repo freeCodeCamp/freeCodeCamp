@@ -49,7 +49,6 @@ tests:
 
 ```js
 function bfs(graph, root) {
-  // Distance object returned
   var nodesLen = {};
 
   return nodesLen;
@@ -105,7 +104,6 @@ function isEquivalent(a, b) {
 
 ```js
 function bfs(graph, root) {
-  // Distance object returned
   var nodesLen = {};
   // Set all distances to infinity
   for (var i = 0; i < graph.length; i++) {

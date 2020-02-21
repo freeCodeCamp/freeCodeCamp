@@ -50,7 +50,7 @@ tests:
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 10px;
-    /* add your code below this line */
+    /* Add your code below this line */
 
 
     /* add your code above this line */

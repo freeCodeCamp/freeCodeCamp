@@ -43,7 +43,7 @@ function isHarshadOrNiven() {
     firstTwenty: [],
     firstOver1000: undefined
   };
-  // Change after this line
+  // Only change code below this line
 
   return res;
 }

@@ -58,7 +58,10 @@ function Node(value) {
 
 function BinarySearchTree() {
   this.root = null;
-  // case 1: target has no children, change code below this line
+  // Only change code below this line
+
+
+  // Only change code above this line
 }
 ```
 

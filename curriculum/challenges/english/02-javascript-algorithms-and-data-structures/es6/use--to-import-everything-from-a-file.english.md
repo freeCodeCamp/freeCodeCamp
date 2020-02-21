@@ -44,7 +44,9 @@ tests:
 
 ```js
 
-// add code above this line
+// Only change code below this line
+
+// Only change code above this line
 
 stringFunctions.uppercaseString("hello");
 stringFunctions.lowercaseString("WORLD!");
@@ -58,7 +60,6 @@ stringFunctions.lowercaseString("WORLD!");
 
 ```js
 import * as stringFunctions from "./string_functions.js";
-// add code above this line
 
 stringFunctions.uppercaseString("hello");
 stringFunctions.lowercaseString("WORLD!");

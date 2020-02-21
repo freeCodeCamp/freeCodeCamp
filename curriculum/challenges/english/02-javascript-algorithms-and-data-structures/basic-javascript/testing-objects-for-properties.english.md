@@ -57,12 +57,11 @@ var myObj = {
 };
 
 function checkObj(checkProp) {
-  // Your Code Here
-
+  // Only change code below this line
   return "Change Me!";
+  // Only change code above this line
 }
 
-// Test your code by modifying these values
 checkObj("gift");
 ```
 

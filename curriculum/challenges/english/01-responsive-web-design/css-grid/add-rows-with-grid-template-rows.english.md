@@ -47,7 +47,7 @@ tests:
     background: LightGray;
     display: grid;
     grid-template-columns: 100px 100px 100px;
-    /* add your code below this line */
+    /* Add your code below this line */
 
 
     /* add your code above this line */

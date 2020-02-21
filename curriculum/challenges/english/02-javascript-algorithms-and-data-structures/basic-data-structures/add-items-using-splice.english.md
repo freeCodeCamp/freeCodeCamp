@@ -59,7 +59,6 @@ function htmlColorNames(arr) {
   return arr;
 }
 
-// do not change code below this line
 console.log(htmlColorNames(['DarkGoldenRod', 'WhiteSmoke', 'LavenderBlush', 'PaleTurquoise', 'FireBrick']));
 ```
 

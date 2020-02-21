@@ -52,7 +52,7 @@ function LinkedList() {
   var length = 0;
   var head = null;
 
-  var Node = function(element){ // {1}
+  var Node = function(element){
     this.element = element;
     this.next = null;
   };
@@ -100,7 +100,7 @@ function LinkedList() {
   var length = 0;
   var head = null;
 
-  var Node = function (element) { // {1}
+  var Node = function (element) {
     this.element = element;
     this.next = null;
   };

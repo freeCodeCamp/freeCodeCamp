@@ -65,13 +65,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-
-
-//Only change code below this line
 function countdown(n){
+  // Only change code below this line
   return;
+  // Only change code above this line
 }
-console.log(countdown(5)); // [5, 4, 3, 2, 1]
+console.log(countdown(5));
 ```
 
 </div>
@@ -91,7 +90,6 @@ const removeJSComments = str => str.replace(/\/\*[\s\S]*?\*\/|\/\/.*$/gm, '');
 <section id='solution'>
 
 ```js
-//Only change code below this line
 function countdown(n){
    return n < 1 ? [] : [n].concat(countdown(n - 1));
 }

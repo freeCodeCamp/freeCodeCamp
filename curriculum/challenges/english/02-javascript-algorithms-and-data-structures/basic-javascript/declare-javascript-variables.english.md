@@ -49,7 +49,7 @@ tests:
 // Example
 var ourName;
 
-// Declare myName below this line
+// Only change code below this line
 
 ```
 

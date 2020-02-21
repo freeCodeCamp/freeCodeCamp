@@ -42,7 +42,7 @@ tests:
 
   .item2 {
     background: LightSalmon;
-    /* add your code below this line */
+    /* Add your code below this line */
 
 
     /* add your code above this line */

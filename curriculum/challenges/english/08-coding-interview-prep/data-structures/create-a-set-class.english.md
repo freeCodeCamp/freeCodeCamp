@@ -72,7 +72,7 @@ tests:
 ```js
 class Set {
     constructor() {
-    // collection will hold our set
+    // collection will hold the set
     this.collection = [];
     }
     // this method will check for the presence of an element and return true or false
@@ -84,12 +84,6 @@ class Set {
         return this.collection;
     }
     // Only change code below this line
-
-    // write your add method here
-
-    // write your remove method here
-
-    // write your size method here
 
     // Only change code above this line
 }
