@@ -77,8 +77,8 @@ const getTea = (prepareTea, numOfCups) => {
 
 // Add your code below this line
 
-const tea4GreenTeamFCC = null; // :(
-const tea4BlackTeamFCC = null; // :(
+const tea4GreenTeamFCC = null;
+const tea4BlackTeamFCC = null;
 
 // Add your code above this line
 

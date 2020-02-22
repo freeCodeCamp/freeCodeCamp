@@ -65,7 +65,7 @@ const getTea = (numOfCups) => {
 
 // Add your code below this line
 
-const tea4TeamFCC = null; // :(
+const tea4TeamFCC = null;
 
 // Add your code above this line
 

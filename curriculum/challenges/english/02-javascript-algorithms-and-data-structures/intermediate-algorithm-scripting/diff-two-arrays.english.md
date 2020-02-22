@@ -65,7 +65,6 @@ tests:
 ```js
 function diffArray(arr1, arr2) {
   var newArr = [];
-  // Same, same; but different.
   return newArr;
 }
 
@@ -101,7 +100,6 @@ function diffArray(arr1, arr2) {
   Object.keys(h2).forEach(function(e) {
      if (!(e in h1)) newArr.push(h2[e]);
   });
-  // Same, same; but different.
   return newArr;
 }
 ```
