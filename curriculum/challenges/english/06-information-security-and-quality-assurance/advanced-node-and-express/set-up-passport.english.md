@@ -18,7 +18,7 @@ To set up your express app to use the session we'll define just a few basic opti
 app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: true,
-  saveUninitialized: true,
+  saveUninitialized: true
 }));
 ```
 
