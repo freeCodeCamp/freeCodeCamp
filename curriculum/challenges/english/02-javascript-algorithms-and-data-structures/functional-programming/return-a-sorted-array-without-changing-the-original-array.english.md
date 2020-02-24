@@ -27,7 +27,9 @@ tests:
   - text: <code>nonMutatingSort(globalArray)</code> should return <code>[2, 3, 5, 6, 9]</code>.
     testString: assert(JSON.stringify(nonMutatingSort(globalArray)) === JSON.stringify([2, 3, 5, 6, 9]));
   - text: <code>nonMutatingSort(globalArray)</code> should not be hard coded.
-    testString: assert(!nonMutatingSort.toString().match(/[23569]/g));    
+    testString: assert(!nonMutatingSort.toString().match(/[23569]/g));
+  - text: The function should return a new array, not the array passed to it.
+    testString: assert(nonMutatingSort(globalArray) !== globalArray);
 
 ```
 
