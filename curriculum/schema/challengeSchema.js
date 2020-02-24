@@ -10,7 +10,7 @@ function getSchemaForLang(lang) {
     challengeOrder: Joi.number(),
     challengeType: Joi.number()
       .min(0)
-      .max(9)
+      .max(10)
       .required(),
     checksum: Joi.number(),
     dashedName: Joi.string(),
