@@ -1,7 +1,7 @@
 ---
 title: Introduction to the D3 Dashboard Project Challenges
 block: D3 Dashboard Project
-superBlock: Responsive Web Design
+superBlock: Data Visualization
 ---
 ## Introduction to the D3 Dashboard Project Challenges
 
