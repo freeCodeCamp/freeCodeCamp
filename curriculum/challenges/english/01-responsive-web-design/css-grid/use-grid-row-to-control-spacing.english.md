@@ -51,10 +51,9 @@ tests:
   .item5 {
     background: PaleGreen;
     grid-column: 2 / 4;
-    /* add your code below this line */
+    /* Only change code below this line */
 
-
-    /* add your code above this line */
+    /* Only change code above this line */
   }
 
   .container {
@@ -98,9 +97,7 @@ tests:
   .item5 {
     background: PaleGreen;
     grid-column: 2 / 4;
-    /* add your code below this line */
     grid-row: 2 / 4;
-    /* add your code above this line */
   }
 
   .container {

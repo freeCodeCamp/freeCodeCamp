@@ -85,14 +85,12 @@ tests:
 
   @media (min-width: 400px){
     .container{
-      /* change the code below this line */
-
       grid-template-areas:
+      /* Only change code below this line */
         "advert header"
         "advert content"
         "advert footer";
-
-    /* change the code above this line */
+      /* Only change code above this line */
     }
   }
 </style>
@@ -165,14 +163,10 @@ tests:
 
   @media (min-width: 400px){
     .container{
-      /* change the code below this line */
-
       grid-template-areas:
         "header header"
         "advert content"
         "footer footer";
-
-    /* change the code above this line */
     }
   }
 </style>
