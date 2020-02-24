@@ -9,6 +9,7 @@ require('@babel/register')({
   root: clientPath,
   babelrc: false,
   presets: ['@babel/preset-env'],
+  plugins: ['dynamic-import-node'],
   ignore: [/node_modules/],
   only: [clientPath]
 });
