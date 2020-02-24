@@ -154,6 +154,19 @@ describe('translation parser', () => {
       );
     });
 
+    it('does not translate urls', () => {
+      const seed = `http:// Add your code below this line
+      Add your code above this line `;
+      expect(translateComments(seed, 'chinese', SIMPLE_TRANSLATION, 'js')).toBe(
+        seed
+      );
+      const seedS = `https:// Add your code below this line
+      Add your code above this line `;
+      expect(
+        translateComments(seedS, 'chinese', SIMPLE_TRANSLATION, 'js')
+      ).toBe(seedS);
+    });
+
     it('replaces inline English comments with their translations', () => {
       const seed = `inline comment //  Add your code below this line
          Add your code above this line `;
