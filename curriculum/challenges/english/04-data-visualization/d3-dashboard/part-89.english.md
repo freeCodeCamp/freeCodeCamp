@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Set the `domain` of the scale to `data[8].followers`. This will be an array of the data from 2020 that contains three items, one for each platform.
+Set the `domain` of the scale to `data[8].followers`. This will be three items, one for each platform.
 </section>
 
 ## Instructions
@@ -46,7 +46,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -225,7 +225,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',

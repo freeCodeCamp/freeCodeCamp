@@ -1,5 +1,5 @@
 ---
-id: 5d8a4cfbe6b6180ed9a1ca5c
+id: 5d8a4cfbe6b6180ed9a1ca5e
 title: Part 127
 challengeType: 0
 isBeta: true
@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-On a new line, append another `td` element to your `legendRows` variable. This will be for colored squares in the center column.
+Append a `div` element to the selection. Each `div` will be a small square for each color.
 </section>
 
 ## Instructions
@@ -21,7 +21,7 @@ On a new line, append another `td` element to your `legendRows` variable. This w
 ```yml
 tests:
   - text: test-text
-    testString: assert($('.dashboard div table tbody tr td').length === 6);
+    testString: assert($('.dashboard div table tbody tr td div').length === 3);
 
 ```
 
@@ -46,7 +46,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -180,10 +180,7 @@ tests:
     .attr('stroke', 'white')
     .attr('stroke-width', 2);
 
-  pieGraphData.selectAll('pieSliceText')
-    .data(pie(d3.entries(data[8].followers)))
-    .enter()
-    .append('text')
+  pieGraphData.append('text')
     .text(d => {
       const values = d3.values(data[8].followers);
       const sum = d3.sum(values);
@@ -214,6 +211,9 @@ tests:
   legendRows.append('td')  
     .text(d => d.key)
     .attr('align', 'right');
+
+  legendRows.append('td')
+    .attr('align', 'center')
 
 
 
@@ -278,7 +278,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -412,10 +412,7 @@ tests:
     .attr('stroke', 'white')
     .attr('stroke-width', 2);
 
-  pieGraphData.selectAll('pieSliceText')
-    .data(pie(d3.entries(data[8].followers)))
-    .enter()
-    .append('text')
+  pieGraphData.append('text')
     .text(d => {
       const values = d3.values(data[8].followers);
       const sum = d3.sum(values);
@@ -448,6 +445,8 @@ tests:
     .attr('align', 'right');
 
   legendRows.append('td')
+    .attr('align', 'center')
+    .append('div')
 
 
 

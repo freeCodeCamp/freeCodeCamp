@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Below the title, link to the external stylesheet by adding a `link` element with a `rel` attribute of `stylesheet` and an `href` attribute of `./dashboard.css`.
+Below the title, link to your external stylesheet by adding a `link` element with a `rel` attribute of `stylesheet` and an `href` attribute of `./dashboard.css`. Remember that link elements do not need a closing tag. You will be adding some styles to this file shortly.
 </section>
 
 ## Instructions

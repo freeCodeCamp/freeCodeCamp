@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Set the `x` values for `instagramLine` like you did for the other two.
+Appropriately set the `x` values for `instagramLine` like you did for the other two lines.
 </section>
 
 ## Instructions
@@ -46,7 +46,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -171,7 +171,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',

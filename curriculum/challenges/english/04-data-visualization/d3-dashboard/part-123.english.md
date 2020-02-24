@@ -1,5 +1,5 @@
 ---
-id: 5d8a4cfbe6b6180ed9a1ca58
+id: 5d8a4cfbe6b6180ed9a1ca5a
 title: Part 123
 challengeType: 0
 isBeta: true
@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Add the `enter` and `append` functions to the selection. Pass the string `tr` to the `append` function to add three table row elements.
+Use the `text` function to set the text of each `td` to the `key` of each data point by using a "d function" to return `d.key`.
 </section>
 
 ## Instructions
@@ -21,7 +21,7 @@ Add the `enter` and `append` functions to the selection. Pass the string `tr` to
 ```yml
 tests:
   - text: test-text
-    testString: assert($('.dashboard div table tbody tr').length === 3);
+    testString: assert($('.dashboard div table tbody tr td').text() === 'twittertumblrinstagram');
 
 ```
 
@@ -46,7 +46,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -180,10 +180,7 @@ tests:
     .attr('stroke', 'white')
     .attr('stroke-width', 2);
 
-  pieGraphData.selectAll('pieSliceText')
-    .data(pie(d3.entries(data[8].followers)))
-    .enter()
-    .append('text')
+  pieGraphData.append('text')
     .text(d => {
       const values = d3.values(data[8].followers);
       const sum = d3.sum(values);
@@ -208,6 +205,10 @@ tests:
   const legendRows = legend.append('tbody')
     .selectAll('tr')
     .data(d3.entries(data[8].followers))
+    .enter()
+    .append('tr');
+
+  legendRows.append('td')
 
 
 
@@ -271,7 +272,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -405,10 +406,7 @@ tests:
     .attr('stroke', 'white')
     .attr('stroke-width', 2);
 
-  pieGraphData.selectAll('pieSliceText')
-    .data(pie(d3.entries(data[8].followers)))
-    .enter()
-    .append('text')
+  pieGraphData.append('text')
     .text(d => {
       const values = d3.values(data[8].followers);
       const sum = d3.sum(values);
@@ -436,6 +434,8 @@ tests:
     .enter()
     .append('tr');
 
+  legendRows.append('td')  
+    .text(d => d.key)
 
 
 

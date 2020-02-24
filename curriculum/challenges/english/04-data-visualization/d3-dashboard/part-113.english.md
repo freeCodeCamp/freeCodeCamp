@@ -1,5 +1,5 @@
 ---
-id: 5d8a4cfbe6b6180ed9a1ca4e
+id: 5d8a4cfbe6b6180ed9a1ca50
 title: Part 113
 challengeType: 0
 isBeta: true
@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-The last component you are going to add is a legend to display the name of each platform and the number of followers for the year. Create a new `const` named `legend` and use it to `append` a `table` to your `rightDashboard` variable. This looks similar to the code where you created your `pieGraph` variable.
+Set the `font` to `12px verdana` using the `style` function.
 </section>
 
 ## Instructions
@@ -21,7 +21,7 @@ The last component you are going to add is a legend to display the name of each 
 ```yml
 tests:
   - text: test-text
-    testString: assert(/const\s*legend\s*=\s*rightDashboard\s*\.\s*append\s*\(\s*('|"|`)\s*table\s*\1\s*\)/g.test(code));
+    testString: assert($('.dashboard div table')[0].style.font.toLowerCase() === '12px verdana');
 
 ```
 
@@ -46,7 +46,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -180,10 +180,7 @@ tests:
     .attr('stroke', 'white')
     .attr('stroke-width', 2);
 
-  pieGraphData.selectAll('pieSliceText')
-    .data(pie(d3.entries(data[8].followers)))
-    .enter()
-    .append('text')
+  pieGraphData.append('text')
     .text(d => {
       const values = d3.values(data[8].followers);
       const sum = d3.sum(values);
@@ -193,6 +190,10 @@ tests:
     .attr('transform', d => `translate(${pieArc.centroid(d)})`)
     .style('text-anchor', 'middle')
     .style('font', '10px verdana');
+
+  const legend = rightDashboard.append('table')
+    .attr('width', 200)
+    .attr('height', 120)
 
 
 
@@ -256,7 +257,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -390,10 +391,7 @@ tests:
     .attr('stroke', 'white')
     .attr('stroke-width', 2);
 
-  pieGraphData.selectAll('pieSliceText')
-    .data(pie(d3.entries(data[8].followers)))
-    .enter()
-    .append('text')
+  pieGraphData.append('text')
     .text(d => {
       const values = d3.values(data[8].followers);
       const sum = d3.sum(values);
@@ -405,8 +403,11 @@ tests:
     .style('font', '10px verdana');
 
   const legend = rightDashboard.append('table')
+    .attr('width', 200)
+    .attr('height', 120)
+    .style('font', '12px verdana')
 
-
+  
 
 </script>
 ```

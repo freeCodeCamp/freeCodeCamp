@@ -1,5 +1,5 @@
 ---
-id: 5d8a4cfbe6b6180ed9a1ca50
+id: 5d8a4cfbe6b6180ed9a1ca52
 title: Part 115
 challengeType: 0
 isBeta: true
@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Set the `font` to `12px verdana` using the `style` function.
+`append` a `tr` element to the selection and then append a `th` element right after it. `tr` is for defining a row of the table, and `th` is for defining the header cells of the table.
 </section>
 
 ## Instructions
@@ -21,7 +21,7 @@ Set the `font` to `12px verdana` using the `style` function.
 ```yml
 tests:
   - text: test-text
-    testString: assert($('.dashboard div table')[0].style.font.toLowerCase() === '12px verdana');
+    testString: assert($('.dashboard div table thead tr th').length === 1);
 
 ```
 
@@ -46,7 +46,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -180,10 +180,7 @@ tests:
     .attr('stroke', 'white')
     .attr('stroke-width', 2);
 
-  pieGraphData.selectAll('pieSliceText')
-    .data(pie(d3.entries(data[8].followers)))
-    .enter()
-    .append('text')
+  pieGraphData.append('text')
     .text(d => {
       const values = d3.values(data[8].followers);
       const sum = d3.sum(values);
@@ -197,6 +194,9 @@ tests:
   const legend = rightDashboard.append('table')
     .attr('width', 200)
     .attr('height', 120)
+    .style('font', '12px verdana')
+
+  const legendTitle = legend.append('thead')
 
 
 
@@ -260,7 +260,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -394,10 +394,7 @@ tests:
     .attr('stroke', 'white')
     .attr('stroke-width', 2);
 
-  pieGraphData.selectAll('pieSliceText')
-    .data(pie(d3.entries(data[8].followers)))
-    .enter()
-    .append('text')
+  pieGraphData.append('text')
     .text(d => {
       const values = d3.values(data[8].followers);
       const sum = d3.sum(values);
@@ -413,7 +410,11 @@ tests:
     .attr('height', 120)
     .style('font', '12px verdana')
 
-  
+  const legendTitle = legend.append('thead')
+    .append('tr')
+    .append('th')
+
+
 
 </script>
 ```

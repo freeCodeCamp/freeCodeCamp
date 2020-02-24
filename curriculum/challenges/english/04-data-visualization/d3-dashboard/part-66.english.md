@@ -8,9 +8,9 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Each circle needs a `cx` and `cy` attribute so it knows where to display on the `svg`. These are similar to the `x` and `y` values for the lines and will be calculated in the same way to be placed in the same spots.
+Each circle needs a `cx` and `cy` attribute so it knows where to display on the SVG. These are similar to the x and y coordinates for the lines and will be calculated in the same way. The difference is that, for circles, the `cx` and `cy` are attributes, so you need to use the `attr` function.
 
-Use the `attr` function to set the `cx` to `d => xScale(d.year)`. 
+Use the `attr` function to set the `cx` to `d => xScale(d.year)`.
 </section>
 
 ## Instructions
@@ -23,7 +23,7 @@ Use the `attr` function to set the `cx` to `d => xScale(d.year)`.
 ```yml
 tests:
   - text: test-text
-    testString: assert($('svg circle')[0].getAttribute('cx') == '60');
+    testString: assert($('svg circle')[0].getAttribute('cx') == '70');
 
 ```
 
@@ -48,7 +48,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -186,7 +186,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',

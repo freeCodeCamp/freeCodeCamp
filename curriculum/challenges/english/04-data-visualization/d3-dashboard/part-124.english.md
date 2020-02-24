@@ -1,5 +1,5 @@
 ---
-id: 5d8a4cfbe6b6180ed9a1ca59
+id: 5d8a4cfbe6b6180ed9a1ca5b
 title: Part 124
 challengeType: 0
 isBeta: true
@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-On a new line, `append` a `td` to your `legendRows`. `td` is for an individual cell in the row of the table.
+This is the first column of your table. Set the `align` attribute to `right` to align the text to the right of each cell.
 </section>
 
 ## Instructions
@@ -21,7 +21,7 @@ On a new line, `append` a `td` to your `legendRows`. `td` is for an individual c
 ```yml
 tests:
   - text: test-text
-    testString: assert($('.dashboard div table tbody tr td').length === 3);
+    testString: assert($('.dashboard div table tbody tr td')[0].getAttribute('align').toLowerCase() === 'right');
 
 ```
 
@@ -46,7 +46,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -180,10 +180,7 @@ tests:
     .attr('stroke', 'white')
     .attr('stroke-width', 2);
 
-  pieGraphData.selectAll('pieSliceText')
-    .data(pie(d3.entries(data[8].followers)))
-    .enter()
-    .append('text')
+  pieGraphData.append('text')
     .text(d => {
       const values = d3.values(data[8].followers);
       const sum = d3.sum(values);
@@ -211,6 +208,8 @@ tests:
     .enter()
     .append('tr');
 
+  legendRows.append('td')  
+    .text(d => d.key)
 
 
 
@@ -274,7 +273,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -408,10 +407,7 @@ tests:
     .attr('stroke', 'white')
     .attr('stroke-width', 2);
 
-  pieGraphData.selectAll('pieSliceText')
-    .data(pie(d3.entries(data[8].followers)))
-    .enter()
-    .append('text')
+  pieGraphData.append('text')
     .text(d => {
       const values = d3.values(data[8].followers);
       const sum = d3.sum(values);
@@ -439,7 +435,10 @@ tests:
     .enter()
     .append('tr');
 
-  legendRows.append('td')
+  legendRows.append('td')  
+    .text(d => d.key)
+    .attr('align', 'right');
+
 
 
 

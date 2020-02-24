@@ -1,5 +1,5 @@
 ---
-id: 5d8a4cfbe6b6180ed9a1ca5d
+id: 5d8a4cfbe6b6180ed9a1ca5f
 title: Part 128
 challengeType: 0
 isBeta: true
@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Set the `align` attribute to `center`.
+Set the `width` to `16px` and the `height` to `16px` using the `style` function.
 </section>
 
 ## Instructions
@@ -21,7 +21,7 @@ Set the `align` attribute to `center`.
 ```yml
 tests:
   - text: test-text
-    testString: assert($('.dashboard div table tbody tr td')[1].getAttribute('align').toLowerCase() === 'center');
+    testString: const div = $('.dashboard div table tbody tr td div')[0]; assert(div.style.width == '16px' && div.style.height === '16px');
 
 ```
 
@@ -46,7 +46,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -180,10 +180,7 @@ tests:
     .attr('stroke', 'white')
     .attr('stroke-width', 2);
 
-  pieGraphData.selectAll('pieSliceText')
-    .data(pie(d3.entries(data[8].followers)))
-    .enter()
-    .append('text')
+  pieGraphData.append('text')
     .text(d => {
       const values = d3.values(data[8].followers);
       const sum = d3.sum(values);
@@ -216,6 +213,8 @@ tests:
     .attr('align', 'right');
 
   legendRows.append('td')
+    .attr('align', 'center')
+    .append('div')
 
 
 
@@ -279,7 +278,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -413,10 +412,7 @@ tests:
     .attr('stroke', 'white')
     .attr('stroke-width', 2);
 
-  pieGraphData.selectAll('pieSliceText')
-    .data(pie(d3.entries(data[8].followers)))
-    .enter()
-    .append('text')
+  pieGraphData.append('text')
     .text(d => {
       const values = d3.values(data[8].followers);
       const sum = d3.sum(values);
@@ -450,7 +446,9 @@ tests:
 
   legendRows.append('td')
     .attr('align', 'center')
-
+    .append('div')
+    .style('width', '16px')
+    .style('height', '16px')
 
 
 

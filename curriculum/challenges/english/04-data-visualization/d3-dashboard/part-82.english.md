@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Use `append` to add a `div` element to the selection.
+Use `append` to add a `div` element to the selection. This will put a div as another child of the dashboard container to hold the pie graph and legend.
 </section>
 
 ## Instructions
@@ -46,7 +46,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -214,7 +214,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',

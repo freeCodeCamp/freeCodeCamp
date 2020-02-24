@@ -8,9 +8,14 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Okay, your graph is coming along. All the lines are drawn, but they look a little plain. The next series of code additions will add circles to each point on each line. First is the Twitter line. On a new line, chain the `selectAll` function to `lineGraph` and pass it the string `twitter-circles`.
+Okay, your graph is coming along. All the lines are drawn, but they look a little plain. The next series of code additions will add circles to each point on each line. First is the Twitter line. On a new line, use the `selectAll` function on your  `lineGraph` variable and pass it the string `twitter-circles`. It will look like this: 
 
-`twitter-circles` don't exist and this selection will return an empty array, but it's needed. For now, you can just think of this string as a reference, similar to a variable name, so you know what data you are working with.
+```js
+lineGraph.selectAll('twitter-circles')
+```
+
+
+`twitter-circles` don't exist and this selection will be an empty array, but it's needed. For now, you can just think of this string as a reference, similar to a variable name, so you know what elements you are working with.
 </section>
 
 ## Instructions
@@ -48,7 +53,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -181,7 +186,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',

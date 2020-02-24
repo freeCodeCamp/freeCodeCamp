@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Appropriately set the `cx` and `cy` attributes for this selection.
+Appropriately set the `cx` and `cy` attributes for the Instagram circles.
 </section>
 
 ## Instructions
@@ -21,7 +21,7 @@ Appropriately set the `cx` and `cy` attributes for this selection.
 ```yml
 tests:
   - text: test-text
-    testString: assert($('svg circle')[18].getAttribute('cx') == '60' && $('svg circle')[18].getAttribute('cy') == '433.692');
+    testString: assert($('svg circle')[18].getAttribute('cx') == '70' && $('svg circle')[18].getAttribute('cy') == '424.024');
 
 ```
 
@@ -46,7 +46,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -206,7 +206,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',

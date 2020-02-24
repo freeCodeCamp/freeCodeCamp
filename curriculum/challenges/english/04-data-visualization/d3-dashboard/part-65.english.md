@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Chain the `append` function to the selection to append `circle` elements. This will add the nine `circle` elements.
+Add the `append` function to the selection, and use it to add `circle` elements. This will add the nine `circle` elements for your Twitter circles. They will be invisible to start, but the elements are there.
 </section>
 
 ## Instructions
@@ -46,7 +46,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -183,7 +183,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',

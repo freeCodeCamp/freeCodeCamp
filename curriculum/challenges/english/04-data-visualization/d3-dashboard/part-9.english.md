@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Center the dashboard by adding a `margin` of `auto` to it.
+Now you can see your dashboard element. Center it by adding a `margin` of `auto` to it.
 </section>
 
 ## Instructions

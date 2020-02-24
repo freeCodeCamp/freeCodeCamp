@@ -1,5 +1,5 @@
 ---
-id: 5d8a4cfbe6b6180ed9a1ca4d
+id: 5d8a4cfbe6b6180ed9a1ca4f
 title: Part 112
 challengeType: 0
 isBeta: true
@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Change the `style` of the text to give it a `text-anchor` of `middle` and a `font` of `10px verdana`.
+Give the table a `width` of `200` and a `height` of `120` using `attr`.
 </section>
 
 ## Instructions
@@ -21,7 +21,7 @@ Change the `style` of the text to give it a `text-anchor` of `middle` and a `fon
 ```yml
 tests:
   - text: test-text
-    testString: const text = $('.dashboard div svg g text')[0]; assert(text.style.textAnchor === 'middle' && text.style.font.toLowerCase() === '10px verdana');
+    testString: const table = $('.dashboard div table')[0]; assert(table.getAttribute('width') == 200 && table.getAttribute('height') == 120);
 
 ```
 
@@ -46,7 +46,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -180,10 +180,7 @@ tests:
     .attr('stroke', 'white')
     .attr('stroke-width', 2);
 
-  pieGraphData.selectAll('pieSliceText')
-    .data(pie(d3.entries(data[8].followers)))
-    .enter()
-    .append('text')
+  pieGraphData.append('text')
     .text(d => {
       const values = d3.values(data[8].followers);
       const sum = d3.sum(values);
@@ -191,6 +188,10 @@ tests:
       return `${ Math.round(percent*100) }%`;
     })
     .attr('transform', d => `translate(${pieArc.centroid(d)})`)
+    .style('text-anchor', 'middle')
+    .style('font', '10px verdana');
+
+  const legend = rightDashboard.append('table')
 
 
 
@@ -254,7 +255,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -388,10 +389,7 @@ tests:
     .attr('stroke', 'white')
     .attr('stroke-width', 2);
 
-  pieGraphData.selectAll('pieSliceText')
-    .data(pie(d3.entries(data[8].followers)))
-    .enter()
-    .append('text')
+  pieGraphData.append('text')
     .text(d => {
       const values = d3.values(data[8].followers);
       const sum = d3.sum(values);
@@ -401,6 +399,10 @@ tests:
     .attr('transform', d => `translate(${pieArc.centroid(d)})`)
     .style('text-anchor', 'middle')
     .style('font', '10px verdana');
+
+  const legend = rightDashboard.append('table')
+    .attr('width', 200)
+    .attr('height', 120)
 
 
 

@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Later on, you will be adding more elements to the dashboard container. Set the `display` to `flex` and the `align-items` to `center` to it so those items will be vertically centered.
+Later on, you will be adding more elements to the dashboard container. Set the `display` to `flex` and the `align-items` to `center` so those items will be vertically centered.
 </section>
 
 ## Instructions

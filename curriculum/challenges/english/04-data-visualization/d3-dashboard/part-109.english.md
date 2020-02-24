@@ -1,5 +1,5 @@
 ---
-id: 5d8a4cfbe6b6180ed9a1ca4a
+id: 5d8a4cfbe6b6180ed9a1ca4c
 title: Part 109
 challengeType: 0
 isBeta: true
@@ -8,7 +8,9 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Create another variable named `percent` and set it equal to `d.data.value` divided by your `sum` variable.
+The text elements are at the center of the pie graph, you need to use the `centroid` from the D3 arc API to tell them where to go. Add an `attr` function to set the `transform` to a `d` function that returns this template literal: `translate(${ pieArc.centroid(d) })`
+
+The `centroid` function will find the midpoint of each slice for each text element.
 </section>
 
 ## Instructions
@@ -21,7 +23,7 @@ Create another variable named `percent` and set it equal to `d.data.value` divid
 ```yml
 tests:
   - text: test-text
-    testString: assert(/const\s*percent\s*=\s*d\s*\.\s*data\s*\.\s*value\s*\/\s*sum;?/g.test(code));
+    testString: const transform = $('.dashboard div svg g text')[0].getAttribute('transform').replace('translate(','').replace(')','').split(','); assert(transform[0] < 39 && transform[1] > 31);
 
 ```
 
@@ -46,7 +48,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -180,16 +182,17 @@ tests:
     .attr('stroke', 'white')
     .attr('stroke-width', 2);
 
-  pieGraphData.selectAll('pieSliceText')
-    .data(pie(d3.entries(data[8].followers)))
-    .enter()
-    .append('text')
+  pieGraphData.append('text')
     .text(d => {
       const values = d3.values(data[8].followers);
       const sum = d3.sum(values);
-
-
+      const percent = d.data.value/sum;
+      return `${ Math.round(percent*100) }%`;
     })
+
+
+
+
 </script>
 ```
 
@@ -250,7 +253,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -384,17 +387,17 @@ tests:
     .attr('stroke', 'white')
     .attr('stroke-width', 2);
 
-  pieGraphData.selectAll('pieSliceText')
-    .data(pie(d3.entries(data[8].followers)))
-    .enter()
-    .append('text')
+  pieGraphData.append('text')
     .text(d => {
       const values = d3.values(data[8].followers);
       const sum = d3.sum(values);
       const percent = d.data.value/sum;
-
-
+      return `${ Math.round(percent*100) }%`;
     })
+    .attr('transform', d => `translate(${pieArc.centroid(d)})`)
+
+
+
 </script>
 ```
 

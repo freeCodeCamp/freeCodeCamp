@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-The range for this scale will go from the left of your graph to the right, with 2012 on the left and 2020 on the right. Add the `range` function to the `xScale` and pass it an array with the values: `svgMargin` and `svgWidth - svgMargin`.
+The range for this scale will go from the left of your graph to the right, with 2012 on the left and 2020 on the right. Add the `range` function to the `xScale` and pass it an array with the values: `svgMargin` and `svgWidth - svgMargin`. This will translate to `[70, 630]`. So 2012 will use 70 as is x-coordinate and 2020 will use 630 as its x-coordinate.
 </section>
 
 ## Instructions
@@ -21,7 +21,7 @@ The range for this scale will go from the left of your graph to the right, with 
 ```yml
 tests:
   - text: test-text
-    testString: const range = xScale.range(); assert(range.length === 2 && range[0] === 60 && range[1] === 640);
+    testString: const range = xScale.range(); assert(range.length === 2 && range[0] === 70 && range[1] === 630);
 
 ```
 
@@ -46,7 +46,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -126,7 +126,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',

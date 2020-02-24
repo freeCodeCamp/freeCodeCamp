@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Your chart needs some labels in each slice. On a new line, use the `selectAll` method on your `pieGraphData` variable and pass it the string: `pieSliceText`.
+Your chart needs some labels in each slice. On a new line, append `text` elements to your `pieGraphData` variable.
 </section>
 
 ## Instructions
@@ -21,7 +21,7 @@ Your chart needs some labels in each slice. On a new line, use the `selectAll` m
 ```yml
 tests:
   - text: test-text
-    testString: assert(/pieGraphData\s*\.\s*selectAll\s*\((`|'|")pieSliceText\1\s*\)/g.test(code));
+    testString: assert(/pieGraphData\s*\.\s*append\s*\((`|'|")text\1\s*\)/g.test(code));
 
 ```
 
@@ -46,7 +46,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -242,7 +242,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -376,7 +376,7 @@ tests:
     .attr('stroke', 'white')
     .attr('stroke-width', 2);
 
-  pieGraphData.selectAll('pieSliceText')
+  pieGraphData.append('text')
 
 
 

@@ -8,9 +8,9 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Add another script below the one you just added. Give it a `src` attribute of `./data.js`.
+Add another `script` below the one you just added. Give it a `src` attribute of `./data.js`.
       
-This adds a `data` variable to your project that contains your number of social media followers, it is an array of objects. Each object has the year and your followers for three different platforms.
+This adds a `data` variable to your project that contains your number of social media followers, it is an array of objects. Each object has the year and your followers for three different platforms. You will see what it looks like shortly.
 </section>
 
 ## Instructions

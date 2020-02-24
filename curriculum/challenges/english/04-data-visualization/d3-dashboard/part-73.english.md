@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Set the `cx` and `cy` attributes for the circles to their appropriate values.
+Set the `cx` and `cy` attributes for the Tumblr circles to their appropriate values.
 </section>
 
 ## Instructions
@@ -21,7 +21,7 @@ Set the `cx` and `cy` attributes for the circles to their appropriate values.
 ```yml
 tests:
   - text: test-text
-    testString: assert($('svg circle')[9].getAttribute('cx') == '60' && $('svg circle')[9].getAttribute('cy') == '409.524');
+    testString: assert($('svg circle')[9].getAttribute('cx') == '70' && $('svg circle')[9].getAttribute('cy') == '401.128');
 
 ```
 
@@ -46,7 +46,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -195,7 +195,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',

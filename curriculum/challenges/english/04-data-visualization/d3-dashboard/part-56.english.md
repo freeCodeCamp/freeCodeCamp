@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Two lines down, only one more to add for the Instagram followers. On a new line, create a new `const` named `instagramLine` and set it equal to `d3.line()`.
+Two lines down, only one more to add for the Instagram followers. On a new line, create a new `const` named `instagramLine` and use the D3 `line` function to create another line like you did for the other two.
 </section>
 
 ## Instructions
@@ -46,7 +46,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -168,7 +168,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',

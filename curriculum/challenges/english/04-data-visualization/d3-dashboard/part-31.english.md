@@ -8,9 +8,9 @@ isBeta: true
 ## Description
 <section id='description'>
 
-After all that work, something is finally displayed on the graph... it's just a line, but it's something. Really, it's the y-axis, and the numbers are just hidden on the left.
+After all that work, something is finally displayed on the graph. It's the y-axis and all the numbers are hidden on the left.
 
-Move the axis your `svgMargin` to the right by chaining an `attr` function to the selection. Use it to set the `transform` to `translate(${svgMargin}, 0)`. Use a template literal (backticks) to set the value.
+Move the axis your `svgMargin` to the right by chaining an `attr` function to the selection. Use it to set the `transform` to `translate(${svgMargin}, 0)`. Use a template literal (backticks) to set the value so you can put your variable in there.
 </section>
 
 ## Instructions
@@ -23,7 +23,7 @@ Move the axis your `svgMargin` to the right by chaining an `attr` function to th
 ```yml
 tests:
   - text: test-text
-    testString: assert($("g")[0].attributes.transform.nodeValue === "translate(60, 0)");
+    testString: assert($("g")[0].attributes.transform.nodeValue === "translate(70, 0)");
 
 ```
 
@@ -48,7 +48,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -137,7 +137,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',

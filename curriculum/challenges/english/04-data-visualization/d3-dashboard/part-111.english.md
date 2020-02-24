@@ -1,5 +1,5 @@
 ---
-id: 5d8a4cfbe6b6180ed9a1ca4c
+id: 5d8a4cfbe6b6180ed9a1ca4e
 title: Part 111
 challengeType: 0
 isBeta: true
@@ -8,9 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-The text elements are stacked on top of each other, you need to use the `pieArc` function you created to tell them where to go. Add an `attr` function to set `transform` to a `d` function that returns this template literal: `translate(${pieArc.centroid(d)})`
-
-This will use the `centroid` function of the `d3.pie` API to move the text towards the middle of each slice. Don't ask me how it works.
+The last component you are going to add is a legend to display the name of each platform and the number of followers for the year. Create a new `const` named `legend` and use it to `append` a `table` to your `rightDashboard` variable. This looks similar to the code where you created your `pieGraph` variable.
 </section>
 
 ## Instructions
@@ -23,7 +21,7 @@ This will use the `centroid` function of the `d3.pie` API to move the text towar
 ```yml
 tests:
   - text: test-text
-    testString: const transform = $('.dashboard div svg g text')[0].getAttribute('transform').replace('translate(','').replace(')','').split(','); assert(transform[0] < 39 && transform[1] > 31);
+    testString: assert(/const\s*legend\s*=\s*rightDashboard\s*\.\s*append\s*\(\s*('|"|`)\s*table\s*\1\s*\)/g.test(code));
 
 ```
 
@@ -48,7 +46,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -182,17 +180,16 @@ tests:
     .attr('stroke', 'white')
     .attr('stroke-width', 2);
 
-  pieGraphData.selectAll('pieSliceText')
-    .data(pie(d3.entries(data[8].followers)))
-    .enter()
-    .append('text')
+  pieGraphData.append('text')
     .text(d => {
       const values = d3.values(data[8].followers);
       const sum = d3.sum(values);
       const percent = d.data.value/sum;
       return `${ Math.round(percent*100) }%`;
     })
-
+    .attr('transform', d => `translate(${pieArc.centroid(d)})`)
+    .style('text-anchor', 'middle')
+    .style('font', '10px verdana');
 
 
 
@@ -256,7 +253,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -390,10 +387,7 @@ tests:
     .attr('stroke', 'white')
     .attr('stroke-width', 2);
 
-  pieGraphData.selectAll('pieSliceText')
-    .data(pie(d3.entries(data[8].followers)))
-    .enter()
-    .append('text')
+  pieGraphData.append('text')
     .text(d => {
       const values = d3.values(data[8].followers);
       const sum = d3.sum(values);
@@ -401,6 +395,10 @@ tests:
       return `${ Math.round(percent*100) }%`;
     })
     .attr('transform', d => `translate(${pieArc.centroid(d)})`)
+    .style('text-anchor', 'middle')
+    .style('font', '10px verdana');
+
+  const legend = rightDashboard.append('table')
 
 
 

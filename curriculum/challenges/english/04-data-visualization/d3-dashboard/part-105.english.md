@@ -1,5 +1,5 @@
 ---
-id: 5d8a4cfbe6b6180ed9a1ca46
+id: 5d8a4cfbe6b6180ed9a1ca48
 title: Part 105
 challengeType: 0
 isBeta: true
@@ -8,7 +8,15 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Next, use the `enter` and `append` functions to add `text` elements to the graph.
+In the function you just created, create a `const` named `values`. Use the `d3.values` function to get the values of the 2020 followers and set the result to your `values` variable. Here's how to get the values:
+
+```js
+d3.values(data[8].followers)
+```
+
+It will be an array with the values of the followers for the three platforms in 2020.
+
+Note that this "d function" has curly brackets. So you could `console.log(values)` in there to see it's value.
 </section>
 
 ## Instructions
@@ -21,7 +29,7 @@ Next, use the `enter` and `append` functions to add `text` elements to the graph
 ```yml
 tests:
   - text: test-text
-    testString: assert($('.dashboard div svg g text').length === 9);
+    testString: assert(/const\s*values\s*=\s*d3\s*\.\s*values\s*\(\s*data\s*\[\s*8\s*\]\s*\.\s*followers\s*\);?/g.test(code));
 
 ```
 
@@ -46,7 +54,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -180,11 +188,12 @@ tests:
     .attr('stroke', 'white')
     .attr('stroke-width', 2);
 
-  pieGraphData.selectAll('pieSliceText')
-    .data(pie(d3.entries(data[8].followers)))
+  pieGraphData.append('text')
+    .text(d => {
 
 
 
+    })
 </script>
 ```
 
@@ -245,7 +254,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -379,13 +388,12 @@ tests:
     .attr('stroke', 'white')
     .attr('stroke-width', 2);
 
-  pieGraphData.selectAll('pieSliceText')
-    .data(pie(d3.entries(data[8].followers)))
-    .enter()
-    .append('text')
+  pieGraphData.append('text')
+    .text(d => {
+      const values = d3.values(data[8].followers);
 
 
-
+    })
 </script>
 ```
 

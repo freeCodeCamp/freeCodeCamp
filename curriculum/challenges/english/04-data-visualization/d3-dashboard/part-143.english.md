@@ -1,5 +1,5 @@
 ---
-id: 5d8a4cfbe6b6180ed9a1ca6d
+id: 5d8a4cfbe6b6180ed9a1ca6f
 title: Part 143
 challengeType: 0
 isBeta: true
@@ -8,18 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Now when you hover a label, you can see the data for the different years.
-
-Where you created the `text` elements for the x-axis labels, change the `font` to `bold 10px verdana` for the currently displayed year.
-
-To do this, create a "`d` function" in the `font` value area and return the above sting if `d` equals `year`. Otherwise, return the string that is currently there (`10px verdana`). It's easiest to use a ternary operator for this.
-
-Here's a hint: 
-
-```js
-.style('font', d => d === year ? )
-```
-
+Similar to how you made the text bold for the label of the displayed year; change the `fill` of the `twitter-circles` to your `twitterColor` for the currently displayed year. To do this, use a "d function" that returns the `twitterColor` when `d.year` equals `year`, and leave it `white` if it doesn't.
 </section>
 
 ## Instructions
@@ -32,7 +21,7 @@ Here's a hint:
 ```yml
 tests:
   - text: test-text
-    testString: assert(Object.values($('.dashboard svg g text')).filter(el => el.style && el.style.font.toLowerCase() === 'bold 10px verdana').length === 1);
+    testString: assert(Object.values($('.dashboard svg circle')).filter(el => el.getAttribute && el.getAttribute('fill') === '#7cd9d1').length === 1);
 
 ```
 
@@ -61,7 +50,7 @@ tests:
     d3.select('.dashboard').html('');
     const index = data.findIndex(d => d.year === year);
 
-    const svgMargin = 60,
+    const svgMargin = 70,
       svgWidth = 700,
       svgHeight = 500,
       twitterColor = '#7cd9d1',
@@ -100,9 +89,7 @@ tests:
       .style('transform', 'translate(-12px, 0) rotate(-50deg)')
       .style('text-anchor', 'end')
       .style('cursor', 'pointer')
-      .style('font', '10px verdana')
-
-
+      .style('font', d => d === year ? 'bold 10px verdana' : '10px verdana')
       .on('mouseover', d => drawDashboard(d));
 
     const twitterLine = d3.line()
@@ -143,8 +130,11 @@ tests:
       .attr('cy', d => yScale(d.followers.twitter))
       .attr('r', 6)
       .attr('fill', 'white')
+
+
       .attr('stroke', twitterColor)
       .style('cursor', 'pointer')
+      .on('mouseover', d => drawDashboard(d.year));
 
     lineGraph.selectAll('tumblr-circles')
       .data(data)
@@ -200,10 +190,7 @@ tests:
       .attr('stroke', 'white')
       .attr('stroke-width', 2);
 
-    pieGraphData.selectAll('pieSliceText')
-      .data(pie(d3.entries(data[index].followers)))
-      .enter()
-      .append('text')
+    pieGraphData.append('text')
       .text(d => {
         const values = d3.values(data[index].followers);
         const sum = d3.sum(values);
@@ -316,7 +303,7 @@ tests:
     d3.select('.dashboard').html('');
     const index = data.findIndex(d => d.year === year);
 
-    const svgMargin = 60,
+    const svgMargin = 70,
       svgWidth = 700,
       svgHeight = 500,
       twitterColor = '#7cd9d1',
@@ -395,11 +382,10 @@ tests:
       .attr('cx', d => xScale(d.year))
       .attr('cy', d => yScale(d.followers.twitter))
       .attr('r', 6)
-      .attr('fill', 'white')
+      .attr('fill', d => d.year === year ? twitterColor : 'white')
       .attr('stroke', twitterColor)
       .style('cursor', 'pointer')
-
-  
+      .on('mouseover', d => drawDashboard(d.year));
 
     lineGraph.selectAll('tumblr-circles')
       .data(data)
@@ -412,6 +398,8 @@ tests:
       .attr('stroke', tumblrColor)
       .style('cursor', 'pointer')
 
+
+
     lineGraph.selectAll('instagram-circles')
       .data(data)
       .enter()
@@ -422,6 +410,8 @@ tests:
       .attr('fill', 'white')
       .attr('stroke', instagramColor)
       .style('cursor', 'pointer')
+
+
 
     const rightDashboard = d3.select('.dashboard')
       .append('div');
@@ -455,10 +445,7 @@ tests:
       .attr('stroke', 'white')
       .attr('stroke-width', 2);
 
-    pieGraphData.selectAll('pieSliceText')
-      .data(pie(d3.entries(data[index].followers)))
-      .enter()
-      .append('text')
+    pieGraphData.append('text')
       .text(d => {
         const values = d3.values(data[index].followers);
         const sum = d3.sum(values);

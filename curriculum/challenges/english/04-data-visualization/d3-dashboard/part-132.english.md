@@ -1,5 +1,5 @@
 ---
-id: 5d8a4cfbe6b6180ed9a1ca61
+id: 5d8a4cfbe6b6180ed9a1ca63
 title: Part 132
 challengeType: 0
 isBeta: true
@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-On a new line, append another `td` to the `legendRows` variable for the last group of items.
+Set the `align` attribute to `left` for this selection.
 </section>
 
 ## Instructions
@@ -21,7 +21,7 @@ On a new line, append another `td` to the `legendRows` variable for the last gro
 ```yml
 tests:
   - text: test-text
-    testString: assert($('.dashboard div table tbody tr td').length === 9);
+    testString: assert($('.dashboard div table tbody tr td')[2].getAttribute('align').toLowerCase() === 'left');
 
 ```
 
@@ -46,7 +46,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -180,10 +180,7 @@ tests:
     .attr('stroke', 'white')
     .attr('stroke-width', 2);
 
-  pieGraphData.selectAll('pieSliceText')
-    .data(pie(d3.entries(data[8].followers)))
-    .enter()
-    .append('text')
+  pieGraphData.append('text')
     .text(d => {
       const values = d3.values(data[8].followers);
       const sum = d3.sum(values);
@@ -221,6 +218,9 @@ tests:
     .style('width', '16px')
     .style('height', '16px')
     .style('background-color', d => pieColors(d.key))
+
+  legendRows.append('td')
+    .text(d => d.value)
 
 
 
@@ -284,7 +284,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -418,10 +418,7 @@ tests:
     .attr('stroke', 'white')
     .attr('stroke-width', 2);
 
-  pieGraphData.selectAll('pieSliceText')
-    .data(pie(d3.entries(data[8].followers)))
-    .enter()
-    .append('text')
+  pieGraphData.append('text')
     .text(d => {
       const values = d3.values(data[8].followers);
       const sum = d3.sum(values);
@@ -443,6 +440,7 @@ tests:
     .text('2020 followers')
     .attr('colspan', 3)
 
+
   const legendRows = legend.append('tbody')
     .selectAll('tr')
     .data(d3.entries(data[8].followers))
@@ -461,9 +459,8 @@ tests:
     .style('background-color', d => pieColors(d.key))
 
   legendRows.append('td')
-
-
-
+    .text(d => d.value)
+    .attr('align', 'left');
 </script>
 ```
 

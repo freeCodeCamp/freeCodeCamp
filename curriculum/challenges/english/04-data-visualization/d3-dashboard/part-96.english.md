@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Add the `enter` function to the current selection. Just like before, the initial selection here has a length of zero and the `data` has a length of three now. So when you append elements in the next step, three will be created.</section>
+Add the `enter` function to the current selection. Just like before, the initial selection here has a length of zero and the data has a length of three. So when you append elements in the next step, three will be created; one for each slice of the pie.</section>
 
 ## Instructions
 <section id='instructions'>
@@ -45,7 +45,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -232,7 +232,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',

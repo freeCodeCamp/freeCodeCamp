@@ -8,15 +8,15 @@ isBeta: true
 ## Description
 <section id='description'>
 
-The line needs `x` and `y` values for each point of data. Chain `x` to the line and pass it a "`d` function". Here's how that will look:
+The line needs x and y values for each point of data. Chain `x` to the line and pass it a "d function". Here's how that will look:
 
 ```js
 .x(d => d.year)
 ```
 
-You will be passing your `data` array to this line function, where it will go through each item in the array(`d`) and create an `x` value equal to the year(`d.year`).
+You will be passing your `data` array to this line function, where it will go through each item in the array(`d`) and create an x value based on the year(`d.year`).
 
-This is the first place you have seen a "`d` function". These are common in D3 and that is how I will refer to them throughout this project.
+This is the first place you have seen a "d function". These are common in D3 and that is how I will refer to them throughout this project.
 </section>
 
 ## Instructions
@@ -54,7 +54,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -158,7 +158,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',

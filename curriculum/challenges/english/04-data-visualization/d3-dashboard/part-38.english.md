@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Use another `style` function to set the `text-anchor` to `end`. This will change the spot that each text element rotates around to the `end` of the element so they will align better.
+Add another `style` function to set the `text-anchor` to `end`. This will change the spot that each text element rotates around to the `end` of the element so they will align better.
 </section>
 
 ## Instructions
@@ -46,7 +46,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -142,7 +142,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',

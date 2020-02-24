@@ -1,5 +1,5 @@
 ---
-id: 5d8a4cfbe6b6180ed9a1ca51
+id: 5d8a4cfbe6b6180ed9a1ca53
 title: Part 116
 challengeType: 0
 isBeta: true
@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Create a new `const` named `legendTitle` and use it to `append` a `thead` to your `legend` variable. `thead` is used with the HTML table element and is for the top row of the table.
+Use the `text` function to set the text of the selection to `2020 followers`.
 </section>
 
 ## Instructions
@@ -21,7 +21,7 @@ Create a new `const` named `legendTitle` and use it to `append` a `thead` to you
 ```yml
 tests:
   - text: test-text
-    testString: assert(/const\s*legendTitle\s*=\s*legend\s*\.\s*append\s*\(\s*('|"|`)\s*thead\s*\1\s*\)/g.test(code));
+    testString: assert($('.dashboard div table thead tr th').text() === '2020 followers');
 
 ```
 
@@ -46,7 +46,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -180,10 +180,7 @@ tests:
     .attr('stroke', 'white')
     .attr('stroke-width', 2);
 
-  pieGraphData.selectAll('pieSliceText')
-    .data(pie(d3.entries(data[8].followers)))
-    .enter()
-    .append('text')
+  pieGraphData.append('text')
     .text(d => {
       const values = d3.values(data[8].followers);
       const sum = d3.sum(values);
@@ -199,7 +196,11 @@ tests:
     .attr('height', 120)
     .style('font', '12px verdana')
 
-  
+  const legendTitle = legend.append('thead')
+    .append('tr')
+    .append('th')
+
+
 
 </script>
 ```
@@ -261,7 +262,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -395,10 +396,7 @@ tests:
     .attr('stroke', 'white')
     .attr('stroke-width', 2);
 
-  pieGraphData.selectAll('pieSliceText')
-    .data(pie(d3.entries(data[8].followers)))
-    .enter()
-    .append('text')
+  pieGraphData.append('text')
     .text(d => {
       const values = d3.values(data[8].followers);
       const sum = d3.sum(values);
@@ -415,6 +413,9 @@ tests:
     .style('font', '12px verdana')
 
   const legendTitle = legend.append('thead')
+    .append('tr')
+    .append('th')
+    .text('2020 followers')
 
 
 

@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Add three more `attr` functions to the `path`; one to set the `stroke` to your `twitterColor` variable, another to set the `stroke-width` to `3`, and a third to set the `fill` to `transparent`.
+Add three more `attr` functions to the path; one to set the `stroke` to your `twitterColor` variable, another to set the `stroke-width` to `3`, and a third to set the `fill` to `transparent`.
 </section>
 
 ## Instructions
@@ -46,7 +46,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -156,7 +156,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',

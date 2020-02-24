@@ -8,15 +8,11 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Next, chain the `enter` function to the selection like this: 
+Next, chain the `enter()` function to the selection. 
 
-```js
-.enter()
-```
-
-The `enter` function identifies elements that need to be added when the `data` array is longer than the selection array. This is why you wanted the `selectAll` to return an empty array before.
+The enter function identifies elements that need to be added when the data array is longer than the selection array. This is why you wanted the `selectAll` to be an empty array before.
     
-In this case, the `twitter-circles` selection has a length of 0, and the `data` array has a length of 9. So nine elements will be added when you use `append` in the next step.
+In this case, the `twitter-circles` selection has a length of 0, and the data array has a length of 9. So nine elements will be added when you use `append` in the next step.
 </section>
 
 ## Instructions
@@ -54,7 +50,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -190,7 +186,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',

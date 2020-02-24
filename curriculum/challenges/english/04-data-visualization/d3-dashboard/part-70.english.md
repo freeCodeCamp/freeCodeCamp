@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Use the `style` function to set the `cursor` to `pointer`. This style added on the circle elements will be a visual indicator for hover events you will add later.
+Use the `style` function to set the `cursor` to `pointer`. Like your year labels, this will be an indicator for a hover effect you will add later.
 </section>
 
 ## Instructions
@@ -46,7 +46,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -189,7 +189,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',

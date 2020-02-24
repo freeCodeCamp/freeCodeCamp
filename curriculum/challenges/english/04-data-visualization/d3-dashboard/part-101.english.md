@@ -9,7 +9,7 @@ isBeta: true
 
 <section id='description'>
 
-Back at the bottom, where you draw the chart. Set the `fill` attribute to a "`d` function" that uses your `pieColors` scale to get the color value for `d.data.key`. The key is the platform.
+Back at the bottom, where you draw the chart. Use the `attr` function to set the `fill` to a "d function". In the "d function", use your `pieColors` scale to get the color value for the platform(`d.data.key`). So when each platform is passed to your scale, is will get the appropriate color to use as the fill from the scales range.
 </section>
 
 ## Instructions
@@ -50,7 +50,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -258,7 +258,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',

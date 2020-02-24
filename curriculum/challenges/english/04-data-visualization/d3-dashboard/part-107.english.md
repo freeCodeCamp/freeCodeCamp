@@ -1,5 +1,5 @@
 ---
-id: 5d8a4cfbe6b6180ed9a1ca48
+id: 5d8a4cfbe6b6180ed9a1ca4a
 title: Part 107
 challengeType: 0
 isBeta: true
@@ -8,13 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-In the function you just created, create a `const` named `values`. Use the `d3.values` function to get the values of the 2020 followers and set the result to your `values` variable. Here's how to get the values:
-
-```js
-d3.values(data[8].followers)
-```
-
-Note that this "`d` function" has curly brackets. So you could `console.log(values)` in there to see it's value.
+Create another variable named `percent` and set it equal to `d.data.value` divided by your `sum` variable.
 </section>
 
 ## Instructions
@@ -27,7 +21,7 @@ Note that this "`d` function" has curly brackets. So you could `console.log(valu
 ```yml
 tests:
   - text: test-text
-    testString: assert(/const\s*values\s*=\s*d3\s*\.\s*values\s*\(\s*data\s*\[\s*8\s*\]\s*\.\s*followers\s*\);?/g.test(code));
+    testString: assert(/const\s*percent\s*=\s*d\s*\.\s*data\s*\.\s*value\s*\/\s*sum;?/g.test(code));
 
 ```
 
@@ -52,7 +46,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -186,12 +180,10 @@ tests:
     .attr('stroke', 'white')
     .attr('stroke-width', 2);
 
-  pieGraphData.selectAll('pieSliceText')
-    .data(pie(d3.entries(data[8].followers)))
-    .enter()
-    .append('text')
+  pieGraphData.append('text')
     .text(d => {
-
+      const values = d3.values(data[8].followers);
+      const sum = d3.sum(values);
 
 
     })
@@ -255,7 +247,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -389,12 +381,11 @@ tests:
     .attr('stroke', 'white')
     .attr('stroke-width', 2);
 
-  pieGraphData.selectAll('pieSliceText')
-    .data(pie(d3.entries(data[8].followers)))
-    .enter()
-    .append('text')
+  pieGraphData.append('text')
     .text(d => {
       const values = d3.values(data[8].followers);
+      const sum = d3.sum(values);
+      const percent = d.data.value/sum;
 
 
     })

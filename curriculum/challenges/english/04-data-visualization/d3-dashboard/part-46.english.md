@@ -8,11 +8,11 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Add the `y` function to the line and pass it a "`d` function" that returns your `yScale` with `d.followers.twitter` as its argument.
+Chain the `y` function to the line and pass it a "d function" that returns your `yScale` with `d.followers.twitter` as its argument.
 
-This is similar to how you set the `x` values; it will use the values of your Twitter followers to set the `y` value for each item.
+This is similar to how you set the x values. It will use the values of your Twitter followers and your `yScale` to set the y coordinate for each item.
 
-These "`d` functions" use implicit returns. But if you add curly brackets and a return statement, you can put any functionality in there that you want, including `console.log` statements that can be useful for debugging.
+These "d functions" use implicit returns. But if you add curly brackets and a return statement, you can put any JavaScript in there that you want. Including `console.log` statements that can be useful for debugging.
 </section>
 
 ## Instructions
@@ -50,7 +50,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -155,7 +155,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',

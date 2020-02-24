@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Use the `call` function on the selection and pass it the `xAxis` variable this time.
+Use the `call` function to draw the x-axis onto the SVG like you did for the y-axis.
 </section>
 
 ## Instructions
@@ -46,7 +46,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -138,7 +138,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',

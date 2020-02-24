@@ -1,5 +1,5 @@
 ---
-id: 5d8a4cfbe6b6180ed9a1ca52
+id: 5d8a4cfbe6b6180ed9a1ca54
 title: Part 117
 challengeType: 0
 isBeta: true
@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-`append` a `tr` element to the selection and then append a `th` element right after it. `tr` is for defining a row of the table, and `th` is for defining the header cells of the table.
+Your table is going to have three columns, one for the platform name, one for the color it is using on your dashboard, and a third to display the number of followers. So you want the title to take up all three columns. Set the `colspan` attribute of the `th` to `3` so it spans all three of these columns.
 </section>
 
 ## Instructions
@@ -21,7 +21,7 @@ isBeta: true
 ```yml
 tests:
   - text: test-text
-    testString: assert($('.dashboard div table thead tr th').length === 1);
+    testString: assert($('.dashboard div table thead tr th')[0].getAttribute('colspan') == 3);
 
 ```
 
@@ -46,7 +46,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -180,10 +180,7 @@ tests:
     .attr('stroke', 'white')
     .attr('stroke-width', 2);
 
-  pieGraphData.selectAll('pieSliceText')
-    .data(pie(d3.entries(data[8].followers)))
-    .enter()
-    .append('text')
+  pieGraphData.append('text')
     .text(d => {
       const values = d3.values(data[8].followers);
       const sum = d3.sum(values);
@@ -200,6 +197,9 @@ tests:
     .style('font', '12px verdana')
 
   const legendTitle = legend.append('thead')
+    .append('tr')
+    .append('th')
+    .text('2020 followers')
 
 
 
@@ -263,7 +263,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -397,10 +397,7 @@ tests:
     .attr('stroke', 'white')
     .attr('stroke-width', 2);
 
-  pieGraphData.selectAll('pieSliceText')
-    .data(pie(d3.entries(data[8].followers)))
-    .enter()
-    .append('text')
+  pieGraphData.append('text')
     .text(d => {
       const values = d3.values(data[8].followers);
       const sum = d3.sum(values);
@@ -419,8 +416,10 @@ tests:
   const legendTitle = legend.append('thead')
     .append('tr')
     .append('th')
+    .text('2020 followers')
+    .attr('colspan', 3)
 
-
+    
 
 </script>
 ```

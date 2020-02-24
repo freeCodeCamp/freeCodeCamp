@@ -1,5 +1,5 @@
 ---
-id: 5d8a4cfbe6b6180ed9a1ca5e
+id: 5d8a4cfbe6b6180ed9a1ca60
 title: Part 129
 challengeType: 0
 isBeta: true
@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Append a `div` element to the selection.
+Using the `style` function again, set the `background-color` of each div to a "d function". Using the "d function", pass the key(`d.key`) of each data point to your `pieColors` scale so it knows what color to use.
 </section>
 
 ## Instructions
@@ -21,7 +21,7 @@ Append a `div` element to the selection.
 ```yml
 tests:
   - text: test-text
-    testString: assert($('.dashboard div table tbody tr td div').length === 3);
+    testString: assert($('.dashboard div table tbody tr td div')[0].style.backgroundColor === 'rgb(124, 217, 209)');
 
 ```
 
@@ -46,7 +46,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -180,10 +180,7 @@ tests:
     .attr('stroke', 'white')
     .attr('stroke-width', 2);
 
-  pieGraphData.selectAll('pieSliceText')
-    .data(pie(d3.entries(data[8].followers)))
-    .enter()
-    .append('text')
+  pieGraphData.append('text')
     .text(d => {
       const values = d3.values(data[8].followers);
       const sum = d3.sum(values);
@@ -217,7 +214,9 @@ tests:
 
   legendRows.append('td')
     .attr('align', 'center')
-
+    .append('div')
+    .style('width', '16px')
+    .style('height', '16px')
 
 
 
@@ -281,7 +280,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -415,10 +414,7 @@ tests:
     .attr('stroke', 'white')
     .attr('stroke-width', 2);
 
-  pieGraphData.selectAll('pieSliceText')
-    .data(pie(d3.entries(data[8].followers)))
-    .enter()
-    .append('text')
+  pieGraphData.append('text')
     .text(d => {
       const values = d3.values(data[8].followers);
       const sum = d3.sum(values);
@@ -453,6 +449,9 @@ tests:
   legendRows.append('td')
     .attr('align', 'center')
     .append('div')
+    .style('width', '16px')
+    .style('height', '16px')
+    .style('background-color', d => pieColors(d.key))
 
 
 

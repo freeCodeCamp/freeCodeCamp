@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Chain the `innerRadius` to the arc and pass it `0` (zero). This is set to zero to make a traditional pie chart, you would use a larger number to create a doughnut chart.
+Chain `innerRadius` to the arc and pass it `0` (zero). This is set to zero to make a traditional pie chart, you would use a larger inner radius to create a doughnut chart.
 </section>
 
 ## Instructions
@@ -46,7 +46,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -222,7 +222,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',

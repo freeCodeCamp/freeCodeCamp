@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Set the `x` values for `tumblrLine` using a "`d` function" again. Use your `xScale` and the `d.year` to calculcate their values just like you did for the Twitter line.
+Set the `x` values for `tumblrLine` using another "d function". Use your `xScale` and the `d.year` to calculcate their values just like you did for the Twitter line.
 </section>
 
 ## Instructions
@@ -46,7 +46,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -160,7 +160,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',

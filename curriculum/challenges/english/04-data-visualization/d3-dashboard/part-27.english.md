@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-The two scales you defined will be used to create the axes and graph. First is the y-axis. Create a new `const` named `yAxis` and set it equal to `d3.axisLeft(yScale)`. This will use the information from the `yScale` variable to build the axis.
+The two scales you defined will be used to create the axes and lines. First is the y-axis, it will be a line with some labels on the left of the graph. Create a new `const` named `yAxis` and set it equal to `d3.axisLeft(yScale)`. This will use the information from the `yScale` variable to build the axis.
 </section>
 
 ## Instructions
@@ -46,7 +46,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -127,7 +127,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',

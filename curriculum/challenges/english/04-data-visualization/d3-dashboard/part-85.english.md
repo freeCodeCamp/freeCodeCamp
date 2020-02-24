@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Add a new `const` named `pieArc` and set it equal to `d3.arc()`. This will be used to create the angles for the lines of the pie chart using the D3 arc generator.
+Create a new `const` named `pieArc` and set it equal to `d3.arc()`. This will be used to create the angles for the lines of the pie chart using the D3 arc generator.
 </section>
 
 ## Instructions
@@ -46,7 +46,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -219,7 +219,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',

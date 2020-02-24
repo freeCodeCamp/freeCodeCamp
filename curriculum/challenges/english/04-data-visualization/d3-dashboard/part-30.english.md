@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-`call` is another function to use with selections. Chain a `call` function to the selection and pass your `yAxis` variable to it.
+`call` is another function to use with selections. Chain a `call` function to the selection and pass your `yAxis` variable to it. This will draw your y-axis on the SVG.
 </section>
 
 ## Instructions
@@ -46,7 +46,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -133,7 +133,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',

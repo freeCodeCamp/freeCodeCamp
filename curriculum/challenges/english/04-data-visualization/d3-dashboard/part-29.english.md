@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-On a new line, append a new `g` element to your `lineGraph` variable. `lineGraph.append('g')` will do that for you. This will add a `g` to your `svg` and be for displaying the y-axis. `g` is an SVG element that stands for "group".
+On a new line, append a new `g` element to your `lineGraph` variable. `lineGraph.append('g')` will do that for you. This will add a `g` to your SVG and be for displaying the y-axis. `g` is an SVG element that stands for "group".
 </section>
 
 ## Instructions
@@ -46,7 +46,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -131,7 +131,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',

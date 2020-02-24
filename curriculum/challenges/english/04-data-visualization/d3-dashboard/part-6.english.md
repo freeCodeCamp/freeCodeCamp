@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-You are now looking at the stylesheet that you linked to earlier. At the top of this file, target the `body` of the html document and give it a `background-color` of `#ccc`.
+You are now looking at the stylesheet that you linked to earlier. At the top of this file, target the `body` of the HTML document and give it a `background-color` of `#ccc`.
 </section>
 
 ## Instructions

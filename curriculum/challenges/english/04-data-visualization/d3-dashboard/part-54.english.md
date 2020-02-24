@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-For the new path, set the `d` attribute to `tumblrLine(data)` using the `attr` function.
+Tell the new path how to be drawn by setting the `d` attribute to `tumblrLine(data)` using the `attr` function.
 </section>
 
 ## Instructions
@@ -21,7 +21,7 @@ For the new path, set the `d` attribute to `tumblrLine(data)` using the `attr` f
 ```yml
 tests:
   - text: test-text
-    testString: assert($('svg path')[3].getAttribute('d').length === 135);
+    testString: assert($('svg path')[3].getAttribute('d').length === 115);
 
 ```
 
@@ -46,7 +46,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -164,7 +164,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',

@@ -1,5 +1,5 @@
 ---
-id: 5d8a4cfbe6b6180ed9a1ca5b
+id: 5d8a4cfbe6b6180ed9a1ca5d
 title: Part 126
 challengeType: 0
 isBeta: true
@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-This is the first column of your table. Set the `align` attribute to `right` to align the text to the right of each cell.
+Set the `align` attribute to `center`.
 </section>
 
 ## Instructions
@@ -21,7 +21,7 @@ This is the first column of your table. Set the `align` attribute to `right` to 
 ```yml
 tests:
   - text: test-text
-    testString: assert($('.dashboard div table tbody tr td')[0].getAttribute('align').toLowerCase() === 'right');
+    testString: assert($('.dashboard div table tbody tr td')[1].getAttribute('align').toLowerCase() === 'center');
 
 ```
 
@@ -46,7 +46,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -180,10 +180,7 @@ tests:
     .attr('stroke', 'white')
     .attr('stroke-width', 2);
 
-  pieGraphData.selectAll('pieSliceText')
-    .data(pie(d3.entries(data[8].followers)))
-    .enter()
-    .append('text')
+  pieGraphData.append('text')
     .text(d => {
       const values = d3.values(data[8].followers);
       const sum = d3.sum(values);
@@ -213,6 +210,9 @@ tests:
 
   legendRows.append('td')  
     .text(d => d.key)
+    .attr('align', 'right');
+
+  legendRows.append('td')
 
 
 
@@ -276,7 +276,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -410,10 +410,7 @@ tests:
     .attr('stroke', 'white')
     .attr('stroke-width', 2);
 
-  pieGraphData.selectAll('pieSliceText')
-    .data(pie(d3.entries(data[8].followers)))
-    .enter()
-    .append('text')
+  pieGraphData.append('text')
     .text(d => {
       const values = d3.values(data[8].followers);
       const sum = d3.sum(values);
@@ -444,6 +441,9 @@ tests:
   legendRows.append('td')  
     .text(d => d.key)
     .attr('align', 'right');
+
+  legendRows.append('td')
+    .attr('align', 'center')
 
 
 

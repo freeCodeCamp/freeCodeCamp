@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Create a new `const` named `pieGraphData` and set the value equal to `pieGraph.selectAll('pieSlices')`. This is similar to the circles you created earlier.
+Create a new `const` named `pieGraphData` and set the value equal to `pieGraph.selectAll('pieSlices')`. This is an empty selection similar circles you created earlier.
 </section>
 
 ## Instructions
@@ -46,7 +46,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -230,7 +230,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',

@@ -14,7 +14,7 @@ You want the array passed to `pie` to be an array of key/value objects for the 2
 d3.entries(data[8].followers))
 ```
 
-The array that the `d3.entries` function builds looks like this:
+The array it builds looks like this:
 
 ```js
 [
@@ -64,7 +64,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -251,7 +251,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',

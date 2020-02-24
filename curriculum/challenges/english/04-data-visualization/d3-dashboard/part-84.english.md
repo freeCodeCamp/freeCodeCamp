@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Add two `attr` functions that set the `width` and `height` of the `svg` to `200`.
+Add two `attr` functions that set the `width` and `height` of the new SVG to `200`.
 </section>
 
 ## Instructions
@@ -46,7 +46,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -217,7 +217,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',

@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-The line graph is looking good. All that empty space to the right will be for a pie graph and a legend. First, you are going to add a `div` for them. Create a new `const` named `rightDashboard` and set equal to `d3.select('.dashboard')`.
+The line graph is looking good. All the empty space to the right will be for the pie graph and legend. Create a new `const` named `rightDashboard` and set equal to `d3.select('.dashboard')`. This will select your dashboard container again which currently only has the SVG element as a child.
 </section>
 
 ## Instructions
@@ -46,7 +46,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -212,7 +212,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',

@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-The "year" values of your data will be used for the x-scale. Chain the `domain` function to `xScale` and pass it an array with the first and last years of your data.
+The `year` values of your data will be used for the x-scale. Chain the `domain` function to `xScale` and pass it an array with the first and last years of your data.
 </section>
 
 ## Instructions
@@ -46,7 +46,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -125,7 +125,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',

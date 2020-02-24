@@ -1,5 +1,5 @@
 ---
-id: 5d8a4cfbe6b6180ed9a1ca6b
+id: 5d8a4cfbe6b6180ed9a1ca6d
 title: Part 141
 challengeType: 0
 isBeta: true
@@ -8,13 +8,18 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Go to where you `call` the `xAxis` and create a `mouseover` event for the labels. Chain the `on` function to them, pass it the string `mouseover`, and give it a value of a "`d` function" that calls `drawDashboard` with `d` as the argument. It will look like this:
+Now when you hover a label, you can see the data for the different years.
+
+Where you created the `text` elements for the x-axis labels, change the `font` to `bold 10px verdana` for the currently displayed year.
+
+To do this, create a "d function" in the `font` value area and return the above sting if `d` equals `year`. Otherwise, return the string that is currently there (`10px verdana`). It's easiest to use a ternary operator for this.
+
+Here's a hint: 
 
 ```js
-.on('mouseover', d => drawDashboard(d))
+.style('font', d => d === year ? )
 ```
 
-So now, when you hover a label, the function will be called with the year that is being hovered.
 </section>
 
 ## Instructions
@@ -27,7 +32,7 @@ So now, when you hover a label, the function will be called with the year that i
 ```yml
 tests:
   - text: test-text
-    testString: const script = $('.dashboard').siblings('script')[1].innerHTML; assert(/\.on\(('|"|`)mouseover\1, function \(d\) \{\s*return drawDashboard\(d\);\s*\}\)/g.test(script));
+    testString: assert(Object.values($('.dashboard svg g text')).filter(el => el.style && el.style.font.toLowerCase() === 'bold 10px verdana').length === 1);
 
 ```
 
@@ -53,9 +58,10 @@ tests:
 </script>
 <script>
   function drawDashboard(year) {
+    d3.select('.dashboard').html('');
     const index = data.findIndex(d => d.year === year);
 
-    const svgMargin = 60,
+    const svgMargin = 70,
       svgWidth = 700,
       svgHeight = 500,
       twitterColor = '#7cd9d1',
@@ -97,7 +103,7 @@ tests:
       .style('font', '10px verdana')
 
 
-
+      .on('mouseover', d => drawDashboard(d));
 
     const twitterLine = d3.line()
       .x(d => xScale(d.year))
@@ -194,10 +200,7 @@ tests:
       .attr('stroke', 'white')
       .attr('stroke-width', 2);
 
-    pieGraphData.selectAll('pieSliceText')
-      .data(pie(d3.entries(data[index].followers)))
-      .enter()
-      .append('text')
+    pieGraphData.append('text')
       .text(d => {
         const values = d3.values(data[index].followers);
         const sum = d3.sum(values);
@@ -307,12 +310,10 @@ tests:
 </script>
 <script>
   function drawDashboard(year) {
-
-
-
+    d3.select('.dashboard').html('');
     const index = data.findIndex(d => d.year === year);
 
-    const svgMargin = 60,
+    const svgMargin = 70,
       svgWidth = 700,
       svgHeight = 500,
       twitterColor = '#7cd9d1',
@@ -351,7 +352,7 @@ tests:
       .style('transform', 'translate(-12px, 0) rotate(-50deg)')
       .style('text-anchor', 'end')
       .style('cursor', 'pointer')
-      .style('font', '10px verdana')
+      .style('font', d => d === year ? 'bold 10px verdana' : '10px verdana')
       .on('mouseover', d => drawDashboard(d));
 
     const twitterLine = d3.line()
@@ -394,6 +395,8 @@ tests:
       .attr('fill', 'white')
       .attr('stroke', twitterColor)
       .style('cursor', 'pointer')
+
+  
 
     lineGraph.selectAll('tumblr-circles')
       .data(data)
@@ -449,10 +452,7 @@ tests:
       .attr('stroke', 'white')
       .attr('stroke-width', 2);
 
-    pieGraphData.selectAll('pieSliceText')
-      .data(pie(d3.entries(data[index].followers)))
-      .enter()
-      .append('text')
+    pieGraphData.append('text')
       .text(d => {
         const values = d3.values(data[index].followers);
         const sum = d3.sum(values);

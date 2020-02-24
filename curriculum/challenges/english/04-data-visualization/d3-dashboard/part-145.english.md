@@ -1,5 +1,5 @@
 ---
-id: 5d8a4cfbe6b6180ed9a1ca6f
+id: 5d8a4cfbe6b6180ed9a1ca71
 title: Part 145
 challengeType: 0
 isBeta: true
@@ -8,7 +8,9 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Similar to how you made the text bold for the label of the displayed year; change the `fill` of the `twitter-circles` to your `twitterColor` for the currently displayed year. To do this, use a "`d` function" that returns the `twitterColor` when `d.year` equals `year`, and leave it `white` if it doesn't.
+Change the `fill` of the `tumblr-circles` and `instagram-circles` to use a "d function" that returns their respective color variables when `d.year` equals `year`, leave it `white` when they don't. This is similar to how you set the fill of the Twitter circles.
+
+Then, all of the circles will get filled in for the currently displayed year.
 </section>
 
 ## Instructions
@@ -21,7 +23,7 @@ Similar to how you made the text bold for the label of the displayed year; chang
 ```yml
 tests:
   - text: test-text
-    testString: assert(Object.values($('.dashboard svg circle')).filter(el => el.getAttribute && el.getAttribute('fill') === '#7cd9d1').length === 1);
+    testString: const circles = Object.values($('.dashboard svg circle')); assert(circles.filter(el => el.getAttribute && (el.getAttribute('fill') === '#7cd9d1' || el.getAttribute('fill') === '#f6dd71' || el.getAttribute('fill') === '#fd9b98')).length === 3);
 
 ```
 
@@ -50,7 +52,7 @@ tests:
     d3.select('.dashboard').html('');
     const index = data.findIndex(d => d.year === year);
 
-    const svgMargin = 60,
+    const svgMargin = 70,
       svgWidth = 700,
       svgHeight = 500,
       twitterColor = '#7cd9d1',
@@ -129,9 +131,7 @@ tests:
       .attr('cx', d => xScale(d.year))
       .attr('cy', d => yScale(d.followers.twitter))
       .attr('r', 6)
-      .attr('fill', 'white')
-
-
+      .attr('fill', d => d.year === year ? twitterColor : 'white')
       .attr('stroke', twitterColor)
       .style('cursor', 'pointer')
       .on('mouseover', d => drawDashboard(d.year));
@@ -144,8 +144,11 @@ tests:
       .attr('cy', d => yScale(d.followers.tumblr))
       .attr('r', 6)
       .attr('fill', 'white')
+
+
       .attr('stroke', tumblrColor)
       .style('cursor', 'pointer')
+      .on('mouseover', d => drawDashboard(d.year));
 
     lineGraph.selectAll('instagram-circles')
       .data(data)
@@ -155,8 +158,11 @@ tests:
       .attr('cy', d => yScale(d.followers.instagram))
       .attr('r', 6)
       .attr('fill', 'white')
+
+
       .attr('stroke', instagramColor)
       .style('cursor', 'pointer')
+      .on('mouseover', d => drawDashboard(d.year));
 
     const rightDashboard = d3.select('.dashboard')
       .append('div');
@@ -190,10 +196,7 @@ tests:
       .attr('stroke', 'white')
       .attr('stroke-width', 2);
 
-    pieGraphData.selectAll('pieSliceText')
-      .data(pie(d3.entries(data[index].followers)))
-      .enter()
-      .append('text')
+    pieGraphData.append('text')
       .text(d => {
         const values = d3.values(data[index].followers);
         const sum = d3.sum(values);
@@ -306,7 +309,7 @@ tests:
     d3.select('.dashboard').html('');
     const index = data.findIndex(d => d.year === year);
 
-    const svgMargin = 60,
+    const svgMargin = 70,
       svgWidth = 700,
       svgHeight = 500,
       twitterColor = '#7cd9d1',
@@ -397,11 +400,10 @@ tests:
       .attr('cx', d => xScale(d.year))
       .attr('cy', d => yScale(d.followers.tumblr))
       .attr('r', 6)
-      .attr('fill', 'white')
+      .attr('fill', d => d.year === year ? tumblrColor : 'white')
       .attr('stroke', tumblrColor)
       .style('cursor', 'pointer')
-
-
+      .on('mouseover', d => drawDashboard(d.year));
 
     lineGraph.selectAll('instagram-circles')
       .data(data)
@@ -410,11 +412,10 @@ tests:
       .attr('cx', d => xScale(d.year))
       .attr('cy', d => yScale(d.followers.instagram))
       .attr('r', 6)
-      .attr('fill', 'white')
+      .attr('fill', d => d.year === year ? instagramColor : 'white')
       .attr('stroke', instagramColor)
       .style('cursor', 'pointer')
-
-
+      .on('mouseover', d => drawDashboard(d.year));
 
     const rightDashboard = d3.select('.dashboard')
       .append('div');
@@ -448,10 +449,7 @@ tests:
       .attr('stroke', 'white')
       .attr('stroke-width', 2);
 
-    pieGraphData.selectAll('pieSliceText')
-      .data(pie(d3.entries(data[index].followers)))
-      .enter()
-      .append('text')
+    pieGraphData.append('text')
       .text(d => {
         const values = d3.values(data[index].followers);
         const sum = d3.sum(values);
@@ -473,6 +471,8 @@ tests:
       .append('tr')
       .append('th')
       .text('2020 followers')
+
+
       .attr('colspan', 3)
       .style('position', 'relative')
       .style('left', '20px');

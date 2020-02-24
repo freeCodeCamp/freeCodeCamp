@@ -10,7 +10,7 @@ isBeta: true
 
 The pie chart needs a new scale to set the colors. Create a new `const` named `pieColors` and set it equal to `d3.scaleOrdinal()`. An ordinal scale is for a set of data that will have exactly one item in the range specifically for it.
   
-In this case, each platform of followers you have will map directly to a single color.
+In this case, each platform of followers you have will map directly to a single color with nothing in between.
 </section>
 
 ## Instructions
@@ -48,7 +48,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -225,7 +225,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',

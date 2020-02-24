@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Add the `data` function to the selection. Pass it your `pie` variable with an empty array for now. The next step will get the correct array to put there.
+Add the `data` function to the selection. Pass it your `pie` function with an empty array as its argument for now. The next step will get the correct array to put there.
 </section>
 
 ## Instructions
@@ -46,7 +46,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -232,7 +232,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',

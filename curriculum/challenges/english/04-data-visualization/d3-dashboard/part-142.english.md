@@ -1,5 +1,5 @@
 ---
-id: 5d8a4cfbe6b6180ed9a1ca6c
+id: 5d8a4cfbe6b6180ed9a1ca6e
 title: Part 142
 challengeType: 0
 isBeta: true
@@ -8,9 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-There's a problem, each time you hover a label it adds all the elements to the container again. If you empty the container at the top of the function, it will redraw them where they need to be.
-
-Go back to the top of the function and use `d3.select` to select the `.dashboard` element and chain the `html` function to it with an empty string as it parameter. Empty means no spaces.
+Create another `mouseover` event for when you hover one of the `twitter-circles`. It will look like the other `mouseover` event you created except the `drawDashboard` function will take `d.year` instead of `d`.
 </section>
 
 ## Instructions
@@ -23,7 +21,7 @@ Go back to the top of the function and use `d3.select` to select the `.dashboard
 ```yml
 tests:
   - text: test-text
-    testString: const script = $('.dashboard').siblings('script')[1].innerHTML; assert(/d3\.select\(('|"|`)\.dashboard\1\)\.html\(('|"|`)\2\)/g.test(script));
+    testString: const script = $('.dashboard').siblings('script')[1].innerHTML; assert(/\.on\(('|"|`)mouseover\1, function \(d\) \{\s*return drawDashboard\(d\.year\);\s*\}\)/g.test(script));
 
 ```
 
@@ -49,12 +47,10 @@ tests:
 </script>
 <script>
   function drawDashboard(year) {
-
-
-
+    d3.select('.dashboard').html('');
     const index = data.findIndex(d => d.year === year);
 
-    const svgMargin = 60,
+    const svgMargin = 70,
       svgWidth = 700,
       svgHeight = 500,
       twitterColor = '#7cd9d1',
@@ -93,7 +89,7 @@ tests:
       .style('transform', 'translate(-12px, 0) rotate(-50deg)')
       .style('text-anchor', 'end')
       .style('cursor', 'pointer')
-      .style('font', '10px verdana')
+      .style('font', d => d === year ? 'bold 10px verdana' : '10px verdana')
       .on('mouseover', d => drawDashboard(d));
 
     const twitterLine = d3.line()
@@ -136,6 +132,8 @@ tests:
       .attr('fill', 'white')
       .attr('stroke', twitterColor)
       .style('cursor', 'pointer')
+
+  
 
     lineGraph.selectAll('tumblr-circles')
       .data(data)
@@ -191,10 +189,7 @@ tests:
       .attr('stroke', 'white')
       .attr('stroke-width', 2);
 
-    pieGraphData.selectAll('pieSliceText')
-      .data(pie(d3.entries(data[index].followers)))
-      .enter()
-      .append('text')
+    pieGraphData.append('text')
       .text(d => {
         const values = d3.values(data[index].followers);
         const sum = d3.sum(values);
@@ -307,7 +302,7 @@ tests:
     d3.select('.dashboard').html('');
     const index = data.findIndex(d => d.year === year);
 
-    const svgMargin = 60,
+    const svgMargin = 70,
       svgWidth = 700,
       svgHeight = 500,
       twitterColor = '#7cd9d1',
@@ -346,9 +341,7 @@ tests:
       .style('transform', 'translate(-12px, 0) rotate(-50deg)')
       .style('text-anchor', 'end')
       .style('cursor', 'pointer')
-      .style('font', '10px verdana')
-
-
+      .style('font', d => d === year ? 'bold 10px verdana' : '10px verdana')
       .on('mouseover', d => drawDashboard(d));
 
     const twitterLine = d3.line()
@@ -389,8 +382,11 @@ tests:
       .attr('cy', d => yScale(d.followers.twitter))
       .attr('r', 6)
       .attr('fill', 'white')
+
+
       .attr('stroke', twitterColor)
       .style('cursor', 'pointer')
+      .on('mouseover', d => drawDashboard(d.year));
 
     lineGraph.selectAll('tumblr-circles')
       .data(data)
@@ -446,10 +442,7 @@ tests:
       .attr('stroke', 'white')
       .attr('stroke-width', 2);
 
-    pieGraphData.selectAll('pieSliceText')
-      .data(pie(d3.entries(data[index].followers)))
-      .enter()
-      .append('text')
+    pieGraphData.append('text')
       .text(d => {
         const values = d3.values(data[index].followers);
         const sum = d3.sum(values);

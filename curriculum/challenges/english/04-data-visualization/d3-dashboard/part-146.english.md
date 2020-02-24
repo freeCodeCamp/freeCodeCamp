@@ -1,5 +1,5 @@
 ---
-id: 5d8a4cfbe6b6180ed9a1ca70
+id: 5d8a4cfbe6b6180ed9a1ca72
 title: Part 146
 challengeType: 0
 isBeta: true
@@ -8,9 +8,9 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Add a `mouseover` event to the `tumblr-circles` and `instagram-circles` in the same way that you did for the `twitter-circles`.
+The last thing is that the legend title always shows 2020. Change the `text` of the `legendTitle` to a template literal that shows the currently displayed year followed by a space and `followers`.
 
-After that, you will be able hover any of the circles or year labels to get the information for that year.
+That's it, your dashboard is finished! Don't forget to admire your hard work.
 </section>
 
 ## Instructions
@@ -23,7 +23,7 @@ After that, you will be able hover any of the circles or year labels to get the 
 ```yml
 tests:
   - text: test-text
-    testString: const script = $('.dashboard').siblings('script')[1].innerHTML; assert(script.match(/\.on\(('|"|`)mouseover\1, function \(d\) \{\s*return drawDashboard\(d\.year\);\s*\}\)/g).length === 3);
+    testString: assert(/\.text\s*\(\s*`\s*\$\{\s*year\s*\} followers`\s*\)/g.test(code));
 
 ```
 
@@ -52,7 +52,7 @@ tests:
     d3.select('.dashboard').html('');
     const index = data.findIndex(d => d.year === year);
 
-    const svgMargin = 60,
+    const svgMargin = 70,
       svgWidth = 700,
       svgHeight = 500,
       twitterColor = '#7cd9d1',
@@ -143,11 +143,10 @@ tests:
       .attr('cx', d => xScale(d.year))
       .attr('cy', d => yScale(d.followers.tumblr))
       .attr('r', 6)
-      .attr('fill', 'white')
+      .attr('fill', d => d.year === year ? tumblrColor : 'white')
       .attr('stroke', tumblrColor)
       .style('cursor', 'pointer')
-
-
+      .on('mouseover', d => drawDashboard(d.year));
 
     lineGraph.selectAll('instagram-circles')
       .data(data)
@@ -156,11 +155,10 @@ tests:
       .attr('cx', d => xScale(d.year))
       .attr('cy', d => yScale(d.followers.instagram))
       .attr('r', 6)
-      .attr('fill', 'white')
+      .attr('fill', d => d.year === year ? instagramColor : 'white')
       .attr('stroke', instagramColor)
       .style('cursor', 'pointer')
-
-
+      .on('mouseover', d => drawDashboard(d.year));
 
     const rightDashboard = d3.select('.dashboard')
       .append('div');
@@ -194,10 +192,7 @@ tests:
       .attr('stroke', 'white')
       .attr('stroke-width', 2);
 
-    pieGraphData.selectAll('pieSliceText')
-      .data(pie(d3.entries(data[index].followers)))
-      .enter()
-      .append('text')
+    pieGraphData.append('text')
       .text(d => {
         const values = d3.values(data[index].followers);
         const sum = d3.sum(values);
@@ -219,6 +214,8 @@ tests:
       .append('tr')
       .append('th')
       .text('2020 followers')
+
+
       .attr('colspan', 3)
       .style('position', 'relative')
       .style('left', '20px');
@@ -310,7 +307,7 @@ tests:
     d3.select('.dashboard').html('');
     const index = data.findIndex(d => d.year === year);
 
-    const svgMargin = 60,
+    const svgMargin = 70,
       svgWidth = 700,
       svgHeight = 500,
       twitterColor = '#7cd9d1',
@@ -401,9 +398,7 @@ tests:
       .attr('cx', d => xScale(d.year))
       .attr('cy', d => yScale(d.followers.tumblr))
       .attr('r', 6)
-      .attr('fill', 'white')
-
-
+      .attr('fill', d => d.year === year ? tumblrColor : 'white')
       .attr('stroke', tumblrColor)
       .style('cursor', 'pointer')
       .on('mouseover', d => drawDashboard(d.year));
@@ -415,9 +410,7 @@ tests:
       .attr('cx', d => xScale(d.year))
       .attr('cy', d => yScale(d.followers.instagram))
       .attr('r', 6)
-      .attr('fill', 'white')
-
-
+      .attr('fill', d => d.year === year ? instagramColor : 'white')
       .attr('stroke', instagramColor)
       .style('cursor', 'pointer')
       .on('mouseover', d => drawDashboard(d.year));
@@ -454,10 +447,7 @@ tests:
       .attr('stroke', 'white')
       .attr('stroke-width', 2);
 
-    pieGraphData.selectAll('pieSliceText')
-      .data(pie(d3.entries(data[index].followers)))
-      .enter()
-      .append('text')
+    pieGraphData.append('text')
       .text(d => {
         const values = d3.values(data[index].followers);
         const sum = d3.sum(values);
@@ -478,7 +468,9 @@ tests:
     const legendTitle = legend.append('thead')
       .append('tr')
       .append('th')
-      .text('2020 followers')
+      .text(`${year} followers`)
+
+
       .attr('colspan', 3)
       .style('position', 'relative')
       .style('left', '20px');

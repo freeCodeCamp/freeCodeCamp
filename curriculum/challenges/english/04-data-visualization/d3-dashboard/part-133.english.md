@@ -1,5 +1,5 @@
 ---
-id: 5d8a4cfbe6b6180ed9a1ca62
+id: 5d8a4cfbe6b6180ed9a1ca64
 title: Part 133
 challengeType: 0
 isBeta: true
@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Set the `text` to a "`d` function" that returns the `value` for each data point.
+The legend has all the information is needs, but the title looks a little misaligned. Go to where you created your  `legendTitle` variable and set the `position` to `relative` and the `left` to `20px` using `style` functions.
 </section>
 
 ## Instructions
@@ -21,7 +21,7 @@ Set the `text` to a "`d` function" that returns the `value` for each data point.
 ```yml
 tests:
   - text: test-text
-    testString: assert($('.dashboard div table tbody tr td')[2].innerHTML === '2845');
+    testString: const th = $('.dashboard div table thead tr th')[0]; assert(th.style.position === 'relative' && th.style.left === '20px');
 
 ```
 
@@ -46,7 +46,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -180,10 +180,7 @@ tests:
     .attr('stroke', 'white')
     .attr('stroke-width', 2);
 
-  pieGraphData.selectAll('pieSliceText')
-    .data(pie(d3.entries(data[8].followers)))
-    .enter()
-    .append('text')
+  pieGraphData.append('text')
     .text(d => {
       const values = d3.values(data[8].followers);
       const sum = d3.sum(values);
@@ -205,6 +202,7 @@ tests:
     .text('2020 followers')
     .attr('colspan', 3)
 
+
   const legendRows = legend.append('tbody')
     .selectAll('tr')
     .data(d3.entries(data[8].followers))
@@ -223,9 +221,8 @@ tests:
     .style('background-color', d => pieColors(d.key))
 
   legendRows.append('td')
-
-
-
+    .text(d => d.value)
+    .attr('align', 'left');
 </script>
 ```
 
@@ -286,7 +283,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -420,10 +417,7 @@ tests:
     .attr('stroke', 'white')
     .attr('stroke-width', 2);
 
-  pieGraphData.selectAll('pieSliceText')
-    .data(pie(d3.entries(data[8].followers)))
-    .enter()
-    .append('text')
+  pieGraphData.append('text')
     .text(d => {
       const values = d3.values(data[8].followers);
       const sum = d3.sum(values);
@@ -439,11 +433,14 @@ tests:
     .attr('height', 120)
     .style('font', '12px verdana')
 
+
   const legendTitle = legend.append('thead')
     .append('tr')
     .append('th')
     .text('2020 followers')
     .attr('colspan', 3)
+    .style('position', 'relative')
+    .style('left', '20px');
 
   const legendRows = legend.append('tbody')
     .selectAll('tr')
@@ -464,9 +461,7 @@ tests:
 
   legendRows.append('td')
     .text(d => d.value)
-
-
-
+    .attr('align', 'left');
 </script>
 ```
 

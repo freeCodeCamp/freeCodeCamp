@@ -1,5 +1,5 @@
 ---
-id: 5d8a4cfbe6b6180ed9a1ca5f
+id: 5d8a4cfbe6b6180ed9a1ca61
 title: Part 130
 challengeType: 0
 isBeta: true
@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Set the `width` to `16px` and the `height` to `16px` using the `style` function.
+On a new line, append another `td` to the `legendRows` variable for the last group of items. It will display the number of followers for each platform.
 </section>
 
 ## Instructions
@@ -21,7 +21,7 @@ Set the `width` to `16px` and the `height` to `16px` using the `style` function.
 ```yml
 tests:
   - text: test-text
-    testString: const div = $('.dashboard div table tbody tr td div')[0]; assert(div.style.width == '16px' && div.style.height === '16px');
+    testString: assert($('.dashboard div table tbody tr td').length === 9);
 
 ```
 
@@ -46,7 +46,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -180,10 +180,7 @@ tests:
     .attr('stroke', 'white')
     .attr('stroke-width', 2);
 
-  pieGraphData.selectAll('pieSliceText')
-    .data(pie(d3.entries(data[8].followers)))
-    .enter()
-    .append('text')
+  pieGraphData.append('text')
     .text(d => {
       const values = d3.values(data[8].followers);
       const sum = d3.sum(values);
@@ -218,6 +215,9 @@ tests:
   legendRows.append('td')
     .attr('align', 'center')
     .append('div')
+    .style('width', '16px')
+    .style('height', '16px')
+    .style('background-color', d => pieColors(d.key))
 
 
 
@@ -281,7 +281,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -415,10 +415,7 @@ tests:
     .attr('stroke', 'white')
     .attr('stroke-width', 2);
 
-  pieGraphData.selectAll('pieSliceText')
-    .data(pie(d3.entries(data[8].followers)))
-    .enter()
-    .append('text')
+  pieGraphData.append('text')
     .text(d => {
       const values = d3.values(data[8].followers);
       const sum = d3.sum(values);
@@ -455,6 +452,9 @@ tests:
     .append('div')
     .style('width', '16px')
     .style('height', '16px')
+    .style('background-color', d => pieColors(d.key))
+
+  legendRows.append('td')
 
 
 

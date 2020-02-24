@@ -8,9 +8,11 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Now that the scale has a domain, it needs to know how to map that data to display on the graph. The `range` function is used to do this. Since this is the y-scale, you want the `0` in your domain to be at the bottom of the graph, and the `5000` to be at the top. Chain the `range` function below the `domain` and pass it an array with `svgHeight - svgMargin` and `svgMargin` as the values.
+The `range` function describes how to map the domain values for display on the graph. For example, a value of 5000 followers can't use 5000 as it y-coordinate on the SVG or it would be off the graph. You need to tell the range where the top and bottom of the graph is so the scale can give appropriate values for the y-coordinate.
 
-Your graph will have a margin around it for things like axes and labels. The actual line data will display on the inside of this margin area, which is why you use those values. It might sound confusing right now, but it will become more clear as you progress through this project.
+Chain the `range` function below the `domain` and pass it an array with `svgHeight - svgMargin` and `svgMargin` as the values. That will translate to `[430, 70]`. This is where the top and bottom of the graph are. So a data point of 5000 followers will map to a value of 430 to use as its y-coordinate and 0 followers will use 70 as its y-coordinate. Any value in between will scale linearly.
+
+Your graph will have a margin around it for things like axes and labels. The actual line data will display on the inside of this margin area, which is why you use those values. This will become more clear as you progress through the project.
 </section>
 
 ## Instructions
@@ -23,7 +25,7 @@ Your graph will have a margin around it for things like axes and labels. The act
 ```yml
 tests:
   - text: test-text
-    testString: const range = yScale.range(); assert(range.length === 2 && range[0] === 440 && range[1] === 60);
+    testString: const range = yScale.range(); assert(range.length === 2 && range[0] === 430 && range[1] === 70);
 ```
 
 </section>
@@ -47,7 +49,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -123,7 +125,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',

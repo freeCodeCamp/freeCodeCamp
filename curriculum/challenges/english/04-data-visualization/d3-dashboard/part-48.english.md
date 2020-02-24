@@ -8,9 +8,11 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Tell the path what data to use. Add an `attr` function and set the `d` to `twitterLine(data)`. This will the build the path using the `twitterLine` function you created and your `data` variable.
+Tell the path what data to use. Add an `attr` function and set the `d` to `twitterLine(data)`. This will the build the path using the `twitterLine` function you created and your data variable.
 
-Note that the `d` in this case is a `path` attribute for drawing a line and is different from the "`d` functions" you have been using.
+Note that the `d` in this case is a path attribute for drawing a line and is different from a "d function".
+
+After you have added your code, take a look at the data flow to help understand what is happening. You pass the data array to your `twitterLine` function where it sets the x and y values using your "d functions". The "d functions" go through each item in the array, passing part of the item to each scale to find the appropriate coordinates. When it's done, the value you are setting here is created and sent back. The result ends up being a confusing string of numbers and coordinates to tell the path how to be drawn.
 </section>
 
 ## Instructions
@@ -23,7 +25,7 @@ Note that the `d` in this case is a `path` attribute for drawing a line and is d
 ```yml
 tests:
   - text: test-text
-    testString: assert($('svg path')[2].getAttribute('d').length === 170);
+    testString: assert($('svg path')[2].getAttribute('d').length === 151);
 
 ```
 
@@ -48,7 +50,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -156,7 +158,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',

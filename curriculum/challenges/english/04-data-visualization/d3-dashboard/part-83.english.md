@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Create a new `const` named `pieGraph` and set it equal to `rightDashboard.append('svg')`. This will add another `svg` element for the pie graph.
+Create a new `const` named `pieGraph` and set it equal to `rightDashboard.append('svg')`. This will add an SVG element for the pie graph as a child of the div you just added. The pie graph will have three slices, one for each platform. It will display a percentage of how many followers each platform has for the displayed year.
 </section>
 
 ## Instructions
@@ -46,7 +46,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -215,7 +215,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',

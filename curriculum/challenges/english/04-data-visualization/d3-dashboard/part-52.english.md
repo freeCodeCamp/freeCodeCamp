@@ -8,9 +8,9 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Set the `y` values for `tumblrLine` using a "`d` function" again. Use your `yScale` and `d.followers.tumblr` to calculcate their values just like you did for the Twitter line.
+Set the `y` values for `tumblrLine` using a "d function" again. Use your `yScale` and `d.followers.tumblr` to calculcate their values just like you did for the Twitter line.
 
-The `x` values for each line will be the same, but the `y` values will use the data from the different platforms.
+The x values for each line will be the same, but the y values will use the data from the different platforms.
 </section>
 
 ## Instructions
@@ -48,7 +48,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -163,7 +163,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',

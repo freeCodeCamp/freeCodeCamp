@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-The circles are now visible, but they look a little rough. Set the `fill` to `white` and the `stroke` to your `twitterColor` variable.
+The circles are now visible, but I don't like the color. Use the appropriate function to set the `fill` to `white` and the `stroke` to your `twitterColor` variable.
 </section>
 
 ## Instructions
@@ -46,7 +46,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -187,7 +187,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',

@@ -1,5 +1,5 @@
 ---
-id: 5d8a4cfbe6b6180ed9a1ca45
+id: 5d8a4cfbe6b6180ed9a1ca47
 title: Part 104
 challengeType: 0
 isBeta: true
@@ -8,7 +8,20 @@ isBeta: true
 ## Description
 <section id='description'>
 
-The data for the labels will be the same as for the slices themselves. Add the `data` function and pass the same `pie(d3.entries(data[8].followers))` value that you gave the `pieSlices` data.
+Chain a `text` function to set the text of each pie slice to a percentage. Set the value to a "d function" with curly brackets and leave the function empty for now. It should look like this:
+
+```js
+.text(d => {
+
+})
+```
+
+The method for getting the percent of each slice will take a few steps:
+
+1. Find the total number of followers for the displayed year
+2. Divide the followers of a single platform by that total
+3. Turn it into a string to display
+
 </section>
 
 ## Instructions
@@ -21,7 +34,7 @@ The data for the labels will be the same as for the slices themselves. Add the `
 ```yml
 tests:
   - text: test-text
-    testString: assert(/pieGraphData\.selectAll\((`|'|")pieSliceText\1\)\s*\.\s*data\s*\(pie\s*\(\s*d3\s*\.\s*entries\s*\(\s*data\s*\[\s*8\s*\]\s*\.\s*followers\s*\)\s*\)\s*\)/g.test(code));
+    testString: assert(/\.append\('text'\)\s*\.text\s*\(\s*d\s*=>\s*\{\s*\}\s*\)/g.test(code));
 
 ```
 
@@ -46,7 +59,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -180,7 +193,7 @@ tests:
     .attr('stroke', 'white')
     .attr('stroke-width', 2);
 
-  pieGraphData.selectAll('pieSliceText')
+  pieGraphData.append('text')
 
 
 
@@ -244,7 +257,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -378,11 +391,12 @@ tests:
     .attr('stroke', 'white')
     .attr('stroke-width', 2);
 
-  pieGraphData.selectAll('pieSliceText')
-    .data(pie(d3.entries(data[8].followers)))
+  pieGraphData.append('text')
+    .text(d => {
 
 
 
+    })
 </script>
 ```
 

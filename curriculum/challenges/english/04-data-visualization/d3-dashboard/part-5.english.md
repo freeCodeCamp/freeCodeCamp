@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Next, add a container for the dashboard. Put an empty `div` element in the body with class of `dashboard`.
+Next, add a container for the dashboard. Put an empty `div` element in the body with class of `dashboard`. You will be appending all the dashboard elements to this div.
 </section>
 
 ## Instructions

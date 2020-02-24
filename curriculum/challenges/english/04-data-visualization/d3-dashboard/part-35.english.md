@@ -21,7 +21,7 @@ The axis has the right size and labels, but needs to be moved down. Use the `att
 ```yml
 tests:
   - text: test-text
-    testString: assert($("svg > g")[1].attributes.transform.nodeValue === "translate(0, 440)");
+    testString: assert($("svg > g")[1].attributes.transform.nodeValue === "translate(0, 430)");
 
 ```
 
@@ -46,7 +46,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -139,7 +139,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',

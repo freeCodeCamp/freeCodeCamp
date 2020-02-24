@@ -1,5 +1,5 @@
 ---
-id: 5d8a4cfbe6b6180ed9a1ca57
+id: 5d8a4cfbe6b6180ed9a1ca59
 title: Part 122
 challengeType: 0
 isBeta: true
@@ -8,7 +8,7 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Use the `data` function to set the data for the rows to an array of your 2020 followers. To get the array use `d3.entries(data[8].followers)`. Remember, this will create an array of key/value pairs of your followers.
+On a new line, `append` a `td` to your `legendRows` variable. `td` is for an individual cell in the row of the table.
 </section>
 
 ## Instructions
@@ -21,7 +21,7 @@ Use the `data` function to set the data for the rows to an array of your 2020 fo
 ```yml
 tests:
   - text: test-text
-    testString: assert(/\.selectAll\('tr'\)\s*\.\s*data\s*\(\s*d3\s*\.\s*entries\s*\(\s*data\s*\[\s*8\s*\]\s*\.\s*followers\s*\)\s*\)/g.test(code));
+    testString: assert($('.dashboard div table tbody tr td').length === 3);
 
 ```
 
@@ -46,7 +46,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -180,10 +180,7 @@ tests:
     .attr('stroke', 'white')
     .attr('stroke-width', 2);
 
-  pieGraphData.selectAll('pieSliceText')
-    .data(pie(d3.entries(data[8].followers)))
-    .enter()
-    .append('text')
+  pieGraphData.append('text')
     .text(d => {
       const values = d3.values(data[8].followers);
       const sum = d3.sum(values);
@@ -207,6 +204,11 @@ tests:
 
   const legendRows = legend.append('tbody')
     .selectAll('tr')
+    .data(d3.entries(data[8].followers))
+    .enter()
+    .append('tr');
+
+
 
 
 </script>
@@ -269,7 +271,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -403,10 +405,7 @@ tests:
     .attr('stroke', 'white')
     .attr('stroke-width', 2);
 
-  pieGraphData.selectAll('pieSliceText')
-    .data(pie(d3.entries(data[8].followers)))
-    .enter()
-    .append('text')
+  pieGraphData.append('text')
     .text(d => {
       const values = d3.values(data[8].followers);
       const sum = d3.sum(values);
@@ -431,6 +430,10 @@ tests:
   const legendRows = legend.append('tbody')
     .selectAll('tr')
     .data(d3.entries(data[8].followers))
+    .enter()
+    .append('tr');
+
+  legendRows.append('td')
 
 
 

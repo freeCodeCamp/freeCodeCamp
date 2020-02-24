@@ -8,9 +8,11 @@ isBeta: true
 ## Description
 <section id='description'>
 
-The script at the top is the `data.js` file you added. I have placed it here so you can see the data. The second script is the one you just added and where you will build the rest of the project.
+The script at the top is the `data.js` file you added. I have placed it here so you can see the data and recommend taking a look at it. The second script is the one you just added and where you will build the rest of the project.
 
-Create three `const` variables; `svgMargin` with a value of `70`, `svgWidth` with a value of `700`, and `svgHeight` equal to `500`. The first part of the dashboard will be a line graph. It will use these variables as its dimensions.
+In the second script, create three `const` variables; `svgMargin` with a value of `70`, `svgWidth` with a value of `700`, and `svgHeight` equal to `500`. The first part of the dashboard will be a line graph. It will use these variables as its dimensions.
+
+The line graph will have the years from your data variable across the bottom, and a scale on the left to show the numbers of followers. Each platform will have a line going across the graph that shows how many followers you had for each year.
 </section>
 
 ## Instructions

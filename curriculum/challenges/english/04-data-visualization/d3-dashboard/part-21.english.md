@@ -7,9 +7,10 @@ isBeta: true
 
 ## Description
 <section id='description'>
-Your line graph needs some scales so it knows how to translate the data into visual distances.
 
-Create a new `const` named `yScale`, and set it equal to `d3.scaleLinear()`. This will be a linear scale for the vertical or "y" axis of the line graph.
+Your line graph needs some scales so it knows how to translate the data into visual distances. The first one is the scale for the y-axis. It will be to show the number of followers. D3 has many utilities for creating scales. You want to use it's `scaleLinear` method for this scale.
+
+Create a new `const` named `yScale`, and set it equal to `d3.scaleLinear()`.
 </section>
 
 ## Instructions
@@ -47,7 +48,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -120,7 +121,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',

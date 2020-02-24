@@ -8,7 +8,9 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Next, set the `cy` attribute using the Twitter data like you did for the `y` of `twitterLine`.
+Next, set the `cy` attribute to `d => xScale(d.followers.twitter)`.
+
+As a reminder, this will pass each value of your Twitter followers to the `xScale` function where it will determine the y coordinate to use.
 </section>
 
 ## Instructions
@@ -21,7 +23,7 @@ Next, set the `cy` attribute using the Twitter data like you did for the `y` of 
 ```yml
 tests:
   - text: test-text
-    testString: assert($('svg circle')[0].getAttribute('cy') == '242.856');
+    testString: assert($('svg circle')[0].getAttribute('cy') == '243.232');
 
 ```
 
@@ -46,7 +48,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -185,7 +187,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',

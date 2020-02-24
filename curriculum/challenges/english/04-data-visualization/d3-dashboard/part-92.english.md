@@ -8,7 +8,9 @@ isBeta: true
 ## Description
 <section id='description'>
 
-Chain a `value` function to `pie` and pass it `d => d.value`. Each piece of data(`d`) passed to `pie` will have a `key`(platform) and a `value`(number of followers), you want to return the value here.
+Chain a `value` function to `pie` and pass it `d => d.value`. Each piece of data(`d`) will have a `key`(platform) and a `value`(number of followers), you want to return the number of followers here. The pie function will create an array of objects from these values that describe the angles and sizes the pie chart needs.
+
+In a few steps, you will make an array out of your data variable that will be passed to this function.
 </section>
 
 ## Instructions
@@ -46,7 +48,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
@@ -229,7 +231,7 @@ tests:
   ];
 </script>
 <script>
-  const svgMargin = 60,
+  const svgMargin = 70,
     svgWidth = 700,
     svgHeight = 500,
     twitterColor = '#7cd9d1',
