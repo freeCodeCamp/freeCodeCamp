@@ -11,5 +11,8 @@
   "jsAlgoDataStructId": "561abd10cb81ac38a17513bc",
   "apisMicroservicesId": "561add10cb82ac38a17523bc",
   "infosecQaId": "561add10cb82ac38a17213bc",
-  "fullStackId": "561add10cb82ac38a17213bd"
+  "fullStackId": "561add10cb82ac38a17213bd",
+  "sciCompPyId": "5e44431b903586ffb414c951",
+  "dataAnalysisPyId": "5e46fc95ac417301a38fb934",
+  "machineLearningPyId": "5e46fc95ac417301a38fb935"
 }
