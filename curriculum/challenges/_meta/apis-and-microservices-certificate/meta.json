@@ -6,7 +6,7 @@
   "template": "",
   "required": [],
   "superBlock": "certificates",
-  "superOrder": 9,
+  "superOrder": 11,
   "challengeOrder": [
     [
       "561add10cb82ac38a17523bc",
@@ -14,5 +14,5 @@
     ]
   ],
   "isPrivate": true,
-  "fileName": "09-certificates/apis-and-microservices-certificate.json"
+  "fileName": "11-certificates/apis-and-microservices-certificate.json"
 }

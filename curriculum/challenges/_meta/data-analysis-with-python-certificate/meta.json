@@ -1,0 +1,18 @@
+{
+  "name": "Data Analysis with Python Certificate",
+  "dashedName": "data-analysis-with-python-certificate",
+  "order": 8,
+  "time": "",
+  "template": "",
+  "required": [],
+  "superBlock": "certificates",
+  "superOrder": 11,
+  "challengeOrder": [
+    [
+      "5e46fc95ac417301a38fb934",
+      "Data Analysis with Python Certificate"
+    ]
+  ],
+  "isPrivate": true,
+  "fileName": "11-certificates/data-analysis-with-python-certificate.json"
+}
