@@ -1,6 +1,6 @@
 ---
 id: 561add10cb82ac38a17213bc
-title: 'Information, Securtiy and Quality Assurance Certificate'
+title: 'Information Security and Quality Assurance Certificate'
 challengeType: 7
 isHidden: false
 isPrivate: true
@@ -31,7 +31,10 @@ tests:
     title: Stock Price Checker
   - id: 587d824a367417b2b2512c45
     title: Anonymous Message Board
-
+  - id: 5e46f979ac417301a38fb932
+    title: Port Scanner
+  - id: 5e46f983ac417301a38fb933
+    title: SHA-1 Password Cracker
 ```
 
 </section>
