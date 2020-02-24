@@ -35,7 +35,7 @@ while(i < 5) {
 ```yml
 tests:
   - text: See description above for instructions.
-    testString: assert(pick.toString().replace(/\s/g, '').includes('while(numbers.length<10){if(Date.now()-_LP>100){')); # Take loop protect into account
+    testString: assert(pick.toString().replace(/\s/g, '').includes('while(numbers.length<10){if(_LPC++%2000===0&&Date.now()-_LP>1500){')); # Take loop protect into account
 
 ```
 
