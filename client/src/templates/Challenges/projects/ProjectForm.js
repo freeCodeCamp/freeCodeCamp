@@ -7,6 +7,7 @@ const propTypes = {
   isFrontEnd: PropTypes.bool,
   isSubmitting: PropTypes.bool,
   onSubmit: PropTypes.func.isRequired,
+  placeholder: PropTypes.string,
   updateProjectForm: PropTypes.func.isRequired
 };
 
@@ -34,10 +35,11 @@ export class ProjectForm extends Component {
     this.props.onSubmit();
   }
   render() {
-    const { isSubmitting, isFrontEnd } = this.props;
+    const { isSubmitting, isFrontEnd, placeholder } = this.props;
     const buttonCopy = isSubmitting
       ? 'Submit and go to my next challenge'
       : "I've completed this challenge";
+
     return (
       <Form
         buttonText={`${buttonCopy}`}
@@ -46,11 +48,7 @@ export class ProjectForm extends Component {
         options={{
           ...options,
           placeholders: {
-            solution:
-              'Link to solution, ex: ' +
-              (isFrontEnd
-                ? 'https://codepen.io/camperbot/full/oNvPqqo'
-                : 'https://camperbot.glitch.me'),
+            solution: 'Link to solution, ex: ' + placeholder,
             githubLink:
               'Link to GitHub repo, ex: https://github.com/camperbot/hello'
           }
