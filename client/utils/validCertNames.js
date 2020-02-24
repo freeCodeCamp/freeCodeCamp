@@ -6,6 +6,9 @@ export default [
   'apis-and-microservices',
   'information-security-and-quality-assurance',
   'full-stack',
+  'scientific-computing-with-python',
+  'data-analysis-with-python',
+  'machine-learning-with-python',
   'legacy-front-end',
   'legacy-back-end',
   'legacy-data-visualization'
