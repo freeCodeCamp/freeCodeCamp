@@ -128,6 +128,7 @@ export class Project extends Component {
                 <ProjectForm
                   isFrontEnd={isFrontEnd}
                   onSubmit={openCompletionModal}
+                  placeholder='https://codepen.io/camperbot/full/oNvPqqo'
                   updateProjectForm={updateProjectFormValues}
                 />
                 <ProjectToolPanel
