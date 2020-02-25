@@ -70,7 +70,6 @@ function sumFactorialDigits(n)
   return sumDigits(factorial(n));
 }
 
-sumFactorialDigits(100);
 ```
 
 </section>
