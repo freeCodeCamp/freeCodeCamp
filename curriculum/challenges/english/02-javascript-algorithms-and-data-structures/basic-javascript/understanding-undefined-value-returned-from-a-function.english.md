@@ -51,9 +51,20 @@ tests:
 <div id='js-seed'>
 
 ```js
+// Setup
+var sum = 0;
+
+function addThree() {
+  sum = sum + 3;
+}
+
+// Only change code below this line
 
 
+// Only change code above this line
 
+addThree();
+addFive();
 ```
 
 </div>
@@ -64,9 +75,18 @@ tests:
 
 
 ```js
+var sum = 0;
+
+function addThree() {
+  sum = sum + 3;
+}
+
 function addFive() {
   sum = sum + 5;
 }
+
+addThree();
+addFive();
 ```
 
 </section>
