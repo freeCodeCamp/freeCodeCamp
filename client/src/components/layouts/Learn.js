@@ -2,7 +2,7 @@ import React, { Fragment, Component } from 'react';
 import PropTypes from 'prop-types';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
-
+import { Helmet } from 'react-helmet';
 import { Loader } from '../../components/helpers';
 import {
   userSelector,
@@ -59,6 +59,9 @@ class LearnLayout extends Component {
 
     return (
       <Fragment>
+        <Helmet>
+          <meta content='noindex' name='googlebot' />
+        </Helmet>
         <main id='learn-app-wrapper'>{children}</main>
         <DonateModal />
       </Fragment>

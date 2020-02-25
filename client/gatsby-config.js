@@ -131,6 +131,12 @@ module.exports = {
         icon: 'src/assets/images/square_puck.png'
       }
     },
-    'gatsby-plugin-remove-serviceworker'
+    'gatsby-plugin-remove-serviceworker',
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        policy: [{ userAgent: '*', disallow: '/learn', crawlDelay: 2 }]
+      }
+    }
   ]
 };
