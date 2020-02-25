@@ -62,7 +62,6 @@ function checkObj(checkProp) {
   return "Change Me!";
 }
 
-// Test your code by modifying these values
 checkObj("gift");
 ```
 
