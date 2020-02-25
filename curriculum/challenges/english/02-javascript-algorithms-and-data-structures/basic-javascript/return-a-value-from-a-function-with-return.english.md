@@ -50,16 +50,9 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Example
-function minusSeven(num) {
-  return num - 7;
-}
-
-// Only change code below this line
 
 
 
-console.log(minusSeven(10));
 ```
 
 </div>

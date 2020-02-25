@@ -58,8 +58,6 @@ function urlSlug(title) {
 
 }
 // Add your code above this line
-
-var winterComing = urlSlug(globalTitle); // Should be "winter-is-coming"
 ```
 
 </div>
@@ -80,8 +78,6 @@ function urlSlug(title) {
   return title.trim().split(/\s+/).join("-").toLowerCase();
 }
 // Add your code above this line
-
-var winterComing = urlSlug(globalTitle); // Should be "winter-is-coming"
 ```
 
 </section>

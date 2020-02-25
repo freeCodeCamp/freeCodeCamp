@@ -11,13 +11,17 @@ forumTopicId: 18216
 A common task in JavaScript is to iterate through the contents of an array. One way to do that is with a <code>for</code> loop. This code will output each element of the array <code>arr</code> to the console:
 
 ```js
-var arr = [10, 9, 8, 7, 6];
-for (var i = 0; i < arr.length; i++) {
-   console.log(arr[i]);
+var ourArr = [ 1, 2, 3, 4];
+var ourTotal = 0;
+
+for (var i = 0; i < ourArr.length; i++) {
+  ourTotal *= ourArr[i];
 }
+
+// ourTotal is now 24
 ```
 
-Remember that arrays have zero-based indexing, which means the last index of the array is <code>length - 1</code>. Our condition for this loop is <code>i < arr.length</code>, which stops the loop when <code>i</code> is equal to <code>length</code>. In this case the last iteration is <code>i === 4</code> i.e. when <code>i</code> becomes equal to <code>arr.length</code> and outputs <code>6</code> to the console.
+Remember that arrays have zero-based indexing, which means the last index of the array is <code>length - 1</code>. Our condition for this loop is <code>i < arr.length</code>, which stops the loop when <code>i</code> is equal to <code>length</code>. In this case, the last iteration is <code>i === 3</code> i.e. when <code>i</code> becomes equal to <code>arr.length</code>, the for loop stops and ourTotal has a final value of <code>24</code>.
 </section>
 
 ## Instructions
@@ -47,14 +51,6 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Example
-var ourArr = [ 9, 10, 11, 12];
-var ourTotal = 0;
-
-for (var i = 0; i < ourArr.length; i++) {
-  ourTotal += ourArr[i];
-}
-
 // Setup
 var myArr = [ 2, 3, 4, 5, 6];
 

@@ -47,13 +47,6 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Example
-var ourArray = [];
-
-for (var i = 0; i < 10; i += 2) {
-  ourArray.push(i);
-}
-
 // Setup
 var myArray = [];
 

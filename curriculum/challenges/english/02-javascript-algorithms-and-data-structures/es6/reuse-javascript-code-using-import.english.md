@@ -47,7 +47,7 @@ tests:
 
 ```js
   
-// add code above this line
+// Only change code above this line
 
 uppercaseString("hello");
 lowercaseString("WORLD!");
@@ -61,7 +61,6 @@ lowercaseString("WORLD!");
 
 ```js
 import { uppercaseString, lowercaseString } from './string_functions.js';
-// add code above this line
 
 uppercaseString("hello");
 lowercaseString("WORLD!");
