@@ -12,6 +12,7 @@ const {
 const { COMMENT_TRANSLATIONS } = require('./comment-dictionary');
 
 const { dasherize } = require('../utils/slugs');
+const { isAuditedCert } = require('../utils/is-audited');
 
 const challengesDir = path.resolve(__dirname, './challenges');
 const metaDir = path.resolve(challengesDir, '_meta');
@@ -121,10 +122,17 @@ async function createChallenge(fullPath, maybeMeta) {
     meta = require(metaPath);
   }
   const { name: superBlock } = superBlockInfoFromFullPath(fullPath);
-  if (!isAcceptedLanguage(getChallengeLang(fullPath)))
-    throw Error(`${getChallengeLang(fullPath)} is not a accepted language.
+  const lang = getChallengeLang(fullPath);
+  if (!isAcceptedLanguage(lang))
+    throw Error(`${lang} is not a accepted language.
 Trying to parse ${fullPath}`);
-  const challenge = await (isEnglishChallenge(fullPath)
+  // assumes superblock names are unique
+  // while the auditing is ongoing, we default to English for un-audited certs
+  // once that's complete, we can revert to using isEnglishChallenge(fullPath)
+  const isEnglish =
+    isEnglishChallenge(fullPath) || !isAuditedCert(lang, superBlock);
+  if (isEnglish) fullPath = getEnglishPath(fullPath);
+  const challenge = await (isEnglish
     ? parseMarkdown(fullPath)
     : parseTranslation(
         getEnglishPath(fullPath),
