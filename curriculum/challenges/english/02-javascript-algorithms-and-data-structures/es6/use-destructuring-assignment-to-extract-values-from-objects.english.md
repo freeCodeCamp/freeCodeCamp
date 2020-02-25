@@ -67,10 +67,6 @@ const today = HIGH_TEMPERATURES.today;
 const tomorrow = HIGH_TEMPERATURES.tomorrow;
 
 // Only change code above this line
-
-console.log(yesterday) // should be not defined
-console.log(today); // should be 77
-console.log(tomorrow); // should be 80
 ```
 
 </div>
@@ -88,9 +84,15 @@ const HIGH_TEMPERATURES = {
 
 const { today, tomorrow } = HIGH_TEMPERATURES;
 
+<<<<<<< HEAD
 console.log(yesterday) // should be not defined
 console.log(today); // should be 77
 console.log(tomorrow); // should be 80
+=======
+console.log(yesterday) // Should be not defined
+console.log(today); // Should be 77
+console.log(tomorrow); // Should be 80
+>>>>>>> fix: consolidate even more comments
 ```
 
 </section>

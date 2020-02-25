@@ -38,7 +38,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-// the global Array
+// The global variable
 var s = [23, 65, 98, 5];
 
 Array.prototype.myMap = function(callback){

@@ -71,9 +71,6 @@ const lowToday = LOCAL_FORECAST.today.low;
 const highToday = LOCAL_FORECAST.today.high;
 
 // Only change code above this line
-
-console.log(lowToday); // should be 64
-console.log(highToday); // should be 77
 ```
 
 </div>
@@ -90,9 +87,6 @@ const LOCAL_FORECAST = {
 };
 
 const { today: { low: lowToday, high: highToday }} = LOCAL_FORECAST;
-
-console.log(highToday); // should be 77
-console.log(highTomorrow); // should be 80
 ```
 
 </section>
