@@ -46,7 +46,6 @@ tests:
 
 ```js
 function dropElements(arr, func) {
-  // Drop them elements.
   return arr;
 }
 
@@ -65,7 +64,6 @@ dropElements([1, 2, 3], function(n) {return n < 3; });
 
 ```js
 function dropElements(arr, func) {
-  // Drop them elements.
   while (arr.length && !func(arr[0])) {
     arr.shift();
   }

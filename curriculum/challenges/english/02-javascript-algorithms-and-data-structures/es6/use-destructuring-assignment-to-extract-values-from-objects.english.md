@@ -61,12 +61,12 @@ const HIGH_TEMPERATURES = {
   tomorrow: 80
 };
 
-// change code below this line
+// Only change code below this line
 
 const today = HIGH_TEMPERATURES.today;
 const tomorrow = HIGH_TEMPERATURES.tomorrow;
 
-// change code above this line
+// Only change code above this line
 
 console.log(yesterday) // should be not defined
 console.log(today); // should be 77
@@ -86,11 +86,7 @@ const HIGH_TEMPERATURES = {
   tomorrow: 80
 };
 
-// change code below this line
-
 const { today, tomorrow } = HIGH_TEMPERATURES;
-
-// change code above this line
 
 console.log(yesterday) // should be not defined
 console.log(today); // should be 77

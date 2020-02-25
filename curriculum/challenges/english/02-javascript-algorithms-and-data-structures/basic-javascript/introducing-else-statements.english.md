@@ -71,7 +71,6 @@ function testElse(val) {
   return result;
 }
 
-// Change this value to test
 testElse(4);
 
 ```

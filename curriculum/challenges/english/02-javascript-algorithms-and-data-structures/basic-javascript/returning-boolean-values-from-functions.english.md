@@ -67,7 +67,6 @@ function isLess(a, b) {
   }
 }
 
-// Change these values to test
 isLess(10, 15);
 ```
 
