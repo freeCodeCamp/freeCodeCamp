@@ -21,7 +21,7 @@ for (var i = 0; i < ourArr.length; i++) {
 // ourTotal is now 24
 ```
 
-Remember that arrays have zero-based indexing, which means the last index of the array is <code>length - 1</code>. Our condition for this loop is <code>i < arr.length</code>, which stops the loop when <code>i</code> is equal to <code>length</code>. In this case, the last iteration is <code>i === 3</code> i.e. when <code>i</code> becomes equal to <code>arr.length</code>, the for loop stops and ourTotal has a final value of <code>24</code>.
+Remember that arrays have zero-based indexing, which means the last index of the array is <code>length - 1</code>. Our condition for this loop is <code>i < arr.length</code>, which stops the loop when <code>i</code> is equal to <code>length</code>. In this case, the last iteration is <code>i === 3</code> i.e. when <code>i</code> becomes equal to <code>arr.length</code>, the for loop stops and <code>ourTotal</code> has a final value of <code>24</code>.
 </section>
 
 ## Instructions
