@@ -17,7 +17,8 @@ const preFormattedBlockNames = {
   'css-variables-skyline': 'CSS Variables Skyline',
   'basic-javascript-rpg-game': 'Basic JavaScript RPG Game',
   'intermediate-javascript-calorie-counter':
-    'Intermediate JavaScript Calorie Counter'
+    'Intermediate JavaScript Calorie Counter',
+  'd3-dashboard': 'D3 Dashboard Project'
 };
 
 const noFormatting = ['and', 'for', 'of', 'the', 'up', 'with'];
