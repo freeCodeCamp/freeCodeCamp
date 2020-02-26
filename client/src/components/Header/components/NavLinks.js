@@ -15,12 +15,12 @@ function NavLinks({ displayMenu }) {
         role='menu'
       >
         <li className='nav-news' role='menuitem'>
-          <Link external={true} to='/news'>
+          <Link external={true} sameTab={true} to='/news'>
             /news
           </Link>
         </li>
         <li className='nav-forum' role='menuitem'>
-          <Link external={true} to='/forum'>
+          <Link external={true} sameTab={true} to='/forum'>
             /forum
           </Link>
         </li>
