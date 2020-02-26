@@ -115,7 +115,6 @@ exports.helpCategory = {
   'css-variables-skyline': 'HTML-CSS',
   'basic-javascript-rpg-game': 'JavaScript',
   'functional-programming-spreadsheet': 'JavaScript',
-  'intermediate-javascript-calorie-counter':
-    'Intermediate JavaScript Calorie Counter',
+  'intermediate-javascript-calorie-counter': 'JavaScript',
   'd3-dashboard-project': 'JavaScript'
 };
