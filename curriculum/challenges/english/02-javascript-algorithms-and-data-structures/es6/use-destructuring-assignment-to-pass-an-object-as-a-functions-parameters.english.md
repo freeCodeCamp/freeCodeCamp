@@ -71,8 +71,6 @@ const stats = {
 const half = (stats) => (stats.max + stats.min) / 2.0; 
 // Only change code above this line
 
-console.log(stats); // Should be an object
-console.log(half(stats)); // Should be 28.015
 ```
 
 </div>
