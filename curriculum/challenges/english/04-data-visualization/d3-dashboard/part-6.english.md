@@ -1,0 +1,75 @@
+---
+id: 5d8a4cfbe6b6180ed9a1c9e3
+title: Part 6
+challengeType: 0
+isBeta: true
+---
+
+## Description
+<section id='description'>
+
+You are now looking at the stylesheet that you linked to earlier. At the top of this file, target the `body` of the HTML document and give it a `background-color` of `#ccc`.
+</section>
+
+## Instructions
+<section id='instructions'>
+</section>
+
+## Tests
+<section id='tests'>
+
+```yml
+tests:
+  - text: test-text
+    testString: const body = code.match(/body\s*{[\s\S]+?[^}]}/g)[0]; assert(/background-color\s*:\s*#ccc\s*(;|})/gi.test(body));
+
+```
+
+</section>
+
+## Challenge Seed
+<section id='challengeSeed'>
+<div id='html-seed'>
+
+```html
+<style>
+
+
+</style>
+```
+
+</div>
+
+
+### Before Test
+<div id='html-setup'>
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>D3 Dashboard</title>
+  </head>
+
+  <body>
+    <div class="dashboard"></div>
+  </body>
+</html>
+```
+
+</div>
+</section>
+
+
+## Solution
+<section id='solution'>
+
+```html
+<style>
+body {
+  background-color: #ccc;
+}
+</style>
+```
+
+</section>
