@@ -70,7 +70,7 @@ tests:
 // Only change code above this line
 
 const carrot = new Vegetable('carrot');
-console.log(carrot.name); // => should display 'carrot'
+console.log(carrot.name); // Should display 'carrot'
 ```
 
 </div>
