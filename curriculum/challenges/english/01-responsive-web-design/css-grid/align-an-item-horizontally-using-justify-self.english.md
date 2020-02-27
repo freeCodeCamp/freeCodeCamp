@@ -42,10 +42,10 @@ tests:
 
   .item2 {
     background: LightSalmon;
-    /* add your code below this line */
+    /* Only change code below this line */
 
-
-    /* add your code above this line */
+    
+    /* Only change code above this line */
   }
 
   .item3{background:PaleTurquoise;}

@@ -56,9 +56,10 @@ tests:
   .bar {
     width: 25px;
     height: 100px;
-    /* Add your code below this line */
+    /* Only change code below this line */
 
-    /* Add your code above this line */
+    
+    /* Only change code above this line */
     display: inline-block;
     background-color: blue;
   }
@@ -72,10 +73,7 @@ tests:
       .enter()
       .append("div")
       .attr("class", "bar")
-      // Add your code below this line
       .style("height", (d) => (d + "px"))
-
-      // Add your code above this line
   </script>
 </body>
 ```
@@ -94,9 +92,7 @@ tests:
   .bar {
     width: 25px;
     height: 100px;
-    /* Add your code below this line */
     margin: 2px;
-    /* Add your code above this line */
     display: inline-block;
     background-color: blue;
   }
