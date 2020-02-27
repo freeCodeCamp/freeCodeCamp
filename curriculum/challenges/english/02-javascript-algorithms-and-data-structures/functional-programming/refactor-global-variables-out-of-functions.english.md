@@ -45,7 +45,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-// the global variable
+// The global variable
 var bookList = ["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"];
 
 // Change code below this line

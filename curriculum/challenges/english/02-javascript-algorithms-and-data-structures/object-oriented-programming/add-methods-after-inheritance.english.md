@@ -74,12 +74,12 @@ Animal.prototype.eat = function() { console.log("nom nom nom"); };
 
 function Dog() { }
 
-// Add your code below this line
+// Only change code below this line
 
 
 
 
-// Add your code above this line
+// Only change code above this line
 
 let beagle = new Dog();
 ```
