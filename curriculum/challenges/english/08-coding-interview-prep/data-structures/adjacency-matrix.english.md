@@ -14,7 +14,7 @@ An <dfn>adjacency matrix</dfn> is a two-dimensional (2D) array where each nested
 <strong>Note</strong>: The numbers to the top and left of the matrix are just labels for the nodes. Inside the matrix, ones mean there exists an edge between the vertices (nodes) representing the row and column.  Finally, zeros mean there is no edge or relationship.
 <pre>
     1 2 3
-  -------
+  \------
 1 | 0 1 1
 2 | 1 0 0
 3 | 1 0 0
