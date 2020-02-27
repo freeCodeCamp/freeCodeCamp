@@ -65,10 +65,10 @@ tests:
   .item3 {
     background: PaleTurquoise;
     grid-area: content;
-    /* enter your code below this line */
+    /* Only change code below this line */
 
 
-    /* enter your code above this line */
+    /* Only change code above this line */
   }
 
   .item4 {

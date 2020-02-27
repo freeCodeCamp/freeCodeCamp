@@ -85,7 +85,7 @@ tests:
   <section>
     <h2>Master Camper Cat's Beginner Three Week Training Program</h2>
     <figure>
-      <!-- Stacked bar chart of weekly training-->
+      <!-- Stacked bar chart of weekly training -->
       <p>[Stacked bar chart]</p>
       <br />
       <figcaption>Breakdown per week of time to spend training in stealth, combat, and weapons.</figcaption>
@@ -181,7 +181,7 @@ tests:
   <section>
     <h2>Master Camper Cat's Beginner Three Week Training Program</h2>
     <figure>
-      <!-- Stacked bar chart of weekly training-->
+      <!-- Stacked bar chart of weekly training -->
       <p>[Stacked bar chart]</p>
       <br />
       <figcaption>Breakdown per week of time to spend training in stealth, combat, and weapons.</figcaption>

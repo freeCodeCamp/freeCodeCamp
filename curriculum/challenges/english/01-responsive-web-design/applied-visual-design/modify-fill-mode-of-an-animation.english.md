@@ -46,9 +46,9 @@ tests:
   button:hover {
     animation-name: background-color;
     animation-duration: 500ms;
-    /* add your code below this line */
+    /* Only change code below this line */
 
-    /* add your code above this line */
+    /* Only change code above this line */
   }
   @keyframes background-color {
     100% {

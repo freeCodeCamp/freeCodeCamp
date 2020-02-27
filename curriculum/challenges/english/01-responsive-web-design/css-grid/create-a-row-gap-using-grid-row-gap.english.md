@@ -49,10 +49,10 @@ tests:
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    /* add your code below this line */
+    /* Only change code below this line */
 
-
-    /* add your code above this line */
+    
+    /* Only change code above this line */
   }
 </style>
 

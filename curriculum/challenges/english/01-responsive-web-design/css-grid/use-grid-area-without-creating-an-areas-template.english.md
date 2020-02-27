@@ -54,10 +54,10 @@ tests:
 
   .item5 {
     background: PaleGreen;
-    /* add your code below this line */
+    /* Only change code below this line */
 
 
-    /* add your code above this line */
+    /* Only change code above this line */
   }
 
   .container {

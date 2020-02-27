@@ -61,13 +61,12 @@ tests:
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 10px;
-    /* change code below this line */
-
     grid-template-areas:
+    /* Only change code below this line */
       "header header header"
       "advert content content"
       "footer footer footer";
-    /* change code above this line */
+    /* Only change code above this line */
   }
 </style>
 
