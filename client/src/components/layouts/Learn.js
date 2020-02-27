@@ -41,6 +41,13 @@ class LearnLayout extends Component {
     this.props.tryToShowDonationModal();
   }
 
+  componentWillUnmount() {
+    const metaTag = document.querySelector(`meta[name="googlebot"]`);
+    if (metaTag) {
+      metaTag.remove();
+    }
+  }
+
   render() {
     const {
       fetchState: { pending, complete },
