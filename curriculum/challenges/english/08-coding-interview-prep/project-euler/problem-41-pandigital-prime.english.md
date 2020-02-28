@@ -7,8 +7,11 @@ forumTopicId: 302078
 
 ## Description
 <section id='description'>
-We shall say that an <i>n</i>-digit number is pandigital if it makes use of all the digits 1 to <i>n</i> exactly once. For example, 2143 is a 4-digit pandigital and is also prime.
-What is the largest <i>n</i>-length digit pandigital prime that exists?
+
+We shall say that an <var>n</var>-digit number is pandigital if it makes use of all the digits 1 to <var>n</var> exactly once. For example, 2143 is a 4-digit pandigital and is also prime.
+
+What is the largest `n`-length digit pandigital prime that exists?
+
 </section>
 
 ## Instructions
@@ -21,6 +24,8 @@ What is the largest <i>n</i>-length digit pandigital prime that exists?
 
 ```yml
 tests:
+  - text: <code>pandigitalPrime(4)</code> should return a number.
+    testString: assert(typeof pandigitalPrime(4) === 'number');
   - text: <code>pandigitalPrime(4)</code> should return 4231.
     testString: assert(pandigitalPrime(4) == 4231);
   - text: <code>pandigitalPrime(7)</code> should return 7652413.

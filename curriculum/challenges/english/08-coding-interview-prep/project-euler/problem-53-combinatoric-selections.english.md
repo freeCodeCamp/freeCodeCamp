@@ -7,17 +7,19 @@ forumTopicId: 302164
 
 ## Description
 <section id='description'>
+
 There are exactly ten ways of selecting three from five, 12345:
-123, 124, 125, 134, 135, 145, 234, 235, 245, and 345
-In combinatorics, we use the notation, 5C3 = 10.
-In general,
 
-nCr =
-n!r!(n−r)!
-,where r ≤ n, n! = n×(n−1)×...×3×2×1, and 0! = 1.
+<div style='text-align: center;'>123, 124, 125, 134, 135, 145, 234, 235, 245, and 345</div>
 
-It is not until n = 23, that a value exceeds one-million: 23C10 = 1144066.
-How many, not necessarily distinct, values of  nCr, for 1 ≤ n ≤ 100, are greater than one-million?
+In combinatorics, we use the notation, $\displaystyle \binom 5 3 = 10$
+
+In general, $\displaystyle \binom n r = \dfrac{n!}{r!(n-r)!}$, where $r \le n$, $n! = n \times (n-1) \times ... \times 3 \times 2 \times 1$, and $0! = 1$.
+
+It is not until $n = 23$, that a value exceeds one-million: $\displaystyle \binom {23} {10} = 1144066$.
+
+How many, not necessarily distinct, values of  $\displaystyle \binom n r$ for $1 \le n \le 100$, are greater than one-million?
+
 </section>
 
 ## Instructions
@@ -30,6 +32,8 @@ How many, not necessarily distinct, values of  nCr, for 1 ≤ n ≤ 100, are gr
 
 ```yml
 tests:
+  - text: <code>combinatoricSelections(1000)</code> should return a number.
+    testString: assert(typeof combinatoricSelections(1000) === 'number');
   - text: <code>combinatoricSelections(1000)</code> should return 4626.
     testString: assert.strictEqual(combinatoricSelections(1000), 4626);
   - text: <code>combinatoricSelections(10000)</code> should return 4431.

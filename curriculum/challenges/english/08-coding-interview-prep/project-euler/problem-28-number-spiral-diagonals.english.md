@@ -7,14 +7,21 @@ forumTopicId: 301930
 
 ## Description
 <section id='description'>
+
 Starting with the number 1 and moving to the right in a clockwise direction a 5 by 5 spiral is formed as follows:
-21 22 23 24 25
-20  7  8  9 10
-19  6  1  2 11
-18  5  4  3 12
-17 16 15 14 13
+
+<div style='padding-left: 4em;'>
+  <div style='color: red; display: inline;'>21</div> 22 23 24 <div style='color: red; display: inline;'>25</div><br>
+  20  <div style='color: red; display: inline;'>7</div>  8  <div style='color: red; display: inline;'>9</div> 10<br>
+  19  6  <div style='color: red; display: inline;'>1</div>  2 11<br>
+  18  <div style='color: red; display: inline;'>5</div>  4  <div style='color: red; display: inline;'>3</div> 12<br>
+  <div style='color: red; display: inline;'>17</div> 16 15 14 <div style='color: red; display: inline;'>13</div><br>
+</div>
+
 It can be verified that the sum of the numbers on the diagonals is 101.
-What is the sum of the numbers on the diagonals in a n by n spiral formed in the same way?
+
+What is the sum of the numbers on the diagonals in an `n` by `n` spiral formed in the same way?
+
 </section>
 
 ## Instructions
@@ -27,6 +34,8 @@ What is the sum of the numbers on the diagonals in a n by n spiral formed in the
 
 ```yml
 tests:
+  - text: <code>spiralDiagonals(101)</code> should return a number.
+    testString: assert(typeof spiralDiagonals(101) === 'number');
   - text: <code>spiralDiagonals(101)</code> should return 692101.
     testString: assert(spiralDiagonals(101) == 692101);
   - text: <code>spiralDiagonals(303)</code> should return 18591725.

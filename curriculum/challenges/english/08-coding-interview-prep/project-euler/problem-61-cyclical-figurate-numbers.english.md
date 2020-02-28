@@ -19,10 +19,15 @@ Triangle, square, pentagonal, hexagonal, heptagonal, and octagonal numbers are a
 |Octagonal|P<sub>8</sub>,<var><sub>n</sub></var>=<var>n</var>(3<var>n</var>−2)|1, 8, 21, 40, 65, ...|
 
 The ordered set of three 4-digit numbers: 8128, 2882, 8281, has three interesting properties.
-The set is cyclic, in that the last two digits of each number is the first two digits of the next number (including the last number with the first).
-Each polygonal type: triangle (P3,127=8128), square (P4,91=8281), and pentagonal (P5,44=2882), is represented by a different number in the set.
-This is the only set of 4-digit numbers with this property.
+
+<ol>
+  <li>The set is cyclic, in that the last two digits of each number is the first two digits of the next number (including the last number with the first).</li>
+  <li>Each polygonal type: triangle (P<sub>3,127</sub> = 8128), square (P<sub>4,91</sub> = 8281), and pentagonal (P<sub>5,44</sub> = 2882), is represented by a different number in the set.</li>
+  <li>This is the only set of 4-digit numbers with this property.</li>
+</ol>
+
 Find the sum of the only ordered set of six cyclic 4-digit numbers for which each polygonal type: triangle, square, pentagonal, hexagonal, heptagonal, and octagonal, is represented by a different number in the set.
+
 </section>
 
 ## Instructions
@@ -35,8 +40,10 @@ Find the sum of the only ordered set of six cyclic 4-digit numbers for which eac
 
 ```yml
 tests:
-  - text: <code>euler61()</code> should return 28684.
-    testString: assert.strictEqual(euler61(), 28684);
+  - text: <code>cyclicalFigurateNums()</code> should return a number.
+    testString: assert(typeof cyclicalFigurateNums() === 'number');
+  - text: <code>cyclicalFigurateNums()</code> should return 28684.
+    testString: assert.strictEqual(cyclicalFigurateNums(), 28684);
 
 ```
 
@@ -48,12 +55,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function euler61() {
+function cyclicalFigurateNums() {
   // Good luck!
   return true;
 }
 
-euler61();
+cyclicalFigurateNums();
 ```
 
 </div>

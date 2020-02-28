@@ -7,11 +7,17 @@ forumTopicId: 301965
 
 ## Description
 <section id='description'>
+
 In England the currency is made up of pound, £, and pence, p, and there are eight coins in general circulation:
-1p, 2p, 5p, 10p, 20p, 50p, £1 (100p) and £2 (200p).
+
+<div style='margin-left: 4em;'>1p, 2p, 5p, 10p, 20p, 50p, £1 (100p) and £2 (200p).</div>
+
 It is possible to make £2 in the following way:
-1×£1 + 1×50p + 2×20p + 1×5p + 1×2p + 3×1p
-How many different ways can n pence be made using any number of coins?
+
+<div style='margin-left: 4em;'>1×£1 + 1×50p + 2×20p + 1×5p + 1×2p + 3×1p</div>
+
+How many different ways can `n` pence be made using any number of coins?
+
 </section>
 
 ## Instructions
@@ -24,6 +30,8 @@ How many different ways can n pence be made using any number of coins?
 
 ```yml
 tests:
+  - text: <code>coinSums(50)</code> should return a number.
+    testString: assert(typeof coinSums(50) === 'number');
   - text: <code>coinSums(50)</code> should return 451.
     testString: assert(coinSums(50) == 451);
   - text: <code>coinSums(100)</code> should return 4563.

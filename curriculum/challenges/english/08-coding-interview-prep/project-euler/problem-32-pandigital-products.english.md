@@ -7,13 +7,15 @@ forumTopicId: 301976
 
 ## Description
 <section id='description'>
-We shall say that an n-digit number is pandigital if it makes use of all the digits 1 to n exactly once; for example, the 5-digit number, 15234, is 1 through 5 pandigital.
+
+We shall say that an <var>n</var>-digit number is pandigital if it makes use of all the digits 1 to <var>n</var> exactly once; for example, the 5-digit number, 15234, is 1 through 5 pandigital.
 
 The product 7254 is unusual, as the identity, 39 × 186 = 7254, containing multiplicand, multiplier, and product is 1 through 9 pandigital.
 
 Find the sum of all products whose multiplicand/multiplier/product identity can be written as a 1 through 9 pandigital.
 
-HINT: Some products can be obtained in more than one way so be sure to only include it once in your sum.
+**Hint:** Some products can be obtained in more than one way so be sure to only include it once in your sum.
+
 </section>
 
 ## Instructions
@@ -26,8 +28,8 @@ HINT: Some products can be obtained in more than one way so be sure to only incl
 
 ```yml
 tests:
-  - text: <code>pandigitalProducts()</code> should be a function.
-    testString: assert(typeof pandigitalProducts === 'function');
+  - text: <code>pandigitalProducts()</code> should return a number.
+    testString: assert(typeof pandigitalProducts() === 'number');
   - text: <code>pandigitalProducts()</code> should return 45228.
     testString: assert.strictEqual(pandigitalProducts(), 45228);
 

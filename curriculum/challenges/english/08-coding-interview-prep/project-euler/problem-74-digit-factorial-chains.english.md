@@ -7,18 +7,30 @@ forumTopicId: 302187
 
 ## Description
 <section id='description'>
+
 The number 145 is well known for the property that the sum of the factorial of its digits is equal to 145:
-1! + 4! + 5! = 1 + 24 + 120 = 145
+
+<div style='margin-left: 4em;'>1! + 4! + 5! = 1 + 24 + 120 = 145</div>
+
 Perhaps less well known is 169, in that it produces the longest chain of numbers that link back to 169; it turns out that there are only three such loops that exist:
-169 → 363601 → 1454 → 169
-871 → 45361 → 871
-872 → 45362 → 872
+
+<div style='margin-left: 4em;'>
+  169 → 363601 → 1454 → 169<br>
+  871 → 45361 → 871<br>
+  872 → 45362 → 872<br>
+</div>
 It is not difficult to prove that EVERY starting number will eventually get stuck in a loop. For example,
-69 → 363600 → 1454 → 169 → 363601 (→ 1454)
-78 → 45360 → 871 → 45361 (→ 871)
-540 → 145 (→ 145)
+
+<div style='margin-left: 4em;'>
+  69 → 363600 → 1454 → 169 → 363601 (→ 1454)<br>
+  78 → 45360 → 871 → 45361 (→ 871)<br>
+  540 → 145 (→ 145)<br>
+</div>
+
 Starting with 69 produces a chain of five non-repeating terms, but the longest non-repeating chain with a starting number below one million is sixty terms.
+
 How many chains, with a starting number below one million, contain exactly sixty non-repeating terms?
+
 </section>
 
 ## Instructions
@@ -31,8 +43,10 @@ How many chains, with a starting number below one million, contain exactly sixty
 
 ```yml
 tests:
-  - text: <code>euler74()</code> should return 402.
-    testString: assert.strictEqual(euler74(), 402);
+  - text: <code>digitFactorialChains()</code> should return a number.
+    testString: assert(typeof digitFactorialChains() === 'number');
+  - text: <code>digitFactorialChains()</code> should return 402.
+    testString: assert.strictEqual(digitFactorialChains(), 402);
 
 ```
 
@@ -44,12 +58,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function euler74() {
+function digitFactorialChains() {
   // Good luck!
   return true;
 }
 
-euler74();
+digitFactorialChains();
 ```
 
 </div>

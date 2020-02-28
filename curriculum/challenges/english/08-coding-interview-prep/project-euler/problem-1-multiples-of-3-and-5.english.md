@@ -7,8 +7,11 @@ forumTopicId: 301722
 
 ## Description
 <section id='description'>
+
 If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
-Find the sum of all the multiples of 3 or 5 below the provided parameter value <code>number</code>.
+
+Find the sum of all the multiples of 3 or 5 below the provided parameter value `number`.
+
 </section>
 
 ## Instructions
@@ -21,14 +24,16 @@ Find the sum of all the multiples of 3 or 5 below the provided parameter value <
 
 ```yml
 tests:
-  - text: <code>multiplesOf3and5(1000)</code> should return 233168.
-    testString: assert.strictEqual(multiplesOf3and5(1000), 233168);
+  - text: <code>multiplesOf3and5(10)</code> should return a number.
+    testString: assert(typeof multiplesOf3and5(10) === 'number');
   - text: <code>multiplesOf3and5(49)</code> should return 543.
     testString: assert.strictEqual(multiplesOf3and5(49), 543);
-  - text: <code>multiplesOf3and5(19564)</code> should return 89301183.
-    testString: assert.strictEqual(multiplesOf3and5(19564), 89301183);
+  - text: <code>multiplesOf3and5(1000)</code> should return 233168.
+    testString: assert.strictEqual(multiplesOf3and5(1000), 233168);
   - text: <code>multiplesOf3and5(8456)</code> should return 16687353.
     testString: assert.strictEqual(multiplesOf3and5(8456), 16687353);
+  - text: <code>multiplesOf3and5(19564)</code> should return 89301183.
+    testString: assert.strictEqual(multiplesOf3and5(19564), 89301183);
 
 ```
 

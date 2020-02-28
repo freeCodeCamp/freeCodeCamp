@@ -7,17 +7,17 @@ forumTopicId: 302208
 
 ## Description
 <section id='description'>
-The points P (x1, y1) and Q (x2, y2) are plotted at integer coordinates and are joined to the origin, O(0,0), to form ΔOPQ.
 
+The points P (<var>x</var><sub>1</sub>, <var>y</var><sub>1</sub>) and Q (<var>x</var><sub>2</sub>, <var>y</var><sub>2</sub>) are plotted at integer co-ordinates and are joined to the origin, O(0,0), to form ΔOPQ.
 
+<img class="img-responsive center-block" alt="a graph plotting points P (x_1, y_1) and Q(x_2, y_2) at integer coordinates that are joined to the origin O (0, 0)" src="https://cdn-media-1.freecodecamp.org/project-euler/right-triangles-integer-coordinates-1.png" style="background-color: white; padding: 10px;">
 
+There are exactly fourteen triangles containing a right angle that can be formed when each co-ordinate lies between 0 and 2 inclusive; that is, 0 ≤ <var>x</var><sub>1</sub>, <var>y</var><sub>1</sub>, <var>x</var><sub>2</sub>, <var>y</var><sub>2</sub> ≤ 2.
 
-There are exactly fourteen triangles containing a right angle that can be formed when each coordinate lies between 0 and 2 inclusive; that is,0 ≤ x1, y1, x2, y2 ≤ 2.
+<img class="img-responsive center-block" alt="a diagram showing the 14 triangles containing a right angle that can be formed when each coordinate is between 0 and 2" src="https://cdn-media-1.freecodecamp.org/project-euler/right-triangles-integer-coordinates-2.png" style="background-color: white; padding: 10px;">
 
+Given that 0 ≤ <var>x</var><sub>1</sub>, <var>y</var><sub>1</sub>, <var>x</var><sub>2</sub>, <var>y</var><sub>2</sub> ≤ 50, how many right triangles can be formed?
 
-
-
-Given that 0 ≤ x1, y1, x2, y2 ≤ 50, how many right triangles can be formed?
 </section>
 
 ## Instructions
@@ -30,8 +30,10 @@ Given that 0 ≤ x1, y1, x2, y2 ≤ 50, how many right triangles can be formed?
 
 ```yml
 tests:
-  - text: <code>euler91()</code> should return 14234.
-    testString: assert.strictEqual(euler91(), 14234);
+  - text: <code>rightTrianglesIntCoords()</code> should return a number.
+    testString: assert(typeof rightTrianglesIntCoords() === 'number');
+  - text: <code>rightTrianglesIntCoords()</code> should return 14234.
+    testString: assert.strictEqual(rightTrianglesIntCoords(), 14234);
 
 ```
 
@@ -43,12 +45,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function euler91() {
+function rightTrianglesIntCoords() {
   // Good luck!
   return true;
 }
 
-euler91();
+rightTrianglesIntCoords();
 ```
 
 </div>

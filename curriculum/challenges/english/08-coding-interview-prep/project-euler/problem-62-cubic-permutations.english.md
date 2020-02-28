@@ -7,8 +7,11 @@ forumTopicId: 302174
 
 ## Description
 <section id='description'>
-The cube, 41063625 (3453), can be permuted to produce two other cubes: 56623104 (3843) and 66430125 (4053). In fact, 41063625 is the smallest cube which has exactly three permutations of its digits which are also cube.
+
+The cube, 41063625 (345<sup>3</sup>), can be permuted to produce two other cubes: 56623104 (384<sup>3</sup>) and 66430125 (405<sup>3</sup>). In fact, 41063625 is the smallest cube which has exactly three permutations of its digits which are also cube.
+
 Find the smallest cube for which exactly five permutations of its digits are cube.
+
 </section>
 
 ## Instructions
@@ -21,8 +24,10 @@ Find the smallest cube for which exactly five permutations of its digits are cub
 
 ```yml
 tests:
-  - text: <code>euler62()</code> should return 127035954683.
-    testString: assert.strictEqual(euler62(), 127035954683);
+  - text: <code>cubicPermutations()</code> should return a number.
+    testString: assert(typeof cubicPermutations() === 'number');
+  - text: <code>cubicPermutations()</code> should return 127035954683.
+    testString: assert.strictEqual(cubicPermutations(), 127035954683);
 
 ```
 
@@ -34,12 +39,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function euler62() {
+function cubicPermutations() {
   // Good luck!
   return true;
 }
 
-euler62();
+cubicPermutations();
 ```
 
 </div>

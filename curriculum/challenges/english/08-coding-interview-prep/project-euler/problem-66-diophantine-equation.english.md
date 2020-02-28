@@ -7,17 +7,29 @@ forumTopicId: 302178
 
 ## Description
 <section id='description'>
+
 Consider quadratic Diophantine equations of the form:
-x2 – Dy2 = 1
-For example, when D=13, the minimal solution in x is 6492 – 13×1802 = 1.
+
+<div style='text-align: center;'>x<sup>2</sup> – Dy<sup>2</sup> = 1</div>
+
+For example, when D=13, the minimal solution in x is 649<sup>2</sup> – 13×180<sup>2</sup> = 1.
+
 It can be assumed that there are no solutions in positive integers when D is square.
+
 By finding minimal solutions in x for D = {2, 3, 5, 6, 7}, we obtain the following:
-32 – 2×22 = 1
-22 – 3×12 = 192 – 5×42 = 1
-52 – 6×22 = 1
-82 – 7×32 = 1
-Hence, by considering minimal solutions in x for D ≤ 7, the largest x is obtained when D=5.
-Find the value of D ≤ 1000 in minimal solutions of x for which the largest value of x is obtained.
+
+<div style='margin-left: 2em;'>
+  3<sup>2</sup> – 2×2<sup>2</sup> = 1<br>
+  2<sup>2</sup> – 3×1<sup>2</sup> = 1<br>
+  <strong><span style='color: red;'>9</span></strong><sup>2</sup> – 5×4<sup>2</sup> = 1<br>
+  5<sup>2</sup> – 6×2<sup>2</sup> = 1<br>
+  8<sup>2</sup> – 7×3<sup>2</sup> = 1<br>
+</div>
+
+Hence, by considering minimal solutions in <var>x</var> for D ≤ 7, the largest <var>x</var> is obtained when D=5.
+
+Find the value of D ≤ 1000 in minimal solutions of <var>x</var> for which the largest value of <var>x</var> is obtained.
+
 </section>
 
 ## Instructions
@@ -30,8 +42,10 @@ Find the value of D ≤ 1000 in minimal solutions of x for which the largest val
 
 ```yml
 tests:
-  - text: <code>euler66()</code> should return 661.
-    testString: assert.strictEqual(euler66(), 661);
+  - text: <code>diophantineEquation()</code> should return a number.
+    testString: assert(typeof diophantineEquation() === 'number');
+  - text: <code>diophantineEquation()</code> should return 661.
+    testString: assert.strictEqual(diophantineEquation(), 661);
 
 ```
 
@@ -43,12 +57,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function euler66() {
+function diophantineEquation() {
   // Good luck!
   return true;
 }
 
-euler66();
+diophantineEquation();
 ```
 
 </div>

@@ -7,8 +7,11 @@ forumTopicId: 302163
 
 ## Description
 <section id='description'>
+
 It can be seen that the number, 125874, and its double, 251748, contain exactly the same digits, but in a different order.
-Find the smallest positive integer, x, such that 2x, 3x, 4x, 5x, and 6x, contain the same digits.
+
+Find the smallest positive integer, <var>x</var>, such that <var>2x</var>, <var>3x</var>, <var>4x</var>, <var>5x</var>, and <var>6x</var>, contain the same digits.
+
 </section>
 
 ## Instructions
@@ -21,6 +24,8 @@ Find the smallest positive integer, x, such that 2x, 3x, 4x, 5x, and 6x, contain
 
 ```yml
 tests:
+  - text: <code>permutedMultiples()</code> should return a number.
+    testString: assert(typeof permutedMultiples() === 'number');
   - text: <code>permutedMultiples()</code> should return 142857.
     testString: assert.strictEqual(permutedMultiples(), 142857);
 

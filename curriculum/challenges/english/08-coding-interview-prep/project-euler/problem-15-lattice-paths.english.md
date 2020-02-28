@@ -7,11 +7,13 @@ forumTopicId: 301780
 
 ## Description
 <section id='description'>
+
 Starting in the top left corner of a 2×2 grid, and only being able to move to the right and down, there are exactly 6 routes to the bottom right corner.
 
-<img class="img-responsive center-block" alt="a diagram of 6 2 by 2 grids showing all the routes to the bottom right corner" src="https://cdn-media-1.freecodecamp.org/imgr/1Atixoj.gif">
+<img class="img-responsive center-block" alt="a diagram of 6 2 by 2 grids showing all the routes to the bottom right corner" src="https://cdn-media-1.freecodecamp.org/project-euler/1Atixoj.gif" style="background-color: white; padding: 10px;">
 
-How many such routes are there through a given <code>gridSize</code>?
+How many such routes are there through a given `gridSize`?
+
 </section>
 
 ## Instructions
@@ -24,6 +26,8 @@ How many such routes are there through a given <code>gridSize</code>?
 
 ```yml
 tests:
+  - text: <code>latticePaths(4)</code> should return a number.
+    testString: assert(typeof latticePaths(4) === 'number');
   - text: <code>latticePaths(4)</code> should return 70.
     testString: assert.strictEqual(latticePaths(4), 70);
   - text: <code>latticePaths(9)</code> should return 48620.

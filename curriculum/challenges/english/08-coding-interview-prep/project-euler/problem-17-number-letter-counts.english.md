@@ -7,9 +7,13 @@ forumTopicId: 301804
 
 ## Description
 <section id='description'>
+
 If the numbers 1 to 5 are written out in words: one, two, three, four, five, then there are 3 + 3 + 5 + 4 + 4 = 19 letters used in total.
-If all the numbers from 1 to given <code>limit</code> inclusive were written out in words, how many letters would be used?
-<b>NOTE:</b> Do not count spaces or hyphens. For example, 342 (three hundred and forty-two) contains 23 letters and 115 (one hundred and fifteen) contains 20 letters. The use of "and" when writing out numbers is in compliance with British usage.
+
+If all the numbers from 1 to given `limit` inclusive were written out in words, how many letters would be used?
+
+**Note:** Do not count spaces or hyphens. For example, 342 (three hundred and forty-two) contains 23 letters and 115 (one hundred and fifteen) contains 20 letters. The use of "and" when writing out numbers is in compliance with British usage.
+
 </section>
 
 ## Instructions
@@ -22,6 +26,8 @@ If all the numbers from 1 to given <code>limit</code> inclusive were written out
 
 ```yml
 tests:
+  - text: <code>numberLetterCounts(5)</code> should return a number.
+    testString: assert(typeof numberLetterCounts(5) === 'number');
   - text: <code>numberLetterCounts(5)</code> should return 19.
     testString: assert.strictEqual(numberLetterCounts(5), 19);
   - text: <code>numberLetterCounts(150)</code> should return 1903.
@@ -120,7 +126,6 @@ function numberLetterCounts(limit) {
           tempStr += dictionary[tens] + dictionary[remainder];
         }
       }
-      // console.log(num, hundreds, tens, remainder);
       return tempStr;
     }
   }

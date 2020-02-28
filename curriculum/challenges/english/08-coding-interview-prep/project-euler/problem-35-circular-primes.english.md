@@ -7,12 +7,17 @@ forumTopicId: 302009
 
 ## Description
 <section id='description'>
+
 The number, 197, is called a circular prime because all rotations of the digits: 197, 971, and 719, are themselves prime.
+
 There are thirteen such primes below 100: 2, 3, 5, 7, 11, 13, 17, 31, 37, 71, 73, 79, and 97.
-How many circular primes are there below n, whereas 100 <= n <= 1000000?
+
+How many circular primes are there below `n`, whereas 100 ≤ `n` ≤ 1000000?
   
 <br><strong>Note:</strong><br>
+
 Circular primes individual rotation can exceed `n`.
+
 </section>
 
 ## Instructions
@@ -25,6 +30,8 @@ Circular primes individual rotation can exceed `n`.
 
 ```yml
 tests:
+  - text: <code>circularPrimes(100)</code> should return a number.
+    testString: assert(typeof circularPrimes(100) === 'number');
   - text: <code>circularPrimes(100)</code> should return 13.
     testString: assert(circularPrimes(100) == 13);
   - text: <code>circularPrimes(100000)</code> should return 43.

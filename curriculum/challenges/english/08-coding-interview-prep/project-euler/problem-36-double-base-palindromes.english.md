@@ -7,9 +7,13 @@ forumTopicId: 302020
 
 ## Description
 <section id='description'>
-The decimal number, 585 = 10010010012 (binary), is palindromic in both bases.
-Find the sum of all numbers, less than n, whereas 1000 <= n <= 1000000, which are palindromic in base 10 and base 2.
+
+The decimal number, 585 = 1001001001<sub>2</sub> (binary), is palindromic in both bases.
+
+Find the sum of all numbers, less than `n`, whereas 1000 ≤ `n` ≤ 1000000, which are palindromic in base 10 and base 2.
+
 (Please note that the palindromic number, in either base, may not include leading zeros.)
+
 </section>
 
 ## Instructions
@@ -22,6 +26,8 @@ Find the sum of all numbers, less than n, whereas 1000 <= n <= 1000000, which ar
 
 ```yml
 tests:
+  - text: <code>doubleBasePalindromes(1000)</code> should return a number.
+    testString: assert(typeof doubleBasePalindromes(1000) === 'number');
   - text: <code>doubleBasePalindromes(1000)</code> should return 1772.
     testString: assert(doubleBasePalindromes(1000) == 1772);
   - text: <code>doubleBasePalindromes(50000)</code> should return 105795.

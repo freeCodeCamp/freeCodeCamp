@@ -7,8 +7,11 @@ forumTopicId: 301952
 
 ## Description
 <section id='description'>
+
 The prime factors of 13195 are 5, 7, 13 and 29.
-What is the largest prime factor of the given <code>number</code>?
+
+What is the largest prime factor of the given `number`?
+
 </section>
 
 ## Instructions
@@ -21,6 +24,8 @@ What is the largest prime factor of the given <code>number</code>?
 
 ```yml
 tests:
+  - text: <code>largestPrimeFactor(2)</code> should return a number.
+    testString: assert(typeof largestPrimeFactor(2) === 'number');
   - text: <code>largestPrimeFactor(2)</code> should return 2.
     testString: assert.strictEqual(largestPrimeFactor(2), 2);
   - text: <code>largestPrimeFactor(3)</code> should return 3.
