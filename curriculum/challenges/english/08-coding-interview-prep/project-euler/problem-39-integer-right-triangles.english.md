@@ -7,9 +7,13 @@ forumTopicId: 302054
 
 ## Description
 <section id='description'>
-If p is the perimeter of a right angle triangle with integral length sides, {a,b,c}, there are exactly three solutions for p = 120.
+
+If <var>p</var> is the perimeter of a right angle triangle with integral length sides, {a,b,c}, there are exactly three solutions for p = 120.
+
 {20,48,52}, {24,45,51}, {30,40,50}
-For which value of p ≤ n, is the number of solutions maximised?
+
+For which value of <var>p</var> ≤ `n`, is the number of solutions maximized?
+
 </section>
 
 ## Instructions
@@ -22,6 +26,8 @@ For which value of p ≤ n, is the number of solutions maximised?
 
 ```yml
 tests:
+  - text: <code>intRightTriangles(500)</code> should return a number.
+    testString: assert(typeof intRightTriangles(500) === 'number');
   - text: <code>intRightTriangles(500)</code> should return 420.
     testString: assert(intRightTriangles(500) == 420);
   - text: <code>intRightTriangles(800)</code> should return 720.
@@ -46,7 +52,7 @@ function intRightTriangles(n) {
   return n;
 }
 
-console.log(intRightTriangles(500)); // 420
+intRightTriangles(500);
 ```
 
 </div>
@@ -81,7 +87,7 @@ function intRightTriangles(n) {
   for (let p in triangles) {
     if (max < triangles[p]) {
       max = triangles[p];
-      maxp = p;
+      maxp = parseInt(p);
     }
   }
   return maxp;
