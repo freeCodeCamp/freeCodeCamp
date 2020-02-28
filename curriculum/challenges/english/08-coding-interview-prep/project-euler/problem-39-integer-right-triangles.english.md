@@ -52,7 +52,7 @@ function intRightTriangles(n) {
   return n;
 }
 
-console.log(intRightTriangles(500)); // 420
+intRightTriangles(500);
 ```
 
 </div>

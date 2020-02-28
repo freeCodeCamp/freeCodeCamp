@@ -126,7 +126,6 @@ function numberLetterCounts(limit) {
           tempStr += dictionary[tens] + dictionary[remainder];
         }
       }
-      // console.log(num, hundreds, tens, remainder);
       return tempStr;
     }
   }
