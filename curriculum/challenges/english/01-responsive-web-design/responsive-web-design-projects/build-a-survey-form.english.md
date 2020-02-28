@@ -20,7 +20,7 @@ You can use HTML, JavaScript, and CSS to complete this project. Plain CSS is rec
 <strong>User Story #7:</strong> Inside the form, I can enter a number in a field with <code>id="number"</code>.
 <strong>User Story #8:</strong> If I enter non-numbers in the number input, I will see an HTML5 validation error.
 <strong>User Story #9:</strong> If I enter numbers outside the range of the number input, which are defined by the <code>min</code> and <code>max</code> attributes, I will see an HTML5 validation error.
-<strong>User Story #10:</strong> For the name, email, and number input fields inside the form I can see corresponding labels that describe the purpose of each field with the following ids: <code>id="name-label"</code>, <code>id="email-label"</code>, and <code>id="number-label"</code>.
+<strong>User Story #10:</strong> For the name, email, and number input fields inside the form I can see corresponding labels that describe the purpose of each field with the following ids: <code>id="name-label"</code>, <code>id="email-label"</code>, and <code>id="number-label"</code>. Each label should have a <code>for</code> attribute, specifying which input the label is bound to.
 <strong>User Story #11:</strong> For the name, email, and number input fields, I can see placeholder text that gives me a description or instructions for each field.
 <strong>User Story #12:</strong> Inside the form element, I can select an option from a dropdown that has a corresponding <code>id="dropdown"</code>.
 <strong>User Story #13:</strong> Inside the form element, I can select a field from one or more groups of radio buttons. Each group should be grouped using the <code>name</code> attribute.
