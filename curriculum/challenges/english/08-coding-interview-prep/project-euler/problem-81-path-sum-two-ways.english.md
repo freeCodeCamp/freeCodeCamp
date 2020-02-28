@@ -34,8 +34,8 @@ Find the minimal path sum from the top left to the bottom right by only moving r
 
 ```yml
 tests:
-  - text: <code>pathSumTwoWays()</code> should return a number.
-    testString: assert(typeof pathSumTwoWays() === 'number');
+  - text: <code>pathSumTwoWays(testMatrix)</code> should return a number.
+    testString: assert(typeof pathSumTwoWays(testMatrix) === 'number');
   - text: <code>pathSumTwoWays(testMatrix)</code> should return 2427.
     testString: assert.strictEqual(pathSumTwoWays(testMatrix), 2427);
   - text: <code>pathSumTwoWays(matrix)</code> should return 427337.

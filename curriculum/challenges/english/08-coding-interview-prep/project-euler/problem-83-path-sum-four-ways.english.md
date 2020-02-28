@@ -36,8 +36,8 @@ Find the minimal path sum from the top left to the bottom right by moving left, 
 
 ```yml
 tests:
-  - text: <code>pathSumFourWays()</code> should return a number.
-    testString: assert(typeof pathSumFourWays() === 'number');
+  - text: <code>pathSumFourWays(testMatrix)</code> should return a number.
+    testString: assert(typeof pathSumFourWays(testMatrix) === 'number');
   - text: <code>pathSumFourWays(testMatrix)</code> should return 2297.
     testString: assert.strictEqual(pathSumFourWays(testMatrix), 2297);
   - text: <code>pathSumFourWays(matrix)</code> should return 425185.
@@ -53,7 +53,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function pathSumThreeWays(arr) {
+function pathSumFourWays(arr) {
   // Good luck!
   return true;
 }
@@ -68,7 +68,7 @@ const testMatrix = [
   [805, 732, 524, 37, 331]
 ];
 
-pathSumThreeWays(testMatrix);
+pathSumFourWays(testMatrix);
 ```
 
 </div>

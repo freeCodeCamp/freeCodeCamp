@@ -27,7 +27,7 @@ Find the numbers and the sum of the numbers which are equal to the sum of the fa
 ```yml
 tests:
   - text: <code>digitFactorial()</code> should return an object.
-    testString: assert(typeof digitFactorial() === 'object');
+    testString: assert.typeOf(digitFactorial(), 'object');
   - text: |
       <code>digitFactorial()</code> should return { sum: 40730, numbers: [145, 40585] }.
     testString: |

@@ -118,8 +118,8 @@ By solving all fifty puzzles find the sum of the 3-digit numbers found in the to
 
 ```yml
 tests:
-  - text: <code>suDoku()</code> should return a number.
-    testString: assert(typeof suDoku() === 'number');
+  - text: <code>suDoku(testPuzzles)</code> should return a number.
+    testString: assert(typeof suDoku(testPuzzles) === 'number');
   - text: <code>suDoku(testPuzzles)</code> should return 1190.
     testString: assert.strictEqual(suDoku(testPuzzles), 1190);
   - text: <code>suDoku(puzzlesArr)</code> should return 24702.

@@ -36,8 +36,8 @@ Find the minimal path sum from the left column to the right column in `matrix`, 
 
 ```yml
 tests:
-  - text: <code>pathSumThreeWays()</code> should return a number.
-    testString: assert(typeof pathSumThreeWays() === 'number');
+  - text: <code>pathSumThreeWays(testMatrix)</code> should return a number.
+    testString: assert(typeof pathSumThreeWays(testMatrix) === 'number');
   - text: <code>pathSumThreeWays(testMatrix)</code> should return 994.
     testString: assert.strictEqual(pathSumThreeWays(testMatrix), 994);
   - text: <code>pathSumThreeWays(matrix)</code> should return 260324.

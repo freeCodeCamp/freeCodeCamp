@@ -35,12 +35,12 @@ Find the maximum total from top to bottom in `numTriangle`, a 2D array defined i
 
 ```yml
 tests:
-  - text: <code>maximumPathSumII()</code> should return a number.
-    testString: assert(typeof maximumPathSumII() === 'number');
-  - text: <code>maximumPathSumI(testTriangle)</code> should return 23.
-    testString: assert.strictEqual(maximumPathSumI(testTriangle), 23);
-  - text: <code>maximumPathSumII()</code> should return 7273.
-    testString: assert.strictEqual(maximumPathSumII(), 7273);
+  - text: <code>maximumPathSumII(testTriangle)</code> should return a number.
+    testString: assert(typeof maximumPathSumII(testTriangle) === 'number');
+  - text: <code>maximumPathSumII(testTriangle)</code> should return 23.
+    testString: assert.strictEqual(maximumPathSumII(testTriangle), 23);
+  - text: <code>maximumPathSumII(numTriangle)</code> should return 7273.
+    testString: assert.strictEqual(maximumPathSumII(numTriangle), 7273);
 
 ```
 
@@ -52,7 +52,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function maximumPathSumII() {
+function maximumPathSumII(triangle) {
   // Good luck!
   return true;
 }
@@ -62,7 +62,7 @@ const testTriangle = [[3, 0, 0, 0],
                       [2, 4, 6, 0],
                       [8, 5, 9, 3]];
 
-maximumPathSumII();
+maximumPathSumII(testTriangle);
 ```
 
 </div>

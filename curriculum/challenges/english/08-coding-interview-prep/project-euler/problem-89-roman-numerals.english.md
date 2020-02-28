@@ -41,10 +41,10 @@ Find the number of characters saved by writing each of these in their minimal fo
 
 ```yml
 tests:
-  - text: <code>romanNumerals()</code> should return a number.
-    testString: assert(typeof romanNumerals() === 'number');
-  - text: <code>romanNumerals()</code> should return 743.
-    testString: assert.strictEqual(romanNumerals(), 743);
+  - text: <code>romanNumerals(roman)</code> should return a number.
+    testString: assert(typeof romanNumerals(roman) === 'number');
+  - text: <code>romanNumerals(roman)</code> should return 743.
+    testString: assert.strictEqual(romanNumerals(roman), 743);
 
 ```
 
