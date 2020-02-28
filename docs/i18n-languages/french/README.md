@@ -4,7 +4,6 @@
 [![first-timers-only Friendly](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](http://www.firsttimersonly.com/)
 [![Known Vulnerabilities](https://snyk.io/test/github/freecodecamp/freecodecamp/badge.svg)](https://snyk.io/test/github/freecodecamp/freecodecamp)
 
-
 ## Bienvenue sur le code source et le curriculum open source de freeCodeCamp.org !
 
 [freeCodeCamp.org](https://www.freecodecamp.org) est une communauté conviviale où vous pouvez apprendre à coder gratuitement. Elle est gérée par [un organisme à but non lucratif 501 (c) (3)](https://donate.freecodecamp.org) et soutenue par des donateurs dans le but d'aider des millions d'adultes à se reconvertir vers l'informatique. Notre communauté a déjà aidé plus de 10 000 personnes à décrocher leur premier emploi de développeur.
@@ -13,13 +12,12 @@ Notre programme complet de développement Web est entièrement gratuit et vous p
 
 ## Table des matières
 
-* [Certifications](#certifications)
-* [La plateforme d'apprentissage](#the-learning-platform)
-* [Reporter un bug](#found-a-bug)
-* [Reporter un problème de sécurité](#found-a-security-issue)
-* [Contribuer](#contributing)
-* [Licence](#license)
-
+- [Certifications](#certifications)
+- [La plateforme d'apprentissage](#the-learning-platform)
+- [Reporter un bug](#found-a-bug)
+- [Reporter un problème de sécurité](#found-a-security-issue)
+- [Contribuer](#contributing)
+- [Licence](#license)
 
 ### Certifications
 
@@ -31,7 +29,7 @@ Vous pouvez extraire ces suites de tests via [le CDN de freeCodeCamp](https://cd
 
 Une fois une certification obtenue, vous la gardez à vie. Vous pourrez y accéder depuis votre profil LinkedIn ou votre CV. Lorsque vos employeurs potentiels ou vos clients indépendants cliquent sur le lien, ils voient une certification vérifiée qui vous est propre.
 
-La seule exception à cette règle est que nous découvrions des violations de notre [politique d'honnêteté académique](https://www.freecodecamp.org/academic-honesty). Lorsque nous surprenons des personnes qui plagient sans ambiguïté (soumettant sans citation le code ou les projets d'autres personnes), nous faisons ce que toutes les institutions rigoureuses d'apprentissage doivent faire: nous révoquons leurs certifications et bannissons ces personnes.
+La seule exception à cette règle serait dans le cas où que nous découvrions des violations de notre [politique d'honnêteté académique](https://www.freecodecamp.org/academic-honesty). Lorsque nous surprenons des personnes qui plagient sans ambiguïté (soumettant le code ou les projets d'autres personnes sans les citer), nous faisons ce que toutes les institutions rigoureuses d'apprentissage doivent faire, nous révoquons leurs certifications et bannissons ces personnes.
 
 Voici nos six certifications principales :
 
@@ -106,6 +104,7 @@ Voici nos six certifications principales :
 Une fois que vous aurez obtenu ces 6 certifications, vous pourrez réclamer votre certification de développeur full stack freeCodeCamp.org. Cette distinction finale signifie que vous avez effectué environ 1 800 heures de programmation avec un large éventail d’outils de développement Web.
 
 #### Anciennes Certifications
+
 Nous avons également 3 anciennes certifications de notre programme de 2015, qui sont encore disponibles. Tous les projets requis pour ces anciennes certifications resteront disponibles sur freeCodeCamp.org.
 
 - Ancienne Certification de développeur Front End
@@ -119,19 +118,18 @@ Ce code est exécuté en direct sur [freeCodeCamp.org](https://www.freecodecamp.
 Notre communauté a aussi:
 
 - Un [forum](https://www.freecodecamp.org/forum) où vous pouvez généralement avoir de l'aide en programmation ou des feedbacks sur vos projets.
-- Une chaine [YouTube channel](https://youtube.com/freecodecamp) avec des cours gratuits sur Python, SQL, Android et une grande variété d'autres sujets.
+- Une chaîne [YouTube](https://youtube.com/freecodecamp) avec des cours gratuits sur Python, SQL, Android et une grande variété d'autres sujets.
 - Un [podcast](https://podcast.freecodecamp.org/) avec des discussions techniques autour de nouvelles technologies et des histoires inspirantes de développeurs.
-- [Des groupes d'études locaux](https://study-group-directory.freecodecamp.org/), situés partout dans le monde et où vous pourrez programmer ensemble et en face en face.
+- [Des groupes d'études locaux](https://study-group-directory.freecodecamp.org/), situés partout dans le monde où vous pourrez programmer ensemble et en face en face.
 - Un [guide complet couvrant des milliers de sujets différents](https://guide.freecodecamp.org/)
-- Un [Feed de news](https://www.freecodecamp.org/news), gratuit, open source et sans pub, où vous pourrez crossposter vos articles de blog.
+- Un [fil d'actualités](https://www.freecodecamp.org/news), gratuit, open source et sans pub, où vous pourrez poster vos articles de blog.
 - Un [groupe Facebook](https://www.facebook.com/groups/freeCodeCampEarth/permalink/428140994253892/) avec plus de 100 000 membres autour du monde.
-    
 
 ### [Rejoignez notre communauté ici](https://www.freecodecamp.org/signin).
 
 ### Vous avez trouvé un bug ?
 
-Si vous pensez avoir trouvé un bug, lisez d’abord l’article d’aide [Help I've Found a Bug](https://www.freecodecamp.org/forum/t/how-to-report-a-bug/19543) et suivez ses instructions. Si vous êtes sûr qu'il s'agit d'un nouveau bug et que vous avez vérifié que le problème est rencontré par d'autres utilisateurs, créez un nouvel "issue" sur GitHub. Assurez-vous d'inclure autant d'informations que possible afin que nous puissions reproduire le bug.
+Si vous pensez avoir trouvé un bug, lisez d’abord l’article d’aide [Help I've Found a Bug](https://www.freecodecamp.org/forum/t/how-to-report-a-bug/19543) et suivez ses instructions. Si vous êtes sûr qu'il s'agit d'un nouveau bug et que vous avez vérifié que le problème est rencontré par d'autres utilisateurs, créez une nouvelle "issue" sur GitHub. Assurez-vous d'inclure autant d'informations que possible afin que nous puissions reproduire le bug.
 
 ### Vous avez trouvé un problème de sécurité?
 
@@ -149,4 +147,3 @@ Le contenu de ce référentiel est protégé par les licences suivantes:
 
 - Le logiciel est sous licence [BSD-3-Clause](LICENSE.md).
 - Les ressources d'apprentissage du [curriculum](/curriculum) et du [guide](/guide) ainsi que leurs sous-repertoires sont sous licence [CC-BY-SA-4.0](/curriculum/LICENSE.md).
-
