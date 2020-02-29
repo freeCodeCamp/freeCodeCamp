@@ -20,7 +20,8 @@ const {
   STRIPE_PUBLIC_KEY: stripePublicKey,
   SERVICEBOT_ID: servicebotId,
   ALGOLIA_APP_ID: algoliaAppId,
-  ALGOLIA_API_KEY: algoliaAPIKey
+  ALGOLIA_API_KEY: algoliaAPIKey,
+  SITE_URL: siteUrl
 } = process.env;
 
 const locations = {
@@ -29,7 +30,8 @@ const locations = {
   forumLocation: forum,
   newsLocation: news,
   forumProxy: forumProxy,
-  newsProxy: newsProxy
+  newsProxy: newsProxy,
+  siteUrl: siteUrl
 };
 
 module.exports = Object.assign(locations, {
