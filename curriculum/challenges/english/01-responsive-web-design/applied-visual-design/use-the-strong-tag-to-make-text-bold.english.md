@@ -26,8 +26,7 @@ tests:
   - text: The <code>strong</code> tag should be inside the <code>p</code> tag.
     testString: assert($('p').children('strong').length == 1);
   - text: The <code>strong</code> tag should wrap around the words "Stanford University".
-    testString: assert($('strong').text().match(/^Stanford University$/gi));
-
+    testString: assert($('strong').text().match(/^Stanford University\.?$/gi));
 ```
 
 </section>
