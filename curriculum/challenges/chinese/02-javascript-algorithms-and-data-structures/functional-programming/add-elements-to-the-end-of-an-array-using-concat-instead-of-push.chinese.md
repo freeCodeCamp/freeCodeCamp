@@ -8,8 +8,8 @@ localeTitle: 使用 concat 而不是 push 将元素添加到数组的末尾
 
 ## Description
 <section id='description'>
-函数式编程就是创建和使用 non-mutating 函数。
-最后一个挑战介绍了<code>concat</code>方法，这是一种在不改变原始数组的前提下，将数组组合成新数组的方法。将<code>concat</code>方法与<code>push</code>方法做比较，<code>Push</code>将元素添加到调用它的数组的末尾，这样会改变该数组。举个例子：
+函数式编程就是创建和使用具有不变性的函数。
+上一个挑战介绍了<code>concat</code>方法，这是一种在不改变原始数组的前提下，将数组组合成新数组的方法。将<code>concat</code>方法与<code>push</code>方法做比较，<code>Push</code>将元素添加到调用它的数组的末尾，这样会改变该数组。举个例子：
 
 ```js
 var arr = [1, 2, 3];
@@ -18,7 +18,7 @@ arr.push([4, 5, 6]);
 // Not the functional programming way
 ```
 
-<code>Concat</code>方法可以将新项目添加到数组末尾，而不产生任何变更副作用。
+<code>Concat</code>方法可以将新项目添加到数组末尾，而不产生任何变化。
 </section>
 
 ## Instructions

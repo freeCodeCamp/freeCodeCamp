@@ -15,7 +15,7 @@ localeTitle: 应用函数式编程将字符串转换为URL片段
 
 ## Instructions
 <section id='instructions'>
-填写<code>urlSlug</code>函数，使其转换字符串<code>title</code>带有连字符号的 URL 版本。您可以使用本节中介绍的任何方法，但不要用<code>replace</code>方法。以下是本次挑战的要求：
+填写<code>urlSlug</code>函数，将字符串<code>title</code>转换成带有连字符号的 URL。您可以使用本节中介绍的任何方法，但不要用<code>replace</code>方法。以下是本次挑战的要求：
 输入包含空格和标题大小写单词的字符串
 输出字符串，单词之间的空格用连字符(<code>-</code>)替换
 输出应该是小写字母
