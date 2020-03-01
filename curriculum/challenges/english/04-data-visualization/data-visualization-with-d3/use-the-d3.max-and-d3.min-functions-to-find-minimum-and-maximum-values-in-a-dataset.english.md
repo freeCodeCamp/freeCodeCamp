@@ -32,8 +32,7 @@ const minX = d3.min(locationData, (d) => d[0]);
 
 ## Instructions
 <section id='instructions'>
-The <code>positionData</code> variable holds a 3-dimensional (3D) array. Use a D3 method to find the maximum value of the z coordinate (the third value) from the arrays and save it in the <code>output</code> variable.
-<strong>Note</strong><br>Fun fact - D3 can plot 3D arrays.
+The <code>positionData</code> array holds sub arrays of x, y, and z coordinates. Use a D3 method to find the maximum value of the z coordinate (the third value) from the arrays and save it in the <code>output</code> variable.
 </section>
 
 ## Tests
