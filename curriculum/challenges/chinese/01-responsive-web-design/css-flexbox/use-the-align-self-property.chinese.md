@@ -15,7 +15,7 @@ flex 子项目的最后一个属性是<code>align-self</code>。这个属性允�
 
 ## Instructions
 <section id='instructions'>
-在<code>#box-1</code>和<code>#box-2</code>添加 CSS 属性<code>align-self</code>。<code>#box-1</code>设为 center，<code>#box-2</code>设为 flex-end。
+在<code>#box-1</code>和<code>#box-2</code>添加 CSS 属性<code>align-self</code>。<code>#box-1</code>设为 center，<code>#box-2</code>设为 <code>flex-end</code>。
 </section>
 
 ## Tests
@@ -23,9 +23,9 @@ flex 子项目的最后一个属性是<code>align-self</code>。这个属性允�
 
 ```yml
 tests:
-  - text: '<code>#box-1</code>元素应有<code>align-self</code>属性，其值应为 center。'
+  - text: <code>#box-1</code>元素应有<code>align-self</code>属性，其值应为 <code>center</code>。
     testString: assert($('#box-1').css('align-self') == 'center');
-  - text: '<code>#box-2</code>元素应有<code>align-self</code>属性，其值应为 flex-end。'
+  - text: <code>#box-2</code>元素应有<code>align-self</code>属性，其值应为 <code>flex-end</code>。
     testString: assert($('#box-2').css('align-self') == 'flex-end');
 
 ```

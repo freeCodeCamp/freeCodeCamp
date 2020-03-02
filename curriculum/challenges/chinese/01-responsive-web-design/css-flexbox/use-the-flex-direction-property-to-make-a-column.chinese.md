@@ -14,7 +14,7 @@ localeTitle: 使用 flex-direction 属性创建一列
 
 ## Instructions
 <section id='instructions'>
-给<code>#box-container</code>元素添加 CSS 属性<code>flex-direction</code>，赋值为 column。
+给<code>#box-container</code>元素添加 CSS 属性<code>flex-direction</code>，赋值为 <code>column</code>。
 </section>
 
 ## Tests
@@ -22,7 +22,7 @@ localeTitle: 使用 flex-direction 属性创建一列
 
 ```yml
 tests:
-  - text: '<code>#box-container</code>应有<code>flex-direction</code>属性，其值应为 column。'
+  - text: <code>#box-container</code>应有<code>flex-direction</code>属性，其值应为 column。
     testString: assert($('#box-container').css('flex-direction') == 'column');
 
 ```

@@ -19,7 +19,7 @@ Flex 容器中，与主轴垂直的叫做 <strong>cross axis（交叉轴）</str
 ## Instructions
 <section id='instructions'>
 这个例子可以帮助你理解这个属性，在<code>#box-container</code>添加 CSS 属性<code>align-items</code>并将值设为 center。
-<strong>提示：</strong><br>在编辑器里试试<code>align-items</code>的其他可用值，看看它们之间的区别。但要通过挑战，你必须把值设为 center。
+<strong>提示：</strong><br>在编辑器里试试<code>align-items</code>的其他可用值，看看它们之间的区别。但要通过挑战，你必须把值设为 <code>center</code>。
 </section>
 
 ## Tests
@@ -27,7 +27,7 @@ Flex 容器中，与主轴垂直的叫做 <strong>cross axis（交叉轴）</str
 
 ```yml
 tests:
-  - text: '<code>#box-container</code>元素应有<code>align-items</code>属性，其值应为 center。'
+  - text: <code>#box-container</code>元素应有<code>align-items</code>属性，其值应为 <code>center</code>。
     testString: assert($('#box-container').css('align-items') == 'center');
 
 ```
