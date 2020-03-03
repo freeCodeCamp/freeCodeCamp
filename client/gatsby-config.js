@@ -1,4 +1,5 @@
 const path = require('path');
+const config = require('./config/env');
 
 const {
   buildChallenges,
@@ -11,7 +12,7 @@ const curriculumIntroRoot = path.resolve(__dirname, './src/pages');
 module.exports = {
   siteMetadata: {
     title: 'freeCodeCamp',
-    siteUrl: 'https://www.freecodecamp.org'
+    siteUrl: config.homeLocation
   },
   plugins: [
     'gatsby-plugin-react-helmet',
