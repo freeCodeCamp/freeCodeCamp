@@ -1,4 +1,4 @@
-export const whitelistOrigins = [
+exports.whitelistOrigins = [
   'https://www.freecodecamp.dev',
   'https://www.freecodecamp.org',
   'https://beta.freecodecamp.dev',
