@@ -42,7 +42,7 @@ class LearnLayout extends Component {
   }
 
   componentWillUnmount() {
-    const metaTag = document.querySelector(`meta[name="googlebot"]`);
+    const metaTag = document.querySelector(`meta[name="robots"]`);
     if (metaTag) {
       metaTag.remove();
     }
@@ -67,7 +67,7 @@ class LearnLayout extends Component {
     return (
       <Fragment>
         <Helmet>
-          <meta content='noindex' name='googlebot' />
+          <meta content='noindex' name='robots' />
         </Helmet>
         <main id='learn-app-wrapper'>{children}</main>
         <DonateModal />
