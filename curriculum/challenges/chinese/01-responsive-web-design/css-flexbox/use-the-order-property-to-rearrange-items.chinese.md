@@ -14,7 +14,7 @@ localeTitle: 使用 order 属性重新排列项目
 
 ## Instructions
 <section id='instructions'>
-给<code>#box-1</code>和<code>#box-2</code>添加 CSS 属性<code>order</code>，<code>#box-1</code>的<code>order</code>属性值设为 2，<code>#box-2</code>的<code>order</code>属性值设为 1。
+给<code>#box-1</code>和<code>#box-2</code>添加 CSS 属性<code>order</code>，<code>#box-1</code>的<code>order</code>属性值设为 <code>2</code>，<code>#box-2</code>的<code>order</code>属性值设为 <code>1</code>。
 </section>
 
 ## Tests
@@ -22,9 +22,9 @@ localeTitle: 使用 order 属性重新排列项目
 
 ```yml
 tests:
-  - text: '<code>#box-1</code>元素应有<code>order</code>属性，其值应为 2。'
+  - text: <code>#box-1</code>元素应有<code>order</code>属性，其值应为 <code>2</code>。
     testString: assert($('#box-1').css('order') == '2');
-  - text: '<code>#box-2</code>元素应有<code>order</code>属性，其值应为 1。'
+  - text: <code>#box-2</code>元素应有<code>order</code>属性，其值应为 <code>1</code>。
     testString: assert($('#box-2').css('order') == '1');
 
 ```

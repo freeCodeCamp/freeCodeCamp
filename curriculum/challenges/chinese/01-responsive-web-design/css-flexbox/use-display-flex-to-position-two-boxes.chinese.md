@@ -15,7 +15,7 @@ localeTitle: '使用 display: flex 定位两个盒子'
 
 ## Instructions
 <section id='instructions'>
-为<code>#box-container</code>添加<code>display</code>属性，设置其值为 flex。
+为<code>#box-container</code>添加<code>display</code>属性，设置其值为 <code>flex</code>。
 </section>
 
 ## Tests
@@ -23,7 +23,7 @@ localeTitle: '使用 display: flex 定位两个盒子'
 
 ```yml
 tests:
-  - text: '<code>#box-container</code>应有<code>display</code>属性，其值应为 flex。'
+  - text: <code>#box-container</code>应有<code>display</code>属性，其值应为 <code>flex</code>。
     testString: assert($('#box-container').css('display') == 'flex');
 
 ```

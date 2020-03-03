@@ -23,7 +23,7 @@ localeTitle: 给网站添加图片
 ## Instructions
 <section id='instructions'>
 让我们给网站添加图片：
-在<code>h2</code>元素前，插入一个<code>img</code>元素
+在<code>main</code>元素里面，给<code>p</code>前面插入一个<code>img</code>元素
 现在设置<code>src</code>属性指向这个地址：
 <code>https://bit.ly/fcc-relaxing-cat</code>
 最后不要忘记给图片添加一个<code>alt</code>文本。
@@ -34,11 +34,11 @@ localeTitle: 给网站添加图片
 
 ```yml
 tests:
-  - text: '网页应该有一张图片。'
+  - text: 网页应该有一张图片。
     testString: assert($("img").length);
-  - text: '图片 src 属性应该为 https://bit.ly/fcc-relaxing-cat。'
+  - text: <code>img</code> 应该有一个<code>src</code>属性，指向猫咪图片。
     testString: assert(/^https:\/\/bit\.ly\/fcc-relaxing-cat$/i.test($("img").attr("src")));
-  - text: '图片必须有<code>alt</code>属性。'
+  - text: <code>img</code> 元素的<code>alt</code>属性值不应为空。
     testString: assert($("img").attr("alt") && $("img").attr("alt").length && /<img\S*alt=(['"])(?!\1|>)\S+\1\S*\/?>/.test(code.replace(/\s/g,'')));
 
 ```
