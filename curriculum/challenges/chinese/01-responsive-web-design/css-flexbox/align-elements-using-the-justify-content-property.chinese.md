@@ -19,8 +19,8 @@ flex 子元素有时不能充满整个 flex 容器，所以我们经常需要告
 
 ## Instructions
 <section id='instructions'>
-这个例子可以帮助你理解这个属性，在<code>#box-container</code>元素添加 CSS 属性<code>justify-content</code>，其值为 center。
-<strong>提示：</strong><br>在编辑器里试试<code>justify-content</code>的其他可用值，看看它们之间的区别。但要通过挑战，你必须把值设为 center.
+这个例子可以帮助你理解这个属性，在<code>#box-container</code>元素添加 CSS 属性<code>justify-content</code>，其值为 <code>center</code>。
+<strong>提示：</strong><br>在编辑器里试试<code>justify-content</code>的其他可用值，看看它们之间的区别。但要通过挑战，你必须把值设为 <code>center</code>。
 </section>
 
 ## Tests
@@ -28,7 +28,7 @@ flex 子元素有时不能充满整个 flex 容器，所以我们经常需要告
 
 ```yml
 tests:
-  - text: '<code>#box-container</code>应有<code>justify-content</code>属性，其值应为 center。'
+  - text: <code>#box-container</code>应有<code>justify-content</code>属性，其值应为 <code>center</code>。
     testString: assert($('#box-container').css('justify-content') == 'center');
 
 ```

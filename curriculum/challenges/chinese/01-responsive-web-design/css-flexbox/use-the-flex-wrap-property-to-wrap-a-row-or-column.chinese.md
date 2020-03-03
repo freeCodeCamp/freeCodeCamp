@@ -17,7 +17,7 @@ CSS flexbox 有一个把 flex 子元素拆分为多行（或多列）的特性�
 
 ## Instructions
 <section id='instructions'>
-现在的布局一行里面元素太多了，在<code>#box-container</code>元素添加 CSS 属性<code>flex-wrap</code>，把值设为 wrap。
+现在的布局一行里面元素太多了，在<code>#box-container</code>元素添加 CSS 属性<code>flex-wrap</code>，把值设为 <code>wrap</code>。
 </section>
 
 ## Tests
@@ -25,7 +25,7 @@ CSS flexbox 有一个把 flex 子元素拆分为多行（或多列）的特性�
 
 ```yml
 tests:
-  - text: '<code>#box-container</code>元素应有<code>flex-wrap</code>属性，其值应为 wrap。'
+  - text: <code>#box-container</code>元素应有<code>flex-wrap</code>属性，其值应为 <code>wrap</code>。
     testString: assert($('#box-container').css('flex-wrap') == 'wrap');
 
 ```

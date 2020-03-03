@@ -23,13 +23,12 @@ localeTitle: 制作一个产品登录页
 <strong>需求 9：</strong>在<code>#email</code>输入框内应有描述该区域用途的占位符文字。
 <strong>需求 10：</strong><code>#email</code>输入框应该用 HTML5 验证来确认输入的内容是否为邮箱。
 <strong>需求 11：</strong>在表单中，有一个对应<code>id="submit"</code>的<code>input</code>提交按钮。
-<strong>需求 12：</strong>当我点击<code>#submit</code>元素，邮箱会被提交到一个静态页面（使用这个模拟 URL: <a href='https://www.freecodecamp.com/email-submit' target='_blank'>https://www.freecodecamp.com/email-submit</a>），它会确认邮箱输入正确并被成功投递。
+<strong>需求 12：</strong>当我点击<code>#submit</code>元素，邮箱会被提交到一个静态页面 (使用这个模拟 URL: <a href='https://www.freecodecamp.com/email-submit' target='_blank'>https://www.freecodecamp.com/email-submit</a>)。
 <strong>需求 13：</strong>导航栏应保持在视窗的顶部。
 <strong>需求 14：</strong>我的产品主页应至少有一个媒体查询。
 <strong>需求 15：</strong>至少使用一次 flexbox 布局。
 你可以通过 fork 这个项目 <a href='http://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>CodePen</a> 来构建你的项目，也可以使用此 CDN 链接在任何你喜欢的环境中运行测试：<code>https://gitcdn.link/repo/freeCodeCamp/testable-projects-fcc/master/build/bundle.js</code>。
-完成项目并通过所有测试后，输入你的项目在 CodePen 上的链接。
-当你遇到问题的时候，记得使用 <a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>Read-Search-Ask</a> 方法。
+完成之后，将你的 URL 提交到相应的项目，并测试通过。
 </section>
 
 ## Instructions

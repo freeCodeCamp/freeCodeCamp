@@ -29,7 +29,7 @@ localeTitle: 制作一个技术文档页面
 <strong>需求 15：</strong>我的技术文档页面应该至少使用一次媒体查询。
 你可以通过 fork 这个项目 <a href='http://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>CodePen</a> 来构建你的项目，也可以使用此 CDN 链接在任何你喜欢的环境中运行测试：<code>https://gitcdn.link/repo/freeCodeCamp/testable-projects-fcc/master/build/bundle.js</code>。
 完成项目并通过所有测试后，输入你的项目在 CodePen 上的链接。
-当你遇到问题的时候，记得使用 <a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>Read-Search-Ask</a> 方法。
+完成之后，将你的 URL 提交到相应的项目，并测试通过。
 </section>
 
 ## Instructions

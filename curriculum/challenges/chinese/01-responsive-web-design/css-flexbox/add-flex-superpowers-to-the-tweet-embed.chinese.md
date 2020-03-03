@@ -23,19 +23,19 @@ localeTitle: 在推文中添加弹性盒子布局
 
 ```yml
 tests:
-  - text: '<code>header</code>的<code>display</code>属性应为 flex。'
+  - text: <code>header</code>的<code>display</code>属性应为 <code>flex</code>。
     testString: assert($('header').css('display') == 'flex');
-  - text: '<code>footer</code>的<code>display</code>属性应为 flex。'
+  - text: <code>footer</code>的<code>display</code>属性应为 <code>flex</code>。
     testString: assert($('footer').css('display') == 'flex');
-  - text: '<code>h3</code>的<code>display</code>属性应为 flex。'
+  - text: <code>h3</code>的<code>display</code>属性应为 <code>flex</code>。
     testString: assert($('h3').css('display') == 'flex');
-  - text: '<code>h4</code>的<code>display</code>属性应为 flex。'
+  - text: <code>h4</code>的<code>display</code>属性应为 <code>flex</code>。
     testString: assert($('h4').css('display') == 'flex');
-  - text: '<code>.profile-name</code>的<code>display</code>属性应为 flex。'
+  - text: <code>.profile-name</code>的<code>display</code>属性应为 <code>flex</code>。
     testString: assert($('.profile-name').css('display') == 'flex');
-  - text: '<code>.follow-btn</code>的<code>display</code>属性应为 flex。'
+  - text: <code>.follow-btn</code>的<code>display</code>属性应为 <code>flex</code>。
     testString: assert($('.follow-btn').css('display') == 'flex');
-  - text: '<code>.stats</code>的<code>display</code>属性应为 flex。'
+  - text: <code>.stats</code>的<code>display</code>属性应为 <code>flex</code>。
     testString: assert($('.stats').css('display') == 'flex');
 
 ```

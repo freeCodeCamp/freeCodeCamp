@@ -33,14 +33,16 @@ HTML 有一个特定的元素用于创建无序列表<code>unordered lists（缩
 
 ```yml
 tests:
-  - text: '创建一个<code>ul</code>无序列表。'
+  - text: 创建一个<code>ul</code>无序列表。
     testString: assert($("ul").length > 0);
-  - text: '你应该在<code>ul</code>无序列表中添加三个<code>li</code>条目。'
+  - text: 你应该在<code>ul</code>无序列表中添加三个<code>li</code>条目。
     testString: assert($("ul li").length > 2);
-  - text: '确保<code>ul</code>无序列表有结束标记。'
+  - text: 确保<code>ul</code>无序列表有结束标记。
     testString: assert(code.match(/<\/ul>/gi) && code.match(/<ul/gi) && code.match(/<\/ul>/gi).length === code.match(/<ul/gi).length);
-  - text: '确保每个<code>li</code>条目都有结束标记。'
+  - text: 确保每个<code>li</code>条目都有结束标记。
     testString: assert(code.match(/<\/li>/gi) && code.match(/<li[\s>]/gi) && code.match(/<\/li>/gi).length === code.match(/<li[\s>]/gi).length);
+  - text: 每个<code>li</code>元素都应该有一个空字符串或者空格。
+    testString: assert($("ul li").filter((_, item) => !$(item).text().trim()).length === 0);
 
 ```
 

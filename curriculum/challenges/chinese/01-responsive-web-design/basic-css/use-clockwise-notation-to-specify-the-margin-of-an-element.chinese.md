@@ -25,14 +25,16 @@ localeTitle: 使用顺时针方向指定元素的外边距
 
 ```yml
 tests:
-  - text: '<code>blue-box</code> class 的上外边距应为<code>40px</code>。'
+  - text: <code>blue-box</code> class 的上外边距应为<code>40px</code>。
     testString: assert($(".blue-box").css("margin-top") === "40px");
-  - text: '<code>blue-box</code> class 的右外边距应为<code>20px</code>。'
-    testString: assert($(".blue-box").css("margin-right") === "20px", '<code>blue-box</code> class 的右外边距应为<code>20px</code>。');
-  - text: '<code>blue-box</code> class 的下外边距应为<code>20px</code>。'
-    testString: assert($(".blue-box").css("margin-bottom") === "20px", '<code>blue-box</code> class 的下外边距应为<code>20px</code>。');
-  - text: '<code>blue-box</code> class 的左外边距应为<code>40px</code>。'
+  - text: <code>blue-box</code> class 的右外边距应为<code>20px</code>。
+    testString: assert($(".blue-box").css("margin-right") === "20px");
+  - text: <code>blue-box</code> class 的下外边距应为<code>20px</code>。
+    testString: assert($(".blue-box").css("margin-bottom") === "20px");
+  - text: <code>blue-box</code> class 的左外边距应为<code>40px</code>。
     testString: assert($(".blue-box").css("margin-left") === "40px");
+  - text: 你应该沿顺时针方向设置<code>blue-box</code>的外边距。
+    testString: const removeCssComments = str => str.replace(/\/\*[\s\S]+?\*\//g, '');assert(/\.blue-box\s*{[\s\S]*margin[\s]*:\s*\d+px\s+\d+px\s+\d+px\s+\d+px(;\s*[^}]+\s*}|;?\s*})/.test(removeCssComments($('style').text())));
 
 ```
 

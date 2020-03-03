@@ -9,18 +9,22 @@ localeTitle: 使图片根据设备尺寸自如响应
 
 ## Description
 <section id='description'>
-用 CSS 来让图片自适应其实很简单。不要使用绝对单位：
-<code>img { width: 720px; }</code>
-你应该使用：
-<blockquote>img {<br>&nbsp;&nbsp;max-width: 100%;<br>&nbsp;&nbsp;display: block;<br>&nbsp;&nbsp;height: auto;<br>}</blockquote>
-<code>max-width</code> 属性能让图片以 100% 的最大宽度适应其父容器的宽度，但图片不会拉伸得比原始宽度还宽。把 <code>display</code> 属性值设置为 block，将 image 标签从内联元素（默认值）更改为块级元素。设置 <code>height</code> 属性为 auto 保持图片的原始宽高比。
+用 CSS 来让图片自适应其实很简单。你只需要给图片添加这些属性:
 
+```css
+img {
+  max-width: 100%;
+  height: auto;
+}
+```
+
+设置 `max-width` 值为 `100%` 可确保图片不超出父容器的范围。设置 `height `属性为 `auto` 保持图片的原始宽高比。
 </section>
 
 ## Instructions
 <section id='instructions'>
 
-给 <code>img</code> 标签增加样式规则使它自适应容器尺寸。应声明为块级元素，应适应它容器的宽度，应保持原本的宽高比。
+给 `responsive-img` 添加样式规则，使其成为响应式。它不应该超出父容器（在本例中，即预览窗口）的范围，并保持宽高比不变。添加代码后，拖动浏览器窗口，看看图片发生什么变化。
 </section>
 
 ## Tests
@@ -28,11 +32,9 @@ localeTitle: 使图片根据设备尺寸自如响应
 
 ```yml
 tests:
-  - text: '<code>img</code> 标签应设置 <code>max-width</code> 为 100%。'
-    testString: assert(code.match(/max-width:\s*?100%;/g));
-  - text: '<code>img</code> 标签应设置 <code>display</code> 为 block。'
-    testString: assert($('img').css('display') == 'block');
-  - text: '<code>img</code> 标签应设置 <code>height</code> 为 auto。'
+  - text: <code>responsive-img</code> 类应设置 <code>max-width</code> 为 <code>100%</code>。
+    testString: assert(getComputedStyle($('.responsive-img')[0]).maxWidth === '100%');
+  - text: <code>responsive-img</code> 类应设置 <code>height</code> 为 <code>auto</code>。
     testString: assert(code.match(/height:\s*?auto;/g));
 
 ```
@@ -46,9 +48,17 @@ tests:
 
 ```html
 <style>
-  
+.responsive-img {
+
+
+}
+
+img {
+  width: 600px;
+}
 </style>
 
+<img class="responsive-img" src="https://s3.amazonaws.com/freecodecamp/FCCStickerPack.jpg" alt="freeCodeCamp stickers set">
 <img src="https://s3.amazonaws.com/freecodecamp/FCCStickerPack.jpg" alt="freeCodeCamp stickers set">
 ```
 
@@ -63,8 +73,20 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style>
+.responsive-img {
+  max-width: 100%;
+  height: auto;
+}
+
+img {
+  width: 600px;
+}
+</style>
+
+<img class="responsive-img" src="https://s3.amazonaws.com/freecodecamp/FCCStickerPack.jpg" alt="freeCodeCamp stickers set">
+<img src="https://s3.amazonaws.com/freecodecamp/FCCStickerPack.jpg" alt="freeCodeCamp stickers set">
 ```
 
 </section>

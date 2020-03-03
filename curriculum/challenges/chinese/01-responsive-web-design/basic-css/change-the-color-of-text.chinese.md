@@ -26,11 +26,11 @@ localeTitle: 更改文本的颜色
 
 ```yml
 tests:
-  - text: '<code>h2</code>元素应该为红色。'
+  - text: <code>h2</code> 元素应该有一个<code>style</code>声明。
     testString: assert($("h2").attr('style'));
-  - text: '<code>h2</code>元素的<code>style</code>属性值应该以<code>;</code>结束。'
-    testString: assert($("h2").css("color") === "rgb(255, 0, 0)");
-  - text: '<code>style</code> 声明应该以 <code>;</code> 结尾'
+  - text: <code>h2</code>元素应该为<code>red</code>。
+    testString: assert($("h2")[0].style.color === "red");
+  - text: <code>style</code> 声明应该以 <code>;</code> 结尾。
     testString: assert($("h2").attr('style') && $("h2").attr('style').endsWith(';'));
 
 ```
