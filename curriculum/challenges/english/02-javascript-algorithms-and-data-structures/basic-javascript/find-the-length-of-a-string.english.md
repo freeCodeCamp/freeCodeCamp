@@ -50,7 +50,7 @@ firstNameLength = firstName.length;
 var lastNameLength = 0;
 var lastName = "Lovelace";
 
-// Only change code below this line.
+// Only change code below this line
 
 lastNameLength = lastName;
 

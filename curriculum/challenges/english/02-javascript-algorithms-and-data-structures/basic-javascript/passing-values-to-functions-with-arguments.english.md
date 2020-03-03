@@ -57,7 +57,7 @@ function ourFunctionWithArgs(a, b) {
 }
 ourFunctionWithArgs(10, 5); // Outputs 5
 
-// Only change code below this line.
+// Only change code below this line
 
 
 ```

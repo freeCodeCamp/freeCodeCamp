@@ -53,15 +53,14 @@ tests:
 function copyMachine(arr, num) {
   let newArr = [];
   while (num >= 1) {
-    // change code below this line
+    // Only change code below this line
 
-    // change code above this line
+    // Only change code above this line
     num--;
   }
   return newArr;
 }
 
-// change code here to test different cases:
 console.log(copyMachine([true, false, true], 2));
 ```
 
@@ -85,9 +84,7 @@ const removeJSComments = str => str.replace(/\/\*[\s\S]*?\*\/|\/\/.*$/gm, '');
 function copyMachine(arr,num){
 	let newArr=[];
 	while(num >=1){
-	// change code below this line 
 	newArr.push([...arr]);
-	//change code above this line
 	num--;
 	}
 	return newArr;
