@@ -54,7 +54,7 @@ const prepareBlackTea = () => 'blackTea';
 
 /*
 Given a function (representing the tea type) and number of cups needed, the
-following function returns an array of strings (each representing the a cup of
+following function returns an array of strings (each representing a cup of
 a specific type of tea).
 */
 const getTea = (prepareTea, numOfCups) => {
