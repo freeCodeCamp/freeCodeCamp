@@ -59,7 +59,7 @@ function Dog(name) {
   this.name = name;
 }
 
-// Modify the code below this line
+// Only change code below this line
 Dog.prototype = {
 
   numLegs: 4,

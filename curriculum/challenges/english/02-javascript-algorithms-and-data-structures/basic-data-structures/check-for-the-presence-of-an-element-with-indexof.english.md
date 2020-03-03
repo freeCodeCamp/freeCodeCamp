@@ -52,12 +52,11 @@ tests:
 
 ```js
 function quickCheck(arr, elem) {
-  // change code below this line
+  // Only change code below this line
 
-  // change code above this line
+  // Only change code above this line
 }
 
-// change code here to test different cases:
 console.log(quickCheck(['squash', 'onions', 'shallots'], 'mushrooms'));
 ```
 
@@ -72,9 +71,7 @@ console.log(quickCheck(['squash', 'onions', 'shallots'], 'mushrooms'));
 
 ```js
 function quickCheck(arr, elem) {
-  // change code below this line
   return arr.indexOf(elem) >= 0; 
-  // change code above this line
 }
 ```
 

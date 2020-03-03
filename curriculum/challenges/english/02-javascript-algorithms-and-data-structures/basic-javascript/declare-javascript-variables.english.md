@@ -25,7 +25,7 @@ creates a <code>variable</code> called <code>ourName</code>. In JavaScript we en
 ## Instructions
 <section id='instructions'>
 Use the <code>var</code> keyword to create a variable called <code>myName</code>.
-<strong>Hint</strong><br>Look at the <code>ourName</code> example if you get stuck.
+<strong>Hint</strong><br>Look at the <code>ourName</code> example above if you get stuck.
 </section>
 
 ## Tests
@@ -46,10 +46,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Example
-var ourName;
 
-// Declare myName below this line
 
 ```
 

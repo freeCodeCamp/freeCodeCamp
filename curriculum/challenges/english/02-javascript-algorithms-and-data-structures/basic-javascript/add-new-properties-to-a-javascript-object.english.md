@@ -59,7 +59,7 @@ var myDog = {
   "friends": ["freeCodeCamp Campers"]
 };
 
-// Only change code below this line.
+// Only change code below this line
 
 ```
 

@@ -59,12 +59,13 @@ tests:
 
 ```js
 function isLess(a, b) {
-  // Fix this code
+  // Only change code below this line
   if (a < b) {
     return true;
   } else {
     return false;
   }
+  // Only change code above this line
 }
 
 // Change these values to test

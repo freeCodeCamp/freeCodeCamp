@@ -58,12 +58,11 @@ tests:
 
 ```js
 function popShift(arr) {
-  let popped; // change this line
-  let shifted; // change this line
+  let popped; // Change this line
+  let shifted; // Change this line
   return [shifted, popped];
 }
 
-// do not change code below this line
 console.log(popShift(['challenge', 'is', 'not', 'complete']));
 ```
 
@@ -78,8 +77,8 @@ console.log(popShift(['challenge', 'is', 'not', 'complete']));
 
 ```js
 function popShift(arr) {
-  let popped = arr.pop(); // change this line
-  let shifted = arr.shift(); // change this line
+  let popped = arr.pop(); // Change this line
+  let shifted = arr.shift(); // Change this line
   return [shifted, popped];
 }
 ```

@@ -76,7 +76,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-let yourArray; // change this line
+let yourArray; // Change this line
 ```
 
 </div>

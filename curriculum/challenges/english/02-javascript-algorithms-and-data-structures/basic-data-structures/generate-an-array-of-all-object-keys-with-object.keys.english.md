@@ -55,9 +55,9 @@ let users = {
 };
 
 function getArrayOfUsers(obj) {
-  // change code below this line
+  // Only change code below this line
 
-  // change code above this line
+  // Only change code above this line
 }
 
 console.log(getArrayOfUsers(users));

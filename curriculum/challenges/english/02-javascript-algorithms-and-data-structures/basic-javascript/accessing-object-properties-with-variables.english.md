@@ -77,7 +77,7 @@ var testObj = {
   19: "Unitas"
 };
 
-// Only change code below this line;
+// Only change code below this line
 
 var playerNumber;       // Change this Line
 var player = testObj;   // Change this Line

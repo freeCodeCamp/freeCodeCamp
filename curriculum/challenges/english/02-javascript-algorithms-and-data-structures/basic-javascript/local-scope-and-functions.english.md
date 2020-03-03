@@ -51,7 +51,9 @@ tests:
 
 ```js
 function myLocalScope() {
-  'use strict'; // you shouldn't need to edit this line
+  'use strict';
+
+  // Only change code below this line
 
   console.log(myVar);
 }

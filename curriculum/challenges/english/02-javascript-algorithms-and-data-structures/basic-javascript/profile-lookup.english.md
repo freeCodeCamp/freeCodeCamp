@@ -49,7 +49,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-//Setup
+// Setup
 var contacts = [
     {
         "firstName": "Akira",

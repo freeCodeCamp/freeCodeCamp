@@ -70,11 +70,11 @@ function ourTrueOrFalse(isItTrue) {
 // Setup
 function trueOrFalse(wasThatTrue) {
 
-  // Only change code below this line.
+  // Only change code below this line
 
 
 
-  // Only change code above this line.
+  // Only change code above this line
 
 }
 

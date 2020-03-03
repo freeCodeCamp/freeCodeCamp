@@ -51,7 +51,7 @@ function ourRandomRange(ourMin, ourMax) {
 
 ourRandomRange(1, 9);
 
-// Only change code below this line.
+// Only change code below this line
 
 function randomRange(myMin, myMax) {
 

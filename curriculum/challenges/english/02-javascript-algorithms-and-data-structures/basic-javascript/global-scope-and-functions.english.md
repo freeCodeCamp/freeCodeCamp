@@ -14,7 +14,7 @@ Variables which are used without the <code>var</code> keyword are automatically 
 
 ## Instructions
 <section id='instructions'>
-Using <code>var</code>, declare a <code>global</code> variable <code>myGlobal</code> outside of any function. Initialize it with a value of <code>10</code>.
+Using <code>var</code>, declare a global variable named <code>myGlobal</code> outside of any function. Initialize it with a value of <code>10</code>.
 Inside function <code>fun1</code>, assign <code>5</code> to <code>oopsGlobal</code> <strong><em>without</em></strong> using the <code>var</code> keyword.
 </section>
 
@@ -42,7 +42,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Declare your variable here
+// Declare the myGlobal variable below this line
 
 
 function fun1() {
@@ -51,6 +51,7 @@ function fun1() {
 }
 
 // Only change code above this line
+
 function fun2() {
   var output = "";
   if (typeof myGlobal != "undefined") {
@@ -112,15 +113,12 @@ uncapture();
 
 
 ```js
-// Declare your variable here
 var myGlobal = 10;
 
 function fun1() {
-  // Assign 5 to oopsGlobal Here
   oopsGlobal = 5;
 }
 
-// Only change code above this line
 function fun2() {
   var output = "";
   if(typeof myGlobal != "undefined") {

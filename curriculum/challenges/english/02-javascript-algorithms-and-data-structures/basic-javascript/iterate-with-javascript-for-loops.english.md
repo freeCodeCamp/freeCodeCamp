@@ -62,7 +62,7 @@ for (var i = 0; i < 5; i++) {
 // Setup
 var myArray = [];
 
-// Only change code below this line.
+// Only change code below this line
 
 
 ```

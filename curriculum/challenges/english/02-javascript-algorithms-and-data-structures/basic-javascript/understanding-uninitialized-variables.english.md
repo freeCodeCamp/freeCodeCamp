@@ -40,17 +40,15 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Initialize these three variables
+// Only change code below this line
 var a;
 var b;
 var c;
-
-// Do not change code below this line
+// Only change code above this line
 
 a = a + 1;
 b = b + 5;
 c = c + " String!";
-
 ```
 
 </div>
