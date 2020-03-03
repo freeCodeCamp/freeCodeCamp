@@ -42,8 +42,10 @@ Find the value of <var>n</var> ≤ 1,000,000 for which n/φ(<var>n</var>) is a m
 
 ```yml
 tests:
-  - text: <code>euler69()</code> should return 510510.
-    testString: assert.strictEqual(euler69(), 510510);
+  - text: <code>totientMaximum()</code> should return a number.
+    testString: assert(typeof totientMaximum() === 'number');
+  - text: <code>totientMaximum()</code> should return 510510.
+    testString: assert.strictEqual(totientMaximum(), 510510);
 
 ```
 
@@ -55,12 +57,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function euler69() {
+function totientMaximum() {
   // Good luck!
   return true;
 }
 
-euler69();
+totientMaximum();
 ```
 
 </div>

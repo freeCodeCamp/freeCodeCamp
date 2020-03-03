@@ -7,6 +7,7 @@ forumTopicId: 302193
 
 ## Description
 <section id='description'>
+
 The four adjacent digits in the 1000-digit number that have the greatest product are 9 × 9 × 8 × 9 = 5832.
 
 <div style='text-align: center;'>73167176531330624919225119674426574742355349194934</div>
@@ -29,7 +30,9 @@ The four adjacent digits in the 1000-digit number that have the greatest product
 <div style='text-align: center;'>84580156166097919133875499200524063689912560717606</div>
 <div style='text-align: center;'>05886116467109405077541002256983155200055935729725</div>
 <div style='text-align: center;'>71636269561882670428252483600823257530420752963450</div>
-Find the <code>n</code> adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?
+
+Find the `n` adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?
+
 </section>
 
 ## Instructions
@@ -42,6 +45,8 @@ Find the <code>n</code> adjacent digits in the 1000-digit number that have the g
 
 ```yml
 tests:
+  - text: <code>largestProductinaSeries(4)</code> should return a number.
+    testString: assert(typeof largestProductinaSeries(4) === 'number');
   - text: <code>largestProductinaSeries(4)</code> should return 5832.
     testString: assert.strictEqual(largestProductinaSeries(4), 5832);
   - text: <code>largestProductinaSeries(13)</code> should return 23514624000.
