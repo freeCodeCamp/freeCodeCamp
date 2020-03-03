@@ -7,8 +7,11 @@ forumTopicId: 302160
 
 ## Description
 <section id='description'>
+
 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
-What is the smallest positive number that is evenly divisible by all of the numbers from 1 to <code>n</code>?
+
+What is the smallest positive number that is evenly divisible by all of the numbers from 1 to `n`?
+
 </section>
 
 ## Instructions
@@ -21,6 +24,8 @@ What is the smallest positive number that is evenly divisible by all of the numb
 
 ```yml
 tests:
+  - text: <code>smallestMult(5)</code> should return a number.
+    testString: assert(typeof smallestMult(5) === 'number');
   - text: <code>smallestMult(5)</code> should return 60.
     testString: assert.strictEqual(smallestMult(5), 60);
   - text: <code>smallestMult(7)</code> should return 420.

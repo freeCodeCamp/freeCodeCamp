@@ -53,7 +53,7 @@ tests:
 // Setup
 var myArray = [];
 
-// Only change code below this line.
+// Only change code below this line
 
 
 ```

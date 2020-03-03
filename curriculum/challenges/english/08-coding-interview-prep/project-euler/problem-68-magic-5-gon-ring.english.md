@@ -7,10 +7,13 @@ forumTopicId: 302180
 
 ## Description
 <section id='description'>
+
 Consider the following "magic" 3-gon ring, filled with the numbers 1 to 6, and each line adding to nine.
 
+<img class="img-responsive center-block" alt="a completed example of a 3-gon ring" src="https://cdn-media-1.freecodecamp.org/project-euler/3-gon-ring.png" style="background-color: white; padding: 10px;">
 
-Working clockwise, and starting from the group of three with the numerically lowest external node (4,3,2 in this example), each solution can be described uniquely. For example, the above solution can be described by the set: 4,3,2; 6,2,1; 5,1,3.
+Working <strong>clockwise</strong>, and starting from the group of three with the numerically lowest external node (4,3,2 in this example), each solution can be described uniquely. For example, the above solution can be described by the set: 4,3,2; 6,2,1; 5,1,3.
+
 It is possible to complete the ring with four different totals: 9, 10, 11, and 12. There are eight solutions in total.
 
 <div style='text-align: center;'>
@@ -29,7 +32,11 @@ It is possible to complete the ring with four different totals: 9, 10, 11, and 1
 </div>
 
 By concatenating each group it is possible to form 9-digit strings; the maximum string for a 3-gon ring is 432621513.
-Using the numbers 1 to 10, and depending on arrangements, it is possible to form 16- and 17-digit strings. What is the maximum 16-digit string for a "magic" 5-gon ring?
+
+Using the numbers 1 to 10, and depending on arrangements, it is possible to form 16- and 17-digit strings. What is the maximum <strong>16-digit</strong> string for a "magic" 5-gon ring?
+
+<img class="img-responsive center-block" alt="a blank diagram of a 5-gon ring" src="https://cdn-media-1.freecodecamp.org/project-euler/5-gon-ring.png" style="background-color: white; padding: 10px;">
+
 </section>
 
 ## Instructions
@@ -42,8 +49,10 @@ Using the numbers 1 to 10, and depending on arrangements, it is possible to form
 
 ```yml
 tests:
-  - text: <code>euler68()</code> should return 6531031914842725.
-    testString: assert.strictEqual(euler68(), 6531031914842725);
+  - text: <code>magic5GonRing()</code> should return a number.
+    testString: assert(typeof magic5GonRing() === 'number');
+  - text: <code>magic5GonRing()</code> should return 6531031914842725.
+    testString: assert.strictEqual(magic5GonRing(), 6531031914842725);
 
 ```
 
@@ -55,12 +64,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function euler68() {
+function magic5GonRing() {
   // Good luck!
   return true;
 }
 
-euler68();
+magic5GonRing();
 ```
 
 </div>

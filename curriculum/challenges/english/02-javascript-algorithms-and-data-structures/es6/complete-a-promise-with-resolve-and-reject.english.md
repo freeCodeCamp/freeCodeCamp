@@ -50,9 +50,9 @@ const makeServerRequest = new Promise((resolve, reject) => {
   let responseFromServer;
 	
   if(responseFromServer) {
-    // change this line
+    // Change this line
   } else {	
-    // change this line
+    // Change this line
   }
 });
 ```

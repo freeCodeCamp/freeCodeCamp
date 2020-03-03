@@ -55,12 +55,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Declarations
+// Variable declarations
 var StUdLyCapVaR;
 var properCamelCase;
 var TitleCaseOver;
 
-// Assignments
+// Variable assignments
 STUDLYCAPVAR = 10;
 PRoperCAmelCAse = "A String";
 tITLEcASEoVER = 9000;

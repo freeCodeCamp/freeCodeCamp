@@ -60,7 +60,7 @@ for (var i = 10; i > 0; i -= 2) {
 // Setup
 var myArray = [];
 
-// Only change code below this line.
+// Only change code below this line
 
 
 ```

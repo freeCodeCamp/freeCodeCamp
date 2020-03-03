@@ -46,11 +46,10 @@ tests:
 ```js
 function spreadOut() {
   let fragment = ['to', 'code'];
-  let sentence; // change this line
+  let sentence; // Change this line
   return sentence;
 }
 
-// do not change code below this line
 console.log(spreadOut());
 ```
 
