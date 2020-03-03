@@ -24,10 +24,10 @@ localeTitle: 使用 u 标签给文本添加下划线
 
 ```yml
 tests:
-  - text: '你应该有一个 <code>u</code> 标签。'
-    testString: assert($('u').length === 1, '你应该有一个 <code>u</code> 标签。');
-  - text: '<code>u</code> 标签应该包围 “理工博士”。'
-    testString: assert($('u').text() === '理工博士', '<code>u</code> 标签应该包围 “理工博士”。');
+  - text: 你应该有一个 <code>u</code> 标签。
+    testString: assert($('u').length === 1);
+  - text: <code>u</code> 标签应该包围 “理工博士”。
+    testString: assert($('u').text() === '理工博士');
 
 ```
 

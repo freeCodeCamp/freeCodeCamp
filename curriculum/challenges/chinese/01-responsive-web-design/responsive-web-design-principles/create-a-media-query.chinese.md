@@ -32,7 +32,7 @@ localeTitle: 创建一个媒体查询
 tests:
   - text: 声明一个<code>@media</code>媒体查询，<code>height</code> 小于或等于 800px。
     testString: assert($("style").text().replace(/\s/g ,'').match(/@media\(max-height:800px\)/g));
-  - text: 当设备 <code>height</code> 小于或等于 800px 时，<code>p</code> 元素 <code>font-size</code> 应为 12px。
+  - text: 当设备 <code>height</code> 小于或等于 800px 时，<code>p</code> 元素 <code>font-size</code> 应为 10px。
     testString: assert($("style").text().replace(/\s/g ,'').match(/@media\(max-height:800px\){p{font-size:10px;?}}/g));
   - text: 当设备的<code>height</code>大于 800px 时，<code>p</code>元素的<code>font-size</code>初始值为 20px。
     testString: assert($("style").text().replace(/\s/g ,'').replace(/@media.*}/g, '').match(/p{font-size:20px;?}/g));
