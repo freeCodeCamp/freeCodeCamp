@@ -46,7 +46,6 @@ tests:
 
 ```js
 function destroyer(arr) {
-  // Remove all the values
   return arr;
 }
 
@@ -69,7 +68,6 @@ function destroyer(arr) {
   [].slice.call(arguments, 1).forEach(function(e) {
     hash[e] = true;
   });
-  // Remove all the values
   return arr.filter(function(e) { return !(e in hash);});
 }
 

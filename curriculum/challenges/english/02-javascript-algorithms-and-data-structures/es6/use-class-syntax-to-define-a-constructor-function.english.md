@@ -65,12 +65,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-/* Alter code below this line */
+// Only change code below this line
 
-/* Alter code above this line */
+// Only change code above this line
 
 const carrot = new Vegetable('carrot');
-console.log(carrot.name); // => should be 'carrot'
+console.log(carrot.name); // Should display 'carrot'
 ```
 
 </div>
