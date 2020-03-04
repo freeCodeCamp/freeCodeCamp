@@ -68,7 +68,6 @@ function caseInSwitch(val) {
   return answer;
 }
 
-// Change this value to test
 caseInSwitch(1);
 
 ```

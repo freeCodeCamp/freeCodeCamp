@@ -47,7 +47,6 @@ tests:
 
 ```js
 function convertHTML(str) {
-  // &colon;&rpar;
   return str;
 }
 

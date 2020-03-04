@@ -75,7 +75,6 @@ function switchOfStuff(val) {
   return answer;
 }
 
-// Change this value to test
 switchOfStuff(1);
 
 ```

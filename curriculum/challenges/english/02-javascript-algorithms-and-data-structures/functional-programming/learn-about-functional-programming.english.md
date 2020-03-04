@@ -41,17 +41,14 @@ tests:
 <div id='js-seed'>
 
 ```js
-/**
- * A long process to prepare tea.
- * @return {string} A cup of tea.
- **/
+// Function that returns a string representing a cup of green tea
 const prepareTea = () => 'greenTea';
 
-/**
- * Get given number of cups of tea.
- * @param {number} numOfCups Number of required cups of tea.
- * @return {Array<string>} Given amount of tea cups.
- **/
+/*
+Given a function (representing the tea type) and number of cups needed, the
+following function returns an array of strings (each representing a cup of
+a specific type of tea).
+*/
 const getTea = (numOfCups) => {
   const teaCups = [];
 
@@ -59,15 +56,12 @@ const getTea = (numOfCups) => {
     const teaCup = prepareTea();
     teaCups.push(teaCup);
   }
-
   return teaCups;
 };
 
-// Add your code below this line
-
-const tea4TeamFCC = null; // :(
-
-// Add your code above this line
+// Only change code below this line
+const tea4TeamFCC = null;
+// Only change code above this line
 
 console.log(tea4TeamFCC);
 ```

@@ -62,7 +62,6 @@ function testNotEqual(val) {
   return "Equal";
 }
 
-// Change this value to test
 testNotEqual(10);
 ```
 

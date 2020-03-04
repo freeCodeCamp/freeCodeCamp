@@ -68,7 +68,6 @@ function isLess(a, b) {
   // Only change code above this line
 }
 
-// Change these values to test
 isLess(10, 15);
 ```
 

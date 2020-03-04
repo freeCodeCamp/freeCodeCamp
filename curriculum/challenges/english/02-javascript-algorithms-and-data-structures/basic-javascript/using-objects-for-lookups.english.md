@@ -99,7 +99,6 @@ function phoneticLookup(val) {
   return result;
 }
 
-// Change this value to test
 phoneticLookup("charlie");
 ```
 

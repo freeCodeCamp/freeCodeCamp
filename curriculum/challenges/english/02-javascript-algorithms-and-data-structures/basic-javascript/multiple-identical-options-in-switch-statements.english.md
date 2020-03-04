@@ -79,7 +79,6 @@ function sequentialSizes(val) {
   return answer;
 }
 
-// Change this value to test
 sequentialSizes(1);
 
 ```

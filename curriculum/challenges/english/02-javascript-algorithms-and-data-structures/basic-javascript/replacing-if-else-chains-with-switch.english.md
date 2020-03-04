@@ -98,7 +98,6 @@ function chainToSwitch(val) {
   return answer;
 }
 
-// Change this value to test
 chainToSwitch(7);
 
 ```

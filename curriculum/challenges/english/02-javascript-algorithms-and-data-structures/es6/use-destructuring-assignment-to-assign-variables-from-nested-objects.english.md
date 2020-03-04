@@ -65,12 +65,12 @@ const LOCAL_FORECAST = {
   tomorrow: { low: 68, high: 80 }
 };
 
-// change code below this line
+// Only change code below this line
   
 const lowToday = LOCAL_FORECAST.today.low;
 const highToday = LOCAL_FORECAST.today.high;
 
-// change code above this line
+// Only change code above this line
 
 console.log(lowToday); // should be 64
 console.log(highToday); // should be 77
@@ -89,11 +89,7 @@ const LOCAL_FORECAST = {
   tomorrow: { low: 68, high: 80 }
 };
 
-// change code below this line
-  
 const { today: { low: lowToday, high: highToday }} = LOCAL_FORECAST;
-
-// change code above this line
 
 console.log(highToday); // should be 77
 console.log(highTomorrow); // should be 80

@@ -81,7 +81,6 @@ function testSize(num) {
   // Only change code above this line
 }
 
-// Change this value to test
 testSize(7);
 ```
 

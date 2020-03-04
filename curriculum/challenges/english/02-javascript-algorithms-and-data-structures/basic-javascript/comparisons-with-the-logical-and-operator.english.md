@@ -85,7 +85,6 @@ function testLogicalAnd(val) {
   return "No";
 }
 
-// Change this value to test
 testLogicalAnd(10);
 ```
 

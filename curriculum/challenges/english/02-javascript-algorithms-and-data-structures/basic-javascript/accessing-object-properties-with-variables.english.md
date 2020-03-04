@@ -79,8 +79,8 @@ var testObj = {
 
 // Only change code below this line
 
-var playerNumber;       // Change this Line
-var player = testObj;   // Change this Line
+var playerNumber;       // Change this line
+var player = testObj;   // Change this line
 ```
 
 </div>

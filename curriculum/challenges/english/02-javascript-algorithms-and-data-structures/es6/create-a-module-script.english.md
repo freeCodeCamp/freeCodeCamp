@@ -43,9 +43,9 @@ tests:
 ```html
 <html>
   <body>
-    <!-- add your code below -->
+    <!-- Only change code below this line -->
 
-    <!-- add your code above -->
+    <!-- Only change code above this line -->
   </body>
 </html>
 ```
@@ -59,9 +59,7 @@ tests:
 ```html
 <html>
   <body>
-    <!-- add your code below -->
     <script type="module" src="index.js"></script>
-    <!-- add your code above -->
   </body>
 </html>
 ```

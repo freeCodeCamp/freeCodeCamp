@@ -89,7 +89,6 @@ function testLogicalOr(val) {
   return "Inside";
 }
 
-// Change this value to test
 testLogicalOr(15);
 ```
 

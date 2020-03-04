@@ -54,7 +54,6 @@ tests:
 
 ```js
 function truthCheck(collection, pre) {
-  // Is everyone being true?
   return pre;
 }
 
@@ -73,7 +72,6 @@ truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "ma
 
 ```js
 function truthCheck(collection, pre) {
-  // Does everyone have one of these?
   return collection.every(function(e) { return e[pre]; });
 }
 ```

@@ -75,9 +75,9 @@ tests:
 <div id='js-seed'>
 
 ```js
-/* Alter code below this line */
+// Only change code below this line
 
-/* Alter code above this line */
+// Only change code above this line
 
 const thermos = new Thermostat(76); // setting in Fahrenheit scale
 let temp = thermos.temperature; // 24.44 in C
@@ -95,8 +95,6 @@ temp = thermos.temperature; // 26 in C
 <section id='solution'>
 
 ```js
-
-/* Alter code below this line */
 class Thermostat {
   constructor(fahrenheit) {
     this._tempInCelsius = 5/9 * (fahrenheit - 32);
@@ -108,7 +106,6 @@ class Thermostat {
     this._tempInCelsius = newTemp;
   }
 }
-/* Alter code above this line */
 
 const thermos = new Thermostat(76); // setting in Fahrenheit scale
 let temp = thermos.temperature; // 24.44 in C

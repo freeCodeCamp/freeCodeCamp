@@ -85,7 +85,6 @@ function orderMyLogic(val) {
   }
 }
 
-// Change this value to test
 orderMyLogic(7);
 ```
 
