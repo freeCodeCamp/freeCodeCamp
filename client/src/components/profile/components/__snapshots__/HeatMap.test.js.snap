@@ -13,7 +13,8 @@ exports[`<HeatMap/> renders correctly 1`] = `
       >
         <button
           class="heatmap-nav-btn"
-          style="visibility: unset;"
+          disabled=""
+          style="visibility: hidden;"
         >
           &lt;
         </button>
@@ -557,9 +558,9 @@ exports[`<HeatMap/> renders correctly 1`] = `
               <title />
             </rect>
             <rect
-              class="color-scale-2"
+              class="color-empty"
               currentItem="false"
-              data-tip="<b>4 points</b> on Sep 13, 2019"
+              data-tip="<b>No points</b> on Sep 13, 2019"
               height="10"
               width="10"
               x="0"
@@ -568,9 +569,9 @@ exports[`<HeatMap/> renders correctly 1`] = `
               <title />
             </rect>
             <rect
-              class="color-scale-1"
+              class="color-empty"
               currentItem="false"
-              data-tip="<b>2 points</b> on Sep 14, 2019"
+              data-tip="<b>No points</b> on Sep 14, 2019"
               height="10"
               width="10"
               x="0"
@@ -1076,9 +1077,9 @@ exports[`<HeatMap/> renders correctly 1`] = `
             transform="translate(132, 0)"
           >
             <rect
-              class="color-scale-1"
+              class="color-empty"
               currentItem="false"
-              data-tip="<b>1 point</b> on Oct 27, 2019"
+              data-tip="<b>No points</b> on Oct 27, 2019"
               height="10"
               width="10"
               x="0"
@@ -1366,9 +1367,9 @@ exports[`<HeatMap/> renders correctly 1`] = `
               <title />
             </rect>
             <rect
-              class="color-scale-a-lot"
+              class="color-empty"
               currentItem="false"
-              data-tip="<b>11 points</b> on Nov 21, 2019"
+              data-tip="<b>No points</b> on Nov 21, 2019"
               height="10"
               width="10"
               x="0"
@@ -2186,9 +2187,9 @@ exports[`<HeatMap/> renders correctly 1`] = `
               <title />
             </rect>
             <rect
-              class="color-empty"
+              class="color-scale-1"
               currentItem="false"
-              data-tip="<b>No points</b> on Jan 30, 2020"
+              data-tip="<b>2 points</b> on Jan 30, 2020"
               height="10"
               width="10"
               x="0"
@@ -2273,7 +2274,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
               Longest Streak:
             </b>
              
-            12
+            1
           </span>
           <span
             class="streak"
