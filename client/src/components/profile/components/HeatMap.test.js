@@ -10,10 +10,6 @@ const props = {
   calendar: {
     1580393017: 1,
     1580397504: 1
-  },
-  streak: {
-    current: 2,
-    longest: 2
   }
 };
 
