@@ -1,4 +1,4 @@
-import words from './words.json';
+import words from '/../../../utils/words.json';
 
 function randomItem(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
