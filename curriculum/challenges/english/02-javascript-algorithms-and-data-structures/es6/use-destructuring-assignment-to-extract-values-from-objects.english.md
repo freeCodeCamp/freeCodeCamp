@@ -85,19 +85,6 @@ const HIGH_TEMPERATURES = {
 };
 
 const { today, tomorrow } = HIGH_TEMPERATURES;
-<<<<<<< HEAD
-
-<<<<<<< HEAD
-console.log(yesterday) // should be not defined
-console.log(today); // should be 77
-console.log(tomorrow); // should be 80
-=======
-console.log(yesterday) // Should be not defined
-console.log(today); // Should be 77
-console.log(tomorrow); // Should be 80
->>>>>>> fix: consolidate even more comments
-=======
->>>>>>> fix: added new tests to remove comments
 ```
 
 </section>
