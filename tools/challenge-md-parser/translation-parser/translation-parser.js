@@ -37,11 +37,18 @@ exports.mergeChallenges = (engChal, transChal) => {
     title: ${engChal.title}
     localeTitle: ${transChal.localeTitle}`
     );
-  const translatedTests = transChal.tests.map(({ text }, id) => ({
-    text,
-    testString: engChal.tests[id].testString
-  }));
-  return {
+
+  const translatedTests =
+    engChal.challengeType === 7
+      ? transChal.tests.map(({ title }, i) => ({
+          title,
+          id: engChal.tests[i].id
+        }))
+      : transChal.tests.map(({ text }, i) => ({
+          text,
+          testString: engChal.tests[i].testString
+        }));
+  const challenge = {
     ...engChal,
     description: transChal.description,
     instructions: transChal.instructions,
@@ -49,6 +56,9 @@ exports.mergeChallenges = (engChal, transChal) => {
     forumTopicId: transChal.forumTopicId,
     tests: translatedTests
   };
+  // certificates do not have forumTopicIds
+  if (challenge.challengeType === 7) delete challenge.forumTopicId;
+  return challenge;
 };
 
 // bare urls could be interpreted as comments, so we have to lookbehind for
