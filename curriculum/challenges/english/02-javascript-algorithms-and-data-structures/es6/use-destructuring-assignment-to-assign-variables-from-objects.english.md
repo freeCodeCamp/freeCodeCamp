@@ -80,10 +80,6 @@ const HIGH_TEMPERATURES = {
 };
 
 const { today: highToday, tomorrow: highTomorrow } = HIGH_TEMPERATURES;
-<<<<<<< HEAD
-
-=======
->>>>>>> fix: added new tests to remove comments
 ```
 
 </section>
