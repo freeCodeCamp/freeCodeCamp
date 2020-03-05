@@ -5,9 +5,11 @@ const {
   translateCommentsInChallenge
 } = require('./translation-parser');
 const {
+  ENGLISH_CERTIFICATE,
   ENGLISH_CHALLENGE,
   ENGLISH_CHALLENGE_NO_FILES,
   ENGLISH_CHALLENGE_TWO_SOLUTIONS,
+  TRANSLATED_CERTIFICATE,
   TRANSLATED_CHALLENGE,
   WRONG_NUM_TESTS_CHALLENGE
 } = require('./__fixtures__/challenge-objects');
@@ -22,6 +24,12 @@ const COMBINED_CHALLENGE_TWO_SOLUTIONS = mergeChallenges(
   ENGLISH_CHALLENGE_TWO_SOLUTIONS,
   TRANSLATED_CHALLENGE
 );
+
+const COMBINED_CERTIFICATE = mergeChallenges(
+  ENGLISH_CERTIFICATE,
+  TRANSLATED_CERTIFICATE
+);
+
 let logSpy;
 
 describe('translation parser', () => {
@@ -98,6 +106,28 @@ describe('translation parser', () => {
     it('takes the forum id from the second challenge', () => {
       expect(COMBINED_CHALLENGE.forumTopicId).toBe(
         TRANSLATED_CHALLENGE.forumTopicId
+      );
+    });
+    it('takes the ids from the first certificate', () => {
+      const actualIds = COMBINED_CERTIFICATE.tests.map(({ id }) => id);
+      const expectedIds = ENGLISH_CERTIFICATE.tests.map(({ id }) => id);
+      for (let i = 0; i < actualIds.length; i++) {
+        expect(actualIds[i]).toBe(expectedIds[i]);
+      }
+    });
+
+    it('takes the titles from the second certificate', () => {
+      const actualTitles = COMBINED_CERTIFICATE.tests.map(({ title }) => title);
+      const expectedTitles = TRANSLATED_CERTIFICATE.tests.map(
+        ({ title }) => title
+      );
+      for (let i = 0; i < actualTitles.length; i++) {
+        expect(actualTitles[i]).toBe(expectedTitles[i]);
+      }
+    });
+    it('certificates do not have a forumTopicId property', () => {
+      expect(Object.keys(COMBINED_CERTIFICATE).includes('forumTopicId')).toBe(
+        false
       );
     });
   });

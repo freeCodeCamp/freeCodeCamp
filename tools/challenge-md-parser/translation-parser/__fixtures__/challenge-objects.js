@@ -1,3 +1,30 @@
+const ENGLISH_CERTIFICATE = {
+  id: '561add10cb82ac38a17513bc',
+  title: 'Responsive Web Design Certificate',
+  challengeType: 7,
+  isPrivate: true,
+  tests: [
+    { id: 'bd7158d8c442eddfaeb5bd18', title: 'Build a Tribute Page' },
+    { id: '587d78af367417b2b2512b03', title: 'Build a Survey Form' },
+    {
+      id: '587d78af367417b2b2512b04',
+      title: 'Build a Product Landing Page'
+    },
+    {
+      id: '587d78b0367417b2b2512b05',
+      title: 'Build a Technical Documentation Page'
+    },
+    {
+      id: 'bd7158d8c242eddfaeb5bd13',
+      title: 'Build a Personal Portfolio Webpage'
+    }
+  ],
+  solutions: ['// solution required\n'],
+  description: '',
+  instructions: '',
+  files: []
+};
+
 const ENGLISH_CHALLENGE = {
   id: 'id',
   title: 'Title',
@@ -82,6 +109,35 @@ const ENGLISH_CHALLENGE_NO_FILES = {
   files: []
 };
 
+const TRANSLATED_CERTIFICATE = {
+  id: '561add10cb82ac38a17513bc',
+  title: 'Responsive Web Design Certificate',
+  challengeType: 7,
+  isPrivate: true,
+  videoUrl: '',
+  localeTitle: '响应式网页设计证书',
+  tests: [
+    { id: 'bd7158d8c442eddfaeb5bd18', title: 'Build a Tribute Page' },
+    { id: '587d78af367417b2b2512b03', title: 'Build a Survey Form' },
+    {
+      id: '587d78af367417b2b2512b04',
+      title: 'Build a Product Landing Page'
+    },
+    {
+      id: '587d78b0367417b2b2512b05',
+      title: 'Build a Technical Documentation Page'
+    },
+    {
+      id: 'bd7158d8c242eddfaeb5bd13',
+      title: 'Build a Personal Portfolio Webpage'
+    }
+  ],
+  solutions: ['// solution required\n'],
+  description: '',
+  instructions: '',
+  files: []
+};
+
 const TRANSLATED_CHALLENGE = {
   id: 'id',
   title: 'Title',
@@ -142,8 +198,10 @@ const WRONG_NUM_TESTS_CHALLENGE = {
   ]
 };
 
+exports.ENGLISH_CERTIFICATE = ENGLISH_CERTIFICATE;
 exports.ENGLISH_CHALLENGE = ENGLISH_CHALLENGE;
 exports.ENGLISH_CHALLENGE_TWO_SOLUTIONS = ENGLISH_CHALLENGE_TWO_SOLUTIONS;
 exports.ENGLISH_CHALLENGE_NO_FILES = ENGLISH_CHALLENGE_NO_FILES;
+exports.TRANSLATED_CERTIFICATE = TRANSLATED_CERTIFICATE;
 exports.TRANSLATED_CHALLENGE = TRANSLATED_CHALLENGE;
 exports.WRONG_NUM_TESTS_CHALLENGE = WRONG_NUM_TESTS_CHALLENGE;
