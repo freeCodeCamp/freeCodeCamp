@@ -60,6 +60,8 @@ const propTypes = {
     isFullStackCert: PropTypes.bool,
     isHonest: PropTypes.bool,
     isInfosecQaCert: PropTypes.bool,
+    isQaCert: PropTypes.bool,
+    isInfosecCert: PropTypes.bool,
     isJsAlgoDataStructCert: PropTypes.bool,
     isRespWebDesignCert: PropTypes.bool,
     isSciCompPyCert: PropTypes.bool,
@@ -132,6 +134,8 @@ export function ShowSettings(props) {
       isDataVisCert,
       isFrontEndCert,
       isInfosecQaCert,
+      isQaCert,
+      isInfosecCert,
       isFrontEndLibsCert,
       isFullStackCert,
       isRespWebDesignCert,
@@ -245,9 +249,11 @@ export function ShowSettings(props) {
             isFrontEndLibsCert={isFrontEndLibsCert}
             isFullStackCert={isFullStackCert}
             isHonest={isHonest}
+            isInfosecCert={isInfosecCert}
             isInfosecQaCert={isInfosecQaCert}
             isJsAlgoDataStructCert={isJsAlgoDataStructCert}
             isMachineLearningPyCert={isMachineLearningPyCert}
+            isQaCert={isQaCert}
             isRespWebDesignCert={isRespWebDesignCert}
             isSciCompPyCert={isSciCompPyCert}
             username={username}

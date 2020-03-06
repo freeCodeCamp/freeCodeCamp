@@ -162,6 +162,8 @@ function postResetProgress(req, res, next) {
       isJsAlgoDataStructCert: false,
       isApisMicroservicesCert: false,
       isInfosecQaCert: false,
+      isQaCert: false,
+      isInfosecCert: false,
       is2018FullStackCert: false,
       isFrontEndCert: false,
       isBackEndCert: false,
