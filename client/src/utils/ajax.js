@@ -1,14 +1,18 @@
 import { apiLocation } from '../../config/env.json';
-
+import { _csrf } from '../redux/cookieValues';
 import axios from 'axios';
+import Tokens from 'csrf';
 
-const base = apiLocation + '/internal';
-const baseUnauthenticated = apiLocation + '/unauthenticated';
+const base = apiLocation;
+const tokens = new Tokens();
 
 axios.defaults.withCredentials = true;
 
-export function postUnauthenticated(path, body) {
-  return axios.post(`${baseUnauthenticated}${path}`, body);
+// _csrf is passed to the client as a cookie. Tokens are sent back to the server
+// via headers:
+if (_csrf) {
+  axios.defaults.headers.post['CSRF-Token'] = tokens.create(_csrf);
+  axios.defaults.headers.put['CSRF-Token'] = tokens.create(_csrf);
 }
 
 function get(path) {

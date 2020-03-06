@@ -319,7 +319,6 @@ export default function donateBoot(app, done) {
     api.post('/update-paypal', updatePaypal);
     donateRouter.use('/donate', api);
     app.use(donateRouter);
-    app.use('/internal', donateRouter);
     connectToStripe().then(done);
   }
 }

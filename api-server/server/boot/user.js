@@ -31,7 +31,7 @@ function bootUser(app) {
   api.post('/account/reset-progress', ifNoUser401, postResetProgress);
   api.post('/user/report-user/', ifNoUser401, postReportUserProfile);
 
-  app.use('/internal', api);
+  app.use(api);
 }
 
 function createReadSessionUser(app) {
