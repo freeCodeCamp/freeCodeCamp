@@ -11,19 +11,23 @@ import { jwtSecret as _jwtSecret } from '../../../config/secrets';
 
 import { wrapHandledError } from '../utils/create-handled-error';
 
-// We need to tunnel through a proxy path set up within
-// the gatsby app, at this time, that path is /internal
-const apiProxyRE = /^\/internal\/|^\/external\//;
-const newsShortLinksRE = /^\/internal\/n\/|^\/internal\/p\?/;
-const loopbackAPIPathRE = /^\/internal\/api\//;
-const showCertRe = /^\/internal\/certificate\/showCert\//;
-const updatePaypalRe = /^\/internal\/donate\/update-paypal/;
+const newsShortLinksRE = /^\/n\/|^\/p\//;
+const showCertRE = /^\/certificate\/showCert\//;
+const updatePaypalRE = /^\/donate\/update-paypal/;
+// signin may not have a trailing slash
+const signinRE = /^\/signin/;
+const unsubscribeRE = /^\/u\/|^\/unsubscribe\/|^\/ue\//;
+const unsubscribedRE = /^\/unsubscribed\//;
+const resubscribeRE = /^\/resubscribe\//;
 
 const _whiteListREs = [
   newsShortLinksRE,
-  loopbackAPIPathRE,
-  showCertRe,
-  updatePaypalRe
+  showCertRE,
+  updatePaypalRE,
+  signinRE,
+  unsubscribeRE,
+  unsubscribedRE,
+  resubscribeRE
 ];
 
 export function isWhiteListedPath(path, whiteListREs = _whiteListREs) {
@@ -33,7 +37,7 @@ export function isWhiteListedPath(path, whiteListREs = _whiteListREs) {
 export default ({ jwtSecret = _jwtSecret, getUserById = _getUserById } = {}) =>
   function requestAuthorisation(req, res, next) {
     const { path } = req;
-    if (apiProxyRE.test(path) && !isWhiteListedPath(path)) {
+    if (!isWhiteListedPath(path)) {
       const { accessToken, error, jwt } = getAccessTokenFromRequest(
         req,
         jwtSecret

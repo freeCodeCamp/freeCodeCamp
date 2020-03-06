@@ -9,7 +9,6 @@ const githubSecret = process.env.GITHUB_SECRET;
 
 module.exports = function(app) {
   const router = app.loopback.Router();
-  const api = app.loopback.Router();
   const User = app.models.User;
 
   router.get('/api/github', githubCalls);
@@ -22,13 +21,11 @@ module.exports = function(app) {
   );
   router.get('/unsubscribed/:unsubscribeId', unsubscribedWithId);
   router.get('/unsubscribed', unsubscribed);
-  api.get('/resubscribe/:unsubscribeId', resubscribe);
+  router.get('/resubscribe/:unsubscribeId', resubscribe);
   router.get('/nonprofits', nonprofits);
   router.get('/coding-bootcamp-cost-calculator', bootcampCalculator);
 
   app.use(router);
-
-  app.use('/internal', api);
 
   function theFastestWebPageOnTheInternet(req, res) {
     res.render('resources/the-fastest-web-page-on-the-internet', {

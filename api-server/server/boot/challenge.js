@@ -61,7 +61,6 @@ export default async function bootChallenge(app, done) {
   router.get('/map', redirectToLearn);
 
   app.use(api);
-  app.use('/internal', api);
   app.use(router);
   done();
 }

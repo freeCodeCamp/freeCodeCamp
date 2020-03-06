@@ -115,6 +115,7 @@ export const preventProgressDonationRequests = createAction(
 
 export const onlineStatusChange = createAction(types.onlineStatusChange);
 
+// TODO: re-evaluate this since /internal is no longer used.
 // `hardGoTo` is used to hit the API server directly
 // without going through /internal
 // used for things like /signin and /signout

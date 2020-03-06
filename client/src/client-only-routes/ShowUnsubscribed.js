@@ -31,7 +31,7 @@ function ShowUnsubscribed({ unsubscribeId }) {
                 block={true}
                 bsSize='lg'
                 bsStyle='primary'
-                href={`${apiLocation}/internal/resubscribe/${unsubscribeId}`}
+                href={`${apiLocation}/resubscribe/${unsubscribeId}`}
               >
                 You can click here to resubscribe
               </Button>

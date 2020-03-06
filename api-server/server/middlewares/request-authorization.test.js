@@ -64,7 +64,7 @@ describe('request-authorization', () => {
     describe('cookies', () => {
       it('throws when no access token is present', () => {
         expect.assertions(2);
-        const req = mockReq({ path: '/internal/some-path/that-needs/auth' });
+        const req = mockReq({ path: '/some-path/that-needs/auth' });
         const res = mockRes();
         const next = sinon.spy();
         expect(() => requestAuthorization(req, res, next)).toThrowError(
@@ -77,7 +77,7 @@ describe('request-authorization', () => {
         expect.assertions(2);
         const invalidJWT = jwt.sign({ accessToken }, invalidJWTSecret);
         const req = mockReq({
-          path: '/internal/some-path/that-needs/auth',
+          path: '/some-path/that-needs/auth',
           // eslint-disable-next-line camelcase
           cookie: { jwt_access_token: invalidJWT }
         });
@@ -97,7 +97,7 @@ describe('request-authorization', () => {
           validJWTSecret
         );
         const req = mockReq({
-          path: '/internal/some-path/that-needs/auth',
+          path: '/some-path/that-needs/auth',
           // eslint-disable-next-line camelcase
           cookie: { jwt_access_token: invalidJWT }
         });
@@ -114,7 +114,7 @@ describe('request-authorization', () => {
         expect.assertions(3);
         const validJWT = jwt.sign({ accessToken }, validJWTSecret);
         const req = mockReq({
-          path: '/internal/some-path/that-needs/auth',
+          path: '/some-path/that-needs/auth',
           // eslint-disable-next-line camelcase
           cookie: { jwt_access_token: validJWT }
         });
@@ -130,7 +130,7 @@ describe('request-authorization', () => {
       it('adds the jwt to the headers', async done => {
         const validJWT = jwt.sign({ accessToken }, validJWTSecret);
         const req = mockReq({
-          path: '/internal/some-path/that-needs/auth',
+          path: '/some-path/that-needs/auth',
           // eslint-disable-next-line camelcase
           cookie: { jwt_access_token: validJWT }
         });
@@ -142,7 +142,8 @@ describe('request-authorization', () => {
       });
 
       it('calls next if request does not require authorization', async () => {
-        const req = mockReq({ path: '/unauthenticated/another/route' });
+        // currently /unsubscribe does not require authorization
+        const req = mockReq({ path: '/unsubscribe/another/route' });
         const res = mockRes();
         const next = sinon.spy();
         await requestAuthorization(req, res, next);
@@ -153,7 +154,7 @@ describe('request-authorization', () => {
     describe('Auth header', () => {
       it('throws when no access token is present', () => {
         expect.assertions(2);
-        const req = mockReq({ path: '/internal/some-path/that-needs/auth' });
+        const req = mockReq({ path: '/some-path/that-needs/auth' });
         const res = mockRes();
         const next = sinon.spy();
         expect(() => requestAuthorization(req, res, next)).toThrowError(
@@ -166,7 +167,7 @@ describe('request-authorization', () => {
         expect.assertions(2);
         const invalidJWT = jwt.sign({ accessToken }, invalidJWTSecret);
         const req = mockReq({
-          path: '/internal/some-path/that-needs/auth',
+          path: '/some-path/that-needs/auth',
           headers: { 'X-fcc-access-token': invalidJWT }
         });
         const res = mockRes();
@@ -185,7 +186,7 @@ describe('request-authorization', () => {
           validJWTSecret
         );
         const req = mockReq({
-          path: '/internal/some-path/that-needs/auth',
+          path: '/some-path/that-needs/auth',
           headers: { 'X-fcc-access-token': invalidJWT }
         });
         const res = mockRes();
@@ -201,7 +202,7 @@ describe('request-authorization', () => {
         expect.assertions(3);
         const validJWT = jwt.sign({ accessToken }, validJWTSecret);
         const req = mockReq({
-          path: '/internal/some-path/that-needs/auth',
+          path: '/some-path/that-needs/auth',
           headers: { 'X-fcc-access-token': validJWT }
         });
         const res = mockRes();
@@ -216,7 +217,7 @@ describe('request-authorization', () => {
       it('adds the jwt to the headers', async done => {
         const validJWT = jwt.sign({ accessToken }, validJWTSecret);
         const req = mockReq({
-          path: '/internal/some-path/that-needs/auth',
+          path: '/some-path/that-needs/auth',
           // eslint-disable-next-line camelcase
           cookie: { jwt_access_token: validJWT }
         });
@@ -228,7 +229,8 @@ describe('request-authorization', () => {
       });
 
       it('calls next if request does not require authorization', async () => {
-        const req = mockReq({ path: '/unauthenticated/another/route' });
+        // currently /unsubscribe does not require authorization
+        const req = mockReq({ path: '/unsubscribe/another/route' });
         const res = mockRes();
         const next = sinon.spy();
         await requestAuthorization(req, res, next);
