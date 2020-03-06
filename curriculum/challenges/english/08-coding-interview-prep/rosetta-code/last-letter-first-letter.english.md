@@ -28,19 +28,19 @@ Write a function that takes an input array of words. The function should return 
 ``` yml
 tests:
   - text: <code>findLongestChain</code> should be a function.
-    testString: assert(typeof findLongestChain == 'function', '<code>findLongestChain</code> should be a function.');
+    testString: assert(typeof findLongestChain == 'function');
   - text: <code>findLongestChain(["certain", "each", "game", "involves", "starting", "with", "word"])</code> should return an array.
-    testString: assert(Array.isArray(findLongestChain(["certain", "each", "game", "involves", "starting", "with", "word"])), '<code>findLongestChain(["certain", "each", "game", "involves", "starting", "with", "word"])</code> should return an array.');
+    testString: assert(Array.isArray(findLongestChain(["certain", "each", "game", "involves", "starting", "with", "word"])));
   - text: <code>findLongestChain(["certain", "each", "game", "involves", "starting", "with", "word"])</code> should return <code>["involves", "starting", "game", "each"]</code>.
-    testString: assert.deepEqual(findLongestChain(["certain", "each", "game", "involves", "starting", "with", "word"]), ['involves', 'starting', 'game', 'each'], '<code>findLongestChain(["certain", "each", "game", "involves", "starting", "with", "word"])</code> should return <code>["involves", "starting", "game", "each"]</code>.');
+    testString: assert.deepEqual(findLongestChain(["certain", "each", "game", "involves", "starting", "with", "word"]), ['involves', 'starting', 'game', 'each']);
   - text: <code>findLongestChain(["audino", "bagon", "kangaskhan", "banette", "bidoof", "braviary", "exeggcute", "yamask"])</code> should return <code>["braviary", "yamask", "kangaskhan"]</code>
-    testString: assert.deepEqual(findLongestChain(["audino", "bagon", "kangaskhan", "banette", "bidoof", "braviary", "exeggcute", "yamask"]), ['braviary', 'yamask', 'kangaskhan'], '<code>findLongestChain(["audino", "bagon", "kangaskhan", "banette", "bidoof", "braviary", "exeggcute", "yamask"])</code> should return <code>["braviary", "yamask", "kangaskhan"]</code>.');
+    testString: assert.deepEqual(findLongestChain(["audino", "bagon", "kangaskhan", "banette", "bidoof", "braviary", "exeggcute", "yamask"]), ['braviary', 'yamask', 'kangaskhan']);
   - text: <code>findLongestChain(["harp", "poliwrath", "poochyena", "porygon2", "porygonz", "archana"])</code> should return <code>["poliwrath", "harp", "poochyena", "archana"]</code>.
-    testString: assert.deepEqual(findLongestChain(["harp", "poliwrath", "poochyena", "porygon2", "porygonz", "archana"]), ['poliwrath', 'harp', 'poochyena', 'archana'], '<code>findLongestChain(["harp", "poliwrath", "poochyena", "porygon2", "porygonz", "archana"])</code> should return <code>["poliwrath", "harp", "poochyena", "archana"]</code>.');
+    testString: assert.deepEqual(findLongestChain(["harp", "poliwrath", "poochyena", "porygon2", "porygonz", "archana"]), ['poliwrath', 'harp', 'poochyena', 'archana']);
   - text: <code>findLongestChain(["scolipede", "elephant", "zeaking", "sealeo", "silcoon", "tigers"])</code> should return <code>["scolipede", "elephant", "tigers", "sealeo"]</code>.
-    testString: assert.deepEqual(findLongestChain(["scolipede", "elephant", "zeaking", "sealeo", "silcoon", "tigers"]), ['scolipede', 'elephant', 'tigers', 'sealeo'], '<code>findLongestChain(["scolipede", "elephant", "zeaking", "sealeo", "silcoon", "tigers"])</code> should return <code>["scolipede", "elephant", "tigers", "sealeo"]</code>.');
+    testString: assert.deepEqual(findLongestChain(["scolipede", "elephant", "zeaking", "sealeo", "silcoon", "tigers"]), ['scolipede', 'elephant', 'tigers', 'sealeo']);
   - text: <code>findLongestChain(["loudred", "lumineon", "lunatone", "machamp", "magnezone", "nosepass", "petilil", "pidgeotto", "pikachu"])</code> should return <code>["machamp", "petilil", "lumineon", "nosepass"]</code>.
-    testString: assert.deepEqual(findLongestChain(["loudred", "lumineon", "lunatone", "machamp", "magnezone", "nosepass", "petilil", "pidgeotto", "pikachu"]), ['machamp', 'petilil', 'lumineon', 'nosepass'], '<code>findLongestChain(["loudred", "lumineon", "lunatone", "machamp", "magnezone", "nosepass", "petilil", "pidgeotto", "pikachu"])</code> should return <code>["machamp", "petilil", "lumineon", "nosepass"]</code>.');
+    testString: assert.deepEqual(findLongestChain(["loudred", "lumineon", "lunatone", "machamp", "magnezone", "nosepass", "petilil", "pidgeotto", "pikachu"]), ['machamp', 'petilil', 'lumineon', 'nosepass']);
 ```
 
 </section>

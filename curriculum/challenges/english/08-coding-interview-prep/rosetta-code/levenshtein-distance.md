@@ -29,21 +29,21 @@ Write a function that returns the Levenshtein distance between two strings given
 ``` yml
 tests:
   - text: <code>levenshtein</code> should be a function.
-    testString: assert(typeof levenshtein == 'function', '<code>levenshtein</code> should be a function.');
+    testString: assert(typeof levenshtein == 'function');
   - text: <code>levenshtein("mist", "dist")</code> should return a number.
-    testString: assert(typeof levenshtein("mist", "dist") == 'number', '<code>levenshtein("mist", "dist")</code> should return a number.');
+    testString: assert(typeof levenshtein("mist", "dist") == 'number');
   - text: <code>levenshtein("mist", "dist")</code> should return <code>1</code>.
-    testString: assert.equal(levenshtein("mist", "dist"), 1, '<code>levenshtein("mist", "dist")</code> should return <code>1</code>.');
+    testString: assert.equal(levenshtein("mist", "dist"), 1);
   - text: <code>levenshtein("tier", "tor")</code> should return <code>2</code>.
-    testString: assert.equal(levenshtein("tier", "tor"), 2, '<code>levenshtein("tier", "tor")</code> should return <code>2</code>.');
+    testString: assert.equal(levenshtein("tier", "tor"), 2);
   - text: <code>levenshtein("kitten", "sitting")</code> should return <code>3</code>.
-    testString: assert.equal(levenshtein("kitten", "sitting"), 3, '<code>levenshtein("kitten", "sitting")</code> should return <code>3</code>.');
+    testString: assert.equal(levenshtein("kitten", "sitting"), 3);
   - text: <code>levenshtein("stop", "tops")</code> should return <code>2</code>.
-    testString: assert.equal(levenshtein("stop", "tops"), 2, '<code>levenshtein("stop", "tops")</code> should return <code>2</code>.');
+    testString: assert.equal(levenshtein("stop", "tops"), 2);
   - text: <code>levenshtein("rosettacode", "raisethysword")</code> should return <code>8</code>.
-    testString: assert.equal(levenshtein("rosettacode", "raisethysword"), 8, '<code>levenshtein("rosettacode", "raisethysword")</code> should return <code>8</code>.');
+    testString: assert.equal(levenshtein("rosettacode", "raisethysword"), 8);
   - text: <code>levenshtein("mississippi", "swiss miss")</code> should return <code>8</code>.
-    testString: assert.equal(levenshtein("mississippi", "swiss miss"), 8, '<code>levenshtein("mississippi", "swiss miss")</code> should return <code>8</code>.');
+    testString: assert.equal(levenshtein("mississippi", "swiss miss"), 8);
 ```
 
 </section>
