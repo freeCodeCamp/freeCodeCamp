@@ -41,7 +41,7 @@ Add a horizontal motion to the <code>div</code> animation. Using the <code>left<
 ```yml
 tests:
   - text: The <code>@keyframes</code> rule for <code>0%</code> should use the <code>left</code> offset of 0px.
-    testString: assert(code.match(/0%\s*?{\s*?background-color:\s*?blue;\s*?top:\s*?0(px)?;\s*?left:\s*?0(px)?;\s*?}/gi) || code.match(/0%\s*?{\s*?background-color:\s*?blue;\s*?left:\s*?0(px)?;\s*?top:\s*?0(px)?;\s*?}/gi) || code.match(/0%\s*?{\s*?left:\s*?0(px)?;\s*?background-color:\s*?blue;\s*?top:\s*?0(px)?;\s*?}/gi));
+    testString: assert(code.match(/[^50]0%\s*?{[\s\S]*?left:\s*?0px(;[\s\S]*?|\s*?)}/gi));
   - text: The <code>@keyframes</code> rule for <code>50%</code> should use the <code>left</code> offset of 25px.
     testString: assert(code.match(/50%\s*?{[\s\S]*?left:\s*?25px(;[\s\S]*?|\s*?)}/gi));
   - text: The <code>@keyframes</code> rule for <code>100%</code> should use the <code>left</code> offset of -25px.
