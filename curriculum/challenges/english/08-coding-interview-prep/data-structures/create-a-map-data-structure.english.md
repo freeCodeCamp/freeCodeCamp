@@ -87,10 +87,7 @@ var Map = function() {
     }
 
     this.has = function(key) {
-      if (this.collection.hasOwnProperty(key)) {
-        return true;
-      }
-      return false;
+      return this.collection.hasOwnProperty(key)
     }
 
     this.values = function() {
