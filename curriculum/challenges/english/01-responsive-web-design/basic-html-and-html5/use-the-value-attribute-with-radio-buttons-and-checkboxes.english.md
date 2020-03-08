@@ -46,6 +46,8 @@ tests:
     testString: assert($('label:contains("Lazy") > input[type="checkbox"]').filter("[value='lazy']").length > 0);
   - text: One of your checkboxes should have the <code>value</code> attribute of <code>energetic</code>.
     testString: assert($('label:contains("Energetic") > input[type="checkbox"]').filter("[value='energetic']").length > 0);
+  - text: this should fail
+    testString: assert(1==2);
 ```
 
 </section>
@@ -96,7 +98,6 @@ tests:
 <section id='solution'>
 
 ```html
-// solution required
 <h2>CatPhotoApp</h2>
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
