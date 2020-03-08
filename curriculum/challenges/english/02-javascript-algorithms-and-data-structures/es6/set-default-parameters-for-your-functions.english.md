@@ -47,10 +47,9 @@ tests:
 <div id='js-seed'>
 
 ```js
+// Only change code below this line
 const increment = (number, value) => number + value;
-
-console.log(increment(5, 2)); // returns 7
-console.log(increment(5)); // returns 6
+// Only change code above this line
 ```
 
 </div>

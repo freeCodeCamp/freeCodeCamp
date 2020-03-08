@@ -71,7 +71,7 @@ function Bird(name) {
 
 let canary = new Bird("Tweety");
 let ownProps = [];
-// Add your code below this line
+// Only change code below this line
 
 
 

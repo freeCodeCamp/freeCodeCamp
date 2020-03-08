@@ -50,7 +50,7 @@ let dog = {
   name: "Spot",
   numLegs: 4
 };
-// Add your code below this line
+// Only change code below this line
 
 
 ```

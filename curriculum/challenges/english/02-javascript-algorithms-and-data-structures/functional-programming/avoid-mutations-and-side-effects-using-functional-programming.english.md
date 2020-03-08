@@ -40,14 +40,14 @@ tests:
 <div id='js-seed'>
 
 ```js
-// the global variable
+// The global variable
 var fixedValue = 4;
 
 function incrementer () {
-  // Add your code below this line
+  // Only change code below this line
 
 
-  // Add your code above this line
+  // Only change code above this line
 }
 
 var newValue = incrementer(); // Should equal 5

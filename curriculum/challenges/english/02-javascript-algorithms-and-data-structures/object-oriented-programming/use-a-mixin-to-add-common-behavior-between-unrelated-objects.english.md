@@ -82,7 +82,7 @@ let boat = {
   type: "race-boat"
 };
 
-// Add your code below this line
+// Only change code below this line
 
 
 

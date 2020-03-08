@@ -58,11 +58,11 @@ Animal.prototype = {
 
 function Dog() { }
 
-// Add your code below this line
+// Only change code below this line
 
 
 let beagle = new Dog();
-beagle.eat();  // Should print "nom nom nom"
+
 ```
 
 </div>

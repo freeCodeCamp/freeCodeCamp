@@ -43,10 +43,10 @@ tests:
 ```js
 var globalArray = [5, 6, 3, 2, 9];
 function nonMutatingSort(arr) {
-  // Add your code below this line
+  // Only change code below this line
 
 
-  // Add your code above this line
+  // Only change code above this line
 }
 nonMutatingSort(globalArray);
 ```
@@ -63,9 +63,9 @@ nonMutatingSort(globalArray);
 ```js
 var globalArray = [5, 6, 3, 2, 9];
 function nonMutatingSort(arr) {
-  // Add your code below this line
+  // Only change code below this line
   return [].concat(arr).sort((a,b) => a-b);
-  // Add your code above this line
+  // Only change code above this line
 }
 nonMutatingSort(globalArray);
 ```

@@ -55,7 +55,7 @@ function Dog(name) {
 
 let beagle = new Dog("Snoopy");
 
-// Add your code below this line
+// Only change code below this line
 
 
 ```

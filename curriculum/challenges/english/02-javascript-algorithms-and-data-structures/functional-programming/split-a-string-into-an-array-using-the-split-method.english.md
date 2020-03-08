@@ -53,10 +53,10 @@ tests:
 
 ```js
 function splitify(str) {
-  // Add your code below this line
+  // Only change code below this line
 
 
-  // Add your code above this line
+  // Only change code above this line
 }
 splitify("Hello World,I-am code");
 ```
@@ -72,9 +72,9 @@ splitify("Hello World,I-am code");
 
 ```js
 function splitify(str) {
-  // Add your code below this line
+  // Only change code below this line
   return str.split(/\W/);
-  // Add your code above this line
+  // Only change code above this line
 }
 ```
 

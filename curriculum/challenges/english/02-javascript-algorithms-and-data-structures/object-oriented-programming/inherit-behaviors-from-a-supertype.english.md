@@ -81,13 +81,10 @@ Animal.prototype = {
   }
 };
 
-// Add your code below this line
+// Only change code below this line
 
 let duck; // Change this line
 let beagle; // Change this line
-
-duck.eat(); // Should print "nom nom nom"
-beagle.eat(); // Should print "nom nom nom"
 ```
 
 </div>

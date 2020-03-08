@@ -57,7 +57,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-// the global variable
+// The global variable
 var watchList = [
   {
     "Title": "Inception",
@@ -171,14 +171,14 @@ var watchList = [
   }
 ];
 
-// Add your code below this line
+// Only change code below this line
 
 var ratings = [];
 for(var i=0; i < watchList.length; i++){
   ratings.push({title: watchList[i]["Title"],  rating: watchList[i]["imdbRating"]});
 }
 
-// Add your code above this line
+// Only change code above this line
 
 console.log(JSON.stringify(ratings));
 ```
@@ -200,7 +200,7 @@ const removeJSComments = str => str.replace(/\/\*[\s\S]*?\*\/|\/\/.*$/gm, '');
 <section id='solution'>
 
 ```js
-// the global variable
+// The global variable
 var watchList = [
   {
     "Title": "Inception",

@@ -77,7 +77,7 @@ let beagle = new Dog("Snoopy");
 let ownProps = [];
 let prototypeProps = [];
 
-// Add your code below this line
+// Only change code below this line
 
 
 

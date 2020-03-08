@@ -79,7 +79,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-// the global variable
+// The global variable
 var watchList = [
   {
     "Title": "Inception",
@@ -194,11 +194,11 @@ var watchList = [
 ];
 
 function getRating(watchList){
-  // Add your code below this line
+  // Only change code below this line
   var averageRating;
 
 
-  // Add your code above this line
+  // Only change code above this line
   return averageRating;
 }
 console.log(getRating(watchList));
@@ -214,7 +214,7 @@ console.log(getRating(watchList));
 <section id='solution'>
 
 ```js
-// the global variable
+// The global variable
 var watchList = [
   {
     "Title": "Inception",

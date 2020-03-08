@@ -50,10 +50,10 @@ tests:
 
 ```js
 function checkPositive(arr) {
-  // Add your code below this line
+  // Only change code below this line
 
 
-  // Add your code above this line
+  // Only change code above this line
 }
 checkPositive([1, 2, 3, -4, 5]);
 ```
@@ -69,9 +69,9 @@ checkPositive([1, 2, 3, -4, 5]);
 
 ```js
 function checkPositive(arr) {
-  // Add your code below this line
+  // Only change code below this line
   return arr.every(num => num > 0);
-  // Add your code above this line
+  // Only change code above this line
 }
 checkPositive([1, 2, 3, -4, 5]);
 ```

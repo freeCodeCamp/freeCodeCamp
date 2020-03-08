@@ -62,8 +62,6 @@ const getTea = (numOfCups) => {
 // Only change code below this line
 const tea4TeamFCC = null;
 // Only change code above this line
-
-console.log(tea4TeamFCC);
 ```
 
 </div>
