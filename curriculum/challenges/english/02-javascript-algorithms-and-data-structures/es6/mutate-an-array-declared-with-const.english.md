@@ -56,7 +56,7 @@ function editInPlace() {
   'use strict';
   // Only change code below this line
 
-  // s = [2, 5, 7]; <- this is invalid
+  // Using s = [2, 5, 7] would be invalid
 
   // Only change code above this line
 }

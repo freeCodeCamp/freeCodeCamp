@@ -62,7 +62,6 @@ const createPerson = (name, age, gender) => {
   };
   // Only change code above this line
 };
-console.log(createPerson("Zodiac Hasbro", 56, "male")); // returns a proper object
 ```
 
 </div>

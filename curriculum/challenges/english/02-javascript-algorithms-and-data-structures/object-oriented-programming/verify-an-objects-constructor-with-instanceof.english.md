@@ -64,7 +64,7 @@ function House(numBedrooms) {
   this.numBedrooms = numBedrooms;
 }
 
-// Add your code below this line
+// Only change code below this line
 
 
 

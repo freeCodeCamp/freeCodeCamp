@@ -50,6 +50,8 @@ tests:
     testString: assert(code.match(/(var|const|let)\s*{\s*today\s*:\s*{\s*(low\s*:\s*lowToday[^}]*|[^,]*,\s*low\s*:\s*lowToday\s*)}\s*}\s*=\s*LOCAL_FORECAST(;|\s+|\/\/)/g));
   - text: You should use destructuring to create the <code>highToday</code> variable.
     testString: assert(code.match(/(var|const|let)\s*{\s*today\s*:\s*{\s*(high\s*:\s*highToday[^}]*|[^,]*,\s*high\s*:\s*highToday\s*)}\s*}\s*=\s*LOCAL_FORECAST(;|\s+|\/\/)/g));
+  - text: <code>lowToday</code> should be equal to <code>64</code> and <code>highToday</code> should be equal to <code>77</code>.
+    testString: assert(lowToday === 64 && highToday === 77);
 ```
 
 </section>
@@ -71,9 +73,6 @@ const lowToday = LOCAL_FORECAST.today.low;
 const highToday = LOCAL_FORECAST.today.high;
 
 // Only change code above this line
-
-console.log(lowToday); // should be 64
-console.log(highToday); // should be 77
 ```
 
 </div>
@@ -88,11 +87,8 @@ const LOCAL_FORECAST = {
   today: { low: 64, high: 77 },
   tomorrow: { low: 68, high: 80 }
 };
-
+ 
 const { today: { low: lowToday, high: highToday }} = LOCAL_FORECAST;
-
-console.log(highToday); // should be 77
-console.log(highTomorrow); // should be 80
 ```
 
 </section>

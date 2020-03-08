@@ -41,6 +41,8 @@ tests:
     testString: assert(code.match(/(var|const|let)\s*{\s*(today\s*:\s*highToday[^}]*|[^,]*,\s*today\s*:\s*highToday\s*)}\s*=\s*HIGH_TEMPERATURES(;|\s+|\/\/)/g));
   - text: You should use destructuring to create the <code>highTomorrow</code> variable.
     testString: assert(code.match(/(var|const|let)\s*{\s*(tomorrow\s*:\s*highTomorrow[^}]*|[^,]*,\s*tomorrow\s*:\s*highTomorrow\s*)}\s*=\s*HIGH_TEMPERATURES(;|\s+|\/\/)/g));
+  - text: <code>highToday</code> should be equal to <code>77</code> and <code>highTomorrow</code> should be equal to <code>80</code>.
+    testString: assert(highToday === 77 && highTomorrow === 80);
 ```
 
 </section>
@@ -62,10 +64,6 @@ const highToday = HIGH_TEMPERATURES.today;
 const highTomorrow = HIGH_TEMPERATURES.tomorrow; 
 
 // Only change code above this line
-
-console.log(yesterday) // should be not defined
-console.log(highToday); // should be 77
-console.log(highTomorrow); // should be 80
 ```
 
 </div>
@@ -82,9 +80,6 @@ const HIGH_TEMPERATURES = {
 };
 
 const { today: highToday, tomorrow: highTomorrow } = HIGH_TEMPERATURES;
-
-console.log(highToday); // should be 77
-console.log(highTomorrow); // should be 80
 ```
 
 </section>
