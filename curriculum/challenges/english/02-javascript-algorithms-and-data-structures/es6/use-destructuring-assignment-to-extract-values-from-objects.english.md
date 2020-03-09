@@ -73,7 +73,6 @@ const tomorrow = HIGH_TEMPERATURES.tomorrow;
 ```
 
 </div>
-</section>
 
 ### After Test
 <div id='js-teardown'>
