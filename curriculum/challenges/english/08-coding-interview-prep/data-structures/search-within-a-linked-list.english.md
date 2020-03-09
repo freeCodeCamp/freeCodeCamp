@@ -22,16 +22,24 @@ Write an <code>isEmpty</code> method that checks if the linked list is empty, an
 
 ```yml
 tests:
-  - text: Your <code>LinkedList</code> class should have a <code>indexOf</code> method.
+  - text: Your <code>LinkedList</code> class should have an <code>isEmpty</code> method.
+    testString: assert((function(){var test = new LinkedList(); return (typeof test.isEmpty === 'function')}()));
+  - text: Your <code>isEmpty</code> method should return <code>false</code> when there is at least one element in linked list.
+    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten'); return test.isEmpty() === false}()));
+  - text: Your <code>isEmpty</code> method should return <code>true</code> when there are no elements in linked list.
+    testString: assert((function(){var test = new LinkedList(); return test.isEmpty() === true}()));
+  - text: Your <code>LinkedList</code> class should have an <code>indexOf</code> method.
     testString: assert((function(){var test = new LinkedList(); return (typeof test.indexOf === 'function')}()));
-  - text: Your <code>LinkedList</code> class should have a <code>elementAt</code> method.
+  - text: Your <code>indexOf</code> method should return the index of a given element found in linked list.
+    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten'); return test.indexOf('cat') === 0}()));
+  - text: Your <code>indexOf</code> method should return <code>-1</code> if the given element is not found in linked list
+    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten'); return test.indexOf('pony') === -1}()));
+  - text: Your <code>LinkedList</code> class should have an <code>elementAt</code> method.
     testString: assert((function(){var test = new LinkedList(); return (typeof test.elementAt === 'function')}()));
-  - text: Your <code>size</code> method should return the length of the linked list
-    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten'); return test.size() === 3}()));
-  - text: Your <code>indexOf</code> method should return the index of the given element.
-    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten'); return test.indexOf('kitten') === 2}()));
-  - text: Your <code>elementAt</code> method should return at element at a given index.
+  - text: Your <code>elementAt</code> method should return the element found at a given index in linked list.
     testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten'); return test.elementAt(1) === 'dog'}()));
+  - text: Your <code>elementAt</code> method should return <code>undefined</code> if the given index is not found at a given index in linked list.
+    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten'); return test.elementAt(5) === undefined}()));
 
 ```
 
