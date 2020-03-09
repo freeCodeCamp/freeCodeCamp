@@ -74,7 +74,6 @@ const tea4TeamFCC = null;
 <section id='solution'>
 
 ```js
-// solution required
 const prepareTea = () => 'greenTea';
 
 const getTea = (numOfCups) => {

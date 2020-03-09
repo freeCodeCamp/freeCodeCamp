@@ -122,7 +122,6 @@ tests:
 <section id='solution'>
 
 ```html
-// solution required
 <script>
   document.addEventListener('DOMContentLoaded',function(){
     document.getElementById('getMessage').onclick = function(){

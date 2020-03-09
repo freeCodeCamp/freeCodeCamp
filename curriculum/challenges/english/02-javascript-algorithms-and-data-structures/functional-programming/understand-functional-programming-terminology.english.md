@@ -88,7 +88,6 @@ console.log(
 <section id='solution'>
 
 ```js
-// solution required
 const prepareGreenTea = () => 'greenTea';
 const prepareBlackTea = () => 'blackTea';
 
