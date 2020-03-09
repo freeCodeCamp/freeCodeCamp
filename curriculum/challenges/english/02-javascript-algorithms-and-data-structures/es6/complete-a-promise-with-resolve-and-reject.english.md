@@ -33,9 +33,9 @@ Make the promise handle success and failure.  If <code>responseFromServer</code>
 ```yml
 tests:
   - text: <code>resolve</code> should be executed when the <code>if</code> condition is <code>true</code>.
-    testString: assert(removeJSComments(code).match(/if\s*\(\s*responseFromServer\s*\)\s*{\s*resolve\s*\(\s*('|"|`)We got the data\1\s*\)(\s*|\s*;\s*)}/g));
+    testString: assert(__testHelpers.removeJSComments(code).match(/if\s*\(\s*responseFromServer\s*\)\s*{\s*resolve\s*\(\s*('|"|`)We got the data\1\s*\)(\s*|\s*;\s*)}/g));
   - text: <code>reject</code> should be executed when the <code>if</code> condition is <code>false</code>.
-    testString: assert(removeJSComments(code).match(/}\s*else\s*{\s*reject\s*\(\s*('|"|`)Data not received\1\s*\)(\s*|\s*;\s*)}/g));
+    testString: assert(__testHelpers.removeJSComments(code).match(/}\s*else\s*{\s*reject\s*\(\s*('|"|`)Data not received\1\s*\)(\s*|\s*;\s*)}/g));
 ```
 
 </section>
@@ -59,14 +59,6 @@ const makeServerRequest = new Promise((resolve, reject) => {
 
 </div>
 
-### After Test
-<div id='js-teardown'>
-
-```js
-const removeJSComments = str => str.replace(/\/\*[\s\S]*?\*\/|\/\/.*$/gm, '');
-```
-
-</div>
 </section>
 
 ## Solution
