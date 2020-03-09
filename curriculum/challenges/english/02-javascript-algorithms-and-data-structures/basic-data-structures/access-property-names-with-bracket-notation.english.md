@@ -76,7 +76,6 @@ console.log(checkInventory("apples"));
 <section id='solution'>
 
 ```js
-// solution required
 let foods = {
   apples: 25,
   oranges: 32,
