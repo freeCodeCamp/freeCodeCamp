@@ -2,6 +2,7 @@ import chai from 'chai';
 import '@babel/polyfill';
 import __toString from 'lodash/toString';
 import { format as __format } from '../../utils/format';
+import testHelpers from '../../utils/curriculum-test-helpers';
 
 const __utils = (() => {
   const MAX_LOGS_SIZE = 64 * 1024;
@@ -57,6 +58,7 @@ self.onmessage = async e => {
   /* eslint-disable no-unused-vars */
   const { code = '' } = e.data;
   const assert = chai.assert;
+  const __testHelpers = testHelpers;
   // Fake Deep Equal dependency
   const DeepEqual = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 
