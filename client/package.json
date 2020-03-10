@@ -16,7 +16,7 @@
     "@fortawesome/react-fontawesome": "^0.1.4",
     "@freecodecamp/loop-protect": "^2.2.1",
     "@freecodecamp/react-bootstrap": "^0.32.3",
-    "@mot01/react-calendar-heatmap": "^1.0.0",
+    "@freecodecamp/react-calendar-heatmap": "^1.0.0",
     "@reach/router": "^1.2.1",
     "algoliasearch": "^3.35.1",
     "axios": "^0.19.0",

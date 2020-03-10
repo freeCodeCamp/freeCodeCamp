@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import CalendarHeatMap from '@mot01/react-calendar-heatmap';
+import CalendarHeatMap from '@freecodecamp/react-calendar-heatmap';
 import { Row } from '@freecodecamp/react-bootstrap';
 import ReactTooltip from 'react-tooltip';
 import addDays from 'date-fns/add_days';
@@ -11,7 +11,7 @@ import isEqual from 'date-fns/is_equal';
 import FullWidthRow from '../../helpers/FullWidthRow';
 import Spacer from '../../helpers/Spacer';
 
-import '@mot01/react-calendar-heatmap/dist/styles.css';
+import '@freecodecamp/react-calendar-heatmap/dist/styles.css';
 import './heatmap.css';
 
 const propTypes = {
@@ -156,7 +156,7 @@ const HeatMap = props => {
 
   /**
    *  the following logic creates the data for the heatmap
-   *  from the users calendar, and calculates their streaks
+   *  from the users calendar and calculates their streaks
    */
 
   // create array of timestamps and turn into milliseconds
