@@ -6,9 +6,10 @@
         { "to": "/news/about/", "text": "About" },
         {
           "to": "https://www.linkedin.com/school/free-code-camp/people/",
-          "text": "Alumni Network"
+          "text": "Alumni Network",
+          "external": true
         },
-        { "to": "https://github.com/freeCodeCamp/", "text": "Open Source" },
+        { "to": "https://github.com/freeCodeCamp/", "text": "Open Source", "external": true },
         { "to": "/news/shop/", "text": "Shop" },
         { "to": "/news/support/", "text": "Support" },
         { "to": "/news/sponsors/", "text": "Sponsors" },

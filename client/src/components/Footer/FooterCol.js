@@ -12,8 +12,8 @@ function FooterCol({ title, links }) {
       ) : (
         <div className='col-spacer'></div>
       )}
-      {links.map(({ to, text, internal }, i) => (
-        <Link external={!internal} key={`link-${i}`} to={to}>
+      {links.map(({ to, text, external }, i) => (
+        <Link external={external} key={`link-${i}`} to={to}>
           {text}
         </Link>
       ))}
@@ -26,7 +26,7 @@ const propTypes = {
     PropTypes.shape({
       to: PropTypes.string.isRequired,
       text: PropTypes.string,
-      internal: PropTypes.bool
+      external: PropTypes.bool
     })
   ).isRequired,
   title: PropTypes.string
