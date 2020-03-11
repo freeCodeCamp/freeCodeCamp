@@ -26,11 +26,11 @@ localeTitle: 使用贝塞尔曲线移动图形
 ```yml
 tests:
   - text: 'id 为 <code>red</code> 的元素的 <code>animation-timing-function</code> 属性应当赋为 <code>cubic-bezier</code> 函数，其中 x1，y1，x2，y2 值分别为 0，0，0.58，1。'
-    testString: assert($('#red').css('animation-timing-function') == 'cubic-bezier(0, 0, 0.58, 1)', 'id 为 <code>red</code> 的元素的 <code>animation-timing-function</code> 属性应当赋为 <code>cubic-bezier</code> 函数，其中 x1，y1，x2，y2 值分别为 0，0，0.58，1。');
+    testString: assert($('#red').css('animation-timing-function') == 'cubic-bezier(0, 0, 0.58, 1)');
   - text: 'id 为 <code>red</code> 的元素的 <code>animation-timing-function</code> 属性不应该取值 linear。'
-    testString: assert($('#red').css('animation-timing-function') !== 'linear', 'id 为 <code>red</code> 的元素的 <code>animation-timing-function</code> 属性不应该取值 linear。');
+    testString: assert($('#red').css('animation-timing-function') !== 'linear');
   - text: 'id 为 <code>blue</code> 的元素的 <code>animation-timing-function</code> 属性不应该被改变。'
-    testString: assert($('#blue').css('animation-timing-function') == 'ease-out', 'id 为 <code>blue</code> 的元素的 <code>animation-timing-function</code> 属性不应该被改变。');
+    testString: const blueBallAnimation = $('#blue').css('animation-timing-function').replace(/\s/g, ''); assert(blueBallAnimation == 'ease-out' || blueBallAnimation == 'cubic-bezier(0,0,0.58,1)');
 
 ```
 

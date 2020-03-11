@@ -79,7 +79,6 @@ console.log(myArray);
 <section id='solution'>
 
 ```js
-// solution required
 let myArray = ["a", "b", "c", "d"];
 myArray[1] = "e";
 ```

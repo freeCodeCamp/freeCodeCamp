@@ -30,7 +30,7 @@ localeTitle: 创建一个自定义的 CSS 变量
 ```yml
 tests:
   - text: '<code>penguin</code> class 里应声明<code>--penguin-skin</code>变量，且赋值为<code>gray</code>。'
-    testString: 'assert(code.match(/.penguin\s*?{[\s\S]*--penguin-skin\s*?:\s*?gray\s*?;[\s\S]*}/gi));'
+    testString: assert(code.match(/.penguin\s*?{[\s\S]*--penguin-skin\s*?:\s*?gray\s*?;[\s\S]*}/gi));
 
 ```
 

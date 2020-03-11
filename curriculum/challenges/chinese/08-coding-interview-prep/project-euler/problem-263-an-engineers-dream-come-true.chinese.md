@@ -19,7 +19,7 @@ localeTitle: 问题263：工程师“梦想成真
 ```yml
 tests:
   - text: <code>euler263()</code>应该返回2039506520。
-    testString: 'assert.strictEqual(euler263(), 2039506520, "<code>euler263()</code> should return 2039506520.");'
+    testString: assert.strictEqual(euler263(), 2039506520);
 
 ```
 

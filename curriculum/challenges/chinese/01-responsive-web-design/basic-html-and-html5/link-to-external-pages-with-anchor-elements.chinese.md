@@ -28,7 +28,7 @@ tests:
   - text: '<code>a</code>元素的 <code>a</code> 文本应为：<code>cat photos</code>。'
     testString: assert((/cat photos/gi).test($("a").text()));
   - text: '<code>a</code>元素的<code>href</code>属性应为："<code>http&#58;//freecatphotoapp<wbr>.com</code>"。'
-    testString: 'assert(/http:\/\/(www\.)?freecatphotoapp\.com/gi.test($("a").attr("href")));'
+    testString: assert(/http:\/\/(www\.)?freecatphotoapp\.com/gi.test($("a").attr("href")));
   - text: '确保<code>a</code>元素有结束标记。'
     testString: assert(code.match(/<\/a>/g) && code.match(/<\/a>/g).length === code.match(/<a/g).length);
 

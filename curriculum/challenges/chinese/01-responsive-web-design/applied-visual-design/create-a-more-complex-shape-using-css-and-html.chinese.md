@@ -41,13 +41,13 @@ localeTitle: 使用 CSS 和 HTML 创建更复杂的形状
 ```yml
 tests:
   - text: '<code>heart::after</code> 选择器的 <code>background-color</code> 属性值应该为粉色。'
-    testString: 'assert(code.match(/\.heart::after\s*?{\s*?background-color\s*?:\s*?pink\s*?;/gi), ''<code>heart::after</code> 选择器的 <code>background-color</code> 属性值应该为粉色。'');'
+    testString: assert(code.match(/\.heart::after\s*?{\s*?background-color\s*?:\s*?pink\s*?;/gi));
   - text: '<code>heart::after</code> 选择器的 <code>border-radius</code> 属性值应该为 50%。'
-    testString: 'assert(code.match(/border-radius\s*?:\s*?50%/gi).length == 2, ''<code>heart::after</code> 选择器的 <code>border-radius</code> 属性值应该为 50%。'');'
+    testString: assert(code.match(/border-radius\s*?:\s*?50%/gi).length == 2);
   - text: '<code>heart</code> class 的 <code>transform</code> 属性应该使用 <code>rotate()</code> 函数并赋参为 <code>-45deg</code>。'
-    testString: 'assert(code.match(/transform\s*?:\s*?rotate\(\s*?-45deg\s*?\)/gi), ''<code>heart</code> class 的 <code>transform</code> 属性应该使用 <code>rotate()</code> 函数并赋参为 <code>-45deg</code>。'');'
+    testString: assert(code.match(/transform\s*?:\s*?rotate\(\s*?-45deg\s*?\)/gi));
   - text: '<code>heart::before</code>选择器的<code>content</code>应该为空字符串。'
-    testString: 'assert(code.match(/\.heart::before\s*?{\s*?content\s*?:\s*?("|'')\1\s*?;/gi), ''<code>heart::before</code> 选择器的 <code>content</code> 应该为空字符串。'');'
+    testString: assert(code.match(/\.heart::before\s*?{\s*?content\s*?:\s*?("|')\1\s*?;/gi));
 
 ```
 

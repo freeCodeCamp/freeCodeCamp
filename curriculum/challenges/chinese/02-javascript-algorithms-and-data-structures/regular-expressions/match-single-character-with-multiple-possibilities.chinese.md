@@ -18,15 +18,15 @@ localeTitle: 将单个角色与多种可能性相匹配
 ```yml
 tests:
   - text: 你应该找到所有25个元音。
-    testString: 'assert(result.length == 25, "You should find all 25 vowels.");'
+    testString: assert(result.length == 25);
   - text: 你的正则表达式<code>vowelRegex</code>应该使用一个字符类。
-    testString: 'assert(/\[.*\]/.test(vowelRegex.source), "Your regex <code>vowelRegex</code> should use a character class.");'
+    testString: assert(/\[.*\]/.test(vowelRegex.source));
   - text: 你的正则表达式<code>vowelRegex</code>应该使用全局标志。
-    testString: 'assert(vowelRegex.flags.match(/g/).length == 1, "Your regex <code>vowelRegex</code> should use the global flag.");'
+    testString: assert(vowelRegex.flags.match(/g/).length == 1);
   - text: 你的正则表达式<code>vowelRegex</code>应该使用不区分大小写的标志。
-    testString: 'assert(vowelRegex.flags.match(/i/).length == 1, "Your regex <code>vowelRegex</code> should use the case insensitive flag.");'
+    testString: assert(vowelRegex.flags.match(/i/).length == 1);
   - text: 你的正则表达式不应该与任何辅音匹配。
-    testString: 'assert(!/[b-df-hj-np-tv-z]/gi.test(result.join()), "Your regex should not match any consonants.");'
+    testString: assert(!/[b-df-hj-np-tv-z]/gi.test(result.join()));
 
 ```
 

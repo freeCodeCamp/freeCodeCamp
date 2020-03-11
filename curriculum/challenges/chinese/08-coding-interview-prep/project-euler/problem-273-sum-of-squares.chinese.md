@@ -19,7 +19,7 @@ localeTitle: 问题273：正方形的总和
 ```yml
 tests:
   - text: <code>euler273()</code>应该返回2032447591196869000。
-    testString: 'assert.strictEqual(euler273(), 2032447591196869000, "<code>euler273()</code> should return 2032447591196869000.");'
+    testString: assert.strictEqual(euler273(), 2032447591196869000);
 
 ```
 

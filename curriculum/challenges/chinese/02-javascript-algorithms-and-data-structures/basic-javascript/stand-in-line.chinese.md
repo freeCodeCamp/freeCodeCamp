@@ -19,15 +19,15 @@ localeTitle: 站在队中
 ```yml
 tests:
   - text: '<code>nextInLine([], 5)</code>应返回一个数字。'
-    testString: 'assert.isNumber(nextInLine([],5), "<code>nextInLine([], 5)</code> should return a number.");'
+    testString: assert.isNumber(nextInLine([],5));
   - text: '<code>nextInLine([], 1)</code>应该返回<code>1</code>'
-    testString: 'assert(nextInLine([],1) === 1, "<code>nextInLine([], 1)</code> should return <code>1</code>");'
+    testString: assert(nextInLine([],1) === 1);
   - text: '<code>nextInLine([2], 1)</code>应返回<code>2</code>'
-    testString: 'assert(nextInLine([2],1) === 2, "<code>nextInLine([2], 1)</code> should return <code>2</code>");'
+    testString: assert(nextInLine([2],1) === 2);
   - text: '<code>nextInLine([5,6,7,8,9], 1)</code>应该返回<code>5</code>'
-    testString: 'assert(nextInLine([5,6,7,8,9],1) === 5, "<code>nextInLine([5,6,7,8,9], 1)</code> should return <code>5</code>");'
+    testString: assert(nextInLine([5,6,7,8,9],1) === 5);
   - text: '在<code>nextInLine(testArr, 10)</code> ， <code>testArr[4]</code>应为<code>10</code>'
-    testString: 'nextInLine(testArr, 10); assert(testArr[4] === 10, "After <code>nextInLine(testArr, 10)</code>, <code>testArr[4]</code> should be <code>10</code>");'
+    testString: nextInLine(testArr, 10); assert(testArr[4] === 10);
 
 ```
 

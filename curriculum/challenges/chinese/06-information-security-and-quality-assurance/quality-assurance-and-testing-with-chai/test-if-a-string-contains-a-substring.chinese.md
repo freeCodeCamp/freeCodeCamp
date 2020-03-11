@@ -19,11 +19,11 @@ localeTitle: 测试String是否包含子串
 ```yml
 tests:
   - text: 所有测试都应该通过
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=13").then(data => { assert.equal(data.state,"passed"); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=13').then(data => { assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })
   - text: 选择正确的断言 -  include与notInclude
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=13").then(data => {  assert.equal(data.assertions[0].method, "include", "\"Arrow\" contains \"row\"..."); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=13').then(data => {  assert.equal(data.assertions[0].method, 'include', '\'Arrow\' contains \'row\'...'); }, xhr => { throw new Error(xhr.responseText); })
   - text: 选择正确的断言 -  include与notInclude
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=13").then(data => {  assert.equal(data.assertions[1].method, "notInclude", "... a \"dart\" doesn\"t contain a \"queue\""); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=13').then(data => {  assert.equal(data.assertions[1].method, 'notInclude', '... a \'dart\' doesn\'t contain a \'queue\''); }, xhr => { throw new Error(xhr.responseText); })
 
 ```
 

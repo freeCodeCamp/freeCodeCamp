@@ -19,7 +19,7 @@ localeTitle: Class 选择器的优先级高于继承样式
 在含有<code>pink-text</code>class 的<code>h1</code>元素里面，再添加一个<code>blue-text</code>class，这时候，我们将能看到到底是谁获胜。
 HTML 同时应用多个 class 属性需以空格来间隔，例子如下:
 <code>class="class1 class2"</code>
-注意：HTML 元素里应用的 class 的先后顺序无关紧要。
+<strong>注意：</strong> HTML 元素里应用的 class 的先后顺序无关紧要。
 但是，在<code>&#60;style&#62;</code>标签里面声明的<code>class</code>顺序十分重要。第二个声明始终优于第一个声明。因为<code>.blue-text</code>在<code>.pink-text</code>的后面声明，所以<code>.blue-text</code>会覆盖<code>.pink-text</code>的样式。
 </section>
 

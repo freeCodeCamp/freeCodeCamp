@@ -24,9 +24,9 @@ localeTitle: 使用关键字更改动画定时器
 ```yml
 tests:
   - text: 'id 为 <code>ball1</code> 的元素的 <code>animation-timing-function</code> 属性值应该为 linear。'
-    testString: assert($('#ball1').css('animation-timing-function') == 'linear', 'id 为 <code>ball1</code> 的元素的 <code>animation-timing-function</code> 属性值应该为 linear。');
+    testString: const ball1Animation = $('#ball1').css('animation-timing-function').replace(/\s/g, '');assert(ball1Animation == 'linear' || ball1Animation == 'cubic-bezier(0,0,1,1)');
   - text: 'id 为 <code>ball2</code> 的元素的 <code>animation-timing-function</code> 属性值应该为 ease-out。'
-    testString: assert($('#ball2').css('animation-timing-function') == 'ease-out', 'id 为 <code>ball2</code> 的元素的 <code>animation-timing-function</code> 属性值应该为 ease-out。');
+    testString: const ball2Animation = $('#ball2').css('animation-timing-function').replace(/\s/g, ''); assert(ball2Animation == 'ease-out' || ball2Animation == 'cubic-bezier(0,0,0.58,1)');
 
 ```
 

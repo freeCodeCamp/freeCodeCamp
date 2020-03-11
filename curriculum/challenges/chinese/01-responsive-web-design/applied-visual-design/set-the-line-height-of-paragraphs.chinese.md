@@ -23,7 +23,7 @@ CSS 提供 <code>line-height</code> 属性来设置行间的距离。行高，�
 ```yml
 tests:
   - text: '你应该给 <code>p</code> 标签添加 <code>line-height</code> 属性并赋值 <code>25px</code>。'
-    testString: assert($('p').css('line-height') == '25px', '你应该给 <code>p</code> 标签添加 <code>line-height</code> 属性并赋值 <code>25px</code>。');
+    testString: assert($('p').css('line-height') == '25px');
 
 ```
 

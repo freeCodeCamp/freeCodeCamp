@@ -30,7 +30,7 @@ p {
 ```yml
 tests:
   - text: '<code>#ball2</code> 的 <code>transform</code> 属性应该为原始大小的 1.5 倍。'
-    testString: 'assert(code.match(/#ball2\s*?{\s*?left:\s*?65%;\s*?transform:\s*?scale\(1\.5\);\s*?}|#ball2\s*?{\s*?transform:\s*?scale\(1\.5\);\s*?left:\s*?65%;\s*?}/gi), ''<code>#ball2</code> 的 <code>transform</code> 属性应该为原始大小的 1.5 倍。'');'
+    testString: assert(code.match(/#ball2\s*?{\s*?left:\s*?65%;\s*?transform:\s*?scale\(1\.5\);\s*?}|#ball2\s*?{\s*?transform:\s*?scale\(1\.5\);\s*?left:\s*?65%;\s*?}/gi));
 
 ```
 

@@ -19,7 +19,7 @@ localeTitle: 问题83：路径总和：四种方式
 ```yml
 tests:
   - text: <code>euler83()</code>应返回425185。
-    testString: 'assert.strictEqual(euler83(), 425185, "<code>euler83()</code> should return 425185.");'
+    testString: assert.strictEqual(euler83(), 425185);
 
 ```
 

@@ -18,11 +18,11 @@ localeTitle: 使用D3创建线性比例
 ```yml
 tests:
   - text: <code>h2</code>的文本应为50。
-    testString: 'assert($("h2").text() == "50", "The text in the <code>h2</code> should be 50.");'
+    testString: assert($('h2').text() == '50');
   - text: 您的代码应使用<code>scaleLinear()</code>方法。
-    testString: 'assert(code.match(/\.scaleLinear/g), "Your code should use the <code>scaleLinear()</code> method.");'
+    testString: assert(code.match(/\.scaleLinear/g));
   - text: <code>output</code>变量应该使用参数50调用<code>scale</code> 。
-    testString: 'assert(output == 50 && code.match(/scale\(\s*?50\s*?\)/g), "The <code>output</code> variable should call <code>scale</code> with an argument of 50.");'
+    testString: assert(output == 50 && code.match(/scale\(\s*?50\s*?\)/g));
 
 ```
 

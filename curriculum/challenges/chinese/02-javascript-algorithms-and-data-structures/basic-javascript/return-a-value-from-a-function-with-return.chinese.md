@@ -18,13 +18,13 @@ localeTitle: 从带返回的函数返回值
 ```yml
 tests:
   - text: <code>timesFive</code>应该是一个功能
-    testString: 'assert(typeof timesFive === "function", "<code>timesFive</code> should be a function");'
+    testString: assert(typeof timesFive === 'function');
   - text: <code>timesFive(5)</code>应该返回<code>25</code>
-    testString: 'assert(timesFive(5) === 25, "<code>timesFive(5)</code> should return <code>25</code>");'
+    testString: assert(timesFive(5) === 25);
   - text: <code>timesFive(2)</code>应该返回<code>10</code>
-    testString: 'assert(timesFive(2) === 10, "<code>timesFive(2)</code> should return <code>10</code>");'
+    testString: assert(timesFive(2) === 10);
   - text: <code>timesFive(0)</code>应该返回<code>0</code>
-    testString: 'assert(timesFive(0) === 0, "<code>timesFive(0)</code> should return <code>0</code>");'
+    testString: assert(timesFive(0) === 0);
 
 ```
 

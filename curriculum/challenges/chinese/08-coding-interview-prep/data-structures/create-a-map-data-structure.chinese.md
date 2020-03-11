@@ -19,19 +19,19 @@ localeTitle: 创建地图数据结构
 ```yml
 tests:
   - text: 存在地图数据结构。
-    testString: 'assert((function() { var test = false; if (typeof Map !== "undefined") { test = new Map() }; return (typeof test == "object")})(), "The Map data structure exists.");'
+    testString: assert((function() { var test = false; if (typeof Map !== 'undefined') { test = new Map() }; return (typeof test == 'object')})());
   - text: Map对象具有以下方法：add，remove，get，has，values，clear和size。
-    testString: 'assert((function() { var test = false; if (typeof Map !== "undefined") { test = new Map() }; return (typeof test.add == "function" && typeof test.remove == "function" && typeof test.get == "function" && typeof test.has == "function" && typeof test.values == "function" && typeof test.clear == "function" && typeof test.size == "function")})(), "The Map object has the following methods: add, remove, get, has, values, clear, and size.");'
+    testString: "assert((function() { var test = false; if (typeof Map !== 'undefined') { test = new Map() }; return (typeof test.add == 'function' && typeof test.remove == 'function' && typeof test.get == 'function' && typeof test.has == 'function' && typeof test.values == 'function' && typeof test.clear == 'function' && typeof test.size == 'function')})());"
   - text: add方法将项添加到地图中。
-    testString: 'assert((function() { var test = false; if (typeof Map !== "undefined") { test = new Map() }; test.add(5,6); test.add(2,3); test.add(2,5); return (test.size() == 2)})(), "The add method adds items to the map.");'
+    testString: assert((function() { var test = false; if (typeof Map !== 'undefined') { test = new Map() }; test.add(5,6); test.add(2,3); test.add(2,5); return (test.size() == 2)})());
   - text: has方法对于添加的项返回true，对于缺少的项返回false。
-    testString: 'assert((function() { var test = false; if (typeof Map !== "undefined") { test = new Map() }; test.add("test","value"); return (test.has("test") && !test.has("false"))})(), "The has method returns true for added items and false for absent items.");'
+    testString: assert((function() { var test = false; if (typeof Map !== 'undefined') { test = new Map() }; test.add('test','value'); return (test.has('test') && !test.has('false'))})());
   - text: get方法接受键作为输入并返回关联的值。
-    testString: 'assert((function() { var test = false; if (typeof Map !== "undefined") { test = new Map() }; test.add("abc","def"); return (test.get("abc") == "def")})(), "The get method accepts keys as input and returns the associated values.");'
+    testString: assert((function() { var test = false; if (typeof Map !== 'undefined') { test = new Map() }; test.add('abc','def'); return (test.get('abc') == 'def')})());
   - text: values方法将存储在映射中的所有值作为数组中的字符串返回。
-    testString: 'assert((function() { var test = false; if (typeof Map !== "undefined") { test = new Map() }; test.add("a","b"); test.add("c","d"); test.add("e","f"); var vals = test.values(); return (vals.indexOf("b") != -1 && vals.indexOf("d") != -1 && vals.indexOf("f") != -1)})(), "The values method returns all the values stored in the map as strings in an array.");'
+    testString: assert((function() { var test = false; if (typeof Map !== 'undefined') { test = new Map() }; test.add('a','b'); test.add('c','d'); test.add('e','f'); var vals = test.values(); return (vals.indexOf('b') != -1 && vals.indexOf('d') != -1 && vals.indexOf('f') != -1)})());
   - text: clear方法清空映射，size方法返回映射中存在的项目数。
-    testString: 'assert((function() { var test = false; if (typeof Map !== "undefined") { test = new Map() }; test.add("b","b"); test.add("c","d"); test.remove("asdfas"); var init = test.size(); test.clear(); return (init == 2 && test.size() == 0)})(), "The clear method empties the map and the size method returns the number of items present in the map.");'
+    testString: assert((function() { var test = false; if (typeof Map !== 'undefined') { test = new Map() }; test.add('b','b'); test.add('c','d'); test.remove('asdfas'); var init = test.size(); test.clear(); return (init == 2 && test.size() == 0)})());
 
 ```
 

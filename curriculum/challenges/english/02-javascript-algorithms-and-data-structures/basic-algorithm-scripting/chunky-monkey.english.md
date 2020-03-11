@@ -47,7 +47,6 @@ tests:
 
 ```js
 function chunkArrayInGroups(arr, size) {
-  // Break it up.
   return arr;
 }
 

@@ -28,7 +28,7 @@ tests:
   - text: '<code>h1</code>元素应该含有<code>pink-text</code> class。'
     testString: assert($("h1").hasClass("pink-text"));
   - text: '<code>&#60;style&#62;</code>标签应该含有一个可以改变字体颜色的<code>pink-text</code> class。'
-    testString: 'assert(code.match(/\.pink-text\s*\{\s*color\s*:\s*.+\s*;\s*\}/g));'
+    testString: assert(code.match(/\.pink-text\s*\{\s*color\s*:\s*.+\s*;\s*\}/g));
   - text: '<code>h1</code>元素的字体颜色应该为<code>pink（粉色）</code>。'
     testString: assert($("h1").css("color") === "rgb(255, 192, 203)");
 

@@ -18,11 +18,11 @@ localeTitle: 匹配结束字符串模式
 ```yml
 tests:
   - text: 您应该在正则表达式中使用美元符号<code>$</code> anchor搜索<code>&quot;caboose&quot;</code> 。
-    testString: 'assert(lastRegex.source == "caboose$", "You should search for <code>"caboose"</code> with the dollar sign <code>$</code> anchor in your regex.");'
+    testString: assert(lastRegex.source == "caboose$");
   - text: 你的正则表达式不应该使用任何标志。
-    testString: 'assert(lastRegex.flags == "", "Your regex should not use any flags.");'
+    testString: assert(lastRegex.flags == "");
   - text: 您应该在字符串末尾匹配<code>&quot;caboose&quot;</code> <code>&quot;The last car on a train is the caboose&quot;</code>
-    testString: 'assert(lastRegex.test("The last car on a train is the caboose"), "You should match <code>"caboose"</code> at the end of the string <code>"The last car on a train is the caboose"</code>");'
+    testString: assert(lastRegex.test("The last car on a train is the caboose"));
 
 ```
 

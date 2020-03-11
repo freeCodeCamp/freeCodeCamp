@@ -29,7 +29,7 @@ tests:
   - text: '<code>h2</code>元素应该有结束标记。'
     testString: assert(code.match(/<\/h2>/g) && code.match(/<\/h2>/g).length === code.match(/<h2>/g).length);
   - text: '<code>h2</code>元素的内容应为：<code>CatPhotoApp</code>。'
-    testString: assert.isTrue((/CatPhotoApp/gi).test($("h2").text()));
+    testString: assert.isTrue((/cat(\s)?photo(\s)?app/gi).test($("h2").text()));
   - text: '<code>h1</code>元素的内容应为：<code>Hello World</code>。'
     testString: assert.isTrue((/hello(\s)+world/gi).test($("h1").text()));
 

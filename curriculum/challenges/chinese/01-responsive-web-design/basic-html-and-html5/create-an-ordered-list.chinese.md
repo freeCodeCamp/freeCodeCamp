@@ -35,9 +35,9 @@ HTML 有一个特定的元素用于创建有序列表<code>ordered lists（缩�
 ```yml
 tests:
   - text: '页面应该有一个无序列表，内容是猫咪最喜欢的三件东西。'
-    testString: assert((/猫咪最喜欢的三件东西：/i).test($("ul").prev().text()));
+    testString: assert((/Top 3 things cats hate:/i).test($("ol").prev().text()));
   - text: '页面应该有一个有序列表，内容是猫咪最讨厌的三件东西。'
-    testString: assert((/猫咪最讨厌的三件东西：/i).test($("ol").prev().text()));
+    testString: assert((/Things cats love:/i).test($("ul").prev().text()));
   - text: '页面应该只有一个<code>ul</code>元素。'
     testString: assert.equal($("ul").length, 1);
   - text: '页面应该只有一个<code>ol</code>元素。'

@@ -27,7 +27,7 @@ localeTitle: 使用贝塞尔曲线让运动更加自然
 ```yml
 tests:
   - text: 'id 为<code>green</code>的元素的<code>animation-timing-function</code>值应该为<code>cubic-bezier</code>函数，函数的参数 x1，y1，x2，y2 值依次为 0.311、0.441、0.444、1.649。'
-    testString: assert($('#green').css('animation-timing-function') == 'cubic-bezier(0.311, 0.441, 0.444, 1.649)', 'id 为<code>green</code>的元素的<code>animation-timing-function</code>值应该为<code>cubic-bezier</code>函数，函数的参数 x1，y1，x2，y2 值依次为 0.311、0.441、0.444、1.649。');
+    testString: assert($('#green').css('animation-timing-function') == 'cubic-bezier(0.311, 0.441, 0.444, 1.649)');
 
 ```
 

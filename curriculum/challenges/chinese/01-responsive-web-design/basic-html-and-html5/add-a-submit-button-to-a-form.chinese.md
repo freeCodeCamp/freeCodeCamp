@@ -25,11 +25,11 @@ localeTitle: 给表单添加提交按钮
 ```yml
 tests:
   - text: '表单内部应该有一个按钮。'
-    testString: assert($("form").children("button").length > 0, '表单内部应该有一个按钮。');
+    testString: assert($("form").children("button").length > 0);
   - text: '按钮的<code>type</code>属性值应该为<code>submit</code>。'
     testString: assert($("button").attr("type") === "submit");
   - text: '提交按钮的文本应该为<code>提交</code>。'
-    testString: assert($("button").text().match(/^\s*提交\s*$/gi));
+    testString: assert($("button").text().match(/^\s*submit\s*$/gi));
   - text: '确保按钮有结束标记。'
     testString: assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length);
 

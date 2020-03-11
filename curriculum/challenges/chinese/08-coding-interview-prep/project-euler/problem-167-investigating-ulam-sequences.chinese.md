@@ -19,7 +19,7 @@ localeTitle: 问题167：研究Ulam序列
 ```yml
 tests:
   - text: <code>euler167()</code>应该返回3916160068885。
-    testString: 'assert.strictEqual(euler167(), 3916160068885, "<code>euler167()</code> should return 3916160068885.");'
+    testString: assert.strictEqual(euler167(), 3916160068885);
 
 ```
 
