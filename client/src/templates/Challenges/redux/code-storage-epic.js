@@ -1,5 +1,5 @@
 import { of } from 'rxjs';
-import { filter, switchMap, tap, ignoreElements } from 'rxjs/operators';
+import { filter, switchMap, map, tap, ignoreElements } from 'rxjs/operators';
 import { combineEpics, ofType } from 'redux-observable';
 import store from 'store';
 
@@ -74,12 +74,11 @@ function clearCodeEpic(action$, state$) {
 }
 
 function saveCodeEpic(action$, state$) {
-  let saveSuccessful;
   return action$.pipe(
     ofType(types.executeChallenge, types.saveEditorContent),
     // do not save challenge if code is locked
     filter(() => !isCodeLockedSelector(state$.value)),
-    tap(() => {
+    map(action => {
       const state = state$.value;
       const { id } = challengeMetaSelector(state);
       const files = challengeFilesSelector(state);
@@ -91,19 +90,19 @@ function saveCodeEpic(action$, state$) {
         if (store.get(id)[fileType].contents !== files[fileType].contents) {
           throw Error('Failed to save to localStorage');
         }
-        saveSuccessful = true;
+        return action;
       } catch (e) {
-        saveSuccessful = false;
+        return { ...action, error: true };
       }
     }),
     ofType(types.saveEditorContent),
-    switchMap(() =>
+    switchMap(({ error }) =>
       of(
         createFlashMessage({
-          type: saveSuccessful ? 'success' : 'warning',
-          message: saveSuccessful
-            ? 'Saved! Your code was saved to localStorage'
-            : 'Oops, your code did not save, localStorage may be full'
+          type: error ? 'warning' : 'success',
+          message: error
+            ? 'Oops, your code did not save, local storage may be full'
+            : 'Saved! Your code was saved to local storage'
         })
       )
     )
