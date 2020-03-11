@@ -453,22 +453,13 @@ function createShowCert(app) {
 
         // if fullcert is not found, return the latest completedDate
         if (certType === 'isFullStackCert' && !certChallenge) {
-          // create an array of certification ids
-          var chalIds = [oldDataVizId];
-          for (var i in certIds) {
-            if (certIds.hasOwnProperty(i)) chalIds.push(certIds[i]);
-          }
+          var chalIds = [...Object.values(certIds), oldDataVizId];
 
-          // loop over completed challenges to find latest completedDate
-          let latestDate = 0;
-          for (let i of completedChallenges) {
-            if (chalIds.includes(i.id)) {
-              latestDate =
-                latestDate < i.completedDate ? i.completedDate : latestDate;
-              chalIds = chalIds.filter(value => value !== i.id);
-            }
-          }
-          completedDate = latestDate ? latestDate : completedDate;
+          const latestCertDate = completedChallenges
+            .filter(chal => chalIds.includes(chal.id))
+            .sort((a, b) => a.completedDate < b.completedDate)[0].completedDate;
+
+          completedDate = latestCertDate ? latestCertDate : completedDate;
         }
 
         const { username, name } = user;
