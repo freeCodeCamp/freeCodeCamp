@@ -15,7 +15,7 @@ Example:
 ```js
 var ourName = "freeCodeCamp";
 var ourStr = "Hello, our name is " + ourName + ", how are you?";
-// ourStr is now "Hellow, our name is freeCodeCamp, how are you?"
+// ourStr is now "Hello, our name is freeCodeCamp, how are you?"
 ```
 
 </section>
