@@ -38,14 +38,14 @@ tests:
 <div id='js-seed'>
 
 ```js
-// the global Array
+// The global variable
 var s = [23, 65, 98, 5];
 
 Array.prototype.myMap = function(callback){
   var newArray = [];
-  // Add your code below this line
+  // Only change code below this line
 
-  // Add your code above this line
+  // Only change code above this line
   return newArray;
 
 };
@@ -70,11 +70,11 @@ var s = [23, 65, 98, 5];
 
 Array.prototype.myMap = function(callback){
   var newArray = [];
-  // Add your code below this line
+  // Only change code below this line
   for (var elem of this) {
     newArray.push(callback(elem));
   }
-  // Add your code above this line
+  // Only change code above this line
   return newArray;
 
 };

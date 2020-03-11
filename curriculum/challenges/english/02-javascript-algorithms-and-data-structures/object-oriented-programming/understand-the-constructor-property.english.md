@@ -64,7 +64,7 @@ function Dog(name) {
   this.name = name;
 }
 
-// Add your code below this line
+// Only change code below this line
 function joinDogFraternity(candidate) {
 
 }

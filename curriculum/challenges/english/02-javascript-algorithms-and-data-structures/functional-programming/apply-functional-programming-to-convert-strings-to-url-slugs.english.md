@@ -49,15 +49,15 @@ tests:
 <div id='js-seed'>
 
 ```js
-// the global variable
+// The global variable
 var globalTitle = "Winter Is Coming";
 
-// Add your code below this line
+// Only change code below this line
 function urlSlug(title) {
 
 
 }
-// Add your code above this line
+// Only change code above this line
 ```
 
 </div>
@@ -70,14 +70,13 @@ function urlSlug(title) {
 <section id='solution'>
 
 ```js
-// the global variable
+// The global variable
 var globalTitle = "Winter Is Coming";
 
-// Add your code below this line
+// Only change code below this line
 function urlSlug(title) {
   return title.trim().split(/\s+/).join("-").toLowerCase();
 }
-// Add your code above this line
 ```
 
 </section>
