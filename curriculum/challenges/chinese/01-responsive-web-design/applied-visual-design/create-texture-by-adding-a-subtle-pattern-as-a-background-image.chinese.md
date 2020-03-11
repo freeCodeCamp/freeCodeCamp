@@ -23,7 +23,7 @@ localeTitle: 通过添加细微图案作为背景图像来创建纹理
 ```yml
 tests:
   - text: '<code>body</code> 元素选择器应包含 <code>background</code> 属性，且值为给定的 <code>url</code>。'
-    testString: 'assert(code.match(/background:\s*?url\(\s*("|''|)https:\/\/i\.imgur\.com\/MJAkxbh\.png\1\s*\)/gi), ''<code>body</code> 元素选择器应包含 <code>background</code> 属性，且值为给定的 <code>url</code>。'');'
+    testString: assert(code.match(/background:\s*?url\(\s*("|'|)https:\/\/cdn-media-1\.freecodecamp\.org\/imgr\/MJAkxbh\.png\1\s*\)/gi));
 
 ```
 

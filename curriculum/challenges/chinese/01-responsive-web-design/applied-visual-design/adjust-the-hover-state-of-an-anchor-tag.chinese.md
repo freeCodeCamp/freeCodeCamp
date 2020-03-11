@@ -31,9 +31,9 @@ a:hover {
 ```yml
 tests:
   - text: '超链接的 <code>color</code> 应该保持黑色，只添加 <code>:hover</code> CSS 规则。'
-    testString: 'assert($(''a'').css(''color'') == ''rgb(0, 0, 0)'', ''超链接的 <code>color</code> 应该保持黑色，只添加 <code>:hover</code> CSS 规则。'');'
+    testString: assert($('a').css('color') == 'rgb(0, 0, 0)');
   - text: '悬停超链接时超链接 <code>color</code> 应该变成蓝色。'
-    testString: 'assert(code.match(/a:hover\s*?{\s*?color:\s*?blue;\s*?}/gi), ''悬停超链接时超链接 <code>color</code> 应该变成蓝色。'');'
+    testString: assert(code.match(/a:hover\s*?{\s*?color:\s*?(blue|rgba\(\s*?0\s*?,\s*?0\s*?,\s*?255\s*?,\s*?1\s*?\)|#00F|rgb\(\s*?0\s*?,\s*?0\s*?,\s*?255\s*?\))\s*?;\s*?}/gi));
 
 ```
 

@@ -24,9 +24,9 @@ localeTitle: 在网格中创建网格
 ```yml
 tests:
   - text: '<code>item3</code>类应该有<code>grid-template-columns</code>属性且值为<code>auto</code>和<code>1fr</code>。'
-    testString: 'assert(code.match(/.item3\s*?{[\s\S]*grid-template-columns\s*?:\s*?auto\s*?1fr\s*?;[\s\S]*}/gi));'
+    testString: assert(code.match(/.item3\s*?{[\s\S]*grid-template-columns\s*?:\s*?auto\s*?1fr\s*?;[\s\S]*}/gi));
   - text: '<code>item3</code>类有<code>display</code>属性且值为<code>grid</code>。'
-    testString: 'assert(code.match(/.item3\s*?{[\s\S]*display\s*?:\s*?grid\s*?;[\s\S]*}/gi));'
+    testString: assert(code.match(/.item3\s*?{[\s\S]*display\s*?:\s*?grid\s*?;[\s\S]*}/gi));
 
 ```
 

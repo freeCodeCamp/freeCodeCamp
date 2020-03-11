@@ -30,13 +30,13 @@ background: var(--penguin-skin);
 ```yml
 tests:
   - text: '<code>penguin-top</code> class 的<code>background</code>属性应使用<code>--penguin-skin</code>变量值。'
-    testString: 'assert(code.match(/.penguin-top\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}[\s\S]*.penguin-bottom\s{/gi));'
+    testString: assert(code.match(/.penguin-top\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}[\s\S]*.penguin-bottom\s{/gi));
   - text: '<code>penguin-bottom</code> class 的<code>background</code>属性应使用<code>--penguin-skin</code>变量值。'
-    testString: 'assert(code.match(/.penguin-bottom\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}[\s\S]*.right-hand\s{/gi));'
+    testString: assert(code.match(/.penguin-bottom\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}[\s\S]*.right-hand\s{/gi));
   - text: '<code>right-hand</code> class 的<code>background</code>属性应使用<code>--penguin-skin</code>变量值。'
-    testString: 'assert(code.match(/.right-hand\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}[\s\S]*.left-hand\s{/gi));'
+    testString: assert(code.match(/.right-hand\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}[\s\S]*.left-hand\s{/gi));
   - text: '<code>left-hand</code> class 的<code>background</code>属性应使用<code>--penguin-skin</code>变量值。'
-    testString: 'assert(code.match(/.left-hand\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}/gi));'
+    testString: assert(code.match(/.left-hand\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}/gi));
 
 ```
 

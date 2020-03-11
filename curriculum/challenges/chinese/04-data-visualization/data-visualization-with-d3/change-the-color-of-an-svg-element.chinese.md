@@ -18,7 +18,7 @@ localeTitle: 更改SVG元素的颜色
 ```yml
 tests:
   - text: 这些酒吧都应该有海军蓝的<code>fill</code>颜色。
-    testString: 'assert($("rect").css("fill") == "rgb(0, 0, 128)", "The bars should all have a <code>fill</code> color of navy.");'
+    testString: assert($('rect').css('fill') == "rgb(0, 0, 128)");
 
 ```
 

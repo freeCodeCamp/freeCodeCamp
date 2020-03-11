@@ -29,7 +29,7 @@ grid-template-columns: 100px minmax(50px, 200px);
 ```yml
 tests:
   - text: '<code>container</code>类应该有<code>grid-template-columns</code>属性且设置重复 3 列，每列宽度最小值为<code>90px</code>，最大值为<code>1fr</code>。'
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?repeat\s*?\(\s*?3\s*?,\s*?minmax\s*?\(\s*?90px\s*?,\s*?1fr\s*?\)\s*?\)\s*?;[\s\S]*}/gi));'
+    testString: assert(code.match(/.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?repeat\s*?\(\s*?3\s*?,\s*?minmax\s*?\(\s*?90px\s*?,\s*?1fr\s*?\)\s*?\)\s*?;[\s\S]*}/gi));
 
 ```
 

@@ -18,13 +18,13 @@ localeTitle: 改变用const声明的数组
 ```yml
 tests:
   - text: 不要替换<code>const</code>关键字。
-    testString: 'getUserInput => assert(getUserInput("index").match(/const/g), "Do not replace <code>const</code> keyword.");'
+    testString: getUserInput => assert(getUserInput('index').match(/const/g));
   - text: <code>s</code>应该是一个常量变量（使用<code>const</code> ）。
-    testString: 'getUserInput => assert(getUserInput("index").match(/const\s+s/g), "<code>s</code> should be a constant variable (by using <code>const</code>).");'
+    testString: getUserInput => assert(getUserInput('index').match(/const\s+s/g));
   - text: 不要更改原始数组声明。
-    testString: 'getUserInput => assert(getUserInput("index").match(/const\s+s\s*=\s*\[\s*5\s*,\s*7\s*,\s*2\s*\]\s*;?/g), "Do not change the original array declaration.");'
+    testString: getUserInput => assert(getUserInput('index').match(/const\s+s\s*=\s*\[\s*5\s*,\s*7\s*,\s*2\s*\]\s*;?/g));
   - text: '<code>s</code>应该等于<code>[2, 5, 7]</code> 。'
-    testString: 'assert.deepEqual(s, [2, 5, 7], "<code>s</code> should be equal to <code>[2, 5, 7]</code>.");'
+    testString: assert.deepEqual(s, [2, 5, 7]);
 
 ```
 

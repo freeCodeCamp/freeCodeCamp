@@ -18,11 +18,11 @@ localeTitle: 创建一个基本的JavaScript对象
 ```yml
 tests:
   - text: <code>dog</code>应该是一个<code>object</code> 。
-    testString: 'assert(typeof(dog) === "object", "<code>dog</code> should be an <code>object</code>.");'
+    testString: assert(typeof(dog) === 'object');
   - text: <code>dog</code>应该将<code>name</code>属性设置为<code>string</code> 。
-    testString: 'assert(typeof(dog.name) === "string", "<code>dog</code> should have a <code>name</code> property set to a <code>string</code>.");'
+    testString: assert(typeof(dog.name) === 'string');
   - text: <code>dog</code>应该将<code>numLegs</code>属性设置为<code>number</code> 。
-    testString: 'assert(typeof(dog.numLegs) === "number", "<code>dog</code> should have a <code>numLegs</code> property set to a <code>number</code>.");'
+    testString: assert(typeof(dog.numLegs) === 'number');
 
 ```
 

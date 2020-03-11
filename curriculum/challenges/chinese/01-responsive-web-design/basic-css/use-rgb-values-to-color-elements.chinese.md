@@ -39,7 +39,7 @@ tests:
   - text: '<code>body</code>元素的背景颜色应该是黑色的。'
     testString: assert($("body").css("background-color") === "rgb(0, 0, 0)");
   - text: '<code>body</code>元素的背景颜色的黑色值应该为<code>RGB</code>值。'
-    testString: assert(code.match(/rgb\s*\(\s*0\s*,\s*0\s*,\s*0\s*\)/ig)
+    testString: assert(code.match(/rgb\s*\(\s*0\s*,\s*0\s*,\s*0\s*\)/ig));
 
 ```
 

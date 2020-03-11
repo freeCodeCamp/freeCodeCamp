@@ -18,11 +18,11 @@ localeTitle: 使用Mixin在不相关的对象之间添加常见行为
 ```yml
 tests:
   - text: 您的代码应该声明一个<code>glideMixin</code>变量，它是一个函数。
-    testString: 'assert(typeof glideMixin === "function", "Your code should declare a <code>glideMixin</code> variable that is a function.");'
+    testString: assert(typeof glideMixin === "function");
   - text: 你的代码应该使用<code>bird</code>对象上的<code>glideMixin</code>来为它提供<code>glide</code>方法。
-    testString: 'assert(typeof bird.glide === "function", "Your code should use the <code>glideMixin</code> on the <code>bird</code> object to give it the <code>glide</code> method.");'
+    testString: assert(typeof bird.glide === "function");
   - text: 你的代码应该使用<code>boat</code>对象上的<code>glideMixin</code>来为它提供<code>glide</code>方法。
-    testString: 'assert(typeof boat.glide === "function", "Your code should use the <code>glideMixin</code> on the <code>boat</code> object to give it the <code>glide</code> method.");'
+    testString: assert(typeof boat.glide === "function");
 
 ```
 

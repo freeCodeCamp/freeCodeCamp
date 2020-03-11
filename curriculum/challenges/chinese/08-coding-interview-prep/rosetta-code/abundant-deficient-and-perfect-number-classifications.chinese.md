@@ -19,13 +19,13 @@ localeTitle: 丰富，不足和完善的数字分类
 ```yml
 tests:
   - text: <code>getDPA</code>是一个功能。
-    testString: 'assert(typeof getDPA === "function", "<code>getDPA</code> is a function.");'
+    testString: assert(typeof getDPA === 'function');
   - text: <code>getDPA</code>应该返回一个数组。
-    testString: 'assert(Array.isArray(getDPA(100)), "<code>getDPA</code> should return an array.");'
+    testString: assert(Array.isArray(getDPA(100)));
   - text: <code>getDPA</code>返回值的长度应为3。
-    testString: 'assert(getDPA(100).length === 3, "<code>getDPA</code> return value should have a length of 3.");'
+    testString: assert(getDPA(100).length === 3);
   - text: '<code>getDPA(20000)</code>应该等于[15043,4,4953]'
-    testString: 'assert.deepEqual(getDPA(20000), solution, "<code>getDPA(20000)</code> should equal [15043, 4, 4953]");'
+    testString: assert.deepEqual(getDPA(20000), solution);
 
 ```
 

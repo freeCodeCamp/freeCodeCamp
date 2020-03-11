@@ -18,15 +18,15 @@ localeTitle: 使用SVG显示形状
 ```yml
 tests:
   - text: 您的文档应该有1个<code>rect</code>元素。
-    testString: 'assert($("rect").length == 1, "Your document should have 1 <code>rect</code> element.");'
+    testString: assert($('rect').length == 1);
   - text: <code>rect</code>元素的<code>width</code>属性应设置为25。
-    testString: 'assert($("rect").attr("width") == "25", "The <code>rect</code> element should have a <code>width</code> attribute set to 25.");'
+    testString: assert($('rect').attr('width') == '25');
   - text: <code>rect</code>元素的<code>height</code>属性应设置为100。
-    testString: 'assert($("rect").attr("height") == "100", "The <code>rect</code> element should have a <code>height</code> attribute set to 100.");'
+    testString: assert($('rect').attr('height') == '100');
   - text: <code>rect</code>元素的<code>x</code>属性应设置为0。
-    testString: 'assert($("rect").attr("x") == "0", "The <code>rect</code> element should have an <code>x</code> attribute set to 0.");'
+    testString: assert($('rect').attr('x') == '0');
   - text: <code>rect</code>元素的<code>y</code>属性应设置为0。
-    testString: 'assert($("rect").attr("y") == "0", "The <code>rect</code> element should have a <code>y</code> attribute set to 0.");'
+    testString: assert($('rect').attr('y') == '0');
 
 ```
 

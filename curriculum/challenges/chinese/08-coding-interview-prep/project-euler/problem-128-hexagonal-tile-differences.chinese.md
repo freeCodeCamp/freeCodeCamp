@@ -19,7 +19,7 @@ localeTitle: 问题128：六边形瓷砖差异
 ```yml
 tests:
   - text: <code>euler128()</code>应该返回14516824220。
-    testString: 'assert.strictEqual(euler128(), 14516824220, "<code>euler128()</code> should return 14516824220.");'
+    testString: assert.strictEqual(euler128(), 14516824220);
 
 ```
 

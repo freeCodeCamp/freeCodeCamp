@@ -45,17 +45,17 @@ id 为 <code>anim</code> 的元素，代码设置 <code>animation-name</code> �
 ```yml
 tests:
   - text: 'id 为 <code>rect</code> 的元素应该有一个值为 rainbow 的 <code>animation-name</code> 属性。'
-    testString: assert($('#rect').css('animation-name') == 'rainbow', 'id 为 <code>rect</code> 的元素应该有一个值为 rainbow 的 <code>animation-name</code> 属性。');
+    testString: assert($('#rect').css('animation-name') == 'rainbow');
   - text: 'id 为 <code>rect</code> 的元素应该有一个值为 4s 的 <code>animation-duration</code> 属性。'
-    testString: assert($('#rect').css('animation-duration') == '4s', 'id 为 <code>rect</code> 的元素应该有一个值为 4s 的 <code>animation-duration</code> 属性。');
+    testString: assert($('#rect').css('animation-duration') == '4s');
   - text: '<code>@keyframes</code> 规则的 <code>animation-name</code> 应该为 rainbow。'
-    testString: assert(code.match(/@keyframes\s+?rainbow\s*?{/g), '<code>@keyframes</code> 规则的 <code>animation-name</code> 应该为 rainbow。');
+    testString: assert(code.match(/@keyframes\s+?rainbow\s*?{/g));
   - text: '<code>@keyframes</code> 规则的 rainbow 在 0% 时的 <code>background-color</code> 应该为蓝色。'
-    testString: 'assert(code.match(/0%\s*?{\s*?background-color:\s*?blue;\s*?}/gi), ''<code>@keyframes</code> 规则的 rainbow 在 0% 时的 <code>background-color</code> 应该为蓝色。'');'
+    testString: assert(code.match(/0%\s*?{\s*?background-color:\s*?blue;\s*?}/gi));
   - text: '<code>@keyframes</code> 规则的 rainbow 在 50% 时的 <code>background-color</code> 应该为绿色。'
-    testString: 'assert(code.match(/50%\s*?{\s*?background-color:\s*?green;\s*?}/gi), ''<code>@keyframes</code> 规则的 rainbow 在 50% 时的 <code>background-color</code> 应该为绿色。'');'
+    testString: assert(code.match(/50%\s*?{\s*?background-color:\s*?green;\s*?}/gi));
   - text: '<code>@keyframes</code> 规则的 rainbow 在 100% 时的 <code>background-color</code> 应该为黄色。'
-    testString: 'assert(code.match(/100%\s*?{\s*?background-color:\s*?yellow;\s*?}/gi), ''<code>@keyframes</code> 规则的 rainbow 在 100% 时的 <code>background-color</code> 应该为黄色。'');'
+    testString: assert(code.match(/100%\s*?{\s*?background-color:\s*?yellow;\s*?}/gi));
 
 ```
 

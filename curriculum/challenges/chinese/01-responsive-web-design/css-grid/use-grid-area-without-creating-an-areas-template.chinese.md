@@ -35,7 +35,7 @@ grid-area: horizontal line to start at / vertical line to start at / horizontal 
 ```yml
 tests:
   - text: '<code>item5</code>类应该有<code>grid-area</code>属性且值为<code>3/1/4/4</code>。'
-    testString: 'assert(code.match(/.item5\s*?{[\s\S]*grid-area\s*?:\s*?3\s*?\/\s*?1\s*?\/\s*?4\s*?\/\s*?4\s*?;[\s\S]*}/gi));'
+    testString: assert(code.match(/.item5\s*?{[\s\S]*grid-area\s*?:\s*?3\s*?\/\s*?1\s*?\/\s*?4\s*?\/\s*?4\s*?;[\s\S]*}/gi));
 
 ```
 

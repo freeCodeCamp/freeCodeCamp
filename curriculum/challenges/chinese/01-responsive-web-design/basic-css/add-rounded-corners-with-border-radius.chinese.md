@@ -26,7 +26,7 @@ tests:
   - text: '图片元素应具有 "thick-green-border" class 属性。'
     testString: assert($("img").hasClass("thick-green-border"));
   - text: '图片应含有<code>10px</code>的边框圆角。'
-    testString: assert(parseInt($("img").css("border-top-left-radius")) > 8);
+    testString: assert($("img").css("border-top-left-radius") === '10px' && $("img").css("border-top-right-radius") === '10px' && $("img").css("border-bottom-left-radius") === '10px' && $("img").css("border-bottom-right-radius") === '10px');
 
 ```
 
@@ -109,5 +109,6 @@ tests:
 ```html
 // solution required
 ```
+
 </section>
               

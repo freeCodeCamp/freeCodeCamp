@@ -43,14 +43,14 @@ tests:
 <div id='js-seed'>
 
 ```js
-// the global variable
+// The global variable
 var fixedValue = 4;
 
-// Add your code below this line
+// Only change code below this line
 function incrementer () {
 
 
-  // Add your code above this line
+  // Only change code above this line
 }
 
 var newValue = incrementer(fixedValue); // Should equal 5
@@ -67,7 +67,7 @@ console.log(fixedValue); // Should print 4
 <section id='solution'>
 
 ```js
-// the global variable
+// The global variable
 var fixedValue = 4;
 
 const incrementer = val => val + 1;

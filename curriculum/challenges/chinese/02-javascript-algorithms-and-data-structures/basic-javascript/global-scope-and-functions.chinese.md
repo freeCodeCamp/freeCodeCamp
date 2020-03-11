@@ -18,13 +18,13 @@ localeTitle: 全球范围和职能
 ```yml
 tests:
   - text: 应该定义<code>myGlobal</code>
-    testString: 'assert(typeof myGlobal != "undefined", "<code>myGlobal</code> should be defined");'
+    testString: assert(typeof myGlobal != "undefined");
   - text: <code>myGlobal</code>的值应为<code>10</code>
-    testString: 'assert(myGlobal === 10, "<code>myGlobal</code> should have a value of <code>10</code>");'
+    testString: assert(myGlobal === 10);
   - text: 应使用<code>var</code>关键字声明<code>myGlobal</code>
-    testString: 'assert(/var\s+myGlobal/.test(code), "<code>myGlobal</code> should be declared using the <code>var</code> keyword");'
+    testString: assert(/var\s+myGlobal/.test(code));
   - text: <code>oopsGlobal</code>应该是一个全局变量，其值为<code>5</code>
-    testString: 'assert(typeof oopsGlobal != "undefined" && oopsGlobal === 5, "<code>oopsGlobal</code> should be a global variable and have a value of <code>5</code>");'
+    testString: assert(typeof oopsGlobal != "undefined" && oopsGlobal === 5);
 
 ```
 

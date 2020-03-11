@@ -18,13 +18,13 @@ localeTitle: 邻接名单
 ```yml
 tests:
   - text: <code>undirectedAdjList</code>应该只包含四个节点。
-    testString: 'assert(Object.keys(undirectedAdjList).length === 4, "<code>undirectedAdjList</code> should only contain four nodes.");'
+    testString: assert(Object.keys(undirectedAdjList).length === 4);
   - text: <code>Jeff</code>和<code>James</code>之间应该有优势。
-    testString: 'assert(undirectedAdjList.James.indexOf("Jeff") !== -1 && undirectedAdjList.Jeff.indexOf("James") !== -1, "There should be an edge between <code>Jeff</code> and <code>James</code>.");'
+    testString: assert(undirectedAdjList.James.indexOf("Jeff") !== -1 && undirectedAdjList.Jeff.indexOf("James") !== -1);
   - text: <code>Jill</code>和<code>Jenny</code>之间应该有一个优势。
-    testString: 'assert(undirectedAdjList.Jill.indexOf("Jenny") !== -1 && undirectedAdjList.Jill.indexOf("Jenny") !== -1, "There should be an edge between <code>Jill</code> and <code>Jenny</code>.");'
+    testString: assert(undirectedAdjList.Jill.indexOf("Jenny") !== -1 && undirectedAdjList.Jill.indexOf("Jenny") !== -1);
   - text: <code>Jeff</code>和<code>Jenny</code>之间应该有优势。
-    testString: 'assert(undirectedAdjList.Jeff.indexOf("Jenny") !== -1 && undirectedAdjList.Jenny.indexOf("Jeff") !== -1, "There should be an edge between <code>Jeff</code> and <code>Jenny</code>.");'
+    testString: assert(undirectedAdjList.Jeff.indexOf("Jenny") !== -1 && undirectedAdjList.Jenny.indexOf("Jeff") !== -1);
 
 ```
 

@@ -35,9 +35,9 @@ tests:
   - text: '<code>h1</code>元素应该包含一个名为<code>orange-text</code>的id。'
     testString: assert($("h1").attr("id") === "orange-text");
   - text: '<code>h1</code>元素应该包含<code>color&#58; white</code>的行内样式声明。'
-    testString: 'assert(code.match(/<h1.*style/gi) && code.match(/<h1.*style.*color\s*?:/gi));'
+    testString: assert(code.match(/<h1.*style/gi) && code.match(/<h1.*style.*color\s*?:/gi));
   - text: '<code>pink-text</code> class 声明应该含有<code>!important</code>关键字。'
-    testString: 'assert(code.match(/\.pink-text\s*?\{[\s\S]*?color:.*pink.*!important\s*;?[^\.]*\}/g));'
+    testString: assert(code.match(/\.pink-text\s*?\{[\s\S]*?color:.*pink.*!important\s*;?[^\.]*\}/g));
   - text: '<code>h1</code>元素的字体颜色应该为粉色。'
     testString: assert($("h1").css("color") === "rgb(255, 192, 203)");
 

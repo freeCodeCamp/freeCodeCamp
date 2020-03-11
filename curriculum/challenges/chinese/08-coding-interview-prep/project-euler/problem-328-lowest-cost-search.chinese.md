@@ -19,7 +19,7 @@ localeTitle: 问题328：成本最低的搜索
 ```yml
 tests:
   - text: <code>euler328()</code>应返回260511850222。
-    testString: 'assert.strictEqual(euler328(), 260511850222, "<code>euler328()</code> should return 260511850222.");'
+    testString: assert.strictEqual(euler328(), 260511850222);
 
 ```
 

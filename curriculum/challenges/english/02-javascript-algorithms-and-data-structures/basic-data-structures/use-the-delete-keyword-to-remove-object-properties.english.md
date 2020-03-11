@@ -51,9 +51,9 @@ let foods = {
   strawberries: 27
 };
 
-// change code below this line
+// Only change code below this line
 
-// change code above this line
+// Only change code above this line
 
 console.log(foods);
 ```
@@ -68,7 +68,6 @@ console.log(foods);
 <section id='solution'>
 
 ```js
-// solution required
 let foods = {
   apples: 25,
   oranges: 32,

@@ -32,6 +32,8 @@ Use destructuring assignment with the rest parameter to perform an effective <co
 tests:
   - text: <code>arr</code> should be <code>[3,4,5,6,7,8,9,10]</code>
     testString: assert(arr.every((v, i) => v === i + 3) && arr.length === 8);
+  - text: <code>source</code> should be <code>[1,2,3,4,5,6,7,8,9,10]</code>
+    testString: assert(source.every((v, i) => v === i + 1) && source.length === 10);
   - text: <code>Array.slice()</code> should not be used.
     testString: getUserInput => assert(!getUserInput('index').match(/slice/g));
   - text: Destructuring on <code>list</code> should be used.
@@ -50,14 +52,13 @@ tests:
 const source = [1,2,3,4,5,6,7,8,9,10];
 function removeFirstTwo(list) {
   "use strict";
-  // change code below this line
-  const arr = list; // change this
-  // change code above this line
+  // Only change code below this line
+  const arr = list; // Change this line
+  // Only change code above this line
   return arr;
 }
 const arr = removeFirstTwo(source);
-console.log(arr); // should be [3,4,5,6,7,8,9,10]
-console.log(source); // should be [1,2,3,4,5,6,7,8,9,10];
+
 ```
 
 </div>
@@ -73,9 +74,7 @@ console.log(source); // should be [1,2,3,4,5,6,7,8,9,10];
 const source = [1,2,3,4,5,6,7,8,9,10];
 function removeFirstTwo(list) {
   "use strict";
-  // change code below this line
   const [, , ...arr] = list;
-  // change code above this line
   return arr;
 }
 const arr = removeFirstTwo(source);

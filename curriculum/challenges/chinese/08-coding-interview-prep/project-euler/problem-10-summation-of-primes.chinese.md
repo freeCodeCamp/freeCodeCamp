@@ -19,13 +19,13 @@ localeTitle: 问题10：素数的总和
 ```yml
 tests:
   - text: <code>primeSummation(17)</code>应该返回41。
-    testString: 'assert.strictEqual(primeSummation(17), 41, "<code>primeSummation(17)</code> should return 41.");'
+    testString: assert.strictEqual(primeSummation(17), 41);
   - text: <code>primeSummation(2001)</code>应该返回277050。
-    testString: 'assert.strictEqual(primeSummation(2001), 277050, "<code>primeSummation(2001)</code> should return 277050.");'
+    testString: assert.strictEqual(primeSummation(2001), 277050);
   - text: <code>primeSummation(140759)</code>应该返回873608362。
-    testString: 'assert.strictEqual(primeSummation(140759), 873608362, "<code>primeSummation(140759)</code> should return 873608362.");'
+    testString: assert.strictEqual(primeSummation(140759), 873608362);
   - text: <code>primeSummation(2000000)</code>应返回142913828922。
-    testString: 'assert.strictEqual(primeSummation(2000000), 142913828922, "<code>primeSummation(2000000)</code> should return 142913828922.");'
+    testString: assert.strictEqual(primeSummation(2000000), 142913828922);
 
 ```
 

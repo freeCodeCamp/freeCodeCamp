@@ -19,19 +19,19 @@ localeTitle: 生成小写ASCII字母表
 ```yml
 tests:
   - text: <code>lascii</code>应该是一个功能。
-    testString: 'assert(typeof lascii=="function","<code>lascii</code> should be a function.");'
-  - text: '<code>lascii(&quot;a&quot;,&quot;d&quot;)</code>应该返回一个数组。'
-    testString: 'assert(Array.isArray(lascii("a","d")),"<code>lascii("a","d")</code> should return an array.");'
-  - text: '“ <code>lascii(&quot;a&quot;,&quot;d&quot;)</code>应该返回<code>[ &quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot; ]</code> 。”'
-    testString: 'assert.deepEqual(lascii("a","d"),results[0],"<code>lascii("a","d")</code> should return <code>[ "a", "b", "c", "d" ]</code>.");'
-  - text: '“ <code>lascii(&quot;c&quot;,&quot;i&quot;)</code>应该返回<code>[ &quot;c&quot;, &quot;d&quot;, &quot;e&quot;, &quot;f&quot;, &quot;g&quot;, &quot;h&quot;, &quot;i&quot; ]</code> 。”'
-    testString: 'assert.deepEqual(lascii("c","i"),results[1],"<code>lascii("c","i")</code> should return <code>[ "c", "d", "e", "f", "g", "h", "i" ]</code>.");'
-  - text: '“ <code>lascii(&quot;m&quot;,&quot;q&quot;)</code>应该返回<code>[ &quot;m&quot;, &quot;n&quot;, &quot;o&quot;, &quot;p&quot;, &quot;q&quot; ]</code> 。”'
-    testString: 'assert.deepEqual(lascii("m","q"),results[2],"<code>lascii("m","q")</code> should return <code>[ "m", "n", "o", "p", "q" ]</code>.");'
-  - text: '“ <code>lascii(&quot;k&quot;,&quot;n&quot;)</code>应返回<code>[ &quot;k&quot;, &quot;l&quot;, &quot;m&quot;, &quot;n&quot; ]</code> 。”）'
-    testString: 'assert.deepEqual(lascii("k","n"),results[3],"<code>lascii("k","n")</code> should return <code>[ "k", "l", "m", "n" ]</code>.");'
-  - text: '“ <code>lascii(&quot;t&quot;,&quot;z&quot;)</code>应该返回<code>[ &quot;t&quot;, &quot;u&quot;, &quot;v&quot;, &quot;w&quot;, &quot;x&quot;, &quot;y&quot;, &quot;z&quot; ]</code> 。”'
-    testString: 'assert.deepEqual(lascii("t","z"),results[4],"<code>lascii("t","z")</code> should return <code>[ "t", "u", "v", "w", "x", "y", "z" ]</code>.");'
+    testString: assert(typeof lascii=='function');
+  - text: <code>lascii("a","d")</code>应该返回一个数组。
+    testString: assert(Array.isArray(lascii('a','d')));
+  - text: <code>lascii("a","d")</code>应该返回<code>[ "a", "b", "c", "d" ]</code> 。
+    testString: assert.deepEqual(lascii("a","d"),results[0]);
+  - text: <code>lascii("c","i")</code>应该返回<code>[ "c", "d", "e", "f", "g", "h", "i" ]</code> 。
+    testString: assert.deepEqual(lascii("c","i"),results[1]);
+  - text: <code>lascii("m","q")</code>应该返回<code>[ "m", "n", "o", "p", "q" ]</code> 。
+    testString: assert.deepEqual(lascii("m","q"),results[2]);
+  - text: <code>lascii("k","n")</code>应返回<code>[ "k", "l", "m", "n" ]</code> 。
+    testString: assert.deepEqual(lascii("k","n"),results[3]);
+  - text: <code>lascii("t","z")</code>应该返回<code>[ "t", "u", "v", "w", "x", "y", "z" ]</code> 。
+    testString: assert.deepEqual(lascii("t","z"),results[4]);
 
 ```
 

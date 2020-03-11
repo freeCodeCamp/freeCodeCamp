@@ -19,7 +19,7 @@ localeTitle: 问题478：混合物
 ```yml
 tests:
   - text: <code>euler478()</code>应该返回59510340。
-    testString: 'assert.strictEqual(euler478(), 59510340, "<code>euler478()</code> should return 59510340.");'
+    testString: assert.strictEqual(euler478(), 59510340);
 
 ```
 

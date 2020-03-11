@@ -19,7 +19,7 @@ localeTitle: 问题383：阶乘之间的可比性比较
 ```yml
 tests:
   - text: <code>euler383()</code>应该返回22173624649806。
-    testString: 'assert.strictEqual(euler383(), 22173624649806, "<code>euler383()</code> should return 22173624649806.");'
+    testString: assert.strictEqual(euler383(), 22173624649806);
 
 ```
 

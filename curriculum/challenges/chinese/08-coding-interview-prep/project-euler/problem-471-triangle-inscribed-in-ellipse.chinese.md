@@ -19,7 +19,7 @@ localeTitle: 问题471：以椭圆形刻的三角形
 ```yml
 tests:
   - text: <code>euler471()</code>应返回1.895093981e + 31。
-    testString: 'assert.strictEqual(euler471(), 1.895093981e+31, "<code>euler471()</code> should return 1.895093981e+31.");'
+    testString: assert.strictEqual(euler471(), 1.895093981e+31);
 
 ```
 

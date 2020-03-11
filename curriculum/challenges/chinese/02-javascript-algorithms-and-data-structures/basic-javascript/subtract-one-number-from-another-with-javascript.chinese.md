@@ -17,10 +17,10 @@ localeTitle: 使用JavaScript从另一个数字中减去一个数字
 
 ```yml
 tests:
-  - text: ''
-    testString: 'assert(difference === 12, "Make the variable <code>difference</code> equal 12.");'
+  - text: 使变量<code>difference</code>等于12。
+    testString: assert(difference === 12);
   - text: 只从45中减去一个数字。
-    testString: 'assert(/var\s*difference\s*=\s*45\s*-\s*[0-9]*;(?!\s*[a-zA-Z0-9]+)/.test(code),"Only subtract one number from 45.");'
+    testString: assert(/difference=45-33;?/.test(code.replace(/\s/g, '')));
 
 ```
 

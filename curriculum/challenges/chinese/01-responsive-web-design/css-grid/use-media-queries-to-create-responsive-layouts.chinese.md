@@ -24,7 +24,7 @@ localeTitle: 使用媒体查询创建响应式布局
 ```yml
 tests:
   - text: '当网页可视区域的宽在<code>400px</code>及以上时，<code>container</code>类应该带有<code>grid-template-areas</code>属性且能够使得 footer 和 header 区域分别占据顶行和底行，advert 和 content 区域分别占据中间行的左和右列。'
-    testString: 'assert(code.match(/@media\s*?\(\s*?min-width\s*?:\s*?400px\s*?\)[\s\S]*.container\s*?{[\s\S]*grid-template-areas\s*?:\s*?"\s*?header\s*?header\s*?"\s*?"\s*?advert\s*?content\s*?"\s*?"\s*?footer\s*?footer\s*?"\s*?;[\s\S]*}/gi));'
+    testString: assert(code.match(/@media\s*?\(\s*?min-width\s*?:\s*?400px\s*?\)[\s\S]*.container\s*?{[\s\S]*grid-template-areas\s*?:\s*?"\s*?header\s*?header\s*?"\s*?"\s*?advert\s*?content\s*?"\s*?"\s*?footer\s*?footer\s*?"\s*?;[\s\S]*}/gi));
 
 ```
 

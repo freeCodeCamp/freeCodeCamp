@@ -19,7 +19,7 @@ localeTitle: 问题405：矩形平铺
 ```yml
 tests:
   - text: <code>euler405()</code>应返回237696125。
-    testString: 'assert.strictEqual(euler405(), 237696125, "<code>euler405()</code> should return 237696125.");'
+    testString: assert.strictEqual(euler405(), 237696125);
 
 ```
 

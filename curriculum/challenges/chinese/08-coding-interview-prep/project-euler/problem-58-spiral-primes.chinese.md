@@ -19,7 +19,7 @@ localeTitle: 问题58：螺旋素数
 ```yml
 tests:
   - text: <code>euler58()</code>应返回26241。
-    testString: 'assert.strictEqual(euler58(), 26241, "<code>euler58()</code> should return 26241.");'
+    testString: assert.strictEqual(euler58(), 26241);
 
 ```
 

@@ -18,13 +18,13 @@ localeTitle: 使用concat方法组合两个数组
 ```yml
 tests:
   - text: 您的代码应使用<code>concat</code>方法。
-    testString: 'assert(code.match(/\.concat/g), "Your code should use the <code>concat</code> method.");'
+    testString: assert(code.match(/\.concat/g));
   - text: 第<code>first</code>数组不应该改变。
-    testString: 'assert(JSON.stringify(first) === JSON.stringify([1, 2, 3]), "The <code>first</code> array should not change.");'
+    testString: assert(JSON.stringify(first) === JSON.stringify([1, 2, 3]));
   - text: <code>second</code>数组不应该改变。
-    testString: 'assert(JSON.stringify(second) === JSON.stringify([4, 5]), "The <code>second</code> array should not change.");'
+    testString: assert(JSON.stringify(second) === JSON.stringify([4, 5]));
   - text: '<code>nonMutatingConcat([1, 2, 3], [4, 5])</code>应该返回<code>[1, 2, 3, 4, 5]</code> 。'
-    testString: 'assert(JSON.stringify(nonMutatingConcat([1, 2, 3], [4, 5])) === JSON.stringify([1, 2, 3, 4, 5]), "<code>nonMutatingConcat([1, 2, 3], [4, 5])</code> should return <code>[1, 2, 3, 4, 5]</code>.");'
+    testString: assert(JSON.stringify(nonMutatingConcat([1, 2, 3], [4, 5])) === JSON.stringify([1, 2, 3, 4, 5]));
 
 ```
 

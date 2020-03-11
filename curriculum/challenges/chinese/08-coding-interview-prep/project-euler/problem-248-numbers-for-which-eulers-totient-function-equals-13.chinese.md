@@ -19,7 +19,7 @@ localeTitle: 问题248：Euler的totient函数等于13的数字！
 ```yml
 tests:
   - text: <code>euler248()</code>应返回23507044290。
-    testString: 'assert.strictEqual(euler248(), 23507044290, "<code>euler248()</code> should return 23507044290.");'
+    testString: assert.strictEqual(euler248(), 23507044290);
 
 ```
 

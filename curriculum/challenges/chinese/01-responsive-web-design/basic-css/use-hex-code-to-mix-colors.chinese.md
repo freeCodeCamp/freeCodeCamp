@@ -30,19 +30,19 @@ tests:
   - text: '文本内容为<code>I am red!</code>的<code>h1</code>元素的字体颜色应该为<code>red</code>。'
     testString: assert($('.red-text').css('color') === 'rgb(255, 0, 0)');
   - text: '使用<code>十六进制编码</code>替换<code>red</code>关键词。'
-    testString: 'assert(code.match(/\.red-text\s*?{\s*?color:\s*?#FF0000\s*?;\s*?}/gi));'
+    testString: assert(code.match(/\.red-text\s*?{\s*?color:\s*?#FF0000\s*?;\s*?}/gi));
   - text: '文本内容为<code>I am green!</code>的<code>h1</code>元素的字体颜色应该为<code>green</code>。'
     testString: assert($('.green-text').css('color') === 'rgb(0, 255, 0)');
   - text: '使用<code>十六进制编码</code>替换<code>green</code>关键词。'
-    testString: 'assert(code.match(/\.green-text\s*?{\s*?color:\s*?#00FF00\s*?;\s*?}/gi));'
+    testString: assert(code.match(/\.green-text\s*?{\s*?color:\s*?#00FF00\s*?;\s*?}/gi));
   - text: '文本内容为<code>I am dodger blue!</code>的<code>h1</code>元素的字体颜色应该为<code>dodger blue</code>。'
     testString: assert($('.dodger-blue-text').css('color') === 'rgb(30, 144, 255)');
   - text: '使用<code>十六进制编码</code>替换<code>dodgerblue</code>关键词。'
-    testString: 'assert(code.match(/\.dodger-blue-text\s*?{\s*?color:\s*?#1E90FF\s*?;\s*?}/gi));'
+    testString: assert(code.match(/\.dodger-blue-text\s*?{\s*?color:\s*?#1E90FF\s*?;\s*?}/gi));
   - text: '文本内容为<code>I am orange!</code>的<code>h1</code>元素的字体颜色应该为<code>orange</code>。'
     testString: assert($('.orange-text').css('color') === 'rgb(255, 165, 0)');
   - text: '使用<code>十六进制编码</code>替换<code>orange</code>关键词。'
-    testString: 'assert(code.match(/\.orange-text\s*?{\s*?color:\s*?#FFA500\s*?;\s*?}/gi));'
+    testString: assert(code.match(/\.orange-text\s*?{\s*?color:\s*?#FFA500\s*?;\s*?}/gi));
 
 ```
 

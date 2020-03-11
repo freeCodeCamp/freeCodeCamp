@@ -19,7 +19,7 @@ localeTitle: 问题390：具有非理性边和积分面积的三角形
 ```yml
 tests:
   - text: <code>euler390()</code>应该返回2919133642971。
-    testString: 'assert.strictEqual(euler390(), 2919133642971, "<code>euler390()</code> should return 2919133642971.");'
+    testString: assert.strictEqual(euler390(), 2919133642971);
 
 ```
 

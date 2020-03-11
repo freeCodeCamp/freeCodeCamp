@@ -19,7 +19,7 @@ localeTitle: 问题93：算术表达式
 ```yml
 tests:
   - text: <code>euler93()</code>应返回1258。
-    testString: 'assert.strictEqual(euler93(), 1258, "<code>euler93()</code> should return 1258.");'
+    testString: assert.strictEqual(euler93(), 1258);
 
 ```
 

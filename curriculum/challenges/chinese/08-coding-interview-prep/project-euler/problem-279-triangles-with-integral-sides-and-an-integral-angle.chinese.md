@@ -19,7 +19,7 @@ localeTitle: 问题279：具有整体边和整体角的三角形
 ```yml
 tests:
   - text: <code>euler279()</code>应该返回416577688。
-    testString: 'assert.strictEqual(euler279(), 416577688, "<code>euler279()</code> should return 416577688.");'
+    testString: assert.strictEqual(euler279(), 416577688);
 
 ```
 

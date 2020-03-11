@@ -19,7 +19,7 @@ localeTitle: 问题249：Prime子集总和
 ```yml
 tests:
   - text: <code>euler249()</code>应该返回9275262564250418。
-    testString: 'assert.strictEqual(euler249(), 9275262564250418, "<code>euler249()</code> should return 9275262564250418.");'
+    testString: assert.strictEqual(euler249(), 9275262564250418);
 
 ```
 

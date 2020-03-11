@@ -24,11 +24,11 @@ localeTitle: 绝对定位的参照物是元素的父元素
 ```yml
 tests:
   - text: '<code>#searchbar</code> 元素应当有一个值为 <code>absolute</code> 的 <code>position</code> CSS 属性。'
-    testString: assert($('#searchbar').css('position') == 'absolute', '<code>#searchbar</code> 元素应当有一个值为 <code>absolute</code> 的 <code>position</code> CSS 属性。');
+    testString: assert($('#searchbar').css('position') == 'absolute');
   - text: '你的 <code>#searchbar</code> 元素应当有值为 <code>50px</code> 的 <code>top</code> CSS 属性。'
-    testString: assert($('#searchbar').css('top') == '50px', '你的 <code>#searchbar</code> 元素应当有值为 <code>50px</code> 的 <code>top</code> CSS 属性。');
+    testString: assert($('#searchbar').css('top') == '50px');
   - text: '你的 <code>#searchbar</code> 元素应当有值为 <code>50px</code> 的 <code>right</code> CSS 属性。'
-    testString: assert($('#searchbar').css('right') == '50px', '你的 <code>#searchbar</code> 元素应当有值为 <code>50px</code> 的 <code>right</code> CSS 属性。');
+    testString: assert($('#searchbar').css('right') == '50px');
 
 ```
 

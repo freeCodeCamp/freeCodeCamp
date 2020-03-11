@@ -19,7 +19,7 @@ localeTitle: 问题379：最少共同的多重计数
 ```yml
 tests:
   - text: <code>euler379()</code>应该返回132314136838185。
-    testString: 'assert.strictEqual(euler379(), 132314136838185, "<code>euler379()</code> should return 132314136838185.");'
+    testString: assert.strictEqual(euler379(), 132314136838185);
 
 ```
 

@@ -25,13 +25,13 @@ Camper Cat 的比武大会的时间确定了！请使用<code>time</code>标签�
 ```yml
 tests:
   - text: '<code>time</code>标签应该包含文本"Thursday, September 15&lt;sup&gt;th&lt;/sup&gt;"。'
-    testString: assert($('time').text().match(/Thursday, September 15th/g));
+    testString: assert(timeElement.length);
   - text: '<code>time</code>标签应该有 1 个非空的<code>datetime</code>属性。'
-    testString: assert($('time').attr('datetime'));
+    testString: assert(timeElement.length && $(timeElement).html().trim() === "Thursday, September 15<sup>th</sup>");
   - text: '<code>datetime</code>属性的值应该为 2016-09-15。'
-    testString: assert($('time').attr('datetime') === "2016-09-15");
+    testString: assert(datetimeAttr && datetimeAttr.length);
   - text: '确保<code>time</code>标签是闭合的。'
-    testString: assert(code.match(/<\/time>/g) && code.match(/<\/time>/g).length === 4);
+    testString: assert(datetimeAttr === "2016-09-15");
 ```
 
 </section>
