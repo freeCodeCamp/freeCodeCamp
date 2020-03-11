@@ -12,17 +12,6 @@ If you'll recall from our discussion of <a href="/learn/javascript-algorithms-an
 Assume we have pre-defined a function <code>sum</code> which adds two numbers together, then:
 <code>ourSum = sum(5, 12);</code>
 will call <code>sum</code> function, which returns a value of <code>17</code> and assigns it to <code>ourSum</code> variable.
-
-```js
-var changed = 0;
-
-function change(num) {
-  return (num + 5) / 3;
-}
-
-changed = change(10); // changed is now 5
-```
-
 </section>
 
 ## Instructions
