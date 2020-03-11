@@ -85,7 +85,7 @@ function nameScoreCalc(word) {
 }
 
 function namesScores(arr) {
-  arr = arr.sort();
+  arr = [...arr].sort();
   arr.unshift('');
   let total = 0;
 
