@@ -33,7 +33,11 @@ const {
   STRIPE_PUBLIC_KEY,
   STRIPE_SECRET_KEY,
   SERVICEBOT_ID,
-  SERVICEBOT_HMAC_SECRET_KEY
+
+  SERVICEBOT_HMAC_SECRET_KEY,
+
+  PAYPAL_CLIENT_ID,
+  PAYPAL_SECRET
 } = process.env;
 
 module.exports = {
@@ -96,6 +100,11 @@ module.exports = {
   stripe: {
     public: STRIPE_PUBLIC_KEY,
     secret: STRIPE_SECRET_KEY
+  },
+
+  paypal: {
+    client: PAYPAL_CLIENT_ID,
+    secret: PAYPAL_SECRET
   },
 
   servicebot: {

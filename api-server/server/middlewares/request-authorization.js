@@ -17,8 +17,14 @@ const apiProxyRE = /^\/internal\/|^\/external\//;
 const newsShortLinksRE = /^\/internal\/n\/|^\/internal\/p\?/;
 const loopbackAPIPathRE = /^\/internal\/api\//;
 const showCertRe = /^\/internal\/certificate\/showCert\//;
+const updatePaypalRe = /^\/internal\/donate\/update-paypal/;
 
-const _whiteListREs = [newsShortLinksRE, loopbackAPIPathRE, showCertRe];
+const _whiteListREs = [
+  newsShortLinksRE,
+  loopbackAPIPathRE,
+  showCertRe,
+  updatePaypalRe
+];
 
 export function isWhiteListedPath(path, whiteListREs = _whiteListREs) {
   return whiteListREs.some(re => re.test(path));

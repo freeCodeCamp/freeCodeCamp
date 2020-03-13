@@ -137,12 +137,12 @@ class ShowCertification extends Component {
     this.setState({ isDonationDisplayed: false, isDonationClosed: true });
   }
 
-  handleProcessing(duration, amount) {
+  handleProcessing(duration, amount, action = 'stripe form submission') {
     this.props.executeGA({
       type: 'event',
       data: {
         category: 'donation',
-        action: 'certificate stripe form submission',
+        action: `certificate ${action}`,
         label: duration,
         value: amount
       }

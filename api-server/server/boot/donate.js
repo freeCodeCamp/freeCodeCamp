@@ -4,13 +4,25 @@ import crypto from 'crypto';
 import { isEmail, isNumeric } from 'validator';
 
 import {
+  getAsyncPaypalToken,
+  verifyWebHook,
+  updateUser,
+  verifyWebHookType
+} from '../utils/donation';
+import {
   durationKeysConfig,
   donationOneTimeConfig,
-  donationSubscriptionConfig
+  donationSubscriptionConfig,
+  paypalConfig
 } from '../../../config/donation-settings';
 import keys from '../../../config/secrets';
 
 const log = debug('fcc:boot:donate');
+
+const paypalWebhookId =
+  process.env.FREECODECAMP_NODE_ENV === 'production'
+    ? paypalConfig.production.webhookId
+    : paypalConfig.development.webhookId;
 
 export default function donateBoot(app, done) {
   let stripe = false;
@@ -243,27 +255,92 @@ export default function donateBoot(app, done) {
           .send({ error: 'Donation failed due to a server error.' })
       );
   }
+  function addDonation(req, res) {
+    const { user, body } = req;
 
-  const pubKey = keys.stripe.public;
+    if (!user || !body) {
+      return res
+        .status(500)
+        .send({ error: 'User must be signed in for this request.' });
+    }
+    return Promise.resolve(req)
+      .then(
+        user.updateAttributes({
+          isDonating: true
+        })
+      )
+      .then(() => res.status(200).json({ isDonating: true }))
+      .catch(err => {
+        log(err.message);
+        return res.status(500).send({
+          type: 'danger',
+          message: 'Something went wrong.'
+        });
+      });
+  }
+
+  function updatePaypal(req, res) {
+    const { headers, body } = req;
+    return Promise.resolve(req)
+      .then(verifyWebHookType)
+      .then(getAsyncPaypalToken)
+      .then(token => verifyWebHook(headers, body, token, paypalWebhookId))
+      .then(hookBody => updateUser(hookBody, app))
+      .then(() => res.status(200).json({ message: 'received hook' }))
+      .catch(err => {
+        log(err.message);
+        return res.status(200).json({ message: 'received hook' });
+      });
+  }
+
+  const stripeKey = keys.stripe.public;
   const secKey = keys.stripe.secret;
+  const paypalKey = keys.paypal.client;
+  const paypalSec = keys.paypal.secret;
   const hmacKey = keys.servicebot.hmacKey;
-  const secretInvalid = !secKey || secKey === 'sk_from_stripe_dashboard';
-  const publicInvalid = !pubKey || pubKey === 'pk_from_stripe_dashboard';
+  const stripeSecretInvalid = !secKey || secKey === 'sk_from_stripe_dashboard';
+  const stripPublicInvalid =
+    !stripeKey || stripeKey === 'pk_from_stripe_dashboard';
+
+  const paypalSecretInvalid =
+    !paypalKey || paypalKey === 'id_from_paypal_dashboard';
+  const paypalPublicInvalid =
+    !paypalSec || paypalSec === 'secret_from_paypal_dashboard';
   const hmacKeyInvalid =
     !hmacKey || hmacKey === 'secret_key_from_servicebot_dashboard';
-
-  if (secretInvalid || publicInvalid || hmacKeyInvalid) {
+  const paypalInvalid = paypalPublicInvalid || paypalSecretInvalid;
+  const stripeInvalid = stripeSecretInvalid || stripPublicInvalid;
+  if (stripeInvalid) {
     if (process.env.FREECODECAMP_NODE_ENV === 'production') {
       throw new Error('Stripe API keys are required to boot the server!');
     }
     console.info('No Stripe API keys were found, moving on...');
-    done();
   } else {
     api.post('/charge-stripe', createStripeDonation);
     api.post('/create-hmac-hash', createHmacHash);
-    donateRouter.use('/donate', api);
-    app.use(donateRouter);
-    app.use('/internal', donateRouter);
+  }
+  if (paypalInvalid) {
+    if (process.env.FREECODECAMP_NODE_ENV === 'production') {
+      throw new Error('PayPal API keys are required to boot the server!');
+    }
+    console.info('No PayPal API keys were found, moving on...');
+  } else {
+    api.post('/update-paypal', updatePaypal);
+    api.post('/add-donation', addDonation);
+  }
+  if (hmacKeyInvalid) {
+    if (process.env.FREECODECAMP_NODE_ENV === 'production') {
+      throw new Error('Servicebot HMAC key is required to boot the server!');
+    }
+    console.info('No servicebot HMAC key was found, moving on...');
+  }
+  donateRouter.use('/donate', api);
+  app.use(donateRouter);
+  app.use('/internal', donateRouter);
+
+  if (stripeInvalid) {
+    done();
+  } else {
     connectToStripe().then(done);
   }
 }

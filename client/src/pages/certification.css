@@ -42,6 +42,10 @@
   padding: 20px 0px;
 }
 
+.certificate-outer-wrapper .donation-section hr {
+  border: 1px solid var(--gray-10);
+}
+
 .certificate-outer-wrapper .donation-completion .btn {
   background-color: var(--gray-15);
   border-color: var(--gray-85);
@@ -59,6 +63,11 @@
   background-color: var(--gray-15);
   border-color: var(--quaternary-color);
   color: var(--quaternary-color);
+}
+
+.certificate-outer-wrapper .donation-section,
+.certificate-outer-wrapper .donation-section p {
+  font-family: 'Lato', sans-serif;
 }
 
 .certification-namespace header {

@@ -212,6 +212,10 @@ li.disabled > a {
   }
 }
 
+.donation-modal {
+  font-family: 'Lato', sans-serif;
+}
+
 .donation-modal .btn-link:focus {
   outline-width: 1px;
   outline-style: solid;
