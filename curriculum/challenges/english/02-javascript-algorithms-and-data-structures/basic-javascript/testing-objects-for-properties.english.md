@@ -32,13 +32,30 @@ Modify the function <code>checkObj</code> to test <code>myObj</code> for <code>c
 
 ```yml
 tests:
-  - text: <code>checkObj("gift")</code> should return  <code>"pony"</code>.
-    testString: assert(checkObj("gift") === "pony");
-  - text: <code>checkObj("pet")</code> should return  <code>"kitten"</code>.
+  - text: <code>checkObj({
+  gift: "pony",
+  pet: "kitten",
+  bed: "sleigh"
+}, "gift")</code> should return  <code>"pony"</code>.
+    testString: assert(checkObj({
+  gift: "pony",
+  pet: "kitten",
+  bed: "sleigh"
+},"gift") === "pony");
+  - text: <code>checkObj({
+  gift: "pony",
+  pet: "kitten",
+  bed: "sleigh"
+},"pet")</code> should return  <code>"kitten"</code>.
     testString: assert(checkObj("pet") === "kitten");
-  - text: <code>checkObj("house")</code> should return  <code>"Not Found"</code>.
+  - text: <code>checkObj({
+  gift: "pony",
+  pet: "kitten",
+  bed: "sleigh"
+},"house")</code> should return  <code>"Not Found"</code>.
     testString: assert(checkObj("house") === "Not Found");
-
+  - text: <code>checkObj({"city": "Seattle"},"city")</code> should return  <code>"Seattle"</code>.
+    testString: assert(checkObj("house") === "Not Found");
 ```
 
 </section>
@@ -56,13 +73,13 @@ var myObj = {
   bed: "sleigh"
 };
 
-function checkObj(checkProp) {
+function checkObj(obj, checkProp) {
   // Only change code below this line
   return "Change Me!";
   // Only change code above this line
 }
 
-checkObj("gift");
+checkObj(myObj, "gift");
 ```
 
 </div>
@@ -81,9 +98,9 @@ var myObj = {
   pet: "kitten",
   bed: "sleigh"
 };
-function checkObj(checkProp) {
-  if(myObj.hasOwnProperty(checkProp)) {
-    return myObj[checkProp];
+function checkObj(obj, checkProp) {
+  if(obj.hasOwnProperty(checkProp)) {
+    return obj[checkProp];
   } else {
     return "Not Found";
   }
