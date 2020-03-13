@@ -32,14 +32,16 @@ Modify the function <code>checkObj</code> to test <code>myObj</code> for <code>c
 
 ```yml
 tests:
-  - text: <code>checkObj({gift: "pony",pet: "kitten",bed: "sleigh"}, "gift")</code> should return  <code>"pony"</code>.
-    testString: assert(checkObj({gift: "pony",pet: "kitten",bed: "sleigh"},"gift") === "pony");
-  - text: <code>checkObj({gift: "pony",pet: "kitten",bed: "sleigh"},"pet")</code> should return  <code>"kitten"</code>.
-    testString: assert(checkObj("pet") === "kitten");
-  - text: <code>checkObj({gift: "pony",pet: "kitten",bed: "sleigh"},"house")</code> should return  <code>"Not Found"</code>.
-    testString: assert(checkObj("house") === "Not Found");
-  - text: <code>checkObj({"city": "Seattle"},"city")</code> should return  <code>"Seattle"</code>.
-    testString: assert(checkObj("house") === "Not Found");
+  - text: '<code>checkObj({gift:"pony", pet:"kitten", bed:"sleigh"}, "gift")</code> should return  <code>"pony"</code>.'
+    testString: 'assert(checkObj({gift:"pony", pet:"kitten", bed:"sleigh"}, "gift") === "pony");'
+  - text: '<code>checkObj({gift:"pony", pet:"kitten", bed:"sleigh"}, "pet")</code> should return  <code>"kitten"</code>.'
+    testString: 'assert(checkObj("pet") === "kitten");'
+  - text: '<code>checkObj({gift:"pony", pet:"kitten", bed:"sleigh"}, "house")</code> should return  <code>"Not Found"</code>.'
+    testString: 'assert(checkObj("house") === "Not Found");'
+  - text: '<code>checkObj({"city":"Seattle"}, "city")</code> should return  <code>"Seattle"</code>.'
+    testString: 'assert(checkObj("city") === "Seattle");'
+  - text: '<code>checkObj({"city":"Seattle"}, "district")</code> should return  <code>"Not Found"</code>.'
+    testString: 'assert(checkObj("city") === "Not Found");'
 ```
 
 </section>
