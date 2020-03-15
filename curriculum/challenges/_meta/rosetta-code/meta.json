@@ -381,6 +381,34 @@
       "Long multiplication"
     ],
     [
+        "5a23c84252665b21eecc7ee9",
+        "Longest common subsequence"
+    ],
+    [
+        "5a23c84252665b21eecc7eea",
+        "Longest increasing subsequence"
+    ],
+    [
+        "5a23c84252665b21eecc7eeb",
+        "Longest string challenge"
+    ],
+    [
+        "5a23c84252665b21eecc7eed",
+        "Look-and-say sequence"
+    ],
+    [
+        "5a23c84252665b21eecc7eee",
+        "Loop over multiple arrays simultaneously"
+    ],
+    [
+        "5a23c84252665b21eecc7efb",
+        "LU decomposition"
+    ],
+    [
+        "5a23c84252665b21eecc7efa",
+        "Lucas-Lehmer test"
+    ],
+    [
       "59da22823d04c95919d46269",
       "Sailors, coconuts and a monkey problem"
     ],
