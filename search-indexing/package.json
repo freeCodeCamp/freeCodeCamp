@@ -44,7 +44,7 @@
   },
   "devDependencies": {
     "html-entities": "^1.2.1",
-    "jest": "^24.8.0",
+    "jest": "^24.9.0",
     "striptags": "^3.1.1"
   }
 }
