@@ -37,7 +37,10 @@ const {
   SERVICEBOT_HMAC_SECRET_KEY,
 
   PAYPAL_CLIENT_ID,
-  PAYPAL_SECRET
+  PAYPAL_SECRET,
+  PAYPAL_VERIFY_WEBHOOK_URL,
+  PAYPAL_API_TOKEN_URL,
+  PAYPAL_WEBHOOK_ID
 } = process.env;
 
 module.exports = {
@@ -104,7 +107,10 @@ module.exports = {
 
   paypal: {
     client: PAYPAL_CLIENT_ID,
-    secret: PAYPAL_SECRET
+    secret: PAYPAL_SECRET,
+    verifyWebhookURL: PAYPAL_VERIFY_WEBHOOK_URL,
+    tokenUrl: PAYPAL_API_TOKEN_URL,
+    webhookId: PAYPAL_WEBHOOK_ID
   },
 
   servicebot: {
