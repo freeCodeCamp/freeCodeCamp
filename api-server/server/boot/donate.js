@@ -12,17 +12,11 @@ import {
 import {
   durationKeysConfig,
   donationOneTimeConfig,
-  donationSubscriptionConfig,
-  paypalConfig
+  donationSubscriptionConfig
 } from '../../../config/donation-settings';
 import keys from '../../../config/secrets';
 
 const log = debug('fcc:boot:donate');
-
-const paypalWebhookId =
-  process.env.FREECODECAMP_NODE_ENV === 'production'
-    ? paypalConfig.production.webhookId
-    : paypalConfig.development.webhookId;
 
 export default function donateBoot(app, done) {
   let stripe = false;
@@ -255,6 +249,7 @@ export default function donateBoot(app, done) {
           .send({ error: 'Donation failed due to a server error.' })
       );
   }
+
   function addDonation(req, res) {
     const { user, body } = req;
 
@@ -284,7 +279,7 @@ export default function donateBoot(app, done) {
     return Promise.resolve(req)
       .then(verifyWebHookType)
       .then(getAsyncPaypalToken)
-      .then(token => verifyWebHook(headers, body, token, paypalWebhookId))
+      .then(token => verifyWebHook(headers, body, token, keys.paypal.webhookId))
       .then(hookBody => updateUser(hookBody, app))
       .then(() => res.status(200).json({ message: 'received hook' }))
       .catch(err => {
@@ -310,37 +305,21 @@ export default function donateBoot(app, done) {
     !hmacKey || hmacKey === 'secret_key_from_servicebot_dashboard';
   const paypalInvalid = paypalPublicInvalid || paypalSecretInvalid;
   const stripeInvalid = stripeSecretInvalid || stripPublicInvalid;
-  if (stripeInvalid) {
+
+  if (stripeInvalid || paypalInvalid || hmacKeyInvalid) {
     if (process.env.FREECODECAMP_NODE_ENV === 'production') {
-      throw new Error('Stripe API keys are required to boot the server!');
+      throw new Error('Donation API keys are required to boot the server!');
     }
-    console.info('No Stripe API keys were found, moving on...');
+    log('Donation disabled in development unless ALL test keys are provided');
+    done();
   } else {
     api.post('/charge-stripe', createStripeDonation);
     api.post('/create-hmac-hash', createHmacHash);
-  }
-  if (paypalInvalid) {
-    if (process.env.FREECODECAMP_NODE_ENV === 'production') {
-      throw new Error('PayPal API keys are required to boot the server!');
-    }
-    console.info('No PayPal API keys were found, moving on...');
-  } else {
-    api.post('/update-paypal', updatePaypal);
     api.post('/add-donation', addDonation);
-  }
-  if (hmacKeyInvalid) {
-    if (process.env.FREECODECAMP_NODE_ENV === 'production') {
-      throw new Error('Servicebot HMAC key is required to boot the server!');
-    }
-    console.info('No servicebot HMAC key was found, moving on...');
-  }
-  donateRouter.use('/donate', api);
-  app.use(donateRouter);
-  app.use('/internal', donateRouter);
-
-  if (stripeInvalid) {
-    done();
-  } else {
+    api.post('/update-paypal', updatePaypal);
+    donateRouter.use('/donate', api);
+    app.use(donateRouter);
+    app.use('/internal', donateRouter);
     connectToStripe().then(done);
   }
 }

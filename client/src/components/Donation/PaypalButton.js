@@ -1,5 +1,4 @@
 /* eslint-disable camelcase */
-/* global ENVIRONMENT */
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
@@ -11,16 +10,13 @@ import { verifySubscriptionPaypal } from '../../utils/ajax';
 import { paypalConfig } from '../../../../config/donation-settings';
 import { signInLoadingSelector, userSelector, executeGA } from '../../redux';
 
-const paypalDurationPlans =
-  ENVIRONMENT === 'production'
-    ? paypalConfig.production.durationPlans
-    : paypalConfig.development.durationPlans;
+const { durationPlans } = paypalConfig;
 
 export class PaypalButton extends Component {
   constructor(...props) {
     super(...props);
     this.state = {
-      planId: paypalDurationPlans.month['500'].planId
+      planId: durationPlans.month['500'].planId
     };
     this.handleApproval = this.handleApproval.bind(this);
   }
