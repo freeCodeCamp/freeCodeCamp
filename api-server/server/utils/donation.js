@@ -5,14 +5,14 @@ import keys from '../../../config/secrets';
 
 const log = debug('fcc:boot:donate');
 
-const sandBoxSubdomain =
-  process.env.FREECODECAMP_NODE_ENV === 'production' ? '' : 'sandbox.';
-
-const verificationUrl = `https://api.${sandBoxSubdomain}paypal.com/v1/notifications/verify-webhook-signature`;
-const tokenUrl = `https://api.${sandBoxSubdomain}paypal.com/v1/oauth2/token`;
+const paypalverifyWebhookURL =
+  keys.paypal.verifyWebhookURL ||
+  `https://api.sandbox.paypal.com/v1/notifications/verify-webhook-signature`;
+const paypalTokenURL =
+  keys.paypal.tokenUrl || `https://api.sandbox.paypal.com/v1/oauth2/token`;
 
 export async function getAsyncPaypalToken() {
-  const res = await axios.post(tokenUrl, null, {
+  const res = await axios.post(paypalTokenURL, null, {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
     },
@@ -48,7 +48,7 @@ export async function verifyWebHook(headers, body, token, webhookId) {
     webhook_event: webhookEventBody
   };
 
-  const response = await axios.post(verificationUrl, payload, {
+  const response = await axios.post(paypalverifyWebhookURL, payload, {
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${token}`

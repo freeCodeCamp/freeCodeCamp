@@ -22,11 +22,8 @@ import {
 
 jest.mock('axios');
 
-const sandBoxSubdomain =
-  process.env.FREECODECAMP_NODE_ENV === 'production' ? '' : 'sandbox.';
-
-const verificationUrl = `https://api.${sandBoxSubdomain}paypal.com/v1/notifications/verify-webhook-signature`;
-const tokenUrl = `https://api.${sandBoxSubdomain}paypal.com/v1/oauth2/token`;
+const verificationUrl = `https://api.sandbox.paypal.com/v1/notifications/verify-webhook-signature`;
+const tokenUrl = `https://api.sandbox.paypal.com/v1/oauth2/token`;
 const {
   body: activationHookBody,
   headers: activationHookHeaders

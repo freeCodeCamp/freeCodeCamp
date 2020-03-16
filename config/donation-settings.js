@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 // Configuration for client side
 const durationsConfig = {
   year: 'yearly',
@@ -40,9 +42,8 @@ const donationSubscriptionConfig = {
 };
 
 // Shared paypal configuration
-const paypalConfig = {
-  production: {
-    webhookId: '8AM40465WC915574A',
+const paypalConfigTypes = {
+  live: {
     durationPlans: {
       month: {
         '500': {
@@ -51,8 +52,7 @@ const paypalConfig = {
       }
     }
   },
-  development: {
-    webhookId: '2UL63757DN298592C',
+  staging: {
     durationPlans: {
       month: {
         '500': {
@@ -62,6 +62,10 @@ const paypalConfig = {
     }
   }
 };
+
+const paypalConfig = process.env.DEPLOYMENT_ENV
+  ? paypalConfigTypes['live']
+  : paypalConfigTypes['staging'];
 
 module.exports = {
   durationsConfig,
