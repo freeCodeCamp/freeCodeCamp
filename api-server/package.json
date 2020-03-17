@@ -88,6 +88,7 @@
     "nodemon": "^1.19.4",
     "passport-mock-strategy": "^2.0.0",
     "pm2": "^4.1.2",
+    "smee-client": "^1.1.0",
     "tap-difflet": "^0.7.2",
     "tap-spec": "^5.0.0"
   },
