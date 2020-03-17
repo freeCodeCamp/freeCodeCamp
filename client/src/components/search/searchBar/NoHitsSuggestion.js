@@ -7,6 +7,7 @@ const NoHitsSuggestion = ({ title, handleMouseEnter, handleMouseLeave }) => {
       className={'no-hits-footer fcc_suggestion_item'}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      role='region'
     >
       <span className='hit-name'>{title}</span>
     </div>
