@@ -12,6 +12,7 @@ import DonateForm from '../components/Donation/DonateForm';
 import DonateText from '../components/Donation/DonateText';
 import { signInLoadingSelector, userSelector, executeGA } from '../redux';
 import { stripeScriptLoader } from '../utils/scriptLoaders';
+import { PaypalButton } from '../components/Donation/PaypalButton';
 
 const propTypes = {
   executeGA: PropTypes.func,
@@ -131,6 +132,14 @@ export class DonatePage extends Component {
                     handleProcessing={this.handleProcessing}
                     stripe={stripe}
                   />
+                  <Spacer size={2} />
+                  <Row>
+                    <Col sm={10} smOffset={1} xs={12}>
+                      <b>Or donate with:</b>
+                      <Spacer />
+                      <PaypalButton />
+                    </Col>
+                  </Row>
                 </Col>
                 <Col md={6}>
                   <DonateText />
