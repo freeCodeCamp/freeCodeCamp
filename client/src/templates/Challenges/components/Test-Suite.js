@@ -37,7 +37,6 @@ function TestSuite({ tests }) {
             aria-label={getAccessibleText(err, pass, text)}
             className='test-result'
             key={text.slice(-6) + index}
-            tabIndex='0'
           >
             <div className='test-status-icon'>
               {isInitial ? <Initial /> : statusIcon}
