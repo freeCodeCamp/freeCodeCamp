@@ -16,13 +16,13 @@ export class PaypalButton extends Component {
   constructor(...props) {
     super(...props);
     this.state = {
-      planId: durationPlans.month['500'].planId
+      planId: durationPlans.year['6000'].planId
     };
     this.handleApproval = this.handleApproval.bind(this);
   }
 
   handleApproval = data => {
-    this.props.handleProcessing('month', 500, 'Paypal payment submission');
+    this.props.handleProcessing('year', 6000, 'Paypal payment submission');
     this.props.onDonationStateChange(false, true, '');
     verifySubscriptionPaypal(data)
       .then(response => {

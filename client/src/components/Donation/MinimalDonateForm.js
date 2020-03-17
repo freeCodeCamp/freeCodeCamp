@@ -14,7 +14,10 @@ import { stripePublicKey } from '../../../../config/env.json';
 import { stripeScriptLoader } from '../../utils/scriptLoaders';
 import DonateFormChildViewForHOC from './DonateFormChildViewForHOC';
 import DonateCompletion from './DonateCompletion';
+import PaypalButton from './PaypalButton';
 import { userSelector } from '../../redux';
+
+import { Spacer } from '../../components/helpers';
 
 import './Donation.css';
 
@@ -126,7 +129,18 @@ class MinimalDonateForm extends Component {
 
     return (
       <Row>
+        <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
+          <PaypalButton
+            handleProcessing={handleProcessing}
+            onDonationStateChange={this.onDonationStateChange}
+          />
+        </Col>
         <Col sm={10} smOffset={1} xs={12}>
+          <Spacer />
+          <b>Or donate with a credit card:</b>
+          <Spacer />
+        </Col>
+        <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
           <StripeProvider stripe={stripe}>
             <Elements>
               <DonateFormChildViewForHOC

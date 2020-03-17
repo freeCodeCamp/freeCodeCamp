@@ -1,4 +1,5 @@
-require('dotenv').config();
+const path = require('path');
+require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 
 // Configuration for client side
 const durationsConfig = {
@@ -56,16 +57,22 @@ const paypalConfigTypes = {
     durationPlans: {
       month: {
         '500': {
-          planId: 'P-146249205C631091BLZKRHGA'
+          planId: 'P-37N14480BW163382FLZYPVMA'
+        }
+      },
+      year: {
+        '6000': {
+          planId: 'P-0UY77185EM3077131LZYP6VY'
         }
       }
     }
   }
 };
 
-const paypalConfig = process.env.DEPLOYMENT_ENV
-  ? paypalConfigTypes['live']
-  : paypalConfigTypes['staging'];
+const paypalConfig =
+  process.env.DEPLOYMENT_ENV && process.env.DEPLOYMENT_ENV === 'live'
+    ? paypalConfigTypes['live']
+    : paypalConfigTypes['staging'];
 
 module.exports = {
   durationsConfig,
