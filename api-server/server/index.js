@@ -80,10 +80,6 @@ app.start = _.once(function() {
 
 module.exports = app;
 
-// start the server if `$ node server.js`
-// in production use `$npm start-production`
-// or `$node server/production` to start the server
-// and wait for DB handshake
 if (require.main === module) {
   app.start();
 }
