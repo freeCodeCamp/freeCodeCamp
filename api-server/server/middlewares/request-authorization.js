@@ -12,21 +12,29 @@ import { jwtSecret as _jwtSecret } from '../../../config/secrets';
 import { wrapHandledError } from '../utils/create-handled-error';
 
 const authRE = /^\/auth\//;
+const confirmEmailRE = /^\/confirm-email$/;
 const newsShortLinksRE = /^\/n\/|^\/p\//;
+const publicUserRE = /^\/api\/users\/get-public-profile$/;
+const publicUsernameRE = /^\/api\/users\/exists$/;
 const resubscribeRE = /^\/resubscribe\//;
 const showCertRE = /^\/certificate\/showCert\//;
 // note: signin may not have a trailing slash
 const signinRE = /^\/signin/;
+const statusRE = /^\/status\/ping$/;
 const unsubscribedRE = /^\/unsubscribed\//;
 const unsubscribeRE = /^\/u\/|^\/unsubscribe\/|^\/ue\//;
 const updatePaypalRE = /^\/donate\/update-paypal/;
 
 const _whiteListREs = [
   authRE,
+  confirmEmailRE,
   newsShortLinksRE,
+  publicUserRE,
+  publicUsernameRE,
   resubscribeRE,
   showCertRE,
   signinRE,
+  statusRE,
   unsubscribedRE,
   unsubscribeRE,
   updatePaypalRE
