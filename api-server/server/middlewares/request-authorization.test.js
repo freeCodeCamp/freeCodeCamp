@@ -28,7 +28,26 @@ const mockGetUserById = id =>
 
 describe('request-authorization', () => {
   describe('isWhiteListedPath', () => {
-    const whiteList = [/^\/is-ok\//, /^\/this-is\/also\/ok\//];
+    const authRE = /^\/auth\//;
+    const newsShortLinksRE = /^\/n\/|^\/p\//;
+    const resubscribeRE = /^\/resubscribe\//;
+    const showCertRE = /^\/certificate\/showCert\//;
+    // note: signin may not have a trailing slash
+    const signinRE = /^\/signin/;
+    const unsubscribedRE = /^\/unsubscribed\//;
+    const unsubscribeRE = /^\/u\/|^\/unsubscribe\/|^\/ue\//;
+    const updatePaypalRE = /^\/donate\/update-paypal/;
+
+    const whiteList = [
+      authRE,
+      newsShortLinksRE,
+      resubscribeRE,
+      showCertRE,
+      signinRE,
+      unsubscribedRE,
+      unsubscribeRE,
+      updatePaypalRE
+    ];
 
     it('returns a boolean', () => {
       const result = isWhiteListedPath();
@@ -39,15 +58,20 @@ describe('request-authorization', () => {
     it('returns true for a white listed path', () => {
       expect.assertions(2);
 
-      const resultA = isWhiteListedPath('/is-ok/should-be/good', whiteList);
-      const resultB = isWhiteListedPath('/this-is/also/ok/surely', whiteList);
+      const resultA = isWhiteListedPath(
+        '/auth/auth0/callback?code=yF_mGjswLsef-_RLo',
+        whiteList
+      );
+      const resultB = isWhiteListedPath('/ue/WmjInLerysPrcon6fMb/', whiteList);
       expect(resultA).toBe(true);
       expect(resultB).toBe(true);
     });
 
     it('returns false for a non-white-listed path', () => {
-      const result = isWhiteListedPath('/hax0r-42/no-go', whiteList);
-      expect(result).toBe(false);
+      const resultA = isWhiteListedPath('/hax0r-42/no-go', whiteList);
+      const resultB = isWhiteListedPath('/update-current-challenge', whiteList);
+      expect(resultA).toBe(false);
+      expect(resultB).toBe(false);
     });
   });
 

@@ -11,23 +11,25 @@ import { jwtSecret as _jwtSecret } from '../../../config/secrets';
 
 import { wrapHandledError } from '../utils/create-handled-error';
 
+const authRE = /^\/auth\//;
 const newsShortLinksRE = /^\/n\/|^\/p\//;
-const showCertRE = /^\/certificate\/showCert\//;
-const updatePaypalRE = /^\/donate\/update-paypal/;
-// signin may not have a trailing slash
-const signinRE = /^\/signin/;
-const unsubscribeRE = /^\/u\/|^\/unsubscribe\/|^\/ue\//;
-const unsubscribedRE = /^\/unsubscribed\//;
 const resubscribeRE = /^\/resubscribe\//;
+const showCertRE = /^\/certificate\/showCert\//;
+// note: signin may not have a trailing slash
+const signinRE = /^\/signin/;
+const unsubscribedRE = /^\/unsubscribed\//;
+const unsubscribeRE = /^\/u\/|^\/unsubscribe\/|^\/ue\//;
+const updatePaypalRE = /^\/donate\/update-paypal/;
 
 const _whiteListREs = [
+  authRE,
   newsShortLinksRE,
+  resubscribeRE,
   showCertRE,
-  updatePaypalRE,
   signinRE,
-  unsubscribeRE,
   unsubscribedRE,
-  resubscribeRE
+  unsubscribeRE,
+  updatePaypalRE
 ];
 
 export function isWhiteListedPath(path, whiteListREs = _whiteListREs) {
