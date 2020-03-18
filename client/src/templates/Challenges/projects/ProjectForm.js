@@ -47,12 +47,11 @@ export class ProjectForm extends Component {
           ...options,
           placeholders: {
             solution:
-              'Link to solution, ex: ' +
+              'Link, ex: ' +
               (isFrontEnd
                 ? 'https://codepen.io/camperbot/full/oNvPqqo'
                 : 'https://camperbot.glitch.me'),
-            githubLink:
-              'Link to GitHub repo, ex: https://github.com/camperbot/hello'
+            githubLink: 'ex: https://github.com/camperbot/hello'
           }
         }}
         submit={this.handleSubmit}
