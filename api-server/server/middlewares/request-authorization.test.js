@@ -29,21 +29,29 @@ const mockGetUserById = id =>
 describe('request-authorization', () => {
   describe('isWhiteListedPath', () => {
     const authRE = /^\/auth\//;
+    const confirmEmailRE = /^\/confirm-email$/;
     const newsShortLinksRE = /^\/n\/|^\/p\//;
+    const publicUserRE = /^\/api\/users\/get-public-profile$/;
+    const publicUsernameRE = /^\/api\/users\/exists$/;
     const resubscribeRE = /^\/resubscribe\//;
     const showCertRE = /^\/certificate\/showCert\//;
     // note: signin may not have a trailing slash
     const signinRE = /^\/signin/;
+    const statusRE = /^\/status\/ping$/;
     const unsubscribedRE = /^\/unsubscribed\//;
     const unsubscribeRE = /^\/u\/|^\/unsubscribe\/|^\/ue\//;
     const updatePaypalRE = /^\/donate\/update-paypal/;
 
     const whiteList = [
       authRE,
+      confirmEmailRE,
       newsShortLinksRE,
+      publicUserRE,
+      publicUsernameRE,
       resubscribeRE,
       showCertRE,
       signinRE,
+      statusRE,
       unsubscribedRE,
       unsubscribeRE,
       updatePaypalRE
@@ -51,13 +59,10 @@ describe('request-authorization', () => {
 
     it('returns a boolean', () => {
       const result = isWhiteListedPath();
-
       expect(typeof result).toBe('boolean');
     });
 
     it('returns true for a white listed path', () => {
-      expect.assertions(2);
-
       const resultA = isWhiteListedPath(
         '/auth/auth0/callback?code=yF_mGjswLsef-_RLo',
         whiteList
