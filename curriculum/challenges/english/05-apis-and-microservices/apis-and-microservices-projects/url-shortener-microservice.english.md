@@ -12,14 +12,6 @@ Build a full stack JavaScript app that is functionally similar to this: <a href=
 Working on this project will involve you writing your code on Glitch on our starter project. After completing this project you can copy your public glitch url (to the homepage of your app) into this screen to test it! Optionally you may choose to write your project on another platform but it must be publicly visible for our testing.
 Start this project on Glitch using <a href='https://glitch.com/edit/#!/remix/clone-from-repo?REPO_URL=https://github.com/freeCodeCamp/boilerplate-project-urlshortener/' target='_blank'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-project-urlshortener/'>this repository</a> on GitHub! If you use Glitch, remember to save the link to your project somewhere safe!
 
-### Criteria to pass the tests
-
-1. Expose this POST endpoint: `/api/shorturl/new` . 
-      - This endpoint should accept a body with an urlencoded object that has a url key (e.g. `url=https://www.google.com`) . 
-      - It should return a json response with the shortUrl (e.g.`{"original_url":"www.google.com","short_url":1}`).
-1. Return json error message with message of `invalid url` if the url provided in the body of the above POST request isn't a valid URL. e.g. `res.json({"error":"No short url found for given input"})`
-1. Expose this GET endpoint: `/api/shorturl/{:shortUrl}` that will parse the shortUrl given in the params and redirect to the original Url.
-
 </section>
 
 ## Instructions

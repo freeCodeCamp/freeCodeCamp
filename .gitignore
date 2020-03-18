@@ -3,9 +3,6 @@
 
 ### VisualStudioCode Patch ###
 
-### Intellij IDEA ###
-/.idea/
-
 # Ignore all local history of files
 .history
 
