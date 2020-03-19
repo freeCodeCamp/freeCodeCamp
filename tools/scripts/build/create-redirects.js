@@ -31,10 +31,6 @@ const template = `
 https://freecodecamp-dev.netlify.com/*        https://www.freecodecamp.dev/:splat 301!
 https://freecodecamp-org.netlify.com/*        https://www.freecodecamp.org/:splat 301!
 
-
-#api redirect
-/internal/*                                   #{{API}}/internal/:splat 200!
-
 # pages
 /about                                        #{{NEWS}}/about 200
 /academic-honesty                             #{{NEWS}}/academic-honesty 200

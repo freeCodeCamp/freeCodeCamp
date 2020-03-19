@@ -37,7 +37,7 @@ export default function bootCertificate(app) {
   api.put('/certificate/verify', ifNoUser401, ifNoSuperBlock404, verifyCert);
   api.get('/certificate/showCert/:username/:cert', showCert);
 
-  app.use('/internal', api);
+  app.use(api);
 }
 
 const noNameMessage = dedent`

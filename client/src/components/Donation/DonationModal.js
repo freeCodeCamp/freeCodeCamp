@@ -59,12 +59,16 @@ function DonateModal({
   executeGA
 }) {
   const [closeLabel, setCloseLabel] = React.useState(false);
-  const handleProcessing = (duration, amount) => {
+  const handleProcessing = (
+    duration,
+    amount,
+    action = 'stripe form submission'
+  ) => {
     executeGA({
       type: 'event',
       data: {
         category: 'donation',
-        action: 'Modal strip form submission',
+        action: `Modal ${action}`,
         label: duration,
         value: amount
       }
@@ -88,8 +92,8 @@ function DonateModal({
 
   const donationText = (
     <b>
-      Become a supporter and help us create even more learning resources for
-      you.
+      Become a $5 / month supporter and help us create even more learning
+      resources for you and your family.
     </b>
   );
   const blockDonationText = (
