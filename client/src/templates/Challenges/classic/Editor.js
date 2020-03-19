@@ -216,7 +216,7 @@ class Editor extends Component {
     const editorTheme = theme === 'night' ? 'vs-dark-custom' : 'vs-custom';
     return (
       <Suspense fallback={<Loader timeout={600} />}>
-        <span className="notranslate">
+        <span className='notranslate'>
           <MonacoEditor
             editorDidMount={this.editorDidMount}
             editorWillMount={this.editorWillMount}
