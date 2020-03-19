@@ -108,12 +108,6 @@ export default function donateBoot(app, done) {
   function createStripeDonation(req, res) {
     const { user, body } = req;
 
-    if (!user || !body) {
-      return res
-        .status(500)
-        .send({ error: 'User must be signed in for this request.' });
-    }
-
     const {
       amount,
       duration,
