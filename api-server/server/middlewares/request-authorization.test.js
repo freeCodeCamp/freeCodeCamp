@@ -40,7 +40,7 @@ describe('request-authorization', () => {
     const statusRE = /^\/status\/ping$/;
     const unsubscribedRE = /^\/unsubscribed\//;
     const unsubscribeRE = /^\/u\/|^\/unsubscribe\/|^\/ue\//;
-    const updatePaypalRE = /^\/donate\/update-paypal/;
+    const updateHooksRE = /^\/hooks\/update-paypal$|^\/hooks\/update-stripe$/;
 
     const whiteList = [
       authRE,
@@ -54,7 +54,7 @@ describe('request-authorization', () => {
       statusRE,
       unsubscribedRE,
       unsubscribeRE,
-      updatePaypalRE
+      updateHooksRE
     ];
 
     it('returns a boolean', () => {
@@ -68,8 +68,12 @@ describe('request-authorization', () => {
         whiteList
       );
       const resultB = isWhiteListedPath('/ue/WmjInLerysPrcon6fMb/', whiteList);
+      const resultC = isWhiteListedPath('/hooks/update-paypal', whiteList);
+      const resultD = isWhiteListedPath('/hooks/update-stripe', whiteList);
       expect(resultA).toBe(true);
       expect(resultB).toBe(true);
+      expect(resultC).toBe(true);
+      expect(resultD).toBe(true);
     });
 
     it('returns false for a non-white-listed path', () => {
