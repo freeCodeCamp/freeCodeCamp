@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import {
-  Button,
   Tabs,
   Tab,
   Row,
@@ -19,7 +18,6 @@ import {
   defaultAmount,
   defaultStateConfig
 } from '../../../../config/donation-settings';
-import { apiLocation } from '../../../../config/env.json';
 import Spacer from '../helpers/Spacer';
 import DonateFormChildViewForHOC from './DonateFormChildViewForHOC';
 import {
@@ -55,11 +53,6 @@ const mapStateToProps = createSelector(
 
 const mapDispatchToProps = {
   navigate
-};
-
-const createOnClick = navigate => e => {
-  e.preventDefault();
-  return navigate(`${apiLocation}/signin?returnTo=donate`);
 };
 
 class DonateForm extends Component {
@@ -207,25 +200,13 @@ class DonateForm extends Component {
   }
 
   render() {
-    const { isSignedIn, navigate, showLoading } = this.props;
-
     return (
       <Row>
         <Col sm={10} smOffset={1} xs={12}>
           {this.renderDurationAmountOptions()}
         </Col>
         <Col sm={10} smOffset={1} xs={12}>
-          {!showLoading && !isSignedIn ? (
-            <Button
-              bsStyle='default'
-              className='btn btn-block'
-              onClick={createOnClick(navigate)}
-            >
-              Become a supporter
-            </Button>
-          ) : (
-            this.renderDonationOptions()
-          )}
+          {this.renderDonationOptions()}
         </Col>
       </Row>
     );
