@@ -4,12 +4,12 @@ require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 // Configuration for client side
 const durationsConfig = {
   year: 'yearly',
-  month: 'monthly',
+  // month: 'monthly',
   onetime: 'one-time'
 };
 const amountsConfig = {
   year: [100000, 25000, 6000],
-  month: [5000, 3500, 500],
+  // month: [5000, 3500, 500],
   onetime: [100000, 25000, 3500]
 };
 const defaultAmount = {
@@ -18,8 +18,8 @@ const defaultAmount = {
   onetime: 25000
 };
 const defaultStateConfig = {
-  donationAmount: defaultAmount['month'],
-  donationDuration: 'month'
+  donationAmount: defaultAmount['year'],
+  donationDuration: 'year'
 };
 const modalDefaultStateConfig = {
   donationAmount: 6000,
