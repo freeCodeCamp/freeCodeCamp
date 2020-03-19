@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 // Configuration for client side
 const durationsConfig = {
   year: 'yearly',
@@ -39,6 +41,32 @@ const donationSubscriptionConfig = {
   }
 };
 
+// Shared paypal configuration
+const paypalConfigTypes = {
+  live: {
+    durationPlans: {
+      month: {
+        '500': {
+          planId: 'P-1L11422374370240ULZKX3PA'
+        }
+      }
+    }
+  },
+  staging: {
+    durationPlans: {
+      month: {
+        '500': {
+          planId: 'P-146249205C631091BLZKRHGA'
+        }
+      }
+    }
+  }
+};
+
+const paypalConfig = process.env.DEPLOYMENT_ENV
+  ? paypalConfigTypes['live']
+  : paypalConfigTypes['staging'];
+
 module.exports = {
   durationsConfig,
   amountsConfig,
@@ -47,5 +75,6 @@ module.exports = {
   durationKeysConfig,
   donationOneTimeConfig,
   donationSubscriptionConfig,
-  modalDefaultStateConfig
+  modalDefaultStateConfig,
+  paypalConfig
 };

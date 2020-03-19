@@ -58,7 +58,14 @@ tests:
     testString: assert(beagle instanceof Animal);
   - text: The constructor for <code>beagle</code> should be set to <code>Dog</code>.
     testString: assert(beagle.constructor === Dog);
-
+  - text: <code>beagle.eat()</code> should log <code>"nom nom nom"</code>
+    testString: |
+      console.log = function(msg){throw msg;}
+      assert.throws(() => beagle.eat(),"nom nom nom");
+  - text: <code>beagle.bark()</code> should log <code>"Woof!"</code>
+    testString: |
+      console.log = function(msg){throw msg;}
+      assert.throws(() => beagle.bark(),"Woof!");
 ```
 
 </section>

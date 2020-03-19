@@ -10,10 +10,6 @@ exports[`createRedirects matches the snapshot 1`] = `
 https://freecodecamp-dev.netlify.com/*        https://www.freecodecamp.dev/:splat 301!
 https://freecodecamp-org.netlify.com/*        https://www.freecodecamp.org/:splat 301!
 
-
-#api redirect
-/internal/*                                   https://api.example.com/internal/:splat 200!
-
 # pages
 /about                                        https://news.example.com/about 200
 /academic-honesty                             https://news.example.com/academic-honesty 200

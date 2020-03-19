@@ -33,7 +33,7 @@ Place the area template so that the cell labeled <code>advert</code> becomes an 
 ```yml
 tests:
   - text: <code>container</code> class should have a <code>grid-template-areas</code> property similar to the preview but has <code>.</code> instead of the <code>advert</code> area.
-    testString: assert(code.match(/.container\s*?{[\s\S]*grid-template-areas\s*?:\s*?"\s*?header\s*?header\s*?header\s*?"\s*?"\s*?.\s*?content\s*?content\s*?"\s*?"\s*?footer\s*?footer\s*?footer\s*?"\s*?;[\s\S]*}/gi));
+    testString: const removeCssComments = str => str.replace(/\/\*[\s\S]+?\*\//g, ''); assert(removeCssComments(code).match(/.container\s*?{[\s\S]*grid-template-areas\s*?:\s*?"\s*?header\s*?header\s*?header\s*?"\s*?"\s*?.\s*?content\s*?content\s*?"\s*?"\s*?footer\s*?footer\s*?footer\s*?"\s*?;[\s\S]*}/gi));
 
 ```
 

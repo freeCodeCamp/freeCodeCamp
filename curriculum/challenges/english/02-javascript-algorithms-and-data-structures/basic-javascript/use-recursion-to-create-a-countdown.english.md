@@ -27,7 +27,7 @@ function countup(n) {
 console.log(countup(5)); // [ 1, 2, 3, 4, 5 ]
 ```
 
-At first, this seems counterintuitive since the value of `n` <em>decreases</em>, but the values in the final array are <em>increasing</em>.  This happens because the push happens last, after the recursive call has returned.  At the point where `n` is pushed into the array, `count(n - 1)` has already been evaluated and returned `[1, 2, ..., n - 1]`.
+At first, this seems counterintuitive since the value of `n` <em>decreases</em>, but the values in the final array are <em>increasing</em>.  This happens because the push happens last, after the recursive call has returned.  At the point where `n` is pushed into the array, `countup(n - 1)` has already been evaluated and returned `[1, 2, ..., n - 1]`.
 
 </section>
 
