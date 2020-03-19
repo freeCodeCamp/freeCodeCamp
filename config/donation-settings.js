@@ -8,24 +8,22 @@ const durationsConfig = {
   onetime: 'one-time'
 };
 const amountsConfig = {
-  year: [100000, 25000, 3500],
+  year: [100000, 25000, 6000],
   month: [5000, 3500, 500],
   onetime: [100000, 25000, 3500]
 };
 const defaultAmount = {
-  year: 25000,
+  year: 6000,
   month: 3500,
   onetime: 25000
 };
 const defaultStateConfig = {
   donationAmount: defaultAmount['month'],
-  donationDuration: 'month',
-  paymentType: 'Card'
+  donationDuration: 'month'
 };
 const modalDefaultStateConfig = {
-  donationAmount: 500,
-  donationDuration: 'month',
-  paymentType: 'Card'
+  donationAmount: 6000,
+  donationDuration: 'year'
 };
 
 // Configuration for server side

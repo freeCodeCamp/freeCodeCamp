@@ -78,7 +78,6 @@ class DonateForm extends Component {
     this.getDonationButtonLabel = this.getDonationButtonLabel.bind(this);
     this.handleSelectAmount = this.handleSelectAmount.bind(this);
     this.handleSelectDuration = this.handleSelectDuration.bind(this);
-    this.handleSelectPaymentType = this.handleSelectPaymentType.bind(this);
     this.hideAmountOptionsCB = this.hideAmountOptionsCB.bind(this);
   }
 
@@ -118,12 +117,6 @@ class DonateForm extends Component {
 
   handleSelectAmount(donationAmount) {
     this.setState({ donationAmount });
-  }
-
-  handleSelectPaymentType(e) {
-    this.setState({
-      paymentType: e.currentTarget.value
-    });
   }
 
   renderAmountButtons(duration) {
@@ -193,28 +186,22 @@ class DonateForm extends Component {
 
   renderDonationOptions() {
     const { stripe, handleProcessing } = this.props;
-    const { donationAmount, donationDuration, paymentType } = this.state;
+    const { donationAmount, donationDuration } = this.state;
     return (
       <div>
-        {paymentType === 'Card' ? (
-          <StripeProvider stripe={stripe}>
-            <Elements>
-              <DonateFormChildViewForHOC
-                defaultTheme='default'
-                donationAmount={donationAmount}
-                donationDuration={donationDuration}
-                getDonationButtonLabel={this.getDonationButtonLabel}
-                handleProcessing={handleProcessing}
-                hideAmountOptionsCB={this.hideAmountOptionsCB}
-              />
-            </Elements>
-          </StripeProvider>
-        ) : (
-          <p>
-            PayPal is currently unavailable. Please use a Credit/Debit card
-            instead.
-          </p>
-        )}
+        <StripeProvider stripe={stripe}>
+          <Elements>
+            <DonateFormChildViewForHOC
+              defaultTheme='default'
+              donationAmount={donationAmount}
+              donationDuration={donationDuration}
+              getDonationButtonLabel={this.getDonationButtonLabel}
+              handleProcessing={handleProcessing}
+              hideAmountOptionsCB={this.hideAmountOptionsCB}
+            />
+          </Elements>
+        </StripeProvider>
+        <Spacer size={2} />
       </div>
     );
   }
