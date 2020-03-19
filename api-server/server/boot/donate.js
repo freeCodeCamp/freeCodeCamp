@@ -21,6 +21,7 @@ const log = debug('fcc:boot:donate');
 export default function donateBoot(app, done) {
   let stripe = false;
   const api = app.loopback.Router();
+  const hooks = app.loopback.Router();
   const donateRouter = app.loopback.Router();
 
   const subscriptionPlans = Object.keys(
@@ -281,11 +282,11 @@ export default function donateBoot(app, done) {
       .then(getAsyncPaypalToken)
       .then(token => verifyWebHook(headers, body, token, keys.paypal.webhookId))
       .then(hookBody => updateUser(hookBody, app))
-      .then(() => res.status(200).json({ message: 'received hook' }))
       .catch(err => {
+        // Todo: This probably need to be thrown and caught in error handler
         log(err.message);
-        return res.status(200).json({ message: 'received hook' });
-      });
+      })
+      .finally(() => res.status(200).json({ message: 'received paypal hook' }));
   }
 
   const stripeKey = keys.stripe.public;
@@ -316,8 +317,9 @@ export default function donateBoot(app, done) {
     api.post('/charge-stripe', createStripeDonation);
     api.post('/create-hmac-hash', createHmacHash);
     api.post('/add-donation', addDonation);
-    api.post('/update-paypal', updatePaypal);
+    hooks.post('/update-paypal', updatePaypal);
     donateRouter.use('/donate', api);
+    donateRouter.use('/hooks', hooks);
     app.use(donateRouter);
     connectToStripe().then(done);
   }
