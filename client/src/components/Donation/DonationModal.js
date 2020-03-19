@@ -90,12 +90,7 @@ function DonateModal({
     });
   }
 
-  const donationText = (
-    <b>
-      Become a $5 / month supporter and help us create even more learning
-      resources for you and your family.
-    </b>
-  );
+  const donationText = <b>Become an annual supporter of our nonprofit.</b>;
   const blockDonationText = (
     <div className='block-modal-text'>
       <div className='donation-icon-container'>
@@ -105,6 +100,7 @@ function DonateModal({
         {!closeLabel && (
           <Col sm={10} smOffset={1} xs={12}>
             <b>Nicely done. You just completed {blockNameify(block)}. </b>
+            <br />
             {donationText}
           </Col>
         )}

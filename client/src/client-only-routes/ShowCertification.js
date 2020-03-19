@@ -211,7 +211,7 @@ class ShowCertification extends Component {
       <Grid className='donation-section'>
         {!isDonationSubmitted && (
           <Row>
-            <Col sm={10} smOffset={1} xs={12}>
+            <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
               <p>
                 Only you can see this message. Congratulations on earning this
                 certification. It’s no easy task. Running freeCodeCamp isn’t

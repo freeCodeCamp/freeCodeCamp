@@ -40,10 +40,6 @@ function DonateCompletion({ processing, reset, success, error = null }) {
               Your donations will support free technology education for people
               all over the world.
             </p>
-            <p>
-              You can update your supporter status at any time from your
-              settings page.
-            </p>
           </div>
         )}
         {error && <p>{error}</p>}
