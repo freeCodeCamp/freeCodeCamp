@@ -8,7 +8,12 @@ export default function() {
   });
   return function csrf(req, res, next) {
     const { path } = req;
-    if (/^\/hooks\/update-paypal$|^\/hooks\/update-stripe$/.test(path)) {
+    if (
+      // eslint-disable-next-line max-len
+      /^\/hooks\/update-paypal$|^\/hooks\/update-stripe$|^\/donate\/charge-stripe$/.test(
+        path
+      )
+    ) {
       return next();
     }
     return protection(req, res, next);
