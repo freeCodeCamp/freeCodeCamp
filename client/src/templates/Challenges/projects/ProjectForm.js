@@ -10,8 +10,8 @@ const propTypes = {
   updateProjectForm: PropTypes.func.isRequired
 };
 
-const frontEndFields = ['solution'];
-const backEndFields = ['solution', 'githubLink'];
+const challengeFields = ['solution'];
+const backEndProjectFields = ['solution', 'githubLink'];
 
 const options = {
   types: {
@@ -41,18 +41,17 @@ export class ProjectForm extends Component {
     return (
       <Form
         buttonText={`${buttonCopy}`}
-        formFields={isFrontEnd ? frontEndFields : backEndFields}
+        formFields={isFrontEnd ? challengeFields : backEndProjectFields}
         id={isFrontEnd ? 'front-end-form' : 'back-end-form'}
         options={{
           ...options,
           placeholders: {
             solution:
-              'Link to solution, ex: ' +
+              'Link, ex: ' +
               (isFrontEnd
                 ? 'https://codepen.io/camperbot/full/oNvPqqo'
                 : 'https://camperbot.glitch.me'),
-            githubLink:
-              'Link to GitHub repo, ex: https://github.com/camperbot/hello'
+            githubLink: 'ex: https://github.com/camperbot/hello'
           }
         }}
         submit={this.handleSubmit}
