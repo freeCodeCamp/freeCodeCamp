@@ -126,6 +126,7 @@ export class Project extends Component {
                 <ChallengeTitle>{blockNameTitle}</ChallengeTitle>
                 <ChallengeDescription description={description} />
                 <ProjectForm
+                  isBackEndProject={false}
                   isFrontEnd={isFrontEnd}
                   onSubmit={openCompletionModal}
                   updateProjectForm={updateProjectFormValues}

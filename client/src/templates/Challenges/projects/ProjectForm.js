@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { Form } from '../../../components/formHelpers';
 
 const propTypes = {
+  isBackEndProject: PropTypes.bool,
   isFrontEnd: PropTypes.bool,
   isSubmitting: PropTypes.bool,
   onSubmit: PropTypes.func.isRequired,
@@ -34,14 +35,14 @@ export class ProjectForm extends Component {
     this.props.onSubmit();
   }
   render() {
-    const { isSubmitting, isFrontEnd } = this.props;
+    const { isSubmitting, isFrontEnd, isBackEndProject } = this.props;
     const buttonCopy = isSubmitting
       ? 'Submit and go to my next challenge'
       : "I've completed this challenge";
     return (
       <Form
         buttonText={`${buttonCopy}`}
-        formFields={isFrontEnd ? challengeFields : backEndProjectFields}
+        formFields={isBackEndProject ? backEndProjectFields : challengeFields}
         id={isFrontEnd ? 'front-end-form' : 'back-end-form'}
         options={{
           ...options,
