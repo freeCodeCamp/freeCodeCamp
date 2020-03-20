@@ -4,26 +4,26 @@ require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 // Configuration for client side
 const durationsConfig = {
   year: 'yearly',
-  // month: 'monthly', // We have disabled montly payments
+  month: 'monthly',
   onetime: 'one-time'
 };
 const amountsConfig = {
   year: [100000, 25000, 6000],
-  month: [5000, 3500, 500],
+  month: [25000, 3500, 500],
   onetime: [100000, 25000, 6000]
 };
 const defaultAmount = {
-  year: 6000,
+  year: 25000,
   month: 3500,
   onetime: 25000
 };
 const defaultStateConfig = {
-  donationAmount: defaultAmount['year'],
-  donationDuration: 'year'
+  donationAmount: defaultAmount['month'],
+  donationDuration: 'month'
 };
 const modalDefaultStateConfig = {
-  donationAmount: 6000,
-  donationDuration: 'year'
+  donationAmount: 500,
+  donationDuration: 'month'
 };
 
 // Configuration for server side
@@ -36,7 +36,7 @@ const donationSubscriptionConfig = {
   },
   plans: {
     year: [100000, 25000, 6000],
-    month: [5000, 3500, 500]
+    month: [25000, 3500, 500]
   }
 };
 
@@ -45,6 +45,12 @@ const paypalConfigTypes = {
   live: {
     month: {
       '500': {
+        planId: 'P-1L11422374370240ULZKX3PA'
+      },
+      '3500': {
+        planId: 'P-1L11422374370240ULZKX3PA'
+      },
+      '25000': {
         planId: 'P-1L11422374370240ULZKX3PA'
       }
     },
@@ -64,6 +70,12 @@ const paypalConfigTypes = {
     month: {
       '500': {
         planId: 'P-37N14480BW163382FLZYPVMA'
+      },
+      '3500': {
+        planId: 'P-3E678937P5715503NLZZTRVY'
+      },
+      '25000': {
+        planId: 'P-97K80194AU368022JLZ2Q27Y'
       }
     },
     year: {
