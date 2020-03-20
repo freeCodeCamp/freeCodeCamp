@@ -25,6 +25,8 @@ Add code to use the <code>imageLink</code> and <code>altText</code> properties i
 tests:
   - text: You should use the <code>imageLink</code> property to display the images.
     testString: assert(code.match(/val\.imageLink/g));
+  - text: You should use the <code>altText</code> for the alt attribute values of the images.
+    testString: assert(code.match(/val\.altText/g));
 
 ```
 
