@@ -268,6 +268,7 @@ class DonateForm extends Component {
             donationDuration={donationDuration}
             handleProcessing={handleProcessing}
             onDonationStateChange={this.onDonationStateChange}
+            skipAddDonation={true}
           />
         </Col>
 
