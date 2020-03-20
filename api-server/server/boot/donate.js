@@ -20,6 +20,7 @@ const log = debug('fcc:boot:donate');
 
 export default function donateBoot(app, done) {
   let stripe = false;
+  const { User } = app.models;
   const api = app.loopback.Router();
   const hooks = app.loopback.Router();
   const donateRouter = app.loopback.Router();
@@ -120,6 +121,22 @@ export default function donateBoot(app, done) {
       });
     }
 
+    const fccUser = user
+      ? Promise.resolve(user)
+      : new Promise((resolve, reject) =>
+          User.findOrCreate(
+            { where: { email } },
+            { email },
+            (err, instance, isNew) => {
+              log('createing a new donating user instance: ', isNew);
+              if (err) {
+                return reject(err);
+              }
+              return resolve(instance);
+            }
+          )
+        );
+
     let donatingUser = {};
     let donation = {
       email,
@@ -169,12 +186,12 @@ export default function donateBoot(app, done) {
         });
     };
 
-    return Promise.resolve(user)
+    return Promise.resolve(fccUser)
       .then(nonDonatingUser => {
         const { isDonating } = nonDonatingUser;
-        if (isDonating) {
+        if (isDonating && duration !== 'onetime') {
           throw {
-            message: `User already has active donation(s).`,
+            message: `User already has active recurring donation(s).`,
             type: 'AlreadyDonatingError'
           };
         }
