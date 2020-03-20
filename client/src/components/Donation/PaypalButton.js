@@ -33,27 +33,39 @@ export class PaypalButton extends Component {
 
   handleApproval = data => {
     const { amount, duration } = this.state;
-    this.props.handleProcessing(duration, amount, 'Paypal payment submission');
-    this.props.onDonationStateChange(false, true, '');
-    verifySubscriptionPaypal(data)
-      .then(response => {
-        const data = response && response.data;
-        this.props.onDonationStateChange(
-          true,
-          false,
-          data.error ? data.error : ''
-        );
-      })
-      .catch(error => {
-        const data =
-          error.response && error.response.data
-            ? error.response.data
-            : {
-                error:
-                  'Something is not right. Please contact team@freecodecamp.org'
-              };
-        this.props.onDonationStateChange(false, false, data.error);
-      });
+    const { skipAddDonation = false } = this.props;
+    if (!skipAddDonation) {
+      this.props.handleProcessing(
+        duration,
+        amount,
+        'Paypal payment submission'
+      );
+      this.props.onDonationStateChange(false, true, '');
+      verifySubscriptionPaypal(data)
+        .then(response => {
+          const data = response && response.data;
+          this.props.onDonationStateChange(
+            true,
+            false,
+            data.error ? data.error : ''
+          );
+        })
+        .catch(error => {
+          const data =
+            error.response && error.response.data
+              ? error.response.data
+              : {
+                  error: `Something is not right. Please contact team@freecodecamp.org`
+                };
+          this.props.onDonationStateChange(false, false, data.error);
+        });
+    } else {
+      this.props.onDonationStateChange(
+        true,
+        false,
+        data.error ? data.error : ''
+      );
+    }
   };
 
   render() {
@@ -101,7 +113,8 @@ const propTypes = {
   donationDuration: PropTypes.string,
   handleProcessing: PropTypes.func,
   isDonating: PropTypes.bool,
-  onDonationStateChange: PropTypes.func
+  onDonationStateChange: PropTypes.func,
+  skipAddDonation: PropTypes.bool
 };
 
 const mapStateToProps = createSelector(
