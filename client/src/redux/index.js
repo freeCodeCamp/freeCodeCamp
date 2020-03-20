@@ -181,12 +181,6 @@ export const shouldRequestDonationSelector = state => {
   const isDonating = isDonatingSelector(state);
   const canRequestBlockDonation = canRequestBlockDonationSelector(state);
 
-  const debugModal = localStorage.getItem('DEBUG_DONATE_MODAL', false);
-  console.log(debugModal);
-  if (debugModal === 'yes-please') {
-    return true;
-  }
-
   // don't request donation if already donating
   if (isDonating) return false;
 
