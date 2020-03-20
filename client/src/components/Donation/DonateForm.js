@@ -233,7 +233,7 @@ class DonateForm extends Component {
 
   render() {
     const { donationAmount, donationDuration } = this.state;
-    const { handleProcessing } = this.props;
+    const { handleProcessing, isSignedIn } = this.props;
     const {
       donationState: { processing, success, error }
     } = this.state;
@@ -268,6 +268,7 @@ class DonateForm extends Component {
             donationDuration={donationDuration}
             handleProcessing={handleProcessing}
             onDonationStateChange={this.onDonationStateChange}
+            skipAddDonation={!isSignedIn}
           />
         </Col>
 
