@@ -134,6 +134,8 @@ class MinimalDonateForm extends Component {
           <b>Confirm your donation of $60 / year with PayPal:</b>
           <Spacer />
           <PaypalButton
+            donationAmount={donationAmount}
+            donationDuration={donationDuration}
             handleProcessing={handleProcessing}
             onDonationStateChange={this.onDonationStateChange}
           />

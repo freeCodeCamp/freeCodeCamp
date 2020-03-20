@@ -7,22 +7,33 @@ import { createSelector } from 'reselect';
 import { PayPalButton } from 'react-paypal-button-v2';
 import { paypalClientId } from '../../../config/env.json';
 import { verifySubscriptionPaypal } from '../../utils/ajax';
-import { paypalConfig } from '../../../../config/donation-settings';
-import { signInLoadingSelector, userSelector, executeGA } from '../../redux';
-
-const { durationPlans } = paypalConfig;
+import { paypalConfigurator } from '../../../../config/donation-settings';
+import { signInLoadingSelector, userSelector } from '../../redux';
 
 export class PaypalButton extends Component {
-  constructor(...props) {
-    super(...props);
-    this.state = {
-      planId: durationPlans.year['6000'].planId
-    };
+  constructor(props) {
+    super(props);
     this.handleApproval = this.handleApproval.bind(this);
   }
 
+  state = {};
+
+  static getDerivedStateFromProps(props, state) {
+    const { donationAmount, donationDuration } = props;
+
+    const configurationObj = paypalConfigurator(
+      donationAmount,
+      donationDuration
+    );
+    if (state === configurationObj) {
+      return null;
+    }
+    return { ...configurationObj };
+  }
+
   handleApproval = data => {
-    this.props.handleProcessing('year', 6000, 'Paypal payment submission');
+    const { amount, duration } = this.state;
+    this.props.handleProcessing(duration, amount, 'Paypal payment submission');
     this.props.onDonationStateChange(false, true, '');
     verifySubscriptionPaypal(data)
       .then(response => {
@@ -46,48 +57,48 @@ export class PaypalButton extends Component {
   };
 
   render() {
-    return (
-      <PayPalButton
-        createSubscription={(data, actions) => {
-          executeGA({
-            type: 'event',
-            data: {
-              category: 'Donation',
-              action: `Modal Paypal clicked`
-            }
-          });
-          return actions.subscription.create({
-            plan_id: this.state.planId
-          });
-        }}
-        onApprove={data => {
-          this.handleApproval(data);
-        }}
-        onCancel={() => {
-          this.props.onDonationStateChange(
-            false,
-            false,
-            'Payment has been canceled.'
-          );
-        }}
-        onError={() =>
-          this.props.onDonationStateChange(false, false, 'Please try again.')
-        }
-        options={{
-          vault: true,
-          disableFunding: 'card',
-          clientId: paypalClientId
-        }}
-        style={{
-          tagline: false,
-          height: 43
-        }}
-      />
-    );
+    const { duration, planId } = this.state;
+    const isOneTimePayment = duration === 'onetime';
+
+    if (!isOneTimePayment) {
+      return (
+        <PayPalButton
+          createSubscription={(data, actions) => {
+            return actions.subscription.create({
+              plan_id: planId
+            });
+          }}
+          onApprove={data => {
+            this.handleApproval(data);
+          }}
+          onCancel={() => {
+            this.props.onDonationStateChange(
+              false,
+              false,
+              `Uh - oh. It looks like your transaction didn't go through. Could you please try again?`
+            );
+          }}
+          onError={() =>
+            this.props.onDonationStateChange(false, false, 'Please try again.')
+          }
+          options={{
+            vault: true,
+            disableFunding: 'card',
+            clientId: paypalClientId
+          }}
+          style={{
+            tagline: false,
+            height: 43
+          }}
+        />
+      );
+    } else return '';
   }
 }
 
 const propTypes = {
+  donationAmount: PropTypes.number,
+  donationDuration: PropTypes.string,
   handleProcessing: PropTypes.func,
   isDonating: PropTypes.bool,
   onDonationStateChange: PropTypes.func

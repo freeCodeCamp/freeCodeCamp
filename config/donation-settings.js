@@ -43,25 +43,38 @@ const donationSubscriptionConfig = {
 // Shared paypal configuration
 const paypalConfigTypes = {
   live: {
-    durationPlans: {
-      month: {
-        '500': {
-          planId: 'P-1L11422374370240ULZKX3PA'
-        }
+    month: {
+      '500': {
+        planId: 'P-1L11422374370240ULZKX3PA'
+      }
+    },
+    year: {
+      '6000': {
+        planId: 'P-9Y661558DW462253NLZZ2IMQ'
+      },
+      '25000': {
+        planId: 'P-3NN39392MK1889318LZZ2KQY'
+      },
+      '100000': {
+        planId: 'P-7YN43286C4599382LLZZ2JUI'
       }
     }
   },
   staging: {
-    durationPlans: {
-      month: {
-        '500': {
-          planId: 'P-37N14480BW163382FLZYPVMA'
-        }
+    month: {
+      '500': {
+        planId: 'P-37N14480BW163382FLZYPVMA'
+      }
+    },
+    year: {
+      '6000': {
+        planId: 'P-0UY77185EM3077131LZYP6VY'
       },
-      year: {
-        '6000': {
-          planId: 'P-0UY77185EM3077131LZYP6VY'
-        }
+      '25000': {
+        planId: 'P-7K1585908S634694XLZZTHUQ'
+      },
+      '100000': {
+        planId: 'P-0J5231134H608574XLZZTDLQ'
       }
     }
   }
@@ -72,6 +85,17 @@ const paypalConfig =
     ? paypalConfigTypes['live']
     : paypalConfigTypes['staging'];
 
+const paypalConfigurator = (donationAmount, donationDuration) => {
+  if (donationDuration === 'onetime') {
+    return { amount: donationAmount, duration: donationDuration };
+  }
+  return {
+    amount: donationAmount,
+    duration: donationDuration,
+    planId: paypalConfig[donationDuration]['' + donationAmount].planId
+  };
+};
+
 module.exports = {
   durationsConfig,
   amountsConfig,
@@ -81,5 +105,6 @@ module.exports = {
   donationOneTimeConfig,
   donationSubscriptionConfig,
   modalDefaultStateConfig,
-  paypalConfig
+  paypalConfig,
+  paypalConfigurator
 };
