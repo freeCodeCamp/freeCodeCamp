@@ -116,7 +116,6 @@ function LinkedList() {
 <section id='solution'>
 
 ```js
-// solution required
 function LinkedList() {
   var length = 0;
   var head = null;
@@ -202,6 +201,10 @@ function LinkedList() {
     }
 
     return current.element;
+  }
+
+  this.isEmpty = function() {
+    return length === 0;
   }
 }
 ```
