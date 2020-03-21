@@ -17,6 +17,7 @@ const propTypes = {
   isLinkedIn: PropTypes.bool,
   isTwitter: PropTypes.bool,
   isWebsite: PropTypes.bool,
+  joinDateString: PropTypes.string,
   linkedin: PropTypes.string,
   location: PropTypes.string,
   name: PropTypes.string,
@@ -60,6 +61,7 @@ function Camper({
   isGithub,
   isTwitter,
   isWebsite,
+  joinDateString,
   linkedin,
   twitter,
   website
@@ -110,6 +112,7 @@ function Camper({
         </p>
       )}
       {about && <p className='bio text-center'>{about}</p>}
+      {joinDateString && <p className='bio text-center'>{joinDateString}</p>}
       {yearsTopContributor.filter(Boolean).length > 0 && (
         <div>
           <br />
