@@ -38,7 +38,7 @@ tests:
     testString: assert((function(){var test = new LinkedList(); return (typeof test.elementAt === 'function')}()));
   - text: Your <code>elementAt</code> method should return the element found at a given index in linked list.
     testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten'); return test.elementAt(1) === 'dog'}()));
-  - text: Your <code>elementAt</code> method should return <code>undefined</code> if the given index is not found at a given index in linked list.
+  - text: Your <code>elementAt</code> method should return <code>undefined</code> if the given element is not found at a given index in linked list.
     testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten'); return test.elementAt(5) === undefined}()));
 
 ```
