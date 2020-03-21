@@ -22,16 +22,24 @@ Write an <code>isEmpty</code> method that checks if the linked list is empty, an
 
 ```yml
 tests:
-  - text: Your <code>LinkedList</code> class should have a <code>indexOf</code> method.
+  - text: Your <code>LinkedList</code> class should have an <code>isEmpty</code> method.
+    testString: assert((function(){var test = new LinkedList(); return (typeof test.isEmpty === 'function')}()));
+  - text: Your <code>isEmpty</code> method should return <code>false</code> when there is at least one element in linked list.
+    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten'); return test.isEmpty() === false}()));
+  - text: Your <code>isEmpty</code> method should return <code>true</code> when there are no elements in linked list.
+    testString: assert((function(){var test = new LinkedList(); return test.isEmpty() === true}()));
+  - text: Your <code>LinkedList</code> class should have an <code>indexOf</code> method.
     testString: assert((function(){var test = new LinkedList(); return (typeof test.indexOf === 'function')}()));
-  - text: Your <code>LinkedList</code> class should have a <code>elementAt</code> method.
+  - text: Your <code>indexOf</code> method should return the index of a given element found in linked list.
+    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten'); return test.indexOf('cat') === 0}()));
+  - text: Your <code>indexOf</code> method should return <code>-1</code> if the given element is not found in linked list
+    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten'); return test.indexOf('pony') === -1}()));
+  - text: Your <code>LinkedList</code> class should have an <code>elementAt</code> method.
     testString: assert((function(){var test = new LinkedList(); return (typeof test.elementAt === 'function')}()));
-  - text: Your <code>size</code> method should return the length of the linked list
-    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten'); return test.size() === 3}()));
-  - text: Your <code>indexOf</code> method should return the index of the given element.
-    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten'); return test.indexOf('kitten') === 2}()));
-  - text: Your <code>elementAt</code> method should return at element at a given index.
+  - text: Your <code>elementAt</code> method should return the element found at a given index in linked list.
     testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten'); return test.elementAt(1) === 'dog'}()));
+  - text: Your <code>elementAt</code> method should return <code>undefined</code> if the given element is not found at a given index in linked list.
+    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten'); return test.elementAt(5) === undefined}()));
 
 ```
 
@@ -108,7 +116,97 @@ function LinkedList() {
 <section id='solution'>
 
 ```js
-// solution required
+function LinkedList() {
+  var length = 0;
+  var head = null;
+
+  var Node = function(element){ // {1}
+    this.element = element;
+    this.next = null;
+  };
+
+  this.size = function() {
+    return length;
+  };
+
+  this.head = function(){
+    return head;
+  };
+
+  this.add = function(element){
+    var node = new Node(element);
+    if(head === null){
+        head = node;
+    } else {
+        var currentNode = head;
+
+        while(currentNode.next){
+            currentNode  = currentNode.next;
+        }
+
+        currentNode.next = node;
+    }
+
+    length++;
+  };
+
+  this.remove = function(element){
+    var currentNode = head;
+    var previousNode;
+    if(currentNode.element === element){
+        head = currentNode.next;
+    } else {
+        while(currentNode.element !== element) {
+            previousNode = currentNode;
+            currentNode = currentNode.next;
+        }
+
+        previousNode.next = currentNode.next;
+    }
+
+    length --;
+  };
+
+  this.indexOf = function(element) {
+    if (head === null) return -1
+
+    let current = head;
+    let index = 0;
+
+    while (current.element !== element && current.next !== null) {
+      current = current.next;
+      index++
+    }
+
+    if (current.element !== element && current.next === null) {
+      return -1
+    }
+
+    return index;
+  }
+
+  this.elementAt = function(index) {
+    if (head === null) return undefined;
+
+    let current = head;
+    let currentIndex = 0;
+
+    while (currentIndex !== index && current.next !== null) {
+      current = current.next;
+      currentIndex++
+    }
+
+    if (currentIndex !== index && current.next === null) {
+      return undefined;
+    }
+
+    return current.element;
+  }
+
+  this.isEmpty = function() {
+    return length === 0;
+  }
+}
 ```
 
 </section>
