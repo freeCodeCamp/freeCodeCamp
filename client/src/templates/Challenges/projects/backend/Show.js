@@ -15,8 +15,7 @@ import {
   initTests,
   updateBackendFormValues,
   updateChallengeMeta,
-  updateProjectFormValues,
-  backendNS
+  updateProjectFormValues
 } from '../../redux';
 import { getGuideUrl } from '../../utils';
 
@@ -29,15 +28,13 @@ import CompletionModal from '../../components/CompletionModal';
 import HelpModal from '../../components/HelpModal';
 import ProjectToolPanel from '../Tool-Panel';
 import ProjectForm from '../ProjectForm';
-import { Form } from '../../../../components/formHelpers';
 import Spacer from '../../../../components/helpers/Spacer';
 import { ChallengeNode } from '../../../../redux/propTypes';
 import { isSignedInSelector } from '../../../../redux';
 import Hotkeys from '../../components/Hotkeys';
 
-import { backend } from '../../../../../utils/challengeTypes';
-
 import '../../components/test-frame.css';
+import { backEndProject } from '../../../../../utils/challengeTypes';
 
 const propTypes = {
   challengeMounted: PropTypes.func.isRequired,
@@ -81,17 +78,6 @@ const mapDispatchToActions = {
   updateBackendFormValues,
   updateChallengeMeta,
   updateProjectFormValues
-};
-
-const formFields = ['solution'];
-const options = {
-  required: ['solution'],
-  types: {
-    solution: 'url'
-  },
-  placeholders: {
-    solution: 'Link to solution, ex: https://codepen.io/camperbot/full/oNvPqqo'
-  }
 };
 
 export class BackEnd extends Component {
@@ -175,15 +161,12 @@ export class BackEnd extends Component {
         challengeMeta: { introPath, nextChallengePath, prevChallengePath }
       },
       tests,
-      isSignedIn,
       executeChallenge,
       updateProjectFormValues
     } = this.props;
 
-    const buttonCopy = isSignedIn
-      ? 'Submit and go to my next challenge'
-      : "I've completed this challenge";
     const blockNameTitle = `${blockName} - ${title}`;
+    const isBackEndProject = challengeType === backEndProject;
 
     return (
       <Hotkeys
@@ -203,21 +186,12 @@ export class BackEnd extends Component {
                   description={description}
                   instructions={instructions}
                 />
-                {challengeType === backend ? (
-                  <Form
-                    buttonText={`${buttonCopy}`}
-                    formFields={formFields}
-                    id={backendNS}
-                    options={options}
-                    submit={this.handleSubmit}
-                  />
-                ) : (
-                  <ProjectForm
-                    isFrontEnd={false}
-                    onSubmit={executeChallenge}
-                    updateProjectForm={updateProjectFormValues}
-                  />
-                )}
+                <ProjectForm
+                  isBackEndProject={isBackEndProject}
+                  isFrontEnd={false}
+                  onSubmit={executeChallenge}
+                  updateProjectForm={updateProjectFormValues}
+                />
                 <ProjectToolPanel
                   guideUrl={getGuideUrl({ forumTopicId, title })}
                 />

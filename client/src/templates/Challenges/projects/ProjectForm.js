@@ -4,14 +4,15 @@ import PropTypes from 'prop-types';
 import { Form } from '../../../components/formHelpers';
 
 const propTypes = {
+  isBackEndProject: PropTypes.bool,
   isFrontEnd: PropTypes.bool,
   isSubmitting: PropTypes.bool,
   onSubmit: PropTypes.func.isRequired,
   updateProjectForm: PropTypes.func.isRequired
 };
 
-const frontEndFields = ['solution'];
-const backEndFields = ['solution', 'githubLink'];
+const challengeFields = ['solution'];
+const backEndProjectFields = ['solution', 'githubLink'];
 
 const options = {
   types: {
@@ -34,25 +35,24 @@ export class ProjectForm extends Component {
     this.props.onSubmit();
   }
   render() {
-    const { isSubmitting, isFrontEnd } = this.props;
+    const { isSubmitting, isFrontEnd, isBackEndProject } = this.props;
     const buttonCopy = isSubmitting
       ? 'Submit and go to my next challenge'
       : "I've completed this challenge";
     return (
       <Form
         buttonText={`${buttonCopy}`}
-        formFields={isFrontEnd ? frontEndFields : backEndFields}
+        formFields={isBackEndProject ? backEndProjectFields : challengeFields}
         id={isFrontEnd ? 'front-end-form' : 'back-end-form'}
         options={{
           ...options,
           placeholders: {
             solution:
-              'Link to solution, ex: ' +
+              'Link, ex: ' +
               (isFrontEnd
                 ? 'https://codepen.io/camperbot/full/oNvPqqo'
                 : 'https://camperbot.glitch.me'),
-            githubLink:
-              'Link to GitHub repo, ex: https://github.com/camperbot/hello'
+            githubLink: 'ex: https://github.com/camperbot/hello'
           }
         }}
         submit={this.handleSubmit}
