@@ -1,7 +1,7 @@
 import { Observable } from 'rx';
 import debug from 'debug';
 
-import { reportError } from '../middlewares/error-reporter';
+import { reportError } from '../middlewares/sentry-error-handler.js';
 import InMemoryCache from '../utils/in-memory-cache';
 
 const log = debug('fcc:boot:donate');

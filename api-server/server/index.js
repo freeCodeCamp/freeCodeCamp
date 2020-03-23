@@ -7,13 +7,25 @@ const loopback = require('loopback');
 const boot = require('loopback-boot');
 const expressState = require('express-state');
 const createDebugger = require('debug');
+const Sentry = require('@sentry/node');
 
+const { sentry } = require('../../config/secrets');
 const { setupPassport } = require('./component-passport');
 
 const log = createDebugger('fcc:server');
+
 // force logger to always output
 // this may be brittle
 log.enabled = true;
+
+if (sentry.dns === 'dsn_from_sentry_dashboard') {
+  log('Sentry reporting disabled unless DSN is provided.');
+} else {
+  Sentry.init({
+    dsn: sentry.dns
+  });
+  log('Sentry initialized');
+}
 
 Rx.config.longStackSupport = process.env.NODE_DEBUG !== 'production';
 const app = loopback();

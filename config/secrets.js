@@ -27,8 +27,7 @@ const {
   TWITTER_TOKEN,
   TWITTER_TOKEN_SECRET,
 
-  ROLLBAR_APP_ID,
-  ROLLBAR_CLIENT_ID,
+  SENTRY_DSN,
 
   STRIPE_PUBLIC_KEY,
   STRIPE_SECRET_KEY,
@@ -95,9 +94,8 @@ module.exports = {
     passReqToCallback: true
   },
 
-  rollbar: {
-    appId: ROLLBAR_APP_ID,
-    clientId: ROLLBAR_CLIENT_ID
+  sentry: {
+    dns: SENTRY_DSN
   },
 
   stripe: {
