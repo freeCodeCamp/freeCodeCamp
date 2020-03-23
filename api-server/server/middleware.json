@@ -1,5 +1,6 @@
 {
   "initial:before": {
+    "./middlewares/sentry-request-handler": {},
     "loopback#favicon": {
       "params": "$!../public/favicon.ico"
     },
@@ -59,7 +60,7 @@
   },
   "files": {},
   "final:after": {
-    "./middlewares/error-reporter": {},
+    "./middlewares/sentry-error-handler": {},
     "./middlewares/error-handlers": {},
     "strong-error-handler": {
       "params": {
