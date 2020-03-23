@@ -44,8 +44,8 @@ tests:
 
 ```js
 
-// add code above this line
 
+// add code above this line
 stringFunctions.uppercaseString("hello");
 stringFunctions.lowercaseString("WORLD!");
 ```
