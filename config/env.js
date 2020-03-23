@@ -21,7 +21,8 @@ const {
   SERVICEBOT_ID: servicebotId,
   ALGOLIA_APP_ID: algoliaAppId,
   ALGOLIA_API_KEY: algoliaAPIKey,
-  PAYPAL_CLIENT_ID: paypalClientId
+  PAYPAL_CLIENT_ID: paypalClientId,
+  DEPLOYMENT_ENV: deploymentEnv
 } = process.env;
 
 const locations = {
@@ -35,6 +36,7 @@ const locations = {
 
 module.exports = Object.assign(locations, {
   locale,
+  deploymentEnv,
   stripePublicKey:
     !stripePublicKey || stripePublicKey === 'pk_from_stripe_dashboard'
       ? null
