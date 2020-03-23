@@ -45,10 +45,10 @@ const paypalConfigTypes = {
         planId: 'P-1L11422374370240ULZKX3PA'
       },
       '3500': {
-        planId: 'P-1L11422374370240ULZKX3PA'
+        planId: 'P-81U00703FF076883HLZ2PWMI'
       },
       '25000': {
-        planId: 'P-1L11422374370240ULZKX3PA'
+        planId: 'P-7M045671FN915794KLZ2PW6I'
       }
     },
     year: {
