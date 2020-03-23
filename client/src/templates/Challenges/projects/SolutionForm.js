@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 import { Form } from '../../../components/formHelpers';
 
 const propTypes = {
-  isBackEndProject: PropTypes.bool,
   isFrontEnd: PropTypes.bool,
+  isProject: PropTypes.bool,
   isSubmitting: PropTypes.bool,
   onSubmit: PropTypes.func.isRequired,
-  updateProjectForm: PropTypes.func.isRequired
+  updateSolutionForm: PropTypes.func.isRequired
 };
 
 const challengeFields = ['solution'];
@@ -22,27 +22,29 @@ const options = {
   required: ['solution']
 };
 
-export class ProjectForm extends Component {
+export class SolutionForm extends Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   componentDidMount() {
-    this.props.updateProjectForm({});
+    this.props.updateSolutionForm({});
   }
   handleSubmit(values) {
-    this.props.updateProjectForm(values);
+    this.props.updateSolutionForm(values);
     this.props.onSubmit();
   }
   render() {
-    const { isSubmitting, isFrontEnd, isBackEndProject } = this.props;
+    const { isSubmitting, isFrontEnd, isProject } = this.props;
     const buttonCopy = isSubmitting
       ? 'Submit and go to my next challenge'
       : "I've completed this challenge";
     return (
       <Form
         buttonText={`${buttonCopy}`}
-        formFields={isBackEndProject ? backEndProjectFields : challengeFields}
+        formFields={
+          isProject && !isFrontEnd ? backEndProjectFields : challengeFields
+        }
         id={isFrontEnd ? 'front-end-form' : 'back-end-form'}
         options={{
           ...options,
@@ -61,6 +63,6 @@ export class ProjectForm extends Component {
   }
 }
 
-ProjectForm.propTypes = propTypes;
+SolutionForm.propTypes = propTypes;
 
-export default ProjectForm;
+export default SolutionForm;

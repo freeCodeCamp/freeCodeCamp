@@ -15,7 +15,7 @@ import {
   initTests,
   updateBackendFormValues,
   updateChallengeMeta,
-  updateProjectFormValues
+  updateSolutionFormValues
 } from '../../redux';
 import { getGuideUrl } from '../../utils';
 
@@ -27,7 +27,7 @@ import Output from '../../components/Output';
 import CompletionModal from '../../components/CompletionModal';
 import HelpModal from '../../components/HelpModal';
 import ProjectToolPanel from '../Tool-Panel';
-import ProjectForm from '../ProjectForm';
+import SolutionForm from '../SolutionForm';
 import Spacer from '../../../../components/helpers/Spacer';
 import { ChallengeNode } from '../../../../redux/propTypes';
 import { isSignedInSelector } from '../../../../redux';
@@ -56,7 +56,7 @@ const propTypes = {
   title: PropTypes.string,
   updateBackendFormValues: PropTypes.func.isRequired,
   updateChallengeMeta: PropTypes.func.isRequired,
-  updateProjectFormValues: PropTypes.func.isRequired
+  updateSolutionFormValues: PropTypes.func.isRequired
 };
 
 const mapStateToProps = createSelector(
@@ -77,7 +77,7 @@ const mapDispatchToActions = {
   initTests,
   updateBackendFormValues,
   updateChallengeMeta,
-  updateProjectFormValues
+  updateSolutionFormValues
 };
 
 export class BackEnd extends Component {
@@ -162,7 +162,7 @@ export class BackEnd extends Component {
       },
       tests,
       executeChallenge,
-      updateProjectFormValues
+      updateSolutionFormValues
     } = this.props;
 
     const blockNameTitle = `${blockName} - ${title}`;
@@ -186,11 +186,11 @@ export class BackEnd extends Component {
                   description={description}
                   instructions={instructions}
                 />
-                <ProjectForm
-                  isBackEndProject={isBackEndProject}
+                <SolutionForm
                   isFrontEnd={false}
+                  isProject={isBackEndProject}
                   onSubmit={executeChallenge}
-                  updateProjectForm={updateProjectFormValues}
+                  updateSolutionForm={updateSolutionFormValues}
                 />
                 <ProjectToolPanel
                   guideUrl={getGuideUrl({ forumTopicId, title })}
