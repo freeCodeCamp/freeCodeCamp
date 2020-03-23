@@ -85,7 +85,6 @@ export class BackEnd extends Component {
     super(props);
     this.state = {};
     this.updateDimensions = this.updateDimensions.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -138,12 +137,6 @@ export class BackEnd extends Component {
     challengeMounted(challengeMeta.id);
   }
 
-  handleSubmit(values) {
-    const { updateBackendFormValues, executeChallenge } = this.props;
-    updateBackendFormValues(values);
-    executeChallenge();
-  }
-
   render() {
     const {
       data: {
@@ -162,7 +155,8 @@ export class BackEnd extends Component {
       },
       tests,
       executeChallenge,
-      updateSolutionFormValues
+      updateSolutionFormValues,
+      updateBackendFormValues
     } = this.props;
 
     const blockNameTitle = `${blockName} - ${title}`;
@@ -190,7 +184,11 @@ export class BackEnd extends Component {
                   isFrontEnd={false}
                   isProject={isBackEndProject}
                   onSubmit={executeChallenge}
-                  updateSolutionForm={updateSolutionFormValues}
+                  updateSolutionForm={values =>
+                    isBackEndProject
+                      ? updateSolutionFormValues(values)
+                      : updateBackendFormValues(values)
+                  }
                 />
                 <ProjectToolPanel
                   guideUrl={getGuideUrl({ forumTopicId, title })}
