@@ -5,9 +5,12 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { PayPalButton } from 'react-paypal-button-v2';
-import { paypalClientId } from '../../../config/env.json';
+import { paypalClientId, deploymentEnv } from '../../../config/env.json';
 import { verifySubscriptionPaypal } from '../../utils/ajax';
-import { paypalConfigurator } from '../../../../config/donation-settings';
+import {
+  paypalConfigurator,
+  paypalConfigTypes
+} from '../../../../config/donation-settings';
 import { signInLoadingSelector, userSelector } from '../../redux';
 
 export class PaypalButton extends Component {
@@ -23,7 +26,8 @@ export class PaypalButton extends Component {
 
     const configurationObj = paypalConfigurator(
       donationAmount,
-      donationDuration
+      donationDuration,
+      paypalConfigTypes[deploymentEnv || 'staging']
     );
     if (state === configurationObj) {
       return null;
