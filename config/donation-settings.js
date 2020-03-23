@@ -89,7 +89,7 @@ const paypalConfigTypes = {
   }
 };
 
-const paypalConfigurator = (paypalConfig, donationAmount, donationDuration) => {
+const paypalConfigurator = (donationAmount, donationDuration, paypalConfig) => {
   if (donationDuration === 'onetime') {
     return { amount: donationAmount, duration: donationDuration };
   }
