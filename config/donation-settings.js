@@ -1,6 +1,3 @@
-const path = require('path');
-require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
-
 // Configuration for client side
 const durationsConfig = {
   year: 'yearly',
@@ -48,10 +45,10 @@ const paypalConfigTypes = {
         planId: 'P-1L11422374370240ULZKX3PA'
       },
       '3500': {
-        planId: 'P-1L11422374370240ULZKX3PA'
+        planId: 'P-81U00703FF076883HLZ2PWMI'
       },
       '25000': {
-        planId: 'P-1L11422374370240ULZKX3PA'
+        planId: 'P-7M045671FN915794KLZ2PW6I'
       }
     },
     year: {
@@ -92,12 +89,7 @@ const paypalConfigTypes = {
   }
 };
 
-const paypalConfig =
-  process.env.DEPLOYMENT_ENV && process.env.DEPLOYMENT_ENV === 'live'
-    ? paypalConfigTypes['live']
-    : paypalConfigTypes['staging'];
-
-const paypalConfigurator = (donationAmount, donationDuration) => {
+const paypalConfigurator = (donationAmount, donationDuration, paypalConfig) => {
   if (donationDuration === 'onetime') {
     return { amount: donationAmount, duration: donationDuration };
   }
@@ -117,6 +109,6 @@ module.exports = {
   donationOneTimeConfig,
   donationSubscriptionConfig,
   modalDefaultStateConfig,
-  paypalConfig,
+  paypalConfigTypes,
   paypalConfigurator
 };
