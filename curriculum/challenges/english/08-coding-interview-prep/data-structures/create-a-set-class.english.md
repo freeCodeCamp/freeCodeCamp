@@ -104,34 +104,42 @@ class Set {
 
 ```js
 class Set {
-  constructor() {
-    this.collection = [];
-  }
-  has(element) {
-    return this.collection.indexOf(element) !== -1;
-  }
-  values() {
-    return this.collection;
-  }
-  add(element) {
-    if (!this.has(element)) {
-      this.collection.push(element);
-      return true;
-    } else {
-      return false;
+    constructor() {
+        this.dictionary = {};
+        this.length = 0;
     }
-  }
-  remove(element) {
-    if (this.has(element)) {
-      let i = this.collection.indexOf(element);
-      this.collection.splice(i, 1);
-      return true;
+
+    has(element) {
+        return this.dictionary[element] !== undefined;
     }
-    return false;
-  }
-  size() {
-    return this.collection.length;
-  }
+
+    values() {
+        return Object.keys(this.dictionary);
+    }
+
+    add(element) {
+        if (!this.has(element)) {
+            this.dictionary[element] = true;
+            this.length++;
+            return true;
+        }
+
+        return false;
+    }
+
+    remove(element) {
+        if (this.has(element)) {
+            delete this.dictionary[element];
+            this.length--;
+            return true;
+        }
+
+        return false;
+    }
+
+    size() {
+        return this.length;
+    }
 }
 ```
 
