@@ -7,9 +7,11 @@
   margin: 0;
   padding: 0;
 }
+
 .certification-namespace h1 {
   margin: 12px 0;
 }
+
 .certification-namespace.container {
   max-width: 1500px;
   width: 100%;
@@ -77,11 +79,21 @@
   position: relative;
 }
 
+.certification-namespace header > .right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  height: 100%;
+  padding-right: 40px;
+  color: white;
+}
+
 .certification-namespace .logo {
   display: flex;
   align-items: center;
   height: 140px;
-  margin-left: 100px;
+  margin-left: 60px;
 }
 
 .certification-namespace .logo svg {
@@ -90,16 +102,23 @@
   max-width: 500px;
 }
 
-.certification-namespace .issue-date {
-  line-height: 140px;
-  font-size: 20px;
-  text-align: right;
-  margin-right: 100px;
+.certification-namespace .right > .issue-date {
+  margin-bottom: 2px;
+}
+
+.certification-namespace .right > .issue-date > strong {
   color: var(--gray-00);
 }
 
-.certification-namespace .issue-date strong {
-  color: var(--gray-00);
+.certification-namespace .right > .share > span {
+  margin-right: 10px;
+}
+
+.certification-namespace .right > .share > a {
+  background: #1a91da;
+  padding: 2px 3px;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .certification-namespace .information {
@@ -207,18 +226,11 @@
     margin-top: 20px;
   }
 
-  .certification-namespace .issue-date {
-    margin-top: 10px;
-    margin-right: 0;
-    text-align: center;
-    line-height: 0px;
-    word-wrap: break-word;
-  }
-
-  .certification-namespace .issue-date strong {
-    display: block;
-    margin-top: 15px;
-    line-height: 25px;
+  .certification-namespace header > .right {
+    align-items: center;
+    justify-content: center;
+    height: unset;
+    padding: 0;
   }
 
   .certification-namespace .information {
