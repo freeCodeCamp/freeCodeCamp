@@ -55,9 +55,9 @@ function printManyTimes(str) {
 
   // Only change code below this line
 
-  var sentence = str + " is cool!";
+  var SENTENCE = str + " is cool!";
   for (var i = 0; i < str.length; i+=2) {
-    console.log(sentence);
+    console.log(SENTENCE);
   }
 
   // Only change code above this line
