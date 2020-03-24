@@ -107,7 +107,7 @@ function Intro({
               <h2 className='medium-heading'>Spotify</h2>
             </div>
           </Col>
-          <Col sm={10} smOffset={1} xs={12}>
+          <Col md={6} mdOffset={3} sm={8} smOffset={2} xs={12}>
             <button
               className={'btn-cta-big signup-btn btn-cta center-block'}
               onClick={() => {
