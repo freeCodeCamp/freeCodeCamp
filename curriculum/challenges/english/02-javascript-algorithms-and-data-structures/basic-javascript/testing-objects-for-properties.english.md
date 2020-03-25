@@ -24,7 +24,7 @@ myObj.hasOwnProperty("middle"); // false
 
 ## Instructions
 <section id='instructions'>
-Modify the function <code>checkObj</code> to test <code>myObj</code> for <code>checkProp</code>. If the property is found, return that property's value. If not, return <code>"Not Found"</code>.
+Modify the function <code>checkObj</code> to test if an object passed to the function (<code>obj</code>) contains a specific property (<code>checkProp</code>). If the property is found, return that property's value. If not, return <code>"Not Found"</code>.
 </section>
 
 ## Tests
