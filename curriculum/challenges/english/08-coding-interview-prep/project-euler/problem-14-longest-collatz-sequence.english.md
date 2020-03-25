@@ -81,33 +81,28 @@ longestCollatzSequence(14);
 
 ```js
 function longestCollatzSequence(limit) {
-  let longestSequenceLength = 0;
-  let startingNum = 0;
-
-  function sequenceLength(num) {
-    let length = 1;
-
-    while (num >= 1) {
-      if (num === 1) {        break;
-      } else if (num % 2 === 0) {
-        num = num / 2;
-        length++;
-      } else {
-        num = num * 3 + 1;
-        length++;
-      }
-    }
-    return length;
-  }
-
-  for (let i = 2; i < limit; i++) {
-    let currSequenceLength = sequenceLength(i);
-    if (currSequenceLength > longestSequenceLength) {
-      longestSequenceLength = currSequenceLength;
-      startingNum = i;
+  let longest = 1;
+  let maxLength = 1;
+  for (let i = Math.floor(limit / 2); i < limit; i++) {
+    let len = colLen(i);
+    if (len > maxLength) {
+      longest = i;
+      maxLength = len;
     }
   }
-  return startingNum;
+  return longest;
+}
+
+const knownSequence = { '1': 1 };
+
+function colLen(n) {
+  if (knownSequence[n]) {
+    return knownSequence[n];
+  } else {
+    const len = n % 2 === 0 ? colLen(n / 2) + 1 : colLen((3 * n + 1) / 2) + 2;
+    knownSequence[n] = len;
+    return len;
+  }
 }
 ```
 
