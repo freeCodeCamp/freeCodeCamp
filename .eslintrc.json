@@ -1,7 +1,12 @@
 {
   "root": true,
-  "extends": ["@freecodecamp/eslint-config", "prettier", "prettier/react"],
-  "plugins": ["prettier", "react-hooks"],
+  "extends": [
+    "@freecodecamp/eslint-config",
+    "prettier",
+    "prettier/react",
+    "plugin:jsx-a11y/strict"
+  ],
+  "plugins": ["prettier", "react-hooks", "jsx-a11y"],
   "rules": {
     "max-len": [
       "error",
