@@ -55,7 +55,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-var myStr; // Change this line
+var myStr; // Only change this line
 
 ```
 
