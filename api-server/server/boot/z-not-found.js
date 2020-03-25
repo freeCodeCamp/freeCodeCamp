@@ -9,15 +9,17 @@ export default function fourOhFour(app) {
     const { path } = req;
 
     if (type === 'html') {
-      req.flash('danger', `We couldn't find path ${path}`);
+      req.flash('danger', `API endpoint is not defined for '${path}'.`);
       return res.redirectWithFlash(`${homeLocation}/404`);
     }
 
     if (type === 'json') {
-      return res.status('404').json({ error: 'path not found' });
+      return res
+        .status('404')
+        .json({ error: 'API endpoint is not defined for this request' });
     }
 
     res.setHeader('Content-Type', 'text/plain');
-    return res.send('404 path not found');
+    return res.send('404 - API endpoint is not defined for this request');
   });
 }
