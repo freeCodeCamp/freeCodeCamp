@@ -11,12 +11,20 @@ forumTopicId: 18341
 <dfn>Bracket notation</dfn> is a way to get a character at a specific <code>index</code> within a string.
 Most modern programming languages, like JavaScript, don't start counting at 1 like humans do. They start at 0. This is referred to as <dfn>Zero-based</dfn> indexing.
 For example, the character at index 0 in the word "Charles" is "C". So if <code>var firstName = "Charles"</code>, you can get the value of the first letter of the string by using <code>firstName[0]</code>.
+
+Example:
+
+```js
+var firstName = "Charles";
+var firstLetter = firstName[0]; // firstLetter is "C"
+```
+
 </section>
 
 ## Instructions
 <section id='instructions'>
 Use bracket notation to find the first character in the <code>lastName</code> variable and assign it to <code>firstLetterOfLastName</code>.
-<strong>Hint</strong><br>Try looking at the <code>firstLetterOfFirstName</code> variable declaration if you get stuck.
+<strong>Hint: </strong> Try looking at the example above if you get stuck.
 </section>
 
 ## Tests
@@ -39,19 +47,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Example
-var firstLetterOfFirstName = "";
-var firstName = "Ada";
-
-firstLetterOfFirstName = firstName[0];
-
 // Setup
 var firstLetterOfLastName = "";
 var lastName = "Lovelace";
 
 // Only change code below this line
-firstLetterOfLastName = lastName;
-
+firstLetterOfLastName = lastName; // Change this line
 
 ```
 

@@ -59,17 +59,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Example
-function ourTrueOrFalse(isItTrue) {
-  if (isItTrue) {
-    return "Yes, it's true";
-  }
-  return "No, it's false";
-}
-
-// Setup
 function trueOrFalse(wasThatTrue) {
-
   // Only change code below this line
 
 
@@ -77,8 +67,6 @@ function trueOrFalse(wasThatTrue) {
   // Only change code above this line
 
 }
-
-trueOrFalse(true);
 ```
 
 </div>

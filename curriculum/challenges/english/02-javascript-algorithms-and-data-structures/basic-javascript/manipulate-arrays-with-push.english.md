@@ -11,10 +11,16 @@ forumTopicId: 18237
 An easy way to append data to the end of an array is via the <code>push()</code> function.
 <code>.push()</code> takes one or more <dfn>parameters</dfn> and "pushes" them onto the end of the array.
 
+Examples:
+
 ```js
-var arr = [1,2,3];
-arr.push(4);
-// arr is now [1,2,3,4]
+var arr1 = [1,2,3];
+arr1.push(4);
+// arr1 is now [1,2,3,4]
+
+var arr2 = ["Stimpson", "J", "cat"];
+arr2.push(["happy", "joy"]);
+// arr2 now equals ["Stimpson", "J", "cat", ["happy", "joy"]]
 ```
 
 </section>
@@ -42,11 +48,6 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Example
-var ourArray = ["Stimpson", "J", "cat"];
-ourArray.push(["happy", "joy"]);
-// ourArray now equals ["Stimpson", "J", "cat", ["happy", "joy"]]
-
 // Setup
 var myArray = [["John", 23], ["cat", 2]];
 

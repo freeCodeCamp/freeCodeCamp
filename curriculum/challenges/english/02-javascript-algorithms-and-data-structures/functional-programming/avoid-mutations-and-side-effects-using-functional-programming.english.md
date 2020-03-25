@@ -25,10 +25,10 @@ Fill in the code for the function <code>incrementer</code> so it returns the val
 
 ```yml
 tests:
-  - text: Your function <code>incrementer</code> should not change the value of <code>fixedValue</code>.
+  - text: Your function <code>incrementer</code> should not change the value of <code>fixedValue</code> (which is <code>4</code>).
     testString: assert(fixedValue === 4);
   - text: Your <code>incrementer</code> function should return a value that is one larger than the <code>fixedValue</code> value.
-    testString: assert(newValue === 5);
+    testString: const newValue = incrementer(); assert(newValue === 5);
 
 ```
 
@@ -49,9 +49,6 @@ function incrementer () {
 
   // Only change code above this line
 }
-
-var newValue = incrementer(); // Should equal 5
-console.log(fixedValue); // Should print 4
 ```
 
 </div>
@@ -69,8 +66,6 @@ var fixedValue = 4
 function incrementer() {
   return fixedValue + 1
 }
-
-var newValue = incrementer(); // Should equal 5
 ```
 
 </section>

@@ -8,7 +8,13 @@ forumTopicId: 18247
 
 ## Description
 <section id='description'>
-You can also nest arrays within other arrays, like this: <code>[["Bulls", 23], ["White Sox", 45]]</code>. This is also called a <dfn>multi-dimensional array<dfn>.
+You can also nest arrays within other arrays, like below:
+
+```js
+[["Bulls", 23], ["White Sox", 45]]
+```
+
+This is also called a <dfn>multi-dimensional array<dfn>.
 </section>
 
 ## Instructions
@@ -34,9 +40,6 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Example
-var ourArray = [["the universe", 42], ["everything", 101010]];
-
 // Only change code below this line
 var myArray = [];
 
