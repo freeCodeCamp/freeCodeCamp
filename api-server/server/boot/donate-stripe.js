@@ -4,21 +4,15 @@ import crypto from 'crypto';
 import { isEmail, isNumeric } from 'validator';
 
 import {
-  getAsyncPaypalToken,
-  verifyWebHook,
-  updateUser,
-  verifyWebHookType
-} from '../utils/donation';
-import {
   durationKeysConfig,
   donationOneTimeConfig,
   donationSubscriptionConfig
 } from '../../../config/donation-settings';
 import keys from '../../../config/secrets';
 
-const log = debug('fcc:boot:donate');
+const log = debug('fcc:boot:donate-stripe');
 
-export default function donateBoot(app, done) {
+export default function donateStripe(app, done) {
   let stripe = false;
   const { User } = app.models;
   const api = app.loopback.Router();
@@ -106,7 +100,7 @@ export default function donateBoot(app, done) {
     });
   }
 
-  function createStripeDonation(req, res) {
+  function apiCreateStripeDonation(req, res) {
     const { user, body } = req;
 
     const {
@@ -121,14 +115,14 @@ export default function donateBoot(app, done) {
       });
     }
 
-    const fccUser = user
+    const currentUser = user
       ? Promise.resolve(user)
       : new Promise((resolve, reject) =>
           User.findOrCreate(
             { where: { email } },
             { email },
             (err, instance, isNew) => {
-              log('createing a new donating user instance: ', isNew);
+              log('creating a new donating user instance: ', isNew);
               if (err) {
                 return reject(err);
               }
@@ -137,7 +131,7 @@ export default function donateBoot(app, done) {
           )
         );
 
-    let donatingUser = {};
+    let donationUser = {};
     let donation = {
       email,
       amount,
@@ -147,7 +141,7 @@ export default function donateBoot(app, done) {
     };
 
     const createCustomer = user => {
-      donatingUser = user;
+      donationUser = user;
       return stripe.customers.create({
         email,
         card: id
@@ -178,7 +172,7 @@ export default function donateBoot(app, done) {
     };
 
     const createAsyncUserDonation = () => {
-      donatingUser
+      donationUser
         .createDonation(donation)
         .toPromise()
         .catch(err => {
@@ -186,7 +180,7 @@ export default function donateBoot(app, done) {
         });
     };
 
-    return Promise.resolve(fccUser)
+    return Promise.resolve(currentUser)
       .then(nonDonatingUser => {
         const { isDonating } = nonDonatingUser;
         if (isDonating && duration !== 'onetime') {
@@ -262,73 +256,26 @@ export default function donateBoot(app, done) {
       );
   }
 
-  function addDonation(req, res) {
-    const { user, body } = req;
-
-    if (!user || !body) {
-      return res
-        .status(500)
-        .send({ error: 'User must be signed in for this request.' });
-    }
-    return Promise.resolve(req)
-      .then(
-        user.updateAttributes({
-          isDonating: true
-        })
-      )
-      .then(() => res.status(200).json({ isDonating: true }))
-      .catch(err => {
-        log(err.message);
-        return res.status(500).send({
-          type: 'danger',
-          message: 'Something went wrong.'
-        });
-      });
-  }
-
-  function updatePaypal(req, res) {
-    const { headers, body } = req;
-    return Promise.resolve(req)
-      .then(verifyWebHookType)
-      .then(getAsyncPaypalToken)
-      .then(token => verifyWebHook(headers, body, token, keys.paypal.webhookId))
-      .then(hookBody => updateUser(hookBody, app))
-      .catch(err => {
-        // Todo: This probably need to be thrown and caught in error handler
-        log(err.message);
-      })
-      .finally(() => res.status(200).json({ message: 'received paypal hook' }));
-  }
-
   const stripeKey = keys.stripe.public;
   const secKey = keys.stripe.secret;
-  const paypalKey = keys.paypal.client;
-  const paypalSec = keys.paypal.secret;
   const hmacKey = keys.servicebot.hmacKey;
   const stripeSecretInvalid = !secKey || secKey === 'sk_from_stripe_dashboard';
   const stripPublicInvalid =
     !stripeKey || stripeKey === 'pk_from_stripe_dashboard';
 
-  const paypalSecretInvalid =
-    !paypalKey || paypalKey === 'id_from_paypal_dashboard';
-  const paypalPublicInvalid =
-    !paypalSec || paypalSec === 'secret_from_paypal_dashboard';
   const hmacKeyInvalid =
     !hmacKey || hmacKey === 'secret_key_from_servicebot_dashboard';
-  const paypalInvalid = paypalPublicInvalid || paypalSecretInvalid;
   const stripeInvalid = stripeSecretInvalid || stripPublicInvalid;
 
-  if (stripeInvalid || paypalInvalid || hmacKeyInvalid) {
+  if (stripeInvalid || hmacKeyInvalid) {
     if (process.env.FREECODECAMP_NODE_ENV === 'production') {
       throw new Error('Donation API keys are required to boot the server!');
     }
     log('Donation disabled in development unless ALL test keys are provided');
     done();
   } else {
-    api.post('/charge-stripe', createStripeDonation);
+    api.post('/charge-stripe', apiCreateStripeDonation);
     api.post('/create-hmac-hash', createHmacHash);
-    api.post('/add-donation', addDonation);
-    hooks.post('/update-paypal', updatePaypal);
     donateRouter.use('/donate', api);
     donateRouter.use('/hooks', hooks);
     app.use(donateRouter);
