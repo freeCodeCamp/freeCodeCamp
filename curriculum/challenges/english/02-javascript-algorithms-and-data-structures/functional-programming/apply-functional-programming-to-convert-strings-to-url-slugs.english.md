@@ -58,8 +58,6 @@ function urlSlug(title) {
 
 }
 // Only change code above this line
-
-var winterComing = urlSlug(globalTitle); // Should be "winter-is-coming"
 ```
 
 </div>

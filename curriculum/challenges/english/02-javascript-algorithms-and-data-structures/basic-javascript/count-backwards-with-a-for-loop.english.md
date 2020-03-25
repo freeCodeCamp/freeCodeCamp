@@ -14,7 +14,7 @@ We'll start at <code>i = 10</code> and loop while <code>i &#62; 0</code>. We'll 
 
 ```js
 var ourArray = [];
-for (var i=10; i > 0; i-=2) {
+for (var i = 10; i > 0; i -= 2) {
   ourArray.push(i);
 }
 ```
@@ -50,13 +50,6 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Example
-var ourArray = [];
-
-for (var i = 10; i > 0; i -= 2) {
-  ourArray.push(i);
-}
-
 // Setup
 var myArray = [];
 

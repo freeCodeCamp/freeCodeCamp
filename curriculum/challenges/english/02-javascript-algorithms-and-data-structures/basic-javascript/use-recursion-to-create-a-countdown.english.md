@@ -72,7 +72,6 @@ function countdown(n){
   return;
 }
 // Only change code above this line
-console.log(countdown(5)); // [5, 4, 3, 2, 1]
 ```
 
 </div>

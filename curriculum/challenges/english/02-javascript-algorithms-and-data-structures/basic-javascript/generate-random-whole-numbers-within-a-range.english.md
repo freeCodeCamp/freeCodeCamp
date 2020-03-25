@@ -43,23 +43,11 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Example
-function ourRandomRange(ourMin, ourMax) {
-
-  return Math.floor(Math.random() * (ourMax - ourMin + 1)) + ourMin;
-}
-
-ourRandomRange(1, 9);
-
-// Only change code below this line
-
 function randomRange(myMin, myMax) {
-
-  return 0; // Change this line
-
+  // Only change code below this line
+  return 0;
+  // Only change code above this line
 }
-
-var myRandom = randomRange(5, 15);
 ```
 
 </div>

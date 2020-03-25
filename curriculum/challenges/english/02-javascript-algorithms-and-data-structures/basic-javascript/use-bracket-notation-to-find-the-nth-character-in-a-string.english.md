@@ -10,12 +10,20 @@ forumTopicId: 18343
 <section id='description'>
 You can also use <dfn>bracket notation</dfn> to get the character at other positions within a string.
 Remember that computers start counting at <code>0</code>, so the first character is actually the zeroth character.
+
+Example:
+
+```js
+var firstName = "Ada";
+var secondLetterOfFirstName = firstName[1]; // secondLetterOfFirstName is "d"
+```
+
 </section>
 
 ## Instructions
 <section id='instructions'>
 Let's try to set <code>thirdLetterOfLastName</code> to equal the third letter of the <code>lastName</code> variable using bracket notation.
-<strong>Hint</strong><br>Try looking at the <code>secondLetterOfFirstName</code> variable declaration if you get stuck.
+<strong>Hint: </strong> Try looking at the example above if you get stuck.
 </section>
 
 ## Tests
@@ -38,15 +46,11 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Example
-var firstName = "Ada";
-var secondLetterOfFirstName = firstName[1];
-
 // Setup
 var lastName = "Lovelace";
 
 // Only change code below this line
-var thirdLetterOfLastName = lastName;
+var thirdLetterOfLastName = lastName; // Change this line
 
 
 ```
