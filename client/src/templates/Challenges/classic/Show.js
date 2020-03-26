@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { bindActionCreators } from 'redux';
 import { createStructuredSelector } from 'reselect';
 import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
@@ -35,7 +34,8 @@ import {
   challengeMounted,
   consoleOutputSelector,
   executeChallenge,
-  cancelTests
+  cancelTests,
+  saveEditorContent
 } from '../redux';
 
 import './classic.css';
@@ -47,19 +47,16 @@ const mapStateToProps = createStructuredSelector({
   output: consoleOutputSelector
 });
 
-const mapDispatchToProps = dispatch =>
-  bindActionCreators(
-    {
-      createFiles,
-      initConsole,
-      initTests,
-      updateChallengeMeta,
-      challengeMounted,
-      executeChallenge,
-      cancelTests
-    },
-    dispatch
-  );
+const mapDispatchToProps = {
+  createFiles,
+  initConsole,
+  initTests,
+  updateChallengeMeta,
+  challengeMounted,
+  executeChallenge,
+  cancelTests,
+  saveEditorContent
+};
 
 const propTypes = {
   cancelTests: PropTypes.func.isRequired,
@@ -83,6 +80,7 @@ const propTypes = {
       prevChallengePath: PropTypes.string
     })
   }),
+  saveEditorContent: PropTypes.func.isRequired,
   tests: PropTypes.arrayOf(
     PropTypes.shape({
       text: PropTypes.string,
@@ -265,7 +263,8 @@ class ShowClassic extends Component {
       executeChallenge,
       pageContext: {
         challengeMeta: { introPath, nextChallengePath, prevChallengePath }
-      }
+      },
+      saveEditorContent
     } = this.props;
     return (
       <Hotkeys
@@ -275,6 +274,7 @@ class ShowClassic extends Component {
         introPath={introPath}
         nextChallengePath={nextChallengePath}
         prevChallengePath={prevChallengePath}
+        saveEditorContent={saveEditorContent}
       >
         <LearnLayout>
           <Helmet

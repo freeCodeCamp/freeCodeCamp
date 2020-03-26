@@ -30,7 +30,11 @@ const keyMap = {
   },
   FOCUS_EDITOR: { name: 'Focus editor', sequence: 'e' },
   NAVIGATE_PREV: { name: 'Previous challenge', sequence: 'p' },
-  NAVIGATE_NEXT: { name: 'Next challenge', sequence: 'n' }
+  NAVIGATE_NEXT: { name: 'Next challenge', sequence: 'n' },
+  SAVE_EDITOR_CONTENT: {
+    name: 'Save code',
+    sequences: ['Ctrl+s', 'Command+s']
+  }
 };
 
 const globalKeyMap = {
@@ -53,6 +57,7 @@ const propTypes = {
   introPath: PropTypes.string,
   nextChallengePath: PropTypes.string,
   prevChallengePath: PropTypes.string,
+  saveEditorContent: PropTypes.func.isRequired,
   setEditorFocusability: PropTypes.func.isRequired
 };
 
@@ -92,7 +97,8 @@ class Hotkeys extends Component {
           <table>
             <thead>
               <tr>
-                <th>Action</th> <th>Shortcut</th>
+                <th>Action</th>
+                <th>Shortcut</th>
               </tr>
             </thead>
 
@@ -140,7 +146,8 @@ class Hotkeys extends Component {
       innerRef,
       nextChallengePath,
       prevChallengePath,
-      setEditorFocusability
+      setEditorFocusability,
+      saveEditorContent
     } = this.props;
 
     const globalHandlers = {
@@ -170,6 +177,9 @@ class Hotkeys extends Component {
       NAVIGATE_NEXT: () => {
         if (!canFocusEditor)
           navigate(introPath ? introPath : nextChallengePath);
+      },
+      SAVE_EDITOR_CONTENT: () => {
+        if (saveEditorContent) saveEditorContent();
       }
     };
 
