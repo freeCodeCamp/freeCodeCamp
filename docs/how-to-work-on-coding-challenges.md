@@ -9,17 +9,17 @@ Our goal is to develop a fun and clear interactive learning experience.
 
 Designing interactive coding challenges is difficult. It would be much easier to write a lengthy explanation or to create a video tutorial, and there's a place for those on Medium and YouTube. However, for our core curriculum, we're sticking with what works best for most people - a fully interactive, video game-like experience.
 
-We want campers to achieve a flow state. We want them to build momentum and blast through our curriculum with as few snags as possible. We want them to go into the projects with confidence and a wide exposure to programming concepts.
+We want campers to achieve a flow state. We want them to build momentum and blast through our curriculum with as few snags as possible. We want them to go into the projects with confidence and gain a wide exposure to programming concepts.
 
-Creating these challenges requires immense creativity and attention to detail. But you'll have plenty of help. You have support from a whole team of contributors, whom you can bounce ideas off of and demo your challenges to. Stay active in the [contributors room](https://gitter.im/freecodecamp/contributors) and ask lots of questions.
+Creating these challenges requires immense creativity and attention to detail. There's plenty of help available. You'll have support from a whole team of contributors to whom you can bounce ideas off and demo your challenges. Stay active in the [contributors room](https://gitter.im/freecodecamp/contributors) and ask lots of questions.
 
-With your help, we can design an interactive coding curriculum that will help millions of people learn to code for years to come.
+With your help we can design an interactive coding curriculum that will help millions of people learn to code for years to come.
 
-The content for each challenge is stored in its own markdown file. This markdown file is later converted using our tools, to webpage that you can interact with. You can find all of freeCodeCamp.org's curricular content in the [`/curriculum`](/curriculum) directory.
+The content for each challenge is stored in its own markdown file. This markdown file is later converted to HTML using our tools to create interactive web pages. You can find all of freeCodeCamp.org's curricular content in the [`/curriculum`](/curriculum) directory.
 
 There are two ways you can work on these challenges:
 
-- We recommend, you clone the project and edit locally on your computer. For help with that, read our [contributing guidelines here](/CONTRIBUTING.md).
+- **We recommend, you clone the project and edit locally on your computer.** For help with that, read our [contributing guidelines here](/CONTRIBUTING.md).
 - Or optionally, you can modify a challenge within the GitHub interface, by clicking the pencil icon to start editing the file.
 
 ## Challenge Template
@@ -33,7 +33,7 @@ Below is a template of what the challenge markdown files look like.
     - `js` - JavaScript
     - `jsx` - JSX
 
-2. For the `Tests` section below, `text` and `testString` should be valid YAML strings. `testString` can be a stringified function or expression possibly using Chai asserts.
+2. For the `Tests` section below, `text` and `testString` should be valid YAML strings. `testString` can be a stringified function  or expression using which could use Chai asserts.
 
 ````md
 ---
@@ -157,11 +157,11 @@ Here are some example challenge names:
 
 Sentences should be clear and concise with minimal jargon. If used, jargon should be immediately defined in plain English.
 
-Keep paragraphs short (around 1-4 sentences). People are more likely to read several short paragraphs over a wall of text.
+Keep paragraphs short (around 1-4 sentences). People are more likely to read several short paragraphs than a wall of text.
 
-Challenge text should use the second person ("you") to help to give it a conversational tone. This way, the text and instructions seem to speak directly to the camper working through the challenge. Try to avoid using the first person ("I", "we", "let's", and "us").
+Challenge text should use the second person ("you") to help to give it a conversational tone. This way the text and instructions seem to speak directly to the camper working through the challenge. Try to avoid using the first person ("I", "we", "let's", and "us").
 
-Don't use outbound links. These interrupt the flow. And campers should never have to google anything during these challenges. If there are resources you think campers would benefit from, add them to the challenge's Guide-related article.
+Don't use outbound links. These interrupt the flow. Campers should never have to google anything during these challenges. If there are resources you think campers would benefit from, add them to the challenge's Guide-related article.
 
 You can add diagrams if absolutely necessary.
 
@@ -175,7 +175,7 @@ Proper nouns should use correct capitalization when possible. Below is a list of
 
 ### The 2-minute rule
 
-Each challenge should be solvable within 120 seconds by a native English speaker who has completed the challenges leading up to it. This includes the amount of time it takes to read the directions/instructions, understand the seeded code, write their own code, and get all the tests to pass.
+Each challenge should be solvable within 120 seconds by a native English speaker who has completed the challenges leading up to it. This includes the amount of time it takes to read the directions/instructions understand the seeded code, write their own code and get all the tests to pass.
 
 If it takes longer than two minutes to complete the challenge, you have two options:
 
@@ -184,7 +184,7 @@ If it takes longer than two minutes to complete the challenge, you have two opti
 
 The 2-minute rule forces you, the challenge designer, to make your directions concise, your seed code clear, and your tests straight-forward.
 
-We have JavaScript events that track how long it takes for campers to solve challenges and we can use them to identify challenges that need to be simplified or split.
+We track how long it takes for campers to solve changes and use this information to identify challenges that need to be simplified or split.
 
 ### Modularity
 
@@ -322,7 +322,7 @@ Before you [create a pull request](how-to-open-a-pull-request.md) for your chang
 npm run test -- -g 'the full English title of the challenge'
 ```
 
-Once you have verified that each challenge you've worked on passes the tests, please create a pull request.
+Once you have verified that each challenge you've worked on passes the tests, [please create a pull request](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/docs/how-to-open-a-pull-request.md).
 
 ### Useful Links
 

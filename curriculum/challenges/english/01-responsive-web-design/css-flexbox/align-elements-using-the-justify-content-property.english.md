@@ -18,8 +18,8 @@ There are several options for how to space the flex items along the line that is
 
 ## Instructions
 <section id='instructions'>
-An example helps show this property in action. Add the CSS property <code>justify-content</code> to the <code>#box-container</code> element, and give it a value of center.
-<strong>Bonus</strong><br>Try the other options for the <code>justify-content</code> property in the code editor to see their differences. But note that a value of center is the only one that will pass this challenge.
+An example helps show this property in action. Add the CSS property <code>justify-content</code> to the <code>#box-container</code> element, and give it a value of <code>center</code>.
+<strong>Bonus</strong><br>Try the other options for the <code>justify-content</code> property in the code editor to see their differences. But note that a value of <code>center</code> is the only one that will pass this challenge.
 </section>
 
 ## Tests
@@ -27,7 +27,7 @@ An example helps show this property in action. Add the CSS property <code>justif
 
 ```yml
 tests:
-  - text: The <code>#box-container</code> element should have a <code>justify-content</code> property set to a value of center.
+  - text: The <code>#box-container</code> element should have a <code>justify-content</code> property set to a value of <code>center</code>.
     testString: assert($('#box-container').css('justify-content') == 'center');
 
 ```

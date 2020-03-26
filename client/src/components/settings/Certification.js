@@ -326,7 +326,7 @@ export class CertificationSettings extends Component {
     // filter the new solutions that need to be updated
     const completedChallenges = this.props.completedChallenges;
     let challengesToUpdate = {};
-    let newChalleneFound = true;
+    let newChallengeFound = true;
     let oldSubmissions = 0;
     for (let submittedChal of Object.keys(idsToSolutions)) {
       for (let i of completedChallenges) {
@@ -335,14 +335,14 @@ export class CertificationSettings extends Component {
             challengesToUpdate[submittedChal] = idsToSolutions[submittedChal];
           }
           oldSubmissions++;
-          newChalleneFound = false;
+          newChallengeFound = false;
           break;
         }
       }
-      if (newChalleneFound && idsToSolutions[submittedChal] !== '') {
+      if (newChallengeFound && idsToSolutions[submittedChal] !== '') {
         challengesToUpdate[submittedChal] = idsToSolutions[submittedChal];
       }
-      newChalleneFound = true;
+      newChallengeFound = true;
     }
 
     const valuesSaved = values(formChalObj)
@@ -536,7 +536,7 @@ export class CertificationSettings extends Component {
       solutionViewer: { files, solution, isOpen, projectTitle }
     } = this.state;
     return (
-      <section id='certifcation-settings'>
+      <section id='certification-settings'>
         <SectionHeader>Certifications</SectionHeader>
         {certifications.map(this.renderCertifications)}
         {this.renderFullStack()}

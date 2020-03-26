@@ -18,15 +18,15 @@ localeTitle: 使用parseInt函数
 ```yml
 tests:
   - text: <code>convertToInteger</code>应该使用<code>parseInt()</code>函数
-    testString: 'assert(/parseInt/g.test(code), "<code>convertToInteger</code> should use the <code>parseInt()</code> function");'
+    testString: assert(/parseInt/g.test(code));
   - text: <code>convertToInteger(&quot;56&quot;)</code>应该返回一个数字
-    testString: 'assert(typeof(convertToInteger("56")) === "number", "<code>convertToInteger("56")</code> should return a number");'
+    testString: assert(typeof(convertToInteger("56")) === "number");
   - text: <code>convertToInteger(&quot;56&quot;)</code>应该返回56
-    testString: 'assert(convertToInteger("56") === 56, "<code>convertToInteger("56")</code> should return 56");'
+    testString: assert(convertToInteger("56") === 56);
   - text: <code>convertToInteger(&quot;77&quot;)</code>应该返回77
-    testString: 'assert(convertToInteger("77") === 77, "<code>convertToInteger("77")</code> should return 77");'
+    testString: assert(convertToInteger("77") === 77);
   - text: <code>convertToInteger(&quot;JamesBond&quot;)</code>应该返回NaN
-    testString: 'assert.isNaN(convertToInteger("JamesBond"), "<code>convertToInteger("JamesBond")</code> should return NaN");'
+    testString: assert.isNaN(convertToInteger("JamesBond"));
 
 ```
 

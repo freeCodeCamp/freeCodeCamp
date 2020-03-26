@@ -13,7 +13,6 @@ You are given two arrays and an index.
 Use the array methods <code>slice</code> and <code>splice</code> to copy each element of the first array into the second array, in order.
 Begin inserting elements at index <code>n</code> of the second array.
 Return the resulting array. The input arrays should remain the same after the function runs.
-Remember to use <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> if you get stuck. Write your own code.
 </section>
 
 ## Instructions
@@ -35,9 +34,9 @@ tests:
   - text: All elements from the first array should be added to the second array in their original order.
     testString: assert.deepEqual(frankenSplice([1, 2, 3, 4], [], 0), [1, 2, 3, 4]);
   - text: The first array should remain the same after the function runs.
-    testString: assert(testArr1[0] === 1 && testArr1[1] === 2);
+    testString: frankenSplice(testArr1, testArr2); assert.deepEqual(testArr1, [1, 2]);
   - text: The second array should remain the same after the function runs.
-    testString: assert(testArr2[0] === "a" && testArr2[1] === "b");
+    testString: frankenSplice(testArr1, testArr2); assert.deepEqual(testArr2, ["a", "b"]);
 
 ```
 
@@ -50,7 +49,6 @@ tests:
 
 ```js
 function frankenSplice(arr1, arr2, n) {
-  // It's alive. It's alive!
   return arr2;
 }
 

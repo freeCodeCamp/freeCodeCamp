@@ -7,6 +7,7 @@ import {
   canFocusEditorSelector,
   executeChallenge,
   inAccessibilityModeSelector,
+  saveEditorContent,
   setEditorFocusability,
   setAccessibilityMode,
   updateFile
@@ -25,6 +26,7 @@ const propTypes = {
   ext: PropTypes.string,
   fileKey: PropTypes.string,
   inAccessibilityMode: PropTypes.bool.isRequired,
+  saveEditorContent: PropTypes.func.isRequired,
   setAccessibilityMode: PropTypes.func.isRequired,
   setEditorFocusability: PropTypes.func,
   theme: PropTypes.string,
@@ -44,9 +46,10 @@ const mapStateToProps = createSelector(
 );
 
 const mapDispatchToProps = {
-  setEditorFocusability,
-  setAccessibilityMode,
   executeChallenge,
+  saveEditorContent,
+  setAccessibilityMode,
+  setEditorFocusability,
   updateFile
 };
 
@@ -108,6 +111,9 @@ class Editor extends Component {
         verticalHasArrows: false,
         useShadows: false,
         verticalScrollbarSize: 5
+      },
+      parameterHints: {
+        enabled: false
       }
     };
 
@@ -146,6 +152,14 @@ class Editor extends Component {
         this.focusOnHotkeys();
         this.props.setEditorFocusability(false);
       }
+    });
+    this._editor.addAction({
+      id: 'save-editor-content',
+      label: 'Save editor content to localStorage',
+      keybindings: [
+        monaco.KeyMod.chord(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_S)
+      ],
+      run: this.props.saveEditorContent
     });
     this._editor.addAction({
       id: 'toggle-accessibility',

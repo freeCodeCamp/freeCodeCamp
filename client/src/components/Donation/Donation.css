@@ -169,6 +169,9 @@ li.disabled > a {
   color: var(--gray-15) !important;
 }
 
+.donate-page-wrapper,
+.donate-page-wrapper b,
+.donate-page-wrapper h3,
 .donate-text p,
 .donation-description,
 [name='payment-method'] {
@@ -210,6 +213,10 @@ li.disabled > a {
     opacity: 1;
     transform: scale(1);
   }
+}
+
+.donation-modal {
+  font-family: 'Lato', sans-serif;
 }
 
 .donation-modal .btn-link:focus {

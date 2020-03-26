@@ -7,9 +7,13 @@ forumTopicId: 301839
 
 ## Description
 <section id='description'>
+
 <var>n</var>! means <var>n</var> × (<var>n</var> − 1) × ... × 3 × 2 × 1
+
 For example, 10! = 10 × 9 × ... × 3 × 2 × 1 = 3628800,<br>and the sum of the digits in the number 10! is 3 + 6 + 2 + 8 + 8 + 0 + 0 = 27.
-Find the sum of the digits <var>n</var>!
+
+Find the sum of the digits `n`!
+
 </section>
 
 ## Instructions
@@ -22,6 +26,8 @@ Find the sum of the digits <var>n</var>!
 
 ```yml
 tests:
+  - text: <code>sumFactorialDigits(10)</code> should return a number.
+    testString: assert(typeof sumFactorialDigits(10) === 'number');
   - text: <code>sumFactorialDigits(10)</code> should return 27.
     testString: assert.strictEqual(sumFactorialDigits(10), 27);
   - text: <code>sumFactorialDigits(25)</code> should return 72.
@@ -61,7 +67,14 @@ sumFactorialDigits(100);
 <section id='solution'>
 
 ```js
-// solution required
+let factorial = (n) => n <= 1 ? BigInt(n) : BigInt(n) * BigInt(factorial(--n));
+
+let sumDigits = n => n.toString().split('').map(x => parseInt(x)).reduce((a,b) => a + b);
+
+function sumFactorialDigits(n) {
+  return sumDigits(factorial(n));
+}
+
 ```
 
 </section>

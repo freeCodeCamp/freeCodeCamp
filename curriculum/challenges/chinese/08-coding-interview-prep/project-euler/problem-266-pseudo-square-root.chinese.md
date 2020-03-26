@@ -19,7 +19,7 @@ localeTitle: 问题266：伪平方根
 ```yml
 tests:
   - text: <code>euler266()</code>应该返回1096883702440585。
-    testString: 'assert.strictEqual(euler266(), 1096883702440585, "<code>euler266()</code> should return 1096883702440585.");'
+    testString: assert.strictEqual(euler266(), 1096883702440585);
 
 ```
 

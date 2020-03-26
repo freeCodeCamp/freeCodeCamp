@@ -2,25 +2,30 @@
 id: 587d78a3367417b2b2512ace
 title: Push Elements Left or Right with the float Property
 challengeType: 0
-videoUrl: ''
-localeTitle: 使用float属性向左或向右推送元素
+videoUrl: 'https://scrimba.com/c/c2MDqu2'
+forumTopicId: 301066
+localeTitle: 使用 float 属性将元素左浮动或右浮动
 ---
 
 ## Description
-<section id="description">下一个定位工具实际上不使用<code>position</code> ，而是设置元素的<code>float</code>属性。浮动元素从文档的正常流中移除，并推送到其包含的父元素的<code>left</code>或<code>right</code> 。它通常与<code>width</code>属性一起使用，以指定浮动元素需要多少水平空间。 </section>
+<section id='description'>
+接下来要介绍的定位机制并不是 <code>position</code> 属性的选项，它通过元素的 <code>float</code> 属性来设置。浮动元素不在文档流中，它向左或向右浮动，直到它的外边缘碰到包含框或另一个浮动框的边框为止。通常需要用 <code>width</code> 属性来指定浮动元素占据的水平空间。
+</section>
 
 ## Instructions
-<section id="instructions">给定的标记可以很好地用作两列布局，其中<code>section</code>和<code>aside</code>元素彼此相邻。给<code>#left</code>项<code>float</code>的<code>left</code>和<code>#right</code>项<code>float</code>的<code>right</code> 。 </section>
+<section id='instructions'>
+设置 <code>#left</code> 元素的 <code>float</code> 为 <code>left</code>，设置 <code>#right</code> 元素的 <code>float</code> 为 <code>right</code>。使这两个元素按两列布局，<code>section</code> 和 <code>aside</code> 左右排列。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: id为<code>left</code>的元素的<code>float</code>值应为<code>left</code> 。
-    testString: 'assert($("#left").css("float") == "left", "The element with id <code>left</code> should have a <code>float</code> value of <code>left</code>.");'
-  - text: id为<code>right</code>的元素的<code>float</code>值应为<code>right</code> 。
-    testString: 'assert($("#right").css("float") == "right", "The element with id <code>right</code> should have a <code>float</code> value of <code>right</code>.");'
+  - text: 'id 为 <code>left</code> 的元素应该有一个值为 <code>left</code> 的 <code>float</code> CSS 属性。'
+    testString: assert($('#left').css('float') == 'left');
+  - text: 'id 为 <code>right</code> 的元素应该有一个值为 <code>right</code> 的 <code>float</code> CSS 属性。'
+    testString: assert($('#right').css('float') == 'right');
 
 ```
 
@@ -35,11 +40,11 @@ tests:
 <head>
   <style>
   #left {
-
+    
     width: 50%;
   }
   #right {
-
+    
     width: 40%;
   }
   aside, section {
@@ -50,18 +55,17 @@ tests:
 </head>
 <body>
   <header>
-    <h1>Welcome!</h1>
+    <h1>欢迎！</h1>
   </header>
   <section id="left">
-    <h2>Content</h2>
-    <p>Good stuff</p>
+    <h2>内容</h2>
+    <p>好样的</p>
   </section>
   <aside id="right">
-    <h2>Sidebar</h2>
-    <p>Links</p>
+    <h2>侧边栏</h2>
+    <p>一些链接</p>
   </aside>
 </body>
-
 ```
 
 </div>
@@ -73,7 +77,9 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>
+              

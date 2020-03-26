@@ -27,7 +27,7 @@ function countup(n) {
 console.log(countup(5)); // [ 1, 2, 3, 4, 5 ]
 ```
 
-At first, this seems counterintuitive since the value of `n` <em>decreases</em>, but the values in the final array are <em>increasing</em>.  This happens because the push happens last, after the recursive call has returned.  At the point where `n` is pushed into the array, `count(n - 1)` has already been evaluated and returned `[1, 2, ..., n - 1]`.
+At first, this seems counterintuitive since the value of `n` <em>decreases</em>, but the values in the final array are <em>increasing</em>.  This happens because the push happens last, after the recursive call has returned.  At the point where `n` is pushed into the array, `countup(n - 1)` has already been evaluated and returned `[1, 2, ..., n - 1]`.
 
 </section>
 
@@ -67,11 +67,11 @@ tests:
 ```js
 
 
-//Only change code below this line
+// Only change code below this line
 function countdown(n){
   return;
 }
-console.log(countdown(5)); // [5, 4, 3, 2, 1]
+// Only change code above this line
 ```
 
 </div>
@@ -91,7 +91,6 @@ const removeJSComments = str => str.replace(/\/\*[\s\S]*?\*\/|\/\/.*$/gm, '');
 <section id='solution'>
 
 ```js
-//Only change code below this line
 function countdown(n){
    return n < 1 ? [] : [n].concat(countdown(n - 1));
 }

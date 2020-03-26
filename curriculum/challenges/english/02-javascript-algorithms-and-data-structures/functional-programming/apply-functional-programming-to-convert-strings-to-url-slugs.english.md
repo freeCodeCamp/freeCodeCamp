@@ -29,7 +29,7 @@ tests:
   - text: The <code>globalTitle</code> variable should not change.
     testString: assert(globalTitle === "Winter Is Coming");
   - text: Your code should not use the <code>replace</code> method for this challenge.
-    testString: assert(!code.match(/\.replace/g));
+    testString: assert(!code.match(/\.?[\s\S]*?replace/g));
   - text: <code>urlSlug("Winter Is Coming")</code> should return <code>"winter-is-coming"</code>.
     testString: assert(urlSlug("Winter Is Coming") === "winter-is-coming");
   - text: <code>urlSlug(" Winter Is  &nbsp;Coming")</code> should return <code>"winter-is-coming"</code>.
@@ -49,17 +49,15 @@ tests:
 <div id='js-seed'>
 
 ```js
-// the global variable
+// The global variable
 var globalTitle = "Winter Is Coming";
 
-// Add your code below this line
+// Only change code below this line
 function urlSlug(title) {
 
 
 }
-// Add your code above this line
-
-var winterComing = urlSlug(globalTitle); // Should be "winter-is-coming"
+// Only change code above this line
 ```
 
 </div>
@@ -72,16 +70,13 @@ var winterComing = urlSlug(globalTitle); // Should be "winter-is-coming"
 <section id='solution'>
 
 ```js
-// the global variable
+// The global variable
 var globalTitle = "Winter Is Coming";
 
-// Add your code below this line
+// Only change code below this line
 function urlSlug(title) {
   return title.trim().split(/\s+/).join("-").toLowerCase();
 }
-// Add your code above this line
-
-var winterComing = urlSlug(globalTitle); // Should be "winter-is-coming"
 ```
 
 </section>

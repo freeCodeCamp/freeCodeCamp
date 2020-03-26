@@ -31,7 +31,7 @@ tests:
   - text: '确保网页中能看到<code>p</code>元素。'
     testString: assert($("p").length > 0);
   - text: '确保删除了注释的结束标记<code>--&#62;</code>。'
-    testString: assert(!/[^fc]-->/gi.test(code.replace(/ *<!--[^fc]*\n/g,'')));
+    testString: assert(!$('*:contains("-->")')[1]);
 
 ```
 

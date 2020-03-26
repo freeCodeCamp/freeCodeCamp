@@ -19,7 +19,7 @@ localeTitle: 问题94：几乎等边三角形
 ```yml
 tests:
   - text: <code>euler94()</code>应该返回518408346。
-    testString: 'assert.strictEqual(euler94(), 518408346, "<code>euler94()</code> should return 518408346.");'
+    testString: assert.strictEqual(euler94(), 518408346);
 
 ```
 

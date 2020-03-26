@@ -32,7 +32,9 @@
 }
 
 #challenge-page-tabs .tab-content {
-  height: calc(100vh - var(--header-height, 0px) - 69px);
+  height: calc(
+    100vh - var(--header-height, 0px) - var(--flash-message-height, 0px) - 69px
+  );
   overflow-y: auto;
 }
 

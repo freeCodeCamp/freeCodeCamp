@@ -39,11 +39,11 @@ tests:
 ```js
 function welcomeToBooleans() {
 
-  // Only change code below this line.
+  // Only change code below this line
 
   return false; // Change this line
 
-  // Only change code above this line.
+  // Only change code above this line
 }
 ```
 

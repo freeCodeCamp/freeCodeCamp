@@ -4,7 +4,7 @@ title: JavaScript Algorithms and Data Structures Certificate
 challengeType: 7
 isPrivate: true
 videoUrl: ''
-localeTitle: Certificado de Algoritmos e Estrutura de Dados em JavaScript
+localeTitle: Certificado de Estrutura de Dados e Algoritmos em JavaScript
 ---
 
 ## Description

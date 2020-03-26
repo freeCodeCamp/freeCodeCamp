@@ -18,17 +18,17 @@ localeTitle: 使用@for创建Sass循环
 ```yml
 tests:
   - text: 您的代码应使用<code>@for</code>指令。
-    testString: 'assert(code.match(/@for /g), "Your code should use the <code>@for</code> directive.");'
+    testString: assert(code.match(/@for /g));
   - text: 您的<code>.text-1</code>类的<code>font-size</code>为10px。
-    testString: 'assert($(".text-1").css("font-size") == "10px", "Your <code>.text-1</code> class should have a <code>font-size</code> of 10px.");'
+    testString: assert($('.text-1').css('font-size') == '15px');
   - text: 您的<code>.text-2</code>类的<code>font-size</code>为20px。
-    testString: 'assert($(".text-2").css("font-size") == "20px", "Your <code>.text-2</code> class should have a <code>font-size</code> of 20px.");'
+    testString: assert($('.text-2').css('font-size') == '30px');
   - text: 您的<code>.text-3</code>类的<code>font-size</code>为30px。
-    testString: 'assert($(".text-3").css("font-size") == "30px", "Your <code>.text-3</code> class should have a <code>font-size</code> of 30px.");'
+    testString: assert($('.text-3').css('font-size') == '45px');
   - text: 您的<code>.text-4</code>类的<code>font-size</code>为40px。
-    testString: 'assert($(".text-4").css("font-size") == "40px", "Your <code>.text-4</code> class should have a <code>font-size</code> of 40px.");'
+    testString: assert($('.text-4').css('font-size') == '60px');
   - text: 您的<code>.text-5</code>类的<code>font-size</code>为50px。
-    testString: 'assert($(".text-5").css("font-size") == "50px", "Your <code>.text-5</code> class should have a <code>font-size</code> of 50px.");'
+    testString: assert($('.text-5').css('font-size') == '75px');
 
 ```
 

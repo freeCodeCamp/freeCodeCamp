@@ -42,9 +42,7 @@ function Intro({
           <Col sm={10} smOffset={1} xs={12}>
             <Spacer />
             <h1 className='text-center big-heading'>
-              {name
-                ? 'Welcome back, ' + name + '.'
-                : 'Welcome to freeCodeCamp.org'}
+              {name ? `Welcome back, ${name}.` : `Welcome to freeCodeCamp.org`}
             </h1>
             <Spacer />
           </Col>
@@ -109,7 +107,7 @@ function Intro({
               <h2 className='medium-heading'>Spotify</h2>
             </div>
           </Col>
-          <Col sm={10} smOffset={1} xs={12}>
+          <Col md={6} mdOffset={3} sm={8} smOffset={2} xs={12}>
             <button
               className={'btn-cta-big signup-btn btn-cta center-block'}
               onClick={() => {

@@ -18,11 +18,11 @@ localeTitle: 使用捕获组进行搜索和替换
 ```yml
 tests:
   - text: 您应该使用<code>.replace()</code>来搜索和替换。
-    testString: 'assert(code.match(/\.replace\(.*\)/), "You should use <code>.replace()</code> to search and replace.");'
+    testString: assert(code.match(/\.replace\(.*\)/));
   - text: 你的正则表达式应该改变<code>&quot;This sandwich is good.&quot;</code> <code>&quot;This sandwich is okey-dokey.&quot;</code>
-    testString: 'assert(result == "This sandwich is okey-dokey." && replaceText === "okey-dokey", "Your regex should change <code>"This sandwich is good."</code> to <code>"This sandwich is okey-dokey."</code>");'
+    testString: assert(result == "This sandwich is okey-dokey." && replaceText === "okey-dokey");
   - text: 你不应该改变最后一行。
-    testString: 'assert(code.match(/result\s*=\s*huhText\.replace\(.*?\)/), "You should not change the last line.");'
+    testString: assert(code.match(/result\s*=\s*huhText\.replace\(.*?\)/));
 
 ```
 

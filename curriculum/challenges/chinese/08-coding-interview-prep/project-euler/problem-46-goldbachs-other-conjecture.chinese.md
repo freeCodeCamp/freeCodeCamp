@@ -19,7 +19,7 @@ localeTitle: 问题46：哥德巴赫的另一个猜想
 ```yml
 tests:
   - text: <code>goldbachsOtherConjecture()</code>应返回5777。
-    testString: 'assert.strictEqual(goldbachsOtherConjecture(), 5777, "<code>goldbachsOtherConjecture()</code> should return 5777.");'
+    testString: assert.strictEqual(goldbachsOtherConjecture(), 5777);
 
 ```
 

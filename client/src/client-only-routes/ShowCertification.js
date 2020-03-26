@@ -15,7 +15,8 @@ import {
   showCert,
   userFetchStateSelector,
   usernameSelector,
-  isDonatingSelector
+  isDonatingSelector,
+  executeGA
 } from '../redux';
 import validCertNames from '../../utils/validCertNames';
 import { createFlashMessage } from '../components/Flash/redux';
@@ -37,6 +38,7 @@ const propTypes = {
   certDashedName: PropTypes.string,
   certName: PropTypes.string,
   createFlashMessage: PropTypes.func.isRequired,
+  executeGA: PropTypes.func,
   fetchState: PropTypes.shape({
     pending: PropTypes.bool,
     complete: PropTypes.bool,
@@ -74,19 +76,20 @@ const mapStateToProps = (state, { certName }) => {
 };
 
 const mapDispatchToProps = dispatch =>
-  bindActionCreators({ createFlashMessage, showCert }, dispatch);
+  bindActionCreators({ createFlashMessage, showCert, executeGA }, dispatch);
 
 class ShowCertification extends Component {
   constructor(...args) {
     super(...args);
 
     this.state = {
-      closeBtn: false,
-      donationClosed: false
+      isDonationSubmitted: false,
+      isDonationDisplayed: false,
+      isDonationClosed: false
     };
 
     this.hideDonationSection = this.hideDonationSection.bind(this);
-    this.showDonationCloseBtn = this.showDonationCloseBtn.bind(this);
+    this.handleProcessing = this.handleProcessing.bind(this);
   }
 
   componentDidMount() {
@@ -97,12 +100,54 @@ class ShowCertification extends Component {
     return null;
   }
 
-  hideDonationSection() {
-    this.setState({ donationClosed: true });
+  shouldComponentUpdate(nextProps) {
+    const {
+      userFetchState: { complete: userComplete },
+      signedInUserName,
+      isDonating,
+      cert: { username = '' },
+      executeGA
+    } = nextProps;
+    const { isDonationDisplayed } = this.state;
+
+    if (
+      !isDonationDisplayed &&
+      userComplete &&
+      signedInUserName &&
+      signedInUserName === username &&
+      !isDonating
+    ) {
+      this.setState({
+        isDonationDisplayed: true
+      });
+
+      executeGA({
+        type: 'event',
+        data: {
+          category: 'Donation',
+          action: 'Displayed Certificate Donation',
+          nonInteraction: true
+        }
+      });
+    }
+    return true;
   }
 
-  showDonationCloseBtn() {
-    this.setState({ closeBtn: true });
+  hideDonationSection() {
+    this.setState({ isDonationDisplayed: false, isDonationClosed: true });
+  }
+
+  handleProcessing(duration, amount, action = 'stripe form submission') {
+    this.props.executeGA({
+      type: 'event',
+      data: {
+        category: 'donation',
+        action: `certificate ${action}`,
+        label: duration,
+        value: amount
+      }
+    });
+    this.setState({ isDonationSubmitted: true });
   }
 
   render() {
@@ -111,13 +156,14 @@ class ShowCertification extends Component {
       fetchState,
       validCertName,
       createFlashMessage,
-      certName,
-      signedInUserName,
-      isDonating,
-      userFetchState
+      certName
     } = this.props;
 
-    const { donationClosed, closeBtn } = this.state;
+    const {
+      isDonationSubmitted,
+      isDonationDisplayed,
+      isDonationClosed
+    } = this.state;
 
     if (!validCertName) {
       createFlashMessage(standardErrorMessage);
@@ -125,7 +171,6 @@ class ShowCertification extends Component {
     }
 
     const { pending, complete, errored } = fetchState;
-    const { complete: userComplete } = userFetchState;
 
     if (pending) {
       return <Loader fullScreen={true} />;
@@ -149,8 +194,6 @@ class ShowCertification extends Component {
       completionTime
     } = cert;
 
-    let conditionalDonationSection = '';
-
     const donationCloseBtn = (
       <div>
         <Button
@@ -164,43 +207,36 @@ class ShowCertification extends Component {
       </div>
     );
 
-    if (
-      userComplete &&
-      signedInUserName === username &&
-      !isDonating &&
-      !donationClosed
-    ) {
-      conditionalDonationSection = (
-        <Grid className='donation-section'>
-          {!closeBtn && (
-            <Row>
-              <Col sm={10} smOffset={1} xs={12}>
-                <p>
-                  Only you can see this message. Congratulations on earning this
-                  certification. It’s no easy task. Running freeCodeCamp isn’t
-                  easy either. Nor is it cheap. Help us help you and many other
-                  people around the world. Make a tax-deductible supporting
-                  donation to our nonprofit today.
-                </p>
-              </Col>
-            </Row>
-          )}
-          <MinimalDonateForm
-            showCloseBtn={this.showDonationCloseBtn}
-            defaultTheme='light'
-          />
+    let donationSection = (
+      <Grid className='donation-section'>
+        {!isDonationSubmitted && (
           <Row>
-            <Col sm={4} smOffset={4} xs={6} xsOffset={3}>
-              {closeBtn ? donationCloseBtn : ''}
+            <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
+              <p>
+                Only you can see this message. Congratulations on earning this
+                certification. It’s no easy task. Running freeCodeCamp isn’t
+                easy either. Nor is it cheap. Help us help you and many other
+                people around the world. Make a tax-deductible supporting
+                donation to our nonprofit today.
+              </p>
             </Col>
           </Row>
-        </Grid>
-      );
-    }
+        )}
+        <MinimalDonateForm
+          handleProcessing={this.handleProcessing}
+          defaultTheme='light'
+        />
+        <Row>
+          <Col sm={4} smOffset={4} xs={6} xsOffset={3}>
+            {isDonationSubmitted && donationCloseBtn}
+          </Col>
+        </Row>
+      </Grid>
+    );
 
     return (
       <div className='certificate-outer-wrapper'>
-        {conditionalDonationSection}
+        {isDonationDisplayed && !isDonationClosed ? donationSection : ''}
         <Grid className='certificate-wrapper certification-namespace'>
           <Row>
             <header>

@@ -63,9 +63,9 @@ tests:
 
 ```js
 let myArray = ["a", "b", "c", "d"];
-// change code below this line
+// Only change code below this line
 
-//change code above this line
+// Only change code above this line
 console.log(myArray);
 ```
 
@@ -79,7 +79,6 @@ console.log(myArray);
 <section id='solution'>
 
 ```js
-// solution required
 let myArray = ["a", "b", "c", "d"];
 myArray[1] = "e";
 ```

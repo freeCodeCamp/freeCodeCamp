@@ -65,7 +65,7 @@ tests:
   - text: The <code>getRating(watchList)</code> should equal 8.675.
     testString: assert(getRating(watchList) === 8.675);
   - text: Your code should not use a <code>for</code> loop.
-    testString: assert(!code.match(/for\s*?\(.*\)/g));
+    testString: assert(!code.match(/for\s*?\([\s\S]*?\)/g));
   - text: Your code should return correct output after modifying the <code>watchList</code> object.
     testString: assert(getRating(watchList.filter((_, i) => i < 1 || i > 2)) === 8.55);
 
@@ -79,7 +79,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-// the global variable
+// The global variable
 var watchList = [
   {
     "Title": "Inception",
@@ -194,11 +194,11 @@ var watchList = [
 ];
 
 function getRating(watchList){
-  // Add your code below this line
+  // Only change code below this line
   var averageRating;
 
 
-  // Add your code above this line
+  // Only change code above this line
   return averageRating;
 }
 console.log(getRating(watchList));
@@ -214,7 +214,7 @@ console.log(getRating(watchList));
 <section id='solution'>
 
 ```js
-// the global variable
+// The global variable
 var watchList = [
   {
     "Title": "Inception",

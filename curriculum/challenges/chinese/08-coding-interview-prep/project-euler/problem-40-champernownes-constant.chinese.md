@@ -19,11 +19,11 @@ localeTitle: 问题40：Champernowne的常数
 ```yml
 tests:
   - text: <code>champernownesConstant(100)</code>应该返回5。
-    testString: 'assert.strictEqual(champernownesConstant(100), 5, "<code>champernownesConstant(100)</code> should return 5.");'
+    testString: assert.strictEqual(champernownesConstant(100), 5);
   - text: <code>champernownesConstant(1000)</code>应该返回15。
-    testString: 'assert.strictEqual(champernownesConstant(1000), 15, "<code>champernownesConstant(1000)</code> should return 15.");'
+    testString: assert.strictEqual(champernownesConstant(1000), 15);
   - text: <code>champernownesConstant(1000000)</code>应该返回210。
-    testString: 'assert.strictEqual(champernownesConstant(1000000), 210, "<code>champernownesConstant(1000000)</code> should return 210.");'
+    testString: assert.strictEqual(champernownesConstant(1000000), 210);
 
 ```
 

@@ -19,7 +19,7 @@ localeTitle: 问题453：格子四边形
 ```yml
 tests:
   - text: <code>euler453()</code>应该返回104354107。
-    testString: 'assert.strictEqual(euler453(), 104354107, "<code>euler453()</code> should return 104354107.");'
+    testString: assert.strictEqual(euler453(), 104354107);
 
 ```
 

@@ -19,7 +19,7 @@ localeTitle: 问题468：二项式系数的平滑除数
 ```yml
 tests:
   - text: <code>euler468()</code>应该返回852950321。
-    testString: 'assert.strictEqual(euler468(), 852950321, "<code>euler468()</code> should return 852950321.");'
+    testString: assert.strictEqual(euler468(), 852950321);
 
 ```
 

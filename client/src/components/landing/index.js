@@ -16,7 +16,7 @@ const propTypes = {
 
 const BigCallToAction = () => (
   <Row>
-    <Col sm={10} smOffset={1} xs={12}>
+    <Col md={6} mdOffset={3} sm={10} smOffset={1} xs={12}>
       <Login block={true}>Sign in and get started (it's free)</Login>
     </Col>
   </Row>

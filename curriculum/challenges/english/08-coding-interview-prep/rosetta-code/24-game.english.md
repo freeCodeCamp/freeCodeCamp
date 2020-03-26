@@ -26,7 +26,7 @@ Implement a function that takes a string of four digits as its argument, with ea
 | Example input | Example output |
 | --- | --- |
 | <code>solve24("4878");</code> | <code>(7-8/8)*4</code> |
-| <code>solve24("1234");</code> | <code>3*1*4*2</code> |
+| <code>solve24("1234");</code> | <code>3&ast;1&ast;4&ast;2</code> |
 | <code>solve24("6789");</code> | <code>(6*8)/(9-7)</code> |
 | <code>solve24("1127");</code> | <code>(1+7)*(2+1)</code> |
 </section>
@@ -44,7 +44,7 @@ tests:
     testString: assert(include(answers[1], solve24(testCases[1])));
   - text: <code>solve24("6789")</code> should return <code>(6*8)/(9-7)</code> or <code>(8*6)/(9-7)</code>
     testString: assert(include(answers[2], solve24(testCases[2])));
-  - text: <code>solve24("1127")</code> should return a permutation of <code>(1+7)*(1*2)</code>
+  - text: <code>solve24("1127")</code> should return a permutation of <code>(1+7)*(1+2)</code>
     testString: assert(include(answers[3], solve24(testCases[3])));
 
 ```

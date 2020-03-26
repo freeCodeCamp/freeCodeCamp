@@ -19,13 +19,13 @@ localeTitle: 水手，椰子和猴子问题
 ```yml
 tests:
   - text: <code>splitCoconuts</code>是一个函数。
-    testString: 'assert(typeof splitCoconuts === "function", "<code>splitCoconuts</code> is a function.");'
+    testString: assert(typeof splitCoconuts === 'function');
   - text: <code>splitCoconuts(5)</code>应该返回3121。
-    testString: 'assert(splitCoconuts(5) === 3121, "<code>splitCoconuts(5)</code> should return 3121.");'
+    testString: assert(splitCoconuts(5) === 3121);
   - text: <code>splitCoconuts(6)</code>应返回233275。
-    testString: 'assert(splitCoconuts(6) === 233275, "<code>splitCoconuts(6)</code> should return 233275.");'
+    testString: assert(splitCoconuts(6) === 233275);
   - text: <code>splitCoconuts(7)</code>应该返回823537。
-    testString: 'assert(splitCoconuts(7) === 823537, "<code>splitCoconuts(7)</code> should return 823537.");'
+    testString: assert(splitCoconuts(7) === 823537);
 
 ```
 

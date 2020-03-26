@@ -18,7 +18,7 @@ localeTitle: 使用Sass嵌套CSS
 ```yml
 tests:
   - text: 您的代码应该重新组织CSS规则，以便<code>h1</code>和<code>p</code>嵌套在<code>.blog-post</code>父元素中。
-    testString: 'assert(code.match(/\.blog-post\s*?{\s*?h1\s*?{\s*?text-align:\s*?center;\s*?color:\s*?blue;\s*?}\s*?p\s*?{\s*?font-size:\s*?20px;\s*?}\s*?}/gi), "Your code should re-organize the CSS rules so the <code>h1</code> and <code>p</code> are nested in the <code>.blog-post</code> parent element.");'
+    testString: assert(code.match(/\.blog-post\s*?{\s*?h1\s*?{\s*?text-align:\s*?center;\s*?color:\s*?blue;\s*?}\s*?p\s*?{\s*?font-size:\s*?20px;\s*?}\s*?}/gi));
 
 ```
 

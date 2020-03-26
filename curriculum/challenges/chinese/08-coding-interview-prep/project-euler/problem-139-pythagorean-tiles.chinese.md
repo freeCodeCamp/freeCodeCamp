@@ -19,7 +19,7 @@ localeTitle: 问题139：毕达哥拉斯瓷砖
 ```yml
 tests:
   - text: <code>euler139()</code>应该返回10057761。
-    testString: 'assert.strictEqual(euler139(), 10057761, "<code>euler139()</code> should return 10057761.");'
+    testString: assert.strictEqual(euler139(), 10057761);
 
 ```
 

@@ -18,21 +18,21 @@ localeTitle: 积极和消极的前瞻
 ```yml
 tests:
   - text: 你的正则表达式应该使用两个积极的<code>lookaheads</code> 。
-    testString: 'assert(pwRegex.source.match(/\(\?=.*?\)\(\?=.*?\)/) !== null, "Your regex should use two positive <code>lookaheads</code>.");'
+    testString: assert(pwRegex.source.match(/\(\?=.*?\)\(\?=.*?\)/) !== null);
   - text: 你的正则表达式不应该匹配<code>&quot;astronaut&quot;</code>
-    testString: 'assert(!pwRegex.test("astronaut"), "Your regex should not match <code>"astronaut"</code>");'
+    testString: assert(!pwRegex.test("astronaut"));
   - text: 你的正则表达式不应该与<code>&quot;airplanes&quot;</code>匹配
-    testString: 'assert(!pwRegex.test("airplanes"), "Your regex should not match <code>"airplanes"</code>");'
+    testString: assert(!pwRegex.test("airplanes"));
   - text: 你的正则表达式不应该匹配<code>&quot;banan1&quot;</code>
-    testString: 'assert(!pwRegex.test("banan1"), "Your regex should not match <code>"banan1"</code>");'
+    testString: assert(!pwRegex.test("banan1"));
   - text: 你的正则表达式应该匹配<code>&quot;bana12&quot;</code>
-    testString: 'assert(pwRegex.test("bana12"), "Your regex should match <code>"bana12"</code>");'
+    testString: assert(pwRegex.test("bana12"));
   - text: 你的正则表达式应该匹配<code>&quot;abc123&quot;</code>
-    testString: 'assert(pwRegex.test("abc123"), "Your regex should match <code>"abc123"</code>");'
+    testString: assert(pwRegex.test("abc123"));
   - text: 你的正则表达式不应该匹配<code>&quot;123&quot;</code>
-    testString: 'assert(!pwRegex.test("123"), "Your regex should not match <code>"123"</code>");'
+    testString: assert(!pwRegex.test("123"));
   - text: 你的正则表达式不应该匹配<code>&quot;1234&quot;</code>
-    testString: 'assert(!pwRegex.test("1234"), "Your regex should not match <code>"1234"</code>");'
+    testString: assert(!pwRegex.test("1234"));
 
 ```
 
