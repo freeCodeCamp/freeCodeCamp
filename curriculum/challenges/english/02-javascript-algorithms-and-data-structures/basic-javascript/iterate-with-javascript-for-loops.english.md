@@ -38,7 +38,7 @@ Use a <code>for</code> loop to work to push the values 1 through 5 onto <code>my
 ```yml
 tests:
   - text: You should be using a <code>for</code> loop for this.
-    testString: assert(code.match(/for\s*\(/g).length > 1);
+    testString: assert(/for\s*\([^)]+?\)/.test(code));
   - text: <code>myArray</code> should equal <code>[1,2,3,4,5]</code>.
     testString: assert.deepEqual(myArray, [1,2,3,4,5]);
 
@@ -79,10 +79,6 @@ if (typeof myArray !== "undefined"){(function(){return myArray;})();}
 
 
 ```js
-var ourArray = [];
-for (var i = 0; i < 5; i++) {
-  ourArray.push(i);
-}
 var myArray = [];
 for (var i = 1; i < 6; i++) {
   myArray.push(i);
