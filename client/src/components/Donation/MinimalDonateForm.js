@@ -118,6 +118,8 @@ class MinimalDonateForm extends Component {
     const {
       donationState: { processing, success, error }
     } = this.state;
+
+    const donationPlan = `$${donationAmount / 100} / ${donationDuration}`;
     if (processing || success || error) {
       return this.renderCompletion({
         processing,
@@ -131,7 +133,7 @@ class MinimalDonateForm extends Component {
       <Row>
         <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
           <Spacer />
-          <b>Confirm your donation of $5 / year with PayPal:</b>
+          <b>Confirm your donation of {donationPlan} with PayPal:</b>
           <Spacer />
           <PaypalButton
             donationAmount={donationAmount}
@@ -151,7 +153,7 @@ class MinimalDonateForm extends Component {
                 donationAmount={donationAmount}
                 donationDuration={donationDuration}
                 getDonationButtonLabel={() =>
-                  `Confirm your donation of $5 / year`
+                  `Confirm your donation of ${donationPlan}`
                 }
                 handleProcessing={handleProcessing}
               />
