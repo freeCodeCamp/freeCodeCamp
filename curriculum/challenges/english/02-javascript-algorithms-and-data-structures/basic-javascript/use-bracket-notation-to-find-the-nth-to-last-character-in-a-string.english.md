@@ -74,9 +74,6 @@ var secondToLastLetterOfLastName = lastName; // Change this line
 
 
 ```js
-var firstName = "Ada";
-var thirdToLastLetterOfFirstName = firstName[firstName.length - 3];
-
 var lastName = "Lovelace";
 var secondToLastLetterOfLastName = lastName[lastName.length - 2];
 ```

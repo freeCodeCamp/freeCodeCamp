@@ -39,7 +39,7 @@ tests:
   - text: <code>myStr</code> should have a value of <code>This is the start. This is the end.</code>
     testString: assert(myStr === "This is the start. This is the end.");
   - text: You should use the <code>+</code> operator to build <code>myStr</code>.
-    testString: assert(code.match(/(["']).*(["'])\s*\+\s*(["']).*(["'])/g).length > 1);
+    testString: assert(code.match(/(["']).*\1\s*\+\s*(["']).*\2/g));
   - text: <code>myStr</code> should be created using the <code>var</code> keyword.
     testString: assert(/var\s+myStr/.test(code));
   - text: You should assign the result to the <code>myStr</code> variable.
@@ -84,7 +84,6 @@ var myStr; // Only change this line
 
 
 ```js
-var ourStr = "I come first. " + "I come second.";
 var myStr = "This is the start. " + "This is the end.";
 ```
 

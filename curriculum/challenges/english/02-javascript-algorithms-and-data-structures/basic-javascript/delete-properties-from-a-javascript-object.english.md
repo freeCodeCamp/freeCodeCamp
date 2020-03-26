@@ -52,7 +52,7 @@ tests:
   - text: You should delete the property <code>"tails"</code> from <code>myDog</code>.
     testString: assert(typeof myDog === "object" && myDog.tails === undefined);
   - text: You should not modify the <code>myDog</code> setup.
-    testString: 'assert(code.match(/"tails": 1/g).length > 1);'
+    testString: 'assert(code.match(/"tails": 1/g).length > 0);'
 
 ```
 
@@ -97,13 +97,6 @@ var myDog = {
 
 
 ```js
-var ourDog = {
-  "name": "Camper",
-  "legs": 4,
-  "tails": 1,
-  "friends": ["everything!"],
-  "bark": "bow-wow"
-};
 var myDog = {
   "name": "Happy Coder",
   "legs": 4,

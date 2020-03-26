@@ -34,7 +34,7 @@ tests:
   - text: <code>myStr</code> should have a value of <code>This is the first sentence. This is the second sentence.</code>
     testString: assert(myStr === "This is the first sentence. This is the second sentence.");
   - text: You should use the <code>+=</code> operator to build <code>myStr</code>.
-    testString: assert(code.match(/\w\s*\+=\s*["']/g).length > 1 && code.match(/\w\s*\=\s*["']/g).length > 1);
+    testString: assert(code.match(/myStr\s*\+=\s*(["']).*\1/g));
 
 ```
 
@@ -79,9 +79,6 @@ var myStr;
 
 
 ```js
-var ourStr = "I come first. ";
-ourStr += "I come second.";
-
 var myStr = "This is the first sentence. ";
 myStr += "This is the second sentence.";
 ```
