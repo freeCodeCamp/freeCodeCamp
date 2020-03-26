@@ -255,7 +255,7 @@ class DonateForm extends Component {
           {subscriptionPayment ? (
             <Fragment>
               <b>
-                Confirm your donation of ${donationAmount / 100} / $
+                Confirm your donation of ${donationAmount / 100} /{' '}
                 {donationDuration} with PayPal:
               </b>
               <Spacer />
