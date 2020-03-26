@@ -6,40 +6,45 @@ forumTopicId: 302332
 ---
 
 ## Description
+
 <section id='description'>
 
 The objective is to write a function that finds the sum of all positive multiples of 3 or 5 below <i>n</i>.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-``` yml
+```yml
 tests:
   - text: <code>sumMults</code> should be a function.
-    testString: assert(typeof sumMults == 'function', '<code>sumMults</code> should be a function.');
+    testString: assert(typeof sumMults == 'function');
   - text: <code>sumMults(10)</code> should return a number.
-    testString: assert(typeof sumMults(10) == 'number', '<code>sumMults(10)</code> should return a number.');
+    testString: assert(typeof sumMults(10) == 'number');
   - text: <code>sumMults(10)</code> should return <code>23</code>.
-    testString: assert.equal(sumMults(10), 23, '<code>sumMults(10)</code> should return <code>23</code>.');
+    testString: assert.equal(sumMults(10), 23);
   - text: <code>sumMults(100)</code> should return <code>2318</code>.
-    testString: assert.equal(sumMults(100), 2318, '<code>sumMults(100)</code> should return <code>2318</code>.');
+    testString: assert.equal(sumMults(100), 2318);
   - text: <code>sumMults(1000)</code> should return <code>233168</code>.
-    testString: assert.equal(sumMults(1000), 233168, '<code>sumMults(1000)</code> should return <code>233168</code>.');
+    testString: assert.equal(sumMults(1000), 233168);
   - text: <code>sumMults(10000)</code> should return <code>23331668</code>.
-    testString: assert.equal(sumMults(10000), 23331668, '<code>sumMults(10000)</code> should return <code>23331668</code>.');
+    testString: assert.equal(sumMults(10000), 23331668);
   - text: <code>sumMults(100000)</code> should return <code>2333316668</code>.
-    testString: assert.equal(sumMults(100000), 2333316668, '<code>sumMults(100000)</code> should return <code>2333316668</code>.');
+    testString: assert.equal(sumMults(100000), 2333316668);
 ```
 
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -54,6 +59,7 @@ function sumMults(n) {
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js
