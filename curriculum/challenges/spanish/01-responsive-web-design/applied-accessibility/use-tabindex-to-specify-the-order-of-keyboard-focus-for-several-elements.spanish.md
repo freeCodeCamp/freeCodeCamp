@@ -7,10 +7,10 @@ localeTitle: Use tabindex para especificar el orden de enfoque del teclado para 
 ---
 
 ## Description
-<section id="description"> El atributo <code>tabindex</code> también especifica el orden de tabulación exacto de los elementos. Esto se logra cuando el valor del atributo se establece en un número positivo de 1 o superior. Establecer un tabindex = &quot;1&quot; traerá el foco del teclado a ese elemento primero. Luego pasa por la secuencia de valores de <code>tabindex</code> especificados (2, 3, etc.), antes de pasar a los elementos predeterminados y <code>tabindex=&quot;0&quot;</code> . Es importante tener en cuenta que cuando el orden de tabulación se establece de esta manera, anula el orden predeterminado (que utiliza la fuente HTML). Esto puede confundir a los usuarios que esperan comenzar la navegación desde la parte superior de la página. Esta técnica puede ser necesaria en algunas circunstancias, pero en términos de accesibilidad, tenga cuidado antes de aplicarla. Aquí hay un ejemplo: <code>&lt;div tabindex=&quot;1&quot;&gt;I get keyboard focus, and I get it first!&lt;/div&gt;</code> <code>&lt;div tabindex=&quot;2&quot;&gt;I get keyboard focus, and I get it second!&lt;/div&gt;</code> </section>
+<section id="description"> El atributo <code>tabindex</code> también especifica el orden de tabulación exacto de los elementos. Esto se logra cuando el valor del atributo se establece en un número positivo de 1 o superior. Establecer un tabindex = &quot;1&quot; traerá el foco del teclado a ese elemento primero. Luego pasa por la secuencia de valores de <code>tabindex</code> especificados (2, 3, etc.), antes de pasar a los elementos predeterminados y <code>tabindex=&quot;0&quot;</code> . Es importante tener en cuenta que cuando el orden de tabulación se establece de esta manera, anula el orden predeterminado (que utiliza la fuente HTML). Esto puede confundir a los usuarios que esperan comenzar la navegación desde la parte superior de la página. Esta técnica puede ser necesaria en algunas circunstancias, pero en términos de accesibilidad, tenga cuidado antes de aplicarla. Aquí hay un ejemplo: <code>&lt;div tabindex=&quot;1&quot;&gt;¡Tengo enfoque de teclado, y lo tengo primero!&lt;/div&gt;</code> <code>&lt;div tabindex=&quot;2&quot;&gt;¡Tengo enfoque de teclado, y lo tengo segundo!&lt;/div&gt;</code> </section>
 
 ## Instructions
-<section id="instructions"> Camper Cat tiene un campo de búsqueda en su página de citas inspiradoras que planea posicionar en la esquina superior derecha con CSS. Quiere que el campo <code>input</code> de búsqueda y los campos <code>input</code> de controles de formulario sean los dos primeros elementos en el orden de tabulación. Agregue el atributo <code>tabindex</code> estalecido a &quot;1&quot; al campo <code>input</code> de búsqueda, y un atributo de <code>tabindex</code> establecido a &quot;2&quot; al campo <code>input</code> de formulario.</section>
+<section id="instructions"> Camper Cat tiene un campo de búsqueda en su página de citas inspiradoras que planea posicionar en la esquina superior derecha con CSS. Quiere que el campo <code>input</code> de búsqueda y los campos <code>input</code> de controles de formulario sean los dos primeros elementos en el orden de tabulación. Agregue el atributo <code>tabindex</code> establecido a &quot;1&quot; al campo <code>input</code> de búsqueda, y un atributo de <code>tabindex</code> establecido a &quot;2&quot; al campo <code>input</code> de formulario.</section>
 
 ## Tests
 <section id='tests'>
@@ -80,6 +80,7 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+// solución requerida
 ```
+
 </section>

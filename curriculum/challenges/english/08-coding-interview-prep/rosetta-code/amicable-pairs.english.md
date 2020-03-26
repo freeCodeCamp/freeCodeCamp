@@ -26,7 +26,7 @@ Calculate and show here the Amicable pairs below 20,000 (there are eight).
 
 ```yml
 tests:
-  - text: <code>amicablePairsUpTo</code> is a function.
+  - text: <code>amicablePairsUpTo</code> should be a function.
     testString: assert(typeof amicablePairsUpTo === 'function');
   - text: <code>amicablePairsUpTo(300)</code> should return <code>[[220,284]]</code>.
     testString: assert.deepEqual(amicablePairsUpTo(300), answer300);

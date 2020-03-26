@@ -18,9 +18,9 @@ localeTitle: 使用D3添加类
 ```yml
 tests:
   - text: 你的<code>div</code>元素应该有一类<code>bar</code> 。
-    testString: 'assert($("div").attr("class") == "bar", "Your <code>div</code> elements should have a class of <code>bar</code>.");'
+    testString: assert($('div').attr('class') == "bar");
   - text: 您的代码应使用<code>attr()</code>方法。
-    testString: 'assert(code.match(/\.attr/g), "Your code should use the <code>attr()</code> method.");'
+    testString: assert(code.match(/\.attr/g));
 
 ```
 

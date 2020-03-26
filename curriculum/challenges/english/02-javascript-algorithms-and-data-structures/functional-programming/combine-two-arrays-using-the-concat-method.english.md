@@ -7,7 +7,7 @@ forumTopicId: 301229
 
 ## Description
 <section id='description'>
-<code>Concatenation</code> means to join items end to end. JavaScript offers the <code>concat</code> method for both strings and arrays that work in the same way. For arrays, the method is called on one, then another array is provided as the argument to <code>concat</code>, which is added to the end of the first array. It returns a new array and does not mutate either of the original arrays. Here's an example:
+<dfn>Concatenation</dfn> means to join items end to end. JavaScript offers the <code>concat</code> method for both strings and arrays that work in the same way. For arrays, the method is called on one, then another array is provided as the argument to <code>concat</code>, which is added to the end of the first array. It returns a new array and does not mutate either of the original arrays. Here's an example:
 
 ```js
 [1, 2, 3].concat([4, 5, 6]);
@@ -46,10 +46,10 @@ tests:
 
 ```js
 function nonMutatingConcat(original, attach) {
-  // Add your code below this line
+  // Only change code below this line
 
 
-  // Add your code above this line
+  // Only change code above this line
 }
 var first = [1, 2, 3];
 var second = [4, 5];
@@ -67,9 +67,9 @@ nonMutatingConcat(first, second);
 
 ```js
 function nonMutatingConcat(original, attach) {
-  // Add your code below this line
+  // Only change code below this line
   return original.concat(attach);
-  // Add your code above this line
+  // Only change code above this line
 }
 var first = [1, 2, 3];
 var second = [4, 5];

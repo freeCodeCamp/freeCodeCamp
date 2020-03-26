@@ -9,12 +9,12 @@ localeTitle: Увеличение номера с помощью JavaScript
 
 ## Description
 <section id='description'>
-Вы можете легко <dfn>увеличить</dfn> или добавьте к переменной с <code>++</code> оператора. <code>i++;</code> эквивалентно <code>i = i + 1;</code> <strong>Заметка</strong> <br> Вся строка становится <code>i++;</code> , устраняя необходимость равенства знака.
+Вы можете легко <dfn>инкрементировать</dfn>, то есть прибавлять к переменной единицу, используя оператор <code>++</code>. <code>i++;</code> эквивалентно <code>i = i + 1;</code> <strong>Обратите внимание</strong> <br>: вся строка становится <code>i++;</code>, и отпадает необходимость в знаке равенства.
 </section>
 
 ## Instructions
 <section id='instructions'>
-Измените код, чтобы использовать оператор <code>++</code> на <code>myVar</code> . <strong>намек</strong> <br> Подробнее об <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Increment_()" target="_blank">арифметических операторах - Increment (++)</a> .
+Измените код так, чтобы использовать оператор <code>++</code> с <code>myVar</code> . <strong>Подсказка</strong> <br> Подробнее об <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Increment_()" target="_blank">арифметических операторах - Increment (++)</a> .
 </section>
 
 ## Tests

@@ -27,17 +27,17 @@ Define the stateless Y combinator function and use it to compute <a href="https:
 
 ```yml
 tests:
-  - text: Y must return a function
+  - text: Y should return a function.
     testString: assert.equal(typeof Y(f => n => n), 'function');
-  - text: factorial(1) must return 1.
+  - text: factorial(1) should return 1.
     testString: assert.equal(factorial(1), 1);
-  - text: factorial(2) must return 2.
+  - text: factorial(2) should return 2.
     testString: assert.equal(factorial(2), 2);
-  - text: factorial(3) must return 6.
+  - text: factorial(3) should return 6.
     testString: assert.equal(factorial(3), 6);
-  - text: factorial(4) must return 24.
+  - text: factorial(4) should return 24.
     testString: assert.equal(factorial(4), 24);
-  - text: factorial(10) must return 3628800.
+  - text: factorial(10) should return 3628800.
     testString: assert.equal(factorial(10), 3628800);
 
 ```

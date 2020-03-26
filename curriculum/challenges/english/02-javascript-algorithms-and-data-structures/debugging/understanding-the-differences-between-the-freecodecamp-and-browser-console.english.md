@@ -25,9 +25,9 @@ First, use <code>console.clear()</code> to clear the browser console. After that
 
 ```yml
 tests:
-  - text: Use <code>console.clear()</code> to clear the browser console.
+  - text: You should use <code>console.clear()</code> to clear the browser console.
     testString: const removeJSComments = code.replace(/\/\*[\s\S]*?\*\/|\/\/.*$/gm, ''); const noSpaces = removeJSComments.replace(/\s/g, ''); assert(noSpaces.match(/console.clear\(\)/));
-  - text: Use <code>console.log()</code> to print the <code>output</code> variable.
+  - text: You should use <code>console.log()</code> to print the <code>output</code> variable.
     testString: const noSpaces = code.replace(/\s/g, ''); assert(noSpaces.match(/console\.log\(output\)/));
 
 ```
@@ -70,7 +70,7 @@ console.clear();
 // Use console.log() to print the output variable.
 console.log(output);
 
-// Check the two consoles to see the difference. The freeCodeCamp console should have printed the variable twice, one for each test of this challenge. The browser console should only print the variable once becuase you cleared it first.
+// Check the two consoles to see the difference. The freeCodeCamp console should have printed the variable twice, one for each test of this challenge. The browser console should only print the variable once because you cleared it first.
 ```
 
 </section>

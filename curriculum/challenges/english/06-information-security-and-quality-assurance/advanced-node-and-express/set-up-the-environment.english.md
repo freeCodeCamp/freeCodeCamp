@@ -7,7 +7,7 @@ forumTopicId: 301566
 
 ## Description
 <section id='description'>
-As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/edit/#!/remix/clone-from-repo?REPO_URL=https://github.com/freeCodeCamp/boilerplate-socketio/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-socketio/'>GitHub</a>.
+For the following challenges, you will be working with a new starter project that is different from the previous one. You can find the new starter project on <a href='https://glitch.com/edit/#!/remix/clone-from-repo?REPO_URL=https://github.com/freeCodeCamp/boilerplate-socketio/'>Glitch</a>, or clone it from <a href='https://github.com/freeCodeCamp/boilerplate-socketio/'>GitHub</a>.
 Add Socket.IO as a dependency and require/instantiate it in your server defined as 'io' with the http server as an argument. <code>const io = require('socket.io')(http);</code>
 The first thing needing to be handled is listening for a new connection from the client. The <dfn>on</dfn> keyword does just that- listen for a specific event. It requires 2 arguments: a string containing the title of the event thats emitted, and a function with which the data is passed though. In the case of our connection listener, we use <em>socket</em> to define the data in the second argument. A socket is an individual client who is connected.
 For listening for connections on our server, add the following between the comments in your project:
@@ -41,13 +41,13 @@ Submit your page when you think you've got it right.
 
 ```yml
 tests:
-  - text: Socket.IO is a dependency
+  - text: Socket.IO should be a dependency.
     testString: getUserInput => $.get(getUserInput('url')+ '/_api/package.json') .then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, 'socket.io', 'Your project should list "socket.io" as a dependency'); }, xhr => { throw new Error(xhr.statusText); })
   - text: You should correctly require and instantiate <code>socket.io</code> as <code>io</code>.
     testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js').then(data => {assert.match(data, /io.*=.*require.*('|")socket.io('|").*http/gi, 'You should correctly require and instantiate socket.io as io.');}, xhr => { throw new Error(xhr.statusText); })
-  - text: Socket.IO should be listening for connections
+  - text: Socket.IO should be listening for connections.
     testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /io.on.*('|")connection('|").*socket/gi, 'io should listen for "connection" and socket should be the 2nd arguments variable'); }, xhr => { throw new Error(xhr.statusText); })
-  - text: Your client should connect to your server
+  - text: Your client should connect to your server.
     testString: getUserInput => $.get(getUserInput('url')+ '/public/client.js') .then(data => { assert.match(data, /socket.*=.*io/gi, 'Your client should be connection to server with the connection defined as socket'); }, xhr => { throw new Error(xhr.statusText); })
 
 ```

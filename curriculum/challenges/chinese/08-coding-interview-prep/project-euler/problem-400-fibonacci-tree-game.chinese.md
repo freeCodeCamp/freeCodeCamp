@@ -19,7 +19,7 @@ localeTitle: 问题400：斐波纳契树游戏
 ```yml
 tests:
   - text: <code>euler400()</code>应返回438505383468410600。
-    testString: 'assert.strictEqual(euler400(), 438505383468410600, "<code>euler400()</code> should return 438505383468410600.");'
+    testString: assert.strictEqual(euler400(), 438505383468410600);
 
 ```
 

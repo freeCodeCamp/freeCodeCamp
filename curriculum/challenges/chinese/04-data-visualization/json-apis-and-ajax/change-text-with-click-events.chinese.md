@@ -18,7 +18,7 @@ localeTitle: 单击“事件”更改文本
 ```yml
 tests:
   - text: 您的代码应使用<code>document.getElementsByClassName</code>方法选择具有类<code>message</code>的元素，并将其<code>textContent</code>设置为给定的字符串。
-    testString: 'assert(code.match(/document\.getElementsByClassName\(\s*?("|")message\1\s*?\)\[0\]\.textContent\s*?=\s*?("|")Here is the message\2/g), "Your code should use the <code>document.getElementsByClassName</code> method to select the element with class <code>message</code> and set its <code>textContent</code> to the given string.");'
+    testString: assert(code.match(/document\s*\.getElementsByClassName\(\s*?('|")message\1\s*?\)\[0\]\s*\.textContent\s*?=\s*?('|")Here is the message\2/g));
 
 ```
 

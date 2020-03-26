@@ -19,7 +19,7 @@ localeTitle: 问题134：素对对连接
 ```yml
 tests:
   - text: <code>euler134()</code>应该返回18613426663617120。
-    testString: 'assert.strictEqual(euler134(), 18613426663617120, "<code>euler134()</code> should return 18613426663617120.");'
+    testString: assert.strictEqual(euler134(), 18613426663617120);
 
 ```
 

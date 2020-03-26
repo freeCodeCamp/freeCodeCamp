@@ -15,7 +15,9 @@ export default function layoutSelector({ element, props }) {
     return <DefaultLayout pathname={pathname}>{element}</DefaultLayout>;
   }
   if (/^\/certification(\/.*)*/.test(pathname)) {
-    return <CertificationLayout>{element}</CertificationLayout>;
+    return (
+      <CertificationLayout pathname={pathname}>{element}</CertificationLayout>
+    );
   }
   if (/^\/guide(\/.*)*/.test(pathname)) {
     console.log('Hitting guide for some reason. Need a redirect.');
@@ -23,6 +25,13 @@ export default function layoutSelector({ element, props }) {
   if (/^\/learn(\/.*)*/.test(pathname)) {
     return (
       <DefaultLayout pathname={pathname} showFooter={false}>
+        {element}
+      </DefaultLayout>
+    );
+  }
+  if (/^\/donation(\/.*)*|^\/donate(\/.*)*/.test(pathname)) {
+    return (
+      <DefaultLayout pathname={pathname} useTheme={false}>
         {element}
       </DefaultLayout>
     );

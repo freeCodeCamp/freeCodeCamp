@@ -31,7 +31,7 @@ Change the code so that all variables are declared using <code>let</code> or <co
 
 ```yml
 tests:
-  - text: <code>var</code> does not exist in your code.
+  - text: <code>var</code> should not exist in your code.
     testString: getUserInput => assert(!getUserInput('index').match(/var/g));
   - text: <code>SENTENCE</code> should be a constant variable declared with <code>const</code>.
     testString: getUserInput => assert(getUserInput('index').match(/(const SENTENCE)/g));
@@ -53,14 +53,14 @@ tests:
 function printManyTimes(str) {
   "use strict";
 
-  // change code below this line
+  // Only change code below this line
 
   var sentence = str + " is cool!";
   for (var i = 0; i < str.length; i+=2) {
     console.log(sentence);
   }
 
-  // change code above this line
+  // Only change code above this line
 
 }
 printManyTimes("freeCodeCamp");
@@ -79,14 +79,10 @@ printManyTimes("freeCodeCamp");
 function printManyTimes(str) {
   "use strict";
 
-  // change code below this line
-
   const SENTENCE = str + " is cool!";
   for (let i = 0; i < str.length; i+=2) {
     console.log(SENTENCE);
   }
-
-  // change code above this line
 
 }
 printManyTimes("freeCodeCamp");

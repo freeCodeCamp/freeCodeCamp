@@ -8,8 +8,8 @@ forumTopicId: 16158
 
 ## Description
 <section id='description'>
-We can access the data inside arrays using <code>indexes</code>.
-Array indexes are written in the same bracket notation that strings use, except that instead of specifying a character, they are specifying an entry in the array. Like strings, arrays use <dfn>zero-based</dfn> indexing, so the first element in an array is element <code>0</code>.
+We can access the data inside arrays using <dfn>indexes</dfn>.
+Array indexes are written in the same bracket notation that strings use, except that instead of specifying a character, they are specifying an entry in the array. Like strings, arrays use <dfn>zero-based</dfn> indexing, so the first element in an array has an index of <code>0</code>.
 <br />
 <strong>Example</strong>
 
@@ -47,14 +47,10 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Example
-var ourArray = [50,60,70];
-var ourData = ourArray[0]; // equals 50
-
 // Setup
 var myArray = [50,60,70];
 
-// Only change code below this line.
+// Only change code below this line
 
 ```
 

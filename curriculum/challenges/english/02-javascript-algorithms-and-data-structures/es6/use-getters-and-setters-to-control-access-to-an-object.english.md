@@ -7,7 +7,7 @@ forumTopicId: 301220
 
 ## Description
 <section id='description'>
-You can obtain values from an object, and set a value of a property within an object.
+You can obtain values from an object and set the value of a property within an object.
 These are classically called <dfn>getters</dfn> and <dfn>setters</dfn>.
 Getter functions are meant to simply return (get) the value of an object's private variable to the user without the user directly accessing the private variable.
 Setter functions are meant to modify (set) the value of an object's private variable based on the value passed into the setter function. This change could involve calculations, or even overwriting the previous value completely.<br><br>
@@ -32,19 +32,19 @@ lol.writer = 'wut';
 console.log(lol.writer);  // wut
 ```
 
-Notice the syntax we are using to invoke the getter and setter - as if they are not even functions.
-Getters and setters are important, because they hide internal implementation details.
-<strong>Note:</strong> It is a convention to precede the name of a private variable with an underscore (<code>_</code>). The practice itself does not make a variable private.
+Notice the syntax used to invoke the getter and setter. They do not even look like functions.
+Getters and setters are important because they hide internal implementation details.
+<strong>Note:</strong> It is convention to precede the name of a private variable with an underscore (<code>_</code>). However, the practice itself does not make a variable private.
 </section>
 
 ## Instructions
 <section id='instructions'>
-Use <code>class</code> keyword to create a Thermostat class. The constructor accepts Fahrenheit temperature.
-Now create <code>getter</code> and <code>setter</code> in the class, to obtain the temperature in Celsius scale.
-Remember that <code>C = 5/9 * (F - 32)</code> and <code>F = C * 9.0 / 5 + 32</code>, where F is the value of temperature in Fahrenheit scale, and C is the value of the same temperature in Celsius scale
-<strong>Note:</strong><br>When you implement this, you would be tracking the temperature inside the class in one scale - either Fahrenheit or Celsius.
-This is the power of getter or setter - you are creating an API for another user, who would get the correct result, no matter which one you track.
-In other words, you are abstracting implementation details from the consumer.
+Use the <code>class</code> keyword to create a Thermostat class. The constructor accepts a Fahrenheit temperature.
+Now create a <code>getter</code> and a <code>setter</code> in the class, to obtain the temperature in Celsius.
+Remember that <code>C = 5/9 * (F - 32)</code> and <code>F = C * 9.0 / 5 + 32</code>, where <code>F</code> is the value of temperature in Fahrenheit, and <code>C</code> is the value of the same temperature in Celsius.
+<strong>Note:</strong> When you implement this, you will track the temperature inside the class in one scale, either Fahrenheit or Celsius.
+This is the power of a getter and a setter. You are creating an API for another user, who can get the correct result regardless of which one you track.
+In other words, you are abstracting implementation details from the user.
 </section>
 
 ## Tests
@@ -75,14 +75,14 @@ tests:
 <div id='js-seed'>
 
 ```js
-/* Alter code below this line */
+// Only change code below this line
 
-/* Alter code above this line */
+// Only change code above this line
 
-const thermos = new Thermostat(76); // setting in Fahrenheit scale
-let temp = thermos.temperature; // 24.44 in C
+const thermos = new Thermostat(76); // Setting in Fahrenheit scale
+let temp = thermos.temperature; // 24.44 in Celsius
 thermos.temperature = 26;
-temp = thermos.temperature; // 26 in C
+temp = thermos.temperature; // 26 in Celsius
 ```
 
 </div>
@@ -95,8 +95,6 @@ temp = thermos.temperature; // 26 in C
 <section id='solution'>
 
 ```js
-
-/* Alter code below this line */
 class Thermostat {
   constructor(fahrenheit) {
     this._tempInCelsius = 5/9 * (fahrenheit - 32);
@@ -108,12 +106,11 @@ class Thermostat {
     this._tempInCelsius = newTemp;
   }
 }
-/* Alter code above this line */
 
-const thermos = new Thermostat(76); // setting in Fahrenheit scale
-let temp = thermos.temperature; // 24.44 in C
+const thermos = new Thermostat(76); // Setting in Fahrenheit scale
+let temp = thermos.temperature; // 24.44 in Celsius
 thermos.temperature = 26;
-temp = thermos.temperature; // 26 in C
+temp = thermos.temperature; // 26 in Celsius
 ```
 
 </section>

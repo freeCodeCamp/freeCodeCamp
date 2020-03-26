@@ -2,25 +2,30 @@
 id: 587d78ab367417b2b2512af3
 title: Apply the flex-direction Property to Create Rows in the Tweet Embed
 challengeType: 0
-videoUrl: ''
-localeTitle: 应用flex-direction属性在Tweet Embed中创建行
+videoUrl: 'https://scrimba.com/p/pVaDAv/cJb8yuq'
+forumTopicId: 301104
+localeTitle: 使用 flex-direction 在嵌入推文中创建多行
 ---
 
 ## Description
-<section id="description"> tweet嵌入示例中的<code>header</code>和<code>footer</code>具有可以使用<code>flex-direction</code>属性排列为行的子项。这告诉CSS水平对齐孩子。 </section>
+<section id='description'>
+嵌入推文示例中的<code>header</code>和<code>footer</code>有自己的子元素，使用<code>flex-direction</code>属性可以把这些子元素排成行。这个属性告诉 CSS 需要将这些子元素水平排列。
+</section>
 
 ## Instructions
-<section id="instructions">将CSS属性<code>flex-direction</code>添加到<code>header</code>和<code>footer</code> ，并将值设置为row。 </section>
+<section id='instructions'>
+为<code>header</code>和<code>footer</code>添加 CSS 属性<code>flex-direction</code>并把值设为 row。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>header</code>应该将<code>flex-direction</code>属性设置为row。
-    testString: 'assert(code.match(/header\s*?{[^}]*?flex-direction:\s*?row;/g), "The <code>header</code> should have a <code>flex-direction</code> property set to row.");'
-  - text: <code>footer</code>应将<code>flex-direction</code>属性设置为row。
-    testString: 'assert(code.match(/footer\s*?{[^}]*?flex-direction:\s*?row;/g), "The <code>footer</code> should have a <code>flex-direction</code> property set to row.");'
+  - text: '<code>header</code>应有<code>flex-direction</code>属性，其值应为 row。'
+    testString: assert(code.match(/header\s*?{[^}]*?flex-direction:\s*?row;/g));
+  - text: '<code>footer</code>应有<code>flex-direction</code>属性，其值应为 row。'
+    testString: assert(code.match(/footer\s*?{[^}]*?flex-direction:\s*?row;/g));
 
 ```
 
@@ -38,7 +43,7 @@ tests:
   }
   header {
     display: flex;
-
+    
   }
   header .profile-thumbnail {
     width: 50px;
@@ -73,7 +78,7 @@ tests:
   }
   footer {
     display: flex;
-
+    
   }
   footer .stats {
     display: flex;
@@ -94,7 +99,7 @@ tests:
   }
 </style>
 <header>
-  <img src="https://pbs.twimg.com/profile_images/378800000147359764/54dc9a5c34e912f34db8662d53d16a39_400x400.png" alt="Quincy Larson's profile picture" class="profile-thumbnail">
+  <img src="https://freecodecamp.s3.amazonaws.com/quincy-twitter-photo.jpg" alt="Quincy Larson's profile picture" class="profile-thumbnail">
   <div class="profile-name">
     <h3>Quincy Larson</h3>
     <h4>@ossia</h4>
@@ -123,7 +128,6 @@ tests:
     <button class="like-btn">Like</button>
   </div>
 </footer>
-
 ```
 
 </div>
@@ -135,7 +139,9 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>
+              

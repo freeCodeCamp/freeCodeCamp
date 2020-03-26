@@ -1,9 +1,9 @@
 ---
 id: 5900f4071000cf542c50ff19
 challengeType: 5
-title: 'Problem 154: Exploring Pascal"s pyramid'
+title: 'Problem 154: Exploring Pascal''s pyramid'
 videoUrl: ''
-localeTitle: ''
+localeTitle: 问题154：探索帕斯卡的金字塔
 ---
 
 ## Description
@@ -19,7 +19,7 @@ localeTitle: ''
 ```yml
 tests:
   - text: <code>euler154()</code>应该返回479742450。
-    testString: 'assert.strictEqual(euler154(), 479742450, "<code>euler154()</code> should return 479742450.");'
+    testString: assert.strictEqual(euler154(), 479742450);
 
 ```
 

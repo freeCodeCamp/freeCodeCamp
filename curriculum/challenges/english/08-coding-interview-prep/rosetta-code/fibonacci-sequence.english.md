@@ -24,16 +24,16 @@ Hence, the series is: 0, 1, 1, 2, 3, 5, 8, 13...
 
 ```yml
 tests:
-  - text: <code>fibonacci</code> is a function.
+  - text: <code>fibonacci</code> should be a function.
     testString: assert(typeof fibonacci === 'function');
   - text: <code>fibonacci(2)</code> should return a number.
     testString: assert(typeof fibonacci(2) == 'number');
-  - text: <code>fibonacci(3)</code> should return 1.
-    testString: assert.equal(fibonacci(3),1);
-  - text: <code>fibonacci(5)</code> should return 3.
-    testString: assert.equal(fibonacci(5),3);
-  - text: <code>fibonacci(10)</code> should return 34.
-    testString: assert.equal(fibonacci(10),34);
+  - text: <code>fibonacci(3)</code> should return 2.
+    testString: assert.equal(fibonacci(3),2);
+  - text: <code>fibonacci(5)</code> should return 5.
+    testString: assert.equal(fibonacci(5),5);
+  - text: <code>fibonacci(10)</code> should return 55.
+    testString: assert.equal(fibonacci(10),55);
 
 ```
 
@@ -63,7 +63,7 @@ function fibonacci(n) {
 ```js
 function fibonacci(n) {
   let a = 0, b = 1, t;
-  while (--n > 0) {
+  while (--n >= 0) {
     t = a;
     a = b;
     b += t;

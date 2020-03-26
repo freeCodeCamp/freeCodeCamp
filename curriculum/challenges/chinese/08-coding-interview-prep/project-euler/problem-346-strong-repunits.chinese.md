@@ -19,7 +19,7 @@ localeTitle: 问题346：强大的Repunits
 ```yml
 tests:
   - text: <code>euler346()</code>应该返回336108797689259260。
-    testString: 'assert.strictEqual(euler346(), 336108797689259260, "<code>euler346()</code> should return 336108797689259260.");'
+    testString: assert.strictEqual(euler346(), 336108797689259260);
 
 ```
 

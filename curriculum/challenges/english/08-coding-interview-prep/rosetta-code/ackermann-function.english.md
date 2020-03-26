@@ -23,7 +23,7 @@ Write a function which returns the value of $A(m, n)$. Arbitrary precision is pr
 
 ```yml
 tests:
-  - text: <code>ack</code> is a function.
+  - text: <code>ack</code> should be a function.
     testString: assert(typeof ack === 'function');
   - text: <code>ack(0, 0)</code> should return 1.
     testString: assert(ack(0, 0) === 1);

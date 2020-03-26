@@ -18,25 +18,25 @@ localeTitle: 使用捕获组重用模式
 ```yml
 tests:
   - text: 你的正则表达式应该使用数字的速记字符类。
-    testString: 'assert(reRegex.source.match(/\\d/), "Your regex should use the shorthand character class for digits.");'
+    testString: assert(reRegex.source.match(/\\d/));
   - text: 您的正则表达式应该重复使用捕获组两次。
-    testString: 'assert(reRegex.source.match(/\\\d/g).length === 2, "Your regex should reuse the capture group twice.");'
+    testString: assert(reRegex.source.match(/\\1|\\2/g).length >= 2);
   - text: 你的正则表达式应该有两个空格来分隔这三个数字。
-    testString: 'assert(reRegex.source.match(/\\s/g).length === 2, "Your regex should have two spaces separating the three numbers.");'
+    testString: assert(reRegex.source.match(/ |\\s/g).length === 2 || reRegex.source.match(/\(\\s\)(?=.*\\(1|2))/g));
   - text: 你的正则表达式应该匹配<code>&quot;42 42 42&quot;</code> 。
-    testString: 'assert(reRegex.test("42 42 42"), "Your regex should match <code>"42 42 42"</code>.");'
+    testString: assert(reRegex.test("42 42 42"));
   - text: 你的正则表达式应该匹配<code>&quot;100 100 100&quot;</code> 。
-    testString: 'assert(reRegex.test("100 100 100"), "Your regex should match <code>"100 100 100"</code>.");'
+    testString: assert(reRegex.test("100 100 100"));
   - text: 你的正则表达式不应该匹配<code>&quot;42 42 42 42&quot;</code> 。
-    testString: 'assert.equal(("42 42 42 42").match(reRegex.source), null, "Your regex should not match <code>"42 42 42 42"</code>.");'
+    testString: assert.equal(("42 42 42 42").match(reRegex.source), null);
   - text: 你的正则表达式不应该匹配<code>&quot;42 42&quot;</code> 。
-    testString: 'assert.equal(("42 42").match(reRegex.source), null, "Your regex should not match <code>"42 42"</code>.");'
+    testString: assert.equal(("42 42").match(reRegex.source), null);
   - text: 你的正则表达式不应该匹配<code>&quot;101 102 103&quot;</code> 。
-    testString: 'assert(!reRegex.test("101 102 103"), "Your regex should not match <code>"101 102 103"</code>.");'
+    testString: assert(!reRegex.test("101 102 103"));
   - text: 你的正则表达式不应该匹配<code>&quot;1 2 3&quot;</code> 。
-    testString: 'assert(!reRegex.test("1 2 3"), "Your regex should not match <code>"1 2 3"</code>.");'
+    testString: assert(!reRegex.test("1 2 3"));
   - text: 你的正则表达式应匹配<code>&quot;10 10 10&quot;</code> 。
-    testString: 'assert(reRegex.test("10 10 10"), "Your regex should match <code>"10 10 10"</code>.");'
+    testString: assert(reRegex.test("10 10 10"));
 
 ```
 

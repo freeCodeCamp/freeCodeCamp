@@ -21,7 +21,7 @@ The strict inequality operator (<code>!==</code>) is the logical opposite of the
 
 ## Instructions
 <section id='instructions'>
-Add the <code>strict inequality operator</code> to the <code>if</code> statement so the function will return "Not Equal" when <code>val</code> is not strictly equal to <code>17</code>
+Add the strict inequality operator to the <code>if</code> statement so the function will return "Not Equal" when <code>val</code> is not strictly equal to <code>17</code>
 </section>
 
 ## Tests
@@ -58,7 +58,6 @@ function testStrictNotEqual(val) {
   return "Equal";
 }
 
-// Change this value to test
 testStrictNotEqual(10);
 ```
 

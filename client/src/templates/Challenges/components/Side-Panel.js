@@ -10,6 +10,7 @@ import TestSuite from './Test-Suite';
 import { challengeTestsSelector, isChallengeCompletedSelector } from '../redux';
 import { createSelector } from 'reselect';
 import './side-panel.css';
+import { mathJaxScriptLoader } from '../../../utils/scriptLoaders';
 
 const mapStateToProps = createSelector(
   isChallengeCompletedSelector,
@@ -19,8 +20,6 @@ const mapStateToProps = createSelector(
     tests
   })
 );
-
-const MathJax = global.MathJax;
 
 const propTypes = {
   description: PropTypes.string,
@@ -36,19 +35,29 @@ const propTypes = {
 
 export class SidePanel extends Component {
   componentDidMount() {
+    const MathJax = global.MathJax;
+    const mathJaxMountPoint = document.querySelector('#mathjax');
+    const mathJaxChallenge =
+      this.props.section === 'rosetta-code' ||
+      this.props.section === 'project-euler';
     if (MathJax) {
+      // Configure MathJax when it's loaded and
+      // users navigate from another challenge
       MathJax.Hub.Config({
         tex2jax: {
           inlineMath: [['$', '$'], ['\\(', '\\)']],
           processEscapes: true,
-          processClass: 'rosetta-code'
+          processClass: 'rosetta-code|project-euler'
         }
       });
       MathJax.Hub.Queue([
         'Typeset',
         MathJax.Hub,
-        document.querySelector('.rosetta-code')
+        document.querySelector('.rosetta-code'),
+        document.querySelector('.project-euler')
       ]);
+    } else if (!mathJaxMountPoint && mathJaxChallenge) {
+      mathJaxScriptLoader();
     }
   }
 

@@ -19,7 +19,7 @@ localeTitle: 问题111：运行的Primes
 ```yml
 tests:
   - text: <code>euler111()</code>应返回612407567715。
-    testString: 'assert.strictEqual(euler111(), 612407567715, "<code>euler111()</code> should return 612407567715.");'
+    testString: assert.strictEqual(euler111(), 612407567715);
 
 ```
 

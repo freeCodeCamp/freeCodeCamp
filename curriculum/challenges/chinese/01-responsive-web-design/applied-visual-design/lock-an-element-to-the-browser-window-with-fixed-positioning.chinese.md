@@ -2,27 +2,33 @@
 id: 587d781e367417b2b2512acc
 title: Lock an Element to the Browser Window with Fixed Positioning
 challengeType: 0
-videoUrl: ''
-localeTitle: 使用固定定位将元素锁定到浏览器窗口
+videoUrl: 'https://scrimba.com/c/c2MDNUR'
+forumTopicId: 301061
+localeTitle: 固定定位的参照物是浏览器的窗口
 ---
 
 ## Description
-<section id="description"> CSS提供的下一个布局方案是<code>fixed</code>位置，这是一种绝对定位，可以相对于浏览器窗口锁定元素。与绝对定位类似，它与CSS偏移属性一起使用，并且还从文档的正常流中移除元素。其他项目不再“实现”它所处的位置，这可能需要在其他地方进行一些布局调整。 <code>fixed</code>位置和<code>absolute</code>位置之间的一个关键区别是，当用户滚动时，具有固定位置的元素将不会移动。 </section>
+<section id='description'>
+接下来要介绍的是 <code>fixed</code> 定位，它是一种特殊的绝对（absolute）定位，区别是其包含块是浏览器窗口。和绝对定位类似，<code>fixed</code> 定位使用 top、bottom、left 和 right 属性来调整元素的位置，并且会将元素从当前的文档流里面移除，其它元素会忽略它的存在。
+<code>fixed</code> 定位和 <code>absolute</code> 定位的最明显的区别是 <code>fixed</code> 定位元素不会随着屏幕滚动而移动。
+</section>
 
 ## Instructions
-<section id="instructions">在代码导航栏标有的一个id <code>navbar</code> 。将其<code>position</code>更改为<code>fixed</code> ，并将其偏离<code>top</code> 0像素和<code>left</code> 0像素。注意到（没有）对<code>h1</code>位置的影响，它没有被按下以容纳导航栏并且需要单独调整。 </section>
+<section id='instructions'>
+代码里的导航栏已经添加了值为 <code>navbar</code> 的 id。把它的 <code>position</code> 设置成<code>fixed</code>，设定其 <code>top</code >和 <code>left</code> 为 0 像素。添加代码之后，滑动预览窗口，观察导航栏的位置。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: '<code>#navbar</code>元素的<code>position</code>应设置为<code>fixed</code> 。'
-    testString: 'assert($("#navbar").css("position") == "fixed", "The <code>#navbar</code> element should have a <code>position</code> set to <code>fixed</code>.");'
-  - text: '您的代码应该使用<code>#navbar</code>元素上0像素的<code>top</code> CSS偏移量。'
-    testString: 'assert($("#navbar").css("top") == "0px", "Your code should use the <code>top</code> CSS offset of 0 pixels on the <code>#navbar</code> element.");'
-  - text: '您的代码应使用<code>#navbar</code>元素上0像素的<code>left</code> CSS偏移量。'
-    testString: 'assert($("#navbar").css("left") == "0px", "Your code should use the <code>left</code> CSS offset of 0 pixels on the <code>#navbar</code> element.");'
+  - text: '<code>>#navbar</code> 元素应当有一个值为 <code>fixed</code> 的 <code>position</code> CSS 属性'
+    testString: assert($('#navbar').css('position') == 'fixed');
+  - text: '你的 <code>#navbar</code> 元素应当有值为 <code>0px</code> 的 <code>top</code> CSS 属性。'
+    testString: assert($('#navbar').css('top') == '0px');
+  - text: '你的 <code>#navbar</code> 元素应当有值为 <code>0px</code> 的 <code>left</code> CSS 属性。'
+    testString: assert($('#navbar').css('left') == '0px');
 
 ```
 
@@ -36,9 +42,9 @@ tests:
 ```html
 <style>
   #navbar {
-
-
-
+    
+    
+    
     width: 100%;
     background-color: #767676;
   }
@@ -56,17 +62,16 @@ tests:
 </style>
 <body>
   <header>
-    <h1>Welcome!</h1>
+    <h1>欢迎!</h1>
     <nav id="navbar">
       <ul>
-        <li><a href="">Home</a></li>
-        <li><a href="">Contact</a></li>
+        <li><a href="">网站首页</a></li>
+        <li><a href="">联系我们</a></li>
       </ul>
     </nav>
   </header>
-  <p>I shift up when the #navbar is fixed to the browser window.</p>
+  <p>当导航条固定在浏览器窗口上时，我会上移。</p>
 </body>
-
 ```
 
 </div>
@@ -78,7 +83,9 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>
+              

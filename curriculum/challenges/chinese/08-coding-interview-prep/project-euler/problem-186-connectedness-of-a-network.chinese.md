@@ -19,7 +19,7 @@ localeTitle: 问题186：网络的连通性
 ```yml
 tests:
   - text: <code>euler186()</code>应返回2325629。
-    testString: 'assert.strictEqual(euler186(), 2325629, "<code>euler186()</code> should return 2325629.");'
+    testString: assert.strictEqual(euler186(), 2325629);
 
 ```
 

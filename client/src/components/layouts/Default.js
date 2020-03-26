@@ -6,13 +6,13 @@ import { createSelector } from 'reselect';
 import Helmet from 'react-helmet';
 import fontawesome from '@fortawesome/fontawesome';
 
-import ga from '../../analytics';
 import {
   fetchUser,
   isSignedInSelector,
   onlineStatusChange,
   isOnlineSelector,
-  userSelector
+  userSelector,
+  executeGA
 } from '../../redux';
 import { flashMessageSelector, removeFlashMessage } from '../Flash/redux';
 
@@ -68,6 +68,7 @@ const metaKeywords = [
 
 const propTypes = {
   children: PropTypes.node.isRequired,
+  executeGA: PropTypes.func,
   fetchUser: PropTypes.func.isRequired,
   flashMessage: PropTypes.shape({
     id: PropTypes.string,
@@ -81,7 +82,8 @@ const propTypes = {
   pathname: PropTypes.string.isRequired,
   removeFlashMessage: PropTypes.func.isRequired,
   showFooter: PropTypes.bool,
-  theme: PropTypes.string
+  theme: PropTypes.string,
+  useTheme: PropTypes.bool
 };
 
 const mapStateToProps = createSelector(
@@ -97,29 +99,30 @@ const mapStateToProps = createSelector(
     theme: user.theme
   })
 );
+
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
-    { fetchUser, removeFlashMessage, onlineStatusChange },
+    { fetchUser, removeFlashMessage, onlineStatusChange, executeGA },
     dispatch
   );
 
 class DefaultLayout extends Component {
   componentDidMount() {
-    const { isSignedIn, fetchUser, pathname } = this.props;
+    const { isSignedIn, fetchUser, pathname, executeGA } = this.props;
     if (!isSignedIn) {
       fetchUser();
     }
-    ga.pageview(pathname);
+    executeGA({ type: 'page', data: pathname });
 
     window.addEventListener('online', this.updateOnlineStatus);
     window.addEventListener('offline', this.updateOnlineStatus);
   }
 
   componentDidUpdate(prevProps) {
-    const { pathname } = this.props;
+    const { pathname, executeGA } = this.props;
     const { pathname: prevPathname } = prevProps;
     if (pathname !== prevPathname) {
-      ga.pageview(pathname);
+      executeGA({ type: 'page', data: pathname });
     }
   }
 
@@ -144,13 +147,16 @@ class DefaultLayout extends Component {
       isSignedIn,
       removeFlashMessage,
       showFooter = true,
-      theme = 'default'
+      theme = 'default',
+      useTheme = true
     } = this.props;
     return (
       <Fragment>
         <Helmet
           bodyAttributes={{
-            class: `${theme === 'default' ? 'light-palette' : 'dark-palette'}`
+            class: useTheme
+              ? `${theme === 'default' ? 'light-palette' : 'dark-palette'}`
+              : 'light-palette'
           }}
           meta={[
             {

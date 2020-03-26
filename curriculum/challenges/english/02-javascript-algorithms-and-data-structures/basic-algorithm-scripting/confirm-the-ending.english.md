@@ -10,7 +10,6 @@ forumTopicId: 16006
 <section id='description'>
 Check if a string (first argument, <code>str</code>) ends with the given target string (second argument, <code>target</code>).
 This challenge <em>can</em> be solved with the <code>.endsWith()</code> method, which was introduced in ES2015. But for the purpose of this challenge, we would like you to use one of the JavaScript substring methods instead.
-Remember to use <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> if you get stuck. Write your own code.
 </section>
 
 ## Instructions
@@ -43,7 +42,7 @@ tests:
     testString: assert(confirmEnding("If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing", "mountain") === false);
   - text: <code>confirmEnding("Abstraction", "action")</code> should return true.
     testString: assert(confirmEnding("Abstraction", "action") === true);
-  - text: Do not use the built-in method <code>.endsWith()</code> to solve the challenge.
+  - text: Your code should not use the built-in method <code>.endsWith()</code> to solve the challenge.
     testString: assert(!(/\.endsWith\(.*?\)\s*?;?/.test(code)) && !(/\['endsWith'\]/.test(code)));
 
 ```
@@ -57,8 +56,6 @@ tests:
 
 ```js
 function confirmEnding(str, target) {
-  // "Never give up and good luck will find you."
-  // -- Falcor
   return str;
 }
 

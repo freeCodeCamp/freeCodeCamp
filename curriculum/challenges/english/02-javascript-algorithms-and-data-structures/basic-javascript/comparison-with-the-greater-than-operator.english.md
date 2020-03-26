@@ -23,7 +23,7 @@ Like the equality operator, greater than operator will convert data types of val
 
 ## Instructions
 <section id='instructions'>
-Add the <code>greater than</code> operator to the indicated lines so that the return statements make sense.
+Add the greater than operator to the indicated lines so that the return statements make sense.
 </section>
 
 ## Tests
@@ -70,7 +70,6 @@ function testGreaterThan(val) {
   return "10 or Under";
 }
 
-// Change this value to test
 testGreaterThan(10);
 ```
 

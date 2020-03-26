@@ -8,7 +8,7 @@ forumTopicId: 301351
 ## Description
 <section id='description'>
 The last challenge used the plus <code>+</code> sign to look for characters that occur one or more times. There's also an option that matches characters that occur zero or more times.
-The character to do this is the <code>asterisk</code> or <code>star</code>: <code>*</code>.
+The character to do this is the asterisk or star: <code>*</code>.
 
 ```js
 let soccerWord = "gooooooooal!";
@@ -55,7 +55,10 @@ tests:
 <div id='js-seed'>
 
 ```js
-let chewieRegex = /change/; // Only change this line
+// Only change code below this line
+let chewieRegex = /change/; // Change this line
+// Only change code above this line
+
 let result = chewieQuote.match(chewieRegex);
 ```
 

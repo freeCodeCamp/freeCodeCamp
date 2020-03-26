@@ -21,6 +21,8 @@ const initialState = {
   canFocusEditor: true,
   challengeFiles: {},
   challengeMeta: {
+    superBlock: '',
+    block: '',
     id: '',
     nextChallengePath: '/',
     prevChallengePath: '/',
@@ -29,6 +31,8 @@ const initialState = {
   },
   challengeTests: [],
   consoleOut: '',
+  hasCompletedBlock: false,
+  inAccessibilityMode: false,
   isCodeLocked: false,
   isBuildEnabled: true,
   modal: {
@@ -57,6 +61,7 @@ export const types = createTypes(
     'updateSuccessMessage',
     'updateTests',
     'updateLogs',
+    'cancelTests',
 
     'logsToConsole',
 
@@ -65,6 +70,7 @@ export const types = createTypes(
     'disableBuildOnError',
     'storedCodeFound',
     'noStoredCodeFound',
+    'saveEditorContent',
 
     'closeModal',
     'openModal',
@@ -78,7 +84,10 @@ export const types = createTypes(
 
     'moveToTab',
 
-    'setEditorFocusability'
+    'setEditorFocusability',
+    'setAccessibilityMode',
+
+    'lastBlockChalSubmitted'
   ],
   ns
 );
@@ -115,6 +124,7 @@ export const createFiles = createAction(types.createFiles, challengeFiles =>
 export const createQuestion = createAction(types.createQuestion);
 export const initTests = createAction(types.initTests);
 export const updateTests = createAction(types.updateTests);
+export const cancelTests = createAction(types.cancelTests);
 
 export const initConsole = createAction(types.initConsole);
 export const initLogs = createAction(types.initLogs);
@@ -138,6 +148,7 @@ export const unlockCode = createAction(types.unlockCode);
 export const disableBuildOnError = createAction(types.disableBuildOnError);
 export const storedCodeFound = createAction(types.storedCodeFound);
 export const noStoredCodeFound = createAction(types.noStoredCodeFound);
+export const saveEditorContent = createAction(types.saveEditorContent);
 
 export const closeModal = createAction(types.closeModal);
 export const openModal = createAction(types.openModal);
@@ -152,12 +163,19 @@ export const submitChallenge = createAction(types.submitChallenge);
 export const moveToTab = createAction(types.moveToTab);
 
 export const setEditorFocusability = createAction(types.setEditorFocusability);
+export const setAccessibilityMode = createAction(types.setAccessibilityMode);
+
+export const lastBlockChalSubmitted = createAction(
+  types.lastBlockChalSubmitted
+);
 
 export const currentTabSelector = state => state[ns].currentTab;
 export const challengeFilesSelector = state => state[ns].challengeFiles;
 export const challengeMetaSelector = state => state[ns].challengeMeta;
 export const challengeTestsSelector = state => state[ns].challengeTests;
 export const consoleOutputSelector = state => state[ns].consoleOut;
+export const completedChallengesIds = state =>
+  completedChallengesSelector(state).map(node => node.id);
 export const isChallengeCompletedSelector = state => {
   const completedChallenges = completedChallengesSelector(state);
   const { id: currentChallengeId } = challengeMetaSelector(state);
@@ -223,6 +241,8 @@ export const challengeDataSelector = state => {
 };
 
 export const canFocusEditorSelector = state => state[ns].canFocusEditor;
+export const inAccessibilityModeSelector = state =>
+  state[ns].inAccessibilityMode;
 
 const MAX_LOGS_SIZE = 64 * 1024;
 
@@ -324,9 +344,8 @@ export const reducer = handleActions(
       isBuildEnabled: true,
       isCodeLocked: false
     }),
-    [types.disableBuildOnError]: (state, { payload }) => ({
+    [types.disableBuildOnError]: state => ({
       ...state,
-      consoleOut: state.consoleOut + ' \n' + payload,
       isBuildEnabled: false
     }),
 
@@ -359,6 +378,10 @@ export const reducer = handleActions(
     [types.setEditorFocusability]: (state, { payload }) => ({
       ...state,
       canFocusEditor: payload
+    }),
+    [types.setAccessibilityMode]: (state, { payload }) => ({
+      ...state,
+      inAccessibilityMode: payload
     })
   },
   initialState

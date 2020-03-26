@@ -8,7 +8,7 @@ forumTopicId: 301322
 ## Description
 <section id='description'>
 
-In previous lessons, you learned that an object can inherit its behavior (methods) from another object by cloning its <code>prototype</code> object:
+In previous lessons, you learned that an object can inherit its behavior (methods) from another object by referencing its <code>prototype</code> object:
 
 ```js
 ChildObject.prototype = Object.create(ParentObject.prototype);
@@ -82,11 +82,11 @@ function Penguin() { }
 Penguin.prototype = Object.create(Bird.prototype);
 Penguin.prototype.constructor = Penguin;
 
-// Add your code below this line
+// Only change code below this line
 
 
 
-// Add your code above this line
+// Only change code above this line
 
 let penguin = new Penguin();
 console.log(penguin.fly());

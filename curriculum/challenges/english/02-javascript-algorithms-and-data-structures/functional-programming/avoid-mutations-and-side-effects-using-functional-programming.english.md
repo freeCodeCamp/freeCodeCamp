@@ -11,7 +11,7 @@ If you haven't already figured it out, the issue in the previous challenge was w
 This is a small example of a much larger pattern - you call a function on a variable, array, or an object, and the function changes the variable or something in the object.
 One of the core principles of functional programming is to not change things. Changes lead to bugs. It's easier to prevent bugs knowing that your functions don't change anything, including the function arguments or any global variable.
 The previous example didn't have any complicated operations but the <code>splice</code> method changed the original array, and resulted in a bug.
-Recall that in functional programming, changing or altering things is called <code>mutation</code>, and the outcome is called a <code>side effect</code>. A function, ideally, should be a <code>pure function</code>, meaning that it does not cause any side effects.
+Recall that in functional programming, changing or altering things is called <dfn>mutation</dfn>, and the outcome is called a <dfn>side effect</dfn>. A function, ideally, should be a <dfn>pure function</dfn>, meaning that it does not cause any side effects.
 Let's try to master this discipline and not alter any variable or object in our code.
 </section>
 
@@ -25,10 +25,10 @@ Fill in the code for the function <code>incrementer</code> so it returns the val
 
 ```yml
 tests:
-  - text: Your function <code>incrementer</code> should not change the value of <code>fixedValue</code>.
+  - text: Your function <code>incrementer</code> should not change the value of <code>fixedValue</code> (which is <code>4</code>).
     testString: assert(fixedValue === 4);
   - text: Your <code>incrementer</code> function should return a value that is one larger than the <code>fixedValue</code> value.
-    testString: assert(newValue === 5);
+    testString: const newValue = incrementer(); assert(newValue === 5);
 
 ```
 
@@ -40,18 +40,15 @@ tests:
 <div id='js-seed'>
 
 ```js
-// the global variable
+// The global variable
 var fixedValue = 4;
 
 function incrementer () {
-  // Add your code below this line
+  // Only change code below this line
 
 
-  // Add your code above this line
+  // Only change code above this line
 }
-
-var newValue = incrementer(); // Should equal 5
-console.log(fixedValue); // Should print 4
 ```
 
 </div>
@@ -69,8 +66,6 @@ var fixedValue = 4
 function incrementer() {
   return fixedValue + 1
 }
-
-var newValue = incrementer(); // Should equal 5
 ```
 
 </section>

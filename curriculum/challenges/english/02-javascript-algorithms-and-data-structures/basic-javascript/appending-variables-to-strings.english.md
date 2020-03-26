@@ -9,6 +9,16 @@ forumTopicId: 16656
 ## Description
 <section id='description'>
 Just as we can build a string over multiple lines out of string <dfn>literals</dfn>, we can also append variables to a string using the plus equals (<code>+=</code>) operator.
+
+Example:
+
+```js
+var anAdjective = "awesome!";
+var ourStr = "freeCodeCamp is ";
+ourStr += anAdjective;
+// ourStr is now "freeCodeCamp is awesome!"
+```
+
 </section>
 
 ## Instructions
@@ -21,9 +31,9 @@ Set <code>someAdjective</code> and append it to <code>myStr</code> using the <co
 
 ```yml
 tests:
-  - text: <code>someAdjective</code> should be set to a string at least 3 characters long
+  - text: <code>someAdjective</code> should be set to a string at least 3 characters long.
     testString: assert(typeof someAdjective !== 'undefined' && someAdjective.length > 2);
-  - text: Append <code>someAdjective</code> to <code>myStr</code> using the <code>+=</code> operator
+  - text: You should append <code>someAdjective</code> to <code>myStr</code> using the <code>+=</code> operator.
     testString: assert(code.match(/myStr\s*\+=\s*someAdjective\s*/).length > 0);
 
 ```
@@ -36,12 +46,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Example
-var anAdjective = "awesome!";
-var ourStr = "freeCodeCamp is ";
-ourStr += anAdjective;
-
-// Only change code below this line
+// Change code below this line
 
 var someAdjective;
 var myStr = "Learning to code is ";
@@ -80,10 +85,6 @@ var myStr = "Learning to code is ";
 
 
 ```js
-var anAdjective = "awesome!";
-var ourStr = "freeCodeCamp is ";
-ourStr += anAdjective;
-
 var someAdjective = "neat";
 var myStr = "Learning to code is ";
 myStr += someAdjective;

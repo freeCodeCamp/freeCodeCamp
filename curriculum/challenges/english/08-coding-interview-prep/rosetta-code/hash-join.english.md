@@ -36,136 +36,109 @@ In pseudo-code, the algorithm could be expressed as follows:
 
 ## Instructions
 <section id='instructions'>
+
 Implement the "hash join" algorithm as a function and demonstrate that it passes the test-case listed below. The function should accept two arrays of objects and return an array of combined objects.
+
 <h4><strong>Input</strong></h4>
+
 <table>
-<tr>
-<td style="padding: 4px; margin: 5px;">
-<table style="border:none; border-collapse:collapse;">
-<tr>
-<td style="border:none"> <i>A =</i>
-</td>
-<td style="border:none">
-<table>
-<tr>
-<th style="padding: 4px; margin: 5px;"> Age </th>
-<th style="padding: 4px; margin: 5px;"> Name
-</th></tr>
-<tr>
-<td style="padding: 4px; margin: 5px;"> 27 </td>
-<td style="padding: 4px; margin: 5px;"> Jonah
-</td></tr>
-<tr>
-<td style="padding: 4px; margin: 5px;"> 18 </td>
-<td style="padding: 4px; margin: 5px;"> Alan
-</td></tr>
-<tr>
-<td style="padding: 4px; margin: 5px;"> 28 </td>
-<td style="padding: 4px; margin: 5px;"> Glory
-</td></tr>
-<tr>
-<td style="padding: 4px; margin: 5px;"> 18 </td>
-<td style="padding: 4px; margin: 5px;"> Popeye
-</td></tr>
-<tr>
-<td style="padding: 4px; margin: 5px;"> 28 </td>
-<td style="padding: 4px; margin: 5px;"> Alan
-</td></tr></table>
-</td>
-<td style="border:none; padding-left:1.5em;" rowspan="2">
-</td>
-<td style="border:none"> <i>B =</i>
-</td>
-<td style="border:none">
-<table>
-<tr>
-<th style="padding: 4px; margin: 5px;"> Character </th>
-<th style="padding: 4px; margin: 5px;"> Nemesis
-</th></tr>
-<tr>
-<td style="padding: 4px; margin: 5px;"> Jonah </td>
-<td style="padding: 4px; margin: 5px;"> Whales
-</td></tr>
-<tr>
-<td style="padding: 4px; margin: 5px;"> Jonah </td>
-<td style="padding: 4px; margin: 5px;"> Spiders
-</td></tr>
-<tr>
-<td style="padding: 4px; margin: 5px;"> Alan </td>
-<td style="padding: 4px; margin: 5px;"> Ghosts
-</td></tr>
-<tr>
-<td style="padding: 4px; margin: 5px;"> Alan </td>
-<td style="padding: 4px; margin: 5px;"> Zombies
-</td></tr>
-<tr>
-<td style="padding: 4px; margin: 5px;"> Glory </td>
-<td style="padding: 4px; margin: 5px;"> Buffy
-</td></tr></table>
-</td></tr>
-<tr>
-<td style="border:none"> <i>j<sub>A</sub> =</i>
-</td>
-<td style="border:none"> <i><code>Name</code> (i.e. column 1)</i>
-</td>
-<td style="border:none"> <i>j<sub>B</sub> =</i>
-</td>
-<td style="border:none"> <i><code>Character</code> (i.e. column 0)</i>
-</td></tr></table>
-</td>
-<td style="padding: 4px; margin: 5px;">
-</td></tr></table>
+  <tr>
+    <td style="padding: 4px; margin: 5px;">
+      <table style="border:none; border-collapse:collapse;">
+        <tr>
+          <td style="border:none"><i>A =</i></td>
+          <td style="border:none">
+            <table>
+              <tr>
+                <th style="padding: 4px; margin: 5px;">Age</th>
+                <th style="padding: 4px; margin: 5px;">Name</th>
+              </tr>
+              <tr>
+                <td style="padding: 4px; margin: 5px;">27</td>
+                <td style="padding: 4px; margin: 5px;">Jonah</td>
+              </tr>
+              <tr>
+                <td style="padding: 4px; margin: 5px;">18</td>
+                <td style="padding: 4px; margin: 5px;">Alan</td>
+              </tr>
+              <tr>
+                <td style="padding: 4px; margin: 5px;">28</td>
+                <td style="padding: 4px; margin: 5px;">Glory</td>
+              </tr>
+              <tr>
+                <td style="padding: 4px; margin: 5px;">18</td>
+                <td style="padding: 4px; margin: 5px;">Popeye</td>
+              </tr>
+              <tr>
+                <td style="padding: 4px; margin: 5px;">28</td>
+                <td style="padding: 4px; margin: 5px;">Alan</td>
+              </tr>
+            </table>
+          </td>
+          <td style="border:none; padding-left:1.5em;" rowspan="2"></td>
+          <td style="border:none"><i>B =</i></td>
+          <td style="border:none">
+            <table>
+              <tr>
+                <th style="padding: 4px; margin: 5px;">Character</th>
+                <th style="padding: 4px; margin: 5px;">Nemesis</th>
+              </tr>
+              <tr>
+                <td style="padding: 4px; margin: 5px;">Jonah</td>
+                <td style="padding: 4px; margin: 5px;">Whales</td>
+              </tr>
+              <tr>
+                <td style="padding: 4px; margin: 5px;">Jonah</td>
+                <td style="padding: 4px; margin: 5px;">Spiders</td>
+              </tr>
+              <tr>
+                <td style="padding: 4px; margin: 5px;">Alan</td>
+                <td style="padding: 4px; margin: 5px;">Ghosts</td>
+              </tr>
+              <tr>
+                <td style="padding: 4px; margin: 5px;">Alan</td>
+                <td style="padding: 4px; margin: 5px;">Zombies</td>
+              </tr>
+              <tr>
+                <td style="padding: 4px; margin: 5px;">Glory</td>
+                <td style="padding: 4px; margin: 5px;">Buffy</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td style="border:none">
+            <i>j<sub>A</sub> =</i>
+          </td>
+          <td style="border:none">
+            <i><code>Name</code> (i.e. column 1)</i>
+          </td>
+          <td style="border:none">
+            <i>j<sub>B</sub> =</i>
+          </td>
+          <td style="border:none">
+            <i><code>Character</code> (i.e. column 0)</i>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
 <h4><strong>Output</strong></h4>
-<table>
-<tr>
-<th style="padding: 4px; margin: 5px;"> A_age </th>
-<th style="padding: 4px; margin: 5px;"> A_name </th>
-<th style="padding: 4px; margin: 5px;"> B_character </th>
-<th style="padding: 4px; margin: 5px;"> B_nemesis
-</th></tr>
-<tr>
-<td style="padding: 4px; margin: 5px;"> 27 </td>
-<td style="padding: 4px; margin: 5px;"> Jonah </td>
-<td style="padding: 4px; margin: 5px;"> Jonah </td>
-<td style="padding: 4px; margin: 5px;"> Whales
-</td></tr>
-<tr>
-<td style="padding: 4px; margin: 5px;"> 27 </td>
-<td style="padding: 4px; margin: 5px;"> Jonah </td>
-<td style="padding: 4px; margin: 5px;"> Jonah </td>
-<td style="padding: 4px; margin: 5px;"> Spiders
-</td></tr>
-<tr>
-<td style="padding: 4px; margin: 5px;"> 18 </td>
-<td style="padding: 4px; margin: 5px;"> Alan </td>
-<td style="padding: 4px; margin: 5px;"> Alan </td>
-<td style="padding: 4px; margin: 5px;"> Ghosts
-</td></tr>
-<tr>
-<td style="padding: 4px; margin: 5px;"> 18 </td>
-<td style="padding: 4px; margin: 5px;"> Alan </td>
-<td style="padding: 4px; margin: 5px;"> Alan </td>
-<td style="padding: 4px; margin: 5px;"> Zombies
-</td></tr>
-<tr>
-<td style="padding: 4px; margin: 5px;"> 28 </td>
-<td style="padding: 4px; margin: 5px;"> Glory </td>
-<td style="padding: 4px; margin: 5px;"> Glory </td>
-<td style="padding: 4px; margin: 5px;"> Buffy
-</td></tr>
-<tr>
-<td style="padding: 4px; margin: 5px;"> 28 </td>
-<td style="padding: 4px; margin: 5px;"> Alan </td>
-<td style="padding: 4px; margin: 5px;"> Alan </td>
-<td style="padding: 4px; margin: 5px;"> Ghosts
-</td></tr>
-<tr>
-<td style="padding: 4px; margin: 5px;"> 28 </td>
-<td style="padding: 4px; margin: 5px;"> Alan </td>
-<td style="padding: 4px; margin: 5px;"> Alan </td>
-<td style="padding: 4px; margin: 5px;"> Zombies
-</td></tr></table>
+
+|A_age|A_name|B_character|B_nemesis|
+|--- |--- |--- |--- |
+|27|Jonah|Jonah|Whales|
+|27|Jonah|Jonah|Spiders|
+|18|Alan|Alan|Ghosts|
+|18|Alan|Alan|Zombies|
+|28|Glory|Glory|Buffy|
+|28|Alan|Alan|Ghosts|
+|28|Alan|Alan|Zombies|
+
 The order of the rows in the output table is not significant.
+
 </section>
 
 ## Tests
@@ -173,7 +146,7 @@ The order of the rows in the output table is not significant.
 
 ```yml
 tests:
-  - text: <code>hashJoin</code> is a function.
+  - text: <code>hashJoin</code> should be a function.
     testString: assert(typeof hashJoin === 'function');
   - text: '<code>hashJoin([{ age: 27, name: "Jonah" }, { age: 18, name: "Alan" }, { age: 28, name: "Glory" }, { age: 18, name: "Popeye" }, { age: 28, name: "Alan" }], [{ character: "Jonah", nemesis: "Whales" }, { character: "Jonah", nemesis: "Spiders" }, { character: "Alan", nemesis: "Ghosts" }, { character:"Alan", nemesis: "Zombies" }, { character: "Glory", nemesis: "Buffy" }, { character: "Bob", nemesis: "foo" }])</code> should return <code>[{"A_age": 27,"A_name": "Jonah", "B_character": "Jonah", "B_nemesis": "Whales"}, {"A_age": 27,"A_name": "Jonah", "B_character": "Jonah", "B_nemesis": "Spiders"}, {"A_age": 18,"A_name": "Alan", "B_character": "Alan", "B_nemesis": "Ghosts"}, {"A_age": 18,"A_name": "Alan", "B_character": "Alan", "B_nemesis": "Zombies"}, {"A_age": 28,"A_name": "Glory", "B_character": "Glory", "B_nemesis": "Buffy"}, {"A_age": 28,"A_name": "Alan", "B_character": "Alan", "B_nemesis": "Ghosts"}, {"A_age": 28,"A_name": "Alan", "B_character": "Alan", "B_nemesis": "Zombies"}]</code>'
     testString: assert.deepEqual(hashJoin(hash1, hash2), res);

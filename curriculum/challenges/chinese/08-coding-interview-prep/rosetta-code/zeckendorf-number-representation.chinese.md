@@ -19,9 +19,9 @@ localeTitle: 勾选村号码表示
 ```yml
 tests:
   - text: zeckendorf必须是功能
-    testString: 'assert.equal(typeof zeckendorf, "function", "zeckendorf must be function");'
+    testString: assert.equal(typeof zeckendorf, 'function');
   - text: 你的<code>zeckendorf</code>函数应该返回正确的答案
-    testString: 'assert.deepEqual(answer, solution20, "Your <code>zeckendorf</code> function should return the correct answer");'
+    testString: assert.deepEqual(answer, solution20);
 
 ```
 

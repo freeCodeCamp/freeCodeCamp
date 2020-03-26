@@ -18,19 +18,19 @@ localeTitle: 与小于算子的比较
 ```yml
 tests:
   - text: <code>testLessThan(0)</code>应该返回“25岁以下”
-    testString: 'assert(testLessThan(0) === "Under 25", "<code>testLessThan(0)</code> should return "Under 25"");'
+    testString: assert(testLessThan(0) === "Under 25");
   - text: <code>testLessThan(24)</code>应该返回“25岁以下”
-    testString: 'assert(testLessThan(24) === "Under 25", "<code>testLessThan(24)</code> should return "Under 25"");'
+    testString: assert(testLessThan(24) === "Under 25");
   - text: <code>testLessThan(25)</code>应该返回“55岁以下”
-    testString: 'assert(testLessThan(25) === "Under 55", "<code>testLessThan(25)</code> should return "Under 55"");'
+    testString: assert(testLessThan(25) === "Under 55");
   - text: <code>testLessThan(54)</code>应该返回“55岁以下”
-    testString: 'assert(testLessThan(54) === "Under 55", "<code>testLessThan(54)</code> should return "Under 55"");'
+    testString: assert(testLessThan(54) === "Under 55");
   - text: <code>testLessThan(55)</code>应返回“55或以上”
-    testString: 'assert(testLessThan(55) === "55 or Over", "<code>testLessThan(55)</code> should return "55 or Over"");'
+    testString: assert(testLessThan(55) === "55 or Over");
   - text: <code>testLessThan(99)</code>应返回“55或以上”
-    testString: 'assert(testLessThan(99) === "55 or Over", "<code>testLessThan(99)</code> should return "55 or Over"");'
+    testString: assert(testLessThan(99) === "55 or Over");
   - text: 您应该至少使用<code>&lt;</code>运算符两次
-    testString: 'assert(code.match(/val\s*<\s*("|")*\d+("|")*/g).length > 1, "You should use the <code>&lt;</code> operator at least twice");'
+    testString: assert(code.match(/val\s*<\s*('|")*\d+('|")*/g).length > 1);
 
 ```
 

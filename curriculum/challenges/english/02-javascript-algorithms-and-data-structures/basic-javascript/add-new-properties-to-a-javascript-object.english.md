@@ -14,6 +14,20 @@ Here's how we would add a <code>"bark"</code> property to <code>ourDog</code>:
 or
 <code>ourDog["bark"] = "bow-wow";</code>
 Now when we evaluate <code>ourDog.bark</code>, we'll get his bark, "bow-wow".
+
+Example:
+
+```js
+var ourDog = {
+  "name": "Camper",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["everything!"]
+};
+
+ourDog.bark = "bow-wow";
+```
+
 </section>
 
 ## Instructions
@@ -26,9 +40,9 @@ Add a <code>"bark"</code> property to <code>myDog</code> and set it to a dog sou
 
 ```yml
 tests:
-  - text: Add the property <code>"bark"</code> to <code>myDog</code>.
+  - text: You should add the property <code>"bark"</code> to <code>myDog</code>.
     testString: assert(myDog.bark !== undefined);
-  - text: Do not add <code>"bark"</code> to the setup section
+  - text: You should not add <code>"bark"</code> to the setup section.
     testString: assert(!/bark[^\n]:/.test(code));
 
 ```
@@ -41,16 +55,6 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Example
-var ourDog = {
-  "name": "Camper",
-  "legs": 4,
-  "tails": 1,
-  "friends": ["everything!"]
-};
-
-ourDog.bark = "bow-wow";
-
 // Setup
 var myDog = {
   "name": "Happy Coder",
@@ -59,7 +63,7 @@ var myDog = {
   "friends": ["freeCodeCamp Campers"]
 };
 
-// Only change code below this line.
+// Only change code below this line
 
 ```
 

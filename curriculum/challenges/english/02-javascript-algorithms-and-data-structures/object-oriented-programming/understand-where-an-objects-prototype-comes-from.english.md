@@ -36,7 +36,7 @@ Use <code>isPrototypeOf</code> to check the <code>prototype</code> of <code>beag
 
 ```yml
 tests:
-  - text: Show that <code>Dog.prototype</code> is the <code>prototype</code> of <code>beagle</code>
+  - text: You should show that <code>Dog.prototype</code> is the <code>prototype</code> of <code>beagle</code>
     testString: assert(/Dog\.prototype\.isPrototypeOf\(beagle\)/.test(code));
 
 ```
@@ -55,7 +55,7 @@ function Dog(name) {
 
 let beagle = new Dog("Snoopy");
 
-// Add your code below this line
+// Only change code below this line
 
 
 ```

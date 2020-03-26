@@ -8,7 +8,7 @@ forumTopicId: 301086
 
 ## Description
 <section id='description'>
-To create a CSS variable, you just need to give it a <code>name</code> with <code>two dashes</code> in front of it and assign it a <code>value</code> like this:
+To create a CSS variable, you just need to give it a name with two hyphens in front of it and assign it a value like this:
 
 ```css
 --penguin-skin: gray;
@@ -43,10 +43,9 @@ tests:
 ```html
 <style>
   .penguin {
+    /* Only change code below this line */
 
-    /* add code below */
-
-    /* add code above */
+    /* Only change code above this line */
     position: relative;
     margin: auto;
     display: block;

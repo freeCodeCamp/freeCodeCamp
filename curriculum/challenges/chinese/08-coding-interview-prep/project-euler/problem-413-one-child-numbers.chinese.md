@@ -19,7 +19,7 @@ localeTitle: 问题413：独生子女号码
 ```yml
 tests:
   - text: <code>euler413()</code>应该返回3079418648040719。
-    testString: 'assert.strictEqual(euler413(), 3079418648040719, "<code>euler413()</code> should return 3079418648040719.");'
+    testString: assert.strictEqual(euler413(), 3079418648040719);
 
 ```
 

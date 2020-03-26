@@ -18,7 +18,7 @@ localeTitle: 从API访问JSON数据
 ```yml
 tests:
   - text: 您的代码应使用括号和点符号来访问正确的代码名称，并将“Loki”打印到控制台。
-    testString: 'assert(code.match(/(?:json\[2\]\.codeNames\[1\]|json\[2\]\[("|")codeNames\1\]\[1\])/g), "Your code should use bracket and dot notation to access the proper code name, and print "Loki" to the console.");'
+    testString: assert(code.match(/console\s*\.\s*log\s*\(\s*json\s*\[2\]\s*(\.\s*codeNames|\[\s*('|`|")codeNames\2\s*\])\s*\[\s*1\s*\]\s*\)/g));
 
 ```
 

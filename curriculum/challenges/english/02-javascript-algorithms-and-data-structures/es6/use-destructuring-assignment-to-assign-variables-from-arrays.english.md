@@ -40,7 +40,7 @@ tests:
     testString: assert(a === 6);
   - text: Value of <code>b</code> should be 8, after swapping.
     testString: assert(b === 8);
-  - text: Should use array destructuring to swap a and b.
+  - text: You should use array destructuring to swap a and b.
     testString: assert(/\[\s*(\w)\s*,\s*(\w)\s*\]\s*=\s*\[\s*\2\s*,\s*\1\s*\]/g.test(code));
 
 ```
@@ -54,11 +54,8 @@ tests:
 
 ```js
 let a = 8, b = 6;
-// change code below this line
+// Only change code below this line
 
-// change code above this line
-console.log(a); // should be 6
-console.log(b); // should be 8
 ```
 
 </div>

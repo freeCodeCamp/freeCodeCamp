@@ -19,7 +19,7 @@ localeTitle: 问题365：巨大的二项式系数
 ```yml
 tests:
   - text: <code>euler365()</code>应该返回162619462356610300。
-    testString: 'assert.strictEqual(euler365(), 162619462356610300, "<code>euler365()</code> should return 162619462356610300.");'
+    testString: assert.strictEqual(euler365(), 162619462356610300);
 
 ```
 

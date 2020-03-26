@@ -29,7 +29,7 @@ tests:
     testString: assert($("button").attr("type") === "submit");
   - text: Your submit button should only have the text "Submit".
     testString: assert($("button").text().match(/^\s*submit\s*$/gi));
-  - text: Make sure your <code>button</code> element has a closing tag.
+  - text: Your <code>button</code> element should have a closing tag.
     testString: assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length);
 
 ```

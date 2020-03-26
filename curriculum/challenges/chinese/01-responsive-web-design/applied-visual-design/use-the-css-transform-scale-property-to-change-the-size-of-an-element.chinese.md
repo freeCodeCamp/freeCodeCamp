@@ -2,23 +2,35 @@
 id: 587d78a5367417b2b2512ad9
 title: Use the CSS Transform scale Property to Change the Size of an Element
 challengeType: 0
-videoUrl: ''
-localeTitle: 使用CSS Transform scale属性更改元素的大小
+videoUrl: 'https://scrimba.com/c/c2MZVSg'
+forumTopicId: 301076
+localeTitle: 使用 CSS Transform scale 属性可以更改元素的大小
 ---
 
 ## Description
-<section id="description">要更改元素的比例，CSS具有<code>transform</code>属性及其<code>scale()</code>函数。以下代码示例将页面上所有段落元素的大小加倍： <blockquote> p { <br>变换：比例（2）; <br> } </blockquote></section>
+<section id='description'>
+CSS 属性 <code>transform</code> 里面的 <code>scale()</code> 函数，可以用来改变元素的显示比例。下面的例子把页面的段落元素放大了 2 倍：
+
+```css
+p {
+  transform: scale(2);
+}
+```
+
+</section>
 
 ## Instructions
-<section id="instructions">使用<code>ball2</code>的id将元素的大小<code>ball2</code>原始大小的1.5倍。 </section>
+<section id='instructions'>
+把 id 为 <code>ball2</code> 的元素放大到原始大小的 1.5 倍。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: '设置<code>#ball2</code>的<code>transform</code>属性，将其缩放为其大小的1.5倍。'
-    testString: 'assert(code.match(/#ball2\s*?{\s*?left:\s*?65%;\s*?transform:\s*?scale\(1\.5\);\s*?}|#ball2\s*?{\s*?transform:\s*?scale\(1\.5\);\s*?left:\s*?65%;\s*?}/gi), "Set the <code>transform</code> property for <code>#ball2</code> to scale it 1.5 times its size.");'
+  - text: '<code>#ball2</code> 的 <code>transform</code> 属性应该为原始大小的 1.5 倍。'
+    testString: assert(code.match(/#ball2\s*?{\s*?left:\s*?65%;\s*?transform:\s*?scale\(1\.5\);\s*?}|#ball2\s*?{\s*?transform:\s*?scale\(1\.5\);\s*?left:\s*?65%;\s*?}/gi));
 
 ```
 
@@ -31,7 +43,7 @@ tests:
 
 ```html
 <style>
-  .ball {
+  .ball { 
     width: 40px;
     height: 40px;
     margin: 50 auto;
@@ -48,7 +60,7 @@ tests:
   }
   #ball2 {
     left: 65%;
-
+    
   }
 
 
@@ -56,7 +68,6 @@ tests:
 
 <div class="ball" id= "ball1"></div>
 <div class="ball" id= "ball2"></div>
-
 ```
 
 </div>
@@ -68,7 +79,10 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+
+```html
 // solution required
 ```
+
 </section>
+              

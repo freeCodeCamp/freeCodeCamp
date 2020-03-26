@@ -7,7 +7,7 @@ forumTopicId: 301559
 
 ## Description
 <section id='description'>
-As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/edit/#!/remix/clone-from-repo?REPO_URL=https://github.com/freeCodeCamp/boilerplate-socialauth/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-socialauth/'>GitHub</a>.
+For the following challenges, you will be working with a new starter project that is different from the previous one. You can find the new starter project on <a href='https://glitch.com/edit/#!/remix/clone-from-repo?REPO_URL=https://github.com/freeCodeCamp/boilerplate-socialauth/'>Glitch</a>, or clone it from <a href='https://github.com/freeCodeCamp/boilerplate-socialauth/'>GitHub</a>.
 The basic path this kind of authentication will follow in your app is: <ol><li>User clicks a button or link sending them to our route to authenticate using a specific strategy (EG. GitHub)</li><li>Your route calls <code>passport.authenticate('github')</code> which redirects them to GitHub.</li><li>The page the user lands on, on GitHub, allows them to login if they aren't already. It then asks them to approve access to their profile from our app.</li><li>The user is then returned to our app at a specific callback url with their profile if they are approved.</li><li>They are now authenticated and your app should check if it is a returning profile, or save it in your database if it is not.</li></ol>
 Strategies with OAuth require you to have at least a <em>Client ID</em> and a <em>Client Secret</em> which is a way for them to verify who the authentication request is coming from and if it is valid. These are obtained from the site you are trying to implement authentication with, such as GitHub, and are unique to your app- <b>THEY ARE NOT TO BE SHARED</b> and should never be uploaded to a public repository or written directly in your code. A common practice is to put them in your <em>.env</em> file and reference them like: <code>process.env.GITHUB_CLIENT_ID</code>. For this challenge we're going to use the GitHub strategy.
 Obtaining your <em>Client ID and Secret</em> from GitHub is done in your account profile settings under 'developer settings', then '<a href='https://github.com/settings/developers'>OAuth applications</a>'. Click 'Register a new application', name your app, paste in the url to your glitch homepage (<b>Not the project code's url</b>), and lastly for the callback url, paste in the same url as the homepage but with '/auth/github/callback' added on. This is where users will be redirected to for us to handle after authenticating on GitHub. Save the returned information as 'GITHUB_CLIENT_ID' and 'GITHUB_CLIENT_SECRET' in your .env file.
@@ -34,9 +34,9 @@ Submit your page when you think you've got it right. If you're running into erro
 
 ```yml
 tests:
-  - text: Route /auth/github correct
+  - text: Route /auth/github should be correct.
     testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /('|")\/auth\/github('|")[^]*get.*passport.authenticate.*github/gi, 'Route auth/github should only call passport.authenticate with github'); }, xhr => { throw new Error(xhr.statusText); })
-  - text: Route /auth/github/callback correct
+  - text: Route /auth/github/callback should be correct.
     testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /('|")\/auth\/github\/callback('|")[^]*get.*passport.authenticate.*github.*failureRedirect:( |)("|')\/("|')/gi, 'Route auth/github/callback should accept a get request and call passport.authenticate for github with a failure redirect to home'); }, xhr => { throw new Error(xhr.statusText); })
 
 ```

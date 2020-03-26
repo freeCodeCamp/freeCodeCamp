@@ -18,17 +18,17 @@ localeTitle: 使用Mixins创建可重用的CSS
 ```yml
 tests:
   - text: 你的代码应该声明一个名为<code>border-radius</code>的<code>mixin</code> ，它有一个名为<code>$radius</code>的参数。
-    testString: 'assert(code.match(/@mixin\s+?border-radius\s*?\(\s*?\$radius\s*?\)\s*?{/gi), "Your code should declare a <code>mixin</code> named <code>border-radius</code> which has a parameter named <code>$radius</code>.");'
+    testString: assert(code.match(/@mixin\s+?border-radius\s*?\(\s*?\$radius\s*?\)\s*?{/gi));
   - text: 您的代码应包含使用<code>$radius</code>参数的<code>-webkit-border-radius</code> vender前缀。
-    testString: 'assert(code.match(/-webkit-border-radius:\s*?\$radius;/gi), "Your code should include the <code>-webkit-border-radius</code> vender prefix that uses the <code>$radius</code> parameter.");'
+    testString: assert(code.match(/-webkit-border-radius:\s*?\$radius;/gi));
   - text: 您的代码应包含使用<code>$radius</code>参数的<code>-moz-border-radius</code> vender前缀。
-    testString: 'assert(code.match(/-moz-border-radius:\s*?\$radius;/gi), "Your code should include the <code>-moz-border-radius</code> vender prefix that uses the <code>$radius</code> parameter.");'
+    testString: assert(code.match(/-moz-border-radius:\s*?\$radius;/gi));
   - text: 您的代码应包含使用<code>$radius</code>参数的<code>-ms-border-radius</code> vender前缀。
-    testString: 'assert(code.match(/-ms-border-radius:\s*?\$radius;/gi), "Your code should include the <code>-ms-border-radius</code> vender prefix that uses the <code>$radius</code> parameter.");'
+    testString: assert(code.match(/-ms-border-radius:\s*?\$radius;/gi));
   - text: 您的代码应包含使用<code>$radius</code>参数的一般<code>border-radius</code>规则。
-    testString: 'assert(code.match(/border-radius:\s*?\$radius;/gi).length == 4, "Your code should include the general <code>border-radius</code> rule that uses the <code>$radius</code> parameter.");'
+    testString: assert(code.match(/border-radius:\s*?\$radius;/gi).length == 4);
   - text: 您的代码应使用<code>@include</code>关键字调用<code>border-radius mixin</code> ，将其设置为15px。
-    testString: 'assert(code.match(/@include\s+?border-radius\(\s*?15px\s*?\);/gi), "Your code should call the <code>border-radius mixin</code> using the <code>@include</code> keyword, setting it to 15px.");'
+    testString: assert(code.match(/@include\s+?border-radius\(\s*?15px\s*?\);/gi));
 
 ```
 

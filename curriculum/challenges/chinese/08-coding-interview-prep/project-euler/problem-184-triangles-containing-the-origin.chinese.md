@@ -19,7 +19,7 @@ localeTitle: 问题184：包含原点的三角形
 ```yml
 tests:
   - text: <code>euler184()</code>应返回1725323624056。
-    testString: 'assert.strictEqual(euler184(), 1725323624056, "<code>euler184()</code> should return 1725323624056.");'
+    testString: assert.strictEqual(euler184(), 1725323624056);
 
 ```
 

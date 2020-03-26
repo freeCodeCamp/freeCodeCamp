@@ -19,7 +19,7 @@ localeTitle: 问题191：奖品串
 ```yml
 tests:
   - text: <code>euler191()</code>应该返回1918080160。
-    testString: 'assert.strictEqual(euler191(), 1918080160, "<code>euler191()</code> should return 1918080160.");'
+    testString: assert.strictEqual(euler191(), 1918080160);
 
 ```
 
