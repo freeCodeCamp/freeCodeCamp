@@ -15,8 +15,7 @@ Pig Latin is a way of altering English Words. The rules are as follows:
 
 ## Instructions
 <section id='instructions'>
-Translate the provided string to Pig Latin. Input strings are guaranteed to be 
-English words in all lowercase.
+Translate the provided string to Pig Latin. Input strings are guaranteed to be English words in all lowercase.
 </section>
 
 ## Tests
