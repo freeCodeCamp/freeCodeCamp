@@ -97,7 +97,7 @@ export function createDonationObj(body) {
   const {
     resource: {
       id,
-      start_time,
+      status_update_time,
       subscriber: { email_address } = {
         email_address: null
       }
@@ -111,7 +111,7 @@ export function createDonationObj(body) {
     provider: 'paypal',
     subscriptionId: id,
     customerId: email_address,
-    startDate: new Date(start_time).toISOString()
+    startDate: new Date(status_update_time).toISOString()
   };
   return donation;
 }

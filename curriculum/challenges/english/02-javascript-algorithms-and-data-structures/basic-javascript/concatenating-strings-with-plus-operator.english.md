@@ -16,6 +16,14 @@ In JavaScript, when the <code>+</code> operator is used with a <code>String</cod
 ```
 
 <strong>Note</strong><br>Watch out for spaces. Concatenation does not add spaces between concatenated strings, so you'll need to add them yourself.
+
+Example:
+
+```js
+var ourStr = "I come first. " + "I come second.";
+// ourStr is "I come first.  I come second."
+```
+
 </section>
 
 ## Instructions
@@ -47,13 +55,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Example
-var ourStr = "I come first. " + "I come second.";
-
-// Only change code below this line
-
-var myStr;
-
+var myStr; // Only change this line
 
 ```
 

@@ -10,6 +10,33 @@ forumTopicId: 17560
 <section id='description'>
 We can also delete properties from objects like this:
 <code>delete ourDog.bark;</code>
+
+Example:
+
+```js
+var ourDog = {
+  "name": "Camper",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["everything!"],
+  "bark": "bow-wow"
+};
+
+delete ourDog.bark;
+```
+
+After the last line shown above, <code>ourDog</code> looks like:
+
+```js
+{
+  "name": "Camper",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["everything!"]
+}
+*/
+```
+
 </section>
 
 ## Instructions
@@ -37,17 +64,6 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Example
-var ourDog = {
-  "name": "Camper",
-  "legs": 4,
-  "tails": 1,
-  "friends": ["everything!"],
-  "bark": "bow-wow"
-};
-
-delete ourDog.bark;
-
 // Setup
 var myDog = {
   "name": "Happy Coder",

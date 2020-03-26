@@ -14,6 +14,20 @@ Here's how we would add a <code>"bark"</code> property to <code>ourDog</code>:
 or
 <code>ourDog["bark"] = "bow-wow";</code>
 Now when we evaluate <code>ourDog.bark</code>, we'll get his bark, "bow-wow".
+
+Example:
+
+```js
+var ourDog = {
+  "name": "Camper",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["everything!"]
+};
+
+ourDog.bark = "bow-wow";
+```
+
 </section>
 
 ## Instructions
@@ -41,16 +55,6 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Example
-var ourDog = {
-  "name": "Camper",
-  "legs": 4,
-  "tails": 1,
-  "friends": ["everything!"]
-};
-
-ourDog.bark = "bow-wow";
-
 // Setup
 var myDog = {
   "name": "Happy Coder",

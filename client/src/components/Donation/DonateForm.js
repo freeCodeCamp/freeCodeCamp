@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import {
-  Button,
   Tabs,
   Tab,
   Row,
@@ -19,9 +18,10 @@ import {
   defaultAmount,
   defaultStateConfig
 } from '../../../../config/donation-settings';
-import { apiLocation } from '../../../../config/env.json';
 import Spacer from '../helpers/Spacer';
 import DonateFormChildViewForHOC from './DonateFormChildViewForHOC';
+import PaypalButton from './PaypalButton';
+import DonateCompletion from './DonateCompletion';
 import {
   isSignedInSelector,
   signInLoadingSelector,
@@ -52,14 +52,16 @@ const mapStateToProps = createSelector(
     showLoading
   })
 );
-
 const mapDispatchToProps = {
   navigate
 };
 
-const createOnClick = navigate => e => {
-  e.preventDefault();
-  return navigate(`${apiLocation}/signin?returnTo=donate`);
+const initialState = {
+  donationState: {
+    processing: false,
+    success: false,
+    error: ''
+  }
 };
 
 class DonateForm extends Component {
@@ -70,16 +72,30 @@ class DonateForm extends Component {
     this.amounts = amountsConfig;
 
     this.state = {
+      ...initialState,
       ...defaultStateConfig,
       processing: false
     };
 
+    this.onDonationStateChange = this.onDonationStateChange.bind(this);
     this.getActiveDonationAmount = this.getActiveDonationAmount.bind(this);
     this.getDonationButtonLabel = this.getDonationButtonLabel.bind(this);
     this.handleSelectAmount = this.handleSelectAmount.bind(this);
     this.handleSelectDuration = this.handleSelectDuration.bind(this);
-    this.handleSelectPaymentType = this.handleSelectPaymentType.bind(this);
     this.hideAmountOptionsCB = this.hideAmountOptionsCB.bind(this);
+    this.resetDonation = this.resetDonation.bind(this);
+  }
+
+  onDonationStateChange(success, processing, error) {
+    this.setState(state => ({
+      ...state,
+      donationState: {
+        ...state.donationState,
+        processing: processing,
+        success: success,
+        error: error
+      }
+    }));
   }
 
   getActiveDonationAmount(durationSelected, amountSelected) {
@@ -118,12 +134,6 @@ class DonateForm extends Component {
 
   handleSelectAmount(donationAmount) {
     this.setState({ donationAmount });
-  }
-
-  handleSelectPaymentType(e) {
-    this.setState({
-      paymentType: e.currentTarget.value
-    });
   }
 
   renderAmountButtons(duration) {
@@ -193,52 +203,86 @@ class DonateForm extends Component {
 
   renderDonationOptions() {
     const { stripe, handleProcessing } = this.props;
-    const { donationAmount, donationDuration, paymentType } = this.state;
+    const { donationAmount, donationDuration } = this.state;
     return (
       <div>
-        {paymentType === 'Card' ? (
-          <StripeProvider stripe={stripe}>
-            <Elements>
-              <DonateFormChildViewForHOC
-                defaultTheme='default'
-                donationAmount={donationAmount}
-                donationDuration={donationDuration}
-                getDonationButtonLabel={this.getDonationButtonLabel}
-                handleProcessing={handleProcessing}
-                hideAmountOptionsCB={this.hideAmountOptionsCB}
-              />
-            </Elements>
-          </StripeProvider>
-        ) : (
-          <p>
-            PayPal is currently unavailable. Please use a Credit/Debit card
-            instead.
-          </p>
-        )}
+        <StripeProvider stripe={stripe}>
+          <Elements>
+            <DonateFormChildViewForHOC
+              defaultTheme='default'
+              donationAmount={donationAmount}
+              donationDuration={donationDuration}
+              getDonationButtonLabel={this.getDonationButtonLabel}
+              handleProcessing={handleProcessing}
+              hideAmountOptionsCB={this.hideAmountOptionsCB}
+            />
+          </Elements>
+        </StripeProvider>
+        <Spacer size={2} />
       </div>
     );
   }
 
-  render() {
-    const { isSignedIn, navigate, showLoading } = this.props;
+  resetDonation() {
+    return this.setState({ ...initialState });
+  }
 
+  renderCompletion(props) {
+    return <DonateCompletion {...props} />;
+  }
+
+  render() {
+    const { donationAmount, donationDuration } = this.state;
+    const { handleProcessing, isSignedIn } = this.props;
+    const {
+      donationState: { processing, success, error }
+    } = this.state;
+    const subscriptionPayment = donationDuration !== 'onetime';
+    if (processing || success || error) {
+      return this.renderCompletion({
+        processing,
+        success,
+        error,
+        reset: this.resetDonation
+      });
+    }
     return (
       <Row>
         <Col sm={10} smOffset={1} xs={12}>
           {this.renderDurationAmountOptions()}
         </Col>
         <Col sm={10} smOffset={1} xs={12}>
-          {!showLoading && !isSignedIn ? (
-            <Button
-              bsStyle='default'
-              className='btn btn-block'
-              onClick={createOnClick(navigate)}
-            >
-              Become a supporter
-            </Button>
+          {subscriptionPayment ? (
+            <Fragment>
+              <b>
+                Confirm your donation of ${donationAmount / 100} / year with
+                PayPal:
+              </b>
+              <Spacer />
+            </Fragment>
           ) : (
-            this.renderDonationOptions()
+            ''
           )}
+          <PaypalButton
+            donationAmount={donationAmount}
+            donationDuration={donationDuration}
+            handleProcessing={handleProcessing}
+            onDonationStateChange={this.onDonationStateChange}
+            skipAddDonation={!isSignedIn}
+          />
+        </Col>
+
+        <Col sm={10} smOffset={1} xs={12}>
+          {subscriptionPayment ? (
+            <Fragment>
+              <Spacer />
+              <b>Or donate with a credit card:</b>
+              <Spacer />
+            </Fragment>
+          ) : (
+            ''
+          )}
+          {this.renderDonationOptions()}
         </Col>
       </Row>
     );
