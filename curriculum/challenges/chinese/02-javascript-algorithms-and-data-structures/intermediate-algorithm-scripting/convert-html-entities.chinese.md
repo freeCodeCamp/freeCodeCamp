@@ -28,7 +28,7 @@ tests:
     testString: assert.match(convertHTML("Hamburgers < Pizza < Tacos"), /Hamburgers &lt; Pizza &lt; Tacos/);
   - text: "<code>convertHTML('Sixty > twelve')</code>应该返回<code>Sixty &&#8203;gt; twelve</code>。"
     testString: assert.match(convertHTML("Sixty > twelve"), /Sixty &gt; twelve/);
-  - text: "<code>convertHTML(&apos;Stuff in 'quotation marks'&apos;)</code>应该返回<code>Stuff in &&#8203;quot;quotation marks&&#8203;quot;</code>。"
+  - text: "<code>convertHTML(&apos;Stuff in \"quotation marks\"&apos;)</code>应该返回<code>Stuff in &&#8203;quot;quotation marks&&#8203;quot;</code>。"
     testString: assert.match(convertHTML('Stuff in "quotation marks"'), /Stuff in &quot;quotation marks&quot;/);
   - text: "<code>convertHTML('Schindler&apos;s List')</code>应该返回<code>Schindler&&#8203;apos;s List</code>。"
     testString: assert.match(convertHTML("Schindler's List"), /Schindler&apos;s List/);

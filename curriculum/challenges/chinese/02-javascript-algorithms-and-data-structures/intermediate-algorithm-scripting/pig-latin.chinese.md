@@ -10,9 +10,9 @@ localeTitle: 儿童黑话
 ## Description
 <section id='description'>
 在这道题目中，我们需要写一个函数，把传入的字符串翻译成“儿童黑话”。
-<a href="http://en.wikipedia.org/wiki/Pig_Latin" target="_blank">儿童黑话</a>的基本转换规则很简单，只需要把一个英文单词的第一个辅音字母或第一组辅音从移到单词的结尾，并在后面加上<code>ay</code>即可。在英语中，字母 a、e、i、o、u 为元音，其余的字母均为辅音。辅音从的意思是连续的多个辅音字母。
+<a href="http://en.wikipedia.org/wiki/Pig_Latin" target="_blank">儿童黑话</a>的基本转换规则很简单，只需要把一个英文单词的第一个辅音字母或第一组辅音簇移到单词的结尾，并在后面加上<code>ay</code>即可。在英语中，字母 a、e、i、o、u 为元音，其余的字母均为辅音。辅音簇的意思是连续的多个辅音字母。
 额外地，如果单词本身是以元音开头的，那只需要在结尾加上<code>way</code>。
-额外地，如果单词不包含 vowel，那只需要在结尾加上<code>ay</code>。
+额外地，如果单词不包含元音，那只需要在结尾加上<code>ay</code>。
 在本题中，传入的单词一定会是英文单词，且所有字母均为小写。
 如果你遇到了问题，请点击<a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。
 </section>
