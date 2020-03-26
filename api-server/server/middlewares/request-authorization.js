@@ -23,7 +23,10 @@ const signinRE = /^\/signin/;
 const statusRE = /^\/status\/ping$/;
 const unsubscribedRE = /^\/unsubscribed\//;
 const unsubscribeRE = /^\/u\/|^\/unsubscribe\/|^\/ue\//;
-const updatePaypalRE = /^\/donate\/update-paypal/;
+const updateHooksRE = /^\/hooks\/update-paypal$|^\/hooks\/update-stripe$/;
+
+// note: this would be replaced by webhooks later
+const donateRE = /^\/donate\/charge-stripe$/;
 
 const _whiteListREs = [
   authRE,
@@ -37,7 +40,8 @@ const _whiteListREs = [
   statusRE,
   unsubscribedRE,
   unsubscribeRE,
-  updatePaypalRE
+  updateHooksRE,
+  donateRE
 ];
 
 export function isWhiteListedPath(path, whiteListREs = _whiteListREs) {

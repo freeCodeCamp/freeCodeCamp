@@ -14,7 +14,10 @@ import { stripePublicKey } from '../../../../config/env.json';
 import { stripeScriptLoader } from '../../utils/scriptLoaders';
 import DonateFormChildViewForHOC from './DonateFormChildViewForHOC';
 import DonateCompletion from './DonateCompletion';
+import PaypalButton from './PaypalButton';
 import { userSelector } from '../../redux';
+
+import { Spacer } from '../../components/helpers';
 
 import './Donation.css';
 
@@ -126,7 +129,21 @@ class MinimalDonateForm extends Component {
 
     return (
       <Row>
-        <Col sm={10} smOffset={1} xs={12}>
+        <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
+          <Spacer />
+          <b>Confirm your donation of $5 / year with PayPal:</b>
+          <Spacer />
+          <PaypalButton
+            donationAmount={donationAmount}
+            donationDuration={donationDuration}
+            handleProcessing={handleProcessing}
+            onDonationStateChange={this.onDonationStateChange}
+          />
+        </Col>
+        <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
+          <Spacer />
+          <b>Or donate with a credit card:</b>
+          <Spacer />
           <StripeProvider stripe={stripe}>
             <Elements>
               <DonateFormChildViewForHOC
@@ -134,7 +151,7 @@ class MinimalDonateForm extends Component {
                 donationAmount={donationAmount}
                 donationDuration={donationDuration}
                 getDonationButtonLabel={() =>
-                  `Confirm your donation of $5 / month`
+                  `Confirm your donation of $5 / year`
                 }
                 handleProcessing={handleProcessing}
               />
