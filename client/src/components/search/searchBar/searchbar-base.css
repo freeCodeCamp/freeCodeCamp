@@ -664,13 +664,13 @@ a[class^='ais-'] {
   background-color: #fff;
 }
 .ais-Hits-item {
-  border-bottom: 0.75px solid var(--gray-15);
+  border-bottom: 0.75px solid var(--gray-45);
   margin: 0;
   padding: 5px 0;
   width: 100%;
 }
 .ais-Hits-item:first-of-type {
-  border-top: 0.75px solid var(--gray-15);
+  border-top: 0.75px solid var(--gray-45);
 }
 .ais-Hits-item:last-of-type {
   border-top: 1px solid var(--gray-00);
