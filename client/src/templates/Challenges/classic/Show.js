@@ -251,10 +251,7 @@ class ShowClassic extends Component {
 
   renderPreview() {
     return (
-      <Preview
-        className='full-height notranslate'
-        disableIframe={this.state.resizing}
-      />
+      <Preview className='full-height' disableIframe={this.state.resizing} />
     );
   }
 
