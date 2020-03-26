@@ -86,7 +86,6 @@ class Hotkeys extends Component {
 
           <ObserveKeys only={'Escape'}>
             <input
-              autoFocus={true}
               onChange={({ target: { value } }) =>
                 this.setState({ filter: value })
               }
