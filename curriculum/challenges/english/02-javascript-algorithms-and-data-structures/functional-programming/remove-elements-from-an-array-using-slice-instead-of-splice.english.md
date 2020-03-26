@@ -32,7 +32,7 @@ tests:
   - text: Your code should use the <code>slice</code> method.
     testString: assert(code.match(/\.slice/g));
   - text: Your code should not use the <code>splice</code> method.
-    testString: assert(!code.match(/\.splice/g));
+    testString: assert(!code.match(/\.?[\s\S]*?splice/g));
   - text: The <code>inputCities</code> array should not change.
     testString: assert(JSON.stringify(inputCities) === JSON.stringify(["Chicago", "Delhi", "Islamabad", "London", "Berlin"]));
   - text: <code>nonMutatingSplice(["Chicago", "Delhi", "Islamabad", "London", "Berlin"])</code> should return <code>["Chicago", "Delhi", "Islamabad"]</code>.
