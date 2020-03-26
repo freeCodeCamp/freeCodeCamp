@@ -8,7 +8,7 @@ localeTitle: Добавить элементы внутри ваших бутс�
 
 ## Description
 <section id='description'>
-Теперь у нас есть несколько элементов <code>div</code> на каждом столбце нашей строки. Это достаточная глубина для нашей цели. Теперь мы можем добавить элементы <code>button</code> . Гнездо три <code>button</code> элементы внутри каждого из <code>well</code> <code>div</code> элементов.
+Теперь у нас есть несколько элементов <code>div</code> на каждом столбце нашей строки. Это достаточная глубина для нашей цели. Теперь мы можем добавить элементы <code>button</code> . Вставьте три элемента <code>button</code>  внутри каждого из <code>well</code> <code>div</code> элементов.
 </section>
 
 ## Instructions
@@ -21,11 +21,11 @@ localeTitle: Добавить элементы внутри ваших бутс�
 
 ```yml
 tests:
-  - text: Nest three <code>button</code> elements within each of your <code>div</code> elements with class <code>well</code>.
+  - text: Вставьте три элемента <code>button</code>  в каждый из ваших <code>div</code> элементов с классом <code>well</code>.
     testString: assert($("div.well:eq(0)").children("button").length === 3 && $("div.well:eq(1)").children("button").length === 3);
-  - text: You should have a total of 6 <code>button</code> elements.
+  - text: Всего должно быть 6 <code>button</code> элементов.
     testString: assert($("button") && $("button").length > 5);
-  - text: Make sure all your <code>button</code> elements have closing tags.
+  - text: Убедитесь, что все ваши <code>button</code> элементы имеют закрывающие теги.
     testString: assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length);
 
 ```
