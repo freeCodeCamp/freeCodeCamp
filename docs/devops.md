@@ -1,14 +1,12 @@
 <!-- do not translate this -->
 
 | [Read these guidelines in other languages](/docs/i18n-languages) |
-| ---------------------------------------------------------------- |
+| :--------------------------------------------------------------- |
 
 
 <!-- do not translate this -->
 
 # Developer Operations at freeCodeCamp.org
-
-Thanks for your interest in learning more about how we do DevOps for the platform at freeCodeCamp.org.
 
 This guide will help you understand our infrastructure stack and how we maintain our platforms. While this guide does not have exhaustive details for all operations, it could be used as a reference for your understanding of the systems.
 
@@ -16,7 +14,7 @@ Let us know, if you have feedback or queries, and we will be happy to clarify.
 
 ## How do we build, test and deploy the codebase?
 
-Our codebase is continuously built, tested and deployed to **separate sets of infrastructure (Servers, Databases, CDNs, etc.)**.
+This repository is continuously built, tested and deployed to **separate sets of infrastructure (Servers, Databases, CDNs, etc.)**.
 
 This involves three steps to be followed in sequence:
 
@@ -50,11 +48,11 @@ Together these tests help in preventing issues from repeating themselves and ens
 
 We have configured continuous delivery software to push changes to our development and production servers.
 
-Once the changes are pushed to the protected release branches, a build pipeline is automatically triggered for the branch. The build pipelines are responsible for building artefacts and keeping them in a cold storage for later use.
+Once the changes are pushed to the protected release branches, a build pipeline is automatically triggered for the branch. The build pipelines are responsible for building artifacts and keeping them in a cold storage for later use.
 
-The build pipeline goes on to trigger a corresponding release pipeline if it completes a successful run. The release pipelines are responsible for collecting the build artefacts, moving them to the servers and going live.
+The build pipeline goes on to trigger a corresponding release pipeline if it completes a successful run. The release pipelines are responsible for collecting the build artifacts, moving them to the servers and going live.
 
-Status of builds and releases are [available here](#build-and-deployment-status).
+Status of builds and releases are [available here](#build-test-and-deployment-status).
 
 ## Triggering a build, test and deployment.
 
@@ -119,7 +117,7 @@ Currently, only members on the developer team can push to the production branche
 
 The above steps will automatically trigger a run on the build pipeline for the `production-staging` branch. Once the build is complete, the artifacts are saved as `.zip` files in a cold storage to be retrieved and used later.
 
-The release pipeline is triggered automatically when a fresh artifact is available from the connected build pipeline. For staging platforms, this process does not involve manual approval and the artifacts are pushed to the Client CDN and API servers.
+The release pipeline is triggered automatically when a fresh artefact is available from the connected build pipeline. For staging platforms, this process does not involve manual approval and the artifacts are pushed to the Client CDN and API servers.
 
 > **Estimates:**
 >
@@ -130,7 +128,7 @@ The release pipeline is triggered automatically when a fresh artifact is availab
 The process is mostly the same as the staging platforms, with a few extra checks in place. This is just to make sure, we do not break anything on freeCodeCamp.org which can see hundreds of users using it at any moment.
 
 | Do NOT execute these commands unless you have verified that everything is working on the staging platform. You should not bypass or skip any testing on staging before proceeding further. |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
 
 1. Make sure your `production-staging` branch is pristine and in sync with the upstream.
@@ -164,7 +162,7 @@ If the changes are working nicely and have been tested on the staging platform, 
 For staff use:
 
 | Check your email for a direct link or [go to the release dashboard](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release) after the build run is complete. |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| :----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
 
 Once one of the staff members approves a release, the pipeline will push the changes live to freeCodeCamp.org's production CDN and API servers. They typically take ~15-20 mins for the client, and ~5 mins for the API servers to be available live.
@@ -173,19 +171,19 @@ Once one of the staff members approves a release, the pipeline will push the cha
 >
 > The release run typically takes ~15-20 mins for each client instance, and ~5-10 mins for each API instance to be available live. From code push to being live on the production platforms the whole process takes **~90-120 mins** in total (not counting the wait time for the staff approval).
 
-## Test, Build and Deployment Status
+## Build, Test and Deployment Status
 
 Here is the current test, build and deployment status of the codebase.
 
-| Type             | Branch                                                                                       | Status                                                                                                   | Dashboard                                                                         |
-| :--------------- | :------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------- |
+| Type             | Branch                                                                                       | Status                                                                                                   | Dashboard                                                                                 |
+| :--------------- | :------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------- |
 | CI Tests         | [`master`](https://github.com/freeCodeCamp/freeCodeCamp/tree/master)                         | ![Travis CI Build Status](https://travis-ci.com/freeCodeCamp/freeCodeCamp.svg?branch=master)             | [Go to status dashboard](https://travis-ci.com/github/freeCodeCamp/freeCodeCamp/branches) |
 | CI Tests         | [`production-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) | ![Travis CI Build Status](https://travis-ci.com/freeCodeCamp/freeCodeCamp.svg?branch=production-staging) | [Go to status dashboard](https://travis-ci.com/github/freeCodeCamp/freeCodeCamp/branches) |
 | CI Tests         | [`production-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-current) | ![Travis CI Build Status](https://travis-ci.com/freeCodeCamp/freeCodeCamp.svg?branch=production-current) | [Go to status dashboard](https://travis-ci.com/github/freeCodeCamp/freeCodeCamp/branches) |
-| Build Pipeline   | [`production-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) |                                                                                                          | [Go to status dashboard](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build)       |
-| Build Pipeline   | [`production-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) |                                                                                                          | [Go to status dashboard](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build)       |
-| Release Pipeline | [`production-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) |                                                                                                          | [Go to status dashboard](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release)     |
-| Release Pipeline | [`production-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) |                                                                                                          | [Go to status dashboard](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release)     |
+| Build Pipeline   | [`production-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) |                                                                                                          | [Go to status dashboard](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build)      |
+| Build Pipeline   | [`production-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) |                                                                                                          | [Go to status dashboard](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build)      |
+| Release Pipeline | [`production-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) |                                                                                                          | [Go to status dashboard](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release)    |
+| Release Pipeline | [`production-current`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) |                                                                                                          | [Go to status dashboard](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release)    |
 
 ## Early access and beta testing
 
@@ -201,7 +199,7 @@ Currently a public beta testing version is available at:
 
 <h3 align="center"><a href='https://www.freecodecamp.dev' _target='blank'><code>www.freecodecamp.dev</code></a></h3>
 
->**Note:** The domain name is different than **`freeCodeCamp.org`**. This is intentional to prevent search engine indexing and avoid confusion for regular users of the platform.
+> **Note:** The domain name is different than **`freeCodeCamp.org`**. This is intentional to prevent search engine indexing and avoid confusion for regular users of the platform.
 
 ### Identifying the current version of the platforms
 
