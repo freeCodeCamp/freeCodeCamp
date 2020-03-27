@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Col, Row, Image } from '@freecodecamp/react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAward } from '@fortawesome/free-solid-svg-icons';
+import { faAward, faHeart } from '@fortawesome/free-solid-svg-icons';
 import Identicon from 'react-identicons';
 
 import SocialIcons from './SocialIcons';
@@ -12,6 +12,7 @@ import './camper.css';
 const propTypes = {
   about: PropTypes.string,
   githubProfile: PropTypes.string,
+  isDonating: PropTypes.bool,
   isGithub: PropTypes.bool,
   isLinkedIn: PropTypes.bool,
   isTwitter: PropTypes.bool,
@@ -54,6 +55,7 @@ function Camper({
   about,
   yearsTopContributor,
   githubProfile,
+  isDonating,
   isLinkedIn,
   isGithub,
   isTwitter,
@@ -66,6 +68,7 @@ function Camper({
   const avatar = /example.com|identicon.org/.test(picture) ? (
     <Identicon
       bg={'#858591'}
+      className={`${isDonating ? 'supporter-img' : ''}`}
       count={5}
       fg={'#0A0A23'}
       padding={5}
@@ -75,7 +78,7 @@ function Camper({
   ) : (
     <Image
       alt={username + "'s avatar"}
-      className='avatar'
+      className={`avatar${isDonating ? ' supporter-img' : ''}`}
       responsive={true}
       src={picture}
     />
@@ -102,6 +105,11 @@ function Camper({
       <h2 className='text-center username'>@{username}</h2>
       {name && <p className='text-center name'>{name}</p>}
       {location && <p className='text-center location'>{location}</p>}
+      {isDonating && (
+        <p className='text-center supporter'>
+          <FontAwesomeIcon icon={faHeart} /> Supporter
+        </p>
+      )}
       {about && <p className='bio text-center'>{about}</p>}
       {typeof points === 'number' ? (
         <p className='text-center points'>
