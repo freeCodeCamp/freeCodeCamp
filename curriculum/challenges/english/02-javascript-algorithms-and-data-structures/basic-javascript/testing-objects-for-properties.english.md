@@ -58,7 +58,6 @@ function checkObj(obj, checkProp) {
   // Only change code above this line
 }
 
-checkObj(myObj, "gift");
 ```
 
 </div>
