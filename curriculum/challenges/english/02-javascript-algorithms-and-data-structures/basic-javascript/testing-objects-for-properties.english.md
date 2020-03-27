@@ -52,38 +52,22 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Setup
-var myObj = {
-  gift: "pony",
-  pet: "kitten",
-  bed: "sleigh"
-};
-
 function checkObj(obj, checkProp) {
   // Only change code below this line
   return "Change Me!";
   // Only change code above this line
 }
 
-checkObj(myObj, "gift");
 ```
 
 </div>
-
-
 
 </section>
 
 ## Solution
 <section id='solution'>
 
-
 ```js
-var myObj = {
-  gift: "pony",
-  pet: "kitten",
-  bed: "sleigh"
-};
 function checkObj(obj, checkProp) {
   if(obj.hasOwnProperty(checkProp)) {
     return obj[checkProp];
