@@ -48,7 +48,8 @@ const propTypes = {
     twitter: PropTypes.string,
     username: PropTypes.string,
     website: PropTypes.string,
-    yearsTopContributor: PropTypes.array
+    yearsTopContributor: PropTypes.array,
+    isDonating: PropTypes.bool
   })
 };
 
@@ -121,7 +122,8 @@ function renderProfile(user) {
     picture,
     portfolio,
     about,
-    yearsTopContributor
+    yearsTopContributor,
+    isDonating
   } = user;
 
   return (
@@ -129,6 +131,7 @@ function renderProfile(user) {
       <Camper
         about={showAbout ? about : null}
         githubProfile={githubProfile}
+        isDonating={isDonating}
         isGithub={isGithub}
         isLinkedIn={isLinkedIn}
         isTwitter={isTwitter}

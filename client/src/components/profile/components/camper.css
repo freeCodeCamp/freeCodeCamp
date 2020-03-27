@@ -13,3 +13,7 @@
 .location {
   overflow-wrap: break-word;
 }
+
+.supporter-img {
+  border: 10px solid var(--yellow-gold);
+}
