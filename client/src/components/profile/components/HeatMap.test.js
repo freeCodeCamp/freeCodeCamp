@@ -6,19 +6,25 @@ import { render } from '@testing-library/react';
 
 import HeatMap from './HeatMap';
 
+// offset is used to shift the dates so that the calendar renders (for testing
+// purposes only) the same way in each timezone.
+const offset = new Date().getTimezoneOffset() * 60;
+const date1 = 1580393017 + offset;
+const date2 = 1580397504 + offset;
+
 const props = {
-  calendar: {
-    1580393017: 1,
-    1580397504: 1
-  }
+  calendar: {}
 };
+
+props.calendar[date1] = 1;
+props.calendar[date2] = 1;
 
 let dateNowMockFn;
 
 beforeEach(() => {
   dateNowMockFn = jest
     .spyOn(Date, 'now')
-    .mockImplementation(() => 1580729769714);
+    .mockImplementation(() => 1580729769714 + offset * 1000);
 });
 
 afterEach(() => {
