@@ -130,7 +130,7 @@ freeCodeCamp.org提供了一些免费的开发技能认证证书。每个证书�
 
 ### 参与贡献
 
-#### [请遵循这个步骤参与贡献。](./CONTRIBUTING.md)
+#### [请遵循这个步骤参与贡献。](/docs/chinese/CONTRIBUTING.md)
 
 ### 开源许可
 
