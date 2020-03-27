@@ -10,19 +10,11 @@ axios.defaults.withCredentials = true;
 
 // _csrf is passed to the client as a cookie. Tokens are sent back to the server
 // via headers:
-
-let csrfSet = false;
-
-// lazily get _csrf and set headers
 function setCSRFTokens() {
-  if (csrfSet) return;
-
   const _csrf = typeof window !== 'undefined' && cookies.get('_csrf');
-  // TODO add client Sentry logging to check if this is the culprit
   if (!_csrf) return;
   axios.defaults.headers.post['CSRF-Token'] = tokens.create(_csrf);
   axios.defaults.headers.put['CSRF-Token'] = tokens.create(_csrf);
-  csrfSet = true;
 }
 
 function get(path) {
