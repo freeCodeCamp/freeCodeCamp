@@ -10,6 +10,7 @@ import { blockNameify } from '../../../utils/blockNameify';
 import Heart from '../../assets/icons/Heart';
 import Cup from '../../assets/icons/Cup';
 import MinimalDonateForm from './MinimalDonateForm';
+import { modalDefaultStateConfig } from '../../../../config/donation-settings';
 
 import {
   closeDonationModal,
@@ -90,7 +91,19 @@ function DonateModal({
     });
   }
 
-  const donationText = <b>Become an annual supporter of our nonprofit.</b>;
+  const durationToText = donationDuration => {
+    if (donationDuration === 'onetime') return 'a one-time';
+    else if (donationDuration === 'month') return 'a monthly';
+    else if (donationDuration === 'year') return 'an annual';
+    else return 'a';
+  };
+
+  const donationText = (
+    <b>
+      Become {durationToText(modalDefaultStateConfig.donationDuration)}{' '}
+      supporter of our nonprofit.
+    </b>
+  );
   const blockDonationText = (
     <div className='block-modal-text'>
       <div className='donation-icon-container'>
