@@ -20,11 +20,15 @@ exports[`<Profile/> renders correctly 1`] = `
         <div
           class="avatar-container col-xs-12"
         >
-          <img
-            alt="string's avatar"
-            class="avatar img-responsive"
-            src="string"
-          />
+          <div
+            class=""
+          >
+            <img
+              alt="string's avatar"
+              class="avatar img-responsive"
+              src="string"
+            />
+          </div>
         </div>
       </div>
       <div
