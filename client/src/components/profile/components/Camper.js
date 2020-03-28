@@ -68,7 +68,6 @@ function Camper({
   const avatar = /example.com|identicon.org/.test(picture) ? (
     <Identicon
       bg={'#858591'}
-      className={`${isDonating ? 'supporter-img' : ''}`}
       count={5}
       fg={'#0A0A23'}
       padding={5}
@@ -78,7 +77,7 @@ function Camper({
   ) : (
     <Image
       alt={username + "'s avatar"}
-      className={`avatar${isDonating ? ' supporter-img' : ''}`}
+      className='avatar'
       responsive={true}
       src={picture}
     />
@@ -87,7 +86,7 @@ function Camper({
     <div>
       <Row>
         <Col className='avatar-container' xs={12}>
-          {avatar}
+          <div className={isDonating ? 'supporter-img' : ''}>{avatar}</div>
         </Col>
       </Row>
       <SocialIcons
