@@ -2187,9 +2187,9 @@ exports[`<HeatMap/> renders correctly 1`] = `
               <title />
             </rect>
             <rect
-              class="color-scale-1"
+              class="color-empty"
               currentItem="false"
-              data-tip="<b>2 points</b> on Jan 30, 2020"
+              data-tip="<b>No points</b> on Jan 30, 2020"
               height="10"
               width="10"
               x="0"
@@ -2198,9 +2198,9 @@ exports[`<HeatMap/> renders correctly 1`] = `
               <title />
             </rect>
             <rect
-              class="color-empty"
+              class="color-scale-1"
               currentItem="false"
-              data-tip="<b>No points</b> on Jan 31, 2020"
+              data-tip="<b>1 point</b> on Jan 31, 2020"
               height="10"
               width="10"
               x="0"
@@ -2209,9 +2209,9 @@ exports[`<HeatMap/> renders correctly 1`] = `
               <title />
             </rect>
             <rect
-              class="color-empty"
+              class="color-scale-1"
               currentItem="false"
-              data-tip="<b>No points</b> on Feb 1, 2020"
+              data-tip="<b>1 point</b> on Feb 1, 2020"
               height="10"
               width="10"
               x="0"
@@ -2236,9 +2236,9 @@ exports[`<HeatMap/> renders correctly 1`] = `
               <title />
             </rect>
             <rect
-              class="color-empty"
+              class="color-scale-1"
               currentItem="false"
-              data-tip="<b>No points</b> on Feb 3, 2020"
+              data-tip="<b>1 point</b> on Feb 3, 2020"
               height="10"
               width="10"
               x="0"
@@ -2274,7 +2274,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
               Longest Streak:
             </b>
              
-            1
+            2
           </span>
           <span
             class="streak"
@@ -2283,7 +2283,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
               Current Streak:
             </b>
              
-            0
+            1
           </span>
         </div>
       </div>

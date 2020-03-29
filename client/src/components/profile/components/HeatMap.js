@@ -176,10 +176,12 @@ const HeatMap = props => {
       endOfCalendar: endOfCalendar
     };
 
-    pages.unshift(newPage);
+    pages.push(newPage);
 
     endOfCalendar = addDays(startOfCalendar, -1);
   } while (startOfTimestamps < startOfCalendar);
+
+  pages.reverse();
 
   let calendarData = [];
   let dayCounter = pages[0].startOfCalendar;
