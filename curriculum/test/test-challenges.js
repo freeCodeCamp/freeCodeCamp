@@ -32,7 +32,7 @@ const vm = require('vm');
 
 const puppeteer = require('puppeteer');
 
-const { getChallengesForLang } = require('../getChallenges');
+const { getChallengesForLang, getMetaForBlock } = require('../getChallenges');
 
 const MongoIds = require('./utils/mongoIds');
 const ChallengeTitles = require('./utils/challengeTitles');
@@ -99,6 +99,35 @@ async function runTests() {
   const challenges = await Promise.all(
     testLangs.map(lang => getChallenges(lang))
   );
+
+  if (process.env.npm_config_superblock && process.env.npm_config_block) {
+    throw new Error(`Please do not use both a block and superblock as input.`);
+  }
+
+  // the next few statements will filter challenges based on command variables
+  if (process.env.npm_config_superblock) {
+    challenges[0].challenges = challenges[0].challenges.filter(
+      challenge => challenge.superBlock === process.env.npm_config_superblock
+    );
+
+    if (challenges[0].challenges.length === 0) {
+      throw new Error(
+        `"${process.env.npm_config_superblock}" superblock not found. Input needs to be in dasherized form. e.g. "front-end-libraries"`
+      );
+    }
+  }
+
+  if (process.env.npm_config_block) {
+    challenges[0].challenges = challenges[0].challenges.filter(
+      challenge => challenge.block === process.env.npm_config_block
+    );
+
+    if (challenges[0].challenges.length === 0) {
+      throw new Error(
+        `"${process.env.npm_config_block}" block not found. Input should be as shown on /learn. e.g. "Basic HTML and HTML5"`
+      );
+    }
+  }
 
   describe('Check challenges', function() {
     before(async function() {
@@ -173,122 +202,156 @@ function populateTestsForLang({ lang, challenges }) {
   describe(`Check challenges (${lang})`, function() {
     this.timeout(5000);
 
+    const meta = {};
+
     challenges.forEach(challenge => {
-      describe(challenge.title || 'No title', function() {
-        it('Common checks', function() {
-          const result = validateChallenge(challenge);
-          const invalidBlock = validateBlock(challenge);
+      const dashedBlockName = dasherize(challenge.block);
 
-          if (result.error) {
-            throw new AssertionError(result.error);
+      if (!meta[dashedBlockName]) {
+        meta[dashedBlockName] = getMetaForBlock(dashedBlockName).challengeOrder;
+      }
+
+      describe(challenge.block || 'No block', function() {
+        describe(challenge.title || 'No title', function() {
+          it('Matches a title in meta.json', function() {
+            const index = meta[dashedBlockName].findIndex(
+              arr => arr[1] === challenge.title
+            );
+
+            if (index < 0) {
+              throw new AssertionError(
+                `Cannot find title "${challenge.title}" in meta.json file`
+              );
+            }
+          });
+
+          it('Matches an ID in meta.json', function() {
+            const index = meta[dashedBlockName].findIndex(
+              arr => arr[0] === challenge.id
+            );
+
+            if (index < 0) {
+              throw new AssertionError(
+                `Cannot find ID "${challenge.id}" in meta.json file`
+              );
+            }
+          });
+
+          it('Common checks', function() {
+            const result = validateChallenge(challenge);
+            const invalidBlock = validateBlock(challenge);
+
+            if (result.error) {
+              throw new AssertionError(result.error);
+            }
+            if (challenge.challengeType !== 7 && invalidBlock) {
+              throw new Error(invalidBlock);
+            }
+            const { id, title } = challenge;
+            mongoIds.check(id, title);
+            challengeTitles.check(title);
+          });
+
+          const { challengeType } = challenge;
+          if (
+            challengeType !== challengeTypes.html &&
+            challengeType !== challengeTypes.js &&
+            challengeType !== challengeTypes.bonfire &&
+            challengeType !== challengeTypes.modern &&
+            challengeType !== challengeTypes.backend
+          ) {
+            return;
           }
-          if (challenge.challengeType !== 7 && invalidBlock) {
-            throw new Error(invalidBlock);
+
+          let { tests = [] } = challenge;
+          tests = tests.filter(test => !!test.testString);
+          if (tests.length === 0) {
+            it('Check tests. No tests.');
+            return;
           }
-          const { id, title } = challenge;
-          mongoIds.check(id, title);
-          challengeTitles.check(title);
-        });
 
-        const { challengeType } = challenge;
-        if (
-          challengeType !== challengeTypes.html &&
-          challengeType !== challengeTypes.js &&
-          challengeType !== challengeTypes.bonfire &&
-          challengeType !== challengeTypes.modern &&
-          challengeType !== challengeTypes.backend
-        ) {
-          return;
-        }
-
-        let { tests = [] } = challenge;
-        tests = tests.filter(test => !!test.testString);
-        if (tests.length === 0) {
-          it('Check tests. No tests.');
-          return;
-        }
-
-        describe('Check tests syntax', function() {
-          tests.forEach(test => {
-            it(`Check for: ${test.text}`, function() {
-              assert.doesNotThrow(() => new vm.Script(test.testString));
+          describe('Check tests syntax', function() {
+            tests.forEach(test => {
+              it(`Check for: ${test.text}`, function() {
+                assert.doesNotThrow(() => new vm.Script(test.testString));
+              });
             });
           });
-        });
 
-        let { files = [] } = challenge;
-        let createTestRunner;
-        if (challengeType === challengeTypes.backend) {
-          it('Check tests is not implemented.');
-          return;
-        } else if (
-          challengeType === challengeTypes.js ||
-          challengeType === challengeTypes.bonfire
-        ) {
-          createTestRunner = createTestRunnerForJSChallenge;
-        } else if (files.length === 1) {
-          createTestRunner = createTestRunnerForDOMChallenge;
-        } else {
-          it('Check tests.', () => {
-            throw new Error('Seed file should be only the one.');
-          });
-          return;
-        }
-
-        files = files.map(createPoly);
-        it('Test suite must fail on the initial contents', async function() {
-          this.timeout(5000 * tests.length + 1000);
-          // suppress errors in the console.
-          const oldConsoleError = console.error;
-          console.error = () => {};
-          let fails = false;
-          let testRunner;
-          try {
-            testRunner = await createTestRunner(
-              { ...challenge, files },
-              '',
-              page
-            );
-          } catch {
-            fails = true;
+          let { files = [] } = challenge;
+          let createTestRunner;
+          if (challengeType === challengeTypes.backend) {
+            it('Check tests is not implemented.');
+            return;
+          } else if (
+            challengeType === challengeTypes.js ||
+            challengeType === challengeTypes.bonfire
+          ) {
+            createTestRunner = createTestRunnerForJSChallenge;
+          } else if (files.length === 1) {
+            createTestRunner = createTestRunnerForDOMChallenge;
+          } else {
+            it('Check tests.', () => {
+              throw new Error('Seed file should be only the one.');
+            });
+            return;
           }
-          if (!fails) {
-            for (const test of tests) {
-              try {
-                await testRunner(test);
-              } catch (e) {
-                fails = true;
-                break;
-              }
-            }
-          }
-          console.error = oldConsoleError;
-          assert(fails, 'Test suit does not fail on the initial contents');
-        });
 
-        let { solutions = [] } = challenge;
-        const noSolution = new RegExp('// solution required');
-        solutions = solutions.filter(
-          solution => !!solution && !noSolution.test(solution)
-        );
-
-        if (solutions.length === 0) {
-          it('Check tests. No solutions');
-          return;
-        }
-
-        describe('Check tests against solutions', function() {
-          solutions.forEach((solution, index) => {
-            it(`Solution ${index + 1} must pass the tests`, async function() {
-              this.timeout(5000 * tests.length + 1000);
-              const testRunner = await createTestRunner(
+          files = files.map(createPoly);
+          it('Test suite must fail on the initial contents', async function() {
+            this.timeout(5000 * tests.length + 1000);
+            // suppress errors in the console.
+            const oldConsoleError = console.error;
+            console.error = () => {};
+            let fails = false;
+            let testRunner;
+            try {
+              testRunner = await createTestRunner(
                 { ...challenge, files },
-                solution,
+                '',
                 page
               );
+            } catch {
+              fails = true;
+            }
+            if (!fails) {
               for (const test of tests) {
-                await testRunner(test);
+                try {
+                  await testRunner(test);
+                } catch (e) {
+                  fails = true;
+                  break;
+                }
               }
+            }
+            console.error = oldConsoleError;
+            assert(fails, 'Test suit does not fail on the initial contents');
+          });
+
+          let { solutions = [] } = challenge;
+          const noSolution = new RegExp('// solution required');
+          solutions = solutions.filter(
+            solution => !!solution && !noSolution.test(solution)
+          );
+
+          if (solutions.length === 0) {
+            it('Check tests. No solutions');
+            return;
+          }
+
+          describe('Check tests against solutions', function() {
+            solutions.forEach((solution, index) => {
+              it(`Solution ${index + 1} must pass the tests`, async function() {
+                this.timeout(5000 * tests.length + 1000);
+                const testRunner = await createTestRunner(
+                  { ...challenge, files },
+                  solution,
+                  page
+                );
+                for (const test of tests) {
+                  await testRunner(test);
+                }
+              });
             });
           });
         });
