@@ -31,7 +31,7 @@ tests:
   - text: Your code should use the <code>join</code> method.
     testString: assert(code.match(/\.join/g));
   - text: Your code should not use the <code>replace</code> method.
-    testString: assert(!code.match(/\.replace/g));
+    testString: assert(!code.match(/\.?[\s\S]*?replace/g));
   - text: <code>sentensify("May-the-force-be-with-you")</code> should return a string.
     testString: assert(typeof sentensify("May-the-force-be-with-you") === "string");
   - text: <code>sentensify("May-the-force-be-with-you")</code> should return <code>"May the force be with you"</code>.

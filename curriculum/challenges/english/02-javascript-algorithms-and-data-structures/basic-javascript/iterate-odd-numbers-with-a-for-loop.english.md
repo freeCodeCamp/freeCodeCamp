@@ -33,7 +33,7 @@ Push the odd numbers from 1 through 9 to <code>myArray</code> using a <code>for<
 ```yml
 tests:
   - text: You should be using a <code>for</code> loop for this.
-    testString: assert(code.match(/for\s*\(/g).length > 1);
+    testString: assert(/for\s*\([^)]+?\)/.test(code));
   - text: <code>myArray</code> should equal <code>[1,3,5,7,9]</code>.
     testString: assert.deepEqual(myArray, [1,3,5,7,9]);
 
@@ -74,10 +74,6 @@ if(typeof myArray !== "undefined"){(function(){return myArray;})();}
 
 
 ```js
-var ourArray = [];
-for (var i = 0; i < 10; i += 2) {
-  ourArray.push(i);
-}
 var myArray = [];
 for (var i = 1; i < 10; i += 2) {
   myArray.push(i);

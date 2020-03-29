@@ -8,16 +8,14 @@ forumTopicId: 16039
 
 ## Description
 <section id='description'>
-Translate the provided string to pig latin.
-<a href="http://en.wikipedia.org/wiki/Pig_Latin" target="_blank">Pig Latin</a> takes the first consonant (or consonant cluster) of an English word, moves it to the end of the word and suffixes an "ay".
-If a word begins with a vowel you just add "way" to the end.
-If a word does not contain a vowel, just add "ay" to the end.
-Input strings are guaranteed to be English words in all lowercase.
+Pig Latin is a way of altering English Words. The rules are as follows:
+- If a word begins with a consonant, take the first consonant or consonant cluster, move it to the end of the word, and add "ay" to it.
+- If a word begins with a vowel, just add "way" at the end.
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Translate the provided string to Pig Latin. Input strings are guaranteed to be English words in all lowercase.
 </section>
 
 ## Tests
