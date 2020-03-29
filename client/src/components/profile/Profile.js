@@ -20,6 +20,7 @@ const propTypes = {
       isLocked: PropTypes.bool,
       showAbout: PropTypes.bool,
       showCerts: PropTypes.bool,
+      showDonation: PropTypes.bool,
       showHeatMap: PropTypes.bool,
       showLocation: PropTypes.bool,
       showName: PropTypes.bool,
@@ -48,7 +49,8 @@ const propTypes = {
     twitter: PropTypes.string,
     username: PropTypes.string,
     website: PropTypes.string,
-    yearsTopContributor: PropTypes.array
+    yearsTopContributor: PropTypes.array,
+    isDonating: PropTypes.bool
   })
 };
 
@@ -96,6 +98,7 @@ function renderProfile(user) {
     profileUI: {
       showAbout = false,
       showCerts = false,
+      showDonation = false,
       showHeatMap = false,
       showLocation = false,
       showName = false,
@@ -121,14 +124,18 @@ function renderProfile(user) {
     picture,
     portfolio,
     about,
-    yearsTopContributor
+    yearsTopContributor,
+    isDonating
   } = user;
+
+  console.log(showDonation);
 
   return (
     <Fragment>
       <Camper
         about={showAbout ? about : null}
         githubProfile={githubProfile}
+        isDonating={showDonation ? isDonating : null}
         isGithub={isGithub}
         isLinkedIn={isLinkedIn}
         isTwitter={isTwitter}
