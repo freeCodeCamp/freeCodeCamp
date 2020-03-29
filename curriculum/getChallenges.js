@@ -16,10 +16,9 @@ function getChallengesDirForLang(lang) {
 }
 
 function getMetaForBlock(block) {
-  const meta = JSON.parse(
+  return JSON.parse(
     fs.readFileSync(path.resolve(metaDir, `./${block}/meta.json`), 'utf8')
   );
-  return meta;
 }
 
 exports.getChallengesDirForLang = getChallengesDirForLang;
