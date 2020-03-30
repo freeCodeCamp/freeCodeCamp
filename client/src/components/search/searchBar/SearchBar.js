@@ -185,7 +185,7 @@ export class SearchBar extends Component {
             </label>
             <ObserveKeys>
               <SearchBox
-                focusShortcuts={[83, 191]}
+                focusShortcuts={[83]}
                 onChange={this.handleChange}
                 onFocus={this.handleFocus}
                 onSubmit={this.handleSearch}
