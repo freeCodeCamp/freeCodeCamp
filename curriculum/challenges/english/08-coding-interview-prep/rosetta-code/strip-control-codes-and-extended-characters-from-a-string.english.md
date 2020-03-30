@@ -25,19 +25,19 @@ On a non-ASCII based system, we consider characters that do not have a correspon
 ``` yml
 tests:
   - text: <code>strip</code> should be a function.
-    testString: assert(typeof strip == 'function', '<code>strip</code> should be a function.');
+    testString: assert(typeof strip == 'function');
   - text: <code>strip("abc")</code> should return a string.
-    testString: assert(typeof strip("\ba\\x00b\n\rc\fd\xc3") == 'string', '<code>strip("abc")</code> should return a string.');
-  - text: <code>strip("\\ba\\x00b\\n\\rc\\fd\\xc3")</code> should return <code>"abcd"</code>.
-    testString: assert.equal(strip("\ba\x00b\n\rc\fd\xc3"), "abcd", '<code>strip("\\ba\\x00b\\n\\rc\\fd\\xc3")</code> should return <code>"abcd"</code>.');
-  - text: <code>strip("\\u0000\\n abc\\u00E9def\\u007F")</code> should return <code>" abcdef"</code>.
-    testString: assert.equal(strip("\u0000\n abc\u00E9def\u007F"), " abcdef", '<code>strip("\\u0000\\n abc\\u00E9def\\u007F")</code> should return <code>" abcdef"</code>.');
-  - text: <code>strip("a\\n\\tb\\u2102d\\u2147f")</code> should return <code>"abdf"</code>.
-    testString: assert.equal(strip("a\n\tb\u2102d\u2147f"), "abdf", '<code>strip("a\\n\\tb\\u2102d\\u2147f")</code> should return <code>"abdf"</code>.');
+    testString: assert(typeof strip("abc") == 'string');
+  - text: <code>strip("\ba\x00b\n\rc\fd\xc3")</code> should return <code>"abcd"</code>.
+    testString: assert.equal(strip("\ba\x00b\n\rc\fd\xc3"), "abcd");
+  - text: <code>strip("\u0000\n abc\u00E9def\u007F")</code> should return <code>" abcdef"</code>.
+    testString: assert.equal(strip("\u0000\n abc\u00E9def\u007F"), " abcdef");
+  - text: <code>strip("a\n\tb\u2102d\u2147f")</code> should return <code>"abdf"</code>.
+    testString: assert.equal(strip("a\n\tb\u2102d\u2147f"), "abdf");
   - text: <code>strip("Français.")</code> should return <code>"Franais."</code>.
-    testString: assert.equal(strip("Français."), "Franais.", '<code>strip("Français.")</code> should return <code>"Franais."</code>.');
-  - text: <code>strip("123\\tabc\\u0007DEF\\u007F+-*/€æŧðłþ")</code> should return <code>"123abcDEF+-*/"</code>.
-    testString: assert.equal(strip("123\tabc\u0007DEF\u007F+-*/€æŧðłþ"), "123abcDEF+-*/", '<code>strip("123\\tabc\\u0007DEF\\u007F+-*/€æŧðłþ")</code> should return <code>"123abcDEF+-*/"</code>.');
+    testString: assert.equal(strip("Français."), "Franais.");
+  - text: <code>strip("123\tabc\u0007DEF\u007F+-*/€æŧðłþ")</code> should return <code>"123abcDEF+-*/"</code>.
+    testString: assert.equal(strip("123\tabc\u0007DEF\u007F+-*/€æŧðłþ"), "123abcDEF+-*/");
 ```
 
 </section>
