@@ -135,10 +135,10 @@ class HeatMapInner extends Component {
         <Spacer />
         <Row>
           <div className='streak-container'>
-            <span className='streak'>
+            <span className='streak' data-testid='longest-streak'>
               <b>Longest Streak:</b> {longestStreak || 0}
             </span>
-            <span className='streak'>
+            <span className='streak' data-testid='current-streak'>
               <b>Current Streak:</b> {currentStreak || 0}
             </span>
           </div>

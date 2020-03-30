@@ -40,12 +40,16 @@ describe('<HeatMap/>', () => {
   });
 
   it('calculates the correct longest streak', () => {
-    const { container } = render(<HeatMap {...props} />);
-    expect(container.querySelectorAll('.streak')[0].textContent).toContain('2');
+    const { getByTestId } = render(<HeatMap {...props} />);
+    expect(getByTestId('longest-streak').textContent).toContain(
+      'Longest Streak: 2'
+    );
   });
 
   it('calculates the correct current streak', () => {
-    const { container } = render(<HeatMap {...props} />);
-    expect(container.querySelectorAll('.streak')[1].textContent).toContain('1');
+    const { getByTestId } = render(<HeatMap {...props} />);
+    expect(getByTestId('current-streak').textContent).toContain(
+      'Current Streak: 1'
+    );
   });
 });

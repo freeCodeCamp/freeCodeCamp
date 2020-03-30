@@ -2269,6 +2269,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
         >
           <span
             class="streak"
+            data-testid="longest-streak"
           >
             <b>
               Longest Streak:
@@ -2278,6 +2279,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
           </span>
           <span
             class="streak"
+            data-testid="current-streak"
           >
             <b>
               Current Streak:
