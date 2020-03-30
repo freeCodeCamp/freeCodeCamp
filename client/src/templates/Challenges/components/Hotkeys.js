@@ -102,30 +102,38 @@ class Hotkeys extends Component {
             </thead>
 
             <tbody>
-              {Object.keys(keyMap).reduce((memo, actionName) => {
-                const { sequences, name } = keyMap[actionName];
-                if (
-                  filter.length === 0 ||
-                  name.toUpperCase().indexOf(_filter) !== -1
-                ) {
-                  const commaSeparatedSequences = sequences.flatMap(
-                    ({ sequence }) => [
-                      <span key={sequence}>{sequence}</span>,
-                      <span key={sequence + 'comma'}>, </span>
-                    ]
-                  );
-                  // remove trailing comma
-                  commaSeparatedSequences.pop();
-                  memo.push(
-                    <tr key={name || actionName}>
-                      <td>{name}</td>
-                      <td>{commaSeparatedSequences}</td>
-                    </tr>
-                  );
-                }
+              {Object.keys(keyMap).reduce(
+                (memo, actionName) => {
+                  const { sequences, name } = keyMap[actionName];
+                  if (
+                    filter.length === 0 ||
+                    name.toUpperCase().indexOf(_filter) !== -1
+                  ) {
+                    const commaSeparatedSequences = sequences.flatMap(
+                      ({ sequence }) => [
+                        <span key={sequence}>{sequence}</span>,
+                        <span key={sequence + 'comma'}>, </span>
+                      ]
+                    );
+                    // remove trailing comma
+                    commaSeparatedSequences.pop();
+                    memo.push(
+                      <tr key={name || actionName}>
+                        <td>{name}</td>
+                        <td>{commaSeparatedSequences}</td>
+                      </tr>
+                    );
+                  }
 
-                return memo;
-              }, [])}
+                  return memo;
+                },
+                [
+                  <tr key={'focus-search'}>
+                    <td>Focus search</td>
+                    <td>s</td>
+                  </tr>
+                ]
+              )}
             </tbody>
           </table>
         </div>
