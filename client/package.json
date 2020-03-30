@@ -34,7 +34,7 @@
     "gatsby-link": "^2.2.22",
     "gatsby-plugin-advanced-sitemap": "^1.4.5",
     "gatsby-plugin-create-client-paths": "^2.1.15",
-    "gatsby-plugin-manifest": "^2.2.23",
+    "gatsby-plugin-manifest": "^2.3.3",
     "gatsby-plugin-postcss": "^2.1.13",
     "gatsby-plugin-react-helmet": "^3.1.13",
     "gatsby-plugin-remove-serviceworker": "^1.0.0",
@@ -43,8 +43,7 @@
     "gatsby-transformer-remark": "^2.6.30",
     "jquery": "^3.4.1",
     "lodash": "^4.17.15",
-    "monaco-editor": "^0.18.1",
-    "monaco-editor-webpack-plugin": "^1.7.0",
+    "monaco-editor": "^0.20.0",
     "nanoid": "^1.2.2",
     "prismjs": "^1.17.1",
     "query-string": "^6.8.3",
@@ -63,7 +62,7 @@
     "react-responsive": "^6.1.1",
     "react-spinkit": "^3.0.0",
     "react-stripe-elements": "^2.0.3",
-    "react-tooltip": "^3.11.1",
+    "react-tooltip": "^4.1.2",
     "react-transition-group": "^4.3.0",
     "react-youtube": "^7.9.0",
     "redux": "^4.0.4",
@@ -76,6 +75,7 @@
     "sanitize-html": "^1.20.0",
     "sass.js": "^0.11.0",
     "store": "^2.0.12",
+    "typescript": "^3.8.3",
     "validator": "^10.11.0"
   },
   "keywords": [
@@ -105,9 +105,11 @@
     "copy-webpack-plugin": "^5.1.1",
     "jest": "^24.9.0",
     "jest-dom": "^3.5.0",
+    "monaco-editor-webpack-plugin": "^1.9.0",
     "react-test-renderer": "^16.10.2",
     "redux-saga-test-plan": "^4.0.0-rc.3",
-    "webpack-cli": "^3.3.9"
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
   },
   "repository": {
     "type": "git",
