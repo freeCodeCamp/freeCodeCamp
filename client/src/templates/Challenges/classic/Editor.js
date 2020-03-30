@@ -180,10 +180,10 @@ class Editor extends Component {
       this.props.setEditorFocusability(true)
     );
     // This is to persist changes caused by the accessibility tooltip.
-    // Unfortunately it relies on Monaco's implementation details
-    this._editor.onDidChangeConfiguration(() => {
+    this._editor.onDidChangeConfiguration(event => {
       if (
-        this._editor.getConfiguration().accessibilitySupport === 2 &&
+        event.hasChanged(monaco.editor.EditorOption.accessibilitySupport) &&
+        editor.getRawOptions().accessibilitySupport === 'on' &&
         !this.props.inAccessibilityMode
       ) {
         this.props.setAccessibilityMode(true);
