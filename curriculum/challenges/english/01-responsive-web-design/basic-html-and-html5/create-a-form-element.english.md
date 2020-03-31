@@ -15,7 +15,8 @@ For example:
 
 ## Instructions
 <section id='instructions'>
-Nest your text field inside a <code>form</code> element, and add the <code>action="/submit-cat-photo"</code> attribute to the form element.
+Nest the existing input element inside a <code>form</code> element, and add the <code>action="/submit-cat-photo"</code> attribute to the form element.
+Nest the existing input element inside a form element, and add the action="/submit-cat-photo" attribute to the form element.
 </section>
 
 ## Tests
@@ -23,8 +24,8 @@ Nest your text field inside a <code>form</code> element, and add the <code>actio
 
 ```yml
 tests:
-  - text: Your text input element should be nested within a <code>form</code> element.
-    testString: assert($("form") && $("form").children("input") && $("form").children("input").length > 0);
+  - text: The existing input element should be nested within a <code>form</code> element.
+    testString: assert.isTrue(document.querySelector('form input').getAttribute('type') === 'text' && document.querySelector('form input').getAttribute('placeholder') === 'cat photo URL');
   - text: Your <code>form</code> should have an <code>action</code> attribute which is set to <code>/submit-cat-photo</code>
     testString: assert($("form").attr("action") === "/submit-cat-photo");
   - text: Your <code>form</code> element should have well-formed open and close tags.
@@ -75,9 +76,9 @@ tests:
 <h2>CatPhotoApp</h2>
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
-  
+
   <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-  
+
   <p>Things cats love:</p>
   <ul>
     <li>cat nip</li>
