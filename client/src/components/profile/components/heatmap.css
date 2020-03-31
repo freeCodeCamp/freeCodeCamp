@@ -6,8 +6,16 @@
   color: var(--primary-color);
 }
 
+.heatmap-nav {
+  text-align: center;
+}
+
+.heatmap-nav-btn {
+  margin: 0 20px;
+}
+
 .react-calendar-heatmap-month-label {
-  color: var(--primary-color);
+  fill: var(--gray-45) !important;
 }
 
 .react-calendar-heatmap .color-empty {
