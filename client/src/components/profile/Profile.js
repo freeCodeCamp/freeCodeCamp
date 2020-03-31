@@ -29,10 +29,6 @@ const propTypes = {
       showTimeLine: PropTypes.bool
     }),
     calendar: PropTypes.object,
-    streak: PropTypes.shape({
-      current: PropTypes.number,
-      longest: PropTypes.number
-    }),
     completedChallenges: PropTypes.array,
     portfolio: PropTypes.array,
     about: PropTypes.string,
@@ -108,7 +104,6 @@ function renderProfile(user) {
     },
     calendar,
     completedChallenges,
-    streak,
     githubProfile,
     isLinkedIn,
     isGithub,
@@ -150,7 +145,7 @@ function renderProfile(user) {
         website={website}
         yearsTopContributor={yearsTopContributor}
       />
-      {showHeatMap ? <HeatMap calendar={calendar} streak={streak} /> : null}
+      {showHeatMap ? <HeatMap calendar={calendar} /> : null}
       {showCerts ? <Certifications username={username} /> : null}
       {showPortfolio ? <Portfolio portfolio={portfolio} /> : null}
       {showTimeLine ? (
