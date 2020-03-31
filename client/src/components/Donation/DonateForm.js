@@ -252,17 +252,12 @@ class DonateForm extends Component {
           {this.renderDurationAmountOptions()}
         </Col>
         <Col sm={10} smOffset={1} xs={12}>
-          {subscriptionPayment ? (
-            <Fragment>
-              <b>
-                Confirm your donation of ${donationAmount / 100} /{' '}
-                {donationDuration} with PayPal:
-              </b>
-              <Spacer />
-            </Fragment>
-          ) : (
-            ''
-          )}
+          <b>
+            Confirm your donation of ${donationAmount / 100} /{' '}
+            {donationDuration} with PayPal:
+          </b>
+          <Spacer />
+
           <PaypalButton
             donationAmount={donationAmount}
             donationDuration={donationDuration}

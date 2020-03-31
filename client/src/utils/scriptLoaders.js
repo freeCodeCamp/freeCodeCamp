@@ -10,6 +10,13 @@ export const scriptLoader = (id, key, async, src, onload, text) => {
   document.getElementsByTagName('head')[0].appendChild(s);
 };
 
+export const scriptRemover = id => {
+  let script = document.getElementById(id);
+  if (script) {
+    script.remove();
+  }
+};
+
 export const stripeScriptLoader = onload =>
   scriptLoader(
     'stripe-js',
