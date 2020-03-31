@@ -1,3 +1,4 @@
+/* eslint-disable no-loop-func */
 const path = require('path');
 const liveServer = require('live-server');
 
@@ -86,19 +87,76 @@ spinner.text = 'Populate tests.';
 let browser;
 let page;
 
-runTests();
-
-async function runTests() {
-  process.on('unhandledRejection', err => {
-    spinner.stop();
-    throw new Error(`unhandledRejection: ${err.name}, ${err.message}`);
+setup()
+  .then(runTests)
+  .catch(err => {
+    cleanup();
+    // setting the error code because node does not (yet) exit with a non-zero
+    // code on unhandled exceptions.
+    process.exitCode = 1;
+    throw err;
   });
 
+async function setup() {
+  // liveServer starts synchronously
+  liveServer.start({
+    host: '127.0.0.1',
+    port: '8080',
+    root: path.resolve(__dirname, 'stubs'),
+    mount: [['/js', path.join(clientPath, 'static/js')]],
+    open: false,
+    logLevel: 0
+  });
+  browser = await puppeteer.launch({
+    args: [
+      // Required for Docker version of Puppeteer
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+      // This will write shared memory files into /tmp instead of /dev/shm,
+      // because Docker’s default for /dev/shm is 64MB
+      '--disable-dev-shm-usage'
+      // dumpio: true
+    ]
+  });
+  global.Worker = createPseudoWorker(await newPageContext(browser));
+  page = await newPageContext(browser);
+  await page.setViewport({ width: 300, height: 150 });
   const testLangs = testedLangs();
-
-  const challenges = await Promise.all(
+  const langAndChallenges = await Promise.all(
     testLangs.map(lang => getChallenges(lang))
   );
+  const meta = {};
+  for (const { lang, challenges } of langAndChallenges) {
+    meta[lang] = {};
+    for (const challenge of challenges) {
+      const dashedBlockName = dasherize(challenge.block);
+      if (!meta[dashedBlockName]) {
+        meta[lang][dashedBlockName] = (await getMetaForBlock(
+          dashedBlockName
+        )).challengeOrder;
+      }
+    }
+  }
+  return {
+    meta,
+    langAndChallenges
+  };
+}
+
+// cleanup calls some async functions, but it's the last thing that happens, so
+// no need to await anything.
+function cleanup() {
+  if (browser) {
+    browser.close();
+  }
+  liveServer.shutdown();
+  spinner.stop();
+}
+
+function runTests({ langAndChallenges, meta }) {
+  process.on('unhandledRejection', err => {
+    throw new Error(`unhandledRejection: ${err.name}, ${err.message}`);
+  });
 
   if (process.env.npm_config_superblock && process.env.npm_config_block) {
     throw new Error(`Please do not use both a block and superblock as input.`);
@@ -106,11 +164,11 @@ async function runTests() {
 
   // the next few statements will filter challenges based on command variables
   if (process.env.npm_config_superblock) {
-    challenges[0].challenges = challenges[0].challenges.filter(
+    langAndChallenges[0].challenges = langAndChallenges[0].challenges.filter(
       challenge => challenge.superBlock === process.env.npm_config_superblock
     );
 
-    if (challenges[0].challenges.length === 0) {
+    if (langAndChallenges[0].challenges.length === 0) {
       throw new Error(
         `"${process.env.npm_config_superblock}" superblock not found. Input needs to be in dasherized form. e.g. "front-end-libraries"`
       );
@@ -118,11 +176,11 @@ async function runTests() {
   }
 
   if (process.env.npm_config_block) {
-    challenges[0].challenges = challenges[0].challenges.filter(
+    langAndChallenges[0].challenges = langAndChallenges[0].challenges.filter(
       challenge => challenge.block === process.env.npm_config_block
     );
 
-    if (challenges[0].challenges.length === 0) {
+    if (langAndChallenges[0].challenges.length === 0) {
       throw new Error(
         `"${process.env.npm_config_block}" block not found. Input should be as shown on /learn. e.g. "Basic HTML and HTML5"`
       );
@@ -130,44 +188,14 @@ async function runTests() {
   }
 
   describe('Check challenges', function() {
-    before(async function() {
-      spinner.text = 'Testing';
-      this.timeout(50000);
-      liveServer.start({
-        host: '127.0.0.1',
-        port: '8080',
-        root: path.resolve(__dirname, 'stubs'),
-        mount: [['/js', path.join(clientPath, 'static/js')]],
-        open: false,
-        logLevel: 0
-      });
-      browser = await puppeteer.launch({
-        args: [
-          // Required for Docker version of Puppeteer
-          '--no-sandbox',
-          '--disable-setuid-sandbox',
-          // This will write shared memory files into /tmp instead of /dev/shm,
-          // because Docker’s default for /dev/shm is 64MB
-          '--disable-dev-shm-usage'
-          // dumpio: true
-        ]
-      });
-      global.Worker = createPseudoWorker(await newPageContext(browser));
-      page = await newPageContext(browser);
-      await page.setViewport({ width: 300, height: 150 });
+    after(function() {
+      cleanup();
     });
-    after(async function() {
-      this.timeout(30000);
-      if (browser) {
-        await browser.close();
-      }
-      liveServer.shutdown();
-      spinner.stop();
-    });
-
-    challenges.forEach(populateTestsForLang);
+    for (const challenge of langAndChallenges) {
+      populateTestsForLang(challenge, meta);
+    }
   });
-
+  spinner.text = 'Testing';
   run();
 }
 
@@ -194,27 +222,19 @@ function validateBlock(challenge) {
   }
 }
 
-function populateTestsForLang({ lang, challenges }) {
+function populateTestsForLang({ lang, challenges }, meta) {
   const mongoIds = new MongoIds();
   const challengeTitles = new ChallengeTitles();
   const validateChallenge = challengeSchemaValidator(lang);
 
   describe(`Check challenges (${lang})`, function() {
     this.timeout(5000);
-
-    const meta = {};
-
     challenges.forEach(challenge => {
       const dashedBlockName = dasherize(challenge.block);
-
-      if (!meta[dashedBlockName]) {
-        meta[dashedBlockName] = getMetaForBlock(dashedBlockName).challengeOrder;
-      }
-
       describe(challenge.block || 'No block', function() {
         describe(challenge.title || 'No title', function() {
           it('Matches a title in meta.json', function() {
-            const index = meta[dashedBlockName].findIndex(
+            const index = meta[lang][dashedBlockName].findIndex(
               arr => arr[1] === challenge.title
             );
 
@@ -226,7 +246,7 @@ function populateTestsForLang({ lang, challenges }) {
           });
 
           it('Matches an ID in meta.json', function() {
-            const index = meta[dashedBlockName].findIndex(
+            const index = meta[lang][dashedBlockName].findIndex(
               arr => arr[0] === challenge.id
             );
 
