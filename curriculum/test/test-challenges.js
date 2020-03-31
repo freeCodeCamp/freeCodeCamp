@@ -122,11 +122,11 @@ async function setup() {
   page = await newPageContext(browser);
   await page.setViewport({ width: 300, height: 150 });
   const testLangs = testedLangs();
-  const langAndChallenges = await Promise.all(
+  const challengesForLang = await Promise.all(
     testLangs.map(lang => getChallenges(lang))
   );
   const meta = {};
-  for (const { lang, challenges } of langAndChallenges) {
+  for (const { lang, challenges } of challengesForLang) {
     meta[lang] = {};
     for (const challenge of challenges) {
       const dashedBlockName = dasherize(challenge.block);
@@ -139,7 +139,7 @@ async function setup() {
   }
   return {
     meta,
-    langAndChallenges
+    challengesForLang
   };
 }
 
@@ -153,7 +153,7 @@ function cleanup() {
   spinner.stop();
 }
 
-function runTests({ langAndChallenges, meta }) {
+function runTests({ challengesForLang, meta }) {
   process.on('unhandledRejection', err => {
     throw new Error(`unhandledRejection: ${err.name}, ${err.message}`);
   });
@@ -164,11 +164,11 @@ function runTests({ langAndChallenges, meta }) {
 
   // the next few statements will filter challenges based on command variables
   if (process.env.npm_config_superblock) {
-    langAndChallenges[0].challenges = langAndChallenges[0].challenges.filter(
+    challengesForLang[0].challenges = challengesForLang[0].challenges.filter(
       challenge => challenge.superBlock === process.env.npm_config_superblock
     );
 
-    if (langAndChallenges[0].challenges.length === 0) {
+    if (challengesForLang[0].challenges.length === 0) {
       throw new Error(
         `"${process.env.npm_config_superblock}" superblock not found. Input needs to be in dasherized form. e.g. "front-end-libraries"`
       );
@@ -176,11 +176,11 @@ function runTests({ langAndChallenges, meta }) {
   }
 
   if (process.env.npm_config_block) {
-    langAndChallenges[0].challenges = langAndChallenges[0].challenges.filter(
+    challengesForLang[0].challenges = challengesForLang[0].challenges.filter(
       challenge => challenge.block === process.env.npm_config_block
     );
 
-    if (langAndChallenges[0].challenges.length === 0) {
+    if (challengesForLang[0].challenges.length === 0) {
       throw new Error(
         `"${process.env.npm_config_block}" block not found. Input should be as shown on /learn. e.g. "Basic HTML and HTML5"`
       );
@@ -191,7 +191,7 @@ function runTests({ langAndChallenges, meta }) {
     after(function() {
       cleanup();
     });
-    for (const challenge of langAndChallenges) {
+    for (const challenge of challengesForLang) {
       populateTestsForLang(challenge, meta);
     }
   });
