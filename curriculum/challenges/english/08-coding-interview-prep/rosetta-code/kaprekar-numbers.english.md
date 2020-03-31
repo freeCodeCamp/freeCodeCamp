@@ -6,6 +6,7 @@ forumTopicId: 302296
 ---
 
 ## Description
+
 <section id='description'>
 A positive integer is a <a href="https://en.wikipedia.org/wiki/Kaprekar number">Kaprekar number</a> if:
 <ul>
@@ -21,38 +22,41 @@ Kaprekar numbers:
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 Write a function that takes a number $n$, a base $bs$, and returns true if the number is a Kaprekar number for the given base. Otherwise, the function returns false.
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-``` yml
+```yml
 tests:
   - text: <code>isKaprekar</code> should be a function.
-    testString: assert(typeof isKaprekar == 'function', '<code>isKaprekar</code> should be a function.');
+    testString: assert(typeof isKaprekar == 'function');
   - text: <code>isKaprekar(1, 10)</code> should return a boolean.
-    testString: assert(typeof isKaprekar(1, 10) == 'boolean', '<code>isKaprekar(1, 10)</code> should return a boolean.');
+    testString: assert(typeof isKaprekar(1, 10) == 'boolean');
   - text: <code>isKaprekar(1, 10)</code> should return <code>true</code>.
-    testString: assert.equal(isKaprekar(1, 10), true, '<code>isKaprekar(1, 10)</code> should return <code>true</code>.');
+    testString: assert.equal(isKaprekar(1, 10), true);
   - text: <code>isKaprekar(9, 10)</code> should return <code>true</code>.
-    testString: assert.equal(isKaprekar(9, 10), true, '<code>isKaprekar(9, 10)</code> should return <code>true</code>.');
+    testString: assert.equal(isKaprekar(9, 10), true);
   - text: <code>isKaprekar(2223, 10)</code> should return <code>true</code>.
-    testString: assert.equal(isKaprekar(2223, 10), true, '<code>isKaprekar(2223, 10)</code> should return <code>true</code>.');
+    testString: assert.equal(isKaprekar(2223, 10), true);
   - text: <code>isKaprekar(22823, 10)</code> should return <code>false</code>.
-    testString: assert.equal(isKaprekar(22823, 10), false, '<code>isKaprekar(22823, 10)</code> should return <code>false</code>.');
+    testString: assert.equal(isKaprekar(22823, 10), false);
   - text: <code>isKaprekar(9, 17)</code> should return <code>false</code>.
-    testString: assert.equal(isKaprekar(9, 17), false, '<code>isKaprekar(9, 17)</code> should return <code>false</code>.');
+    testString: assert.equal(isKaprekar(9, 17), false);
   - text: <code>isKaprekar(225, 17)</code> should return <code>true</code>.
-    testString: assert.equal(isKaprekar(225, 17), true, '<code>isKaprekar(225, 17)</code> should return <code>true</code>.');
+    testString: assert.equal(isKaprekar(225, 17), true);
   - text: <code>isKaprekar(999, 17)</code> should return <code>false</code>.
-    testString: assert.equal(isKaprekar(999, 17), false, '<code>isKaprekar(999, 17)</code> should return <code>false</code>.');
+    testString: assert.equal(isKaprekar(999, 17), false);
 ```
 
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
   <div id='js-seed'>
 
@@ -66,6 +70,7 @@ function isKaprekar(n, bs) {
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js
@@ -73,11 +78,12 @@ function isKaprekar(n, bs) {
   if (n < 1) return false;
   if (n == 1) return true;
   for (var a = n * n, b = 0, s = 1; a; s *= bs) {
-    b += a % bs * s;
+    b += (a % bs) * s;
     a = Math.floor(a / bs);
     if (b && a + b == n) return true;
-  } return false;
-} 
+  }
+  return false;
+}
 ```
 
 </section>
