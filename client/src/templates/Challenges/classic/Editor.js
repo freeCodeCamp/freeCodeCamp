@@ -114,7 +114,8 @@ class Editor extends Component {
       },
       parameterHints: {
         enabled: false
-      }
+      },
+      tabSize: 2
     };
 
     this._editor = null;
