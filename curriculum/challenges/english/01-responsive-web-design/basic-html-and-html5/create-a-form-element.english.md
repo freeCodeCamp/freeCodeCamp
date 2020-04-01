@@ -23,7 +23,7 @@ Nest the existing input element inside a <code>form</code> element and add assig
 
 ```yml
 tests:
-  - text: The existing input element should be nested within a <code>form</code> element.
+  - text: The existing <code>input</code> element should be nested within a <code>form</code> element.
     testString: const inputElem = document.querySelector('form input'); assert(inputElem.getAttribute('type') === 'text' && inputElem.getAttribute('placeholder') === 'cat photo URL');
   - text: Your <code>form</code> should have an <code>action</code> attribute which is set to <code>/submit-cat-photo</code>
     testString: assert($("form").attr("action") === "/submit-cat-photo");
