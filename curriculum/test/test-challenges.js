@@ -160,7 +160,7 @@ async function setup() {
       challenge => challenge.superBlock === filter
     );
 
-    if (challengesForLang[0].challenges.length === 0) {
+    if (!challengesForLang[0].challenges.length) {
       throw new Error(`No challenges found with superBlock "${filter}"`);
     }
   }
@@ -176,7 +176,7 @@ async function setup() {
       challenge => challenge.block === filter
     );
 
-    if (challengesForLang[0].challenges.length === 0) {
+    if (!challengesForLang[0].challenges.length) {
       throw new Error(`No challenges found with block "${filter}"`);
     }
   }
