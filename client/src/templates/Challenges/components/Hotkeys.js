@@ -23,28 +23,28 @@ const mapStateToProps = createSelector(
 const mapDispatchToProps = { openModal, setEditorFocusability };
 
 const keyMap = {
-  NAVIGATION_MODE: { name: 'Navigation mode', sequence: 'Alt+n' },
+  NAVIGATION_MODE: { name: 'Navigation mode', sequence: 'alt+n' },
   EXECUTE_CHALLENGE: {
     name: 'Execute challenge',
-    sequences: ['Ctrl+Enter', 'Command+Enter']
+    sequences: ['ctrl+enter', 'cmd+enter']
   },
   FOCUS_EDITOR: { name: 'Focus editor', sequence: 'e' },
   NAVIGATE_PREV: { name: 'Previous challenge', sequence: 'p' },
   NAVIGATE_NEXT: { name: 'Next challenge', sequence: 'n' },
   SAVE_EDITOR_CONTENT: {
     name: 'Save code',
-    sequences: ['Ctrl+s', 'Command+s']
+    sequences: ['ctrl+s', 'cmd+s']
   }
 };
 
 const globalKeyMap = {
   SHOW_DIALOG: {
     name: 'Show keyboard shortcuts',
-    sequence: 'Shift+?'
+    sequence: 'shift+?'
   },
   CLOSE_DIALOG: {
     name: 'Dismiss dialog',
-    sequence: 'Escape'
+    sequence: 'escape'
   }
 };
 
