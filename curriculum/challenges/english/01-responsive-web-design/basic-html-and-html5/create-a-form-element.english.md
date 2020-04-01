@@ -25,7 +25,7 @@ Nest the existing input element inside a form element, and add the action="/subm
 ```yml
 tests:
   - text: The existing input element should be nested within a <code>form</code> element.
-    testString: assert.isTrue(document.querySelector('form input').getAttribute('type') === 'text' && document.querySelector('form input').getAttribute('placeholder') === 'cat photo URL');
+    testString: const inputElem = document.querySelector('form input'); assert(inputElem.getAttribute('type') === 'text' && inputElem.getAttribute('placeholder') === 'cat photo URL');
   - text: Your <code>form</code> should have an <code>action</code> attribute which is set to <code>/submit-cat-photo</code>
     testString: assert($("form").attr("action") === "/submit-cat-photo");
   - text: Your <code>form</code> element should have well-formed open and close tags.
