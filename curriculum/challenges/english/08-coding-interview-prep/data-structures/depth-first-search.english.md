@@ -15,7 +15,7 @@ The animation below shows how the algorithm works. The algorithm starts with the
 
 Notice how, unlike breadth-first search, every time a node is visited, it doesnt visit all of its neighbors. Instead, it first visits one of its neighbors and continues down that path until there are no more nodes to be visited on that path.
 
-To implement this algorithm, you'll want to utilize a stack. A stack is an array in which the last element added is the first to be removed. This is also known as a <dfn>Last-In-First-Out</dfn> data structure. A stack is helpful in depth first search algorithms because, as we add neighbors to the stack, we want to visit, or remove, the most recently added neighbors first. 
+To implement this algorithm, you'll want to utilize a stack. A stack is an array in which the last element added is the first to be removed. This is also known as a <dfn>Last-In-First-Out</dfn> data structure. A stack is helpful in depth first search algorithms because, as we add neighbors to the stack, we want to visit the most recently added neighbors first and remove them from the stack. 
 
 A simple output of this algorithm is a list of nodes which are reachable from a given node. Therefore, you'll also want to keep track of the nodes you visit.
 </section>
