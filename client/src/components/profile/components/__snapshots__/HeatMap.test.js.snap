@@ -2254,7 +2254,7 @@ exports[`<HeatMap/> renders correctly 1`] = `
         />
       </svg>
       <div
-        class="__react_component_tooltip place-top type-dark "
+        class="__react_component_tooltip-304517788 __react_component_tooltip place-top type-dark"
         data-id="tooltip"
       />
       <div
