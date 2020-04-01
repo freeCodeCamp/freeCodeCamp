@@ -12,6 +12,9 @@ Whereas the breadth-first search searches incremental edge lengths away from the
 Once it reaches one end of a path, the search will backtrack to the last node with an un-visited edge path and continue searching.
 Visually, this is what the algorithm is doing where the top node is the starting point of the search.
 <img class='img-responsive' src='https://camo.githubusercontent.com/aaad9e39961daf34d967c616edeb50abf3bf1235/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f372f37662f44657074682d46697273742d5365617263682e676966'>
+
+Notice how unlike <dfn>breadth-first search</dfn> everytime a node is visited, it doesnt visit all its neighbors, it visits a neighbor and continues down that path until there are no longer any neighbors to visit on that node. 
+
 A simple output of this algorithm is a list of nodes which are reachable from a given node. So when implementing this algorithm, you'll need to keep track of the nodes you visit.
 </section>
 
