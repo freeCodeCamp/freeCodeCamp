@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Modal } from '@freecodecamp/react-bootstrap';
 import { createSelector } from 'reselect';
 import { getApplicationKeyMap, ObserveKeys } from 'react-hotkeys';
 import { closeModal, isHotkeysModalOpenSelector } from '../redux';
-import Spacer from '../../../components/helpers/Spacer';
 
 import './hotkeys-modal.css';
 
@@ -23,13 +21,9 @@ const mapStateToProps = createSelector(
   })
 );
 
-const mapDispatchToProps = dispatch =>
-  bindActionCreators(
-    {
-      close: () => closeModal('hotkeys')
-    },
-    dispatch
-  );
+const mapDispatchToProps = {
+  close: () => closeModal('hotkeys')
+};
 
 class HotkeysModal extends Component {
   constructor(props) {
@@ -64,51 +58,56 @@ class HotkeysModal extends Component {
         <Modal.Header className='hotkeys-modal-header' closeButton={true}>
           <Modal.Title className='text-center'>Keyboard shortcuts</Modal.Title>
         </Modal.Header>
-        <Spacer />
-        <ObserveKeys only={'Escape'}>
-          <input
-            onChange={({ target: { value } }) =>
-              this.setState({ filter: value })
-            }
-            placeholder='Filter'
-            value={filter}
-          />
-        </ObserveKeys>
         <Modal.Body className='hotkeys-modal-body'>
-          <table>
-            <thead>
-              <tr>
-                <th>Action</th>
-                <th>Shortcut</th>
-              </tr>
-            </thead>
+          <ObserveKeys only={'Escape'}>
+            <input
+              onChange={({ target: { value } }) =>
+                this.setState({ filter: value })
+              }
+              placeholder='Filter'
+              value={filter}
+            />
+          </ObserveKeys>
+          <div className='column-titles'>
+            <div>Action</div>
+            <div>Shortcut</div>
+          </div>
 
-            <tbody>
-              {Object.keys(keyMap).reduce((memo, actionName) => {
-                const { sequences, name } = keyMap[actionName];
-                if (
-                  filter.length === 0 ||
-                  name.toUpperCase().indexOf(_filter) !== -1
-                ) {
-                  const commaSeparatedSequences = sequences.flatMap(
-                    ({ sequence }) => [
-                      <span key={sequence}>{sequence}</span>,
-                      <span key={sequence + 'comma'}>, </span>
-                    ]
-                  );
-                  // remove trailing comma
-                  commaSeparatedSequences.pop();
-                  memo.push(
-                    <tr key={name || actionName}>
-                      <td>{name}</td>
-                      <td>{commaSeparatedSequences}</td>
-                    </tr>
-                  );
-                }
-                return memo;
-              }, [])}
-            </tbody>
-          </table>
+          <div className='description-container'>
+            {Object.keys(keyMap).reduce((memo, actionName) => {
+              const { sequences, name } = keyMap[actionName];
+              if (
+                filter.length === 0 ||
+                name.toUpperCase().indexOf(_filter) !== -1
+              ) {
+                const commaSeparatedSequences = sequences.flatMap(
+                  ({ sequence }) => [
+                    <span key={sequence}>{sequence}</span>,
+                    <span key={sequence + 'comma'}>, </span>
+                  ]
+                );
+                // remove trailing comma
+                commaSeparatedSequences.pop();
+                memo.push(
+                  <>
+                    <div
+                      className='hotkey-description'
+                      key={name || actionName}
+                    >
+                      {name}
+                    </div>
+                    <div
+                      className='hotkey-description'
+                      key={name + 'seq' || actionName + 'seq'}
+                    >
+                      <div>{commaSeparatedSequences}</div>
+                    </div>
+                  </>
+                );
+              }
+              return memo;
+            }, [])}
+          </div>
         </Modal.Body>
       </Modal>
     );

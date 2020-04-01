@@ -1,33 +1,26 @@
-.hotkeys-modal td {
-  padding: 8px;
+.hotkeys-modal .column-titles {
+  padding-top: 0.5em;
+  display: flex;
+  justify-content: space-evenly;
 }
 
-.hotkeys-modal table {
-  display: block;
-  overflow: auto;
-  border-collapse: separate;
-  border-spacing: 0.2em;
+.hotkeys-modal .description-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: minmax(2em, auto);
 }
 
-.hotkeys-modal .scrollable {
-  overflow: auto;
+.description-container > .hotkey-description {
+  display: flex;
+  align-items: center;
 }
 
-.hotkeys-modal th {
-  font-weight: 700;
-  padding: 0.2em;
-  text-align: center;
-}
-
-.hotkeys-modal h2 {
-  padding: 0.2em;
-  margin: 0.4em;
-}
-
-.hotkeys-modal tbody > tr:nth-child(odd) {
+.description-container > .hotkey-description:nth-child(4n),
+.description-container > .hotkey-description:nth-child(4n-1) {
   background-color: var(--quaternary-background);
 }
 
-.hotkeys-modal tbody > tr:nth-child(even) {
+.description-container > .hotkey-description:nth-child(4n-3),
+.description-container > .hotkey-description:nth-child(4n-2) {
   background-color: var(--tertiary-background);
 }
