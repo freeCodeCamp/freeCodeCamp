@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {
-  HotKeys,
-  GlobalHotKeys,
-  getApplicationKeyMap,
-  ObserveKeys
-} from 'react-hotkeys';
+import { HotKeys, GlobalHotKeys } from 'react-hotkeys';
 import { navigate } from 'gatsby';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
-import { canFocusEditorSelector, setEditorFocusability } from '../redux';
+import {
+  canFocusEditorSelector,
+  setEditorFocusability,
+  openModal
+} from '../redux';
 import './hotkeys.css';
+import HotkeysModal from './HotkeysModal';
 
 const mapStateToProps = createSelector(
   canFocusEditorSelector,
@@ -20,7 +20,7 @@ const mapStateToProps = createSelector(
   })
 );
 
-const mapDispatchToProps = { setEditorFocusability };
+const mapDispatchToProps = { openModal, setEditorFocusability };
 
 const keyMap = {
   NAVIGATION_MODE: { name: 'Navigation mode', sequence: 'Alt+n' },
@@ -56,93 +56,13 @@ const propTypes = {
   innerRef: PropTypes.any,
   introPath: PropTypes.string,
   nextChallengePath: PropTypes.string,
+  openModal: PropTypes.func.isRequired,
   prevChallengePath: PropTypes.string,
   saveEditorContent: PropTypes.func.isRequired,
   setEditorFocusability: PropTypes.func.isRequired
 };
 
 class Hotkeys extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      showDialog: false,
-      filter: ''
-    };
-  }
-
-  renderDialog() {
-    if (this.state.showDialog) {
-      const keyMap = getApplicationKeyMap();
-      const { filter } = this.state;
-      const _filter = filter.toUpperCase();
-
-      // TODO: from an accessibility standpoint, this should probably be an h1,
-      // since there is not currently a top level header in the page. The whole
-      // site should be audited, though, and the header layout fixed.
-      return (
-        <div className='hotkeys-dialog'>
-          <h2>Keyboard shortcuts</h2>
-
-          <ObserveKeys only={'Escape'}>
-            <input
-              onChange={({ target: { value } }) =>
-                this.setState({ filter: value })
-              }
-              placeholder='Filter'
-              value={filter}
-            />
-          </ObserveKeys>
-          <table>
-            <thead>
-              <tr>
-                <th>Action</th>
-                <th>Shortcut</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              {Object.keys(keyMap).reduce(
-                (memo, actionName) => {
-                  const { sequences, name } = keyMap[actionName];
-                  if (
-                    filter.length === 0 ||
-                    name.toUpperCase().indexOf(_filter) !== -1
-                  ) {
-                    const commaSeparatedSequences = sequences.flatMap(
-                      ({ sequence }) => [
-                        <span key={sequence}>{sequence}</span>,
-                        <span key={sequence + 'comma'}>, </span>
-                      ]
-                    );
-                    // remove trailing comma
-                    commaSeparatedSequences.pop();
-                    memo.push(
-                      <tr key={name || actionName}>
-                        <td>{name}</td>
-                        <td>{commaSeparatedSequences}</td>
-                      </tr>
-                    );
-                  }
-
-                  return memo;
-                },
-                [
-                  <tr key={'focus-search'}>
-                    <td>Focus search</td>
-                    <td>s</td>
-                  </tr>
-                ]
-              )}
-            </tbody>
-          </table>
-        </div>
-      );
-    } else {
-      return null;
-    }
-  }
-
   render() {
     const {
       canFocusEditor,
@@ -152,14 +72,14 @@ class Hotkeys extends Component {
       introPath,
       innerRef,
       nextChallengePath,
+      openModal,
       prevChallengePath,
       setEditorFocusability,
       saveEditorContent
     } = this.props;
 
     const globalHandlers = {
-      SHOW_DIALOG: () => this.setState({ showDialog: !this.state.showDialog }),
-      CLOSE_DIALOG: () => this.setState({ showDialog: false })
+      SHOW_DIALOG: () => openModal('hotkeys')
     };
 
     const handlers = {
@@ -202,9 +122,9 @@ class Hotkeys extends Component {
         innerRef={innerRef}
         keyMap={keyMap}
       >
-        {this.renderDialog()}
         {children}
         <GlobalHotKeys handlers={globalHandlers} keyMap={globalKeyMap} />
+        <HotkeysModal />
       </HotKeys>
     );
   }

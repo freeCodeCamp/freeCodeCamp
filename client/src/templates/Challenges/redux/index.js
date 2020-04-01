@@ -187,6 +187,7 @@ export const isCompletionModalOpenSelector = state =>
 export const isHelpModalOpenSelector = state => state[ns].modal.help;
 export const isVideoModalOpenSelector = state => state[ns].modal.video;
 export const isResetModalOpenSelector = state => state[ns].modal.reset;
+export const isHotkeysModalOpenSelector = state => state[ns].modal.hotkeys;
 export const isBuildEnabledSelector = state => state[ns].isBuildEnabled;
 export const successMessageSelector = state => state[ns].successMessage;
 

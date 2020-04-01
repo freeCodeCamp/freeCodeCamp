@@ -1,0 +1,33 @@
+.hotkeys-modal td {
+  padding: 8px;
+}
+
+.hotkeys-modal table {
+  display: block;
+  overflow: auto;
+  border-collapse: separate;
+  border-spacing: 0.2em;
+}
+
+.hotkeys-modal .scrollable {
+  overflow: auto;
+}
+
+.hotkeys-modal th {
+  font-weight: 700;
+  padding: 0.2em;
+  text-align: center;
+}
+
+.hotkeys-modal h2 {
+  padding: 0.2em;
+  margin: 0.4em;
+}
+
+.hotkeys-modal tbody > tr:nth-child(odd) {
+  background-color: var(--quaternary-background);
+}
+
+.hotkeys-modal tbody > tr:nth-child(even) {
+  background-color: var(--tertiary-background);
+}
