@@ -1,6 +1,7 @@
 /* eslint-disable no-loop-func */
 const path = require('path');
 const liveServer = require('live-server');
+const stringSimilarity = require('string-similarity');
 
 const spinner = require('ora')();
 
@@ -98,6 +99,10 @@ setup()
   });
 
 async function setup() {
+  if (process.env.npm_config_superblock && process.env.npm_config_block) {
+    throw new Error(`Please do not use both a block and superblock as input.`);
+  }
+
   // liveServer starts synchronously
   liveServer.start({
     host: '127.0.0.1',
@@ -125,6 +130,57 @@ async function setup() {
   const challengesForLang = await Promise.all(
     testLangs.map(lang => getChallenges(lang))
   );
+
+  // the next few statements create a list of all blocks and superblocks
+  // as they appear in the list of challenges
+  const filters = {
+    blocks: [],
+    superBlocks: []
+  };
+
+  challengesForLang[0].challenges.forEach(chal => {
+    if (filters.blocks.indexOf(chal.block) < 0) {
+      filters.blocks.push(chal.block);
+    }
+
+    if (filters.superBlocks.indexOf(chal.superBlock) < 0) {
+      filters.superBlocks.push(chal.superBlock);
+    }
+  });
+
+  // the next few statements will filter challenges based on command variables
+  if (process.env.npm_config_superblock) {
+    const filter = stringSimilarity.findBestMatch(
+      process.env.npm_config_superblock,
+      filters.superBlocks
+    ).bestMatch.target;
+
+    console.log(`\nsuperBlock being tested: ${filter}`);
+    challengesForLang[0].challenges = challengesForLang[0].challenges.filter(
+      challenge => challenge.superBlock === filter
+    );
+
+    if (challengesForLang[0].challenges.length === 0) {
+      throw new Error(`No challenges found with superBlock "${filter}"`);
+    }
+  }
+
+  if (process.env.npm_config_block) {
+    const filter = stringSimilarity.findBestMatch(
+      process.env.npm_config_block,
+      filters.blocks
+    ).bestMatch.target;
+
+    console.log(`\nblock being tested: ${filter}`);
+    challengesForLang[0].challenges = challengesForLang[0].challenges.filter(
+      challenge => challenge.block === filter
+    );
+
+    if (challengesForLang[0].challenges.length === 0) {
+      throw new Error(`No challenges found with block "${filter}"`);
+    }
+  }
+
   const meta = {};
   for (const { lang, challenges } of challengesForLang) {
     meta[lang] = {};
@@ -157,35 +213,6 @@ function runTests({ challengesForLang, meta }) {
   process.on('unhandledRejection', err => {
     throw new Error(`unhandledRejection: ${err.name}, ${err.message}`);
   });
-
-  if (process.env.npm_config_superblock && process.env.npm_config_block) {
-    throw new Error(`Please do not use both a block and superblock as input.`);
-  }
-
-  // the next few statements will filter challenges based on command variables
-  if (process.env.npm_config_superblock) {
-    challengesForLang[0].challenges = challengesForLang[0].challenges.filter(
-      challenge => challenge.superBlock === process.env.npm_config_superblock
-    );
-
-    if (challengesForLang[0].challenges.length === 0) {
-      throw new Error(
-        `"${process.env.npm_config_superblock}" superblock not found. Input needs to be in dasherized form. e.g. "front-end-libraries"`
-      );
-    }
-  }
-
-  if (process.env.npm_config_block) {
-    challengesForLang[0].challenges = challengesForLang[0].challenges.filter(
-      challenge => challenge.block === process.env.npm_config_block
-    );
-
-    if (challengesForLang[0].challenges.length === 0) {
-      throw new Error(
-        `"${process.env.npm_config_block}" block not found. Input should be as shown on /learn. e.g. "Basic HTML and HTML5"`
-      );
-    }
-  }
 
   describe('Check challenges', function() {
     after(function() {
