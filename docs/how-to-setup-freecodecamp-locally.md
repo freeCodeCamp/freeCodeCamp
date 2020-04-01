@@ -305,7 +305,6 @@ A quick reference to the commands that you will need when working locally.
 
 **Local Build:**
 
-<<<<<<< HEAD
 | command                                                        | description                                                                         |
 | -------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
 | `npm ci`                                                       | Installs / re-install all dependencies and bootstraps the different services.       |
