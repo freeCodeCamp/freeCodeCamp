@@ -82,7 +82,7 @@ export const LearnPage = ({
   const hashValue = hashValueSelector(state, hash);
   return (
     <LearnLayout>
-      <Helmet title='Learn | freeCodeCamp.org' />
+      <Helmet title='Learn to code at home | freeCodeCamp.org' />
       <Grid>
         <Intro
           complete={complete}
