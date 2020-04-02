@@ -110,11 +110,6 @@ function Camper({
         </p>
       )}
       {about && <p className='bio text-center'>{about}</p>}
-      {typeof points === 'number' ? (
-        <p className='text-center points'>
-          {`${points} ${pluralise('point', points !== 1)}`}
-        </p>
-      ) : null}
       {yearsTopContributor.filter(Boolean).length > 0 && (
         <div>
           <br />
@@ -125,6 +120,11 @@ function Camper({
         </div>
       )}
       <br />
+      {typeof points === 'number' ? (
+        <p className='text-center points'>
+          {`${points} ${pluralise('total point', points !== 1)}`}
+        </p>
+      ) : null}
     </div>
   );
 }
