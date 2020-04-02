@@ -7,7 +7,7 @@ localeTitle: Adicionar um botão Enviar para um formulário
 ---
 
 ## Description
-<section id="description"> Vamos adicionar um botão de <code>submit</code> ao seu formulário. Clicar neste botão enviará os dados do seu formulário para o URL que você especificou com o atributo de <code>action</code> do seu formulário. Aqui está um exemplo de botão de envio: <code>&lt;button type=&quot;submit&quot;&gt;this button submits the form&lt;/button&gt;</code> </section>
+<section id="description"> Vamos adicionar um botão de <code>submit</code> ao seu formulário. Ao Clicar neste botão os dados serão enviados do seu formulário para o URL que você especificou com o atributo de <code>action</code> do seu formulário. Aqui está um exemplo de botão de envio: <code>&lt;button type=&quot;submit&quot;&gt;this button submits the form&lt;/button&gt;</code> </section>
 
 ## Instructions
 <section id="instructions"> Adicione um botão como o último elemento do seu elemento de <code>form</code> com um tipo de <code>submit</code> e &quot;Enviar&quot; como seu texto. </section>
