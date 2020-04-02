@@ -46,7 +46,6 @@ function Login(props) {
   );
 }
 
-Login.displayName = 'Login';
 Login.propTypes = {
   children: PropTypes.any,
   isSignedIn: PropTypes.bool,
