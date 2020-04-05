@@ -27,7 +27,7 @@ tests:
 
   - text: Добавьте элемент <code>i</code> с классами <code>fas</code> и <code>fa-thumbs-up</code>.
     testString: assert($("i").is(".fas.fa-thumbs-up") || $("span").is(".fas.fa-thumbs-up"));
-  - text: Ваша иконка <code>fa-thumbs-up</code>  должен находиться внутри вашей кнопки «Нравится».
+  - text: Ваша иконка <code>fa-thumbs-up</code>  должен находиться внутри вашей кнопки «Like».
     testString: assert(($("i.fa-thumbs-up").parent().text().match(/Like/gi) && $(".btn-primary > i").is(".fas.fa-thumbs-up")) || ($("span.fa-thumbs-up").parent().text().match(/Like/gi) && $(".btn-primary > span").is(".fas.fa-thumbs-up")));
   - text: Вставьте элемент <code>i</code> в ваш элемент <code>button</code>.
 
