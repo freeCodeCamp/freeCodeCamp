@@ -24,13 +24,15 @@ Font Awesome - удобная библиотека иконок. Эти знач
 
 ```yml
 tests:
-  - text: Добавьте <code>i</code>-элемент с классами <code>fas</code> и <code>fa-thumbs-up</code>.
+
+  - text: Добавьте элемент <code>i</code> с классами <code>fas</code> и <code>fa-thumbs-up</code>.
     testString: assert($("i").is(".fas.fa-thumbs-up") || $("span").is(".fas.fa-thumbs-up"));
-  - text: Ваша <code>fa-thumbs-up</code>-иконка должна находиться внутри кнопки "Like".
+  - text: Ваша иконка <code>fa-thumbs-up</code>  должен находиться внутри вашей кнопки «Like».
     testString: assert(($("i.fa-thumbs-up").parent().text().match(/Like/gi) && $(".btn-primary > i").is(".fas.fa-thumbs-up")) || ($("span.fa-thumbs-up").parent().text().match(/Like/gi) && $(".btn-primary > span").is(".fas.fa-thumbs-up")));
-  - text: Поместите ваш <code>i</code>-элемент внутрь вашего <code>button</code>-элемента.
+  - text: Вставьте элемент <code>i</code> в ваш элемент <code>button</code>.
+
     testString: assert($("button").children("i").length > 0 || $("button").children("span").length > 0);
-  - text: Make sure your icon element has a closing tag.
+  - text: Убедитесь, что ваш значок элемента имеет закрывающий тег.
     testString: assert(code.match(/<\/i>|<\/span>/g));
 
 ```
