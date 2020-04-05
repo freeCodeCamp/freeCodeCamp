@@ -18,7 +18,6 @@ Font Awesome - удобная библиотека иконок. Эти знач
 <section id='instructions'>
 
 Используйте Font Awesome, чтобы добавить <code>thumbs-up</code>-иконку в вашу кнопку "Like" путём вставки в неё элемента <code>i</code> с классами <code>fa</code> и <code>fa-thumbs-up</code>. Убедитесь, что текст "Like" стоит после иконки.
-
 </section>
 
 ## Tests
