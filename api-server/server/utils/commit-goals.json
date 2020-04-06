@@ -8,6 +8,8 @@
   "dataVisCert": "Data Visualisation Certification",
   "apisMicroservicesCert": "APIs and Microservices Certification",
   "infosecQaCert": "Information Security and Quality Assurance Certification",
+  "qaCert": "Quality Assurance Certification",
+  "infosecCert": "Information Security Certification",
   "sciCompPyCert": "Scientific Computing with Python Certification",
   "dataAnalysisPyCert": "Data Analysis with Python Certification",
   "machineLearningPyCert": "Machine Learning with Python Certification"
