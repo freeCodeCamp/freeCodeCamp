@@ -23,12 +23,17 @@ const superBlockIntro = path.resolve(
   __dirname,
   '../../src/templates/Introduction/SuperBlockIntro.js'
 );
+const video = path.resolve(
+  __dirname,
+  '../../src/templates/Challenges/video/Show.js'
+);
 
 const views = {
   backend,
   classic,
   modern: classic,
-  frontend
+  frontend,
+  video
   // quiz: Quiz
 };
 
