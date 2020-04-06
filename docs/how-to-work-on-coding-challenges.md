@@ -1,8 +1,3 @@
-<!-- do not translate this -->
-| [Read these guidelines in other languages](/docs/i18n-languages) |
-|-|
-<!-- do not translate this -->
-
 # How to work on coding challenges
 
 Our goal is to develop a fun and clear interactive learning experience.
@@ -15,7 +10,9 @@ Creating these challenges requires immense creativity and attention to detail. T
 
 With your help we can design an interactive coding curriculum that will help millions of people learn to code for years to come.
 
-The content for each challenge is stored in its own markdown file. This markdown file is later converted to HTML using our tools to create interactive web pages. You can find all of freeCodeCamp.org's curricular content in the [`/curriculum`](/curriculum) directory.
+The content for each challenge is stored in its own markdown file. This markdown file is later converted to HTML using our tools to create interactive web pages.
+
+You can find all of freeCodeCamp.org's curricular content in the [`/curriculum`](/curriculum) directory.
 
 There are two ways you can work on these challenges:
 

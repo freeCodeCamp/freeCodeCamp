@@ -1,0 +1,6 @@
+- [Overview](/ 'Contribute to the freeCodeCamp.org Community')
+- **Guides**
+- [How to work on coding challenges](/how-to-work-on-coding-challenges)
+- [How to setup freeCodeCamp locally](/how-to-setup-freecodecamp-locally)
+- [How to open a pull request](/how-to-open-a-pull-request)
+- [How we do DevOps at freeCodeCamp.org](/devops.md)

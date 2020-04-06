@@ -1,11 +1,3 @@
-<!-- do not translate this -->
-
-| [Read these guidelines in other languages](/docs/i18n-languages) |
-| :--------------------------------------------------------------- |
-
-
-<!-- do not translate this -->
-
 # Developer Operations at freeCodeCamp.org
 
 This guide will help you understand our infrastructure stack and how we maintain our platforms. While this guide does not have exhaustive details for all operations, it could be used as a reference for your understanding of the systems.
@@ -40,7 +32,8 @@ We employ various levels of integration and acceptance testing to check on the q
 
 We have unit tests for testing our challenge solutions, Server APIs and Client User interfaces. These help us test the integration between different components.
 
-> Note: We are also in the process of writing end user tests which will help in replicating real world scenarios like updating an email or making a call to the API or third-party services.
+> [!NOTE]
+> We are also in the process of writing end user tests which will help in replicating real world scenarios like updating an email or making a call to the API or third-party services.
 
 Together these tests help in preventing issues from repeating themselves and ensure we do not introduce a bug while working on another bug or a feature.
 
@@ -58,7 +51,8 @@ Status of builds and releases are [available here](#build-test-and-deployment-st
 
 Currently, only members on the developer team can push to the production branches. The changes to the `production-*` branches can land only via fast-forward merge to the [`upstream`](https://github.com/freeCodeCamp/freeCodeCamp).
 
-> Note: In the upcoming days we would improve this flow to be done via pull-requests, for better access management and transparency.
+> [!NOTE]
+> In the upcoming days we would improve this flow to be done via pull-requests, for better access management and transparency.
 
 ### Pushing changes to Staging Applications.
 
@@ -113,14 +107,16 @@ Currently, only members on the developer team can push to the production branche
    git push upstream
    ```
 
-   **Note:** You will not be able to force push and if you have re-written the history in anyway these commands will error out. If they do, you may have done something incorrectly and you should just start over.
+   > [!NOTE]
+   > You will not be able to force push and if you have re-written the history in anyway these commands will error out.
+   >
+   > If they do, you may have done something incorrectly and you should just start over.
 
 The above steps will automatically trigger a run on the build pipeline for the `production-staging` branch. Once the build is complete, the artifacts are saved as `.zip` files in a cold storage to be retrieved and used later.
 
 The release pipeline is triggered automatically when a fresh artefact is available from the connected build pipeline. For staging platforms, this process does not involve manual approval and the artifacts are pushed to the Client CDN and API servers.
 
-> **Estimates:**
->
+> [!TIP|label:Estimates]
 > Typically the build run takes ~20-25 minutes to complete followed by the release run which takes ~15-20 mins for the client, and ~5-10 mins for the API to be available live. From code push to being live on the staging platforms the whole process takes **~35-45 mins** in total.
 
 ### Pushing changes to Production Applications.
@@ -147,11 +143,15 @@ The process is mostly the same as the staging platforms, with a few extra checks
    git push upstream
    ```
 
-   **Note:** You will not be able to force push and if you have re-written the history in anyway these commands will error out. If they do, you may have done something incorrectly and you should just start over.
+   > [!NOTE]
+   > You will not be able to force push and if you have re-written the history in anyway these commands will error out.
+   >
+   > If they do, you may have done something incorrectly and you should just start over.
 
 The above steps will automatically trigger a run on the build pipeline for the `production-current` branch. Once a build artifact is ready, it will trigger a run on the release pipeline.
 
-> **Estimates:** Typically the build run takes ~20-25 minutes to complete.
+> [!TIP|label:Estimates]
+> Typically the build run takes ~20-25 minutes to complete.
 
 **Additional Steps for Staff Action**
 
@@ -167,8 +167,7 @@ For staff use:
 
 Once one of the staff members approves a release, the pipeline will push the changes live to freeCodeCamp.org's production CDN and API servers. They typically take ~15-20 mins for the client, and ~5 mins for the API servers to be available live.
 
-> **Estimates:**
->
+> [!TIP|label:Estimates]
 > The release run typically takes ~15-20 mins for each client instance, and ~5-10 mins for each API instance to be available live. From code push to being live on the production platforms the whole process takes **~90-120 mins** in total (not counting the wait time for the staff approval).
 
 ## Build, Test and Deployment Status
@@ -197,9 +196,9 @@ We thank you for reporting bugs that you encounter and help in making freeCodeCa
 
 Currently a public beta testing version is available at:
 
-<h3 align="center"><a href='https://www.freecodecamp.dev' _target='blank'><code>www.freecodecamp.dev</code></a></h3>
+<h1 align="center"><a href='https://www.freecodecamp.dev' _target='blank'><code>www.freecodecamp.dev</code></a></h1>
 
-> **Note:** The domain name is different than **`freeCodeCamp.org`**. This is intentional to prevent search engine indexing and avoid confusion for regular users of the platform.
+> The domain name is different than **`freeCodeCamp.org`**. This is intentional to prevent search engine indexing and avoid confusion for regular users of the platform.
 
 ### Identifying the current version of the platforms
 
