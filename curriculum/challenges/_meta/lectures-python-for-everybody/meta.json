@@ -1,0 +1,262 @@
+{
+  "name": "Python for Everybody",
+  "dashedName": "lectures-python-for-everybody",
+  "order": 1,
+  "time": "15 hours",
+  "superBlock": "scientific-computing-with-python",
+  "superOrder": 7,
+  "challengeOrder": [
+    [
+      "5e6a54a558d3af90110a60a0",
+      "Introduction A"
+    ],
+    [
+      "5e6a54af58d3af90110a60a1",
+      "Introduction B"
+    ],
+    [
+      "5e6a54ba58d3af90110a60a2",
+      "Introduction C"
+    ],
+    [
+      "5e6a54c358d3af90110a60a3",
+      "Introduction D"
+    ],
+    [
+      "5e7b9f050b6c005b0e76f056",
+      "Expressions A"
+    ],
+    [
+      "5e7b9f050b6c005b0e76f057",
+      "Expressions B"
+    ],
+    [
+      "5e7b9f050b6c005b0e76f058",
+      "Conditional A"
+    ],
+    [
+      "5e7b9f060b6c005b0e76f059",
+      "Conditional B"
+    ],
+    [
+      "5e7b9f060b6c005b0e76f05a",
+      "Functions A"
+    ],
+    [
+      "5e7b9f060b6c005b0e76f05b",
+      "Functions B"
+    ],
+    [
+      "5e7b9f060b6c005b0e76f05c",
+      "Iterations A"
+    ],
+    [
+      "5e7b9f070b6c005b0e76f05d",
+      "Iterations B"
+    ],
+    [
+      "5e7b9f070b6c005b0e76f05e",
+      "Iterations C"
+    ],
+    [
+      "5e7b9f070b6c005b0e76f05f",
+      "Iterations D"
+    ],
+    [
+      "5e7b9f070b6c005b0e76f060",
+      "Strings A"
+    ],
+    [
+      "5e7b9f070b6c005b0e76f061",
+      "Strings B"
+    ],
+    [
+      "5e7b9f080b6c005b0e76f062",
+      "Files A"
+    ],
+    [
+      "5e7b9f080b6c005b0e76f063",
+      "Files B"
+    ],
+    [
+      "5e7b9f080b6c005b0e76f064",
+      "Lists A"
+    ],
+    [
+      "5e7b9f090b6c005b0e76f065",
+      "Lists B"
+    ],
+    [
+      "5e7b9f090b6c005b0e76f066",
+      "Lists C"
+    ],
+    [
+      "5e7b9f090b6c005b0e76f067",
+      "Dictionaries A"
+    ],
+    [
+      "5e7b9f090b6c005b0e76f068",
+      "Dictionaries B"
+    ],
+    [
+      "5e7b9f0a0b6c005b0e76f069",
+      "Dictionaries C"
+    ],
+    [
+      "5e7b9f0a0b6c005b0e76f06c",
+      "Tuples A"
+    ],
+    [
+      "5e7b9f0b0b6c005b0e76f06d",
+      "Tuples B"
+    ],
+    [
+      "5e7b9f0b0b6c005b0e76f06e",
+      "RegEx A"
+    ],
+    [
+      "5e7b9f0b0b6c005b0e76f06f",
+      "RegEx B"
+    ],
+    [
+      "5e7b9f0b0b6c005b0e76f070",
+      "RegEx C"
+    ],
+    [
+      "5e7b9f0c0b6c005b0e76f071",
+      "HTTP A"
+    ],
+    [
+      "5e7b9f0c0b6c005b0e76f072",
+      "HTTP B"
+    ],
+    [
+      "5e7b9f0c0b6c005b0e76f073",
+      "HTTP C"
+    ],
+    [
+      "5e7b9f0c0b6c005b0e76f074",
+      "HTTP D"
+    ],
+    [
+      "5e7b9f0d0b6c005b0e76f075",
+      "HTTP E"
+    ],
+    [
+      "5e7b9f0d0b6c005b0e76f076",
+      "HTTP F"
+    ],
+    [
+      "5e7b9f0e0b6c005b0e76f07a",
+      "Web Services A"
+    ],
+    [
+      "5e7b9f0e0b6c005b0e76f07b",
+      "Web Services B"
+    ],
+    [
+      "5e7b9f0e0b6c005b0e76f07c",
+      "Web Services C"
+    ],
+    [
+      "5e7b9f140b6c005b0e76f07d",
+      "Web Services D"
+    ],
+    [
+      "5e7b9f140b6c005b0e76f07e",
+      "Web Services E"
+    ],
+    [
+      "5e7b9f150b6c005b0e76f07f",
+      "Web Services F"
+    ],
+    [
+      "5e7b9f150b6c005b0e76f080",
+      "Web Services G"
+    ],
+    [
+      "5e7b9f160b6c005b0e76f085",
+      "Objects A"
+    ],
+    [
+      "5e7b9f160b6c005b0e76f086",
+      "Objects B"
+    ],
+    [
+      "5e7b9f170b6c005b0e76f087",
+      "Objects C"
+    ],
+    [
+      "5e7b9f170b6c005b0e76f088",
+      "Objects D"
+    ],
+    [
+      "5e7b9f170b6c005b0e76f08a",
+      "Databases A"
+    ],
+    [
+      "5e7b9f170b6c005b0e76f08b",
+      "Databases B"
+    ],
+    [
+      "5e7b9f180b6c005b0e76f08c",
+      "Databases C"
+    ],
+    [
+      "5e7b9f180b6c005b0e76f08d",
+      "Databases D"
+    ],
+    [
+      "5e7b9f180b6c005b0e76f08e",
+      "Databases E"
+    ],
+    [
+      "5e7b9f180b6c005b0e76f08f",
+      "Databases F"
+    ],
+    [
+      "5e7b9f190b6c005b0e76f090",
+      "Databases G"
+    ],
+    [
+      "5e7b9f690b6c005b0e76f095",
+      "Viz A"
+    ],
+    [
+      "5e7b9f6a0b6c005b0e76f096",
+      "Viz B"
+    ],
+    [
+      "5e7b9f6a0b6c005b0e76f097",
+      "Viz C"
+    ],
+    [
+      "5e7b9f6a0b6c005b0e76f098",
+      "Viz Geodata"
+    ],
+    [
+      "5e7b9f6a0b6c005b0e76f099",
+      "Viz Gmane Model"
+    ],
+    [
+      "5e7b9f6b0b6c005b0e76f09a",
+      "Viz Gmane Spider"
+    ],
+    [
+      "5e7b9f6b0b6c005b0e76f09b",
+      "Viz Gmane Viz"
+    ],
+    [
+      "5e7b9f6b0b6c005b0e76f09c",
+      "Viz Page Rank"
+    ],
+    [
+      "5e7b9f6b0b6c005b0e76f09d",
+      "Viz Page Spider"
+    ],
+    [
+      "5e7b9f6c0b6c005b0e76f09e",
+      "Viz Page Viz"
+    ]
+  ]
+}

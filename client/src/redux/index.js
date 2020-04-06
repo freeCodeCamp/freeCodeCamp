@@ -213,6 +213,8 @@ export const certificatesByNameSelector = username => state => {
     isJsAlgoDataStructCert,
     isApisMicroservicesCert,
     isInfosecQaCert,
+    isQaCert,
+    isInfosecCert,
     isFrontEndCert,
     isBackEndCert,
     isDataVisCert,
@@ -229,6 +231,8 @@ export const certificatesByNameSelector = username => state => {
       isJsAlgoDataStructCert ||
       isApisMicroservicesCert ||
       isInfosecQaCert ||
+      isQaCert ||
+      isInfosecCert ||
       isFullStackCert ||
       isSciCompPyCert ||
       isDataAnalysisPyCert ||
@@ -268,6 +272,16 @@ export const certificatesByNameSelector = username => state => {
       {
         show: isInfosecQaCert,
         title: 'Information Security and Quality Assurance Certification',
+        showURL: 'information-security-and-quality-assurance'
+      },
+      {
+        show: isQaCert,
+        title: ' Quality Assurance Certification',
+        showURL: 'information-security-and-quality-assurance'
+      },
+      {
+        show: isInfosecCert,
+        title: 'Information Security Certification',
         showURL: 'information-security-and-quality-assurance'
       },
       {
