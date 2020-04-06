@@ -35,7 +35,7 @@ import { ChallengeNode } from '../../../../redux/propTypes';
 import { isSignedInSelector } from '../../../../redux';
 import Hotkeys from '../../components/Hotkeys';
 
-import { backend, pythonProject } from '../../../../../utils/challengeTypes';
+import { backend } from '../../../../../utils/challengeTypes';
 
 import '../../components/test-frame.css';
 
@@ -180,15 +180,7 @@ export class BackEnd extends Component {
       updateProjectFormValues
     } = this.props;
 
-    let placeholder = 'https://camperbot.glitch.me';
-
-    if (challengeType === pythonProject) {
-      placeholder = 'https://repl.it/camperbot/solution';
-      if (description.includes('Colaboratory')) {
-        placeholder =
-          'https://colab.research.google.com/drive/1UCHiRuBLxo013aMuiDXlaP54LsxzrXH3';
-      }
-    }
+    const placeholder = 'https://camperbot.glitch.me';
 
     const buttonCopy = isSignedIn
       ? 'Submit and go to my next challenge'

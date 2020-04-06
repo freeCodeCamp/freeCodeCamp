@@ -167,6 +167,16 @@
       "description": "Camper is information security and quality assurance certified",
       "default": false
     },
+    "isQaCert": {
+      "type": "boolean",
+      "description": "Camper is quality assurance certified",
+      "default": false
+    },
+    "isInfosecCert": {
+      "type": "boolean",
+      "description": "Camper is information security certified",
+      "default": false
+    },
     "is2018FullStackCert": {
       "type": "boolean",
       "description": "Camper is full stack certified (2018)",
