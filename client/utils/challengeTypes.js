@@ -10,6 +10,7 @@ const step = 7;
 const quiz = 8;
 const invalid = 9;
 const pythonProject = 10;
+const video = 11;
 
 // individual exports
 exports.backend = backend;
@@ -29,7 +30,8 @@ exports.challengeTypes = {
   modern,
   step,
   quiz,
-  invalid
+  invalid,
+  video
 };
 
 // turn challengeType to file ext
@@ -45,11 +47,12 @@ exports.viewTypes = {
   [bonfire]: 'classic',
   [frontEndProject]: 'frontend',
   [backEndProject]: 'backend',
-  [pythonProject]: 'backend',
+  [pythonProject]: 'frontend',
   [modern]: 'modern',
   [step]: 'step',
   [quiz]: 'quiz',
-  [backend]: 'backend'
+  [backend]: 'backend',
+  [video]: 'video'
 };
 
 // determine the type of submit function to use for the challenge on completion
@@ -68,7 +71,8 @@ exports.submitTypes = {
   [step]: 'step',
   [quiz]: 'quiz',
   [backend]: 'backend',
-  [modern]: 'tests'
+  [modern]: 'tests',
+  [video]: 'tests'
 };
 
 // determine which help forum questions should be posted to
@@ -109,8 +113,8 @@ exports.helpCategory = {
   'information-security-with-helmetjs': 'JavaScript',
   'quality-assurance-and-testing-with-chai': 'JavaScript',
   'advanced-node-and-express': 'JavaScript',
-  'information-security-and-quality-assurance-projects':
-    'Certification Projects',
+  'quality-assurance-projects': 'Certification Projects',
+  'information-security-projects': 'Certification Projects',
   algorithms: 'JavaScript',
   'data-structures': 'JavaScript',
   'take-home-projects': 'Certification Projects',

@@ -6,7 +6,7 @@
   "template": "",
   "required": [],
   "superBlock": "certificates",
-  "superOrder": 11,
+  "superOrder": 12,
   "challengeOrder": [
     [
       "5e44431b903586ffb414c951",
@@ -14,5 +14,5 @@
     ]
   ],
   "isPrivate": true,
-  "fileName": "11-certificates/scientific-computing-with-python-certificate.json"
+  "fileName": "12-certificates/scientific-computing-with-python-certificate.json"
 }

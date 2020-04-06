@@ -19,6 +19,8 @@ import {
   dataVis2018Id,
   apisMicroservicesId,
   infosecQaId,
+  infosecId,
+  qaId,
   fullStackId,
   sciCompPyId,
   dataAnalysisPyId,
@@ -107,6 +109,8 @@ function createCertTypeIds(app) {
       Challenge
     ),
     [certTypes.infosecQa]: getIdsForCert$(infosecQaId, Challenge),
+    [certTypes.qa]: getIdsForCert$(qaId, Challenge),
+    [certTypes.infosec]: getIdsForCert$(infosecId, Challenge),
     [certTypes.fullStack]: getIdsForCert$(fullStackId, Challenge),
     [certTypes.sciCompPy]: getIdsForCert$(sciCompPyId, Challenge),
     [certTypes.dataAnalysisPy]: getIdsForCert$(dataAnalysisPyId, Challenge),
@@ -133,6 +137,8 @@ const certIds = {
   [certTypes.dataVis2018]: dataVis2018Id,
   [certTypes.apisMicroservices]: apisMicroservicesId,
   [certTypes.infosecQa]: infosecQaId,
+  [certTypes.qa]: qaId,
+  [certTypes.infosec]: infosecId,
   [certTypes.fullStack]: fullStackId,
   [certTypes.sciCompPy]: sciCompPyId,
   [certTypes.dataAnalysisPy]: dataAnalysisPyId,
@@ -150,6 +156,8 @@ const certText = {
   [certTypes.dataVis2018]: 'Data Visualization',
   [certTypes.apisMicroservices]: 'APIs and Microservices',
   [certTypes.infosecQa]: 'Information Security and Quality Assurance',
+  [certTypes.qa]: 'Quality Assurance',
+  [certTypes.infosec]: 'Information Security',
   [certTypes.sciCompPy]: 'Scientific Computing with Python',
   [certTypes.dataAnalysisPy]: 'Data Analysis with Python',
   [certTypes.machineLearningPy]: 'Machine Learning with Python'
@@ -166,6 +174,8 @@ const completionHours = {
   [certTypes.dataVis2018]: 300,
   [certTypes.apisMicroservices]: 300,
   [certTypes.infosecQa]: 300,
+  [certTypes.qa]: 300,
+  [certTypes.infosec]: 300,
   [certTypes.sciCompPy]: 400,
   [certTypes.dataAnalysisPy]: 400,
   [certTypes.machineLearningPy]: 400
@@ -193,6 +203,8 @@ function sendCertifiedEmail(
     isDataVisCert,
     isApisMicroservicesCert,
     isInfosecQaCert,
+    isQaCert,
+    isInfosecCert,
     isSciCompPyCert,
     isDataAnalysisPyCert,
     isMachineLearningPyCert
@@ -207,6 +219,8 @@ function sendCertifiedEmail(
     !isDataVisCert ||
     !isApisMicroservicesCert ||
     !isInfosecQaCert ||
+    !isQaCert ||
+    !isInfosecCert ||
     !isSciCompPyCert ||
     !isDataAnalysisPyCert ||
     !isMachineLearningPyCert
@@ -237,6 +251,8 @@ function getUserIsCertMap(user) {
     is2018DataVisCert = false,
     isApisMicroservicesCert = false,
     isInfosecQaCert = false,
+    isQaCert = false,
+    isInfosecCert = false,
     isFrontEndCert = false,
     isBackEndCert = false,
     isDataVisCert = false,
@@ -253,6 +269,8 @@ function getUserIsCertMap(user) {
     is2018DataVisCert,
     isApisMicroservicesCert,
     isInfosecQaCert,
+    isQaCert,
+    isInfosecCert,
     isFrontEndCert,
     isBackEndCert,
     isDataVisCert,
@@ -380,6 +398,8 @@ function createShowCert(app) {
       is2018DataVisCert: true,
       isApisMicroservicesCert: true,
       isInfosecQaCert: true,
+      isQaCert: true,
+      isInfosecCert: true,
       isSciCompPyCert: true,
       isDataAnalysisPyCert: true,
       isMachineLearningPyCert: true,

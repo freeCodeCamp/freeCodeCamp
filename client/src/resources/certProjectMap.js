@@ -7,9 +7,8 @@ const feLibsBase = '/learn/front-end-libraries/front-end-libraries-projects';
 const dataVisBase = '/learn/data-visualization/data-visualization-projects';
 const apiMicroBase =
   '/learn/apis-and-microservices/apis-and-microservices-projects';
-const infoSecBase =
-  '/learn/information-security-and-quality-assurance/' +
-  'information-security-and-quality-assurance-projects';
+const qaBase = 'learn/quality-assurance/quality-assurance-projects';
+const infoSecBase = '/learn/information-security/information-security-projects';
 const sciCompPyBase =
   '/learn/scientific-computing-with-python/' +
   'scientific-computing-with-python-projects';
@@ -371,48 +370,68 @@ export const projectMap = {
       superBlock: 'apis-and-microservices'
     }
   ],
-  'Information Security And Quality Assurance': [
+  'Quality Assurance': [
     {
       id: '587d8249367417b2b2512c41',
       title: 'Metric-Imperial Converter',
-      link: `${infoSecBase}/metric-imperial-converter`,
-      superBlock: 'information-security-and-quality-assurance'
+      link: `${qaBase}/metric-imperial-converter`,
+      superBlock: 'quality-assurance'
     },
     {
       id: '587d8249367417b2b2512c42',
       title: 'Issue Tracker',
-      link: `${infoSecBase}/issue-tracker`,
-      superBlock: 'information-security-and-quality-assurance'
+      link: `${qaBase}/issue-tracker`,
+      superBlock: 'quality-assurance'
     },
     {
       id: '587d824a367417b2b2512c43',
       title: 'Personal Library',
-      link: `${infoSecBase}/personal-library`,
-      superBlock: 'information-security-and-quality-assurance'
+      link: `${qaBase}/personal-library`,
+      superBlock: 'quality-assurance'
     },
+    {
+      id: '5e601bf95ac9d0ecd8b94afd',
+      title: 'Sudoku Solver',
+      link: `${qaBase}/sudoku-solver`,
+      superBlock: 'quality-assurance'
+    },
+    {
+      id: '5e601c0d5ac9d0ecd8b94afe',
+      title: 'American British Translator',
+      link: `${qaBase}/american-british-translator`,
+      superBlock: 'quality-assurance'
+    }
+  ],
+  'Information Security': [
     {
       id: '587d824a367417b2b2512c44',
       title: 'Stock Price Checker',
       link: `${infoSecBase}/stock-price-checker`,
-      superBlock: 'information-security-and-quality-assurance'
+      superBlock: 'information-security'
     },
     {
       id: '587d824a367417b2b2512c45',
       title: 'Anonymous Message Board',
       link: `${infoSecBase}/anonymous-message-board`,
-      superBlock: 'information-security-and-quality-assurance'
+      superBlock: 'information-security'
     },
     {
       id: '5e46f979ac417301a38fb932',
       title: 'Port Scanner',
       link: `${infoSecBase}/port-scanner`,
-      superBlock: 'information-security-and-quality-assurance'
+      superBlock: 'information-security'
     },
     {
       id: '5e46f983ac417301a38fb933',
       title: 'SHA-1 Password Cracker',
       link: `${infoSecBase}/sha-1-password-cracker`,
-      superBlock: 'information-security-and-quality-assurance'
+      superBlock: 'information-security'
+    },
+    {
+      id: '5e601c775ac9d0ecd8b94aff',
+      title: 'Real Time Multiplayer Game',
+      link: `${infoSecBase}/real-time-multiplayer-game`,
+      superBlock: 'information-security'
     }
   ],
   'Scientific Computing with Python': [

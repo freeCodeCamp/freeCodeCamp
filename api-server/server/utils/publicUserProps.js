@@ -23,6 +23,8 @@ export const publicUserProps = [
   'isFrontEndLibsCert',
   'isHonest',
   'isInfosecQaCert',
+  'isQaCert',
+  'isInfosecCert',
   'isJsAlgoDataStructCert',
   'isRespWebDesignCert',
   'isSciCompPyCert',

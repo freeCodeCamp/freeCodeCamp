@@ -50,9 +50,11 @@ const propTypes = {
   isFrontEndLibsCert: PropTypes.bool,
   isFullStackCert: PropTypes.bool,
   isHonest: PropTypes.bool,
+  isInfosecCert: PropTypes.bool,
   isInfosecQaCert: PropTypes.bool,
   isJsAlgoDataStructCert: PropTypes.bool,
   isMachineLearningPyCert: PropTypes.bool,
+  isQaCert: PropTypes.bool,
   isRespWebDesignCert: PropTypes.bool,
   isSciCompPyCert: PropTypes.bool,
   updateLegacyCert: PropTypes.func.isRequired,
@@ -70,6 +72,8 @@ const isCertSelector = ({
   isDataVisCert,
   isFrontEndCert,
   isInfosecQaCert,
+  isQaCert,
+  isInfosecCert,
   isFrontEndLibsCert,
   isFullStackCert,
   isRespWebDesignCert,
@@ -84,6 +88,8 @@ const isCertSelector = ({
   isDataVisCert,
   isFrontEndCert,
   isInfosecQaCert,
+  isQaCert,
+  isInfosecCert,
   isFrontEndLibsCert,
   isFullStackCert,
   isRespWebDesignCert,
@@ -99,6 +105,8 @@ const isCertMapSelector = createSelector(
     isApisMicroservicesCert,
     isJsAlgoDataStructCert,
     isInfosecQaCert,
+    isQaCert,
+    isInfosecCert,
     isFrontEndLibsCert,
     isRespWebDesignCert,
     isDataVisCert,
@@ -114,6 +122,8 @@ const isCertMapSelector = createSelector(
     'Data Visualization': is2018DataVisCert,
     "API's and Microservices": isApisMicroservicesCert,
     'Information Security And Quality Assurance': isInfosecQaCert,
+    'Quality Assurance': isQaCert,
+    'Information Security': isInfosecCert,
     'Scientific Computing with Python': isSciCompPyCert,
     'Data Analysis with Python': isDataAnalysisPyCert,
     'Machine Learning with Python': isMachineLearningPyCert,
@@ -462,7 +472,7 @@ export class CertificationSettings extends Component {
       is2018DataVisCert,
       isApisMicroservicesCert,
       isFrontEndLibsCert,
-      isInfosecQaCert,
+      isQaCert,
       isJsAlgoDataStructCert,
       isRespWebDesignCert
     } = this.props;
@@ -471,7 +481,7 @@ export class CertificationSettings extends Component {
       is2018DataVisCert &&
       isApisMicroservicesCert &&
       isFrontEndLibsCert &&
-      isInfosecQaCert &&
+      isQaCert &&
       isJsAlgoDataStructCert &&
       isRespWebDesignCert;
 
@@ -509,7 +519,7 @@ export class CertificationSettings extends Component {
             <li>Front End Libraries</li>
             <li>Data Visualization</li>
             <li>APIs and Microservices</li>
-            <li>Information Security and Quality Assurance</li>
+            <li>Quality Assurance</li>
           </ul>
         </div>
 

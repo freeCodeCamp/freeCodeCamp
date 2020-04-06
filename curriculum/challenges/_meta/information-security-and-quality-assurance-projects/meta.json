@@ -1,12 +1,12 @@
 {
   "name": "Information Security and Quality Assurance Projects",
   "dashedName": "information-security-and-quality-assurance-projects",
-  "order": 4,
+  "order": 0,
   "time": "150 hours",
   "template": "",
   "required": [],
   "superBlock": "information-security-and-quality-assurance",
-  "superOrder": 6,
+  "superOrder": 13,
   "challengeOrder": [
     [
       "587d8249367417b2b2512c41",
@@ -27,16 +27,8 @@
     [
       "587d824a367417b2b2512c45",
       "Anonymous Message Board"
-    ],
-    [
-      "5e46f979ac417301a38fb932",
-      "Port Scanner"
-    ],
-    [
-      "5e46f983ac417301a38fb933",
-      "SHA-1 Password Cracker"
     ]
   ],
   "helpRoom": "HelpBackend",
-  "fileName": "06-information-security-and-quality-assurance/quality-assurance-and-information-security-projects.json"
+  "fileName": "12-information-security-and-quality-assurance/quality-assurance-and-information-security-projects.json"
 }

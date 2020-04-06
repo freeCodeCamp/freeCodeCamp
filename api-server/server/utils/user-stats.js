@@ -143,6 +143,8 @@ function getCompletedCertCount(user) {
     'is2018DataVisCert',
     'isFrontEndLibsCert',
     'isInfosecQaCert',
+    'isQaCert',
+    'isInfosecCert',
     'isJsAlgoDataStructCert',
     'isRespWebDesignCert',
     'isSciCompPyCert',

@@ -1,12 +1,12 @@
 {
   "name": "Machine Learning with Python Certificate",
   "dashedName": "machine-learning-with-python-certificate",
-  "order": 9,
+  "order": 10,
   "time": "",
   "template": "",
   "required": [],
   "superBlock": "certificates",
-  "superOrder": 11,
+  "superOrder": 12,
   "challengeOrder": [
     [
       "5e46fc95ac417301a38fb935",
@@ -14,5 +14,5 @@
     ]
   ],
   "isPrivate": true,
-  "fileName": "11-certificates/machine-learning-with-python-certificate.json"
+  "fileName": "12-certificates/machine-learning-with-python-certificate.json"
 }

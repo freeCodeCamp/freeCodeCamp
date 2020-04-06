@@ -189,6 +189,8 @@ const defaultTestProps = {
   isFullStackCert: false,
   isHonest: false,
   isInfosecQaCert: false,
+  isQaCert: false,
+  isInfosecCert: false,
   isJsAlgoDataStructCert: false,
   isRespWebDesignCert: false,
   isSciCompPyCert: false,

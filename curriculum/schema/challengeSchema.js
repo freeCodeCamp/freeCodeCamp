@@ -52,6 +52,14 @@ function getSchemaForLang(lang) {
     isRequired: Joi.bool(),
     name: Joi.string(),
     order: Joi.number(),
+    // video challenges only:
+    question: Joi.object().keys({
+      text: Joi.string().required(),
+      answers: Joi.array()
+        .items(Joi.string())
+        .required(),
+      solution: Joi.number().required()
+    }),
     required: Joi.array().items(
       Joi.object().keys({
         link: Joi.string(),
