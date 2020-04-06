@@ -13,7 +13,10 @@ import {
   openModal,
   updateProjectFormValues
 } from '../../redux';
-import { frontEndProject } from '../../../../../utils/challengeTypes';
+import {
+  frontEndProject,
+  pythonProject
+} from '../../../../../utils/challengeTypes';
 import { getGuideUrl } from '../../utils';
 
 import LearnLayout from '../../../../components/layouts/Learn';
@@ -107,7 +110,17 @@ export class Project extends Component {
       },
       updateProjectFormValues
     } = this.props;
-    const isFrontEnd = challengeType === frontEndProject;
+    const isFrontEnd = challengeType === frontEndProject || pythonProject;
+
+    let placeholder = 'https://codepen.io/camperbot/full/oNvPqqo';
+
+    if (challengeType === pythonProject) {
+      placeholder = 'https://repl.it/camperbot/solution';
+      if (description.includes('Colaboratory')) {
+        placeholder =
+          'https://colab.research.google.com/drive/1UCHiRuBLxo013aMuiDXlaP54LsxzrXH3';
+      }
+    }
 
     const blockNameTitle = `${blockName} - ${title}`;
     return (
@@ -128,7 +141,7 @@ export class Project extends Component {
                 <ProjectForm
                   isFrontEnd={isFrontEnd}
                   onSubmit={openCompletionModal}
-                  placeholder='https://codepen.io/camperbot/full/oNvPqqo'
+                  placeholder={placeholder}
                   updateProjectForm={updateProjectFormValues}
                 />
                 <ProjectToolPanel
