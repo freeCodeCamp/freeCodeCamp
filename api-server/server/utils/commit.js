@@ -18,6 +18,8 @@ export function completeCommitment$(user) {
     isDataVisCert,
     isApisMicroservicesCert,
     isInfosecQaCert,
+    isQaCert,
+    isInfosecCert,
     isSciCompPyCert,
     isDataAnalysisPyCert,
     isMachineLearningPyCert
@@ -40,6 +42,8 @@ export function completeCommitment$(user) {
       (isDataVisCert && goal === commitGoals.dataVisCert) ||
       (isApisMicroservicesCert && goal === commitGoals.apisMicroservicesCert) ||
       (isInfosecQaCert && goal === commitGoals.infosecQaCert) ||
+      (isQaCert && goal === commitGoals.QaCert) ||
+      (isInfosecCert && goal === commitGoals.infosecCert) ||
       (isSciCompPyCert && goal === commitGoals.sciCompPyCert) ||
       (isDataAnalysisPyCert && goal === commitGoals.dataAnalysisPyCert) ||
       (isMachineLearningPyCert && goal === commitGoals.machineLearningPyCert)

@@ -13,6 +13,8 @@ const superBlockCertTypeMap = {
   'data-visualization': certTypes.dataVis2018,
   'apis-and-microservices': certTypes.apisMicroservices,
   'information-security-and-quality-assurance': certTypes.infosecQa,
+  'quality-assurance': certTypes.qa,
+  'information-security': certTypes.infosec,
   'full-stack': certTypes.fullStack,
   'scientific-computing-with-python': certTypes.sciCompPy,
   'data-analysis-with-python': certTypes.dataAnalysisPy,
