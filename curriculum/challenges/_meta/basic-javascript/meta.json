@@ -233,6 +233,10 @@
       "Use Conditional Logic with If Statements"
     ],
     [
+      "56533eb9ac21ba0edf2244c4",
+      "Return Early Pattern for Functions"
+    ],
+    [
       "56533eb9ac21ba0edf2244d0",
       "Comparison with the Equality Operator"
     ],
@@ -315,10 +319,6 @@
     [
       "5679ceb97cbaa8c51670a16b",
       "Returning Boolean Values from Functions"
-    ],
-    [
-      "56533eb9ac21ba0edf2244c4",
-      "Return Early Pattern for Functions"
     ],
     [
       "565bbe00e9cc8ac0725390f4",
