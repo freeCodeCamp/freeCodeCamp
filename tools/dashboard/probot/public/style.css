@@ -1,0 +1,11 @@
+@media (max-width: 991px) {
+  .main-content {
+    margin-top: 65px !important;
+  }
+}
+
+.return-to-free-code-camp {
+    padding: 0!important;
+    margin: -9px 0!important;
+    height: 50px!important;
+}
