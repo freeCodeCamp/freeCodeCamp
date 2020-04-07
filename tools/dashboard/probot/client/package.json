@@ -1,0 +1,30 @@
+{
+  "name": "@freecodecamp/dashboard-client",
+  "homepage": ".",
+  "private": true,
+  "dependencies": {
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-scripts": "2.1.1",
+    "styled-components": "^4.1.1"
+  },
+  "scripts": {
+    "dev": "develop",
+    "develop": "cross-env REACT_APP_HOST=local SKIP_PREFLIGHT_CHECK=true react-scripts start",
+    "build": "cross-env SKIP_PREFLIGHT_CHECK=true react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "cross-env": "^5.2.0"
+  }
+}
