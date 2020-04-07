@@ -1,10 +1,13 @@
 - **Overview**
 - [Introduction](/ 'Contribute to the freeCodeCamp.org Community')
-- **Guides**
+- **Code Contribution Guides**
 - [How to work on coding challenges](/how-to-work-on-coding-challenges)
 - [How to setup freeCodeCamp locally](/how-to-setup-freecodecamp-locally)
 - [How to open a pull request](/how-to-open-a-pull-request)
-- [How we do DevOps at freeCodeCamp.org](/devops.md)
+- **DevOps Guides**
+- [Overview and Workflows](/devops.md)
+- [Flight Manual: 01 - List Azure Virtual Machines](/flight-Manuals/01-getting-list-of-virtual-machines.md)
+- [Flight Manual: 02 - Provision API Instances](/flight-Manuals/02-spinning-api-instances.md)
 <!-- Prevent going to next section-->
 - []()
 ----
