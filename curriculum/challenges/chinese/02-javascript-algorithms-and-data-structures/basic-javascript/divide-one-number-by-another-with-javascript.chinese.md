@@ -31,9 +31,9 @@ myVar = 16 / 2; // assigned 8
 
 ```yml
 tests:
-  - text: '要使<code>quotient</code>的值等于 2。'
+  - text: 要使<code>quotient</code>的值等于 2。
     testString: assert(quotient === 2);
-  - text: '使用<code>/</code>运算符。'
+  - text: 使用<code>/</code>运算符。
     testString: assert(/\d+\s*\/\s*\d+/.test(code));
 
 ```

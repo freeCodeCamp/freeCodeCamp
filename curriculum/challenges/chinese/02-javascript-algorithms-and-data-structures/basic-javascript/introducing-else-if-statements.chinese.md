@@ -33,21 +33,21 @@ if (num > 15) {
 
 ```yml
 tests:
-  - text: '你应该至少有两个<code>else</code>表达式'
+  - text: 你应该至少有两个<code>else</code>表达式
     testString: assert(code.match(/else/g).length > 1);
-  - text: '你应该至少有两个<code>if</code>表达式'
+  - text: 你应该至少有两个<code>if</code>表达式
     testString: assert(code.match(/if/g).length > 1);
-  - text: '<code>testElseIf(0)</code>应该返回 "Smaller than 5"'
+  - text: <code>testElseIf(0)</code>应该返回 "Smaller than 5"
     testString: assert(testElseIf(0) === "Smaller than 5");
-  - text: '<code>testElseIf(5)</code>应该返回 "Between 5 and 10"'
+  - text: <code>testElseIf(5)</code>应该返回 "Between 5 and 10"
     testString: assert(testElseIf(5) === "Between 5 and 10");
-  - text: '<code>testElseIf(7)</code>应该返回 "Between 5 and 10"'
+  - text: <code>testElseIf(7)</code>应该返回 "Between 5 and 10"
     testString: assert(testElseIf(7) === "Between 5 and 10");
-  - text: '<code>testElseIf(10)</code>应该返回 "Between 5 and 10"'
+  - text: <code>testElseIf(10)</code>应该返回 "Between 5 and 10"
     testString: assert(testElseIf(10) === "Between 5 and 10");
-  - text: '<code>testElseIf(12)</code>应该返回 "Greater than 10"'
+  - text: <code>testElseIf(12)</code>应该返回 "Greater than 10"
     testString: assert(testElseIf(12) === "Greater than 10");
-  - text: '<code>testElseIf(12)</code> 应该返回 "Greater than 10"'
+  - text: <code>testElseIf(12)</code> 应该返回 "Greater than 10"
     testString: assert(testElseIf(12) === "Greater than 10");
 
 ```

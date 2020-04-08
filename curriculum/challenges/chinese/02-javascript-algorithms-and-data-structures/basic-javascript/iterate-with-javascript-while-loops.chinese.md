@@ -36,9 +36,9 @@ while(i < 5) {
 
 ```yml
 tests:
-  - text: '你应该使用<code>while</code>循环'
+  - text: 你应该使用<code>while</code>循环
     testString: assert(code.match(/while/g));
-  - text: '<code>myArray</code>应该等于<code>[0,1,2,3,4]</code>.'
+  - text: <code>myArray</code>应该等于<code>[0,1,2,3,4]</code>
     testString: assert.deepEqual(myArray, [0,1,2,3,4]);
 
 ```

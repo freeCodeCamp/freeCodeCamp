@@ -25,15 +25,15 @@ localeTitle: 复合赋值之 -=
 
 ```yml
 tests:
-  - text: '<code>a</code>应该等于<code>5</code>'
+  - text: <code>a</code>应该等于<code>5</code>
     testString: assert(a === 5);
-  - text: '<code>b</code>应该等于<code>-6</code>'
+  - text: <code>b</code>应该等于<code>-6</code>
     testString: assert(b === -6);
-  - text: '<code>c</code>应该等于<code>2</code>'
+  - text: <code>c</code>应该等于<code>2</code>
     testString: assert(c === 2);
-  - text: '应该对每个变量使用<code>-=</code>操作符'
+  - text: 应该对每个变量使用<code>-=</code>操作符
     testString: assert(code.match(/-=/g).length === 3);
-  - text: '不要修改注释上面的代码'
+  - text: 不要修改注释上面的代码
     testString: assert(/var a = 11;/.test(code) && /var b = 9;/.test(code) && /var c = 3;/.test(code));
 
 ```

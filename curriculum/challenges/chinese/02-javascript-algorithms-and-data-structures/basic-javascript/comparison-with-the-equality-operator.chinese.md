@@ -43,13 +43,13 @@ function equalityTest(myVal) {
 
 ```yml
 tests:
-  - text: '<code>testEqual(10)</code>应该返回 "Not Equal"'
+  - text: <code>testEqual(10)</code>应该返回 "Not Equal"
     testString: assert(testEqual(10) === "Not Equal");
-  - text: '<code>testEqual(12)</code>应该返回 "Equal"'
+  - text: <code>testEqual(12)</code>应该返回 "Equal"
     testString: assert(testEqual(12) === "Equal");
-  - text: '<code>testEqual("12")</code>应该返回 "Equal"'
+  - text: <code>testEqual("12")</code>应该返回 "Equal"
     testString: assert(testEqual("12") === "Equal");
-  - text: '你应该使用<code>==</code>运算符'
+  - text: 你应该使用<code>==</code>运算符
     testString: assert(code.match(/==/g) && !code.match(/===/g));
 
 ```

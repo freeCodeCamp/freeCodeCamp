@@ -26,13 +26,13 @@ localeTitle: 数字递减
 
 ```yml
 tests:
-  - text: '<code>myVar</code>应该等于<code>10</code>'
+  - text: <code>myVar</code>应该等于<code>10</code>
     testString: assert(myVar === 10);
-  - text: '<code>myVar = myVar - 1;</code>语句应该被修改'
+  - text: <code>myVar = myVar - 1;</code>语句应该被修改
     testString: assert(/var\s*myVar\s*=\s*11;\s*\/*.*\s*([-]{2}\s*myVar|myVar\s*[-]{2});/.test(code));
-  - text: '对<code>myVar</code>使用<code>--</code>运算符'
+  - text: 对<code>myVar</code>使用<code>--</code>运算符
     testString: assert(/[-]{2}\s*myVar|myVar\s*[-]{2}/.test(code));
-  - text: '不要修改注释上面的代码'
+  - text: 不要修改注释上面的代码
     testString: assert(/var myVar = 11;/.test(code));
 
 ```

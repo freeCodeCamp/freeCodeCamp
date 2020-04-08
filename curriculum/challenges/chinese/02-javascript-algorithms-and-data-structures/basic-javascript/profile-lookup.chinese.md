@@ -27,17 +27,17 @@ localeTitle: 资料查找
 
 ```yml
 tests:
-  - text: '<code>"Kristian", "lastName"</code>应该返回 <code>"Vos"</code>'
+  - text: <code>"Kristian", "lastName"</code>应该返回 <code>"Vos"</code>
     testString: assert(lookUpProfile('Kristian','lastName') === "Vos");
-  - text: '<code>"Sherlock", "likes"</code>应该返回 <code>["Intriguing Cases", "Violin"]</code>'
+  - text: <code>"Sherlock", "likes"</code>应该返回 <code>["Intriguing Cases", "Violin"]</code>
     testString: assert.deepEqual(lookUpProfile("Sherlock", "likes"), ["Intriguing Cases", "Violin"]);
-  - text: '<code>"Harry","likes"</code>应该返回 an array'
+  - text: <code>"Harry","likes"</code>应该返回 an array
     testString: assert(typeof lookUpProfile("Harry", "likes") === "object");
-  - text: '<code>"Bob", "number"</code>应该返回 "No such contact"'
+  - text: <code>"Bob", "number"</code>应该返回 "No such contact"
     testString: assert(lookUpProfile("Bob", "number") === "No such contact");
-  - text: '<code>"Bob", "potato"</code>应该返回 "No such contact"'
+  - text: <code>"Bob", "potato"</code>应该返回 "No such contact"
     testString: assert(lookUpProfile("Bob", "potato") === "No such contact");
-  - text: '<code>"Akira", "address"</code>应该返回 "No such property"'
+  - text: <code>"Akira", "address"</code>应该返回 "No such property"
     testString: assert(lookUpProfile("Akira", "address") === "No such property");
 
 ```

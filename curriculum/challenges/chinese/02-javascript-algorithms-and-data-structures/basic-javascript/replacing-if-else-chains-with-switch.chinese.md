@@ -48,25 +48,25 @@ switch(val) {
 
 ```yml
 tests:
-  - text: '不要使用<code>else</code>表达式'
+  - text: 不要使用<code>else</code>表达式
     testString: assert(!/else/g.test(code));
-  - text: '不要使用<code>if</code>表达式'
+  - text: 不要使用<code>if</code>表达式
     testString: assert(!/if/g.test(code));
-  - text: '你应该有至少 4 个<code>break</code>表达式'
+  - text: 你应该有至少 4 个<code>break</code>表达式
     testString: assert(code.match(/break/g).length >= 4);
-  - text: '<code>chainToSwitch("bob")</code>应该为 "Marley"'
+  - text: <code>chainToSwitch("bob")</code>应该为 "Marley"
     testString: assert(chainToSwitch("bob") === "Marley");
-  - text: '<code>chainToSwitch(42)</code>应该为 "The Answer"'
+  - text: <code>chainToSwitch(42)</code>应该为 "The Answer"
     testString: assert(chainToSwitch(42) === "The Answer");
-  - text: '<code>chainToSwitch(1)</code>应该为 "There is no #1"'
+  - text: <code>chainToSwitch(1)</code>应该为 "There is no #1"
     testString: "assert(chainToSwitch(1) === \"There is no #1\");"
-  - text: '<code>chainToSwitch(99)</code>应该为 "Missed me by this much!"'
+  - text: <code>chainToSwitch(99)</code>应该为 "Missed me by this much!"
     testString: assert(chainToSwitch(99) === "Missed me by this much!");
-  - text: '<code>chainToSwitch(7)</code>应该为 "Ate Nine"'
+  - text: <code>chainToSwitch(7)</code>应该为 "Ate Nine"
     testString: assert(chainToSwitch(7) === "Ate Nine");
-  - text: '<code>chainToSwitch("John")</code>应该为 "" (empty string)'
+  - text: <code>chainToSwitch("John")</code>应该为 "" (empty string)
     testString: assert(chainToSwitch("John") === "");
-  - text: '<code>chainToSwitch(156)</code>应该为 "" (empty string)'
+  - text: <code>chainToSwitch(156)</code>应该为 "" (empty string)
     testString: assert(chainToSwitch(156) === "");
 
 ```

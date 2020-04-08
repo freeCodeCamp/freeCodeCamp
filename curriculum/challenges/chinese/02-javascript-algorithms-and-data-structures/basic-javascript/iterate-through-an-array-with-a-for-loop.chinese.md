@@ -31,13 +31,13 @@ for (var i = 0; i < arr.length; i++) {
 
 ```yml
 tests:
-  - text: '<code>total</code>应该被声明, 并且初始化值为 0'
+  - text: <code>total</code>应该被声明, 并且初始化值为 0
     testString: assert(code.match(/var.*?total\s*=\s*0.*?;/));
-  - text: '<code>total</code>应该等于 20'
+  - text: <code>total</code>应该等于 20
     testString: assert(total === 20);
-  - text: '你应该使用<code>for</code>循环在<code>myArr</code>中遍历'
+  - text: 你应该使用<code>for</code>循环在<code>myArr</code>中遍历
     testString: assert(code.match(/for\s*\(/g).length > 1 && code.match(/myArr\s*\[/));
-  - text: '不能直接把<code>total</code>设置成 20'
+  - text: 不能直接把<code>total</code>设置成 20
     testString: assert(!code.match(/total[\s\+\-]*=\s*(\d(?!\s*[;,])|[1-9])/g));
 ```
 

@@ -42,11 +42,11 @@ function isEqual(a,b) {
 
 ```yml
 tests:
-  - text: '<code>isLess(10,15)</code>应该返回 <code>true</code>'
+  - text: <code>isLess(10,15)</code>应该返回 <code>true</code>
     testString: assert(isLess(10,15) === true);
-  - text: '<code>isLess(15,10)</code>应该返回 <code>false</code>'
+  - text: <code>isLess(15,10)</code>应该返回 <code>false</code>
     testString: assert(isLess(15, 10) === false);
-  - text: 'You should not use any <code>if</code> or <code>else</code> statements'
+  - text: You should not use any <code>if</code> or <code>else</code> statements
     testString: assert(!/if|else/g.test(code));
 
 ```

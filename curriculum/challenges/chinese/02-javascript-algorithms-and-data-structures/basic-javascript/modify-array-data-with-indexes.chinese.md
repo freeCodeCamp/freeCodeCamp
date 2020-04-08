@@ -30,9 +30,9 @@ ourArray[0] = 15; // equals [15,40,30]
 
 ```yml
 tests:
-  - text: '<code>myArray</code>的值应该 [45,64,99]'
+  - text: <code>myArray</code>的值应该 [45,64,99]
     testString: assert((function(){if(typeof myArray != 'undefined' && myArray[0] == 45 && myArray[1] == 64 && myArray[2] == 99){return true;}else{return false;}})());
-  - text: '你应该使用正确的索引修改<code>myArray</code>的值'
+  - text: 你应该使用正确的索引修改<code>myArray</code>的值
     testString: assert((function(){if(code.match(/myArray\[0\]\s*=\s*/g)){return true;}else{return false;}})());
 
 ```

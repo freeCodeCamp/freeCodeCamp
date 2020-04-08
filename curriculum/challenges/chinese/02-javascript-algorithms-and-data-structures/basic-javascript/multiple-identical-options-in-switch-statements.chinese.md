@@ -37,27 +37,27 @@ switch(val) {
 
 ```yml
 tests:
-  - text: '<code>sequentialSizes(1)</code>应该返回 "Low"'
+  - text: <code>sequentialSizes(1)</code>应该返回 "Low"
     testString: assert(sequentialSizes(1) === "Low");
-  - text: '<code>sequentialSizes(2)</code>应该返回 "Low"'
+  - text: <code>sequentialSizes(2)</code>应该返回 "Low"
     testString: assert(sequentialSizes(2) === "Low");
-  - text: '<code>sequentialSizes(3)</code>应该返回 "Low"'
+  - text: <code>sequentialSizes(3)</code>应该返回 "Low"
     testString: assert(sequentialSizes(3) === "Low");
-  - text: '<code>sequentialSizes(4)</code>应该返回 "Mid"'
+  - text: <code>sequentialSizes(4)</code>应该返回 "Mid"
     testString: assert(sequentialSizes(4) === "Mid");
-  - text: '<code>sequentialSizes(5)</code>应该返回 "Mid"'
+  - text: <code>sequentialSizes(5)</code>应该返回 "Mid"
     testString: assert(sequentialSizes(5) === "Mid");
-  - text: '<code>sequentialSizes(6)</code>应该返回 "Mid"'
+  - text: <code>sequentialSizes(6)</code>应该返回 "Mid"
     testString: assert(sequentialSizes(6) === "Mid");
-  - text: '<code>sequentialSizes(7)</code>应该返回 "High"'
+  - text: <code>sequentialSizes(7)</code>应该返回 "High"
     testString: assert(sequentialSizes(7) === "High");
-  - text: '<code>sequentialSizes(8)</code>应该返回 "High"'
+  - text: <code>sequentialSizes(8)</code>应该返回 "High"
     testString: assert(sequentialSizes(8) === "High");
-  - text: '<code>sequentialSizes(9)</code>应该返回 "High"'
+  - text: <code>sequentialSizes(9)</code>应该返回 "High"
     testString: assert(sequentialSizes(9) === "High");
-  - text: '你不应使用<code>if</code>或<code>else</code>语句'
+  - text: 你不应使用<code>if</code>或<code>else</code>语句
     testString: assert(!/else/g.test(code) || !/if/g.test(code));
-  - text: '你应该编写 9 个<code>case</code>语句'
+  - text: 你应该编写 9 个<code>case</code>语句
     testString: assert(code.match(/case/g).length === 9);
 
 ```

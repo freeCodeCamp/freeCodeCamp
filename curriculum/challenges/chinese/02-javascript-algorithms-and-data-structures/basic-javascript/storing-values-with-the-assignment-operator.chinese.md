@@ -33,13 +33,13 @@ myNum = myVar;
 
 ```yml
 tests:
-  - text: '不要修改注释上方的代码'
+  - text: 不要修改注释上方的代码
     testString: assert(/var a;/.test(code) && /var b = 2;/.test(code));
-  - text: '<code>a</code>的值应该是 7'
+  - text: <code>a</code>的值应该是 7
     testString: assert(typeof a === 'number' && a === 7);
-  - text: '<code>b</code>的值应该是 7'
+  - text: <code>b</code>的值应该是 7
     testString: assert(typeof b === 'number' && b === 7);
-  - text: '你需要用<code>=</code>把<code>a</code>的值赋给<code>b</code>'
+  - text: 你需要用<code>=</code>把<code>a</code>的值赋给<code>b</code>
     testString: assert(/b\s*=\s*a\s*;/g.test(code));
 
 ```

@@ -38,11 +38,11 @@ typeof '3' // returns 'string'
 
 ```yml
 tests:
-  - text: '<code>compareEquality(10, "10")</code>应该返回 "Not Equal"'
+  - text: <code>compareEquality(10, "10")</code>应该返回 "Not Equal"
     testString: assert(compareEquality(10, "10") === "Not Equal");
-  - text: '<code>compareEquality("20", 20)</code>应该返回 "Not Equal"'
+  - text: <code>compareEquality("20", 20)</code>应该返回 "Not Equal"
     testString: assert(compareEquality("20", 20) === "Not Equal");
-  - text: '你应该使用<code>===</code>运算符'
+  - text: 你应该使用<code>===</code>运算符
     testString: assert(code.match(/===/g));
 
 ```

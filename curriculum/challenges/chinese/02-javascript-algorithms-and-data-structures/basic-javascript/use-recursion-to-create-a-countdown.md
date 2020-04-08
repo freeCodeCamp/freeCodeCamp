@@ -46,15 +46,15 @@ console.log(countup(5)); // [ 1, 2, 3, 4, 5 ]
 
 ``` yml
 tests:
-  - text: '<code>countdown(-1)</code> 应该返回一个空数组。'
+  - text: <code>countdown(-1)</code> 应该返回一个空数组。
     testString: assert.isEmpty(countdown(-1));
-  - text: '<code>countdown(10)</code> 应该返回 <code>[10, 9, 8, 7, 6, 5, 4, 3, 2, 1]</code>。'
+  - text: <code>countdown(10)</code> 应该返回 <code>[10, 9, 8, 7, 6, 5, 4, 3, 2, 1]</code>。
     testString: assert.deepStrictEqual(countdown(10), [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]);
-  - text: '<code>countdown(5)</code> 应该返回 <code>[5, 4, 3, 2, 1]</code>。'
+  - text: <code>countdown(5)</code> 应该返回 <code>[5, 4, 3, 2, 1]</code>。
     testString: assert.deepStrictEqual(countdown(5), [5, 4, 3, 2, 1]);
-  - text: '代码不能包含任意形式的循环（<code>for</code>、<code>while</code> 或者高阶函数如：<code>forEach</code>、<code>map</code>、<code>filter</code> 以及 <code>reduce</code>）。'
+  - text: 代码不能包含任意形式的循环（<code>for</code>、<code>while</code> 或者高阶函数如：<code>forEach</code>、<code>map</code>、<code>filter</code> 以及 <code>reduce</code>）。
     testString: assert(!removeJSComments(code).match(/for|while|forEach|map|filter|reduce/g));
-  - text: '应该用递归解决这个问题。'
+  - text: 应该用递归解决这个问题。
     testString: assert(removeJSComments(countdown.toString()).match(/countdown\s*\(.+\)\;/));
 ```
 

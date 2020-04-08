@@ -25,27 +25,27 @@ localeTitle: 高尔夫代码
 
 ```yml
 tests:
-  - text: '<code>golfScore(4, 1)</code>应该返回 "Hole-in-one!"'
+  - text: <code>golfScore(4, 1)</code>应该返回 "Hole-in-one!"
     testString: assert(golfScore(4, 1) === "Hole-in-one!");
-  - text: '<code>golfScore(4, 2)</code>应该返回 "Eagle"'
+  - text: <code>golfScore(4, 2)</code>应该返回 "Eagle"
     testString: assert(golfScore(4, 2) === "Eagle");
-  - text: '<code>golfScore(5, 2)</code>应该返回 "Eagle"'
+  - text: <code>golfScore(5, 2)</code>应该返回 "Eagle"
     testString: assert(golfScore(5, 2) === "Eagle");
-  - text: '<code>golfScore(4, 3)</code>应该返回 "Birdie"'
+  - text: <code>golfScore(4, 3)</code>应该返回 "Birdie"
     testString: assert(golfScore(4, 3) === "Birdie");
-  - text: '<code>golfScore(4, 4)</code>应该返回 "Par"'
+  - text: <code>golfScore(4, 4)</code>应该返回 "Par"
     testString: assert(golfScore(4, 4) === "Par");
-  - text: '<code>golfScore(1, 1)</code>应该返回 "Hole-in-one!"'
+  - text: <code>golfScore(1, 1)</code>应该返回 "Hole-in-one!"
     testString: assert(golfScore(1, 1) === "Hole-in-one!");
-  - text: '<code>golfScore(5, 5)</code>应该返回 "Par"'
+  - text: <code>golfScore(5, 5)</code>应该返回 "Par"
     testString: assert(golfScore(5, 5) === "Par");
-  - text: '<code>golfScore(4, 5)</code>应该返回 "Bogey"'
+  - text: <code>golfScore(4, 5)</code>应该返回 "Bogey"
     testString: assert(golfScore(4, 5) === "Bogey");
-  - text: '<code>golfScore(4, 6)</code>应该返回 "Double Bogey"'
+  - text: <code>golfScore(4, 6)</code>应该返回 "Double Bogey"
     testString: assert(golfScore(4, 6) === "Double Bogey");
-  - text: '<code>golfScore(4, 7)</code>应该返回 "Go Home!"'
+  - text: <code>golfScore(4, 7)</code>应该返回 "Go Home!"
     testString: assert(golfScore(4, 7) === "Go Home!");
-  - text: '<code>golfScore(5, 9)</code>应该返回 "Go Home!"'
+  - text: <code>golfScore(5, 9)</code>应该返回 "Go Home!"
     testString: assert(golfScore(5, 9) === "Go Home!");
 
 ```

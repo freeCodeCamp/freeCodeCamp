@@ -23,17 +23,17 @@ localeTitle: 使用递归来创建一个数字序列
 
 ``` yml
 tests:
-  - text: '函数应该返回一个数组。'
+  - text: 函数应该返回一个数组。
     testString: assert(Array.isArray(rangeOfNumbers(5, 10)));
-  - text: '不能包含循环语句（<code>for</code> 或者 <code>while</code> 或者高阶函数比如 <code>forEach</code>、<code>map</code>、<code>filter</code> 或者 <code>reduce</code>）。'
+  - text: 不能包含循环语句（<code>for</code> 或者 <code>while</code> 或者高阶函数比如 <code>forEach</code>、<code>map</code>、<code>filter</code> 或者 <code>reduce</code>）。
     testString: assert(!removeJSComments(code).match(/for|while|forEach|map|filter|reduce/g));
-  - text: '<code>rangeOfNumbers</code> 应该使用递归函数（调用自身）来完成这个挑战。'
+  - text: <code>rangeOfNumbers</code> 应该使用递归函数（调用自身）来完成这个挑战。
     testString: assert(removeJSComments(rangeOfNumbers.toString()).match(/rangeOfNumbers\s*\(.+\)/));
-  - text: '<code>rangeOfNumbers(1, 5)</code> 应该返回 <code>[1, 2, 3, 4, 5]</code>。'
+  - text: <code>rangeOfNumbers(1, 5)</code> 应该返回 <code>[1, 2, 3, 4, 5]</code>。
     testString: assert.deepStrictEqual(rangeOfNumbers(1, 5), [1, 2, 3, 4, 5]);
-  - text: '<code>rangeOfNumbers(6, 9)</code> 应该返回 <code>[6, 7, 8, 9]</code>。'
+  - text: <code>rangeOfNumbers(6, 9)</code> 应该返回 <code>[6, 7, 8, 9]</code>。
     testString: assert.deepStrictEqual(rangeOfNumbers(6, 9), [6, 7, 8, 9]);
-  - text: '<code>rangeOfNumbers(4, 4)</code> 应该返回 <code>[4]</code>。'
+  - text: <code>rangeOfNumbers(4, 4)</code> 应该返回 <code>[4]</code>。
     testString: assert.deepStrictEqual(rangeOfNumbers(4, 4), [4]);
 ```
 

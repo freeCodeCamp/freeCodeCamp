@@ -59,11 +59,11 @@ bar(0) // "Less than two"
 
 ```yml
 tests:
-  - text: '<code>orderMyLogic(4)</code>应该返回 "Less than 5"'
+  - text: <code>orderMyLogic(4)</code>应该返回 "Less than 5"
     testString: assert(orderMyLogic(4) === "Less than 5");
-  - text: '<code>orderMyLogic(6)</code>应该返回 "Less than 10"'
+  - text: <code>orderMyLogic(6)</code>应该返回 "Less than 10"
     testString: assert(orderMyLogic(6) === "Less than 10");
-  - text: '<code>orderMyLogic(11)</code>应该返回 "Greater than or equal to 10"'
+  - text: <code>orderMyLogic(11)</code>应该返回 "Greater than or equal to 10"
     testString: assert(orderMyLogic(11) === "Greater than or equal to 10");
 
 ```

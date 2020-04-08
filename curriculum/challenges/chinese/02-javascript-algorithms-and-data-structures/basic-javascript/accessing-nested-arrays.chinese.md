@@ -47,9 +47,9 @@ ourPets[1].names[0]; // "Spot"
 
 ```yml
 tests:
-  - text: '<code>secondTree</code>应该等于 "pine"'
+  - text: <code>secondTree</code>应该等于 "pine"
     testString: assert(secondTree === "pine");
-  - text: '使用点操作符和中括号操作符来检索变量<code>myPlants</code>'
+  - text: 使用点操作符和中括号操作符来检索变量<code>myPlants</code>
     testString: assert(/=\s*myPlants\[1\].list\[1\]/.test(code));
 
 ```

@@ -33,13 +33,13 @@ addSum(3); // sum will be modified but returned value is undefined
 
 ```yml
 tests:
-  - text: '<code>addFive</code>应该是一个函数'
+  - text: <code>addFive</code>应该是一个函数
     testString: assert(typeof addFive === 'function');
-  - text: '<code>sum</code>应该等于 8'
+  - text: <code>sum</code>应该等于 8
     testString: assert(sum === 8);
-  - text: '<code>addFive</code>的返回值应该是<code>undefined</code>'
+  - text: <code>addFive</code>的返回值应该是<code>undefined</code>
     testString: assert(addFive() === undefined);
-  - text: '函数给变量 <code>sum</code> 加 5'
+  - text: 函数给变量 <code>sum</code> 加 5
     testString: assert(addFive.toString().replace(/\s/g, '').match(/sum=sum\+5|sum\+=5/));
 
 ```

@@ -36,9 +36,9 @@ myStr = "Job";
 
 ```yml
 tests:
-  - text: 'message:<code>myStr</code>的值应该是<code>Hello World</code>'
+  - text: message:<code>myStr</code>的值应该是<code>Hello World</code>
     testString: assert(myStr === "Hello World");
-  - text: '不要修改注释上面的代码'
+  - text: 不要修改注释上面的代码
     testString: assert(/myStr = "Jello World"/.test(code));
 
 ```

@@ -25,9 +25,9 @@ localeTitle: 用返回值来赋值
 
 ```yml
 tests:
-  - text: '<code>processed</code>的值应该是<code>2</code>'
+  - text: <code>processed</code>的值应该是<code>2</code>
     testString: assert(processed === 2);
-  - text: '你应该把<code>processArg</code>的返回值赋给<code>processed</code>'
+  - text: 你应该把<code>processArg</code>的返回值赋给<code>processed</code>
     testString: assert(/processed\s*=\s*processArg\(\s*7\s*\)\s*;/.test(code));
 
 ```

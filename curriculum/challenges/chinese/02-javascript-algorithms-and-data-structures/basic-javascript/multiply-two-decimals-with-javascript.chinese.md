@@ -23,9 +23,9 @@ localeTitle: 两个小数相乘
 
 ```yml
 tests:
-  - text: '变量<code>product</code>应该等于<code>5.0</code>.'
+  - text: 变量<code>product</code>应该等于<code>5.0</code>
     testString: assert(product === 5.0);
-  - text: '要使用<code>*</code>运算符'
+  - text: 要使用<code>*</code>运算符s
     testString: assert(/\*/.test(code));
 
 ```

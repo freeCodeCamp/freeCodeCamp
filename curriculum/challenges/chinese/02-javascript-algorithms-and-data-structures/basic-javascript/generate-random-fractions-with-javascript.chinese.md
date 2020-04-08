@@ -24,11 +24,11 @@ localeTitle: 使用 JavaScript 生成随机分数
 
 ```yml
 tests:
-  - text: '<code>randomFraction</code>应该返回一个随机数'
+  - text: <code>randomFraction</code>应该返回一个随机数
     testString: assert(typeof randomFraction() === "number");
-  - text: '<code>randomFraction</code>应该返回一个小数'
+  - text: <code>randomFraction</code>应该返回一个小数
     testString: assert((randomFraction()+''). match(/\./g));
-  - text: '需要使用<code>Math.random</code>生成随机的小数'
+  - text: 需要使用<code>Math.random</code>生成随机的小数
     testString: assert(code.match(/Math\.random/g).length >= 0);
 
 ```

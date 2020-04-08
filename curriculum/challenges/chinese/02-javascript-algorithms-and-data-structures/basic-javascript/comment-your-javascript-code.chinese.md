@@ -37,9 +37,9 @@ multi-line comment */
 
 ```yml
 tests:
-  - text: '创建一个<code>//</code>样式的注释, 被注释的文本至少要包含 5 个字符。'
+  - text: 创建一个<code>//</code>样式的注释, 被注释的文本至少要包含 5 个字符。
     testString: assert(code.match(/(\/\/)...../g));
-  - text: '创建一个<code>/* */</code>样式的注释, 被注释的文本至少要包含 5 个字符。'
+  - text: 创建一个<code>/* */</code>样式的注释, 被注释的文本至少要包含 5 个字符。
     testString: assert(code.match(/(\/\*)([^\/]{5,})(?=\*\/)/gm));
 
 ```

@@ -25,9 +25,9 @@ localeTitle: 使用方括号查找字符串中的第一个字符
 
 ```yml
 tests:
-  - text: '<code>firstLetterOfLastName</code>的值应该是<code>L</code>'
+  - text: <code>firstLetterOfLastName</code>的值应该是<code>L</code>
     testString: assert(firstLetterOfLastName === 'L');
-  - text: '你应该使用中括号'
+  - text: 你应该使用中括号
     testString: assert(code.match(/firstLetterOfLastName\s*?=\s*?lastName\[.*?\]/));
 
 ```

@@ -24,15 +24,15 @@ localeTitle: 使用 parseInt 函数
 
 ```yml
 tests:
-  - text: '<code>convertToInteger</code>应该使用<code>parseInt()</code>函数'
+  - text: <code>convertToInteger</code>应该使用<code>parseInt()</code>函数
     testString: assert(/parseInt/g.test(code));
-  - text: '<code>convertToInteger("56")</code>应该返回一个数字'
+  - text: <code>convertToInteger("56")</code>应该返回一个数字
     testString: assert(typeof(convertToInteger("56")) === "number");
-  - text: '<code>convertToInteger("56")</code>应该返回 56'
+  - text: <code>convertToInteger("56")</code>应该返回 56
     testString: assert(convertToInteger("56") === 56);
-  - text: '<code>convertToInteger("77")</code>应该返回 77'
+  - text: <code>convertToInteger("77")</code>应该返回 77
     testString: assert(convertToInteger("77") === 77);
-  - text: '<code>convertToInteger("JamesBond")</code>应该返回 NaN'
+  - text: <code>convertToInteger("JamesBond")</code>应该返回 NaN
     testString: assert.isNaN(convertToInteger("JamesBond"));
 
 ```

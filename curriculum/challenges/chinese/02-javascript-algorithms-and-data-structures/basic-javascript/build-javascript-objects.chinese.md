@@ -47,15 +47,15 @@ var anotherObject = {
 
 ```yml
 tests:
-  - text: '<code>myDog</code>应该包含<code>name</code>属性，并且是一个字符串<code>string</code>。'
+  - text: <code>myDog</code>应该包含<code>name</code>属性，并且是一个字符串<code>string</code>。
     testString: assert((function(z){if(z.hasOwnProperty("name") && z.name !== undefined && typeof z.name === "string"){return true;}else{return false;}})(myDog));
-  - text: '<code>myDog</code>应该包含<code>legs</code>属性，并且是一个数字<code>number</code>。'
+  - text: <code>myDog</code>应该包含<code>legs</code>属性，并且是一个数字<code>number</code>。
     testString: assert((function(z){if(z.hasOwnProperty("legs") && z.legs !== undefined && typeof z.legs === "number"){return true;}else{return false;}})(myDog));
-  - text: '<code>myDog</code>应该包含<code>tails</code>属性，并且是一个数字<code>number</code>。'
+  - text: <code>myDog</code>应该包含<code>tails</code>属性，并且是一个数字<code>number</code>。
     testString: assert((function(z){if(z.hasOwnProperty("tails") && z.tails !== undefined && typeof z.tails === "number"){return true;}else{return false;}})(myDog));
-  - text: '<code>myDog</code>应该包含<code>friends</code>属性，并且是一个数组<code>array</code>。'
+  - text: <code>myDog</code>应该包含<code>friends</code>属性，并且是一个数组<code>array</code>。
     testString: assert((function(z){if(z.hasOwnProperty("friends") && z.friends !== undefined && Array.isArray(z.friends)){return true;}else{return false;}})(myDog));
-  - text: '<code>myDog</code>应该只包含给出的属性。'
+  - text: <code>myDog</code>应该只包含给出的属性。
     testString: assert((function(z){return Object.keys(z).length === 4;})(myDog));
 
 ```

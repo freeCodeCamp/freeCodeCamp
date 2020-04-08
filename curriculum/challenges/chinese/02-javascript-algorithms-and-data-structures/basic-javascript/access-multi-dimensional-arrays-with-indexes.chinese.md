@@ -37,9 +37,9 @@ arr[3][0][1]; // equals 11
 
 ```yml
 tests:
-  - text: '<code>myData</code>应该等于<code>8</code>.'
+  - text: <code>myData</code>应该等于<code>8</code>
     testString: assert(myData === 8);
-  - text: '你应该使用方括号从<code>myArray</code>中取值'
+  - text: 你应该使用方括号从<code>myArray</code>中取值
     testString: 'assert(/myArray\[2\]\[1\]/g.test(code) && !/myData\s*=\s*(?:.*[-+*/%]|\d)/g.test(code));'
 
 ```

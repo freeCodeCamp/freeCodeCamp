@@ -25,11 +25,11 @@ localeTitle: 使用 JavaScript 数组将多个值存储在一个变量中
 
 ```yml
 tests:
-  - text: '<code>myArray</code>应该是一个<code>数组</code>'
+  - text: <code>myArray</code>应该是一个<code>数组</code>
     testString: assert(typeof myArray == 'object');
-  - text: '<code>myArray</code>数组的第一个元素应该是一个<code>字符串</code>'
+  - text: <code>myArray</code>数组的第一个元素应该是一个<code>字符串</code>
     testString: assert(typeof myArray[0] !== 'undefined' && typeof myArray[0] == 'string');
-  - text: '<code>myArray</code>数组的第二个元素应该是一个<code>数字</code>'
+  - text: <code>myArray</code>数组的第二个元素应该是一个<code>数字</code>
     testString: assert(typeof myArray[1] !== 'undefined' && typeof myArray[1] == 'number');
 
 ```

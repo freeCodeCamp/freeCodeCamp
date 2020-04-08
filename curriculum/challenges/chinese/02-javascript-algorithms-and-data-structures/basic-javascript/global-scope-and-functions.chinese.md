@@ -24,13 +24,13 @@ localeTitle: 全局作用域和函数
 
 ```yml
 tests:
-  - text: '应定义<code>myGlobal</code>。'
+  - text: 应定义<code>myGlobal</code>。
     testString: assert(typeof myGlobal != "undefined");
-  - text: '<code>myGlobal</code>的值应为<code>10</code>。'
+  - text: <code>myGlobal</code>的值应为<code>10</code>。
     testString: assert(myGlobal === 10);
-  - text: '应使用<code>var</code>关键字定义<code>myGlobal</code>。'
+  - text: 应使用<code>var</code>关键字定义<code>myGlobal</code>。
     testString: assert(/var\s+myGlobal/.test(code));
-  - text: '<code>oopsGlobal</code>应为全局变量且值为<code>5</code>。'
+  - text: <code>oopsGlobal</code>应为全局变量且值为<code>5</code>。
     testString: assert(typeof oopsGlobal != "undefined" && oopsGlobal === 5);
 
 ```

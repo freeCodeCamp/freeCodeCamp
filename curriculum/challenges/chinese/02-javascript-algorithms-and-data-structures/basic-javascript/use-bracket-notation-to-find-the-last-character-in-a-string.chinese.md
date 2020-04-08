@@ -24,9 +24,9 @@ localeTitle: 使用方括号查找字符串中的最后一个字符
 
 ```yml
 tests:
-  - text: '<code>lastLetterOfLastName</code>应该是"e".'
+  - text: <code>lastLetterOfLastName</code>应该是"e"
     testString: assert(lastLetterOfLastName === "e");
-  - text: '你需要使用<code>.length</code>获取最后一个字符'
+  - text: 你需要使用<code>.length</code>获取最后一个字符
     testString: assert(code.match(/\.length/g).length === 2);
 
 ```

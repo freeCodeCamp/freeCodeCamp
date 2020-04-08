@@ -44,9 +44,9 @@ badStr = 'Finn responds, "Let's go!"'; // Throws an error
 
 ```yml
 tests:
-  - text: '删除所有<code>反斜杠</code> (<code>\</code>)'
+  - text: 删除所有<code>反斜杠</code> (<code>\</code>)
     testString: assert(!/\\/g.test(code) && myStr.match('\\s*<a href\\s*=\\s*"http://www.example.com"\\s*target\\s*=\\s*"_blank">\\s*Link\\s*</a>\\s*'));
-  - text: '应该要有两个单引号<code>&#39;</code>和四个双引号<code>&quot;</code>'
+  - text: 应该要有两个单引号<code>&#39;</code>和四个双引号<code>&quot;</code>
     testString: assert(code.match(/"/g).length === 4 && code.match(/'/g).length === 2);
 
 ```

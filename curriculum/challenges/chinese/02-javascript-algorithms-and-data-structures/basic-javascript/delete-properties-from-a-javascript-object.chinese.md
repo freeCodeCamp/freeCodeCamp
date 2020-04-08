@@ -23,9 +23,9 @@ localeTitle: 删除对象的属性
 
 ```yml
 tests:
-  - text: '从<code>myDog</code>中删除<code>"tails"</code>属性'
+  - text: 从<code>myDog</code>中删除<code>"tails"</code>属性
     testString: assert(typeof myDog === "object" && myDog.tails === undefined);
-  - text: '不要修改<code>myDog</code>的初始化'
+  - text: 不要修改<code>myDog</code>的初始化
     testString: 'assert(code.match(/"tails": 1/g).length > 1);'
 
 ```

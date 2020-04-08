@@ -33,11 +33,11 @@ function functionName() {
 
 ```yml
 tests:
-  - text: '<code>reusableFunction</code>应该是一个函数'
+  - text: <code>reusableFunction</code>应该是一个函数
     testString: assert(typeof reusableFunction === 'function');
-  - text: '<code>reusableFunction</code>应该在控制台中输出 "Hi World"'
+  - text: <code>reusableFunction</code>应该在控制台中输出 "Hi World"
     testString: assert(hiWorldWasLogged);
-  - text: '在你定义<code>reusableFunction</code>之后记得调用它'
+  - text: 在你定义<code>reusableFunction</code>之后记得调用它
     testString: assert(/^\s*reusableFunction\(\)\s*/m.test(code));
 
 ```

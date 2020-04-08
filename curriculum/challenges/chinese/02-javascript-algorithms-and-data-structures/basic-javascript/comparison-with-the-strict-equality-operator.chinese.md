@@ -31,13 +31,13 @@ localeTitle: 严格相等运算符
 
 ```yml
 tests:
-  - text: '<code>testStrict(10)</code>应该返回 "Not Equal"'
+  - text: <code>testStrict(10)</code>应该返回 "Not Equal"
     testString: assert(testStrict(10) === "Not Equal");
-  - text: '<code>testStrict(7)</code>应该返回 "Equal"'
+  - text: <code>testStrict(7)</code>应该返回 "Equal"
     testString: assert(testStrict(7) === "Equal");
-  - text: '<code>testStrict("7")</code>应该返回 "Not Equal"'
+  - text: <code>testStrict("7")</code>应该返回 "Not Equal"
     testString: assert(testStrict("7") === "Not Equal");
-  - text: '你应该使用<code>===</code>运算符'
+  - text: 你应该使用<code>===</code>运算符
     testString: assert(code.match(/(val\s*===\s*\d+)|(\d+\s*===\s*val)/g).length > 0);
 
 ```

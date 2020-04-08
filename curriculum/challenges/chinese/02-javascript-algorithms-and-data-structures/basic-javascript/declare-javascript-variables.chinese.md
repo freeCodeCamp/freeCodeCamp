@@ -34,7 +34,7 @@ var ourName;
 
 ```yml
 tests:
-  - text: '你需要使用<code>var</code>关键字定义一个变量<code>myName</code>，并使用分号结尾。'
+  - text: 你需要使用<code>var</code>关键字定义一个变量<code>myName</code>，并使用分号结尾。
     testString: assert(/var\s+myName\s*;/.test(code), '你需要使用<code>var</code>关键字定义一个变量<code>myName</code>。并使用分号结尾。');
 
 ```

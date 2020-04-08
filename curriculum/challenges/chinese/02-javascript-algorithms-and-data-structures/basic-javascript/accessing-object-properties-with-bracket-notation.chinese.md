@@ -39,13 +39,13 @@ myObj["NoSpace"];    // USS Enterprise
 tests:
   - text: <code>entreeValue</code>应该是一个字符串
     testString: assert(typeof entreeValue === 'string' );
-  - text: <code>entreeValue</code>的值应该是<code>&quot;hamburger&quot;</code>
+  - text: <code>entreeValue</code>的值应该是<code>"hamburger"</code>
     testString: assert(entreeValue === 'hamburger' );
   - text: <code>drinkValue</code>应该是一个字符串
     testString: assert(typeof drinkValue === 'string' );
-  - text: <code>drinkValue</code>的值应该是<code>&quot;water&quot;</code>
+  - text: <code>drinkValue</code>的值应该是<code>"water"</code>
     testString: assert(drinkValue === 'water' );
-  - text: 您应该使用括号表示法两次
+  - text: 你应该使用中括号两次
     testString: assert(code.match(/testObj\s*?\[('|")[^'"]+\1\]/g).length > 1);
 
 ```

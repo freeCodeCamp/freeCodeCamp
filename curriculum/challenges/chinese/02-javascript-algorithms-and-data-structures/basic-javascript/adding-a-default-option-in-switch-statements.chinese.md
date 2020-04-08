@@ -39,21 +39,21 @@ switch (num) {
 
 ```yml
 tests:
-  - text: '<code>switchOfStuff("a")</code>应该有一个值为 "apple"'
+  - text: <code>switchOfStuff("a")</code>应该有一个值为 "apple"
     testString: assert(switchOfStuff("a") === "apple");
-  - text: '<code>switchOfStuff("b")</code>应该有一个值为 "bird"'
+  - text: <code>switchOfStuff("b")</code>应该有一个值为 "bird"
     testString: assert(switchOfStuff("b") === "bird");
-  - text: '<code>switchOfStuff("c")</code>应该有一个值为 "cat"'
+  - text: <code>switchOfStuff("c")</code>应该有一个值为 "cat"
     testString: assert(switchOfStuff("c") === "cat");
-  - text: '<code>switchOfStuff("d")</code>应该有一个值为 "stuff"'
+  - text: <code>switchOfStuff("d")</code>应该有一个值为 "stuff"
     testString: assert(switchOfStuff("d") === "stuff");
-  - text: '<code>switchOfStuff(4)</code>应该有一个值为 "stuff"'
+  - text: <code>switchOfStuff(4)</code>应该有一个值为 "stuff"
     testString: assert(switchOfStuff(4) === "stuff");
-  - text: '不能使用任何<code>if</code>或<code>else</code>表达式'
+  - text: 不能使用任何<code>if</code>或<code>else</code>表达式
     testString: assert(!/else/g.test(code) || !/if/g.test(code));
-  - text: '你应该有一个<code>default</code>表达式'
+  - text: 你应该有一个<code>default</code>表达式
     testString: assert(switchOfStuff("string-to-trigger-default-case") === "stuff");
-  - text: '你应该有至少 3 个<code>break</code>表达式'
+  - text: 你应该有至少 3 个<code>break</code>表达式
     testString: assert(code.match(/break/g).length > 2);
 
 ```

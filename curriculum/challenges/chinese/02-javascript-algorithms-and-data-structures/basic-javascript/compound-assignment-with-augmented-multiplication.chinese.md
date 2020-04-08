@@ -25,15 +25,15 @@ localeTitle: 复合赋值之 *=
 
 ```yml
 tests:
-  - text: '<code>a</code>应该等于<code>25</code>'
+  - text: <code>a</code>应该等于<code>25</code>
     testString: assert(a === 25);
-  - text: '<code>b</code>应该等于<code>36</code>'
+  - text: <code>b</code>应该等于<code>36</code>
     testString: assert(b === 36);
-  - text: '<code>c</code>应该等于<code>46</code>'
+  - text: <code>c</code>应该等于<code>46</code>
     testString: assert(c === 46);
-  - text: '应该对每个变量使用<code>*=</code>操作符'
+  - text: 应该对每个变量使用<code>*=</code>操作符
     testString: assert(code.match(/\*=/g).length === 3);
-  - text: '不要修改注释上面的代码'
+  - text: 不要修改注释上面的代码
     testString: assert(/var a = 5;/.test(code) && /var b = 12;/.test(code) && /var c = 4\.6;/.test(code));
 
 ```

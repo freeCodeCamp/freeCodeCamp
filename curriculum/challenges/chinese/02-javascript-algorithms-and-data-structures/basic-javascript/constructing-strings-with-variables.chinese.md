@@ -22,9 +22,9 @@ localeTitle: 用变量构造字符串
 
 ```yml
 tests:
-  - text: '<code>myName</code>至少要包含三个字符'
+  - text: <code>myName</code>至少要包含三个字符
     testString: assert(typeof myName !== 'undefined' && myName.length > 2);
-  - text: '使用两个<code>+</code>操作符创建包含<code>myName</code>的<code>myStr</code>变量'
+  - text: 使用两个<code>+</code>操作符创建包含<code>myName</code>的<code>myStr</code>变量
     testString: assert(code.match(/["']\s*\+\s*myName\s*\+\s*["']/g).length > 0);
 
 ```

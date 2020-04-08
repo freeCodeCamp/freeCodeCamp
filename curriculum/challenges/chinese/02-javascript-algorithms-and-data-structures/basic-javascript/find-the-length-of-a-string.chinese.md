@@ -24,11 +24,11 @@ localeTitle: 查找字符串的长度
 
 ```yml
 tests:
-  - text: '不能改变 <code>// Setup</code> 部分声明的变量。'
+  - text: 不能改变 <code>// Setup</code> 部分声明的变量。
     testString: assert(code.match(/var lastNameLength = 0;/) && code.match(/var lastName = "Lovelace";/));   
-  - text: '<code>lastNameLength</code>应该等于 8。'
+  - text: <code>lastNameLength</code>应该等于 8。
     testString: assert(typeof lastNameLength !== 'undefined' && lastNameLength === 8); 
-  - text: '你应该使用 <code>.length</code> 获取 <code>lastName</code> 的长度，像这样 <code>lastName.length</code>。'
+  - text: 你应该使用 <code>.length</code> 获取 <code>lastName</code> 的长度，像这样 <code>lastName.length</code>。
     testString: assert(code.match(/=\s*lastName\.length/g) && !code.match(/lastName\s*=\s*8/));
 
 ```

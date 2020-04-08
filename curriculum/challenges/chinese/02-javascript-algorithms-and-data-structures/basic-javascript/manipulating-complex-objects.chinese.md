@@ -59,23 +59,23 @@ var ourMusic = [
 
 ```yml
 tests:
-  - text: '<code>myMusic</code>应该是一个数组'
+  - text: <code>myMusic</code>应该是一个数组
     testString: assert(Array.isArray(myMusic));
-  - text: '<code>myMusic</code>应该至少包含两个元素'
+  - text: <code>myMusic</code>应该至少包含两个元素
     testString: assert(myMusic.length > 1);
-  - text: '<code>myMusic[1]</code>应该是一个对象'
+  - text: <code>myMusic[1]</code>应该是一个对象
     testString: assert(typeof myMusic[1] === 'object');
-  - text: '<code>myMusic[1]</code>至少要包含四个属性'
+  - text: <code>myMusic[1]</code>至少要包含四个属性
     testString: assert(Object.keys(myMusic[1]).length > 3);
-  - text: '<code>myMusic[1]</code>应该包含一个类型为字符串的<code>artist</code>的属性'
+  - text: <code>myMusic[1]</code>应该包含一个类型为字符串的<code>artist</code>的属性
     testString: assert(myMusic[1].hasOwnProperty('artist') && typeof myMusic[1].artist === 'string');
-  - text: '<code>myMusic[1]</code>应该包含一个类型为字符串的<code>title</code>的属性'
+  - text: <code>myMusic[1]</code>应该包含一个类型为字符串的<code>title</code>的属性
     testString: assert(myMusic[1].hasOwnProperty('title') && typeof myMusic[1].title === 'string');
-  - text: '<code>myMusic[1]</code>应该包含一个类型为数字的<code>release_year</code> 应该包含一个类型为数字的属性'
+  - text: <code>myMusic[1]</code>应该包含一个类型为数字的<code>release_year</code> 应该包含一个类型为数字的属性
     testString: assert(myMusic[1].hasOwnProperty('release_year') && typeof myMusic[1].release_year === 'number');
-  - text: '<code>myMusic[1]</code>应该包含一个类型为数组的<code>formats</code>属性'
+  - text: <code>myMusic[1]</code>应该包含一个类型为数组的<code>formats</code>属性
     testString: assert(myMusic[1].hasOwnProperty('formats') && Array.isArray(myMusic[1].formats));
-  - text: '<code>formats</code>应该是一个至少包含两个字符串元素的数组'
+  - text: <code>formats</code>应该是一个至少包含两个字符串元素的数组
     testString: assert(myMusic[1].formats.every(function(item) { return (typeof item === "string")}) && myMusic[1].formats.length > 1);
 
 ```

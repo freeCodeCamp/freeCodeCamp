@@ -33,11 +33,11 @@ myObj.hasOwnProperty("middle"); // false
 
 ```yml
 tests:
-  - text: '<code>checkObj("gift")</code>应该返回<code>"pony"</code>.'
+  - text: <code>checkObj("gift")</code>应该返回<code>"pony"</code>
     testString: assert(checkObj("gift") === "pony");
-  - text: '<code>checkObj("pet")</code>应该返回<code>"kitten"</code>.'
+  - text: <code>checkObj("pet")</code>应该返回<code>"kitten"</code>
     testString: assert(checkObj("pet") === "kitten");
-  - text: '<code>checkObj("house")</code>应该返回<code>"Not Found"</code>.'
+  - text: <code>checkObj("house")</code>应该返回<code>"Not Found"</code>
     testString: assert(checkObj("house") === "Not Found");
 
 ```

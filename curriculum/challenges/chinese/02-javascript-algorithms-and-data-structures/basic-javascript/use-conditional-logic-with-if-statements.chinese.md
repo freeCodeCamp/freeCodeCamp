@@ -39,15 +39,15 @@ test(false); // returns "It was false"
 
 ```yml
 tests:
-  - text: '<code>trueOrFalse</code>应该是一个函数'
+  - text: <code>trueOrFalse</code>应该是一个函数
     testString: assert(typeof trueOrFalse === "function");
-  - text: '<code>trueOrFalse(true)</code>应该返回一个字符串'
+  - text: <code>trueOrFalse(true)</code>应该返回一个字符串
     testString: assert(typeof trueOrFalse(true) === "string");
-  - text: '<code>trueOrFalse(false)</code>应该返回一个字符串'
+  - text: <code>trueOrFalse(false)</code>应该返回一个字符串
     testString: assert(typeof trueOrFalse(false) === "string");
-  - text: '<code>trueOrFalse(true)</code>应该返回 "Yes, that was true"'
+  - text: <code>trueOrFalse(true)</code>应该返回 "Yes, that was true"
     testString: assert(trueOrFalse(true) === "Yes, that was true");
-  - text: '<code>trueOrFalse(false)</code>应该返回 "No, that was false"'
+  - text: <code>trueOrFalse(false)</code>应该返回 "No, that was false"
     testString: assert(trueOrFalse(false) === "No, that was false");
 
 ```

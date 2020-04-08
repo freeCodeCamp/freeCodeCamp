@@ -32,15 +32,15 @@ console.log(myVar); // Returns 6
 
 ```yml
 tests:
-  - text: '<code>a</code>应该等于<code>15</code>'
+  - text: <code>a</code>应该等于<code>15</code>
     testString: assert(a === 15);
-  - text: '<code>b</code>应该等于<code>26</code>'
+  - text: <code>b</code>应该等于<code>26</code>
     testString: assert(b === 26);
-  - text: '<code>c</code>应该等于<code>19</code>'
+  - text: <code>c</code>应该等于<code>19</code>
     testString: assert(c === 19);
-  - text: '你应该对每个变量使用<code>+=</code>操作符'
+  - text: 你应该对每个变量使用<code>+=</code>操作符
     testString: assert(code.match(/\+=/g).length === 3);
-  - text: '不要修改注释上面的代码'
+  - text: 不要修改注释上面的代码
     testString: assert(/var a = 3;/.test(code) && /var b = 17;/.test(code) && /var c = 12;/.test(code));
 
 ```

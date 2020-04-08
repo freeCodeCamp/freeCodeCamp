@@ -27,9 +27,9 @@ localeTitle: 转义字符串中的引号
 
 ```yml
 tests:
-  - text: '你的代码中应该包含两个双引号 (<code>&quot;</code>) 以及四个转义的双引 (<code>&#92;&quot;</code>).'
+  - text: 你的代码中应该包含两个双引号 (<code>&quot;</code>) 以及四个转义的双引 (<code>&#92;&quot;</code>).
     testString: assert(code.match(/\\"/g).length === 4 && code.match(/[^\\]"/g).length === 2);
-  - text: '变量 myStr 应该包含字符串<code>I am a "double quoted" string inside "double quotes".</code>'
+  - text: 变量 myStr 应该包含字符串<code>I am a "double quoted" string inside "double quotes".</code>
     testString: assert(myStr === "I am a \"double quoted\" string inside \"double quotes\".");
 
 ```

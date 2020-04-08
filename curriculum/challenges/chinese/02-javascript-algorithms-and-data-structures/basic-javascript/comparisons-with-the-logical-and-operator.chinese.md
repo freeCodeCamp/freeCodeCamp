@@ -42,25 +42,25 @@ return "No";
 
 ```yml
 tests:
-  - text: '你应该使用<code>&&</code>运算符一次'
+  - text: 你应该使用<code>&&</code>运算符一次
     testString: assert(code.match(/&&/g).length === 1,);
-  - text: '你应该只有一个<code>if</code>表达式'
+  - text: 你应该只有一个<code>if</code>表达式
     testString: assert(code.match(/if/g).length === 1);
-  - text: '<code>testLogicalAnd(0)</code>应该返回 "No"'
+  - text: <code>testLogicalAnd(0)</code>应该返回 "No"
     testString: assert(testLogicalAnd(0) === "No");
-  - text: '<code>testLogicalAnd(24)</code>应该返回 "No"'
+  - text: <code>testLogicalAnd(24)</code>应该返回 "No"
     testString: assert(testLogicalAnd(24) === "No");
-  - text: '<code>testLogicalAnd(25)</code>应该返回 "Yes"'
+  - text: <code>testLogicalAnd(25)</code>应该返回 "Yes"
     testString: assert(testLogicalAnd(25) === "Yes");
-  - text: '<code>testLogicalAnd(30)</code>应该返回 "Yes"'
+  - text: <code>testLogicalAnd(30)</code>应该返回 "Yes"
     testString: assert(testLogicalAnd(30) === "Yes");
-  - text: '<code>testLogicalAnd(50)</code>应该返回 "Yes"'
+  - text: <code>testLogicalAnd(50)</code>应该返回 "Yes"
     testString: assert(testLogicalAnd(50) === "Yes");
-  - text: '<code>testLogicalAnd(51)</code>应该返回 "No"'
+  - text: <code>testLogicalAnd(51)</code>应该返回 "No"
     testString: assert(testLogicalAnd(51) === "No");
-  - text: '<code>testLogicalAnd(75)</code>应该返回 "No"'
+  - text: <code>testLogicalAnd(75)</code>应该返回 "No"
     testString: assert(testLogicalAnd(75) === "No");
-  - text: '<code>testLogicalAnd(80)</code>应该返回 "No"'
+  - text: <code>testLogicalAnd(80)</code>应该返回 "No"
     testString: assert(testLogicalAnd(80) === "No");
 
 ```

@@ -31,13 +31,13 @@ var sentence = "It was really " + "hot" + ", and we " + "laughed" + " ourselves 
 
 ```yml
 tests:
-  - text: '<code>wordBlanks("","","","")</code>应该返回一个字符串'
+  - text: <code>wordBlanks("","","","")</code>应该返回一个字符串
     testString: assert(typeof wordBlanks === 'string');
-  - text: '不能改变 <code>myNoun</code>、<code>myVerb</code>、<code>myAdjective</code> 或者 <code>myAdverb</code> 的值。'
+  - text: 不能改变 <code>myNoun</code>、<code>myVerb</code>、<code>myAdjective</code> 或者 <code>myAdverb</code> 的值。
     testString: assert(myNoun === "dog" && myVerb === "ran" && myAdjective === "big" && myAdverb === "quickly");    
-  - text: '不能直接使用 "dog"、"ran"、"big" 或者 "quickly" 来创建 <code>wordBlanks</code>。'
+  - text: 不能直接使用 "dog"、"ran"、"big" 或者 "quickly" 来创建 <code>wordBlanks</code>。
     testString: const newCode = removeAssignments(code); assert(!/dog/.test(newCode) && !/ran/.test(newCode) && !/big/.test(newCode) && !/quickly/.test(newCode));    
-  - text: '<code>wordBlanks</code> 应包含分配给变量 <code>myNoun</code>、<code>myVerb</code>、<code>myAdjective</code> 和 <code>myAdverb</code> 的所有单词，并用非单词字符（以及 madlib 中的其它单词）分隔。'
+  - text: <code>wordBlanks</code> 应包含分配给变量 <code>myNoun</code>、<code>myVerb</code>、<code>myAdjective</code> 和 <code>myAdverb</code> 的所有单词，并用非单词字符（以及 madlib 中的其它单词）分隔。
     testString: assert(/\bdog\b/.test(wordBlanks) && /\bbig\b/.test(wordBlanks) && /\bran\b/.test(wordBlanks) && /\bquickly\b/.test(wordBlanks));
 
 ```

@@ -24,9 +24,9 @@ localeTitle: 声明字符串变量
 
 ```yml
 tests:
-  - text: '<code>myFirstName</code>应该是一个字符串,并且至少包含一个字符。'
+  - text: <code>myFirstName</code>应该是一个字符串,并且至少包含一个字符。
     testString: assert((function(){if(typeof myFirstName !== "undefined" && typeof myFirstName === "string" && myFirstName.length > 0){return true;}else{return false;}})());
-  - text: '<code>myLastName</code>应该是一个字符串,并且至少包含一个字符。'
+  - text: <code>myLastName</code>应该是一个字符串,并且至少包含一个字符。
     testString: assert((function(){if(typeof myLastName !== "undefined" && typeof myLastName === "string" && myLastName.length > 0){return true;}else{return false;}})());
 
 ```

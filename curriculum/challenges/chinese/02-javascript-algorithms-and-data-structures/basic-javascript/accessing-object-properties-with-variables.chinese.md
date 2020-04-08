@@ -48,17 +48,17 @@ console.log(someObj[someProp]); // "John"
 
 ```yml
 tests:
-  - text: '<code>playerNumber</code>应该是一个数字'
+  - text: <code>playerNumber</code>应该是一个数字
     testString: assert(typeof playerNumber === 'number');
-  - text: '变量<code>player</code>应该是一个字符串'
+  - text: 变量<code>player</code>应该是一个字符串
     testString: assert(typeof player === 'string');
-  - text: '<code>player</code>点值应该是 "Montana"'
+  - text: <code>player</code>点值应该是 "Montana"
     testString: assert(player === 'Montana');
-  - text: '你应该使用中括号访问<code>testObj</code>'
+  - text: 你应该使用中括号访问<code>testObj</code>
     testString: assert(/testObj\s*?\[.*?\]/.test(code));
-  - text: '你不应该直接将<code>Montana</code>赋给<code>player</code>'
+  - text: 你不应该直接将<code>Montana</code>赋给<code>player</code>
     testString: assert(!code.match(/player\s*=\s*"|\'\s*Montana\s*"|\'\s*;/gi));
-  - text: '你应该在中括号中使用<code>playerNumber</code>变量'
+  - text: 你应该在中括号中使用<code>playerNumber</code>变量
     testString: assert(/testObj\s*?\[\s*playerNumber\s*\]/.test(code));
 
 ```

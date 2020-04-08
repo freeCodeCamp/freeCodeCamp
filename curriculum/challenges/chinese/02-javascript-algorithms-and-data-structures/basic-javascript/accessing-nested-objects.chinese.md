@@ -41,9 +41,9 @@ ourStorage.desk.drawer; // "stapler"
 
 ```yml
 tests:
-  - text: '<code>gloveBoxContents</code>应该等于"maps"'
+  - text: <code>gloveBoxContents</code>应该等于"maps"
     testString: assert(gloveBoxContents === "maps");
-  - text: '应使用点操作符和中括号操作符来访问<code>myStorage</code>'
+  - text: 应使用点操作符和中括号操作符来访问<code>myStorage</code>
     testString: assert(/=\s*myStorage\.car\.inside\[\s*("|')glove box\1\s*\]/g.test(code));
 
 ```

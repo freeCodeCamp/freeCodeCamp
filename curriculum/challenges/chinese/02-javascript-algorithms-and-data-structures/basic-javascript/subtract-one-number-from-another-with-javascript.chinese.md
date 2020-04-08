@@ -31,9 +31,9 @@ myVar = 12 - 6; // assigned 6
 
 ```yml
 tests:
-  - text: '要使<code>difference</code>的值等于 12。'
+  - text: 要使<code>difference</code>的值等于 12。
     testString: assert(difference === 12);
-  - text: '只用 45 减去一个数。'
+  - text: 只用 45 减去一个数。
     testString: assert(/var\s*difference\s*=\s*45\s*-\s*[0-9]*;(?!\s*[a-zA-Z0-9]+)/.test(code));
 
 ```

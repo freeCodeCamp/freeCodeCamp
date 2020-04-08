@@ -42,23 +42,23 @@ alpha[value]; // "Y"
 
 ```yml
 tests:
-  - text: '<code>phoneticLookup("alpha")</code>应该等于<code>"Adams"</code>'
+  - text: <code>phoneticLookup("alpha")</code>应该等于<code>"Adams"</code>
     testString: assert(phoneticLookup("alpha") === 'Adams');
-  - text: '<code>phoneticLookup("bravo")</code>应该等于<code>"Boston"</code>'
+  - text: <code>phoneticLookup("bravo")</code>应该等于<code>"Boston"</code>
     testString: assert(phoneticLookup("bravo") === 'Boston');
-  - text: '<code>phoneticLookup("charlie")</code>应该等于<code>"Chicago"</code>'
+  - text: <code>phoneticLookup("charlie")</code>应该等于<code>"Chicago"</code>
     testString: assert(phoneticLookup("charlie") === 'Chicago');
-  - text: '<code>phoneticLookup("delta")</code>应该等于<code>"Denver"</code>'
+  - text: <code>phoneticLookup("delta")</code>应该等于<code>"Denver"</code>
     testString: assert(phoneticLookup("delta") === 'Denver');
-  - text: '<code>phoneticLookup("echo")</code>应该等于<code>"Easy"</code>'
+  - text: <code>phoneticLookup("echo")</code>应该等于<code>"Easy"</code>
     testString: assert(phoneticLookup("echo") === 'Easy');
-  - text: '<code>phoneticLookup("foxtrot")</code>应该等于<code>"Frank"</code>'
+  - text: <code>phoneticLookup("foxtrot")</code>应该等于<code>"Frank"</code>
     testString: assert(phoneticLookup("foxtrot") === 'Frank');
-  - text: '<code>phoneticLookup("")</code>应该等于<code>undefined</code>'
+  - text: <code>phoneticLookup("")</code>应该等于<code>undefined</code>
     testString: assert(typeof phoneticLookup("") === 'undefined');
-  - text: '请不要修改<code>return</code>语句'
+  - text: 请不要修改<code>return</code>语句
     testString: assert(code.match(/return\sresult;/));
-  - text: '请不要使用<code>case</code>，<code>switch</code>，或<code>if</code>语句'
+  - text: 请不要使用<code>case</code>，<code>switch</code>，或<code>if</code>语句
     testString: assert(!/case|switch|if/g.test(code.replace(/([/]{2}.*)|([/][*][^/*]*[*][/])/g,'')));
 
 ```

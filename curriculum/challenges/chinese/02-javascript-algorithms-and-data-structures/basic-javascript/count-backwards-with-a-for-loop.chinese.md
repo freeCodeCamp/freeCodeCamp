@@ -34,11 +34,11 @@ for (var i=10; i > 0; i-=2) {
 
 ```yml
 tests:
-  - text: '你应该使用<code>for</code>循环'
+  - text: 你应该使用<code>for</code>循环
     testString: assert(code.match(/for\s*\(/g).length > 1);
-  - text: '你应该使用数组方法<code>push</code>.'
+  - text: 你应该使用数组方法<code>push</code>
     testString: assert(code.match(/myArray.push/));
-  - text: '<code>myArray</code>应该等于<code>[9,7,5,3,1]</code>.'
+  - text: <code>myArray</code>应该等于<code>[9,7,5,3,1]</code>
     testString: assert.deepEqual(myArray, [9,7,5,3,1]);
 
 ```

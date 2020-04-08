@@ -28,19 +28,19 @@ localeTitle: 字符串中的转义序列
 
 ```yml
 tests:
-  - text: '<code>myStr</code>不能包含空格'
+  - text: <code>myStr</code>不能包含空格
     testString: assert(!/ /.test(myStr));
-  - text: '<code>myStr</code>应该包含字符串<code>FirstLine</code>, <code>SecondLine</code> and <code>ThirdLine</code> （记得区分大小写）'
+  - text: <code>myStr</code>应该包含字符串<code>FirstLine</code>, <code>SecondLine</code> and <code>ThirdLine</code> （记得区分大小写）
     testString: assert(/FirstLine/.test(myStr) && /SecondLine/.test(myStr) && /ThirdLine/.test(myStr));
-  - text: '<code>FirstLine</code>后面应该是一个新行<code>\n</code>'
+  - text: <code>FirstLine</code>后面应该是一个新行<code>\n</code>
     testString: assert(/FirstLine\n/.test(myStr));
-  - text: '<code>myStr</code>应该包含制表符<code>\t</code>并且制表符要在换行符后面'
+  - text: <code>myStr</code>应该包含制表符<code>\t</code>并且制表符要在换行符后面
     testString: assert(/\n\t/.test(myStr));
-  - text: '<code>SecondLine</code>前面应该是反斜杠<code>\\</code>'
+  - text: <code>SecondLine</code>前面应该是反斜杠<code>\\</code>
     testString: assert(/\SecondLine/.test(myStr));
-  - text: '<code>SecondLine</code>和<code>ThirdLine</code>之间应该是换行符'
+  - text: <code>SecondLine</code>和<code>ThirdLine</code>之间应该是换行符
     testString: assert(/SecondLine\nThirdLine/.test(myStr));
-  - text: '<code>myStr</code> 应该只包含介绍里面展示的字符串。'
+  - text: <code>myStr</code> 应该只包含介绍里面展示的字符串。
     testString: assert(myStr === 'FirstLine\n\t\\SecondLine\nThirdLine');    
 
 ```

@@ -31,19 +31,19 @@ if (num > 10) {
 
 ```yml
 tests:
-  - text: '你应该只有一个<code>if</code>表达式'
+  - text: 你应该只有一个<code>if</code>表达式
     testString: assert(code.match(/if/g).length === 1);
-  - text: '你应该使用一个<code>else</code>表达式'
+  - text: 你应该使用一个<code>else</code>表达式
     testString: assert(/else/g.test(code));
-  - text: '<code>testElse(4)</code>应该返回 "5 or Smaller"'
+  - text: <code>testElse(4)</code>应该返回 "5 or Smaller"
     testString: assert(testElse(4) === "5 or Smaller");
-  - text: '<code>testElse(5)</code>应该返回 "5 or Smaller"'
+  - text: <code>testElse(5)</code>应该返回 "5 or Smaller"
     testString: assert(testElse(5) === "5 or Smaller");
-  - text: '<code>testElse(6)</code>应该返回 "Bigger than 5"'
+  - text: <code>testElse(6)</code>应该返回 "Bigger than 5"
     testString: assert(testElse(6) === "Bigger than 5");
-  - text: '<code>testElse(10)</code>应该返回 "Bigger than 5"'
+  - text: <code>testElse(10)</code>应该返回 "Bigger than 5"
     testString: assert(testElse(10) === "Bigger than 5");
-  - text: '不要修改上面和下面的代码'
+  - text: 不要修改上面和下面的代码s
     testString: assert(/var result = "";/.test(code) && /return result;/.test(code));
 
 ```

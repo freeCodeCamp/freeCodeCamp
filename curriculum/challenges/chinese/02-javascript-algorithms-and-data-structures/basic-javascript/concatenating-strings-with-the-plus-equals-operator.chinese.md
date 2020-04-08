@@ -23,9 +23,9 @@ localeTitle: 用 += 运算符连接字符串
 
 ```yml
 tests:
-  - text: '<code>myStr</code>的值应该是<code>This is the first sentence. This is the second sentence.</code>'
+  - text: <code>myStr</code>的值应该是<code>This is the first sentence. This is the second sentence.</code>
     testString: assert(myStr === "This is the first sentence. This is the second sentence.");
-  - text: '使用<code>+=</code>操作符创建<code>myStr</code>变量'
+  - text: 使用<code>+=</code>操作符创建<code>myStr</code>变量
     testString: assert(code.match(/\w\s*\+=\s*["']/g).length > 1 && code.match(/\w\s*\=\s*["']/g).length > 1);
 
 ```

@@ -27,15 +27,15 @@ localeTitle: 使用 parseInt 函数并传入一个基数
 
 ```yml
 tests:
-  - text: '<code>convertToInteger</code>中应该使用<code>parseInt()</code>函数'
+  - text: <code>convertToInteger</code>中应该使用<code>parseInt()</code>函数
     testString: assert(/parseInt/g.test(code));
-  - text: '<code>convertToInteger("10011")</code>应该返回一个数字'
+  - text: <code>convertToInteger("10011")</code>应该返回一个数字
     testString: assert(typeof(convertToInteger("10011")) === "number");
-  - text: '<code>convertToInteger("10011")</code>应该返回 19'
+  - text: <code>convertToInteger("10011")</code>应该返回 19
     testString: assert(convertToInteger("10011") === 19);
-  - text: '<code>convertToInteger("111001")</code>应该返回 57'
+  - text: <code>convertToInteger("111001")</code>应该返回 57
     testString: assert(convertToInteger("111001") === 57);
-  - text: '<code>convertToInteger("JamesBond")</code>应该返回 NaN'
+  - text: <code>convertToInteger("JamesBond")</code>应该返回 NaN
     testString: assert.isNaN(convertToInteger("JamesBond"));
 
 ```

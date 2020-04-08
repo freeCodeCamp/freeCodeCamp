@@ -32,13 +32,13 @@ var answer = plusThree(5); // 8
 
 ```yml
 tests:
-  - text: '<code>timesFive</code>应是一个函数'
+  - text: <code>timesFive</code>应是一个函数
     testString: assert(typeof timesFive === 'function');
-  - text: '<code>timesFive(5)</code>应该返回<code>25</code>'
+  - text: <code>timesFive(5)</code>应该返回<code>25</code>
     testString: assert(timesFive(5) === 25);
-  - text: '<code>timesFive(2)</code>应该返回<code>10</code>'
+  - text: <code>timesFive(2)</code>应该返回<code>10</code>
     testString: assert(timesFive(2) === 10);
-  - text: '<code>timesFive(0)</code>应该返回<code>0</code>'
+  - text: <code>timesFive(0)</code>应该返回<code>0</code>
     testString: assert(timesFive(0) === 0);
 
 ```
