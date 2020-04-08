@@ -758,26 +758,6 @@ export default function(User) {
     });
   };
 
-  function parseDate(joinDate) {
-    const monthNames = [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-      'July',
-      'August',
-      'September',
-      'October',
-      'November',
-      'December'
-    ];
-    const year = joinDate.getFullYear();
-    const month = monthNames[joinDate.getMonth()];
-    return 'Joined freeCodeCamp in ' + month + ' of ' + year;
-  }
-
   function prepUserForPublish(user, profileUI) {
     const {
       about,
@@ -829,7 +809,7 @@ export default function(User) {
         }
       })(),
       isDonating: showDonation ? isDonating : null,
-      joinDateString: showAbout ? parseDate(joinDate) : '',
+      joinDate: showAbout ? joinDate : '',
       location: showLocation ? location : '',
       name: showName ? name : '',
       points: showPoints ? points : null,

@@ -17,7 +17,7 @@ const propTypes = {
   isLinkedIn: PropTypes.bool,
   isTwitter: PropTypes.bool,
   isWebsite: PropTypes.bool,
-  joinDateString: PropTypes.string,
+  joinDate: PropTypes.string,
   linkedin: PropTypes.string,
   location: PropTypes.string,
   name: PropTypes.string,
@@ -47,6 +47,26 @@ function joinArray(array) {
   });
 }
 
+function parseDate(joinDate) {
+  const monthNames = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'
+  ];
+  const year = joinDate.getFullYear();
+  const month = monthNames[joinDate.getMonth()];
+  return 'Joined freeCodeCamp in ' + month + ' of ' + year;
+}
+
 function Camper({
   name,
   username,
@@ -61,7 +81,7 @@ function Camper({
   isGithub,
   isTwitter,
   isWebsite,
-  joinDateString,
+  joinDate,
   linkedin,
   twitter,
   website
@@ -112,7 +132,7 @@ function Camper({
         </p>
       )}
       {about && <p className='bio text-center'>{about}</p>}
-      {joinDateString && <p className='bio text-center'>{joinDateString}</p>}
+      {joinDate && <p className='bio text-center'>{parseDate(joinDate)}</p>}
       {yearsTopContributor.filter(Boolean).length > 0 && (
         <div>
           <br />
