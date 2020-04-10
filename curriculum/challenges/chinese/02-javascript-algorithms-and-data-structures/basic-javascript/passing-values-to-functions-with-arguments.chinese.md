@@ -33,13 +33,13 @@ function testFun(param1, param2) {
 
 ```yml
 tests:
-  - text: <code>functionWithArgs</code>应该是一个函数
+  - text: <code>functionWithArgs</code>应该是一个函数。
     testString: assert(typeof functionWithArgs === 'function');
-  - text: <code>functionWithArgs(1,2)</code>应该输出<code>3</code>
+  - text: <code>functionWithArgs(1,2)</code>应该输出<code>3</code>。
     testString: if(typeof functionWithArgs === "function") { capture(); functionWithArgs(1,2); uncapture(); } assert(logOutput == 3);
-  - text: <code>functionWithArgs(7,9)</code>应该输出<code>16</code>
+  - text: <code>functionWithArgs(7,9)</code>应该输出<code>16</code>。
     testString: if(typeof functionWithArgs === "function") { capture(); functionWithArgs(7,9); uncapture(); } assert(logOutput == 16);
-  - text: 在你定义<code>functionWithArgs</code>之后记得调用它
+  - text: 在你定义<code>functionWithArgs</code>之后记得调用它。
     testString: assert(/^\s*functionWithArgs\s*\(\s*\d+\s*,\s*\d+\s*\)\s*;?/m.test(code));
 
 ```

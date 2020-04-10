@@ -24,9 +24,9 @@ localeTitle: 使用方括号查找字符串中的第N个字符
 
 ```yml
 tests:
-  - text: <code>thirdLetterOfLastName</code>的值应该是<code>v</code>
+  - text: <code>thirdLetterOfLastName</code>的值应该是<code>v</code>。
     testString: assert(thirdLetterOfLastName === 'v');
-  - text: 你应该使用方括号
+  - text: 你应该使用方括号。
     testString: assert(code.match(/thirdLetterOfLastName\s*?=\s*?lastName\[.*?\]/));
 
 ```

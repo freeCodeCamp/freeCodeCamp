@@ -33,11 +33,11 @@ var thisVariableNameIsSoLong;
 
 ```yml
 tests:
-  - text: <code>studlyCapVar</code>应该被定义并且值为<code>10</code>
+  - text: <code>studlyCapVar</code>应该被定义并且值为<code>10</code>。
     testString: assert(typeof studlyCapVar !== 'undefined' && studlyCapVar === 10);
-  - text: <code>properCamelCase</code>应该被定义并且值为<code>"A String"</code>
+  - text: <code>properCamelCase</code>应该被定义并且值为<code>"A String"</code>。
     testString: assert(typeof properCamelCase !== 'undefined' && properCamelCase === "A String");
-  - text: <code>titleCaseOver</code>应该被定义并且值为<code>9000</code>
+  - text: <code>titleCaseOver</code>应该被定义并且值为<code>9000</code>。
     testString: assert(typeof titleCaseOver !== 'undefined' && titleCaseOver === 9000);
   - text: <code>studlyCapVar</code>在声明和赋值时都应该使用驼峰命名法。
     testString: assert(code.match(/studlyCapVar/g).length === 2);

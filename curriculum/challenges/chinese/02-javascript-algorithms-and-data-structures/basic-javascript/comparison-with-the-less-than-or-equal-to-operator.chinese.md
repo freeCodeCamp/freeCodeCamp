@@ -32,21 +32,21 @@ localeTitle: 小于或等于运算符
 
 ```yml
 tests:
-  - text: <code>testLessOrEqual(0)</code>应该返回 "Smaller Than or Equal to 12"
+  - text: <code>testLessOrEqual(0)</code>应该返回 "Smaller Than or Equal to 12"。
     testString: assert(testLessOrEqual(0) === "Smaller Than or Equal to 12");
-  - text: <code>testLessOrEqual(11)</code>应该返回 "Smaller Than or Equal to 12"
+  - text: <code>testLessOrEqual(11)</code>应该返回 "Smaller Than or Equal to 12"。
     testString: assert(testLessOrEqual(11) === "Smaller Than or Equal to 12");
-  - text: <code>testLessOrEqual(12)</code>应该返回 "Smaller Than or Equal to 12"
+  - text: <code>testLessOrEqual(12)</code>应该返回 "Smaller Than or Equal to 12"。
     testString: assert(testLessOrEqual(12) === "Smaller Than or Equal to 12");
-  - text: <code>testLessOrEqual(23)</code>应该返回 "Smaller Than or Equal to 24"
+  - text: <code>testLessOrEqual(23)</code>应该返回 "Smaller Than or Equal to 24"。
     testString: assert(testLessOrEqual(23) === "Smaller Than or Equal to 24");
-  - text: <code>testLessOrEqual(24)</code>应该返回 "Smaller Than or Equal to 24"
+  - text: <code>testLessOrEqual(24)</code>应该返回 "Smaller Than or Equal to 24"。
     testString: assert(testLessOrEqual(24) === "Smaller Than or Equal to 24");
-  - text: <code>testLessOrEqual(25)</code>应该返回 "More Than 24"
+  - text: <code>testLessOrEqual(25)</code>应该返回 "More Than 24"。
     testString: assert(testLessOrEqual(25) === "More Than 24");
-  - text: <code>testLessOrEqual(55)</code>应该返回 "More Than 24"
+  - text: <code>testLessOrEqual(55)</code>应该返回 "More Than 24"。
     testString: assert(testLessOrEqual(55) === "More Than 24");
-  - text: 你应该使用<code>&lt;=</code>运算符至少两
+  - text: 你应该使用<code>&lt;=</code>运算符至少两。
     testString: assert(code.match(/val\s*<=\s*('|")*\d+('|")*/g).length > 1);
 
 ```

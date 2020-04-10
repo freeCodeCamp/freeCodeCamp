@@ -23,9 +23,9 @@ localeTitle: 使用 shift() 操作数组
 
 ```yml
 tests:
-  - text: <code>myArray</code>应该等于<code>[["dog", 3]]</code>
+  - text: <code>myArray</code>应该等于<code>[["dog", 3]]</code>。
     testString: assert((function(d){if(d[0][0] == 'dog' && d[0][1] === 3 && d[1] == undefined){return true;}else{return false;}})(myArray));
-  - text: <code>removedFromMyArray</code>应该包含<code>["John", 23]</code>
+  - text: <code>removedFromMyArray</code>应该包含<code>["John", 23]</code>。
     testString: assert((function(d){if(d[0] == 'John' && d[1] === 23 && typeof removedFromMyArray === 'object'){return true;}else{return false;}})(removedFromMyArray));
 
 ```

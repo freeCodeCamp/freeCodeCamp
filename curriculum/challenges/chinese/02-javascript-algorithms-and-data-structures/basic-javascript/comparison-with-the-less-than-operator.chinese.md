@@ -32,19 +32,19 @@ localeTitle: 小于运算符
 
 ```yml
 tests:
-  - text: <code>testLessThan(0)</code>应该返回 "Under 25"
+  - text: <code>testLessThan(0)</code>应该返回 "Under 25"。
     testString: assert(testLessThan(0) === "Under 25");
-  - text: <code>testLessThan(24)</code>应该返回 "Under 25"
+  - text: <code>testLessThan(24)</code>应该返回 "Under 25"。
     testString: assert(testLessThan(24) === "Under 25");
-  - text: <code>testLessThan(25)</code>应该返回 "Under 55"
+  - text: <code>testLessThan(25)</code>应该返回 "Under 55"。
     testString: assert(testLessThan(25) === "Under 55");
-  - text: <code>testLessThan(54)</code>应该返回 "Under 55"
+  - text: <code>testLessThan(54)</code>应该返回 "Under 55"。
     testString: assert(testLessThan(54) === "Under 55");
-  - text: <code>testLessThan(55)</code>应该返回 "55 or Over"
+  - text: <code>testLessThan(55)</code>应该返回 "55 or Over"。
     testString: assert(testLessThan(55) === "55 or Over");
-  - text: <code>testLessThan(99)</code>应该返回 "55 or Over"
+  - text: <code>testLessThan(99)</code>应该返回 "55 or Over"。
     testString: assert(testLessThan(99) === "55 or Over");
-  - text: 你应该使用<code>&lt;</code>运算符至少两次
+  - text: 你应该使用<code>&lt;</code>运算符至少两次。
     testString: assert(code.match(/val\s*<\s*('|")*\d+('|")*/g).length > 1);
 
 ```

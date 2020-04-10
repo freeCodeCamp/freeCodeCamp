@@ -22,13 +22,13 @@ localeTitle: 理解未初始化的变量
 
 ```yml
 tests:
-  - text: <code>a</code>应该被定义，并且值为<code>6</code>
+  - text: <code>a</code>应该被定义，并且值为<code>6</code>。
     testString: assert(typeof a === 'number' && a === 6);
-  - text: <code>b</code>应该被定义，并且值为<code>15</code>
+  - text: <code>b</code>应该被定义，并且值为<code>15</code>。
     testString: assert(typeof b === 'number' && b === 15);
-  - text: <code>c</code>的值不能包含<code>undefined</code>，应该为 "I am a String!"
+  - text: <code>c</code>的值不能包含<code>undefined</code>，应该为 "I am a String!"。
     testString: assert(!/undefined/.test(c) && c === "I am a String!");
-  - text: 不要修改第二条注释下的代码
+  - text: 不要修改第二条注释下的代码。
     testString: assert(/a = a \+ 1;/.test(code) && /b = b \+ 5;/.test(code) && /c = c \+ " String!";/.test(code));
 
 ```

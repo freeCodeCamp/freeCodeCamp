@@ -30,9 +30,9 @@ myVar = 5 + 10; // assigned 15
 
 ```yml
 tests:
-  - text: <code>sum</code>应该等于<code>20</code>
+  - text: <code>sum</code>应该等于<code>20</code>。
     testString: assert(sum === 20);
-  - text: 要使用<code>+</code>运算符
+  - text: 要使用<code>+</code>运算符。
     testString: assert(/\+/.test(code));
 
 ```

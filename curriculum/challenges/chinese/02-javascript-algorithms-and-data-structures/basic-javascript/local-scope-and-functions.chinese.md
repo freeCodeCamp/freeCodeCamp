@@ -35,9 +35,9 @@ console.log(loc); // loc is not defined
 
 ```yml
 tests:
-  - text: 未找到全局的<code>myVar</code>变量
+  - text: 未找到全局的<code>myVar</code>变量。
     testString: assert(typeof myVar === 'undefined');
-  - text: 需要定义局部的<code>myVar</code>变量
+  - text: 需要定义局部的<code>myVar</code>变量。
     testString: assert(/var\s+myVar/.test(code));
 
 

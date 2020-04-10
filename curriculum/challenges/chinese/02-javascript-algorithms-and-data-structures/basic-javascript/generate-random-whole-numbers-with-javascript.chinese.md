@@ -27,13 +27,13 @@ localeTitle: 使用 JavaScript 生成随机整数
 
 ```yml
 tests:
-  - text: <code>myFunction</code>的结果应该是一个整数
+  - text: <code>myFunction</code>的结果应该是一个整数。
     testString: assert(typeof randomWholeNum() === "number" && (function(){var r = randomWholeNum();return Math.floor(r) === r;})());
-  - text: 需要使用<code>Math.random</code>生成随机数字
+  - text: 需要使用<code>Math.random</code>生成随机数字。
     testString: assert(code.match(/Math.random/g).length > 1);
-  - text: 你应该将<code>Math.random</code>的结果乘以 10 来生成 0 到 9 之间的随机数
+  - text: 你应该将<code>Math.random</code>的结果乘以 10 来生成 0 到 9 之间的随机数。
     testString: assert(code.match(/\s*?Math.random\s*?\(\s*?\)\s*?\*\s*?10[\D]\s*?/g) || code.match(/\s*?10\s*?\*\s*?Math.random\s*?\(\s*?\)\s*?/g));
-  - text: 你需要使用<code>Math.floor</code>移除数字中的小数部分
+  - text: 你需要使用<code>Math.floor</code>移除数字中的小数部分。
     testString: assert(code.match(/Math.floor/g).length > 1);
 
 ```

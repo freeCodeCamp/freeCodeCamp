@@ -45,13 +45,13 @@ function findGreater(a, b) {
 
 ```yml
 tests:
-  - text: <code>checkEqual</code>应该使用条件运算符
+  - text: <code>checkEqual</code>应该使用条件运算符。
     testString: assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?/.test(code));
-  - text: <code>checkEqual(1, 2)</code>应该返回 "Not Equal"
+  - text: <code>checkEqual(1, 2)</code>应该返回 "Not Equal"。
     testString: assert(checkEqual(1, 2) === "Not Equal");
-  - text: <code>checkEqual(1, 1)</code>应该返回 "Equal"
+  - text: <code>checkEqual(1, 1)</code>应该返回 "Equal"。
     testString: assert(checkEqual(1, 1) === "Equal");
-  - text: <code>checkEqual(1, -1)</code>应该返回 "Not Equal"
+  - text: <code>checkEqual(1, -1)</code>应该返回 "Not Equal"。
     testString: assert(checkEqual(1, -1) === "Not Equal");
 ```
 

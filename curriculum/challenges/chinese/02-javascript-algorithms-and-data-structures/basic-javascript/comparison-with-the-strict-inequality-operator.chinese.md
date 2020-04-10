@@ -30,15 +30,15 @@ localeTitle: 严格不等运算符
 
 ```yml
 tests:
-  - text: <code>testStrictNotEqual(17)</code>应该返回 "Equal"
+  - text: <code>testStrictNotEqual(17)</code>应该返回 "Equal"。
     testString: assert(testStrictNotEqual(17) === "Equal");
-  - text: <code>testStrictNotEqual("17")</code>应该返回 "Not Equal"
+  - text: <code>testStrictNotEqual("17")</code>应该返回 "Not Equal"。
     testString: assert(testStrictNotEqual("17") === "Not Equal");
-  - text: <code>testStrictNotEqual(12)</code>应该返回 "Not Equal"
+  - text: <code>testStrictNotEqual(12)</code>应该返回 "Not Equal"。
     testString: assert(testStrictNotEqual(12) === "Not Equal");
-  - text: <code>testStrictNotEqual("bob")</code>应该返回 "Not Equal"
+  - text: <code>testStrictNotEqual("bob")</code>应该返回 "Not Equal"。
     testString: assert(testStrictNotEqual("bob") === "Not Equal");
-  - text: You should use the <code>!==</code> operator
+  - text: 应该使用 <code>!==</code> 运算符。
     testString: assert(code.match(/(val\s*!==\s*\d+)|(\d+\s*!==\s*val)/g).length > 0);
 
 ```

@@ -23,9 +23,9 @@ localeTitle: 创建一个小数
 
 ```yml
 tests:
-  - text: <code>myDecimal</code>应该是一个数字
+  - text: <code>myDecimal</code>应该是一个数字。
     testString: assert(typeof myDecimal === "number");
-  - text: <code>myDecimal</code>应该包含小数点
+  - text: <code>myDecimal</code>应该包含小数点。
     testString: assert(myDecimal % 1 != 0); 
 
 ```

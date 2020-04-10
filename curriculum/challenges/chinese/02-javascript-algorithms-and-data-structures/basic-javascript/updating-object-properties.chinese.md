@@ -37,9 +37,9 @@ var ourDog = {
 
 ```yml
 tests:
-  - text: 更新<code>myDog</code>的<code>"name"</code>属性, 使其等于 "Happy Coder"
+  - text: 更新<code>myDog</code>的<code>"name"</code>属性, 使其等于 "Happy Coder"。
     testString: assert(/happy coder/gi.test(myDog.name));
-  - text: 不要修改<code>myDog</code>的定义
+  - text: 不要修改<code>myDog</code>的定义。
     testString: 'assert(/"name": "Coder"/.test(code));'
 
 ```

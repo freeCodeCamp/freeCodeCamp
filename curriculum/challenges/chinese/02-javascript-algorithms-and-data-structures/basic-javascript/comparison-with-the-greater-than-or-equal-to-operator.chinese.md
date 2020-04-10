@@ -32,21 +32,21 @@ localeTitle: 大于或等于运算符
 
 ```yml
 tests:
-  - text: <code>testGreaterOrEqual(0)</code>应该返回 "Less than 10"
+  - text: <code>testGreaterOrEqual(0)</code>应该返回 "Less than 10"。
     testString: assert(testGreaterOrEqual(0) === "Less than 10");
-  - text: <code>testGreaterOrEqual(9)</code>应该返回 "Less than 10"
+  - text: <code>testGreaterOrEqual(9)</code>应该返回 "Less than 10"。
     testString: assert(testGreaterOrEqual(9) === "Less than 10");
-  - text: <code>testGreaterOrEqual(10)</code>应该返回 "10 or Over"
+  - text: <code>testGreaterOrEqual(10)</code>应该返回 "10 or Over"。
     testString: assert(testGreaterOrEqual(10) === "10 or Over");
-  - text: <code>testGreaterOrEqual(11)</code>应该返回 "10 or Over"
+  - text: <code>testGreaterOrEqual(11)</code>应该返回 "10 or Over"。
     testString: assert(testGreaterOrEqual(11) === "10 or Over");
-  - text: <code>testGreaterOrEqual(19)</code>应该返回 "10 or Over"
+  - text: <code>testGreaterOrEqual(19)</code>应该返回 "10 or Over"。
     testString: assert(testGreaterOrEqual(19) === "10 or Over");
-  - text: <code>testGreaterOrEqual(100)</code>应该返回 "20 or Over"
+  - text: <code>testGreaterOrEqual(100)</code>应该返回 "20 or Over"。
     testString: assert(testGreaterOrEqual(100) === "20 or Over");
-  - text: <code>testGreaterOrEqual(21)</code>应该返回 "20 or Over"
+  - text: <code>testGreaterOrEqual(21)</code>应该返回 "20 or Over"。
     testString: assert(testGreaterOrEqual(21) === "20 or Over");
-  - text: 你应该使用<code>&gt;=</code>运算符至少两次
+  - text: 你应该使用<code>&gt;=</code>运算符至少两次。
     testString: assert(code.match(/val\s*>=\s*('|")*\d+('|")*/g).length > 1);
 
 ```

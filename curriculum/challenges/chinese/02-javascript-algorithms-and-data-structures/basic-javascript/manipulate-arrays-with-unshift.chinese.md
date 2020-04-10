@@ -23,7 +23,7 @@ localeTitle: 使用 unshift() 操作数组
 
 ```yml
 tests:
-  - text: <code>myArray</code>应该包含[["Paul", 35], ["dog", 3]]
+  - text: <code>myArray</code>应该包含[["Paul", 35], ["dog", 3]]。
     testString: assert((function(d){if(typeof d[0] === "object" && d[0][0] == 'Paul' && d[0][1] === 35 && d[1][0] != undefined && d[1][0] == 'dog' && d[1][1] != undefined && d[1][1] == 3){return true;}else{return false;}})(myArray));
 
 ```

@@ -32,21 +32,21 @@ localeTitle: 大于运算符
 
 ```yml
 tests:
-  - text: <code>testGreaterThan(0)</code>应该返回 "10 or Under"
+  - text: <code>testGreaterThan(0)</code>应该返回 "10 or Under"。
     testString: assert(testGreaterThan(0) === "10 or Under");
-  - text: <code>testGreaterThan(10)</code>应该返回 "10 or Under"
+  - text: <code>testGreaterThan(10)</code>应该返回 "10 or Under"。
     testString: assert(testGreaterThan(10) === "10 or Under");
-  - text: <code>testGreaterThan(11)</code>应该返回 "Over 10"
+  - text: <code>testGreaterThan(11)</code>应该返回 "Over 10"。
     testString: assert(testGreaterThan(11) === "Over 10");
-  - text: <code>testGreaterThan(99)</code>应该返回 "Over 10"
+  - text: <code>testGreaterThan(99)</code>应该返回 "Over 10"。
     testString: assert(testGreaterThan(99) === "Over 10");
-  - text: <code>testGreaterThan(100)</code>应该返回 "Over 10"
+  - text: <code>testGreaterThan(100)</code>应该返回 "Over 10"。
     testString: assert(testGreaterThan(100) === "Over 10");
-  - text: <code>testGreaterThan(101)</code>应该返回 "Over 100"
+  - text: <code>testGreaterThan(101)</code>应该返回 "Over 100"。
     testString: assert(testGreaterThan(101) === "Over 100");
-  - text: <code>testGreaterThan(150)</code>应该返回 "Over 100"
+  - text: <code>testGreaterThan(150)</code>应该返回 "Over 100"。
     testString: assert(testGreaterThan(150) === "Over 100");
-  - text: 你应该使用<code>&gt;</code>运算符至少两次
+  - text: 你应该使用<code>&gt;</code>运算符至少两次。
     testString: assert(code.match(/val\s*>\s*('|")*\d+('|")*/g).length > 1);
 
 ```

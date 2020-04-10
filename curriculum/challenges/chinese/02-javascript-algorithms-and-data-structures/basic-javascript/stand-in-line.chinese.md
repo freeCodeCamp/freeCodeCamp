@@ -25,15 +25,15 @@ localeTitle: 排队
 
 ```yml
 tests:
-  - text: <code>nextInLine([], 5)</code>应该返回一个数字
+  - text: <code>nextInLine([], 5)</code>应该返回一个数字。
     testString: assert.isNumber(nextInLine([],5));
-  - text: <code>nextInLine([], 1)</code>应该返回<code>1</code>
+  - text: <code>nextInLine([], 1)</code>应该返回<code>1</code>。
     testString: assert(nextInLine([],1) === 1);
-  - text: <code>nextInLine([2], 1)</code>应该返回<code>2</code>
+  - text: <code>nextInLine([2], 1)</code>应该返回<code>2</code>。
     testString: assert(nextInLine([2],1) === 2);
-  - text: <code>nextInLine([5,6,7,8,9], 1)</code>应该返回<code>5</code>
+  - text: <code>nextInLine([5,6,7,8,9], 1)</code>应该返回<code>5</code>。
     testString: assert(nextInLine([5,6,7,8,9],1) === 5);
-  - text: 在<code>nextInLine(testArr, 10)</code>执行后<code>testArr[4]</code>应该是<code>10</code>
+  - text: 在<code>nextInLine(testArr, 10)</code>执行后<code>testArr[4]</code>应该是<code>10</code>。
     testString: nextInLine(testArr, 10); assert(testArr[4] === 10);
 
 ```

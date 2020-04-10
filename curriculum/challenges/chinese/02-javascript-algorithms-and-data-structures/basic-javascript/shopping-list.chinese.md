@@ -25,13 +25,13 @@ localeTitle: 购物清单
 
 ```yml
 tests:
-  - text: <code>myList</code>应该一个数组
+  - text: <code>myList</code>应该一个数组。
     testString: assert(isArray);
-  - text: 你的每个子数组的第一个元素的类型都应该是字符串
+  - text: 你的每个子数组的第一个元素的类型都应该是字符串。
     testString: assert(hasString);
-  - text: 你的每个子数组的第二个元素的类型都应该是数字
+  - text: 你的每个子数组的第二个元素的类型都应该是数字。
     testString: assert(hasNumber);
-  - text: 你的列表中至少要包含 5 个元素
+  - text: 你的列表中至少要包含 5 个元素。
     testString: assert(count > 4);
 
 ```

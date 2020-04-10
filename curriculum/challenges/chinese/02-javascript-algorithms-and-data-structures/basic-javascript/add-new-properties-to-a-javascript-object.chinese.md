@@ -27,9 +27,9 @@ localeTitle: 给对象添加新属性
 
 ```yml
 tests:
-  - text: 给<code>myDog</code>添加<code>"bark"</code>属性
+  - text: 给<code>myDog</code>添加<code>"bark"</code>属性。
     testString: assert(myDog.bark !== undefined);
-  - text: 不能在初始化 myDog 的时候添加<code>"bark"</code>属性
+  - text: 不能在初始化 myDog 的时候添加<code>"bark"</code>属性。
     testString: 'assert(!/bark[^\n]:/.test(code));'
 
 ```

@@ -36,17 +36,17 @@ switch(lowercaseLetter) {
 
 ```yml
 tests:
-  - text: <code>caseInSwitch(1)</code> 应该有一个值为 "alpha"
+  - text: <code>caseInSwitch(1)</code> 应该有一个值为 "alpha"。
     testString: assert(caseInSwitch(1) === "alpha");
-  - text: <code>caseInSwitch(2)</code> 应该有一个值为 "beta"
+  - text: <code>caseInSwitch(2)</code> 应该有一个值为 "beta"。
     testString: assert(caseInSwitch(2) === "beta");
-  - text: <code>caseInSwitch(3)</code> 应该有一个值为 "gamma"
+  - text: <code>caseInSwitch(3)</code> 应该有一个值为 "gamma"。
     testString: assert(caseInSwitch(3) === "gamma");
-  - text: <code>caseInSwitch(4)</code> 应该有一个值为 "delta"
+  - text: <code>caseInSwitch(4)</code> 应该有一个值为 "delta"。
     testString: assert(caseInSwitch(4) === "delta");
-  - text: 不能使用任何<code>if</code>或<code>else</code>表达式
+  - text: 不能使用任何<code>if</code>或<code>else</code>表达式。
     testString: assert(!/else/g.test(code) || !/if/g.test(code));
-  - text: 你应该有至少 3 个<code>break</code>表达式
+  - text: 你应该有至少 3 个<code>break</code>表达式。
     testString: assert(code.match(/break/g).length > 2);
 
 ```

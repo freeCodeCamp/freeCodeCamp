@@ -32,21 +32,21 @@ Push 是一个数组方法，详情请查看<a href="https://developer.mozilla.o
 
 ```yml
 tests:
-  - text: 执行<code>updateRecords(5439, "artist", "ABBA")</code>后，<code>artist</code>属性值应该是<code>"ABBA"</code>
+  - text: 执行<code>updateRecords(5439, "artist", "ABBA")</code>后，<code>artist</code>属性值应该是<code>"ABBA"</code>。
     testString: 'assert(code.match(/var collection = {\s*2548: {\s*album: "Slippery When Wet",\s*artist: "Bon Jovi",\s*tracks: \[\s*"Let It Rock",\s*"You Give Love a Bad Name"\s*\]\s*},\s*2468: {\s*album: "1999",\s*artist: "Prince",\s*tracks: \[\s*"1999",\s*"Little Red Corvette"\s*\]\s*},\s*1245: {\s*artist: "Robert Palmer",\s*tracks: \[ \]\s*},\s*5439: {\s*album: "ABBA Gold"\s*}\s*};/g));'
-  - text: 执行<code>updateRecords(5439, "artist", "ABBA")</code>后，<code>artist</code> 最后的元素应该是 <code>"ABBA"</code>
+  - text: 执行<code>updateRecords(5439, "artist", "ABBA")</code>后，<code>artist</code> 最后的元素应该是 <code>"ABBA"</code>。
     testString: assert(updateRecords(5439, "artist", "ABBA")[5439]["artist"] === "ABBA");
   - text: 执行 <code>updateRecords(5439, "tracks", "Take a Chance on Me")</code> 后，<code>tracks</code> 最后的元素应该是 <code>"Take a Chance on Me"</code>。
     testString: assert(updateRecords(5439, "tracks", "Take a Chance on Me")[5439]["tracks"].pop() === "Take a Chance on Me");
-  - text: 执行<code>updateRecords(2548, "artist", "")</code>后，<code>artist</code>不应被创建
+  - text: 执行<code>updateRecords(2548, "artist", "")</code>后，<code>artist</code>不应被创建。
     testString: updateRecords(2548, "artist", ""); assert(!collection[2548].hasOwnProperty("artist"));
-  - text: 执行<code>updateRecords(1245, "tracks", "Addicted to Love")</code>后，<code>tracks</code>最后的元素应该是<code>"Addicted to Love"</code>
+  - text: 执行<code>updateRecords(1245, "tracks", "Addicted to Love")</code>后，<code>tracks</code>最后的元素应该是<code>"Addicted to Love"</code>。
     testString: assert(updateRecords(1245, "tracks", "Addicted to Love")[1245]["tracks"].pop() === "Addicted to Love");
-  - text: 执行<code>updateRecords(2468, "tracks", "Free")</code>后，<code>tracks</code>第一个元素应该是<code>"1999"</code>
+  - text: 执行<code>updateRecords(2468, "tracks", "Free")</code>后，<code>tracks</code>第一个元素应该是<code>"1999"</code>。
     testString: assert(updateRecords(2468, "tracks", "Free")[2468]["tracks"][0] === "1999");
-  - text: 执行<code>updateRecords(2548, "tracks", "")</code>后，<code>tracks</code>不应被创建
+  - text: 执行<code>updateRecords(2548, "tracks", "")</code>后，<code>tracks</code>不应被创建。
     testString: updateRecords(2548, "tracks", ""); assert(!collection[2548].hasOwnProperty("tracks"));
-  - text: 执行<code>updateRecords(1245, "album", "Riptide")</code>后，<code>album</code>应该是<code>"Riptide"</code>
+  - text: 执行<code>updateRecords(1245, "album", "Riptide")</code>后，<code>album</code>应该是<code>"Riptide"</code>。
     testString: assert(updateRecords(1245, "album", "Riptide")[1245]["album"] === "Riptide");
 
 ```

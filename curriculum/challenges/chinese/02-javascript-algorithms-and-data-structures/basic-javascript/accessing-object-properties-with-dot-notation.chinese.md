@@ -34,15 +34,15 @@ var prop2val = myObj.prop2; // val2
 
 ```yml
 tests:
-  - text: <code>hatValue</code>应该是一个字符串
+  - text: <code>hatValue</code>应该是一个字符串。
     testString: assert(typeof hatValue === 'string' );
-  - text: <code>hatValue</code>的值应该是<code>"ballcap"</code>
+  - text: <code>hatValue</code>的值应该是<code>"ballcap"</code>。
     testString: assert(hatValue === 'ballcap' );
-  - text: <code>shirtValue</code>应该是一个字符串
+  - text: <code>shirtValue</code>应该是一个字符串。
     testString: assert(typeof shirtValue === 'string' );
-  - text: <code>shirtValue</code>的值应该是<code>"jersey"</code>
+  - text: <code>shirtValue</code>的值应该是<code>"jersey"</code>。
     testString: assert(shirtValue === 'jersey' );
-  - text: 你应该使用点操作符两次
+  - text: 你应该使用点操作符两次。
     testString: assert(code.match(/testObj\.\w+/g).length > 1);
 
 ```

@@ -22,9 +22,9 @@ localeTitle: 将变量附加到字符串
 
 ```yml
 tests:
-  - text: <code>someAdjective</code>应该是一个至少包含三个字符的字符串
+  - text: <code>someAdjective</code>应该是一个至少包含三个字符的字符串。
     testString: assert(typeof someAdjective !== 'undefined' && someAdjective.length > 2);
-  - text: 使用<code>+=</code>操作符把<code>someAdjective</code>追加到<code>myStr</code>的后面
+  - text: 使用<code>+=</code>操作符把<code>someAdjective</code>追加到<code>myStr</code>的后面。
     testString: assert(code.match(/myStr\s*\+=\s*someAdjective\s*/).length > 0);
 
 ```

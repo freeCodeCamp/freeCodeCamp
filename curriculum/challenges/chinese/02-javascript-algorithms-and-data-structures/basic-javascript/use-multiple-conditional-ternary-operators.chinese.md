@@ -56,13 +56,13 @@ function findGreaterOrEqual(a, b) {
 
 ```yml
 tests:
-  - text: <code>checkSign</code>应该使用多个条件运算符
+  - text: <code>checkSign</code>应该使用多个条件运算符。
     testString: 'assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?\s*?\?\s*?.+?\s*?:\s*?.+?/gi.test(code));'
-  - text: <code>checkSign(10)</code>应该返回 "positive" 注意，结果对大小写敏感
+  - text: <code>checkSign(10)</code>应该返回 "positive" 注意，结果对大小写敏感。
     testString: assert(checkSign(10) === 'positive');
-  - text: <code>checkSign(-12)</code>应该返回 "negative" 注意，结果对大小写敏感
+  - text: <code>checkSign(-12)</code>应该返回 "negative" 注意，结果对大小写敏感。
     testString: assert(checkSign(-12) === 'negative');
-  - text: <code>checkSign(0)</code>应该返回 "zero" 注意，结果对大小写敏感
+  - text: <code>checkSign(0)</code>应该返回 "zero" 注意，结果对大小写敏感。
     testString: assert(checkSign(0) === 'zero');
 
 ```

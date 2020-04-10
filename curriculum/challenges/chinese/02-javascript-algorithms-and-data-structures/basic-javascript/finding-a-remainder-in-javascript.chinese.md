@@ -27,11 +27,11 @@ localeTitle: 求余运算
 
 ```yml
 tests:
-  - text: 变量<code>remainder</code>应该被初始化
+  - text: 变量<code>remainder</code>应该被初始化。
     testString: assert(/var\s+?remainder/.test(code));
-  - text: <code>remainder</code>的值应该等于<code>2</code>
+  - text: <code>remainder</code>的值应该等于<code>2</code>。
     testString: assert(remainder === 2);
-  - text: 你应该使用<code>%</code>运算符
+  - text: 你应该使用<code>%</code>运算符。
     testString: assert(/\s+?remainder\s*?=\s*?.*%.*;/.test(code));
 
 ```

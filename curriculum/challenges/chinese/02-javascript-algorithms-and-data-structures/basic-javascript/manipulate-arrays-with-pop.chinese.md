@@ -32,11 +32,11 @@ console.log(threeArr); // Returns [1, 4]
 
 ```yml
 tests:
-  - text: <code>myArray</code>应该只包含<code>[["John", 23]]</code>
+  - text: <code>myArray</code>应该只包含<code>[["John", 23]]</code>。
     testString: assert((function(d){if(d[0][0] == 'John' && d[0][1] === 23 && d[1] == undefined){return true;}else{return false;}})(myArray));
-  - text: 对<code>myArray</code>使用<code>pop()</code>函数
+  - text: 对<code>myArray</code>使用<code>pop()</code>函数。
     testString: assert(/removedFromMyArray\s*=\s*myArray\s*.\s*pop\s*(\s*)/.test(code));
-  - text: <code>removedFromMyArray</code>应该只包含<code>["cat", 2]</code>
+  - text: <code>removedFromMyArray</code>应该只包含<code>["cat", 2]</code>。
     testString: assert((function(d){if(d[0] == 'cat' && d[1] === 2 && d[2] == undefined){return true;}else{return false;}})(removedFromMyArray));
 
 ```

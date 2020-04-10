@@ -25,13 +25,13 @@ localeTitle: 生成某个范围内的随机整数
 
 ```yml
 tests:
-  - text: <code>randomRange</code>返回的随机数应该大于或等于<code>myMin</code>
+  - text: <code>randomRange</code>返回的随机数应该大于或等于<code>myMin</code>。
     testString: assert(calcMin === 5);
-  - text: <code>randomRange</code>返回的随机数应该小于或等于<code>myMax</code>
+  - text: <code>randomRange</code>返回的随机数应该小于或等于<code>myMax</code>。
     testString: assert(calcMax === 15);
-  - text: <code>randomRange</code>应该返回一个随机整数, 而不是小数
+  - text: <code>randomRange</code>应该返回一个随机整数, 而不是小数。
     testString: assert(randomRange(0,1) % 1 === 0 );
-  - text: <code>randomRange</code>应该使用<code>myMax</code>和<code>myMin</code>, 并且返回两者之间的随机数
+  - text: <code>randomRange</code>应该使用<code>myMax</code>和<code>myMin</code>, 并且返回两者之间的随机数。
     testString: assert((function(){if(code.match(/myMax/g).length > 1 && code.match(/myMin/g).length > 2 && code.match(/Math.floor/g) && code.match(/Math.random/g)){return true;}else{return false;}})());
 
 ```

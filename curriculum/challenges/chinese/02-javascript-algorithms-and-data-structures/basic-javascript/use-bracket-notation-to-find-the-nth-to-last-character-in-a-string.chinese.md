@@ -24,9 +24,9 @@ localeTitle: 使用方括号查找字符串中的第N个字符到最后一个字
 
 ```yml
 tests:
-  - text: <code>secondToLastLetterOfLastName</code>应该是"c"
+  - text: <code>secondToLastLetterOfLastName</code>应该是"c"。
     testString: assert(secondToLastLetterOfLastName === 'c');
-  - text: 你需要使用<code>.length</code>获取倒数第二个字符
+  - text: 你需要使用<code>.length</code>获取倒数第二个字符。
     testString: assert(code.match(/\.length/g).length === 2);
 
 ```

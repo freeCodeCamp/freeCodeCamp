@@ -22,7 +22,7 @@ localeTitle: 将一个数组嵌套在另一个数组中
 
 ```yml
 tests:
-  - text: 应该包含至少一个嵌入的数组
+  - text: 应该包含至少一个嵌入的数组。
     testString: assert(Array.isArray(myArray) && myArray.some(Array.isArray));
 
 ```

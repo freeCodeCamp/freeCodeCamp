@@ -44,25 +44,25 @@ return "Yes";
 
 ```yml
 tests:
-  - text: 你应该使用一次<code>||</code>操作符
+  - text: 你应该使用一次<code>||</code>操作符。
     testString: assert(code.match(/\|\|/g).length === 1);
-  - text: 你应该只有一个<code>if</code>表达式
+  - text: 你应该只有一个<code>if</code>表达式。
     testString: assert(code.match(/if/g).length === 1);
-  - text: <code>testLogicalOr(0)</code>应该返回 "Outside"
+  - text: <code>testLogicalOr(0)</code>应该返回 "Outside"。
     testString: assert(testLogicalOr(0) === "Outside");
-  - text: <code>testLogicalOr(9)</code>应该返回 "Outside"
+  - text: <code>testLogicalOr(9)</code>应该返回 "Outside"。
     testString: assert(testLogicalOr(9) === "Outside");
-  - text: <code>testLogicalOr(10)</code>应该返回 "Inside"
+  - text: <code>testLogicalOr(10)</code>应该返回 "Inside"。
     testString: assert(testLogicalOr(10) === "Inside");
-  - text: <code>testLogicalOr(15)</code>应该返回 "Inside"
+  - text: <code>testLogicalOr(15)</code>应该返回 "Inside"。
     testString: assert(testLogicalOr(15) === "Inside");
-  - text: <code>testLogicalOr(19)</code>应该返回 "Inside"
+  - text: <code>testLogicalOr(19)</code>应该返回 "Inside"。
     testString: assert(testLogicalOr(19) === "Inside");
-  - text: <code>testLogicalOr(20)</code>应该返回 "Inside"
+  - text: <code>testLogicalOr(20)</code>应该返回 "Inside"。
     testString: assert(testLogicalOr(20) === "Inside");
-  - text: <code>testLogicalOr(21)</code>应该返回 "Outside"
+  - text: <code>testLogicalOr(21)</code>应该返回 "Outside"。
     testString: assert(testLogicalOr(21) === "Outside");
-  - text: <code>testLogicalOr(25)</code>应该返回 "Outside"
+  - text: <code>testLogicalOr(25)</code>应该返回 "Outside"。
     testString: assert(testLogicalOr(25) === "Outside");
 
 ```

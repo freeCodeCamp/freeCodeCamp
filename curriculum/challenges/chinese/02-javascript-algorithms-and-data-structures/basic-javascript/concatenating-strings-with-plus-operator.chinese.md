@@ -29,13 +29,13 @@ localeTitle: 用加号运算符连接字符串
 
 ```yml
 tests:
-  - text: <code>myStr</code>的值应该是<code>This is the start. This is the end.</code>
+  - text: <code>myStr</code>的值应该是<code>This is the start. This is the end.</code>。
     testString: assert(myStr === "This is the start. This is the end.");
-  - text: 使用<code>+</code>操作符构建<code>myStr</code>
+  - text: 使用<code>+</code>操作符构建<code>myStr</code>。
     testString: assert(code.match(/(["']).*(["'])\s*\+\s*(["']).*(["'])/g).length > 1);
-  - text: <code>myStr</code>应该被<code>var</code>关键字声明
+  - text: <code>myStr</code>应该被<code>var</code>关键字声明。
     testString: assert(/var\s+myStr/.test(code));
-  - text: 确保有给<code>myStr</code>赋值
+  - text: 确保有给<code>myStr</code>赋值。
     testString: assert(/myStr\s*=/.test(code));
 
 ```

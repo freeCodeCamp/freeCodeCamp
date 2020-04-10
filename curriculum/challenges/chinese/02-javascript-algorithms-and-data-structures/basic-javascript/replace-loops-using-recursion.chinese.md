@@ -55,7 +55,7 @@ tests:
     testString: assert.equal(sum([1], 0), 1);
   - text: <code>sum([2, 3, 4], 1)</code> 应该返回 5 。
     testString: assert.equal(sum([2, 3, 4], 1), 5);
-  - text: 代码不应该包含任何形式的循环（<code>for</code> 或者 <code>while</code> 或者高阶函数比如 <code>forEach</code>，<code>map</code>，<code>filter</code>，或者 <code>reduce</code>。)
+  - text: 代码不应该包含任何形式的循环（<code>for</code> 或者 <code>while</code> 或者高阶函数比如 <code>forEach</code>，<code>map</code>，<code>filter</code>，或者 <code>reduce</code>)。
     testString: assert(!removeJSComments(code).match(/for|while|forEach|map|filter|reduce/g));
   - text: 应该使用递归来解决这个问题。
     testString: assert(removeJSComments(sum.toString()).match(/sum\(.*\)/g).length > 1);

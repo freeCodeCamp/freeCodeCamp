@@ -31,7 +31,7 @@ var sentence = "It was really " + "hot" + ", and we " + "laughed" + " ourselves 
 
 ```yml
 tests:
-  - text: <code>wordBlanks("","","","")</code>应该返回一个字符串
+  - text: <code>wordBlanks("","","","")</code>应该返回一个字符串。
     testString: assert(typeof wordBlanks === 'string');
   - text: 不能改变 <code>myNoun</code>、<code>myVerb</code>、<code>myAdjective</code> 或者 <code>myAdverb</code> 的值。
     testString: assert(myNoun === "dog" && myVerb === "ran" && myAdjective === "big" && myAdverb === "quickly");    

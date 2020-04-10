@@ -33,9 +33,9 @@ var data = array[1];  // equals 60
 
 ```yml
 tests:
-  - text: 变量<code>myData</code>的值应该等于<code>myArray</code>的第一个值
+  - text: 变量<code>myData</code>的值应该等于<code>myArray</code>的第一个值。
     testString: assert((function(){if(typeof myArray !== 'undefined' && typeof myData !== 'undefined' && myArray[0] === myData){return true;}else{return false;}})());
-  - text: 应使用方括号访问变量<code>myArray</code>中的数据
+  - text: 应使用方括号访问变量<code>myArray</code>中的数据。
     testString: assert((function(){if(code.match(/\s*=\s*myArray\[0\]/g)){return true;}else{return false;}})());
 
 ```

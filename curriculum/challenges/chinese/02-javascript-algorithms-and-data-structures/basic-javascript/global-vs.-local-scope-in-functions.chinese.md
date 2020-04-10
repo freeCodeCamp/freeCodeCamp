@@ -33,11 +33,11 @@ function myFun() {
 
 ```yml
 tests:
-  - text: 不要修改全局变量<code>outerWear</code>的值
+  - text: 不要修改全局变量<code>outerWear</code>的值。
     testString: assert(outerWear === "T-Shirt");
-  - text: <code>myOutfit</code>应该返回<code>"sweater"</code>
+  - text: <code>myOutfit</code>应该返回<code>"sweater"</code>。
     testString: assert(myOutfit() === "sweater");
-  - text: 不要修改<code>return</code>语句
+  - text: 不要修改<code>return</code>语句。
     testString: assert(/return outerWear/.test(code));
 
 ```

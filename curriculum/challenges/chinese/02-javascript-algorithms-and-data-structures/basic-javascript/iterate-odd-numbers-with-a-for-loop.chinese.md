@@ -34,9 +34,9 @@ for (var i = 0; i < 10; i += 2) {
 
 ```yml
 tests:
-  - text: 你应该使用<code>for</code>循环
+  - text: 你应该使用<code>for</code>循环。
     testString: assert(code.match(/for\s*\(/g).length > 1);
-  - text: <code>myArray</code>应该等于<code>[1,3,5,7,9]</code>
+  - text: <code>myArray</code>应该等于<code>[1,3,5,7,9]</code>。
     testString: assert.deepEqual(myArray, [1,3,5,7,9]);
 
 ```

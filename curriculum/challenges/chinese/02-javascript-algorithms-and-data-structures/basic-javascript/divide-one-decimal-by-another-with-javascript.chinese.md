@@ -22,11 +22,11 @@ localeTitle: 两个小数相除
 
 ```yml
 tests:
-  - text: <code>quotient</code>的值应该等于<code>2.2</code>
+  - text: <code>quotient</code>的值应该等于<code>2.2</code>。
     testString: assert(quotient === 2.2);
-  - text: 使用<code>/</code>运算符将 4.4 除以 2
+  - text: 使用<code>/</code>运算符将 4.4 除以 2。
     testString: assert(/4\.40*\s*\/\s*2\.*0*/.test(code));
-  - text: quotient 变量应该只被赋值一次
+  - text: quotient 变量应该只被赋值一次。
     testString: assert(code.match(/quotient/g).length === 1);
 
 ```

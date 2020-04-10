@@ -37,31 +37,31 @@ if (condition1) {
 
 ```yml
 tests:
-  - text: 你应该有至少 4 个<code>else</code>表达式
+  - text: 你应该有至少 4 个<code>else</code>表达式。
     testString: assert(code.match(/else/g).length > 3);
-  - text: 你应该有至少 4 个<code>if</code>表达式
+  - text: 你应该有至少 4 个<code>if</code>表达式。
     testString: assert(code.match(/if/g).length > 3);
-  - text: 你应该有至少 1 个<code>return</code>表达式
+  - text: 你应该有至少 1 个<code>return</code>表达式。
     testString: assert(code.match(/return/g).length >= 1);
-  - text: <code>testSize(0)</code>应该返回 "Tiny"
+  - text: <code>testSize(0)</code>应该返回 "Tiny"。
     testString: assert(testSize(0) === "Tiny");
-  - text: <code>testSize(4)</code>应该返回 "Tiny"
+  - text: <code>testSize(4)</code>应该返回 "Tiny"。
     testString: assert(testSize(4) === "Tiny");
-  - text: <code>testSize(5)</code>应该返回 "Small"
+  - text: <code>testSize(5)</code>应该返回 "Small"。
     testString: assert(testSize(5) === "Small");
-  - text: <code>testSize(8)</code>应该返回 "Small"
+  - text: <code>testSize(8)</code>应该返回 "Small"。
     testString: assert(testSize(8) === "Small");
-  - text: <code>testSize(10)</code>应该返回 "Medium"
+  - text: <code>testSize(10)</code>应该返回 "Medium"。
     testString: assert(testSize(10) === "Medium");
-  - text: <code>testSize(14)</code>应该返回 "Medium"
+  - text: <code>testSize(14)</code>应该返回 "Medium"。
     testString: assert(testSize(14) === "Medium");
-  - text: <code>testSize(15)</code>应该返回 "Large"
+  - text: <code>testSize(15)</code>应该返回 "Large"。
     testString: assert(testSize(15) === "Large");
-  - text: <code>testSize(17)</code>应该返回 "Large"
+  - text: <code>testSize(17)</code>应该返回 "Large"。
     testString: assert(testSize(17) === "Large");
-  - text: <code>testSize(20)</code>应该返回 "Huge"
+  - text: <code>testSize(20)</code>应该返回 "Huge"。
     testString: assert(testSize(20) === "Huge");
-  - text: <code>testSize(25)</code>应该返回 "Huge"
+  - text: <code>testSize(25)</code>应该返回 "Huge"。
     testString: assert(testSize(25) === "Huge");
 
 ```

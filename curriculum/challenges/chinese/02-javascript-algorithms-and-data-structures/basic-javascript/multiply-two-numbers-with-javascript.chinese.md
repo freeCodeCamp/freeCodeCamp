@@ -31,9 +31,9 @@ myVar = 13 * 13; // assigned 169
 
 ```yml
 tests:
-  - text: 要使<code>product</code>的值等于 80
+  - text: 要使<code>product</code>的值等于 80。
     testString: assert(product === 80);
-  - text: 使用<code>*</code>运算符
+  - text: 使用<code>*</code>运算符。
     testString: assert(/\*/.test(code));
 
 ```
