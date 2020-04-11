@@ -1,0 +1,60 @@
+{
+  "name": "@freecodecamp/contribute",
+  "version": "1.0.0",
+  "license": "BSD-3-Clause",
+  "repository": "https://github.com/freecodecamp/contribute.git",
+  "bugs": "https://github.com/freeCodeCamp/contribute/issues",
+  "keywords": [
+    "probot",
+    "github",
+    "probot-app"
+  ],
+  "scripts": {
+    "dev": "develop",
+    "develop": "nodemon",
+    "start": "probot run esm ./index.js",
+    "start-probot": "cross-env TEST_ENV=false probot run ./index.js",
+    "lint": "standard --fix",
+    "test": "cross-env TEST_ENV=true jest --forceExit && standard",
+    "test:watch": "jest --watch --notify --notifyMode=change --coverage"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.3",
+    "body-parser": "^1.18.3",
+    "cli-progress": "^2.1.1",
+    "cross-env": "^5.2.0",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.3",
+    "http-status": "^1.3.1",
+    "joi": "^14.3.1",
+    "mongoose": "^5.4.1",
+    "node-fetch": "^2.3.0",
+    "probot": "^7.2.0"
+  },
+  "devDependencies": {
+    "expect": "^23.6.0",
+    "jest": "^22.4.3",
+    "nock": "^10.0.0",
+    "nodemon": "^1.17.2",
+    "smee-client": "^1.0.2",
+    "standard": "^10.0.3"
+  },
+  "engines": {
+    "node": ">= 8.3.0"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  },
+  "nodemonConfig": {
+    "exec": "npm start",
+    "watch": [
+      ".env",
+      "."
+    ]
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}

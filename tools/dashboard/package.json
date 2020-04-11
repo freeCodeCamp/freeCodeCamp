@@ -1,0 +1,50 @@
+{
+  "name": "@freecodecamp/contribute",
+  "description": "Tools to help maintain freecodecamp.org's Open Source Codebase on GitHub",
+  "bin": {
+    "presolver": "probot/index.js"
+  },
+  "scripts": {
+    "bootstrap": "lerna bootstrap --ci",
+    "build": "lerna run build",
+    "postinstall": "npm run bootstrap",
+    "test": "run-p test:*",
+    "test:probot": "cd ./probot && npm run test",
+    "test:client": "cd ./probot/client && npm run test",
+    "format": "prettier --write es5 ./**/*.{js,json} && npm run lint",
+    "lint": "eslint ./**/*.js --fix",
+    "start": "cd probot && npm start && cd ../",
+    "develop": "run-p develop:*",
+    "develop:client": "cd ./probot/client && npm run develop",
+    "develop:server": "cd ./probot/ && npm run develop"
+  },
+  "devDependencies": {
+    "dotenv": "^6.2.0",
+    "eslint": "^5.9.0",
+    "eslint-config-freecodecamp": "^1.1.1",
+    "esm": "^3.0.84",
+    "joi": "^14.3.1",
+    "lerna": "^3.5.1",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.9",
+    "npm-run-all": "^4.1.5",
+    "presolver": "file:probot",
+    "prettier": "^1.15.2"
+  },
+  "nodemonConfig": {
+    "exec": "npm start",
+    "watch": [
+      ".env",
+      "."
+    ]
+  },
+  "probot": {
+    "apps": [
+      "presolver"
+    ]
+  },
+  "dependencies": {
+    "ajv": "^6.6.1",
+    "ajv-keywords": "^3.2.0"
+  }
+}
