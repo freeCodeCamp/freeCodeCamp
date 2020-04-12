@@ -24,10 +24,10 @@ Mixins are like functions for CSS. Here is how to write one:
 
 ```scss
 @mixin box-shadow($x, $y, $blur, $c){ 
-  -webkit-box-shadow: $x, $y, $blur, $c;
-  -moz-box-shadow: $x, $y, $blur, $c;
-  -ms-box-shadow: $x, $y, $blur, $c;
-  box-shadow: $x, $y, $blur, $c;
+  -webkit-box-shadow: $x $y $blur $c;
+  -moz-box-shadow: $x $y $blur $c;
+  -ms-box-shadow: $x $y $blur $c;
+  box-shadow: $x $y $blur $c;
 }
 ```
 
