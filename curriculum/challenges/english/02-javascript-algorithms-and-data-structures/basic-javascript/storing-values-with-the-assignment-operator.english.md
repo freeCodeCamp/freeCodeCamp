@@ -32,13 +32,13 @@ Assign the contents of <code>a</code> to variable <code>b</code>.
 
 ```yml
 tests:
-  - text: Do not change code above the line
+  - text: You should not change code above the specified comment.
     testString: assert(/var a;/.test(code) && /var b = 2;/.test(code));
-  - text: <code>a</code> should have a value of 7
+  - text: <code>a</code> should have a value of 7.
     testString: assert(typeof a === 'number' && a === 7);
-  - text: <code>b</code> should have a value of 7
+  - text: <code>b</code> should have a value of 7.
     testString: assert(typeof b === 'number' && b === 7);
-  - text: <code>a</code> should be assigned to <code>b</code> with <code>=</code>
+  - text: <code>a</code> should be assigned to <code>b</code> with <code>=</code>.
     testString: assert(/b\s*=\s*a\s*;/g.test(code));
 
 ```

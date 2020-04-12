@@ -6,7 +6,10 @@ import { createSelector } from 'reselect';
 import {
   canFocusEditorSelector,
   executeChallenge,
+  inAccessibilityModeSelector,
+  saveEditorContent,
   setEditorFocusability,
+  setAccessibilityMode,
   updateFile
 } from '../redux';
 import { userSelector, isDonationModalOpenSelector } from '../../../redux';
@@ -22,6 +25,9 @@ const propTypes = {
   executeChallenge: PropTypes.func.isRequired,
   ext: PropTypes.string,
   fileKey: PropTypes.string,
+  inAccessibilityMode: PropTypes.bool.isRequired,
+  saveEditorContent: PropTypes.func.isRequired,
+  setAccessibilityMode: PropTypes.func.isRequired,
   setEditorFocusability: PropTypes.func,
   theme: PropTypes.string,
   updateFile: PropTypes.func.isRequired
@@ -29,17 +35,21 @@ const propTypes = {
 
 const mapStateToProps = createSelector(
   canFocusEditorSelector,
+  inAccessibilityModeSelector,
   isDonationModalOpenSelector,
   userSelector,
-  (canFocus, open, { theme = 'default' }) => ({
+  (canFocus, accessibilityMode, open, { theme = 'default' }) => ({
     canFocus: open ? false : canFocus,
+    inAccessibilityMode: accessibilityMode,
     theme
   })
 );
 
 const mapDispatchToProps = {
-  setEditorFocusability,
   executeChallenge,
+  saveEditorContent,
+  setAccessibilityMode,
+  setEditorFocusability,
   updateFile
 };
 
@@ -101,7 +111,11 @@ class Editor extends Component {
         verticalHasArrows: false,
         useShadows: false,
         verticalScrollbarSize: 5
-      }
+      },
+      parameterHints: {
+        enabled: false
+      },
+      tabSize: 2
     };
 
     this._editor = null;
@@ -114,10 +128,15 @@ class Editor extends Component {
 
   editorDidMount = (editor, monaco) => {
     this._editor = editor;
-    if (this.props.canFocus) {
-      this._editor.focus();
+    editor.updateOptions({
+      accessibilitySupport: this.props.inAccessibilityMode ? 'on' : 'auto'
+    });
+    // Users who are using screen readers should not have to move focus from
+    // the editor to the description every time they open a challenge.
+    if (this.props.canFocus && !this.props.inAccessibilityMode) {
+      editor.focus();
     } else this.focusOnHotkeys();
-    this._editor.addAction({
+    editor.addAction({
       id: 'execute-challenge',
       label: 'Run tests',
       keybindings: [
@@ -126,7 +145,7 @@ class Editor extends Component {
       ],
       run: this.props.executeChallenge
     });
-    this._editor.addAction({
+    editor.addAction({
       id: 'leave-editor',
       label: 'Leave editor',
       keybindings: [monaco.KeyCode.Escape],
@@ -135,9 +154,39 @@ class Editor extends Component {
         this.props.setEditorFocusability(false);
       }
     });
-    this._editor.onDidFocusEditorWidget(() =>
-      this.props.setEditorFocusability(true)
-    );
+    editor.addAction({
+      id: 'save-editor-content',
+      label: 'Save editor content to localStorage',
+      keybindings: [
+        monaco.KeyMod.chord(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_S)
+      ],
+      run: this.props.saveEditorContent
+    });
+    editor.addAction({
+      id: 'toggle-accessibility',
+      label: 'Toggle Accessibility Mode',
+      keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.F1],
+      run: () => {
+        const currentAccessibility = this.props.inAccessibilityMode;
+        // The store needs to be updated first, as onDidChangeConfiguration is
+        // called before updateOptions returns
+        this.props.setAccessibilityMode(!currentAccessibility);
+        editor.updateOptions({
+          accessibilitySupport: currentAccessibility ? 'auto' : 'on'
+        });
+      }
+    });
+    editor.onDidFocusEditorWidget(() => this.props.setEditorFocusability(true));
+    // This is to persist changes caused by the accessibility tooltip.
+    editor.onDidChangeConfiguration(event => {
+      if (
+        event.hasChanged(monaco.editor.EditorOption.accessibilitySupport) &&
+        editor.getRawOptions().accessibilitySupport === 'on' &&
+        !this.props.inAccessibilityMode
+      ) {
+        this.props.setAccessibilityMode(true);
+      }
+    });
   };
 
   focusOnHotkeys() {

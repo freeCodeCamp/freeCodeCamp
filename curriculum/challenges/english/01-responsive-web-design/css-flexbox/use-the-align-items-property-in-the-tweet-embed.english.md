@@ -21,7 +21,7 @@ Add the CSS property <code>align-items</code> to the header's <code>.follow-btn<
 
 ```yml
 tests:
-  - text: The <code>.follow-btn</code> element should have the <code>align-items</code> property set to a value of center.
+  - text: The <code>.follow-btn</code> element should have the <code>align-items</code> property set to a value of <code>center</code>.
     testString: assert($('.follow-btn').css('align-items') == 'center');
 
 ```
@@ -95,7 +95,7 @@ tests:
   }
 </style>
 <header>
-  <img src="https://pbs.twimg.com/profile_images/378800000147359764/54dc9a5c34e912f34db8662d53d16a39_400x400.png" alt="Quincy Larson's profile picture" class="profile-thumbnail">
+  <img src="https://freecodecamp.s3.amazonaws.com/quincy-twitter-photo.jpg" alt="Quincy Larson's profile picture" class="profile-thumbnail">
   <div class="profile-name">
     <h3>Quincy Larson</h3>
     <h4>@ossia</h4>
@@ -197,7 +197,7 @@ tests:
   }
 </style>
 <header>
-  <img src="https://pbs.twimg.com/profile_images/378800000147359764/54dc9a5c34e912f34db8662d53d16a39_400x400.png" alt="Quincy Larson's profile picture" class="profile-thumbnail">
+  <img src="https://freecodecamp.s3.amazonaws.com/quincy-twitter-photo.jpg" alt="Quincy Larson's profile picture" class="profile-thumbnail">
   <div class="profile-name">
     <h3>Quincy Larson</h3>
     <h4>@ossia</h4>

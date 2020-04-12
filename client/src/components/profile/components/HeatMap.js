@@ -1,59 +1,102 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import CalendarHeatMap from 'react-calendar-heatmap';
+import CalendarHeatMap from '@freecodecamp/react-calendar-heatmap';
+import { Row } from '@freecodecamp/react-bootstrap';
 import ReactTooltip from 'react-tooltip';
 import addDays from 'date-fns/add_days';
 import addMonths from 'date-fns/add_months';
 import startOfDay from 'date-fns/start_of_day';
-import format from 'date-fns/format';
+import isEqual from 'date-fns/is_equal';
 
 import FullWidthRow from '../../helpers/FullWidthRow';
 import Spacer from '../../helpers/Spacer';
 
-import 'react-calendar-heatmap/dist/styles.css';
+import '@freecodecamp/react-calendar-heatmap/dist/styles.css';
 import './heatmap.css';
 
 const propTypes = {
-  calendar: PropTypes.object,
-  streak: PropTypes.shape({
-    current: PropTypes.number,
-    longest: PropTypes.number
-  })
+  calendar: PropTypes.object
 };
 
-function HeatMap({ calendar, streak }) {
-  const startOfToday = startOfDay(Date.now());
-  const sixMonthsAgo = addMonths(startOfToday, -6);
-  const startOfCalendar = format(addDays(sixMonthsAgo, -1), 'YYYY-MM-DD');
-  const endOfCalendar = format(startOfToday, 'YYYY-MM-DD');
+const innerPropTypes = {
+  calendarData: PropTypes.array,
+  currentStreak: PropTypes.number,
+  longestStreak: PropTypes.number,
+  pages: PropTypes.array,
+  points: PropTypes.number
+};
 
-  let calendarData = {};
-  let dayCounter = sixMonthsAgo;
+class HeatMapInner extends Component {
+  constructor(props) {
+    super(props);
 
-  while (dayCounter <= startOfToday) {
-    calendarData[format(dayCounter, 'YYYY-MM-DD')] = 0;
-    dayCounter = addDays(dayCounter, 1);
+    this.state = {
+      pageIndex: this.props.pages.length - 1
+    };
+
+    this.prevPage = this.prevPage.bind(this);
+    this.nextPage = this.nextPage.bind(this);
   }
 
-  for (let timestamp in calendar) {
-    if (calendar.hasOwnProperty(timestamp)) {
-      timestamp = Number(timestamp * 1000) || null;
-      if (timestamp) {
-        const startOfTimestampDay = format(startOfDay(timestamp), 'YYYY-MM-DD');
-        calendarData[startOfTimestampDay] =
-          calendarData[startOfTimestampDay] + 1 || 1;
-      }
-    }
+  prevPage() {
+    this.setState(
+      {
+        pageIndex: this.state.pageIndex - 1
+      },
+      () => ReactTooltip.rebuild()
+    );
   }
 
-  const calendarValues = Object.keys(calendarData).map(key => ({
-    date: key,
-    count: calendarData[key]
-  }));
+  nextPage() {
+    this.setState(
+      {
+        pageIndex: this.state.pageIndex + 1
+      },
+      () => ReactTooltip.rebuild()
+    );
+  }
 
-  return (
-    <FullWidthRow>
+  render() {
+    const { calendarData, currentStreak, longestStreak, pages } = this.props;
+    const { startOfCalendar, endOfCalendar } = pages[this.state.pageIndex];
+    const title = `${startOfCalendar.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'short'
+    })} - ${endOfCalendar.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'short'
+    })}`;
+    const dataToDisplay = calendarData.filter(
+      data => data.date >= startOfCalendar && data.date <= endOfCalendar
+    );
+
+    return (
       <FullWidthRow>
+        <Row className='heatmap-nav'>
+          <button
+            className='heatmap-nav-btn'
+            disabled={!pages[this.state.pageIndex - 1]}
+            onClick={this.prevPage}
+            style={{
+              visibility: pages[this.state.pageIndex - 1] ? 'unset' : 'hidden'
+            }}
+          >
+            &lt;
+          </button>
+          <span>{title}</span>
+          <button
+            className='heatmap-nav-btn'
+            disabled={!pages[this.state.pageIndex + 1]}
+            onClick={this.nextPage}
+            style={{
+              visibility: pages[this.state.pageIndex + 1] ? 'unset' : 'hidden'
+            }}
+          >
+            &gt;
+          </button>
+        </Row>
+        <Spacer />
+
         <CalendarHeatMap
           classForValue={value => {
             if (!value || value.count < 1) return 'color-empty';
@@ -73,36 +116,137 @@ function HeatMap({ calendar, streak }) {
             } else {
               valueCount = 'No points';
             }
+            const dateFormatted = value.date
+              ? 'on ' +
+                value.date.toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'short',
+                  day: 'numeric'
+                })
+              : '';
             return {
-              'data-tip': `<b>${valueCount}</b> on ${new Date(
-                value.date
-              ).toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'short',
-                day: 'numeric'
-              })}`
+              'data-tip': `<b>${valueCount}</b> ${dateFormatted}`
             };
           }}
-          values={calendarValues}
+          values={dataToDisplay}
         />
         <ReactTooltip className='react-tooltip' effect='solid' html={true} />
+
+        <Spacer />
+        <Row>
+          <div className='streak-container'>
+            <span className='streak' data-testid='longest-streak'>
+              <b>Longest Streak:</b> {longestStreak || 0}
+            </span>
+            <span className='streak' data-testid='current-streak'>
+              <b>Current Streak:</b> {currentStreak || 0}
+            </span>
+          </div>
+        </Row>
+        <hr />
       </FullWidthRow>
-      <Spacer />
-      <FullWidthRow>
-        <div className='streak-container'>
-          <span className='streak'>
-            <b>Longest Streak:</b> {streak.longest || 0}
-          </span>
-          <span className='streak'>
-            <b>Current Streak:</b> {streak.current || 0}
-          </span>
-        </div>
-      </FullWidthRow>
-      <Spacer />
-      <hr />
-    </FullWidthRow>
-  );
+    );
+  }
 }
+
+HeatMapInner.propTypes = innerPropTypes;
+
+const HeatMap = props => {
+  const { calendar } = props;
+
+  /**
+   *  the following logic creates the data for the heatmap
+   *  from the users calendar and calculates their streaks
+   */
+
+  // create array of timestamps and turn into milliseconds
+  const timestamps = Object.keys(calendar).map(stamp => stamp * 1000);
+  const startOfTimestamps = startOfDay(new Date(timestamps[0]));
+  let endOfCalendar = startOfDay(Date.now());
+  let startOfCalendar;
+
+  // creates pages for heatmap
+  let pages = [];
+
+  do {
+    startOfCalendar = addDays(addMonths(endOfCalendar, -6), 1);
+
+    const newPage = {
+      startOfCalendar: startOfCalendar,
+      endOfCalendar: endOfCalendar
+    };
+
+    pages.push(newPage);
+
+    endOfCalendar = addDays(startOfCalendar, -1);
+  } while (startOfTimestamps < startOfCalendar);
+
+  pages.reverse();
+
+  let calendarData = [];
+  let dayCounter = pages[0].startOfCalendar;
+
+  // create an object for each day of the calendar period
+  while (dayCounter <= pages[pages.length - 1].endOfCalendar) {
+    // this is the format needed for react-calendar-heatmap
+    const newDay = {
+      date: startOfDay(dayCounter),
+      count: 0
+    };
+
+    calendarData.push(newDay);
+    dayCounter = addDays(dayCounter, 1);
+  }
+
+  let longestStreak = 0;
+  let currentStreak = 0;
+  let lastIndex = -1;
+
+  // add a point to each day with a completed timestamp and calculate streaks
+  timestamps.forEach(stamp => {
+    const index = calendarData.findIndex(day =>
+      isEqual(day.date, startOfDay(stamp))
+    );
+
+    if (index >= 0) {
+      // add one point for today
+      calendarData[index].count++;
+
+      // if timestamp is on a new day, deal with streaks
+      if (index !== lastIndex) {
+        // if yesterday has points
+        if (calendarData[index - 1] && calendarData[index - 1].count > 0) {
+          currentStreak++;
+        } else {
+          currentStreak = 1;
+        }
+
+        if (currentStreak > longestStreak) {
+          longestStreak = currentStreak;
+        }
+      }
+
+      lastIndex = index;
+    }
+  });
+
+  // if today has no points
+  if (
+    calendarData[calendarData.length - 1] &&
+    calendarData[calendarData.length - 1].count === 0
+  ) {
+    currentStreak = 0;
+  }
+
+  return (
+    <HeatMapInner
+      calendarData={calendarData}
+      currentStreak={currentStreak}
+      longestStreak={longestStreak}
+      pages={pages}
+    />
+  );
+};
 
 HeatMap.displayName = 'HeatMap';
 HeatMap.propTypes = propTypes;

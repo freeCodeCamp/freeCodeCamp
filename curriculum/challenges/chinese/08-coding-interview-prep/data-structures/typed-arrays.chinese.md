@@ -18,11 +18,11 @@ localeTitle: 键入的数组
 ```yml
 tests:
   - text: 您的<code>buffer</code>应该是64字节大。
-    testString: 'assert(buffer.byteLength === 64, "Your <code>buffer</code> should be 64 bytes large.");'
+    testString: assert(buffer.byteLength === 64);
   - text: 您的缓冲区的<code>i32View</code>视图应该是64字节大。
-    testString: 'assert(i32View.byteLength === 64, "Your <code>i32View</code> view of your buffer should be 64 bytes large.");'
+    testString: assert(i32View.byteLength === 64);
   - text: 您的缓冲区的<code>i32View</code>视图应为16个元素长。
-    testString: 'assert(i32View.length === 16, "Your <code>i32View</code> view of your buffer should be 16 elements long.");'
+    testString: assert(i32View.length === 16);
 
 ```
 

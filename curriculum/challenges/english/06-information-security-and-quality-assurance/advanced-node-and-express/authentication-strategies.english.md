@@ -10,7 +10,7 @@ forumTopicId: 301547
 As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/edit/#!/remix/clone-from-repo?REPO_URL=https://github.com/freeCodeCamp/boilerplate-advancednode/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a>.
 A strategy is a way of authenticating a user. You can use a strategy for allowing users to authenticate based on locally saved information (if you have them register first) or from a variety of providers such as Google or GitHub. For this project we will set up a local strategy. To see a list of the 100's of strategies, visit Passports site <a href='http://passportjs.org/'>here</a>.
 Add <em>passport-local</em> as a dependency and add it to your server as follows: <code>const LocalStrategy = require('passport-local');</code>
-Now you will have to tell passport to <b>use</b> an instantiated LocalStartegy object with a few settings defined. Make sure this as well as everything from this point on is encapsulated in the database connection since it relies on it!
+Now you will have to tell passport to <b>use</b> an instantiated LocalStrategy object with a few settings defined. Make sure this as well as everything from this point on is encapsulated in the database connection since it relies on it!
 
 ```js
 passport.use(new LocalStrategy(
@@ -41,9 +41,9 @@ In the next step we will set up how to actually call the authentication strategy
 
 ```yml
 tests:
-  - text: Passport-local is a dependency
+  - text: Passport-local should be a dependency.
     testString:  getUserInput => $.get(getUserInput('url')+ '/_api/package.json') .then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, 'passport-local', 'Your project should list "passport-local " as a dependency'); }, xhr => { throw new Error(xhr.statusText); })
-  - text: Passport-local correctly required and setup
+  - text: Passport-local should be correctly required and setup.
     testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /require.*("|')passport-local("|')/gi, 'You should have required passport-local'); assert.match(data, /new LocalStrategy/gi, 'You should have told passport to use a new strategy'); assert.match(data, /findOne/gi, 'Your new local strategy should use the findOne query to find a username based on the inputs'); }, xhr => { throw new Error(xhr.statusText); })
 
 ```

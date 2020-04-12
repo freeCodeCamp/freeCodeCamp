@@ -4,33 +4,33 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Button, Modal } from '@freecodecamp/react-bootstrap';
 
-import ga from '../../../analytics';
 import { createQuestion, closeModal, isHelpModalOpenSelector } from '../redux';
+import { executeGA } from '../../../redux';
 
 import './help-modal.css';
 
 const mapStateToProps = state => ({ isOpen: isHelpModalOpenSelector(state) });
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
-    { createQuestion, closeHelpModal: () => closeModal('help') },
+    { createQuestion, executeGA, closeHelpModal: () => closeModal('help') },
     dispatch
   );
 
 const propTypes = {
   closeHelpModal: PropTypes.func.isRequired,
   createQuestion: PropTypes.func.isRequired,
+  executeGA: PropTypes.func,
   isOpen: PropTypes.bool
 };
 
 const RSA =
-  'https://forum.freecodecamp.org/t/the-read-search-ask-methodology-for-' +
-  'getting-unstuck/137307';
+  'https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514';
 
 export class HelpModal extends Component {
   render() {
-    const { isOpen, closeHelpModal, createQuestion } = this.props;
+    const { isOpen, closeHelpModal, createQuestion, executeGA } = this.props;
     if (isOpen) {
-      ga.modalview('/help-modal');
+      executeGA({ type: 'modal', data: '/help-modal' });
     }
     return (
       <Modal dialogClassName='help-modal' onHide={closeHelpModal} show={isOpen}>

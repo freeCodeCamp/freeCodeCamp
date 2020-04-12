@@ -19,9 +19,9 @@ localeTitle: 在两个集上执行联合
 ```yml
 tests:
   - text: 你的<code>Set</code>类应该有一个<code>union</code>方法。
-    testString: 'assert((function(){var test = new Set(); return (typeof test.union === "function")})(), "Your <code>Set</code> class should have a <code>union</code> method.");'
+    testString: assert((function(){var test = new Set(); return (typeof test.union === 'function')})());
   - text: 收回了适当的收藏
-    testString: 'assert((function(){var setA = new Set();  var setB = new Set();  setA.add("a");  setA.add("b");  setA.add("c");  setB.add("c");  setB.add("d");  var unionSetAB = setA.union(setB); var final = unionSetAB.values(); return (final.indexOf("a") !== -1 && final.indexOf("b") !== -1 && final.indexOf("c") !== -1 && final.indexOf("d") !== -1 && final.length === 4)})(), "The proper collection was returned");'
+    testString: assert((function(){var setA = new Set();  var setB = new Set();  setA.add('a');  setA.add('b');  setA.add('c');  setB.add('c');  setB.add('d');  var unionSetAB = setA.union(setB); var final = unionSetAB.values(); return (final.indexOf('a') !== -1 && final.indexOf('b') !== -1 && final.indexOf('c') !== -1 && final.indexOf('d') !== -1 && final.length === 4)})());
 
 ```
 

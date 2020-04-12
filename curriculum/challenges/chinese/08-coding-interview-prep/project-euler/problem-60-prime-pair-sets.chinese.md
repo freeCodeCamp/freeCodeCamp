@@ -19,7 +19,7 @@ localeTitle: 问题60：素数对设置
 ```yml
 tests:
   - text: <code>euler60()</code>应返回26033。
-    testString: 'assert.strictEqual(euler60(), 26033, "<code>euler60()</code> should return 26033.");'
+    testString: assert.strictEqual(euler60(), 26033);
 
 ```
 

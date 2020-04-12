@@ -18,13 +18,13 @@ localeTitle: 使用切片从阵列中删除元素而不是拼接
 ```yml
 tests:
   - text: 您的代码应该使用<code>slice</code>方法。
-    testString: 'assert(code.match(/\.slice/g), "Your code should use the <code>slice</code> method.");'
+    testString: assert(code.match(/\.slice/g));
   - text: 您的代码不应使用<code>splice</code>方法。
-    testString: 'assert(!code.match(/\.splice/g), "Your code should not use the <code>splice</code> method.");'
+    testString: assert(!code.match(/\.splice/g));
   - text: <code>inputCities</code>数组不应更改。
-    testString: 'assert(JSON.stringify(inputCities) === JSON.stringify(["Chicago", "Delhi", "Islamabad", "London", "Berlin"]), "The <code>inputCities</code> array should not change.");'
+    testString: assert(JSON.stringify(inputCities) === JSON.stringify(["Chicago", "Delhi", "Islamabad", "London", "Berlin"]));
   - text: '<code>nonMutatingSplice([&quot;Chicago&quot;, &quot;Delhi&quot;, &quot;Islamabad&quot;, &quot;London&quot;, &quot;Berlin&quot;])</code>应该返回<code>[&quot;Chicago&quot;, &quot;Delhi&quot;, &quot;Islamabad&quot;]</code> 。'
-    testString: 'assert(JSON.stringify(nonMutatingSplice(["Chicago", "Delhi", "Islamabad", "London", "Berlin"])) === JSON.stringify(["Chicago", "Delhi", "Islamabad"]), "<code>nonMutatingSplice(["Chicago", "Delhi", "Islamabad", "London", "Berlin"])</code> should return <code>["Chicago", "Delhi", "Islamabad"]</code>.");'
+    testString: assert(JSON.stringify(nonMutatingSplice(["Chicago", "Delhi", "Islamabad", "London", "Berlin"])) === JSON.stringify(["Chicago", "Delhi", "Islamabad"]));
 
 ```
 

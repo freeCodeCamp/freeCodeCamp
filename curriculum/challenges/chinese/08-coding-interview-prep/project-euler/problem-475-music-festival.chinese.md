@@ -19,7 +19,7 @@ localeTitle: 问题475：音乐节
 ```yml
 tests:
   - text: <code>euler475()</code>应返回75780067。
-    testString: 'assert.strictEqual(euler475(), 75780067, "<code>euler475()</code> should return 75780067.");'
+    testString: assert.strictEqual(euler475(), 75780067);
 
 ```
 

@@ -2,23 +2,30 @@
 id: 587d78a8367417b2b2512ae3
 title: Animate Elements Continually Using an Infinite Animation Count
 challengeType: 0
-videoUrl: ''
-localeTitle: 动画元素不断使用无限动画计数
+videoUrl: 'https://scrimba.com/c/cVJDVfq'
+forumTopicId: 301041
+localeTitle: 使用无限的动画计数制作永不停止的动画
 ---
 
 ## Description
-<section id="description">之前的挑战涉及如何使用某些动画属性和<code>@keyframes</code>规则。另一个动画属性是<code>animation-iteration-count</code> ，它允许您控制循环动画的次数。这是一个例子： <code>animation-iteration-count: 3;</code>在这种情况下，动画将在运行3次后停止，但可以通过将该值设置为无限来使动画连续运行。 </section>
+<section id='description'>
+之前的关卡里介绍了一些动画属性以及 <code>@keyframes</code> 规则的用法。还有一个常用的动画属性是 <code>animation-iteration-count</code>，这个属性允许你控制动画循环的次数。下面是一个例子：
+<code>animation-iteration-count: 3;</code>
+在这里动画会在运行 3 次后停止，如果想让动画一直运行，可以把值设置成 infinite。
+</section>
 
 ## Instructions
-<section id="instructions">要使球在连续循环中保持在右侧弹跳，请将<code>animation-iteration-count</code>属性更改为无限。 </section>
+<section id='instructions'>
+把 <code>animation-iteration-count</code> 属性改成 infinite，以使右边的球持续跳跃。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>animation-iteration-count</code>属性应具有无限值。
-    testString: 'assert($("#ball").css("animation-iteration-count") == "infinite", "The <code>animation-iteration-count</code> property should have a value of infinite.");'
+  - text: '<code>animation-iteration-count</code> 属性值应该为 infinite。'
+    testString: assert($('#ball').css('animation-iteration-count') == 'infinite');
 
 ```
 
@@ -63,7 +70,6 @@ tests:
   }
 </style>
 <div id="ball"></div>
-
 ```
 
 </div>
@@ -75,7 +81,9 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>
+              

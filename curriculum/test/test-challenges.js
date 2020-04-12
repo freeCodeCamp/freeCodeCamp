@@ -9,6 +9,7 @@ require('@babel/register')({
   root: clientPath,
   babelrc: false,
   presets: ['@babel/preset-env'],
+  plugins: ['dynamic-import-node'],
   ignore: [/node_modules/],
   only: [clientPath]
 });
@@ -36,7 +37,12 @@ const { getChallengesForLang } = require('../getChallenges');
 const MongoIds = require('./utils/mongoIds');
 const ChallengeTitles = require('./utils/challengeTitles');
 const { challengeSchemaValidator } = require('../schema/challengeSchema');
-const { challengeTypes } = require('../../client/utils/challengeTypes');
+const {
+  challengeTypes,
+  helpCategory
+} = require('../../client/utils/challengeTypes');
+
+const { dasherize } = require('../../utils/slugs');
 
 const { testedLangs } = require('../utils');
 
@@ -48,6 +54,8 @@ const {
 const {
   createPoly
 } = require('../../client/src/templates/Challenges/utils/polyvinyl');
+
+const testEvaluator = require('../../client/config/test-evaluator').filename;
 
 const oldRunnerFail = Mocha.Runner.prototype.fail;
 Mocha.Runner.prototype.fail = function(test, err) {
@@ -148,6 +156,15 @@ async function getChallenges(lang) {
   return { lang, challenges };
 }
 
+function validateBlock(challenge) {
+  const dashedBlock = dasherize(challenge.block);
+  if (!helpCategory.hasOwnProperty(dashedBlock)) {
+    return `'${dashedBlock}' block not found as a helpCategory in client/utils/challengeTypes.js file for the '${challenge.title}' challenge`;
+  } else {
+    return null;
+  }
+}
+
 function populateTestsForLang({ lang, challenges }) {
   const mongoIds = new MongoIds();
   const challengeTitles = new ChallengeTitles();
@@ -160,8 +177,13 @@ function populateTestsForLang({ lang, challenges }) {
       describe(challenge.title || 'No title', function() {
         it('Common checks', function() {
           const result = validateChallenge(challenge);
+          const invalidBlock = validateBlock(challenge);
+
           if (result.error) {
             throw new AssertionError(result.error);
+          }
+          if (challenge.challengeType !== 7 && invalidBlock) {
+            throw new Error(invalidBlock);
           }
           const { id, title } = challenge;
           mongoIds.check(id, title);
@@ -327,7 +349,7 @@ async function createTestRunnerForJSChallenge({ files }, solution) {
   const { build, sources } = await buildJSChallenge({ files });
   const code = sources && 'index' in sources ? sources['index'] : '';
 
-  const testWorker = createWorker('test-evaluator', { terminateWorker: true });
+  const testWorker = createWorker(testEvaluator, { terminateWorker: true });
   return async ({ text, testString }) => {
     try {
       const { pass, err } = await testWorker.execute(

@@ -1,0 +1,23 @@
+sudo: false
+language: node_js
+node_js:
+  - "8.3"
+notifications:
+  disabled: true
+cache:
+  directories:
+    - "node_modules"
+branches:
+  only:
+    - master
+install:
+  - npm install
+script:
+  - echo "Skipping tests"
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_ACCESS_TOKEN
+  keep-history: true
+  on:
+    branch: master

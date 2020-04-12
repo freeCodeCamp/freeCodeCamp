@@ -161,7 +161,7 @@ export function ShowSettings(props) {
     return <Loader fullScreen={true} />;
   }
 
-  if (!showLoading && !isSignedIn) {
+  if (!isSignedIn) {
     navigate(`${apiLocation}/signin?returnTo=settings`);
     return <Loader fullScreen={true} />;
   }

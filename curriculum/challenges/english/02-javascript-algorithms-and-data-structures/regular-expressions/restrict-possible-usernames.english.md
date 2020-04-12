@@ -10,7 +10,7 @@ forumTopicId: 301363
 Usernames are used everywhere on the internet. They are what give users a unique identity on their favorite sites.
 You need to check all the usernames in a database. Here are some simple rules that users have to follow when creating their username.
 1) Usernames can only use alpha-numeric characters.
-2) The only numbers in the username have to be at the end. There can be zero or more of them at the end.
+2) The only numbers in the username have to be at the end. There can be zero or more of them at the end. Username cannot start with the number.
 3) Username letters can be lowercase and uppercase.
 4) Usernames have to be at least two characters long. A two-character username can only use alphabet letters as characters.
 </section>
@@ -44,7 +44,9 @@ tests:
   - text: Your regex should not match <code>BadUs3rnam3</code>
     testString: assert(!userCheck.test("BadUs3rnam3"));
   - text: Your regex should match <code>Z97</code>
-    testString: assert(userCheck.test("Z97"));    
+    testString: assert(userCheck.test("Z97"));
+  - text: Your regex should not match <code>c57bT3</code>
+    testString: assert(!userCheck.test("c57bT3"));  
 
 ```
 

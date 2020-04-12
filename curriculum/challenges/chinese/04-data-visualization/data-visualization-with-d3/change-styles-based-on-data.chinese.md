@@ -18,23 +18,23 @@ localeTitle: 根据数据更改样式
 ```yml
 tests:
   - text: 第一<code>h2</code>应该有一个<code>color</code>的红色。
-    testString: 'assert($("h2").eq(0).css("color") == "rgb(255, 0, 0)", "The first <code>h2</code> should have a <code>color</code> of red.");'
+    testString: assert($('h2').eq(0).css('color') == "rgb(255, 0, 0)");
   - text: 第二<code>h2</code>应该有一个<code>color</code>的绿色。
-    testString: 'assert($("h2").eq(1).css("color") == "rgb(0, 128, 0)", "The second <code>h2</code> should have a <code>color</code> of green.");'
+    testString: assert($('h2').eq(1).css('color') == "rgb(0, 128, 0)");
   - text: 第三<code>h2</code>应该有一个<code>color</code>的绿色。
-    testString: 'assert($("h2").eq(2).css("color") == "rgb(0, 128, 0)", "The third <code>h2</code> should have a <code>color</code> of green.");'
+    testString: assert($('h2').eq(2).css('color') == "rgb(0, 128, 0)");
   - text: 第四<code>h2</code>应该有一个<code>color</code>的红色。
-    testString: 'assert($("h2").eq(3).css("color") == "rgb(255, 0, 0)", "The fourth <code>h2</code> should have a <code>color</code> of red.");'
+    testString: assert($('h2').eq(3).css('color') == "rgb(255, 0, 0)");
   - text: 第五<code>h2</code>应该有一个<code>color</code>的绿色。
-    testString: 'assert($("h2").eq(4).css("color") == "rgb(0, 128, 0)", "The fifth <code>h2</code> should have a <code>color</code> of green.");'
+    testString: assert($('h2').eq(4).css('color') == "rgb(0, 128, 0)");
   - text: 第六<code>h2</code>应该有一个<code>color</code>的红色。
-    testString: 'assert($("h2").eq(5).css("color") == "rgb(255, 0, 0)", "The sixth <code>h2</code> should have a <code>color</code> of red.");'
+    testString: assert($('h2').eq(5).css('color') == "rgb(255, 0, 0)");
   - text: 第七<code>h2</code>应该有一个<code>color</code>的绿色。
-    testString: 'assert($("h2").eq(6).css("color") == "rgb(0, 128, 0)", "The seventh <code>h2</code> should have a <code>color</code> of green.");'
+    testString: assert($('h2').eq(6).css('color') == "rgb(0, 128, 0)");
   - text: 第八<code>h2</code>应该有一个<code>color</code>的红色。
-    testString: 'assert($("h2").eq(7).css("color") == "rgb(255, 0, 0)", "The eighth <code>h2</code> should have a <code>color</code> of red.");'
+    testString: assert($('h2').eq(7).css('color') == "rgb(255, 0, 0)");
   - text: 第九<code>h2</code>应该有一个<code>color</code>的红色。
-    testString: 'assert($("h2").eq(8).css("color") == "rgb(255, 0, 0)", "The ninth <code>h2</code> should have a <code>color</code> of red.");'
+    testString: assert($('h2').eq(8).css('color') == "rgb(255, 0, 0)");
 
 ```
 

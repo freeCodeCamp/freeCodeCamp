@@ -6,6 +6,7 @@ forumTopicId: 302328
 ---
 
 ## Description
+
 <section id='description'>
 <a href="https://rosettacode.org/wiki/eso:Subleq" target="_blank">Subleq</a> is an example of a <a href="https://en.wikipedia.org/wiki/One_instruction_set_computer" target="_blank">One-Instruction Set Computer (OISC)</a>.
 It is named after its only instruction, which is <b>SU</b>btract and <b>B</b>ranch if <b>L</b>ess than or <b>EQ</b>ual
@@ -49,27 +50,30 @@ message: "Hello, world!\n\0"
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 Write a function that takes an array of integers as a parameter. This represents the memory elements. The function
 should interpret the sequence and return the output string. For this task, assume that there is no standard input.
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-``` yml
+```yml
 tests:
   - text: <code>Subleq</code> should be a function.
-    testString: assert(typeof Subleq == 'function', '<code>Subleq</code> should be a function.');
+    testString: assert(typeof Subleq == 'function');
   - text: <code>Subleq([15, 17, -1, 17, -1, -1, 16, 1, -1, 16, 3, -1, 15, 15, 0, 0, -1, 72, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100, 33, 0])</code> should return a string.
-    testString: assert(typeof Subleq([15, 17, -1, 17, -1, -1, 16, 1, -1, 16, 3, -1, 15, 15, 0, 0, -1, 72, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100, 33, 0]) == 'string', '<code>Subleq([15, 17, -1, 17, -1, -1, 16, 1, -1, 16, 3, -1, 15, 15, 0, 0, -1, 72, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100, 33, 0])</code> should return a string.');
+    testString: assert(typeof Subleq([15, 17, -1, 17, -1, -1, 16, 1, -1, 16, 3, -1, 15, 15, 0, 0, -1, 72, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100, 33, 0]) == 'string');
   - text: <code>Subleq([15, 17, -1, 17, -1, -1, 16, 1, -1, 16, 3, -1, 15, 15, 0, 0, -1, 72, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100, 33, 0])</code> should return <code>"Hello, world!"</code>.
-    testString: assert.equal(Subleq([15, 17, -1, 17, -1, -1, 16, 1, -1, 16, 3, -1, 15, 15, 0, 0, -1, 72, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100, 33, 0]), "Hello, world!", '<code>Subleq([15, 17, -1, 17, -1, -1, 16, 1, -1, 16, 3, -1, 15, 15, 0, 0, -1, 72, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100, 33, 0])</code> should return <code>"Hello, world!"</code>.');
+    testString: assert.equal(Subleq([15, 17, -1, 17, -1, -1, 16, 1, -1, 16, 3, -1, 15, 15, 0, 0, -1, 72, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100, 33, 0]), "Hello, world!");
 ```
 
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='js-seed'>
 
@@ -83,16 +87,18 @@ function Subleq(mem) {
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js
 function Subleq(mem) {
-  var out = "";
+  var out = '';
   var instructionPointer = 0;
   do {
     var a = mem[instructionPointer];
     var b = mem[instructionPointer + 1];
-    if (a === -1) {} else if (b === -1) {
+    if (a === -1) {
+    } else if (b === -1) {
       out += String.fromCharCode(mem[a]);
     } else {
       mem[b] -= mem[a];
@@ -102,7 +108,7 @@ function Subleq(mem) {
       }
     }
     instructionPointer += 3;
-  } while ((instructionPointer >= 0));
+  } while (instructionPointer >= 0);
 
   return out;
 }

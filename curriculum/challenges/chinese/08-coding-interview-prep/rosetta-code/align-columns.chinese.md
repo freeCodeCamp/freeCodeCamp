@@ -29,13 +29,13 @@ localeTitle: 对齐列
 ```yml
 tests:
   - text: <code>formatText</code>是一个函数。
-    testString: 'assert(typeof formatText === "function", "<code>formatText</code> is a function.");'
+    testString: assert(typeof formatText === 'function');
   - text: 具有上述输入和“右”对齐的<code>formatText</code>应产生以下内容：
-    testString: 'assert.strictEqual(formatText(testInput, "right"), rightAligned, "<code>formatText</code> with the above input and "right" justification should produce the following: ");'
+    testString: 'assert.strictEqual(formatText(testInput, ''right''), rightAligned);'
   - text: 具有上述输入和“左”对齐的<code>formatText</code>应产生以下内容：
-    testString: 'assert.strictEqual(formatText(testInput, "left"), leftAligned, "<code>formatText</code> with the above input and "left" justification should produce the following: ");'
+    testString: 'assert.strictEqual(formatText(testInput, ''left''), leftAligned);'
   - text: 具有上述输入和“居中”对齐的<code>formatText</code>应产生以下内容：
-    testString: 'assert.strictEqual(formatText(testInput, "center"), centerAligned, "<code>formatText</code> with the above input and "center" justification should produce the following: ");'
+    testString: 'assert.strictEqual(formatText(testInput, ''center''), centerAligned);'
 
 ```
 

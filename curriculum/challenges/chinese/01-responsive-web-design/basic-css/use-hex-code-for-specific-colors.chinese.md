@@ -2,25 +2,39 @@
 id: bad87fee1348bd9aedf08726
 title: Use Hex Code for Specific Colors
 challengeType: 0
-videoUrl: ''
-localeTitle: 使用Hex代码表示特定颜色
+videoUrl: 'https://scrimba.com/c/c8W9mHM'
+forumTopicId: 18350
+localeTitle: 使用十六进制编码获得指定颜色
 ---
 
 ## Description
-<section id="description">您知道还有其他方法可以在CSS中表示颜色吗？其中一种方法称为十六进制代码，或简称为<code>hex code</code> 。我们通常使用<code>decimals</code>或基数为10的数字，每个数字使用符号0到9。 <code>Hexadecimals</code> （或<code>hex</code> ）是16位数字。这意味着它使用十六个不同的符号。与小数一样，符号0-9表示0到9的值。然后A，B，C，D，E，F代表十到十五的值。总而言之，0到F可以用<code>hexadecimal</code>表示一个数字，总共给出16个可能值。您可以<a target="_blank" href="https://en.wikipedia.org/wiki/Hexadecimal">在此处</a>找到有关<a target="_blank" href="https://en.wikipedia.org/wiki/Hexadecimal">十六进制数的</a>更多信息。在CSS中，我们可以使用6个十六进制数字来表示颜色，红色（R），绿色（G）和蓝色（B）组件各有两个。例如， <code>#000000</code>是黑色，也是可能的最低值。您可以<a target="_blank" href="https://en.wikipedia.org/wiki/RGB_color_model">在此处</a>找到有关<a target="_blank" href="https://en.wikipedia.org/wiki/RGB_color_model">RGB颜色系统的</a>更多信息。 <blockquote>身体 { <br>颜色：＃000000; <br> } </blockquote></section>
+<section id='description'>
+你知道在 CSS 里面还有其他方式来代表颜色吗？其中一个方法叫做十六进制编码，简称<code>hex</code>。
+我们日常使用最多的计数方法，基于十进制，使用 0 到 9 数字来表示。而<code>十六进制编码</code>（<code>hex</code>）基于 16 位数字，它含有 16 种不同字符。十六进制与十进制一样，0-9 表示着 0 到 9 的值，不同的是，A，B，C，D，E，F 表示着十六进制 10 到 15 的值。总的来说，0 到 F 在<code>十六进制</code>里代表着数字，提供了 16 种可能性。你可以在<a target='_blank' href='https://zh.wikipedia.org/wiki/%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6'>这里</a>找到更多的相关信息。
+在 CSS 里面，我们可以用使用 6 个十六进制的数字来代表颜色，每两个数字控制一种颜色，分别是红（R），绿（G），蓝（B）。例如，<code>#000000</code>代表着黑色，同时也是最小的值。你可以在<a target='_blank' href='https://zh.wikipedia.org/wiki/%E4%B8%89%E5%8E%9F%E8%89%B2%E5%85%89%E6%A8%A1%E5%BC%8F'>这里</a>找到更多的相关信息。
+
+```css
+body {
+  color: #000000;
+}
+```
+
+</section>
 
 ## Instructions
-<section id="instructions">更换字<code>black</code>在我们的<code>body</code>元素的背景色与它的<code>hex code</code>表示， <code>#000000</code> 。 </section>
+<section id='instructions'>
+使用<code>#000000</code>的十六进制编码来替换<code>body</code>元素的黑色背景。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 给你的<code>body</code>元素黑色的背景颜色。
-    testString: 'assert($("body").css("background-color") === "rgb(0, 0, 0)", "Give your <code>body</code> element the background-color of black.");'
-  - text: 使用<code>hex code</code>替换黑色而不是<code>black</code> 。
-    testString: 'assert(code.match(/body\s*{(([\s\S]*;\s*?)|\s*?)background.*\s*:\s*?#000(000)?((\s*})|(;[\s\S]*?}))/gi), "Use the <code>hex code</code> for the color black instead of the word <code>black</code>.");'
+  - text: '<code>body</code>元素的背景颜色应该是黑色。'
+    testString: assert($("body").css("background-color") === "rgb(0, 0, 0)");
+  - text: '使用<code>十六进制编码</code>来替换<code>black</code>的写法。'
+    testString: assert(code.match(/body\s*{(([\s\S]*;\s*?)|\s*?)background.*\s*:\s*?#000(000)?((\s*})|(;[\s\S]*?}))/gi));
 
 ```
 
@@ -37,7 +51,6 @@ tests:
     background-color: black;
   }
 </style>
-
 ```
 
 </div>
@@ -49,7 +62,9 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>
+              

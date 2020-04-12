@@ -4,7 +4,7 @@ require('dotenv').config({ path: envPath });
 const { zip, timer, from } = require('rxjs');
 
 /*
- * The below has been commented out to aviod inadvertant
+ * The below has been commented out to avoid inadvertant
  * ops usage with algolia
  */
 

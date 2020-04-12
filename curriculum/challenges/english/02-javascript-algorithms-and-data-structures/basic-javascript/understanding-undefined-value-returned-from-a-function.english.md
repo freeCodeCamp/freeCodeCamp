@@ -32,13 +32,13 @@ Create a function <code>addFive</code> without any arguments. This function adds
 
 ```yml
 tests:
-  - text: <code>addFive</code> should be a function
+  - text: <code>addFive</code> should be a function.
     testString: assert(typeof addFive === 'function');
-  - text: Once both functions have ran, the <code>sum</code> should be equal to 8
+  - text: Once both functions have ran, the <code>sum</code> should be equal to 8.
     testString: assert(sum === 8);
-  - text: Returned value from <code>addFive</code> should be <code>undefined</code>
+  - text: Returned value from <code>addFive</code> should be <code>undefined</code>.
     testString: assert(addFive() === undefined);
-  - text: Inside the <code>addFive</code> function, add <code>5</code> to the <code>sum</code> variable
+  - text: Inside the <code>addFive</code> function, you should add <code>5</code> to the <code>sum</code> variable.
     testString: assert(addFive.toString().replace(/\s/g, '').match(/sum=sum\+5|sum\+=5/));
 
 ```
@@ -51,15 +51,18 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Example
+// Setup
 var sum = 0;
+
 function addThree() {
   sum = sum + 3;
 }
 
 // Only change code below this line
 
+
 // Only change code above this line
+
 addThree();
 addFive();
 ```
@@ -72,19 +75,16 @@ addFive();
 
 
 ```js
-// Example
 var sum = 0;
+
 function addThree() {
   sum = sum + 3;
 }
-
-// Only change code below this line
 
 function addFive() {
   sum = sum + 5;
 }
 
-// Only change code above this line
 addThree();
 addFive();
 ```

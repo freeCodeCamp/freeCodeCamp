@@ -19,7 +19,7 @@ localeTitle: 问题370：几何三角形
 ```yml
 tests:
   - text: <code>euler370()</code>应该返回41791929448408。
-    testString: 'assert.strictEqual(euler370(), 41791929448408, "<code>euler370()</code> should return 41791929448408.");'
+    testString: assert.strictEqual(euler370(), 41791929448408);
 
 ```
 

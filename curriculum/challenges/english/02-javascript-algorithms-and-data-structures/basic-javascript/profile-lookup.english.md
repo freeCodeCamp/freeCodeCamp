@@ -49,7 +49,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-//Setup
+// Setup
 var contacts = [
     {
         "firstName": "Akira",
@@ -84,7 +84,6 @@ function lookUpProfile(name, prop){
 // Only change code above this line
 }
 
-// Change these values to test your function
 lookUpProfile("Akira", "likes");
 ```
 

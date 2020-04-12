@@ -10,21 +10,18 @@ const propTypes = {
 function NavLinks({ displayMenu }) {
   return (
     <div className='main-nav-group'>
-      <ul
-        className={'nav-list' + (displayMenu ? ' display-flex' : '')}
-        role='menu'
-      >
-        <li className='nav-news' role='menuitem'>
-          <Link external={true} to='/news'>
+      <ul className={'nav-list' + (displayMenu ? ' display-flex' : '')}>
+        <li className='nav-news'>
+          <Link external={true} sameTab={true} to='/news'>
             /news
           </Link>
         </li>
-        <li className='nav-forum' role='menuitem'>
-          <Link external={true} to='/forum'>
+        <li className='nav-forum'>
+          <Link external={true} sameTab={true} to='/forum'>
             /forum
           </Link>
         </li>
-        <li className='nav-projects' role='menuitem'>
+        <li className='nav-projects'>
           <Link to='/learn'>/learn</Link>
         </li>
       </ul>

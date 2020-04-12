@@ -79,7 +79,7 @@ Ci piacerebbe ricevere il tuo aiuto per migliorare la qualità di queste traduzi
 
 ### Aiutaci a correggere i bug nella piattaforma di apprendimento di freeCodeCamp.org
 
-La nostra piattaforma di apprendimento funziona su un moderno stack JavaScript. Dispone di vari componenti, strumenti e librerie inclusi, tra l'altro pero' senza limitarsi, Node.js, MongoDB, LoopBack, OAuth 2.0, React, Gatsby, Webpack e altri.
+La nostra piattaforma di apprendimento funziona su un moderno stack JavaScript. Dispone di vari componenti, strumenti e librerie inclusi, tra l'altro però senza limitarsi, Node.js, MongoDB, LoopBack, OAuth 2.0, React, Gatsby, Webpack e altri.
 
 In linea di massima,
 

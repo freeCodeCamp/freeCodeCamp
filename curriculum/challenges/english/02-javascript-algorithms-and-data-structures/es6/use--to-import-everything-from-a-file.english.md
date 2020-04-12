@@ -32,7 +32,7 @@ The code in this file requires the contents of the file: <code>string_functions.
 
 ```yml
 tests:
-  - text: Properly uses <code>import * as</code> syntax.
+  - text: Your code should properly use <code>import * as</code> syntax.
     testString: assert(code.match(/import\s*\*\s*as\s+stringFunctions\s+from\s*('|")\.\/string_functions\.js\1/g));
 ```
 
@@ -44,7 +44,7 @@ tests:
 
 ```js
 
-// add code above this line
+// Only change code above this line
 
 stringFunctions.uppercaseString("hello");
 stringFunctions.lowercaseString("WORLD!");
@@ -58,8 +58,8 @@ stringFunctions.lowercaseString("WORLD!");
 
 ```js
 import * as stringFunctions from "./string_functions.js";
-// add code above this line
 
+// add code above this line
 stringFunctions.uppercaseString("hello");
 stringFunctions.lowercaseString("WORLD!");
 ```

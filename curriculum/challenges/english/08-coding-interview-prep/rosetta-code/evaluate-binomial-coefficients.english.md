@@ -22,7 +22,7 @@ $\binom{n}{k} = \frac{n!}{(n-k)!k!} = \frac{n(n-1)(n-2)\ldots(n-k+1)}{k(k-1)(k-2
 
 ```yml
 tests:
-  - text: <code>binom</code> is a function.
+  - text: <code>binom</code> should be a function.
     testString: assert(typeof binom === 'function');
   - text: <code>binom(5,3)</code> should return 10.
     testString: assert.equal(binom(5, 3), 10);

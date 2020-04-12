@@ -64,7 +64,7 @@ function getFile(file, dir) {
   processFile(fileString, description, instructions, tests, title, file, dir);
 }
 
-// Get translatins from Google Translate API and insert into file
+// Get translations from Google Translate API and insert into file
 function processFile(
   fileString,
   description,

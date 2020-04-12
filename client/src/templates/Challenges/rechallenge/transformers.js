@@ -10,25 +10,91 @@ import {
   stubTrue
 } from 'lodash';
 
-import * as Babel from '@babel/standalone';
-import presetEnv from '@babel/preset-env';
-import presetReact from '@babel/preset-react';
-import protect from 'loop-protect';
+import protect from '@freecodecamp/loop-protect';
 
 import * as vinyl from '../utils/polyvinyl.js';
 import createWorker from '../utils/worker-executor';
 
+// the config files are created during the build, but not before linting
+// eslint-disable-next-line import/no-unresolved
+import { filename as sassCompile } from '../../../../config/sass-compile';
+
 const protectTimeout = 100;
-Babel.registerPlugin('loopProtection', protect(protectTimeout));
+const testProtectTimeout = 1500;
+const loopsPerTimeoutCheck = 2000;
 
-const babelOptionsJSX = {
-  plugins: ['loopProtection'],
-  presets: [presetEnv, presetReact]
-};
+function loopProtectCB(line) {
+  console.log(
+    `Potential infinite loop detected on line ${line}. Tests may fail if this is not changed.`
+  );
+}
 
-const babelOptionsJS = {
-  presets: [presetEnv]
-};
+function testLoopProtectCB(line) {
+  console.log(
+    `Potential infinite loop detected on line ${line}. Tests may be failing because of this.`
+  );
+}
+
+// hold Babel, presets and options so we don't try to import them multiple times
+
+let Babel;
+let presetEnv, presetReact;
+let babelOptionsJSBase, babelOptionsJS, babelOptionsJSX, babelOptionsJSPreview;
+
+async function loadBabel() {
+  if (Babel) return;
+  /* eslint-disable no-inline-comments */
+  Babel = await import(
+    /* webpackChunkName: "@babel/standalone" */ '@babel/standalone'
+  );
+  /* eslint-enable no-inline-comments */
+  Babel.registerPlugin(
+    'loopProtection',
+    protect(protectTimeout, loopProtectCB)
+  );
+  Babel.registerPlugin(
+    'testLoopProtection',
+    protect(testProtectTimeout, testLoopProtectCB, loopsPerTimeoutCheck)
+  );
+}
+
+async function loadPresetEnv() {
+  if (presetEnv) return;
+  /* eslint-disable no-inline-comments */
+  presetEnv = await import(
+    /* webpackChunkName: "@babel/preset-env" */ '@babel/preset-env'
+  );
+  /* eslint-enable no-inline-comments */
+
+  babelOptionsJSBase = {
+    presets: [presetEnv]
+  };
+  babelOptionsJS = {
+    ...babelOptionsJSBase,
+    plugins: ['testLoopProtection']
+  };
+  babelOptionsJSPreview = {
+    ...babelOptionsJSBase,
+    plugins: ['loopProtection']
+  };
+}
+
+async function loadPresetReact() {
+  if (presetReact) return;
+  /* eslint-disable no-inline-comments */
+  presetReact = await import(
+    /* webpackChunkName: "@babel/preset-react" */ '@babel/preset-react'
+  );
+  if (!presetEnv)
+    presetEnv = await import(
+      /* webpackChunkName: "@babel/preset-env" */ '@babel/preset-env'
+    );
+  /* eslint-enable no-inline-comments */
+  babelOptionsJSX = {
+    plugins: ['loopProtection'],
+    presets: [presetEnv, presetReact]
+  };
+}
 
 const babelTransformCode = options => code =>
   Babel.transform(code, options).code;
@@ -55,7 +121,6 @@ function tryTransform(wrap = identity) {
   return function transformWrappedPoly(source) {
     const result = attempt(wrap, source);
     if (isError(result)) {
-      console.error(result);
       // note(Bouncey): Error thrown here to collapse the build pipeline
       // At the minute, it will not bubble up
       // We collapse the pipeline so the app doesn't fall over trying
@@ -66,30 +131,51 @@ function tryTransform(wrap = identity) {
   };
 }
 
-export const babelTransformer = cond([
-  [
-    testJS,
-    flow(
-      partial(
-        vinyl.transformHeadTailAndContents,
-        tryTransform(babelTransformCode(babelOptionsJS))
-      )
-    )
-  ],
-  [
-    testJSX,
-    flow(
-      partial(
-        vinyl.transformHeadTailAndContents,
-        tryTransform(babelTransformCode(babelOptionsJSX))
-      ),
-      partial(vinyl.setExt, 'js')
-    )
-  ],
-  [stubTrue, identity]
-]);
+const babelTransformer = options => {
+  return cond([
+    [
+      testJS,
+      async code => {
+        await loadBabel();
+        await loadPresetEnv();
+        const babelOptions = getBabelOptions(options);
+        return partial(
+          vinyl.transformHeadTailAndContents,
+          tryTransform(babelTransformCode(babelOptions))
+        )(code);
+      }
+    ],
+    [
+      testJSX,
+      async code => {
+        await loadBabel();
+        await loadPresetReact();
+        return flow(
+          partial(
+            vinyl.transformHeadTailAndContents,
+            tryTransform(babelTransformCode(babelOptionsJSX))
+          ),
+          partial(vinyl.setExt, 'js')
+        )(code);
+      }
+    ],
+    [stubTrue, identity]
+  ]);
+};
 
-const sassWorker = createWorker('sass-compile');
+function getBabelOptions({ preview = false, protect = true }) {
+  let options = babelOptionsJSBase;
+  // we always protect the preview, since it evaluates as the user types and
+  // they may briefly have infinite looping code accidentally
+  if (protect) {
+    options = preview ? babelOptionsJSPreview : babelOptionsJS;
+  } else {
+    options = preview ? babelOptionsJSPreview : options;
+  }
+  return options;
+}
+
+const sassWorker = createWorker(sassCompile);
 async function transformSASS(element) {
   const styleTags = element.querySelectorAll('style[type="text/sass"]');
   await Promise.all(
@@ -100,10 +186,12 @@ async function transformSASS(element) {
   );
 }
 
-function transformScript(element) {
+async function transformScript(element) {
+  await loadBabel();
+  await loadPresetEnv();
   const scriptTags = element.querySelectorAll('script');
   scriptTags.forEach(script => {
-    script.innerHTML = tryTransform(babelTransformCode(babelOptionsJSX))(
+    script.innerHTML = tryTransform(babelTransformCode(babelOptionsJS))(
       script.innerHTML
     );
   });
@@ -136,9 +224,9 @@ export const htmlTransformer = cond([
   [stubTrue, identity]
 ]);
 
-export const transformers = [
+export const getTransformers = options => [
   replaceNBSP,
-  babelTransformer,
+  babelTransformer(options ? options : {}),
   composeHTML,
   htmlTransformer
 ];

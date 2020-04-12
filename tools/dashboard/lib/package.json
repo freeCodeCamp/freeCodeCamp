@@ -1,0 +1,22 @@
+{
+  "name": "freecodecampcontributelib",
+  "dependencies": {
+    "@octokit/rest": "^15.18.0",
+    "cli-progress": "^2.1.0",
+    "date-fns": "^1.29.0",
+    "dedent": "^0.7.0",
+    "dotenv": "^6.1.0",
+    "form-data": "^2.3.3",
+    "gray-matter": "^4.0.1",
+    "lodash": "^4.17.11",
+    "path": "^0.12.7",
+    "readdirp-walk": "^1.6.0",
+    "travis-ci": "^2.2.0",
+    "util": "^0.11.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "BSD-3-Clause"
+}

@@ -19,7 +19,7 @@ localeTitle: 问题90：立方体数字对
 ```yml
 tests:
   - text: <code>euler90()</code>应该返回1217。
-    testString: 'assert.strictEqual(euler90(), 1217, "<code>euler90()</code> should return 1217.");'
+    testString: assert.strictEqual(euler90(), 1217);
 
 ```
 

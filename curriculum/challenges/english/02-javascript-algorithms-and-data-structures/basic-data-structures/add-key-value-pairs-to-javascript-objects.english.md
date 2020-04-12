@@ -45,15 +45,15 @@ Using the same syntax, we can also <em><strong>add new</strong></em> key-value p
 
 ```yml
 tests:
-  - text: <code>foods</code> is an object
+  - text: <code>foods</code> should be an object.
     testString: assert(typeof foods === 'object');
-  - text: The <code>foods</code> object has a key <code>"bananas"</code> with a value of <code>13</code>
+  - text: The <code>foods</code> object should have a key <code>"bananas"</code> with a value of <code>13</code>.
     testString: assert(foods.bananas === 13);
-  - text: The <code>foods</code> object has a key <code>"grapes"</code> with a value of <code>35</code>
+  - text: The <code>foods</code> object should have a key <code>"grapes"</code> with a value of <code>35</code>.
     testString: assert(foods.grapes === 35);
-  - text: The <code>foods</code> object has a key <code>"strawberries"</code> with a value of <code>27</code>
+  - text: The <code>foods</code> object should have a key <code>"strawberries"</code> with a value of <code>27</code>.
     testString: assert(foods.strawberries === 27);
-  - text: The key-value pairs should be set using dot or bracket notation
+  - text: The key-value pairs should be set using dot or bracket notation.
     testString: assert(code.search(/bananas:/) === -1 && code.search(/grapes:/) === -1 && code.search(/strawberries:/) === -1);
 
 ```
@@ -72,9 +72,9 @@ let foods = {
   plums: 28
 };
 
-// change code below this line
+// Only change code below this line
 
-// change code above this line
+// Only change code above this line
 
 console.log(foods);
 ```
@@ -95,11 +95,9 @@ let foods = {
   plums: 28
 };
 
-// change code below this line
 foods['bananas'] = 13;
 foods['grapes']  = 35;
 foods['strawberries'] = 27;
-// change code above this line
 ```
 
 </section>

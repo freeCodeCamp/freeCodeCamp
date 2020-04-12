@@ -28,13 +28,13 @@ Apply the <code>--penguin-skin</code> variable to the <code>background</code> pr
 
 ```yml
 tests:
-  - text: Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>penguin-top</code> class.
+  - text: The <code>--penguin-skin</code> variable should be applied to the <code>background</code> property of the <code>penguin-top</code> class.
     testString: assert(code.match(/.penguin-top\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}[\s\S]*.penguin-bottom\s{/gi));
-  - text: Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>penguin-bottom</code> class.
+  - text: The <code>--penguin-skin</code> variable should be applied to the <code>background</code> property of the <code>penguin-bottom</code> class.
     testString: assert(code.match(/.penguin-bottom\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}[\s\S]*.right-hand\s{/gi));
-  - text: Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>right-hand</code> class.
+  - text: The <code>--penguin-skin</code> variable should be applied to the <code>background</code> property of the <code>right-hand</code> class.
     testString: assert(code.match(/.right-hand\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}[\s\S]*.left-hand\s{/gi));
-  - text: Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>left-hand</code> class.
+  - text: The <code>--penguin-skin</code> variable should be applied to the <code>background</code> property of the <code>left-hand</code> class.
     testString: assert(code.match(/.left-hand\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}/gi));
 
 ```
@@ -62,9 +62,9 @@ tests:
     top: 10%;
     left: 25%;
 
-    /* change code below */
+    /* Change code below this line */
     background: black;
-    /* change code above */
+    /* Change code above this line */
 
     width: 50%;
     height: 45%;
@@ -75,9 +75,9 @@ tests:
     top: 40%;
     left: 23.5%;
 
-    /* change code below */
+    /* Change code below this line */
     background: black;
-    /* change code above */
+    /* Change code above this line */
 
     width: 53%;
     height: 45%;
@@ -88,9 +88,9 @@ tests:
     top: 0%;
     left: -5%;
 
-    /* change code below */
+    /* Change code below this line */
     background: black;
-    /* change code above */
+    /* Change code above this line */
 
     width: 30%;
     height: 60%;
@@ -103,9 +103,9 @@ tests:
     top: 0%;
     left: 75%;
 
-    /* change code below */
+    /* Change code below this line */
     background: black;
-    /* change code above */
+    /* Change code above this line */
 
     width: 30%;
     height: 60%;

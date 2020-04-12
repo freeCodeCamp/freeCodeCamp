@@ -1,55 +1,61 @@
 import React, { Component, Fragment } from 'react';
-import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { StripeProvider, Elements } from 'react-stripe-elements';
-import { Grid, Row, Col, Button } from '@freecodecamp/react-bootstrap';
+import PropTypes from 'prop-types';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
+import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
 
-import { stripePublicKey, apiLocation } from '../../config/env.json';
+import { stripePublicKey } from '../../config/env.json';
 import { Spacer, Loader } from '../components/helpers';
-import DonateOther from '../components/Donation/components/DonateOther';
-import DonateForm from '../components/Donation/components/DonateForm';
-import DonateText from '../components/Donation/components/DonateText';
-import PoweredByStripe from '../components/Donation/components/poweredByStripe';
-import {
-  signInLoadingSelector,
-  isSignedInSelector,
-  hardGoTo as navigate
-} from '../redux';
+import DonateForm from '../components/Donation/DonateForm';
+import DonateText from '../components/Donation/DonateText';
+import { signInLoadingSelector, userSelector, executeGA } from '../redux';
 import { stripeScriptLoader } from '../utils/scriptLoaders';
 
+const propTypes = {
+  executeGA: PropTypes.func,
+  isDonating: PropTypes.bool,
+  showLoading: PropTypes.bool.isRequired
+};
+
 const mapStateToProps = createSelector(
+  userSelector,
   signInLoadingSelector,
-  isSignedInSelector,
-  (showLoading, isSignedIn) => ({
-    showLoading,
-    isSignedIn
+  ({ isDonating }, showLoading) => ({
+    isDonating,
+    showLoading
   })
 );
 
-const mapDispatchToProps = {
-  navigate
-};
-
-const propTypes = {
-  isSignedIn: PropTypes.bool.isRequired,
-  navigate: PropTypes.func.isRequired,
-  showLoading: PropTypes.bool.isRequired
-};
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      executeGA
+    },
+    dispatch
+  );
 
 export class DonatePage extends Component {
   constructor(...props) {
     super(...props);
     this.state = {
       stripe: null,
-      showOtherOptions: false
+      enableSettings: false
     };
+    this.handleProcessing = this.handleProcessing.bind(this);
     this.handleStripeLoad = this.handleStripeLoad.bind(this);
-    this.toggleOtherOptions = this.toggleOtherOptions.bind(this);
   }
 
   componentDidMount() {
+    this.props.executeGA({
+      type: 'event',
+      data: {
+        category: 'Donation',
+        action: `Displayed donate page`,
+        nonInteraction: true
+      }
+    });
     if (window.Stripe) {
       this.handleStripeLoad();
     } else if (document.querySelector('#stripe-js')) {
@@ -68,6 +74,18 @@ export class DonatePage extends Component {
     }
   }
 
+  handleProcessing(duration, amount) {
+    this.props.executeGA({
+      type: 'event',
+      data: {
+        category: 'donation',
+        action: 'donate page stripe form submission',
+        label: duration,
+        value: amount
+      }
+    });
+  }
+
   handleStripeLoad() {
     // Create Stripe instance once Stripe.js loads
     console.info('stripe has loaded');
@@ -77,54 +95,51 @@ export class DonatePage extends Component {
     }));
   }
 
-  toggleOtherOptions() {
-    this.setState(({ showOtherOptions }) => ({
-      showOtherOptions: !showOtherOptions
-    }));
-  }
-
   render() {
-    const { showOtherOptions, stripe } = this.state;
-    const { showLoading, isSignedIn, navigate } = this.props;
+    const { stripe } = this.state;
+    const { showLoading, isDonating } = this.props;
 
     if (showLoading) {
-      return <Loader fullScreen={true} />;
-    }
-
-    if (!showLoading && !isSignedIn) {
-      navigate(`${apiLocation}/signin?returnTo=donate`);
       return <Loader fullScreen={true} />;
     }
 
     return (
       <Fragment>
         <Helmet title='Support our nonprofit | freeCodeCamp.org' />
-        <Spacer />
-        <Grid>
+        <Grid className='donate-page-wrapper'>
+          <Spacer />
           <Row>
             <Col sm={10} smOffset={1} xs={12}>
-              <h2 className='text-center'>Become a Supporter</h2>
-              <DonateText />
-            </Col>
-            <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-              <hr />
-              <StripeProvider stripe={stripe}>
-                <Elements>
-                  <DonateForm />
-                </Elements>
-              </StripeProvider>
-              <div className='text-center'>
-                <PoweredByStripe />
-                <Spacer />
-                <Button bsStyle='link' onClick={this.toggleOtherOptions}>
-                  {`${showOtherOptions ? 'Hide' : 'Show'} other ways to donate`}
-                </Button>
-              </div>
+              <h1 className='text-center'>
+                {isDonating
+                  ? 'Thank You for Your Support'
+                  : 'Become a Supporter'}
+              </h1>
               <Spacer />
             </Col>
           </Row>
+          <Row>
+            {isDonating ? (
+              <Col md={6} mdOffset={3}>
+                <DonateText />
+              </Col>
+            ) : (
+              <Fragment>
+                <Col md={6}>
+                  <DonateForm
+                    enableDonationSettingsPage={this.enableDonationSettingsPage}
+                    handleProcessing={this.handleProcessing}
+                    stripe={stripe}
+                  />
+                </Col>
+                <Col md={6}>
+                  <DonateText />
+                </Col>
+              </Fragment>
+            )}
+          </Row>
+          <Spacer />
         </Grid>
-        {showOtherOptions && <DonateOther />}
       </Fragment>
     );
   }

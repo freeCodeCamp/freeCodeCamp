@@ -8,7 +8,7 @@ localeTitle: 遗失的信件
 ---
 
 ## Description
-<section id="description">在传递的字母范围内找到丢失的字母并将其返回。如果范围内存在所有字母，则返回undefined。如果卡住，请记得使用<a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> 。尝试配对程序。编写自己的代码。 </section>
+<section id="description">在传递的字母范围内找到丢失的字母并将其返回。如果范围内存在所有字母，则返回undefined。如果卡住，请记得使用<a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> 。尝试配对程序。编写自己的代码。 </section>
 
 ## Instructions
 <section id="instructions">
@@ -20,15 +20,15 @@ localeTitle: 遗失的信件
 ```yml
 tests:
   - text: <code>fearNotLetter(&quot;abce&quot;)</code>应返回“d”。
-    testString: 'assert.deepEqual(fearNotLetter("abce"), "d", "<code>fearNotLetter("abce")</code> should return "d".");'
+    testString: assert.deepEqual(fearNotLetter('abce'), 'd');
   - text: <code>fearNotLetter(&quot;abcdefghjklmno&quot;)</code>应该返回“i”。
-    testString: 'assert.deepEqual(fearNotLetter("abcdefghjklmno"), "i", "<code>fearNotLetter("abcdefghjklmno")</code> should return "i".");'
+    testString: assert.deepEqual(fearNotLetter('abcdefghjklmno'), 'i');
   - text: <code>fearNotLetter(&quot;stvwx&quot;)</code>应该返回“u”。
-    testString: 'assert.deepEqual(fearNotLetter("stvwx"), "u", "<code>fearNotLetter("stvwx")</code> should return "u".");'
+    testString: assert.deepEqual(fearNotLetter('stvwx'), 'u');
   - text: <code>fearNotLetter(&quot;bcdf&quot;)</code>应返回“e”。
-    testString: 'assert.deepEqual(fearNotLetter("bcdf"), "e", "<code>fearNotLetter("bcdf")</code> should return "e".");'
+    testString: assert.deepEqual(fearNotLetter('bcdf'), 'e');
   - text: <code>fearNotLetter(&quot;abcdefghijklmnopqrstuvwxyz&quot;)</code>应返回undefined。
-    testString: 'assert.isUndefined(fearNotLetter("abcdefghijklmnopqrstuvwxyz"), "<code>fearNotLetter("abcdefghijklmnopqrstuvwxyz")</code> should return undefined.");'
+    testString: assert.isUndefined(fearNotLetter('abcdefghijklmnopqrstuvwxyz'));
 
 ```
 

@@ -78,7 +78,7 @@ Deals can also be checked against <a href="https://freecellgamesolutions.com/" t
 
 ```yml
 tests:
-  - text: <code>dealFreeCell</code> is a function.
+  - text: <code>dealFreeCell</code> should be a function.
     testString: assert(typeof dealFreeCell === 'function');
   - text: <code>dealFreeCell(seed)</code> should return an object.
     testString: assert(typeof dealFreeCell(1) === 'object');

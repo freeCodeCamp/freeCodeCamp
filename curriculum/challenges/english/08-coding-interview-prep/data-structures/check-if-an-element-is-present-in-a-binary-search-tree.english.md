@@ -23,13 +23,13 @@ In this challenge, we will create a utility for our tree. Write a method <code>i
 
 ```yml
 tests:
-  - text: The <code>BinarySearchTree</code> data structure exists.
+  - text: The <code>BinarySearchTree</code> data structure should exist.
     testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() }; return (typeof test == 'object')})());
-  - text: The binary search tree has a method called <code>isPresent</code>.
+  - text: The binary search tree should have a method called <code>isPresent</code>.
     testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.isPresent == 'function')})());
-  - text: The <code>isPresent</code> method correctly checks for the presence or absence of elements added to the tree.
+  - text: The <code>isPresent</code> method should correctly check for the presence or absence of elements added to the tree.
     testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.isPresent !== 'function') { return false; }; test.add(4); test.add(7); test.add(411); test.add(452); return ( test.isPresent(452) && test.isPresent(411) && test.isPresent(7) && !test.isPresent(100) ); })());
-  - text: <code>isPresent</code> handles cases where the tree is empty.
+  - text: <code>isPresent</code> should handle cases where the tree is empty.
     testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.isPresent !== 'function') { return false; }; return test.isPresent(5) == false; })());
 ```
 
@@ -61,36 +61,39 @@ function BinarySearchTree() {
 <div id='js-teardown'>
 
 ```js
-BinarySearchTree.prototype = {
-  add: function(value) {
-    var node = this.root;
-    if (node == null) {
-      this.root = new Node(value);
-      return;
-    } else {
-      function searchTree(node) {
-        if (value < node.value) {
-          if (node.left == null) {
-            node.left = new Node(value);
-            return;
-          } else if (node.left != null) {
-            return searchTree(node.left);
+BinarySearchTree.prototype = Object.assign(
+  BinarySearchTree.prototype,
+  {
+    add: function(value) {
+      var node = this.root;
+      if (node == null) {
+        this.root = new Node(value);
+        return;
+      } else {
+        function searchTree(node) {
+          if (value < node.value) {
+            if (node.left == null) {
+              node.left = new Node(value);
+              return;
+            } else if (node.left != null) {
+              return searchTree(node.left);
+            }
+          } else if (value > node.value) {
+            if (node.right == null) {
+              node.right = new Node(value);
+              return;
+            } else if (node.right != null) {
+              return searchTree(node.right);
+            }
+          } else {
+            return null;
           }
-        } else if (value > node.value) {
-          if (node.right == null) {
-            node.right = new Node(value);
-            return;
-          } else if (node.right != null) {
-            return searchTree(node.right);
-          }
-        } else {
-          return null;
         }
+        return searchTree(node);
       }
-      return searchTree(node);
     }
   }
-};
+);
 ```
 
 </div>

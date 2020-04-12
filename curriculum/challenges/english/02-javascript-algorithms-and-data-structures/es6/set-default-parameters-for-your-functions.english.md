@@ -11,9 +11,8 @@ In order to help us create more flexible functions, ES6 introduces <dfn>default 
 Check out this code:
 
 ```js
-function greeting(name = "Anonymous") {
-  return "Hello " + name;
-}
+const greeting = (name = "Anonymous") => "Hello " + name;
+
 console.log(greeting("John")); // Hello John
 console.log(greeting()); // Hello Anonymous
 ```
@@ -35,7 +34,7 @@ tests:
     testString: assert(increment(5, 2) === 7);
   - text: The result of <code>increment(5)</code> should be <code>6</code>.
     testString: assert(increment(5) === 6);
-  - text: Default parameter <code>1</code> was used for <code>value</code>.
+  - text: A default parameter value of <code>1</code> should be used for <code>value</code>.
     testString: assert(code.match(/value\s*=\s*1/g));
 
 ```
@@ -48,10 +47,9 @@ tests:
 <div id='js-seed'>
 
 ```js
+// Only change code below this line
 const increment = (number, value) => number + value;
-
-console.log(increment(5, 2)); // returns 7
-console.log(increment(5)); // returns 6
+// Only change code above this line
 ```
 
 </div>

@@ -10,8 +10,9 @@ body {
 
 .btn-cta-big {
   max-height: 100%;
-  font-size: 27px;
+  font-size: 1rem;
   white-space: normal;
+  width: 100%;
 }
 
 .default-layout {
@@ -27,21 +28,21 @@ h1 {
   font-weight: 700;
   font-size: 1.5rem;
   font-family: 'Roboto Mono', monospace;
-  margin: 1.2rem 0 1.2rem;
+  margin: 0.6rem 0;
 }
 h2 {
   color: var(--secondary-color);
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-family: 'Roboto Mono', monospace;
-  margin: 1.2rem 0 1.2rem;
+  margin: 0.6rem 0;
 }
 h3 {
   color: var(--secondary-color);
   font-weight: 700;
   font-size: 1.1rem;
   font-family: 'Roboto Mono', monospace;
-  margin: 0 0 1.2rem;
+  margin: 0 0 0.6rem;
 }
 
 h4,
@@ -62,12 +63,12 @@ p {
 }
 
 .big-heading {
-  font-size: 2.5rem !important;
+  font-size: 1.5rem !important;
   overflow-wrap: break-word;
 }
 
 .medium-heading {
-  font-size: 1.5rem !important;
+  font-size: 1.25rem !important;
   font-weight: normal;
 }
 
@@ -77,22 +78,22 @@ p {
 
 @media (max-width: 500px) {
   .big-heading {
-    font-size: 1.6rem !important;
+    font-size: 1.2rem !important;
   }
   .medium-heading {
-    font-size: 1.4rem !important;
+    font-size: 1.1rem !important;
   }
   h1 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
   h2 {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
   h3 {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
   .btn-cta {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 }
 
@@ -122,11 +123,19 @@ a:focus {
   color: var(--secondary-color);
 }
 
-.fcc-modal .close {
-  color: var(--secondary-color);
-  opacity: 100%;
+button.close {
+  color: inherit;
+  background-color: transparent;
   font-size: 28px;
+  opacity: 0.5;
   text-shadow: none;
+}
+
+button.close:hover,
+button.close:focus {
+  color: inherit;
+  opacity: 1;
+  background-color: transparent;
 }
 
 .modal-content {
@@ -154,6 +163,8 @@ input[type='submit'],
 button:hover,
 input[type='submit']:hover,
 .btn:hover,
+.btn-default.active:hover,
+.btn-default.active,
 .btn-primary:hover {
   border-color: var(--secondary-color);
   background-color: var(--secondary-color);
@@ -208,20 +219,19 @@ fieldset[disabled] .btn-primary.focus {
 }
 
 .btn-cta {
-  background-color: #ffac33;
-  background-image: linear-gradient(#ffcc4d, #ffac33);
-  -ms-filter: 'progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffcc4d,  endColorstr=#ffac33,  GradientType=0)';
-  border-color: #f1a02a;
+  background-color: #feac32;
+  background-image: linear-gradient(#fecc4c, #ffac33);
+  border-width: 3px;
+  border-color: #feac32;
   color: #0a0a23 !important;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-  border: none;
 }
 .btn-cta:hover,
 .btn-cta:focus,
 .btn-cta:active:hover {
-  background-color: #e99110;
-  background-image: linear-gradient(#ffcc4d, #e99110);
-  -ms-filter: 'progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffcc4d,  endColorstr=#e99110,  GradientType=0)';
+  background-color: #fecc4c;
+  border-width: 3px;
+  border-color: #f1a02a;
+  background-image: none;
   color: #0a0a23 !important;
 }
 .btn-cta:active {
@@ -319,16 +329,45 @@ hr {
   border-radius: 0px;
 }
 
+.dropdown-menu {
+  background-color: var(--secondary-color);
+}
+
 .dropdown-menu > li > a {
   color: var(--secondary-background);
 }
-.dropdown-menu {
-  background-color: var(--secondary-color);
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+  color: var(--secondary-color);
+  background-color: var(--secondary-background);
 }
 
 .table-striped > tbody > tr:nth-child(2n + 1) > td,
 .table-striped > tbody > tr:nth-child(2n + 1) > th {
   background-color: var(--tertiary-background);
+}
+
+.challenge-instructions table {
+  display: inline-block;
+  overflow: auto;
+}
+
+.challenge-instructions table thead {
+  display: table-header-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+
+.challenge-instructions table th {
+  font-weight: 700;
+}
+
+.challenge-instructions table th,
+.challenge-instructions table td {
+  padding: 6px 13px;
+  border: 1px solid var(--secondary-color);
+  text-align: center;
 }
 
 .help-block {

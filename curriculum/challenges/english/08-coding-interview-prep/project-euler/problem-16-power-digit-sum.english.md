@@ -7,8 +7,11 @@ forumTopicId: 301791
 
 ## Description
 <section id='description'>
+
 2<sup>15</sup> = 32768 and the sum of its digits is 3 + 2 + 7 + 6 + 8 = 26.
-What is the sum of the digits of the number 2<sup><code>exponent</code></sup>?
+
+What is the sum of the digits of the number 2<sup>`exponent`</sup>?
+
 </section>
 
 ## Instructions
@@ -21,6 +24,8 @@ What is the sum of the digits of the number 2<sup><code>exponent</code></sup>?
 
 ```yml
 tests:
+  - text: <code>powerDigitSum(15)</code> should return a number.
+    testString: assert(typeof powerDigitSum(15) === 'number');
   - text: <code>powerDigitSum(15)</code> should return 26.
     testString: assert.strictEqual(powerDigitSum(15), 26);
   - text: <code>powerDigitSum(128)</code> should return 166.

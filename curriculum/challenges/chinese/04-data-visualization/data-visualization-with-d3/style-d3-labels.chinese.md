@@ -18,9 +18,9 @@ localeTitle: 风格D3标签
 ```yml
 tests:
   - text: 标签应该都具有红色的<code>fill</code>颜色。
-    testString: 'assert($("text").css("fill") == "rgb(255, 0, 0)", "The labels should all have a <code>fill</code> color of red.");'
+    testString: assert($('text').css('fill') == 'rgb(255, 0, 0)');
   - text: 标签应该都具有25像素的<code>font-size</code> 。
-    testString: 'assert($("text").css("font-size") == "25px", "The labels should all have a <code>font-size</code> of 25 pixels.");'
+    testString: assert($('text').css('font-size') == '25px');
 
 ```
 

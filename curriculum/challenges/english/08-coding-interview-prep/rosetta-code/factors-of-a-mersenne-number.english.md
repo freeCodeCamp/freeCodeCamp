@@ -46,7 +46,7 @@ Using the above method find a factor of  <code>2<sup>929</sup>-1</code> (aka M92
 
 ```yml
 tests:
-  - text: <code>check_mersenne</code> is a function.
+  - text: <code>check_mersenne</code> should be a function.
     testString: assert(typeof check_mersenne === 'function');
   - text: <code>check_mersenne(3)</code> should return a string.
     testString: assert(typeof check_mersenne(3) == 'string');

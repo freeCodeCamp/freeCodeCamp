@@ -23,9 +23,9 @@ Color your <code>h3</code> element with the <code>text-primary</code> Bootstrap 
 
 ```yml
 tests:
-  - text: Add a <code>h3</code> element to your page.
+  - text: You should add an <code>h3</code> element to your page.
     testString: assert($("h3") && $("h3").length > 0);
-  - text: Make sure your <code>h3</code> element has a closing tag.
+  - text: Your <code>h3</code> element should have a closing tag.
     testString: assert(code.match(/<\/h3>/g) && code.match(/<h3/g) && code.match(/<\/h3>/g).length === code.match(/<h3/g).length);
   - text: Your <code>h3</code> element should be colored by applying the class <code>text-primary</code>
     testString: assert($("h3").hasClass("text-primary"));

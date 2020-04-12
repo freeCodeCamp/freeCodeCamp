@@ -19,6 +19,14 @@ export const stripeScriptLoader = onload =>
     onload
   );
 
+export const servicebotScriptLoader = () =>
+  scriptLoader(
+    'servicebot-billing-settings-embed.js',
+    'servicebot-billing-settings-embed.js',
+    true,
+    'https://js.servicebot.io/embeds/servicebot-billing-settings-embed.js'
+  );
+
 export const mathJaxScriptLoader = () =>
   scriptLoader(
     'mathjax',
@@ -31,12 +39,13 @@ export const mathJaxScriptLoader = () =>
       tex2jax: {
         inlineMath: [['$', '$'], ['\\\\(', '\\\\)']],
         processEscapes: true,
-        processClass: 'rosetta-code'
+        processClass: 'rosetta-code|project-euler'
       }
     });
     MathJax.Hub.Queue([
       'Typeset',
       MathJax.Hub,
-      document.querySelector('.rosetta-code')
+      document.querySelector('.rosetta-code'),
+      document.querySelector('.project-euler')
     ]);`
   );

@@ -7,7 +7,7 @@ forumTopicId: 301333
 
 ## Description
 <section id='description'>
-The last challenge created an object with various properties, now you'll see how to access the values of those properties. Here's an example:
+The last challenge created an object with various properties. Now you'll see how to access the values of those properties. Here's an example:
 
 ```js
 let duck = {
@@ -50,7 +50,7 @@ let dog = {
   name: "Spot",
   numLegs: 4
 };
-// Add your code below this line
+// Only change code below this line
 
 
 ```

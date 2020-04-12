@@ -1,4 +1,4 @@
-import { transformers } from '../rechallenge/transformers';
+import { getTransformers } from '../rechallenge/transformers';
 import { cssToHtml, jsToHtml, concatHtml } from '../rechallenge/builders.js';
 import { challengeTypes } from '../../../../utils/challengeTypes';
 import createWorker from './worker-executor';
@@ -8,9 +8,15 @@ import {
   createMainFramer
 } from './frame';
 
+// the config files are created during the build, but not before linting
+// eslint-disable-next-line import/no-unresolved
+import { filename as runner } from '../../../../config/frame-runner';
+// eslint-disable-next-line import/no-unresolved
+import { filename as testEvaluator } from '../../../../config/test-evaluator';
+
 const frameRunner = [
   {
-    src: '/js/frame-runner.js'
+    src: `/js/${runner}.js`
   }
 ];
 
@@ -65,11 +71,16 @@ const buildFunctions = {
   [challengeTypes.backEndProject]: buildBackendChallenge
 };
 
-export async function buildChallenge(challengeData) {
+export function canBuildChallenge(challengeData) {
+  const { challengeType } = challengeData;
+  return buildFunctions.hasOwnProperty(challengeType);
+}
+
+export async function buildChallenge(challengeData, options) {
   const { challengeType } = challengeData;
   let build = buildFunctions[challengeType];
   if (build) {
-    return build(challengeData);
+    return build(challengeData, options);
   }
   throw new Error(`Cannot build challenge of type ${challengeType}`);
 }
@@ -79,7 +90,7 @@ const testRunners = {
   [challengeTypes.html]: getDOMTestRunner,
   [challengeTypes.backend]: getDOMTestRunner
 };
-export function getTestRunner(buildData, proxyLogger, document) {
+export function getTestRunner(buildData, { proxyLogger }, document) {
   const { challengeType } = buildData;
   const testRunner = testRunners[challengeType];
   if (testRunner) {
@@ -91,11 +102,11 @@ export function getTestRunner(buildData, proxyLogger, document) {
 function getJSTestRunner({ build, sources }, proxyLogger) {
   const code = sources && 'index' in sources ? sources['index'] : '';
 
-  const testWorker = createWorker('test-evaluator', { terminateWorker: true });
+  const testWorker = createWorker(testEvaluator, { terminateWorker: true });
 
-  return (testString, testTimeout) => {
+  return (testString, testTimeout, firstTest = true) => {
     return testWorker
-      .execute({ build, testString, code, sources }, testTimeout)
+      .execute({ build, testString, code, sources, firstTest }, testTimeout)
       .on('LOG', proxyLogger).done;
   };
 }
@@ -112,7 +123,7 @@ export function buildDOMChallenge({ files, required = [], template = '' }) {
   const finalRequires = [...globalRequires, ...required, ...frameRunner];
   const loadEnzyme = Object.keys(files).some(key => files[key].ext === 'jsx');
   const toHtml = [jsToHtml, cssToHtml];
-  const pipeLine = composeFunctions(...transformers, ...toHtml);
+  const pipeLine = composeFunctions(...getTransformers(), ...toHtml);
   const finalFiles = Object.keys(files)
     .map(key => files[key])
     .map(pipeLine);
@@ -126,8 +137,9 @@ export function buildDOMChallenge({ files, required = [], template = '' }) {
     }));
 }
 
-export function buildJSChallenge({ files }) {
-  const pipeLine = composeFunctions(...transformers);
+export function buildJSChallenge({ files }, options) {
+  const pipeLine = composeFunctions(...getTransformers(options));
+
   const finalFiles = Object.keys(files)
     .map(key => files[key])
     .map(pipeLine);
@@ -153,10 +165,13 @@ export function buildBackendChallenge({ url }) {
   };
 }
 
-export function updatePreview(buildData, document) {
+export async function updatePreview(buildData, document, proxyLogger) {
   const { challengeType } = buildData;
+
   if (challengeType === challengeTypes.html) {
-    createMainFramer(document)(buildData);
+    await new Promise(resolve =>
+      createMainFramer(document, resolve, proxyLogger)(buildData)
+    );
   } else {
     throw new Error(`Cannot show preview for challenge type ${challengeType}`);
   }
@@ -167,4 +182,15 @@ export function challengeHasPreview({ challengeType }) {
     challengeType === challengeTypes.html ||
     challengeType === challengeTypes.modern
   );
+}
+
+export function isJavaScriptChallenge({ challengeType }) {
+  return (
+    challengeType === challengeTypes.js ||
+    challengeType === challengeTypes.bonfire
+  );
+}
+
+export function isLoopProtected(challengeMeta) {
+  return challengeMeta.superBlock !== 'Coding Interview Prep';
 }

@@ -18,13 +18,13 @@ localeTitle: 使用split方法将字符串拆分为数组
 ```yml
 tests:
   - text: 您的代码应该使用<code>split</code>方法。
-    testString: 'assert(code.match(/\.split/g), "Your code should use the <code>split</code> method.");'
+    testString: assert(code.match(/\.split/g));
   - text: '<code>splitify(&quot;Hello World,I-am code&quot;)</code>应返回<code>[&quot;Hello&quot;, &quot;World&quot;, &quot;I&quot;, &quot;am&quot;, &quot;code&quot;]</code> 。'
-    testString: 'assert(JSON.stringify(splitify("Hello World,I-am code")) === JSON.stringify(["Hello", "World", "I", "am", "code"]), "<code>splitify("Hello World,I-am code")</code> should return <code>["Hello", "World", "I", "am", "code"]</code>.");'
+    testString: assert(JSON.stringify(splitify("Hello World,I-am code")) === JSON.stringify(["Hello", "World", "I", "am", "code"]));
   - text: '<code>splitify(&quot;Earth-is-our home&quot;)</code>应该返回<code>[&quot;Earth&quot;, &quot;is&quot;, &quot;our&quot;, &quot;home&quot;]</code> 。'
-    testString: 'assert(JSON.stringify(splitify("Earth-is-our home")) === JSON.stringify(["Earth", "is", "our", "home"]), "<code>splitify("Earth-is-our home")</code> should return <code>["Earth", "is", "our", "home"]</code>.");'
+    testString: assert(JSON.stringify(splitify("Earth-is-our home")) === JSON.stringify(["Earth", "is", "our", "home"]));
   - text: '<code>splitify(&quot;This.is.a-sentence&quot;)</code>应该返回<code>[&quot;This&quot;, &quot;is&quot;, &quot;a&quot;, &quot;sentence&quot;]</code> 。'
-    testString: 'assert(JSON.stringify(splitify("This.is.a-sentence")) === JSON.stringify(["This", "is", "a", "sentence"]), "<code>splitify("This.is.a-sentence")</code> should return <code>["This", "is", "a", "sentence"]</code>.");'
+    testString: assert(JSON.stringify(splitify("This.is.a-sentence")) === JSON.stringify(["This", "is", "a", "sentence"]));
 
 ```
 

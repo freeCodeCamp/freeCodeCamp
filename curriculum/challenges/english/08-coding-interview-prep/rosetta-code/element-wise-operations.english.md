@@ -29,7 +29,7 @@ The first parameter will be the operation to be performed, for example, "m_add" 
 
 ```yml
 tests:
-  - text: <code>operation</code> is a function.
+  - text: <code>operation</code> should be a function.
     testString: assert(typeof operation === 'function');
   - text: <code>operation("m_add",[[1,2],[3,4]],[[1,2],[3,4]])</code> should return <code>[[2,4],[6,8]]</code>.
     testString: assert.deepEqual(operation('m_add', [[1, 2], [3, 4]], [[1, 2], [3, 4]]), [[2, 4], [6, 8]]);

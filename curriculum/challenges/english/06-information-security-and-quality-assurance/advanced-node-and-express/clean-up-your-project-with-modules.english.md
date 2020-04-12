@@ -9,7 +9,7 @@ forumTopicId: 301549
 <section id='description'>
 As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/edit/#!/remix/clone-from-repo?REPO_URL=https://github.com/freeCodeCamp/boilerplate-advancednode/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a>.
 Right now everything you have is in your server.js file. This can lead to hard to manage code that isn't very expandable.
-Create 2 new files: Routes.js and Auth.js
+Create 2 new files: routes.js and auth.js
 Both should start with the following code:
 
 ```js
@@ -36,7 +36,7 @@ Congratulations- you're at the end of this section of Advanced Node and Express 
 
 ```yml
 tests:
-  - text: Modules present
+  - text: Modules should be present.
     testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /require\s*\(('|")\.\/routes(\.js)?\1\)/gi, 'You should have required your new files'); assert.match(data, /mongo.connect[^]*routes/gi, 'Your new modules should be called after your connection to the database'); }, xhr => { throw new Error(xhr.statusText); })
 
 ```

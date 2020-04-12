@@ -19,19 +19,19 @@ localeTitle: 创建优先级队列类
 ```yml
 tests:
   - text: 您的<code>Queue</code>类应该有一个<code>enqueue</code>方法。
-    testString: 'assert((function(){var test = new PriorityQueue();  return (typeof test.enqueue === "function")}()), "Your <code>Queue</code> class should have a <code>enqueue</code> method.");'
+    testString: assert((function(){var test = new PriorityQueue();  return (typeof test.enqueue === 'function')}()));
   - text: 您的<code>Queue</code>类应该有一个<code>dequeue</code>方法。
-    testString: 'assert((function(){var test = new PriorityQueue();  return (typeof test.dequeue === "function")}()), "Your <code>Queue</code> class should have a <code>dequeue</code> method.");'
+    testString: assert((function(){var test = new PriorityQueue();  return (typeof test.dequeue === 'function')}()));
   - text: 您的<code>Queue</code>类应该有一个<code>size</code>方法。
-    testString: 'assert((function(){var test = new PriorityQueue();  return (typeof test.size === "function")}()), "Your <code>Queue</code> class should have a <code>size</code> method.");'
+    testString: assert((function(){var test = new PriorityQueue();  return (typeof test.size === 'function')}()));
   - text: 您的<code>Queue</code>类应该有一个<code>isEmpty</code>方法。
-    testString: 'assert((function(){var test = new PriorityQueue();  return (typeof test.isEmpty === "function")}()), "Your <code>Queue</code> class should have an <code>isEmpty</code> method.");'
+    testString: assert((function(){var test = new PriorityQueue();  return (typeof test.isEmpty === 'function')}()));
   - text: 当项目入队和出列时，您的PriorityQueue应使用<code>size</code>方法正确跟踪当前项目数。
-    testString: 'assert((function(){var test = new PriorityQueue(); test.enqueue(["David Brown", 2]); test.enqueue(["Jon Snow", 1]); var size1 = test.size(); test.dequeue(); var size2 = test.size(); test.enqueue(["A", 3]); test.enqueue(["B", 3]); test.enqueue(["C", 3]); return (size1 === 2 && size2 === 1 && test.size() === 4)}()), "Your PriorityQueue should correctly keep track of the current number of items using the <code>size</code> method as items are enqueued and dequeued.");'
+    testString: assert((function(){var test = new PriorityQueue(); test.enqueue(['David Brown', 2]); test.enqueue(['Jon Snow', 1]); var size1 = test.size(); test.dequeue(); var size2 = test.size(); test.enqueue(['A', 3]); test.enqueue(['B', 3]); test.enqueue(['C', 3]); return (size1 === 2 && size2 === 1 && test.size() === 4)}()));
   - text: 当队列为空时， <code>isEmpty</code>方法应该返回<code>true</code> 。
-    testString: 'assert((function(){var test = new PriorityQueue(); test.enqueue(["A", 1]); test.enqueue(["B", 1]); test.dequeue(); var first = test.isEmpty(); test.dequeue(); return (!first && test.isEmpty()); }()), "The <code>isEmpty</code> method should return <code>true</code> when the queue is empty.");'
+    testString: assert((function(){var test = new PriorityQueue(); test.enqueue(['A', 1]); test.enqueue(['B', 1]); test.dequeue(); var first = test.isEmpty(); test.dequeue(); return (!first && test.isEmpty()); }()));
   - text: 优先级队列应该在具有较低优先级的项之前返回具有较高优先级的项，否则以先进先出顺序返回项。
-    testString: 'assert((function(){var test = new PriorityQueue(); test.enqueue(["A", 5]); test.enqueue(["B", 5]); test.enqueue(["C", 5]); test.enqueue(["D", 3]); test.enqueue(["E", 1]); test.enqueue(["F", 7]); var result = []; result.push(test.dequeue()); result.push(test.dequeue()); result.push(test.dequeue()); result.push(test.dequeue()); result.push(test.dequeue()); result.push(test.dequeue()); return result.join("") === "EDABCF";}()), "The priority queue should return items with a higher priority before items with a lower priority and return items in first-in-first-out order otherwise.");'
+    testString: assert((function(){var test = new PriorityQueue(); test.enqueue(['A', 5]); test.enqueue(['B', 5]); test.enqueue(['C', 5]); test.enqueue(['D', 3]); test.enqueue(['E', 1]); test.enqueue(['F', 7]); var result = []; result.push(test.dequeue()); result.push(test.dequeue()); result.push(test.dequeue()); result.push(test.dequeue()); result.push(test.dequeue()); result.push(test.dequeue()); return result.join('') === 'EDABCF';}()));
 
 ```
 

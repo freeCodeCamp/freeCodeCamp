@@ -8,7 +8,7 @@ localeTitle: Создание кнопки бутстрапа с блочным 
 
 ## Description
 <section id='description'>
-Обычно ваши элементы <code>button</code> с <code>btn</code> и <code>btn-default</code> имеют только ширину, чем текст, который они содержат. Например: <code>&lt;button class=&quot;btn btn-default&quot;&gt;Submit&lt;/button&gt;</code> Эта кнопка будет только шириной, чем слово «Отправить». <button class="btn btn-default">Представьте,</button> заставив их блокировать элементы дополнительным классом <code>btn-block</code> , ваша кнопка будет растягиваться, чтобы заполнить все горизонтальное пространство вашей страницы, и все последующие за ней элементы будут перетекать в «новую строку» под блоком. <code>&lt;button class=&quot;btn btn-default btn-block&quot;&gt;Submit&lt;/button&gt;</code> Эта кнопка займет 100% доступной ширины. <button class="btn btn-default btn-block">Отправить</button> Обратите внимание , что эти кнопки все еще нуждаются в <code>btn</code> классе. Добавьте класс <code>btn-block</code> Bootstrap в вашу кнопку Bootstrap.
+Обычно ваши элементы <code>button</code> с классами <code>btn</code> и <code>btn-default</code> имеют ширину текста, который они содержат. Например: <code>&lt;button class=&quot;btn btn-default&quot;&gt;Submit&lt;/button&gt;</code>. Ширина этой кнопки равна ширине слова «Submit». С помощью добавления дополнительного класса <code>btn-block</code> можно заставить вашу кнопку растянуться на всю ширину вашей страницы, а все последующие за ней элементы будут перетекать в «новую строку» под блоком. <code>&lt;button class=&quot;btn btn-default btn-block&quot;&gt;Submit&lt;/button&gt;</code> Эта кнопка займет 100% доступной ширины. <button class="btn btn-default btn-block">Submit</button> Обратите внимание, что эти кнопки все еще нуждаются в <code>btn</code> классе. Добавьте класс <code>btn-block</code> Bootstrap в вашу кнопку.
 </section>
 
 ## Instructions
@@ -21,11 +21,11 @@ localeTitle: Создание кнопки бутстрапа с блочным 
 
 ```yml
 tests:
-  - text: Your button should still have the <code>btn</code> and <code>btn-default</code> classes.
+  - text: Ваша кнопка всё ещё должна иметь классы <code>btn</code> и <code>btn-default</code>.
     testString: assert($("button").hasClass("btn") && $("button").hasClass("btn-default"));
-  - text: Your button should have the class <code>btn-block</code>.
+  - text: Ваша кнопка должна иметь класс <code>btn-block</code>.
     testString: assert($("button").hasClass("btn-block"));
-  - text: Make sure all your <code>button</code> elements have a closing tag.
+  - text: Убедитесь, что все <code>button</code>-элементы имеют закрывающий тег.
     testString: assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length);
 
 ```

@@ -4,26 +4,30 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Modal } from '@freecodecamp/react-bootstrap';
 
-import ga from '../../../analytics';
 import { closeModal, isVideoModalOpenSelector } from '../redux';
+import { executeGA } from '../../../redux';
 
 import './video-modal.css';
 
 const mapStateToProps = state => ({ isOpen: isVideoModalOpenSelector(state) });
 const mapDispatchToProps = dispatch =>
-  bindActionCreators({ closeVideoModal: () => closeModal('video') }, dispatch);
+  bindActionCreators(
+    { closeVideoModal: () => closeModal('video'), executeGA },
+    dispatch
+  );
 
 const propTypes = {
   closeVideoModal: PropTypes.func.isRequired,
+  executeGA: PropTypes.func,
   isOpen: PropTypes.bool,
   videoUrl: PropTypes.string
 };
 
 export class VideoModal extends Component {
   render() {
-    const { isOpen, closeVideoModal, videoUrl } = this.props;
+    const { isOpen, closeVideoModal, videoUrl, executeGA } = this.props;
     if (isOpen) {
-      ga.modalview('/video-modal');
+      executeGA({ type: 'modal', data: '/completion-modal' });
     }
     return (
       <Modal

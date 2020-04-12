@@ -16,7 +16,7 @@ const propTypes = {
 
 const BigCallToAction = () => (
   <Row>
-    <Col sm={10} smOffset={1} xs={12}>
+    <Col md={6} mdOffset={3} sm={10} smOffset={1} xs={12}>
       <Login block={true}>Sign in and get started (it's free)</Login>
     </Col>
   </Row>
@@ -28,7 +28,7 @@ export const Landing = ({ edges }) => {
   return (
     <Fragment>
       <Helmet>
-        <title>Learn to code | freeCodeCamp.org</title>
+        <title>Learn to code at home | freeCodeCamp.org</title>
       </Helmet>
       <main className='landing-page'>
         <Spacer />
@@ -39,7 +39,9 @@ export const Landing = ({ edges }) => {
                 Welcome to freeCodeCamp.org
               </h1>
               <Spacer />
-              <h2 className='medium-heading text-center'>Learn to code.</h2>
+              <h2 className='medium-heading text-center'>
+                Learn to code at home.
+              </h2>
               <h2 className='medium-heading text-center'>Build projects.</h2>
               <h2 className='medium-heading text-center'>
                 Earn certifications.
