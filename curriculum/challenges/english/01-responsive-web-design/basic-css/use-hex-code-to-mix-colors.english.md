@@ -55,16 +55,16 @@ tests:
 ```html
 <style>
   .red-text {
-    color: black;
+    color: #FF0000;
   }
   .green-text {
-    color: black;
+    color: #00FF00;
   }
   .dodger-blue-text {
-    color: black;
+    color: #1E90FF;
   }
   .orange-text {
-    color: black;
+    color:  #FFA500;
   }
 </style>
 
