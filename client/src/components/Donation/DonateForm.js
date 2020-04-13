@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
@@ -8,9 +8,10 @@ import {
   Row,
   Col,
   ToggleButtonGroup,
-  ToggleButton
+  ToggleButton,
+  Button
 } from '@freecodecamp/react-bootstrap';
-import { StripeProvider, Elements } from 'react-stripe-elements';
+// import { StripeProvider, Elements } from 'react-stripe-elements';
 
 import {
   amountsConfig,
@@ -19,7 +20,7 @@ import {
   defaultStateConfig
 } from '../../../../config/donation-settings';
 import Spacer from '../helpers/Spacer';
-import DonateFormChildViewForHOC from './DonateFormChildViewForHOC';
+// import DonateFormChildViewForHOC from './DonateFormChildViewForHOC';
 import PaypalButton from './PaypalButton';
 import DonateCompletion from './DonateCompletion';
 import {
@@ -201,23 +202,47 @@ class DonateForm extends Component {
     this.setState({ processing: hide });
   }
 
+  renderPayPalMeLink(donationAmount) {
+    const payPalMeLinkURL =
+      'https://paypal.me/freecodecamp/' + donationAmount / 100 + 'USD';
+    return (
+      <Button
+        block={true}
+        className='paypal-button-onetime'
+        href={payPalMeLinkURL}
+      ></Button>
+    );
+  }
+
   renderDonationOptions() {
-    const { stripe, handleProcessing } = this.props;
+    // const { stripe, handleProcessing, isSignedIn } = this.props;
+    const { handleProcessing, isSignedIn } = this.props;
     const { donationAmount, donationDuration } = this.state;
+    const isOneTime = donationDuration === 'onetime';
     return (
       <div>
-        <StripeProvider stripe={stripe}>
-          <Elements>
-            <DonateFormChildViewForHOC
-              defaultTheme='default'
-              donationAmount={donationAmount}
-              donationDuration={donationDuration}
-              getDonationButtonLabel={this.getDonationButtonLabel}
-              handleProcessing={handleProcessing}
-              hideAmountOptionsCB={this.hideAmountOptionsCB}
-            />
-          </Elements>
-        </StripeProvider>
+        {isOneTime ? (
+          <b>Confirm your one-time donation of ${donationAmount / 100} :</b>
+        ) : (
+          <b>
+            Confirm your donation of ${donationAmount / 100} /{' '}
+            {donationDuration} :
+          </b>
+        )}
+        <Spacer />
+        {isOneTime ? (
+          this.renderPayPalMeLink(donationAmount)
+        ) : (
+          <PaypalButton
+            donationAmount={donationAmount}
+            donationDuration={donationDuration}
+            handleProcessing={handleProcessing}
+            onDonationStateChange={this.onDonationStateChange}
+            skipAddDonation={!isSignedIn}
+          />
+        )}
+        <Spacer />
+
         <Spacer size={2} />
       </div>
     );
@@ -232,12 +257,9 @@ class DonateForm extends Component {
   }
 
   render() {
-    const { donationAmount, donationDuration } = this.state;
-    const { handleProcessing, isSignedIn } = this.props;
     const {
       donationState: { processing, success, error }
     } = this.state;
-    const subscriptionPayment = donationDuration !== 'onetime';
     if (processing || success || error) {
       return this.renderCompletion({
         processing,
@@ -252,24 +274,7 @@ class DonateForm extends Component {
           {this.renderDurationAmountOptions()}
         </Col>
         <Col sm={10} smOffset={1} xs={12}>
-          {subscriptionPayment ? (
-            <Fragment>
-              <b>
-                Confirm your donation of ${donationAmount / 100} /{' '}
-                {donationDuration} with PayPal:
-              </b>
-              <Spacer />
-            </Fragment>
-          ) : (
-            ''
-          )}
-          <PaypalButton
-            donationAmount={donationAmount}
-            donationDuration={donationDuration}
-            handleProcessing={handleProcessing}
-            onDonationStateChange={this.onDonationStateChange}
-            skipAddDonation={!isSignedIn}
-          />
+          {this.renderDonationOptions()}
         </Col>
       </Row>
     );
