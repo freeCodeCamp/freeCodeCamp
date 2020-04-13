@@ -35,7 +35,7 @@ All our coding challenges are curated by the community, bringing in expert knowl
 
 You can help expand them and make their wording better. You can also update the user stories to explain the concept better or remove redundant ones and improve the challenge tests to make them more accurately test people's code.
 
-**If you're interested in improving these coding challenges, here's [how to work on coding challenges](/docs/how-to-work-on-coding-challenges.md).**
+**If you're interested in improving these coding challenges, here's [how to work on coding challenges](/how-to-work-on-coding-challenges.md).**
 
 ### Learning Platform
 
@@ -51,7 +51,7 @@ Contributing to this requires some understanding of APIs, ES6 Syntax, and a lot 
 
 Essentially, we expect basic familiarity with some of the aforementioned technologies, tools, and libraries. With that being said, you are not required to be an expert on them to contribute.
 
-**If you want to help us improve our codebase, you can either [set up freeCodeCamp locally](/docs/how-to-setup-freecodecamp-locally.md)**
+**If you want to help us improve our codebase, you can either [set up freeCodeCamp locally](/how-to-setup-freecodecamp-locally.md)**
 
 OR
 
