@@ -65,4 +65,4 @@ Quelques exemples de bon titres de PRs seraient :
 
 5. Indiquez si vous avez testé sur une copie locale du site ou non.
 
-    Ceci est très important lorsque vous apportez des modifications qui ne se limitent pas à éditer le contenu d'un texte, comme le texte d'un article du Guide. Des exemples de changements nécessitant des tests locaux incluent JavaScript, CSS ou HTML qui pourraient changer la fonctionnalité ou la disposition d'une page.
+    Ceci est très important lorsque vous apportez des modifications qui ne se limitent pas à éditer le contenu d'un texte comme la documentation ou la description d'un défi. Des exemples de changements nécessitant des tests locaux incluent JavaScript, CSS ou HTML qui pourraient changer la fonctionnalité ou la disposition d'une page.
