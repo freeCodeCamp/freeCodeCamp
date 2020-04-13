@@ -271,19 +271,6 @@ class DonateForm extends Component {
             skipAddDonation={!isSignedIn}
           />
         </Col>
-
-        <Col sm={10} smOffset={1} xs={12}>
-          {subscriptionPayment ? (
-            <Fragment>
-              <Spacer />
-              <b>Or donate with a credit card:</b>
-              <Spacer />
-            </Fragment>
-          ) : (
-            ''
-          )}
-          {this.renderDonationOptions()}
-        </Col>
       </Row>
     );
   }
