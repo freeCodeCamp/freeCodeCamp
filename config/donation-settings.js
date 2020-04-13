@@ -1,8 +1,7 @@
 // Configuration for client side
 const durationsConfig = {
   year: 'yearly',
-  month: 'monthly',
-  onetime: 'one-time'
+  month: 'monthly'
 };
 const amountsConfig = {
   year: [100000, 25000, 6000],
