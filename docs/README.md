@@ -152,5 +152,6 @@ When in doubt, you can reach out to our platform dev team to help you with this:
 | Mrugesh Mohapatra    | [@raisedadead](https://gitter.im/raisedadead)                 | [@raisedadead](https://twitter.com/raisedadead)       |
 | Ahmad Abdolsaheb     | [@ahmadabdolsaheb](https://gitter.im/ahmadabdolsaheb)         | [@Abdolsaheb](https://twitter.com/Abdolsaheb)         |
 | Kristofer Koishigawa | [@scissorsneedfoodtoo](https://gitter.im/scissorsneedfoodtoo) | [@kriskoishigawa](https://twitter.com/kriskoishigawa) |
+| Tom Mondloc | [@moT01](https://gitter.im/moT01) | - |
 
 **You can email our developer staff at: `dev[at]freecodecamp.org`**
