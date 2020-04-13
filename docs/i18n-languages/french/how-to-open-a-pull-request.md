@@ -56,7 +56,7 @@ Quelques exemples de bon titres de PRs seraient :
 
     - Un modèle de Pull Request vous sera présenté. Il s'agit d'une liste de contrôle que vous aurez à vérifier avant d'ouvrir la Pull Request.
 
-    - Remplissez les détails comme ils semblent vous convenir. Cette information sera examinée et décidera si votre Pull Request sera acceptée ou non.
+    - Remplissez les détails qui conveniennent. Ces informations seront revues et les relecteurs décideront si votre Pull Request sera acceptée ou pas.
 
     - Si la PR est destinée à corriger un bogue ou un problème existant, alors, à la fin de
       la description de votre PR, ajoutez le mot-clé _Closes_ ainsi que le numéro du ticket ouvert pour [fermer automatiquement le ticket existant, si la PR est acceptée et fusionnée (en)](https://help.github.com/en/articles/closing-issues-using-keywords).
