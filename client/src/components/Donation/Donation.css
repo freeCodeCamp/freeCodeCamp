@@ -331,3 +331,23 @@ li.disabled > a {
   background-size: 84px;
   filter: brightness(0.95);
 }
+
+.apple-pay-logo,
+.google-pay-logo,
+.accepted-cards {
+  height: 30px;
+  width: auto;
+  padding: 0 10px;
+}
+
+.accepted-cards {
+  height: 20px;
+  align-self: center;
+}
+
+#confirm-donation-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+}
