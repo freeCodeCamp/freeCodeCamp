@@ -25,8 +25,10 @@ console.log(loc); // loc is not defined
 
 ## Instructions
 <section id='instructions'>
-Declare a local variable <code>myVar</code> inside <code>myLocalScope</code>. Run the tests and then follow the instructions commented out in the editor.
-<strong>Hint</strong><br>Refreshing the page may help if you get stuck.
+
+The editor has two `console.log`s to help you see what is happening. Check the console as you code to see how it changes.  Declare a local variable `myVar` inside `myLocalScope` and run the tests.
+
+**Note:** The console will still have 'ReferenceError: myVar is not defined', but this will not cause the tests to fail.
 </section>
 
 ## Tests
@@ -41,7 +43,7 @@ tests:
       }
       assert.throws(declared, ReferenceError);
   - text: You should add a local <code>myVar</code> variable.
-    testString: assert(/functionmyLocalScope\(\)\{.+(var|let|const)myVar.*;.+}/s.test(code.replace(/\s/g, '')));
+    testString: assert(/functionmyLocalScope\(\)\{.+(var|let|const)myVar.*}/s.test(code.replace(/\s/g, '')));
 
 
 ```
@@ -59,15 +61,13 @@ function myLocalScope() {
 
   // Only change code below this line
 
-  console.log(myVar);
+  console.log('inside myLocalScope', myVar);
 }
 myLocalScope();
 
 // Run and check the console
 // myVar is not defined outside of myLocalScope
-console.log(myVar);
-
-// Now remove the console log line to pass the test
+console.log('outside myLocalScope',myVar);
 
 ```
 
