@@ -276,7 +276,7 @@ class DonateForm extends Component {
           id='confirm-donation-btn'
           onClick={this.handleStripeCheckoutRedirect}
         >
-          <span>Pay with Apple Pay</span>
+          <span>Donate with Apple Pay</span>
 
           <ApplePay className='apple-pay-logo' />
         </Button>
@@ -288,7 +288,7 @@ class DonateForm extends Component {
           id='confirm-donation-btn'
           onClick={this.handleStripeCheckoutRedirect}
         >
-          <span>Pay with Google Pay</span>
+          <span>Donate with Google Pay</span>
           <GooglePay className='google-pay-logo' />
         </Button>
         <Spacer />
@@ -299,7 +299,7 @@ class DonateForm extends Component {
           id='confirm-donation-btn'
           onClick={this.handleStripeCheckoutRedirect}
         >
-          <span>Pay with Card</span>
+          <span>Donate with Card</span>
 
           <img
             alt='accepted cards'
