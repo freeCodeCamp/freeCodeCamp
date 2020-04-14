@@ -35,9 +35,13 @@ Declare a local variable <code>myVar</code> inside <code>myLocalScope</code>. Ru
 ```yml
 tests:
   - text: The code should not contain a global <code>myVar</code> variable.
-    testString: assert(typeof myVar === 'undefined');
+    testString: |
+      function declared(){
+        myVar;
+      }
+      assert.throws(declared, ReferenceError);
   - text: You should add a local <code>myVar</code> variable.
-    testString: assert(/function\s+myLocalScope\s*\(\s*\)\s*\{\s[\s\S]+\s*var\s*myVar\s*(\s*|=[\s\S]+)\s*;[\s\S]+}/.test(code));
+    testString: assert(/functionmyLocalScope\(\)\{.+(var|let|const)myVar.*;.+}/s.test(code.replace(/\s/g, '')));
 
 
 ```
@@ -65,43 +69,6 @@ console.log(myVar);
 
 // Now remove the console log line to pass the test
 
-```
-
-</div>
-
-### Before Test
-<div id='js-setup'>
-
-```js
-var logOutput = "";
-var originalConsole = console
-function capture() {
-  var nativeLog = console.log;
-  console.log = function (message) {
-    logOutput = message;
-    if(nativeLog.apply) {
-      nativeLog.apply(originalConsole, arguments);
-    } else {
-      var nativeMsg = Array.prototype.slice.apply(arguments).join(' ');
-      nativeLog(nativeMsg);
-    }
-  };
-}
-
-function uncapture() {
-  console.log = originalConsole.log;
-}
-
-```
-
-</div>
-
-### After Test
-<div id='js-teardown'>
-
-```js
-typeof myLocalScope === 'function' && (capture(), myLocalScope(), uncapture());
-(function() { return logOutput || "console.log never called"; })();
 ```
 
 </div>
