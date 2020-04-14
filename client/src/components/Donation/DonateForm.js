@@ -12,7 +12,9 @@ import {
   ToggleButtonGroup
 } from '@freecodecamp/react-bootstrap';
 // import { StripeProvider, Elements } from 'react-stripe-elements';
-
+import ApplePay from './assets/ApplePay';
+import GooglePay from './assets/GooglePay';
+import acceptedCards from './assets/accepted-cards.png';
 import {
   amountsConfig,
   durationsConfig,
@@ -274,7 +276,9 @@ class DonateForm extends Component {
           id='confirm-donation-btn'
           onClick={this.handleStripeCheckoutRedirect}
         >
-          Pay with Apple Pay
+          <span>Pay with Apple Pay</span>
+
+          <ApplePay className='apple-pay-logo' />
         </Button>
         <Spacer />
         <Button
@@ -284,7 +288,8 @@ class DonateForm extends Component {
           id='confirm-donation-btn'
           onClick={this.handleStripeCheckoutRedirect}
         >
-          Pay with Google Pay
+          <span>Pay with Google Pay</span>
+          <GooglePay className='google-pay-logo' />
         </Button>
         <Spacer />
         <Button
@@ -294,7 +299,13 @@ class DonateForm extends Component {
           id='confirm-donation-btn'
           onClick={this.handleStripeCheckoutRedirect}
         >
-          Pay with Card
+          <span>Pay with Card</span>
+
+          <img
+            alt='accepted cards'
+            className='accepted-cards'
+            src={acceptedCards}
+          />
         </Button>
         <Spacer />
         {isOneTime ? (
