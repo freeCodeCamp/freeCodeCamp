@@ -20,19 +20,19 @@ localeTitle: 猪拉丁文
 ```yml
 tests:
   - text: <code>translatePigLatin(&quot;california&quot;)</code>应该返回“aliforniacay”。
-    testString: 'assert.deepEqual(translatePigLatin("california"), "aliforniacay", "<code>translatePigLatin("california")</code> should return "aliforniacay".");'
+    testString: assert.deepEqual(translatePigLatin("california"), "aliforniacay");
   - text: <code>translatePigLatin(&quot;paragraphs&quot;)</code>应该返回“aragraphspay”。
-    testString: 'assert.deepEqual(translatePigLatin("paragraphs"), "aragraphspay", "<code>translatePigLatin("paragraphs")</code> should return "aragraphspay".");'
+    testString: assert.deepEqual(translatePigLatin("paragraphs"), "aragraphspay");
   - text: <code>translatePigLatin(&quot;glove&quot;)</code>应该返回“oveglay”。
-    testString: 'assert.deepEqual(translatePigLatin("glove"), "oveglay", "<code>translatePigLatin("glove")</code> should return "oveglay".");'
+    testString: assert.deepEqual(translatePigLatin("glove"), "oveglay");
   - text: <code>translatePigLatin(&quot;algorithm&quot;)</code>应返回“algorithmway”。
-    testString: 'assert.deepEqual(translatePigLatin("algorithm"), "algorithmway", "<code>translatePigLatin("algorithm")</code> should return "algorithmway".");'
+    testString: assert.deepEqual(translatePigLatin("algorithm"), "algorithmway");
   - text: <code>translatePigLatin(&quot;eight&quot;)</code>应该返回“八通”。
-    testString: 'assert.deepEqual(translatePigLatin("eight"), "eightway", "<code>translatePigLatin("eight")</code> should return "eightway".");'
+    testString: assert.deepEqual(translatePigLatin("eight"), "eightway");
   - text: 应该处理第一个元音出现在单词末尾的单词。
-    testString: 'assert.deepEqual(translatePigLatin("schwartz"), "artzschway", "Should handle words where the first vowel comes in the end of the word.");'
+    testString: assert.deepEqual(translatePigLatin("schwartz"), "artzschway");
   - text: 应该处理没有元音的单词。
-    testString: 'assert.deepEqual(translatePigLatin("rhythm"), "rhythmay", "Should handle words without vowels.");'
+    testString: assert.deepEqual(translatePigLatin("rhythm"), "rhythmay");
 
 ```
 

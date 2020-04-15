@@ -44,20 +44,20 @@ function createPlugin() {
       if (sectionFilter(node, 'challengeSeed')) {
         let seeds = {};
         const codeDivs = selectAll('div', node);
-        const seedConatiners = codeDivs.filter(({ properties: { id } }) =>
+        const seedContainers = codeDivs.filter(({ properties: { id } }) =>
           seedRE.test(id)
         );
-        seedConatiners.forEach(createCodeGetter('contents', seedRE, seeds));
+        seedContainers.forEach(createCodeGetter('contents', seedRE, seeds));
 
-        const headConatiners = codeDivs.filter(({ properties: { id } }) =>
+        const headContainers = codeDivs.filter(({ properties: { id } }) =>
           headRE.test(id)
         );
-        headConatiners.forEach(createCodeGetter('head', headRE, seeds));
+        headContainers.forEach(createCodeGetter('head', headRE, seeds));
 
-        const tailConatiners = codeDivs.filter(({ properties: { id } }) =>
+        const tailContainers = codeDivs.filter(({ properties: { id } }) =>
           tailRE.test(id)
         );
-        tailConatiners.forEach(createCodeGetter('tail', tailRE, seeds));
+        tailContainers.forEach(createCodeGetter('tail', tailRE, seeds));
 
         file.data = {
           ...file.data,

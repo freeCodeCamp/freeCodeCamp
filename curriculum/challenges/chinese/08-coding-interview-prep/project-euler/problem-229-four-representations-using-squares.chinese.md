@@ -19,7 +19,7 @@ localeTitle: 问题229：使用正方形的四个表示
 ```yml
 tests:
   - text: <code>euler229()</code>应该返回11325263。
-    testString: 'assert.strictEqual(euler229(), 11325263, "<code>euler229()</code> should return 11325263.");'
+    testString: assert.strictEqual(euler229(), 11325263);
 
 ```
 

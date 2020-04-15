@@ -9,7 +9,7 @@ localeTitle: Возврат булевых значений из функций
 
 ## Description
 <section id='description'>
-Вы можете вспомнить из <a href="learn/javascript-algorithms-and-data-structures/basic-javascript/comparison-with-the-equality-operator" target="_blank">сравнения с Оператором равенства,</a> что все операторы сравнения возвращают логическое <code>true</code> или <code>false</code> значение. Иногда люди используют оператор if / else для сравнения, например: <blockquote> функция isEqual (a, b) { <br> if (a === b) { <br> return true; <br> } else { <br> return false; <br> } <br> } </blockquote> Но есть лучший способ сделать это. Поскольку <code>===</code> возвращает <code>true</code> или <code>false</code> , мы можем вернуть результат сравнения: <blockquote> функция isEqual (a, b) { <br> return a === b; <br> } </blockquote>
+Вы можете вспомнить из <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/comparison-with-the-equality-operator" target="_blank">сравнения с Оператором равенства,</a> что все операторы сравнения возвращают логическое <code>true</code> или <code>false</code> значение. Иногда люди используют оператор if / else для сравнения, например: <blockquote> функция isEqual (a, b) { <br> if (a === b) { <br> return true; <br> } else { <br> return false; <br> } <br> } </blockquote> Но есть лучший способ сделать это. Поскольку <code>===</code> возвращает <code>true</code> или <code>false</code> , мы можем вернуть результат сравнения: <blockquote> функция isEqual (a, b) { <br> return a === b; <br> } </blockquote>
 </section>
 
 ## Instructions

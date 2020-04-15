@@ -2,23 +2,30 @@
 id: 587d781c367417b2b2512abf
 title: Decrease the Opacity of an Element
 challengeType: 0
-videoUrl: ''
-localeTitle: 降低元素的不透明度
+videoUrl: 'https://scrimba.com/c/c7aKqu4'
+forumTopicId: 301055
+localeTitle: 降低元素的 opactiy
 ---
 
 ## Description
-<section id="description"> CSS中的<code>opacity</code>属性用于调整不透明度，或相反，用于调整项目的透明度。 <blockquote>值1是不透明的，根本不透明。 <br>值0.5是半透明的。 <br>值0完全透明。 </blockquote>给定的值将应用于整个元素，无论是具有一定透明度的图像，还是文本块的前景色和背景色。 </section>
+<section id='description'>
+CSS 里的 <code>opacity</code> 属性用来设置元素的透明度。
+<blockquote>值 1 代表完全不透明。<br>值 0.5 代表半透明。<br>值 0 代表完全透明。</blockquote>
+透明度会应用到元素内的所有内容，不论是图片，还是文本，或是背景色。
+</section>
 
 ## Instructions
-<section id="instructions">使用<code>links</code>类将锚标记的<code>opacity</code>设置为0.7以选择它们。 </section>
+<section id='instructions'>
+使用 <code>links</code> class 选择所有的超链接并设置其 <code>opacity</code> 值为 0.7。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您的代码应通过选择<code>links</code>类将锚点标记上的<code>opacity</code>属性设置为0.7。
-    testString: 'assert.approximately(parseFloat($(".links").css("opacity")), 0.7, 0.1, "Your code should set the <code>opacity</code> property to 0.7 on the anchor tags by selecting the class of <code>links</code>.");'
+  - text: '你应该使用 <code>links</code> class 选择所有的超链接并设置其 <code>opacity</code> 值为 0.7。'
+    testString: assert(/\.links\s*{([\s\S]*?;)*\s*opacity\s*:\s*0*\.70*\s*(;[\s\S]*?|\s*)}/.test($('style').text()));
 
 ```
 
@@ -43,7 +50,7 @@ tests:
   .links {
     text-align: left;
     color: black;
-
+    
   }
   #thumbnail {
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
@@ -67,15 +74,14 @@ tests:
     <div class="cardText">
       <h4>Alphabet</h4>
       <hr>
-      <p><em>Google was founded by Larry Page and Sergey Brin while they were <u>Ph.D. students</u> at <strong>Stanford University</strong>.</em></p>
+      <p><em>Google 由在<strong>斯坦福大学</strong>攻读<u>理工博士</u>的拉里·佩奇和谢尔盖·布林共同创建。</em></p>
     </div>
     <div class="cardLinks">
-      <a href="https://en.wikipedia.org/wiki/Larry_Page" target="_blank" class="links">Larry Page</a><br><br>
-      <a href="https://en.wikipedia.org/wiki/Sergey_Brin" target="_blank" class="links">Sergey Brin</a>
+      <a href="https://en.wikipedia.org/wiki/Larry_Page" target="_blank" class="links">拉里·佩奇</a><br><br>
+      <a href="https://en.wikipedia.org/wiki/Sergey_Brin" target="_blank" class="links">谢尔盖·布林</a>
     </div>
   </div>
 </div>
-
 ```
 
 </div>
@@ -87,7 +93,9 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>
+              

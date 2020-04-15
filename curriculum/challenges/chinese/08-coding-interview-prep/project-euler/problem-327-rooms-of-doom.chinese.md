@@ -19,7 +19,7 @@ localeTitle: 问题327：末日的房间
 ```yml
 tests:
   - text: <code>euler327()</code>应返回34315549139516。
-    testString: 'assert.strictEqual(euler327(), 34315549139516, "<code>euler327()</code> should return 34315549139516.");'
+    testString: assert.strictEqual(euler327(), 34315549139516);
 
 ```
 

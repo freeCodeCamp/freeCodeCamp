@@ -19,7 +19,7 @@ localeTitle: 问题107：最小网络
 ```yml
 tests:
   - text: <code>euler107()</code>应该返回259679。
-    testString: 'assert.strictEqual(euler107(), 259679, "<code>euler107()</code> should return 259679.");'
+    testString: assert.strictEqual(euler107(), 259679);
 
 ```
 

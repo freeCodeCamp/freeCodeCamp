@@ -7,7 +7,7 @@ localeTitle: التنازل مع القيمة المرتجعة
 ---
 
 ## Description
-<section id="description"> إذا كنت ستتذكر من مناقشتنا لـ <a href="learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank">Storing Values ​​مع Assignment Operator</a> ، يتم حل كل شيء على يمين علامة المساواة قبل تعيين القيمة. هذا يعني أنه يمكننا أخذ قيمة الإرجاع للدالة وتعيينها لمتغير. افترض أننا حددنا مسبقا <code>sum</code> وظيفة يضيف رقمين معا ، ثم: <code>ourSum = sum(5, 12);</code> سوف تستدعي دالة <code>sum</code> ، والتي تُرجع قيمة <code>17</code> <code>ourSum</code> المتغير. </section>
+<section id="description"> إذا كنت ستتذكر من مناقشتنا لـ <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank">Storing Values ​​مع Assignment Operator</a> ، يتم حل كل شيء على يمين علامة المساواة قبل تعيين القيمة. هذا يعني أنه يمكننا أخذ قيمة الإرجاع للدالة وتعيينها لمتغير. افترض أننا حددنا مسبقا <code>sum</code> وظيفة يضيف رقمين معا ، ثم: <code>ourSum = sum(5, 12);</code> سوف تستدعي دالة <code>sum</code> ، والتي تُرجع قيمة <code>17</code> <code>ourSum</code> المتغير. </section>
 
 ## Instructions
 <section id="instructions"> استدعاء الدالة <code>processArg</code> مع وسيطة من <code>7</code> وتعيين قيمته الإرجاع إلى المتغير <code>processed</code> . </section>

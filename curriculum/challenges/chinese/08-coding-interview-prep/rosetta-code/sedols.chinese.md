@@ -19,15 +19,15 @@ localeTitle: SEDOLs
 ```yml
 tests:
   - text: <code>sedol</code>是一个功能。
-    testString: 'assert(typeof sedol === "function", "<code>sedol</code> is a function.");'
-  - text: '<code>sedol(&#39;a&#39;)</code>应该返回null。“）'
-    testString: 'assert(sedol("a") === null, "<code>sedol("a")</code> should return null.");'
-  - text: '<code>sedol(&#39;710889&#39;)</code>应返回&#39;7108899&#39;。“）'
-    testString: 'assert(sedol("710889") === "7108899", "<code>sedol("710889")</code> should return "7108899".");'
-  - text: '<code>sedol(&#39;BOATER&#39;)</code>应该返回null。“）'
-    testString: 'assert(sedol("BOATER") === null, "<code>sedol("BOATER")</code> should return null.");'
-  - text: '<code>sedol(&#39;228276&#39;)</code>应该返回&#39;2282765&#39;。“）'
-    testString: 'assert(sedol("228276") === "2282765", "<code>sedol("228276")</code> should return "2282765".");'
+    testString: assert(typeof sedol === 'function');
+  - text: <code>sedol('a')</code>应该返回null。
+    testString: assert(sedol('a') === null);
+  - text: <code>sedol('710889')</code>应返回'7108899'。
+    testString: assert(sedol('710889') === '7108899');
+  - text: <code>sedol('BOATER')</code>应该返回null。
+    testString: assert(sedol('BOATER') === null);
+  - text: <code>sedol('228276')</code>应该返回'228276'。
+    testString: assert(sedol('228276') === '2282765');
 
 ```
 

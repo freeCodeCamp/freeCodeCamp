@@ -47,10 +47,10 @@ tests:
 ```html
 <body>
   <header>
-    <h1>Real Coding Ninjas</h1>
+    <h1>Verdaderos Coding Ninjas</h1>
   </header>
   <main>
-    <p>A sound clip of Zersiax's screen reader in action.</p>
+    <p>Un clip de sonido del lector de pantalla de Zersiax en acción.</p>
 
 
 
@@ -69,6 +69,7 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+// solución requerida
 ```
+
 </section>

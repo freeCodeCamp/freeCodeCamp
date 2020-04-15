@@ -7,9 +7,13 @@ forumTopicId: 302162
 
 ## Description
 <section id='description'>
+
 By replacing the 1st digit of the 2-digit number *3, it turns out that six of the nine possible values: 13, 23, 43, 53, 73, and 83, are all prime.
+
 By replacing the 3rd and 4th digits of 56**3 with the same digit, this 5-digit number is the first example having seven primes among the ten generated numbers, yielding the family: 56003, 56113, 56333, 56443, 56663, 56773, and 56993. Consequently 56003, being the first member of this family, is the smallest prime with this property.
+
 Find the smallest prime which, by replacing part of the number (not necessarily adjacent digits) with the same digit, is part of an eight prime value family.
+
 </section>
 
 ## Instructions
@@ -22,8 +26,10 @@ Find the smallest prime which, by replacing part of the number (not necessarily 
 
 ```yml
 tests:
-  - text: <code>euler51()</code> should return 121313.
-    testString: assert.strictEqual(euler51(), 121313);
+  - text: <code>primeDigitReplacements()</code> should return a number.
+    testString: assert(typeof primeDigitReplacements() === 'number');
+  - text: <code>primeDigitReplacements()</code> should return 121313.
+    testString: assert.strictEqual(primeDigitReplacements(), 121313);
 
 ```
 
@@ -35,12 +41,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function euler51() {
+function primeDigitReplacements() {
   // Good luck!
   return true;
 }
 
-euler51();
+primeDigitReplacements();
 ```
 
 </div>

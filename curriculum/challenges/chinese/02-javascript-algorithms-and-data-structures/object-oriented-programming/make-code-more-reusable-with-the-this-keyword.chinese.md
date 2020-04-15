@@ -18,9 +18,9 @@ localeTitle: 使用此关键字使代码更可重用
 ```yml
 tests:
   - text: <code>dog.sayLegs()</code>应该返回给定的字符串。
-    testString: 'assert(dog.sayLegs() === "This dog has 4 legs.", "<code>dog.sayLegs()</code> should return the given string.");'
+    testString: assert(dog.sayLegs() === 'This dog has 4 legs.');
   - text: 您的代码应使用<code>this</code>关键字来访问<code>dog</code>的<code>numLegs</code>属性。
-    testString: 'assert(code.match(/this\.numLegs/g), "Your code should use the <code>this</code> keyword to access the <code>numLegs</code> property of <code>dog</code>.");'
+    testString: assert(code.match(/this\.numLegs/g));
 
 ```
 

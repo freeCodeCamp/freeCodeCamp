@@ -62,9 +62,9 @@ tests:
     top: 10%;
     left: 25%;
 
-    /* change code below */
+    /* Change code below this line */
     background: black;
-    /* change code above */
+    /* Change code above this line */
 
     width: 50%;
     height: 45%;
@@ -75,9 +75,9 @@ tests:
     top: 40%;
     left: 23.5%;
 
-    /* change code below */
+    /* Change code below this line */
     background: black;
-    /* change code above */
+    /* Change code above this line */
 
     width: 53%;
     height: 45%;
@@ -88,9 +88,9 @@ tests:
     top: 0%;
     left: -5%;
 
-    /* change code below */
+    /* Change code below this line */
     background: black;
-    /* change code above */
+    /* Change code above this line */
 
     width: 30%;
     height: 60%;
@@ -103,9 +103,9 @@ tests:
     top: 0%;
     left: 75%;
 
-    /* change code below */
+    /* Change code below this line */
     background: black;
-    /* change code above */
+    /* Change code above this line */
 
     width: 30%;
     height: 60%;

@@ -24,7 +24,7 @@ svg.append("g")
 ```
 
 The above code places the x-axis at the bottom of the SVG canvas. Then it's passed as an argument to the <code>call()</code> method.
-The y-axis works is the same way, except the <code>translate</code> argument is in the form (x, 0). Because <code>translate</code> is a string in the <code>attr()</code> method above, you can use concatenation to include variable values for its arguments.
+The y-axis works in the same way, except the <code>translate</code> argument is in the form (x, 0). Because <code>translate</code> is a string in the <code>attr()</code> method above, you can use concatenation to include variable values for its arguments.
 </section>
 
 ## Instructions

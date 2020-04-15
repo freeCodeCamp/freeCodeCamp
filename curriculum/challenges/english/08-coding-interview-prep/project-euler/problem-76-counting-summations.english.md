@@ -7,14 +7,20 @@ forumTopicId: 302189
 
 ## Description
 <section id='description'>
+
 It is possible to write five as a sum in exactly six different ways:
-4 + 1
-3 + 2
-3 + 1 + 1
-2 + 2 + 1
-2 + 1 + 1 + 1
-1 + 1 + 1 + 1 + 1
+
+<div style='margin-left: 4em;'>
+  4 + 1<br>
+  3 + 2<br>
+  3 + 1 + 1<br>
+  2 + 2 + 1<br>
+  2 + 1 + 1 + 1<br>
+  1 + 1 + 1 + 1 + 1<br>
+</div>
+
 How many different ways can one hundred be written as a sum of at least two positive integers?
+
 </section>
 
 ## Instructions
@@ -27,8 +33,10 @@ How many different ways can one hundred be written as a sum of at least two posi
 
 ```yml
 tests:
-  - text: <code>euler76()</code> should return 190569291.
-    testString: assert.strictEqual(euler76(), 190569291);
+  - text: <code>countingSummations()</code> should return a number.
+    testString: assert(typeof countingSummations() === 'number');
+  - text: <code>countingSummations()</code> should return 190569291.
+    testString: assert.strictEqual(countingSummations(), 190569291);
 
 ```
 
@@ -40,12 +48,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function euler76() {
+function countingSummations() {
   // Good luck!
   return true;
 }
 
-euler76();
+countingSummations();
 ```
 
 </div>

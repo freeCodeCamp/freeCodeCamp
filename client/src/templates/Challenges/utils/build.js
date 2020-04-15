@@ -1,4 +1,4 @@
-import { transformers } from '../rechallenge/transformers';
+import { getTransformers } from '../rechallenge/transformers';
 import { cssToHtml, jsToHtml, concatHtml } from '../rechallenge/builders.js';
 import { challengeTypes } from '../../../../utils/challengeTypes';
 import createWorker from './worker-executor';
@@ -76,11 +76,11 @@ export function canBuildChallenge(challengeData) {
   return buildFunctions.hasOwnProperty(challengeType);
 }
 
-export async function buildChallenge(challengeData) {
+export async function buildChallenge(challengeData, options) {
   const { challengeType } = challengeData;
   let build = buildFunctions[challengeType];
   if (build) {
-    return build(challengeData);
+    return build(challengeData, options);
   }
   throw new Error(`Cannot build challenge of type ${challengeType}`);
 }
@@ -123,7 +123,7 @@ export function buildDOMChallenge({ files, required = [], template = '' }) {
   const finalRequires = [...globalRequires, ...required, ...frameRunner];
   const loadEnzyme = Object.keys(files).some(key => files[key].ext === 'jsx');
   const toHtml = [jsToHtml, cssToHtml];
-  const pipeLine = composeFunctions(...transformers, ...toHtml);
+  const pipeLine = composeFunctions(...getTransformers(), ...toHtml);
   const finalFiles = Object.keys(files)
     .map(key => files[key])
     .map(pipeLine);
@@ -137,8 +137,9 @@ export function buildDOMChallenge({ files, required = [], template = '' }) {
     }));
 }
 
-export function buildJSChallenge({ files }) {
-  const pipeLine = composeFunctions(...transformers);
+export function buildJSChallenge({ files }, options) {
+  const pipeLine = composeFunctions(...getTransformers(options));
+
   const finalFiles = Object.keys(files)
     .map(key => files[key])
     .map(pipeLine);
@@ -188,4 +189,8 @@ export function isJavaScriptChallenge({ challengeType }) {
     challengeType === challengeTypes.js ||
     challengeType === challengeTypes.bonfire
   );
+}
+
+export function isLoopProtected(challengeMeta) {
+  return challengeMeta.superBlock !== 'Coding Interview Prep';
 }

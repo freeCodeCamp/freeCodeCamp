@@ -38,7 +38,7 @@ localeTitle: 社会认证的实施III
 ```yml
 tests:
   - text: Github策略设置完成
-    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /GitHubStrategy[^]*db.collection/gi, "Strategy should use now use the database to search for the user"); assert.match(data, /GitHubStrategy[^]*socialusers/gi, "Strategy should use "socialusers" as db collection"); assert.match(data, /GitHubStrategy[^]*return cb/gi, "Strategy should return the callback function "cb""); }, xhr => { throw new Error(xhr.statusText); })'
+    testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /GitHubStrategy[^]*db.collection/gi, 'Strategy should use now use the database to search for the user'); assert.match(data, /GitHubStrategy[^]*socialusers/gi, 'Strategy should use "socialusers" as db collection'); assert.match(data, /GitHubStrategy[^]*return cb/gi, 'Strategy should return the callback function "cb"'); }, xhr => { throw new Error(xhr.statusText); })
 
 ```
 

@@ -2,27 +2,35 @@
 id: 587d78a9367417b2b2512ae9
 title: Use a Bezier Curve to Move a Graphic
 challengeType: 0
-videoUrl: ''
+videoUrl: 'https://scrimba.com/c/c6bnRCK'
+forumTopicId: 301071
 localeTitle: 使用贝塞尔曲线移动图形
 ---
 
 ## Description
-<section id="description">之前的挑战讨论了一个<code>ease-out</code>关键字，该关键字描述了动画更改，该动画更改先加速，然后在动画结束时减慢。在右侧，演示了<code>ease-out</code>关键字（对于蓝色元素）和<code>linear</code>关键字（对于红色元素）之间的差异。通过使用自定义三次贝塞尔曲线函数，可以实现对<code>ease-out</code>关键字的类似动画进展。通常，更改<code>p1</code>和<code>p2</code>锚点会驱动创建不同的贝塞尔曲线，这些曲线控制动画随时间推移的进展。下面是使用值来模拟缓出样式的贝塞尔曲线的示例： <code>animation-timing-function: cubic-bezier(0, 0, 0.58, 1);</code>请记住，所有<code>cubic-bezier</code>函数都以（0,0）处的<code>p0</code>开始，并以（1,1）处的<code>p3</code>结束。在这个例子中，曲线移动通过Y轴（从0开始，到<code>p1</code> y值为0，然后到<code>p2</code> y值为1）比在X轴上移动更快（0开始，然后是0对于<code>p1</code> ，对于<code>p2</code> ，高达0.58）。结果，动画元素的变化比该段的动画时间更快。接近曲线的末端，x和y值的变化之间的关系反转 -  y值从1移动到1（无变化），x值从0.58移动到1，使得动画变化进展比较慢动画持续时间。 </section>
+<section id='description'>
+前面的关卡涉及的 <code>ease-out</code> 预定义值描述了动画以高速开始低速结束。右边的动画展示了 <code>ease-out</code> 预定义值（蓝色的元素）和 <code>linear</code> 预定义值（红色的元素）的区别。同样的，<code>ease-out</code> 预定义值也可以用贝塞尔曲线函数实现。
+通俗的讲，将一条直线放在范围只有 1 的坐标轴中，并从中间拿 <code>p1</code> 和 <code>p2</code> 两个点来拉扯（X 轴的取值区间是 [0, 1]，Y 轴任意），最后形成的曲线就是动画的贝塞尔速度曲线。下面是贝塞尔曲线模仿 ease-out 预定义值的例子：
+<code>animation-timing-function: cubic-bezier(0, 0, 0.58, 1);</code> 
+记住所有的 <code>cubic-bezier</code> 函数都是从坐标为 (0, 0) 的 <code>p0</code> 开始，在坐标为 (1, 1) 的 <code>p3</code> 结束。在这个例子里，曲线在 y 轴（从 0 开始，运动到 <code>p1</code> 的 0，然后运动到 <code>p2</code> 的 1）上移动的比在 x 轴（从 0 开始，运动到 <code>p1</code> 的 0，到 <code>p2</code> 的 0.58）上移动的快。结果是，在这一段动画内元素运动的快。到曲线的结尾，x 和 y 之间的关系反过来了，y 值保持为1，没有变化，x 值从 0.58 变为 1，元素运动的慢。
+</section>
 
 ## Instructions
-<section id="instructions">要查看此贝塞尔曲线的效果，请将id为<code>red</code>的元素的<code>animation-timing-function</code>更改为<code>cubic-bezier</code>函数，其中x1，y1，x2，y2值分别设置为0,0,0.58,1这将使两个元素同样在动画中前进。 </section>
+<section id='instructions'>
+为了看贝塞尔曲线的运动效果，把 id 为 <code>red</code> 的元素的 <code>animation-timing-function</code> 属性赋为 <code>cubic-bezier</code> 函数，其中 x1，y1，x2，y2 值分别为 0，0，0.58，1。这会使两个元素运动过程类似。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 'id为<code>red</code>的元素的<code>animation-timing-function</code>属性值应为<code>cubic-bezier</code>函数，x1，y1，x2，y2值分别设置为0,0,0.58,1。'
-    testString: 'assert($("#red").css("animation-timing-function") == "cubic-bezier(0, 0, 0.58, 1)", "The value of the <code>animation-timing-function</code> property of the element with the id <code>red</code> should be a <code>cubic-bezier</code> function with x1, y1, x2, y2 values set respectively to 0, 0, 0.58, 1 .");'
-  - text: id为<code>red</code>的元素不应该具有linear的<code>animation-timing-function</code>属性。
-    testString: 'assert($("#red").css("animation-timing-function") !== "linear", "The element with the id <code>red</code> should no longer have the <code>animation-timing-function</code> property of linear.");'
-  - text: 具有id <code>blue</code>的元素的<code>animation-timing-function</code>属性的值不应更改。
-    testString: 'assert($("#blue").css("animation-timing-function") == "ease-out", "The value of the <code>animation-timing-function</code> property for the element with the id <code>blue</code> should not change.");'
+  - text: 'id 为 <code>red</code> 的元素的 <code>animation-timing-function</code> 属性应当赋为 <code>cubic-bezier</code> 函数，其中 x1，y1，x2，y2 值分别为 0，0，0.58，1。'
+    testString: assert($('#red').css('animation-timing-function') == 'cubic-bezier(0, 0, 0.58, 1)');
+  - text: 'id 为 <code>red</code> 的元素的 <code>animation-timing-function</code> 属性不应该取值 linear。'
+    testString: assert($('#red').css('animation-timing-function') !== 'linear');
+  - text: 'id 为 <code>blue</code> 的元素的 <code>animation-timing-function</code> 属性不应该被改变。'
+    testString: const blueBallAnimation = $('#blue').css('animation-timing-function').replace(/\s/g, ''); assert(blueBallAnimation == 'ease-out' || blueBallAnimation == 'cubic-bezier(0,0,0.58,1)');
 
 ```
 
@@ -66,7 +74,6 @@ tests:
 </style>
 <div class="balls" id= "red"></div>
 <div class="balls" id= "blue"></div>
-
 ```
 
 </div>
@@ -78,7 +85,9 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>
+              

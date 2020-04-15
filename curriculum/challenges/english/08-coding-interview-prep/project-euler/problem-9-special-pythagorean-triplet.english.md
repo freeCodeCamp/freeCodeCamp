@@ -7,10 +7,15 @@ forumTopicId: 302205
 
 ## Description
 <section id='description'>
+
 A Pythagorean triplet is a set of three natural numbers, <var>a</var> < <var>b</var> < <var>c</var>, for which,
+
 <div style='text-align: center;'><var>a</var><sup>2</sup> + <var>b</var><sup>2</sup> = <var>c</var><sup>2</sup></div>
+
 For example, 3<sup>2</sup> + 4<sup>2</sup> = 9 + 16 = 25 = 5<sup>2</sup>.
-There exists exactly one Pythagorean triplet for which <var>a</var> + <var>b</var> + <var>c</var> = 1000. Find the product <var>abc</var> such that <var>a</var> + <var>b</var> + <var>c</var> = <code>n</code>.
+
+There exists exactly one Pythagorean triplet for which <var>a</var> + <var>b</var> + <var>c</var> = 1000. Find the product <var>abc</var> such that <var>a</var> + <var>b</var> + <var>c</var> = `n`.
+
 </section>
 
 ## Instructions
@@ -23,12 +28,14 @@ There exists exactly one Pythagorean triplet for which <var>a</var> + <var>b</va
 
 ```yml
 tests:
-  - text: <code>specialPythagoreanTriplet(1000)</code> should return 31875000.
-    testString: assert.strictEqual(specialPythagoreanTriplet(1000), 31875000);
+  - text: <code>specialPythagoreanTriplet(24)</code> should return a number.
+    testString: assert(typeof specialPythagoreanTriplet(24) === 'number');
   - text: <code>specialPythagoreanTriplet(24)</code> should return 480.
     testString: assert.strictEqual(specialPythagoreanTriplet(24), 480);
   - text: <code>specialPythagoreanTriplet(120)</code> should return 49920, 55080 or 60000
     testString: assert([49920, 55080, 60000].includes(specialPythagoreanTriplet(120)));
+  - text: <code>specialPythagoreanTriplet(1000)</code> should return 31875000.
+    testString: assert.strictEqual(specialPythagoreanTriplet(1000), 31875000);
 
 ```
 

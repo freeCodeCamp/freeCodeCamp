@@ -19,19 +19,19 @@ localeTitle: Fractran
 ```yml
 tests:
   - text: <code>fractran</code>应该是一个功能。
-    testString: 'assert(typeof fractran=="function","<code>fractran</code> should be a function.");'
+    testString: assert(typeof fractran=='function');
   - text: '<code>fractran(&quot;&quot;+tests[0]+&quot;&quot;)</code>应该返回一个数组。'
-    testString: 'assert(Array.isArray(fractran(tests[0])),"<code>fractran(""+tests[0]+"")</code> should return an array.");'
+    testString: assert(Array.isArray(fractran('3/2, 1/3')));
   - text: '<code>fractran(&quot;&quot;+tests[0]+&quot;&quot;)</code>应返回<code>&quot;+JSON.stringify(results[0])+&quot;</code> 。'
-    testString: 'assert.deepEqual(fractran(tests[0]),results[0],"<code>fractran(""+tests[0]+"")</code> should return <code>"+JSON.stringify(results[0])+"</code>.");'
+    testString: assert.deepEqual(fractran('3/2, 1/3'), [ 2, 3, 1 ]);
   - text: '<code>fractran(&quot;&quot;+tests[1]+&quot;&quot;)</code>应返回<code>&quot;+JSON.stringify(results[1])+&quot;</code> 。'
-    testString: 'assert.deepEqual(fractran(tests[1]),results[1],"<code>fractran(""+tests[1]+"")</code> should return <code>"+JSON.stringify(results[1])+"</code>.");'
+    testString: assert.deepEqual(fractran('3/2, 5/3, 1/5'), [ 2, 3, 5, 1 ]);
   - text: '<code>fractran(&quot;&quot;+tests[2]+&quot;&quot;)</code>应返回<code>&quot;+JSON.stringify(results[2])+&quot;</code> 。'
-    testString: 'assert.deepEqual(fractran(tests[2]),results[2],"<code>fractran(""+tests[2]+"")</code> should return <code>"+JSON.stringify(results[2])+"</code>.");'
+    testString: assert.deepEqual(fractran('3/2, 6/3'), [ 2, 3, 6, 9, 18, 27, 54, 81, 162, 243 ]);
   - text: '<code>fractran(&quot;&quot;+tests[3]+&quot;&quot;)</code>应返回<code>&quot;+JSON.stringify(results[3])+&quot;</code> 。'
-    testString: 'assert.deepEqual(fractran(tests[3]),results[3],"<code>fractran(""+tests[3]+"")</code> should return <code>"+JSON.stringify(results[3])+"</code>.");'
+    testString: assert.deepEqual(fractran('2/7, 7/2'), [ 2, 7, 2, 7, 2, 7, 2, 7, 2, 7 ]);
   - text: '<code>fractran(&quot;&quot;+tests[4]+&quot;&quot;)</code>应返回<code>&quot;+JSON.stringify(results[4])+&quot;</code> 。'
-    testString: 'assert.deepEqual(fractran(tests[4]),results[4],"<code>fractran(""+tests[4]+"")</code> should return <code>"+JSON.stringify(results[4])+"</code>.");'
+    testString: assert.deepEqual(fractran('17/91, 78/85, 19/51, 23/38, 29/33, 77/29, 95/23, 77/19, 1/17, 11/13, 13/11, 15/14, 15/2, 55/1'), [ 2, 15, 825, 725, 1925, 2275, 425, 390, 330, 290 ]);
 
 ```
 

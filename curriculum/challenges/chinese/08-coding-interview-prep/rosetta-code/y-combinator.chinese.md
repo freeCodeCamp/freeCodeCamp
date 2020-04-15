@@ -19,17 +19,17 @@ localeTitle: 和组合
 ```yml
 tests:
   - text: Y必须返回一个函数
-    testString: 'assert.equal(typeof Y(f => n => n), "function", "Y must return a function");'
+    testString: assert.equal(typeof Y(f => n => n), 'function');
   - text: factorial（1）必须返回1。
-    testString: 'assert.equal(factorial(1), 1, "factorial(1) must return 1.");'
+    testString: assert.equal(factorial(1), 1);
   - text: factorial（2）必须返回2。
-    testString: 'assert.equal(factorial(2), 2, "factorial(2) must return 2.");'
+    testString: assert.equal(factorial(2), 2);
   - text: factorial（3）必须返回6。
-    testString: 'assert.equal(factorial(3), 6, "factorial(3) must return 6.");'
+    testString: assert.equal(factorial(3), 6);
   - text: factorial（4）必须返回24。
-    testString: 'assert.equal(factorial(4), 24, "factorial(4) must return 24.");'
+    testString: assert.equal(factorial(4), 24);
   - text: factorial（10）必须返回3628800。
-    testString: 'assert.equal(factorial(10), 3628800, "factorial(10) must return 3628800.");'
+    testString: assert.equal(factorial(10), 3628800);
 
 ```
 

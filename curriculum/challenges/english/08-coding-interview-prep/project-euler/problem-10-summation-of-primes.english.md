@@ -7,8 +7,11 @@ forumTopicId: 301723
 
 ## Description
 <section id='description'>
+
 The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
-Find the sum of all the primes below n.
+
+Find the sum of all the primes below `n`.
+
 </section>
 
 ## Instructions
@@ -21,6 +24,8 @@ Find the sum of all the primes below n.
 
 ```yml
 tests:
+  - text: <code>primeSummation(17)</code> should return a number.
+    testString: assert(typeof primeSummation(17) === 'number');
   - text: <code>primeSummation(17)</code> should return 41.
     testString: assert.strictEqual(primeSummation(17), 41);
   - text: <code>primeSummation(2001)</code> should return 277050.

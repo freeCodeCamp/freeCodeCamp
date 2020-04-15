@@ -28,6 +28,8 @@ tests:
     testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyToDoList)); return mockedComponent.find('MyToDoList').length === 1; })());
   - text: The first child of <code>MyToDoList</code> should be a <code>textarea</code> element.
     testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyToDoList)); return mockedComponent.find('MyToDoList').children().childAt(0).type() === 'textarea'; })());
+  - text: The second child of <code>MyToDoList</code> should be a <code>br</code> element.
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyToDoList)); return mockedComponent.find('MyToDoList').children().childAt(1).type() === 'br'; })());
   - text: The third child of <code>MyToDoList</code> should be a <code>button</code> element.
     testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyToDoList)); return mockedComponent.find('MyToDoList').children().childAt(2).type() === 'button'; })());
   - text: The state of <code>MyToDoList</code> should be initialized with <code>toDoList</code> as an empty array.
@@ -80,7 +82,8 @@ class MyToDoList extends React.Component {
           onChange={this.handleChange}
           value={this.state.userInput}
           style={textAreaStyles}
-          placeholder="Separate Items With Commas" /><br />
+          placeholder="Separate Items With Commas" />
+        <br />
         <button onClick={this.handleSubmit}>Create List</button>
         <h1>My "To Do" List:</h1>
         <ul>
@@ -93,7 +96,6 @@ class MyToDoList extends React.Component {
 ```
 
 </div>
-
 
 ### After Test
 <div id='jsx-teardown'>

@@ -11,6 +11,7 @@ import { createReportUserSaga } from './report-user-saga';
 import { createShowCertSaga } from './show-cert-saga';
 import { createNightModeSaga } from './night-mode-saga';
 import { createDonationSaga } from './donation-saga';
+import { createGaSaga } from './ga-saga';
 
 import hardGoToEpic from './hard-go-to-epic';
 import failedUpdatesEpic from './failed-updates-epic';
@@ -32,10 +33,10 @@ export const defaultFetchState = {
 
 const initialState = {
   appUsername: '',
-  canRequestDonation: false,
+  canRequestBlockDonation: false,
+  canRequestProgressDonation: true,
   completionCount: 0,
   currentChallengeId: store.get(CURRENT_CHALLENGE_KEY),
-  donationRequested: false,
   showCert: {},
   showCertFetchState: {
     ...defaultFetchState
@@ -49,6 +50,7 @@ const initialState = {
   },
   sessionMeta: { activeDonations: 0 },
   showDonationModal: false,
+  isBlockDonationModal: false,
   isOnline: true
 };
 
@@ -56,13 +58,15 @@ export const types = createTypes(
   [
     'appMount',
     'hardGoTo',
-    'allowDonationRequests',
+    'allowBlockDonationRequests',
     'closeDonationModal',
-    'preventDonationRequests',
+    'preventBlockDonationRequests',
+    'preventProgressDonationRequests',
     'openDonationModal',
     'onlineStatusChange',
     'resetUserData',
     'tryToShowDonationModal',
+    'executeGA',
     'submitComplete',
     'updateComplete',
     'updateCurrentChallengeId',
@@ -82,6 +86,7 @@ export const sagas = [
   ...createAcceptTermsSaga(types),
   ...createAppMountSaga(types),
   ...createDonationSaga(types),
+  ...createGaSaga(types),
   ...createFetchUserSaga(types),
   ...createShowCertSaga(types),
   ...createReportUserSaga(types),
@@ -93,15 +98,24 @@ export const appMount = createAction(types.appMount);
 export const tryToShowDonationModal = createAction(
   types.tryToShowDonationModal
 );
-export const allowDonationRequests = createAction(types.allowDonationRequests);
+
+export const executeGA = createAction(types.executeGA);
+
+export const allowBlockDonationRequests = createAction(
+  types.allowBlockDonationRequests
+);
 export const closeDonationModal = createAction(types.closeDonationModal);
 export const openDonationModal = createAction(types.openDonationModal);
-export const preventDonationRequests = createAction(
-  types.preventDonationRequests
+export const preventBlockDonationRequests = createAction(
+  types.preventBlockDonationRequests
+);
+export const preventProgressDonationRequests = createAction(
+  types.preventProgressDonationRequests
 );
 
 export const onlineStatusChange = createAction(types.onlineStatusChange);
 
+// TODO: re-evaluate this since /internal is no longer used.
 // `hardGoTo` is used to hit the API server directly
 // without going through /internal
 // used for things like /signin and /signout
@@ -145,12 +159,15 @@ export const completedChallengesSelector = state =>
   userSelector(state).completedChallenges || [];
 export const completionCountSelector = state => state[ns].completionCount;
 export const currentChallengeIdSelector = state => state[ns].currentChallengeId;
-export const isDonationRequestedSelector = state => state[ns].donationRequested;
 export const isDonatingSelector = state => userSelector(state).isDonating;
 
 export const isOnlineSelector = state => state[ns].isOnline;
 export const isSignedInSelector = state => !!state[ns].appUsername;
 export const isDonationModalOpenSelector = state => state[ns].showDonationModal;
+export const canRequestBlockDonationSelector = state =>
+  state[ns].canRequestBlockDonation;
+export const isBlockDonationModalSelector = state =>
+  state[ns].isBlockDonationModal;
 
 export const signInLoadingSelector = state =>
   userFetchStateSelector(state).pending;
@@ -158,21 +175,116 @@ export const showCertSelector = state => state[ns].showCert;
 export const showCertFetchStateSelector = state => state[ns].showCertFetchState;
 
 export const shouldRequestDonationSelector = state => {
-  const isDonationRequested = isDonationRequestedSelector(state);
+  const completedChallenges = completedChallengesSelector(state);
+  const completionCount = completionCountSelector(state);
+  const canRequestProgressDonation = state[ns].canRequestProgressDonation;
   const isDonating = isDonatingSelector(state);
-  if (
-    isDonationRequested === false &&
-    isDonating === false &&
-    state[ns].canRequestDonation
-  ) {
-    return true;
+  const canRequestBlockDonation = canRequestBlockDonationSelector(state);
+
+  // don't request donation if already donating
+  if (isDonating) return false;
+
+  // a block has been completed
+  if (canRequestBlockDonation) return true;
+
+  // a donation has already been requested
+  if (!canRequestProgressDonation) return false;
+
+  // donations only appear after the user has completed ten challenges (i.e.
+  // not before the 11th challenge has mounted)
+  if (completedChallenges.length < 10) {
+    return false;
   }
-  return false;
+  // this will mean we have completed 3 or more challenges this browser session
+  // and enough challenges overall to not be new
+  return completionCount >= 3;
 };
+
 export const userByNameSelector = username => state => {
   const { user } = state[ns];
   return username in user ? user[username] : {};
 };
+
+export const certificatesByNameSelector = username => state => {
+  const {
+    isRespWebDesignCert,
+    is2018DataVisCert,
+    isFrontEndLibsCert,
+    isJsAlgoDataStructCert,
+    isApisMicroservicesCert,
+    isInfosecQaCert,
+    isFrontEndCert,
+    isBackEndCert,
+    isDataVisCert,
+    isFullStackCert
+  } = userByNameSelector(username)(state);
+  return {
+    hasModernCert:
+      isRespWebDesignCert ||
+      is2018DataVisCert ||
+      isFrontEndLibsCert ||
+      isJsAlgoDataStructCert ||
+      isApisMicroservicesCert ||
+      isInfosecQaCert ||
+      isFullStackCert,
+    hasLegacyCert: isFrontEndCert || isBackEndCert || isDataVisCert,
+    currentCerts: [
+      {
+        show: isFullStackCert,
+        title: 'Full Stack Certification',
+        showURL: 'full-stack'
+      },
+      {
+        show: isRespWebDesignCert,
+        title: 'Responsive Web Design Certification',
+        showURL: 'responsive-web-design'
+      },
+      {
+        show: isJsAlgoDataStructCert,
+        title: 'JavaScript Algorithms and Data Structures Certification',
+        showURL: 'javascript-algorithms-and-data-structures'
+      },
+      {
+        show: isFrontEndLibsCert,
+        title: 'Front End Libraries Certification',
+        showURL: 'front-end-libraries'
+      },
+      {
+        show: is2018DataVisCert,
+        title: 'Data Visualization Certification',
+        showURL: 'data-visualization'
+      },
+      {
+        show: isApisMicroservicesCert,
+        title: 'APIs and Microservices Certification',
+        showURL: 'apis-and-microservices'
+      },
+      {
+        show: isInfosecQaCert,
+        title: 'Information Security and Quality Assurance Certification',
+        showURL: 'information-security-and-quality-assurance'
+      }
+    ],
+    legacyCerts: [
+      {
+        show: isFrontEndCert,
+        title: 'Front End Certification',
+        showURL: 'legacy-front-end'
+      },
+      {
+        show: isBackEndCert,
+        title: 'Back End Certification',
+        showURL: 'legacy-back-end'
+      },
+      {
+        show: isDataVisCert,
+        title: 'Data Visualization Certification',
+        showURL: 'legacy-data-visualization'
+      }
+    ]
+  };
+};
+
 export const userFetchStateSelector = state => state[ns].userFetchState;
 export const userProfileFetchStateSelector = state =>
   state[ns].userProfileFetchState;
@@ -214,9 +326,9 @@ function spreadThePayloadOnUser(state, payload) {
 
 export const reducer = handleActions(
   {
-    [types.allowDonationRequests]: state => ({
+    [types.allowBlockDonationRequests]: state => ({
       ...state,
-      canRequestDonation: true
+      canRequestBlockDonation: true
     }),
     [types.fetchUser]: state => ({
       ...state,
@@ -293,13 +405,18 @@ export const reducer = handleActions(
       ...state,
       showDonationModal: false
     }),
-    [types.openDonationModal]: state => ({
+    [types.openDonationModal]: (state, { payload }) => ({
       ...state,
-      showDonationModal: true
+      showDonationModal: true,
+      isBlockDonationModal: payload
     }),
-    [types.preventDonationRequests]: state => ({
+    [types.preventBlockDonationRequests]: state => ({
       ...state,
-      donationRequested: true
+      canRequestBlockDonation: false
+    }),
+    [types.preventProgressDonationRequests]: state => ({
+      ...state,
+      canRequestProgressDonation: false
     }),
     [types.resetUserData]: state => ({
       ...state,

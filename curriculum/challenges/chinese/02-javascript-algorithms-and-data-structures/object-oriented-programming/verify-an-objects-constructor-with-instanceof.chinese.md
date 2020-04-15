@@ -18,9 +18,9 @@ localeTitle: 使用instanceof验证Object的构造函数
 ```yml
 tests:
   - text: <code>myHouse</code>应该将<code>numBedrooms</code>属性设置为数字。
-    testString: 'assert(typeof myHouse.numBedrooms === "number", "<code>myHouse</code> should have a <code>numBedrooms</code> attribute set to a number.");'
+    testString: assert(typeof myHouse.numBedrooms === 'number');
   - text: 请务必使用<code>instanceof</code>运算符验证<code>myHouse</code>是<code>House</code>的<code>instanceof</code> 。
-    testString: 'assert(/myHouse\s*instanceof\s*House/.test(code), "Be sure to verify that <code>myHouse</code> is an instance of <code>House</code> using the <code>instanceof</code> operator.");'
+    testString: assert(/myHouse\s*instanceof\s*House/.test(code));
 
 ```
 

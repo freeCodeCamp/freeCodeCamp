@@ -38,10 +38,9 @@ tests:
 ```html
 <style>
   :root {
+    /* Only change code below this line */
 
-    /* add code below */
-
-    /* add code above */
+    /* Only change code above this line */
   }
 
   body {

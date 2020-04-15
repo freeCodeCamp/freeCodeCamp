@@ -7,17 +7,25 @@ forumTopicId: 302191
 
 ## Description
 <section id='description'>
+
 Let p(n) represent the number of different ways in which n coins can be separated into piles. For example, five coins can be separated into piles in exactly seven different ways, so p(5)=7.
 
-OOOOO
-OOOO   O
-OOO   OO
-OOO   O   O
-OO   OO   O
-OO   O   O   O
-O   O   O   O   O
+<div style='text-align: center;'>
 
-Find the least value of n for which p(n) is divisible by one million.
+  |Coin piles|
+  |--- |
+  |OOOOO|
+  |OOOO   O|
+  |OOO   OO|
+  |OOO   O   O|
+  |OO   OO   O|
+  |OO   O   O   O|
+  |O   O   O   O   O|
+
+</div>
+
+Find the least value of <var>n</var> for which p(<var>n</var>) is divisible by one million.
+
 </section>
 
 ## Instructions
@@ -30,8 +38,10 @@ Find the least value of n for which p(n) is divisible by one million.
 
 ```yml
 tests:
-  - text: <code>euler78()</code> should return 55374.
-    testString: assert.strictEqual(euler78(), 55374);
+  - text: <code>coinPartitions()</code> should return a number.
+    testString: assert(typeof coinPartitions() === 'number');
+  - text: <code>coinPartitions()</code> should return 55374.
+    testString: assert.strictEqual(coinPartitions(), 55374);
 
 ```
 
@@ -43,12 +53,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function euler78() {
+function coinPartitions() {
   // Good luck!
   return true;
 }
 
-euler78();
+coinPartitions();
 ```
 
 </div>

@@ -71,13 +71,13 @@ tests:
   <main>
     <section>
 
-      <!-- Add your code below this line -->
+      <!-- Only change code below this line -->
       <div>
         <!-- Stacked bar chart will go here -->
         <br>
         <p>Breakdown per week of time to spend training in stealth, combat, and weapons.</p>
       </div>
-      <!-- Add your code above this line -->
+      <!-- Only change code above this line -->
 
     </section>
     <section id="stealth">
@@ -123,15 +123,11 @@ tests:
   </header>
   <main>
     <section>
-
-      <!-- Add your code below this line -->
       <figure>
         <!-- Stacked bar chart will go here -->
         <br>
         <figcaption>Breakdown per week of time to spend training in stealth, combat, and weapons.</figcaption>
       </figure>
-      <!-- Add your code above this line -->
-
     </section>
     <section id="stealth">
       <h2>Stealth &amp; Agility Training</h2>

@@ -38,7 +38,7 @@ tests:
 
 ```js
   
-// add code above this line
+// Only change code above this line
 
 subtract(7,4);
 ```
@@ -51,7 +51,6 @@ subtract(7,4);
 
 ```js
 import subtract from "./math_functions.js";
-// add code above this line
 
 subtract(7,4);
 ```

@@ -19,27 +19,27 @@ localeTitle: 高尔夫码
 ```yml
 tests:
   - text: '<code>golfScore(4, 1)</code>应该返回“Hole-in-one！”'
-    testString: 'assert(golfScore(4, 1) === "Hole-in-one!", "<code>golfScore(4, 1)</code> should return "Hole-in-one!"");'
+    testString: assert(golfScore(4, 1) === "Hole-in-one!");
   - text: '<code>golfScore(4, 2)</code>应该返回“Eagle”'
-    testString: 'assert(golfScore(4, 2) === "Eagle", "<code>golfScore(4, 2)</code> should return "Eagle"");'
+    testString: assert(golfScore(4, 2) === "Eagle");
   - text: '<code>golfScore(5, 2)</code>应该返回“Eagle”'
-    testString: 'assert(golfScore(5, 2) === "Eagle", "<code>golfScore(5, 2)</code> should return "Eagle"");'
+    testString: assert(golfScore(5, 2) === "Eagle");
   - text: '<code>golfScore(4, 3)</code>应该返回“Birdie”'
-    testString: 'assert(golfScore(4, 3) === "Birdie", "<code>golfScore(4, 3)</code> should return "Birdie"");'
+    testString: assert(golfScore(4, 3) === "Birdie");
   - text: '<code>golfScore(4, 4)</code>应该返回“Par”'
-    testString: 'assert(golfScore(4, 4) === "Par", "<code>golfScore(4, 4)</code> should return "Par"");'
+    testString: assert(golfScore(4, 4) === "Par");
   - text: '<code>golfScore(1, 1)</code>应该返回“Hole-in-one！”'
-    testString: 'assert(golfScore(1, 1) === "Hole-in-one!", "<code>golfScore(1, 1)</code> should return "Hole-in-one!"");'
+    testString: assert(golfScore(1, 1) === "Hole-in-one!");
   - text: '<code>golfScore(5, 5)</code>应该返回“Par”'
-    testString: 'assert(golfScore(5, 5) === "Par", "<code>golfScore(5, 5)</code> should return "Par"");'
+    testString: assert(golfScore(5, 5) === "Par");
   - text: '<code>golfScore(4, 5)</code>应该返回“Bogey”'
-    testString: 'assert(golfScore(4, 5) === "Bogey", "<code>golfScore(4, 5)</code> should return "Bogey"");'
+    testString: assert(golfScore(4, 5) === "Bogey");
   - text: '<code>golfScore(4, 6)</code>应该返回“Double Bogey”'
-    testString: 'assert(golfScore(4, 6) === "Double Bogey", "<code>golfScore(4, 6)</code> should return "Double Bogey"");'
+    testString: assert(golfScore(4, 6) === "Double Bogey");
   - text: '<code>golfScore(4, 7)</code>应该返回“Go Home！”'
-    testString: 'assert(golfScore(4, 7) === "Go Home!", "<code>golfScore(4, 7)</code> should return "Go Home!"");'
+    testString: assert(golfScore(4, 7) === "Go Home!");
   - text: '<code>golfScore(5, 9)</code>应该返回“Go Home！”'
-    testString: 'assert(golfScore(5, 9) === "Go Home!", "<code>golfScore(5, 9)</code> should return "Go Home!"");'
+    testString: assert(golfScore(5, 9) === "Go Home!");
 
 ```
 

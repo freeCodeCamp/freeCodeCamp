@@ -19,7 +19,7 @@ localeTitle: 问题89：罗马数字
 ```yml
 tests:
   - text: <code>euler89()</code>应该返回743。
-    testString: 'assert.strictEqual(euler89(), 743, "<code>euler89()</code> should return 743.");'
+    testString: assert.strictEqual(euler89(), 743);
 
 ```
 

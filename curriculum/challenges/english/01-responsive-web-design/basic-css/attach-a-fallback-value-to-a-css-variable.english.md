@@ -62,9 +62,9 @@ tests:
     top: 10%;
     left: 25%;
 
-    /* change code below */
+    /* Change code below this line */
     background: var(--pengiun-skin);
-    /* change code above */
+    /* Change code above this line */
 
     width: 50%;
     height: 45%;
@@ -75,9 +75,9 @@ tests:
     top: 40%;
     left: 23.5%;
 
-    /* change code below */
+    /* Change code below this line */
     background: var(--pengiun-skin);
-    /* change code above */
+    /* Change code above this line */
 
     width: 53%;
     height: 45%;

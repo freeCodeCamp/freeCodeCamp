@@ -19,7 +19,7 @@ localeTitle: 问题121：光盘游戏奖金
 ```yml
 tests:
   - text: <code>euler121()</code>应返回2269。
-    testString: 'assert.strictEqual(euler121(), 2269, "<code>euler121()</code> should return 2269.");'
+    testString: assert.strictEqual(euler121(), 2269);
 
 ```
 

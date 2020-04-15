@@ -9,12 +9,12 @@ localeTitle: Уменьшить число с помощью JavaScript
 
 ## Description
 <section id='description'>
-Вы можете легко <dfn>уменьшать</dfn> или уменьшить переменную на один с <code>--</code> оператором. <code>i--;</code> эквивалентно <code>i = i - 1;</code> <strong>Заметка</strong> <br> Вся строка становится <code>i--;</code> , устраняя необходимость равенства знака.
+Вы можете легко <dfn>декрементировать</dfn>, то есть уменьшать переменную на единицу, с помощью оператора<code>--</code>. <code>i--;</code> эквивалентно <code>i = i - 1;</code> <strong>Обратите внимание:</strong> <br> вся строка становится <code>i--;</code>, и отпадает необходимость в знаке равенства.
 </section>
 
 ## Instructions
 <section id='instructions'>
-Измените код на использование оператора <code>--</code> на <code>myVar</code> .
+Измените код так, чтобы использовать оператор <code>--</code> с <code>myVar</code> .
 </section>
 
 ## Tests

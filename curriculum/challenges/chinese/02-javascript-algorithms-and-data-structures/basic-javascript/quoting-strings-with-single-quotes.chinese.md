@@ -18,9 +18,9 @@ localeTitle: 单引号引用字符串
 ```yml
 tests:
   - text: 删除所有<code>backslashes</code> （ <code>\</code> ）
-    testString: 'assert(!/\\/g.test(code) && myStr.match("\\s*<a href\\s*=\\s*"http://www.example.com"\\s*target\\s*=\\s*"_blank">\\s*Link\\s*</a>\\s*"), "Remove all the <code>backslashes</code> (<code>\</code>)");'
+    testString: assert(!/\\/g.test(code) && myStr.match('\\s*<a href\\s*=\\s*"http://www.example.com"\\s*target\\s*=\\s*"_blank">\\s*Link\\s*</a>\\s*'));
   - text: '你应该有两个单引号<code>&#39;</code>和四个双引号<code>&quot;</code>'
-    testString: 'assert(code.match(/"/g).length === 4 && code.match(/"/g).length === 2, "You should have two single quotes <code>&#39;</code> and four double quotes <code>&quot;</code>");'
+    testString: assert(code.match(/"/g).length === 4 && code.match(/'/g).length === 2);
 
 ```
 

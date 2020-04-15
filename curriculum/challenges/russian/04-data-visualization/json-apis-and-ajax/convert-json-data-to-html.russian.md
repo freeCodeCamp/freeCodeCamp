@@ -13,8 +13,8 @@ localeTitle: Преобразование данных JSON в HTML
 
 ## Instructions
 <section id='instructions'>
-Add a <code>forEach</code> method to loop over the JSON data and create the HTML elements to display it.
-Here is some example JSON
+Добавьте метод <code>forEach</code> для цикличного прохода по JSON и создайте HTML элементы для отображения информации.
+Вот пример JSON
 
 ```json
 [
@@ -35,11 +35,11 @@ Here is some example JSON
 
 ```yml
 tests:
-  - text: Your code should store the data in the <code>html</code> variable
+  - text: Ваш код должен храниться информацию в переменной <code>html</code>
     testString: assert(code.match(/html\s+?(\+=|=\shtml\s\+)/g));
-  - text: Your code should use a <code>forEach</code> method to loop over the JSON data from the API.
+  - text: Ваш код должен использовать метод <code>forEach</code>для цикличного прохождения над данными JSON из API.
     testString: assert(code.match(/json\.forEach/g));
-  - text: Your code should wrap the key names in <code>strong</code> tags.
+  - text: Ваш код должен обернуть данные в <code>strong</code> теги.
     testString: assert(code.match(/<strong>.+<\/strong>/g));
 
 ```

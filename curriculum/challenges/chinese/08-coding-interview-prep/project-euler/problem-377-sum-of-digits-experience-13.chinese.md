@@ -19,7 +19,7 @@ localeTitle: 问题377：数字之和，经验13
 ```yml
 tests:
   - text: <code>euler377()</code>应该返回732385277。
-    testString: 'assert.strictEqual(euler377(), 732385277, "<code>euler377()</code> should return 732385277.");'
+    testString: assert.strictEqual(euler377(), 732385277);
 
 ```
 

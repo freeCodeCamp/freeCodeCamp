@@ -19,7 +19,7 @@ localeTitle: 问题196：Prime三胞胎
 ```yml
 tests:
   - text: <code>euler196()</code>应返回322303240771079940。
-    testString: 'assert.strictEqual(euler196(), 322303240771079940, "<code>euler196()</code> should return 322303240771079940.");'
+    testString: assert.strictEqual(euler196(), 322303240771079940);
 
 ```
 

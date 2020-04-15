@@ -72,9 +72,9 @@ let foods = {
   plums: 28
 };
 
-// change code below this line
+// Only change code below this line
 
-// change code above this line
+// Only change code above this line
 
 console.log(foods);
 ```
@@ -95,11 +95,9 @@ let foods = {
   plums: 28
 };
 
-// change code below this line
 foods['bananas'] = 13;
 foods['grapes']  = 35;
 foods['strawberries'] = 27;
-// change code above this line
 ```
 
 </section>

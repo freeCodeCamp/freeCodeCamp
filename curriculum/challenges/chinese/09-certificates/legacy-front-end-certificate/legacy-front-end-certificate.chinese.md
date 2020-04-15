@@ -20,26 +20,26 @@ localeTitle: 传统前端证书
 
 ```yml
 tests:
-  - text: ''
-    testString: !<tag:yaml.org,2002:js/undefined> ''
-  - text: ''
-    testString: !<tag:yaml.org,2002:js/undefined> ''
-  - text: ''
-    testString: !<tag:yaml.org,2002:js/undefined> ''
-  - text: ''
-    testString: !<tag:yaml.org,2002:js/undefined> ''
-  - text: ''
-    testString: !<tag:yaml.org,2002:js/undefined> ''
-  - text: ''
-    testString: !<tag:yaml.org,2002:js/undefined> ''
-  - text: ''
-    testString: !<tag:yaml.org,2002:js/undefined> ''
-  - text: ''
-    testString: !<tag:yaml.org,2002:js/undefined> ''
-  - text: ''
-    testString: !<tag:yaml.org,2002:js/undefined> ''
-  - text: ''
-    testString: !<tag:yaml.org,2002:js/undefined> ''
+  - id: bd7158d8c242eddfaeb5bd13
+    title: Build a Personal Portfolio Webpage
+  - id: bd7158d8c442eddfaeb5bd13
+    title: Build a Random Quote Machine
+  - id: bd7158d8c442eddfaeb5bd0f
+    title: Build a Pomodoro Clock
+  - id: bd7158d8c442eddfaeb5bd17
+    title: Build a JavaScript Calculator
+  - id: bd7158d8c442eddfaeb5bd10
+    title: Show the Local Weather
+  - id: bd7158d8c442eddfaeb5bd1f
+    title: Use the Twitch JSON API
+  - id: bd7158d8c442eddfaeb5bd18
+    title: Stylize Stories on Camper News
+  - id: bd7158d8c442eddfaeb5bd19
+    title: Build a Wikipedia Viewer
+  - id: bd7158d8c442eedfaeb5bd1c
+    title: Build a Tic Tac Toe Game
+  - id: bd7158d8c442eddfaeb5bd1c
+    title: Build a Simon Game
 
 ```
 

@@ -36,3 +36,15 @@
 .timeline-row > td {
   vertical-align: middle !important;
 }
+
+.timeline-cert-link {
+  margin-right: 20px;
+}
+
+.timeline-cert-link > svg {
+  display: inline-block;
+  height: 25px;
+  width: auto;
+  margin-left: 10px;
+  position: absolute;
+}

@@ -60,11 +60,11 @@ tests:
         <p>Tell us the best date for the competition</p>
         <label for="pickdate">Preferred Date:</label>
 
-        <!-- Add your code below this line -->
+        <!-- Only change code below this line -->
 
 
 
-        <!-- Add your code above this line -->
+        <!-- Only change code above this line -->
 
         <input type="submit" name="submit" value="Submit">
       </form>

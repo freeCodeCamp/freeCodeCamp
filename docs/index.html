@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Contribution Guidelines | freeCodeCamp.org</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+  <!-- Theme -->
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css"> -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/vue.css">
+  <!-- Custom theme stylesheet -->
+  <link rel="stylesheet" href="components/theme.css">
+</head>
+
+<body>
+  <div id="app"></div>
+  <script>
+    window.$docsify = {
+      // Main Config
+      homepage: 'index.md',
+      name: 'freeCodeCamp.org',
+      logo: 'components/logo.svg',
+      loadSidebar: 'components/sidebar.md',
+
+      // Cover Page
+      /*
+      coverpage: 'components/cover.md',
+      onlyCover: true,
+      */
+
+      // Navigation
+      auto2top: true,
+      maxLevel: 2,
+      subMaxLevel: 2,
+
+      // Plugins
+      search: {
+        depth: 3,
+        noData: 'No results!',
+        placeholder: 'Search...'
+      },
+
+      'flexible-alerts': {
+        style: 'flat'
+      },
+
+      pagination: {
+        crossChapter: true,
+        crossChapterText: true,
+      },
+
+    }
+  </script>
+
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+
+  <!-- Theme -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0"></script> -->
+
+  <!-- Plugins -->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-plugin-flexible-alerts@1"></script>
+  <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+
+</html>
