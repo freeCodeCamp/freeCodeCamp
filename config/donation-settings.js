@@ -23,6 +23,19 @@ const modalDefaultStateConfig = {
   donationDuration: 'month'
 };
 
+const onetimeSKUConfig = {
+  live: [
+    { amount: '100000', id: 'sku_GwHogRRJrCYGms' },
+    { amount: '25000', id: 'sku_GwHnCde23uDH5R' },
+    { amount: '6000', id: 'sku_H5mjFgpayAzJzT' }
+  ],
+  staging: [
+    { amount: '100000', id: 'sku_GvAeUdWLsmGO9O' },
+    { amount: '25000', id: 'sku_GvAdXbsotjFi7G' },
+    { amount: '6000', id: 'sku_GvAeJDgwjnGAdy' }
+  ]
+};
+
 // Configuration for server side
 const durationKeysConfig = ['year', 'month', 'onetime'];
 const donationOneTimeConfig = [100000, 25000, 6000];
@@ -109,6 +122,7 @@ module.exports = {
   donationOneTimeConfig,
   donationSubscriptionConfig,
   modalDefaultStateConfig,
+  onetimeSKUConfig,
   paypalConfigTypes,
   paypalConfigurator
 };
