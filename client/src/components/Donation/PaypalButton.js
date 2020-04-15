@@ -99,7 +99,7 @@ export class PaypalButton extends Component {
           }
           options={{
             vault: true,
-            disableFunding: 'card',
+            disableFunding: 'credit,card',
             clientId: paypalClientId
           }}
           style={{

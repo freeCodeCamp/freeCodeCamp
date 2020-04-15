@@ -18,7 +18,7 @@ Finally, the function would always produce the same output for the same set of i
 ## Instructions
 <section id='instructions'>
 Let's update the <code>incrementer</code> function to clearly declare its dependencies.
-Write the <code>incrementer</code> function so it takes an argument, and then increases the value by one.
+Write the <code>incrementer</code> function so it takes an argument, and then returns a result after increasing the value by one.
 </section>
 
 ## Tests
