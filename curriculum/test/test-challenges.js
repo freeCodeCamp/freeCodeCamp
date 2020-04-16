@@ -149,7 +149,7 @@ please change the TEST_CHALLENGES_FOR_LANGS env variable to a single language`
   if (process.env.npm_config_superblock) {
     const filter = stringSimilarity.findBestMatch(
       process.env.npm_config_superblock,
-      filters.superBlocks
+      targetSuperBlockStrings
     ).bestMatch.target;
 
     console.log(`\nsuperBlock being tested: ${filter}`);
