@@ -138,20 +138,12 @@ please change the TEST_CHALLENGES_FOR_LANGS env variable to a single language`
 
   // the next few statements create a list of all blocks and superblocks
   // as they appear in the list of challenges
-  const filters = {
-    blocks: [],
-    superBlocks: []
-  };
-
-  challengesForLang[0].challenges.forEach(chal => {
-    if (filters.blocks.indexOf(chal.block) < 0) {
-      filters.blocks.push(chal.block);
-    }
-
-    if (filters.superBlocks.indexOf(chal.superBlock) < 0) {
-      filters.superBlocks.push(chal.superBlock);
-    }
-  });
+  const blocks = challengesForLang[0].challenges.map(({ block }) => block);
+  const superBlocks = challengesForLang[0].challenges.map(
+    ({ superBlock }) => superBlock
+  );
+  const targetBlockStrings = [...new Set(blocks)];
+  const targetSuperBlockStrings = [...new Set(superBlocks)];
 
   // the next few statements will filter challenges based on command variables
   if (process.env.npm_config_superblock) {
