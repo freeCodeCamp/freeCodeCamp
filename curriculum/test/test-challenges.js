@@ -127,6 +127,11 @@ async function setup() {
   page = await newPageContext(browser);
   await page.setViewport({ width: 300, height: 150 });
   const testLangs = testedLangs();
+  if (testLangs.length > 1)
+    throw Error(
+      `Testing more than one language at once is not currently supported
+please change the TEST_CHALLENGES_FOR_LANGS env variable to a single language`
+    );
   const challengesForLang = await Promise.all(
     testLangs.map(lang => getChallenges(lang))
   );
