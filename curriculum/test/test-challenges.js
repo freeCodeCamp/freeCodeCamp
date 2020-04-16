@@ -165,7 +165,7 @@ please change the TEST_CHALLENGES_FOR_LANGS env variable to a single language`
   if (process.env.npm_config_block) {
     const filter = stringSimilarity.findBestMatch(
       process.env.npm_config_block,
-      filters.blocks
+      targetBlockStrings
     ).bestMatch.target;
 
     console.log(`\nblock being tested: ${filter}`);
