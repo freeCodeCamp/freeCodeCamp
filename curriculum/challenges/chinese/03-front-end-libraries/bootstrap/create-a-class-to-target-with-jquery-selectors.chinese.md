@@ -2,15 +2,19 @@
 id: bad87fee1348bd9aec908852
 title: Create a Class to Target with jQuery Selectors
 challengeType: 0
-videoUrl: ''
-localeTitle: 使用jQuery选择器创建一个目标类
+forumTopicId: 16815
+localeTitle: 分别给每个目标元素的 class 属性添加一个 target 值
 ---
 
 ## Description
-<section id="description">并非每个类都需要具有相应的CSS。有时我们创建类只是为了使用jQuery更容易地选择这些元素。为每个<code>button</code>元素提供类<code>target</code> 。 </section>
+<section id='description'>
+并不是所有 class 属性都需要有对应的 CSS 样式。有时候我们设置 class 只是为了更方便地在 jQuery 中选中这些元素。
+为每一个 <code>button</code> 元素添加 <code>target</code> class。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,7 +22,7 @@ localeTitle: 使用jQuery选择器创建一个目标类
 
 ```yml
 tests:
-  - text: 将<code>target</code>类应用于每个<code>button</code>元素。
+  - text: 给你的每一个 <code>button</code> 元素设置 <code>target</code> class。
     testString: assert($(".target").length > 5);
 
 ```
@@ -50,7 +54,6 @@ tests:
     </div>
   </div>
 </div>
-
 ```
 
 </div>
@@ -62,8 +65,26 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<div class="container-fluid">
+  <h3 class="text-primary text-center">jQuery Playground</h3>
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="well">
+        <button class="target btn btn-default"></button>
+        <button class="target btn btn-default"></button>
+        <button class="target btn btn-default"></button>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <div class="well">
+        <button class="target btn btn-default"></button>
+        <button class="target btn btn-default"></button>
+        <button class="target btn btn-default"></button>
+      </div>
+    </div>
+  </div>
+</div>
 ```
 
-/section>
+</section>
