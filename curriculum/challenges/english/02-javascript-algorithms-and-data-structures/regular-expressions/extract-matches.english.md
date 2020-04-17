@@ -19,12 +19,14 @@ let ourRegex = /expressions/;
 ourStr.match(ourRegex);
 // Returns ["expressions"]
 ```
-Note that the `.match` syntax is the "opposite" of the `.test` 
-method you have been using thus far:
+
+Note that the `.match` syntax is the "opposite" of the `.test` method you have been using thus far:
+
 ```js
 'string'.match(/regex/);
 /regex/.test('string');
 ```
+
 </section>
 
 ## Instructions
