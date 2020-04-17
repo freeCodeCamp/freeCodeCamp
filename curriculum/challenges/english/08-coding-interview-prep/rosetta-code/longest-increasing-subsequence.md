@@ -11,12 +11,13 @@ For the following array:
 $\{3, 10, 2, 1, 20\}$
 Longest increasing sequence is:
 $\{3, 10, 20\}$
-For more information on this problem please see <a href="https://en.wikipedia.org/wiki/Longest increasing subsequence">Wikipedia</a>.
+For more information on this problem please see <a href="https://en.wikipedia.org/wiki/Longest increasing subsequence" target="_blank">Wikipedia</a>.
 </section>
 
 ## Instructions
 <section id='instructions'>
-Write a function that takes an array of numbers as a parameter and returns the longest increasing subsequence. It is guaranteed that every array will have a unique longest increasing subsequence.
+Write a function that takes an array of numbers as a parameter and returns the longest increasing subsequence.
+It is guaranteed that every array will have a longest increasing subsequence.
 </section>
 
 ## Tests

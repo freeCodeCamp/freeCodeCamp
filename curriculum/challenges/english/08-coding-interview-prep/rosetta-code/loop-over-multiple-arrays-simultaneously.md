@@ -15,7 +15,7 @@ the output should be:
 
 ## Instructions
 <section id='instructions'>
-Write a function that takes an array of arrays as a parameter and returns an array of strings created as stated in the description.
+Write a function that takes an array of arrays as a parameter and returns an array of strings satisfying the given description.
 </section>
 
 ## Tests

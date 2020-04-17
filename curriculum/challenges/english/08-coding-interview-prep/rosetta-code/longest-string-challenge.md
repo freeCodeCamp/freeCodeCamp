@@ -6,12 +6,12 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-In the longest string challenge, you have to find all the strings that have the longest lengths among all the given strings.
+In this challenge, you have to find the strings that are the longest among the given strings.
 </section>
 
 ## Instructions
 <section id='instructions'>
-Write a function that takes an array of strings and returns the strings that have length equal to the longest length.
+Write a function that takes an array of strings and returns the strings that have a length equal to the longest length.
 </section>
 
 ## Tests

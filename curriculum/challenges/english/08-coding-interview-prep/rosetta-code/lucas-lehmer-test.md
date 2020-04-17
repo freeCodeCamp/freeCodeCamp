@@ -11,7 +11,7 @@ Lucas-Lehmer Test: for $p$ an odd prime, the Mersenne number $2^p-1$ is prime if
 
 ## Instructions
 <section id='instructions'>
-Write a function that returns true if given Mersenne number is prime otherwise returns false.
+Write a function that returns whether the given Mersenne number is prime or not.
 </section>
 
 ## Tests

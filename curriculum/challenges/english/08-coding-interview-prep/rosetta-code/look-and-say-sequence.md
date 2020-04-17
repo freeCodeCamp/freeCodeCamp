@@ -6,7 +6,7 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-The  <a href="https://en.wikipedia.org/wiki/Look and say sequence">Look and say sequence</a>  is a recursively defined sequence of numbers studied most notably by  <a href="https://en.wikipedia.org/wiki/John Horton Conway">John Conway</a>.
+The  <a href="https://en.wikipedia.org/wiki/Look and say sequence" target="_blank">Look and say sequence</a>  is a recursively defined sequence of numbers.
 Sequence Definition
 <ul><li>Take a decimal number</li>
 <li><span>Look</span> at the number, visually grouping consecutive runs of the same digit.</li>
@@ -20,7 +20,7 @@ Sequence Definition
 
 ## Instructions
 <section id='instructions'>
-Write a function that takes a string as parameter. This string has the number that should be processed as mentioned above. The function should return the resultant string.
+Write a function that accepts a string as a parameter, processes it and returns the resultant string.
 </section>
 
 ## Tests
