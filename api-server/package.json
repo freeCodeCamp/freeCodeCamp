@@ -16,7 +16,7 @@
     "@freecodecamp/loopback-component-passport": "^1.2.0",
     "@sentry/node": "^5.14.1",
     "accepts": "^1.3.7",
-    "auth0-js": "^9.11.3",
+    "auth0-js": "^9.13.2",
     "axios": "^0.19.2",
     "body-parser": "^1.19.0",
     "chai": "~3.4.1",
