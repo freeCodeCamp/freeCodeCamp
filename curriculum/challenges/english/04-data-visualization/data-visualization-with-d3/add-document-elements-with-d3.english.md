@@ -78,7 +78,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 <body>
   <script>
     d3.select("body")
