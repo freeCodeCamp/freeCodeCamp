@@ -109,7 +109,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 <body>
   <script>
     const dataset = [
