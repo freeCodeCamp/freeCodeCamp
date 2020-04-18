@@ -72,7 +72,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 <style>
   svg {
     background-color: pink;
