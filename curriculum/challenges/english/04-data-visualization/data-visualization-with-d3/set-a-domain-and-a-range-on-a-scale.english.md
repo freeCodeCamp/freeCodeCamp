@@ -86,7 +86,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 <body>
   <script>
     const scale = d3.scaleLinear();
