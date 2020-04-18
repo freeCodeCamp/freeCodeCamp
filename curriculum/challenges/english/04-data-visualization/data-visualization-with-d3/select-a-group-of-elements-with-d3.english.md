@@ -64,7 +64,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 <body>
   <ul>
     <li>Example</li>
