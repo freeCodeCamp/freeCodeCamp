@@ -32,7 +32,7 @@ tests:
   - text: The function should be anonymous.
     testString: assert(/\((function|\(\))(=>|\(\)){?/.test(code.replace(/\s/g, "")));
   - text: Your function should have parentheses at the end of the expression to call it immediately.
-    testString: assert(/}?\)\(\)/.test(code.replace(/\s/g, "")));
+    testString: assert(/}?\)\(\)$|}\(\)\)$/.test(code.replace(/[\s;]/g, "")));
 
 ```
 
@@ -65,6 +65,24 @@ makeNest();
 (function () {
   console.log("A cozy nest is ready");
 })();
+```
+
+```js
+(function () {
+  console.log("A cozy nest is ready");
+}());
+```
+
+```js
+(() => {
+  console.log("A cozy nest is ready");
+})();
+```
+
+```js
+(() =>
+  console.log("A cozy nest is ready")
+)();
 ```
 
 </section>
