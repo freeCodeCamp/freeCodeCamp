@@ -9,2237 +9,2254 @@ exports[`<HeatMap/> renders correctly 1`] = `
       class="col-sm-8 col-sm-offset-2 col-xs-12"
     >
       <div
-        class="row"
+        class="heatmap-nav row"
       >
-        <div
-          class="col-sm-8 col-sm-offset-2 col-xs-12"
+        <button
+          class="heatmap-nav-btn"
+          disabled=""
+          style="visibility: hidden;"
         >
-          <svg
-            class="react-calendar-heatmap"
-            viewBox="0 0 296 90"
-          >
-            <g
-              class="react-calendar-heatmap-month-labels"
-              transform="translate(0, 0)"
-            >
-              <text
-                class="react-calendar-heatmap-month-label"
-                x="33"
-                y="10"
-              >
-                Sep
-              </text>
-              <text
-                class="react-calendar-heatmap-month-label"
-                x="88"
-                y="10"
-              >
-                Oct
-              </text>
-              <text
-                class="react-calendar-heatmap-month-label"
-                x="132"
-                y="10"
-              >
-                Nov
-              </text>
-              <text
-                class="react-calendar-heatmap-month-label"
-                x="176"
-                y="10"
-              >
-                Dec
-              </text>
-              <text
-                class="react-calendar-heatmap-month-label"
-                x="231"
-                y="10"
-              >
-                Jan
-              </text>
-              <text
-                class="react-calendar-heatmap-month-label"
-                x="275"
-                y="10"
-              >
-                Feb
-              </text>
-            </g>
-            <g
-              class="react-calendar-heatmap-all-weeks"
-              transform="translate(0, 14)"
-            >
-              <g
-                class="react-calendar-heatmap-week"
-                transform="translate(0, 0)"
-              >
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Aug 4, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="0"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Aug 5, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="11"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Aug 6, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="22"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Aug 7, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="33"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Aug 8, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="44"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Aug 9, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="55"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Aug 10, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="66"
-                >
-                  <title />
-                </rect>
-              </g>
-              <g
-                class="react-calendar-heatmap-week"
-                transform="translate(11, 0)"
-              >
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Aug 11, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="0"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Aug 12, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="11"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Aug 13, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="22"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Aug 14, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="33"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Aug 15, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="44"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Aug 16, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="55"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Aug 17, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="66"
-                >
-                  <title />
-                </rect>
-              </g>
-              <g
-                class="react-calendar-heatmap-week"
-                transform="translate(22, 0)"
-              >
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Aug 18, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="0"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Aug 19, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="11"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Aug 20, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="22"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Aug 21, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="33"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Aug 22, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="44"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Aug 23, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="55"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Aug 24, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="66"
-                >
-                  <title />
-                </rect>
-              </g>
-              <g
-                class="react-calendar-heatmap-week"
-                transform="translate(33, 0)"
-              >
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Aug 25, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="0"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Aug 26, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="11"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Aug 27, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="22"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Aug 28, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="33"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Aug 29, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="44"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Aug 30, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="55"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Aug 31, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="66"
-                >
-                  <title />
-                </rect>
-              </g>
-              <g
-                class="react-calendar-heatmap-week"
-                transform="translate(44, 0)"
-              >
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Sep 1, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="0"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Sep 2, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="11"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Sep 3, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="22"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Sep 4, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="33"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Sep 5, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="44"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Sep 6, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="55"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Sep 7, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="66"
-                >
-                  <title />
-                </rect>
-              </g>
-              <g
-                class="react-calendar-heatmap-week"
-                transform="translate(55, 0)"
-              >
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Sep 8, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="0"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Sep 9, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="11"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Sep 10, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="22"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Sep 11, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="33"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Sep 12, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="44"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Sep 13, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="55"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Sep 14, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="66"
-                >
-                  <title />
-                </rect>
-              </g>
-              <g
-                class="react-calendar-heatmap-week"
-                transform="translate(66, 0)"
-              >
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Sep 15, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="0"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Sep 16, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="11"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Sep 17, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="22"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Sep 18, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="33"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Sep 19, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="44"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Sep 20, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="55"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Sep 21, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="66"
-                >
-                  <title />
-                </rect>
-              </g>
-              <g
-                class="react-calendar-heatmap-week"
-                transform="translate(77, 0)"
-              >
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Sep 22, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="0"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Sep 23, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="11"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Sep 24, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="22"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Sep 25, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="33"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Sep 26, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="44"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Sep 27, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="55"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Sep 28, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="66"
-                >
-                  <title />
-                </rect>
-              </g>
-              <g
-                class="react-calendar-heatmap-week"
-                transform="translate(88, 0)"
-              >
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Sep 29, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="0"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Sep 30, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="11"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Oct 1, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="22"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Oct 2, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="33"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Oct 3, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="44"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Oct 4, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="55"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Oct 5, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="66"
-                >
-                  <title />
-                </rect>
-              </g>
-              <g
-                class="react-calendar-heatmap-week"
-                transform="translate(99, 0)"
-              >
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Oct 6, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="0"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Oct 7, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="11"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Oct 8, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="22"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Oct 9, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="33"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Oct 10, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="44"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Oct 11, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="55"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Oct 12, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="66"
-                >
-                  <title />
-                </rect>
-              </g>
-              <g
-                class="react-calendar-heatmap-week"
-                transform="translate(110, 0)"
-              >
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Oct 13, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="0"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Oct 14, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="11"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Oct 15, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="22"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Oct 16, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="33"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Oct 17, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="44"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Oct 18, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="55"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Oct 19, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="66"
-                >
-                  <title />
-                </rect>
-              </g>
-              <g
-                class="react-calendar-heatmap-week"
-                transform="translate(121, 0)"
-              >
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Oct 20, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="0"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Oct 21, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="11"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Oct 22, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="22"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Oct 23, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="33"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Oct 24, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="44"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Oct 25, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="55"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Oct 26, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="66"
-                >
-                  <title />
-                </rect>
-              </g>
-              <g
-                class="react-calendar-heatmap-week"
-                transform="translate(132, 0)"
-              >
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Oct 27, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="0"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Oct 28, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="11"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Oct 29, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="22"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Oct 30, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="33"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Oct 31, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="44"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Nov 1, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="55"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Nov 2, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="66"
-                >
-                  <title />
-                </rect>
-              </g>
-              <g
-                class="react-calendar-heatmap-week"
-                transform="translate(143, 0)"
-              >
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Nov 3, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="0"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Nov 4, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="11"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Nov 5, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="22"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Nov 6, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="33"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Nov 7, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="44"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Nov 8, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="55"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Nov 9, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="66"
-                >
-                  <title />
-                </rect>
-              </g>
-              <g
-                class="react-calendar-heatmap-week"
-                transform="translate(154, 0)"
-              >
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Nov 10, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="0"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Nov 11, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="11"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Nov 12, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="22"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Nov 13, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="33"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Nov 14, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="44"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Nov 15, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="55"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Nov 16, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="66"
-                >
-                  <title />
-                </rect>
-              </g>
-              <g
-                class="react-calendar-heatmap-week"
-                transform="translate(165, 0)"
-              >
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Nov 17, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="0"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Nov 18, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="11"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Nov 19, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="22"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Nov 20, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="33"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Nov 21, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="44"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Nov 22, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="55"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Nov 23, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="66"
-                >
-                  <title />
-                </rect>
-              </g>
-              <g
-                class="react-calendar-heatmap-week"
-                transform="translate(176, 0)"
-              >
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Nov 24, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="0"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Nov 25, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="11"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Nov 26, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="22"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Nov 27, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="33"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Nov 28, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="44"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Nov 29, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="55"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Nov 30, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="66"
-                >
-                  <title />
-                </rect>
-              </g>
-              <g
-                class="react-calendar-heatmap-week"
-                transform="translate(187, 0)"
-              >
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Dec 1, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="0"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Dec 2, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="11"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Dec 3, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="22"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Dec 4, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="33"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Dec 5, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="44"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Dec 6, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="55"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Dec 7, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="66"
-                >
-                  <title />
-                </rect>
-              </g>
-              <g
-                class="react-calendar-heatmap-week"
-                transform="translate(198, 0)"
-              >
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Dec 8, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="0"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Dec 9, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="11"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Dec 10, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="22"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Dec 11, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="33"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Dec 12, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="44"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Dec 13, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="55"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Dec 14, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="66"
-                >
-                  <title />
-                </rect>
-              </g>
-              <g
-                class="react-calendar-heatmap-week"
-                transform="translate(209, 0)"
-              >
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Dec 15, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="0"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Dec 16, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="11"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Dec 17, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="22"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Dec 18, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="33"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Dec 19, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="44"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Dec 20, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="55"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Dec 21, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="66"
-                >
-                  <title />
-                </rect>
-              </g>
-              <g
-                class="react-calendar-heatmap-week"
-                transform="translate(220, 0)"
-              >
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Dec 22, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="0"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Dec 23, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="11"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Dec 24, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="22"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Dec 25, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="33"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Dec 26, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="44"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Dec 27, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="55"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Dec 28, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="66"
-                >
-                  <title />
-                </rect>
-              </g>
-              <g
-                class="react-calendar-heatmap-week"
-                transform="translate(231, 0)"
-              >
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Dec 29, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="0"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Dec 30, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="11"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Dec 31, 2019"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="22"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Jan 1, 2020"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="33"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Jan 2, 2020"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="44"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Jan 3, 2020"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="55"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Jan 4, 2020"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="66"
-                >
-                  <title />
-                </rect>
-              </g>
-              <g
-                class="react-calendar-heatmap-week"
-                transform="translate(242, 0)"
-              >
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Jan 5, 2020"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="0"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Jan 6, 2020"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="11"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Jan 7, 2020"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="22"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Jan 8, 2020"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="33"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Jan 9, 2020"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="44"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Jan 10, 2020"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="55"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Jan 11, 2020"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="66"
-                >
-                  <title />
-                </rect>
-              </g>
-              <g
-                class="react-calendar-heatmap-week"
-                transform="translate(253, 0)"
-              >
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Jan 12, 2020"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="0"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Jan 13, 2020"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="11"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Jan 14, 2020"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="22"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Jan 15, 2020"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="33"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Jan 16, 2020"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="44"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Jan 17, 2020"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="55"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Jan 18, 2020"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="66"
-                >
-                  <title />
-                </rect>
-              </g>
-              <g
-                class="react-calendar-heatmap-week"
-                transform="translate(264, 0)"
-              >
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Jan 19, 2020"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="0"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Jan 20, 2020"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="11"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Jan 21, 2020"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="22"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Jan 22, 2020"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="33"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Jan 23, 2020"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="44"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Jan 24, 2020"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="55"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Jan 25, 2020"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="66"
-                >
-                  <title />
-                </rect>
-              </g>
-              <g
-                class="react-calendar-heatmap-week"
-                transform="translate(275, 0)"
-              >
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Jan 26, 2020"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="0"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Jan 27, 2020"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="11"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Jan 28, 2020"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="22"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Jan 29, 2020"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="33"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-scale-1"
-                  currentItem="false"
-                  data-tip="<b>2 points</b> on Jan 30, 2020"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="44"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Jan 31, 2020"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="55"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Feb 1, 2020"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="66"
-                >
-                  <title />
-                </rect>
-              </g>
-              <g
-                class="react-calendar-heatmap-week"
-                transform="translate(286, 0)"
-              >
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Feb 2, 2020"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="0"
-                >
-                  <title />
-                </rect>
-                <rect
-                  class="color-empty"
-                  currentItem="false"
-                  data-tip="<b>No points</b> on Feb 3, 2020"
-                  height="10"
-                  width="10"
-                  x="0"
-                  y="11"
-                >
-                  <title />
-                </rect>
-              </g>
-            </g>
-            <g
-              class="react-calendar-heatmap-weekday-labels"
-              transform="translate(10, 14)"
-            />
-          </svg>
-          <div
-            class="__react_component_tooltip place-top type-dark "
-            data-id="tooltip"
-          />
-        </div>
+          &lt;
+        </button>
+        <span>
+          Aug 2019 - Feb 2020
+        </span>
+        <button
+          class="heatmap-nav-btn"
+          disabled=""
+          style="visibility: hidden;"
+        >
+          &gt;
+        </button>
       </div>
+      <div
+        class="spacer"
+        style="padding: 15px 0px; height: 1px;"
+      />
+      <svg
+        class="react-calendar-heatmap"
+        viewBox="0 0 296 90"
+      >
+        <g
+          class="react-calendar-heatmap-month-labels"
+          transform="translate(0, 0)"
+        >
+          <text
+            class="react-calendar-heatmap-month-label"
+            x="33"
+            y="10"
+          >
+            Sep
+          </text>
+          <text
+            class="react-calendar-heatmap-month-label"
+            x="88"
+            y="10"
+          >
+            Oct
+          </text>
+          <text
+            class="react-calendar-heatmap-month-label"
+            x="132"
+            y="10"
+          >
+            Nov
+          </text>
+          <text
+            class="react-calendar-heatmap-month-label"
+            x="176"
+            y="10"
+          >
+            Dec
+          </text>
+          <text
+            class="react-calendar-heatmap-month-label"
+            x="231"
+            y="10"
+          >
+            Jan
+          </text>
+          <text
+            class="react-calendar-heatmap-month-label"
+            x="275"
+            y="10"
+          >
+            Feb
+          </text>
+        </g>
+        <g
+          class="react-calendar-heatmap-all-weeks"
+          transform="translate(0, 14)"
+        >
+          <g
+            class="react-calendar-heatmap-week"
+            transform="translate(0, 0)"
+          >
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Aug 4, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="0"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Aug 5, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="11"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Aug 6, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="22"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Aug 7, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="33"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Aug 8, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="44"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Aug 9, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="55"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Aug 10, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="66"
+            >
+              <title />
+            </rect>
+          </g>
+          <g
+            class="react-calendar-heatmap-week"
+            transform="translate(11, 0)"
+          >
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Aug 11, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="0"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Aug 12, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="11"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Aug 13, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="22"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Aug 14, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="33"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Aug 15, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="44"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Aug 16, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="55"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Aug 17, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="66"
+            >
+              <title />
+            </rect>
+          </g>
+          <g
+            class="react-calendar-heatmap-week"
+            transform="translate(22, 0)"
+          >
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Aug 18, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="0"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Aug 19, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="11"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Aug 20, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="22"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Aug 21, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="33"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Aug 22, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="44"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Aug 23, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="55"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Aug 24, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="66"
+            >
+              <title />
+            </rect>
+          </g>
+          <g
+            class="react-calendar-heatmap-week"
+            transform="translate(33, 0)"
+          >
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Aug 25, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="0"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Aug 26, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="11"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Aug 27, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="22"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Aug 28, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="33"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Aug 29, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="44"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Aug 30, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="55"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Aug 31, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="66"
+            >
+              <title />
+            </rect>
+          </g>
+          <g
+            class="react-calendar-heatmap-week"
+            transform="translate(44, 0)"
+          >
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Sep 1, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="0"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Sep 2, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="11"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Sep 3, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="22"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Sep 4, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="33"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Sep 5, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="44"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Sep 6, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="55"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Sep 7, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="66"
+            >
+              <title />
+            </rect>
+          </g>
+          <g
+            class="react-calendar-heatmap-week"
+            transform="translate(55, 0)"
+          >
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Sep 8, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="0"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Sep 9, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="11"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Sep 10, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="22"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Sep 11, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="33"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Sep 12, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="44"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Sep 13, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="55"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Sep 14, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="66"
+            >
+              <title />
+            </rect>
+          </g>
+          <g
+            class="react-calendar-heatmap-week"
+            transform="translate(66, 0)"
+          >
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Sep 15, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="0"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Sep 16, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="11"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Sep 17, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="22"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Sep 18, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="33"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Sep 19, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="44"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Sep 20, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="55"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Sep 21, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="66"
+            >
+              <title />
+            </rect>
+          </g>
+          <g
+            class="react-calendar-heatmap-week"
+            transform="translate(77, 0)"
+          >
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Sep 22, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="0"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Sep 23, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="11"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Sep 24, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="22"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Sep 25, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="33"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Sep 26, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="44"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Sep 27, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="55"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Sep 28, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="66"
+            >
+              <title />
+            </rect>
+          </g>
+          <g
+            class="react-calendar-heatmap-week"
+            transform="translate(88, 0)"
+          >
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Sep 29, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="0"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Sep 30, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="11"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Oct 1, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="22"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Oct 2, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="33"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Oct 3, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="44"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Oct 4, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="55"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Oct 5, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="66"
+            >
+              <title />
+            </rect>
+          </g>
+          <g
+            class="react-calendar-heatmap-week"
+            transform="translate(99, 0)"
+          >
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Oct 6, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="0"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Oct 7, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="11"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Oct 8, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="22"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Oct 9, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="33"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Oct 10, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="44"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Oct 11, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="55"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Oct 12, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="66"
+            >
+              <title />
+            </rect>
+          </g>
+          <g
+            class="react-calendar-heatmap-week"
+            transform="translate(110, 0)"
+          >
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Oct 13, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="0"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Oct 14, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="11"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Oct 15, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="22"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Oct 16, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="33"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Oct 17, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="44"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Oct 18, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="55"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Oct 19, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="66"
+            >
+              <title />
+            </rect>
+          </g>
+          <g
+            class="react-calendar-heatmap-week"
+            transform="translate(121, 0)"
+          >
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Oct 20, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="0"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Oct 21, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="11"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Oct 22, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="22"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Oct 23, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="33"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Oct 24, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="44"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Oct 25, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="55"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Oct 26, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="66"
+            >
+              <title />
+            </rect>
+          </g>
+          <g
+            class="react-calendar-heatmap-week"
+            transform="translate(132, 0)"
+          >
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Oct 27, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="0"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Oct 28, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="11"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Oct 29, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="22"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Oct 30, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="33"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Oct 31, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="44"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Nov 1, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="55"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Nov 2, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="66"
+            >
+              <title />
+            </rect>
+          </g>
+          <g
+            class="react-calendar-heatmap-week"
+            transform="translate(143, 0)"
+          >
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Nov 3, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="0"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Nov 4, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="11"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Nov 5, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="22"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Nov 6, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="33"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Nov 7, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="44"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Nov 8, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="55"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Nov 9, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="66"
+            >
+              <title />
+            </rect>
+          </g>
+          <g
+            class="react-calendar-heatmap-week"
+            transform="translate(154, 0)"
+          >
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Nov 10, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="0"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Nov 11, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="11"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Nov 12, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="22"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Nov 13, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="33"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Nov 14, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="44"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Nov 15, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="55"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Nov 16, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="66"
+            >
+              <title />
+            </rect>
+          </g>
+          <g
+            class="react-calendar-heatmap-week"
+            transform="translate(165, 0)"
+          >
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Nov 17, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="0"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Nov 18, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="11"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Nov 19, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="22"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Nov 20, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="33"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Nov 21, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="44"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Nov 22, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="55"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Nov 23, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="66"
+            >
+              <title />
+            </rect>
+          </g>
+          <g
+            class="react-calendar-heatmap-week"
+            transform="translate(176, 0)"
+          >
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Nov 24, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="0"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Nov 25, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="11"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Nov 26, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="22"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Nov 27, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="33"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Nov 28, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="44"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Nov 29, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="55"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Nov 30, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="66"
+            >
+              <title />
+            </rect>
+          </g>
+          <g
+            class="react-calendar-heatmap-week"
+            transform="translate(187, 0)"
+          >
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Dec 1, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="0"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Dec 2, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="11"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Dec 3, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="22"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Dec 4, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="33"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Dec 5, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="44"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Dec 6, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="55"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Dec 7, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="66"
+            >
+              <title />
+            </rect>
+          </g>
+          <g
+            class="react-calendar-heatmap-week"
+            transform="translate(198, 0)"
+          >
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Dec 8, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="0"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Dec 9, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="11"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Dec 10, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="22"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Dec 11, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="33"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Dec 12, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="44"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Dec 13, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="55"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Dec 14, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="66"
+            >
+              <title />
+            </rect>
+          </g>
+          <g
+            class="react-calendar-heatmap-week"
+            transform="translate(209, 0)"
+          >
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Dec 15, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="0"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Dec 16, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="11"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Dec 17, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="22"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Dec 18, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="33"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Dec 19, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="44"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Dec 20, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="55"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Dec 21, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="66"
+            >
+              <title />
+            </rect>
+          </g>
+          <g
+            class="react-calendar-heatmap-week"
+            transform="translate(220, 0)"
+          >
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Dec 22, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="0"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Dec 23, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="11"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Dec 24, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="22"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Dec 25, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="33"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Dec 26, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="44"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Dec 27, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="55"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Dec 28, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="66"
+            >
+              <title />
+            </rect>
+          </g>
+          <g
+            class="react-calendar-heatmap-week"
+            transform="translate(231, 0)"
+          >
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Dec 29, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="0"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Dec 30, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="11"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Dec 31, 2019"
+              height="10"
+              width="10"
+              x="0"
+              y="22"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Jan 1, 2020"
+              height="10"
+              width="10"
+              x="0"
+              y="33"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Jan 2, 2020"
+              height="10"
+              width="10"
+              x="0"
+              y="44"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Jan 3, 2020"
+              height="10"
+              width="10"
+              x="0"
+              y="55"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Jan 4, 2020"
+              height="10"
+              width="10"
+              x="0"
+              y="66"
+            >
+              <title />
+            </rect>
+          </g>
+          <g
+            class="react-calendar-heatmap-week"
+            transform="translate(242, 0)"
+          >
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Jan 5, 2020"
+              height="10"
+              width="10"
+              x="0"
+              y="0"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Jan 6, 2020"
+              height="10"
+              width="10"
+              x="0"
+              y="11"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Jan 7, 2020"
+              height="10"
+              width="10"
+              x="0"
+              y="22"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Jan 8, 2020"
+              height="10"
+              width="10"
+              x="0"
+              y="33"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Jan 9, 2020"
+              height="10"
+              width="10"
+              x="0"
+              y="44"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Jan 10, 2020"
+              height="10"
+              width="10"
+              x="0"
+              y="55"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Jan 11, 2020"
+              height="10"
+              width="10"
+              x="0"
+              y="66"
+            >
+              <title />
+            </rect>
+          </g>
+          <g
+            class="react-calendar-heatmap-week"
+            transform="translate(253, 0)"
+          >
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Jan 12, 2020"
+              height="10"
+              width="10"
+              x="0"
+              y="0"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Jan 13, 2020"
+              height="10"
+              width="10"
+              x="0"
+              y="11"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Jan 14, 2020"
+              height="10"
+              width="10"
+              x="0"
+              y="22"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Jan 15, 2020"
+              height="10"
+              width="10"
+              x="0"
+              y="33"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Jan 16, 2020"
+              height="10"
+              width="10"
+              x="0"
+              y="44"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Jan 17, 2020"
+              height="10"
+              width="10"
+              x="0"
+              y="55"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Jan 18, 2020"
+              height="10"
+              width="10"
+              x="0"
+              y="66"
+            >
+              <title />
+            </rect>
+          </g>
+          <g
+            class="react-calendar-heatmap-week"
+            transform="translate(264, 0)"
+          >
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Jan 19, 2020"
+              height="10"
+              width="10"
+              x="0"
+              y="0"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Jan 20, 2020"
+              height="10"
+              width="10"
+              x="0"
+              y="11"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Jan 21, 2020"
+              height="10"
+              width="10"
+              x="0"
+              y="22"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Jan 22, 2020"
+              height="10"
+              width="10"
+              x="0"
+              y="33"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Jan 23, 2020"
+              height="10"
+              width="10"
+              x="0"
+              y="44"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Jan 24, 2020"
+              height="10"
+              width="10"
+              x="0"
+              y="55"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Jan 25, 2020"
+              height="10"
+              width="10"
+              x="0"
+              y="66"
+            >
+              <title />
+            </rect>
+          </g>
+          <g
+            class="react-calendar-heatmap-week"
+            transform="translate(275, 0)"
+          >
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Jan 26, 2020"
+              height="10"
+              width="10"
+              x="0"
+              y="0"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Jan 27, 2020"
+              height="10"
+              width="10"
+              x="0"
+              y="11"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Jan 28, 2020"
+              height="10"
+              width="10"
+              x="0"
+              y="22"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Jan 29, 2020"
+              height="10"
+              width="10"
+              x="0"
+              y="33"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Jan 30, 2020"
+              height="10"
+              width="10"
+              x="0"
+              y="44"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-scale-1"
+              currentItem="false"
+              data-tip="<b>1 point</b> on Jan 31, 2020"
+              height="10"
+              width="10"
+              x="0"
+              y="55"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-scale-1"
+              currentItem="false"
+              data-tip="<b>1 point</b> on Feb 1, 2020"
+              height="10"
+              width="10"
+              x="0"
+              y="66"
+            >
+              <title />
+            </rect>
+          </g>
+          <g
+            class="react-calendar-heatmap-week"
+            transform="translate(286, 0)"
+          >
+            <rect
+              class="color-empty"
+              currentItem="false"
+              data-tip="<b>No points</b> on Feb 2, 2020"
+              height="10"
+              width="10"
+              x="0"
+              y="0"
+            >
+              <title />
+            </rect>
+            <rect
+              class="color-scale-1"
+              currentItem="false"
+              data-tip="<b>1 point</b> on Feb 3, 2020"
+              height="10"
+              width="10"
+              x="0"
+              y="11"
+            >
+              <title />
+            </rect>
+          </g>
+        </g>
+        <g
+          class="react-calendar-heatmap-weekday-labels"
+          transform="translate(10, 14)"
+        />
+      </svg>
+      <div
+        class="__react_component_tooltip-304517788 __react_component_tooltip place-top type-dark"
+        data-id="tooltip"
+      />
       <div
         class="spacer"
         style="padding: 15px 0px; height: 1px;"
@@ -2248,36 +2265,30 @@ exports[`<HeatMap/> renders correctly 1`] = `
         class="row"
       >
         <div
-          class="col-sm-8 col-sm-offset-2 col-xs-12"
+          class="streak-container"
         >
-          <div
-            class="streak-container"
+          <span
+            class="streak"
+            data-testid="longest-streak"
           >
-            <span
-              class="streak"
-            >
-              <b>
-                Longest Streak:
-              </b>
-               
-              2
-            </span>
-            <span
-              class="streak"
-            >
-              <b>
-                Current Streak:
-              </b>
-               
-              2
-            </span>
-          </div>
+            <b>
+              Longest Streak:
+            </b>
+             
+            2
+          </span>
+          <span
+            class="streak"
+            data-testid="current-streak"
+          >
+            <b>
+              Current Streak:
+            </b>
+             
+            1
+          </span>
         </div>
       </div>
-      <div
-        class="spacer"
-        style="padding: 15px 0px; height: 1px;"
-      />
       <hr />
     </div>
   </div>

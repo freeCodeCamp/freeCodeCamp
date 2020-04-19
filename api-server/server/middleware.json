@@ -1,5 +1,6 @@
 {
   "initial:before": {
+    "./middlewares/sentry-request-handler": {},
     "loopback#favicon": {
       "params": "$!../public/favicon.ico"
     },
@@ -29,6 +30,8 @@
     "./middlewares/sessions.js": {}
   },
   "auth:before": {
+    "express-flash": {},
+    "./middlewares/express-extensions": {},
     "./middlewares/add-return-to": {},
     "./middlewares/cookie-parser": {},
     "./middlewares/request-authorization": {}
@@ -46,8 +49,6 @@
     "./middlewares/validator": {}
   },
   "routes:before": {
-    "./middlewares/express-extensions": {},
-    "express-flash": {},
     "helmet#xssFilter": {},
     "helmet#noSniff": {},
     "helmet#frameguard": {},
@@ -59,7 +60,7 @@
   },
   "files": {},
   "final:after": {
-    "./middlewares/error-reporter": {},
+    "./middlewares/sentry-error-handler": {},
     "./middlewares/error-handlers": {},
     "strong-error-handler": {
       "params": {

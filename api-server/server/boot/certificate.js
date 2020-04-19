@@ -21,6 +21,7 @@ import {
   infosecQaId,
   fullStackId
 } from '../utils/constantStrings.json';
+import { oldDataVizId } from '../../../config/misc';
 import certTypes from '../utils/certTypes.json';
 import superBlockCertTypeMap from '../utils/superBlockCertTypeMap';
 import { completeCommitment$ } from '../utils/commit';
@@ -37,7 +38,7 @@ export default function bootCertificate(app) {
   api.put('/certificate/verify', ifNoUser401, ifNoSuperBlock404, verifyCert);
   api.get('/certificate/showCert/:username/:cert', showCert);
 
-  app.use('/internal', api);
+  app.use(api);
 }
 
 const noNameMessage = dedent`
@@ -437,17 +438,26 @@ function createShowCert(app) {
         let { completedDate = new Date() } = certChallenge || {};
 
         // the challenge id has been rotated for isDataVisCert
-        // so we need to check for id 561add10cb82ac38a17513b3
         if (certType === 'isDataVisCert' && !certChallenge) {
-          console.log('olderId');
           let oldDataVisIdChall = _.find(
             completedChallenges,
-            ({ id }) => '561add10cb82ac38a17513b3' === id
+            ({ id }) => oldDataVizId === id
           );
 
           if (oldDataVisIdChall) {
             completedDate = oldDataVisIdChall.completedDate || completedDate;
           }
+        }
+
+        // if fullcert is not found, return the latest completedDate
+        if (certType === 'isFullStackCert' && !certChallenge) {
+          var chalIds = [...Object.values(certIds), oldDataVizId];
+
+          const latestCertDate = completedChallenges
+            .filter(chal => chalIds.includes(chal.id))
+            .sort((a, b) => a.completedDate < b.completedDate)[0].completedDate;
+
+          completedDate = latestCertDate ? latestCertDate : completedDate;
         }
 
         const { username, name } = user;

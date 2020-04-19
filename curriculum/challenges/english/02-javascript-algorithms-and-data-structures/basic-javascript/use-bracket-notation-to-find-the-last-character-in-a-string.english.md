@@ -10,12 +10,20 @@ forumTopicId: 18342
 <section id='description'>
 In order to get the last letter of a string, you can subtract one from the string's length.
 For example, if <code>var firstName = "Charles"</code>, you can get the value of the last letter of the string by using <code>firstName[firstName.length - 1]</code>.
+
+Example:
+
+```js
+var firstName = "Charles";
+var lastLetter = firstName[firstName.length - 1]; // lastLetter is "s"
+```
+
 </section>
 
 ## Instructions
 <section id='instructions'>
 Use <dfn>bracket notation</dfn> to find the last character in the <code>lastName</code> variable.
-<strong>Hint</strong><br>Try looking at the <code>lastLetterOfFirstName</code> variable declaration if you get stuck.
+<strong>Hint: </strong> Try looking at the example above if you get stuck.
 </section>
 
 ## Tests
@@ -26,7 +34,7 @@ tests:
   - text: <code>lastLetterOfLastName</code> should be "e".
     testString: assert(lastLetterOfLastName === "e");
   - text: You should use <code>.length</code> to get the last letter.
-    testString: assert(code.match(/\.length/g).length === 2);
+    testString: assert(code.match(/\.length/g).length > 0);
 
 ```
 
@@ -38,15 +46,11 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Example
-var firstName = "Ada";
-var lastLetterOfFirstName = firstName[firstName.length - 1];
-
 // Setup
 var lastName = "Lovelace";
 
 // Only change code below this line
-var lastLetterOfLastName = lastName;
+var lastLetterOfLastName = lastName; // Change this line
 
 
 ```
@@ -70,9 +74,6 @@ var lastLetterOfLastName = lastName;
 
 
 ```js
-var firstName = "Ada";
-var lastLetterOfFirstName = firstName[firstName.length - 1];
-
 var lastName = "Lovelace";
 var lastLetterOfLastName = lastName[lastName.length - 1];
 ```

@@ -13,7 +13,11 @@ import {
 import { stripePublicKey } from '../../../../config/env.json';
 import { stripeScriptLoader } from '../../utils/scriptLoaders';
 import DonateFormChildViewForHOC from './DonateFormChildViewForHOC';
+import DonateCompletion from './DonateCompletion';
+import PaypalButton from './PaypalButton';
 import { userSelector } from '../../redux';
+
+import { Spacer } from '../../components/helpers';
 
 import './Donation.css';
 
@@ -33,6 +37,14 @@ const mapStateToProps = createSelector(
   })
 );
 
+const initialState = {
+  donationState: {
+    processing: false,
+    success: false,
+    error: ''
+  }
+};
+
 class MinimalDonateForm extends Component {
   constructor(...args) {
     super(...args);
@@ -42,10 +54,13 @@ class MinimalDonateForm extends Component {
 
     this.state = {
       ...modalDefaultStateConfig,
+      ...initialState,
       isDonating: this.props.isDonating,
       stripe: null
     };
     this.handleStripeLoad = this.handleStripeLoad.bind(this);
+    this.onDonationStateChange = this.onDonationStateChange.bind(this);
+    this.resetDonation = this.resetDonation.bind(this);
   }
 
   componentDidMount() {
@@ -77,13 +92,60 @@ class MinimalDonateForm extends Component {
     }
   }
 
+  resetDonation() {
+    return this.setState({ ...initialState });
+  }
+
+  onDonationStateChange(success, processing, error) {
+    this.setState(state => ({
+      ...state,
+      donationState: {
+        ...state.donationState,
+        processing: processing,
+        success: success,
+        error: error
+      }
+    }));
+  }
+
+  renderCompletion(props) {
+    return <DonateCompletion {...props} />;
+  }
+
   render() {
     const { donationAmount, donationDuration, stripe } = this.state;
     const { handleProcessing, defaultTheme } = this.props;
+    const {
+      donationState: { processing, success, error }
+    } = this.state;
+
+    const donationPlan = `$${donationAmount / 100} / ${donationDuration}`;
+    if (processing || success || error) {
+      return this.renderCompletion({
+        processing,
+        success,
+        error,
+        reset: this.resetDonation
+      });
+    }
 
     return (
       <Row>
-        <Col sm={10} smOffset={1} xs={12}>
+        <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
+          <Spacer />
+          <b>Confirm your donation of {donationPlan} with PayPal:</b>
+          <Spacer />
+          <PaypalButton
+            donationAmount={donationAmount}
+            donationDuration={donationDuration}
+            handleProcessing={handleProcessing}
+            onDonationStateChange={this.onDonationStateChange}
+          />
+        </Col>
+        <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
+          <Spacer />
+          <b>Or donate with a credit card:</b>
+          <Spacer />
           <StripeProvider stripe={stripe}>
             <Elements>
               <DonateFormChildViewForHOC
@@ -91,7 +153,7 @@ class MinimalDonateForm extends Component {
                 donationAmount={donationAmount}
                 donationDuration={donationDuration}
                 getDonationButtonLabel={() =>
-                  `Confirm your donation of $5 per month`
+                  `Confirm your donation of ${donationPlan}`
                 }
                 handleProcessing={handleProcessing}
               />

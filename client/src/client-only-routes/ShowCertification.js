@@ -137,12 +137,12 @@ class ShowCertification extends Component {
     this.setState({ isDonationDisplayed: false, isDonationClosed: true });
   }
 
-  handleProcessing(duration, amount) {
+  handleProcessing(duration, amount, action = 'stripe form submission') {
     this.props.executeGA({
       type: 'event',
       data: {
         category: 'donation',
-        action: 'certificate stripe form submission',
+        action: `certificate ${action}`,
         label: duration,
         value: amount
       }
@@ -211,7 +211,7 @@ class ShowCertification extends Component {
       <Grid className='donation-section'>
         {!isDonationSubmitted && (
           <Row>
-            <Col sm={10} smOffset={1} xs={12}>
+            <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
               <p>
                 Only you can see this message. Congratulations on earning this
                 certification. It’s no easy task. Running freeCodeCamp isn’t

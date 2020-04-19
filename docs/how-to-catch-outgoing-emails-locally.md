@@ -1,8 +1,3 @@
-<!-- do not translate this -->
-| [Read these guidelines in other languages](/docs/i18n-languages) |
-|-|
-<!-- do not translate this -->
-
 # Catch outgoing emails locally for email workflows
 
 > **Note:** This is an **optional** step and is required only when working with email workflows
@@ -100,4 +95,4 @@ All links in the email should be clickable and resolve to their URL.
 
 ## Useful Links
 
-- Check out the [MailHog](https://github.com/mailhog/MailHog) repository for further information related to MailHog.  Additional information is also available regarding custom MailHog configurations.
+- Check out the [MailHog](https://github.com/mailhog/MailHog) repository for further information related to MailHog. Additional information is also available regarding custom MailHog configurations.

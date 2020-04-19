@@ -30,7 +30,7 @@ Change the regex <code>countNonWhiteSpace</code> to look for multiple non-whites
 tests:
   - text: Your regex should use the global flag.
     testString: assert(countNonWhiteSpace.global);
-  - text: Your regex should use the shorthand character <code>\S/code> to match all non-whitespace characters.
+  - text: Your regex should use the shorthand character <code>\S</code> to match all non-whitespace characters.
     testString: assert(/\\S/.test(countNonWhiteSpace.source));
   - text: Your regex should find 35 non-spaces in <code>"Men are from Mars and women are from Venus."</code>
     testString: assert("Men are from Mars and women are from Venus.".match(countNonWhiteSpace).length == 35);

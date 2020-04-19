@@ -10,6 +10,7 @@ import { blockNameify } from '../../../utils/blockNameify';
 import Heart from '../../assets/icons/Heart';
 import Cup from '../../assets/icons/Cup';
 import MinimalDonateForm from './MinimalDonateForm';
+import { modalDefaultStateConfig } from '../../../../config/donation-settings';
 
 import {
   closeDonationModal,
@@ -59,12 +60,16 @@ function DonateModal({
   executeGA
 }) {
   const [closeLabel, setCloseLabel] = React.useState(false);
-  const handleProcessing = (duration, amount) => {
+  const handleProcessing = (
+    duration,
+    amount,
+    action = 'stripe form submission'
+  ) => {
     executeGA({
       type: 'event',
       data: {
         category: 'donation',
-        action: 'Modal strip form submission',
+        action: `Modal ${action}`,
         label: duration,
         value: amount
       }
@@ -86,10 +91,17 @@ function DonateModal({
     });
   }
 
+  const durationToText = donationDuration => {
+    if (donationDuration === 'onetime') return 'a one-time';
+    else if (donationDuration === 'month') return 'a monthly';
+    else if (donationDuration === 'year') return 'an annual';
+    else return 'a';
+  };
+
   const donationText = (
     <b>
-      Become a supporter and help us create even more learning resources for
-      you.
+      Become {durationToText(modalDefaultStateConfig.donationDuration)}{' '}
+      supporter of our nonprofit.
     </b>
   );
   const blockDonationText = (
@@ -101,6 +113,7 @@ function DonateModal({
         {!closeLabel && (
           <Col sm={10} smOffset={1} xs={12}>
             <b>Nicely done. You just completed {blockNameify(block)}. </b>
+            <br />
             {donationText}
           </Col>
         )}
