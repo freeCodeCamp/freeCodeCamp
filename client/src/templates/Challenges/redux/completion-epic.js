@@ -50,7 +50,7 @@ function postChallenge(update, username) {
 }
 
 function submitModern(type, state) {
-  const challengeType = state.challenge.challengeMeta.challengeType || '0';
+  const challengeType = state.challenge.challengeMeta.challengeType;
   const tests = challengeTestsSelector(state);
   if (
     challengeType === 11 ||
@@ -101,7 +101,6 @@ function submitProject(type, state) {
 }
 
 function submitBackendChallenge(type, state) {
-  console.log('submitBackendChallenge');
   const tests = challengeTestsSelector(state);
   if (tests.length > 0 && tests.every(test => test.pass && !test.err)) {
     if (type === types.submitChallenge) {
