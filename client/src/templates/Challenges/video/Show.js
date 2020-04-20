@@ -128,7 +128,6 @@ export class Project extends Component {
   }
 
   handleOptionChange = changeEvent => {
-    console.log(this.state.selectedOption);
     this.setState({
       selectedOption: parseInt(changeEvent.target.value, 10)
     });
