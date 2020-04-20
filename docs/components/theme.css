@@ -296,6 +296,12 @@ body .sidebar-toggle span:nth-child(3) {
   }
 }
 
+body.close .app-nav,
+body.close .github-corner {
+  display: block !important;
+  text-align: center;
+}
+
 /****** Markdown General ******/
 .markdown-section {
   padding: 30px 30px 40px;
