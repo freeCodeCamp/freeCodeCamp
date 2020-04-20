@@ -25,6 +25,43 @@ a {
   z-index: 5;
 }
 
+/****** Universal Nav ****/
+
+.universal-nav {
+  margin: 0px;
+  width: 100vw;
+  height: 38px;
+  background-color: var(--theme-color);
+  position: fixed;
+  top: 0px;
+  display: flex;
+  justify-content: center;
+}
+
+.universal-nav img {
+  margin: 7px 0px;
+  height: 24px;
+}
+
+.app-nav > a {
+  margin: 0;
+  padding: 0;
+}
+
+.app-nav.no-badge {
+  margin-right: 0px;
+}
+
+.sidebar-toggle,
+.sidebar,
+.content {
+  margin-top: 38px;
+}
+
+.sidebar {
+  padding: 0px;
+}
+
 /****** Cover Page ******/
 section.cover {
   padding-bottom: 112px; /* fixed footer (Netflix) height */
