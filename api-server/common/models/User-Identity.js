@@ -43,7 +43,7 @@ export default function(UserIdent) {
     // get the email from the auth0 (its expected from social providers)
     const email =
       profile && profile.emails && profile.emails[0]
-        ? profile.emails[0].value
+        ? profile.emails[0].value.toLowerCase()
         : '';
     if (!isEmail('' + email)) {
       throw wrapHandledError(
