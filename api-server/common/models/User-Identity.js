@@ -41,9 +41,13 @@ export default function(UserIdent) {
       include: 'user'
     };
     // get the email from the auth0 (its expected from social providers)
+    const upperCaseRegex = /[A-Z]/g;
+    const profileEmail = profile.emails[0];
     const email =
-      profile && profile.emails && profile.emails[0]
-        ? profile.emails[0].value
+      profile && profile.emails && profileEmail
+        ? profileEmail.value.replace(upperCaseRegex, email =>
+            email.toLowerCase()
+          )
         : '';
     if (!isEmail('' + email)) {
       throw wrapHandledError(
