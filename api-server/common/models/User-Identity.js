@@ -41,9 +41,10 @@ export default function(UserIdent) {
       include: 'user'
     };
     // get the email from the auth0 (its expected from social providers)
-    let val = '' + profile.emails[0].value;
-    val.toLowerCase();
-    const email = profile && profile.emails && profile.emails[0] ? val : '';
+    const email =
+      profile && profile.emails && profile.emails[0]
+        ? ('' + profile.emails[0].value).toLowerCase()
+        : '';
     if (!isEmail('' + email)) {
       throw wrapHandledError(
         new Error('invalid or empty email received from auth0'),
