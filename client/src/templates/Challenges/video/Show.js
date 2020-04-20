@@ -1,3 +1,4 @@
+// Package Utilities
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Button, Grid, Col, Row } from '@freecodecamp/react-bootstrap';
@@ -6,9 +7,17 @@ import { bindActionCreators } from 'redux';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import YouTube from 'react-youtube';
-import SanitizedSpan from '../components/SanitizedSpan';
+import { createSelector } from 'reselect';
 
+// Local Utilities
+import SanitizedSpan from '../components/SanitizedSpan';
 import { ChallengeNode } from '../../../redux/propTypes';
+import LearnLayout from '../../../components/layouts/Learn';
+import ChallengeTitle from '../components/Challenge-Title';
+import ChallengeDescription from '../components/Challenge-Description';
+import Spacer from '../../../components/helpers/Spacer';
+import CompletionModal from '../components/CompletionModal';
+import Hotkeys from '../components/Hotkeys';
 import {
   isChallengeCompletedSelector,
   challengeMounted,
@@ -16,23 +25,8 @@ import {
   openModal,
   updateProjectFormValues
 } from '../redux';
-import { createSelector } from 'reselect';
-import LearnLayout from '../../../components/layouts/Learn';
-import ChallengeTitle from '../components/Challenge-Title';
-import ChallengeDescription from '../components/Challenge-Description';
-import Spacer from '../../../components/helpers/Spacer';
-import CompletionModal from '../components/CompletionModal';
-import Hotkeys from '../components/Hotkeys';
 
-/* import {
-  //closeModal,
-  //completedChallengesIds,
-  //isCompletionModalOpenSelector,
-  //challengeFilesSelector,
-  // challengeMetaSelector,
-  //  lastBlockChalSubmitted
-} from '../redux'; */
-
+// Redux Setup
 const mapStateToProps = createSelector(
   isChallengeCompletedSelector,
   isChallengeCompleted => ({
@@ -50,6 +44,7 @@ const mapDispatchToProps = dispatch =>
     dispatch
   );
 
+// Proptypes
 const propTypes = {
   challengeMounted: PropTypes.func.isRequired,
   data: PropTypes.shape({
@@ -65,6 +60,7 @@ const propTypes = {
   updateProjectFormValues: PropTypes.func.isRequired
 };
 
+// Component
 export class Project extends Component {
   constructor(props) {
     super(props);
