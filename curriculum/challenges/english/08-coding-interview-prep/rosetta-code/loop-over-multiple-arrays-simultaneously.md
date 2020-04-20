@@ -6,7 +6,7 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-Loop over multiple arrays and create a new array whose $i^{th}$ element is the concatenation of $i^{th}$  element of each of the given.
+Loop over multiple arrays and create a new array whose $i^{th}$ element is the concatenation of $i^{th}$ element of each of the given.
 For this example, if you are given this array of arrays:
 <code>[ ["a", "b", "c"], ["A", "B", "C"], [1, 2, 3] ]</code>
 the output should be:
