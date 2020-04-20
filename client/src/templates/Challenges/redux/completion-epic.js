@@ -50,8 +50,12 @@ function postChallenge(update, username) {
 }
 
 function submitModern(type, state) {
+  const challengeType = state.challenge.challengeMeta.challengeType || '0';
   const tests = challengeTestsSelector(state);
-  if (tests.length > 0 && tests.every(test => test.pass && !test.err)) {
+  if (
+    challengeType === 11 ||
+    (tests.length > 0 && tests.every(test => test.pass && !test.err))
+  ) {
     if (type === types.checkChallenge) {
       return of({ type: 'this was a check challenge' });
     }
@@ -97,6 +101,7 @@ function submitProject(type, state) {
 }
 
 function submitBackendChallenge(type, state) {
+  console.log('submitBackendChallenge');
   const tests = challengeTestsSelector(state);
   if (tests.length > 0 && tests.every(test => test.pass && !test.err)) {
     if (type === types.submitChallenge) {

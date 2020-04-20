@@ -1,3 +1,4 @@
+/*
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import noop from 'lodash/noop';
@@ -299,3 +300,5 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(CompletionModal);
+
+*/
