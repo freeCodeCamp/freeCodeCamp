@@ -17,13 +17,16 @@
 </head>
 
 <body>
+  <nav class='universal-nav'>
+    <a class="app-name-link" data-nosearch="" href="/">
+      <img alt="freeCodeCamp.org" src="/components/primary_logo.svg">
+    </a>
+  </nav>
   <div id="app"></div>
   <script>
     window.$docsify = {
       // Main Config
       homepage: 'index.md',
-      name: 'freeCodeCamp.org',
-      logo: 'components/logo.svg',
       loadSidebar: 'components/sidebar.md',
 
       // Cover Page
@@ -36,6 +39,8 @@
       auto2top: true,
       maxLevel: 2,
       subMaxLevel: 2,
+      // loadNavbar: true,
+
 
       // Plugins
       search: {
