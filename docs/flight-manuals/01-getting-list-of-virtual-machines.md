@@ -1,14 +1,18 @@
-### Getting a list of the VMs from Azure
+# Getting a list of the Virtual Machines
+
+You can get a list of virtual machines from the below vendors only if you have been given access. You may need to list a VM and its public IP for getting SSH access and doing maintenance.
+
+## Azure
 
 Install Azure CLI `az`: https://docs.microsoft.com/en-us/cli/azure/install-azure-cli
 
-> (onetime) Install on macOS with [`homebrew`](https://brew.sh):
+> **(One-time) Install on macOS with [`homebrew`](https://brew.sh):**
 
 ```
 brew install azure-cli
 ```
 
-> (onetime) Login:
+> **(One-time) Login:**
 
 ```
 az login
@@ -20,17 +24,17 @@ az login
 az vm list-ip-addresses --output table
 ```
 
-### Getting a list of the VMs from Digital Ocean
+## Digital Ocean
 
 Install Digital Ocean CLI `doctl`: https://github.com/digitalocean/doctl#installing-doctl
 
-> (onetime) Install on macOS with [`homebrew`](https://brew.sh):
+> **(One-time) Install on macOS with [`homebrew`](https://brew.sh):**
 
 ```
 brew install doctl
 ```
 
-> (onetime) Login:
+> **(One-time) Login:**
 
 Authentication and context switching: https://github.com/digitalocean/doctl#authenticating-with-digitalocean
 
