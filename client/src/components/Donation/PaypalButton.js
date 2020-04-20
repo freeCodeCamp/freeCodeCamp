@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { PayPalButton } from 'react-paypal-button-v2';
+import PayPalButtonScriptLoader from './PayPalButtonScriptLoader';
 import { paypalClientId, deploymentEnv } from '../../../config/env.json';
 import { verifySubscriptionPaypal } from '../../utils/ajax';
 import {
@@ -38,7 +38,7 @@ export class PaypalButton extends Component {
   handleApproval = data => {
     const { amount, duration } = this.state;
     const { skipAddDonation = false } = this.props;
-    if (!skipAddDonation) {
+    if (!skipAddDonation || duration === 'oneTime') {
       this.props.handleProcessing(
         duration,
         amount,
@@ -73,42 +73,52 @@ export class PaypalButton extends Component {
   };
 
   render() {
-    const { duration, planId } = this.state;
-    const isOneTimePayment = duration === 'onetime';
-
-    if (!isOneTimePayment) {
-      return (
-        <PayPalButton
-          createSubscription={(data, actions) => {
-            return actions.subscription.create({
-              plan_id: planId
-            });
-          }}
-          onApprove={data => {
+    const { duration, planId, amount } = this.state;
+    const isSubscription = duration !== 'onetime';
+    return (
+      <PayPalButtonScriptLoader
+        amount={amount}
+        clinetId={paypalClientId}
+        createOrder={(data, actions) => {
+          return actions.order.create({
+            purchase_units: [
+              {
+                amount: {
+                  currency_code: 'USD',
+                  value: (amount / 100).toString()
+                }
+              }
+            ]
+          });
+        }}
+        createSubscription={(data, actions) => {
+          return actions.subscription.create({
+            plan_id: planId
+          });
+        }}
+        isSubscription={isSubscription}
+        onApprove={(data, actions) => {
+          return actions.order.capture().then(function(data) {
             this.handleApproval(data);
-          }}
-          onCancel={() => {
-            this.props.onDonationStateChange(
-              false,
-              false,
-              `Uh - oh. It looks like your transaction didn't go through. Could you please try again?`
-            );
-          }}
-          onError={() =>
-            this.props.onDonationStateChange(false, false, 'Please try again.')
-          }
-          options={{
-            vault: true,
-            disableFunding: 'credit,card',
-            clientId: paypalClientId
-          }}
-          style={{
-            tagline: false,
-            height: 43
-          }}
-        />
-      );
-    } else return '';
+          });
+        }}
+        onCancel={() => {
+          this.props.onDonationStateChange(
+            false,
+            false,
+            `Uh - oh. It looks like your transaction didn't go through. Could you please try again?`
+          );
+        }}
+        onError={() =>
+          this.props.onDonationStateChange(false, false, 'Please try again.')
+        }
+        plantId={planId}
+        style={{
+          tagline: false,
+          height: 43
+        }}
+      />
+    );
   }
 }
 
