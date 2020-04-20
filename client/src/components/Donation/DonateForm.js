@@ -240,18 +240,6 @@ class DonateForm extends Component {
     this.setState({ processing: hide });
   }
 
-  renderPayPalMeLink(donationAmount) {
-    const payPalMeLinkURL =
-      'https://paypal.me/freecodecamp/' + donationAmount / 100 + 'USD';
-    return (
-      <Button
-        block={true}
-        className='paypal-button-onetime'
-        href={payPalMeLinkURL}
-      ></Button>
-    );
-  }
-
   renderDonationOptions() {
     const { handleProcessing, isSignedIn } = this.props;
     const { donationAmount, donationDuration } = this.state;
@@ -308,17 +296,14 @@ class DonateForm extends Component {
           />
         </Button>
         <Spacer />
-        {isOneTime ? (
-          this.renderPayPalMeLink(donationAmount)
-        ) : (
-          <PaypalButton
-            donationAmount={donationAmount}
-            donationDuration={donationDuration}
-            handleProcessing={handleProcessing}
-            onDonationStateChange={this.onDonationStateChange}
-            skipAddDonation={!isSignedIn}
-          />
-        )}
+        <PaypalButton
+          donationAmount={donationAmount}
+          donationDuration={donationDuration}
+          handleProcessing={handleProcessing}
+          isSubscription={isOneTime ? false : true}
+          onDonationStateChange={this.onDonationStateChange}
+          skipAddDonation={!isSignedIn}
+        />
         <Spacer size={2} />
       </div>
     );
