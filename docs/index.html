@@ -9,35 +9,20 @@
   <meta name="description" content="Description">
   <meta name="viewport"
     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-<!--social-->
-<meta content='freeCodeCamp.org' name='og:title' />
-<meta
-  content={
-    'Learn to code. Build projects. Earn certifications.' +
-    'Since 2015, 40,000 graduates have gotten jobs at tech ' +
-    'companies including Google, Apple, Amazon, and Microsoft.'
-  }
-  name='og:description'
-/>
-<meta
-  content='https://cdn.freecodecamp.org/platform/universal/fcc-og-1200-social-green.png'
-  property='og:image'
-/>
+  <!--social-->
+  <meta content='freeCodeCamp.org' name='og:title' />
+  <meta content={ 'Learn to code. Build projects. Earn certifications.'
+    + 'Since 2015, 40,000 graduates have gotten jobs at tech '
+    + 'companies including Google, Apple, Amazon, and Microsoft.' } name='og:description' />
+  <meta content='https://cdn.freecodecamp.org/platform/universal/fcc-og-1200-social-green.png' property='og:image' />
 
-<meta content='summary_large_image' key='twitter:card' name='twitter:card' />
-<meta
-  content='https://cdn.freecodecamp.org/platform/universal/fcc-twitter-1120X600-social-green.png'
-  name='twitter:image:src'
-/>
-<meta content='freeCodeCamp.org' name='twitter:title' />
-<meta
-  content={
-    'Learn to code. Build projects. Earn certifications.' +
-    'Since 2015, 40,000 graduates have gotten jobs at tech ' +
-    'companies including Google, Apple, Amazon, and Microsoft.'
-  }
-  name='twitter:description'
-/>
+  <meta content='summary_large_image' key='twitter:card' name='twitter:card' />
+  <meta content='https://cdn.freecodecamp.org/platform/universal/fcc-twitter-1120X600-social-green.png'
+    name='twitter:image:src' />
+  <meta content='freeCodeCamp.org' name='twitter:title' />
+  <meta content={ 'Learn to code. Build projects. Earn certifications.'
+    + 'Since 2015, 40,000 graduates have gotten jobs at tech '
+    + 'companies including Google, Apple, Amazon, and Microsoft.' } name='twitter:description' />
 
 
   <!-- Theme -->
@@ -85,8 +70,11 @@
       },
 
       pagination: {
-        crossChapter: true,
-        crossChapterText: true,
+        crossChapter: false
+      },
+
+      remoteMarkdown: {
+        tag: 'remote-markdown-url',
       },
 
     }
@@ -104,5 +92,6 @@
   <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify-plugin-flexible-alerts@1"></script>
   <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+  <script src="//unpkg.com/docsify-remote-markdown/dist/docsify-remote-markdown.min.js"></script>
 
 </html>
