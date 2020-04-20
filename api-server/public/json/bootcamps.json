@@ -7,7 +7,13 @@
   "finance": true,
   "cities": [
     "new-york-city",
-    "san-francisco"
+    "san-francisco",
+    "los-angeles",
+    "austin",
+    "boulder",
+    "denver",
+    "phoenix",
+    "seattle"
   ]
 }, {
   "name": "Hack Reactor Online",
@@ -94,7 +100,15 @@
   "cities": [
     "new-york-city",
     "san-francisco",
-    "chicago"
+    "chicago",
+    "san jose",
+    "seattle",
+    "los-angeles",
+    "arlington",
+    "tulsa",
+    "oakland",
+    "boise",
+    "orange-county"
   ]
 }, {
   "name": "DevMountain",
@@ -103,8 +117,8 @@
   "finance": true,
   "weeks": "12",
   "cities": [
-    "provo",
-    "salt-lake-city",
+    "lehi",
+    "phoenix",
     "dallas"
   ]
 }, {
@@ -114,7 +128,8 @@
   "finance": false,
   "weeks": "15",
   "cities": [
-    "portland"
+    "portland",
+    "seattle"
   ]
 }, {
   "name": "Flat Iron School",
@@ -132,9 +147,14 @@
   "finance": true,
   "weeks": "24",
   "cities": [
+    "austin",
     "boulder",
     "denver",
+    "los-angeles",
+    "new-york-city",
+    "phoenix",
     "seattle",
+    "san-jose"
     "san-francisco"
   ]
 }, {
@@ -144,10 +164,19 @@
   "finance": true,
   "weeks": "19",
   "cities": [
+    "houston",
+    "greenville",
+    "charleston",
+    "oralndo",
+    "tampa",
     "austin",
+    "nashville",
+    "little-rock",
+    "las-vegas",
     "washington-dc",
     "raleigh-durham",
-    "atlanta"
+    "atlanta",
+    "indianapolis"
   ]
 }, {
   "name": "Launch Academy",
@@ -167,6 +196,7 @@
   "cities": [
     "los-angeles",
     "san-francisco",
+    "new-york-city",
     "austin"
   ]
 }, {
@@ -196,7 +226,9 @@
   "finance": true,
   "weeks": "12",
   "cities": [
-    "los-angeles"
+    "los-angeles",
+    "culver-city",
+    "irvine"
   ]
 }, {
   "name": "Shillington School",
@@ -219,7 +251,8 @@
   "finance": true,
   "weeks": "20",
   "cities": [
-    "portland"
+    "portland",
+    "utah"
   ]
 },
   {
@@ -239,7 +272,8 @@
     "finance": false,
     "weeks": "12",
     "cities": [
-      "san-francisco"
+      "san-francisco",
+      "new-york-city"
     ]
   },
   {
