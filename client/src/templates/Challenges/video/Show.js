@@ -76,7 +76,6 @@ export class Project extends Component {
   }
 
   componentDidMount() {
-    console.log('did mount');
     const {
       challengeMounted,
       data: {
