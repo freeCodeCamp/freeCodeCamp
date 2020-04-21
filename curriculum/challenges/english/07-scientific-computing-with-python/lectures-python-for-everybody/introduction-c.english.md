@@ -3,6 +3,7 @@ id: 5e6a54ba58d3af90110a60a2
 title: Introduction C
 challengeType: 11
 isRequired: true
+videoId: 0QeGbZNS_bY
 ---
 
 ## Description
