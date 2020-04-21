@@ -14,8 +14,9 @@ function getSchemaForLang(lang) {
       .required(),
     checksum: Joi.number(),
     dashedName: Joi.string(),
+    // { is: Joi.only(['tv-serie', 'movie']), otherwise: Joi.required() }
     description: Joi.when('challengeType', {
-      is: challengeTypes.step,
+      is: Joi.only([challengeTypes.step, challengeTypes.video]),
       then: Joi.string().allow(''),
       otherwise: Joi.string().required()
     }),
@@ -41,6 +42,7 @@ function getSchemaForLang(lang) {
     ),
     guideUrl: Joi.string().uri({ scheme: 'https' }),
     videoUrl: Joi.string().allow(''),
+    videoId: Joi.string(),
     forumTopicId: Joi.number(),
     helpRoom: Joi.string(),
     id: Joi.objectId().required(),
