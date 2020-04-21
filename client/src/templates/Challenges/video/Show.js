@@ -26,6 +26,9 @@ import {
   updateProjectFormValues
 } from '../redux';
 
+// Styles
+import './show.css';
+
 // Redux Setup
 const mapStateToProps = createSelector(
   isChallengeCompletedSelector,
@@ -151,7 +154,6 @@ export class Project extends Component {
     } = this.props;
 
     const blockNameTitle = `${blockName} - ${title}`;
-
     return (
       <Hotkeys
         innerRef={c => (this._container = c)}
@@ -191,22 +193,29 @@ export class Project extends Component {
                 </div>
                 <Spacer />
                 <ChallengeDescription description={description} />
+                <Spacer />
                 <SanitizedSpan text={text} />
                 <Spacer />
-                {answers.map((option, index) => (
-                  <div className='form-check'>
-                    <label>
+                <div className='video-quiz-options'>
+                  {answers.map((option, index) => (
+                    <label className='video-quiz-option-label'>
                       <input
                         checked={this.state.selectedOption === index}
+                        className='video-quiz-input-hidden'
                         name='quiz'
                         onChange={this.handleOptionChange}
                         type='radio'
                         value={index}
                       />{' '}
+                      <span className='video-quiz-input-visible'>
+                        {this.state.selectedOption === index ? (
+                          <span className='video-quiz-selected-input'></span>
+                        ) : null}
+                      </span>
                       <SanitizedSpan text={option} />
                     </label>
-                  </div>
-                ))}
+                  ))}
+                </div>
                 <Spacer />
                 <Button
                   block={true}
