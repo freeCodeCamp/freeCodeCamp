@@ -1,3 +1,4 @@
+// Package Utilities
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Button, Grid, Col, Row } from '@freecodecamp/react-bootstrap';
@@ -6,24 +7,35 @@ import { bindActionCreators } from 'redux';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import YouTube from 'react-youtube';
+import { createSelector } from 'reselect';
 
+// Local Utilities
+import SanitizedSpan from '../components/SanitizedSpan';
 import { ChallengeNode } from '../../../redux/propTypes';
+import LearnLayout from '../../../components/layouts/Learn';
+import ChallengeTitle from '../components/Challenge-Title';
+import ChallengeDescription from '../components/Challenge-Description';
+import Spacer from '../../../components/helpers/Spacer';
+import CompletionModal from '../components/CompletionModal';
+import Hotkeys from '../components/Hotkeys';
 import {
+  isChallengeCompletedSelector,
   challengeMounted,
   updateChallengeMeta,
   openModal,
   updateProjectFormValues
 } from '../redux';
 
-import LearnLayout from '../../../components/layouts/Learn';
-import ChallengeTitle from '../components/Challenge-Title';
-import ChallengeDescription from '../components/Challenge-Description';
-import Spacer from '../../../components/helpers/Spacer';
-import CompletionVideoModal from '../components/CompletionVideoModal';
-import HelpModal from '../components/HelpModal';
-import Hotkeys from '../components/Hotkeys';
+// Styles
+import './show.css';
 
-const mapStateToProps = () => ({});
+// Redux Setup
+const mapStateToProps = createSelector(
+  isChallengeCompletedSelector,
+  isChallengeCompleted => ({
+    isChallengeCompleted
+  })
+);
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
@@ -35,12 +47,14 @@ const mapDispatchToProps = dispatch =>
     dispatch
   );
 
+// Proptypes
 const propTypes = {
   challengeMounted: PropTypes.func.isRequired,
   data: PropTypes.shape({
     challengeNode: ChallengeNode
   }),
   description: PropTypes.string,
+  isChallengeCompleted: PropTypes.bool,
   openCompletionModal: PropTypes.func.isRequired,
   pageContext: PropTypes.shape({
     challengeMeta: PropTypes.object
@@ -49,12 +63,19 @@ const propTypes = {
   updateProjectFormValues: PropTypes.func.isRequired
 };
 
+// Component
 export class Project extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      subtitles: ''
+      subtitles: '',
+      downloadURL: null,
+      selectedOption: 0,
+      answer: 1,
+      showWrong: false
     };
+
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -95,6 +116,25 @@ export class Project extends Component {
     }
   }
 
+  handleSubmit(solution, openCompletionModal) {
+    if (solution - 1 === this.state.selectedOption) {
+      this.setState({
+        showWrong: false
+      });
+      openCompletionModal();
+    } else {
+      this.setState({
+        showWrong: true
+      });
+    }
+  }
+
+  handleOptionChange = changeEvent => {
+    this.setState({
+      selectedOption: parseInt(changeEvent.target.value, 10)
+    });
+  };
+
   render() {
     const {
       data: {
@@ -109,10 +149,11 @@ export class Project extends Component {
       openCompletionModal,
       pageContext: {
         challengeMeta: { introPath, nextChallengePath, prevChallengePath }
-      }
+      },
+      isChallengeCompleted
     } = this.props;
-    const blockNameTitle = `${blockName} - ${title}`;
 
+    const blockNameTitle = `${blockName} - ${title}`;
     return (
       <Hotkeys
         innerRef={c => (this._container = c)}
@@ -126,7 +167,9 @@ export class Project extends Component {
             <Row>
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <Spacer />
-                <ChallengeTitle>{blockNameTitle}</ChallengeTitle>
+                <ChallengeTitle isCompleted={isChallengeCompleted}>
+                  {blockNameTitle}
+                </ChallengeTitle>
                 <div style={{ textAlign: 'center' }}>
                   <YouTube
                     onEnd={openCompletionModal}
@@ -150,24 +193,51 @@ export class Project extends Component {
                 </div>
                 <Spacer />
                 <ChallengeDescription description={description} />
-
+                <Spacer />
+                <SanitizedSpan text={text} />
+                <Spacer />
+                <div className='video-quiz-options'>
+                  {answers.map((option, index) => (
+                    <label className='video-quiz-option-label'>
+                      <input
+                        checked={this.state.selectedOption === index}
+                        className='video-quiz-input-hidden'
+                        name='quiz'
+                        onChange={this.handleOptionChange}
+                        type='radio'
+                        value={index}
+                      />{' '}
+                      <span className='video-quiz-input-visible'>
+                        {this.state.selectedOption === index ? (
+                          <span className='video-quiz-selected-input'></span>
+                        ) : null}
+                      </span>
+                      <SanitizedSpan text={option} />
+                    </label>
+                  ))}
+                </div>
+                <Spacer />
                 <Button
                   block={true}
                   bsSize='large'
                   bsStyle='primary'
-                  onClick={openCompletionModal}
+                  onClick={() =>
+                    this.handleSubmit(solution, openCompletionModal)
+                  }
                 >
-                  Complete
+                  Check your answer
                 </Button>
                 <Spacer />
+                <div
+                  style={{
+                    visibility: this.state.showWrong ? 'visible' : 'hidden'
+                  }}
+                >
+                  Wrong. Try again.
+                </div>
+                <Spacer size={2} />
               </Col>
-              <CompletionVideoModal
-                answers={answers}
-                blockName={blockName}
-                question={text}
-                solution={solution}
-              />
-              <HelpModal />
+              <CompletionModal blockName={blockName} />
             </Row>
           </Grid>
         </LearnLayout>
