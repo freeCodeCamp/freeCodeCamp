@@ -14,9 +14,11 @@ To set up <em>Pug</em> for use in your project, you will need to add it as a dep
 
 Express needs to know which template engine you are using. We will use the <b>set</b> method to assign 'pug' as the <b>'view-engine'</b>. <code>app.set('view engine', 'pug')</code>
 
-Your page will not load until you correctly <em>render</em> the index file in our <em>'views/pug'</em> directory. Using the "Show" menu at the top of the Glitch page will allow you to view your app next to your code. This is helpful to see if your page is loading as expected. If you are seeing the page with a message "Pug template is not defined.", this indicates your routing is incomplete on the root path ('/'). You can get a <em>response</em> using a relative path to point the root ('/') to the index file.
+Your page will not load until you correctly <em>render</em> the index file in our <em>'views/pug'</em> directory.
 
-If all went as planned, you should refresh your apps home page and see a small message saying you've successfully rendered the Pug template! Submit your page when you think you've got it right.
+You should change the response for the <code>/</code> route to use <code>res.render()</code>. This method takes a string of a file path as an argument. The path can be a relative path (relative to views), or an absolute path, and does not require a file extension.
+
+If all went as planned, your app home page will stop showing the message "Pug template is not defined." and will now display a message indicating you've successfully rendered the Pug template! Submit your page when you think you've got it right.
 
 </section>
 
@@ -37,7 +39,7 @@ tests:
   - text: View engine should be Pug.
     testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /('|")view engine('|"),( |)('|")pug('|")/gi, 'Your project should set Pug as a view engine'); }, xhr => { throw new Error(xhr.statusText); })
   - text: Use the correct ExpressJS method to render the index page from the response.
-    testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /res\.(r\w{5})\(('|")((\.)\/)?(\w{3})\/(\w{5})('|")\)(;)?/gi, 'You successfully rendered the Pug template!'); }, xhr => { throw new Error(xhr.statusText); })
+    testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /res(\s+)?\.(r\w{5})\(('|")((\.{2})?)\/?(\w{3})\/(\w{5})('|")\)(;)?/gi, 'You successfully rendered the Pug template!'); }, xhr => { throw new Error(xhr.statusText); })
   - text: Pug should be working.
     testString: getUserInput => $.get(getUserInput('url')+ '/') .then(data => { assert.match(data, /pug-success-message/gi, 'Your projects home page should now be rendered by pug with the projects .pug file unaltered'); }, xhr => { throw new Error(xhr.statusText); })
 ```
