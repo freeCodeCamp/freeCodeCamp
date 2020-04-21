@@ -2,32 +2,20 @@
 
 The [freeCodeCamp.org](https://freecodecamp.org) community is possible thanks to thousands of kind volunteers like you. We welcome any and all contributions to the community and are excited to welcome you aboard.
 
-## Quick and fun ways you can help
-
-You can contribute to any of these:
-
-1. [Help by answering coding questions](https://www.freecodecamp.org/forum/?max_posts=1) on our community forum.
-
-2. [Give feedback on coding projects](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1) built by campers.
-
-3. [Help us add subtitles (closed captions)](https://www.youtube.com/freecodecamp) to our YouTube channel videos.
-
-4. [Contribute to our open source codebase](#contribute-to-our-open-source-codebase) on GitHub.
-
-   a. Create, update and fix bugs in our [coding challenges](#coding-challenges).
-
-   b. Help us fix bugs in freeCodeCamp.org's [learning platform](#learning-platform).
-
-   c. Help us translate freeCodeCamp.org to world languages.
-
 > [!NOTE]
 > Before you proceed, please take a quick 2 minutes to read our [Code of Conduct](https://www.freecodecamp.org/code-of-conduct). We enforce it strictly across our community. We want contributing to freeCodeCamp.org to be a safe and inclusive experience for everyone.
 
 Happy contributing.
 
-## Contribute to our open source codebase
+## Our open source codebase
 
 Our codebase has thousands of [coding challenges](https://www.freecodecamp.org/learn/) and other source code that power our learning platform.
+
+You are welcome to:
+
+- Create, update and fix bugs in our [coding challenges](#coding-challenges).
+- Help us fix bugs in freeCodeCamp.org's [learning platform](#learning-platform).
+- Help us translate freeCodeCamp.org to world languages.
 
 ### Coding Challenges
 
@@ -147,11 +135,11 @@ Be polite and patient. Our community of volunteers and moderators are always aro
 
 When in doubt, you can reach out to our platform dev team to help you with this:
 
-| Member               | Send message on Gitter                                          | DM on Twitter                                           |
-| :------------------- | :-------------------------------------------------------------- | :------------------------------------------------------ |
+| Staff                | Send message on Gitter                                        | DM on Twitter                                         |
+| :------------------- | :------------------------------------------------------------ | :---------------------------------------------------- |
 | Mrugesh Mohapatra    | [@raisedadead](https://gitter.im/raisedadead)                 | [@raisedadead](https://twitter.com/raisedadead)       |
 | Ahmad Abdolsaheb     | [@ahmadabdolsaheb](https://gitter.im/ahmadabdolsaheb)         | [@Abdolsaheb](https://twitter.com/Abdolsaheb)         |
 | Kristofer Koishigawa | [@scissorsneedfoodtoo](https://gitter.im/scissorsneedfoodtoo) | [@kriskoishigawa](https://twitter.com/kriskoishigawa) |
-| Tom Mondloc | [@moT01](https://gitter.im/moT01) | - |
+| Tom Mondloc          | [@moT01](https://gitter.im/moT01)                             | -                                                     |
 
 **You can email our developer staff at: `dev[at]freecodecamp.org`**
