@@ -1,0 +1,140 @@
+{
+  "name": "TensorFlow",
+  "dashedName": "lectures-tensorflow",
+  "order": 1,
+  "time": "15 hours",
+  "superBlock": "machine-learning-with-python",
+  "superOrder": 10,
+  "challengeOrder": [
+    [
+      "5e8f2f13c4cdbe86b5c72d87",
+      "Intro to TensorFlow A"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72d88",
+      "Intro to TensorFlow B"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72d89",
+      "Core Learning Algorithms A"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72d8a",
+      "Core Learning Algorithms B"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72d8b",
+      "Core Learning Algorithms C"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72d8c",
+      "Core Learning Algorithms D"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72d8d",
+      "Core Learning Algorithms E"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72d8e",
+      "Core Learning Algorithms F"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72d8f",
+      "Core Learning Algorithms G"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72d90",
+      "Core Learning Algorithms H"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72d91",
+      "Core Learning Algorithms I"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72d92",
+      "Neural Networks with TensorFlow A"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72d93",
+      "Neural Networks with TensorFlow B"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72d94",
+      "Neural Networks with TensorFlow C"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72d95",
+      "Neural Networks with TensorFlow D"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72d96",
+      "Convolutional Neural Networks A"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72d97",
+      "Convolutional Neural Networks B"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72d98",
+      "Convolutional Neural Networks C"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72d99",
+      "Convolutional Neural Networks D"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72d9a",
+      "Convolutional Neural Networks E"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72d9b",
+      "Natural Language Processing With RNNs A"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72d9c",
+      "Natural Language Processing With RNNs B"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72d9d",
+      "Natural Language Processing With RNNs C"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72d9e",
+      "Natural Language Processing With RNNs D"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72d9f",
+      "Natural Language Processing With RNNs E"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72da0",
+      "Natural Language Processing With RNNs F"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72da1",
+      "Natural Language Processing With RNNs G"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72da2",
+      "Natural Language Processing With RNNs H"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72da3",
+      "Reinforcement Learning With Q-Learning A"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72da4",
+      "Reinforcement Learning With Q-Learning B"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72da5",
+      "Reinforcement Learning With Q-Learning C"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72da6",
+      "Conclusion"
+    ]
+  ],
+  "helpRoom": "Help",
+  "fileName": "11-machine-learning-with-python/lectures-tensorflow.json"
+}
