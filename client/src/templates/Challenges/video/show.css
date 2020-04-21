@@ -1,0 +1,43 @@
+.video-quiz-options {
+  padding: 1px 16px;
+  background-color: var(--tertiary-background);
+}
+
+.video-quiz-option-label {
+  display: block;
+  margin: 20px;
+  cursor: pointer;
+  display: flex;
+  font-weight: normal;
+}
+
+.video-quiz-input-hidden {
+  position: absolute;
+  left: -9999px;
+}
+
+.video-quiz-input-visible {
+  margin-right: 15px;
+  position: relative;
+  top: 2px;
+  display: inline-block;
+  min-width: 20px;
+  min-height: 20px;
+  max-width: 20px;
+  max-height: 20px;
+  border-radius: 50%;
+  background-color: var(--secondary-background);
+  border: 2px solid var(--primary-color);
+  position: relative;
+}
+
+.video-quiz-selected-input {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}

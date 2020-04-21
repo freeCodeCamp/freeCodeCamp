@@ -125,5 +125,6 @@ exports.helpCategory = {
   'data-analysis-with-python': 'Certification Projects',
   'data-analysis-with-python-projects': 'Certification Projects',
   'machine-learning-with-python': 'Certification Projects',
-  'machine-learning-with-python-projects': 'Certification Projects'
+  'machine-learning-with-python-projects': 'Certification Projects',
+  'python-for-everybody': 'Python'
 };
