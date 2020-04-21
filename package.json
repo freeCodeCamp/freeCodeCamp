@@ -47,6 +47,7 @@
     "seed:auth-user": "cross-env DEBUG=fcc:* node ./tools/scripts/seed/seedAuthUser",
     "seed:challenges": "cross-env DEBUG=fcc:* node ./tools/scripts/seed/seedChallenges",
     "serve:client": "cd ./client && npm run serve",
+    "start": "npm-run-all ensure-env -p develop:server serve:client",
     "test": "npm-run-all -p test:*",
     "test:client": "cd ./client && npm test && cd ../",
     "test:client:e2e": "cd ./client && npm run e2e:ci && cd ../",
