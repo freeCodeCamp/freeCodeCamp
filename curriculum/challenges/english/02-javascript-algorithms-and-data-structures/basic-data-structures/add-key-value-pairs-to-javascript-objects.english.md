@@ -17,7 +17,7 @@ const tekkenCharacter = {
 };
 ```
 
-The above code defines a Tekken video game character object called <code>tekkenCharacter</code>. It has three <dfn>properties</dfn>, each of which map to a specific <dfn>value</dfn>. If you want to add an additional property, such as "origin", it can be done by assigning <code>origin</code> to the object:
+The above code defines a Tekken video game character object called <code>tekkenCharacter</code>. It has three properties, each of which map to a specific value. If you want to add an additional property, such as "origin", it can be done by assigning <code>origin</code> to the object:
 
 ```js
 tekkenCharacter.origin = 'South Korea';
