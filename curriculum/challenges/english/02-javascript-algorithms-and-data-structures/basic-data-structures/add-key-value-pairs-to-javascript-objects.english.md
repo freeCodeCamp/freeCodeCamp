@@ -23,7 +23,7 @@ The above code defines a Tekken video game character object called <code>tekkenC
 tekkenCharacter.origin = 'South Korea';
 ```
 
-This uses <dfn>dot notation</dfn>. If you were to observe the <code>tekkenCharacter</code> object, it will now include the <code>origin</code> property. Hwoarang also had distinct orange hair. You can add this property with <dfn>bracket notation</dfn> by doing:
+This uses dot notation. If you were to observe the <code>tekkenCharacter</code> object, it will now include the <code>origin</code> property. Hwoarang also had distinct orange hair. You can add this property with bracket notation by doing:
 
 ```js
 tekkenCharacter['hair color'] = 'dyed orange';
