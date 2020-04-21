@@ -3,6 +3,7 @@ id: 5e6a54af58d3af90110a60a1
 title: Introduction B
 challengeType: 11
 isRequired: true
+videoId: H6qtjRTfSog
 ---
 
 ## Description
