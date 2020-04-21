@@ -15,7 +15,7 @@ function getSchemaForLang(lang) {
     checksum: Joi.number(),
     dashedName: Joi.string(),
     description: Joi.when('challengeType', {
-      is: challengeTypes.step,
+      is: Joi.only([challengeTypes.step, challengeTypes.video]),
       then: Joi.string().allow(''),
       otherwise: Joi.string().required()
     }),
@@ -41,6 +41,7 @@ function getSchemaForLang(lang) {
     ),
     guideUrl: Joi.string().uri({ scheme: 'https' }),
     videoUrl: Joi.string().allow(''),
+    videoId: Joi.string(),
     forumTopicId: Joi.number(),
     helpRoom: Joi.string(),
     id: Joi.objectId().required(),
