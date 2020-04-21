@@ -54,7 +54,7 @@ We've defined a function <code>countOnline</code> which accepts one argument (a 
 ```yml
 tests:
   - text: The function <code>countOnline</code> should use a `for in` statement to iterate through the object keys of the object passed to it.
-    testString: assert(code.match(/for\s*\(\s*(var|let)\s+[a-zA-Z_$]\w*\s+in\s+[a-zA-Z_$]\w*\s*\)\s*{/));
+    testString: assert(code.match(/for\s*\(\s*(var|let|const)\s+[a-zA-Z_$]\w*\s+in\s+[a-zA-Z_$]\w*\s*\)\s*{/));
   - text: 'The function <code>countOnline</code> should return <code>1</code> when the object <code>{ Alan: { online: false }, Jeff: { online: true }, Sarah: { online: false } }</code> is passed to it'
     testString: assert(countOnline(usersObj1) === 1);
   - text: 'The function <code>countOnline</code> should return <code>2</code> when the object <code>{ Alan: { online: true }, Jeff: { online: false }, Sarah: { online: true } }</code> is passed to it'
