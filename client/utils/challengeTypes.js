@@ -126,5 +126,9 @@ exports.helpCategory = {
   'data-analysis-with-python-projects': 'Certification Projects',
   'machine-learning-with-python': 'Certification Projects',
   'machine-learning-with-python-projects': 'Certification Projects',
-  'python-for-everybody': 'Python'
+  'python-for-everybody': 'Python',
+  tensorflow: 'Python',
+  'how-neural-networks-work': 'Python',
+  numpy: 'Python',
+  'data-analysis-with-python-course': 'Python'
 };
