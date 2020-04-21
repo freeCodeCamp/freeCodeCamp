@@ -1,0 +1,31 @@
+name: Cypress tests
+on: [push]
+jobs:
+  cypress-run:
+    name: Cypress run
+    runs-on: ubuntu-latest
+    services:
+      mongodb:
+        image: mongo:3.5.5
+# ports may not be necessary, try without
+        ports:
+          - 27017:27017
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Set up environment
+        run: cp sample.env .env
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v1
+        with:
+          build: npm run build
+# this should mirror the production build, but for now we're just using the dev
+# server and gatsby serve instead (the npm script serve:client needs updating!)
+          start: npm start
+          wait-on: http://localhost:8000
+# the site builds in about 8 minutes, so there is currently 12 minutes of time
+# left for testing.
+          wait-on-timeout: 1200
+          config: baseUrl=http://localhost:8000

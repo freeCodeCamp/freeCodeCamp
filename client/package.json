@@ -94,7 +94,7 @@
     "format": "npm run format:gatsby && npm run format:src && npm run format:utils",
     "prestand-alone": "npm run prebuild",
     "stand-alone": "gatsby develop",
-    "serve": "gatsby serve",
+    "serve": "gatsby serve -p 8000",
     "test": "jest"
   },
   "devDependencies": {
