@@ -47,6 +47,11 @@
       homepage: 'index.md',
       loadSidebar: 'components/sidebar.md',
 
+      // break the caching
+      requestHeaders: {
+        'cache-control': 'no-cache'
+      },
+
       // Cover Page
       coverpage: 'components/cover.md',
       onlyCover: true,
