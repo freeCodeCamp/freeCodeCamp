@@ -7,7 +7,7 @@ forumTopicId: 301153
 
 ## Description
 <section id='description'>
-At their most basic, objects are just collections of <dfn>key-value</dfn> pairs. In other words, its pieces of data (<dfn>values</dfn>) mapped to unique identifiers called <dfn>properties</dfn> (<dfn>keys</dfn>). Take a look at an example:
+At their most basic, objects are just collections of <dfn>key-value</dfn> pairs. In other words, they are pieces of data (<dfn>values</dfn>) mapped to unique identifiers called <dfn>properties</dfn> (<dfn>keys</dfn>). Take a look at an example:
 
 ```js
 const tekkenCharacter = {
