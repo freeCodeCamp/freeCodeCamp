@@ -80,7 +80,8 @@
   padding: 0;
 }
 
-.nav-list li a {
+.nav-list li a,
+.codeRadio {
   display: block;
   margin: 0;
   padding: 6px 15px;
@@ -88,22 +89,29 @@
   opacity: 1;
   white-space: nowrap;
   height: 38px;
+  background-color: transparent;
+  border: none;
 }
 
-.nav-list li a:hover {
+.nav-list li a:hover,
+.codeRadio:hover {
   color: var(--theme-color);
   text-decoration: none;
   background: white;
 }
 
-.nav-list li a:focus {
+.nav-list li a:focus,
+.codeRadio:focus {
   background: var(--theme-color);
   color: white;
+  outline: 0;
 }
 
-.nav-list li a:focus:hover {
+.nav-list li a:focus:hover,
+.codeRadio:focus:hover {
   color: var(--theme-color);
   background: white;
+  outline: 0;
 }
 
 .universal-nav-right {
