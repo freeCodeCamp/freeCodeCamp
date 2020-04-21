@@ -14,7 +14,6 @@ function getSchemaForLang(lang) {
       .required(),
     checksum: Joi.number(),
     dashedName: Joi.string(),
-    // { is: Joi.only(['tv-serie', 'movie']), otherwise: Joi.required() }
     description: Joi.when('challengeType', {
       is: Joi.only([challengeTypes.step, challengeTypes.video]),
       then: Joi.string().allow(''),
