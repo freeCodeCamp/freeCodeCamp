@@ -41,7 +41,6 @@ function getSchemaForLang(lang) {
     ),
     guideUrl: Joi.string().uri({ scheme: 'https' }),
     videoUrl: Joi.string().allow(''),
-    videoId: Joi.string(),
     forumTopicId: Joi.number(),
     helpRoom: Joi.string(),
     id: Joi.objectId().required(),
@@ -54,6 +53,10 @@ function getSchemaForLang(lang) {
     name: Joi.string(),
     order: Joi.number(),
     // video challenges only:
+    videoId: Joi.when('challengeType', {
+      is: challengeTypes.video,
+      then: Joi.string().required()
+    }),
     question: Joi.object().keys({
       text: Joi.string().required(),
       answers: Joi.array()
