@@ -24,12 +24,14 @@
     + 'Since 2015, 40,000 graduates have gotten jobs at tech '
     + 'companies including Google, Apple, Amazon, and Microsoft.' } name='twitter:description' />
 
-
   <!-- Theme -->
   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css"> -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/vue.css">
   <!-- Custom theme stylesheet -->
   <link rel="stylesheet" href="components/theme.css">
+
+  <script src="https://kit.fontawesome.com/4b366379be.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -46,10 +48,8 @@
       loadSidebar: 'components/sidebar.md',
 
       // Cover Page
-      /*
       coverpage: 'components/cover.md',
       onlyCover: true,
-      */
 
       // Navigation
       auto2top: true,
@@ -76,6 +76,22 @@
       remoteMarkdown: {
         tag: 'remote-markdown-url',
       },
+
+      plugins: [
+        function (hook, vm) {
+          hook.beforeEach(function (html) {
+            var url =
+              'https://github.com/freeCodeCamp/freeCodeCamp/blob/master/docs/' +
+              vm.route.file;
+            var editHtml = '[<i class="far fa-edit"></i> Edit this guide on GitHub](' + url + ')';
+            return (
+              html +
+              '\n----\n' +
+              editHtml
+            );
+          });
+        }
+      ]
 
     }
   </script>
