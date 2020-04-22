@@ -189,7 +189,7 @@ function createGetPasswordlessAuth(app) {
         .do(() => {
           req.flash(
             'success',
-            'Success! You have signed in to your account. Happy Coding!'
+            'Success! You have updated your email address. Happy Coding!'
           );
           return res.redirectWithFlash(`${homeLocation}/learn`);
         })
