@@ -108,7 +108,7 @@ Optional Test tear down code.
 </section>
 ````
 
-> ?[!NOTE]
+> [!NOTE]
 >
 > 1. In the above sections, examples of `{ext}` are:
 >

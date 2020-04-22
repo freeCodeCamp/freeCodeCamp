@@ -51,6 +51,10 @@ OR
 
 ## Frequently Asked Questions
 
+### I am new to GitHub and Open Source, where should I start?
+
+Read our [How to Contribute to Open Source Guide](https://github.com/freeCodeCamp/how-to-contribute-to-open-source).
+
 ### Where are the Guide articles (guide.freecodecamp.org)?
 
 We will not have the general guide articles anymore.
@@ -87,13 +91,23 @@ Please note that any issues that seek coding help on a challenge will be closed.
 
 Please don't create GitHub issues for security issues. Instead, please send an email to `security@freecodecamp.org` and we'll look into it immediately.
 
+### I am a student, can I or our team work on a feature for academic credits?
+
+Yes, sure.
+
+While, we are open to all contributions, please note we are unable to commit to any timelines that may be a requirement at your college or university. All pull-requests and code contributions are reviewed by volunteer developers, and we respect their time and efforts. We will not be able to give any PR any special attention to be fair to all.
+
+We request you to plan ahead and work on a feature with this in mind.
+
 ### What do these different labels that are tagged on issues mean?
 
 Our community moderators [triage](https://en.wikipedia.org/wiki/Software_bug#Bug_management) issues and pull requests based on their priority, severity, and other factors. You can [find a complete glossary of their meanings here](https://github.com/freecodecamp/freecodecamp/labels).
 
+### Where do I start if I want to work on an issue?
+
 You should go through [**`help wanted`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) or [**`first timers welcome`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+welcome%22) issues for a quick overview of what is available for you to work on.
 
-These are up for grabs, and you do not need to seek permission before working on them. If these issues lack clarity on what needs to be done, feel free to ask questions in the comments.
+> [!TIP] These are up for grabs, and you do not need to seek permission before working on them. If these issues lack clarity on what needs to be done, feel free to ask questions in the comments.
 
 ### I found a typo, should I report an issue before I can make a pull request?
 
@@ -118,13 +132,9 @@ You do not need any permission for issues that are marked `help wanted` or `firs
 
 Follow the guidelines carefully and open a pull request.
 
-### I am new to GitHub and Open Source, where should I start?
-
-Read our [How to Contribute to Open Source Guide](https://github.com/freeCodeCamp/how-to-contribute-to-open-source).
-
 ### I am stuck on something that is not included in this documentation.
 
-Feel free to ask for help in:
+**Feel free to ask for help in:**
 
 - The "Contributors" category of [our community forum](https://www.freecodecamp.org/forum/c/contributors).
 - Our public contributors [chat room on Gitter](https://gitter.im/FreeCodeCamp/Contributors).
@@ -133,7 +143,9 @@ We are excited to help you contribute to any of the topics that you would like t
 
 Be polite and patient. Our community of volunteers and moderators are always around to guide you through your queries.
 
-When in doubt, you can reach out to our platform dev team to help you with this:
+**Additional Assistance:**
+
+If you have queries about the stack, architecture of the codebase, feel free to reach out to our staff dev team:
 
 | Staff                | Send message on Gitter                                        | DM on Twitter                                         |
 | :------------------- | :------------------------------------------------------------ | :---------------------------------------------------- |
