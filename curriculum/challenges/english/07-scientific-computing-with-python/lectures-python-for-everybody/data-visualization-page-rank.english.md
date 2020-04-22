@@ -1,9 +1,9 @@
 ---
 id: 5e7b9f6a0b6c005b0e76f096
-title: Viz B
+title: 'Data Visualization: Page Rank'
 challengeType: 11
 isRequired: true
-videoId: 3muQV-Im3Z0
+videoId: 6-w_qIUwaxU
 ---
 
 ## Description
