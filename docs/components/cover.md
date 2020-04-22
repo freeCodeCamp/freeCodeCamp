@@ -7,6 +7,6 @@
 - <span class='cover-icon' style="color: #002ead;"><i class="fad fa-question-circle"></i></span> [Help by answering coding questions](https://www.freecodecamp.org/forum/?max_posts=1) on our community forum.
 - <span class='cover-icon' style="color: #00471b;"><i class="fad fa-comments-alt"></i></span> [Give feedback on coding projects](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1) built by campers.
 - <span class='cover-icon' style="color: #c4302b;"><i class="fab fa-youtube"></i></span> [Help us add subtitles (closed captions)](https://www.youtube.com/freecodecamp) to our YouTube channel videos.
-- <span class='cover-icon' style="color: #000000;"><i class="fab fa-github"></i></span> [Contribute to our open source codebase](#contribute-to-our-open-source-codebase) on GitHub.
+- <span class='cover-icon' style="color: #000000;"><i class="fab fa-github"></i></span> [Contribute to our open source codebase](/index?id=our-open-source-codebase) on GitHub.
 
 [Read our contributing guidelines](/index.md)
