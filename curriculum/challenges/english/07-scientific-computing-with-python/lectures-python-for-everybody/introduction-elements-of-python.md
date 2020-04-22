@@ -21,9 +21,9 @@ question:
 x = x + 1<br>
 print(x)</pre>'
   answers:
-    - 'College students.'
-    - 'People who want to become software developers.'
-    - 'Everyone.'
+    - 'x'
+    - 'x + 1'
+    - '44'
   solution: 3
 ```
 

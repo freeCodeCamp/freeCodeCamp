@@ -16,7 +16,7 @@ videoId: MQ5z4bdF92U
 
 ```yml
 question:
-  text: 'What SQL command would you use to retrieve alL users that have the email address quincy@freecodecamp.org?'
+  text: 'What SQL command would you use to retrieve all users that have the email address quincy@freecodecamp.org?'
   answers:
     - 'SELECT Users WHERE email="quincy@freecodecamp.org"'
     - 'SELECT Users WHERE email IS "quincy@freecodecamp.org"'
