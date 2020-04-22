@@ -224,10 +224,8 @@ class Set {
   }
 
   subset(set) {
-    for (let idx = 0; idx < this.length; idx++) {
-      if(!set.dictionary[this.values()[idx]]) {
-        return false
-      }
+    for(const value of this.values()){
+      if(!set.dictionary[value]) return false;
     }
     return true
   }
