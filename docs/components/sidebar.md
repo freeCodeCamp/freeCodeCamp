@@ -11,7 +11,7 @@
 - **<i class="fad fa-plane-alt"></i> Flight Manuals (for Staff & Mods)**
   - [01 - List Virtual Machines](/flight-manuals/01-getting-list-of-virtual-machines.md)
   - [02 - Provision API Instances](/flight-manuals/02-spinning-api-instances.md)
-  - [02 - Using Reply Templates](/flight-manuals/03-using-reply-templates.md)
+  - [03 - Using Reply Templates](/flight-manuals/03-using-reply-templates.md)
 ----
 - **<i class="fad fa-user-friends"></i> Our Community**
   - [**<i class="fab fa-github"></i> GitHub Repository**](https://github.com/freecodecamp/freecodecamp)
