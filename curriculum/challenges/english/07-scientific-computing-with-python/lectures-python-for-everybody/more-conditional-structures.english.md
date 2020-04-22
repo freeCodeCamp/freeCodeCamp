@@ -36,6 +36,7 @@ Which line would cause the script to immediately stop because of an error?'
     - '7'
     - 'None'
   solution: 2
+  
 ```
 
 </section>

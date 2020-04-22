@@ -22,6 +22,7 @@ question:
     - 'It specifies the fields to use for the JOIN.'
     - 'It indicates how the two tables are to be joined.'
   solution: 3
+  
 ```
 
 </section>

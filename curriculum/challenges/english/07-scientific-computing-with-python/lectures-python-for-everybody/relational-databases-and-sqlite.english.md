@@ -23,6 +23,7 @@ question:
     - 'row'
     - 'column'
   solution: 1
+  
 ```
 
 </section>

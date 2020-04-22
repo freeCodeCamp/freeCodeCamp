@@ -26,6 +26,7 @@ print(counts.get('kris', 0))</pre>"
     - '10'
     - '[will return error]'
   solution: 3
+  
 ```
 
 </section>

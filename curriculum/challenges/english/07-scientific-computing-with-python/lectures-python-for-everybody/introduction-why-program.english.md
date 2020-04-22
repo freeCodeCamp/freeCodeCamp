@@ -24,6 +24,7 @@ question:
     - 'People who want to become software developers.'
     - 'Everyone.'
   solution: 3
+  
 ```
 
 </section>

@@ -27,6 +27,7 @@ i = word.find("na")</pre>'
     - 'True'
     - 'na'
   solution: 2
+  
 ```
 
 </section>

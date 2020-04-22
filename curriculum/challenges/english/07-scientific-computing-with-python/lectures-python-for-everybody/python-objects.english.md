@@ -23,6 +23,7 @@ question:
   - 'Objects hide detail'
   - 'Objects are one of the five standard data types'
   solution: 4
+  
 ```
 
 </section>

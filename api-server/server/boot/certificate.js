@@ -13,12 +13,12 @@ import {
   legacyFrontEndChallengeId,
   legacyBackEndChallengeId,
   legacyDataVisId,
+  legacyInfosecQaId,
   respWebDesignId,
   frontEndLibsId,
   jsAlgoDataStructId,
   dataVis2018Id,
   apisMicroservicesId,
-  infosecQaId,
   infosecId,
   qaId,
   fullStackId,
@@ -88,6 +88,7 @@ function createCertTypeIds(app) {
     [certTypes.frontEnd]: getIdsForCert$(legacyFrontEndChallengeId, Challenge),
     [certTypes.backEnd]: getIdsForCert$(legacyBackEndChallengeId, Challenge),
     [certTypes.dataVis]: getIdsForCert$(legacyDataVisId, Challenge),
+    [certTypes.infosecQa]: getIdsForCert$(legacyInfosecQaId, Challenge),
 
     // modern
     [certTypes.respWebDesign]: getIdsForCert$(respWebDesignId, Challenge),
@@ -98,7 +99,6 @@ function createCertTypeIds(app) {
       apisMicroservicesId,
       Challenge
     ),
-    [certTypes.infosecQa]: getIdsForCert$(infosecQaId, Challenge),
     [certTypes.qa]: getIdsForCert$(qaId, Challenge),
     [certTypes.infosec]: getIdsForCert$(infosecId, Challenge),
     [certTypes.fullStack]: getIdsForCert$(fullStackId, Challenge),
@@ -121,12 +121,12 @@ const certIds = {
   [certTypes.frontEnd]: legacyFrontEndChallengeId,
   [certTypes.backEnd]: legacyBackEndChallengeId,
   [certTypes.dataVis]: legacyDataVisId,
+  [certTypes.infosecQa]: legacyInfosecQaId,
   [certTypes.respWebDesign]: respWebDesignId,
   [certTypes.frontEndLibs]: frontEndLibsId,
   [certTypes.jsAlgoDataStruct]: jsAlgoDataStructId,
   [certTypes.dataVis2018]: dataVis2018Id,
   [certTypes.apisMicroservices]: apisMicroservicesId,
-  [certTypes.infosecQa]: infosecQaId,
   [certTypes.qa]: qaId,
   [certTypes.infosec]: infosecId,
   [certTypes.fullStack]: fullStackId,
@@ -139,13 +139,13 @@ const certText = {
   [certTypes.frontEnd]: 'Legacy Front End',
   [certTypes.backEnd]: 'Legacy Back End',
   [certTypes.dataVis]: 'Legacy Data Visualization',
+  [certTypes.infosecQa]: 'Legacy Information Security and Quality Assurance',
   [certTypes.fullStack]: 'Full Stack',
   [certTypes.respWebDesign]: 'Responsive Web Design',
   [certTypes.frontEndLibs]: 'Front End Libraries',
   [certTypes.jsAlgoDataStruct]: 'JavaScript Algorithms and Data Structures',
   [certTypes.dataVis2018]: 'Data Visualization',
   [certTypes.apisMicroservices]: 'APIs and Microservices',
-  [certTypes.infosecQa]: 'Information Security and Quality Assurance',
   [certTypes.qa]: 'Quality Assurance',
   [certTypes.infosec]: 'Information Security',
   [certTypes.sciCompPy]: 'Scientific Computing with Python',
@@ -157,13 +157,13 @@ const completionHours = {
   [certTypes.frontEnd]: 400,
   [certTypes.backEnd]: 400,
   [certTypes.dataVis]: 400,
+  [certTypes.infosecQa]: 300,
   [certTypes.fullStack]: 1800,
   [certTypes.respWebDesign]: 300,
   [certTypes.frontEndLibs]: 300,
   [certTypes.jsAlgoDataStruct]: 300,
   [certTypes.dataVis2018]: 300,
   [certTypes.apisMicroservices]: 300,
-  [certTypes.infosecQa]: 300,
   [certTypes.qa]: 300,
   [certTypes.infosec]: 300,
   [certTypes.sciCompPy]: 400,
@@ -192,7 +192,6 @@ function sendCertifiedEmail(
     isJsAlgoDataStructCert,
     isDataVisCert,
     isApisMicroservicesCert,
-    isInfosecQaCert,
     isQaCert,
     isInfosecCert,
     isSciCompPyCert,
@@ -208,7 +207,6 @@ function sendCertifiedEmail(
     !isJsAlgoDataStructCert ||
     !isDataVisCert ||
     !isApisMicroservicesCert ||
-    !isInfosecQaCert ||
     !isQaCert ||
     !isInfosecCert ||
     !isSciCompPyCert ||

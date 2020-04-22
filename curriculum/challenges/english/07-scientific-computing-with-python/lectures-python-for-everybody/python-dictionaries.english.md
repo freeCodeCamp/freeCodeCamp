@@ -28,6 +28,7 @@ dict["Sun"] = 9</pre>'
     - "{'Thu': 13, 'Sat': 2, 'Sun': 9}"
     - "{'Fri': 20, 'Thu': 13, 'Sat': 2, 'Sun': 9}"
   solution: 5
+  
 ```
 
 </section>

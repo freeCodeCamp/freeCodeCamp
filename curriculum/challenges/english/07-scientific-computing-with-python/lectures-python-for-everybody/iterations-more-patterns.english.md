@@ -24,6 +24,7 @@ question:
     - '0 is not 0.0'
     - '0 = 0.0'
   solution: 2
+  
 ```
 
 </section>

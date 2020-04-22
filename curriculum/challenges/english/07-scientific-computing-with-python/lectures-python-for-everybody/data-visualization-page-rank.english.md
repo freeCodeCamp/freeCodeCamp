@@ -22,6 +22,7 @@ question:
     - 'It ranks pages based on view counts.'
     - 'It figures out which pages contain the most important content.'
   solution: 1
+  
 ```
 
 </section>

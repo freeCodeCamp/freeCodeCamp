@@ -23,6 +23,7 @@ question:
     - 'The ability to create a new class by extending an existing class.'
     - 'A method that is called at the moment when a class is being used to construct an object. '
   solution: 3
+  
 ```
 
 </section>

@@ -25,6 +25,7 @@ question:
     - 'print( sorted( [ (k,v) for k,v in counts.keys() ] ) )'
     - 'print( [ (k,v) for k,v in counts.values().sort() ] )'
   solution: 1
+  
 ```
 
 </section>

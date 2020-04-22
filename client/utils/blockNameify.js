@@ -14,12 +14,8 @@ const preFormattedBlockNames = {
   'apis-and-microservices': 'APIs and Microservices',
   'apis-and-microservices-projects': 'APIs and Microservices Projects',
   'scientific-computing-with-python': 'Scientific Computing with Python',
-  'scientific-computing-with-python-projects': 'Certification Projects',
   'data-analysis-with-python': 'Data Analysis with Python',
-  'data-analysis-with-python-projects': 'Certification Projects',
-  'machine-learning-with-python': 'Machine Learning with Python',
-  'machine-learning-with-python-projects': 'Certification Projects',
-  'information-security-projects': 'Certification Projects'
+  'machine-learning-with-python': 'Machine Learning with Python'
 };
 
 const noFormatting = ['and', 'for', 'of', 'the', 'up', 'with'];

@@ -31,6 +31,7 @@ mysock.send(cmd)<br>
     - 'simple todo list'
     - 'simple web browser'
   solution: 4
+  
 ```
 
 </section>

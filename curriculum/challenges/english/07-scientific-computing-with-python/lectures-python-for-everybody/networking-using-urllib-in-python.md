@@ -26,6 +26,7 @@ for line in fhand:<br>    print(line.decode().strip())</pre>"
     - 'A header and the contents of "romeo.txt"'
     - 'A header, a footer, and the contents of "romeo.txt"'
   solution: 1
+  
 ```
 
 </section>

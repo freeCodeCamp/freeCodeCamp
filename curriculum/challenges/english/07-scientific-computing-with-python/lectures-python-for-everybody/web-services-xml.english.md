@@ -28,6 +28,7 @@ question:
     - 'Phone tag is missing closing tag.'
     - 'Plain text should be encoded using UTF-8.'
   solution: 3
+  
 ```
 
 </section>
