@@ -107,8 +107,8 @@ class Set {
       smallSet = this;
     }
 
-    largeSet.values().forEach(value => {
-      if (smallSet.dictionary[value]) {
+    smallSet.values().forEach(value => {
+      if (largeSet.dictionary[value]) {
         newSet.add(value);
       }
     })
