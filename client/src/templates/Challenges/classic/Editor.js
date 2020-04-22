@@ -115,7 +115,12 @@ class Editor extends Component {
       parameterHints: {
         enabled: false
       },
-      tabSize: 2
+      tabSize: 2,
+      hover: false,
+      dragAndDrop: true,
+      lightbulb: {
+        enabled: false
+      }
     };
 
     this._editor = null;
