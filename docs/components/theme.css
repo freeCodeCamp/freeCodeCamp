@@ -313,3 +313,12 @@ body.close .github-corner {
 .docsify-copy-code-button {
   font-size: 0.7em !important;
 }
+
+/****** Anchor Headings ******/
+a.anchor {
+  padding-top: 48px;
+}
+
+.markdown-section h2 {
+  margin: 0 0 0.8em;
+}
