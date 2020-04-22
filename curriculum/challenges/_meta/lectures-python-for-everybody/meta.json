@@ -8,219 +8,219 @@
   "challengeOrder": [
     [
       "5e6a54a558d3af90110a60a0",
-      "Introduction A"
+      "Introduction: Why Program?"
     ],
     [
       "5e6a54af58d3af90110a60a1",
-      "Introduction B"
+      "Introduction: Hardware Architecture"
     ],
     [
       "5e6a54ba58d3af90110a60a2",
-      "Introduction C"
+      "Introduction: Python as a Language"
     ],
     [
       "5e6a54c358d3af90110a60a3",
-      "Introduction D"
+      "Introduction: Elements of Python"
     ],
     [
       "5e7b9f050b6c005b0e76f056",
-      "Expressions A"
+      "Variables, Expressions, and Statements"
     ],
     [
       "5e7b9f050b6c005b0e76f057",
-      "Expressions B"
+      "Intermediate Expressions"
     ],
     [
       "5e7b9f050b6c005b0e76f058",
-      "Conditional A"
+      "Conditional Execution"
     ],
     [
       "5e7b9f060b6c005b0e76f059",
-      "Conditional B"
+      "More Conditional Structures"
     ],
     [
       "5e7b9f060b6c005b0e76f05a",
-      "Functions A"
+      "Python Functions"
     ],
     [
       "5e7b9f060b6c005b0e76f05b",
-      "Functions B"
+      "Build your own Functions"
     ],
     [
       "5e7b9f060b6c005b0e76f05c",
-      "Iterations A"
+      "Loops and Iterations"
     ],
     [
       "5e7b9f070b6c005b0e76f05d",
-      "Iterations B"
+      "Iterations: Definite Loops"
     ],
     [
       "5e7b9f070b6c005b0e76f05e",
-      "Iterations C"
+      "Iterations: Loop Idioms"
     ],
     [
       "5e7b9f070b6c005b0e76f05f",
-      "Iterations D"
+      "Iterations: More Patterns"
     ],
     [
       "5e7b9f070b6c005b0e76f060",
-      "Strings A"
+      "Strings in Python"
     ],
     [
       "5e7b9f070b6c005b0e76f061",
-      "Strings B"
+      "Intermediate Strings"
     ],
     [
       "5e7b9f080b6c005b0e76f062",
-      "Files A"
+      "Reading Files"
     ],
     [
       "5e7b9f080b6c005b0e76f063",
-      "Files B"
+      "Files as a Sequence"
     ],
     [
       "5e7b9f080b6c005b0e76f064",
-      "Lists A"
+      "Python Lists"
     ],
     [
       "5e7b9f090b6c005b0e76f065",
-      "Lists B"
+      "Working with Lists"
     ],
     [
       "5e7b9f090b6c005b0e76f066",
-      "Lists C"
+      "String and Lists"
     ],
     [
       "5e7b9f090b6c005b0e76f067",
-      "Dictionaries A"
+      "Python Dictionaries"
     ],
     [
       "5e7b9f090b6c005b0e76f068",
-      "Dictionaries B"
+      "Dictionaries: Common Applications"
     ],
     [
       "5e7b9f0a0b6c005b0e76f069",
-      "Dictionaries C"
+      "Dictionaries and Loops"
     ],
     [
       "5e7b9f0a0b6c005b0e76f06c",
-      "Tuples A"
+      "The Tuples Collection"
     ],
     [
       "5e7b9f0b0b6c005b0e76f06d",
-      "Tuples B"
+      "Comparing and Sorting Tuples"
     ],
     [
       "5e7b9f0b0b6c005b0e76f06e",
-      "RegEx A"
+      "Regular Expressions"
     ],
     [
       "5e7b9f0b0b6c005b0e76f06f",
-      "RegEx B"
+      "Regular Expressions: Matching and Extracting Data"
     ],
     [
       "5e7b9f0b0b6c005b0e76f070",
-      "RegEx C"
+      "Regular Expressions: Practical Applications"
     ],
     [
       "5e7b9f0c0b6c005b0e76f071",
-      "HTTP A"
+      "Networking with Python"
     ],
     [
       "5e7b9f0c0b6c005b0e76f072",
-      "HTTP B"
+      "Networking Protocol"
     ],
     [
       "5e7b9f0c0b6c005b0e76f073",
-      "HTTP C"
+      "Networking: Write a Web Browser"
     ],
     [
       "5e7b9f0c0b6c005b0e76f074",
-      "HTTP D"
+      "Networking: Text Processing"
     ],
     [
       "5e7b9f0d0b6c005b0e76f075",
-      "HTTP E"
+      "Networking: Using urllib in Python"
     ],
     [
       "5e7b9f0d0b6c005b0e76f076",
-      "HTTP F"
+      "Networking: Web Scraping with Python"
     ],
     [
       "5e7b9f0e0b6c005b0e76f07a",
-      "Web Services A"
+      "Using Web Services"
     ],
     [
       "5e7b9f0e0b6c005b0e76f07b",
-      "Web Services B"
+      "Web Services: XML"
     ],
     [
       "5e7b9f0e0b6c005b0e76f07c",
-      "Web Services C"
+      "Web Services: XML Schema"
     ],
     [
       "5e7b9f140b6c005b0e76f07d",
-      "Web Services D"
+      "Web Services: JSON"
     ],
     [
       "5e7b9f140b6c005b0e76f07e",
-      "Web Services E"
+      "Web Services: Service Oriented Approach"
     ],
     [
       "5e7b9f150b6c005b0e76f07f",
-      "Web Services F"
+      "Web Services: APIs"
     ],
     [
       "5e7b9f150b6c005b0e76f080",
-      "Web Services G"
+      "Web Services: API Rate Limiting and Security"
     ],
     [
       "5e7b9f160b6c005b0e76f085",
-      "Objects A"
+      "Python Objects"
     ],
     [
       "5e7b9f160b6c005b0e76f086",
-      "Objects B"
+      "Objects: A Sample Class"
     ],
     [
       "5e7b9f170b6c005b0e76f087",
-      "Objects C"
+      "Object Lifecycle"
     ],
     [
       "5e7b9f170b6c005b0e76f088",
-      "Objects D"
+      "Objects: Inheritance"
     ],
     [
       "5e7b9f170b6c005b0e76f08a",
-      "Databases A"
+      "Relational Databases and SQLite"
     ],
     [
       "5e7b9f170b6c005b0e76f08b",
-      "Databases B"
+      "Make a Relational Database"
     ],
     [
       "5e7b9f180b6c005b0e76f08c",
-      "Databases C"
+      "Relational Database Design"
     ],
     [
       "5e7b9f180b6c005b0e76f08d",
-      "Databases D"
+      "Representing Relationships in a Relational Database"
     ],
     [
       "5e7b9f180b6c005b0e76f08e",
-      "Databases E"
+      "Relational Databases: Relationship Building"
     ],
     [
       "5e7b9f180b6c005b0e76f08f",
-      "Databases F"
+      "Relational Databases: Join Operation"
     ],
     [
       "5e7b9f190b6c005b0e76f090",
-      "Databases G"
+      "Relational Databases: Many-to-many Relationships"
     ],
     [
       "5e7b9f690b6c005b0e76f095",
-      "Viz A"
+      "Visualizing Data with Python"
     ],
     [
       "5e7b9f6a0b6c005b0e76f096",
@@ -228,7 +228,7 @@
     ],
     [
       "5e7b9f6a0b6c005b0e76f097",
-      "Viz C"
+      "Data Visualization: Mailing Lists"
     ]
   ]
 }
