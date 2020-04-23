@@ -27,7 +27,7 @@ tests:
   - id: 5e46f979ac417301a38fb932
     title: Port Scanner
   - id: 5e601c775ac9d0ecd8b94aff
-    title: Real Time Multiplayer Game
+    title: Secure Real Time Multiplayer Game
   - id: 5e46f983ac417301a38fb933
     title: SHA-1 Password Cracker
 ```

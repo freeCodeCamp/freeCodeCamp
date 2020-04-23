@@ -19,6 +19,7 @@ const machineLearningPyBase =
 const legacyFrontEndBase = '';
 const legacyBackEndBase = '';
 const legacyDataVisBase = '';
+const legacyInfosecQaBase = '';
 
 export const legacyProjectMap = {
   'Legacy Front End': [
@@ -205,6 +206,38 @@ export const legacyProjectMap = {
       title: 'Map Data Across the Globe',
       link: `${legacyDataVisBase}/map-data-across-the-globe`,
       superBlock: 'legacy-data-visualization'
+    }
+  ],
+  'Legacy Information Security and Quality Assurance': [
+    {
+      id: '587d8249367417b2b2512c41',
+      title: 'Metric-Imperial Converter',
+      link: `${legacyInfosecQaBase}/metric-imperial-converter`,
+      superBlock: 'legacy-information-security-and-quality-assurance'
+    },
+    {
+      id: '587d8249367417b2b2512c42',
+      title: 'Issue Tracker',
+      link: `${legacyInfosecQaBase}/issue-tracker`,
+      superBlock: 'legacy-information-security-and-quality-assurance'
+    },
+    {
+      id: '587d824a367417b2b2512c43',
+      title: 'Personal Library',
+      link: `${legacyInfosecQaBase}/personal-library`,
+      superBlock: 'legacy-information-security-and-quality-assurance'
+    },
+    {
+      id: '587d824a367417b2b2512c44',
+      title: 'Stock Price Checker',
+      link: `${legacyInfosecQaBase}/stock-price-checker`,
+      superBlock: 'legacy-information-security-and-quality-assurance'
+    },
+    {
+      id: '587d824a367417b2b2512c45',
+      title: 'Anonymous Message Board',
+      link: `${legacyInfosecQaBase}/anonymous-message-board`,
+      superBlock: 'legacy-information-security-and-quality-assurance'
     }
   ]
 };
@@ -429,8 +462,8 @@ export const projectMap = {
     },
     {
       id: '5e601c775ac9d0ecd8b94aff',
-      title: 'Real Time Multiplayer Game',
-      link: `${infoSecBase}/real-time-multiplayer-game`,
+      title: 'Secure Real Time Multiplayer Game',
+      link: `${infoSecBase}/secure-real-time-multiplayer-game`,
       superBlock: 'information-security'
     }
   ],

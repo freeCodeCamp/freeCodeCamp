@@ -121,7 +121,6 @@ const isCertMapSelector = createSelector(
     'Front End Libraries': isFrontEndLibsCert,
     'Data Visualization': is2018DataVisCert,
     "API's and Microservices": isApisMicroservicesCert,
-    'Information Security And Quality Assurance': isInfosecQaCert,
     'Quality Assurance': isQaCert,
     'Information Security': isInfosecCert,
     'Scientific Computing with Python': isSciCompPyCert,
@@ -129,7 +128,8 @@ const isCertMapSelector = createSelector(
     'Machine Learning with Python': isMachineLearningPyCert,
     'Legacy Front End': isFrontEndCert,
     'Legacy Data Visualization': isDataVisCert,
-    'Legacy Back End': isBackEndCert
+    'Legacy Back End': isBackEndCert,
+    'Legacy Information Security And Quality Assurance': isInfosecQaCert
   })
 );
 
@@ -473,6 +473,7 @@ export class CertificationSettings extends Component {
       isApisMicroservicesCert,
       isFrontEndLibsCert,
       isQaCert,
+      isInfosecCert,
       isJsAlgoDataStructCert,
       isRespWebDesignCert
     } = this.props;
@@ -482,6 +483,7 @@ export class CertificationSettings extends Component {
       isApisMicroservicesCert &&
       isFrontEndLibsCert &&
       isQaCert &&
+      isInfosecCert &&
       isJsAlgoDataStructCert &&
       isRespWebDesignCert;
 

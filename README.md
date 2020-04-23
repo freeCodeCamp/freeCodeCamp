@@ -107,11 +107,12 @@ Once you have earned all 6 of these certifications, you'll be able to claim your
 
 #### Legacy Certifications
 
-We also have 3 legacy certifications from our 2015 curriculum, which are still available. All of the required projects for these legacy certifications will remain available on freeCodeCamp.org.
+We also have 4 legacy certifications dating back to our 2015 curriculum, which are still available. All of the required projects for these legacy certifications will remain available on freeCodeCamp.org.
 
 - Legacy Front End Development Certification
 - Legacy Data Visualization Certification
 - Legacy Back End Development Certification
+- Legacy Information Security and Quality Assurance Certification
 
 ### The Learning Platform
 
