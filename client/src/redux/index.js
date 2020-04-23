@@ -230,14 +230,14 @@ export const certificatesByNameSelector = username => state => {
       isFrontEndLibsCert ||
       isJsAlgoDataStructCert ||
       isApisMicroservicesCert ||
-      isInfosecQaCert ||
       isQaCert ||
       isInfosecCert ||
       isFullStackCert ||
       isSciCompPyCert ||
       isDataAnalysisPyCert ||
       isMachineLearningPyCert,
-    hasLegacyCert: isFrontEndCert || isBackEndCert || isDataVisCert,
+    hasLegacyCert:
+      isFrontEndCert || isBackEndCert || isDataVisCert || isInfosecQaCert,
     currentCerts: [
       {
         show: isFullStackCert,
@@ -268,11 +268,6 @@ export const certificatesByNameSelector = username => state => {
         show: isApisMicroservicesCert,
         title: 'APIs and Microservices Certification',
         showURL: 'apis-and-microservices'
-      },
-      {
-        show: isInfosecQaCert,
-        title: 'Information Security and Quality Assurance Certification',
-        showURL: 'information-security-and-quality-assurance'
       },
       {
         show: isQaCert,
@@ -315,6 +310,11 @@ export const certificatesByNameSelector = username => state => {
         show: isDataVisCert,
         title: 'Data Visualization Certification',
         showURL: 'legacy-data-visualization'
+      },
+      {
+        show: isInfosecQaCert,
+        title: 'Information Security and Quality Assurance Certification',
+        showURL: 'legacy-information-security-and-quality-assurance'
       }
     ]
   };
