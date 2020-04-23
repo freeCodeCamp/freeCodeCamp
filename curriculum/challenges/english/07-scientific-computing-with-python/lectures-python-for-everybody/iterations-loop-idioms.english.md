@@ -33,7 +33,6 @@ question:
     - '6'
     - '7'
   solution: 3
-  
 ```
 
 </section>

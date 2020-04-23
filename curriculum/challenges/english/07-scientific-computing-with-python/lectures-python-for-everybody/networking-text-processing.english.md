@@ -22,7 +22,6 @@ question:
     - 'UTF-16'
     - 'UTF-32'
   solution: 1
-  
 ```
 
 </section>

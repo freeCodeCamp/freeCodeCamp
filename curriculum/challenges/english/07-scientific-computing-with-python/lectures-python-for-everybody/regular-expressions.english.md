@@ -24,7 +24,6 @@ question:
     - '\_'
     - '\.'
   solution: 2
-  
 ```
 
 </section>

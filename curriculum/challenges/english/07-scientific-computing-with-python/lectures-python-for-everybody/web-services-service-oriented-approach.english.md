@@ -22,7 +22,6 @@ question:
     - 'Within different services on the main web server.'
     - 'On a separate database server.'
   solution: 1
-  
 ```
 
 </section>

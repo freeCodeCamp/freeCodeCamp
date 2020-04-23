@@ -24,7 +24,6 @@ question:
     - '/n'
     - '/new'
   solution: 1
-  
 ```
 
 </section>

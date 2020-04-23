@@ -31,7 +31,6 @@ q.party()"
     - 'Quincy constructed<br>Miya constructed<br>Quincy party count 1<br>Miya party count 1<br>Quincy party count 2'
     - 'Quincy constructed<br>Quincy party count 1<br>Quincy party count 2<br>Miya constructed<br>Miya party count 1'
   solution: 2
-  
 ```
 
 </section>

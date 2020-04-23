@@ -25,7 +25,6 @@ x = fruit[1]</pre>'
     - 'b'
     - 'True'
   solution: 2
-  
 ```
 
 </section>

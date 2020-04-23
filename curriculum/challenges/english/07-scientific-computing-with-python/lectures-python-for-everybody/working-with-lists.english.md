@@ -23,7 +23,6 @@ question:
     - 'append'
     - 'new'
   solution: 3
-  
 ```
 
 </section>

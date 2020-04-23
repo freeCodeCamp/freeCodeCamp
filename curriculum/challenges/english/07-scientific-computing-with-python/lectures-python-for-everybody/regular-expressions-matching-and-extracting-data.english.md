@@ -28,7 +28,6 @@ print(lst)</pre>"
     - "['umich.edu', 'iupui.edu']"
     - "['csev@', 'cwen@']"
   solution: 1
-  
 ```
 
 </section>

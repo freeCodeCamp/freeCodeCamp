@@ -24,7 +24,6 @@ question:
     - '0<br>1<br>2<br>3<br>4<br>5'
     - 'b<br>a<br>n<br>a<br>n<br>a'
   solution: 4
-  
 ```
 
 </section>

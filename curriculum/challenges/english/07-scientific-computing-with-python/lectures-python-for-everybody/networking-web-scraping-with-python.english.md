@@ -29,7 +29,6 @@ question:
     - 'HttpParser'
     - 'GrunkleStan'
   solution: 3
-  
 ```
 
 </section>

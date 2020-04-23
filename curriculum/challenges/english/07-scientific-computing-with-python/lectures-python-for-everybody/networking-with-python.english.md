@@ -23,7 +23,6 @@ question:
     - 'http'
     - 'port'
   solution: 2
-  
 ```
 
 </section>

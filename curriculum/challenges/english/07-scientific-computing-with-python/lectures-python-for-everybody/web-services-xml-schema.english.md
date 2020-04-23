@@ -22,7 +22,6 @@ question:
     - 'The standard JSON schema from MOZ.'
     - 'Extensible Situational Driver'
   solution: 1
-  
 ```
 
 </section>

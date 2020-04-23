@@ -23,7 +23,6 @@ question:
     - 'A number that points to the primary key of an associated row in a different table.'
     - 'A key that the "real world" might use to look up a row.'
   solution: 3
-  
 ```
 
 </section>

@@ -24,7 +24,6 @@ question:
     - 'quincy 1<br>beau 5<br>kris 9'
     - '1 quincy<br>5 beau<br>9 kris'
   solution: 3
-  
 ```
 
 </section>

@@ -26,7 +26,6 @@ for key in counts:<br>    if counts[key] > 10 :<br>        print(key, counts[key
     - 'chuck 1'
     - '[Error]'
   solution: 1
-  
 ```
 
 </section>

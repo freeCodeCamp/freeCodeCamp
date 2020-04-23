@@ -28,7 +28,6 @@ n = parts[1]</pre>"
     - 'lar'
     - 'lar@freecodecamp.org'
   solution: 4
-  
 ```
 
 </section>

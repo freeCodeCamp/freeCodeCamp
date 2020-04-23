@@ -31,7 +31,6 @@ jane()<br>
     - 'ABC Zap ABC'
     - 'Zap Zap Zap'
   solution: 4
-  
 ```
 
 </section>

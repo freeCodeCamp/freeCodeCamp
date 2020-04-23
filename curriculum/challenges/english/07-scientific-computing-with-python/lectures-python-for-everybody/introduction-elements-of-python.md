@@ -25,7 +25,6 @@ print(x)</pre>'
     - 'x + 1'
     - '44'
   solution: 3
-  
 ```
 
 </section>

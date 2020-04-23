@@ -28,7 +28,6 @@ an.party()</pre>'
     - '2<br>2'
     - '1<br>2'
   solution: 4
-  
 ```
 
 </section>

@@ -24,7 +24,6 @@ question:
     - 'SELECT * FROM Users WHERE email IS "quincy@freecodecamp.org"'
     - 'SELECT * FROM Users WHERE email="quincy@freecodecamp.org"'
   solution: 5
-  
 ```
 
 </section>

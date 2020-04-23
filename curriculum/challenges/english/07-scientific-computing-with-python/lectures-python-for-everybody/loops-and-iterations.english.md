@@ -26,7 +26,6 @@ while True:<br>    if n == 3:<br>        break<br>    print(n)<br>    n = n + 1<
     - '1<br>2'
     - '1<br>2<br>3'
   solution: 1
-  
 ```
 
 </section>

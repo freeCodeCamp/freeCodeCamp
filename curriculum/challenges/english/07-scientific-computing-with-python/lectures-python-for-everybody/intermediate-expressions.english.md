@@ -26,7 +26,6 @@ question:
     - '5.0'
     - '5'
   solution: 3
-  
 ```
 
 </section>
