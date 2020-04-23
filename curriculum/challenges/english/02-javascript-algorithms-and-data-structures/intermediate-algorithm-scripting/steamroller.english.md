@@ -33,7 +33,7 @@ tests:
   - text: <code>steamrollArray([1, {}, [3, [[4]]]])</code> should return <code>[1, {}, 3, 4]</code>.
     testString: assert.deepEqual(steamrollArray([1, {}, [3, [[4]]]]), [1, {}, 3, 4]);
   - text: Your solution should not use the <code>Array.prototype.flat()</code> or <code>Array.prototype.flatMap()</code> methods.
-    testString: assert(!code.match(/\.?[\s\S]*?flat/) && !code.match(/\.?[\s\S]*?flatMap/));
+    testString: assert(!code.match(/\.\s*flat\s*\(/) && !code.match(/\.\s*flatMap\s*\(/));
 ```
 
 </section>
