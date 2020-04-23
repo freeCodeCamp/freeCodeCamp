@@ -48,7 +48,7 @@
             "id": 252661769,
             "node_id": "MDU6TGFiZWwyNTI2NjE3Njk=",
             "url": "https://api.github.com/repos/freeCodeCamp/freeCodeCamp/labels/scope:%20curriculum",
-            "name": "scope: curriculum",
+            "name": "scope: learn",
             "color": "9631e2",
             "default": false
         },
