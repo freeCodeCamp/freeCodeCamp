@@ -1,6 +1,6 @@
 {
   "name": "TensorFlow",
-  "dashedName": "lectures-tensorflow",
+  "dashedName": "tensorflow",
   "order": 1,
   "time": "15 hours",
   "superBlock": "machine-learning-with-python",
