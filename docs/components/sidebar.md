@@ -6,6 +6,7 @@
   - [How to open a pull request](../how-to-open-a-pull-request.md)
   - [How to work on the news theme](../how-to-work-on-the-news-theme.md)
   - [How to work on the docs theme](../how-to-work-on-the-docs-theme.md)
+  - [How to catch outgoing emails locally](../how-to-catch-outgoing-emails-locally.md)
 - **<i class="fad fa-laptop-code"></i> DevOps Guides**
   - [How we build, test and deploy](../devops.md)
 - **<i class="fad fa-plane-alt"></i> Flight Manuals (for Staff & Mods)**
