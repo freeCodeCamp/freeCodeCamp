@@ -61,10 +61,11 @@ https://freecodecamp-org.netlify.com/*        https://www.freecodecamp.org/:spla
 /signup                                       #{{API}}/signin 200!
 
 # certification redirects
-/:username/front-end-certification            /certification/:username/legacy-front-end 301
-/:username/data-visualization-certification   /certification/:username/legacy-data-visualization 301
-/:username/back-end-certification             /certification/:username/legacy-back-end 301
-/:username/full-stack-certification           /certification/:username/full-stack 301
+/:username/front-end-certification                     /certification/:username/legacy-front-end 301
+/:username/data-visualization-certification            /certification/:username/legacy-data-visualization 301
+/:username/back-end-certification                      /certification/:username/legacy-back-end 301
+/:username/information-security-and-quality-assurance  /certification/:username/legacy-information-security-and-quality-assurance 301
+/:username/full-stack-certification                    /certification/:username/full-stack 301
 
 # unsubscribe redirects
 /u/*                                          #{{API}}/u/:splat 200!
