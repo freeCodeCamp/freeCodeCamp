@@ -1,8 +1,8 @@
 ---
-id: 5e8f2f13c4cdbe86b5c72d8e
-title: Core Learning Algorithms F
+id: 5e8f2f13c4cdbe86b5c72d94
+title: 'Neural Networks: Optimizers'
 challengeType: 11
-videoId: 5wHw8BTd2ZQ
+videoId: hdOtRPQe1o4
 ---
 
 ## Description
