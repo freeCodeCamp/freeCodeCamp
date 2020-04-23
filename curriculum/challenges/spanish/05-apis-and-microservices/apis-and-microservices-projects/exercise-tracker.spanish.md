@@ -4,6 +4,7 @@ title: Exercise Tracker
 localeTitle: Rastreador de ejercicios
 challengeType: 4
 isRequired: true
+forumTopicId: 301505
 ---
 
 ## Description
@@ -23,15 +24,15 @@ Inicie este proyecto en Glitch usando <a href='https://glitch.com/#!/import/gith
 
 ```yml
 tests:
-  - text: Puedo crear un usuario al publicar el nombre de usuario de los datos del formulario en /api/exercise/new-user y se devolverá un objeto con nombre de usuario y <code>_id</code> .
+  - text: Puedo crear un usuario publicando el nombre de usuario de los datos del formulario en /api/exercise/new-user y se devolverá un objeto con el nombre de usuario y un <code>_id</code> .
     testString: ''
   - text: Puedo obtener un array de todos los usuarios al acceder a api/exercise/users con la misma información que cuando se crea un usuario.
     testString: ''
-  - text: Puedo agregar un ejercicio a cualquier usuario publicando los datos del formulario ID de usuario (_id), descripción, duración y, opcionalmente, fechar en /api/exercise/add. Si no se proporciona la fecha, se utilizará la fecha actual. La aplicación devolverá el objeto de usuario con los campos de ejercicio agregados.
+  - text: Puedo agregar un ejercicio a cualquier usuario publicando los datos del formulario ID de usuario (_id), descripción, duración y, opcionalmente, fecha en /api/exercise/add. Si no se proporciona la fecha, se utilizará la fecha actual. La aplicación devolverá el objeto de usuario con los campos de ejercicio agregados.
     testString: ''
-  - text: Puedo obtener un registro de ejercicio completo de cualquier usuario accediendo a /api/exercise/log con un parámetro de userId (_id). La aplicación devolverá el objeto de usuario con el array de registros agregado y el conteo (recuento total de ejercicios).
+  - text: Puedo obtener un registro de ejercicios completo de cualquier usuario accediendo a /api/exercise/log con un parámetro de userId (_id). La aplicación devolverá el objeto de usuario que contendrá el array de registros y el recuento total de ejercicios.
     testString: ''
-  - text: Puedo obtener parte del registro de cualquier usuario pasando también parámetros opcionales de desde y hasta o límite. (Formato de fecha aaaa-mm-dd, límite = int)
+  - text: Puedo obtener parte del registro de cualquier usuario pasando también parámetros opcionales como "desde" (from) y "hasta" (to) o "límite" (limit). (Formato de fecha aaaa-mm-dd, límite = int)
     testString: ''
 
 ```
