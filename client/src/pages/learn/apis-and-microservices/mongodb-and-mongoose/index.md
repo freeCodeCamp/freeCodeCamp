@@ -55,7 +55,7 @@ New clusters take between 7-10 minutes to provision.` Wait until the cluster is 
 
 ### Create a new user on the database
 
-- You should be able to see the green **Get Started** button on the bottom left of your screen, you can click this button to see at which step of the process your are in, if you click on it now, you can see the next step is to **Create your first database user**, go ahead and click on that step.
+- You should be able to see the  **Database Access under Security** button on the left hand side of your screen, you can click this button to see at which step of the process your are in, if you click on it now, you can see the next step is to **Add new database user**, go ahead and click on that step.
   - Follow the instructions by clicking on the `Security` tab.
   - Click on the green **ADD NEW USER** button.
   - Enter a user name and password and then select **Read or write to any database** under user privileges, remember to store your username and password somewhere safe.
