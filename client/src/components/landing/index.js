@@ -17,7 +17,9 @@ const propTypes = {
 const BigCallToAction = () => (
   <Row>
     <Col md={6} mdOffset={3} sm={10} smOffset={1} xs={12}>
-      <Login block={true}>Sign in and get started (it's free)</Login>
+      <Login block={true} data-test-label='landing-big-cta'>
+        Sign in and get started (it's free)
+      </Login>
     </Col>
   </Row>
 );
@@ -35,7 +37,10 @@ export const Landing = ({ edges }) => {
         <Grid>
           <Row>
             <Col sm={10} smOffset={1} xs={12}>
-              <h1 className='big-heading text-center'>
+              <h1
+                className='big-heading text-center'
+                data-test-label='landing-header'
+              >
                 Welcome to freeCodeCamp.org
               </h1>
               <Spacer />

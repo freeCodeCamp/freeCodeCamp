@@ -5,7 +5,7 @@ const validLabels = {
   portuguese: 'language: Portuguese',
   russian: 'language: Russian',
   spanish: 'language: Spanish',
-  curriculum: 'scope: curriculum',
+  curriculum: 'scope: learn',
   docs: 'scope: docs',
 };
 
