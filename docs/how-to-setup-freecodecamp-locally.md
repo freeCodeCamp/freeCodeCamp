@@ -307,16 +307,18 @@ A quick reference to the commands that you will need when working locally.
 
 **Local Build:**
 
-| command                   | description                                                                         |
-| ------------------------- | ----------------------------------------------------------------------------------- |
-| `npm ci`                  | Installs / re-install all dependencies and bootstraps the different services.       |
-| `npm run seed`            | Parses all the challenge markdown files and inserts them into MongoDB.              |
-| `npm run develop`         | Starts the freeCodeCamp API Server and Client Applications.                         |
-| `npm test`                | Run all JS tests in the system, including client, server, lint and challenge tests. |
-| `npm run test:client`     | Run the client test suite.                                                          |
-| `npm run test:curriculum` | Run the curriculum test suite.                                                      |
-| `npm run test:server`     | Run the server test suite.                                                          |
-| `npm run clean`           | Uninstalls all dependencies and cleans up caches.                                   |
+| command                                                        | description                                                                         |
+| -------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `npm ci`                                                       | Installs / re-install all dependencies and bootstraps the different services.       |
+| `npm run seed`                                                 | Parses all the challenge markdown files and inserts them into MongoDB.              |
+| `npm run develop`                                              | Starts the freeCodeCamp API Server and Client Applications.                         |
+| `npm test`                                                     | Run all JS tests in the system, including client, server, lint and challenge tests. |
+| `npm run test:client`                                          | Run the client test suite.                                                          |
+| `npm run test:curriculum`                                      | Run the curriculum test suite.                                                      |
+| `npm run test:curriculum --block='Basic HTML and HTML5'`       | Test a specific Block.                                                              |
+| `npm run test:curriculum --superblock='responsive-web-design'` | Test a specific SuperBlock.                                                         |
+| `npm run test:server`                                          | Run the server test suite.                                                          |
+| `npm run clean`                                                | Uninstalls all dependencies and cleans up caches.                                   |
 
 ## Making changes locally
 

@@ -2,6 +2,7 @@ const path = require('path');
 const { findIndex } = require('lodash');
 const readDirP = require('readdirp-walk');
 const { parseMarkdown } = require('@freecodecamp/challenge-md-parser');
+const fs = require('fs');
 
 const { dasherize } = require('../utils/slugs');
 
@@ -14,7 +15,14 @@ function getChallengesDirForLang(lang) {
   return path.resolve(challengesDir, `./${lang}`);
 }
 
+function getMetaForBlock(block) {
+  return JSON.parse(
+    fs.readFileSync(path.resolve(metaDir, `./${block}/meta.json`), 'utf8')
+  );
+}
+
 exports.getChallengesDirForLang = getChallengesDirForLang;
+exports.getMetaForBlock = getMetaForBlock;
 
 exports.getChallengesForLang = function getChallengesForLang(lang) {
   let curriculum = {};
