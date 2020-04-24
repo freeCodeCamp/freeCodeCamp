@@ -1,8 +1,8 @@
 ---
-id: 5e8f2f13c4cdbe86b5c72d93
-title: Neural Networks with TensorFlow B
+id: 5e8f2f13c4cdbe86b5c72d8c
+title: 'Core Learning Algorithms: The Training Process'
 challengeType: 11
-videoId: S45tqW6BqRs
+videoId: _cEwvqVoBhI
 ---
 
 ## Description

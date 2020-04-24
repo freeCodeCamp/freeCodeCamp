@@ -1,8 +1,8 @@
 ---
-id: 5e8f2f13c4cdbe86b5c72da4
-title: Reinforcement Learning With Q-Learning B
+id: 5e8f2f13c4cdbe86b5c72d89
+title: Core Learning Algorithms
 challengeType: 11
-videoId: DX7hJuaUZ7o
+videoId: u5lZURgcWnU
 ---
 
 ## Description

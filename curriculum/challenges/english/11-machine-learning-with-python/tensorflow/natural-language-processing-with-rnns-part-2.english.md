@@ -1,8 +1,8 @@
 ---
-id: 5e8f2f13c4cdbe86b5c72d9f
-title: Natural Language Processing With RNNs E
+id: 5e8f2f13c4cdbe86b5c72d9c
+title: 'Natural Language Processing With RNNs: Part 2'
 challengeType: 11
-videoId: WO1hINnBj20
+videoId: mUU9YXOFbZg
 ---
 
 ## Description

@@ -1,8 +1,8 @@
 ---
-id: 5e8f2f13c4cdbe86b5c72d8f
-title: Core Learning Algorithms G
+id: 5e8f2f13c4cdbe86b5c72d9d
+title: 'Natural Language Processing With RNNs: Recurring Neural Networks'
 challengeType: 11
-videoId: 8sqIaHc9Cz4
+videoId: bX5681NPOcA
 ---
 
 ## Description

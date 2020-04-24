@@ -1,8 +1,8 @@
 ---
-id: 5e8f2f13c4cdbe86b5c72d8b
-title: Core Learning Algorithms C
+id: 5e8f2f13c4cdbe86b5c72d8f
+title: 'Core Learning Algorithms: Clustering'
 challengeType: 11
-videoId: wz9J1slsi7I
+videoId: 8sqIaHc9Cz4
 ---
 
 ## Description

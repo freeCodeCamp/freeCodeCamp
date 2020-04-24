@@ -1,8 +1,8 @@
 ---
-id: 5e8f2f13c4cdbe86b5c72da5
-title: Reinforcement Learning With Q-Learning C
+id: 5e8f2f13c4cdbe86b5c72da1
+title: 'Natural Language Processing With RNNs: Building the Model'
 challengeType: 11
-videoId: RBBSNta234s
+videoId: 32WBFS7lfsw
 ---
 
 ## Description

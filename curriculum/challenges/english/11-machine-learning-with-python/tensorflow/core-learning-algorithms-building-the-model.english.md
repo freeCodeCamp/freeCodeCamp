@@ -1,8 +1,8 @@
 ---
-id: 5e8f2f13c4cdbe86b5c72da0
-title: Natural Language Processing With RNNs F
+id: 5e8f2f13c4cdbe86b5c72d8e
+title: 'Core Learning Algorithms: Building the Model'
 challengeType: 11
-videoId: j5xsxjq_Xk8
+videoId: 5wHw8BTd2ZQ
 ---
 
 ## Description

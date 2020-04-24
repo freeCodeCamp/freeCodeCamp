@@ -1,8 +1,8 @@
 ---
-id: 5e8f2f13c4cdbe86b5c72d91
-title: Core Learning Algorithms I
+id: 5e8f2f13c4cdbe86b5c72d9a
+title: 'Convolutional Neural Networks: Picking a Pretrained Model'
 challengeType: 11
-videoId: fYAYvLUawnc
+videoId: h1XUt1AgIOI
 ---
 
 ## Description

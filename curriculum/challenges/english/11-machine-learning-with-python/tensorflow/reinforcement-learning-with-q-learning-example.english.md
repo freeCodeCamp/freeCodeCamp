@@ -1,8 +1,8 @@
 ---
-id: 5e8f2f13c4cdbe86b5c72d8c
-title: Core Learning Algorithms D
+id: 5e8f2f13c4cdbe86b5c72da5
+title: 'Reinforcement Learning With Q-Learning: Example'
 challengeType: 11
-videoId: _cEwvqVoBhI
+videoId: RBBSNta234s
 ---
 
 ## Description

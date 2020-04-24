@@ -1,8 +1,8 @@
 ---
-id: 5e8f2f13c4cdbe86b5c72da1
-title: Natural Language Processing With RNNs G
+id: 5e8f2f13c4cdbe86b5c72d92
+title: Neural Networks with TensorFlow
 challengeType: 11
-videoId: 32WBFS7lfsw
+videoId: uisdfrNrZW4
 ---
 
 ## Description

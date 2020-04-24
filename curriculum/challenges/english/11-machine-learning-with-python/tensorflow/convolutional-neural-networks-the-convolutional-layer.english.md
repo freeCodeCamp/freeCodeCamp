@@ -1,8 +1,8 @@
 ---
-id: 5e8f2f13c4cdbe86b5c72d96
-title: Convolutional Neural Networks A
+id: 5e8f2f13c4cdbe86b5c72d97
+title: 'Convolutional Neural Networks: The Convolutional Layer'
 challengeType: 11
-videoId: _1kTP7uoU9E
+videoId: LrdmcQpTyLw
 ---
 
 ## Description
