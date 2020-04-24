@@ -18,6 +18,7 @@ import ChallengeDescription from '../components/Challenge-Description';
 import Spacer from '../../../components/helpers/Spacer';
 import CompletionModal from '../components/CompletionModal';
 import Hotkeys from '../components/Hotkeys';
+import Loader from '../../../components/helpers/Loader';
 import {
   isChallengeCompletedSelector,
   challengeMounted,
@@ -72,7 +73,8 @@ export class Project extends Component {
       downloadURL: null,
       selectedOption: 0,
       answer: 1,
-      showWrong: false
+      showWrong: false,
+      videoIsLoaded: false
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -135,6 +137,12 @@ export class Project extends Component {
     });
   };
 
+  videoIsReady = () => {
+    this.setState({
+      videoIsLoaded: true
+    });
+  };
+
   render() {
     const {
       data: {
@@ -170,9 +178,19 @@ export class Project extends Component {
                 <ChallengeTitle isCompleted={isChallengeCompleted}>
                   {blockNameTitle}
                 </ChallengeTitle>
-                <div style={{ textAlign: 'center' }}>
+                <div className='video-wrapper'>
+                  {!this.state.videoIsLoaded ? (
+                    <div className='video-placeholder-loader'>
+                      <Loader />
+                    </div>
+                  ) : null}
                   <YouTube
-                    onEnd={openCompletionModal}
+                    className={
+                      this.state.videoIsLoaded
+                        ? 'display-youtube-video'
+                        : 'hide-youtube-video'
+                    }
+                    onReady={this.videoIsReady}
                     opts={{ rel: 0 }}
                     videoId={videoId}
                   />
