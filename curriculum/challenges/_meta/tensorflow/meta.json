@@ -8,127 +8,127 @@
   "challengeOrder": [
     [
       "5e8f2f13c4cdbe86b5c72d87",
-      "Intro to TensorFlow A"
+      "Introduction: Machine Learning Fundamentals"
     ],
     [
       "5e8f2f13c4cdbe86b5c72d88",
-      "Intro to TensorFlow B"
+      "Introduction to TensorFlow"
     ],
     [
       "5e8f2f13c4cdbe86b5c72d89",
-      "Core Learning Algorithms A"
+      "Core Learning Algorithms"
     ],
     [
       "5e8f2f13c4cdbe86b5c72d8a",
-      "Core Learning Algorithms B"
+      "Core Learning Algorithms: Working with Data"
     ],
     [
       "5e8f2f13c4cdbe86b5c72d8b",
-      "Core Learning Algorithms C"
+      "Core Learning Algorithms: Training and Testing Data"
     ],
     [
       "5e8f2f13c4cdbe86b5c72d8c",
-      "Core Learning Algorithms D"
+      "Core Learning Algorithms: The Training Process"
     ],
     [
       "5e8f2f13c4cdbe86b5c72d8d",
-      "Core Learning Algorithms E"
+      "Core Learning Algorithms: Classification"
     ],
     [
       "5e8f2f13c4cdbe86b5c72d8e",
-      "Core Learning Algorithms F"
+      "Core Learning Algorithms: Building the Model"
     ],
     [
       "5e8f2f13c4cdbe86b5c72d8f",
-      "Core Learning Algorithms G"
+      "Core Learning Algorithms: Clustering"
     ],
     [
       "5e8f2f13c4cdbe86b5c72d90",
-      "Core Learning Algorithms H"
+      "Core Learning Algorithms: Hidden Markov Models"
     ],
     [
       "5e8f2f13c4cdbe86b5c72d91",
-      "Core Learning Algorithms I"
+      "Core Learning Algorithms: Using Probabilities to make Predictions"
     ],
     [
       "5e8f2f13c4cdbe86b5c72d92",
-      "Neural Networks with TensorFlow A"
+      "Neural Networks with TensorFlow"
     ],
     [
       "5e8f2f13c4cdbe86b5c72d93",
-      "Neural Networks with TensorFlow B"
+      "Neural Networks: Activation Functions"
     ],
     [
       "5e8f2f13c4cdbe86b5c72d94",
-      "Neural Networks with TensorFlow C"
+      "Neural Networks: Optimizers"
     ],
     [
       "5e8f2f13c4cdbe86b5c72d95",
-      "Neural Networks with TensorFlow D"
+      "Neural Networks: Creating a Model"
     ],
     [
       "5e8f2f13c4cdbe86b5c72d96",
-      "Convolutional Neural Networks A"
+      "Convolutional Neural Networks"
     ],
     [
       "5e8f2f13c4cdbe86b5c72d97",
-      "Convolutional Neural Networks B"
+      "Convolutional Neural Networks: The Convolutional Layer"
     ],
     [
       "5e8f2f13c4cdbe86b5c72d98",
-      "Convolutional Neural Networks C"
+      "Creating a Convolutional Neural Network"
     ],
     [
       "5e8f2f13c4cdbe86b5c72d99",
-      "Convolutional Neural Networks D"
+      "Convolutional Neural Networks: Evaluating the Model"
     ],
     [
       "5e8f2f13c4cdbe86b5c72d9a",
-      "Convolutional Neural Networks E"
+      "Convolutional Neural Networks: Picking a Pretrained Model"
     ],
     [
       "5e8f2f13c4cdbe86b5c72d9b",
-      "Natural Language Processing With RNNs A"
+      "Natural Language Processing with RNNs"
     ],
     [
       "5e8f2f13c4cdbe86b5c72d9c",
-      "Natural Language Processing With RNNs B"
+      "Natural Language Processing With RNNs: Part 2"
     ],
     [
       "5e8f2f13c4cdbe86b5c72d9d",
-      "Natural Language Processing With RNNs C"
+      "Natural Language Processing With RNNs: Recurring Neural Networks"
     ],
     [
       "5e8f2f13c4cdbe86b5c72d9e",
-      "Natural Language Processing With RNNs D"
+      "Natural Language Processing With RNNs: Sentiment Analysis"
     ],
     [
       "5e8f2f13c4cdbe86b5c72d9f",
-      "Natural Language Processing With RNNs E"
+      "Natural Language Processing With RNNs: Making Predictions"
     ],
     [
       "5e8f2f13c4cdbe86b5c72da0",
-      "Natural Language Processing With RNNs F"
+      "Natural Language Processing With RNNs: Create a Play Generator"
     ],
     [
       "5e8f2f13c4cdbe86b5c72da1",
-      "Natural Language Processing With RNNs G"
+      "Natural Language Processing With RNNs: Building the Model"
     ],
     [
       "5e8f2f13c4cdbe86b5c72da2",
-      "Natural Language Processing With RNNs H"
+      "Natural Language Processing With RNNs: Training the Model"
     ],
     [
       "5e8f2f13c4cdbe86b5c72da3",
-      "Reinforcement Learning With Q-Learning A"
+      "Reinforcement Learning With Q-Learning"
     ],
     [
       "5e8f2f13c4cdbe86b5c72da4",
-      "Reinforcement Learning With Q-Learning B"
+      "Reinforcement Learning With Q-Learning: Part 2"
     ],
     [
       "5e8f2f13c4cdbe86b5c72da5",
-      "Reinforcement Learning With Q-Learning C"
+      "Reinforcement Learning With Q-Learning: Example"
     ],
     [
       "5e8f2f13c4cdbe86b5c72da6",
