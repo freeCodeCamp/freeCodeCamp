@@ -133,6 +133,7 @@ export class Project extends Component {
 
   handleOptionChange = changeEvent => {
     this.setState({
+      showWrong: false,
       selectedOption: parseInt(changeEvent.target.value, 10)
     });
   };
@@ -209,9 +210,7 @@ export class Project extends Component {
                     .
                   </i>
                 </div>
-                <Spacer />
                 <ChallengeDescription description={description} />
-                <Spacer />
                 <SanitizedSpan text={text} />
                 <Spacer />
                 <div className='video-quiz-options'>
@@ -235,6 +234,20 @@ export class Project extends Component {
                   ))}
                 </div>
                 <Spacer />
+                <div
+                  style={{
+                    textAlign: 'center'
+                  }}
+                >
+                  {this.state.showWrong ? (
+                    <span>
+                      Sorry, that's not the right answer. Give it another try?
+                    </span>
+                  ) : (
+                    <span>Click the button below to check your answer.</span>
+                  )}
+                </div>
+                <Spacer />
                 <Button
                   block={true}
                   bsSize='large'
@@ -245,14 +258,6 @@ export class Project extends Component {
                 >
                   Check your answer
                 </Button>
-                <Spacer />
-                <div
-                  style={{
-                    visibility: this.state.showWrong ? 'visible' : 'hidden'
-                  }}
-                >
-                  Wrong. Try again.
-                </div>
                 <Spacer size={2} />
               </Col>
               <CompletionModal blockName={blockName} />
