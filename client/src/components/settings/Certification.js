@@ -129,7 +129,7 @@ const isCertMapSelector = createSelector(
     'Legacy Front End': isFrontEndCert,
     'Legacy Data Visualization': isDataVisCert,
     'Legacy Back End': isBackEndCert,
-    'Legacy Information Security And Quality Assurance': isInfosecQaCert
+    'Legacy Information Security and Quality Assurance': isInfosecQaCert
   })
 );
 
