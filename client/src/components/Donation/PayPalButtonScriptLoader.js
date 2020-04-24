@@ -42,13 +42,19 @@ export class PayPalButtonScriptLoader extends Component {
       'paypal-sdk',
       true,
       `https://www.paypal.com/sdk/js${queries}`,
-      this.OnScriptLoad
+      this.onScriptLoad
     );
   }
 
-  OnScriptLoad = () => {
+  onScriptLoad = () => {
     this.setState({ isSdkLoaded: true });
   };
+
+  captureOneTimePayment(data, actions) {
+    return actions.order.capture().then(details => {
+      return this.props.onApprove(details, data);
+    });
+  }
 
   render() {
     const { isSdkLoaded, isSubscription } = this.state;
@@ -72,7 +78,11 @@ export class PayPalButtonScriptLoader extends Component {
       <Button
         createOrder={isSubscription ? null : createOrder}
         createSubscription={isSubscription ? createSubscription : null}
-        onApprove={onApprove}
+        onApprove={
+          isSubscription
+            ? (data, actions) => onApprove(data, actions)
+            : (data, actions) => this.captureOneTimePayment(data, actions)
+        }
         onCancel={onCancel}
         onError={onError}
         style={style}
