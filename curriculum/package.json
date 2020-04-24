@@ -60,6 +60,7 @@
     "readdirp-walk": "^1.7.0",
     "rx": "^4.1.0",
     "semantic-release": "^15.13.24",
+    "string-similarity": "^4.0.1",
     "validator": "^10.4.0"
   },
   "keywords": [
