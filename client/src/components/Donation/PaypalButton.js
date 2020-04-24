@@ -97,10 +97,9 @@ export class PaypalButton extends Component {
           });
         }}
         isSubscription={isSubscription}
-        onApprove={(data, actions) => {
-          return actions.order.capture().then(function(data) {
-            this.handleApproval(data);
-          });
+        on={true}
+        onApprove={data => {
+          this.handleApproval(data);
         }}
         onCancel={() => {
           this.props.onDonationStateChange(
