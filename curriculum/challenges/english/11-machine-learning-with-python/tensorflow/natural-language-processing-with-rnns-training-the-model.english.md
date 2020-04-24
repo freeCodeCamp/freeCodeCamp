@@ -1,8 +1,8 @@
 ---
-id: 5e8f2f13c4cdbe86b5c72d9a
-title: Convolutional Neural Networks E
+id: 5e8f2f13c4cdbe86b5c72da2
+title: 'Natural Language Processing With RNNs: Training the Model'
 challengeType: 11
-videoId: h1XUt1AgIOI
+videoId: hEUiK7j9UI8
 ---
 
 ## Description
