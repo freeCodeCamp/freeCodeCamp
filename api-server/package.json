@@ -73,6 +73,7 @@
     "@babel/node": "^7.6.3",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/plugin-proposal-object-rest-spread": "^7.6.2",
+    "@babel/plugin-proposal-optional-chaining": "^7.9.0",
     "@babel/preset-env": "^7.6.3",
     "@babel/register": "^7.9.0",
     "adler32": "~0.1.7",
