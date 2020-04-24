@@ -1,6 +1,9 @@
 # Getting a list of the Virtual Machines
 
-You can get a list of virtual machines from the below vendors only if you have been given access. You may need to list a VM and its public IP for getting SSH access and doing maintenance.
+As a member of the staff or the dev-team, you may have been given access to our cloud vendors like Azure, Digital Ocean, etc. Here are some handy commands that you can use to list the Public IP addresses for the Virtual machine instances that are live and deployed.
+
+> [!NOTE]
+> You may already have SSH access, but it will not let you list VMs unless you also have access to the vendor portals themselves.
 
 ## Azure
 
