@@ -1,8 +1,8 @@
 ---
-id: 5e8f2f13c4cdbe86b5c72d9e
-title: Natural Language Processing With RNNs D
+id: 5e8f2f13c4cdbe86b5c72da3
+title: Reinforcement Learning With Q-Learning
 challengeType: 11
-videoId: lYeLtu8Nq7c
+videoId: Cf7DSU0gVb4
 ---
 
 ## Description

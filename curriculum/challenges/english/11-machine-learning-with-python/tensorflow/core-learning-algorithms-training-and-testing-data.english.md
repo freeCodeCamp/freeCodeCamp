@@ -1,8 +1,8 @@
 ---
-id: 5e8f2f13c4cdbe86b5c72d9c
-title: Natural Language Processing With RNNs B
+id: 5e8f2f13c4cdbe86b5c72d8b
+title: 'Core Learning Algorithms: Training and Testing Data'
 challengeType: 11
-videoId: mUU9YXOFbZg
+videoId: wz9J1slsi7I
 ---
 
 ## Description

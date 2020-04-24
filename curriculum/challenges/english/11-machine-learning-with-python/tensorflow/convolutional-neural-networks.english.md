@@ -1,8 +1,8 @@
 ---
-id: 5e8f2f13c4cdbe86b5c72d97
-title: Convolutional Neural Networks B
+id: 5e8f2f13c4cdbe86b5c72d96
+title: Convolutional Neural Networks
 challengeType: 11
-videoId: LrdmcQpTyLw
+videoId: _1kTP7uoU9E
 ---
 
 ## Description
