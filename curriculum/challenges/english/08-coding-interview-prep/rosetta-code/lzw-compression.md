@@ -18,7 +18,7 @@ Write a function that takes two parameters. The first parameter is a boolean. Tr
 ## Tests
 <section id='tests'>
 
-``` yml
+```yml
 tests:
   - text: <code>LZW</code> should be a function.
     testString: assert(typeof LZW == 'function');
