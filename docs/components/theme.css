@@ -1,33 +1,124 @@
 :root {
   --theme-color: #0a0a23;
   --theme-color-dark: #002ead;
-
   --text-color-base: #2e2e46;
   --text-color-secondary: #646473;
   --text-color-tertiary: #81818e;
-}
-
-body {
-  font-size: 100%;
-  line-height: 2em;
-  color: var(--text-color);
+  --yellow-gold: #ffbf00;
+  --gray-00: #ffffff;
+  --gray-05: #f5f6f7;
+  --gray-10: #dfdfe2;
+  --gray-15: #d0d0d5;
+  --gray-45: #858591;
+  --gray-75: #3b3b4f;
+  --gray-80: #2a2a40;
+  --gray-85: #1b1b32;
+  --gray-90: #0a0a23;
+  --purple-light: #dbb8ff;
+  --purple-dark: #5a01a7;
+  --yellow-light: #f1be32;
+  --yellow-dark: #4d3800;
+  --blue-light: #99c9ff;
+  --blue-dark: #002ead;
+  --green-light: #acd157;
+  --green-dark: #00471b;
+  --red-light: #ffadad;
+  --red-dark: #850000;
+  --love-light: #f8577c;
+  --love-dark: #f82153;
 }
 
 * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
   text-decoration: none !important;
+}
+
+body {
+  color: var(--theme-color);
+  font-size: 18px;
+  font-family: 'Lato', sans-serif !important;
+}
+
+html {
+  font-size: 18px;
+}
+
+h1 {
+  color: var(--theme-color);
+  font-family: 'Lato', sans-serif;
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  margin: 0.6rem 0;
+  overflow-wrap: break-word;
+}
+
+h2 {
+  color: var(--theme-color);
+  font-family: 'Lato', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700 !important;
+  margin: 0.6rem 0;
+}
+
+h3 {
+  color: var(--theme-color);
+  font-weight: 700 !important;
+  font-size: 1.1rem;
+  font-family: 'Lato', sans-serif;
+  margin: 0 0 0.6rem;
+}
+
+h4,
+h5,
+h6,
+p,
+td,
+th {
+  color: var(--theme-color);
+  font-weight: 400;
+  font-size: 1rem;
+  font-family: 'Lato', sans-serif;
+  margin: 0 0 1.2rem;
+}
+
+p {
+  line-height: 1.5rem;
+}
+
+.big-heading {
+  font-size: 1.5rem !important;
+  overflow-wrap: break-word;
+}
+
+.medium-heading {
+  font-size: 1.25rem !important;
+  font-weight: normal !important;
+}
+
+.medium-heading.text-center {
+  margin-bottom: 50px;
+}
+
+section.cover,
+.big-heading,
+.medium-heading {
+  font-family: 'Roboto Mono', monospace !important;
 }
 
 /****** Universal Nav ****/
 
 .universal-nav {
-  margin: 0px;
-  width: 100vw;
-  height: 38px;
   background-color: var(--theme-color);
+  display: flex;
+  font-family: 'Lato', sans-serif;
+  height: 38px;
+  justify-content: center;
+  margin: 0px;
   position: fixed;
   top: 0px;
-  display: flex;
-  justify-content: center;
+  width: 100vw;
 }
 
 .universal-nav img {
@@ -67,10 +158,6 @@ section.cover img {
   width: 400px;
 }
 
-section.cover h1 {
-  margin: 0.625rem 0 1rem;
-}
-
 section.cover blockquote,
 section.cover blockquote p {
   margin: 1.5em 0;
@@ -82,11 +169,6 @@ section.cover a {
   transition: all 0.3s ease;
 }
 
-section.cover a:hover {
-  border-color: var(--theme-color-dark);
-  color: var(--theme-color-dark);
-}
-
 section.cover a.anchor {
   border: none;
 }
@@ -96,7 +178,6 @@ section.cover a.anchor {
 }
 
 section.cover ul {
-  font-size: 1.5rem;
   line-height: 2rem;
   display: grid;
   text-align: left;
@@ -108,17 +189,15 @@ section.cover ul {
 }
 
 section.cover .cover-main > p:last-child a:last-child {
-  font-size: 1.5rem;
+  background-color: var(--gray-15);
+  color: var(--theme-color) !important;
+  font-family: 'Roboto Mono', monospace !important;
   line-height: 2rem;
-  background-color: var(--theme-color);
-  color: #fff;
 }
 
 section.cover .cover-main > p:last-child a:last-child:hover {
-  font-size: 1.5rem;
-  line-height: 2rem;
-  background-color: var(--theme-color-dark);
-  color: #fff;
+  background-color: var(--gray-85);
+  color: #fff !important;
   opacity: 1;
 }
 
@@ -243,23 +322,26 @@ body.close .github-corner {
 /****** Markdown General ******/
 
 .markdown-section p {
-  font-size: 18px;
-  line-height: 28px;
+  font-family: 'Lato', sans-serif;
+  font-size: 17px;
+  line-height: 27px;
 }
 
 .markdown-section code {
   background-color: #f8f8f8;
   color: #525252;
-  padding: 0.05em 0.15em 0.15em 0.15em;
-  margin: 0.05em;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
   font-size: 16px;
   line-height: 24px;
+  margin: 0.05em;
+  padding: 0.05em 0.15em 0.15em 0.15em;
 }
 
 .markdown-section a {
-  text-decoration: none;
   color: var(--theme-color);
   border-bottom: 0.1rem solid var(--theme-color);
+  text-decoration: none;
 }
 
 .markdown-section a:hover {

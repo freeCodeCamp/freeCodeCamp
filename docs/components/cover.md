@@ -1,8 +1,10 @@
-> ## Contribute to freeCodeCamp.org
+<blockquote>
+  <h1 class="big-heading">Contribute to freeCodeCamp.org</h1>
+</blockquote>
 
-## This community is possible thanks to thousands of kind volunteers like you.
+<h2 class="medium-heading text-center">This community is possible thanks to thousands of kind volunteers like you.</h2>
 
-## Here are some quick and fun ways you can help the community.
+<h2 class="medium-heading text-center">Here are some quick and fun ways you can help the community.</h2>
 
 - <span class='cover-icon' style="color: #002ead;"><i class="fad fa-question-circle"></i></span> [Help by answering coding questions](https://www.freecodecamp.org/forum/?max_posts=1) on our community forum.
 - <span class='cover-icon' style="color: #00471b;"><i class="fad fa-comments-alt"></i></span> [Give feedback on coding projects](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1) built by campers.
