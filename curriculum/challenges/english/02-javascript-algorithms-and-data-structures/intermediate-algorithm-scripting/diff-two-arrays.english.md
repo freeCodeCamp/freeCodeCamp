@@ -9,7 +9,6 @@ forumTopicId: 16008
 ## Description
 <section id='description'>
 Compare two arrays and return a new array with any items only found in one of the two given arrays, but not both. In other words, return the symmetric difference of the two arrays.
-Remember to use <a href='https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code.
 <strong>Note</strong><br>You can return the array with its elements in any order.
 </section>
 
@@ -66,7 +65,6 @@ tests:
 ```js
 function diffArray(arr1, arr2) {
   var newArr = [];
-  // Same, same; but different.
   return newArr;
 }
 
@@ -102,7 +100,6 @@ function diffArray(arr1, arr2) {
   Object.keys(h2).forEach(function(e) {
      if (!(e in h1)) newArr.push(h2[e]);
   });
-  // Same, same; but different.
   return newArr;
 }
 ```

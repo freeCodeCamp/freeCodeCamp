@@ -48,11 +48,11 @@ let userData = FCC_User['followers'];
 tests:
   - text: <code>foods</code>应该是一个对象。
     testString: assert(typeof foods === 'object');
-  - text: "<code>foods</code>应该有一个值为<code>13</code>的<code>'bananas'</code>属性。"
+  - text: <code>foods</code>应该有一个值为<code>13</code>的<code>&quot;bananas&quot;</code>属性。
     testString: assert(foods.bananas === 13);
-  - text: "<code>foods</code>应该有一个值为<code>35</code>的<code>'grapes'</code>属性。"
+  - text: <code>foods</code>应该有一个值为<code>35</code>的<code>&quot;grapes&quot;</code>属性。
     testString: assert(foods.grapes === 35);
-  - text: "<code>foods</code>应该有一个值为<code>27</code>的<code>'strawberries'</code>属性。"
+  - text: <code>foods</code>应该有一个值为<code>27</code>的<code>&quot;strawberries&quot;</code>属性。
     testString: assert(foods.strawberries === 27);
   - text: 你应该用点符号或者方括号符号来设置对象的属性。
     testString: assert(code.search(/bananas:/) === -1 && code.search(/grapes:/) === -1 && code.search(/strawberries:/) === -1);

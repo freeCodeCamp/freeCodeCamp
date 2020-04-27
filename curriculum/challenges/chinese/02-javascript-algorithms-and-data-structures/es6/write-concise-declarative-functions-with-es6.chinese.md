@@ -18,11 +18,11 @@ localeTitle: 用ES6编写简明的声明函数
 ```yml
 tests:
   - text: 未使用传统函数表达式。
-    testString: 'assert(!getUserInput("index").match(/function/),"Traditional <code>function</code> expression was not used.");'
+    testString: getUserInput => assert(!removeJSComments(code).match(/function/));
   - text: <code>setGear</code>是一个声明函数。
-    testString: 'assert(typeof bicycle.setGear === "function" && getUserInput("index").match(/setGear\s*\(.+\)\s*\{/), "<code>setGear</code> is a declarative function.");'
-  - text: ''
-    testString: 'assert((new bicycle.setGear(48)).gear === 48, "<code>bicycle.setGear(48)</code> changes the <code>gear</code> value to 48.");'
+    testString: assert(typeof bicycle.setGear === 'function' && code.match(/setGear\s*\(.+\)\s*\{/));
+  - text: <code>bicycle.setGear(48)</code>应该返回48。
+    testString: assert((new bicycle.setGear(48)).gear === 48);
 
 ```
 

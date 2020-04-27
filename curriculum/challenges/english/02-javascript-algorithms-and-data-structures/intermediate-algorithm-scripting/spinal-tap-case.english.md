@@ -9,7 +9,6 @@ forumTopicId: 16078
 ## Description
 <section id='description'>
 Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes.
-Remember to use <a href='https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code.
 </section>
 
 ## Instructions
@@ -44,8 +43,6 @@ tests:
 
 ```js
 function spinalCase(str) {
-  // "It's such a fine line between stupid, and clever."
-  // --David St. Hubbins
   return str;
 }
 
@@ -64,8 +61,6 @@ spinalCase('This Is Spinal Tap');
 
 ```js
 function spinalCase(str) {
-  // "It's such a fine line between stupid, and clever."
-  // --David St. Hubbins
   str = str.replace(/([a-z](?=[A-Z]))/g, '$1 ');
   return str.toLowerCase().replace(/\ |\_/g, '-');
 }

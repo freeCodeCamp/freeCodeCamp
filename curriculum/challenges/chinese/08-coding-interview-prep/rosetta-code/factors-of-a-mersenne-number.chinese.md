@@ -19,15 +19,15 @@ localeTitle: 梅森数的因素
 ```yml
 tests:
   - text: <code>check_mersenne</code>是一个函数。
-    testString: 'assert(typeof check_mersenne === "function", "<code>check_mersenne</code> is a function.");'
+    testString: assert(typeof check_mersenne === 'function');
   - text: <code>check_mersenne(3)</code>应该返回一个字符串。
-    testString: 'assert(typeof check_mersenne(3) == "string", "<code>check_mersenne(3)</code> should return a string.");'
+    testString: assert(typeof check_mersenne(3) == 'string');
   - text: <code>check_mersenne(3)</code>应该返回“M3 = 2 ^ 3-1是素数”。
-    testString: 'assert.equal(check_mersenne(3),"M3 = 2^3-1 is prime","<code>check_mersenne(3)</code> should return "M3 = 2^3-1 is prime".");'
+    testString: assert.equal(check_mersenne(3),"M3 = 2^3-1 is prime");
   - text: <code>check_mersenne(23)</code>应返回“M23 = 2 ^ 23-1与因子47复合”。
-    testString: 'assert.equal(check_mersenne(23),"M23 = 2^23-1 is composite with factor 47","<code>check_mersenne(23)</code> should return "M23 = 2^23-1 is composite with factor 47".");'
+    testString: assert.equal(check_mersenne(23),"M23 = 2^23-1 is composite with factor 47");
   - text: <code>check_mersenne(929)</code>应返回“M929 = 2 ^ 929-1与因子13007复合
-    testString: 'assert.equal(check_mersenne(929),"M929 = 2^929-1 is composite with factor 13007","<code>check_mersenne(929)</code> should return "M929 = 2^929-1 is composite with factor 13007");'
+    testString: assert.equal(check_mersenne(929),"M929 = 2^929-1 is composite with factor 13007");
 
 ```
 

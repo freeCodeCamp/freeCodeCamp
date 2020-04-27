@@ -19,7 +19,7 @@ localeTitle: 问题466：乘法表中的不同术语
 ```yml
 tests:
   - text: <code>euler466()</code>应该返回258381958195474750。
-    testString: 'assert.strictEqual(euler466(), 258381958195474750, "<code>euler466()</code> should return 258381958195474750.");'
+    testString: assert.strictEqual(euler466(), 258381958195474750);
 
 ```
 

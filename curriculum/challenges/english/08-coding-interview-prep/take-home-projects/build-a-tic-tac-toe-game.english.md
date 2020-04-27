@@ -13,7 +13,6 @@ Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_bl
 <strong>User Story:</strong> I can play a game of Tic Tac Toe with the computer.
 <strong>User Story:</strong> My game will reset as soon as it's over so I can play again.
 <strong>User Story:</strong> I can choose whether I want to play as X or O.
-Remember to use <a href='https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514' target='_blank'>Read-Search-Ask</a> if you get stuck.
 When you are finished, click the "I've completed this challenge" button and include a link to your CodePen.
 You can get feedback on your project by sharing it with your friends on Facebook.
 </section>

@@ -31,9 +31,9 @@ let todaysWeather = weatherConditions.slice(1, 3);
 
 ```yml
 tests:
-  - text: "<code>forecast</code>应该返回<code>['warm', 'sunny']。"
+  - text: '<code>forecast</code>应该返回<code>[&quot;warm&quot;, &quot;sunny&quot;]</code>'
     testString: assert.deepEqual(forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']), ['warm', 'sunny']);
-  - text: <code>forecast</code>函数中应该用到<code>slice()</code>方法。
+  - text: <code>forecast</code>函数应该使用<code>slice()</code>方法
     testString: assert(/\.slice\(/.test(code));
 
 ```

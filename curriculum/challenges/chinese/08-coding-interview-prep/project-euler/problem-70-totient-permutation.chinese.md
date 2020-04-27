@@ -19,7 +19,7 @@ localeTitle: 问题70欧拉置换
 ```yml
 tests:
   - text: <code>euler70()</code>应该返回8319823。
-    testString: 'assert.strictEqual(euler70(), 8319823, "<code>euler70()</code> should return 8319823.");'
+    testString: assert.strictEqual(euler70(), 8319823);
 
 ```
 

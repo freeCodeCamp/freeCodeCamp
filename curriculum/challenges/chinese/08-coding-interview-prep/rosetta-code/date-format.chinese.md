@@ -19,13 +19,13 @@ localeTitle: 日期格式
 ```yml
 tests:
   - text: <code>getDateFormats</code>是一个函数。
-    testString: 'assert(typeof getDateFormats === "function", "<code>getDateFormats</code> is a function.");'
+    testString: assert(typeof getDateFormats === 'function');
   - text: 应该返回一个对象。
-    testString: 'assert(typeof getDateFormats() === "object", "Should return an object.");'
+    testString: assert(typeof getDateFormats() === 'object');
   - text: 应该返回一个包含2个元素的数组。
-    testString: 'assert(getDateFormats().length === 2, "Should returned an array with 2 elements.");'
+    testString: assert(getDateFormats().length === 2);
   - text: 应以正​​确的格式返回正确的日期
-    testString: 'assert.deepEqual(getDateFormats(), dates, equalsMessage);'
+    testString: assert.deepEqual(getDateFormats(), dates, equalsMessage);
 
 ```
 

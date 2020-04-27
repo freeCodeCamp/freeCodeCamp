@@ -42,11 +42,11 @@ tests:
 <style>
   .penguin {
 
-    /* change code below */
+    /* Only change code below this line */
     --penguin-skin: black;
     --penguin-belly: gray;
     --penguin-beak: yellow;
-    /* change code above */
+    /* Only change code above this line */
 
     position: relative;
     margin: auto;

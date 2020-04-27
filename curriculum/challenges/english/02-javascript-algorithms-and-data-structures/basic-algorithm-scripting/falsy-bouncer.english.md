@@ -11,7 +11,6 @@ forumTopicId: 16014
 Remove all falsy values from an array.
 Falsy values in JavaScript are <code>false</code>, <code>null</code>, <code>0</code>, <code>""</code>, <code>undefined</code>, and <code>NaN</code>.
 Hint: Try converting each value to a Boolean.
-Remember to use <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> if you get stuck. Write your own code.
 </section>
 
 ## Instructions
@@ -30,9 +29,8 @@ tests:
     testString: assert.deepEqual(bouncer(["a", "b", "c"]), ["a", "b", "c"]);
   - text: <code>bouncer([false, null, 0, NaN, undefined, ""])</code> should return <code>[]</code>.
     testString: assert.deepEqual(bouncer([false, null, 0, NaN, undefined, ""]), []);
-  - text: <code>bouncer([1, null, NaN, 2, undefined])</code> should return <code>[1, 2]</code>.
-    testString: assert.deepEqual(bouncer([1, null, NaN, 2, undefined]), [1, 2]);
-
+  - text: <code>bouncer([null, NaN, 1, 2, undefined])</code> should return <code>[1, 2]</code>.
+    testString: assert.deepEqual(bouncer([null, NaN, 1, 2, undefined]), [1, 2]);
 ```
 
 </section>
@@ -44,7 +42,6 @@ tests:
 
 ```js
 function bouncer(arr) {
-  // Don't show a false ID to this bouncer.
   return arr;
 }
 

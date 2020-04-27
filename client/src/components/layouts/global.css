@@ -10,8 +10,9 @@ body {
 
 .btn-cta-big {
   max-height: 100%;
-  font-size: 27px;
+  font-size: 1rem;
   white-space: normal;
+  width: 100%;
 }
 
 .default-layout {
@@ -27,21 +28,21 @@ h1 {
   font-weight: 700;
   font-size: 1.5rem;
   font-family: 'Roboto Mono', monospace;
-  margin: 1.2rem 0 1.2rem;
+  margin: 0.6rem 0;
 }
 h2 {
   color: var(--secondary-color);
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-family: 'Roboto Mono', monospace;
-  margin: 1.2rem 0 1.2rem;
+  margin: 0.6rem 0;
 }
 h3 {
   color: var(--secondary-color);
   font-weight: 700;
   font-size: 1.1rem;
   font-family: 'Roboto Mono', monospace;
-  margin: 0 0 1.2rem;
+  margin: 0 0 0.6rem;
 }
 
 h4,
@@ -62,12 +63,12 @@ p {
 }
 
 .big-heading {
-  font-size: 2.5rem !important;
+  font-size: 1.5rem !important;
   overflow-wrap: break-word;
 }
 
 .medium-heading {
-  font-size: 1.5rem !important;
+  font-size: 1.25rem !important;
   font-weight: normal;
 }
 
@@ -77,22 +78,22 @@ p {
 
 @media (max-width: 500px) {
   .big-heading {
-    font-size: 1.6rem !important;
+    font-size: 1.2rem !important;
   }
   .medium-heading {
-    font-size: 1.4rem !important;
+    font-size: 1.1rem !important;
   }
   h1 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
   h2 {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
   h3 {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
   .btn-cta {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 }
 
@@ -162,6 +163,8 @@ input[type='submit'],
 button:hover,
 input[type='submit']:hover,
 .btn:hover,
+.btn-default.active:hover,
+.btn-default.active,
 .btn-primary:hover {
   border-color: var(--secondary-color);
   background-color: var(--secondary-color);
@@ -343,6 +346,28 @@ hr {
 .table-striped > tbody > tr:nth-child(2n + 1) > td,
 .table-striped > tbody > tr:nth-child(2n + 1) > th {
   background-color: var(--tertiary-background);
+}
+
+.challenge-instructions table {
+  display: inline-block;
+  overflow: auto;
+}
+
+.challenge-instructions table thead {
+  display: table-header-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+
+.challenge-instructions table th {
+  font-weight: 700;
+}
+
+.challenge-instructions table th,
+.challenge-instructions table td {
+  padding: 6px 13px;
+  border: 1px solid var(--secondary-color);
+  text-align: center;
 }
 
 .help-block {

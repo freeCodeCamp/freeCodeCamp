@@ -16,11 +16,11 @@ img {
   height: auto;
 }
 ```
-La propiedad de <code>max-width</code> al 100% ajusta la imagen para que se adapte al ancho de su contenedor, pero la imagen no se estirará más que su ancho original. La configuración de la propiedad de <code>display</code> para bloquear cambia la imagen de un elemento en línea (su valor predeterminado) a un elemento de bloque en su propia línea. La propiedad de <code>height</code> de auto mantiene la relación de aspecto original de la imagen. 
+La propiedad de <code>max-width</code> al 100% ajusta la imagen para que se adapte al ancho de su contenedor, pero la imagen no se estirará más que su ancho original. La configuración de la propiedad de <code>display</code> para bloquear cambia la imagen de un elemento en línea (su valor predeterminado) a un elemento de bloque en su propia línea. La propiedad <code>height</code> configurada como auto, mantiene la relación de aspecto original de la imagen. 
 </section>
 
 ## Instructions
-<section id="instructions"> Agregue reglas de estilo para la etiqueta <code>img</code> para que responda al tamaño de su contenedor. Debe mostrarse como un elemento de nivel de bloque, debe ajustarse a todo el ancho de su contenedor sin estirarlo y debe mantener su relación de aspecto original. </section>
+<section id="instructions"> Agregue reglas de estilo a la etiqueta <code>img</code> para que responda al tamaño de su contenedor. Debe mostrarse como un elemento de nivel de bloque, debe ajustarse a todo el ancho de su contenedor sin estirarlo y debe mantener su relación de aspecto original. </section>
 
 ## Tests
 <section id='tests'>

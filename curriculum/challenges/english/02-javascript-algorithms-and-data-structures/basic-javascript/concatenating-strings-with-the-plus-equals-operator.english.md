@@ -10,6 +10,15 @@ forumTopicId: 16803
 <section id='description'>
 We can also use the <code>+=</code> operator to <dfn>concatenate</dfn> a string onto the end of an existing string variable. This can be very helpful to break a long string over several lines.
 <strong>Note</strong><br>Watch out for spaces. Concatenation does not add spaces between concatenated strings, so you'll need to add them yourself.
+
+Example:
+
+```js
+var ourStr = "I come first. ";
+ourStr += "I come second.";
+// ourStr is now "I come first. I come second."
+```
+
 </section>
 
 ## Instructions
@@ -25,7 +34,7 @@ tests:
   - text: <code>myStr</code> should have a value of <code>This is the first sentence. This is the second sentence.</code>
     testString: assert(myStr === "This is the first sentence. This is the second sentence.");
   - text: You should use the <code>+=</code> operator to build <code>myStr</code>.
-    testString: assert(code.match(/\w\s*\+=\s*["']/g).length > 1 && code.match(/\w\s*\=\s*["']/g).length > 1);
+    testString: assert(code.match(/myStr\s*\+=\s*(["']).*\1/g));
 
 ```
 
@@ -37,9 +46,6 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Example
-var ourStr = "I come first. ";
-ourStr += "I come second.";
 
 // Only change code below this line
 
@@ -73,9 +79,6 @@ var myStr;
 
 
 ```js
-var ourStr = "I come first. ";
-ourStr += "I come second.";
-
 var myStr = "This is the first sentence. ";
 myStr += "This is the second sentence.";
 ```

@@ -2,23 +2,32 @@
 id: 587d78a9367417b2b2512aea
 title: Make Motion More Natural Using a Bezier Curve
 challengeType: 0
-videoUrl: ''
-localeTitle: 使用贝塞尔曲线使运动更自然
+videoUrl: 'https://scrimba.com/c/c7akWUv'
+forumTopicId: 301063
+localeTitle: 使用贝塞尔曲线让运动更加自然
 ---
 
 ## Description
-<section id="description">这一挑战激发了一个元素来复制被玩杂耍的球的运动。先前的挑战涵盖了<code>linear</code>和<code>ease-out</code>三次贝塞尔曲线，但两者都没有准确描述杂耍运动。您需要为此自定义Bezier曲线。当<code>animation-iteration-count</code>设置为无限时， <code>animation-timing-function</code>在每个关键帧处自动循环。由于在动画持续时间的中间设置了关键帧规则（ <code>50%</code> ），因此在球的向上和向下移动时会产生两个相同的动画进度。下面的三次贝塞尔曲线模拟了一个杂耍运动： <code>cubic-bezier(0.3, 0.4, 0.5, 1.6);</code>请注意，y2的值大于1.虽然三次贝塞尔曲线映射在1乘1坐标系上，并且它只能接受0到1的x值，但y值可以设置为大于1的数字。这导致弹跳运动，非常适合模拟杂耍球。 </section>
+<section id='description'>
+本关的元素模拟的是杂技抛接球。之前的关卡涉及了 <code>linear</code> 和 <code>ease-out</code> 的贝塞尔曲线描述，如你所见，这两个都无法完美的描述杂耍球的运动。在本关里你需要定制贝塞尔曲线。
+当 <code>animation-iteration-count</code> 值为 infinite 时 <code>animation-timing-function</code> 会自动循环 keyframe。由于是在动画周期中间（50%处）设置的 keyframe 规则，最终的结果是球向上和球向下是两个同样的动画过程。
+下面的例子模拟了杂耍球运动：
+<code>cubic-bezier(0.3, 0.4, 0.5, 1.6); </code> 
+注意 y2 的值是大于 1 的。虽然贝塞尔曲线是在 1*1 的坐标系统内 x 值只能在 0 到 1，但是 y 值是可以大于 1 的。这样才能模拟杂耍球运动。
+</section>
 
 ## Instructions
-<section id="instructions">将id为<code>green</code>的元素的<code>animation-timing-function</code>的值更改为<code>cubic-bezier</code>函数，x1，y1，x2，y2值分别设置为0.311,0.441,0.444,1.648。 </section>
+<section id='instructions'>
+把 id 为 <code>green</code> 的元素的 <code>animation-timing-function</code> 值改成 <code>cubic-bezier</code> 函数，函数的参数 x1，y1，x2，y2 值依次为 0.311、0.441、0.444、1.649。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 具有id <code>green</code>的元素的<code>animation-timing-function</code>属性的值应该是具有指定的x1，y1，x2，y2值的<code>cubic-bezier</code>函数。
-    testString: 'assert($("#green").css("animation-timing-function") == "cubic-bezier(0.311, 0.441, 0.444, 1.649)", "The value of the <code>animation-timing-function</code> property for the element with the id <code>green</code> should be a <code>cubic-bezier</code> function with x1, y1, x2, y2 values as specified.'
+  - text: 'id 为<code>green</code>的元素的<code>animation-timing-function</code>值应该为<code>cubic-bezier</code>函数，函数的参数 x1，y1，x2，y2 值依次为 0.311、0.441、0.444、1.649。'
+    testString: assert($('#green').css('animation-timing-function') == 'cubic-bezier(0.311, 0.441, 0.444, 1.649)');
 
 ```
 
@@ -33,7 +42,7 @@ tests:
 <style>
   .balls {
     border-radius: 50%;
-    position: fixed;
+    position: fixed;  
     width: 50px;
     height: 50px;
     top: 60%;
@@ -66,7 +75,6 @@ tests:
 <div class="balls" id="red"></div>
 <div class="balls" id="blue"></div>
 <div class="balls" id="green"></div>
-
 ```
 
 </div>
@@ -78,7 +86,9 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>
+              

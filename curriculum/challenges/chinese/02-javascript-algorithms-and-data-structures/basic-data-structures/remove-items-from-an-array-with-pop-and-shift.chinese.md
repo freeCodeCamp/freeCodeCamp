@@ -41,11 +41,11 @@ let popped = greetings.pop();
 
 ```yml
 tests:
-  - text: "<code>popShift(['challenge', 'is', 'not', 'complete'])</code>应该返回<code>['challenge', 'complete']</code>。"
+  - text: '<code>popShift([&quot;challenge&quot;, &quot;is&quot;, &quot;not&quot;, &quot;complete&quot;])</code>应返回<code>[&quot;challenge&quot;, &quot;complete&quot;]</code>'
     testString: assert.deepEqual(popShift(['challenge', 'is', 'not', 'complete']), ["challenge", "complete"]);
-  - text: <code>popShift</code>函数应该用到<code>pop()</code>方法。
+  - text: <code>popShift</code>函数应该使用<code>pop()</code>方法
     testString: assert.notStrictEqual(popShift.toString().search(/\.pop\(/), -1);
-  - text: <code>popShift</code>函数应该用到<code>shift()</code>方法。
+  - text: <code>popShift</code>函数应该使用<code>shift()</code>方法
     testString: assert.notStrictEqual(popShift.toString().search(/\.shift\(/), -1);
 
 ```

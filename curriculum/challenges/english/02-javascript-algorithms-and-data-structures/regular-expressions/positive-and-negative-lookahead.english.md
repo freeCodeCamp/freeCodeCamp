@@ -46,24 +46,20 @@ tests:
     testString: assert(pwRegex.source.match(/\(\?=.*?\)\(\?=.*?\)/) !== null);
   - text: Your regex should not match <code>"astronaut"</code>
     testString: assert(!pwRegex.test("astronaut"));
-  - text: Your regex should not match <code>"airplanes"</code>
-    testString: assert(!pwRegex.test("airplanes"));
   - text: Your regex should not match <code>"banan1"</code>
     testString: assert(!pwRegex.test("banan1"));
   - text: Your regex should match <code>"bana12"</code>
     testString: assert(pwRegex.test("bana12"));
   - text: Your regex should match <code>"abc123"</code>
     testString: assert(pwRegex.test("abc123"));
-  - text: Your regex should not match <code>"123"</code>
-    testString: assert(!pwRegex.test("123"));
   - text: Your regex should not match <code>"1234"</code>
     testString: assert(!pwRegex.test("1234"));
   - text: Your regex should not match <code>"8pass99"</code>
     testString: assert(!pwRegex.test("8pass99"));
   - text: Your regex should not match <code>"12abcde"</code>
     testString: assert(!pwRegex.test("12abcde"));
-
-
+  - text: Your regex should match <code>"astr1on11aut"</code>
+    testString: assert(pwRegex.test("astr1on11aut"));
 
 ```
 
@@ -91,7 +87,7 @@ let result = pwRegex.test(sampleWord);
 
 
 ```js
-var pwRegex = /^(?=\w{6})(?=\D+\d{2})/;
+var pwRegex =  /^\D(?=\w{5})(?=\w*\d{2})/;
 ```
 
 </section>

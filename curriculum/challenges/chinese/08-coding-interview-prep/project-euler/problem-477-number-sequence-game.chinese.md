@@ -19,7 +19,7 @@ localeTitle: 问题477：数字序列游戏
 ```yml
 tests:
   - text: <code>euler477()</code>应该返回25044905874565164。
-    testString: 'assert.strictEqual(euler477(), 25044905874565164, "<code>euler477()</code> should return 25044905874565164.");'
+    testString: assert.strictEqual(euler477(), 25044905874565164);
 
 ```
 

@@ -18,13 +18,13 @@ localeTitle: 使用多个条件（三元）运算符
 ```yml
 tests:
   - text: <code>checkSign</code>应该使用多个<code>conditional operators</code>
-    testString: 'assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?\s*?\?\s*?.+?\s*?:\s*?.+?/gi.test(code), "<code>checkSign</code> should use multiple <code>conditional operators</code>");'
+    testString: assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?\s*?\?\s*?.+?\s*?:\s*?.+?/gi.test(code));
   - text: <code>checkSign(10)</code>应该返回“positive”。请注意，资本化很重要
-    testString: 'assert(checkSign(10) === "positive", "<code>checkSign(10)</code> should return "positive". Note that capitalization matters");'
+    testString: assert(checkSign(10) === 'positive');
   - text: <code>checkSign(-12)</code>应返回“否定”。请注意，资本化很重要
-    testString: 'assert(checkSign(-12) === "negative", "<code>checkSign(-12)</code> should return "negative". Note that capitalization matters");'
+    testString: assert(checkSign(-12) === 'negative');
   - text: <code>checkSign(0)</code>应返回“零”。请注意，资本化很重要
-    testString: 'assert(checkSign(0) === "zero", "<code>checkSign(0)</code> should return "zero". Note that capitalization matters");'
+    testString: assert(checkSign(0) === 'zero');
 
 ```
 

@@ -18,9 +18,9 @@ localeTitle: 逃避字符串中的字面引用
 ```yml
 tests:
   - text: 您应该使用两个双引号（ <code>&quot;</code> ）和四个转义双引号（ <code>\&quot;</code> ）。
-    testString: 'assert(code.match(/\\"/g).length === 4 && code.match(/[^\\]"/g).length === 2, "You should use two double quotes (<code>&quot;</code>) and four escaped double quotes (<code>&#92;&quot;</code>).");'
+    testString: assert(code.match(/\\"/g).length === 4 && code.match(/[^\\]"/g).length === 2);
   - text: 变量myStr应该包含字符串： <code>I am a &quot;double quoted&quot; string inside &quot;double quotes&quot;.</code>
-    testString: 'assert(myStr === "I am a \"double quoted\" string inside \"double quotes\".", "Variable myStr should contain the string: <code>I am a "double quoted" string inside "double quotes".</code>");'
+    testString: 'assert(myStr === "I am a \"double quoted\" string inside \"double quotes\".");'
 
 ```
 

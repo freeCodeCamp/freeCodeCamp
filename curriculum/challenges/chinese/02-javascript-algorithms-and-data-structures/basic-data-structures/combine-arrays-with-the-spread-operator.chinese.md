@@ -30,9 +30,9 @@ let thatArray = ['basil', 'cilantro', ...thisArray, 'coriander'];
 
 ```yml
 tests:
-  - text: "<code>spreadOut</code>应该返回<code>['learning', 'to', 'code', 'is', 'fun']</code>。"
+  - text: '<code>spreadOut</code>应该返回<code>[&quot;learning&quot;, &quot;to&quot;, &quot;code&quot;, &quot;is&quot;, &quot;fun&quot;]</code>'
     testString: assert.deepEqual(spreadOut(), ['learning', 'to', 'code', 'is', 'fun']);
-  - text: <code>spreadOut</code>函数里应该用到展开语法。
+  - text: <code>spreadOut</code>函数里应该用到展开语法
     testString: assert.notStrictEqual(spreadOut.toString().search(/[...]/), -1);
 
 ```

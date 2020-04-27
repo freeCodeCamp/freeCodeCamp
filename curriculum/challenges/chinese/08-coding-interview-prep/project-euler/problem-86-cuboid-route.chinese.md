@@ -19,7 +19,7 @@ localeTitle: 问题86：长方体路线
 ```yml
 tests:
   - text: <code>euler86()</code>应该返回1818年。
-    testString: 'assert.strictEqual(euler86(), 1818, "<code>euler86()</code> should return 1818.");'
+    testString: assert.strictEqual(euler86(), 1818);
 
 ```
 

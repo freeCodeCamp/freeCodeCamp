@@ -19,7 +19,7 @@ localeTitle: 问题212：长方体的组合体积
 ```yml
 tests:
   - text: <code>euler212()</code>应该返回328968937309。
-    testString: 'assert.strictEqual(euler212(), 328968937309, "<code>euler212()</code> should return 328968937309.");'
+    testString: assert.strictEqual(euler212(), 328968937309);
 
 ```
 

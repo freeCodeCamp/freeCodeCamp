@@ -44,13 +44,13 @@ ourArray[1] = "not b anymore";
 
 ```yml
 tests:
-  - text: "<code>myArray[0]</code>应等于<code>'a'</code>。"
+  - text: '<code>myArray[0]</code>等于<code>&quot;a&quot;</code>'
     testString: assert.strictEqual(myArray[0], "a");
-  - text: "<code>myArray[1]</code>不应等于<code>'b'</code>。"
+  - text: '<code>myArray[1]</code>不再设置为<code>&quot;b&quot;</code>'
     testString: assert.notStrictEqual(myArray[1], "b");
-  - text: "<code>myArray[2]</code>应等于<code>'c'</code>。"
+  - text: '<code>myArray[2]</code>等于<code>&quot;c&quot;</code>'
     testString: assert.strictEqual(myArray[2], "c");
-  - text: "<code>myArray[3]</code>应等于<code>'d'</code>。"
+  - text: '<code>myArray[3]</code>等于<code>&quot;d&quot;</code>'
     testString: assert.strictEqual(myArray[3], "d");
 
 ```

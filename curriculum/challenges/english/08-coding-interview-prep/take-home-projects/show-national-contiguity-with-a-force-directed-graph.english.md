@@ -14,7 +14,6 @@ Fulfill the following <a href='https://en.wikipedia.org/wiki/User_story' target=
 <strong>User Story:</strong> I can see each country's flag on its node.
 <strong>Hint:</strong> Here's a dataset you can use to build this: <a href='https://raw.githubusercontent.com/DealPete/forceDirected/master/countries.json' target='_blank'>https://raw.githubusercontent.com/DealPete/forceDirected/master/countries.json</a>
 <strong>Hint:</strong> You can create a spritesheet of national flags at <a href='https://www.flag-sprites.com' target='_blank'>https://www.flag-sprites.com</a>.
-Remember to use <a href='https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514' target='_blank'>Read-Search-Ask</a> if you get stuck.
 When you are finished, click the "I've completed this challenge" button and include a link to your CodePen.
 You can get feedback on your project by sharing it with your friends on Facebook.
 </section>

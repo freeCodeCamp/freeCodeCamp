@@ -19,7 +19,7 @@ localeTitle: 问题210：钝角三角形
 ```yml
 tests:
   - text: <code>euler210()</code>应该返回1598174770174689500。
-    testString: 'assert.strictEqual(euler210(), 1598174770174689500, "<code>euler210()</code> should return 1598174770174689500.");'
+    testString: assert.strictEqual(euler210(), 1598174770174689500);
 
 ```
 

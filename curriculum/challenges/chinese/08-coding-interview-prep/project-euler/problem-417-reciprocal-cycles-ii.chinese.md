@@ -3,7 +3,7 @@ id: 5900f50d1000cf542c51001f
 challengeType: 5
 title: 'Problem 417: Reciprocal cycles II'
 videoUrl: ''
-localeTitle: ''
+localeTitle: 问题417：倒数周期II
 ---
 
 ## Description
@@ -18,8 +18,8 @@ localeTitle: ''
 
 ```yml
 tests:
-  - text: ''
-    testString: 'assert.strictEqual(euler417(), 446572970925740, "<code>euler417()</code> should return 446572970925740.");'
+  - text: <code>euler417()</code>应该返回446572970925740。
+    testString: assert.strictEqual(euler417(), 446572970925740);
 
 ```
 

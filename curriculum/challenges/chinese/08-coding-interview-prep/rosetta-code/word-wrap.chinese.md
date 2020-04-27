@@ -26,18 +26,18 @@ localeTitle: 自动换行
 
 ```yml
 tests:
-  - text: ''
-    testString: 'assert.equal(typeof wrap, "function", "wrap must be a function.");'
-  - text: ''
-    testString: 'assert.equal(typeof wrap("abc", 10), "string", "wrap must return a string.");'
+  - text: <code>wrap</code>是一个功能。
+    testString: assert.equal(typeof wrap, 'function');
+  - text: <code>wrap("abc", 10)</code>必须返回一个字符串。
+    testString: assert.equal(typeof wrap('abc', 10), 'string');
   - text: wrap（80）必须返回4行。
-    testString: 'assert(wrapped80.split("\n").length === 4, "wrap(80) must return 4 lines.");'
+    testString: assert(wrapped80.split('\n').length === 4);
   - text: 你的<code>wrap</code>函数应该返回我们期望的文本
-    testString: 'assert.equal(wrapped80.split("\n")[0], firstRow80, "Your <code>wrap</code> function should return our expected text");'
+    testString: assert.equal(wrapped80.split('\n')[0], firstRow80);
   - text: wrap（42）必须返回7行。
-    testString: 'assert(wrapped42.split("\n").length === 7, "wrap(42) must return 7 lines.");'
+    testString: assert(wrapped42.split('\n').length === 7);
   - text: 你的<code>wrap</code>函数应该返回我们期望的文本
-    testString: 'assert.equal(wrapped42.split("\n")[0], firstRow42, "Your <code>wrap</code> function should return our expected text");'
+    testString: assert.equal(wrapped42.split('\n')[0], firstRow42);
 
 ```
 

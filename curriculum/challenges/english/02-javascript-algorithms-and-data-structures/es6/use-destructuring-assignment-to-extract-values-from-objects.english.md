@@ -41,11 +41,14 @@ Replace the two assignments with an equivalent destructuring assignment. It shou
 ```yml
 tests:
   - text: You should remove the ES5 assignment syntax.
-    testString: assert(!code.match(/today = HIGH_TEMPERATURES\.today/g) && !code.match(/tomorrow = HIGH_TEMPERATURES\.tomorrow/g))
+    testString: assert(!removeJSComments(code).match(/today\s*=\s*HIGH_TEMPERATURES\.(today|tomorrow)/g))
   - text: You should use destructuring to create the <code>today</code> variable.
-    testString: assert(code.match(/(var|let|const)\s*{\s*(today[^}]*|[^,]*,\s*today)\s*}\s*=\s*HIGH_TEMPERATURES(;|\s+|\/\/)/g));
+    testString: assert(removeJSComments(code).match(/(var|let|const)\s*{\s*(today[^}]*|[^,]*,\s*today)\s*}\s*=\s*HIGH_TEMPERATURES(;|\s+|\/\/)/g));
   - text: You should use destructuring to create the <code>tomorrow</code> variable.
-    testString: assert(code.match(/(var|let|const)\s*{\s*(tomorrow[^}]*|[^,]*,\s*tomorrow)\s*}\s*=\s*HIGH_TEMPERATURES(;|\s+|\/\/)/g));
+    testString: assert(removeJSComments(code).match(/(var|let|const)\s*{\s*(tomorrow[^}]*|[^,]*,\s*tomorrow)\s*}\s*=\s*HIGH_TEMPERATURES(;|\s+|\/\/)/g));
+  - text: <code>today</code> should be equal to <code>77</code> and <code>tomorrow</code> should be equal to <code>80</code>.
+    testString: assert(today === 77 && tomorrow === 80);
+
 ```
 
 </section>
@@ -61,19 +64,25 @@ const HIGH_TEMPERATURES = {
   tomorrow: 80
 };
 
-// change code below this line
+// Only change code below this line
 
 const today = HIGH_TEMPERATURES.today;
 const tomorrow = HIGH_TEMPERATURES.tomorrow;
 
-// change code above this line
-
-console.log(yesterday) // should be not defined
-console.log(today); // should be 77
-console.log(tomorrow); // should be 80
+// Only change code above this line
 ```
 
 </div>
+
+### After Test
+<div id='js-teardown'>
+
+```js
+const removeJSComments = str => str.replace(/\/\*[\s\S]*?\*\/|\/\/.*$/gm, '');
+```
+
+</div>
+
 </section>
 
 ## Solution
@@ -86,15 +95,7 @@ const HIGH_TEMPERATURES = {
   tomorrow: 80
 };
 
-// change code below this line
-
 const { today, tomorrow } = HIGH_TEMPERATURES;
-
-// change code above this line
-
-console.log(yesterday) // should be not defined
-console.log(today); // should be 77
-console.log(tomorrow); // should be 80
 ```
 
 </section>

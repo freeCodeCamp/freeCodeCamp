@@ -19,7 +19,7 @@ localeTitle: 问题85：计算矩形
 ```yml
 tests:
   - text: <code>euler85()</code>应该返回2772。
-    testString: 'assert.strictEqual(euler85(), 2772, "<code>euler85()</code> should return 2772.");'
+    testString: assert.strictEqual(euler85(), 2772);
 
 ```
 

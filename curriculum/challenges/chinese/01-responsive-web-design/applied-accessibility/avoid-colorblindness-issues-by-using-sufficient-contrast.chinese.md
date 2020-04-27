@@ -2,25 +2,33 @@
 id: 587d778f367417b2b2512aac
 title: Avoid Colorblindness Issues by Using Sufficient Contrast
 challengeType: 0
-videoUrl: ''
-localeTitle: 使用足够的对比度避免色盲问题
+videoUrl: 'https://scrimba.com/c/cmzMEUw'
+forumTopicId: 301012
+localeTitle: 考虑色盲用户的需求设置合适的对比度
 ---
 
 ## Description
-<section id="description">颜色是视觉设计的重要组成部分，但它的使用引入了两个可访问性问题。首先，不应仅仅使用颜色作为传达重要信息的唯一方式，因为屏幕阅读器用户不会看到它。其次，前景色和背景色需要足够的对比度，因此色盲用户可以区分它们。以前的挑战包括解决第一个问题的文本替代方案。最后一项挑战引入了对比度检查工具来帮助第二个。 WCAG建议的对比度为4.5：1适用于颜色使用以及灰度组合。色盲用户无法区分某些颜色与其他颜色 - 通常是色调，但有时也很轻。您可能会想起使用前景色和背景色的相对亮度（或亮度）值来计算对比度。在实践中，通过使用颜色对比度检查器使较暗的颜色变暗并使较浅的颜色变淡来达到4.5：1的比例。色轮上较暗的颜色被认为是蓝色，紫罗兰，洋红色和红色，而较浅的颜色是橙色，黄色，绿色和蓝绿色。 </section>
+<section id='description'>
+颜色是可视化设计的重要组成部分，但是使用颜色也引入了两个可访问性问题。首先，不能仅仅使用颜色作为传达重要信息的唯一方式，因为屏幕阅读器无法获取这些信息。其次，前景色与背景色需要有足够的对比度，这样色盲用户才可以识别它们。
+在之前的挑战中，我们用文本备用方案解决了第一个问题。在上一个挑战中，我们使用对比度检测工具解决了第二问题。WCAG 建议为颜色及灰度组合使用 4.5 : 1 的对比度。
+色盲用户无法将一些颜色与另一些颜色区分出来——通常是因为色调，也有时候是因为亮度。你可能想起对比度是用前景色与背景色的相对亮度计算的。
+实践中，在对比度检测工具的帮助下，我们可以通过将较暗的颜色变暗、将较淡的颜色变淡的方法来使对比度达到 4.5 : 1。在色轮中，较暗的颜色通常是蓝色、紫色、洋红和红色，而较淡的颜色通常是橙色、黄色、绿色和蓝绿色。
+</section>
 
 ## Instructions
-<section id="instructions"> Camper Cat正在尝试使用颜色作为他的博客文字和背景，但他目前的绿色<code>background-color</code>与栗色文字<code>color</code>具有2.5：1的对比度。您可以轻松调整颜色的亮度，因为他通过更改第三个参数使用CSS <code>hsl()</code>属性（代表色调，饱和度，亮度）来声明它们。将<code>background-color</code>亮度值从35％增加到55％，并将<code>color</code>亮度值从20％降低到15％。这将对比度提高到5.9：1。 </section>
+<section id='instructions'>
+Camper Cat 正在尝试为他的博客文本与背景使用颜色，但是他目前使用的组合是绿色的<code>background-color</code>与栗色的<code>color</code>，它们的对比度为 2.5 : 1。Camper Cat 使用了 CSS 的<code>hsl()</code>（hsl 为 hue, saturation, lightness 的缩写）属性来设置颜色，所以通过修改<code>hsl()</code>属性的第三个参数，可以很容易地调整颜色的亮度。请将<code>background-color</code>的亮度从 35% 增加到 55%，<code>color</code>的亮度从 20% 减少到 15%，这样可以使对比度达到 5.9 : 1。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您的代码只应将文本<code>color</code>属性的亮度值更改为15％的值。
-    testString: 'assert(code.match(/color:\s*?hsl\(0,\s*?55%,\s*?15%\)/gi), "Your code should only change the lightness value for the text <code>color</code> property to a value of 15%.");'
-  - text: 您的代码应仅将<code>background-color</code>属性的亮度值更改为值55％。
-    testString: 'assert(code.match(/background-color:\s*?hsl\(120,\s*?25%,\s*?55%\)/gi), "Your code should only change the lightness value for the <code>background-color</code> property to a value of 55%.");'
+  - text: '你应该将<code>color</code>属性的亮度值设置为 15%。'
+    testString: assert(code.match(/color:\s*?hsl\(0,\s*?55%,\s*?15%\)/gi));
+  - text: '你应该将<code>background-color</code>属性的亮度值设置为 55%。'
+    testString: assert(code.match(/background-color:\s*?hsl\(120,\s*?25%,\s*?55%\)/gi));
 
 ```
 
@@ -50,7 +58,6 @@ tests:
     <p>As I've stated in the past, I firmly believe a true ninja's skills must come from within, with no external influences. My own catnip use shall continue as purely recreational.</p>
   </article>
 </body>
-
 ```
 
 </div>
@@ -62,7 +69,9 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>
+              

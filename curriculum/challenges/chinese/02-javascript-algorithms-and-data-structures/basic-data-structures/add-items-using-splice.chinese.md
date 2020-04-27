@@ -34,13 +34,13 @@ console.log(numbers);
 
 ```yml
 tests:
-  - text: "<code>htmlColorNames</code>应该返回<code>['DarkSalmon', 'BlanchedAlmond', 'LavenderBlush', 'PaleTurqoise', 'FireBrick']</code>。"
-    testString: assert.deepEqual(htmlColorNames(['DarkGoldenRod', 'WhiteSmoke', 'LavenderBlush', 'PaleTurqoise', 'FireBrick']), ['DarkSalmon', 'BlanchedAlmond', 'LavenderBlush', 'PaleTurqoise', 'FireBrick']);
-  - text: <code>htmlColorNames</code>函数中应该用到<code>splice()</code>方法。
+  - text: '<code>htmlColorNames</code>应该返回<code>[&quot;DarkSalmon&quot;, &quot;BlanchedAlmond&quot;, &quot;LavenderBlush&quot;, &quot;PaleTurqoise&quot;, &quot;FireBrick&quot;]</code>'
+    testString: assert.deepEqual(htmlColorNames(['DarkGoldenRod', 'WhiteSmoke', 'LavenderBlush', 'PaleTurquoise', 'FireBrick']), ['DarkSalmon', 'BlanchedAlmond', 'LavenderBlush', 'PaleTurquoise', 'FireBrick']);
+  - text: <code>htmlColorNames</code>函数应该使用<code>splice()</code>方法
     testString: assert(/.splice/.test(code));
-  - text: 你不应该使用<code>shift()</code>或<code>unshift()</code>。
+  - text: 你不应该使用<code>shift()</code>或<code>unshift()</code> 。
     testString: assert(!/shift|unshift/.test(code));
-  - text: 你不应该使用数组的方括号符号。
+  - text: 您不应该使用数组括号表示法。
     testString: assert(!/\[\d\]\s*=/.test(code));
 
 ```

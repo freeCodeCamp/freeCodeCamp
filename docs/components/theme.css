@@ -1,0 +1,324 @@
+:root {
+  --theme-color: #0a0a23;
+  --theme-color-dark: #002ead;
+
+  --text-color-base: #2e2e46;
+  --text-color-secondary: #646473;
+  --text-color-tertiary: #81818e;
+}
+
+body {
+  font-size: 100%;
+  line-height: 2em;
+  color: var(--text-color);
+}
+
+* {
+  text-decoration: none !important;
+}
+
+/****** Universal Nav ****/
+
+.universal-nav {
+  margin: 0px;
+  width: 100vw;
+  height: 38px;
+  background-color: var(--theme-color);
+  position: fixed;
+  top: 0px;
+  display: flex;
+  justify-content: center;
+}
+
+.universal-nav img {
+  margin: 7px 0px;
+  height: 24px;
+}
+
+.app-nav > a {
+  margin: 0;
+  padding: 0;
+}
+
+.app-nav.no-badge {
+  margin-right: 0px;
+}
+
+/****** Cover Page ******/
+
+section.cover {
+  padding-bottom: 112px;
+  height: auto;
+  min-height: 100vh;
+  background: #ffffff !important;
+  color: var(--theme-color);
+}
+
+section.cover .cover-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0;
+  padding: 32px 16px 0;
+}
+
+section.cover img {
+  width: 400px;
+}
+
+section.cover h1 {
+  margin: 0.625rem 0 1rem;
+}
+
+section.cover blockquote,
+section.cover blockquote p {
+  margin: 1.5em 0;
+}
+
+section.cover a {
+  text-decoration: none;
+  border-bottom: 0.01rem solid var(--theme-color);
+  transition: all 0.3s ease;
+}
+
+section.cover a:hover {
+  border-color: var(--theme-color-dark);
+  color: var(--theme-color-dark);
+}
+
+section.cover a.anchor {
+  border: none;
+}
+
+.cover-icon {
+  margin-right: 0.75em;
+}
+
+section.cover ul {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  display: grid;
+  text-align: left;
+  grid-column-gap: 16px;
+  grid-row-gap: 20px;
+  list-style: none;
+  max-width: unset;
+  margin: 1.5em 0;
+}
+
+section.cover .cover-main > p:last-child a:last-child {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  background-color: var(--theme-color);
+  color: #fff;
+}
+
+section.cover .cover-main > p:last-child a:last-child:hover {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  background-color: var(--theme-color-dark);
+  color: #fff;
+  opacity: 1;
+}
+
+section.cover.show ~ .sidebar,
+section.cover.show ~ .sidebar-toggle {
+  display: none;
+}
+
+@media (max-width: 850px) {
+  section.cover ul {
+    grid-template-columns: 100%;
+    padding: 0;
+  }
+
+  section.cover ul li {
+    text-align: center;
+  }
+}
+
+@media (max-width: 450px) {
+  section.cover ul li {
+    white-space: normal;
+  }
+
+  .cover-main .buttons a {
+    width: 100%;
+    margin: 0.2rem 0;
+  }
+}
+
+/****** Sidebar ******/
+.sidebar ul li a:hover {
+  color: var(--theme-color);
+}
+
+.sidebar .search .clear-button {
+  cursor: pointer;
+}
+
+/****** Sidebar Toggle ******/
+
+.sidebar-toggle,
+.sidebar,
+.content {
+  margin-top: 38px;
+}
+
+.sidebar {
+  padding: 0px;
+}
+
+.sidebar-toggle {
+  cursor: pointer;
+}
+
+body .sidebar-toggle {
+  background: none;
+  top: 1.5rem;
+  left: calc(300px + 1.5rem);
+  cursor: pointer;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0;
+  transition: left 0.25s ease-out;
+}
+
+body .sidebar-toggle span {
+  background-color: var(--theme-color);
+  height: 0.2rem;
+  width: 1.5rem;
+  position: absolute;
+  left: 0;
+  margin: 0;
+  transform-origin: 0;
+  border-radius: 1px;
+}
+
+body.close .sidebar-toggle {
+  transition: left 0.25s ease-out;
+  width: 1.5rem;
+  height: 1.5rem;
+  left: 1.5rem;
+}
+
+body.close .sidebar-toggle span {
+  transform-origin: center;
+}
+
+body .sidebar-toggle span:nth-child(1) {
+  top: 0;
+}
+body .sidebar-toggle span:nth-child(2) {
+  top: 0.5rem;
+}
+body .sidebar-toggle span:nth-child(3) {
+  top: 1rem;
+}
+
+.sidebar-toggle:hover {
+  opacity: 0.8;
+}
+.sidebar-toggle .sidebar-toggle-button:hover {
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  body .sidebar-toggle {
+    left: 1rem;
+  }
+
+  body.close .sidebar-toggle {
+    left: calc(300px + 1.5rem);
+  }
+}
+
+body.close .app-nav,
+body.close .github-corner {
+  display: block !important;
+  text-align: center;
+}
+
+/****** Markdown General ******/
+
+.markdown-section p {
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.markdown-section code {
+  background-color: #f8f8f8;
+  color: #525252;
+  padding: 0.05em 0.15em 0.15em 0.15em;
+  margin: 0.05em;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.markdown-section a {
+  text-decoration: none;
+  color: var(--theme-color);
+  border-bottom: 0.1rem solid var(--theme-color);
+}
+
+.markdown-section a:hover {
+  border-color: var(--theme-color-dark);
+  color: var(--theme-color-dark);
+}
+
+.markdown-section a.anchor {
+  border: none;
+}
+
+.markdown-section a > code,
+.markdown-section a > strong > code {
+  background-color: #f8f8f8;
+  color: #525252;
+  padding: 0.05em 0.15em 0 0.15em;
+  margin: 0.05em;
+}
+
+.markdown-section a > code:hover,
+.markdown-section a > code:active,
+.markdown-section a > strong > code:hover,
+.markdown-section a > strong > code:active {
+  background-color: #525252;
+  color: #f8f8f8;
+  padding: 0.05em 0.15em 0 0.15em;
+  margin: 0.05em;
+}
+
+.markdown-section em,
+.markdown-section blockquote {
+  color: var(--text-color-tertiary);
+}
+
+/****** CODE HIGHLIGHTING ******/
+.token.string {
+  color: #42b983;
+}
+
+.token.boolean,
+.token.number {
+  color: var(--theme-color);
+}
+
+.lang-bash .token.function,
+.lang-json .token.property {
+  color: #e96900;
+}
+
+/****** COPY TO CLIPBOARD ******/
+.docsify-copy-code-button {
+  font-size: 0.7em !important;
+}
+
+/****** Anchor Headings ******/
+a.anchor {
+  padding-top: 48px;
+}
+
+.markdown-section h2 {
+  margin: 0 0 0.8em;
+}

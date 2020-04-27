@@ -18,9 +18,9 @@ localeTitle: 使用括号表示法查找字符串中的第N个到最后一个字
 ```yml
 tests:
   - text: <code>secondToLastLetterOfLastName</code>应为“c”。
-    testString: 'assert(secondToLastLetterOfLastName === "c", "<code>secondToLastLetterOfLastName</code> should be "c".");'
+    testString: assert(secondToLastLetterOfLastName === 'c');
   - text: 你必须使用<code>.length</code>来获得倒数第二个字母。
-    testString: 'assert(code.match(/\.length/g).length === 2, "You have to use <code>.length</code> to get the second last letter.");'
+    testString: assert(code.match(/\.length/g).length === 2);
 
 ```
 

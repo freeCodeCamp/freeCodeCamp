@@ -1,5 +1,7 @@
 #learn-app-wrapper .desktop-layout {
-  height: calc(100vh - var(--header-height, 0px));
+  height: calc(
+    100vh - var(--header-height, 0px) - var(--flash-message-height, 0px)
+  );
 }
 
 #learn-app-wrapper .reflex-container.vertical > .reflex-splitter,

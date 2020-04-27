@@ -31,15 +31,15 @@ fruits.indexOf('pears'); // 返回 1，即第一个出现的 'pears' 元素在�
 
 ```yml
 tests:
-  - text: "<code>quickCheck(['squash', 'onions', 'shallots'], 'mushrooms')</code>应该返回<code>false</code>。"
+  - text: '<code>quickCheck([&quot;squash&quot;, &quot;onions&quot;, &quot;shallots&quot;], &quot;mushrooms&quot;)</code>应该返回<code>false</code>'
     testString: assert.strictEqual(quickCheck(['squash', 'onions', 'shallots'], 'mushrooms'), false);
-  - text: "<code>quickCheck(['squash', 'onions', 'shallots'], 'onions')</code>应该返回<code>true</code>。"
+  - text: '<code>quickCheck([&quot;squash&quot;, &quot;onions&quot;, &quot;shallots&quot;], &quot;onions&quot;)</code>应该返回<code>true</code>'
     testString: assert.strictEqual(quickCheck(['onions', 'squash', 'shallots'], 'onions'), true);
-  - text: <code>quickCheck([3, 5, 9, 125, 45, 2], 125)</code>应该返回<code>true</code>。
+  - text: '<code>quickCheck([3, 5, 9, 125, 45, 2], 125)</code>应该返回<code>true</code>'
     testString: assert.strictEqual(quickCheck([3, 5, 9, 125, 45, 2], 125), true);
-  - text: <code>quickCheck([true, false, false], undefined)</code>应该返回<code>false</code>。
+  - text: '<code>quickCheck([true, false, false], undefined)</code>应返回<code>false</code>'
     testString: assert.strictEqual(quickCheck([true, false, false], undefined), false);
-  - text: <code>quickCheck</code>函数中应该用到<code>indexOf()</code>方法。
+  - text: <code>quickCheck</code>函数应该使用<code>indexOf()</code>方法
     testString: assert.notStrictEqual(quickCheck.toString().search(/\.indexOf\(/), -1);
 
 ```

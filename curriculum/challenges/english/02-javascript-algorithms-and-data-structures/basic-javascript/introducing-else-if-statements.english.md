@@ -71,7 +71,6 @@ function testElseIf(val) {
   return "Between 5 and 10";
 }
 
-// Change this value to test
 testElseIf(7);
 
 ```

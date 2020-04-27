@@ -11,6 +11,7 @@ import { createReportUserSaga } from './report-user-saga';
 import { createShowCertSaga } from './show-cert-saga';
 import { createNightModeSaga } from './night-mode-saga';
 import { createDonationSaga } from './donation-saga';
+import { createGaSaga } from './ga-saga';
 
 import hardGoToEpic from './hard-go-to-epic';
 import failedUpdatesEpic from './failed-updates-epic';
@@ -65,6 +66,7 @@ export const types = createTypes(
     'onlineStatusChange',
     'resetUserData',
     'tryToShowDonationModal',
+    'executeGA',
     'submitComplete',
     'updateComplete',
     'updateCurrentChallengeId',
@@ -84,6 +86,7 @@ export const sagas = [
   ...createAcceptTermsSaga(types),
   ...createAppMountSaga(types),
   ...createDonationSaga(types),
+  ...createGaSaga(types),
   ...createFetchUserSaga(types),
   ...createShowCertSaga(types),
   ...createReportUserSaga(types),
@@ -95,6 +98,9 @@ export const appMount = createAction(types.appMount);
 export const tryToShowDonationModal = createAction(
   types.tryToShowDonationModal
 );
+
+export const executeGA = createAction(types.executeGA);
+
 export const allowBlockDonationRequests = createAction(
   types.allowBlockDonationRequests
 );
@@ -109,6 +115,7 @@ export const preventProgressDonationRequests = createAction(
 
 export const onlineStatusChange = createAction(types.onlineStatusChange);
 
+// TODO: re-evaluate this since /internal is no longer used.
 // `hardGoTo` is used to hit the API server directly
 // without going through /internal
 // used for things like /signin and /signout
@@ -197,6 +204,87 @@ export const userByNameSelector = username => state => {
   const { user } = state[ns];
   return username in user ? user[username] : {};
 };
+
+export const certificatesByNameSelector = username => state => {
+  const {
+    isRespWebDesignCert,
+    is2018DataVisCert,
+    isFrontEndLibsCert,
+    isJsAlgoDataStructCert,
+    isApisMicroservicesCert,
+    isInfosecQaCert,
+    isFrontEndCert,
+    isBackEndCert,
+    isDataVisCert,
+    isFullStackCert
+  } = userByNameSelector(username)(state);
+  return {
+    hasModernCert:
+      isRespWebDesignCert ||
+      is2018DataVisCert ||
+      isFrontEndLibsCert ||
+      isJsAlgoDataStructCert ||
+      isApisMicroservicesCert ||
+      isInfosecQaCert ||
+      isFullStackCert,
+    hasLegacyCert: isFrontEndCert || isBackEndCert || isDataVisCert,
+    currentCerts: [
+      {
+        show: isFullStackCert,
+        title: 'Full Stack Certification',
+        showURL: 'full-stack'
+      },
+      {
+        show: isRespWebDesignCert,
+        title: 'Responsive Web Design Certification',
+        showURL: 'responsive-web-design'
+      },
+      {
+        show: isJsAlgoDataStructCert,
+        title: 'JavaScript Algorithms and Data Structures Certification',
+        showURL: 'javascript-algorithms-and-data-structures'
+      },
+      {
+        show: isFrontEndLibsCert,
+        title: 'Front End Libraries Certification',
+        showURL: 'front-end-libraries'
+      },
+      {
+        show: is2018DataVisCert,
+        title: 'Data Visualization Certification',
+        showURL: 'data-visualization'
+      },
+      {
+        show: isApisMicroservicesCert,
+        title: 'APIs and Microservices Certification',
+        showURL: 'apis-and-microservices'
+      },
+      {
+        show: isInfosecQaCert,
+        title: 'Information Security and Quality Assurance Certification',
+        showURL: 'information-security-and-quality-assurance'
+      }
+    ],
+    legacyCerts: [
+      {
+        show: isFrontEndCert,
+        title: 'Front End Certification',
+        showURL: 'legacy-front-end'
+      },
+      {
+        show: isBackEndCert,
+        title: 'Back End Certification',
+        showURL: 'legacy-back-end'
+      },
+      {
+        show: isDataVisCert,
+        title: 'Data Visualization Certification',
+        showURL: 'legacy-data-visualization'
+      }
+    ]
+  };
+};
+
 export const userFetchStateSelector = state => state[ns].userFetchState;
 export const userProfileFetchStateSelector = state =>
   state[ns].userProfileFetchState;

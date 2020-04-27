@@ -41,19 +41,19 @@ localeTitle: 每组排名最高
 ```yml
 tests:
   - text: <code>topRankPerGroup</code>是一个函数。
-    testString: 'assert(typeof topRankPerGroup === "function", "<code>topRankPerGroup</code> is a function.");'
+    testString: assert(typeof topRankPerGroup === 'function');
   - text: <code>topRankPerGroup</code>在负n值上返回undefined。
-    testString: 'assert(typeof topRankPerGroup(-1, []) === "undefined", "<code>topRankPerGroup</code> returns undefined on negative n values.");'
+    testString: assert(typeof topRankPerGroup(-1, []) === 'undefined');
   - text: 第一部门必须​​是D050
-    testString: 'assert.equal(res1[0][0].dept, "D050", "First department must be D050");'
+    testString: assert.equal(res1[0][0].dept, 'D050');
   - text: 第一部门必须​​是D050
-    testString: 'assert.equal(res1[0][1].salary, 21900, "First department must be D050");'
+    testString: assert.equal(res1[0][1].salary, 21900);
   - text: 最后一个部门必须是D202
-    testString: 'assert.equal(res1[3][3].dept, "D202", "The last department must be D202");'
+    testString: assert.equal(res1[3][3].dept, 'D202');
   - text: '<code>topRankPerGroup(1, ...)</code>必须仅返回每组的排名最高的结果。'
-    testString: 'assert.equal(res2[2].length, 1, "<code>topRankPerGroup(1, ...)</code> must return only top ranking result per group.");'
+    testString: assert.equal(res2[2].length, 1);
   - text: '<code>topRankPerGroup(1, ...)</code>必须仅返回每组的排名最高的结果。'
-    testString: 'assert.equal(res3[2][1].name, "Maze Runner", "<code>topRankPerGroup(1, ...)</code> must return only top ranking result per group.");'
+    testString: assert.equal(res3[2][1].name, 'Maze Runner');
 
 ```
 

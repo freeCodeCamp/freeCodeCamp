@@ -18,17 +18,17 @@ localeTitle: 使用join方法将Array组合成String
 ```yml
 tests:
   - text: 您的代码应使用<code>join</code>方法。
-    testString: 'assert(code.match(/\.join/g), "Your code should use the <code>join</code> method.");'
+    testString: assert(code.match(/\.join/g));
   - text: 您的代码不应使用<code>replace</code>方法。
-    testString: 'assert(!code.match(/\.replace/g), "Your code should not use the <code>replace</code> method.");'
+    testString: assert(!code.match(/\.replace/g));
   - text: <code>sentensify(&quot;May-the-force-be-with-you&quot;)</code>应该返回一个字符串。
-    testString: 'assert(typeof sentensify("May-the-force-be-with-you") === "string", "<code>sentensify("May-the-force-be-with-you")</code> should return a string.");'
+    testString: assert(typeof sentensify("May-the-force-be-with-you") === "string");
   - text: <code>sentensify(&quot;May-the-force-be-with-you&quot;)</code>应该返回<code>&quot;May the force be with you&quot;</code> 。
-    testString: 'assert(sentensify("May-the-force-be-with-you") === "May the force be with you", "<code>sentensify("May-the-force-be-with-you")</code> should return <code>"May the force be with you"</code>.");'
+    testString: assert(sentensify("May-the-force-be-with-you") === "May the force be with you");
   - text: <code>sentensify(&quot;The.force.is.strong.with.this.one&quot;)</code>应该返回<code>&quot;The force is strong with this one&quot;</code> 。
-    testString: 'assert(sentensify("The.force.is.strong.with.this.one") === "The force is strong with this one", "<code>sentensify("The.force.is.strong.with.this.one")</code> should return <code>"The force is strong with this one"</code>.");'
+    testString: assert(sentensify("The.force.is.strong.with.this.one") === "The force is strong with this one");
   - text: '<code>sentensify(&quot;There,has,been,an,awakening&quot;)</code>应该回归<code>&quot;There has been an awakening&quot;</code> 。'
-    testString: 'assert(sentensify("There,has,been,an,awakening") === "There has been an awakening", "<code>sentensify("There,has,been,an,awakening")</code> should return <code>"There has been an awakening"</code>.");'
+    testString: assert(sentensify("There,has,been,an,awakening") === "There has been an awakening");
 
 ```
 

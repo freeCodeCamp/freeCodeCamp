@@ -19,7 +19,7 @@ localeTitle: 使用helmet.xssFilter（）降低跨站点脚本（XSS）攻击的
 ```yml
 tests:
   - text: helmet.xssFilter（）中间件应该正确安装
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/app-info").then(data => { assert.include(data.appStack, "xXssProtection"); assert.property(data.headers, "x-xss-protection"); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: getUserInput => $.get(getUserInput('url') + '/_api/app-info').then(data => { assert.include(data.appStack, 'xXssProtection'); assert.property(data.headers, 'x-xss-protection'); }, xhr => { throw new Error(xhr.responseText); })
 
 ```
 

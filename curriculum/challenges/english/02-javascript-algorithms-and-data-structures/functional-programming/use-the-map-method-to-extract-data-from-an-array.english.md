@@ -41,11 +41,11 @@ tests:
   - text: The <code>watchList</code> variable should not change.
     testString: assert(watchList[0].Title === "Inception" && watchList[4].Director == "James Cameron");
   - text: Your code should not use a <code>for</code> loop.
-    testString: assert(!removeJSComments(code).match(/for\s*?\(.*?\)/));
+    testString: assert(!removeJSComments(code).match(/for\s*?\([\s\S]*?\)/));
   - text: Your code should use the <code>map</code> method.
     testString: assert(code.match(/\.map/g));
   - text: <code>ratings</code> should equal <code>[{"title":"Inception","rating":"8.8"},{"title":"Interstellar","rating":"8.6"},{"title":"The Dark Knight","rating":"9.0"},{"title":"Batman Begins","rating":"8.3"},{"title":"Avatar","rating":"7.9"}]</code>.
-    testString: assert(JSON.stringify(ratings) === JSON.stringify([{"title":"Inception","rating":"8.8"},{"title":"Interstellar","rating":"8.6"},{"title":"The Dark Knight","rating":"9.0"},{"title":"Batman Begins","rating":"8.3"},{"title":"Avatar","rating":"7.9"}]));
+    testString: assert.deepEqual(ratings, [{"title":"Inception","rating":"8.8"},{"title":"Interstellar","rating":"8.6"},{"title":"The Dark Knight","rating":"9.0"},{"title":"Batman Begins","rating":"8.3"},{"title":"Avatar","rating":"7.9"}]);
 
 ```
 
@@ -57,7 +57,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-// the global variable
+// The global variable
 var watchList = [
   {
     "Title": "Inception",
@@ -171,14 +171,14 @@ var watchList = [
   }
 ];
 
-// Add your code below this line
+// Only change code below this line
 
 var ratings = [];
 for(var i=0; i < watchList.length; i++){
   ratings.push({title: watchList[i]["Title"],  rating: watchList[i]["imdbRating"]});
 }
 
-// Add your code above this line
+// Only change code above this line
 
 console.log(JSON.stringify(ratings));
 ```
@@ -200,7 +200,7 @@ const removeJSComments = str => str.replace(/\/\*[\s\S]*?\*\/|\/\/.*$/gm, '');
 <section id='solution'>
 
 ```js
-// the global variable
+// The global variable
 var watchList = [
   {
     "Title": "Inception",

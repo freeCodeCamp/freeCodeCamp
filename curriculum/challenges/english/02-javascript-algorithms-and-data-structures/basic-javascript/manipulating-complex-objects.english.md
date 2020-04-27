@@ -99,7 +99,7 @@ var myMusic = [
     ],
     "gold": true
   }
-  // Add record here
+  // Add a record here
 ];
 
 ```

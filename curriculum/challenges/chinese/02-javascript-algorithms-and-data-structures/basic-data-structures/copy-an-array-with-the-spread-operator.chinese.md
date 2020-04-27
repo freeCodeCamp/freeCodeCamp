@@ -30,13 +30,13 @@ let thatArray = [...thisArray];
 
 ```yml
 tests:
-  - text: <code>copyMachine([true, false, true], 2)</code>应该返回<code>[[true, false, true], [true, false, true]]</code>。
+  - text: '<code>copyMachine([true, false, true], 2)</code>应该返回<code>[[true, false, true], [true, false, true]]</code>'
     testString: assert.deepEqual(copyMachine([true, false, true], 2), [[true, false, true], [true, false, true]]);
-  - text: <code>copyMachine([1, 2, 3], 5)</code>应该返回<code>[[1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3]]</code>。
+  - text: '<code>copyMachine([1, 2, 3], 5)</code>应该返回<code>[[1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3]]</code>'
     testString: assert.deepEqual(copyMachine([1, 2, 3], 5), [[1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3]]);
-  - text: <code>copyMachine([true, true, null], 1)</code>应该返回<code>[[true, true, null]]</code>。
+  - text: '<code>copyMachine([true, true, null], 1)</code>应该返回<code>[[true, true, null]]</code>'
     testString: assert.deepEqual(copyMachine([true, true, null], 1), [[true, true, null]]);
-  - text: "<code>copyMachine(['it works'], 3)</code>应该返回<code>[['it works'], ['it works'], ['it works']]</code>。"
+  - text: '<code>copyMachine([&quot;it works&quot;], 3)</code>应该返回<code>[[&quot;it works&quot;], [&quot;it works&quot;], [&quot;it works&quot;]]</code>'
     testString: assert.deepEqual(copyMachine(['it works'], 3), [['it works'], ['it works'], ['it works']]);
   - text: <code>copyMachine</code>函数中应该对数组<code>arr</code>使用<code>spread operator</code>。
     testString: assert(removeJSComments(code).match(/\.\.\.arr/));

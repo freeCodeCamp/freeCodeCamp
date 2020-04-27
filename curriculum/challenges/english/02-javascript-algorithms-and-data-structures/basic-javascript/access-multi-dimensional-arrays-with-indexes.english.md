@@ -23,7 +23,7 @@ arr[3][0]; // equals [10,11,12]
 arr[3][0][1]; // equals 11
 ```
 
-<strong>Note</strong><br>There shouldn't be any spaces between the array name and the square brackets, like <code>array [0][0]</code> and even this <code>array [0] [0]</code> is not allowed. Although JavaScript is able to process this correctly, this may confuse other programmers reading your code.
+<strong>Note</strong><br>There shouldn't be any spaces between the array name and the square brackets, like `array [0][0]` and even this `array [0] [0]` is not allowed. Although JavaScript is able to process this correctly, this may confuse other programmers reading your code.
 </section>
 
 ## Instructions
@@ -54,7 +54,7 @@ tests:
 // Setup
 var myArray = [[1,2,3], [4,5,6], [7,8,9], [[10,11,12], 13, 14]];
 
-// Only change code below this line.
+// Only change code below this line
 var myData = myArray[0][0];
 
 ```
