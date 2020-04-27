@@ -34,9 +34,9 @@ tests:
   - text: Your regex should use the optional symbol, <code>?</code>.
     testString: assert(favRegex.source.match(/\?/).length > 0);
   - text: Your regex should match <code>"favorite"</code>
-    testString: assert(favRegex.test("favorite"));
+    testString: favRegex.lastIndex = 0; assert(favRegex.test("favorite"));
   - text: Your regex should match <code>"favourite"</code>
-    testString: assert(favRegex.test("favourite"));
+    testString: favRegex.lastIndex = 0; assert(favRegex.test("favourite"));
   - text: Your regex should not match <code>"fav"</code>
     testString: assert(!favRegex.test("fav"));
 
