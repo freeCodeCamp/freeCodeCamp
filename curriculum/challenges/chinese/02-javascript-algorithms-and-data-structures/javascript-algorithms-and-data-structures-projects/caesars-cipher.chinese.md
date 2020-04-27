@@ -9,7 +9,7 @@ localeTitle: 凯撒密码
 
 ## Description
 <section id='description'>
-世界上最简单、最著名的<dfn>加密方法</dfn>是<code>凯撒密码</code>，也叫<code>移位密码</code>。在<code>移位密码</code>中，明文中的字母通过按照一个固定数目进行偏移后被替换成新的字母。
+<code>凯撒密码</code>是最简单和最广为人知的<dfn>密码之一</dfn>，也被称为<code>移位密码</code>。在<code>移位密码</code>中，明文中的字母通过按照一个固定数目进行偏移后被替换成新的字母。
 <a href="https://en.wikipedia.org/wiki/ROT13" target='_blank'>ROT13</a> 是一个被广泛使用的编码技术，明文中的所有字母都被移动 13 位。因此，'A' &harr; 'N', 'B' &harr;  'O' 等等。
 请编写一个函数，用于解码一个被 <a href="https://en.wikipedia.org/wiki/ROT13" target='_blank'>ROT13</a> 编码的字符串，然后返回解码后的结果。
 所有解码后的字母都必须为字母大写。请不要解码非字母的字符（例如，空格、标点符号），但你需要在结果中保留它们。
