@@ -3,24 +3,28 @@ id: 5a24c314108439a4d403616b
 title: Use Default Props
 challengeType: 6
 isRequired: false
-videoUrl: ''
-localeTitle: 使用默认道具
+forumTopicId: 301418
+localeTitle: 使用默认的 Props
 ---
 
 ## Description
-<section id="description"> React还有一个设置默认道具的选项。您可以将默认道具分配给组件作为组件本身的属性，如果需要，React会分配默认支柱。如果没有显式提供值，这允许您指定prop值应该是什么。例如，如果您声明<code>MyComponent.defaultProps = { location: &#39;San Francisco&#39; }</code> ，则您已定义了设置为<code>San Francisco</code>字符串的位置道具，除非您另行指定。如果道具未定义，则React会指定默认道具，但如果您将<code>null</code>作为道具的值传递，则它将保持为<code>null</code> 。 </section>
+<section id='description'>
+React 还有一个设置默认 props 的选项。你可以将默认 props 作为组件本身的属性分配给组件，React 会在必要时分配默认 prop。如果没有显式的提供任何值，这允许你指定 prop 值应该是什么。例如，如果你声明<code>MyComponent.defaultProps = { location: 'San Francisco' }</code>，即定义一个 location 属性，并且其值在没有另行制定的情况下被设置为字符串<code>San Francisco</code>。如果 props 未定义，则 React 会分配默认 props，但如果你将<code>null</code>作为 prop 的值，它将保持<code>null</code>。
+</section>
 
 ## Instructions
-<section id="instructions">代码编辑器显示<code>ShoppingCart</code>组件。在此组件上定义默认道具，指定值为<code>0</code>的道具<code>items</code> 。 </section>
+<section id='instructions'>
+代码编辑器中有一个<code>ShoppingCart</code>组件。在这个组件上定义默认 props，它指定一个<code>items</code>prop，其值为<code>0</code>。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>ShoppingCart</code>组件应该呈现。
+  - text: 应该渲染<code>ShoppingCart</code>组件。
     testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ShoppingCart)); return mockedComponent.find('ShoppingCart').length === 1; })());
-  - text: '<code>ShoppingCart</code>组件应具有<code>{ items: 0 }</code>的默认支柱。'
+  - text: '<code>ShoppingCart</code>组件应该有一个<code>{ items: 0 }</code>的默认 prop。'
     testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ShoppingCart)); mockedComponent.setProps({items: undefined}); return mockedComponent.find(''ShoppingCart'').props().items === 0; })());'
 
 ```
@@ -51,7 +55,7 @@ const ShoppingCart = (props) => {
 <div id='jsx-teardown'>
 
 ```js
-console.info('after the test');
+ReactDOM.render(<ShoppingCart />, document.getElementById('root'))
 ```
 
 </div>
@@ -61,8 +65,20 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+const ShoppingCart = (props) => {
+  return (
+    <div>
+      <h1>Shopping Cart Component</h1>
+    </div>
+  )
+};
+
+// change code below this line
+ShoppingCart.defaultProps = {
+  items: 0
+}
 ```
 
-/section>
+</section>
