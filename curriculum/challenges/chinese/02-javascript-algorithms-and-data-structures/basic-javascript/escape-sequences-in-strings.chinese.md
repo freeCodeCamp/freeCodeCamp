@@ -18,7 +18,7 @@ localeTitle: 字符串中的转义序列
 <section id='instructions'>
 使用转义字符将下面三行文本字符串赋给变量<code>myStr</code>。
 <blockquote>FirstLine<br/>&nbsp;&nbsp;&nbsp;&nbsp;\SecondLine<br/>ThirdLine</blockquote>
-你需要使用转义字符正确的插入特殊字符，确保间距与上面文本一致并且单词或转义字符之间没有空格。
+你需要使用转义字符正确地插入特殊字符，确保间距与上面文本一致并且单词或转义字符之间没有空格。
 像这样用转义字符写出来：
 <q>FirstLine<code>换行符</code><code>制表符</code><code>反斜杠</code>SecondLine<code>换行符</code>ThirdLine</q>
 </section>

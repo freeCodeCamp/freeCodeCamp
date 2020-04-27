@@ -14,7 +14,7 @@ localeTitle: 求余运算
 <blockquote>5 % 2 = 1 因为<br>Math.floor(5 / 2) = 2 （商）<br>2 * 2 = 4<br>5 - 4 = 1 （余数）</blockquote>
 <strong>用法</strong><br>在数学中，判断一个数是奇数还是偶数，只需要判断这个数除以 2 得到的余数是 0 还是 1。  
 <blockquote>17 % 2 = 1（17 是奇数）<br>48 % 2 = 0（48 是偶数）</blockquote>
-<strong>提示<strong><br>余数运算符(<dfn>remainder</dfn>)有时被错误地称为“模数”运算符。它与模数非常相似，但在负数下不能正常工作。
+<strong>提示<strong><br>余数运算符(<dfn>remainder</dfn>)有时被错误地称为“模数”运算符。它与模数非常相似，但不能用于负数的运算。
 </section>
 
 ## Instructions

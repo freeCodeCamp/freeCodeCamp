@@ -9,7 +9,7 @@ localeTitle: 查找字符串的长度
 
 ## Description
 <section id='description'>
-你可以通过在字符串变量或字符串后面写上<code>.length</code>来获得字符串变量<code>字符串</code>值的长度。
+你可以通过在字符串变量或字符串后面写上<code>.length</code>来获得字符串变量值的长度。
 <code>"Alan Peter".length; // 10</code>
 例如，我们创建了一个变量<code>var firstName = "Charles"</code>，我们就可以通过使用<code>firstName.length</code>来获得<code>"Charles"</code>字符串的长度。
 </section>

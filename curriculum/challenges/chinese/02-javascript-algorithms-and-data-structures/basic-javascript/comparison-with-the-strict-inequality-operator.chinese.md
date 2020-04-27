@@ -9,7 +9,7 @@ localeTitle: 严格不等运算符
 
 ## Description
 <section id='description'>
-严格不相等运算符（<code>!==</code>）与全等运算符是相反的。这意味着严格不相等并返回<code>false</code>的地方，用严格相等运算符会返回<code>true</code>，<em>反之亦然</em>。严格相等运算符不会转换值的数据类型。
+严格不相等运算符（<code>!==</code>）与全等运算符是相反的。这意味着严格不相等并返回<code>false</code>的地方，用严格相等运算符会返回<code>true</code>，<em>反之亦然</em>。严格不相等运算符不会转换值的数据类型。
 <strong>示例</strong>
 
 ```js

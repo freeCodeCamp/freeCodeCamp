@@ -9,7 +9,8 @@ localeTitle: 通过索引访问数组中的数据
 
 ## Description
 <section id='description'>
-我们可以使用索引<code>indexes</code>来访问数组中的数据。
+我们可以使用索引 <code>indexes</code> 来访问数组中的数据。
+
 数组索引与字符串索引一样使用中括号，但字符串索引得到的是一个字符，而数组索引得到的是一个元素。数组索引与字符串索引一样是从 0 开始的，所以数组中第一个元素的索引编号是 0。
 <br/>
 <strong>示例</strong>

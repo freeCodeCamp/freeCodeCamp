@@ -9,7 +9,7 @@ localeTitle: 小于或等于运算符
 
 ## Description
 <section id='description'>
-使用<code>小于等于</code>运算符（<code>&lt;=</code>）比较两个数字的大小。如果在小于等于运算符，左边的数字小于或者等于右边的数字，它会返回<code>true</code>。如果在小于等于运算符左边的数字大于或者等于右边的数字，它会返回<code>false</code>。与相等运算符类似，<code>小于等于</code>运算符会转换数据类型。
+使用<code>小于等于</code>运算符（<code>&lt;=</code>）比较两个数字的大小。如果在小于等于运算符左边的数字小于或者等于右边的数字，它会返回<code>true</code>。如果在小于等于运算符左边的数字大于右边的数字，它会返回<code>false</code>。与相等运算符类似，<code>小于等于</code>运算符会转换数据类型。
 <strong>例如</strong>
 
 ```js

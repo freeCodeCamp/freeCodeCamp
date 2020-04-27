@@ -25,7 +25,7 @@ if (num > 15) {
 
 ## Instructions
 <section id='instructions'>
-使用<code>else if else</code>实现同样的效果。
+使用<code>if else</code>实现同样的效果。
 </section>
 
 ## Tests

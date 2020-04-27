@@ -18,7 +18,7 @@ for (var i = 0; i < arr.length; i++) {
 }
 ```
 
-记住数组的索引从零开始的，这意味着数组的最后一个元素的下标是：数组的长度 -1。我们这个循环的 <dfn>条件</dfn>是<code>i < arr.length</code>，当<code>i</code>的值为 长度 -1 的时候循环就停止了。
+记住数组的索引从零开始的，这意味着数组的最后一个元素的下标是：数组的长度 -1。我们这个循环的 <dfn>条件</dfn>是<code>i < arr.length</code>，当<code>i</code>的值为 长度 -1 的时候循环就停止了。在这个例子中，最后一个循环是 i === 4，也就是说，当i的值等于arr.length时，结果输出 6。
 </section>
 
 ## Instructions

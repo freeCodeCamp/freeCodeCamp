@@ -10,7 +10,7 @@ localeTitle: 使用 For 循环反向遍历数组
 ## Description
 <section id='description'>
 for循环也可以逆向迭代，只要我们定义好合适的条件。
-为了能够从后往前两两倒数，我们需要改变我们的<code>初始化</code>，<code>条件判断</code>和<code>计数器</code>。
+为了让每次倒数递减 2，我们需要改变我们的<code>初始化</code>，<code>条件判断</code>和<code>计数器</code>。
 我们让<code>i = 10</code>，并且当<code>i > 0</code>的时候才继续循环。我们使用<code>i -= 2</code>来让<code>i</code>每次循环递减 2。
 
 ```js

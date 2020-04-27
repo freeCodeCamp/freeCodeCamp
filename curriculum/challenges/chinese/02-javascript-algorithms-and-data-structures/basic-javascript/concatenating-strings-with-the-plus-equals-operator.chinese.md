@@ -10,7 +10,7 @@ localeTitle: 用 += 运算符连接字符串
 ## Description
 <section id='description'>
 我们还可以使用<code>+=</code>运算符来<dfn>concatenate</dfn>（拼接）字符串到现有字符串的结尾。对于那些被分割成几段的长的字符串来说，这一操作是非常有用的。
-<strong>提示</strong><br>注意空格。连接操作不会添加两个字符串外面的空格，所以如果想要加上空格的话，你需要自己在字符串里面添加。
+<strong>提示</strong><br>注意空格。拼接操作不会在两个字符串之间添加空格，所以如果想要加上空格的话，你需要自己在字符串里面添加。
 </section>
 
 ## Instructions

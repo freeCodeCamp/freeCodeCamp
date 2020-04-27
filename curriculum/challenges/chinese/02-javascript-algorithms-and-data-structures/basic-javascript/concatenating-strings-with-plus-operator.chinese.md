@@ -9,7 +9,7 @@ localeTitle: 用加号运算符连接字符串
 
 ## Description
 <section id='description'>
-在 JavaScript 中，当对一个<code>String</code>类型的值使用<code>+</code>操作符的时候，它被称作 <dfn>concatenation</dfn> 操作符。你可以通过和其他字符串<dfn>concatenation</dfn>来创建一个新的字符串。
+在 JavaScript 中，当对一个<code>String</code>类型的值使用<code>+</code>操作符的时候，它被称作 <dfn>拼接操作符</dfn>。你可以通过<dfn>拼接</dfn>其他字符串来创建一个新的字符串。
 <strong>示例</strong>
 
 ```js
