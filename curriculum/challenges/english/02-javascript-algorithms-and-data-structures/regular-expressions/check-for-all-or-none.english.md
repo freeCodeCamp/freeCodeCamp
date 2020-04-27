@@ -36,7 +36,7 @@ tests:
   - text: Your regex should match <code>"favorite"</code>
     testString: myRegex.lastIndex = 0; assert(favRegex.test("favorite"));
   - text: Your regex should match <code>"favourite"</code>
-    testString: myRegex.lastIndex = 0; assert(favRegex.test("favourite"));
+    testString: favRegex.lastIndex = 0; assert(favRegex.test("favourite"));
   - text: Your regex should not match <code>"fav"</code>
     testString: myRegex.lastIndex = 0; assert(!favRegex.test("fav"));
 
