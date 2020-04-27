@@ -14,12 +14,13 @@ videoId: nVAaxZ34khk
 
 ```yml
 question:
-  text: Question
+  text: 'What does the shape of our dataframe tell us?'
   answers:
-    - one
-    - two
-    - three
-  solution: 3
+    - 'The size in gigabytes the dataframe we loaded into memory is.'
+    - 'How many rows and columns our dataframe has.'
+    - 'How many rows the source data had before loading.'
+    - 'How many columns the source data had before loading.'
+  solution: 2
 ```
 
 </section>
