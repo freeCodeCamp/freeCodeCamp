@@ -32,7 +32,7 @@ Change the regex <code>favRegex</code> to match both the American English (favor
 ```yml
 tests:
   - text: Your regex should use the optional symbol, <code>?</code>.
-    testString: myRegex.lastIndex = 0; assert(favRegex.source.match(/\?/).length > 0);
+    testString: favRegex.lastIndex = 0; assert(favRegex.source.match(/\?/).length > 0);
   - text: Your regex should match <code>"favorite"</code>
     testString: myRegex.lastIndex = 0; assert(favRegex.test("favorite"));
   - text: Your regex should match <code>"favourite"</code>
