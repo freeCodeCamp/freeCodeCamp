@@ -9,10 +9,11 @@
   - [How to catch outgoing emails locally](/how-to-catch-outgoing-emails-locally.md)
 - **<i class="fad fa-laptop-code"></i> DevOps Guides**
   - [How we build, test and deploy](/devops.md)
-- **<i class="fad fa-plane-alt"></i> Flight Manuals (for Staff & Mods)**
-  - [01 - List Virtual Machines](/flight-manuals/01-getting-list-of-virtual-machines.md)
-  - [02 - Work on API Instances](/flight-manuals/02-spinning-api-instances.md)
-  - [03 - Using Reply Templates](/flight-manuals/03-using-reply-templates.md)
+- **<i class="fad fa-plane-alt"></i> Flight Manuals** (for Staff & Mods)
+  - [Using Reply Templates](/flight-manuals/using-reply-templates.md)
+  - [Work on Virtual Machines](/flight-manuals/working-on-virtual-machines.md)
+  - [Work on API Instances](/flight-manuals/working-on-api-instances.md)
+  - [Work on Web Server Instances](/flight-manuals/working-on-web-server-instances.md)
 ----
 - **<i class="fad fa-user-friends"></i> Our Community**
   - [**<i class="fab fa-github"></i> GitHub Repository**](https://github.com/freecodecamp/freecodecamp)

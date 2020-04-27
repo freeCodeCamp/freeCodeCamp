@@ -46,7 +46,7 @@ class Preview extends Component {
   render() {
     const iframeToggle = this.state.iframeStatus ? 'disable' : 'enable';
     return (
-      <div className={`challenge-preview ${iframeToggle}-iframe`}>
+      <div className={`notranslate challenge-preview ${iframeToggle}-iframe`}>
         <iframe
           className={'challenge-preview-frame'}
           id={mainId}

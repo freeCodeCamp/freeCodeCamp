@@ -97,7 +97,7 @@ class Presolver {
     const number = this.pullRequest.number;
     const label = this.config.labelPRConflict;
     const github = this.github;
-    // Check if a label does not exist. If it does, it addes the label.
+    // Check if a label does not exist. If it does, it adds label.
     return this._getLabel(label).catch(() => {
       // console.log(labelObj)
       return github.issues.addLabels({
