@@ -38,7 +38,7 @@ export const createStore = () => {
   } else {
     store = reduxCreateStore(
       rootReducer,
-      applyMiddleware(sagaMiddleware, epicMiddleware)
+      composeEnhancers(applyMiddleware(sagaMiddleware, epicMiddleware))
     );
   }
   sagaMiddleware.run(rootSaga);
