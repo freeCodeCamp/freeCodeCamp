@@ -19,7 +19,7 @@ localeTitle: 问题66：丢番图方程
 ```yml
 tests:
   - text: <code>euler66()</code>应返回661。
-    testString: 'assert.strictEqual(euler66(), 661, "<code>euler66()</code> should return 661.");'
+    testString: assert.strictEqual(euler66(), 661);
 
 ```
 

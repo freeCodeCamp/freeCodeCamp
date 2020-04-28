@@ -12,7 +12,6 @@ Return true if the string in the first element of the array contains all of the 
 For example, <code>["hello", "Hello"]</code>, should return true because all of the letters in the second string are present in the first, ignoring case.
 The arguments <code>["hello", "hey"]</code> should return false because the string "hello" does not contain a "y".
 Lastly, <code>["Alien", "line"]</code>, should return true because all of the letters in "line" are present in "Alien".
-Remember to use <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> if you get stuck. Write your own code.
 </section>
 
 ## Instructions
@@ -43,7 +42,7 @@ tests:
     testString: assert(mutation(["hello", "neo"]) === false);
   - text: <code>mutation(["voodoo", "no"])</code> should return false.
     testString: assert(mutation(["voodoo", "no"]) === false);
-  - text: <code>mutation(["ate", "date"] should return false</code> should return false.
+  - text: <code>mutation(["ate", "date"]</code> should return false.
     testString: assert(mutation(["ate", "date"]) === false);
   - text: <code>mutation(["Tiger", "Zebra"])</code> should return false.
     testString: assert(mutation(["Tiger", "Zebra"]) === false);

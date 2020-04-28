@@ -19,7 +19,7 @@ localeTitle: 问题329：Prime Frog
 ```yml
 tests:
   - text: <code>euler329()</code>应返回199740353/29386561536000。
-    testString: 'assert.strictEqual(euler329(), 199740353 / 29386561536000, "<code>euler329()</code> should return 199740353 / 29386561536000.");'
+    testString: assert.strictEqual(euler329(), 199740353 / 29386561536000);
 
 ```
 

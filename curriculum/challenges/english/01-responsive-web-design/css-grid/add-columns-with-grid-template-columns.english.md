@@ -56,10 +56,10 @@ tests:
     width: 100%;
     background: LightGray;
     display: grid;
-    /* add your code below this line */
+    /* Only change code below this line */
 
-
-    /* add your code above this line */
+    
+    /* Only change code above this line */
   }
 </style>
 

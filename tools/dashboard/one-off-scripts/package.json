@@ -1,0 +1,14 @@
+{
+  "name": "freecodecampcontributeoneoffscripts",
+  "dependencies": {
+    "@octokit/rest": "^15.18.0",
+    "cli-progress": "^2.1.0",
+    "dedent": "^0.7.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "BSD-3-Clause"
+}

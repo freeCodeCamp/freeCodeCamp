@@ -27,7 +27,9 @@ tests:
   - text: <code>nonMutatingSort(globalArray)</code> should return <code>[2, 3, 5, 6, 9]</code>.
     testString: assert(JSON.stringify(nonMutatingSort(globalArray)) === JSON.stringify([2, 3, 5, 6, 9]));
   - text: <code>nonMutatingSort(globalArray)</code> should not be hard coded.
-    testString: assert(!nonMutatingSort.toString().match(/[23569]/g));    
+    testString: assert(!nonMutatingSort.toString().match(/[23569]/g));
+  - text: The function should return a new array, not the array passed to it.
+    testString: assert(nonMutatingSort(globalArray) !== globalArray);
 
 ```
 
@@ -41,10 +43,10 @@ tests:
 ```js
 var globalArray = [5, 6, 3, 2, 9];
 function nonMutatingSort(arr) {
-  // Add your code below this line
+  // Only change code below this line
 
 
-  // Add your code above this line
+  // Only change code above this line
 }
 nonMutatingSort(globalArray);
 ```
@@ -61,9 +63,9 @@ nonMutatingSort(globalArray);
 ```js
 var globalArray = [5, 6, 3, 2, 9];
 function nonMutatingSort(arr) {
-  // Add your code below this line
+  // Only change code below this line
   return [].concat(arr).sort((a,b) => a-b);
-  // Add your code above this line
+  // Only change code above this line
 }
 nonMutatingSort(globalArray);
 ```

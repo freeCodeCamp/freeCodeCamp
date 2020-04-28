@@ -8,8 +8,8 @@ localeTitle: Используйте некоторый метод для про�
 
 ## Description
 <section id='description'>
-The <code>some</code> method works with arrays to check if <em>any</em> element passes a particular test. It returns a Boolean value - <code>true</code> if any of the values meet the criteria, <code>false</code> if not.
-For example, the following code would check if any element in the <code>numbers</code> array is less than 10:
+Метод <code>some</code> работает с массивами, чтобы проверить проходит ли <em>какой-либо</em> элемент определенный тест. Он возвращает логическое значение - <code>true</code> если любое из значений соответствует критерию, <code>false</code> если нет.
+Например, следующий код будет проверять, является ли какой-либо элемент в массиве <code>чисел</code> значением меньше 10:
 
 ```js
 var numbers = [10, 50, 8, 220, 110, 11];
@@ -23,7 +23,7 @@ numbers.some(function(currentValue) {
 
 ## Instructions
 <section id='instructions'>
-Use the <code>some</code> method inside the <code>checkPositive</code> function to check if any element in <code>arr</code> is positive. The function should return a Boolean value.
+Используйте метод <code>some</code> внутри функции <code>checkPositive</code>, чтобы проверить является ли какой-либо из элементов в <code>arr</code> положительным. Функция должна вернуть логическое значение.
 </section>
 
 ## Tests

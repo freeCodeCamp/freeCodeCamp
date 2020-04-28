@@ -6,46 +6,52 @@ forumTopicId: 302295
 ---
 
 ## Description
+
 <section id='description'>
 
 A k-d tree (short for <i>k</i>-dimensional tree) is a space-partitioning data structure for organizing points in a k-dimensional space.
 k-d trees are a useful data structure for several applications, such as searches involving a multidimensional search key (e.g. range searches and nearest neighbor searches).
 k-d trees are a special case of binary space partitioning trees. k-d trees are not suitable, however, for efficiently finding the nearest neighbor in high dimensional spaces. As a general rule, if the dimensionality is <i>k</i>, the number of points in the data, <i>N</i>, should be <i>N</i> ≫ 2<sup><i>k</i></sup>.
 Otherwise, when k-d trees are used with high-dimensional data, most of the points in the tree will be evaluated and the efficiency is no better than exhaustive search, and other methods such as approximate nearest-neighbor are used instead.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 Write a function to perform a nearest neighbour search using k-d tree. The function takes two parameters: an array of k-dimensional points, and a single k-dimensional point whose nearest neighbour should be returned by the function. A k-dimensional point will be given as an array of k elements.
+
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-``` yml
+```yml
 tests:
   - text: <code>kdNN</code> should be a function.
-    testString: assert(typeof kdNN == 'function', '<code>kdNN</code> should be a function.');
+    testString: assert(typeof kdNN == 'function');
   - text: <code>kdNN([[[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [9, 2])</code> should return an array.
-    testString: assert(Array.isArray(kdNN([[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [9, 2])), '<code>kdNN([[[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [9, 2])</code> should return an array.');
+    testString: assert(Array.isArray(kdNN([[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [9, 2])));
   - text: <code>kdNN([[[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [9, 2])</code> should return <code>[ 8, 1 ]</code>.
-    testString: assert.deepEqual(kdNN([[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [9, 2]), [8, 1], '<code>kdNN([[[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [9, 2])</code> should return <code>[ 8, 1 ]</code>.');
+    testString: assert.deepEqual(kdNN([[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [9, 2]), [8, 1]);
   - text: <code>kdNN([[[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [7, 1])</code> should return <code>[ 8, 1 ]</code>.
-    testString: assert.deepEqual(kdNN([[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [7, 1]), [8, 1], '<code>kdNN([[[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [7, 1])</code> should return <code>[ 8, 1 ]</code>.');
+    testString: assert.deepEqual(kdNN([[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [7, 1]), [8, 1]);
   - text: <code>kdNN([[[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [3, 2])</code> should return <code>[ 2, 3 ]</code>.
-    testString: assert.deepEqual(kdNN([[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [3, 2]), [2, 3], '<code>kdNN([[[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [3, 2])</code> should return <code>[ 2, 3 ]</code>.');
+    testString: assert.deepEqual(kdNN([[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]], [3, 2]), [2, 3]);
   - text: <code>kdNN([[2, 3, 1], [9, 4, 5], [4, 6, 7], [1, 2, 5], [7, 8, 9], [3, 6, 1]], [1, 2, 3])</code> should return <code>[ 1, 2, 5 ]</code>.
-    testString: assert.deepEqual(kdNN([[2, 3, 1], [9, 4, 5], [4, 6, 7], [1, 2, 5], [7, 8, 9], [3, 6, 1]], [1, 2, 3]), [1, 2, 5], '<code>kdNN([[2, 3, 1], [9, 4, 5], [4, 6, 7], [1, 2, 5], [7, 8, 9], [3, 6, 1]], [1, 2, 3])</code> should return <code>[ 1, 2, 5 ]</code>.');
+    testString: assert.deepEqual(kdNN([[2, 3, 1], [9, 4, 5], [4, 6, 7], [1, 2, 5], [7, 8, 9], [3, 6, 1]], [1, 2, 3]), [1, 2, 5]);
   - text: <code>kdNN([[2, 3, 1], [9, 4, 5], [4, 6, 7], [1, 2, 5], [7, 8, 9], [3, 6, 1]], [4, 5, 6])</code> should return <code>[ 4, 6, 7 ]</code>.
-    testString: assert.deepEqual(kdNN([[2, 3, 1], [9, 4, 5], [4, 6, 7], [1, 2, 5], [7, 8, 9], [3, 6, 1]], [4, 5, 6]), [4, 6, 7], '<code>kdNN([[2, 3, 1], [9, 4, 5], [4, 6, 7], [1, 2, 5], [7, 8, 9], [3, 6, 1]], [4, 5, 6])</code> should return <code>[ 4, 6, 7 ]</code>.');
+    testString: assert.deepEqual(kdNN([[2, 3, 1], [9, 4, 5], [4, 6, 7], [1, 2, 5], [7, 8, 9], [3, 6, 1]], [4, 5, 6]), [4, 6, 7]);
   - text: <code>kdNN([[2, 3, 1], [9, 4, 5], [4, 6, 7], [1, 2, 5], [7, 8, 9], [3, 6, 1]], [8, 8, 8])</code> should return <code>[ 7, 8, 9 ]</code>.
-    testString: assert.deepEqual(kdNN([[2, 3, 1], [9, 4, 5], [4, 6, 7], [1, 2, 5], [7, 8, 9], [3, 6, 1]], [8, 8, 8]), [7, 8, 9], '<code>kdNN([[2, 3, 1], [9, 4, 5], [4, 6, 7], [1, 2, 5], [7, 8, 9], [3, 6, 1]], [8, 8, 8])</code> should return <code>[ 7, 8, 9 ]</code>.');
+    testString: assert.deepEqual(kdNN([[2, 3, 1], [9, 4, 5], [4, 6, 7], [1, 2, 5], [7, 8, 9], [3, 6, 1]], [8, 8, 8]), [7, 8, 9]);
 ```
 
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -60,6 +66,7 @@ function kdNN(fpoints, fpoint) {
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js
@@ -73,7 +80,6 @@ function kdNN(fpoints, fpoint) {
   }
 
   function kdTree(points, metric, dimensions) {
-
     var self = this;
 
     function buildTree(points, depth, parent) {
@@ -88,7 +94,7 @@ function kdNN(fpoints, fpoint) {
         return new Node(points[0], dim, parent);
       }
 
-      points.sort(function (a, b) {
+      points.sort(function(a, b) {
         return a[dimensions[dim]] - b[dimensions[dim]];
       });
 
@@ -102,9 +108,8 @@ function kdNN(fpoints, fpoint) {
 
     this.root = buildTree(points, 0, null);
 
-    this.insert = function (point) {
+    this.insert = function(point) {
       function innerSearch(node, parent) {
-
         if (node === null) {
           return parent;
         }
@@ -126,7 +131,11 @@ function kdNN(fpoints, fpoint) {
         return;
       }
 
-      newNode = new Node(point, (insertPosition.dimension + 1) % dimensions.length, insertPosition);
+      newNode = new Node(
+        point,
+        (insertPosition.dimension + 1) % dimensions.length,
+        insertPosition
+      );
       dimension = dimensions[insertPosition.dimension];
 
       if (point[dimension] < insertPosition.obj[dimension]) {
@@ -136,14 +145,12 @@ function kdNN(fpoints, fpoint) {
       }
     };
 
-    this.nearest = function (point, maxNodes, maxDistance) {
-      var i,
-        result,
-        bestNodes;
+    this.nearest = function(point, maxNodes, maxDistance) {
+      var i, result, bestNodes;
 
-      bestNodes = new BinaryHeap(
-        function (e) { return -e[1]; }
-      );
+      bestNodes = new BinaryHeap(function(e) {
+        return -e[1];
+      });
 
       function nearestSearch(node) {
         var bestChild,
@@ -172,7 +179,10 @@ function kdNN(fpoints, fpoint) {
         linearDistance = metric(linearPoint, node.obj);
 
         if (node.right === null && node.left === null) {
-          if (bestNodes.size() < maxNodes || ownDistance < bestNodes.peek()[1]) {
+          if (
+            bestNodes.size() < maxNodes ||
+            ownDistance < bestNodes.peek()[1]
+          ) {
             saveNode(node, ownDistance);
           }
           return;
@@ -196,7 +206,10 @@ function kdNN(fpoints, fpoint) {
           saveNode(node, ownDistance);
         }
 
-        if (bestNodes.size() < maxNodes || Math.abs(linearDistance) < bestNodes.peek()[1]) {
+        if (
+          bestNodes.size() < maxNodes ||
+          Math.abs(linearDistance) < bestNodes.peek()[1]
+        ) {
           if (bestChild === node.left) {
             otherChild = node.right;
           } else {
@@ -214,8 +227,7 @@ function kdNN(fpoints, fpoint) {
         }
       }
 
-      if (self.root)
-        nearestSearch(self.root);
+      if (self.root) nearestSearch(self.root);
 
       result = [];
 
@@ -234,14 +246,14 @@ function kdNN(fpoints, fpoint) {
   }
 
   BinaryHeap.prototype = {
-    push: function (element) {
+    push: function(element) {
       // Add the new element to the end of the array.
       this.content.push(element);
       // Allow it to bubble up.
       this.bubbleUp(this.content.length - 1);
     },
 
-    pop: function () {
+    pop: function() {
       // Store the first element so we can return it later.
       var result = this.content[0];
       // Get the element at the end of the array.
@@ -255,15 +267,15 @@ function kdNN(fpoints, fpoint) {
       return result;
     },
 
-    peek: function () {
+    peek: function() {
       return this.content[0];
     },
 
-    size: function () {
+    size: function() {
       return this.content.length;
     },
 
-    bubbleUp: function (n) {
+    bubbleUp: function(n) {
       // Fetch the element that has to be moved.
       var element = this.content[n];
       // When at 0, an element can not go up any further.
@@ -285,7 +297,7 @@ function kdNN(fpoints, fpoint) {
       }
     },
 
-    sinkDown: function (n) {
+    sinkDown: function(n) {
       // Look up the target element and its score.
       var length = this.content.length,
         element = this.content[n],
@@ -293,7 +305,8 @@ function kdNN(fpoints, fpoint) {
 
       while (true) {
         // Compute the indices of the child elements.
-        var child2N = (n + 1) * 2, child1N = child2N - 1;
+        var child2N = (n + 1) * 2,
+          child1N = child2N - 1;
         // This is used to store the new position of the element,
         // if any.
         var swap = null;
@@ -303,8 +316,7 @@ function kdNN(fpoints, fpoint) {
           var child1 = this.content[child1N],
             child1Score = this.scoreFunction(child1);
           // If the score is less than our element's, we need to swap.
-          if (child1Score < elemScore)
-            swap = child1N;
+          if (child1Score < elemScore) swap = child1N;
         }
         // Do the same checks for the other child.
         if (child2N < length) {
@@ -329,26 +341,29 @@ function kdNN(fpoints, fpoint) {
     }
   };
 
-  var dims = []
+  var dims = [];
 
-  for (var i = 0; i < fpoint.length; i++) dims.push(i)
+  for (var i = 0; i < fpoint.length; i++) dims.push(i);
 
-  var tree = new kdTree(fpoints, function (e1, e2) {
-    var d = 0;
-    var e3 = e1;
-    if (!Array.isArray(e1)) {
-      e3 = []
-      for (var key in e1)
-        e3.push(e1[key])
+  var tree = new kdTree(
+    fpoints,
+    function(e1, e2) {
+      var d = 0;
+      var e3 = e1;
+      if (!Array.isArray(e1)) {
+        e3 = [];
+        for (var key in e1) e3.push(e1[key]);
 
-      e1 = e3
-    }
-    e1.forEach(function (e, i) {
-      var sqd = (e1[i] - e2[i]);
-      d += sqd * sqd;
-    })
-    return d;
-  }, dims)
+        e1 = e3;
+      }
+      e1.forEach(function(e, i) {
+        var sqd = e1[i] - e2[i];
+        d += sqd * sqd;
+      });
+      return d;
+    },
+    dims
+  );
 
   return tree.nearest(fpoint, 1, 1000)[0][0];
 }

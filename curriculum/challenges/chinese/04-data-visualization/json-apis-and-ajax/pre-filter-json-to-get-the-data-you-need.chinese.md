@@ -18,7 +18,7 @@ localeTitle: 预过滤JSON以获取所需的数据
 ```yml
 tests:
   - text: 您的代码应该使用<code>filter</code>方法。
-    testString: 'assert(code.match(/json\.filter/g), "Your code should use the <code>filter</code> method.");'
+    testString: assert(code.match(/json\.filter/g));
 
 ```
 

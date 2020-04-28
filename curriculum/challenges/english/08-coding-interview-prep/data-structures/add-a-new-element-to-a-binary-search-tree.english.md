@@ -64,50 +64,24 @@ function BinarySearchTree() {
 <div id='js-teardown'>
 
 ```js
-BinarySearchTree.prototype = {
-  isBinarySearchTree() {
-    if (this.root == null) {
-      return null;
-    } else {
-      var check = true;
-      function checkTree(node) {
-        if (node.left != null) {
-          var left = node.left;
-          if (left.value > node.value) {
-            check = false;
-          } else {
-            checkTree(left);
-          }
-        }
-        if (node.right != null) {
-          var right = node.right;
-          if (right.value < node.value) {
-            check = false;
-          } else {
-            checkTree(right);
-          }
-        }
+BinarySearchTree.prototype = Object.assign(
+  BinarySearchTree.prototype,
+  {
+    inOrder() {
+      if (!this.root) {
+        return null;
       }
-      checkTree(this.root);
-      return check;
+      var result = new Array();
+      function traverseInOrder(node) {
+        node.left && traverseInOrder(node.left);
+        result.push(node.value);
+        node.right && traverseInOrder(node.right);
+      }
+      traverseInOrder(this.root);
+      return result;
     }
   }
-};
-BinarySearchTree.prototype = {
-  inOrder() {
-    if (!this.root) {
-      return null;
-    }
-    var result = new Array();
-    function traverseInOrder(node) {
-      node.left && traverseInOrder(node.left);
-      result.push(node.value);
-      node.right && traverseInOrder(node.right);
-    }
-    traverseInOrder(this.root);
-    return result;
-  }
-};
+);
 ```
 
 </div>
@@ -133,7 +107,6 @@ function BinarySearchTree() {
       const searchTree = function(current) {
         if (current.value > element) {
           if (current.left) {
-            //si existe
             return searchTree(current.left);
           } else {
             current.left = new Node(element);

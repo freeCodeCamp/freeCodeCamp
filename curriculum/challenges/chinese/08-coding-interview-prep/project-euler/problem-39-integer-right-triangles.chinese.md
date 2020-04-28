@@ -19,13 +19,13 @@ localeTitle: 问题39：整数直角三角形
 ```yml
 tests:
   - text: <code>intRightTriangles(500)</code>应该返回420。
-    testString: 'assert(intRightTriangles(500) == 420, "<code>intRightTriangles(500)</code> should return 420.");'
+    testString: assert(intRightTriangles(500) == 420);
   - text: <code>intRightTriangles(800)</code>应该返回420。
-    testString: 'assert(intRightTriangles(800) == 420, "<code>intRightTriangles(800)</code> should return 420.");'
+    testString: assert(intRightTriangles(800) == 720);
   - text: <code>intRightTriangles(900)</code>应该返回840。
-    testString: 'assert(intRightTriangles(900) == 840, "<code>intRightTriangles(900)</code> should return 840.");'
+    testString: assert(intRightTriangles(900) == 840);
   - text: <code>intRightTriangles(1000)</code>应该返回840。
-    testString: 'assert(intRightTriangles(1000) == 840, "<code>intRightTriangles(1000)</code> should return 840.");'
+    testString: assert(intRightTriangles(1000) == 840);
 
 ```
 

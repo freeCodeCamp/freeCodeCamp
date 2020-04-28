@@ -18,11 +18,11 @@ localeTitle: 从开始和结束中删除空格
 ```yml
 tests:
   - text: '<code>result</code>应该等于<code>&quot;Hello, World!&quot;</code>'
-    testString: 'assert(result == "Hello, World!", "<code>result</code> should equal to <code>"Hello, World!"</code>");'
+    testString: assert(result == "Hello, World!");
   - text: 您不应该使用<code>.trim()</code>方法。
-    testString: 'assert(!code.match(/\.trim\(.*?\)/), "You should not use the <code>.trim()</code> method.");'
+    testString: assert(!code.match(/\.trim\([\s\S]*?\)/));
   - text: <code>result</code>变量不应设置为等于字符串。
-    testString: 'assert(!code.match(/result\s*=\s*".*?"/), "The <code>result</code> variable should not be set equal to a string.");'
+    testString: assert(!code.match(/result\s*=\s*".*?"/));
 
 ```
 

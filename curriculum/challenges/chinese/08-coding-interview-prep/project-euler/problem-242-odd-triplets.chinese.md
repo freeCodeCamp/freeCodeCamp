@@ -19,7 +19,7 @@ localeTitle: 问题242：奇数三胞胎
 ```yml
 tests:
   - text: <code>euler242()</code>应该返回997104142249036700。
-    testString: 'assert.strictEqual(euler242(), 997104142249036700, "<code>euler242()</code> should return 997104142249036700.");'
+    testString: assert.strictEqual(euler242(), 997104142249036700);
 
 ```
 

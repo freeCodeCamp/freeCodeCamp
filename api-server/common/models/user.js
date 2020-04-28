@@ -796,7 +796,17 @@ export default function(User) {
       ...user,
       about: showAbout ? about : '',
       calendar: showHeatMap ? calendar : {},
-      completedChallenges: showCerts && showTimeLine ? completedChallenges : [],
+      completedChallenges: (function() {
+        if (showTimeLine) {
+          return showCerts
+            ? completedChallenges
+            : completedChallenges.filter(
+                ({ challengeType }) => challengeType !== 7
+              );
+        } else {
+          return [];
+        }
+      })(),
       isDonating: showDonation ? isDonating : null,
       location: showLocation ? location : '',
       name: showName ? name : '',

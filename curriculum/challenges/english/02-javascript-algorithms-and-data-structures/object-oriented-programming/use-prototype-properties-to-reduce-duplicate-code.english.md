@@ -60,7 +60,7 @@ function Dog(name) {
 
 
 
-// Add your code above this line
+// Only change code above this line
 let beagle = new Dog("Snoopy");
 ```
 

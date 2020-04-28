@@ -36,10 +36,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Example
-var ourVar = 19;
 
-// Only change code below this line
 
 ```
 

@@ -2,27 +2,36 @@
 id: bad87fee1348bd9aedf08820
 title: Turn an Image into a Link
 challengeType: 0
-videoUrl: ''
-localeTitle: 将图像转换为链接
+videoUrl: 'https://scrimba.com/p/pVMPUv/cRdBnUr'
+forumTopicId: 18327
+localeTitle: 给图片添加链接
 ---
 
 ## Description
-<section id="description">您可以通过嵌套在他们做出元素融入链接<code>a</code>元素。鸟巢的内部图像<code>a</code>元素。这是一个例子： <code>&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;https://bit.ly/fcc-running-cats&quot; alt=&quot;Three kittens running towards the camera.&quot;&gt;&lt;/a&gt;</code>记得使用<code>#</code>为你的<code>a</code>元素的<code>href</code>为了把它变成一个死链接属性。 </section>
+<section id='description'>
+你可以通过把元素嵌套进 <code>a</code> 里使其变成一个链接。
+把你的图片嵌套进 <code>a</code>。举例如下：
+<code>&#60;a href="#"&#62;&#60;img src="http://cdn.freecodecamp.cn/running-cats.jpg" alt="三只萌萌的小猫"&#62;&#60;/a&#62;</code>
+把 <code>a</code> 的<code>href</code>属性设置为<code>#</code>，就可以创建固定链接。
+</section>
 
 ## Instructions
-<section id="instructions">将现有图像元素放在锚元素中。完成此操作后，使用光标将鼠标悬停在图像上。光标的正常指针应该成为链接点击指针。这张照片现在是一个链接。 </section>
+<section id='instructions'>
+把现存的图片嵌套进 <code>a</code> 中。
+当鼠标悬停在图片上时，鼠标的光标如果从箭头指针变成手形指针，那么此时图片就是一个链接了。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 巢现有<code>img</code>一个内元件<code>a</code>元件。
-    testString: 'assert($("a").children("img").length > 0, "Nest the existing <code>img</code> element within an <code>a</code> element.");'
-  - text: '您<code>a</code>元素应该是<code>href</code>属性设置为<code>#</code>的死链接。'
-    testString: 'assert(new RegExp("#").test($("a").children("img").parent().attr("href")), "Your <code>a</code> element should be a dead link with a <code>href</code> attribute set to <code>#</code>.");'
-  - text: 确保每个的<code>a</code>元素具有一个结束标记。
-    testString: 'assert(code.match(/<\/a>/g) && code.match(/<a/g) && code.match(/<\/a>/g).length === code.match(/<a/g).length, "Make sure each of your <code>a</code> elements has a closing tag.");'
+  - text: '把现存的图片嵌套进 <code>a</code> 中。'
+    testString: assert($("a").children("img").length > 0);
+  - text: '<code>a</code> 的<code>href</code>属性应为<code>#</code>。'
+    testString: assert(new RegExp("#").test($("a").children("img").parent().attr("href")));
+  - text: '确保每个 <code>a</code> 都有结束标记。'
+    testString: assert(code.match(/<\/a>/g) && code.match(/<a/g) && code.match(/<\/a>/g).length === code.match(/<a/g).length);
 
 ```
 
@@ -36,14 +45,13 @@ tests:
 ```html
 <h2>CatPhotoApp</h2>
 <main>
-  <p>Click here to view more <a href="#">cat photos</a>.</p>
-
-  <img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
-
-  <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
-  <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
+<p>点击查看更多<a href="#">猫咪图片</a>。</p>
+  
+  <img src="https://bit.ly/fcc-relaxing-cat" alt="一只仰卧着的萌猫">
+  
+  <p>在大家心目中，猫是慵懒和可爱的化身，它可以睡饱了再起来吃饭，可以逗趣小耗子，可以卖得了萌，使得了坏，这样百变的小怪兽就集结在一只宠物上，怎能不惹人怜爱。</p>
+  <p>养猫有的时候，就是介于爱与恨之间，当你钦羡别人萌宠这么可爱的时候，你一定没有想过，猫咪会到处掉毛，甚至会屯老鼠，啃鞋子，用爪子爬门，你不理它，它就挠你，你要对它发脾气，它会比你更来劲。所以，猫咪慎入，没有一定的准备，切勿随便去侍养动物。它们一旦认定你了，你就是它们的主人，如果你抛弃它们，它们必定心中重创。</p>
 </main>
-
 ```
 
 </div>
@@ -54,8 +62,5 @@ tests:
 
 ## Solution
 <section id='solution'>
-
-```js
-// solution required
-```
 </section>
+              

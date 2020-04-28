@@ -18,9 +18,9 @@ localeTitle: 将变量附加到字符串
 ```yml
 tests:
   - text: <code>someAdjective</code>应设置为至少3个字符长的字符串
-    testString: 'assert(typeof someAdjective !== "undefined" && someAdjective.length > 2, "<code>someAdjective</code> should be set to a string at least 3 characters long");'
+    testString: assert(typeof someAdjective !== 'undefined' && someAdjective.length > 2);
   - text: 使用<code>+=</code>运算符将<code>someAdjective</code>附加到<code>myStr</code>
-    testString: 'assert(code.match(/myStr\s*\+=\s*someAdjective\s*/).length > 0, "Append <code>someAdjective</code> to <code>myStr</code> using the <code>+=</code> operator");'
+    testString: assert(code.match(/myStr\s*\+=\s*someAdjective\s*/).length > 0);
 
 ```
 

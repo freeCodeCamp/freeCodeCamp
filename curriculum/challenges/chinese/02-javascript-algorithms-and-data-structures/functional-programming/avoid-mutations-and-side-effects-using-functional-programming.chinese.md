@@ -18,9 +18,9 @@ localeTitle: 使用功能编程避免突变和副作用
 ```yml
 tests:
   - text: 您的函数<code>incrementer</code>不应更改<code>fixedValue</code>的值。
-    testString: 'assert(fixedValue === 4, "Your function <code>incrementer</code> should not change the value of <code>fixedValue</code>.");'
+    testString: assert(fixedValue === 4);
   - text: 您的<code>incrementer</code>函数应返回一个大于<code>fixedValue</code>值的值。
-    testString: 'assert(newValue === 5, "Your <code>incrementer</code> function should return a value that is one larger than the <code>fixedValue</code> value.");'
+    testString: assert(newValue === 5);
 
 ```
 

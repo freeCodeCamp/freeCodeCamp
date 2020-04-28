@@ -112,10 +112,11 @@ export class SearchBar extends Component {
     // return navigate('/search');
 
     // Temporary redirect to News search results page
-    // when non-empty search input submitted
-    return query
+    // when non-empty search input submitted and there
+    // are hits besides the footer
+    return query && hits.length > 1
       ? window.location.assign(
-          `https://freecodecamp.org/news/search/?query=${encodeURIComponent(
+          `https://www.freecodecamp.org/news/search/?query=${encodeURIComponent(
             query
           )}`
         )
@@ -188,7 +189,7 @@ export class SearchBar extends Component {
                 onChange={this.handleChange}
                 onFocus={this.handleFocus}
                 onSubmit={this.handleSearch}
-                showLoadingIndicator={true}
+                showLoadingIndicator={false}
                 translations={{ placeholder }}
               />
             </ObserveKeys>

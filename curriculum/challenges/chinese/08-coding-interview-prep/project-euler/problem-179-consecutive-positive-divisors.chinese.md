@@ -19,7 +19,7 @@ localeTitle: 问题179：连续的正向除数
 ```yml
 tests:
   - text: <code>euler179()</code>应返回986262。
-    testString: 'assert.strictEqual(euler179(), 986262, "<code>euler179()</code> should return 986262.");'
+    testString: assert.strictEqual(euler179(), 986262);
 
 ```
 

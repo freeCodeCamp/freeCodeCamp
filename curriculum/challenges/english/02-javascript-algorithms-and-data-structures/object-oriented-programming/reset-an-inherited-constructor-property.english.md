@@ -62,7 +62,7 @@ function Dog() { }
 Bird.prototype = Object.create(Animal.prototype);
 Dog.prototype = Object.create(Animal.prototype);
 
-// Add your code below this line
+// Only change code below this line
 
 
 

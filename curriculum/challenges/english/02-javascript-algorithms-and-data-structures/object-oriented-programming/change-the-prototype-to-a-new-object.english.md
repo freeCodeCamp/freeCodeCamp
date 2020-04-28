@@ -75,7 +75,7 @@ function Dog(name) {
 }
 
 Dog.prototype = {
-  // Add your code below this line
+  // Only change code below this line
 
 };
 ```

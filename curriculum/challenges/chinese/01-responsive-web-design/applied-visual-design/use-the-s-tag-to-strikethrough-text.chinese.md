@@ -3,26 +3,32 @@ id: 587d781b367417b2b2512aba
 title: Use the s Tag to Strikethrough Text
 challengeType: 0
 videoUrl: ''
-localeTitle: 使用s标记删除线文本
+forumTopicId: 301079
+localeTitle: 使用 s 标签给文本添加删除线
 ---
 
 ## Description
-<section id="description">要删除文本，即水平线跨越字符时，可以使用<code>s</code>标记。它表明一段文字不再有效。使用<code>s</code>标签，浏览器应用<code>text-decoration: line-through;</code>的CSS <code>text-decoration: line-through;</code>对元素。 </section>
+<section id='description'>
+术语：Strikethrough => s => 删除线。
+你可以用 <code>s</code> 标签来给文字添加删除线，<s>我是明晃晃的删除线</s>，它代表着这段文字不再有效。添加了 <code>s</code> 标签后，浏览器会自动给元素应用 <code>text-decoration: line-through;</code>。
+</section>
 
 ## Instructions
-<section id="instructions">将<code>s</code>标签包裹在<code>h4</code>标签内的“Google”周围，然后在其旁边添加单词Alphabet，它不应具有删除线格式。 </section>
+<section id='instructions'>
+在 <code>h4</code> 标签里的 “Google” 外添加 <code>s</code> 标签，然后在 <code>s</code> 标签外面添加单词 Alphabet，Alphabet 不要有删除线格式。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您的代码应一个加<code>s</code>标签来标记。
-    testString: 'assert($("s").length == 1, "Your code should add one <code>s</code> tag to the markup.");'
-  - text: <code>s</code>标记应该环绕<code>h4</code>标记中的Google文本。它不应包含单词Alphabet。
-    testString: 'assert($("s").text().match(/Google/gi) && !$("s").text().match(/Alphabet/gi), "A <code>s</code> tag should wrap around the Google text in the <code>h4</code> tag. It should not contain the word Alphabet.");'
-  - text: 在<code>h4</code>标记中包含单词Alphabet，不带删除线格式。
-    testString: 'assert($("h4").html().match(/Alphabet/gi), "Include the word Alphabet in the <code>h4</code> tag, without strikethrough formatting.");'
+  - text: '你应该添加一个 <code>s</code> 标签。'
+    testString: assert($('s').length == 1);
+  - text: ' <code>s</code> 标签应该在 <code>h4</code> 标签内的 Google 文字外面，它不应该包含单词 Alphabet。'
+    testString: assert($('h4 > s').text().match(/Google/gi) && !$('h4 > s').text().match(/Alphabet/gi));
+  - text: '<code>h4</code> 标签内应该有单词 Alphabet，Alphabet 应该没有删除线样式。'
+    testString: assert($('h4').html().match(/Alphabet/gi));
 
 ```
 
@@ -64,15 +70,14 @@ tests:
   <div class="cardContent">
     <div class="cardText">
       <h4>Google</h4>
-      <p><em>Google was founded by Larry Page and Sergey Brin while they were <u>Ph.D. students</u> at <strong>Stanford University</strong>.</em></p>
+      <p><em>Google 由在<strong>斯坦福大学</strong>攻读<u>理工博士</u>的拉里·佩奇和谢尔盖·布林共同创建。</em></p>
     </div>
     <div class="cardLinks">
-      <a href="https://en.wikipedia.org/wiki/Larry_Page" target="_blank" class="links">Larry Page</a><br><br>
-      <a href="https://en.wikipedia.org/wiki/Sergey_Brin" target="_blank" class="links">Sergey Brin</a>
+      <a href="https://en.wikipedia.org/wiki/Larry_Page" target="_blank" class="links">拉里·佩奇</a><br><br>
+      <a href="https://en.wikipedia.org/wiki/Sergey_Brin" target="_blank" class="links">谢尔盖·布林</a>
     </div>
   </div>
 </div>
-
 ```
 
 </div>
@@ -84,7 +89,9 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>
+              

@@ -18,13 +18,13 @@ localeTitle: 匹配开始字符串模式
 ```yml
 tests:
   - text: 你的正则表达式应该用大写字母搜索<code>&quot;Cal&quot;</code> 。
-    testString: 'assert(calRegex.source == "^Cal", "Your regex should search for <code>"Cal"</code> with a capital letter.");'
+    testString: assert(calRegex.source == "^Cal");
   - text: 你的正则表达式不应该使用任何标志。
-    testString: 'assert(calRegex.flags == "", "Your regex should not use any flags.");'
+    testString: assert(calRegex.flags == "");
   - text: 你的正则表达式应该匹配字符串开头的<code>&quot;Cal&quot;</code> 。
-    testString: 'assert(calRegex.test("Cal and Ricky both like racing."), "Your regex should match <code>"Cal"</code> at the beginning of the string.");'
+    testString: assert(calRegex.test("Cal and Ricky both like racing."));
   - text: 您的正则表达式不应与字符串中间的<code>&quot;Cal&quot;</code>匹配。
-    testString: 'assert(!calRegex.test("Ricky and Cal both like racing."), "Your regex should not match <code>"Cal"</code> in the middle of a string.");'
+    testString: assert(!calRegex.test("Ricky and Cal both like racing."));
 
 ```
 

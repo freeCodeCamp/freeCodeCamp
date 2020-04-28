@@ -19,17 +19,17 @@ localeTitle: 个人资料查询
 ```yml
 tests:
   - text: '<code>&quot;Kristian&quot;, &quot;lastName&quot;</code>应该返回<code>&quot;Vos&quot;</code>'
-    testString: 'assert(lookUpProfile("Kristian","lastName") === "Vos", "<code>"Kristian", "lastName"</code> should return <code>"Vos"</code>");'
+    testString: assert(lookUpProfile('Kristian','lastName') === "Vos");
   - text: '<code>&quot;Sherlock&quot;, &quot;likes&quot;</code>应该回归<code>[&quot;Intriguing Cases&quot;, &quot;Violin&quot;]</code>'
-    testString: 'assert.deepEqual(lookUpProfile("Sherlock", "likes"), ["Intriguing Cases", "Violin"], "<code>"Sherlock", "likes"</code> should return <code>["Intriguing Cases", "Violin"]</code>");'
+    testString: assert.deepEqual(lookUpProfile("Sherlock", "likes"), ["Intriguing Cases", "Violin"]);
   - text: '<code>&quot;Harry&quot;,&quot;likes&quot;</code>应该返回一个阵列'
-    testString: 'assert(typeof lookUpProfile("Harry", "likes") === "object", "<code>"Harry","likes"</code> should return an array");'
+    testString: assert(typeof lookUpProfile("Harry", "likes") === "object");
   - text: '<code>&quot;Bob&quot;, &quot;number&quot;</code>应该返回“没有这样的联系”'
-    testString: 'assert(lookUpProfile("Bob", "number") === "No such contact", "<code>"Bob", "number"</code> should return "No such contact"");'
+    testString: assert(lookUpProfile("Bob", "number") === "No such contact");
   - text: '<code>&quot;Bob&quot;, &quot;potato&quot;</code>应该返回“没有这样的联系”'
-    testString: 'assert(lookUpProfile("Bob", "potato") === "No such contact", "<code>"Bob", "potato"</code> should return "No such contact"");'
+    testString: assert(lookUpProfile("Bob", "potato") === "No such contact");
   - text: '<code>&quot;Akira&quot;, &quot;address&quot;</code>应该返回“没有这样的财产”'
-    testString: 'assert(lookUpProfile("Akira", "address") === "No such property", "<code>"Akira", "address"</code> should return "No such property"");'
+    testString: assert(lookUpProfile("Akira", "address") === "No such property");
 
 ```
 
