@@ -19,7 +19,7 @@ localeTitle: 使用helmet.dnsPrefetchControl（）禁用DNS预取
 ```yml
 tests:
   - text: 应该正确安装helmet.dnsPrefetchControl（）中间件
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/app-info").then(data => { assert.include(data.appStack, "dnsPrefetchControl"); assert.equal(data.headers["x-dns-prefetch-control"], "off"); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: getUserInput => $.get(getUserInput('url') + '/_api/app-info').then(data => { assert.include(data.appStack, 'dnsPrefetchControl'); assert.equal(data.headers['x-dns-prefetch-control'], 'off'); }, xhr => { throw new Error(xhr.responseText); })
 
 ```
 

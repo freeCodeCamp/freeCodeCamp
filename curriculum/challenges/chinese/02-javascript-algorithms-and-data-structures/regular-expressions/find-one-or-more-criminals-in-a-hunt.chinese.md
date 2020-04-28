@@ -18,19 +18,19 @@ localeTitle: 在狩猎中找到一个或多个罪犯
 ```yml
 tests:
   - text: 您正则表达式应该匹配<code>one</code>犯罪（“ <code>C</code>中”）， <code>&quot;C&quot;</code>
-    testString: 'assert("C".match(reCriminals) && "C".match(reCriminals)[0] == "C", "Your regex should match <code>one</code> criminal ("<code>C</code>") in <code>"C"</code>");'
+    testString: assert('C'.match(reCriminals) && 'C'.match(reCriminals)[0] == 'C');
   - text: 您正则表达式应该匹配<code>two</code>罪犯（“ <code>CC</code>中”） <code>&quot;CC&quot;</code>
-    testString: 'assert("CC".match(reCriminals) && "CC".match(reCriminals)[0] == "CC", "Your regex should match <code>two</code> criminals ("<code>CC</code>") in <code>"CC"</code>");'
+    testString: assert('CC'.match(reCriminals) && 'CC'.match(reCriminals)[0] == 'CC');
   - text: 你的正则表达式应匹配<code>&quot;P1P5P4CCCP2P6P3&quot;</code>中的<code>three</code>罪犯（“ <code>CCC</code> ”）
-    testString: 'assert("P1P5P4CCCP2P6P3".match(reCriminals) && "P1P5P4CCCP2P6P3".match(reCriminals)[0] == "CCC", "Your regex should match <code>three</code> criminals ("<code>CCC</code>") in <code>"P1P5P4CCCP2P6P3"</code>");'
+    testString: assert('P1P5P4CCCP2P6P3'.match(reCriminals) && 'P1P5P4CCCP2P6P3'.match(reCriminals)[0] == 'CCC');
   - text: 你的正则表达式应匹配<code>&quot;P6P2P7P4P5CCCCCP3P1&quot;</code>中的<code>five</code>罪犯（“ <code>CCCCC</code> ”）
-    testString: 'assert("P6P2P7P4P5CCCCCP3P1".match(reCriminals) && "P6P2P7P4P5CCCCCP3P1".match(reCriminals)[0] == "CCCCC", "Your regex should match <code>five</code> criminals ("<code>CCCCC</code>") in <code>"P6P2P7P4P5CCCCCP3P1"</code>");'
+    testString: assert('P6P2P7P4P5CCCCCP3P1'.match(reCriminals) && 'P6P2P7P4P5CCCCCP3P1'.match(reCriminals)[0] == 'CCCCC');
   - text: 你的正则表达式不应该匹配<code>&quot;&quot;</code>中的任何罪犯
-    testString: 'assert(!reCriminals.test(""), "Your regex should not match any criminals in <code>""</code>");'
+    testString: assert(!reCriminals.test(''));
   - text: 你的正则表达式不应该匹配<code>&quot;P1P2P3&quot;</code>中的任何罪犯
-    testString: 'assert(!reCriminals.test("P1P2P3"), "Your regex should not match any criminals in <code>"P1P2P3"</code>");'
+    testString: assert(!reCriminals.test('P1P2P3'));
   - text: 您正则表达式应该与<code>fifty</code>的罪犯（“ <code>CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC</code>中”） <code>&quot;P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3&quot;</code> 。
-    testString: 'assert("P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3".match(reCriminals) && "P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3".match(reCriminals)[0] == "CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC", "Your regex should match <code>fifty</code> criminals ("<code>CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC</code>") in <code>"P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3"</code>.");'
+    testString: assert('P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3'.match(reCriminals) && 'P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3'.match(reCriminals)[0] == "CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC");
 
 ```
 

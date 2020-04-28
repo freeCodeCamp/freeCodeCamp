@@ -71,7 +71,7 @@ tests:
       <input type="text" id="email" name="email">
 
 
-      <!-- Add your code below this line -->
+      <!-- Only change code below this line -->
       <div>
         <p>What level ninja are you?</p>
         <input id="newbie" type="radio" name="levels" value="newbie">
@@ -81,7 +81,7 @@ tests:
         <input id="master" type="radio" name="levels" value="master">
         <label for="master">Master</label>
       </div>
-      <!-- Add your code above this line -->
+      <!-- Only change code above this line -->
 
 
       <input type="submit" name="submit" value="Submit">
@@ -125,8 +125,6 @@ tests:
       <label for="email">Email:</label>
       <input type="text" id="email" name="email">
 
-
-      <!-- Add your code below this line -->
       <fieldset>
         <legend>What level ninja are you?</legend>
         <input id="newbie" type="radio" name="levels" value="newbie">
@@ -136,8 +134,6 @@ tests:
         <input id="master" type="radio" name="levels" value="master">
         <label for="master">Master</label>
       </fieldset>
-      <!-- Add your code above this line -->
-
 
       <input type="submit" name="submit" value="Submit">
     </form>

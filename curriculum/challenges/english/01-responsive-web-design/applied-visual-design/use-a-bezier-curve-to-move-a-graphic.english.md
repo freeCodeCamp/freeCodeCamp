@@ -29,7 +29,7 @@ tests:
   - text: The element with the id <code>red</code> should no longer have the <code>animation-timing-function</code> property of linear.
     testString: assert($('#red').css('animation-timing-function') !== 'linear');
   - text: The value of the <code>animation-timing-function</code> property for the element with the id <code>blue</code> should not change.
-    testString: assert($('#blue').css('animation-timing-function') == 'ease-out');
+    testString: const blueBallAnimation = $('#blue').css('animation-timing-function').replace(/\s/g, ''); assert(blueBallAnimation == 'ease-out' || blueBallAnimation == 'cubic-bezier(0,0,0.58,1)');
 
 ```
 

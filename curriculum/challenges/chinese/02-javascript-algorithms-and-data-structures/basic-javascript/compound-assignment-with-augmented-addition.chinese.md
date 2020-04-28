@@ -18,15 +18,15 @@ localeTitle: 具有增强加法的复合赋值
 ```yml
 tests:
   - text: <code>a</code>应该等于<code>15</code>
-    testString: 'assert(a === 15, "<code>a</code> should equal <code>15</code>");'
+    testString: assert(a === 15);
   - text: <code>b</code>应该等于<code>26</code>
-    testString: 'assert(b === 26, "<code>b</code> should equal <code>26</code>");'
+    testString: assert(b === 26);
   - text: <code>c</code>应该等于<code>19</code>
-    testString: 'assert(c === 19, "<code>c</code> should equal <code>19</code>");'
+    testString: assert(c === 19);
   - text: 您应该为每个变量使用<code>+=</code>运算符
-    testString: 'assert(code.match(/\+=/g).length === 3, "You should use the <code>+=</code> operator for each variable");'
+    testString: assert(code.match(/\+=/g).length === 3);
   - text: 不要修改行上方的代码
-    testString: 'assert(/var a = 3;/.test(code) && /var b = 17;/.test(code) && /var c = 12;/.test(code), "Do not modify the code above the line");'
+    testString: assert(/var a = 3;/.test(code) && /var b = 17;/.test(code) && /var c = 12;/.test(code));
 
 ```
 

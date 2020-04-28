@@ -19,7 +19,7 @@ localeTitle: 问题119：数字功率总和
 ```yml
 tests:
   - text: <code>euler119()</code>应该返回248155780267521。
-    testString: 'assert.strictEqual(euler119(), 248155780267521, "<code>euler119()</code> should return 248155780267521.");'
+    testString: assert.strictEqual(euler119(), 248155780267521);
 
 ```
 

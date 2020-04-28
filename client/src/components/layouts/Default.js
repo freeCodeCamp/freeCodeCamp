@@ -6,13 +6,13 @@ import { createSelector } from 'reselect';
 import Helmet from 'react-helmet';
 import fontawesome from '@fortawesome/fontawesome';
 
-import ga from '../../analytics';
 import {
   fetchUser,
   isSignedInSelector,
   onlineStatusChange,
   isOnlineSelector,
-  userSelector
+  userSelector,
+  executeGA
 } from '../../redux';
 import { flashMessageSelector, removeFlashMessage } from '../Flash/redux';
 
@@ -68,6 +68,7 @@ const metaKeywords = [
 
 const propTypes = {
   children: PropTypes.node.isRequired,
+  executeGA: PropTypes.func,
   fetchUser: PropTypes.func.isRequired,
   flashMessage: PropTypes.shape({
     id: PropTypes.string,
@@ -101,27 +102,27 @@ const mapStateToProps = createSelector(
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
-    { fetchUser, removeFlashMessage, onlineStatusChange },
+    { fetchUser, removeFlashMessage, onlineStatusChange, executeGA },
     dispatch
   );
 
 class DefaultLayout extends Component {
   componentDidMount() {
-    const { isSignedIn, fetchUser, pathname } = this.props;
+    const { isSignedIn, fetchUser, pathname, executeGA } = this.props;
     if (!isSignedIn) {
       fetchUser();
     }
-    ga.pageview(pathname);
+    executeGA({ type: 'page', data: pathname });
 
     window.addEventListener('online', this.updateOnlineStatus);
     window.addEventListener('offline', this.updateOnlineStatus);
   }
 
   componentDidUpdate(prevProps) {
-    const { pathname } = this.props;
+    const { pathname, executeGA } = this.props;
     const { pathname: prevPathname } = prevProps;
     if (pathname !== prevPathname) {
-      ga.pageview(pathname);
+      executeGA({ type: 'page', data: pathname });
     }
   }
 
@@ -160,9 +161,9 @@ class DefaultLayout extends Component {
           meta={[
             {
               name: 'description',
-              content:
-                'Learn to code with free online courses, programming ' +
-                'projects, and interview preparation for developer jobs.'
+              content: `Learn to code at home. Build projects. Earn certifications. Since 2014,
+                 more than 40,000 freeCodeCamp.org graduates have gotten jobs at tech
+                 companies including Google, Apple, Amazon, and Microsoft.`
             },
             { name: 'keywords', content: metaKeywords.join(', ') }
           ]}

@@ -47,7 +47,8 @@ const __utils = (() => {
   return {
     postResult,
     log,
-    toggleProxyLogger
+    toggleProxyLogger,
+    flushLogs
   };
 })();
 
@@ -69,12 +70,11 @@ self.onmessage = async e => {
     try {
       // Logging is proxyed after the build to catch console.log messages
       // generated during testing.
-      testResult = eval(`
-        ${e.data.build}
-        __userCodeWasExecuted = true;
-        __utils.toggleProxyLogger(true);
-        ${e.data.testString}
-      `);
+      testResult = eval(`${e.data.build}
+__utils.flushLogs();
+__userCodeWasExecuted = true;
+__utils.toggleProxyLogger(true);
+${e.data.testString}`);
     } catch (err) {
       if (__userCodeWasExecuted) {
         // rethrow error, since test failed.

@@ -54,11 +54,11 @@ tests:
     width: 100%;
     background: LightGray;
     display: grid;
-    /* change the code below this line */
+    /* Only change code below this line */
 
     grid-template-columns: repeat(3, minmax(60px, 1fr));
 
-    /* change the code above this line */
+    /* Only change code above this line */
     grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 10px;
   }
@@ -114,11 +114,11 @@ tests:
     width: 100%;
     background: LightGray;
     display: grid;
-    /* change the code below this line */
+    /* Only change code below this line */
     
     grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
     
-    /* change the code above this line */
+    /* Only change code above this line */
     grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 10px;
   }

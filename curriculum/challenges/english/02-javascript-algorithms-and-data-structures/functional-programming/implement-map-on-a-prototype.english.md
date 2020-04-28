@@ -26,7 +26,7 @@ tests:
   - text: <code>new_s</code> should equal <code>[46, 130, 196, 10]</code>.
     testString: assert(JSON.stringify(new_s) === JSON.stringify([46, 130, 196, 10]));
   - text: Your code should not use the <code>map</code> method.
-    testString: assert(!code.match(/\.map/g));
+    testString: assert(!code.match(/\.?[\s\S]*?map/g));
 
 ```
 
@@ -38,14 +38,14 @@ tests:
 <div id='js-seed'>
 
 ```js
-// the global Array
+// The global variable
 var s = [23, 65, 98, 5];
 
 Array.prototype.myMap = function(callback){
   var newArray = [];
-  // Add your code below this line
+  // Only change code below this line
 
-  // Add your code above this line
+  // Only change code above this line
   return newArray;
 
 };
@@ -70,11 +70,11 @@ var s = [23, 65, 98, 5];
 
 Array.prototype.myMap = function(callback){
   var newArray = [];
-  // Add your code below this line
+  // Only change code below this line
   for (var elem of this) {
     newArray.push(callback(elem));
   }
-  // Add your code above this line
+  // Only change code above this line
   return newArray;
 
 };

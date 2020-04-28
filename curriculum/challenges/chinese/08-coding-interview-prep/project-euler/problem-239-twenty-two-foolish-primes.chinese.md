@@ -19,7 +19,7 @@ localeTitle: 问题239：二十二个愚蠢的素数
 ```yml
 tests:
   - text: <code>euler239()</code>应该返回0.001887854841。
-    testString: 'assert.strictEqual(euler239(), 0.001887854841, "<code>euler239()</code> should return 0.001887854841.");'
+    testString: assert.strictEqual(euler239(), 0.001887854841);
 
 ```
 

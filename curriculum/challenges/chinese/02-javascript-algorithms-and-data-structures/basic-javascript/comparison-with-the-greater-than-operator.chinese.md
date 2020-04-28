@@ -18,21 +18,21 @@ localeTitle: 与大于运营商的比较
 ```yml
 tests:
   - text: <code>testGreaterThan(0)</code>应返回“10或Under”
-    testString: 'assert(testGreaterThan(0) === "10 or Under", "<code>testGreaterThan(0)</code> should return "10 or Under"");'
+    testString: assert(testGreaterThan(0) === "10 or Under");
   - text: <code>testGreaterThan(10)</code>应返回“10或Under”
-    testString: 'assert(testGreaterThan(10) === "10 or Under", "<code>testGreaterThan(10)</code> should return "10 or Under"");'
+    testString: assert(testGreaterThan(10) === "10 or Under");
   - text: <code>testGreaterThan(11)</code>应该返回“Over 10”
-    testString: 'assert(testGreaterThan(11) === "Over 10", "<code>testGreaterThan(11)</code> should return "Over 10"");'
+    testString: assert(testGreaterThan(11) === "Over 10");
   - text: <code>testGreaterThan(99)</code>应该返回“Over 10”
-    testString: 'assert(testGreaterThan(99) === "Over 10", "<code>testGreaterThan(99)</code> should return "Over 10"");'
+    testString: assert(testGreaterThan(99) === "Over 10");
   - text: <code>testGreaterThan(100)</code>应该返回“Over 10”
-    testString: 'assert(testGreaterThan(100) === "Over 10", "<code>testGreaterThan(100)</code> should return "Over 10"");'
+    testString: assert(testGreaterThan(100) === "Over 10");
   - text: <code>testGreaterThan(101)</code>应返回“超过100”
-    testString: 'assert(testGreaterThan(101) === "Over 100", "<code>testGreaterThan(101)</code> should return "Over 100"");'
+    testString: assert(testGreaterThan(101) === "Over 100");
   - text: <code>testGreaterThan(150)</code>应该返回“超过100”
-    testString: 'assert(testGreaterThan(150) === "Over 100", "<code>testGreaterThan(150)</code> should return "Over 100"");'
+    testString: assert(testGreaterThan(150) === "Over 100");
   - text: 您应该至少使用<code>&gt;</code>运算符两次
-    testString: 'assert(code.match(/val\s*>\s*("|")*\d+("|")*/g).length > 1, "You should use the <code>&gt;</code> operator at least twice");'
+    testString: assert(code.match(/val\s*>\s*('|")*\d+('|")*/g).length > 1);
 
 ```
 

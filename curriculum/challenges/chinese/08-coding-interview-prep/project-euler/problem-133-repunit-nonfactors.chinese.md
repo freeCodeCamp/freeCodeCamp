@@ -19,7 +19,7 @@ localeTitle: 问题133：重新计算非因素
 ```yml
 tests:
   - text: <code>euler133()</code>应返回453647705。
-    testString: 'assert.strictEqual(euler133(), 453647705, "<code>euler133()</code> should return 453647705.");'
+    testString: assert.strictEqual(euler133(), 453647705);
 
 ```
 

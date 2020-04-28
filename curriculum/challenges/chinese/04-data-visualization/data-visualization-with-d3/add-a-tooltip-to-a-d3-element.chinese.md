@@ -18,25 +18,25 @@ localeTitle: 将工具提示添加到D3元素
 ```yml
 tests:
   - text: 您的代码应该有9个<code>title</code>元素。
-    testString: 'assert($("title").length == 9, "Your code should have 9 <code>title</code> elements.");'
+    testString: assert($('title').length == 9);
   - text: 第一个<code>title</code>元素的工具提示文本应为12。
-    testString: 'assert($("title").eq(0).text() == "12", "The first <code>title</code> element should have tooltip text of 12.");'
+    testString: assert($('title').eq(0).text() == '12');
   - text: 第二个<code>title</code>元素的工具提示文本应为31。
-    testString: 'assert($("title").eq(1).text() == "31", "The second <code>title</code> element should have tooltip text of 31.");'
+    testString: assert($('title').eq(1).text() == '31');
   - text: 第三个<code>title</code>元素的工具提示文本应为22。
-    testString: 'assert($("title").eq(2).text() == "22", "The third <code>title</code> element should have tooltip text of 22.");'
+    testString: assert($('title').eq(2).text() == '22');
   - text: 第四个<code>title</code>元素的工具提示文本应为17。
-    testString: 'assert($("title").eq(3).text() == "17", "The fourth <code>title</code> element should have tooltip text of 17.");'
+    testString: assert($('title').eq(3).text() == '17');
   - text: 第五个<code>title</code>元素的工具提示文本应为25。
-    testString: 'assert($("title").eq(4).text() == "25", "The fifth <code>title</code> element should have tooltip text of 25.");'
+    testString: assert($('title').eq(4).text() == '25');
   - text: 第六个<code>title</code>元素的工具提示文本应为18。
-    testString: 'assert($("title").eq(5).text() == "18", "The sixth <code>title</code> element should have tooltip text of 18.");'
+    testString: assert($('title').eq(5).text() == '18');
   - text: 第七个<code>title</code>元素的工具提示文本应为29。
-    testString: 'assert($("title").eq(6).text() == "29", "The seventh <code>title</code> element should have tooltip text of 29.");'
+    testString: assert($('title').eq(6).text() == '29');
   - text: 第八个<code>title</code>元素的工具提示文本应为14。
-    testString: 'assert($("title").eq(7).text() == "14", "The eighth <code>title</code> element should have tooltip text of 14.");'
+    testString: assert($('title').eq(7).text() == '14');
   - text: 第九个<code>title</code>元素的工具提示文本应为9。
-    testString: 'assert($("title").eq(8).text() == "9", "The ninth <code>title</code> element should have tooltip text of 9.");'
+    testString: assert($('title').eq(8).text() == '9');
 
 ```
 

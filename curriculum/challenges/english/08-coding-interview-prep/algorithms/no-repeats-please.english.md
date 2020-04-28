@@ -9,7 +9,6 @@ forumTopicId: 16037
 <section id='description'>
 Return the number of total permutations of the provided string that don't have repeated consecutive letters. Assume that all characters in the provided string are each unique.
 For example, <code>aab</code> should return 2 because it has 6 total permutations (<code>aab</code>, <code>aab</code>, <code>aba</code>, <code>aba</code>, <code>baa</code>, <code>baa</code>), but only 2 of them (<code>aba</code> and <code>aba</code>) don't have the same letter (in this case <code>a</code>) repeating.
-Remember to use <a href='https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code.
 </section>
 
 ## Instructions
@@ -72,12 +71,12 @@ permAlone('aab');
 
 ```js
 function permAlone(str) {
-  return permutor(str).filter(function(perm) {
+  return permuter(str).filter(function(perm) {
     return !perm.match(/(.)\1/g);
   }).length;
 }
 
-function permutor(str) {
+function permuter(str) {
   // http://staff.roguecc.edu/JMiller/JavaScript/permute.html
   //permArr: Global array which holds the list of permutations
   //usedChars: Global utility array which holds a list of "currently-in-use" characters

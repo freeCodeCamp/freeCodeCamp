@@ -7,12 +7,12 @@ forumTopicId: 302207
 
 ## Description
 <section id='description'>
+
 Each of the six faces on a cube has a different digit (0 to 9) written on it; the same is done to a second cube. By placing the two cubes side-by-side in different positions we can form a variety of 2-digit numbers.
 
 For example, the square number 64 could be formed:
 
-
-
+<img class="img-responsive center-block" alt="two cubes, one with the number 6 and the other with number 4" src="https://cdn-media-1.freecodecamp.org/project-euler/cube-digit-pairs.png" style="background-color: white; padding: 10px;">
 
 In fact, by carefully choosing the digits on both cubes it is possible to display all of the square numbers below one-hundred: 01, 04, 09, 16, 25, 36, 49, 64, and 81.
 
@@ -22,12 +22,15 @@ However, for this problem we shall allow the 6 or 9 to be turned upside-down so 
 
 In determining a distinct arrangement we are interested in the digits on each cube, not the order.
 
-{1, 2, 3, 4, 5, 6} is equivalent to {3, 6, 4, 1, 2, 5}
-{1, 2, 3, 4, 5, 6} is distinct from {1, 2, 3, 4, 5, 9}
+<div style="margin-left: 4em;">
+  {1, 2, 3, 4, 5, 6} is equivalent to {3, 6, 4, 1, 2, 5}<br>
+  {1, 2, 3, 4, 5, 6} is distinct from {1, 2, 3, 4, 5, 9}
+</div>
 
 But because we are allowing 6 and 9 to be reversed, the two distinct sets in the last example both represent the extended set {1, 2, 3, 4, 5, 6, 9} for the purpose of forming 2-digit numbers.
 
 How many distinct arrangements of the two cubes allow for all of the square numbers to be displayed?
+
 </section>
 
 ## Instructions
@@ -40,8 +43,10 @@ How many distinct arrangements of the two cubes allow for all of the square numb
 
 ```yml
 tests:
-  - text: <code>euler90()</code> should return 1217.
-    testString: assert.strictEqual(euler90(), 1217);
+  - text: <code>cubeDigitPairs()</code> should return a number.
+    testString: assert(typeof cubeDigitPairs() === 'number');
+  - text: <code>cubeDigitPairs()</code> should return 1217.
+    testString: assert.strictEqual(cubeDigitPairs(), 1217);
 
 ```
 
@@ -53,12 +58,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function euler90() {
+function cubeDigitPairs() {
   // Good luck!
   return true;
 }
 
-euler90();
+cubeDigitPairs();
 ```
 
 </div>

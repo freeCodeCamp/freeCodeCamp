@@ -7,51 +7,29 @@ forumTopicId: 302181
 
 ## Description
 <section id='description'>
-Euler's Totient function, φ(n) [sometimes called the phi function], is used to determine the number of numbers less than n which are relatively prime to n. For example, as 1, 2, 4, 5, 7, and 8, are all less than nine and relatively prime to nine, φ(9)=6.
 
-n
-Relatively Prime
-φ(n)
-n/φ(n)
-2
-1
-1
-2
-3
-1,2
-2
-1.5
-4
-1,3
-2
-2
-5
-1,2,3,4
-4
-1.25
-6
-1,5
-2
-3
-7
-1,2,3,4,5,6
-6
-1.1666...
-8
-1,3,5,7
-4
-2
-9
-1,2,4,5,7,8
-6
-1.5
-10
-1,3,7,9
-4
-2.5
+Euler's Totient function, φ(<var>n</var>) [sometimes called the phi function], is used to determine the number of numbers less than <var>n</var> which are relatively prime to <var>n</var>. For example, as 1, 2, 4, 5, 7, and 8, are all less than nine and relatively prime to nine, φ(9)=6.
 
-It can be seen that n=6 produces a maximum n/φ(n) for n ≤ 10.
-Find the value of n ≤ 1,000,000 for which n/φ(n) is a maximum.
+<div style='margin-left: 4em;'>
+
+  |<var>n</var>|Relatively Prime|φ(<var>n</var>)|<var>n</var>/φ(<var>n</var>)|
+  |--- |--- |--- |--- |
+  |2|1|1|2|
+  |3|1,2|2|1.5|
+  |4|1,3|2|2|
+  |5|1,2,3,4|4|1.25|
+  |6|1,5|2|3|
+  |7|1,2,3,4,5,6|6|1.1666...|
+  |8|1,3,5,7|4|2|
+  |9|1,2,4,5,7,8|6|1.5|
+  |10|1,3,7,9|4|2.5|
+
+</div>
+
+It can be seen that <var>n</var>=6 produces a maximum <var>n</var>/φ(<var>n</var>) for <var>n</var> ≤ 10.
+
+Find the value of <var>n</var> ≤ 1,000,000 for which n/φ(<var>n</var>) is a maximum.
+
 </section>
 
 ## Instructions
@@ -64,8 +42,10 @@ Find the value of n ≤ 1,000,000 for which n/φ(n) is a maximum.
 
 ```yml
 tests:
-  - text: <code>euler69()</code> should return 510510.
-    testString: assert.strictEqual(euler69(), 510510);
+  - text: <code>totientMaximum()</code> should return a number.
+    testString: assert(typeof totientMaximum() === 'number');
+  - text: <code>totientMaximum()</code> should return 510510.
+    testString: assert.strictEqual(totientMaximum(), 510510);
 
 ```
 
@@ -77,12 +57,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function euler69() {
+function totientMaximum() {
   // Good luck!
   return true;
 }
 
-euler69();
+totientMaximum();
 ```
 
 </div>

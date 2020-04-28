@@ -19,7 +19,7 @@ localeTitle: 问题120：方形剩余部分
 ```yml
 tests:
   - text: <code>euler120()</code>应返回333082500。
-    testString: 'assert.strictEqual(euler120(), 333082500, "<code>euler120()</code> should return 333082500.");'
+    testString: assert.strictEqual(euler120(), 333082500);
 
 ```
 

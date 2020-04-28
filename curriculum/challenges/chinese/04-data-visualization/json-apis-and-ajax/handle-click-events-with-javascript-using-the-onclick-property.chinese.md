@@ -18,9 +18,9 @@ localeTitle: 使用onclick属性处理使用JavaScript单击事件
 ```yml
 tests:
   - text: 您的代码应使用<code>document.getElementById</code>方法来选择<code>getMessage</code>元素。
-    testString: 'assert(code.match(/document\.getElementById\(\s*?("|")getMessage\1\s*?\)/g), "Your code should use the <code>document.getElementById</code> method to select the <code>getMessage</code> element.");'
+    testString: assert(code.match(/document\s*\.getElementById\(\s*?('|")getMessage\1\s*?\)/g));
   - text: 您的代码应添加<code>onclick</code>事件处理程序。
-    testString: 'assert(typeof document.getElementById("getMessage").onclick === "function", "Your code should add an <code>onclick</code> event handler.");'
+    testString: assert(typeof document.getElementById('getMessage').onclick === 'function');
 
 ```
 

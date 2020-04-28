@@ -67,21 +67,11 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Example
-var ourDog = {
-  "name": "Camper",
-  "legs": 4,
-  "tails": 1,
-  "friends": ["everything!"]
-};
-
-// Only change code below this line.
-
 var myDog = {
+// Only change code below this line
 
 
-
-
+// Only change code above this line
 };
 ```
 

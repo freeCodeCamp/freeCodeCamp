@@ -42,7 +42,7 @@ Submit your page when you think you've got it right.
 tests:
   - text: You should serialize user function correctly.
     testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /passport.serializeUser/gi, 'You should have created your passport.serializeUser function'); assert.match(data, /null, user._id/gi, 'There should be a callback in your serializeUser with (null, user._id)'); }, xhr => { throw new Error(xhr.statusText); })
-  - text: YOu should deserialize user function correctly.
+  - text: You should deserialize user function correctly.
     testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /passport.deserializeUser/gi, 'You should have created your passport.deserializeUser function'); assert.match(data, /null,( |)null/gi, 'There should be a callback in your deserializeUser with (null, null) for now'); }, xhr => { throw new Error(xhr.statusText); })
   - text: MongoDB should be a dependency.
     testString: getUserInput => $.get(getUserInput('url')+ '/_api/package.json') .then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, 'mongodb', 'Your project should list "mongodb" as a dependency'); }, xhr => { throw new Error(xhr.statusText); })

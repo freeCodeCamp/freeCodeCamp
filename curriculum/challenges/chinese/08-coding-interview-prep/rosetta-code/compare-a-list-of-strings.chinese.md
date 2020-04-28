@@ -19,29 +19,29 @@ localeTitle: 比较字符串列表
 ```yml
 tests:
   - text: <code>allEqual</code>是一个函数。
-    testString: 'assert(typeof allEqual === "function", "<code>allEqual</code> is a function.");'
+    testString: assert(typeof allEqual === 'function');
   - text: <code>azSorted</code>是一个函数。
-    testString: 'assert(typeof azSorted === "function", "<code>azSorted</code> is a function.");'
-  - text: '<code>allEqual([&quot;AA&quot;, &quot;AA&quot;, &quot;AA&quot;, &quot;AA&quot;])</code>返回true。'
-    testString: 'assert(allEqual(testCases[0]), "<code>allEqual(["AA", "AA", "AA", "AA"])</code> returns true.");'
-  - text: '<code>azSorted([&quot;AA&quot;, &quot;AA&quot;, &quot;AA&quot;, &quot;AA&quot;])</code>返回false。'
-    testString: 'assert(!azSorted(testCases[0]), "<code>azSorted(["AA", "AA", "AA", "AA"])</code> returns false.");'
-  - text: '<code>allEqual([&quot;AA&quot;, &quot;ACB&quot;, &quot;BB&quot;, &quot;CC&quot;])</code>返回false。'
-    testString: 'assert(!allEqual(testCases[1]), "<code>allEqual(["AA", "ACB", "BB", "CC"])</code> returns false.");'
-  - text: '<code>azSorted([&quot;AA&quot;, &quot;ACB&quot;, &quot;BB&quot;, &quot;CC&quot;])</code>返回true。'
-    testString: 'assert(azSorted(testCases[1]), "<code>azSorted(["AA", "ACB", "BB", "CC"])</code> returns true.");'
-  - text: '<code>allEqual([])</code>返回true。'
-    testString: 'assert(allEqual(testCases[2]), "<code>allEqual([])</code> returns true.");'
-  - text: '<code>azSorted([])</code>返回true。'
-    testString: 'assert(azSorted(testCases[2]), "<code>azSorted([])</code> returns true.");'
-  - text: '<code>allEqual([&quot;AA&quot;])</code>返回true。'
-    testString: 'assert(allEqual(testCases[3]), "<code>allEqual(["AA"])</code> returns true.");'
-  - text: '<code>azSorted([&quot;AA&quot;])</code>返回true。'
-    testString: 'assert(azSorted(testCases[3]), "<code>azSorted(["AA"])</code> returns true.");'
-  - text: '<code>allEqual([&quot;BB&quot;, &quot;AA&quot;])</code>返回false。'
-    testString: 'assert(!allEqual(testCases[4]), "<code>allEqual(["BB", "AA"])</code> returns false.");'
-  - text: '<code>azSorted([&quot;BB&quot;, &quot;AA&quot;])</code>返回false。'
-    testString: 'assert(!azSorted(testCases[4]), "<code>azSorted(["BB", "AA"])</code> returns false.");'
+    testString: assert(typeof azSorted === 'function');
+  - text: <code>allEqual(["AA", "AA", "AA", "AA"])</code>返回true。
+    testString: assert(allEqual(testCases[0]));
+  - text: <code>azSorted(["AA", "AA", "AA", "AA"])</code>返回false。
+    testString: assert(!azSorted(testCases[0]));
+  - text: <code>allEqual(["AA", "ACB", "BB", "CC"])</code>返回false。
+    testString: assert(!allEqual(testCases[1]));
+  - text: <code>azSorted(["AA", "ACB", "BB", "CC"])</code>返回true。
+    testString: assert(azSorted(testCases[1]));
+  - text: <code>allEqual([])</code>返回true。
+    testString: assert(allEqual(testCases[2]));
+  - text: <code>azSorted([])</code>返回true。
+    testString: assert(azSorted(testCases[2]));
+  - text: <code>allEqual(["AA"])</code>返回true。
+    testString: assert(allEqual(testCases[3]));
+  - text: <code>azSorted(["AA"])</code>返回true。
+    testString: assert(azSorted(testCases[3]));
+  - text: <code>allEqual(["BB", "AA"])</code>返回false。
+    testString: assert(!allEqual(testCases[4]));
+  - text: <code>azSorted(["BB", "AA"])</code>返回false。
+    testString: assert(!azSorted(testCases[4]));
 
 ```
 

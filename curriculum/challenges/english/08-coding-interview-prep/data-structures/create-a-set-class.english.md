@@ -71,27 +71,31 @@ tests:
 
 ```js
 class Set {
-    constructor() {
-    // collection will hold our set
-    this.collection = [];
-    }
-    // this method will check for the presence of an element and return true or false
-    has(element) {
-        return this.collection.indexOf(element) !== -1;
-    }
-    // this method will return all the values in the set
-    values() {
-        return this.collection;
-    }
-    // change code below this line
+  constructor() {
+    // Dictionary will hold the items of our set
+    this.dictionary = {};
+    this.length = 0;
+  }
 
-    // write your add method here
+  // This method will check for the presence of an element and return true or false
+  has(element) {
+    return this.dictionary[element] !== undefined;
+  }
 
-    // write your remove method here
+  // This method will return all the values in the set as an array
+  values() {
+    return Object.keys(this.dictionary);
+  }
 
-    // write your size method here
+  // change code below this line
+  
+  // write your add method here
 
-    // change code above this line
+  // write your remove method here
+
+  // write your size method here
+
+  // change code above this line
 }
 ```
 
@@ -105,32 +109,40 @@ class Set {
 ```js
 class Set {
   constructor() {
-    this.collection = [];
+    this.dictionary = {};
+    this.length = 0;
   }
+
   has(element) {
-    return this.collection.indexOf(element) !== -1;
+    return this.dictionary[element] !== undefined;
   }
+
   values() {
-    return this.collection;
+    return Object.keys(this.dictionary);
   }
+
   add(element) {
     if (!this.has(element)) {
-      this.collection.push(element);
-      return true;
-    } else {
-      return false;
-    }
-  }
-  remove(element) {
-    if (this.has(element)) {
-      let i = this.collection.indexOf(element);
-      this.collection.splice(i, 1);
+      this.dictionary[element] = true;
+      this.length++;
       return true;
     }
+
     return false;
   }
+
+  remove(element) {
+    if (this.has(element)) {
+      delete this.dictionary[element];
+      this.length--;
+      return true;
+    }
+
+    return false;
+  }
+
   size() {
-    return this.collection.length;
+    return this.length;
   }
 }
 ```

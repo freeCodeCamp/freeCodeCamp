@@ -2,23 +2,29 @@
 id: 5a94fe6269fb03452672e462
 title: Create Flexible Layouts Using auto-fit
 challengeType: 0
-videoUrl: ''
-localeTitle: 使用自动调整创建灵活布局
+videoUrl: 'https://scrimba.com/p/pByETK/c3dPph8'
+forumTopicId: 301127
+localeTitle: 使用 auto-fit 创建弹性布局
 ---
 
 ## Description
-<section id="description"> <code>auto-fit</code>几乎与<code>auto-fill</code>相同。唯一的区别是，当容器的大小超过所有项目组合的大小时， <code>auto-fill</code>会继续插入空行或列并将项目推向一侧，而<code>auto-fit</code>折叠这些空行或列并将项目拉伸到适合容器的大小。 <strong>注意</strong> <br>如果您的容器无法将所有项目放在一行上，则会将它们移动到新行。 </section>
+<section id='description'>
+<code>auto-fit</code>效果几乎和<code>auto-fill</code>一样。不同点仅在于，当容器的大小大于各网格项之和时，<code>auto-fill</code>将会持续地在一端放入空行或空列，这样就会使所有网格项挤到另一边；而<code>auto-fit</code>则不会在一端放入空行或空列，而是会将所有网格项拉伸至合适的大小。
+<strong>注意：</strong><br>如果容器无法使所有网格项放在同一行，余下的网格项将移至新的一行。
+</section>
 
 ## Instructions
-<section id="instructions">在第二个网格中，使用<code>auto-fit</code> <code>repeat</code>以使用最小宽度为<code>60px</code>且最大为<code>1fr</code>列填充网格。然后调整预览大小以查看差异。 </section>
+<section id='instructions'>
+在第二个网格中，用<code>auto-fit</code>和<code>repeat</code>来填充网格，其中列宽的最小值为<code>60px</code>，最大值为<code>1fr</code>。你可以调整最右侧的预览区以查看差异。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>container2</code>类应该具有<code>grid-template-columns</code>属性，该属性具有<code>repeat</code>和<code>auto-fit</code> ，它将使用最小宽度为<code>60px</code>且最大为<code>1fr</code>列填充网格。
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?repeat\s*?\(\s*?auto-fit\s*?,\s*?minmax\s*?\(\s*?60px\s*?,\s*?1fr\s*?\)\s*?\)\s*?;[\s\S]*}/gi), "<code>container2</code> class should have a <code>grid-template-columns</code> property with <code>repeat</code> and <code>auto-fit</code> that will fill the grid with columns that have a minimum width of <code>60px</code> and maximum of <code>1fr</code>.");'
+  - text: '<code>container2</code>类应该有<code>grid-template-columns</code>属性，且使用<code>repeat</code>和<code>auto-fit</code>以便将最小宽度为<code>60px</code>，最大宽度为<code>1fr</code>的列放入网格。'
+    testString: assert(code.match(/.container2\s*?{[\s\S]*grid-template-columns\s*?:\s*?repeat\s*?\(\s*?auto-fit\s*?,\s*?minmax\s*?\(\s*?60px\s*?,\s*?1fr\s*?\)\s*?\)\s*?;[\s\S]*}/gi));
 
 ```
 
@@ -36,34 +42,34 @@ tests:
   .item3{background:PaleTurquoise;}
   .item4{background:LightPink;}
   .item5{background:PaleGreen;}
-
+  
   .container {
     font-size: 40px;
     min-height: 100px;
     width: 100%;
     background: LightGray;
     display: grid;
-    grid-template-columns: repeat( auto-fill, minmax(60px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
     grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 10px;
   }
-
+  
   .container2 {
     font-size: 40px;
     min-height: 100px;
     width: 100%;
     background: Silver;
     display: grid;
-    /* change the code below this line */
-
+    /* 请修改本行以下的代码 */
+    
     grid-template-columns: repeat(3, minmax(60px, 1fr));
-
-    /* change the code above this line */
+    
+    /* 请修改本行以上的代码*/
     grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 10px;
   }
 </style>
-
+  
 <div class="container">
   <div class="item1">1</div>
   <div class="item2">2</div>
@@ -78,7 +84,6 @@ tests:
   <div class="item4">4</div>
   <div class="item5">5</div>
 </div>
-
 ```
 
 </div>
@@ -90,7 +95,10 @@ tests:
 ## Solution
 <section id='solution'>
 
+
 ```js
 // solution required
 ```
+
 </section>
+              

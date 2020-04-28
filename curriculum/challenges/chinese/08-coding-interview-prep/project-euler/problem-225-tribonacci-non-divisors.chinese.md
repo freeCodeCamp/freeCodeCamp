@@ -19,7 +19,7 @@ localeTitle: 问题225：Tribonacci非除数
 ```yml
 tests:
   - text: <code>euler225()</code>应该返回2009年。
-    testString: 'assert.strictEqual(euler225(), 2009, "<code>euler225()</code> should return 2009.");'
+    testString: assert.strictEqual(euler225(), 2009);
 
 ```
 

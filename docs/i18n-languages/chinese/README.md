@@ -126,7 +126,7 @@ freeCodeCamp.org提供了一些免费的开发技能认证证书。每个证书�
 
 ### 发现了一个安全问题？
 
-请不要在GitHub上为安全问题创建Issues。作为替代，请发送一个E-mail到`security@freecodecamp.org`，我们会紧接地对此进行调查。
+请不要在GitHub上为安全问题创建Issues。作为替代，请发送E-mail到`security@freecodecamp.org`，我们会立刻对此进行调查。
 
 ### 参与贡献
 

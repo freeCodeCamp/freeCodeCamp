@@ -58,7 +58,6 @@ function testStrictNotEqual(val) {
   return "Equal";
 }
 
-// Change this value to test
 testStrictNotEqual(10);
 ```
 
