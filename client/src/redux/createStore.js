@@ -33,7 +33,7 @@ export const createStore = () => {
   if (process.env.FREECODECAMP_NODE_ENV === 'production') {
     store = reduxCreateStore(
       rootReducer,
-      composeEnhancers(applyMiddleware(sagaMiddleware, epicMiddleware))
+      applyMiddleware(sagaMiddleware, epicMiddleware)
     );
   } else {
     store = reduxCreateStore(
