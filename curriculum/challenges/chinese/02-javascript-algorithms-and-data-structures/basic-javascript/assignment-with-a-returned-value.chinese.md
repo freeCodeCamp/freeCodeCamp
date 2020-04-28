@@ -7,7 +7,7 @@ localeTitle: 具有返回值的分配
 ---
 
 ## Description
-<section id="description">如果您从我们对<a href="learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank">使用赋值运算符存储值</a>的讨论中回忆起来<a href="learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank">，则在分配</a>值之前，将解决等号右侧的所有内容。这意味着我们可以获取函数的返回值并将其赋值给变量。假设我们预先定义了一个函数<code>sum</code> ，它将两个数字相加，然后： <code>ourSum = sum(5, 12);</code>将调用<code>sum</code>函数，它返回值<code>17</code>并将其分配给<code>ourSum</code>变量。 </section>
+<section id="description">如果您从我们对<a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank">使用赋值运算符存储值</a>的讨论中回忆起来<a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank">，则在分配</a>值之前，将解决等号右侧的所有内容。这意味着我们可以获取函数的返回值并将其赋值给变量。假设我们预先定义了一个函数<code>sum</code> ，它将两个数字相加，然后： <code>ourSum = sum(5, 12);</code>将调用<code>sum</code>函数，它返回值<code>17</code>并将其分配给<code>ourSum</code>变量。 </section>
 
 ## Instructions
 <section id="instructions">使用参数<code>7</code>调用<code>processArg</code>函数，并将其返回值分配给已<code>processed</code>的变量。 </section>
@@ -18,9 +18,9 @@ localeTitle: 具有返回值的分配
 ```yml
 tests:
   - text: <code>processed</code>的值应为<code>2</code>
-    testString: 'assert(processed === 2, "<code>processed</code> should have a value of <code>2</code>");'
+    testString: assert(processed === 2);
   - text: 您应该将<code>processArg</code>分配给已<code>processed</code>
-    testString: 'assert(/processed\s*=\s*processArg\(\s*7\s*\)\s*;/.test(code), "You should assign <code>processArg</code> to <code>processed</code>");'
+    testString: assert(/processed\s*=\s*processArg\(\s*7\s*\)/.test(code));
 
 ```
 

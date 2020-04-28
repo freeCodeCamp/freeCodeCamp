@@ -7,14 +7,23 @@ forumTopicId: 301768
 
 ## Description
 <section id='description'>
+
 The following iterative sequence is defined for the set of positive integers:
+
 <div style='padding-left: 4em;'><var>n</var> → <var>n</var>/2 (<var>n</var> is even)</div>
+
 <div style='padding-left: 4em;'><var>n</var> → 3<var>n</var> + 1 (<var>n</var> is odd)</div>
+
 Using the rule above and starting with 13, we generate the following sequence:
+
 <div style='text-align: center;'>13 → 40 → 20 → 10 → 5 → 16 → 8 → 4 → 2 → 1</div>
+
 It can be seen that this sequence (starting at 13 and finishing at 1) contains 10 terms. Although it has not been proved yet (Collatz Problem), it is thought that all starting numbers finish at 1.
-Which starting number, under the given <code>limit</code>, produces the longest chain?
-NOTE: Once the chain starts the terms are allowed to go above one million.
+
+Which starting number, under the given `limit`, produces the longest chain?
+
+**Note:** Once the chain starts the terms are allowed to go above one million.
+
 </section>
 
 ## Instructions
@@ -27,6 +36,8 @@ NOTE: Once the chain starts the terms are allowed to go above one million.
 
 ```yml
 tests:
+  - text: <code>longestCollatzSequence(14)</code> should return a number.
+    testString: assert(typeof longestCollatzSequence(14) === 'number');
   - text: <code>longestCollatzSequence(14)</code> should return 9.
     testString: assert.strictEqual(longestCollatzSequence(14), 9);
   - text: <code>longestCollatzSequence(5847)</code> should return 3711.
@@ -35,6 +46,8 @@ tests:
     testString: assert.strictEqual(longestCollatzSequence(46500), 35655);
   - text: <code>longestCollatzSequence(54512)</code> should return 52527.
     testString: assert.strictEqual(longestCollatzSequence(54512), 52527);
+  - text: <code>longestCollatzSequence(100000)</code> should return 77031.
+    testString: assert.strictEqual(longestCollatzSequence(100000), 77031);
   - text: <code>longestCollatzSequence(1000000)</code> should return 837799.
     testString: assert.strictEqual(longestCollatzSequence(1000000), 837799);
 
@@ -68,33 +81,28 @@ longestCollatzSequence(14);
 
 ```js
 function longestCollatzSequence(limit) {
-  let longestSequenceLength = 0;
-  let startingNum = 0;
-
-  function sequenceLength(num) {
-    let length = 1;
-
-    while (num >= 1) {
-      if (num === 1) {        break;
-      } else if (num % 2 === 0) {
-        num = num / 2;
-        length++;
-      } else {
-        num = num * 3 + 1;
-        length++;
-      }
-    }
-    return length;
-  }
-
-  for (let i = 2; i < limit; i++) {
-    let currSequenceLength = sequenceLength(i);
-    if (currSequenceLength > longestSequenceLength) {
-      longestSequenceLength = currSequenceLength;
-      startingNum = i;
+  let longest = 1;
+  let maxLength = 1;
+  for (let i = Math.floor(limit / 2); i < limit; i++) {
+    let len = colLen(i);
+    if (len > maxLength) {
+      longest = i;
+      maxLength = len;
     }
   }
-  return startingNum;
+  return longest;
+}
+
+const knownSequence = { '1': 1 };
+
+function colLen(n) {
+  if (knownSequence[n]) {
+    return knownSequence[n];
+  } else {
+    const len = n % 2 === 0 ? colLen(n / 2) + 1 : colLen((3 * n + 1) / 2) + 2;
+    knownSequence[n] = len;
+    return len;
+  }
 }
 ```
 

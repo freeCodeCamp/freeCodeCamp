@@ -18,27 +18,27 @@ localeTitle: 添加标签以分散绘图圆圈
 ```yml
 tests:
   - text: 您的代码应该有10个<code>text</code>元素。
-    testString: 'assert($("text").length == 10, "Your code should have 10 <code>text</code> elements.");'
+    testString: assert($('text').length == 10);
   - text: '第一个标签的文本应为“34,78”， <code>x</code>值为39， <code>y</code>值为422。'
-    testString: 'assert($("text").eq(0).text() == "34, 78" && $("text").eq(0).attr("x") == "39" && $("text").eq(0).attr("y") == "422", "The first label should have text of "34, 78", an <code>x</code> value of 39, and a <code>y</code> value of 422.");'
+    testString: assert($('text').eq(0).text() == '34, 78' && $('text').eq(0).attr('x') == '39' && $('text').eq(0).attr('y') == '422');
   - text: '第二个标签的文本应为“109,280”， <code>x</code>值为114， <code>y</code>值为220。'
-    testString: 'assert($("text").eq(1).text() == "109, 280" && $("text").eq(1).attr("x") == "114" && $("text").eq(1).attr("y") == "220", "The second label should have text of "109, 280", an <code>x</code> value of 114, and a <code>y</code> value of 220.");'
+    testString: assert($('text').eq(1).text() == '109, 280' && $('text').eq(1).attr('x') == '114' && $('text').eq(1).attr('y') == '220');
   - text: '第三个标签的文本应为“310,120”， <code>x</code>值为315， <code>y</code>值为380。'
-    testString: 'assert($("text").eq(2).text() == "310, 120" && $("text").eq(2).attr("x") == "315" && $("text").eq(2).attr("y") == "380", "The third label should have text of "310, 120", an <code>x</code> value of 315, and a <code>y</code> value of 380.");'
+    testString: assert($('text').eq(2).text() == '310, 120' && $('text').eq(2).attr('x') == '315' && $('text').eq(2).attr('y') == '380');
   - text: '第四个标签的文本应为“79,411”， <code>x</code>值为84， <code>y</code>值为89。'
-    testString: 'assert($("text").eq(3).text() == "79, 411" && $("text").eq(3).attr("x") == "84" && $("text").eq(3).attr("y") == "89", "The fourth label should have text of "79, 411", an <code>x</code> value of 84, and a <code>y</code> value of 89.");'
+    testString: assert($('text').eq(3).text() == '79, 411' && $('text').eq(3).attr('x') == '84' && $('text').eq(3).attr('y') == '89');
   - text: '第五个标签的文本应为“420,220”， <code>x</code>值为425， <code>y</code>值为280。'
-    testString: 'assert($("text").eq(4).text() == "420, 220" && $("text").eq(4).attr("x") == "425" && $("text").eq(4).attr("y") == "280", "The fifth label should have text of "420, 220", an <code>x</code> value of 425, and a <code>y</code> value of 280.");'
+    testString: assert($('text').eq(4).text() == '420, 220' && $('text').eq(4).attr('x') == '425' && $('text').eq(4).attr('y') == '280');
   - text: '第六个标签的文本应为“233,145”， <code>x</code>值为238， <code>y</code>值为355。'
-    testString: 'assert($("text").eq(5).text() == "233, 145" && $("text").eq(5).attr("x") == "238" && $("text").eq(5).attr("y") == "355", "The sixth label should have text of "233, 145", an <code>x</code> value of 238, and a <code>y</code> value of 355.");'
+    testString: assert($('text').eq(5).text() == '233, 145' && $('text').eq(5).attr('x') == '238' && $('text').eq(5).attr('y') == '355');
   - text: '第七个标签的文本应为“333,96”， <code>x</code>值为338， <code>y</code>值为404。'
-    testString: 'assert($("text").eq(6).text() == "333, 96" && $("text").eq(6).attr("x") == "338" && $("text").eq(6).attr("y") == "404", "The seventh label should have text of "333, 96", an <code>x</code> value of 338, and a <code>y</code> value of 404.");'
+    testString: assert($('text').eq(6).text() == '333, 96' && $('text').eq(6).attr('x') == '338' && $('text').eq(6).attr('y') == '404');
   - text: '第八个标签的文本应为“222,333”， <code>x</code>值为227， <code>y</code>值为167。'
-    testString: 'assert($("text").eq(7).text() == "222, 333" && $("text").eq(7).attr("x") == "227" && $("text").eq(7).attr("y") == "167", "The eighth label should have text of "222, 333", an <code>x</code> value of 227, and a <code>y</code> value of 167.");'
+    testString: assert($('text').eq(7).text() == '222, 333' && $('text').eq(7).attr('x') == '227' && $('text').eq(7).attr('y') == '167');
   - text: '第九个标签的文本应为“78,320”， <code>x</code>值为83， <code>y</code>值为180。'
-    testString: 'assert($("text").eq(8).text() == "78, 320" && $("text").eq(8).attr("x") == "83" && $("text").eq(8).attr("y") == "180", "The ninth label should have text of "78, 320", an <code>x</code> value of 83, and a <code>y</code> value of 180.");'
+    testString: assert($('text').eq(8).text() == '78, 320' && $('text').eq(8).attr('x') == '83' && $('text').eq(8).attr('y') == '180');
   - text: '第十个标签的文本应为“21,123”， <code>x</code>值为26， <code>y</code>值为377。'
-    testString: 'assert($("text").eq(9).text() == "21, 123" && $("text").eq(9).attr("x") == "26" && $("text").eq(9).attr("y") == "377", "The tenth label should have text of "21, 123", an <code>x</code> value of 26, and a <code>y</code> value of 377.");'
+    testString: assert($('text').eq(9).text() == '21, 123' && $('text').eq(9).attr('x') == '26' && $('text').eq(9).attr('y') == '377');
 
 ```
 

@@ -19,7 +19,7 @@ localeTitle: 问题373：外接圆圈
 ```yml
 tests:
   - text: <code>euler373()</code>应该返回727227472448913。
-    testString: 'assert.strictEqual(euler373(), 727227472448913, "<code>euler373()</code> should return 727227472448913.");'
+    testString: assert.strictEqual(euler373(), 727227472448913);
 
 ```
 

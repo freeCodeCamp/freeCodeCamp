@@ -19,21 +19,21 @@ localeTitle: 找到二叉搜索树的最小和最大高度
 ```yml
 tests:
   - text: 存在<code>BinarySearchTree</code>数据结构。
-    testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() }; return (typeof test == "object")})(), "The <code>BinarySearchTree</code> data structure exists.");'
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() }; return (typeof test == 'object')})());
   - text: 二叉搜索树有一个名为<code>findMinHeight</code>的方法。
-    testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() } else { return false; }; return (typeof test.findMinHeight == "function")})(), "The binary search tree has a method called <code>findMinHeight</code>.");'
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.findMinHeight == 'function')})());
   - text: 二叉搜索树有一个名为<code>findMaxHeight</code>的方法。
-    testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() } else { return false; }; return (typeof test.findMaxHeight == "function")})(), "The binary search tree has a method called <code>findMaxHeight</code>.");'
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.findMaxHeight == 'function')})());
   - text: 二叉搜索树有一个名为<code>isBalanced</code>的方法。
-    testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() } else { return false; }; return (typeof test.isBalanced == "function")})(), "The binary search tree has a method called <code>isBalanced</code>.");'
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.isBalanced == 'function')})());
   - text: <code>findMinHeight</code>方法返回树的最小高度。
-    testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() } else { return false; }; if (typeof test.findMinHeight !== "function") { return false; }; test.add(4); test.add(1); test.add(7); test.add(87); test.add(34); test.add(45); test.add(73); test.add(8); return (test.findMinHeight() == 1); })(), "The <code>findMinHeight</code> method returns the minimum height of the tree.");'
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.findMinHeight !== 'function') { return false; }; test.add(4); test.add(1); test.add(7); test.add(87); test.add(34); test.add(45); test.add(73); test.add(8); return (test.findMinHeight() == 1); })());
   - text: <code>findMaxHeight</code>方法返回树的最大高度。
-    testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() } else { return false; }; if (typeof test.findMaxHeight !== "function") { return false; }; test.add(4); test.add(1); test.add(7); test.add(87); test.add(34); test.add(45); test.add(73); test.add(8); return (test.findMaxHeight() == 5); })(), "The <code>findMaxHeight</code> method returns the maximum height of the tree.");'
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.findMaxHeight !== 'function') { return false; }; test.add(4); test.add(1); test.add(7); test.add(87); test.add(34); test.add(45); test.add(73); test.add(8); return (test.findMaxHeight() == 5); })());
   - text: 空树返回高度<code>-1</code> 。
-    testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() } else { return false; }; if (typeof test.findMaxHeight !== "function") { return false; }; return (test.findMaxHeight() == -1); })(), "An empty tree returns a height of <code>-1</code>.");'
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.findMaxHeight !== 'function') { return false; }; return (test.findMaxHeight() == -1); })());
   - text: 如果树是平衡二叉搜索树，则<code>isBalanced</code>方法返回true。
-    testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() } else { return false; }; if (typeof test.isBalanced !== "function") { return false; }; test.add(4); test.add(1); test.add(7); test.add(87); test.add(34); test.add(45); test.add(73); test.add(8); return test.isBalanced(); })(), "The <code>isBalanced</code> method returns true if the tree is a balanced binary search tree.");'
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.isBalanced !== 'function') { return false; }; test.add(4); test.add(1); test.add(7); test.add(87); test.add(34); test.add(45); test.add(73); test.add(8); return !test.isBalanced(); })());
 
 ```
 

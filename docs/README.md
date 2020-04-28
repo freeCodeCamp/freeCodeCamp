@@ -1,7 +1,3 @@
-<!--
+## Our contributing docs are available here: <https://contribute.freecodecamp.org>.
 
-This file should not be translated.
-
--->
-
-> ### If you are getting started, [you should read our contributing guidelines](/CONTRIBUTING.md) first.
+Looking to edit these docs? Read [this document](https://contribute.freecodecamp.org/#/how-to-work-on-the-docs-theme) first.

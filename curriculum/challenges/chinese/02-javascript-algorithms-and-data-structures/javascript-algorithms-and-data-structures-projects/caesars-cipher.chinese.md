@@ -20,13 +20,13 @@ localeTitle: 凯撒密码
 ```yml
 tests:
   - text: <code>rot13(&quot;SERR PBQR PNZC&quot;)</code>应解码为<code>FREE CODE CAMP</code>
-    testString: 'assert(rot13("SERR PBQR PNZC") === "FREE CODE CAMP", "<code>rot13("SERR PBQR PNZC")</code> should decode to <code>FREE CODE CAMP</code>");'
+    testString: assert(rot13("SERR PBQR PNZC") === "FREE CODE CAMP");
   - text: <code>rot13(&quot;SERR CVMMN!&quot;)</code>应该解码为<code>FREE PIZZA!</code> <code>rot13(&quot;SERR CVMMN!&quot;)</code> <code>FREE PIZZA!</code>
-    testString: 'assert(rot13("SERR CVMMN!") === "FREE PIZZA!", "<code>rot13("SERR CVMMN!")</code> should decode to <code>FREE PIZZA!</code>");'
+    testString: assert(rot13("SERR CVMMN!") === "FREE PIZZA!");
   - text: <code>rot13(&quot;SERR YBIR?&quot;)</code>应解码为<code>FREE LOVE?</code>
-    testString: 'assert(rot13("SERR YBIR?") === "FREE LOVE?", "<code>rot13("SERR YBIR?")</code> should decode to <code>FREE LOVE?</code>");'
+    testString: assert(rot13("SERR YBIR?") === "FREE LOVE?");
   - text: <code>rot13(&quot;GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.&quot;)</code>应该在<code>rot13(&quot;GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.&quot;)</code>解码到<code>THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.</code>
-    testString: 'assert(rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.") === "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.", "<code>rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.")</code> should decode to <code>THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.</code>");'
+    testString: assert(rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.") === "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.");
 
 ```
 

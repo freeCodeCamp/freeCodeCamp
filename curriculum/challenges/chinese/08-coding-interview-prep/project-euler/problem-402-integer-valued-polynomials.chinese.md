@@ -19,7 +19,7 @@ localeTitle: 问题402：整数值多项式
 ```yml
 tests:
   - text: <code>euler402()</code>应返回356019862。
-    testString: 'assert.strictEqual(euler402(), 356019862, "<code>euler402()</code> should return 356019862.");'
+    testString: assert.strictEqual(euler402(), 356019862);
 
 ```
 

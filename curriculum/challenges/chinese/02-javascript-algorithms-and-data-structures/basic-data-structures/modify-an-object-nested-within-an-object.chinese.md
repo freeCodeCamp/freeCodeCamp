@@ -18,13 +18,13 @@ localeTitle: 修改嵌套在对象中的对象
 ```yml
 tests:
   - text: <code>userActivity</code>具有<code>id</code> ， <code>date</code>和<code>data</code>属性
-    testString: 'assert("id" in userActivity && "date" in userActivity && "data" in userActivity, "<code>userActivity</code> has <code>id</code>, <code>date</code> and <code>data</code> properties");'
+    testString: assert('id' in userActivity && 'date' in userActivity && 'data' in userActivity);
   - text: <code>userActivity</code>具有设置为具有密钥<code>totalUsers</code>和<code>online</code>的对象的<code>data</code>密钥
-    testString: 'assert("totalUsers" in userActivity.data && "online" in userActivity.data, "<code>userActivity</code> has a <code>data</code> key set to an object with keys <code>totalUsers</code> and <code>online</code>");'
+    testString: assert('totalUsers' in userActivity.data && 'online' in userActivity.data);
   - text: 嵌套在<code>userActivity</code> <code>data</code>键中的<code>online</code>属性应设置为<code>45</code>
-    testString: 'assert(userActivity.data.online === 45, "The <code>online</code> property nested in the <code>data</code> key of <code>userActivity</code> should be set to <code>45</code>");'
+    testString: assert(userActivity.data.online === 45);
   - text: <code>online</code>属性使用点或括号表示法设置
-    testString: 'assert.strictEqual(code.search(/online: 45/), -1, "The <code>online</code> property is set using dot or bracket notation");'
+    testString: 'assert.strictEqual(code.search(/online: 45/), -1);'
 
 ```
 

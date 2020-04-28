@@ -18,23 +18,23 @@ localeTitle: 操纵复杂对象
 ```yml
 tests:
   - text: <code>myMusic</code>应该是一个数组
-    testString: 'assert(Array.isArray(myMusic), "<code>myMusic</code> should be an array");'
+    testString: assert(Array.isArray(myMusic));
   - text: <code>myMusic</code>应该至少有两个元素
-    testString: 'assert(myMusic.length > 1, "<code>myMusic</code> should have at least two elements");'
+    testString: assert(myMusic.length > 1);
   - text: '<code>myMusic[1]</code>应该是一个对象'
-    testString: 'assert(typeof myMusic[1] === "object", "<code>myMusic[1]</code> should be an object");'
+    testString: assert(typeof myMusic[1] === 'object');
   - text: '<code>myMusic[1]</code>应该至少有4个属性'
-    testString: 'assert(Object.keys(myMusic[1]).length > 3, "<code>myMusic[1]</code> should have at least 4 properties");'
+    testString: assert(Object.keys(myMusic[1]).length > 3);
   - text: '<code>myMusic[1]</code>应该包含一个<code>artist</code>属性，它是一个字符串'
-    testString: 'assert(myMusic[1].hasOwnProperty("artist") && typeof myMusic[1].artist === "string", "<code>myMusic[1]</code> should contain an <code>artist</code> property which is a string");'
+    testString: assert(myMusic[1].hasOwnProperty('artist') && typeof myMusic[1].artist === 'string');
   - text: '<code>myMusic[1]</code>应该包含一个<code>title</code>属性，它是一个字符串'
-    testString: 'assert(myMusic[1].hasOwnProperty("title") && typeof myMusic[1].title === "string", "<code>myMusic[1]</code> should  contain a <code>title</code> property which is a string");'
+    testString: assert(myMusic[1].hasOwnProperty('title') && typeof myMusic[1].title === 'string');
   - text: '<code>myMusic[1]</code>应该包含一个<code>release_year</code>属性，它是一个数字'
-    testString: 'assert(myMusic[1].hasOwnProperty("release_year") && typeof myMusic[1].release_year === "number", "<code>myMusic[1]</code> should contain a <code>release_year</code> property which is a number");'
+    testString: assert(myMusic[1].hasOwnProperty('release_year') && typeof myMusic[1].release_year === 'number');
   - text: '<code>myMusic[1]</code>应该包含一个<code>formats</code>属性，它是一个数组'
-    testString: 'assert(myMusic[1].hasOwnProperty("formats") && Array.isArray(myMusic[1].formats), "<code>myMusic[1]</code> should contain a <code>formats</code> property which is an array");'
+    testString: assert(myMusic[1].hasOwnProperty('formats') && Array.isArray(myMusic[1].formats));
   - text: <code>formats</code>应该是一个至少包含两个元素的字符串数组
-    testString: 'assert(myMusic[1].formats.every(function(item) { return (typeof item === "string")}) && myMusic[1].formats.length > 1, "<code>formats</code> should be an array of strings with at least two elements");'
+    testString: assert(myMusic[1].formats.every(function(item) { return (typeof item === "string")}) && myMusic[1].formats.length > 1);
 
 ```
 

@@ -13,7 +13,6 @@ First argument is the sentence to perform the search and replace on.
 Second argument is the word that you will be replacing (before).
 Third argument is what you will be replacing the second argument with (after).
 <strong>Note</strong><br> Preserve the case of the first character in the original word when you are replacing it. For example if you mean to replace the word "Book" with the word "dog", it should be replaced as "Dog"
-Remember to use <a href='https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code.
 </section>
 
 ## Instructions

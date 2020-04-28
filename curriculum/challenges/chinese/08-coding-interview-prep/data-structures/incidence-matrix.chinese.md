@@ -18,15 +18,15 @@ localeTitle: 发生率矩阵
 ```yml
 tests:
   - text: <code>incMatUndirected</code>应该只包含五个节点。
-    testString: 'assert((incMatUndirected.length === 5) && incMatUndirected.map(function(x) { return x.length === 4 }).reduce(function(a, b) { return a && b }) , "<code>incMatUndirected</code> should only contain five nodes.");'
+    testString: assert((incMatUndirected.length === 5) && incMatUndirected.map(function(x) { return x.length === 4 }).reduce(function(a, b) { return a && b }) );
   - text: 第一个和第二个节点之间应该有第一条边。
-    testString: 'assert((incMatUndirected[0][0] === 1) && (incMatUndirected[1][0] === 1), "There should be a first edge between the first and second node.");'
+    testString: assert((incMatUndirected[0][0] === 1) && (incMatUndirected[1][0] === 1));
   - text: 第二个和第三个节点之间应该有第二条边。
-    testString: 'assert((incMatUndirected[1][1] === 1) && (incMatUndirected[2][1] === 1), "There should be a second edge between the second and third node.");'
+    testString: assert((incMatUndirected[1][1] === 1) && (incMatUndirected[2][1] === 1));
   - text: 第三个和第五个节点之间应该有第三条边。
-    testString: 'assert((incMatUndirected[2][2] === 1) && (incMatUndirected[4][2] === 1), "There should be a third edge between the third and fifth node.");'
+    testString: assert((incMatUndirected[2][2] === 1) && (incMatUndirected[4][2] === 1));
   - text: 第二个和第四个节点之间应该有第四条边。
-    testString: 'assert((incMatUndirected[1][3] === 1) && (incMatUndirected[3][3] === 1), "There should be a fourth edge between the second and fourth node.");'
+    testString: assert((incMatUndirected[1][3] === 1) && (incMatUndirected[3][3] === 1));
 
 ```
 

@@ -70,7 +70,6 @@ function testLessOrEqual(val) {
   return "More Than 24";
 }
 
-// Change this value to test
 testLessOrEqual(10);
 
 ```

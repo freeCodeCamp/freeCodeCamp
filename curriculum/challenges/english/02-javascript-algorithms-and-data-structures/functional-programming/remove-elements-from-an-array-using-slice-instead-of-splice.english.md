@@ -32,7 +32,7 @@ tests:
   - text: Your code should use the <code>slice</code> method.
     testString: assert(code.match(/\.slice/g));
   - text: Your code should not use the <code>splice</code> method.
-    testString: assert(!code.match(/\.splice/g));
+    testString: assert(!code.match(/\.?[\s\S]*?splice/g));
   - text: The <code>inputCities</code> array should not change.
     testString: assert(JSON.stringify(inputCities) === JSON.stringify(["Chicago", "Delhi", "Islamabad", "London", "Berlin"]));
   - text: <code>nonMutatingSplice(["Chicago", "Delhi", "Islamabad", "London", "Berlin"])</code> should return <code>["Chicago", "Delhi", "Islamabad"]</code>.
@@ -49,10 +49,10 @@ tests:
 
 ```js
 function nonMutatingSplice(cities) {
-  // Add your code below this line
+  // Only change code below this line
   return cities.splice(3);
 
-  // Add your code above this line
+  // Only change code above this line
 }
 var inputCities = ["Chicago", "Delhi", "Islamabad", "London", "Berlin"];
 nonMutatingSplice(inputCities);
@@ -69,9 +69,9 @@ nonMutatingSplice(inputCities);
 
 ```js
 function nonMutatingSplice(cities) {
-  // Add your code below this line
+  // Only change code below this line
   return cities.slice(0,3);
-  // Add your code above this line
+  // Only change code above this line
 }
 var inputCities = ["Chicago", "Delhi", "Islamabad", "London", "Berlin"];
 nonMutatingSplice(inputCities);

@@ -69,9 +69,9 @@ let users = {
 };
 
 function isEveryoneHere(obj) {
-  // change code below this line
+  // Only change code below this line
 
-  // change code above this line
+  // Only change code above this line
 }
 
 console.log(isEveryoneHere(users));

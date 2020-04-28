@@ -9,7 +9,7 @@ forumTopicId: 16807
 <section id='description'>
 Now that you're getting data from a JSON API, you can display it in the HTML.
 You can use a <code>forEach</code> method to loop through the data since the cat photo objects are held in an array. As you get to each item, you can modify the HTML elements.
-First, declare an html variable with <code>var html = "";</code>.
+First, declare an html variable with <code>let html = "";</code>.
 Then, loop through the JSON, adding HTML to the variable that wraps the key names in <code>strong</code> tags, followed by the value. When the loop is finished, you render it.
 Here's the code that does this:
 

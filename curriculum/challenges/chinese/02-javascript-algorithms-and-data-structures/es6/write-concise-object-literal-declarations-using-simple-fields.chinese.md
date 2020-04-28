@@ -18,9 +18,9 @@ localeTitle: 使用简单字段编写简明对象文字声明
 ```yml
 tests:
   - text: '输出是<code>{name: &quot;Zodiac Hasbro&quot;, age: 56, gender: &quot;male&quot;}</code> 。'
-    testString: 'assert(() => {const res={name:"Zodiac Hasbro",age:56,gender:"male"}; const person=createPerson("Zodiac Hasbro", 56, "male"); return Object.keys(person).every(k => person[k] === res[k]);}, "the output is <code>{name: "Zodiac Hasbro", age: 56, gender: "male"}</code>.");'
+    testString: assert(() => {const res={name:"Zodiac Hasbro",age:56,gender:"male"}; const person=createPerson("Zodiac Hasbro", 56, "male"); return Object.keys(person).every(k => person[k] === res[k]);});
   - text: '不<code>:</code>被使用了。'
-    testString: 'getUserInput => assert(!getUserInput("index").match(/:/g), "No <code>:</code> were used.");'
+    testString: getUserInput => assert(!getUserInput("index").match(/:/g));
 
 ```
 

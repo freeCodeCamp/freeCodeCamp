@@ -18,9 +18,9 @@ localeTitle: 使用括号表示法查找字符串中的第N个字符
 ```yml
 tests:
   - text: <code>thirdLetterOfLastName</code>变量的值应为<code>v</code> 。
-    testString: 'assert(thirdLetterOfLastName === "v", "The <code>thirdLetterOfLastName</code> variable should have the value of <code>v</code>.");'
+    testString: assert(thirdLetterOfLastName === 'v');
   - text: 您应该使用括号表示法。
-    testString: 'assert(code.match(/thirdLetterOfLastName\s*?=\s*?lastName\[.*?\]/), "You should use bracket notation.");'
+    testString: assert(code.match(/thirdLetterOfLastName\s*?=\s*?lastName\[.*?\]/));
 
 ```
 

@@ -35,7 +35,7 @@ tests:
   - text: <code>total</code> should equal 20.
     testString: assert(total === 20);
   - text: You should use a <code>for</code> loop to iterate through <code>myArr</code>.
-    testString: assert(code.match(/for\s*\(/g).length > 1 && code.match(/myArr\s*\[/));
+    testString: assert(/for\s*\(/g.test(code) && /myArr\s*\[/g.test(code));
   - text: You should not attempt to directly assign the value 20 to <code>total</code>.
     testString: assert(!code.replace(/\s/g, '').match(/total[=+-]0*[1-9]+/gm));
 ```
@@ -47,14 +47,6 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Example
-var ourArr = [ 9, 10, 11, 12];
-var ourTotal = 0;
-
-for (var i = 0; i < ourArr.length; i++) {
-  ourTotal += ourArr[i];
-}
-
 // Setup
 var myArr = [ 2, 3, 4, 5, 6];
 
@@ -80,13 +72,6 @@ var myArr = [ 2, 3, 4, 5, 6];
 <section id='solution'>
 
 ```js
-var ourArr = [ 9, 10, 11, 12];
-var ourTotal = 0;
-
-for (var i = 0; i < ourArr.length; i++) {
-  ourTotal += ourArr[i];
-}
-
 var myArr = [ 2, 3, 4, 5, 6];
 var total = 0;
 

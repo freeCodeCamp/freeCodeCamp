@@ -19,7 +19,7 @@ localeTitle: 问题174：计算可以形成一个，两个，三个......不同�
 ```yml
 tests:
   - text: <code>euler174()</code>应该返回209566。
-    testString: 'assert.strictEqual(euler174(), 209566, "<code>euler174()</code> should return 209566.");'
+    testString: assert.strictEqual(euler174(), 209566);
 
 ```
 

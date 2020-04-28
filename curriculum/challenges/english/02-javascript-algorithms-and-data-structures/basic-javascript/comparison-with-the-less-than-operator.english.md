@@ -68,7 +68,6 @@ function testLessThan(val) {
   return "55 or Over";
 }
 
-// Change this value to test
 testLessThan(10);
 ```
 

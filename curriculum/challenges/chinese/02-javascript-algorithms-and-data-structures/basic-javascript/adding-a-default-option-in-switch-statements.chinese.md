@@ -18,21 +18,21 @@ localeTitle: 在交换机语句中添加默认选项
 ```yml
 tests:
   - text: <code>switchOfStuff(&quot;a&quot;)</code>的值应为“apple”
-    testString: 'assert(switchOfStuff("a") === "apple", "<code>switchOfStuff("a")</code> should have a value of "apple"");'
+    testString: assert(switchOfStuff("a") === "apple");
   - text: <code>switchOfStuff(&quot;b&quot;)</code>的值应为“bird”
-    testString: 'assert(switchOfStuff("b") === "bird", "<code>switchOfStuff("b")</code> should have a value of "bird"");'
+    testString: assert(switchOfStuff("b") === "bird");
   - text: <code>switchOfStuff(&quot;c&quot;)</code>的值应为“cat”
-    testString: 'assert(switchOfStuff("c") === "cat", "<code>switchOfStuff("c")</code> should have a value of "cat"");'
+    testString: assert(switchOfStuff("c") === "cat");
   - text: <code>switchOfStuff(&quot;d&quot;)</code>的值应为“stuff”
-    testString: 'assert(switchOfStuff("d") === "stuff", "<code>switchOfStuff("d")</code> should have a value of "stuff"");'
+    testString: assert(switchOfStuff("d") === "stuff");
   - text: <code>switchOfStuff(4)</code>的值应为“stuff”
-    testString: 'assert(switchOfStuff(4) === "stuff", "<code>switchOfStuff(4)</code> should have a value of "stuff"");'
+    testString: assert(switchOfStuff(4) === "stuff");
   - text: 您不应该使用任何<code>if</code>或<code>else</code>语句
-    testString: 'assert(!/else/g.test(code) || !/if/g.test(code), "You should not use any <code>if</code> or <code>else</code> statements");'
+    testString: assert(!/else/g.test(code) || !/if/g.test(code));
   - text: 您应该使用<code>default</code>语句
-    testString: 'assert(switchOfStuff("string-to-trigger-default-case") === "stuff", "You should use a <code>default</code> statement");'
+    testString: assert(switchOfStuff("string-to-trigger-default-case") === "stuff");
   - text: 你应该至少有3个<code>break</code>语句
-    testString: 'assert(code.match(/break/g).length > 2, "You should have at least 3 <code>break</code> statements");'
+    testString: assert(code.match(/break/g).length > 2);
 
 ```
 

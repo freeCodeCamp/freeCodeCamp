@@ -9,8 +9,8 @@ import store from 'store';
 const key = 'fcc-failed-updates';
 
 describe('failed-updates-epic', () => {
-  it('should remove falty backend challenges from localStorage', async () => {
-    store.set(key, failedSubmitions);
+  it('should remove faulty backend challenges from localStorage', async () => {
+    store.set(key, failedSubmissions);
 
     const action$ = ActionsObservable.of({
       type: types.updateComplete
@@ -31,7 +31,7 @@ const initialState = {
   }
 };
 
-const failedSubmitions = [
+const failedSubmissions = [
   {
     endpoint: '/project-completed',
     id: 'b1507944-7310-479f-bb59-ccafac488592',
@@ -59,4 +59,4 @@ const failedSubmitions = [
   }
 ];
 
-const submitableChallenges = failedSubmitions.slice(1);
+const submitableChallenges = failedSubmissions.slice(1);

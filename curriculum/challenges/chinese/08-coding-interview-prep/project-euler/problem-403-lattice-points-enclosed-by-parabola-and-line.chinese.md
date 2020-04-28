@@ -19,7 +19,7 @@ localeTitle: 问题403：由抛物线和直线包围的格点
 ```yml
 tests:
   - text: <code>euler403()</code>应该返回18224771。
-    testString: 'assert.strictEqual(euler403(), 18224771, "<code>euler403()</code> should return 18224771.");'
+    testString: assert.strictEqual(euler403(), 18224771);
 
 ```
 

@@ -2,25 +2,31 @@
 id: 587d78a8367417b2b2512ae4
 title: Make a CSS Heartbeat using an Infinite Animation Count
 challengeType: 0
-videoUrl: ''
-localeTitle: 使用无限动画计数制作CSS心跳
+videoUrl: 'https://scrimba.com/c/cDZpDUr'
+forumTopicId: 301062
+localeTitle: 使用无限的动画计数制作 CSS 心跳
 ---
 
 ## Description
-<section id="description">这是一个带有<code>animation-iteration-count</code>属性的连续动画示例，该属性使用您在之前的挑战中设计的心脏。一秒长的心跳动画由两个动画片段组成。的<code>heart</code>元件（包括<code>:before</code>和<code>:after</code>片）的动画使用改变大小<code>transform</code>特性，并且背景<code>div</code>是动画使用改变其颜色<code>background</code>属性。 </section>
+<section id='description'>
+这也是一个用 <code>animation-iteration-count</code> 属性创造持续动画的例子，它基于前面关卡创建的心形。
+心跳动画的每一秒包含两个部分。<code>heart</code> 元素（包括 <code>:before</code> 和 <code>:after</code>）使用 <code>transform</code> 属性改变其大小，背景 <code>div</code> 使用 <code>background</code> 属性改变其颜色。
+</section>
 
 ## Instructions
-<section id="instructions">通过为<code>back</code>类和<code>heart</code>类添加<code>animation-iteration-count</code>属性并将值设置为无限来保持心脏跳动。 <code>heart:before</code>和<code>heart:after</code>选择器<code>heart:after</code>不需要任何动画属性。 </section>
+<section id='instructions'>
+给 <code>back</code> class和 <code>heart</code> class添加值为 infinite 的 <code>animation-iteration-count</code> 属性，使心脏持续跳动。<code>heart:before</code> 和 <code>heart:after</code> 选择器不需要添加动画属性。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>heart</code>类的<code>animation-iteration-count</code>属性应具有无限值。
-    testString: 'assert($(".heart").css("animation-iteration-count") == "infinite", "The <code>animation-iteration-count</code> property for the <code>heart</code> class should have a value of infinite.");'
-  - text: <code>back</code>类的<code>animation-iteration-count</code>属性应具有无限值。
-    testString: 'assert($(".back").css("animation-iteration-count") == "infinite", "The <code>animation-iteration-count</code> property for the <code>back</code> class should have a value of infinite.");'
+  - text: '<code>heart</code> class 的 <code>animation-iteration-count</code> 属性应该赋值 infinte。'
+    testString: assert($('.heart').css('animation-iteration-count') == 'infinite');
+  - text: '<code>back</code> class 的 <code>animation-iteration-count</code> 属性应该赋值 infinite。'
+    testString: assert($('.back').css('animation-iteration-count') == 'infinite');
 
 ```
 
@@ -43,8 +49,8 @@ tests:
     height: 100%;
     background: white;
     animation-name: backdiv;
-    animation-duration: 1s;
-
+    animation-duration: 1s; 
+    
   }
 
   .heart {
@@ -60,7 +66,7 @@ tests:
     transform: rotate(-45deg);
     animation-name: beat;
     animation-duration: 1s;
-
+    
   }
   .heart:after {
     background-color: pink;
@@ -101,7 +107,6 @@ tests:
 </style>
 <div class="back"></div>
 <div class="heart"></div>
-
 ```
 
 </div>
@@ -113,7 +118,9 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>
+              

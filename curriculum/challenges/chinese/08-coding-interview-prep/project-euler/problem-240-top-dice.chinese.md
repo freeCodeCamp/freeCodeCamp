@@ -19,7 +19,7 @@ localeTitle: 问题240：顶部骰子
 ```yml
 tests:
   - text: <code>euler240()</code>应该返回7448717393364182000。
-    testString: 'assert.strictEqual(euler240(), 7448717393364182000, "<code>euler240()</code> should return 7448717393364182000.");'
+    testString: assert.strictEqual(euler240(), 7448717393364182000);
 
 ```
 

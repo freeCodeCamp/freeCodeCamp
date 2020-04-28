@@ -18,7 +18,7 @@ localeTitle: 了解对象原型的来源
 ```yml
 tests:
   - text: 证明<code>Dog.prototype</code>是<code>beagle</code>的<code>prototype</code>
-    testString: 'assert(/Dog\.prototype\.isPrototypeOf\(beagle\)/.test(code), "Show that <code>Dog.prototype</code> is the <code>prototype</code> of <code>beagle</code>");'
+    testString: assert(/Dog\.prototype\.isPrototypeOf\(beagle\)/.test(code));
 
 ```
 

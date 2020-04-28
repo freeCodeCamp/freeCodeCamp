@@ -18,7 +18,7 @@ describe('createRedirects', () => {
   });
 
   it('replaces instances of `#{{...}}` with the locations provided', () => {
-    expect.assertions(5);
+    expect.assertions(4);
 
     const apiPlaceholderRE = /#\{\{API\}\}/;
     const newsPlaceholderRE = /#\{\{NEWS\}\}/;
@@ -33,8 +33,7 @@ describe('createRedirects', () => {
     expect(hasNewsPlaceholder).toBe(false);
     expect(hasForumPlaceholder).toBe(false);
 
-    const { api, forumProxy } = testLocations;
-    expect(redirects.includes(`${api}/internal/:splat`)).toBe(true);
+    const { forumProxy } = testLocations;
     expect(redirects.includes(`${forumProxy}`)).toBe(true);
   });
 

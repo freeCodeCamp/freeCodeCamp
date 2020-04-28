@@ -19,7 +19,7 @@ localeTitle: 问题104：Pandigital Fibonacci结束
 ```yml
 tests:
   - text: <code>euler104()</code>应返回329468。
-    testString: 'assert.strictEqual(euler104(), 329468, "<code>euler104()</code> should return 329468.");'
+    testString: assert.strictEqual(euler104(), 329468);
 
 ```
 

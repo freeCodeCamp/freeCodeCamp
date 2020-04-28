@@ -20,15 +20,15 @@ localeTitle: 脊椎龙头套
 ```yml
 tests:
   - text: <code>spinalCase(&quot;This Is Spinal Tap&quot;)</code>应该返回<code>&quot;this-is-spinal-tap&quot;</code> 。
-    testString: 'assert.deepEqual(spinalCase("This Is Spinal Tap"), "this-is-spinal-tap", "<code>spinalCase("This Is Spinal Tap")</code> should return <code>"this-is-spinal-tap"</code>.");'
+    testString: assert.deepEqual(spinalCase("This Is Spinal Tap"), "this-is-spinal-tap");
   - text: <code>spinalCase(&quot;thisIsSpinal Tap&quot;)</code>应该返回<code>&quot;this-is-spinal-tap&quot;</code> 。
-    testString: 'assert.strictEqual(spinalCase("thisIsSpinalTap"), "this-is-spinal-tap", "<code>spinalCase("thisIsSpinal<wbr>Tap")</code> should return <code>"this-is-spinal-tap"</code>.");'
+    testString: assert.strictEqual(spinalCase('thisIsSpinalTap'), "this-is-spinal-tap");
   - text: <code>spinalCase(&quot;The_Andy_ Griffith_Show&quot;)</code>应该返回<code>&quot;the-andy-griffith-show&quot;</code> 。
-    testString: 'assert.strictEqual(spinalCase("The_Andy_Griffith_Show"), "the-andy-griffith-show", "<code>spinalCase("The_Andy_<wbr>Griffith_Show")</code> should return <code>"the-andy-griffith-show"</code>.");'
+    testString: assert.strictEqual(spinalCase("The_Andy_Griffith_Show"), "the-andy-griffith-show");
   - text: <code>spinalCase(&quot;Teletubbies say Eh-oh&quot;)</code>应该返回<code>&quot;teletubbies-say-eh-oh&quot;</code> 。
-    testString: 'assert.strictEqual(spinalCase("Teletubbies say Eh-oh"), "teletubbies-say-eh-oh", "<code>spinalCase("Teletubbies say Eh-oh")</code> should return <code>"teletubbies-say-eh-oh"</code>.");'
+    testString: assert.strictEqual(spinalCase("Teletubbies say Eh-oh"), "teletubbies-say-eh-oh");
   - text: <code>spinalCase(&quot;AllThe-small Things&quot;)</code>应该归还<code>&quot;all-the-small-things&quot;</code> 。
-    testString: 'assert.strictEqual(spinalCase("AllThe-small Things"), "all-the-small-things", "<code>spinalCase("AllThe-small Things")</code> should return <code>"all-the-small-things"</code>.");'
+    testString: assert.strictEqual(spinalCase("AllThe-small Things"), "all-the-small-things");
 
 ```
 

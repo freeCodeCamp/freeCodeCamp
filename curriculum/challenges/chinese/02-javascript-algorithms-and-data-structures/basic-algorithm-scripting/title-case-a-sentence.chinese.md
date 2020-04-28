@@ -20,13 +20,13 @@ localeTitle: 标题案例句子
 ```yml
 tests:
   - text: '<code>titleCase(&quot;I&#39;m a little tea pot&quot;)</code>应该返回一个字符串。'
-    testString: 'assert(typeof titleCase("I"m a little tea pot") === "string", "<code>titleCase("I&#39;m a little tea pot")</code> should return a string.");'
+    testString: assert(typeof titleCase("I'm a little tea pot") === "string");
   - text: '<code>titleCase(&quot;I&#39;m a little tea pot&quot;)</code>应该归还<code>I&#39;m A Little Tea Pot</code> 。'
-    testString: 'assert(titleCase("I"m a little tea pot") === "I"m A Little Tea Pot", "<code>titleCase("I&#39;m a little tea pot")</code> should return <code>I&#39;m A Little Tea Pot</code>.");'
+    testString: assert(titleCase("I'm a little tea pot") === "I'm A Little Tea Pot");
   - text: <code>titleCase(&quot;sHoRt AnD sToUt&quot;)</code>应返回<code>Short And Stout</code> 。
-    testString: 'assert(titleCase("sHoRt AnD sToUt") === "Short And Stout", "<code>titleCase("sHoRt AnD sToUt")</code> should return <code>Short And Stout</code>.");'
+    testString: assert(titleCase("sHoRt AnD sToUt") === "Short And Stout");
   - text: <code>titleCase(&quot;HERE IS MY HANDLE HERE IS MY SPOUT&quot;)</code> <code>Here Is My Handle Here Is My Spout</code> <code>titleCase(&quot;HERE IS MY HANDLE HERE IS MY SPOUT&quot;)</code>应该回到<code>Here Is My Handle Here Is My Spout</code> 。
-    testString: 'assert(titleCase("HERE IS MY HANDLE HERE IS MY SPOUT") === "Here Is My Handle Here Is My Spout", "<code>titleCase("HERE IS MY HANDLE HERE IS MY SPOUT")</code> should return <code>Here Is My Handle Here Is My Spout</code>.");'
+    testString: assert(titleCase("HERE IS MY HANDLE HERE IS MY SPOUT") === "Here Is My Handle Here Is My Spout");
 
 ```
 

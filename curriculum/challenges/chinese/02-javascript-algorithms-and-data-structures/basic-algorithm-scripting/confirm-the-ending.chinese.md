@@ -20,27 +20,27 @@ localeTitle: 确认结束
 ```yml
 tests:
   - text: '<code>confirmEnding(&quot;Bastian&quot;, &quot;n&quot;)</code>应该返回true。'
-    testString: 'assert(confirmEnding("Bastian", "n") === true, "<code>confirmEnding("Bastian", "n")</code> should return true.");'
+    testString: assert(confirmEnding("Bastian", "n") === true);
   - text: '<code>confirmEnding(&quot;Congratulation&quot;, &quot;on&quot;)</code>应该返回true。'
-    testString: 'assert(confirmEnding("Congratulation", "on") === true, "<code>confirmEnding("Congratulation", "on")</code> should return true.");'
+    testString: assert(confirmEnding("Congratulation", "on") === true);
   - text: '<code>confirmEnding(&quot;Connor&quot;, &quot;n&quot;)</code>应返回false。'
-    testString: 'assert(confirmEnding("Connor", "n") === false, "<code>confirmEnding("Connor", "n")</code> should return false.");'
+    testString: assert(confirmEnding("Connor", "n") === false);
   - text: '<code>confirmEnding(&quot;Walking on water and developing software from a specification are easy if both are frozen&quot;, &quot;specification&quot;)</code>应该返回false。'
-    testString: 'assert(confirmEnding("Walking on water and developing software from a specification are easy if both are frozen", "specification") === false, "<code>confirmEnding("Walking on water and developing software from a specification are easy if both are frozen"&#44; "specification"&#41;</code> should return false.");'
+    testString: assert(confirmEnding("Walking on water and developing software from a specification are easy if both are frozen", "specification") === false);
   - text: '<code>confirmEnding(&quot;He has to give me a new name&quot;, &quot;name&quot;)</code>应该返回true。'
-    testString: 'assert(confirmEnding("He has to give me a new name", "name") === true, "<code>confirmEnding("He has to give me a new name", "name")</code> should return true.");'
+    testString: assert(confirmEnding("He has to give me a new name", "name") === true);
   - text: '<code>confirmEnding(&quot;Open sesame&quot;, &quot;same&quot;)</code>应该返回true。'
-    testString: 'assert(confirmEnding("Open sesame", "same") === true, "<code>confirmEnding("Open sesame", "same")</code> should return true.");'
+    testString: assert(confirmEnding("Open sesame", "same") === true);
   - text: '<code>confirmEnding(&quot;Open sesame&quot;, &quot;pen&quot;)</code>应该返回false。'
-    testString: 'assert(confirmEnding("Open sesame", "pen") === false, "<code>confirmEnding("Open sesame", "pen")</code> should return false.");'
+    testString: assert(confirmEnding("Open sesame", "pen") === false);
   - text: '<code>confirmEnding(&quot;Open sesame&quot;, &quot;game&quot;)</code>应该返回false。'
-    testString: 'assert(confirmEnding("Open sesame", "game") === false, "<code>confirmEnding("Open sesame", "game")</code> should return false.");'
+    testString: assert(confirmEnding("Open sesame", "game") === false);
   - text: '<code>confirmEnding(&quot;If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing&quot;, &quot;mountain&quot;)</code>应该返回虚假。'
-    testString: 'assert(confirmEnding("If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing", "mountain") === false, "<code>confirmEnding("If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing", "mountain")</code> should return false.");'
+    testString: assert(confirmEnding("If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing", "mountain") === false);
   - text: '<code>confirmEnding(&quot;Abstraction&quot;, &quot;action&quot;)</code>应该返回true。'
-    testString: 'assert(confirmEnding("Abstraction", "action") === true, "<code>confirmEnding("Abstraction", "action")</code> should return true.");'
+    testString: assert(confirmEnding("Abstraction", "action") === true);
   - text: 不要使用内置方法<code>.endsWith()</code>来解决挑战。
-    testString: 'assert(!(/\.endsWith\(.*?\)\s*?;?/.test(code)) && !(/\["endsWith"\]/.test(code)), "Do not use the built-in method <code>.endsWith()</code> to solve the challenge.");'
+    testString: assert(!(/\.endsWith\(.*?\)\s*?;?/.test(code)) && !(/\['endsWith'\]/.test(code)));
 
 ```
 

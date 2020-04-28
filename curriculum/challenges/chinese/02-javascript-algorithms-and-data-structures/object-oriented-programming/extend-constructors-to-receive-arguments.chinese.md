@@ -18,13 +18,13 @@ localeTitle: 扩展构造函数以接收参数
 ```yml
 tests:
   - text: <code>Dog</code>应该收到<code>name</code>的论据。
-    testString: 'assert((new Dog("Clifford")).name === "Clifford", "<code>Dog</code> should receive an argument for <code>name</code>.");'
+    testString: assert((new Dog('Clifford')).name === 'Clifford');
   - text: <code>Dog</code>应该收到<code>color</code>的论据。
-    testString: 'assert((new Dog("Clifford", "yellow")).color === "yellow", "<code>Dog</code> should receive an argument for <code>color</code>.");'
+    testString: assert((new Dog('Clifford', 'yellow')).color === 'yellow');
   - text: <code>Dog</code>应该将属性<code>numLegs</code>设置为4。
-    testString: 'assert((new Dog("Clifford")).numLegs === 4, "<code>Dog</code> should have property <code>numLegs</code> set to 4.");'
+    testString: assert((new Dog('Clifford')).numLegs === 4);
   - text: 应该使用<code>Dog</code>构造函数创建<code>terrier</code> 。
-    testString: 'assert(terrier instanceof Dog, "<code>terrier</code> should be created using the <code>Dog</code> constructor.");'
+    testString: assert(terrier instanceof Dog);
 
 ```
 

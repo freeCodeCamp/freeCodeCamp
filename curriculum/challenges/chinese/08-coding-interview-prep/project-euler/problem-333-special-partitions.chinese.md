@@ -19,7 +19,7 @@ localeTitle: 问题333：特殊分区
 ```yml
 tests:
   - text: <code>euler333()</code>应返回3053105。
-    testString: 'assert.strictEqual(euler333(), 3053105, "<code>euler333()</code> should return 3053105.");'
+    testString: assert.strictEqual(euler333(), 3053105);
 
 ```
 

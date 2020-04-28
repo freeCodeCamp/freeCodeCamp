@@ -60,13 +60,11 @@ tests:
 <div id='js-seed'>
 
 ```js
-/* jshint expr: true */
-
 function House(numBedrooms) {
   this.numBedrooms = numBedrooms;
 }
 
-// Add your code below this line
+// Only change code below this line
 
 
 

@@ -19,13 +19,13 @@ localeTitle: 蓄能器工厂
 ```yml
 tests:
   - text: <code>accumulator</code>是一个功能。
-    testString: 'assert(typeof accumulator === "function", "<code>accumulator</code> is a function.");'
+    testString: assert(typeof accumulator === 'function');
   - text: <code>accumulator(0)</code>应该返回一个函数。
-    testString: 'assert(typeof accumulator(0) === "function", "<code>accumulator(0)</code> should return a function.");'
+    testString: assert(typeof accumulator(0) === 'function');
   - text: <code>accumulator(0)(2)</code>应该返回一个数字。
-    testString: 'assert(typeof accumulator(0)(2) === "number", "<code>accumulator(0)(2)</code> should return a number.");'
+    testString: assert(typeof accumulator(0)(2) === 'number');
   - text: '传递值3，-4,1.5和5应返回5.5。'
-    testString: 'assert(testFn(5) === 5.5, "Passing in the values 3, -4, 1.5, and 5 should return 5.5.");'
+    testString: assert(testFn(5) === 5.5);
 
 ```
 

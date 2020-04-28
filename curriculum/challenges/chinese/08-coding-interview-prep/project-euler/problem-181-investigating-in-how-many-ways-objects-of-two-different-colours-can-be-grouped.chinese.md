@@ -19,7 +19,7 @@ localeTitle: 问题181：调查两种不同颜色的对象可以分组的方式
 ```yml
 tests:
   - text: <code>euler181()</code>应该返回83735848679360670。
-    testString: 'assert.strictEqual(euler181(), 83735848679360670, "<code>euler181()</code> should return 83735848679360670.");'
+    testString: assert.strictEqual(euler181(), 83735848679360670);
 
 ```
 

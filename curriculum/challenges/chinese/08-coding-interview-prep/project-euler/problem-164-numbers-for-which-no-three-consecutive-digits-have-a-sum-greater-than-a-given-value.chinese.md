@@ -19,7 +19,7 @@ localeTitle: 问题164：没有三个连续数字的总和大于给定值的数�
 ```yml
 tests:
   - text: <code>euler164()</code>应该返回378158756814587。
-    testString: 'assert.strictEqual(euler164(), 378158756814587, "<code>euler164()</code> should return 378158756814587.");'
+    testString: assert.strictEqual(euler164(), 378158756814587);
 
 ```
 
