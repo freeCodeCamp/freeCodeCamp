@@ -24,9 +24,11 @@ const epicMiddleware = createEpicMiddleware({
   }
 });
 
-const composeEnhancers = composeWithDevTools({
-  // options like actionSanitizer, stateSanitizer
-});
+if (process.env.FREECODECAMP_NODE_ENV === 'development') {
+  const composeEnhancers = composeWithDevTools({
+    // options like actionSanitizer, stateSanitizer
+  });
+}
 
 export const createStore = () => {
   const store = reduxCreateStore(
