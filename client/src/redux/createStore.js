@@ -29,10 +29,18 @@ const composeEnhancers = composeWithDevTools({
 });
 
 export const createStore = () => {
-  const store = reduxCreateStore(
-    rootReducer,
-    composeEnhancers(applyMiddleware(sagaMiddleware, epicMiddleware))
-  );
+  let store;
+  if (process.env.FREECODECAMP_NODE_ENV === 'development') {
+    store = reduxCreateStore(
+      rootReducer,
+      composeEnhancers(applyMiddleware(sagaMiddleware, epicMiddleware))
+    );
+  } else {
+    store = reduxCreateStore(
+      rootReducer,
+      applyMiddleware(sagaMiddleware, epicMiddleware)
+    );
+  }
   sagaMiddleware.run(rootSaga);
   epicMiddleware.run(rootEpic);
   if (module.hot) {
