@@ -1,5 +1,6 @@
 /* global describe it expect beforeEach */
 const mockAST = require('./fixtures/challenge-md-ast.json');
+const mockVideoAST = require('./fixtures/video-challenge-md-ast.json');
 const testsToData = require('./tests-to-data');
 
 describe('tests-to-data plugin', () => {
@@ -29,8 +30,41 @@ describe('tests-to-data plugin', () => {
     expect(testObject).toHaveProperty('text');
   });
 
+  it('should generate a question object from a video challenge AST', () => {
+    expect.assertions(4);
+    plugin(mockVideoAST, file);
+    const testObject = file.data.question;
+    expect(Object.keys(testObject).length).toBe(3);
+    expect(testObject).toHaveProperty('text');
+    expect(testObject).toHaveProperty('solution');
+    expect(testObject).toHaveProperty('answers');
+  });
+
+  it('should convert question and answer markdown into html', () => {
+    plugin(mockVideoAST, file);
+    const testObject = file.data.question;
+    console.log(testObject);
+    expect(Object.keys(testObject).length).toBe(3);
+    expect(testObject.text).toBe(
+      '<p>Question line one</p>\n' +
+        `<pre><code class="language-js">  var x = 'y';\n` +
+        '</code></pre>'
+    );
+    expect(testObject.solution).toBe(3);
+    expect(testObject.answers[0]).toBe('<p>inline <code>code</code></p>');
+    expect(testObject.answers[1]).toBe('<p>some <em>italics</em></p>');
+    expect(testObject.answers[2]).toBe(
+      '<p><code> code in </code> code tags</p>'
+    );
+  });
+
   it('should have an output to match the snapshot', () => {
     plugin(mockAST, file);
+    expect(file.data).toMatchSnapshot();
+  });
+
+  it('should match the video snapshot', () => {
+    plugin(mockVideoAST, file);
     expect(file.data).toMatchSnapshot();
   });
 });
