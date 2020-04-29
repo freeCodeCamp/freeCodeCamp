@@ -32,7 +32,6 @@
     "docs:serve": "docsify serve ./docs",
     "ensure-env": "cross-env DEBUG=fcc:* node ./tools/scripts/build/ensure-env.js",
     "e2e": "./cypress/run-e2e.sh",
-    "e2e:ci": "cross-env NODE_ENV=production npm run e2e",
     "format": "npm-run-all -p format:*",
     "format:js": "npm run lint:js -- --fix",
     "format:css": "npm run prettier -- --write",
