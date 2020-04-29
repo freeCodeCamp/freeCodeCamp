@@ -124,8 +124,8 @@ Every challenge needs an `id`. If you don't specify one, then MongoDB will creat
 
 To generate a new one in a shell (assuming MongoDB is running separately):
 
-1. Run `mongo` command
-2. Run `ObjectId()` command
+1. Run `mongo` command.
+2. Run `ObjectId()` command.
 
 For example:
 
@@ -346,4 +346,4 @@ Creating and Editing Challenges:
 
 1. [Challenge types](https://github.com/freeCodeCamp/learn/blob/a5cb25704168aa37f59a582f0bb5a19b7bd89b46/utils/challengeTypes.js) - what the numeric challenge type values mean (enum).
 
-2. [Contributing to FreeCodeCamp - Writing ES6 Challenge Tests ](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - a video following [Ethan Arrowood](https://twitter.com/ArrowoodTech) as he contributes to the old version of the curriculum
+2. [Contributing to FreeCodeCamp - Writing ES6 Challenge Tests ](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - a video following [Ethan Arrowood](https://twitter.com/ArrowoodTech) as he contributes to the old version of the curriculum.
