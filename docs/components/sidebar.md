@@ -2,6 +2,7 @@
   - [Introduction](/index.md 'Contribute to the freeCodeCamp.org Community')
 - **<i class="fad fa-code"></i> Code Contribution Guides**
   - [How to work on coding challenges](/how-to-work-on-coding-challenges.md)
+  - [How to help with video challenges](/how-to-help-with-video-challenges.md)
   - [How to set up freeCodeCamp locally](/how-to-setup-freecodecamp-locally.md)
   - [How to open a pull request](/how-to-open-a-pull-request.md)
   - [How to work on the news theme](/how-to-work-on-the-news-theme.md)
