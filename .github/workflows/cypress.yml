@@ -1,5 +1,9 @@
 name: Cypress tests
-on: [push]
+on:
+  push:
+    branches:
+      - master
+      - production-**
 jobs:
   cypress-run:
     name: Cypress run
