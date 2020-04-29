@@ -76,7 +76,7 @@ https://www.youtube.com/watch?v=[videoId]    (add in the videoId to the URL)
 
 In the example above, the url is https://www.youtube.com/watch?v=nVAaxZ34khk .
 
-Skim the YouTube video with that videoId and think of a multiple choice question based on the content of the video. 
+Skim the YouTube video with that videoId and think of a multiple choice question based on the content of the video.
 
 ### Add the question to the markdown file
 
@@ -98,7 +98,7 @@ Update the word “Question” with your question. Update the “one”, “two�
 
 Questions and answers can contain certain HTML tags like `<br>` for a new line. Surround code with `<pre></pre>` You will need to add a `<br>` at the end of each line of code.
 
-Make sure each answer is plausible but there is only one correct answer. 
+Make sure each answer is plausible but there is only one correct answer.
 
 ## Question examples
 
@@ -140,4 +140,4 @@ For more examples, you can look at the markdown files for the following video co
 
 ## Open a pull request
 
-After creating one or more questions, you can commit the changes to a new branch and open a pull request. Make sure that you target the branch 'next-python-projects' and NOT 'master'.
+After creating one or more questions, you can commit the changes to a new branch and [open a pull request](how-to-open-a-pull-request.md). Make sure that you target the branch 'next-python-projects' and NOT 'master'.

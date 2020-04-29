@@ -66,3 +66,116 @@ Some examples of good PRs titles would be:
 5. Indicate if you have tested on a local copy of the site or not.
 
    This is very important when making changes that are not just edits to text content like documentation or a challenge description. Examples of changes that need local testing include JavaScript, CSS, or HTML which could change the functionality or layout of a page.
+
+## Feedback on pull requests
+
+> Congratulations! :tada: on making a PR and thanks a lot for taking the time to contribute.
+
+Our moderators will now take a look and leave you feedback. Please be patient with the fellow moderators and respect their time. All pull requests are reviewed in due course.
+
+If you need any assistance please disscuss in the [contributors chat room](https://gitter.im/FreeCodeCamp/Contributors), we are more than happy to help you.
+
+> [!TIP]
+> If you are to be contributing more pull requests, we recommend you read the [making changes and syncing](http://localhost:3000/#/how-to-setup-freecodecamp-locally?id=making-changes-locally) guidelines to avoid having to delete your fork.
+
+## Conflicts on a pull request
+
+Conflicts can arise because many contributors work on the repository, and changes can break your PR which is pending a review and merge.
+
+More often than not you may not require a rebase, because we squash all commits, however if a rebase is requested here is what you should do.
+
+### For usual bug fixes and features
+
+When you are working on regular bugs and features on our development branch `master`, you are able to do a simple rebase:
+
+1. Rebase your local copy:
+
+   ```console
+   git checkout <pr-branch>
+   git pull --rebase upstream master
+   ```
+
+2. Resolve any conflicts and add / edit commits
+
+   ```console
+   # Either
+   git add .
+   git commit -m "chore: resolve conflicts"
+
+   # Or
+   git add .
+   git commit --amend --no-edit
+   ```
+
+3. Push back your changes to the PR
+
+   ```console
+   git push --force origin <pr-branch>
+   ```
+
+### For upcoming curriculum and features
+
+When you are working on features for our upcoming curriculum `next-*` branches, you have do a cherry pick:
+
+1. Make sure your upstream comes in sync with your local:
+
+   ```console
+   git checkout master
+   git fetch --all --prune
+   git checkout next-python-projects
+   git reset --hard upstream/next-python-projects
+   ```
+
+2. Take backup
+
+   a. Either delete your local branch after taking a backup (if you still have it locally):
+
+      ```console
+      git checkout <pr-branch-name>
+
+      # example:
+      # git checkout feat/add-numpy-video-question
+
+      git checkout -b <backup-branch-name>
+
+      # example:
+      #  git checkout -b backup-feat/add-numpy-video-question
+
+      git branch -D <pr-branch-name>
+      ```
+
+   b. Or just a backup of your pr branch (if you do not have it locally):
+
+      ```console
+      git checkout -b <backup-branch-name> origin/<pr-branch-name>
+
+      # example:
+      #  git checkout -b backup-feat/add-numpy-video-question origin/feat/add-numpy-video-question
+      ```
+
+4. Start off with a clean slate:
+
+   ```console
+   git checkout -b <pr-branch-name> next-python-projects
+   git cherry-pick <commit-hash>
+   ```
+
+5. Resolve any conflicts, and cleanup, install run tests
+
+   ```console
+   npm run clean
+
+   npm run ci
+   npm run test:curriculum --superblock=<superblock-name>
+
+   # example:
+
+   # npm run test:curriculum --superblock=python-for-everybody
+
+   ```
+
+6. If everything looks good push back to the PR
+
+   ```console
+   git push --force origin <pr-branch-name>
+   ```
