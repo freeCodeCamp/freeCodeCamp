@@ -25,8 +25,10 @@ console.log(loc); // loc is not defined
 
 ## Instructions
 <section id='instructions'>
-Declare a local variable <code>myVar</code> inside <code>myLocalScope</code>. Run the tests and then follow the instructions commented out in the editor.
-<strong>Hint</strong><br>Refreshing the page may help if you get stuck.
+
+The editor has two `console.log`s to help you see what is happening. Check the console as you code to see how it changes.  Declare a local variable `myVar` inside `myLocalScope` and run the tests.
+
+**Note:** The console will still have 'ReferenceError: myVar is not defined', but this will not cause the tests to fail.
 </section>
 
 ## Tests
@@ -35,9 +37,13 @@ Declare a local variable <code>myVar</code> inside <code>myLocalScope</code>. Ru
 ```yml
 tests:
   - text: The code should not contain a global <code>myVar</code> variable.
-    testString: assert(typeof myVar === 'undefined');
+    testString: |
+      function declared(){
+        myVar;
+      }
+      assert.throws(declared, ReferenceError);
   - text: You should add a local <code>myVar</code> variable.
-    testString: assert(/function\s+myLocalScope\s*\(\s*\)\s*\{\s[\s\S]+\s*var\s*myVar\s*(\s*|=[\s\S]+)\s*;[\s\S]+}/.test(code));
+    testString: assert(/functionmyLocalScope\(\)\{.+(var|let|const)myVar.*}/s.test(code.replace(/\s/g, '')));
 
 
 ```
@@ -55,53 +61,14 @@ function myLocalScope() {
 
   // Only change code below this line
 
-  console.log(myVar);
+  console.log('inside myLocalScope', myVar);
 }
 myLocalScope();
 
 // Run and check the console
 // myVar is not defined outside of myLocalScope
-console.log(myVar);
+console.log('outside myLocalScope', myVar);
 
-// Now remove the console log line to pass the test
-
-```
-
-</div>
-
-### Before Test
-<div id='js-setup'>
-
-```js
-var logOutput = "";
-var originalConsole = console
-function capture() {
-  var nativeLog = console.log;
-  console.log = function (message) {
-    logOutput = message;
-    if(nativeLog.apply) {
-      nativeLog.apply(originalConsole, arguments);
-    } else {
-      var nativeMsg = Array.prototype.slice.apply(arguments).join(' ');
-      nativeLog(nativeMsg);
-    }
-  };
-}
-
-function uncapture() {
-  console.log = originalConsole.log;
-}
-
-```
-
-</div>
-
-### After Test
-<div id='js-teardown'>
-
-```js
-typeof myLocalScope === 'function' && (capture(), myLocalScope(), uncapture());
-(function() { return logOutput || "console.log never called"; })();
 ```
 
 </div>
@@ -116,10 +83,16 @@ typeof myLocalScope === 'function' && (capture(), myLocalScope(), uncapture());
 function myLocalScope() {
   'use strict';
 
+  // Only change code below this line
   var myVar;
-  console.log(myVar);
+  console.log('inside myLocalScope', myVar);
 }
 myLocalScope();
+
+// Run and check the console
+// myVar is not defined outside of myLocalScope
+console.log('outside myLocalScope', myVar);
+
 ```
 
 </section>
