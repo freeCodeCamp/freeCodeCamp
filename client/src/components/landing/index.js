@@ -25,7 +25,7 @@ const BigCallToAction = () => (
 );
 
 export const Landing = ({ edges }) => {
-  const superBlocks = uniq(edges.map(element => element.node.superBlock));
+  const superBlocks = uniq(edges.map((element) => element.node.superBlock));
   const interviewPrep = superBlocks.splice(6, 1);
   return (
     <Fragment>
@@ -73,7 +73,11 @@ export const Landing = ({ edges }) => {
               <ul>
                 {superBlocks.map((superBlock, i) => (
                   <li className={'superblock'} key={i}>
-                    <Link state={{ superBlock: superBlock }} to={`/learn`}>
+                    <Link
+                      style={{ display: 'inline-block' }}
+                      state={{ superBlock: superBlock }}
+                      to={`/learn`}
+                    >
                       <h2 className='medium-heading'>{superBlock}</h2>
                     </Link>
                   </li>
