@@ -324,11 +324,6 @@ function myFunc() {
 
 Before you [create a pull request](how-to-open-a-pull-request.md) for your changes, you need to validate that the changes you have made do not inadvertently cause problems with the challenge. 
 
-> [!WARNING]
-> In the `.env` file, set the environment variable `TEST_CHALLENGES_FOR_LANGS` to the language of the challenge(s) you need to test. The currently accepted values are `english` and `chinese` for the language that you are working on
-> 
-> This is set to test for `english` by default.
-
 1. To test all challenges run the below command from the root directory
 
 ```
@@ -360,6 +355,12 @@ You are also able to test one challenge individually by performing the following
    ```
 
 Once you have verified that each challenge you've worked on passes the tests, [please create a pull request](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/docs/how-to-open-a-pull-request.md).
+
+> [!TIP]
+> You can set the environment variable `TEST_CHALLENGES_FOR_LANGS` in the `.env` to the language of the challenge(s) you need to test.
+> 
+> The currently accepted values are `english` and `chinese`, with `english` being set by default.
+
 
 ### Useful Links
 
