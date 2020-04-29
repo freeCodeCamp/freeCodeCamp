@@ -322,21 +322,42 @@ function myFunc() {
 
 ## Testing Challenges
 
-Before you [create a pull request](how-to-open-a-pull-request.md) for your changes, you need to validate that the changes you have made do not inadvertently cause problems with the challenge. To test all challenges run `npm run test:curriculum`. To save time you can limit the tests to one challenge by performing the following steps:
+Before you [create a pull request](how-to-open-a-pull-request.md) for your changes, you need to validate that the changes you have made do not inadvertently cause problems with the challenge. 
 
-1. In the `.env` file, set the environment variable `TEST_CHALLENGES_FOR_LANGS` to the language of the challenge(s) you need to test. The currently accepted values are `english`, `arabic`, `chinese`, `portuguese`, `russian` and `spanish`.
+> [!WARNING]
+> In the `.env` file, set the environment variable `TEST_CHALLENGES_FOR_LANGS` to the language of the challenge(s) you need to test. The currently accepted values are `english` and `chinese` for the language that you are working on
+> 
+> This is set to test for `english` by default.
 
-2. Switch to the `curriculum` directory:
-
-```
-  cd curriculum
-```
-
-3. Run the following for each challenge file for which you have changed any `testString`s or added solutions:
+1. To test all challenges run the below command from the root directory
 
 ```
-npm run test -- -g 'the full English title of the challenge'
+npm run test:curriculum
+``` 
+
+2. You can also test a block or a superblock of challenges with these commands
+
 ```
+npm run test:curriculum --block='Basic HTML and HTML5'
+```
+
+```
+npm run test:curriculum --superblock=responsive-web-design
+```
+
+You are also able to test one challenge individually by performing the following steps:
+
+1. Switch to the `curriculum` directory:
+
+   ```
+   cd curriculum
+   ```
+
+2. Run the following for each challenge file for which you have changed:
+
+   ```
+   npm run test -- -g 'the full English title of the challenge'
+   ```
 
 Once you have verified that each challenge you've worked on passes the tests, [please create a pull request](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/docs/how-to-open-a-pull-request.md).
 
