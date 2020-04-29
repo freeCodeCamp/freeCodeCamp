@@ -30,7 +30,7 @@ const composeEnhancers = composeWithDevTools({
 
 export const createStore = () => {
   let store;
-  if (process.env.FREECODECAMP_NODE_ENV === 'production') {
+  if (ENVIRONMENT === 'production') {
     store = reduxCreateStore(
       rootReducer,
       applyMiddleware(sagaMiddleware, epicMiddleware)
