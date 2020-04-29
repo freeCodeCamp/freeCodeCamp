@@ -39,7 +39,7 @@ tests:
   - text: View engine should be Pug.
     testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /('|")view engine('|"),( |)('|")pug('|")/gi, 'Your project should set Pug as a view engine'); }, xhr => { throw new Error(xhr.statusText); })
   - text: Use the correct ExpressJS method to render the index page from the response.
-    testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /res(\s+)?\.(r\w{5})\(('|")((\.{2})?)\/?(\w{3})\/(\w{5})('|")\)(;)?/gi, 'You successfully rendered the Pug template!'); }, xhr => { throw new Error(xhr.statusText); })
+    testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /res(\s*)?\.(r\w{5})/gi, 'You successfully rendered the Pug template!'); }, xhr => { throw new Error(xhr.statusText); })
   - text: Pug should be working.
     testString: getUserInput => $.get(getUserInput('url')+ '/') .then(data => { assert.match(data, /pug-success-message/gi, 'Your projects home page should now be rendered by pug with the projects .pug file unaltered'); }, xhr => { throw new Error(xhr.statusText); })
 ```
