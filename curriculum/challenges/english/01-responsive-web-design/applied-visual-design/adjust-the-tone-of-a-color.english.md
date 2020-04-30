@@ -8,7 +8,7 @@ forumTopicId: 301038
 
 ## Description
 <section id='description'>
-The <code>hsl()</code> option in CSS also makes it easy to adjust the tone of a color. Increasing percentage for only for lightness creates a tint, and decreasing will make a shade. Alternatively, a tone is produced by either changing saturation or lightness. Recall that the 's' and 'l' of <code>hsl()</code> stand for saturation and lightness, respectively. The saturation percent changes the amount of gray and the lightness percent determines how much white or black is in the color. This is useful when you have a base hue you like, but need different variations of it.
+The <code>hsl()</code> option in CSS also makes it easy to adjust the tone of a color. Increasing percentage only for lightness creates a tint, and decreasing will make a shade. Alternatively, a tone is produced by either changing saturation or lightness. Recall that the 's' and 'l' of <code>hsl()</code> stand for saturation and lightness, respectively. The saturation percent changes the amount of gray and the lightness percent determines how much white or black is in the color. This is useful when you have a base hue you like, but need different variations of it.
 </section>
 
 ## Instructions
