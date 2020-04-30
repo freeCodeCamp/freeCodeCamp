@@ -17,16 +17,12 @@ finally() {
   local hanging_server_processes=$(ps aux | grep -v grep | grep 'node production-start.js' | awk '{print $2}')
 
   # Send kill signal to the processes
-  if [ ${#hanging_api_processes} -gt "0" ];  then
-    kill -9 $hanging_api_processes &>/dev/null
+ local process= [ ${#hanging_client_processes} -gt "0" ] && process=$hanging_client_processes || process=$hanging_api_processes  
+  # if and only if the previous processes are empty then continue to the next one
+  if [ ${#process} -eq "0" ]; then process=$hanging_server_processes 
   fi
-  if [ ${#hanging_client_processes} -gt "0" ]; then
-    kill -9 $hanging_client_processes &>/dev/null
-  fi
-  if [ ${#hanging_server_processes} -gt "0" ]; then
-    kill -9 $hanging_server_processes &>/dev/null
-  fi
-
+        
+  kill -9 $process &>/dev/null
   kill -9 $gastby_pid $api_pid &>/dev/null
 
   echo "Finally exiting with a status code of ${exit_code}"
