@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+
 import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
@@ -6,6 +7,11 @@ import { Link } from 'gatsby';
 import { uniq } from 'lodash';
 import { Spacer } from '../helpers';
 import Login from '../Header/components/Login';
+import AppleLogo from '../../assets/images/AppleLogo.js';
+import AmazonLogo from '../../assets/images/AmazonLogo.js';
+import MicrosoftLogo from '../../assets/images/MicrosoftLogo.js';
+import SpotifyLogo from '../../assets/images/SpotifyLogo.js';
+import GoogleLogo from '../../assets/images/GoogleLogo.js';
 
 import './landing.css';
 import '../Map/map.css';
@@ -56,11 +62,21 @@ export const Landing = ({ edges }) => {
                 gotten jobs at tech companies including:
               </h2>
               <div className='logo-row'>
-                <h2 className='medium-heading'>Apple</h2>
-                <h2 className='medium-heading'>Google</h2>
-                <h2 className='medium-heading'>Amazon</h2>
-                <h2 className='medium-heading'>Microsoft</h2>
-                <h2 className='medium-heading'>Spotify</h2>
+                <Col md={2} sm={3} xs={4}>
+                  <AppleLogo />
+                </Col>
+                <Col md={2} sm={3} xs={4}>
+                  <GoogleLogo />
+                </Col>
+                <Col md={2} sm={3} xs={4}>
+                  <AmazonLogo />
+                </Col>
+                <Col md={2} sm={3} xs={4}>
+                  <MicrosoftLogo />
+                </Col>
+                <Col md={2} sm={3} xs={4}>
+                  <SpotifyLogo />
+                </Col>
               </div>
             </Col>
           </Row>
