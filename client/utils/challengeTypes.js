@@ -130,5 +130,6 @@ exports.helpCategory = {
   tensorflow: 'Python',
   'how-neural-networks-work': 'Python',
   numpy: 'Python',
-  'data-analysis-with-python-course': 'Python'
+  'data-analysis-with-python-course': 'Python',
+  'python-for-penetration-testing': 'Python'
 };
