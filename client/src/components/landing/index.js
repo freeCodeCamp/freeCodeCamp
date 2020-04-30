@@ -16,7 +16,7 @@ const propTypes = {
 
 const BigCallToAction = () => (
   <Row>
-    <Col md={6} mdOffset={3} sm={10} smOffset={1} xs={12}>
+    <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
       <Login block={true} data-test-label='landing-big-cta'>
         Get started (it's free)
       </Login>
