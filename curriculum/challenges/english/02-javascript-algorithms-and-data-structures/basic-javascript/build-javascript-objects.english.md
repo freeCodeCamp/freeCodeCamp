@@ -38,7 +38,7 @@ However, if your object has any non-string properties, JavaScript will automatic
 ## Instructions
 <section id='instructions'>
 Make an object that represents a dog called <code>myDog</code> which contains the properties <code>"name"</code> (a string), <code>"legs"</code>, <code>"tails"</code> and <code>"friends"</code>.
-You can set these object properties to whatever values you want, as long <code>"name"</code> is a string, <code>"legs"</code> and <code>"tails"</code> are numbers, and <code>"friends"</code> is an array.
+You can set these object properties to whatever values you want, as long as <code>"name"</code> is a string, <code>"legs"</code> and <code>"tails"</code> are numbers, and <code>"friends"</code> is an array.
 </section>
 
 ## Tests
