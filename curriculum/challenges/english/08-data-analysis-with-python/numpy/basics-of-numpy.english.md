@@ -14,12 +14,12 @@ videoId: f9QrZrKQMLI
 
 ```yml
 question:
-  text: Question
+  text: 'What will the following code print:<pre>b = np.array([[1.0,2.0,3.0],[3.0,4.0,5.0]])<br>print(b)</pre>'
   answers:
-    - one
-    - two
-    - three
-  solution: 3
+    - '<pre>[[1.0 2.0 3.0]<br>[3.0 4.0 5.0]]<pre>'
+    - '<pre>[[1. 2. 3.]<br>[3. 4. 5.]]<pre>'
+    - '<pre>[[1. 3.]<br>[2. 4.]<br>[3. 5.]<pre>'
+  solution: 2
 ```
 
 </section>
