@@ -42,3 +42,4 @@ function plugin() {
 }
 
 module.exports = plugin;
+module.exports.mdToHTML = mdToHTML;

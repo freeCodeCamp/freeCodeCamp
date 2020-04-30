@@ -3,6 +3,21 @@ const mockAST = require('./fixtures/challenge-md-ast.json');
 const mockVideoAST = require('./fixtures/video-challenge-md-ast.json');
 const testsToData = require('./tests-to-data');
 
+const { mdToHTML } = testsToData;
+
+describe('mdToHTML', () => {
+  it('converts Markdown to HTML', () => {
+    // a line of text on its own is parsed as a paragraph, hence the p tags
+    expect(mdToHTML('*it*')).toBe('<p><em>it</em></p>');
+  });
+
+  it('preserves code language', () => {
+    expect(mdToHTML('```js\n var x = "y";\n```')).toBe(
+      '<pre><code class="language-js"> var x = "y";\n</code></pre>'
+    );
+  });
+});
+
 describe('tests-to-data plugin', () => {
   const plugin = testsToData();
   let file = { data: {} };
@@ -43,7 +58,6 @@ describe('tests-to-data plugin', () => {
   it('should convert question and answer markdown into html', () => {
     plugin(mockVideoAST, file);
     const testObject = file.data.question;
-    console.log(testObject);
     expect(Object.keys(testObject).length).toBe(3);
     expect(testObject.text).toBe(
       '<p>Question line one</p>\n' +
