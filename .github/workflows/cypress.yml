@@ -6,6 +6,9 @@ on:
       - production-**
       # This will let us work on cypress config itself
       - cypress-**
+  pull_request:
+    branches:
+      - master
 jobs:
   cypress-run:
     name: Cypress run
@@ -25,7 +28,11 @@ jobs:
 
       - name: Cypress run
         uses: cypress-io/github-action@v1
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
+          record: true
           build: npm run build
           # this should mirror the production build, but for now we're just using the dev
           # server and gatsby serve instead (the npm script serve:client needs updating!)
