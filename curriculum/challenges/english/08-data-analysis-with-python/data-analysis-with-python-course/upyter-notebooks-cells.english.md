@@ -14,12 +14,12 @@ videoId: 5PPegAs9aLA
 
 ```yml
 question:
-  text: Question
+  text: <pre>Which cells are responsible for rich display?</pre>
   answers:
-    - one
-    - two
-    - three
-  solution: 3
+    - Code Cells
+    - Markdown Cells
+    - Raw Cells
+  solution: 1
 ```
 
 </section>
