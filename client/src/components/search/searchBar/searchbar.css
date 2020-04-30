@@ -143,6 +143,7 @@ and arrow keys */
   }
   .fcc_searchBar {
     position: relative;
+    max-width: 520px;
   }
   .fcc_searchBar .ais-Hits {
     top: auto;
