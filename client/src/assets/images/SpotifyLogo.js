@@ -6,7 +6,7 @@ const propTypes = {};
 function SpotifyLogo(props) {
   return (
     <svg
-      viewBox='3018 285.379 1579 473.572'
+      viewBox='3018 235.379 1579 572'
       xmlns='http://www.w3.org/2000/svg'
       xmlnsXlink='http://www.w3.org/1999/xlink'
       {...props}

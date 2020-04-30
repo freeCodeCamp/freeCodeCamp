@@ -6,7 +6,7 @@ const propTypes = {};
 function MicrosoftLogo(props) {
   return (
     <svg
-      viewBox='939.813 1275 1390.374 297'
+      viewBox='939.813 1145 1400 572'
       xmlns='http://www.w3.org/2000/svg'
       xmlnsXlink='http://www.w3.org/1999/xlink'
       {...props}

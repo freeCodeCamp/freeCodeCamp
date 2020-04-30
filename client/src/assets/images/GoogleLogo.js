@@ -6,7 +6,7 @@ const propTypes = {};
 function GoogleLogo(props) {
   return (
     <svg
-      viewBox='1635 326.06 1187.437 390.88'
+      viewBox='1635 200 1400 600'
       xmlns='http://www.w3.org/2000/svg'
       xmlnsXlink='http://www.w3.org/1999/xlink'
       {...props}
