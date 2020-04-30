@@ -5,12 +5,22 @@
   --text-color-base: #2e2e46;
   --text-color-secondary: #646473;
   --text-color-tertiary: #81818e;
+  --background-color: #f3f3f3;
+  --text-color-base: #2e2e46;
+  --text-color-secondary: #646473;
+  --text-color-tertiary: #81818e;
+  --navbar-menu-background: var(--mono-tint1);
+  --navbar-menu-box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 1px,
+    rgba(0, 0, 0, 0.05) 0px 1px 2px, rgba(0, 0, 0, 0.05) 0px 2px 4px,
+    rgba(0, 0, 0, 0.05) 0px 4px 8px, rgba(0, 0, 0, 0.05) 0px 8px 16px,
+    rgba(0, 0, 0, 0.05) 0px 16px 32px;
 }
 
 body {
   font-size: 100%;
   line-height: 2em;
-  color: var(--text-color);
+  color: var(--text-color-base);
+  background-color: var(--background-color);
 }
 
 * {
@@ -287,6 +297,14 @@ body.close .github-corner {
   color: #f8f8f8;
   padding: 0.05em 0.15em 0 0.15em;
   margin: 0.05em;
+}
+
+.markdown-section h1 {
+  font-family: Roboto Mono, monospace;
+}
+
+.markdown-section p {
+  font-family: Lato, sans-serif;
 }
 
 .markdown-section em,
