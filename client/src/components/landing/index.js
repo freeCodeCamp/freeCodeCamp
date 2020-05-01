@@ -12,6 +12,7 @@ import AmazonLogo from '../../assets/images/AmazonLogo.js';
 import MicrosoftLogo from '../../assets/images/MicrosoftLogo.js';
 import SpotifyLogo from '../../assets/images/SpotifyLogo.js';
 import GoogleLogo from '../../assets/images/GoogleLogo.js';
+import AsFeatureLogo from '../../assets/images/AsFeatureLogo.js';
 
 import './landing.css';
 import '../Map/map.css';
@@ -28,6 +29,13 @@ const BigCallToAction = () => (
       </Login>
     </Col>
   </Row>
+);
+
+const AsFeaturedSection = () => (
+  <div className='text-center'>
+    <h2 className='medium-heading'>As Featured In:</h2>
+    <AsFeatureLogo width='70%' />
+  </div>
 );
 
 export const Landing = ({ edges }) => {
@@ -83,6 +91,7 @@ export const Landing = ({ edges }) => {
           <Spacer />
           <BigCallToAction />
           <Spacer />
+          <AsFeaturedSection />
           <Row>
             <Col sm={10} smOffset={1} xs={12}>
               <h2 className='medium-heading'>Certifications:</h2>
