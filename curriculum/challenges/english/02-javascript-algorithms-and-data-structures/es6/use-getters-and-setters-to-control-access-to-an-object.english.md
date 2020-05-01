@@ -9,7 +9,7 @@ forumTopicId: 301220
 <section id='description'>
 You can obtain values from an object and set the value of a property within an object.
 These are classically called <dfn>getters</dfn> and <dfn>setters</dfn>.
-Getter functions are meant to simply return (get) the value of an object's private variable to the user without the user directly accessing the private variable.
+Getter functions are meant to access the value of an object's private variable without the user directly accessing the private variable. This value can be returned with or without performing any additional modifications to it.
 Setter functions are meant to modify (set) the value of an object's private variable based on the value passed into the setter function. This change could involve calculations, or even overwriting the previous value completely.<br><br>
 
 ```js
@@ -26,10 +26,10 @@ class Book {
     this._author = updatedAuthor;
   }
 }
-const lol = new Book('anonymous');
-console.log(lol.writer);  // anonymous
-lol.writer = 'wut';
-console.log(lol.writer);  // wut
+const novel = new Book('anonymous');
+console.log(novel.writer);  // anonymous
+novel.writer = 'newAuthor';
+console.log(novel.writer);  // newAuthor
 ```
 
 Notice the syntax used to invoke the getter and setter. They do not even look like functions.
@@ -39,7 +39,7 @@ Getters and setters are important because they hide internal implementation deta
 
 ## Instructions
 <section id='instructions'>
-Use the <code>class</code> keyword to create a Thermostat class. The constructor accepts a Fahrenheit temperature.
+Use the <code>class</code> keyword to create a Thermostat class. The constructor accepts a Fahrenheit temperature. This constructor should convert Fahrenheit to Celsius.
 Now create a <code>getter</code> and a <code>setter</code> in the class, to obtain the temperature in Celsius.
 Remember that <code>C = 5/9 * (F - 32)</code> and <code>F = C * 9.0 / 5 + 32</code>, where <code>F</code> is the value of temperature in Fahrenheit, and <code>C</code> is the value of the same temperature in Celsius.
 <strong>Note:</strong> When you implement this, you will track the temperature inside the class in one scale, either Fahrenheit or Celsius.
