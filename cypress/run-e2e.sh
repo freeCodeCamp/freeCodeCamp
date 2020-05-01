@@ -11,20 +11,18 @@ finally() {
 
   local exit_code="${1:-0}"
   # This is the clean up.
-  # Find any node processes running from within the client dir
-  local hanging_client_processes=$(ps aux | grep -v grep | grep client/node_modules | awk '{print $2}')
+  # Find any node processes running from within the client dir    
   local hanging_api_processes=$(ps aux | grep -v grep | grep api-server/node_modules | awk '{print $2}')
+  local hanging_client_processes=$(ps aux | grep -v grep | grep client/node_modules | awk '{print $2}')
   local hanging_server_processes=$(ps aux | grep -v grep | grep 'node production-start.js' | awk '{print $2}')
-
+  
   # Send kill signal to the processes
- local process= [ ${#hanging_client_processes} -gt "0" ] && process=$hanging_client_processes || process=$hanging_api_processes  
+  local process=$()
+  compare= [ ${#hanging_api_processes} -gt "0" ] && process=$hanging_api_processes || process=$hanging_client_processes  
   # if and only if the previous processes are empty then continue to the next one
   if [ ${#process} -eq "0" ]; then process=$hanging_server_processes 
   fi
-        
-  kill -9 $process &>/dev/null
-  kill -9 $gastby_pid $api_pid &>/dev/null
-
+  kill -9 $process $gastby_pid $api_pid &>/dev/null # kills processes starting at process signal
   echo "Finally exiting with a status code of ${exit_code}"
   exit "${exit_code}"
 }
