@@ -31,6 +31,26 @@ const BigCallToAction = () => (
   </Row>
 );
 
+const CompanyLogosSection = () => (
+  <div className='logo-row'>
+    <Col md={2} sm={3} xs={4}>
+      <AppleLogo />
+    </Col>
+    <Col md={2} sm={3} xs={4}>
+      <GoogleLogo />
+    </Col>
+    <Col md={2} sm={3} xs={4}>
+      <AmazonLogo />
+    </Col>
+    <Col md={2} sm={3} xs={4}>
+      <MicrosoftLogo />
+    </Col>
+    <Col md={2} sm={3} xs={4}>
+      <SpotifyLogo />
+    </Col>
+  </div>
+);
+
 const AsFeaturedSection = () => (
   <div className='text-center'>
     <h2 className='medium-heading'>As Featured In:</h2>
@@ -69,23 +89,7 @@ export const Landing = ({ edges }) => {
                 Since 2014, more than 40,000 freeCodeCamp.org graduates have
                 gotten jobs at tech companies including:
               </h2>
-              <div className='logo-row'>
-                <Col md={2} sm={3} xs={4}>
-                  <AppleLogo />
-                </Col>
-                <Col md={2} sm={3} xs={4}>
-                  <GoogleLogo />
-                </Col>
-                <Col md={2} sm={3} xs={4}>
-                  <AmazonLogo />
-                </Col>
-                <Col md={2} sm={3} xs={4}>
-                  <MicrosoftLogo />
-                </Col>
-                <Col md={2} sm={3} xs={4}>
-                  <SpotifyLogo />
-                </Col>
-              </div>
+              <CompanyLogosSection />
             </Col>
           </Row>
           <Spacer />
