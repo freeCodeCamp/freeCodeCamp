@@ -7,7 +7,7 @@ challengeType: 5
 ## Description
 <section id='description'>
 The Lempel-Ziv-Welch (LZW) algorithm provides loss-less data compression.
-You can read a complete description of it in the  <a href="https://en.wikipedia.org/wiki/Lempel-Ziv-Welch" about="_blank">Wikipedia article</a>  on the subject.  It was patented, but it entered the public domain in 2004.
+You can read a complete description of it in the  <a href="https://en.wikipedia.org/wiki/Lempel-Ziv-Welch" target="_blank">Wikipedia article</a>  on the subject. It was patented, but it entered the public domain in 2004.
 </section>
 
 ## Instructions
@@ -21,11 +21,11 @@ Write a function that takes two parameters. The first parameter is a boolean. Tr
 ```yml
 tests:
   - text: <code>LZW</code> should be a function.
-    testString: assert(typeof LZW == 'function');
+    testString: assert(typeof LZW === 'function');
   - text: <code>LZW(true, "TOBEORNOTTOBEORTOBEORNOT")</code> should return a array.
     testString: assert(Array.isArray(LZW(true, "TOBEORNOTTOBEORTOBEORNOT")));
   - text: <code>LZW(false, [84, 79, 66, 69, 79, 82, 78, 79, 84, 256, 258, 260, 265, 259, 261, 263])</code> should return a string.
-    testString: assert(typeof LZW(false, [84, 79, 66, 69, 79, 82, 78, 79, 84, 256, 258, 260, 265, 259, 261, 263]) == 'string');
+    testString: assert(typeof LZW(false, [84, 79, 66, 69, 79, 82, 78, 79, 84, 256, 258, 260, 265, 259, 261, 263]) === 'string');
   - text: <code>LZW(true, "TOBEORNOTTOBEORTOBEORNOT")</code> should return <code>[84, 79, 66, 69, 79, 82, 78, 79, 84, 256, 258, 260, 265, 259, 261, 263]</code>.
     testString: assert.deepEqual(LZW(true, "TOBEORNOTTOBEORTOBEORNOT"), [84, 79, 66, 69, 79, 82, 78, 79, 84, 256, 258, 260, 265, 259, 261, 263]);
   - text: <code>LZW(false, [84, 79, 66, 69, 79, 82, 78, 79, 84, 256, 258, 260, 265, 259, 261, 263])</code> should return <code>"TOBEORNOTTOBEORTOBEORNOT"</code>.
