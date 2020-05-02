@@ -28,7 +28,7 @@ Change the code to use the <code>++</code> operator on <code>myVar</code>.
 tests:
   - text: <code>myVar</code> should equal <code>88</code>.
     testString: assert(myVar === 88);
-  - text: <code>myVar = myVar + 1;</code> should be changed.
+  - text: You should not use the assignment operator.
     testString: assert(/var\s*myVar\s*=\s*87;\s*\/*.*\s*([+]{2}\s*myVar|myVar\s*[+]{2});/.test(code));
   - text: You should use the <code>++</code> operator.
     testString: assert(/[+]{2}\s*myVar|myVar\s*[+]{2}/.test(code));
