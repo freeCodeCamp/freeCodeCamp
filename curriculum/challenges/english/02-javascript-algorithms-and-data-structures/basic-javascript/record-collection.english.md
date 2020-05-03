@@ -7,6 +7,7 @@ forumTopicId: 18261
 ---
 
 ## Description
+
 <section id='description'>
 You are given a JSON object representing a part of your musical album collection. Each album has several properties and a unique id number as its key. Not all albums have complete information.
 Write a function which takes an album's <code>id</code> (like <code>2548</code>), a property <code>prop</code> (like <code>"artist"</code> or <code>"tracks"</code>), and a <code>value</code> (like <code>"Addicted to Love"</code>) to modify the data in this collection.
@@ -22,17 +23,19 @@ You may refer back to <a href="/learn/javascript-algorithms-and-data-structures/
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
 tests:
   - text: You should not change the <code>collection</code> object's initialization
-    testString: 'assert(code.match(/var collection = {\s*2548: {\s*album: "Slippery When Wet",\s*artist: "Bon Jovi",\s*tracks: \[\s*"Let It Rock",\s*"You Give Love a Bad Name"\s*\]\s*},\s*2468: {\s*album: "1999",\s*artist: "Prince",\s*tracks: \[\s*"1999",\s*"Little Red Corvette"\s*\]\s*},\s*1245: {\s*artist: "Robert Palmer",\s*tracks: \[\s*\]\s*},\s*5439: {\s*album: "ABBA Gold"\s*}\s*};/g));'
+    testString: 'assert.deepEqual(JSON.stringify(collectionCopy), JSON.stringify({2548:{album:"Slippery When Wet",artist:"Bon Jovi",tracks:["Let It Rock","You Give Love a Bad Name"]},2468:{album:"1999",artist:"Prince",tracks:["1999","Little Red Corvette"]},1245:{artist:"Robert Palmer",tracks:[]},5439:{album:"ABBA Gold"}}));'
   - text: After <code>updateRecords(5439, "artist", "ABBA")</code>, <code>artist</code> should be <code>"ABBA"</code>
     testString: assert(updateRecords(5439, "artist", "ABBA")[5439]["artist"] === "ABBA");
   - text: After <code>updateRecords(5439, "tracks", "Take a Chance on Me")</code>, <code>tracks</code> should have <code>"Take a Chance on Me"</code> as the last element.
@@ -47,12 +50,12 @@ tests:
     testString: updateRecords(2548, "tracks", ""); assert(!collection[2548].hasOwnProperty("tracks"));
   - text: After <code>updateRecords(1245, "album", "Riptide")</code>, <code>album</code> should be <code>"Riptide"</code>
     testString: assert(updateRecords(1245, "album", "Riptide")[1245]["album"] === "Riptide");
-
 ```
 
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 <div id='js-seed'>
 
@@ -60,29 +63,26 @@ tests:
 // Setup
 var collection = {
   2548: {
-    album: "Slippery When Wet",
-    artist: "Bon Jovi",
-    tracks: [
-      "Let It Rock",
-      "You Give Love a Bad Name"
-    ]
+    album: 'Slippery When Wet',
+    artist: 'Bon Jovi',
+    tracks: ['Let It Rock', 'You Give Love a Bad Name']
   },
   2468: {
-    album: "1999",
-    artist: "Prince",
-    tracks: [
-      "1999",
-      "Little Red Corvette"
-    ]
+    album: '1999',
+    artist: 'Prince',
+    tracks: ['1999', 'Little Red Corvette']
   },
   1245: {
-    artist: "Robert Palmer",
-    tracks: [ ]
+    artist: 'Robert Palmer',
+    tracks: []
   },
   5439: {
-    album: "ABBA Gold"
+    album: 'ABBA Gold'
   }
 };
+
+// Do not change this line
+var collectionCopy = JSON.parse(JSON.stringify(collection));
 
 // Only change code below this line
 function updateRecords(id, prop, value) {
@@ -91,46 +91,44 @@ function updateRecords(id, prop, value) {
   return collection;
 }
 
-updateRecords(5439, "artist", "ABBA");
+updateRecords(5439, 'artist', 'ABBA');
 ```
 
 </div>
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js
 var collection = {
   2548: {
-    album: "Slippery When Wet",
-    artist: "Bon Jovi",
-    tracks: [
-      "Let It Rock",
-      "You Give Love a Bad Name"
-    ]
+    album: 'Slippery When Wet',
+    artist: 'Bon Jovi',
+    tracks: ['Let It Rock', 'You Give Love a Bad Name']
   },
   2468: {
-    album: "1999",
-    artist: "Prince",
-    tracks: [
-      "1999",
-      "Little Red Corvette"
-    ]
+    album: '1999',
+    artist: 'Prince',
+    tracks: ['1999', 'Little Red Corvette']
   },
   1245: {
-    artist: "Robert Palmer",
-    tracks: [ ]
+    artist: 'Robert Palmer',
+    tracks: []
   },
   5439: {
-    album: "ABBA Gold"
+    album: 'ABBA Gold'
   }
 };
 
+// Do not change this line
+var collectionCopy = JSON.parse(JSON.stringify(collection));
+
 // Only change code below this line
 function updateRecords(id, prop, value) {
-  if(value === "") delete collection[id][prop];
-  else if(prop === "tracks") {
+  if (value === '') delete collection[id][prop];
+  else if (prop === 'tracks') {
     collection[id][prop] = collection[id][prop] || [];
     collection[id][prop].push(value);
   } else {
