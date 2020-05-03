@@ -44,7 +44,7 @@ To generate succeeding ludic numbers create an array of increasing integers star
 ## Instructions
 
 <section id='instructions'>
-Write a function that returns all the ludic numbers that do not exceed the given number.
+Write a function that returns all the ludic numbers less than or equal to the given number.
 </section>
 
 ## Tests

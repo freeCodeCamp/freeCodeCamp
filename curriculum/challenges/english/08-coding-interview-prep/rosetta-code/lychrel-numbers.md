@@ -7,21 +7,21 @@ challengeType: 5
 ## Description
 <section id='description'>
 <ol>
-  <li>Take an integer <code>n</code>, greater than zero.</li>
-  <li>Form the next <code>n</code> of its series by reversing the digits of the current n and adding the result to the current <code>n</code>.</li>
+  <li>Take an integer <code>n₀</code>, greater than zero.</li>
+  <li>Form the next number <code>n</code> of the series by reversing <code>n₀</code> and adding it to <code>n₀</code></li>
   <li>Stop when <code>n</code> becomes palindromic - i.e. the digits of <code>n</code> in reverse order == <code>n</code>.</li>
 </ol>
 
 The above recurrence relation when applied to most starting numbers `n` = 1, 2, ... terminates in a palindrome quite quickly.
 
-For example if `n`<sub>0</sub> = 12 we get:
+For example if `n₀` = 12 we get:
 
 ```bash
 12
 12 + 21 = 33,  a palindrome!
 ```
 
-And if `n`<sub>0</sub> = 55 we get:
+And if `n₀` = 55 we get:
 
 ```bash
 55
@@ -65,7 +65,7 @@ Because of this we can further split the Lychrel numbers into true <b>Seed</b> L
 ## Instructions
 
 <section id='instructions'>
-Write a function that takes a number as a parameter. Return true if the number is a Lynchrel number. Otherwise, return false. The iteration limit is 500.
+Write a function that takes a number as a parameter. Return true if the number is a Lynchrel number. Otherwise, return false. Remember that the iteration limit is 500.
 </section>
 
 ## Tests

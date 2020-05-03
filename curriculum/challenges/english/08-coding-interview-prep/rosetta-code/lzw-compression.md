@@ -7,12 +7,12 @@ challengeType: 5
 ## Description
 <section id='description'>
 The Lempel-Ziv-Welch (LZW) algorithm provides loss-less data compression.
-You can read a complete description of it in the  <a href="https://en.wikipedia.org/wiki/Lempel-Ziv-Welch" target="_blank">Wikipedia article</a>  on the subject. It was patented, but it entered the public domain in 2004.
+You can read a complete description of it in the <a href="https://en.wikipedia.org/wiki/Lempel-Ziv-Welch" target="_blank">Wikipedia article</a> on the subject.
 </section>
 
 ## Instructions
 <section id='instructions'>
-Write a function that takes two parameters. The first parameter is a boolean. True indicates compress and false indicates decompress. The second parameter is either a string or an array to be compressed or decompressed, respectively. If it is a string to be compressed, return an array of numbers. If it's an array of numbers to be decompressed, return a string.
+Write a function that takes two parameters. The first parameter is a boolean where `true` indicates compress and `false` indicates decompress. The second parameter is either a string or an array to be processed. If it is a string to be compressed, return an array of numbers. If it's an array of numbers to be decompressed, return a string.
 </section>
 
 ## Tests
