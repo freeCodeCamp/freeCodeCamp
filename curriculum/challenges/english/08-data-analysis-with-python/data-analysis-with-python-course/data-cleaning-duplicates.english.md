@@ -14,12 +14,12 @@ videoId: kj7QqjXhH6A
 
 ```yml
 question:
-  text: Question
+  text: 'The Python method ''.duplicated()'' returns a boolean Series for your DataFrame. ''True'' is the return value for rows that:'
   answers:
-    - one
-    - two
-    - three
-  solution: 3
+    - contain a duplicate, where the value for the row contains the first occurence of that value.
+    - contain a duplicate, where the value for the row contains the second occurence of that value.
+    - contain a duplicate, where the value for the row contains either the first or second occurence.
+  solution: 2
 ```
 
 </section>
