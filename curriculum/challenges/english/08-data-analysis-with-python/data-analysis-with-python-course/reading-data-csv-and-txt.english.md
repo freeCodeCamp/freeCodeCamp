@@ -14,7 +14,7 @@ videoId: ViGEv0zOzUk
 
 ```yml
 question:
-  text: 'How would you import the CSV file "data.csv" and store it in a DataFrame using Python's Pandas module?'
+  text: 'How would you import the CSV file "data.csv" and store it in a DataFrame using the Pandas module?'
   answers:
     - '<pre>import pandas as pd<br>df = pd.csv("data.csv")</pre>'
     - '<pre>import pandas as pd<br>df = pd.read_csv("data.csv")</pre>'
