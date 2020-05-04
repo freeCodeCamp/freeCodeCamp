@@ -1,5 +1,54 @@
 code .token.operator {
   background: none;
+  color: black;
+}
+
+code .token.variable {
+  color: #018;
+}
+
+code .token.property {
+  color: red;
+}
+
+code .token.selector {
+  color: #800;
+}
+
+code .token.comment {
+  color: #080;
+}
+
+code .token.tag {
+  color: #800;
+}
+
+code .token.attr-name {
+  color: red;
+}
+
+code .token.attr-value {
+  color: blue;
+}
+
+code .token.keyword {
+  color: #00f;
+}
+
+code .token.number {
+  color: #098658;
+}
+
+code .token.string {
+  color: #800;
+}
+
+code .token.function {
+  color: #00107e;
+}
+
+code .token.boolean {
+  color: blue;
 }
 
 :not(pre) > code[class*='language-'],
