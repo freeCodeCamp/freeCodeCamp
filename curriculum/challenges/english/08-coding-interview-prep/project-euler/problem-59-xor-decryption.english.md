@@ -32,8 +32,8 @@ Your task has been made easy, as the encryption key consists of three lower case
 tests:
   - text: <code>XORDecryption(cipher)</code> should return a number.
     testString: assert(typeof XORDecryption(cipher) === 'number');
-  - text: <code>XORDecryption(cipher)</code> should return 107359.
-    testString: assert.strictEqual(XORDecryption(cipher), 107359);
+  - text: <code>XORDecryption(cipher)</code> should return 129448.
+    testString: assert.strictEqual(XORDecryption(cipher), 129448);
 
 ```
 
