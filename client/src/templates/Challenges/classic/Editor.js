@@ -15,10 +15,13 @@ import {
 import { userSelector, isDonationModalOpenSelector } from '../../../redux';
 import { Loader } from '../../../components/helpers';
 
+import './editor.css';
+
 const MonacoEditor = React.lazy(() => import('react-monaco-editor'));
 
 const propTypes = {
   canFocus: PropTypes.bool,
+  challengeFiles: PropTypes.object,
   containerRef: PropTypes.any.isRequired,
   contents: PropTypes.string,
   dimensions: PropTypes.object,
@@ -26,6 +29,8 @@ const propTypes = {
   ext: PropTypes.string,
   fileKey: PropTypes.string,
   inAccessibilityMode: PropTypes.bool.isRequired,
+  initialEditorContent: PropTypes.string,
+  initialExt: PropTypes.string,
   saveEditorContent: PropTypes.func.isRequired,
   setAccessibilityMode: PropTypes.func.isRequired,
   setEditorFocusability: PropTypes.func,
@@ -93,6 +98,12 @@ class Editor extends Component {
   constructor(...props) {
     super(...props);
 
+    this.state = {
+      code: '',
+      ext: '',
+      fileKey: ''
+    };
+
     this.options = {
       fontSize: '18px',
       scrollBeyondLastLine: false,
@@ -133,6 +144,11 @@ class Editor extends Component {
   };
 
   editorDidMount = (editor, monaco) => {
+    this.setState({
+      code: this.props.challengeFiles.indexcss.contents,
+      ext: this.props.challengeFiles.indexcss.ext,
+      fileKey: this.props.challengeFiles.indexcss.key
+    });
     this._editor = editor;
     editor.updateOptions({
       accessibilitySupport: this.props.inAccessibilityMode ? 'on' : 'auto'
@@ -206,8 +222,12 @@ class Editor extends Component {
   }
 
   onChange = editorValue => {
-    const { updateFile, fileKey } = this.props;
+    const { updateFile } = this.props;
+    const { fileKey } = this.state;
     updateFile({ key: fileKey, editorValue });
+    this.setState({
+      code: editorValue
+    });
   };
 
   componentDidUpdate(prevProps) {
@@ -217,11 +237,18 @@ class Editor extends Component {
   }
 
   render() {
-    const { contents, ext, theme, fileKey } = this.props;
+    const { code, ext, fileKey } = this.state;
+    const { theme } = this.props;
     const editorTheme = theme === 'night' ? 'vs-dark-custom' : 'vs-custom';
+
     return (
       <Suspense fallback={<Loader timeout={600} />}>
         <span className='notranslate'>
+          <div className='monaco-editor-tabs'>
+            <div className='monaco-editor-tab'>index.html</div>
+            <div className='monaco-editor-tab'>script.js</div>
+            <div className='monaco-editor-tab'>styles.css</div>
+          </div>
           <MonacoEditor
             editorDidMount={this.editorDidMount}
             editorWillMount={this.editorWillMount}
@@ -230,7 +257,7 @@ class Editor extends Component {
             onChange={this.onChange}
             options={this.options}
             theme={editorTheme}
-            value={contents}
+            value={code}
           />
         </span>
       </Suspense>

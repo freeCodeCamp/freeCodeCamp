@@ -20,6 +20,8 @@ function defaultFile(lang) {
   };
 }
 function createCodeGetter(key, regEx, seeds) {
+  console.log('seeds');
+  console.log(seeds);
   return container => {
     const {
       properties: { id }

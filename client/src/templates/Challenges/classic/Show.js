@@ -222,14 +222,12 @@ class ShowClassic extends Component {
   renderEditor() {
     const { files } = this.props;
 
-    const challengeFile = first(Object.keys(files).map(key => files[key]));
     return (
-      challengeFile && (
+      files && (
         <Editor
+          challengeFiles={files}
           containerRef={this.containerRef}
           ref={this.editorRef}
-          {...challengeFile}
-          fileKey={challengeFile.key}
         />
       )
     );
@@ -346,6 +344,14 @@ export const query = graphql`
         src
       }
       files {
+        indexcss {
+          key
+          ext
+          name
+          contents
+          head
+          tail
+        }
         indexhtml {
           key
           ext
