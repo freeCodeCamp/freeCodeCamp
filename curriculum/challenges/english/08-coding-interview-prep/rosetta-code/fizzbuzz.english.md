@@ -33,9 +33,9 @@ tests:
   - text: <code>fizzBuzz()</code> should return an Array.
     testString: assert(Array.isArray(fizzBuzz())==true);
   - text: Number only divisible by 3 should return <code>"Fizz"</code>.
-    testString: assert.equal(fizzBuzz()[50], "Fizz");
+    testString: assert.equal(fizzBuzz()[2], "Fizz");
   - text: Numbers only divisible by 5 should return <code>"Buzz"</code>.
-    testString: assert.equal(fizzBuzz()[49], "Buzz");
+    testString: assert.equal(fizzBuzz()[99], "Buzz");
   - text: Numbers divisible by 3 and 5 should return <code>"FizzBuzz"</code>.
     testString: assert.equal(fizzBuzz()[89], "FizzBuzz");
   - text: Numbers not divisible by 3 or 5 should return the number itself.
