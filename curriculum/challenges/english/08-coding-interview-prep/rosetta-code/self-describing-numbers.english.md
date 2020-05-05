@@ -6,11 +6,11 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-There are several so-called "self describing" or <a href="https://en.wikipedia.org/wiki/Self-descriptive_number">"self-descriptive"</a> integers. <br />
+There are several so-called "self describing" or <a target="_blank" href="https://en.wikipedia.org/wiki/Self-descriptive_number">"self-descriptive"</a> integers. 
 
-An integer is said to be "self-describing" if it has the property that, when digit positions are labeled 0 to N-1, the digit in each postion is eqal to the number of times that that digit appears in the number. <br />
+An integer is said to be "self-describing" if it has the property that, when digit positions are labeled 0 to N-1, the digit in each position is equal to the number of times that digit appears in the number.
 
-For example, <b>2020</b> is a four-digit self describing number: <br />
+For example, <b>2020</b> is a four-digit self describing number:
 <ul>
     <li> position 0 has value 2 and there are two 0s in the number; </li>
     <li> position 1 has value 0 and there are no 1s in the number; </li>
@@ -18,13 +18,13 @@ For example, <b>2020</b> is a four-digit self describing number: <br />
     <li> position 3 has value 0 and there are zero 3s; </li>
 </ul>
 
-Self-describing numbers < 100.000.000  are:     1210,   2020,   21200,   3211000,   42101000.
+Self-describing numbers < 100,000,000  are: 1210, 2020, 21200, 3211000, 42101000.
 </section>
 
 ## Instructions
 <section id='instructions'>
 
-Write a function that will check whether a given positive integer is self-describing.
+Write a function that takes a positive integer as a parameter. If it is self-describing return true. Otherwise, return false.
 
 </section>
 
