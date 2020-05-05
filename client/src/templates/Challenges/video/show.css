@@ -62,3 +62,7 @@
   border-radius: 50%;
   transform: translate(-50%, -50%);
 }
+
+.video-quiz-option > p {
+  margin: 0;
+}

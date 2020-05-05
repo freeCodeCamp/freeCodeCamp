@@ -1,0 +1,197 @@
+{
+  "type": "root",
+  "children": [
+    {
+      "type": "yaml",
+      "value": "id: 5e9a093a74c4063ca6f7c151\ntitle: Jupyter Notebooks Importing and Exporting Data\nchallengeType: 11\nvideoId: k1msxD3JIxE",
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 6,
+          "column": 4,
+          "offset": 129
+        },
+        "indent": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "children": [
+        {
+          "type": "text",
+          "value": "Description",
+          "position": {
+            "start": {
+              "line": 8,
+              "column": 4,
+              "offset": 134
+            },
+            "end": {
+              "line": 8,
+              "column": 15,
+              "offset": 145
+            },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 8,
+          "column": 1,
+          "offset": 131
+        },
+        "end": {
+          "line": 8,
+          "column": 15,
+          "offset": 145
+        },
+        "indent": []
+      }
+    },
+    {
+      "type": "html",
+      "value": "<section id='description'>\n</section>",
+      "position": {
+        "start": {
+          "line": 9,
+          "column": 1,
+          "offset": 146
+        },
+        "end": {
+          "line": 10,
+          "column": 11,
+          "offset": 183
+        },
+        "indent": [
+          1
+        ]
+      }
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "children": [
+        {
+          "type": "text",
+          "value": "Tests",
+          "position": {
+            "start": {
+              "line": 12,
+              "column": 4,
+              "offset": 188
+            },
+            "end": {
+              "line": 12,
+              "column": 9,
+              "offset": 193
+            },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 12,
+          "column": 1,
+          "offset": 185
+        },
+        "end": {
+          "line": 12,
+          "column": 9,
+          "offset": 193
+        },
+        "indent": []
+      }
+    },
+    {
+      "type": "html",
+      "value": "<section id='tests'>",
+      "position": {
+        "start": {
+          "line": 13,
+          "column": 1,
+          "offset": 194
+        },
+        "end": {
+          "line": 13,
+          "column": 21,
+          "offset": 214
+        },
+        "indent": []
+      }
+    },
+    {
+      "type": "code",
+      "lang": "yml",
+      "value": "question:\n  text: |\n    Question line one\n    ```js\n      var x = 'y';\n    ```\n\n  answers:\n    - inline `code`\n    - some *italics*\n    - <code> code in </code> code tags\n  solution: 3",
+      "position": {
+        "start": {
+          "line": 15,
+          "column": 1,
+          "offset": 216
+        },
+        "end": {
+          "line": 28,
+          "column": 4,
+          "offset": 411
+        },
+        "indent": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "type": "html",
+      "value": "</section>",
+      "position": {
+        "start": {
+          "line": 30,
+          "column": 1,
+          "offset": 413
+        },
+        "end": {
+          "line": 30,
+          "column": 11,
+          "offset": 423
+        },
+        "indent": []
+      }
+    }
+  ],
+  "position": {
+    "start": {
+      "line": 1,
+      "column": 1,
+      "offset": 0
+    },
+    "end": {
+      "line": 32,
+      "column": 1,
+      "offset": 425
+    }
+  }
+}
