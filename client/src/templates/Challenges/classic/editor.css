@@ -1,0 +1,24 @@
+.monaco-editor-tabs {
+  display: flex;
+  padding: 0px 10px;
+  background-color: var(--primary-background);
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.monaco-editor-tab {
+  position: relative;
+  top: 2px;
+  padding: 4px 16px;
+  border: 2px solid var(--primary-color);
+  border-left: none;
+  background-color: var(--secondary-background);
+}
+
+.monaco-editor-tab:first-child {
+  border-left: 2px solid var(--primary-color);
+}
+
+.monaco-editor-tab-selected {
+  background-color: var(--primary-background);
+  border-bottom: 2px solid var(--primary-background);
+}
