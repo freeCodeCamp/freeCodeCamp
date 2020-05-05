@@ -67,7 +67,8 @@ tests:
 <div id='html-seed'>
 
 ```html
-<h2>CatPhotoApp</h2>
+
+<h2 id="h2">CatPhotoApp</h2>
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
 
@@ -82,12 +83,28 @@ tests:
   <p>Top 3 things cats hate:</p>
 
 </main>
+
 ```
 
 </div>
 
+<div id='js-seed'>
 
+```js
+document.getElementById('h2').innerHTML = 'CATPHOTOAPP CAPITALIZED';
+```
 
+</div>
+
+<div id='css-seed'>
+
+```css
+a {
+  background-color:#000;
+}
+```
+
+</div>
 </section>
 
 ## Solution

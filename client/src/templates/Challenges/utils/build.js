@@ -78,6 +78,8 @@ export function canBuildChallenge(challengeData) {
 }
 
 export async function buildChallenge(challengeData, options) {
+  /* console.log('challengeData');
+  console.log(challengeData);*/
   const { challengeType } = challengeData;
   let build = buildFunctions[challengeType];
   if (build) {
@@ -122,6 +124,8 @@ async function getDOMTestRunner(buildData, proxyLogger, document) {
 }
 
 export function buildDOMChallenge({ files, required = [], template = '' }) {
+  /* console.log('buildDOM files');
+  console.log(files);*/
   const finalRequires = [...globalRequires, ...required, ...frameRunner];
   const loadEnzyme = Object.keys(files).some(key => files[key].ext === 'jsx');
   const toHtml = [jsToHtml, cssToHtml];
@@ -168,6 +172,11 @@ export function buildBackendChallenge({ url }) {
 }
 
 export async function updatePreview(buildData, document, proxyLogger) {
+  /* console.log('update preview buildData');
+  console.log(buildData);
+  console.log('update preview document');
+  console.log(document);*/
+
   const { challengeType } = buildData;
 
   if (challengeType === challengeTypes.html) {

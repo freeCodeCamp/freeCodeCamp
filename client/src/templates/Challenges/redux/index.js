@@ -104,8 +104,11 @@ export const sagas = [
   ...createCurrentChallengeSaga(types)
 ];
 
-export const createFiles = createAction(types.createFiles, challengeFiles =>
-  Object.keys(challengeFiles)
+export const createFiles = createAction(types.createFiles, challengeFiles => {
+  console.log('redux/index challengeFiles');
+  console.log(challengeFiles);
+
+  return Object.keys(challengeFiles)
     .filter(key => challengeFiles[key])
     .map(key => challengeFiles[key])
     .reduce(
@@ -117,8 +120,8 @@ export const createFiles = createAction(types.createFiles, challengeFiles =>
         }
       }),
       {}
-    )
-);
+    );
+});
 
 export const createQuestion = createAction(types.createQuestion);
 export const initTests = createAction(types.initTests);

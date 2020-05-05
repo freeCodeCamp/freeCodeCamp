@@ -16,13 +16,18 @@ import {
 
 const htmlCatch = '\n<!--fcc-->\n';
 const jsCatch = '\n;/*fcc*/\n';
+const cssCatch = '\n/*fcc*/\n';
 
-const defaultTemplate = ({ source }) => `
+const defaultTemplate = ({ source }) => {
+  /* console.log('source');
+  console.log(source);*/
+  return `
   <body id='display-body'style='margin:8px;'>
     <!-- fcc-start-source -->
       ${source}
     <!-- fcc-end-source -->
   </body>`;
+};
 
 const wrapInScript = partial(
   transformContents,
@@ -30,11 +35,12 @@ const wrapInScript = partial(
 );
 const wrapInStyle = partial(
   transformContents,
-  content => `${htmlCatch}<style>${content}</style>`
+  content => `${htmlCatch}<style>${content}${cssCatch}</style>`
 );
 const setExtToHTML = partial(setExt, 'html');
 const padContentWithJsCatch = partial(compileHeadTail, jsCatch);
-const padContentWithHTMLCatch = partial(compileHeadTail, htmlCatch);
+const padContentWithCssCatch = partial(compileHeadTail, cssCatch);
+// const padContentWithHTMLCatch = partial(compileHeadTail, htmlCatch);
 
 export const jsToHtml = cond([
   [
@@ -52,7 +58,7 @@ export const cssToHtml = cond([
   [
     matchesProperty('ext', 'css'),
     flow(
-      padContentWithHTMLCatch,
+      padContentWithCssCatch,
       wrapInStyle,
       setExtToHTML
     )
@@ -61,6 +67,9 @@ export const cssToHtml = cond([
 ]);
 
 export function concatHtml({ required = [], template, files = [] } = {}) {
+  /* console.log('builders.js files');
+  console.log(files);*/
+
   const createBody = template ? _template(template) : defaultTemplate;
   const head = required
     .map(({ link, src }) => {

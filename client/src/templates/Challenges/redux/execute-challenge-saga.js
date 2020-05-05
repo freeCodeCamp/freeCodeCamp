@@ -174,6 +174,8 @@ function* previewChallengeSaga() {
     yield fork(takeEveryConsole, logProxy);
 
     const challengeData = yield select(challengeDataSelector);
+    console.log('challengeData');
+    console.log(challengeData);
 
     if (canBuildChallenge(challengeData)) {
       const challengeMeta = yield select(challengeMetaSelector);

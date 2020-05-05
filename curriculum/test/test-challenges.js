@@ -371,6 +371,8 @@ function populateTestsForLang({ lang, challenges }, meta) {
           solutions = solutions.filter(
             solution => !!solution && !noSolution.test(solution)
           );
+          console.log('solutions===================');
+          console.log(solutions);
 
           if (solutions.length === 0) {
             it('Check tests. No solutions');
