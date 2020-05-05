@@ -10,7 +10,7 @@ import YouTube from 'react-youtube';
 import { createSelector } from 'reselect';
 
 // Local Utilities
-import SanitizedSpan from '../components/SanitizedSpan';
+import PrismFormatted from '../components/PrismFormatted';
 import { ChallengeNode } from '../../../redux/propTypes';
 import LearnLayout from '../../../components/layouts/Learn';
 import ChallengeTitle from '../components/Challenge-Title';
@@ -211,7 +211,7 @@ export class Project extends Component {
                   </i>
                 </div>
                 <ChallengeDescription description={description} />
-                <SanitizedSpan text={text} />
+                <PrismFormatted text={text} />
                 <Spacer />
                 <div className='video-quiz-options'>
                   {answers.map((option, index) => (
@@ -229,7 +229,10 @@ export class Project extends Component {
                           <span className='video-quiz-selected-input'></span>
                         ) : null}
                       </span>
-                      <SanitizedSpan text={option} />
+                      <PrismFormatted
+                        className={'video-quiz-option'}
+                        text={option}
+                      />
                     </label>
                   ))}
                 </div>
