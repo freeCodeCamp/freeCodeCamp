@@ -27,7 +27,7 @@ You can use HTML, JavaScript, and CSS to complete this project. Plain CSS is rec
 <strong>User Story #14:</strong> Inside the form element, I can select several fields from a series of checkboxes, each of which must have a <code>value</code> attribute.
 <strong>User Story #15:</strong> Inside the form element, I am presented with a <code>textarea</code> at the end for additional comments.
 <strong>User Story #16:</strong> Inside the form element, I am presented with a button with <code>id="submit"</code> to submit all my inputs.
-You can build your project by forking <a href='http://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code>
+You can build your project by forking <a href='https://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code>
 Once you're done, submit the URL to your working project with all its tests passing.
 </section>
 
