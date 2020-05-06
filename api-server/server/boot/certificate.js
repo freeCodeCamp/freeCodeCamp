@@ -41,6 +41,16 @@ export default function bootCertificate(app) {
   app.use(api);
 }
 
+export function getFallbackFrontEndDate(completedChallenges, completedDate) {
+  var chalIds = [...Object.values(certIds), oldDataVizId];
+
+  const latestCertDate = completedChallenges
+    .filter(chal => chalIds.includes(chal.id))
+    .sort((a, b) => b.completedDate - a.completedDate)[0].completedDate;
+
+  return latestCertDate ? latestCertDate : completedDate;
+}
+
 const noNameMessage = dedent`
   We need your name so we can put it on your certification.
   Add your name to your account settings and click the save button.
@@ -451,13 +461,10 @@ function createShowCert(app) {
 
         // if fullcert is not found, return the latest completedDate
         if (certType === 'isFullStackCert' && !certChallenge) {
-          var chalIds = [...Object.values(certIds), oldDataVizId];
-
-          const latestCertDate = completedChallenges
-            .filter(chal => chalIds.includes(chal.id))
-            .sort((a, b) => a.completedDate < b.completedDate)[0].completedDate;
-
-          completedDate = latestCertDate ? latestCertDate : completedDate;
+          completedDate = getFallbackFrontEndDate(
+            completedChallenges,
+            completedDate
+          );
         }
 
         const { username, name } = user;

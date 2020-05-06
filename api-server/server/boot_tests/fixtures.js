@@ -178,3 +178,42 @@ export const mockPathMigrationMap = {
   'challenge-one': '/learn/superblock/block/challenge-one',
   'challenge-two': '/learn/superblock/block/challenge-two'
 };
+
+export const fullStackChallenges = [
+  {
+    completedDate: 1585210952511,
+    id: '5a553ca864b52e1d8bceea14',
+    challengeType: 7,
+    files: []
+  },
+  {
+    completedDate: 1585210952511,
+    id: '561add10cb82ac38a17513bc',
+    challengeType: 7,
+    files: []
+  },
+  {
+    completedDate: 1588665778679,
+    id: '561acd10cb82ac38a17513bc',
+    challengeType: 7,
+    files: []
+  },
+  {
+    completedDate: 1685210952511,
+    id: '561abd10cb81ac38a17513bc',
+    challengeType: 7,
+    files: []
+  },
+  {
+    completedDate: 1585210952511,
+    id: '561add10cb82ac38a17523bc',
+    challengeType: 7,
+    files: []
+  },
+  {
+    completedDate: 1588665778679,
+    id: '561add10cb82ac38a17213bc',
+    challengeType: 7,
+    files: []
+  }
+];
