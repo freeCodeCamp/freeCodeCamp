@@ -2,6 +2,7 @@
 id: 5e6dd14192286d95fc43046e
 title: Longest string challenge
 challengeType: 5
+forumTopicId: 323663
 ---
 
 ## Description
