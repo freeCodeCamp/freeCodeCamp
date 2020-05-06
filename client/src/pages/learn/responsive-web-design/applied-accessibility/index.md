@@ -15,4 +15,4 @@ Here are three general concepts this section will explore throughout the followi
 2. ensure text alternatives exist for non-text and visual content
 3. create an easily-navigated page that's keyboard-friendly
 
-Having accessible web content is an ongoing challenge. A great resource for your projects going forward is the W3 Consortium's Web Content Accessibility Guidelines (WCAG). They set the international standard for accessibility and provide a number of criteria you can use to check your work.
+Having accessible web content is an ongoing challenge. A great resource for your projects going forward is the W3 Consortium's [Web Content Accessibility Guidelines](https://www.w3.org/WAI/standards-guidelines/wcag/) (WCAG). They set the international standard for accessibility and provide a number of criteria you can use to check your work.
