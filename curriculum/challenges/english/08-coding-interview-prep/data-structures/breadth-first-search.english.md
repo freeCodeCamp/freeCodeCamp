@@ -16,7 +16,7 @@ An important data structure that will help implement the breadth-first search al
 Visually, this is what the algorithm is doing.
 <img class='img-responsive' src='https://camo.githubusercontent.com/2f57e6239884a1a03402912f13c49555dec76d06/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f342f34362f416e696d617465645f4246532e676966'>
 
-The grey shading represent a node getting added into the queue and the black shading represent a node getting removed from the queue. See how every time a node gets removed from the queue (node turns black) all their neighbors get added into the queue (node turns grey).
+The grey shading represents a node getting added into the queue and the black shading represents a node getting removed from the queue. See how every time a node gets removed from the queue (node turns black), all their neighbors get added into the queue (node turns grey).
 
 To implement this algorithm, you'll need to input a graph structure and a node you want to start at.
 
