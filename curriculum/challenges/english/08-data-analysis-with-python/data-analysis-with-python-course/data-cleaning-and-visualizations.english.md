@@ -17,7 +17,7 @@ question:
   text: 'When using Matplotlib''s global API, what does the order of numbers mean here?:
   <pre>plt.subplot(1, 2, 1)</pre>
   answers:
-    - 'My figure will have one column, two rows, and I am goin to start drawing in the first (left) plot.'
+    - 'My figure will have one column, two rows, and I am going to start drawing in the first (left) plot.'
     - 'I am going to start drawing in the first (left) plot, my figure will have two rows, and my figure will have one column.' 
     - 'My figure will have one row, two columns, and I am going to start drawing in the first (left) plot.'
   solution: 3
