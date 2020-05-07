@@ -46,8 +46,8 @@ tests:
     testString: assert(abTest(2,8) === 18 );
   - text: <code>abTest(3,3)</code> should return <code>12</code>
     testString: assert(abTest(3,3) === 12 );
-  - text: <code>abTest(0,2)</code> should return <code>2</code>
-    testString: assert(abTest(0,2) === 2);
+  - text: <code>abTest(0,0)</code> should return <code>0</code>
+    testString: assert(abTest(0,0) === 0);
     
 ```
 
