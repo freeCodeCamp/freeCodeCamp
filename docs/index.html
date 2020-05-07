@@ -13,7 +13,7 @@
   <meta content='freeCodeCamp.org' name='og:title' />
   <meta content='Learn to code. Build projects. Earn certifications.'
     + 'Since 2015, 40,000 graduates have gotten jobs at tech '
-    + 'companies including Google, Apple, Amazon, and Microsoft.'  name='og:description' />
+    + 'companies including Google, Apple, Amazon, and Microsoft.' name='og:description' />
   <meta content='https://cdn.freecodecamp.org/platform/universal/fcc-og-1200-social-green.png' property='og:image' />
 
   <meta content='summary_large_image' key='twitter:card' name='twitter:card' />
@@ -28,7 +28,7 @@
   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css"> -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify/themes/vue.css">
   <!-- Custom theme stylesheet -->
-  <link rel="stylesheet" href="components/theme.css">
+  <link rel="stylesheet" href="_theme.css">
 
   <script src="https://kit.fontawesome.com/4b366379be.js" crossorigin="anonymous"></script>
 
@@ -45,7 +45,12 @@
     window.$docsify = {
       // Main Config
       homepage: 'index.md',
-      loadSidebar: 'components/sidebar.md',
+      loadSidebar: true,
+
+      // common aliases
+      alias: {
+
+      },
 
       // break the caching
       requestHeaders: {
@@ -53,7 +58,7 @@
       },
 
       // Cover Page
-      coverpage: 'components/cover.md',
+      coverpage: true,
       onlyCover: true,
 
       // Navigation
