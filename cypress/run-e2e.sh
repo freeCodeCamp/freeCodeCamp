@@ -16,8 +16,9 @@ finally() {
   local hanging_client_processes=$(ps aux | grep -v grep | grep client/node_modules | awk '{print $2}')
   local hanging_server_processes=$(ps aux | grep -v grep | grep 'node production-start.js' | awk '{print $2}')
   
-  # Send kill signal to the processes
+# Send kill signal to the processes
 local process
+
 while ([ ${#hanging_api_processes} -gt "0" ] || [ ${#hanging_client_processes} -gt "0" ] || [ ${#hanging_server_processes} -gt "0" ]); do    
   process=$()  #local function that gets rewritten until all processes are cleared up
   [ ${#hanging_api_processes} -gt "0" ] && process=$hanging_api_processes || process=$hanging_client_processes 
