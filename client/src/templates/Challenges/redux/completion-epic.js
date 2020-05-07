@@ -18,7 +18,7 @@ import {
   challengeTestsSelector,
   closeModal,
   challengeFilesSelector,
-  updateProjectFormValues
+  updateSolutionFormValues
 } from './';
 import {
   userSelector,
@@ -92,7 +92,7 @@ function submitProject(type, state) {
     payload: challengeInfo
   };
   return postChallenge(update, username).pipe(
-    concat(of(updateProjectFormValues({})))
+    concat(of(updateSolutionFormValues({})))
   );
 }
 

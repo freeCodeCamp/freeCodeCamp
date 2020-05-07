@@ -57,7 +57,7 @@ export const types = createTypes(
     'updateChallengeMeta',
     'updateFile',
     'updateJSEnabled',
-    'updateProjectFormValues',
+    'updateSolutionFormValues',
     'updateSuccessMessage',
     'updateTests',
     'updateLogs',
@@ -136,8 +136,8 @@ export const updateFile = createAction(types.updateFile);
 export const updateConsole = createAction(types.updateConsole);
 export const updateLogs = createAction(types.updateLogs);
 export const updateJSEnabled = createAction(types.updateJSEnabled);
-export const updateProjectFormValues = createAction(
-  types.updateProjectFormValues
+export const updateSolutionFormValues = createAction(
+  types.updateSolutionFormValues
 );
 export const updateSuccessMessage = createAction(types.updateSuccessMessage);
 
@@ -330,7 +330,7 @@ export const reducer = handleActions(
       ...state,
       backendFormValues: payload
     }),
-    [types.updateProjectFormValues]: (state, { payload }) => ({
+    [types.updateSolutionFormValues]: (state, { payload }) => ({
       ...state,
       projectFormValues: payload
     }),
