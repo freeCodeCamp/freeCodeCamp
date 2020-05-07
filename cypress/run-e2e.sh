@@ -17,12 +17,20 @@ finally() {
   local hanging_server_processes=$(ps aux | grep -v grep | grep 'node production-start.js' | awk '{print $2}')
   
   # Send kill signal to the processes
-  local process=$()
-  compare= [ ${#hanging_api_processes} -gt "0" ] && process=$hanging_api_processes || process=$hanging_client_processes  
-  # if and only if the previous processes are empty then continue to the next one
-  if [ ${#process} -eq "0" ]; then process=$hanging_server_processes 
-  fi
-  kill -9 $process $gastby_pid $api_pid &>/dev/null # kills processes starting at process signal
+  local process
+  
+while ([ ${#hanging_api_processes} -gt "0" ] || [ ${#hanging_client_processes} -gt "0" ] || [ ${#hanging_server_processes} -gt "0" ]); do    
+  process=$()  #local function that gets rewritten until all processes are cleared up
+  [ ${#hanging_api_processes} -gt "0" ] && process=$hanging_api_processes || process=$hanging_client_processes 
+  [ ${#process} -eq "0" ] && process=$hanging_server_processes # covers the first signal which then gets rewritten and looped
+  hanging_api_processes=$hanging_client_processes 
+  hanging_client_processes=$hanging_server_processes 
+  hanging_server_processes=$()  
+  kill -9 $process &>/dev/null # kill processes
+done < run-e2e.sh | uniq  #input redirection to eliminate any duplicate processes
+  
+  kill -9 $gastby_pid $api_pid &>/dev/null 
+    
   echo "Finally exiting with a status code of ${exit_code}"
   exit "${exit_code}"
 }
