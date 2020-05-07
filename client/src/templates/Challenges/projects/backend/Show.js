@@ -126,6 +126,7 @@ export class BackEnd extends Component {
       data: {
         challengeNode: {
           fields: { tests },
+          title,
           challengeType
         }
       },
@@ -133,7 +134,7 @@ export class BackEnd extends Component {
     } = this.props;
     initConsole('');
     initTests(tests);
-    updateChallengeMeta({ ...challengeMeta, challengeType });
+    updateChallengeMeta({ ...challengeMeta, title, challengeType });
     challengeMounted(challengeMeta.id);
   }
 
