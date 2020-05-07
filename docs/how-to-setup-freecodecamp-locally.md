@@ -140,6 +140,16 @@ Software required for both Docker and Local builds:
 | [Node.js](http://nodejs.org)  | `12.x`  | [LTS Schedule](https://github.com/nodejs/Release#release-schedule)   |
 | npm (comes bundled with Node) | `6.x`   | Does not have LTS releases, we use the version bundled with Node LTS |
 
+If Node.js is already installed on your machine, run the following commands to validate the versions:
+
+```sh
+node -v
+npm -v
+```
+
+> [!DANGER]
+> If you have a different version, please install the recommended version. We can only support installation issues for recommended versions. See [troubleshooting](#troubleshooting) for details.
+
 **Docker Build additional prerequisite:**
 
 | Prerequisite                                                               | Version    | Notes                                                                                                        |
@@ -156,16 +166,6 @@ Software required for both Docker and Local builds:
 
 > [!TIP]
 > We highly recommend updating to the latest stable releases of the software listed above, also known as Long Term Support (LTS) releases.
-
-If Node.js is already installed on your machine, run the following commands to validate the versions:
-
-```sh
-node -v
-npm -v
-```
-
-> [!DANGER]
-> If you have a different version, please install the recommended version. We can only support installation issues for recommended versions. See [troubleshooting](#troubleshooting) for details.
 
 ### Configuring dependencies
 
