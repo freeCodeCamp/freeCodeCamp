@@ -39,7 +39,7 @@ You can use any mix of HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux, and
 <strong>User Story #26:</strong> When a countdown reaches zero (NOTE: timer MUST reach 00:00), a sound indicating that time is up should play. This should utilize an HTML5 <code>audio</code> tag and have a corresponding <code>id="beep"</code>.
 <strong>User Story #27:</strong> The audio element with <code>id="beep"</code> must be 1 second or longer.
 <strong>User Story #28:</strong> The audio element with id of <code>beep</code> must stop playing and be rewound to the beginning when the element with the id of <code>reset</code> is clicked.
-You can build your project by forking <a href='http://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code>
+You can build your project by forking <a href='https://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code>
 Once you're done, submit the URL to your working project with all its tests passing.
 </section>
 

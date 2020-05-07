@@ -20,7 +20,7 @@ You can use HTML, JavaScript, and CSS to complete this project. Plain CSS is rec
 <strong>User Story #7:</strong> I  should see an <code>a</code> element with a corresponding <code>id="tribute-link"</code>, which links to an outside site that contains additional information about the subject of the tribute page. HINT: You must give your element an attribute of <code>target</code> and set it to <code>_blank</code> in order for your link to open in a new tab (i.e. <code>target="_blank"</code>).
 <strong>User Story #8:</strong> The <code>img</code> element should responsively resize, relative to the width of its parent element, without exceeding its original size.
 <strong>User Story #9:</strong> The <code>img</code> element should be centered within its parent element.
-You can build your project by forking <a href='http://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code>.
+You can build your project by forking <a href='https://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code>.
 Once you're done, submit the URL to your working project with all its tests passing.
 </section>
 

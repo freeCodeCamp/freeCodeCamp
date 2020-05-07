@@ -26,7 +26,7 @@ You can use HTML, JavaScript, and CSS to complete this project. Plain CSS is rec
 <strong>User Story #13:</strong> When I click on a navbar element, the page should navigate to the corresponding section of the <code>main-doc</code> element (e.g. If I click on a <code>nav-link</code> element that contains the text "Hello world", the page navigates to a <code>section</code> element that has that id and contains the corresponding <code>header</code>.
 <strong>User Story #14:</strong> On regular sized devices (laptops, desktops), the element with <code>id="navbar"</code> should be shown on the left side of the screen and should always be visible to the user.
 <strong>User Story #15:</strong> My Technical Documentation page should use at least one media query.
-You can build your project by forking <a href='http://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code>
+You can build your project by forking <a href='https://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code>
 Once you're done, submit the URL to your working project with all its tests passing.
 </section>
 
