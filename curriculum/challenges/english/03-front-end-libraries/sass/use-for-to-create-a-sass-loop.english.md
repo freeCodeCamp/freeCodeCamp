@@ -72,7 +72,7 @@ tests:
 <div id='html-seed'>
 
 ```html
-<style type='text/sass'>
+<style type='text/scss'>
 
 
 
@@ -95,7 +95,7 @@ tests:
 <section id='solution'>
 
 ```html
-<style type='text/sass'>
+<style type='text/scss'>
 
 @for $i from 1 through 5 {
   .text-#{$i} { font-size: 15px * $i; }
@@ -111,7 +111,7 @@ tests:
 ```
 
 ```html
-<style type='text/sass'>
+<style type='text/scss'>
 
 @for $i from 1 to 6 {
   .text-#{$i} { font-size: 15px * $i; }

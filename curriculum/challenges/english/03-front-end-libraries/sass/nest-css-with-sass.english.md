@@ -66,7 +66,7 @@ tests:
 <div id='html-seed'>
 
 ```html
-<style type='text/sass'>
+<style type='text/scss'>
   .blog-post {
 
   }
@@ -95,7 +95,7 @@ tests:
 <section id='solution'>
 
 ```html
-<style type='text/sass'>
+<style type='text/scss'>
   .blog-post {
     h1 {
       text-align: center;
