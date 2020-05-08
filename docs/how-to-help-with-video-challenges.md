@@ -159,7 +159,7 @@ question:
   text: |
     What does this JavaScript code log to the console?
     ```js
-    console.log(‘hello world’);
+    console.log('hello world');
 
 New paragraph after an empty line.
 
