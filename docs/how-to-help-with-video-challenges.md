@@ -100,7 +100,7 @@ Questions and answers can contain certain HTML tags like `<br>` for a new line. 
 
 #### Use markdown to format your question
 
-You can also use markdown in your question instead of HTML if you choose, but you need to add one thing. A space and a "pipe" after the word `text:`, like this:
+You can also use markdown in your question as well as HTML. The simplest way to ensure that it is formatted correctly is to start the question with `text: |`, like this:
 
 ```yml
 question:
