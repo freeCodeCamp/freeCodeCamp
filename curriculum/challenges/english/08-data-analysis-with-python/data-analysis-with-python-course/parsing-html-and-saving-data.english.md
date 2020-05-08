@@ -14,7 +14,7 @@ videoId: bJaqnTWQmb0
 
 ```yml
 question:
-  text: What Python library has the <pre>.read_html</pre> method we can we use for parsing HTML documents and extracting tables?
+  text: What Python library has the <code>.read_html()</code> method we can we use for parsing HTML documents and extracting tables?
   answers:
     - 'BeautifierSoupy'
     - 'WebReader'
@@ -24,4 +24,3 @@ question:
 ```
 
 </section>
-
