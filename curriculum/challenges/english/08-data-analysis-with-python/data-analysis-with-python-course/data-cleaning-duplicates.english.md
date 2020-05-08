@@ -18,9 +18,8 @@ question:
   answers:
     - contain a duplicate, where the value for the row contains the first occurence of that value.
     - contain a duplicate, where the value for the row contains the second occurence of that value.
-    - contain a duplicate, where the value for the row contains either the first or second occurence.
+    - contain a duplicate, where the value for the row contains either the first or second occurrence.
   solution: 2
 ```
 
 </section>
-
