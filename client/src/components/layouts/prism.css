@@ -1,54 +1,65 @@
+code {
+  --red: red;
+  --blue: blue;
+  --black: black;
+  --dark-red: #800;
+  --dark-green: #080;
+  --light-green: #098658;
+  --darkest-blue: #00107e;
+  --dark-blue: #018;
+}
+
 code .token.operator {
   background: none;
-  color: black;
+  color: var(--black);
 }
 
 code .token.variable {
-  color: #018;
+  color: var(--dark-blue);
 }
 
 code .token.property {
-  color: red;
+  color: var(--red);
 }
 
 code .token.selector {
-  color: #800;
+  color: var(--dark-red);
 }
 
 code .token.comment {
-  color: #080;
+  color: var(--dark-green);
 }
 
 code .token.tag {
-  color: #800;
+  color: var(--dark-red);
 }
 
 code .token.attr-name {
-  color: red;
+  color: var(--red);
 }
 
 code .token.attr-value {
-  color: blue;
+  color: var(--blue);
 }
 
 code .token.keyword {
-  color: #00f;
+  color: var(--blue);
 }
 
 code .token.number {
-  color: #098658;
+  color: var(--light-green);
 }
 
 code .token.string {
-  color: #800;
+  color: var(--dark-red);
 }
 
 code .token.function {
-  color: #00107e;
+  color: var(--darkest-blue);
 }
 
 code .token.boolean {
-  color: blue;
+  color: var(--blue);
 }
 
 :not(pre) > code[class*='language-'],
