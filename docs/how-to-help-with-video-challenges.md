@@ -162,7 +162,7 @@ question:
     console.log(‘hello world’);
     ```
   answers:
-    - ‘hello’
+    - stars *in* a string are fine
     - '**but need quotes** when starting a line'
     - ‘hello world’
   solution: 3
