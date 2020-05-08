@@ -14,7 +14,7 @@ videoId: MtgXS1MofRw
 
 ```yml
 question:
-  text: What method does a <pre>Cursor</pre> instance have and what does it allow?
+  text: What method does a <code>Cursor</code> instance have and what does it allow?
   answers:
     - The <code>Cursor</code> instance has a <code>.Run()</code> method which allows you to run SQL queries.
     - The <pre>Cursor</pre> instance has a <pre>.Select()</pre> method which allows you to select records.
