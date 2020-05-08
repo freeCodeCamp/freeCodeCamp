@@ -59,7 +59,7 @@ var new_s = s.myMap(function(item){
 ## Solution
 <section id='solution'>
 
-```js
+````js
 // solution required
-```
+````
 </section>
