@@ -35,8 +35,8 @@ tests:
 
 ```js
 let quoteSample = "Blueberry 3.141592653s are delicious.";
-let myRegex = /change/; // Change this line
-let result = myRegex; // Change this line
+let myRegex = /change/; // Altere essa linha
+let result = myRegex; // Altere essa linha
 
 ```
 
@@ -50,6 +50,8 @@ let result = myRegex; // Change this line
 <section id='solution'>
 
 ```js
-// solution required
+let quoteSample = "Blueberry 3.141592653s are delicious.";
+let myRegex = /[h-s2-6]/; // 
+let result =quoteSample.match(myRegex); //
 ```
 </section>
