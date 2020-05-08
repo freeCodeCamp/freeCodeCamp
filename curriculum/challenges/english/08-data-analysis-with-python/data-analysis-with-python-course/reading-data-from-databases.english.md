@@ -16,7 +16,7 @@ videoId: MtgXS1MofRw
 question:
   text: What method does a <pre>Cursor</pre> instance have and what does it allow?
   answers:
-    - The <pre>Cursor</pre> instance has a <pre>.Run()</pre> method which allows you to run SQL queries.
+    - The <code>Cursor</code> instance has a <code>.Run()</code> method which allows you to run SQL queries.
     - The <pre>Cursor</pre> instance has a <pre>.Select()</pre> method which allows you to select records.
     - The <code>Cursor</code> instance has a <code>.Execute()</code> method which will receive SQL parameters to run against the database.
   solution: 3
