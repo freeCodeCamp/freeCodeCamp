@@ -18,9 +18,8 @@ question:
   answers:
     - The <pre>Cursor</pre> instance has a <pre>.Run()</pre> method which allows you to run SQL queries.
     - The <pre>Cursor</pre> instance has a <pre>.Select()</pre> method which allows you to select records.
-    - The <pre>Cursor</pre> instance has a <pre>.Execute()</pre> method which will receive SQL parameters to run against the database.
+    - The <code>Cursor</code> instance has a <code>.Execute()</code> method which will receive SQL parameters to run against the database.
   solution: 3
 ```
 
 </section>
-
