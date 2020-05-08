@@ -103,7 +103,7 @@ Questions and answers can contain certain HTML tags like `<br>` for a new line. 
 You can also use markdown in your question instead of HTML if you choose, but you need to add one thing. A space and a "pipe" after the word `text:`, like this:
 
 ```yml
-tests:
+question:
   text: |
     Question
   answers:
