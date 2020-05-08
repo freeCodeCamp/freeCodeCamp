@@ -11,45 +11,20 @@ finally() {
 
   local exit_code="${1:-0}"
   # This is the clean up.
-  # Find any node processes running from within the client dir    
+  # Find any client or server node processes  
   local hanging_api_processes=$(ps aux | grep -v grep | grep api-server/node_modules | awk '{print $2}')
   local hanging_client_processes=$(ps aux | grep -v grep | grep client/node_modules | awk '{print $2}')
   local hanging_server_processes=$(ps aux | grep -v grep | grep 'node production-start.js' | awk '{print $2}')
   
-# Send kill signal to the processes
+  # Send kill signal to the processes
 
-  local process
+  local processes=($hanging_api_processes $hanging_client_processes $hanging_server_processes)
   
- while ([ ${#hanging_api_processes} -gt "0" ] || [ ${#hanging_client_processes} -gt "0" ] || [ ${#hanging_server_processes} -gt "0" ]); do    
-   
-  process=$()  # This gets rewritten until all processes are cleared up
-
-   if [ ${#hanging_api_processes} -gt "0" ]; then    # Checks if processes are greater than 1  
-
-   process=$hanging_api_processes      
-
-   elif [ ${#hanging_client_processes} -gt "0" ]; then
-
-   process=$hanging_client_processes      
-
-   elif [ ${#hanging_server_processes} -gt "0" ]; then   
-
-   process=$hanging_server_processes     
-   
-   fi
-
-   
-   hanging_api_processes=$hanging_client_processes 
-
-   hanging_client_processes=$hanging_server_processes 
-
-   hanging_server_processes=$()  
-   
-   
-   kill -9 $process &>/dev/null # kill processes
-  
- done < run-e2e.sh | uniq  # eliminates any duplicate processes
-  
+  for pid in ${processes[@]}; do
+    if [ ${#pid} -gt "0" ]; then
+      kill -9 $pid &>/dev/null
+    fi
+  done
   
   kill -9 $gastby_pid $api_pid &>/dev/null  
   
