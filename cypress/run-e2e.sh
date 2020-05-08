@@ -11,7 +11,7 @@ finally() {
 
   local exit_code="${1:-0}"
   # This is the clean up.
-  # Find any client or server node processes  
+  # Find any api, client, or server node processes  
   local hanging_api_processes=$(ps aux | grep -v grep | grep api-server/node_modules | awk '{print $2}')
   local hanging_client_processes=$(ps aux | grep -v grep | grep client/node_modules | awk '{print $2}')
   local hanging_server_processes=$(ps aux | grep -v grep | grep 'node production-start.js' | awk '{print $2}')
