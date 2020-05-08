@@ -24,7 +24,6 @@ For example, if we wanted to create a CSS class called <code>larger-image</code>
 ## Instructions
 <section id='instructions'>
 Create a class called <code>smaller-image</code> and use it to resize the image so that it's only 100 pixels wide.
-<strong>Note:</strong> Due to browser implementation differences, you may need to be at 100% zoom to pass the tests on this challenge.
 </section>
 
 ## Tests
@@ -34,8 +33,8 @@ Create a class called <code>smaller-image</code> and use it to resize the image 
 tests:
   - text: Your <code>img</code> element should have the class <code>smaller-image</code>.
     testString: assert($("img[src='https://bit.ly/fcc-relaxing-cat']").attr('class') === "smaller-image");
-  - text: Your image should be 100 pixels wide. Browser zoom should be at 100%.
-    testString: assert($("img").width() === 100);
+  - text: Your image should be 100 pixels wide.
+    testString: assert(code.match(/(?<=<style>([\s\S])*)\.smaller-image[\s\n]*{[\s\S]*width\s*:\s*100px\s*;(?=[\s\S]*<\/style>)/));
 
 ```
 
