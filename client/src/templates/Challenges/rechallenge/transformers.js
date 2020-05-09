@@ -177,7 +177,9 @@ function getBabelOptions({ preview = false, protect = true }) {
 
 const sassWorker = createWorker(sassCompile);
 async function transformSASS(element) {
-  const styleTags = element.querySelectorAll('style[type="text/sass"]');
+  // we only teach scss syntax, not sass. Also the compiler does not seem to be
+  // able to deal with sass.
+  const styleTags = element.querySelectorAll('style[type~="text/scss"]');
   await Promise.all(
     [].map.call(styleTags, async style => {
       style.type = 'text/css';
