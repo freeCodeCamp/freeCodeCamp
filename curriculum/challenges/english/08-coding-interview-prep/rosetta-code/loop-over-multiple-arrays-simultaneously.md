@@ -2,7 +2,7 @@
 id: 5e6dd15004c88cf00d2a78b3
 title: Loop over multiple arrays simultaneously
 challengeType: 5
-forumTopicId: 323665
+forumTopicId: 385279
 ---
 
 ## Description
