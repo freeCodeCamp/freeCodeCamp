@@ -77,7 +77,7 @@ tests:
 <div id='html-seed'>
 
 ```html
-<style type='text/sass'>
+<style type='text/scss'>
 
 
 
@@ -102,7 +102,7 @@ tests:
 <section id='solution'>
 
 ```html
-<style type='text/sass'>
+<style type='text/scss'>
   @mixin border-stroke($val) {
     @if $val == light {
       border: 1px solid black;

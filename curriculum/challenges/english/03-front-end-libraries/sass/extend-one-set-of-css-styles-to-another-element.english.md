@@ -58,7 +58,7 @@ tests:
 <div id='html-seed'>
 
 ```html
-<style type='text/sass'>
+<style type='text/scss'>
   h3{
     text-align: center;
   }
@@ -92,7 +92,7 @@ tests:
 <section id='solution'>
 
 ```html
-<style type='text/sass'>
+<style type='text/scss'>
   h3{
     text-align: center;
   }
