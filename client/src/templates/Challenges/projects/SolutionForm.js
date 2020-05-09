@@ -5,13 +5,14 @@ import { Form } from '../../../components/formHelpers';
 
 const propTypes = {
   isFrontEnd: PropTypes.bool,
+  isProject: PropTypes.bool,
   isSubmitting: PropTypes.bool,
   onSubmit: PropTypes.func.isRequired,
-  updateProjectForm: PropTypes.func.isRequired
+  updateSolutionForm: PropTypes.func.isRequired
 };
 
-const frontEndFields = ['solution'];
-const backEndFields = ['solution', 'githubLink'];
+const challengeFields = ['solution'];
+const backEndProjectFields = ['solution', 'githubLink'];
 
 const options = {
   types: {
@@ -21,38 +22,39 @@ const options = {
   required: ['solution']
 };
 
-export class ProjectForm extends Component {
+export class SolutionForm extends Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   componentDidMount() {
-    this.props.updateProjectForm({});
+    this.props.updateSolutionForm({});
   }
   handleSubmit(values) {
-    this.props.updateProjectForm(values);
+    this.props.updateSolutionForm(values);
     this.props.onSubmit();
   }
   render() {
-    const { isSubmitting, isFrontEnd } = this.props;
+    const { isSubmitting, isFrontEnd, isProject } = this.props;
     const buttonCopy = isSubmitting
       ? 'Submit and go to my next challenge'
       : "I've completed this challenge";
     return (
       <Form
         buttonText={`${buttonCopy}`}
-        formFields={isFrontEnd ? frontEndFields : backEndFields}
+        formFields={
+          isProject && !isFrontEnd ? backEndProjectFields : challengeFields
+        }
         id={isFrontEnd ? 'front-end-form' : 'back-end-form'}
         options={{
           ...options,
           placeholders: {
             solution:
-              'Link to solution, ex: ' +
+              'Link, ex: ' +
               (isFrontEnd
                 ? 'https://codepen.io/camperbot/full/oNvPqqo'
                 : 'https://camperbot.glitch.me'),
-            githubLink:
-              'Link to GitHub repo, ex: https://github.com/camperbot/hello'
+            githubLink: 'ex: https://github.com/camperbot/hello'
           }
         }}
         submit={this.handleSubmit}
@@ -61,6 +63,6 @@ export class ProjectForm extends Component {
   }
 }
 
-ProjectForm.propTypes = propTypes;
+SolutionForm.propTypes = propTypes;
 
-export default ProjectForm;
+export default SolutionForm;
