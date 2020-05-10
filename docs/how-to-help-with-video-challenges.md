@@ -165,7 +165,7 @@ New paragraph after an empty line.
 
     ```
   answers:
-    - stars *in* a string are fine
+    - hello *world*
     - '**but need quotes** when starting a line'
     - hello world
   solution: 3
