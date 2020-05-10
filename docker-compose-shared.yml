@@ -1,4 +1,4 @@
-# Docker Compose over ride file for FreeCodeCamp
+# Docker Compose override file for FreeCodeCamp
 #
 # Run with:
 #   docker-compose -f docker-compose.yml -f docker-compose-shared.yml up
