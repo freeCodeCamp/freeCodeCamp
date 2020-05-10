@@ -160,10 +160,9 @@ question:
     What does this JavaScript code log to the console?
     ```js
     console.log('hello world');
-
-New paragraph after an empty line.
-
     ```
+
+    New paragraph after an empty line.
   answers:
     - hello *world*
     - '**hello** world' # the string cannot start with a *, hence the quotes.
