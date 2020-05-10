@@ -79,7 +79,7 @@ export class PaypalButton extends Component {
     return (
       <PayPalButtonScriptLoader
         amount={amount}
-        clinetId={paypalClientId}
+        clientId={paypalClientId}
         createOrder={(data, actions) => {
           return actions.order.create({
             purchase_units: [
