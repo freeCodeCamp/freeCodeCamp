@@ -76,6 +76,11 @@ export class PaypalButton extends Component {
   render() {
     const { duration, planId, amount } = this.state;
     const isSubscription = duration !== 'onetime';
+
+    if (!paypalClientId) {
+      return null;
+    }
+
     return (
       <PayPalButtonScriptLoader
         amount={amount}
