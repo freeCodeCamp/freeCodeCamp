@@ -32,7 +32,7 @@ An optional description with helpful information related to the video.
 <section id='tests'>
 
 ```yml
-tests:
+question:
   text: 'Question'
   answers:
     - 'Answer One'
@@ -85,7 +85,7 @@ You can add the question locally or directly throught the GitHub interface. To a
 If a question has not yet been added to a particular video challenge, it will have the following default question:
 
 ```yml
-tests:
+question:
   text: Question
   answers:
     - one
