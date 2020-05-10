@@ -6,10 +6,12 @@ const propTypes = {};
 function AsSeenLogo(props) {
   return (
     <svg
+      id='featured-logos'
       viewBox='0 0 1700 340'
       xmlns='http://www.w3.org/2000/svg'
       xmlnsXlink='http://www.w3.org/1999/xlink'
       {...props}
+      fill='var(--quaternary-color)'
     >
       <defs>
         <path
@@ -49,63 +51,63 @@ function AsSeenLogo(props) {
           id='usaToday'
         />
       </defs>
-      <use fill='#0a0a23' xlinkHref='#newYorkTimes' />
+      <use xlinkHref='#newYorkTimes' />
       <use
         fillOpacity='0'
         stroke='#000000'
         strokeOpacity='0'
         xlinkHref='#newYorkTimes'
       />
-      <use fill='#0a0a23' xlinkHref='#bbc' />
+      <use xlinkHref='#bbc' />
       <use
         fillOpacity='0'
         stroke='#000000'
         strokeOpacity='0'
         xlinkHref='#bbc'
       />
-      <use fill='#0a0a23' xlinkHref='#quartz' />
+      <use xlinkHref='#quartz' />
       <use
         fillOpacity='0'
         stroke='#000000'
         strokeOpacity='0'
         xlinkHref='#quartz'
       />
-      <use fill='#0a0a23' xlinkHref='#time' />
+      <use xlinkHref='#time' />
       <use
         fillOpacity='0'
         stroke='#000000'
         strokeOpacity='0'
         xlinkHref='#time'
       />
-      <use fill='#0a0a23' xlinkHref='#wired' />
+      <use xlinkHref='#wired' />
       <use
         fillOpacity='0'
         stroke='#000000'
         strokeOpacity='0'
         xlinkHref='#wired'
       />
-      <use fill='#0a0a23' xlinkHref='#inc' />
+      <use xlinkHref='#inc' />
       <use
         fillOpacity='0'
         stroke='#000000'
         strokeOpacity='0'
         xlinkHref='#inc'
       />
-      <use fill='#0a0a23' xlinkHref='#businessInsider' />
+      <use xlinkHref='#businessInsider' />
       <use
         fillOpacity='0'
         stroke='#000000'
         strokeOpacity='0'
         xlinkHref='#businessInsider'
       />
-      <use fill='#0a0a23' xlinkHref='#lifehacker' />
+      <use xlinkHref='#lifehacker' />
       <use
         fillOpacity='0'
         stroke='#000000'
         strokeOpacity='0'
         xlinkHref='#lifehacker'
       />
-      <use fill='#0a0a23' xlinkHref='#usaToday' />
+      <use xlinkHref='#usaToday' />
       <use
         fillOpacity='0'
         stroke='#000000'

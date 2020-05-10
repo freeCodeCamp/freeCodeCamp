@@ -1,0 +1,32 @@
+.logo-row svg {
+  height: 25px;
+  margin: 10px;
+}
+
+@media (min-width: 343px) {
+  .logo-row svg {
+    height: 35px;
+  }
+}
+
+@media (min-width: 380px) {
+  .logo-row svg {
+    height: 40px;
+  }
+}
+
+@media (min-width: 480px) {
+  .logo-row svg {
+    height: 25px;
+  }
+}
+
+@media (min-width: 600px) {
+  .logo-row svg {
+    height: 40px;
+    margin: 10px;
+  }
+  .logo-row #apple-logo {
+    height: 35px;
+  }
+}

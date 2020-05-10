@@ -7,12 +7,8 @@ import { Link } from 'gatsby';
 import { uniq } from 'lodash';
 import { Spacer } from '../helpers';
 import Login from '../Header/components/Login';
-import AppleLogo from '../../assets/images/AppleLogo.js';
-import AmazonLogo from '../../assets/images/AmazonLogo.js';
-import MicrosoftLogo from '../../assets/images/MicrosoftLogo.js';
-import SpotifyLogo from '../../assets/images/SpotifyLogo.js';
-import GoogleLogo from '../../assets/images/GoogleLogo.js';
-import AsFeatureLogo from '../../assets/images/AsFeatureLogo.js';
+import CompanyLogos from './components/CompanyLogos';
+import { AsFeatureLogo } from '../../assets/images';
 
 import './landing.css';
 import '../Map/map.css';
@@ -23,7 +19,7 @@ const propTypes = {
 
 const BigCallToAction = () => (
   <Row>
-    <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+    <Col md={6} mdOffset={3} sm={8} smOffset={2} xs={12}>
       <Login block={true} data-test-label='landing-big-cta'>
         Get started (it's free)
       </Login>
@@ -31,31 +27,15 @@ const BigCallToAction = () => (
   </Row>
 );
 
-const CompanyLogosSection = () => (
-  <div className='logo-row'>
-    <Col md={2} sm={3} xs={4}>
-      <AppleLogo />
-    </Col>
-    <Col md={2} sm={3} xs={4}>
-      <GoogleLogo />
-    </Col>
-    <Col md={2} sm={3} xs={4}>
-      <AmazonLogo />
-    </Col>
-    <Col md={2} sm={3} xs={4}>
-      <MicrosoftLogo />
-    </Col>
-    <Col md={2} sm={3} xs={4}>
-      <SpotifyLogo />
-    </Col>
-  </div>
-);
-
 const AsFeaturedSection = () => (
-  <div className='text-center'>
-    <h2 className='medium-heading'>As Featured In:</h2>
-    <AsFeatureLogo width='70%' />
-  </div>
+  <Row>
+    <Col sm={8} smOffset={2} xs={12}>
+      <div className='text-center'>
+        <h2 className='medium-heading'>As Featured In:</h2>
+        <AsFeatureLogo />
+      </div>
+    </Col>
+  </Row>
 );
 
 export const Landing = ({ edges }) => {
@@ -89,7 +69,7 @@ export const Landing = ({ edges }) => {
                 Since 2014, more than 40,000 freeCodeCamp.org graduates have
                 gotten jobs at tech companies including:
               </h2>
-              <CompanyLogosSection />
+              <CompanyLogos />
             </Col>
           </Row>
           <Spacer />

@@ -6,11 +6,12 @@ const propTypes = {};
 function SpotifyLogo(props) {
   return (
     <svg
+      id='amazon-logo'
       viewBox='93.907 230.751 1400 572'
       xmlns='http://www.w3.org/2000/svg'
       xmlnsXlink='http://www.w3.org/1999/xlink'
       {...props}
-      fill='var(--secondary-color)'
+      fill='var(--quaternary-color)'
     >
       <g>
         <path
