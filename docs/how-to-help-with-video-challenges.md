@@ -166,7 +166,7 @@ New paragraph after an empty line.
     ```
   answers:
     - hello *world*
-    - '**but need quotes** when starting a line'
+    - '**hello** world' # the string cannot start with a *, hence the quotes.
     - hello world
   solution: 3
 ````
