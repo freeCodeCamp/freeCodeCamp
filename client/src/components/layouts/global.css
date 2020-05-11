@@ -10,7 +10,7 @@ body {
 
 .btn-cta-big {
   max-height: 100%;
-  font-size: 1rem;
+  font-size: 1.3rem;
   white-space: normal;
   width: 100%;
 }
@@ -92,7 +92,8 @@ p {
   h3 {
     font-size: 1.1rem;
   }
-  .btn-cta {
+  .btn-cta,
+  .btn-cta-big {
     font-size: 1rem;
   }
 }
