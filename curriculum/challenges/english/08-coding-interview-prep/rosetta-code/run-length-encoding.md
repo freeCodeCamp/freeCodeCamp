@@ -2,32 +2,28 @@
 id: 5eb257ba998e23057d209754
 title: Run-length Encoding
 challengeType: 5
+forumTopicId: 387031
 ---
 
 ## Description
 <section id='description'>
 Given a string containing uppercase characters (A-Z), compress repeated 'runs' of the same character by storing the length of that run, and provide a function to reverse the compression.
+
+Example:<br>
+Original: `ABBBCDDDD`<br>
+Encoded: `[[1, 'A'], [3, 'B'], [1, 'C'], [4, 'D']]`
 </section>
 
 ## Instructions
 <section id='instructions'>
-Write two functions <code>encode</code> and <code>decode</code>.
 
-<code>encode(input)</code> takes a string and return the run-length encoding as an array
-containing pairs with the first element representing the number of occurences and the second
-element representing the letter.
+Write two functions, `encode` and `decode`.
 
-<code>decode(input)</code> takes an array of pairs representing a run-length encoded string
-and returns the decoded string.
+`encode(str)` takes a string and returns the run-length encoding as a 2D array. Each element in the returned array is an array containing pairs, with the first element representing the number of occurrences and the second element representing the letter.
+
+`decode(arr)` takes a 2D array of pairs representing a run-length encoded string and returns the decoded string.
 
 You may assume that the input will only contain uppercase letters.
-
-Example:
-<br>
-Original: <code>ABBBCDDDD</code>
-<br>
-Encoded: <code>[[1,'A'], [3,'B'], [1,'C'], [4,'D']]</code>
-
 </section>
 
 ## Tests
@@ -36,21 +32,21 @@ Encoded: <code>[[1,'A'], [3,'B'], [1,'C'], [4,'D']]</code>
 ``` yml
 tests:
   - text: <code>encode</code> should return an array.
-    testString: assert(typeof encode(input_1) == 'object');
+    testString: assert(typeof encode("ABBBCDDDD" == 'object');
   - text: <code>decode</code> should return a string.
-    testString: assert(typeof decode(output_1) == 'string');
+    testString: assert(typeof decode([[1,'A'], [3,'B'], [1,'C'], [4,'D']]) == 'string');
   - text: <code>encode</code> should work for <code>Test 1</code>
-    testString: assert(arrayEquals(encode(input_1), output_1))
+    testString: assert(arrayEquals(encode("ABBBCDDDD"), [[1,'A'], [3,'B'], [1,'C'], [4,'D']]))
   - text: <code>decode</code> should work for <code>Test 1</code>
-    testString: assert(decode(output_1) === input_1)
+    testString: assert(decode([[1,'A'], [3,'B'], [1,'C'], [4,'D']]) === "ABBBCDDDD")
   - text: <code>encode</code> should work for <code>Test 2</code>
-    testString: assert(arrayEquals(encode(input_2), output_2))
+    testString: assert(arrayEquals(encode("WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWBWWWWWWWWWWWWWW"), [[12,'W'], [1,'B'], [12,'W'], [3,'B'], [24,'W'], [1, 'B'], [14, 'W']]))
   - text: <code>decode</code> should work for <code>Test 2</code>
-    testString: assert(decode(output_2) === input_2)
+    testString: assert(decode([[12,'W'], [1,'B'], [12,'W'], [3,'B'], [24,'W'], [1, 'B'], [14, 'W']]) === "WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWBWWWWWWWWWWWWWW")
   - text: <code>encode</code> should work for <code>Test 3</code>
-    testString: assert(arrayEquals(encode(input_3), output_3))
+    testString: assert(arrayEquals(encode(""), []))
   - text: <code>decode</code> should work for <code>Test 3</code>
-    testString: assert(decode(output_3) === input_3)
+    testString: assert(decode([]) === "")
 ```
 
 </section>
@@ -60,11 +56,11 @@ tests:
 <div id='js-seed'>
 
 ```js
-function encode(input) {
+function encode(str) {
   // Implement encode here
 }
 
-function decode(input) {
+function decode(arr) {
   // Implement decode here
 }
 ```
@@ -75,13 +71,6 @@ function decode(input) {
 <div id='js-setup'>
 
 ```js
-var input_1 = "ABBBCDDDD";
-var output_1 = [[1,'A'], [3,'B'], [1,'C'], [4,'D']]
-var input_2 = "WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWBWWWWWWWWWWWWWW";
-var output_2 = [[12,'W'], [1,'B'], [12,'W'], [3,'B'], [24,'W'], [1, 'B'], [14, 'W']]
-var input_3 = "";
-var output_3 = [];
-
 function arrayEquals(a1, a2) {
   if (a1== null || a2 == null) return false;
   if (a1.length != a2.length) return false;
