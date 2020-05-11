@@ -60,7 +60,7 @@ tests:
 <div id='html-seed'>
 
 ```html
-<style type='text/sass'>
+<style type='text/scss'>
 
 
 
@@ -81,7 +81,7 @@ tests:
 <section id='solution'>
 
 ```html
-<style type='text/sass'>
+<style type='text/scss'>
   $x: 1;
   @while $x < 6 {
     .text-#{$x}{
