@@ -34,7 +34,7 @@ export class PayPalButtonScriptLoader extends Component {
 
   loadScript(subscription, deleteScript) {
     if (deleteScript) scriptRemover('paypal-sdk');
-    let queries = `?client-id=${this.props.clinetId}&disable-funding=credit,card`;
+    let queries = `?client-id=${this.props.clientId}&disable-funding=credit,card`;
     if (subscription) queries += '&vault=true';
 
     scriptLoader(
@@ -92,7 +92,7 @@ export class PayPalButtonScriptLoader extends Component {
 }
 
 const propTypes = {
-  clinetId: PropTypes.string,
+  clientId: PropTypes.string,
   createOrder: PropTypes.func,
   createSubscription: PropTypes.func,
   donationAmount: PropTypes.number,
