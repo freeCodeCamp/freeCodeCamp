@@ -13,8 +13,8 @@ For instance, let’s imagine we have a priority queue with three items:
 <code>[['kitten', 2], ['dog', 2], ['rabbit', 2]]</code>
 Here the second value (an integer) represents item priority. If we enqueue <code>['human', 1]</code> with a priority of <code>1</code> (assuming lower priorities are given precedence) it would then be the first item to be dequeued. The collection would like this:
 <code>[['human', 1], ['kitten', 2], ['dog', 2], ['rabbit', 2]]</code>.
-We’ve started writing a <code>PriorityQueue</code> in the code editor. You will need to add an <code>enqueue</code> method for adding items with a priority, a <code>dequeue</code> method for removing items, a <code>size</code> method to return the number of items in the queue, a <code>front</code> method to return the element at the front of the queue, and finally an <code>isEmpty</code> method that will return <code>true</code> if the queue is empty or <code>false</code> if it is not.
-The <code>enqueue</code> should accept items with the format shown above (<code>['human', 1]</code>) where <code>1</code> represents the priority. The <code>dequeue</code> should return only the current item, not its priority.
+We’ve started writing a <code>PriorityQueue</code> in the code editor. You will need to add an <code>enqueue</code> method for adding items with a priority, a <code>dequeue</code> method for removing and returning items, a <code>size</code> method to return the number of items in the queue, a <code>front</code> method to return the element at the front of the queue, and finally an <code>isEmpty</code> method that will return <code>true</code> if the queue is empty or <code>false</code> if it is not.
+The <code>enqueue</code> should accept items with the format shown above (<code>['human', 1]</code>) where <code>1</code> represents the priority. <code>dequeue</code> and <code>front</code> should return only the item's name, not its priority.
 </section>
 
 ## Instructions
