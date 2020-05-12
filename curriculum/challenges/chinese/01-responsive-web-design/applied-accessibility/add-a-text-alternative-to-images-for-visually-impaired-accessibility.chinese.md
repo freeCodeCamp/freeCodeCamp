@@ -39,9 +39,9 @@ tests:
 
 <div id='html-seed'>
 
-```html
+````html
 <img src="doingKarateWow.jpeg">
-```
+````
 
 </div>
 
