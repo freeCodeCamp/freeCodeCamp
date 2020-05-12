@@ -22,7 +22,7 @@ if (num < 5) {
 return "Yes";
 ```
 
-will return "Yes" only if <code>num</code> is between <code>5</code> and <code>10</code> (5 and 10 included). The same logic can be written as:
+will return "Yes" only if <code>num</code> is between <code>5</code> and <code>10</code> (5 and 10 excluded). The same logic can be written as:
 
 ```js
 if (num > 10 || num < 5) {
