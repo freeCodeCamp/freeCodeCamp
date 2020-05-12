@@ -14,13 +14,12 @@ videoId: 0kJz0q0pvgQ
 
 ```yml
 question:
-  text: Question
+  text: 'What does the <code>loc</code> method allow you to do?'
   answers:
-    - one
-    - two
-    - three
-  solution: 3
+    - 'Retrieve a subset of rows and columns by supplying interger-location arguments.'
+    - 'Access a group of rows and columns by supplying label(s) arguments.'
+    - 'Returns the first <code>n</code> rows based on the integer argument supplied.'
+  solution: 2
 ```
 
 </section>
-
