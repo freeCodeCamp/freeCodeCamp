@@ -23,7 +23,7 @@ const signinRE = /^\/signin/;
 const statusRE = /^\/status\/ping$/;
 const unsubscribedRE = /^\/unsubscribed\//;
 const unsubscribeRE = /^\/u\/|^\/unsubscribe\/|^\/ue\//;
-const updateHooksRE = /^\/hooks\/update-paypal$|^\/hooks\/update-stripe$/;
+const updateHooksRE = /^\/hooks\/update-paypal$|^\/hooks\/update-stripe$|^\/hooks\/update-amazonpay$/;
 
 // note: this would be replaced by webhooks later
 const donateRE = /^\/donate\/charge-stripe$/;

@@ -10,7 +10,7 @@ export default function() {
     const { path } = req;
     if (
       // eslint-disable-next-line max-len
-      /^\/hooks\/update-paypal$|^\/hooks\/update-stripe$|^\/donate\/charge-stripe$/.test(
+      /^\/hooks\/update-paypal$|^\/hooks\/update-amazonpay$|^\/hooks\/update-stripe$|^\/donate\/charge-stripe$/.test(
         path
       )
     ) {

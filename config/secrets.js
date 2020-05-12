@@ -39,7 +39,13 @@ const {
   PAYPAL_SECRET,
   PAYPAL_VERIFY_WEBHOOK_URL,
   PAYPAL_API_TOKEN_URL,
-  PAYPAL_WEBHOOK_ID
+  PAYPAL_WEBHOOK_ID,
+
+  AMAZONPAY_SELLER_ID,
+  AMAZONPAY_MWS_ID,
+  AMAZONPAY_MWS_SECRET,
+  AMAZONPAY_CLIENT_ID,
+  AMAZONPAY_CLIENT_SECRET
 } = process.env;
 
 module.exports = {
@@ -114,5 +120,13 @@ module.exports = {
   servicebot: {
     servicebotId: SERVICEBOT_ID,
     hmacKey: SERVICEBOT_HMAC_SECRET_KEY
+  },
+
+  amazon: {
+    sellerId: AMAZONPAY_SELLER_ID,
+    mwsId: AMAZONPAY_MWS_ID,
+    mwsSecret: AMAZONPAY_MWS_SECRET,
+    clientId: AMAZONPAY_CLIENT_ID,
+    clientSecret: AMAZONPAY_CLIENT_SECRET
   }
 };

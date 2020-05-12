@@ -26,6 +26,7 @@ import { deploymentEnv } from '../../../config/env.json';
 import Spacer from '../helpers/Spacer';
 // import DonateFormChildViewForHOC from './DonateFormChildViewForHOC';
 import PaypalButton from './PaypalButton';
+import AmazonPayButton from './AmazonPayButton';
 import DonateCompletion from './DonateCompletion';
 import {
   isSignedInSelector,
@@ -303,6 +304,10 @@ class DonateForm extends Component {
           isSubscription={isOneTime ? false : true}
           onDonationStateChange={this.onDonationStateChange}
           skipAddDonation={!isSignedIn}
+        />
+        <AmazonPayButton
+          donationAmount={donationAmount}
+          donationDuration={donationDuration}
         />
         <Spacer size={2} />
       </div>

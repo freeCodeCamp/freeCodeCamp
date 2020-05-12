@@ -66,6 +66,10 @@ export function verifySubscriptionPaypal(body) {
   return post('/donate/add-donation', body);
 }
 
+export function postChargeAmazonPay(body) {
+  return post('/donate/charge-amazonpay', body);
+}
+
 export function postCreateHmacHash(body) {
   return post(`/donate/create-hmac-hash`, body);
 }

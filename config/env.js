@@ -22,6 +22,8 @@ const {
   ALGOLIA_APP_ID: algoliaAppId,
   ALGOLIA_API_KEY: algoliaAPIKey,
   PAYPAL_CLIENT_ID: paypalClientId,
+  AMAZONPAY_CLIENT_ID: amazonPayClientId,
+  AMAZONPAY_SELLER_ID: amazonPaySellerId,
   DEPLOYMENT_ENV: deploymentEnv
 } = process.env;
 
@@ -56,5 +58,15 @@ module.exports = Object.assign(locations, {
   paypalClientId:
     !paypalClientId || paypalClientId === 'id_from_paypal_dashboard'
       ? null
-      : paypalClientId
+      : paypalClientId,
+  amazonPayClientId:
+    !amazonPayClientId ||
+    amazonPayClientId === 'client_id_from_amazonpay_dashboard'
+      ? null
+      : amazonPayClientId,
+  amazonPaySellerId:
+    !amazonPaySellerId ||
+    amazonPaySellerId === 'seller_id_from_amazonpay_dashboard'
+      ? null
+      : amazonPaySellerId
 });
