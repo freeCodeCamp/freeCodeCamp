@@ -57,11 +57,7 @@ Read our [How to Contribute to Open Source Guide](https://github.com/freeCodeCam
 
 ### Where are the Guide articles (guide.freecodecamp.org)?
 
-We will not have the general guide articles anymore.
-
-We intend to publish these as tutorials that are curated by the editorial team. These would then be published by them on the Developer News.
-
-The challenge hints and articles will still be available on the forum which we have already migrated.
+We have permanently sunset the general guide articles, in favour of high quality tutorials on freeCodeCamp news. The challenge hints and articles are available on the freeCodeCamp forum which we have already migrated to, in our curriclum help button links.
 
 ### Can I translate freeCodeCamp's curriculum?
 
