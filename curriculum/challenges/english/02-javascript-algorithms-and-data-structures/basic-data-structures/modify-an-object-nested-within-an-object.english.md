@@ -35,7 +35,7 @@ nestedObject.data.onlineStatus.busy = 10;
 
 ## Instructions
 <section id='instructions'>
-Here we've defined an object <code>userActivity</code> that includes another object nested within it. Set the value of the <code>online</code> key to <code>45</code>.
+Here we've defined an object <code>userActivity</code>, which includes another object nested within it. Set the value of the <code>online</code> key to <code>45</code>.
 </section>
 
 ## Tests
