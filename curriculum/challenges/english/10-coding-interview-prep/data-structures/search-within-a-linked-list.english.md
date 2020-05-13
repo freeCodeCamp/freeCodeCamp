@@ -74,13 +74,13 @@ function LinkedList() {
     if(head === null){
         head = node;
     } else {
-        var currentNode = head;
+      var currentNode = head;
 
-        while(currentNode.next){
-            currentNode  = currentNode.next;
-        }
+      while(currentNode.next){
+        currentNode = currentNode.next;
+      }
 
-        currentNode.next = node;
+      currentNode.next = node;
     }
 
     length++;
@@ -90,14 +90,14 @@ function LinkedList() {
     var currentNode = head;
     var previousNode;
     if(currentNode.element === element){
-        head = currentNode.next;
+      head = currentNode.next;
     } else {
-        while(currentNode.element !== element) {
-            previousNode = currentNode;
-            currentNode = currentNode.next;
-        }
+      while(currentNode.element !== element) {
+        previousNode = currentNode;
+        currentNode = currentNode.next;
+      }
 
-        previousNode.next = currentNode.next;
+      previousNode.next = currentNode.next;
     }
 
     length --;
