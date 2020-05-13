@@ -25,7 +25,7 @@ let nestedObject = {
 };
 ```
 
-<code>nestedObject</code> has three properties: <code>id</code> (value is a number), <code>date</code>(value is a string), and <code>data</code> (value is an object with its nested structure). While structures can quickly become complex, we can still use the same notations to access the information we need. To assign the value <code>10</code> to the <code>busy</code> property of the nested <code>onlineStatus</code> object, we use dot notation to reference the property:
+<code>nestedObject</code> has three properties: <code>id</code> (value is a number), <code>date</code> (value is a string), and <code>data</code> (value is an object with its nested structure). While structures can quickly become complex, we can still use the same notations to access the information we need. To assign the value <code>10</code> to the <code>busy</code> property of the nested <code>onlineStatus</code> object, we use dot notation to reference the property:
 
 ```js
 nestedObject.data.onlineStatus.busy = 10;
