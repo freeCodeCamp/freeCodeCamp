@@ -24,8 +24,10 @@ function Intro({
   navigate,
   pending,
   complete,
+  completedChallengeCount,
   slug
 }) {
+  console.log("It's me ;)", completedChallengeCount);
   if (pending && !complete) {
     return (
       <>
@@ -72,13 +74,17 @@ function Intro({
           </Col>
         </Row>
         <Row>
-          <Col sm={10} smOffset={1} xs={12}>
-            <Spacer />
-            <h4>
-              If you are new to coding, we recommend you{' '}
-              <Link to={slug}>start at the beginning</Link>.
-            </h4>
-          </Col>
+          {completedChallengeCount < 15 ? (
+            <Col sm={10} smOffset={1} xs={12}>
+              <Spacer />
+              <h4>
+                If you are new to coding, we recommend you{' '}
+                <Link to={slug}>start at the beginning</Link>.
+              </h4>
+            </Col>
+          ) : (
+            ''
+          )}
         </Row>
       </>
     );
