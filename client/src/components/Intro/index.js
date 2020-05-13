@@ -27,7 +27,6 @@ function Intro({
   completedChallengeCount,
   slug
 }) {
-  console.log("It's me ;)", completedChallengeCount);
   if (pending && !complete) {
     return (
       <>
