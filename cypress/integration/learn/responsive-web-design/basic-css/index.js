@@ -56,9 +56,10 @@ const lessonNames = [
   'Use a media query to change a variable'
 ];
 
-const warningMessage = `
-    Note: Some browser extensions may interfere with elements on the page.
-    If the tests fail, try disabling your extensions for the most reliable experience.`;
+const warningMessage =
+  'Note: Some browser extensions may interfere with elements on the page. ' +
+  'If the tests fail, try disabling your extensions for the most reliable ' +
+  'experience.';
 
 describe('Basic Css Introduction page', function() {
   it('renders', () => {
