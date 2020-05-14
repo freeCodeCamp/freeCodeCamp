@@ -7,7 +7,7 @@ forumTopicId: 301707
 
 ## Description
 <section id='description'>
-In this exercise, we are going to perform a subset test on 2 sets of data. We will create a method on our <code>Set</code> data structure called <code>subset</code>. This will compare the first set against the second, and if the first set is fully contained within the second, it will return <code>true</code>.
+In this exercise, we are going to perform a subset test on 2 sets of data. We will create a method on our <code>Set</code> data structure called <code>isSubsetOf</code>. This will compare the first set against the second, and if the first set is fully contained within the second, it will return <code>true</code>.
 For example, if <code>setA = ['a','b']</code> and <code>setB = ['a','b','c','d']</code>, then <code>setA</code> is a subset of <code>setB</code>, so <code>setA.subset(setB)</code> should return <code>true</code>.
 </section>
 
