@@ -32,7 +32,7 @@ An optional description with helpful information related to the video.
 <section id='tests'>
 
 ```yml
-tests:
+question:
   text: 'Question'
   answers:
     - 'Answer One'
@@ -85,7 +85,7 @@ You can add the question locally or directly throught the GitHub interface. To a
 If a question has not yet been added to a particular video challenge, it will have the following default question:
 
 ```yml
-tests:
+question:
   text: Question
   answers:
     - one
@@ -98,11 +98,28 @@ Update the word “Question” with your question. Update the “one”, “two�
 
 Questions and answers can contain certain HTML tags like `<br>` for a new line. Surround code with `<pre></pre>` You will need to add a `<br>` at the end of each line of code.
 
+#### Use markdown to format your question
+
+You can also use markdown in your question as well as HTML. The simplest way to ensure that it is formatted correctly is to start the question with `text: |`, like this:
+
+```yml
+question:
+  text: |
+    Question
+  answers:
+    - one
+    - two
+    - three
+  solution: 3
+```
+
+Then you need to make sure that your question is on a new line and indented one level more than `text: |`.
+
 Make sure each answer is plausible but there is only one correct answer.
 
 ## Question examples
 
-Here are a few examples:
+#### Here are a few examples with HTML:
 ```yml
 question:
   text: 'What will print out after running this code:<pre>width = 15<br>height = 12.0<br>print(height/3)</pre>'
@@ -135,6 +152,23 @@ question:
     - '7'
   solution: 3
 ```
+
+#### Example with markdown:
+````yml
+question:
+  text: |
+    What does this JavaScript code log to the console?
+    ```js
+    console.log('hello world');
+    ```
+
+    New paragraph after an empty line.
+  answers:
+    - hello *world*
+    - '**hello** world' # the string cannot start with a *, hence the quotes.
+    - hello world
+  solution: 3
+````
 
 For more examples, you can look at the markdown files for the following video course. All the challenges already have questions: [Python for Everybody Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/next-python-projects/curriculum/challenges/english/07-scientific-computing-with-python/python-for-everybody)
 

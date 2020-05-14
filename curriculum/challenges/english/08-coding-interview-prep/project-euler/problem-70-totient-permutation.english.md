@@ -12,7 +12,7 @@ Euler's Totient function, φ(<var>n</var>) [sometimes called the phi function], 
 
 Interestingly, φ(87109)=79180, and it can be seen that 87109 is a permutation of 79180.
 
-Find the value of <var>n</var>, 1 < <var>n</var> < 107, for which φ(<var>n</var>) is a permutation of <var>n</var> and the ratio <var>n</var>/φ(<var>n</var>) produces a minimum.
+Find the value of <var>n</var>, 1 < <var>n</var> < 10<sup>7</sup>, for which φ(<var>n</var>) is a permutation of <var>n</var> and the ratio <var>n</var>/φ(<var>n</var>) produces a minimum.
 
 </section>
 
