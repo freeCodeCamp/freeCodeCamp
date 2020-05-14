@@ -92,7 +92,7 @@ function Intro({
               Welcome to freeCodeCamp.org
             </h1>
             <Spacer />
-            <h2 className='medium-heading'>Learn to code.</h2>
+            <h2 className='medium-heading'>Learn to code at home.</h2>
             <h2 className='medium-heading'>Build projects.</h2>
             <h2 className='medium-heading'>Earn certifications.</h2>
             <h2 className='medium-heading'>
@@ -106,8 +106,10 @@ function Intro({
               <h2 className='medium-heading'>Microsoft</h2>
               <h2 className='medium-heading'>Spotify</h2>
             </div>
+            <Spacer />
           </Col>
-          <Col md={6} mdOffset={3} sm={8} smOffset={2} xs={12}>
+
+          <Col sm={8} smOffset={2} xs={12}>
             <button
               className={'btn-cta-big signup-btn btn-cta center-block'}
               onClick={() => {
