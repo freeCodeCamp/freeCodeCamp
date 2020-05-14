@@ -24,15 +24,15 @@ tests:
   - text: Your <code>Set</code> class should have a <code>isSubsetOf</code> method.
     testString: assert((function(){var test = new Set(); return (typeof test.isSubsetOf === 'function')})());
   - text: The first Set() should be contained in the second Set
-    testString: assert((function(){var setA = new Set(); var setB = new Set(); setA.add('a'); setB.add('b'); setB.add('c'); setB.add('a'); setB.add('d'); var ASubsetOfB = setA.isSubsetOf(setB);return (ASubsetOfB === true)})());
+    testString: assert((function(){var setA = new Set(); var setB = new Set(); setA.add('a'); setB.add('b'); setB.add('c'); setB.add('a'); setB.add('d'); var aIsSubsetOfB = setA.isSubsetOf(setB);return (aIsSubsetOfB === true)})());
   - text: <code>['a', 'b'].isSubsetOf(['a', 'b', 'c', 'd'])</code> should return <code>true</code>
-    testString: assert((function(){var setA = new Set(); var setB = new Set(); setA.add('a'); setA.add('b'); setB.add('a'); setB.add('b'); setB.add('c'); setB.add('d'); var ASubsetOfB = setA.isSubsetOf(setB); return (ASubsetOfB === true)})());
+    testString: assert((function(){var setA = new Set(); var setB = new Set(); setA.add('a'); setA.add('b'); setB.add('a'); setB.add('b'); setB.add('c'); setB.add('d'); var aIsSubsetOfB = setA.isSubsetOf(setB); return (aIsSubsetOfB === true)})());
   - text: <code>['a', 'b', 'c'].isSubsetOf(['a', 'b'])</code> should return <code>false</code>
-    testString: assert((function(){var setA = new Set(); var setB = new Set(); setA.add('a'); setA.add('b'); setA.add('c'); setB.add('a'); setB.add('b'); var ASubsetOfB = setA.isSubsetOf(setB); return (ASubsetOfB === false)})());
+    testString: assert((function(){var setA = new Set(); var setB = new Set(); setA.add('a'); setA.add('b'); setA.add('c'); setB.add('a'); setB.add('b'); var aIsSubsetOfB = setA.isSubsetOf(setB); return (aIsSubsetOfB === false)})());
   - text: <code>[].isSubsetOf([])</code> should return <code>true</code>
-    testString: assert((function(){var setA = new Set(); var setB = new Set(); var ASubsetOfB = setA.isSubsetOf(setB); return (ASubsetOfB === true)})());
+    testString: assert((function(){var setA = new Set(); var setB = new Set(); var aIsSubsetOfB = setA.isSubsetOf(setB); return (aIsSubsetOfB === true)})());
   - text: <code>['a', 'b'].isSubsetOf(['c', 'd'])</code> should return <code>false</code>
-    testString: assert((function(){var setA = new Set(); var setB = new Set(); setA.add('a'); setA.add('b'); setB.add('c'); setB.add('d'); var ASubsetOfB = setA.isSubsetOf(setB); return (ASubsetOfB === false)})());
+    testString: assert((function(){var setA = new Set(); var setB = new Set(); setA.add('a'); setA.add('b'); setB.add('c'); setB.add('d'); var aIsSubsetOfB = setA.isSubsetOf(setB); return (aIsSubsetOfB === false)})());
 
 ```
 
