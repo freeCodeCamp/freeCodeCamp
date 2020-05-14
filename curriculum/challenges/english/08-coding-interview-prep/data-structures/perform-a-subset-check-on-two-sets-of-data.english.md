@@ -223,7 +223,7 @@ class Set {
     return newSet;
   }
 
-  subset(set) {
+  isSubsetOf(set) {
     for(const value of this.values()){
       if(!set.dictionary[value]) return false;
     }
