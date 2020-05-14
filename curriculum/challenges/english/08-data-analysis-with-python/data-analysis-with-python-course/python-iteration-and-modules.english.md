@@ -14,14 +14,13 @@ videoId: XzosGWLafrY
 
 ```yml
 question:
-  text: How would you iterate over keys and values and print for a dictionary collection named "user"?
+  text: How would you iterate over and print the keys and values of a dictionary named "user"?
   answers:
     - '<pre>for key in user.items():<br>    print(key)</pre>'
     - '<pre>for key, value in user.all():<br>    print(key, value)<br>    print(value)'
-    - '<pre>for key, value in user.items():<br>   print(key, value)</pre>'
+    - '<pre>for key, value in user.items():<br>    print(key, value)</pre>'
     - '<pre>for key, value in user<br>    print(key, value)</pre>'
   solution: 3
 ```
 
 </section>
-
