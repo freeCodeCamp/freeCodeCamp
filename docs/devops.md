@@ -225,11 +225,9 @@ There are some known limitations and tradeoffs when using the beta version of th
 
   The beta site is and always has been to augment local development and testing, nothing else. It's not a promise of what’s coming, but a glimpse of what is being worked upon.
 
-- #### Sign in and authentication only available via email, not social.
+- #### Sign page may look different than production
 
-  Google, GitHub and Facebook logins will NOT be available in this beta mode. This is simply a technical limitation, because we are using a separate `test domain` for this version. **Email logins will work just as fine.**
-
-  The sign page may look different than production.
+   We use a test tenant for freecodecamp.dev on Auth0, and hence donot have the ability to set a custom domain. This makes is so that all the redirect callbacks and the login page appear at a default domain like: `https://freecodecamp-dev.auth0.com/`. This does not affect the functionality is as close to production as we can get.
 
 ## Reporting issues and leaving feedback
 
