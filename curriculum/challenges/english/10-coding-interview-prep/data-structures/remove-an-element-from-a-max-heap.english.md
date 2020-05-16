@@ -12,7 +12,7 @@ Now that we can add elements to our heap let's see how we can remove elements. R
 Move the last element in the heap into the root position.
 If either child of the root is greater than it, swap the root with the child of greater value.
 Continue swapping until the parent is greater than both children, or you reach the last level in the tree.
-Instructions: Add a method to our max heap called remove. This method should return the greatest value that has been added to our max heap and remove it from the heap. It should also reorder the heap so the heap property is maintained. After removing an element, the next greatest element remaining in the heap should become the root. Add your insert method again here as well.
+Instructions: Add a method to our max heap called remove. This method should return the greatest value that has been added to our max heap and remove it from the heap. It should also reorder the heap so the heap property is maintained. After removing an element, the next greatest element remaining in the heap should become the root.
 </section>
 
 ## Instructions
@@ -46,6 +46,21 @@ tests:
 
 ```js
 var MaxHeap = function() {
+  this.heap = [null];
+  this.insert = (ele) => {
+    var index = this.heap.length;
+    var arr = [...this.heap];
+    arr.push(ele);
+    while (ele > arr[Math.floor(index / 2)] && index > 1) {
+      arr[index] = arr[Math.floor(index / 2)];
+      arr[Math.floor(index / 2)] = ele;
+      index = arr[Math.floor(index / 2)];
+    }
+    this.heap = arr;
+  }
+  this.print = () => {
+    return this.heap.slice(1);
+  }
   // change code below this line
   // change code above this line
 };
