@@ -85,7 +85,7 @@
     "husky": "^4.2.5",
     "jest": "^24.9.0",
     "js-yaml": "^3.13.0",
-    "lerna": "^3.20.2",
+    "lerna": "^3.21.0",
     "lint-staged": "^8.2.1",
     "lodash": "^4.17.15",
     "markdownlint": "^0.15.0",
