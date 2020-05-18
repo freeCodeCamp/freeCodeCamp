@@ -9,7 +9,7 @@ forumTopicId: 301632
 <section id='description'>
 
 In this exercise we are going to create a class named <code>Set</code> to emulate an abstract data structure called "set". A set is like an array, but it cannot contain duplicate values. The typical use for a set is to simply check for the presence of an item.
-We can see how ES6 set object works in the example below-
+We can see how the ES6 <code>Set</code> object works in the example below:
 
 ```js
 const set1 = new Set([1, 2, 3, 5, 5, 2, 0]);
