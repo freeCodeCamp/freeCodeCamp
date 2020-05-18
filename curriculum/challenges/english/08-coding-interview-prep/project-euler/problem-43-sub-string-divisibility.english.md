@@ -39,7 +39,9 @@ tests:
   - text: <code>substringDivisibility()</code> should return an array.
     testString: assert(Array.isArray(substringDivisibility()));
   - text: <code>substringDivisibility()</code> should return [ 1430952867, 1460357289, 1406357289, 4130952867, 4160357289, 4106357289 ].
-    testString: assert.deepEqual(substringDivisibility(), [ 1430952867, 1460357289, 1406357289, 4130952867, 4160357289, 4106357289 ]);
+    testString: assert.sameMembers(substringDivisibility(), [ 1430952867, 1460357289, 1406357289, 4130952867, 4160357289, 4106357289 ]);
+  - text: You should not copy and return the array.
+    testString: assert(!removeJSComments(code).match(/(1430952867)|(1460357289)|(1406357289)|(4130952867)|(4160357289)|(4106357289)/))
 
 ```
 
@@ -61,7 +63,14 @@ substringDivisibility();
 
 </div>
 
+### After Test
+<div id='js-teardown'>
 
+```js
+const removeJSComments = str => str.replace(/\/\*[\s\S]*?\*\/|\/\/.*$/gm, '');
+```
+
+</div>
 
 </section>
 
