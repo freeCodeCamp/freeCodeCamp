@@ -65,15 +65,25 @@ The challenge hint articles  are available on the freeCodeCamp forum as hint top
 
 ### Can I translate freeCodeCamp's curriculum?
 
-At the minute we are translating the curriculum to Chinese _only_.
+Thanks for your interest in translating the curriculum.
 
-While we do intend to make the curriculum available in more languages, right now we do not have a timeline for this.
+Currently, we are translating the curriculum to support only the Chinese language.
 
-China is one of the largest demographic regions in terms of our non-english audience. It is an ideal candidate for the internationalization (i18n). We currently have hundreds of thousands of users using an old version of the platform.
+We do intend to make the curriculum available in more languages, but we do not have any deadlines for the same. We have several operational limits like staff, active contributors and server costs. All these play a role in driving the internationalisation (i18n) efforts. 
 
-Once we have ironed out the logistics with the Chinese version of our curriculum, the next languages to follow would be _Arabic, Portuguese, Russian and Spanish_ in no particular order. For Portuguese and Spanish we will focus on Latin America as our target demographic region based on the audience we have.
+**Why are you focusing on Chinese curriculum first?**
 
-While you may work on the translations, we are unable to launch them until later next year, other than Chinese which is tentatively planned for a early 2020 release. We may accept pull requests (high quality human translations only), depending on a case to case basis.
+China is the largest demographic regions, in our non-native english speaking audience. Currently, we have hundreds of thousands of users using an old version of the platform. This will give us an estimate of logistics involved in the i18n efforts to other languages.
+
+We intend to start i18n efforts in these languages post the Chinese language launch: 
+
+Arabic, Portuguese, Russian and Spanish (in no particular order). 
+
+We will focus on Latin America as the demographic region for Portuguese and Spanish. 
+
+We do not have any plans for i18n to any other languages other than the above for the foreseeable future.
+
+You do not encourage you to work on i18n on the above languages. We may accept pull requests, without any expectation of any timelines on deployments.
 
 ### Can I translate freeCodeCamp's codebase documentation?
 
