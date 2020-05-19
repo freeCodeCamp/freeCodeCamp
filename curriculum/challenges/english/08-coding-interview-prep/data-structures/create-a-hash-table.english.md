@@ -34,7 +34,7 @@ tests:
   - text: The add method should add key value pairs and the lookup method should return the values associated with a given key.
     testString: assert((function() { var test = false; if (typeof HashTable !== 'undefined') { test = new HashTable() }; test.add('key', 'value'); return (test.lookup('key') === 'value')})());
   - text: The remove method should accept a key as input and should remove the associated key value pair.
-    testString: assert((function(){ var test = false; if (typeof HashTable !== 'undefined') { test = new HashTable() }; test.add('key', 'value'); test.remove('key'); test.lookup = function(key){ var theHash = hash(key); if (this.collection.hasOwnProperty(theHash)[key]) { return this.collection[theHash][key]; }  return null }; var lookup = test.lookup('key'); test.lookup = null; return (lookup === null)})());
+    testString: assert((function(){var test = false; var hashValue = hash('key'); if (typeof HashTable !== 'undefined') {test = new HashTable()}; test.add = addMethodSolution; test.add('key', 'value'); test.remove('key'); return !test.collection.hasOwnProperty(hashValue); })());
   - text: Items should be added using the hash function.
     testString: assert((function() { var test = false; if (typeof HashTable !== 'undefined') { test = new HashTable() }; called = 0; test.add('key1','value1'); test.add('key2','value2'); test.add('key3','value3'); return (called >= 3 && called % 3 === 0)})());
   - text: The hash table should handle collisions.
@@ -79,6 +79,14 @@ var hash = string => {
   }
   return hash;
 };
+
+var addMethodSolution = function(key, val) {
+    var theHash = hash(key);
+    if (!this.collection.hasOwnProperty(theHash)) {
+      this.collection[theHash] = {};
+    }
+    this.collection[theHash][key] = val;
+}
 ```
 
 </div>
