@@ -32,9 +32,9 @@ Make the promise handle success and failure.  If <code>responseFromServer</code>
 
 ```yml
 tests:
-  - text: <code>resolve</code> should be executed when the <code>if</code> condition is <code>true</code>.
+  - text: <code>resolve</code> should be called with the expected string when the <code>if</code> condition is <code>true</code>.
     testString: assert(removeJSComments(code).match(/if\s*\(\s*responseFromServer\s*\)\s*{\s*resolve\s*\(\s*('|"|`)We got the data\1\s*\)(\s*|\s*;\s*)}/g));
-  - text: <code>reject</code> should be executed when the <code>if</code> condition is <code>false</code>.
+  - text: <code>reject</code> should be called with the expected string when the <code>if</code> condition is <code>false</code>.
     testString: assert(removeJSComments(code).match(/}\s*else\s*{\s*reject\s*\(\s*('|"|`)Data not received\1\s*\)(\s*|\s*;\s*)}/g));
 ```
 
