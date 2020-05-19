@@ -67,13 +67,13 @@ The challenge hint articles  are available on the freeCodeCamp forum as hint top
 
 Thanks for your interest in translating the curriculum.
 
-Currently, we are translating the curriculum to support only the Chinese language.
+Currently, we are only translating the curriculum into Chinese.
 
-We do intend to make the curriculum available in more languages, but we do not have any deadlines for the same. We have several operational limits like staff, active contributors and server costs. All these play a role in driving the internationalisation (i18n) efforts. 
+We do intend to make the curriculum available in more languages, but we do not have any deadlines for this. We have several operational limits like staff, active contributors and server costs. All these play a role in driving the internationalisation (i18n) efforts.
 
 **Why are you focusing on Chinese curriculum first?**
 
-China is the largest demographic regions, in our non-native english speaking audience. Currently, we have hundreds of thousands of users using an old version of the platform. This will give us an estimate of logistics involved in the i18n efforts to other languages.
+China is the largest demographic regions, in our non-native English speaking audience. Currently, we have hundreds of thousands of users using an old version of the platform. This will give us an estimate of logistics involved in the i18n efforts to other languages.
 
 We intend to start i18n efforts in these languages post the Chinese language launch: 
 
