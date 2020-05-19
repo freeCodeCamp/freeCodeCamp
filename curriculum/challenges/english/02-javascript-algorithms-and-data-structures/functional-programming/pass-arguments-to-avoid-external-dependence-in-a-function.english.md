@@ -64,9 +64,17 @@ function incrementer () {
 <section id='solution'>
 
 ```js
+// The global variable
 var fixedValue = 4;
 
-const incrementer = val => val + 1;
+// Only change code below this line
+function incrementer (fixedValue) {
+  return fixedValue + 1;
+
+  // Only change code above this line
+}
+
+  
 ```
 
 </section>

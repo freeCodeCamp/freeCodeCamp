@@ -36,15 +36,15 @@ tests:
   - text: Your regex should use curly brackets.
     testString: assert(timRegex.source.match(/{.*?}/).length > 0);
   - text: Your regex should not match <code>"Timber"</code>
-    testString: assert(!timRegex.test("Timber"));
+    testString: timRegex.lastIndex = 0; assert(!timRegex.test("Timber"));
   - text: Your regex should not match <code>"Timmber"</code>
-    testString: assert(!timRegex.test("Timmber"));
+    testString: timRegex.lastIndex = 0; assert(!timRegex.test("Timmber"));
   - text: Your regex should not match <code>"Timmmber"</code>
-    testString: assert(!timRegex.test("Timmmber"));
+    testString: timRegex.lastIndex = 0; assert(!timRegex.test("Timmmber"));
   - text: Your regex should match <code>"Timmmmber"</code>
-    testString: assert(timRegex.test("Timmmmber"));
+    testString: timRegex.lastIndex = 0; assert(timRegex.test("Timmmmber"));
   - text: Your regex should not match <code>"Timber"</code> with 30 <code>m</code>'s in it.
-    testString: assert(!timRegex.test("Ti" + "m".repeat(30) + "ber"));
+    testString: timRegex.lastIndex = 0; assert(!timRegex.test("Ti" + "m".repeat(30) + "ber"));
 
 ```
 
