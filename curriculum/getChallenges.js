@@ -127,9 +127,6 @@ async function createChallenge(fullPath, maybeMeta) {
   challenge.required = required.concat(challenge.required || []);
   challenge.template = template;
   challenge.time = time;
-  // isBeta should default to true, so if it is missing, set it to be true
-  // eslint-disable-next-line no-undefined
-  challenge.isBeta = challenge.isBeta === undefined ? true : challenge.isBeta;
 
   return challenge;
 }
