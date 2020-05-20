@@ -78,6 +78,7 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
               node {
                 block
                 challengeType
+                isHidden
                 fields {
                   slug
                 }
