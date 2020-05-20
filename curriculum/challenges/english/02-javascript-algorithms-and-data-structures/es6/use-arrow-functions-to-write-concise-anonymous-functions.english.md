@@ -37,7 +37,7 @@ This code will still return <code>value</code> by default.
 
 ## Instructions
 <section id='instructions'>
-Rewrite the function assigned to the variable <code>magic</code> which returns a new <code>Date()</code> to use arrow function syntax. Also make sure nothing is defined using the keyword <code>var</code>.
+Rewrite the function assigned to the variable <code>magic</code> which returns a <code>new Date()</code> to use arrow function syntax. Also, make sure nothing is defined using the keyword <code>var</code>.
 </section>
 
 ## Tests
