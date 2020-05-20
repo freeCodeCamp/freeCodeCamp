@@ -7,13 +7,14 @@ forumTopicId: 301611
 
 ## Description
 <section id='description'>
-Create a function that takes two or more arrays and returns an array of the <dfn>symmetric difference</dfn> (<code>&xutri;</code> or <code>&oplus;</code>) of the provided arrays.
-Given two sets (for example set <code>A = {1, 2, 3}</code> and set <code>B = {2, 3, 4}</code>), the mathematical term "symmetric difference" of two sets is the set of elements which are in either of the two sets, but not in both (<code>A &xutri; B = C = {1, 4}</code>). For every additional symmetric difference you take (say on a set <code>D = {2, 3}</code>), you should get the set with elements which are in either of the two the sets but not both (<code>C &xutri; D = {1, 4} &xutri; {2, 3} = {1, 2, 3, 4}</code>). The resulting array must contain only unique values (<em>no duplicates</em>).
+The mathematical term <dfn>symmetric difference</dfn> (<code>&xutri;</code> or <code>&oplus;</code>) of two sets is the set of elements which are in either of the two sets but not in both. For example, for sets <code>A = {1, 2, 3}</code> and <code>B = {2, 3, 4}</code>, <code>A &xutri; B = {1, 4}</code>.
+
+Symmetric difference is a binary operation, which means it operates on only two elements. So to evaluate an expression involving symmetric differences among <em>three</em> elements (<code>A &xutri; B &xutri; C</code>), you must complete one operation at a time. Thus, for sets <code>A</code> and <code>B</code> above, and <code>C = {2, 3}</code>, <code>A &xutri; B &xutri; C = (A &xutri; B) &xutri; C = {1, 4} &xutri; {2, 3} = {1, 2, 3, 4}</code>.
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Create a function that takes two or more arrays and returns an array of their symmetric difference. The returned array must contain only unique values (<em>no duplicates</em>).
 </section>
 
 ## Tests
