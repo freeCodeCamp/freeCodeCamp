@@ -6,6 +6,8 @@ const fs = require('fs');
 
 const { dasherize } = require('../utils/slugs');
 
+const { challengeSchemaValidator } = require('./schema/challengeSchema');
+
 const challengesDir = path.resolve(__dirname, './challenges');
 const metaDir = path.resolve(challengesDir, '_meta');
 exports.challengesDir = challengesDir;
@@ -26,6 +28,7 @@ exports.getMetaForBlock = getMetaForBlock;
 
 exports.getChallengesForLang = function getChallengesForLang(lang) {
   let curriculum = {};
+  const validate = challengeSchemaValidator(lang);
   return new Promise(resolve => {
     let running = 1;
     function done() {
@@ -36,13 +39,13 @@ exports.getChallengesForLang = function getChallengesForLang(lang) {
     readDirP({ root: getChallengesDirForLang(lang) })
       .on('data', file => {
         running++;
-        buildCurriculum(file, curriculum).then(done);
+        buildCurriculum(file, curriculum, validate).then(done);
       })
       .on('end', done);
   });
 };
 
-async function buildCurriculum(file, curriculum) {
+async function buildCurriculum(file, curriculum, validate) {
   const { name, depth, path: filePath, fullPath, stat } = file;
   if (depth === 1 && stat.isDirectory()) {
     // extract the superBlock info
@@ -80,6 +83,11 @@ async function buildCurriculum(file, curriculum) {
 
   const challenge = await createChallenge(fullPath, meta);
 
+  const result = validate(challenge);
+  if (result.error) {
+    console.log(result.value);
+    throw new Error(result.error);
+  }
   challengeBlock.challenges = [...challengeBlock.challenges, challenge];
 }
 
@@ -119,6 +127,9 @@ async function createChallenge(fullPath, maybeMeta) {
   challenge.required = required.concat(challenge.required || []);
   challenge.template = template;
   challenge.time = time;
+  // isBeta should default to true, so if it is missing, set it to be true
+  // eslint-disable-next-line no-undefined
+  challenge.isBeta = challenge.isBeta === undefined ? true : challenge.isBeta;
 
   return challenge;
 }
