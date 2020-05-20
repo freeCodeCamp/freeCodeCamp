@@ -15,12 +15,13 @@ videoId: LMNub5frQi4
 
 ```yml
 question:
-  text: Question
+  text: |
+    Most people that are experts in AI or machine learning usually...:
   answers:
-    - one
-    - two
-    - three
-  solution: 3
+    - have one specialization.
+    - have many specializations.
+    - have a deep understanding of many different frameworks.
+  solution: 1
 ```
 
 </section>

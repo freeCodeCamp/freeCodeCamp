@@ -17,7 +17,7 @@ videoId: AqdfbrpkbHk
 
 ```yml
 question:
-  text: 'What is the best practice for how many times a peice of string data should be stored in a database?'
+  text: 'What is the best practice for how many times a piece of string data should be stored in a database?'
   answers:
     - '0'
     - '1'

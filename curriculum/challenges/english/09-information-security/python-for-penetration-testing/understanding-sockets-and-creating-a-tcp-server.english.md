@@ -15,11 +15,16 @@ videoId: F1QI9tNuDQg
 
 ```yml
 question:
-  text: Question
+  text: |
+    Which of the following functions creates a socket object?
+
   answers:
-    - one
-    - two
-    - three
+    - |
+      `socket.bind((host, port))`
+    - |
+      `socket.gethostbyname()`
+    - |
+      `socket.socket(socket.AF_INET, socket.SOCK_STREAM)`
   solution: 3
 ```
 

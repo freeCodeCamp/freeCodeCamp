@@ -15,11 +15,12 @@ videoId: uisdfrNrZW4
 
 ```yml
 question:
-  text: Question
+  text: |
+    A densely connected neural network is one in which...:
   answers:
-    - one
-    - two
-    - three
+    - all the neurons in the current layer are connected to one neuron in the previous layer.
+    - all the neurons in each layer are connected randomly.
+    - all the neurons in the current layer are connected to every neuron in the previous layer.
   solution: 3
 ```
 
