@@ -41,9 +41,8 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
 File changed at ${filePath}, replacing challengeNode id ${challenge.id}
               `
             );
-            return createChallengeNode(challenge, reporter);
+            createVisibleChallenge(challenge);
           })
-          .then(createNode)
           .catch(e =>
             reporter.error(`fcc-replace-challenge
 
@@ -58,12 +57,7 @@ File changed at ${filePath}, replacing challengeNode id ${challenge.id}
     return source()
       .then(challenges => Promise.all(challenges))
       .then(challenges =>
-        challenges
-          .filter(
-            challenge => challenge.superBlock.toLowerCase() !== 'certificates'
-          )
-          .map(challenge => createChallengeNode(challenge, reporter))
-          .map(node => createNode(node))
+        challenges.map(challenge => createVisibleChallenge(challenge))
       )
       .catch(e =>
         reporter.panic(`fcc-source-challenges
@@ -72,6 +66,11 @@ File changed at ${filePath}, replacing challengeNode id ${challenge.id}
 
   `)
       );
+  }
+
+  function createVisibleChallenge(challenge) {
+    if (challenge.superBlock.toLowerCase() === 'certificates') return;
+    createNode(createChallengeNode(challenge, reporter));
   }
 
   return new Promise((resolve, reject) => {
