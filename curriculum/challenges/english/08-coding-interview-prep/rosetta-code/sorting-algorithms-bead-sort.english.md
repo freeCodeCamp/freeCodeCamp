@@ -2,6 +2,7 @@
 id: 5a23c84252665b21eecc8001
 title: Sorting algorithms/Bead sort
 challengeType: 5
+isHidden: false
 forumTopicId: 302310
 ---
 

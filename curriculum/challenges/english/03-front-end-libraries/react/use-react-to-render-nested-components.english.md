@@ -2,6 +2,7 @@
 id: 5a24c314108439a4d4036165
 title: Use React to Render Nested Components
 challengeType: 6
+isHidden: false
 isRequired: false
 forumTopicId: 301420
 ---

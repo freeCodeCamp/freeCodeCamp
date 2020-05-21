@@ -1,6 +1,7 @@
 ---
 id: 5900f39f1000cf542c50feb2
 challengeType: 5
+isHidden: false
 title: 'Problem 51: Prime digit replacements'
 forumTopicId: 302162
 ---

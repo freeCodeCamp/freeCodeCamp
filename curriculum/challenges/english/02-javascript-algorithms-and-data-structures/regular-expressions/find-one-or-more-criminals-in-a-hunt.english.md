@@ -2,6 +2,7 @@
 id: 587d7db7367417b2b2512b9c
 title: Find One or More Criminals in a Hunt
 challengeType: 1
+isHidden: false
 forumTopicId: 301343
 ---
 

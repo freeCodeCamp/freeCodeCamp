@@ -1,6 +1,7 @@
 ---
 id: 5900f4a81000cf542c50ffbb
 challengeType: 5
+isHidden: false
 title: 'Problem 316: Numbers in decimal expansions'
 forumTopicId: 301972
 ---

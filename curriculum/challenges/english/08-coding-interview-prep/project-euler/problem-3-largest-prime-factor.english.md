@@ -1,6 +1,7 @@
 ---
 id: 5900f36f1000cf542c50fe82
 challengeType: 5
+isHidden: false
 title: 'Problem 3: Largest prime factor'
 forumTopicId: 301952
 ---

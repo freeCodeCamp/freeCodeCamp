@@ -1,6 +1,7 @@
 ---
 id: 5900f5181000cf542c51002a
 challengeType: 5
+isHidden: false
 title: 'Problem 427: n-sequences'
 forumTopicId: 302097
 ---

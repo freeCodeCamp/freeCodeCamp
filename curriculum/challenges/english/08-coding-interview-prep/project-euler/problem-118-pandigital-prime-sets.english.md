@@ -1,6 +1,7 @@
 ---
 id: 5900f3e21000cf542c50fef5
 challengeType: 5
+isHidden: false
 title: 'Problem 118: Pandigital prime sets'
 forumTopicId: 301744
 ---

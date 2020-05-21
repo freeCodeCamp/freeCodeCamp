@@ -2,6 +2,7 @@
 id: bad87fee1348bd9aedf08835
 title: Create a Set of Checkboxes
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/p/pVMPUv/cqrkJsp'
 forumTopicId: 16821
 ---

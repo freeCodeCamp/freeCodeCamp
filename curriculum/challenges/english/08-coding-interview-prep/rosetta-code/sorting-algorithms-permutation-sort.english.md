@@ -2,6 +2,7 @@
 id: 5a23c84252665b21eecc800c
 title: Sorting algorithms/Permutation sort
 challengeType: 5
+isHidden: false
 forumTopicId: 302316
 ---
 

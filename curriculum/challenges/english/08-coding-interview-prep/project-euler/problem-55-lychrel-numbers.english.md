@@ -1,6 +1,7 @@
 ---
 id: 5900f3a31000cf542c50feb6
 challengeType: 5
+isHidden: false
 title: 'Problem 55: Lychrel numbers'
 forumTopicId: 302166
 ---

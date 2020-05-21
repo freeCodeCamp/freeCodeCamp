@@ -1,6 +1,7 @@
 ---
 id: 5900f4b51000cf542c50ffc8
 challengeType: 5
+isHidden: false
 title: 'Problem 329: Prime Frog'
 forumTopicId: 301986
 ---

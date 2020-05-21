@@ -2,6 +2,7 @@
 id: bad87fee1348bd9aedf08803
 title: Change the Color of Text
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cRkVmSm'
 forumTopicId: 16775
 ---

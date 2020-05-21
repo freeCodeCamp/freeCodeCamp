@@ -1,6 +1,7 @@
 ---
 id: 5900f3f51000cf542c50ff07
 challengeType: 5
+isHidden: false
 title: 'Problem 136: Singleton difference'
 forumTopicId: 301764
 ---

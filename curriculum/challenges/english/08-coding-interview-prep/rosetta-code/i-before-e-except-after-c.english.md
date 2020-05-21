@@ -2,6 +2,7 @@
 title: I before E except after C
 id: 5a23c84252665b21eecc7eb0
 challengeType: 5
+isHidden: false
 forumTopicId: 302288
 ---
 

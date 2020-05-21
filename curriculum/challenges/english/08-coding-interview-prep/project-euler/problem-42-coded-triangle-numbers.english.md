@@ -1,6 +1,7 @@
 ---
 id: 5900f3961000cf542c50fea9
 challengeType: 5
+isHidden: false
 title: 'Problem 42: Coded triangle numbers'
 forumTopicId: 302089
 ---

@@ -1,6 +1,7 @@
 ---
 id: 5900f41a1000cf542c50ff2c
 challengeType: 5
+isHidden: false
 title: 'Problem 173: Using up to one million tiles how many different "hollow" square laminae can be formed?'
 forumTopicId: 301808
 ---

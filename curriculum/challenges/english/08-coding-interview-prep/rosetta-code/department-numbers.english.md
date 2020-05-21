@@ -2,6 +2,7 @@
 title: Department Numbers
 id: 59f40b17e79dbf1ab720ed7a
 challengeType: 5
+isHidden: false
 forumTopicId: 302249
 ---
 

@@ -1,6 +1,7 @@
 ---
 id: 5900f3ea1000cf542c50fefd
 challengeType: 5
+isHidden: false
 title: 'Problem 126: Cuboid layers'
 forumTopicId: 301753
 ---

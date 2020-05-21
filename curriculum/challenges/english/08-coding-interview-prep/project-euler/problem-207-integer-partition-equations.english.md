@@ -1,6 +1,7 @@
 ---
 id: 5900f43c1000cf542c50ff4e
 challengeType: 5
+isHidden: false
 title: 'Problem 207: Integer partition equations'
 forumTopicId: 301848
 ---

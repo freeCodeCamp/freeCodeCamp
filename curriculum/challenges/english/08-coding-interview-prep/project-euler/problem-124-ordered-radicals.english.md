@@ -1,6 +1,7 @@
 ---
 id: 5900f3e81000cf542c50fefb
 challengeType: 5
+isHidden: false
 title: 'Problem 124: Ordered radicals'
 forumTopicId: 301751
 ---

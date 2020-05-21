@@ -1,6 +1,7 @@
 ---
 id: 5900f4371000cf542c50ff49
 challengeType: 5
+isHidden: false
 title: 'Problem 202: Laserbeam'
 forumTopicId: 301843
 ---

@@ -2,6 +2,7 @@
 id: 589fc832f9fc0f352b528e79
 title: Send and Display Chat Messages
 challengeType: 2
+isHidden: false
 forumTopicId: 301562
 ---
 

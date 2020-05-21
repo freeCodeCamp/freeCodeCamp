@@ -2,6 +2,7 @@
 id: bad87fee1348bd9aedf08816
 title: Link to External Pages with Anchor Elements
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/p/pVMPUv/c8EkncB'
 forumTopicId: 18226
 ---

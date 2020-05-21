@@ -2,6 +2,7 @@
 id: bad87fee1348bd9aedf08806
 title: Change the Font Size of an Element
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/c/c3bvDc8'
 forumTopicId: 16777
 ---

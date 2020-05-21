@@ -2,6 +2,7 @@
 id: bad87fee1348bd9aedf08815
 title: Make Circular Images with a border-radius
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/c/c2MvrcB'
 forumTopicId: 18229
 ---

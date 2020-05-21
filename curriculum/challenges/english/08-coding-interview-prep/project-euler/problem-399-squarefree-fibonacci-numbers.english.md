@@ -1,6 +1,7 @@
 ---
 id: 5900f4fc1000cf542c51000e
 challengeType: 5
+isHidden: false
 title: 'Problem 399: Squarefree Fibonacci Numbers'
 forumTopicId: 302064
 ---

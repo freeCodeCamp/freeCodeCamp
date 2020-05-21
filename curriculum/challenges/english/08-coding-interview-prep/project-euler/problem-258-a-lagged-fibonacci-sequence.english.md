@@ -1,6 +1,7 @@
 ---
 id: 5900f46e1000cf542c50ff81
 challengeType: 5
+isHidden: false
 title: 'Problem 258: A lagged Fibonacci sequence'
 forumTopicId: 301906
 ---

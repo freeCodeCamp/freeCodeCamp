@@ -1,6 +1,7 @@
 ---
 id: 5900f3861000cf542c50fe99
 challengeType: 5
+isHidden: false
 title: 'Problem 26: Reciprocal cycles'
 forumTopicId: 301908
 ---

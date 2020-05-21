@@ -2,6 +2,7 @@
 id: cf1111c1c12feddfaeb1bdef
 title: Generate Random Whole Numbers with JavaScript
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cRn6bfr'
 forumTopicId: 18186
 ---

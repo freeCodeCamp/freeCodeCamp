@@ -2,6 +2,7 @@
 id: bd7158d8c443edefaeb5bd0f
 title: File Metadata Microservice
 challengeType: 4
+isHidden: false
 isRequired: true
 forumTopicId: 301506
 ---

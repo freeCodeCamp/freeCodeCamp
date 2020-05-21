@@ -2,6 +2,7 @@
 id: 5a8b073d06fa14fcfde687aa
 title: Exercise Tracker
 challengeType: 4
+isHidden: false
 isRequired: true
 forumTopicId: 301505
 ---

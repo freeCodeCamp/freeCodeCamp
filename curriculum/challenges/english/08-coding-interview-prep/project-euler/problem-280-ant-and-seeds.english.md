@@ -1,6 +1,7 @@
 ---
 id: 5900f4841000cf542c50ff97
 challengeType: 5
+isHidden: false
 title: 'Problem 280: Ant and seeds'
 forumTopicId: 301931
 ---

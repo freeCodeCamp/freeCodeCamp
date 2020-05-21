@@ -2,6 +2,7 @@
 id: 587d7db9367417b2b2512ba7
 title: Specify Exact Number of Matches
 challengeType: 1
+isHidden: false
 forumTopicId: 301365
 ---
 

@@ -1,6 +1,7 @@
 ---
 id: 5900f3951000cf542c50fea8
 challengeType: 5
+isHidden: false
 title: 'Problem 41: Pandigital prime'
 forumTopicId: 302078
 ---

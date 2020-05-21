@@ -2,6 +2,7 @@
 id: 587d824b367417b2b2512c48
 title: Use Assert.isOK and Assert.isNotOK
 challengeType: 2
+isHidden: false
 forumTopicId: 301607
 ---
 

@@ -1,6 +1,7 @@
 ---
 id: 5900f4aa1000cf542c50ffbc
 challengeType: 5
+isHidden: false
 title: 'Problem 317: Firecracker'
 forumTopicId: 301973
 ---

@@ -2,6 +2,7 @@
 title: Accumulator factory
 id: 594810f028c0303b75339ace
 challengeType: 5
+isHidden: false
 forumTopicId: 302222
 ---
 

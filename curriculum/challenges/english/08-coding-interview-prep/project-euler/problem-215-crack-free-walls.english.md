@@ -1,6 +1,7 @@
 ---
 id: 5900f4431000cf542c50ff56
 challengeType: 5
+isHidden: false
 title: 'Problem 215: Crack-free Walls'
 forumTopicId: 301857
 ---

@@ -1,6 +1,7 @@
 ---
 id: 5900f3f21000cf542c50ff05
 challengeType: 5
+isHidden: false
 title: 'Problem 134: Prime pair connection'
 forumTopicId: 301762
 ---

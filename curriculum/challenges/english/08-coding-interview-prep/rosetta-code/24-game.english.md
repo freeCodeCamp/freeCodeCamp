@@ -2,6 +2,7 @@
 title: 24 game
 id: 5951e88f64ebf159166a1176
 challengeType: 5
+isHidden: false
 forumTopicId: 302218
 ---
 

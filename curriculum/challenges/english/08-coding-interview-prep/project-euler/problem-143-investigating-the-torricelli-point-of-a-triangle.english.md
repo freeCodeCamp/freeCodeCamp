@@ -1,6 +1,7 @@
 ---
 id: 5900f3fc1000cf542c50ff0e
 challengeType: 5
+isHidden: false
 title: 'Problem 143: Investigating the Torricelli point of a triangle'
 forumTopicId: 301772
 ---

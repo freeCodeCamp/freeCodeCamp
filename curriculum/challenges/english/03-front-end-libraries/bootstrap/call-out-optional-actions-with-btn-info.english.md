@@ -2,6 +2,7 @@
 id: bad87fee1348cd8acef08813
 title: Call out Optional Actions with btn-info
 challengeType: 0
+isHidden: false
 forumTopicId: 16770
 ---
 

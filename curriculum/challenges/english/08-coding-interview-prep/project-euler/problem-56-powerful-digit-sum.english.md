@@ -1,6 +1,7 @@
 ---
 id: 5900f3a41000cf542c50feb7
 challengeType: 5
+isHidden: false
 title: 'Problem 56: Powerful digit sum'
 forumTopicId: 302167
 ---

@@ -2,6 +2,7 @@
 id: bad87dee1348bd9aede07836
 title: Use an id Attribute to Style an Element
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cakyZfL'
 forumTopicId: 18339
 ---

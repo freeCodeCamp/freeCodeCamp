@@ -2,6 +2,7 @@
 id: 587d825a367417b2b2512c87
 title: Create a Doubly Linked List
 challengeType: 1
+isHidden: false
 forumTopicId: 301626
 ---
 

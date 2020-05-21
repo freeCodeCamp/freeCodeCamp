@@ -1,6 +1,7 @@
 ---
 id: 5900f4111000cf542c50ff23
 challengeType: 5
+isHidden: false
 title: 'Problem 164: Numbers for which no three consecutive digits have a sum greater than a given value'
 forumTopicId: 301798
 ---

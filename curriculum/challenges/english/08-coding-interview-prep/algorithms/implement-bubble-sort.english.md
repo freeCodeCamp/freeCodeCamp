@@ -2,6 +2,7 @@
 id: 8d5123c8c441eddfaeb5bdef
 title: Implement Bubble Sort
 challengeType: 1
+isHidden: false
 forumTopicId: 301612
 ---
 

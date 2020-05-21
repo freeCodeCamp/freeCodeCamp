@@ -2,6 +2,7 @@
 id: bad88fee1348ce8acef08815
 title: Use the Bootstrap Grid to Put Elements Side By Side
 challengeType: 0
+isHidden: false
 forumTopicId: 18371
 ---
 

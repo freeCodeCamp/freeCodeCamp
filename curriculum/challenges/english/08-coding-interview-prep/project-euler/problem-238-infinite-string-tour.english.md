@@ -1,6 +1,7 @@
 ---
 id: 5900f45b1000cf542c50ff6d
 challengeType: 5
+isHidden: false
 title: 'Problem 238: Infinite string tour'
 forumTopicId: 301883
 ---

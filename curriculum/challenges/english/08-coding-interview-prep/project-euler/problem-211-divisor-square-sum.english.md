@@ -1,6 +1,7 @@
 ---
 id: 5900f43f1000cf542c50ff52
 challengeType: 5
+isHidden: false
 title: 'Problem 211: Divisor Square Sum'
 forumTopicId: 301853
 ---

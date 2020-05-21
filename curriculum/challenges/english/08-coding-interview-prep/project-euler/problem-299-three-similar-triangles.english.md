@@ -1,6 +1,7 @@
 ---
 id: 5900f4971000cf542c50ffaa
 challengeType: 5
+isHidden: false
 title: 'Problem 299: Three similar triangles'
 forumTopicId: 301951
 ---

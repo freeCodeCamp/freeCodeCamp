@@ -1,6 +1,7 @@
 ---
 id: 5900f38d1000cf542c50fea0
 challengeType: 5
+isHidden: false
 title: 'Problem 33: Digit cancelling fractions'
 forumTopicId: 301987
 ---

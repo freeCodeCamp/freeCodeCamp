@@ -5,6 +5,7 @@ required:
   - link: 'https://use.fontawesome.com/releases/v5.8.1/css/all.css'
     raw: true
 challengeType: 0
+isHidden: false
 forumTopicId: 16638
 ---
 

@@ -1,6 +1,7 @@
 ---
 id: 5900f4381000cf542c50ff4b
 challengeType: 5
+isHidden: false
 title: 'Problem 204: Generalised Hamming Numbers'
 forumTopicId: 301845
 ---

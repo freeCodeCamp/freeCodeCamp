@@ -1,6 +1,7 @@
 ---
 id: 5900f4861000cf542c50ff99
 challengeType: 5
+isHidden: false
 title: 'Problem 282: The Ackermann function'
 forumTopicId: 301933
 ---

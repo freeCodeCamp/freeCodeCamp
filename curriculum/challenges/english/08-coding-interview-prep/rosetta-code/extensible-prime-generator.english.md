@@ -2,6 +2,7 @@
 title: Extensible prime generator
 id: 598ee8b91b410510ae82efef
 challengeType: 5
+isHidden: false
 forumTopicId: 302262
 ---
 

@@ -1,6 +1,7 @@
 ---
 id: 5900f48d1000cf542c50ffa0
 challengeType: 5
+isHidden: false
 title: 'Problem 289: Eulerian Cycles'
 forumTopicId: 301940
 ---

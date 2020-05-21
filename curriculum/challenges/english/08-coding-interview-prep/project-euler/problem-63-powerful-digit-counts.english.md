@@ -1,6 +1,7 @@
 ---
 id: 5900f3ab1000cf542c50febe
 challengeType: 5
+isHidden: false
 title: 'Problem 63: Powerful digit counts'
 forumTopicId: 302175
 ---

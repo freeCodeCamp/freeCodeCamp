@@ -2,6 +2,7 @@
 id: 5a4b7fcdb66f799f199e11db
 title: Build a Pong Game
 challengeType: 3
+isHidden: false
 isRequired: false
 forumTopicId: 302353
 ---

@@ -1,6 +1,7 @@
 ---
 id: 5900f5141000cf542c510027
 challengeType: 5
+isHidden: false
 title: 'Problem 423: Consecutive die throws'
 forumTopicId: 302093
 ---

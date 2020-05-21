@@ -1,6 +1,7 @@
 ---
 id: 5900f3f21000cf542c50ff04
 challengeType: 5
+isHidden: false
 title: 'Problem 133: Repunit nonfactors'
 forumTopicId: 301761
 ---

@@ -2,6 +2,7 @@
 title: Top rank per group
 id: 595011cba5a81735713873bd
 challengeType: 5
+isHidden: false
 forumTopicId: 302339
 ---
 

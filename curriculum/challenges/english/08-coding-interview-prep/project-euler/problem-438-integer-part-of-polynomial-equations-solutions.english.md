@@ -1,6 +1,7 @@
 ---
 id: 5900f5231000cf542c510034
 challengeType: 5
+isHidden: false
 title: 'Problem 438: Integer part of polynomial equation''s solutions'
 forumTopicId: 302109
 ---

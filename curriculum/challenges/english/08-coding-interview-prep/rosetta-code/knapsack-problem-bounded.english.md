@@ -2,6 +2,7 @@
 id: 5a23c84252665b21eecc7ed2
 title: Knapsack problem/Bounded
 challengeType: 5
+isHidden: false
 forumTopicId: 323652
 ---
 

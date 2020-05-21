@@ -1,6 +1,7 @@
 ---
 id: 5900f4de1000cf542c50fff1
 challengeType: 5
+isHidden: false
 title: 'Problem 370: Geometric triangles'
 forumTopicId: 302032
 ---

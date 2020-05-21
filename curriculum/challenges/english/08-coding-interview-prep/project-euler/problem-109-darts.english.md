@@ -1,6 +1,7 @@
 ---
 id: 5900f3db1000cf542c50feec
 challengeType: 5
+isHidden: false
 title: 'Problem 109: Darts'
 forumTopicId: 301733
 ---

@@ -2,6 +2,7 @@
 id: 587d7b86367417b2b2512b3b
 title: Catch Off By One Errors When Using Indexing
 challengeType: 1
+isHidden: false
 forumTopicId: 301189
 ---
 

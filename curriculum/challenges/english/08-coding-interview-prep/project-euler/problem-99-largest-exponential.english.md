@@ -1,6 +1,7 @@
 ---
 id: 5900f3d01000cf542c50fee2
 challengeType: 5
+isHidden: false
 title: 'Problem 99: Largest exponential'
 forumTopicId: 302216
 ---

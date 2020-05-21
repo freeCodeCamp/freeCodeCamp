@@ -1,6 +1,7 @@
 ---
 id: 5900f3e51000cf542c50fef8
 challengeType: 5
+isHidden: false
 title: 'Problem 121: Disc game prize fund'
 forumTopicId: 301748
 ---

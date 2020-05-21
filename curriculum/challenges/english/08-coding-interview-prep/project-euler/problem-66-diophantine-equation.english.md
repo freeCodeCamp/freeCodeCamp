@@ -1,6 +1,7 @@
 ---
 id: 5900f3ae1000cf542c50fec1
 challengeType: 5
+isHidden: false
 title: 'Problem 66: Diophantine equation'
 forumTopicId: 302178
 ---

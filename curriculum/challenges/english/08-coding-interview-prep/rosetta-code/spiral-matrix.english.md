@@ -2,6 +2,7 @@
 id: 5a23c84252665b21eecc801c
 title: Spiral matrix
 challengeType: 5
+isHidden: false
 forumTopicId: 302321
 ---
 

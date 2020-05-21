@@ -1,6 +1,7 @@
 ---
 id: 5900f4c41000cf542c50ffd6
 challengeType: 5
+isHidden: false
 title: 'Problem 343: Fractional Sequences'
 forumTopicId: 302002
 ---

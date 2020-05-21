@@ -1,6 +1,7 @@
 ---
 id: 5900f49b1000cf542c50ffad
 challengeType: 5
+isHidden: false
 title: 'Problem 302: Strong Achilles Numbers'
 forumTopicId: 301956
 ---

@@ -1,6 +1,7 @@
 ---
 id: 5900f3781000cf542c50fe8b
 challengeType: 5
+isHidden: false
 title: 'Problem 12: Highly divisible triangular number'
 forumTopicId: 301746
 ---

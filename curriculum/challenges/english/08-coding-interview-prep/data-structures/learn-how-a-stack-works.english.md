@@ -2,6 +2,7 @@
 id: 587d8250367417b2b2512c5e
 title: Learn how a Stack Works
 challengeType: 1
+isHidden: false
 forumTopicId: 301705
 ---
 

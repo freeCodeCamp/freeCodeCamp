@@ -2,6 +2,7 @@
 id: bad87fee1348cd8acef08812
 title: Create a Block Element Bootstrap Button
 challengeType: 0
+isHidden: false
 forumTopicId: 16810
 ---
 

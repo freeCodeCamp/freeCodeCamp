@@ -2,6 +2,7 @@
 id: bad87fee1348bd9aedd08835
 title: Check Radio Buttons and Checkboxes by Default
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/p/pVMPUv/cWk3Qh6'
 forumTopicId: 301094
 ---

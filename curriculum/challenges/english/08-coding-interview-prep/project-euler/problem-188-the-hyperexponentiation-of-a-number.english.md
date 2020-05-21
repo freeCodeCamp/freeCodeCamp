@@ -1,6 +1,7 @@
 ---
 id: 5900f4291000cf542c50ff3b
 challengeType: 5
+isHidden: false
 title: 'Problem 188: The hyperexponentiation of a number'
 forumTopicId: 301824
 ---

@@ -1,6 +1,7 @@
 ---
 id: 5900f44e1000cf542c50ff5f
 challengeType: 5
+isHidden: false
 title: 'Problem 224: Almost right-angled triangles II'
 forumTopicId: 301867
 ---

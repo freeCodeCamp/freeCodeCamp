@@ -2,6 +2,7 @@
 id: 8d5823c8c441eddfaeb5bdef
 title: Create a Map Data Structure
 challengeType: 1
+isHidden: false
 forumTopicId: 301629
 ---
 

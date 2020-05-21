@@ -1,6 +1,7 @@
 ---
 id: 5900f4d31000cf542c50ffe6
 challengeType: 5
+isHidden: false
 title: 'Problem 359: Hilbert''s New Hotel'
 forumTopicId: 302019
 ---

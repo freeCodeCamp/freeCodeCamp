@@ -1,6 +1,7 @@
 ---
 id: 5900f4b11000cf542c50ffc4
 challengeType: 5
+isHidden: false
 title: 'Problem 325: Stone Game II'
 forumTopicId: 301982
 ---

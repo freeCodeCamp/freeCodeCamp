@@ -2,6 +2,7 @@
 id: bad87fee1348bd9aede08845
 title: Create a Custom Heading
 challengeType: 0
+isHidden: false
 forumTopicId: 16816
 ---
 

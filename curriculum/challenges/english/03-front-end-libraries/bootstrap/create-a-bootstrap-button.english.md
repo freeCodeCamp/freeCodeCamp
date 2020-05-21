@@ -2,6 +2,7 @@
 id: bad87fee1348cd8acdf08812
 title: Create a Bootstrap Button
 challengeType: 0
+isHidden: false
 forumTopicId: 16811
 ---
 

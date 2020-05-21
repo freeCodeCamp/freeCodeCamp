@@ -3,6 +3,7 @@ id: bd7198d8c242eddfaeb5bd13
 title: Show National Contiguity with a Force Directed Graph
 isRequired: false
 challengeType: 3
+isHidden: false
 forumTopicId: 302367
 ---
 

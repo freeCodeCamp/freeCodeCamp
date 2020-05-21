@@ -1,6 +1,7 @@
 ---
 id: 5900f3ac1000cf542c50febf
 challengeType: 5
+isHidden: false
 title: 'Problem 64: Odd period square roots'
 forumTopicId: 302176
 ---

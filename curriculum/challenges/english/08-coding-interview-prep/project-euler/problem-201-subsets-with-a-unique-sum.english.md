@@ -1,6 +1,7 @@
 ---
 id: 5900f4361000cf542c50ff48
 challengeType: 5
+isHidden: false
 title: 'Problem 201: Subsets with a unique sum'
 forumTopicId: 301841
 ---

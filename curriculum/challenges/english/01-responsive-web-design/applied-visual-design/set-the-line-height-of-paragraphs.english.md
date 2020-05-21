@@ -2,6 +2,7 @@
 id: 587d781d367417b2b2512ac5
 title: Set the line-height of Paragraphs
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/c/crVWdcv'
 forumTopicId: 301070
 ---

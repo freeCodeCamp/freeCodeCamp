@@ -2,6 +2,7 @@
 title: Heronian triangles
 id: 595b98f8b5a2245e243aa831
 challengeType: 5
+isHidden: false
 forumTopicId: 302285
 ---
 

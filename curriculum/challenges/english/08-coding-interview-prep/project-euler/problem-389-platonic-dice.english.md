@@ -1,6 +1,7 @@
 ---
 id: 5900f4f21000cf542c510004
 challengeType: 5
+isHidden: false
 title: 'Problem 389: Platonic Dice'
 forumTopicId: 302053
 ---

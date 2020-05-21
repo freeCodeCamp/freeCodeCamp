@@ -2,6 +2,7 @@
 title: Hash join
 id: 5956795bc9e2c415eb244de1
 challengeType: 5
+isHidden: false
 forumTopicId: 302284
 ---
 

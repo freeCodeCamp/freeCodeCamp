@@ -1,6 +1,7 @@
 ---
 id: 5900f4c81000cf542c50ffd9
 challengeType: 5
+isHidden: false
 title: 'Problem 347: Largest integer divisible by two primes'
 forumTopicId: 302006
 ---

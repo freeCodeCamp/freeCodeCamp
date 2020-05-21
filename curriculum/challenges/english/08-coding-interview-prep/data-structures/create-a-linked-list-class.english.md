@@ -2,6 +2,7 @@
 id: 587d8251367417b2b2512c62
 title: Create a Linked List Class
 challengeType: 1
+isHidden: false
 forumTopicId: 301628
 ---
 

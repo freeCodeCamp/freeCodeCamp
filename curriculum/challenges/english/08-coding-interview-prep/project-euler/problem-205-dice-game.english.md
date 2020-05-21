@@ -1,6 +1,7 @@
 ---
 id: 5900f4391000cf542c50ff4c
 challengeType: 5
+isHidden: false
 title: 'Problem 205: Dice Game'
 forumTopicId: 301846
 ---

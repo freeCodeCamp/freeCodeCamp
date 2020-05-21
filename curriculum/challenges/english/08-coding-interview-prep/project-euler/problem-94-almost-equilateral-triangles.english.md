@@ -1,6 +1,7 @@
 ---
 id: 5900f3ca1000cf542c50fedd
 challengeType: 5
+isHidden: false
 title: 'Problem 94: Almost equilateral triangles'
 forumTopicId: 302211
 ---

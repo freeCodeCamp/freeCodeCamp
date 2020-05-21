@@ -2,6 +2,7 @@
 id: 587d7fa8367417b2b2512bca
 title: Change the Presentation of a Bar Chart
 challengeType: 6
+isHidden: false
 forumTopicId: 301481
 ---
 

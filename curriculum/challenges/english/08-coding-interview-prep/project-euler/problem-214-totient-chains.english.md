@@ -1,6 +1,7 @@
 ---
 id: 5900f4421000cf542c50ff55
 challengeType: 5
+isHidden: false
 title: 'Problem 214: Totient Chains'
 forumTopicId: 301856
 ---
