@@ -1,6 +1,7 @@
 ---
 id: 5900f4891000cf542c50ff9b
 challengeType: 5
+isHidden: false
 title: 'Problem 284: Steady Squares'
 forumTopicId: 301935
 ---

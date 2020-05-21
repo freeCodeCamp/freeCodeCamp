@@ -2,6 +2,7 @@
 id: bd7158d8c443eddfaeb5bdef
 title: Build a Voting App
 challengeType: 4
+isHidden: false
 isRequired: true
 forumTopicId: 302359
 ---

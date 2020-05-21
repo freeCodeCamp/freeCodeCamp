@@ -1,6 +1,7 @@
 ---
 id: 5900f4701000cf542c50ff82
 challengeType: 5
+isHidden: false
 title: 'Problem 259: Reachable Numbers'
 forumTopicId: 301907
 ---

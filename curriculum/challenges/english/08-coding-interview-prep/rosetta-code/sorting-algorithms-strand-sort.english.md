@@ -2,6 +2,7 @@
 id: 5a23c84252665b21eecc8013
 title: Sorting algorithms/Strand sort
 challengeType: 5
+isHidden: false
 forumTopicId: 302319
 ---
 

@@ -2,6 +2,7 @@
 id: 587d7b90367417b2b2512b65
 title: Return Part of an Array Using the slice Method
 challengeType: 1
+isHidden: false
 forumTopicId: 301239
 ---
 

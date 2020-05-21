@@ -2,6 +2,7 @@
 id: 5ea281203167d2b0bdefca00
 title: Ludic numbers
 challengeType: 5
+isHidden: false
 ---
 
 ## Description

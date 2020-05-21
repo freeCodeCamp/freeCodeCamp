@@ -2,6 +2,7 @@
 id: 587d7fb1367417b2b2512bf3
 title: Implement a Root-Level Request Logger Middleware
 challengeType: 2
+isHidden: false
 forumTopicId: 301514
 ---
 

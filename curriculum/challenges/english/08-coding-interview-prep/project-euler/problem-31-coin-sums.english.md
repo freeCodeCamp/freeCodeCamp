@@ -1,6 +1,7 @@
 ---
 id: 5900f38b1000cf542c50fe9e
 challengeType: 5
+isHidden: false
 title: 'Problem 31: Coin sums'
 forumTopicId: 301965
 ---

@@ -2,6 +2,7 @@
 title: Gray code
 id: 5a23c84252665b21eecc7e80
 challengeType: 5
+isHidden: false
 forumTopicId: 302276
 ---
 

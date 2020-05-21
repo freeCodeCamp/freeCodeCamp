@@ -1,6 +1,7 @@
 ---
 id: 5900f4801000cf542c50ff93
 challengeType: 5
+isHidden: false
 title: 'Problem 276: Primitive Triangles'
 forumTopicId: 301926
 ---

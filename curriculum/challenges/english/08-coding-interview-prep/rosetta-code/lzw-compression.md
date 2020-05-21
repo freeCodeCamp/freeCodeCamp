@@ -2,6 +2,7 @@
 id: 5ea2815e364d9a2222ea55f8
 title: LZW compression
 challengeType: 5
+isHidden: false
 ---
 
 ## Description

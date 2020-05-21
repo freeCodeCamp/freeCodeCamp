@@ -1,6 +1,7 @@
 ---
 id: 5900f3a51000cf542c50feb8
 challengeType: 5
+isHidden: false
 title: 'Problem 57: Square root convergents'
 forumTopicId: 302168
 ---

@@ -2,6 +2,7 @@
 id: bd7158d8c443eddfaeb5bd0f
 title: Manage a Book Trading Club
 challengeType: 4
+isHidden: false
 forumTopicId: 302364
 ---
 

@@ -1,6 +1,7 @@
 ---
 id: 5900f53d1000cf542c510050
 challengeType: 5
+isHidden: false
 title: 'Problem 465: Polar polygons'
 forumTopicId: 302140
 ---

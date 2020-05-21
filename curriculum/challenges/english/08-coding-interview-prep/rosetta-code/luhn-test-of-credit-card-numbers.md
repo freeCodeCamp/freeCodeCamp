@@ -2,6 +2,7 @@
 id: 5ea28156e79528a9ab248f27
 title: Luhn test of credit card numbers
 challengeType: 5
+isHidden: false
 ---
 
 ## Description

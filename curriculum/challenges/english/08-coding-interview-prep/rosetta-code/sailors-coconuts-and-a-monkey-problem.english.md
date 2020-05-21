@@ -2,6 +2,7 @@
 title: 'Sailors, coconuts and a monkey problem'
 id: 59da22823d04c95919d46269
 challengeType: 5
+isHidden: false
 forumTopicId: 302304
 ---
 

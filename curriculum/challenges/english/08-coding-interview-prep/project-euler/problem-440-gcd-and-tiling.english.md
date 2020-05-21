@@ -1,6 +1,7 @@
 ---
 id: 5900f5241000cf542c510037
 challengeType: 5
+isHidden: false
 title: 'Problem 440: GCD and Tiling'
 forumTopicId: 302112
 ---

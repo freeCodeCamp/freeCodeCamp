@@ -2,6 +2,7 @@
 id: 587d824a367417b2b2512c43
 title: Personal Library
 challengeType: 4
+isHidden: false
 isRequired: true
 forumTopicId: 301571
 ---

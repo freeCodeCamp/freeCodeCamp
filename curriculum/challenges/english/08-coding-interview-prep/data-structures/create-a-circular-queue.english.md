@@ -2,6 +2,7 @@
 id: 587d8255367417b2b2512c75
 title: Create a Circular Queue
 challengeType: 1
+isHidden: false
 forumTopicId: 301625
 ---
 

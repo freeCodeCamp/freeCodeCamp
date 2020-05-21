@@ -1,6 +1,7 @@
 ---
 id: 5900f4971000cf542c50ffa9
 challengeType: 5
+isHidden: false
 title: 'Problem 298: Selective Amnesia'
 forumTopicId: 301950
 ---

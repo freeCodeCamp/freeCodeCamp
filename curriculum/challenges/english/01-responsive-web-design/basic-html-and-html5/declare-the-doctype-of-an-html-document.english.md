@@ -2,6 +2,7 @@
 id: 587d78aa367417b2b2512aed
 title: Declare the Doctype of an HTML Document
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/p/pVMPUv/cra98AJ'
 forumTopicId: 301095
 ---

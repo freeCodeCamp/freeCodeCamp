@@ -1,6 +1,7 @@
 ---
 id: 5900f52a1000cf542c51003c
 challengeType: 5
+isHidden: false
 title: 'Problem 445: Retractions A'
 forumTopicId: 302117
 ---

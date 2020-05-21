@@ -2,6 +2,7 @@
 title: Hofstadter Figure-Figure sequences
 id: 59622f89e4e137560018a40e
 challengeType: 5
+isHidden: false
 forumTopicId: 302286
 ---
 

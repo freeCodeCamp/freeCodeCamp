@@ -1,6 +1,7 @@
 ---
 id: 5900f40f1000cf542c50ff22
 challengeType: 5
+isHidden: false
 title: 'Problem 163: Cross-hatched triangles'
 forumTopicId: 301797
 ---

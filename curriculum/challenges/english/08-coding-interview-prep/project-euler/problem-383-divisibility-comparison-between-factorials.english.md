@@ -1,6 +1,7 @@
 ---
 id: 5900f4ed1000cf542c50ffff
 challengeType: 5
+isHidden: false
 title: 'Problem 383: Divisibility comparison between factorials'
 forumTopicId: 302047
 ---

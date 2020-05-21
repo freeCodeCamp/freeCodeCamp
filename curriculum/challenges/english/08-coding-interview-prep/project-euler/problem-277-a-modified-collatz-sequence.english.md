@@ -1,6 +1,7 @@
 ---
 id: 5900f4811000cf542c50ff94
 challengeType: 5
+isHidden: false
 title: 'Problem 277: A Modified Collatz sequence'
 forumTopicId: 301927
 ---

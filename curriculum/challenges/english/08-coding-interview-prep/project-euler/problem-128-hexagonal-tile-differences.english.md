@@ -1,6 +1,7 @@
 ---
 id: 5900f3ec1000cf542c50feff
 challengeType: 5
+isHidden: false
 title: 'Problem 128: Hexagonal tile differences'
 forumTopicId: 301755
 ---

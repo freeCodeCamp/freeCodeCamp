@@ -2,6 +2,7 @@
 id: 587d8257367417b2b2512c7b
 title: Add a New Element to a Binary Search Tree
 challengeType: 1
+isHidden: false
 forumTopicId: 301618
 ---
 

@@ -2,6 +2,7 @@
 id: 5a23c84252665b21eecc7e1e
 title: Dot product
 challengeType: 5
+isHidden: false
 forumTopicId: 302251
 ---
 

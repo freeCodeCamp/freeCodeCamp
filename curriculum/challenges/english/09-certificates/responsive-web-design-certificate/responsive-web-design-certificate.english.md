@@ -2,6 +2,7 @@
 id: 561add10cb82ac38a17513bc
 title: Responsive Web Design Certificate
 challengeType: 7
+isHidden: false
 isPrivate: true
 ---
 

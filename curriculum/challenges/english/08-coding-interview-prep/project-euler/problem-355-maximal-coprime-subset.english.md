@@ -1,6 +1,7 @@
 ---
 id: 5900f4d01000cf542c50ffe2
 challengeType: 5
+isHidden: false
 title: 'Problem 355: Maximal coprime subset'
 forumTopicId: 302015
 ---

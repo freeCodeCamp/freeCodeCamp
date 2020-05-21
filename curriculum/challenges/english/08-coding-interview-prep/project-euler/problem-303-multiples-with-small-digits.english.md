@@ -1,6 +1,7 @@
 ---
 id: 5900f49b1000cf542c50ffae
 challengeType: 5
+isHidden: false
 title: 'Problem 303: Multiples with small digits'
 forumTopicId: 301957
 ---

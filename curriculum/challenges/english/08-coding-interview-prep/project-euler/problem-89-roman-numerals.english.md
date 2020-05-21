@@ -1,6 +1,7 @@
 ---
 id: 5900f3c51000cf542c50fed7
 challengeType: 5
+isHidden: false
 title: 'Problem 89: Roman numerals'
 forumTopicId: 302204
 ---

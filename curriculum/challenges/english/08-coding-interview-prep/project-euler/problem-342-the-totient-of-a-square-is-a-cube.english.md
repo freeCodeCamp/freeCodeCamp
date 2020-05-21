@@ -1,6 +1,7 @@
 ---
 id: 5900f4c31000cf542c50ffd5
 challengeType: 5
+isHidden: false
 title: 'Problem 342: The totient of a square is a cube'
 forumTopicId: 302001
 ---

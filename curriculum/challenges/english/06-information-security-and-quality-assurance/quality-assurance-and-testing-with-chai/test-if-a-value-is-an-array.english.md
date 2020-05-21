@@ -2,6 +2,7 @@
 id: 587d824d367417b2b2512c50
 title: Test if a Value is an Array
 challengeType: 2
+isHidden: false
 forumTopicId: 301600
 ---
 

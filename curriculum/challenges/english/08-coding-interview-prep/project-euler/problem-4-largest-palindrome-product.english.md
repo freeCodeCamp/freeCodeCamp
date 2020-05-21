@@ -1,6 +1,7 @@
 ---
 id: 5900f3701000cf542c50fe83
 challengeType: 5
+isHidden: false
 title: 'Problem 4: Largest palindrome product'
 forumTopicId: 302065
 ---

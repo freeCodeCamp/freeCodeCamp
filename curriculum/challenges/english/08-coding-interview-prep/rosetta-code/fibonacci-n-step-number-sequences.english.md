@@ -2,6 +2,7 @@
 title: Fibonacci n-step number sequences
 id: 598eef80ba501f1268170e1e
 challengeType: 5
+isHidden: false
 forumTopicId: 302267
 ---
 

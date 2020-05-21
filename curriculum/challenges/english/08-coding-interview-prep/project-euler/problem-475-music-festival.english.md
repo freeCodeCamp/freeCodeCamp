@@ -1,6 +1,7 @@
 ---
 id: 5900f5481000cf542c51005a
 challengeType: 5
+isHidden: false
 title: 'Problem 475: Music festival'
 forumTopicId: 302152
 ---

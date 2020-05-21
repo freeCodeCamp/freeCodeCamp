@@ -1,6 +1,7 @@
 ---
 id: 5900f4cd1000cf542c50ffdf
 challengeType: 5
+isHidden: false
 title: 'Problem 352: Blood tests'
 forumTopicId: 302012
 ---

@@ -1,6 +1,7 @@
 ---
 id: 5900f41e1000cf542c50ff31
 challengeType: 5
+isHidden: false
 title: 'Problem 178: Step Numbers'
 forumTopicId: 301813
 ---
