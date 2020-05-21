@@ -34,7 +34,6 @@ import { isSignedInSelector } from '../../../../redux';
 import Hotkeys from '../../components/Hotkeys';
 
 import '../../components/test-frame.css';
-import { backEndProject } from '../../../../../utils/challengeTypes';
 
 const propTypes = {
   challengeMounted: PropTypes.func.isRequired,
@@ -156,12 +155,10 @@ export class BackEnd extends Component {
       },
       tests,
       executeChallenge,
-      updateSolutionFormValues,
       updateBackendFormValues
     } = this.props;
 
     const blockNameTitle = `${blockName} - ${title}`;
-    const isBackEndProject = challengeType === backEndProject;
 
     return (
       <Hotkeys
@@ -182,14 +179,9 @@ export class BackEnd extends Component {
                   instructions={instructions}
                 />
                 <SolutionForm
-                  isFrontEnd={false}
-                  isProject={isBackEndProject}
+                  challengeType={challengeType}
                   onSubmit={executeChallenge}
-                  updateSolutionForm={values =>
-                    isBackEndProject
-                      ? updateSolutionFormValues(values)
-                      : updateBackendFormValues(values)
-                  }
+                  updateSolutionForm={updateBackendFormValues}
                 />
                 <ProjectToolPanel
                   guideUrl={getGuideUrl({ forumTopicId, title })}

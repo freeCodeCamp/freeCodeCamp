@@ -2,16 +2,21 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { Form } from '../../../components/formHelpers';
+import {
+  backEndProject,
+  frontEndProject,
+  pythonProject
+} from '../../../../utils/challengeTypes';
 
 const propTypes = {
-  isFrontEnd: PropTypes.bool,
-  isProject: PropTypes.bool,
+  challengeType: PropTypes.number,
+  description: PropTypes.string,
   isSubmitting: PropTypes.bool,
   onSubmit: PropTypes.func.isRequired,
   updateSolutionForm: PropTypes.func.isRequired
 };
 
-const challengeFields = ['solution'];
+const frontEndProjectFields = ['solution'];
 const backEndProjectFields = ['solution', 'githubLink'];
 
 const options = {
@@ -35,25 +40,52 @@ export class SolutionForm extends Component {
     this.props.onSubmit();
   }
   render() {
-    const { isSubmitting, isFrontEnd, isProject } = this.props;
+    const { isSubmitting, challengeType, description } = this.props;
     const buttonCopy = isSubmitting
       ? 'Submit and go to my next challenge'
       : "I've completed this challenge";
+
+    let solutionFormFields = frontEndProjectFields;
+    let solutionLink = 'Link, ex: ';
+    let solutionFormID = 'front-end-form';
+
+    switch (challengeType) {
+      case frontEndProject:
+        solutionFormFields = frontEndProjectFields;
+        solutionLink =
+          solutionLink + 'https://codepen.io/camperbot/full/oNvPqqo';
+        break;
+
+      case backEndProject:
+        solutionFormFields = backEndProjectFields;
+        solutionLink = solutionLink + 'https://camperbot.glitch.me';
+        solutionFormID = 'back-end-form';
+        break;
+
+      case pythonProject:
+        solutionFormFields = frontEndProjectFields;
+        solutionLink =
+          solutionLink +
+          (description.includes('Colaboratory')
+            ? 'https://colab.research.google.com/drive/1i5EmInTWi1RFvFr2_aRXky96YxY6sbWy'
+            : 'https://repl.it/@camperbot/hello');
+        break;
+
+      default:
+        solutionFormFields = frontEndProjectFields;
+        solutionLink =
+          solutionLink + 'https://codepen.io/camperbot/full/oNvPqqo';
+    }
+
     return (
       <Form
         buttonText={`${buttonCopy}`}
-        formFields={
-          isProject && !isFrontEnd ? backEndProjectFields : challengeFields
-        }
-        id={isFrontEnd ? 'front-end-form' : 'back-end-form'}
+        formFields={solutionFormFields}
+        id={solutionFormID}
         options={{
           ...options,
           placeholders: {
-            solution:
-              'Link, ex: ' +
-              (isFrontEnd
-                ? 'https://codepen.io/camperbot/full/oNvPqqo'
-                : 'https://camperbot.glitch.me'),
+            solution: solutionLink,
             githubLink: 'ex: https://github.com/camperbot/hello'
           }
         }}
