@@ -38,7 +38,6 @@ function Intro({
     );
   } else if (isSignedIn) {
     const { quote, author } = randomQuote();
-    completedChallengeCount = 16;
     return (
       <>
         <Row>
