@@ -16,7 +16,7 @@ Here's the formula we'll use. Take a moment to read it and try to understand wha
 
 ## Instructions
 <section id='instructions'>
-Create a function called <code>randomRange</code> that takes a range <code>myMin</code> and <code>myMax</code> and returns a random number that's greater than or equal to <code>myMin</code>, and is less than or equal to <code>myMax</code>, inclusive.
+Create a function called <code>randomRange</code> that takes a range <code>myMin</code> and <code>myMax</code> and returns a random whole number that's greater than or equal to <code>myMin</code>, and is less than or equal to <code>myMax</code>, inclusive.
 </section>
 
 ## Tests
