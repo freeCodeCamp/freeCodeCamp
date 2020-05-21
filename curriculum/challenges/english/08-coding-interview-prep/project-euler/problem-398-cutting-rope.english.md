@@ -1,6 +1,7 @@
 ---
 id: 5900f4fa1000cf542c51000d
 challengeType: 5
+isHidden: false
 title: 'Problem 398: Cutting rope'
 forumTopicId: 302063
 ---

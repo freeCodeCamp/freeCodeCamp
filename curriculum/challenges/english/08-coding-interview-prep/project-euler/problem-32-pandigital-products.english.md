@@ -1,6 +1,7 @@
 ---
 id: 5900f38c1000cf542c50fe9f
 challengeType: 5
+isHidden: false
 title: 'Problem 32: Pandigital products'
 forumTopicId: 301976
 ---

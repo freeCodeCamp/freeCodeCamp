@@ -2,6 +2,7 @@
 id: 587d78ad367417b2b2512afb
 title: Use the flex-shrink Property to Shrink Items
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/p/pVaDAv/cd3PBfr'
 forumTopicId: 301113
 ---

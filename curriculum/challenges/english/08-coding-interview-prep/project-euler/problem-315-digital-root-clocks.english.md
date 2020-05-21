@@ -1,6 +1,7 @@
 ---
 id: 5900f4a71000cf542c50ffba
 challengeType: 5
+isHidden: false
 title: 'Problem 315: Digital root clocks'
 forumTopicId: 301971
 ---

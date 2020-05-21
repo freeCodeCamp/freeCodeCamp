@@ -1,6 +1,7 @@
 ---
 id: 5900f54c1000cf542c51005f
 challengeType: 5
+isHidden: false
 title: 'Problem 480: The Last Question'
 forumTopicId: 302158
 ---

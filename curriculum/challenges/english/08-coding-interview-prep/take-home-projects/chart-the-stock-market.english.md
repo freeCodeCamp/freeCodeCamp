@@ -2,6 +2,7 @@
 id: bd7158d8c443eddfaeb5bd0e
 title: Chart the Stock Market
 challengeType: 4
+isHidden: false
 isRequired: true
 forumTopicId: 302363
 ---

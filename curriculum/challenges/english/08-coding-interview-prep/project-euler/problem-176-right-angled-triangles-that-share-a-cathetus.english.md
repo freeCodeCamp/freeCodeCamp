@@ -1,6 +1,7 @@
 ---
 id: 5900f41c1000cf542c50ff2f
 challengeType: 5
+isHidden: false
 title: 'Problem 176: Right-angled triangles that share a cathetus'
 forumTopicId: 301811
 ---

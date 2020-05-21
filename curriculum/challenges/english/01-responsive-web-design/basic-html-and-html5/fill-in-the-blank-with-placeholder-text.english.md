@@ -2,6 +2,7 @@
 id: bad87fee1348bd9aedf08833
 title: Fill in the Blank with Placeholder Text
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/p/pVMPUv/cgR7Dc7'
 forumTopicId: 18178
 ---

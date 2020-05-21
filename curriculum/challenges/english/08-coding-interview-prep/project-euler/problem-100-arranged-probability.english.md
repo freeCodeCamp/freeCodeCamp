@@ -1,6 +1,7 @@
 ---
 id: 5900f3d01000cf542c50fee3
 challengeType: 5
+isHidden: false
 title: 'Problem 100: Arranged probability'
 forumTopicId: 301724
 ---

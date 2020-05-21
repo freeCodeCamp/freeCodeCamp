@@ -1,6 +1,7 @@
 ---
 id: 5900f4301000cf542c50ff42
 challengeType: 5
+isHidden: false
 title: 'Problem 196: Prime triplets'
 forumTopicId: 301834
 ---

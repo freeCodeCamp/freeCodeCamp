@@ -2,6 +2,7 @@
 id: bad87fee1348bd9aedf08814
 title: Add Rounded Corners with border-radius
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cbZm2hg'
 forumTopicId: 16649
 ---

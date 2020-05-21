@@ -2,6 +2,7 @@
 title: Sort an array of composite structures
 id: 5a23c84252665b21eecc7ffe
 challengeType: 5
+isHidden: false
 forumTopicId: 302306
 ---
 

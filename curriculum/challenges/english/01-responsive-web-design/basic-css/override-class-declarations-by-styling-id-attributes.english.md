@@ -2,6 +2,7 @@
 id: bad87fee1348bd8aedf06756
 title: Override Class Declarations by Styling ID Attributes
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cRkpDhB'
 forumTopicId: 18251
 ---

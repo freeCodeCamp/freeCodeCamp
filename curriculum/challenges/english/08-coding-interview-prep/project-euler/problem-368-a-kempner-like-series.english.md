@@ -1,6 +1,7 @@
 ---
 id: 5900f4dd1000cf542c50ffef
 challengeType: 5
+isHidden: false
 title: 'Problem 368: A Kempner-like series'
 forumTopicId: 302029
 ---

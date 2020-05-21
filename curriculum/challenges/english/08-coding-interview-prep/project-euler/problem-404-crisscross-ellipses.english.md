@@ -1,6 +1,7 @@
 ---
 id: 5900f5001000cf542c510012
 challengeType: 5
+isHidden: false
 title: 'Problem 404: Crisscross Ellipses'
 forumTopicId: 302072
 ---

@@ -2,6 +2,7 @@
 id: 587d7db6367417b2b2512b98
 title: Match Single Characters Not Specified
 challengeType: 1
+isHidden: false
 forumTopicId: 301358
 ---
 

@@ -1,6 +1,7 @@
 ---
 id: 5900f4551000cf542c50ff68
 challengeType: 5
+isHidden: false
 title: 'Problem 233: Lattice points on a circle'
 forumTopicId: 301877
 ---

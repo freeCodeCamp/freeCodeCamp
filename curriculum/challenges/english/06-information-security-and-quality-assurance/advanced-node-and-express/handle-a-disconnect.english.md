@@ -2,6 +2,7 @@
 id: 589fc831f9fc0f352b528e76
 title: Handle a Disconnect
 challengeType: 2
+isHidden: false
 forumTopicId: 301552
 ---
 

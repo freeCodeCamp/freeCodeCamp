@@ -1,6 +1,7 @@
 ---
 id: 5900f4ae1000cf542c50ffbf
 challengeType: 5
+isHidden: false
 title: 'Problem 320: Factorials divisible by a huge integer'
 forumTopicId: 301977
 ---

@@ -2,6 +2,7 @@
 id: 5a5d02bd919fcf9ca8cf46cb
 title: Build a Light-Bright App
 challengeType: 3
+isHidden: false
 isRequired: false
 forumTopicId: 302350
 ---

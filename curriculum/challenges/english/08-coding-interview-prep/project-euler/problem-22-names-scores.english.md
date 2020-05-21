@@ -1,6 +1,7 @@
 ---
 id: 5a51eabcad78bf416f316e2a
 challengeType: 5
+isHidden: false
 title: 'Problem 22: Names scores'
 forumTopicId: 301862
 ---

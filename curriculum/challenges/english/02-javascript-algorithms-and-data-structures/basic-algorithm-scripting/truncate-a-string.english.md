@@ -3,6 +3,7 @@ id: ac6993d51946422351508a41
 title: Truncate a String
 isRequired: true
 challengeType: 5
+isHidden: false
 forumTopicId: 16089
 ---
 

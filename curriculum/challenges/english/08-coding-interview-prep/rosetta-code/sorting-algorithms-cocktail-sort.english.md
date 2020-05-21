@@ -2,6 +2,7 @@
 id: 5a23c84252665b21eecc8004
 title: Sorting algorithms/Cocktail sort
 challengeType: 5
+isHidden: false
 forumTopicId: 302312
 ---
 

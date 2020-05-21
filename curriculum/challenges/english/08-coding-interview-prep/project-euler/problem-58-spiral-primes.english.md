@@ -1,6 +1,7 @@
 ---
 id: 5900f3a61000cf542c50feb9
 challengeType: 5
+isHidden: false
 title: 'Problem 58: Spiral primes'
 forumTopicId: 302169
 ---

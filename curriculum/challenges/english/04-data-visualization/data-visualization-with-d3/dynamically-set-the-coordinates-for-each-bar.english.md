@@ -2,6 +2,7 @@
 id: 587d7fa9367417b2b2512bce
 title: Dynamically Set the Coordinates for Each Bar
 challengeType: 6
+isHidden: false
 forumTopicId: 301487
 ---
 

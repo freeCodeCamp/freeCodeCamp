@@ -1,6 +1,7 @@
 ---
 id: 5900f50c1000cf542c51001e
 challengeType: 5
+isHidden: false
 title: 'Problem 415: Titanic sets'
 forumTopicId: 302084
 ---

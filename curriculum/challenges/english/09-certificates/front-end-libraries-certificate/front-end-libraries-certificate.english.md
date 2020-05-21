@@ -2,6 +2,7 @@
 id: 561acd10cb82ac38a17513bc
 title: Front End Libraries Certificate
 challengeType: 7
+isHidden: false
 isPrivate: true
 ---
 

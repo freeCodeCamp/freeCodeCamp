@@ -1,6 +1,7 @@
 ---
 id: 5900f42f1000cf542c50ff41
 challengeType: 5
+isHidden: false
 title: 'Problem 193: Squarefree Numbers'
 forumTopicId: 301831
 ---

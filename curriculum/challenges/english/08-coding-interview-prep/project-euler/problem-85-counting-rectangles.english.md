@@ -1,6 +1,7 @@
 ---
 id: 5900f3c11000cf542c50fed4
 challengeType: 5
+isHidden: false
 title: 'Problem 85: Counting rectangles'
 forumTopicId: 302199
 ---

@@ -2,6 +2,7 @@
 id: 587d7fb2367417b2b2512bf5
 title: Get Route Parameter Input from the Client
 challengeType: 2
+isHidden: false
 forumTopicId: 301513
 ---
 

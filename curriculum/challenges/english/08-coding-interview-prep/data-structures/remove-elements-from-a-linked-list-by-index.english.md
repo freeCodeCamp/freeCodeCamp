@@ -2,6 +2,7 @@
 id: 587d8251367417b2b2512c65
 title: Remove Elements from a Linked List by Index
 challengeType: 1
+isHidden: false
 forumTopicId: 301711
 ---
 

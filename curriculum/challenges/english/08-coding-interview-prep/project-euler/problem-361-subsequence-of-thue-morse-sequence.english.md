@@ -1,6 +1,7 @@
 ---
 id: 5900f4d51000cf542c50ffe8
 challengeType: 5
+isHidden: false
 title: 'Problem 361: Subsequence of Thue-Morse sequence'
 forumTopicId: 302022
 ---

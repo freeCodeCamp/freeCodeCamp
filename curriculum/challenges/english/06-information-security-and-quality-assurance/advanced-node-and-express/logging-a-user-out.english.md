@@ -2,6 +2,7 @@
 id: 58965611f9fc0f352b528e6c
 title: Logging a User Out
 challengeType: 2
+isHidden: false
 forumTopicId: 301560
 ---
 

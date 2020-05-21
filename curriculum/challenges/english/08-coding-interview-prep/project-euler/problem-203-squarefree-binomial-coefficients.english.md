@@ -1,6 +1,7 @@
 ---
 id: 5900f4381000cf542c50ff4a
 challengeType: 5
+isHidden: false
 title: 'Problem 203: Squarefree Binomial Coefficients'
 forumTopicId: 301844
 ---

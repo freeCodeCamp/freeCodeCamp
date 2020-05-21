@@ -2,6 +2,7 @@
 id: 587d8259367417b2b2512c83
 title: Invert a Binary Tree
 challengeType: 1
+isHidden: false
 forumTopicId: 301704
 ---
 

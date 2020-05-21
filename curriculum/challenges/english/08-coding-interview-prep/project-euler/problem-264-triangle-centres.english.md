@@ -1,6 +1,7 @@
 ---
 id: 5900f4751000cf542c50ff87
 challengeType: 5
+isHidden: false
 title: 'Problem 264: Triangle Centres'
 forumTopicId: 301913
 ---

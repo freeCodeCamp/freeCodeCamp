@@ -2,6 +2,7 @@
 title: Self Describing Numbers
 id: 5eaf48389ee512d4d103684b
 challengeType: 5
+isHidden: false
 ---
 
 ## Description

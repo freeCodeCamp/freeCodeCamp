@@ -2,6 +2,7 @@
 id: 587d8247367417b2b2512c37
 title: Hide Potentially Dangerous Information Using helmet.hidePoweredBy()
 challengeType: 2
+isHidden: false
 forumTopicId: 301580
 ---
 

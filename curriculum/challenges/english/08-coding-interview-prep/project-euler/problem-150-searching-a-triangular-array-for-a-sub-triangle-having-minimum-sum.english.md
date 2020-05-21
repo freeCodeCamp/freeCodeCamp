@@ -1,6 +1,7 @@
 ---
 id: 5900f4031000cf542c50ff15
 challengeType: 5
+isHidden: false
 title: 'Problem 150: Searching a triangular array for a sub-triangle having minimum-sum'
 forumTopicId: 301781
 ---

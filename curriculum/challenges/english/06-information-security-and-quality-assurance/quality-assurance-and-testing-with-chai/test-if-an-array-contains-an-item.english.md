@@ -2,6 +2,7 @@
 id: 587d824d367417b2b2512c51
 title: Test if an Array Contains an Item
 challengeType: 2
+isHidden: false
 forumTopicId: 301603
 ---
 

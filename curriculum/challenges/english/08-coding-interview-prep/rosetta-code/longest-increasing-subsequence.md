@@ -2,6 +2,7 @@
 id: 5e6dd139859c290b6ab80292
 title: Longest increasing subsequence
 challengeType: 5
+isHidden: false
 ---
 
 ## Description

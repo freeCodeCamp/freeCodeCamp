@@ -2,6 +2,7 @@
 id: a7bf700cd123b9a54eef01d5
 title: No Repeats Please
 challengeType: 5
+isHidden: false
 forumTopicId: 16037
 ---
 

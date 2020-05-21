@@ -2,6 +2,7 @@
 title: 9 billion names of God the integer
 id: 5949b579404977fbaefcd736
 challengeType: 5
+isHidden: false
 forumTopicId: 302219
 ---
 

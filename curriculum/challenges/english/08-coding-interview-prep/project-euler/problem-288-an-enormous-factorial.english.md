@@ -1,6 +1,7 @@
 ---
 id: 5900f48d1000cf542c50ff9f
 challengeType: 5
+isHidden: false
 title: 'Problem 288: An enormous factorial'
 forumTopicId: 301939
 ---

@@ -1,6 +1,7 @@
 ---
 id: 5900f3e91000cf542c50fefc
 challengeType: 5
+isHidden: false
 title: 'Problem 125: Palindromic sums'
 forumTopicId: 301752
 ---
