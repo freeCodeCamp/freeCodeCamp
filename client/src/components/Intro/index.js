@@ -4,6 +4,7 @@ import { Link, Spacer, Loader, FullWidthRow } from '../helpers';
 import { Row, Col } from '@freecodecamp/react-bootstrap';
 import { apiLocation } from '../../../config/env.json';
 import { randomQuote } from '../../utils/get-words';
+import CurrentChallengeLink from '../helpers/CurrentChallengeLink';
 
 import './intro.css';
 
@@ -37,6 +38,7 @@ function Intro({
     );
   } else if (isSignedIn) {
     const { quote, author } = randomQuote();
+    completedChallengeCount = 16;
     return (
       <>
         <Row>
@@ -58,6 +60,13 @@ function Intro({
           <Link className='btn btn-lg btn-primary btn-block' to='/settings'>
             Update my account settings
           </Link>
+          {completedChallengeCount > 1 ? (
+            <CurrentChallengeLink isLargeBtn={true}>
+              Go to current challenge
+            </CurrentChallengeLink>
+          ) : (
+            ''
+          )}
         </FullWidthRow>
         <Spacer />
         <Row className='text-center quote-partial'>
