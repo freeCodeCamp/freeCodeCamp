@@ -10,6 +10,7 @@ import './intro.css';
 
 const propTypes = {
   complete: PropTypes.bool,
+  completedChallengeCount: PropTypes.number,
   isSignedIn: PropTypes.bool,
   name: PropTypes.string,
   navigate: PropTypes.func,
@@ -59,7 +60,7 @@ function Intro({
           <Link className='btn btn-lg btn-primary btn-block' to='/settings'>
             Update my account settings
           </Link>
-          {completedChallengeCount > 1 ? (
+          {completedChallengeCount > 0 ? (
             <CurrentChallengeLink isLargeBtn={true}>
               Go to current challenge
             </CurrentChallengeLink>
