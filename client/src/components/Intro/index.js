@@ -4,11 +4,13 @@ import { Link, Spacer, Loader, FullWidthRow } from '../helpers';
 import { Row, Col } from '@freecodecamp/react-bootstrap';
 import { apiLocation } from '../../../config/env.json';
 import { randomQuote } from '../../utils/get-words';
+import CurrentChallengeLink from '../helpers/CurrentChallengeLink';
 
 import './intro.css';
 
 const propTypes = {
   complete: PropTypes.bool,
+  completedChallengeCount: PropTypes.number,
   isSignedIn: PropTypes.bool,
   name: PropTypes.string,
   navigate: PropTypes.func,
@@ -24,6 +26,7 @@ function Intro({
   navigate,
   pending,
   complete,
+  completedChallengeCount,
   slug
 }) {
   if (pending && !complete) {
@@ -57,6 +60,13 @@ function Intro({
           <Link className='btn btn-lg btn-primary btn-block' to='/settings'>
             Update my account settings
           </Link>
+          {completedChallengeCount > 0 ? (
+            <CurrentChallengeLink isLargeBtn={true}>
+              Go to current challenge
+            </CurrentChallengeLink>
+          ) : (
+            ''
+          )}
         </FullWidthRow>
         <Spacer />
         <Row className='text-center quote-partial'>
@@ -72,13 +82,17 @@ function Intro({
           </Col>
         </Row>
         <Row>
-          <Col sm={10} smOffset={1} xs={12}>
-            <Spacer />
-            <h4>
-              If you are new to coding, we recommend you{' '}
-              <Link to={slug}>start at the beginning</Link>.
-            </h4>
-          </Col>
+          {completedChallengeCount < 15 ? (
+            <Col sm={10} smOffset={1} xs={12}>
+              <Spacer />
+              <h4>
+                If you are new to coding, we recommend you{' '}
+                <Link to={slug}>start at the beginning</Link>.
+              </h4>
+            </Col>
+          ) : (
+            ''
+          )}
         </Row>
       </>
     );
