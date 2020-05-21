@@ -14,7 +14,11 @@ const superBlockNames = [
   'Front End Libraries',
   'Data Visualization',
   'APIs and Microservices',
-  'Information Security and Quality Assurance',
+  'Quality Assurance',
+  'Scientific Computing with Python',
+  'Data Analysis with Python',
+  'Information Security',
+  'Machine Learning with Python',
   'Coding Interview Prep'
 ];
 
@@ -36,7 +40,7 @@ describe('Learn Landing page', function() {
       const superBlocks = document.querySelectorAll(
         `${selectors.challengeMap} > ul > li`
       );
-      expect(superBlocks).to.have.length(7);
+      expect(superBlocks).to.have.length(11);
 
       superBlocks.forEach((superBlock, idx) => {
         expect(superBlock.innerText).to.have.string(superBlockNames[idx]);

@@ -24,7 +24,7 @@ import {
   challengeMounted,
   updateChallengeMeta,
   openModal,
-  updateProjectFormValues
+  updateSolutionFormValues
 } from '../redux';
 
 // Styles
@@ -42,7 +42,7 @@ const mapDispatchToProps = dispatch =>
     {
       updateChallengeMeta,
       challengeMounted,
-      updateProjectFormValues,
+      updateSolutionFormValues,
       openCompletionModal: () => openModal('completion')
     },
     dispatch
@@ -61,7 +61,7 @@ const propTypes = {
     challengeMeta: PropTypes.object
   }),
   updateChallengeMeta: PropTypes.func.isRequired,
-  updateProjectFormValues: PropTypes.func.isRequired
+  updateSolutionFormValues: PropTypes.func.isRequired
 };
 
 // Component
