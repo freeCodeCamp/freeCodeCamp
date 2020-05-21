@@ -128,6 +128,12 @@ async function createChallenge(fullPath, maybeMeta) {
   challenge.template = template;
   challenge.time = time;
 
+  // challenges can be hidden (so they do not appear in all environments e.g.
+  // production), SHOW_HIDDEN controls this.
+  if (process.env.SHOW_HIDDEN === 'true') {
+    challenge.isHidden = false;
+  }
+
   return challenge;
 }
 
