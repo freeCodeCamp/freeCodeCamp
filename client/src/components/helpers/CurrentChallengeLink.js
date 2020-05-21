@@ -12,7 +12,7 @@ const currentChallengeApi = '/challenges/current-challenge';
 const propTypes = {
   children: PropTypes.any,
   hardGoTo: PropTypes.func.isRequired,
-  isLargeBtn: PropTypes.string
+  isLargeBtn: PropTypes.bool
 };
 
 const mapStateToProps = () => ({});
@@ -25,16 +25,15 @@ const createClickHandler = hardGoTo => e => {
 };
 
 function CurrentChallengeLink({ children, hardGoTo, isLargeBtn }) {
-  const classes = ['btn', 'btn-primary', 'btn-block'];
+  let classNames;
   if (isLargeBtn) {
-    classes.push('btn-lg');
+    classNames = 'btn btn-lg btn-primary btn-block';
   } else {
-    classes.push('btn-cta-big');
+    classNames = 'btn btn-cta-big btn-primary btn-block';
   }
-  const allClassNames = classes.join(' ');
   return (
     <a
-      className={allClassNames}
+      className={classNames}
       href={currentChallengeApi}
       onClick={createClickHandler(hardGoTo)}
     >
