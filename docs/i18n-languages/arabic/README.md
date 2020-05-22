@@ -4,6 +4,8 @@
 [![first-timers-only Friendly](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](http://www.firsttimersonly.com/)
 [![Known Vulnerabilities](https://snyk.io/test/github/freecodecamp/freecodecamp/badge.svg)](https://snyk.io/test/github/freecodecamp/freecodecamp)
 
+<div dir="rtl" style="direction: rtl" markdown="1">
+
 ## مرحبًا بك في شفرة مصدر freeCodeCamp.org ومنهج مفتوح المصدر!
 
 [freeCodeCamp.org](https://www.freecodecamp.org) هو مجتمع ودود حيث يمكنك تعلم البرمجة مجانًا. تدار من قبل [منظمة غير ربحية 501 (c) (3)](https://donate.freecodecamp.org) وبدعم من الجهات المانحة لمساعدة ملايين البالغين على التحول إلى تكنولوجيا المعلومات. لقد ساعد مجتمعنا بالفعل أكثر من 10000 شخص في الحصول على وظيفتهم الأولى كمطورين.
@@ -147,3 +149,4 @@ Copyright © 2020 freeCodeCamp.org
 
 - البرنامج مرخص [BSD-3-Clause](LICENSE.md).
 - مصادر التعلم لل [curriculum](/curriculum) و [guide](/guide) وكذلك الدلائل الفرعية مرخصة [CC-BY-SA-4.0](/curriculum/LICENSE.md).
+</div>
