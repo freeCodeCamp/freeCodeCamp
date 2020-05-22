@@ -67,12 +67,11 @@ exports.createChallengePages = createPage => ({ node }, index, thisArray) => {
     required = [],
     template,
     challengeType,
-    id,
-    isHidden
+    id
   } = node;
   // TODO: challengeType === 7 and isPrivate are the same, right? If so, we
   // should remove one of them.
-  if (challengeType === 7 || isHidden) {
+  if (challengeType === 7) {
     return null;
   }
 

@@ -122,9 +122,11 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
         }
 
         // Create challenge pages.
-        result.data.allChallengeNode.edges.forEach(
-          createChallengePages(createPage)
+        const challengeEdges = result.data.allChallengeNode.edges.filter(
+          ({ node: { isHidden } }) => !isHidden
         );
+
+        challengeEdges.forEach(createChallengePages(createPage));
 
         // Create intro pages
         result.data.allMarkdownRemark.edges.forEach(edge => {
