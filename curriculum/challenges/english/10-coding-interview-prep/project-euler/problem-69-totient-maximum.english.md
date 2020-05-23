@@ -48,7 +48,7 @@ tests:
   - text: <code>totientMaximum()</code> should return 510510.
     testString: assert.strictEqual(totientMaximum(), 510510);
   - text: You should not hard-code the solution.
-    testString: assert(!removeJSComments(code).match(/(510510)));
+    testString: assert(!removeJSComments(code).match(/(510510)/));
 
 ```
 
