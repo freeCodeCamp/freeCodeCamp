@@ -47,6 +47,8 @@ tests:
     testString: assert(typeof totientMaximum() === 'number');
   - text: <code>totientMaximum()</code> should return 510510.
     testString: assert.strictEqual(totientMaximum(), 510510);
+  - text: You should not hard-code the solution.
+    testString: assert(!removeJSComments(code).match(/(510510)));
 
 ```
 
@@ -68,7 +70,14 @@ totientMaximum();
 
 </div>
 
+### After Test
+<div id='js-teardown'>
 
+```js
+const removeJSComments = str => str.replace(/\/\*[\s\S]*?\*\/|\/\/.*$/gm, '');
+```
+
+</div>
 
 </section>
 
