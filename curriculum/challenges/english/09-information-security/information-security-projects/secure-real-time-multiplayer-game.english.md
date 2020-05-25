@@ -2,12 +2,13 @@
 id: 5e601c775ac9d0ecd8b94aff
 title: Secure Real Time Multiplayer Game
 challengeType: 4
+isHidden: true
 isRequired: true
 ---
 
 ## Description
 <section id='description'>
-Develop a 2D real time multiplayer game using the HTML Canvas API and <a href='https://socket.io/' target='_blank'>Socket.io</a> that is functionally similar to this: <a href='add-glitch-url' target='_blank'>add-glitch-url</a>. 
+Develop a 2D real time multiplayer game using the HTML Canvas API and <a href='https://socket.io/' target='_blank'>Socket.io</a> that is functionally similar to this: <a href='add-glitch-url' target='_blank'>add-glitch-url</a>.
 
 Working on this project will involve you writing your code on Glitch on our starter project. After completing this project you can copy your public glitch url (to the homepage of your app) into this screen to test it! Optionally you may choose to write your project on another platform but it must be publicly visible for our testing.
 
@@ -77,8 +78,8 @@ tests:
 
 ```js
 /**
-  Backend challenges don't need solutions, 
-  because they would need to be tested against a full working project. 
+  Backend challenges don't need solutions,
+  because they would need to be tested against a full working project.
   Please check our contributing guidelines to learn more.
 */
 ```
