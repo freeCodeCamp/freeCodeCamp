@@ -2,6 +2,7 @@
 id: 5e44414f903586ffb414c950
 title: Probability Calculator
 challengeType: 10
+isHidden: true
 isRequired: true
 ---
 
@@ -18,7 +19,7 @@ We are still developing the interactive instructional part of the Python curricu
   </li>
   <li>
     <a href='https://www.freecodecamp.org/news/learn-python-basics-in-depth-video-course/'>Learn Python Video Course</a> (2 hours)
-  </li>  
+  </li>
 <ul>
 
 </section>
@@ -50,8 +51,8 @@ tests:
 
 ```js
 /**
-  Backend challenges don't need solutions, 
-  because they would need to be tested against a full working project. 
+  Backend challenges don't need solutions,
+  because they would need to be tested against a full working project.
   Please check our contributing guidelines to learn more.
 */
 ```
