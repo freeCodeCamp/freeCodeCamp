@@ -2,6 +2,7 @@
 id: 5e9a093a74c4063ca6f7c156
 title: Numpy Boolean Arrays
 challengeType: 11
+isHidden: true
 videoId: N1ttsMmcVMM
 ---
 

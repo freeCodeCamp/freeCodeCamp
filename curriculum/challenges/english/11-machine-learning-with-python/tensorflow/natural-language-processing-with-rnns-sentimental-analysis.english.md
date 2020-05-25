@@ -2,6 +2,7 @@
 id: 5e8f2f13c4cdbe86b5c72d9e
 title: 'Natural Language Processing With RNNs: Sentiment Analysis'
 challengeType: 11
+isHidden: true
 videoId: lYeLtu8Nq7c
 ---
 

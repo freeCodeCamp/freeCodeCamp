@@ -2,6 +2,7 @@
 id: 5e8f2f13c4cdbe86b5c72d88
 title: Introduction to TensorFlow
 challengeType: 11
+isHidden: true
 videoId: r9hRyGGjOgQ
 ---
 

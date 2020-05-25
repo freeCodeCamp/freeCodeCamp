@@ -2,6 +2,7 @@
 id: 5ea9997bbec2e9bc47e94db2
 title: Developing and Nmap Scanner part 2
 challengeType: 11
+isHidden: true
 videoId: a98PscnUsTg
 ---
 

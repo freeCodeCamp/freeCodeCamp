@@ -2,6 +2,7 @@
 id: 5e7b9f170b6c005b0e76f087
 title: Object Lifecycle
 challengeType: 11
+isHidden: true
 isRequired: true
 videoId: p1r3h_AMMIM
 ---
