@@ -2,6 +2,7 @@
 id: 5e7b9f180b6c005b0e76f08c
 title: Relational Database Design
 challengeType: 11
+isHidden: true
 isRequired: true
 videoId: AqdfbrpkbHk
 ---

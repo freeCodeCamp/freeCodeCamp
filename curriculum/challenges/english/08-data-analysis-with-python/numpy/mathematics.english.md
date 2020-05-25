@@ -2,6 +2,7 @@
 id: 5e9a0a8e09c5df3cc3600ed8
 title: Mathematics
 challengeType: 11
+isHidden: true
 videoId: 7txegvyhtVk
 ---
 

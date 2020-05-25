@@ -2,6 +2,7 @@
 id: 5e7b9f140b6c005b0e76f07e
 title: 'Web Services: Service Oriented Approach'
 challengeType: 11
+isHidden: true
 isRequired: true
 videoId: muerlsCHExI
 ---

@@ -2,6 +2,7 @@
 id: 5e8f2f13c4cdbe86b5c72d96
 title: Convolutional Neural Networks
 challengeType: 11
+isHidden: true
 videoId: _1kTP7uoU9E
 ---
 
