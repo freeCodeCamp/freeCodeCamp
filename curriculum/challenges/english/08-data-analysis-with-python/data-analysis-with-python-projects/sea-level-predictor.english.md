@@ -2,6 +2,7 @@
 id: 5e4f5c4b570f7e3a4949899f
 title: Sea Level Predictor
 challengeType: 10
+isHidden: true
 isRequired: true
 ---
 
@@ -42,8 +43,8 @@ tests:
 <section id='solution'>
 
 ```py
-  # Python challenges don't need solutions, 
-  # because they would need to be tested against a full working project. 
+  # Python challenges don't need solutions,
+  # because they would need to be tested against a full working project.
   # Please check our contributing guidelines to learn more.
 ```
 
