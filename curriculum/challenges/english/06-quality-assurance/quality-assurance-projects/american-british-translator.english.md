@@ -2,6 +2,7 @@
 id: 5e601c0d5ac9d0ecd8b94afe
 title: American British Translator
 challengeType: 4
+isHidden: true
 isRequired: true
 ---
 
@@ -55,8 +56,8 @@ tests:
 
 ```js
 /**
-  Backend challenges don't need solutions, 
-  because they would need to be tested against a full working project. 
+  Backend challenges don't need solutions,
+  because they would need to be tested against a full working project.
   Please check our contributing guidelines to learn more.
 */
 ```
