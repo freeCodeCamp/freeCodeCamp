@@ -165,6 +165,9 @@ export class Project extends Component {
     const blockNameTitle = `${blockName} - ${title}`;
     return (
       <Hotkeys
+        executeChallenge={() => {
+          this.handleSubmit(solution, openCompletionModal);
+        }}
         innerRef={c => (this._container = c)}
         introPath={introPath}
         nextChallengePath={nextChallengePath}
