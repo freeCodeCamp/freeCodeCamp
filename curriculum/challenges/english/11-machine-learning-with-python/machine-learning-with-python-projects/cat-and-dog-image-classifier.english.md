@@ -2,6 +2,7 @@
 id: 5e46f8dcac417301a38fb92e
 title: Cat and Dog Image Classifier
 challengeType: 10
+isHidden: true
 isRequired: true
 ---
 
@@ -20,7 +21,7 @@ We are still developing the interactive instructional content for the machine le
   </li>
   <li>
     <a href='https://www.youtube.com/playlist?list=PLWKjhJtqVAblStefaz_YOVpDWqcRScc2s'>Machine learning playlist</a>
-  </li>  
+  </li>
 <ul>
 
 </section>
@@ -51,8 +52,8 @@ tests:
 <section id='solution'>
 
 ```py
-  # Python challenges don't need solutions, 
-  # because they would need to be tested against a full working project. 
+  # Python challenges don't need solutions,
+  # because they would need to be tested against a full working project.
   # Please check our contributing guidelines to learn more.
 ```
 

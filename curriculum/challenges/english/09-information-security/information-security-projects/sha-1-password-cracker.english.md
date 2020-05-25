@@ -2,6 +2,7 @@
 id: 5e46f983ac417301a38fb933
 title: SHA-1 Password Cracker
 challengeType: 10
+isHidden: true
 isRequired: true
 ---
 
@@ -20,7 +21,7 @@ We are still developing the interactive instructional part of the Python curricu
   </li>
   <li>
     <a href='https://www.freecodecamp.org/news/learn-python-basics-in-depth-video-course/'>Learn Python Video Course</a> (2 hours)
-  </li>  
+  </li>
 <ul>
 </section>
 
@@ -50,8 +51,8 @@ tests:
 <section id='solution'>
 
 ```py
-  # Python challenges don't need solutions, 
-  # because they would need to be tested against a full working project. 
+  # Python challenges don't need solutions,
+  # because they would need to be tested against a full working project.
   # Please check our contributing guidelines to learn more.
 ```
 
