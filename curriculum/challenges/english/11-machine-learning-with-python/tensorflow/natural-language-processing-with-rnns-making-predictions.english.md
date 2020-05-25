@@ -2,6 +2,7 @@
 id: 5e8f2f13c4cdbe86b5c72d9f
 title: 'Natural Language Processing With RNNs: Making Predictions'
 challengeType: 11
+isHidden: true
 videoId: WO1hINnBj20
 ---
 

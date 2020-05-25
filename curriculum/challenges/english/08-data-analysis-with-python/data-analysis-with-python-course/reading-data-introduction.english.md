@@ -2,6 +2,7 @@
 id: 5e9a093a74c4063ca6f7c161
 title: Reading Data Introduction
 challengeType: 11
+isHidden: true
 videoId: cDnt02BcHng
 ---
 
