@@ -13,7 +13,6 @@ import {
   consoleOutputSelector,
   initConsole,
   initTests,
-  updateBackendFormValues,
   updateChallengeMeta,
   updateSolutionFormValues
 } from '../../redux';
@@ -53,7 +52,6 @@ const propTypes = {
   }),
   tests: PropTypes.array,
   title: PropTypes.string,
-  updateBackendFormValues: PropTypes.func.isRequired,
   updateChallengeMeta: PropTypes.func.isRequired,
   updateSolutionFormValues: PropTypes.func.isRequired
 };
@@ -74,7 +72,6 @@ const mapDispatchToActions = {
   executeChallenge,
   initConsole,
   initTests,
-  updateBackendFormValues,
   updateChallengeMeta,
   updateSolutionFormValues
 };
@@ -155,7 +152,7 @@ export class BackEnd extends Component {
       },
       tests,
       executeChallenge,
-      updateBackendFormValues
+      updateSolutionFormValues
     } = this.props;
 
     const blockNameTitle = `${blockName} - ${title}`;
@@ -181,7 +178,7 @@ export class BackEnd extends Component {
                 <SolutionForm
                   challengeType={challengeType}
                   onSubmit={executeChallenge}
-                  updateSolutionForm={updateBackendFormValues}
+                  updateSolutionForm={updateSolutionFormValues}
                 />
                 <ProjectToolPanel
                   guideUrl={getGuideUrl({ forumTopicId, title })}
