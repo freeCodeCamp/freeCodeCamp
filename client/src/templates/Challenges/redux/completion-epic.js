@@ -11,7 +11,6 @@ import { ofType } from 'redux-observable';
 import { navigate } from 'gatsby';
 
 import {
-  backendFormValuesSelector,
   projectFormValuesSelector,
   types,
   challengeMetaSelector,
@@ -108,7 +107,7 @@ function submitBackendChallenge(type, state) {
       const { username } = userSelector(state);
       const {
         solution: { value: solution }
-      } = backendFormValuesSelector(state);
+      } = projectFormValuesSelector(state);
       const challengeInfo = { id, solution };
 
       const update = {
