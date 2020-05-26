@@ -120,7 +120,8 @@ class Editor extends Component {
       dragAndDrop: true,
       lightbulb: {
         enabled: false
-      }
+      },
+      quickSuggestions: false
     };
 
     this._editor = null;
