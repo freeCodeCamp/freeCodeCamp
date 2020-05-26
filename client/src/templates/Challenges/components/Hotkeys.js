@@ -18,7 +18,6 @@ const mapStateToProps = createSelector(
 const mapDispatchToProps = { setEditorFocusability };
 
 const keyMap = {
-  ENTER: 'enter',
   NAVIGATION_MODE: 'escape',
   EXECUTE_CHALLENGE: ['ctrl+enter', 'command+enter'],
   FOCUS_EDITOR: 'e',
@@ -50,13 +49,11 @@ function Hotkeys({
   setEditorFocusability
 }) {
   const handlers = {
-    ENTER: e => {
-      // 'enter' disables HotKeys, this prevents that
-      e.preventDefault();
-    },
     EXECUTE_CHALLENGE: e => {
       // the 'enter' part of 'ctrl+enter' stops HotKeys from listening, so it
       // needs to be prevented.
+      // TODO: 'enter' on its own also disables HotKeys, but default behaviour
+      // should not be prevented in that case.
       e.preventDefault();
       if (executeChallenge) executeChallenge();
     },
