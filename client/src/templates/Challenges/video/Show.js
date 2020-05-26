@@ -8,6 +8,7 @@ import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import YouTube from 'react-youtube';
 import { createSelector } from 'reselect';
+import { ObserveKeys } from 'react-hotkeys';
 
 // Local Utilities
 import PrismFormatted from '../components/PrismFormatted';
@@ -216,29 +217,31 @@ export class Project extends Component {
                 <ChallengeDescription description={description} />
                 <PrismFormatted text={text} />
                 <Spacer />
-                <div className='video-quiz-options'>
-                  {answers.map((option, index) => (
-                    <label className='video-quiz-option-label'>
-                      <input
-                        checked={this.state.selectedOption === index}
-                        className='video-quiz-input-hidden'
-                        name='quiz'
-                        onChange={this.handleOptionChange}
-                        type='radio'
-                        value={index}
-                      />{' '}
-                      <span className='video-quiz-input-visible'>
-                        {this.state.selectedOption === index ? (
-                          <span className='video-quiz-selected-input'></span>
-                        ) : null}
-                      </span>
-                      <PrismFormatted
-                        className={'video-quiz-option'}
-                        text={option}
-                      />
-                    </label>
-                  ))}
-                </div>
+                <ObserveKeys>
+                  <div className='video-quiz-options'>
+                    {answers.map((option, index) => (
+                      <label className='video-quiz-option-label'>
+                        <input
+                          checked={this.state.selectedOption === index}
+                          className='video-quiz-input-hidden'
+                          name='quiz'
+                          onChange={this.handleOptionChange}
+                          type='radio'
+                          value={index}
+                        />{' '}
+                        <span className='video-quiz-input-visible'>
+                          {this.state.selectedOption === index ? (
+                            <span className='video-quiz-selected-input'></span>
+                          ) : null}
+                        </span>
+                        <PrismFormatted
+                          className={'video-quiz-option'}
+                          text={option}
+                        />
+                      </label>
+                    ))}
+                  </div>
+                </ObserveKeys>
                 <Spacer />
                 <div
                   style={{
