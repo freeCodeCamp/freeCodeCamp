@@ -38,6 +38,10 @@
   },
   "parse": {
     "body-parser#json": {},
+    "body-parser#text": {
+      "methods": ["POST"],
+      "paths": ["/hooks/update-amazonpay"]
+    },
     "body-parser#urlencoded": {
       "params": {
         "extended": true

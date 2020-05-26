@@ -1,5 +1,4 @@
 import debug from 'debug';
-const fs = require('fs');
 
 import amazonPayments from 'amazon-payments';
 
@@ -284,32 +283,41 @@ export default function donateAmazonPay(app, done) {
       });
   }
 
+  function confirmBillingAgreement() {
+    // once the agreement is suspended due to InvalidPaymentMethod
+    // we need to reconfirm the agreement
+    return new Promise((resolve, reject) => {
+      payment.offAmazonPayments.confirmBillingAgreement(
+        {
+          AmazonBillingAgreementId: agreementId
+        },
+        (err, data) => {
+          if (err) {
+            reject(err);
+          }
+          console.log('CONFIRM AGREEMENT DETAILS');
+          console.log(JSON.stringify(data));
+          resolve(data);
+        }
+      );
+    });
+  }
+
   function apihookUpdateAmazonPay(req, res) {
-    // payment.parseSNSResponse(req, function(err, parsed) {
-    //   // parsed will contain the full response from SNS unless the message is an IPN notification, in which case it will be the JSON-ified XML from the message.
-    //   console.log('ERROR', err);
-    //   console.log('PASS', parsed);
-    // });
-    //    console.log('MESSAGE', req.Messsage);
-    console.log(req);
-    console.log(req.body);
+    const parsedBody = JSON.parse(req.body);
+    payment.parseSNSResponse(parsedBody, function(err, parsed) {
+      // parsed will contain the full response from SNS unless the message is an IPN notification, in which case it will be the JSON-ified XML from the message.
+      console.log('ERROR', err);
+      console.log('PASS', parsed);
+    });
+
     return Promise.resolve(req)
       .catch(err => {
-        // Todo: This probably need to be thrown and caught in error handler
         log(err.message);
       })
       .finally(() =>
         res.status(200).json({ message: 'received amazonpay hook' })
       );
-    //console.log(Object.keys(req));
-
-    //console.log('REQ', req);
-
-    // fs.writeFile('./test', req, function(err) {
-    //   if (err) {
-    //     return console.log(err);
-    //   }
-    //   console.log('The file was saved!');
   }
 
   const { sellerId, mwsId, mwsSecret, clientId, clientSecret } = keys.amazon;
