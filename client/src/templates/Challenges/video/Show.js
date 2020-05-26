@@ -8,6 +8,7 @@ import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import YouTube from 'react-youtube';
 import { createSelector } from 'reselect';
+import { ObserveKeys } from 'react-hotkeys';
 
 // Local Utilities
 import PrismFormatted from '../components/PrismFormatted';
@@ -165,6 +166,9 @@ export class Project extends Component {
     const blockNameTitle = `${blockName} - ${title}`;
     return (
       <Hotkeys
+        executeChallenge={() => {
+          this.handleSubmit(solution, openCompletionModal);
+        }}
         innerRef={c => (this._container = c)}
         introPath={introPath}
         nextChallengePath={nextChallengePath}
@@ -213,29 +217,33 @@ export class Project extends Component {
                 <ChallengeDescription description={description} />
                 <PrismFormatted text={text} />
                 <Spacer />
-                <div className='video-quiz-options'>
-                  {answers.map((option, index) => (
-                    <label className='video-quiz-option-label'>
-                      <input
-                        checked={this.state.selectedOption === index}
-                        className='video-quiz-input-hidden'
-                        name='quiz'
-                        onChange={this.handleOptionChange}
-                        type='radio'
-                        value={index}
-                      />{' '}
-                      <span className='video-quiz-input-visible'>
-                        {this.state.selectedOption === index ? (
-                          <span className='video-quiz-selected-input'></span>
-                        ) : null}
-                      </span>
-                      <PrismFormatted
-                        className={'video-quiz-option'}
-                        text={option}
-                      />
-                    </label>
-                  ))}
-                </div>
+                <ObserveKeys>
+                  <div className='video-quiz-options'>
+                    {answers.map((option, index) => (
+                      // answers are static and have no natural id property, so
+                      // index should be fine as a key:
+                      <label className='video-quiz-option-label' key={index}>
+                        <input
+                          checked={this.state.selectedOption === index}
+                          className='video-quiz-input-hidden'
+                          name='quiz'
+                          onChange={this.handleOptionChange}
+                          type='radio'
+                          value={index}
+                        />{' '}
+                        <span className='video-quiz-input-visible'>
+                          {this.state.selectedOption === index ? (
+                            <span className='video-quiz-selected-input'></span>
+                          ) : null}
+                        </span>
+                        <PrismFormatted
+                          className={'video-quiz-option'}
+                          text={option}
+                        />
+                      </label>
+                    ))}
+                  </div>
+                </ObserveKeys>
                 <Spacer />
                 <div
                   style={{
