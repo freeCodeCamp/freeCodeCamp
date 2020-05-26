@@ -220,7 +220,9 @@ export class Project extends Component {
                 <ObserveKeys>
                   <div className='video-quiz-options'>
                     {answers.map((option, index) => (
-                      <label className='video-quiz-option-label'>
+                      // answers are static and have no natural id property, so
+                      // index should be fine as a key:
+                      <label className='video-quiz-option-label' key={index}>
                         <input
                           checked={this.state.selectedOption === index}
                           className='video-quiz-input-hidden'
