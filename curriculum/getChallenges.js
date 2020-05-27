@@ -81,17 +81,12 @@ async function buildCurriculum(file, curriculum, validate) {
   }
   const { meta } = challengeBlock;
 
-  const challenge = await createChallenge(fullPath, meta);
+  const challenge = await createChallenge(fullPath, meta, validate);
 
-  const result = validate(challenge);
-  if (result.error) {
-    console.log(result.value);
-    throw new Error(result.error);
-  }
   challengeBlock.challenges = [...challengeBlock.challenges, challenge];
 }
 
-async function createChallenge(fullPath, maybeMeta) {
+async function createChallenge(fullPath, maybeMeta, validate) {
   let meta;
   if (maybeMeta) {
     meta = maybeMeta;
@@ -104,6 +99,11 @@ async function createChallenge(fullPath, maybeMeta) {
   }
   const { name: superBlock } = superBlockInfoFromFullPath(fullPath);
   const challenge = await parseMarkdown(fullPath);
+  const result = validate(challenge);
+  if (result.error) {
+    console.log(result.value);
+    throw new Error(result.error);
+  }
   const challengeOrder = findIndex(
     meta.challengeOrder,
     ([id]) => id === challenge.id
