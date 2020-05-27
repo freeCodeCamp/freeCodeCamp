@@ -24,6 +24,8 @@ import {
 } from '../redux';
 import { Spacer, Loader, FullWidthRow } from '../components/helpers';
 
+import './showuser.css';
+
 const propTypes = {
   email: PropTypes.string,
   isSignedIn: PropTypes.bool,
