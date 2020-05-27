@@ -2,6 +2,7 @@
 id: 587d7fa6367417b2b2512bc2
 title: Add Document Elements with D3
 challengeType: 6
+isHidden: false
 forumTopicId: 301474
 ---
 

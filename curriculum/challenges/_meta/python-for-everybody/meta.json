@@ -1,0 +1,234 @@
+{
+  "name": "Python for Everybody",
+  "dashedName": "python-for-everybody",
+  "order": 1,
+  "time": "15 hours",
+  "superBlock": "scientific-computing-with-python",
+  "superOrder": 7,
+  "challengeOrder": [
+    [
+      "5e6a54a558d3af90110a60a0",
+      "Introduction: Why Program?"
+    ],
+    [
+      "5e6a54af58d3af90110a60a1",
+      "Introduction: Hardware Architecture"
+    ],
+    [
+      "5e6a54ba58d3af90110a60a2",
+      "Introduction: Python as a Language"
+    ],
+    [
+      "5e6a54c358d3af90110a60a3",
+      "Introduction: Elements of Python"
+    ],
+    [
+      "5e7b9f050b6c005b0e76f056",
+      "Variables, Expressions, and Statements"
+    ],
+    [
+      "5e7b9f050b6c005b0e76f057",
+      "Intermediate Expressions"
+    ],
+    [
+      "5e7b9f050b6c005b0e76f058",
+      "Conditional Execution"
+    ],
+    [
+      "5e7b9f060b6c005b0e76f059",
+      "More Conditional Structures"
+    ],
+    [
+      "5e7b9f060b6c005b0e76f05a",
+      "Python Functions"
+    ],
+    [
+      "5e7b9f060b6c005b0e76f05b",
+      "Build your own Functions"
+    ],
+    [
+      "5e7b9f060b6c005b0e76f05c",
+      "Loops and Iterations"
+    ],
+    [
+      "5e7b9f070b6c005b0e76f05d",
+      "Iterations: Definite Loops"
+    ],
+    [
+      "5e7b9f070b6c005b0e76f05e",
+      "Iterations: Loop Idioms"
+    ],
+    [
+      "5e7b9f070b6c005b0e76f05f",
+      "Iterations: More Patterns"
+    ],
+    [
+      "5e7b9f070b6c005b0e76f060",
+      "Strings in Python"
+    ],
+    [
+      "5e7b9f070b6c005b0e76f061",
+      "Intermediate Strings"
+    ],
+    [
+      "5e7b9f080b6c005b0e76f062",
+      "Reading Files"
+    ],
+    [
+      "5e7b9f080b6c005b0e76f063",
+      "Files as a Sequence"
+    ],
+    [
+      "5e7b9f080b6c005b0e76f064",
+      "Python Lists"
+    ],
+    [
+      "5e7b9f090b6c005b0e76f065",
+      "Working with Lists"
+    ],
+    [
+      "5e7b9f090b6c005b0e76f066",
+      "Strings and Lists"
+    ],
+    [
+      "5e7b9f090b6c005b0e76f067",
+      "Python Dictionaries"
+    ],
+    [
+      "5e7b9f090b6c005b0e76f068",
+      "Dictionaries: Common Applications"
+    ],
+    [
+      "5e7b9f0a0b6c005b0e76f069",
+      "Dictionaries and Loops"
+    ],
+    [
+      "5e7b9f0a0b6c005b0e76f06c",
+      "The Tuples Collection"
+    ],
+    [
+      "5e7b9f0b0b6c005b0e76f06d",
+      "Comparing and Sorting Tuples"
+    ],
+    [
+      "5e7b9f0b0b6c005b0e76f06e",
+      "Regular Expressions"
+    ],
+    [
+      "5e7b9f0b0b6c005b0e76f06f",
+      "Regular Expressions: Matching and Extracting Data"
+    ],
+    [
+      "5e7b9f0b0b6c005b0e76f070",
+      "Regular Expressions: Practical Applications"
+    ],
+    [
+      "5e7b9f0c0b6c005b0e76f071",
+      "Networking with Python"
+    ],
+    [
+      "5e7b9f0c0b6c005b0e76f072",
+      "Networking Protocol"
+    ],
+    [
+      "5e7b9f0c0b6c005b0e76f073",
+      "Networking: Write a Web Browser"
+    ],
+    [
+      "5e7b9f0c0b6c005b0e76f074",
+      "Networking: Text Processing"
+    ],
+    [
+      "5e7b9f0d0b6c005b0e76f075",
+      "Networking: Using urllib in Python"
+    ],
+    [
+      "5e7b9f0d0b6c005b0e76f076",
+      "Networking: Web Scraping with Python"
+    ],
+    [
+      "5e7b9f0e0b6c005b0e76f07a",
+      "Using Web Services"
+    ],
+    [
+      "5e7b9f0e0b6c005b0e76f07b",
+      "Web Services: XML"
+    ],
+    [
+      "5e7b9f0e0b6c005b0e76f07c",
+      "Web Services: XML Schema"
+    ],
+    [
+      "5e7b9f140b6c005b0e76f07d",
+      "Web Services: JSON"
+    ],
+    [
+      "5e7b9f140b6c005b0e76f07e",
+      "Web Services: Service Oriented Approach"
+    ],
+    [
+      "5e7b9f150b6c005b0e76f07f",
+      "Web Services: APIs"
+    ],
+    [
+      "5e7b9f150b6c005b0e76f080",
+      "Web Services: API Rate Limiting and Security"
+    ],
+    [
+      "5e7b9f160b6c005b0e76f085",
+      "Python Objects"
+    ],
+    [
+      "5e7b9f160b6c005b0e76f086",
+      "Objects: A Sample Class"
+    ],
+    [
+      "5e7b9f170b6c005b0e76f087",
+      "Object Lifecycle"
+    ],
+    [
+      "5e7b9f170b6c005b0e76f088",
+      "Objects: Inheritance"
+    ],
+    [
+      "5e7b9f170b6c005b0e76f08a",
+      "Relational Databases and SQLite"
+    ],
+    [
+      "5e7b9f170b6c005b0e76f08b",
+      "Make a Relational Database"
+    ],
+    [
+      "5e7b9f180b6c005b0e76f08c",
+      "Relational Database Design"
+    ],
+    [
+      "5e7b9f180b6c005b0e76f08d",
+      "Representing Relationships in a Relational Database"
+    ],
+    [
+      "5e7b9f180b6c005b0e76f08e",
+      "Relational Databases: Relationship Building"
+    ],
+    [
+      "5e7b9f180b6c005b0e76f08f",
+      "Relational Databases: Join Operation"
+    ],
+    [
+      "5e7b9f190b6c005b0e76f090",
+      "Relational Databases: Many-to-many Relationships"
+    ],
+    [
+      "5e7b9f690b6c005b0e76f095",
+      "Visualizing Data with Python"
+    ],
+    [
+      "5e7b9f6a0b6c005b0e76f096",
+      "Data Visualization: Page Rank"
+    ],
+    [
+      "5e7b9f6a0b6c005b0e76f097",
+      "Data Visualization: Mailing Lists"
+    ]
+  ]
+}

@@ -2,6 +2,7 @@
 id: 587d7fb0367417b2b2512bed
 title: Meet the Node console
 challengeType: 2
+isHidden: false
 forumTopicId: 301515
 ---
 

@@ -2,6 +2,7 @@
 id: bad87fee1348bd9acde08812
 title: Make Images Mobile Responsive
 challengeType: 0
+isHidden: false
 forumTopicId: 18232
 ---
 

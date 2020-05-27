@@ -40,7 +40,7 @@ const AsFeaturedSection = () => (
 
 export const Landing = ({ edges }) => {
   const superBlocks = uniq(edges.map(element => element.node.superBlock));
-  const interviewPrep = superBlocks.splice(6, 1);
+  const interviewPrep = superBlocks.splice(10, 1);
   return (
     <Fragment>
       <Helmet>

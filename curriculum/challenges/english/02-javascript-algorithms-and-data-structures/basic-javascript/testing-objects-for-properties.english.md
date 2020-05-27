@@ -2,6 +2,7 @@
 id: 567af2437cbaa8c51670a16c
 title: Testing Objects for Properties
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/c6Wz4ySr'
 forumTopicId: 18324
 ---

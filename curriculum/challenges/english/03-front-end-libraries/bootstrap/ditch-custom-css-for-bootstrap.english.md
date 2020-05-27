@@ -2,6 +2,7 @@
 id: bad87fee1347bd9aedf08845
 title: Ditch Custom CSS for Bootstrap
 challengeType: 0
+isHidden: false
 forumTopicId: 17565
 ---
 

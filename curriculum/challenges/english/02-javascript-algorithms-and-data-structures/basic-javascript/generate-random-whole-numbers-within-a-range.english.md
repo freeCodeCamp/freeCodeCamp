@@ -2,6 +2,7 @@
 id: cf1111c1c12feddfaeb2bdef
 title: Generate Random Whole Numbers within a Range
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cm83yu6'
 forumTopicId: 18187
 ---

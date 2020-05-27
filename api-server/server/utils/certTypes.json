@@ -8,5 +8,10 @@
   "jsAlgoDataStruct": "isJsAlgoDataStructCert",
   "apisMicroservices": "isApisMicroservicesCert",
   "infosecQa": "isInfosecQaCert",
-  "fullStack": "isFullStackCert"
+  "qa": "isQaCert",
+  "infosec": "isInfosecCert",
+  "fullStack": "isFullStackCert",
+  "sciCompPy": "isSciCompPyCert",
+  "dataAnalysisPy": "isDataAnalysisPyCert",
+  "machineLearningPy": "isMachineLearningPyCert"
 }
