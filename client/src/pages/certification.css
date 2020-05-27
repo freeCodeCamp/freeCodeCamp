@@ -11,6 +11,7 @@
   margin: 12px 0;
 }
 .certification-namespace.container {
+  margin: 100px 0;
   max-width: 1500px;
   width: 100%;
   padding: 30px;
@@ -36,10 +37,11 @@
   align-items: center;
   min-height: 100vh;
   flex-direction: column;
+  padding: 0 50px;
 }
 
 .certificate-outer-wrapper .donation-section {
-  padding: 20px 0px;
+  padding-top: 40px;
 }
 
 .certificate-outer-wrapper .donation-section hr {
@@ -103,7 +105,6 @@
 }
 
 .certification-namespace .information {
-  margin-top: -20px;
   height: 380px;
   text-align: center;
   background-color: var(--gray-05);
@@ -182,12 +183,6 @@
   .certification-namespace h4 {
     font-size: 15px;
     margin-top: 20px;
-  }
-}
-
-@media (max-width: 767px) {
-  .certificate-outer-wrapper .donation-section {
-    padding: 20px 20px;
   }
 }
 
