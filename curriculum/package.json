@@ -24,9 +24,9 @@
     "invariant": "^2.2.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.2.2",
+    "@babel/core": "^7.9.6",
     "@babel/polyfill": "^7.2.5",
-    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-env": "^7.9.6",
     "@babel/register": "^7.0.0",
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^7.0.1",
