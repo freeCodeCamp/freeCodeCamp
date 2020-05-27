@@ -7,11 +7,13 @@
   margin: 0;
   padding: 0;
 }
+
 .certification-namespace h1 {
   margin: 12px 0;
 }
+
 .certification-namespace.container {
-  margin: 100px 0;
+  margin-top: 100px;
   max-width: 1500px;
   width: 100%;
   padding: 30px;
@@ -37,11 +39,7 @@
   align-items: center;
   min-height: 100vh;
   flex-direction: column;
-  padding: 0 50px;
-}
-
-.certificate-outer-wrapper .donation-section {
-  padding-top: 40px;
+  padding: 50px;
 }
 
 .certificate-outer-wrapper .donation-section hr {
