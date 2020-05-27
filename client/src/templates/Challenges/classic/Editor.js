@@ -304,12 +304,18 @@ class Editor extends Component {
   }
 
   render() {
-    console.log('editor.props');
-    console.log(this.props);
-    console.log('editor.state');
-    console.log(this.state);
-
-    const { theme } = this.props;
+    // console.log('editor.props');
+    // console.log(this.props);
+    // console.log('editor.state');
+    // console.log(this.state);
+    // the fileKey is the only thing that needs to be maintained in state
+    // const { fileKey } = this.state;
+    const { challengeFiles, theme } = this.props;
+    // const code = challengeFiles[fileKey].contents;
+    // const ext = challengeFiles[fileKey].ext;
+    console.log('fileKey', this.currentFileKey);
+    // console.log('code', code);
+    // console.log('ext', ext);
     const editorTheme = theme === 'night' ? 'vs-dark-custom' : 'vs-custom';
 
     // TODO: tabs should be dynamically created from the challengeFiles
@@ -318,24 +324,30 @@ class Editor extends Component {
       <Suspense fallback={<Loader timeout={600} />}>
         <span className='notranslate'>
           <div className='monaco-editor-tabs'>
-            <div
-              className='monaco-editor-tab'
-              onClick={() => this.changeTab('indexhtml')}
-            >
-              index.html
-            </div>
-            <div
-              className='monaco-editor-tab'
-              onClick={() => this.changeTab('indexjs')}
-            >
-              script.js
-            </div>
-            <div
-              className='monaco-editor-tab'
-              onClick={() => this.changeTab('indexcss')}
-            >
-              styles.css
-            </div>
+            {challengeFiles['indexhtml'] && (
+              <div
+                className='monaco-editor-tab'
+                onClick={() => this.changeTab('indexhtml')}
+              >
+                index.html
+              </div>
+            )}
+            {challengeFiles['indexjs'] && (
+              <div
+                className='monaco-editor-tab'
+                onClick={() => this.changeTab('indexjs')}
+              >
+                script.js
+              </div>
+            )}
+            {challengeFiles['indexcss'] && (
+              <div
+                className='monaco-editor-tab'
+                onClick={() => this.changeTab('indexcss')}
+              >
+                styles.css
+              </div>
+            )}
           </div>
           <MonacoEditor
             editorDidMount={this.editorDidMount}
