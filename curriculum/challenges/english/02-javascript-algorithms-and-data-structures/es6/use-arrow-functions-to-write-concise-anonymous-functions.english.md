@@ -2,6 +2,7 @@
 id: 587d7b87367417b2b2512b43
 title: Use Arrow Functions to Write Concise Anonymous Functions
 challengeType: 1
+isHidden: false
 forumTopicId: 301211
 ---
 

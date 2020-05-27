@@ -2,6 +2,7 @@
 id: 587d7b7b367417b2b2512b15
 title: Iterate Through All an Array's Items Using For Loops
 challengeType: 1
+isHidden: false
 forumTopicId: 301161
 ---
 

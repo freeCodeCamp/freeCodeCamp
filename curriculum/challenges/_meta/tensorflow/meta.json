@@ -1,0 +1,140 @@
+{
+  "name": "TensorFlow",
+  "dashedName": "tensorflow",
+  "order": 1,
+  "time": "15 hours",
+  "superBlock": "machine-learning-with-python",
+  "superOrder": 10,
+  "challengeOrder": [
+    [
+      "5e8f2f13c4cdbe86b5c72d87",
+      "Introduction: Machine Learning Fundamentals"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72d88",
+      "Introduction to TensorFlow"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72d89",
+      "Core Learning Algorithms"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72d8a",
+      "Core Learning Algorithms: Working with Data"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72d8b",
+      "Core Learning Algorithms: Training and Testing Data"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72d8c",
+      "Core Learning Algorithms: The Training Process"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72d8d",
+      "Core Learning Algorithms: Classification"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72d8e",
+      "Core Learning Algorithms: Building the Model"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72d8f",
+      "Core Learning Algorithms: Clustering"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72d90",
+      "Core Learning Algorithms: Hidden Markov Models"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72d91",
+      "Core Learning Algorithms: Using Probabilities to make Predictions"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72d92",
+      "Neural Networks with TensorFlow"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72d93",
+      "Neural Networks: Activation Functions"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72d94",
+      "Neural Networks: Optimizers"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72d95",
+      "Neural Networks: Creating a Model"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72d96",
+      "Convolutional Neural Networks"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72d97",
+      "Convolutional Neural Networks: The Convolutional Layer"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72d98",
+      "Creating a Convolutional Neural Network"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72d99",
+      "Convolutional Neural Networks: Evaluating the Model"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72d9a",
+      "Convolutional Neural Networks: Picking a Pretrained Model"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72d9b",
+      "Natural Language Processing With RNNs"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72d9c",
+      "Natural Language Processing With RNNs: Part 2"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72d9d",
+      "Natural Language Processing With RNNs: Recurring Neural Networks"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72d9e",
+      "Natural Language Processing With RNNs: Sentiment Analysis"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72d9f",
+      "Natural Language Processing With RNNs: Making Predictions"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72da0",
+      "Natural Language Processing With RNNs: Create a Play Generator"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72da1",
+      "Natural Language Processing With RNNs: Building the Model"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72da2",
+      "Natural Language Processing With RNNs: Training the Model"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72da3",
+      "Reinforcement Learning With Q-Learning"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72da4",
+      "Reinforcement Learning With Q-Learning: Part 2"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72da5",
+      "Reinforcement Learning With Q-Learning: Example"
+    ],
+    [
+      "5e8f2f13c4cdbe86b5c72da6",
+      "Conclusion"
+    ]
+  ],
+  "helpRoom": "Help",
+  "fileName": "11-machine-learning-with-python/lectures-tensorflow.json"
+}

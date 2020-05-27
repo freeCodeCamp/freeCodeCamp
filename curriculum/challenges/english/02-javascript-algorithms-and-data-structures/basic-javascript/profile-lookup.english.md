@@ -2,6 +2,7 @@
 id: 5688e62ea601b2482ff8422b
 title: Profile Lookup
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cDqW2Cg'
 forumTopicId: 18259
 ---

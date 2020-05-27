@@ -3,6 +3,7 @@ id: bd7188d8c242eddfaeb5bd13
 title: Visualize Data with a Heat Map
 isRequired: true
 challengeType: 3
+isHidden: false
 forumTopicId: 301466
 ---
 

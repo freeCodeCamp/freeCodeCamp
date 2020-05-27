@@ -2,6 +2,7 @@
 id: 587d7faa367417b2b2512bd3
 title: Style D3 Labels
 challengeType: 6
+isHidden: false
 forumTopicId: 301492
 ---
 

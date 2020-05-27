@@ -2,6 +2,7 @@
 id: 587d7fb9367417b2b2512c12
 title: Chain Search Query Helpers to Narrow Search Results
 challengeType: 2
+isHidden: false
 forumTopicId: 301533
 ---
 

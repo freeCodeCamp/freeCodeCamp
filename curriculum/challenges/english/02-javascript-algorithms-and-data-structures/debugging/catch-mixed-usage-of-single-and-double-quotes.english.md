@@ -2,6 +2,7 @@
 id: 587d7b84367417b2b2512b37
 title: Catch Mixed Usage of Single and Double Quotes
 challengeType: 1
+isHidden: false
 forumTopicId: 301188
 ---
 

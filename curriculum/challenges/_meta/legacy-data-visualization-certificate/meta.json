@@ -6,7 +6,7 @@
   "template": "",
   "required": [],
   "superBlock": "certificates",
-  "superOrder": 9,
+  "superOrder": 12,
   "challengeOrder": [
     [
       "561add10cb82ac39a17513bc",
@@ -14,5 +14,5 @@
     ]
   ],
   "isPrivate": true,
-  "fileName": "09-certificates/legacy-data-visualization-certificate.json"
+  "fileName": "12-certificates/legacy-data-visualization-certificate.json"
 }
