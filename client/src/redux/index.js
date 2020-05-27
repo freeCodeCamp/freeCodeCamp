@@ -213,10 +213,15 @@ export const certificatesByNameSelector = username => state => {
     isJsAlgoDataStructCert,
     isApisMicroservicesCert,
     isInfosecQaCert,
+    isQaCert,
+    isInfosecCert,
     isFrontEndCert,
     isBackEndCert,
     isDataVisCert,
-    isFullStackCert
+    isFullStackCert,
+    isSciCompPyCert,
+    isDataAnalysisPyCert,
+    isMachineLearningPyCert
   } = userByNameSelector(username)(state);
   return {
     hasModernCert:
@@ -225,9 +230,14 @@ export const certificatesByNameSelector = username => state => {
       isFrontEndLibsCert ||
       isJsAlgoDataStructCert ||
       isApisMicroservicesCert ||
-      isInfosecQaCert ||
-      isFullStackCert,
-    hasLegacyCert: isFrontEndCert || isBackEndCert || isDataVisCert,
+      isQaCert ||
+      isInfosecCert ||
+      isFullStackCert ||
+      isSciCompPyCert ||
+      isDataAnalysisPyCert ||
+      isMachineLearningPyCert,
+    hasLegacyCert:
+      isFrontEndCert || isBackEndCert || isDataVisCert || isInfosecQaCert,
     currentCerts: [
       {
         show: isFullStackCert,
@@ -260,9 +270,29 @@ export const certificatesByNameSelector = username => state => {
         showURL: 'apis-and-microservices'
       },
       {
-        show: isInfosecQaCert,
-        title: 'Information Security and Quality Assurance Certification',
+        show: isQaCert,
+        title: ' Quality Assurance Certification',
         showURL: 'information-security-and-quality-assurance'
+      },
+      {
+        show: isInfosecCert,
+        title: 'Information Security Certification',
+        showURL: 'information-security-and-quality-assurance'
+      },
+      {
+        show: isSciCompPyCert,
+        title: 'Scientific Computing with Python Certification',
+        showURL: 'scientific-computing-with-python'
+      },
+      {
+        show: isDataAnalysisPyCert,
+        title: 'Data Analysis with Python Certification',
+        showURL: 'data-analysis-with-python'
+      },
+      {
+        show: isMachineLearningPyCert,
+        title: 'Machine Learning with Python Certification',
+        showURL: 'machine-learning-with-python'
       }
     ],
     legacyCerts: [
@@ -280,6 +310,11 @@ export const certificatesByNameSelector = username => state => {
         show: isDataVisCert,
         title: 'Data Visualization Certification',
         showURL: 'legacy-data-visualization'
+      },
+      {
+        show: isInfosecQaCert,
+        title: 'Information Security and Quality Assurance Certification',
+        showURL: 'legacy-information-security-and-quality-assurance'
       }
     ]
   };

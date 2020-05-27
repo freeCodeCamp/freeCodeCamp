@@ -7,12 +7,19 @@ const feLibsBase = '/learn/front-end-libraries/front-end-libraries-projects';
 const dataVisBase = '/learn/data-visualization/data-visualization-projects';
 const apiMicroBase =
   '/learn/apis-and-microservices/apis-and-microservices-projects';
-const infoSecBase =
-  '/learn/information-security-and-quality-assurance/' +
-  'information-security-and-quality-assurance-projects';
+const qaBase = 'learn/quality-assurance/quality-assurance-projects';
+const infoSecBase = '/learn/information-security/information-security-projects';
+const sciCompPyBase =
+  '/learn/scientific-computing-with-python/' +
+  'scientific-computing-with-python-projects';
+const dataAnalysisPyBase =
+  '/learn/data-analysis-with-python/data-analysis-with-python-projects';
+const machineLearningPyBase =
+  '/learn/machine-learning-with-python/machine-learning-with-python-projects';
 const legacyFrontEndBase = '';
 const legacyBackEndBase = '';
 const legacyDataVisBase = '';
+const legacyInfosecQaBase = '';
 
 export const legacyProjectMap = {
   'Legacy Front End': [
@@ -200,6 +207,38 @@ export const legacyProjectMap = {
       link: `${legacyDataVisBase}/map-data-across-the-globe`,
       superBlock: 'legacy-data-visualization'
     }
+  ],
+  'Legacy Information Security and Quality Assurance': [
+    {
+      id: '587d8249367417b2b2512c41',
+      title: 'Metric-Imperial Converter',
+      link: `${legacyInfosecQaBase}/metric-imperial-converter`,
+      superBlock: 'legacy-information-security-and-quality-assurance'
+    },
+    {
+      id: '587d8249367417b2b2512c42',
+      title: 'Issue Tracker',
+      link: `${legacyInfosecQaBase}/issue-tracker`,
+      superBlock: 'legacy-information-security-and-quality-assurance'
+    },
+    {
+      id: '587d824a367417b2b2512c43',
+      title: 'Personal Library',
+      link: `${legacyInfosecQaBase}/personal-library`,
+      superBlock: 'legacy-information-security-and-quality-assurance'
+    },
+    {
+      id: '587d824a367417b2b2512c44',
+      title: 'Stock Price Checker',
+      link: `${legacyInfosecQaBase}/stock-price-checker`,
+      superBlock: 'legacy-information-security-and-quality-assurance'
+    },
+    {
+      id: '587d824a367417b2b2512c45',
+      title: 'Anonymous Message Board',
+      link: `${legacyInfosecQaBase}/anonymous-message-board`,
+      superBlock: 'legacy-information-security-and-quality-assurance'
+    }
   ]
 };
 
@@ -364,36 +403,164 @@ export const projectMap = {
       superBlock: 'apis-and-microservices'
     }
   ],
-  'Information Security And Quality Assurance': [
+  'Quality Assurance': [
     {
       id: '587d8249367417b2b2512c41',
       title: 'Metric-Imperial Converter',
-      link: `${infoSecBase}/metric-imperial-converter`,
-      superBlock: 'information-security-and-quality-assurance'
+      link: `${qaBase}/metric-imperial-converter`,
+      superBlock: 'quality-assurance'
     },
     {
       id: '587d8249367417b2b2512c42',
       title: 'Issue Tracker',
-      link: `${infoSecBase}/issue-tracker`,
-      superBlock: 'information-security-and-quality-assurance'
+      link: `${qaBase}/issue-tracker`,
+      superBlock: 'quality-assurance'
     },
     {
       id: '587d824a367417b2b2512c43',
       title: 'Personal Library',
-      link: `${infoSecBase}/personal-library`,
-      superBlock: 'information-security-and-quality-assurance'
+      link: `${qaBase}/personal-library`,
+      superBlock: 'quality-assurance'
     },
+    {
+      id: '5e601bf95ac9d0ecd8b94afd',
+      title: 'Sudoku Solver',
+      link: `${qaBase}/sudoku-solver`,
+      superBlock: 'quality-assurance'
+    },
+    {
+      id: '5e601c0d5ac9d0ecd8b94afe',
+      title: 'American British Translator',
+      link: `${qaBase}/american-british-translator`,
+      superBlock: 'quality-assurance'
+    }
+  ],
+  'Information Security': [
     {
       id: '587d824a367417b2b2512c44',
       title: 'Stock Price Checker',
       link: `${infoSecBase}/stock-price-checker`,
-      superBlock: 'information-security-and-quality-assurance'
+      superBlock: 'information-security'
     },
     {
       id: '587d824a367417b2b2512c45',
       title: 'Anonymous Message Board',
       link: `${infoSecBase}/anonymous-message-board`,
-      superBlock: 'information-security-and-quality-assurance'
+      superBlock: 'information-security'
+    },
+    {
+      id: '5e46f979ac417301a38fb932',
+      title: 'Port Scanner',
+      link: `${infoSecBase}/port-scanner`,
+      superBlock: 'information-security'
+    },
+    {
+      id: '5e46f983ac417301a38fb933',
+      title: 'SHA-1 Password Cracker',
+      link: `${infoSecBase}/sha-1-password-cracker`,
+      superBlock: 'information-security'
+    },
+    {
+      id: '5e601c775ac9d0ecd8b94aff',
+      title: 'Secure Real Time Multiplayer Game',
+      link: `${infoSecBase}/secure-real-time-multiplayer-game`,
+      superBlock: 'information-security'
+    }
+  ],
+  'Scientific Computing with Python': [
+    {
+      id: '5e44412c903586ffb414c94c',
+      title: 'Arithmetic Formatter',
+      link: `${sciCompPyBase}/arithmetic-formatter`,
+      superBlock: 'scientific-computing-with-python'
+    },
+    {
+      id: '5e444136903586ffb414c94d',
+      title: 'Time Calculator',
+      link: `${sciCompPyBase}/time-calculator`,
+      superBlock: 'scientific-computing-with-python'
+    },
+    {
+      id: '5e44413e903586ffb414c94e',
+      title: 'Budget App',
+      link: `${sciCompPyBase}/budget-app`,
+      superBlock: 'scientific-computing-with-python'
+    },
+    {
+      id: '5e444147903586ffb414c94f',
+      title: 'Polygon Area Calculator',
+      link: `${sciCompPyBase}/polygon-area-calculator`,
+      superBlock: 'scientific-computing-with-python'
+    },
+    {
+      id: '5e44414f903586ffb414c950',
+      title: 'Probability Calculator',
+      link: `${sciCompPyBase}/probability-calculator`,
+      superBlock: 'scientific-computing-with-python'
+    }
+  ],
+  'Data Analysis with Python': [
+    {
+      id: '5e46f7e5ac417301a38fb928',
+      title: 'Mean-Variance-Standard Deviation Calculator',
+      link: `${dataAnalysisPyBase}/mean-variance-standard-deviation-calculator`,
+      superBlock: 'data-analysis-with-python'
+    },
+    {
+      id: '5e46f7e5ac417301a38fb929',
+      title: 'Demographic Data Analyzer',
+      link: `${dataAnalysisPyBase}/demographic-data-analyzer`,
+      superBlock: 'data-analysis-with-python'
+    },
+    {
+      id: '5e46f7f8ac417301a38fb92a',
+      title: 'Medical Data Visualizer',
+      link: `${dataAnalysisPyBase}/medical-data-visualizer`,
+      superBlock: 'data-analysis-with-python'
+    },
+    {
+      id: '5e46f802ac417301a38fb92b',
+      title: 'Page View Time Series Visualizer',
+      link: `${dataAnalysisPyBase}/page-view-time-series-visualizer`,
+      superBlock: 'data-analysis-with-python'
+    },
+    {
+      id: '5e4f5c4b570f7e3a4949899f',
+      title: 'Sea Level Predictor',
+      link: `${dataAnalysisPyBase}/sea-level-predictor`,
+      superBlock: 'scientific-computing-with-python'
+    }
+  ],
+  'Machine Learning with Python': [
+    {
+      id: '5e46f8d6ac417301a38fb92d',
+      title: 'Rock Paper Scissors',
+      link: `${machineLearningPyBase}/rock-paper-scissors`,
+      superBlock: 'machine-learning-with-python'
+    },
+    {
+      id: '5e46f8dcac417301a38fb92e',
+      title: 'Cat and Dog Image Classifier',
+      link: `${machineLearningPyBase}/cat-and-dog-image-classifier`,
+      superBlock: 'machine-learning-with-python'
+    },
+    {
+      id: '5e46f8e3ac417301a38fb92f',
+      title: 'Book Recommendation Engine using KNN',
+      link: `${machineLearningPyBase}/book-recommendation-engine-using-knn`,
+      superBlock: 'machine-learning-with-python'
+    },
+    {
+      id: '5e46f8edac417301a38fb930',
+      title: 'Linear Regression Health Costs Calculator',
+      link: `${machineLearningPyBase}/linear-regression-health-costs-calculator`,
+      superBlock: 'machine-learning-with-python'
+    },
+    {
+      id: '5e46f8edac417301a38fb931',
+      title: 'Neural Network SMS Text Classifier',
+      link: `${machineLearningPyBase}/neural-network-sms-text-classifier`,
+      superBlock: 'machine-learning-with-python'
     }
   ]
 };

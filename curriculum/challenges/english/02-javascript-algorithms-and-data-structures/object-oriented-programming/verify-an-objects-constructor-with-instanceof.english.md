@@ -2,6 +2,7 @@
 id: 587d7dae367417b2b2512b7a
 title: Verify an Object's Constructor with instanceof
 challengeType: 1
+isHidden: false
 forumTopicId: 301337
 ---
 

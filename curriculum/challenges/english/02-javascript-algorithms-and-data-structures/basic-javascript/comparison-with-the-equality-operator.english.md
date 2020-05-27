@@ -2,6 +2,7 @@
 id: 56533eb9ac21ba0edf2244d0
 title: Comparison with the Equality Operator
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cKyVMAL'
 forumTopicId: 16784
 ---

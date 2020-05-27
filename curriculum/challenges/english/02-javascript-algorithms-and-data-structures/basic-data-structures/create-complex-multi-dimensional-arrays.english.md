@@ -2,6 +2,7 @@
 id: 587d7b7b367417b2b2512b16
 title: Create complex multi-dimensional arrays
 challengeType: 1
+isHidden: false
 forumTopicId: 301159
 ---
 

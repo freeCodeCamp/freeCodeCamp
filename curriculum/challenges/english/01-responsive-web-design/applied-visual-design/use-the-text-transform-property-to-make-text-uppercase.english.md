@@ -2,6 +2,7 @@
 id: 587d781c367417b2b2512ac0
 title: Use the text-transform Property to Make Text Uppercase
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cvVZQSP'
 forumTopicId: 301081
 ---

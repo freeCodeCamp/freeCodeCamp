@@ -2,6 +2,7 @@
 id: 5a24c314108439a4d4036183
 title: Use Advanced JavaScript in React Render Method
 challengeType: 6
+isHidden: false
 isRequired: false
 forumTopicId: 301415
 ---

@@ -2,6 +2,7 @@
 id: 587d7b84367417b2b2512b34
 title: Use typeof to Check the Type of a Variable
 challengeType: 1
+isHidden: false
 forumTopicId: 18374
 ---
 

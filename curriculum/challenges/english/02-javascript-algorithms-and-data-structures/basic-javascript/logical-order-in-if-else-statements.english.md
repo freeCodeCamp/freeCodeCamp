@@ -2,6 +2,7 @@
 id: 5690307fddb111c6084545d7
 title: Logical Order in If Else Statements
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cwNvMUV'
 forumTopicId: 18228
 ---

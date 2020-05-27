@@ -51,7 +51,8 @@ const propTypes = {
   state: PropTypes.object,
   user: PropTypes.shape({
     name: PropTypes.string,
-    username: PropTypes.string
+    username: PropTypes.string,
+    completedChallengeCount: PropTypes.number
   })
 };
 
@@ -70,7 +71,7 @@ export const LearnPage = ({
   isSignedIn,
   navigate,
   fetchState: { pending, complete },
-  user: { name = '', username = '' },
+  user: { name = '', username = '', completedChallengeCount = 0 },
   data: {
     challengeNode: {
       fields: { slug }
@@ -86,6 +87,7 @@ export const LearnPage = ({
       <Grid>
         <Intro
           complete={complete}
+          completedChallengeCount={completedChallengeCount}
           isSignedIn={isSignedIn}
           name={name}
           navigate={navigate}
@@ -99,7 +101,7 @@ export const LearnPage = ({
           isSignedIn={isSignedIn}
           nodes={edges
             .map(({ node }) => node)
-            .filter(({ isPrivate }) => !isPrivate)}
+            .filter(({ isPrivate, isHidden }) => !isPrivate && !isHidden)}
         />
       </Grid>
     </LearnLayout>
@@ -134,6 +136,7 @@ export const query = graphql`
           isRequired
           superBlock
           dashedName
+          isHidden
         }
       }
     }

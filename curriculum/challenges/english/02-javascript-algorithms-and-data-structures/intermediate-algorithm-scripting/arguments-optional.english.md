@@ -3,6 +3,7 @@ id: a97fd23d9b809dac9921074f
 title: Arguments Optional
 isRequired: true
 challengeType: 5
+isHidden: false
 forumTopicId: 14271
 ---
 
@@ -28,8 +29,10 @@ If either argument isn't a valid number, return undefined.
 tests:
   - text: <code>addTogether(2, 3)</code> should return 5.
     testString: assert.deepEqual(addTogether(2, 3), 5);
-  - text: <code>addTogether(2)(3)</code> should return 5.
-    testString: assert.deepEqual(addTogether(2)(3), 5);
+  - text: <code>addTogether(23, 30)</code> should return 53.
+    testString: assert.deepEqual(addTogether(23, 30), 53);
+  - text: <code>addTogether(5)(7)</code> should return 12.
+    testString: assert.deepEqual(addTogether(5)(7), 12);
   - text: <code>addTogether("http://bit.ly/IqT6zt")</code> should return undefined.
     testString: assert.isUndefined(addTogether("http://bit.ly/IqT6zt"));
   - text: <code>addTogether(2, "3")</code> should return undefined.

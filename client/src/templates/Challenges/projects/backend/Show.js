@@ -13,7 +13,6 @@ import {
   consoleOutputSelector,
   initConsole,
   initTests,
-  updateBackendFormValues,
   updateChallengeMeta,
   updateSolutionFormValues
 } from '../../redux';
@@ -34,7 +33,6 @@ import { isSignedInSelector } from '../../../../redux';
 import Hotkeys from '../../components/Hotkeys';
 
 import '../../components/test-frame.css';
-import { backEndProject } from '../../../../../utils/challengeTypes';
 
 const propTypes = {
   challengeMounted: PropTypes.func.isRequired,
@@ -54,7 +52,6 @@ const propTypes = {
   }),
   tests: PropTypes.array,
   title: PropTypes.string,
-  updateBackendFormValues: PropTypes.func.isRequired,
   updateChallengeMeta: PropTypes.func.isRequired,
   updateSolutionFormValues: PropTypes.func.isRequired
 };
@@ -75,7 +72,6 @@ const mapDispatchToActions = {
   executeChallenge,
   initConsole,
   initTests,
-  updateBackendFormValues,
   updateChallengeMeta,
   updateSolutionFormValues
 };
@@ -156,12 +152,10 @@ export class BackEnd extends Component {
       },
       tests,
       executeChallenge,
-      updateSolutionFormValues,
-      updateBackendFormValues
+      updateSolutionFormValues
     } = this.props;
 
     const blockNameTitle = `${blockName} - ${title}`;
-    const isBackEndProject = challengeType === backEndProject;
 
     return (
       <Hotkeys
@@ -182,14 +176,9 @@ export class BackEnd extends Component {
                   instructions={instructions}
                 />
                 <SolutionForm
-                  isFrontEnd={false}
-                  isProject={isBackEndProject}
+                  challengeType={challengeType}
                   onSubmit={executeChallenge}
-                  updateSolutionForm={values =>
-                    isBackEndProject
-                      ? updateSolutionFormValues(values)
-                      : updateBackendFormValues(values)
-                  }
+                  updateSolutionForm={updateSolutionFormValues}
                 />
                 <ProjectToolPanel
                   guideUrl={getGuideUrl({ forumTopicId, title })}

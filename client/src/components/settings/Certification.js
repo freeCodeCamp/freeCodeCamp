@@ -44,14 +44,19 @@ const propTypes = {
   is2018DataVisCert: PropTypes.bool,
   isApisMicroservicesCert: PropTypes.bool,
   isBackEndCert: PropTypes.bool,
+  isDataAnalysisPyCert: PropTypes.bool,
   isDataVisCert: PropTypes.bool,
   isFrontEndCert: PropTypes.bool,
   isFrontEndLibsCert: PropTypes.bool,
   isFullStackCert: PropTypes.bool,
   isHonest: PropTypes.bool,
+  isInfosecCert: PropTypes.bool,
   isInfosecQaCert: PropTypes.bool,
   isJsAlgoDataStructCert: PropTypes.bool,
+  isMachineLearningPyCert: PropTypes.bool,
+  isQaCert: PropTypes.bool,
   isRespWebDesignCert: PropTypes.bool,
+  isSciCompPyCert: PropTypes.bool,
   updateLegacyCert: PropTypes.func.isRequired,
   username: PropTypes.string,
   verifyCert: PropTypes.func.isRequired
@@ -67,9 +72,14 @@ const isCertSelector = ({
   isDataVisCert,
   isFrontEndCert,
   isInfosecQaCert,
+  isQaCert,
+  isInfosecCert,
   isFrontEndLibsCert,
   isFullStackCert,
-  isRespWebDesignCert
+  isRespWebDesignCert,
+  isSciCompPyCert,
+  isDataAnalysisPyCert,
+  isMachineLearningPyCert
 }) => ({
   is2018DataVisCert,
   isApisMicroservicesCert,
@@ -78,9 +88,14 @@ const isCertSelector = ({
   isDataVisCert,
   isFrontEndCert,
   isInfosecQaCert,
+  isQaCert,
+  isInfosecCert,
   isFrontEndLibsCert,
   isFullStackCert,
-  isRespWebDesignCert
+  isRespWebDesignCert,
+  isSciCompPyCert,
+  isDataAnalysisPyCert,
+  isMachineLearningPyCert
 });
 
 const isCertMapSelector = createSelector(
@@ -90,21 +105,31 @@ const isCertMapSelector = createSelector(
     isApisMicroservicesCert,
     isJsAlgoDataStructCert,
     isInfosecQaCert,
+    isQaCert,
+    isInfosecCert,
     isFrontEndLibsCert,
     isRespWebDesignCert,
     isDataVisCert,
     isFrontEndCert,
-    isBackEndCert
+    isBackEndCert,
+    isSciCompPyCert,
+    isDataAnalysisPyCert,
+    isMachineLearningPyCert
   }) => ({
     'Responsive Web Design': isRespWebDesignCert,
     'JavaScript Algorithms and Data Structures': isJsAlgoDataStructCert,
     'Front End Libraries': isFrontEndLibsCert,
     'Data Visualization': is2018DataVisCert,
     "API's and Microservices": isApisMicroservicesCert,
-    'Information Security And Quality Assurance': isInfosecQaCert,
+    'Quality Assurance': isQaCert,
+    'Information Security': isInfosecCert,
+    'Scientific Computing with Python': isSciCompPyCert,
+    'Data Analysis with Python': isDataAnalysisPyCert,
+    'Machine Learning with Python': isMachineLearningPyCert,
     'Legacy Front End': isFrontEndCert,
     'Legacy Data Visualization': isDataVisCert,
-    'Legacy Back End': isBackEndCert
+    'Legacy Back End': isBackEndCert,
+    'Legacy Information Security and Quality Assurance': isInfosecQaCert
   })
 );
 
@@ -447,7 +472,8 @@ export class CertificationSettings extends Component {
       is2018DataVisCert,
       isApisMicroservicesCert,
       isFrontEndLibsCert,
-      isInfosecQaCert,
+      isQaCert,
+      isInfosecCert,
       isJsAlgoDataStructCert,
       isRespWebDesignCert
     } = this.props;
@@ -456,7 +482,8 @@ export class CertificationSettings extends Component {
       is2018DataVisCert &&
       isApisMicroservicesCert &&
       isFrontEndLibsCert &&
-      isInfosecQaCert &&
+      isQaCert &&
+      isInfosecCert &&
       isJsAlgoDataStructCert &&
       isRespWebDesignCert;
 
@@ -494,7 +521,7 @@ export class CertificationSettings extends Component {
             <li>Front End Libraries</li>
             <li>Data Visualization</li>
             <li>APIs and Microservices</li>
-            <li>Information Security and Quality Assurance</li>
+            <li>Quality Assurance</li>
           </ul>
         </div>
 
