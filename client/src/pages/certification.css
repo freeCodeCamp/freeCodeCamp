@@ -13,7 +13,6 @@
 }
 
 .certification-namespace.container {
-  margin-top: 100px;
   max-width: 1500px;
   width: 100%;
   padding: 30px;
@@ -40,6 +39,10 @@
   min-height: 100vh;
   flex-direction: column;
   padding: 50px;
+}
+
+.certificate-outer-wrapper .donation-section {
+  padding-bottom: 100px;
 }
 
 .certificate-outer-wrapper .donation-section hr {
