@@ -2,15 +2,34 @@
 id: 58a25bcff9fc0f352b528e7e
 title: Hash and Compare Passwords Synchronously
 challengeType: 2
-videoUrl: ''
-localeTitle: 哈希并同步比较密码
+isHidden: false
+forumTopicId: 301579
+localeTitle: 同步哈希和比较密码 
 ---
 
 ## Description
-<section id="description">提醒一下，这个项目是基于<a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-bcrypt/">Glitch</a>的以下入门项目构建的，或者是从<a href="https://github.com/freeCodeCamp/boilerplate-bcrypt/">GitHub</a>克隆的。同步散列也很容易，但如果使用服务器端成本高或经常进行散列会导致延迟。使用此方法进行散列与调用<code>var hash = bcrypt.hashSync(myPlaintextPassword, saltRounds);</code> <hr>将此散列方法添加到代码中，然后将结果记录到控制台。同样，使用的变量已在服务器中定义，因此您无需调整它们。您可能会注意到即使您使用与异步函数相同的密码进行哈希处理，控制台中的结果也不同 - 这是由于每次哈希值随机生成，如第三个哈希字符串中的前22个字符所示。现在将密码输入与新的同步散列进行比较，您将使用compareSync方法： <code>var result = bcrypt.compareSync(myPlaintextPassword, hash);</code>结果是布尔值true或false。添加此功能并登录控制台结果以查看其是否正常工作。当您认为自己已经做对时，请提交您的页面。如果您在这些挑战期间遇到错误，可以在<a href="https://gist.github.com/JosephLivengood/9a2698fb63e42d9d8b4b84235c08b4c4">此处</a>查看示例完成的代码。 </section>
+<section id='description'>
+温馨提醒，本项目在 <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-bcrypt/'>这个 Glitch 项目</a> 的基础上进行开发。你也可以从 <a href='https://github.com/freeCodeCamp/boilerplate-bcrypt/'> GitHub </a>上克隆。
+同步哈希也是非常简单的，但是会造成延迟特别是在哈希计算量大并且次数多的情况下。同步进行哈希是通过调用 
+
+```js
+var hash = bcrypt.hashSync(myPlaintextPassword, saltRounds);
+```
+
+<hr>把同步哈希添加到你的代码并输入到控制台，和之前一样，需要用到的变量已经提前定义好，你不需要做任何改动。你可能已经注意到，即使你是用异步的方式哈希同一个密码，结果也是不一样的。这是因为每次哈希的盐都是随机生成的，你可以通过第三个哈希字符串的头22的字符来验证。
+当你需要对比用户输入的值, 你只需要使用 compareSync 方法: 
+
+```js
+var result = bcrypt.compareSync(myPlaintextPassword, hash);
+```
+
+返回的结果为 ``true`` 或者 ``false``。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+添加这个方法并输出把控制台来验证同步哈希已经成功了。
+提交页面当你觉得已经完成的时候。如果你遇到任何错误，你可以参考这个<a href='https://gist.github.com/JosephLivengood/9a2698fb63e42d9d8b4b84235c08b4c4'>链接</a>中已经完成的代码。
 </section>
 
 ## Tests
@@ -18,7 +37,7 @@ localeTitle: 哈希并同步比较密码
 
 ```yml
 tests:
-  - text: 同步哈希生成并正确比较
+  - text: 同步生成哈希并正确地对比
     testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /START_SYNC[^]*hash.*=.*bcrypt.hashSync.*myPlaintextPassword( |),( |)saltRounds[^]*END_SYNC/gi, 'You should call bcrypt.hashSync on myPlaintextPassword with saltRounds'); assert.match(data, /START_SYNC[^]*result.*=.*bcrypt.compareSync.*myPlaintextPassword( |),( |)hash[^]*END_SYNC/gi, 'You should call bcrypt.compareSync on myPlaintextPassword with the hash generated in the last line'); }, xhr => { throw new Error(xhr.statusText); })
 
 ```
@@ -34,6 +53,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
+
 </section>
