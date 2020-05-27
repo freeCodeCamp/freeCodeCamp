@@ -57,7 +57,7 @@
     "react-identicons": "^1.1.7",
     "react-instantsearch-dom": "^6.0.0-beta.0",
     "react-lazy-load": "^3.1.13",
-    "react-monaco-editor": "^0.31.0",
+    "react-monaco-editor": "^0.36.0",
     "react-redux": "^5.0.7",
     "react-reflex": "^3.0.18",
     "react-responsive": "^6.1.1",
