@@ -8,10 +8,10 @@
   "jsAlgoDataStruct": "isJsAlgoDataStructCert",
   "apisMicroservices": "isApisMicroservicesCert",
   "infosecQa": "isInfosecQaCert",
-  "qa": "isQaCert",
-  "infosec": "isInfosecCert",
+  "qa": "is2020QaCert",
+  "infosec": "is2020InfosecCert",
   "fullStack": "isFullStackCert",
-  "sciCompPy": "isSciCompPyCert",
-  "dataAnalysisPy": "isDataAnalysisPyCert",
-  "machineLearningPy": "isMachineLearningPyCert"
+  "sciCompPy": "is2020SciCompPyCert",
+  "dataAnalysisPy": "is2020DataAnalysisPyCert",
+  "machineLearningPy": "is2020MachineLearningPyCert"
 }

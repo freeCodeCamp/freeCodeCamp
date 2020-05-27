@@ -18,11 +18,11 @@ export function completeCommitment$(user) {
     isDataVisCert,
     isApisMicroservicesCert,
     isInfosecQaCert,
-    isQaCert,
-    isInfosecCert,
-    isSciCompPyCert,
-    isDataAnalysisPyCert,
-    isMachineLearningPyCert
+    is2020QaCert,
+    is2020InfosecCert,
+    is2020SciCompPyCert,
+    is2020DataAnalysisPyCert,
+    is2020MachineLearningPyCert
   } = user;
 
   return Observable.fromNodeCallback(user.pledge, user)().flatMap(pledge => {
@@ -42,11 +42,12 @@ export function completeCommitment$(user) {
       (isDataVisCert && goal === commitGoals.dataVisCert) ||
       (isApisMicroservicesCert && goal === commitGoals.apisMicroservicesCert) ||
       (isInfosecQaCert && goal === commitGoals.infosecQaCert) ||
-      (isQaCert && goal === commitGoals.QaCert) ||
-      (isInfosecCert && goal === commitGoals.infosecCert) ||
-      (isSciCompPyCert && goal === commitGoals.sciCompPyCert) ||
-      (isDataAnalysisPyCert && goal === commitGoals.dataAnalysisPyCert) ||
-      (isMachineLearningPyCert && goal === commitGoals.machineLearningPyCert)
+      (is2020QaCert && goal === commitGoals.QaCert) ||
+      (is2020InfosecCert && goal === commitGoals.infosecCert) ||
+      (is2020SciCompPyCert && goal === commitGoals.sciCompPyCert) ||
+      (is2020DataAnalysisPyCert && goal === commitGoals.dataAnalysisPyCert) ||
+      (is2020MachineLearningPyCert &&
+        goal === commitGoals.machineLearningPyCert)
     ) {
       debug('marking goal complete');
       pledge.isCompleted = true;
