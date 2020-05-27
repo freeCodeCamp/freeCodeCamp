@@ -25,8 +25,11 @@ IndexPage.displayName = 'IndexPage';
 export default IndexPage;
 
 export const query = graphql`
-  query challNodes {
-    allChallengeNode(sort: { fields: [superOrder, order, challengeOrder] }) {
+  query MyQuery {
+    allChallengeNode(
+      filter: { isHidden: { eq: false } }
+      sort: { fields: [superOrder, order, challengeOrder] }
+    ) {
       edges {
         node {
           fields {
