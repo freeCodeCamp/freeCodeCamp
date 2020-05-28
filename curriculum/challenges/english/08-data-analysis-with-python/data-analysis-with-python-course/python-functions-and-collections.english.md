@@ -15,12 +15,12 @@ videoId: NzpU17ZVlUw
 
 ```yml
 question:
-  text: Question
+  text: What is the main difference between lists and tuples in Python?
   answers:
-    - one
-    - two
-    - three
-  solution: 3
+    - Tuples are immutable.
+    - Lists are ordered.
+    - Tuples are unordered.
+  solution: 1
 ```
 
 </section>

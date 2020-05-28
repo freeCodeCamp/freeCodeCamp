@@ -15,12 +15,17 @@ videoId: bX5681NPOcA
 
 ```yml
 question:
-  text: Question
+  text: What is true about Recurrent Neural Networks?
   answers:
-    - one
-    - two
-    - three
-  solution: 3
+    - |
+      1: They are a type of feed-forward neural network.
+    - |
+      2: They maintain an internal memory/state of the input that was already processed.
+    - |
+      3: RNN's contain a loop and process one piece of input at a time.
+    - |
+      4: Both 2 and 3.
+  solution: 4
 ```
 
 </section>

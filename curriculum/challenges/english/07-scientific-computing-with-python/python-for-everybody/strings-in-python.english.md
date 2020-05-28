@@ -17,7 +17,7 @@ videoId: LYZj207fKpQ
 
 ```yml
 question:
-  text: 'What will the following code print?
+  text: 'What will the following code print?:
 <pre>for n in "banana":<br>    print(n)</pre>'
   answers:
     - 'n<br>n'

@@ -15,12 +15,13 @@ videoId: WO1hINnBj20
 
 ```yml
 question:
-  text: Question
+  text: |
+    Before you make a prediction with your own review, you should...:
   answers:
-    - one
-    - two
-    - three
-  solution: 3
+    - decode the training dataset and compare the results to the test data.
+    - use the encodings from the training dataset to encode your review.
+    - assign random values between 0 and the maximum number of vocabulary in your dataset to each word in your review.
+  solution: 2
 ```
 
 </section>

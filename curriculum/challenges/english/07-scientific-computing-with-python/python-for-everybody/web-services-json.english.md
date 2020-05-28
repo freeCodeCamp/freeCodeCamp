@@ -17,7 +17,7 @@ videoId: ZJE-U56BppM
 
 ```yml
 question:
-  text: "What will the following code print?
+  text: "What will the following code print?:
 <pre>import json<br>
 <br>
 data = '''<br>[<br>  { 'id' : '001',<br>    'x' : '2',<br>    'name' : 'Quincy'<br>  } ,<br>  { 'id' : '009',<br>    'x' : '7',<br>    'name' : 'Mrugesh'<br>  }<br>]'''<br>

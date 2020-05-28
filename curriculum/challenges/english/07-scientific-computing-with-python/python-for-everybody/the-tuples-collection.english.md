@@ -17,7 +17,7 @@ videoId: 3Lxpladfh2k
 
 ```yml
 question:
-  text: "What will the following code print?
+  text: "What will the following code print?:
 <pre>d = dict()<br>d['quincy'] = 1<br>d['beau'] = 5<br>d['kris'] = 9<br>for (k,i) in d.items():<br>    print(k, i)</pre>"
   answers:
     - 'k i<br>k i<br>k i'

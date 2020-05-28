@@ -15,12 +15,39 @@ videoId: ovYNhnltVxY
 
 ```yml
 question:
-  text: Question
+  text: |
+    What will the following code print out?:
+
+    ```py
+    import pandas as pd
+    import numpy as np
+
+    s = pd.Series(['a', 3, np.nan, 1, np.nan])
+
+    print(s.notnull().sum())
+    ```
+
   answers:
-    - one
-    - two
-    - three
-  solution: 3
+    - '3'
+    - |
+      ```
+      0     True
+      1     True
+      2    False
+      3     True
+      4    False
+      dtype: bool
+      ```
+    - |
+      ```
+      0    False
+      1    False
+      2     True
+      3    False
+      4     True
+      dtype: bool
+      ```
+  solution: 1
 ```
 
 </section>

@@ -15,11 +15,15 @@ videoId: z_qkqZS7KZ4
 
 ```yml
 question:
-  text: Question
+  text: |
+    What is the main difference between the `.connect()` and `.connect_ex()` methods?
+
   answers:
-    - one
-    - two
-    - three
+    - There is no difference between the two methods.
+    - |
+      If there is an error or if no host is found, `.connect()` returns an error code while `.connect_ex()` raises an exception.
+    - |
+      If there is an error or if no host is found, `.connect()` raises an exception while `.connect_ex()` returns an error code.
   solution: 3
 ```
 

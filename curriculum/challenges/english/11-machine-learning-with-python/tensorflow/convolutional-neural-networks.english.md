@@ -15,11 +15,12 @@ videoId: _1kTP7uoU9E
 
 ```yml
 question:
-  text: Question
+  text: |
+    Dense neural networks analyze input on a global scale and recognize patterns in specific areas. Convolutional neural networks...:
   answers:
-    - one
-    - two
-    - three
+    - also analyze input globally and extract features from specific areas.
+    - do not work well for image classification or object detection.
+    - scan through the entire input a little at a time and learn local patterns.
   solution: 3
 ```
 

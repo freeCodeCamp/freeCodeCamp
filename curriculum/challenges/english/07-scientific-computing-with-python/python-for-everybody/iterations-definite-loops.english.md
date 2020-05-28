@@ -17,7 +17,7 @@ videoId: hiRTRAqNlpE
 
 ```yml
 question:
-  text: 'How many lines will the following code print?
+  text: 'How many lines will the following code print?:
 <pre>for i in [2,1,5]:<br>    print(i)</pre>'
   answers:
     - '1'

@@ -15,12 +15,12 @@ videoId: Cf7DSU0gVb4
 
 ```yml
 question:
-  text: Question
+  text: The key components of reinforcement learning are...
   answers:
-    - one
-    - two
-    - three
-  solution: 3
+    - environment, representative, state, reaction, and reward.
+    - environment, agent, state, action, and reward.
+    - habitat, agent, state, action, and punishment.
+  solution: 2
 ```
 
 </section>

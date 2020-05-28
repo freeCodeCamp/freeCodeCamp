@@ -15,12 +15,17 @@ videoId: ugYfJNTawks
 
 ```yml
 question:
-  text: Question
+  text: |
+    Which socket object method lets you set the maximum amount of data your client accepts at once?
+
   answers:
-    - one
-    - two
-    - three
-  solution: 3
+    - |
+      `.recv(1024)`
+    - |
+      `.decode('ascii')`
+    - |
+      `.connect(host, port)`
+  solution: 1
 ```
 
 </section>

@@ -15,11 +15,16 @@ videoId: jYk9XaGoAnk
 
 ```yml
 question:
-  text: Question
+  text: |
+    What is the correct command to install the Python 3 version of the `python-nmap` library?
+
   answers:
-    - one
-    - two
-    - three
+    - |
+      `sudo apt install python-nmap`
+    - |
+      `pip install python-nmap`
+    - |
+      `pip3 install python-nmap`
   solution: 3
 ```
 

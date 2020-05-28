@@ -15,12 +15,12 @@ videoId: P-JjV6GBCmk
 
 ```yml
 question:
-  text: Question
+  text: "Why is Numpy an important, but unpopular Python library?"
   answers:
-    - one
-    - two
-    - three
-  solution: 3
+    - "Often you won't work directly with Numpy."
+    - "It's is extremely slow."
+    - "Working with Numpy is difficult."
+  solution: 1
 ```
 
 </section>

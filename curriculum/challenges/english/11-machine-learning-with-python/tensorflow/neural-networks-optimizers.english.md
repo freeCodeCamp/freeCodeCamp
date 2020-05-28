@@ -15,12 +15,12 @@ videoId: hdOtRPQe1o4
 
 ```yml
 question:
-  text: Question
+  text: What is an optimizer function?
   answers:
-    - one
-    - two
-    - three
-  solution: 3
+    - A function that increases the accuracy of a model's predictions.
+    - A function that implements the gradient descent and backpropogation algorithms for you.
+    - A function that reduces the time a model needs to train.
+  solution: 2
 ```
 
 </section>

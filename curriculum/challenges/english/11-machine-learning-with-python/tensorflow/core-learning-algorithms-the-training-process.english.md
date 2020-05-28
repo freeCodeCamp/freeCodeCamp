@@ -15,12 +15,12 @@ videoId: _cEwvqVoBhI
 
 ```yml
 question:
-  text: Question
+  text: What are epochs?
   answers:
-    - one
-    - two
-    - three
-  solution: 3
+    - The number of times the model will see the same data.
+    - A type of graph.
+    - The number of elements you feed to the model at once.
+  solution: 1
 ```
 
 </section>

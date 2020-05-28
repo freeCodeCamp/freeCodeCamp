@@ -15,12 +15,33 @@ videoId: RBBSNta234s
 
 ```yml
 question:
-  text: Question
+  text: |
+    Fill in the blanks to complete the following Q-Learning equation:
+
+    ```py
+    Q[__A__, __B__] = Q[__A__, __B__] + LEARNING_RATE * (reward + GAMMA * np.max(Q[__C__, :]) - Q[__A__, __B__])
+    ```
+
   answers:
-    - one
-    - two
-    - three
-  solution: 3
+    - |
+      A: `state`
+
+      B: `action`
+
+      C: `next_state`
+    - |
+      A: `state`
+
+      B: `action`
+
+      C: `prev_state`
+    - |
+      A: `state`
+
+      B: `reaction`
+
+      C: `next_state`
+  solution: 1
 ```
 
 </section>

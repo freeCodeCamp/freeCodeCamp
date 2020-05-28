@@ -15,11 +15,13 @@ videoId: UVimlsy9eW0
 
 ```yml
 question:
-  text: Question
+  text: |
+    What are the main neural network components that make up a Long Short Term Memory network?
+
   answers:
-    - one
-    - two
-    - three
+    - New information and prediction.
+    - Prediction, collected possibilities, and selection.
+    - Prediction, ignoring, forgetting, and selection.
   solution: 3
 ```
 

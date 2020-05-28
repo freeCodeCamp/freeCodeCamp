@@ -15,11 +15,12 @@ videoId: mUU9YXOFbZg
 
 ```yml
 question:
-  text: Question
+  text: |
+    Word embeddings are...:
   answers:
-    - one
-    - two
-    - three
+    - an unordered group of encoded words that describes the frequency of words in a given document.
+    - a group of encoded words that preserves the original order of the words in a given document.
+    - a vectorized representation of words in a given document that places words with similar meanings near each other.
   solution: 3
 ```
 

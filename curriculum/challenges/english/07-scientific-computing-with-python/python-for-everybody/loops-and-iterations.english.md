@@ -17,7 +17,7 @@ videoId: dLA-szNRnUY
 
 ```yml
 question:
-  text: 'What will the following code print out:
+  text: 'What will the following code print out?:
 <pre>
 n = 0<br>
 while True:<br>    if n == 3:<br>        break<br>    print(n)<br>    n = n + 1</pre>'

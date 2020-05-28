@@ -15,11 +15,42 @@ videoId: -ZOrgV_aA9A
 
 ```yml
 question:
-  text: Question
+  text: |
+    What will the following code print out?:
+
+    ```py
+    import pandas as pd
+
+    certificates_earned = pd.Series(
+        [8, 2, 5, 6], 
+        index=['Tom', 'Kris', 'Ahmad', 'Beau']
+    )
+
+    print(certificates_earned[certificates_earned > 5])
+    ```
+
   answers:
-    - one
-    - two
-    - three
+    - |
+      ```
+      Tom      True
+      Kris     False
+      Ahmad    False
+      Beau     True
+      dtype: int64
+      ```
+    - |
+      ```
+      Tom      8
+      Ahmad    5
+      Beau     6
+      dtype: int64
+      ```
+    - |
+      ```
+      Tom      8
+      Beau     6
+      dtype: int64
+      ```
   solution: 3
 ```
 

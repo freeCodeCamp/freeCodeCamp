@@ -15,12 +15,12 @@ videoId: wz9J1slsi7I
 
 ```yml
 question:
-  text: Question
+  text: What is categorical data?
   answers:
-    - one
-    - two
-    - three
-  solution: 3
+    - Another term for one-hot encoding.
+    - Any data that is not numeric.
+    - Any data that is represented numerically.
+  solution: 2
 ```
 
 </section>

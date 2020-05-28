@@ -18,7 +18,7 @@ More resources:
 
 ```yml
 question:
-  text: 'What will the following Python program print out?
+  text: 'What will the following Python program print out?:
 <pre>def fred():<br>   print("Zap")<br><br>def jane():<br>   print("ABC")<br>
 <br>
 jane()<br>

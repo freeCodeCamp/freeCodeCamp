@@ -15,11 +15,11 @@ videoId: h8caJq2Bb9w
 
 ```yml
 question:
-  text: Question
+  text: What is *not* allowed in a Jupyter Notebook's cell?
   answers:
-    - one
-    - two
-    - three
+    - "Markdown"
+    - "Python code"
+    - "An Excel sheet"
   solution: 3
 ```
 

@@ -15,7 +15,8 @@ videoId: mHjxzFS5_Z0
 
 ```yml
 question:
-  text: 'When using Matplotlib''s global API, what does the order of numbers mean here <pre>plt.subplot(1, 2, 1)</pre>'
+  text: |
+    When using Matplotlib's global API, what does the order of numbers mean here?: `plt.subplot(1, 2, 1)`
   answers:
     - 'My figure will have one column, two rows, and I am going to start drawing in the first (left) plot.'
     - 'I am going to start drawing in the first (left) plot, my figure will have two rows, and my figure will have one column.'

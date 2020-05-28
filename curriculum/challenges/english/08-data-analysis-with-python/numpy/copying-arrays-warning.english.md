@@ -15,12 +15,25 @@ videoId: iIoQ0_L0GvA
 
 ```yml
 question:
-  text: Question
+  text: |
+    What is the value of `a` after running the following code?:
+
+    ```py
+    import numpy as np
+
+    a = np.array([1, 2, 3, 4, 5])
+    b = a
+    b[2] = 20
+    ```
+
   answers:
-    - one
-    - two
-    - three
-  solution: 3
+    - |
+      `[1, 2, 3, 4, 5]`
+    - |
+      `[1, 2, 20, 4, 5]`
+    - |
+      `[1, 20, 3, 4, 5]`
+  solution: 2
 ```
 
 </section>

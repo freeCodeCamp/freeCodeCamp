@@ -15,12 +15,41 @@ videoId: hEUiK7j9UI8
 
 ```yml
 question:
-  text: Question
+  text: |
+    Fill in the blanks below to save your model's checkpoints in the `./checkpoints` directory and call the latest checkpoint for training:
+
+    ```py
+    checkpoint_dir = __A__
+    checkpoint_prefix = os.path.join(checkpoint_dir, 'ckpt_{epoch}')
+
+    checkpoint_callback = tf.keras.callbacks.__B__(
+        filepath=checkpoint_prefix,
+        save_weights_only=True
+    )
+
+    history = model.fit(data, epochs=2, callbacks=[__C__])
+    ```
+
   answers:
-    - one
-    - two
-    - three
-  solution: 3
+    - |
+      A: `'./training_checkpoints'`
+
+      B: `ModelCheckpoint`
+
+      C: `checkpoint_prefix`
+    - |
+      A: `'./checkpoints'`
+
+      B: `ModelCheckpoint`
+
+      C: `checkpoint_callback`
+    - |
+      A: `'./checkpoints'`
+
+      B: `BaseLogger`
+
+      C: `checkpoint_callback`
+  solution: 2
 ```
 
 </section>

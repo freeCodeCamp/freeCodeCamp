@@ -17,7 +17,7 @@ videoId: _pZ0srbg7So
 
 ```yml
 question:
-  text: 'What is wrong with the following XML?
+  text: 'What is wrong with the following XML?:
 <pre>&ltperson&gt<br>
 &ltname>Chuck&lt/name><br>
 &ltphone type="intl"><br>  +1 734 303 4456<br>

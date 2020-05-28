@@ -15,11 +15,12 @@ videoId: u85IOSsJsPI
 
 ```yml
 question:
-  text: Question
+  text: |
+    What does the pandas `.head()` function do?
   answers:
-    - one
-    - two
-    - three
+    - Returns the number of entries in a data frame.
+    - Returns the number of columns in a data frame.
+    - By default, shows the first five rows or entries in a data frame.
   solution: 3
 ```
 

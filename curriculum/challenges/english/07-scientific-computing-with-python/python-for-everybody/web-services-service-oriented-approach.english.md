@@ -17,7 +17,7 @@ videoId: muerlsCHExI
 
 ```yml
 question:
-  text: 'With a services oriented approach to developing web apps, where is the data located.'
+  text: 'With a services oriented approach to developing web apps, where is the data located?'
   answers:
     - 'Spread across many computer systems connected via the internet or internal network.'
     - 'Within different services on the main web server.'

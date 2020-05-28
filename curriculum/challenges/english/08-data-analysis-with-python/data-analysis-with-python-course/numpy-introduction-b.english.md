@@ -15,12 +15,14 @@ videoId: YIqgrNLAZkA
 
 ```yml
 question:
-  text: Question
+  text: |
+    About how much memory does the integer `5` consume in plain Python?
   answers:
-    - one
-    - two
-    - three
-  solution: 3
+    - 32 bits
+    - 20 bytes
+    - 16 bytes
+    - 8 bits
+  solution: 2
 ```
 
 </section>

@@ -15,12 +15,13 @@ videoId: zvalnHWGtx4
 
 ```yml
 question:
-  text: Question
+  text: Why is it better to calculate the gradient (slope) directly rather than numerically?
+
   answers:
-    - one
-    - two
-    - three
-  solution: 3
+    - It is computationally expensive to go back through the entire neural network and adjust the weights for each layer of the neural network.
+    - It is more accurate.
+    - There is no difference between the two methods.
+  solution: 1
 ```
 
 </section>

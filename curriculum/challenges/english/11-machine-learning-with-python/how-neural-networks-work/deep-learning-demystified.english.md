@@ -15,12 +15,14 @@ videoId: bejQ-W9BGJg
 
 ```yml
 question:
-  text: Question
+  text: How should you assign weights to input neurons before training your network for the first time?
+  
   answers:
-    - one
-    - two
-    - three
-  solution: 3
+    - From smallest to largest.
+    - Completely randomly.
+    - Alphabetically.
+    - None of the above.
+  solution: 2
 ```
 
 </section>

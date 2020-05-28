@@ -17,7 +17,7 @@ videoId: LaCZnTbQGkE
 
 ```yml
 question:
-  text: "What will the following program print:
+  text: "What will the following program print?:
 <pre>
 import re<br>
 s = 'A message from csev@umich.edu to cwen@iupui.edu about meeting @2PM'<br>

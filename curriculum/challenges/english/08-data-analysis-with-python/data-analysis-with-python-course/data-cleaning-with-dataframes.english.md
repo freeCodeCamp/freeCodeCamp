@@ -15,12 +15,48 @@ videoId: sTMN_pdI6S0
 
 ```yml
 question:
-  text: Question
+  text: |
+    What will the following code print out?:
+
+    ```py
+    import pandas as pd
+    import numpy as np
+
+    s = pd.Series([np.nan, 1, 2, np.nan, 3])
+    s = s.fillna(method='ffill')
+
+    print(s)
+    ```
+
   answers:
-    - one
-    - two
-    - three
-  solution: 3
+    - |
+      ```
+      0    1.0
+      1    1.0
+      2    2.0
+      3    3.0
+      4    3.0
+      dtype: float64
+      ```
+    - |
+      ```
+      0    NaN
+      1    1.0
+      2    2.0
+      3    2.0
+      4    3.0
+      dtype: float64
+      ```
+    - |
+      ```
+      0    NaN
+      1    1.0
+      2    2.0
+      3    NaN
+      4    3.0
+      dtype: float64
+      ```
+  solution: 2
 ```
 
 </section>

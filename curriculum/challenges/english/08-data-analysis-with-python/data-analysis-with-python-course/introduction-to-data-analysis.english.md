@@ -15,12 +15,13 @@ videoId: VJrP2FUzKP0
 
 ```yml
 question:
-  text: Question
+  text: "Why should you choose R over Python for data analysis?"
   answers:
-    - one
-    - two
-    - three
-  solution: 3
+    - "It's simple to learn."
+    - "It's better at dealing with advanced statistical methods."
+    - "There are many powerful libraries that support R."
+    - "It's free and open source."
+  solution: 2
 ```
 
 </section>

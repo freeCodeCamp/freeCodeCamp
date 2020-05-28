@@ -15,11 +15,38 @@ videoId: kfv0K8MtkIc
 
 ```yml
 question:
-  text: Question
+  text: |
+    Fill in the blanks below to complete the architechture for a convolutional neural network:
+
+    ```py
+    model = models.__A__()
+    model.add(layers.__B__(32, (3, 3), activation='relu', input_shape=(32, 32, 3)))
+    model.add(layers.__C__(2, 2))
+    model.add(layers.__B__(64, (3, 3), activation='relu'))
+    model.add(layers.__C__(2, 2))
+    model.add(layers.__B__(32, (3, 3), activation='relu'))
+    model.add(layers.__C__(2, 2))
+    ```
+
   answers:
-    - one
-    - two
-    - three
+    - |
+      A: `Sequential`
+
+      B: `add`
+
+      C: `Wrapper`
+    - |
+      A: `keras`
+
+      B: `Cropping2D`
+
+      C: `AlphaDropout`
+    - |
+      A: `Sequential`
+
+      B: `Conv2D`
+
+      C: `MaxPooling2D`
   solution: 3
 ```
 
