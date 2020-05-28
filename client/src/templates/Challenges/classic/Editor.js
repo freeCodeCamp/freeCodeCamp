@@ -98,11 +98,41 @@ class Editor extends Component {
   constructor(...props) {
     super(...props);
 
-    this.state = {
-      code: '',
-      ext: '',
-      fileKey: ''
+    // TENATIVE PLAN: create a typical order [html/jsx, css, js], put the
+    // available files into that order.  i.e. if it's just one file it will
+    // automatically be first, but  if there's jsx and js (for some reason) it
+    //  will be [jsx, js].
+    // this.state = {
+    //   fileKey: 'indexhtml'
+    // };
+
+    // NOTE: This looks like it should be react state. However we need
+    // to access monaco.editor to create the models and store the state and that
+    // is only available in the react-monaco-editor component's lifecycle hooks
+    // and not react's lifecyle hooks.
+    // As a result it was unclear how to link up the editor's lifecycle with
+    // react's lifecycle. Simply storing the models and state here and letting
+    // the editor control them seems to be the best solution.
+
+    this.data = {
+      indexjs: {
+        model: null,
+        state: null
+      },
+      indexcss: {
+        model: null,
+        state: null
+      },
+      indexhtml: {
+        model: null,
+        state: null
+      }
     };
+
+    // NOTE: for consitency with this.data (and this.options) currentFileKey
+    // is just a property, not state.
+
+    this.currentFileKey = 'indexhtml';
 
     this.options = {
       fontSize: '18px',
@@ -140,15 +170,26 @@ class Editor extends Component {
   }
 
   editorWillMount = monaco => {
+    const { challengeFiles } = this.props;
     defineMonacoThemes(monaco);
+    // If a model is not provided, then the editor 'owns' the model it creates
+    // and will dispose of that model if it is replaced. Since we intend to
+    // swap and reuse models, we have to create our own models to prevent
+    // disposal.
+
+    // If a model exists, there is no need to recreate it.
+    Object.keys(challengeFiles).forEach(key => {
+      this.data[key].model = this.data[key].model
+        ? this.data[key].model
+        : monaco.editor.createModel(
+            challengeFiles[key].contents,
+            modeMap[challengeFiles[key].ext]
+          );
+    });
+    return { model: this.data[this.currentFileKey].model };
   };
 
   editorDidMount = (editor, monaco) => {
-    this.setState({
-      code: this.props.challengeFiles.indexcss.contents,
-      ext: this.props.challengeFiles.indexcss.ext,
-      fileKey: this.props.challengeFiles.indexcss.key
-    });
     this._editor = editor;
     editor.updateOptions({
       accessibilitySupport: this.props.inAccessibilityMode ? 'on' : 'auto'
@@ -223,11 +264,26 @@ class Editor extends Component {
 
   onChange = editorValue => {
     const { updateFile } = this.props;
-    const { fileKey } = this.state;
-    updateFile({ key: fileKey, editorValue });
-    this.setState({
-      code: editorValue
-    });
+    updateFile({ key: this.currentFileKey, editorValue });
+  };
+
+  changeTab = fileKey => {
+    this.currentFileKey = fileKey;
+    const editor = this._editor;
+    const currentState = editor.saveViewState();
+
+    const currentModel = editor.getModel();
+    if (currentModel === this.data.indexjs.model) {
+      this.data.indexjs.state = currentState;
+    } else if (currentModel === this.data.indexcss.model) {
+      this.data.indexcss.state = currentState;
+    } else if (currentModel === this.data.indexhtml.model) {
+      this.data.indexhtml.state = currentState;
+    }
+
+    editor.setModel(this.data[fileKey].model);
+    editor.restoreViewState(this.data[fileKey].state);
+    editor.focus();
   };
 
   componentDidUpdate(prevProps) {
@@ -236,28 +292,47 @@ class Editor extends Component {
     }
   }
 
+  componentWillUnmount() {
+    this.currentFileKey = null;
+    this.data = null;
+  }
+
   render() {
-    const { code, ext, fileKey } = this.state;
     const { theme } = this.props;
     const editorTheme = theme === 'night' ? 'vs-dark-custom' : 'vs-custom';
 
+    // TODO: tabs should be dynamically created from the challengeFiles
+    // TODO: a11y fixes.
     return (
       <Suspense fallback={<Loader timeout={600} />}>
         <span className='notranslate'>
           <div className='monaco-editor-tabs'>
-            <div className='monaco-editor-tab'>index.html</div>
-            <div className='monaco-editor-tab'>script.js</div>
-            <div className='monaco-editor-tab'>styles.css</div>
+            <div
+              className='monaco-editor-tab'
+              onClick={() => this.changeTab('indexhtml')}
+            >
+              index.html
+            </div>
+            <div
+              className='monaco-editor-tab'
+              onClick={() => this.changeTab('indexjs')}
+            >
+              script.js
+            </div>
+            <div
+              className='monaco-editor-tab'
+              onClick={() => this.changeTab('indexcss')}
+            >
+              styles.css
+            </div>
           </div>
           <MonacoEditor
             editorDidMount={this.editorDidMount}
             editorWillMount={this.editorWillMount}
-            key={`${editorTheme}-${fileKey}`}
-            language={modeMap[ext]}
+            key={`${editorTheme}-${this.currentFileKey}`}
             onChange={this.onChange}
             options={this.options}
             theme={editorTheme}
-            value={code}
           />
         </span>
       </Suspense>
