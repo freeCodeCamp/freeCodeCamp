@@ -7,10 +7,10 @@ import { AllChallengeNode } from '../redux/propTypes';
 
 export const IndexPage = ({
   data: {
-    allChallengeNode: { edges }
+    allChallengeNode: { nodes }
   }
 }) => {
-  return <Landing edges={edges} />;
+  return <Landing nodes={nodes} />;
 };
 
 const propTypes = {
@@ -30,18 +30,8 @@ export const query = graphql`
       filter: { isHidden: { eq: false } }
       sort: { fields: [superOrder, order, challengeOrder] }
     ) {
-      edges {
-        node {
-          fields {
-            slug
-            blockName
-          }
-          id
-          block
-          title
-          superBlock
-          dashedName
-        }
+      nodes {
+        superBlock
       }
     }
   }
