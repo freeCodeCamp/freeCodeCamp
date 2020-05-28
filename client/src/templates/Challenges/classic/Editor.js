@@ -303,6 +303,7 @@ class Editor extends Component {
 
     // TODO: tabs should be dynamically created from the challengeFiles
     // TODO: a11y fixes.
+    // TODO: is the key necessary? Try switching themes without it.
     return (
       <Suspense fallback={<Loader timeout={600} />}>
         <span className='notranslate'>
@@ -335,7 +336,7 @@ class Editor extends Component {
           <MonacoEditor
             editorDidMount={this.editorDidMount}
             editorWillMount={this.editorWillMount}
-            key={`${editorTheme}-${this.currentFileKey}`}
+            key={`${editorTheme}`}
             onChange={this.onChange}
             options={this.options}
             theme={editorTheme}
