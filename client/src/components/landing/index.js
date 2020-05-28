@@ -14,7 +14,7 @@ import './landing.css';
 import '../Map/map.css';
 
 const propTypes = {
-  edges: PropTypes.array
+  nodes: PropTypes.array
 };
 
 const BigCallToAction = () => (
@@ -38,8 +38,8 @@ const AsFeaturedSection = () => (
   </Row>
 );
 
-export const Landing = ({ edges }) => {
-  const superBlocks = uniq(edges.map(element => element.node.superBlock));
+export const Landing = ({ nodes }) => {
+  const superBlocks = uniq(nodes.map(node => node.superBlock));
   const interviewPrep = superBlocks.splice(-1);
   return (
     <Fragment>
