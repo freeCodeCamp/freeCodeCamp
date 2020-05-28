@@ -15,12 +15,15 @@ videoId: 5wHw8BTd2ZQ
 
 ```yml
 question:
-  text: Question
+  text: What kind of estimator/model does TensorFlow recommend using for classification?
   answers:
-    - one
-    - two
-    - three
-  solution: 3
+    - |
+      `LinearClassifier`
+    - |
+      `DNNClassifier`
+    - |
+      `BoostedTreesClassifier`
+  solution: 2
 ```
 
 </section>

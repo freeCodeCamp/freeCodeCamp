@@ -15,12 +15,12 @@ videoId: S45tqW6BqRs
 
 ```yml
 question:
-  text: Question
+  text: Which activation function switches values between -1 and 1?
   answers:
-    - one
-    - two
-    - three
-  solution: 3
+    - Relu (Rectified Linear Unit)
+    - Tanh (Hyperbolic Tangent)
+    - Sigmoid
+  solution: 2
 ```
 
 </section>

@@ -15,12 +15,36 @@ videoId: h1XUt1AgIOI
 
 ```yml
 question:
-  text: Question
+  text: |
+    Fill in the blanks below to use Google's pre-trained MobileNet V2 model as a base for a convolutional neural network:
+
+    ```py
+    base_model = tf.__A__.applications.__B__(input_shape=(160, 160, 3),
+                                                   include_top=__C__,
+                                                   weights='imagenet'
+                                                   )
+    ```
+
   answers:
-    - one
-    - two
-    - three
-  solution: 3
+    - |
+      A: `keras`
+
+      B: `MobileNetV2`
+
+      C: `False`
+    - |
+      A: `Keras`
+
+      B: `MobileNetV2`
+
+      C: `True`
+    - |
+      A: `keras`
+
+      B: `mobile_net_v2`
+
+      C: `False`
+  solution: 1
 ```
 
 </section>

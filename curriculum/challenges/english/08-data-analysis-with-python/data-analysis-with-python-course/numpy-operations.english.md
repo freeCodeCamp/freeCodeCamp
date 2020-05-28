@@ -15,12 +15,19 @@ videoId: eqSVcJbaPdk
 
 ```yml
 question:
-  text: Question
+  text: |
+    What is the value of `a` after you run the following code?:
+
+    ```py
+    a = np.arange(5)
+    a + 20
+    ```
+
   answers:
-    - one
-    - two
-    - three
-  solution: 3
+    - "[20, 21, 22, 24, 24]"
+    - "[0, 1, 2, 3, 4, 5]"
+    - "[25, 26, 27, 28, 29]"
+  solution: 2
 ```
 
 </section>

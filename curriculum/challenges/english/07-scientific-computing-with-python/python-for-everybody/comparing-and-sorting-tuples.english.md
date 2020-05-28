@@ -18,7 +18,7 @@ More resources:
 
 ```yml
 question:
-  text: 'Which does the same thing as the following code:
+  text: 'Which does the same thing as the following code?:
 <pre>lst = []<br>for key, val in counts.items():<br>    newtup = (val, key)<br>    lst.append(newtup)<br><br>lst = sorted(lst, reverse=True)<br>print(lst)<pre>'
   answers:
     - 'print( sorted( [ (k,v) for k,v in counts.items() ] ) )'

@@ -15,12 +15,22 @@ videoId: 7txegvyhtVk
 
 ```yml
 question:
-  text: Question
+  text: |
+    What is the value of `b` after running the following code?:
+
+    ```py
+    import numpy as np
+
+    a = np.array(([1, 2, 3, 4, 5], [6, 7, 8, 9, 10]))
+    b = np.max(a, axis=1).sum()
+    ```
+
   answers:
-    - one
-    - two
-    - three
-  solution: 3
+    - '10'
+    - '7'
+    - '5'
+    - '15'
+  solution: 4
 ```
 
 </section>

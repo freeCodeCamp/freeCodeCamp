@@ -20,7 +20,7 @@ question:
   text: 'What does API stand for?'
   answers:
     - 'Application Portable Intelligence'
-    - 'Accociate Programming International'
+    - 'Associate Programming International'
     - 'Application Program Interface'
     - 'Action Portable Interface'
   solution: 3

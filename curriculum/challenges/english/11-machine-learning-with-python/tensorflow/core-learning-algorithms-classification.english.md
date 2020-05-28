@@ -15,12 +15,12 @@ videoId: qFF7ZQNvK9E
 
 ```yml
 question:
-  text: Question
+  text: What is classification?
   answers:
-    - one
-    - two
-    - three
-  solution: 3
+    - The process of separating data points into different classes.
+    - Predicting a numeric value or forecast based on independent and dependent variables.
+    - None of the above.
+  solution: 1
 ```
 
 </section>
