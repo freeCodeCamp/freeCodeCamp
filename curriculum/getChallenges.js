@@ -28,7 +28,6 @@ exports.getMetaForBlock = getMetaForBlock;
 
 exports.getChallengesForLang = function getChallengesForLang(lang) {
   let curriculum = {};
-  const validate = challengeSchemaValidator(lang);
   return new Promise(resolve => {
     let running = 1;
     function done() {
@@ -39,13 +38,13 @@ exports.getChallengesForLang = function getChallengesForLang(lang) {
     readDirP({ root: getChallengesDirForLang(lang) })
       .on('data', file => {
         running++;
-        buildCurriculum(file, curriculum, validate).then(done);
+        buildCurriculum(file, curriculum, lang).then(done);
       })
       .on('end', done);
   });
 };
 
-async function buildCurriculum(file, curriculum, validate) {
+async function buildCurriculum(file, curriculum, lang) {
   const { name, depth, path: filePath, fullPath, stat } = file;
   if (depth === 1 && stat.isDirectory()) {
     // extract the superBlock info
@@ -81,12 +80,12 @@ async function buildCurriculum(file, curriculum, validate) {
   }
   const { meta } = challengeBlock;
 
-  const challenge = await createChallenge(fullPath, meta, validate);
+  const challenge = await createChallenge(fullPath, meta, lang);
 
   challengeBlock.challenges = [...challengeBlock.challenges, challenge];
 }
 
-async function createChallenge(fullPath, maybeMeta, validate) {
+async function createChallenge(fullPath, maybeMeta, lang) {
   let meta;
   if (maybeMeta) {
     meta = maybeMeta;
@@ -99,7 +98,7 @@ async function createChallenge(fullPath, maybeMeta, validate) {
   }
   const { name: superBlock } = superBlockInfoFromFullPath(fullPath);
   const challenge = await parseMarkdown(fullPath);
-  const result = validate(challenge);
+  const result = challengeSchemaValidator(lang)(challenge);
   if (result.error) {
     console.log(result.value);
     throw new Error(result.error);
