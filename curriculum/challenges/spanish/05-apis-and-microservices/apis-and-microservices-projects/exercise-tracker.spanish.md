@@ -9,7 +9,7 @@ forumTopicId: 301505
 
 ## Description
 <section id='description'> 
-Cree una aplicación de JavaScript full stack que sea funcionalmente similar a esta: <a href='https://fuschia-custard.glitch.me/' target='_blank'>https://fuschia-custard.glitch.me/</a> . 
+Cree una aplicación de JavaScript full stack que sea funcionalmente similar a esta: <a href='https://nonstop-pond.glitch.me/' target='_blank'>https://nonstop-pond.glitch.me/</a> . 
 Trabajar en este proyecto implicará que escriba su código en Glitch en nuestro proyecto de inicio. Después de completar el proyecto, puede copiar su URL pública de Glitch (en la página de inicio de su aplicación) en esta pantalla para probarlo. Opcionalmente, puede optar por escribir su proyecto en otra plataforma, pero debe ser visible públicamente para nuestras pruebas. 
 Inicie este proyecto en Glitch usando <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-project-exercisetracker/' target='_blank'>este enlace</a> o clone <a href='https://github.com/freeCodeCamp/boilerplate-project-exercisetracker/'>este repositorio</a> en GitHub! Si utiliza Glitch, recuerde guardar el enlace a su proyecto en un lugar seguro. 
 </section>
