@@ -196,7 +196,11 @@ export class Project extends Component {
                         : 'hide-youtube-video'
                     }
                     onReady={this.videoIsReady}
-                    opts={{ rel: 0 }}
+                    opts={{
+                      rel: 0,
+                      width: '960px',
+                      height: '540px'
+                    }}
                     videoId={videoId}
                   />
                   <i>

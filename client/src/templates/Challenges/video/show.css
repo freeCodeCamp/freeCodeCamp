@@ -3,10 +3,11 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  padding: 20px 0;
 }
 
 .video-placeholder-loader {
-  min-height: 360px;
+  min-height: 540px;
   display: flex;
   align-items: center;
 }
@@ -20,16 +21,21 @@
 }
 
 .video-quiz-options {
-  padding: 1px 16px;
   background-color: var(--tertiary-background);
+}
+
+/* remove bootstrap margin here */
+.video-quiz-options > label {
+  margin: 0;
 }
 
 .video-quiz-option-label {
   display: block;
-  margin: 20px;
+  padding: 20px;
   cursor: pointer;
   display: flex;
   font-weight: normal;
+  border: 2px solid var(--secondary-background);
 }
 
 .video-quiz-input-hidden {
@@ -63,6 +69,13 @@
   transform: translate(-50%, -50%);
 }
 
+/* remove bootstrap properties */
 .video-quiz-option > p {
+  margin: 0;
+}
+
+/* remove bootstrap properties */
+.video-quiz-option > pre {
+  padding: 0;
   margin: 0;
 }
