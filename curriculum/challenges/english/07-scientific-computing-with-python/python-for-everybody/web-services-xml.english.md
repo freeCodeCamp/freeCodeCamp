@@ -18,11 +18,15 @@ videoId: _pZ0srbg7So
 ```yml
 question:
   text: 'What is wrong with the following XML?:
-<pre>&ltperson&gt<br>
-&ltname>Chuck&lt/name><br>
-&ltphone type="intl"><br>  +1 734 303 4456<br>
-&ltemail hide="yes" /><br>
-&lt/person></pre>'
+  <pre>
+    &ltperson&gt
+    <br>  &ltname>Chuck&lt/name>
+    <br>  &ltphone type="intl">
+    <br>    +1 734 303 4456
+    <br>  &lt/phone&gt
+    <br>  &ltemail hide="yes" /><br>
+    &lt/person>
+  </pre>'
   answers:
     - 'Email tag is missing closing tag.'
     - 'Spacing will cause XML to be invalid.'
