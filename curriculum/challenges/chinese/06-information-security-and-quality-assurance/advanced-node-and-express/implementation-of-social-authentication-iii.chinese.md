@@ -2,34 +2,46 @@
 id: 589a8eb3f9fc0f352b528e72
 title: Implementation of Social Authentication III
 challengeType: 2
-videoUrl: ''
-localeTitle: 社会认证的实施III
+isHidden: false
+forumTopicId: 301558
+localeTitle: 实现第三种社交登录
 ---
 
 ## Description
-<section id="description">提醒一下，这个项目是基于<a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-socialauth/">Glitch</a>的以下入门项目构建的，或者是从<a href="https://github.com/freeCodeCamp/boilerplate-socialauth/">GitHub</a>克隆的。策略的最后一部分是处理从Github返回的配置文件。我们需要加载用户数据库对象（如果存在）或创建一个（如果不存在）并填充配置文件中的字段，然后返回用户的对象。 Github在每个配置文件中为我们提供了一个唯一的<em>ID</em> ，我们可以使用它来搜索（已经实现）用户序列化。下面是您可以在项目中使用的示例实现 - 它位于作为新策略的第二个参数的函数内，就在<code>console.log(profile);</code>目前是： <pre> db.collection（ &#39;socialusers&#39;）。findAndModify（
-    {id：profile.id}，
-    {}，
-    {$ setOnInsert：{
-        id：profile.id，
-        name：profile.displayName || &#39;John Doe&#39;，
-        照片：profile.photos [0] .value || ”
-        电子邮件：profile.emails [0] .value || &#39;没有公开电子邮件&#39;，
-        created_on：new Date（），
-        provider：profile.provider || “
-    } $设置：{
-        last_login：新日期（）
-    } $ INC {
-        login_count：1
-    }}，
-    {upsert：true，new：true}，
-    （错误，doc）=&gt; {
-        return cb（null，doc.value）;
-    }
-）; </pre>使用findAndModify，它允许您搜索对象并对其进行更新，如果对象不存在则将其置换，并在每次回调函数中接收新对象。在这个例子中，我们总是将last_login设置为now，我们总是将login_count增加1，并且只有当我们插入一个新对象（新用户）时，我们才会填充大部分字段。需要注意的是使用默认值。有时，返回的个人资料不会填写所有信息，或者用户会选择保留私密信息;所以在这种情况下我们必须处理它以防止错误。你现在应该可以登录你的应用了 - 试试吧！当您认为自己已经做对时，请提交您的页面。如果你正在运行到错误，您可以检查出的这个小项目的完成代码的例子<a href="https://glitch.com/#!/project/guttural-birch">在这里</a> 。 </section>
+<section id='description'>
+注意，本项目在<a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-socialauth/'>这个 Glitch 项目</a>的基础上进行开发，你也可以从 <a href='https://github.com/freeCodeCamp/boilerplate-socialauth/'>GitHub</a> 上克隆。
+验证策略的最后一部分是处理从 GitHub 返回的个人信息。如果用户存在，我们就需要从数据库中读取用户数据并在 profile 页面加载；否则，我们需要把用户信息添加到数据库。GitHub 在用户信息中为我们提供了独一无二的 <em>id</em>，我们可以通过序列化的 id 在数据库中搜索用户（已实现）。以下是这个逻辑的实现示例，我们应该把它传到新策略的第二个参数，就是目前<code>console.log(profile);</code>的下方：
+
+```js
+db.collection('socialusers').findAndModify(
+  {id: profile.id},
+  {},
+  {$setOnInsert:{
+    id: profile.id,
+    name: profile.displayName || 'John Doe',
+    photo: profile.photos[0].value || '',
+    email: profile.emails[0].value || 'No public email',
+    created_on: new Date(),
+    provider: profile.provider || ''
+  },$set:{
+    last_login: new Date()
+  },$inc:{
+    login_count: 1
+  }},
+  {upsert:true, new: true},
+  (err, doc) => {
+    return cb(null, doc.value);
+  }
+);
+```
+
+<code>findAndModify</code>的作用是在数据库中查询对象并更新，如果对象不存在，我们也可以<code>upsert</code>（注，upsert 可以理解为 update + insert）它，然后我们可以在回调方法里获取到插入数据后的新对象。在这个例子中，我们会把 last_login 设置成为 now，而且总会为 login_count 加 1。只有在插入一个新对象（新用户）时，我们才会初始化这些字段。另外，还需要注意默认值的使用。有时返回的用户信息可能不全，可能是因为用户没有填写，也可能是因为用户选择不公开一部分信息。在这种情况下，我们需要进行相应的处理，以防我们的 app 报错。
+你现在应该可以登录你的应用了，试试吧。完成上述要求后，你就可以在左边提交你的页面链接。如果运行出错，你可以在 <a href='https://glitch.com/#!/project/guttural-birch'>here</a> 这里检查这个迷你项目的完成代码。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -37,7 +49,7 @@ localeTitle: 社会认证的实施III
 
 ```yml
 tests:
-  - text: Github策略设置完成
+  - text: GitHub 策略应配置完成。
     testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /GitHubStrategy[^]*db.collection/gi, 'Strategy should use now use the database to search for the user'); assert.match(data, /GitHubStrategy[^]*socialusers/gi, 'Strategy should use "socialusers" as db collection'); assert.match(data, /GitHubStrategy[^]*return cb/gi, 'Strategy should return the callback function "cb"'); }, xhr => { throw new Error(xhr.statusText); })
 
 ```
@@ -53,6 +65,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
+
 </section>

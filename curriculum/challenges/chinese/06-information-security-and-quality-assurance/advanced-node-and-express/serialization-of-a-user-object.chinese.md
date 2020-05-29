@@ -2,24 +2,39 @@
 id: 5895f70cf9fc0f352b528e66
 title: Serialization of a User Object
 challengeType: 2
-videoUrl: ''
+isHidden: false
+forumTopicId: 301563
 localeTitle: 用户对象的序列化
 ---
 
 ## Description
-<section id="description">提醒一下，这个项目是基于<a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/">Glitch</a>的以下入门项目构建的，或者是从<a href="https://github.com/freeCodeCamp/boilerplate-advancednode/">GitHub</a>克隆的。序列化和反序列化是身份验证方面的重要概念。序列化对象意味着将其内容转换为一个小<em>键，</em>基本上可以将其反序列化为原始对象。这使我们能够知道与服务器通信的人，而无需在每次请求新页面时发送用户名和密码等身份验证数据。要正确设置它，我们需要一个序列化函数和一个反序列化函数。在护照中，我们使用<code>passport.serializeUser( OURFUNCTION )</code>和<code>passport.deserializeUser( OURFUNCTION )</code>创建它们。使用2个参数调用serializeUser，完整的用户对象和护照使用的回调。在回调中返回应该是唯一的键来标识该用户 - 最容易使用的用户是对象中的用户_id，因为它应该是MongoDb生成的唯一用户。类似地，使用该密钥和护照的回调函数调用deserializeUser，但这次我们必须获取该密钥并将用户完整对象返回到回调。要进行查询搜索Mongo _id，您必须创建<code>const ObjectID = require(&#39;mongodb&#39;).ObjectID;</code> ，然后使用它调用<code>new ObjectID(THE_ID)</code> 。一定要将MongoDB添加为依赖项。您可以在以下示例中看到： <pre> passport.serializeUser（（user，done）=&gt; {
-   done（null，user._id）;
- }）; </pre><br><pre> passport.deserializeUser（（id，done）=&gt; {
-        db.collection（ &#39;用户&#39;）。findOne（
-            {_id：new ObjectID（id）}，
-            （错误，doc）=&gt; {
-                完成（null，doc）;
-            }
-        ）;
-    }）; </pre>注意：这个deserializeUser将抛出一个错误，直到我们在下一步中设置数据库，因此注释掉整个块并在函数deserializeUser中调用<code>done(null, null)</code> 。当您认为自己已经做对时，请提交您的页面。 </section>
+<section id='description'>
+注意，本项目在<a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/'>这个 Glitch 项目</a>的基础上进行开发，你也可以从 <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a> 上克隆。
+序列化和反序列化在身份认证中是很重要的概念。序列化一个对象就是将其内容转换成一个体积很小的 <em>key</em>，后续可以通过这个 <em>key</em> 反序列化为原始对象。这样，服务器就可以在用户未登录时识别用户，或者说给这个用户一个唯一标识，用户也不需要在每次访问不同页面时都给服务器发送用户名和密码。
+我们需要用到序列化和反序列化的方法来进行配置。passport 为我们提供了<code>passport.serializeUser( OURFUNCTION )</code>和<code>passport.deserializeUser( OURFUNCTION )</code>两个方法。
+<code>serializeUser</code>方法接收两个参数，分别是表示用户的对象和一个回调函数。其中，回调函数的返回值应为这个用户的唯一标识符：最简单的写法就是让它返回用户的<code>_id</code>，这个<code>_id</code>属性是 MongoDB 为用户创建的唯一字段。类似地，反序列化也接收两个参数，分别是在序列化时生成的标识符以及一个回调函数。在回调函数里，我们需要根据根据传入的标识符（比如 _id）返回表示用户的对象。为了在 MongoDB 中通过 query（查询语句）获取 _id 字段，首先我们需要引入 MongoDB 的<code>ObjectID</code>方法：<code>const ObjectID = require('mongodb').ObjectID;</code>；然后调用它：<code>new ObjectID(THE_ID)</code>。当然，这一切的前提都是先引入 MongoDB 作为依赖。你可以在下面的例子中看到：
+
+```js
+passport.serializeUser((user, done) => {
+  done(null, user._id);
+});
+passport.deserializeUser((id, done) => {
+  db.collection('users').findOne(
+    {_id: new ObjectID(id)},
+      (err, doc) => {
+        done(null, doc);
+      }
+  );
+});
+```
+
+注意：在完全配置好 MongoDB 前，<code>deserializeUser</code>会抛出错误。因此，现在请先注释掉上面的代码，在回调函数中仅仅调用<code>done(null, null)</code>即可。
+完成上述要求后，你就可以在左边提交你的页面链接。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -27,13 +42,13 @@ localeTitle: 用户对象的序列化
 
 ```yml
 tests:
-  - text: 序列化用户功能正确
+  - text: 应存在正确的<code>serializeUser</code>方法。
     testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /passport.serializeUser/gi, 'You should have created your passport.serializeUser function'); assert.match(data, /null, user._id/gi, 'There should be a callback in your serializeUser with (null, user._id)'); }, xhr => { throw new Error(xhr.statusText); })
-  - text: 反序列化用户功能正确
+  - text: 应存在正确的<code>deserializeUser</code>方法。
     testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /passport.deserializeUser/gi, 'You should have created your passport.deserializeUser function'); assert.match(data, /null,( |)null/gi, 'There should be a callback in your deserializeUser with (null, null) for now'); }, xhr => { throw new Error(xhr.statusText); })
-  - text: MongoDB是一个依赖项
+  - text: MongoDB 应作为项目的依赖。
     testString: getUserInput => $.get(getUserInput('url')+ '/_api/package.json') .then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, 'mongodb', 'Your project should list "mongodb" as a dependency'); }, xhr => { throw new Error(xhr.statusText); })
-  - text: Mongodb正确要求包括ObjectId
+  - text: 注释掉的代码中应包含<code>ObjectId</code>。
     testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /require.*("|')mongodb("|')/gi, 'You should have required mongodb'); assert.match(data, /new ObjectID.*id/gi, 'Even though the block is commented out, you should use new ObjectID(id) for when we add the database'); }, xhr => { throw new Error(xhr.statusText); })
 
 ```
@@ -49,6 +64,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
+
 </section>

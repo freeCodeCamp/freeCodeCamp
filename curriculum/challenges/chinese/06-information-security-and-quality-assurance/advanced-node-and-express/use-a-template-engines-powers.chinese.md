@@ -2,15 +2,26 @@
 id: 5895f70bf9fc0f352b528e64
 title: Use a Template Engine's Powers
 challengeType: 2
-videoUrl: ''
-localeTitle: 使用模板引擎的权力
+isHidden: false
+forumTopicId: 301567
+localeTitle: 使用模板引擎
 ---
 
 ## Description
-<section id="description">提醒一下，这个项目是基于<a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/">Glitch</a>的以下入门项目构建的，或者是从<a href="https://github.com/freeCodeCamp/boilerplate-advancednode/">GitHub</a>克隆的。使用模板引擎的最大特点之一是能够将变量从服务器传递到模板文件，然后再将其呈现为HTML。在您的Pug文件中，您将通过引用变量名称作为<code>#{variable_name}</code>与元素上的其他文本内联，或者在元素上使用相等的一侧而不使用空格（例如<code>p= variable_name</code>来设置该<code>p= variable_name</code> 。 p元素文本等于变量。我们强烈建议在他们的Githubs自述文件中<a href="https://github.com/pugjs/pug">查看</a> Pug的语法和结构。 Pug就是使用空格和制表符来显示嵌套元素，并减少制作漂亮网站所需的代码量。查看项目中包含的我们的pug文件&#39;index.pug&#39;，我们使用变量<em>title</em>和<em>message</em>要从我们的服务器单独传递它们，您需要将一个对象作为第二个参数添加到<em>res.render中</em> ，并带有变量和他们的价值。例如，传递此对象以设置索引视图的变量： <code>{title: &#39;Hello&#39;, message: &#39;Please login&#39;</code>它应该看起来像： <code>res.render(process.cwd() + &#39;/views/pug/index&#39;, {title: &#39;Hello&#39;, message: &#39;Please login&#39;});</code>现在刷新页面，您应该在视图中呈现的那些值在index.pug文件中列出的正确位置！当您认为自己已经做对时，请提交您的页面。 </section>
+<section id='description'>
+注意，本项目在<a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/'>这个 Glitch 项目</a>的基础上进行开发，你也可以从 <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a> 上克隆。
+模版引擎最大的特点之一就是在 HTML 页面展示之前，可以从服务端传变量到模版文件。
+在 Pug 文件中，你可以用变量名来调用变量，比如写成<code>#{variable_name}</code>来实现行内调用，或像<code>p= variable_name</code>把元素与变量直接写在一起，这表示 p 元素的内容等价于这个变量。
+建议大家在 <a href='https://github.com/pugjs/pug'>Pug 的 README</a> 里看看它的语法和用法，这样你写出的代码会相对简练。另外要注意，Pug 使用缩进来表示嵌套的代码块。
+在 pug 的 'index.pug' 文件中，我们使用了 <em>title</em> 和 <em>message</em> 两个变量。
+为了从服务器传递这些信息，你需要给 <em>res.render</em> 的第二个参数传入一个对象，其中包含变量对应的值。比如，如果你想传递对象<code>{title: 'Hello', message: 'Please login'</code>到你的主页，那么应该这样写：
+<code>res.render(process.cwd() + '/views/pug/index', {title: 'Hello', message: 'Please login'});</code>
+刷新页面，如果页面中数据显示正确，你就可以提交你的页面了。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,7 +29,7 @@ localeTitle: 使用模板引擎的权力
 
 ```yml
 tests:
-  - text: 帕格渲染变量正确
+  - text: Pug 应正确地展示变量。
     testString: getUserInput => $.get(getUserInput('url')+ '/') .then(data => { assert.match(data, /pug-variable("|')>Please login/gi, 'Your projects home page should now be rendered by pug with the projects .pug file unaltered'); }, xhr => { throw new Error(xhr.statusText); })
 
 ```
@@ -34,6 +45,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
+
 </section>

@@ -2,15 +2,25 @@
 id: 5895f70df9fc0f352b528e69
 title: How to Use Passport Strategies
 challengeType: 2
-videoUrl: ''
-localeTitle: 如何使用Passport策略
+isHidden: false
+forumTopicId: 301555
+localeTitle: 如何使用 Passport 策略
 ---
 
 ## Description
-<section id="description">提醒一下，这个项目是基于<a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/">Glitch</a>的以下入门项目构建的，或者是从<a href="https://github.com/freeCodeCamp/boilerplate-advancednode/">GitHub</a>克隆的。在提供的index.pug文件中，实际上有一个登录表单。它之前已被隐藏，因为内联javascript <code>if showLogin</code>的形式缩进后。在showLogin作为变量从未定义之前，它从未呈现包含该表单的代码块。继续在该页面的res.render上向对象<code>showLogin: true</code>添加一个新变量。刷新页面时，您应该看到表单！此表单设置为<b>POST</b> on <em>/ login，</em>因此我们应该设置此接受POST并验证用户身份。对于此挑战，您应添加路由/登录以接受POST请求。要在此路由上进行身份验证，您需要添加中间件才能发送响应。这是通过在您的<code>function(req,res)</code>之前使用中间件传递另一个参数来完成的！要使用的中间件是<code>passport.authenticate(&#39;local&#39;)</code> 。 <em>passport.authenticate</em>也可以将一些选项作为参数，例如： <code>{ failureRedirect: &#39;/&#39; }</code>这非常有用，所以一定要添加它。作为使用中间件后的响应（只有在身份验证中间件通过时才会调用）应该是将用户重定向到<em>/ profile，</em>并且该路由应该呈现视图&#39;profile.pug&#39;。如果身份验证成功，则用户对象将保存在<em>req.user中</em> 。现在，如果您在表单中输入用户名和密码，它应该重定向到主页<em>/</em>并且在服务器的控制台中应该是&#39;用户{USERNAME}尝试登录&#39;。因为我们目前无法登录未注册的用户。当您认为自己已经做对时，请提交您的页面。如果您遇到错误，可以<a href="https://gist.github.com/JosephLivengood/8a335d1a68ed9170da02bb9d8f5b71d5">在这里查看</a>到目前为止完成的项目。 </section>
+<section id='description'>
+注意，本项目在<a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/'>这个 Glitch 项目</a>的基础上进行开发，你也可以从 <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a> 上克隆。
+在提供的 index.pug 文件里有一个登录表单。因为这个表单中存在行内 JavaScript 代码<code>if showLogin</code>，因此它是隐藏的。因为 showLogin 未定义，所以表单不会渲染。如果在该页面的<code>res.render()</code>里添加一个包含<code>showLogin: true</code>的对象，你就可以在刷新页面后看到表单。当你点击 login 时，表单会向服务器的 <em>/login</code> 发送 POST 请求，此时服务器端就可以接受 POST 请求信息并进行用户验证。
+在这次挑战中，你需要为 POST 请求添加路由<code>/login</code>。为了用这个路由进行验证，你需要添加一个中间件，中间件应作为参数添加到用于处理请求的回调函数<code>function(req,res)</code>之前。对于 passport 的验证中间件，应这样调用：<code>passport.authenticate('local')</code>。
+<em>passport.authenticate</em> 也接收选项作为参数，这些选项用于设置验证，例如<code>{ failureRedirect: '/' }</code>就很有用，请记得添加到你的代码中。如果中间件验证通过，我们就应该提供相应的后续处理。在这个挑战中，我们需要让用户重定到 <em>/profile</em>，这样<code>profile.pug</code>页面就会渲染。
+如果验证通过，用户对象将会储存到 <em>req.user</em> 中。
+这时，如果你在表单里输入了用户名和密码，路由将会重定向到主页 <em>/</em>，在服务端将会打印 'User {USERNAME} attempted to log in.'，由于现在我们还没有实现注册功能，因此所有登录尝试都会失败。
+完成上述要求后，你就可以在左边提交你的页面链接。如果运行出错，你可以在<a href='https://gist.github.com/JosephLivengood/8a335d1a68ed9170da02bb9d8f5b71d5'>这里</a>检查你的项目完成情况。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,9 +28,9 @@ localeTitle: 如何使用Passport策略
 
 ```yml
 tests:
-  - text: 所有步骤都在server.js中正确实现
+  - text: server.js 中应正确执行所有步骤。
     testString:  getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /showLogin:( |)true/gi, 'You should be passing the variable "showLogin" as true to your render function for the homepage'); assert.match(data, /failureRedirect:( |)('|")\/('|")/gi, 'Your code should include a failureRedirect to the "/" route'); assert.match(data, /login[^]*post[^]*local/gi, 'You should have a route for login which accepts a POST and passport.authenticates local'); }, xhr => { throw new Error(xhr.statusText); })
-  - text: 对/ login的POST请求正确重定向到/
+  - text: 到 /login 的 POST 请求应重定向到 /
     testString: getUserInput => $.post(getUserInput('url')+ '/login') .then(data => { assert.match(data, /Looks like this page is being rendered from Pug into HTML!/gi, 'A login attempt at this point should redirect to the homepage since we do not have any registered users'); }, xhr => { throw new Error(xhr.statusText); })
 
 ```
@@ -36,6 +46,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
+
 </section>
