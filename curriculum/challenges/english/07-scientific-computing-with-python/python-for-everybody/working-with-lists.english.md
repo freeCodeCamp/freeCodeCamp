@@ -17,12 +17,18 @@ videoId: lCnHfTHkhbE
 
 ```yml
 question:
-  text: 'Which method is used to add an item at the end of a list?'
+  text: |
+    Which method is used to add an item at the end of a list?
+
   answers:
-    - 'insert'
-    - 'push'
-    - 'append'
-    - 'new'
+    - |
+        insert
+    - |
+        push
+    - |
+        append
+    - |
+        new
   solution: 3
 ```
 
