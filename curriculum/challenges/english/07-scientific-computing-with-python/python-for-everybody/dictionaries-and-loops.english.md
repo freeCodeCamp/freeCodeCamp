@@ -19,8 +19,12 @@ More resources:
 ```yml
 question:
   text: "What will the following code print?:
-<pre>counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100}<br>
-for key in counts:<br>    if counts[key] > 10 :<br>        print(key, counts[key])</pre>"
+  <pre>
+    counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100}<br>
+    for key in counts:
+    <br>    if counts[key] > 10:
+    <br>        print(key, counts[key])
+  </pre>"
   answers:
     - 'annie 42<br>jan 100<br>'
     - 'chuck 1<br>annie 42<br>jan 100'
