@@ -19,8 +19,10 @@ More resources:
 ```yml
 question:
   text: 'What is the value of i in the following code?
-<pre>word = "bananana"<br>
-i = word.find("na")</pre>'
+  <pre>
+    word = "bananana"<br>
+    i = word.find("na")
+  </pre>'
   answers:
     - 'nanana'
     - '2'
