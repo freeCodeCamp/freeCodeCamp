@@ -9,7 +9,7 @@ forumTopicId: 18187
 
 ## Description
 <section id='description'>
-Instead of generating a random number between zero and a given number like we did before, we can generate a random number that falls within a range of two specific numbers.
+Instead of generating a random whole number between zero and a given number like we did before, we can generate a random whole number that falls within a range of two specific numbers.
 To do this, we'll define a minimum number <code>min</code> and a maximum number <code>max</code>.
 Here's the formula we'll use. Take a moment to read it and try to understand what this code is doing:
 <code>Math.floor(Math.random() * (max - min + 1)) + min</code>
@@ -17,7 +17,7 @@ Here's the formula we'll use. Take a moment to read it and try to understand wha
 
 ## Instructions
 <section id='instructions'>
-Create a function called <code>randomRange</code> that takes a range <code>myMin</code> and <code>myMax</code> and returns a random number that's greater than or equal to <code>myMin</code>, and is less than or equal to <code>myMax</code>, inclusive.
+Create a function called <code>randomRange</code> that takes a range <code>myMin</code> and <code>myMax</code> and returns a random whole number that's greater than or equal to <code>myMin</code>, and is less than or equal to <code>myMax</code>, inclusive.
 </section>
 
 ## Tests
