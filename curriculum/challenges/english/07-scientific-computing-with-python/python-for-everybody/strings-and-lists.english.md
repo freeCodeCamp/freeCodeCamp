@@ -19,10 +19,12 @@ More resources:
 ```yml
 question:
   text: "What does n equal in this code?
-<pre>words = 'His e-mail is q-lar@freecodecamp.org'<br>
-pieces = words.split()<br>
-parts = pieces[3].split('-')<br>
-n = parts[1]</pre>"
+  <pre>
+    words = 'His e-mail is q-lar@freecodecamp.org'<br>
+    pieces = words.split()<br>
+    parts = pieces[3].split('-')<br>
+    n = parts[1]
+  </pre>"
   answers:
     - 'mail'
     - 'q'
