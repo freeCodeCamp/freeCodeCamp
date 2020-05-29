@@ -18,16 +18,24 @@ videoId: FiABKEuaSJ8
 ```yml
 question:
   text: 'What will the following program print?:
-<pre>class PartyAnimal:<br>   x = 0<br><br>   def party(self) :<br>     self.x = self.x + 2<br>     print(self.x)<br>
-<br>
-an = PartyAnimal()<br>
-an.party()<br>
-an.party()</pre>'
+  <pre>
+    class PartyAnimal:
+    <br>   x = 0
+    <br><br>   def party(self):
+    <br>     self.x = self.x + 2
+    <br>     print(self.x)<br>
+    <br>
+    an = PartyAnimal()
+    <br>
+    an.party()
+    <br>
+    an.party()
+  </pre>'
   answers:
     - 'So far 1<br>So far 2'
     - '0<br>0'
     - '2<br>2'
-    - '1<br>2'
+    - '2<br>4'
   solution: 4
 ```
 
