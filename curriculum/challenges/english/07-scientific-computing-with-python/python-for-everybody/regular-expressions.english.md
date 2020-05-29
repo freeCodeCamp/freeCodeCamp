@@ -30,7 +30,7 @@ question:
     - |
         \_
     - |
-        \.
+        \\.
   solution: 2
 ```
 

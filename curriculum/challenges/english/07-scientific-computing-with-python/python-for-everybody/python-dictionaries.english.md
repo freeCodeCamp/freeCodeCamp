@@ -27,15 +27,25 @@ question:
     ```
   answers:
     - |
+        ```python
         {'Fri': 20, 'Thu': 6, 'Sat': 1}
+        ```
     - |
+        ```python
         {'Fri': 20, 'Thu': 6, 'Sat': 1, 'Thu': 13, 'Sat': 2, 'Sun': 9}
+        ```
     - |
+        ```python
         {'Sun': 9}
+        ```
     - |
+        ```python
         {'Thu': 13, 'Sat': 2, 'Sun': 9}
+        ```
     - |
+        ```python
         {'Fri': 20, 'Thu': 13, 'Sat': 2, 'Sun': 9}
+        ```
   solution: 5
 ```
 
