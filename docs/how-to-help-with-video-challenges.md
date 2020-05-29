@@ -174,4 +174,4 @@ For more examples, you can look at the markdown files for the following video co
 
 ## Open a pull request
 
-After creating one or more questions, you can commit the changes to a new branch and [open a pull request](how-to-open-a-pull-request.md). Make sure that you target the branch 'next-python-projects' and NOT 'master'.
+After creating one or more questions, you can commit the changes to a new branch and [open a pull request](how-to-open-a-pull-request.md).
