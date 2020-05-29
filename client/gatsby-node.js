@@ -73,12 +73,12 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
         {
           allChallengeNode(
             sort: { fields: [superOrder, order, challengeOrder] }
+            filter: { isHidden: { eq: false } }
           ) {
             edges {
               node {
                 block
                 challengeType
-                isHidden
                 fields {
                   slug
                 }
@@ -122,11 +122,9 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
         }
 
         // Create challenge pages.
-        const challengeEdges = result.data.allChallengeNode.edges.filter(
-          ({ node: { isHidden } }) => !isHidden
+        result.data.allChallengeNode.edges.forEach(
+          createChallengePages(createPage)
         );
-
-        challengeEdges.forEach(createChallengePages(createPage));
 
         // Create intro pages
         result.data.allMarkdownRemark.edges.forEach(edge => {

@@ -19,10 +19,10 @@ videoId: uJxGeTYy0us
 question:
   text: 'Which is NOT true about objects in Python?'
   answers:
-  - 'Objects get created and used'
-  - 'Objects are bits of code and data'
-  - 'Objects hide detail'
-  - 'Objects are one of the five standard data types'
+  - 'Objects get created and used.'
+  - 'Objects are bits of code and data.'
+  - 'Objects hide detail.'
+  - 'Objects are one of the five standard data types.'
   solution: 4
 ```
 

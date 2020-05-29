@@ -15,12 +15,14 @@ videoId: r9hRyGGjOgQ
 
 ```yml
 question:
-  text: Question
+  text: Which of the following is **not** a type of tensor?
   answers:
-    - one
-    - two
-    - three
-  solution: 3
+    - Variable
+    - Flowing
+    - Placeholder
+    - SparseTensor
+    - Constant
+  solution: 2
 ```
 
 </section>

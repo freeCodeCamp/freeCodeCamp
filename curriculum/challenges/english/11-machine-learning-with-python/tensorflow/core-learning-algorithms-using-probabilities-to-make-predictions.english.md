@@ -15,11 +15,14 @@ videoId: fYAYvLUawnc
 
 ```yml
 question:
-  text: Question
+  text: What TensorFlow module should you import to implement `.HiddenMarkovModel()`?
   answers:
-    - one
-    - two
-    - three
+    - |
+      `tensorflow.keras`
+    - |
+      `tensorflow_gpu`
+    - |
+      `tensorflow_probability`
   solution: 3
 ```
 

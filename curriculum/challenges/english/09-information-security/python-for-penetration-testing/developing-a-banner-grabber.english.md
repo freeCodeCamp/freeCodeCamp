@@ -15,11 +15,23 @@ videoId: CeGW761BIsA
 
 ```yml
 question:
-  text: Question
+  text: |
+    Fill in the blanks to complete the `banner` function below:
+
+    ```py
+    def banner(ip, port):
+        s = socket.socket()
+        s.____((ip, ____))
+        print(s.recv(1024))
+    ```
+
   answers:
-    - one
-    - two
-    - three
+    - |
+      `connect`, `port`
+    - |
+      `getsockname`, `'1-1024'`
+    - |
+      `connect`, `int(port)`
   solution: 3
 ```
 

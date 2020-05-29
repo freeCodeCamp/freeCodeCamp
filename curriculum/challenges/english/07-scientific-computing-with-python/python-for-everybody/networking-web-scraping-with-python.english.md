@@ -20,7 +20,7 @@ More resources:
 
 ```yml
 question:
-  text: 'What Python library is used for parsing HTML documents and extracting data from HTML documents.'
+  text: 'What Python library is used for parsing HTML documents and extracting data from HTML documents?'
   answers:
     - 'socket'
     - 'http'

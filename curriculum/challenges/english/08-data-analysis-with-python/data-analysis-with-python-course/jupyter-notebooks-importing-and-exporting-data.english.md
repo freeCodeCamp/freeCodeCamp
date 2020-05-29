@@ -15,12 +15,14 @@ videoId: k1msxD3JIxE
 
 ```yml
 question:
-  text: Question
+  text: "What kind of data can you import and work with in a Jupyter Notebook?"
   answers:
-    - one
-    - two
-    - three
-  solution: 3
+    - "Excel files."
+    - "CSV files."
+    - "XML files."
+    - "Data from an API."
+    - "All of the above."
+  solution: 5
 ```
 
 </section>

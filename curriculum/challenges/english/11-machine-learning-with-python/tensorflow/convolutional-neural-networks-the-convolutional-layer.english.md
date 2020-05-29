@@ -15,12 +15,12 @@ videoId: LrdmcQpTyLw
 
 ```yml
 question:
-  text: Question
+  text: What are the three main properties of each convolutional layer?
   answers:
-    - one
-    - two
-    - three
-  solution: 3
+    - Input size, the number of filters, and the sample size of the filters.
+    - Input size, input dimensions, and the color values of the input.
+    - Input size, input padding, and stride.
+  solution: 1
 ```
 
 </section>
