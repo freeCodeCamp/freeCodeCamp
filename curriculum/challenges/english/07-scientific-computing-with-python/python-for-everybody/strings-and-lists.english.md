@@ -18,18 +18,23 @@ More resources:
 
 ```yml
 question:
-  text: "What does n equal in this code?
-  <pre>
-    words = 'His e-mail is q-lar@freecodecamp.org'<br>
-    pieces = words.split()<br>
-    parts = pieces[3].split('-')<br>
+  text: |
+    What does n equal in this code?
+    ```python
+    words = 'His e-mail is q-lar@freecodecamp.org'
+    pieces = words.split()
+    parts = pieces[3].split('-')
     n = parts[1]
-  </pre>"
+    ```
   answers:
-    - 'mail'
-    - 'q'
-    - 'lar'
-    - 'lar@freecodecamp.org'
+    - |
+        mail
+    - |
+        q
+    - |
+        lar
+    - |
+        lar@freecodecamp.org
   solution: 4
 ```
 

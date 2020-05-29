@@ -20,15 +20,24 @@ More resources:
 
 ```yml
 question:
-  text: 'What Python library is used for parsing HTML documents and extracting data from HTML documents?'
+  text: |
+    What Python library is used for parsing HTML documents and extracting data from HTML documents?
+
   answers:
-    - 'socket'
-    - 'http'
-    - 'BeautifulSoup'
-    - 'PrettyBiscuit'
-    - 'WonderfulSalad'
-    - 'HttpParser'
-    - 'GrunkleStan'
+    - |
+        socket
+    - |
+        http
+    - |
+        BeautifulSoup
+    - |
+        PrettyBiscuit
+    - |
+        WonderfulSalad
+    - |
+        HttpParser
+    - |
+        GrunkleStan
   solution: 3
 ```
 

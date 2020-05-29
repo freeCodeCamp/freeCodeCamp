@@ -37,10 +37,14 @@ question:
     ```
 
   answers:
-    - 'A simple web server.'
-    - 'A simple email client.'
-    - 'A simple todo list.'
-    - 'A simple web browser.'
+    - |
+        A simple web server.
+    - |
+        A simple email client.
+    - |
+        A simple todo list.
+    - |
+        A simple web browser.
   solution: 4
 ```
 

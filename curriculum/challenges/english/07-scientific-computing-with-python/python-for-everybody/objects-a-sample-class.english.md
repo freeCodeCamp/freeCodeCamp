@@ -17,25 +17,36 @@ videoId: FiABKEuaSJ8
 
 ```yml
 question:
-  text: 'What will the following program print?:
-  <pre>
+  text: |
+    What will the following program print?:
+    ```python
     class PartyAnimal:
-    <br>   x = 0
-    <br><br>   def party(self):
-    <br>     self.x = self.x + 2
-    <br>     print(self.x)<br>
-    <br>
+        x = 0
+        def party(self):
+            self.x = self.x + 2
+            print(self.x)
+
     an = PartyAnimal()
-    <br>
     an.party()
-    <br>
     an.party()
-  </pre>'
+    ```
   answers:
-    - 'So far 1<br>So far 2'
-    - '0<br>0'
-    - '2<br>2'
-    - '2<br>4'
+    - |
+        So far 1
+        
+        So far 2
+    - |
+        0
+
+        0
+    - |
+        2
+
+        2
+    - |
+        2
+    
+        4
   solution: 4
 ```
 
