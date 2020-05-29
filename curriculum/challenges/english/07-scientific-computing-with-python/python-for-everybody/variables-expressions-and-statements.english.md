@@ -18,7 +18,7 @@ videoId: nELR-uyyrok
 ```yml
 question:
   text: |
-    What is the symbol is used in an assignment statement?
+    What is the symbol used in an assignment statement?
 
   answers:
     - |
