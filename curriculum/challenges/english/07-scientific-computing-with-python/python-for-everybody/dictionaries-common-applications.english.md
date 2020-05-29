@@ -18,8 +18,10 @@ videoId: f17xPfIXct0
 ```yml
 question:
   text: "What will the following code print?
-<pre>counts = { 'quincy' : 1 , 'mrugesh' : 42, 'beau': 100, '0': 10}<br>
-print(counts.get('kris', 0))</pre>"
+  <pre>
+    counts = { 'quincy' : 1 , 'mrugesh' : 42, 'beau': 100, '0': 10}<br>
+    print(counts.get('kris', 0))
+  </pre>"
   answers:
     - '1'
     - 'quincy'
