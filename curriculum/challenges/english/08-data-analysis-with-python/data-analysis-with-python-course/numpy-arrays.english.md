@@ -15,11 +15,33 @@ videoId: VDYVFHBL1AM
 
 ```yml
 question:
-  text: Question
+  text: |
+    What will the following code print out?:
+
+    ```py
+    A = np.array([
+        ['a', 'b', 'c'],
+        ['d', 'e', 'f'],
+        ['g', 'h', 'i']
+    ])
+
+    print(A[:, :2])
+    ```
+
   answers:
-    - one
-    - two
-    - three
+    - "[['a' 'b']]"
+    - |
+      ```
+      [['b' 'c']
+      ['e' 'f']
+      ['h' 'i']]
+      ```
+    - |
+      ```
+      [['a' 'b']
+      ['d' 'e']
+      ['g' 'h']]
+      ```
   solution: 3
 ```
 

@@ -15,12 +15,20 @@ videoId: N1ttsMmcVMM
 
 ```yml
 question:
-  text: Question
+  text: |
+    What will the following code print out?:
+
+    ```py
+    a = np.arange(5)
+
+    print(a <= 3)
+    ```
   answers:
-    - one
-    - two
-    - three
-  solution: 3
+    - "[False, False, False, False, True]"
+    - "[5]"
+    - "[0, 1, 2, 3]"
+    - "[True, True, True, True, False]"
+  solution: 4
 ```
 
 </section>

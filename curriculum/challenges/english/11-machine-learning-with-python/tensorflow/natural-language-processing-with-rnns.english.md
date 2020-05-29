@@ -15,12 +15,13 @@ videoId: ZyCaF5S-lKg
 
 ```yml
 question:
-  text: Question
+  text: |
+    Natural Language Processing is a branch of artifitial intelligence that...:
   answers:
-    - one
-    - two
-    - three
-  solution: 3
+    - deals with how computers understand and process natural/human languages.
+    - translates image data into natural/human languages.
+    - is focused on translating computer languages into natural/human languages.
+  solution: 1
 ```
 
 </section>

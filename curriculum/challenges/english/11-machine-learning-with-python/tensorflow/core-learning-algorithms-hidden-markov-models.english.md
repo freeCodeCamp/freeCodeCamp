@@ -15,12 +15,12 @@ videoId: IZg24y4wEPY
 
 ```yml
 question:
-  text: Question
+  text: What makes a Hidden Markov model different than linear regression or classification?
   answers:
-    - one
-    - two
-    - three
-  solution: 3
+    - It uses probability distributions to predict future events or states.
+    - It analyzes the relationship between independent and dependent variables to make predictions.
+    - It separates data points into separate categories. 
+  solution: 1
 ```
 
 </section>

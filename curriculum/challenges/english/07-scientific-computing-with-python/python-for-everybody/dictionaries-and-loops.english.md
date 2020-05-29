@@ -18,7 +18,7 @@ More resources:
 
 ```yml
 question:
-  text: "What will the following code print?
+  text: "What will the following code print?:
 <pre>counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100}<br>
 for key in counts:<br>    if counts[key] > 10 :<br>        print(key, counts[key])</pre>"
   answers:

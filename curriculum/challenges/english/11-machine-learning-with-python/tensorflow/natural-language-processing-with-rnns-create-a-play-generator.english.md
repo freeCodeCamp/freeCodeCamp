@@ -15,12 +15,28 @@ videoId: j5xsxjq_Xk8
 
 ```yml
 question:
-  text: Question
+  text: |
+
+    Fill in the blanks below to create the training examples for the RNN:
+
+    ```py
+    char_dataset = tf.data.__A__.__B__(text_as_int)
+    ```
+
   answers:
-    - one
-    - two
-    - three
-  solution: 3
+    - |
+      A: `DataSet`
+
+      B: `from_tensor_slices`
+    - |
+      A: `data`
+
+      B: `from_tensors`
+    - |
+      A: `DataSet`
+
+      B: `from_generator`
+  solution: 1
 ```
 
 </section>

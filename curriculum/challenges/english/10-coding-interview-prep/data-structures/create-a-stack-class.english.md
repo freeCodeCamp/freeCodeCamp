@@ -17,7 +17,7 @@ Apart from the <code>push</code> and <code>pop</code> method, stacks have other 
 ## Instructions
 <section id='instructions'>
 
-Write a <code>push</code> method that pushes an element to the top of the stack, a <code>pop</code> method that removes the element on the top of the stack, a <code>peek</code> method that looks at the first element in the stack, an <code>isEmpty</code> method that checks if the stack is empty, and a <code>clear</code> method that removes all elements from the stack.
+Write a <code>push</code> method that pushes an element to the top of the stack, a <code>pop</code> method that removes and returns the element on the top of the stack, a <code>peek</code> method that looks at the top element in the stack, an <code>isEmpty</code> method that checks if the stack is empty, and a <code>clear</code> method that removes all elements from the stack.
 Normally stacks don't have this, but we've added a <code>print</code> helper method that console logs the collection.
 </section>
 

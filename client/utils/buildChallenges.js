@@ -14,10 +14,10 @@ const arrToString = arr =>
 
 exports.localeChallengesRootDir = getChallengesDirForLang(locale);
 
-exports.replaceChallengeNode = async function replaceChallengeNode(
-  fullFilePath
-) {
-  return prepareChallenge(await createChallenge(fullFilePath));
+exports.replaceChallengeNode = locale => {
+  return async function replaceChallengeNode(fullFilePath) {
+    return prepareChallenge(await createChallenge(fullFilePath, null, locale));
+  };
 };
 
 exports.buildChallenges = async function buildChallenges() {

@@ -17,7 +17,7 @@ videoId: FiABKEuaSJ8
 
 ```yml
 question:
-  text: 'What will the following program print:
+  text: 'What will the following program print?:
 <pre>class PartyAnimal:<br>   x = 0<br><br>   def party(self) :<br>     self.x = self.x + 2<br>     print(self.x)<br>
 <br>
 an = PartyAnimal()<br>

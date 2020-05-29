@@ -17,20 +17,30 @@ videoId: zjyT9DaAjx4
 
 ```yml
 question:
-  text: "What does the following code create?
-  <pre>
-import socket<br>
-<br>
-mysock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)<br>
-mysock.connect(('data.pr4e.org', 80))<br>
-cmd = 'GET http://data.pr4e.org/romeo.txt HTTP/1.0\r\n\r\n'.encode()<br>
-mysock.send(cmd)<br>
-<br>while True:<br>    data = mysock.recv(512)<br>    if len(data) < 1:<br>        break<br>    print(data.decode(),end='')<br><br>mysock.close()</pre>"
+  text: |
+    What does the following code create?:
+
+    ```py
+    import socket
+ 
+    mysock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    mysock.connect(('data.pr4e.org', 80))
+    cmd = 'GET http://data.pr4e.org/romeo.txt HTTP/1.0\r\n\r\n'.encode()
+    mysock.send(cmd)
+    
+    while True:
+        data = mysock.recv(512)
+            if len(data) < 1:
+                break
+            print(data.decode(),end='')
+    mysock.close()
+    ```
+
   answers:
-    - 'simple web server'
-    - 'simple email client'
-    - 'simple todo list'
-    - 'simple web browser'
+    - 'A simple web server.'
+    - 'A simple email client.'
+    - 'A simple todo list.'
+    - 'A simple web browser.'
   solution: 4
 ```
 
