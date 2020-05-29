@@ -30,13 +30,21 @@ question:
     ```
   answers:
     - |
-        print( sorted( [ (k,v) for k,v in counts.items() ] ) )
+        ```python
+        print( sorted( [ (v,k) for k,v in counts.items() ] ) )
+        ```
     - |
+        ```python
         print( [ (k,v) for k,v in counts.items().sorted() ] )
+        ```
     - |
-        print( sorted( [ (k,v) for k,v in counts.keys() ] ) )
+        ```python
+        print( sorted( [ (v,k) for k,v in counts.keys() ] ) )
+        ```
     - |
+        ```python
         print( [ (k,v) for k,v in counts.values().sort() ] )
+        ```
   solution: 1
 ```
 

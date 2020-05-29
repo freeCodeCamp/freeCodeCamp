@@ -32,15 +32,39 @@ question:
     ```
   answers:
     - |
-        Zap ABC jane fred jane
+        Zap
+        
+        ABC
+        
+        jane
+        
+        fred
+        
+        jane
     - |
-        Zap ABC Zap
+        Zap
+        
+        ABC
+        
+        Zap
     - |
-        ABC Zap jane
+        ABC
+        
+        Zap
+        
+        jane
     - |
-        ABC Zap ABC
+        ABC
+        
+        Zap
+        
+        ABC
     - |
-        Zap Zap Zap
+        Zap
+        
+        Zap
+        
+        Zap
   solution: 4
 ```
 
