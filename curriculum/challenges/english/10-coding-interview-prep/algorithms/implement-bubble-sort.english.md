@@ -32,7 +32,7 @@ tests:
   - text: <code>bubbleSort</code> should return an array that is unchanged except for order.
     testString: assert.sameMembers(bubbleSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]), [1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]);
   - text: <code>bubbleSort</code> should not use the built-in <code>.sort()</code> method.
-    testString: assert(!code.match(/\.?[\s\S]*?sort/));
+    testString: assert(!code.match(/\.\s*sort\s*\(/));
 
 ```
 
