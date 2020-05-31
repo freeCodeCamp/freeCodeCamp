@@ -59,18 +59,11 @@ class ShowUser extends Component {
   constructor(props) {
     super(props);
 
-    this.timer = null;
     this.state = {
       textarea: ''
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  componentWillUnmount() {
-    if (this.timer) {
-      clearInterval(this.timer);
-    }
   }
 
   handleChange(e) {
