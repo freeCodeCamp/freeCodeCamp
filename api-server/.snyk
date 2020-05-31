@@ -1,0 +1,68 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.14.1
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-567746:
+    - lodash:
+        patched: '2020-05-31T17:43:54.232Z'
+    - express-validator > lodash:
+        patched: '2020-05-31T17:43:54.232Z'
+    - loopback-boot > lodash:
+        patched: '2020-05-31T17:43:54.232Z'
+    - normalizr > lodash:
+        patched: '2020-05-31T17:43:54.232Z'
+    - '@freecodecamp/loopback-component-passport > strong-globalize > lodash':
+        patched: '2020-05-31T17:43:54.232Z'
+    - loopback > strong-globalize > lodash:
+        patched: '2020-05-31T17:43:54.232Z'
+    - loopback-connector-mongodb > strong-globalize > lodash:
+        patched: '2020-05-31T17:43:54.232Z'
+    - loopback-boot > strong-globalize > lodash:
+        patched: '2020-05-31T17:43:54.232Z'
+    - loopback > async > lodash:
+        patched: '2020-05-31T17:43:54.232Z'
+    - loopback > loopback-datasource-juggler > lodash:
+        patched: '2020-05-31T17:43:54.232Z'
+    - loopback-connector-mongodb > async > lodash:
+        patched: '2020-05-31T17:43:54.232Z'
+    - loopback > loopback-datasource-juggler > strong-globalize > lodash:
+        patched: '2020-05-31T17:43:54.232Z'
+    - loopback > loopback-phase > strong-globalize > lodash:
+        patched: '2020-05-31T17:43:54.232Z'
+    - loopback > loopback-datasource-juggler > async > lodash:
+        patched: '2020-05-31T17:43:54.232Z'
+    - loopback > loopback-phase > async > lodash:
+        patched: '2020-05-31T17:43:54.232Z'
+    - loopback-connector-mongodb > loopback-connector > strong-globalize > lodash:
+        patched: '2020-05-31T17:43:54.232Z'
+    - loopback > strong-remoting > strong-globalize > lodash:
+        patched: '2020-05-31T17:43:54.232Z'
+    - loopback > loopback-connector-remote > loopback-datasource-juggler > lodash:
+        patched: '2020-05-31T17:43:54.232Z'
+    - loopback > strong-remoting > jayson > lodash:
+        patched: '2020-05-31T17:43:54.232Z'
+    - loopback > loopback-connector-remote > loopback-datasource-juggler > strong-globalize > lodash:
+        patched: '2020-05-31T17:43:54.232Z'
+    - loopback > strong-remoting > loopback-phase > strong-globalize > lodash:
+        patched: '2020-05-31T17:43:54.232Z'
+    - loopback > loopback-connector-remote > loopback-datasource-juggler > async > lodash:
+        patched: '2020-05-31T17:43:54.232Z'
+    - loopback > strong-remoting > loopback-phase > async > lodash:
+        patched: '2020-05-31T17:43:54.232Z'
+    - loopback > loopback-datasource-juggler > loopback-connector > strong-globalize > lodash:
+        patched: '2020-05-31T17:43:54.232Z'
+    - loopback > strong-remoting > strong-error-handler > strong-globalize > lodash:
+        patched: '2020-05-31T17:43:54.232Z'
+    - loopback > loopback-connector-remote > strong-remoting > strong-globalize > lodash:
+        patched: '2020-05-31T17:43:54.232Z'
+    - loopback > loopback-connector-remote > strong-remoting > jayson > lodash:
+        patched: '2020-05-31T17:43:54.232Z'
+    - loopback > loopback-connector-remote > strong-remoting > loopback-phase > strong-globalize > lodash:
+        patched: '2020-05-31T17:43:54.232Z'
+    - loopback > loopback-connector-remote > strong-remoting > loopback-phase > async > lodash:
+        patched: '2020-05-31T17:43:54.232Z'
+    - loopback > loopback-connector-remote > loopback-datasource-juggler > loopback-connector > strong-globalize > lodash:
+        patched: '2020-05-31T17:43:54.232Z'
+    - loopback > loopback-connector-remote > strong-remoting > strong-error-handler > strong-globalize > lodash:
+        patched: '2020-05-31T17:43:54.232Z'

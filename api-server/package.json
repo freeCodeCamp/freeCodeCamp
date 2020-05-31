@@ -9,7 +9,9 @@
     "build": "babel server --out-dir lib --ignore 'node_modules /**/*','/**/*.test.js' --copy-files",
     "ensure-env": "node ../tools/scripts/build/ensure-env.js",
     "start": "cross-env DEBUG=fcc* node production-start.js",
-    "test": "jest"
+    "test": "jest",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "license": "BSD-3-Clause",
   "dependencies": {
@@ -32,8 +34,8 @@
     "dotenv": "^6.2.0",
     "express-flash": "~0.0.2",
     "express-session": "^1.17.0",
-    "express-state": "^1.2.0",
-    "express-validator": "^5.3.1",
+    "express-state": "^2.0.0",
+    "express-validator": "^6.0.0",
     "googleapis": "^42.0.0",
     "helmet": "^3.21.1",
     "helmet-csp": "^2.9.3",
@@ -65,7 +67,8 @@
     "shortid": "^2.2.15",
     "stripe": "^6.1.0",
     "uuid": "^3.3.3",
-    "validator": "^9.4.1"
+    "validator": "^9.4.1",
+    "snyk": "^1.333.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
@@ -95,5 +98,6 @@
   },
   "resolutions": {
     "babel-core": "7.0.0-bridge.0"
-  }
+  },
+  "snyk": true
 }
