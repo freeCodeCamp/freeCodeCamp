@@ -34,6 +34,8 @@ const myFunc = () => "value";
 ```
 
 This code will still return <code>value</code> by default.
+
+<strong>Note</strong>: Unlike the function declarations covered in the previous section, arrow functions are not 'hoisted' to the top of their scope. This means that they cannot be invoked by any code that precedes them in the source code. Because of this, arrow functions are perfectly suited to use cases like the one in the above example, but care must be taken when considering whether to use them in place of function declarations elsewhere in your code.
 </section>
 
 ## Instructions
