@@ -35,7 +35,6 @@ After the last line shown above, <code>ourDog</code> looks like:
   "tails": 1,
   "friends": ["everything!"]
 }
-*/
 ```
 
 </section>
