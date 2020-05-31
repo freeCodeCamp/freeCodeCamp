@@ -21,7 +21,7 @@
 }
 
 .video-quiz-options {
-  background-color: var(--tertiary-background);
+  background-color: var(--primary-background);
 }
 
 /* remove bootstrap margin here */
@@ -35,7 +35,18 @@
   cursor: pointer;
   display: flex;
   font-weight: normal;
-  border: 2px solid var(--secondary-background);
+  border-left: 4px solid var(--tertiary-background);
+  border-right: 4px solid var(--tertiary-background);
+  border-top: 2px solid var(--tertiary-background);
+  border-bottom: 2px solid var(--tertiary-background);
+}
+
+.video-quiz-option-label:first-child {
+  border-top: 4px solid var(--tertiary-background);
+}
+
+.video-quiz-option-label:last-child {
+  border-bottom: 4px solid var(--tertiary-background);
 }
 
 .video-quiz-input-hidden {
