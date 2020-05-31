@@ -17,11 +17,16 @@ videoId: 6-w_qIUwaxU
 
 ```yml
 question:
-  text: 'How does the page rank algorithm work?'
+  text: |
+    How does the PageRank algorithm work?
+
   answers:
-    - 'It determines which pages are most highly connected.'
-    - 'It ranks pages based on view counts.'
-    - 'It figures out which pages contain the most important content.'
+    - |
+        It determines which pages are most highly connected.
+    - |
+        It ranks pages based on view counts.
+    - |
+        It figures out which pages contain the most important content.
   solution: 1
 ```
 

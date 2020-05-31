@@ -18,12 +18,26 @@ More resources:
 
 ```yml
 question:
-  text: 'Which of these evaluates to False?'
+  text: |
+    Which of these evaluates to False?
+
   answers:
-    - '0 == 0.0'
-    - '0 is 0.0'
-    - '0 is not 0.0'
-    - '0 = 0.0'
+    - |
+        ```python
+        0 == 0.0
+        ```
+    - |
+        ```python
+        0 is 0.0
+        ```
+    - |
+        ```python
+        0 is not 0.0
+        ```
+    - |
+        ```python
+        0 = 0.0
+        ```
   solution: 2
 ```
 
