@@ -21,13 +21,21 @@ videoId: 0QeGbZNS_bY
 
 ```yml
 question:
-  text: 'What will print out after running these two lines of code:
-  <pre>x = 6<br>print(x)</pre>'
+  text: |
+    What will print out after running these two lines of code:
+    ```python
+    x = 6
+    print(x)
+    ```
   answers:
-    - 'x'
-    - '6'
-    - 'x = 6'
-    - '(x)'
+    - |
+        x
+    - |
+        6
+    - |
+        x = 6
+    - |
+        (x)
   solution: 2
 ```
 

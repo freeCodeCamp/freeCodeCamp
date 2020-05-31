@@ -17,12 +17,34 @@ videoId: gz_IfIsZQtc
 
 ```yml
 question:
-  text: 'Which code is indented correctly to print "Yes" if x = 0 and y = 10?'
+  text: |
+    Which code is indented correctly to print "Yes" if x = 0 and y = 10?
+
   answers:
-    - '<pre>if 0 == x:<br>if y == 10:<br>print("Yes")</pre>'
-    - '<pre>if 0 == x:<br>    if y == 10:<br>    print("Yes")</pre>'
-    - '<pre>if 0 == x:<br>if y == 10:<br>    print("Yes")</pre>'
-    - '<pre>if 0 == x:<br>    if y == 10:<br>        print("Yes")</pre>'
+    - |
+        ```python
+        if 0 == x:
+        if y == 10:
+        print("Yes")
+        ```
+    - |
+        ```python
+        if 0 == x:
+            if y == 10:
+            print("Yes")
+        ```
+    - |
+        ```python
+        if 0 == x:
+        if y == 10:
+            print("Yes")
+        ```
+    - |
+        ```python
+        if 0 == x:
+            if y == 10:
+                print("Yes")
+        ```
   solution: 4
 ```
 

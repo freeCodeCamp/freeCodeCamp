@@ -19,13 +19,24 @@ More resources:
 
 ```yml
 question:
-  text: 'What will print out after running this code:<pre>width = 15<br>height = 12.0<br>print(height/3)</pre>'
+  text: |
+    What will print out after running this code:
+    ```python
+    width = 15
+    height = 12.0
+    print(height/3)
+    ```
   answers:
-    - '39'
-    - '4'
-    - '4.0'
-    - '5.0'
-    - '5'
+    - |
+        39
+    - |
+        4
+    - |
+        4.0
+    - |
+        5.0
+    - |
+        5
   solution: 3
 ```
 

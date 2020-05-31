@@ -21,11 +21,16 @@ videoId: H6qtjRTfSog
 
 ```yml
 question:
-  text: 'Where are your programs stored when they are running?'
+  text: |
+    Where are your programs stored when they are running?
+
   answers:
-    - 'Hard Drive.'
-    - 'Memory.'
-    - 'Central Processing Unit.'
+    - |
+        Hard Drive.
+    - |
+        Memory.
+    - |
+        Central Processing Unit.
   solution: 2
 
 ```

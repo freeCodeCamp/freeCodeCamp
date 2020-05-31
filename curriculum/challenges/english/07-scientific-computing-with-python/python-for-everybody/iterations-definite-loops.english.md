@@ -17,13 +17,21 @@ videoId: hiRTRAqNlpE
 
 ```yml
 question:
-  text: 'How many lines will the following code print?:
-<pre>for i in [2,1,5]:<br>    print(i)</pre>'
+  text: |
+    How many lines will the following code print?:
+    ```python
+    for i in [2,1,5]:
+        print(i)
+    ```
   answers:
-    - '1'
-    - '2'
-    - '3'
-    - '5'
+    - |
+        1
+    - |
+        2
+    - |
+        3
+    - |
+        5
   solution: 3
 ```
 

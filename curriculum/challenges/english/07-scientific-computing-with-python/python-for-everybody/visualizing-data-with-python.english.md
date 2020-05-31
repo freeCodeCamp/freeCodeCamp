@@ -17,13 +17,20 @@ videoId: e3lydkH0prw
 
 ```yml
 question:
-  text: 'Most data needs to be ______ before using it.'
+  text: |
+    Most data needs to be ______ before using it.
+
   answers:
-    - 'converted to JSON format'
-    - 'graphed'
-    - 'cleaned'
-    - 'memorized'
-    - 'turned into song'
+    - |
+        converted to JSON format
+    - |
+        graphed
+    - |
+        cleaned
+    - |
+        memorized
+    - |
+        turned into song
   solution: 3
 ```
 

@@ -19,11 +19,16 @@ More resources:
 
 ```yml
 question:
-  text: 'Who should learn to program?'
+  text: |
+    Who should learn to program?
+
   answers:
-    - 'College students.'
-    - 'People who want to become software developers.'
-    - 'Everyone.'
+    - |
+        College students.
+    - |
+        People who want to become software developers.
+    - |
+        Everyone.
   solution: 3
 ```
 

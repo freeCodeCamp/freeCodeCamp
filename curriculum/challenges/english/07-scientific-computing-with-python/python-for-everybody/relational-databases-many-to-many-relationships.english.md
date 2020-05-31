@@ -22,12 +22,17 @@ More resources:
 
 ```yml
 question:
-  text: 'Which is an example of a many-to-many relationship?'
+  text: |
+    Which is an example of a many-to-many relationship?
   answers:
-    - 'teacher to student'
-    - 'customer to order'
-    - 'book to pages'
-    - 'city to country'
+    - |
+        teacher to student
+    - |
+        customer to order
+    - |
+        book to pages
+    - |
+        city to country
   solution: 1
 ```
 

@@ -17,15 +17,23 @@ videoId: f17xPfIXct0
 
 ```yml
 question:
-  text: "What will the following code print?
-<pre>counts = { 'quincy' : 1 , 'mrugesh' : 42, 'beau': 100, '0': 10}<br>
-print(counts.get('kris', 0))</pre>"
+  text: |
+    What will the following code print?
+    ```python
+    counts = { 'quincy' : 1 , 'mrugesh' : 42, 'beau': 100, '0': 10}
+    print(counts.get('kris', 0))
+    ```
   answers:
-    - '1'
-    - 'quincy'
-    - '0'
-    - '10'
-    - '[will return error]'
+    - |
+        2
+    - |
+        quincy
+    - |
+        0
+    - |
+        10
+    - |
+        [will return error]
   solution: 3
 ```
 

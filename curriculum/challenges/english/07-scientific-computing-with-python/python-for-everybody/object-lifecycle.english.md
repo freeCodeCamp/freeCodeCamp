@@ -17,20 +17,57 @@ videoId: p1r3h_AMMIM
 
 ```yml
 question:
-  text: "What will the following program print?:
-<pre>
-class PartyAnimal:<br>   x = 0<br>   name = ''<br>   def __init__(self, nam):<br>     self.name = nam<br>     print(self.name,'constructed')<br><br>   def party(self):<br>     self.x = self.x + 1<br>     print(self.name,'party count',self.x)<br>
-<br>
-q = PartyAnimal('Quincy')<br>
-m = PartyAnimal('Miya')<br>
-<br>
-q.party()<br>
-m.party()<br>
-q.party()"
+  text: |
+    What will the following program print?:
+    ```python
+    class PartyAnimal:
+        x = 0
+        name = ''
+        def __init__(self, nam):
+            self.name = nam
+            print(self.name,'constructed')
+        def party(self):
+            self.x = self.x + 1
+            print(self.name,'party count',self.x)
+
+    q = PartyAnimal('Quincy')
+    m = PartyAnimal('Miya')
+
+    q.party()
+    m.party()
+    q.party()
+    ```
   answers:
-    - 'Quincy constructed<br>Miya constructed<br>Quincy party count 1<br>Miya party count 2<br>Quincy party count 3'
-    - 'Quincy constructed<br>Miya constructed<br>Quincy party count 1<br>Miya party count 1<br>Quincy party count 2'
-    - 'Quincy constructed<br>Quincy party count 1<br>Quincy party count 2<br>Miya constructed<br>Miya party count 1'
+    - |
+        Quincy constructed
+        
+        Miya constructed
+
+        Quincy party count 1
+
+        Miya party count 2
+
+        Quincy party count 3
+    - |
+        Quincy constructed
+
+        Miya constructed
+
+        Quincy party count 1
+
+        Miya party count 1
+
+        Quincy party count 2
+    - |
+        Quincy constructed
+
+        Quincy party count 1
+
+        Quincy party count 2
+
+        Miya constructed
+
+        Miya party count 1
   solution: 2
 ```
 

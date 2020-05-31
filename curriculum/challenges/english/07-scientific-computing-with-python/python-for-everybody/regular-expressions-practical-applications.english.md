@@ -17,12 +17,18 @@ videoId: xCjFU9G6x48
 
 ```yml
 question:
-  text: 'What will search for a "$" in a regular expression?'
+  text: |
+    What will search for a "$" in a regular expression?
+
   answers:
-    - '$'
-    - '\dollar\'
-    - '\$'
-    - '!$'
+    - |
+        $
+    - |
+        \dollar\
+    - |
+        \$
+    - |
+        !$
   solution: 3
 ```
 

@@ -17,11 +17,16 @@ videoId: Pv_pJgVu8WI
 
 ```yml
 question:
-  text: 'Which type of encoding do most websites use?'
+  text: |
+    Which type of encoding do most websites use?
+
   answers:
-    - 'UTF-8'
-    - 'UTF-16'
-    - 'UTF-32'
+    - |
+        UTF-8
+    - |
+        UTF-16
+    - |
+        UTF-32
   solution: 1
 ```
 

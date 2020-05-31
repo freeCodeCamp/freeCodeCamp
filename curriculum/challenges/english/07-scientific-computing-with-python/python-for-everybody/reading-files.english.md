@@ -17,13 +17,20 @@ videoId: Fo1tW09KIwo
 
 ```yml
 question:
-  text: 'What is used to indicate a new line in a string?'
+  text: |
+    What is used to indicate a new line in a string?
+
   answers:
-    - '\n'
-    - '{new_line}'
-    - '{n}'
-    - '/n'
-    - '/new'
+    - |
+        \n
+    - |
+        {new_line}
+    - |
+        {n}
+    - |
+        /n
+    - |
+        /new
   solution: 1
 ```
 

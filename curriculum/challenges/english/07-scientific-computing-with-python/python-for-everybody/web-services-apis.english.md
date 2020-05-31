@@ -17,12 +17,18 @@ videoId: oUNn1psfBJg
 
 ```yml
 question:
-  text: 'What does API stand for?'
+  text: |
+    What does API stand for?
+
   answers:
-    - 'Application Portable Intelligence'
-    - 'Associate Programming International'
-    - 'Application Program Interface'
-    - 'Action Portable Interface'
+    - |
+        Application Portable Intelligence
+    - |
+        Associate Programming International
+    - |
+        Application Program Interface
+    - |
+        Action Portable Interface
   solution: 3
 ```
 

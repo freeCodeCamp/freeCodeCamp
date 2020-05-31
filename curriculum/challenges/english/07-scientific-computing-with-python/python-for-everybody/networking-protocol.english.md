@@ -17,12 +17,18 @@ videoId: c6vZGescaSc
 
 ```yml
 question:
-  text: 'What type of HTTP request is usually used to access a website?'
+  text: |
+    What type of HTTP request is usually used to access a website?
+
   answers:
-    - 'POST'
-    - 'GET'
-    - 'WEB'
-    - 'ACCESS'
+    - |
+        POST
+    - |
+        GET
+    - |
+        WEB
+    - |
+        ACCESS
   solution: 2
 ```
 

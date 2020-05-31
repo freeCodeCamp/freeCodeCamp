@@ -17,15 +17,21 @@ videoId: 7lFM1T_CxBs
 
 ```yml
 question:
-  text: "What will the output of the following code be like?:
-<pre>import urllib.request<br>
-<br>
-fhand = urllib.request.urlopen('http://data.pr4e.org/romeo.txt')<br>
-for line in fhand:<br>    print(line.decode().strip())</pre>"
+  text: |
+    What will the output of the following code be like?:
+    ```python
+    import urllib.request
+    fhand = urllib.request.urlopen('http://data.pr4e.org/romeo.txt')
+    for line in fhand:
+        print(line.decode().strip())
+    ```
   answers:
-    - 'Just contents of "romeo.txt".'
-    - 'A header and the contents of "romeo.txt".'
-    - 'A header, a footer, and the contents of "romeo.txt".'
+    - |
+        Just contents of "romeo.txt".
+    - |
+        A header and the contents of "romeo.txt".
+    - |
+        A header, a footer, and the contents of "romeo.txt".
   solution: 1
 ```
 

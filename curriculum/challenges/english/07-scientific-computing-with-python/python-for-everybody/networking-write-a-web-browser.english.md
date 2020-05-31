@@ -30,17 +30,21 @@ question:
     
     while True:
         data = mysock.recv(512)
-            if len(data) < 1:
-                break
-            print(data.decode(),end='')
+        if len(data) < 1:
+            break
+        print(data.decode(),end='')
     mysock.close()
     ```
 
   answers:
-    - 'A simple web server.'
-    - 'A simple email client.'
-    - 'A simple todo list.'
-    - 'A simple web browser.'
+    - |
+        A simple web server.
+    - |
+        A simple email client.
+    - |
+        A simple todo list.
+    - |
+        A simple web browser.
   solution: 4
 ```
 

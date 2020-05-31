@@ -17,13 +17,20 @@ videoId: oNl1OVDPGKE
 
 ```yml
 question:
-  text: 'What are the two most common ways to send data over the internet?'
+  text: |
+    What are the two most common ways to send data over the internet?
+
   answers:
-    - 'JSON and TXT'
-    - 'JSON and XML'
-    - 'XML and TXT'
-    - 'XML and PHP'
-    - 'PHP and TXT'
+    - |
+        JSON and TXT
+    - |
+        JSON and XML
+    - |
+        XML and TXT
+    - |
+        XML and PHP
+    - |
+        PHP and TXT
   solution: 2
 ```
 

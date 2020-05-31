@@ -21,12 +21,18 @@ More resources:
 
 ```yml
 question:
-  text: 'When making a request from the Twitter API, what information must always be sent with the request?'
+  text: |
+    When making a request from the Twitter API, what information must always be sent with the request?
+
   answers:
-    - 'Twitter username'
-    - 'date range'
-    - 'search term'
-    - 'key'
+    - |
+        Twitter username
+    - |
+        date range
+    - |
+        search term
+    - |
+        key
   solution: 4
 ```
 

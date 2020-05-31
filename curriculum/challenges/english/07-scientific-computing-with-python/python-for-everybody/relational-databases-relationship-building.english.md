@@ -17,11 +17,16 @@ videoId: A-t18zKJvmo
 
 ```yml
 question:
-  text: 'What does the INSERT command do in SQL?'
+  text: |
+    What does the INSERT command do in SQL?
+
   answers:
-    - 'It defines a new row by listing the fields we want to include followed by the values we want placed in the new row.'
-    - 'It defines a new column by listing the rows we want to include followed by the values we want placed in the new column.'
-    - 'It defines a new table by listing the rows and fields we want to include followed by the values that we want placed in the table.'
+    - |
+        It defines a new row by listing the fields we want to include followed by the values we want placed in the new row.
+    - |
+        It defines a new column by listing the rows we want to include followed by the values we want placed in the new column.
+    - |
+        It defines a new table by listing the rows and fields we want to include followed by the values that we want placed in the table.
   solution: 1
 ```
 

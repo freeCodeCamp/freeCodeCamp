@@ -18,13 +18,33 @@ More resources:
 
 ```yml
 question:
-  text: 'Which does the same thing as the following code?:
-<pre>lst = []<br>for key, val in counts.items():<br>    newtup = (val, key)<br>    lst.append(newtup)<br><br>lst = sorted(lst, reverse=True)<br>print(lst)<pre>'
+  text: |
+    Which does the same thing as the following code?:
+    ```python
+    lst = []
+    for key, val in counts.items():
+        newtup = (val, key)
+        lst.append(newtup)
+    lst = sorted(lst, reverse=True)
+    print(lst)
+    ```
   answers:
-    - 'print( sorted( [ (k,v) for k,v in counts.items() ] ) )'
-    - 'print( [ (k,v) for k,v in counts.items().sorted() ] )'
-    - 'print( sorted( [ (k,v) for k,v in counts.keys() ] ) )'
-    - 'print( [ (k,v) for k,v in counts.values().sort() ] )'
+    - |
+        ```python
+        print( sorted( [ (v,k) for k,v in counts.items() ] ) )
+        ```
+    - |
+        ```python
+        print( [ (k,v) for k,v in counts.items().sorted() ] )
+        ```
+    - |
+        ```python
+        print( sorted( [ (v,k) for k,v in counts.keys() ] ) )
+        ```
+    - |
+        ```python
+        print( [ (k,v) for k,v in counts.values().sort() ] )
+        ```
   solution: 1
 ```
 

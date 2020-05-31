@@ -17,13 +17,20 @@ videoId: Yud_COr6pZo
 
 ```yml
 question:
-  text: 'Which regex matches a white space character?'
+  text: |
+    Which regex only matches a white space character?
+
   answers:
-    - '\S'
-    - '\s'
-    - '.'
-    - '\_'
-    - '\.'
+    - |
+        \S
+    - |
+        \s
+    - |
+        .
+    - |
+        \_
+    - |
+        \\.
   solution: 2
 ```
 

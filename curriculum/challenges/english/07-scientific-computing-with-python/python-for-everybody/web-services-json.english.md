@@ -17,19 +17,36 @@ videoId: ZJE-U56BppM
 
 ```yml
 question:
-  text: "What will the following code print?:
-<pre>import json<br>
-<br>
-data = '''<br>[<br>  { 'id' : '001',<br>    'x' : '2',<br>    'name' : 'Quincy'<br>  } ,<br>  { 'id' : '009',<br>    'x' : '7',<br>    'name' : 'Mrugesh'<br>  }<br>]'''<br>
-<br>
-info = json.loads(data)<br>
-print(info[1]['name'])</pre>"
+  text: |
+    What will the following code print?:
+    ```python
+    import json
+    data = '''
+      [
+        { 'id' : '001',
+          'x' : '2',
+         'name' : 'Quincy'
+        } ,
+        { 'id' : '009',
+          'x' : '7',
+          'name' : 'Mrugesh'
+        }
+      ]
+    '''
+    info = json.loads(data)
+    print(info[1]['name'])
+    ```
   answers:
-    - 'Quincy'
-    - 'Mrugesh'
-    - '001'
-    - '009'
-    - '[Error]'
+    - |
+        Quincy
+    - |
+        Mrugesh
+    - |
+        001
+    - |
+        009
+    - |
+        [Error]
   solution: 2
 ```
 

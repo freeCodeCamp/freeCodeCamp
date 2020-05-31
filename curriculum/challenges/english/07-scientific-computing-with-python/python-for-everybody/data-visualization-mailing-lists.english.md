@@ -24,12 +24,18 @@ More resources:
 
 ```yml
 question:
-  text: 'Which is a common JavaScript visualization library?'
+  text: |
+    Which is a common JavaScript visualization library?
+
   answers:
-    - 'DataViz.js'
-    - 'D3'
-    - 'Lowcharts'
-    - 'DATA6'
+    - |
+        DataViz.js
+    - |
+        D3
+    - |
+        Lowcharts
+    - |
+        DATA6
   solution: 2
 ```
 

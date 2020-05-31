@@ -17,12 +17,18 @@ videoId: QlNod5-kFpA
 
 ```yml
 question:
-  text: 'Which is NOT a primary data structure in a database?'
+  text: |
+    Which is NOT a primary data structure in a database?
+
   answers:
-    - 'index'
-    - 'table'
-    - 'row'
-    - 'column'
+    - |
+        index
+    - |
+        table
+    - |
+        row
+    - |
+        column
   solution: 1
 ```
 
