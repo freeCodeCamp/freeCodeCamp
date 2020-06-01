@@ -68,7 +68,7 @@ describe('<Profile/>', () => {
   it('renders the report button on another persons profile', () => {
     const { getByText } = render(<Profile {...notMyProfileProps} />);
 
-    expect(getByText('Report This User')).toHaveAttribute(
+    expect(getByText("Flag This User's Account for Abuse")).toHaveAttribute(
       'href',
       '/user/string/report-user'
     );
