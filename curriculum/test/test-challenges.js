@@ -325,18 +325,14 @@ function populateTestsForLang({ lang, challenges, meta }) {
             return;
           }
 
-          if (files.length > 1) {
-            it('Check tests.', () => {
-              throw new Error('Seed file should be only the one.');
-            });
-            return;
-          }
-
           const buildChallenge =
             challengeType === challengeTypes.js ||
             challengeType === challengeTypes.bonfire
               ? buildJSChallenge
               : buildDOMChallenge;
+
+          // TODO: create more sophisticated validation now we allow for more
+          // than one seed/solution file.
 
           files = files.map(createPoly);
           it('Test suite must fail on the initial contents', async function() {
@@ -410,11 +406,24 @@ function populateTestsForLang({ lang, challenges, meta }) {
   });
 }
 
+// TODO: solutions will need to be multi-file, too, with a fallback when there
+// is only one file.
+// we cannot simply use the solution instead of files, because the are not
+// just the seed(s), they contain the head and tail code. The best approach
+// is probably to separate out the head and tail from the files.  Then the
+// files can be entirely replaced by the solution.
+
 async function createTestRunner(
   { required = [], template, files },
   solution,
   buildChallenge
 ) {
+  // TODO: solutions will need to be multi-file, too, with a fallback when there
+  // is only one file.
+  // we cannot simply use the solution instead of files, because the are not
+  // just the seed(s), they contain the head and tail code. The best approach
+  // is probably to separate out the head and tail from the files.  Then the
+  // files can be entirely replaced by the solution.
   if (solution) {
     files[0].contents = solution;
   }
