@@ -216,7 +216,7 @@ function createPostReportUserProfile(app) {
     return Email.send$(
       {
         type: 'email',
-        to: 'team@freecodecamp.org',
+        to: 'support@freecodecamp.org',
         cc: user.email,
         from: 'team@freecodecamp.org',
         subject: `Abuse Report : Reporting ${username}'s profile.`,
