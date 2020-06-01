@@ -17,17 +17,25 @@ videoId: _pZ0srbg7So
 
 ```yml
 question:
-  text: 'What is wrong with the following XML?:
-<pre>&ltperson&gt<br>
-&ltname>Chuck&lt/name><br>
-&ltphone type="intl"><br>  +1 734 303 4456<br>
-&ltemail hide="yes" /><br>
-&lt/person></pre>'
+  text: |
+    What is wrong with the following XML?:
+    ```xml
+    <person>
+      <name>Chuck</name>
+      <phone type="intl">
+        +1 734 303 4456
+      <email hide="yes" />
+    </person>
+    ```
   answers:
-    - 'Email tag is missing closing tag.'
-    - 'Spacing will cause XML to be invalid.'
-    - 'Phone tag is missing closing tag.'
-    - 'Plain text should be encoded using UTF-8.'
+    - |
+        Email tag is missing closing tag.
+    - |
+        Spacing will cause XML to be invalid.
+    - |
+        Phone tag is missing closing tag.
+    - |
+        Plain text should be encoded using UTF-8.
   solution: 3
 ```
 

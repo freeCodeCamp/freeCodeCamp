@@ -17,12 +17,18 @@ videoId: _kJvneKVdNM
 
 ```yml
 question:
-  text: 'What Python library gives access to TCP Sockets?'
+  text: |
+      What Python library gives access to TCP Sockets?
+
   answers:
-    - 'tcp'
-    - 'socket'
-    - 'http'
-    - 'port'
+    - |
+        tcp
+    - |
+        socket
+    - |
+        http
+    - |
+        port
   solution: 2
 ```
 

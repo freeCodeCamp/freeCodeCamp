@@ -17,14 +17,20 @@ videoId: aRY_xjL35v0
 
 ```yml
 question:
-  text: 'What will the following program print out:
-<pre>x = 43<br>
-x = x + 1<br>
-print(x)</pre>'
+  text: |
+    What will the following program print out:
+    ```python
+    x = 43
+    x = x + 1
+    print(x)
+    ```
   answers:
-    - 'x'
-    - 'x + 1'
-    - '44'
+    - |
+        x
+    - |
+        x + 1
+    - |
+        44
   solution: 3
 ```
 

@@ -7,13 +7,15 @@ videoId: eqSVcJbaPdk
 ---
 
 ## Description
+
 <section id='description'>
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-```yml
+````yml
 question:
   text: |
     What is the value of `a` after you run the following code?:
@@ -24,11 +26,10 @@ question:
     ```
 
   answers:
-    - "[20, 21, 22, 24, 24]"
-    - "[0, 1, 2, 3, 4, 5]"
-    - "[25, 26, 27, 28, 29]"
+    - '[20, 21, 22, 24, 24]'
+    - '[0, 1, 2, 3, 4]'
+    - '[25, 26, 27, 28, 29]'
   solution: 2
-```
+````
 
 </section>
-

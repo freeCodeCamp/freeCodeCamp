@@ -17,15 +17,41 @@ videoId: dLA-szNRnUY
 
 ```yml
 question:
-  text: 'What will the following code print out?:
-<pre>
-n = 0<br>
-while True:<br>    if n == 3:<br>        break<br>    print(n)<br>    n = n + 1</pre>'
+  text: |
+    What will the following code print out?:
+    ```python
+    n = 0
+    while True:
+        if n == 3:
+            break
+        print(n)
+        n = n + 1
+    ```
   answers:
-    - '0<br>1<br>2'
-    - '0<br>1<br>2<br>3'
-    - '1<br>2'
-    - '1<br>2<br>3'
+    - |
+        0
+        
+        1
+        
+        2
+    - |
+        0
+        
+        1
+        
+        2
+        
+        3
+    - |
+        1
+        
+        2
+    - |
+        1
+        
+        2
+        
+        3
   solution: 1
 ```
 

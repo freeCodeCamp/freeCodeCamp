@@ -17,14 +17,21 @@ videoId: Y0cvfDpYC_c
 
 ```yml
 question:
-  text: 'What is the value of x after running this code:
-<pre>fruit = "banana"<br>
-x = fruit[1]</pre>'
+  text: |
+    What is the value of x after running this code:
+    ```python
+    fruit = "banana"
+    x = fruit[1]
+    ```
   answers:
-    - 'banana'
-    - 'a'
-    - 'b'
-    - 'True'
+    - |
+        banana
+    - |
+        a
+    - |
+        b
+    - |
+        True
   solution: 2
 ```
 
