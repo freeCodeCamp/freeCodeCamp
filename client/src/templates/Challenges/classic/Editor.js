@@ -14,6 +14,7 @@ import {
 } from '../redux';
 import { userSelector, isDonationModalOpenSelector } from '../../../redux';
 import { Loader } from '../../../components/helpers';
+import { sortFiles } from '../utils/sort-files';
 
 import './editor.css';
 
@@ -129,10 +130,11 @@ class Editor extends Component {
       }
     };
 
+    const { challengeFiles } = this.props;
+
     // NOTE: for consitency with this.data (and this.options) currentFileKey
     // is just a property, not state.
-
-    this.currentFileKey = 'indexhtml';
+    this.currentFileKey = sortFiles(challengeFiles)[0].key;
 
     this.options = {
       fontSize: '18px',
