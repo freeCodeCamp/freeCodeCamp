@@ -92,7 +92,7 @@ class ShowUser extends Component {
         <main>
           <FullWidthRow>
             <Spacer size={2} />
-            <Panel bsStyle='info'>
+            <Panel bsStyle='info' className='text-center'>
               <Panel.Heading>
                 <Panel.Title componentClass='h3'>
                   You need to be signed in to report a user
