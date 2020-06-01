@@ -272,12 +272,12 @@ export const certificatesByNameSelector = username => state => {
       {
         show: isQaCert,
         title: ' Quality Assurance Certification',
-        showURL: 'information-security-and-quality-assurance'
+        showURL: 'quality-assurance'
       },
       {
         show: isInfosecCert,
         title: 'Information Security Certification',
-        showURL: 'information-security-and-quality-assurance'
+        showURL: 'information-security'
       },
       {
         show: isSciCompPyCert,
