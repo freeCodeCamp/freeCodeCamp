@@ -18,7 +18,7 @@ videoId: Yud_COr6pZo
 ```yml
 question:
   text: |
-    Which regex only matches a white space character?
+    Which regex matches only a white space character?
 
   answers:
     - |
