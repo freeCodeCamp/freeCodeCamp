@@ -146,7 +146,7 @@ exports[`<Profile/> renders correctly 1`] = `
       <a
         href="/user/string/report-user"
       >
-        Report This User
+        Flag This User's Account for Abuse
       </a>
     </div>
     <div
