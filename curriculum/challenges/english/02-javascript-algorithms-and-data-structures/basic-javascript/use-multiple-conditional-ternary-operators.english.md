@@ -44,11 +44,13 @@ function findGreaterOrEqual(a, b) {
 }
 ```
 
+To make your code easier to read, it is considered best practice to format multiple conditional operators such that each condition is on a separate line, as shown in the first example.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
-Use multiple conditional operators in the <code>checkSign</code> function to check if a number is positive, negative or zero. The function should return "positive", "negative" or "zero".
+In the <code>checkSign</code> function, use multiple conditional operators - following the recommended format used in <code>findGreaterOrEqual</code> - to check if a number is positive, negative or zero. The function should return "positive", "negative" or "zero".
 </section>
 
 ## Tests
