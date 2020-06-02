@@ -56,7 +56,7 @@ Use multiple conditional operators in the <code>checkSign</code> function to che
 
 ```yml
 tests:
-  - text: <code>checkSign</code> should use multiple conditional operators
+  - text: <code>checkSign</code> should use multiple conditional operators in the format recommended in <code>findGreaterOrEqual</code>
     testString: assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?\s*?\?\s*?.+?\s*?:\s*?.+?/gi.test(code));
   - text: <code>checkSign(10)</code> should return "positive". Note that capitalization matters
     testString: assert(checkSign(10) === 'positive');
