@@ -27,8 +27,10 @@ function plugin() {
       if (lang === 'yml') {
         const tests = YAML.load(value);
         if (tests.question) {
+          // mdToHTML can not parse numbers. If an answer is a number
+          // (i.e. 5, not '5') it has to be converted.
           tests.question.answers = tests.question.answers.map(answer =>
-            mdToHTML(answer)
+            mdToHTML(answer.toString())
           );
           tests.question.text = mdToHTML(tests.question.text);
         }
