@@ -36,15 +36,13 @@ function findGreaterOrEqual(a, b) {
 }
 ```
 
-However, this should be used with care as using multiple conditional operators without proper indentation may make your code hard to read. For example:
+To make your code easier to read, it is considered best practice to format multiple conditional operators such that each condition is on a separate line, as shown above. Using multiple conditional operators without proper indentation may make your code hard to read. For example:
 
 ```js
 function findGreaterOrEqual(a, b) {
   return (a === b) ? "a and b are equal" : (a > b) ? "a is greater" : "b is greater";
 }
 ```
-
-To make your code easier to read, it is considered best practice to format multiple conditional operators such that each condition is on a separate line, as shown in the first example.
 
 </section>
 
