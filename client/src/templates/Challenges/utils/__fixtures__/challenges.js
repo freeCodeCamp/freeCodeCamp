@@ -34,5 +34,17 @@ export const challengeFiles = {
     path: 'index.js',
     seed: 'some js',
     tail: ''
+  },
+  indexjsx: {
+    contents: 'some jsx',
+    error: null,
+    ext: 'jsx',
+    head: '',
+    history: ['index.jsx'],
+    key: 'indexjsx',
+    name: 'index',
+    path: 'index.jsx',
+    seed: 'some jsx',
+    tail: ''
   }
 };
