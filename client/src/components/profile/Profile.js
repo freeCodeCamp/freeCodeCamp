@@ -137,7 +137,7 @@ function renderProfile(user) {
         isLinkedIn={isLinkedIn}
         isTwitter={isTwitter}
         isWebsite={isWebsite}
-        joinDate={joinDate}
+        joinDate={showAbout ? joinDate : null}
         linkedin={linkedin}
         location={showLocation ? location : null}
         name={showName ? name : null}

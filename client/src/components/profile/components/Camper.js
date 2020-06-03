@@ -48,23 +48,10 @@ function joinArray(array) {
 }
 
 function parseDate(joinDate) {
-  const monthNames = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December'
-  ];
+  joinDate = new Date(joinDate);
   const year = joinDate.getFullYear();
-  const month = monthNames[joinDate.getMonth()];
-  return 'Joined freeCodeCamp in ' + month + ' of ' + year;
+  const month = joinDate.toLocaleString('en-US', { month: 'long' });
+  return `Joined freeCodeCamp in ${month} of ${year}`;
 }
 
 function Camper({
@@ -142,7 +129,7 @@ function Camper({
           <p className='text-center'>{joinArray(yearsTopContributor)}</p>
         </div>
       )}
-      <br />
+      <hr />
       {typeof points === 'number' ? (
         <p className='text-center points'>
           {`${points} ${pluralise('total point', points !== 1)}`}

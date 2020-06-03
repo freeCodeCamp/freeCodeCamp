@@ -841,7 +841,7 @@ export default function(User) {
           completedChallenges,
           ...getProgress(progressTimestamps, timezone),
           ...normaliseUserFields(user),
-          joinDate: user._id.getTimeStamp()
+          joinDate: user.id.getTimestamp()
         };
 
         const publicUser = prepUserForPublish(allUser, profileUI);
