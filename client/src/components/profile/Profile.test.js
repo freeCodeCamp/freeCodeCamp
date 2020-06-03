@@ -32,6 +32,7 @@ const userProps = {
     isLinkedIn: true,
     isTwitter: true,
     isWebsite: true,
+    joinDate: 'string',
     linkedin: 'string',
     location: 'string',
     name: 'string',
