@@ -30,7 +30,7 @@ question:
     cel = (fahr - 32.0) * 5.0 / 9.0
     print(cel)
     ```
-    Which line/lines should be surrounded by a try and catch block?
+    Which line/lines should be surrounded by `try` block?
 
   answers:
     - |
