@@ -472,8 +472,7 @@ export class CertificationSettings extends Component {
       is2018DataVisCert,
       isApisMicroservicesCert,
       isFrontEndLibsCert,
-      is2020QaCert,
-      is2020InfosecCert,
+      isInfosecQaCert,
       isJsAlgoDataStructCert,
       isRespWebDesignCert
     } = this.props;
@@ -482,8 +481,7 @@ export class CertificationSettings extends Component {
       is2018DataVisCert &&
       isApisMicroservicesCert &&
       isFrontEndLibsCert &&
-      is2020QaCert &&
-      is2020InfosecCert &&
+      isInfosecQaCert &&
       isJsAlgoDataStructCert &&
       isRespWebDesignCert;
 
@@ -509,11 +507,11 @@ export class CertificationSettings extends Component {
     return (
       <FullWidthRow key={superBlock}>
         <Spacer />
-        <h3>Full Stack Certification</h3>
+        <h3>Legacy Full Stack Certification</h3>
         <div>
           <p>
             Once you've earned the following freeCodeCamp certifications, you'll
-            be able to claim The Full Stack Developer Certification:
+            be able to claim the Legacy Full Stack Developer Certification:
           </p>
           <ul>
             <li>Responsive Web Design</li>
@@ -521,7 +519,7 @@ export class CertificationSettings extends Component {
             <li>Front End Libraries</li>
             <li>Data Visualization</li>
             <li>APIs and Microservices</li>
-            <li>Quality Assurance</li>
+            <li>Legacy Information Security and Quality Assurance</li>
           </ul>
         </div>
 

@@ -6,6 +6,7 @@ import { Observable } from 'rx';
 import debug from 'debug';
 import { isEmail } from 'validator';
 import format from 'date-fns/format';
+import { reportError } from '../middlewares/sentry-error-handler.js';
 
 import { ifNoUser401 } from '../utils/middleware';
 import { observeQuery } from '../utils/rx';
@@ -76,6 +77,12 @@ const successMessage = (username, name) => dedent`
     @${username}, you have successfully claimed
     the ${name} Certification!
     Congratulations on behalf of the freeCodeCamp.org team!
+    `;
+
+const failureMessage = name => dedent`
+    Something went wrong with the verification of ${name}, please try again.
+    If you continue to receive this error, you can send a message to
+    support@freeCodeCamp.org to get help.
     `;
 
 function ifNoSuperBlock404(req, res, next) {
@@ -302,26 +309,28 @@ function createVerifyCert(certTypeIds, app) {
           [certType]: true
         };
 
-        if (challenge) {
-          const { id, tests, challengeType } = challenge;
-          if (
-            !user[certType] &&
-            !isCertified(tests, user.completedChallenges)
-          ) {
-            return Observable.just(notCertifiedMessage(certName));
-          }
-          updateData = {
-            ...updateData,
-            completedChallenges: [
-              ...user.completedChallenges,
-              {
-                id,
-                completedDate: new Date(),
-                challengeType
-              }
-            ]
-          };
+        // certificate doesn't exist or
+        // connection error
+        if (!challenge) {
+          reportError(`Error claiming ${certName}`);
+          return Observable.just(failureMessage(certName));
         }
+
+        const { id, tests, challengeType } = challenge;
+        if (!user[certType] && !isCertified(tests, user.completedChallenges)) {
+          return Observable.just(notCertifiedMessage(certName));
+        }
+        updateData = {
+          ...updateData,
+          completedChallenges: [
+            ...user.completedChallenges,
+            {
+              id,
+              completedDate: new Date(),
+              challengeType
+            }
+          ]
+        };
 
         if (!user.name) {
           return Observable.just(noNameMessage);
