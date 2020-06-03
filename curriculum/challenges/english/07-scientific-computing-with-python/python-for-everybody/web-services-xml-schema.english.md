@@ -17,11 +17,16 @@ videoId: yWU9kTxW-nc
 
 ```yml
 question:
-  text: 'What is XSD?'
+  text: |
+    What is XSD?
+
   answers:
-    - 'The W3C Schema specification for XML.'
-    - 'The standard JSON schema from MOZ.'
-    - 'Extensible Situational Driver'
+    - |
+        The W3C Schema specification for XML.
+    - |
+        The standard JSON schema from MOZ.
+    - |
+        Extensible Situational Driver
   solution: 1
 ```
 

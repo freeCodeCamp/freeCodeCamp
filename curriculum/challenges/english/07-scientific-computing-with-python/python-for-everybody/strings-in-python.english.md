@@ -17,13 +17,45 @@ videoId: LYZj207fKpQ
 
 ```yml
 question:
-  text: 'What will the following code print?:
-<pre>for n in "banana":<br>    print(n)</pre>'
+  text: |
+    What will the following code print?:
+    ```python
+    for n in "banana":
+        print(n)
+    ```
   answers:
-    - 'n<br>n'
-    - '0<br>1'
-    - '0<br>1<br>2<br>3<br>4<br>5'
-    - 'b<br>a<br>n<br>a<br>n<br>a'
+    - |
+        n
+        
+        n
+    - |
+        0
+        
+        1
+    - |
+        0
+        
+        1
+        
+        2
+        
+        3
+        
+        4
+        
+        5
+    - |
+        b
+        
+        a
+        
+        n
+        
+        a
+        
+        n
+    
+        a
   solution: 4
 ```
 

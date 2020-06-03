@@ -76,7 +76,7 @@ Our moderators will now take a look and leave you feedback. Please be patient wi
 If you need any assistance please disscuss in the [contributors chat room](https://gitter.im/FreeCodeCamp/Contributors), we are more than happy to help you.
 
 > [!TIP]
-> If you are to be contributing more pull requests, we recommend you read the [making changes and syncing](http://localhost:3000/#/how-to-setup-freecodecamp-locally?id=making-changes-locally) guidelines to avoid having to delete your fork.
+> If you are to be contributing more pull requests, we recommend you read the [making changes and syncing](https://contribute.freecodecamp.org/#/how-to-setup-freecodecamp-locally?id=making-changes-locally) guidelines to avoid having to delete your fork.
 
 ## Conflicts on a pull request
 

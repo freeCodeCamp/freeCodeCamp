@@ -19,23 +19,31 @@ More resources:
 
 ```yml
 question:
-  text: 'Given the following code:<pre>
-1 |temp = "5 degrees"<br>
-2 |cel = 0<br>
-3 |try:<br>
-4 |    fahr = float(temp)<br>
-5 |    cel = (fahr - 32.0) * 5.0 / 9.0<br>
-6 |except:<br>
-7 |    print("temp should be a number")<br>
-8 |print(cel)<br>
-</pre>
-Which line would cause the script to immediately stop because of an error?'
+  text: |
+    Given the following code:
+    ```python
+    temp = "5 degrees"
+    cel = 0
+    try:
+        fahr = float(temp)
+        cel = (fahr - 32.0) * 5.0 / 9.0
+    except:
+        print("temp should be a number")
+    print(cel)
+    ```
+    Which line would cause the script to immediately stop because of an error?
+
   answers:
-    - '1'
-    - '4'
-    - '6'
-    - '7'
-    - 'None'
+    - |
+        1
+    - |
+        4
+    - |
+        6
+    - |
+        7
+    - |
+        None
   solution: 2
 ```
 

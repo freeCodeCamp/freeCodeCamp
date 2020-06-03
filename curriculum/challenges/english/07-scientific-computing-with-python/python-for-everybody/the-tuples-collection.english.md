@@ -17,13 +17,41 @@ videoId: 3Lxpladfh2k
 
 ```yml
 question:
-  text: "What will the following code print?:
-<pre>d = dict()<br>d['quincy'] = 1<br>d['beau'] = 5<br>d['kris'] = 9<br>for (k,i) in d.items():<br>    print(k, i)</pre>"
+  text: |
+    What will the following code print?:
+    ```python
+    d = dict()
+    d['quincy'] = 1
+    d['beau'] = 5
+    d['kris'] = 9
+    for (k,i) in d.items():
+        print(k, i)
+    ```
   answers:
-    - 'k i<br>k i<br>k i'
-    - 'quincy 0<br>beau 1<br>kris 2'
-    - 'quincy 1<br>beau 5<br>kris 9'
-    - '1 quincy<br>5 beau<br>9 kris'
+    - |
+        k i
+        
+        k i
+        
+        k i
+    - |
+        quincy 0
+        
+        beau 1
+        
+        kris 2
+    - |
+        quincy 1
+        
+        beau 5
+        
+        kris 9
+    - |
+        1 quincy
+        
+        5 beau
+        
+        9 kris
   solution: 3
 ```
 

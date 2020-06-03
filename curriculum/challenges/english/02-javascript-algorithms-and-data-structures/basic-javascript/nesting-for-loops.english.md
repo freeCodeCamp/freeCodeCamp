@@ -27,7 +27,7 @@ This outputs each sub-element in <code>arr</code> one at a time. Note that for t
 
 ## Instructions
 <section id='instructions'>
-Modify function <code>multiplyAll</code> so that it multiplies the <code>product</code> variable by each number in the sub-arrays of <code>arr</code>
+Modify function <code>multiplyAll</code> so that it returns the product of all the numbers in the sub-arrays of <code>arr</code>.
 </section>
 
 ## Tests

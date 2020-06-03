@@ -18,19 +18,53 @@ More resources:
 
 ```yml
 question:
-  text: 'What will the following Python program print out?:
-<pre>def fred():<br>   print("Zap")<br><br>def jane():<br>   print("ABC")<br>
-<br>
-jane()<br>
-fred()<br>
-jane()<br>
-</pre>'
+  text: |
+    What will the following Python program print out?:
+    ```python
+    def fred():
+        print("Zap")
+    def jane():
+        print("ABC")
+
+    jane()
+    fred()
+    jane()
+    ```
   answers:
-    - 'Zap ABC jane fred jane'
-    - 'Zap ABC Zap'
-    - 'ABC Zap jane'
-    - 'ABC Zap ABC'
-    - 'Zap Zap Zap'
+    - |
+        Zap
+        
+        ABC
+        
+        jane
+        
+        fred
+        
+        jane
+    - |
+        Zap
+        
+        ABC
+        
+        Zap
+    - |
+        ABC
+        
+        Zap
+        
+        jane
+    - |
+        ABC
+        
+        Zap
+        
+        ABC
+    - |
+        Zap
+        
+        Zap
+        
+        Zap
   solution: 4
 ```
 
