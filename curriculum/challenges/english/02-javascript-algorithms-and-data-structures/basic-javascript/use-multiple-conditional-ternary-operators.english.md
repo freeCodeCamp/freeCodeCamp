@@ -48,7 +48,7 @@ function findGreaterOrEqual(a, b) {
 
 ## Instructions
 <section id='instructions'>
-In the <code>checkSign</code> function, use multiple conditional operators - following the recommended format used in <code>findGreaterOrEqual</code> - to check if a number is positive, negative or zero. The function should return "positive", "negative" or "zero".
+In the <code>checkSign</code> function, use multiple conditional operators - following the recommended format used in <code>findGreaterOrEqual</code> - to check if a number is positive, negative or zero. The function should return <code>"positive"</code>, <code>"negative"</code> or <code>"zero"</code>.
 </section>
 
 ## Tests
