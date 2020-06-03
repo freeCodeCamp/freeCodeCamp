@@ -1,4 +1,4 @@
-## Seting up freeCodeCamp locally on WSL2
+## Setting up freeCodeCamp locally on WSL2
 
 1) Follow the instructions given in the documentation by Microsoft to install WSL2 (Recommended Distro: Ubuntu18.04):
 [Installing WSL2](https://docs.microsoft.com/en-us/windows/nodejs/setup-on-wsl2#install-windows-10-insider-preview-build)
