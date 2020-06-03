@@ -196,7 +196,9 @@ function Profile({ user, isSessionUser, navigate }) {
         {!isLocked || isSessionUser ? renderProfile(user) : null}
         {isSessionUser ? null : (
           <Row className='text-center'>
-            <Link to={`/user/${username}/report-user`}>Report This User</Link>
+            <Link to={`/user/${username}/report-user`}>
+              Flag This User's Account for Abuse
+            </Link>
           </Row>
         )}
         <Spacer />

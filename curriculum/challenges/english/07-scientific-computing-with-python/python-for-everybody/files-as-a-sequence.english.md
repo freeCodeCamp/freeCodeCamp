@@ -18,12 +18,18 @@ More resources:
 
 ```yml
 question:
-  text: "What does the word 'continue' do in the middle of a loop?"
+  text: |
+    What does the word 'continue' do in the middle of a loop?
+
   answers:
-    - 'Skips to the code directly after the loop.'
-    - 'Skips to the next line in the code.'
-    - 'Skips to the next iteration of the loop.'
-    - 'Skips the next block of code.'
+    - |
+        Skips to the code directly after the loop.
+    - |
+        Skips to the next line in the code.
+    - |
+        Skips to the next iteration of the loop.
+    - |
+        Skips the next block of code.
   solution: 3
 ```
 

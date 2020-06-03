@@ -17,17 +17,23 @@ videoId: LaCZnTbQGkE
 
 ```yml
 question:
-  text: "What will the following program print?:
-<pre>
-import re<br>
-s = 'A message from csev@umich.edu to cwen@iupui.edu about meeting @2PM'<br>
-lst = re.findall('\\S+@\\S+', s)<br>
-print(lst)</pre>"
+  text: |
+    What will the following program print?:
+    ```python
+    import re
+    s = 'A message from csev@umich.edu to cwen@iupui.edu about meeting @2PM'
+    lst = re.findall('\\S+@\\S+', s)
+    print(lst)
+    ```
   answers:
-    - "['csev@umich.edu', 'cwen@iupui.edu']"
-    - "['csev@umich.edu']"
-    - "['umich.edu', 'iupui.edu']"
-    - "['csev@', 'cwen@']"
+    - |
+        ['csev@umich.edu', 'cwen@iupui.edu']
+    - |
+        ['csev@umich.edu']
+    - |
+        ['umich.edu', 'iupui.edu']
+    - |
+        ['csev@', 'cwen@']
   solution: 1
 ```
 

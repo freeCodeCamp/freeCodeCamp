@@ -17,12 +17,18 @@ videoId: -orenCNdC2Q
 
 ```yml
 question:
-  text: 'What is a foreign key?'
+  text: |
+    What is a foreign key?
+
   answers:
-    - 'A key that is not supposed to be there.'
-    - 'A key that uses non-latin characters.'
-    - 'A number that points to the primary key of an associated row in a different table.'
-    - 'A key that the "real world" might use to look up a row.'
+    - |
+        A key that is not supposed to be there.
+    - |
+        A key that uses non-latin characters.
+    - |
+        A number that points to the primary key of an associated row in a different table.
+    - |
+        A key that the "real world" might use to look up a row.
   solution: 3
 ```
 

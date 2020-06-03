@@ -18,15 +18,23 @@ More resources:
 
 ```yml
 question:
-  text: 'What is the value of i in the following code?
-<pre>word = "bananana"<br>
-i = word.find("na")</pre>'
+  text: |
+    What is the value of i in the following code?
+    ```python
+    word = "bananana"
+    i = word.find("na")
+    ```
   answers:
-    - 'nanana'
-    - '2'
-    - '3'
-    - 'True'
-    - 'na'
+    - |
+        nanana
+    - |
+        2
+    - |
+        3
+    - |
+        True
+    - |
+        na
   solution: 2
 ```
 
