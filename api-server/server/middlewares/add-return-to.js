@@ -11,10 +11,10 @@ const pathsOfNoReturn = [
   'css'
 ];
 
-const pathsWhiteList = ['challenges', 'map', 'commit'];
+const pathsAllowedList = ['challenges', 'map', 'commit'];
 
 const pathsOfNoReturnRegex = new RegExp(pathsOfNoReturn.join('|'), 'i');
-const whiteListRegex = new RegExp(pathsWhiteList.join('|'), 'i');
+const pathsAllowedRegex = new RegExp(pathsAllowedList.join('|'), 'i');
 
 export default function addReturnToUrl() {
   return function(req, res, next) {
@@ -24,7 +24,7 @@ export default function addReturnToUrl() {
     if (
       req.method !== 'GET' ||
       pathsOfNoReturnRegex.test(path) ||
-      !whiteListRegex.test(path) ||
+      !pathsAllowedRegex.test(path) ||
       /hot/i.test(req.path)
     ) {
       return next();

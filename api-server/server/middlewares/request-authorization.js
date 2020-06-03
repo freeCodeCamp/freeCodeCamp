@@ -28,7 +28,7 @@ const updateHooksRE = /^\/hooks\/update-paypal$|^\/hooks\/update-stripe$/;
 // note: this would be replaced by webhooks later
 const donateRE = /^\/donate\/charge-stripe$/;
 
-const _whiteListREs = [
+const _pathsAllowedREs = [
   authRE,
   confirmEmailRE,
   newsShortLinksRE,
@@ -44,14 +44,14 @@ const _whiteListREs = [
   donateRE
 ];
 
-export function isWhiteListedPath(path, whiteListREs = _whiteListREs) {
-  return whiteListREs.some(re => re.test(path));
+export function isAllowedPath(path, pathsAllowedREs = _pathsAllowedREs) {
+  return pathsAllowedREs.some(re => re.test(path));
 }
 
 export default ({ jwtSecret = _jwtSecret, getUserById = _getUserById } = {}) =>
   function requestAuthorisation(req, res, next) {
     const { path } = req;
-    if (!isWhiteListedPath(path)) {
+    if (!isAllowedPath(path)) {
       const { accessToken, error, jwt } = getAccessTokenFromRequest(
         req,
         jwtSecret
