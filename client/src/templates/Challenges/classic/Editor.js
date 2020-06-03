@@ -307,6 +307,7 @@ class Editor extends Component {
 
   render() {
     const { challengeFiles, theme } = this.props;
+    const contents = challengeFiles[this.currentFileKey].contents;
     const editorTheme = theme === 'night' ? 'vs-dark-custom' : 'vs-custom';
 
     // TODO: tabs should be dynamically created from the challengeFiles
@@ -356,6 +357,7 @@ class Editor extends Component {
             onChange={this.onChange}
             options={this.options}
             theme={editorTheme}
+            value={contents}
           />
         </span>
       </Suspense>
