@@ -322,6 +322,7 @@ class Editor extends Component {
     // const code = challengeFiles[fileKey].contents;
     // const ext = challengeFiles[fileKey].ext;
     console.log('fileKey', this.currentFileKey);
+    const contents = challengeFiles[this.currentFileKey].contents;
     // console.log('code', code);
     // console.log('ext', ext);
     const editorTheme = theme === 'night' ? 'vs-dark-custom' : 'vs-custom';
@@ -373,6 +374,7 @@ class Editor extends Component {
             onChange={this.onChange}
             options={this.options}
             theme={editorTheme}
+            value={contents}
           />
         </span>
       </Suspense>
