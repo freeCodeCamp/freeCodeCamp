@@ -128,6 +128,10 @@ class Editor extends Component {
       indexhtml: {
         model: null,
         state: null
+      },
+      indexjsx: {
+        model: null,
+        state: null
       }
     };
 
@@ -287,6 +291,8 @@ class Editor extends Component {
       this.data.indexcss.state = currentState;
     } else if (currentModel === this.data.indexhtml.model) {
       this.data.indexhtml.state = currentState;
+    } else if (currentModel === this.data.indexjsx.model) {
+      this.data.indexhtml.state = currentState;
     }
 
     editor.setModel(this.data[fileKey].model);
@@ -327,6 +333,14 @@ class Editor extends Component {
       <Suspense fallback={<Loader timeout={600} />}>
         <span className='notranslate'>
           <div className='monaco-editor-tabs'>
+            {challengeFiles['indexjsx'] && (
+              <div
+                className='monaco-editor-tab'
+                onClick={() => this.changeTab('indexjsx')}
+              >
+                script.jsx
+              </div>
+            )}
             {challengeFiles['indexhtml'] && (
               <div
                 className='monaco-editor-tab'
