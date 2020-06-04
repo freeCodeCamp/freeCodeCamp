@@ -22,7 +22,7 @@ challengeType: 2
 tests:
   - text: '测试1：您的API端点应使用正确的名称进行响应'
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/name?first=Mick&last=Jagger'').then(data => { assert.equal(data.name, ''Mick Jagger'', ''Test 1: "GET /name" route does not behave as expected'') }, xhr => { throw new Error(xhr.responseText); })'
-  - text: '测试2：您的APi端点应以正确的名称响应'
+  - text: '测试2：您的API端点应以正确的名称响应'
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/name?last=Richards&first=Keith'').then(data => { assert.equal(data.name, ''Keith Richards'', ''Test 2: "GET /name" route does not behave as expected'') }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
