@@ -66,7 +66,7 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='js-seed'>
+<div id='js-teardown'>
 
 ```js
 var Person = function(firstAndLast) {
@@ -79,7 +79,9 @@ var Person = function(firstAndLast) {
   // Only change code above this line
 };
 
-var bob = new Person('Bob Ross');
+if(bob){
+  var bob = new Person('Bob Ross');
+}
 bob.getFullName();
 ```
 
