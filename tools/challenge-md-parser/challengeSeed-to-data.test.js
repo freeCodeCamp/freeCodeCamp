@@ -1,6 +1,6 @@
 /* global describe it expect beforeEach */
 const mockAST = require('./fixtures/challenge-html-ast.json');
-const challengeSeedToData = require('./challengeSeed-to-data');
+const { challengeSeedToData } = require('./challengeSeed-to-data');
 
 describe('challengeSeed-to-data plugin', () => {
   const plugin = challengeSeedToData();
