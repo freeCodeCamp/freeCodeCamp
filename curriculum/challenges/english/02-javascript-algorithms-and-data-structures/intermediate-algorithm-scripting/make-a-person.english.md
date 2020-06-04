@@ -70,11 +70,13 @@ tests:
 
 ```js
 var Person = function(firstAndLast) {
+  // Only change code below this line
   // Complete the method below and implement the others similarly
   this.getFullName = function() {
     return "";
   };
   return firstAndLast;
+  // Only change code above this line
 };
 
 var bob = new Person('Bob Ross');
