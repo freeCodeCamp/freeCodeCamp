@@ -107,7 +107,7 @@ Once you have earned all 6 of these certifications, you'll be able to claim your
 
 #### Legacy Certifications
 
-We also have 4 legacy certifications dating back to our 2015 curriculum, which are still available. All of the required projects for these legacy certifications will remain available on freeCodeCamp.org.
+We also have 4 legacy certifications dating back to our 2015 curriculum, which is still available. All of the required projects for these legacy certifications will remain available on freeCodeCamp.org.
 
 - Legacy Front End Development Certification
 - Legacy Data Visualization Certification
@@ -123,7 +123,7 @@ Our community also has:
 - A [forum](https://www.freecodecamp.org/forum) where you can usually get programming help or project feedback within hours.
 - A [YouTube channel](https://youtube.com/freecodecamp) with free courses on Python, SQL, Android, and a wide variety of other technologies.
 - A [podcast](https://podcast.freecodecamp.org/) with technology insights and inspiring stories from developers.
-- A [Developer News](https://www.freecodecamp.org/news) publication, a free, open source, no-ads place to cross-post your blog articles.
+- A [Developer News](https://www.freecodecamp.org/news) publication, a free, open source,a no-ads place to cross-post your blog articles.
 
 > #### [Join our community here](https://www.freecodecamp.org/signin).
 
@@ -133,7 +133,7 @@ If you think you've found a bug, first read the [how to report a bug](https://ww
 
 If you're confident it's a new bug and have confirmed that someone else is facing the same issue, go ahead and create a new GitHub issue. Be sure to include as much information as possible so we can reproduce the bug.
 
-### Reporting Security Issues and Responsible Disclosure
+### Reporting of Security Issues and Responsible Disclosure
 
 If you think you have found a vulnerability, _please report responsibly_. Don't create GitHub issues for security issues. Instead, please send an email to `security@freecodecamp.org` and we'll look into it immediately.
 
@@ -145,7 +145,7 @@ The freeCodeCamp.org community is possible thanks to thousands of kind volunteer
 
 > #### [Please follow these steps to contribute](https://contribute.freecodecamp.org).
 
-### Platform, Build and Deployment Status
+### The Platform, Build and Deployment Status
 
 The general platform status for all our applications is available at [`status.freecodecamp.org`](https://status.freecodecamp.org). The build and deployment status for the code is available in [our DevOps Guide](/docs/devops.md).
 
