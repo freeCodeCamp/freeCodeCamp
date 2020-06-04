@@ -157,12 +157,12 @@ Be polite and patient. Our community of volunteers and moderators are always aro
 
 If you have queries about the stack, architecture of the codebase, feel free to reach out to our staff dev team:
 
-| Staff                 | Send message on Gitter                                        | DM on Twitter                                         |
-| :-------------------- | :------------------------------------------------------------ | :---------------------------------------------------- |
-| Mrugesh Mohapatra     | [@raisedadead](https://gitter.im/raisedadead)                 | [@raisedadead](https://twitter.com/raisedadead)       |
-| Ahmad Abdolsaheb      | [@ahmadabdolsaheb](https://gitter.im/ahmadabdolsaheb)         | [@Abdolsaheb](https://twitter.com/Abdolsaheb)         |
-| Kristofer Koishigawa  | [@scissorsneedfoodtoo](https://gitter.im/scissorsneedfoodtoo) | [@kriskoishigawa](https://twitter.com/kriskoishigawa) |
-| Tom Mondloc           | [@moT01](https://gitter.im/moT01)                             | -                                                     |
-| Oliver Eyton-Williams | [@ojeytonwilliams](https://gitter.im/ojeytonwilliams)         | -                                                     |
+| Staff                 | Send message on Gitter                                        | Send message on Forum                                                            |
+| :-------------------- | :------------------------------------------------------------ | :------------------------------------------------------------------------------- |
+| Mrugesh Mohapatra     | [@raisedadead](https://gitter.im/raisedadead)                 | [@raisedadead](https://www.freecodecamp.org/forum/u/raisedadead)                 |
+| Ahmad Abdolsaheb      | [@ahmadabdolsaheb](https://gitter.im/ahmadabdolsaheb)         | [@abdolsa](https://www.freecodecamp.org/forum/u/abdolsa)                         |
+| Kristofer Koishigawa  | [@scissorsneedfoodtoo](https://gitter.im/scissorsneedfoodtoo) | [@scissorsneedfoodtoo](https://www.freecodecamp.org/forum/u/scissorsneedfoodtoo) |
+| Tom Mondloc           | [@moT01](https://gitter.im/moT01)                             | [@moT01](https://www.freecodecamp.org/forum/u/moT01)                             |
+| Oliver Eyton-Williams | [@ojeytonwilliams](https://gitter.im/ojeytonwilliams)         | [@ojeytonwilliams](https://www.freecodecamp.org/forum/u/ojeytonwilliams)         |
 
 **You can email our developer staff at: `dev[at]freecodecamp.org`**
