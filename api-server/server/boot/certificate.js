@@ -202,11 +202,11 @@ function sendCertifiedEmail(
     isJsAlgoDataStructCert,
     isDataVisCert,
     isApisMicroservicesCert,
-    isQaCert,
-    isInfosecCert,
-    isSciCompPyCert,
-    isDataAnalysisPyCert,
-    isMachineLearningPyCert
+    is2020QaCert,
+    is2020InfosecCert,
+    is2020SciCompPyCert,
+    is2020DataAnalysisPyCert,
+    is2020MachineLearningPyCert
   },
   send$
 ) {
@@ -217,11 +217,11 @@ function sendCertifiedEmail(
     !isJsAlgoDataStructCert ||
     !isDataVisCert ||
     !isApisMicroservicesCert ||
-    !isQaCert ||
-    !isInfosecCert ||
-    !isSciCompPyCert ||
-    !isDataAnalysisPyCert ||
-    !isMachineLearningPyCert
+    !is2020QaCert ||
+    !is2020InfosecCert ||
+    !is2020SciCompPyCert ||
+    !is2020DataAnalysisPyCert ||
+    !is2020MachineLearningPyCert
   ) {
     return Observable.just(false);
   }
@@ -249,15 +249,15 @@ function getUserIsCertMap(user) {
     is2018DataVisCert = false,
     isApisMicroservicesCert = false,
     isInfosecQaCert = false,
-    isQaCert = false,
-    isInfosecCert = false,
+    is2020QaCert = false,
+    is2020InfosecCert = false,
     isFrontEndCert = false,
     isBackEndCert = false,
     isDataVisCert = false,
     isFullStackCert = false,
-    isSciCompPyCert = false,
-    isDataAnalysisPyCert = false,
-    isMachineLearningPyCert = false
+    is2020SciCompPyCert = false,
+    is2020DataAnalysisPyCert = false,
+    is2020MachineLearningPyCert = false
   } = user;
 
   return {
@@ -267,15 +267,15 @@ function getUserIsCertMap(user) {
     is2018DataVisCert,
     isApisMicroservicesCert,
     isInfosecQaCert,
-    isQaCert,
-    isInfosecCert,
+    is2020QaCert,
+    is2020InfosecCert,
     isFrontEndCert,
     isBackEndCert,
     isDataVisCert,
     isFullStackCert,
-    isSciCompPyCert,
-    isDataAnalysisPyCert,
-    isMachineLearningPyCert
+    is2020SciCompPyCert,
+    is2020DataAnalysisPyCert,
+    is2020MachineLearningPyCert
   };
 }
 
@@ -396,11 +396,11 @@ function createShowCert(app) {
       is2018DataVisCert: true,
       isApisMicroservicesCert: true,
       isInfosecQaCert: true,
-      isQaCert: true,
-      isInfosecCert: true,
-      isSciCompPyCert: true,
-      isDataAnalysisPyCert: true,
-      isMachineLearningPyCert: true,
+      is2020QaCert: true,
+      is2020InfosecCert: true,
+      is2020SciCompPyCert: true,
+      is2020DataAnalysisPyCert: true,
+      is2020MachineLearningPyCert: true,
       isHonest: true,
       username: true,
       name: true,

@@ -213,15 +213,15 @@ export const certificatesByNameSelector = username => state => {
     isJsAlgoDataStructCert,
     isApisMicroservicesCert,
     isInfosecQaCert,
-    isQaCert,
-    isInfosecCert,
+    is2020QaCert,
+    is2020InfosecCert,
     isFrontEndCert,
     isBackEndCert,
     isDataVisCert,
     isFullStackCert,
-    isSciCompPyCert,
-    isDataAnalysisPyCert,
-    isMachineLearningPyCert
+    is2020SciCompPyCert,
+    is2020DataAnalysisPyCert,
+    is2020MachineLearningPyCert
   } = userByNameSelector(username)(state);
   return {
     hasModernCert:
@@ -230,12 +230,12 @@ export const certificatesByNameSelector = username => state => {
       isFrontEndLibsCert ||
       isJsAlgoDataStructCert ||
       isApisMicroservicesCert ||
-      isQaCert ||
-      isInfosecCert ||
+      is2020QaCert ||
+      is2020InfosecCert ||
       isFullStackCert ||
-      isSciCompPyCert ||
-      isDataAnalysisPyCert ||
-      isMachineLearningPyCert,
+      is2020SciCompPyCert ||
+      is2020DataAnalysisPyCert ||
+      is2020MachineLearningPyCert,
     hasLegacyCert:
       isFrontEndCert || isBackEndCert || isDataVisCert || isInfosecQaCert,
     currentCerts: [
@@ -270,27 +270,27 @@ export const certificatesByNameSelector = username => state => {
         showURL: 'apis-and-microservices'
       },
       {
-        show: isQaCert,
+        show: is2020QaCert,
         title: ' Quality Assurance Certification',
         showURL: 'quality-assurance'
       },
       {
-        show: isInfosecCert,
+        show: is2020InfosecCert,
         title: 'Information Security Certification',
         showURL: 'information-security'
       },
       {
-        show: isSciCompPyCert,
+        show: is2020SciCompPyCert,
         title: 'Scientific Computing with Python Certification',
         showURL: 'scientific-computing-with-python'
       },
       {
-        show: isDataAnalysisPyCert,
+        show: is2020DataAnalysisPyCert,
         title: 'Data Analysis with Python Certification',
         showURL: 'data-analysis-with-python'
       },
       {
-        show: isMachineLearningPyCert,
+        show: is2020MachineLearningPyCert,
         title: 'Machine Learning with Python Certification',
         showURL: 'machine-learning-with-python'
       }
