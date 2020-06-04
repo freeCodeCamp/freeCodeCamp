@@ -22,14 +22,14 @@ question:
   text: |
     Given the following code:
     ```python
-    temp = "5 degrees"
-    cel = 0
-    try:
-        fahr = float(temp)
-        cel = (fahr - 32.0) * 5.0 / 9.0
-    except:
-        print("temp should be a number")
-    print(cel)
+    1 temp = "5 degrees"
+    2 cel = 0
+    3 try:
+    4     fahr = float(temp)
+    5     cel = (fahr - 32.0) * 5.0 / 9.0
+    6 except:
+    7     print("temp should be a number")
+    8 print(cel)
     ```
     Which line would cause the script to immediately stop because of an error?
 
