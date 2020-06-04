@@ -22,7 +22,7 @@ Example:
 
 ```js
 var ourStr = "I come first. " + "I come second.";
-// ourStr is "I come first.  I come second."
+// ourStr is "I come first. I come second."
 ```
 
 </section>
