@@ -1,16 +1,32 @@
 :root {
   --theme-color: #0a0a23;
   --theme-color-dark: #002ead;
-
+  --text-color: #1b1b32;
   --text-color-base: #2e2e46;
   --text-color-secondary: #646473;
   --text-color-tertiary: #81818e;
+  --bg-color: #ffffff;
+  --sidebar-border-color: #d0d0d5;
+  --bg-code-color: #f8f8f8;
+  --code-color: #525252;
+  --copy-button-color: #fff;
+}
+
+[data-theme='dark'] {
+  --theme-color: #ffffff;
+  --theme-color-dark: #002ead;
+  --text-color: #f5f6f7;
+  --bg-color: #0a0a23;
+  --sidebar-border-color: #3b3b4f;
+  --bg-code-color: #2a2a40;
+  --code-color: #d0d0d5;
+  --copy-button-color: #000;
 }
 
 body {
   font-size: 100%;
   line-height: 2em;
-  color: var(--text-color);
+  color: var(--text-color) !important;
 }
 
 * {
@@ -44,13 +60,74 @@ body {
   margin-right: 0px;
 }
 
+/* Toggle Switch Style*/
+.theme-switch-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  height: 34px;
+  width: 50px;
+  position: fixed;
+  top: 50px;
+  right: 5px;
+  z-index: 100000;
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 50px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: '';
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 26px;
+}
+
+input:checked + .slider {
+  background-color: #002ead;
+}
+
+input:checked + .slider:before {
+  transform: translateX(15px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
 /****** Cover Page ******/
 
 section.cover {
   padding-bottom: 112px;
   height: auto;
   min-height: 100vh;
-  background: #ffffff !important;
+  background: var(--bg-color) !important;
   color: var(--theme-color);
 }
 
@@ -111,14 +188,14 @@ section.cover .cover-main > p:last-child a:last-child {
   font-size: 1.5rem;
   line-height: 2rem;
   background-color: var(--theme-color);
-  color: #fff;
+  color: var(--bg-color);
 }
 
 section.cover .cover-main > p:last-child a:last-child:hover {
   font-size: 1.5rem;
   line-height: 2rem;
   background-color: var(--theme-color-dark);
-  color: #fff;
+  color: var(--bg-color);
   opacity: 1;
 }
 
@@ -149,9 +226,14 @@ section.cover.show ~ .sidebar-toggle {
   }
 }
 
+/***** Changing cover page git icon color *****/
+.git {
+  color: var(--theme-color);
+}
+
 /****** Sidebar ******/
 .sidebar ul li a:hover {
-  color: var(--theme-color);
+  color: var(--theme-color-dark);
 }
 
 .sidebar .search .clear-button {
@@ -210,9 +292,11 @@ body.close .sidebar-toggle span {
 body .sidebar-toggle span:nth-child(1) {
   top: 0;
 }
+
 body .sidebar-toggle span:nth-child(2) {
   top: 0.5rem;
 }
+
 body .sidebar-toggle span:nth-child(3) {
   top: 1rem;
 }
@@ -220,6 +304,7 @@ body .sidebar-toggle span:nth-child(3) {
 .sidebar-toggle:hover {
   opacity: 0.8;
 }
+
 .sidebar-toggle .sidebar-toggle-button:hover {
   opacity: 1;
 }
@@ -243,7 +328,7 @@ body.close .github-corner {
 /****** Markdown General ******/
 
 .markdown-section p {
-  font-size: 18px;
+  font-size: 17px;
   line-height: 28px;
 }
 
