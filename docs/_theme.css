@@ -10,17 +10,19 @@
   --bg-code-color: #f8f8f8;
   --code-color: #525252;
   --copy-button-color: #fff;
+  --sidebar-scroll-color: rgba(136, 136, 136, 0.4);
 }
 
 [data-theme='dark'] {
   --theme-color: #ffffff;
-  --theme-color-dark: #002ead;
+  --theme-color-dark: #08c;
   --text-color: #f5f6f7;
-  --bg-color: #0a0a23;
-  --sidebar-border-color: #3b3b4f;
+  --bg-color: #313146;
+  --sidebar-border-color: #036299;
   --bg-code-color: #2a2a40;
   --code-color: #d0d0d5;
   --copy-button-color: #000;
+  --sidebar-scroll-color: #036299;
 }
 
 body {
@@ -39,7 +41,7 @@ body {
   margin: 0px;
   width: 100vw;
   height: 38px;
-  background-color: var(--theme-color);
+  background-color: #0a0a23;
   position: fixed;
   top: 0px;
   display: flex;
@@ -67,8 +69,8 @@ body {
   height: 34px;
   width: 50px;
   position: fixed;
-  top: 50px;
-  right: 5px;
+  top: 2px;
+  right: 60px;
   z-index: 100000;
 }
 
@@ -106,7 +108,7 @@ body {
 }
 
 input:checked + .slider {
-  background-color: #002ead;
+  background-color: #08c;
 }
 
 input:checked + .slider:before {
@@ -119,6 +121,18 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+@media screen and (max-width: 1024px) {
+  .theme-switch-wrapper {
+    right: 5px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .theme-switch-wrapper {
+    right: 5px;
+  }
 }
 
 /****** Cover Page ******/

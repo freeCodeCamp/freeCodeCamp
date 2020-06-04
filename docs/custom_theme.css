@@ -57,6 +57,14 @@ div#app:empty::before {
   font-weight: bold;
 }
 
+.search {
+  border-bottom: 1px solid var(--sidebar-border-color) !important;
+}
+
+body > main > aside > div.search > div.input-wrap > input[type='search'] {
+  background-color: var(--bg-color);
+}
+
 html,
 body {
   height: 100%;
@@ -298,6 +306,7 @@ main.hidden {
 .sidebar ul li a {
   border-bottom: none;
   display: block;
+  font-family: 'Lato', sans-serif;
 }
 
 .sidebar ul li ul {
@@ -314,7 +323,7 @@ main.hidden {
 }
 
 .sidebar:hover::-webkit-scrollbar-thumb {
-  background: rgba(136, 136, 136, 0.4);
+  background: var(--sidebar-scroll-color);
 }
 
 .sidebar:hover::-webkit-scrollbar-track {

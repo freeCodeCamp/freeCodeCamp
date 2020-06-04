@@ -41,14 +41,15 @@
     <a class="app-name-link" data-nosearch="" href="/">
       <img id="logo" alt="freeCodeCamp.org" src="images/branding/primary_logo.svg">
     </a>
+    <div class="theme-switch-wrapper">
+      <label class="theme-switch" for="checkbox">
+        <input type="checkbox" id="checkbox" />
+        <div class="slider round"></div>
+      </label>
+    </div>
   </nav>
   <!-- Toggle Icon for Dark and Light Mode -->
-  <div class="theme-switch-wrapper">
-    <label class="theme-switch" for="checkbox">
-      <input type="checkbox" id="checkbox" />
-      <div class="slider round"></div>
-    </label>
-  </div>
+
   <div id="app">
   </div>
   <script>
@@ -122,11 +123,9 @@
   <script>
     const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
     const currentTheme = localStorage.getItem('theme');
-    const logoUrl = localStorage.getItem('logo')
 
     if (currentTheme) {
       document.documentElement.setAttribute('data-theme', currentTheme);
-      document.getElementById('logo').src = logoUrl;
       if (currentTheme === 'dark') {
         toggleSwitch.checked = true;
       }
@@ -135,13 +134,9 @@
     function switchTheme(e) {
       if (e.target.checked) {
         document.documentElement.setAttribute('data-theme', 'dark');
-        document.getElementById('logo').src = "images/branding/secondary_logo.svg";
         localStorage.setItem('theme', 'dark');
-        localStorage.setItem('logo', 'images/branding/secondary_logo.svg');
       } else {
         document.documentElement.setAttribute('data-theme', 'light');
-        document.getElementById('logo').src = "images/branding/primary_logo.svg";
-        localStorage.setItem('logo', 'images/branding/primary_logo.svg');
         localStorage.setItem('theme', 'light');
       }
     }
