@@ -57,11 +57,11 @@ Read our [How to Contribute to Open Source Guide](https://github.com/freeCodeCam
 
 ### Where are the Guide articles (guide.freecodecamp.org)?
 
-We have sunset the general guide articles. 
+We have sunset the general guide articles.
 
-The guide articles redirect to high quality tutorials on freeCodeCamp news. 
+The guide articles redirect to high quality tutorials on freeCodeCamp news.
 
-The challenge hint articles  are available on the freeCodeCamp forum as hint topics. We have updated the links on our curriculum help button to point to the hint topics instead.
+The challenge hint articles are available on the freeCodeCamp forum as hint topics. We have updated the links on our curriculum help button to point to the hint topics instead.
 
 ### Can I translate freeCodeCamp's curriculum?
 
@@ -75,11 +75,11 @@ We do intend to make the curriculum available in more languages, but we do not h
 
 China is the largest demographic regions, in our non-native English speaking audience. Currently, we have hundreds of thousands of users using an old version of the platform. This will give us an estimate of logistics involved in the i18n efforts to other languages.
 
-We intend to start i18n efforts in these languages post the Chinese language launch: 
+We intend to start i18n efforts in these languages post the Chinese language launch:
 
-Arabic, Portuguese, Russian and Spanish (in no particular order). 
+Arabic, Portuguese, Russian and Spanish (in no particular order).
 
-We will focus on Latin America as the demographic region for Portuguese and Spanish. 
+We will focus on Latin America as the demographic region for Portuguese and Spanish.
 
 We do not have any plans for i18n to any other languages other than the above for the foreseeable future.
 
@@ -157,11 +157,12 @@ Be polite and patient. Our community of volunteers and moderators are always aro
 
 If you have queries about the stack, architecture of the codebase, feel free to reach out to our staff dev team:
 
-| Staff                | Send message on Gitter                                        | DM on Twitter                                         |
-| :------------------- | :------------------------------------------------------------ | :---------------------------------------------------- |
-| Mrugesh Mohapatra    | [@raisedadead](https://gitter.im/raisedadead)                 | [@raisedadead](https://twitter.com/raisedadead)       |
-| Ahmad Abdolsaheb     | [@ahmadabdolsaheb](https://gitter.im/ahmadabdolsaheb)         | [@Abdolsaheb](https://twitter.com/Abdolsaheb)         |
-| Kristofer Koishigawa | [@scissorsneedfoodtoo](https://gitter.im/scissorsneedfoodtoo) | [@kriskoishigawa](https://twitter.com/kriskoishigawa) |
-| Tom Mondloc          | [@moT01](https://gitter.im/moT01)                             | -                                                     |
+| Staff                 | Send message on Gitter                                        | Send message on Forum                                                            |
+| :-------------------- | :------------------------------------------------------------ | :------------------------------------------------------------------------------- |
+| Mrugesh Mohapatra     | [@raisedadead](https://gitter.im/raisedadead)                 | [@raisedadead](https://www.freecodecamp.org/forum/u/raisedadead)                 |
+| Ahmad Abdolsaheb      | [@ahmadabdolsaheb](https://gitter.im/ahmadabdolsaheb)         | [@abdolsa](https://www.freecodecamp.org/forum/u/abdolsa)                         |
+| Kristofer Koishigawa  | [@scissorsneedfoodtoo](https://gitter.im/scissorsneedfoodtoo) | [@scissorsneedfoodtoo](https://www.freecodecamp.org/forum/u/scissorsneedfoodtoo) |
+| Tom Mondloc           | [@moT01](https://gitter.im/moT01)                             | [@moT01](https://www.freecodecamp.org/forum/u/moT01)                             |
+| Oliver Eyton-Williams | [@ojeytonwilliams](https://gitter.im/ojeytonwilliams)         | [@ojeytonwilliams](https://www.freecodecamp.org/forum/u/ojeytonwilliams)         |
 
 **You can email our developer staff at: `dev[at]freecodecamp.org`**
