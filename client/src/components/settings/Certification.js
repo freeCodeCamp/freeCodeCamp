@@ -42,21 +42,21 @@ const propTypes = {
   ),
   createFlashMessage: PropTypes.func.isRequired,
   is2018DataVisCert: PropTypes.bool,
+  is2020DataAnalysisPyCert: PropTypes.bool,
+  is2020InfosecCert: PropTypes.bool,
+  is2020MachineLearningPyCert: PropTypes.bool,
+  is2020QaCert: PropTypes.bool,
+  is2020SciCompPyCert: PropTypes.bool,
   isApisMicroservicesCert: PropTypes.bool,
   isBackEndCert: PropTypes.bool,
-  isDataAnalysisPyCert: PropTypes.bool,
   isDataVisCert: PropTypes.bool,
   isFrontEndCert: PropTypes.bool,
   isFrontEndLibsCert: PropTypes.bool,
   isFullStackCert: PropTypes.bool,
   isHonest: PropTypes.bool,
-  isInfosecCert: PropTypes.bool,
   isInfosecQaCert: PropTypes.bool,
   isJsAlgoDataStructCert: PropTypes.bool,
-  isMachineLearningPyCert: PropTypes.bool,
-  isQaCert: PropTypes.bool,
   isRespWebDesignCert: PropTypes.bool,
-  isSciCompPyCert: PropTypes.bool,
   updateLegacyCert: PropTypes.func.isRequired,
   username: PropTypes.string,
   verifyCert: PropTypes.func.isRequired
@@ -72,14 +72,14 @@ const isCertSelector = ({
   isDataVisCert,
   isFrontEndCert,
   isInfosecQaCert,
-  isQaCert,
-  isInfosecCert,
+  is2020QaCert,
+  is2020InfosecCert,
   isFrontEndLibsCert,
   isFullStackCert,
   isRespWebDesignCert,
-  isSciCompPyCert,
-  isDataAnalysisPyCert,
-  isMachineLearningPyCert
+  is2020SciCompPyCert,
+  is2020DataAnalysisPyCert,
+  is2020MachineLearningPyCert
 }) => ({
   is2018DataVisCert,
   isApisMicroservicesCert,
@@ -88,14 +88,14 @@ const isCertSelector = ({
   isDataVisCert,
   isFrontEndCert,
   isInfosecQaCert,
-  isQaCert,
-  isInfosecCert,
+  is2020QaCert,
+  is2020InfosecCert,
   isFrontEndLibsCert,
   isFullStackCert,
   isRespWebDesignCert,
-  isSciCompPyCert,
-  isDataAnalysisPyCert,
-  isMachineLearningPyCert
+  is2020SciCompPyCert,
+  is2020DataAnalysisPyCert,
+  is2020MachineLearningPyCert
 });
 
 const isCertMapSelector = createSelector(
@@ -105,27 +105,27 @@ const isCertMapSelector = createSelector(
     isApisMicroservicesCert,
     isJsAlgoDataStructCert,
     isInfosecQaCert,
-    isQaCert,
-    isInfosecCert,
+    is2020QaCert,
+    is2020InfosecCert,
     isFrontEndLibsCert,
     isRespWebDesignCert,
     isDataVisCert,
     isFrontEndCert,
     isBackEndCert,
-    isSciCompPyCert,
-    isDataAnalysisPyCert,
-    isMachineLearningPyCert
+    is2020SciCompPyCert,
+    is2020DataAnalysisPyCert,
+    is2020MachineLearningPyCert
   }) => ({
     'Responsive Web Design': isRespWebDesignCert,
     'JavaScript Algorithms and Data Structures': isJsAlgoDataStructCert,
     'Front End Libraries': isFrontEndLibsCert,
     'Data Visualization': is2018DataVisCert,
     "API's and Microservices": isApisMicroservicesCert,
-    'Quality Assurance': isQaCert,
-    'Information Security': isInfosecCert,
-    'Scientific Computing with Python': isSciCompPyCert,
-    'Data Analysis with Python': isDataAnalysisPyCert,
-    'Machine Learning with Python': isMachineLearningPyCert,
+    'Quality Assurance': is2020QaCert,
+    'Information Security': is2020InfosecCert,
+    'Scientific Computing with Python': is2020SciCompPyCert,
+    'Data Analysis with Python': is2020DataAnalysisPyCert,
+    'Machine Learning with Python': is2020MachineLearningPyCert,
     'Legacy Front End': isFrontEndCert,
     'Legacy Data Visualization': isDataVisCert,
     'Legacy Back End': isBackEndCert,
@@ -472,8 +472,8 @@ export class CertificationSettings extends Component {
       is2018DataVisCert,
       isApisMicroservicesCert,
       isFrontEndLibsCert,
-      isQaCert,
-      isInfosecCert,
+      is2020QaCert,
+      is2020InfosecCert,
       isJsAlgoDataStructCert,
       isRespWebDesignCert
     } = this.props;
@@ -482,8 +482,8 @@ export class CertificationSettings extends Component {
       is2018DataVisCert &&
       isApisMicroservicesCert &&
       isFrontEndLibsCert &&
-      isQaCert &&
-      isInfosecCert &&
+      is2020QaCert &&
+      is2020InfosecCert &&
       isJsAlgoDataStructCert &&
       isRespWebDesignCert;
 
