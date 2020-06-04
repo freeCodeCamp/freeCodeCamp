@@ -761,7 +761,7 @@ body {
 
 .sidebar ul li.active > a {
   border-right: 2px solid;
-  color: var(--theme-color, #42b983);
+  color: #1b1b32;
   font-weight: 600;
 }
 
@@ -783,7 +783,7 @@ body {
 }
 
 .markdown-section a {
-  color: var(--theme-color, #42b983);
+  color: var(--text-color-base, #42b983);
   font-weight: 600;
 }
 
