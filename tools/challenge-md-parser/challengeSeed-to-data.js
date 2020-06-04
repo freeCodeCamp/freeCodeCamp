@@ -20,8 +20,6 @@ function defaultFile(lang) {
   };
 }
 function createCodeGetter(key, regEx, seeds) {
-  console.log('seeds');
-  console.log(seeds);
   return container => {
     const {
       properties: { id }
@@ -122,4 +120,5 @@ function createPlugin() {
   };
 }
 
-module.exports = createPlugin;
+exports.challengeSeedToData = createPlugin;
+exports.createCodeGetter = createCodeGetter;
