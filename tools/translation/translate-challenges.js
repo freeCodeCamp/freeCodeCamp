@@ -123,7 +123,7 @@ function processFile(
           let transIndex = 0;
           testsArray.forEach((test, index) => {
             if (test.includes('- text')) {
-              testsArray[index] = '  - text: ' + translation[transIndex];
+              testsArray[index] = '  - text: ' + translation[parseInt(transIndex)];
               transIndex++;
             }
           });
