@@ -77,7 +77,7 @@ Host github.com
 ```
 
 > [!DANGER]
-> Provided you have note deviated from the default setup, the `IdentityFile` will be as above.
+> Provided you have not deviated from the default setup, the `IdentityFile` will be as above.
 
 6) Return to the GitHub SSH setup to test your connection
 
