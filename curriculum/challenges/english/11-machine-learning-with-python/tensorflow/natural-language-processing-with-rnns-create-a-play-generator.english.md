@@ -16,7 +16,6 @@ videoId: j5xsxjq_Xk8
 ```yml
 question:
   text: |
-
     Fill in the blanks below to create the training examples for the RNN:
 
     ```py
