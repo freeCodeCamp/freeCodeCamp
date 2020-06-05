@@ -14,7 +14,7 @@ import {
 } from '../redux';
 import { userSelector, isDonationModalOpenSelector } from '../../../redux';
 import { Loader } from '../../../components/helpers';
-import { sortFiles } from '../utils/sort-files';
+import { sortFiles } from '../../../../../utils/sort-files';
 
 import './editor.css';
 
