@@ -238,12 +238,8 @@ export const certificatesByNameSelector = username => state => {
       is2020MachineLearningPyCert,
     hasLegacyCert:
       isFrontEndCert || isBackEndCert || isDataVisCert || isInfosecQaCert,
+    isFullStackCert,
     currentCerts: [
-      {
-        show: isFullStackCert,
-        title: 'Full Stack Certification',
-        showURL: 'full-stack'
-      },
       {
         show: isRespWebDesignCert,
         title: 'Responsive Web Design Certification',
@@ -315,6 +311,11 @@ export const certificatesByNameSelector = username => state => {
         show: isInfosecQaCert,
         title: 'Information Security and Quality Assurance Certification',
         showURL: 'legacy-information-security-and-quality-assurance'
+      },
+      {
+        show: isFullStackCert,
+        title: 'Full Stack Certification',
+        showURL: 'legacy-full-stack'
       }
     ]
   };

@@ -14,7 +14,7 @@ const idToTitle = new Map(
     '561add10cb82ac38a17513be': 'Legacy Front End',
     '561add10cb82ac38a17213bc':
       'Legacy Information Security and Quality Assurance',
-    '561add10cb82ac38a17213bd': 'Full Stack',
+    '561add10cb82ac38a17213bd': 'Legacy Full Stack',
     '5e44431b903586ffb414c951': 'Scientific Computing with Python',
     '5e46fc95ac417301a38fb934': 'Data Analysis with Python',
     '5e46fc95ac417301a38fb935': 'Machine Learning with Python'

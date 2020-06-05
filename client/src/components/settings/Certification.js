@@ -462,7 +462,7 @@ export class CertificationSettings extends Component {
     );
   };
 
-  renderFullStack = () => {
+  renderLegacyFullStack = () => {
     const {
       isFullStackCert,
       username,
@@ -485,7 +485,7 @@ export class CertificationSettings extends Component {
       isJsAlgoDataStructCert &&
       isRespWebDesignCert;
 
-    const superBlock = 'full-stack';
+    const superBlock = 'legacy-full-stack';
     const certLocation = `/certification/${username}/${superBlock}`;
 
     const buttonStyle = {
@@ -507,7 +507,7 @@ export class CertificationSettings extends Component {
     return (
       <FullWidthRow key={superBlock}>
         <Spacer />
-        <h3>Legacy Full Stack Certification</h3>
+        <h3 className='text-center'>Legacy Full Stack Certification</h3>
         <div>
           <p>
             Once you've earned the following freeCodeCamp certifications, you'll
@@ -564,8 +564,8 @@ export class CertificationSettings extends Component {
       <section id='certification-settings'>
         <SectionHeader>Certifications</SectionHeader>
         {certifications.map(this.renderCertifications)}
-        {this.renderFullStack()}
         <SectionHeader>Legacy Certifications</SectionHeader>
+        {this.renderLegacyFullStack()}
         {legacyCertifications.map(this.renderLegacyCertifications)}
         {isOpen ? (
           <Modal

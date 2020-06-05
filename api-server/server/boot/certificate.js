@@ -15,6 +15,7 @@ import {
   legacyBackEndChallengeId,
   legacyDataVisId,
   legacyInfosecQaId,
+  legacyFullStackId,
   respWebDesignId,
   frontEndLibsId,
   jsAlgoDataStructId,
@@ -22,7 +23,6 @@ import {
   apisMicroservicesId,
   infosecId,
   qaId,
-  fullStackId,
   sciCompPyId,
   dataAnalysisPyId,
   machineLearningPyId
@@ -106,6 +106,7 @@ function createCertTypeIds(app) {
     [certTypes.backEnd]: getIdsForCert$(legacyBackEndChallengeId, Challenge),
     [certTypes.dataVis]: getIdsForCert$(legacyDataVisId, Challenge),
     [certTypes.infosecQa]: getIdsForCert$(legacyInfosecQaId, Challenge),
+    [certTypes.fullStack]: getIdsForCert$(legacyFullStackId, Challenge),
 
     // modern
     [certTypes.respWebDesign]: getIdsForCert$(respWebDesignId, Challenge),
@@ -118,7 +119,6 @@ function createCertTypeIds(app) {
     ),
     [certTypes.qa]: getIdsForCert$(qaId, Challenge),
     [certTypes.infosec]: getIdsForCert$(infosecId, Challenge),
-    [certTypes.fullStack]: getIdsForCert$(fullStackId, Challenge),
     [certTypes.sciCompPy]: getIdsForCert$(sciCompPyId, Challenge),
     [certTypes.dataAnalysisPy]: getIdsForCert$(dataAnalysisPyId, Challenge),
     [certTypes.machineLearningPy]: getIdsForCert$(
@@ -139,6 +139,7 @@ const certIds = {
   [certTypes.backEnd]: legacyBackEndChallengeId,
   [certTypes.dataVis]: legacyDataVisId,
   [certTypes.infosecQa]: legacyInfosecQaId,
+  [certTypes.fullStack]: legacyFullStackId,
   [certTypes.respWebDesign]: respWebDesignId,
   [certTypes.frontEndLibs]: frontEndLibsId,
   [certTypes.jsAlgoDataStruct]: jsAlgoDataStructId,
@@ -146,7 +147,6 @@ const certIds = {
   [certTypes.apisMicroservices]: apisMicroservicesId,
   [certTypes.qa]: qaId,
   [certTypes.infosec]: infosecId,
-  [certTypes.fullStack]: fullStackId,
   [certTypes.sciCompPy]: sciCompPyId,
   [certTypes.dataAnalysisPy]: dataAnalysisPyId,
   [certTypes.machineLearningPy]: machineLearningPyId
@@ -157,7 +157,7 @@ const certText = {
   [certTypes.backEnd]: 'Legacy Back End',
   [certTypes.dataVis]: 'Legacy Data Visualization',
   [certTypes.infosecQa]: 'Legacy Information Security and Quality Assurance',
-  [certTypes.fullStack]: 'Full Stack',
+  [certTypes.fullStack]: 'Legacy Full Stack',
   [certTypes.respWebDesign]: 'Responsive Web Design',
   [certTypes.frontEndLibs]: 'Front End Libraries',
   [certTypes.jsAlgoDataStruct]: 'JavaScript Algorithms and Data Structures',

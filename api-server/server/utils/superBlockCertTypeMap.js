@@ -6,6 +6,7 @@ const superBlockCertTypeMap = {
   'legacy-back-end': certTypes.backEnd,
   'legacy-data-visualization': certTypes.dataVis,
   'legacy-information-security-and-quality-assurance': certTypes.infosecQa,
+  'legacy-full-stack': certTypes.fullStack,
 
   // modern
   'responsive-web-design': certTypes.respWebDesign,
@@ -15,7 +16,6 @@ const superBlockCertTypeMap = {
   'apis-and-microservices': certTypes.apisMicroservices,
   'quality-assurance': certTypes.qa,
   'information-security': certTypes.infosec,
-  'full-stack': certTypes.fullStack,
   'scientific-computing-with-python': certTypes.sciCompPy,
   'data-analysis-with-python': certTypes.dataAnalysisPy,
   'machine-learning-with-python': certTypes.machineLearningPy
