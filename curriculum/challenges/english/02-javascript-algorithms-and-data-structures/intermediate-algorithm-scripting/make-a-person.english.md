@@ -74,7 +74,7 @@ var Person = function(firstAndLast) {
   // Complete the method below and implement the others similarly
   this.getFullName = function() {
     return "";
-  };
+  }; 
   return firstAndLast;
   // Only change code above this line
 };
@@ -85,9 +85,9 @@ bob.getFullName();
 
 </div>
 
-### After Test
+### Before Test
 
-<div id='js-teardown'>
+<div id='js-setup'>
 
 ```js
 if(bob){
