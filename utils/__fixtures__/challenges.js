@@ -1,4 +1,4 @@
-export const challengeFiles = {
+exports.challengeFiles = {
   indexcss: {
     contents: 'some css',
     error: null,

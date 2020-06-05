@@ -22,6 +22,5 @@ describe('sort-files', () => {
       const expected = ['indexhtml', 'indexjsx', 'indexjs', 'indexcss'];
       expect(sortedKeys).toStrictEqual(expected);
     });
-
   });
 });
