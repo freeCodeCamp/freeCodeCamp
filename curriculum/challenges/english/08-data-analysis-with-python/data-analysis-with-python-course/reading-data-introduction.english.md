@@ -31,18 +31,34 @@ question:
     ```py
     import csv
 
-    with open(___, 'r') as fp:
-        reader = csv.reader(fp, delimiter=___)
+    with open(__A__, 'r') as fp:
+        reader = csv.reader(fp, delimiter=__B__)
         next(reader)
         for index, values in enumerate(reader):
             name, certs_num, months_num = values
-            print(f"{name} earned {___} certificates in {months_num} months")
+            print(f"{name} earned {__C__} certificates in {months_num} months")
     ```
   
   answers:
-    - <code>'certificates.csv', '-', values</code>
-    - <code>'certificates.csv', '$', certs_num</code>
-    - <code>'certificates', '$', certs_num</code>
+    - |
+      A: `'certificates.csv'`
+      
+      B: `'-'` 
+      
+      C: `values`
+    - |
+      A: `'certificates.csv'`
+      
+      B: `'$'`
+      
+      C: `certs_num`
+    - |
+    
+      A: `'certificates'`
+      
+      B: `'$'`
+      
+      C: `certs_num`
   solution: 2
 ```
 

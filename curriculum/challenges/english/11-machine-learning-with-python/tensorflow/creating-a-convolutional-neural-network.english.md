@@ -16,7 +16,7 @@ videoId: kfv0K8MtkIc
 ```yml
 question:
   text: |
-    Fill in the blanks below to complete the architechture for a convolutional neural network:
+    Fill in the blanks below to complete the architecture for a convolutional neural network:
 
     ```py
     model = models.__A__()
