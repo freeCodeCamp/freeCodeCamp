@@ -2,7 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Col, Row, Image } from '@freecodecamp/react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAward, faHeart } from '@fortawesome/free-solid-svg-icons';
+import {
+  faAward,
+  faHeart,
+  faCalendar
+} from '@fortawesome/free-solid-svg-icons';
 import Identicon from 'react-identicons';
 
 import SocialIcons from './SocialIcons';
@@ -51,7 +55,7 @@ function parseDate(joinDate) {
   joinDate = new Date(joinDate);
   const year = joinDate.getFullYear();
   const month = joinDate.toLocaleString('en-US', { month: 'long' });
-  return `Joined freeCodeCamp in ${month} of ${year}`;
+  return `Joined ${month} ${year}`;
 }
 
 function Camper({
@@ -119,7 +123,11 @@ function Camper({
         </p>
       )}
       {about && <p className='bio text-center'>{about}</p>}
-      {joinDate && <p className='bio text-center'>{parseDate(joinDate)}</p>}
+      {joinDate && (
+        <p className='bio text-center'>
+          <FontAwesomeIcon icon={faCalendar} /> {parseDate(joinDate)}
+        </p>
+      )}
       {yearsTopContributor.filter(Boolean).length > 0 && (
         <div>
           <br />
@@ -129,7 +137,7 @@ function Camper({
           <p className='text-center'>{joinArray(yearsTopContributor)}</p>
         </div>
       )}
-      <hr />
+      <br />
       {typeof points === 'number' ? (
         <p className='text-center points'>
           {`${points} ${pluralise('total point', points !== 1)}`}
