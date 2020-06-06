@@ -21,17 +21,23 @@ question:
     ```py
     def banner(ip, port):
         s = socket.socket()
-        s.____((ip, ____))
+        s.__A__((ip, __B__))
         print(s.recv(1024))
     ```
 
   answers:
     - |
-      `connect`, `port`
+      A: `connect`
+      
+      B: `port`
     - |
-      `getsockname`, `'1-1024'`
+      A: `getsockname`
+      
+      B: `'1-1024'`
     - |
-      `connect`, `int(port)`
+      A: `connect`
+      
+      B: `int(port)`
   solution: 3
 ```
 
