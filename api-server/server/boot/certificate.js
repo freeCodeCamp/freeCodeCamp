@@ -6,6 +6,7 @@ import { Observable } from 'rx';
 import debug from 'debug';
 import { isEmail } from 'validator';
 import format from 'date-fns/format';
+import { reportError } from '../middlewares/sentry-error-handler.js';
 
 import { ifNoUser401 } from '../utils/middleware';
 import { observeQuery } from '../utils/rx';
@@ -76,6 +77,12 @@ const successMessage = (username, name) => dedent`
     @${username}, you have successfully claimed
     the ${name} Certification!
     Congratulations on behalf of the freeCodeCamp.org team!
+    `;
+
+const failureMessage = name => dedent`
+    Something went wrong with the verification of ${name}, please try again.
+    If you continue to receive this error, you can send a message to
+    support@freeCodeCamp.org to get help.
     `;
 
 function ifNoSuperBlock404(req, res, next) {
@@ -202,11 +209,11 @@ function sendCertifiedEmail(
     isJsAlgoDataStructCert,
     isDataVisCert,
     isApisMicroservicesCert,
-    isQaCert,
-    isInfosecCert,
-    isSciCompPyCert,
-    isDataAnalysisPyCert,
-    isMachineLearningPyCert
+    is2020QaCert,
+    is2020InfosecCert,
+    is2020SciCompPyCert,
+    is2020DataAnalysisPyCert,
+    is2020MachineLearningPyCert
   },
   send$
 ) {
@@ -217,11 +224,11 @@ function sendCertifiedEmail(
     !isJsAlgoDataStructCert ||
     !isDataVisCert ||
     !isApisMicroservicesCert ||
-    !isQaCert ||
-    !isInfosecCert ||
-    !isSciCompPyCert ||
-    !isDataAnalysisPyCert ||
-    !isMachineLearningPyCert
+    !is2020QaCert ||
+    !is2020InfosecCert ||
+    !is2020SciCompPyCert ||
+    !is2020DataAnalysisPyCert ||
+    !is2020MachineLearningPyCert
   ) {
     return Observable.just(false);
   }
@@ -249,15 +256,15 @@ function getUserIsCertMap(user) {
     is2018DataVisCert = false,
     isApisMicroservicesCert = false,
     isInfosecQaCert = false,
-    isQaCert = false,
-    isInfosecCert = false,
+    is2020QaCert = false,
+    is2020InfosecCert = false,
     isFrontEndCert = false,
     isBackEndCert = false,
     isDataVisCert = false,
     isFullStackCert = false,
-    isSciCompPyCert = false,
-    isDataAnalysisPyCert = false,
-    isMachineLearningPyCert = false
+    is2020SciCompPyCert = false,
+    is2020DataAnalysisPyCert = false,
+    is2020MachineLearningPyCert = false
   } = user;
 
   return {
@@ -267,15 +274,15 @@ function getUserIsCertMap(user) {
     is2018DataVisCert,
     isApisMicroservicesCert,
     isInfosecQaCert,
-    isQaCert,
-    isInfosecCert,
+    is2020QaCert,
+    is2020InfosecCert,
     isFrontEndCert,
     isBackEndCert,
     isDataVisCert,
     isFullStackCert,
-    isSciCompPyCert,
-    isDataAnalysisPyCert,
-    isMachineLearningPyCert
+    is2020SciCompPyCert,
+    is2020DataAnalysisPyCert,
+    is2020MachineLearningPyCert
   };
 }
 
@@ -302,26 +309,28 @@ function createVerifyCert(certTypeIds, app) {
           [certType]: true
         };
 
-        if (challenge) {
-          const { id, tests, challengeType } = challenge;
-          if (
-            !user[certType] &&
-            !isCertified(tests, user.completedChallenges)
-          ) {
-            return Observable.just(notCertifiedMessage(certName));
-          }
-          updateData = {
-            ...updateData,
-            completedChallenges: [
-              ...user.completedChallenges,
-              {
-                id,
-                completedDate: new Date(),
-                challengeType
-              }
-            ]
-          };
+        // certificate doesn't exist or
+        // connection error
+        if (!challenge) {
+          reportError(`Error claiming ${certName}`);
+          return Observable.just(failureMessage(certName));
         }
+
+        const { id, tests, challengeType } = challenge;
+        if (!user[certType] && !isCertified(tests, user.completedChallenges)) {
+          return Observable.just(notCertifiedMessage(certName));
+        }
+        updateData = {
+          ...updateData,
+          completedChallenges: [
+            ...user.completedChallenges,
+            {
+              id,
+              completedDate: new Date(),
+              challengeType
+            }
+          ]
+        };
 
         if (!user.name) {
           return Observable.just(noNameMessage);
@@ -396,11 +405,11 @@ function createShowCert(app) {
       is2018DataVisCert: true,
       isApisMicroservicesCert: true,
       isInfosecQaCert: true,
-      isQaCert: true,
-      isInfosecCert: true,
-      isSciCompPyCert: true,
-      isDataAnalysisPyCert: true,
-      isMachineLearningPyCert: true,
+      is2020QaCert: true,
+      is2020InfosecCert: true,
+      is2020SciCompPyCert: true,
+      is2020DataAnalysisPyCert: true,
+      is2020MachineLearningPyCert: true,
       isHonest: true,
       username: true,
       name: true,
