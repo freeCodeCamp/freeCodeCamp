@@ -7,7 +7,6 @@ forumTopicId: 301099
 ---
 
 ## Description
-
 <section id='description'>
 When a form gets submitted, the data is sent to the server and includes entries for the options selected. Inputs of type <code>radio</code> and <code>checkbox</code> report their values from the <code>value</code> attribute.
 
@@ -15,32 +14,25 @@ For example:
 
 ```html
 <label for="indoor">
-  <input id="indoor" value="indoor" type="radio" name="indoor-outdoor" />Indoor
+  <input id="indoor" value="indoor" type="radio" name="indoor-outdoor">Indoor
 </label>
 <label for="outdoor">
-  <input
-    id="outdoor"
-    value="outdoor"
-    type="radio"
-    name="indoor-outdoor"
-  />Outdoor
+  <input id="outdoor" value="outdoor" type="radio" name="indoor-outdoor">Outdoor
 </label>
 ```
+
 
 Here, you have two <code>radio</code> inputs. When the user submits the form with the <code>indoor</code> option selected, the form data will include the line: <code>indoor-outdoor=indoor</code>. This is from the <code>name</code> and <code>value</code> attributes of the "indoor" input.
 
 If you omit the <code>value</code> attribute, the submitted form data uses the default value, which is <code>on</code>. In this scenario, if the user clicked the "indoor" option and submitted the form, the resulting form data would be <code>indoor-outdoor=on</code>, which is not useful. So the <code>value</code> attribute needs to be set to something to identify the option.
-
 </section>
 
 ## Instructions
-
 <section id='instructions'>
 Give each of the <code>radio</code> and <code>checkbox</code> inputs the <code>value</code> attribute. Use the input label text, in lowercase, as the value for the attribute.
 </section>
 
 ## Tests
-
 <section id='tests'>
 
 ```yml
@@ -60,7 +52,6 @@ tests:
 </section>
 
 ## Challenge Seed
-
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -70,11 +61,7 @@ tests:
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
 
-  <a href="#"
-    ><img
-      src="https://bit.ly/fcc-relaxing-cat"
-      alt="A cute orange cat lying on its back."
-  /></a>
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
 
   <p>Things cats love:</p>
   <ul>
@@ -102,10 +89,11 @@ tests:
 
 </div>
 
+
+
 </section>
 
 ## Solution
-
 <section id='solution'>
 
 ```html
