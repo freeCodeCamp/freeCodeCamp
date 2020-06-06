@@ -8,6 +8,7 @@ videoId: HdL82tAZR20
 ---
 
 ## Description
+
 <section id='description'>
 More resources:
 - <a href="https://www.youtube.com/watch?v=crLerB4ZxMI" target='_blank'>Exercise 1</a>
@@ -15,36 +16,34 @@ More resources:
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-```yml
+````yml
 question:
   text: |
     Given the following code:
     ```python
     temp = "5 degrees"
     cel = 0
-    try:
-        fahr = float(temp)
-        cel = (fahr - 32.0) * 5.0 / 9.0
-    except:
-        print("temp should be a number")
+    fahr = float(temp)
+    cel = (fahr - 32.0) * 5.0 / 9.0
     print(cel)
     ```
-    Which line would cause the script to immediately stop because of an error?
+    Which line/lines should be surrounded by `try` block?
 
   answers:
     - |
         1
     - |
+        3
+    - |
+        3,4
+    - |
         4
     - |
-        6
-    - |
-        7
-    - |
-        None
-  solution: 2
-```
+      None
+  solution: 3
+````
 
 </section>
