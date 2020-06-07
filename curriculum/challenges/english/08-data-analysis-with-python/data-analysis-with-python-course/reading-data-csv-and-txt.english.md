@@ -17,24 +17,27 @@ videoId: ViGEv0zOzUk
 question:
   text: 'How would you import the CSV file "data.csv" and store it in a DataFrame using the Pandas module?'
   answers:
-    - ```python
-      import pandas as pd
-      df = pd.csv("data.csv")
-      ```
-    - ```python
-      import pandas as pd<br>
-      df = pd.read_csv("data.csv")
-      ```
-    - ```python
-      import pandas as pd
-      pd.read_csv("data.csv")
-      ```
-    - ```python
-      import pandas as pd<br>
-      df = pd.csv_reader("data.csv")
-      ```
+    - |
+       ```python
+       import pandas as pd
+       df = pd.csv("data.csv")
+       ```
+    - |
+       ```python
+       import pandas as pd<br>
+       df = pd.read_csv("data.csv")
+       ```
+    - |
+       ```python
+       import pandas as pd
+       pd.read_csv("data.csv")
+       ```
+    - |
+       ```python
+       import pandas as pd<br>
+       df = pd.csv_reader("data.csv")
+       ```
   solution: 2
 ```
 
 </section>
-
