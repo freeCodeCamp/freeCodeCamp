@@ -1,0 +1,50 @@
+{
+  "name": "Numpy",
+  "dashedName": "numpy",
+  "order": 2,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "data-analysis-with-python",
+  "superOrder": 8,
+  "challengeOrder": [
+    [
+      "5e9a0a8e09c5df3cc3600ed2",
+      "What is NumPy"
+    ],
+    [
+      "5e9a0a8e09c5df3cc3600ed3",
+      "Basics of Numpy"
+    ],
+    [
+      "5e9a0a8e09c5df3cc3600ed4",
+      "Accessing and Changing Elements, Rows, Columns"
+    ],
+    [
+      "5e9a0a8e09c5df3cc3600ed5",
+      "Initializing Different Arrays"
+    ],
+    [
+      "5e9a0a8e09c5df3cc3600ed6",
+      "Initialize Array Problem"
+    ],
+    [
+      "5e9a0a8e09c5df3cc3600ed7",
+      "Copying Arrays Warning"
+    ],
+    [
+      "5e9a0a8e09c5df3cc3600ed8",
+      "Mathematics"
+    ],
+    [
+      "5e9a0a8e09c5df3cc3600ed9",
+      "Reorganizing Arrays"
+    ],
+    [
+      "5e9a0a8e09c5df3cc3600eda",
+      "Loading Data and Advanced Indexing"
+    ]
+  ],
+  "helpRoom": "Help",
+  "fileName": "11-data-analysis-with-python/lectures-numpy.json"
+}

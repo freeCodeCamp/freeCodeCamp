@@ -142,15 +142,21 @@ function getCompletedCertCount(user) {
     'isApisMicroservicesCert',
     'is2018DataVisCert',
     'isFrontEndLibsCert',
-    'isInfosecQaCert',
+    'is2020QaCert',
+    'is2020InfosecCert',
     'isJsAlgoDataStructCert',
-    'isRespWebDesignCert'
+    'isRespWebDesignCert',
+    'is2020SciCompPyCert',
+    'is2020DataAnalysisPyCert',
+    'is2020MachineLearningPyCert'
   ].reduce((sum, key) => (user[key] ? sum + 1 : sum), 0);
 }
 
 function getLegacyCertCount(user) {
-  return ['isFrontEndCert', 'isBackEndCert', 'isDataVisCert'].reduce(
-    (sum, key) => (user[key] ? sum + 1 : sum),
-    0
-  );
+  return [
+    'isFrontEndCert',
+    'isBackEndCert',
+    'isDataVisCert',
+    'isInfosecQaCert'
+  ].reduce((sum, key) => (user[key] ? sum + 1 : sum), 0);
 }

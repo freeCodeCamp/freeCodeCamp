@@ -42,6 +42,11 @@ const propTypes = {
   ),
   createFlashMessage: PropTypes.func.isRequired,
   is2018DataVisCert: PropTypes.bool,
+  is2020DataAnalysisPyCert: PropTypes.bool,
+  is2020InfosecCert: PropTypes.bool,
+  is2020MachineLearningPyCert: PropTypes.bool,
+  is2020QaCert: PropTypes.bool,
+  is2020SciCompPyCert: PropTypes.bool,
   isApisMicroservicesCert: PropTypes.bool,
   isBackEndCert: PropTypes.bool,
   isDataVisCert: PropTypes.bool,
@@ -67,9 +72,14 @@ const isCertSelector = ({
   isDataVisCert,
   isFrontEndCert,
   isInfosecQaCert,
+  is2020QaCert,
+  is2020InfosecCert,
   isFrontEndLibsCert,
   isFullStackCert,
-  isRespWebDesignCert
+  isRespWebDesignCert,
+  is2020SciCompPyCert,
+  is2020DataAnalysisPyCert,
+  is2020MachineLearningPyCert
 }) => ({
   is2018DataVisCert,
   isApisMicroservicesCert,
@@ -78,9 +88,14 @@ const isCertSelector = ({
   isDataVisCert,
   isFrontEndCert,
   isInfosecQaCert,
+  is2020QaCert,
+  is2020InfosecCert,
   isFrontEndLibsCert,
   isFullStackCert,
-  isRespWebDesignCert
+  isRespWebDesignCert,
+  is2020SciCompPyCert,
+  is2020DataAnalysisPyCert,
+  is2020MachineLearningPyCert
 });
 
 const isCertMapSelector = createSelector(
@@ -90,21 +105,31 @@ const isCertMapSelector = createSelector(
     isApisMicroservicesCert,
     isJsAlgoDataStructCert,
     isInfosecQaCert,
+    is2020QaCert,
+    is2020InfosecCert,
     isFrontEndLibsCert,
     isRespWebDesignCert,
     isDataVisCert,
     isFrontEndCert,
-    isBackEndCert
+    isBackEndCert,
+    is2020SciCompPyCert,
+    is2020DataAnalysisPyCert,
+    is2020MachineLearningPyCert
   }) => ({
     'Responsive Web Design': isRespWebDesignCert,
     'JavaScript Algorithms and Data Structures': isJsAlgoDataStructCert,
     'Front End Libraries': isFrontEndLibsCert,
     'Data Visualization': is2018DataVisCert,
     "API's and Microservices": isApisMicroservicesCert,
-    'Information Security And Quality Assurance': isInfosecQaCert,
+    'Quality Assurance': is2020QaCert,
+    'Information Security': is2020InfosecCert,
+    'Scientific Computing with Python': is2020SciCompPyCert,
+    'Data Analysis with Python': is2020DataAnalysisPyCert,
+    'Machine Learning with Python': is2020MachineLearningPyCert,
     'Legacy Front End': isFrontEndCert,
     'Legacy Data Visualization': isDataVisCert,
-    'Legacy Back End': isBackEndCert
+    'Legacy Back End': isBackEndCert,
+    'Legacy Information Security and Quality Assurance': isInfosecQaCert
   })
 );
 
@@ -482,11 +507,11 @@ export class CertificationSettings extends Component {
     return (
       <FullWidthRow key={superBlock}>
         <Spacer />
-        <h3>Full Stack Certification</h3>
+        <h3>Legacy Full Stack Certification</h3>
         <div>
           <p>
             Once you've earned the following freeCodeCamp certifications, you'll
-            be able to claim The Full Stack Developer Certification:
+            be able to claim the Legacy Full Stack Developer Certification:
           </p>
           <ul>
             <li>Responsive Web Design</li>
@@ -494,7 +519,7 @@ export class CertificationSettings extends Component {
             <li>Front End Libraries</li>
             <li>Data Visualization</li>
             <li>APIs and Microservices</li>
-            <li>Information Security and Quality Assurance</li>
+            <li>Legacy Information Security and Quality Assurance</li>
           </ul>
         </div>
 

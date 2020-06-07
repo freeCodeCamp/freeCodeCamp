@@ -13,7 +13,6 @@ import {
   openModal,
   updateSolutionFormValues
 } from '../../redux';
-import { frontEndProject } from '../../../../../utils/challengeTypes';
 import { getGuideUrl } from '../../utils';
 
 import LearnLayout from '../../../../components/layouts/Learn';
@@ -108,7 +107,6 @@ export class Project extends Component {
       updateSolutionFormValues
     } = this.props;
 
-    const isFrontEndProject = challengeType === frontEndProject;
     const blockNameTitle = `${blockName} - ${title}`;
 
     return (
@@ -127,8 +125,8 @@ export class Project extends Component {
                 <ChallengeTitle>{blockNameTitle}</ChallengeTitle>
                 <ChallengeDescription description={description} />
                 <SolutionForm
-                  isFrontEnd={true}
-                  isProject={isFrontEndProject}
+                  challengeType={challengeType}
+                  description={description}
                   onSubmit={openCompletionModal}
                   updateSolutionForm={updateSolutionFormValues}
                 />

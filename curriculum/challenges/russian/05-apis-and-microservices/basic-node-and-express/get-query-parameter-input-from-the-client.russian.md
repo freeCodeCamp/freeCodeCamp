@@ -27,7 +27,7 @@ Build an API endpoint, mounted at <code>GET /name</code>. Respond with a JSON do
 tests:
   - text: 'Test 1 : Your API endpoint should respond with the correct name'
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/name?first=Mick&last=Jagger'').then(data => { assert.equal(data.name, ''Mick Jagger'', ''Test 1: "GET /name" route does not behave as expected'') }, xhr => { throw new Error(xhr.responseText); })'
-  - text: 'Test 2 : Your APi endpoint should respond with the correct name'
+  - text: 'Test 2 : Your API endpoint should respond with the correct name'
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/name?last=Richards&first=Keith'').then(data => { assert.equal(data.name, ''Keith Richards'', ''Test 2: "GET /name" route does not behave as expected'') }, xhr => { throw new Error(xhr.responseText); })'
 
 ```

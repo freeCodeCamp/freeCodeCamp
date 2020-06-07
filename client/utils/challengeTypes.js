@@ -9,11 +9,14 @@ const modern = 6;
 const step = 7;
 const quiz = 8;
 const invalid = 9;
+const pythonProject = 10;
+const video = 11;
 
 // individual exports
 exports.backend = backend;
 exports.frontEndProject = frontEndProject;
 exports.backEndProject = backEndProject;
+exports.pythonProject = pythonProject;
 
 exports.challengeTypes = {
   html,
@@ -22,11 +25,13 @@ exports.challengeTypes = {
   zipline,
   frontEndProject,
   backEndProject,
+  pythonProject,
   bonfire,
   modern,
   step,
   quiz,
-  invalid
+  invalid,
+  video
 };
 
 // turn challengeType to file ext
@@ -42,10 +47,12 @@ exports.viewTypes = {
   [bonfire]: 'classic',
   [frontEndProject]: 'frontend',
   [backEndProject]: 'backend',
+  [pythonProject]: 'frontend',
   [modern]: 'modern',
   [step]: 'step',
   [quiz]: 'quiz',
-  [backend]: 'backend'
+  [backend]: 'backend',
+  [video]: 'video'
 };
 
 // determine the type of submit function to use for the challenge on completion
@@ -60,11 +67,12 @@ exports.submitTypes = {
   // a hosted URL where the app is running live
   // project code url like GitHub
   [backEndProject]: 'project.backEnd',
-
+  [pythonProject]: 'project.backEnd',
   [step]: 'step',
   [quiz]: 'quiz',
   [backend]: 'backend',
-  [modern]: 'tests'
+  [modern]: 'tests',
+  [video]: 'tests'
 };
 
 // determine which help forum questions should be posted to
@@ -105,11 +113,23 @@ exports.helpCategory = {
   'information-security-with-helmetjs': 'JavaScript',
   'quality-assurance-and-testing-with-chai': 'JavaScript',
   'advanced-node-and-express': 'JavaScript',
-  'information-security-and-quality-assurance-projects':
-    'Certification Projects',
+  'quality-assurance-projects': 'Certification Projects',
+  'information-security-projects': 'Certification Projects',
   algorithms: 'JavaScript',
   'data-structures': 'JavaScript',
   'take-home-projects': 'Certification Projects',
   'rosetta-code': 'JavaScript',
-  'project-euler': 'JavaScript'
+  'project-euler': 'JavaScript',
+  'scientific-computing-with-python': 'Certification Projects',
+  'scientific-computing-with-python-projects': 'Certification Projects',
+  'data-analysis-with-python': 'Certification Projects',
+  'data-analysis-with-python-projects': 'Certification Projects',
+  'machine-learning-with-python': 'Certification Projects',
+  'machine-learning-with-python-projects': 'Certification Projects',
+  'python-for-everybody': 'Python',
+  tensorflow: 'Python',
+  'how-neural-networks-work': 'Python',
+  numpy: 'Python',
+  'data-analysis-with-python-course': 'Python',
+  'python-for-penetration-testing': 'Python'
 };

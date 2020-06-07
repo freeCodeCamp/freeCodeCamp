@@ -134,6 +134,46 @@ const defaultTestProps = {
       solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
     },
     {
+      id: '5e444147903586ffb414c94c',
+      solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
+    },
+    {
+      id: '5e444147903586ffb414c94d',
+      solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
+    },
+    {
+      id: '5e444147903586ffb414c94e',
+      solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
+    },
+    {
+      id: '5e444147903586ffb414c94f',
+      solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
+    },
+    {
+      id: '5e44414f903586ffb414c950',
+      solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
+    },
+    {
+      id: '5e46f7e5ac417301a38fb928',
+      solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
+    },
+    {
+      id: '5e46f7e5ac417301a38fb929',
+      solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
+    },
+    {
+      id: '5e46f7f8ac417301a38fb92a',
+      solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
+    },
+    {
+      id: '5e46f802ac417301a38fb92b',
+      solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
+    },
+    {
+      id: '5e4f5c4b570f7e3a4949899f',
+      solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
+    },
+    {
       id: 'bd7157d8c242eddfaeb5bd13',
       completedDate: 1554272923799,
       solution: 'https://github.com/freeCodeCamp/freeCodeCamp'
@@ -149,8 +189,13 @@ const defaultTestProps = {
   isFullStackCert: false,
   isHonest: false,
   isInfosecQaCert: false,
+  is2020QaCert: false,
+  is2020InfosecCert: false,
   isJsAlgoDataStructCert: false,
   isRespWebDesignCert: false,
+  is2020SciCompPyCert: false,
+  is2020DataAnalysisPyCert: false,
+  is2020MachineLearningPyCert: false,
   updateLegacyCert: () => {},
   username: 'developmentuser',
   verifyCert: () => {},

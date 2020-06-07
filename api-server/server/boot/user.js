@@ -162,11 +162,16 @@ function postResetProgress(req, res, next) {
       isJsAlgoDataStructCert: false,
       isApisMicroservicesCert: false,
       isInfosecQaCert: false,
+      is2020QaCert: false,
+      is2020InfosecCert: false,
       is2018FullStackCert: false,
       isFrontEndCert: false,
       isBackEndCert: false,
       isDataVisCert: false,
       isFullStackCert: false,
+      is2020SciCompPyCert: false,
+      is2020DataAnalysisPyCert: false,
+      is2020MachineLearningPyCert: false,
       completedChallenges: []
     },
     function(err) {
@@ -211,7 +216,7 @@ function createPostReportUserProfile(app) {
     return Email.send$(
       {
         type: 'email',
-        to: 'team@freecodecamp.org',
+        to: 'support@freecodecamp.org',
         cc: user.email,
         from: 'team@freecodecamp.org',
         subject: `Abuse Report : Reporting ${username}'s profile.`,
