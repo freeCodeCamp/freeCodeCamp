@@ -16,9 +16,7 @@ videoId: 5PPegAs9aLA
 ```yml
 question:
   text: |
-    ```python
     Which cells are responsible for rich display?
-    ```
   answers:
     - Code Cells
     - Markdown Cells
