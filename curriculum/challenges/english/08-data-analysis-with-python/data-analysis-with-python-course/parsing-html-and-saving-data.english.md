@@ -15,10 +15,8 @@ videoId: bJaqnTWQmb0
 
 ```yml
 question:
-  text: What Python library has the 
-  ```python
-  .read_html()
-  ```method we can we use for parsing HTML documents and extracting tables?
+  text: |
+     What Python library has the `.read_html()` method we can we use for parsing HTML documents and extracting tables?
   answers:
     - 'BeautifierSoupy'
     - 'WebReader'
