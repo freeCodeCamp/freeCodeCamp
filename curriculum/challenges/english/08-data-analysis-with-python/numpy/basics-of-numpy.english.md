@@ -16,7 +16,7 @@ videoId: f9QrZrKQMLI
 ```yml
 question:
   text: |
-    'What will the following code print?:
+    What will the following code print?:
     ```python
     b = np.array([[1.0,2.0,3.0],[3.0,4.0,5.0]])
     print(b)
