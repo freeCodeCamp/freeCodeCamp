@@ -17,23 +17,27 @@ videoId: XzosGWLafrY
 question:
   text: How would you iterate over and print the keys and values of a dictionary named "user"?
   answers:
-    - ```python
-      for key in user.items():
-          print(key)
-      ```
-    - ```python
-      for key, value in user.all():
-          print(key, value)
-          print(value)
-      ```
-    - ```python
-      for key, value in user.items():
-          print(key, value)
-      ```
-    - ```python
-      for key, value in user
-          print(key, value)
-      ```
+    - |
+       ```python
+       for key in user.items():
+           print(key)
+       ```
+    - |
+       ```python
+       for key, value in user.all():
+           print(key, value)
+           print(value)
+       ```
+    - |
+       ```python
+       for key, value in user.items():
+           print(key, value)
+       ```
+    - |
+       ```python
+       for key, value in user
+           print(key, value)
+       ```
   solution: 3
 ```
 
