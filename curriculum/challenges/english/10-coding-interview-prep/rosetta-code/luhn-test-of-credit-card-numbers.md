@@ -3,6 +3,7 @@ id: 5ea28156e79528a9ab248f27
 title: Luhn test of credit card numbers
 challengeType: 5
 isHidden: false
+forumTopicId: 385284
 ---
 
 ## Description
@@ -15,7 +16,7 @@ Those companies using credit card numbers that can be validated by the Luhn test
   <li> Take the first, third, ... and every other odd digit in the reversed digits and sum them to form the partial sum s1</li>
   <li> Taking the second, fourth ... and every other even digit in the reversed digits:</li>
     <ol>
-      <li>Multiply each digit by two and sum the digits if the answer is greater than nine to form partial sums for the even digits.</li> 
+      <li>Multiply each digit by two and sum the digits if the answer is greater than nine to form partial sums for the even digits.</li>
       <li>Sum the partial sums of the even digits to form s2.</li>
     </ol>
   <li>If s1 + s2 ends in zero then the original number is in the form of a valid credit card number as verified by the Luhn test.</li>
@@ -82,7 +83,7 @@ tests:
 
 ```js
 function luhnTest(str) {
-  
+
 }
 ```
 
