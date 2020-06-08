@@ -1,10 +1,12 @@
 const path = require('path');
-const { findIndex } = require('lodash');
+const { findIndex, reduce, toString } = require('lodash');
 const readDirP = require('readdirp-walk');
 const { parseMarkdown } = require('@freecodecamp/challenge-md-parser');
 const fs = require('fs');
 
-const { dasherize } = require('../utils/slugs');
+const { dasherize, nameify } = require('../utils/slugs');
+const { createPoly } = require('../utils/polyvinyl');
+const { blockNameify } = require('../utils/block-nameify');
 
 const challengesDir = path.resolve(__dirname, './challenges');
 const metaDir = path.resolve(challengesDir, '_meta');
@@ -126,6 +128,43 @@ async function createChallenge(fullPath, maybeMeta) {
     challenge.isHidden = false;
   }
 
+  return prepareChallenge(challenge);
+}
+
+// gets the challenge ready for sourcing into Gatsby
+function prepareChallenge(challenge) {
+  challenge.name = nameify(challenge.title);
+  if (challenge.files) {
+    challenge.files = reduce(
+      challenge.files,
+      (map, file) => {
+        map[file.key] = {
+          ...file,
+          head: arrToString(file.head),
+          contents: arrToString(file.contents),
+          tail: arrToString(file.tail)
+        };
+        return map;
+      },
+      {}
+    );
+    // TODO: This should be something that can be folded into the above reduce
+    challenge.files = Object.keys(challenge.files)
+      .filter(key => challenge.files[key])
+      .map(key => challenge.files[key])
+      .reduce(
+        (files, file) => ({
+          ...files,
+          [file.key]: {
+            ...createPoly(file),
+            seed: file.contents.slice(0)
+          }
+        }),
+        {}
+      );
+  }
+  challenge.block = dasherize(challenge.block);
+  challenge.superBlock = blockNameify(challenge.superBlock);
   return challenge;
 }
 
@@ -162,4 +201,8 @@ function getBlockNameFromPath(filePath) {
 function getBlockNameFromFullPath(fullFilePath) {
   const [, block] = fullFilePath.split(path.sep).reverse();
   return block;
+}
+
+function arrToString(arr) {
+  return Array.isArray(arr) ? arr.join('\n') : toString(arr);
 }
