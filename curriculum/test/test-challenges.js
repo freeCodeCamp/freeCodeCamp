@@ -53,9 +53,7 @@ const {
   buildJSChallenge
 } = require('../../client/src/templates/Challenges/utils/build');
 
-const {
-  createPoly
-} = require('../../client/src/templates/Challenges/utils/polyvinyl');
+const { createPoly } = require('../../utils/polyvinyl');
 
 const testEvaluator = require('../../client/config/test-evaluator').filename;
 
