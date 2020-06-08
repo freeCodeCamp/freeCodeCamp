@@ -42,6 +42,7 @@ const {
 } = require('../../client/utils/challengeTypes');
 
 const { dasherize } = require('../../utils/slugs');
+const { sortFiles } = require('../../utils/sort-files');
 
 const { testedLang } = require('../utils');
 
@@ -50,7 +51,6 @@ const {
   buildJSChallenge
 } = require('../../client/src/templates/Challenges/utils/build');
 
-const { createPoly } = require('../../utils/polyvinyl');
 const { sortChallenges } = require('./utils/sort-challenges');
 
 const testEvaluator = require('../../client/config/test-evaluator').filename;
@@ -319,7 +319,6 @@ function populateTestsForLang({ lang, challenges, meta }) {
             });
           });
 
-          let { files = [] } = challenge;
           if (challengeType === challengeTypes.backend) {
             it('Check tests is not implemented.');
             return;
@@ -334,7 +333,6 @@ function populateTestsForLang({ lang, challenges, meta }) {
           // TODO: create more sophisticated validation now we allow for more
           // than one seed/solution file.
 
-          files = files.map(createPoly);
           it('Test suite must fail on the initial contents', async function() {
             this.timeout(5000 * tests.length + 1000);
             // suppress errors in the console.
@@ -344,7 +342,7 @@ function populateTestsForLang({ lang, challenges, meta }) {
             let testRunner;
             try {
               testRunner = await createTestRunner(
-                { ...challenge, files },
+                challenge,
                 '',
                 buildChallenge
               );
@@ -390,7 +388,7 @@ function populateTestsForLang({ lang, challenges, meta }) {
               it(`Solution ${index + 1} must pass the tests`, async function() {
                 this.timeout(5000 * tests.length + 1000);
                 const testRunner = await createTestRunner(
-                  { ...challenge, files },
+                  challenge,
                   solution,
                   buildChallenge
                 );
@@ -418,14 +416,10 @@ async function createTestRunner(
   solution,
   buildChallenge
 ) {
-  // TODO: solutions will need to be multi-file, too, with a fallback when there
-  // is only one file.
-  // we cannot simply use the solution instead of files, because the are not
-  // just the seed(s), they contain the head and tail code. The best approach
-  // is probably to separate out the head and tail from the files.  Then the
-  // files can be entirely replaced by the solution.
+  // fallback for single solution
+  const sortedFiles = sortFiles(files);
   if (solution) {
-    files[0].contents = solution;
+    files[sortedFiles[0].key].contents = solution;
   }
 
   const { build, sources, loadEnzyme } = await buildChallenge({
