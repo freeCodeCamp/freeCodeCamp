@@ -7,10 +7,14 @@ const fileJoi = Joi.object().keys({
   key: Joi.string(),
   ext: Joi.string(),
   name: Joi.string(),
-  head: [Joi.array().items(Joi.string().allow('')), Joi.string().allow('')],
-  tail: [Joi.array().items(Joi.string().allow('')), Joi.string().allow('')],
-  contents: [Joi.array().items(Joi.string().allow('')), Joi.string().allow('')],
-  editableRegionBoundaries: [Joi.array().items(Joi.number())]
+  editableRegionBoundaries: [Joi.array().items(Joi.number())],
+  path: Joi.string(),
+  error: Joi.empty(),
+  head: Joi.string().allow(''),
+  tail: Joi.string().allow(''),
+  seed: Joi.string().allow(''),
+  contents: Joi.string().allow(''),
+  history: [Joi.array().items(Joi.string().allow('')), Joi.string().allow('')]
 });
 
 function getSchemaForLang(lang) {
@@ -30,7 +34,12 @@ function getSchemaForLang(lang) {
       otherwise: Joi.string().required()
     }),
     fileName: Joi.string(),
-    files: Joi.array().items(fileJoi),
+    files: Joi.object().keys({
+      indexcss: fileJoi,
+      indexhtml: fileJoi,
+      indexjs: fileJoi,
+      indexjsx: fileJoi
+    }),
     guideUrl: Joi.string().uri({ scheme: 'https' }),
     videoUrl: Joi.string().allow(''),
     forumTopicId: Joi.number(),
