@@ -1,9 +1,11 @@
 # Setting up WSL for Working with freeCodeCamp Locally
 
-> [!ATTENTION]
+> [!NOTE]
 > Requirements:
-> WSL 1: Windows 10 64-bit, version 1607
-> WSL 2: Windows 10 64-bit, version 2004, Build 19041 or higher (As of June, only available once part of the Windows Insider Program)
+> 
+> **WSL 1**: Windows 10 64-bit, version 1607
+> 
+> **WSL 2**: Windows 10 64-bit, version 2004, Build 19041 or higher (As of June, only available once part of the Windows Insider Program)
 
 Follow these guidlines for setting up WSL to set up freeCodeCamp locally.
 
