@@ -23,8 +23,18 @@ const idToTitle = new Map(
 
 const idToPath = new Map();
 
+// Keep the timeline slug as full-stack rather than
+// legacy-full-stack so we don't break existing links
+const specialPaths = {
+  'Legacy Full Stack': 'Full Stack'
+};
+
 for (const [id, title] of idToTitle) {
-  idToPath.set(id, dasherize(title));
+  if (specialPaths[title]) {
+    idToPath.set(id, dasherize(specialPaths[title]));
+  } else {
+    idToPath.set(id, dasherize(title));
+  }
 }
 
 export const getCertIds = () => idToPath.keys();

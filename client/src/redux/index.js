@@ -315,7 +315,9 @@ export const certificatesByNameSelector = username => state => {
       {
         show: isFullStackCert,
         title: 'Full Stack Certification',
-        showURL: 'legacy-full-stack'
+        // Keep the public profile cert slug as full-stack rather
+        // than legacy-full-stack so we don't break existing links
+        showURL: 'full-stack'
       }
     ]
   };

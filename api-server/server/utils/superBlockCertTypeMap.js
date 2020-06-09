@@ -6,7 +6,9 @@ const superBlockCertTypeMap = {
   'legacy-back-end': certTypes.backEnd,
   'legacy-data-visualization': certTypes.dataVis,
   'legacy-information-security-and-quality-assurance': certTypes.infosecQa,
-  'legacy-full-stack': certTypes.fullStack,
+  // Keep this slug as full-stack rather than
+  // legacy-full-stack so we don't break existing links
+  'full-stack': certTypes.fullStack,
 
   // modern
   'responsive-web-design': certTypes.respWebDesign,

@@ -485,7 +485,9 @@ export class CertificationSettings extends Component {
       isJsAlgoDataStructCert &&
       isRespWebDesignCert;
 
-    const superBlock = 'legacy-full-stack';
+    // Keep the settings page slug as full-stack rather than
+    // legacy-full-stack so we don't break existing links
+    const superBlock = 'full-stack';
     const certLocation = `/certification/${username}/${superBlock}`;
 
     const buttonStyle = {
