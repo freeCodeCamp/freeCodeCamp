@@ -2,7 +2,7 @@
 name: 'Bug Report: Issues with \news or guide articles or documentation'
 about: Report issue with a specific article, like broken links, typos, missing parts, etc
 title: ''
-labels: 'status: needs help for triage, platform: news, platform: forum'
+labels: 'status: needs help for triage, type: bug'
 assignees: ''
 
 ---
@@ -17,7 +17,8 @@ NOTE: If you want to become an author of freecodecamp, you can find everything h
 **Add a Link to the page with the problem:**
 
 
-**How would you update it?**
+**Recommended fix, sugesstions (how would you update it?):**
 
 
 **If possible, add a screenshot here (you can drag and drop, png, jpg, gif, etc. in this box):**
+
