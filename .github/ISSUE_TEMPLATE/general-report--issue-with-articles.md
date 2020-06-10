@@ -1,5 +1,5 @@
 ---
-name: 'Bug Report: Issues with \news or guide articles or documentation'
+name: 'Bug Report: Issues with /news or guide articles or documentation'
 about: Report issue with a specific article, like broken links, typos, missing parts, etc
 title: ''
 labels: 'status: needs help for triage, type: bug'
