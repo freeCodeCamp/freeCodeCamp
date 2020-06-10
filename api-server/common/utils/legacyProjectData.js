@@ -80,6 +80,8 @@ const legacyDataVisProjects = {
 };
 
 const legacyInfosecQaProjects = {
+  // Keep the settings page "Show Certification" button
+  // pointing to information-security-and-quality-assurance
   challenges: [
     // metric-imperial-converter
     '587d8249367417b2b2512c41',
@@ -93,7 +95,7 @@ const legacyInfosecQaProjects = {
     '587d824a367417b2b2512c45'
   ],
   title: 'Legacy Information Security and Quality Assurance Projects',
-  superBlock: 'legacy-information-security-and-quality-assurance'
+  superBlock: 'information-security-and-quality-assurance'
 };
 
 const legacyProjects = [

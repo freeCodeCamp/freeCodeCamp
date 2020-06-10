@@ -13,5 +13,7 @@ export default [
   'legacy-front-end',
   'legacy-back-end',
   'legacy-data-visualization',
-  'legacy-information-security-and-quality-assurance'
+  // Keep this slug as information-security-and-quality-assurance
+  // so we don't break existing links
+  'information-security-and-quality-assurance'
 ];
