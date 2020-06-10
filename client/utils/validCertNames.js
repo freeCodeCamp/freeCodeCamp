@@ -9,11 +9,11 @@ export default [
   'machine-learning-with-python',
   'information-security',
   'quality-assurance',
-  // Keep this slug as full-stack rather than
-  // legacy-full-stack so we don't break existing links
-  'full-stack',
   'legacy-front-end',
   'legacy-back-end',
   'legacy-data-visualization',
-  'legacy-information-security-and-quality-assurance'
+  // Keep these slugs the same so we don't
+  // break existing links
+  'full-stack',
+  'information-security-and-quality-assurance'
 ];

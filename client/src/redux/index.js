@@ -310,13 +310,13 @@ export const certificatesByNameSelector = username => state => {
       {
         show: isInfosecQaCert,
         title: 'Information Security and Quality Assurance Certification',
-        showURL: 'legacy-information-security-and-quality-assurance'
+        // Keep the current public profile cert slug
+        showURL: 'information-security-and-quality-assurance'
       },
       {
         show: isFullStackCert,
         title: 'Full Stack Certification',
-        // Keep the public profile cert slug as full-stack rather
-        // than legacy-full-stack so we don't break existing links
+        // Keep the current public profile cert slug
         showURL: 'full-stack'
       }
     ]

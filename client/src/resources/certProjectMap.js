@@ -209,35 +209,36 @@ export const legacyProjectMap = {
     }
   ],
   'Legacy Information Security and Quality Assurance': [
+    // Keep this as information-security-and-quality-assurance
     {
       id: '587d8249367417b2b2512c41',
       title: 'Metric-Imperial Converter',
       link: `${legacyInfosecQaBase}/metric-imperial-converter`,
-      superBlock: 'legacy-information-security-and-quality-assurance'
+      superBlock: 'information-security-and-quality-assurance'
     },
     {
       id: '587d8249367417b2b2512c42',
       title: 'Issue Tracker',
       link: `${legacyInfosecQaBase}/issue-tracker`,
-      superBlock: 'legacy-information-security-and-quality-assurance'
+      superBlock: 'information-security-and-quality-assurance'
     },
     {
       id: '587d824a367417b2b2512c43',
       title: 'Personal Library',
       link: `${legacyInfosecQaBase}/personal-library`,
-      superBlock: 'legacy-information-security-and-quality-assurance'
+      superBlock: 'information-security-and-quality-assurance'
     },
     {
       id: '587d824a367417b2b2512c44',
       title: 'Stock Price Checker',
       link: `${legacyInfosecQaBase}/stock-price-checker`,
-      superBlock: 'legacy-information-security-and-quality-assurance'
+      superBlock: 'information-security-and-quality-assurance'
     },
     {
       id: '587d824a367417b2b2512c45',
       title: 'Anonymous Message Board',
       link: `${legacyInfosecQaBase}/anonymous-message-board`,
-      superBlock: 'legacy-information-security-and-quality-assurance'
+      superBlock: 'information-security-and-quality-assurance'
     }
   ]
 };
