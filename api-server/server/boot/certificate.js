@@ -370,7 +370,11 @@ function createVerifyCert(certTypeIds, app) {
             type: message.includes('Congratulations') ? 'success' : 'info',
             message
           },
-          isCertMap: getUserIsCertMap(user)
+          isCertMap: getUserIsCertMap(user),
+          // send back the completed challenges
+          // NOTE: we could just send back the latest challenge, but this
+          // ensures the challenges are synced.
+          completedChallenges: user.completedChallenges
         });
       }, next);
   };

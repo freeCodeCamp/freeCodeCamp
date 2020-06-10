@@ -482,12 +482,10 @@ export const reducer = handleActions(
         error: payload
       }
     }),
-    [types.submitComplete]: (state, { payload: { id, challArray } }) => {
-      // TODO: possibly more of the payload (files?) should be added
-      // to the completedChallenges array.
-      let submittedchallenges = [{ id, completedDate: Date.now() }];
-      if (challArray) {
-        submittedchallenges = challArray;
+    [types.submitComplete]: (state, { payload }) => {
+      let submittedchallenges = [{ ...payload, completedDate: Date.now() }];
+      if (payload.challArray) {
+        submittedchallenges = payload.challArray;
       }
       const { appUsername } = state;
       return {
