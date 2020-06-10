@@ -8,7 +8,7 @@ assignees: ''
 ---
 
 <!-- 
-NOTE: If you want to become an author of freecodecamp, you can find everything here: https://www.freecodecamp.org/news/developer-news-style-guide/
+NOTE: If you want to become an author on freeCodeCamp, you can find everything here: https://www.freecodecamp.org/news/developer-news-style-guide/
 -->
 
 **Describe your problem and how to reproduce it:**
@@ -17,8 +17,7 @@ NOTE: If you want to become an author of freecodecamp, you can find everything h
 **Add a Link to the page with the problem:**
 
 
-**Recommended fix, sugesstions (how would you update it?):**
+**Recommended fix, suggestions (how would you update it?):**
 
 
 **If possible, add a screenshot here (you can drag and drop, png, jpg, gif, etc. in this box):**
-
