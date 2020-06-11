@@ -32,7 +32,6 @@ const propTypes = {
   inAccessibilityMode: PropTypes.bool.isRequired,
   initialEditorContent: PropTypes.string,
   initialExt: PropTypes.string,
-  initialFileKey: PropTypes.string.isRequired,
   saveEditorContent: PropTypes.func.isRequired,
   setAccessibilityMode: PropTypes.func.isRequired,
   setEditorFocusability: PropTypes.func,
