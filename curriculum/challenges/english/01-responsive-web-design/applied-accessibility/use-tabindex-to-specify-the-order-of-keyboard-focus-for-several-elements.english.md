@@ -10,7 +10,7 @@ forumTopicId: 301028
 ## Description
 <section id='description'>
 The <code>tabindex</code> attribute also specifies the exact tab order of elements. This is achieved when the value of the attribute is set to a positive number of 1 or higher.
-Setting a tabindex="1" will bring keyboard focus to that element first. Then it cycles through the sequence of specified <code>tabindex</code> values (2, 3, etc.), before moving to default and <code>tabindex="0"</code> items.
+Setting a <code>tabindex="1"</code> will bring keyboard focus to that element first. Then it cycles through the sequence of specified <code>tabindex</code> values (2, 3, etc.), before moving to default and <code>tabindex="0"</code> items.
 It's important to note that when the tab order is set this way, it overrides the default order (which uses the HTML source). This may confuse users who are expecting to start navigation from the top of the page. This technique may be necessary in some circumstances, but in terms of accessibility, take care before applying it.
 Here's an example:
 <code>&lt;div tabindex=&quot;1&quot;&gt;I get keyboard focus, and I get it first!&lt;/div&gt;</code>
@@ -19,7 +19,7 @@ Here's an example:
 
 ## Instructions
 <section id='instructions'>
-Camper Cat has a search field on his Inspirational Quotes page that he plans to position in the upper right corner with CSS. He wants the search <code>input</code> and submit <code>input</code> form controls to be the first two items in the tab order. Add a <code>tabindex</code> attribute set to "1" to the search <code>input</code>, and a <code>tabindex</code> attribute set to "2" to the submit <code>input</code>.
+Camper Cat has a search field on his Inspirational Quotes page that he plans to position in the upper right corner with CSS. He wants the search <code>input</code> and submit <code>input</code> form controls to be the first two items in the tab order. Add a <code>tabindex</code> attribute set to <code>"1"</code> to the search <code>input</code>, and a <code>tabindex</code> attribute set to <code>"2"</code> to the submit <code>input</code>.
 </section>
 
 ## Tests
