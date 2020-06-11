@@ -4,8 +4,8 @@ import Spinner from 'react-spinkit';
 import { Link } from 'gatsby';
 
 import notFoundLogo from '../../assets/images/freeCodeCamp-404.svg';
-import words from '../../../../utils/words.json';
-
+import words from '../../../../../utils/words.json';
+hello
 import './404.css';
 
 class NotFoundPage extends Component {
