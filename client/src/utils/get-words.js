@@ -1,4 +1,4 @@
-import words from '../../../utils/motivationalQuotes.json';
+import words from '../../../config/motivationalQuotes.json';
 
 function randomItem(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
