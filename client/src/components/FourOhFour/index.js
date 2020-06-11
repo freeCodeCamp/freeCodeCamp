@@ -22,7 +22,10 @@ class NotFoundPage extends Component {
 
   updateQuote() {
     this.setState({
-      randomQuote: words.motivationalQuotes[Math.floor(Math.random() * words.motivationalQuotes.length)]
+      randomQuote:
+        words.motivationalQuotes[
+          Math.floor(Math.random() * words.motivationalQuotes.length)
+        ]
     });
   }
 
