@@ -1,6 +1,6 @@
 {
   "name": "Legacy Full Stack Certificate",
-  "dashedName": "legacy-full-stack-certificate",
+  "dashedName": "full-stack-certificate",
   "order": 5,
   "time": "",
   "template": "",
@@ -14,5 +14,5 @@
     ]
   ],
   "isPrivate": true,
-  "fileName": "12-certificates/legacy-full-stack-certificate.json"
+  "fileName": "12-certificates/legacy-full-stack-certificate/full-stack-certificate.english.json"
 }
