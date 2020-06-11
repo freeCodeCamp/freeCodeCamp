@@ -195,6 +195,18 @@ class Editor extends Component {
     return { model: this.data[this.currentFileKey].model };
   };
 
+  // Updates the model if the contents has changed. This is only necessary for
+  // changes coming from outside the editor (such as code resets).
+  updateEditorValues = () => {
+    const { challengeFiles } = this.props;
+    Object.keys(challengeFiles).forEach(key => {
+      const newContents = challengeFiles[key].contents;
+      if (this.data[key].model.getValue() !== newContents) {
+        this.data[key].model.setValue(newContents);
+      }
+    });
+  };
+
   editorDidMount = (editor, monaco) => {
     console.log('did mount');
     console.log(this.props);
@@ -300,6 +312,12 @@ class Editor extends Component {
   };
 
   componentDidUpdate(prevProps) {
+    // If a challenge is reset, it needs to communicate that change to the
+    // editor. This looks for changes any challenge files and updates if needed.
+    if (this.props.challengeFiles !== prevProps.challengeFiles) {
+      this.updateEditorValues();
+    }
+
     if (this.props.dimensions !== prevProps.dimensions && this._editor) {
       this._editor.layout();
     }
@@ -321,7 +339,6 @@ class Editor extends Component {
     // const code = challengeFiles[fileKey].contents;
     // const ext = challengeFiles[fileKey].ext;
     console.log('fileKey', this.currentFileKey);
-    const contents = challengeFiles[this.currentFileKey].contents;
     // console.log('code', code);
     // console.log('ext', ext);
     const editorTheme = theme === 'night' ? 'vs-dark-custom' : 'vs-custom';
@@ -373,7 +390,6 @@ class Editor extends Component {
             onChange={this.onChange}
             options={this.options}
             theme={editorTheme}
-            value={contents}
           />
         </span>
       </Suspense>
