@@ -71,7 +71,7 @@ Bitte erstelle keine GitHub-Issues für Sicherheitsrisiken. Schicke stattdessen 
 
 Unsere Community-Moderatoren [sichten](https://en.wikipedia.org/wiki/Software_bug#Bug_management) Issues und Pull Requests basierend auf ihrer Priorität, Kritikalität und anderen Faktoren. [Hier findest du das komplette Glossar zu den Bedeutungen](https://github.com/freecodecamp/freecodecamp/labels).
 
-Du solltest durch die **`Help Wanted`** oder **`first timers welcome`** Issues schauen, um einen schnellen Überblick über das, woran du arbeiten könntest, zu gewinnen. Diese sind frei zur Bearbeitung und du musst nicht nach Erlaubnis fragen, um daran zu arbeiten.
+Du solltest durch die **`Help Wanted`** oder **`first timers only`** Issues schauen, um einen schnellen Überblick über das, woran du arbeiten könntest, zu gewinnen. Diese sind frei zur Bearbeitung und du musst nicht nach Erlaubnis fragen, um daran zu arbeiten.
 
 Wenn diese Issues unklar sind bezüglich was getan werden muss, zögere nicht, Fragen in den Kommentaren zu stellen.
 
@@ -92,7 +92,7 @@ Wir weisen Issues in der Regel niemandem außer Langzeit-Mitarbeitern zu, um meh
    - Hast du die Checkliste für Pull-Requests befolgt? 
    - Hast du deinen Pull Request Titel sinnvoll benannt und verständlich formuliert?
 
-Du benötigst keine Berechtigung für Issues, die mit `Help Wanted` oder `first timers welcome` markiert sind. Befolge die Anweisungen sorgfältig und öffne einen Pull Request.
+Du benötigst keine Berechtigung für Issues, die mit `Help Wanted` oder `first timers only` markiert sind. Befolge die Anweisungen sorgfältig und öffne einen Pull Request.
 
 **Ich bin ein GitHub/Open-Source-Neuling:**
 
