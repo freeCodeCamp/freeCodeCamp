@@ -13,7 +13,10 @@ import {
 import { Link, navigate } from 'gatsby';
 import { createSelector } from 'reselect';
 
-import { projectMap, legacyProjectMap } from '../../resources/certProjectMap';
+import {
+  projectMap,
+  legacyProjectMap
+} from '../../resources/certAndProjectMap';
 
 import SectionHeader from './SectionHeader';
 import SolutionViewer from './SolutionViewer';
@@ -120,7 +123,7 @@ const isCertMapSelector = createSelector(
     'JavaScript Algorithms and Data Structures': isJsAlgoDataStructCert,
     'Front End Libraries': isFrontEndLibsCert,
     'Data Visualization': is2018DataVisCert,
-    "API's and Microservices": isApisMicroservicesCert,
+    'APIs and Microservices': isApisMicroservicesCert,
     'Quality Assurance': is2020QaCert,
     'Information Security': is2020InfosecCert,
     'Scientific Computing with Python': is2020SciCompPyCert,
