@@ -14,6 +14,11 @@
   background-color: var(--secondary-background);
 }
 
+button.monaco-editor-tab:hover {
+  color: var(--quaternary-color);
+  background-color: var(--quaternary-background);
+}
+
 .monaco-editor-tab:first-child {
   border-left: 2px solid var(--primary-color);
 }
@@ -21,4 +26,10 @@
 .monaco-editor-tab-selected {
   background-color: var(--primary-background);
   border-bottom: 2px solid var(--primary-background);
+}
+
+.monaco-editor-tab[role='tab'][aria-selected='true'] {
+  border-color: var(--secondary-color);
+  background-color: var(--secondary-color);
+  color: var(--secondary-background);
 }
