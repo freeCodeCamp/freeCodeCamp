@@ -73,7 +73,7 @@ Güvenlik sorunları için herhangi bir GitHub issue yaratmak yerine lütfen, `s
 
 Topluluk moderotörlerimiz, issue'ları [aciliyetine göre sıralar](https://en.wikipedia.org/wiki/Software_bug#Bug_management) ve istekleri önceliklerine, ciddiyetine ve diğer faktörlere incelemeye alırlar. Etiketlerin [anlamlarının sözlüğünü buradan bulabilirsiniz](https://github.com/freecodecamp/freecodecamp/labels).
 
-[**`yardım aranıyor`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) ya da [**`ilk kez gelenler hoş geldiniz`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+welcome%22), çalışmanız için neyin uygun olduğuna hızlı bir bakış atın. Bunlar üzerinde çalışmak için izin almanız gerekmez.
+[**`yardım aranıyor`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) ya da [**`ilk kez gelenler hoş geldiniz`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+only%22), çalışmanız için neyin uygun olduğuna hızlı bir bakış atın. Bunlar üzerinde çalışmak için izin almanız gerekmez.
 
 Eğere bu issue'lar üzerine ne yapılacağı net değilse, yorumlarda soru sormaktan çekinmeyin.
 
