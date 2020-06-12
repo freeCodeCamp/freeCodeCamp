@@ -84,9 +84,9 @@ bob.getFullName();
 
 </div>
 
-### Before Test
+### After Test
 
-<div id='js-setup'>
+<div id='js-teardown'>
 
 ```js
 if(bob){
