@@ -268,27 +268,27 @@ export const certificatesByNameSelector = username => state => {
       {
         show: is2020QaCert,
         title: ' Quality Assurance Certification',
-        showURL: 'quality-assurance'
+        showURL: '2020-quality-assurance'
       },
       {
         show: is2020InfosecCert,
         title: 'Information Security Certification',
-        showURL: 'information-security'
+        showURL: '2020-information-security'
       },
       {
         show: is2020SciCompPyCert,
         title: 'Scientific Computing with Python Certification',
-        showURL: 'scientific-computing-with-python'
+        showURL: '2020-scientific-computing-with-python'
       },
       {
         show: is2020DataAnalysisPyCert,
         title: 'Data Analysis with Python Certification',
-        showURL: 'data-analysis-with-python'
+        showURL: '2020-data-analysis-with-python'
       },
       {
         show: is2020MachineLearningPyCert,
         title: 'Machine Learning with Python Certification',
-        showURL: 'machine-learning-with-python'
+        showURL: '2020-machine-learning-with-python'
       }
     ],
     legacyCerts: [

@@ -28,7 +28,12 @@ const idToPath = new Map();
 const specialPaths = {
   'Legacy Full Stack': 'Full Stack',
   'Legacy Information Security and Quality Assurance':
-    'Information Security and Quality Assurance'
+    'Information Security and Quality Assurance',
+  'Scientific Computing with Python': '2020 Scientific Computing with Python',
+  'Data Analysis with Python': '2020 Data Analysis with Python',
+  'Machine Learning with Python': '2020 Machine Learning with Python',
+  'Quality Assurance': '2020 Quality Assurance',
+  'Information Security': '2020 Information Security'
 };
 
 for (const [id, title] of idToTitle) {
