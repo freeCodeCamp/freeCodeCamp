@@ -328,43 +328,46 @@ class Editor extends Component {
     const editorTheme = theme === 'night' ? 'vs-dark-custom' : 'vs-custom';
 
     // TODO: tabs should be dynamically created from the challengeFiles
-    // TODO: a11y fixes.
     // TODO: is the key necessary? Try switching themes without it.
     return (
       <Suspense fallback={<Loader timeout={600} />}>
         <span className='notranslate'>
           <div className='monaco-editor-tabs'>
             {challengeFiles['indexjsx'] && (
-              <div
+              <button
                 className='monaco-editor-tab'
                 onClick={() => this.changeTab('indexjsx')}
+                role='tab'
               >
                 script.jsx
-              </div>
+              </button>
             )}
             {challengeFiles['indexhtml'] && (
-              <div
+              <button
                 className='monaco-editor-tab'
                 onClick={() => this.changeTab('indexhtml')}
+                role='tab'
               >
                 index.html
-              </div>
+              </button>
             )}
             {challengeFiles['indexjs'] && (
-              <div
+              <button
                 className='monaco-editor-tab'
                 onClick={() => this.changeTab('indexjs')}
+                role='tab'
               >
                 script.js
-              </div>
+              </button>
             )}
             {challengeFiles['indexcss'] && (
-              <div
+              <button
                 className='monaco-editor-tab'
                 onClick={() => this.changeTab('indexcss')}
+                role='tab'
               >
                 styles.css
-              </div>
+              </button>
             )}
           </div>
           <MonacoEditor
