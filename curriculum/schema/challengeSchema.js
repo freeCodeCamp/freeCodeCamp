@@ -73,7 +73,12 @@ function getSchemaForLang(lang) {
       })
     ),
     solutions: Joi.array().items(Joi.string().optional()),
-    solutionFiles: Joi.array().items(fileJoi),
+    solutionFiles: Joi.object().keys({
+      indexcss: fileJoi,
+      indexhtml: fileJoi,
+      indexjs: fileJoi,
+      indexjsx: fileJoi
+    }),
     superBlock: Joi.string(),
     superOrder: Joi.number(),
     suborder: Joi.number(),

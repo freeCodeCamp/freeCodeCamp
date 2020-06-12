@@ -23,7 +23,7 @@ const {
 
 const { assert, AssertionError } = require('chai');
 const Mocha = require('mocha');
-const { flatten } = require('lodash');
+const { flatten, isEmpty, cloneDeep } = require('lodash');
 
 const jsdom = require('jsdom');
 
@@ -330,9 +330,6 @@ function populateTestsForLang({ lang, challenges }, meta) {
               ? buildJSChallenge
               : buildDOMChallenge;
 
-          // TODO: create more sophisticated validation now we allow for more
-          // than one seed/solution file.
-
           it('Test suite must fail on the initial contents', async function() {
             this.timeout(5000 * tests.length + 1000);
             // suppress errors in the console.
@@ -363,7 +360,7 @@ function populateTestsForLang({ lang, challenges }, meta) {
             assert(fails, 'Test suit does not fail on the initial contents');
           });
 
-          let { solutions = [] } = challenge;
+          let { solutions = [], solutionFiles = {} } = challenge;
           const noSolution = new RegExp('// solution required');
           solutions = solutions.filter(
             solution => !!solution && !noSolution.test(solution)
@@ -371,9 +368,13 @@ function populateTestsForLang({ lang, challenges }, meta) {
           console.log('solutions===================');
           console.log(solutions);
 
-          if (solutions.length === 0) {
+          if (solutions.length === 0 && isEmpty(solutionFiles)) {
             it('Check tests. No solutions');
             return;
+          }
+
+          if (!isEmpty(solutionFiles)) {
+            solutions = [solutionFiles];
           }
 
           describe('Check tests against solutions', function() {
@@ -397,22 +398,24 @@ function populateTestsForLang({ lang, challenges }, meta) {
   });
 }
 
-// TODO: solutions will need to be multi-file, too, with a fallback when there
-// is only one file.
-// we cannot simply use the solution instead of files, because the are not
-// just the seed(s), they contain the head and tail code. The best approach
-// is probably to separate out the head and tail from the files.  Then the
-// files can be entirely replaced by the solution.
+async function createTestRunner(challenge, solution, buildChallenge) {
+  const { required = [], template } = challenge;
+  // we should avoid modifying challenge, as it gets reused:
+  const files = cloneDeep(challenge.files);
 
-async function createTestRunner(
-  { required = [], template, files },
-  solution,
-  buildChallenge
-) {
-  // fallback for single solution
-  const sortedFiles = sortFiles(files);
-  if (solution) {
+  // TODO: there must be a better way of handling both single and multi-file
+  // solutions
+  if (typeof solution === 'object' && !isEmpty(solution)) {
+    Object.keys(solution).forEach(key => {
+      files[key].contents = solution[key].contents;
+    });
+  } else if (solution) {
+    // fallback for single solution
+    const sortedFiles = sortFiles(files);
+
     files[sortedFiles[0].key].contents = solution;
+  } else {
+    throw Error('Tried to create test runner without a solution.');
   }
 
   const { build, sources, loadEnzyme } = await buildChallenge({
