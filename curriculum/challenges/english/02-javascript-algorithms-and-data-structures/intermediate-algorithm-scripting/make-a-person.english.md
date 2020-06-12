@@ -74,9 +74,8 @@ var Person = function(firstAndLast) {
   // Complete the method below and implement the others similarly
   this.getFullName = function() {
     return "";
-  }; 
+  };
   return firstAndLast;
-  // Only change code above this line
 };
 
 var bob = new Person('Bob Ross');
@@ -94,6 +93,7 @@ if(bob){
   bob = new Person("Bob Ross");
 }
 ```
+
 </div>
 
 
