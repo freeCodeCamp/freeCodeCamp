@@ -136,9 +136,11 @@ class Editor extends Component {
 
     const { challengeFiles } = this.props;
 
-    // NOTE: for consitency with this.data (and this.options) currentFileKey
-    // is just a property, not state.
-    this.currentFileKey = sortFiles(challengeFiles)[0].key;
+    // NOTE: the ARIA state is controlled by fileKey, so changes to it must
+    // trigger a re-render.  Hence state:
+    this.state = {
+      fileKey: sortFiles(challengeFiles)[0].key
+    };
 
     this.options = {
       fontSize: '18px',
@@ -192,7 +194,7 @@ class Editor extends Component {
             modeMap[challengeFiles[key].ext]
           );
     });
-    return { model: this.data[this.currentFileKey].model };
+    return { model: this.data[this.state.fileKey].model };
   };
 
   // Updates the model if the contents has changed. This is only necessary for
@@ -287,11 +289,11 @@ class Editor extends Component {
     const { updateFile } = this.props;
     console.log('evalue');
     console.log(editorValue);
-    updateFile({ key: this.currentFileKey, editorValue });
+    updateFile({ key: this.state.fileKey, editorValue });
   };
 
-  changeTab = fileKey => {
-    this.currentFileKey = fileKey;
+  changeTab = newFileKey => {
+    this.setState({ fileKey: newFileKey });
     const editor = this._editor;
     const currentState = editor.saveViewState();
 
@@ -306,8 +308,8 @@ class Editor extends Component {
       this.data.indexhtml.state = currentState;
     }
 
-    editor.setModel(this.data[fileKey].model);
-    editor.restoreViewState(this.data[fileKey].state);
+    editor.setModel(this.data[newFileKey].model);
+    editor.restoreViewState(this.data[newFileKey].state);
     editor.focus();
   };
 
@@ -324,7 +326,7 @@ class Editor extends Component {
   }
 
   componentWillUnmount() {
-    this.currentFileKey = null;
+    this.setState({ fileKey: null });
     this.data = null;
   }
 
@@ -338,7 +340,7 @@ class Editor extends Component {
     const { challengeFiles, theme } = this.props;
     // const code = challengeFiles[fileKey].contents;
     // const ext = challengeFiles[fileKey].ext;
-    console.log('fileKey', this.currentFileKey);
+    console.log('fileKey', this.state.fileKey);
     // console.log('code', code);
     // console.log('ext', ext);
     const editorTheme = theme === 'night' ? 'vs-dark-custom' : 'vs-custom';
@@ -351,6 +353,7 @@ class Editor extends Component {
           <div className='monaco-editor-tabs'>
             {challengeFiles['indexjsx'] && (
               <button
+                aria-selected={this.state.fileKey === 'indexjsx'}
                 className='monaco-editor-tab'
                 onClick={() => this.changeTab('indexjsx')}
                 role='tab'
@@ -360,6 +363,7 @@ class Editor extends Component {
             )}
             {challengeFiles['indexhtml'] && (
               <button
+                aria-selected={this.state.fileKey === 'indexhtml'}
                 className='monaco-editor-tab'
                 onClick={() => this.changeTab('indexhtml')}
                 role='tab'
@@ -369,6 +373,7 @@ class Editor extends Component {
             )}
             {challengeFiles['indexjs'] && (
               <button
+                aria-selected={this.state.fileKey === 'indexjs'}
                 className='monaco-editor-tab'
                 onClick={() => this.changeTab('indexjs')}
                 role='tab'
@@ -378,6 +383,7 @@ class Editor extends Component {
             )}
             {challengeFiles['indexcss'] && (
               <button
+                aria-selected={this.state.fileKey === 'indexcss'}
                 className='monaco-editor-tab'
                 onClick={() => this.changeTab('indexcss')}
                 role='tab'
