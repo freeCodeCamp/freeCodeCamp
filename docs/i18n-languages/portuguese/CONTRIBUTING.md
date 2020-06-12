@@ -139,7 +139,7 @@ Leia nosso [Guia de como contribuir para <i>Open Source</i>](https://github.com/
 
 Nossa comunidade de moderadores faz uma [triagem](https://en.wikipedia.org/wiki/Software_bug#Bug_management) das <i>issues</i> e <i>pull requests</i> baseada em suas prioridades, gravidade e outros fatores. Você pode [encontrar um glossário completo dos seus significados aqui](https://github.com/freecodecamp/freecodecamp/labels).
 
-Você deveria passar pelas <i>issues</i> de **`Help Wanted`** (Ajuda necessária) ou **`first timers welcome`** (Iniciantes são bem vindos) para uma rápida consulta do que está livre para você trabalhar. Elas estão disponíveis e você não precisa de permissão para começar a trabalhar nelas.
+Você deveria passar pelas <i>issues</i> de **`Help Wanted`** (Ajuda necessária) ou **`first timers only`** (Iniciantes são bem vindos) para uma rápida consulta do que está livre para você trabalhar. Elas estão disponíveis e você não precisa de permissão para começar a trabalhar nelas.
 
 Se essas <i>issues</i> possuem falta de clareza do que deve ser feito, sinta-se livre para tirar suas dúvidas nos comentários.
 

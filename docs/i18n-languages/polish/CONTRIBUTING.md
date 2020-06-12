@@ -68,7 +68,7 @@ Proszę nie tworzyć problemów z GitHub w sprawach bezpieczeństwa. Zamiast teg
 
 Nasi moderatorzy społeczności [triage](https://en.wikipedia.org/wiki/Software_bug#Bug_management) zgłaszają problemy i wnioski w oparciu o ich priorytet, dotkliwość i inne czynniki. Możesz [znaleźć kompletny słowniczek ich znaczeń tutaj](https://github.com/freecodecamp/freecodecamp/labels).
 
-Powinieneś przejść przez [**`help wanted`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) lub [**`first timers welcome`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+welcome%22) w celu szybkiego przeglądu tego, nad czym możesz pracować. 
+Powinieneś przejść przez [**`help wanted`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) lub [**`first timers only`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+only%22) w celu szybkiego przeglądu tego, nad czym możesz pracować. 
 
 Są one do pobrania i nie musisz ubiegać się o pozwolenie przed rozpoczęciem pracy nad nimi. Jeśli te kwestie nie są jasne, co należy zrobić, nie krępuj się zadawać pytań w komentarzach.
 

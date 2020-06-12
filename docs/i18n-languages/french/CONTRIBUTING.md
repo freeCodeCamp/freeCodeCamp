@@ -119,7 +119,7 @@ Veuillez ne pas créer de tickets GitHub pour des raisons de sécurité. Envoyez
 
 Nos modérateurs de communauté [triage](https://en.wikipedia.org/wiki/Software_bug#Bug#Bug_management) traitent les problèmes et les demandes de retrait en fonction de leur priorité, de leur gravité et d'autres facteurs. Vous pouvez [trouver un glossaire complet de leur signification ici](https://github.com/freecodecamp/freecodecamp/labels).
 
-Vous devriez passer en revue les tickets de **`Help Wanted`** ou **`first timers welcome`** pour avoir un aperçu rapide de ce qui est à votre disposition pour travailler dessus. Ils sont à votre disposition et vous n'avez pas besoin de demander la permission avant d'y travailler.
+Vous devriez passer en revue les tickets de **`Help Wanted`** ou **`first timers only`** pour avoir un aperçu rapide de ce qui est à votre disposition pour travailler dessus. Ils sont à votre disposition et vous n'avez pas besoin de demander la permission avant d'y travailler.
 
 Si ces questions manquent de clarté sur ce qui doit être fait, n'hésitez pas à poser des questions dans les commentaires.
 

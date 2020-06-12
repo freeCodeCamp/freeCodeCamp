@@ -126,7 +126,7 @@ Leggi la nostra [Guida su come contribuire all'open source](https://github.com/f
 
 I nostri moderatori della comunita' [smistano](https://en.wikipedia.org/wiki/Software_bug#Bug_management) i problemi e le pull request in base alla loro priorità, gravità e altri fattori. Puoi [trovare qui un glossario completo dei loro significati](https://github.com/freecodecamp/freecodecamp/labels).
 
-Dovresti esaminare gli argomenti **`Help Wanted`** oppure **`first timers welcome`** per una rapida ricerca di ciò che è disponibile e su cui puoi lavorare. Sono tutti problemi aperti e non c'è bisogno di chiedere il pemesso prima di lavorarci su.
+Dovresti esaminare gli argomenti **`Help Wanted`** oppure **`first timers only`** per una rapida ricerca di ciò che è disponibile e su cui puoi lavorare. Sono tutti problemi aperti e non c'è bisogno di chiedere il pemesso prima di lavorarci su.
 
 Se questi problemi mancano di chiarezza su ciò che deve essere fatto, sentiti libero di porre domande nei commenti.
 

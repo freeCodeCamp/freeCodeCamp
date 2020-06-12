@@ -73,7 +73,7 @@ freeCodeCamp.org는 여러분과 같은 수천 명의 친절한 자원봉사자 
 
 커뮤니티 중재자는 우선순위, 심각성 및 기타 요인에 따라 이슈를 [분류](https://en.wikipedia.org/wiki/Software_bug#Bug_management)하고 PR을 보냅니다. [여기서 모든 라벨의 의미를 찾아볼 수 있습니다](https://github.com/freecodecamp/freecodecamp/labels).
 
-여러분이 작업할 수 있는 이슈를 빠르게 찾고 싶다면 [**`help wanted`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) 또는 [**`first timers welcome`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+welcome%22) 라벨이 달린 이슈를 살펴보세요. 이 이슈들은 누구에게나 열려 있으며 작업하기 전에 허락을 구할 필요가 없습니다.
+여러분이 작업할 수 있는 이슈를 빠르게 찾고 싶다면 [**`help wanted`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) 또는 [**`first timers only`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+only%22) 라벨이 달린 이슈를 살펴보세요. 이 이슈들은 누구에게나 열려 있으며 작업하기 전에 허락을 구할 필요가 없습니다.
 
 만약 이슈의 설명이 불명확하다면 코멘트 란에 자유롭게 질문하세요.
 

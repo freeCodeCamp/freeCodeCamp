@@ -126,7 +126,7 @@ Citește [Cum să contribui la Ghidul Open Source](https://github.com/freeCodeCa
 
 Moderatorii noștri din comunitate [triază](https://en.wikipedia.org/wiki/Software_bug#Bug_management) problemele si solicitarile de integrare a modificărilor pe baza priorității lor, gravității lor și a altor factori. Poți găsi [un glosar complet al semnificațiilor lor aici](https://github.com/freecodecamp/freecodecamp/labels).
 
-Ar trebui să treci prin intermediul paginilor cu probleme **`Help Wanted/Am nevoie de ajutor`**  sau **`first timers welcome/pagina incepatorilor`** pentru a căuta rapid ceea ce este disponibil pentru tine pentru a lucra. Acestea sunt susținute pentru a fi luate și nu trebuie să lucrați în altceva înainte de a lucra la acestea.
+Ar trebui să treci prin intermediul paginilor cu probleme **`Help Wanted/Am nevoie de ajutor`**  sau **`first timers only/pagina incepatorilor`** pentru a căuta rapid ceea ce este disponibil pentru tine pentru a lucra. Acestea sunt susținute pentru a fi luate și nu trebuie să lucrați în altceva înainte de a lucra la acestea.
 
 Dacă aceste aspecte nu prezintă clarificări cu privire la ceea ce trebuie făcut, nu ezita să pui întrebări în comentarii.
 

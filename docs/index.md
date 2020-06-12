@@ -115,9 +115,9 @@ Our community moderators [triage](https://en.wikipedia.org/wiki/Software_bug#Bug
 
 ### Where do I start if I want to work on an issue?
 
-You should go through [**`help wanted`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) or [**`first timers welcome`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+welcome%22) issues for a quick overview of what is available for you to work on.
+You should go through [**`help wanted`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) or [**`first timers only`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+only%22) issues for a quick overview of what is available for you to work on.
 
-> [!TIP] These are up for grabs, and you do not need to seek permission before working on them. If these issues lack clarity on what needs to be done, feel free to ask questions in the comments.
+> [!TIP] **`help wanted`** issues are up for grabs, and you do not need to seek permission before working on them. However, issues with the **`first timers only`** label are reserved for people that have not contributed to the freeCodeCamp codebase before. If these issues lack clarity on what needs to be done, feel free to ask questions in the comments.
 
 ### I found a typo, should I report an issue before I can make a pull request?
 
@@ -138,7 +138,7 @@ We typically do not assign issues to anyone other than long-time contributors to
    - Did you follow the pull request checklist?
    - Did you name your pull request title meaningfully?
 
-You do not need any permission for issues that are marked `help wanted` or `first timers welcome` as explained earlier.
+You do not need any permission for issues that are marked `help wanted` or `first timers only` as explained earlier.
 
 Follow the guidelines carefully and open a pull request.
 
