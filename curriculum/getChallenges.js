@@ -185,24 +185,30 @@ Trying to parse ${fullPath}`);
   return prepareChallenge(challenge);
 }
 
+// TODO: tests and more descriptive name.
+function filesToObject(files) {
+  return reduce(
+    files,
+    (map, file) => {
+      map[file.key] = {
+        ...file,
+        head: arrToString(file.head),
+        contents: arrToString(file.contents),
+        tail: arrToString(file.tail)
+      };
+      return map;
+    },
+    {}
+  );
+}
+
 // gets the challenge ready for sourcing into Gatsby
 function prepareChallenge(challenge) {
   challenge.name = nameify(challenge.title);
   if (challenge.files) {
-    challenge.files = reduce(
-      challenge.files,
-      (map, file) => {
-        map[file.key] = {
-          ...file,
-          head: arrToString(file.head),
-          contents: arrToString(file.contents),
-          tail: arrToString(file.tail)
-        };
-        return map;
-      },
-      {}
-    );
+    challenge.files = filesToObject(challenge.files);
     // TODO: This should be something that can be folded into the above reduce
+    // EDIT: maybe not, now that we're doing the same for solutionFiles.
     challenge.files = Object.keys(challenge.files)
       .filter(key => challenge.files[key])
       .map(key => challenge.files[key])
@@ -216,6 +222,10 @@ function prepareChallenge(challenge) {
         }),
         {}
       );
+  }
+
+  if (challenge.solutionFiles) {
+    challenge.solutionFiles = filesToObject(challenge.solutionFiles);
   }
   challenge.block = dasherize(challenge.block);
   challenge.superBlock = blockNameify(challenge.superBlock);
