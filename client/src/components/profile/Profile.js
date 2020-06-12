@@ -123,8 +123,6 @@ function renderProfile(user) {
     isDonating
   } = user;
 
-  console.log(showDonation);
-
   return (
     <Fragment>
       <Camper
