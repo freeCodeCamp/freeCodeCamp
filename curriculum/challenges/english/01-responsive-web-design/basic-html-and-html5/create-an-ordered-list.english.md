@@ -56,7 +56,10 @@ tests:
     testString: $('ul li').each((i, val) => assert(val.textContent.replace(/\s/g, '')));
   - text: The <code>li</code> elements in your ordered list should not be empty.
     testString: $('ol li').each((i, val) => assert(!!val.textContent.replace(/\s/g, '')));
-
+  - text: debug multifile css
+    testString: assert($('a').css('background-color') === 'rgb(0, 0, 0)');
+  - text: debug multifile js
+    testString: assert($('h2').html() === 'CATPHOTOAPP CAPITALIZED SOLUTION');
 ```
 
 </section>
@@ -100,7 +103,7 @@ document.getElementById('h2').innerHTML = 'CATPHOTOAPP CAPITALIZED';
 
 ```css
 a {
-  background-color:#000;
+  background-color:#001;
 }
 ```
 
@@ -110,8 +113,10 @@ a {
 ## Solution
 <section id='solution'>
 
+<div id='html-solution'>
+
 ```html
-<h2>CatPhotoApp</h2>
+<h2 id='h2'>CatPhotoApp</h2>
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
 
@@ -132,4 +137,23 @@ a {
 </main>
 ```
 
+</div>
+
+<div id='css-solution'>
+
+```css
+a {
+  background-color:#000;
+}
+```
+
+</div>
+
+<div id='js-solution'>
+
+```js
+document.getElementById('h2').innerHTML = 'CATPHOTOAPP CAPITALIZED SOLUTION';
+```
+
+</div>
 </section>
