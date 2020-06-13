@@ -17,7 +17,7 @@ videoId: S45tqW6BqRs
 question:
   text: Which activation function switches values between -1 and 1?
   answers:
-    - Relu (Rectified Linear Unit)
+    - ReLU (Rectified Linear Unit)
     - Tanh (Hyperbolic Tangent)
     - Sigmoid
   solution: 2
