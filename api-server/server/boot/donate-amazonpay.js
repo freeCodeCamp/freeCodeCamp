@@ -3,6 +3,7 @@ import generate from 'nanoid/generate';
 import amazonPayments from 'amazon-payments';
 
 import keys from '../../../config/secrets';
+import { createAsyncUserDonation } from '../utils/donation';
 
 const log = debug('fcc:boot:donate-amazonpay');
 
@@ -67,6 +68,8 @@ export default function donateAmazonPay(app, done) {
           // when the payment object is open
           billingAgreementStatus =
             data.BillingAgreementDetails.BillingAgreementStatus.State;
+          donorEmail = data.BillingAgreementDetails.Buyer.Email;
+          console.log(donorEmail);
           console.log('GET AGREEMENT DETAILS');
           console.log(JSON.stringify(data));
           resolve(data);
@@ -146,9 +149,7 @@ export default function donateAmazonPay(app, done) {
           SellerOrderAttributes: {
             SellerOrderId: sellerOrderId
           },
-          AuthorizationReferenceId: `${globalAmazonPayId}-${Number(
-            new Date().getTime()
-          )}`,
+          AuthorizationReferenceId: `${globalAmazonPayId}_${agreementId}`,
           AuthorizationAmount: {
             Amount: amount,
             CurrencyCode: 'USD'
@@ -222,10 +223,21 @@ export default function donateAmazonPay(app, done) {
     });
   }
 
-  async function respondToClient(res) {
+  async function respondToClient(req, res) {
     console.log('RESPOND TO CLIENT');
     console.log('donationState: ' + donationState);
     if (donationState === 'CaptureSuccessful') {
+      const donation = {
+        email: donorEmail,
+        amount: amount * 100,
+        duration: 'month',
+        provider: 'amazon',
+        subscriptionId: agreementId,
+        customerId: donorEmail,
+        startDate: new Date(Date.now()).toISOString()
+      };
+      const { user } = req;
+      await createAsyncUserDonation(user, donation);
       return res.status(200).json({
         type: 'success',
         message: `Your payment has been processed.`
@@ -264,6 +276,7 @@ export default function donateAmazonPay(app, done) {
   let amount;
   let globalAmazonPayId;
   let donationState;
+  let donorEmail;
   const generalError = {
     error: 'Donation failed due to a server error.',
     type: 'ServerError'
@@ -290,7 +303,7 @@ export default function donateAmazonPay(app, done) {
       .then(confirmBillingAgreement)
       .then(() => setAmazonPayId(req))
       .then(() => authorizeOnBillingAgreement(0))
-      .then(() => respondToClient(res))
+      .then(() => respondToClient(req, res))
       .catch(err => {
         log(err.message);
         if (
