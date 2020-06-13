@@ -5,11 +5,11 @@
 > 
 > **WSL 1**: Windows 10 64-bit, version 1607
 > 
-> **WSL 2**: Windows 10 64-bit, version 2004, Build 19041 or higher (As of June, only available once part of the Windows Insider Program)
+> **WSL 2**: Windows 10 64-bit, version 2004, Build 19041 or higher
 
 Follow these guidlines for setting up WSL to set up freeCodeCamp locally.
 
-This guide is covers some common issues encountered with the setup of WSL.
+This guide covers some common issues encountered with the setup of WSL.
 
 ## Enable WSL & Download a Distro
 
@@ -31,7 +31,7 @@ If you run into any issues related to Git, follow through with one of the follow
 
 ### ALTERNATIVE 1 - Use apt-get to Install the Latest Version of Git
 
-1) Update your distrobution:
+1) Update your distribution:
 
 ```sh
 sudo apt update && sudo apt upgrade
@@ -57,7 +57,7 @@ git --version
 
  >ssh: connect to host `github.com` port 22: Connection refused
 
-3) CD into the `.ssh` folder, and create a config file:
+3) `cd` into the `.ssh` folder, and create a config file:
 
 ```sh
 cd ~/.ssh && touch config
