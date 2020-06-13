@@ -1,13 +1,31 @@
 // originally based off of https://github.com/gulpjs/vinyl
-import invariant from 'invariant';
-import { Observable } from 'rx';
-import castToObservable from '../../server/utils/cast-to-observable';
+const invariant = require('invariant');
+const { of, from, isObservable } = require('rxjs');
+const { map, switchMap } = require('rxjs/operators');
+
+function isPromise(value) {
+  return (
+    value &&
+    typeof value.subscribe !== 'function' &&
+    typeof value.then === 'function'
+  );
+}
+
+function castToObservable(maybe) {
+  if (isObservable(maybe)) {
+    return maybe;
+  }
+  if (isPromise(maybe)) {
+    return from(maybe);
+  }
+  return of(maybe);
+}
 
 // createFileStream(
 //   files: [...PolyVinyl]
 // ) => Observable[...Observable[...PolyVinyl]]
-export function createFileStream(files = []) {
-  return Observable.of(Observable.from(files));
+function createFileStream(files = []) {
+  return of(from(files));
 }
 
 // Observable::pipe(
@@ -15,10 +33,12 @@ export function createFileStream(files = []) {
 //    file: PolyVinyl
 //  ) => PolyVinyl|Observable[PolyVinyl]|Promise[PolyVinyl]
 // ) => Observable[...Observable[...PolyVinyl]]
-export function pipe(project) {
+function pipe(project) {
   const source = this;
-  return source.map(files =>
-    files.flatMap(file => castToObservable(project(file)))
+  return source.pipe(
+    map(files => {
+      return files.pipe(switchMap(file => castToObservable(project(file))));
+    })
   );
 }
 
@@ -41,7 +61,7 @@ export function pipe(project) {
 //   contents: String,
 //   history?: [...String],
 // }) => PolyVinyl, throws
-export function createPoly({ name, ext, contents, history, ...rest } = {}) {
+function createPoly({ name, ext, contents, history, ...rest } = {}) {
   invariant(typeof name === 'string', 'name must be a string but got %s', name);
 
   invariant(typeof ext === 'string', 'ext must be a string, but was %s', ext);
@@ -54,7 +74,7 @@ export function createPoly({ name, ext, contents, history, ...rest } = {}) {
 
   return {
     ...rest,
-    history: Array.isArray(history) ? history : [name + ext],
+    history: Array.isArray(history) ? history : [name + '.' + ext],
     name,
     ext,
     path: name + '.' + ext,
@@ -65,7 +85,7 @@ export function createPoly({ name, ext, contents, history, ...rest } = {}) {
 }
 
 // isPoly(poly: Any) => Boolean
-export function isPoly(poly) {
+function isPoly(poly) {
   return (
     poly &&
     typeof poly.contents === 'string' &&
@@ -76,7 +96,7 @@ export function isPoly(poly) {
 }
 
 // checkPoly(poly: Any) => Void, throws
-export function checkPoly(poly) {
+function checkPoly(poly) {
   invariant(
     isPoly(poly),
     'function should receive a PolyVinyl, but got %s',
@@ -85,14 +105,14 @@ export function checkPoly(poly) {
 }
 
 // isEmpty(poly: PolyVinyl) => Boolean, throws
-export function isEmpty(poly) {
+function isEmpty(poly) {
   checkPoly(poly);
   return !!poly.contents;
 }
 
 // setContent(contents: String, poly: PolyVinyl) => PolyVinyl
 // setContent will loose source if set
-export function setContent(contents, poly) {
+function setContent(contents, poly) {
   checkPoly(poly);
   return {
     ...poly,
@@ -102,7 +122,7 @@ export function setContent(contents, poly) {
 }
 
 // setExt(ext: String, poly: PolyVinyl) => PolyVinyl
-export function setExt(ext, poly) {
+function setExt(ext, poly) {
   checkPoly(poly);
   const newPoly = {
     ...poly,
@@ -115,7 +135,7 @@ export function setExt(ext, poly) {
 }
 
 // setName(name: String, poly: PolyVinyl) => PolyVinyl
-export function setName(name, poly) {
+function setName(name, poly) {
   checkPoly(poly);
   const newPoly = {
     ...poly,
@@ -128,7 +148,7 @@ export function setName(name, poly) {
 }
 
 // setError(error: Object, poly: PolyVinyl) => PolyVinyl
-export function setError(error, poly) {
+function setError(error, poly) {
   invariant(
     typeof error === 'object',
     'error must be an object or null, but got %',
@@ -142,7 +162,7 @@ export function setError(error, poly) {
 }
 
 // clearHeadTail(poly: PolyVinyl) => PolyVinyl
-export function clearHeadTail(poly) {
+function clearHeadTail(poly) {
   checkPoly(poly);
   return {
     ...poly,
@@ -152,7 +172,7 @@ export function clearHeadTail(poly) {
 }
 
 // appendToTail (tail: String, poly: PolyVinyl) => PolyVinyl
-export function appendToTail(tail, poly) {
+function appendToTail(tail, poly) {
   checkPoly(poly);
   return {
     ...poly,
@@ -161,7 +181,7 @@ export function appendToTail(tail, poly) {
 }
 
 // compileHeadTail(padding: String, poly: PolyVinyl) => PolyVinyl
-export function compileHeadTail(padding = '', poly) {
+function compileHeadTail(padding = '', poly) {
   return clearHeadTail(
     transformContents(
       () => [poly.head, poly.contents, poly.tail].join(padding),
@@ -178,7 +198,7 @@ export function compileHeadTail(padding = '', poly) {
 // code in the `source` property. If the original polyvinyl
 // already contains a source, this version will continue as
 // the source property
-export function transformContents(wrap, poly) {
+function transformContents(wrap, poly) {
   const newPoly = setContent(wrap(poly.contents), poly);
   // if no source exist, set the original contents as source
   newPoly.source = poly.source || poly.contents;
@@ -189,7 +209,7 @@ export function transformContents(wrap, poly) {
 //   wrap: (source: String) => String,
 //   poly: PolyVinyl
 // ) => PolyVinyl
-export function transformHeadTailAndContents(wrap, poly) {
+function transformHeadTailAndContents(wrap, poly) {
   return {
     ...transformContents(wrap, poly),
     head: wrap(poly.head),
@@ -197,10 +217,32 @@ export function transformHeadTailAndContents(wrap, poly) {
   };
 }
 
-export function testContents(predicate, poly) {
+function testContents(predicate, poly) {
   return !!predicate(poly.contents);
 }
 
-export function updateFileFromSpec(spec, poly) {
+function updateFileFromSpec(spec, poly) {
   return setContent(poly.contents, createPoly(spec));
 }
+
+module.exports = {
+  isPromise,
+  castToObservable,
+  createFileStream,
+  pipe,
+  createPoly,
+  isPoly,
+  checkPoly,
+  isEmpty,
+  setContent,
+  setExt,
+  setName,
+  setError,
+  clearHeadTail,
+  appendToTail,
+  compileHeadTail,
+  transformContents,
+  transformHeadTailAndContents,
+  testContents,
+  updateFileFromSpec
+};
