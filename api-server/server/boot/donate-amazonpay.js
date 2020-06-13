@@ -68,8 +68,10 @@ export default function donateAmazonPay(app, done) {
           // when the payment object is open
           billingAgreementStatus =
             data.BillingAgreementDetails.BillingAgreementStatus.State;
-          donorEmail = data.BillingAgreementDetails.Buyer.Email;
-          console.log(donorEmail);
+
+          if (billingAgreementStatus !== 'Draft')
+            donorEmail = data.BillingAgreementDetails.Buyer.Email;
+
           console.log('GET AGREEMENT DETAILS');
           console.log(JSON.stringify(data));
           resolve(data);
@@ -227,6 +229,8 @@ export default function donateAmazonPay(app, done) {
     console.log('RESPOND TO CLIENT');
     console.log('donationState: ' + donationState);
     if (donationState === 'CaptureSuccessful') {
+      if (!donorEmail) await getAgreementDetails();
+      console.log(donorEmail);
       const donation = {
         email: donorEmail,
         amount: amount * 100,
