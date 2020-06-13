@@ -6,8 +6,6 @@ const fs = require('fs');
 
 const { dasherize } = require('../utils/slugs');
 
-const { challengeSchemaValidator } = require('./schema/challengeSchema');
-
 const challengesDir = path.resolve(__dirname, './challenges');
 const metaDir = path.resolve(challengesDir, '_meta');
 exports.challengesDir = challengesDir;
@@ -38,13 +36,13 @@ exports.getChallengesForLang = function getChallengesForLang(lang) {
     readDirP({ root: getChallengesDirForLang(lang) })
       .on('data', file => {
         running++;
-        buildCurriculum(file, curriculum, lang).then(done);
+        buildCurriculum(file, curriculum).then(done);
       })
       .on('end', done);
   });
 };
 
-async function buildCurriculum(file, curriculum, lang) {
+async function buildCurriculum(file, curriculum) {
   const { name, depth, path: filePath, fullPath, stat } = file;
   if (depth === 1 && stat.isDirectory()) {
     // extract the superBlock info
@@ -80,12 +78,12 @@ async function buildCurriculum(file, curriculum, lang) {
   }
   const { meta } = challengeBlock;
 
-  const challenge = await createChallenge(fullPath, meta, lang);
+  const challenge = await createChallenge(fullPath, meta);
 
   challengeBlock.challenges = [...challengeBlock.challenges, challenge];
 }
 
-async function createChallenge(fullPath, maybeMeta, lang) {
+async function createChallenge(fullPath, maybeMeta) {
   let meta;
   if (maybeMeta) {
     meta = maybeMeta;
@@ -98,11 +96,6 @@ async function createChallenge(fullPath, maybeMeta, lang) {
   }
   const { name: superBlock } = superBlockInfoFromFullPath(fullPath);
   const challenge = await parseMarkdown(fullPath);
-  const result = challengeSchemaValidator(lang)(challenge);
-  if (result.error) {
-    console.log(result.value);
-    throw new Error(result.error);
-  }
   const challengeOrder = findIndex(
     meta.challengeOrder,
     ([id]) => id === challenge.id
