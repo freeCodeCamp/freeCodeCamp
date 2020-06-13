@@ -56,10 +56,10 @@ tests:
     testString: $('ul li').each((i, val) => assert(val.textContent.replace(/\s/g, '')));
   - text: The <code>li</code> elements in your ordered list should not be empty.
     testString: $('ol li').each((i, val) => assert(!!val.textContent.replace(/\s/g, '')));
-  - text: debug multifile css
+  - text: The styles.css file should set the <code>background-color</code> of <code>a</code> elements to black.
     testString: assert($('a').css('background-color') === 'rgb(0, 0, 0)');
-  - text: debug multifile js
-    testString: assert($('h2').html() === 'CATPHOTOAPP CAPITALIZED SOLUTION');
+  - text: The script.js file should set the <code>h2</code> element's innerHTML to <code>'expected value'</code>
+    testString: assert($('h2').html() === 'expected value');
 ```
 
 </section>
@@ -152,7 +152,7 @@ a {
 <div id='js-solution'>
 
 ```js
-document.getElementById('h2').innerHTML = 'CATPHOTOAPP CAPITALIZED SOLUTION';
+document.getElementById('h2').innerHTML = 'expected value';
 ```
 
 </div>
