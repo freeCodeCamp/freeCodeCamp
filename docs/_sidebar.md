@@ -8,6 +8,7 @@
   - [Work on the news theme](/how-to-work-on-the-news-theme.md)
   - [Work on the docs theme](/how-to-work-on-the-docs-theme.md)
   - [Catch outgoing emails locally](/how-to-catch-outgoing-emails-locally.md)
+  - [Set up WSL](/how-to-setup-wsl.md)
 - **<i class="fad fa-language"></i> Chinese Community Contribution Guides** (中文社区贡献指南)
   - [成为专栏作者](/chinese-guides/news-author-application.md)
   - [文章翻译计划](/chinese-guides/news-translations.md)
