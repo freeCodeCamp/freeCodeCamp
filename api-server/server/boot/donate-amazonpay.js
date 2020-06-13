@@ -1,5 +1,5 @@
 import debug from 'debug';
-
+import generate from 'nanoid/generate';
 import amazonPayments from 'amazon-payments';
 
 import keys from '../../../config/secrets';
@@ -19,6 +19,7 @@ export default function donateAmazonPay(app, done) {
   const api = app.loopback.Router();
   const hooks = app.loopback.Router();
   const donateRouter = app.loopback.Router();
+  // const { User } = app.models;
 
   // check for body and user
   function checkAuthorizatioin(req, res) {
@@ -119,8 +120,25 @@ export default function donateAmazonPay(app, done) {
     });
   }
 
+  async function setAmazonPayId(req) {
+    const { amazonPayId } = req.user;
+    const { user } = req;
+    if (amazonPayId) {
+      console.log('GET AMAZON PAY ID Y');
+      globalAmazonPayId = amazonPayId;
+    } else {
+      const nanoidCharSet =
+        '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      const newAmazonPayId = generate(nanoidCharSet, 10);
+      await user.createAmazonPayId(newAmazonPayId);
+      globalAmazonPayId = newAmazonPayId;
+      console.log('GET AMAZON PAY ID N');
+    }
+  }
+
   function authorizeOnBillingAgreement(TransactionTimeout) {
     console.log('time: ' + TransactionTimeout);
+
     return new Promise((resolve, reject) => {
       payment.offAmazonPayments.authorizeOnBillingAgreement(
         {
@@ -128,7 +146,9 @@ export default function donateAmazonPay(app, done) {
           SellerOrderAttributes: {
             SellerOrderId: sellerOrderId
           },
-          AuthorizationReferenceId: Number(new Date().getTime()),
+          AuthorizationReferenceId: `${globalAmazonPayId}-${Number(
+            new Date().getTime()
+          )}`,
           AuthorizationAmount: {
             Amount: amount,
             CurrencyCode: 'USD'
@@ -136,7 +156,7 @@ export default function donateAmazonPay(app, done) {
           TransactionTimeout: TransactionTimeout,
           CaptureNow: 'true',
           SoftDescriptor: 'freeCodeCamp',
-          SellerAuthorizationNote: 'Donation to freeCodeCamp'
+          SellerAuthorizationNote: 'Donation to freeCodeCamp.org'
         },
         (err, data) => {
           if (err) {
@@ -242,6 +262,7 @@ export default function donateAmazonPay(app, done) {
   let orderReferenceId;
   let customInformation;
   let amount;
+  let globalAmazonPayId;
   let donationState;
   const generalError = {
     error: 'Donation failed due to a server error.',
@@ -258,7 +279,7 @@ export default function donateAmazonPay(app, done) {
     const { billingAgreementId, donationAmount } = body;
     const { externalId } = user;
 
-    amount = 8;
+    amount = donationAmount / 100;
     customInformation = externalId;
     agreementId = billingAgreementId;
     sellerOrderId = externalId;
@@ -267,7 +288,8 @@ export default function donateAmazonPay(app, done) {
       .then(getAgreementDetails)
       .then(setAgreementDetails)
       .then(confirmBillingAgreement)
-      .then(() => authorizeOnBillingAgreement(1440))
+      .then(() => setAmazonPayId(req))
+      .then(() => authorizeOnBillingAgreement(0))
       .then(() => respondToClient(res))
       .catch(err => {
         log(err.message);
@@ -283,30 +305,12 @@ export default function donateAmazonPay(app, done) {
       });
   }
 
-  function confirmBillingAgreement() {
-    // once the agreement is suspended due to InvalidPaymentMethod
-    // we need to reconfirm the agreement
-    return new Promise((resolve, reject) => {
-      payment.offAmazonPayments.confirmBillingAgreement(
-        {
-          AmazonBillingAgreementId: agreementId
-        },
-        (err, data) => {
-          if (err) {
-            reject(err);
-          }
-          console.log('CONFIRM AGREEMENT DETAILS');
-          console.log(JSON.stringify(data));
-          resolve(data);
-        }
-      );
-    });
-  }
-
   function apihookUpdateAmazonPay(req, res) {
     const parsedBody = JSON.parse(req.body);
     payment.parseSNSResponse(parsedBody, function(err, parsed) {
-      // parsed will contain the full response from SNS unless the message is an IPN notification, in which case it will be the JSON-ified XML from the message.
+      // parsed will contain the full response from SNS unless the message
+      //  is an IPN notification,
+      // in which case it will be the JSON-ified XML from the message.
       console.log('ERROR', err);
       console.log('PASS', parsed);
     });

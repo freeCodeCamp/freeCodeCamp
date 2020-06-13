@@ -444,6 +444,31 @@ export default function(User) {
     );
   };
 
+  User.prototype.createAmazonPayId = function createAmazonPayId(amazonPayId) {
+    return Observable.fromNodeCallback(
+      this.updateAttributes({
+        amazonPayId: amazonPayId
+      })
+    );
+  };
+
+  // first donation is saved with other donations
+  // upcoming corn job donations will be saved in another collection
+  User.prototype.createAmazonDonation = function createAmazonDonation(
+    donation = {},
+    amazonPayId
+  ) {
+    return Observable.fromNodeCallback(
+      this.donations.create.bind(this.donations)
+    )(donation).do(() =>
+      this.updateAttributes({
+        isDonating: true,
+        donationEmails: [...(this.donationEmails || []), donation.email],
+        amazonPayId: this.amazonPayId || amazonPayId
+      })
+    );
+  };
+
   function requestCompletedChallenges() {
     return this.getCompletedChallenges$();
   }

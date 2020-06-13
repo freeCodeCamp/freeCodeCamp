@@ -251,16 +251,19 @@
       "default": {}
     },
     "donationEmails": {
-      "type": [
-        "string"
-      ]
+      "type": ["string"]
     },
     "isDonating": {
       "type": "boolean",
       "description": "Does the camper have an active donation",
       "default": false
+    },
+    "amazonPayId": {
+      "type": "string",
+      "description": "Unique ID to diffrenciate amazon pay subscription"
     }
   },
+
   "validations": [],
   "relations": {
     "donations": {
