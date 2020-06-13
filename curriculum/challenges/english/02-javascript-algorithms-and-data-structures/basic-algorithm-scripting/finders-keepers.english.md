@@ -9,7 +9,7 @@ forumTopicId: 16016
 
 ## Description
 <section id='description'>
-Create a function that looks through an array (first argument) and returns the first element in the array that passes a truth test (second argument). If no element passes the test, return undefined.
+Create a function that looks through an array <code>arr</code> and returns the first element in the array for which <code>func(x)</code> returns true. If there is no such element, return undefined.
 </section>
 
 ## Instructions
