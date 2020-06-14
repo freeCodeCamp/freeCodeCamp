@@ -8,7 +8,7 @@ import { Link } from 'gatsby';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
 import { completedChallengesSelector, executeGA } from '../../../redux';
 import Caret from '../../../assets/icons/Caret';
-import { blockNameify } from '../../../../utils/blockNameify';
+import { blockNameify } from '../../../../../utils/block-nameify';
 import GreenPass from '../../../assets/icons/GreenPass';
 import GreenNotCompleted from '../../../assets/icons/GreenNotCompleted';
 import IntroInformation from '../../../assets/icons/IntroInformation';

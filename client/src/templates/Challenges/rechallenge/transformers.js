@@ -12,7 +12,7 @@ import {
 
 import protect from '@freecodecamp/loop-protect';
 
-import * as vinyl from '../utils/polyvinyl.js';
+import * as vinyl from '../../../../../utils/polyvinyl.js';
 import createWorker from '../utils/worker-executor';
 
 // the config files are created during the build, but not before linting

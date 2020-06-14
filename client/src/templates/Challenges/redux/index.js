@@ -2,7 +2,7 @@ import { createAction, handleActions } from 'redux-actions';
 
 import { createTypes } from '../../../../utils/stateManagement';
 
-import { createPoly } from '../utils/polyvinyl';
+import { createPoly } from '../../../../../utils/polyvinyl';
 import challengeModalEpic from './challenge-modal-epic';
 import completionEpic from './completion-epic';
 import codeLockEpic from './code-lock-epic';

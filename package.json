@@ -36,7 +36,10 @@
     "docker:test:init": "docker-compose -f docker-compose.tests.yml run -u root --rm tests bash change_volumes_owner.sh",
     "docs:serve": "docsify serve ./docs",
     "ensure-env": "cross-env DEBUG=fcc:* node ./tools/scripts/build/ensure-env.js",
-    "e2e": "./cypress/run-e2e.sh",
+    "e2e:dev:watch": "start-test develop ':3000/status/ping|8000' cypress:dev:watch",
+    "e2e:dev:run": "start-test develop ':3000/status/ping|8000' cypress:dev:run",
+    "e2e:prd:watch": "npm run build && start-test ':3000/status/ping|8000' cypress:dev:watch",
+    "e2e:prd:run": "npm run build && start-test ':3000/status/ping|8000' cypress:dev:run",
     "format": "npm-run-all -p format:*",
     "format:js": "npm run lint:js -- --fix",
     "format:css": "npm run prettier -- --write",
@@ -99,7 +102,8 @@
     "shx": "^0.3.2",
     "sinon": "^7.4.1",
     "sinon-express-mock": "^2.2.1",
-    "slugg": "^1.2.1"
+    "slugg": "^1.2.1",
+    "start-server-and-test": "^1.11.0"
   },
   "lint-staged": {
     "linters": {
