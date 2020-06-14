@@ -4,7 +4,7 @@ import { Loader, Spacer } from '../../components/helpers';
 import { Link } from 'gatsby';
 
 import notFoundLogo from '../../assets/images/freeCodeCamp-404.svg';
-import { quotes } from '../../resources/quotes.json';
+import words from '../../../../config/motivational-quotes.json';
 
 import './404.css';
 
@@ -22,7 +22,10 @@ class NotFoundPage extends Component {
 
   updateQuote() {
     this.setState({
-      randomQuote: quotes[Math.floor(Math.random() * quotes.length)]
+      randomQuote:
+        words.motivationalQuotes[
+          Math.floor(Math.random() * words.motivationalQuotes.length)
+        ]
     });
   }
 
