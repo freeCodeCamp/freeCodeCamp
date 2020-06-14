@@ -18,12 +18,14 @@ passport.serializeUser((user, done) => {
   done(null, user._id);
 });
 passport.deserializeUser((id, done) => {
-  db.collection('users').findOne(
-    {_id: new ObjectID(id)},
+  myDB(async (client) => {
+    await client.db('database').collection('users').findOne(
+      { _id: new ObjectID(id) },
       (err, doc) => {
-        done(null, doc);
+        done(null, null);
       }
-  );
+    );
+  });
 });
 ```
 
