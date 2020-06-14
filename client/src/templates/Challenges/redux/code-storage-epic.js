@@ -14,7 +14,7 @@ import {
 
 import { types as appTypes } from '../../../redux';
 
-import { setContent, isPoly } from '../utils/polyvinyl';
+import { setContent, isPoly } from '../../../../../utils/polyvinyl';
 
 import { createFlashMessage } from '../../../components/Flash/redux';
 
