@@ -15,17 +15,17 @@ import {
   legacyBackEndChallengeId,
   legacyDataVisId,
   legacyInfosecQaId,
+  legacyFullStackId,
   respWebDesignId,
   frontEndLibsId,
   jsAlgoDataStructId,
   dataVis2018Id,
   apisMicroservicesId,
-  infosecId,
-  qaId,
-  fullStackId,
-  sciCompPyId,
-  dataAnalysisPyId,
-  machineLearningPyId
+  qa2020Id,
+  infosec2020Id,
+  sciCompPy2020Id,
+  dataAnalysisPy2020Id,
+  machineLearningPy2020Id
 } from '../utils/constantStrings.json';
 import { oldDataVizId } from '../../../config/misc';
 import certTypes from '../utils/certTypes.json';
@@ -106,6 +106,7 @@ function createCertTypeIds(app) {
     [certTypes.backEnd]: getIdsForCert$(legacyBackEndChallengeId, Challenge),
     [certTypes.dataVis]: getIdsForCert$(legacyDataVisId, Challenge),
     [certTypes.infosecQa]: getIdsForCert$(legacyInfosecQaId, Challenge),
+    [certTypes.fullStack]: getIdsForCert$(legacyFullStackId, Challenge),
 
     // modern
     [certTypes.respWebDesign]: getIdsForCert$(respWebDesignId, Challenge),
@@ -116,13 +117,15 @@ function createCertTypeIds(app) {
       apisMicroservicesId,
       Challenge
     ),
-    [certTypes.qa]: getIdsForCert$(qaId, Challenge),
-    [certTypes.infosec]: getIdsForCert$(infosecId, Challenge),
-    [certTypes.fullStack]: getIdsForCert$(fullStackId, Challenge),
-    [certTypes.sciCompPy]: getIdsForCert$(sciCompPyId, Challenge),
-    [certTypes.dataAnalysisPy]: getIdsForCert$(dataAnalysisPyId, Challenge),
-    [certTypes.machineLearningPy]: getIdsForCert$(
-      machineLearningPyId,
+    [certTypes.qa2020]: getIdsForCert$(qa2020Id, Challenge),
+    [certTypes.infosec2020]: getIdsForCert$(infosec2020Id, Challenge),
+    [certTypes.sciCompPy2020]: getIdsForCert$(sciCompPy2020Id, Challenge),
+    [certTypes.dataAnalysisPy2020]: getIdsForCert$(
+      dataAnalysisPy2020Id,
+      Challenge
+    ),
+    [certTypes.machineLearningPy2020]: getIdsForCert$(
+      machineLearningPy2020Id,
       Challenge
     )
   };
@@ -139,17 +142,17 @@ const certIds = {
   [certTypes.backEnd]: legacyBackEndChallengeId,
   [certTypes.dataVis]: legacyDataVisId,
   [certTypes.infosecQa]: legacyInfosecQaId,
+  [certTypes.fullStack]: legacyFullStackId,
   [certTypes.respWebDesign]: respWebDesignId,
   [certTypes.frontEndLibs]: frontEndLibsId,
   [certTypes.jsAlgoDataStruct]: jsAlgoDataStructId,
   [certTypes.dataVis2018]: dataVis2018Id,
   [certTypes.apisMicroservices]: apisMicroservicesId,
-  [certTypes.qa]: qaId,
-  [certTypes.infosec]: infosecId,
-  [certTypes.fullStack]: fullStackId,
-  [certTypes.sciCompPy]: sciCompPyId,
-  [certTypes.dataAnalysisPy]: dataAnalysisPyId,
-  [certTypes.machineLearningPy]: machineLearningPyId
+  [certTypes.qa2020]: qa2020Id,
+  [certTypes.infosec2020]: infosec2020Id,
+  [certTypes.sciCompPy2020]: sciCompPy2020Id,
+  [certTypes.dataAnalysisPy2020]: dataAnalysisPy2020Id,
+  [certTypes.machineLearningPy2020]: machineLearningPy2020Id
 };
 
 const certText = {
@@ -157,17 +160,17 @@ const certText = {
   [certTypes.backEnd]: 'Legacy Back End',
   [certTypes.dataVis]: 'Legacy Data Visualization',
   [certTypes.infosecQa]: 'Legacy Information Security and Quality Assurance',
-  [certTypes.fullStack]: 'Full Stack',
+  [certTypes.fullStack]: 'Legacy Full Stack',
   [certTypes.respWebDesign]: 'Responsive Web Design',
   [certTypes.frontEndLibs]: 'Front End Libraries',
   [certTypes.jsAlgoDataStruct]: 'JavaScript Algorithms and Data Structures',
   [certTypes.dataVis2018]: 'Data Visualization',
   [certTypes.apisMicroservices]: 'APIs and Microservices',
-  [certTypes.qa]: 'Quality Assurance',
-  [certTypes.infosec]: 'Information Security',
-  [certTypes.sciCompPy]: 'Scientific Computing with Python',
-  [certTypes.dataAnalysisPy]: 'Data Analysis with Python',
-  [certTypes.machineLearningPy]: 'Machine Learning with Python'
+  [certTypes.qa2020]: 'Quality Assurance',
+  [certTypes.infosec2020]: 'Information Security',
+  [certTypes.sciCompPy2020]: 'Scientific Computing with Python',
+  [certTypes.dataAnalysisPy2020]: 'Data Analysis with Python',
+  [certTypes.machineLearningPy2020]: 'Machine Learning with Python'
 };
 
 const completionHours = {
@@ -181,11 +184,11 @@ const completionHours = {
   [certTypes.jsAlgoDataStruct]: 300,
   [certTypes.dataVis2018]: 300,
   [certTypes.apisMicroservices]: 300,
-  [certTypes.qa]: 300,
-  [certTypes.infosec]: 300,
-  [certTypes.sciCompPy]: 400,
-  [certTypes.dataAnalysisPy]: 400,
-  [certTypes.machineLearningPy]: 400
+  [certTypes.qa2020]: 300,
+  [certTypes.infosec2020]: 300,
+  [certTypes.sciCompPy2020]: 400,
+  [certTypes.dataAnalysisPy2020]: 400,
+  [certTypes.machineLearningPy2020]: 400
 };
 
 function getIdsForCert$(id, Challenge) {
