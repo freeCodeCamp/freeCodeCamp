@@ -238,12 +238,8 @@ export const certificatesByNameSelector = username => state => {
       is2020MachineLearningPyCert,
     hasLegacyCert:
       isFrontEndCert || isBackEndCert || isDataVisCert || isInfosecQaCert,
+    isFullStackCert,
     currentCerts: [
-      {
-        show: isFullStackCert,
-        title: 'Full Stack Certification',
-        showURL: 'full-stack'
-      },
       {
         show: isRespWebDesignCert,
         title: 'Responsive Web Design Certification',
@@ -272,27 +268,27 @@ export const certificatesByNameSelector = username => state => {
       {
         show: is2020QaCert,
         title: ' Quality Assurance Certification',
-        showURL: 'quality-assurance'
+        showURL: '2020-quality-assurance'
       },
       {
         show: is2020InfosecCert,
         title: 'Information Security Certification',
-        showURL: 'information-security'
+        showURL: '2020-information-security'
       },
       {
         show: is2020SciCompPyCert,
         title: 'Scientific Computing with Python Certification',
-        showURL: 'scientific-computing-with-python'
+        showURL: '2020-scientific-computing-with-python'
       },
       {
         show: is2020DataAnalysisPyCert,
         title: 'Data Analysis with Python Certification',
-        showURL: 'data-analysis-with-python'
+        showURL: '2020-data-analysis-with-python'
       },
       {
         show: is2020MachineLearningPyCert,
         title: 'Machine Learning with Python Certification',
-        showURL: 'machine-learning-with-python'
+        showURL: '2020-machine-learning-with-python'
       }
     ],
     legacyCerts: [
@@ -314,7 +310,14 @@ export const certificatesByNameSelector = username => state => {
       {
         show: isInfosecQaCert,
         title: 'Information Security and Quality Assurance Certification',
-        showURL: 'legacy-information-security-and-quality-assurance'
+        // Keep the current public profile cert slug
+        showURL: 'information-security-and-quality-assurance'
+      },
+      {
+        show: isFullStackCert,
+        title: 'Full Stack Certification',
+        // Keep the current public profile cert slug
+        showURL: 'full-stack'
       }
     ]
   };

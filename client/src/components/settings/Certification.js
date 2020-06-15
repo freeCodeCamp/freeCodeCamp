@@ -13,7 +13,10 @@ import {
 import { Link, navigate } from 'gatsby';
 import { createSelector } from 'reselect';
 
-import { projectMap, legacyProjectMap } from '../../resources/certProjectMap';
+import {
+  projectMap,
+  legacyProjectMap
+} from '../../resources/certAndProjectMap';
 
 import SectionHeader from './SectionHeader';
 import SolutionViewer from './SolutionViewer';
@@ -120,7 +123,7 @@ const isCertMapSelector = createSelector(
     'JavaScript Algorithms and Data Structures': isJsAlgoDataStructCert,
     'Front End Libraries': isFrontEndLibsCert,
     'Data Visualization': is2018DataVisCert,
-    "API's and Microservices": isApisMicroservicesCert,
+    'APIs and Microservices': isApisMicroservicesCert,
     'Quality Assurance': is2020QaCert,
     'Information Security': is2020InfosecCert,
     'Scientific Computing with Python': is2020SciCompPyCert,
@@ -462,7 +465,7 @@ export class CertificationSettings extends Component {
     );
   };
 
-  renderFullStack = () => {
+  renderLegacyFullStack = () => {
     const {
       isFullStackCert,
       username,
@@ -485,6 +488,8 @@ export class CertificationSettings extends Component {
       isJsAlgoDataStructCert &&
       isRespWebDesignCert;
 
+    // Keep the settings page slug as full-stack rather than
+    // legacy-full-stack so we don't break existing links
     const superBlock = 'full-stack';
     const certLocation = `/certification/${username}/${superBlock}`;
 
@@ -507,7 +512,7 @@ export class CertificationSettings extends Component {
     return (
       <FullWidthRow key={superBlock}>
         <Spacer />
-        <h3>Legacy Full Stack Certification</h3>
+        <h3 className='text-center'>Legacy Full Stack Certification</h3>
         <div>
           <p>
             Once you've earned the following freeCodeCamp certifications, you'll
@@ -564,8 +569,8 @@ export class CertificationSettings extends Component {
       <section id='certification-settings'>
         <SectionHeader>Certifications</SectionHeader>
         {certifications.map(this.renderCertifications)}
-        {this.renderFullStack()}
         <SectionHeader>Legacy Certifications</SectionHeader>
+        {this.renderLegacyFullStack()}
         {legacyCertifications.map(this.renderLegacyCertifications)}
         {isOpen ? (
           <Modal
