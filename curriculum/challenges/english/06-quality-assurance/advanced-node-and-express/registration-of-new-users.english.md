@@ -16,13 +16,13 @@ The logic of step 1, registering the new user, should be as follows: Query datab
 ```js
 app.route('/register')
   .post((req, res, next) => {
-    db.collection('users').findOne({ username: req.body.username }, function(err, user) {
+    myDataBase.findOne({ username: req.body.username }, function(err, user) {
       if (err) {
         next(err);
       } else if (user) {
         res.redirect('/');
       } else {
-        db.collection('users').insertOne({
+        myDataBase.insertOne({
           username: req.body.username,
           password: req.body.password
         },
