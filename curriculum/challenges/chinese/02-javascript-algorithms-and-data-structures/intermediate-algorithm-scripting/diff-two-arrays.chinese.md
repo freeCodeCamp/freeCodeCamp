@@ -10,8 +10,7 @@ localeTitle: 区分两个数组
 ## Description
 <section id='description'>
 在这道题目中，我们需要写一个函数，比较两个数组，返回一个新的数组。这个新数组需要包含传入的两个数组所有元素中，仅在其中一个数组里出现的元素。如果某个元素同时出现在两个数组中，则不应包含在返回的数组里。换言之，我们需要返回这两个数组的对称差。
-如果你遇到了问题，请点击<a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。
-<strong>注意：</strong><br>返回数组中的元素顺序不会影响测试结果。
+<strong>注意：</strong><br>返回数组中的元素可任意排序。
 </section>
 
 ## Instructions

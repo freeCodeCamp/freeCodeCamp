@@ -9,11 +9,10 @@ localeTitle: 真假值判断
 
 ## Description
 <section id='description'>
-在这道题目中，我们需要写一个函数，它接收两个参数。第一个参数为对象数组<code>collection</code>，第二个参数为一个字符串<code>pre</code>，代表对象的一个键（key）。
-我们需要检查对象数组中每个对象的<code>pre</code>属性对应的值是否都为 “真”（truthy）。如果是，则返回<code>true</code>，否则返回<code>false</code>。
+检查谓词（第二个参数）是否对集合的所有元素（第一个参数）都是<code>truthy</code>（真实的）。
+换句话说，你将获得一个对象的数组集合。谓词<code>pre</code>是一个对象的属性，如果它的值是<code>truthy</code>（真实的） ，则返回<code>true</code>，否则，返回<code>false</code> 。
 JavaScript 中，如果一个值在 Boolean 的上下文中（比如<code>if</code>语句）可以被执行为<code>true</code>，那么这个值就被认为是<code>truthy</code>的。
 注意，你可以选择使用<code>.</code>或<code>[]</code>来访问对象属性对应的值。
-如果你遇到了问题，请点击<a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。
 </section>
 
 ## Instructions

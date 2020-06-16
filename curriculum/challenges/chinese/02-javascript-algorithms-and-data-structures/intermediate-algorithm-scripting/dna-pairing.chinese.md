@@ -9,12 +9,11 @@ localeTitle: DNA 配对
 
 ## Description
 <section id='description'>
-DNA 单链丢失了配对碱基。每一个碱基，可以得到与其配对的碱基，以二维数组的形式返回其结果。
-<a href="http://en.wikipedia.org/wiki/Base_pair" target="_blank">碱基对</a> 由一对碱基组成。碱基有四种，分别为 A（腺嘌呤）、T（胸腺嘧啶）、G（鸟嘌呤）和 C（胞嘧啶）。配对原则是：A 与 T 配对，C 与 G 配对。我们需要根据这个原则对传入的所有碱基进行配对。
-每个数组的第一个元素为已知的碱基。
-比如，传入的参数是 GCG，那么函数的返回值应为 [["G", "C"], ["C","G"],["G", "C"]]
-对于每个传入的碱基，我们应采用数组的形式展示配对结果。其中，传入的碱基需要作为数组的第一个元素出现。最终返回的数组中应当包含参数中每一个碱基的配对结果。
-如果你遇到了问题，请点击<a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。
+DNA 链缺少配对元素。对于每个字符，获取与其配对的元素，并将结果作为二维数组返回。  
+<a href="http://en.wikipedia.org/wiki/Base_pair" target="_blank">碱基对</a> 是一对 AT 和 CG。将缺少的元素与提供的字符匹配。
+将提供的字符作为每个数组中的第一个元素返回。
+例如，对于输入 GCG，返回[[“G”, “C”]，[“C”, “G”]，[“G”, “C”]]。
+字符及与其配对的元素在一个数组中。再将所有数组放到一个封装数组中。
 </section>
 
 ## Instructions

@@ -9,14 +9,13 @@ localeTitle: 可选参数
 
 ## Description
 <section id='description'>
-在这道题目中，我们需要写一个求和的函数，但它接收的参数数量不定。如果传入了两个参数，那么直接返回两数之和即可。如果只传入一个参数，那我们应该返回另一个函数用来接收下一个参数，然后求出两数之和。
+创建一个将两个参数相加的函数。如果只传入了一个参数，则返回一个函数，需要传入一个参数并返回总和。
 比如，<code>addTogether(2, 3)</code>应该返回<code>5</code>。而<code>addTogether(2)</code>应该返回一个函数。
-然后我们调用这个返回的函数，并给它传入另一个用于求和的值：
+调用这个返回的函数，传入一个值，返回总和：
 <code>var sumTwoAnd = addTogether(2);</code>
 <code>sumTwoAnd(3)</code>此时应返回<code>5</code>。
-只要其中任何一个参数不是数字，那我们就应返回<code>undefined</code>。
-如果你遇到了问题，请点击<a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。
-</section>
+只要其中任何一个参数不是数字，那就应返回<code>undefined</code>。
+  </section>
 
 ## Instructions
 <section id='instructions'>

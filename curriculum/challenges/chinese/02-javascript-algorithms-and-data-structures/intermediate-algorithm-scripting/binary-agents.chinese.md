@@ -9,9 +9,8 @@ localeTitle: 二进制转化
 
 ## Description
 <section id='description'>
-在这道题目中，我们需要写一个把二进制输入转换成英文句子的函数。
-传入函数的二进制字符串会用空格作为分隔符。
-如果你遇到了问题，请点击<a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。
+写一个函数，把输入的二进制字符串转换成英文句子。
+二进制字符串将以空格分隔。
 </section>
 
 ## Instructions

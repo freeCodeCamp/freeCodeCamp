@@ -8,8 +8,7 @@ localeTitle: 转换HTML实体
 
 ## Description
 <section id='description'>
-在这道题目中，我们需要写一个转换 HTML entity 的函数。需要转换的 HTML entity 有<code>&</code>、<code><</code>、<code>></code>、<code>"</code>（双引号）和<code>'</code>（单引号）。转换的规则你可以在 <a href='https://dev.w3.org/html5/html-author/charref' target='_blank'>W3C</a> 官网找到。
-如果你遇到了问题，请点击<a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。
+在这道题目中，我们需要写一个转换 HTML entity 的函数。需要转换的 HTML entity 有<code>&</code>、<code><</code>、<code>></code>、<code>"</code>（双引号）和<code>'</code>（单引号）。  
 </section>
 
 ## Instructions

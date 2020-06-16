@@ -4,14 +4,13 @@ title: Drop it
 isRequired: true
 challengeType: 5
 forumTopicId: 16010
-localeTitle: 放弃
+localeTitle: 筛选出数组中满足条件的元素
 ---
 
 ## Description
 <section id='description'>
-在这道题目中，我们需要写一个函数，它接收两个参数，分别为一个数组<code>arr</code>以及一个函数<code>func</code>。我们需要从数组的第一个元素开始，用<code>func</code>来检查数组的每项。函数最终的返回值也是一个数组，它由原数组中第一个使得<code>func</code>为<code>true</code>的元素及其之后的所有元素组成。
+给定数组<code>arr</code>，从数组的第一个元素开始，用函数<code>func</code>来检查数组的每个元素并删除，直到某个元素传入函数<code>func</code>时返回<code>true</code>。函数最终的返回值也是一个数组，它由原数组中第一个使得<code>func</code>为<code>true</code>的元素及其之后的所有元素组成。
 如果数组中的所有元素都不能让<code>func</code>为<code>true</code>，则返回空数组<code>[]</code>。
-如果你遇到了问题，请点击<a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。
 </section>
 
 ## Instructions
