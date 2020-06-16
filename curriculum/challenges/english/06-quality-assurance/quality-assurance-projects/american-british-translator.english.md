@@ -8,11 +8,11 @@ isRequired: true
 
 ## Description
 <section id='description'>
-Build a full stack JavaScript app that is functionally similar to this: <a href='add-glitch-link' target='_blank'>add-glitch-link</a>.
+Build a full stack JavaScript app that is functionally similar to this: <a href='https://youthful-grave-scabiosa.glitch.me/' target='_blank'>https://youthful-grave-scabiosa.glitch.me/</a>.
 
 Working on this project will involve you writing your code on Glitch on our starter project. After completing this project you can copy your public glitch url (to the homepage of your app) into this screen to test it! Optionally you may choose to write your project on another platform but it must be publicly visible for our testing.
 
-Start this project on Glitch using <a href='https://glitch.com/edit/#!/remix/clone-from-repo?REPO_URL=add-repo-url'>this link</a> or clone <a href='add-repo-url'>this repository</a> on GitHub! If you use Glitch, remember to save the link to your project somewhere safe!
+Start this project on Glitch using <a href='https://glitch.com/edit/#!/remix/clone-from-repo?REPO_URL=https://github.com/freeCodeCamp/boilerplate-project-american-british-english-translator/'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-project-american-british-english-translator/'>this repository</a> on GitHub! If you use Glitch, remember to save the link to your project somewhere safe!
 </section>
 
 ## Instructions
@@ -29,6 +29,11 @@ tests:
     testString: ''
   - text: When the "Translate" button is pressed, append the translated sentence to the <code>translated-sentence</code> <code>div</code>. See the JavaScript files in <code>/public</code> for the different spelling and terms your application should translate.
     testString: ''
+  - text: |
+      Your application should handle the way time is written in American and British English. For example, ten thirty is written as "10.30" in British English and "10:30" in American English.
+    testString: ''
+  - text: Your application should also handle the way titles/honorifics are abbreviated in American and British English. For example, Doctor Wright is abbreviated as "Dr Wright" in British English and "Dr. Wright" in American English. See <code>/public/american-to-british-titles.js</code> for the different titles your application should handle.
+    testString: ''
   - text: Wrap any translated spelling or terms with <code>&lt;span class=&quot;highlight&quot;&gt;...&lt;/span&gt;</code> tags so they appear in green.
     testString: ''
   - text: If the sentence in the text area has no spelling or terms that should be translated, append the message "Everything looks good to me!" to the <code>translated-sentence</code> <code>div</code>.
@@ -38,9 +43,9 @@ tests:
     testString: ''
   - text: I can press the "Clear Input" button to remove all text from the text area and the <code>translated-sentence</code> <code>div</code>.
     testString: ''
-  - text: All 12 unit tests are complete and passing.
+  - text: All 20 unit tests are complete and passing. See <code>/tests/1_unit-tests.js</code> for the sentences you should write tests for.
     testString: ''
-  - text: All 4 functional tests are complete and passing.
+  - text: All 4 functional tests are complete and passing. See <code>/tests/2_functional-tests.js</code> for the functionality you should write tests for.
     testString: ''
 ```
 
