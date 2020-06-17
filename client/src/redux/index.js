@@ -213,15 +213,15 @@ export const certificatesByNameSelector = username => state => {
     isJsAlgoDataStructCert,
     isApisMicroservicesCert,
     isInfosecQaCert,
-    is2020QaCert,
-    is2020InfosecCert,
+    isQaCertV7,
+    isInfosecCertV7,
     isFrontEndCert,
     isBackEndCert,
     isDataVisCert,
     isFullStackCert,
-    is2020SciCompPyCert,
-    is2020DataAnalysisPyCert,
-    is2020MachineLearningPyCert
+    isSciCompPyCertV7,
+    isDataAnalysisPyCertV7,
+    isMachineLearningPyCertV7
   } = userByNameSelector(username)(state);
   return {
     hasModernCert:
@@ -230,12 +230,12 @@ export const certificatesByNameSelector = username => state => {
       isFrontEndLibsCert ||
       isJsAlgoDataStructCert ||
       isApisMicroservicesCert ||
-      is2020QaCert ||
-      is2020InfosecCert ||
+      isQaCertV7 ||
+      isInfosecCertV7 ||
       isFullStackCert ||
-      is2020SciCompPyCert ||
-      is2020DataAnalysisPyCert ||
-      is2020MachineLearningPyCert,
+      isSciCompPyCertV7 ||
+      isDataAnalysisPyCertV7 ||
+      isMachineLearningPyCertV7,
     hasLegacyCert:
       isFrontEndCert || isBackEndCert || isDataVisCert || isInfosecQaCert,
     isFullStackCert,
@@ -266,29 +266,29 @@ export const certificatesByNameSelector = username => state => {
         showURL: 'apis-and-microservices'
       },
       {
-        show: is2020QaCert,
+        show: isQaCertV7,
         title: ' Quality Assurance Certification',
-        showURL: '2020-quality-assurance'
+        showURL: 'quality-assurance-v7'
       },
       {
-        show: is2020InfosecCert,
+        show: isInfosecCertV7,
         title: 'Information Security Certification',
-        showURL: '2020-information-security'
+        showURL: 'information-security-v7'
       },
       {
-        show: is2020SciCompPyCert,
+        show: isSciCompPyCertV7,
         title: 'Scientific Computing with Python Certification',
-        showURL: '2020-scientific-computing-with-python'
+        showURL: 'scientific-computing-with-python-v7'
       },
       {
-        show: is2020DataAnalysisPyCert,
+        show: isDataAnalysisPyCertV7,
         title: 'Data Analysis with Python Certification',
-        showURL: '2020-data-analysis-with-python'
+        showURL: 'data-analysis-with-python-v7'
       },
       {
-        show: is2020MachineLearningPyCert,
+        show: isMachineLearningPyCertV7,
         title: 'Machine Learning with Python Certification',
-        showURL: '2020-machine-learning-with-python'
+        showURL: 'machine-learning-with-python-v7'
       }
     ],
     legacyCerts: [

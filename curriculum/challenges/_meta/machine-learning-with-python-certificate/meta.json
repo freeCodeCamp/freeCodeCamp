@@ -1,6 +1,6 @@
 {
   "name": "Machine Learning with Python Certificate",
-  "dashedName": "2020-machine-learning-with-python-certificate",
+  "dashedName": "machine-learning-with-python-v7-certificate",
   "order": 10,
   "time": "",
   "template": "",
@@ -14,5 +14,5 @@
     ]
   ],
   "isPrivate": true,
-  "fileName": "12-certificates/2020-machine-learning-with-python-certificate.json"
+  "fileName": "12-certificates/machine-learning-with-python-v7-certificate.json"
 }

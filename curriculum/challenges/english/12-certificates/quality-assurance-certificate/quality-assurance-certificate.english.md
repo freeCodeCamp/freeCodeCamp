@@ -1,6 +1,6 @@
 ---
 id: 5e611829481575a52dc59c0e
-title: 'Quality Assurance Certificate'
+title: Quality Assurance Certificate
 challengeType: 7
 isHidden: true
 isPrivate: true

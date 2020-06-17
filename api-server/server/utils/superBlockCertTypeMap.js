@@ -16,11 +16,11 @@ const superBlockCertTypeMap = {
   'front-end-libraries': certTypes.frontEndLibs,
   'data-visualization': certTypes.dataVis2018,
   'apis-and-microservices': certTypes.apisMicroservices,
-  '2020-quality-assurance': certTypes.qa2020,
-  '2020-information-security': certTypes.infosec2020,
-  '2020-scientific-computing-with-python': certTypes.sciCompPy2020,
-  '2020-data-analysis-with-python': certTypes.dataAnalysisPy2020,
-  '2020-machine-learning-with-python': certTypes.machineLearningPy2020
+  'quality-assurance-v7': certTypes.qaV7,
+  'information-security-v7': certTypes.infosecV7,
+  'scientific-computing-with-python-v7': certTypes.sciCompPyV7,
+  'data-analysis-with-python-v7': certTypes.dataAnalysisPyV7,
+  'machine-learning-with-python-v7': certTypes.machineLearningPyV7
 };
 
 export default superBlockCertTypeMap;

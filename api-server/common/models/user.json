@@ -167,12 +167,12 @@
       "description": "Camper is information security and quality assurance certified",
       "default": false
     },
-    "is2020QaCert": {
+    "isQaCertV7": {
       "type": "boolean",
       "description": "Camper is quality assurance certified",
       "default": false
     },
-    "is2020InfosecCert": {
+    "isInfosecCertV7": {
       "type": "boolean",
       "description": "Camper is information security certified",
       "default": false
@@ -182,17 +182,17 @@
       "description": "Camper is full stack certified (2018)",
       "default": false
     },
-    "is2020SciCompPyCert": {
+    "isSciCompPyCertV7": {
       "type": "boolean",
       "description": "Camper is scientific computing with Python certified",
       "default": false
     },
-    "is2020DataAnalysisPyCert": {
+    "isDataAnalysisPyCertV7": {
       "type": "boolean",
       "description": "Camper is data analysis with Python certified",
       "default": false
     },
-    "is2020MachineLearningPyCert": {
+    "isMachineLearningPyCertV7": {
       "type": "boolean",
       "description": "Camper is machine learning with Python certified",
       "default": false

@@ -3,13 +3,13 @@ function getCompletedCertCount(user) {
     'isApisMicroservicesCert',
     'is2018DataVisCert',
     'isFrontEndLibsCert',
-    'is2020QaCert',
-    'is2020InfosecCert',
+    'isQaCertV7',
+    'isInfosecCertV7',
     'isJsAlgoDataStructCert',
     'isRespWebDesignCert',
-    'is2020SciCompPyCert',
-    'is2020DataAnalysisPyCert',
-    'is2020MachineLearningPyCert'
+    'isSciCompPyCertV7',
+    'isDataAnalysisPyCertV7',
+    'isMachineLearningPyCertV7'
   ].reduce((sum, key) => (user[key] ? sum + 1 : sum), 0);
 }
 

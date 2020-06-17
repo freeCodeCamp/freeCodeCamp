@@ -60,13 +60,13 @@ const propTypes = {
     isFullStackCert: PropTypes.bool,
     isHonest: PropTypes.bool,
     isInfosecQaCert: PropTypes.bool,
-    is2020QaCert: PropTypes.bool,
-    is2020InfosecCert: PropTypes.bool,
+    isQaCertV7: PropTypes.bool,
+    isInfosecCertV7: PropTypes.bool,
     isJsAlgoDataStructCert: PropTypes.bool,
     isRespWebDesignCert: PropTypes.bool,
-    is2020SciCompPyCert: PropTypes.bool,
-    is2020DataAnalysisPyCert: PropTypes.bool,
-    is2020MachineLearningPyCert: PropTypes.bool,
+    isSciCompPyCertV7: PropTypes.bool,
+    isDataAnalysisPyCertV7: PropTypes.bool,
+    isMachineLearningPyCertV7: PropTypes.bool,
     linkedin: PropTypes.string,
     location: PropTypes.string,
     name: PropTypes.string,
@@ -134,14 +134,14 @@ export function ShowSettings(props) {
       isDataVisCert,
       isFrontEndCert,
       isInfosecQaCert,
-      is2020QaCert,
-      is2020InfosecCert,
+      isQaCertV7,
+      isInfosecCertV7,
       isFrontEndLibsCert,
       isFullStackCert,
       isRespWebDesignCert,
-      is2020SciCompPyCert,
-      is2020DataAnalysisPyCert,
-      is2020MachineLearningPyCert,
+      isSciCompPyCertV7,
+      isDataAnalysisPyCertV7,
+      isMachineLearningPyCertV7,
       isEmailVerified,
       isHonest,
       sendQuincyEmail,
@@ -241,21 +241,21 @@ export function ShowSettings(props) {
             completedChallenges={completedChallenges}
             createFlashMessage={createFlashMessage}
             is2018DataVisCert={is2018DataVisCert}
-            is2020DataAnalysisPyCert={is2020DataAnalysisPyCert}
-            is2020InfosecCert={is2020InfosecCert}
-            is2020MachineLearningPyCert={is2020MachineLearningPyCert}
-            is2020QaCert={is2020QaCert}
-            is2020SciCompPyCert={is2020SciCompPyCert}
             isApisMicroservicesCert={isApisMicroservicesCert}
             isBackEndCert={isBackEndCert}
+            isDataAnalysisPyCertV7={isDataAnalysisPyCertV7}
             isDataVisCert={isDataVisCert}
             isFrontEndCert={isFrontEndCert}
             isFrontEndLibsCert={isFrontEndLibsCert}
             isFullStackCert={isFullStackCert}
             isHonest={isHonest}
+            isInfosecCertV7={isInfosecCertV7}
             isInfosecQaCert={isInfosecQaCert}
             isJsAlgoDataStructCert={isJsAlgoDataStructCert}
+            isMachineLearningPyCertV7={isMachineLearningPyCertV7}
+            isQaCertV7={isQaCertV7}
             isRespWebDesignCert={isRespWebDesignCert}
+            isSciCompPyCertV7={isSciCompPyCertV7}
             username={username}
             verifyCert={verifyCert}
           />
