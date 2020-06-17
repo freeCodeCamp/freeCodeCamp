@@ -1,6 +1,6 @@
 {
   "name": "Quality Assurance Certificate",
-  "dashedName": "quality-assurance-certificate",
+  "dashedName": "2020-quality-assurance-certificate",
   "order": 6,
   "time": "",
   "template": "",
@@ -14,5 +14,5 @@
     ]
   ],
   "isPrivate": true,
-  "fileName": "12-certificates/quality-assurance-certificate.json"
+  "fileName": "12-certificates/2020-quality-assurance-certificate.json"
 }

@@ -10,7 +10,7 @@ import {
 
 import { post } from '../../../utils/ajax';
 
-import { randomCompliment } from '../utils/get-words';
+import { randomCompliment } from '../../../utils/get-words';
 import { updateSuccessMessage } from './';
 
 export const CURRENT_CHALLENGE_KEY = 'currentChallengeId';
