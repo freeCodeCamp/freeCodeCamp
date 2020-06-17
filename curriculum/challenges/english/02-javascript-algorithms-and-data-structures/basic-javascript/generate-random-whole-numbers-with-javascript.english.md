@@ -34,7 +34,7 @@ tests:
   - text: You should have multiplied the result of <code>Math.random</code> by 10 to make it a number that is between zero and nine.
     testString: assert(code.match(/\s*?Math.random\s*?\(\s*?\)\s*?\*\s*?10[\D]\s*?/g) || code.match(/\s*?10\s*?\*\s*?Math.random\s*?\(\s*?\)\s*?/g));
   - text: You should use <code>Math.floor</code> to remove the decimal part of the number.
-    testString: assert(code.match(/Math.floor/g).length > 1);
+    testString: assert(code.match(/Math.floor/g).length >= 1);
 
 ```
 
