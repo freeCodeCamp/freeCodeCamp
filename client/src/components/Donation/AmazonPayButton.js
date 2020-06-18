@@ -20,9 +20,9 @@ export class AmazonPayButton extends Component {
     this.state = {
       hasConsent: 'false',
       billingAgreementId: '',
-      walletWidgetError: '',
       showWalletWidget: 'true',
       showConsentWidget: 'true',
+      billingAgreementStatus: 'Draft',
       error: ''
     };
 

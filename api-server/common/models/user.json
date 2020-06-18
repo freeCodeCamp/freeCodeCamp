@@ -257,15 +257,16 @@
       "type": "boolean",
       "description": "Does the camper have an active donation",
       "default": false
-    },
-    "amazonPayId": {
-      "type": "string",
-      "description": "Unique ID to diffrenciate amazon pay subscription"
     }
   },
 
   "validations": [],
   "relations": {
+    "amazonBillingAgreements": {
+      "type": "hasMany",
+      "foreignKey": "",
+      "modal": "amazonBillingAgreement"
+    },
     "donations": {
       "type": "hasMany",
       "foreignKey": "",

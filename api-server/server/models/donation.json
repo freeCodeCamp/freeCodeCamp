@@ -47,6 +47,10 @@
       "type": "string",
       "required": true,
       "description": "The providers reference for the donor"
+    },
+    "orderReferenceId": {
+      "type": "string",
+      "description": "The amazon order identification"
     }
   },
   "validations": [

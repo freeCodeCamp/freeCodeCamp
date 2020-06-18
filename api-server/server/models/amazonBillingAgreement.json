@@ -1,0 +1,42 @@
+{
+  "name": "AmazonBillingAgreement",
+  "description": "A representation of an amazon donation subscription to freeCodeCamp",
+  "plural": "amazonBillingAgreements",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "scopes": {},
+  "indexes": {},
+  "options": {
+    "validateUpsert": true
+  },
+  "hidden": [],
+  "remoting": {},
+  "http": {},
+  "properties": {
+    "duration": {
+      "type": "string",
+      "required": true
+    },
+    "startDate": {
+      "type": "DateString",
+      "required": true
+    },
+    "endDate": {
+      "type": "DateString"
+    },
+    "billingAgreementId": {
+      "type": "string",
+      "required": true,
+      "description": "The donation subscription id returned from the provider"
+    }
+  },
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": "userId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

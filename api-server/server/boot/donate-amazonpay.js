@@ -6,6 +6,20 @@ import keys from '../../../config/secrets';
 import { createAsyncUserDonation } from '../utils/donation';
 
 const log = debug('fcc:boot:donate-amazonpay');
+const nanoidCharSet =
+  '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const generalError = {
+  error: 'Donation failed due to a server error.',
+  type: 'ServerError'
+};
+const asyncSuccess = {
+  type: 'success',
+  message: `Amazon Pay is processing your payment. You will receive a confirmation once your payment is processed successfully`
+};
+const syncSuccess = {
+  type: 'success',
+  message: `Your payment has been processed.`
+};
 
 // initialize payment
 let payment = amazonPayments.connect({
@@ -37,13 +51,18 @@ export default function donateAmazonPay(app, done) {
     return new Promise((resolve, reject) => {
       payment.offAmazonPayments.getBillingAgreementDetails(
         {
-          AmazonBillingAgreementId: agreementId
+          AmazonBillingAgreementId: billingAgreementId
         },
         (err, data) => {
           if (err) {
-            reject(err);
+            return reject(err);
           }
-          if (data.BillingAgreementDetails.Constraints) {
+
+          const { BillingAgreementDetails } = data;
+          if (
+            BillingAgreementDetails.Constraints &&
+            BillingAgreementDetails.Constraints.Constraint
+          ) {
             let constraintType =
               data.BillingAgreementDetails.Constraints.Constraint.ConstraintID;
             let constraintMessage;
@@ -58,47 +77,37 @@ export default function donateAmazonPay(app, done) {
               constraintMessage =
                 'Buyer cannot be sellers. Please try with another account';
 
-            reject({
+            return reject({
               message: constraintMessage,
               type: constraintType
             });
           }
-
-          // set this global variable so initial steps could be skiped
-          // when the payment object is open
-          billingAgreementStatus =
-            data.BillingAgreementDetails.BillingAgreementStatus.State;
-
-          if (billingAgreementStatus !== 'Draft')
-            donorEmail = data.BillingAgreementDetails.Buyer.Email;
-
           console.log('GET AGREEMENT DETAILS');
           console.log(JSON.stringify(data));
-          resolve(data);
+          return resolve(BillingAgreementDetails);
         }
       );
     });
   }
 
-  function setAgreementDetails() {
-    if (billingAgreementStatus === 'Draft')
+  function setAgreementDetails(BillingAgreementDetail) {
+    if (BillingAgreementDetail.BillingAgreementStatus.State === 'Draft')
       return new Promise((resolve, reject) => {
         payment.offAmazonPayments.setBillingAgreementDetails(
           {
-            AmazonBillingAgreementId: agreementId,
+            AmazonBillingAgreementId: billingAgreementId,
             BillingAgreementAttributes: {
               SellerNote: 'Donation to freeCodeCamp',
-              StoreName: 'freeCodeCamp',
-              CustomInformation: customInformation
+              StoreName: 'freeCodeCamp'
             }
           },
           (err, data) => {
             if (err) {
-              reject(err);
+              return reject(err);
             }
             console.log('SET AGREEMENT DETAILS');
             console.log(JSON.stringify(data));
-            resolve(data);
+            return resolve(data);
           }
         );
       });
@@ -111,49 +120,32 @@ export default function donateAmazonPay(app, done) {
     return new Promise((resolve, reject) => {
       payment.offAmazonPayments.confirmBillingAgreement(
         {
-          AmazonBillingAgreementId: agreementId
+          AmazonBillingAgreementId: billingAgreementId
         },
         (err, data) => {
           if (err) {
-            reject(err);
+            return reject(err);
           }
           console.log('CONFIRM AGREEMENT DETAILS');
           console.log(JSON.stringify(data));
-          resolve(data);
+          return resolve(data);
         }
       );
     });
   }
 
-  async function setAmazonPayId(req) {
-    const { amazonPayId } = req.user;
-    const { user } = req;
-    if (amazonPayId) {
-      console.log('GET AMAZON PAY ID Y');
-      globalAmazonPayId = amazonPayId;
-    } else {
-      const nanoidCharSet =
-        '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-      const newAmazonPayId = generate(nanoidCharSet, 10);
-      await user.createAmazonPayId(newAmazonPayId);
-      globalAmazonPayId = newAmazonPayId;
-      console.log('GET AMAZON PAY ID N');
-    }
-  }
-
-  function authorizeOnBillingAgreement(TransactionTimeout) {
+  function authorizeOnBillingAgreement(TransactionTimeout, req) {
     console.log('time: ' + TransactionTimeout);
+    const randomchars = generate(nanoidCharSet, 10);
+    const { donationAmount } = req.body;
 
     return new Promise((resolve, reject) => {
       payment.offAmazonPayments.authorizeOnBillingAgreement(
         {
-          AmazonBillingAgreementId: agreementId,
-          SellerOrderAttributes: {
-            SellerOrderId: sellerOrderId
-          },
-          AuthorizationReferenceId: `${globalAmazonPayId}_${agreementId}`,
+          AmazonBillingAgreementId: billingAgreementId,
+          AuthorizationReferenceId: `S${randomchars}_${billingAgreementId}`,
           AuthorizationAmount: {
-            Amount: amount,
+            Amount: donationAmount / 100,
             CurrencyCode: 'USD'
           },
           TransactionTimeout: TransactionTimeout,
@@ -163,14 +155,15 @@ export default function donateAmazonPay(app, done) {
         },
         (err, data) => {
           if (err) {
-            reject(err);
+            console.log(err);
+            return reject(err);
           }
           const {
             ReasonCode,
             State
           } = data.AuthorizationDetails.AuthorizationStatus;
-
-          orderReferenceId = data.AmazonOrderReferenceId;
+          const orderReferenceId = data.AmazonOrderReferenceId;
+          let donationState;
 
           console.log(ReasonCode);
           console.log(State);
@@ -182,7 +175,7 @@ export default function donateAmazonPay(app, done) {
             if (ReasonCode === 'InvalidPaymentMethod') {
               // error is thrown so the payment method could be changed
               // and authorization can take place
-              reject({
+              return reject({
                 message: 'Please choose another payment method and resubmit',
                 type: 'InvalidPaymentMethod'
               });
@@ -198,13 +191,13 @@ export default function donateAmazonPay(app, done) {
           console.log('donationData: ' + donationState);
           console.log('AUTHORIIIZE AGREEMENT DETAILS');
           console.log(JSON.stringify(data));
-          resolve(data);
+          return resolve({ donationState, orderReferenceId });
         }
       );
     });
   }
 
-  function CancelOrderReference() {
+  function CancelOrderReference(orderReferenceId) {
     // once the agreement is suspended due to InvalidPaymentMethod
     // we need to reconfirm the agreement
     console.log('rfid: ' + orderReferenceId);
@@ -215,56 +208,111 @@ export default function donateAmazonPay(app, done) {
         },
         (err, data) => {
           if (err) {
-            reject(err);
+            return reject(err);
           }
           console.log('CANCEL ORDER REFRENCE');
           console.log(JSON.stringify(data));
-          resolve(data);
+          return resolve(data);
         }
       );
     });
   }
 
-  async function respondToClient(req, res) {
+  function closeBillingAgreement() {
+    return new Promise((resolve, reject) => {
+      payment.offAmazonPayments.closeBillingAgreement(
+        {
+          AmazonBillingAgreementId: billingAgreementId
+        },
+        (err, data) => {
+          if (err) {
+            return reject(err);
+          }
+          console.log('CLOSE BILLING AGREEMENT');
+          console.log(JSON.stringify(data));
+          return resolve(data);
+        }
+      );
+    });
+  }
+
+  const createAsyncUserBillingAgreement = (
+    user,
+    amazonBillingAgreement,
+    app
+  ) => {
+    log(
+      `Creating billingAgreement:${amazonBillingAgreement.billingAgreementId}`
+    );
+    const { AmazonBillingAgreement } = app.models;
+    const { billingAgreementId } = amazonBillingAgreement;
+
+    return AmazonBillingAgreement.findOne(
+      { where: { billingAgreementId } },
+      (err, billingAgreement) => {
+        if (err) throw new Error(err);
+        if (!billingAgreement) {
+          user
+            .createAmzBillingAgreement(amazonBillingAgreement)
+            .toPromise()
+            .catch(err => {
+              throw new Error(err);
+            });
+        }
+      }
+    );
+  };
+
+  async function respondToClient(req, res, app, syncAuthInfo) {
     console.log('RESPOND TO CLIENT');
     console.log('donationState: ' + donationState);
+    const { donationState, orderReferenceId } = syncAuthInfo;
+    const startDate = new Date(Date.now()).toISOString();
+    const {
+      user,
+      body: { donationdDuration, donationAmount }
+    } = req;
+    const amazonBillingAgreement = {
+      duration: donationdDuration,
+      startDate: startDate,
+      billingAgreementId
+    };
     if (donationState === 'CaptureSuccessful') {
-      if (!donorEmail) await getAgreementDetails();
-      console.log(donorEmail);
+      const {
+        Buyer: { Email }
+      } = await getAgreementDetails();
       const donation = {
-        email: donorEmail,
-        amount: amount * 100,
-        duration: 'month',
+        email: Email,
+        amount: donationAmount * 100,
+        duration: 'billingAgreement',
         provider: 'amazon',
-        subscriptionId: agreementId,
-        customerId: donorEmail,
-        startDate: new Date(Date.now()).toISOString()
+        subscriptionId: billingAgreementId,
+        customerId: Email,
+        startDate: startDate,
+        orderReferenceId
       };
-      const { user } = req;
+      await createAsyncUserBillingAgreement(user, amazonBillingAgreement, app);
       await createAsyncUserDonation(user, donation);
-      return res.status(200).json({
-        type: 'success',
-        message: `Your payment has been processed.`
-      });
+      return res.status(200).json(syncSuccess);
     } else if (donationState === 'AsyncCallCompleted') {
-      return res.status(200).json({
-        type: 'success',
-        message: `Amazon Pay is processing your payment. You will receive a confirmation once your payment is processed successfully`
-      });
+      await createAsyncUserBillingAgreement(user, amazonBillingAgreement, app);
+      return res.status(200).json(asyncSuccess);
     } else if (donationState === 'AsyncAuthorizationCall') {
-      await authorizeOnBillingAgreement(1440);
-      if (donationState === 'AsyncCallCompleted') {
-        return res.status(200).json({
-          type: 'success',
-          message: `Amazon Pay is processing your payment. You will receive a confirmation once your payment is processed successfully`
-        });
+      const asyncAuthInfo = await authorizeOnBillingAgreement(1440, req);
+      if (asyncAuthInfo.donationState === 'AsyncCallCompleted') {
+        await createAsyncUserBillingAgreement(
+          user,
+          amazonBillingAgreement,
+          app
+        );
+        return res.status(200).json(asyncSuccess);
       } else {
         throw generalError;
       }
     } else if (donationState === 'CancelOrderRefrence') {
-      await getAgreementDetails();
-      console.log(agreementId);
-      if (billingAgreementStatus === 'Open') CancelOrderReference();
+      const BillingAgreementDetails = await getAgreementDetails();
+      if (BillingAgreementDetails.BillingAgreementStatus.State === 'Open')
+        CancelOrderReference(orderReferenceId);
       throw generalError;
     } else {
       throw generalError;
@@ -272,73 +320,112 @@ export default function donateAmazonPay(app, done) {
   }
 
   // set global vars to be accessible by all functions
-  let billingAgreementStatus;
-  let sellerOrderId;
-  let agreementId;
-  let orderReferenceId;
-  let customInformation;
-  let amount;
-  let globalAmazonPayId;
-  let donationState;
-  let donorEmail;
-  const generalError = {
-    error: 'Donation failed due to a server error.',
-    type: 'ServerError'
-  };
+  let billingAgreementId;
 
   // -- API Endpoints -- //
   function createAmazonPayDonation(req, res) {
-    const { user, body } = req;
-
     // return if user is not signed in
     checkAuthorizatioin(req, res);
 
-    const { billingAgreementId, donationAmount } = body;
-    const { externalId } = user;
+    billingAgreementId = req.body.billingAgreementId;
 
-    amount = donationAmount / 100;
-    customInformation = externalId;
-    agreementId = billingAgreementId;
-    sellerOrderId = externalId;
-
-    return Promise.resolve(req)
-      .then(getAgreementDetails)
-      .then(setAgreementDetails)
-      .then(confirmBillingAgreement)
-      .then(() => setAmazonPayId(req))
-      .then(() => authorizeOnBillingAgreement(0))
-      .then(() => respondToClient(req, res))
-      .catch(err => {
-        log(err.message);
-        if (
-          err.type === 'PaymentPlanNotSet' ||
-          err.type === 'BuyerConsentNotSet' ||
-          err.type === 'BuyerEqualsSeller' ||
-          err.type === 'InvalidPaymentMethod'
-        ) {
-          return res.status(402).send({ error: err.message, type: err.type });
-        }
-        return res.status(500).send(generalError);
-      });
+    return (
+      Promise.resolve(req)
+        .then(getAgreementDetails)
+        .then(setAgreementDetails)
+        .then(confirmBillingAgreement)
+        .then(() => authorizeOnBillingAgreement(0, req))
+        .then(donationState => respondToClient(req, res, app, donationState))
+        // .then(closeBillingAgreement)
+        .catch(err => {
+          log(err.message);
+          if (
+            err.type === 'PaymentPlanNotSet' ||
+            err.type === 'BuyerConsentNotSet' ||
+            err.type === 'BuyerEqualsSeller' ||
+            err.type === 'InvalidPaymentMethod'
+          ) {
+            return res.status(402).send({ error: err.message, type: err.type });
+          }
+          return res.status(500).send(generalError);
+        })
+    );
   }
 
   function apihookUpdateAmazonPay(req, res) {
-    const parsedBody = JSON.parse(req.body);
-    payment.parseSNSResponse(parsedBody, function(err, parsed) {
-      // parsed will contain the full response from SNS unless the message
-      //  is an IPN notification,
-      // in which case it will be the JSON-ified XML from the message.
-      console.log('ERROR', err);
-      console.log('PASS', parsed);
-    });
-
     return Promise.resolve(req)
+      .then(verifyWebHook)
+      .then(parsedBody => updateUser(parsedBody, app))
       .catch(err => {
         log(err.message);
       })
       .finally(() =>
         res.status(200).json({ message: 'received amazonpay hook' })
       );
+  }
+
+  function updateUser(parsedBody, app) {
+    console.log('UPDATEUSER');
+
+    const { NotificationData, NotificationType } = parsedBody;
+    if (NotificationType === 'PaymentAuthorize') {
+      if (
+        NotificationData.AuthorizationStatus.State === 'Closed' &&
+        NotificationData.AuthorizationStatus.ReasonCode ===
+          'MaxCapturesProcessed'
+      ) {
+        console.log(NotificationData.AuthorizationReferenceId);
+        console.log(NotificationData.CapturedAmount);
+        // .amount
+
+        console.log(NotificationData.AuthorizationStatus.LastUpdateTimestamp);
+        // get the sub id from the authorizatoini refrenceid
+        // get billing statement info
+        // get user email
+
+        // create donation object
+        // save donation
+      }
+      // createDonation(parsedBody, app);
+    }
+    if (NotificationType === 'BillingAgreementNotification') {
+      if (NotificationData.BillingAgreementStatus.State === 'Closed') {
+        console.log('close');
+      }
+      console.log(parsedBody);
+      console.log(NotificationData);
+      // NotificationData.AmazonBillingAgreementId
+
+      // deleteDonation(parsedBody, app);
+      // find the user set is donating to false
+    }
+  }
+
+  // function createDonation(parsedBody, app) {
+  //   console.log(parsedBody);
+  // }
+
+  // function deleteDonation(parsedBody, app) {
+  //   console.log(parsedBody);
+  // }
+
+  function verifyWebHook(req) {
+    // check if webhook type for creation
+    const jsonBody = JSON.parse(req.body);
+    return new Promise((resolve, reject) => {
+      payment.parseSNSResponse(jsonBody, function(err, parsed) {
+        // parsed will contain the full response from SNS unless the message
+        //  is an IPN notification,
+        // in which case it will be the JSON-ified XML from the message.
+        if (err) {
+          return reject(err);
+        }
+        // parsed.NotificationData.CaptureStatus.State === 'Complete'
+        // console.log(parsed.NotificationData);
+        console.log(parsed.NotificationType);
+        return resolve(parsed);
+      });
+    });
   }
 
   const { sellerId, mwsId, mwsSecret, clientId, clientSecret } = keys.amazon;

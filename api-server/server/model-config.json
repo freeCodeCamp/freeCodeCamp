@@ -35,6 +35,10 @@
     "dataSource": "db",
     "public": false
   },
+  "AmazonBillingAgreement": {
+    "dataSource": "db",
+    "public": false
+  },
   "Email": {
     "dataSource": "mail",
     "public": false
