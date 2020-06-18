@@ -31,7 +31,7 @@ const composeEnhancers = composeWithDevTools({
 
 export const createStore = () => {
   let store;
-  if (process.env.ENVIRONMENT === 'production') {
+  if (ENVIRONMENT === 'production') {
     store = reduxCreateStore(
       rootReducer,
       applyMiddleware(sagaMiddleware, epicMiddleware)
