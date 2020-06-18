@@ -1,4 +1,4 @@
-/* global ENVIRONMENT */
+/* global process.env.ENVIRONMENT */
 /* eslint-disable-next-line  max-len */
 import { composeWithDevTools } from 'redux-devtools-extension/logOnlyInProduction';
 import { createStore as reduxCreateStore, applyMiddleware } from 'redux';
@@ -31,7 +31,7 @@ const composeEnhancers = composeWithDevTools({
 
 export const createStore = () => {
   let store;
-  if (ENVIRONMENT === 'production') {
+  if (process.env.ENVIRONMENT === 'production') {
     store = reduxCreateStore(
       rootReducer,
       applyMiddleware(sagaMiddleware, epicMiddleware)
