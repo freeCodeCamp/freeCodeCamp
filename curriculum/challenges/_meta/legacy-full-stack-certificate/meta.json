@@ -1,5 +1,5 @@
 {
-  "name": "Full Stack Certificate",
+  "name": "Legacy Full Stack Certificate",
   "dashedName": "full-stack-certificate",
   "order": 5,
   "time": "",
@@ -10,9 +10,9 @@
   "challengeOrder": [
     [
       "561add10cb82ac38a17213bd",
-      "Full Stack Certificate"
+      "Legacy Full Stack Certificate"
     ]
   ],
   "isPrivate": true,
-  "fileName": "12-certificates/full-stack-certificate.json"
+  "fileName": "12-certificates/legacy-full-stack-certificate/full-stack-certificate.english.json"
 }

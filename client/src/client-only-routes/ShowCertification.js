@@ -18,7 +18,7 @@ import {
   isDonatingSelector,
   executeGA
 } from '../redux';
-import validCertNames from '../../utils/validCertNames';
+import { certMap } from '../../src/resources/certAndProjectMap';
 import { createFlashMessage } from '../components/Flash/redux';
 import standardErrorMessage from '../utils/standardErrorMessage';
 import reallyWeirdErrorMessage from '../utils/reallyWeirdErrorMessage';
@@ -55,6 +55,8 @@ const propTypes = {
   username: PropTypes.string,
   validCertName: PropTypes.bool
 };
+
+const validCertNames = certMap.map(cert => cert.slug);
 
 const mapStateToProps = (state, { certName }) => {
   const validCertName = validCertNames.some(name => name === certName);

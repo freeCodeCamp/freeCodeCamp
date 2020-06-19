@@ -53,9 +53,7 @@ const {
   buildJSChallenge
 } = require('../../client/src/templates/Challenges/utils/build');
 
-const {
-  createPoly
-} = require('../../client/src/templates/Challenges/utils/polyvinyl');
+const { createPoly } = require('../../utils/polyvinyl');
 
 const testEvaluator = require('../../client/config/test-evaluator').filename;
 
@@ -323,23 +321,23 @@ function populateTestsForLang({ lang, challenges }, meta) {
           });
 
           let { files = [] } = challenge;
-          let createTestRunner;
           if (challengeType === challengeTypes.backend) {
             it('Check tests is not implemented.');
             return;
-          } else if (
-            challengeType === challengeTypes.js ||
-            challengeType === challengeTypes.bonfire
-          ) {
-            createTestRunner = createTestRunnerForJSChallenge;
-          } else if (files.length === 1) {
-            createTestRunner = createTestRunnerForDOMChallenge;
-          } else {
+          }
+
+          if (files.length > 1) {
             it('Check tests.', () => {
               throw new Error('Seed file should be only the one.');
             });
             return;
           }
+
+          const buildChallenge =
+            challengeType === challengeTypes.js ||
+            challengeType === challengeTypes.bonfire
+              ? buildJSChallenge
+              : buildDOMChallenge;
 
           files = files.map(createPoly);
           it('Test suite must fail on the initial contents', async function() {
@@ -353,7 +351,7 @@ function populateTestsForLang({ lang, challenges }, meta) {
               testRunner = await createTestRunner(
                 { ...challenge, files },
                 '',
-                page
+                buildChallenge
               );
             } catch {
               fails = true;
@@ -390,7 +388,7 @@ function populateTestsForLang({ lang, challenges }, meta) {
                 const testRunner = await createTestRunner(
                   { ...challenge, files },
                   solution,
-                  page
+                  buildChallenge
                 );
                 for (const test of tests) {
                   await testRunner(test);
@@ -404,41 +402,29 @@ function populateTestsForLang({ lang, challenges }, meta) {
   });
 }
 
-async function createTestRunnerForDOMChallenge(
+async function createTestRunner(
   { required = [], template, files },
   solution,
-  context
+  buildChallenge
 ) {
   if (solution) {
     files[0].contents = solution;
   }
 
-  const { build, sources, loadEnzyme } = await buildDOMChallenge({
+  const { build, sources, loadEnzyme } = await buildChallenge({
     files,
     required,
     template
   });
+  const code = sources && 'index' in sources ? sources['index'] : '';
 
-  await context.reload();
-  await context.setContent(build);
-  await context.evaluate(
-    async (sources, loadEnzyme) => {
-      const code = sources && 'index' in sources ? sources['index'] : '';
-      const getUserInput = fileName => sources[fileName];
-      await document.__initTestFrame({ code, getUserInput, loadEnzyme });
-    },
-    sources,
-    loadEnzyme
-  );
+  const evaluator = await (buildChallenge === buildDOMChallenge
+    ? getContextEvaluator(build, sources, code, loadEnzyme)
+    : getWorkerEvaluator(build, sources, code));
 
   return async ({ text, testString }) => {
     try {
-      const { pass, err } = await Promise.race([
-        new Promise((_, reject) => setTimeout(() => reject('timeout'), 5000)),
-        await context.evaluate(async testString => {
-          return await document.__runTest(testString);
-        }, testString)
-      ]);
+      const { pass, err } = await evaluator.evaluate(testString, 5000);
       if (!pass) {
         throw new AssertionError(err.message);
       }
@@ -448,28 +434,43 @@ async function createTestRunnerForDOMChallenge(
   };
 }
 
-async function createTestRunnerForJSChallenge({ files }, solution) {
-  if (solution) {
-    files[0].contents = solution;
-  }
+async function getContextEvaluator(build, sources, code, loadEnzyme) {
+  await initializeTestRunner(build, sources, code, loadEnzyme);
 
-  const { build, sources } = await buildJSChallenge({ files });
-  const code = sources && 'index' in sources ? sources['index'] : '';
-
-  const testWorker = createWorker(testEvaluator, { terminateWorker: true });
-  return async ({ text, testString }) => {
-    try {
-      const { pass, err } = await testWorker.execute(
-        { testString, build, code, sources },
-        5000
-      ).done;
-      if (!pass) {
-        throw new AssertionError(err.message);
-      }
-    } catch (err) {
-      reThrow(err, text);
-    }
+  return {
+    evaluate: async (testString, timeout) =>
+      Promise.race([
+        new Promise((_, reject) =>
+          setTimeout(() => reject('timeout'), timeout)
+        ),
+        await page.evaluate(async testString => {
+          return await document.__runTest(testString);
+        }, testString)
+      ])
   };
+}
+
+async function getWorkerEvaluator(build, sources, code) {
+  const testWorker = createWorker(testEvaluator, { terminateWorker: true });
+  return {
+    evaluate: async (testString, timeout) =>
+      await testWorker.execute({ testString, build, code, sources }, timeout)
+        .done
+  };
+}
+
+async function initializeTestRunner(build, sources, code, loadEnzyme) {
+  await page.reload();
+  await page.setContent(build);
+  await page.evaluate(
+    async (code, sources, loadEnzyme) => {
+      const getUserInput = fileName => sources[fileName];
+      await document.__initTestFrame({ code, getUserInput, loadEnzyme });
+    },
+    code,
+    sources,
+    loadEnzyme
+  );
 }
 
 function reThrow(err, text) {

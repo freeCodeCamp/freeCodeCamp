@@ -15,17 +15,17 @@ import {
   legacyBackEndChallengeId,
   legacyDataVisId,
   legacyInfosecQaId,
+  legacyFullStackId,
   respWebDesignId,
   frontEndLibsId,
   jsAlgoDataStructId,
   dataVis2018Id,
   apisMicroservicesId,
-  infosecId,
-  qaId,
-  fullStackId,
-  sciCompPyId,
-  dataAnalysisPyId,
-  machineLearningPyId
+  qaV7Id,
+  infosecV7Id,
+  sciCompPyV7Id,
+  dataAnalysisPyV7Id,
+  machineLearningPyV7Id
 } from '../utils/constantStrings.json';
 import { oldDataVizId } from '../../../config/misc';
 import certTypes from '../utils/certTypes.json';
@@ -106,6 +106,7 @@ function createCertTypeIds(app) {
     [certTypes.backEnd]: getIdsForCert$(legacyBackEndChallengeId, Challenge),
     [certTypes.dataVis]: getIdsForCert$(legacyDataVisId, Challenge),
     [certTypes.infosecQa]: getIdsForCert$(legacyInfosecQaId, Challenge),
+    [certTypes.fullStack]: getIdsForCert$(legacyFullStackId, Challenge),
 
     // modern
     [certTypes.respWebDesign]: getIdsForCert$(respWebDesignId, Challenge),
@@ -116,13 +117,12 @@ function createCertTypeIds(app) {
       apisMicroservicesId,
       Challenge
     ),
-    [certTypes.qa]: getIdsForCert$(qaId, Challenge),
-    [certTypes.infosec]: getIdsForCert$(infosecId, Challenge),
-    [certTypes.fullStack]: getIdsForCert$(fullStackId, Challenge),
-    [certTypes.sciCompPy]: getIdsForCert$(sciCompPyId, Challenge),
-    [certTypes.dataAnalysisPy]: getIdsForCert$(dataAnalysisPyId, Challenge),
-    [certTypes.machineLearningPy]: getIdsForCert$(
-      machineLearningPyId,
+    [certTypes.qaV7]: getIdsForCert$(qaV7Id, Challenge),
+    [certTypes.infosecV7]: getIdsForCert$(infosecV7Id, Challenge),
+    [certTypes.sciCompPyV7]: getIdsForCert$(sciCompPyV7Id, Challenge),
+    [certTypes.dataAnalysisPyV7]: getIdsForCert$(dataAnalysisPyV7Id, Challenge),
+    [certTypes.machineLearningPyV7]: getIdsForCert$(
+      machineLearningPyV7Id,
       Challenge
     )
   };
@@ -139,17 +139,17 @@ const certIds = {
   [certTypes.backEnd]: legacyBackEndChallengeId,
   [certTypes.dataVis]: legacyDataVisId,
   [certTypes.infosecQa]: legacyInfosecQaId,
+  [certTypes.fullStack]: legacyFullStackId,
   [certTypes.respWebDesign]: respWebDesignId,
   [certTypes.frontEndLibs]: frontEndLibsId,
   [certTypes.jsAlgoDataStruct]: jsAlgoDataStructId,
   [certTypes.dataVis2018]: dataVis2018Id,
   [certTypes.apisMicroservices]: apisMicroservicesId,
-  [certTypes.qa]: qaId,
-  [certTypes.infosec]: infosecId,
-  [certTypes.fullStack]: fullStackId,
-  [certTypes.sciCompPy]: sciCompPyId,
-  [certTypes.dataAnalysisPy]: dataAnalysisPyId,
-  [certTypes.machineLearningPy]: machineLearningPyId
+  [certTypes.qaV7]: qaV7Id,
+  [certTypes.infosecV7]: infosecV7Id,
+  [certTypes.sciCompPyV7]: sciCompPyV7Id,
+  [certTypes.dataAnalysisPyV7]: dataAnalysisPyV7Id,
+  [certTypes.machineLearningPyV7]: machineLearningPyV7Id
 };
 
 const certText = {
@@ -157,17 +157,17 @@ const certText = {
   [certTypes.backEnd]: 'Legacy Back End',
   [certTypes.dataVis]: 'Legacy Data Visualization',
   [certTypes.infosecQa]: 'Legacy Information Security and Quality Assurance',
-  [certTypes.fullStack]: 'Full Stack',
+  [certTypes.fullStack]: 'Legacy Full Stack',
   [certTypes.respWebDesign]: 'Responsive Web Design',
   [certTypes.frontEndLibs]: 'Front End Libraries',
   [certTypes.jsAlgoDataStruct]: 'JavaScript Algorithms and Data Structures',
   [certTypes.dataVis2018]: 'Data Visualization',
   [certTypes.apisMicroservices]: 'APIs and Microservices',
-  [certTypes.qa]: 'Quality Assurance',
-  [certTypes.infosec]: 'Information Security',
-  [certTypes.sciCompPy]: 'Scientific Computing with Python',
-  [certTypes.dataAnalysisPy]: 'Data Analysis with Python',
-  [certTypes.machineLearningPy]: 'Machine Learning with Python'
+  [certTypes.qaV7]: 'Quality Assurance',
+  [certTypes.infosecV7]: 'Information Security',
+  [certTypes.sciCompPyV7]: 'Scientific Computing with Python',
+  [certTypes.dataAnalysisPyV7]: 'Data Analysis with Python',
+  [certTypes.machineLearningPyV7]: 'Machine Learning with Python'
 };
 
 const completionHours = {
@@ -181,11 +181,11 @@ const completionHours = {
   [certTypes.jsAlgoDataStruct]: 300,
   [certTypes.dataVis2018]: 300,
   [certTypes.apisMicroservices]: 300,
-  [certTypes.qa]: 300,
-  [certTypes.infosec]: 300,
-  [certTypes.sciCompPy]: 400,
-  [certTypes.dataAnalysisPy]: 400,
-  [certTypes.machineLearningPy]: 400
+  [certTypes.qaV7]: 300,
+  [certTypes.infosecV7]: 300,
+  [certTypes.sciCompPyV7]: 400,
+  [certTypes.dataAnalysisPyV7]: 400,
+  [certTypes.machineLearningPyV7]: 400
 };
 
 function getIdsForCert$(id, Challenge) {
@@ -209,11 +209,11 @@ function sendCertifiedEmail(
     isJsAlgoDataStructCert,
     isDataVisCert,
     isApisMicroservicesCert,
-    is2020QaCert,
-    is2020InfosecCert,
-    is2020SciCompPyCert,
-    is2020DataAnalysisPyCert,
-    is2020MachineLearningPyCert
+    isQaCertV7,
+    isInfosecCertV7,
+    isSciCompPyCertV7,
+    isDataAnalysisPyCertV7,
+    isMachineLearningPyCertV7
   },
   send$
 ) {
@@ -224,11 +224,11 @@ function sendCertifiedEmail(
     !isJsAlgoDataStructCert ||
     !isDataVisCert ||
     !isApisMicroservicesCert ||
-    !is2020QaCert ||
-    !is2020InfosecCert ||
-    !is2020SciCompPyCert ||
-    !is2020DataAnalysisPyCert ||
-    !is2020MachineLearningPyCert
+    !isQaCertV7 ||
+    !isInfosecCertV7 ||
+    !isSciCompPyCertV7 ||
+    !isDataAnalysisPyCertV7 ||
+    !isMachineLearningPyCertV7
   ) {
     return Observable.just(false);
   }
@@ -256,15 +256,15 @@ function getUserIsCertMap(user) {
     is2018DataVisCert = false,
     isApisMicroservicesCert = false,
     isInfosecQaCert = false,
-    is2020QaCert = false,
-    is2020InfosecCert = false,
+    isQaCertV7 = false,
+    isInfosecCertV7 = false,
     isFrontEndCert = false,
     isBackEndCert = false,
     isDataVisCert = false,
     isFullStackCert = false,
-    is2020SciCompPyCert = false,
-    is2020DataAnalysisPyCert = false,
-    is2020MachineLearningPyCert = false
+    isSciCompPyCertV7 = false,
+    isDataAnalysisPyCertV7 = false,
+    isMachineLearningPyCertV7 = false
   } = user;
 
   return {
@@ -274,15 +274,15 @@ function getUserIsCertMap(user) {
     is2018DataVisCert,
     isApisMicroservicesCert,
     isInfosecQaCert,
-    is2020QaCert,
-    is2020InfosecCert,
+    isQaCertV7,
+    isInfosecCertV7,
     isFrontEndCert,
     isBackEndCert,
     isDataVisCert,
     isFullStackCert,
-    is2020SciCompPyCert,
-    is2020DataAnalysisPyCert,
-    is2020MachineLearningPyCert
+    isSciCompPyCertV7,
+    isDataAnalysisPyCertV7,
+    isMachineLearningPyCertV7
   };
 }
 
@@ -370,7 +370,11 @@ function createVerifyCert(certTypeIds, app) {
             type: message.includes('Congratulations') ? 'success' : 'info',
             message
           },
-          isCertMap: getUserIsCertMap(user)
+          isCertMap: getUserIsCertMap(user),
+          // send back the completed challenges
+          // NOTE: we could just send back the latest challenge, but this
+          // ensures the challenges are synced.
+          completedChallenges: user.completedChallenges
         });
       }, next);
   };
@@ -405,11 +409,11 @@ function createShowCert(app) {
       is2018DataVisCert: true,
       isApisMicroservicesCert: true,
       isInfosecQaCert: true,
-      is2020QaCert: true,
-      is2020InfosecCert: true,
-      is2020SciCompPyCert: true,
-      is2020DataAnalysisPyCert: true,
-      is2020MachineLearningPyCert: true,
+      isQaCertV7: true,
+      isInfosecCertV7: true,
+      isSciCompPyCertV7: true,
+      isDataAnalysisPyCertV7: true,
+      isMachineLearningPyCertV7: true,
       isHonest: true,
       username: true,
       name: true,

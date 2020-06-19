@@ -13,7 +13,10 @@ import {
 import { Link, navigate } from 'gatsby';
 import { createSelector } from 'reselect';
 
-import { projectMap, legacyProjectMap } from '../../resources/certProjectMap';
+import {
+  projectMap,
+  legacyProjectMap
+} from '../../resources/certAndProjectMap';
 
 import SectionHeader from './SectionHeader';
 import SolutionViewer from './SolutionViewer';
@@ -42,21 +45,21 @@ const propTypes = {
   ),
   createFlashMessage: PropTypes.func.isRequired,
   is2018DataVisCert: PropTypes.bool,
-  is2020DataAnalysisPyCert: PropTypes.bool,
-  is2020InfosecCert: PropTypes.bool,
-  is2020MachineLearningPyCert: PropTypes.bool,
-  is2020QaCert: PropTypes.bool,
-  is2020SciCompPyCert: PropTypes.bool,
   isApisMicroservicesCert: PropTypes.bool,
   isBackEndCert: PropTypes.bool,
+  isDataAnalysisPyCertV7: PropTypes.bool,
   isDataVisCert: PropTypes.bool,
   isFrontEndCert: PropTypes.bool,
   isFrontEndLibsCert: PropTypes.bool,
   isFullStackCert: PropTypes.bool,
   isHonest: PropTypes.bool,
+  isInfosecCertV7: PropTypes.bool,
   isInfosecQaCert: PropTypes.bool,
   isJsAlgoDataStructCert: PropTypes.bool,
+  isMachineLearningPyCertV7: PropTypes.bool,
+  isQaCertV7: PropTypes.bool,
   isRespWebDesignCert: PropTypes.bool,
+  isSciCompPyCertV7: PropTypes.bool,
   updateLegacyCert: PropTypes.func.isRequired,
   username: PropTypes.string,
   verifyCert: PropTypes.func.isRequired
@@ -72,14 +75,14 @@ const isCertSelector = ({
   isDataVisCert,
   isFrontEndCert,
   isInfosecQaCert,
-  is2020QaCert,
-  is2020InfosecCert,
+  isQaCertV7,
+  isInfosecCertV7,
   isFrontEndLibsCert,
   isFullStackCert,
   isRespWebDesignCert,
-  is2020SciCompPyCert,
-  is2020DataAnalysisPyCert,
-  is2020MachineLearningPyCert
+  isSciCompPyCertV7,
+  isDataAnalysisPyCertV7,
+  isMachineLearningPyCertV7
 }) => ({
   is2018DataVisCert,
   isApisMicroservicesCert,
@@ -88,14 +91,14 @@ const isCertSelector = ({
   isDataVisCert,
   isFrontEndCert,
   isInfosecQaCert,
-  is2020QaCert,
-  is2020InfosecCert,
+  isQaCertV7,
+  isInfosecCertV7,
   isFrontEndLibsCert,
   isFullStackCert,
   isRespWebDesignCert,
-  is2020SciCompPyCert,
-  is2020DataAnalysisPyCert,
-  is2020MachineLearningPyCert
+  isSciCompPyCertV7,
+  isDataAnalysisPyCertV7,
+  isMachineLearningPyCertV7
 });
 
 const isCertMapSelector = createSelector(
@@ -105,27 +108,27 @@ const isCertMapSelector = createSelector(
     isApisMicroservicesCert,
     isJsAlgoDataStructCert,
     isInfosecQaCert,
-    is2020QaCert,
-    is2020InfosecCert,
+    isQaCertV7,
+    isInfosecCertV7,
     isFrontEndLibsCert,
     isRespWebDesignCert,
     isDataVisCert,
     isFrontEndCert,
     isBackEndCert,
-    is2020SciCompPyCert,
-    is2020DataAnalysisPyCert,
-    is2020MachineLearningPyCert
+    isSciCompPyCertV7,
+    isDataAnalysisPyCertV7,
+    isMachineLearningPyCertV7
   }) => ({
     'Responsive Web Design': isRespWebDesignCert,
     'JavaScript Algorithms and Data Structures': isJsAlgoDataStructCert,
     'Front End Libraries': isFrontEndLibsCert,
     'Data Visualization': is2018DataVisCert,
-    "API's and Microservices": isApisMicroservicesCert,
-    'Quality Assurance': is2020QaCert,
-    'Information Security': is2020InfosecCert,
-    'Scientific Computing with Python': is2020SciCompPyCert,
-    'Data Analysis with Python': is2020DataAnalysisPyCert,
-    'Machine Learning with Python': is2020MachineLearningPyCert,
+    'APIs and Microservices': isApisMicroservicesCert,
+    'Quality Assurance': isQaCertV7,
+    'Information Security': isInfosecCertV7,
+    'Scientific Computing with Python': isSciCompPyCertV7,
+    'Data Analysis with Python': isDataAnalysisPyCertV7,
+    'Machine Learning with Python': isMachineLearningPyCertV7,
     'Legacy Front End': isFrontEndCert,
     'Legacy Data Visualization': isDataVisCert,
     'Legacy Back End': isBackEndCert,
@@ -462,7 +465,7 @@ export class CertificationSettings extends Component {
     );
   };
 
-  renderFullStack = () => {
+  renderLegacyFullStack = () => {
     const {
       isFullStackCert,
       username,
@@ -485,6 +488,8 @@ export class CertificationSettings extends Component {
       isJsAlgoDataStructCert &&
       isRespWebDesignCert;
 
+    // Keep the settings page slug as full-stack rather than
+    // legacy-full-stack so we don't break existing links
     const superBlock = 'full-stack';
     const certLocation = `/certification/${username}/${superBlock}`;
 
@@ -507,7 +512,7 @@ export class CertificationSettings extends Component {
     return (
       <FullWidthRow key={superBlock}>
         <Spacer />
-        <h3>Legacy Full Stack Certification</h3>
+        <h3 className='text-center'>Legacy Full Stack Certification</h3>
         <div>
           <p>
             Once you've earned the following freeCodeCamp certifications, you'll
@@ -564,8 +569,8 @@ export class CertificationSettings extends Component {
       <section id='certification-settings'>
         <SectionHeader>Certifications</SectionHeader>
         {certifications.map(this.renderCertifications)}
-        {this.renderFullStack()}
         <SectionHeader>Legacy Certifications</SectionHeader>
+        {this.renderLegacyFullStack()}
         {legacyCertifications.map(this.renderLegacyCertifications)}
         {isOpen ? (
           <Modal

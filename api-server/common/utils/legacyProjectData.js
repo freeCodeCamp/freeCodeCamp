@@ -93,7 +93,9 @@ const legacyInfosecQaProjects = {
     '587d824a367417b2b2512c45'
   ],
   title: 'Legacy Information Security and Quality Assurance Projects',
-  superBlock: 'legacy-information-security-and-quality-assurance'
+  // Keep the settings page "Show Certification" button
+  // pointing to information-security-and-quality-assurance
+  superBlock: 'information-security-and-quality-assurance'
 };
 
 const legacyProjects = [

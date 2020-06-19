@@ -93,7 +93,7 @@ Por favor, no crees _issues_ de GitHub para problemas de seguridad. En su lugar,
 
 Los moderadores de nuestra comunidad [evalúan](https://en.wikipedia.org/wiki/Software_bug#Bug_management) _issues_ y _pull requests_ y los clasifican según la prioridad, la gravedad y otros factores. Puedes [encontrar un glosario completo de sus significados aquí](https://github.com/freecodecamp/freecodecamp/labels).
 
-Debes buscar los problemas con las etiquetas [**`help wanted`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) o [**`first timers welcome`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+welcome%22) para localizar rápidamente lo que está disponible para que trabajes.
+Debes buscar los problemas con las etiquetas [**`help wanted`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) o [**`first timers only`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+only%22) para localizar rápidamente lo que está disponible para que trabajes.
 
 Estos están libres para todos y no necesitan permisos antes de trabajar en ellos. Si estos temas no dejan claro lo que se debe hacer no dudes en preguntar en los comentarios.
 
@@ -114,7 +114,7 @@ Normalmente no asignamos problemas a nadie excepto a colaboradores veteranos par
     - ¿Seguiste la lista de tareas para el _pull request_?
     - ¿Le has puesto un título significativo?
 
-No necesitas permiso para _issues_ que estén marcados con `help wanted` o `first timers welcome` como se explicó anteriormente. Sigue las recomendaciones con cuidado y abre el _pull request_.
+No necesitas permiso para _issues_ que estén marcados con `help wanted` o `first timers only` como se explicó anteriormente. Sigue las recomendaciones con cuidado y abre el _pull request_.
 
 ### Soy nuevo en GitHub y en Open Source en general
 

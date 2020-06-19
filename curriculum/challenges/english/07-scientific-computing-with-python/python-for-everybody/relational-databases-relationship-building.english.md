@@ -4,7 +4,7 @@ title: 'Relational Databases: Relationship Building'
 challengeType: 11
 isHidden: true
 isRequired: true
-videoId: A-t18zKJvmo
+videoId: CSbqczsHVnc
 ---
 
 ## Description
