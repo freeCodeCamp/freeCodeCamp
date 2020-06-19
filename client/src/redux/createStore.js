@@ -1,4 +1,4 @@
-/* global process.env.ENVIRONMENT */
+/* global ENVIRONMENT */
 /* eslint-disable-next-line  max-len */
 import { composeWithDevTools } from 'redux-devtools-extension/logOnlyInProduction';
 import { createStore as reduxCreateStore, applyMiddleware } from 'redux';
