@@ -37,6 +37,7 @@ const locations = {
 module.exports = Object.assign(locations, {
   locale,
   deploymentEnv,
+  environment: process.env.FREECODECAMP_NODE_ENV || 'development',
   stripePublicKey:
     !stripePublicKey || stripePublicKey === 'pk_from_stripe_dashboard'
       ? null

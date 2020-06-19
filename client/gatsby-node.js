@@ -169,9 +169,6 @@ exports.onCreateWebpackConfig = ({ stage, plugins, actions }) => {
         process.env.HOME_PATH || 'http://localhost:3000'
       ),
       STRIPE_PUBLIC_KEY: JSON.stringify(process.env.STRIPE_PUBLIC_KEY || ''),
-      ENVIRONMENT: JSON.stringify(
-        process.env.FREECODECAMP_NODE_ENV || 'development'
-      ),
       PAYPAL_SUPPORTERS: JSON.stringify(process.env.PAYPAL_SUPPORTERS || 404)
     })
   ];

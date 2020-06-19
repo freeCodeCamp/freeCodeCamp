@@ -1,4 +1,3 @@
-/* global ENVIRONMENT */
 /* eslint-disable-next-line  max-len */
 import { composeWithDevTools } from 'redux-devtools-extension/logOnlyInProduction';
 import { createStore as reduxCreateStore, applyMiddleware } from 'redux';
@@ -9,6 +8,8 @@ import rootEpic from './rootEpic';
 import rootReducer from './rootReducer';
 import rootSaga from './rootSaga';
 import { isBrowser } from '../../utils';
+
+import { environment } from '../../../config/env.json';
 
 const clientSide = isBrowser();
 
@@ -31,7 +32,7 @@ const composeEnhancers = composeWithDevTools({
 
 export const createStore = () => {
   let store;
-  if (ENVIRONMENT === 'production') {
+  if (environment === 'production') {
     store = reduxCreateStore(
       rootReducer,
       applyMiddleware(sagaMiddleware, epicMiddleware)
