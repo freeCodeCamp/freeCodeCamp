@@ -291,16 +291,12 @@ class Editor extends Component {
     this.setState({ fileKey: newFileKey });
     const editor = this._editor;
     const currentState = editor.saveViewState();
-
     const currentModel = editor.getModel();
-    if (currentModel === this.data.indexjs.model) {
-      this.data.indexjs.state = currentState;
-    } else if (currentModel === this.data.indexcss.model) {
-      this.data.indexcss.state = currentState;
-    } else if (currentModel === this.data.indexhtml.model) {
-      this.data.indexhtml.state = currentState;
-    } else if (currentModel === this.data.indexjsx.model) {
-      this.data.indexjsx.state = currentState;
+
+    for (const key in this.data) {
+      if (currentModel === this.data[key].model) {
+        this.data[key].state = currentState;
+      }
     }
 
     editor.setModel(this.data[newFileKey].model);
