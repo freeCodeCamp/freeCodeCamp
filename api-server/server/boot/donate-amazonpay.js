@@ -8,6 +8,8 @@ import { createAsyncUserDonation } from '../utils/donation';
 const log = debug('fcc:boot:donate-amazonpay');
 const nanoidCharSet =
   '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const randomIdLength = 9;
+const billingAgreementIdentifier = 'B';
 const generalError = {
   error: 'Donation failed due to a server error.',
   type: 'ServerError'
@@ -47,7 +49,7 @@ export default function donateAmazonPay(app, done) {
     return null;
   }
 
-  function getAgreementDetails() {
+  function getAgreementDetails(billingAgreementId) {
     return new Promise((resolve, reject) => {
       payment.offAmazonPayments.getBillingAgreementDetails(
         {
@@ -136,14 +138,17 @@ export default function donateAmazonPay(app, done) {
 
   function authorizeOnBillingAgreement(TransactionTimeout, req) {
     console.log('time: ' + TransactionTimeout);
-    const randomchars = generate(nanoidCharSet, 10);
+    const randomchars = generate(nanoidCharSet, randomIdLength);
     const { donationAmount } = req.body;
+
+    // it should not be more than 32 chars
+    const AuthorizationReferenceId = `S_${randomchars}_${billingAgreementId}`;
 
     return new Promise((resolve, reject) => {
       payment.offAmazonPayments.authorizeOnBillingAgreement(
         {
           AmazonBillingAgreementId: billingAgreementId,
-          AuthorizationReferenceId: `S${randomchars}_${billingAgreementId}`,
+          AuthorizationReferenceId,
           AuthorizationAmount: {
             Amount: donationAmount / 100,
             CurrencyCode: 'USD'
@@ -265,30 +270,32 @@ export default function donateAmazonPay(app, done) {
 
   async function respondToClient(req, res, app, syncAuthInfo) {
     console.log('RESPOND TO CLIENT');
-    console.log('donationState: ' + donationState);
     const { donationState, orderReferenceId } = syncAuthInfo;
+    console.log('donationState: ' + donationState);
     const startDate = new Date(Date.now()).toISOString();
     const {
       user,
-      body: { donationdDuration, donationAmount }
+      body: { donationDuration, donationAmount }
     } = req;
+    console.log(req.body);
     const amazonBillingAgreement = {
-      duration: donationdDuration,
-      startDate: startDate,
+      duration: donationDuration,
+      startDate,
       billingAgreementId
     };
+    console.log(amazonBillingAgreement);
     if (donationState === 'CaptureSuccessful') {
       const {
         Buyer: { Email }
       } = await getAgreementDetails();
       const donation = {
         email: Email,
-        amount: donationAmount * 100,
-        duration: 'billingAgreement',
+        amount: donationAmount,
+        duration: 'AmazonBillingAgreement',
         provider: 'amazon',
         subscriptionId: billingAgreementId,
         customerId: Email,
-        startDate: startDate,
+        startDate,
         orderReferenceId
       };
       await createAsyncUserBillingAgreement(user, amazonBillingAgreement, app);
@@ -331,7 +338,7 @@ export default function donateAmazonPay(app, done) {
 
     return (
       Promise.resolve(req)
-        .then(getAgreementDetails)
+        .then(() => getAgreementDetails(billingAgreementId))
         .then(setAgreementDetails)
         .then(confirmBillingAgreement)
         .then(() => authorizeOnBillingAgreement(0, req))
@@ -380,8 +387,34 @@ export default function donateAmazonPay(app, done) {
 
         console.log(NotificationData.AuthorizationStatus.LastUpdateTimestamp);
         // get the sub id from the authorizatoini refrenceid
+
+        const [
+          identifier,
+          randomId,
+          billingAgreementId
+        ] = NotificationData.AuthorizationReferenceId.split('_');
+        if (
+          identifier === billingAgreementIdentifier &&
+          randomId.length === randomIdLength &&
+          billingAgreementId
+        ) {
+          // get the
+          // save the
+          console.log(parsedBody);
+        }
         // get billing statement info
         // get user email
+
+        // const donation = {
+        //   email: Email, // get from
+        //   amount: donationAmount,
+        //   duration: 'AmazonBillingAgreement',
+        //   provider: 'amazon',
+        //   subscriptionId: billingAgreementId,
+        //   customerId: Email,
+        //   startDate,
+        //   orderReferenceId, get from hook
+        // };
 
         // create donation object
         // save donation
@@ -414,14 +447,9 @@ export default function donateAmazonPay(app, done) {
     const jsonBody = JSON.parse(req.body);
     return new Promise((resolve, reject) => {
       payment.parseSNSResponse(jsonBody, function(err, parsed) {
-        // parsed will contain the full response from SNS unless the message
-        //  is an IPN notification,
-        // in which case it will be the JSON-ified XML from the message.
         if (err) {
           return reject(err);
         }
-        // parsed.NotificationData.CaptureStatus.State === 'Complete'
-        // console.log(parsed.NotificationData);
         console.log(parsed.NotificationType);
         return resolve(parsed);
       });

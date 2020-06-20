@@ -221,6 +221,7 @@ export class AmazonPayButton extends Component {
 
   render() {
     console.log(this.state);
+    console.log(this.props);
     let { showConsentWidget, showWalletWidget } = this.state;
     return (
       <div>
