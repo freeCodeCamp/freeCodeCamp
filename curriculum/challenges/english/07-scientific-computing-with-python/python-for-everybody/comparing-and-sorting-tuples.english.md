@@ -31,7 +31,7 @@ question:
   answers:
     - |
         ```python
-        print( sorted( [ (v,k) for k,v in counts.items() ] ) )
+        print( sorted( [ (v,k) for k,v in counts.items() ], reverse=True ) )
         ```
     - |
         ```python

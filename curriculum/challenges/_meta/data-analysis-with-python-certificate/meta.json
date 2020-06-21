@@ -1,6 +1,6 @@
 {
   "name": "Data Analysis with Python Certificate",
-  "dashedName": "2020-data-analysis-with-python-certificate",
+  "dashedName": "data-analysis-with-python-v7-certificate",
   "order": 8,
   "time": "",
   "template": "",
@@ -14,5 +14,5 @@
     ]
   ],
   "isPrivate": true,
-  "fileName": "12-certificates/2020-data-analysis-with-python-certificate.json"
+  "fileName": "12-certificates/data-analysis-with-python-v7-certificate.json"
 }

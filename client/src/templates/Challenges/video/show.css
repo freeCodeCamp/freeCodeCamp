@@ -24,9 +24,10 @@
   background-color: var(--primary-background);
 }
 
-/* remove bootstrap margin here */
+/* remove bootstrap margin and center the radio buttons */
 .video-quiz-options > label {
   margin: 0;
+  align-items: center;
 }
 
 .video-quiz-option-label {
@@ -89,4 +90,6 @@
 .video-quiz-option > pre {
   padding: 0;
   margin: 0;
+  /* remove default prism background */
+  background: none;
 }
