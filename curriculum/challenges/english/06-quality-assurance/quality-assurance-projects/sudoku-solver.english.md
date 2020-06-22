@@ -2,7 +2,7 @@
 id: 5e601bf95ac9d0ecd8b94afd
 title: Sudoku Solver
 challengeType: 4
-isHidden: true
+isHidden: false
 isRequired: true
 ---
 
@@ -25,7 +25,7 @@ Start this project on Glitch using <a href='https://glitch.com/edit/#!/remix/clo
 
 ```yml
 tests:
-  - text: I can enter a sudoku puzzle by filling in the text area with either a number or period (.) to represent an empty cell. 
+  - text: I can enter a sudoku puzzle by filling in the text area with either a number or period (.) to represent an empty cell.
     testString: ''
   - text: When a valid number is entered in the text area, the same number is applied to the correct cell of the sudoku grid.
     testString: ''

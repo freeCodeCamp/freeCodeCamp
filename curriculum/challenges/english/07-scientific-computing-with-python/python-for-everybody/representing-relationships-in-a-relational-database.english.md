@@ -2,7 +2,7 @@
 id: 5e7b9f180b6c005b0e76f08d
 title: Representing Relationships in a Relational Database
 challengeType: 11
-isHidden: true
+isHidden: false
 isRequired: true
 videoId: -orenCNdC2Q
 ---

@@ -2,7 +2,7 @@
 id: 5e8f2f13c4cdbe86b5c72d87
 title: "Introduction: Machine Learning Fundamentals"
 challengeType: 11
-isHidden: true
+isHidden: false
 videoId: KwL1qTR5MT8
 ---
 
