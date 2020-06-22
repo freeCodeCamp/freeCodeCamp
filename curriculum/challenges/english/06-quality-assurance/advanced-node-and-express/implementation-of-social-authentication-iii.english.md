@@ -8,18 +8,19 @@ forumTopicId: 301558
 
 ## Description
 <section id='description'>
-As a reminder, this project is being built upon the following starter project on <a href="https://repl.it/github/freeCodeCamp/boilerplate-socialauth">Repl.it</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-socialauth/'>GitHub</a>.
+As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/edit/#!/remix/clone-from-repo?REPO_URL=https://github.com/freeCodeCamp/boilerplate-advancednode/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a>.
+
 The final part of the strategy is handling the profile returned from GitHub. We need to load the user's database object if it exists, or create one if it doesn't, and populate the fields from the profile, then return the user's object. GitHub supplies us a unique <em>id</em> within each profile which we can use to search with to serialize the user with (already implemented). Below is an example implementation you can use in your project- it goes within the function that is the second argument for the new strategy, right below the <code>console.log(profile);</code> currently is:
 
 ```js
-db.collection('socialusers').findAndModify(
+myDataBase.findAndModify(
   {id: profile.id},
   {},
   {$setOnInsert:{
     id: profile.id,
     name: profile.displayName || 'John Doe',
     photo: profile.photos[0].value || '',
-    email: profile.emails[0].value || 'No public email',
+    email: Array.isArray(profile.emails) ? profile.emails[0].value : 'No public email',
     created_on: new Date(),
     provider: profile.provider || ''
   },$set:{
@@ -49,7 +50,7 @@ You should be able to login to your app now- try it! Submit your page when you t
 ```yml
 tests:
   - text: GitHub strategy setup should be complete.
-    testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /GitHubStrategy[^]*db.collection/gi, 'Strategy should use now use the database to search for the user'); assert.match(data, /GitHubStrategy[^]*socialusers/gi, 'Strategy should use "socialusers" as db collection'); assert.match(data, /GitHubStrategy[^]*return cb/gi, 'Strategy should return the callback function "cb"'); }, xhr => { throw new Error(xhr.statusText); })
+    testString: getUserInput => $.get(getUserInput('url')+ '/_api/auth.js') .then(data => { assert.match(data, /GitHubStrategy[^]*myDataBase/gi, 'Strategy should use now use the database to search for the user'); assert.match(data, /GitHubStrategy[^]*return cb/gi, 'Strategy should return the callback function "cb"'); }, xhr => { throw new Error(xhr.statusText); })
 
 ```
 
