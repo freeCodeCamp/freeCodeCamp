@@ -5,7 +5,7 @@ export default function() {
     cookie: {
       domain: process.env.COOKIE_DOMAIN || 'localhost',
       sameSite: 'strict',
-      secure: true
+      secure: process.env.FREECODECAMP_NODE_ENV === 'production'
     }
   });
   return function csrf(req, res, next) {
