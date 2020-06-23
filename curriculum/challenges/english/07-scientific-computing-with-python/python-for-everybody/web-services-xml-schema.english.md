@@ -2,7 +2,7 @@
 id: 5e7b9f0e0b6c005b0e76f07c
 title: 'Web Services: XML Schema'
 challengeType: 11
-isHidden: true
+isHidden: false
 isRequired: true
 videoId: yWU9kTxW-nc
 ---

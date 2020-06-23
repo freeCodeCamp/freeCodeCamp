@@ -2,7 +2,7 @@
 id: 5e9a093a74c4063ca6f7c154
 title: Numpy Arrays
 challengeType: 11
-isHidden: true
+isHidden: false
 videoId: VDYVFHBL1AM
 ---
 

@@ -2,7 +2,7 @@
 id: 5e9a0a8e09c5df3cc3600ed6
 title: Initialize Array Problem
 challengeType: 11
-isHidden: true
+isHidden: false
 videoId: 0jGfH8BPfOk
 ---
 

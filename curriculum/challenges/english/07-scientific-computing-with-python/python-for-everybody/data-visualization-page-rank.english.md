@@ -2,7 +2,7 @@
 id: 5e7b9f6a0b6c005b0e76f096
 title: 'Data Visualization: Page Rank'
 challengeType: 11
-isHidden: true
+isHidden: false
 isRequired: true
 videoId: 6-w_qIUwaxU
 ---
