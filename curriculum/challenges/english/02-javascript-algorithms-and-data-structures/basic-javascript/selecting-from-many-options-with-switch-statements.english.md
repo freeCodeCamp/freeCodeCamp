@@ -69,7 +69,8 @@ function caseInSwitch(val) {
   return answer;
 }
 
-caseInSwitch(1);
+const returnAnswer = caseInSwitch(1);
+console.log(returnAnswer);
 
 ```
 
