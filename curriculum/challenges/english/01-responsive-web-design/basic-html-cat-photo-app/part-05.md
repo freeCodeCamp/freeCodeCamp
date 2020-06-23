@@ -27,6 +27,17 @@ tests:
 
 ```
 
+```yml
+tests:
+  - text: "You should remove the <code>h1</code> element's opening tag. Opening tags have this syntax: <code>&lt;elementName&gt;</code>."
+    testString: assert( !document.querySelector('h1') );
+  - text: "You should remove the <code>h1</code> element's closing tag. Closing tags have a <code>/</code> just after the <code>&lt;</code> character."
+    testString: assert( !code.match(/\<\/h1\>/) );
+  - text: "You should also remove the text 'Hello World'."
+    testString: const noSpaces = code.replace(/\s/g, ''); assert( !noSpaces.toLowerCase().includes('helloworld') );
+
+```
+
 </section>
 
 ## Challenge Seed

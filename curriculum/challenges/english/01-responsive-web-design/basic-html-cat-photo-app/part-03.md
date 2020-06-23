@@ -24,14 +24,14 @@ Create a `p` element below your `h2` element, and give it the text "Click here t
 
 ```yml
 tests:
-  - text: "Your <code>p</code> element should have an opening tag. Hint: Opening tags have this syntax: <code>&lt;elementName&gt;</code>."
+  - text: "Your <code>p</code> element should have an opening tag. Opening tags have this syntax: <code>&lt;elementName&gt;</code>."
     testString: assert( document.querySelector('p') );
-  - text: "Your <code>p</code> element should have a closing tag. Hint: <code>p</code> elements have an opening and closing tag. Closing tags start with a <code>/</code>."
+  - text: "Your <code>p</code> element should have a closing tag. Closing tags have a <code>/</code> just after the <code>&lt;</code> character."
     testString: assert( code.match(/\<\/p\>/) );
-  - text: "Your <code>p</code> element's text should be 'Click here to view more cat photos.'. Hint: You have either omitted the text or have a typo."
-    testString: assert( document.querySelector('p').innerText.toLowerCase() === 'click here to view more cat photos.' );
-  - text: "Your <code>p</code> element's text should be 'Click here to view more cat photos.'. Hint: Only place the text 'Click here to view more cat photos.' between the opening and closing <code>p</code> tags."
-    testString: assert( /click\s+here\s+to\s+view\s+more\s+cat\s+photos\./i.test(code) );
+  - text: "Your <code>p</code> element's text should be 'Click here to view more cat photos.'. You have either omitted the text or have a typo."
+    testString: assert( document.querySelector('p').innerText.match(/click here to view more cat photos/i);
+  - text: "Your <code>p</code> element should be below the <code>h2</code> element. You have them in the wrong order."
+    testString: const collection = [...document.querySelectorAll('h2,p')].map(node => node.nodeName); assert( collection.indexOf('H2') < collection.indexOf('P') );
 
 ```
 

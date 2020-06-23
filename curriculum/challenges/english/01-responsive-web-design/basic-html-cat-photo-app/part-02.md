@@ -24,14 +24,16 @@ Add an `h2` element that says "CatPhotoApp" right below the `h1` element that sa
 
 ```yml
 tests:
-  - text: "Your <code>h2</code> element should have an opening tag. Hint: Opening tags have this syntax: <code>&lt;elementName&gt;</code>."
+  - text: "Your <code>h2</code> element should have an opening tag. Opening tags have this syntax: <code>&lt;elementName&gt;</code>."
     testString: assert( document.querySelector('h2') );
-  - text: "Your <code>h2</code> element should have a closing tag. Hint: <code>h2</code> elements have an opening and closing tag. Closing tags start with a <code>/</code>."
+  - text: "Your <code>h2</code> element should have a closing tag. Closing tags have a <code>/</code> just after the <code>&lt;</code> character."
     testString: assert( code.match(/\<\/h2\>/) );
-  - text: "Your <code>h2</code> element's text should be 'CatPhotoApp'. Hint: You have either omitted the text or have a typo."
+  - text: "Your <code>h2</code> element's text should be 'CatPhotoApp'. Only place the text 'CatPhotoApp' between the opening and closing <code>h2</code> tags."
     testString: assert( document.querySelector('h2').innerText.toLowerCase() === 'catphotoapp' );
-  - text: "Your <code>h2</code> element's text should be 'CatPhotoApp'. Hint: Only place the text 'CatPhotoApp' between the opening and closing <code>h2</code> tags."
-    testString: assert( /catphotoapp/i.test(code) );
+  - text: "Your code should have the original <code>h1</code> element. You might have deleted the original <code>h1</code> element."
+    testString: assert( document.querySelector('h1').innerText.toLowerCase() === 'hello world' );
+  - text: "Your <code>h2</code> element should be below the <code>h1</code> element. You have them in the wrong order."
+    testString: const collection = [...document.querySelectorAll('h1,h2')].map(node => node.nodeName); assert( collection.indexOf('H1') < collection.indexOf('H2') );
 
 ```
 
