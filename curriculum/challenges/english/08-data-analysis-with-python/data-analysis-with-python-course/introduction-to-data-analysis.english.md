@@ -2,7 +2,7 @@
 id: 5e9a093a74c4063ca6f7c14c
 title: Introduction to Data Analysis
 challengeType: 11
-isHidden: true
+isHidden: false
 videoId: VJrP2FUzKP0
 ---
 

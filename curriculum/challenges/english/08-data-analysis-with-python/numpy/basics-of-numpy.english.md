@@ -2,7 +2,7 @@
 id: 5e9a0a8e09c5df3cc3600ed3
 title: Basics of Numpy
 challengeType: 11
-isHidden: true
+isHidden: false
 videoId: f9QrZrKQMLI
 ---
 

@@ -2,7 +2,7 @@
 id: 5e46f802ac417301a38fb92b
 title: Page View Time Series Visualizer
 challengeType: 10
-isHidden: true
+isHidden: false
 isRequired: true
 ---
 

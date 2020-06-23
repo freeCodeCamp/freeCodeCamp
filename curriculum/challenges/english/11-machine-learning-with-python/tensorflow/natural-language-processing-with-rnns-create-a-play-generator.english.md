@@ -2,7 +2,7 @@
 id: 5e8f2f13c4cdbe86b5c72da0
 title: 'Natural Language Processing With RNNs: Create a Play Generator'
 challengeType: 11
-isHidden: true
+isHidden: false
 videoId: j5xsxjq_Xk8
 ---
 

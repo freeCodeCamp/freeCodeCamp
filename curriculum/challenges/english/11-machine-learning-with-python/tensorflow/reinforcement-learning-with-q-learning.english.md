@@ -2,7 +2,7 @@
 id: 5e8f2f13c4cdbe86b5c72da3
 title: Reinforcement Learning With Q-Learning
 challengeType: 11
-isHidden: true
+isHidden: false
 videoId: Cf7DSU0gVb4
 ---
 

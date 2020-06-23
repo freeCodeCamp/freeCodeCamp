@@ -2,7 +2,7 @@
 id: 5e8f2f13c4cdbe86b5c72d8f
 title: 'Core Learning Algorithms: Clustering'
 challengeType: 11
-isHidden: true
+isHidden: false
 videoId: 8sqIaHc9Cz4
 ---
 

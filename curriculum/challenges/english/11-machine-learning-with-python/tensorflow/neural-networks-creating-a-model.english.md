@@ -2,7 +2,7 @@
 id: 5e8f2f13c4cdbe86b5c72d95
 title: 'Neural Networks: Creating a Model'
 challengeType: 11
-isHidden: true
+isHidden: false
 videoId: K8bz1bmOCTw
 ---
 
@@ -29,21 +29,21 @@ question:
   answers:
     - |
       A: `keras`
-      
+
       B: `Sequential`
-      
+
       C: `Dense`
     - |
       A: `tf`
-      
+
       B: `Sequential`
-      
+
       C: `Categorical`
     - |
       A: `keras`
-      
+
       B: `sequential`
-      
+
       C: `dense`
   solution: 1
 ```

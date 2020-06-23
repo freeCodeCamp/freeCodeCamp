@@ -2,7 +2,7 @@
 id: 5e9a0e9ef99a403d019610ca
 title: How Deep Neural Networks Work
 challengeType: 11
-isHidden: true
+isHidden: false
 videoId: zvalnHWGtx4
 ---
 

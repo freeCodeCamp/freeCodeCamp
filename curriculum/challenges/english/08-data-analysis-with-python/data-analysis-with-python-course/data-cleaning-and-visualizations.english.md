@@ -2,7 +2,7 @@
 id: 5e9a093a74c4063ca6f7c160
 title: Data Cleaning and Visualizations
 challengeType: 11
-isHidden: true
+isHidden: false
 videoId: mHjxzFS5_Z0
 ---
 

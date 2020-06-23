@@ -2,7 +2,7 @@
 id: 5e46f8e3ac417301a38fb92f
 title: Book Recommendation Engine using KNN
 challengeType: 10
-isHidden: true
+isHidden: false
 isRequired: true
 ---
 

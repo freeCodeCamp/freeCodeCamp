@@ -2,7 +2,7 @@
 id: 5e7b9f070b6c005b0e76f05e
 title: 'Iterations: Loop Idioms'
 challengeType: 11
-isHidden: true
+isHidden: false
 isRequired: true
 videoId: AelGAcoMXbI
 ---
