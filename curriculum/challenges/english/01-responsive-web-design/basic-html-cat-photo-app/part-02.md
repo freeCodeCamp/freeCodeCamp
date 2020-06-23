@@ -24,8 +24,14 @@ Add an `h2` element that says "CatPhotoApp" right below the `h1` element that sa
 
 ```yml
 tests:
-  - text: See description above for instructions.
-    testString: assert( document.querySelector('h2').innerText === 'CatPhotoApp' );
+  - text: "Your <code>h2</code> element should have an opening tag. Hint: Opening tags have this syntax: <code>&lt;elementName&gt;</code>."
+    testString: assert( document.querySelector('h2') );
+  - text: "Your <code>h2</code> element should have a closing tag. Hint: <code>h2</code> elements have an opening and closing tag. Closing tags start with a <code>/</code>."
+    testString: assert( code.match(/\<\/h2\>/) );
+  - text: "Your <code>h2</code> element's text should be 'CatPhotoApp'. Hint: You have either omitted the text or have a typo."
+    testString: assert( document.querySelector('h2').innerText.toLowerCase() === 'catphotoapp' );
+  - text: "Your <code>h2</code> element's text should be 'CatPhotoApp'. Hint: Only place the text 'CatPhotoApp' between the opening and closing <code>h2</code> tags."
+    testString: assert( /catphotoapp/i.test(code) );
 
 ```
 
