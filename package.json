@@ -53,7 +53,7 @@
     "postinstall": "npm run bootstrap",
     "seed": "npm-run-all -p seed:*",
     "seed:auth-user": "cross-env DEBUG=fcc:* node ./tools/scripts/seed/seedAuthUser",
-    "seed:challenges": "cross-env DEBUG=fcc:* node ./tools/scripts/seed/seedChallenges",
+    "seed:path-migration": "cross-env DEBUG=fcc:* node ./tools/scripts/seed/create-path-migration",
     "serve:client": "cd ./client && npm run serve",
     "start": "npm-run-all ensure-env -p develop:server serve:client",
     "test": "npm-run-all -p test:*",
