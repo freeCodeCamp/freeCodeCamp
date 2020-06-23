@@ -72,7 +72,7 @@ export class Project extends Component {
     this.state = {
       subtitles: '',
       downloadURL: null,
-      selectedOption: 0,
+      selectedOption: null,
       answer: 1,
       showWrong: false,
       videoIsLoaded: false
