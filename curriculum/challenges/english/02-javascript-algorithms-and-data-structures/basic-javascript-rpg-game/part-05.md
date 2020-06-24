@@ -2,7 +2,7 @@
 id: 5d5aaa5807f328a948d398d1
 title: Part 05
 challengeType: 0
-isBeta: true
+isHidden: true
 ---
 
 ## Description

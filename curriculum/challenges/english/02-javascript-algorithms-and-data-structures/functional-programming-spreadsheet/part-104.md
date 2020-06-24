@@ -2,7 +2,7 @@
 id: 5d792538be4fe331f1a6c008
 title: Part 104
 challengeType: 0
-isBeta: true
+isHidden: true
 ---
 
 ## Description

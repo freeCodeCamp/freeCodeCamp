@@ -2,7 +2,7 @@
 id: 5d66093c4bab337fbb433885
 title: Part 22
 challengeType: 0
-isBeta: true
+isHidden: true
 ---
 
 ## Description

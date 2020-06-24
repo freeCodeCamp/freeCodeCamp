@@ -2,7 +2,7 @@
 id: 5d67ae95e0696bdec46938e5
 title: Part 38
 challengeType: 0
-isBeta: true
+isHidden: true
 ---
 
 ## Description

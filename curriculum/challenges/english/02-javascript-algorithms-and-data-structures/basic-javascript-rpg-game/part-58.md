@@ -2,7 +2,7 @@
 id: 5d6f736b7c812010bf3327d2
 title: Part 58
 challengeType: 0
-isBeta: true
+isHidden: true
 ---
 
 ## Description

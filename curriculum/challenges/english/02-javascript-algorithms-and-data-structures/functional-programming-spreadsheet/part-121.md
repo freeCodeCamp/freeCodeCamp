@@ -2,7 +2,7 @@
 id: 5d7925398157757b23730fdd
 title: Part 121
 challengeType: 0
-isBeta: true
+isHidden: true
 ---
 
 ## Description

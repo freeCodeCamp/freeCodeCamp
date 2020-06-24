@@ -2,7 +2,7 @@
 id: 5dbbb5076ef5fe3a704f849d
 title: Part 124
 challengeType: 0
-isBeta: true
+isHidden: true
 ---
 
 ## Description

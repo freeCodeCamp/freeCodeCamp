@@ -2,7 +2,7 @@
 id: 5d79253760fca25ccbbd8990
 title: Part 097
 challengeType: 0
-isBeta: true
+isHidden: true
 ---
 
 ## Description

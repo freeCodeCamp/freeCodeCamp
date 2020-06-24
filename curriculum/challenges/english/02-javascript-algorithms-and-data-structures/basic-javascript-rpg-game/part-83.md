@@ -2,7 +2,7 @@
 id: 5d71c20f848f6914ab898980
 title: Part 83
 challengeType: 0
-isBeta: true
+isHidden: true
 ---
 
 ## Description

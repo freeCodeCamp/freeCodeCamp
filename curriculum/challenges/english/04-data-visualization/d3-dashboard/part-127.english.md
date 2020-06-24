@@ -2,7 +2,7 @@
 id: 5d8a4cfbe6b6180ed9a1ca5e
 title: Part 127
 challengeType: 0
-isBeta: true
+isHidden: true
 ---
 
 ## Description

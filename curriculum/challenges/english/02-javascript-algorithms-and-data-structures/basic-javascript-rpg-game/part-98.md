@@ -2,7 +2,7 @@
 id: 5d7df41a8360d21c6826a9b3
 title: Part 98
 challengeType: 0
-isBeta: true
+isHidden: true
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 id: 5dbc2c506ef5fe3a704f84a1
 title: Part 138
 challengeType: 0
-isBeta: true
+isHidden: true
 ---
 
 ## Description

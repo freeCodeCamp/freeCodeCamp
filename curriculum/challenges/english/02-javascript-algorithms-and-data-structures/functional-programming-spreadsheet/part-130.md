@@ -2,7 +2,7 @@
 id: 5d792539728d1aa7788e2c9b
 title: Part 130
 challengeType: 0
-isBeta: true
+isHidden: true
 ---
 
 ## Description

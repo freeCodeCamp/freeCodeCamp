@@ -2,7 +2,7 @@
 id: 5dbfdc377736e5ee7d235547
 title: Part 146
 challengeType: 0
-isBeta: true
+isHidden: true
 ---
 
 ## Description

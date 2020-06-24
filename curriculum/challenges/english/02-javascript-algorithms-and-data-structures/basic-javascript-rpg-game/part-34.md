@@ -2,7 +2,7 @@
 id: 5d678366e0696bdec46938e1
 title: Part 34
 challengeType: 0
-isBeta: true
+isHidden: true
 ---
 
 ## Description

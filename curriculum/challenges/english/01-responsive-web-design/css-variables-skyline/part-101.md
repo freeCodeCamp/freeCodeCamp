@@ -2,7 +2,7 @@
 id: 5d822fd413a79914d39e992d
 title: Part 101
 challengeType: 0
-isBeta: true
+isHidden: true
 ---
 
 ## Description

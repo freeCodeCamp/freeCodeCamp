@@ -22,7 +22,7 @@ const preFormattedBlockNames = {
   'javascript-spreadsheet': 'JavaScript Spreadsheet',
   'intermediate-javascript-calorie-counter':
     'Intermediate JavaScript Calorie Counter',
-  'd3-dashboard': 'D3 Dashboard Project'
+  'd3-dashboard': 'D3 Dashboard'
 };
 
 const noFormatting = ['and', 'for', 'of', 'the', 'up', 'with'];

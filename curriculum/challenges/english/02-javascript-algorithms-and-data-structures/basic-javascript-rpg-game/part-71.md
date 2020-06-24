@@ -2,7 +2,7 @@
 id: 5d7086d4066dac7142a6d799
 title: Part 71
 challengeType: 0
-isBeta: true
+isHidden: true
 ---
 
 ## Description

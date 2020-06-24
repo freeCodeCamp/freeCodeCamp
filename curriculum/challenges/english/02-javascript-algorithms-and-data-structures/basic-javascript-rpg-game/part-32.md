@@ -2,7 +2,7 @@
 id: 5d6755fce0696bdec46938df
 title: Part 32
 challengeType: 0
-isBeta: true
+isHidden: true
 ---
 
 ## Description

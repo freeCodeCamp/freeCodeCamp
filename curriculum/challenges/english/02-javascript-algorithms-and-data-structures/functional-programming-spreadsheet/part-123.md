@@ -2,7 +2,7 @@
 id: 5d792539534f1bf991bb987f
 title: Part 123
 challengeType: 0
-isBeta: true
+isHidden: true
 ---
 
 ## Description
