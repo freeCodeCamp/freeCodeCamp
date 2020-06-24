@@ -12,7 +12,7 @@ HTML attributes are special words used inside the opening tag of an element to c
 
 Here is an example of an `img` element with a `src` attribute: `<img src="https://www.your-image-source.com/your-image.jpg">`. 
 
-Add a `src` attribute to the `img` element that is set to this URL: `https://bit.ly/fcc-relaxing-cat`
+Add a `src` attribute to the `img` element that is set to this URL: `https://bit.ly/fcc-relaxing-cat`.
 
 </section>
 
@@ -26,7 +26,9 @@ Add a `src` attribute to the `img` element that is set to this URL: `https://bit
 
 ```yml
 tests:
-  - text: See description above for instructions.
+  - text: "Your <code>img</code> element does not have a <code>src</code> attribute. You have either omitted the attribute or have a typo."
+    testString: assert( document.querySelector('img').src );
+  - text: "Your <code>img</code> element's <code>src</code> attribute should be set to 'https://bit.ly/fcc-relaxing-cat'. You have either omitted the URL or have a typo."
     testString: assert( document.querySelector('img').src === 'https://bit.ly/fcc-relaxing-cat' );
 
 ```

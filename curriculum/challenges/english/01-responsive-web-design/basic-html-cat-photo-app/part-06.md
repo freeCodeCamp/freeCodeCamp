@@ -10,7 +10,7 @@ isBeta: true
 
 HTML5 has tags that identify different content areas. These tags make your HTML easier to read, and also help with Search Engine Optimization (SEO) and accessibility. 
 
-Identify the main section of this page by adding a `<main>` opening tag after the h2 element. Add a `</main>` closing tag after the `p` element.
+Identify the main section of this page by adding a `<main>` opening tag after the h2 element, and a `</main>` closing tag after the `p` element.
 
 </section>
 
@@ -24,9 +24,14 @@ Identify the main section of this page by adding a `<main>` opening tag after th
 
 ```yml
 tests:
-  - text: See description above for instructions.
-    testString: |
-      assert( code.replace(/\s/g, '').includes('<main><!--TODO:Addlinktocatphotos--><p>Clickheretoviewmorecatphotos.</p></main>') );
+  - text: "Your <code>main</code> element should have an opening tag. Opening tags have this syntax: <code>&lt;elementName&gt;</code>."
+    testString: assert( document.querySelector('main') );
+  - text: "Your <code>main</code> element should have a closing tag. Closing tags have a <code>/</code> just after the <code>&lt;</code> character."
+    testString: assert( code.match(/\<\/main\>/) );
+  - text: "Your <code>main</code> element's opening tag should be below the <code>h2</code> element. You have them in the wrong order."
+    testString: const collection = [...document.querySelectorAll('main,h2')].map(node => node.nodeName); assert( collection.indexOf('H2') < collection.indexOf('MAIN') );
+  - text: "Your <code>main</code> element's closing tag should be below the <code>p</code> element. You have them in the wrong order."
+    testString: const mainNode = document.querySelector('main'); const pNode = document.querySelector('p'); assert( mainNode.contains(pNode) && pNode.textContent.toLowerCase().match(/click here to view more cat photos/) );
 
 ```
 

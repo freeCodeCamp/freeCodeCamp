@@ -24,14 +24,14 @@ Add a comment above the `p` element with the text: "TODO: Add link to cat photos
 
 ```yml
 tests:
-  - text: "Your comment should start with <code><!--</code>."
-    testString: assert( code.match(/<!--/) );
+  - text: "Your comment should start with <code>&lt;!--</code>."
+    testString: assert( code.match(/\<\!\-\-/) );
   - text: "Your comment should end with <code>--></code>."
-    testString: assert( code.match(/-->/) );
+    testString: assert( code.match(/\-\-\>/) );
   - text: "Your comment should contain the text 'TODO: Add link to cat photos'."
     testString: assert( code.replace(/\s/g, '').match(/\<\!\-\-todo:addlinktocatphotos\-\-\>/i) );
-  - text: "Your comment should be above the <code>p</code> element."
-    testString: assert( code.replace(/\s/g, '').match(/\<\!\-\-todo:addlinktocatphotos\-\-\>/i) );
+  - text: "Your comment should be above the <code>p</code> element. You have them in the wrong order."
+    testString: assert( code.replace(/\s/g, '').match(/\<\!\-\-todo:addlinktocatphotos\-\-\>\<p\>clickheretoviewmorecatphotos\.\<\/p\>/i) );
 
 ```
 

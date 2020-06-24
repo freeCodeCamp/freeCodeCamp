@@ -8,11 +8,11 @@ isBeta: true
 ## Description
 <section id='description'>
 
-All `img` elements should have an `alt` attribute. The text inside an `alt` attribute is used for screen readers to improve accessibility and is displayed if the image fails to load. 
-
-Add an `alt` attribute to the `img` element with the text "A cute orange cat lying on its back.". 
+All `img` elements should have an `alt` attribute. The text inside an `alt` attribute is used for screen readers to improve accessibility and is displayed if the image fails to load.
 
 For example, `<img src="cat.jpg" alt="A cat.">` has an `alt` attribute with the text "A cat.".
+
+Add an `alt` attribute to the `img` element with the text "A cute orange cat lying on its back.".
 
 </section>
 
@@ -26,8 +26,10 @@ For example, `<img src="cat.jpg" alt="A cat.">` has an `alt` attribute with the 
 
 ```yml
 tests:
-  - text: See description above for instructions.
-    testString: assert( document.querySelector('img').alt === 'A cute orange cat lying on its back.' );
+  - text: "Your <code>img</code> element does not have an <code>alt</code> attribute. You have either omitted the attribute or have a typo."
+    testString: const imgElementText = code.replace(/\s/g, '').match(/\<img(.*?\>)/)[0]; assert( imgElementText.includes('alt') );
+  - text: "Your <code>img</code> element's <code>src</code> attribute should be set to 'A cute orange cat lying on its back.'. You have either omitted the text or have a typo."
+    testString: const altText = document.querySelector('img').alt.toLowerCase().replace(/\s/g, ''); assert( altText.match(/acuteorangecatlyingonitsback/) );
 
 ```
 

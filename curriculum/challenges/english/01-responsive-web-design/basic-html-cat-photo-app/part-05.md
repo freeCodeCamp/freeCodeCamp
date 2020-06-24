@@ -22,13 +22,6 @@ Now delete the `h1` element so we can simplify our view.
 
 ```yml
 tests:
-  - text: See description above for instructions.
-    testString: assert( !code.includes('<h1>Hello World</h1>') );
-
-```
-
-```yml
-tests:
   - text: "You should remove the <code>h1</code> element's opening tag. Opening tags have this syntax: <code>&lt;elementName&gt;</code>."
     testString: assert( !document.querySelector('h1') );
   - text: "You should remove the <code>h1</code> element's closing tag. Closing tags have a <code>/</code> just after the <code>&lt;</code> character."

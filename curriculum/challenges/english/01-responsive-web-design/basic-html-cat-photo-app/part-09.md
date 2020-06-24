@@ -10,9 +10,9 @@ isBeta: true
 
 You can add images to your website by using the `img` element.
 
-Below the paragraph element, add an `<img>` element. 
+Add an `<img>` tag below the paragraph element. Note that `img` elements do not need a closing tag.
 
-Note that an image element does not need a closing tag. At this point, the image element will not show up in a browser.
+At this point, the image element will not show up in your browser.
 
 </section>
 
@@ -26,9 +26,12 @@ Note that an image element does not need a closing tag. At this point, the image
 
 ```yml
 tests:
-  - text: See description above for instructions.
-    testString: |
-      assert( code.replace(/\s/g, '').includes('<p>Clickheretoviewmorecatphotos.</p><img></main>') );
+  - text: "Your <code>img</code> element should have an opening tag. Opening tags have this syntax: <code>&lt;elementName&gt;</code>."
+    testString: assert( document.querySelector('img') );
+  - text: "Your <code>img</code> element should not have a closing tag. Closing tags have a <code>/</code> just after the <code>&lt;</code> character."
+    testString: assert( !code.match(/\<\/img\>/) );
+  - text: "Your <code>img</code> element should be below the <code>p</code> element. You have them in the wrong order."
+    testString: const collection = [...document.querySelectorAll('p,img')].map(node => node.nodeName); assert( collection.indexOf('P') < collection.indexOf('IMG') );
 
 ```
 
