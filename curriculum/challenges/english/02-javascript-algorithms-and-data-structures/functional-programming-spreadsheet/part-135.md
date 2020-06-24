@@ -2,7 +2,7 @@
 id: 5d792539e1446045d0df6d28
 title: Part 135
 challengeType: 0
-isBeta: true
+isHidden: true
 ---
 
 ## Description

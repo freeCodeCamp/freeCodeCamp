@@ -2,7 +2,7 @@
 id: 5d7f3b6c7c4263f469c36b17
 title: Part 105
 challengeType: 0
-isBeta: true
+isHidden: true
 ---
 
 ## Description

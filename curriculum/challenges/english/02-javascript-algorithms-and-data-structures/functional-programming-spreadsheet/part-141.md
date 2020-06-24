@@ -2,7 +2,7 @@
 id: 5dc10b8b93704f41d279eb5b
 title: Part 141
 challengeType: 0
-isBeta: true
+isHidden: true
 ---
 
 ## Description

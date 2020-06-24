@@ -2,7 +2,7 @@
 id: 5d71eb0bf27e5122af9f117a
 title: Part 87
 challengeType: 0
-isBeta: true
+isHidden: true
 ---
 
 ## Description

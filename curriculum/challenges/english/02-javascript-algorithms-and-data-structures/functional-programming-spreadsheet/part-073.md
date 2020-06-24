@@ -2,7 +2,7 @@
 id: 5d792536dc6e3ab29525de9e
 title: Part 073
 challengeType: 0
-isBeta: true
+isHidden: true
 ---
 
 ## Description

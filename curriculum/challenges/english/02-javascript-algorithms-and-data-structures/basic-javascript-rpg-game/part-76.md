@@ -2,7 +2,7 @@
 id: 5d708dd7066dac7142a6d79e
 title: Part 76
 challengeType: 0
-isBeta: true
+isHidden: true
 ---
 
 ## Description

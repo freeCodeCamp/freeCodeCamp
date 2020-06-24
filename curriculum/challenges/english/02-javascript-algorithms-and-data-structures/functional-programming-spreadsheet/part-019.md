@@ -2,7 +2,7 @@
 id: 5d7925335ab63018dcec11fe
 title: Part 019
 challengeType: 0
-isBeta: true
+isHidden: true
 ---
 
 ## Description

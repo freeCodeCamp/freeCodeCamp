@@ -1,8 +1,8 @@
 ---
-title: Introduction to the D3 Dashboard Project Challenges
-block: D3 Dashboard Project
+title: Introduction to the D3 Dashboard
+block: D3 Dashboard
 superBlock: Data Visualization
 ---
-## Introduction to the D3 Dashboard Project Challenges
+## Introduction to the D3 Dashboard
 
-<dfn>D3 Dashboard Project</dfn> Placeholder Introduction.
+<dfn>D3 Dashboard</dfn> Placeholder Introduction.

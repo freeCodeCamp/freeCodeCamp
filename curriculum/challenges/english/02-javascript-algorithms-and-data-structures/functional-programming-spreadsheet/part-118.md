@@ -2,7 +2,7 @@
 id: 5d79253949802f8587c8bbd3
 title: Part 118
 challengeType: 0
-isBeta: true
+isHidden: true
 ---
 
 ## Description
