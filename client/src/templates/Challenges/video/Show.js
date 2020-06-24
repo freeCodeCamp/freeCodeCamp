@@ -232,11 +232,16 @@ export class Project extends Component {
                 <PrismFormatted text={text} />
                 <Spacer />
                 <ObserveKeys>
-                  <div className='video-quiz-options' tabIndex="0">
+                  <div className='video-quiz-options'>
                     {answers.map((option, index) => (
                       // answers are static and have no natural id property, so
                       // index should be fine as a key:
-                      <label className='video-quiz-option-label' tabIndex='0' onKeyDown={(e) => this.handleEnterSelection(e, index)} key={index}>
+                      <button
+                        className='video-quiz-option-button'
+                        key={index}
+                        onKeyDown={e => this.handleEnterSelection(e, index)}
+                        tabIndex='0'
+                      >
                         <input
                           checked={this.state.selectedOption === index}
                           className='video-quiz-input-hidden'
@@ -255,7 +260,7 @@ export class Project extends Component {
                           className={'video-quiz-option'}
                           text={option}
                         />
-                      </label>
+                      </button>
                     ))}
                   </div>
                 </ObserveKeys>
@@ -270,8 +275,8 @@ export class Project extends Component {
                       Sorry, that's not the right answer. Give it another try?
                     </span>
                   ) : (
-                      <span>Click the button below to check your answer.</span>
-                    )}
+                    <span>Click the button below to check your answer.</span>
+                  )}
                 </div>
                 <Spacer />
                 <Button

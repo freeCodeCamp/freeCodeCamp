@@ -25,12 +25,19 @@
 }
 
 /* remove bootstrap margin and center the radio buttons */
-.video-quiz-options > label {
+.video-quiz-options > button {
   margin: 0;
   align-items: center;
+  width: 100%;
+  background-color: var(--primary-background);
+  text-align: unset;
 }
 
-.video-quiz-option-label {
+.video-quiz-options > button:hover {
+  border-color: var(--tertiary-background);
+}
+
+.video-quiz-option-button {
   display: block;
   padding: 20px;
   cursor: pointer;
@@ -42,11 +49,11 @@
   border-bottom: 2px solid var(--tertiary-background);
 }
 
-.video-quiz-option-label:first-child {
+.video-quiz-option-button:first-child {
   border-top: 4px solid var(--tertiary-background);
 }
 
-.video-quiz-option-label:last-child {
+.video-quiz-option-button:last-child {
   border-bottom: 4px solid var(--tertiary-background);
 }
 
