@@ -181,8 +181,8 @@ input[type='submit']:hover,
 .btn:focus,
 .btn-primary:focus,
 .btn-primary.focus {
-  background-color: var(--quaternary-background);
-  color: var(--secondary-color);
+  background-color: var(--secondary-color);
+  color: var(--secondary-background);
   border-color: var(--secondary-color);
 }
 

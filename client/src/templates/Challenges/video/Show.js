@@ -79,6 +79,7 @@ export class Project extends Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleEnterSelection = this.handleEnterSelection.bind(this);
   }
 
   componentDidMount() {
@@ -138,6 +139,15 @@ export class Project extends Component {
       selectedOption: parseInt(changeEvent.target.value, 10)
     });
   };
+  handleEnterSelection(event, index) {
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      this.setState({
+        showWrong: false,
+        selectedOption: parseInt(index, 10)
+      });
+    }
+  }
 
   videoIsReady = () => {
     this.setState({
@@ -222,16 +232,17 @@ export class Project extends Component {
                 <PrismFormatted text={text} />
                 <Spacer />
                 <ObserveKeys>
-                  <div className='video-quiz-options'>
+                  <div className='video-quiz-options' tabIndex="0">
                     {answers.map((option, index) => (
                       // answers are static and have no natural id property, so
                       // index should be fine as a key:
-                      <label className='video-quiz-option-label' key={index}>
+                      <label className='video-quiz-option-label' tabIndex='0' onKeyDown={(e) => this.handleEnterSelection(e, index)} key={index}>
                         <input
                           checked={this.state.selectedOption === index}
                           className='video-quiz-input-hidden'
                           name='quiz'
                           onChange={this.handleOptionChange}
+                          tabIndex='-1'
                           type='radio'
                           value={index}
                         />{' '}
@@ -259,8 +270,8 @@ export class Project extends Component {
                       Sorry, that's not the right answer. Give it another try?
                     </span>
                   ) : (
-                    <span>Click the button below to check your answer.</span>
-                  )}
+                      <span>Click the button below to check your answer.</span>
+                    )}
                 </div>
                 <Spacer />
                 <Button
