@@ -25,7 +25,7 @@
 }
 
 /* remove bootstrap margin and center the radio buttons */
-.video-quiz-options > button {
+.video-quiz-options > label {
   margin: 0;
   align-items: center;
   width: 100%;
@@ -33,11 +33,7 @@
   text-align: unset;
 }
 
-.video-quiz-options > button:hover {
-  border-color: var(--tertiary-background);
-}
-
-.video-quiz-option-button {
+.video-quiz-option-label {
   display: block;
   padding: 20px;
   cursor: pointer;
@@ -49,11 +45,11 @@
   border-bottom: 2px solid var(--tertiary-background);
 }
 
-.video-quiz-option-button:first-child {
+.video-quiz-option-label:first-child {
   border-top: 4px solid var(--tertiary-background);
 }
 
-.video-quiz-option-button:last-child {
+.video-quiz-option-label:last-child {
   border-bottom: 4px solid var(--tertiary-background);
 }
 
@@ -74,7 +70,6 @@
   border-radius: 50%;
   background-color: var(--secondary-background);
   border: 2px solid var(--primary-color);
-  position: relative;
 }
 
 .video-quiz-selected-input {

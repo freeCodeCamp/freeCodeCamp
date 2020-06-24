@@ -79,7 +79,6 @@ export class Project extends Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleEnterSelection = this.handleEnterSelection.bind(this);
   }
 
   componentDidMount() {
@@ -139,15 +138,6 @@ export class Project extends Component {
       selectedOption: parseInt(changeEvent.target.value, 10)
     });
   };
-  handleEnterSelection(event, index) {
-    if (event.keyCode === 13) {
-      event.preventDefault();
-      this.setState({
-        showWrong: false,
-        selectedOption: parseInt(index, 10)
-      });
-    }
-  }
 
   videoIsReady = () => {
     this.setState({
@@ -232,26 +222,24 @@ export class Project extends Component {
                 <PrismFormatted text={text} />
                 <Spacer />
                 <ObserveKeys>
-                  <div className='video-quiz-options'>
+                  <fieldset className='video-quiz-options'>
                     {answers.map((option, index) => (
                       // answers are static and have no natural id property, so
                       // index should be fine as a key:
-                      <button
-                        className='video-quiz-option-button'
-                        key={index}
-                        onKeyDown={e => this.handleEnterSelection(e, index)}
-                        tabIndex='0'
-                      >
-                        <input
-                          checked={this.state.selectedOption === index}
-                          className='video-quiz-input-hidden'
-                          name='quiz'
-                          onChange={this.handleOptionChange}
-                          tabIndex='-1'
-                          type='radio'
-                          value={index}
-                        />{' '}
-                        <span className='video-quiz-input-visible'>
+                      <label className='video-quiz-option-label' key={index}>
+                        <span
+                          className='video-quiz-input-visible'
+                          tabIndex={index === 0 ? '0' : '-1'}
+                        >
+                          <input
+                            checked={this.state.selectedOption === index}
+                            className='video-quiz-input-hidden'
+                            name='quiz'
+                            onChange={this.handleOptionChange}
+                            tabIndex='0'
+                            type='radio'
+                            value={index}
+                          />{' '}
                           {this.state.selectedOption === index ? (
                             <span className='video-quiz-selected-input'></span>
                           ) : null}
@@ -260,9 +248,9 @@ export class Project extends Component {
                           className={'video-quiz-option'}
                           text={option}
                         />
-                      </button>
+                      </label>
                     ))}
-                  </div>
+                  </fieldset>
                 </ObserveKeys>
                 <Spacer />
                 <div
