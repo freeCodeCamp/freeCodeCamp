@@ -104,6 +104,7 @@ export const sagas = [
   ...createCurrentChallengeSaga(types)
 ];
 
+// TODO: can createPoly handle editable region, rather than separating it?
 export const createFiles = createAction(types.createFiles, challengeFiles =>
   Object.keys(challengeFiles)
     .filter(key => challengeFiles[key])
@@ -113,7 +114,8 @@ export const createFiles = createAction(types.createFiles, challengeFiles =>
         ...challengeFiles,
         [file.key]: {
           ...createPoly(file),
-          seed: file.contents.slice(0)
+          seed: file.contents.slice(0),
+          editableRegion: file.editableRegion
         }
       }),
       {}
@@ -311,7 +313,8 @@ export const reducer = handleActions(
               ...files,
               [file.key]: {
                 ...file,
-                contents: file.seed.slice()
+                contents: file.seed.slice(),
+                editableRegion: file.editableRegion
               }
             }),
             {}
