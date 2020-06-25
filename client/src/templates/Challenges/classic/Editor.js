@@ -2,6 +2,7 @@ import React, { Component, Suspense } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
+import isEqual from 'lodash/isEqual';
 
 import {
   canFocusEditorSelector,
@@ -95,6 +96,10 @@ const defineMonacoThemes = monaco => {
   });
 };
 
+const toStartOfLine = range => {
+  return range.setStartPosition(range.startLineNumber, 1);
+};
+
 class Editor extends Component {
   constructor(...props) {
     super(...props);
@@ -114,6 +119,9 @@ class Editor extends Component {
     // As a result it was unclear how to link up the editor's lifecycle with
     // react's lifecycle. Simply storing the models and state here and letting
     // the editor control them seems to be the best solution.
+
+    // TODO: is there any point in initializing this? It should be fine with
+    // this.data = {indexjs:{}, indexcss:{}, indexhtml:{}, indexjsx: {}}
 
     this.data = {
       indexjs: {
@@ -174,10 +182,12 @@ class Editor extends Component {
     };
 
     this._editor = null;
+    this._monaco = null;
     this.focusOnEditor = this.focusOnEditor.bind(this);
   }
 
   editorWillMount = monaco => {
+    this._monaco = monaco;
     const { challengeFiles } = this.props;
     defineMonacoThemes(monaco);
     // If a model is not provided, then the editor 'owns' the model it creates
@@ -185,14 +195,20 @@ class Editor extends Component {
     // swap and reuse models, we have to create our own models to prevent
     // disposal.
 
-    // If a model exists, there is no need to recreate it.
     Object.keys(challengeFiles).forEach(key => {
-      this.data[key].model = this.data[key].model
-        ? this.data[key].model
-        : monaco.editor.createModel(
-            challengeFiles[key].contents,
-            modeMap[challengeFiles[key].ext]
-          );
+      // If a model exists, there is no need to recreate it.
+      const model =
+        this.data[key].model ||
+        monaco.editor.createModel(
+          challengeFiles[key].contents,
+          modeMap[challengeFiles[key].ext]
+        );
+      this.data[key].model = model;
+
+      const editableRegion = [...challengeFiles[key].editableRegionBoundaries];
+
+      if (editableRegion.length === 2)
+        this.decorateForbiddenRanges(model, editableRegion);
     });
     return { model: this.data[this.state.fileKey].model };
   };
@@ -211,6 +227,8 @@ class Editor extends Component {
 
   editorDidMount = (editor, monaco) => {
     this._editor = editor;
+    const { challengeFiles } = this.props;
+    const { fileKey } = this.state;
     editor.updateOptions({
       accessibilitySupport: this.props.inAccessibilityMode ? 'on' : 'auto'
     });
@@ -270,6 +288,11 @@ class Editor extends Component {
         this.props.setAccessibilityMode(true);
       }
     });
+
+    const editableBoundaries = [
+      ...challengeFiles[fileKey].editableRegionBoundaries
+    ];
+    this.showEditableRegion(editableBoundaries);
   };
 
   focusOnHotkeys() {
@@ -288,11 +311,11 @@ class Editor extends Component {
   };
 
   changeTab = newFileKey => {
+    const { challengeFiles } = this.props;
     this.setState({ fileKey: newFileKey });
     const editor = this._editor;
     const currentState = editor.saveViewState();
     const currentModel = editor.getModel();
-
     for (const key in this.data) {
       if (currentModel === this.data[key].model) {
         this.data[key].state = currentState;
@@ -302,7 +325,132 @@ class Editor extends Component {
     editor.setModel(this.data[newFileKey].model);
     editor.restoreViewState(this.data[newFileKey].state);
     editor.focus();
+
+    const editableBoundaries = [
+      ...challengeFiles[newFileKey].editableRegionBoundaries
+    ];
+    this.showEditableRegion(editableBoundaries);
   };
+
+  showEditableRegion(editableBoundaries) {
+    // this is a heuristic: if the cursor is at the start of the page, chances
+    // are the user has not edited yet. If so, move to the start of the editable
+    // region.
+    if (
+      isEqual({ ...this._editor.getPosition() }, { lineNumber: 1, column: 1 })
+    ) {
+      this._editor.setPosition({
+        lineNumber: editableBoundaries[0] + 1,
+        column: 1
+      });
+      this._editor.revealLines(...editableBoundaries);
+    }
+  }
+
+  // TODO: if you press backspace at the start of decoration, it moves to
+  // partially cover the previous line and then can't be moved back (even via
+  // ctrl + z).  Is there an option to prevent this?
+  highlightLines(stickiness, target, highlightedRanges) {
+    highlightedRanges = highlightedRanges || [];
+    // NOTE: full line decorations can't be allowed to grow, because they do not
+    // shrink properly after they have grown.
+    // TODO: maybe allow the second region to grow after and the first to grow
+    // before
+    const lineDecoration = highlightedRanges.map(range => ({
+      range,
+      options: {
+        isWholeLine: true,
+        linesDecorationsClassName: 'myLineDecoration',
+        className: 'do-not-edit',
+        stickiness
+      }
+    }));
+
+    // Unfortunately full line decorations can't grow at the edges, and so
+    // inline decorations must match them.
+    const inlineDecoration = highlightedRanges.map(range => ({
+      range,
+      options: {
+        inlineClassName: 'myInlineDecoration',
+        stickiness
+      }
+    }));
+
+    return target.deltaDecorations([], lineDecoration.concat(inlineDecoration));
+  }
+
+  decorateForbiddenRanges(model, editableRegion) {
+    const forbiddenRanges = [
+      [1, editableRegion[0]],
+      [editableRegion[1], model.getLineCount()]
+    ];
+
+    const ranges = forbiddenRanges.map(positions => {
+      return this.positionsToRange(model, positions);
+    });
+
+    // it might be best to seperate highlightLines into inline and full line
+    // so that we only track the appropriate decorations (rather than having
+    // warnings trigger for both.)
+    const decIds = this.highlightLines(
+      this._monaco.editor.TrackedRangeStickiness.NeverGrowsWhenTypingAtEdges,
+      model,
+      ranges
+    );
+
+    // TODO refactor this mess
+    // TODO this listener needs to be replaced on reset.
+    model.onDidChangeContent(e => {
+      // TODO: it would be nice if undoing could remove the warning, but
+      // it's probably too hard to track. i.e. if they make two warned edits
+      // and then ctrl + z twice, it would realise they've removed their
+      // edits. However, what if they made a warned edit, then a normal
+      // edit, then a warned one.  Could it track that they need to make 3
+      // undos?
+      if (e.isUndoing) {
+        return;
+      }
+      for (const id of decIds) {
+        e.changes.forEach(({ range }) => {
+          if (
+            this._monaco.Range.areIntersectingOrTouching(
+              // Even though the decoration covers the whole line, it has a
+              // startColumn that moves.  toStartOfLine ensures that the
+              // comparison detects if any change has occured on that line
+              toStartOfLine(model.getDecorationRange(id)),
+              range
+            )
+          ) {
+            // TODO, this triggers twice
+            console.log('OVERLAP!');
+          }
+        });
+      }
+    });
+  }
+
+  // creates a range covering all the lines in 'positions'
+  // NOTE: positions is an array of [startLine, endLine]
+  positionsToRange(model, [start, end]) {
+    // start and end should always be defined, but if not:
+    start = start || 1;
+    end = end || model.getLineCount();
+
+    // convert to [startLine, startColumn, endLine, endColumn]
+    const range = new this._monaco.Range(start, 1, end, 1);
+
+    // Protect against ranges that extend outside the editor
+    const startLineNumber = Math.max(1, range.startLineNumber);
+    const endLineNumber = Math.min(model.getLineCount(), range.endLineNumber);
+    const endColumnText = model.getLineContent(endLineNumber);
+    // NOTE: the end column is incremented by 2 so that the dangerous range
+    // extends far enough to capture new text added to the end.
+    // NOTE: according to the spec, it should only need to be +1, but in
+    // practice that's not enough.
+    return range
+      .setStartPosition(startLineNumber, 1)
+      .setEndPosition(range.endLineNumber, endColumnText.length + 2);
+  }
 
   componentDidUpdate(prevProps) {
     // If a challenge is reset, it needs to communicate that change to the
