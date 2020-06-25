@@ -73,8 +73,7 @@ export class Project extends Component {
       downloadURL: null,
       selectedOption: null,
       answer: 1,
-      showWrong: false,
-      videoIsLoaded: false
+      showWrong: false
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
