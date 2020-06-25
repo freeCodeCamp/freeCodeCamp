@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 import { Grid } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
-import { graphql, useStaticQuery } from 'gatsby';
 import { useTranslation } from 'react-i18next';
 
 import Testimonials from './components/Testimonials';
@@ -19,18 +18,6 @@ const propTypes = {
 export const Landing = ({ page = 'landing' }) => {
   const { t } = useTranslation();
 
-  const data = useStaticQuery(graphql`
-    query certifications {
-      challenges: allChallengeNode(
-        sort: { fields: [superOrder, order, challengeOrder] }
-      ) {
-        nodes {
-          superBlock
-        }
-      }
-    }
-  `);
-
   return (
     <Fragment>
       <Helmet>
@@ -45,7 +32,7 @@ export const Landing = ({ page = 'landing' }) => {
         </Grid>
         <Grid>
           <Testimonials />
-          <Certifications nodes={data.challenges.nodes} page={page} />
+          <Certifications />
         </Grid>
       </main>
     </Fragment>

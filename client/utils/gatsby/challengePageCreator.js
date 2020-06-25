@@ -122,7 +122,7 @@ exports.createSuperBlockIntroPages = createPage => edge => {
     path: slug,
     component: superBlockIntro,
     context: {
-      superBlock: dasherize(superBlock),
+      superBlock: superBlock,
       slug
     }
   });
