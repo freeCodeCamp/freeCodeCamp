@@ -322,6 +322,7 @@ export default connect(
   mapDispatchToProps
 )(ShowClassic);
 
+// TODO: handle jsx (not sure why it doesn't get an editableRegion)
 export const query = graphql`
   query ClassicChallenge($slug: String!) {
     challengeNode(fields: { slug: { eq: $slug } }) {
@@ -351,6 +352,7 @@ export const query = graphql`
           contents
           head
           tail
+          editableRegionBoundaries
         }
         indexhtml {
           key
@@ -359,6 +361,7 @@ export const query = graphql`
           contents
           head
           tail
+          editableRegionBoundaries
         }
         indexjs {
           key
@@ -367,6 +370,7 @@ export const query = graphql`
           contents
           head
           tail
+          editableRegionBoundaries
         }
         indexjsx {
           key

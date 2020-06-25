@@ -33,3 +33,21 @@ button.monaco-editor-tab:hover {
   background-color: var(--secondary-color);
   color: var(--secondary-background);
 }
+
+.myInlineDecoration {
+  color: lightgray !important;
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: bold;
+  font-style: oblique;
+}
+
+.myLineDecoration {
+  background: lightblue;
+  width: 5px !important;
+  margin-left: 3px;
+}
+
+.do-not-edit {
+  background: grey;
+}
