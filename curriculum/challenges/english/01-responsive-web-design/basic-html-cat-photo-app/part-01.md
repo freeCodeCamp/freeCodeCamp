@@ -24,11 +24,11 @@ Find the `h1` element and change the text between its opening and closing tags t
 
 ```yml
 tests:
-  - text: "Your <code>h1</code> element should have an opening tag. Opening tags have this syntax: <code>&lt;elementName&gt;</code>."
+  - text: 'Your `h1` element should have an opening tag. Opening tags have this syntax: `<elementName>`.'
     testString: assert( document.querySelector('h1') );
-  - text: "Your <code>h1</code> element should have a closing tag. Closing tags have a <code>/</code> just after the <code>&lt;</code> character."
+  - text: Your `h1` element should have a closing tag. Closing tags have a `/` just after the `<` character.
     testString: assert( code.match(/\<\/h1\>/) );
-  - text: "Your <code>h1</code> element's text should be 'Hello World'. You have either omitted the text or have a typo."
+  - text: Your `h1` element's text should be 'Hello World'. You have either omitted the text or have a typo.
     testString: assert( document.querySelector('h1').innerText.toLowerCase() === 'hello world' );
 
 ```
@@ -44,7 +44,9 @@ tests:
 <!DOCTYPE html>
 <html>
   <body>
+    --fcc-editable-start--
     <h1>Goodbye World</h1>
+    --fcc-editable-end--
   </body>
 </html>
 ```

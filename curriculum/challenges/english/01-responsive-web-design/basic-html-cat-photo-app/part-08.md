@@ -24,13 +24,13 @@ Indicate the first section by adding an `h3` element with the text "Cat Photos" 
 
 ```yml
 tests:
-  - text: "Your <code>h3</code> element should have an opening tag. Opening tags have this syntax: <code>&lt;elementName&gt;</code>."
+  - text: "Your `h3` element should have an opening tag. Opening tags have this syntax: `<elementName>`."
     testString: assert( document.querySelector('h3') );
-  - text: "Your <code>h3</code> element should have a closing tag. Closing tags have a <code>/</code> just after the <code>&lt;</code> character."
+  - text: "Your `h3` element should have a closing tag. Closing tags have a `/` just after the `<` character."
     testString: assert( code.match(/\<\/h3\>/) );
-  - text: "Your <code>h3</code> element's text should be 'Cat Photos'. You have either omitted the text or have a typo."
+  - text: "Your `h3` element's text should be 'Cat Photos'. You have either omitted the text or have a typo."
     testString: assert( document.querySelector('h3').innerText.toLowerCase() === 'cat photos' );
-  - text: "Your <code>h3</code> element should be above the comment. You have them in the wrong order."
+  - text: "Your `h3` element should be above the comment. You have them in the wrong order."
     testString: const noSpaces = code.replace(/\s/g, ''); assert( noSpaces.match(/\<h3\>catphotos\<\/h3\>\<\!\-\-todo:addlinktocatphotos\-\-\>/i) );
 
 ```

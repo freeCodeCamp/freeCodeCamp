@@ -10,9 +10,7 @@ isBeta: true
 
 You can add images to your website by using the `img` element.
 
-Add an `<img>` tag below the paragraph element. Note that `img` elements do not need a closing tag.
-
-At this point, the image element will not show up in your browser.
+Add an `<img>` tag below the paragraph element. You should take note that `img` elements do not need a closing tag.  The tag and elements without a closing tags is known as a <dfn>self-closing tag</dfn>.  At this point, the image element will not show up in the browser.
 
 </section>
 
@@ -26,11 +24,11 @@ At this point, the image element will not show up in your browser.
 
 ```yml
 tests:
-  - text: "Your <code>img</code> element should have an opening tag. Opening tags have this syntax: <code>&lt;elementName&gt;</code>."
+  - text: "Your `img` element should have an opening tag. Opening tags have the following syntax: `<elementName>`."
     testString: assert( document.querySelector('img') );
-  - text: "Your <code>img</code> element should not have a closing tag. Closing tags have a <code>/</code> just after the <code>&lt;</code> character."
+  - text: Your `img` element should not have a closing tag. Closing tags have a `/` just after the `<` character.
     testString: assert( !code.match(/\<\/img\>/) );
-  - text: "Your <code>img</code> element should be below the <code>p</code> element. You have them in the wrong order."
+  - text: Your `img` element should be below the `p` element. You have them in the wrong order.
     testString: const collection = [...document.querySelectorAll('p,img')].map(node => node.nodeName); assert( collection.indexOf('P') < collection.indexOf('IMG') );
 
 ```

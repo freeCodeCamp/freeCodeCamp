@@ -8,11 +8,9 @@ isBeta: true
 ## Description
 <section id='description'>
 
-HTML attributes are special words used inside the opening tag of an element to control the element's behavior. The `src` attribute in an `img` element specifies the image's URL. 
+HTML attributes are special words used inside the opening tag of an element to control the element's behavior. The `src` attribute in an `img` element specifies the image's URL.  An example of an `img` element using an `src` attribute: `<img src="https://www.your-image-source.com/your-image.jpg">`. 
 
-Here is an example of an `img` element with a `src` attribute: `<img src="https://www.your-image-source.com/your-image.jpg">`. 
-
-Add a `src` attribute to the `img` element that is set to this URL: `https://bit.ly/fcc-relaxing-cat`.
+Add an `src` attribute to the existing `img` element that is set to the following URL: `https://bit.ly/fcc-relaxing-cat`.
 
 </section>
 
@@ -26,9 +24,9 @@ Add a `src` attribute to the `img` element that is set to this URL: `https://bit
 
 ```yml
 tests:
-  - text: "Your <code>img</code> element does not have a <code>src</code> attribute. You have either omitted the attribute or have a typo."
+  - text: Your <code>img</code> element does not have a <code>src</code> attribute. You have either omitted the attribute or have a typo. Make sure there is a space between the element name and the attribute name.
     testString: assert( document.querySelector('img').src );
-  - text: "Your <code>img</code> element's <code>src</code> attribute should be set to 'https://bit.ly/fcc-relaxing-cat'. You have either omitted the URL or have a typo."
+  - text: Your <code>img</code> element's <code>src</code> attribute should be set to 'https://bit.ly/fcc-relaxing-cat'. You have either omitted the URL or have a typo. The case of the URL is important.
     testString: assert( document.querySelector('img').src === 'https://bit.ly/fcc-relaxing-cat' );
 
 ```

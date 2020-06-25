@@ -10,7 +10,7 @@ isBeta: true
 
 HTML elements are often nested within other HTML elements. On this page, the comment and `p` element are nested within the `main` element.
 
-When you nest one element inside another, the nested element becomes a child of the parent. To make HTML easier to read, you should indent child elements inside their parent element.
+When you nest one element inside another, the nested element becomes a child of the parent. To make HTML easier to read, you should indent child elements inside their parent element.  Most programmers use 2 or 4 spaces to indent their code.
 
 Indent the comment and `p` element on this page so it is easer to see that they are children of the `main` element.
 
@@ -26,16 +26,19 @@ Indent the comment and `p` element on this page so it is easer to see that they 
 
 ```yml
 tests:
-  - text: "Do not change the text or spacing of the commented out text. It should be 'TODO: Add link to cat photos'."
-    testString: |
-      assert( code.match(/<\!\-\- TODO\: Add link to cat photos \-\-\>/) );
-  - text: "Do not change the text or spacing of the <code>p</code> element's text. It should be 'Click here to view more cat photos.'"
+  - text: "The comment's text should be 'TODO: Add link to cat photos'. Do not change the text or spacing of the comment."
+    testString: 'assert( code.match(/<\!\-\- TODO\: Add link to cat photos \-\-\>/) );'
+  - text: The text of the `p` elemnet should be "Click here to view more cat photos. Do not change the text, spacing, or punctuation of the `p` element's text.
     testString: assert( document.querySelector('p').innerText === 'Click here to view more cat photos.' );
-  - text: "Your comment should be indented within the <code>main</code> element."
+  - text: "Your comment should be indented within the `main` element."
+    testString: 'assert( code.match(/\<main\>\n\s{2,}\<\!\-\- TODO\: Add link to cat photos \-\-\>/) );'
+  - text: "Your `p` element should be indented using the same number of spaces as the comment within the `main` element."
     testString: |
-      assert( code.match(/\<main\>\n\s{5,}\<\!\-\- TODO\: Add link to cat photos \-\-\>/) );
-  - text: "Your <code>p</code> element should be indented within the <code>main</code> element."
-    testString: assert( code.match(/\n\s{5,}\<p\>Click here to view more cat photos\.\<\/p\>\n\s{4,}\<\/main\>/) );
+      const commentIndent = code.match(/\<main\>\n(\s+)<\!\-\-/);
+      const commentIndentLength = commentIndent ? commentIndent[0].length : 0;
+      const pIndent = code.match(/\n(\s+)\<p\>\n(\s+)<\!\-\-/);
+      const pIndentLength = pIndent ? pIndent[0].length : 0;
+      assert( commentIndentLength === pIndentLength && code.match(/<p\>Click here to view more cat photos\.\<\/p\>/) );
 
 ```
 
