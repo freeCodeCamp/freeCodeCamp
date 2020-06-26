@@ -45,7 +45,8 @@
   border-bottom: 2px solid var(--tertiary-background);
 }
 
-input[type='radio']:focus + span > span {
+input[type='radio']:focus + span.video-quiz-input-visible > span,
+.video-quiz-selected-input-active {
   width: 10px;
   height: 10px;
   position: absolute;

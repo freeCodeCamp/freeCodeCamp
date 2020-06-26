@@ -79,6 +79,7 @@ export class Project extends Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleOptionClick = this.handleOptionClick.bind(this);
   }
 
   componentDidMount() {
@@ -138,6 +139,13 @@ export class Project extends Component {
       selectedOption: parseInt(changeEvent.target.value, 10)
     });
   };
+
+  handleOptionClick(index) {
+    this.setState({
+      showWrong: false,
+      selectedOption: parseInt(index, 10)
+    });
+  }
 
   videoIsReady = () => {
     this.setState({
@@ -234,6 +242,7 @@ export class Project extends Component {
                         }`}
                         htmlFor={index}
                         key={index}
+                        onClick={() => this.handleOptionClick(index)}
                       >
                         <input
                           checked={this.state.selectedOption === index}
@@ -244,7 +253,13 @@ export class Project extends Component {
                           value={index}
                         />{' '}
                         <span className='video-quiz-input-visible'>
-                          <span className='video-quiz-selected-input'></span>
+                          <span
+                            className={
+                              this.state.selectedOption === index
+                                ? 'video-quiz-selected-input-active'
+                                : ''
+                            }
+                          ></span>
                         </span>
                         <PrismFormatted
                           className={'video-quiz-option'}
