@@ -234,8 +234,8 @@ export class Project extends Component {
                     {answers.map((option, index) => (
                       // answers are static and have no natural id property, so
                       // index should be fine as a key:
-                      <label
-                        className={`video-quiz-option-label ${
+                      <button
+                        className={`video-quiz-option-button ${
                           this.state.selectedOption === index
                             ? 'highlighted'
                             : ''
@@ -243,6 +243,7 @@ export class Project extends Component {
                         htmlFor={index}
                         key={index}
                         onClick={() => this.handleOptionClick(index)}
+                        tabIndex='-1'
                       >
                         <input
                           checked={this.state.selectedOption === index}
@@ -265,7 +266,7 @@ export class Project extends Component {
                           className={'video-quiz-option'}
                           text={option}
                         />
-                      </label>
+                      </button>
                     ))}
                   </fieldset>
                 </ObserveKeys>
