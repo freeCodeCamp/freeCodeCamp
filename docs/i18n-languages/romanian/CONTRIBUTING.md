@@ -19,7 +19,7 @@ Poți alege să contribuiești în orice arie/domeniu care te interesează:
 
 1. [Contribuiește la codul open source al aceastei pagine.](#contribute-to-this-open-source-codebase). Ajutâ la editarea [articolelor de orientare](https://guide.freecodecamp.org/), la [provocările de codare](https://learn.freecodecamp.org/) sau la corectarea erorilor de pe platforma de învățare.
 
-2. Ajută-i pe colegii de pe [forumul public](https://www.freecodecamp.org/forum/). [Răspunde la întrebările lor de codare](https://www.freecodecamp.org/forum/?max_posts=1) sau [oferăle feedback cu privire la proiectele lor de codare](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1)
+2. Ajută-i pe colegii de pe [forumul public](https://forum.freecodecamp.org/). [Răspunde la întrebările lor de codare](https://forum.freecodecamp.org/?max_posts=1) sau [oferăle feedback cu privire la proiectele lor de codare](https://forum.freecodecamp.org/c/project-feedback?max_posts=1)
 
 3. Ajută-ne să adăugăm subtitrări în [videoclipurile canalului YouTube](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ/videos).
 
@@ -103,7 +103,7 @@ Dacă crezi că ai găsit un bug, mai întâi citește articolul ["Ajutor am gă
 
 Dacă ești convins că este vorba despre un bug nou, continuă și crează o nouă problemă GitHub. Asigură-te că incluzi cât mai multe informații posibil pentru ca să putem reproduce eroarea. Avem un șablon predefinit pentru a te ajuta să faci acest lucru.
 
-Te rugăm să reții că orice problemă care solicită ajutor pentru codiul provocarii, va fi închisă. Problema tracker-ului este strict pentru problemele și discuțiile legate de codul de basă. Ar trebui să [solicitezi asistență pe forum](https://www.freecodecamp.org/forum) înainte de a raporta ori de câte ori ai îndoieli.
+Te rugăm să reții că orice problemă care solicită ajutor pentru codiul provocarii, va fi închisă. Problema tracker-ului este strict pentru problemele și discuțiile legate de codul de basă. Ar trebui să [solicitezi asistență pe forum](https://forum.freecodecamp.org) înainte de a raporta ori de câte ori ai îndoieli.
 
 **Cum pot raporta o problemă de securitate?**
 
@@ -113,7 +113,7 @@ Te rugăm să nu creezi probleme GitHub pentru probleme de securitate. În schim
 
 Nu ezita să ceri ajutor în:
 
-- [Categoria "Colaboratori" a forumul nostru public](https://www.freecodecamp.org/forum/c/contributors)
+- [Categoria "Colaboratori" a forumul nostru public](https://forum.freecodecamp.org/c/contributors)
 - [Camera/room noastră de discuții publice pe Gitter](https://gitter.im/FreeCodeCamp/Contributors)
 
 Suntem bucuroși să te ajutăm să contribuiești la oricare dintre subiectele la care dorești să lucrezi. Asigură-te că ai căutat intrebarea ta înainte de a posta una nouă. Fii politicos și răbdător. Voluntarii și moderatorii noștri din comunitate sunt în permanență în imprejurimi pentru a te călăuzi prin intrebările tale.

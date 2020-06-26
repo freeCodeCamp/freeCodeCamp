@@ -9,7 +9,7 @@ localeTitle: Fatia e Splice
 ---
 
 ## Description
-<section id="description"> Você recebe dois arrays e um índice. Use a <code>slice</code> métodos de matriz e <code>splice</code> para copiar cada elemento da primeira matriz na segunda matriz, em ordem. Comece inserindo elementos no índice <code>n</code> do segundo array. Retorna a matriz resultante. As matrizes de entrada devem permanecer as mesmas após a execução da função. Lembre-se de usar <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Escreva seu próprio código. </section>
+<section id="description"> Você recebe dois arrays e um índice. Use a <code>slice</code> métodos de matriz e <code>splice</code> para copiar cada elemento da primeira matriz na segunda matriz, em ordem. Comece inserindo elementos no índice <code>n</code> do segundo array. Retorna a matriz resultante. As matrizes de entrada devem permanecer as mesmas após a execução da função. Lembre-se de usar <a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Escreva seu próprio código. </section>
 
 ## Instructions
 <section id="instructions">

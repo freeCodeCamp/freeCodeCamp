@@ -22,7 +22,7 @@ Vous pouvez choisir de contribuer dans n'importe quel domaine qui vous intéress
 
 1. [Contribuez à cette base de code open source](#contribute-to-this-open-source-codebase). Aidez à l'édition des [articles du guide](https://guide.freecodecamp.org/), des [défis de codage](https://learn.freecodecamp.org/), ou en corrigeant des bugs sur la plateforme d'apprentissage.
 
-2. Aidez les campeurs sur notre [forum public](https://www.freecodecamp.org/forum/). Répondez à leurs questions de code](https://www.freecodecamp.org/forum/?max_posts=1) ou [faites-leur un retour sur leurs projets de code](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1).
+2. Aidez les campeurs sur notre [forum public](https://forum.freecodecamp.org/). Répondez à leurs questions de code](https://forum.freecodecamp.org/?max_posts=1) ou [faites-leur un retour sur leurs projets de code](https://forum.freecodecamp.org/c/project-feedback?max_posts=1).
 
 3. Aidez-nous à ajouter des sous-titres à nos vidéos sur [YouTube](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ/videos).
 
@@ -109,7 +109,7 @@ Si vous pensez avoir trouvé un bug, lisez d'abord l'article ["Help I've Found a
 
 Si vous êtes sûr qu'il s'agit d'un nouveau bug, allez-y et créez un nouveau ticket GitHub. Assurez-vous d'inclure autant d'informations que possible pour que nous puissions reproduire le bogue. Nous avons un modèle de ticket prédéfini pour vous y aider.
 
-Veuillez noter que tous les tickets qui demandent de l'aide pour coder un défi seront fermés. Le système de suivi de tickets est strictement réservé aux questions et aux discussions liées à la base de code. En cas de doute, vous devriez [demander de l'aide sur le forum](https://www.freecodecamp.org/forum) avant de faire un rapport.
+Veuillez noter que tous les tickets qui demandent de l'aide pour coder un défi seront fermés. Le système de suivi de tickets est strictement réservé aux questions et aux discussions liées à la base de code. En cas de doute, vous devriez [demander de l'aide sur le forum](https://forum.freecodecamp.org) avant de faire un rapport.
 
 **Comment puis-je signaler un problème de sécurité ?**
 
@@ -135,7 +135,7 @@ Lisez notre guide [Comment contribuer à l'Open Source](https://github.com/freeC
 
 N'hésitez pas à demander de l'aide :
 
-- [La catégorie "Contributors" de notre forum public](https://www.freecodecamp.org/forum/c/contributors)
+- [La catégorie "Contributors" de notre forum public](https://forum.freecodecamp.org/c/contributors)
 - [Nos contributeurs publics discutent sur un salon de chat Gitter](https://gitter.im/FreeCodeCamp/Contributors)
 
 Nous sommes heureux de vous aider à contribuer à tous les sujets sur lesquels vous aimeriez travailler. N'hésitez pas à nous poser des questions sur les fils de discussion associés. Nous nous ferons un plaisir de vous fournir des éclaircissements. Assurez-vous de rechercher votre requête avant d'en poster une nouvelle. Soyez poli et patient. Notre communauté de bénévoles et de modérateurs est toujours là pour vous guider à travers vos questions.

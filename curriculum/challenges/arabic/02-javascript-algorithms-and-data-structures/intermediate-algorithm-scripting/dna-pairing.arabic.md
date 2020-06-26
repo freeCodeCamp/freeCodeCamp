@@ -8,7 +8,7 @@ localeTitle: الحمض النووي الاقتران
 ---
 
 ## Description
-<section id="description"> يفتقد حبل الحمض النووي عنصر الإقران. تأخذ كل حرف ، والحصول على زوجها ، وإرجاع النتائج كصفيف 2D. <a href="http://en.wikipedia.org/wiki/Base_pair" target="_blank">أزواج القاعدة</a> هي زوج من AT و CG. تطابق العنصر المفقود مع الحرف المتوفر. قم بإرجاع الحرف المتوفر كعنصر الأول في كل صفيف. على سبيل المثال ، بالنسبة إلى مدخل GCG ، أرجع [[&quot;&quot; G &quot;،&quot; C &quot;] ، [&quot; C &quot;،&quot; G &quot;] ، [&quot; G &quot;،&quot; C &quot;]] يتم إقران الحرف وزوجه في صفيف ، ويتم تجميع جميع المصفوفات في صفيف تغليف واحد. تذكر استخدام <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> إذا واجهتك مشكلة. حاول إقران البرنامج. اكتب الكود الخاص بك. </section>
+<section id="description"> يفتقد حبل الحمض النووي عنصر الإقران. تأخذ كل حرف ، والحصول على زوجها ، وإرجاع النتائج كصفيف 2D. <a href="http://en.wikipedia.org/wiki/Base_pair" target="_blank">أزواج القاعدة</a> هي زوج من AT و CG. تطابق العنصر المفقود مع الحرف المتوفر. قم بإرجاع الحرف المتوفر كعنصر الأول في كل صفيف. على سبيل المثال ، بالنسبة إلى مدخل GCG ، أرجع [[&quot;&quot; G &quot;،&quot; C &quot;] ، [&quot; C &quot;،&quot; G &quot;] ، [&quot; G &quot;،&quot; C &quot;]] يتم إقران الحرف وزوجه في صفيف ، ويتم تجميع جميع المصفوفات في صفيف تغليف واحد. تذكر استخدام <a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> إذا واجهتك مشكلة. حاول إقران البرنامج. اكتب الكود الخاص بك. </section>
 
 ## Instructions
 <section id="instructions">
