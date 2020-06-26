@@ -6,9 +6,9 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
-import { PlyrComponent } from 'plyr-react';
 import { createSelector } from 'reselect';
 import { ObserveKeys } from 'react-hotkeys';
+import Loadable from '@loadable/component';
 
 // Local Utilities
 import PrismFormatted from '../components/PrismFormatted';
@@ -29,6 +29,9 @@ import {
 
 // Styles
 import './show.css';
+
+// Plyr uses 'document', so must be loaded dynamically to avoid breaking SSR
+const LoadablePlyr = Loadable(() => import('./Plyr'));
 
 // Redux Setup
 const mapStateToProps = createSelector(
@@ -177,7 +180,7 @@ export class Project extends Component {
                 </ChallengeTitle>
                 <Spacer />
                 <div className='text-center'>
-                  <PlyrComponent
+                  <LoadablePlyr
                     sources={{
                       type: 'video',
                       sources: [
