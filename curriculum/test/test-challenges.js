@@ -23,7 +23,7 @@ const {
 
 const { assert, AssertionError } = require('chai');
 const Mocha = require('mocha');
-const { flatten } = require('lodash');
+const { flatten, isEmpty } = require('lodash');
 
 const jsdom = require('jsdom');
 
@@ -213,8 +213,8 @@ function runTests({ challengesForLang, meta }) {
     after(function() {
       cleanup();
     });
-    for (const challenge of challengesForLang) {
-      populateTestsForLang(challenge, meta);
+    for (const chalsWithLang of challengesForLang) {
+      populateTestsForLang(chalsWithLang, meta);
     }
   });
   spinner.text = 'Testing';
@@ -232,6 +232,29 @@ async function getChallenges(lang) {
         return [...challengeArray, ...flatten(challengesForBlock)];
       }, [])
   );
+  // This matches the order Gatsby uses (via a GraphQL query). Ideally both
+  // should be sourced and sorted using a single query, but we're not there yet.
+  challenges.sort((a, b) => {
+    if (a.superOrder < b.superOrder) {
+      return -1;
+    }
+    if (a.superOrder > b.superOrder) {
+      return 1;
+    }
+    if (a.order < b.order) {
+      return -1;
+    }
+    if (a.order > b.order) {
+      return 1;
+    }
+    if (a.challengeOrder < b.challengeOrder) {
+      return -1;
+    }
+    if (a.challengeOrder > b.challengeOrder) {
+      return 1;
+    }
+    return 0;
+  });
   return { lang, challenges };
 }
 
@@ -251,7 +274,7 @@ function populateTestsForLang({ lang, challenges }, meta) {
 
   describe(`Check challenges (${lang})`, function() {
     this.timeout(5000);
-    challenges.forEach(challenge => {
+    challenges.forEach((challenge, id) => {
       const dashedBlockName = dasherize(challenge.block);
       describe(challenge.block || 'No block', function() {
         describe(challenge.title || 'No title', function() {
@@ -373,6 +396,15 @@ function populateTestsForLang({ lang, challenges }, meta) {
           });
 
           let { solutions = [] } = challenge;
+          // if there are no solutions in the challenge, it's assumed the next
+          // challenge's seed will be a solution to the current challenge.
+          // This is expected to happen in the project based curriculum.
+          if (isEmpty(solutions)) {
+            const nextChallenge = challenges[id + 1];
+            if (nextChallenge) {
+              solutions = [nextChallenge.files[0].contents];
+            }
+          }
           const noSolution = new RegExp('// solution required');
           solutions = solutions.filter(
             solution => !!solution && !noSolution.test(solution)
