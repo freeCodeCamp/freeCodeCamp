@@ -11,6 +11,7 @@ import {
 import { AvatarRenderer } from '../../helpers';
 
 import SocialIcons from './SocialIcons';
+import Link from '../../helpers/Link';
 
 import './camper.css';
 
@@ -120,7 +121,9 @@ function Camper({
         <div>
           <br />
           <p className='text-center yearsTopContributor'>
-            <FontAwesomeIcon icon={faAward} /> Top Contributor
+            <Link to={'/top-contributors'}>
+              <FontAwesomeIcon icon={faAward} /> Top Contributor
+            </Link>
           </p>
           <p className='text-center'>{joinArray(yearsTopContributor)}</p>
         </div>
