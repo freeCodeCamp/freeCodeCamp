@@ -25,7 +25,7 @@ const propTypes = {
 
 const RSA =
   // eslint-disable-next-line max-len
-  'https:/forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514';
+  'https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514';
 
 export class HelpModal extends Component {
   render() {
