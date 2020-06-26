@@ -23,8 +23,7 @@ const propTypes = {
   isOpen: PropTypes.bool
 };
 
-const RSA =
-  'https://forum.freecodecamp.org/t/19514';
+const RSA = 'https://forum.freecodecamp.org/t/19514';
 
 export class HelpModal extends Component {
   render() {
