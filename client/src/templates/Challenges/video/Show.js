@@ -222,35 +222,37 @@ export class Project extends Component {
                 <PrismFormatted text={text} />
                 <Spacer />
                 <ObserveKeys>
-                  <div className='video-quiz-options'>
+                  <fieldset className='video-quiz-options'>
                     {answers.map((option, index) => (
                       // answers are static and have no natural id property, so
                       // index should be fine as a key:
                       <label
                         className={`video-quiz-option-label ${
                           this.state.selectedOption === index
-                            ? 'outlined'
-                            : 'not-outlined'
+                            ? 'highlighted'
+                            : ''
                         }`}
                         htmlFor={index}
                         key={index}
                       >
                         <input
                           checked={this.state.selectedOption === index}
-                          className='video-quiz-input-visible'
+                          className='video-quiz-input-hidden'
                           name='quiz'
                           onChange={this.handleOptionChange}
                           type='radio'
                           value={index}
-                        />
-
+                        />{' '}
+                        <span className='video-quiz-input-visible'>
+                          <span className='video-quiz-selected-input'></span>
+                        </span>
                         <PrismFormatted
                           className={'video-quiz-option'}
                           text={option}
                         />
                       </label>
                     ))}
-                  </div>
+                  </fieldset>
                 </ObserveKeys>
                 <Spacer />
                 <div
