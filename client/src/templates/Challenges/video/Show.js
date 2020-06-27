@@ -75,7 +75,8 @@ export class Project extends Component {
       selectedOption: null,
       answer: 1,
       showWrong: false,
-      videoIsLoaded: false
+      videoIsLoaded: false,
+      focussedAnswer: -1
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -137,6 +138,14 @@ export class Project extends Component {
       showWrong: false,
       selectedOption: parseInt(changeEvent.target.value, 10)
     });
+  };
+
+  handleBlur = () => {
+    this.setState({ focussedAnswer: -1 });
+  };
+
+  handleFocus = id => {
+    this.setState({ focussedAnswer: id });
   };
 
   videoIsReady = () => {
@@ -226,12 +235,19 @@ export class Project extends Component {
                     {answers.map((option, index) => (
                       // answers are static and have no natural id property, so
                       // index should be fine as a key:
-                      <label className='video-quiz-option-label' key={index}>
+                      <label
+                        className={`video-quiz-option-label${
+                          this.state.focussedAnswer === index ? ' outlined' : ''
+                        }`}
+                        key={index}
+                      >
                         <input
                           checked={this.state.selectedOption === index}
                           className='video-quiz-input-hidden'
                           name='quiz'
+                          onBlur={this.handleBlur}
                           onChange={this.handleOptionChange}
+                          onFocus={() => this.handleFocus(index)}
                           type='radio'
                           value={index}
                         />{' '}

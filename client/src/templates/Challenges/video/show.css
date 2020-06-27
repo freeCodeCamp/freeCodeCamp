@@ -93,3 +93,7 @@
   /* remove default prism background */
   background: none;
 }
+
+.outlined {
+  border-color: black !important;
+}
