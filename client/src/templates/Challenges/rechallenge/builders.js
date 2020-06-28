@@ -18,11 +18,10 @@ const htmlCatch = '\n<!--fcc-->\n';
 const jsCatch = '\n;/*fcc*/\n';
 
 const defaultTemplate = ({ source }) => `
-  <body id='display-body'style='margin:8px;'>
-    <!-- fcc-start-source -->
-      ${source}
-    <!-- fcc-end-source -->
-  </body>`;
+<!DOCTYPE html>
+<html>
+  ${source}
+</html>`;
 
 const wrapInScript = partial(
   transformContents,
