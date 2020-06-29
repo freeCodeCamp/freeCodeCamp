@@ -6,9 +6,9 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
-import YouTube from 'react-youtube';
 import { createSelector } from 'reselect';
 import { ObserveKeys } from 'react-hotkeys';
+import Loadable from '@loadable/component';
 
 // Local Utilities
 import PrismFormatted from '../components/PrismFormatted';
@@ -19,7 +19,6 @@ import ChallengeDescription from '../components/Challenge-Description';
 import Spacer from '../../../components/helpers/Spacer';
 import CompletionModal from '../components/CompletionModal';
 import Hotkeys from '../components/Hotkeys';
-import Loader from '../../../components/helpers/Loader';
 import {
   isChallengeCompletedSelector,
   challengeMounted,
@@ -30,6 +29,9 @@ import {
 
 // Styles
 import './show.css';
+
+// Plyr uses 'document', so must be loaded dynamically to avoid breaking SSR
+const LoadablePlyr = Loadable(() => import('./Plyr'));
 
 // Redux Setup
 const mapStateToProps = createSelector(
@@ -74,8 +76,7 @@ export class Project extends Component {
       downloadURL: null,
       selectedOption: null,
       answer: 1,
-      showWrong: false,
-      videoIsLoaded: false
+      showWrong: false
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -139,12 +140,6 @@ export class Project extends Component {
     });
   };
 
-  videoIsReady = () => {
-    this.setState({
-      videoIsLoaded: true
-    });
-  };
-
   render() {
     const {
       data: {
@@ -183,26 +178,20 @@ export class Project extends Component {
                 <ChallengeTitle isCompleted={isChallengeCompleted}>
                   {blockNameTitle}
                 </ChallengeTitle>
-                <div className='video-wrapper'>
-                  {!this.state.videoIsLoaded ? (
-                    <div className='video-placeholder-loader'>
-                      <Loader />
-                    </div>
-                  ) : null}
-                  <YouTube
-                    className={
-                      this.state.videoIsLoaded
-                        ? 'display-youtube-video'
-                        : 'hide-youtube-video'
-                    }
-                    onReady={this.videoIsReady}
-                    opts={{
-                      rel: 0,
-                      width: '960px',
-                      height: '540px'
+                <Spacer />
+                <div className='text-center'>
+                  <LoadablePlyr
+                    sources={{
+                      type: 'video',
+                      sources: [
+                        {
+                          src: videoId,
+                          provider: 'youtube'
+                        }
+                      ]
                     }}
-                    videoId={videoId}
                   />
+                  <Spacer />
                   <i>
                     <a
                       href={
