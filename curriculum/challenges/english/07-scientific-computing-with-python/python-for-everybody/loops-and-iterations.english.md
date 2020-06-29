@@ -2,7 +2,7 @@
 id: 5e7b9f060b6c005b0e76f05c
 title: Loops and Iterations
 challengeType: 11
-isHidden: true
+isHidden: false
 isRequired: true
 videoId: dLA-szNRnUY
 ---
@@ -30,27 +30,27 @@ question:
   answers:
     - |
         0
-        
+
         1
-        
+
         2
     - |
         0
-        
+
         1
-        
+
         2
-        
+
         3
     - |
         1
-        
+
         2
     - |
         1
-        
+
         2
-        
+
         3
   solution: 1
 ```

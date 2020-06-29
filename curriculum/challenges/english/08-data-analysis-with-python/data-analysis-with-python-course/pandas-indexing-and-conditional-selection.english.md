@@ -2,7 +2,7 @@
 id: 5e9a093a74c4063ca6f7c159
 title: Pandas Indexing and Conditional Selection
 challengeType: 11
-isHidden: true
+isHidden: false
 videoId: -ZOrgV_aA9A
 ---
 
@@ -22,7 +22,7 @@ question:
     import pandas as pd
 
     certificates_earned = pd.Series(
-        [8, 2, 5, 6], 
+        [8, 2, 5, 6],
         index=['Tom', 'Kris', 'Ahmad', 'Beau']
     )
 

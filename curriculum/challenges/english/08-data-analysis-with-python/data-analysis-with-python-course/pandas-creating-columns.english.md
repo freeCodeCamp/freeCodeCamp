@@ -2,7 +2,7 @@
 id: 5e9a093a74c4063ca6f7c15c
 title: Pandas Creating Columns
 challengeType: 11
-isHidden: true
+isHidden: false
 videoId: _sSo2XZoB3E
 ---
 
@@ -35,7 +35,7 @@ question:
     - |
       ```py
       certificates_earned['Certificates per month'] = round(
-          certificates_earned['Certificates'] / 
+          certificates_earned['Certificates'] /
           certificates_earned['Time (in months)']
       )
       ```

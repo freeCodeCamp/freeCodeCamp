@@ -2,7 +2,7 @@
 id: 5e7b9f050b6c005b0e76f057
 title: Intermediate Expressions
 challengeType: 11
-isHidden: true
+isHidden: false
 isRequired: true
 videoId: dKgUaIa5ATg
 ---

@@ -1,25 +1,3 @@
-.video-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 20px 0;
-}
-
-.video-placeholder-loader {
-  min-height: 540px;
-  display: flex;
-  align-items: center;
-}
-
-.display-youtube-video {
-  display: block;
-}
-
-.hide-youtube-video {
-  display: none;
-}
-
 .video-quiz-options {
   background-color: var(--primary-background);
 }
