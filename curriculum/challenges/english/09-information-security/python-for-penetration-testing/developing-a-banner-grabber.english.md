@@ -2,7 +2,7 @@
 id: 5ea9997bbec2e9bc47e94db3
 title: Developing a Banner Grabber
 challengeType: 11
-isHidden: true
+isHidden: false
 videoId: CeGW761BIsA
 ---
 
@@ -28,15 +28,15 @@ question:
   answers:
     - |
       A: `connect`
-      
+
       B: `port`
     - |
       A: `getsockname`
-      
+
       B: `'1-1024'`
     - |
       A: `connect`
-      
+
       B: `int(port)`
   solution: 3
 ```

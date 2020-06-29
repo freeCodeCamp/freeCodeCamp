@@ -2,7 +2,7 @@
 id: 5e8f2f13c4cdbe86b5c72da1
 title: 'Natural Language Processing With RNNs: Building the Model'
 challengeType: 11
-isHidden: true
+isHidden: false
 videoId: 32WBFS7lfsw
 ---
 
@@ -22,7 +22,7 @@ question:
     def build_mode(vocab_size, embedding_dim, rnn_units, batch_size):
         model = tf.keras.Sequential([
             tf.keras.layers.Embedding(vocab_size,
-                                      embedding_dim, 
+                                      embedding_dim,
                                       batch_input_shape=[batch_size, None]),
             tf.keras.layers.__A__(rnn_units,
                                   return_sequences=__B__,

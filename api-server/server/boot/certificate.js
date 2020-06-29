@@ -31,20 +31,25 @@ import { oldDataVizId } from '../../../config/misc';
 import certTypes from '../utils/certTypes.json';
 import superBlockCertTypeMap from '../utils/superBlockCertTypeMap';
 import { completeCommitment$ } from '../utils/commit';
+import { getChallenges } from '../utils/get-curriculum';
 
 const log = debug('fcc:certification');
 
-export default function bootCertificate(app) {
+export default function bootCertificate(app, done) {
   const api = app.loopback.Router();
+  // TODO: rather than getting all the challenges, then grabbing the certs,
+  // consider just getting the certs.
+  getChallenges().then(allChallenges => {
+    const certTypeIds = createCertTypeIds(allChallenges);
+    const showCert = createShowCert(app);
+    const verifyCert = createVerifyCert(certTypeIds, app);
 
-  const certTypeIds = createCertTypeIds(app);
-  const showCert = createShowCert(app);
-  const verifyCert = createVerifyCert(certTypeIds, app);
+    api.put('/certificate/verify', ifNoUser401, ifNoSuperBlock404, verifyCert);
+    api.get('/certificate/showCert/:username/:cert', showCert);
 
-  api.put('/certificate/verify', ifNoUser401, ifNoSuperBlock404, verifyCert);
-  api.get('/certificate/showCert/:username/:cert', showCert);
-
-  app.use(api);
+    app.use(api);
+    done();
+  });
 }
 
 export function getFallbackFrontEndDate(completedChallenges, completedDate) {
@@ -97,33 +102,37 @@ const renderCertifiedEmail = loopback.template(
   path.join(__dirname, '..', 'views', 'emails', 'certified.ejs')
 );
 
-function createCertTypeIds(app) {
-  const { Challenge } = app.models;
-
+function createCertTypeIds(allChallenges) {
   return {
     // legacy
-    [certTypes.frontEnd]: getIdsForCert$(legacyFrontEndChallengeId, Challenge),
-    [certTypes.backEnd]: getIdsForCert$(legacyBackEndChallengeId, Challenge),
-    [certTypes.dataVis]: getIdsForCert$(legacyDataVisId, Challenge),
-    [certTypes.infosecQa]: getIdsForCert$(legacyInfosecQaId, Challenge),
-    [certTypes.fullStack]: getIdsForCert$(legacyFullStackId, Challenge),
+    [certTypes.frontEnd]: getCertById(legacyFrontEndChallengeId, allChallenges),
+    [certTypes.backEnd]: getCertById(legacyBackEndChallengeId, allChallenges),
+    [certTypes.dataVis]: getCertById(legacyDataVisId, allChallenges),
+    [certTypes.infosecQa]: getCertById(legacyInfosecQaId, allChallenges),
+    [certTypes.fullStack]: getCertById(legacyFullStackId, allChallenges),
 
     // modern
-    [certTypes.respWebDesign]: getIdsForCert$(respWebDesignId, Challenge),
-    [certTypes.frontEndLibs]: getIdsForCert$(frontEndLibsId, Challenge),
-    [certTypes.dataVis2018]: getIdsForCert$(dataVis2018Id, Challenge),
-    [certTypes.jsAlgoDataStruct]: getIdsForCert$(jsAlgoDataStructId, Challenge),
-    [certTypes.apisMicroservices]: getIdsForCert$(
-      apisMicroservicesId,
-      Challenge
+    [certTypes.respWebDesign]: getCertById(respWebDesignId, allChallenges),
+    [certTypes.frontEndLibs]: getCertById(frontEndLibsId, allChallenges),
+    [certTypes.dataVis2018]: getCertById(dataVis2018Id, allChallenges),
+    [certTypes.jsAlgoDataStruct]: getCertById(
+      jsAlgoDataStructId,
+      allChallenges
     ),
-    [certTypes.qaV7]: getIdsForCert$(qaV7Id, Challenge),
-    [certTypes.infosecV7]: getIdsForCert$(infosecV7Id, Challenge),
-    [certTypes.sciCompPyV7]: getIdsForCert$(sciCompPyV7Id, Challenge),
-    [certTypes.dataAnalysisPyV7]: getIdsForCert$(dataAnalysisPyV7Id, Challenge),
-    [certTypes.machineLearningPyV7]: getIdsForCert$(
+    [certTypes.apisMicroservices]: getCertById(
+      apisMicroservicesId,
+      allChallenges
+    ),
+    [certTypes.qaV7]: getCertById(qaV7Id, allChallenges),
+    [certTypes.infosecV7]: getCertById(infosecV7Id, allChallenges),
+    [certTypes.sciCompPyV7]: getCertById(sciCompPyV7Id, allChallenges),
+    [certTypes.dataAnalysisPyV7]: getCertById(
+      dataAnalysisPyV7Id,
+      allChallenges
+    ),
+    [certTypes.machineLearningPyV7]: getCertById(
       machineLearningPyV7Id,
-      Challenge
+      allChallenges
     )
   };
 }
@@ -188,13 +197,16 @@ const completionHours = {
   [certTypes.machineLearningPyV7]: 400
 };
 
-function getIdsForCert$(id, Challenge) {
-  return observeQuery(Challenge, 'findById', id, {
-    id: true,
-    tests: true,
-    name: true,
-    challengeType: true
-  }).shareReplay();
+// returns an array with a single element, to be flatMap'd by createdVerifyCert
+function getCertById(anId, allChallenges) {
+  return allChallenges
+    .filter(({ id }) => id === anId)
+    .map(({ id, tests, name, challengeType }) => ({
+      id,
+      tests,
+      name,
+      challengeType
+    }));
 }
 
 const superBlocks = Object.keys(superBlockCertTypeMap);

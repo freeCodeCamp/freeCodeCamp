@@ -2,7 +2,7 @@
 id: 5e7b9f090b6c005b0e76f065
 title: Working with Lists
 challengeType: 11
-isHidden: true
+isHidden: false
 isRequired: true
 videoId: lCnHfTHkhbE
 ---

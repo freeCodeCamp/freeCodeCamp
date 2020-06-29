@@ -2,7 +2,7 @@
 id: 5e9a093a74c4063ca6f7c161
 title: Reading Data Introduction
 challengeType: 11
-isHidden: true
+isHidden: false
 videoId: cDnt02BcHng
 ---
 
@@ -38,26 +38,26 @@ question:
             name, certs_num, months_num = values
             print(f"{name} earned {__C__} certificates in {months_num} months")
     ```
-  
+
   answers:
     - |
       A: `'certificates.csv'`
-      
-      B: `'-'` 
-      
+
+      B: `'-'`
+
       C: `values`
     - |
       A: `'certificates.csv'`
-      
+
       B: `'$'`
-      
+
       C: `certs_num`
     - |
-    
+
       A: `'certificates'`
-      
+
       B: `'$'`
-      
+
       C: `certs_num`
   solution: 2
 ```
