@@ -45,7 +45,7 @@ function createCodeGetter(key, regEx, seeds) {
 function findRegionMarkers(file) {
   // console.log('FILE', file);
   const lines = file.contents.split('\n');
-  console.log('LINES', lines);
+  // console.log('LINES', lines);
   const editableLines = lines
     .map((line, id) => (line.trim() === editableRegionMarker ? id : -1))
     .filter(id => id >= 0);
