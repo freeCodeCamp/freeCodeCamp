@@ -54,6 +54,7 @@ const {
 } = require('../../client/src/templates/Challenges/utils/build');
 
 const { createPoly } = require('../../utils/polyvinyl');
+const { sortChallenges } = require('./utils/sort-challenges');
 
 const testEvaluator = require('../../client/config/test-evaluator').filename;
 
@@ -234,28 +235,7 @@ async function getChallenges(lang) {
   );
   // This matches the order Gatsby uses (via a GraphQL query). Ideally both
   // should be sourced and sorted using a single query, but we're not there yet.
-  challenges.sort((a, b) => {
-    if (a.superOrder < b.superOrder) {
-      return -1;
-    }
-    if (a.superOrder > b.superOrder) {
-      return 1;
-    }
-    if (a.order < b.order) {
-      return -1;
-    }
-    if (a.order > b.order) {
-      return 1;
-    }
-    if (a.challengeOrder < b.challengeOrder) {
-      return -1;
-    }
-    if (a.challengeOrder > b.challengeOrder) {
-      return 1;
-    }
-    return 0;
-  });
-  return { lang, challenges };
+  return { lang, challenges: sortChallenges(challenges) };
 }
 
 function validateBlock(challenge) {
