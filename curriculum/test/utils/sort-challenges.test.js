@@ -51,7 +51,7 @@ const challenges = [
     challengeOrder: 4
   },
   {
-    name: 'HTML - project 3 - step 3',
+    name: 'HTML - project 3 - step 1',
     superOrder: 1,
     order: 3,
     challengeOrder: 1
@@ -123,7 +123,7 @@ const challenges = [
     challengeOrder: 4
   },
   {
-    name: 'CSS - project 3 - step 3',
+    name: 'CSS - project 3 - step 1',
     superOrder: 2,
     order: 3,
     challengeOrder: 1
@@ -195,7 +195,7 @@ const challenges = [
     challengeOrder: 4
   },
   {
-    name: 'JS - project 3 - step 3',
+    name: 'JS - project 3 - step 1',
     superOrder: 3,
     order: 3,
     challengeOrder: 1
