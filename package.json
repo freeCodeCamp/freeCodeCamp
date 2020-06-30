@@ -59,6 +59,7 @@
     "test": "npm-run-all -p test:*",
     "test:client": "cd ./client && npm test && cd ../",
     "test:curriculum": "cd ./curriculum && npm test && cd ../",
+    "test:curriculum-js": "jest --rootDir ./curriculum",
     "test:guide-formatting": "node ./tools/scripts/ci/ensure-guide-formatting.js",
     "test:search-indexing": "jest ./search-indexing",
     "test:server": "cd ./api-server && npm test && cd ../",
