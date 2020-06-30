@@ -8,7 +8,7 @@ localeTitle: 求和范围中的所有数字
 ---
 
 ## Description
-<section id="description">我们将通过两个数字的数组。返回这两个数字的总和加上它们之间所有数字的总和。最低的数字并不总是第一位。如果卡住，请记得使用<a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> 。尝试配对程序。编写自己的代码。 </section>
+<section id="description">我们将通过两个数字的数组。返回这两个数字的总和加上它们之间所有数字的总和。最低的数字并不总是第一位。如果卡住，请记得使用<a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> 。尝试配对程序。编写自己的代码。 </section>
 
 ## Instructions
 <section id="instructions">

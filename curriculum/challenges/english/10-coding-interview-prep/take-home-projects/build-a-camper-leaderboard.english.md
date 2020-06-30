@@ -16,7 +16,7 @@ Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_bl
 <strong>User Story:</strong> I can see the number of replies and views that each topic has had, and a timestamp of when the topic was last active.
 <strong>Hint:</strong> To get the 30 most recent forum posts: <a href='https://buttercup-island.glitch.me/latest' target='_blank'>https://buttercup-island.glitch.me/latest</a>.
 When you are finished, click the "I've completed this challenge" button and include a link to your CodePen.
-You can get feedback on your project by sharing it on the freeCodeCamp <a href='https://www.freecodecamp.org/forum/' target='_blank'>forum</a>.
+You can get feedback on your project by sharing it on the freeCodeCamp <a href='https://forum.freecodecamp.org/' target='_blank'>forum</a>.
 </section>
 
 ## Instructions

@@ -583,6 +583,6 @@ If you get errors while installing the dependencies, please make sure that you a
 
 ## Getting Help
 
-If you are stuck and need help, let us know by asking in the ['Contributors' category on our forum](https://www.freecodecamp.org/forum/c/contributors) or the [Contributors chat room](https://gitter.im/FreeCodeCamp/Contributors) on Gitter.
+If you are stuck and need help, let us know by asking in the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or the [Contributors chat room](https://gitter.im/FreeCodeCamp/Contributors) on Gitter.
 
 There might be an error in the console of your browser or in Bash / Terminal / Command Line that will help identify the problem. Provide this error message in your problem description so others can more easily identify the issue and help you find a resolution.

@@ -8,7 +8,7 @@ localeTitle: Porco Latino
 ---
 
 ## Description
-<section id="description"> Traduza a string fornecida para pig latin. <a href="http://en.wikipedia.org/wiki/Pig_Latin" target="_blank">Pig Latin</a> pega a primeira consoante (ou consoante cluster) de uma palavra inglesa, move-a para o final da palavra e sufixa um &quot;ay&quot;. Se uma palavra começa com uma vogal, você apenas adiciona &quot;caminho&quot; ao final. As strings de entrada são garantidas como palavras inglesas em todas as letras minúsculas. Lembre-se de usar <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Tente emparelhar o programa. Escreva seu próprio código. </section>
+<section id="description"> Traduza a string fornecida para pig latin. <a href="http://en.wikipedia.org/wiki/Pig_Latin" target="_blank">Pig Latin</a> pega a primeira consoante (ou consoante cluster) de uma palavra inglesa, move-a para o final da palavra e sufixa um &quot;ay&quot;. Se uma palavra começa com uma vogal, você apenas adiciona &quot;caminho&quot; ao final. As strings de entrada são garantidas como palavras inglesas em todas as letras minúsculas. Lembre-se de usar <a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Tente emparelhar o programa. Escreva seu próprio código. </section>
 
 ## Instructions
 <section id="instructions">

@@ -8,7 +8,7 @@ localeTitle: 截断字符串
 ---
 
 ## Description
-<section id="description">如果字符串（第一个参数）长于给定的最大字符串长度（第二个参数），则截断该字符串。返回带有<code>...</code>结尾的截断字符串。如果卡住，请记得使用<a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> 。编写自己的代码。 </section>
+<section id="description">如果字符串（第一个参数）长于给定的最大字符串长度（第二个参数），则截断该字符串。返回带有<code>...</code>结尾的截断字符串。如果卡住，请记得使用<a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> 。编写自己的代码。 </section>
 
 ## Instructions
 <section id="instructions">

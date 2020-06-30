@@ -8,7 +8,7 @@ localeTitle: 猪拉丁文
 ---
 
 ## Description
-<section id="description">将提供的字符串翻译为pig latin。 <a href="http://en.wikipedia.org/wiki/Pig_Latin" target="_blank">Pig Latin</a>使用英语单词的第一个辅音（或辅音簇），将其移到单词的末尾并加上“ay”后缀。如果一个单词以元音开头，你只需添加“way”到最后。输入字符串保证全部为小写英文单词。如果卡住，请记得使用<a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> 。尝试配对程序。编写自己的代码。 </section>
+<section id="description">将提供的字符串翻译为pig latin。 <a href="http://en.wikipedia.org/wiki/Pig_Latin" target="_blank">Pig Latin</a>使用英语单词的第一个辅音（或辅音簇），将其移到单词的末尾并加上“ay”后缀。如果一个单词以元音开头，你只需添加“way”到最后。输入字符串保证全部为小写英文单词。如果卡住，请记得使用<a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> 。尝试配对程序。编写自己的代码。 </section>
 
 ## Instructions
 <section id="instructions">
