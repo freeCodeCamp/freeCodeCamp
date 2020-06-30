@@ -19,7 +19,7 @@ Puoi scegliere di contribuire a qualsiasi area che ti interessa:
 
 1. [Contribuisci a questo codice open source.](#contribuisci-a-questo-codice-open-source). Aiuta a modificare gli [articoli guida](https://guide.freecodecamp.org/), [sfide di codifica](https://learn.freecodecamp.org/), o correggi i bug/errori sulla piattaforma di apprendimento.
 
-2. Aiuta i colleghi sul nostro [forum pubblico](https://www.freecodecamp.org/forum/). [Rispondi alle loro domande di codifica](https://www.freecodecamp.org/forum/?max_posts=1) o [dai loro feedback sui loro progetti di codifica](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1)
+2. Aiuta i colleghi sul nostro [forum pubblico](https://forum.freecodecamp.org/). [Rispondi alle loro domande di codifica](https://forum.freecodecamp.org/?max_posts=1) o [dai loro feedback sui loro progetti di codifica](https://forum.freecodecamp.org/c/project-feedback?max_posts=1)
 
 3. Aiutaci ad aggiungere i sottotitoli ai nostri [video del canale YouTube](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ/videos).
 
@@ -103,7 +103,7 @@ Se pensi di aver trovato un bug/errore, leggi prima l'articolo ["Aiuto! Ho trova
 
 Se sei sicuro che sia un nuovo bug, vai avanti e crea un nuovo issue su GitHub. Assicurati di includere quante più informazioni possibili in modo che noi possiamo riprodurre il bug. Abbiamo un modello di problema predefinito per aiutarti con questo.
 
-Si prega di notare che eventuali problemi che richiedono aiuto nella programmazione per una sfida saranno chiusi. Il tracker dei problemi è strettamente correlato ai problemi e alle discussioni relativi al codebase. Dovresti [cercare assistenza sul forum](https://www.freecodecamp.org/forum) prima di segnalare ogniqualvolta ci sono dubbi.
+Si prega di notare che eventuali problemi che richiedono aiuto nella programmazione per una sfida saranno chiusi. Il tracker dei problemi è strettamente correlato ai problemi e alle discussioni relativi al codebase. Dovresti [cercare assistenza sul forum](https://forum.freecodecamp.org) prima di segnalare ogniqualvolta ci sono dubbi.
 
 **Come posso segnalare un problema di sicurezza?**
 
@@ -113,7 +113,7 @@ Si prega di non creare issue su GitHub per problemi di sicurezza. Invece, si pre
 
 Sentiti libero di chiedere aiuto su:
 
-- [La categoria "Contributori" dell nostro forum pubblico](https://www.freecodecamp.org/forum/c/contributors)
+- [La categoria "Contributori" dell nostro forum pubblico](https://forum.freecodecamp.org/c/contributors)
 - [La nostra chat room dei contributori pubblici su Gitter](https://gitter.im/FreeCodeCamp/Contributors)
 
 Siamo lieti di aiutarti a contribuire a uno qualsiasi degli argomenti su cui vorresti lavorare. Assicurati di cercare la tua domanda prima di pubblicarne una nuova. Sii educato e paziente. I nostri volontari e moderatori della comunità sono sempre in giro per guidarti nelle tue domande.

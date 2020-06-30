@@ -439,7 +439,7 @@ npm run develop
 
 ## Получить помощь
 
-Если вы застряли и вам нужна помощь, сообщите нам об этом, спросив в [категории 'участники' на нашем форуме](https://www.freecodecamp.org/forum/c/contributors) или в [чате участников](https://gitter.im/FreeCodeCamp/Contributors) на Gitter.
+Если вы застряли и вам нужна помощь, сообщите нам об этом, спросив в [категории 'участники' на нашем форуме](https://forum.freecodecamp.org/c/contributors) или в [чате участников](https://gitter.im/FreeCodeCamp/Contributors) на Gitter.
 
 Может возникнуть ошибка в консоли браузера или в Bash/терминале/командной строке, которая поможет определить проблему.
 

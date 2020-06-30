@@ -19,7 +19,7 @@ Bunlardan herhangi birine katkıda bulunabilirsiniz:
 
 1. [Bu Open-Source-Codebase'e katkıda bulunun](#Bu-Open-Source-Codebase'e-katkıda-bulunun). Karşılaştığımız problemlerin üstesinden gelmemize ve öğrenme platformundaki hataları düzeltmemize yardımcı olun. 
 
-2. [Public forumuzdaki](https://www.freecodecamp.org/forum/) kampçılara yardım edin. [Sorularını cevaplayın](https://www.freecodecamp.org/forum/?max_posts=1) ya da [kodlarına geri bildirimler yapın](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1).
+2. [Public forumuzdaki](https://forum.freecodecamp.org/) kampçılara yardım edin. [Sorularını cevaplayın](https://forum.freecodecamp.org/?max_posts=1) ya da [kodlarına geri bildirimler yapın](https://forum.freecodecamp.org/c/project-feedback?max_posts=1).
 
 3. [YouTube videolarımıza](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ/videos) altyazı eklenmesinde bize yardımcı olun.
 
@@ -63,7 +63,7 @@ Eğer bir hata bulduğunuz düşünüyorsanız, ["Yardım, Bir Hata Buldum"](htt
 
 Bunun yeni bir hata olduğundan eminseniz, yeni bir GitHub issue yaratın. Hatayı tekrarlayabilmemiz için olabildiğince fazla bilgi eklediğinizden emin olun. Bu konuda, size yardımcı olmak için önceden tanımlanmış bir sorun şablonumuz bulunmaktadır.
 
-Lütfen bir sorun için kodlama yardımı isteyen issue'ların kapatılacağını unutmayın. Issue-tracker codebase ile alakalı sorunlar ve tartışmalar içindir. Bir şüphe durumunda, sorunu bildirmeden önce [forum üzerinde yardım aramalısınız](https://www.freecodecamp.org/forum).
+Lütfen bir sorun için kodlama yardımı isteyen issue'ların kapatılacağını unutmayın. Issue-tracker codebase ile alakalı sorunlar ve tartışmalar içindir. Bir şüphe durumunda, sorunu bildirmeden önce [forum üzerinde yardım aramalısınız](https://forum.freecodecamp.org).
 
 **Bir güvenlik sorununu nasıl bildirebilirim?**
 
@@ -90,7 +90,7 @@ Yazım yanlışları ve kelime değişiklikleri için yeni bir issue yaratmadan,
 
 Yardım istemek için çekinmeyin:
 
-- [Public forumumuzun "Katkıda bulunanlar" kategorisi](https://www.freecodecamp.org/forum/c/contributors)
+- [Public forumumuzun "Katkıda bulunanlar" kategorisi](https://forum.freecodecamp.org/c/contributors)
 - [Katkıda bulunan kişilerimiz Gitter'deki sohbet odası](https://gitter.im/FreeCodeCamp/Contributors)
 
 Üzerinde çalışmak istediğiniz konulardan herhangi birine katkıda bulunmanıza yardımcı olmaktan büyük heyecan duyuyoruz. İlgili konu başlıkları hakkında bize sorular sormaktan çekinmeyin, açıklığa kavuşturmaktan memnuniyet duyarız. Yeni bir tane göndermeden önce sorgunuzu aradığınızdan emin olun. Kibar ve sabırlı olun. Gönüllüler ve moderatörler topluluğumuz, sorularınız için size yol göstermek için her zaman yanındadır.

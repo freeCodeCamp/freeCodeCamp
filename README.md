@@ -120,7 +120,7 @@ This code is running live at [freeCodeCamp.org](https://www.freecodecamp.org).
 
 Our community also has:
 
-- A [forum](https://www.freecodecamp.org/forum) where you can usually get programming help or project feedback within hours.
+- A [forum](https://forum.freecodecamp.org) where you can usually get programming help or project feedback within hours.
 - A [YouTube channel](https://youtube.com/freecodecamp) with free courses on Python, SQL, Android, and a wide variety of other technologies.
 - A [podcast](https://podcast.freecodecamp.org/) with technology insights and inspiring stories from developers.
 - A [Developer News](https://www.freecodecamp.org/news) publication, a free, open source, no-ads place to cross-post your blog articles.
@@ -129,7 +129,7 @@ Our community also has:
 
 ### Reporting Bugs and Issues
 
-If you think you've found a bug, first read the [how to report a bug](https://www.freecodecamp.org/forum/t/how-to-report-a-bug/19543) article and follow its instructions.
+If you think you've found a bug, first read the [how to report a bug](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) article and follow its instructions.
 
 If you're confident it's a new bug and have confirmed that someone else is facing the same issue, go ahead and create a new GitHub issue. Be sure to include as much information as possible so we can reproduce the bug.
 

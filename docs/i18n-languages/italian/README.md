@@ -120,7 +120,7 @@ Questo codice è in esecuzione in diretta su [freeCodeCamp.org](https://www.free
 
 La nostra comunità ha tra l'altro:
 
-- Un [forum](https://www.freecodecamp.org/forum) dove puoi ottenere aiuto su programmazione, o feedback sui tuoi progetti in alcune ore
+- Un [forum](https://forum.freecodecamp.org) dove puoi ottenere aiuto su programmazione, o feedback sui tuoi progetti in alcune ore
 - Un popolare [canale YouTube](https://youtube.com/freecodecamp) con corsi gratuiti su Python, SQL, Android, e un'ampia varietà di altre tecnologie
 - Un [podcast](https://podcast.freecodecamp.org/) con approfondimenti sulla tecnologia e inspiranti storie di sviluppatori.
 - Una pubblicazione di [Developer News](https://www.freecodecamp.org/news), un sito gratuito, open source e senza pubblicità per il cross-post degli articoli del tuo blog.
@@ -129,7 +129,7 @@ La nostra comunità ha tra l'altro:
 
 ### Trovato un bug/errore di codice?
 
-Se pensi di aver trovato un bug/errore di codice, leggi prima l'articolo [Aiuto ho trovato un bug/errore di codice](https://www.freecodecamp.org/forum/t/how-to-report-a-bug/19543) e segui le sue istruzioni.
+Se pensi di aver trovato un bug/errore di codice, leggi prima l'articolo [Aiuto ho trovato un bug/errore di codice](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) e segui le sue istruzioni.
 
 Se sei sicuro che sia un nuovo bug/errore di codice e hai confermato che qualcun altro si trova di fronte allo stesso problema, procedi e crea un nuovo problema con GitHub. Assicurati di includere quante più informazioni possibili in modo che possiamo riprodurre il bug/errore di codice.
 

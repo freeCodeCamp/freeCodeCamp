@@ -8,7 +8,7 @@ localeTitle: 算了吧
 ---
 
 ## Description
-<section id="description">给定数组<code>arr</code> ，迭代并从第一个元素（0索引）开始删除每个元素，直到函数<code>func</code>在迭代元素通过它时返回<code>true</code> 。然后在条件满足后返回数组的其余部分，否则， <code>arr</code>应作为空数组返回。如果卡住，请记得使用<a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> 。尝试配对程序。编写自己的代码。 </section>
+<section id="description">给定数组<code>arr</code> ，迭代并从第一个元素（0索引）开始删除每个元素，直到函数<code>func</code>在迭代元素通过它时返回<code>true</code> 。然后在条件满足后返回数组的其余部分，否则， <code>arr</code>应作为空数组返回。如果卡住，请记得使用<a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> 。尝试配对程序。编写自己的代码。 </section>
 
 ## Instructions
 <section id="instructions">

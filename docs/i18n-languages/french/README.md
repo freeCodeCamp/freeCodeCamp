@@ -117,7 +117,7 @@ Ce code est exécuté en direct sur [freeCodeCamp.org](https://www.freecodecamp.
 
 Notre communauté a aussi:
 
-- Un [forum](https://www.freecodecamp.org/forum) où vous pouvez généralement avoir de l'aide en programmation ou des feedbacks sur vos projets.
+- Un [forum](https://forum.freecodecamp.org) où vous pouvez généralement avoir de l'aide en programmation ou des feedbacks sur vos projets.
 - Une chaîne [YouTube](https://youtube.com/freecodecamp) avec des cours gratuits sur Python, SQL, Android et une grande variété d'autres sujets.
 - Un [podcast](https://podcast.freecodecamp.org/) avec des discussions techniques autour de nouvelles technologies et des histoires inspirantes de développeurs.
 - [Des groupes d'études locaux](https://study-group-directory.freecodecamp.org/), situés partout dans le monde où vous pourrez programmer ensemble et en face en face.
@@ -129,7 +129,7 @@ Notre communauté a aussi:
 
 ### Vous avez trouvé un bug ?
 
-Si vous pensez avoir trouvé un bug, lisez d’abord l’article d’aide [Help I've Found a Bug](https://www.freecodecamp.org/forum/t/how-to-report-a-bug/19543) et suivez ses instructions. Si vous êtes sûr qu'il s'agit d'un nouveau bug et que vous avez vérifié que le problème est rencontré par d'autres utilisateurs, créez une nouvelle "issue" sur GitHub. Assurez-vous d'inclure autant d'informations que possible afin que nous puissions reproduire le bug.
+Si vous pensez avoir trouvé un bug, lisez d’abord l’article d’aide [Help I've Found a Bug](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) et suivez ses instructions. Si vous êtes sûr qu'il s'agit d'un nouveau bug et que vous avez vérifié que le problème est rencontré par d'autres utilisateurs, créez une nouvelle "issue" sur GitHub. Assurez-vous d'inclure autant d'informations que possible afin que nous puissions reproduire le bug.
 
 ### Vous avez trouvé un problème de sécurité?
 

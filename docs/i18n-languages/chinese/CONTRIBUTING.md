@@ -19,7 +19,7 @@ freeCodeCamp.org的存在是因为像你这样的数千名志愿者。我们很�
 
 1. [贡献予开源代码库](#贡献予开源代码库)。帮助编辑[指南文章](https://guide.freecodecamp.org/)，[编码挑战](https://learn.freecodecamp.org/)或修复学习平台上的错误。
 
-2. 在我们的[公共论坛](https://www.freecodecamp.org/forum/)上帮助营员。[回答他们的编程问题](https://www.freecodecamp.org/forum/?max_posts=1)或[为他们的编码程目给予反馈](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1)。
+2. 在我们的[公共论坛](https://forum.freecodecamp.org/)上帮助营员。[回答他们的编程问题](https://forum.freecodecamp.org/?max_posts=1)或[为他们的编码程目给予反馈](https://forum.freecodecamp.org/c/project-feedback?max_posts=1)。
 
 3. 帮助我们为[YouTube频道视频](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ/videos)添加字幕。
 
@@ -102,7 +102,7 @@ freeCodeCamp.org的存在是因为像你这样的数千名志愿者。我们很�
 
 如果您确信这是一个新错误，请继续创建一个新的GitHub问题。请务必尽可能多地包含信息，以便我们能重现错误。我们有一个预定义的问题模板来帮助您完成此报告。
 
-请注意，任何寻求编码帮助挑战的问题都将被关闭。问题跟踪器严格用于与代码库相关的问题和讨论。您应该[在论坛上寻求帮助](https://www.freecodecamp.org/forum), 然后在有疑问时进行报告。
+请注意，任何寻求编码帮助挑战的问题都将被关闭。问题跟踪器严格用于与代码库相关的问题和讨论。您应该[在论坛上寻求帮助](https://forum.freecodecamp.org), 然后在有疑问时进行报告。
 
 **如何报告安全问题？**
 
@@ -112,7 +112,7 @@ freeCodeCamp.org的存在是因为像你这样的数千名志愿者。我们很�
 
 您可以通过以下的渠道：
 
-- [我们公共论坛上的“贡献者”类别](https://www.freecodecamp.org/forum/c/contributors)
+- [我们公共论坛上的“贡献者”类别](https://forum.freecodecamp.org/c/contributors)
 - [我们的公共贡献者在Gitter的聊天室](https://gitter.im/FreeCodeCamp/Contributors)
 
 我们很高兴能帮助您为您想要处理的任何问题做出贡献。确保在发布新问题之前搜索您的问题。请务必要有礼貌和耐心。我们的社区志愿者和主持人随时为您提供指导。

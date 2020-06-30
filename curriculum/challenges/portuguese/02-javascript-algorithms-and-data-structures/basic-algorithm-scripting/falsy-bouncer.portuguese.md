@@ -8,7 +8,7 @@ localeTitle: Bouncer Falsy
 ---
 
 ## Description
-<section id="description"> Remova todos os valores falsos de uma matriz. Os valores falsos em JavaScript são <code>false</code> , <code>null</code> , <code>0</code> , <code>&quot;&quot;</code> , <code>undefined</code> e <code>NaN</code> . Dica: tente converter cada valor em um booleano. Lembre-se de usar <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Escreva seu próprio código. </section>
+<section id="description"> Remova todos os valores falsos de uma matriz. Os valores falsos em JavaScript são <code>false</code> , <code>null</code> , <code>0</code> , <code>&quot;&quot;</code> , <code>undefined</code> e <code>NaN</code> . Dica: tente converter cada valor em um booleano. Lembre-se de usar <a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Escreva seu próprio código. </section>
 
 ## Instructions
 <section id="instructions">

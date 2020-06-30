@@ -21,10 +21,10 @@ Você pode contribuir para qualquer área do seu interesse:
 
     Nos ajude criando e editando [Artigos guia](https://www.freecodecamp.org/guide), [desafios de codificação](https://www.freecodecamp.org/learn), ou corrigindo bugs na plataforma de aprendizado.
 
-2. Ajude campistas em nosso [fórum público](https://www.freecodecamp.org/forum/).
+2. Ajude campistas em nosso [fórum público](https://forum.freecodecamp.org/).
 
-    - ❓ Ajude campistas [respondendo suas perguntas](https://www.freecodecamp.org/forum/?max_posts=1).
-    - 💬 [Faça comentários](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1) em projetos dos campistas.
+    - ❓ Ajude campistas [respondendo suas perguntas](https://forum.freecodecamp.org/?max_posts=1).
+    - 💬 [Faça comentários](https://forum.freecodecamp.org/c/project-feedback?max_posts=1) em projetos dos campistas.
 
 3. Nos ajude a legendar nosso [canal no YouTube](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ/videos).
 
@@ -116,7 +116,7 @@ Se você acha que encontrou um <i>bug</i>, primeiro leia o artigo ["Help I've Fo
 
 Se você está confiante de que se trata de um <i>bug</i> novo, vá em frente e crie uma nova <i>issue</i> no GitHub. Certifique-se de incluir o máximo de informações possível para que nós possamos reproduzir o <i>bug</i>. Nós temos um modelo pré definido para <i>issues</i> para ajudá-lo nisso.
 
-Por favor, repare que qualquer <i>issue</i> que esteja buscando ajuda no código de algum desafio será fechada. O acompanhador de <i>issues</i> é restrito a problemas e discussões relacionadas à base de código. Você deve [buscar ajuda no fórum](https://www.freecodecamp.org/forum) antes de reportar sempre que estiver em dúvida.
+Por favor, repare que qualquer <i>issue</i> que esteja buscando ajuda no código de algum desafio será fechada. O acompanhador de <i>issues</i> é restrito a problemas e discussões relacionadas à base de código. Você deve [buscar ajuda no fórum](https://forum.freecodecamp.org) antes de reportar sempre que estiver em dúvida.
 
 **Como eu posso reportar um problema de segurança?**
 
@@ -126,7 +126,7 @@ Por favor não crie <i>issues</i> relacionadas à segurança no GitHub. Ao invé
 
 Sinta-se livre para pedir ajuda:
 
-- [Na categoria de "Contribuidores" (<i>Contributors</i>) em nosso fórum público](https://www.freecodecamp.org/forum/c/contributors).
+- [Na categoria de "Contribuidores" (<i>Contributors</i>) em nosso fórum público](https://forum.freecodecamp.org/c/contributors).
 - [Em nossa sala pública de <i>chat</i> de contribuidores no Gitter](https://gitter.im/FreeCodeCamp/Contributors).
 
 Nós estamos empolgados em te ajudar a contribuir para qualquer tópico em que você queira trabalhar. Certifique-se de fazer uma busca antes de publicar um tópico novo. Seja educado e paciente. Os voluntários e moderadores da nossa comunidade estão sempre por perto para te ajudar em suas questões.

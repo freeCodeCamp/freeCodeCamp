@@ -243,9 +243,9 @@ Beispiel: `// Fix this line`
 
 ## Tipps und Lösungen zur Curriculum Herausforderung
 
-Jede Challenge hat eine Schaltfläche "Get a Hint", so dass ein Benutzer auf alle Hinweise/Lösungen zugreifen kann, die für die Challenge erstellt wurden. Curriculum Hinweise/Lösungsinhalte findest du auf [unseren Forum](https://www.freecodecamp.org/forum/c/guide) unter der Kategorie "Guide".
+Jede Challenge hat eine Schaltfläche "Get a Hint", so dass ein Benutzer auf alle Hinweise/Lösungen zugreifen kann, die für die Challenge erstellt wurden. Curriculum Hinweise/Lösungsinhalte findest du auf [unseren Forum](https://forum.freecodecamp.org/c/guide) unter der Kategorie "Guide".
 
-Wenn du einen Fehler in einem Hinweis/Lösungsinhalt zu einer bestehenden Herausforderung findest, kannst du Vorschläge unter der Kategorie [Beitragende](https://www.freecodecamp.org/forum/c/contributors) machen. Moderatoren und Benutzer mit Vertrauensstufe 3 überprüfen die Kommentare und entscheiden, ob die Änderungen in der entsprechende Vorschlag aufgenommen werden sollen oder nicht.
+Wenn du einen Fehler in einem Hinweis/Lösungsinhalt zu einer bestehenden Herausforderung findest, kannst du Vorschläge unter der Kategorie [Beitragende](https://forum.freecodecamp.org/c/contributors) machen. Moderatoren und Benutzer mit Vertrauensstufe 3 überprüfen die Kommentare und entscheiden, ob die Änderungen in der entsprechende Vorschlag aufgenommen werden sollen oder nicht.
 
 ### Hinzufügen neuer Herausforderungs-Hinweise/Lösungen Themenbereiche
 

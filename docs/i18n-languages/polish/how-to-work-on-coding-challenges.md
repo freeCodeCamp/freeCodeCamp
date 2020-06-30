@@ -244,7 +244,7 @@ Oto szczegółowe wytyczne dotyczące formatowania kodu nasion wyzwania:
 
 # Curriculum Challenge Hints and Solutions (Wyzwania programowe)
 
-Każde wyzwanie posiada przycisk `Uzyskaj podpowiedź`, dzięki czemu użytkownik ma dostęp do wszelkich podpowiedzi/rozwiązań, które zostały stworzone dla wyzwania.  Tematy podpowiedzi/rozwiązań programowych znajdują się na [naszym forum](https://www.freecodecamp.org/forum/c/guide) pod kategorią `Guide`.
+Każde wyzwanie posiada przycisk `Uzyskaj podpowiedź`, dzięki czemu użytkownik ma dostęp do wszelkich podpowiedzi/rozwiązań, które zostały stworzone dla wyzwania.  Tematy podpowiedzi/rozwiązań programowych znajdują się na [naszym forum](https://forum.freecodecamp.org/c/guide) pod kategorią `Guide`.
 
 Jeśli znajdziesz problem z istniejącym tematem podpowiedzi/rozwiązań wyzwania, możesz zgłosić sugestie w komentarzach poniżej głównego postu wiki, jeśli jesteś co najmniej użytkownikiem forum poziomu 3.  Wybierz moderatorów, którzy zapoznają się z komentarzami i zdecydują, czy włączyć zmiany w istniejącym temacie.
 

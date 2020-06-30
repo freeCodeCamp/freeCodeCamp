@@ -252,9 +252,9 @@ Here are specific formatting guidelines for the challenge seed code:
 
 ## Hints and Solutions
 
-Each challenge has a `Get a Hint` button, so a user can access any hints/solutions which have been created for the challenge. Curriculum hints/solutions topics are located on [our forum](https://www.freecodecamp.org/forum/c/guide) under the `Guide` category.
+Each challenge has a `Get a Hint` button, so a user can access any hints/solutions which have been created for the challenge. Curriculum hints/solutions topics are located on [our forum](https://forum.freecodecamp.org/c/guide) under the `Guide` category.
 
-If you find a problem with an existing challenge's hints/solutions topic, you can make suggestions in the [contributors category](https://www.freecodecamp.org/forum/c/contributors) on the forum. Moderators and users with trust level 3 will review the comments and decide whether or not to include the changes in the corresponding hint/solutions topic.
+If you find a problem with an existing challenge's hints/solutions topic, you can make suggestions in the [contributors category](https://forum.freecodecamp.org/c/contributors) on the forum. Moderators and users with trust level 3 will review the comments and decide whether or not to include the changes in the corresponding hint/solutions topic.
 
 ### Adding new Challenge hints/solutions Topics
 

@@ -8,7 +8,7 @@ localeTitle: 我属于哪里？
 ---
 
 ## Description
-<section id="description">返回一个值（第二个参数）应该在排序后插入数组（第一个参数）的最低索引。返回的值应该是一个数字。例如， <code>getIndexToIns([1,2,3,4], 1.5)</code>应返回<code>1</code>因为它大于<code>1</code> （索引0），但小于<code>2</code> （索引1）。同样， <code>getIndexToIns([20,3,5], 19)</code>应返回<code>2</code>因为一旦数组已经排序，它将看起来像<code>[3,5,20]</code> ， <code>19</code>小于<code>20</code> （索引2）并且大于<code>5</code> （指数1）。如果卡住，请记得使用<a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> 。编写自己的代码。 </section>
+<section id="description">返回一个值（第二个参数）应该在排序后插入数组（第一个参数）的最低索引。返回的值应该是一个数字。例如， <code>getIndexToIns([1,2,3,4], 1.5)</code>应返回<code>1</code>因为它大于<code>1</code> （索引0），但小于<code>2</code> （索引1）。同样， <code>getIndexToIns([20,3,5], 19)</code>应返回<code>2</code>因为一旦数组已经排序，它将看起来像<code>[3,5,20]</code> ， <code>19</code>小于<code>20</code> （索引2）并且大于<code>5</code> （指数1）。如果卡住，请记得使用<a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> 。编写自己的代码。 </section>
 
 ## Instructions
 <section id="instructions">

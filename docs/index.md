@@ -95,7 +95,7 @@ If you think you've found a bug, first read the ["Help I've Found a Bug"](https:
 
 If you're confident it's a new bug, go ahead and create a new GitHub issue. Be sure to include as much information as possible so that we can reproduce the bug. We have a pre-defined issue template to help you through this.
 
-Please note that any issues that seek coding help on a challenge will be closed. The issue tracker is strictly for codebase related issues and discussions. Whenever in doubt, you should [seek assistance on the forum](https://www.freecodecamp.org/forum) before making a report.
+Please note that any issues that seek coding help on a challenge will be closed. The issue tracker is strictly for codebase related issues and discussions. Whenever in doubt, you should [seek assistance on the forum](https://forum.freecodecamp.org) before making a report.
 
 ### How can I report a security issue?
 
@@ -146,7 +146,7 @@ Follow the guidelines carefully and open a pull request.
 
 **Feel free to ask for help in:**
 
-- The "Contributors" category of [our community forum](https://www.freecodecamp.org/forum/c/contributors).
+- The "Contributors" category of [our community forum](https://forum.freecodecamp.org/c/contributors).
 - Our public contributors [chat room on Gitter](https://gitter.im/FreeCodeCamp/Contributors).
 
 We are excited to help you contribute to any of the topics that you would like to work on. Feel free to ask us questions on the related issue threads, and we will be glad to clarify. Make sure you search for your query before posting a new one.
@@ -159,10 +159,10 @@ If you have queries about the stack, architecture of the codebase, feel free to 
 
 | Staff                 | Send message on Gitter                                        | Send message on Forum                                                            |
 | :-------------------- | :------------------------------------------------------------ | :------------------------------------------------------------------------------- |
-| Mrugesh Mohapatra     | [@raisedadead](https://gitter.im/raisedadead)                 | [@raisedadead](https://www.freecodecamp.org/forum/u/raisedadead)                 |
-| Ahmad Abdolsaheb      | [@ahmadabdolsaheb](https://gitter.im/ahmadabdolsaheb)         | [@abdolsa](https://www.freecodecamp.org/forum/u/abdolsa)                         |
-| Kristofer Koishigawa  | [@scissorsneedfoodtoo](https://gitter.im/scissorsneedfoodtoo) | [@scissorsneedfoodtoo](https://www.freecodecamp.org/forum/u/scissorsneedfoodtoo) |
-| Tom Mondloc           | [@moT01](https://gitter.im/moT01)                             | [@moT01](https://www.freecodecamp.org/forum/u/moT01)                             |
-| Oliver Eyton-Williams | [@ojeytonwilliams](https://gitter.im/ojeytonwilliams)         | [@ojeytonwilliams](https://www.freecodecamp.org/forum/u/ojeytonwilliams)         |
+| Mrugesh Mohapatra     | [@raisedadead](https://gitter.im/raisedadead)                 | [@raisedadead](https://forum.freecodecamp.org/u/raisedadead)                 |
+| Ahmad Abdolsaheb      | [@ahmadabdolsaheb](https://gitter.im/ahmadabdolsaheb)         | [@abdolsa](https://forum.freecodecamp.org/u/abdolsa)                         |
+| Kristofer Koishigawa  | [@scissorsneedfoodtoo](https://gitter.im/scissorsneedfoodtoo) | [@scissorsneedfoodtoo](https://forum.freecodecamp.org/u/scissorsneedfoodtoo) |
+| Tom Mondloc           | [@moT01](https://gitter.im/moT01)                             | [@moT01](https://forum.freecodecamp.org/u/moT01)                             |
+| Oliver Eyton-Williams | [@ojeytonwilliams](https://gitter.im/ojeytonwilliams)         | [@ojeytonwilliams](https://forum.freecodecamp.org/u/ojeytonwilliams)         |
 
 **You can email our developer staff at: `dev[at]freecodecamp.org`**

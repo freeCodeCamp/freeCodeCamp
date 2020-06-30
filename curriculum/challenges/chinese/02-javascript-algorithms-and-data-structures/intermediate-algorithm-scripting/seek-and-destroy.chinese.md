@@ -8,7 +8,7 @@ localeTitle: 寻找和摧毁
 ---
 
 ## Description
-<section id="description">您将获得一个初始数组（驱逐舰函数中的第一个参数），后跟一个或多个参数。从初始数组中删除与这些参数具有相同值的所有元素。 <strong>注意</strong> <br>你必须使用<code>arguments</code>对象。如果卡住，请记得使用<a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> 。编写自己的代码。 </section>
+<section id="description">您将获得一个初始数组（驱逐舰函数中的第一个参数），后跟一个或多个参数。从初始数组中删除与这些参数具有相同值的所有元素。 <strong>注意</strong> <br>你必须使用<code>arguments</code>对象。如果卡住，请记得使用<a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> 。编写自己的代码。 </section>
 
 ## Instructions
 <section id="instructions">
