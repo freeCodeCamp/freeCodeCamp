@@ -23,7 +23,7 @@ describe('<NavLinks />', () => {
     return acc;
   }, []);
 
-  const expectedLinks = ['/learn', '/news', '/forum'];
+  const expectedLinks = ['/learn', '/news', 'https://forum.freecodecamp.org'];
 
   it('renders to the DOM', () => {
     expect(root).toBeTruthy();
