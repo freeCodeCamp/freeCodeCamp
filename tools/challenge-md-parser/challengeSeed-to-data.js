@@ -43,20 +43,15 @@ function createCodeGetter(key, regEx, seeds) {
 // TODO: any reason to worry about CRLF?
 
 function findRegionMarkers(file) {
-  // console.log('FILE', file);
   const lines = file.contents.split('\n');
-  // console.log('LINES', lines);
   const editableLines = lines
     .map((line, id) => (line.trim() === editableRegionMarker ? id : -1))
     .filter(id => id >= 0);
-
-  // console.log('editable lines', editableLines);
 
   if (editableLines.length > 2) {
     throw Error('Editable region has too many markers' + editableLines);
   }
 
-  // TODO: clean up the logic / presentation of said logic
   if (editableLines.length === 0) {
     return null;
   } else if (editableLines.length === 1) {
