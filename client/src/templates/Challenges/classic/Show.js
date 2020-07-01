@@ -221,12 +221,13 @@ class ShowClassic extends Component {
 
   renderEditor() {
     const { files } = this.props;
-
+    const { description } = this.getChallenge();
     return (
       files && (
         <Editor
           challengeFiles={files}
           containerRef={this.containerRef}
+          description={description}
           ref={this.editorRef}
         />
       )
