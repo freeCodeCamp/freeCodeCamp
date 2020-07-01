@@ -6,6 +6,7 @@ import isEqual from 'lodash/isEqual';
 
 import {
   canFocusEditorSelector,
+  consoleOutputSelector,
   executeChallenge,
   inAccessibilityModeSelector,
   saveEditorContent,
@@ -26,6 +27,7 @@ const propTypes = {
   challengeFiles: PropTypes.object,
   containerRef: PropTypes.any.isRequired,
   contents: PropTypes.string,
+  description: PropTypes.string,
   dimensions: PropTypes.object,
   executeChallenge: PropTypes.func.isRequired,
   ext: PropTypes.string,
@@ -33,6 +35,7 @@ const propTypes = {
   inAccessibilityMode: PropTypes.bool.isRequired,
   initialEditorContent: PropTypes.string,
   initialExt: PropTypes.string,
+  output: PropTypes.string,
   saveEditorContent: PropTypes.func.isRequired,
   setAccessibilityMode: PropTypes.func.isRequired,
   setEditorFocusability: PropTypes.func,
@@ -42,11 +45,13 @@ const propTypes = {
 
 const mapStateToProps = createSelector(
   canFocusEditorSelector,
+  consoleOutputSelector,
   inAccessibilityModeSelector,
   isDonationModalOpenSelector,
   userSelector,
-  (canFocus, accessibilityMode, open, { theme = 'default' }) => ({
+  (canFocus, output, accessibilityMode, open, { theme = 'default' }) => ({
     canFocus: open ? false : canFocus,
+    output,
     inAccessibilityMode: accessibilityMode,
     theme
   })
@@ -126,19 +131,31 @@ class Editor extends Component {
     this.data = {
       indexjs: {
         model: null,
-        state: null
+        state: null,
+        viewZoneId: null,
+        decId: null,
+        viewZoneHeight: null
       },
       indexcss: {
         model: null,
-        state: null
+        state: null,
+        viewZoneId: null,
+        decId: null,
+        viewZoneHeight: null
       },
       indexhtml: {
         model: null,
-        state: null
+        state: null,
+        viewZoneId: null,
+        decId: null,
+        viewZoneHeight: null
       },
       indexjsx: {
         model: null,
-        state: null
+        state: null,
+        viewZoneId: null,
+        decId: null,
+        viewZoneHeight: null
       }
     };
 
@@ -208,7 +225,7 @@ class Editor extends Component {
       const editableRegion = [...challengeFiles[key].editableRegionBoundaries];
 
       if (editableRegion.length === 2)
-        this.decorateForbiddenRanges(model, editableRegion);
+        this.decorateForbiddenRanges(key, editableRegion);
     });
     return { model: this.data[this.state.fileKey].model };
   };
@@ -292,8 +309,206 @@ class Editor extends Component {
     const editableBoundaries = [
       ...challengeFiles[fileKey].editableRegionBoundaries
     ];
-    this.showEditableRegion(editableBoundaries);
+
+    if (editableBoundaries.length === 2) {
+      this.showEditableRegion(editableBoundaries);
+
+      // TODO: is there a nicer approach/way of organising everything that 
+      // avoids the binds? babel-plugin-transform-class-properties ?
+      const getViewZoneTop = this.getViewZoneTop.bind(this);
+      const createDescription = this.createDescription.bind(this);
+      const getOutputZoneTop = this.getOutputZoneTop.bind(this);
+      const createOutputNode = this.createOutputNode.bind(this);
+
+      // TODO: take care that there's no race/ordering problems, with the
+      // placement of domNode (shouldn't be once it's no longer used in the
+      // view zone, but make sure!)
+      this._overlayWidget = {
+        domNode: null,
+        getId: function() {
+          return 'my.overlay.widget';
+        },
+        getDomNode: function() {
+          if (!this.domNode) {
+            this.domNode = createDescription();
+
+            // make sure it's hidden from screenreaders.
+            this.domNode.setAttribute('aria-hidden', true);
+
+            this.domNode.style.background = 'yellow';
+            this.domNode.style.left = editor.getLayoutInfo().contentLeft + 'px';
+            this.domNode.style.width =
+              editor.getLayoutInfo().contentWidth + 'px';
+            this.domNode.style.top = getViewZoneTop();
+          }
+          return this.domNode;
+        },
+        getPosition: function() {
+          if (this.domNode) {
+            this.domNode.style.width =
+              editor.getLayoutInfo().contentWidth + 'px';
+            this.domNode.style.top = getViewZoneTop();
+          }
+          return null;
+        }
+      };
+
+      this._editor.addOverlayWidget(this._overlayWidget);
+
+      // TODO: create this and overlayWidget from the same factory.
+      this._outputWidget = {
+        domNode: null,
+        getId: function() {
+          return 'my.output.widget';
+        },
+        getDomNode: function() {
+          if (!this.domNode) {
+            this.domNode = createOutputNode();
+
+            // make sure it's hidden from screenreaders.
+            this.domNode.setAttribute('aria-hidden', true);
+
+            this.domNode.style.background = 'red';
+            this.domNode.style.left = editor.getLayoutInfo().contentLeft + 'px';
+            this.domNode.style.width =
+              editor.getLayoutInfo().contentWidth + 'px';
+            this.domNode.style.top = getOutputZoneTop();
+          }
+          return this.domNode;
+        },
+        getPosition: function() {
+          if (this.domNode) {
+            this.domNode.style.width =
+              editor.getLayoutInfo().contentWidth + 'px';
+            this.domNode.style.top = getOutputZoneTop();
+          }
+          return null;
+        }
+      };
+
+      this._editor.addOverlayWidget(this._overlayWidget);
+      this._editor.addOverlayWidget(this._outputWidget);
+      // TODO: if we keep using a single editor and switching content (rather
+      // than having multiple open editors), this view zone needs to be
+      // preserved when the tab changes.
+
+      editor.changeViewZones(this.viewZoneCallback);
+      editor.changeViewZones(this.outputZoneCallback);
+
+      editor.onDidScrollChange(() => {
+        editor.layoutOverlayWidget(this._overlayWidget);
+        editor.layoutOverlayWidget(this._outputWidget);
+      });
+    }
   };
+
+  viewZoneCallback = changeAccessor => {
+    const { fileKey } = this.state;
+    // TODO: is there any point creating this here? I know it's cached, but
+    // would it not be better just sourced from the overlayWidget?
+    const domNode = this.createDescription();
+
+    // make sure the overlayWidget has resized before using it to set the height
+    domNode.style.width = this._editor.getLayoutInfo().contentWidth + 'px';
+    domNode.style.top = this.getViewZoneTop();
+
+    // TODO: set via onComputedHeight?
+    this.data[fileKey].viewZoneHeight = domNode.offsetHeight;
+
+    var background = document.createElement('div');
+    background.style.background = 'lightgreen';
+
+    // We have to wait for the viewZone to finish rendering before adjusting the
+    // position of the overlayWidget (i.e. trigger it via onComputedHeight). If
+    // not the editor may report the wrong value for position of the lines.
+    const viewZone = {
+      afterLineNumber: this.getLineAfterViewZone() - 1,
+      heightInPx: domNode.offsetHeight,
+      domNode: background,
+      onComputedHeight: () =>
+        this._editor.layoutOverlayWidget(this._overlayWidget)
+    };
+
+    this.data[fileKey].viewZoneId = changeAccessor.addZone(viewZone);
+  };
+
+  // TODO: this is basically the same as viewZoneCallback, so DRY them out.
+  outputZoneCallback = changeAccessor => {
+    const { fileKey } = this.state;
+    // TODO: is there any point creating this here? I know it's cached, but
+    // would it not be better just sourced from the overlayWidget?
+    const outputNode = this.createOutputNode();
+
+    // make sure the overlayWidget has resized before using it to set the height
+    outputNode.style.width = this._editor.getLayoutInfo().contentWidth + 'px';
+    outputNode.style.top = this.getOutputZoneTop();
+
+    // TODO: set via onComputedHeight?
+    this.data[fileKey].outputZoneHeight = outputNode.offsetHeight;
+
+    var background = document.createElement('div');
+    background.style.background = 'lightpink';
+
+    // We have to wait for the viewZone to finish rendering before adjusting the
+    // position of the overlayWidget (i.e. trigger it via onComputedHeight). If
+    // not the editor may report the wrong value for position of the lines.
+    const viewZone = {
+      afterLineNumber: this.getLineAfterEditableRegion() - 1,
+      heightInPx: outputNode.offsetHeight,
+      domNode: background,
+      onComputedHeight: () =>
+        this._editor.layoutOverlayWidget(this._outputWidget)
+    };
+
+    this.data[fileKey].outputZoneId = changeAccessor.addZone(viewZone);
+  };
+
+  createDescription() {
+    if (this._domNode) return this._domNode;
+    const { description } = this.props;
+    var domNode = document.createElement('div');
+    var desc = document.createElement('div');
+    var button = document.createElement('button');
+    button.innerHTML = 'Run the Tests (Ctrl + Enter)';
+    button.onclick = () => {
+      const { executeChallenge } = this.props;
+      executeChallenge();
+    };
+
+    domNode.appendChild(desc);
+    domNode.appendChild(button);
+    desc.innerHTML = description;
+
+    desc.style.background = 'white';
+    domNode.style.background = 'lightgreen';
+    // TODO: the solution is probably just to use an overlay that's forced to
+    // follow the decorations.
+    // TODO: this is enough for Firefox, but Chrome needs more before the
+    // user can select text by clicking and dragging.
+    domNode.style.userSelect = 'text';
+    // The z-index needs increasing as ViewZones default to below the lines.
+    domNode.style.zIndex = '10';
+
+    this._domNode = domNode;
+
+    return domNode;
+  }
+
+  createOutputNode() {
+    if (this._outputNode) return this._outputNode;
+    const outputNode = document.createElement('div');
+
+    outputNode.innerHTML = 'TESTS GO HERE';
+
+    outputNode.style.background = 'lightblue';
+
+    // The z-index needs increasing as ViewZones default to below the lines.
+    outputNode.style.zIndex = '10';
+
+    this._outputNode = outputNode;
+
+    return outputNode;
+  }
 
   focusOnHotkeys() {
     if (this.props.containerRef.current) {
@@ -307,6 +522,11 @@ class Editor extends Component {
 
   onChange = editorValue => {
     const { updateFile } = this.props;
+    // TODO: widgets can go
+    const widget = this.data[this.state.fileKey].widget;
+    if (widget) {
+      this._editor.layoutContentWidget(widget);
+    }
     updateFile({ key: this.state.fileKey, editorValue });
   };
 
@@ -333,6 +553,7 @@ class Editor extends Component {
   };
 
   showEditableRegion(editableBoundaries) {
+    if (editableBoundaries.length !== 2) return;
     // this is a heuristic: if the cursor is at the start of the page, chances
     // are the user has not edited yet. If so, move to the start of the editable
     // region.
@@ -379,7 +600,53 @@ class Editor extends Component {
     return target.deltaDecorations([], lineDecoration.concat(inlineDecoration));
   }
 
-  decorateForbiddenRanges(model, editableRegion) {
+  // NOTE: this is where the view zone *should* be, not necessarily were it
+  // currently is. (see getLineAfterViewZone)
+  // TODO: DRY this and getOutputZoneTop out.
+  getViewZoneTop() {
+    const heightDelta = this.data[this.state.fileKey].viewZoneHeight || 0;
+
+    const top =
+      this._editor.getTopForLineNumber(this.getLineAfterViewZone()) -
+      heightDelta -
+      this._editor.getScrollTop() +
+      'px';
+
+    return top;
+  }
+
+  getOutputZoneTop() {
+    const heightDelta = this.data[this.state.fileKey].outputZoneHeight || 0;
+
+    const top =
+      this._editor.getTopForLineNumber(this.getLineAfterEditableRegion()) -
+      heightDelta -
+      this._editor.getScrollTop() +
+      'px';
+
+    return top;
+  }
+
+  // It's not possible to directly access the current view zone so we track
+  // the region it should cover instead.
+  // TODO: DRY
+  getLineAfterViewZone() {
+    const { fileKey } = this.state;
+    return (
+      this.data[fileKey].model.getDecorationRange(this.data[fileKey].decId)
+        .endLineNumber + 1
+    );
+  }
+
+  getLineAfterEditableRegion() {
+    const { fileKey } = this.state;
+    return this.data[fileKey].model.getDecorationRange(
+      this.data[fileKey].endEditDecId
+    ).startLineNumber;
+  }
+
+  decorateForbiddenRanges(key, editableRegion) {
+    const model = this.data[key].model;
     const forbiddenRanges = [
       [1, editableRegion[0]],
       [editableRegion[1], model.getLineCount()]
@@ -397,6 +664,10 @@ class Editor extends Component {
       model,
       ranges
     );
+
+    // TODO: avoid getting from array
+    this.data[key].decId = decIds[0];
+    this.data[key].endEditDecId = decIds[1];
 
     // TODO refactor this mess
     // TODO this listener needs to be replaced on reset.
@@ -453,15 +724,55 @@ class Editor extends Component {
   }
 
   componentDidUpdate(prevProps) {
+    // TODO: re-organise into something less nested
+    const { fileKey } = this.state;
     // If a challenge is reset, it needs to communicate that change to the
     // editor. This looks for changes any challenge files and updates if needed.
     if (this.props.challengeFiles !== prevProps.challengeFiles) {
       this.updateEditorValues();
     }
 
-    if (this.props.dimensions !== prevProps.dimensions && this._editor) {
-      this._editor.layout();
+    if (this._editor) {
+      if (this.props.output !== prevProps.output && this._outputNode) {
+        // TODO: output gets wiped when the preview gets updated, keeping the
+        // display is an anti-pattern (the render should not ignore props!).
+        // The correct solution is probably to create a new redux variable
+        // (shownHint,maybe) and have that persist through previews.  But, for
+        // now:
+        if (this.props.output) {
+          this._outputNode.innerHTML = this.props.output;
+          if (this.data[fileKey].decId) {
+            this.updateOutputZone();
+          }
+        }
+      }
+
+      if (this.props.dimensions !== prevProps.dimensions) {
+        // Order matters here. The view zones need to know the new editor
+        // dimensions in order to render correctly.
+        this._editor.layout();
+        if (this.data[fileKey].decId) {
+          console.log('data', this.data[fileKey]);
+          this.updateViewZone();
+          this.updateOutputZone();
+        }
+      }
     }
+  }
+
+  // TODO: DRY (there's going to be a lot of that)
+  updateOutputZone() {
+    this._editor.changeViewZones(changeAccessor => {
+      changeAccessor.removeZone(this.data[this.state.fileKey].outputZoneId);
+      this.outputZoneCallback(changeAccessor);
+    });
+  }
+
+  updateViewZone() {
+    this._editor.changeViewZones(changeAccessor => {
+      changeAccessor.removeZone(this.data[this.state.fileKey].viewZoneId);
+      this.viewZoneCallback(changeAccessor);
+    });
   }
 
   componentWillUnmount() {
@@ -475,6 +786,8 @@ class Editor extends Component {
 
     // TODO: tabs should be dynamically created from the challengeFiles
     // TODO: is the key necessary? Try switching themes without it.
+    // TODO: the tabs mess up the rendering (scroll doesn't work properly and
+    // the in-editor description)
     return (
       <Suspense fallback={<Loader timeout={600} />}>
         <span className='notranslate'>
