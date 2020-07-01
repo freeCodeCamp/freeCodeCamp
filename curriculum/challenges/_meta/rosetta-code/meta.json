@@ -6,7 +6,7 @@
   "template": "",
   "required": [],
   "superBlock": "coding-interview-prep",
-  "superOrder": 8,
+  "superOrder": 11,
   "challengeOrder": [
     [
       "594810f028c0303b75339acb",
@@ -217,6 +217,10 @@
       "Fibonacci word"
     ],
     [
+      "5e9ddb06ec35240f39657419",
+      "FizzBuzz"
+    ],
+    [
       "5a7dad05be01840e1778a0d1",
       "Fractran"
     ],
@@ -409,12 +413,32 @@
       "Lucas-Lehmer test"
     ],
     [
+      "5ea281203167d2b0bdefca00",
+      "Ludic numbers"
+    ],
+    [
+      "5ea28156e79528a9ab248f27",
+      "Luhn test of credit card numbers"
+    ],
+    [
+      "5ea2815a8640bcc6cb7dab3c",
+      "Lychrel numbers"
+    ],
+    [
+      "5ea2815e364d9a2222ea55f8",
+      "LZW compression"
+    ],
+    [
       "59da22823d04c95919d46269",
       "Sailors, coconuts and a monkey problem"
     ],
     [
       "59d9c6bc214c613ba73ff012",
       "SEDOLs"
+    ],
+    [
+      "5eaf48389ee512d4d103684b",
+      "Self Describing Numbers"
     ],
     [
       "59667989bf71cf555dd5d2ff",

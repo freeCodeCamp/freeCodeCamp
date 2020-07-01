@@ -2,6 +2,7 @@
 id: bad87fee1348bd9aefe08806
 title: Style Multiple Elements with a CSS Class
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cRkVbsQ'
 forumTopicId: 18311
 ---

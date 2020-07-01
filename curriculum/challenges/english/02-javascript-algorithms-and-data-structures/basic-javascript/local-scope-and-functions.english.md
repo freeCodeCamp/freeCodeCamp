@@ -2,6 +2,7 @@
 id: 56533eb9ac21ba0edf2244bf
 title: Local Scope and Functions
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cd62NhM'
 forumTopicId: 18227
 ---
@@ -43,7 +44,7 @@ tests:
       }
       assert.throws(declared, ReferenceError);
   - text: You should add a local <code>myVar</code> variable.
-    testString: assert(/functionmyLocalScope\(\)\{.+(var|let|const)myVar.*}/s.test(code.replace(/\s/g, '')));
+    testString: assert(/functionmyLocalScope\(\)\{.+(var|let|const)myVar[\s\S]*}/.test(code.replace(/\s/g, '')));
 
 
 ```

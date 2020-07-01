@@ -3,6 +3,7 @@ id: a5229172f011153519423690
 title: Sum All Odd Fibonacci Numbers
 isRequired: true
 challengeType: 5
+isHidden: false
 forumTopicId: 16084
 ---
 

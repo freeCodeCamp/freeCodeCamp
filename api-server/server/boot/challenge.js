@@ -18,6 +18,7 @@ import { ifNoUserSend } from '../utils/middleware';
 import { dasherize } from '../../../utils/slugs';
 import _pathMigrations from '../resources/pathMigration.json';
 import { fixCompletedChallengeItem } from '../../common/utils';
+import { getChallenges } from '../utils/get-curriculum';
 
 const log = debug('fcc:boot:challenges');
 
@@ -26,7 +27,9 @@ export default async function bootChallenge(app, done) {
   const api = app.loopback.Router();
   const router = app.loopback.Router();
   const redirectToLearn = createRedirectToLearn(_pathMigrations);
-  const challengeUrlResolver = await createChallengeUrlResolver(app);
+  const challengeUrlResolver = await createChallengeUrlResolver(
+    await getChallenges()
+  );
   const redirectToCurrentChallenge = createRedirectToCurrentChallenge(
     challengeUrlResolver
   );
@@ -148,44 +151,46 @@ export function buildChallengeUrl(challenge) {
   return `/learn/${dasherize(superBlock)}/${dasherize(block)}/${dashedName}`;
 }
 
-export function getFirstChallenge(Challenge) {
-  return new Promise(resolve => {
-    Challenge.findOne(
-      { where: { challengeOrder: 0, superOrder: 1, order: 0 } },
-      (err, challenge) => {
-        if (err || isEmpty(challenge)) {
-          return resolve('/learn');
-        }
-        return resolve(buildChallengeUrl(challenge));
-      }
-    );
-  });
+// this is only called once during boot, so it can be slow.
+export function getFirstChallenge(allChallenges) {
+  const first = allChallenges.find(
+    ({ challengeOrder, superOrder, order }) =>
+      challengeOrder === 0 && superOrder === 1 && order === 0
+  );
+
+  return first ? buildChallengeUrl(first) : '/learn';
+}
+
+function getChallengeById(allChallenges, targetId) {
+  return allChallenges.find(({ id }) => id === targetId);
 }
 
 export async function createChallengeUrlResolver(
-  app,
+  allChallenges,
   { _getFirstChallenge = getFirstChallenge } = {}
 ) {
-  const { Challenge } = app.models;
   const cache = new Map();
-  const firstChallenge = await _getFirstChallenge(Challenge);
+  const firstChallenge = _getFirstChallenge(allChallenges);
+
   return function resolveChallengeUrl(id) {
     if (isEmpty(id)) {
       return Promise.resolve(firstChallenge);
-    }
-    return new Promise(resolve => {
-      if (cache.has(id)) {
-        return resolve(cache.get(id));
-      }
-      return Challenge.findById(id, (err, challenge) => {
-        if (err || isEmpty(challenge)) {
-          return resolve(firstChallenge);
+    } else {
+      return new Promise(resolve => {
+        if (cache.has(id)) {
+          resolve(cache.get(id));
         }
-        const challengeUrl = buildChallengeUrl(challenge);
-        cache.set(id, challengeUrl);
-        return resolve(challengeUrl);
+
+        const challenge = getChallengeById(allChallenges, id);
+        if (isEmpty(challenge)) {
+          resolve(firstChallenge);
+        } else {
+          const challengeUrl = buildChallengeUrl(challenge);
+          cache.set(id, challengeUrl);
+          resolve(challengeUrl);
+        }
       });
-    });
+    }
   };
 }
 

@@ -11,16 +11,15 @@ import {
   challengeMounted,
   updateChallengeMeta,
   openModal,
-  updateProjectFormValues
+  updateSolutionFormValues
 } from '../../redux';
-import { frontEndProject } from '../../../../../utils/challengeTypes';
 import { getGuideUrl } from '../../utils';
 
 import LearnLayout from '../../../../components/layouts/Learn';
 import ChallengeTitle from '../../components/Challenge-Title';
 import ChallengeDescription from '../../components/Challenge-Description';
 import Spacer from '../../../../components/helpers/Spacer';
-import ProjectForm from '../ProjectForm';
+import SolutionForm from '../SolutionForm';
 import ProjectToolPanel from '../Tool-Panel';
 import CompletionModal from '../../components/CompletionModal';
 import HelpModal from '../../components/HelpModal';
@@ -32,7 +31,7 @@ const mapDispatchToProps = dispatch =>
     {
       updateChallengeMeta,
       challengeMounted,
-      updateProjectFormValues,
+      updateSolutionFormValues,
       openCompletionModal: () => openModal('completion')
     },
     dispatch
@@ -48,7 +47,7 @@ const propTypes = {
     challengeMeta: PropTypes.object
   }),
   updateChallengeMeta: PropTypes.func.isRequired,
-  updateProjectFormValues: PropTypes.func.isRequired
+  updateSolutionFormValues: PropTypes.func.isRequired
 };
 
 export class Project extends Component {
@@ -105,11 +104,11 @@ export class Project extends Component {
       pageContext: {
         challengeMeta: { introPath, nextChallengePath, prevChallengePath }
       },
-      updateProjectFormValues
+      updateSolutionFormValues
     } = this.props;
-    const isFrontEnd = challengeType === frontEndProject;
 
     const blockNameTitle = `${blockName} - ${title}`;
+
     return (
       <Hotkeys
         innerRef={c => (this._container = c)}
@@ -125,10 +124,11 @@ export class Project extends Component {
                 <Spacer />
                 <ChallengeTitle>{blockNameTitle}</ChallengeTitle>
                 <ChallengeDescription description={description} />
-                <ProjectForm
-                  isFrontEnd={isFrontEnd}
+                <SolutionForm
+                  challengeType={challengeType}
+                  description={description}
                   onSubmit={openCompletionModal}
-                  updateProjectForm={updateProjectFormValues}
+                  updateSolutionForm={updateSolutionFormValues}
                 />
                 <ProjectToolPanel
                   guideUrl={getGuideUrl({ forumTopicId, title })}

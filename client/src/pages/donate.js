@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
+import { Grid, Row, Col, Alert } from '@freecodecamp/react-bootstrap';
 
 import { stripePublicKey } from '../../config/env.json';
 import { Spacer, Loader } from '../components/helpers';
@@ -119,24 +119,35 @@ export class DonatePage extends Component {
             </Col>
           </Row>
           <Row>
-            {isDonating ? (
-              <Col md={6} mdOffset={3}>
+            <Fragment>
+              <Col md={6}>
+                <Row>
+                  <Col sm={10} smOffset={1} xs={12}>
+                    {isDonating ? (
+                      <Alert>
+                        <p>
+                          Thank you for being a supporter of freeCodeCamp. You
+                          currently have a recurring donation.
+                        </p>
+                        <br />
+                        <p>
+                          If you would like to make additional donations, those
+                          will help our nonprofit and our mission, too.
+                        </p>
+                      </Alert>
+                    ) : null}
+                  </Col>
+                </Row>
+                <DonateForm
+                  enableDonationSettingsPage={this.enableDonationSettingsPage}
+                  handleProcessing={this.handleProcessing}
+                  stripe={stripe}
+                />
+              </Col>
+              <Col md={6}>
                 <DonateText />
               </Col>
-            ) : (
-              <Fragment>
-                <Col md={6}>
-                  <DonateForm
-                    enableDonationSettingsPage={this.enableDonationSettingsPage}
-                    handleProcessing={this.handleProcessing}
-                    stripe={stripe}
-                  />
-                </Col>
-                <Col md={6}>
-                  <DonateText />
-                </Col>
-              </Fragment>
-            )}
+            </Fragment>
           </Row>
           <Spacer />
         </Grid>

@@ -8,7 +8,7 @@ localeTitle: 重复一个字符串重复字符串
 ---
 
 ## Description
-<section id="description">为<code>num</code> times（第二个参数）重复给定的字符串<code>str</code> （第一个参数）。如果<code>num</code>不是正数，则返回空字符串。如果卡住，请记得使用<a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> 。编写自己的代码。 </section>
+<section id="description">为<code>num</code> times（第二个参数）重复给定的字符串<code>str</code> （第一个参数）。如果<code>num</code>不是正数，则返回空字符串。如果卡住，请记得使用<a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> 。编写自己的代码。 </section>
 
 ## Instructions
 <section id="instructions">

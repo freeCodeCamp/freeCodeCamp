@@ -34,7 +34,7 @@ module.exports = {
       options: {
         name: 'challenges',
         source: buildChallenges,
-        onSourceChange: replaceChallengeNode,
+        onSourceChange: replaceChallengeNode(config.locale),
         curriculumPath: localeChallengesRootDir
       }
     },

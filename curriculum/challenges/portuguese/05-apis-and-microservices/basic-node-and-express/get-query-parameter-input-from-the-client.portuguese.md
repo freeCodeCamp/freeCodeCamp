@@ -25,7 +25,7 @@ DICA: No exercício a seguir, vamos receber dados de uma solicitação POST, no 
 tests:
   - text: 'Teste 1: o endpoint da sua API deve responder com o nome correto'
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/name?first=Mick&last=Jagger'').then(data => { assert.equal(data.name, ''Mick Jagger'', ''Test 1: "GET /name" route does not behave as expected'') }, xhr => { throw new Error(xhr.responseText); })'
-  - text: 'Teste 2: seu ponto de extremidade APi deve responder com o nome correto'
+  - text: 'Teste 2: seu ponto de extremidade API deve responder com o nome correto'
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/name?last=Richards&first=Keith'').then(data => { assert.equal(data.name, ''Keith Richards'', ''Test 2: "GET /name" route does not behave as expected'') }, xhr => { throw new Error(xhr.responseText); })'
 
 ```

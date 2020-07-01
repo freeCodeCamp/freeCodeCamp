@@ -2,7 +2,7 @@ import { createAction, handleActions } from 'redux-actions';
 
 import { createTypes } from '../../../../utils/stateManagement';
 
-import { createPoly } from '../utils/polyvinyl';
+import { createPoly } from '../../../../../utils/polyvinyl';
 import challengeModalEpic from './challenge-modal-epic';
 import completionEpic from './completion-epic';
 import codeLockEpic from './code-lock-epic';
@@ -52,12 +52,11 @@ export const types = createTypes(
     'initTests',
     'initConsole',
     'initLogs',
-    'updateBackendFormValues',
     'updateConsole',
     'updateChallengeMeta',
     'updateFile',
     'updateJSEnabled',
-    'updateProjectFormValues',
+    'updateSolutionFormValues',
     'updateSuccessMessage',
     'updateTests',
     'updateLogs',
@@ -128,16 +127,13 @@ export const cancelTests = createAction(types.cancelTests);
 
 export const initConsole = createAction(types.initConsole);
 export const initLogs = createAction(types.initLogs);
-export const updateBackendFormValues = createAction(
-  types.updateBackendFormValues
-);
 export const updateChallengeMeta = createAction(types.updateChallengeMeta);
 export const updateFile = createAction(types.updateFile);
 export const updateConsole = createAction(types.updateConsole);
 export const updateLogs = createAction(types.updateLogs);
 export const updateJSEnabled = createAction(types.updateJSEnabled);
-export const updateProjectFormValues = createAction(
-  types.updateProjectFormValues
+export const updateSolutionFormValues = createAction(
+  types.updateSolutionFormValues
 );
 export const updateSuccessMessage = createAction(types.updateSuccessMessage);
 
@@ -190,8 +186,6 @@ export const isResetModalOpenSelector = state => state[ns].modal.reset;
 export const isBuildEnabledSelector = state => state[ns].isBuildEnabled;
 export const successMessageSelector = state => state[ns].successMessage;
 
-export const backendFormValuesSelector = state =>
-  state[ns].backendFormValues || {};
 export const projectFormValuesSelector = state =>
   state[ns].projectFormValues || {};
 
@@ -207,12 +201,15 @@ export const challengeDataSelector = state => {
       files: challengeFilesSelector(state)
     };
   } else if (challengeType === challengeTypes.backend) {
-    const { solution: url = {} } = backendFormValuesSelector(state);
+    const { solution: url = {} } = projectFormValuesSelector(state);
     challengeData = {
       ...challengeData,
       url
     };
-  } else if (challengeType === challengeTypes.backEndProject) {
+  } else if (
+    challengeType === challengeTypes.backEndProject ||
+    challengeType === challengeTypes.pythonProject
+  ) {
     const values = projectFormValuesSelector(state);
     const { solution: url } = values;
     challengeData = {
@@ -326,11 +323,7 @@ export const reducer = handleActions(
       })),
       consoleOut: ''
     }),
-    [types.updateBackendFormValues]: (state, { payload }) => ({
-      ...state,
-      backendFormValues: payload
-    }),
-    [types.updateProjectFormValues]: (state, { payload }) => ({
+    [types.updateSolutionFormValues]: (state, { payload }) => ({
       ...state,
       projectFormValues: payload
     }),

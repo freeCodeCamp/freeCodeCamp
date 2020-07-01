@@ -3,7 +3,9 @@ import csurf from 'csurf';
 export default function() {
   const protection = csurf({
     cookie: {
-      domain: process.env.COOKIE_DOMAIN || 'localhost'
+      domain: process.env.COOKIE_DOMAIN || 'localhost',
+      sameSite: 'strict',
+      secure: process.env.FREECODECAMP_NODE_ENV === 'production'
     }
   });
   return function csrf(req, res, next) {

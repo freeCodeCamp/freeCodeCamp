@@ -25,7 +25,7 @@ challengeType: 2
 tests:
   - text: "الاختبار 1: يجب أن تستجيب نقطة نهاية API الخاصة بك بالاسم الصحيح"
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/name?first=Mick&last=Jagger'').then(data => { assert.equal(data.name, ''Mick Jagger'', ''Test 1: "GET /name" route does not behave as expected'') }, xhr => { throw new Error(xhr.responseText); })'
-  - text: "الاختبار 2: يجب أن تستجيب نقطة نهاية APi الخاصة بك بالاسم الصحيح"
+  - text: "الاختبار 2: يجب أن تستجيب نقطة نهاية API الخاصة بك بالاسم الصحيح"
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/name?last=Richards&first=Keith'').then(data => { assert.equal(data.name, ''Keith Richards'', ''Test 2: "GET /name" route does not behave as expected'') }, xhr => { throw new Error(xhr.responseText); })'
 
 ```

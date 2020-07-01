@@ -1,0 +1,30 @@
+{
+  "name": "Scientific Computing with Python Projects",
+  "dashedName": "scientific-computing-with-python-projects",
+  "order": 2,
+  "time": "150 hours",
+  "superBlock": "scientific-computing-with-python",
+  "superOrder": 7,
+  "challengeOrder": [
+    [
+      "5e44412c903586ffb414c94c",
+      "Arithmetic Formatter"
+    ],
+    [
+      "5e444136903586ffb414c94d",
+      "Time Calculator"
+    ],
+    [
+      "5e44413e903586ffb414c94e",
+      "Budget App"
+    ],
+    [
+      "5e444147903586ffb414c94f",
+      "Polygon Area Calculator"
+    ],
+    [
+      "5e44414f903586ffb414c950",
+      "Probability Calculator"
+    ]
+  ]
+}

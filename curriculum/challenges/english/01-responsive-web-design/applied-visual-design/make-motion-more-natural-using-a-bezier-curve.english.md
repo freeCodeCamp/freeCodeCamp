@@ -2,6 +2,7 @@
 id: 587d78a9367417b2b2512aea
 title: Make Motion More Natural Using a Bezier Curve
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/c/c7akWUv'
 forumTopicId: 301063
 ---

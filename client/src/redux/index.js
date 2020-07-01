@@ -213,10 +213,15 @@ export const certificatesByNameSelector = username => state => {
     isJsAlgoDataStructCert,
     isApisMicroservicesCert,
     isInfosecQaCert,
+    isQaCertV7,
+    isInfosecCertV7,
     isFrontEndCert,
     isBackEndCert,
     isDataVisCert,
-    isFullStackCert
+    isFullStackCert,
+    isSciCompPyCertV7,
+    isDataAnalysisPyCertV7,
+    isMachineLearningPyCertV7
   } = userByNameSelector(username)(state);
   return {
     hasModernCert:
@@ -225,15 +230,16 @@ export const certificatesByNameSelector = username => state => {
       isFrontEndLibsCert ||
       isJsAlgoDataStructCert ||
       isApisMicroservicesCert ||
-      isInfosecQaCert ||
-      isFullStackCert,
-    hasLegacyCert: isFrontEndCert || isBackEndCert || isDataVisCert,
+      isQaCertV7 ||
+      isInfosecCertV7 ||
+      isFullStackCert ||
+      isSciCompPyCertV7 ||
+      isDataAnalysisPyCertV7 ||
+      isMachineLearningPyCertV7,
+    hasLegacyCert:
+      isFrontEndCert || isBackEndCert || isDataVisCert || isInfosecQaCert,
+    isFullStackCert,
     currentCerts: [
-      {
-        show: isFullStackCert,
-        title: 'Full Stack Certification',
-        showURL: 'full-stack'
-      },
       {
         show: isRespWebDesignCert,
         title: 'Responsive Web Design Certification',
@@ -260,9 +266,29 @@ export const certificatesByNameSelector = username => state => {
         showURL: 'apis-and-microservices'
       },
       {
-        show: isInfosecQaCert,
-        title: 'Information Security and Quality Assurance Certification',
-        showURL: 'information-security-and-quality-assurance'
+        show: isQaCertV7,
+        title: ' Quality Assurance Certification',
+        showURL: 'quality-assurance-v7'
+      },
+      {
+        show: isInfosecCertV7,
+        title: 'Information Security Certification',
+        showURL: 'information-security-v7'
+      },
+      {
+        show: isSciCompPyCertV7,
+        title: 'Scientific Computing with Python Certification',
+        showURL: 'scientific-computing-with-python-v7'
+      },
+      {
+        show: isDataAnalysisPyCertV7,
+        title: 'Data Analysis with Python Certification',
+        showURL: 'data-analysis-with-python-v7'
+      },
+      {
+        show: isMachineLearningPyCertV7,
+        title: 'Machine Learning with Python Certification',
+        showURL: 'machine-learning-with-python-v7'
       }
     ],
     legacyCerts: [
@@ -280,6 +306,18 @@ export const certificatesByNameSelector = username => state => {
         show: isDataVisCert,
         title: 'Data Visualization Certification',
         showURL: 'legacy-data-visualization'
+      },
+      {
+        show: isInfosecQaCert,
+        title: 'Information Security and Quality Assurance Certification',
+        // Keep the current public profile cert slug
+        showURL: 'information-security-and-quality-assurance'
+      },
+      {
+        show: isFullStackCert,
+        title: 'Full Stack Certification',
+        // Keep the current public profile cert slug
+        showURL: 'full-stack'
       }
     ]
   };
@@ -447,12 +485,10 @@ export const reducer = handleActions(
         error: payload
       }
     }),
-    [types.submitComplete]: (state, { payload: { id, challArray } }) => {
-      // TODO: possibly more of the payload (files?) should be added
-      // to the completedChallenges array.
-      let submittedchallenges = [{ id, completedDate: Date.now() }];
-      if (challArray) {
-        submittedchallenges = challArray;
+    [types.submitComplete]: (state, { payload }) => {
+      let submittedchallenges = [{ ...payload, completedDate: Date.now() }];
+      if (payload.challArray) {
+        submittedchallenges = payload.challArray;
       }
       const { appUsername } = state;
       return {

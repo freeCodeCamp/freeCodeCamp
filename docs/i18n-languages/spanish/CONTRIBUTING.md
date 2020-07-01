@@ -19,7 +19,7 @@ Puedes optar por contribuir a cualquier área de tu interés:
 
 1. [Contribuir a esta base de código abierto](#contribuye-a-esta-base-de-código-abierto). Ayúdanos a editar desafíos de código, o corrige errores en la plataforma de aprendizaje.
 
-2. Ayuda a los campistas en nuestro [foro público](https://www.freecodecamp.org/forum/). [Responde a sus preguntas de código](https://www.freecodecamp.org/forum/?max_posts=1) o [aporta comentarios a sus proyectos](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1).
+2. Ayuda a los campistas en nuestro [foro público](https://forum.freecodecamp.org/). [Responde a sus preguntas de código](https://forum.freecodecamp.org/?max_posts=1) o [aporta comentarios a sus proyectos](https://forum.freecodecamp.org/c/project-feedback?max_posts=1).
 
 3. Ayúdanos a agregar subtítulos a los vídeos de nuestro [canal de YouTube](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ/videos).
 
@@ -83,7 +83,7 @@ Si crees que has encontrado un error, primero lee el artículo ["Ayuda, he encon
 
 Si estás seguro de que es un error nuevo, siga adelante y crea un nuevo problema o _Issue_ en GitHub. Asegúrate de incluir la mayor cantidad de información posible para que podamos reproducir el error.
 
-Ten en cuenta que cualquier problema que se registre para resolver dudas sobre el código de un desafío se cerrará. El seguimiento de problemas es estrictamente para los temas y discusiones relacionadas con la base de código. Si tienes alguna duda, puedes [buscar ayuda en el foro](https://www.freecodecamp.org/forum) antes de reportar un problema.
+Ten en cuenta que cualquier problema que se registre para resolver dudas sobre el código de un desafío se cerrará. El seguimiento de problemas es estrictamente para los temas y discusiones relacionadas con la base de código. Si tienes alguna duda, puedes [buscar ayuda en el foro](https://forum.freecodecamp.org) antes de reportar un problema.
 
 ### ¿Cómo puedo reportar un problema de seguridad?
 
@@ -93,7 +93,7 @@ Por favor, no crees _issues_ de GitHub para problemas de seguridad. En su lugar,
 
 Los moderadores de nuestra comunidad [evalúan](https://en.wikipedia.org/wiki/Software_bug#Bug_management) _issues_ y _pull requests_ y los clasifican según la prioridad, la gravedad y otros factores. Puedes [encontrar un glosario completo de sus significados aquí](https://github.com/freecodecamp/freecodecamp/labels).
 
-Debes buscar los problemas con las etiquetas [**`help wanted`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) o [**`first timers welcome`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+welcome%22) para localizar rápidamente lo que está disponible para que trabajes.
+Debes buscar los problemas con las etiquetas [**`help wanted`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) o [**`first timers only`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+only%22) para localizar rápidamente lo que está disponible para que trabajes.
 
 Estos están libres para todos y no necesitan permisos antes de trabajar en ellos. Si estos temas no dejan claro lo que se debe hacer no dudes en preguntar en los comentarios.
 
@@ -114,7 +114,7 @@ Normalmente no asignamos problemas a nadie excepto a colaboradores veteranos par
     - ¿Seguiste la lista de tareas para el _pull request_?
     - ¿Le has puesto un título significativo?
 
-No necesitas permiso para _issues_ que estén marcados con `help wanted` o `first timers welcome` como se explicó anteriormente. Sigue las recomendaciones con cuidado y abre el _pull request_.
+No necesitas permiso para _issues_ que estén marcados con `help wanted` o `first timers only` como se explicó anteriormente. Sigue las recomendaciones con cuidado y abre el _pull request_.
 
 ### Soy nuevo en GitHub y en Open Source en general
 
@@ -124,7 +124,7 @@ Lee nuestra [Guía de cómo contribuir al código abierto](https://github.com/fr
 
 No dudes en pedir ayuda en:
 
-- [La categoría "Colaboradores" en nuestro foro público](https://www.freecodecamp.org/forum/c/contributors).
+- [La categoría "Colaboradores" en nuestro foro público](https://forum.freecodecamp.org/c/contributors).
 - [La sala de chat de nuestros colaboradores públicos en Gitter](https://gitter.im/FreeCodeCamp/Contributors).
 
 Nos emociona ayudarte a contribuir con cualquiera de los temas en los que te gustaría trabajar. Te invitamos a hacernos preguntas en el hilo del problema, y estaremos encantados de aclarar cualquier cosa. Asegúrate de buscar tu consulta antes de publicar una nueva. Sé educado y paciente. Nuestros voluntarios y moderadores de la comunidad están siempre alrededor para guiarte a través de tus consultas.

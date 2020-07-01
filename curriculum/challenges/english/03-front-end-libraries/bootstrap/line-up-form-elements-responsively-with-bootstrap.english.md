@@ -5,6 +5,7 @@ required:
   - link: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css'
     raw: true
 challengeType: 0
+isHidden: false
 forumTopicId: 18225
 ---
 

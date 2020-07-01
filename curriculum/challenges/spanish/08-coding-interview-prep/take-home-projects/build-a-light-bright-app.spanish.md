@@ -28,7 +28,7 @@ localeTitle: Construir una aplicación de luces de colores
 
 7. Puedes hacer clic en el botón &quot;Restablecer todo&quot; para eliminar todos los colores de los círculos. 
 
-Recuerda usar <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> si te atascas. Cuando hayas terminado, haz clic en el botón &quot;He completado este desafío&quot; e incluye un enlace a tu CodePen. Puedes obtener comentarios sobre tu proyecto compartiéndolo con tus amigos en Facebook. </section>
+Recuerda usar <a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> si te atascas. Cuando hayas terminado, haz clic en el botón &quot;He completado este desafío&quot; e incluye un enlace a tu CodePen. Puedes obtener comentarios sobre tu proyecto compartiéndolo con tus amigos en Facebook. </section>
 
 ## Instructions
 <section id="instructions">

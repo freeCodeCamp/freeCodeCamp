@@ -2,6 +2,7 @@
 id: 587d78a9367417b2b2512ae8
 title: Learn How Bezier Curves Work
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/c/c9bDrs8'
 forumTopicId: 301058
 ---

@@ -2,6 +2,7 @@
 id: 587d7dbd367417b2b2512bb4
 title: Store Data with Sass Variables
 challengeType: 0
+isHidden: false
 forumTopicId: 301460
 ---
 
@@ -54,7 +55,7 @@ tests:
 <div id='html-seed'>
 
 ```html
-<style type='text/sass'>
+<style type='text/scss'>
 
 
   .header{
@@ -90,7 +91,7 @@ tests:
 <section id='solution'>
 
 ```html
-<style type='text/sass'>
+<style type='text/scss'>
   $text-color: red;
 
   .header{

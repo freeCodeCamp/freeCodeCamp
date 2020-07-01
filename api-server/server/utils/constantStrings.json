@@ -4,12 +4,17 @@
   "legacyFrontEndChallengeId": "561add10cb82ac38a17513be",
   "legacyBackEndChallengeId": "660add10cb82ac38a17513be",
   "legacyDataVisId": "561add10cb82ac39a17513bc",
+  "legacyInfosecQaId": "561add10cb82ac38a17213bc",
+  "legacyFullStackId": "561add10cb82ac38a17213bd",
 
   "respWebDesignId": "561add10cb82ac38a17513bc",
   "frontEndLibsId": "561acd10cb82ac38a17513bc",
   "dataVis2018Id": "5a553ca864b52e1d8bceea14",
   "jsAlgoDataStructId": "561abd10cb81ac38a17513bc",
   "apisMicroservicesId": "561add10cb82ac38a17523bc",
-  "infosecQaId": "561add10cb82ac38a17213bc",
-  "fullStackId": "561add10cb82ac38a17213bd"
+  "qaV7Id": "5e611829481575a52dc59c0e",
+  "infosecV7Id": "5e6021435ac9d0ecd8b94b00",
+  "sciCompPyV7Id": "5e44431b903586ffb414c951",
+  "dataAnalysisPyV7Id": "5e46fc95ac417301a38fb934",
+  "machineLearningPyV7Id": "5e46fc95ac417301a38fb935"
 }

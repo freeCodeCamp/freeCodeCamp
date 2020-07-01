@@ -2,6 +2,7 @@
 id: 587d7b83367417b2b2512b33
 title: Use the JavaScript Console to Check the Value of a Variable
 challengeType: 1
+isHidden: false
 forumTopicId: 18372
 ---
 

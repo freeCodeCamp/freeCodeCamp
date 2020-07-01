@@ -15,14 +15,15 @@
   flex-wrap: wrap;
   justify-content: space-around;
   align-content: center;
-}
-
-.logo-row h2 {
-  height: 35px;
-  padding: 0 10px 0 10px;
+  margin-bottom: 10px;
 }
 
 .landing-page ul {
   list-style: none;
   padding-left: 0px;
+}
+
+#featured-logos {
+  margin-top: 10px;
+  max-width: 600px;
 }

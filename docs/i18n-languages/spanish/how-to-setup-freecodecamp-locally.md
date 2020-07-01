@@ -443,7 +443,7 @@ Sigue estos pasos:
 
 ## Para obtener ayuda
 
-SI estás atascado y necesitas ayuda, haznoslo saber preguntando en ['Contributors' category on our forum](https://www.freecodecamp.org/forum/c/contributors) o en [Contributors chat room](https://gitter.im/FreeCodeCamp/Contributors) en Gitter.
+SI estás atascado y necesitas ayuda, haznoslo saber preguntando en ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) o en [Contributors chat room](https://gitter.im/FreeCodeCamp/Contributors) en Gitter.
 
 Puede haber un error en la consola de tu navegador o en el Terminal / Linea de Comandos que te ayudará a identificar el problema.
 

@@ -2,6 +2,7 @@
 id: bad87fee1348bd9aec908848
 title: Create Bootstrap Wells
 challengeType: 0
+isHidden: false
 forumTopicId: 16825
 ---
 

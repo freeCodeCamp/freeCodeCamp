@@ -11,6 +11,11 @@ on:
       - master
 jobs:
   cypress-run:
+    env:
+      CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # our .npmrc sets a default version to 0, and prevents download. This installs it.
+      CYPRESS_INSTALL_BINARY: '4.6.0'
     name: Cypress run
     runs-on: ubuntu-latest
     services:
@@ -21,18 +26,15 @@ jobs:
           - 27017:27017
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
 
       - name: Set up environment
         run: cp sample.env .env
 
       - name: Cypress run
         uses: cypress-io/github-action@v1
-        env:
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          record: true
+          record: ${{ env.CYPRESS_RECORD_KEY != 0 }}
           build: npm run build
           # this should mirror the production build, but for now we're just using the dev
           # server and gatsby serve instead (the npm script serve:client needs updating!)

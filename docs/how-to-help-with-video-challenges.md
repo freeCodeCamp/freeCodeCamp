@@ -32,7 +32,7 @@ An optional description with helpful information related to the video.
 <section id='tests'>
 
 ```yml
-tests:
+question:
   text: 'Question'
   answers:
     - 'Answer One'
@@ -50,10 +50,10 @@ tests:
 
 You can find the markdown files for video challenges at the following locations in the curriculum:
 
-- [Data Analysis with Python Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/next-python-projects/curriculum/challenges/english/08-data-analysis-with-python/data-analysis-with-python-course)
-- [TensorFlow 2.0 Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/next-python-projects/curriculum/challenges/english/11-machine-learning-with-python/tensorflow)
-- [Numpy Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/next-python-projects/curriculum/challenges/english/08-data-analysis-with-python/numpy)
-- [How Neural Networks Work Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/next-python-projects/curriculum/challenges/english/11-machine-learning-with-python/how-neural-networks-work)
+- [Data Analysis with Python Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/08-data-analysis-with-python/data-analysis-with-python-course)
+- [TensorFlow 2.0 Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/11-machine-learning-with-python/tensorflow)
+- [Numpy Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/08-data-analysis-with-python/numpy)
+- [How Neural Networks Work Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/11-machine-learning-with-python/how-neural-networks-work)
 
 Pick a challenge markdown file from the options above.
 
@@ -85,59 +85,126 @@ You can add the question locally or directly throught the GitHub interface. To a
 If a question has not yet been added to a particular video challenge, it will have the following default question:
 
 ```yml
-tests:
-  text: Question
+question:
+  text: |
+    Question
   answers:
-    - one
-    - two
-    - three
+    - |
+      one
+    - |
+      two
+    - |
+      three
   solution: 3
 ```
 
 Update the word “Question” with your question. Update the “one”, “two”, and “three” with the possible answers. Make sure to update the solution number with which answer is correct. You can add more possible answers using the same format. The question and answers can be surrounded with quotation marks.
 
-Questions and answers can contain certain HTML tags like `<br>` for a new line. Surround code with `<pre></pre>` You will need to add a `<br>` at the end of each line of code.
+#### Use markdown to format your question
+
+The text in the question is parsed as markdown. The simplest way to ensure that it is formatted correctly is to start the question with `text: |`, like this:
+
+```yml
+question:
+  text: |
+    Question
+```
+
+Then you need to make sure that your question is on a new line and indented one level more than `text: |`.
+
+The same approach can be used for the answers, so the entire question becomes
+
+```yml
+question:
+  text: |
+    Question
+  answers:
+  - |
+    First answer
+  - |
+    Second
+  - |
+    Third
+  solution: 2
+```
 
 Make sure each answer is plausible but there is only one correct answer.
 
-## Question examples
+#### Use of HTML
 
-Here are a few examples:
+Questions and answers can contain certain HTML tags like `<br>` for a new line. HTML tags should be used sparingly, when questions cannot be expressed without them.
+
+### Question examples
+
+#### Examples without HTML
+
+````yml
+question:
+  text: |
+    What does this JavaScript code log to the console?
+    ```js
+    console.log('hello world');
+    ```
+
+    Select an answer!
+  answers:
+    - |
+      hello *world*
+    - |
+      **hello** world
+    - |
+      hello world
+  solution: 3
+````
+
+````yml
+question:
+  text: |
+    What will print out after running this code:
+    ```py
+    width = 15
+    height = 12.0
+    print(height/3)
+    ```
+  answers:
+    - |
+      39
+    - |
+      4
+    - |
+      4.0
+    - |
+      5.0
+    - |
+      5
+  solution: 3
+````
+
+#### Example with HTML
+
 ```yml
 question:
-  text: 'What will print out after running this code:<pre>width = 15<br>height = 12.0<br>print(height/3)</pre>'
+  text: |
+    What will print out after running this code:
+    <pre><code>width = 15<br>height = 12.0<br>print(height/3)<code></pre>
   answers:
-    - '39'
-    - '4'
-    - '4.0'
-    - '5.0'
-    - '5'
+    - |
+      39
+    - |
+      4
+    - |
+      4.0
+    - |
+      5.0
+    - |
+      5
   solution: 3
 ```
 
-```yml
-question:
-  text: 'Below is code to find the smallest value from a list of values. One line has an error that will cause the code to not work as expected. Which line is it?
-<pre>
-1|smallest = None<br>
-2|print("Before:", smallest)<br>
-3|for itervar in [3, 41, 12, 9, 74, 15]:<br>
-4|    if smallest is None or itervar ⋖ smallest:<br>
-5|        smallest = itervar<br>
-6|        break<br>
-7|    print("Loop:", itervar, smallest)<br>
-8|print("Smallest:", smallest)<br>
-</pre>'
-  answers:
-    - '3'
-    - '4'
-    - '6'
-    - '7'
-  solution: 3
-```
+The final example demonstrates that HTML can be used, but that it is not as readable as the version without it.
 
-For more examples, you can look at the markdown files for the following video course. All the challenges already have questions: [Python for Everybody Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/next-python-projects/curriculum/challenges/english/07-scientific-computing-with-python/python-for-everybody)
+For more examples, you can look at the markdown files for the following video course. All the challenges already have questions: [Python for Everybody Course](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/english/07-scientific-computing-with-python/python-for-everybody)
 
 ## Open a pull request
 
-After creating one or more questions, you can commit the changes to a new branch and [open a pull request](how-to-open-a-pull-request.md). Make sure that you target the branch 'next-python-projects' and NOT 'master'.
+After creating one or more questions, you can commit the changes to a new branch and [open a pull request](how-to-open-a-pull-request.md).

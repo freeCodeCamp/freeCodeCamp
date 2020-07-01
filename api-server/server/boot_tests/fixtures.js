@@ -16,7 +16,10 @@ export const mockFirstChallenge = {
   id: '456def',
   block: 'first',
   superBlock: 'the',
-  dashedName: 'challenge'
+  dashedName: 'challenge',
+  challengeOrder: 0,
+  superOrder: 1,
+  order: 0
 };
 
 export const mockCompletedChallenge = {
@@ -117,16 +120,6 @@ export function createNewUserFromEmail(email) {
 
 export const mockApp = {
   models: {
-    Challenge: {
-      find() {
-        return firstChallengeUrl;
-      },
-      findById(id, cb) {
-        return id === mockChallenge.id
-          ? cb(null, mockChallenge)
-          : cb(new Error('challenge not found'));
-      }
-    },
     Donation: {
       findOne(query, cb) {
         return isEqual(query, matchSubscriptionIdQuery)
@@ -157,6 +150,8 @@ export const mockApp = {
   }
 };
 
+export const mockAllChallenges = [mockFirstChallenge, mockChallenge];
+
 export const mockGetFirstChallenge = () => firstChallengeUrl;
 
 export const matchEmailQuery = {
@@ -178,3 +173,42 @@ export const mockPathMigrationMap = {
   'challenge-one': '/learn/superblock/block/challenge-one',
   'challenge-two': '/learn/superblock/block/challenge-two'
 };
+
+export const fullStackChallenges = [
+  {
+    completedDate: 1585210952511,
+    id: '5a553ca864b52e1d8bceea14',
+    challengeType: 7,
+    files: []
+  },
+  {
+    completedDate: 1585210952511,
+    id: '561add10cb82ac38a17513bc',
+    challengeType: 7,
+    files: []
+  },
+  {
+    completedDate: 1588665778679,
+    id: '561acd10cb82ac38a17513bc',
+    challengeType: 7,
+    files: []
+  },
+  {
+    completedDate: 1685210952511,
+    id: '561abd10cb81ac38a17513bc',
+    challengeType: 7,
+    files: []
+  },
+  {
+    completedDate: 1585210952511,
+    id: '561add10cb82ac38a17523bc',
+    challengeType: 7,
+    files: []
+  },
+  {
+    completedDate: 1588665778679,
+    id: '561add10cb82ac38a17213bc',
+    challengeType: 7,
+    files: []
+  }
+];

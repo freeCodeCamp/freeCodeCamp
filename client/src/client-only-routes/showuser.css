@@ -1,0 +1,4 @@
+/* remove bootstrap margin*/
+.row {
+  margin: 0;
+}

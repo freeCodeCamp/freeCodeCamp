@@ -2,6 +2,7 @@
 id: 564944c91be2204b269d51e3
 title: Change Text Inside an Element Using jQuery
 challengeType: 6
+isHidden: false
 forumTopicId: 16773
 ---
 

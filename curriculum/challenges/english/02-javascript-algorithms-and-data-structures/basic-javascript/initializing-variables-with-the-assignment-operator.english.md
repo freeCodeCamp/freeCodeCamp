@@ -2,6 +2,7 @@
 id: 56533eb9ac21ba0edf2244a9
 title: Initializing Variables with the Assignment Operator
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cWJ4Bfb'
 forumTopicId: 301171
 ---

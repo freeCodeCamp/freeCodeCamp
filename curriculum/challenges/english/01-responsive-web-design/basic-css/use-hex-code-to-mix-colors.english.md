@@ -2,6 +2,7 @@
 id: bad87fee1348bd9aedf08721
 title: Use Hex Code to Mix Colors
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cK89PhP'
 forumTopicId: 18359
 ---
