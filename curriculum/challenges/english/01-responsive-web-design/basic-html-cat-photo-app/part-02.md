@@ -23,7 +23,7 @@ tests:
     testString: assert( document.querySelector('h1') );
   - text: Your `h1` element should have a closing tag. Closing tags have a `/` just after the `<` character.
     testString: assert( code.match(/<\/h1\>/) );
-  - text: You should only have one `h1` element. Please remove the extra one.
+  - text: You should only have one `h1` element. Remove the extra.
     testString: assert( document.querySelector('h1') && document.querySelectorAll('h1').length === 1 );
   - text: Your `h1` element's text should be 'CatPhotoApp'. You have either omitted the text or have a typo.
     testString: assert( document.querySelector('h1').innerText.toLowerCase() === 'catphotoapp' );
