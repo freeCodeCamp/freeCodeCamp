@@ -197,7 +197,9 @@ export class Project extends Component {
                     }
                     onReady={this.videoIsReady}
                     opts={{
-                      rel: 0,
+                      playerVars: {
+                        rel: 0
+                      },
                       width: '960px',
                       height: '540px'
                     }}
