@@ -17,7 +17,11 @@ function NavLinks({ displayMenu }) {
           </Link>
         </li>
         <li className='nav-forum'>
-          <Link external={true} sameTab={true} to='/forum'>
+          <Link
+            external={true}
+            sameTab={true}
+            to='https://forum.freecodecamp.org'
+          >
             /forum
           </Link>
         </li>

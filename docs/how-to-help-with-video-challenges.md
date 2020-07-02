@@ -61,7 +61,7 @@ Pick a challenge markdown file from the options above.
 
 First, find the videoId.
 
-For example, in the following code from the header of a video challenge markdown file, the videoId is "nVAaxZ34khk". On GitHub, the information could be layed out in a table format.
+For example, in the following code from the header of a video challenge markdown file, the videoId is "nVAaxZ34khk". On GitHub, the information should be layed out in a table format.
 ```
 ---
 id: 5e9a093a74c4063ca6f7c14d
@@ -72,9 +72,9 @@ videoId: nVAaxZ34khk
 ```
 
 Next, access the YouTube video with that videoId. The url for the video will be:
-https://www.youtube.com/watch?v=[videoId]    (add in the videoId to the URL)
+https://www.youtube.com/watch?v=[videoId]    (add videoId to the URL without square brackets)
 
-In the example above, the url is https://www.youtube.com/watch?v=nVAaxZ34khk .
+In the example above, the url is https://www.youtube.com/watch?v=nVAaxZ34khk
 
 Skim the YouTube video with that videoId and think of a multiple choice question based on the content of the video.
 

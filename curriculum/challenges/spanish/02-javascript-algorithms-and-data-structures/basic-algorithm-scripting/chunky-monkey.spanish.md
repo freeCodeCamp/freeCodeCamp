@@ -8,7 +8,7 @@ localeTitle: Mono fornido
 ---
 
 ## Descripción
-<section id="description"> Escriba una función que divida un vector (primer argumento) en grupos de la longitud del <code>size</code> (segundo argumento) y los devuelva como una matriz bidimensional. Recuerda usar la técnica de <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Leer-Buscar-Preguntar</a> si te atascas. Escribe tu propio código. </section>
+<section id="description"> Escriba una función que divida un vector (primer argumento) en grupos de la longitud del <code>size</code> (segundo argumento) y los devuelva como una matriz bidimensional. Recuerda usar la técnica de <a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Leer-Buscar-Preguntar</a> si te atascas. Escribe tu propio código. </section>
 
 ## Instrucciones
 <section id="instructions">

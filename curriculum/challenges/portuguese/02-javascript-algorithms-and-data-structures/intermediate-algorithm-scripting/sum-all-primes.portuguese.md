@@ -8,7 +8,7 @@ localeTitle: Soma todos os horários
 ---
 
 ## Description
-<section id="description"> Soma todos os números primos até e incluindo o número fornecido. Um número primo é definido como um número maior que um e tendo apenas dois divisores, um e ele próprio. Por exemplo, 2 é um número primo porque só é divisível por um e dois. O número fornecido pode não ser primo. Lembre-se de usar <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Tente emparelhar o programa. Escreva seu próprio código. </section>
+<section id="description"> Soma todos os números primos até e incluindo o número fornecido. Um número primo é definido como um número maior que um e tendo apenas dois divisores, um e ele próprio. Por exemplo, 2 é um número primo porque só é divisível por um e dois. O número fornecido pode não ser primo. Lembre-se de usar <a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Tente emparelhar o programa. Escreva seu próprio código. </section>
 
 ## Instructions
 <section id="instructions">

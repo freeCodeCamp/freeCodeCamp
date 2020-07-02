@@ -8,7 +8,7 @@ localeTitle: Agentes Binários
 ---
 
 ## Description
-<section id="description"> Retorna uma frase traduzida em inglês da string binária passada. A cadeia binária será separada por espaços. Lembre-se de usar <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Tente emparelhar o programa. Escreva seu próprio código. </section>
+<section id="description"> Retorna uma frase traduzida em inglês da string binária passada. A cadeia binária será separada por espaços. Lembre-se de usar <a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Tente emparelhar o programa. Escreva seu próprio código. </section>
 
 ## Instructions
 <section id="instructions">

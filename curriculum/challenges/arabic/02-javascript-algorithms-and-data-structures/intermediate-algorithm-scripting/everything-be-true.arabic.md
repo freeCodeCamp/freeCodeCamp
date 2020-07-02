@@ -8,7 +8,7 @@ localeTitle: كل شيء يكون حقيقة
 ---
 
 ## Description
-<section id="description"> تحقق مما إذا كان المسند (الوسيطة الثانية) <dfn>صحيحًا</dfn> في جميع عناصر المجموعة (الوسيطة الأولى). بمعنى آخر ، يتم منحك مجموعة من الكائنات. المسند <code>pre</code> ستكون خاصية الكائن وتحتاج للعودة <code>true</code> إذا قيمتها <code>truthy</code> . خلاف ذلك ، تعود <code>false</code> . في JavaScript ، القيم <code>truthy</code> هي القيم التي تترجم إلى <code>true</code> عند تقييمها في سياق Boolean. تذكر ، يمكنك الوصول إلى خصائص الكائن من خلال أي نقطة ترقيم أو <code>[]</code> تدوين. تذكر استخدام <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> إذا واجهتك مشكلة. حاول إقران البرنامج. اكتب الكود الخاص بك. </section>
+<section id="description"> تحقق مما إذا كان المسند (الوسيطة الثانية) <dfn>صحيحًا</dfn> في جميع عناصر المجموعة (الوسيطة الأولى). بمعنى آخر ، يتم منحك مجموعة من الكائنات. المسند <code>pre</code> ستكون خاصية الكائن وتحتاج للعودة <code>true</code> إذا قيمتها <code>truthy</code> . خلاف ذلك ، تعود <code>false</code> . في JavaScript ، القيم <code>truthy</code> هي القيم التي تترجم إلى <code>true</code> عند تقييمها في سياق Boolean. تذكر ، يمكنك الوصول إلى خصائص الكائن من خلال أي نقطة ترقيم أو <code>[]</code> تدوين. تذكر استخدام <a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> إذا واجهتك مشكلة. حاول إقران البرنامج. اكتب الكود الخاص بك. </section>
 
 ## Instructions
 <section id="instructions">
