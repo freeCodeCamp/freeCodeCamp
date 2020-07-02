@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Modify your code so that the anchor element you just added is nested within the paragraph element. The paragraph element should contain the same text, but the words `cat photos` should now be a link. 
+Modify your code so that the anchor element you just added is nested within the `p` element. The `p` element should contain the same text, but the words `cat photos` should now be a link. 
 
-Here is an example of an anchor element nested within a paragraph: `<p>Here is a <a href="http://freecodecamp.org">link to freecodecamp.org</a>.</p>`.
+Here is an example of an anchor (`a`) element nested within a paragraph: `<p>Here is a <a href="http://freecodecamp.org">link to freecodecamp.org</a>.</p>`.
 
 </section>
 

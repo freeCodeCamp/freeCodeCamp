@@ -8,11 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-HTML elements are often nested within other HTML elements. On this page, the `h2` element, comment and `p` element are nested within the `main` element.
+HTML elements are often nested within other HTML elements. In the previous step you nested the `h2` element, comment and `p` element within the `main` element. A nested element is a child of its parent element. 
 
-When you nest one element inside another, the nested element becomes a child of the parent. To make HTML easier to read, you should indent child elements inside their parent element.  Most developers use 2 or 4 spaces to indent their code.
-
-Indent the `h2` element, the comment and `p` element exactly 2 spaces, so it is easer to see they are children of the `main` element.
+To make HTML easier to read, indent the `h2` element, the comment and `p` element exactly 2 extra spaces, so it is easer to see they are children of the `main` element.
 
 </section>
 

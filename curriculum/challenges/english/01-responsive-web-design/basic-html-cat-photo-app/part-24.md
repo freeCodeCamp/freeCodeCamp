@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-After the `figure` element, add a paragraph element with the text `Top 3 things cats hate:`.
+After the `figure` element, add a `p` element with the text `Top 3 things cats hate:`.
 
 </section>
 

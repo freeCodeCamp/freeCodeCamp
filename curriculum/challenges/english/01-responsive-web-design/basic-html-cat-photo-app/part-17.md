@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-After the last `h2` element, add a paragraph element with the text `Things cats love:`.
+After the last `h2` element, add a `p` element with the text `Things cats love:`.
 
 </section>
 

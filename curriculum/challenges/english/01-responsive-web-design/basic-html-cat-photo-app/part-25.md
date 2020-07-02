@@ -10,7 +10,7 @@ isHidden: true
 
 The code for an ordered list is similar to an unordered list, except the opening / closing tags look like this: `<ol> </ol>`. An ordered list is numbered when displayed. 
 
-After the final paragraph element, add an ordered list with these three list items: `flea treatment`, `thunder` and `other cats`.
+After the final `p` element, add an ordered list with these three list items: `flea treatment`, `thunder` and `other cats`.
 
 </section>
 

@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-After the paragraph element, add an anchor (`a`) element with an `href` attribute that links to the `catphotos.com` website at `https://catphotos.com`.
+After the `p` element, add an anchor (`a`) element with an `href` attribute that links to the `catphotos.com` website at `https://catphotos.com`.
 
 For example, `<a href="https://www.freecodecamp.org"></a>` is an anchor element that links to `freecodecamp.org`. At this point the anchor element will not show up in the browser.
 

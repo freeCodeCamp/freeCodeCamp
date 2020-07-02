@@ -10,7 +10,7 @@ isHidden: true
 
 You can add images to your website by using the `img` element.
 
-Add an `<img>` tag below the paragraph element. You should take note that `img` elements do not need a closing tag.  The tag and elements without a closing tags is known as a <dfn>self-closing tag</dfn>.  At this point, the image element will not show up in the browser.
+Add an `<img>` tag below the `p` element. You should take note that `img` elements do not need a closing tag.  The tag and elements without a closing tags is known as a <dfn>self-closing tag</dfn>.  At this point, the image element will not show up in the browser.
 
 </section>
 
