@@ -45,7 +45,7 @@ function renderCertShow(username, cert) {
         <Col className='certifications' sm={10} smPush={1}>
           <Link
             className='btn btn-lg btn-primary btn-block'
-            to={`/certification/${username}/${cert.showURL}`}
+            to={`/certification/${username}/${cert.showURL}`} target='_blank'
           >
             View {cert.title}
           </Link>
