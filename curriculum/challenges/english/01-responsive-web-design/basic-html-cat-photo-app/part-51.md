@@ -14,10 +14,6 @@ Remember that the `name` attribute should be the same on every checkbox, but mak
 
 </section>
 
-## Instructions
-<section id='instructions'>
-</section>
-
 ## Tests
 <section id='tests'>
 

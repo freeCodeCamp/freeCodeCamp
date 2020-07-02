@@ -14,10 +14,6 @@ For example, `<button>Click Here</button>` creates a button with the text `Click
 
 </section>
 
-## Instructions
-<section id='instructions'>
-</section>
-
 ## Tests
 <section id='tests'>
 

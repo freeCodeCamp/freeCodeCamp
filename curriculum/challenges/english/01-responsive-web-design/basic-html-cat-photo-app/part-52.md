@@ -12,10 +12,6 @@ Now add another `<br>` tag after the checkboxes.
 
 </section>
 
-## Instructions
-<section id='instructions'>
-</section>
-
 ## Tests
 <section id='tests'>
 

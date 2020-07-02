@@ -14,11 +14,6 @@ Here is an example of an anchor element nested within a paragraph: `<p>Here is a
 
 </section>
 
-## Instructions
-<section id='instructions'>
-
-</section>
-
 ## Tests
 <section id='tests'>
 

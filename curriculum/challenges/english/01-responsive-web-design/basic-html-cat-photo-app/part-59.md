@@ -16,10 +16,6 @@ Above the `body` element in the page, add the opening and closing tags for a `he
 
 </section>
 
-## Instructions
-<section id='instructions'>
-</section>
-
 ## Tests
 <section id='tests'>
 

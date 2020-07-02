@@ -14,10 +14,6 @@ After the final paragraph element, add an ordered list with these three list ite
 
 </section>
 
-## Instructions
-<section id='instructions'>
-</section>
-
 ## Tests
 <section id='tests'>
 

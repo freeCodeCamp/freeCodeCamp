@@ -14,10 +14,6 @@ Nested within the `head` element of the page, add a `title` element with the tex
 
 </section>
 
-## Instructions
-<section id='instructions'>
-</section>
-
 ## Tests
 <section id='tests'>
 

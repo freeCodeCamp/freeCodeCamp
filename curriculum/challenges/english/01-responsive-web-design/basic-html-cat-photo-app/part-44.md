@@ -14,10 +14,6 @@ This allows assistive technologies like screen readers to create a linked relati
 
 </section>
 
-## Instructions
-<section id='instructions'>
-</section>
-
 ## Tests
 <section id='tests'>
 

@@ -12,10 +12,6 @@ You're finished! Feel free to play around with your cat photo app. Try adding ot
 
 </section>
 
-## Instructions
-<section id='instructions'>
-</section>
-
 ## Tests
 <section id='tests'>
 

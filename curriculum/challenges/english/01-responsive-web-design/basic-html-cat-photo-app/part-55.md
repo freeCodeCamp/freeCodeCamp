@@ -12,10 +12,6 @@ Now you will add a footer section to the page. Below the closing `</main>` tag, 
 
 </section>
 
-## Instructions
-<section id='instructions'>
-</section>
-
 ## Tests
 <section id='tests'>
 

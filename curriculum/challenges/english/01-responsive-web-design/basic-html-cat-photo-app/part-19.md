@@ -21,11 +21,6 @@ Here is an example of list items in an unordered list:
 
 </section>
 
-## Instructions
-<section id='instructions'>
-
-</section>
-
 ## Tests
 <section id='tests'>
 

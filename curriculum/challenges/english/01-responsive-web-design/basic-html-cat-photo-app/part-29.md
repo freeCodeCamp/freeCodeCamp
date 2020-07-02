@@ -12,10 +12,6 @@ After the `fcc-cats` image, add a `<figcaption>` element with the text `Cats hat
 
 </section>
 
-## Instructions
-<section id='instructions'>
-</section>
-
 ## Tests
 <section id='tests'>
 

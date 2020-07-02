@@ -14,11 +14,6 @@ The unordered list will not appear in the browser until content is added.
 
 </section>
 
-## Instructions
-<section id='instructions'>
-
-</section>
-
 ## Tests
 <section id='tests'>
 

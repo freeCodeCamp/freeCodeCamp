@@ -14,10 +14,6 @@ The `name` and attribute should be the same as the last checkbox, but make sure 
 
 </section>
 
-## Instructions
-<section id='instructions'>
-</section>
-
 ## Tests
 <section id='tests'>
 

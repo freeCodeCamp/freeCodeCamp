@@ -14,10 +14,6 @@ While you won't notice this in the browser, doing this makes it easier for a ser
 
 </section>
 
-## Instructions
-<section id='instructions'>
-</section>
-
 ## Tests
 <section id='tests'>
 

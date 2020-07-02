@@ -12,11 +12,6 @@ After the last `h2` element, add a paragraph element with the text `Things cats 
 
 </section>
 
-## Instructions
-<section id='instructions'>
-
-</section>
-
 ## Tests
 <section id='tests'>
 

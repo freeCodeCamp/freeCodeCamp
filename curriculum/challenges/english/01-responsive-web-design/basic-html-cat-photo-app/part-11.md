@@ -14,11 +14,6 @@ For example, `<a href="https://www.freecodecamp.org">click here to go to freeCod
 
 </section>
 
-## Instructions
-<section id='instructions'>
-
-</section>
-
 ## Tests
 <section id='tests'>
 

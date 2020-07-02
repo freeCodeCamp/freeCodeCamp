@@ -12,10 +12,6 @@ After the closing `</ol>` tag, add another `figure` element.
 
 </section>
 
-## Instructions
-<section id='instructions'>
-</section>
-
 ## Tests
 <section id='tests'>
 

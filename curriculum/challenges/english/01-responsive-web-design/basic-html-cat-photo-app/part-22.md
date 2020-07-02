@@ -14,11 +14,6 @@ For example, `<figcaption>cat</figcaption>` has the text "cat".
 
 </section>
 
-## Instructions
-<section id='instructions'>
-
-</section>
-
 ## Tests
 <section id='tests'>
 

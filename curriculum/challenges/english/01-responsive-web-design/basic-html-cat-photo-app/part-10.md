@@ -14,11 +14,6 @@ For example, `<a href="https://www.freecodecamp.org"></a>` is an anchor element 
 
 </section>
 
-## Instructions
-<section id='instructions'>
-
-</section>
-
 ## Tests
 <section id='tests'>
 

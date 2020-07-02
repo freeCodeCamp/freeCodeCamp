@@ -12,10 +12,6 @@ Make the text `freeCodeCamp.org` into a link by enclosing it in an anchor (`a`) 
 
 </section>
 
-## Instructions
-<section id='instructions'>
-</section>
-
 ## Tests
 <section id='tests'>
 

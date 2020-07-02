@@ -14,10 +14,6 @@ In the `figcaption` you just added, indicate that `hate` is of strong importance
 
 </section>
 
-## Instructions
-<section id='instructions'>
-</section>
-
 ## Tests
 <section id='tests'>
 

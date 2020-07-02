@@ -12,11 +12,6 @@ Make the image into a link by adding `<a href="#">` before the `img` tag and `</
 
 </section>
 
-## Instructions
-<section id='instructions'>
-
-</section>
-
 ## Tests
 <section id='tests'>
 

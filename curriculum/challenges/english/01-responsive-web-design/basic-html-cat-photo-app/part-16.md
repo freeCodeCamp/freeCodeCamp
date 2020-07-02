@@ -14,11 +14,6 @@ Before the `</main>` closing tag, add a new `h2` element with the text `Cat List
 
 </section>
 
-## Instructions
-<section id='instructions'>
-
-</section>
-
 ## Tests
 <section id='tests'>
 

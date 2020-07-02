@@ -12,11 +12,6 @@ After the unordered list, add a new image with an `src` of `https://bit.ly/fcc-l
 
 </section>
 
-## Instructions
-<section id='instructions'>
-
-</section>
-
 ## Tests
 <section id='tests'>
 

@@ -14,10 +14,6 @@ Add the `name` attribute with the value `indoor-outdoor` to each radio button si
 
 </section>
 
-## Instructions
-<section id='instructions'>
-</section>
-
 ## Tests
 <section id='tests'>
 

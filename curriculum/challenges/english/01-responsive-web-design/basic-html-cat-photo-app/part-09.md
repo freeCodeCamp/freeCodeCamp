@@ -14,11 +14,6 @@ Add an `alt` attribute to the `img` element with the text `A cute orange cat lyi
 
 </section>
 
-## Instructions
-<section id='instructions'>
-
-</section>
-
 ## Tests
 <section id='tests'>
 

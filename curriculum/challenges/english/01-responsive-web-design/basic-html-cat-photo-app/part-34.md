@@ -14,10 +14,6 @@ Nest an `<input>` tag in the `form` element. Note that `input` elements are <dfn
 
 </section>
 
-## Instructions
-<section id='instructions'>
-</section>
-
 ## Tests
 <section id='tests'>
 

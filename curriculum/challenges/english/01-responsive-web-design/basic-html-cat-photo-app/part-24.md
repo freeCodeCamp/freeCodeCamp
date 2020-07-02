@@ -12,10 +12,6 @@ After the `figure` element, add a paragraph element with the text `Top 3 things 
 
 </section>
 
-## Instructions
-<section id='instructions'>
-</section>
-
 ## Tests
 <section id='tests'>
 

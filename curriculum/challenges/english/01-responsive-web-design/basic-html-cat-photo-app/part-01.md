@@ -14,11 +14,6 @@ Find the `h1` element and change the text between its opening and closing tags t
 
 </section>
 
-## Instructions
-<section id='instructions'>
-
-</section>
-
 ## Tests
 <section id='tests'>
 

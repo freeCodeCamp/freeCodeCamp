@@ -14,11 +14,6 @@ Add an `src` attribute to the existing `img` element that is set to the followin
 
 </section>
 
-## Instructions
-<section id='instructions'>
-
-</section>
-
 ## Tests
 <section id='tests'>
 

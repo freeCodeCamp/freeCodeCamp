@@ -14,11 +14,6 @@ Add an `<img>` tag below the paragraph element. You should take note that `img` 
 
 </section>
 
-## Instructions
-<section id='instructions'>
-
-</section>
-
 ## Tests
 <section id='tests'>
 

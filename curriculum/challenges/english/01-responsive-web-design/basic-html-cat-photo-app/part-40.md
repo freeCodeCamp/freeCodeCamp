@@ -16,10 +16,6 @@ Before the submit button, add two radio buttons on two separate lines with the o
 
 </section>
 
-## Instructions
-<section id='instructions'>
-</section>
-
 ## Tests
 <section id='tests'>
 

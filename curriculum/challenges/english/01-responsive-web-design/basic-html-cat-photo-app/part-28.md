@@ -12,10 +12,6 @@ To improve accessibility, add an `alt` attribute with the text `Cats` to the new
 
 </section>
 
-## Instructions
-<section id='instructions'>
-</section>
-
 ## Tests
 <section id='tests'>
 

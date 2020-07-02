@@ -14,10 +14,6 @@ For example, `<label><input type="radio"> cat</label>`.
 
 </section>
 
-## Instructions
-<section id='instructions'>
-</section>
-
 ## Tests
 <section id='tests'>
 

@@ -12,10 +12,6 @@ Require the user to fill out the text field before submitting the form by adding
 
 </section>
 
-## Instructions
-<section id='instructions'>
-</section>
-
 ## Tests
 <section id='tests'>
 

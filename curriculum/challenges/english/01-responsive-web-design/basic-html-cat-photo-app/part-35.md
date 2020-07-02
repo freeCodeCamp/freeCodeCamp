@@ -14,10 +14,6 @@ To get text input from a user, add the `type` attribute with the value `text` to
 
 </section>
 
-## Instructions
-<section id='instructions'>
-</section>
-
 ## Tests
 <section id='tests'>
 

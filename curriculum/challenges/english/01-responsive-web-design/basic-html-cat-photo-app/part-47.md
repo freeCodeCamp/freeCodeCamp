@@ -14,10 +14,6 @@ This also increases usability by making it so clicking or tapping the word `Lovi
 
 </section>
 
-## Instructions
-<section id='instructions'>
-</section>
-
 ## Tests
 <section id='tests'>
 

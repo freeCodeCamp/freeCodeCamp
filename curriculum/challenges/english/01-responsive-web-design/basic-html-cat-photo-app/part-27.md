@@ -12,10 +12,6 @@ Inside the `figure` element you just added, nest an `img` element with a `src` a
 
 </section>
 
-## Instructions
-<section id='instructions'>
-</section>
-
 ## Tests
 <section id='tests'>
 

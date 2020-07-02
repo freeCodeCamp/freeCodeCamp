@@ -16,10 +16,6 @@ Don't forget to indent the code within the `div` element.
 
 </section>
 
-## Instructions
-<section id='instructions'>
-</section>
-
 ## Tests
 <section id='tests'>
 

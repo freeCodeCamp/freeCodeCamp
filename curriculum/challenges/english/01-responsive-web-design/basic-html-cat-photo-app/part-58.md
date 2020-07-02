@@ -14,10 +14,6 @@ Inside the opening `html` tag, add `lang="en"` to specify that the language of t
 
 </section>
 
-## Instructions
-<section id='instructions'>
-</section>
-
 ## Tests
 <section id='tests'>
 

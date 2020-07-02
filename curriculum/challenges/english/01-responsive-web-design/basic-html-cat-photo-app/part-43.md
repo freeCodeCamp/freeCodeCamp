@@ -14,10 +14,6 @@ Add an `id` attribute with the value `indoor` to the first radio input, and an `
 
 </section>
 
-## Instructions
-<section id='instructions'>
-</section>
-
 ## Tests
 <section id='tests'>
 

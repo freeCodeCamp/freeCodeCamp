@@ -14,10 +14,6 @@ Set the first of your radio buttons and the first of your checkboxes to both be 
 
 </section>
 
-## Instructions
-<section id='instructions'>
-</section>
-
 ## Tests
 <section id='tests'>
 

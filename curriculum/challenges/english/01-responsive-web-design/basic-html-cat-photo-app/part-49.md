@@ -12,10 +12,6 @@ Add an `id` attribute with the value `loving` to the checkbox input. Also, to in
 
 </section>
 
-## Instructions
-<section id='instructions'>
-</section>
-
 ## Tests
 <section id='tests'>
 

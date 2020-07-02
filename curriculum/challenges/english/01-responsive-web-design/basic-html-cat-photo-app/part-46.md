@@ -16,10 +16,6 @@ Here's an example of a checkbox with the option of `tacos`: `<input type="checkb
 
 </section>
 
-## Instructions
-<section id='instructions'>
-</section>
-
 ## Tests
 <section id='tests'>
 

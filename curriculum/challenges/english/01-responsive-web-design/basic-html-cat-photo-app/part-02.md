@@ -14,11 +14,6 @@ Add an `h2` element below the `h1` element that says `Cat Photos`.
 
 </section>
 
-## Instructions
-<section id='instructions'>
-
-</section>
-
 ## Tests
 <section id='tests'>
 

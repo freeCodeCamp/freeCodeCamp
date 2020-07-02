@@ -14,11 +14,6 @@ Add a comment above the `p` element with the text `TODO: Add link to cat photos`
 
 </section>
 
-## Instructions
-<section id='instructions'>
-
-</section>
-
 ## Tests
 <section id='tests'>
 

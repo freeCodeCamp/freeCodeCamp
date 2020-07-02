@@ -14,10 +14,6 @@ For example, `<input type="text" placeholder="this is placeholder text">` has th
 
 </section>
 
-## Instructions
-<section id='instructions'>
-</section>
-
 ## Tests
 <section id='tests'>
 

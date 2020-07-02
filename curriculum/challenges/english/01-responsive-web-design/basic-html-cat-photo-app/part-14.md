@@ -14,11 +14,6 @@ Doing this will keep the text as a link, but it will no longer link to anything.
 
 </section>
 
-## Instructions
-<section id='instructions'>
-
-</section>
-
 ## Tests
 <section id='tests'>
 

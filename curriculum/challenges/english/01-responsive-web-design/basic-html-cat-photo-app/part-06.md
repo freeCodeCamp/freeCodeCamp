@@ -16,11 +16,6 @@ Indent the `h2` element, the comment and `p` element exactly 2 spaces, so it is 
 
 </section>
 
-## Instructions
-<section id='instructions'>
-
-</section>
-
 ## Tests
 <section id='tests'>
 

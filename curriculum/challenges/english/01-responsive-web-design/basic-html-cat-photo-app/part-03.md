@@ -14,11 +14,6 @@ Create a `p` element below your `h2` element, and give it the text `Click here t
 
 </section>
 
-## Instructions
-<section id='instructions'>
-
-</section>
-
 ## Tests
 <section id='tests'>
 

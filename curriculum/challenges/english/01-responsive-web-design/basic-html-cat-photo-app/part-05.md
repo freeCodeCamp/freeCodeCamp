@@ -14,11 +14,6 @@ Identify the main section of this page by adding a `<main>` opening tag after th
 
 </section>
 
-## Instructions
-<section id='instructions'>
-
-</section>
-
 ## Tests
 <section id='tests'>
 

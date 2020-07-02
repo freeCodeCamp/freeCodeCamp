@@ -14,10 +14,6 @@ After doing that, clicking this button will send the data from your form to the 
 
 </section>
 
-## Instructions
-<section id='instructions'>
-</section>
-
 ## Tests
 <section id='tests'>
 

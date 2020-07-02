@@ -14,10 +14,6 @@ After the `Cat Form` heading, add an opening `<form>` and closing `</form>` tags
 
 </section>
 
-## Instructions
-<section id='instructions'>
-</section>
-
 ## Tests
 <section id='tests'>
 

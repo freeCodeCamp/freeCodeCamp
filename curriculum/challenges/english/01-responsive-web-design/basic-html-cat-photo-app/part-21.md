@@ -12,11 +12,6 @@ Nest the `img` you just added within a `<figure>` element. The `<figure>` elemen
 
 </section>
 
-## Instructions
-<section id='instructions'>
-
-</section>
-
 ## Tests
 <section id='tests'>
 

@@ -14,10 +14,6 @@ For example, `<form action="/submit-url"></form>` indicates that the form data s
 
 </section>
 
-## Instructions
-<section id='instructions'>
-</section>
-
 ## Tests
 <section id='tests'>
 

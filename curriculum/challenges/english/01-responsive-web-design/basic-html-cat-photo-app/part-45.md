@@ -12,10 +12,6 @@ Add a `<br>` tag after the labels to create a line break when the page is render
 
 </section>
 
-## Instructions
-<section id='instructions'>
-</section>
-
 ## Tests
 <section id='tests'>
 

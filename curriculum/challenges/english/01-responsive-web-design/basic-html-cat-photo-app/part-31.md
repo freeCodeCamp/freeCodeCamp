@@ -12,10 +12,6 @@ After the last `figure` element add another `h2` tag with the text `Cat Form`.
 
 </section>
 
-## Instructions
-<section id='instructions'>
-</section>
-
 ## Tests
 <section id='tests'>
 

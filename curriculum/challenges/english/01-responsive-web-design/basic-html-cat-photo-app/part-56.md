@@ -12,10 +12,6 @@ Nested within the `footer` element, add `p` element with the text `No Copyright 
 
 </section>
 
-## Instructions
-<section id='instructions'>
-</section>
-
 ## Tests
 <section id='tests'>
 

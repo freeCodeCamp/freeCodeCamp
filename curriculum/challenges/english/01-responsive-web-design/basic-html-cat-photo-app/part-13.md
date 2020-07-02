@@ -14,11 +14,6 @@ For example, `<a target="_blank" href="http://freecodecamp.org">learn to code</a
 
 </section>
 
-## Instructions
-<section id='instructions'>
-
-</section>
-
 ## Tests
 <section id='tests'>
 

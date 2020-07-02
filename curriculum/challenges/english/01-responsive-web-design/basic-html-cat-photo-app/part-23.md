@@ -12,10 +12,6 @@ Emphasize the word `love` by adding `<em>` before the word and `</em>` after the
 
 </section>
 
-## Instructions
-<section id='instructions'>
-</section>
-
 ## Tests
 <section id='tests'>
 
