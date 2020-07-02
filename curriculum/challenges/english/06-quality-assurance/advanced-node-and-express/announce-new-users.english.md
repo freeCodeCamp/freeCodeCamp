@@ -19,14 +19,14 @@ Change the event name to <code>'user'</code>, and pass an object along containin
 
 ```js
 io.emit('user', {
-  name: socket.request.user.name,
+  name: socket.request.user.username,
   currentUsers,
   connected: true
 });
 ```
 
 Now your client will have all the necessary information to correctly display the current user count and announce when a user connects or disconnects! To handle this event on the client side we should listen for <code>'user'</code>, then update the current user count by using jQuery to change the text of <code>#num-users</code> to <code>'{NUMBER} users online'</code>, as well as append a <code>&#60;li&#62;</code> to the unordered list with id <code>messages</code> with <code>'{NAME} has {joined/left} the chat.'</code>.
-An implementation of this could look like the following:<br>
+An implementation of this could look like the following:
 
 ```js
 socket.on('user', data => {
@@ -54,9 +54,9 @@ Submit your page when you think you've got it right.
 
 ```yml
 tests:
-  - text: Event user should be emitted with name, currentUsers, and connected.
-    testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js').then(data => { assert.match(data, /io.emit.*('|")user('|").*name.*currentUsers.*connected/gi, 'You should have an event emitted named user sending name, currentUsers, and connected'); }, xhr => { throw new Error(xhr.statusText); })
-  - text: Client should properly handle and display the new data from event 'user'.
+  - text: Event <code>'user'</code> should be emitted with name, currentUsers, and connected.
+    testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js').then(data => { assert.match(data, /io.emit.*('|")user('|").*name.*currentUsers.*connected/gis, 'You should have an event emitted named user sending name, currentUsers, and connected'); }, xhr => { throw new Error(xhr.statusText); })
+  - text: Client should properly handle and display the new data from event <code>'user'</code>.
     testString: 'getUserInput => $.get(getUserInput(''url'')+ ''/public/client.js'') .then(data => { assert.match(data, /socket.on.*(''|")user(''|")[^]*num-users/gi, ''You should change the text of #num-users within on your client within the "user" event listener to show the current users connected''); assert.match(data, /socket.on.*(''|")user(''|")[^]*messages.*li/gi, ''You should append a list item to #messages on your client within the "user" event listener to announce a user came or went''); }, xhr => { throw new Error(xhr.statusText); })'
 ```
 

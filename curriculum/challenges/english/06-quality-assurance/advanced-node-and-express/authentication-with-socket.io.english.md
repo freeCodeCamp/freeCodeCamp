@@ -15,10 +15,12 @@ Currently, you cannot determine who is connected to your web socket. While <code
 
 <hr>
 
-Add <code>passport.socketio</code>, and <code>cookie-parser</code> as dependencies and require them as <code>passportSocketIo</code>, and <code>cookieParser</code> respectfully. Also, we need to initialise a new memory store, from <code>express-session</code> which we previously required. It should look as follows:
+Add <code>passport.socketio</code>, <code>mongo-connect</code>, and <code>cookie-parser</code> as dependencies and require them as <code>passportSocketIo</code>, <code>MongoStore</code>, and <code>cookieParser</code> respectfully. Also, we need to initialise a new memory store, from <code>express-session</code> which we previously required. It should look as follows:
 
 ```js
-const sessionStore = new session.MemoryStore();
+const MongoStore = require('connect-mongo')(session);
+const URI = process.env.MONGO_URI;
+const store = new MongoStore({ url: URI });
 ```
 
 Now we just have to tell Socket.IO to use it and set the options. Be sure this is added before the existing socket code and not in the existing connection listener. For your server it should look as follows:
@@ -29,17 +31,33 @@ io.use(
     cookieParser: cookieParser,
     key: 'express.sid',
     secret: process.env.SESSION_SECRET,
-    store: sessionStore
+    store: store,
+    success: onAuthorizeSuccess,
+    fail: onAuthorizeFail
   })
 );
 ```
 
-You can also optionally pass <code>'success'</code> and <code>'fail'</code> with a function that will be called after the authentication process completes when a client tries to connect.
+Now, define the <code>success</code>, and <code>fail</code> callback functions:
+
+```js
+function onAuthorizeSuccess(data, accept) {
+  console.log('successful connection to socket.io');
+
+  accept(null, true);
+}
+
+function onAuthorizeFail(data, message, error, accept) {
+  if (error) throw new Error(message);
+  console.log('failed connection to socket.io:', message);
+  accept(null, false);
+}
+```
 
 The user object is now accessible on your socket object as <code>socket.request.user</code>. For example, now you can add the following:
 
 ```js
-console.log('user ' + socket.request.user.name + ' connected');
+console.log('user ' + socket.request.user.username + ' connected');
 ```
 
 It will log to the server console who has connected!

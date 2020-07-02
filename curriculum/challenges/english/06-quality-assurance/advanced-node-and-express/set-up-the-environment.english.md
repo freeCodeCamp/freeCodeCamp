@@ -14,9 +14,11 @@ The following challenges will make use of the <code>chat.pug</code> file. So, in
 Add <code>html</code> and <code>socket.io</code> as a dependency and require/instantiate them in your server defined as follows:
 
 ```javascript
-const http = require('http').Server(app);
+const http = require('http').createServer(app);
 const io = require('socket.io')(http);
 ```
+
+Now that the _http_ server is mounted on the _express app_, you need to listen from the _http_ server. Change the line with <code>app.listen</code> to <code>http.listen</code>.
 
 The first thing needing to be handled is listening for a new connection from the client. The <dfn>on</dfn> keyword does just that- listen for a specific event. It requires 2 arguments: a string containing the title of the event thats emitted, and a function with which the data is passed though. In the case of our connection listener, we use <em>socket</em> to define the data in the second argument. A socket is an individual client who is connected.
 For listening for connections on our server, add the following within your database connection:
