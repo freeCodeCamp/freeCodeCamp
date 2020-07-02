@@ -10,6 +10,7 @@ Object {
 
 testFunction('hello');
 ",
+      "editableRegionBoundaries": Array [],
       "ext": "js",
       "head": "console.log('before the test');
 ",
