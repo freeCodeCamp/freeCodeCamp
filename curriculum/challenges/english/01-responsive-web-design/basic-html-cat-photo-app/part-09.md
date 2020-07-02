@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-All `img` elements should have an `alt` attribute. The text inside an `alt` attribute is used for screen readers to improve accessibility and is displayed if the image fails to load.  For example, `<img src="cat.jpg" alt="A cat">` has an `alt` attribute with the text `A cat`.
+All `img` elements should have an `alt` attribute. The `alt` attribute's text is used for screen readers to improve accessibility and is displayed if the image fails to load.  For example, `<img src="cat.jpg" alt="A cat">` has an `alt` attribute with the text `A cat`.
 
 Add an `alt` attribute to the `img` element with the text `A cute orange cat lying on its back`.
 
