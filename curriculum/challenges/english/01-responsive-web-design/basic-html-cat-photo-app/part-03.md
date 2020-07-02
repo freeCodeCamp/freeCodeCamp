@@ -10,7 +10,7 @@ isHidden: true
 
 `p` elements are used to create paragraph text on websites. 
 
-Create a `p` element below your `h2` element, and give it the text `Click here to view more cat photos.`.
+Create a `p` element below your `h2` element, and give it the text `Click here to view more cat photos.`
 
 </section>
 
@@ -47,7 +47,9 @@ tests:
 <html>
   <body>
     <h1>CatPhotoApp</h1>
+    --fcc-editable-region--
     <h2>Cat Photos</h2>
+    --fcc-editable-region--
   </body>
 </html>
 ```

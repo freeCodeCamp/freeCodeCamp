@@ -52,7 +52,9 @@ tests:
 <!DOCTYPE html>
 <html>
   <body>
+    --fcc-editable-region--
     <h1>CatPhotoApp</h1>
+    --fcc-editable-region--
   </body>
 </html>
 ```

@@ -44,7 +44,9 @@ tests:
 <!DOCTYPE html>
 <html>
   <body>
+    --fcc-editable-region--
     <h1>Hello World</h1>
+    --fcc-editable-region--
   </body>
 </html>
 ```

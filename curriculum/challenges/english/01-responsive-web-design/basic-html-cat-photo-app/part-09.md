@@ -29,7 +29,7 @@ tests:
   - text: Your <code>img</code> element does not have an <code>alt</code> attribute. You have either omitted the attribute or have a typo.
     testString: const altVal = document.querySelector('img').getAttribute('alt'); assert( altVal || altVal === '' );
   - text: Your <code>img</code> element's <code>src</code> attribute value should be set to 'A cute orange cat lying on its back'. You have either omitted the text or have a typo.
-    testString: const altText = document.querySelector('img').alt.toLowerCase().replace(/\s/g, ''); assert( altText.match(/acuteorangecatlyingonitsback/) );
+    testString: const altText = document.querySelector('img').alt.toLowerCase().replace(/\s/g, ''); assert( altText.match(/acuteorangecatlyingonitsback\.?$/) );
 
 ```
 
