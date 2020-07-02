@@ -157,12 +157,13 @@ Be polite and patient. Our community of volunteers and moderators are always aro
 
 If you have queries about the stack, architecture of the codebase, feel free to reach out to our staff dev team:
 
-| Staff                 | Send message on Gitter                                        | Send message on Forum                                                            |
-| :-------------------- | :------------------------------------------------------------ | :------------------------------------------------------------------------------- |
-| Mrugesh Mohapatra     | [@raisedadead](https://gitter.im/raisedadead)                 | [@raisedadead](https://forum.freecodecamp.org/u/raisedadead)                 |
-| Ahmad Abdolsaheb      | [@ahmadabdolsaheb](https://gitter.im/ahmadabdolsaheb)         | [@abdolsa](https://forum.freecodecamp.org/u/abdolsa)                         |
-| Kristofer Koishigawa  | [@scissorsneedfoodtoo](https://gitter.im/scissorsneedfoodtoo) | [@scissorsneedfoodtoo](https://forum.freecodecamp.org/u/scissorsneedfoodtoo) |
-| Tom Mondloc           | [@moT01](https://gitter.im/moT01)                             | [@moT01](https://forum.freecodecamp.org/u/moT01)                             |
-| Oliver Eyton-Williams | [@ojeytonwilliams](https://gitter.im/ojeytonwilliams)         | [@ojeytonwilliams](https://forum.freecodecamp.org/u/ojeytonwilliams)         |
+| Staff                 | Send message on Forum                                                        |
+| :-------------------- | :--------------------------------------------------------------------------- |
+| Mrugesh Mohapatra     | [@raisedadead](https://forum.freecodecamp.org/u/raisedadead)                 |
+| Ahmad Abdolsaheb      | [@abdolsa](https://forum.freecodecamp.org/u/abdolsa)                         |
+| Kristofer Koishigawa  | [@scissorsneedfoodtoo](https://forum.freecodecamp.org/u/scissorsneedfoodtoo) |
+| Tom Mondloc           | [@moT01](https://forum.freecodecamp.org/u/moT01)                             |
+| Oliver Eyton-Williams | [@ojeytonwilliams](https://forum.freecodecamp.org/u/ojeytonwilliams)         |
+| Randell Dawson        | [@RandellDawson](https://forum.freecodecamp.org/u/randelldawson)             |
 
 **You can email our developer staff at: `dev[at]freecodecamp.org`**
