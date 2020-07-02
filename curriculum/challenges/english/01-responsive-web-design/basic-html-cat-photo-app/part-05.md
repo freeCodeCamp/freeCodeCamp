@@ -23,11 +23,11 @@ tests:
     testString: assert( document.querySelector('main') );
   - text: Your `main` element should have a closing tag. Closing tags have a `/` just after the `<` character.
     testString: assert( code.match(/<\/main\>/) );
-  - text: Your `main` element's opening tag should be below the <code>h1</code> element. You have them in the wrong order.
+  - text: Your `main` element's opening tag should be below the `h1` element. You have them in the wrong order.
     testString: const collection = [...document.querySelectorAll('main,h1')].map(node => node.nodeName); assert( collection.indexOf('H1') < collection.indexOf('MAIN') );
-  - text: Your `main` element's opening tag should be above the <code>h2</code> element. You have them in the wrong order.
+  - text: Your `main` element's opening tag should be above the `h2` element. You have them in the wrong order.
     testString: const collection = [...document.querySelectorAll('main,h2')].map(node => node.nodeName); assert( collection.indexOf('MAIN') < collection.indexOf('H2') );
-  - text: Your `main` element's closing tag should be below the <code>p</code> element. You have them in the wrong order.
+  - text: Your `main` element's closing tag should be below the `p` element. You have them in the wrong order.
     testString: const mainNode = document.querySelector('main'); const pNode = document.querySelector('p'); assert( mainNode.contains(pNode) && pNode.textContent.toLowerCase().match(/click here to view more cat photos/) );
 
 ```
