@@ -8,7 +8,7 @@ localeTitle: Cartas desaparecidas
 ---
 
 ## Description
-<section id="description"> Encontre a letra que falta no intervalo de letras passadas e devolva-a. Se todas as letras estiverem presentes no intervalo, retorne indefinido. Lembre-se de usar <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Tente emparelhar o programa. Escreva seu próprio código. </section>
+<section id="description"> Encontre a letra que falta no intervalo de letras passadas e devolva-a. Se todas as letras estiverem presentes no intervalo, retorne indefinido. Lembre-se de usar <a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Tente emparelhar o programa. Escreva seu próprio código. </section>
 
 ## Instructions
 <section id="instructions">

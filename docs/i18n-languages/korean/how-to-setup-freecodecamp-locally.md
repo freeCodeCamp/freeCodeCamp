@@ -158,7 +158,7 @@ npm -v
 #### 사전에 필요한 소프트웨어를 설치하는 데 어려움을 겪고 있습니다. 어떻게 해야 할까요?
 저희는 macOS 10.12나 Ubuntu 16.04, Windows 10처럼 많이 사용하는 운영체제의 최신 버전에 대해서 주기적으로 개발을 진행하고 있습니다. 직면하신 해당 문제점을 Google이나 Stack Overflow, Stack Exchange 등에서 검색해 보실 것을 권해드립니다. 앞서 다른 이가 같은 문제점에 대해서 도움을 구해 답을 얻었을 확률이 높습니다.
 
-만약 다른 운영체제를 사용하거나 여전히 문제를 해결하지 못했다면 [contributors community on our public forum](https://www.freeCodeCamp.org/forum/c/contributors)이나 [contributor's chat room](https://gitter.im/freeCodeCamp/Contributors)으로 연락해주세요.
+만약 다른 운영체제를 사용하거나 여전히 문제를 해결하지 못했다면 [contributors community on our public forum](https://forum.freecodecamp.org/c/contributors)이나 [contributor's chat room](https://gitter.im/freeCodeCamp/Contributors)으로 연락해주세요.
 
 **사전에 필요한 소프트웨어들에 대한 문제점들을 GitHub 이슈화 하는 거는 삼가해 주세요. 이는 freeCodeCamp 프로젝트와는 무관하기 때문입니다.**
 
@@ -505,7 +505,7 @@ npm run develop
 변경사항을 commit 하신 다음에는 [Pull Request 만들기](/docs/how-to-open-a-pull-request.md)를 읽어 보세요.
 
 ## 도움 요청하기
-도움이 필요하시면 ['Contributors' category on our forum](https://www.freecodecamp.org/forum/c/contributors)이나 Gitter에 있는 [Contributors chat room](https://gitter.im/FreeCodeCamp/Contributors)으로 질문을 남겨 주세요.
+도움이 필요하시면 ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors)이나 Gitter에 있는 [Contributors chat room](https://gitter.im/FreeCodeCamp/Contributors)으로 질문을 남겨 주세요.
 
 문제가 무언지 식별하도록 도와줄 브라우저 콘솔이나 Bash / 터미널 / 명령어에 에러가 있을 수 있습니다. 이러한 에러 메시지를 질문할 때 포함해 주세요. 이는 다른 이들이 여러분이 직면한 문제가 무엇인지 더 쉽게 파악해서 도움을 줄 수 있습니다. 
 

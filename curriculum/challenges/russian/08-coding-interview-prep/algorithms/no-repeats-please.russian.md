@@ -8,7 +8,7 @@ localeTitle: Нет повторений Пожалуйста
 
 ## Description
 <section id='description'>
-Возвращает число полных перестановок предоставленной строки, которые не имеют повторяющихся последовательных букв. Предположим, что все символы в предоставленной строке уникальны. Например, <code>aab</code> должен возвращать 2, поскольку имеет 6 полных перестановок ( <code>aab</code> , <code>aab</code> , <code>aba</code> , <code>aba</code> , <code>baa</code> , <code>baa</code> ), но только 2 из них ( <code>aba</code> и <code>aba</code> ) не имеют одинаковой буквы (в данном случае <code>a</code> ) повторяющееся. Не забудьте использовать <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask,</a> если вы застряли. Попробуйте подключить программу. Напишите свой собственный код.
+Возвращает число полных перестановок предоставленной строки, которые не имеют повторяющихся последовательных букв. Предположим, что все символы в предоставленной строке уникальны. Например, <code>aab</code> должен возвращать 2, поскольку имеет 6 полных перестановок ( <code>aab</code> , <code>aab</code> , <code>aba</code> , <code>aba</code> , <code>baa</code> , <code>baa</code> ), но только 2 из них ( <code>aba</code> и <code>aba</code> ) не имеют одинаковой буквы (в данном случае <code>a</code> ) повторяющееся. Не забудьте использовать <a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask,</a> если вы застряли. Попробуйте подключить программу. Напишите свой собственный код.
 </section>
 
 ## Instructions

@@ -8,7 +8,7 @@ localeTitle: 反转字符串
 ---
 
 ## Description
-<section id="description">反转提供的字符串。您可能需要先将字符串转换为数组，然后才能将其反转。您的结果必须是字符串。如果卡住，请记得使用<a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> 。编写自己的代码。 </section>
+<section id="description">反转提供的字符串。您可能需要先将字符串转换为数组，然后才能将其反转。您的结果必须是字符串。如果卡住，请记得使用<a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> 。编写自己的代码。 </section>
 
 ## Instructions
 <section id="instructions">

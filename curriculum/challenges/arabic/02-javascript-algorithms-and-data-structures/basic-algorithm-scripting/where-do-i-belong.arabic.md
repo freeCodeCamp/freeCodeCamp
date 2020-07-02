@@ -8,7 +8,7 @@ localeTitle: إلى أين أنتمي
 ---
 
 ## Description
-<section id="description"> قم بإرجاع أدنى مؤشر يتم فيه إدراج قيمة (وسيطة ثانية) في صفيف (وسيطة أولى) بمجرد فرزها. يجب أن تكون القيمة التي تم إرجاعها رقمًا. على سبيل المثال ، يجب أن تقوم <code>getIndexToIns([1,2,3,4], 1.5)</code> بإرجاع <code>1</code> لأنه أكبر من <code>1</code> (index 0) ، ولكن أقل من <code>2</code> (index 1). وبالمثل ، يجب أن تعود <code>getIndexToIns([20,3,5], 19)</code> <code>2</code> لأنه بمجرد فرز المصفوفة ستبدو مثل <code>[3,5,20]</code> و <code>19</code> أقل من <code>20</code> (مؤشر 2) وأكبر من <code>5</code> ( مؤشر 1). تذكر استخدام <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> إذا واجهتك مشكلة. اكتب الكود الخاص بك. </section>
+<section id="description"> قم بإرجاع أدنى مؤشر يتم فيه إدراج قيمة (وسيطة ثانية) في صفيف (وسيطة أولى) بمجرد فرزها. يجب أن تكون القيمة التي تم إرجاعها رقمًا. على سبيل المثال ، يجب أن تقوم <code>getIndexToIns([1,2,3,4], 1.5)</code> بإرجاع <code>1</code> لأنه أكبر من <code>1</code> (index 0) ، ولكن أقل من <code>2</code> (index 1). وبالمثل ، يجب أن تعود <code>getIndexToIns([20,3,5], 19)</code> <code>2</code> لأنه بمجرد فرز المصفوفة ستبدو مثل <code>[3,5,20]</code> و <code>19</code> أقل من <code>20</code> (مؤشر 2) وأكبر من <code>5</code> ( مؤشر 1). تذكر استخدام <a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> إذا واجهتك مشكلة. اكتب الكود الخاص بك. </section>
 
 ## Instructions
 <section id="instructions">

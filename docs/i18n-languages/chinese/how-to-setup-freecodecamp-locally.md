@@ -438,7 +438,7 @@ npm run develop
 
 ## 获取帮助
 
-如果您遇到困难并需要帮助，请通过我们论坛上的['贡献者'类別](https://www.freecodecamp.org/forum/c/contributors)或在Gitter上的[贡献者者聊天室](https://gitter.im/FreeCodeCamp/Contributors)询问我們。
+如果您遇到困难并需要帮助，请通过我们论坛上的['贡献者'类別](https://forum.freecodecamp.org/c/contributors)或在Gitter上的[贡献者者聊天室](https://gitter.im/FreeCodeCamp/Contributors)询问我們。
 
 您的浏览器控制台或Bash/終端/命令行中可能存在錯誤有助於识別問題。
 

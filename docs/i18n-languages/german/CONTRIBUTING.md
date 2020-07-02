@@ -19,7 +19,7 @@ Du kannst dir einen beliebigen Bereich aussuchen, zu dem du etwas beitragen möc
 
 1. [Trage etwas zu dieser Open-Source-Codebase bei](#Trage-etwas-zu-dieser-Open-Source-Codebase-bei). Hilf dabei, die [Leitfaden-Artikel](https://guide.freecodecamp.org/) oder die [Coding Challenges](https://learn.freecodecamp.org/) zu bearbeiten, oder fixe Bugs auf der Lernplattform.
 
-2. Hilf Campern in unserem [öffentlichen Forum](https://www.freecodecamp.org/forum/). [Beantworte ihre Programmierfragen](https://www.freecodecamp.org/forum/?max_posts=1) oder [gib ihnen Feedback zu ihren Programmierprojekten](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1).
+2. Hilf Campern in unserem [öffentlichen Forum](https://forum.freecodecamp.org/). [Beantworte ihre Programmierfragen](https://forum.freecodecamp.org/?max_posts=1) oder [gib ihnen Feedback zu ihren Programmierprojekten](https://forum.freecodecamp.org/c/project-feedback?max_posts=1).
 
 3. Hilf uns, Untertitel zu unseren [YouTube-Kanal-Videos](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ/videos) hinzuzufügen.
 
@@ -61,7 +61,7 @@ Wenn du denkst, dass du einen Bug gefunden hast, lies zunächst den ["Hilfe, ich
 
 Wenn du dir sicher bist, dass es sich um einen neuen Bug handelt, kannst du ein neues GitHub-Issue erstellen. Stelle sicher, dass du so viel Information wie möglich dazuschreibst, sodass wir den Bug nachvollziehen können. Wir haben ein vorgefertigtes Issue-Template, das dir dabei hilft.
 
-Bitte beachte, dass alle Issues, die nach Hilfe bei einer Coding Challenge fragen, geschlossen werden. Der Issue-Tracker ist ausschließlich für Probleme und Diskussionen, die sich auf die Codebase beziehen. Wenn du dir nicht sicher bist, [frag im Forum nach Hilfe](https://www.freecodecamp.org/forum), bevor du einen Report machst.
+Bitte beachte, dass alle Issues, die nach Hilfe bei einer Coding Challenge fragen, geschlossen werden. Der Issue-Tracker ist ausschließlich für Probleme und Diskussionen, die sich auf die Codebase beziehen. Wenn du dir nicht sicher bist, [frag im Forum nach Hilfe](https://forum.freecodecamp.org), bevor du einen Report machst.
 
 **Wie kann ich ein Sicherheitsrisiko melden?**
 
@@ -102,7 +102,7 @@ Lies unseren [Wie wirke ich an Open-Source-Projekten mit-Artikel](https://github
 
 An den folgenden Orten kannst du um Hilfe bitten:
 
-- [Der "Contributor"-Bereich unseres öffentlichen Forums](https://www.freecodecamp.org/forum/c/contributors)
+- [Der "Contributor"-Bereich unseres öffentlichen Forums](https://forum.freecodecamp.org/c/contributors)
 - [Unser öffentlicher Chatroom für Contributor auf Gitter](https://gitter.im/FreeCodeCamp/Contributors)
 
 Wir helfen dir sehr gerne beim Mitwirken an jeglichen Bereichen, die dich interessieren. Stelle sicher, dass du erst nach deiner Anfrage suchst, bevor du eine neue anlegst. Sei höflich und geduldig. Unsere Community von Freiwilligen und Moderatoren ist immer da, um dich bei deinen Anliegen zu führen.
