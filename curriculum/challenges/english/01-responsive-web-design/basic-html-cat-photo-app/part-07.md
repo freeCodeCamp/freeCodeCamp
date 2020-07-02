@@ -23,6 +23,8 @@ tests:
     testString: assert( document.querySelector('img') );
   - text: Your `img` element should not have a closing tag. Closing tags have a `/` just after the `<` character.
     testString: assert( !code.match(/<\/img\>/) );
+  - text: You should only have one `img` element. Remove the extra.
+    testString: assert( document.querySelectorAll('img').length === 1 );
   - text: Your `img` element should be below the `p` element. You have them in the wrong order.
     testString: const collection = [...document.querySelectorAll('p,img')].map(node => node.nodeName); assert( collection.indexOf('P') < collection.indexOf('IMG') );
 
