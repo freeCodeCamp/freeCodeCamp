@@ -1,5 +1,5 @@
 ---
-id: 5ef9b03c81a63668521804e5
+id: 5ef9b03c81a63668521804e2
 title: Part 46
 challengeType: 0
 isHidden: true
@@ -8,9 +8,11 @@ isHidden: true
 ## Description
 <section id='description'>
 
-To set a checkbox or radio button to be checked by default, add the word `checked` to the inside of an input element. For example: `<input type="radio" name="test-name" checked>`. 
+Forms commonly use checkboxes for questions that may have more than one answer. The code for a checkbox is very similar to that of a radio button.
 
-Set the first of your radio buttons and the first of your checkboxes to both be checked by default.
+After the `<br>` tag, add an `input` with its `type` attribute set to `checkbox`, and give it the option of `Loving`.
+
+For example, here's an example of a checkbox with the option of `tacos`: `<input type="checkbox"> tacos`.
 
 </section>
 
@@ -69,10 +71,6 @@ tests:
       <form action="/submit-cat-photo">
         <label for="indoor"><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
         <label for="outdoor"><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label>
-        <br>
-        <label for="loving"><input id="loving" type="checkbox" name="personality"> Loving</label>
-        <label for="lazy"><input id="lazy" type="checkbox" name="personality"> Lazy</label>
-        <label for="energetic"><input id="energetic" type="checkbox" name="personality"> Energetic</label>
         <br>
         <input type="text" placeholder="cat photo URL" required>
         <button type="submit">Submit</button>

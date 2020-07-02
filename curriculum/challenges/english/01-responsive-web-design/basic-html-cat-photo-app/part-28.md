@@ -1,5 +1,5 @@
 ---
-id: 5ef9b03c81a63668521804d3
+id: 5efae0543cbd2bbdab94e333
 title: Part 28
 challengeType: 0
 isHidden: true
@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-After the closing `</ol>` tag, add another `figure` element.
+To improve accessibility, add an `alt` attribute with the text `Cats` to the new image.
 
 </section>
 
@@ -23,10 +23,14 @@ After the closing `</ol>` tag, add another `figure` element.
 tests:
   - text: 'Your `figure` element should have an opening tag. Opening tags have this syntax: `<elementName>`.'
     testString: assert( document.querySelectorAll('figure').length === 2 );
-  - text: Your `figure` element should have a closing tag. Closing tags have a `/` just after the `<` character.
+  - text: Your `ol` element should have a closing tag. Closing tags have a `/` just after the `<` character.
     testString: assert( code.match(/<\/figure>/g).length === 2 );
   - text: There should be a `figure` element right above the `main` element's closing tag.
     testString: assert( document.querySelector('main').lastElementChild.nodeName === 'FIGURE' );
+  - text: The Cats `img` element should be nested in the `figure` element.
+    testString: const catsImg = document.querySelectorAll('figure > img')[1]; assert( catsImg && catsImg.getAttribute('src').toLowerCase() === 'https://bit.ly/fcc-cats');
+  - text: The Cats `img` element should have an `alt` attribute with the value `Cats`.
+    testString: const catsImg = document.querySelectorAll('figure > img')[1]; assert( catsImg.getAttribute('alt').toLowerCase() === 'cats');
 
 ```
 
@@ -63,6 +67,9 @@ tests:
         <li>thunder</li>
         <li>other cats</li>
       </ol>
+      <figure>
+        <img src="https://bit.ly/fcc-cats">
+      </figure>
     </main>
   </body>
 </html>

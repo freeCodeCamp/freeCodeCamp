@@ -1,6 +1,6 @@
 ---
-id: 5ef9b03c81a63668521804e7
-title: Part 55
+id: 5ef9b03c81a63668521804ec
+title: Part 60
 challengeType: 0
 isHidden: true
 ---
@@ -8,7 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Now you will add a footer section to the page. Below the closing `</main>` tag, add opening `<footer>` and closing `</footer>` tag.
+The `title` element defines the document's title that is shown in a browser's title bar or a page's tab. 
+
+Nested within the `head` element of the page, add a `title` element with the text `CatPhotoApp`. For example, `<title>page title</title>`.
 
 </section>
 
@@ -34,7 +36,9 @@ tests:
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <head>
+  </head>
   <body>
     <h1>CatPhotoApp</h1>
     <main>
@@ -78,6 +82,9 @@ tests:
         <button type="submit">Submit</button>
       </form>
     </main>
+    <footer>
+      <p>No Copyright - <a href="https://freecodecamp.org">freeCodeCamp.org</a></p>
+    </footer>
   </body>
 </html>
 ```

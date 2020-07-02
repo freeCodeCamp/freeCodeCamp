@@ -1,5 +1,5 @@
 ---
-id: 5ef9b03c81a63668521804d8
+id: 5ef9b03c81a63668521804d7
 title: Part 33
 challengeType: 0
 isHidden: true
@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-The `input` element is one of the most versatile HTML elements, and gives you many ways to collect data from web forms.
+Indicate where to submit the form data by adding an `action` attribute with the value `/submit-cat-photo` to the `form` element.
 
-Nest an `<input>` tag in the `form` element. Note that `input` elements are <dfn>self-closing</dfn>, and do not need closing tags.
+For example, `<form action="/submit-url"></form>` indicates that the form data should be sent to the URL `/submit-url`.
 
 </section>
 
@@ -66,7 +66,7 @@ tests:
         <figcaption>Cats <strong>hate</strong> other cats.</figcaption>  
       </figure>
       <h2>Cat Form</h2>
-      <form action="/submit-cat-photo">
+      <form>
       </form>
     </main>
   </body>

@@ -1,5 +1,5 @@
 ---
-id: 5ef9b03c81a63668521804df
+id: 5ef9b03c81a63668521804dc
 title: Part 40
 challengeType: 0
 isHidden: true
@@ -8,9 +8,11 @@ isHidden: true
 ## Description
 <section id='description'>
 
-The `id` attribute is used to identify specific HTML elements, and each `id` must be unique.
+You can use radio buttons for questions where you want only one answer out of multiple options.
 
-Add an `id` attribute with the value `indoor` to the first radio input, and an `id` with the value `outdoor` to the second radio input. When elements have multiple attributes, the order of the attributes doesn't matter.
+Here is an example of a radio button with the option of `cat`: `<input type="radio"> cat`. Remember that `input` elements are <dfn>self-closing</dfn>.
+
+Before the submit button, add two radio buttons on two separate lines with the options `Indoor` and `Outdoor`.
 
 </section>
 
@@ -67,8 +69,6 @@ tests:
       </figure>
       <h2>Cat Form</h2>
       <form action="/submit-cat-photo">
-        <label><input type="radio" name="indoor-outdoor"> Indoor</label>
-        <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
         <input type="text" placeholder="cat photo URL" required>
         <button type="submit">Submit</button>
       </form>

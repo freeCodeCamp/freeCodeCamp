@@ -1,5 +1,5 @@
 ---
-id: 5ef9b03c81a63668521804e2
+id: 5ef9b03c81a63668521804df
 title: Part 43
 challengeType: 0
 isHidden: true
@@ -8,11 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Forms commonly use checkboxes for questions that may have more than one answer. The code for a checkbox is very similar to that of a radio button.
+The `id` attribute is used to identify specific HTML elements, and each `id` must be unique.
 
-After the `<br>` tag, add an `input` with its `type` attribute set to `checkbox`, and give it the option of `Loving`.
-
-For example, here's an example of a checkbox with the option of `tacos`: `<input type="checkbox"> tacos`.
+Add an `id` attribute with the value `indoor` to the first radio input, and an `id` with the value `outdoor` to the second radio input. When elements have multiple attributes, the order of the attributes doesn't matter.
 
 </section>
 
@@ -69,9 +67,8 @@ tests:
       </figure>
       <h2>Cat Form</h2>
       <form action="/submit-cat-photo">
-        <label for="indoor"><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
-        <label for="outdoor"><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label>
-        <br>
+        <label><input type="radio" name="indoor-outdoor"> Indoor</label>
+        <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
         <input type="text" placeholder="cat photo URL" required>
         <button type="submit">Submit</button>
       </form>

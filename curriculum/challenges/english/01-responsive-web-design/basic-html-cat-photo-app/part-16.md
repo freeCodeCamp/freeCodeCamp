@@ -1,5 +1,5 @@
 ---
-id: 5dfa2527b521be39a3de7be2
+id: 5dfa3589eacea3f48c6300ae
 title: Part 16
 challengeType: 0
 isHidden: true
@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-If you didn't want the anchor element to link to catphotos.com? On the anchor tag, change the value of the `href` attribute to equal "#". 
+Time for a new section of the page. 
 
-Doing this will keep the text as a link, but it will no longer link to anything. This is often used to create a placeholder link or when changing the behavior of a link using JavaScript.
+Before the `</main>` closing tag, add a new `h2` element with the text "Cat Lists".
 
 </section>
 
@@ -24,8 +24,10 @@ Doing this will keep the text as a link, but it will no longer link to anything.
 
 ```yml
 tests:
-  - text: The value of the `target` attribute should `#`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotes.
-    testString: assert( document.querySelector('a').href.slice(-1) === '#' );
+  - text: You should now have two `h2` elements. The first one is `Cat Photos` and the last one should be right before the `main` element's closing tag.`element.
+    testString: assert( document.querySelector('main').lastElementChild.nodeName === 'H2' );
+  - text: The second `h2` element should have the text `Cat Lists`.
+    testString: assert( document.querySelector('main').lastElementChild.innerText.replace(/\s/g,'').toLowerCase() ===  'catlists');
 
 ```
 
@@ -44,8 +46,8 @@ tests:
     <main>
       <h2>Cat Photos</h2>
       <!-- TODO: Add link to cat photos -->
-      <p>Click here to view more <a target="_blank" href="https://catphotos.com">cat photos</a>.</p>
-      <img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
+      <p>Click here to view more <a target="_blank" href="#">cat photos</a>.</p>
+      <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
     </main>
   </body>
 </html>

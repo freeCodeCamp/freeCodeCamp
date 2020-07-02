@@ -1,5 +1,5 @@
 ---
-id: 5dfb655eeacea3f48c6300b3
+id: 5ef9b03c81a63668521804d0
 title: Part 23
 challengeType: 0
 isHidden: true
@@ -8,13 +8,12 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Nest the `img` you just added within a `<figure>` element. The `<figure>` element element represents self-contained content and will allow you to associate an image caption.
+Emphasize the word `love` by adding `<em>` before the word and `</em>` after the word.
 
 </section>
 
 ## Instructions
 <section id='instructions'>
-
 </section>
 
 ## Tests
@@ -22,21 +21,19 @@ Nest the `img` you just added within a `<figure>` element. The `<figure>` elemen
 
 ```yml
 tests:
-  - text: "Your `figure` element should have an opening tag. Opening tags have the following syntax: `elementName`."
-    testString: assert( document.querySelector('figure') );
-  - text: Your `figure` element should have a closing tag. Closing tags have a `/` just after the `<` character.
-    testString: assert( code.match(/<\/figure\>/) );
-  - text: There should be an `figure` element right above the `main` element's closing tag.
-    testString: assert( document.querySelector('main').lastElementChild.nodeName === 'FIGURE' );
-  - text: The Lasagna `img` element should be nested in the `figure` element.
-    testString: assert( document.querySelector('figure > img') && document.querySelector('figure > img').getAttribute('src').toLowerCase() === 'https://bit.ly/fcc-lasagna');
+  - text: 'Your emphasis (`em`) element should have an opening tag. Opening tags have this syntax: `<elementName>`.'
+    testString: assert( document.querySelector('em') );
+  - text: Your emphasis (`em`) element should have a closing tag. Closing tags have a `/` just after the `<` character.
+    testString: assert( code.match(/<\/em\>/) );
+  - text: Your emphasis (`em`) element should surround the text `love`. You have either omitted the text or have a typo.
+    testString: assert( document.querySelector('em').innerText.toLowerCase() === 'love' );
+
 ```
 
 </section>
 
 ## Challenge Seed
 <section id='challengeSeed'>
-
 <div id='html-seed'>
 
 ```html
@@ -56,7 +53,10 @@ tests:
         <li>laser pointers</li>
         <li>lasagna</li>
       </ul>
-      <img src="https://bit.ly/fcc-lasagna" alt="Lasagna">
+      <figure>
+        <img src="https://bit.ly/fcc-lasagna" alt="Lasagna">
+        <figcaption>Cats love lasagna.</figcaption>  
+      </figure>
     </main>
   </body>
 </html>

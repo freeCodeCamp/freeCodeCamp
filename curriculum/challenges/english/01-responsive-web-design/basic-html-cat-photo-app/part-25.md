@@ -1,5 +1,5 @@
 ---
-id: 5ef9b03c81a63668521804d0
+id: 5ef9b03c81a63668521804d2
 title: Part 25
 challengeType: 0
 isHidden: true
@@ -8,7 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Emphasize the word `love` by adding `<em>` before the word and `</em>` after the word.
+The code for an ordered list is similar to an unordered list, except the opening / closing tags look like this: `<ol> </ol>`. An ordered list is numbered when displayed. 
+
+After the final paragraph element, add an ordered list with these three list items: `flea treatment`, `thunder` and `other cats`.
 
 </section>
 
@@ -21,12 +23,16 @@ Emphasize the word `love` by adding `<em>` before the word and `</em>` after the
 
 ```yml
 tests:
-  - text: 'Your emphasis (`em`) element should have an opening tag. Opening tags have this syntax: `<elementName>`.'
-    testString: assert( document.querySelector('em') );
-  - text: Your emphasis (`em`) element should have a closing tag. Closing tags have a `/` just after the `<` character.
-    testString: assert( code.match(/<\/em\>/) );
-  - text: Your emphasis (`em`) element should surround the text `love`. You have either omitted the text or have a typo.
-    testString: assert( document.querySelector('em').innerText.toLowerCase() === 'love' );
+  - text: 'Your `ol` element should have an opening tag. Opening tags have this syntax: `<elementName>`.'
+    testString: assert( document.querySelector('ol') );
+  - text: Your `ol` element should have a closing tag. Closing tags have a `/` just after the `<` character.
+    testString: assert( code.match(/<\/ol>/) );
+  - text: The `ol` element should be above the `main` element's closing tag.
+    testString: assert( document.querySelector('main').lastElementChild.nodeName === 'OL' );
+  - text: The three `li` elements should be nested inside the `ol` element.
+    testString: assert( [ ...document.querySelectorAll('li') ].filter(item => item.parentNode.nodeName === 'OL').length === 3 );
+  - text: You should have 3 `li` elements with the text `flea treatment`, `thunder` and `other cats` in any order.
+    testString: assert.deepStrictEqual( [ ...document.querySelectorAll('li') ].filter(item => item.parentNode.nodeName === 'OL').map(item => item.innerText.toLowerCase()).sort((a, b) => a.localeCompare(b)), ["flea treatment", "other cats", "thunder"] );
 
 ```
 
@@ -55,8 +61,9 @@ tests:
       </ul>
       <figure>
         <img src="https://bit.ly/fcc-lasagna" alt="Lasagna">
-        <figcaption>Cats love lasagna.</figcaption>  
+        <figcaption>Cats <em>love</em> lasagna.</figcaption>  
       </figure>
+      <p>Top 3 things cats hate:</p>
     </main>
   </body>
 </html>

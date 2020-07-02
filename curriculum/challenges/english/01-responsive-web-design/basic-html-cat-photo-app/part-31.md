@@ -1,5 +1,5 @@
 ---
-id: 5ef9b03c81a63668521804d6
+id: 5ef9b03c81a63668521804d5
 title: Part 31
 challengeType: 0
 isHidden: true
@@ -8,9 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Now you will add a web form. 
-
-After the `Cat Form` heading, add an opening `<form>` and closing `</form>` tags.
+After the last `figure` element add another `h2` tag with the text `Cat Form`.
 
 </section>
 
@@ -23,8 +21,14 @@ After the `Cat Form` heading, add an opening `<form>` and closing `</form>` tags
 
 ```yml
 tests:
-  - text: See description above for instructions.
-    testString: ''
+  - text: Your `h2` element should have an opening tag.
+    testString: assert( document.querySelectorAll('h2').length === 3 );
+  - text: Your `h2` element should have a closing tag.
+    testString: assert( code.match(/\<\/h2\>/g).length === 3 );
+  - text: There should be an `h2` element right above the `main` element's closing tag.
+    testString: assert( document.querySelector('main').lastElementChild.nodeName === 'H2' );
+  - text: Your `h2` element's text should be `Cat Form`.
+    testString: assert( document.querySelectorAll('h2')[2].innerText.toLowerCase().replace(/\s/g, '') === 'catform' );
 
 ```
 
@@ -65,7 +69,6 @@ tests:
         <img src="https://bit.ly/fcc-cats" alt="Cats">
         <figcaption>Cats <strong>hate</strong> other cats.</figcaption>  
       </figure>
-      <h2>Cat Form</h2>
     </main>
   </body>
 </html>

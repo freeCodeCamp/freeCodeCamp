@@ -1,5 +1,5 @@
 ---
-id: 5ef9b03c81a63668521804db
+id: 5ef9b03c81a63668521804d9
 title: Part 36
 challengeType: 0
 isHidden: true
@@ -8,7 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Require the user to fill out the text field before submitting the form by adding the word `required` like in this example: `<input type="text" required>`.
+Add the placeholder text `cat photo URL` to your `input` element that will display in the textbox before your user inputs anything.  
+
+For example, `<input type="text" placeholder="this is placeholder text">` has the placeholder text `this is placeholder text`.
 
 </section>
 
@@ -65,8 +67,7 @@ tests:
       </figure>
       <h2>Cat Form</h2>
       <form action="/submit-cat-photo">
-        <input type="text" placeholder="cat photo URL">
-        <button type="submit">Submit</button>
+        <input type="text">
       </form>
     </main>
   </body>

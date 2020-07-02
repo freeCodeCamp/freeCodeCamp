@@ -1,5 +1,5 @@
 ---
-id: 5dc24073f86c76b9248c6ebb
+id: 5dc24614f86c76b9248c6ebd
 title: Part 10
 challengeType: 0
 isHidden: true
@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-HTML <dfn>attributes</dfn> are special words used inside the opening tag of an element to control the element's behavior. The `src` attribute in an `img` element specifies the image's URL (where the image is located).  An example of an `img` element using an `src` attribute: `<img src="https://www.your-image-source.com/your-image.jpg">`. 
+After the paragraph element, add an anchor (`a`) element with an `href` attribute that links to the `catphotos.com` website at `https://catphotos.com`.
 
-Add an `src` attribute to the existing `img` element that is set to the following URL: `https://bit.ly/fcc-relaxing-cat`.
+For example, `<a href="https://www.freecodecamp.org"></a>` is an anchor element that links to `freecodecamp.org`. At this point the anchor element will not show up in the browser.
 
 </section>
 
@@ -24,12 +24,16 @@ Add an `src` attribute to the existing `img` element that is set to the followin
 
 ```yml
 tests:
-  - text: Your code should have an `img` element. You removed the `img` element from the last step.
-    testString: assert( document.querySelector('img') );
-  - text: Your <code>img</code> element does not have a <code>src</code> attribute. You have either omitted the attribute or have a typo. Make sure there is a space between the element name and the attribute name.
-    testString: assert( document.querySelector('img').src );
-  - text: Your <code>img</code> element's <code>src</code> attribute should be set to 'https://bit.ly/fcc-relaxing-cat'. You have either omitted the URL or have a typo. The case of the URL is important.
-    testString: assert( document.querySelector('img').src === 'https://bit.ly/fcc-relaxing-cat' );
+  - text: "Your anchor (`a`) element should have an opening tag. Opening tags have the following syntax: `<elementName>`."
+    testString: assert( document.querySelector('a') );
+  - text: "Your anchor (`a`) element should have a closing tag. Closing tags have a `/` just after the `<` character."
+    testString: assert( code.match(/<\/a\>/) );
+  - text: "Your anchor (`a`) element does not have an `href` attribute. You have either omitted the attribute or have a typo."
+    testString: const hrefVal = document.querySelector('a').getAttribute('href'); assert( hrefVal || hrefVal === '' );
+  - text: "Your anchor (`a`) element should link to `https://catphotos.com`. You have either omitted the URL or have a typo."
+    testString: assert( document.querySelector('a').getAttribute('href') === 'https://catphotos.com' );
+  - text: "Your anchor (`a`) element should be below the `p` element. You have them in the wrong order."
+    testString: const collection = [...document.querySelectorAll('a, p')].map(node => node.nodeName); assert( collection.indexOf('P') < collection.indexOf('A') );
 
 ```
 
@@ -49,7 +53,7 @@ tests:
       <h2>Cat Photos</h2>
       <!-- TODO: Add link to cat photos -->
       <p>Click here to view more cat photos.</p>
-      <img>
+      <img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
     </main>
   </body>
 </html>

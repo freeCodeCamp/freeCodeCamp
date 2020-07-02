@@ -1,5 +1,5 @@
 ---
-id: 5ef9b03c81a63668521804de
+id: 5ef9b03c81a63668521804db
 title: Part 39
 challengeType: 0
 isHidden: true
@@ -8,9 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-All related radio buttons should have the same `name` attribute to create a radio button group. By creating a radio group, selecting a radio button will automatically deselect the other buttons within the same group. This helps ensure that only one answer is provided.
-
-Add the `name` attribute with the value `indoor-outdoor` to each radio button similar to this example: `<label><input type="radio" name="animal"> cat</label>`.
+Require the user to fill out the text field before submitting the form by adding the word `required` like in this example: `<input type="text" required>`.
 
 </section>
 
@@ -67,9 +65,7 @@ tests:
       </figure>
       <h2>Cat Form</h2>
       <form action="/submit-cat-photo">
-        <label><input type="radio"> Indoor</label>
-        <label><input type="radio"> Outdoor</label>
-        <input type="text" placeholder="cat photo URL" required>
+        <input type="text" placeholder="cat photo URL">
         <button type="submit">Submit</button>
       </form>
     </main>

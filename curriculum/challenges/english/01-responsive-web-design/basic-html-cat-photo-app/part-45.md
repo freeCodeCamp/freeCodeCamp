@@ -1,5 +1,5 @@
 ---
-id: 5ef9b03c81a63668521804e4
+id: 5ef9b03c81a63668521804e1
 title: Part 45
 challengeType: 0
 isHidden: true
@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Now add another `<br>` tag after the checkboxes.
+Add a `<br>` tag after the labels to create a line break when the page is rendered.
 
 </section>
 
@@ -67,10 +67,6 @@ tests:
       <form action="/submit-cat-photo">
         <label for="indoor"><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
         <label for="outdoor"><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label>
-        <br>
-        <label for="loving"><input id="loving" type="checkbox" name="personality"> Loving</label>
-        <label for="lazy"><input id="lazy" type="checkbox" name="personality"> Lazy</label>
-        <label for="energetic"><input id="energetic" type="checkbox" name="personality"> Energetic</label>
         <input type="text" placeholder="cat photo URL" required>
         <button type="submit">Submit</button>
       </form>

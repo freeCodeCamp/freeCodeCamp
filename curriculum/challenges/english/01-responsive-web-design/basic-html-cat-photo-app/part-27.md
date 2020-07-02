@@ -1,5 +1,5 @@
 ---
-id: 5ef9b03c81a63668521804d2
+id: 5efada803cbd2bbdab94e332
 title: Part 27
 challengeType: 0
 isHidden: true
@@ -8,9 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-The code for an ordered list is similar to an unordered list, except the opening / closing tags look like this: `<ol> </ol>`. An ordered list is numbered when displayed. 
-
-After the final paragraph element, add an ordered list with these three list items: `flea treatment`, `thunder` and `other cats`.
+Inside the `figure` element you just added, nest an `img` element with a `src` attribute set to `https://bit.ly/fcc-cats`.
 
 </section>
 
@@ -23,16 +21,14 @@ After the final paragraph element, add an ordered list with these three list ite
 
 ```yml
 tests:
-  - text: 'Your `ol` element should have an opening tag. Opening tags have this syntax: `<elementName>`.'
-    testString: assert( document.querySelector('ol') );
+  - text: 'Your `figure` element should have an opening tag. Opening tags have this syntax: `<elementName>`.'
+    testString: assert( document.querySelectorAll('figure').length === 2 );
   - text: Your `ol` element should have a closing tag. Closing tags have a `/` just after the `<` character.
-    testString: assert( code.match(/<\/ol>/) );
-  - text: The `ol` element should be above the `main` element's closing tag.
-    testString: assert( document.querySelector('main').lastElementChild.nodeName === 'OL' );
-  - text: The three `li` elements should be nested inside the `ol` element.
-    testString: assert( [ ...document.querySelectorAll('li') ].filter(item => item.parentNode.nodeName === 'OL').length === 3 );
-  - text: You should have 3 `li` elements with the text `flea treatment`, `thunder` and `other cats` in any order.
-    testString: assert.deepStrictEqual( [ ...document.querySelectorAll('li') ].filter(item => item.parentNode.nodeName === 'OL').map(item => item.innerText.toLowerCase()).sort((a, b) => a.localeCompare(b)), ["flea treatment", "other cats", "thunder"] );
+    testString: assert( code.match(/<\/figure>/g).length === 2 );
+  - text: There should be a `figure` element right above the `main` element's closing tag.
+    testString: assert( document.querySelector('main').lastElementChild.nodeName === 'FIGURE' );
+  - text: The Cats `img` element should be nested in the `figure` element.
+    testString: const catsImg = document.querySelectorAll('figure > img')[1]; assert( catsImg && catsImg.getAttribute('src').toLowerCase() === 'https://bit.ly/fcc-cats');
 
 ```
 
@@ -64,6 +60,13 @@ tests:
         <figcaption>Cats <em>love</em> lasagna.</figcaption>  
       </figure>
       <p>Top 3 things cats hate:</p>
+      <ol>
+        <li>flea treatment</li>
+        <li>thunder</li>
+        <li>other cats</li>
+      </ol>
+      <figure>
+      </figure>
     </main>
   </body>
 </html>

@@ -1,5 +1,5 @@
 ---
-id: 5ef9b03c81a63668521804dd
+id: 5efb2c990dc218d6c85f89b2
 title: Part 38
 challengeType: 0
 isHidden: true
@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-To make it so clicking the words `Indoor` or `Outdoor` selects the corresponding radio button, wrap the `input` element and text with a `label` element.
+Add the `type` attribute with the value `submit` to the button.
 
-For example, `<label><input type="radio"> cat</label>`.
+After doing that, clicking this button will send the data from your form to the URL in your form's action attribute.
 
 </section>
 
@@ -67,10 +67,8 @@ tests:
       </figure>
       <h2>Cat Form</h2>
       <form action="/submit-cat-photo">
-        <input type="radio"> Indoor
-        <input type="radio"> Outdoor
-        <input type="text" placeholder="cat photo URL" required>
-        <button type="submit">Submit</button>
+        <input type="text" placeholder="cat photo URL">
+        <button>Submit</button>
       </form>
     </main>
   </body>

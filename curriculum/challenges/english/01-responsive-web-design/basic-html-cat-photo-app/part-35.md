@@ -1,5 +1,5 @@
 ---
-id: 5ef9b03c81a63668521804da
+id: 5efb23e70dc218d6c85f89b1
 title: Part 35
 challengeType: 0
 isHidden: true
@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Under the `input` element, add a `button` element with the text `Submit`.
+There are many kinds of inputs you can create using the `type` attribute. You can easily create a password field, reset button, or a control to let users select a file from their computer.
 
-For example, `<button>Click Here</button>` creates a button with the text `Click Here`.
+To get text input from a user, add the `type` attribute with the value `text` to the `input` element.
 
 </section>
 
@@ -67,7 +67,7 @@ tests:
       </figure>
       <h2>Cat Form</h2>
       <form action="/submit-cat-photo">
-        <input type="text" placeholder="cat photo URL">
+        <input>
       </form>
     </main>
   </body>

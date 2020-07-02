@@ -1,5 +1,5 @@
 ---
-id: 5ef9b03c81a63668521804e0
+id: 5ef9b03c81a63668521804dd
 title: Part 41
 challengeType: 0
 isHidden: true
@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Add a `for` attribute on each label element that is set to the `id` of the `input` element within the label. For example: `<label for="cat"><input id="cat" type="radio"> Cat</label>`.
+To make it so clicking the words `Indoor` or `Outdoor` selects the corresponding radio button, wrap the `input` element and text with a `label` element.
 
-This allows assistive technologies like screen readers to create a linked relationship between the label and the child input element.
+For example, `<label><input type="radio"> cat</label>`.
 
 </section>
 
@@ -67,8 +67,8 @@ tests:
       </figure>
       <h2>Cat Form</h2>
       <form action="/submit-cat-photo">
-        <label><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
-        <label><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label>
+        <input type="radio"> Indoor
+        <input type="radio"> Outdoor
         <input type="text" placeholder="cat photo URL" required>
         <button type="submit">Submit</button>
       </form>

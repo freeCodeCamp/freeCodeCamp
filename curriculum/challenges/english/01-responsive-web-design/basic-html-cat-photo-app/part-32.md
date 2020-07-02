@@ -1,5 +1,5 @@
 ---
-id: 5ef9b03c81a63668521804d7
+id: 5ef9b03c81a63668521804d6
 title: Part 32
 challengeType: 0
 isHidden: true
@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Indicate where to submit the form data by adding an `action` attribute with the value `/submit-cat-photo` to the `form` element.
+Now you will add a web form. 
 
-For example, `<form action="/submit-url"></form>` indicates that the form data should be sent to the URL `/submit-url`.
+After the `Cat Form` heading, add an opening `<form>` and closing `</form>` tags.
 
 </section>
 
@@ -66,8 +66,6 @@ tests:
         <figcaption>Cats <strong>hate</strong> other cats.</figcaption>  
       </figure>
       <h2>Cat Form</h2>
-      <form>
-      </form>
     </main>
   </body>
 </html>

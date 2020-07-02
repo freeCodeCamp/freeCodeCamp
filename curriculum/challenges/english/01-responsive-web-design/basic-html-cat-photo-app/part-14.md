@@ -1,5 +1,5 @@
 ---
-id: 5dfa22d1b521be39a3de7be0
+id: 5dfa2527b521be39a3de7be2
 title: Part 14
 challengeType: 0
 isHidden: true
@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Modify your code so that the anchor element you just added is nested within the paragraph element. The paragraph element should contain the same text, but the words `cat photos` should now be a link. 
+If you didn't want the anchor element to link to catphotos.com? On the anchor tag, change the value of the `href` attribute to equal "#". 
 
-Here is an example of an anchor element nested within a paragraph: `<p>Here is a <a href="http://freecodecamp.org">link to freecodecamp.org</a>.</p>`.
+Doing this will keep the text as a link, but it will no longer link to anything. This is often used to create a placeholder link or when changing the behavior of a link using JavaScript.
 
 </section>
 
@@ -24,16 +24,8 @@ Here is an example of an anchor element nested within a paragraph: `<p>Here is a
 
 ```yml
 tests:
-  - text: Your code should only contain one anchor (`a`) element element. Nest the anchor element you added into the `p` element.
-    testString: assert( document.querySelectorAll('a').length === 1 );
-  - text: Your anchor (`a`) element should be nested within the `p` element. Replace the text `cat photos` in the `p` element with your anchor element.
-    testString: const nestedAnchor = document.querySelector('p').querySelector('a'); 
-      assert( 
-        nestedAnchor.getAttribute('href') === 'https://catphotos.com' &&
-        nestedAnchor.innerText.toLowerCase().replace(/\s/g, '') === 'catphotos'
-      );
-  - text: After nesting the anchor (`a`) element, the `p` element's text should still be `Click here to view more cat photos.`. Double check the text, spacing, or punctuation of both the `p` and nested anchor element.
-    testString: const pText = document.querySelector('p').innerText.toLowerCase().replace(/\s/g, ''); assert( pText.includes('clickheretoviewmorecatphotos') );
+  - text: The value of the `target` attribute should `#`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotes.
+    testString: assert( document.querySelector('a').href.slice(-1) === '#' );
 
 ```
 
@@ -52,8 +44,7 @@ tests:
     <main>
       <h2>Cat Photos</h2>
       <!-- TODO: Add link to cat photos -->
-      <p>Click here to view more cat photos.</p>
-      <a href="https://catphotos.com">cat photos</a>
+      <p>Click here to view more <a target="_blank" href="https://catphotos.com">cat photos</a>.</p>
       <img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
     </main>
   </body>

@@ -1,5 +1,5 @@
 ---
-id: 5dfa30b9eacea3f48c6300ad
+id: 5dfa371beacea3f48c6300af
 title: Part 17
 challengeType: 0
 isHidden: true
@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Make the image into a link by adding `<a href="#">` before the `img` tag and `</a>` after the image tag.
+After the last `h2` element, add a paragraph element with the text `Things cats love:`.
 
 </section>
 
@@ -22,16 +22,22 @@ Make the image into a link by adding `<a href="#">` before the `img` tag and `</
 
 ```yml
 tests:
-  - text: You should have an `img` element with an `src` value of `https://bit.ly/fcc-relaxing-cat`.  You may have accidentally deleted it.
-    testString: "assert( document.querySelector('img') && document.querySelector('img').getAttribute('src') === 'https://bit.ly/fcc-relaxing-cat' );"
-  - text: "Your anchor (`a`) element should have an opening tag. Opening tags have the following syntax: `<elementName>`."
-    testString: assert( document.querySelector('a') );
-  - text: "Your anchor (`a`) element should have a closing tag. Closing tags have a `/` just after the `<` character."
-    testString: assert( code.match(/<\/a>/) );
-  - text: Your anchor (`a`) element should have an `href` value of `#`.
-    testString: "assert( document.querySelector('a').getAttribute('href') === '#' );"
-  - text: Your `img` element should be nested within the anchor (`a`) element. The entire `img` element should be inside the opening and closing tags of the anchor (`a`) element. 
-    testString: assert( document.querySelector('img').parentNode.nodeName === "A" );
+  - text: There should be a `p` element right above the `main` element's closing tag.
+    testString: assert( document.querySelector('main').lastElementChild.nodeName === 'P' );
+  - text: The `p` element right above the `main` element's closing tag should have the text `Things cats love:`. Make sure to include the colon at the end of the text.
+    testString: assert( document.querySelector('main').lastElementChild.innerText.toLowerCase().replace(/\s/g, '') === 'thingscatslove:' );
+  - text: There should be an `h2` element with the text `Cat Lists`. You may have accidentally deleted the `h2` element.
+    testString: |
+      const catListH2 = [ ...document.querySelectorAll('h2') ].filter(h2 => {
+        return h2.innerText.toLowerCase().replace(/\s/g, '') === 'catlists'
+      });
+      assert( catListH2.length === 1);
+  - text: There should be an `h2` element with the text `Cat Lists` above the last `p` element that is nested in the `main` element. You may have accidentally deleted the `h2` element.
+    testString: |
+      const lastMainElemNode = document.querySelector('main').lastElementChild;
+      assert(
+        lastMainElemNode.nodeName === 'P' && lastMainElemNode.previousElementSibling.innerText.toLowerCase().replace(/\s/g, '') === 'catlists'
+      );
 
 ```
 
@@ -51,7 +57,8 @@ tests:
       <h2>Cat Photos</h2>
       <!-- TODO: Add link to cat photos -->
       <p>Click here to view more <a target="_blank" href="#">cat photos</a>.</p>
-      <img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
+      <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+      <h2>Cat Lists</h2>
     </main>
   </body>
 </html>

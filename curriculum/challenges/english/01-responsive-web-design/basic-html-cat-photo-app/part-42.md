@@ -1,5 +1,5 @@
 ---
-id: 5ef9b03c81a63668521804e1
+id: 5ef9b03c81a63668521804de
 title: Part 42
 challengeType: 0
 isHidden: true
@@ -8,7 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Add a `<br>` tag after the labels to create a line break when the page is rendered.
+All related radio buttons should have the same `name` attribute to create a radio button group. By creating a radio group, selecting a radio button will automatically deselect the other buttons within the same group. This helps ensure that only one answer is provided.
+
+Add the `name` attribute with the value `indoor-outdoor` to each radio button similar to this example: `<label><input type="radio" name="animal"> cat</label>`.
 
 </section>
 
@@ -65,8 +67,8 @@ tests:
       </figure>
       <h2>Cat Form</h2>
       <form action="/submit-cat-photo">
-        <label for="indoor"><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
-        <label for="outdoor"><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label>
+        <label><input type="radio"> Indoor</label>
+        <label><input type="radio"> Outdoor</label>
         <input type="text" placeholder="cat photo URL" required>
         <button type="submit">Submit</button>
       </form>

@@ -1,5 +1,5 @@
 ---
-id: 5dfb6a35eacea3f48c6300b4
+id: 5ef9b03c81a63668521804d1
 title: Part 24
 challengeType: 0
 isHidden: true
@@ -8,15 +8,12 @@ isHidden: true
 ## Description
 <section id='description'>
 
-After the `img` tag that is nested in the `figure` element, add a `<figcaption>` element with the text `Cats love lasagna.`.
-
-For example, `<figcaption>cat</figcaption>` has the text "cat".
+After the `figure` element, add a paragraph element with the text `Top 3 things cats hate:`.
 
 </section>
 
 ## Instructions
 <section id='instructions'>
-
 </section>
 
 ## Tests
@@ -24,29 +21,19 @@ For example, `<figcaption>cat</figcaption>` has the text "cat".
 
 ```yml
 tests:
-  - text: There should be a `figure` element right above the `main` element's closing tag.
-    testString: assert( document.querySelector('main').lastElementChild.nodeName === 'FIGURE' );
-  - text: The Lasagna `img` element should be nested in the `figure` element.
-    testString: assert( document.querySelector('figure > img') && document.querySelector('figure > img').getAttribute('src').toLowerCase() === 'https://bit.ly/fcc-lasagna');
-  - text: "Your `figure` element should have an opening tag. Opening tags have the following syntax: `elementName`."
-    testString: assert( document.querySelector('figure') );
-  - text: Your `figure` element should have a closing tag. Closing tags have a `/` just after the `<` character.
+  - text: There should be a `p` element right above the `main` element's closing tag.
+    testString: assert( document.querySelector('main').lastElementChild.nodeName === 'P' );
+  - text: The `p` element right above the `main` element's closing tag should have the text `Top 3 things cats hate:`. Make sure to include the colon at the end of the text.
+    testString: assert( document.querySelector('main').lastElementChild.innerText.toLowerCase().replace(/\s/g, '') === 'top3thingscatshate:' );
+  - text: There should be a closing `</figure>` tag. You might have accidentally deleted the closing `</figure>` tag, or removed the `figure` element altogether.
     testString: assert( code.match(/<\/figure\>/) );
-  - text: "Your `figcaption` element should have an opening tag. Opening tags have the following syntax: `elementName`."
-    testString: assert( document.querySelector('figcaption') );
-  - text: Your `figcaption` element should have a closing tag. Closing tags have a `/` just after the `<` character.
-    testString: assert( code.match(/<\/figcaption\>/) );
-  - text: The `figcaption` element should be nested in the `figure` element.
-    testString: assert( document.querySelector('figure > figcaption') && document.querySelector('figure > figcaption'));
-  - text: The `figcaption` element nested in the `figure` element should be below the `img` element. You have the `img` element and the `figcaption` element in the wrong order.
-    testString: assert( document.querySelector('figcaption').previousElementSibling.nodeName === 'IMG');
+
 ```
 
 </section>
 
 ## Challenge Seed
 <section id='challengeSeed'>
-
 <div id='html-seed'>
 
 ```html
@@ -68,6 +55,7 @@ tests:
       </ul>
       <figure>
         <img src="https://bit.ly/fcc-lasagna" alt="Lasagna">
+        <figcaption>Cats <em>love</em> lasagna.</figcaption>  
       </figure>
     </main>
   </body>

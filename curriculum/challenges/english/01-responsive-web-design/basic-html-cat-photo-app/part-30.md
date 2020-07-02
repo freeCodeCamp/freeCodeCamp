@@ -1,5 +1,5 @@
 ---
-id: 5ef9b03c81a63668521804d5
+id: 5ef9b03c81a63668521804d4
 title: Part 30
 challengeType: 0
 isHidden: true
@@ -8,7 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-After the last `figure` element add another `h2` tag with the text `Cat Form`.
+The `strong` element is used to indicate that some text is of strong importance or urgent.
+
+In the `figcaption` you just added, indicate that `hate` is of strong importance by adding `<strong>` before the word and `</strong>` after the word.
 
 </section>
 
@@ -21,14 +23,12 @@ After the last `figure` element add another `h2` tag with the text `Cat Form`.
 
 ```yml
 tests:
-  - text: Your `h2` element should have an opening tag.
-    testString: assert( document.querySelectorAll('h2').length === 3 );
-  - text: Your `h2` element should have a closing tag.
-    testString: assert( code.match(/\<\/h2\>/g).length === 3 );
-  - text: There should be an `h2` element right above the `main` element's closing tag.
-    testString: assert( document.querySelector('main').lastElementChild.nodeName === 'H2' );
-  - text: Your `h2` element's text should be `Cat Form`.
-    testString: assert( document.querySelectorAll('h2')[2].innerText.toLowerCase().replace(/\s/g, '') === 'catform' );
+  - text: 'Your `strong` element should have an opening tag. Opening tags have this syntax: `<elementName>`.'
+    testString: assert( document.querySelector('strong') );
+  - text: Your strong element should have a closing tag. Closing tags have a `/` just after the `<` character.
+    testString: assert( code.match(/<\/strong\>/) );
+  - text: Your strong element should surround the word `hate` in the text `Cats hate other cats.`. You have either omitted the text or have a typo.
+    testString: assert( document.querySelectorAll('figcaption')[1].querySelector('strong').innerText.toLowerCase() === 'hate' );
 
 ```
 
@@ -67,7 +67,7 @@ tests:
       </ol>
       <figure>
         <img src="https://bit.ly/fcc-cats" alt="Cats">
-        <figcaption>Cats <strong>hate</strong> other cats.</figcaption>  
+        <figcaption>Cats hate other cats.</figcaption>  
       </figure>
     </main>
   </body>

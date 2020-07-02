@@ -1,6 +1,6 @@
 ---
-id: 5ef9b03c81a63668521804e7
-title: Part 55
+id: 5ef9b03c81a63668521804eb
+title: Part 59
 challengeType: 0
 isHidden: true
 ---
@@ -8,7 +8,11 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Now you will add a footer section to the page. Below the closing `</main>` tag, add opening `<footer>` and closing `</footer>` tag.
+You will also notice that inside the `html` element there is a `body` element. 
+
+Page content elements go inside the `body` element. However, metadata elements, such as `link`, `meta`, `title`, and `style`, typically go inside the `head` element. 
+
+Above the `body` element in the page, add the opening and closing tags for a `head` element.
 
 </section>
 
@@ -34,7 +38,7 @@ tests:
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <body>
     <h1>CatPhotoApp</h1>
     <main>
@@ -78,6 +82,9 @@ tests:
         <button type="submit">Submit</button>
       </form>
     </main>
+    <footer>
+      <p>No Copyright - <a href="https://freecodecamp.org">freeCodeCamp.org</a></p>
+    </footer>
   </body>
 </html>
 ```

@@ -1,5 +1,5 @@
 ---
-id: 5ef9b03c81a63668521804e3
+id: 5ef9b03c81a63668521804e0
 title: Part 44
 challengeType: 0
 isHidden: true
@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-After the checkbox you just added, another checkbox with the option `Lazy`. 
+Add a `for` attribute on each label element that is set to the `id` of the `input` element within the label. For example: `<label for="cat"><input id="cat" type="radio"> Cat</label>`.
 
-The `name` and attribute should be the same as the last checkbox, but make sure to update the `for` and `id` attributes to `lazy`.
+This allows assistive technologies like screen readers to create a linked relationship between the label and the child input element.
 
 </section>
 
@@ -67,10 +67,8 @@ tests:
       </figure>
       <h2>Cat Form</h2>
       <form action="/submit-cat-photo">
-        <label for="indoor"><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
-        <label for="outdoor"><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label>
-        <br>
-        <label for="loving"><input id="loving" type="checkbox" name="personality"> Loving</label>
+        <label><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
+        <label><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label>
         <input type="text" placeholder="cat photo URL" required>
         <button type="submit">Submit</button>
       </form>

@@ -1,5 +1,5 @@
 ---
-id: 5dfa371beacea3f48c6300af
+id: 5dfb5ecbeacea3f48c6300b1
 title: Part 19
 challengeType: 0
 isHidden: true
@@ -8,7 +8,16 @@ isHidden: true
 ## Description
 <section id='description'>
 
-After the last `h2` element, add a paragraph element with the text `Things cats love:`.
+Now nest three list item elements (`<li>`) within the `ul` element displaying three things cats love. Make the items's text should `cat nip`, `laser pointers` and `lasagna`. 
+
+Here is an example of list items in an unordered list:
+
+```js
+<ul>
+  <li>milk</li>
+  <li>cheese</li>
+</ul>
+```
 
 </section>
 
@@ -22,22 +31,10 @@ After the last `h2` element, add a paragraph element with the text `Things cats 
 
 ```yml
 tests:
-  - text: There should be a `p` element right above the `main` element's closing tag.
-    testString: assert( document.querySelector('main').lastElementChild.nodeName === 'P' );
-  - text: The `p` element right above the `main` element's closing tag should have the text `Things cats love:`. Make sure to include the colon at the end of the text.
-    testString: assert( document.querySelector('main').lastElementChild.innerText.toLowerCase().replace(/\s/g, '') === 'thingscatslove:' );
-  - text: There should be an `h2` element with the text `Cat Lists`. You may have accidentally deleted the `h2` element.
-    testString: |
-      const catListH2 = [ ...document.querySelectorAll('h2') ].filter(h2 => {
-        return h2.innerText.toLowerCase().replace(/\s/g, '') === 'catlists'
-      });
-      assert( catListH2.length === 1);
-  - text: There should be an `h2` element with the text `Cat Lists` above the last `p` element that is nested in the `main` element. You may have accidentally deleted the `h2` element.
-    testString: |
-      const lastMainElemNode = document.querySelector('main').lastElementChild;
-      assert(
-        lastMainElemNode.nodeName === 'P' && lastMainElemNode.previousElementSibling.innerText.toLowerCase().replace(/\s/g, '') === 'catlists'
-      );
+  - text: You should have 3 `li` elements with the text `cat nip`, `laser pointers` and `lasagna` in any order.
+    testString: assert.deepStrictEqual( [ ...document.querySelectorAll('li') ].map(item => item.innerText.toLowerCase()).sort((a, b) => a.localeCompare(b)), ["cat nip", "lasagna", "laser pointers"] );
+  - text: The three `li` elements should be nested inside the `ul` element.
+    testString: assert( [ ...document.querySelectorAll('li') ].filter(item => item.parentNode.nodeName === 'UL').length === 3 );
 
 ```
 
@@ -59,6 +56,9 @@ tests:
       <p>Click here to view more <a target="_blank" href="#">cat photos</a>.</p>
       <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
       <h2>Cat Lists</h2>
+      <p>Things cats love:</p>
+      <ul>
+      </ul>
     </main>
   </body>
 </html>

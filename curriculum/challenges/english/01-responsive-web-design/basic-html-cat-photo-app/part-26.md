@@ -1,5 +1,5 @@
 ---
-id: 5ef9b03c81a63668521804d1
+id: 5ef9b03c81a63668521804d3
 title: Part 26
 challengeType: 0
 isHidden: true
@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-After the `figure` element, add a paragraph element with the text `Top 3 things cats hate:`.
+After the closing `</ol>` tag, add another `figure` element.
 
 </section>
 
@@ -21,12 +21,12 @@ After the `figure` element, add a paragraph element with the text `Top 3 things 
 
 ```yml
 tests:
-  - text: There should be a `p` element right above the `main` element's closing tag.
-    testString: assert( document.querySelector('main').lastElementChild.nodeName === 'P' );
-  - text: The `p` element right above the `main` element's closing tag should have the text `Top 3 things cats hate:`. Make sure to include the colon at the end of the text.
-    testString: assert( document.querySelector('main').lastElementChild.innerText.toLowerCase().replace(/\s/g, '') === 'top3thingscatshate:' );
-  - text: There should be a closing `</figure>` tag. You might have accidentally deleted the closing `</figure>` tag, or removed the `figure` element altogether.
-    testString: assert( code.match(/<\/figure\>/) );
+  - text: 'Your `figure` element should have an opening tag. Opening tags have this syntax: `<elementName>`.'
+    testString: assert( document.querySelectorAll('figure').length === 2 );
+  - text: Your `figure` element should have a closing tag. Closing tags have a `/` just after the `<` character.
+    testString: assert( code.match(/<\/figure>/g).length === 2 );
+  - text: There should be a `figure` element right above the `main` element's closing tag.
+    testString: assert( document.querySelector('main').lastElementChild.nodeName === 'FIGURE' );
 
 ```
 
@@ -57,6 +57,12 @@ tests:
         <img src="https://bit.ly/fcc-lasagna" alt="Lasagna">
         <figcaption>Cats <em>love</em> lasagna.</figcaption>  
       </figure>
+      <p>Top 3 things cats hate:</p>
+      <ol>
+        <li>flea treatment</li>
+        <li>thunder</li>
+        <li>other cats</li>
+      </ol>
     </main>
   </body>
 </html>

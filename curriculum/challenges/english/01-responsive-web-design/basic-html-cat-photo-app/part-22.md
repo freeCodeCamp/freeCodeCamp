@@ -1,5 +1,5 @@
 ---
-id: 5dfb6250eacea3f48c6300b2
+id: 5dfb6a35eacea3f48c6300b4
 title: Part 22
 challengeType: 0
 isHidden: true
@@ -8,7 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-After the unordered list, add a new image with an `src` of `https://bit.ly/fcc-lasagna` and an `alt` of "Lasagna".
+After the `img` tag that is nested in the `figure` element, add a `<figcaption>` element with the text `Cats love lasagna.`.
+
+For example, `<figcaption>cat</figcaption>` has the text "cat".
 
 </section>
 
@@ -22,17 +24,22 @@ After the unordered list, add a new image with an `src` of `https://bit.ly/fcc-l
 
 ```yml
 tests:
-  - text: There should be an `img` element right above the `main` element's closing tag.
-    testString: assert( document.querySelector('main').lastElementChild.nodeName === 'IMG' );
-  - text: The new `img` element should have an `src` value of `lasagna.jpg`.
-    testString: assert( document.querySelector('main').lastElementChild.getAttribute('src') === 'https://bit.ly/fcc-lasagna');
-  - text: The new `img` element should have an `alt` value of `Lasagna`.
-    testString: assert( document.querySelector('main').lastElementChild.getAttribute('alt').toLowerCase() === 'lasagna');
-  - text: There should be a `ul` element above the new image.
-    testString: |
-      const lastMainElemNode = document.querySelector('main').lastElementChild;
-      assert(lastMainElemNode.previousElementSibling.nodeName === 'UL');
-
+  - text: There should be a `figure` element right above the `main` element's closing tag.
+    testString: assert( document.querySelector('main').lastElementChild.nodeName === 'FIGURE' );
+  - text: The Lasagna `img` element should be nested in the `figure` element.
+    testString: assert( document.querySelector('figure > img') && document.querySelector('figure > img').getAttribute('src').toLowerCase() === 'https://bit.ly/fcc-lasagna');
+  - text: "Your `figure` element should have an opening tag. Opening tags have the following syntax: `elementName`."
+    testString: assert( document.querySelector('figure') );
+  - text: Your `figure` element should have a closing tag. Closing tags have a `/` just after the `<` character.
+    testString: assert( code.match(/<\/figure\>/) );
+  - text: "Your `figcaption` element should have an opening tag. Opening tags have the following syntax: `elementName`."
+    testString: assert( document.querySelector('figcaption') );
+  - text: Your `figcaption` element should have a closing tag. Closing tags have a `/` just after the `<` character.
+    testString: assert( code.match(/<\/figcaption\>/) );
+  - text: The `figcaption` element should be nested in the `figure` element.
+    testString: assert( document.querySelector('figure > figcaption') && document.querySelector('figure > figcaption'));
+  - text: The `figcaption` element nested in the `figure` element should be below the `img` element. You have the `img` element and the `figcaption` element in the wrong order.
+    testString: assert( document.querySelector('figcaption').previousElementSibling.nodeName === 'IMG');
 ```
 
 </section>
@@ -59,6 +66,9 @@ tests:
         <li>laser pointers</li>
         <li>lasagna</li>
       </ul>
+      <figure>
+        <img src="https://bit.ly/fcc-lasagna" alt="Lasagna">
+      </figure>
     </main>
   </body>
 </html>

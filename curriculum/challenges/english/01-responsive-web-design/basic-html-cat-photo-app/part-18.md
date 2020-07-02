@@ -1,5 +1,5 @@
 ---
-id: 5dfa3589eacea3f48c6300ae
+id: 5dfa37b9eacea3f48c6300b0
 title: Part 18
 challengeType: 0
 isHidden: true
@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Time for a new section of the page. 
+After the paragraph tag, add an opening tag for an unordered list, `<ul>`. On the next line, add a closing tag, `</ul>`.
 
-Before the `</main>` closing tag, add a new `h2` element with the text "Cat Lists".
+The unordered list will not appear in the browser until content is added.
 
 </section>
 
@@ -24,10 +24,12 @@ Before the `</main>` closing tag, add a new `h2` element with the text "Cat List
 
 ```yml
 tests:
-  - text: You should now have two `h2` elements. The first one is `Cat Photos` and the last one should be right before the `main` element's closing tag.`element.
-    testString: assert( document.querySelector('main').lastElementChild.nodeName === 'H2' );
-  - text: The second `h2` element should have the text `Cat Lists`.
-    testString: assert( document.querySelector('main').lastElementChild.innerText.replace(/\s/g,'').toLowerCase() ===  'catlists');
+  - text: 'Your `ul` element should have an opening tag. Opening tags have this syntax: `<elementName>`.'
+    testString: assert( document.querySelector('ul') );
+  - text: Your `ul` element should have a closing tag. Closing tags have a `/` just after the `<` character.
+    testString: assert( code.match(/<\/ul>/) );
+  - text: The `ul` element should be above the `main` element's closing tag.
+    testString: assert( document.querySelector('main').lastElementChild.nodeName === 'UL' );
 
 ```
 
@@ -48,6 +50,8 @@ tests:
       <!-- TODO: Add link to cat photos -->
       <p>Click here to view more <a target="_blank" href="#">cat photos</a>.</p>
       <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+      <h2>Cat Lists</h2>
+      <p>Things cats love:</p>
     </main>
   </body>
 </html>

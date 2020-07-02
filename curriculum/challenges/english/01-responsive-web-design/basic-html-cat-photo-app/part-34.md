@@ -1,5 +1,5 @@
 ---
-id: 5ef9b03c81a63668521804d9
+id: 5ef9b03c81a63668521804d8
 title: Part 34
 challengeType: 0
 isHidden: true
@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Add the placeholder text `cat photo URL` to your `input` element that will display in the textbox before your user inputs anything.  
+The `input` element is one of the most versatile HTML elements, and gives you many ways to collect data from web forms.
 
-For example, `<input type="text" placeholder="this is placeholder text">` has the placeholder text `this is placeholder text`.
+Nest an `<input>` tag in the `form` element. Note that `input` elements are <dfn>self-closing</dfn>, and do not need closing tags.
 
 </section>
 
@@ -67,7 +67,6 @@ tests:
       </figure>
       <h2>Cat Form</h2>
       <form action="/submit-cat-photo">
-        <input type="text">
       </form>
     </main>
   </body>
