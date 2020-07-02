@@ -620,44 +620,6 @@ const certMap = [
     ]
   },
   {
-    id: '5e6021435ac9d0ecd8b94b00',
-    title: 'Information Security',
-    slug: 'information-security-v7',
-    flag: 'isInfosecCertV7',
-    projects: [
-      {
-        id: '587d824a367417b2b2512c44',
-        title: 'Stock Price Checker',
-        link: `${infoSecBase}/stock-price-checker`,
-        superBlock: 'information-security-v7'
-      },
-      {
-        id: '587d824a367417b2b2512c45',
-        title: 'Anonymous Message Board',
-        link: `${infoSecBase}/anonymous-message-board`,
-        superBlock: 'information-security-v7'
-      },
-      {
-        id: '5e46f979ac417301a38fb932',
-        title: 'Port Scanner',
-        link: `${infoSecBase}/port-scanner`,
-        superBlock: 'information-security-v7'
-      },
-      {
-        id: '5e46f983ac417301a38fb933',
-        title: 'SHA-1 Password Cracker',
-        link: `${infoSecBase}/sha-1-password-cracker`,
-        superBlock: 'information-security-v7'
-      },
-      {
-        id: '5e601c775ac9d0ecd8b94aff',
-        title: 'Secure Real Time Multiplayer Game',
-        link: `${infoSecBase}/secure-real-time-multiplayer-game`,
-        superBlock: 'information-security-v7'
-      }
-    ]
-  },
-  {
     id: '5e46fc95ac417301a38fb935',
     title: 'Machine Learning with Python',
     slug: 'machine-learning-with-python-v7',
