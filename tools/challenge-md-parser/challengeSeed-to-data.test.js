@@ -1,6 +1,7 @@
 /* global describe it expect beforeEach */
 const mockAST = require('./fixtures/challenge-html-ast.json');
 const challengeSeedToData = require('./challengeSeed-to-data');
+const isArray = require('lodash/isArray');
 
 describe('challengeSeed-to-data plugin', () => {
   const plugin = challengeSeedToData();
@@ -25,31 +26,27 @@ describe('challengeSeed-to-data plugin', () => {
   });
 
   it('adds test objects to the files array following a schema', () => {
-    expect.assertions(7);
+    expect.assertions(15);
     plugin(mockAST, file);
     const {
       data: { files }
     } = file;
     const testObject = files[0];
-    expect(Object.keys(testObject).length).toEqual(6);
+    expect(Object.keys(testObject).length).toEqual(7);
     expect(testObject).toHaveProperty('key');
+    expect(typeof testObject['key']).toBe('string');
     expect(testObject).toHaveProperty('ext');
+    expect(typeof testObject['ext']).toBe('string');
     expect(testObject).toHaveProperty('name');
+    expect(typeof testObject['name']).toBe('string');
     expect(testObject).toHaveProperty('contents');
+    expect(typeof testObject['contents']).toBe('string');
     expect(testObject).toHaveProperty('head');
+    expect(typeof testObject['head']).toBe('string');
     expect(testObject).toHaveProperty('tail');
-  });
-
-  it('only adds strings to the `files` object type', () => {
-    expect.assertions(6);
-    plugin(mockAST, file);
-    const {
-      data: { files }
-    } = file;
-    const testObject = files[0];
-    Object.keys(testObject)
-      .map(key => testObject[key])
-      .forEach(value => expect(typeof value).toEqual('string'));
+    expect(typeof testObject['tail']).toBe('string');
+    expect(testObject).toHaveProperty('editableRegionBoundaries');
+    expect(isArray(testObject['editableRegionBoundaries'])).toBe(true);
   });
 
   it('should have an output to match the snapshot', () => {

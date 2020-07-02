@@ -7,6 +7,8 @@ const seedRE = /(.+)-seed$/;
 const headRE = /(.+)-setup$/;
 const tailRE = /(.+)-teardown$/;
 
+const editableRegionMarker = '--fcc-editable-region--';
+
 function defaultFile(lang) {
   return {
     key: `index${lang}`,
@@ -38,6 +40,32 @@ function createCodeGetter(key, regEx, seeds) {
   };
 }
 
+// TODO: any reason to worry about CRLF?
+
+function findRegionMarkers(file) {
+  const lines = file.contents.split('\n');
+  const editableLines = lines
+    .map((line, id) => (line.trim() === editableRegionMarker ? id : -1))
+    .filter(id => id >= 0);
+
+  if (editableLines.length > 2) {
+    throw Error('Editable region has too many markers' + editableLines);
+  }
+
+  if (editableLines.length === 0) {
+    return null;
+  } else if (editableLines.length === 1) {
+    throw Error(`Editable region not closed`);
+  } else {
+    return editableLines;
+  }
+}
+
+function removeLines(contents, toRemove) {
+  const lines = contents.split('\n');
+  return lines.filter((_, id) => !toRemove.includes(id)).join('\n');
+}
+
 function createPlugin() {
   return function transformer(tree, file) {
     function visitor(node) {
@@ -63,6 +91,29 @@ function createPlugin() {
           ...file.data,
           files: Object.keys(seeds).map(lang => seeds[lang])
         };
+
+        // TODO: make this readable.
+
+        if (file.data.files) {
+          file.data.files.forEach(fileData => {
+            const editRegionMarkers = findRegionMarkers(fileData);
+            if (editRegionMarkers) {
+              fileData.contents = removeLines(
+                fileData.contents,
+                editRegionMarkers
+              );
+
+              if (editRegionMarkers[1] <= editRegionMarkers[0]) {
+                throw Error('Editable region must be non zero');
+              }
+              fileData.editableRegionBoundaries = editRegionMarkers;
+            } else {
+              fileData.editableRegionBoundaries = [];
+            }
+          });
+        }
+
+        // TODO: TESTS!
       }
     }
     visit(tree, 'element', visitor);
