@@ -25,11 +25,11 @@ tests:
     testString: assert( document.querySelector('main').lastElementChild.nodeName === 'FIGURE' );
   - text: The Cats `img` element should be nested in the `figure` element.
     testString: const catsImg = document.querySelectorAll('figure > img')[1]; assert( catsImg && catsImg.getAttribute('src').toLowerCase() === 'https://bit.ly/fcc-cats');
-  - text: "Your `figure` element should have an opening tag. Opening tags have the following syntax: `elementName`."
+  - text: "Your `figure` element should have an opening tag. Opening tags have the following syntax: `<elementName>`."
     testString: assert( document.querySelectorAll('figure').length === 2 );
   - text: Your `figure` element should have a closing tag. Closing tags have a `/` just after the `<` character.
     testString: assert( code.match(/<\/figure\>/g).length === 2 );
-  - text: "Your `figcaption` element should have an opening tag. Opening tags have the following syntax: `elementName`."
+  - text: "Your `figcaption` element should have an opening tag. Opening tags have the following syntax: `<elementName>`."
     testString: assert( document.querySelectorAll('figcaption').length === 2 );
   - text: Your `figcaption` element should have a closing tag. Closing tags have a `/` just after the `<` character.
     testString: assert( code.match(/<\/figcaption\>/g).length === 2 );

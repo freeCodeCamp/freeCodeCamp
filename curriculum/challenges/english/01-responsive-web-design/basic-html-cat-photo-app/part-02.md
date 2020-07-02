@@ -30,7 +30,7 @@ tests:
     testString: assert( code.match(/<\/h1\>/) );
   - text: Your `h1` element's text should be 'CatPhotoApp'. You have either omitted the text or have a typo.
     testString: assert( document.querySelector('h1').innerText.toLowerCase() === 'catphotoapp' );
-  - text: "Your `h2` element should have an opening tag. Opening tags have the following syntax: `<elementName>`."
+  - text: "Your `h2` element should have an opening tag. Opening tags have this syntax: `<elementName>`."
     testString: assert( document.querySelector('h2') );
   - text: Your `h2` element should have a closing tag. Closing tags have a `/` just after the `<` character.
     testString: assert( code.match(/<\/h2\>/) );

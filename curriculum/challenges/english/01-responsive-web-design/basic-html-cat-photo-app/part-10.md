@@ -24,7 +24,7 @@ For example, `<a href="https://www.freecodecamp.org"></a>` is an anchor element 
 
 ```yml
 tests:
-  - text: "Your anchor (`a`) element should have an opening tag. Opening tags have the following syntax: `<elementName>`."
+  - text: "Your anchor (`a`) element should have an opening tag. Opening tags have this syntax: `<elementName>`."
     testString: assert( document.querySelector('a') );
   - text: "Your anchor (`a`) element should have a closing tag. Closing tags have a `/` just after the `<` character."
     testString: assert( code.match(/<\/a\>/) );

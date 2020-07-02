@@ -22,7 +22,7 @@ Nest the `img` you just added within a `<figure>` element. The `<figure>` elemen
 
 ```yml
 tests:
-  - text: "Your `figure` element should have an opening tag. Opening tags have the following syntax: `elementName`."
+  - text: "Your `figure` element should have an opening tag. Opening tags have the following syntax: `<elementName>`."
     testString: assert( document.querySelector('figure') );
   - text: Your `figure` element should have a closing tag. Closing tags have a `/` just after the `<` character.
     testString: assert( code.match(/<\/figure\>/) );

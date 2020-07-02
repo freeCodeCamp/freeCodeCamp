@@ -24,7 +24,7 @@ Create a `p` element below your `h2` element, and give it the text `Click here t
 
 ```yml
 tests:
-  - text: "Your `p` element should have an opening tag. Opening tags have the following syntax: `elementName`."
+  - text: "Your `p` element should have an opening tag. Opening tags have the following syntax: `<elementName>`."
     testString: assert( document.querySelector('p') );
   - text: Your `p` element should have a closing tag. Closing tags have a `/` just after the `<` character.
     testString: assert( code.match(/<\/p\>/) );

@@ -24,7 +24,7 @@ Add an `<img>` tag below the paragraph element. You should take note that `img` 
 
 ```yml
 tests:
-  - text: "Your `img` element should have an opening tag. Opening tags have the following syntax: `<elementName>`."
+  - text: "Your `img` element should have an opening tag. Opening tags have this syntax: `<elementName>`."
     testString: assert( document.querySelector('img') );
   - text: Your `img` element should not have a closing tag. Closing tags have a `/` just after the `<` character.
     testString: assert( !code.match(/<\/img\>/) );
