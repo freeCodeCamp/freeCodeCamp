@@ -200,8 +200,8 @@ export class Project extends Component {
                       playerVars: {
                         rel: 0
                       },
-                      width: '960px',
-                      height: '540px'
+                      width: 'auto',
+                      height: 'auto'
                     }}
                     videoId={videoId}
                   />
