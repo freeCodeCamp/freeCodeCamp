@@ -88,7 +88,7 @@ class TimelineInner extends Component {
           {certPath ? (
             <Link
               className='timeline-cert-link'
-              to={`certification/${username}/${certPath}`}
+              to={`certification/${username}/${certPath}`} target='_blank'
             >
               {challengeTitle}
               <CertificationIcon />
