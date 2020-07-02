@@ -27,7 +27,7 @@ tests:
     testString: assert( document.querySelector('strong') );
   - text: Your strong element should have a closing tag. Closing tags have a `/` just after the `<` character.
     testString: assert( code.match(/<\/strong\>/) );
-  - text: Your strong element should surround the word `hate` in the text `Cats hate other cats.`. You have either omitted the text or have a typo.
+  - text: Your strong element should surround the word `hate` in the text `Cats hate other cats.` You have either omitted the text or have a typo.
     testString: assert( document.querySelectorAll('figcaption')[1].querySelector('strong').innerText.toLowerCase() === 'hate' );
 
 ```

@@ -37,8 +37,8 @@ tests:
     testString: assert( document.querySelectorAll('figure > figcaption').length === 2);
   - text: The `figcaption` element nested in the `figure` element should be below the `img` element. You have the `img` element and the `figcaption` element in the wrong order.
     testString: assert( document.querySelectorAll('figcaption')[1].previousElementSibling.nodeName === 'IMG');
-  - text: The `figcaption` element should have the text `Cats hate other cats.`. You have omitted a word or have a typo.
-    testString: assert( document.querySelectorAll('figcaption')[1].innerText.toLowerCase().replace(/\s/g, '').match(/catshateothercats\.?/));
+  - text: The `figcaption` element should have the text `Cats hate other cats.` You have omitted a word or have a typo.
+    testString: assert( document.querySelectorAll('figcaption')[1].innerText.toLowerCase().match(/Cats hate other cats\.?$/i));
     
 ```
 

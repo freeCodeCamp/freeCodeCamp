@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-After the `img` tag that is nested in the `figure` element, add a `<figcaption>` element with the text `Cats love lasagna.`.
+After the `img` tag that is nested in the `figure` element, add a `<figcaption>` element with the text `Cats love lasagna.`
 
 For example, `<figcaption>cat</figcaption>` has the text "cat".
 
@@ -40,6 +40,8 @@ tests:
     testString: assert( document.querySelector('figure > figcaption') && document.querySelector('figure > figcaption'));
   - text: The `figcaption` element nested in the `figure` element should be below the `img` element. You have the `img` element and the `figcaption` element in the wrong order.
     testString: assert( document.querySelector('figcaption').previousElementSibling.nodeName === 'IMG');
+  - text: Your `figcaption` element's text should be `Cats love lasagna.` You have either omitted the text or have a typo.
+    testString: assert( document.querySelector('figcaption').innerText.match(/Cats love lasagna.?$/i) );
 ```
 
 </section>

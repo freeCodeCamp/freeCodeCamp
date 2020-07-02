@@ -12,7 +12,7 @@ Forms commonly use checkboxes for questions that may have more than one answer. 
 
 After the `<br>` tag, add an `input` with its `type` attribute set to `checkbox`, and give it the option of `Loving`.
 
-For example, here's an example of a checkbox with the option of `tacos`: `<input type="checkbox"> tacos`.
+Here's an example of a checkbox with the option of `tacos`: `<input type="checkbox"> tacos`.
 
 </section>
 
