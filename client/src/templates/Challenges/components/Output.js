@@ -6,13 +6,13 @@ import './output.css';
 
 const propTypes = {
   defaultOutput: PropTypes.string,
-  output: PropTypes.string
+  output: PropTypes.arrayOf(PropTypes.string)
 };
 
 class Output extends Component {
   render() {
     const { output, defaultOutput } = this.props;
-    const message = sanitizeHtml(output ? output : defaultOutput, {
+    const message = sanitizeHtml(output ? output.join('\n') : defaultOutput, {
       allowedTags: ['b', 'i', 'em', 'strong', 'code', 'wbr']
     });
     return (

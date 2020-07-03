@@ -46,7 +46,7 @@ const propTypes = {
   initConsole: PropTypes.func.isRequired,
   initTests: PropTypes.func.isRequired,
   isSignedIn: PropTypes.bool,
-  output: PropTypes.string,
+  output: PropTypes.arrayOf(PropTypes.string),
   pageContext: PropTypes.shape({
     challengeMeta: PropTypes.object
   }),
