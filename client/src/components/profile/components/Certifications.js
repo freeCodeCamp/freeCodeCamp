@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
 import { curry } from 'lodash';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
@@ -8,6 +7,7 @@ import { Row, Col } from '@freecodecamp/react-bootstrap';
 
 import { certificatesByNameSelector } from '../../../redux';
 import FullWidthRow from '../../helpers/FullWidthRow';
+import Link from '../../helpers/Link';
 import { ButtonSpacer, Spacer } from '../../helpers';
 import './certifications.css';
 
@@ -45,6 +45,8 @@ function renderCertShow(username, cert) {
         <Col className='certifications' sm={10} smPush={1}>
           <Link
             className='btn btn-lg btn-primary btn-block'
+            external={true}
+            sameTab={false}
             to={`/certification/${username}/${cert.showURL}`}
           >
             View {cert.title}
