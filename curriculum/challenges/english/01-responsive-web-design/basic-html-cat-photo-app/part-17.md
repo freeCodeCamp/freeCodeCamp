@@ -24,7 +24,7 @@ tests:
   - text: There should be an `h2` element with the text `Cat Lists`. You may have accidentally deleted the `h2` element.
     testString: |
       const catListH2 = [ ...document.querySelectorAll('h2') ].filter(h2 => {
-        return h2.innerText.toLowerCase()..replace(/\s+/g, ' ') === 'cat lists'
+        return h2.innerText.toLowerCase().replace(/\s+/g, ' ') === 'cat lists'
       });
       assert( catListH2.length === 1);
   - text: There should be an `h2` element with the text `Cat Lists` above the last `p` element that is nested in the `main` element. You may have accidentally deleted the `h2` element.

@@ -28,7 +28,7 @@ tests:
         nestedAnchor.innerText.toLowerCase().replace(/\s+/g, ' ') === 'cat photos'
       );
   - text: After nesting the anchor (`a`) element, the `p` element's text should still be `Click here to view more cat photos.` Double check the text, spacing, or punctuation of both the `p` and nested anchor element.
-    testString: const pText = document.querySelector('p').innerText.toLowerCase()..replace(/\s+/g, ' '); assert( pText.includes('click here to view more cat photos') );
+    testString: const pText = document.querySelector('p').innerText.toLowerCase().replace(/\s+/g, ' '); assert( pText.includes('click here to view more cat photos') );
 
 ```
 
