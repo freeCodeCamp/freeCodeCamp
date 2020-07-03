@@ -19,12 +19,14 @@ Find the `h1` element and change the text between its opening and closing tags t
 
 ```yml
 tests:
+  - text: The text `CatPhotoApp` should be present in the code. You may want to check your spelling.
+    testString: assert( code.match(/catphotoapp/i) );
   - text: 'Your `h1` element should have an opening tag. Opening tags have this syntax: `<elementName>`.'
     testString: assert( document.querySelector('h1') );
   - text: Your `h1` element should have a closing tag. Closing tags have a `/` just after the `<` character.
     testString: assert( code.match(/<\/h1\>/) );
-  - text: Your `h1` element's text should be `CatPhotoApp`. You have either omitted the text or have a typo.
-    testString: assert( document.querySelector('h1').innerText.toLowerCase() === 'catphotoapp' );
+  - text: Your `h1` element's text should be `CatPhotoApp`. You have either omitted the text, have a typo, or it is not between the `h1` element's opening and closing tags.
+    testString: assert( document.querySelector('h1').innerText.toLowerCase() === 'catphotoapp' ); 
 
 ```
 
