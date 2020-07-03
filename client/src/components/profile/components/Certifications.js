@@ -6,9 +6,7 @@ import { connect } from 'react-redux';
 import { Row, Col } from '@freecodecamp/react-bootstrap';
 
 import { certificatesByNameSelector } from '../../../redux';
-import FullWidthRow from '../../helpers/FullWidthRow';
-import Link from '../../helpers/Link';
-import { ButtonSpacer, Spacer } from '../../helpers';
+import { ButtonSpacer, FullWidthRow, Link, Spacer } from '../../helpers';
 import './certifications.css';
 
 const mapStateToProps = (state, props) =>
