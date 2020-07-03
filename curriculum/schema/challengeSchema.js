@@ -10,7 +10,7 @@ const fileJoi = Joi.object().keys({
   head: [Joi.array().items(Joi.string().allow('')), Joi.string().allow('')],
   tail: [Joi.array().items(Joi.string().allow('')), Joi.string().allow('')],
   contents: [Joi.array().items(Joi.string().allow('')), Joi.string().allow('')],
-  editableRegionBoundaries: [Joi.array().items(Joi.string().allow(''))]
+  editableRegionBoundaries: [Joi.array().items(Joi.number())]
 });
 
 function getSchemaForLang(lang) {
