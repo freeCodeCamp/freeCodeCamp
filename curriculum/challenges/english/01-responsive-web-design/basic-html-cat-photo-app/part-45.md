@@ -46,7 +46,7 @@ tests:
         <li>lasagna</li>
       </ul>
       <figure>
-        <img src="https://bit.ly/fcc-lasagna" alt="Lasagna">
+        <img src="https://bit.ly/fcc-lasagna" alt="A slice of lasagna on a plate.">
         <figcaption>Cats <em>love</em> lasagna.</figcaption>  
       </figure>
       <p>Top 3 things cats hate:</p>
@@ -56,7 +56,7 @@ tests:
         <li>other cats</li>
       </ol>
       <figure>
-        <img src="https://bit.ly/fcc-cats" alt="Cats">
+        <img src="https://bit.ly/fcc-cats" alt="Five cats looking around a field.">
         <figcaption>Cats <strong>hate</strong> other cats.</figcaption>  
       </figure>
       <h2>Cat Form</h2>

@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-To improve accessibility, add an `alt` attribute with the text `Cats` to the new image.
+To improve accessibility of the image you just added, add an `alt` attribute with the text `Five cats looking around a field.`
 
 </section>
 
@@ -25,8 +25,8 @@ tests:
     testString: assert( document.querySelector('main').lastElementChild.nodeName === 'FIGURE' );
   - text: The Cats `img` element should be nested in the `figure` element.
     testString: const catsImg = document.querySelectorAll('figure > img')[1]; assert( catsImg && catsImg.getAttribute('src').toLowerCase() === 'https://bit.ly/fcc-cats');
-  - text: The Cats `img` element should have an `alt` attribute with the value `Cats`.
-    testString: const catsImg = document.querySelectorAll('figure > img')[1]; assert( catsImg.getAttribute('alt').toLowerCase() === 'cats');
+  - text: The Cats `img` element should have an `alt` attribute with the value `Five cats looking around a field.`
+    testString: const catsImg = document.querySelectorAll('figure > img')[1]; assert( catsImg.getAttribute('alt').replace(/\s+/g, ' ').match(/Five cats looking around a field\.?/i) );
 
 ```
 
@@ -54,7 +54,7 @@ tests:
         <li>lasagna</li>
       </ul>
       <figure>
-        <img src="https://bit.ly/fcc-lasagna" alt="Lasagna">
+        <img src="https://bit.ly/fcc-lasagna" alt="A slice of lasagna on a plate.">
         <figcaption>Cats <em>love</em> lasagna.</figcaption>  
       </figure>
       <p>Top 3 things cats hate:</p>

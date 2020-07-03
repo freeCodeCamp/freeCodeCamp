@@ -64,7 +64,7 @@ tests:
         <li>lasagna</li>
       </ul>
       <figure>
-        <img src="https://bit.ly/fcc-lasagna" alt="Lasagna">
+        <img src="https://bit.ly/fcc-lasagna" alt="A slice of lasagna on a plate.">
       </figure>
     </main>
   </body>

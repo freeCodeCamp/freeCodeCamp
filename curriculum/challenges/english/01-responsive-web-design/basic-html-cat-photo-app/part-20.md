@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-After the unordered list, add a new image with an `src` of `https://bit.ly/fcc-lasagna` and an `alt` of "Lasagna".
+After the unordered list, add a new image with an `src` of `https://bit.ly/fcc-lasagna` and an `alt` of `A slice of lasagna on a plate.`
 
 </section>
 
@@ -19,10 +19,10 @@ After the unordered list, add a new image with an `src` of `https://bit.ly/fcc-l
 tests:
   - text: There should be an `img` element right above the `main` element's closing tag.
     testString: assert( document.querySelector('main').lastElementChild.nodeName === 'IMG' );
-  - text: The new `img` element should have an `src` value of `lasagna.jpg`.
+  - text: The new `img` element should have an `src` value of `https://bit.ly/fcc-lasagna`.
     testString: assert( document.querySelector('main').lastElementChild.getAttribute('src') === 'https://bit.ly/fcc-lasagna');
-  - text: The new `img` element should have an `alt` value of `Lasagna`.
-    testString: assert( document.querySelector('main').lastElementChild.getAttribute('alt').toLowerCase() === 'lasagna');
+  - text: The new `img` element should have an `alt` value of `A slice of lasagna on a plate.`
+    testString: assert( document.querySelector('main').lastElementChild.getAttribute('alt').replace(/\s+/g, ' ').match(/A slice of lasagna on a plate\.?/i) );
   - text: There should be a `ul` element above the new image.
     testString: |
       const lastMainElemNode = document.querySelector('main').lastElementChild;

@@ -51,7 +51,7 @@ tests:
         <li>laser pointers</li>
         <li>lasagna</li>
       </ul>
-      <img src="https://bit.ly/fcc-lasagna" alt="Lasagna">
+      <img src="https://bit.ly/fcc-lasagna" alt="A slice of lasagna on a plate.">
     </main>
   </body>
 </html>
