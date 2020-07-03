@@ -24,7 +24,7 @@ tests:
   - text: Your `p` element should have a closing tag. Closing tags have a `/` just after the `<` character.
     testString: assert( code.match(/<\/p\>/) );
   - text: Your `p` element's text should be `Click here to view more cat photos.` You have either omitted the text or have a typo.
-    testString: assert( document.querySelector('p').innerText.match(/click here to view more cat photos\.?$/i) );
+    testString: const extraSpacesRemoved = document.querySelector('p').innerText.replace(/\s+/g, ' '); assert( extraSpacesRemoved.match(/click here to view more cat photos\.?$/i) );
   - text: Your `p` element should be below the `h2` element. You have them in the wrong order.
     testString: const collection = [...document.querySelectorAll('h2,p')].map(node => node.nodeName); assert( collection.indexOf('H2') < collection.indexOf('P') );
 

@@ -24,7 +24,7 @@ tests:
   - text: "Your anchor (`a`) element should have a closing tag. Closing tags have a `/` just after the `<` character."
     testString: assert( code.match(/<\/a\>/) );
   - text: Your anchor (`a`) element's text should be `cat photos`. The text for an anchor (`a`) elments goes between its opening tag and closing tag.
-    testString: assert( document.querySelector('a').innerText.toLowerCase().replace(/\s/g, '') === 'catphotos' );
+    testString: assert( document.querySelector('a').innerText.toLowerCase().replace(/\s+/g, ' ') === 'cat photos' );
 
 ```
 

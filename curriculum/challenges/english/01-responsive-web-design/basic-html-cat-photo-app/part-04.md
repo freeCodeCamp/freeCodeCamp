@@ -26,9 +26,9 @@ tests:
   - text: Your code should not have extra opening/closing comment characters. You have an extra `<!--` or `-->` displaying in the browser.
     testString: |
       const noSpaces = code.replace(/\s/g, '');
-      assert (noSpaces.match(/<!--/).length < 2 && noSpaces.match(/-->/).length < 2 );
+      assert (noSpaces.match(/<!--/g).length < 2 && noSpaces.match(/-->/g).length < 2 );
   - text: 'Your comment should contain the text `TODO: Add link to cat photos`.'
-    testString: assert( code.replace(/\s/g, '').match(/<!--todo:addlinktocatphotos-->/i) );
+    testString: assert( code.match(/<!--\s*todo:\s+add\s+link\s+to\s+cat\s+photos\s*-->/i) );
   - text: Your comment should be above the `p` element. You have them in the wrong order.
     testString: assert( code.replace(/\s/g, '').match(/<!--todo:addlinktocatphotos--><p>clickheretoviewmorecatphotos\.?<\/p>/i) );
 

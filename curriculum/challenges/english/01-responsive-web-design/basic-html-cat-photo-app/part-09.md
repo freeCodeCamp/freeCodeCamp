@@ -24,7 +24,7 @@ tests:
   - text: Your `img` element does not have an `alt` attribute. You have either omitted the attribute or have a typo.
     testString: const altVal = document.querySelector('img').getAttribute('alt'); assert( altVal || altVal === '' );
   - text: Your `img` element's `src` attribute value should be set to 'A cute orange cat lying on its back'. You have either omitted the text or have a typo.
-    testString: const altText = document.querySelector('img').alt.toLowerCase().replace(/\s/g, ''); assert( altText.match(/acuteorangecatlyingonitsback\.?$/) );
+    testString: const altText = document.querySelector('img').alt.toLowerCase().replace(/\s+/g, ' '); assert( altText.match(/A cute orange cat lying on its back\.?$/i) );
 
 ```
 

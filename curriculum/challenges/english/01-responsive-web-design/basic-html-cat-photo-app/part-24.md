@@ -20,7 +20,7 @@ tests:
   - text: There should be a `p` element right above the `main` element's closing tag.
     testString: assert( document.querySelector('main').lastElementChild.nodeName === 'P' );
   - text: The `p` element right above the `main` element's closing tag should have the text `Top 3 things cats hate:`. Make sure to include the colon at the end of the text.
-    testString: assert( document.querySelector('main').lastElementChild.innerText.toLowerCase().replace(/\s/g, '') === 'top3thingscatshate:' );
+    testString: assert( document.querySelector('main').lastElementChild.innerText.toLowerCase().replace(/\s+/g, ' ') === 'top 3 things cats hate:' );
   - text: There should be a closing `</figure>` tag. You might have accidentally deleted the closing `</figure>` tag, or removed the `figure` element altogether.
     testString: assert( code.match(/<\/figure\>/) );
 
