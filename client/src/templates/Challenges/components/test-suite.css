@@ -19,6 +19,10 @@
   padding: 5px 10px;
 }
 
+.test-output p {
+  margin: 0;
+}
+
 .test-status-icon {
   display: flex;
   align-items: center;

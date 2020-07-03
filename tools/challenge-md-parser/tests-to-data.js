@@ -34,6 +34,12 @@ function plugin() {
           );
           tests.question.text = mdToHTML(tests.question.text);
         }
+        if (tests.tests) {
+          tests.tests = tests.tests.map(({ text, testString }) => ({
+            text: mdToHTML(text),
+            testString
+          }));
+        }
         file.data = {
           ...file.data,
           ...tests
