@@ -6,8 +6,7 @@ import { Button, Modal, Table } from '@freecodecamp/react-bootstrap';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import TimelinePagination from './TimelinePagination';
-import { FullWidthRow } from '../../helpers';
-import Link from '../../helpers/Link';
+import { FullWidthRow, Link } from '../../helpers';
 import SolutionViewer from '../../settings/SolutionViewer';
 import {
   getCertIds,
