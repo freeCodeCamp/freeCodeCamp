@@ -29,7 +29,7 @@ Depending on the seed value, series generated this way always either converge to
 ## Instructions
 
 <section id='instructions'>
-Write a function that takes the seed value as parameter and returns the self referential sequence as an array.
+Write a function that takes the seed value as parameter, generates a self referential sequence until it converges, and returns it as an array.
 </section>
 
 ## Tests
@@ -42,16 +42,16 @@ tests:
     testString: assert(typeof selfReferential === 'function');
   - text: <code>selfReferential(40)</code> should return a array.
     testString: assert(Array.isArray(selfReferential(40)));
-  - text: <code>selfReferential(40)</code> should return <code>["1410", "142110", "14123110", "1413124110", "2413125110", "151413224110", "152413225110", "251413324110", "152423224110", "152413423110"]</code>.
-    testString: assert.deepEqual(selfReferential(40), ["1410", "142110", "14123110", "1413124110", "2413125110", "151413224110", "152413225110", "251413324110", "152423224110", "152413423110"]);
-  - text: <code>selfReferential(132110)</code> should return <code>["13123110", "23124110", "1413223110", "1423224110", "2413323110", "1433223110"]</code>.
-    testString: assert.deepEqual(selfReferential(132110), ["13123110", "23124110", "1413223110", "1423224110", "2413323110", "1433223110"]);
-  - text: <code>selfReferential(132211)</code> should return <code>["132231", "232221", "134211", "14131231", "14231241", "24132231", "14233221"]</code>.
-    testString: assert.deepEqual(selfReferential(132211), ["132231", "232221", "134211", "14131231", "14231241", "24132231", "14233221"]);
-  - text: <code>selfReferential(1413223110)</code> should return <code>["1423224110", "2413323110", "1433223110"]</code>.
-    testString: assert.deepEqual(selfReferential(1413223110), ["1423224110", "2413323110", "1433223110"]);
-  - text: <code>selfReferential(251413126110)</code> should return <code>["16151413225110", "16251413226110", "26151413325110", "16251423225110", "16251413424110", "16153413225110"]</code>.
-    testString: assert.deepEqual(selfReferential(251413126110), ["16151413225110", "16251413226110", "26151413325110", "16251423225110", "16251413424110", "16153413225110"]);
+  - text: <code>selfReferential(40)</code> should return <code>["40", "1410", "142110", "14123110", "1413124110", "2413125110", "151413224110", "152413225110", "251413324110", "152423224110", "152413423110"]</code>.
+    testString: assert.deepEqual(selfReferential(40), ["40", "1410", "142110", "14123110", "1413124110", "2413125110", "151413224110", "152413225110", "251413324110", "152423224110", "152413423110"]);
+  - text: <code>selfReferential(132110)</code> should return <code>["132110", "13123110", "23124110", "1413223110", "1423224110", "2413323110", "1433223110"]</code>.
+    testString: assert.deepEqual(selfReferential(132110), ["132110", "13123110", "23124110", "1413223110", "1423224110", "2413323110", "1433223110"]);
+  - text: <code>selfReferential(132211)</code> should return <code>["132211", "132231", "232221", "134211", "14131231", "14231241", "24132231", "14233221"]</code>.
+    testString: assert.deepEqual(selfReferential(132211), ["132211", "132231", "232221", "134211", "14131231", "14231241", "24132231", "14233221"]);
+  - text: <code>selfReferential(1413223110)</code> should return <code>["1413223110", "1423224110", "2413323110", "1433223110"]</code>.
+    testString: assert.deepEqual(selfReferential(1413223110), ["1413223110", "1423224110", "2413323110", "1433223110"]);
+  - text: <code>selfReferential(251413126110)</code> should return <code>["251413126110", "16151413225110", "16251413226110", "26151413325110", "16251423225110", "16251413424110", "16153413225110"]</code>.
+    testString: assert.deepEqual(selfReferential(251413126110), ["251413126110", "16151413225110", "16251413226110", "26151413325110", "16251423225110", "16251413424110", "16153413225110"]);
 ```
 
 </section>
@@ -103,7 +103,7 @@ function selfReferential(n) {
       d = parseInt(c);
       incr(cnts, d);
     }
-    seq = [];
+    seq = [ref];
     while (true) {
       s = '';
       for (i = l = 9; l >= 0; i = --l) {

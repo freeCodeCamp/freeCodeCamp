@@ -18,7 +18,7 @@ A record consists of attributes that describe an entity. Each attribute has a na
 
 <section id='instructions'>
 
-Write a function that takes a string as a parameter. The function should return the index of the item in `lst` for which the value of the `name` attribute matches the given string.
+Write a function that takes a string as a parameter. The function should return the index of the item in `list` for which the value of the `name` attribute matches the given string.
 
 </section>
 
@@ -56,7 +56,7 @@ function searchCity(name) {
 
 }
 
-const lst = [
+const list = [
   { name: 'Lagos', population: 21.0 },
   { name: 'Cairo', population: 15.2 },
   { name: 'Kinshasa-Brazzaville', population: 11.3 },
@@ -79,10 +79,10 @@ const lst = [
 
 ```js
 function searchCity(name) {
-  return lst.findIndex(item => item.name === name);
+  return list.findIndex(item => item.name === name);
 }
 
-const lst = [
+const list = [
   { name: 'Lagos', population: 21.0 },
   { name: 'Cairo', population: 15.2 },
   { name: 'Kinshasa-Brazzaville', population: 11.3 },
