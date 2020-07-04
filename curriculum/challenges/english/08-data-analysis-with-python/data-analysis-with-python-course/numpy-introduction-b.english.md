@@ -7,10 +7,12 @@ videoId: YIqgrNLAZkA
 ---
 
 ## Description
+
 <section id='description'>
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -18,12 +20,15 @@ question:
   text: |
     About how much memory does the integer `5` consume in plain Python?
   answers:
-    - 32 bits
-    - 20 bytes
-    - 16 bytes
-    - 8 bits
+    - |
+      32 bits
+    - |
+      20 bytes
+    - |
+      16 bytes
+    - |
+      8 bits
   solution: 2
 ```
 
 </section>
-

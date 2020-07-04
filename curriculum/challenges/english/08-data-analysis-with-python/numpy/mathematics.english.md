@@ -7,16 +7,18 @@ videoId: 7txegvyhtVk
 ---
 
 ## Description
+
 <section id='description'>
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-```yml
+````yml
 question:
   text: |
-    What is the value of `b` after running the following code?:
+    What is the value of `b` after running the following code?
 
     ```py
     import numpy as np
@@ -26,12 +28,23 @@ question:
     ```
 
   answers:
-    - '10'
-    - '7'
-    - '5'
-    - '15'
+    - |
+      ```py
+      10
+      ```
+    - |
+      ```py
+      7
+      ```
+    - |
+      ```py
+      5
+      ```
+    - |
+      ```py
+      15
+      ```
   solution: 4
-```
+````
 
 </section>
-

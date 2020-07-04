@@ -7,16 +7,18 @@ videoId: sTMN_pdI6S0
 ---
 
 ## Description
+
 <section id='description'>
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-```yml
+````yml
 question:
   text: |
-    What will the following code print out?:
+    What will the following code print out?
 
     ```py
     import pandas as pd
@@ -57,7 +59,6 @@ question:
       dtype: float64
       ```
   solution: 2
-```
+````
 
 </section>
-

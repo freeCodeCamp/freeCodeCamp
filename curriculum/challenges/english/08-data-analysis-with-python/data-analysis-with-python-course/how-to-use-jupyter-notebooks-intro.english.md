@@ -7,21 +7,27 @@ videoId: h8caJq2Bb9w
 ---
 
 ## Description
+
 <section id='description'>
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
 question:
-  text: What is *not* allowed in a Jupyter Notebook's cell?
+  text: |
+    What is **not** allowed in a Jupyter Notebook's cell?
+
   answers:
-    - "Markdown"
-    - "Python code"
-    - "An Excel sheet"
+    - |
+      Markdown
+    - |
+      Python code
+    - |
+      An Excel sheet
   solution: 3
 ```
 
 </section>
-

@@ -7,21 +7,27 @@ videoId: 5PPegAs9aLA
 ---
 
 ## Description
+
 <section id='description'>
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
 question:
-  text: <pre>Which cells are responsible for rich display?</pre>
+  text: |
+    Which cells are responsible for rich display?
+
   answers:
-    - Code Cells
-    - Markdown Cells
-    - Raw Cells
+    - |
+      Code Cells
+    - |
+      Markdown Cells
+    - |
+      Raw Cells
   solution: 1
 ```
 
 </section>
-

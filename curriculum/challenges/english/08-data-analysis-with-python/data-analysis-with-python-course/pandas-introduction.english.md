@@ -7,16 +7,18 @@ videoId: 0xACW-8cZU0
 ---
 
 ## Description
+
 <section id='description'>
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-```yml
+````yml
 question:
   text: |
-    What will the following code print out?:
+    What will the following code print out?
 
     ```py
     import pandas as pd
@@ -55,7 +57,6 @@ question:
       Name: certificates_earned dtype: int64
       ```
   solution: 1
-```
+````
 
 </section>
-

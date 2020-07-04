@@ -7,20 +7,26 @@ videoId: kj7QqjXhH6A
 ---
 
 ## Description
+
 <section id='description'>
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
 question:
   text: |
     The Python method `.duplicated()` returns a boolean Series for your DataFrame. `True` is the return value for rows that:
+
   answers:
-    - contain a duplicate, where the value for the row contains the first occurrence of that value.
-    - contain a duplicate, where the value for the row is at least the second occurrence of that value.
-    - contain a duplicate, where the value for the row contains either the first or second occurrence.
+    - |
+      contain a duplicate, where the value for the row contains the first occurrence of that value.
+    - |
+      contain a duplicate, where the value for the row is at least the second occurrence of that value.
+    - |
+      contain a duplicate, where the value for the row contains either the first or second occurrence.
   solution: 2
 ```
 

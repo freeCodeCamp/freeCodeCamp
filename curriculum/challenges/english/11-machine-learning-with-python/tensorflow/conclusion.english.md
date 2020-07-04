@@ -7,10 +7,12 @@ videoId: LMNub5frQi4
 ---
 
 ## Description
+
 <section id='description'>
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -18,11 +20,13 @@ question:
   text: |
     Most people that are experts in AI or machine learning usually...:
   answers:
-    - have one specialization.
-    - have many specializations.
-    - have a deep understanding of many different frameworks.
+    - |
+      have one specialization.
+    - |
+      have many specializations.
+    - |
+      have a deep understanding of many different frameworks.
   solution: 1
 ```
 
 </section>
-

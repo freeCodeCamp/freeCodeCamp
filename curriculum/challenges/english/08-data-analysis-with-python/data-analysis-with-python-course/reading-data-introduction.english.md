@@ -7,13 +7,15 @@ videoId: cDnt02BcHng
 ---
 
 ## Description
+
 <section id='description'>
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-```yml
+````yml
 question:
   text: |
     Given a file named `certificates.csv` with these contents:
@@ -53,14 +55,12 @@ question:
 
       C: `certs_num`
     - |
-
       A: `'certificates'`
 
       B: `'$'`
 
       C: `certs_num`
   solution: 2
-```
+````
 
 </section>
-

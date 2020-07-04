@@ -7,23 +7,31 @@ videoId: k1msxD3JIxE
 ---
 
 ## Description
+
 <section id='description'>
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
 question:
-  text: "What kind of data can you import and work with in a Jupyter Notebook?"
+  text: |
+    What kind of data can you import and work with in a Jupyter Notebook?
+
   answers:
-    - "Excel files."
-    - "CSV files."
-    - "XML files."
-    - "Data from an API."
-    - "All of the above."
+    - |
+      Excel files.
+    - |
+      CSV files.
+    - |
+      XML files.
+    - |
+      Data from an API.
+    - |
+      All of the above.
   solution: 5
 ```
 
 </section>
-

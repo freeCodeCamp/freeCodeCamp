@@ -7,16 +7,18 @@ videoId: BFlH0fN5xRQ
 ---
 
 ## Description
+
 <section id='description'>
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-```yml
+````yml
 question:
   text: |
-    What will the following code print out?:
+    What will the following code print out?
 
     ```py
     import pandas as pd
@@ -60,7 +62,6 @@ question:
       Beau              6                7
       ```
   solution: 2
-```
+````
 
 </section>
-

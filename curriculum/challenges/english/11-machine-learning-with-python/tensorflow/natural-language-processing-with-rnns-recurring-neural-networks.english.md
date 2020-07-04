@@ -7,15 +7,18 @@ videoId: bX5681NPOcA
 ---
 
 ## Description
+
 <section id='description'>
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
 question:
-  text: What is true about Recurrent Neural Networks?
+  text: |
+    What is true about Recurrent Neural Networks?
   answers:
     - |
       1: They are a type of feed-forward neural network.
@@ -29,4 +32,3 @@ question:
 ```
 
 </section>
-

@@ -7,16 +7,18 @@ videoId: VDYVFHBL1AM
 ---
 
 ## Description
+
 <section id='description'>
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-```yml
+````yml
 question:
   text: |
-    What will the following code print out?:
+    What will the following code print out?
 
     ```py
     A = np.array([
@@ -29,21 +31,23 @@ question:
     ```
 
   answers:
-    - "[['a' 'b']]"
     - |
+      ```python
+      [['a' 'b']]
       ```
+    - |
+      ```py
       [['b' 'c']
       ['e' 'f']
       ['h' 'i']]
       ```
     - |
-      ```
+      ```py
       [['a' 'b']
       ['d' 'e']
       ['g' 'h']]
       ```
   solution: 3
-```
+````
 
 </section>
-

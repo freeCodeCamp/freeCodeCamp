@@ -7,23 +7,29 @@ videoId: bejQ-W9BGJg
 ---
 
 ## Description
+
 <section id='description'>
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
 question:
-  text: How should you assign weights to input neurons before training your network for the first time?
+  text: |
+    How should you assign weights to input neurons before training your network for the first time?
 
   answers:
-    - From smallest to largest.
-    - Completely randomly.
-    - Alphabetically.
-    - None of the above.
+    - |
+      From smallest to largest.
+    - |
+      Completely randomly.
+    - |
+      Alphabetically.
+    - |
+      None of the above.
   solution: 2
 ```
 
 </section>
-

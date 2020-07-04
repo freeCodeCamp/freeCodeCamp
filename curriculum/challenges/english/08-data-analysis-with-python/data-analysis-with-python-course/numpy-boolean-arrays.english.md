@@ -7,16 +7,18 @@ videoId: N1ttsMmcVMM
 ---
 
 ## Description
+
 <section id='description'>
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-```yml
+````yml
 question:
   text: |
-    What will the following code print out?:
+    What will the following code print out?
 
     ```py
     a = np.arange(5)
@@ -24,12 +26,23 @@ question:
     print(a <= 3)
     ```
   answers:
-    - "[False, False, False, False, True]"
-    - "[5]"
-    - "[0, 1, 2, 3]"
-    - "[True, True, True, True, False]"
+    - |
+      ```python
+      [False, False, False, False, True]
+      ```
+    - |
+      ```python
+      [5]
+      ```
+    - |
+      ```python
+      [0, 1, 2, 3]
+      ```
+    - |
+      ```python
+      [True, True, True, True, False]
+      ```
   solution: 4
-```
+````
 
 </section>
-

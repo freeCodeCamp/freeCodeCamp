@@ -7,18 +7,20 @@ videoId: VNWAQbEM-C8
 ---
 
 ## Description
+
 <section id='description'>
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-```yml
+````yml
 question:
   text: |
-    What code would produce the following array?:
+    What code would produce the following array?
 
-    ```
+    ```py
     [[1. 1.]
     [1. 1.]
     [1. 1.]
@@ -44,7 +46,6 @@ question:
       print(b)
       ```
   solution: 1
-```
+````
 
 </section>
-
