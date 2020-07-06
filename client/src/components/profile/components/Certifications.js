@@ -44,7 +44,6 @@ function renderCertShow(username, cert) {
           <Link
             className='btn btn-lg btn-primary btn-block'
             external={true}
-            sameTab={false}
             to={`/certification/${username}/${cert.showURL}`}
           >
             View {cert.title}
