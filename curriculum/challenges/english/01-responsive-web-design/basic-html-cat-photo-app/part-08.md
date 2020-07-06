@@ -23,14 +23,10 @@ tests:
     testString: assert( document.querySelector('img') );
   - text: Your `img` element should have an `src` attribute. You have either omitted the attribute or have a typo. Make sure there is a space between the element name and the attribute name.
     testString: assert( document.querySelector('img').src );
-  - text: Although you have set the `img` element's `src` to the correct URL, it is recommended to always surround the value of an attribute with quotation marks.
-    testString: |
-      assert(
-        document.querySelector('img').src === 'https://bit.ly/fcc-relaxing-cat' &&
-        document.querySelector('img').outerHTML.match(/src\s*=\s*("|')https:\/\/bit\.ly\/fcc-relaxing-cat\1/)
-      );
   - text: Your `img` element's `src` attribute should be set to 'https://bit.ly/fcc-relaxing-cat'. You have either omitted the URL or have a typo. The case of the URL is important.
     testString: assert( document.querySelector('img').src === 'https://bit.ly/fcc-relaxing-cat' );
+  - text: Although you have set the `img` element's `src` to the correct URL, it is recommended to always surround the value of an attribute with quotation marks.
+    testString: assert( !/\<img\s+src\s*=\s*https:\/\/bit\.ly\/fcc-relaxing-cat/.test(code) );
 
 ```
 
