@@ -24,7 +24,7 @@ tests:
   - text: "Your anchor (`a`) element should have a closing tag. Closing tags have a `/` just after the `<` character."
     testString: assert( code.match(/<\/a\>/) );
   - text: "Your anchor (`a`) element should be below the `p` element. You have them in the wrong order."
-    testString: const collection = [...document.querySelectorAll('a, p')].map(node => node.nodeName); assert( collection.indexOf('P') < collection.indexOf('A') );d
+    testString: const collection = [...document.querySelectorAll('a, p')].map(node => node.nodeName); assert( collection.indexOf('P') < collection.indexOf('A') );
   - text: "Your anchor (`a`) element does not have an `href` attribute. You have either omitted the attribute or have a typo."
     testString: const hrefVal = document.querySelector('a').getAttribute('href'); assert( hrefVal || hrefVal === '' );
   - text: "Your anchor (`a`) element should link to `https://catphotos.com`. You have either omitted the URL or have a typo."

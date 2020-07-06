@@ -8,9 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Modify your code so that the anchor element you just added is nested within the `p` element. The `p` element should contain the same text, but the words `cat photos` should now be a link. 
-
-Here is an example of an anchor (`a`) element nested within a paragraph: `<p>Here is a <a href="http://freecodecamp.org">link to freecodecamp.org</a>.</p>`.
+Turn the words `cat photos` located inside `p` element into a link, by replacing the words with the anchor element added previously. The `p` element should show the same text in the browser, but the words `cat photos` should now be a link. There should only be one link showing in the app.
 
 </section>
 
@@ -19,16 +17,20 @@ Here is an example of an anchor (`a`) element nested within a paragraph: `<p>Her
 
 ```yml
 tests:
-  - text: Your code should only contain one anchor (`a`) element element. Nest the anchor element you added into the `p` element.
+  - text: Your code should only contain one anchor (`a`) element. Remove any extra anchor elements.
     testString: assert( document.querySelectorAll('a').length === 1 );
-  - text: Your anchor (`a`) element should be nested within the `p` element. Replace the text `cat photos` in the `p` element with your anchor element.
-    testString: const nestedAnchor = document.querySelector('p').querySelector('a'); 
+  - text: Your anchor (`a`) element should be nested within the `p` element.
+    testString: assert( $('p > a').length);
+  - text: The link's text should be `cat photos`. You have either omitted the text or have a typo.
+    testString: const nestedAnchor = $('p > a')[0];
       assert( 
         nestedAnchor.getAttribute('href') === 'https://catphotos.com' &&
         nestedAnchor.innerText.toLowerCase().replace(/\s+/g, ' ') === 'cat photos'
       );
-  - text: After nesting the anchor (`a`) element, the `p` element's text should still be `Click here to view more cat photos.` Double check the text, spacing, or punctuation of both the `p` and nested anchor element.
-    testString: const pText = document.querySelector('p').innerText.toLowerCase().replace(/\s+/g, ' '); assert( pText.includes('click here to view more cat photos') );
+  - text: After nesting the anchor (`a`) element, the only `p` element content visible in the browser should be `Click here to view more cat photos.` Double check the text, spacing, or punctuation of both the `p` and nested anchor element.
+    testString: |
+      const pText = document.querySelector('p').innerText.toLowerCase().replace(/\s+/g, ' ');
+      assert( pText.match(/click here to view more cat photos\.?$/) );
 
 ```
 
