@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-paragraph (`p`) elements are used to create paragraph text on websites. 
+Paragraph (`p`) elements are used to create paragraph text on websites. 
 
 Create a paragraph (`p`) element below your `h2` element, and give it the text `Click here to view more cat photos.`
 
