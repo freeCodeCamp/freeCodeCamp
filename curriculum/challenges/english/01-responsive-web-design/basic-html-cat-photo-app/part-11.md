@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Now add the anchor text `cat photos` to the anchor element. This will become the link's text.
+A link's text must be placed beteween the opening and closing tags of an anchor (`a`) element. For example, `<a href="https://www.freecodecamp.org">click here to go to freeCodeCamp.org</a>` has the anchor text `click here to go to freeCodeCamp.org`.
 
-For example, `<a href="https://www.freecodecamp.org">click here to go to freeCodeCamp.org</a>` has the anchor text `click here to go to freeCodeCamp.org`.
+Add the anchor text `cat photos` to the anchor element. This will become the link's text.
 
 </section>
 
@@ -23,7 +23,7 @@ tests:
     testString: assert( document.querySelector('a') );
   - text: "Your anchor (`a`) element should have a closing tag. Closing tags have a `/` just after the `<` character."
     testString: assert( code.match(/<\/a\>/) );
-  - text: Your anchor (`a`) element's text should be `cat photos`. The text for an anchor (`a`) elments goes between its opening tag and closing tag.
+  - text: Your anchor (`a`) element's text should be `cat photos`. Make sure to put the link text between the anchor (`a`) element's opening tag and closing tag.
     testString: assert( document.querySelector('a').innerText.toLowerCase().replace(/\s+/g, ' ') === 'cat photos' );
 
 ```
