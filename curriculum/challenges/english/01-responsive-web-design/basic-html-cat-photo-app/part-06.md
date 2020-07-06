@@ -19,21 +19,21 @@ To make HTML easier to read, indent the `h2` element, the comment, and `p` eleme
 
 ```yml
 tests:
+  - text: Your should have an `h2` element with text of `Cat Photos`.  You may have accidentally deleted it, it is missing both opening and closing tags, or the text has changed.
+    testString: assert( document.querySelector('h2') && code.match(/<\/h2\>/) && document.querySelector('h2').innerText.toLowerCase() === 'cat photos' );
+  - text: Your `h2` element should below the `main` element's opening tag and its opening tag should start 6 spaces over from the start of the line.
+    testString: assert( code.toLowerCase().match(/<main\>\n\s{6}<h2>/) );
   - text: Your code should have a comment. You removed the comment from an earlier step.
     testString: assert( code.match(/<!--.*-->/) );
   - text: "The comment's text should be `TODO: Add link to cat photos`. Do not change the text or spacing of the comment."
     testString: 'assert( code.match(/<!--\s*todo:\s+add\s+link\s+to\s+cat\s+photos\.?\s*-->/i) );'
+  - text: Your comment should be below the `h2` element and start 6 spaces over from the start of the line.
+    testString: 'assert( code.toLowerCase().match(/<\/h2>\n\s{6}<!--\s*todo:\s+add\s+link\s+to\s+cat\s+photos\s*-->/) );'
   - text: Your code should have a `p` element. You have removed the `p` element from an earlier step.
     testString: assert( document.querySelector('p') );
   - text: The text of the `p` element should be `Click here to view more cat photos.` Do not change the text, spacing, or punctuation of the `p` element.
-    testString: assert( document.querySelector('p').innerText.toLowerCase().match(/click here to view more cat photos\.?/) );
-  - text: Your should have an `h2` element with text of `Cat Photos`.  You may have accidentally deleted it, it is missing both opening and closing tags, or the text has changed.
-    testString: assert( document.querySelector('h2') && code.match(/<\/h2\>/) && document.querySelector('h2').innerText.toLowerCase() === 'cat photos' );
-  - text: Your `h2` element should be indented 2 spaces within the `main` element. Your `h2` element should below the `main` element's opening tag and its opening tag should start 6 spaces over from the start of the line.
-    testString: assert( code.toLowerCase().match(/<main\>\n\s{6}<h2>/) );
-  - text: Your comment should be indented 2 spaces within the `main` element. The comment should below the `h2` element and it should start 6 spaces over from the start of the line.
-    testString: 'assert( code.toLowerCase().match(/<\/h2>\n\s{6}<!--\s*todo:\s+add\s+link\s+to\s+cat\s+photos\s*-->/) );'
-  - text: Your `p` element should be indented 2 spaces within the `main` element. The `p` element should below the comment  and its opening tag should start 6 spaces over from the start of the line.
+    testString: assert( document.querySelector('p').innerText.toLowerCase().match(/click\s+here\s+to\s+view\s+more\s+cat\s+photos\.?$/) );
+  - text: Your `p` element should be below the comment and its opening tag should start 6 spaces over from the start of the line.
     testString: assert( code.toLowerCase().match(/-->\n\s{6}<p>/) );
 
 ```
