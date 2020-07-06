@@ -8,9 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Add the `target` attribute with the value `_blank` to the anchor tag so that the link opens in a new tab. 
-
-For example, `<a target="_blank" href="http://freecodecamp.org">learn to code</a>`.
+Add a `target` attribute with the value `_blank` to the anchor (`a`) element's opening tag, so that the link opens in a new tab. 
 
 </section>
 
@@ -19,8 +17,12 @@ For example, `<a target="_blank" href="http://freecodecamp.org">learn to code</a
 
 ```yml
 tests:
-  - text: Your anchor (`a`) element does not have a `target` attribute. You have either omitted the attribute or have a typo.
-    testString: const targetVal = document.querySelector('a').getAttribute('target'); assert( targetVal || targetVal === '' );
+  - text: Your `p` element should have a nested anchor (`a`) element with the text `cat photos`. You may have deleted it or have a typo.
+    testString: |
+      const anchor = $('p > a');
+      assert(anchor.length && anchor[0].innerText.toLowerCase().replace(/\s+/g, ' ') === 'cat photos');
+  - text: Your anchor (`a`) element either does not have a `target` attribute or it is not set to a non-blank value. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
+    testString: assert( document.querySelector('a').getAttribute('target') );
   - text: The value of the `target` attribute should '_blank'. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotes.
     testString: assert( document.querySelector('a').getAttribute('target') === '_blank' );
 

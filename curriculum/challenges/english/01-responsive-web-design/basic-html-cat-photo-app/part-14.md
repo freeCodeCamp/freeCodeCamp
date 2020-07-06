@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-If you didn't want the anchor element to link to catphotos.com? On the anchor tag, change the value of the `href` attribute to equal "#". 
+What if you didn't want the anchor element to link to anything? You could change the value of the `href` attribute to `#`. This is often used to create a placeholder link or when changing the behavior of a link using JavaScript. 
 
-Doing this will keep the text as a link, but it will no longer link to anything. This is often used to create a placeholder link or when changing the behavior of a link using JavaScript.
+Change the value of the `href` attribute to be `#` for the `cat photo` link.
 
 </section>
 
@@ -19,8 +19,12 @@ Doing this will keep the text as a link, but it will no longer link to anything.
 
 ```yml
 tests:
-  - text: The value of the `target` attribute should `#`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotes.
-    testString: assert( document.querySelector('a').href.slice(-1) === '#' );
+  - text: Your `p` element should have a nested anchor (`a`) element with the text `cat photos`. You may have deleted it or have a typo.
+    testString: const anchor = $('p > a'); assert(anchor.length && anchor[0].innerText.toLowerCase().replace(/\s+/g, ' ') === 'cat photos');
+  - text: Your `p` element should not have more than one nested anchor (`a`) element. Remove the extra anchor elements.
+    testString: assert($('p > a').length < 2);
+  - text: Your anchor (`a`) element's `href` attribute should be `#`. It either does not have an `href` attribute or it is not set to a non-blank value. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
+    testString: assert( $('p > a')[0].getAttribute('href') === '#' );
 
 ```
 
