@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-After the `p` element, add an anchor (`a`) element with an `href` attribute that links to the `catphotos.com` website at `https://catphotos.com`.
+You can add a link to the app by using an anchor (`a`) element. `<a href="https://www.freecodecamp.org"></a>` is an example of an anchor (`a`) element that links to `freecodecamp.org`. 
 
-For example, `<a href="https://www.freecodecamp.org"></a>` is an anchor element that links to `freecodecamp.org`. At this point the anchor element will not show up in the browser.
+After the `p` element, add an anchor (`a`) element with an `href` attribute that links to the `catphotos.com` website at `https://catphotos.com`. At this point, no link will show up in the browser.
 
 </section>
 
