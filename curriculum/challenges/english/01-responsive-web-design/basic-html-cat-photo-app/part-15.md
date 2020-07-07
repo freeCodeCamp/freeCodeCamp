@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Make the image into a link by adding `<a href="#">` before the image element and `</a>` after the image element.
+Make the image into a link by adding `<a href="#">` before the `img` element and `</a>` after the `img` element.
 
 </section>
 
@@ -18,13 +18,13 @@ Make the image into a link by adding `<a href="#">` before the image element and
 ```yml
 tests:
   - text: You should have an `img` element with an `src` value of `https://bit.ly/fcc-relaxing-cat`. You may have accidentally deleted it.
-    testString: "assert( document.querySelector('img') && document.querySelector('img').getAttribute('src') === 'https://bit.ly/fcc-relaxing-cat' );"
+    testString: assert( document.querySelector('img') && document.querySelector('img').getAttribute('src') === 'https://bit.ly/fcc-relaxing-cat' );
   - text: "Your anchor (`a`) element should have an opening tag. Opening tags have this syntax: `<elementName>`."
     testString: assert( document.querySelector('a') );
-  - text: "Your anchor (`a`) element should have a closing tag. Closing tags have a `/` just after the `<` character."
+  - text: Your anchor (`a`) element should have a closing tag. Closing tags have a `/` just after the `<` character.
     testString: assert( code.match(/<\/a>/) );
   - text: Your anchor (`a`) element should have an `href` value of `#`.
-    testString: "assert( document.querySelector('a').getAttribute('href') === '#' );"
+    testString: assert( document.querySelector('a').getAttribute('href') === '#' );
   - text: Your `img` element should be nested within the anchor (`a`) element. The entire `img` element should be inside the opening and closing tags of the anchor (`a`) element. 
     testString: assert( document.querySelector('img').parentNode.nodeName === "A" );
 
