@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Now add another `<br>` tag after the checkboxes.
+Wrap the three checkboxes in another `div` element just like you did with the radio buttons. Don't forget to indent the code within the `div` element.
 
 </section>
 
@@ -61,9 +61,10 @@ tests:
       </figure>
       <h2>Cat Form</h2>
       <form action="/submit-cat-photo">
-        <label for="indoor"><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
-        <label for="outdoor"><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label>
-        <br>
+        <div>
+          <label for="indoor"><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
+          <label for="outdoor"><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label>
+        </div>
         <label for="loving"><input id="loving" type="checkbox" name="personality"> Loving</label>
         <label for="lazy"><input id="lazy" type="checkbox" name="personality"> Lazy</label>
         <label for="energetic"><input id="energetic" type="checkbox" name="personality"> Energetic</label>

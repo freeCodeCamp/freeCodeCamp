@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Add the `type` attribute with the value `submit` to the button.
+Even through you added your button below the text input, they appear next to each other on the page. That's because both `input` and `button` elements are inline elements, which don't appear on new lines.
 
-After doing that, clicking this button will send the data from your form to the URL in your form's action attribute.
+Now add the `type` attribute with the value `submit` to the button. After that, clicking this button will send the data from your form to the URL in your form's action attribute.
 
 </section>
 

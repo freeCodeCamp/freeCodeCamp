@@ -67,19 +67,21 @@ tests:
       </div>
       <h2>Cat Form</h2>
       <form action="/submit-cat-photo">
-        <label for="indoor"><input id="indoor" type="radio" name="indoor-outdoor" checked> Indoor</label>
-        <label for="outdoor"><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label>
-        <br>
-        <label for="loving"><input id="loving" type="checkbox" name="personality" checked> Loving</label>
-        <label for="lazy"><input id="lazy" type="checkbox" name="personality"> Lazy</label>
-        <label for="energetic"><input id="energetic" type="checkbox" name="personality"> Energetic</label>
-        <br>
+        <div>
+          <label for="indoor"><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
+          <label for="outdoor"><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label>
+        </div>
+        <div>
+          <label for="loving"><input id="loving" type="checkbox" name="personality" checked> Loving</label>
+          <label for="lazy"><input id="lazy" type="checkbox" name="personality"> Lazy</label>
+          <label for="energetic"><input id="energetic" type="checkbox" name="personality"> Energetic</label>
+        </div>
         <input type="text" placeholder="cat photo URL" required>
         <button type="submit">Submit</button>
       </form>
     </main>
     <footer>
-      <p>No Copyright - <a href="https://freecodecamp.org">freeCodeCamp.org</a></p>
+      <p>No Copyright - <a href="https://www.freecodecamp.org">freeCodeCamp.org</a></p>
     </footer>
   </body>
 </html>

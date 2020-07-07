@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-`label` elements are used to associate the text of an input with the input element itself. For example, `<label><input type="radio"> cat</label>` makes it so clicking the word `cat` also selects its radio button.
+`label` elements are used to associate the text of an input with the input element itself. For example, `<label><input type="radio"> cat</label>` makes it so clicking the word `cat` also selects the corresponding radio button.
 
 Wrap both the `Indoor` and `Outdoor` radio buttons with `label` elements.
 
