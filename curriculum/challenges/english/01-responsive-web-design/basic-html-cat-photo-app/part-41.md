@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-To make it so clicking the words `Indoor` or `Outdoor` selects the corresponding radio button, wrap the `input` element and text with a `label` element.
+`label` elements are used to associate the text of an input with the input element itself. For example, `<label><input type="radio"> cat</label>` makes it so clicking the word `cat` also selects its radio button.
 
-For example, `<label><input type="radio"> cat</label>`.
+Wrap both the `Indoor` and `Outdoor` radio buttons with `label` elements.
 
 </section>
 

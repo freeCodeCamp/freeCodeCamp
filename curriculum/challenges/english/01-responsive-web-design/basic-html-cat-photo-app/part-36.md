@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Add the placeholder text `cat photo URL` to your `input` element that will display in the textbox before your user inputs anything.  
+Placeholder text is used to give people a hint about what kind of information to enter into an input. For example, `<input type="text" placeholder="Email address">`.
 
-For example, `<input type="text" placeholder="this is placeholder text">` has the placeholder text `this is placeholder text`.
+Add the placeholder text `cat photo URL` to your `input` element that will display in the textbox before your user inputs anything.  
 
 </section>
 

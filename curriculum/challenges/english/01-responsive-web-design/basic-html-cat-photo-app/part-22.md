@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-After the `img` tag that is nested in the `figure` element, add a `<figcaption>` element with the text `Cats love lasagna.`
+Figure caption (`figcaption`) elements are used to add a caption to describe whatever is in the surrounding `figure` element. For example, `<figcaption>A cute cat</figcaption>` has the text `A cute cat`.
 
-For example, `<figcaption>cat</figcaption>` has the text "cat".
+After the image nested in the `figure` element, add a `<figcaption>` element with the text `Cats love lasagna.`
 
 </section>
 

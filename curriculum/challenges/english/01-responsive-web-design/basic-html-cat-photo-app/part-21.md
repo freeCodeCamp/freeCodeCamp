@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Nest the `img` you just added within a `<figure>` element. The `<figure>` element element represents self-contained content and will allow you to associate an image caption.
+Nest the `img` you just added within a `figure` element. The `figure` element element represents self-contained content and will allow you to associate an image caption.
 
 </section>
 

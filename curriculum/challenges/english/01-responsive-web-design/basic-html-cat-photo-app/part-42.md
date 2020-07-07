@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-All related radio buttons should have the same `name` attribute to create a radio button group. By creating a radio group, selecting a radio button will automatically deselect the other buttons within the same group. This helps ensure that only one answer is provided.
+All related radio buttons should have the same `name` attribute to create a radio button group. For example, `<label><input type="radio" name="animal"> cat</label>`. By creating a radio group, selecting a radio button will automatically deselect the other buttons within the same group.
 
-Add the `name` attribute with the value `indoor-outdoor` to each radio button similar to this example: `<label><input type="radio" name="animal"> cat</label>`.
+Add the `name` attribute with the value `indoor-outdoor` to each radio button.
 
 </section>
 

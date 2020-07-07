@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Make the image into a link by adding `<a href="#">` before the `img` tag and `</a>` after the image tag.
+Make the image into a link by adding `<a href="#">` before the image element and `</a>` after the image element.
 
 </section>
 

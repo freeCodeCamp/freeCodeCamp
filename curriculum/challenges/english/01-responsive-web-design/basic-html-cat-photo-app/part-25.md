@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-The code for an ordered list is similar to an unordered list, except the opening / closing tags look like this: `<ol> </ol>`. An ordered list is numbered when displayed. 
+The code for an ordered list is similar to an unordered list, except the opening / closing tags look like this: `<ol> </ol>`. List items in an ordered list are numbered when displayed. 
 
 After the final `p` element, add an ordered list with these three list items: `flea treatment`, `thunder` and `other cats`.
 

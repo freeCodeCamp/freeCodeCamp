@@ -8,16 +8,16 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Now nest three list item elements (`<li>`) within the `ul` element displaying three things cats love. Make the items's text should `cat nip`, `laser pointers` and `lasagna`. 
+Use list item (`li`) elements to create items in a list. Here is an example of list items in an unordered list:
 
-Here is an example of list items in an unordered list:
-
-```js
+```html
 <ul>
   <li>milk</li>
   <li>cheese</li>
 </ul>
 ```
+
+Nest three list items within the `ul` element to display three things cats love: `cat nip`, `laser pointers` and `lasagna`. 
 
 </section>
 
