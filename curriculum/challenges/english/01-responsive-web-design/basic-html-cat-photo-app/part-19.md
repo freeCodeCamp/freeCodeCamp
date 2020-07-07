@@ -26,7 +26,7 @@ Nest three list items within the `ul` element to display three things cats love:
 
 ```yml
 tests:
-  - text: You should have 3 `li` elements with the text `cat nip`, `laser pointers` and `lasagna` in any order.
+  - text: You should have 3 `li` elements with the text `cat nip`, `laser pointers` and `lasagna` in any order. You have either omitted some text or have a typo.
     testString: assert.deepStrictEqual( [ ...document.querySelectorAll('li') ].map(item => item.innerText.toLowerCase()).sort((a, b) => a.localeCompare(b)), ["cat nip", "lasagna", "laser pointers"] );
   - text: The three `li` elements should be nested inside the `ul` element.
     testString: assert( [ ...document.querySelectorAll('li') ].filter(item => item.parentNode.nodeName === 'UL').length === 3 );
@@ -52,8 +52,10 @@ tests:
       <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
       <h2>Cat Lists</h2>
       <p>Things cats love:</p>
+      --fcc-editable-region--
       <ul>
       </ul>
+      --fcc-editable-region--
     </main>
   </body>
 </html>

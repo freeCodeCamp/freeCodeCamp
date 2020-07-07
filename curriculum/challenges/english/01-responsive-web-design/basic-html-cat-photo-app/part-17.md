@@ -53,8 +53,10 @@ tests:
       <!-- TODO: Add link to cat photos -->
       <p>Click here to view more <a target="_blank" href="#">cat photos</a>.</p>
       <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+      --fcc-editable-region--
       <h2>Cat Lists</h2>
     </main>
+    --fcc-editable-region--
   </body>
 </html>
 ```

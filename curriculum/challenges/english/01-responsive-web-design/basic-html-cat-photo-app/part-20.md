@@ -17,16 +17,16 @@ After the unordered list, add a new image with an `src` of `https://bit.ly/fcc-l
 
 ```yml
 tests:
-  - text: There should be an `img` element right above the `main` element's closing tag.
+  - text: There should be an `img` element right above the `main` element's closing tag. You have them in the wrong order.
     testString: assert( document.querySelector('main').lastElementChild.nodeName === 'IMG' );
-  - text: The new `img` element should have an `src` value of `https://bit.ly/fcc-lasagna`.
-    testString: assert( document.querySelector('main').lastElementChild.getAttribute('src') === 'https://bit.ly/fcc-lasagna');
+  - text: The new `img` element either does not have an `alt` attribute or it is not set to a non-blank value. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
+    testString: assert( document.querySelector('main').lastElementChild.getAttribute('alt') );
   - text: The new `img` element should have an `alt` value of `A slice of lasagna on a plate.`
     testString: assert( document.querySelector('main').lastElementChild.getAttribute('alt').replace(/\s+/g, ' ').match(/A slice of lasagna on a plate\.?/i) );
-  - text: There should be a `ul` element above the new image.
-    testString: |
-      const lastMainElemNode = document.querySelector('main').lastElementChild;
-      assert(lastMainElemNode.previousElementSibling.nodeName === 'UL');
+  - text: The new `img` element should have an `src` value of `https://bit.ly/fcc-lasagna`.
+    testString: assert( document.querySelector('main').lastElementChild.getAttribute('src') === 'https://bit.ly/fcc-lasagna');
+  - text: Although you have set the new `img` element's `src` to the correct URL, it is recommended to always surround the value of an attribute with quotation marks.
+    testString: assert( !/\<img\s+src\s*=\s*https:\/\/bit\.ly\/fcc-lasagna/.test(code) );
 
 ```
 
@@ -54,7 +54,9 @@ tests:
         <li>laser pointers</li>
         <li>lasagna</li>
       </ul>
+      --fcc-editable-region--
     </main>
+    --fcc-editable-region--
   </body>
 </html>
 ```

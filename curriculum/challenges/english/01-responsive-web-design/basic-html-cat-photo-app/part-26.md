@@ -59,7 +59,9 @@ tests:
         <li>thunder</li>
         <li>other cats</li>
       </ol>
+      --fcc-editable-region--
     </main>
+    --fcc-editable-region--
   </body>
 </html>
 ```

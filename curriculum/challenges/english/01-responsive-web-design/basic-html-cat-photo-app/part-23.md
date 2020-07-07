@@ -51,7 +51,9 @@ tests:
       </ul>
       <figure>
         <img src="https://bit.ly/fcc-lasagna" alt="A slice of lasagna on a plate.">
-        <figcaption>Cats love lasagna.</figcaption>  
+        --fcc-editable-region--
+        <figcaption>Cats love lasagna.</figcaption>
+        --fcc-editable-region--
       </figure>
     </main>
   </body>

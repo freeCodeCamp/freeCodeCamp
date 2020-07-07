@@ -47,7 +47,9 @@ tests:
       <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
       <h2>Cat Lists</h2>
       <p>Things cats love:</p>
+      --fcc-editable-region--
     </main>
+    --fcc-editable-region--
   </body>
 </html>
 ```

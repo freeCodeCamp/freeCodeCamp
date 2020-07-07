@@ -17,13 +17,13 @@ Inside the `figure` element you just added, nest an `img` element with a `src` a
 
 ```yml
 tests:
-  - text: 'Your `figure` element should have an opening tag. Opening tags have this syntax: `<elementName>`.'
+  - text: 'Your second `figure` element should have an opening tag. Opening tags have this syntax: `<elementName>`.'
     testString: assert( document.querySelectorAll('figure').length === 2 );
-  - text: Your `ol` element should have a closing tag. Closing tags have a `/` just after the `<` character.
+  - text: Your second `figure` element should have a closing tag. Closing tags have a `/` just after the `<` character.
     testString: assert( code.match(/<\/figure>/g).length === 2 );
-  - text: There should be a `figure` element right above the `main` element's closing tag.
+  - text: There should be a second `figure` element right above the `main` element's closing tag. You have them in the wrong order.
     testString: assert( document.querySelector('main').lastElementChild.nodeName === 'FIGURE' );
-  - text: The Cats `img` element should be nested in the `figure` element.
+  - text: Your third `img` element should be nested in the `figure` element.
     testString: const catsImg = document.querySelectorAll('figure > img')[1]; assert( catsImg && catsImg.getAttribute('src').toLowerCase() === 'https://bit.ly/fcc-cats');
 
 ```
@@ -62,6 +62,8 @@ tests:
         <li>other cats</li>
       </ol>
       <figure>
+      --fcc-editable-region--
+      --fcc-editable-region--
       </figure>
     </main>
   </body>

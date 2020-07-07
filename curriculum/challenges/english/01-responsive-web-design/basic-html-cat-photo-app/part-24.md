@@ -53,7 +53,9 @@ tests:
         <img src="https://bit.ly/fcc-lasagna" alt="A slice of lasagna on a plate.">
         <figcaption>Cats <em>love</em> lasagna.</figcaption>  
       </figure>
+      --fcc-editable-region--
     </main>
+    --fcc-editable-region--
   </body>
 </html>
 ```
