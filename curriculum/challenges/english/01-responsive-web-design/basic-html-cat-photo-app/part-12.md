@@ -49,8 +49,10 @@ tests:
     <main>
       <h2>Cat Photos</h2>
       <!-- TODO: Add link to cat photos -->
+      --fcc-editable-region--
       <p>Click here to view more cat photos.</p>
       <a href="https://catphotos.com">cat photos</a>
+      --fcc-editable-region--
       <img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
     </main>
   </body>

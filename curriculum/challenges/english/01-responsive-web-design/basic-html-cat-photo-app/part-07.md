@@ -45,7 +45,9 @@ tests:
     <main>
       <h2>Cat Photos</h2>
       <!-- TODO: Add link to cat photos -->
+      --fcc-editable-region--
       <p>Click here to view more cat photos.</p>
+      --fcc-editable-region--
     </main>
   </body>
 </html>

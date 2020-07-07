@@ -47,7 +47,9 @@ tests:
   <body>
     <h1>CatPhotoApp</h1>
     <h2>Cat Photos</h2>
+    --fcc-editable-region--
     <p>Click here to view more cat photos.</p>
+    --fcc-editable-region--
   </body>
 </html>
 ```
