@@ -17,7 +17,7 @@ Make the image into a link by adding `<a href="#">` before the `img` tag and `</
 
 ```yml
 tests:
-  - text: You should have an `img` element with an `src` value of `https://bit.ly/fcc-relaxing-cat`.  You may have accidentally deleted it.
+  - text: You should have an `img` element with an `src` value of `https://bit.ly/fcc-relaxing-cat`. You may have accidentally deleted it.
     testString: "assert( document.querySelector('img') && document.querySelector('img').getAttribute('src') === 'https://bit.ly/fcc-relaxing-cat' );"
   - text: "Your anchor (`a`) element should have an opening tag. Opening tags have this syntax: `<elementName>`."
     testString: assert( document.querySelector('a') );

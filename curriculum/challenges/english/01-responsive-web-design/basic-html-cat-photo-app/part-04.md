@@ -21,7 +21,7 @@ Add a comment above the `p` element with the text `TODO: Add link to cat photos`
 tests:
   - text: Your comment should start with `<!--`. You are missing one or more of the characters that define the start of a comment.
     testString: assert( code.match(/<!--/) );
-  - text: Your comment should end with `-->`.  You are missing one or more of the characters that define the end of  start a comment.
+  - text: Your comment should end with `-->`.  You are missing one or more of the characters that define the end of a comment.
     testString: assert( code.match(/-->/) );
   - text: Your code should not have extra opening/closing comment characters. You have an extra `<!--` or `-->` displaying in the browser.
     testString: |
