@@ -10,7 +10,7 @@ isHidden: true
 
 All related radio buttons should have the same `name` attribute to create a radio button group. For example, `<label><input type="radio" name="animal"> cat</label>`. By creating a radio group, selecting a radio button will automatically deselect the other buttons within the same group.
 
-Add the `name` attribute with the value `indoor-outdoor` to each radio button.
+Add the `name` attribute with the value `indoor-outdoor` to the radio button.
 
 </section>
 
@@ -64,7 +64,6 @@ tests:
       <h2>Cat Form</h2>
       <form action="/submit-cat-photo">
         <label><input type="radio"> Indoor</label>
-        <label><input type="radio"> Outdoor</label>
         <input type="text" placeholder="cat photo URL" required>
         <button type="submit">Submit</button>
       </form>

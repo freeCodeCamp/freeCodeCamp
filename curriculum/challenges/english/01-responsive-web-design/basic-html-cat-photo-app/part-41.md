@@ -10,7 +10,7 @@ isHidden: true
 
 `label` elements are used to associate the text of an input with the input element itself. For example, `<label><input type="radio"> cat</label>` makes it so clicking the word `cat` also selects the corresponding radio button.
 
-Wrap both the `Indoor` and `Outdoor` radio buttons with `label` elements.
+Wrap the radio button with a `label` element.
 
 </section>
 
@@ -64,7 +64,6 @@ tests:
       <h2>Cat Form</h2>
       <form action="/submit-cat-photo">
         <input type="radio"> Indoor
-        <input type="radio"> Outdoor
         <input type="text" placeholder="cat photo URL" required>
         <button type="submit">Submit</button>
       </form>

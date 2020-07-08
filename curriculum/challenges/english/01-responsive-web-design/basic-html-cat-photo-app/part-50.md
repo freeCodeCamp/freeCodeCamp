@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-After the checkbox you just added, another checkbox with the option `Lazy`. 
+After the checkbox you just added, add another checkbox with the option `Lazy`. 
 
 The `name` and attribute should be the same as the last checkbox, but make sure to update the `for` and `id` attributes to `lazy`.
 

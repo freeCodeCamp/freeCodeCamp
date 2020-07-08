@@ -1,6 +1,6 @@
 ---
-id: 5ef9b03c81a63668521804dc
-title: Part 40
+id: 5f05a1d8e233dff4a68508d8
+title: Part 44a
 challengeType: 0
 isHidden: true
 ---
@@ -8,11 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-You can use radio buttons for questions where you want only one answer out of multiple options.
+After the `Indoor` radio button, add another radio button and with the option `Outdoor` and wrap it in a `label`. 
 
-Here is an example of a radio button with the option of `cat`: `<input type="radio"> cat`. Remember that `input` elements are <dfn>self-closing</dfn>.
-
-Before the text input, add a radio button with the option `Indoor`.
+The `name` and attribute should be the same as the last radio button, but make sure to update the `for` and `id` attributes to `outdoor`.
 
 </section>
 
@@ -65,6 +63,7 @@ tests:
       </figure>
       <h2>Cat Form</h2>
       <form action="/submit-cat-photo">
+        <label><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
         <input type="text" placeholder="cat photo URL" required>
         <button type="submit">Submit</button>
       </form>

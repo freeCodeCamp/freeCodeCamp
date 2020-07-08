@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Add a `for` attribute on each label element that is set to the `id` of the nested `input` element. For example: `<label for="cat"><input id="cat" type="radio"> Cat</label>`.
+Add a `for` attribute to the `label` element that is set to the `id` of the nested `input` element. For example: `<label for="cat"><input id="cat" type="radio"> Cat</label>`.
 
 This allows assistive technologies like screen readers to create a linked relationship between the label and the child input element.
 
@@ -64,7 +64,6 @@ tests:
       <h2>Cat Form</h2>
       <form action="/submit-cat-photo">
         <label><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
-        <label><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label>
         <input type="text" placeholder="cat photo URL" required>
         <button type="submit">Submit</button>
       </form>

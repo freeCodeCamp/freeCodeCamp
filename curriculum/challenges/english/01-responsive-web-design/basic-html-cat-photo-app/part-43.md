@@ -10,7 +10,7 @@ isHidden: true
 
 The `id` attribute is used to identify specific HTML elements, and each `id` must be unique.
 
-Add an `id` attribute with the value `indoor` to the first radio input, and an `id` with the value `outdoor` to the second radio input. When elements have multiple attributes, the order of the attributes doesn't matter.
+Add an `id` attribute with the value `indoor` to the radio button. When elements have multiple attributes, the order of the attributes doesn't matter.
 
 </section>
 
@@ -64,7 +64,6 @@ tests:
       <h2>Cat Form</h2>
       <form action="/submit-cat-photo">
         <label><input type="radio" name="indoor-outdoor"> Indoor</label>
-        <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
         <input type="text" placeholder="cat photo URL" required>
         <button type="submit">Submit</button>
       </form>
