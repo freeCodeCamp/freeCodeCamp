@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Wrap the three checkboxes in another `div` element just like you did with the radio buttons. Don't forget to indent the code within the `div` element.
+Nest the three checkboxes in another `div` element just like you did with the radio buttons, and don't forget to indent the checkboxes.
 
 </section>
 

@@ -8,7 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Now you will add a footer section to the page. Below the closing `</main>` tag, add opening `<footer>` and closing `</footer>` tag.
+Now you will add a footer section to the page. 
+
+After the `main` element, add a `footer` element.
 
 </section>
 

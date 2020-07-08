@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-After the closing `</ol>` tag, add another `figure` element.
+After the ordered list, add another `figure` element.
 
 </section>
 

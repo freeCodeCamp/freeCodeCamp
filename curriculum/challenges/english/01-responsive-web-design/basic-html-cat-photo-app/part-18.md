@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-After the `p` element, add an opening tag for an unordered list, `<ul>`. On the next line, add a closing tag, `</ul>`.
+After the last `p` element, add the opening and closing tags for an unordered list (`ul`).
 
 The unordered list will not appear in the browser until content is added.
 

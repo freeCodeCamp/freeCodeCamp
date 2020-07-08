@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Emphasize the word `love` by adding `<em>` before the word and `</em>` after the word.
+Emphasize the word `love` by wrapping it in an emphasis (`em`) element.
 
 </section>
 

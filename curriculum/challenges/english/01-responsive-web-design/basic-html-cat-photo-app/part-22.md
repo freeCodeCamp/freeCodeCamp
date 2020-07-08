@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Figure caption (`figcaption`) elements are used to add a caption to describe whatever is in the surrounding `figure` element. For example, `<figcaption>A cute cat</figcaption>` has the text `A cute cat`.
+Figure caption (`figcaption`) elements are used to add a caption to describe whatever is in the surrounding `figure` element. For example, `<figcaption>A cute cat</figcaption>` adds the caption `A cute cat`.
 
 After the image nested in the `figure` element, add a `figcaption` element with the text `Cats love lasagna.`
 

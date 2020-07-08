@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-The `input` element is one of the most versatile HTML elements, and gives you many ways to collect data from web forms.
+The `input` element is one of the most versatile HTML elements, and gives you many ways to collect data from web forms. Like anchor (`a`) elements, `input` elements are <dfn>self-closing</dfn> and do not need closing tags.
 
-Nest an `<input>` tag in the `form` element. Note that `input` elements are <dfn>self-closing</dfn>, and do not need closing tags.
+Nest an `input` element in the `form` element.
 
 </section>
 

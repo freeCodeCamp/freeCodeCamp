@@ -12,6 +12,8 @@ isHidden: true
 
 Put an opening `<div>` tag above your `Things cats love` `p` element and a closing `</div>` tag above your `Cat Form` heading element so that both of your lists are within one `div` element.
 
+** Use section element instead? **
+
 </section>
 
 ## Tests

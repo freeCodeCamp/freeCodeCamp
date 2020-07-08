@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-After the `fcc-cats` image, add a `<figcaption>` element with the text `Cats hate other cats.`
+After the `fcc-cats` image, add a `figcaption` element with the text `Cats hate other cats.`
 
 </section>
 

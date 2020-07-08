@@ -10,7 +10,7 @@ isHidden: true
 
 Now you will add a web form. 
 
-After the `Cat Form` heading, add an opening `<form>` and closing `</form>` tags.
+After the `Cat Form` heading, add a `form` element.
 
 </section>
 

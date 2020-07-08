@@ -8,9 +8,10 @@ isHidden: true
 ## Description
 <section id='description'>
 
-The `title` element defines the document's title that is shown in a browser's title bar or a page's tab. 
+The `title` element defines the document's title that is shown in a browser's title bar or a page's tab. For example, `<title>page title</title>`.
 
-Nested within the `head` element of the page, add a `title` element with the text `CatPhotoApp`. For example, `<title>page title</title>`.
+
+Nested within the `head` element of the page, add a `title` element with the text `CatPhotoApp`.
 
 </section>
 

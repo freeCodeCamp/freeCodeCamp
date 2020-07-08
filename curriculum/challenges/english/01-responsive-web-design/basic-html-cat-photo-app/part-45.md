@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-The division (`div`) element is a general purpose container used to group content together. `div` elements are <dfn>block-level elements</dng>, meaning that they appear on a new line.
+The division (`div`) element is a general purpose container used to group content together. `div` elements are <dfn>block-level elements</dfn>, meaning that they appear on a new line.
 
-Add an opening `<div>` tag after the opening `<form>` tag and a closing `</div>` tag after the `Outdoor` radio button and label. Don't forget to indent the code within the `div` element.
+Nest the `Indoor` and `Outdoor` radio buttons within a `div` element, and don't forget to indent the buttons.
 
 </section>
 

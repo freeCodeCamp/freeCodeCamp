@@ -8,11 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Forms commonly use checkboxes for questions that may have more than one answer. The code for a checkbox is very similar to that of a radio button.
+Forms commonly use checkboxes for questions that may have more than one answer. For example, here's a checkbox with the option of `tacos`: `<input type="checkbox"> tacos`.
 
-After the `<br>` tag, add an `input` with its `type` attribute set to `checkbox`, and give it the option of `Loving`.
-
-Here's an example of a checkbox with the option of `tacos`: `<input type="checkbox"> tacos`.
+After the `div` element, add an `input` with its `type` attribute set to `checkbox`, and give it the option of `Loving`.
 
 </section>
 
