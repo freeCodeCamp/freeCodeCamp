@@ -24,11 +24,11 @@ question:
   text: |
     Given the following code:
     ```python
-    1| temp = "5 degrees"
-    2| cel = 0
-    3| fahr = float(temp)
-    4| cel = (fahr - 32.0) * 5.0 / 9.0
-    5| print(cel)
+    temp = "5 degrees"
+    cel = 0
+    fahr = float(temp)
+    cel = (fahr - 32.0) * 5.0 / 9.0
+    print(cel)
     ```
     Which line/lines should be surrounded by `try` block?
 

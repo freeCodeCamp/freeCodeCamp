@@ -22,14 +22,14 @@ question:
   text: |
     Below is code to find the smallest value from a list of values. One line has an error that will cause the code to not work as expected. Which line is it?:
     ```python
-    1| smallest = None
-    2| print("Before:", smallest)
-    3| for itervar in [3, 41, 12, 9, 74, 15]:
-    4|     if smallest is None or itervar < smallest:
-    5|         smallest = itervar
-    6|         break
-    7|     print("Loop:", itervar, smallest)
-    8| print("Smallest:", smallest)
+    smallest = None
+    print("Before:", smallest)
+    for itervar in [3, 41, 12, 9, 74, 15]:
+        if smallest is None or itervar < smallest:
+            smallest = itervar
+            break
+        print("Loop:", itervar, smallest)
+    print("Smallest:", smallest)
     ```
   answers:
     - |
