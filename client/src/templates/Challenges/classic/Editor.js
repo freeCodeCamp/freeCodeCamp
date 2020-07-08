@@ -16,7 +16,7 @@ import {
 } from '../redux';
 import { userSelector, isDonationModalOpenSelector } from '../../../redux';
 import { Loader } from '../../../components/helpers';
-import { sortFiles } from '../../../../../utils/sort-files';
+import { toSortedArray } from '../../../../../utils/sort-files';
 
 import './editor.css';
 
@@ -164,7 +164,7 @@ class Editor extends Component {
     // NOTE: the ARIA state is controlled by fileKey, so changes to it must
     // trigger a re-render.  Hence state:
     this.state = {
-      fileKey: sortFiles(challengeFiles)[0].key
+      fileKey: toSortedArray(challengeFiles)[0].key
     };
 
     this.options = {

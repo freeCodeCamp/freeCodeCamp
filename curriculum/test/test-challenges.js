@@ -42,7 +42,7 @@ const {
 } = require('../../client/utils/challengeTypes');
 
 const { dasherize } = require('../../utils/slugs');
-const { sortFiles } = require('../../utils/sort-files');
+const { toSortedArray } = require('../../utils/sort-files');
 
 const { testedLang } = require('../utils');
 
@@ -423,7 +423,7 @@ async function createTestRunner(challenge, solution, buildChallenge) {
     });
   } else if (solution) {
     // fallback for single solution
-    const sortedFiles = sortFiles(files);
+    const sortedFiles = toSortedArray(files);
 
     files[sortedFiles[0].key].contents = solution;
   } else {
