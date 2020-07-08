@@ -10,7 +10,7 @@ isHidden: true
 
 The `title` element determines what browsers show in the title bar or tab for your page.
 
-Nested within the `head` element of the page, add a `title` element with the text `CatPhotoApp`.
+Add a `title` element within the `head` element. Its text should be `CatPhotoApp`.
 
 </section>
 

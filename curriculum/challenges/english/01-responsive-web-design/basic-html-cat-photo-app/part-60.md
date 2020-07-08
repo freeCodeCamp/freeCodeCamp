@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Notice that the entire contents of the page are nested within an `html` element. All other elements must be descendants of this `html` element. 
+Notice that the entire contents of the page are nested within an `html` element. All other elements must be descendants of this `html` element.
 
-Inside the opening `html` tag, add the `lang` attribute with the value `en` to specify that the language of the page is English.
+Add the `lang` attribute with the value `en` to the opening `html` tag to specify that the language of the page is English.
 
 </section>
 

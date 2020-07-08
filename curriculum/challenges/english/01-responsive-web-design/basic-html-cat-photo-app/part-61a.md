@@ -1,6 +1,6 @@
 ---
-id: 5ef9b03c81a63668521804ee
-title: Part 61
+id: 5f05d72aa41261177cd1fa22
+title: Part 61a
 challengeType: 0
 isHidden: true
 ---
@@ -8,9 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-All pages should begin with `<!DOCTYPE html>`. This special string is known as a <dfn>declaration</dfn> and ensures the browser tries to meet industry-wide specifications.
-
-To complete this project, add this declaration as the first line of the code.
+You're finished! Feel free to play around with your cat photo app. Try adding other HTML elements and content to the page.
 
 </section>
 
