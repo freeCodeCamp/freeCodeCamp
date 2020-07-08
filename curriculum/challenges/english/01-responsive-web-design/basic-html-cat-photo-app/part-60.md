@@ -8,10 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-The `title` element defines the document's title that is shown in a browser's title bar or a page's tab. For example, `<title>page title</title>`.
+Notice that the entire contents of the page are nested within an `html` element. All other elements must be descendants of this `html` element. 
 
-
-Nested within the `head` element of the page, add a `title` element with the text `CatPhotoApp`.
+Inside the opening `html` tag, add the `lang` attribute with the value `en` to specify that the language of the page is English.
 
 </section>
 
@@ -33,8 +32,9 @@ tests:
 
 ```html
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
+    <title>CatPhotoApp</title>
   </head>
   <body>
     <h1>CatPhotoApp</h1>

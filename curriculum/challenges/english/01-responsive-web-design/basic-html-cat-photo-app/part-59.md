@@ -8,11 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-You will also notice that inside the `html` element there is a `body` element. 
+The `title` element determines what browsers show in the title bar or tab for your page.
 
-Page content elements go inside the `body` element. However, metadata elements, such as `link`, `meta`, `title`, and `style`, typically go inside the `head` element. 
-
-Above the `body` element in the page, add the opening and closing tags for a `head` element.
+Nested within the `head` element of the page, add a `title` element with the text `CatPhotoApp`.
 
 </section>
 
@@ -34,7 +32,9 @@ tests:
 
 ```html
 <!DOCTYPE html>
-<html lang="en">
+<html>
+  <head>
+  </head>
   <body>
     <h1>CatPhotoApp</h1>
     <main>

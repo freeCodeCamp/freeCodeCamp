@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-You will notice that the entire contents of the page are nested within an `html` element. All other elements must be descendants of this `html` element. 
+Notice that everything you've added to the page so far is inside the `body` element. All page content elements that should be rendered to the page go inside the `body` element. However, other important information goes inside the `head` element.
 
-Inside the opening `html` tag, add `lang="en"` to specify that the language of the page is English.
+Add a `head` element just above the `body` element.
 
 </section>
 
