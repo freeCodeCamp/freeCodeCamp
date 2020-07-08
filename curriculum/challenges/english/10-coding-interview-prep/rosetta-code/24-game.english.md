@@ -40,13 +40,13 @@ tests:
   - text: <code>solve24</code> should be a function.
     testString: assert(typeof solve24 === 'function');
   - text: <code>solve24("4878")</code> should return <code>(7-8/8)*4</code> or <code>4*(7-8/8)</code>
-    testString: assert(include(answers[0], solve24(testCases[0])));
+    testString: assert(include(answers[0], removeParentheses(solve24(testCases[0]))));
   - text: <code>solve24("1234")</code> should return any arrangement of <code>1*2*3*4</code>
-    testString: assert(include(answers[1], solve24(testCases[1])));
+    testString: assert(include(answers[1], removeParentheses(solve24(testCases[1]))));
   - text: <code>solve24("6789")</code> should return <code>(6*8)/(9-7)</code> or <code>(8*6)/(9-7)</code>
-    testString: assert(include(answers[2], solve24(testCases[2])));
+    testString: assert(include(answers[2], removeParentheses(solve24(testCases[2]))));
   - text: <code>solve24("1127")</code> should return a permutation of <code>(1+7)*(1+2)</code>
-    testString: assert(include(answers[3], solve24(testCases[3])));
+    testString: assert(include(answers[3], removeParentheses(solve24(testCases[3]))));
 
 ```
 
@@ -88,6 +88,39 @@ const answers = [
 function include(ansArr, res) {
   const index = ansArr.indexOf(res);
   return index >= 0;
+}
+
+//The main method for detecting single parentheses
+function removeParentheses(ans) {
+  for (let i = 0; i < ans.length; i++) {
+    if (!isNaN(ans[i])) {
+      ans = removeParenthesesHelper(ans, i);
+    }
+  }
+  return ans;
+}
+
+//Helper to remove left and right parantheses
+function removeParenthesesHelper(ans, i) {
+  while (i > 0 && i < ans.length - 1) {
+    if (ans[i - 1] === '(' && ans[i + 1] === ')') {
+      //Paranthesis detected. Remove them.
+      ans = replaceChar(ans, '', i - 1);
+      ans = replaceChar(ans, '', i);
+      i--;
+    } else {
+      return ans;
+    }
+  }
+  return ans;
+}
+
+//Replace a character at a given index for the provided character
+function replaceChar(origString, replaceChar, index) {
+  let firstPart = origString.substr(0, index);
+  let lastPart = origString.substr(index + 1);
+  let newString = firstPart + replaceChar + lastPart;
+  return newString;
 }
 ```
 
