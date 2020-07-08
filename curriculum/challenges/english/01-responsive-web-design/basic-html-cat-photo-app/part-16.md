@@ -24,7 +24,7 @@ tests:
   - text: Your second `h2` element should be right above the `main` element's closing tag. It is not in the correct position.
     testString: assert( document.querySelector('main').lastElementChild.nodeName === 'H2' );
   - text: The second `h2` element should have the text `Cat Lists`. You have either omitted the text or have a typo.
-    testString: assert( document.querySelector('main').lastElementChild.innerText.replace(/\s/g,'').toLowerCase() ===  'catlists');
+    testString: assert( document.querySelector('main').lastElementChild.innerText.toLowerCase() ===  'cat lists');
 
 ```
 

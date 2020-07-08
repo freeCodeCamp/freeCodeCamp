@@ -20,11 +20,13 @@ tests:
   - text: You should have an `img` element with an `src` value of `https://bit.ly/fcc-relaxing-cat`. You may have accidentally deleted it.
     testString: assert( document.querySelector('img') && document.querySelector('img').getAttribute('src') === 'https://bit.ly/fcc-relaxing-cat' );
   - text: "Your anchor (`a`) element should have an opening tag. Opening tags have this syntax: `<elementName>`."
-    testString: assert( document.querySelector('a') );
+    testString: assert( document.querySelectorAll('a').length === 2 );
   - text: Your anchor (`a`) element should have a closing tag. Closing tags have a `/` just after the `<` character.
-    testString: assert( code.match(/<\/a>/) );
-  - text: Your anchor (`a`) element should have an `href` value of `https://www.freecodecamp.org/cat-photos`.
-    testString: assert( document.querySelector('a').getAttribute('href') === 'https://www.freecodecamp.org/cat-photos' );
+    testString: assert( code.match(/<\/a>/g).length === 2 );
+  - text: Your anchor (`a`) element either does not have an `href` attribute or it is not set to a non-blank value. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
+    testString: assert( document.querySelector('a').getAttribute('href') );
+  - text: Your anchor (`a`) element should link to `https://www.freecodecamp.org/cat-photos`. You have either omitted the URL or have a typo.
+    testString: assert( document.querySelectorAll('a')[1].getAttribute('href') === 'https://www.freecodecamp.org/cat-photos' );
   - text: Your `img` element should be nested within the anchor (`a`) element. The entire `img` element should be inside the opening and closing tags of the anchor (`a`) element. 
     testString: assert( document.querySelector('img').parentNode.nodeName === "A" );
 
