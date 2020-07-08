@@ -24,7 +24,7 @@ tests:
   - text: The link's text should be `cat photos`. You have either omitted the text or have a typo.
     testString: const nestedAnchor = $('p > a')[0];
       assert( 
-        nestedAnchor.getAttribute('href') === 'https://catphotos.com' &&
+        nestedAnchor.getAttribute('href') === 'https://www.freecodecamp.org/cat-photos' &&
         nestedAnchor.innerText.toLowerCase().replace(/\s+/g, ' ') === 'cat photos'
       );
   - text: After nesting the anchor (`a`) element, the only `p` element content visible in the browser should be `Click here to view more cat photos.` Double check the text, spacing, or punctuation of both the `p` and nested anchor element.
@@ -51,7 +51,7 @@ tests:
       <!-- TODO: Add link to cat photos -->
       --fcc-editable-region--
       <p>Click here to view more cat photos.</p>
-      <a href="https://catphotos.com">cat photos</a>
+      <a href="https://www.freecodecamp.org/cat-photos">cat photos</a>
       --fcc-editable-region--
       <img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
     </main>

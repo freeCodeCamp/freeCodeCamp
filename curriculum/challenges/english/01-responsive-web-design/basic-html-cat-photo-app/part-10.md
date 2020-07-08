@@ -10,7 +10,7 @@ isHidden: true
 
 You can add a link to the app by using an anchor (`a`) element. For example, `<a href="https://www.freecodecamp.org"></a>` is an anchor (`a`) element that links to `freecodecamp.org`. 
 
-After the `p` element, add an anchor (`a`) element with an `href` attribute that links to the `catphotos.com` website at `https://catphotos.com`. At this point, no link will show up in the browser.
+After the `p` element, add an anchor (`a`) element with an `href` attribute that links to a page on the Free Code Camp website located at `https://www.freecodecamp.org/cat-photos`. At this point, no link will show up in the browser.
 
 </section>
 
@@ -27,8 +27,8 @@ tests:
     testString: const collection = [...document.querySelectorAll('a, p')].map(node => node.nodeName); assert( collection.indexOf('P') < collection.indexOf('A') );
   - text: Your anchor (`a`) element either does not have an `href` attribute or it is not set to a non-blank value. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
     testString: assert( document.querySelector('a').getAttribute('href') );
-  - text: "Your anchor (`a`) element should link to `https://catphotos.com`. You have either omitted the URL or have a typo."
-    testString: assert( document.querySelector('a').getAttribute('href') === 'https://catphotos.com' );
+  - text: "Your anchor (`a`) element should link to `https://www.freecodecamp.org/cat-photos`. You have either omitted the URL or have a typo."
+    testString: assert( document.querySelector('a').getAttribute('href') === 'https://www.freecodecamp.org/cat-photos' );
 
 ```
 

@@ -8,9 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Time for a new section of the page. 
-
-Before the `</main>` closing tag, add a new `h2` element with the text `Cat Lists.
+Time for a new section of the page. Within the `main` element, add a new `h2` element with the text `Cat Lists`.  It should appear after the linked image.
 
 </section>
 
@@ -45,9 +43,9 @@ tests:
     <main>
       <h2>Cat Photos</h2>
       <!-- TODO: Add link to cat photos -->
-      <p>Click here to view more <a target="_blank" href="#">cat photos</a>.</p>
-      <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+      <p>Click here to view more <a target="_blank" href="https://www.freecodecamp.org/cat-photos">cat photos</a>.</p>
       --fcc-editable-region--
+      <a href="https://www.freecodecamp.org/cat-photos"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
     </main>
     --fcc-editable-region--
   </body>

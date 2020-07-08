@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Make the image into a link by adding `<a href="#">` before the `img` element and `</a>` after the `img` element.
+Make the image link to `https://www.freecodecamp.org/cat-photos` by surrounding it with opening and closing anchor (`a`) tags and using `https://www.freecodecamp.org/cat-photos` as the anchor's `href` attribute value.
 
 </section>
 
@@ -23,8 +23,8 @@ tests:
     testString: assert( document.querySelector('a') );
   - text: Your anchor (`a`) element should have a closing tag. Closing tags have a `/` just after the `<` character.
     testString: assert( code.match(/<\/a>/) );
-  - text: Your anchor (`a`) element should have an `href` value of `#`.
-    testString: assert( document.querySelector('a').getAttribute('href') === '#' );
+  - text: Your anchor (`a`) element should have an `href` value of `https://www.freecodecamp.org/cat-photos`.
+    testString: assert( document.querySelector('a').getAttribute('href') === 'https://www.freecodecamp.org/cat-photos' );
   - text: Your `img` element should be nested within the anchor (`a`) element. The entire `img` element should be inside the opening and closing tags of the anchor (`a`) element. 
     testString: assert( document.querySelector('img').parentNode.nodeName === "A" );
 
@@ -45,7 +45,7 @@ tests:
     <main>
       <h2>Cat Photos</h2>
       <!-- TODO: Add link to cat photos -->
-      <p>Click here to view more <a target="_blank" href="#">cat photos</a>.</p>
+      <p>Click here to view more <a target="_blank" href="https://www.freecodecamp.org/cat-photos">cat photos</a>.</p>
       --fcc-editable-region--
       <img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
       --fcc-editable-region--
