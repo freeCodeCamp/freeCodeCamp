@@ -63,7 +63,10 @@
           "python",
           "svg",
           "xml"
-        ], "theme": "default", "css": true
+        ],
+        "theme": "default",
+        "css": true,
+        "plugins": ["line-numbers"]
       }
     ]
   ]

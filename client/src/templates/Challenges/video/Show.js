@@ -221,7 +221,7 @@ export class Project extends Component {
                   </i>
                 </div>
                 <ChallengeDescription description={description} />
-                <PrismFormatted text={text} />
+                <PrismFormatted className={'line-numbers'} text={text} />
                 <Spacer />
                 <ObserveKeys>
                   <div className='video-quiz-options'>
