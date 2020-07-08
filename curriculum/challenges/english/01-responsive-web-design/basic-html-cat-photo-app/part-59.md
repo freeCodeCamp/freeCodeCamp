@@ -31,7 +31,6 @@ tests:
 <div id='html-seed'>
 
 ```html
-<!DOCTYPE html>
 <html>
   <head>
   </head>

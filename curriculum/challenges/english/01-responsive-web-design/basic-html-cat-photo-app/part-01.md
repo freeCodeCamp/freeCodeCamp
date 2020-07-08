@@ -38,7 +38,6 @@ tests:
 <div id='html-seed'>
 
 ```html
-<!DOCTYPE html>
 <html>
   <body>
     --fcc-editable-region--

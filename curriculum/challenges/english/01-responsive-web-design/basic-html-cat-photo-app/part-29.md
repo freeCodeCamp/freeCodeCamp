@@ -45,7 +45,6 @@ tests:
 <div id='html-seed'>
 
 ```html
-<!DOCTYPE html>
 <html>
   <body>
     <h1>CatPhotoApp</h1>
