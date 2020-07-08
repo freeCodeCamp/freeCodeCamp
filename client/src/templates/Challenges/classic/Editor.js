@@ -313,7 +313,7 @@ class Editor extends Component {
     if (editableBoundaries.length === 2) {
       this.showEditableRegion(editableBoundaries);
 
-      // TODO: is there a nicer approach/way of organising everything that 
+      // TODO: is there a nicer approach/way of organising everything that
       // avoids the binds? babel-plugin-transform-class-properties ?
       const getViewZoneTop = this.getViewZoneTop.bind(this);
       const createDescription = this.createDescription.bind(this);
@@ -571,7 +571,9 @@ class Editor extends Component {
   // TODO: if you press backspace at the start of decoration, it moves to
   // partially cover the previous line and then can't be moved back (even via
   // ctrl + z).  Is there an option to prevent this?
-  highlightLines(stickiness, target, highlightedRanges) {
+  highlightLines(stickiness, target, highlightedRanges, oldIds = []) {
+    console.log('highlighting lines', highlightedRanges, oldIds);
+
     highlightedRanges = highlightedRanges || [];
     // NOTE: full line decorations can't be allowed to grow, because they do not
     // shrink properly after they have grown.
@@ -586,7 +588,11 @@ class Editor extends Component {
         stickiness
       }
     }));
+    return target.deltaDecorations(oldIds, lineDecoration);
+  }
 
+  highlightText(stickiness, target, highlightedRanges, oldIds = []) {
+    highlightedRanges = highlightedRanges || [];
     // Unfortunately full line decorations can't grow at the edges, and so
     // inline decorations must match them.
     const inlineDecoration = highlightedRanges.map(range => ({
@@ -597,7 +603,7 @@ class Editor extends Component {
       }
     }));
 
-    return target.deltaDecorations([], lineDecoration.concat(inlineDecoration));
+    return target.deltaDecorations(oldIds, inlineDecoration);
   }
 
   // NOTE: this is where the view zone *should* be, not necessarily were it
@@ -656,10 +662,14 @@ class Editor extends Component {
       return this.positionsToRange(model, positions);
     });
 
-    // it might be best to seperate highlightLines into inline and full line
-    // so that we only track the appropriate decorations (rather than having
-    // warnings trigger for both.)
     const decIds = this.highlightLines(
+      this._monaco.editor.TrackedRangeStickiness.NeverGrowsWhenTypingAtEdges,
+      model,
+      ranges
+    );
+
+    // we can fire and forget these decorations, no need to keep their ids (yet)
+    this.highlightText(
       this._monaco.editor.TrackedRangeStickiness.NeverGrowsWhenTypingAtEdges,
       model,
       ranges
@@ -668,6 +678,24 @@ class Editor extends Component {
     // TODO: avoid getting from array
     this.data[key].decId = decIds[0];
     this.data[key].endEditDecId = decIds[1];
+
+    // The deleted line is always considered to be the one that has moved up.
+    // - if the user deletes at the end of line 5, line 6 is deleted and
+    // - if the user backspaces at the start of line 6, line 6 is deleted
+    // TODO: handle multiple simultaneous changes (multicursors do this)
+    function getDeletedLine(event) {
+      const isDeleted =
+        event.changes[0].text === '' && event.changes[0].range.endColumn === 1;
+      return isDeleted ? event.changes[0].range.endLineNumber : 0;
+    }
+
+    function getNextLine(range) {
+      return {
+        ...range,
+        startLineNumber: range.startLineNumber + 1,
+        endLineNumber: range.endLineNumber + 1
+      };
+    }
 
     // TODO refactor this mess
     // TODO this listener needs to be replaced on reset.
@@ -678,25 +706,76 @@ class Editor extends Component {
       // edits. However, what if they made a warned edit, then a normal
       // edit, then a warned one.  Could it track that they need to make 3
       // undos?
+      // console.log('content', e);
+      const deletedLine = getDeletedLine(e);
+      // console.log(deletedLine);
+
+      const deletedRange = {
+        startLineNumber: deletedLine,
+        endLineNumber: deletedLine,
+        startColumn: 1,
+        endColumn: 1
+      };
+
       if (e.isUndoing) {
         return;
       }
-      for (const id of decIds) {
+
+      const warnUser = id => {
+        const coveringRange = toStartOfLine(model.getDecorationRange(id));
         e.changes.forEach(({ range }) => {
           if (
-            this._monaco.Range.areIntersectingOrTouching(
-              // Even though the decoration covers the whole line, it has a
-              // startColumn that moves.  toStartOfLine ensures that the
-              // comparison detects if any change has occured on that line
-              toStartOfLine(model.getDecorationRange(id)),
-              range
-            )
+            this._monaco.Range.areIntersectingOrTouching(coveringRange, range)
           ) {
             // TODO, this triggers twice
             console.log('OVERLAP!');
           }
         });
-      }
+      };
+
+      const handleDecorationChange = id => {
+        // Even though the decoration covers the whole line, it has a
+        // startColumn that moves.  toStartOfLine ensures that the
+        // comparison detects if any change has occured on that line
+        // NOTE: any change in the decoration has already happened by this point
+        // so this covers the *new* decoration range.
+        const coveringRange = toStartOfLine(model.getDecorationRange(id));
+        const oldStartOfRange = getNextLine(coveringRange.collapseToStart());
+        const newCoveringRange = coveringRange.setStartPosition(
+          oldStartOfRange.startLineNumber,
+          1
+        );
+
+        // TODO: this triggers both when you delete the first line of the
+        // decoration AND the second. Is there a way to tell these cases apart?
+        const touchingDeleted = this._monaco.Range.areIntersectingOrTouching(
+          deletedRange,
+          oldStartOfRange
+        );
+
+        if (touchingDeleted) {
+          console.log('deleted start of decoration!', id);
+          // TODO: if they undo this should be reversed
+          const decorations = this.highlightLines(
+            this._monaco.editor.TrackedRangeStickiness
+              .NeverGrowsWhenTypingAtEdges,
+            model,
+            [newCoveringRange],
+            [id]
+          );
+          // when there's a change, decorations will be [oldId, newId]
+          return decorations.slice(-1)[0];
+        } else {
+          return id;
+        }
+      };
+      // this.data[key].decId = handleDecorationChange(this.data[key].decId);
+      this.data[key].endEditDecId = handleDecorationChange(
+        this.data[key].endEditDecId
+      );
+
+      warnUser(this.data[key].decId);
+      warnUser(this.data[key].endEditDecId);
     });
   }
 
