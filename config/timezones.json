@@ -1,1388 +1,1329 @@
 [
-    {
-      "name": "Dateline Standard Time",
-      "id": 1, "abbreviation": "DST",
-      "offset": -12,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC-12:00) International Date Line West",
-      "areas": [
-        "Etc/GMT+12"
-      ]
-    },
-    {
-      "name": "UTC-11",
-      "id": 2, "abbreviation": "U",
-      "offset": -11,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC-11:00) Coordinated Universal Time-11",
-      "areas": [
-        "Etc/GMT+11",
-        "Pacific/Midway",
-        "Pacific/Niue",
-        "Pacific/Pago_Pago"
-      ]
-    },
-    {
-      "name": "Hawaiian Standard Time",
-      "id": 3, "abbreviation": "HST",
-      "offset": -10,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC-10:00) Hawaii",
-      "areas": [
-        "Etc/GMT+10",
-        "Pacific/Honolulu",
-        "Pacific/Johnston",
-        "Pacific/Rarotonga",
-        "Pacific/Tahiti"
-      ]
-    },
-    {
-      "name": "Alaskan Standard Time",
-      "id": 4, "abbreviation": "AKDT",
-      "offset": -8,
-      "isDaylightSavingsTime": true,
-      "text": "(UTC-09:00) Alaska",
-      "areas": [
-        "America/Anchorage",
-        "America/Juneau",
-        "America/Nome",
-        "America/Sitka",
-        "America/Yakutat"
-      ]
-    },
-    {
-      "name": "Pacific Standard Time (Mexico)",
-      "id": 5, "abbreviation": "PDT",
-      "offset": -7,
-      "isDaylightSavingsTime": true,
-      "text": "(UTC-08:00) Baja California",
-      "areas": [
-        "America/Santa_Isabel"
-      ]
-    },
-    {
-      "name": "Pacific Daylight Time",
-      "id": 6, "abbreviation": "PDT",
-      "offset": -7,
-      "isDaylightSavingsTime": true,
-      "text": "(UTC-07:00) Pacific Time (US & Canada)",
-      "areas": [
-        "America/Dawson",
-        "America/Los_Angeles",
-        "America/Tijuana",
-        "America/Vancouver",
-        "America/Whitehorse"
-      ]
-    },
-    {
-      "name": "Pacific Standard Time",
-      "id": 7, "abbreviation": "PST",
-      "offset": -8,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC-08:00) Pacific Time (US & Canada)",
-      "areas": [
-        "America/Dawson",
-        "America/Los_Angeles",
-        "America/Tijuana",
-        "America/Vancouver",
-        "America/Whitehorse"
-      ]
-    },
-    {
-      "name": "US Mountain Standard Time",
-      "id": 8, "abbreviation": "UMST",
-      "offset": -7,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC-07:00) Arizona",
-      "areas": [
-        "America/Creston",
-        "America/Dawson_Creek",
-        "America/Hermosillo",
-        "America/Phoenix"
-      ]
-    },
-    {
-      "name": "Mountain Standard Time (Mexico)",
-      "id": 9, "abbreviation": "MDT",
-      "offset": -6,
-      "isDaylightSavingsTime": true,
-      "text": "(UTC-07:00) Chihuahua, La Paz, Mazatlan",
-      "areas": [
-        "America/Chihuahua",
-        "America/Mazatlan"
-      ]
-    },
-    {
-      "name": "Mountain Standard Time",
-      "id": 10, "abbreviation": "MDT",
-      "offset": -6,
-      "isDaylightSavingsTime": true,
-      "text": "(UTC-07:00) Mountain Time (US & Canada)",
-      "areas": [
-        "America/Boise",
-        "America/Cambridge_Bay",
-        "America/Denver",
-        "America/Edmonton",
-        "America/Inuvik",
-        "America/Ojinaga",
-        "America/Yellowknife"
-      ]
-    },
-    {
-      "name": "Central America Standard Time",
-      "id": 11, "abbreviation": "CAST",
-      "offset": -6,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC-06:00) Central America",
-      "areas": [
-        "America/Belize",
-        "America/Costa_Rica",
-        "America/El_Salvador",
-        "America/Guatemala",
-        "America/Managua",
-        "America/Tegucigalpa",
-        "Pacific/Galapagos"
-      ]
-    },
-    {
-      "name": "Central Standard Time",
-      "id": 12, "abbreviation": "CDT",
-      "offset": -5,
-      "isDaylightSavingsTime": true,
-      "text": "(UTC-06:00) Central Time (US & Canada)",
-      "areas": [
-        "America/Chicago",
-        "America/Indiana/Knox",
-        "America/Indiana/Tell_City",
-        "America/Matamoros",
-        "America/Menominee",
-        "America/North_Dakota/Beulah",
-        "America/North_Dakota/Center",
-        "America/North_Dakota/New_Salem",
-        "America/Rainy_River",
-        "America/Rankin_Inlet",
-        "America/Resolute",
-        "America/Winnipeg"
-      ]
-    },
-    {
-      "name": "Central Standard Time (Mexico)",
-      "id": 13, "abbreviation": "CDT",
-      "offset": -5,
-      "isDaylightSavingsTime": true,
-      "text": "(UTC-06:00) Guadalajara, Mexico City, Monterrey",
-      "areas": [
-        "America/Bahia_Banderas",
-        "America/Cancun",
-        "America/Merida",
-        "America/Mexico_City",
-        "America/Monterrey"
-      ]
-    },
-    {
-      "name": "Canada Central Standard Time",
-      "id": 14, "abbreviation": "CCST",
-      "offset": -6,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC-06:00) Saskatchewan",
-      "areas": [
-        "America/Regina",
-        "America/Swift_Current"
-      ]
-    },
-    {
-      "name": "SA Pacific Standard Time",
-      "id": 15, "abbreviation": "SPST",
-      "offset": -5,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC-05:00) Bogota, Lima, Quito",
-      "areas": [
-        "America/Bogota",
-        "America/Cayman",
-        "America/Coral_Harbour",
-        "America/Eirunepe",
-        "America/Guayaquil",
-        "America/Jamaica",
-        "America/Lima",
-        "America/Panama",
-        "America/Rio_Branco"
-      ]
-    },
-    {
-      "name": "Eastern Standard Time",
-      "id": 16, "abbreviation": "EDT",
-      "offset": -4,
-      "isDaylightSavingsTime": true,
-      "text": "(UTC-05:00) Eastern Time (US & Canada)",
-      "areas": [
-        "America/Detroit",
-        "America/Havana",
-        "America/Indiana/Petersburg",
-        "America/Indiana/Vincennes",
-        "America/Indiana/Winamac",
-        "America/Iqaluit",
-        "America/Kentucky/Monticello",
-        "America/Louisville",
-        "America/Montreal",
-        "America/Nassau",
-        "America/New_York",
-        "America/Nipigon",
-        "America/Pangnirtung",
-        "America/Port-au-Prince",
-        "America/Thunder_Bay",
-        "America/Toronto"
-      ]
-    },
-    {
-      "name": "US Eastern Standard Time",
-      "id": 17, "abbreviation": "UEDT",
-      "offset": -4,
-      "isDaylightSavingsTime": true,
-      "text": "(UTC-05:00) Indiana (East)",
-      "areas": [
-        "America/Indiana/Marengo",
-        "America/Indiana/Vevay",
-        "America/Indianapolis"
-      ]
-    },
-    {
-      "name": "Venezuela Standard Time",
-      "id": 18, "abbreviation": "VST",
-      "offset": -4.5,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC-04:30) Caracas",
-      "areas": [
-        "America/Caracas"
-      ]
-    },
-    {
-      "name": "Paraguay Standard Time",
-      "id": 19, "abbreviation": "PYT",
-      "offset": -4,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC-04:00) Asuncion",
-      "areas": [
-        "America/Asuncion"
-      ]
-    },
-    {
-      "name": "Atlantic Standard Time",
-      "id": 20, "abbreviation": "ADT",
-      "offset": -3,
-      "isDaylightSavingsTime": true,
-      "text": "(UTC-04:00) Atlantic Time (Canada)",
-      "areas": [
-        "America/Glace_Bay",
-        "America/Goose_Bay",
-        "America/Halifax",
-        "America/Moncton",
-        "America/Thule",
-        "Atlantic/Bermuda"
-      ]
-    },
-    {
-      "name": "Central Brazilian Standard Time",
-      "id": 21, "abbreviation": "CBST",
-      "offset": -4,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC-04:00) Cuiaba",
-      "areas": [
-        "America/Campo_Grande",
-        "America/Cuiaba"
-      ]
-    },
-    {
-      "name": "SA Western Standard Time",
-      "id": 22, "abbreviation": "SWST",
-      "offset": -4,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC-04:00) Georgetown, La Paz, Manaus, San Juan",
-      "areas": [
-        "America/Anguilla",
-        "America/Antigua",
-        "America/Aruba",
-        "America/Barbados",
-        "America/Blanc-Sablon",
-        "America/Boa_Vista",
-        "America/Curacao",
-        "America/Dominica",
-        "America/Grand_Turk",
-        "America/Grenada",
-        "America/Guadeloupe",
-        "America/Guyana",
-        "America/Kralendijk",
-        "America/La_Paz",
-        "America/Lower_Princes",
-        "America/Manaus",
-        "America/Marigot",
-        "America/Martinique",
-        "America/Montserrat",
-        "America/Port_of_Spain",
-        "America/Porto_Velho",
-        "America/Puerto_Rico",
-        "America/Santo_Domingo",
-        "America/St_Barthelemy",
-        "America/St_Kitts",
-        "America/St_Lucia",
-        "America/St_Thomas",
-        "America/St_Vincent",
-        "America/Tortola"
-      ]
-    },
-    {
-      "name": "Pacific SA Standard Time",
-      "id": 23, "abbreviation": "PSST",
-      "offset": -4,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC-04:00) Santiago",
-      "areas": [
-        "America/Santiago",
-        "Antarctica/Palmer"
-      ]
-    },
-    {
-      "name": "Newfoundland Standard Time",
-      "id": 24, "abbreviation": "NDT",
-      "offset": -2.5,
-      "isDaylightSavingsTime": true,
-      "text": "(UTC-03:30) Newfoundland",
-      "areas": [
-        "America/St_Johns"
-      ]
-    },
-    {
-      "name": "E. South America Standard Time",
-      "id": 25, "abbreviation": "ESAST",
-      "offset": -3,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC-03:00) Brasilia",
-      "areas": [
-        "America/Sao_Paulo"
-      ]
-    },
-    {
-      "name": "Argentina Standard Time",
-      "id": 26, "abbreviation": "AST",
-      "offset": -3,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC-03:00) Buenos Aires",
-      "areas": [
-        "America/Argentina/La_Rioja",
-        "America/Argentina/Rio_Gallegos",
-        "America/Argentina/Salta",
-        "America/Argentina/San_Juan",
-        "America/Argentina/San_Luis",
-        "America/Argentina/Tucuman",
-        "America/Argentina/Ushuaia",
-        "America/Buenos_Aires",
-        "America/Catamarca",
-        "America/Cordoba",
-        "America/Jujuy",
-        "America/Mendoza"
-      ]
-    },
-    {
-      "name": "SA Eastern Standard Time",
-      "id": 27, "abbreviation": "SEST",
-      "offset": -3,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC-03:00) Cayenne, Fortaleza",
-      "areas": [
-        "America/Araguaina",
-        "America/Belem",
-        "America/Cayenne",
-        "America/Fortaleza",
-        "America/Maceio",
-        "America/Paramaribo",
-        "America/Recife",
-        "America/Santarem",
-        "Antarctica/Rothera",
-        "Atlantic/Stanley"
-      ]
-    },
-    {
-      "name": "Greenland Standard Time",
-      "id": 28, "abbreviation": "GDT",
-      "offset": -3,
-      "isDaylightSavingsTime": true,
-      "text": "(UTC-03:00) Greenland",
-      "areas": [
-        "America/Godthab"
-      ]
-    },
-    {
-      "name": "Montevideo Standard Time",
-      "id": 29, "abbreviation": "MST",
-      "offset": -3,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC-03:00) Montevideo",
-      "areas": [
-        "America/Montevideo"
-      ]
-    },
-    {
-      "name": "Bahia Standard Time",
-      "id": 30, "abbreviation": "BST",
-      "offset": -3,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC-03:00) Salvador",
-      "areas": [
-        "America/Bahia"
-      ]
-    },
-    {
-      "name": "UTC-02",
-      "id": 31, "abbreviation": "U",
-      "offset": -2,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC-02:00) Coordinated Universal Time-02",
-      "areas": [
-        "America/Noronha",
-        "Atlantic/South_Georgia"
-      ]
-    },
-    {
-      "name": "Mid-Atlantic Standard Time",
-      "id": 32, "abbreviation": "MDT",
-      "offset": -1,
-      "isDaylightSavingsTime": true,
-      "text": "(UTC-02:00) Mid-Atlantic - Old",
-      "areas": []
-    },
-    {
-      "name": "Azores Standard Time",
-      "id": 33, "abbreviation": "ADT",
-      "offset": 0,
-      "isDaylightSavingsTime": true,
-      "text": "(UTC-01:00) Azores",
-      "areas": [
-        "America/Scoresbysund",
-        "Atlantic/Azores"
-      ]
-    },
-    {
-      "name": "Cape Verde Standard Time",
-      "id": 34, "abbreviation": "CVST",
-      "offset": -1,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC-01:00) Cape Verde Is.",
-      "areas": [
-        "Atlantic/Cape_Verde",
-        "Etc/GMT+1"
-      ]
-    },
-    {
-      "name": "Morocco Standard Time",
-      "id": 35, "abbreviation": "MDT",
-      "offset": 1,
-      "isDaylightSavingsTime": true,
-      "text": "(UTC) Casablanca",
-      "areas": [
-        "Africa/Casablanca",
-        "Africa/El_Aaiun"
-      ]
-    },
-    {
-      "name": "UTC",
-      "id": 36, "abbreviation": "UTC",
-      "offset": 0,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC) Coordinated Universal Time",
-      "areas": [
-        "America/Danmarkshavn"
-      ]
-    },
-    {
-      "name": "GMT Standard Time",
-      "id": 37, "abbreviation": "GMT",
-      "offset": 0,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC) Edinburgh, London",
-      "areas": [
-        "Europe/Isle_of_Man",
-        "Europe/Guernsey",
-        "Europe/Jersey",
-        "Europe/London"
-      ]
-    },
-    {
-      "name": "British Summer Time",
-      "id": 38, "abbreviation": "BST",
-      "offset": 1,
-      "isDaylightSavingsTime": true,
-      "text": "(UTC+01:00) Edinburgh, London",
-      "areas": [
-        "Europe/Isle_of_Man",
-        "Europe/Guernsey",
-        "Europe/Jersey",
-        "Europe/London"
-      ]
-    },
-    {
-      "name": "GMT Standard Time",
-      "id": 39, "abbreviation": "GDT",
-      "offset": 1,
-      "isDaylightSavingsTime": true,
-      "text": "(UTC) Dublin, Lisbon",
-      "areas": [
-        "Atlantic/Canary",
-        "Atlantic/Faeroe",
-        "Atlantic/Madeira",
-        "Europe/Dublin",
-        "Europe/Lisbon"
-      ]
-    },
-    {
-      "name": "Greenwich Standard Time",
-      "id": 40, "abbreviation": "GST",
-      "offset": 0,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC) Monrovia, Reykjavik",
-      "areas": [
-        "Africa/Abidjan",
-        "Africa/Accra",
-        "Africa/Bamako",
-        "Africa/Banjul",
-        "Africa/Bissau",
-        "Africa/Conakry",
-        "Africa/Dakar",
-        "Africa/Freetown",
-        "Africa/Lome",
-        "Africa/Monrovia",
-        "Africa/Nouakchott",
-        "Africa/Ouagadougou",
-        "Africa/Sao_Tome",
-        "Atlantic/Reykjavik",
-        "Atlantic/St_Helena"
-      ]
-    },
-    {
-      "name": "W. Europe Standard Time",
-      "id": 41, "abbreviation": "WEDT",
-      "offset": 2,
-      "isDaylightSavingsTime": true,
-      "text": "(UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna",
-      "areas": [
-        "Arctic/Longyearbyen",
-        "Europe/Amsterdam",
-        "Europe/Andorra",
-        "Europe/Berlin",
-        "Europe/Busingen",
-        "Europe/Gibraltar",
-        "Europe/Luxembourg",
-        "Europe/Malta",
-        "Europe/Monaco",
-        "Europe/Oslo",
-        "Europe/Rome",
-        "Europe/San_Marino",
-        "Europe/Stockholm",
-        "Europe/Vaduz",
-        "Europe/Vatican",
-        "Europe/Vienna",
-        "Europe/Zurich"
-      ]
-    },
-    {
-      "name": "Central Europe Standard Time",
-      "id": 42, "abbreviation": "CEDT",
-      "offset": 2,
-      "isDaylightSavingsTime": true,
-      "text": "(UTC+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague",
-      "areas": [
-        "Europe/Belgrade",
-        "Europe/Bratislava",
-        "Europe/Budapest",
-        "Europe/Ljubljana",
-        "Europe/Podgorica",
-        "Europe/Prague",
-        "Europe/Tirane"
-      ]
-    },
-    {
-      "name": "Romance Standard Time",
-      "id": 43, "abbreviation": "RDT",
-      "offset": 2,
-      "isDaylightSavingsTime": true,
-      "text": "(UTC+01:00) Brussels, Copenhagen, Madrid, Paris",
-      "areas": [
-        "Africa/Ceuta",
-        "Europe/Brussels",
-        "Europe/Copenhagen",
-        "Europe/Madrid",
-        "Europe/Paris"
-      ]
-    },
-    {
-      "name": "Central European Standard Time",
-      "id": 44, "abbreviation": "CEDT",
-      "offset": 2,
-      "isDaylightSavingsTime": true,
-      "text": "(UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb",
-      "areas": [
-        "Europe/Sarajevo",
-        "Europe/Skopje",
-        "Europe/Warsaw",
-        "Europe/Zagreb"
-      ]
-    },
-    {
-      "name": "W. Central Africa Standard Time",
-      "id": 45, "abbreviation": "WCAST",
-      "offset": 1,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+01:00) West Central Africa",
-      "areas": [
-        "Africa/Algiers",
-        "Africa/Bangui",
-        "Africa/Brazzaville",
-        "Africa/Douala",
-        "Africa/Kinshasa",
-        "Africa/Lagos",
-        "Africa/Libreville",
-        "Africa/Luanda",
-        "Africa/Malabo",
-        "Africa/Ndjamena",
-        "Africa/Niamey",
-        "Africa/Porto-Novo",
-        "Africa/Tunis"
-      ]
-    },
-    {
-      "name": "Namibia Standard Time",
-      "id": 46, "abbreviation": "NST",
-      "offset": 1,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+01:00) Windhoek",
-      "areas": [
-        "Africa/Windhoek"
-      ]
-    },
-    {
-      "name": "GTB Standard Time",
-      "id": 47, "abbreviation": "GDT",
-      "offset": 3,
-      "isDaylightSavingsTime": true,
-      "text": "(UTC+02:00) Athens, Bucharest",
-      "areas": [
-        "Asia/Nicosia",
-        "Europe/Athens",
-        "Europe/Bucharest",
-        "Europe/Chisinau"
-      ]
-    },
-    {
-      "name": "Middle East Standard Time",
-      "id": 48, "abbreviation": "MEDT",
-      "offset": 3,
-      "isDaylightSavingsTime": true,
-      "text": "(UTC+02:00) Beirut",
-      "areas": [
-        "Asia/Beirut"
-      ]
-    },
-    {
-      "name": "Egypt Standard Time",
-      "id": 49, "abbreviation": "EST",
-      "offset": 2,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+02:00) Cairo",
-      "areas": [
-        "Africa/Cairo"
-      ]
-    },
-    {
-      "name": "Syria Standard Time",
-      "id": 50, "abbreviation": "SDT",
-      "offset": 3,
-      "isDaylightSavingsTime": true,
-      "text": "(UTC+02:00) Damascus",
-      "areas": [
-        "Asia/Damascus"
-      ]
-    },
-    {
-      "name": "E. Europe Standard Time",
-      "id": 51, "abbreviation": "EEDT",
-      "offset": 3,
-      "isDaylightSavingsTime": true,
-      "text": "(UTC+02:00) E. Europe",
-      "areas": [
-        "Asia/Nicosia",
-        "Europe/Athens",
-        "Europe/Bucharest",
-        "Europe/Chisinau",
-        "Europe/Helsinki",
-        "Europe/Kiev",
-        "Europe/Mariehamn",
-        "Europe/Nicosia",
-        "Europe/Riga",
-        "Europe/Sofia",
-        "Europe/Tallinn",
-        "Europe/Uzhgorod",
-        "Europe/Vilnius",
-        "Europe/Zaporozhye"
-  
-      ]
-    },
-    {
-      "name": "South Africa Standard Time",
-      "id": 52, "abbreviation": "SAST",
-      "offset": 2,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+02:00) Harare, Pretoria",
-      "areas": [
-        "Africa/Blantyre",
-        "Africa/Bujumbura",
-        "Africa/Gaborone",
-        "Africa/Harare",
-        "Africa/Johannesburg",
-        "Africa/Kigali",
-        "Africa/Lubumbashi",
-        "Africa/Lusaka",
-        "Africa/Maputo",
-        "Africa/Maseru",
-        "Africa/Mbabane"
-      ]
-    },
-    {
-      "name": "FLE Standard Time",
-      "id": 53, "abbreviation": "FDT",
-      "offset": 3,
-      "isDaylightSavingsTime": true,
-      "text": "(UTC+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius",
-      "areas": [
-        "Europe/Helsinki",
-        "Europe/Kiev",
-        "Europe/Mariehamn",
-        "Europe/Riga",
-        "Europe/Sofia",
-        "Europe/Tallinn",
-        "Europe/Uzhgorod",
-        "Europe/Vilnius",
-        "Europe/Zaporozhye"
-      ]
-    },
-    {
-      "name": "Turkey Standard Time",
-      "id": 54, "abbreviation": "TDT",
-      "offset": 3,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+03:00) Istanbul",
-      "areas": [
-        "Europe/Istanbul"
-      ]
-    },
-    {
-      "name": "Israel Standard Time",
-      "id": 55, "abbreviation": "JDT",
-      "offset": 3,
-      "isDaylightSavingsTime": true,
-      "text": "(UTC+02:00) Jerusalem",
-      "areas": [
-        "Asia/Jerusalem"
-      ]
-    },
-    {
-      "name": "Libya Standard Time",
-      "id": 56, "abbreviation": "LST",
-      "offset": 2,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+02:00) Tripoli",
-      "areas": [
-        "Africa/Tripoli"
-      ]
-    },
-    {
-      "name": "Jordan Standard Time",
-      "id": 57, "abbreviation": "JST",
-      "offset": 3,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+03:00) Amman",
-      "areas": [
-        "Asia/Amman"
-      ]
-    },
-    {
-      "name": "Arabic Standard Time",
-      "id": 58, "abbreviation": "AST",
-      "offset": 3,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+03:00) Baghdad",
-      "areas": [
-        "Asia/Baghdad"
-      ]
-    },
-    {
-      "name": "Kaliningrad Standard Time",
-      "id": 59, "abbreviation": "KST",
-      "offset": 3,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+02:00) Kaliningrad",
-      "areas": [
-        "Europe/Kaliningrad"
-      ]
-    },
-    {
-      "name": "Arab Standard Time",
-      "id": 60, "abbreviation": "AST",
-      "offset": 3,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+03:00) Kuwait, Riyadh",
-      "areas": [
-        "Asia/Aden",
-        "Asia/Bahrain",
-        "Asia/Kuwait",
-        "Asia/Qatar",
-        "Asia/Riyadh"
-      ]
-    },
-    {
-      "name": "E. Africa Standard Time",
-      "id": 61, "abbreviation": "EAST",
-      "offset": 3,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+03:00) Nairobi",
-      "areas": [
-        "Africa/Addis_Ababa",
-        "Africa/Asmera",
-        "Africa/Dar_es_Salaam",
-        "Africa/Djibouti",
-        "Africa/Juba",
-        "Africa/Kampala",
-        "Africa/Khartoum",
-        "Africa/Mogadishu",
-        "Africa/Nairobi",
-        "Antarctica/Syowa",
-        "Indian/Antananarivo",
-        "Indian/Comoro",
-        "Indian/Mayotte"
-      ]
-    },
-    {
-      "name": "Moscow Standard Time",
-      "id": 62, "abbreviation": "MSK",
-      "offset": 3,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+03:00) Moscow, St. Petersburg, Volgograd, Minsk",
-      "areas": [
-          "Europe/Kirov",
-        "Europe/Moscow",
-        "Europe/Simferopol",
-        "Europe/Volgograd",
-        "Europe/Minsk"
-      ]
-    },
-    {
-      "name": "Samara Time",
-      "id": 63, "abbreviation": "SAMT",
-      "offset": 4,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+04:00) Samara, Ulyanovsk, Saratov",
-      "areas": [
-          "Europe/Astrakhan",
-        "Europe/Samara",
-          "Europe/Ulyanovsk"
-      ]
-    },
-    {
-      "name": "Iran Standard Time",
-      "id": 64, "abbreviation": "IDT",
-      "offset": 4.5,
-      "isDaylightSavingsTime": true,
-      "text": "(UTC+03:30) Tehran",
-      "areas": [
-        "Asia/Tehran"
-      ]
-    },
-    {
-      "name": "Arabian Standard Time",
-      "id": 65, "abbreviation": "AST",
-      "offset": 4,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+04:00) Abu Dhabi, Muscat",
-      "areas": [
-        "Asia/Dubai",
-        "Asia/Muscat"
-      ]
-    },
-    {
-      "name": "Azerbaijan Standard Time",
-      "id": 66, "abbreviation": "ADT",
-      "offset": 5,
-      "isDaylightSavingsTime": true,
-      "text": "(UTC+04:00) Baku",
-      "areas": [
-        "Asia/Baku"
-      ]
-    },
-    {
-      "name": "Mauritius Standard Time",
-      "id": 67, "abbreviation": "MST",
-      "offset": 4,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+04:00) Port Louis",
-      "areas": [
-        "Indian/Mahe",
-        "Indian/Mauritius",
-        "Indian/Reunion"
-      ]
-    },
-    {
-      "name": "Georgian Standard Time",
-      "id": 68, "abbreviation": "GET",
-      "offset": 4,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+04:00) Tbilisi",
-      "areas": [
-        "Asia/Tbilisi"
-      ]
-    },
-    {
-      "name": "Caucasus Standard Time",
-      "id": 69, "abbreviation": "CST",
-      "offset": 4,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+04:00) Yerevan",
-      "areas": [
-        "Asia/Yerevan"
-      ]
-    },
-    {
-      "name": "Afghanistan Standard Time",
-      "id": 70, "abbreviation": "AST",
-      "offset": 4.5,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+04:30) Kabul",
-      "areas": [
-        "Asia/Kabul"
-      ]
-    },
-    {
-      "name": "West Asia Standard Time",
-      "id": 71, "abbreviation": "WAST",
-      "offset": 5,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+05:00) Ashgabat, Tashkent",
-      "areas": [
-        "Antarctica/Mawson",
-        "Asia/Aqtau",
-        "Asia/Aqtobe",
-        "Asia/Ashgabat",
-        "Asia/Dushanbe",
-        "Asia/Oral",
-        "Asia/Samarkand",
-        "Asia/Tashkent",
-        "Indian/Kerguelen",
-        "Indian/Maldives"
-      ]
-    },
-    {
-      "name": "Yekaterinburg Time",
-      "id": 72, "abbreviation": "YEKT",
-      "offset": 5,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+05:00) Yekaterinburg",
-      "areas": [
-        "Asia/Yekaterinburg"
-      ]
-    },
-    {
-      "name": "Pakistan Standard Time",
-      "id": 73, "abbreviation": "PKT",
-      "offset": 5,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+05:00) Islamabad, Karachi",
-      "areas": [
-        "Asia/Karachi"
-      ]
-    },
-    {
-      "name": "India Standard Time",
-      "id": 74, "abbreviation": "IST",
-      "offset": 5.5,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+05:30) Chennai, Kolkata, Mumbai, New Delhi",
-      "areas": [
-        "Asia/Kolkata"
-      ]
-    },
-    {
-      "name": "Sri Lanka Standard Time",
-      "id": 75, "abbreviation": "SLST",
-      "offset": 5.5,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+05:30) Sri Jayawardenepura",
-      "areas": [
-        "Asia/Colombo"
-      ]
-    },
-    {
-      "name": "Nepal Standard Time",
-      "id": 76, "abbreviation": "NST",
-      "offset": 5.75,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+05:45) Kathmandu",
-      "areas": [
-        "Asia/Kathmandu"
-      ]
-    },
-    {
-      "name": "Central Asia Standard Time",
-      "id": 77, "abbreviation": "CAST",
-      "offset": 6,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+06:00) Nur-Sultan (Astana)",
-      "areas": [
-        "Antarctica/Vostok",
-        "Asia/Almaty",
-        "Asia/Bishkek",
-        "Asia/Qyzylorda",
-        "Asia/Urumqi",
-        "Indian/Chagos"
-      ]
-    },
-    {
-      "name": "Bangladesh Standard Time",
-      "id": 78, "abbreviation": "BST",
-      "offset": 6,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+06:00) Dhaka",
-      "areas": [
-        "Asia/Dhaka",
-        "Asia/Thimphu"
-      ]
-    },
-    {
-      "name": "Myanmar Standard Time",
-      "id": 79, "abbreviation": "MST",
-      "offset": 6.5,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+06:30) Yangon (Rangoon)",
-      "areas": [
-        "Asia/Rangoon",
-        "Indian/Cocos"
-      ]
-    },
-    {
-      "name": "SE Asia Standard Time",
-      "id": 80, "abbreviation": "SAST",
-      "offset": 7,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+07:00) Bangkok, Hanoi, Jakarta",
-      "areas": [
-        "Antarctica/Davis",
-        "Asia/Bangkok",
-        "Asia/Hovd",
-        "Asia/Jakarta",
-        "Asia/Phnom_Penh",
-        "Asia/Pontianak",
-        "Asia/Saigon",
-        "Asia/Vientiane",
-        "Indian/Christmas"
-      ]
-    },
-    {
-      "name": "N. Central Asia Standard Time",
-      "id": 81, "abbreviation": "NCAST",
-      "offset": 7,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+07:00) Novosibirsk",
-      "areas": [
-        "Asia/Novokuznetsk",
-        "Asia/Novosibirsk",
-        "Asia/Omsk"
-      ]
-    },
-    {
-      "name": "China Standard Time",
-      "id": 82, "abbreviation": "CST",
-      "offset": 8,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+08:00) Beijing, Chongqing, Hong Kong, Urumqi",
-      "areas": [
-        "Asia/Hong_Kong",
-        "Asia/Macau",
-        "Asia/Shanghai"
-      ]
-    },
-    {
-      "name": "North Asia Standard Time",
-      "id": 83, "abbreviation": "NAST",
-      "offset": 8,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+08:00) Krasnoyarsk",
-      "areas": [
-        "Asia/Krasnoyarsk"
-      ]
-    },
-    {
-      "name": "Singapore Standard Time",
-      "id": 84, "abbreviation": "MPST",
-      "offset": 8,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+08:00) Kuala Lumpur, Singapore",
-      "areas": [
-        "Asia/Brunei",
-        "Asia/Kuala_Lumpur",
-        "Asia/Kuching",
-        "Asia/Makassar",
-        "Asia/Manila",
-        "Asia/Singapore"
-      ]
-    },
-    {
-      "name": "W. Australia Standard Time",
-      "id": 85, "abbreviation": "WAST",
-      "offset": 8,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+08:00) Perth",
-      "areas": [
-        "Antarctica/Casey",
-        "Australia/Perth"
-      ]
-    },
-    {
-      "name": "Taipei Standard Time",
-      "id": 86, "abbreviation": "TST",
-      "offset": 8,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+08:00) Taipei",
-      "areas": [
-        "Asia/Taipei"
-      ]
-    },
-    {
-      "name": "Ulaanbaatar Standard Time",
-      "id": 87, "abbreviation": "UST",
-      "offset": 8,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+08:00) Ulaanbaatar",
-      "areas": [
-        "Asia/Choibalsan",
-        "Asia/Ulaanbaatar"
-      ]
-    },
-    {
-      "name": "North Asia East Standard Time",
-      "id": 88, "abbreviation": "NAEST",
-      "offset": 8,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+08:00) Irkutsk",
-      "areas": [
-        "Asia/Irkutsk"
-      ]
-    },
-    {
-      "name": "Japan Standard Time",
-      "id": 89, "abbreviation": "JST",
-      "offset": 9,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+09:00) Osaka, Sapporo, Tokyo",
-      "areas": [
-        "Asia/Dili",
-        "Asia/Jayapura",
-        "Asia/Tokyo",
-        "Pacific/Palau"
-      ]
-    },
-    {
-      "name": "Korea Standard Time",
-      "id": 90, "abbreviation": "KST",
-      "offset": 9,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+09:00) Seoul",
-      "areas": [
-        "Asia/Pyongyang",
-        "Asia/Seoul"
-      ]
-    },
-    {
-      "name": "Cen. Australia Standard Time",
-      "id": 91, "abbreviation": "CAST",
-      "offset": 9.5,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+09:30) Adelaide",
-      "areas": [
-        "Australia/Adelaide",
-        "Australia/Broken_Hill"
-      ]
-    },
-    {
-      "name": "AUS Central Standard Time",
-      "id": 92, "abbreviation": "ACST",
-      "offset": 9.5,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+09:30) Darwin",
-      "areas": [
-        "Australia/Darwin"
-      ]
-    },
-    {
-      "name": "E. Australia Standard Time",
-      "id": 93, "abbreviation": "EAST",
-      "offset": 10,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+10:00) Brisbane",
-      "areas": [
-        "Australia/Brisbane",
-        "Australia/Lindeman"
-      ]
-    },
-    {
-      "name": "AUS Eastern Standard Time",
-      "id": 94, "abbreviation": "AEST",
-      "offset": 10,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+10:00) Canberra, Melbourne, Sydney",
-      "areas": [
-        "Australia/Melbourne",
-        "Australia/Sydney"
-      ]
-    },
-    {
-      "name": "West Pacific Standard Time",
-      "id": 95, "abbreviation": "WPST",
-      "offset": 10,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+10:00) Guam, Port Moresby",
-      "areas": [
-        "Antarctica/DumontDUrville",
-        "Pacific/Guam",
-        "Pacific/Port_Moresby",
-        "Pacific/Saipan",
-        "Pacific/Truk"
-      ]
-    },
-    {
-      "name": "Tasmania Standard Time",
-      "id": 96, "abbreviation": "TST",
-      "offset": 10,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+10:00) Hobart",
-      "areas": [
-        "Australia/Currie",
-        "Australia/Hobart"
-      ]
-    },
-    {
-      "name": "Yakutsk Standard Time",
-      "id": 97, "abbreviation": "YST",
-      "offset": 9,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+09:00) Yakutsk",
-      "areas": [
-        "Asia/Chita",
-        "Asia/Khandyga",
-        "Asia/Yakutsk"
-      ]
-    },
-    {
-      "name": "Central Pacific Standard Time",
-      "id": 98, "abbreviation": "CPST",
-      "offset": 11,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+11:00) Solomon Is., New Caledonia",
-      "areas": [
-        "Antarctica/Macquarie",
-        "Pacific/Efate",
-        "Pacific/Guadalcanal",
-        "Pacific/Kosrae",
-        "Pacific/Noumea",
-        "Pacific/Ponape"
-      ]
-    },
-    {
-      "name": "Vladivostok Standard Time",
-      "id": 99, "abbreviation": "VST",
-      "offset": 11,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+11:00) Vladivostok",
-      "areas": [
-        "Asia/Sakhalin",
-        "Asia/Ust-Nera",
-        "Asia/Vladivostok"
-      ]
-    },
-    {
-      "name": "New Zealand Standard Time",
-      "id": 100, "abbreviation": "NZST",
-      "offset": 12,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+12:00) Auckland, Wellington",
-      "areas": [
-        "Antarctica/McMurdo",
-        "Pacific/Auckland"
-      ]
-    },
-    {
-      "name": "UTC+12",
-      "id": 101, "abbreviation": "U",
-      "offset": 12,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+12:00) Coordinated Universal Time+12",
-      "areas": [
-        "Pacific/Funafuti",
-        "Pacific/Kwajalein",
-        "Pacific/Majuro",
-        "Pacific/Nauru",
-        "Pacific/Tarawa",
-        "Pacific/Wake",
-        "Pacific/Wallis"
-      ]
-    },
-    {
-      "name": "Fiji Standard Time",
-      "id": 102, "abbreviation": "FST",
-      "offset": 12,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+12:00) Fiji",
-      "areas": [
-        "Pacific/Fiji"
-      ]
-    },
-    {
-      "name": "Magadan Standard Time",
-      "id": 103, "abbreviation": "MST",
-      "offset": 12,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+12:00) Magadan",
-      "areas": [
-        "Asia/Anadyr",
-        "Asia/Kamchatka",
-        "Asia/Magadan",
-        "Asia/Srednekolymsk"
-      ]
-    },
-    {
-      "name": "Kamchatka Standard Time",
-      "id": 104, "abbreviation": "KDT",
-      "offset": 13,
-      "isDaylightSavingsTime": true,
-      "text": "(UTC+12:00) Petropavlovsk-Kamchatsky - Old",
-      "areas": [
-        "Asia/Kamchatka"
-      ]
-    },
-    {
-      "name": "Tonga Standard Time",
-      "id": 105, "abbreviation": "TST",
-      "offset": 13,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+13:00) Nuku'alofa",
-      "areas": [
-        "Pacific/Enderbury",
-        "Pacific/Fakaofo",
-        "Pacific/Tongatapu"
-      ]
-    },
-    {
-      "name": "Samoa Standard Time",
-      "id": 106, "abbreviation": "SST",
-      "offset": 13,
-      "isDaylightSavingsTime": false,
-      "text": "(UTC+13:00) Samoa",
-      "areas": [
-        "Pacific/Apia"
-      ]
-    }
-  ]
+  {
+    "name": "Dateline Standard Time",
+    "id": 1,
+    "abbreviation": "DST",
+    "offset": -12,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC-12:00) International Date Line West",
+    "areas": ["Etc/GMT+12"]
+  },
+  {
+    "name": "UTC-11",
+    "id": 2,
+    "abbreviation": "U",
+    "offset": -11,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC-11:00) Coordinated Universal Time -11",
+    "areas": [
+      "Etc/GMT+11",
+      "Pacific/Midway",
+      "Pacific/Niue",
+      "Pacific/Pago_Pago"
+    ]
+  },
+  {
+    "name": "Hawaiian Standard Time",
+    "id": 3,
+    "abbreviation": "HST",
+    "offset": -10,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC-10:00) Hawaii",
+    "areas": [
+      "Etc/GMT+10",
+      "Pacific/Honolulu",
+      "Pacific/Johnston",
+      "Pacific/Rarotonga",
+      "Pacific/Tahiti"
+    ]
+  },
+  {
+    "name": "Alaskan Standard Time",
+    "id": 4,
+    "abbreviation": "AKDT",
+    "offset": -8,
+    "isDaylightSavingsTime": true,
+    "text": "(UTC-09:00) Alaska",
+    "areas": [
+      "America/Anchorage",
+      "America/Juneau",
+      "America/Nome",
+      "America/Sitka",
+      "America/Yakutat"
+    ]
+  },
+  {
+    "name": "Pacific Standard Time (Mexico)",
+    "id": 5,
+    "abbreviation": "PDT",
+    "offset": -7,
+    "isDaylightSavingsTime": true,
+    "text": "(UTC-08:00) Baja California",
+    "areas": ["America/Santa_Isabel"]
+  },
+  {
+    "name": "Pacific Daylight Time",
+    "id": 6,
+    "abbreviation": "PDT",
+    "offset": -7,
+    "isDaylightSavingsTime": true,
+    "text": "(UTC-07:00) Pacific Time (US & Canada)",
+    "areas": [
+      "America/Dawson",
+      "America/Los_Angeles",
+      "America/Tijuana",
+      "America/Vancouver",
+      "America/Whitehorse"
+    ]
+  },
+  {
+    "name": "Pacific Standard Time",
+    "id": 7,
+    "abbreviation": "PST",
+    "offset": -8,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC-08:00) Pacific Time (US & Canada)",
+    "areas": [
+      "America/Dawson",
+      "America/Los_Angeles",
+      "America/Tijuana",
+      "America/Vancouver",
+      "America/Whitehorse"
+    ]
+  },
+  {
+    "name": "US Mountain Standard Time",
+    "id": 8,
+    "abbreviation": "UMST",
+    "offset": -7,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC-07:00) Arizona",
+    "areas": [
+      "America/Creston",
+      "America/Dawson_Creek",
+      "America/Hermosillo",
+      "America/Phoenix"
+    ]
+  },
+  {
+    "name": "Mountain Standard Time (Mexico)",
+    "id": 9,
+    "abbreviation": "MDT",
+    "offset": -6,
+    "isDaylightSavingsTime": true,
+    "text": "(UTC-07:00) Chihuahua, La Paz, Mazatlan",
+    "areas": ["America/Chihuahua", "America/Mazatlan"]
+  },
+  {
+    "name": "Mountain Standard Time",
+    "id": 10,
+    "abbreviation": "MDT",
+    "offset": -6,
+    "isDaylightSavingsTime": true,
+    "text": "(UTC-07:00) Mountain Time (US & Canada)",
+    "areas": [
+      "America/Boise",
+      "America/Cambridge_Bay",
+      "America/Denver",
+      "America/Edmonton",
+      "America/Inuvik",
+      "America/Ojinaga",
+      "America/Yellowknife"
+    ]
+  },
+  {
+    "name": "Central America Standard Time",
+    "id": 11,
+    "abbreviation": "CAST",
+    "offset": -6,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC-06:00) Central America",
+    "areas": [
+      "America/Belize",
+      "America/Costa_Rica",
+      "America/El_Salvador",
+      "America/Guatemala",
+      "America/Managua",
+      "America/Tegucigalpa",
+      "Pacific/Galapagos"
+    ]
+  },
+  {
+    "name": "Central Standard Time",
+    "id": 12,
+    "abbreviation": "CDT",
+    "offset": -5,
+    "isDaylightSavingsTime": true,
+    "text": "(UTC-06:00) Central Time (US & Canada)",
+    "areas": [
+      "America/Chicago",
+      "America/Indiana/Knox",
+      "America/Indiana/Tell_City",
+      "America/Matamoros",
+      "America/Menominee",
+      "America/North_Dakota/Beulah",
+      "America/North_Dakota/Center",
+      "America/North_Dakota/New_Salem",
+      "America/Rainy_River",
+      "America/Rankin_Inlet",
+      "America/Resolute",
+      "America/Winnipeg"
+    ]
+  },
+  {
+    "name": "Central Standard Time (Mexico)",
+    "id": 13,
+    "abbreviation": "CDT",
+    "offset": -5,
+    "isDaylightSavingsTime": true,
+    "text": "(UTC-06:00) Guadalajara, Mexico City, Monterrey",
+    "areas": [
+      "America/Bahia_Banderas",
+      "America/Cancun",
+      "America/Merida",
+      "America/Mexico_City",
+      "America/Monterrey"
+    ]
+  },
+  {
+    "name": "Canada Central Standard Time",
+    "id": 14,
+    "abbreviation": "CCST",
+    "offset": -6,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC-06:00) Saskatchewan",
+    "areas": ["America/Regina", "America/Swift_Current"]
+  },
+  {
+    "name": "SA Pacific Standard Time",
+    "id": 15,
+    "abbreviation": "SPST",
+    "offset": -5,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC-05:00) Bogota, Lima, Quito",
+    "areas": [
+      "America/Bogota",
+      "America/Cayman",
+      "America/Coral_Harbour",
+      "America/Eirunepe",
+      "America/Guayaquil",
+      "America/Jamaica",
+      "America/Lima",
+      "America/Panama",
+      "America/Rio_Branco"
+    ]
+  },
+  {
+    "name": "Eastern Standard Time",
+    "id": 16,
+    "abbreviation": "EDT",
+    "offset": -4,
+    "isDaylightSavingsTime": true,
+    "text": "(UTC-05:00) Eastern Time (US & Canada)",
+    "areas": [
+      "America/Detroit",
+      "America/Havana",
+      "America/Indiana/Petersburg",
+      "America/Indiana/Vincennes",
+      "America/Indiana/Winamac",
+      "America/Iqaluit",
+      "America/Kentucky/Monticello",
+      "America/Louisville",
+      "America/Montreal",
+      "America/Nassau",
+      "America/New_York",
+      "America/Nipigon",
+      "America/Pangnirtung",
+      "America/Port-au-Prince",
+      "America/Thunder_Bay",
+      "America/Toronto"
+    ]
+  },
+  {
+    "name": "US Eastern Standard Time",
+    "id": 17,
+    "abbreviation": "UEDT",
+    "offset": -4,
+    "isDaylightSavingsTime": true,
+    "text": "(UTC-05:00) Indiana (East)",
+    "areas": [
+      "America/Indiana/Marengo",
+      "America/Indiana/Vevay",
+      "America/Indianapolis"
+    ]
+  },
+  {
+    "name": "Venezuela Standard Time",
+    "id": 18,
+    "abbreviation": "VST",
+    "offset": -4.5,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC-04:30) Caracas",
+    "areas": ["America/Caracas"]
+  },
+  {
+    "name": "Paraguay Standard Time",
+    "id": 19,
+    "abbreviation": "PYT",
+    "offset": -4,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC-04:00) Asuncion",
+    "areas": ["America/Asuncion"]
+  },
+  {
+    "name": "Atlantic Standard Time",
+    "id": 20,
+    "abbreviation": "ADT",
+    "offset": -3,
+    "isDaylightSavingsTime": true,
+    "text": "(UTC-04:00) Atlantic Time (Canada)",
+    "areas": [
+      "America/Glace_Bay",
+      "America/Goose_Bay",
+      "America/Halifax",
+      "America/Moncton",
+      "America/Thule",
+      "Atlantic/Bermuda"
+    ]
+  },
+  {
+    "name": "Central Brazilian Standard Time",
+    "id": 21,
+    "abbreviation": "CBST",
+    "offset": -4,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC-04:00) Cuiaba",
+    "areas": ["America/Campo_Grande", "America/Cuiaba"]
+  },
+  {
+    "name": "SA Western Standard Time",
+    "id": 22,
+    "abbreviation": "SWST",
+    "offset": -4,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC-04:00) Georgetown, La Paz, Manaus, San Juan",
+    "areas": [
+      "America/Anguilla",
+      "America/Antigua",
+      "America/Aruba",
+      "America/Barbados",
+      "America/Blanc-Sablon",
+      "America/Boa_Vista",
+      "America/Curacao",
+      "America/Dominica",
+      "America/Grand_Turk",
+      "America/Grenada",
+      "America/Guadeloupe",
+      "America/Guyana",
+      "America/Kralendijk",
+      "America/La_Paz",
+      "America/Lower_Princes",
+      "America/Manaus",
+      "America/Marigot",
+      "America/Martinique",
+      "America/Montserrat",
+      "America/Port_of_Spain",
+      "America/Porto_Velho",
+      "America/Puerto_Rico",
+      "America/Santo_Domingo",
+      "America/St_Barthelemy",
+      "America/St_Kitts",
+      "America/St_Lucia",
+      "America/St_Thomas",
+      "America/St_Vincent",
+      "America/Tortola"
+    ]
+  },
+  {
+    "name": "Pacific SA Standard Time",
+    "id": 23,
+    "abbreviation": "PSST",
+    "offset": -4,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC-04:00) Santiago",
+    "areas": ["America/Santiago", "Antarctica/Palmer"]
+  },
+  {
+    "name": "Newfoundland Standard Time",
+    "id": 24,
+    "abbreviation": "NDT",
+    "offset": -2.5,
+    "isDaylightSavingsTime": true,
+    "text": "(UTC-03:30) Newfoundland",
+    "areas": ["America/St_Johns"]
+  },
+  {
+    "name": "E. South America Standard Time",
+    "id": 25,
+    "abbreviation": "ESAST",
+    "offset": -3,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC-03:00) Brasilia",
+    "areas": ["America/Sao_Paulo"]
+  },
+  {
+    "name": "Argentina Standard Time",
+    "id": 26,
+    "abbreviation": "AST",
+    "offset": -3,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC-03:00) Buenos Aires",
+    "areas": [
+      "America/Argentina/La_Rioja",
+      "America/Argentina/Rio_Gallegos",
+      "America/Argentina/Salta",
+      "America/Argentina/San_Juan",
+      "America/Argentina/San_Luis",
+      "America/Argentina/Tucuman",
+      "America/Argentina/Ushuaia",
+      "America/Buenos_Aires",
+      "America/Catamarca",
+      "America/Cordoba",
+      "America/Jujuy",
+      "America/Mendoza"
+    ]
+  },
+  {
+    "name": "SA Eastern Standard Time",
+    "id": 27,
+    "abbreviation": "SEST",
+    "offset": -3,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC-03:00) Cayenne, Fortaleza",
+    "areas": [
+      "America/Araguaina",
+      "America/Belem",
+      "America/Cayenne",
+      "America/Fortaleza",
+      "America/Maceio",
+      "America/Paramaribo",
+      "America/Recife",
+      "America/Santarem",
+      "Antarctica/Rothera",
+      "Atlantic/Stanley"
+    ]
+  },
+  {
+    "name": "Greenland Standard Time",
+    "id": 28,
+    "abbreviation": "GDT",
+    "offset": -3,
+    "isDaylightSavingsTime": true,
+    "text": "(UTC-03:00) Greenland",
+    "areas": ["America/Godthab"]
+  },
+  {
+    "name": "Montevideo Standard Time",
+    "id": 29,
+    "abbreviation": "MST",
+    "offset": -3,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC-03:00) Montevideo",
+    "areas": ["America/Montevideo"]
+  },
+  {
+    "name": "Bahia Standard Time",
+    "id": 30,
+    "abbreviation": "BST",
+    "offset": -3,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC-03:00) Salvador",
+    "areas": ["America/Bahia"]
+  },
+  {
+    "name": "UTC-02",
+    "id": 31,
+    "abbreviation": "U",
+    "offset": -2,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC-02:00) Coordinated Universal Time -2",
+    "areas": ["America/Noronha", "Atlantic/South_Georgia"]
+  },
+  {
+    "name": "Mid-Atlantic Standard Time",
+    "id": 32,
+    "abbreviation": "MDT",
+    "offset": -1,
+    "isDaylightSavingsTime": true,
+    "text": "(UTC-02:00) Mid-Atlantic - Old",
+    "areas": []
+  },
+  {
+    "name": "Azores Standard Time",
+    "id": 33,
+    "abbreviation": "ADT",
+    "offset": 0,
+    "isDaylightSavingsTime": true,
+    "text": "(UTC-01:00) Azores",
+    "areas": ["America/Scoresbysund", "Atlantic/Azores"]
+  },
+  {
+    "name": "Cape Verde Standard Time",
+    "id": 34,
+    "abbreviation": "CVST",
+    "offset": -1,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC-01:00) Cape Verde Is.",
+    "areas": ["Atlantic/Cape_Verde", "Etc/GMT+1"]
+  },
+  {
+    "name": "Morocco Standard Time",
+    "id": 35,
+    "abbreviation": "MDT",
+    "offset": 1,
+    "isDaylightSavingsTime": true,
+    "text": "(UTC+00:00) Casablanca",
+    "areas": ["Africa/Casablanca", "Africa/El_Aaiun"]
+  },
+  {
+    "name": "UTC",
+    "id": 36,
+    "abbreviation": "UTC",
+    "offset": 0,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+00:00) Coordinated Universal Time",
+    "areas": ["America/Danmarkshavn"]
+  },
+  {
+    "name": "GMT Standard Time",
+    "id": 37,
+    "abbreviation": "GMT",
+    "offset": 0,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+00:00) London",
+    "areas": [
+      "Europe/Isle_of_Man",
+      "Europe/Guernsey",
+      "Europe/Jersey",
+      "Europe/London"
+    ]
+  },
+  {
+    "name": "British Summer Time",
+    "id": 38,
+    "abbreviation": "BST",
+    "offset": 1,
+    "isDaylightSavingsTime": true,
+    "text": "(UTC+01:00) Edinburgh, London",
+    "areas": [
+      "Europe/Isle_of_Man",
+      "Europe/Guernsey",
+      "Europe/Jersey",
+      "Europe/London"
+    ]
+  },
+  {
+    "name": "GMT Standard Time",
+    "id": 39,
+    "abbreviation": "GDT",
+    "offset": 1,
+    "isDaylightSavingsTime": true,
+    "text": "(UTC+00:00) Dublin, Lisbon",
+    "areas": [
+      "Atlantic/Canary",
+      "Atlantic/Faeroe",
+      "Atlantic/Madeira",
+      "Europe/Dublin",
+      "Europe/Lisbon"
+    ]
+  },
+  {
+    "name": "Greenwich Standard Time",
+    "id": 40,
+    "abbreviation": "GST",
+    "offset": 0,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+00:00) Monrovia, Reykjavik",
+    "areas": [
+      "Africa/Abidjan",
+      "Africa/Accra",
+      "Africa/Bamako",
+      "Africa/Banjul",
+      "Africa/Bissau",
+      "Africa/Conakry",
+      "Africa/Dakar",
+      "Africa/Freetown",
+      "Africa/Lome",
+      "Africa/Monrovia",
+      "Africa/Nouakchott",
+      "Africa/Ouagadougou",
+      "Africa/Sao_Tome",
+      "Atlantic/Reykjavik",
+      "Atlantic/St_Helena"
+    ]
+  },
+  {
+    "name": "W. Europe Standard Time",
+    "id": 41,
+    "abbreviation": "WEDT",
+    "offset": 2,
+    "isDaylightSavingsTime": true,
+    "text": "(UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna",
+    "areas": [
+      "Arctic/Longyearbyen",
+      "Europe/Amsterdam",
+      "Europe/Andorra",
+      "Europe/Berlin",
+      "Europe/Busingen",
+      "Europe/Gibraltar",
+      "Europe/Luxembourg",
+      "Europe/Malta",
+      "Europe/Monaco",
+      "Europe/Oslo",
+      "Europe/Rome",
+      "Europe/San_Marino",
+      "Europe/Stockholm",
+      "Europe/Vaduz",
+      "Europe/Vatican",
+      "Europe/Vienna",
+      "Europe/Zurich"
+    ]
+  },
+  {
+    "name": "Central Europe Standard Time",
+    "id": 42,
+    "abbreviation": "CEDT",
+    "offset": 2,
+    "isDaylightSavingsTime": true,
+    "text": "(UTC+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague",
+    "areas": [
+      "Europe/Belgrade",
+      "Europe/Bratislava",
+      "Europe/Budapest",
+      "Europe/Ljubljana",
+      "Europe/Podgorica",
+      "Europe/Prague",
+      "Europe/Tirane"
+    ]
+  },
+  {
+    "name": "Romance Standard Time",
+    "id": 43,
+    "abbreviation": "RDT",
+    "offset": 2,
+    "isDaylightSavingsTime": true,
+    "text": "(UTC+01:00) Brussels, Copenhagen, Madrid, Paris",
+    "areas": [
+      "Africa/Ceuta",
+      "Europe/Brussels",
+      "Europe/Copenhagen",
+      "Europe/Madrid",
+      "Europe/Paris"
+    ]
+  },
+  {
+    "name": "Central European Standard Time",
+    "id": 44,
+    "abbreviation": "CEDT",
+    "offset": 2,
+    "isDaylightSavingsTime": true,
+    "text": "(UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb",
+    "areas": [
+      "Europe/Sarajevo",
+      "Europe/Skopje",
+      "Europe/Warsaw",
+      "Europe/Zagreb"
+    ]
+  },
+  {
+    "name": "W. Central Africa Standard Time",
+    "id": 45,
+    "abbreviation": "WCAST",
+    "offset": 1,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+01:00) West Central Africa",
+    "areas": [
+      "Africa/Algiers",
+      "Africa/Bangui",
+      "Africa/Brazzaville",
+      "Africa/Douala",
+      "Africa/Kinshasa",
+      "Africa/Lagos",
+      "Africa/Libreville",
+      "Africa/Luanda",
+      "Africa/Malabo",
+      "Africa/Ndjamena",
+      "Africa/Niamey",
+      "Africa/Porto-Novo",
+      "Africa/Tunis"
+    ]
+  },
+  {
+    "name": "Namibia Standard Time",
+    "id": 46,
+    "abbreviation": "NST",
+    "offset": 1,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+01:00) Windhoek",
+    "areas": ["Africa/Windhoek"]
+  },
+  {
+    "name": "GTB Standard Time",
+    "id": 47,
+    "abbreviation": "GDT",
+    "offset": 3,
+    "isDaylightSavingsTime": true,
+    "text": "(UTC+02:00) Athens, Bucharest",
+    "areas": [
+      "Asia/Nicosia",
+      "Europe/Athens",
+      "Europe/Bucharest",
+      "Europe/Chisinau"
+    ]
+  },
+  {
+    "name": "Middle East Standard Time",
+    "id": 48,
+    "abbreviation": "MEDT",
+    "offset": 3,
+    "isDaylightSavingsTime": true,
+    "text": "(UTC+02:00) Beirut",
+    "areas": ["Asia/Beirut"]
+  },
+  {
+    "name": "Egypt Standard Time",
+    "id": 49,
+    "abbreviation": "EST",
+    "offset": 2,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+02:00) Cairo",
+    "areas": ["Africa/Cairo"]
+  },
+  {
+    "name": "Syria Standard Time",
+    "id": 50,
+    "abbreviation": "SDT",
+    "offset": 3,
+    "isDaylightSavingsTime": true,
+    "text": "(UTC+02:00) Damascus",
+    "areas": ["Asia/Damascus"]
+  },
+  {
+    "name": "E. Europe Standard Time",
+    "id": 51,
+    "abbreviation": "EEDT",
+    "offset": 3,
+    "isDaylightSavingsTime": true,
+    "text": "(UTC+02:00) E. Europe",
+    "areas": [
+      "Asia/Nicosia",
+      "Europe/Athens",
+      "Europe/Bucharest",
+      "Europe/Chisinau",
+      "Europe/Helsinki",
+      "Europe/Kiev",
+      "Europe/Mariehamn",
+      "Europe/Nicosia",
+      "Europe/Riga",
+      "Europe/Sofia",
+      "Europe/Tallinn",
+      "Europe/Uzhgorod",
+      "Europe/Vilnius",
+      "Europe/Zaporozhye"
+    ]
+  },
+  {
+    "name": "South Africa Standard Time",
+    "id": 52,
+    "abbreviation": "SAST",
+    "offset": 2,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+02:00) Harare, Pretoria",
+    "areas": [
+      "Africa/Blantyre",
+      "Africa/Bujumbura",
+      "Africa/Gaborone",
+      "Africa/Harare",
+      "Africa/Johannesburg",
+      "Africa/Kigali",
+      "Africa/Lubumbashi",
+      "Africa/Lusaka",
+      "Africa/Maputo",
+      "Africa/Maseru",
+      "Africa/Mbabane"
+    ]
+  },
+  {
+    "name": "FLE Standard Time",
+    "id": 53,
+    "abbreviation": "FDT",
+    "offset": 3,
+    "isDaylightSavingsTime": true,
+    "text": "(UTC+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius",
+    "areas": [
+      "Europe/Helsinki",
+      "Europe/Kiev",
+      "Europe/Mariehamn",
+      "Europe/Riga",
+      "Europe/Sofia",
+      "Europe/Tallinn",
+      "Europe/Uzhgorod",
+      "Europe/Vilnius",
+      "Europe/Zaporozhye"
+    ]
+  },
+  {
+    "name": "Turkey Standard Time",
+    "id": 54,
+    "abbreviation": "TDT",
+    "offset": 3,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+03:00) Istanbul",
+    "areas": ["Europe/Istanbul"]
+  },
+  {
+    "name": "Israel Standard Time",
+    "id": 55,
+    "abbreviation": "JDT",
+    "offset": 3,
+    "isDaylightSavingsTime": true,
+    "text": "(UTC+02:00) Jerusalem",
+    "areas": ["Asia/Jerusalem"]
+  },
+  {
+    "name": "Libya Standard Time",
+    "id": 56,
+    "abbreviation": "LST",
+    "offset": 2,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+02:00) Tripoli",
+    "areas": ["Africa/Tripoli"]
+  },
+  {
+    "name": "Jordan Standard Time",
+    "id": 57,
+    "abbreviation": "JST",
+    "offset": 3,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+03:00) Amman",
+    "areas": ["Asia/Amman"]
+  },
+  {
+    "name": "Arabic Standard Time",
+    "id": 58,
+    "abbreviation": "AST",
+    "offset": 3,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+03:00) Baghdad",
+    "areas": ["Asia/Baghdad"]
+  },
+  {
+    "name": "Kaliningrad Standard Time",
+    "id": 59,
+    "abbreviation": "KST",
+    "offset": 3,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+02:00) Kaliningrad",
+    "areas": ["Europe/Kaliningrad"]
+  },
+  {
+    "name": "Arab Standard Time",
+    "id": 60,
+    "abbreviation": "AST",
+    "offset": 3,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+03:00) Kuwait, Riyadh",
+    "areas": [
+      "Asia/Aden",
+      "Asia/Bahrain",
+      "Asia/Kuwait",
+      "Asia/Qatar",
+      "Asia/Riyadh"
+    ]
+  },
+  {
+    "name": "E. Africa Standard Time",
+    "id": 61,
+    "abbreviation": "EAST",
+    "offset": 3,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+03:00) Nairobi",
+    "areas": [
+      "Africa/Addis_Ababa",
+      "Africa/Asmera",
+      "Africa/Dar_es_Salaam",
+      "Africa/Djibouti",
+      "Africa/Juba",
+      "Africa/Kampala",
+      "Africa/Khartoum",
+      "Africa/Mogadishu",
+      "Africa/Nairobi",
+      "Antarctica/Syowa",
+      "Indian/Antananarivo",
+      "Indian/Comoro",
+      "Indian/Mayotte"
+    ]
+  },
+  {
+    "name": "Moscow Standard Time",
+    "id": 62,
+    "abbreviation": "MSK",
+    "offset": 3,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+03:00) Moscow, St. Petersburg, Volgograd, Minsk",
+    "areas": [
+      "Europe/Kirov",
+      "Europe/Moscow",
+      "Europe/Simferopol",
+      "Europe/Volgograd",
+      "Europe/Minsk"
+    ]
+  },
+  {
+    "name": "Samara Time",
+    "id": 63,
+    "abbreviation": "SAMT",
+    "offset": 4,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+04:00) Samara, Ulyanovsk, Saratov",
+    "areas": ["Europe/Astrakhan", "Europe/Samara", "Europe/Ulyanovsk"]
+  },
+  {
+    "name": "Iran Standard Time",
+    "id": 64,
+    "abbreviation": "IDT",
+    "offset": 4.5,
+    "isDaylightSavingsTime": true,
+    "text": "(UTC+03:30) Tehran",
+    "areas": ["Asia/Tehran"]
+  },
+  {
+    "name": "Arabian Standard Time",
+    "id": 65,
+    "abbreviation": "AST",
+    "offset": 4,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+04:00) Abu Dhabi, Muscat",
+    "areas": ["Asia/Dubai", "Asia/Muscat"]
+  },
+  {
+    "name": "Azerbaijan Standard Time",
+    "id": 66,
+    "abbreviation": "ADT",
+    "offset": 5,
+    "isDaylightSavingsTime": true,
+    "text": "(UTC+04:00) Baku",
+    "areas": ["Asia/Baku"]
+  },
+  {
+    "name": "Mauritius Standard Time",
+    "id": 67,
+    "abbreviation": "MST",
+    "offset": 4,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+04:00) Port Louis",
+    "areas": ["Indian/Mahe", "Indian/Mauritius", "Indian/Reunion"]
+  },
+  {
+    "name": "Georgian Standard Time",
+    "id": 68,
+    "abbreviation": "GET",
+    "offset": 4,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+04:00) Tbilisi",
+    "areas": ["Asia/Tbilisi"]
+  },
+  {
+    "name": "Caucasus Standard Time",
+    "id": 69,
+    "abbreviation": "CST",
+    "offset": 4,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+04:00) Yerevan",
+    "areas": ["Asia/Yerevan"]
+  },
+  {
+    "name": "Afghanistan Standard Time",
+    "id": 70,
+    "abbreviation": "AST",
+    "offset": 4.5,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+04:30) Kabul",
+    "areas": ["Asia/Kabul"]
+  },
+  {
+    "name": "West Asia Standard Time",
+    "id": 71,
+    "abbreviation": "WAST",
+    "offset": 5,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+05:00) Ashgabat, Tashkent",
+    "areas": [
+      "Antarctica/Mawson",
+      "Asia/Aqtau",
+      "Asia/Aqtobe",
+      "Asia/Ashgabat",
+      "Asia/Dushanbe",
+      "Asia/Oral",
+      "Asia/Samarkand",
+      "Asia/Tashkent",
+      "Indian/Kerguelen",
+      "Indian/Maldives"
+    ]
+  },
+  {
+    "name": "Yekaterinburg Time",
+    "id": 72,
+    "abbreviation": "YEKT",
+    "offset": 5,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+05:00) Yekaterinburg",
+    "areas": ["Asia/Yekaterinburg"]
+  },
+  {
+    "name": "Pakistan Standard Time",
+    "id": 73,
+    "abbreviation": "PKT",
+    "offset": 5,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+05:00) Islamabad, Karachi",
+    "areas": ["Asia/Karachi"]
+  },
+  {
+    "name": "India Standard Time",
+    "id": 74,
+    "abbreviation": "IST",
+    "offset": 5.5,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+05:30) Chennai, Kolkata, Mumbai, New Delhi",
+    "areas": ["Asia/Kolkata"]
+  },
+  {
+    "name": "Sri Lanka Standard Time",
+    "id": 75,
+    "abbreviation": "SLST",
+    "offset": 5.5,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+05:30) Sri Jayawardenepura",
+    "areas": ["Asia/Colombo"]
+  },
+  {
+    "name": "Nepal Standard Time",
+    "id": 76,
+    "abbreviation": "NST",
+    "offset": 5.75,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+05:45) Kathmandu",
+    "areas": ["Asia/Kathmandu"]
+  },
+  {
+    "name": "Central Asia Standard Time",
+    "id": 77,
+    "abbreviation": "CAST",
+    "offset": 6,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+06:00) Nur-Sultan (Astana)",
+    "areas": [
+      "Antarctica/Vostok",
+      "Asia/Almaty",
+      "Asia/Bishkek",
+      "Asia/Qyzylorda",
+      "Asia/Urumqi",
+      "Indian/Chagos"
+    ]
+  },
+  {
+    "name": "Bangladesh Standard Time",
+    "id": 78,
+    "abbreviation": "BST",
+    "offset": 6,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+06:00) Dhaka",
+    "areas": ["Asia/Dhaka", "Asia/Thimphu"]
+  },
+  {
+    "name": "Myanmar Standard Time",
+    "id": 79,
+    "abbreviation": "MST",
+    "offset": 6.5,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+06:30) Yangon (Rangoon)",
+    "areas": ["Asia/Rangoon", "Indian/Cocos"]
+  },
+  {
+    "name": "SE Asia Standard Time",
+    "id": 80,
+    "abbreviation": "SAST",
+    "offset": 7,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+07:00) Bangkok, Hanoi, Jakarta",
+    "areas": [
+      "Antarctica/Davis",
+      "Asia/Bangkok",
+      "Asia/Hovd",
+      "Asia/Jakarta",
+      "Asia/Phnom_Penh",
+      "Asia/Pontianak",
+      "Asia/Saigon",
+      "Asia/Vientiane",
+      "Indian/Christmas"
+    ]
+  },
+  {
+    "name": "N. Central Asia Standard Time",
+    "id": 81,
+    "abbreviation": "NCAST",
+    "offset": 7,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+07:00) Novosibirsk",
+    "areas": ["Asia/Novokuznetsk", "Asia/Novosibirsk", "Asia/Omsk"]
+  },
+  {
+    "name": "China Standard Time",
+    "id": 82,
+    "abbreviation": "CST",
+    "offset": 8,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+08:00) Beijing, Chongqing, Hong Kong, Urumqi",
+    "areas": ["Asia/Hong_Kong", "Asia/Macau", "Asia/Shanghai"]
+  },
+  {
+    "name": "North Asia Standard Time",
+    "id": 83,
+    "abbreviation": "NAST",
+    "offset": 8,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+08:00) Krasnoyarsk",
+    "areas": ["Asia/Krasnoyarsk"]
+  },
+  {
+    "name": "Singapore Standard Time",
+    "id": 84,
+    "abbreviation": "MPST",
+    "offset": 8,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+08:00) Kuala Lumpur, Singapore",
+    "areas": [
+      "Asia/Brunei",
+      "Asia/Kuala_Lumpur",
+      "Asia/Kuching",
+      "Asia/Makassar",
+      "Asia/Manila",
+      "Asia/Singapore"
+    ]
+  },
+  {
+    "name": "W. Australia Standard Time",
+    "id": 85,
+    "abbreviation": "WAST",
+    "offset": 8,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+08:00) Perth",
+    "areas": ["Antarctica/Casey", "Australia/Perth"]
+  },
+  {
+    "name": "Taipei Standard Time",
+    "id": 86,
+    "abbreviation": "TST",
+    "offset": 8,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+08:00) Taipei",
+    "areas": ["Asia/Taipei"]
+  },
+  {
+    "name": "Ulaanbaatar Standard Time",
+    "id": 87,
+    "abbreviation": "UST",
+    "offset": 8,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+08:00) Ulaanbaatar",
+    "areas": ["Asia/Choibalsan", "Asia/Ulaanbaatar"]
+  },
+  {
+    "name": "North Asia East Standard Time",
+    "id": 88,
+    "abbreviation": "NAEST",
+    "offset": 8,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+08:00) Irkutsk",
+    "areas": ["Asia/Irkutsk"]
+  },
+  {
+    "name": "Japan Standard Time",
+    "id": 89,
+    "abbreviation": "JST",
+    "offset": 9,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+09:00) Osaka, Sapporo, Tokyo",
+    "areas": ["Asia/Dili", "Asia/Jayapura", "Asia/Tokyo", "Pacific/Palau"]
+  },
+  {
+    "name": "Korea Standard Time",
+    "id": 90,
+    "abbreviation": "KST",
+    "offset": 9,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+09:00) Seoul",
+    "areas": ["Asia/Pyongyang", "Asia/Seoul"]
+  },
+  {
+    "name": "Cen. Australia Standard Time",
+    "id": 91,
+    "abbreviation": "CAST",
+    "offset": 9.5,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+09:30) Adelaide",
+    "areas": ["Australia/Adelaide", "Australia/Broken_Hill"]
+  },
+  {
+    "name": "AUS Central Standard Time",
+    "id": 92,
+    "abbreviation": "ACST",
+    "offset": 9.5,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+09:30) Darwin",
+    "areas": ["Australia/Darwin"]
+  },
+  {
+    "name": "E. Australia Standard Time",
+    "id": 93,
+    "abbreviation": "EAST",
+    "offset": 10,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+10:00) Brisbane",
+    "areas": ["Australia/Brisbane", "Australia/Lindeman"]
+  },
+  {
+    "name": "AUS Eastern Standard Time",
+    "id": 94,
+    "abbreviation": "AEST",
+    "offset": 10,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+10:00) Canberra, Melbourne, Sydney",
+    "areas": ["Australia/Melbourne", "Australia/Sydney"]
+  },
+  {
+    "name": "West Pacific Standard Time",
+    "id": 95,
+    "abbreviation": "WPST",
+    "offset": 10,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+10:00) Guam, Port Moresby",
+    "areas": [
+      "Antarctica/DumontDUrville",
+      "Pacific/Guam",
+      "Pacific/Port_Moresby",
+      "Pacific/Saipan",
+      "Pacific/Truk"
+    ]
+  },
+  {
+    "name": "Tasmania Standard Time",
+    "id": 96,
+    "abbreviation": "TST",
+    "offset": 10,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+10:00) Hobart",
+    "areas": ["Australia/Currie", "Australia/Hobart"]
+  },
+  {
+    "name": "Yakutsk Standard Time",
+    "id": 97,
+    "abbreviation": "YST",
+    "offset": 9,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+09:00) Yakutsk",
+    "areas": ["Asia/Chita", "Asia/Khandyga", "Asia/Yakutsk"]
+  },
+  {
+    "name": "Central Pacific Standard Time",
+    "id": 98,
+    "abbreviation": "CPST",
+    "offset": 11,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+11:00) Solomon Is., New Caledonia",
+    "areas": [
+      "Antarctica/Macquarie",
+      "Pacific/Efate",
+      "Pacific/Guadalcanal",
+      "Pacific/Kosrae",
+      "Pacific/Noumea",
+      "Pacific/Ponape"
+    ]
+  },
+  {
+    "name": "Vladivostok Standard Time",
+    "id": 99,
+    "abbreviation": "VST",
+    "offset": 11,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+11:00) Vladivostok",
+    "areas": ["Asia/Sakhalin", "Asia/Ust-Nera", "Asia/Vladivostok"]
+  },
+  {
+    "name": "New Zealand Standard Time",
+    "id": 100,
+    "abbreviation": "NZST",
+    "offset": 12,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+12:00) Auckland, Wellington",
+    "areas": ["Antarctica/McMurdo", "Pacific/Auckland"]
+  },
+  {
+    "name": "UTC+12",
+    "id": 101,
+    "abbreviation": "U",
+    "offset": 12,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+12:00) Coordinated Universal Time +12",
+    "areas": [
+      "Pacific/Funafuti",
+      "Pacific/Kwajalein",
+      "Pacific/Majuro",
+      "Pacific/Nauru",
+      "Pacific/Tarawa",
+      "Pacific/Wake",
+      "Pacific/Wallis"
+    ]
+  },
+  {
+    "name": "Fiji Standard Time",
+    "id": 102,
+    "abbreviation": "FST",
+    "offset": 12,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+12:00) Fiji",
+    "areas": ["Pacific/Fiji"]
+  },
+  {
+    "name": "Magadan Standard Time",
+    "id": 103,
+    "abbreviation": "MST",
+    "offset": 12,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+12:00) Magadan",
+    "areas": [
+      "Asia/Anadyr",
+      "Asia/Kamchatka",
+      "Asia/Magadan",
+      "Asia/Srednekolymsk"
+    ]
+  },
+  {
+    "name": "Kamchatka Standard Time",
+    "id": 104,
+    "abbreviation": "KDT",
+    "offset": 13,
+    "isDaylightSavingsTime": true,
+    "text": "(UTC+12:00) Petropavlovsk-Kamchatsky - Old",
+    "areas": ["Asia/Kamchatka"]
+  },
+  {
+    "name": "Tonga Standard Time",
+    "id": 105,
+    "abbreviation": "TST",
+    "offset": 13,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+13:00) Nuku'alofa",
+    "areas": ["Pacific/Enderbury", "Pacific/Fakaofo", "Pacific/Tongatapu"]
+  },
+  {
+    "name": "Samoa Standard Time",
+    "id": 106,
+    "abbreviation": "SST",
+    "offset": 13,
+    "isDaylightSavingsTime": false,
+    "text": "(UTC+13:00) Samoa",
+    "areas": ["Pacific/Apia"]
+  }
+]

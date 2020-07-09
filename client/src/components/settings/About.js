@@ -36,7 +36,7 @@ class AboutSettings extends Component {
       location = '',
       picture = '',
       about = '',
-      timezone = '',
+      timezone = TIMEZONES[35],
       search = ''
     } = props;
     const values = {
@@ -74,9 +74,10 @@ class AboutSettings extends Component {
           location,
           picture,
           about,
-          timezones,
+          timezone,
           search
         },
+        timezones,
         formClicked: false
       });
     }
@@ -139,7 +140,6 @@ class AboutSettings extends Component {
       }
       return false;
     });
-    console.log(filteredTimeZones);
     return this.setState(state => ({
       formValues: {
         ...state.formValues,
@@ -171,7 +171,14 @@ class AboutSettings extends Component {
 
   render() {
     const {
-      formValues: { name, location, picture, about, timezone, search },
+      formValues: {
+        name,
+        location,
+        picture,
+        about,
+        timezone = TIMEZONES[35],
+        search
+      },
       timezones
     } = this.state;
     const { currentTheme, username, toggleNightMode } = this.props;
@@ -217,7 +224,7 @@ class AboutSettings extends Component {
                 componentClass='select'
                 onChange={this.handleTimeZoneChange}
                 type='select'
-                value={timezone || '0'}
+                value={timezone || TIMEZONES[35]}
               >
                 {timezones.map(timezone => (
                   <option key={timezone.id}>{timezone.text}</option>
