@@ -51,7 +51,7 @@ Once you open the MongoDB Atlas page, you should sign up for a new account.
   - **Customize your cluster's specs**, you can also leave this as the default provided, `M0 Sandbox (Shared RAM, 512 MB Storage) Encrypted`.
   - **Give your cluster a name**, you can also leave this as the default provided, `Cluster 0`.
 - Now click the green **Create Cluster** button at the bottom of the screen and verify the image captions they provide.
-- You should now see the message, `Your cluster is being created - New clusters take between 7-10 minutes to provision.` Wait until the cluster is created before going to the next step.
+- You should now see the message `Your cluster is being created - New clusters take between 7-10 minutes to provision.` Wait until the cluster is created before going to the next step.
 
 ### Create a new user on the database
 
