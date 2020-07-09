@@ -105,6 +105,10 @@ const toStartOfLine = range => {
   return range.setStartPosition(range.startLineNumber, 1);
 };
 
+const toLastLine = range => {
+  return range.setStartPosition(range.endLineNumber, 1);
+};
+
 class Editor extends Component {
   constructor(...props) {
     super(...props);
@@ -324,73 +328,43 @@ class Editor extends Component {
       const getOutputZoneTop = this.getOutputZoneTop.bind(this);
       const createOutputNode = this.createOutputNode.bind(this);
 
-      // TODO: take care that there's no race/ordering problems, with the
-      // placement of domNode (shouldn't be once it's no longer used in the
-      // view zone, but make sure!)
-      this._overlayWidget = {
-        domNode: null,
-        getId: function() {
-          return 'my.overlay.widget';
-        },
-        getDomNode: function() {
-          if (!this.domNode) {
-            this.domNode = createDescription();
+      const createWidget = (id, domNode, getTop) => {
+        const getId = () => id;
+        const getDomNode = () => domNode;
+        const getPosition = () => {
+          domNode.style.width = editor.getLayoutInfo().contentWidth + 'px';
+          domNode.style.top = getTop();
 
-            // make sure it's hidden from screenreaders.
-            this.domNode.setAttribute('aria-hidden', true);
-
-            this.domNode.style.background = 'yellow';
-            this.domNode.style.left = editor.getLayoutInfo().contentLeft + 'px';
-            this.domNode.style.width =
-              editor.getLayoutInfo().contentWidth + 'px';
-            this.domNode.style.top = getViewZoneTop();
-          }
-          return this.domNode;
-        },
-        getPosition: function() {
-          if (this.domNode) {
-            this.domNode.style.width =
-              editor.getLayoutInfo().contentWidth + 'px';
-            this.domNode.style.top = getViewZoneTop();
-          }
+          // must return null, so that Monaco knows the widget will position
+          // itself.
           return null;
-        }
+        };
+        return {
+          getId,
+          getDomNode,
+          getPosition
+        };
       };
 
-      this._editor.addOverlayWidget(this._overlayWidget);
+      this._domNode = createDescription();
 
-      // TODO: create this and overlayWidget from the same factory.
-      this._outputWidget = {
-        domNode: null,
-        getId: function() {
-          return 'my.output.widget';
-        },
-        getDomNode: function() {
-          if (!this.domNode) {
-            this.domNode = createOutputNode();
+      this._outputNode = createOutputNode();
 
-            // make sure it's hidden from screenreaders.
-            this.domNode.setAttribute('aria-hidden', true);
+      this._overlayWidget = createWidget(
+        'my.overlay.widget',
+        this._domNode,
+        getViewZoneTop
+      );
 
-            this.domNode.style.background = 'red';
-            this.domNode.style.left = editor.getLayoutInfo().contentLeft + 'px';
-            this.domNode.style.width =
-              editor.getLayoutInfo().contentWidth + 'px';
-            this.domNode.style.top = getOutputZoneTop();
-          }
-          return this.domNode;
-        },
-        getPosition: function() {
-          if (this.domNode) {
-            this.domNode.style.width =
-              editor.getLayoutInfo().contentWidth + 'px';
-            this.domNode.style.top = getOutputZoneTop();
-          }
-          return null;
-        }
-      };
+      this._outputWidget = createWidget(
+        'my.output.widget',
+        this._outputNode,
+        getOutputZoneTop
+      );
 
       this._editor.addOverlayWidget(this._overlayWidget);
+      // TODO: order of insertion into the DOM probably matters, revisit once
+      // the tabs have been fixed!
       this._editor.addOverlayWidget(this._outputWidget);
       // TODO: if we keep using a single editor and switching content (rather
       // than having multiple open editors), this view zone needs to be
@@ -414,7 +388,6 @@ class Editor extends Component {
 
     // make sure the overlayWidget has resized before using it to set the height
     domNode.style.width = this._editor.getLayoutInfo().contentWidth + 'px';
-    domNode.style.top = this.getViewZoneTop();
 
     // TODO: set via onComputedHeight?
     this.data[fileKey].viewZoneHeight = domNode.offsetHeight;
@@ -445,7 +418,6 @@ class Editor extends Component {
 
     // make sure the overlayWidget has resized before using it to set the height
     outputNode.style.width = this._editor.getLayoutInfo().contentWidth + 'px';
-    outputNode.style.top = this.getOutputZoneTop();
 
     // TODO: set via onComputedHeight?
     this.data[fileKey].outputZoneHeight = outputNode.offsetHeight;
@@ -493,8 +465,13 @@ class Editor extends Component {
     // The z-index needs increasing as ViewZones default to below the lines.
     domNode.style.zIndex = '10';
 
-    this._domNode = domNode;
+    domNode.setAttribute('aria-hidden', true);
 
+    domNode.style.background = 'yellow';
+    domNode.style.left = this._editor.getLayoutInfo().contentLeft + 'px';
+    domNode.style.width = this._editor.getLayoutInfo().contentWidth + 'px';
+    domNode.style.top = this.getViewZoneTop();
+    this._domNode = domNode;
     return domNode;
   }
 
@@ -504,10 +481,15 @@ class Editor extends Component {
 
     outputNode.innerHTML = 'TESTS GO HERE';
 
-    outputNode.style.background = 'lightblue';
-
     // The z-index needs increasing as ViewZones default to below the lines.
     outputNode.style.zIndex = '10';
+
+    outputNode.setAttribute('aria-hidden', true);
+
+    outputNode.style.background = 'var(--secondary-background)';
+    outputNode.style.left = this._editor.getLayoutInfo().contentLeft + 'px';
+    outputNode.style.width = this._editor.getLayoutInfo().contentWidth + 'px';
+    outputNode.style.top = this.getOutputZoneTop();
 
     this._outputNode = outputNode;
 
@@ -526,11 +508,6 @@ class Editor extends Component {
 
   onChange = editorValue => {
     const { updateFile } = this.props;
-    // TODO: widgets can go
-    const widget = this.data[this.state.fileKey].widget;
-    if (widget) {
-      this._editor.layoutContentWidget(widget);
-    }
     updateFile({ key: this.state.fileKey, editorValue });
   };
 
@@ -690,13 +667,21 @@ class Editor extends Component {
       return isDeleted ? event.changes[0].range.endLineNumber : 0;
     }
 
-    function getNextLine(range) {
-      return {
-        ...range,
-        startLineNumber: range.startLineNumber + 1,
-        endLineNumber: range.endLineNumber + 1
-      };
+    function getNewLineRanges(event) {
+      const newLines = event.changes.filter(
+        ({ text }) => text[0] === event.eol
+      );
+      return newLines.map(({ range }) => range);
     }
+
+    const translateRange = (range, lineDelta) => {
+      const iRange = {
+        ...range,
+        startLineNumber: range.startLineNumber + lineDelta,
+        endLineNumber: range.endLineNumber + lineDelta
+      };
+      return this._monaco.Range.lift(iRange);
+    };
 
     // TODO refactor this mess
     // TODO this listener needs to be replaced on reset.
@@ -707,9 +692,10 @@ class Editor extends Component {
       // edits. However, what if they made a warned edit, then a normal
       // edit, then a warned one.  Could it track that they need to make 3
       // undos?
-      // console.log('content', e);
+      const newLineRanges = getNewLineRanges(e).map(range =>
+        toStartOfLine(range)
+      );
       const deletedLine = getDeletedLine(e);
-      // console.log(deletedLine);
 
       const deletedRange = {
         startLineNumber: deletedLine,
@@ -719,6 +705,10 @@ class Editor extends Component {
       };
 
       if (e.isUndoing) {
+        // TODO: can we be more targeted? Only update when they could get out of
+        // sync
+        this.updateViewZone();
+        this.updateOutputZone();
         return;
       }
 
@@ -728,27 +718,82 @@ class Editor extends Component {
           if (
             this._monaco.Range.areIntersectingOrTouching(coveringRange, range)
           ) {
-            // TODO, this triggers twice
             console.log('OVERLAP!');
           }
         });
       };
 
-      const handleDecorationChange = id => {
+      // Make sure the zone tracks the decoration (i.e. the region)
+      const handleHintsZoneChange = id => {
+        const startOfZone = toStartOfLine(
+          model.getDecorationRange(id)
+        ).collapseToStart();
+        // the decoration needs adjusting if the user creates a line immediately
+        // before the greyed out region...
+        const lineOneRange = translateRange(startOfZone, -2);
+        // or immediately after it
+        const lineTwoRange = translateRange(startOfZone, -1);
+
+        for (const lineRange of newLineRanges) {
+          const shouldMoveZone = this._monaco.Range.areIntersectingOrTouching(
+            lineRange,
+            lineOneRange.plusRange(lineTwoRange)
+          );
+
+          if (shouldMoveZone) {
+            this.updateOutputZone();
+          }
+        }
+      };
+
+      // Make sure the zone tracks the decoration (i.e. the region)
+      const handleDescriptionZoneChange = id => {
+        const endOfZone = toLastLine(
+          model.getDecorationRange(id)
+        ).collapseToStart();
+        // the decoration needs adjusting if the user creates a line immediately
+        // before the editable region.
+        const lineOneRange = translateRange(endOfZone, -1);
+
+        for (const lineRange of newLineRanges) {
+          const shouldMoveZone = this._monaco.Range.areIntersectingOrTouching(
+            lineRange,
+            lineOneRange
+          );
+
+          if (shouldMoveZone) {
+            this.updateViewZone();
+          }
+        }
+      };
+
+      // Stops the greyed out region from covering the editable region. Does not
+      // change the font decoration.
+      const preventOverlap = id => {
         // Even though the decoration covers the whole line, it has a
         // startColumn that moves.  toStartOfLine ensures that the
         // comparison detects if any change has occured on that line
         // NOTE: any change in the decoration has already happened by this point
         // so this covers the *new* decoration range.
         const coveringRange = toStartOfLine(model.getDecorationRange(id));
-        const oldStartOfRange = getNextLine(coveringRange.collapseToStart());
+        const oldStartOfRange = translateRange(
+          coveringRange.collapseToStart(),
+          1
+        );
         const newCoveringRange = coveringRange.setStartPosition(
           oldStartOfRange.startLineNumber,
           1
         );
 
         // TODO: this triggers both when you delete the first line of the
-        // decoration AND the second. Is there a way to tell these cases apart?
+        // decoration AND the second. To see this, consider a region on line 5
+        // If you delete 5, then the new start is 4 and the computed start is 5
+        // so they match.
+        // If you delete 6, then the start of the region stays at 5, so the
+        // computed start is 6 and they still match.
+        // Is there a way to tell these cases apart?
+        // This means that if you delete the second line it actually removes the
+        // grey background from the first line.
         const touchingDeleted = this._monaco.Range.areIntersectingOrTouching(
           deletedRange,
           oldStartOfRange
@@ -763,6 +808,8 @@ class Editor extends Component {
             newCoveringRange,
             [id]
           );
+
+          this.updateOutputZone();
           // when there's a change, decorations will be [oldId, newId]
           return decorations.slice(-1)[0];
         } else {
@@ -772,10 +819,13 @@ class Editor extends Component {
 
       // we only need to handle the special case of the second region being
       // pulled up, the first region already behaves correctly.
-      this.data[key].endEditDecId = handleDecorationChange(
-        this.data[key].endEditDecId
-      );
+      this.data[key].endEditDecId = preventOverlap(this.data[key].endEditDecId);
 
+      // TODO: do the same for the description widget
+      // this has to be handle differently, because we care about the END
+      // of the zone, not the START
+      handleDescriptionZoneChange(this.data[key].startEditDecId);
+      handleHintsZoneChange(this.data[key].endEditDecId);
       warnUser(this.data[key].startEditDecId);
       warnUser(this.data[key].endEditDecId);
     });
@@ -833,7 +883,6 @@ class Editor extends Component {
         // dimensions in order to render correctly.
         this._editor.layout();
         if (this.data[fileKey].startEditDecId) {
-          console.log('data', this.data[fileKey]);
           this.updateViewZone();
           this.updateOutputZone();
         }
