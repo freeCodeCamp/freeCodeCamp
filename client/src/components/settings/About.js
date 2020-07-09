@@ -143,9 +143,9 @@ class AboutSettings extends Component {
     return this.setState(state => ({
       formValues: {
         ...state.formValues,
-        search: value,
-        timezones: filteredTimeZones
-      }
+        search: value
+      },
+      timezones: filteredTimeZones
     }));
   };
 
