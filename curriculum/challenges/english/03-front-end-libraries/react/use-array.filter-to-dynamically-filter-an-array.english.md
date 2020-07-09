@@ -146,7 +146,7 @@ class MyComponent extends React.Component {
     const usersOnline = this.state.users.filter(user => {
       return user.online;
     });
-    const renderOnlineUsers = usersOnline.map(user => {
+    const renderOnline = usersOnline.map(user => {
       return (
         <li key={user.username}>{user.username}</li>
       );
