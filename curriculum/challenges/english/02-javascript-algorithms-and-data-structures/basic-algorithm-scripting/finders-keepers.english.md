@@ -9,7 +9,7 @@ forumTopicId: 16016
 
 ## Description
 <section id='description'>
-Create a function that looks through an array, <code>arr</code>, and returns the first element in the array that passes a 'truth test'. That is to say, given an element <code>x</code>, the 'truth test' is passed if <code>func(x)</code> is <code>true</code>. If no element passes the test, return <code>undefined</code>.
+Create a function that looks through an array `arr` and returns the first element in it that passes a 'truth test'. This means that given an element `x`, the 'truth test' is passed if `func(x)` is `true`. If no element passes the test, return `undefined`.
 </section>
 
 ## Instructions
