@@ -133,28 +133,32 @@ class Editor extends Component {
         model: null,
         state: null,
         viewZoneId: null,
-        decId: null,
+        startEditDecId: null,
+        endEditDecId: null,
         viewZoneHeight: null
       },
       indexcss: {
         model: null,
         state: null,
         viewZoneId: null,
-        decId: null,
+        startEditDecId: null,
+        endEditDecId: null,
         viewZoneHeight: null
       },
       indexhtml: {
         model: null,
         state: null,
         viewZoneId: null,
-        decId: null,
+        startEditDecId: null,
+        endEditDecId: null,
         viewZoneHeight: null
       },
       indexjsx: {
         model: null,
         state: null,
         viewZoneId: null,
-        decId: null,
+        startEditDecId: null,
+        endEditDecId: null,
         viewZoneHeight: null
       }
     };
@@ -568,18 +572,8 @@ class Editor extends Component {
     }
   }
 
-  // TODO: if you press backspace at the start of decoration, it moves to
-  // partially cover the previous line and then can't be moved back (even via
-  // ctrl + z).  Is there an option to prevent this?
-  highlightLines(stickiness, target, highlightedRanges, oldIds = []) {
-    console.log('highlighting lines', highlightedRanges, oldIds);
-
-    highlightedRanges = highlightedRanges || [];
-    // NOTE: full line decorations can't be allowed to grow, because they do not
-    // shrink properly after they have grown.
-    // TODO: maybe allow the second region to grow after and the first to grow
-    // before
-    const lineDecoration = highlightedRanges.map(range => ({
+  highlightLines(stickiness, target, range, oldIds = []) {
+    const lineDecoration = {
       range,
       options: {
         isWholeLine: true,
@@ -587,23 +581,20 @@ class Editor extends Component {
         className: 'do-not-edit',
         stickiness
       }
-    }));
-    return target.deltaDecorations(oldIds, lineDecoration);
+    };
+    return target.deltaDecorations(oldIds, [lineDecoration]);
   }
 
-  highlightText(stickiness, target, highlightedRanges, oldIds = []) {
-    highlightedRanges = highlightedRanges || [];
-    // Unfortunately full line decorations can't grow at the edges, and so
-    // inline decorations must match them.
-    const inlineDecoration = highlightedRanges.map(range => ({
+  highlightText(stickiness, target, range, oldIds = []) {
+    const inlineDecoration = {
       range,
       options: {
         inlineClassName: 'myInlineDecoration',
         stickiness
       }
-    }));
+    };
 
-    return target.deltaDecorations(oldIds, inlineDecoration);
+    return target.deltaDecorations(oldIds, [inlineDecoration]);
   }
 
   // NOTE: this is where the view zone *should* be, not necessarily were it
@@ -639,8 +630,9 @@ class Editor extends Component {
   getLineAfterViewZone() {
     const { fileKey } = this.state;
     return (
-      this.data[fileKey].model.getDecorationRange(this.data[fileKey].decId)
-        .endLineNumber + 1
+      this.data[fileKey].model.getDecorationRange(
+        this.data[fileKey].startEditDecId
+      ).endLineNumber + 1
     );
   }
 
@@ -662,22 +654,31 @@ class Editor extends Component {
       return this.positionsToRange(model, positions);
     });
 
-    const decIds = this.highlightLines(
-      this._monaco.editor.TrackedRangeStickiness.NeverGrowsWhenTypingAtEdges,
+    // the first range should expand at the top
+    this.data[key].startEditDecId = this.highlightLines(
+      this._monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingBefore,
       model,
-      ranges
+      ranges[0]
     );
 
-    // we can fire and forget these decorations, no need to keep their ids (yet)
     this.highlightText(
-      this._monaco.editor.TrackedRangeStickiness.NeverGrowsWhenTypingAtEdges,
+      this._monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingBefore,
       model,
-      ranges
+      ranges[0]
     );
 
-    // TODO: avoid getting from array
-    this.data[key].decId = decIds[0];
-    this.data[key].endEditDecId = decIds[1];
+    // the second range should expand at the bottom
+    this.data[key].endEditDecId = this.highlightLines(
+      this._monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingAfter,
+      model,
+      ranges[1]
+    );
+
+    this.highlightText(
+      this._monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingAfter,
+      model,
+      ranges[1]
+    );
 
     // The deleted line is always considered to be the one that has moved up.
     // - if the user deletes at the end of line 5, line 6 is deleted and
@@ -754,13 +755,12 @@ class Editor extends Component {
         );
 
         if (touchingDeleted) {
-          console.log('deleted start of decoration!', id);
           // TODO: if they undo this should be reversed
           const decorations = this.highlightLines(
             this._monaco.editor.TrackedRangeStickiness
               .NeverGrowsWhenTypingAtEdges,
             model,
-            [newCoveringRange],
+            newCoveringRange,
             [id]
           );
           // when there's a change, decorations will be [oldId, newId]
@@ -769,12 +769,14 @@ class Editor extends Component {
           return id;
         }
       };
-      // this.data[key].decId = handleDecorationChange(this.data[key].decId);
+
+      // we only need to handle the special case of the second region being
+      // pulled up, the first region already behaves correctly.
       this.data[key].endEditDecId = handleDecorationChange(
         this.data[key].endEditDecId
       );
 
-      warnUser(this.data[key].decId);
+      warnUser(this.data[key].startEditDecId);
       warnUser(this.data[key].endEditDecId);
     });
   }
@@ -820,7 +822,7 @@ class Editor extends Component {
         // now:
         if (this.props.output) {
           this._outputNode.innerHTML = this.props.output;
-          if (this.data[fileKey].decId) {
+          if (this.data[fileKey].startEditDecId) {
             this.updateOutputZone();
           }
         }
@@ -830,7 +832,7 @@ class Editor extends Component {
         // Order matters here. The view zones need to know the new editor
         // dimensions in order to render correctly.
         this._editor.layout();
-        if (this.data[fileKey].decId) {
+        if (this.data[fileKey].startEditDecId) {
           console.log('data', this.data[fileKey]);
           this.updateViewZone();
           this.updateOutputZone();
