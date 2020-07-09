@@ -69,6 +69,7 @@ const propTypes = {
     isMachineLearningPyCertV7: PropTypes.bool,
     linkedin: PropTypes.string,
     location: PropTypes.string,
+    timezone: PropTypes.string,
     name: PropTypes.string,
     picture: PropTypes.string,
     points: PropTypes.number,
@@ -151,6 +152,7 @@ export function ShowSettings(props) {
       points,
       theme,
       location,
+      timezone,
       name,
       githubProfile,
       linkedin,
@@ -212,6 +214,7 @@ export function ShowSettings(props) {
             picture={picture}
             points={points}
             submitNewAbout={submitNewAbout}
+            timezone={timezone}
             toggleNightMode={toggleNightMode}
             username={username}
           />

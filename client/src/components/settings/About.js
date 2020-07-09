@@ -11,6 +11,8 @@ import ThemeSettings from './Theme';
 import UsernameSettings from './Username';
 import BlockSaveButton from '../helpers/form/BlockSaveButton';
 
+import TIMEZONES from '../../../../config/timezones.json';
+
 const propTypes = {
   about: PropTypes.string,
   currentTheme: PropTypes.string,
@@ -18,7 +20,9 @@ const propTypes = {
   name: PropTypes.string,
   picture: PropTypes.string,
   points: PropTypes.number,
+  search: PropTypes.string,
   submitNewAbout: PropTypes.func.isRequired,
+  timezone: PropTypes.string,
   toggleNightMode: PropTypes.func.isRequired,
   username: PropTypes.string
 };
@@ -27,29 +31,41 @@ class AboutSettings extends Component {
   constructor(props) {
     super(props);
 
-    const { name = '', location = '', picture = '', about = '' } = props;
+    const {
+      name = '',
+      location = '',
+      picture = '',
+      about = '',
+      timezone = '',
+      search = ''
+    } = props;
     const values = {
       name,
       location,
       picture,
-      about
+      about,
+      timezone,
+      search
     };
     this.state = {
       formValues: { ...values },
       originalValues: { ...values },
-      formClicked: false
+      formClicked: false,
+      timezones: TIMEZONES
     };
   }
 
   componentDidUpdate() {
-    const { name, location, picture, about } = this.props;
-    const { formValues, formClicked } = this.state;
+    const { name, location, picture, about, timezone, search } = this.props;
+    const { formValues, formClicked, timezones } = this.state;
     if (
       formClicked &&
       name === formValues.name &&
       location === formValues.location &&
       picture === formValues.picture &&
-      about === formValues.about
+      about === formValues.about &&
+      timezone === formValues.timezone &&
+      search === formValues.search
     ) {
       /* eslint-disable-next-line react/no-did-update-set-state */
       return this.setState({
@@ -57,7 +73,9 @@ class AboutSettings extends Component {
           name,
           location,
           picture,
-          about
+          about,
+          timezones,
+          search
         },
         formClicked: false
       });
@@ -101,6 +119,36 @@ class AboutSettings extends Component {
     }));
   };
 
+  handleTimeZoneChange = e => {
+    const value = e.target.value.slice(0);
+    return this.setState(state => ({
+      formValues: {
+        ...state.formValues,
+        timezone: value
+      }
+    }));
+  };
+
+  handleTimeZoneSearch = e => {
+    const value = e.target.value.slice(0);
+    let filteredTimeZones = [...TIMEZONES].filter(zone => {
+      for (let area of zone.areas) {
+        if (area.includes(value)) {
+          return true;
+        }
+      }
+      return false;
+    });
+    console.log(filteredTimeZones);
+    return this.setState(state => ({
+      formValues: {
+        ...state.formValues,
+        search: value,
+        timezones: filteredTimeZones
+      }
+    }));
+  };
+
   handlePictureChange = e => {
     const value = e.target.value.slice(0);
     return this.setState(state => ({
@@ -123,7 +171,8 @@ class AboutSettings extends Component {
 
   render() {
     const {
-      formValues: { name, location, picture, about }
+      formValues: { name, location, picture, about, timezone, search },
+      timezones
     } = this.state;
     const { currentTheme, username, toggleNightMode } = this.props;
     return (
@@ -151,6 +200,29 @@ class AboutSettings extends Component {
                 type='text'
                 value={location}
               />
+            </FormGroup>
+            <FormGroup controlId='about-timezone'>
+              <ControlLabel>
+                <strong>Time Zone (UTC)</strong>
+              </ControlLabel>
+              <FormControl
+                as='input'
+                onChange={this.handleTimeZoneSearch}
+                placeholder='Search Here...'
+                type='text'
+                value={search}
+              />
+              <FormControl
+                as='select'
+                componentClass='select'
+                onChange={this.handleTimeZoneChange}
+                type='select'
+                value={timezone || '0'}
+              >
+                {timezones.map(timezone => (
+                  <option key={timezone.id}>{timezone.text}</option>
+                ))}
+              </FormControl>
             </FormGroup>
             <FormGroup controlId='about-picture'>
               <ControlLabel>
