@@ -7,7 +7,7 @@
 > 
 > **WSL 2**: Windows 10 64-bit, version 2004, Build 19041 or higher
 
-Follow these guidlines for setting up WSL to set up freeCodeCamp locally.
+Follow these guidelines for setting up WSL to set up freeCodeCamp locally.
 
 This guide covers some common issues encountered with the setup of WSL.
 
@@ -165,13 +165,13 @@ sudo apt-get install libcurl4-openssl-dev
 9) Unpack all the source packages using the following command:
 
 > [!NOTE]
-> The name `git_2.17.1-1ubuntu0.1` could vary based on the lastest version. So look in to the directory for the correct version name.
+> The name `git_2.17.1-1ubuntu0.1` could vary based on the latest version. So look into the directory for the correct version name.
 
 ```sh
 dpkg-source -x git_2.17.1-1ubuntu0.1
 ```
 
-10) Change directory in to `git_2.17.1` folder and open the control file located inside debian folder (git_2.17.1/debian/control) in a text editor. Replace all the occurences of _“libcurl4-gnutls-dev”_ to _“libcurl4-openssl-dev”_.
+10) Change directory in to `git_2.17.1` folder and open the control file located inside debian folder (git_2.17.1/debian/control) in a text editor. Replace all the occurrences of _“libcurl4-gnutls-dev”_ to _“libcurl4-openssl-dev”_.
 
 11) Also open _“debian/rules”_ file and delete the line _“TEST=test”_
 
