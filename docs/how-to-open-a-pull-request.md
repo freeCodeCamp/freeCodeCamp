@@ -73,7 +73,7 @@ Some examples of good PRs titles would be:
 
 Our moderators will now take a look and leave you feedback. Please be patient with the fellow moderators and respect their time. All pull requests are reviewed in due course.
 
-If you need any assistance please disscuss in the [contributors chat room](https://gitter.im/FreeCodeCamp/Contributors), we are more than happy to help you.
+If you need any assistance please discuss in the [contributors chat room](https://gitter.im/FreeCodeCamp/Contributors), we are more than happy to help you.
 
 > [!TIP]
 > If you are to be contributing more pull requests, we recommend you read the [making changes and syncing](https://contribute.freecodecamp.org/#/how-to-setup-freecodecamp-locally?id=making-changes-locally) guidelines to avoid having to delete your fork.
