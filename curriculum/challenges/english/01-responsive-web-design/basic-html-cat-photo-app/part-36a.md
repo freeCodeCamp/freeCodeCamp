@@ -1,6 +1,6 @@
 ---
-id: 5ef9b03c81a63668521804d4
-title: Part 30
+id: 5ef9b03c81a63668521804db
+title: Part 36a
 challengeType: 0
 isHidden: true
 ---
@@ -8,9 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-The `strong` element is used to indicate that some text is of strong importance or urgent.
-
-In the `figcaption` you just added, indicate that `hate` is of strong importance by wrapping it in a `strong` element.
+Require the user to fill out the text field before submitting the form by adding the word `required` like in this example: `<input type="text" required>`.
 
 </section>
 
@@ -19,12 +17,8 @@ In the `figcaption` you just added, indicate that `hate` is of strong importance
 
 ```yml
 tests:
-  - text: 'Your `strong` element should have an opening tag. Opening tags have this syntax: `<elementName>`.'
-    testString: assert( document.querySelector('strong') );
-  - text: Your strong element should have a closing tag. Closing tags have a `/` just after the `<` character.
-    testString: assert( code.match(/<\/strong\>/) );
-  - text: Your strong element should surround the word `hate` in the text `Cats hate other cats.` You have either omitted the text or have a typo.
-    testString: assert( document.querySelectorAll('figcaption')[1].querySelector('strong').innerText.toLowerCase() === 'hate' );
+  - text: See description above for instructions.
+    testString: ''
 
 ```
 
@@ -65,10 +59,14 @@ tests:
         </ol>
         <figure>
           <img src="https://bit.ly/fcc-cats" alt="Five cats looking around a field.">
-          --fcc-editable-region--
-          <figcaption>Cats hate other cats.</figcaption>  
-          --fcc-editable-region--
+          <figcaption>Cats <strong>hate</strong> other cats.</figcaption>  
         </figure>
+      </section>
+      <section>
+        <h2>Cat Form</h2>
+        <form action="/submit-cat-photo">
+          <input type="text" placeholder="cat photo URL">
+        </form>
       </section>
     </main>
   </body>

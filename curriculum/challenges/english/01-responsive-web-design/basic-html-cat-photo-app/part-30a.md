@@ -1,6 +1,6 @@
 ---
-id: 5ef9b03c81a63668521804db
-title: Part 39
+id: 5f07fb1579dc934717801375
+title: Part 31
 challengeType: 0
 isHidden: true
 ---
@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Require the user to fill out the text field before submitting the form by adding the word `required` like in this example: `<input type="text" required>`.
+It is time to add a new section. Add a third `section` element below the second `section` element.
 
 </section>
 
@@ -17,8 +17,21 @@ Require the user to fill out the text field before submitting the form by adding
 
 ```yml
 tests:
-  - text: See description above for instructions.
-    testString: ''
+  - text: "Your `section` element should have an opening tag. Opening tags have this syntax: `<elementName>`."
+    testString: assert( document.querySelectorAll('section').length >= 3 );
+  - text: You should only add one opening `section` tag. Please remove any extras.
+    testString: assert( document.querySelectorAll('section').length === 3 );
+  - text: Your `section` element should have a closing tag. Closing tags have a `/` just after the `<` character.
+    testString: assert( code.match(/<\/section>/g).length >= 3 );
+  - text: You should only add one closing `section`) tag. Please remove any extras.
+    testString: assert( code.match(/<\/section>/g).length === 3 );
+  - text: All of the `section` elements should be between the opening and closing tags of the `main` element.
+    testString: |
+      const childrenOfMain = [ ...document.querySelector('main').children ];
+      const foundElems = childrenOfMain.filter(child => {
+        return child.nodeName === 'SECTION';
+      });
+      assert( childrenOfMain.length === 3 );
 
 ```
 
@@ -33,10 +46,14 @@ tests:
   <body>
     <h1>CatPhotoApp</h1>
     <main>
+      <section>
       <h2>Cat Photos</h2>
       <!-- TODO: Add link to cat photos -->
       <p>Click here to view more <a target="_blank" href="https://www.freecodecamp.org/cat-photos">cat photos</a>.</p>
       <a href="https://www.freecodecamp.org/cat-photos"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+      </section>
+      --fcc-editable-region--
+      <section>
       <h2>Cat Lists</h2>
       <p>Things cats love:</p>
       <ul>
@@ -58,11 +75,8 @@ tests:
         <img src="https://bit.ly/fcc-cats" alt="Five cats looking around a field.">
         <figcaption>Cats <strong>hate</strong> other cats.</figcaption>  
       </figure>
-      <h2>Cat Form</h2>
-      <form action="/submit-cat-photo">
-        <input type="text" placeholder="cat photo URL">
-        <button type="submit">Submit</button>
-      </form>
+      </section>
+      --fcc-editable-region--
     </main>
   </body>
 </html>
