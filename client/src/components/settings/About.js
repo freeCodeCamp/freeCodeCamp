@@ -171,14 +171,7 @@ class AboutSettings extends Component {
 
   render() {
     const {
-      formValues: {
-        name,
-        location,
-        picture,
-        about,
-        timezone = TIMEZONES[35],
-        search
-      },
+      formValues: { name, location, picture, about, timezone, search },
       timezones
     } = this.state;
     const { currentTheme, username, toggleNightMode } = this.props;
@@ -224,7 +217,7 @@ class AboutSettings extends Component {
                 componentClass='select'
                 onChange={this.handleTimeZoneChange}
                 type='select'
-                value={timezone || TIMEZONES[35]}
+                value={timezone.text}
               >
                 {timezones.map(timezone => (
                   <option key={timezone.id}>{timezone.text}</option>
