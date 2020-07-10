@@ -549,6 +549,7 @@ function createShowCert(app) {
           username,
           name,
           date: format(new Date(completedDate), 'MMMM D, YYYY'),
+          fullDate: new Date(completedDate),
           completionTime
         });
       }

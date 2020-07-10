@@ -333,6 +333,13 @@ export const userSelector = state => {
   return state[ns].user[username] || {};
 };
 
+// Test Selector
+export const getUserOffsetDateSelector = state => {
+  const username = usernameSelector(state);
+  console.log('REDUX: ', state[ns].user[username]);
+  return state[ns].user[username].timezone || {};
+};
+
 export const sessionMetaSelector = state => state[ns].sessionMeta;
 export const activeDonationsSelector = state => {
   const donors =

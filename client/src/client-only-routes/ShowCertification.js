@@ -16,7 +16,8 @@ import {
   userFetchStateSelector,
   usernameSelector,
   isDonatingSelector,
-  executeGA
+  executeGA,
+  getUserOffsetDateSelector
 } from '../redux';
 import { certMap } from '../../src/resources/certAndProjectMap';
 import { createFlashMessage } from '../components/Flash/redux';
@@ -33,7 +34,8 @@ const propTypes = {
     certName: PropTypes.string,
     certTitle: PropTypes.string,
     completionTime: PropTypes.number,
-    date: PropTypes.string
+    date: PropTypes.string,
+    fullDate: PropTypes.string
   }),
   certDashedName: PropTypes.string,
   certName: PropTypes.string,
@@ -52,6 +54,7 @@ const propTypes = {
     complete: PropTypes.bool
   }),
   userFullName: PropTypes.string,
+  userOffset: PropTypes.string,
   username: PropTypes.string,
   validCertName: PropTypes.bool
 };
@@ -66,13 +69,22 @@ const mapStateToProps = (state, { certName }) => {
     usernameSelector,
     userFetchStateSelector,
     isDonatingSelector,
-    (cert, fetchState, signedInUserName, userFetchState, isDonating) => ({
+    getUserOffsetDateSelector,
+    (
+      cert,
+      fetchState,
+      signedInUserName,
+      userFetchState,
+      isDonating,
+      userOffset
+    ) => ({
       cert,
       fetchState,
       validCertName,
       signedInUserName,
       userFetchState,
-      isDonating
+      isDonating,
+      userOffset
     })
   );
 };
@@ -92,6 +104,7 @@ class ShowCertification extends Component {
 
     this.hideDonationSection = this.hideDonationSection.bind(this);
     this.handleProcessing = this.handleProcessing.bind(this);
+    // this.getTimezoneOffset = this.getTimezoneOffset.bind(this);
   }
 
   componentDidMount() {
@@ -152,13 +165,20 @@ class ShowCertification extends Component {
     this.setState({ isDonationSubmitted: true });
   }
 
+  // getTimezoneOffset(dateIssued) {
+  //   console.log(dateIssued);
+  //   let offsetDate = '';
+  //   return offsetDate;
+  // }
+
   render() {
     const {
       cert,
       fetchState,
       validCertName,
       createFlashMessage,
-      certName
+      certName,
+      userOffset
     } = this.props;
 
     const {
@@ -189,13 +209,14 @@ class ShowCertification extends Component {
     }
 
     const {
-      date: issueDate,
+      fullDate: issueDate,
       name: userFullName,
       username,
       certTitle,
       completionTime
     } = cert;
-
+    const offset = userOffset;
+    console.log('OFFSET: ', offset);
     const donationCloseBtn = (
       <div>
         <Button
@@ -250,7 +271,7 @@ class ShowCertification extends Component {
               <Col md={7} sm={12}>
                 <div className='issue-date'>
                   Issued&nbsp;
-                  <strong>{issueDate}</strong>
+                  <strong>{issueDate + offset}</strong>
                 </div>
               </Col>
             </header>
