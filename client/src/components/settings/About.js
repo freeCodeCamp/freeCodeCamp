@@ -11,7 +11,7 @@ import ThemeSettings from './Theme';
 import UsernameSettings from './Username';
 import BlockSaveButton from '../helpers/form/BlockSaveButton';
 
-import TIMEZONES from '../../../../config/timezones.json';
+import getTimezonesOrDefault from '../../utils/get-timezones';
 
 const propTypes = {
   about: PropTypes.string,
@@ -36,7 +36,7 @@ class AboutSettings extends Component {
       location = '',
       picture = '',
       about = '',
-      timezone = TIMEZONES[35],
+      timezone = getTimezonesOrDefault(true),
       search = ''
     } = props;
     const values = {
@@ -51,7 +51,7 @@ class AboutSettings extends Component {
       formValues: { ...values },
       originalValues: { ...values },
       formClicked: false,
-      timezones: TIMEZONES
+      timezones: getTimezonesOrDefault()
     };
   }
 
@@ -132,7 +132,7 @@ class AboutSettings extends Component {
 
   handleTimeZoneSearch = e => {
     const value = e.target.value.slice(0);
-    let filteredTimeZones = [...TIMEZONES].filter(zone => {
+    let filteredTimeZones = [...getTimezonesOrDefault()].filter(zone => {
       for (let area of zone.areas) {
         if (area.includes(value)) {
           return true;
