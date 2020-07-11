@@ -11,7 +11,7 @@ While you do not need to generate the documentation site locally, sometimes it m
 
 The site is generated using [`docsify`](https://docsify.js.org), and served using GitHub pages.
 
-Typically you would not need to change any configuration or build the site locally, but incase you are interested here is how it works:
+Typically you would not need to change any configuration or build the site locally. In case you are interested, here is how it works:
 
 - The homepage's source for this site is available in [`docs/index.html`](index.html).
 - We serve this file as a SPA using `docsify` and GitHub Pages.
