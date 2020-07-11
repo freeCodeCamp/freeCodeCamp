@@ -205,8 +205,9 @@ function cleanup() {
 }
 
 function runTests({ challengesForLang, meta }) {
+  // rethrow unhandled rejections to make sure the tests exit with -1
   process.on('unhandledRejection', err => {
-    throw new Error(`unhandledRejection: ${err.name}, ${err.message}`);
+    throw err;
   });
 
   describe('Check challenges', function() {
