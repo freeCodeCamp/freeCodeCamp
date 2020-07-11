@@ -22,7 +22,7 @@ const propTypes = {
   points: PropTypes.number,
   search: PropTypes.string,
   submitNewAbout: PropTypes.func.isRequired,
-  timezone: PropTypes.string,
+  timezone: PropTypes.object,
   toggleNightMode: PropTypes.func.isRequired,
   username: PropTypes.string
 };
@@ -53,6 +53,7 @@ class AboutSettings extends Component {
       formClicked: false,
       timezones: getTimezonesOrDefault()
     };
+    this.handleTimeZoneChange = this.handleTimeZoneChange.bind(this);
   }
 
   componentDidUpdate() {
@@ -121,7 +122,7 @@ class AboutSettings extends Component {
   };
 
   handleTimeZoneChange = e => {
-    const value = e.target.value.slice(0);
+    const value = JSON.parse(e.target.value.slice(0));
     return this.setState(state => ({
       formValues: {
         ...state.formValues,
@@ -217,10 +218,12 @@ class AboutSettings extends Component {
                 componentClass='select'
                 onChange={this.handleTimeZoneChange}
                 type='select'
-                value={timezone.text}
+                value={JSON.stringify(timezone)}
               >
                 {timezones.map(timezone => (
-                  <option key={timezone.id}>{timezone.text}</option>
+                  <option key={timezone.id} value={JSON.stringify(timezone)}>
+                    {timezone.text}
+                  </option>
                 ))}
               </FormControl>
             </FormGroup>

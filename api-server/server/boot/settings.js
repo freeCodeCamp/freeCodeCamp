@@ -177,11 +177,11 @@ function updateMyProjects(req, res, next) {
 function updateMyAbout(req, res, next) {
   const {
     user,
-    body: { name, location, about, picture }
+    body: { name, location, about, picture, timezone }
   } = req;
-  log(name, location, picture, about);
+  log(name, location, picture, about, timezone);
   return user.updateAttributes(
-    { name, location, about, picture },
+    { name, location, about, picture, timezone },
     createStandardHandler(req, res, next)
   );
 }

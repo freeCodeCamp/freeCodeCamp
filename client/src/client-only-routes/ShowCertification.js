@@ -27,6 +27,8 @@ import reallyWeirdErrorMessage from '../utils/reallyWeirdErrorMessage';
 import RedirectHome from '../components/RedirectHome';
 import { Loader } from '../components/helpers';
 
+import getTimezonesOrDefault from '../utils/get-timezones';
+
 const propTypes = {
   cert: PropTypes.shape({
     username: PropTypes.string,
@@ -50,11 +52,11 @@ const propTypes = {
   issueDate: PropTypes.string,
   showCert: PropTypes.func.isRequired,
   signedInUserName: PropTypes.string,
+  timezone: PropTypes.object,
   userFetchState: PropTypes.shape({
     complete: PropTypes.bool
   }),
   userFullName: PropTypes.string,
-  userOffset: PropTypes.string,
   username: PropTypes.string,
   validCertName: PropTypes.bool
 };
@@ -76,7 +78,7 @@ const mapStateToProps = (state, { certName }) => {
       signedInUserName,
       userFetchState,
       isDonating,
-      userOffset
+      timezone
     ) => ({
       cert,
       fetchState,
@@ -84,7 +86,7 @@ const mapStateToProps = (state, { certName }) => {
       signedInUserName,
       userFetchState,
       isDonating,
-      userOffset
+      timezone
     })
   );
 };
@@ -178,7 +180,7 @@ class ShowCertification extends Component {
       validCertName,
       createFlashMessage,
       certName,
-      userOffset
+      timezone
     } = this.props;
 
     const {
@@ -215,8 +217,15 @@ class ShowCertification extends Component {
       certTitle,
       completionTime
     } = cert;
-    const offset = userOffset;
-    console.log('OFFSET: ', offset);
+
+    // Calculate offsetDate
+    const issueDateMilli = new Date(issueDate).getTime();
+    const offsetMilli =
+      getTimezonesOrDefault().find(x => x.id === timezone.id).offset * 3600000;
+    const offsetDate = new Date(issueDateMilli + offsetMilli)
+      .toUTCString()
+      .slice(0, 16);
+
     const donationCloseBtn = (
       <div>
         <Button
@@ -271,7 +280,7 @@ class ShowCertification extends Component {
               <Col md={7} sm={12}>
                 <div className='issue-date'>
                   Issued&nbsp;
-                  <strong>{issueDate + offset}</strong>
+                  <strong>{offsetDate}</strong>
                 </div>
               </Col>
             </header>

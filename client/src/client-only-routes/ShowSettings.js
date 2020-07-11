@@ -69,7 +69,6 @@ const propTypes = {
     isMachineLearningPyCertV7: PropTypes.bool,
     linkedin: PropTypes.string,
     location: PropTypes.string,
-    timezone: PropTypes.string,
     name: PropTypes.string,
     picture: PropTypes.string,
     points: PropTypes.number,
@@ -84,6 +83,7 @@ const propTypes = {
     ),
     sendQuincyEmail: PropTypes.bool,
     theme: PropTypes.string,
+    timezone: PropTypes.object,
     twitter: PropTypes.string,
     username: PropTypes.string,
     website: PropTypes.string

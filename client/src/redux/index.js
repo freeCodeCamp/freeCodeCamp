@@ -22,6 +22,8 @@ import { types as challengeTypes } from '../templates/Challenges/redux/';
 // eslint-disable-next-line max-len
 import { CURRENT_CHALLENGE_KEY } from '../templates/Challenges/redux/current-challenge-saga';
 
+import getTimezonesOrDefault from '../utils/get-timezones';
+
 export const ns = 'app';
 
 export const defaultFetchState = {
@@ -333,11 +335,10 @@ export const userSelector = state => {
   return state[ns].user[username] || {};
 };
 
-// Test Selector
 export const getUserOffsetDateSelector = state => {
   const username = usernameSelector(state);
-  console.log('REDUX: ', state[ns].user[username]);
-  return state[ns].user[username].timezone || {};
+  const getDefault = true;
+  return state[ns].user[username].timezone || getTimezonesOrDefault(getDefault);
 };
 
 export const sessionMetaSelector = state => state[ns].sessionMeta;
