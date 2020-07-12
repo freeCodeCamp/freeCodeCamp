@@ -7,11 +7,11 @@
 
 ## About the documentation site
 
-While you do not need to generate the documenatation site locally, sometimes it may be required for instance if you are working on the site theme or a feature for the site.
+While you do not need to generate the documentation site locally, sometimes it may be required for instance if you are working on the site theme or a feature for the site.
 
 The site is generated using [`docsify`](https://docsify.js.org), and served using GitHub pages.
 
-Typically you would not need to change any configuration, or build the site locally, but incase you are interested here is how it works:
+Typically you would not need to change any configuration or build the site locally. In case you are interested, here is how it works:
 
 - The homepage's source for this site is available in [`docs/index.html`](index.html).
 - We serve this file as a SPA using `docsify` and GitHub Pages.
@@ -19,7 +19,7 @@ Typically you would not need to change any configuration, or build the site loca
 - The homepage is generated from the [`index.md`](index.md).
 - the sidebar navigation is generated from [`components/sidebar.md`](components/sidebar.md).
 
-## Serving the documenation site locally
+## Serving the documentation site locally
 
 Clone freeCodeCamp:
 
