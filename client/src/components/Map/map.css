@@ -15,8 +15,8 @@ button.map-title {
   display: flex;
   align-items: center;
   cursor: pointer;
-  padding-top: 18px;
-  padding-bottom: 18px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   background: transparent;
   border: none;
   text-align: left;
@@ -44,6 +44,13 @@ button.map-title:hover {
   flex-shrink: 0;
   fill: var(--color-quaternary) !important;
   stroke: var(--color-quaternary);
+}
+
+.superblock .map-title .progress-display {
+  width: auto;
+  height: 100%;
+  margin-left: auto;
+  margin-right: 0;
 }
 
 li.open > .map-title svg:first-child {

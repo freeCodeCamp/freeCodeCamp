@@ -9,7 +9,9 @@ import { dasherize } from '../../../../../utils/slugs';
 import Block from './Block';
 
 import { makeExpandedSuperBlockSelector, toggleSuperBlock } from '../redux';
+import { completedChallengesSelector } from '../../../redux';
 import Caret from '../../../assets/icons/Caret';
+import ProgressDisplay from '../../../assets/icons/ProgressDisplay';
 import { ChallengeNode } from '../../../redux/propTypes';
 
 const mapStateToProps = (state, ownProps) => {
@@ -17,7 +19,11 @@ const mapStateToProps = (state, ownProps) => {
 
   return createSelector(
     expandedSelector,
-    isExpanded => ({ isExpanded })
+    completedChallengesSelector,
+    (isExpanded, completedChallenges) => ({
+      isExpanded,
+      completedChallenges: completedChallenges.map(({ id }) => id)
+    })
   )(state);
 };
 
@@ -31,6 +37,8 @@ function mapDispatchToProps(dispatch) {
 }
 
 const propTypes = {
+  challenges: PropTypes.array,
+  completedChallenges: PropTypes.arrayOf(PropTypes.string),
   introNodes: PropTypes.arrayOf(
     PropTypes.shape({
       fields: PropTypes.shape({ slug: PropTypes.string.isRequired }),
@@ -55,13 +63,8 @@ function createSuperBlockTitle(str) {
 }
 
 export class SuperBlock extends Component {
-  renderBlock(superBlock) {
-    const { nodes, introNodes } = this.props;
-    const blocksForSuperBlock = nodes.filter(
-      node => node.superBlock === superBlock
-    );
-    // since the nodes have been filtered based on isHidden, any blocks whose
-    // nodes have been entirely removed will not appear in this array.
+  renderBlock(blocksForSuperBlock) {
+    const { introNodes } = this.props;
     const blockDashedNames = uniq(
       blocksForSuperBlock.map(({ block }) => block)
     );
@@ -90,7 +93,24 @@ export class SuperBlock extends Component {
   }
 
   render() {
-    const { superBlock, isExpanded, toggleSuperBlock } = this.props;
+    const {
+      completedChallenges,
+      superBlock,
+      nodes,
+      isExpanded,
+      toggleSuperBlock
+    } = this.props;
+
+    // since the nodes have been filtered based on isHidden, any blocks whose
+    // nodes have been entirely removed will not appear in this array.
+    const blocksForSuperBlock = nodes.filter(
+      node => node.superBlock === superBlock
+    );
+
+    const completedCountForSuperBlock = blocksForSuperBlock.filter(block =>
+      completedChallenges.some(completedId => block.id === completedId)
+    ).length;
+
     return (
       <li
         className={`superblock ${isExpanded ? 'open' : ''}`}
@@ -103,8 +123,11 @@ export class SuperBlock extends Component {
         >
           <Caret />
           <h4>{createSuperBlockTitle(superBlock)}</h4>
+          <ProgressDisplay
+            progress={completedCountForSuperBlock / blocksForSuperBlock.length}
+          />
         </button>
-        {isExpanded ? this.renderBlock(superBlock) : null}
+        {isExpanded ? this.renderBlock(blocksForSuperBlock) : null}
       </li>
     );
   }
