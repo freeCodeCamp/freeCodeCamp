@@ -32,26 +32,28 @@ function ProgressDisplay(props) {
         width='32'
         xmlns='http://www.w3.org/2000/svg'
       >
-        <g>
-          <title>{title}</title>
-          <circle
-            cx='16'
-            cy='16'
-            fill='var(--secondary-background)'
-            r='14'
-            stroke='var(--secondary-color)'
-            strokeWidth='3'
-          />
-          <path
-            d={
-              progress < 1
-                ? generateArcPath(16, 16, 10, progress * 2 * Math.PI)
-                : CHECK_MARK_PATH
-            }
-            fill='var(--secondary-color)'
-            stroke='null'
-          />
-        </g>
+        {progress > 0 ? (
+          <g>
+            <title>{title}</title>
+            <circle
+              cx='16'
+              cy='16'
+              fill='var(--secondary-background)'
+              r='14'
+              stroke='var(--secondary-color)'
+              strokeWidth='3'
+            />
+            <path
+              d={
+                progress < 1
+                  ? generateArcPath(16, 16, 10, progress * 2 * Math.PI)
+                  : CHECK_MARK_PATH
+              }
+              fill='var(--secondary-color)'
+              stroke='null'
+            />
+          </g>
+        ) : null}
       </svg>
     </Fragment>
   );
