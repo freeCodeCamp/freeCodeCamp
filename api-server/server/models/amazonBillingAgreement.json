@@ -27,7 +27,12 @@
     "billingAgreementId": {
       "type": "string",
       "required": true,
-      "description": "The donation subscription id returned from the provider"
+      "description": "Donation subscription id returned from the provider"
+    },
+    "email": {
+      "type": "string",
+      "required": true,
+      "description": "Email associated with donor account"
     }
   },
   "relations": {
