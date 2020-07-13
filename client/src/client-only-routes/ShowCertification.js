@@ -106,7 +106,7 @@ class ShowCertification extends Component {
 
     this.hideDonationSection = this.hideDonationSection.bind(this);
     this.handleProcessing = this.handleProcessing.bind(this);
-    // this.getTimezoneOffset = this.getTimezoneOffset.bind(this);
+    this.getTimezoneOffset = this.getTimezoneOffset.bind(this);
   }
 
   componentDidMount() {
@@ -167,11 +167,22 @@ class ShowCertification extends Component {
     this.setState({ isDonationSubmitted: true });
   }
 
-  // getTimezoneOffset(dateIssued) {
-  //   console.log(dateIssued);
-  //   let offsetDate = '';
-  //   return offsetDate;
-  // }
+  getTimezoneOffset(dateIssued) {
+    // Calculate offsetDate
+    let offsetDate = '';
+    if (Object.keys(this.props.timezone).length > 1) {
+      const issueDateMilli = new Date(dateIssued).getTime();
+      const offsetMilli =
+        getTimezonesOrDefault().find(x => x.id === this.props.timezone.id)
+          .offset * 3600000;
+      offsetDate = new Date(issueDateMilli + offsetMilli)
+        .toUTCString()
+        .slice(0, 16);
+    } else {
+      offsetDate = new Date(dateIssued).toDateString();
+    }
+    return offsetDate;
+  }
 
   render() {
     const {
@@ -179,8 +190,7 @@ class ShowCertification extends Component {
       fetchState,
       validCertName,
       createFlashMessage,
-      certName,
-      timezone
+      certName
     } = this.props;
 
     const {
@@ -217,14 +227,6 @@ class ShowCertification extends Component {
       certTitle,
       completionTime
     } = cert;
-
-    // Calculate offsetDate
-    const issueDateMilli = new Date(issueDate).getTime();
-    const offsetMilli =
-      getTimezonesOrDefault().find(x => x.id === timezone.id).offset * 3600000;
-    const offsetDate = new Date(issueDateMilli + offsetMilli)
-      .toUTCString()
-      .slice(0, 16);
 
     const donationCloseBtn = (
       <div>
@@ -280,7 +282,7 @@ class ShowCertification extends Component {
               <Col md={7} sm={12}>
                 <div className='issue-date'>
                   Issued&nbsp;
-                  <strong>{offsetDate}</strong>
+                  <strong>{this.getTimezoneOffset(issueDate)}</strong>
                 </div>
               </Col>
             </header>
