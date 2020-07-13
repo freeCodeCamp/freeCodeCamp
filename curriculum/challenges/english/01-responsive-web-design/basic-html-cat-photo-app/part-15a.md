@@ -25,7 +25,7 @@ tests:
     testString: assert( code.match(/<\/section\>/) );
   - text: The entire `section` element should be between the opening and closing tags of the `main` element.
     testString: assert( document.querySelector('section').parentNode.nodeName === "MAIN" );
-  - text: The existing `h2`, comment, and `p` element should be between the opening and closing tags of the `section` element.
+  - text: The existing `h2`, comment, `p` element, and anchor (`a`) element should be between the opening and closing tags of the `section` element.
     testString: |
       const childrenOfSection = [ ...document.querySelector('section').childNodes ];
       const foundElems = childrenOfSection.filter(child => {
