@@ -19,22 +19,23 @@ function defaultFile(lang) {
     tail: ''
   };
 }
-function createCodeGetter(key, regEx, seeds) {
+function createCodeGetter(codeKey, regEx, seeds) {
   return container => {
     const {
       properties: { id }
     } = container;
     const lang = id.match(regEx)[1];
+    const key = `index${lang}`;
     const code = select('code', container).children[0].value;
-    if (lang in seeds) {
-      seeds[lang] = {
-        ...seeds[lang],
-        [key]: code
+    if (key in seeds) {
+      seeds[key] = {
+        ...seeds[key],
+        [codeKey]: code
       };
     } else {
-      seeds[lang] = {
+      seeds[key] = {
         ...defaultFile(lang),
-        [key]: code
+        [codeKey]: code
       };
     }
   };
@@ -89,30 +90,28 @@ function createPlugin() {
 
         file.data = {
           ...file.data,
-          files: Object.keys(seeds).map(lang => seeds[lang])
+          files: seeds
         };
 
         // TODO: make this readable.
 
-        if (file.data.files) {
-          file.data.files.forEach(fileData => {
-            const editRegionMarkers = findRegionMarkers(fileData);
-            if (editRegionMarkers) {
-              fileData.contents = removeLines(
-                fileData.contents,
-                editRegionMarkers
-              );
+        Object.keys(seeds).forEach(key => {
+          const fileData = seeds[key];
+          const editRegionMarkers = findRegionMarkers(fileData);
+          if (editRegionMarkers) {
+            fileData.contents = removeLines(
+              fileData.contents,
+              editRegionMarkers
+            );
 
-              if (editRegionMarkers[1] <= editRegionMarkers[0]) {
-                throw Error('Editable region must be non zero');
-              }
-              fileData.editableRegionBoundaries = editRegionMarkers;
-            } else {
-              fileData.editableRegionBoundaries = [];
+            if (editRegionMarkers[1] <= editRegionMarkers[0]) {
+              throw Error('Editable region must be non zero');
             }
-          });
-        }
-
+            fileData.editableRegionBoundaries = editRegionMarkers;
+          } else {
+            fileData.editableRegionBoundaries = [];
+          }
+        });
         // TODO: TESTS!
       }
     }
@@ -122,3 +121,4 @@ function createPlugin() {
 
 exports.challengeSeedToData = createPlugin;
 exports.createCodeGetter = createCodeGetter;
+exports.defaultFile = defaultFile;
