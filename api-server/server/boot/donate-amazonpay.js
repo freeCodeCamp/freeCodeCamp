@@ -368,11 +368,33 @@ export default function donateAmazonPay(app, done) {
       NotificationType === 'BillingAgreementNotification' &&
       NotificationData.BillingAgreementStatus.State === 'Closed'
     ) {
-      // console.log(parsedBody);
-      // console.log(NotificationData);
-      // NotificationData.AmazonBillingAgreementId
-      // closeSubscription(parsedBody, app);
-      // find the user set is donating to false
+      console.log(parsedBody);
+      const billingAgreementId = NotificationData.AmazonBillingAgreementId;
+      const { AmazonBillingAgreement, User } = app.models;
+      AmazonBillingAgreement.findOne(
+        {
+          where: {
+            billingAgreementId: billingAgreementId
+          }
+        },
+        (err, billingAgreement) => {
+          if (err || !billingAgreement) throw err;
+          if (billingAgreement.endDate) return;
+
+          log(`Cancellling ${billingAgreementId} AmazonBillingAgreement`);
+
+          const { userId } = billingAgreement;
+          billingAgreement.updateAttributes({
+            endDate: nowDateString()
+          });
+          User.findOne({ where: { id: userId } }, (err, user) => {
+            if (err || !user) throw err;
+            user.updateAttributes({
+              isDonating: false
+            });
+          });
+        }
+      );
     } else if (NotificationType === 'OrderReferenceNotification') {
       // if (NotificationData.BillingAgreementStatus.State === 'Closed') {
       //   // check if OrderRefrenceStatus is open  make async call
@@ -389,11 +411,9 @@ export default function donateAmazonPay(app, done) {
     NotificationData,
     app
   ) {
-    // console.log(parsedBody);
     const orderReferenceId = getRefrenceIdFromAuthorizationId(
       NotificationData.AmazonAuthorizationId
     );
-    console.log(orderReferenceId);
     const { AmazonBillingAgreement, User, Donation } = app.models;
     const amount = Math.trunc(
       parseFloat(NotificationData.CapturedAmount.Amount) * 100
@@ -457,27 +477,25 @@ export default function donateAmazonPay(app, done) {
 
     billingAgreementId = req.body.billingAgreementId;
 
-    return (
-      Promise.resolve(req)
-        .then(() => getAgreementDetails(billingAgreementId))
-        .then(setAgreementDetails)
-        .then(confirmBillingAgreement)
-        .then(() => authorizeOnBillingAgreement(0, req))
-        .then(donationState => respondToClient(req, res, app, donationState))
-        // .then(closeBillingAgreement)
-        .catch(err => {
-          log(err.message);
-          if (
-            err.type === 'PaymentPlanNotSet' ||
-            err.type === 'BuyerConsentNotSet' ||
-            err.type === 'BuyerEqualsSeller' ||
-            err.type === 'InvalidPaymentMethod'
-          ) {
-            return res.status(402).send({ error: err.message, type: err.type });
-          }
-          return res.status(500).send(generalError);
-        })
-    );
+    return Promise.resolve(req)
+      .then(() => getAgreementDetails(billingAgreementId))
+      .then(setAgreementDetails)
+      .then(confirmBillingAgreement)
+      .then(() => authorizeOnBillingAgreement(0, req))
+      .then(donationState => respondToClient(req, res, app, donationState))
+      .then(closeBillingAgreement)
+      .catch(err => {
+        log(err.message);
+        if (
+          err.type === 'PaymentPlanNotSet' ||
+          err.type === 'BuyerConsentNotSet' ||
+          err.type === 'BuyerEqualsSeller' ||
+          err.type === 'InvalidPaymentMethod'
+        ) {
+          return res.status(402).send({ error: err.message, type: err.type });
+        }
+        return res.status(500).send(generalError);
+      });
   }
 
   function apihookUpdateAmazonPay(req, res) {
