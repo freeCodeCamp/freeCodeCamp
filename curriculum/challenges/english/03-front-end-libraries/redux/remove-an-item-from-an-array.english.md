@@ -35,9 +35,9 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='jsx-seed'>
+<div id='js-seed'>
 
-```jsx
+```js
 const immutableReducer = (state = [0,1,2,3,4,5], action) => {
   switch(action.type) {
     case 'REMOVE_ITEM':

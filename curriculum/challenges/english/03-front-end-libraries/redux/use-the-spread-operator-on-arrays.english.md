@@ -39,9 +39,9 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='jsx-seed'>
+<div id='js-seed'>
 
-```jsx
+```js
 const immutableReducer = (state = ['Do not mutate state!'], action) => {
   switch(action.type) {
     case 'ADD_TO_DO':

@@ -82,7 +82,7 @@ const connect = ReactRedux.connect;
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 
 const store = Redux.createStore(
   (state = '__INITIAL__STATE__', action) => state
@@ -107,7 +107,7 @@ ReactDOM.render(<AppWrapper />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 const addMessage = (message) => {
   return {
     type: 'ADD',

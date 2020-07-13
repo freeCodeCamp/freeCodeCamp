@@ -97,7 +97,7 @@ class ToDo extends React.Component {
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<ToDo />, document.getElementById('root'))
 ```
 
@@ -109,7 +109,7 @@ ReactDOM.render(<ToDo />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 const List= (props) => {
   return <p>{props.tasks.join(', ')}</p>
 };

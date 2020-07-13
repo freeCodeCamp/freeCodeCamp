@@ -37,9 +37,9 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='jsx-seed'>
+<div id='js-seed'>
 
-```jsx
+```js
 const ADD_TO_DO = 'ADD_TO_DO';
 
 // A list of strings representing tasks to do:

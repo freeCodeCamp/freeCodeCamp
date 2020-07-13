@@ -62,7 +62,7 @@ const JSX = (
 <section id='solution'>
 
 
-```js
+```jsx
 const JSX = (
 <div>
   <h1>Hello World</h1>

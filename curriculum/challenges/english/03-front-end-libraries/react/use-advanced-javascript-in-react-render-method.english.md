@@ -205,7 +205,7 @@ class MagicEightBall extends React.Component {
 
 <div id='jsx-teardown'>
 
-```js
+```jsx
 var possibleAnswers = [
   'It is certain',
   'It is decidedly so',
@@ -239,7 +239,7 @@ ReactDOM.render(<MagicEightBall />, document.getElementById('root'));
 
 <section id='solution'>
 
-```js
+```jsx
 const inputStyle = {
   width: 235,
   margin: 5

@@ -79,7 +79,7 @@ class MyComponent extends React.Component {
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<MyComponent />, document.getElementById('root'))
 ```
 
@@ -91,7 +91,7 @@ ReactDOM.render(<MyComponent />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 class MyComponent extends React.Component {
   constructor(props) {
     super(props);

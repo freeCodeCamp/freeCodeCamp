@@ -35,9 +35,9 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='jsx-seed'>
+<div id='js-seed'>
 
-```jsx
+```js
 const ADD_NOTE = 'ADD_NOTE';
 
 const notesReducer = (state = 'Initial State', action) => {

@@ -91,8 +91,8 @@ tests:
 <section id='solution'>
 
 
-```js
-var code = ".item5 {grid-area: footer;}"
+```html
+<style>.item5 {grid-area: footer;}</style>
 ```
 
 </section>

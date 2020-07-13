@@ -93,7 +93,7 @@ class Calendar extends React.Component {
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<Calendar />, document.getElementById('root'))
 ```
 
@@ -105,7 +105,7 @@ ReactDOM.render(<Calendar />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 const CurrentDate = (props) => {
   return (
     <div>

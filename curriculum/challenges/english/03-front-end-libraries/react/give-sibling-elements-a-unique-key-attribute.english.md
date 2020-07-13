@@ -74,7 +74,7 @@ function Frameworks() {
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<Frameworks />, document.getElementById('root'))
 ```
 
@@ -86,7 +86,7 @@ ReactDOM.render(<Frameworks />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 const frontEndFrameworks = [
   'React',
   'Angular',

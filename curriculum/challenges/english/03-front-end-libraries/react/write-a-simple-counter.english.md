@@ -75,7 +75,7 @@ class Counter extends React.Component {
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<Counter />, document.getElementById('root'))
 ```
 
@@ -87,7 +87,7 @@ ReactDOM.render(<Counter />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 class Counter extends React.Component {
   constructor(props) {
     super(props);

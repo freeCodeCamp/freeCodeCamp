@@ -226,7 +226,7 @@ class GameOfChance extends React.Component {
 
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<GameOfChance />, document.getElementById('root'));
 ```
 
@@ -238,7 +238,7 @@ ReactDOM.render(<GameOfChance />, document.getElementById('root'));
 
 <section id='solution'>
 
-```js
+```jsx
 class Results extends React.Component {
   constructor(props) {
     super(props);

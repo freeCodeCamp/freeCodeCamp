@@ -39,9 +39,9 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='jsx-seed'>
+<div id='js-seed'>
 
-```jsx
+```js
 const defaultState = {
   user: 'CamperBot',
   status: 'offline',

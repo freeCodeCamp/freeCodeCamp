@@ -77,7 +77,7 @@ class DisplayMessages extends React.Component {
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<DisplayMessages />, document.getElementById('root'))
 ```
 
@@ -89,7 +89,7 @@ ReactDOM.render(<DisplayMessages />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 class DisplayMessages extends React.Component {
   constructor(props) {
     super(props);

@@ -52,7 +52,7 @@ const JSX = (
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(JSX, document.getElementById('root'))
 ```
 
@@ -64,7 +64,7 @@ ReactDOM.render(JSX, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 const JSX = (
 <div className = 'myDiv'>
   <h1>Add a class to this div</h1>

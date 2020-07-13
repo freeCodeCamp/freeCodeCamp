@@ -277,8 +277,8 @@ tests:
 <section id='solution'>
 
 
-```js
-var code = "@media (max-width: 350px) {:root {--penguin-size: 200px; --penguin-skin: black;}}"
+```html
+<style>@media (max-width: 350px) {:root {--penguin-size: 200px; --penguin-skin: black;}}</style>
 ```
 
 </section>

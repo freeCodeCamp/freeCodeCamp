@@ -82,7 +82,7 @@ class GateKeeper extends React.Component {
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<GateKeeper />, document.getElementById('root'))
 ```
 
@@ -94,7 +94,7 @@ ReactDOM.render(<GateKeeper />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 class GateKeeper extends React.Component {
   constructor(props) {
     super(props);

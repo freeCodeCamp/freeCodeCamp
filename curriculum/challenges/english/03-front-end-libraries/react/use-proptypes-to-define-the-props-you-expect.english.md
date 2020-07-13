@@ -84,7 +84,7 @@ var PropTypes = {
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<ShoppingCart />, document.getElementById('root'))
 ```
 
@@ -96,7 +96,7 @@ ReactDOM.render(<ShoppingCart />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 const Items = (props) => {
   return <h1>Current Quantity of Items in Cart: {props.quantity}</h1>
 };

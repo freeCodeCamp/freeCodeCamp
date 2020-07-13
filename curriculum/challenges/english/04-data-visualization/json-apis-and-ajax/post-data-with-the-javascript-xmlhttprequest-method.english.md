@@ -127,7 +127,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 <script>
   document.addEventListener('DOMContentLoaded', function(){
     document.getElementById('sendMessage').onclick = function(){

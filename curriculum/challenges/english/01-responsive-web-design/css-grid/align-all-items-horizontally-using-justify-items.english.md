@@ -76,8 +76,8 @@ tests:
 <section id='solution'>
 
 
-```js
-var code = ".container {justify-items: center;}"
+```html
+<style>.container {justify-items: center;}</style>
 ```
 
 </section>

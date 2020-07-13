@@ -67,7 +67,7 @@ const MyComponent = function() {
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<MyComponent />, document.getElementById('root'))
 ```
 
@@ -79,7 +79,7 @@ ReactDOM.render(<MyComponent />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 const MyComponent = function() {
   // Change code below this line
   return (

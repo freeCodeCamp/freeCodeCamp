@@ -11,7 +11,7 @@ forumTopicId: 301414
 <section id='description'>
 Before moving on to dynamic rendering techniques, there's one last way to use built-in JavaScript conditionals to render what you want: the <dfn>ternary operator</dfn>. The ternary operator is often utilized as a shortcut for <code>if/else</code> statements in JavaScript. They're not quite as robust as traditional <code>if/else</code> statements, but they are very popular among React developers. One reason for this is because of how JSX is compiled, <code>if/else</code> statements can't be inserted directly into JSX code. You might have noticed this a couple challenges ago &mdash; when an <code>if/else</code> statement was required, it was always <em>outside</em> the <code>return</code> statement. Ternary expressions can be an excellent alternative if you want to implement conditional logic within your JSX. Recall that a ternary operator has three parts, but you can combine several ternary expressions together. Here's the basic syntax:
 
-```js
+```jsx
 condition ? expressionIfTrue : expressionIfFalse;
 ```
 
@@ -200,7 +200,7 @@ class CheckUserAge extends React.Component {
 
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<CheckUserAge />, document.getElementById('root'));
 ```
 
@@ -212,7 +212,7 @@ ReactDOM.render(<CheckUserAge />, document.getElementById('root'));
 
 <section id='solution'>
 
-```js
+```jsx
 const inputStyle = {
   width: 235,
   margin: 5

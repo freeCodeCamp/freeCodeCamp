@@ -126,7 +126,7 @@ class Controller extends React.Component {
 
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<Controller />, document.getElementById('root'));
 ```
 
@@ -138,7 +138,7 @@ ReactDOM.render(<Controller />, document.getElementById('root'));
 
 <section id='solution'>
 
-```js
+```jsx
 class OnlyEvens extends React.Component {
   constructor(props) {
     super(props);

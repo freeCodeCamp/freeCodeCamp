@@ -35,9 +35,9 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='jsx-seed'>
+<div id='js-seed'>
 
-```jsx
+```js
 const ADD = 'ADD';
 
 const reducer = (state = 0, action) => {
@@ -69,9 +69,9 @@ console.log(count);
 </div>
 
 ### Before Test
-<div id='jsx-setup'>
+<div id='js-setup'>
 
-```jsx
+```js
 count = 0;
 ```
 

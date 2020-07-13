@@ -11,7 +11,7 @@ forumTopicId: 301421
 <section id='description'>
 Sometimes you might need to know the previous state when updating the state. However, state updates may be asynchronous - this means React may batch multiple <code>setState()</code> calls into a single update. This means you can't rely on the previous value of <code>this.state</code> or <code>this.props</code> when calculating the next value. So, you should not use code like this:
 
-```js
+```jsx
 this.setState({
   counter: this.state.counter + this.props.increment
 });
@@ -19,7 +19,7 @@ this.setState({
 
 Instead, you should pass <code>setState</code> a function that allows you to access state and props. Using a function with <code>setState</code> guarantees you are working with the most current values of state and props. This means that the above should be rewritten as:
 
-```js
+```jsx
 this.setState((state, props) => ({
   counter: state.counter + props.increment
 }));
@@ -27,7 +27,7 @@ this.setState((state, props) => ({
 
 You can also use a form without `props` if you need only the `state`:
 
-```js
+```jsx
 this.setState(state => ({
   counter: state.counter + 1
 }));
@@ -129,7 +129,7 @@ class MyComponent extends React.Component {
 
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<MyComponent />, document.getElementById('root'));
 ```
 
@@ -141,7 +141,7 @@ ReactDOM.render(<MyComponent />, document.getElementById('root'));
 
 <section id='solution'>
 
-```js
+```jsx
 class MyComponent extends React.Component {
   constructor(props) {
     super(props);

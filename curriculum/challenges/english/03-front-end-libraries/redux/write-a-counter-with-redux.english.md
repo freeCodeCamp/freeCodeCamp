@@ -41,9 +41,9 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='jsx-seed'>
+<div id='js-seed'>
 
-```jsx
+```js
 const INCREMENT = null; // Define a constant for increment action types
 const DECREMENT = null; // Define a constant for decrement action types
 

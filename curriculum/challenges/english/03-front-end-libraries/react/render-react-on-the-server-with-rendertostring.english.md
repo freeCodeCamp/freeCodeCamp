@@ -63,7 +63,7 @@ var ReactDOMServer = { renderToString(x) { return null; } };
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<App />, document.getElementById('root'))
 ```
 
@@ -75,7 +75,7 @@ ReactDOM.render(<App />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 class App extends React.Component {
   constructor(props) {
     super(props);

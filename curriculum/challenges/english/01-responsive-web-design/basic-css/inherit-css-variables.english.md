@@ -249,8 +249,8 @@ tests:
 <section id='solution'>
 
 
-```js
-var code = ":root {--penguin-belly: pink;}"
+```html
+<style>:root {--penguin-belly: pink;}</style>
 ```
 
 </section>
