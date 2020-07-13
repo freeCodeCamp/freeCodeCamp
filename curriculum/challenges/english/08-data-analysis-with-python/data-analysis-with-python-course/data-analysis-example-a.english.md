@@ -8,6 +8,8 @@ videoId: nVAaxZ34khk
 
 ## Description
 <section id='description'>
+More resources:
+- <a href="https://notebooks.ai/rmotr-curriculum/freecodecamp-pandas-real-life-example-24fa5bf8" target='_blank'>Notebook</a>
 </section>
 
 ## Tests
