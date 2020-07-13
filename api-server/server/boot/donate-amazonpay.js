@@ -222,6 +222,8 @@ export default function donateAmazonPay(app, done) {
     });
   }
 
+  // this funcion is for testing the billing agreement cancelation IPN
+  // eslint-disable-next-line no-unused-vars
   function closeBillingAgreement() {
     return new Promise((resolve, reject) => {
       payment.offAmazonPayments.closeBillingAgreement(
@@ -277,7 +279,7 @@ export default function donateAmazonPay(app, done) {
     const startDate = nowDateString();
     const {
       user,
-      body: { donationDuration, donationAmount }
+      body: { donationDuration }
     } = req;
     const amazonBillingAgreement = {
       duration: donationDuration,
@@ -289,18 +291,14 @@ export default function donateAmazonPay(app, done) {
         Buyer: { Email }
       } = await getAgreementDetails(billingAgreementId);
       amazonBillingAgreement.email = Email;
-      const donation = {
-        email: Email,
-        amount: donationAmount,
-        duration: 'AmazonBillingAgreement',
-        provider: 'amazon',
-        subscriptionId: billingAgreementId,
-        customerId: Email,
-        startDate,
-        orderReferenceId
-      };
       await createAsyncUserBillingAgreement(user, amazonBillingAgreement, app);
-      await createAsyncUserDonation(user, donation);
+
+      /* 
+      The billing agreement creation should happen here so we could find 
+      the user based on the billingAgreement records from the 
+      billingagreementid that we pass in the AuthorizationReferenceId
+      */
+
       return res.status(200).json(syncSuccess);
     } else if (donationState === 'AsyncCallCompleted') {
       await createAsyncUserBillingAgreement(user, amazonBillingAgreement, app);
@@ -331,6 +329,122 @@ export default function donateAmazonPay(app, done) {
     } else {
       throw generalError;
     }
+  }
+
+  // -- IPN related functions -- //
+
+  function getRefrenceIdFromAuthorizationId(authorizationId) {
+    var n = authorizationId.lastIndexOf('-');
+    return authorizationId.slice(0, n);
+  }
+
+  function updateUser(parsedBody, app) {
+    console.log('UPDATEUSER');
+    const { NotificationData, NotificationType } = parsedBody;
+
+    if (
+      NotificationType === 'PaymentAuthorize' &&
+      NotificationData.AuthorizationStatus.State === 'Closed' &&
+      NotificationData.AuthorizationStatus.ReasonCode === 'MaxCapturesProcessed'
+    ) {
+      const [
+        identifier,
+        randomId,
+        billingAgreementId
+      ] = NotificationData.AuthorizationReferenceId.split('_');
+      if (
+        identifier === billingAgreementIdentifier &&
+        randomId.length === randomIdLength &&
+        billingAgreementId
+      ) {
+        createDonationFromIPN(
+          parsedBody,
+          billingAgreementId,
+          NotificationData,
+          app
+        );
+      }
+    } else if (
+      NotificationType === 'BillingAgreementNotification' &&
+      NotificationData.BillingAgreementStatus.State === 'Closed'
+    ) {
+      // console.log(parsedBody);
+      // console.log(NotificationData);
+      // NotificationData.AmazonBillingAgreementId
+      // closeSubscription(parsedBody, app);
+      // find the user set is donating to false
+    } else if (NotificationType === 'OrderReferenceNotification') {
+      // if (NotificationData.BillingAgreementStatus.State === 'Closed') {
+      //   // check if OrderRefrenceStatus is open  make async call
+      //   // if orderRefrenceStatus is closed and payment not made (
+      //   // (no donation record)
+      //   // then error to sentry
+      // }
+    }
+  }
+
+  async function createDonationFromIPN(
+    parsedBody,
+    billingAgreementId,
+    NotificationData,
+    app
+  ) {
+    // console.log(parsedBody);
+    const orderReferenceId = getRefrenceIdFromAuthorizationId(
+      NotificationData.AmazonAuthorizationId
+    );
+    console.log(orderReferenceId);
+    const { AmazonBillingAgreement, User, Donation } = app.models;
+    const amount = Math.trunc(
+      parseFloat(NotificationData.CapturedAmount.Amount) * 100
+    );
+
+    /* amazon could send multiple IPN for the same transaction,
+    so we should avoid duplicate records.
+    */
+
+    Donation.findOne({ where: { orderReferenceId } }, (err, donation) => {
+      if (err) throw Error(err);
+      if (!donation) {
+        AmazonBillingAgreement.findOne(
+          { where: { billingAgreementId } },
+          (err, billingAgreement) => {
+            if (err || !billingAgreement) throw err;
+            const { userId, email } = billingAgreement;
+            User.findOne({ where: { id: userId } }, (err, user) => {
+              if (err || !user) throw err;
+              const donation = {
+                email,
+                amount,
+                duration: 'AmazonBillingAgreement',
+                provider: 'amazon',
+                subscriptionId: billingAgreementId,
+                customerId: email,
+                startDate: nowDateString(),
+                orderReferenceId
+              };
+              createAsyncUserDonation(user, donation);
+            });
+          }
+        );
+      } else {
+        console.log('douplicate record');
+      }
+    });
+  }
+
+  function verifyWebHook(req) {
+    // check if webhook type for creation
+    const jsonBody = JSON.parse(req.body);
+    return new Promise((resolve, reject) => {
+      payment.parseSNSResponse(jsonBody, function(err, parsed) {
+        if (err) {
+          return reject(err);
+        }
+        console.log(parsed.NotificationType);
+        return resolve(parsed);
+      });
+    });
   }
 
   // set global vars to be accessible by all functions
@@ -376,110 +490,6 @@ export default function donateAmazonPay(app, done) {
       .finally(() =>
         res.status(200).json({ message: 'received amazonpay hook' })
       );
-  }
-
-  function getRefrenceIdFromAuthorizationId(authorizationId) {
-    var n = authorizationId.lastIndexOf('-');
-    return authorizationId.slice(0, n);
-  }
-
-  function updateUser(parsedBody, app) {
-    console.log('UPDATEUSER');
-    const { NotificationData, NotificationType } = parsedBody;
-
-    if (
-      NotificationType === 'PaymentAuthorize' &&
-      NotificationData.AuthorizationStatus.State === 'Closed' &&
-      NotificationData.AuthorizationStatus.ReasonCode === 'MaxCapturesProcessed'
-    ) {
-      const [
-        identifier,
-        randomId,
-        billingAgreementId
-      ] = NotificationData.AuthorizationReferenceId.split('_');
-      if (
-        identifier === billingAgreementIdentifier &&
-        randomId.length === randomIdLength &&
-        billingAgreementId
-      ) {
-        createDonationFromIPN(
-          parsedBody,
-          billingAgreementId,
-          NotificationData,
-          app
-        );
-      }
-    } else if (
-      NotificationType === 'BillingAgreementNotification' &&
-      NotificationData.BillingAgreementStatus.State === 'Closed'
-    ) {
-      // console.log(parsedBody);
-      // console.log(NotificationData);
-      // NotificationData.AmazonBillingAgreementId
-      // closeSubscription(parsedBody, app);
-      // find the user set is donating to false
-    } else if (NotificationType === 'OrderReferenceNotification') {
-      if (NotificationData.BillingAgreementStatus.State === 'Closed') {
-        // check if OrderRefrenceStatus is open  make async call
-        // if orderRefrenceStatus is closed and payment not made (
-        // (no donation record)
-        // then error to sentry
-      }
-    }
-  }
-
-  // function closeSubscription {
-  //   console.log(parsedBody);
-  // }
-
-  async function createDonationFromIPN(
-    parsedBody,
-    billingAgreementId,
-    NotificationData,
-    app
-  ) {
-    console.log(parsedBody);
-    const { AmazonBillingAgreement, User } = app.models;
-    AmazonBillingAgreement.findOne(
-      { where: { billingAgreementId } },
-      (err, billingAgreement) => {
-        if (err || !billingAgreement) throw err;
-        const { userId, email } = billingAgreement;
-        console.log(NotificationData);
-        User.findOne({ where: { id: userId } }, (err, user) => {
-          if (err || !user) throw err;
-          const donation = {
-            email,
-            amount: Math.trunc(
-              parseFloat(NotificationData.CapturedAmount.Amount) * 100
-            ),
-            duration: 'AmazonBillingAgreement',
-            provider: 'amazon',
-            subscriptionId: billingAgreementId,
-            customerId: email,
-            startDate: nowDateString(),
-            orderReferenceId: getRefrenceIdFromAuthorizationId(
-              NotificationData.AmazonAuthorizationId
-            )
-          };
-          createAsyncUserDonation(user, donation);
-        });
-      }
-    );
-  }
-
-  function verifyWebHook(req) {
-    // check if webhook type for creation
-    const jsonBody = JSON.parse(req.body);
-    return new Promise((resolve, reject) => {
-      payment.parseSNSResponse(jsonBody, function(err, parsed) {
-        if (err) {
-          return reject(err);
-        }
-        console.log(parsed.NotificationType);
-        return resolve(parsed);
-      });
-    });
   }
 
   const { sellerId, mwsId, mwsSecret, clientId, clientSecret } = keys.amazon;
