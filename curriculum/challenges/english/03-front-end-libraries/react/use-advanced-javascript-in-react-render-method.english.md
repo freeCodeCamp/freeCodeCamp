@@ -126,7 +126,7 @@ class MagicEightBall extends React.Component {
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 var possibleAnswers = [ 'It is certain', 'It is decidedly so', 'Without a doubt', 'Yes, definitely', 'You may rely on it', 'As I see it, yes', 'Outlook good', 'Yes', 'Signs point to yes', 'Reply hazy try again', 'Ask again later', 'Better not tell you now', 'Cannot predict now', 'Concentrate and ask again', 'Don\'t count on it', 'My reply is no', 'My sources say no', 'Outlook not so good','Very doubtful', 'Most likely' ];
 ReactDOM.render(<MagicEightBall />, document.getElementById('root'))
 ```
@@ -139,7 +139,7 @@ ReactDOM.render(<MagicEightBall />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 const inputStyle = {
   width: 235,
   margin: 5

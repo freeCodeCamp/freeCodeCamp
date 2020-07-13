@@ -86,7 +86,7 @@ class ResetPassword extends React.Component {
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<ResetPassword />, document.getElementById('root'))
 ```
 
@@ -98,7 +98,7 @@ ReactDOM.render(<ResetPassword />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 class ReturnTempPassword extends React.Component {
   constructor(props) {
     super(props);

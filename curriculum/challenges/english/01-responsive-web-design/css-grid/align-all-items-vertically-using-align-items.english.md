@@ -77,8 +77,8 @@ tests:
 <section id='solution'>
 
 
-```js
-var code = ".container {align-items: end;}"
+```html
+<style>.container {align-items: end;}</style>
 ```
 
 </section>

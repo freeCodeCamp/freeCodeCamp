@@ -77,7 +77,7 @@ tests:
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(JSX, document.getElementById('root'))
 ```
 
@@ -89,7 +89,7 @@ ReactDOM.render(JSX, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 const JSX = (
 <div>
   <h1>Hello JSX!</h1>

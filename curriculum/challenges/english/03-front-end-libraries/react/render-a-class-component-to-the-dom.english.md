@@ -116,7 +116,7 @@ const Vegetables = () => {
 <section id='solution'>
 
 
-```js
+```jsx
 class TypesOfFood extends React.Component {
   constructor(props) {
     super(props);

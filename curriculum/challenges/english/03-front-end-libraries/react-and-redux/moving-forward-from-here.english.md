@@ -73,7 +73,7 @@ tests:
 <section id='solution'>
 
 
-```js
+```jsx
 console.log('Now I know React and Redux!');
 ```
 

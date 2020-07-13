@@ -72,7 +72,7 @@ const addMessage = (message) => {
 <section id='solution'>
 
 
-```js
+```jsx
 const addMessage = (message) => {
   return {
     type: 'ADD',

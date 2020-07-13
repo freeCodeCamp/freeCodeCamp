@@ -60,7 +60,7 @@ tests:
 <section id='solution'>
 
 
-```js
+```jsx
 const ADD = 'ADD';
 
 const addMessage = (message) => {

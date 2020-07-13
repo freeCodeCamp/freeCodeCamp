@@ -73,8 +73,8 @@ tests:
 <section id='solution'>
 
 
-```js
-var code = ".container {display: grid;}"
+```html
+<style>.container {display: grid;}</style>
 ```
 
 </section>

@@ -90,7 +90,7 @@ class MyForm extends React.Component {
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<MyForm />, document.getElementById('root'))
 ```
 
@@ -102,7 +102,7 @@ ReactDOM.render(<MyForm />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 class MyForm extends React.Component {
   constructor(props) {
     super(props);

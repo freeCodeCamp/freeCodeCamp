@@ -54,7 +54,7 @@ tests:
 <section id='solution'>
 
 
-```js
+```jsx
 // change code below this line
 class MyComponent extends React.Component {
   constructor(props) {

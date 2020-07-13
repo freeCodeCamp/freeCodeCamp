@@ -75,8 +75,8 @@ tests:
 <section id='solution'>
 
 
-```js
-var code = ".container {grid-gap: 10px 20px;}"
+```html
+<style>.container {grid-gap: 10px 20px;}</style>
 ```
 
 </section>
