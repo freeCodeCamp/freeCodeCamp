@@ -14,9 +14,9 @@
   - [文章翻译计划](/chinese-guides/news-translations.md)
   - [视频翻译计划](/chinese-guides/video-translations.md)
 - **<i class="fad fa-plane-alt"></i> Flight Manuals** (for Staff & Mods)
-  - [Our DevOps Guide](/devops.md)
-  - [Using Reply Templates](/flight-manuals/using-reply-templates.md)
-  - [Other flight manuals](/flight-manuals/)
+  - [DevOps Overview](/devops.md)
+  - [Reply Templates](/flight-manuals/using-reply-templates.md)
+  - [Working on Servers](/flight-manuals/working-on-virtual-machines.md)
 
 ---
 
