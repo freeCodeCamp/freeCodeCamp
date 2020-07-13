@@ -32,7 +32,7 @@
     "dotenv": "^6.2.0",
     "express-flash": "~0.0.2",
     "express-session": "^1.17.0",
-    "express-state": "^1.2.0",
+    "express-state": "^2.0.0",
     "express-validator": "^6.0.0",
     "googleapis": "^42.0.0",
     "helmet": "^3.21.1",
