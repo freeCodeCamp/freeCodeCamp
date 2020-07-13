@@ -77,7 +77,7 @@ class Navbar extends React.Component {
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<MyApp />, document.getElementById('root'))
 ```
 
@@ -89,7 +89,7 @@ ReactDOM.render(<MyApp />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 class MyApp extends React.Component {
   constructor(props) {
     super(props);

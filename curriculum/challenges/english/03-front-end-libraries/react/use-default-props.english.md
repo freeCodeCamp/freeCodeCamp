@@ -54,7 +54,7 @@ const ShoppingCart = (props) => {
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<ShoppingCart />, document.getElementById('root'))
 ```
 
@@ -66,7 +66,7 @@ ReactDOM.render(<ShoppingCart />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 const ShoppingCart = (props) => {
   return (
     <div>

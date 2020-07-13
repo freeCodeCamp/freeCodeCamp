@@ -101,7 +101,7 @@ class MyToDoList extends React.Component {
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<MyToDoList />, document.getElementById('root'))
 ```
 
@@ -113,7 +113,7 @@ ReactDOM.render(<MyToDoList />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 const textAreaStyles = {
   width: 235,
   margin: 5

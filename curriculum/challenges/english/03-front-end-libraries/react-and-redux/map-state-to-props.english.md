@@ -59,7 +59,7 @@ const state = [];
 <section id='solution'>
 
 
-```js
+```jsx
 const state = [];
 
 // change code below this line

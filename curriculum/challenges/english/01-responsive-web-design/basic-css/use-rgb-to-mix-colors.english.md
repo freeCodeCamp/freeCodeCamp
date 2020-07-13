@@ -83,7 +83,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 <style>
   .red-text {
     color: rgb(255, 0, 0);

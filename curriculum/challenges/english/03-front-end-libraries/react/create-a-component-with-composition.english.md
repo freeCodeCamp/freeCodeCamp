@@ -85,7 +85,7 @@ class ParentComponent extends React.Component {
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<ParentComponent />, document.getElementById('root'))
 ```
 
@@ -97,7 +97,7 @@ ReactDOM.render(<ParentComponent />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 const ChildComponent = () => {
   return (
     <div>

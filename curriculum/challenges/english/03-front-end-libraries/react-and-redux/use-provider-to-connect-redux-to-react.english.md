@@ -136,7 +136,7 @@ class AppWrapper extends React.Component {
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<AppWrapper />, document.getElementById('root'))
 ```
 
@@ -148,7 +148,7 @@ ReactDOM.render(<AppWrapper />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 // Redux Code:
 const ADD = 'ADD';
 

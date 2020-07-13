@@ -77,7 +77,7 @@ var PropTypes = {
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<CampSite />, document.getElementById('root'))
 ```
 
@@ -89,7 +89,7 @@ ReactDOM.render(<CampSite />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 class CampSite extends React.Component {
   constructor(props) {
     super(props);

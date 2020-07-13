@@ -91,7 +91,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 <style>
   .injected-text {
     margin-bottom: -25px;

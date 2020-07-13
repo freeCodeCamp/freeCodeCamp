@@ -90,7 +90,7 @@ class TypesOfFood extends React.Component {
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<TypesOfFood />, document.getElementById('root'))
 ```
 
@@ -102,7 +102,7 @@ ReactDOM.render(<TypesOfFood />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 const TypesOfFruit = () => {
   return (
     <div>

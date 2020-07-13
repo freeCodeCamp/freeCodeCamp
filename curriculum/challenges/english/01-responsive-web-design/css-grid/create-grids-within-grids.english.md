@@ -108,8 +108,8 @@ tests:
 <section id='solution'>
 
 
-```js
-var code = ".item3 {grid-template-columns: auto 1fr; display: grid;}"
+```html
+<style>.item3 {grid-template-columns: auto 1fr; display: grid;}</style>
 ```
 
 </section>

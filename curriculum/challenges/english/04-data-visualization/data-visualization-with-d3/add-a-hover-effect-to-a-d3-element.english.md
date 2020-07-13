@@ -88,7 +88,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 <style>
   .bar:hover {
     fill: brown;

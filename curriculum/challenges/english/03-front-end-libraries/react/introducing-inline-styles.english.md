@@ -63,7 +63,7 @@ class Colorful extends React.Component {
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<Colorful />, document.getElementById('root'))
 ```
 
@@ -75,7 +75,7 @@ ReactDOM.render(<Colorful />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 class Colorful extends React.Component {
   render() {
     return (

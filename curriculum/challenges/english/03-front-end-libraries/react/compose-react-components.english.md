@@ -133,7 +133,7 @@ class Vegetables extends React.Component {
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<TypesOfFood />, document.getElementById('root'))
 ```
 
@@ -145,7 +145,7 @@ ReactDOM.render(<TypesOfFood />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 class Fruits extends React.Component {
   constructor(props) {
     super(props);

@@ -76,7 +76,7 @@ class ControlledInput extends React.Component {
 ### After Test
 <div id='jsx-teardown'>
 
-```js
+```jsx
 ReactDOM.render(<ControlledInput />, document.getElementById('root'))
 ```
 
@@ -88,7 +88,7 @@ ReactDOM.render(<ControlledInput />, document.getElementById('root'))
 <section id='solution'>
 
 
-```js
+```jsx
 class ControlledInput extends React.Component {
   constructor(props) {
     super(props);

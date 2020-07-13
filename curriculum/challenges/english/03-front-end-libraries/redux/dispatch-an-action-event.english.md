@@ -43,9 +43,9 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='jsx-seed'>
+<div id='js-seed'>
 
-```jsx
+```js
 const store = Redux.createStore(
   (state = {login: false}) => state
 );

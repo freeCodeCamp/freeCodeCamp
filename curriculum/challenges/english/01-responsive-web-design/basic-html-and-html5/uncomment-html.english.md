@@ -61,7 +61,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 <h1>Hello World</h1>
 
 <h2>CatPhotoApp</h2>
