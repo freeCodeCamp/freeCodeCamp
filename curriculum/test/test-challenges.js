@@ -360,31 +360,39 @@ function populateTestsForLang({ lang, challenges, meta }) {
             assert(fails, 'Test suit does not fail on the initial contents');
           });
 
-          let { solutions = [], solutionFiles = {} } = challenge;
+          let { solutions = [] } = challenge;
 
-          const noSolution = new RegExp('// solution required');
-          solutions = solutions.filter(
-            solution => !!solution && !noSolution.test(solution)
-          );
-
-          // if there are no solutions in the challenge, it's assumed the next
-          // challenge's seed will be a solution to the current challenge.
-          // This is expected to happen in the project based curriculum.
+          // if there's an empty string as solution, this is likely a mistake
+          // TODO: what does this look like now?
 
           if (isEmpty(solutions)) {
-            if (!isEmpty(solutionFiles)) {
-              solutions = [solutionFiles];
-              // TODO: there needs to be a way of telling that a challenge uses
-              // multiple files when it doesn't have anything in solutionFiles!
+            // if there are no solutions in the challenge, it's assumed the next
+            // challenge's seed will be a solution to the current challenge.
+            // This is expected to happen in the project based curriculum.
+
+            const nextChallenge = challenges[id + 1];
+            // TODO: check this actually works...
+            if (nextChallenge) {
+              solutions = [nextChallenge.files];
             } else {
-              const nextChallenge = challenges[id + 1];
-              if (nextChallenge) {
-                solutions = [nextChallenge.files[0].contents];
-              }
+              throw Error('solution omitted');
             }
           }
 
-          if (solutions.length === 0 && isEmpty(solutionFiles)) {
+          // TODO: the no-solution filtering is a little convoluted:
+          const noSolution = new RegExp('// solution required');
+
+          const solutionsAsArrays = solutions.map(toSortedArray);
+
+          const filteredSolutions = solutionsAsArrays.filter(solution => {
+            return !isEmpty(
+              solution.filter(file => !noSolution.test(file.contents))
+            );
+          });
+
+          // console.log('filteredSolutions', filteredSolutions);
+
+          if (isEmpty(filteredSolutions)) {
             it('Check tests. No solutions');
             return;
           }
@@ -415,20 +423,9 @@ async function createTestRunner(challenge, solution, buildChallenge) {
   // we should avoid modifying challenge, as it gets reused:
   const files = cloneDeep(challenge.files);
 
-  // TODO: there must be a better way of handling both single and multi-file
-  // solutions
-  if (typeof solution === 'object' && !isEmpty(solution)) {
-    Object.keys(solution).forEach(key => {
-      files[key].contents = solution[key].contents;
-    });
-  } else if (solution) {
-    // fallback for single solution
-    const sortedFiles = toSortedArray(files);
-
-    files[sortedFiles[0].key].contents = solution;
-  } else {
-    throw Error('Tried to create test runner without a solution.');
-  }
+  Object.keys(solution).forEach(key => {
+    files[key].contents = solution[key].contents;
+  });
 
   const { build, sources, loadEnzyme } = await buildChallenge({
     files,

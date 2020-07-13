@@ -72,13 +72,15 @@ function getSchemaForLang(lang) {
         crossDomain: Joi.bool()
       })
     ),
-    solutions: Joi.array().items(Joi.string().optional()),
-    solutionFiles: Joi.object().keys({
-      indexcss: fileJoi,
-      indexhtml: fileJoi,
-      indexjs: fileJoi,
-      indexjsx: fileJoi
-    }),
+    solutions: Joi.array().items(
+      Joi.object().keys({
+        indexcss: fileJoi,
+        indexhtml: fileJoi,
+        indexjs: fileJoi,
+        indexjsx: fileJoi,
+        indexpy: fileJoi
+      })
+    ),
     superBlock: Joi.string(),
     superOrder: Joi.number(),
     suborder: Joi.number(),
