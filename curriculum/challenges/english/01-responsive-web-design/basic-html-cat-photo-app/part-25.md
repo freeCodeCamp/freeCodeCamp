@@ -10,7 +10,7 @@ isHidden: true
 
 The code for an ordered list (`ol`) is similar to an unordered list, but list items in an ordered list are numbered when displayed.
 
-After the final `p` element, add an ordered list with these three list items: `flea treatment`, `thunder` and `other cats`.
+After the final `h3` element, add an ordered list with these three list items: `flea treatment`, `thunder` and `other cats`.
 
 </section>
 
@@ -51,7 +51,7 @@ tests:
       </section>
       <section>
         <h2>Cat Lists</h2>
-        <p>Things cats love:</p>
+        <h3>Things cats love:</h3>
         <ul>
           <li>cat nip</li>
           <li>laser pointers</li>
@@ -62,7 +62,7 @@ tests:
           <figcaption>Cats <em>love</em> lasagna.</figcaption>  
         </figure>
         --fcc-editable-region--
-        <p>Top 3 things cats hate:</p>
+        <h3>Top 3 things cats hate:</h3>
         --fcc-editable-region--
       </section>
     </main>

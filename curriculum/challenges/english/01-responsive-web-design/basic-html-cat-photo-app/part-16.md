@@ -32,7 +32,7 @@ tests:
       const secondSection = document.querySelectorAll('section')[1];
       assert( secondSection.lastElementChild.nodeName === 'H2' );
   - text: The second `h2` element should have the text `Cat Lists`. You have either omitted the text or have a typo.
-    testString: assert( document.querySelector('main' > 'section').lastElementChild.innerText.toLowerCase() ===  'cat lists');
+    testString: assert( document.querySelectorAll('main > section')[1].lastElementChild.innerText.toLowerCase() ===  'cat lists');
 
 ```
 

@@ -55,7 +55,7 @@ tests:
       --fcc-editable-region--
       <section>
       <h2>Cat Lists</h2>
-      <p>Things cats love:</p>
+      <h3>Things cats love:</h3>
       <ul>
         <li>cat nip</li>
         <li>laser pointers</li>
@@ -65,7 +65,7 @@ tests:
         <img src="https://bit.ly/fcc-lasagna" alt="A slice of lasagna on a plate.">
         <figcaption>Cats <em>love</em> lasagna.</figcaption>  
       </figure>
-      <p>Top 3 things cats hate:</p>
+      <h3>Top 3 things cats hate:</h3>
       <ol>
         <li>flea treatment</li>
         <li>thunder</li>

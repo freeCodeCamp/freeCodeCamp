@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-After the last `p` element, add the opening and closing tags for an unordered list (`ul`).
+After the `h3` element, add the opening and closing tags for an unordered list (`ul`).
 
 The unordered list will not appear in the browser until content is added.
 
@@ -49,7 +49,7 @@ tests:
       <section>
         --fcc-editable-region--
         <h2>Cat Lists</h2>
-        <p>Things cats love:</p>
+        <h3>Things cats love:</h3>
         --fcc-editable-region--
       </section>
     </main>

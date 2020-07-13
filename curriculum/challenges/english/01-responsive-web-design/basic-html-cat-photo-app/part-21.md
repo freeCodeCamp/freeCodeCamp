@@ -48,7 +48,7 @@ tests:
       </section>
       <section>
         <h2>Cat Lists</h2>
-        <p>Things cats love:</p>
+        <h3>Things cats love:</h3>
         <ul>
           <li>cat nip</li>
           <li>laser pointers</li>

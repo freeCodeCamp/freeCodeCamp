@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-After the `figure` element, add a `p` element with the text `Top 3 things cats hate:`.
+After the `figure` element, add another `h3` element with the text `Top 3 things cats hate:`.
 
 </section>
 
@@ -17,10 +17,10 @@ After the `figure` element, add a `p` element with the text `Top 3 things cats h
 
 ```yml
 tests:
-  - text: There should be a `p` element right above the `main` element's closing tag.
-    testString: assert( document.querySelector('main').lastElementChild.nodeName === 'P' );
-  - text: The `p` element right above the `main` element's closing tag should have the text `Top 3 things cats hate:`. Make sure to include the colon at the end of the text.
-    testString: assert( document.querySelector('main').lastElementChild.innerText.toLowerCase().replace(/\s+/g, ' ') === 'top 3 things cats hate:' );
+  - text: There should be an `h3` element right above the last `section` element's closing tag.
+    testString: assert( document.querySelectorAll('main > section')[1].lastElementChild.nodeName === 'H3' );
+  - text: The `h3` element right above the last `section` element's closing tag should have the text `Top 3 things cats hate:`. Make sure to include the colon at the end of the text.
+    testString: assert( document.querySelectorAll('main > section')[1].lastElementChild.innerText.toLowerCase().replace(/\s+/g, ' ') === 'top 3 things cats hate:' );
   - text: There should be a closing `</figure>` tag. You might have accidentally deleted the closing `</figure>` tag, or removed the `figure` element altogether.
     testString: assert( code.match(/<\/figure\>/) );
 
@@ -45,7 +45,7 @@ tests:
       </section>
       <section>
         <h2>Cat Lists</h2>
-        <p>Things cats love:</p>
+        <h3>Things cats love:</h3>
         <ul>
           <li>cat nip</li>
           <li>laser pointers</li>
