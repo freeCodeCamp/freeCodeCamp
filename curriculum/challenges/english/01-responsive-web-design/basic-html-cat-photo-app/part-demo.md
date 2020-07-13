@@ -45,7 +45,7 @@ tests:
       </section>
       <section>
         <h2>Cat Lists</h2>
-        <p>Things cats love:</p>
+        <h3>Things cats love:</h3>
         <ul>
           <li>cat nip</li>
           <li>laser pointers</li>
@@ -55,7 +55,7 @@ tests:
           <img src="https://bit.ly/fcc-lasagna" alt="A slice of lasagna on a plate.">
           <figcaption>Cats <em>love</em> lasagna.</figcaption>  
         </figure>
-        <p>Top 3 things cats hate:</p>
+        <h3>Top 3 things cats hate:</h3>
         <ol>
           <li>flea treatment</li>
           <li>thunder</li>
@@ -70,19 +70,18 @@ tests:
         <h2>Cat Form</h2>
         <form action="/submit-cat-photo">
           <fieldset>
-            <legend>What's your cat like?</legend>
-            <div>
-              <label for="indoor"><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
-              <label for="outdoor"><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label>
-            </div>
-            <div>
-              <label for="loving"><input id="loving" type="checkbox" name="personality" checked> Loving</label>
-              <label for="lazy"><input id="lazy" type="checkbox" name="personality"> Lazy</label>
-              <label for="energetic"><input id="energetic" type="checkbox" name="personality"> Energetic</label>
-            </div>
-            <input type="text" placeholder="cat photo URL" required>
-            <button type="submit">Submit</button>
+            <legend>Is your cat an indoor or outdoor cat?</legend>
+            <label for="indoor"><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
+            <label for="outdoor"><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label>
+          </fieldset>
           <fieldset>
+            <legend>What's your cat's personality?</legend>
+            <label for="loving"><input id="loving" type="checkbox" name="personality" checked> Loving</label>
+            <label for="lazy"><input id="lazy" type="checkbox" name="personality"> Lazy</label>
+            <label for="energetic"><input id="energetic" type="checkbox" name="personality"> Energetic</label>
+          </fieldset>
+          <input type="text" placeholder="cat photo URL" required>
+          <button type="submit">Submit</button>
         </form>
       </section>
     </main>
