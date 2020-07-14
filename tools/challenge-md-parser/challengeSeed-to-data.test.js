@@ -3,6 +3,7 @@ const isArray = require('lodash/isArray');
 
 const mockAST = require('./fixtures/challenge-html-ast.json');
 const { challengeSeedToData } = require('./challengeSeed-to-data');
+const { isObject } = require('lodash');
 
 describe('challengeSeed-to-data plugin', () => {
   const plugin = challengeSeedToData();
@@ -21,9 +22,9 @@ describe('challengeSeed-to-data plugin', () => {
     expect('files' in file.data).toBe(true);
   });
 
-  it('ensures that the `files` property is an array', () => {
+  it('ensures that the `files` property is an object', () => {
     plugin(mockAST, file);
-    expect(Array.isArray(file.data.files)).toBe(true);
+    expect(isObject(file.data.files)).toBe(true);
   });
 
   it('adds test objects to the files array following a schema', () => {
@@ -32,7 +33,7 @@ describe('challengeSeed-to-data plugin', () => {
     const {
       data: { files }
     } = file;
-    const testObject = files[0];
+    const testObject = files.indexjs;
     expect(Object.keys(testObject).length).toEqual(7);
     expect(testObject).toHaveProperty('key');
     expect(typeof testObject['key']).toBe('string');
