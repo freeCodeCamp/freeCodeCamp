@@ -27,8 +27,8 @@ Create an <code>a</code> element that links to <code>https://freecatphotoapp.com
 tests:
   - text: Your <code>a</code> element should have the anchor text of "cat photos".
     testString: assert((/cat photos/gi).test($("a").text()));
-  - text: You need an <code>a</code> element that links to <code>http&#58;//freecatphotoapp<wbr>.com</code>
-    testString: assert(/http:\/\/(www\.)?freecatphotoapp\.com/gi.test($("a").attr("href")));
+  - text: You need an <code>a</code> element that links to <code>https://freecatphotoapp.com</code>
+    testString: assert(/https:\/\/(www\.)?freecatphotoapp\.com/gi.test($("a").attr("href")));
   - text: Your <code>a</code> element should have a closing tag.
     testString: assert(code.match(/<\/a>/g) && code.match(/<\/a>/g).length === code.match(/<a/g).length);
 
