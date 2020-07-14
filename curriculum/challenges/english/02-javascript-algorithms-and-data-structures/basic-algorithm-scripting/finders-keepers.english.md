@@ -9,7 +9,9 @@ forumTopicId: 16016
 
 ## Description
 <section id='description'>
-Create a function that looks through an array (first argument) and returns the first element in the array that passes a truth test (second argument). If no element passes the test, return undefined.
+
+
+Create a function that looks through an array `arr` and returns the first element in it that passes a 'truth test'. This means that given an element `x`, the 'truth test' is passed if `func(x)` is `true`. If no element passes the test, return `undefined`.
 </section>
 
 ## Instructions

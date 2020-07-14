@@ -11,7 +11,7 @@ const propTypes = {
 function OfflineWarning({ isOnline, isSignedIn }) {
   return !isSignedIn || isOnline ? null : (
     <div className='offline-warning'>
-      We cannot reach the server to update your progress.
+      You appear to be offline, your progress may not be being saved.
     </div>
   );
 }
