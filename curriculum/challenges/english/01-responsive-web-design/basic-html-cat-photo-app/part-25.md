@@ -10,7 +10,7 @@ isHidden: true
 
 The code for an ordered list (`ol`) is similar to an unordered list, but list items in an ordered list are numbered when displayed.
 
-After the final `h3` element, add an ordered list with these three list items: `flea treatment`, `thunder` and `other cats`.
+After the final second section' last `h3` element, add an ordered list with these three list items: `flea treatment`, `thunder` and `other cats`.
 
 </section>
 
@@ -23,10 +23,10 @@ tests:
     testString: assert( document.querySelector('ol') );
   - text: Your `ol` element should have a closing tag. Closing tags have a `/` just after the `<` character.
     testString: assert( code.match(/<\/ol>/) );
-  - text: The `ol` element should be above the `main` element's closing tag. You have them in the wrong order.
-    testString: assert( document.querySelector('main').lastElementChild.nodeName === 'OL' );
+  - text: The `ol` element should be above the second `section` element's closing tag. You have them in the wrong order.
+    testString: assert( $('main > section')[1].lastElementChild.nodeName === 'OL' );
   - text: The three `li` elements should be nested inside the `ol` element.
-    testString: assert( [ ...document.querySelectorAll('li') ].filter(item => item.parentNode.nodeName === 'OL').length === 3 );
+    testString: assert( [ ...document.querySelectorAll('li') ].filter(item => item.parentNode.nodeName === 'OL').length === 3);
   - text: You should have three `li` elements with the text `flea treatment`, `thunder` and `other cats` in any order.
     testString: assert.deepStrictEqual( [ ...document.querySelectorAll('li') ].filter(item => item.parentNode.nodeName === 'OL').map(item => item.innerText.toLowerCase()).sort((a, b) => a.localeCompare(b)), ["flea treatment", "other cats", "thunder"] );
 

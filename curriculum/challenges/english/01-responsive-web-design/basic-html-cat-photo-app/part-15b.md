@@ -25,13 +25,20 @@ tests:
     testString: assert( code.match(/<\/section>/g).length >= 2 );
   - text: You should only add one closing `section`) tag. Please remove any extras.
     testString: assert( code.match(/<\/section>/g).length === 2 );
+  - text: The second `section` element should not be nested in the first section element.
+    testString: |
+      const childrenOf1stSection = [ ...document.querySelector('main > section').children ];
+      const foundElems = childrenOf1stSection.filter(child => {
+        return child.nodeName === 'SECTION';
+      });
+      assert( foundElems.length === 0 );
   - text: Both `section` elements should be between the opening and closing tags of the `main` element.
     testString: |
       const childrenOfMain = [ ...document.querySelector('main').children ];
       const foundElems = childrenOfMain.filter(child => {
         return child.nodeName === 'SECTION';
       });
-      assert( childrenOfMain.length === 2 );
+      assert( foundElems.length === 2 );
 
 ```
 
@@ -46,16 +53,16 @@ tests:
 <html>
   <body>
     <h1>CatPhotoApp</h1>
-    --fcc-editable-region--
     <main>
+      --fcc-editable-region--
       <section>
         <h2>Cat Photos</h2>
         <!-- TODO: Add link to cat photos -->
         <p>Click here to view more <a target="_blank" href="https://www.freecodecamp.org/cat-photos">cat photos</a>.</p>
         <a href="https://www.freecodecamp.org/cat-photos"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
       </section>
+      --fcc-editable-region--
     </main>
-    --fcc-editable-region--
   </body>
 </html>
 ```

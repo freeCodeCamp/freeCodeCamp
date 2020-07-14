@@ -26,9 +26,11 @@ Nest three list items within the `ul` element to display three things cats love:
 
 ```yml
 tests:
-  - text: You should have 3 `li` elements with the text `cat nip`, `laser pointers` and `lasagna` in any order. You have either omitted some text or have a typo.
+  - text: You should have three `li` elements. Each `li` element should have its own opening and closing tag.
+    testString: assert( $('li').length === 3 &&  code.match(/<\/li\>/g).length === 3 );
+  - text: You should have three `li` elements with the text `cat nip`, `laser pointers` and `lasagna` in any order. You have either omitted some text or have a typo.
     testString: assert.deepStrictEqual( [ ...document.querySelectorAll('li') ].map(item => item.innerText.toLowerCase()).sort((a, b) => a.localeCompare(b)), ["cat nip", "lasagna", "laser pointers"] );
-  - text: The three `li` elements should be nested inside the `ul` element.
+  - text: The three `li` elements should be located between the `ul` element's opening and closing tags.
     testString: assert( [ ...document.querySelectorAll('li') ].filter(item => item.parentNode.nodeName === 'UL').length === 3 );
 
 ```

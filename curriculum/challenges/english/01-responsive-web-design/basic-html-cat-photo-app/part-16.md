@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Within the second `section` element, add a new `h2` element with the text `Cat Lists`.  It should appear after the linked image.
+Within the second `section` element, add a new `h2` element with the text `Cat Lists`.
 
 </section>
 
@@ -48,16 +48,16 @@ tests:
   <body>
     <h1>CatPhotoApp</h1>
     <main>
-      --fcc-editable-region--
       <section>
         <h2>Cat Photos</h2>
         <!-- TODO: Add link to cat photos -->
         <p>Click here to view more <a target="_blank" href="https://www.freecodecamp.org/cat-photos">cat photos</a>.</p>
         <a href="https://www.freecodecamp.org/cat-photos"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
       </section>
+      --fcc-editable-region--
       <section>
       </section>
-     --fcc-editable-region--
+      --fcc-editable-region--
     </main>
   </body>
 </html>

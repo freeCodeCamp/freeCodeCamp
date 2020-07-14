@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Figure caption (`figcaption`) elements are used to add a caption to describe whatever is in the surrounding `figure` element. For example, `<figcaption>A cute cat</figcaption>` adds the caption `A cute cat`.
+A figure caption (`figcaption`) element is used to add a caption to describe the image contained withing the `figure` element. For example, `<figcaption>A cute cat</figcaption>` adds the caption `A cute cat`.
 
 After the image nested in the `figure` element, add a `figcaption` element with the text `Cats love lasagna.`
 
@@ -27,6 +27,8 @@ tests:
     testString: assert( code.match(/<\/figcaption\>/) );
   - text: The `figcaption` element should be nested in the `figure` element.
     testString: assert( document.querySelector('figure > figcaption') && document.querySelector('figure > figcaption'));
+  - text: The lasagna `img` element should be nested in the `figure` element.
+    testString: assert( document.querySelector('figure > img') && document.querySelector('figure > img').getAttribute('src').toLowerCase() === 'https://bit.ly/fcc-lasagna');
   - text: The `figcaption` element nested in the `figure` element should be below the `img` element. You have them in the wrong order.
     testString: assert( document.querySelector('figcaption').previousElementSibling.nodeName === 'IMG');
   - text: Your `figcaption` element's text should be `Cats love lasagna.` You have either omitted the text or have a typo.

@@ -21,8 +21,8 @@ tests:
     testString: assert( document.querySelectorAll('figure').length === 2 );
   - text: Your `figure` element should have a closing tag. Closing tags have a `/` just after the `<` character.
     testString: assert( code.match(/<\/figure>/g).length === 2 );
-  - text: There should be a `figure` element right above the `main` element's closing tag.
-    testString: assert( document.querySelector('main').lastElementChild.nodeName === 'FIGURE' );
+  - text: There should be a `figure` element right above the second `section` element's closing tag.
+    testString: assert( $('main > section')[1].lastElementChild.nodeName === 'FIGURE' );
 
 ```
 

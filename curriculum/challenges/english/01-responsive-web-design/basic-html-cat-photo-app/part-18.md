@@ -8,9 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-After the `h3` element, add the opening and closing tags for an unordered list (`ul`).
-
-The unordered list will not appear in the browser until content is added.
+After the `h3` element with the `Things cats love:` text, add an unordered list (`ul`) element. Note that nothing will be displayed at this point.
 
 </section>
 
@@ -23,8 +21,10 @@ tests:
     testString: assert( document.querySelector('ul') );
   - text: Your `ul` element should have a closing tag. Closing tags have a `/` just after the `<` character.
     testString: assert( code.match(/<\/ul>/) );
-  - text: The `ul` element should be above the `main` element's closing tag.
-    testString: assert( document.querySelector('main').lastElementChild.nodeName === 'UL' );
+  - text: The `ul` element should be above the second `section` element's closing tag.
+    testString: |
+      const secondSectionLastElemNode = $('main > section')[1].lastElementChild;
+      assert( secondSectionLastElemNode.nodeName === 'UL' );
 
 ```
 

@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-After the `fcc-cats` image, add a `figcaption` element with the text `Cats hate other cats.`
+After the last `img` element, add a `figcaption` element with the text `Cats hate other cats.`
 
 </section>
 
@@ -17,18 +17,18 @@ After the `fcc-cats` image, add a `figcaption` element with the text `Cats hate 
 
 ```yml
 tests:
-  - text: There should be a `figure` element right above the `main` element's closing tag.
-    testString: assert( document.querySelector('main').lastElementChild.nodeName === 'FIGURE' );
-  - text: The Cats `img` element should be nested in the `figure` element.
+  - text: "Your `figcaption` element should have an opening tag. Opening tags have the following syntax: `<elementName>`."
+    testString: assert( document.querySelectorAll('figcaption').length === 2 );
+  - text: Your `figcaption` element should have a closing tag. Closing tags have a `/` just after the `<` character.
+    testString: assert( code.match(/<\/figcaption\>/g).length === 2 );
+  - text: There should be a `figure` element right above the second `section` element's closing tag.
+    testString: console.log($('main > section')[1]); assert( $('main > section')[1].lastElementChild.nodeName === 'FIGURE' );
+  - text: The last `img` element should be nested in the `figure` element.
     testString: const catsImg = document.querySelectorAll('figure > img')[1]; assert( catsImg && catsImg.getAttribute('src').toLowerCase() === 'https://bit.ly/fcc-cats');
   - text: "Your `figure` element should have an opening tag. Opening tags have the following syntax: `<elementName>`."
     testString: assert( document.querySelectorAll('figure').length === 2 );
   - text: Your `figure` element should have a closing tag. Closing tags have a `/` just after the `<` character.
     testString: assert( code.match(/<\/figure\>/g).length === 2 );
-  - text: "Your `figcaption` element should have an opening tag. Opening tags have the following syntax: `<elementName>`."
-    testString: assert( document.querySelectorAll('figcaption').length === 2 );
-  - text: Your `figcaption` element should have a closing tag. Closing tags have a `/` just after the `<` character.
-    testString: assert( code.match(/<\/figcaption\>/g).length === 2 );
   - text: The `figcaption` element should be nested in the `figure` element.
     testString: assert( document.querySelectorAll('figure > figcaption').length === 2);
   - text: The `figcaption` element nested in the `figure` element should be below the `img` element. You have the `img` element and the `figcaption` element in the wrong order.
@@ -54,8 +54,8 @@ tests:
         <!-- TODO: Add link to cat photos -->
         <p>Click here to view more <a target="_blank" href="https://www.freecodecamp.org/cat-photos">cat photos</a>.</p>
         <a href="https://www.freecodecamp.org/cat-photos"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-      <section>
       </section>
+      <section>
         <h2>Cat Lists</h2>
         <h3>Things cats love:</h3>
         <ul>

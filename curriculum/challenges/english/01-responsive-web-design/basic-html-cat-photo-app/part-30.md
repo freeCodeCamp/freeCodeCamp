@@ -25,6 +25,8 @@ tests:
     testString: assert( code.match(/<\/strong\>/) );
   - text: Your strong element should surround the word `hate` in the text `Cats hate other cats.` You have either omitted the text or have a typo.
     testString: assert( document.querySelectorAll('figcaption')[1].querySelector('strong').innerText.toLowerCase() === 'hate' );
+  - text: The `figcaption`'s text should be `Cats hate other cats.` Check for typos and that the necessary spaces are present around the `strong` element's opening and closing tags.
+    testString: const secondFigCaption = document.querySelectorAll('figcaption')[1]; assert( secondFigCaption && secondFigCaption.innerText.replace(/\s+/gi, ' ').trim().match(/cats hate other cats\.?/i) );
 
 ```
 

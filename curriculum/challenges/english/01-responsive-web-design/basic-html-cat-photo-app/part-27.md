@@ -21,10 +21,16 @@ tests:
     testString: assert( document.querySelectorAll('figure').length === 2 );
   - text: Your second `figure` element should have a closing tag. Closing tags have a `/` just after the `<` character.
     testString: assert( code.match(/<\/figure>/g).length === 2 );
-  - text: There should be a second `figure` element right above the `main` element's closing tag. You have them in the wrong order.
-    testString: assert( document.querySelector('main').lastElementChild.nodeName === 'FIGURE' );
-  - text: Your third `img` element should be nested in the `figure` element.
+  - text: There should be a second `figure` element right above the second `section` element's closing tag. You have them in the wrong order.
+    testString: assert( $('main > section')[1].lastElementChild.nodeName === 'FIGURE' );
+  - text: You should have a third `img` element nested in the `figure` element.
     testString: const catsImg = document.querySelectorAll('figure > img')[1]; assert( catsImg && catsImg.getAttribute('src').toLowerCase() === 'https://bit.ly/fcc-cats');
+  - text: The third image should have an `src` attribute set to `https://bit.ly/fcc-cats`.
+    testString: |
+      const catsImg = document.querySelectorAll('figure > img')[1];
+      assert( catsImg && catsImg.getAttribute('src').toLowerCase() === 'https://bit.ly/fcc-cats');
+  - text: Although you have set the new image's `src` to the correct URL, it is recommended to always surround the value of an attribute with quotation marks.
+    testString: assert( !/\<img\s+.+\s+src\s*=\s*https:\/\/bit\.ly\/fcc-cats/.test(code) );
 
 ```
 

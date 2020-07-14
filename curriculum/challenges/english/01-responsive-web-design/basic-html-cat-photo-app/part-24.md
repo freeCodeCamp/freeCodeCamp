@@ -17,12 +17,16 @@ After the `figure` element, add another `h3` element with the text `Top 3 things
 
 ```yml
 tests:
-  - text: There should be an `h3` element right above the last `section` element's closing tag.
-    testString: assert( document.querySelectorAll('main > section')[1].lastElementChild.nodeName === 'H3' );
-  - text: The `h3` element right above the last `section` element's closing tag should have the text `Top 3 things cats hate:`. Make sure to include the colon at the end of the text.
+  - text: There should be an `h3` element right above the second `section` element's closing tag. Make it has an opening and closing tag.
+    testString: assert( document.querySelectorAll('main > section')[1].lastElementChild.nodeName === 'H3' && code.match(/<\/h3\>/g).length === 2);
+  - text: The new `h3` element should have the text `Top 3 things cats hate:`. Make sure to include the colon at the end of the text.
     testString: assert( document.querySelectorAll('main > section')[1].lastElementChild.innerText.toLowerCase().replace(/\s+/g, ' ') === 'top 3 things cats hate:' );
-  - text: There should be a closing `</figure>` tag. You might have accidentally deleted the closing `</figure>` tag, or removed the `figure` element altogether.
-    testString: assert( code.match(/<\/figure\>/) );
+  - text: There should be a `figure` above the new `h3` element. You may have accidentally deleted the `figure` element.
+    testString: |
+      const secondSectionLastElemNode = document.querySelectorAll('main > section')[1].lastElementChild;
+      assert(
+        secondSectionLastElemNode.nodeName === 'H3' && secondSectionLastElemNode.previousElementSibling.nodeName === 'FIGURE'
+      );
 
 ```
 

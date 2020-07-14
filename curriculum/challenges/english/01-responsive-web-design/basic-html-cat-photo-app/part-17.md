@@ -10,7 +10,7 @@ isHidden: true
 
 When you add a lower rank heading element to the page, it's implied that you're starting a new subsection.
 
-After the last `h2` element, add an `h3` element with the text `Things cats love:`.
+After the last `h2` element of the second `section` element, add an `h3` element with the text `Things cats love:`.
 
 </section>
 
@@ -19,15 +19,17 @@ After the last `h2` element, add an `h3` element with the text `Things cats love
 
 ```yml
 tests:
-  - text: There should be an `h3` element right above the last `section` element's closing tag.
+  - text: The second `section` element appears to be missing or does not have both an opening and closing tag.
+    testString: assert( (document.querySelectorAll('main > section')[1] && code.match(/\<\/section>/g).length == 2) );
+  - text: There should be an `h3` element right above the second `section` element's closing tag.
     testString: assert( document.querySelectorAll('main > section')[1].lastElementChild.nodeName === 'H3' );
-  - text: The `h3` element right above the last `section` element's closing tag should have the text `Things cats love:`. Make sure to include the colon at the end of the text.
+  - text: The `h3` element right above the second `section` element's closing tag should have the text `Things cats love:`. Make sure to include the colon at the end of the text.
     testString: assert( document.querySelectorAll('main > section')[1].lastElementChild.innerText.toLowerCase().replace(/\s+/g, ' ') === 'things cats love:' );
   - text: There should be an `h2` element with the text `Cat Lists` above the last `h3` element that is nested in the `main` element. You may have accidentally deleted the `h2` element.
     testString: |
-      const lastMainElemNode = document.querySelectorAll('main > section')[1].lastElementChild;
+      const secondSectionLastElemNode = document.querySelectorAll('main > section')[1].lastElementChild;
       assert(
-        lastMainElemNode.nodeName === 'H3' && lastMainElemNode.previousElementSibling.innerText.toLowerCase().replace(/\s+/g, ' ') === 'cat lists'
+        secondSectionLastElemNode.nodeName === 'H3' && secondSectionLastElemNode.previousElementSibling.innerText.toLowerCase().replace(/\s+/g, ' ') === 'cat lists'
       );
 
 ```

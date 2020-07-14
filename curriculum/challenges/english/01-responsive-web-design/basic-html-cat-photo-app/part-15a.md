@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Before you add any new content, you should make use of a `section` element to separate the cat photos content from future content.
+Before adding any new content, you should make use of a `section` element to separate the cat photos content from the future content.
 
 Take all the elements currently located within the `main` element and nest them in a `section` element.
 

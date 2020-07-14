@@ -22,7 +22,7 @@ tests:
   - text: Your `ol` element should have a closing tag. Closing tags have a `/` just after the `<` character.
     testString: assert( code.match(/<\/figure>/g).length === 2 );
   - text: There should be a `figure` element right above the `main` element's closing tag.
-    testString: assert( document.querySelector('main').lastElementChild.nodeName === 'FIGURE' );
+    testString: assert( $('main > section')[1].lastElementChild.nodeName === 'FIGURE' );
   - text: The Cats `img` element should be nested in the `figure` element.
     testString: const catsImg = document.querySelectorAll('figure > img')[1]; assert( catsImg && catsImg.getAttribute('src').toLowerCase() === 'https://bit.ly/fcc-cats');
   - text: The Cats `img` element should have an `alt` attribute with the value `Five cats looking around a field.`
@@ -66,7 +66,9 @@ tests:
           <li>other cats</li>
         </ol>
         <figure>
+          --fcc-editable-region--
           <img src="https://bit.ly/fcc-cats">
+          --fcc-editable-region--
         </figure>
       </section>
     </main>

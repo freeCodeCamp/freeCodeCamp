@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-The `figure` element element represents self-contained content and will allow you to associate an image with a caption.
+The `figure` element represents self-contained content and will allow you to associate an image with a caption.
 
-Nest the `img` you just added within a `figure` element.
+Nest the image you just added within a `figure` element.
 </section>
 
 ## Tests
@@ -22,9 +22,9 @@ tests:
     testString: assert( document.querySelector('figure') );
   - text: Your `figure` element should have a closing tag. Closing tags have a `/` just after the `<` character.
     testString: assert( code.match(/<\/figure\>/) );
-  - text: There should be an `figure` element right above the `main` element's closing tag.
-    testString: assert( document.querySelector('main').lastElementChild.nodeName === 'FIGURE' );
-  - text: The Lasagna `img` element should be nested in the `figure` element.
+  - text: There should be an `figure` element right above the second `section` element's closing tag.
+    testString: assert( $('section')[1].lastElementChild.nodeName === 'FIGURE' );
+  - text: The lasagna `img` element should be nested in the `figure` element.
     testString: assert( document.querySelector('figure > img') && document.querySelector('figure > img').getAttribute('src').toLowerCase() === 'https://bit.ly/fcc-lasagna');
 ```
 
