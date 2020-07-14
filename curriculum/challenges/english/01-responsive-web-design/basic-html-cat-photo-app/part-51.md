@@ -67,12 +67,16 @@ tests:
       <section>
         <h2>Cat Form</h2>
         <form action="/submit-cat-photo">
-          <div>
+          <fieldset>
+            <legend>Is your cat an indoor or outdoor cat?</legend>
             <label for="indoor"><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
             <label for="outdoor"><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label>
-          </div>
-          <label for="loving"><input id="loving" type="checkbox" name="personality"> Loving</label>
-          <label for="lazy"><input id="lazy" type="checkbox" name="personality"> Lazy</label>
+          </fieldset>
+          <fieldset>
+            <legend>What's your cat's personality?</legend>
+            <label for="loving"><input id="loving" type="checkbox" name="personality"> Loving</label>
+            <label for="lazy"><input id="lazy" type="checkbox" name="personality"> Lazy</label>
+          </fieldset>
           <input type="text" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>
         </form>

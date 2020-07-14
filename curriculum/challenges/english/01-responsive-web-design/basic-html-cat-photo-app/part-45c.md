@@ -1,6 +1,6 @@
 ---
-id: 5ef9b03c81a63668521804e4
-title: Part 52
+id: 5f0d4d04b435f13ab6550053
+title: Part 45c
 challengeType: 0
 isHidden: true
 ---
@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Nest the three checkboxes in another `div` element just like you did with the radio buttons, and don't forget to indent the checkboxes.
+Nest a `legend` element with the text `What's your cat's personality?` inside the second `fieldset` element.
 
 </section>
 
@@ -65,13 +65,13 @@ tests:
       <section>
         <h2>Cat Form</h2>
         <form action="/submit-cat-photo">
-          <div>
+          <fieldset>
+            <legend>Is your cat an indoor or outdoor cat?</legend>
             <label for="indoor"><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
             <label for="outdoor"><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label>
-          </div>
-          <label for="loving"><input id="loving" type="checkbox" name="personality"> Loving</label>
-          <label for="lazy"><input id="lazy" type="checkbox" name="personality"> Lazy</label>
-          <label for="energetic"><input id="energetic" type="checkbox" name="personality"> Energetic</label>
+          </fieldset>
+          <fieldset>
+          </fieldset>
           <input type="text" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>
         </form>

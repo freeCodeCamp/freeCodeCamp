@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-The division (`div`) element is a general purpose container used to group content together. `div` elements are <dfn>block-level elements</dfn>, meaning that they appear on a new line.
+The `fieldset` element is used to group related inputs and labels together in a web form. `fieldset` elements are <dfn>block-level elements</dfn>, meaning that they appear on a new line.
 
-Nest the `Indoor` and `Outdoor` radio buttons within a `div` element, and don't forget to indent the buttons.
+Nest the `Indoor` and `Outdoor` radio buttons within a `fieldset` element, and don't forget to indent the buttons.
 
 </section>
 

@@ -1,6 +1,6 @@
 ---
-id: 5ef9b03c81a63668521804e6
-title: Part 54
+id: 5f0d48e7b435f13ab6550051
+title: Part 45a
 challengeType: 0
 isHidden: true
 ---
@@ -8,11 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-`div` elements are one of the most common HTML elements, and are often used with CSS to style sections of a page. You'll learn about CSS in future projects.
+The `legend` element acts as a caption for the content in the `fieldset` element, and gives users context about what they should enter into that part of the form.
 
-Put an opening `<div>` tag above your `Things cats love` `p` element and a closing `</div>` tag above your `Cat Form` heading element so that both of your lists are within one `div` element.
-
-** Use section element instead? **
+Add a `legend` element with the text `Is your cat an indoor or outdoor cat?` above both of the radio buttons.
 
 </section>
 
@@ -69,15 +67,10 @@ tests:
       <section>
         <h2>Cat Form</h2>
         <form action="/submit-cat-photo">
-          <div>
+          <fieldset>
             <label for="indoor"><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
             <label for="outdoor"><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label>
-          </div>
-          <div>
-            <label for="loving"><input id="loving" type="checkbox" name="personality" checked> Loving</label>
-            <label for="lazy"><input id="lazy" type="checkbox" name="personality"> Lazy</label>
-            <label for="energetic"><input id="energetic" type="checkbox" name="personality"> Energetic</label>
-          </div>
+          </fieldset>
           <input type="text" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>
         </form>

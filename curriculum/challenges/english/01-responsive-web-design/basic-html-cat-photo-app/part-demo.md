@@ -71,7 +71,7 @@ tests:
         <form action="/submit-cat-photo">
           <fieldset>
             <legend>Is your cat an indoor or outdoor cat?</legend>
-            <label for="indoor"><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
+            <label for="indoor"><input id="indoor" type="radio" name="indoor-outdoor" checked> Indoor</label>
             <label for="outdoor"><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label>
           </fieldset>
           <fieldset>

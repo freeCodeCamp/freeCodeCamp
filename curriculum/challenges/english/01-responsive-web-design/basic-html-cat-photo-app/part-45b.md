@@ -1,6 +1,6 @@
 ---
-id: 5ef9b03c81a63668521804e7
-title: Part 55
+id: 5f0d4ab1b435f13ab6550052
+title: Part 45b
 challengeType: 0
 isHidden: true
 ---
@@ -8,9 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Now you will add a footer section to the page. 
-
-After the `main` element, add a `footer` element.
+Add another `fieldset` element below the current `fieldset` element.
 
 </section>
 
@@ -69,14 +67,8 @@ tests:
         <form action="/submit-cat-photo">
           <fieldset>
             <legend>Is your cat an indoor or outdoor cat?</legend>
-            <label for="indoor"><input id="indoor" type="radio" name="indoor-outdoor" checked> Indoor</label>
+            <label for="indoor"><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
             <label for="outdoor"><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label>
-          </fieldset>
-          <fieldset>
-            <legend>What's your cat's personality?</legend>
-            <label for="loving"><input id="loving" type="checkbox" name="personality" checked> Loving</label>
-            <label for="lazy"><input id="lazy" type="checkbox" name="personality"> Lazy</label>
-            <label for="energetic"><input id="energetic" type="checkbox" name="personality"> Energetic</label>
           </fieldset>
           <input type="text" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>

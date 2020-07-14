@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-The `title` element determines what browsers show in the title bar or tab for your page.
+The `title` element determines what browsers show in the title bar or tab for the page.
 
 Add a `title` element within the `head` element. Its text should be `CatPhotoApp`.
 
@@ -69,15 +69,17 @@ tests:
       <section>
         <h2>Cat Form</h2>
         <form action="/submit-cat-photo">
-          <div>
-            <label for="indoor"><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
+          <fieldset>
+            <legend>Is your cat an indoor or outdoor cat?</legend>
+            <label for="indoor"><input id="indoor" type="radio" name="indoor-outdoor" checked> Indoor</label>
             <label for="outdoor"><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label>
-          </div>
-          <div>
+          </fieldset>
+          <fieldset>
+            <legend>What's your cat's personality?</legend>
             <label for="loving"><input id="loving" type="checkbox" name="personality" checked> Loving</label>
             <label for="lazy"><input id="lazy" type="checkbox" name="personality"> Lazy</label>
             <label for="energetic"><input id="energetic" type="checkbox" name="personality"> Energetic</label>
-          </div>
+          </fieldset>
           <input type="text" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>
         </form>

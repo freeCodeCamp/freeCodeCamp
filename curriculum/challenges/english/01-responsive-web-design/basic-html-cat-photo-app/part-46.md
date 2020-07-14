@@ -10,7 +10,7 @@ isHidden: true
 
 Forms commonly use checkboxes for questions that may have more than one answer. For example, here's a checkbox with the option of `tacos`: `<input type="checkbox"> tacos`.
 
-After the `div` element, add an `input` with its `type` attribute set to `checkbox`, and give it the option of `Loving`.
+Under the `legend` element you just added, add an `input` with its `type` attribute set to `checkbox` and give it the option of `Loving`.
 
 </section>
 
@@ -67,10 +67,14 @@ tests:
       <section>
         <h2>Cat Form</h2>
         <form action="/submit-cat-photo">
-          <div>
+          <fieldset>
+            <legend>Is your cat an indoor or outdoor cat?</legend>
             <label for="indoor"><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
             <label for="outdoor"><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label>
-          </div>
+          </fieldset>
+          <fieldset>
+            <legend>What's your cat's personality?</legend>
+          </fieldset>
           <input type="text" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>
         </form>

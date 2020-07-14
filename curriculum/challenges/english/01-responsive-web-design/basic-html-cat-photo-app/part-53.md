@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-To set a checkbox or radio button to be checked by default, add the word `checked` to the inside of an input element. For example: `<input type="radio" name="test-name" checked>`. 
+To set a checkbox or radio button to be checked by default, add the word `checked` inside the `input` element. For example: `<input type="radio" name="test-name" checked>`. 
 
 Set the first of your radio buttons and the first of your checkboxes to both be checked by default.
 
@@ -67,15 +67,17 @@ tests:
       <section>
         <h2>Cat Form</h2>
         <form action="/submit-cat-photo">
-          <div>
+          <fieldset>
+            <legend>Is your cat an indoor or outdoor cat?</legend>
             <label for="indoor"><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
             <label for="outdoor"><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label>
-          </div>
-          <div>
-            <label for="loving"><input id="loving" type="checkbox" name="personality" checked> Loving</label>
+          </fieldset>
+          <fieldset>
+            <legend>What's your cat's personality?</legend>
+            <label for="loving"><input id="loving" type="checkbox" name="personality"> Loving</label>
             <label for="lazy"><input id="lazy" type="checkbox" name="personality"> Lazy</label>
             <label for="energetic"><input id="energetic" type="checkbox" name="personality"> Energetic</label>
-          </div>
+          </fieldset>
           <input type="text" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>
         </form>
