@@ -25,7 +25,7 @@ tests:
     testString: assert( document.querySelectorAll('main > section')[1].lastElementChild.nodeName === 'H3' );
   - text: The `h3` element right above the second `section` element's closing tag should have the text `Things cats love:`. Make sure to include the colon at the end of the text.
     testString: assert( document.querySelectorAll('main > section')[1].lastElementChild.innerText.toLowerCase().replace(/\s+/g, ' ') === 'things cats love:' );
-  - text: There should be an `h2` element with the text `Cat Lists` above the last `h3` element that is nested in the `main` element. You may have accidentally deleted the `h2` element.
+  - text: There should be an `h2` element with the text `Cat Lists` above the last `h3` element that is nested in the last `section` element'. You may have accidentally deleted the `h2` element.
     testString: |
       const secondSectionLastElemNode = document.querySelectorAll('main > section')[1].lastElementChild;
       assert(
