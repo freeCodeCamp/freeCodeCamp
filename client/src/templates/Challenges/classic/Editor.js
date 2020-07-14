@@ -35,7 +35,7 @@ const propTypes = {
   inAccessibilityMode: PropTypes.bool.isRequired,
   initialEditorContent: PropTypes.string,
   initialExt: PropTypes.string,
-  output: PropTypes.string,
+  output: PropTypes.arrayOf(PropTypes.string),
   saveEditorContent: PropTypes.func.isRequired,
   setAccessibilityMode: PropTypes.func.isRequired,
   setEditorFocusability: PropTypes.func,
@@ -478,8 +478,13 @@ class Editor extends Component {
   createOutputNode() {
     if (this._outputNode) return this._outputNode;
     const outputNode = document.createElement('div');
-
-    outputNode.innerHTML = 'TESTS GO HERE';
+    const statusNode = document.createElement('div');
+    const hintNode = document.createElement('div');
+    outputNode.appendChild(statusNode);
+    outputNode.appendChild(hintNode);
+    hintNode.setAttribute('id', 'test-output');
+    statusNode.setAttribute('id', 'test-status');
+    statusNode.innerHTML = '// tests';
 
     // TODO: does it?
     // The z-index needs increasing as ViewZones default to below the lines.
@@ -910,14 +915,23 @@ class Editor extends Component {
     }
 
     if (this._editor) {
+      const { output } = this.props;
       if (this.props.output !== prevProps.output && this._outputNode) {
         // TODO: output gets wiped when the preview gets updated, keeping the
         // display is an anti-pattern (the render should not ignore props!).
         // The correct solution is probably to create a new redux variable
         // (shownHint,maybe) and have that persist through previews.  But, for
         // now:
-        if (this.props.output) {
-          this._outputNode.innerHTML = this.props.output;
+        if (output) {
+          console.log('OUTPUT', output);
+          if (output[0]) {
+            document.getElementById('test-status').innerHTML = output[0];
+          }
+
+          if (output[1]) {
+            document.getElementById('test-output').innerHTML = output[1];
+          }
+
           if (this.data[fileKey].startEditDecId) {
             this.updateOutputZone();
           }
