@@ -28,10 +28,12 @@ tests:
   - text: All of the `section` elements should be between the opening and closing tags of the `main` element.
     testString: |
       const childrenOfMain = [ ...document.querySelector('main').children ];
-      const foundElems = childrenOfMain.filter(child => {
+      const sectionElemsFound = childrenOfMain.filter(child => {
         return child.nodeName === 'SECTION';
       });
-      assert( childrenOfMain.length === 3 );
+      assert( sectionElemsFound.length === 3 );
+  - text: The last `section` element should have no content.
+    testString: assert( $('main > section')[2].children.length === 0 );
 
 ```
 
