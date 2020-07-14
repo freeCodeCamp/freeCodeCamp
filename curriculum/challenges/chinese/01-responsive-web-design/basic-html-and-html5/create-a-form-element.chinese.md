@@ -16,7 +16,7 @@ localeTitle: 创建一个表单
 
 ## Instructions
 <section id='instructions'>
-在<code>input</code>输入框外层创建一个<code>form</code>表单，然后设置表单的<code>action</code>属性为<code>"/submit-cat-photo"</code>。
+在<code>input</code>输入框外层创建一个<code>form</code>表单，然后设置表单的<code>action</code>属性为<code>"https://freecatphotoapp.com/submit-cat-photo"</code>。
 </section>
 
 ## Tests
@@ -26,8 +26,8 @@ localeTitle: 创建一个表单
 tests:
   - text: '在<code>input</code>输入框外层创建一个<code>form</code>表单。'
     testString: assert($("form") && $("form").children("input") && $("form").children("input").length > 0);
-  - text: '确保表单的<code>action</code>属性为<code>"/submit-cat-photo"</code>。'
-    testString: assert($("form").attr("action") === "/submit-cat-photo");
+  - text: '确保表单的<code>action</code>属性为<code>"https://freecatphotoapp.com/submit-cat-photo"</code>。'
+    testString: assert($("form").attr("action") === "https://freecatphotoapp.com/submit-cat-photo");
   - text: '确保表单有开始标记和结束标记。'
     testString: assert(code.match(/<\/form>/g) && code.match(/<form [^<]*>/g) && code.match(/<\/form>/g).length === code.match(/<form [^<]*>/g).length);
 
