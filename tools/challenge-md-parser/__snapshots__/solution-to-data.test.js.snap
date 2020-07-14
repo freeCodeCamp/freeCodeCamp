@@ -3,12 +3,21 @@
 exports[`challengeSeed-to-data plugin should have an output to match the snapshot 1`] = `
 Object {
   "solutions": Array [
-    "function testFunction(arg) {
+    Object {
+      "indexjs": Object {
+        "contents": "function testFunction(arg) {
   return arg;
 }
 
 testFunction('hello');
 ",
+        "ext": "js",
+        "head": "",
+        "key": "indexjs",
+        "name": "index",
+        "tail": "",
+      },
+    },
   ],
 }
 `;
