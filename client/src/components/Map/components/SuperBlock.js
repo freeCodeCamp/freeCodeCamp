@@ -55,6 +55,7 @@ const propTypes = {
 };
 
 const codingPrepRE = new RegExp('Interview Prep');
+const projectDashedBlockNameRE = new RegExp('-projects$');
 
 function createSuperBlockTitle(str) {
   return codingPrepRE.test(str)
@@ -107,9 +108,34 @@ export class SuperBlock extends Component {
       node => node.superBlock === superBlock
     );
 
-    const completedCountForSuperBlock = blocksForSuperBlock.filter(block =>
+    const certificationProjects = blocksForSuperBlock.filter(block =>
+      projectDashedBlockNameRE.test(block.block)
+    );
+
+    const completedProjectCount = certificationProjects.filter(block =>
       completedChallenges.some(completedId => block.id === completedId)
     ).length;
+
+    const completedLessonCount =
+      blocksForSuperBlock.filter(block =>
+        completedChallenges.some(completedId => block.id === completedId)
+      ).length - completedProjectCount;
+
+    // Simply using the % of completed projects will work, but since the only
+    // requirement for getting a certificate is to complete all the projects,
+    // the progress tracker should reflect this.
+    // To advance the tracker normally for users who only complete the projectsa
+    // fill the progress by
+    // (% of lessons completed) + (empty space) * (% of projects completed)
+    //
+    // As an equation:
+    // l = (completed lessons)/(number of lessons + projects)
+    // p = (completed projects)/(number of projects)
+    // progress = l + (1 - l)*p
+    //          = l + p - l*p
+    const l = completedLessonCount / blocksForSuperBlock.length;
+    const p = completedProjectCount / certificationProjects.length;
+    const progress = l + p - l * p;
 
     return (
       <li
@@ -123,9 +149,7 @@ export class SuperBlock extends Component {
         >
           <Caret />
           <h4>{createSuperBlockTitle(superBlock)}</h4>
-          <ProgressDisplay
-            progress={completedCountForSuperBlock / blocksForSuperBlock.length}
-          />
+          <ProgressDisplay progress={progress} />
         </button>
         {isExpanded ? this.renderBlock(blocksForSuperBlock) : null}
       </li>
