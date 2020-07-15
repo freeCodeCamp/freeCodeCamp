@@ -23,7 +23,7 @@ tests:
     testString: |
       assert(
         document.querySelector('form') &&
-        code.match(/<\/form>$/gm)
+        code.match(/<\/form>/g)
       );
   - text: The `form` element nested in the last `section` element should be below the `h2` element. You have the `h2` element and the `form` element in the wrong order.
     testString: assert( document.querySelector('form').previousElementSibling.nodeName === 'H2');

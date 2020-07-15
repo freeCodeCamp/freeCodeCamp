@@ -22,7 +22,7 @@ tests:
   - text: Your `input` element should have a `placeholder` attribute with the value `cat photo URL`.
     testString: assert( $('input')[0].getAttribute('placeholder').replace(/\s+/g, ' ').match(/cat photo URL/i) );
   - text: Your `form` should only contain the `input` element. Remove any HTML additional elements or text within the `form` element.
-    testString: assert( $('form')[0].innerHTML.trim().replace(/\s+/g, ' ').match(/^\<input.*\>$/im) );
+    testString: assert( $('form')[0].children.length === 1 && $('form')[0].innerText.trim().length === 0 );
 
 ```
 
