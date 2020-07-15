@@ -5,8 +5,10 @@ window.$ = jQuery;
 
 document.__initTestFrame = initTestFrame;
 
-async function initTestFrame(e = {}) {
-  const code = (e.code || '').slice(0);
+async function initTestFrame(e = { code: {} }) {
+  const code = (e.code.contents || '').slice();
+  // eslint-disable-next-line no-unused-vars
+  const editableContents = (e.code.editableContents || '').slice();
   if (!e.getUserInput) {
     e.getUserInput = () => code;
   }
