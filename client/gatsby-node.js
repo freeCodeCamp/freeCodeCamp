@@ -210,3 +210,25 @@ exports.onCreateBabelConfig = ({ actions }) => {
     }
   });
 };
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+  const typeDefs = `
+    type ChallengeNodeFiles {
+      indexcss: ChallengeFile
+      indexhtml: ChallengeFile
+      indexjs: ChallengeFile
+      indexjsx: ChallengeFile
+    }
+    type ChallengeFile {
+      key: String
+      ext: String
+      name: String
+      contents: String
+      head: String
+      tail: String
+      editableRegionBoundaries: [Int]
+    }
+  `;
+  createTypes(typeDefs);
+};
