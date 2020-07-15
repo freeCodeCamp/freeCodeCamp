@@ -59,7 +59,7 @@ tests:
 <h2>CatPhotoApp</h2>
 <main>
   
-  <a href="http://freecatphotoapp.com" target="_blank">cat photos</a>
+  <a href="https://freecatphotoapp.com" target="_blank">cat photos</a>
   
   <img src="https://bit.ly/fcc-relaxing-cat" alt="一只仰卧着的萌猫">
   
