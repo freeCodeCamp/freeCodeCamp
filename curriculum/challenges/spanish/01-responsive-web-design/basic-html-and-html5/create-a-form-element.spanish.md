@@ -10,7 +10,7 @@ localeTitle: Crear un elemento de formulario
 <section id="description"> Puede crear formularios web que envíen datos reales a un servidor usando nada más que HTML. Puedes hacerlo especificando un action en tu elemento <code>form</code> . Por ejemplo: <code>&lt;form action=&quot;/url-where-you-want-to-submit-form-data&quot;&gt;&lt;/form&gt;</code> </section>
 
 ## Instructions
-<section id="instructions"> Anida el campo de texto dentro de un elemento <code>form</code> y agrega el atributo <code>action=&quot;/submit-cat-photo&quot;</code> al elemento formulario. </section>
+<section id="instructions"> Anida el campo de texto dentro de un elemento <code>form</code> y agrega el atributo <code>action=&quot;https://freecatphotoapp.com/submit-cat-photo&quot;</code> al elemento formulario. </section>
 
 ## Tests
 <section id='tests'>
@@ -19,8 +19,8 @@ localeTitle: Crear un elemento de formulario
 tests:
   - text: Anida el elemento de entrada de texto dentro de un elemento de <code>form</code> .
     testString: 'assert($("form") && $("form").children("input") && $("form").children("input").length > 0, "Nest your text input element within a <code>form</code> element.");'
-  - text: Asegúrese de que su <code>form</code> tenga un atributo <code>action</code> y cuyo valor sea <code>/submit-cat-photo</code>
-    testString: 'assert($("form").attr("action") === "/submit-cat-photo", "Make sure your <code>form</code> has an <code>action</code> attribute which is set to <code>/submit-cat-photo</code>");'
+  - text: Asegúrese de que su <code>form</code> tenga un atributo <code>action</code> y cuyo valor sea <code>https://freecatphotoapp.com/submit-cat-photo</code>
+    testString: 'assert($("form").attr("action") === "https://freecatphotoapp.com/submit-cat-photo", "Make sure your <code>form</code> has an <code>action</code> attribute which is set to <code>https://freecatphotoapp.com/submit-cat-photo</code>");'
   - text: Asegúrese de que su elemento <code>form</code> tenga las etiquetas de apertura y cierre bien formadas.
     testString: 'assert(code.match(/<\/form>/g) && code.match(/<form [^<]*>/g) && code.match(/<\/form>/g).length === code.match(/<form [^<]*>/g).length, "Make sure your <code>form</code> element has well-formed open and close tags.");'
 
