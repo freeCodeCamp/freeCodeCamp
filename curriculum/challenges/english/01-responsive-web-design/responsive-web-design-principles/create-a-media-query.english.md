@@ -2,6 +2,7 @@
 id: 587d78b0367417b2b2512b08
 title: Create a Media Query
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/p/pzrPu4/cqwKrtm'
 forumTopicId: 301139
 ---
@@ -48,7 +49,9 @@ tests:
     font-size: 20px;
   }
 
-  /* Add media query below */
+  /* Only change code below this line */
+
+  /* Only change code above this line */
 </style>
 
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis tempus massa. Aenean erat nisl, gravida vel vestibulum cursus, interdum sit amet lectus. Sed sit amet quam nibh. Suspendisse quis tincidunt nulla. In hac habitasse platea dictumst. Ut sit amet pretium nisl. Vivamus vel mi sem. Aenean sit amet consectetur sem. Suspendisse pretium, purus et gravida consequat, nunc ligula ultricies diam, at aliquet velit libero a dui.</p>

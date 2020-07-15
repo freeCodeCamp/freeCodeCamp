@@ -2,6 +2,7 @@
 id: 587d7dae367417b2b2512b7a
 title: Verify an Object's Constructor with instanceof
 challengeType: 1
+isHidden: false
 forumTopicId: 301337
 ---
 
@@ -60,13 +61,11 @@ tests:
 <div id='js-seed'>
 
 ```js
-/* jshint expr: true */
-
 function House(numBedrooms) {
   this.numBedrooms = numBedrooms;
 }
 
-// Add your code below this line
+// Only change code below this line
 
 
 

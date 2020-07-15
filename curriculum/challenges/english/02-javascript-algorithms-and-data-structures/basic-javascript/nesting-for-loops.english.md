@@ -2,6 +2,7 @@
 id: 56533eb9ac21ba0edf2244e1
 title: Nesting For Loops
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cRn6GHM'
 forumTopicId: 18248
 ---
@@ -26,7 +27,7 @@ This outputs each sub-element in <code>arr</code> one at a time. Note that for t
 
 ## Instructions
 <section id='instructions'>
-Modify function <code>multiplyAll</code> so that it multiplies the <code>product</code> variable by each number in the sub-arrays of <code>arr</code>
+Modify function <code>multiplyAll</code> so that it returns the product of all the numbers in the sub-arrays of <code>arr</code>.
 </section>
 
 ## Tests
@@ -59,7 +60,6 @@ function multiplyAll(arr) {
   return product;
 }
 
-// Modify values below to test your code
 multiplyAll([[1,2],[3,4],[5,6,7]]);
 
 ```

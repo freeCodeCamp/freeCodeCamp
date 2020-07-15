@@ -2,6 +2,7 @@
 id: 56533eb9ac21ba0edf2244bd
 title: Passing Values to Functions with Arguments
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cy8rahW'
 forumTopicId: 18254
 ---
@@ -51,13 +52,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Example
-function ourFunctionWithArgs(a, b) {
-  console.log(a - b);
-}
-ourFunctionWithArgs(10, 5); // Outputs 5
 
-// Only change code below this line.
 
 
 ```

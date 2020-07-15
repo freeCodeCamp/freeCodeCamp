@@ -18,23 +18,23 @@ localeTitle: 动态更新元素的高度
 ```yml
 tests:
   - text: 第一个<code>div</code>的<code>height</code>应为12像素。
-    testString: 'assert($("div").eq(0).css("height") == "12px", "The first <code>div</code> should have a <code>height</code> of 12 pixels.");'
+    testString: assert($('div').eq(0)[0].style.height === '12px');
   - text: 第二个<code>div</code>的<code>height</code>应为31像素。
-    testString: 'assert($("div").eq(1).css("height") == "31px", "The second <code>div</code> should have a <code>height</code> of 31 pixels.");'
+    testString: assert($('div').eq(1)[0].style.height === '31px');
   - text: 第三个<code>div</code>的<code>height</code>应为22像素。
-    testString: 'assert($("div").eq(2).css("height") == "22px", "The third <code>div</code> should have a <code>height</code> of 22 pixels.");'
+    testString: assert($('div').eq(2)[0].style.height === '22px');
   - text: 第四个<code>div</code>的<code>height</code>应为17像素。
-    testString: 'assert($("div").eq(3).css("height") == "17px", "The fourth <code>div</code> should have a <code>height</code> of 17 pixels.");'
+    testString: assert($('div').eq(3)[0].style.height === '17px');
   - text: 第五个<code>div</code>的<code>height</code>应为25像素。
-    testString: 'assert($("div").eq(4).css("height") == "25px", "The fifth <code>div</code> should have a <code>height</code> of 25 pixels.");'
+    testString: assert($('div').eq(4)[0].style.height === '25px');
   - text: 第六个<code>div</code>的<code>height</code>应为18像素。
-    testString: 'assert($("div").eq(5).css("height") == "18px", "The sixth <code>div</code> should have a <code>height</code> of 18 pixels.");'
+    testString: assert($('div').eq(5)[0].style.height === '18px');
   - text: 第七个<code>div</code>的<code>height</code>应为29像素。
-    testString: 'assert($("div").eq(6).css("height") == "29px", "The seventh <code>div</code> should have a <code>height</code> of 29 pixels.");'
+    testString: assert($('div').eq(6)[0].style.height === '29px');
   - text: 第八个<code>div</code>的<code>height</code>应为14像素。
-    testString: 'assert($("div").eq(7).css("height") == "14px", "The eighth <code>div</code> should have a <code>height</code> of 14 pixels.");'
+    testString: assert($('div').eq(7)[0].style.height === '14px');
   - text: 第九个<code>div</code>的<code>height</code>应为9像素。
-    testString: 'assert($("div").eq(8).css("height") == "9px", "The ninth <code>div</code> should have a <code>height</code> of 9 pixels.");'
+    testString: assert($('div').eq(8)[0].style.height === '9px');
 
 ```
 

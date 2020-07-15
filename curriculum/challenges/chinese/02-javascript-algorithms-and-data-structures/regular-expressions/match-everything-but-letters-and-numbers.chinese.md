@@ -18,17 +18,17 @@ localeTitle: 匹配一切，但字母和数字
 ```yml
 tests:
   - text: 你的正则表达式应该使用全局标志。
-    testString: 'assert(nonAlphabetRegex.global, "Your regex should use the global flag.");'
+    testString: assert(nonAlphabetRegex.global);
   - text: 你的正则表达式应该在<code>&quot;The five boxing wizards jump quickly.&quot;</code>找到6个非字母数字字符<code>&quot;The five boxing wizards jump quickly.&quot;</code> 。
-    testString: 'assert("The five boxing wizards jump quickly.".match(nonAlphabetRegex).length == 6, "Your regex should find 6 non-alphanumeric characters in <code>"The five boxing wizards jump quickly."</code>.");'
+    testString: assert("The five boxing wizards jump quickly.".match(nonAlphabetRegex).length == 6);
   - text: 你的正则表达式应该使用速记字符。
-    testString: 'assert(/\\W/.test(nonAlphabetRegex.source), "Your regex should use the shorthand character to match characters which are non-alphanumeric.");'
+    testString: assert(/\\W/.test(nonAlphabetRegex.source));
   - text: 你的正则表达式应该在<code>&quot;Pack my box with five dozen liquor jugs.&quot;</code>找到8个非字母数字字符<code>&quot;Pack my box with five dozen liquor jugs.&quot;</code>
-    testString: 'assert("Pack my box with five dozen liquor jugs.".match(nonAlphabetRegex).length == 8, "Your regex should find 8 non-alphanumeric characters in <code>"Pack my box with five dozen liquor jugs."</code>");'
+    testString: assert("Pack my box with five dozen liquor jugs.".match(nonAlphabetRegex).length == 8);
   - text: 你的正则表达式应该在<code>&quot;How vexingly quick daft zebras jump!&quot;</code>找到6个非字母数字字符<code>&quot;How vexingly quick daft zebras jump!&quot;</code>
-    testString: 'assert("How vexingly quick daft zebras jump!".match(nonAlphabetRegex).length == 6, "Your regex should find 6 non-alphanumeric characters in <code>"How vexingly quick daft zebras jump!"</code>");'
+    testString: assert("How vexingly quick daft zebras jump!".match(nonAlphabetRegex).length == 6);
   - text: 你的正则表达式应该在<code>&quot;123 456 7890 ABC def GHI jkl MNO pqr STU vwx YZ.&quot;</code>找到12个非字母数字字符<code>&quot;123 456 7890 ABC def GHI jkl MNO pqr STU vwx YZ.&quot;</code>
-    testString: 'assert("123 456 7890 ABC def GHI jkl MNO pqr STU vwx YZ.".match(nonAlphabetRegex).length == 12, "Your regex should find 12 non-alphanumeric characters in <code>"123 456 7890 ABC def GHI jkl MNO pqr STU vwx YZ."</code>");'
+    testString: assert("123 456 7890 ABC def GHI jkl MNO pqr STU vwx YZ.".match(nonAlphabetRegex).length == 12);
 
 ```
 

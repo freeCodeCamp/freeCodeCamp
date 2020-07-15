@@ -2,6 +2,7 @@
 id: 5a9036d038fddaf9a66b5d32
 title: Add Columns with grid-template-columns
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/p/pByETK/c7NzDHv'
 forumTopicId: 301117
 ---
@@ -56,10 +57,10 @@ tests:
     width: 100%;
     background: LightGray;
     display: grid;
-    /* add your code below this line */
+    /* Only change code below this line */
 
-
-    /* add your code above this line */
+    
+    /* Only change code above this line */
   }
 </style>
 

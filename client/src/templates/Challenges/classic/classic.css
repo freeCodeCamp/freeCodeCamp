@@ -32,7 +32,9 @@
 }
 
 #challenge-page-tabs .tab-content {
-  height: calc(100vh - var(--header-height, 0px) - 69px);
+  height: calc(
+    100vh - var(--header-height, 0px) - var(--flash-message-height, 0px) - 69px
+  );
   overflow-y: auto;
 }
 
@@ -44,4 +46,14 @@
 #challenge-page-tabs .nav-tabs > li.active > a {
   color: var(--quaternary-color);
   background-color: var(--quaternary-background);
+}
+
+.monaco-editor .editor-widget {
+  display: none !important;
+}
+
+.monaco-menu .monaco-action-bar.vertical .action-item:nth-last-child(n + 5),
+.monaco-menu .monaco-action-bar.vertical .action-item:last-child,
+.monaco-menu .monaco-action-bar.vertical .action-label.separator {
+  display: none !important;
 }

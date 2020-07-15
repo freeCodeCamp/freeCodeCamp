@@ -2,6 +2,7 @@
 id: 5a24c314108439a4d403614a
 title: Moving Forward From Here
 challengeType: 6
+isHidden: false
 isRequired: false
 forumTopicId: 301434
 ---

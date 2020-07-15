@@ -2,6 +2,7 @@
 id: 587d7b89367417b2b2512b4b
 title: Use Destructuring Assignment to Assign Variables from Arrays
 challengeType: 1
+isHidden: false
 forumTopicId: 301213
 ---
 
@@ -54,11 +55,8 @@ tests:
 
 ```js
 let a = 8, b = 6;
-// change code below this line
+// Only change code below this line
 
-// change code above this line
-console.log(a); // should be 6
-console.log(b); // should be 8
 ```
 
 </div>

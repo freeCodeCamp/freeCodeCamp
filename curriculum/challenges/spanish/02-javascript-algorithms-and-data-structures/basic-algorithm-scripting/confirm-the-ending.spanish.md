@@ -8,7 +8,7 @@ localeTitle: Confirmar la terminación
 ---
 
 ## Descripción
-<section id="description"> Compruebe si una cadena (primer argumento, <code>str</code> ) termina con la cadena de destino dada (segundo argumento, <code>target</code> ). Este desafío <em>se</em> se puede resolver con el método <code>.endsWith()</code> , que se introdujo en ES2015. Pero para el propósito de este desafío, nos gustaría que utilices uno de los métodos de subcadena de JavaScript. Recuerda usar la técnica de <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Leer-Buscar-Preguntar</a> si te atascas. Escribe tu propio código. </section>
+<section id="description"> Compruebe si una cadena (primer argumento, <code>str</code> ) termina con la cadena de destino dada (segundo argumento, <code>target</code> ). Este desafío <em>se</em> se puede resolver con el método <code>.endsWith()</code> , que se introdujo en ES2015. Pero para el propósito de este desafío, nos gustaría que utilices uno de los métodos de subcadena de JavaScript. Recuerda usar la técnica de <a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Leer-Buscar-Preguntar</a> si te atascas. Escribe tu propio código. </section>
 
 ## Instrucciones
 <section id="instructions">

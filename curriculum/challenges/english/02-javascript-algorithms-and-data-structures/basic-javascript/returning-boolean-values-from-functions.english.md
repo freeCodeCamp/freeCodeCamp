@@ -2,6 +2,7 @@
 id: 5679ceb97cbaa8c51670a16b
 title: Returning Boolean Values from Functions
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cp62qAQ'
 forumTopicId: 18273
 ---
@@ -59,15 +60,15 @@ tests:
 
 ```js
 function isLess(a, b) {
-  // Fix this code
+  // Only change code below this line
   if (a < b) {
     return true;
   } else {
     return false;
   }
+  // Only change code above this line
 }
 
-// Change these values to test
 isLess(10, 15);
 ```
 

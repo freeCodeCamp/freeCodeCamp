@@ -28,17 +28,17 @@ localeTitle: 使用 CSS 线性渐变创建条纹元素
 ```yml
 tests:
   - text: '<code>repeating-linear-gradient()</code> 的渐变角度应该为 <code>45deg</code>。'
-    testString: 'assert(code.match(/background:\s*?repeating-linear-gradient\(\s*?45deg/gi), ''<code>repeating-linear-gradient()</code> 的渐变角度应该为 <code>45deg</code>。'');'
+    testString: assert(code.match(/background:\s*?repeating-linear-gradient\(\s*?45deg/gi));
   - text: '<code>repeating-linear-gradient()</code> 的渐变角度应该不在是 <code>90deg</code>。'
-    testString: assert(!code.match(/90deg/gi), '<code>repeating-linear-gradient()</code> 的渐变角度不应该是 <code>90deg</code>。');
+    testString: assert(!code.match(/90deg/gi));
   - text: '<code>0px</code> 处的渐变颜色应该为 <code>yellow</code>。'
-    testString: assert(code.match(/yellow\s+?0px/gi), '<code>0px</code> 处的渐变颜色应该为 <code>yellow</code>。');
+    testString: assert(code.match(/yellow\s+?0(px)?/gi));
   - text: '<code>40px</code> 处的第一个渐变颜色应该为 <code>yellow</code>。'
-    testString: assert(code.match(/yellow\s+?40px/gi), '<code>40px</code> 处的第一个渐变颜色应该为 <code>yellow</code>。');
+    testString: assert(code.match(/yellow\s+?40px/gi));
   - text: '<code>40px</code> 处的第二个渐变颜色应该为 <code>black</code>。'
-    testString: assert(code.match(/yellow\s+?40px,\s*?black\s+?40px/gi), '<code>40px</code> 处的第二个渐变颜色应该为 <code>black</code>。');
+    testString: assert(code.match(/yellow\s+?40px,\s*?black\s+?40px/gi));
   - text: '<code>80px</code> 处最后一个渐变颜色应该为 <code>black</code>。'
-    testString: assert(code.match(/black\s+?80px/gi), '<code>80px</code> 处最后一个渐变颜色应该为 <code>black</code>。');
+    testString: assert(code.match(/black\s+?80px/gi));
 
 ```
 

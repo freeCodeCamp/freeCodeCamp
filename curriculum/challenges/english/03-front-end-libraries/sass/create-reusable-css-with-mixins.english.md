@@ -2,6 +2,7 @@
 id: 587d7dbd367417b2b2512bb6
 title: Create Reusable CSS with Mixins
 challengeType: 0
+isHidden: false
 forumTopicId: 301455
 ---
 
@@ -24,10 +25,10 @@ Mixins are like functions for CSS. Here is how to write one:
 
 ```scss
 @mixin box-shadow($x, $y, $blur, $c){ 
-  -webkit-box-shadow: $x, $y, $blur, $c;
-  -moz-box-shadow: $x, $y, $blur, $c;
-  -ms-box-shadow: $x, $y, $blur, $c;
-  box-shadow: $x, $y, $blur, $c;
+  -webkit-box-shadow: $x $y $blur $c;
+  -moz-box-shadow: $x $y $blur $c;
+  -ms-box-shadow: $x $y $blur $c;
+  box-shadow: $x $y $blur $c;
 }
 ```
 
@@ -75,7 +76,7 @@ tests:
 <div id='html-seed'>
 
 ```html
-<style type='text/sass'>
+<style type='text/scss'>
 
 
 
@@ -101,7 +102,7 @@ tests:
 <section id='solution'>
 
 ```html
-<style type='text/sass'>
+<style type='text/scss'>
   @mixin border-radius($radius) {
     -webkit-border-radius: $radius;
     -moz-border-radius: $radius;

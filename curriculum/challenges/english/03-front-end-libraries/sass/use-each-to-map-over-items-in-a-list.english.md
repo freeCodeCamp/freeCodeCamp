@@ -2,6 +2,7 @@
 id: 587d7dbf367417b2b2512bba
 title: Use @each to Map Over Items in a List
 challengeType: 0
+isHidden: false
 forumTopicId: 301461
 ---
 
@@ -77,7 +78,7 @@ tests:
 <div id='html-seed'>
 
 ```html
-<style type='text/sass'>
+<style type='text/scss'>
 
 
 
@@ -104,7 +105,7 @@ The solution requires using the $color variable twice: once for the class name a
 ### List Data type
 
 ```html
-<style type='text/sass'>
+<style type='text/scss'>
 
   @each $color in blue, black, red {
     .#{$color}-bg {background-color: $color;}
@@ -124,7 +125,7 @@ The solution requires using the $color variable twice: once for the class name a
 ### Map Data type
 
 ```html
-<style type='text/sass'>
+<style type='text/scss'>
 
   $colors: (color1: blue, color2: black, color3: red);
 

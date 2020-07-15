@@ -23,7 +23,7 @@ localeTitle: 使用 z-index 属性更改重叠元素的位置
 ```yml
 tests:
   - text: 'class 为 <code>first</code> 的元素的 <code>z-index</code> 值应该为 2。'
-    testString: assert($('.first').css('z-index') == '2', 'class 为 <code>first</code> 的元素的 <code>z-index</code> 值应该为 2。');
+    testString: assert($('.first').css('z-index') == '2');
 
 ```
 

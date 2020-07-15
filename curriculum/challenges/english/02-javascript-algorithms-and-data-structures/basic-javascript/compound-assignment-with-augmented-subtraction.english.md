@@ -2,6 +2,7 @@
 id: 56533eb9ac21ba0edf2244b0
 title: Compound Assignment With Augmented Subtraction
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/c2Qv7AV'
 forumTopicId: 16660
 ---
@@ -49,13 +50,10 @@ var a = 11;
 var b = 9;
 var c = 3;
 
-// Only modify code below this line
-
+// Only change code below this line
 a = a - 6;
 b = b - 15;
 c = c - 1;
-
-
 ```
 
 </div>

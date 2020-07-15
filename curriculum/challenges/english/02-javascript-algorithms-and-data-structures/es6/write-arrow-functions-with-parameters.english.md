@@ -2,6 +2,7 @@
 id: 587d7b88367417b2b2512b44
 title: Write Arrow Functions with Parameters
 challengeType: 1
+isHidden: false
 forumTopicId: 301223
 ---
 
@@ -65,7 +66,7 @@ var myConcat = function(arr1, arr2) {
   "use strict";
   return arr1.concat(arr2);
 };
-// test your code
+
 console.log(myConcat([1, 2], [3, 4, 5]));
 ```
 
@@ -83,7 +84,7 @@ const myConcat = (arr1, arr2) =>  {
   "use strict";
   return arr1.concat(arr2);
 };
-// test your code
+
 console.log(myConcat([1, 2], [3, 4, 5]));
 ```
 

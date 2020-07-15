@@ -2,25 +2,39 @@
 id: cf1111c1c11feddfaeb6bdef
 title: Divide One Number by Another with JavaScript
 challengeType: 1
-videoUrl: ''
-localeTitle: 用JavaScript划分一个号码
+videoUrl: 'https://scrimba.com/c/cqkbdAr'
+forumTopicId: 17566
+localeTitle: 除法运算
 ---
 
 ## Description
-<section id="description">我们也可以将一个数字除以另一个数字。 JavaScript使用<code>/</code>符号进行除法。 <p> <strong>例</strong> </p><blockquote> myVar = 16/2; //分配8 </blockquote></section>
+<section id='description'>
+我们可以在 JavaScript 中做除法运算。
+JavaScript 中使用<code>/</code>符号做除法运算。
+
+<strong>示例</strong>
+
+```js
+myVar = 16 / 2; // assigned 8
+```
+
+
+</section>
 
 ## Instructions
-<section id="instructions">更改<code>0</code> ，使<code>quotient</code>等于<code>2</code> 。 </section>
+<section id='instructions'>
+改变数值<code>0</code>来让变量<code>quotient</code>的值等于<code>2</code>。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 使变量<code>quotient</code>等于2。
-    testString: 'assert(quotient === 2, "Make the variable <code>quotient</code> equal to 2.");'
-  - text: 使用<code>/</code>运算符
-    testString: 'assert(/\d+\s*\/\s*\d+/.test(code), "Use the <code>/</code> operator");'
+  - text: 要使<code>quotient</code>的值等于 2。
+    testString: assert(quotient === 2);
+  - text: 使用<code>/</code>运算符。
+    testString: assert(/\d+\s*\/\s*\d+/.test(code));
 
 ```
 
@@ -34,6 +48,7 @@ tests:
 ```js
 var quotient = 66 / 0;
 
+
 ```
 
 </div>
@@ -43,7 +58,7 @@ var quotient = 66 / 0;
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(z){return 'quotient = '+z;})(quotient);
 ```
 
 </div>
@@ -53,7 +68,9 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+var quotient = 66 / 33;
 ```
+
 </section>

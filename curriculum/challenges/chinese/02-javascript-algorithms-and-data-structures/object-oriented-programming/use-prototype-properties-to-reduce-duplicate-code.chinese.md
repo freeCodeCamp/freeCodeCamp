@@ -18,11 +18,11 @@ localeTitle: 使用原型属性来减少重复代码
 ```yml
 tests:
   - text: <code>beagle</code>应该有一个<code>numLegs</code>财产。
-    testString: 'assert(beagle.numLegs !== undefined, "<code>beagle</code> should have a <code>numLegs</code> property.");'
+    testString: assert(beagle.numLegs !== undefined);
   - text: <code>beagle.numLegs</code>应该是一个数字。
-    testString: 'assert(typeof(beagle.numLegs) === "number" , "<code>beagle.numLegs</code> should be a number.");'
+    testString: assert(typeof(beagle.numLegs) === 'number' );
   - text: <code>numLegs</code>应该是<code>prototype</code>属性而不是<code>own</code>属性。
-    testString: 'assert(beagle.hasOwnProperty("numLegs") === false, "<code>numLegs</code> should be a <code>prototype</code> property not an <code>own</code> property.");'
+    testString: assert(beagle.hasOwnProperty('numLegs') === false);
 
 ```
 

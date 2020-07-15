@@ -23,11 +23,11 @@ localeTitle: 探索var和let关键字之间的差异
 ```yml
 tests:
   - text: <code>var</code>在代码中不存在。
-    testString: 'getUserInput => assert(!getUserInput("index").match(/var/g),"<code>var</code> does not exist in code.");'
+    testString: getUserInput => assert(!getUserInput('index').match(/var/g));
   - text: <code>catName</code>应该是<code>Oliver</code> 。
-    testString: 'assert(catName === "Oliver", "<code>catName</code> should be <code>Oliver</code>.");'
+    testString: assert(catName === "Oliver");
   - text: <code>quote</code>应该是<code>&quot;Oliver says Meow!&quot;</code>
-    testString: 'assert(quote === "Oliver says Meow!", "<code>quote</code> should be <code>"Oliver says Meow!"</code>");'
+    testString: assert(quote === "Oliver says Meow!");
 
 ```
 

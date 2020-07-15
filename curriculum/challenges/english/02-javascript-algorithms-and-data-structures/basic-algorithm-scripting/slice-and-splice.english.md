@@ -2,15 +2,15 @@
 id: 579e2a2c335b9d72dd32e05c
 title: Slice and Splice
 isRequired: true
-isBeta: true
 challengeType: 5
+isHidden: false
 forumTopicId: 301148
 ---
 
 ## Description
 <section id='description'>
 You are given two arrays and an index.
-Use the array methods <code>slice</code> and <code>splice</code> to copy each element of the first array into the second array, in order.
+Copy each element of the first array into the second array, in order.
 Begin inserting elements at index <code>n</code> of the second array.
 Return the resulting array. The input arrays should remain the same after the function runs.
 </section>
@@ -49,7 +49,6 @@ tests:
 
 ```js
 function frankenSplice(arr1, arr2, n) {
-  // It's alive. It's alive!
   return arr2;
 }
 

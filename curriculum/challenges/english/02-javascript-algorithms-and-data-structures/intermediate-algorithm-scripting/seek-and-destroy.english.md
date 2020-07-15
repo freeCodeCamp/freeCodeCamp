@@ -3,6 +3,7 @@ id: a39963a4c10bc8b4d4f06d7e
 title: Seek and Destroy
 isRequired: true
 challengeType: 5
+isHidden: false
 forumTopicId: 16046
 ---
 
@@ -46,7 +47,6 @@ tests:
 
 ```js
 function destroyer(arr) {
-  // Remove all the values
   return arr;
 }
 
@@ -69,7 +69,6 @@ function destroyer(arr) {
   [].slice.call(arguments, 1).forEach(function(e) {
     hash[e] = true;
   });
-  // Remove all the values
   return arr.filter(function(e) { return !(e in hash);});
 }
 

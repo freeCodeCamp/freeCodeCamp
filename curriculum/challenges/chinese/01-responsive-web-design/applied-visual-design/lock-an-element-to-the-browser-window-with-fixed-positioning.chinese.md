@@ -15,7 +15,7 @@ localeTitle: 固定定位的参照物是浏览器的窗口
 
 ## Instructions
 <section id='instructions'>
-代码里的导航栏已经添加了值为 <code>navbar</code> 的 id。把它的 <code>position</code> 设置成<code>fixed</code>，设定其 <code>top</code >和 <code>left</code> 为 0 像素。注意观察对 <code>h1</code> 的影响，<code>h1</code> 并没有被导航栏挤下来，而是遮盖住了，为了显示完全需要单独调整<code>h1</code> 的位置。
+代码里的导航栏已经添加了值为 <code>navbar</code> 的 id。把它的 <code>position</code> 设置成<code>fixed</code>，设定其 <code>top</code >和 <code>left</code> 为 0 像素。添加代码之后，滑动预览窗口，观察导航栏的位置。
 </section>
 
 ## Tests
@@ -24,11 +24,11 @@ localeTitle: 固定定位的参照物是浏览器的窗口
 ```yml
 tests:
   - text: '<code>>#navbar</code> 元素应当有一个值为 <code>fixed</code> 的 <code>position</code> CSS 属性'
-    testString: assert($('#navbar').css('position') == 'fixed', '<code>#navbar</code> 元素应当有一个值为 <code>fixed</code> 的 <code>position</code> CSS 属性');
+    testString: assert($('#navbar').css('position') == 'fixed');
   - text: '你的 <code>#navbar</code> 元素应当有值为 <code>0px</code> 的 <code>top</code> CSS 属性。'
-    testString: assert($('#navbar').css('top') == '0px', '你的 <code>#navbar</code> 元素应当有值为 <code>0px</code> 的 <code>top</code> CSS 属性。');
+    testString: assert($('#navbar').css('top') == '0px');
   - text: '你的 <code>#navbar</code> 元素应当有值为 <code>0px</code> 的 <code>left</code> CSS 属性。'
-    testString: assert($('#navbar').css('left') == '0px', '你的 <code>#navbar</code> 元素应当有值为 <code>0px</code> 的 <code>left</code> CSS 属性。');
+    testString: assert($('#navbar').css('left') == '0px');
 
 ```
 

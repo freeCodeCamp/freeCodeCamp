@@ -24,9 +24,9 @@ CSS 里面的 <code>top</code>、<code>bottom</code>、<code>left</code> 和 <co
 ```yml
 tests:
   - text: '你应该使用 CSS 属性使 <code>h2</code> 相对当前位置向上移动 <code>10px</code>。也就是说，从 <code>h2</code> 当前位置远离 <code>bottom</code> <code>10px</code>。'
-    testString: assert($('h2').css('bottom') == '10px', '你应该使用 CSS 属性使 <code>h2</code> 相对当前位置向上移动 <code>10px</code>。也就是说，从 <code>h2</code> 当前位置远离 <code>bottom</code> <code>10px</code>。');
+    testString: assert($('h2').css('bottom') == '10px');
   - text: '你应该使用 CSS 属性使 <code>h2</code> 相对当前位置向右移动 <code>15px</code>。也就是说，从 <code>h2</code> 当前位置远离 <code>left</code> <code>15px</code>。'
-    testString: assert($('h2').css('left') == '15px', '你应该使用 CSS 属性使 <code>h2</code> 相对当前位置向右移动 <code>15px</code>。也就是说，从 <code>h2</code> 当前位置远离<code>left</code> <code>15px</code>。');
+    testString: assert($('h2').css('left') == '15px');
 
 ```
 

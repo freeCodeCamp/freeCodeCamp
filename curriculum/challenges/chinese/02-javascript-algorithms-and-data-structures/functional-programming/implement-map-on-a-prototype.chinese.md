@@ -18,9 +18,9 @@ localeTitle: 在Prototype上实现地图
 ```yml
 tests:
   - text: '<code>new_s</code>应该等于<code>[46, 130, 196, 10]</code> <code>new_s</code> <code>[46, 130, 196, 10]</code> 。'
-    testString: 'assert(JSON.stringify(new_s) === JSON.stringify([46, 130, 196, 10]), "<code>new_s</code> should equal <code>[46, 130, 196, 10]</code>.");'
+    testString: assert(JSON.stringify(new_s) === JSON.stringify([46, 130, 196, 10]));
   - text: 您的代码不应使用<code>map</code>方法。
-    testString: 'assert(!code.match(/\.map/g), "Your code should not use the <code>map</code> method.");'
+    testString: assert(!code.match(/\.map/g));
 
 ```
 

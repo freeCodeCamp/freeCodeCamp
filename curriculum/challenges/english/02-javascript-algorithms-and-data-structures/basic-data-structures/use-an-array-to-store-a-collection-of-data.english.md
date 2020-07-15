@@ -2,6 +2,7 @@
 id: 587d7b7e367417b2b2512b20
 title: Use an Array to Store a Collection of Data
 challengeType: 1
+isHidden: false
 forumTopicId: 301167
 ---
 
@@ -76,7 +77,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-let yourArray; // change this line
+let yourArray; // Change this line
 ```
 
 </div>

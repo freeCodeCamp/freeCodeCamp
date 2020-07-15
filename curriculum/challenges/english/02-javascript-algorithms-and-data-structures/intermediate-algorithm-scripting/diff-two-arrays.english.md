@@ -3,6 +3,7 @@ id: a5de63ebea8dbee56860f4f2
 title: Diff Two Arrays
 isRequired: true
 challengeType: 5
+isHidden: false
 forumTopicId: 16008
 ---
 
@@ -65,7 +66,6 @@ tests:
 ```js
 function diffArray(arr1, arr2) {
   var newArr = [];
-  // Same, same; but different.
   return newArr;
 }
 
@@ -101,7 +101,6 @@ function diffArray(arr1, arr2) {
   Object.keys(h2).forEach(function(e) {
      if (!(e in h1)) newArr.push(h2[e]);
   });
-  // Same, same; but different.
   return newArr;
 }
 ```

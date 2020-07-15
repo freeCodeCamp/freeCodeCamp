@@ -2,6 +2,7 @@
 id: 587d7b8a367417b2b2512b4f
 title: Write Concise Object Literal Declarations Using Object Property Shorthand
 challengeType: 1
+isHidden: false
 forumTopicId: 301225
 ---
 
@@ -54,15 +55,14 @@ tests:
 ```js
 const createPerson = (name, age, gender) => {
   "use strict";
-  // change code below this line
+  // Only change code below this line
   return {
     name: name,
     age: age,
     gender: gender
   };
-  // change code above this line
+  // Only change code above this line
 };
-console.log(createPerson("Zodiac Hasbro", 56, "male")); // returns a proper object
 ```
 
 </div>

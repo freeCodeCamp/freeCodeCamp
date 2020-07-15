@@ -2,6 +2,7 @@
 id: 5cdafbe72913098997531682
 title: Handle a Rejected Promise with catch
 challengeType: 1
+isHidden: false
 forumTopicId: 301204
 ---
 

@@ -2,6 +2,7 @@
 id: 5a94fdf869fb03452672e45b
 title: Align All Items Vertically using align-items
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/p/pByETK/ckzPeUv'
 forumTopicId: 301121
 ---
@@ -50,10 +51,10 @@ tests:
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 10px;
-    /* add your code below this line */
+    /* Only change code below this line */
 
-
-    /* add your code above this line */
+    
+    /* Only change code above this line */
   }
 </style>
 

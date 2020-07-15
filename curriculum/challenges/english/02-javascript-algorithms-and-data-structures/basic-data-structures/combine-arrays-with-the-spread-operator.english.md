@@ -2,6 +2,7 @@
 id: 587d7b7b367417b2b2512b17
 title: Combine Arrays with the Spread Operator
 challengeType: 1
+isHidden: false
 forumTopicId: 301156
 ---
 
@@ -46,11 +47,10 @@ tests:
 ```js
 function spreadOut() {
   let fragment = ['to', 'code'];
-  let sentence; // change this line
+  let sentence; // Change this line
   return sentence;
 }
 
-// do not change code below this line
 console.log(spreadOut());
 ```
 
@@ -64,8 +64,6 @@ console.log(spreadOut());
 <section id='solution'>
 
 ```js
-// solution required
-
 function spreadOut() {
   let fragment = ['to', 'code'];
   let sentence = ['learning', ...fragment, 'is', 'fun'];

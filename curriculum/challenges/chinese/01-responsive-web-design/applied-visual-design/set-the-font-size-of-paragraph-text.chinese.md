@@ -23,7 +23,7 @@ CSS 里面的 <code>font-size</code> 属性不只限于标题，它可以应用�
 ```yml
 tests:
   - text: '你的 <code>p</code> 标签应该包含一个 <code>font-size</code> 属性并且值为 <code>16px</code>。'
-    testString: assert($('p').css('font-size') == '16px', '你的 <code>p</code> 标签应该包含一个 <code>font-size</code> 属性并且值为 <code>16px</code>。');
+    testString: assert($('p').css('font-size') == '16px');
 
 ```
 

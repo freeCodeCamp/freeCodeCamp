@@ -8,7 +8,7 @@ isRequired: true
 
 ## Description
 <section id='description'> 
-قم بإنشاء تطبيق جافا سكريبت كاملا يشبه وظيفيًا ما يلي: <a href='https://fuschia-custard.glitch.me/' target='_blank'>https://fuschia-custard.glitch.me/</a>.
+قم بإنشاء تطبيق جافا سكريبت كاملا يشبه وظيفيًا ما يلي: <a href='https://nonstop-pond.glitch.me/' target='_blank'>https://nonstop-pond.glitch.me/</a>.
  
 سيتطلب عملك كتابة برنامجك على مشروعنا المبدأي في Glitch. بعد الانتهاء من هذا المشروع ، يمكنك نسخ عنوان URL الافتراضي الخاص بك (إلى الصفحة الرئيسية لتطبيقك) في هذه الشاشة لاختباره!
 يمكنك أيضا اختياريا كتابة مشروعك على نظام أساسي آخر ، ولكن يجب أن يكون مرئيًا بشكل عام لاختبارنا. 

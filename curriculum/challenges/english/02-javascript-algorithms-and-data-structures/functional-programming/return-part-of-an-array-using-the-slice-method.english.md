@@ -2,6 +2,7 @@
 id: 587d7b90367417b2b2512b65
 title: Return Part of an Array Using the slice Method
 challengeType: 1
+isHidden: false
 forumTopicId: 301239
 ---
 
@@ -50,10 +51,10 @@ tests:
 
 ```js
 function sliceArray(anim, beginSlice, endSlice) {
-  // Add your code below this line
+  // Only change code below this line
 
 
-  // Add your code above this line
+  // Only change code above this line
 }
 var inputAnim = ["Cat", "Dog", "Tiger", "Zebra", "Ant"];
 sliceArray(inputAnim, 1, 3);
@@ -70,9 +71,9 @@ sliceArray(inputAnim, 1, 3);
 
 ```js
 function sliceArray(anim, beginSlice, endSlice) {
-  // Add your code below this line
+  // Only change code below this line
   return anim.slice(beginSlice, endSlice)
-  // Add your code above this line
+  // Only change code above this line
 }
 var inputAnim = ["Cat", "Dog", "Tiger", "Zebra", "Ant"];
 sliceArray(inputAnim, 1, 3);

@@ -48,7 +48,6 @@ export default function settingsController(app) {
   api.put('/update-my-username', ifNoUser401, updateMyUsername);
   api.put('/update-user-flag', ifNoUser401, updateUserFlag);
 
-  app.use('/internal', api);
   app.use(api);
 }
 

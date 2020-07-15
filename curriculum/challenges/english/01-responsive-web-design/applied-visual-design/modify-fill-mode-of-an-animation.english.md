@@ -2,6 +2,7 @@
 id: 58a7a6ebf9a6318348e2d5aa
 title: Modify Fill Mode of an Animation
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cVJDmcE'
 forumTopicId: 301064
 ---
@@ -46,9 +47,9 @@ tests:
   button:hover {
     animation-name: background-color;
     animation-duration: 500ms;
-    /* add your code below this line */
+    /* Only change code below this line */
 
-    /* add your code above this line */
+    /* Only change code above this line */
   }
   @keyframes background-color {
     100% {

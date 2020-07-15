@@ -114,7 +114,6 @@ and arrow keys */
 /* Dropdown footer */
 .fcc_suggestion_footer {
   padding: 6.5px 8px 8px;
-  border-top: 1.5px solid var(--gray-00);
 }
 
 .fcc_suggestion_footer .hit-name .ais-Highlight {
@@ -144,6 +143,7 @@ and arrow keys */
   }
   .fcc_searchBar {
     position: relative;
+    max-width: 520px;
   }
   .fcc_searchBar .ais-Hits {
     top: auto;

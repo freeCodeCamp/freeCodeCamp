@@ -2,6 +2,7 @@
 id: 5a9d7286424fe3d0e10cad13
 title: Attach a Fallback value to a CSS Variable
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/c/c6bDNfp'
 forumTopicId: 301084
 ---
@@ -62,9 +63,9 @@ tests:
     top: 10%;
     left: 25%;
 
-    /* change code below */
+    /* Change code below this line */
     background: var(--pengiun-skin);
-    /* change code above */
+    /* Change code above this line */
 
     width: 50%;
     height: 45%;
@@ -75,9 +76,9 @@ tests:
     top: 40%;
     left: 23.5%;
 
-    /* change code below */
+    /* Change code below this line */
     background: var(--pengiun-skin);
-    /* change code above */
+    /* Change code above this line */
 
     width: 53%;
     height: 45%;

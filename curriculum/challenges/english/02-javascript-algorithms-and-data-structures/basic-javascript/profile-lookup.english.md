@@ -2,6 +2,7 @@
 id: 5688e62ea601b2482ff8422b
 title: Profile Lookup
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cDqW2Cg'
 forumTopicId: 18259
 ---
@@ -49,7 +50,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-//Setup
+// Setup
 var contacts = [
     {
         "firstName": "Akira",
@@ -84,7 +85,6 @@ function lookUpProfile(name, prop){
 // Only change code above this line
 }
 
-// Change these values to test your function
 lookUpProfile("Akira", "likes");
 ```
 

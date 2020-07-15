@@ -18,21 +18,21 @@ localeTitle: 匹配所有非数字
 ```yml
 tests:
   - text: 您的正则表达式应使用快捷方式字符来匹配非数字字符
-    testString: 'assert(/\\D/.test(noNumRegex.source), "Your regex should use the shortcut character to match non-digit characters");'
+    testString: assert(/\\D/.test(noNumRegex.source));
   - text: 你的正则表达式应该使用全局标志。
-    testString: 'assert(noNumRegex.global, "Your regex should use the global flag.");'
+    testString: assert(noNumRegex.global);
   - text: 你的正则表达式应该在<code>&quot;9&quot;</code>找不到非数字。
-    testString: 'assert("9".match(noNumRegex) == null, "Your regex should find no non-digits in <code>"9"</code>.");'
+    testString: assert("9".match(noNumRegex) == null);
   - text: 你的正则表达式应该在<code>&quot;Catch 22&quot;</code>找到6个非数字。
-    testString: 'assert("Catch 22".match(noNumRegex).length == 6, "Your regex should find 6 non-digits in <code>"Catch 22"</code>.");'
+    testString: assert("Catch 22".match(noNumRegex).length == 6);
   - text: 你的正则表达式应该在<code>&quot;101 Dalmatians&quot;</code>找到11个非数字。
-    testString: 'assert("101 Dalmatians".match(noNumRegex).length == 11, "Your regex should find 11 non-digits in <code>"101 Dalmatians"</code>.");'
+    testString: assert("101 Dalmatians".match(noNumRegex).length == 11);
   - text: '你的正则表达式应该在<code>&quot;One, Two, Three&quot;</code>找到15个非数字。'
-    testString: 'assert("One, Two, Three".match(noNumRegex).length == 15, "Your regex should find 15 non-digits in <code>"One, Two, Three"</code>.");'
+    testString: assert("One, Two, Three".match(noNumRegex).length == 15);
   - text: 你的正则表达式应该在<code>&quot;21 Jump Street&quot;</code>找到12个非数字。
-    testString: 'assert("21 Jump Street".match(noNumRegex).length == 12, "Your regex should find 12 non-digits in <code>"21 Jump Street"</code>.");'
+    testString: assert("21 Jump Street".match(noNumRegex).length == 12);
   - text: '你的正则表达式应该在<code>&quot;2001: A Space Odyssey&quot;</code>找到17个非数字。'
-    testString: 'assert("2001: A Space Odyssey".match(noNumRegex).length == 17, "Your regex should find 17 non-digits in <code>"2001: A Space Odyssey"</code>.");'
+    testString: 'assert("2001: A Space Odyssey".match(noNumRegex).length == 17);'
 
 ```
 

@@ -32,7 +32,7 @@ tests:
   - text: '你应该将<code>id</code>是 "first" 的<code>a</code>标签的<code>accesskey</code>属性值设置为小写 "g"。'
     testString: assert($('#first').attr('accesskey') == 'g');
   - text: '你应该将<code>id</code>是 "second" 的<code>a</code>标签的<code>accesskey</code>属性值设置为小写 "c"。'
-    testString: assert($('#second').attr('accesskey') == 'c')
+    testString: assert($('#second').attr('accesskey') == 'c');
 
 ```
 

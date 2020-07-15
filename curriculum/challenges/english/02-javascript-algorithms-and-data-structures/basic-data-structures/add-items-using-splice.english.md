@@ -2,6 +2,7 @@
 id: 587d78b3367417b2b2512b11
 title: Add Items Using splice()
 challengeType: 1
+isHidden: false
 forumTopicId: 301152
 ---
 
@@ -53,13 +54,12 @@ tests:
 
 ```js
 function htmlColorNames(arr) {
-  // change code below this line
+  // Only change code below this line
 
-  // change code above this line
+  // Only change code above this line
   return arr;
 }
 
-// do not change code below this line
 console.log(htmlColorNames(['DarkGoldenRod', 'WhiteSmoke', 'LavenderBlush', 'PaleTurquoise', 'FireBrick']));
 ```
 

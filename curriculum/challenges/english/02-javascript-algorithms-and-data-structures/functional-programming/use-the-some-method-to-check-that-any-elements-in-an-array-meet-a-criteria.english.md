@@ -2,6 +2,7 @@
 id: 587d7dab367417b2b2512b6f
 title: Use the some Method to Check that Any Elements in an Array Meet a Criteria
 challengeType: 1
+isHidden: false
 forumTopicId: 301314
 ---
 
@@ -50,10 +51,10 @@ tests:
 
 ```js
 function checkPositive(arr) {
-  // Add your code below this line
+  // Only change code below this line
 
 
-  // Add your code above this line
+  // Only change code above this line
 }
 checkPositive([1, 2, 3, -4, 5]);
 ```
@@ -69,9 +70,9 @@ checkPositive([1, 2, 3, -4, 5]);
 
 ```js
 function checkPositive(arr) {
-  // Add your code below this line
+  // Only change code below this line
   return arr.some(elem => elem > 0);
-  // Add your code above this line
+  // Only change code above this line
 }
 checkPositive([1, 2, 3, -4, 5]);
 ```

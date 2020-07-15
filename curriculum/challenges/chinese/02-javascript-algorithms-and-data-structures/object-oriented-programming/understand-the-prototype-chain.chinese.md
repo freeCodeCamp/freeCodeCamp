@@ -18,7 +18,7 @@ localeTitle: 理解原型链
 ```yml
 tests:
   - text: 您的代码应该显示<code>Object.prototype</code>是原型<code>Dog.prototype</code> “）
-    testString: 'assert(/Object\.prototype\.isPrototypeOf/.test(code), "Your code should show that <code>Object.prototype</code> is the prototype of <code>Dog.prototype</code>");'
+    testString: assert(/Object\.prototype\.isPrototypeOf/.test(code));
 
 ```
 

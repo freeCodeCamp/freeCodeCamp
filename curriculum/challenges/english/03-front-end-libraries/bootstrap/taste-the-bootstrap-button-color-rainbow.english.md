@@ -2,6 +2,7 @@
 id: bad87fee1348cd8acef08811
 title: Taste the Bootstrap Button Color Rainbow
 challengeType: 0
+isHidden: false
 forumTopicId: 18323
 ---
 

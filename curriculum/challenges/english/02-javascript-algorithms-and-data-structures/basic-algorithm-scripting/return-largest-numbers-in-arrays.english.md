@@ -3,6 +3,7 @@ id: a789b3483989747d63b0e427
 title: Return Largest Numbers in Arrays
 isRequired: true
 challengeType: 5
+isHidden: false
 forumTopicId: 16042
 ---
 
@@ -42,7 +43,6 @@ tests:
 
 ```js
 function largestOfFour(arr) {
-  // You can do this!
   return arr;
 }
 

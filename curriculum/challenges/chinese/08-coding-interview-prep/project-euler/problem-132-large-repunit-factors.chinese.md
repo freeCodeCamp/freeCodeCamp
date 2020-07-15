@@ -19,7 +19,7 @@ localeTitle: 问题132：大的重新安置因素
 ```yml
 tests:
   - text: <code>euler132()</code>应返回843296。
-    testString: 'assert.strictEqual(euler132(), 843296, "<code>euler132()</code> should return 843296.");'
+    testString: assert.strictEqual(euler132(), 843296);
 
 ```
 

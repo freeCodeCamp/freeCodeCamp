@@ -2,25 +2,31 @@
 id: bd7993c9c69feddfaeb7bdef
 title: Multiply Two Decimals with JavaScript
 challengeType: 1
-videoUrl: ''
-localeTitle: 使用JavaScript乘以两个小数
+videoUrl: 'https://scrimba.com/c/ce2GeHq'
+forumTopicId: 301173
+localeTitle: 两个小数相乘
 ---
 
 ## Description
-<section id="description">在JavaScript中，您也可以使用十进制数执行计算，就像整数一样。让我们将两位小数相乘得到它们的乘积。 </section>
+<section id='description'>
+在 JavaScript 中，你也可以用小数进行计算，就像整数一样。
+把两个小数相乘，并得到它们乘积。
+</section>
 
 ## Instructions
-<section id="instructions">更改<code>0.0</code>使产品等于<code>5.0</code> 。 </section>
+<section id='instructions'>
+改变<code>0.0</code>的数值让变量<code>product</code>的值等于<code>5.0</code>。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 变量<code>product</code>应该等于<code>5.0</code> 。
-    testString: 'assert(product === 5.0, "The variable <code>product</code> should equal <code>5.0</code>.");'
-  - text: 你应该使用<code>*</code>运算符
-    testString: 'assert(/\*/.test(code), "You should use the <code>*</code> operator");'
+  - text: 变量<code>product</code>应该等于<code>5.0</code>。
+    testString: assert(product === 5.0);
+  - text: 要使用<code>*</code>运算符。
+    testString: assert(/\*/.test(code));
 
 ```
 
@@ -34,6 +40,7 @@ tests:
 ```js
 var product = 2.0 * 0.0;
 
+
 ```
 
 </div>
@@ -43,7 +50,7 @@ var product = 2.0 * 0.0;
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(y){return 'product = '+y;})(product);
 ```
 
 </div>
@@ -53,7 +60,9 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+var product = 2.0 * 2.5;
 ```
+
 </section>

@@ -2,6 +2,7 @@
 id: 5a9036ee38fddaf9a66b5d35
 title: Create a Column Gap Using grid-column-gap
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/p/pByETK/cVZ8vfD'
 forumTopicId: 301124
 ---
@@ -55,10 +56,10 @@ tests:
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    /* add your code below this line */
+    /* Only change code below this line */
 
-
-    /* add your code above this line */
+   
+    /* Only change code above this line */
   }
 </style>
 

@@ -2,6 +2,7 @@
 id: 5a858944d96184f06fd60d61
 title: Create Your First CSS Grid
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/p/pByETK/cqwREC4'
 forumTopicId: 301129
 ---
@@ -46,10 +47,10 @@ tests:
     font-size: 40px;
     width: 100%;
     background: LightGray;
-    /* add your code below this line */
+    /* Only change code below this line */
 
-
-    /* add your code above this line */
+    
+    /* Only change code above this line */
   }
 </style>
 

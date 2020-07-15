@@ -8,7 +8,11 @@ import {
   template as _template
 } from 'lodash';
 
-import { compileHeadTail, setExt, transformContents } from '../utils/polyvinyl';
+import {
+  compileHeadTail,
+  setExt,
+  transformContents
+} from '../../../../../utils/polyvinyl';
 
 const htmlCatch = '\n<!--fcc-->\n';
 const jsCatch = '\n;/*fcc*/\n';

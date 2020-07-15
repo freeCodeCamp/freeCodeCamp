@@ -2,6 +2,7 @@
 id: 5a9d7295424fe3d0e10cad14
 title: Inherit CSS Variables
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cyLZZhZ'
 forumTopicId: 301088
 ---
@@ -38,10 +39,9 @@ tests:
 ```html
 <style>
   :root {
+    /* Only change code below this line */
 
-    /* add code below */
-
-    /* add code above */
+    /* Only change code above this line */
   }
 
   body {

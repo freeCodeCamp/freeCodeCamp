@@ -2,6 +2,7 @@
 id: 587d7dbe367417b2b2512bb9
 title: Use @for to Create a Sass Loop
 challengeType: 0
+isHidden: false
 forumTopicId: 301462
 ---
 
@@ -72,7 +73,7 @@ tests:
 <div id='html-seed'>
 
 ```html
-<style type='text/sass'>
+<style type='text/scss'>
 
 
 
@@ -95,7 +96,7 @@ tests:
 <section id='solution'>
 
 ```html
-<style type='text/sass'>
+<style type='text/scss'>
 
 @for $i from 1 through 5 {
   .text-#{$i} { font-size: 15px * $i; }
@@ -111,7 +112,7 @@ tests:
 ```
 
 ```html
-<style type='text/sass'>
+<style type='text/scss'>
 
 @for $i from 1 to 6 {
   .text-#{$i} { font-size: 15px * $i; }

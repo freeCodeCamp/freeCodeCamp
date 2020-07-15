@@ -2,6 +2,7 @@
 id: 587d78b2367417b2b2512b10
 title: Remove Items Using splice()
 challengeType: 1
+isHidden: false
 forumTopicId: 301166
 ---
 
@@ -60,9 +61,9 @@ tests:
 
 ```js
 const arr = [2, 4, 5, 1, 7, 5, 2, 1];
-// only change code below this line
+// Only change code below this line
 
-// only change code above this line
+// Only change code above this line
 console.log(arr);
 ```
 

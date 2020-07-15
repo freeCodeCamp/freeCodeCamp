@@ -60,9 +60,12 @@ export class SuperBlock extends Component {
     const blocksForSuperBlock = nodes.filter(
       node => node.superBlock === superBlock
     );
+    // since the nodes have been filtered based on isHidden, any blocks whose
+    // nodes have been entirely removed will not appear in this array.
     const blockDashedNames = uniq(
       blocksForSuperBlock.map(({ block }) => block)
     );
+    // render all non-empty blocks
     return (
       <ul>
         {blockDashedNames.map(blockDashedName => (

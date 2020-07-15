@@ -19,7 +19,7 @@ localeTitle: 问题341：Golomb的自我描述序列
 ```yml
 tests:
   - text: <code>euler341()</code>应该返回56098610614277016。
-    testString: 'assert.strictEqual(euler341(), 56098610614277016, "<code>euler341()</code> should return 56098610614277016.");'
+    testString: assert.strictEqual(euler341(), 56098610614277016);
 
 ```
 

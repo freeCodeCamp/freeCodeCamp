@@ -3,7 +3,7 @@ const env = require('../config/env');
 const { createFilePath } = require('gatsby-source-filesystem');
 
 const { dasherize } = require('../utils/slugs');
-const { blockNameify } = require('./utils/blockNameify');
+const { blockNameify } = require('../utils/block-nameify');
 const {
   createChallengePages,
   createBlockIntroPages,
@@ -73,6 +73,7 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
         {
           allChallengeNode(
             sort: { fields: [superOrder, order, challengeOrder] }
+            filter: { isHidden: { eq: false } }
           ) {
             edges {
               node {
@@ -168,7 +169,6 @@ exports.onCreateWebpackConfig = ({ stage, plugins, actions }) => {
         process.env.HOME_PATH || 'http://localhost:3000'
       ),
       STRIPE_PUBLIC_KEY: JSON.stringify(process.env.STRIPE_PUBLIC_KEY || ''),
-      ROLLBAR_CLIENT_ID: JSON.stringify(process.env.ROLLBAR_CLIENT_ID || ''),
       ENVIRONMENT: JSON.stringify(
         process.env.FREECODECAMP_NODE_ENV || 'development'
       ),

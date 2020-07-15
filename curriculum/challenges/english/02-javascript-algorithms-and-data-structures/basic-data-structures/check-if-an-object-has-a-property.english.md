@@ -2,6 +2,7 @@
 id: 587d7b7d367417b2b2512b1c
 title: Check if an Object has a Property
 challengeType: 1
+isHidden: false
 forumTopicId: 301155
 ---
 
@@ -69,9 +70,9 @@ let users = {
 };
 
 function isEveryoneHere(obj) {
-  // change code below this line
+  // Only change code below this line
 
-  // change code above this line
+  // Only change code above this line
 }
 
 console.log(isEveryoneHere(users));

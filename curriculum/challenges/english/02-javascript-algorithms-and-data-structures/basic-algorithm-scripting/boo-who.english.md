@@ -3,6 +3,7 @@ id: a77dbc43c33f39daa4429b4f
 title: Boo who
 isRequired: true
 challengeType: 5
+isHidden: false
 forumTopicId: 16000
 ---
 
@@ -54,7 +55,6 @@ tests:
 
 ```js
 function booWho(bool) {
-  // What is the new fad diet for ghost developers? The Boolean.
   return bool;
 }
 

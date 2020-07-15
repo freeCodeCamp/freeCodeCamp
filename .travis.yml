@@ -11,14 +11,10 @@ env:
   global:
     - NO_UPDATE_NOTIFIER=1
     - NODE_NO_WARNINGS=1
-    - FREECODECAMP_NODE_ENV=production
-    - API_LOCATION="http://localhost:3000"
-    - FORUM_PROXY="https://forum.localhost"
-    - NEWS_PROXY="https://news.localhost"
-    
 
 before_install:
   - npm config set loglevel warn
+  - cp sample.env .env
 
 install: npm ci
 
@@ -33,4 +29,3 @@ jobs:
 
     - stage: Unit and Integration tests
       script: npm test
-

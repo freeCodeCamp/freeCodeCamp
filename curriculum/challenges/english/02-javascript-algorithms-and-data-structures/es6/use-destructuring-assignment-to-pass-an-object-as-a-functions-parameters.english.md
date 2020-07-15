@@ -2,6 +2,7 @@
 id: 587d7b8a367417b2b2512b4d
 title: Use Destructuring Assignment to Pass an Object as a Function's Parameters
 challengeType: 1
+isHidden: false
 forumTopicId: 301217
 ---
 
@@ -67,13 +68,10 @@ const stats = {
   average: 35.85
 };
 
-// use function argument destructuring
-// change code below this line
+// Only change code below this line
 const half = (stats) => (stats.max + stats.min) / 2.0; 
-// change code above this line
+// Only change code above this line
 
-console.log(stats); // should be object
-console.log(half(stats)); // should be 28.015
 ```
 
 </div>

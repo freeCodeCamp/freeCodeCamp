@@ -2,6 +2,7 @@
 id: 56533eb9ac21ba0edf2244c3
 title: Assignment with a Returned Value
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/ce2pEtB'
 forumTopicId: 16658
 ---
@@ -39,15 +40,6 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Example
-var changed = 0;
-
-function change(num) {
-  return (num + 5) / 3;
-}
-
-changed = change(10);
-
 // Setup
 var processed = 0;
 
@@ -56,7 +48,6 @@ function processArg(num) {
 }
 
 // Only change code below this line
-
 
 ```
 

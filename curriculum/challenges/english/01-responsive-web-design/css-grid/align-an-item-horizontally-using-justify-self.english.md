@@ -2,6 +2,7 @@
 id: 5a90374338fddaf9a66b5d3a
 title: Align an Item Horizontally using justify-self
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/p/pByETK/cJbpKHq'
 forumTopicId: 301122
 ---
@@ -42,10 +43,10 @@ tests:
 
   .item2 {
     background: LightSalmon;
-    /* add your code below this line */
+    /* Only change code below this line */
 
-
-    /* add your code above this line */
+    
+    /* Only change code above this line */
   }
 
   .item3{background:PaleTurquoise;}

@@ -59,8 +59,22 @@ async function initTestFrame(e = {}) {
       // eval test string to actual JavaScript
       // This return can be a function
       // i.e. function() { assert(true, 'happy coding'); }
-      // eslint-disable-next-line no-eval
-      const test = eval(testString);
+      const testPromise = new Promise((resolve, reject) =>
+        // To avoid race conditions, we have to run the test in a final
+        // document ready:
+        $(() => {
+          try {
+            // eslint-disable-next-line no-eval
+            const test = eval(testString);
+            resolve({ test });
+          } catch (err) {
+            reject({ err });
+          }
+        })
+      );
+      const { test, err } = await testPromise;
+      if (err) throw err;
+
       if (typeof test === 'function') {
         await test(e.getUserInput);
       }

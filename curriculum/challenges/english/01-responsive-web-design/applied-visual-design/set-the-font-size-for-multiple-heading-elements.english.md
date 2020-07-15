@@ -2,6 +2,7 @@
 id: 587d781c367417b2b2512ac2
 title: Set the font-size for Multiple Heading Elements
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cPpQNT3'
 forumTopicId: 301067
 ---

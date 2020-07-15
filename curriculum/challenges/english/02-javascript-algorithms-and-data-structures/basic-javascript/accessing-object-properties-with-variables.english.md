@@ -2,6 +2,7 @@
 id: 56533eb9ac21ba0edf2244c9
 title: Accessing Object Properties with Variables
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cnQyKur'
 forumTopicId: 16165
 ---
@@ -77,10 +78,10 @@ var testObj = {
   19: "Unitas"
 };
 
-// Only change code below this line;
+// Only change code below this line
 
-var playerNumber;       // Change this Line
-var player = testObj;   // Change this Line
+var playerNumber;       // Change this line
+var player = testObj;   // Change this line
 ```
 
 </div>

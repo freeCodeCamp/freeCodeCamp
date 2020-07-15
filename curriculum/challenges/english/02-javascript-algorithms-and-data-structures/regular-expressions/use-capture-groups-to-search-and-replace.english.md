@@ -2,6 +2,7 @@
 id: 587d7dbb367417b2b2512bab
 title: Use Capture Groups to Search and Replace
 challengeType: 1
+isHidden: false
 forumTopicId: 301368
 ---
 

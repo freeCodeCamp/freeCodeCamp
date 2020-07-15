@@ -2,6 +2,7 @@
 id: 587d7b83367417b2b2512b33
 title: Use the JavaScript Console to Check the Value of a Variable
 challengeType: 1
+isHidden: false
 forumTopicId: 18372
 ---
 
@@ -40,7 +41,7 @@ tests:
 let a = 5;
 let b = 1;
 a++;
-// Add your code below this line
+// Only change code below this line
 
 
 let sumAB = a + b;

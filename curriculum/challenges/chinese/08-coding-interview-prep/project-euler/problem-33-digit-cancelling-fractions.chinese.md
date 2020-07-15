@@ -19,7 +19,7 @@ localeTitle: 问题33：数字取消分数
 ```yml
 tests:
   - text: <code>digitCancellingFractions()</code>应该返回100。
-    testString: 'assert.strictEqual(digitCancellingFractions(), 100, "<code>digitCancellingFractions()</code> should return 100.");'
+    testString: assert.strictEqual(digitCancellingFractions(), 100);
 
 ```
 

@@ -2,6 +2,7 @@
 id: 56533eb9ac21ba0edf2244e2
 title: Caesars Cipher
 challengeType: 5
+isHidden: false
 isRequired: true
 forumTopicId: 16003
 ---
@@ -43,12 +44,11 @@ tests:
 <div id='js-seed'>
 
 ```js
-function rot13(str) { // LBH QVQ VG!
+function rot13(str) {
 
   return str;
 }
 
-// Change the inputs below to test
 rot13("SERR PBQR PNZC");
 ```
 

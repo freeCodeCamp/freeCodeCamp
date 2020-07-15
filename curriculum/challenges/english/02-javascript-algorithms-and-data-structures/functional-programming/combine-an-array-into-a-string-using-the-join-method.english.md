@@ -2,6 +2,7 @@
 id: 587d7daa367417b2b2512b6c
 title: Combine an Array into a String Using the join Method
 challengeType: 1
+isHidden: false
 forumTopicId: 18221
 ---
 
@@ -31,7 +32,7 @@ tests:
   - text: Your code should use the <code>join</code> method.
     testString: assert(code.match(/\.join/g));
   - text: Your code should not use the <code>replace</code> method.
-    testString: assert(!code.match(/\.replace/g));
+    testString: assert(!code.match(/\.?[\s\S]*?replace/g));
   - text: <code>sentensify("May-the-force-be-with-you")</code> should return a string.
     testString: assert(typeof sentensify("May-the-force-be-with-you") === "string");
   - text: <code>sentensify("May-the-force-be-with-you")</code> should return <code>"May the force be with you"</code>.
@@ -52,10 +53,10 @@ tests:
 
 ```js
 function sentensify(str) {
-  // Add your code below this line
+  // Only change code below this line
 
 
-  // Add your code above this line
+  // Only change code above this line
 }
 sentensify("May-the-force-be-with-you");
 ```
@@ -71,9 +72,9 @@ sentensify("May-the-force-be-with-you");
 
 ```js
 function sentensify(str) {
-  // Add your code below this line
+  // Only change code below this line
   return str.split(/\W/).join(' ');
-  // Add your code above this line
+  // Only change code above this line
 }
 ```
 

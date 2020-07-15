@@ -30,7 +30,7 @@ img {
 ```yml
 tests:
   - text: '你应该使用 <code>fullCard</code> class 选择器将卡片的 <code>width</code> 宽度属性更改为 <code>245px</code>。'
-    testString: 'assert(code.match(/.fullCard\s*{[\s\S][^}]*\n*^\s*width\s*:\s*245px\s*;/gm), ''你应该使用 <code>fullCard</code> class 选择器将卡片的 <code>width</code> 宽度属性更改为 <code>245px</code>。'');'
+    testString: const fullCard = code.match(/\.fullCard\s*{[\s\S]+?[^}]}/g); assert(fullCard && /width\s*:\s*245px\s*(;|})/gi.test(fullCard[0]) && $('.fullCard').css('maxWidth') === 'none');
 
 ```
 

@@ -2,6 +2,7 @@
 id: 587d7b7c367417b2b2512b1b
 title: Use the delete Keyword to Remove Object Properties
 challengeType: 1
+isHidden: false
 forumTopicId: 301168
 ---
 
@@ -51,9 +52,9 @@ let foods = {
   strawberries: 27
 };
 
-// change code below this line
+// Only change code below this line
 
-// change code above this line
+// Only change code above this line
 
 console.log(foods);
 ```
@@ -68,7 +69,6 @@ console.log(foods);
 <section id='solution'>
 
 ```js
-// solution required
 let foods = {
   apples: 25,
   oranges: 32,

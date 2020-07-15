@@ -18,13 +18,13 @@ localeTitle: 检查全部或无
 ```yml
 tests:
   - text: 你的正则表达式应该使用可选的符号， <code>?</code> 。
-    testString: 'assert(favRegex.source.match(/\?/).length > 0, "Your regex should use the optional symbol, <code>?</code>.");'
+    testString: assert(favRegex.source.match(/\?/).length > 0);
   - text: 你的正则表达式应该匹配<code>&quot;favorite&quot;</code>
-    testString: 'assert(favRegex.test("favorite"), "Your regex should match <code>"favorite"</code>");'
+    testString: assert(favRegex.test("favorite"));
   - text: 你的正则表达式应该匹配<code>&quot;favourite&quot;</code>
-    testString: 'assert(favRegex.test("favourite"), "Your regex should match <code>"favourite"</code>");'
+    testString: assert(favRegex.test("favourite"));
   - text: 你的正则表达式不应该匹配<code>&quot;fav&quot;</code>
-    testString: 'assert(!favRegex.test("fav"), "Your regex should not match <code>"fav"</code>");'
+    testString: assert(!favRegex.test("fav"));
 
 ```
 

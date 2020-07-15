@@ -2,25 +2,39 @@
 id: cf1111c1c11feddfaeb4bdef
 title: Subtract One Number from Another with JavaScript
 challengeType: 1
-videoUrl: ''
-localeTitle: 使用JavaScript从另一个数字中减去一个数字
+videoUrl: 'https://scrimba.com/c/cP3yQtk'
+forumTopicId: 18314
+localeTitle: 减法运算
 ---
 
 ## Description
-<section id="description">我们也可以从另一个数字中减去一个数字。 JavaScript使用<code>-</code>符号进行减法。 <p> <strong>例</strong> </p><blockquote> myVar = 12  -  6; //分配6 </blockquote></section>
+<section id='description'>
+我们也可以在 JavaScript 中进行减法运算。
+JavaScript 中使用<code>-</code>来做减法运算。
+
+<strong>示例</strong>
+
+```js
+myVar = 12 - 6; // assigned 6
+```
+
+
+</section>
 
 ## Instructions
-<section id="instructions">更改<code>0</code>因此差异为<code>12</code> 。 </section>
+<section id='instructions'>
+改变数字<code>0</code>让变量 difference 的值为<code>12</code>。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: ''
-    testString: 'assert(difference === 12, "Make the variable <code>difference</code> equal 12.");'
-  - text: 只从45中减去一个数字。
-    testString: 'assert(/var\s*difference\s*=\s*45\s*-\s*[0-9]*;(?!\s*[a-zA-Z0-9]+)/.test(code),"Only subtract one number from 45.");'
+  - text: 要使<code>difference</code>的值等于 12。
+    testString: assert(difference === 12);
+  - text: 只用 45 减去一个数。
+    testString: assert(/var\s*difference\s*=\s*45\s*-\s*[0-9]*;(?!\s*[a-zA-Z0-9]+)/.test(code));
 
 ```
 
@@ -34,6 +48,7 @@ tests:
 ```js
 var difference = 45 - 0;
 
+
 ```
 
 </div>
@@ -43,7 +58,7 @@ var difference = 45 - 0;
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(z){return 'difference = '+z;})(difference);
 ```
 
 </div>
@@ -53,7 +68,9 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+var difference = 45 - 33;
 ```
+
 </section>

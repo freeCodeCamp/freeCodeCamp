@@ -1,0 +1,34 @@
+{
+  "name": "Information Security Projects",
+  "dashedName": "information-security-projects",
+  "order": 3,
+  "time": "150 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "information-security",
+  "superOrder": 9,
+  "challengeOrder": [
+    [
+      "587d824a367417b2b2512c44",
+      "Stock Price Checker"
+    ],
+    [
+      "587d824a367417b2b2512c45",
+      "Anonymous Message Board"
+    ],
+    [
+      "5e46f979ac417301a38fb932",
+      "Port Scanner"
+    ],
+    [
+      "5e46f983ac417301a38fb933",
+      "SHA-1 Password Cracker"
+    ],
+    [
+      "5e601c775ac9d0ecd8b94aff",
+      "Secure Real Time Multiplayer Game"
+    ]
+  ],
+  "helpRoom": "HelpBackend",
+  "fileName": "09-information-security/information-security-projects.json"
+}

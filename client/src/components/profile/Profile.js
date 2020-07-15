@@ -20,6 +20,7 @@ const propTypes = {
       isLocked: PropTypes.bool,
       showAbout: PropTypes.bool,
       showCerts: PropTypes.bool,
+      showDonation: PropTypes.bool,
       showHeatMap: PropTypes.bool,
       showLocation: PropTypes.bool,
       showName: PropTypes.bool,
@@ -28,10 +29,6 @@ const propTypes = {
       showTimeLine: PropTypes.bool
     }),
     calendar: PropTypes.object,
-    streak: PropTypes.shape({
-      current: PropTypes.number,
-      longest: PropTypes.number
-    }),
     completedChallenges: PropTypes.array,
     portfolio: PropTypes.array,
     about: PropTypes.string,
@@ -48,7 +45,8 @@ const propTypes = {
     twitter: PropTypes.string,
     username: PropTypes.string,
     website: PropTypes.string,
-    yearsTopContributor: PropTypes.array
+    yearsTopContributor: PropTypes.array,
+    isDonating: PropTypes.bool
   })
 };
 
@@ -96,6 +94,7 @@ function renderProfile(user) {
     profileUI: {
       showAbout = false,
       showCerts = false,
+      showDonation = false,
       showHeatMap = false,
       showLocation = false,
       showName = false,
@@ -105,7 +104,6 @@ function renderProfile(user) {
     },
     calendar,
     completedChallenges,
-    streak,
     githubProfile,
     isLinkedIn,
     isGithub,
@@ -121,7 +119,8 @@ function renderProfile(user) {
     picture,
     portfolio,
     about,
-    yearsTopContributor
+    yearsTopContributor,
+    isDonating
   } = user;
 
   return (
@@ -129,6 +128,7 @@ function renderProfile(user) {
       <Camper
         about={showAbout ? about : null}
         githubProfile={githubProfile}
+        isDonating={showDonation ? isDonating : null}
         isGithub={isGithub}
         isLinkedIn={isLinkedIn}
         isTwitter={isTwitter}
@@ -143,7 +143,7 @@ function renderProfile(user) {
         website={website}
         yearsTopContributor={yearsTopContributor}
       />
-      {showHeatMap ? <HeatMap calendar={calendar} streak={streak} /> : null}
+      {showHeatMap ? <HeatMap calendar={calendar} /> : null}
       {showCerts ? <Certifications username={username} /> : null}
       {showPortfolio ? <Portfolio portfolio={portfolio} /> : null}
       {showTimeLine ? (
@@ -194,7 +194,9 @@ function Profile({ user, isSessionUser, navigate }) {
         {!isLocked || isSessionUser ? renderProfile(user) : null}
         {isSessionUser ? null : (
           <Row className='text-center'>
-            <Link to={`/user/${username}/report-user`}>Report This User</Link>
+            <Link to={`/user/${username}/report-user`}>
+              Flag This User's Account for Abuse
+            </Link>
           </Row>
         )}
         <Spacer />

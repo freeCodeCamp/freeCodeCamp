@@ -2,6 +2,7 @@
 id: 587d7db1367417b2b2512b85
 title: Set the Child's Prototype to an Instance of the Parent
 challengeType: 1
+isHidden: false
 forumTopicId: 301325
 ---
 
@@ -58,11 +59,11 @@ Animal.prototype = {
 
 function Dog() { }
 
-// Add your code below this line
+// Only change code below this line
 
 
 let beagle = new Dog();
-beagle.eat();  // Should print "nom nom nom"
+
 ```
 
 </div>

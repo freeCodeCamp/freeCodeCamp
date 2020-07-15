@@ -18,13 +18,13 @@ localeTitle: 使用every方法检查数组中的每个元素是否符合条件
 ```yml
 tests:
   - text: 您的代码应该使用<code>every</code>方法。
-    testString: 'assert(code.match(/\.every/g), "Your code should use the <code>every</code> method.");'
+    testString: assert(code.match(/\.every/g));
   - text: '<code>checkPositive([1, 2, 3, -4, 5])</code>应该返回<code>false</code> 。'
-    testString: 'assert(!checkPositive([1, 2, 3, -4, 5]), "<code>checkPositive([1, 2, 3, -4, 5])</code> should return <code>false</code>.");'
+    testString: assert.isFalse(checkPositive([1, 2, 3, -4, 5]));
   - text: '<code>checkPositive([1, 2, 3, 4, 5])</code>应该返回<code>true</code> 。'
-    testString: 'assert(checkPositive([1, 2, 3, 4, 5]), "<code>checkPositive([1, 2, 3, 4, 5])</code> should return <code>true</code>.");'
+    testString: assert.isTrue(checkPositive([1, 2, 3, 4, 5]));
   - text: '<code>checkPositive([1, -2, 3, -4, 5])</code>应该返回<code>false</code> 。'
-    testString: 'assert(!checkPositive([1, -2, 3, -4, 5]), "<code>checkPositive([1, -2, 3, -4, 5])</code> should return <code>false</code>.");'
+    testString: assert.isFalse(checkPositive([1, -2, 3, -4, 5]));
 
 ```
 

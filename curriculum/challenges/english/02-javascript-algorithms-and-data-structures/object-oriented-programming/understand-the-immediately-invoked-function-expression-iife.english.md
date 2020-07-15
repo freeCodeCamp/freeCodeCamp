@@ -2,6 +2,7 @@
 id: 587d7db2367417b2b2512b8b
 title: Understand the Immediately Invoked Function Expression (IIFE)
 challengeType: 1
+isHidden: false
 forumTopicId: 301328
 ---
 
@@ -30,9 +31,9 @@ Rewrite the function <code>makeNest</code> and remove its call so instead it's a
 ```yml
 tests:
   - text: The function should be anonymous.
-    testString: assert(/\((function|\(\))(=>|\(\)){/.test(code.replace(/\s/g, "")));
+    testString: assert(/\((function|\(\))(=>|\(\)){?/.test(code.replace(/\s/g, "")));
   - text: Your function should have parentheses at the end of the expression to call it immediately.
-    testString: assert(/}\)\(\)/.test(code.replace(/\s/g, "")));
+    testString: assert(/}?\)\(\)$|}\(\)\)$/.test(code.replace(/[\s;]/g, "")));
 
 ```
 
@@ -65,6 +66,24 @@ makeNest();
 (function () {
   console.log("A cozy nest is ready");
 })();
+```
+
+```js
+(function () {
+  console.log("A cozy nest is ready");
+}());
+```
+
+```js
+(() => {
+  console.log("A cozy nest is ready");
+})();
+```
+
+```js
+(() =>
+  console.log("A cozy nest is ready")
+)();
 ```
 
 </section>

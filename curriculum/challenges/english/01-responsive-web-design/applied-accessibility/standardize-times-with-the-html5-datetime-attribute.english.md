@@ -2,6 +2,7 @@
 id: 587d778c367417b2b2512aa9
 title: Standardize Times with the HTML5 datetime Attribute
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cmzMgtz'
 forumTopicId: 301025
 ---
@@ -48,11 +49,11 @@ tests:
   <article>
     <h2>Mortal Kombat Tournament Survey Results</h2>
 
-    <!-- Add your code below this line -->
+    <!-- Only change code below this line -->
 
     <p>Thank you to everyone for responding to Master Camper Cat's survey. The best day to host the vaunted Mortal Kombat tournament is Thursday, September 15<sup>th</sup>. May the best ninja win!</p>
 
-    <!-- Add your code above this line -->
+    <!-- Only change code above this line -->
 
     <section>
       <h3>Comments:</h3>
@@ -101,13 +102,9 @@ const datetimeAttr = $(timeElement).attr("datetime");
   </header>
   <article>
     <h2>Mortal Kombat Tournament Survey Results</h2>
-    
-    <!-- Add your code below this line -->
-    
+
     <p>Thank you to everyone for responding to Master Camper Cat's survey. The best day to host the vaunted Mortal Kombat tournament is <time datetime="2016-09-15">Thursday, September 15<sup>th</sup></time>. May the best ninja win!</p>
-    
-    <!-- Add your code above this line -->
-    
+
     <section>
       <h3>Comments:</h3>
       <article>

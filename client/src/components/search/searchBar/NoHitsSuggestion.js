@@ -1,13 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const NoHitsSuggestion = ({ title, handleMouseEnter, handleMouseLeave }) => {
+const NoHitsSuggestion = ({ title }) => {
   return (
-    <div
-      className={'no-hits-footer fcc_suggestion_item'}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
+    <div className={'no-hits-footer fcc_suggestion_item'} role='region'>
       <span className='hit-name'>{title}</span>
     </div>
   );

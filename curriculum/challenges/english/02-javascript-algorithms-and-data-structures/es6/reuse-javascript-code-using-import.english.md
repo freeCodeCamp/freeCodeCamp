@@ -2,6 +2,7 @@
 id: 587d7b8c367417b2b2512b55
 title: Reuse JavaScript Code Using import
 challengeType: 1
+isHidden: false
 forumTopicId: 301208
 ---
 
@@ -47,7 +48,7 @@ tests:
 
 ```js
   
-// add code above this line
+// Only change code above this line
 
 uppercaseString("hello");
 lowercaseString("WORLD!");
@@ -61,7 +62,6 @@ lowercaseString("WORLD!");
 
 ```js
 import { uppercaseString, lowercaseString } from './string_functions.js';
-// add code above this line
 
 uppercaseString("hello");
 lowercaseString("WORLD!");

@@ -19,7 +19,7 @@ localeTitle: 问题92：方形数字链
 ```yml
 tests:
   - text: <code>euler92()</code>应返回8581146。
-    testString: 'assert.strictEqual(euler92(), 8581146, "<code>euler92()</code> should return 8581146.");'
+    testString: assert.strictEqual(euler92(), 8581146);
 
 ```
 

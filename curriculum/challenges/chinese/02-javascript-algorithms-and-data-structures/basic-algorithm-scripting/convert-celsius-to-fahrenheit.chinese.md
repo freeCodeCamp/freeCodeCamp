@@ -20,17 +20,17 @@ localeTitle: 将摄氏温度转换为华氏温度
 ```yml
 tests:
   - text: <code>convertToF(0)</code>应该返回一个数字
-    testString: 'assert(typeof convertToF(0) === "number", "<code>convertToF(0)</code> should return a number");'
+    testString: assert(typeof convertToF(0) === 'number');
   - text: <code>convertToF(-30)</code>应该返回值<code>-22</code>
-    testString: 'assert(convertToF(-30) === -22, "<code>convertToF(-30)</code> should return a value of <code>-22</code>");'
+    testString: assert(convertToF(-30) === -22);
   - text: <code>convertToF(-10)</code>应该返回值<code>14</code>
-    testString: 'assert(convertToF(-10) === 14, "<code>convertToF(-10)</code> should return a value of <code>14</code>");'
+    testString: assert(convertToF(-10) === 14);
   - text: <code>convertToF(0)</code>应返回值<code>32</code>
-    testString: 'assert(convertToF(0) === 32, "<code>convertToF(0)</code> should return a value of <code>32</code>");'
+    testString: assert(convertToF(0) === 32);
   - text: <code>convertToF(20)</code>应返回值<code>68</code>
-    testString: 'assert(convertToF(20) === 68, "<code>convertToF(20)</code> should return a value of <code>68</code>");'
+    testString: assert(convertToF(20) === 68);
   - text: <code>convertToF(30)</code>应返回值<code>86</code>
-    testString: 'assert(convertToF(30) === 86, "<code>convertToF(30)</code> should return a value of <code>86</code>");'
+    testString: assert(convertToF(30) === 86);
 
 ```
 

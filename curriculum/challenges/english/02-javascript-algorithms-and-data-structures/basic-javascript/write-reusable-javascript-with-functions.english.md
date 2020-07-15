@@ -2,6 +2,7 @@
 id: 56bbb991ad1ed5201cd392cf
 title: Write Reusable JavaScript with Functions
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cL6dqfy'
 forumTopicId: 18378
 ---
@@ -49,14 +50,8 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Example
-function ourReusableFunction() {
-  console.log("Heyya, World");
-}
 
-ourReusableFunction();
 
-// Only change code below this line
 
 ```
 

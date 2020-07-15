@@ -2,6 +2,7 @@
 id: 5a9d726c424fe3d0e10cad11
 title: Create a custom CSS Variable
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cQd27Hr'
 forumTopicId: 301086
 ---
@@ -43,10 +44,9 @@ tests:
 ```html
 <style>
   .penguin {
+    /* Only change code below this line */
 
-    /* add code below */
-
-    /* add code above */
+    /* Only change code above this line */
     position: relative;
     margin: auto;
     display: block;

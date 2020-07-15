@@ -2,6 +2,7 @@
 id: 599a789b454f2bbd91a3ff4d
 title: Practice comparing different values
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cm8PqCa'
 forumTopicId: 301174
 ---
@@ -61,7 +62,6 @@ function compareEquality(a, b) {
   return "Not Equal";
 }
 
-// Change this value to test
 compareEquality(10, "10");
 ```
 

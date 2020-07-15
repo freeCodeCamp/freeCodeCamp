@@ -2,39 +2,81 @@
 id: 56533eb9ac21ba0edf2244cb
 title: Manipulating Complex Objects
 challengeType: 1
-videoUrl: ''
-localeTitle: 操纵复杂对象
+videoUrl: 'https://scrimba.com/c/c9yNMfR'
+forumTopicId: 18208
+localeTitle: 操作复杂对象
 ---
 
 ## Description
-<section id="description">有时您可能希望将数据存储在灵活的<dfn>数据结构中</dfn> 。 JavaScript对象是处理灵活数据的一种方法。它们允许<dfn>字符串</dfn> ， <dfn>数字</dfn> ， <dfn>布尔值</dfn> ， <dfn>数组</dfn> ， <dfn>函数</dfn>和<dfn>对象的</dfn>任意组合。这是一个复杂数据结构的示例： <blockquote> var ourMusic = [ <br> { <br> “艺术家”：“Daft Punk”， <br> “标题”：“家庭作业”， <br> “release_year”：1997年， <br> “格式”：[ <br> “光盘”， <br> “盒式” <br> “LP” <br> ] <br> “黄金”：是的<br> } <br> ]。 </blockquote>这是一个包含一个对象的数组。该对象具有关于专辑的各种<dfn>元数据</dfn> 。它还有一个嵌套的<code>&quot;formats&quot;</code>数组。如果要添加更多专辑记录，可以通过向顶级数组添加记录来完成此操作。对象将数据保存在属性中，该属性具有键值格式。在上面的示例中， <code>&quot;artist&quot;: &quot;Daft Punk&quot;</code>是具有<code>&quot;artist&quot;</code>键和<code>&quot;Daft Punk&quot;</code>值的属性。 <a href="http://www.json.org/" target="_blank">JavaScript Object Notation</a>或<code>JSON</code>是用于存储数据的相关数据交换格式。 <blockquote> { <br> “艺术家”：“Daft Punk”， <br> “标题”：“家庭作业”， <br> “release_year”：1997年， <br> “格式”：[ <br> “光盘”， <br> “盒式” <br> “LP” <br> ] <br> “黄金”：是的<br> } </blockquote> <strong>注意</strong> <br>除非它是数组中的最后一个对象，否则您需要在数组中的每个对象后面放置一个逗号。 </section>
+<section id='description'>
+有时你可能希望将数据存储在灵活的<dfn>数据结构</dfn>中。JavaScript 对象是处理灵活数据的一种方法。它可以储存<dfn>字符串</dfn>，<dfn>数字</dfn>，<dfn>布尔值</dfn>，<dfn>函数</dfn>，和<dfn>对象</dfn>以及这些值的任意组合。
+这是一个复杂数据结构的示例：
+
+```js
+var ourMusic = [
+  {
+    "artist": "Daft Punk",
+    "title": "Homework",
+    "release_year": 1997,
+    "formats": [ 
+      "CD", 
+      "Cassette", 
+      "LP"
+    ],
+    "gold": true
+  }
+];
+```
+
+这是一个对象数组，并且对象有各种关于专辑的 <dfn>详细信息</dfn>。它也有一个嵌套的<code>formats</code>的数组。附加专辑记录可以被添加到数组的最上层。
+对象将数据以一种键-值对的形式保存。在上面的示例中，<code>"artist": "Daft Punk"</code>是一个具有<code>"artist"</code>键和<code>"Daft Punk"</code>值的属性。
+<a href='http://www.json.org/' target=_blank>JavaScript Object Notation</a> 简称<code>JSON</code>是用于存储数据的相关数据交换格式。
+
+```json
+{
+  "artist": "Daft Punk",
+  "title": "Homework",
+  "release_year": 1997,
+  "formats": [ 
+    "CD",
+    "Cassette",
+    "LP"
+  ],
+  "gold": true
+}
+```
+
+<strong>提示</strong><br>数组中有多个 JSON 对象的时候，对象与对象之间要用逗号隔开。
+</section>
 
 ## Instructions
-<section id="instructions">将新相册添加到<code>myMusic</code>阵列。添加<code>artist</code>和<code>title</code>字符串， <code>release_year</code>数字和<code>formats</code>字符串数组。 </section>
+<section id='instructions'>
+添加一个新专辑到<code>myMusic</code>的JSON对象。添加<code>artist</code>和<code>title</code>字符串，<code>release_year</code>数字和<code>formats</code>字符串数组。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>myMusic</code>应该是一个数组
-    testString: 'assert(Array.isArray(myMusic), "<code>myMusic</code> should be an array");'
-  - text: <code>myMusic</code>应该至少有两个元素
-    testString: 'assert(myMusic.length > 1, "<code>myMusic</code> should have at least two elements");'
-  - text: '<code>myMusic[1]</code>应该是一个对象'
-    testString: 'assert(typeof myMusic[1] === "object", "<code>myMusic[1]</code> should be an object");'
-  - text: '<code>myMusic[1]</code>应该至少有4个属性'
-    testString: 'assert(Object.keys(myMusic[1]).length > 3, "<code>myMusic[1]</code> should have at least 4 properties");'
-  - text: '<code>myMusic[1]</code>应该包含一个<code>artist</code>属性，它是一个字符串'
-    testString: 'assert(myMusic[1].hasOwnProperty("artist") && typeof myMusic[1].artist === "string", "<code>myMusic[1]</code> should contain an <code>artist</code> property which is a string");'
-  - text: '<code>myMusic[1]</code>应该包含一个<code>title</code>属性，它是一个字符串'
-    testString: 'assert(myMusic[1].hasOwnProperty("title") && typeof myMusic[1].title === "string", "<code>myMusic[1]</code> should  contain a <code>title</code> property which is a string");'
-  - text: '<code>myMusic[1]</code>应该包含一个<code>release_year</code>属性，它是一个数字'
-    testString: 'assert(myMusic[1].hasOwnProperty("release_year") && typeof myMusic[1].release_year === "number", "<code>myMusic[1]</code> should contain a <code>release_year</code> property which is a number");'
-  - text: '<code>myMusic[1]</code>应该包含一个<code>formats</code>属性，它是一个数组'
-    testString: 'assert(myMusic[1].hasOwnProperty("formats") && Array.isArray(myMusic[1].formats), "<code>myMusic[1]</code> should contain a <code>formats</code> property which is an array");'
-  - text: <code>formats</code>应该是一个至少包含两个元素的字符串数组
-    testString: 'assert(myMusic[1].formats.every(function(item) { return (typeof item === "string")}) && myMusic[1].formats.length > 1, "<code>formats</code> should be an array of strings with at least two elements");'
+  - text: <code>myMusic</code>应该是一个数组。
+    testString: assert(Array.isArray(myMusic));
+  - text: <code>myMusic</code>应该至少包含两个元素。
+    testString: assert(myMusic.length > 1);
+  - text: <code>myMusic[1]</code>应该是一个对象。
+    testString: assert(typeof myMusic[1] === 'object');
+  - text: <code>myMusic[1]</code>至少要包含四个属性。
+    testString: assert(Object.keys(myMusic[1]).length > 3);
+  - text: <code>myMusic[1]</code>应该包含一个类型为字符串的<code>artist</code>的属性。
+    testString: assert(myMusic[1].hasOwnProperty('artist') && typeof myMusic[1].artist === 'string');
+  - text: <code>myMusic[1]</code>应该包含一个类型为字符串的<code>title</code>的属性。
+    testString: assert(myMusic[1].hasOwnProperty('title') && typeof myMusic[1].title === 'string');
+  - text: <code>myMusic[1]</code>应该包含一个类型为数字的<code>release_year</code> 应该包含一个类型为数字的属性。
+    testString: assert(myMusic[1].hasOwnProperty('release_year') && typeof myMusic[1].release_year === 'number');
+  - text: <code>myMusic[1]</code>应该包含一个类型为数组的<code>formats</code>属性。
+    testString: assert(myMusic[1].hasOwnProperty('formats') && Array.isArray(myMusic[1].formats));
+  - text: <code>formats</code>应该是一个至少包含两个字符串元素的数组。
+    testString: assert(myMusic[1].formats.every(function(item) { return (typeof item === "string")}) && myMusic[1].formats.length > 1);
 
 ```
 
@@ -70,7 +112,7 @@ var myMusic = [
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(x){ if (Array.isArray(x)) { return JSON.stringify(x); } return "myMusic is not an array"})(myMusic);
 ```
 
 </div>
@@ -80,7 +122,31 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+var myMusic = [
+  {
+    "artist": "Billy Joel",
+    "title": "Piano Man",
+    "release_year": 1973,
+    "formats": [
+      "CS",
+      "8T",
+      "LP" ],
+    "gold": true
+  },
+  {
+    "artist": "ABBA",
+    "title": "Ring Ring",
+    "release_year": 1973,
+    "formats": [
+      "CS",
+      "8T",
+      "LP",
+    "CD",
+  ]
+  }
+];
 ```
+
 </section>

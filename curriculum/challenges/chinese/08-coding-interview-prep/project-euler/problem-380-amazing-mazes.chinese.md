@@ -19,7 +19,7 @@ localeTitle: 问题380：惊人的迷宫！
 ```yml
 tests:
   - text: <code>euler380()</code>应该返回Infinity。
-    testString: 'assert.strictEqual(euler380(), Infinity, "<code>euler380()</code> should return Infinity.");'
+    testString: assert.strictEqual(euler380(), Infinity);
 
 ```
 

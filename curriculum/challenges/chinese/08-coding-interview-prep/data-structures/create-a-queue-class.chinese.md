@@ -19,23 +19,23 @@ localeTitle: 创建队列类
 ```yml
 tests:
   - text: 您的<code>Queue</code>类应该有一个<code>enqueue</code>方法。
-    testString: 'assert((function(){var test = new Queue();  return (typeof test.enqueue === "function")}()), "Your <code>Queue</code> class should have a <code>enqueue</code> method.");'
+    testString: assert((function(){var test = new Queue();  return (typeof test.enqueue === 'function')}()));
   - text: 您的<code>Queue</code>类应该有一个<code>dequeue</code>方法。
-    testString: 'assert((function(){var test = new Queue();  return (typeof test.dequeue === "function")}()), "Your <code>Queue</code> class should have a <code>dequeue</code> method.");'
+    testString: assert((function(){var test = new Queue();  return (typeof test.dequeue === 'function')}()));
   - text: 您的<code>Queue</code>类应该有一个<code>front</code>方法。
-    testString: 'assert((function(){var test = new Queue();  return (typeof test.front === "function")}()), "Your <code>Queue</code> class should have a <code>front</code> method.");'
+    testString: assert((function(){var test = new Queue();  return (typeof test.front === 'function')}()));
   - text: 您的<code>Queue</code>类应该有一个<code>size</code>方法。
-    testString: 'assert((function(){var test = new Queue();  return (typeof test.size === "function")}()), "Your <code>Queue</code> class should have a <code>size</code> method.");'
+    testString: assert((function(){var test = new Queue();  return (typeof test.size === 'function')}()));
   - text: 您的<code>Queue</code>类应该有一个<code>isEmpty</code>方法。
-    testString: 'assert((function(){var test = new Queue();  return (typeof test.isEmpty === "function")}()), "Your <code>Queue</code> class should have an <code>isEmpty</code> method.");'
+    testString: assert((function(){var test = new Queue();  return (typeof test.isEmpty === 'function')}()));
   - text: <code>dequeue</code>方法应该删除并返回队列的前端元素
-    testString: 'assert((function(){var test = new Queue();  test.enqueue("Smith"); return (test.dequeue() === "Smith")}()), "The <code>dequeue</code> method should remove and return the front element of the queue");'
+    testString: assert((function(){var test = new Queue();  test.enqueue('Smith'); test.enqueue('John'); return (test.dequeue() === 'Smith')}()));
   - text: <code>front</code>方法应该返回队列的front元素的值
-    testString: 'assert((function(){var test = new Queue();  test.enqueue("Smith"); test.enqueue("John"); return (test.front() === "Smith")}()), "The <code>front</code> method should return value of the front element of the queue");'
+    testString: assert((function(){var test = new Queue();  test.enqueue('Smith'); test.enqueue('John'); return (test.front() === 'Smith')}()));
   - text: <code>size</code>方法应该返回队列的长度
-    testString: 'assert((function(){var test = new Queue();  test.enqueue("Smith"); return (test.size() === 1)}()), "The <code>size</code> method should return the length of the queue");'
+    testString: assert((function(){var test = new Queue();  test.enqueue('Smith'); return (test.size() === 1)}()));
   - text: 如果队列中有元素，则<code>isEmpty</code>方法应返回<code>false</code>
-    testString: 'assert((function(){var test = new Queue();  test.enqueue("Smith"); return !(test.isEmpty())}()), "The <code>isEmpty</code> method should return <code>false</code> if there are elements in the queue");'
+    testString: assert((function(){var test = new Queue();  test.enqueue('Smith'); return !(test.isEmpty())}()));
 
 ```
 

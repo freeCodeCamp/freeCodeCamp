@@ -7,9 +7,11 @@
   margin: 0;
   padding: 0;
 }
+
 .certification-namespace h1 {
   margin: 12px 0;
 }
+
 .certification-namespace.container {
   max-width: 1500px;
   width: 100%;
@@ -36,10 +38,15 @@
   align-items: center;
   min-height: 100vh;
   flex-direction: column;
+  padding: 50px;
 }
 
 .certificate-outer-wrapper .donation-section {
-  padding: 20px 0px;
+  padding-bottom: 100px;
+}
+
+.certificate-outer-wrapper .donation-section hr {
+  border: 1px solid var(--gray-10);
 }
 
 .certificate-outer-wrapper .donation-completion .btn {
@@ -59,6 +66,11 @@
   background-color: var(--gray-15);
   border-color: var(--quaternary-color);
   color: var(--quaternary-color);
+}
+
+.certificate-outer-wrapper .donation-section,
+.certificate-outer-wrapper .donation-section p {
+  font-family: 'Lato', sans-serif;
 }
 
 .certification-namespace header {
@@ -94,7 +106,6 @@
 }
 
 .certification-namespace .information {
-  margin-top: -20px;
   height: 380px;
   text-align: center;
   background-color: var(--gray-05);
@@ -173,12 +184,6 @@
   .certification-namespace h4 {
     font-size: 15px;
     margin-top: 20px;
-  }
-}
-
-@media (max-width: 767px) {
-  .certificate-outer-wrapper .donation-section {
-    padding: 20px 20px;
   }
 }
 

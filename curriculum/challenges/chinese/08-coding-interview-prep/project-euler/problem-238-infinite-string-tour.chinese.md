@@ -19,7 +19,7 @@ localeTitle: 问题238：无限的字符串游览
 ```yml
 tests:
   - text: <code>euler238()</code>应该返回9922545104535660。
-    testString: 'assert.strictEqual(euler238(), 9922545104535660, "<code>euler238()</code> should return 9922545104535660.");'
+    testString: assert.strictEqual(euler238(), 9922545104535660);
 
 ```
 

@@ -2,6 +2,7 @@
 id: 587d7daa367417b2b2512b6b
 title: Split a String into an Array Using the split Method
 challengeType: 1
+isHidden: false
 forumTopicId: 18305
 ---
 
@@ -53,10 +54,10 @@ tests:
 
 ```js
 function splitify(str) {
-  // Add your code below this line
+  // Only change code below this line
 
 
-  // Add your code above this line
+  // Only change code above this line
 }
 splitify("Hello World,I-am code");
 ```
@@ -72,9 +73,9 @@ splitify("Hello World,I-am code");
 
 ```js
 function splitify(str) {
-  // Add your code below this line
+  // Only change code below this line
   return str.split(/\W/);
-  // Add your code above this line
+  // Only change code above this line
 }
 ```
 

@@ -2,6 +2,7 @@
 id: 587d7da9367417b2b2512b67
 title: Add Elements to the End of an Array Using concat Instead of push
 challengeType: 1
+isHidden: false
 forumTopicId: 301226
 ---
 
@@ -33,7 +34,7 @@ tests:
   - text: Your code should use the <code>concat</code> method.
     testString: assert(code.match(/\.concat/g));
   - text: Your code should not use the <code>push</code> method.
-    testString: assert(!code.match(/\.push/g));
+    testString: assert(!code.match(/\.?[\s\S]*?push/g));
   - text: The <code>first</code> array should not change.
     testString: assert(JSON.stringify(first) === JSON.stringify([1, 2, 3]));
   - text: The <code>second</code> array should not change.
@@ -52,10 +53,10 @@ tests:
 
 ```js
 function nonMutatingPush(original, newItem) {
-  // Add your code below this line
+  // Only change code below this line
   return original.push(newItem);
 
-  // Add your code above this line
+  // Only change code above this line
 }
 var first = [1, 2, 3];
 var second = [4, 5];

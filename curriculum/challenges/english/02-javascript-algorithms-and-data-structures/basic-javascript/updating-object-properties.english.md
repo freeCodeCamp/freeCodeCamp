@@ -2,6 +2,7 @@
 id: 56bbb991ad1ed5201cd392d1
 title: Updating Object Properties
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/c9yEJT4'
 forumTopicId: 18336
 ---
@@ -51,16 +52,6 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Example
-var ourDog = {
-  "name": "Camper",
-  "legs": 4,
-  "tails": 1,
-  "friends": ["everything!"]
-};
-
-ourDog.name = "Happy Camper";
-
 // Setup
 var myDog = {
   "name": "Coder",
@@ -69,7 +60,7 @@ var myDog = {
   "friends": ["freeCodeCamp Campers"]
 };
 
-// Only change code below this line.
+// Only change code below this line
 
 
 ```

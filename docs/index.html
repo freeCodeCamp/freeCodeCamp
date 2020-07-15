@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Contribution Guidelines | freeCodeCamp.org</title>
+  <link rel="icon" href="images/branding/favicon.ico">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <!--social-->
+  <meta content='freeCodeCamp.org' name='og:title' />
+  <meta content='Learn to code at home. Build projects. Earn certifications.'
+    + 'Since 2015, 40,000 graduates have gotten jobs at tech '
+    + 'companies including Google, Apple, Amazon, and Microsoft.' name='og:description' />
+  <meta content='https://cdn.freecodecamp.org/platform/universal/fcc-og-1200-social-green.png' property='og:image' />
+
+  <meta content='summary_large_image' key='twitter:card' name='twitter:card' />
+  <meta content='https://cdn.freecodecamp.org/platform/universal/fcc-twitter-1120X600-social-green.png'
+    name='twitter:image:src' />
+  <meta content='freeCodeCamp.org' name='twitter:title' />
+  <meta content='Learn to code at home. Build projects. Earn certifications.'
+    + 'Since 2015, 40,000 graduates have gotten jobs at tech '
+    + 'companies including Google, Apple, Amazon, and Microsoft.' name='twitter:description' />
+
+  <!-- Theme -->
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css"> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify/themes/vue.css">
+  <!-- Custom theme stylesheet -->
+  <link rel="stylesheet" href="_theme.css">
+
+  <script src="https://kit.fontawesome.com/4b366379be.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <nav class='universal-nav'>
+    <a class="app-name-link" data-nosearch="" href="/">
+      <img alt="freeCodeCamp.org" src="images/branding/primary_logo.svg">
+    </a>
+  </nav>
+  <div id="app"></div>
+  <script>
+    window.$docsify = {
+      // Main Config
+      homepage: 'index.md',
+      loadSidebar: true,
+
+      // common aliases
+      alias: {
+
+      },
+
+      // break the caching
+      requestHeaders: {
+        'cache-control': 'no-cache'
+      },
+
+      // Cover Page
+      coverpage: true,
+      onlyCover: true,
+
+      // Navigation
+      auto2top: true,
+      maxLevel: 2,
+      subMaxLevel: 2,
+      // loadNavbar: true,
+
+
+      // Plugins
+      search: {
+        depth: 3,
+        noData: 'No results!',
+        placeholder: 'Search...'
+      },
+
+      'flexible-alerts': {
+        style: 'flat'
+      },
+
+      pagination: {
+        crossChapter: false
+      },
+
+      remoteMarkdown: {
+        tag: 'remote-markdown-url',
+      },
+
+      plugins: [
+        function (hook, vm) {
+          hook.beforeEach(function (html) {
+            var url =
+              'https://github.com/freeCodeCamp/freeCodeCamp/blob/master/docs/' +
+              vm.route.file;
+            var editHtml = '[<i class="far fa-edit"></i> Edit this guide on GitHub](' + url + ')';
+            return (
+              html +
+              '\n----\n' +
+              editHtml
+            );
+          });
+        }
+      ]
+
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+
+  <!-- Theme -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0"></script> -->
+
+  <!-- Plugins -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-plugin-flexible-alerts@1"></script>
+  <script src="https://unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+  <script src="https://unpkg.com/docsify-remote-markdown/dist/docsify-remote-markdown.min.js"></script>
+
+</html>

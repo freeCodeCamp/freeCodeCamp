@@ -19,7 +19,7 @@ localeTitle: 问题200：找到包含连续子串“200”的第200个防爆大�
 ```yml
 tests:
   - text: <code>euler200()</code>应该返回229161792008。
-    testString: 'assert.strictEqual(euler200(), 229161792008, "<code>euler200()</code> should return 229161792008.");'
+    testString: assert.strictEqual(euler200(), 229161792008);
 
 ```
 

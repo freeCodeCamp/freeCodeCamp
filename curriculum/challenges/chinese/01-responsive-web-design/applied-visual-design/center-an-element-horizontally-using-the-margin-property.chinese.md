@@ -24,7 +24,7 @@ localeTitle: 使用 margin 属性将元素水平居中
 ```yml
 tests:
   - text: '<code>div</code> 的 <code>margin</code> 应该为 <code>auto</code>。'
-    testString: 'assert(code.match(/margin:\s*?auto;/g), ''<code>div</code> 的 <code>margin</code> 应该为 <code>auto</code>。'');'
+    testString: assert(code.match(/margin:\s*?auto;/g));
 
 ```
 

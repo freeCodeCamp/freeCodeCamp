@@ -23,7 +23,7 @@ localeTitle: 使用 align-self 垂直对齐项目
 ```yml
 tests:
   - text: '<code>item3</code>类应该有<code>align-self</code>属性且值为<code>end</code>。'
-    testString: 'assert(code.match(/.item3\s*?{[\s\S]*align-self\s*?:\s*?end\s*?;[\s\S]*}/gi));'
+    testString: assert(code.match(/.item3\s*?{[\s\S]*align-self\s*?:\s*?end\s*?;[\s\S]*}/gi));
 
 ```
 

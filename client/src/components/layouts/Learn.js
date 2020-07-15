@@ -2,7 +2,7 @@ import React, { Fragment, Component } from 'react';
 import PropTypes from 'prop-types';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
-
+import { Helmet } from 'react-helmet';
 import { Loader } from '../../components/helpers';
 import {
   userSelector,
@@ -13,7 +13,6 @@ import {
 import createRedirect from '../../components/createRedirect';
 import DonateModal from '../Donation/DonationModal';
 
-import 'prismjs/themes/prism.css';
 import './prism.css';
 import './prism-night.css';
 import 'react-reflex/styles.css';
@@ -41,6 +40,13 @@ class LearnLayout extends Component {
     this.props.tryToShowDonationModal();
   }
 
+  componentWillUnmount() {
+    const metaTag = document.querySelector(`meta[name="robots"]`);
+    if (metaTag) {
+      metaTag.remove();
+    }
+  }
+
   render() {
     const {
       fetchState: { pending, complete },
@@ -59,6 +65,9 @@ class LearnLayout extends Component {
 
     return (
       <Fragment>
+        <Helmet>
+          <meta content='noindex' name='robots' />
+        </Helmet>
         <main id='learn-app-wrapper'>{children}</main>
         <DonateModal />
       </Fragment>

@@ -5,8 +5,8 @@
   "time": "5 hours",
   "template": "",
   "required": [],
-  "superBlock": "information-security-and-quality-assurance",
-  "superOrder": 6,
+  "superBlock": "information-security",
+  "superOrder": 9,
   "challengeOrder": [
     [
       "587d8247367417b2b2512c36",

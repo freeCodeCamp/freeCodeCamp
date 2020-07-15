@@ -2,6 +2,7 @@
 id: 56533eb9ac21ba0edf2244db
 title: Introducing Else If Statements
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/caeJ2hm'
 forumTopicId: 18206
 ---
@@ -71,7 +72,6 @@ function testElseIf(val) {
   return "Between 5 and 10";
 }
 
-// Change this value to test
 testElseIf(7);
 
 ```

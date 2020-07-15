@@ -30,7 +30,7 @@ tests:
   - text: '<code>h1</code>元素的文本内容应该为<code>Hello World</code>。'
     testString: assert(($("h1").length > 0 && $("h1").text().match(/hello world/i)));
   - text: '确保<code>h1</code>元素具有结束标记。'
-    testString: assert(code.match(/<\/h1>/g) && code.match(/<h1/g) && code.match(/<\/h1>/g).length === code.match(/<h1/g).length, '确保<code>h1</code>元素具有结束标记。');
+    testString: assert(code.match(/<\/h1>/g) && code.match(/<h1/g) && code.match(/<\/h1>/g).length === code.match(/<h1/g).length);
   - text: '<code>body</code>元素的<code>color</code>属性值应为<code>green</code>。'
     testString: assert(($("body").css("color") === "rgb(0, 128, 0)"));
   - text: '<code>body</code>元素的<code>font-family</code>属性值应为<code>monospace</code>。'
@@ -70,5 +70,6 @@ tests:
 ```html
 // solution required
 ```
+
 </section>
               

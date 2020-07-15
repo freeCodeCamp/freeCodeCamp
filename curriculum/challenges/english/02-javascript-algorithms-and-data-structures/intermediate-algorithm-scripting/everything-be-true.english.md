@@ -3,6 +3,7 @@ id: a10d2431ad0c6a099a4b8b52
 title: Everything Be True
 isRequired: true
 challengeType: 5
+isHidden: false
 forumTopicId: 16011
 ---
 
@@ -54,7 +55,6 @@ tests:
 
 ```js
 function truthCheck(collection, pre) {
-  // Is everyone being true?
   return pre;
 }
 
@@ -73,7 +73,6 @@ truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "ma
 
 ```js
 function truthCheck(collection, pre) {
-  // Does everyone have one of these?
   return collection.every(function(e) { return e[pre]; });
 }
 ```

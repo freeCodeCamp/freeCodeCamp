@@ -2,6 +2,7 @@
 id: 587d7b8c367417b2b2512b57
 title: Use * to Import Everything from a File
 challengeType: 1
+isHidden: false
 forumTopicId: 301210
 ---
 
@@ -44,7 +45,7 @@ tests:
 
 ```js
 
-// add code above this line
+// Only change code above this line
 
 stringFunctions.uppercaseString("hello");
 stringFunctions.lowercaseString("WORLD!");
@@ -58,8 +59,8 @@ stringFunctions.lowercaseString("WORLD!");
 
 ```js
 import * as stringFunctions from "./string_functions.js";
-// add code above this line
 
+// add code above this line
 stringFunctions.uppercaseString("hello");
 stringFunctions.lowercaseString("WORLD!");
 ```

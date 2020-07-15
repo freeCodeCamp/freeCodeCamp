@@ -24,11 +24,11 @@ localeTitle: 使用 strong 标签加粗文本
 ```yml
 tests:
   - text: '你应该有一个 <code>strong</code> 标签。'
-    testString: assert($('strong').length == 1, '你应该有一个 <code>strong</code> 标签。');
+    testString: assert($('strong').length == 1);
   - text: '<code>strong</code> 标签应该在 <code>p</code> 标签里。'
-    testString: assert($('p').children('strong').length == 1, '<code>strong</code> 标签应该在 <code>p</code> 标签里。');
+    testString: assert($('p').children('strong').length == 1);
   - text: '<code>strong</code> 标签应该包围 “斯坦福大学”。'
-    testString: assert($('strong').text().match(/^斯坦福大学$/gi), '<code>strong</code> 标签应该包围 “斯坦福大学”。');
+    testString: assert($('strong').text().match(/^Stanford University$/gi));
 
 ```
 

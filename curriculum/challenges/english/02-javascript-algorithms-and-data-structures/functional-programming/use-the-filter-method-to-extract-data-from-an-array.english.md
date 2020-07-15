@@ -2,6 +2,7 @@
 id: 587d7b8f367417b2b2512b63
 title: Use the filter Method to Extract Data from an Array
 challengeType: 1
+isHidden: false
 forumTopicId: 18179
 ---
 
@@ -54,7 +55,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-// the global variable
+// The global variable
 var watchList = [
   {
     "Title": "Inception",
@@ -168,11 +169,11 @@ var watchList = [
   }
 ];
 
-// Add your code below this line
+// Only change code below this line
 
 var filteredList;
 
-// Add your code above this line
+// Only change code above this line
 
 console.log(filteredList);
 ```
@@ -187,7 +188,7 @@ console.log(filteredList);
 <section id='solution'>
 
 ```js
-// the global variable
+// The global variable
 var watchList = [
   {
     "Title": "Inception",
@@ -301,9 +302,9 @@ var watchList = [
   }
 ];
 
-// Add your code below this line
+// Only change code below this line
 let filteredList = watchList.filter(e => e.imdbRating >= 8).map( ({Title: title, imdbRating: rating}) => ({title, rating}) );
-// Add your code above this line
+// Only change code above this line
 ```
 
 </section>

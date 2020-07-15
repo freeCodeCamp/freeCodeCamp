@@ -3,17 +3,23 @@ function getCompletedCertCount(user) {
     'isApisMicroservicesCert',
     'is2018DataVisCert',
     'isFrontEndLibsCert',
-    'isInfosecQaCert',
+    'isQaCertV7',
+    'isInfosecCertV7',
     'isJsAlgoDataStructCert',
-    'isRespWebDesignCert'
+    'isRespWebDesignCert',
+    'isSciCompPyCertV7',
+    'isDataAnalysisPyCertV7',
+    'isMachineLearningPyCertV7'
   ].reduce((sum, key) => (user[key] ? sum + 1 : sum), 0);
 }
 
 function getLegacyCertCount(user) {
-  return ['isFrontEndCert', 'isBackEndCert', 'isDataVisCert'].reduce(
-    (sum, key) => (user[key] ? sum + 1 : sum),
-    0
-  );
+  return [
+    'isFrontEndCert',
+    'isBackEndCert',
+    'isDataVisCert',
+    'isInfosecQaCert'
+  ].reduce((sum, key) => (user[key] ? sum + 1 : sum), 0);
 }
 
 export default function populateUser(db, user) {

@@ -2,6 +2,7 @@
 id: 56533eb9ac21ba0edf2244ab
 title: Understanding Case Sensitivity in Variables
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cd6GDcD'
 forumTopicId: 18334
 ---
@@ -55,12 +56,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Declarations
+// Variable declarations
 var StUdLyCapVaR;
 var properCamelCase;
 var TitleCaseOver;
 
-// Assignments
+// Variable assignments
 STUDLYCAPVAR = 10;
 PRoperCAmelCAse = "A String";
 tITLEcASEoVER = 9000;

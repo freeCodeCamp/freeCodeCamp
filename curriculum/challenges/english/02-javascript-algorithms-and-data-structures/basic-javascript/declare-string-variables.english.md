@@ -2,6 +2,7 @@
 id: bd7123c9c444eddfaeb5bdef
 title: Declare String Variables
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/c2QvWU6'
 forumTopicId: 17557
 ---
@@ -38,11 +39,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Example
-var firstName = "Alan";
-var lastName = "Turing";
 
-// Only change code below this line
 
 
 ```

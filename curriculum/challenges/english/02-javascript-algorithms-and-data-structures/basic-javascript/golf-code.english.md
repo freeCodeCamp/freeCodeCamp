@@ -2,6 +2,7 @@
 id: 5664820f61c48e80c9fa476c
 title: Golf Code
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/c9ykNUR'
 forumTopicId: 18195
 ---
@@ -66,7 +67,6 @@ function golfScore(par, strokes) {
   // Only change code above this line
 }
 
-// Change these values to test
 golfScore(5, 4);
 ```
 

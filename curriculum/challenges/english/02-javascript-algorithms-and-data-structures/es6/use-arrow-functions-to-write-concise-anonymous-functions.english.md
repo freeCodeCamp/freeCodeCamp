@@ -2,6 +2,7 @@
 id: 587d7b87367417b2b2512b43
 title: Use Arrow Functions to Write Concise Anonymous Functions
 challengeType: 1
+isHidden: false
 forumTopicId: 301211
 ---
 
@@ -37,7 +38,7 @@ This code will still return <code>value</code> by default.
 
 ## Instructions
 <section id='instructions'>
-Rewrite the function assigned to the variable <code>magic</code> which returns a new <code>Date()</code> to use arrow function syntax. Also make sure nothing is defined using the keyword <code>var</code>.
+Rewrite the function assigned to the variable <code>magic</code> which returns a <code>new Date()</code> to use arrow function syntax. Also, make sure nothing is defined using the keyword <code>var</code>.
 </section>
 
 ## Tests

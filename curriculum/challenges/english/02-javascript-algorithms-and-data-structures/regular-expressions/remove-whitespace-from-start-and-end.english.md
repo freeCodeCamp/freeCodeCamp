@@ -2,6 +2,7 @@
 id: 587d7dbb367417b2b2512bac
 title: Remove Whitespace from Start and End
 challengeType: 1
+isHidden: false
 forumTopicId: 301362
 ---
 
@@ -24,7 +25,7 @@ tests:
   - text: <code>result</code> should equal to <code>"Hello, World!"</code>
     testString: assert(result == "Hello, World!");
   - text: Your solution should not use the <code>String.prototype.trim()</code> method.
-    testString: assert(!code.match(/\.trim\([\s\S]*?\)/));
+    testString: assert(!code.match(/\.?[\s\S]*?trim/));
   - text: The <code>result</code> variable should not be set equal to a string.
     testString: assert(!code.match(/result\s*=\s*".*?"/));
 

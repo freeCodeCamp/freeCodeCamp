@@ -2,6 +2,7 @@
 id: 587d7db2367417b2b2512b89
 title: Use a Mixin to Add Common Behavior Between Unrelated Objects
 challengeType: 1
+isHidden: false
 forumTopicId: 301331
 ---
 
@@ -82,7 +83,7 @@ let boat = {
   type: "race-boat"
 };
 
-// Add your code below this line
+// Only change code below this line
 
 
 

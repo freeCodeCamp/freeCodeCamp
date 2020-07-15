@@ -2,6 +2,7 @@
 id: 587d7b8d367417b2b2512b59
 title: Import a Default Export
 challengeType: 1
+isHidden: false
 forumTopicId: 301205
 ---
 
@@ -38,7 +39,7 @@ tests:
 
 ```js
   
-// add code above this line
+// Only change code above this line
 
 subtract(7,4);
 ```
@@ -51,7 +52,6 @@ subtract(7,4);
 
 ```js
 import subtract from "./math_functions.js";
-// add code above this line
 
 subtract(7,4);
 ```

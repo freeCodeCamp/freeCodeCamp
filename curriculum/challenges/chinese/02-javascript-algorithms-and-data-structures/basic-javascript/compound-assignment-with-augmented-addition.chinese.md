@@ -2,31 +2,46 @@
 id: 56533eb9ac21ba0edf2244af
 title: Compound Assignment With Augmented Addition
 challengeType: 1
-videoUrl: ''
-localeTitle: 具有增强加法的复合赋值
+videoUrl: 'https://scrimba.com/c/cDR6LCb'
+forumTopicId: 16661
+localeTitle: 复合赋值之 +=
 ---
 
 ## Description
-<section id="description">在编程中，通常使用赋值来修改变量的内容。请记住，首先评估等号右侧的所有内容，因此我们可以说： <code>myVar = myVar + 5;</code>添加<code>5</code>到<code>myVar</code> 。由于这是一种常见的模式，因此存在一步完成数学运算和赋值的运算符。一个这样的运算符是<code>+=</code>运算符。 <blockquote> var myVar = 1; <br> myVar + = 5; <br>的console.log（myVar的）; //返回6 </blockquote></section>
+<section id='description'>
+在编程当中，通常通过赋值来修改变量的内容。记住，赋值时 Javascript 会先计算<code>=</code>右边的内容，所以我们可以写这样的语句：
+<code>myVar = myVar + 5;</code>
+以上是最常见的运算赋值语句，即先运算、再赋值。还有一类操作符是一步到位既做运算也赋值的。
+其中一种就是<code>+=</code>运算符。
+
+```js
+var myVar = 1;
+myVar += 5;
+console.log(myVar); // Returns 6
+```
+
+</section>
 
 ## Instructions
-<section id="instructions">转换<code>a</code> ， <code>b</code>和<code>c</code>的赋值以使用<code>+=</code>运算符。 </section>
+<section id='instructions'>
+使用<code>+=</code>操作符实现同样的效果。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>a</code>应该等于<code>15</code>
-    testString: 'assert(a === 15, "<code>a</code> should equal <code>15</code>");'
-  - text: <code>b</code>应该等于<code>26</code>
-    testString: 'assert(b === 26, "<code>b</code> should equal <code>26</code>");'
-  - text: <code>c</code>应该等于<code>19</code>
-    testString: 'assert(c === 19, "<code>c</code> should equal <code>19</code>");'
-  - text: 您应该为每个变量使用<code>+=</code>运算符
-    testString: 'assert(code.match(/\+=/g).length === 3, "You should use the <code>+=</code> operator for each variable");'
-  - text: 不要修改行上方的代码
-    testString: 'assert(/var a = 3;/.test(code) && /var b = 17;/.test(code) && /var c = 12;/.test(code), "Do not modify the code above the line");'
+  - text: <code>a</code>应该等于<code>15</code>。
+    testString: assert(a === 15);
+  - text: <code>b</code>应该等于<code>26</code>。
+    testString: assert(b === 26);
+  - text: <code>c</code>应该等于<code>19</code>。
+    testString: assert(c === 19);
+  - text: 你应该对每个变量使用<code>+=</code>操作符。
+    testString: assert(code.match(/\+=/g).length === 3);
+  - text: 不要修改注释上面的代码。
+    testString: assert(/var a = 3;/.test(code) && /var b = 17;/.test(code) && /var c = 12;/.test(code));
 
 ```
 
@@ -57,7 +72,7 @@ c = c + 7;
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(a,b,c){ return "a = " + a + ", b = " + b + ", c = " + c; })(a,b,c);
 ```
 
 </div>
@@ -67,7 +82,15 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+var a = 3;
+var b = 17;
+var c = 12;
+
+a += 12;
+b += 9;
+c += 7;
 ```
+
 </section>

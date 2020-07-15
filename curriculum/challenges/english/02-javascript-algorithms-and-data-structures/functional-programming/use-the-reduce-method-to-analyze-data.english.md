@@ -2,6 +2,7 @@
 id: 587d7da9367417b2b2512b68
 title: Use the reduce Method to Analyze Data
 challengeType: 1
+isHidden: false
 forumTopicId: 301313
 ---
 
@@ -79,7 +80,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-// the global variable
+// The global variable
 var watchList = [
   {
     "Title": "Inception",
@@ -194,11 +195,11 @@ var watchList = [
 ];
 
 function getRating(watchList){
-  // Add your code below this line
+  // Only change code below this line
   var averageRating;
 
 
-  // Add your code above this line
+  // Only change code above this line
   return averageRating;
 }
 console.log(getRating(watchList));
@@ -214,7 +215,7 @@ console.log(getRating(watchList));
 <section id='solution'>
 
 ```js
-// the global variable
+// The global variable
 var watchList = [
   {
     "Title": "Inception",

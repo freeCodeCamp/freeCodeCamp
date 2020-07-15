@@ -2,6 +2,7 @@
 id: 587d7fa6367417b2b2512bc3
 title: Select a Group of Elements with D3
 challengeType: 6
+isHidden: false
 forumTopicId: 301490
 ---
 
@@ -64,8 +65,19 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<body>
+  <ul>
+    <li>Example</li>
+    <li>Example</li>
+    <li>Example</li>
+  </ul>
+  <script>
+    d3.selectAll("li")
+      .text("list item")
+  </script>
+</body>
+
 ```
 
 </section>

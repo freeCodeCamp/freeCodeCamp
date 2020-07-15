@@ -3,6 +3,7 @@ id: a8e512fbe388ac2f9198f0fa
 title: Wherefore art thou
 isRequired: true
 challengeType: 5
+isHidden: false
 forumTopicId: 16092
 ---
 
@@ -46,7 +47,6 @@ tests:
 
 ```js
 function whatIsInAName(collection, source) {
-  // What's in a name?
   var arr = [];
   // Only change code below this line
 

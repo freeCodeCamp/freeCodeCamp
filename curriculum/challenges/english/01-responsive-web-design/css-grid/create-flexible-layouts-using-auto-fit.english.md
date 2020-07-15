@@ -2,6 +2,7 @@
 id: 5a94fe6269fb03452672e462
 title: Create Flexible Layouts Using auto-fit
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/p/pByETK/c3dPph8'
 forumTopicId: 301127
 ---
@@ -59,11 +60,11 @@ tests:
     width: 100%;
     background: Silver;
     display: grid;
-    /* change the code below this line */
+    /* Only change code below this line */
 
     grid-template-columns: repeat(3, minmax(60px, 1fr));
 
-    /* change the code above this line */
+    /* Only change code above this line */
     grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 10px;
   }

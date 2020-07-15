@@ -2,6 +2,7 @@
 id: 5a90375238fddaf9a66b5d3b
 title: Align an Item Vertically using align-self
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/p/pByETK/cmzd4fz'
 forumTopicId: 301123
 ---
@@ -40,10 +41,10 @@ tests:
 
   .item3 {
     background: PaleTurquoise;
-    /* add your code below this line */
+    /* Only change code below this line */
 
-
-    /* add your code above this line */
+    
+    /* Only change code above this line */
   }
 
   .item4{background:LightPink;}

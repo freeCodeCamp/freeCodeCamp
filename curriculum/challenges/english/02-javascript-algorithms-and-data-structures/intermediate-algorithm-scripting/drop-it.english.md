@@ -3,6 +3,7 @@ id: a5deed1811a43193f9f1c841
 title: Drop it
 isRequired: true
 challengeType: 5
+isHidden: false
 forumTopicId: 16010
 ---
 
@@ -46,7 +47,6 @@ tests:
 
 ```js
 function dropElements(arr, func) {
-  // Drop them elements.
   return arr;
 }
 
@@ -65,7 +65,6 @@ dropElements([1, 2, 3], function(n) {return n < 3; });
 
 ```js
 function dropElements(arr, func) {
-  // Drop them elements.
   while (arr.length && !func(arr[0])) {
     arr.shift();
   }

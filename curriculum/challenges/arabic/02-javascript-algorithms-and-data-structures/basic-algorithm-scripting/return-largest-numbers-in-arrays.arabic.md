@@ -8,7 +8,7 @@ localeTitle: أكبر عدد من المصفوفات في المصفوفة
 ---
 
 ## Description
-<section id="description"> قم بإرجاع صفيف يتكون من أكبر رقم من كل صفيف فرعي. بالنسبة إلى البساطة ، سيحتوي الصفيف الذي تم توفيره على 4 صفيف فرعي تمامًا. تذكر ، يمكنك التكرار من خلال صفيف مع حلقة بسيطة ، والوصول إلى كل عضو مع <code>arr[i]</code> جملة <code>arr[i]</code> . تذكر استخدام <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> إذا واجهتك مشكلة. اكتب الكود الخاص بك. </section>
+<section id="description"> قم بإرجاع صفيف يتكون من أكبر رقم من كل صفيف فرعي. بالنسبة إلى البساطة ، سيحتوي الصفيف الذي تم توفيره على 4 صفيف فرعي تمامًا. تذكر ، يمكنك التكرار من خلال صفيف مع حلقة بسيطة ، والوصول إلى كل عضو مع <code>arr[i]</code> جملة <code>arr[i]</code> . تذكر استخدام <a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> إذا واجهتك مشكلة. اكتب الكود الخاص بك. </section>
 
 ## Instructions
 <section id="instructions">

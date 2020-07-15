@@ -3,6 +3,7 @@ id: 587d78af367417b2b2512b04
 title: Build a Product Landing Page
 isRequired: true
 challengeType: 3
+isHidden: false
 forumTopicId: 301144
 ---
 
@@ -26,7 +27,7 @@ You can use HTML, JavaScript, and CSS to complete this project. Plain CSS is rec
 <strong>User Story #13:</strong> The navbar should always be at the top of the viewport.
 <strong>User Story #14:</strong> My product landing page should have at least one media query.
 <strong>User Story #15:</strong> My product landing page should utilize CSS flexbox at least once.
-You can build your project by forking <a href='http://codepen.io/freeCodeCamp/full/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code>
+You can build your project by forking <a href='https://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code>
 Once you're done, submit the URL to your working project with all its tests passing.
 </section>
 

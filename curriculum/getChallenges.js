@@ -2,6 +2,7 @@ const path = require('path');
 const { findIndex } = require('lodash');
 const readDirP = require('readdirp-walk');
 const { parseMarkdown } = require('@freecodecamp/challenge-md-parser');
+const fs = require('fs');
 
 const { dasherize } = require('../utils/slugs');
 
@@ -14,7 +15,14 @@ function getChallengesDirForLang(lang) {
   return path.resolve(challengesDir, `./${lang}`);
 }
 
+function getMetaForBlock(block) {
+  return JSON.parse(
+    fs.readFileSync(path.resolve(metaDir, `./${block}/meta.json`), 'utf8')
+  );
+}
+
 exports.getChallengesDirForLang = getChallengesDirForLang;
+exports.getMetaForBlock = getMetaForBlock;
 
 exports.getChallengesForLang = function getChallengesForLang(lang) {
   let curriculum = {};
@@ -111,6 +119,12 @@ async function createChallenge(fullPath, maybeMeta) {
   challenge.required = required.concat(challenge.required || []);
   challenge.template = template;
   challenge.time = time;
+
+  // challenges can be hidden (so they do not appear in all environments e.g.
+  // production), SHOW_HIDDEN controls this.
+  if (process.env.SHOW_HIDDEN === 'true') {
+    challenge.isHidden = false;
+  }
 
   return challenge;
 }

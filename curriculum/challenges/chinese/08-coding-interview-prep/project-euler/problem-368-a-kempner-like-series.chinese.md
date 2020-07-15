@@ -19,7 +19,7 @@ localeTitle: 问题368：类似肯珀纳的系列
 ```yml
 tests:
   - text: <code>euler368()</code>应该返回253.6135092068。
-    testString: 'assert.strictEqual(euler368(), 253.6135092068, "<code>euler368()</code> should return 253.6135092068.");'
+    testString: assert.strictEqual(euler368(), 253.6135092068);
 
 ```
 

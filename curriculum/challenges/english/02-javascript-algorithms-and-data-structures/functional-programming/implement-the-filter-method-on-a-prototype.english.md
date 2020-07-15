@@ -2,6 +2,7 @@
 id: 587d7b8f367417b2b2512b64
 title: Implement the filter Method on a Prototype
 challengeType: 1
+isHidden: false
 forumTopicId: 301231
 ---
 
@@ -24,7 +25,7 @@ tests:
   - text: <code>new_s</code> should equal <code>[23, 65, 5]</code>.
     testString: assert(JSON.stringify(new_s) === JSON.stringify([23, 65, 5]));
   - text: Your code should not use the <code>filter</code> method.
-    testString: assert(!code.match(/\.filter/g));
+    testString: assert(!code.match(/\.?[\s\S]*?filter/g));
 
 ```
 
@@ -36,14 +37,13 @@ tests:
 <div id='js-seed'>
 
 ```js
-// the global Array
+// The global variable
 var s = [23, 65, 98, 5];
 
 Array.prototype.myFilter = function(callback){
+  // Only change code below this line
   var newArray = [];
-  // Add your code below this line
-
-  // Add your code above this line
+  // Only change code above this line
   return newArray;
 
 };
@@ -68,12 +68,12 @@ var s = [23, 65, 98, 5];
 
 Array.prototype.myFilter = function(callback){
   var newArray = [];
-  // Add your code below this line
+  // Only change code below this line
   for (let i = 0;i<this.length;i++) {
     if (callback(this[i]))
       newArray.push(this[i]);
   }
-  // Add your code above this line
+  // Only change code above this line
   return newArray;
 };
 

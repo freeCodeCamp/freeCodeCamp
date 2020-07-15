@@ -18,9 +18,9 @@ localeTitle: 使用链接列表中的节点
 ```yml
 tests:
   - text: 您的<code>Puppy</code>节点应该具有对<code>Cat</code>节点的引用。
-    testString: 'assert(Puppy.next.element === "Cat", "Your <code>Puppy</code> node should have a reference to a <code>Cat</code> node.");'
+    testString: assert(Puppy.next.element === "Cat");
   - text: 您的<code>Cat</code>节点应该具有对<code>Dog</code>节点的引用。
-    testString: 'assert(Cat.next.element === "Dog", "Your <code>Cat</code> node should have a reference to a <code>Dog</code> node.");'
+    testString: assert(Cat.next.element === "Dog");
 
 ```
 

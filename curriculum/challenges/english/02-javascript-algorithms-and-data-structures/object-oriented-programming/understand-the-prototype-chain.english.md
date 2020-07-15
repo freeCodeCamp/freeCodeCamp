@@ -2,6 +2,7 @@
 id: 587d7db0367417b2b2512b82
 title: Understand the Prototype Chain
 challengeType: 1
+isHidden: false
 forumTopicId: 301329
 ---
 
@@ -14,21 +15,20 @@ function Bird(name) {
   this.name = name;
 }
 
-typeof Bird.prototype; // => object
+typeof Bird.prototype; // yields 'object'
 ```
 
 Because a <code>prototype</code> is an object, a <code>prototype</code> can have its own <code>prototype</code>! In this case, the <code>prototype</code> of <code>Bird.prototype</code> is <code>Object.prototype</code>:
 
 ```js
-Object.prototype.isPrototypeOf(Bird.prototype);
-// returns true
+Object.prototype.isPrototypeOf(Bird.prototype); // returns true
 ```
 
 How is this useful? You may recall the <code>hasOwnProperty</code> method from a previous challenge:
 
 ```js
 let duck = new Bird("Donald");
-duck.hasOwnProperty("name"); // => true
+duck.hasOwnProperty("name"); // yields true
 ```
 
 The <code>hasOwnProperty</code> method is defined in <code>Object.prototype</code>, which can be accessed by <code>Bird.prototype</code>, which can then be accessed by <code>duck</code>. This is an example of the <code>prototype</code> chain.
@@ -65,7 +65,7 @@ function Dog(name) {
 
 let beagle = new Dog("Snoopy");
 
-Dog.prototype.isPrototypeOf(beagle);  // => true
+Dog.prototype.isPrototypeOf(beagle);  // yields true
 
 // Fix the code below so that it evaluates to true
 ???.isPrototypeOf(Dog.prototype);

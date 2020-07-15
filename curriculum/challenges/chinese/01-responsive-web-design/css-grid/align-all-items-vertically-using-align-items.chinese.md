@@ -23,7 +23,7 @@ localeTitle: 使用 align-items 垂直对齐所有项目
 ```yml
 tests:
   - text: '<code>container</code>类应该有<code>align-items</code>属性且值为<code>end</code>。'
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*align-items\s*?:\s*?end\s*?;[\s\S]*}/gi));'
+    testString: assert(code.match(/.container\s*?{[\s\S]*align-items\s*?:\s*?end\s*?;[\s\S]*}/gi));
 
 ```
 

@@ -19,7 +19,7 @@ localeTitle: 问题459：翻转游戏
 ```yml
 tests:
   - text: <code>euler459()</code>应该返回3996390106631。
-    testString: 'assert.strictEqual(euler459(), 3996390106631, "<code>euler459()</code> should return 3996390106631.");'
+    testString: assert.strictEqual(euler459(), 3996390106631);
 
 ```
 

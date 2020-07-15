@@ -2,6 +2,7 @@
 id: 587d7b7b367417b2b2512b13
 title: Copy an Array with the Spread Operator
 challengeType: 1
+isHidden: false
 forumTopicId: 301157
 ---
 
@@ -53,15 +54,14 @@ tests:
 function copyMachine(arr, num) {
   let newArr = [];
   while (num >= 1) {
-    // change code below this line
+    // Only change code below this line
 
-    // change code above this line
+    // Only change code above this line
     num--;
   }
   return newArr;
 }
 
-// change code here to test different cases:
 console.log(copyMachine([true, false, true], 2));
 ```
 
@@ -85,9 +85,7 @@ const removeJSComments = str => str.replace(/\/\*[\s\S]*?\*\/|\/\/.*$/gm, '');
 function copyMachine(arr,num){
 	let newArr=[];
 	while(num >=1){
-	// change code below this line 
 	newArr.push([...arr]);
-	//change code above this line
 	num--;
 	}
 	return newArr;

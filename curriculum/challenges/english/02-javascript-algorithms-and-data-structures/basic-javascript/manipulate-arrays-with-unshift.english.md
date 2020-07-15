@@ -2,6 +2,7 @@
 id: 56bbb991ad1ed5201cd392ce
 title: Manipulate Arrays With unshift()
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/ckNDESv'
 forumTopicId: 18239
 ---
@@ -10,6 +11,16 @@ forumTopicId: 18239
 <section id='description'>
 Not only can you <code>shift</code> elements off of the beginning of an array, you can also <code>unshift</code> elements to the beginning of an array i.e. add elements in front of the array.
 <code>.unshift()</code> works exactly like <code>.push()</code>, but instead of adding the element at the end of the array, <code>unshift()</code> adds the element at the beginning of the array.
+
+Example:
+
+```js
+var ourArray = ["Stimpson", "J", "cat"];
+ourArray.shift(); // ourArray now equals ["J", "cat"]
+ourArray.unshift("Happy");
+// ourArray now equals ["Happy", "J", "cat"]
+```
+
 </section>
 
 ## Instructions
@@ -35,17 +46,11 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Example
-var ourArray = ["Stimpson", "J", "cat"];
-ourArray.shift(); // ourArray now equals ["J", "cat"]
-ourArray.unshift("Happy");
-// ourArray now equals ["Happy", "J", "cat"]
-
 // Setup
 var myArray = [["John", 23], ["dog", 3]];
 myArray.shift();
 
-// Only change code below this line.
+// Only change code below this line
 
 
 ```

@@ -2,6 +2,7 @@
 id: 587d7fac367417b2b2512bdb
 title: Set a Domain and a Range on a Scale
 challengeType: 6
+isHidden: false
 forumTopicId: 301491
 ---
 
@@ -86,8 +87,19 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<body>
+  <script>
+    const scale = d3.scaleLinear();
+    scale.domain([250, 500])
+    scale.range([10, 150])
+    const output = scale(50);
+    d3.select("body")
+      .append("h2")
+      .text(output);
+  </script>
+</body>
+
 ```
 
 </section>

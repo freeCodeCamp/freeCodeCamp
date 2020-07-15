@@ -2,6 +2,7 @@
 id: 587d778b367417b2b2512aa8
 title: Add an Accessible Date Picker
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cR3bRbCV'
 forumTopicId: 301008
 ---
@@ -60,11 +61,11 @@ tests:
         <p>Tell us the best date for the competition</p>
         <label for="pickdate">Preferred Date:</label>
 
-        <!-- Add your code below this line -->
+        <!-- Only change code below this line -->
 
 
 
-        <!-- Add your code above this line -->
+        <!-- Only change code above this line -->
 
         <input type="submit" name="submit" value="Submit">
       </form>

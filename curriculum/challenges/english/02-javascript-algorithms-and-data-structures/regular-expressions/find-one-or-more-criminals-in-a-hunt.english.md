@@ -2,6 +2,7 @@
 id: 587d7db7367417b2b2512b9c
 title: Find One or More Criminals in a Hunt
 challengeType: 1
+isHidden: false
 forumTopicId: 301343
 ---
 
@@ -64,13 +65,8 @@ tests:
 <div id='js-seed'>
 
 ```js
-// example crowd gathering
-let crowd = 'P1P2P3P4P5P6CCCP7P8P9';
-
 let reCriminals = /./; // Change this line
 
-let matchedCriminals = crowd.match(reCriminals);
-console.log(matchedCriminals);
 ```
 
 </div>
@@ -83,13 +79,7 @@ console.log(matchedCriminals);
 <section id='solution'>
 
 ```js
-// example crowd gathering
-let crowd = 'P1P2P3P4P5P6CCCP7P8P9';
-
 let reCriminals = /C+/; // Change this line
-
-let matchedCriminals = crowd.match(reCriminals);
-
 ```
 
 </section>

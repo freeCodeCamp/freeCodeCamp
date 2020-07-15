@@ -9,7 +9,7 @@ localeTitle: Трекер упражнений
 
 ## Description
 <section id='description'>
-Создайте полноценное приложение JavaScript, функционально похожее на это: <a href='https://fuschia-custard.glitch.me/' target='_blank'>https://fuschia-custard.glitch.me/</a> . 
+Создайте полноценное приложение JavaScript, функционально похожее на это: <a href='https://nonstop-pond.glitch.me/' target='_blank'>https://nonstop-pond.glitch.me/</a> . 
 Работа над этим проектом потребует от вас написания кода на Glitch для нашего стартового проекта. После завершения этого проекта вы можете скопировать общедоступный URL-адрес сбоя (на главную страницу вашего приложения) на этот экран, чтобы протестировать его! При желании вы можете написать свой проект на другой платформе, но он должен быть открыт для нашего тестирования. 
 Запустите этот проект на Glitch по <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-project-exercisetracker/' target='_blank'>этой ссылке</a> или клонируйте <a href='https://github.com/freeCodeCamp/boilerplate-project-exercisetracker/'>этот репозиторий</a> на GitHub! Если вы используете Glitch, не забудьте сохранить ссылку на ваш проект в безопасном месте!
 </section>
