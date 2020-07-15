@@ -98,7 +98,10 @@ const initTestFrame = frameReady => ctx => {
     const { sources, loadEnzyme } = ctx;
     // default for classic challenges
     // should not be used for modern
-    const code = sources && 'index' in sources ? sources['index'] : '';
+    const code = {
+      contents: sources.index,
+      editableContents: sources.editableContents
+    };
     // provide the file name and get the original source
     const getUserInput = fileName => toString(sources[fileName]);
     await ctx.document.__initTestFrame({ code, getUserInput, loadEnzyme });

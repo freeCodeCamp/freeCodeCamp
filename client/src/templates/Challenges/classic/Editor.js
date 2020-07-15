@@ -481,6 +481,7 @@ class Editor extends Component {
 
     outputNode.innerHTML = 'TESTS GO HERE';
 
+    // TODO: does it?
     // The z-index needs increasing as ViewZones default to below the lines.
     outputNode.style.zIndex = '10';
 
@@ -508,7 +509,19 @@ class Editor extends Component {
 
   onChange = editorValue => {
     const { updateFile } = this.props;
-    updateFile({ key: this.state.fileKey, editorValue });
+    // TODO: use fileKey everywhere?
+    const { fileKey: key } = this.state;
+    // TODO: now that we have getCurrentEditableRegion, should the overlays
+    // follow that directly? We could subscribe to changes to that and redraw if
+    // those imply that the positions have changed (i.e. if the content height
+    // has changed or if content is dragged between regions)
+
+    const editableRegion = this.getCurrentEditableRegion(key);
+    const editableRegionBoundaries = editableRegion && [
+      editableRegion.startLineNumber - 1,
+      editableRegion.endLineNumber + 1
+    ];
+    updateFile({ key, editorValue, editableRegionBoundaries });
   };
 
   changeTab = newFileKey => {
@@ -620,6 +633,48 @@ class Editor extends Component {
     ).startLineNumber;
   }
 
+  translateRange = (range, lineDelta) => {
+    const iRange = {
+      ...range,
+      startLineNumber: range.startLineNumber + lineDelta,
+      endLineNumber: range.endLineNumber + lineDelta
+    };
+    return this._monaco.Range.lift(iRange);
+  };
+
+  getLinesBetweenRanges = (firstRange, secondRange) => {
+    const startRange = this.translateRange(toLastLine(firstRange), 1);
+    const endRange = this.translateRange(
+      toStartOfLine(secondRange),
+      -1
+    ).collapseToStart();
+
+    return {
+      startLineNumber: startRange.startLineNumber,
+      endLineNumber: endRange.endLineNumber
+    };
+  };
+
+  getCurrentEditableRegion = key => {
+    const model = this.data[key].model;
+    // TODO: this is a little low-level, but we should bail if there is no
+    // editable region defined.
+    if (!this.data[key].startEditDecId || !this.data[key].endEditDecId)
+      return null;
+    const firstRange = model.getDecorationRange(this.data[key].startEditDecId);
+    const secondRange = model.getDecorationRange(this.data[key].endEditDecId);
+    const { startLineNumber, endLineNumber } = this.getLinesBetweenRanges(
+      firstRange,
+      secondRange
+    );
+
+    // getValueInRange includes column x if
+    // startColumnNumber <= x < endColumnNumber
+    // so we add 1 here
+    const endColumn = model.getLineLength(endLineNumber) + 1;
+    return new this._monaco.Range(startLineNumber, 1, endLineNumber, endColumn);
+  };
+
   decorateForbiddenRanges(key, editableRegion) {
     const model = this.data[key].model;
     const forbiddenRanges = [
@@ -674,15 +729,6 @@ class Editor extends Component {
       return newLines.map(({ range }) => range);
     }
 
-    const translateRange = (range, lineDelta) => {
-      const iRange = {
-        ...range,
-        startLineNumber: range.startLineNumber + lineDelta,
-        endLineNumber: range.endLineNumber + lineDelta
-      };
-      return this._monaco.Range.lift(iRange);
-    };
-
     // TODO refactor this mess
     // TODO this listener needs to be replaced on reset.
     model.onDidChangeContent(e => {
@@ -730,9 +776,9 @@ class Editor extends Component {
         ).collapseToStart();
         // the decoration needs adjusting if the user creates a line immediately
         // before the greyed out region...
-        const lineOneRange = translateRange(startOfZone, -2);
+        const lineOneRange = this.translateRange(startOfZone, -2);
         // or immediately after it
-        const lineTwoRange = translateRange(startOfZone, -1);
+        const lineTwoRange = this.translateRange(startOfZone, -1);
 
         for (const lineRange of newLineRanges) {
           const shouldMoveZone = this._monaco.Range.areIntersectingOrTouching(
@@ -753,7 +799,7 @@ class Editor extends Component {
         ).collapseToStart();
         // the decoration needs adjusting if the user creates a line immediately
         // before the editable region.
-        const lineOneRange = translateRange(endOfZone, -1);
+        const lineOneRange = this.translateRange(endOfZone, -1);
 
         for (const lineRange of newLineRanges) {
           const shouldMoveZone = this._monaco.Range.areIntersectingOrTouching(
@@ -776,7 +822,7 @@ class Editor extends Component {
         // NOTE: any change in the decoration has already happened by this point
         // so this covers the *new* decoration range.
         const coveringRange = toStartOfLine(model.getDecorationRange(id));
-        const oldStartOfRange = translateRange(
+        const oldStartOfRange = this.translateRange(
           coveringRange.collapseToStart(),
           1
         );
