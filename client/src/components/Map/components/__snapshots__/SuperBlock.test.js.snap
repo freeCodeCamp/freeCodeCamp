@@ -23,6 +23,18 @@ exports[`<SuperBlock /> expanded snapshot: superBlock-expanded 1`] = `
       <h4>
         Super Block One Certification (300 hours)
       </h4>
+      <span
+        class="sr-only"
+      >
+        Progress: 0%
+      </span>
+      <svg
+        class="progress-display"
+        height="32"
+        viewBox="0 0 32 32"
+        width="32"
+        xmlns="http://www.w3.org/2000/svg"
+      />
     </button>
     <ul>
       <li
@@ -236,6 +248,18 @@ exports[`<SuperBlock /> not expanded snapshot: superBlock-not-expanded 1`] = `
       <h4>
         Super Block One Certification (300 hours)
       </h4>
+      <span
+        class="sr-only"
+      >
+        Progress: 0%
+      </span>
+      <svg
+        class="progress-display"
+        height="32"
+        viewBox="0 0 32 32"
+        width="32"
+        xmlns="http://www.w3.org/2000/svg"
+      />
     </button>
   </li>
 </div>

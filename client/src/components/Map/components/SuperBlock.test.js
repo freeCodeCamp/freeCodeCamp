@@ -9,6 +9,7 @@ import { createStore } from '../../../redux/createStore';
 import { SuperBlock } from './SuperBlock';
 import mockChallengeNodes from '../../../__mocks__/challenge-nodes';
 import mockIntroNodes from '../../../__mocks__/intro-nodes';
+import mockCompleted from '../../../__mocks__/completedChallengesMock';
 
 function renderWithRedux(ui) {
   return render(<Provider store={createStore()}>{ui}</Provider>);
@@ -16,6 +17,10 @@ function renderWithRedux(ui) {
 
 test('<SuperBlock /> not expanded snapshot', () => {
   const props = {
+    challenges: mockChallengeNodes.filter(
+      node => node.superBlock === 'Super Block One'
+    ),
+    completedChallenges: mockCompleted,
     introNodes: mockIntroNodes,
     isExpanded: false,
     nodes: mockChallengeNodes,
@@ -30,6 +35,10 @@ test('<SuperBlock /> not expanded snapshot', () => {
 
 test('<SuperBlock /> expanded snapshot', () => {
   const props = {
+    challenges: mockChallengeNodes.filter(
+      node => node.superBlock === 'Super Block One'
+    ),
+    completedChallenges: mockCompleted,
     introNodes: mockIntroNodes,
     isExpanded: true,
     nodes: mockChallengeNodes,
@@ -45,6 +54,10 @@ test('<SuperBlock /> expanded snapshot', () => {
 test('<SuperBlock should handle toggle clicks correctly', () => {
   const toggleSpy = jest.fn();
   const props = {
+    challenges: mockChallengeNodes.filter(
+      node => node.superBlock === 'Super Block One'
+    ),
+    completedChallenges: mockCompleted,
     introNodes: mockIntroNodes,
     isExpanded: false,
     nodes: mockChallengeNodes,
