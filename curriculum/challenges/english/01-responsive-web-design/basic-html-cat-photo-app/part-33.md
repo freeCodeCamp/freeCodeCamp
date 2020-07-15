@@ -19,8 +19,18 @@ Add an `action` attribute with the value `/submit-cat-photo` to the `form` eleme
 
 ```yml
 tests:
-  - text: See description above for instructions.
-    testString: ''
+  - text: Your `form` element should have an opening tag and closing tag. You may be missing one or both of the required tags, or have them in the wrong order.
+    testString: |
+      assert(
+        document.querySelector('form') &&
+        code.match(/<\/form>$/gm)
+      );
+  - text: Your `form` element nested in the last `section` element should be below the `h2` element. You have the `h2` element and the `form` element in the wrong order.
+    testString: assert( document.querySelector('form').previousElementSibling.nodeName === 'H2');
+  - text: Your `form` element should have no content. Remove any HTML elements or text within the `form` element.
+    testString: assert( $('form')[0].innerHTML.replace(/\s+/g, '').length === 0 );
+  - text: Your `form` element should have an `action` attribute with the value `/submit-cat-photo`.
+    testString: const form = document.querySelector('form'); assert( form.getAttribute('action').match(/\/submit\-cat\-photo/i) );
 
 ```
 

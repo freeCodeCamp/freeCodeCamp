@@ -32,7 +32,7 @@ tests:
         return child.nodeName === 'SECTION';
       });
       assert( sectionElemsFound.length === 3 );
-  - text: The last `section` element should have no content.
+  - text: The last `section` element should have no content. Remove any HTML elements or text within the `section` element.
     testString: assert( $('main > section')[2].children.length === 0 );
 
 ```

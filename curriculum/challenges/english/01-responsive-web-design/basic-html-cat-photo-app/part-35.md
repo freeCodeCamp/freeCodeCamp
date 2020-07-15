@@ -19,8 +19,10 @@ To get text input from a user, add the `type` attribute with the value `text` to
 
 ```yml
 tests:
-  - text: See description above for instructions.
-    testString: ''
+  - text: Your `input` element should have a `type` attribute with the value `text`.
+    testString: assert( $('input')[0].getAttribute('type').replace(/\s+/g, ' ').match(/text/i) );
+  - text: Your `form` should only contain the `input` element. Remove any HTML additional elements or text within the `form` element.
+    testString: assert( $('form')[0].innerHTML.trim() === '<input type="text">' );
 
 ```
 

@@ -10,7 +10,7 @@ isHidden: true
 
 Placeholder text is used to give people a hint about what kind of information to enter into an input. For example, `<input type="text" placeholder="Email address">`.
 
-Add the placeholder text `cat photo URL` to your `input` element that will display in the textbox before your user inputs anything.  
+Add the placeholder text `cat photo URL` to your `input` element.  
 
 </section>
 
@@ -19,8 +19,10 @@ Add the placeholder text `cat photo URL` to your `input` element that will displ
 
 ```yml
 tests:
-  - text: See description above for instructions.
-    testString: ''
+  - text: Your `input` element should have a `placeholder` attribute with the value `cat photo URL`.
+    testString: assert( $('input')[0].getAttribute('placeholder').replace(/\s+/g, ' ').match(/cat photo URL/i) );
+  - text: Your `form` should only contain the `input` element. Remove any HTML additional elements or text within the `form` element.
+    testString: assert( $('form')[0].innerHTML.trim().replace(/\s+/g, ' ').match(/^\<input.*\>$/im) );
 
 ```
 

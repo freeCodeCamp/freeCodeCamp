@@ -19,8 +19,12 @@ Nest an `input` element in the `form` element.
 
 ```yml
 tests:
-  - text: See description above for instructions.
-    testString: ''
+  - text: Your `input` element should have an opening tag, but not a closing tag.
+    testString: assert( document.querySelector('input') && !code.match(/<\/input\>$/m) );
+  - text: Your `input` element should be nested within the `form` element.
+    testString: assert( document.querySelector('form > input') );
+  - text: Your `form` should only contain the `input` element. Remove any HTML additional elements or text within the `form` element.
+    testString: assert( $('form')[0].innerHTML.trim() === '<input>' );
 
 ```
 

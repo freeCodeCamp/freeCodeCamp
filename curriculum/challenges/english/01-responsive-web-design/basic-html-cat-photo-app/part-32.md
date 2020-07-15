@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Now you will add a web form. 
+Now you will add a web form to collect information from users.
 
 After the `Cat Form` heading, add a `form` element.
 
@@ -19,8 +19,16 @@ After the `Cat Form` heading, add a `form` element.
 
 ```yml
 tests:
-  - text: See description above for instructions.
-    testString: ''
+  - text: Your `form` element should have an opening tag and closing tag. You may be missing one or both of the required tags, or have them in the wrong order.
+    testString: |
+      assert(
+        document.querySelector('form') &&
+        code.match(/<\/form>$/gm)
+      );
+  - text: The `form` element nested in the last `section` element should be below the `h2` element. You have the `h2` element and the `form` element in the wrong order.
+    testString: assert( document.querySelector('form').previousElementSibling.nodeName === 'H2');
+  - text: The `form` element should have no content. Remove any HTML elements or text within the `form` element.
+    testString: assert( $('form')[0].innerHTML.trim().length === 0 );
 
 ```
 
