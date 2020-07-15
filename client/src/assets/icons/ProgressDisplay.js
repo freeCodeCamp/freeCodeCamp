@@ -19,7 +19,10 @@ function generateArcPath(x, y, radius, angle) {
 }
 
 function ProgressDisplay(props) {
-  const progress = props.progress;
+  let progress = props.progress || 0;
+  if (progress < 0) progress = 0;
+  else if (progress > 1) progress = 1;
+
   const title = `Progress: ${Math.round(progress * 100)}%`;
 
   return (
