@@ -432,7 +432,10 @@ async function createTestRunner(challenge, solution, buildChallenge) {
     required,
     template
   });
-  const code = sources && 'index' in sources ? sources['index'] : '';
+  const code = {
+    contents: sources.index,
+    editableContents: sources.editableContents
+  };
 
   const evaluator = await (buildChallenge === buildDOMChallenge
     ? getContextEvaluator(build, sources, code, loadEnzyme)

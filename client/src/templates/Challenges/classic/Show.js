@@ -323,7 +323,9 @@ export default connect(
   mapDispatchToProps
 )(ShowClassic);
 
-// TODO: handle jsx (not sure why it doesn't get an editableRegion)
+// TODO: handle jsx (not sure why it doesn't get an editableRegion) EDIT:
+// probably because the dummy challenge didn't include it, so Gatsby couldn't
+// infer it.
 export const query = graphql`
   query ClassicChallenge($slug: String!) {
     challengeNode(fields: { slug: { eq: $slug } }) {

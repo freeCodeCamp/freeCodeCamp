@@ -116,13 +116,26 @@ export const createFiles = createAction(types.createFiles, challengeFiles =>
         ...challengeFiles,
         [file.key]: {
           ...createPoly(file),
-          seed: file.contents.slice(0),
-          editableRegion: file.editableRegion
+          seed: file.contents.slice(),
+          editableContents: getLines(
+            file.contents,
+            file.editableRegionBoundaries
+          ),
+          seedEditableRegionBoundaries: file.editableRegionBoundaries.slice()
         }
       }),
       {}
     )
 );
+
+// TODO: secure with tests
+function getLines(contents, range) {
+  const lines = contents.split('\n');
+  const editableLines = isEmpty(lines)
+    ? []
+    : lines.slice(range[0], range[1] - 1);
+  return editableLines.join('\n');
+}
 
 export const createQuestion = createAction(types.createQuestion);
 export const initTests = createAction(types.initTests);
@@ -251,13 +264,18 @@ export const reducer = handleActions(
       ...state,
       challengeFiles: payload
     }),
-    [types.updateFile]: (state, { payload: { key, editorValue } }) => ({
+    [types.updateFile]: (
+      state,
+      { payload: { key, editorValue, editableRegionBoundaries } }
+    ) => ({
       ...state,
       challengeFiles: {
         ...state.challengeFiles,
         [key]: {
           ...state.challengeFiles[key],
-          contents: editorValue
+          contents: editorValue,
+          editableContents: getLines(editorValue, editableRegionBoundaries),
+          editableRegionBoundaries
         }
       }
     }),
@@ -265,7 +283,6 @@ export const reducer = handleActions(
       ...state,
       challengeFiles: payload
     }),
-
     [types.initTests]: (state, { payload }) => ({
       ...state,
       challengeTests: payload
@@ -314,7 +331,11 @@ export const reducer = handleActions(
               [file.key]: {
                 ...file,
                 contents: file.seed.slice(),
-                editableRegion: file.editableRegion
+                editableContents: getLines(
+                  file.seed,
+                  file.seedEditableRegionBoundaries
+                ),
+                editableRegionBoundaries: file.seedEditableRegionBoundaries
               }
             }),
             {}
