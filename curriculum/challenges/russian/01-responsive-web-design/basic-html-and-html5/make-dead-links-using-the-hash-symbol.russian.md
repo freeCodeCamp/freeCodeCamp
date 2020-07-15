@@ -14,7 +14,7 @@ localeTitle: Создание мертвых ссылок с использов�
 
 ## Instructions
 <section id='instructions'>
-Текущее значение атрибута <code>href</code> - это ссылка, которая указывает на «http://freecatphotoapp.com». Замените значение атрибута <code>href</code> символом <code>#</code> , также известным как хэш-символ, чтобы создать мертвую ссылку. Например: <code>href=&quot;#&quot;</code>
+Текущее значение атрибута <code>href</code> - это ссылка, которая указывает на «https://freecatphotoapp.com». Замените значение атрибута <code>href</code> символом <code>#</code> , также известным как хэш-символ, чтобы создать мертвую ссылку. Например: <code>href=&quot;#&quot;</code>
 </section>
 
 ## Tests
@@ -37,7 +37,7 @@ tests:
 ```html
 <h2>CatPhotoApp</h2>
 <main>
-  <p>Click here to view more <a href="http://freecatphotoapp.com" target="_blank">cat photos</a>.</p>
+  <p>Click here to view more <a href="https://freecatphotoapp.com" target="_blank">cat photos</a>.</p>
 
   <img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
 
