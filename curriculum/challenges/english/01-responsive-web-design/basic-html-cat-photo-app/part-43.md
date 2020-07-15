@@ -66,7 +66,7 @@ tests:
       </section>
       <section>
         <h2>Cat Form</h2>
-        <form action="/submit-cat-photo">
+        <form action="https://freecatphotoapp.com/submit-cat-photo">
           --fcc-editable-region--  
           <label><input type="radio" name="indoor-outdoor"> Indoor</label>
           --fcc-editable-region--

@@ -66,7 +66,7 @@ tests:
       </section>
       <section>
         <h2>Cat Form</h2>
-        <form action="/submit-cat-photo">
+        <form action="https://freecatphotoapp.com/submit-cat-photo">
           <fieldset>
             <label for="indoor"><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
             <label for="outdoor"><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label>
