@@ -115,11 +115,11 @@ tests:
           _id,
           date: new Date().toDateString()
         };
-
+        const today = new Date().toISOString().substring(0, 10); 
         const addRes = await fetch(url + '/api/exercise/add', {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: `userId=${_id}&description=${expected.description}&duration=${expected.duration}`
+          body: `userId=${_id}&description=${expected.description}&duration=${expected.duration}&date=${today}`
         });
         if (addRes.ok) {
           const logRes = await fetch(url + `/api/exercise/log?userId=${_id}`);
