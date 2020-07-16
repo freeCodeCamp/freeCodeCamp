@@ -128,7 +128,7 @@ export class BackEnd extends Component {
       },
       pageContext: { challengeMeta }
     } = this.props;
-    initConsole('');
+    initConsole();
     initTests(tests);
     updateChallengeMeta({ ...challengeMeta, title, challengeType });
     challengeMounted(challengeMeta.id);
