@@ -121,6 +121,7 @@ class ToDo extends React.Component {
         <List tasks={['study', 'exercise']} />
         <h2>Tomorrow</h2>
         <List tasks={['call Sam', 'grocery shopping', 'order tickets']} />
+        {/* <List tasks={['call Sam','grocery shopping','order tickets']} /> */}
       </div>
     );
   }
