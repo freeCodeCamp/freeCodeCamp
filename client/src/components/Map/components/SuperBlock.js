@@ -112,14 +112,13 @@ export class SuperBlock extends Component {
       projectDashedBlockNameRE.test(block.block)
     );
 
-    const completedProjectCount = certificationProjects.filter(block =>
-      completedChallenges.some(completedId => block.id === completedId)
+    const completedProjectCount = certificationProjects.filter(({ id }) =>
+      completedChallenges.includes(id)
     ).length;
 
     const completedLessonCount =
-      blocksForSuperBlock.filter(block =>
-        completedChallenges.some(completedId => block.id === completedId)
-      ).length - completedProjectCount;
+      blocksForSuperBlock.filter(({ id }) => completedChallenges.includes(id))
+        .length - completedProjectCount;
 
     // Simply using the % of completed projects will work, but since the only
     // requirement for getting a certificate is to complete all the projects,

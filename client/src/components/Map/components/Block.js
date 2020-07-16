@@ -135,9 +135,7 @@ export class Block extends Component {
     let completedCount = 0;
     const challengesWithCompleted = challenges.map(challenge => {
       const { id } = challenge;
-      const isCompleted = completedChallenges.some(
-        completedId => id === completedId
-      );
+      const isCompleted = completedChallenges.includes(id);
       if (isCompleted) {
         completedCount++;
       }
