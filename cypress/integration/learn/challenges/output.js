@@ -38,17 +38,24 @@ describe('Classic challenge', function() {
 
   it('shows test output when the tests are run', () => {
     cy.visit(locations.index);
-    cy.get(selectors.runTestsButton).click();
-    cy.get(selectors.defaultOutput).contains(runningOutput);
-    cy.get(selectors.defaultOutput).contains(finishedOutput);
+    cy.get(selectors.runTestsButton)
+      .click()
+      .then(() => {
+        cy.get(selectors.defaultOutput)
+          .contains(runningOutput)
+          .contains(finishedOutput);
+      });
   });
 
   it('shows test output when the tests are triggered by the keyboard', () => {
     cy.visit(locations.index);
     cy.get(selectors.hotkeys)
       .focus()
-      .type('{ctrl}{enter}');
-    cy.get(selectors.defaultOutput).contains(runningOutput);
-    cy.get(selectors.defaultOutput).contains(finishedOutput);
+      .type('{ctrl}{enter}')
+      .then(() => {
+        cy.get(selectors.defaultOutput)
+          .contains(runningOutput)
+          .contains(finishedOutput);
+      });
   });
 });
