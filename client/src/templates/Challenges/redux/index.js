@@ -297,7 +297,7 @@ export const reducer = handleActions(
 
     [types.initConsole]: (state, { payload }) => ({
       ...state,
-      consoleOut: [payload]
+      consoleOut: payload ? [payload] : []
     }),
     [types.updateConsole]: (state, { payload }) => ({
       ...state,
