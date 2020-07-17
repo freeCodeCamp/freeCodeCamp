@@ -94,6 +94,6 @@ Criando e Editando Desafios:
 
 1. [Guia de Estilo dos Desafios](/docs/style-guide-for-curriculum-challenges.md) - como criar e formatar desafios.
 
-2. [Tipos de Desafio](https://github.com/freeCodeCamp/learn/blob/a5cb25704168aa37f59a582f0bb5a19b7bd89b46/utils/challengeTypes.js) - o que o número do tipo de desafio significa (enum).
+2. [Tipos de Desafio](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/client/utils/challengeTypes.js#L1-L13) - o que o número do tipo de desafio significa (enum).
 
 3. [Contributing to FreeCodeCamp - Writing ES6 Challenge Tests](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - um vídeo acompanhando [Ethan Arrowood](https://twitter.com/ArrowoodTech) enquanto ele contribui com uma versão antiga do currículo.

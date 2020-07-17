@@ -93,6 +93,6 @@ videoUrl: 'url видео объяснения'
 
 1. [Руководство по оформлению задач](style-guide-for-curriculum-challenges.md) - как создавать и оформлять задачи.
 
-2. [Типы задач](https://github.com/freeCodeCamp/learn/blob/a5cb25704168aa37f59a582f0bb5a19b7bd89b46/utils/challengeTypes.js) - что значит номер типа задачи (перечисление).
+2. [Типы задач](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/client/utils/challengeTypes.js#L1-L13) - что значит номер типа задачи (перечисление).
 
 3. [Помощь FreeCodeCamp - Написание тестов для ES6 задач](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - видео [Ethan Arrowood](https://twitter.com/ArrowoodTech) как он внес свой вклад в старую версию учебного плана.
