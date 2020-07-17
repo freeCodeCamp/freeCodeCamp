@@ -8,6 +8,8 @@ videoId: PrQV9JkLhb4
 
 ## Description
 <section id='description'>
+More resources:
+- <a href="https://notebooks.ai/rmotr-curriculum/python-under-10-minutes-15addcb2" target='_blank'>Notebook</a>
 </section>
 
 ## Tests

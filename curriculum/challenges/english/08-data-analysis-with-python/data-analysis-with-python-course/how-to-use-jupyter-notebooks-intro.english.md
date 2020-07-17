@@ -8,6 +8,9 @@ videoId: h8caJq2Bb9w
 
 ## Description
 <section id='description'>
+More resources:
+- <a href="https://notebooks.ai/rmotr-curriculum/interactive-jupyterlab-tutorial-ac5fa63f" target='_blank'>Notebook</a>
+- <a href="https://twitter.com/rmotr_com/status/1122176794696847361" target='_blank'>Twitter Cheat Sheet</a>
 </section>
 
 ## Tests

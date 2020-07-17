@@ -8,6 +8,8 @@ videoId: YIqgrNLAZkA
 
 ## Description
 <section id='description'>
+More resources:
+- <a href="https://notebooks.ai/rmotr-curriculum/freecodecamp-intro-to-numpy-6c285b74" target='_blank'>Notebook</a>
 </section>
 
 ## Tests
