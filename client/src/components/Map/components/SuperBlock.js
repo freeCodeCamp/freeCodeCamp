@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { uniq, find } from 'lodash';
 import { dasherize } from '../../../../../utils/slugs';
+import { challengeTypes } from '../../../../utils/challengeTypes.js';
 
 import Block from './Block';
 
@@ -55,7 +56,6 @@ const propTypes = {
 };
 
 const codingPrepRE = new RegExp('Interview Prep');
-const projectDashedBlockNameRE = new RegExp('-projects$');
 
 function createSuperBlockTitle(str) {
   return codingPrepRE.test(str)
@@ -108,8 +108,11 @@ export class SuperBlock extends Component {
       node => node.superBlock === superBlock
     );
 
-    const certificationProjects = blocksForSuperBlock.filter(block =>
-      projectDashedBlockNameRE.test(block.block)
+    const certificationProjects = blocksForSuperBlock.filter(
+      ({ challengeType }) =>
+        challengeType === challengeTypes.frontEndProject ||
+        challengeType === challengeTypes.backEndProject ||
+        challengeType === challengeTypes.pythonProject
     );
 
     const completedProjectCount = certificationProjects.filter(({ id }) =>

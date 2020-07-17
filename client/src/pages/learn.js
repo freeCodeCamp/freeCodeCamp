@@ -133,6 +133,7 @@ export const query = graphql`
           id
           block
           title
+          challengeType
           isRequired
           superBlock
           dashedName
