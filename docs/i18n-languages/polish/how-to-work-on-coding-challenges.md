@@ -333,5 +333,5 @@ Tworzenie i edycja wyzwań:
 
 1. Typy wyzwań](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/client/utils/challengeTypes.js#L1-L13) - co oznaczają liczbowe wartości typu wyzwania (wyliczenie).
 
-2. [Przyczyniając się do FreeCodeCamp - Writing ES6 Challenge Tests ](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - film video po [Ethan Arrowood](https://twitter.com/ArrowoodTech) jako wkład do starej wersji programu nauczania.
+2. [Przyczyniając się do FreeCodeCamp - Writing ES6 Challenge Tests](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - film video po [Ethan Arrowood](https://twitter.com/ArrowoodTech) jako wkład do starej wersji programu nauczania.
 
