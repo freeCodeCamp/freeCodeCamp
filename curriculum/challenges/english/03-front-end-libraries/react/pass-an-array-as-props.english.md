@@ -106,7 +106,6 @@ ReactDOM.render(<ToDo />, document.getElementById('root'))
 ```js
 const List= (props) => {
   return <p>{props.tasks.join(', ')}</p>
-//   or return <p>{props.tasks.join(',')}</p>
 };
 
 class ToDo extends React.Component {
