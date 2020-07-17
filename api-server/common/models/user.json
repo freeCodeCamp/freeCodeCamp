@@ -245,7 +245,7 @@
       "index": true
     },
     "timezone": {
-      "type": "string"
+      "type": "object"
     },
     "theme": {
       "type": "string",
@@ -276,9 +276,7 @@
       "default": {}
     },
     "donationEmails": {
-      "type": [
-        "string"
-      ]
+      "type": ["string"]
     },
     "isDonating": {
       "type": "boolean",

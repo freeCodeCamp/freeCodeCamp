@@ -79,7 +79,27 @@ export const mockUser = {
   username: 'camperbot',
   currentChallengeId: '123abc',
   email: 'donor@freecodecamp.com',
-  timezone: 'UTC',
+  timezone: {
+    name: 'South Africa Standard Time',
+    id: 52,
+    abbreviation: 'SAST',
+    offset: 2,
+    isDaylightSavingsTime: false,
+    text: '(UTC+02:00) Harare, Pretoria',
+    areas: [
+      'Africa/Blantyre',
+      'Africa/Bujumbura',
+      'Africa/Gaborone',
+      'Africa/Harare',
+      'Africa/Johannesburg',
+      'Africa/Kigali',
+      'Africa/Lubumbashi',
+      'Africa/Lusaka',
+      'Africa/Maputo',
+      'Africa/Maseru',
+      'Africa/Mbabane'
+    ]
+  },
   completedChallenges: mockCompletedChallenges,
   progressTimestamps: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
   isDonating: true,

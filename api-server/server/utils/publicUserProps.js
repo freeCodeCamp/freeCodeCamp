@@ -6,6 +6,7 @@ import {
   calcCurrentStreak,
   calcLongestStreak
 } from '../utils/user-stats';
+import getTimezonesOrDefault from '../../../client/src/utils/get-timezones';
 
 export const publicUserProps = [
   'about',
@@ -71,7 +72,11 @@ export function normaliseUserFields(user) {
   return { about, picture, twitter };
 }
 
-export function getProgress(progressTimestamps, timezone = 'EST') {
+const isGetDefault = true;
+export function getProgress(
+  progressTimestamps,
+  timezone = getTimezonesOrDefault(isGetDefault)
+) {
   const calendar = progressTimestamps
     .filter(Boolean)
     .reduce((data, timestamp) => {
