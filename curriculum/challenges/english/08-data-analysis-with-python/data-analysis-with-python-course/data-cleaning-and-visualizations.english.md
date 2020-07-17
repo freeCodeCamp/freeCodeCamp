@@ -8,6 +8,8 @@ videoId: mHjxzFS5_Z0
 
 ## Description
 <section id='description'>
+More resources:
+- <a href="https://notebooks.ai/rmotr-curriculum/data-cleaning-rmotr-freecodecamp-fd76fa59" target='_blank'>Notebook</a>
 </section>
 
 ## Tests
