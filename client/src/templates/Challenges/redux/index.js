@@ -13,6 +13,7 @@ import { createExecuteChallengeSaga } from './execute-challenge-saga';
 import { createCurrentChallengeSaga } from './current-challenge-saga';
 import { challengeTypes } from '../../../../utils/challengeTypes';
 import { completedChallengesSelector } from '../../../redux';
+import { isEmpty } from 'lodash';
 
 export const ns = 'challenge';
 export const backendNS = 'backendChallenge';
@@ -30,11 +31,12 @@ const initialState = {
     challengeType: -1
   },
   challengeTests: [],
-  consoleOut: '',
+  consoleOut: [],
   hasCompletedBlock: false,
   inAccessibilityMode: false,
   isCodeLocked: false,
   isBuildEnabled: true,
+  logsOut: [],
   modal: {
     completion: false,
     help: false,
@@ -241,8 +243,6 @@ export const canFocusEditorSelector = state => state[ns].canFocusEditor;
 export const inAccessibilityModeSelector = state =>
   state[ns].inAccessibilityMode;
 
-const MAX_LOGS_SIZE = 64 * 1024;
-
 export const reducer = handleActions(
   {
     [types.createFiles]: (state, { payload }) => ({
@@ -275,25 +275,25 @@ export const reducer = handleActions(
 
     [types.initConsole]: (state, { payload }) => ({
       ...state,
-      consoleOut: payload
+      consoleOut: payload ? [payload] : []
     }),
     [types.updateConsole]: (state, { payload }) => ({
       ...state,
-      consoleOut: state.consoleOut + '\n' + payload
+      consoleOut: state.consoleOut.concat(payload)
     }),
     [types.initLogs]: state => ({
       ...state,
-      logsOut: ''
+      logsOut: []
     }),
     [types.updateLogs]: (state, { payload }) => ({
       ...state,
-      logsOut: (state.logsOut + '\n' + payload).slice(-MAX_LOGS_SIZE)
+      logsOut: state.logsOut.concat(payload)
     }),
     [types.logsToConsole]: (state, { payload }) => ({
       ...state,
-      consoleOut:
-        state.consoleOut +
-        (state.logsOut ? '\n' + payload + '\n' + state.logsOut : '')
+      consoleOut: isEmpty(state.logsOut)
+        ? state.consoleOut
+        : state.consoleOut.concat(payload, state.logsOut)
     }),
     [types.updateChallengeMeta]: (state, { payload }) => ({
       ...state,
@@ -321,7 +321,7 @@ export const reducer = handleActions(
         text,
         testString
       })),
-      consoleOut: ''
+      consoleOut: []
     }),
     [types.updateSolutionFormValues]: (state, { payload }) => ({
       ...state,
