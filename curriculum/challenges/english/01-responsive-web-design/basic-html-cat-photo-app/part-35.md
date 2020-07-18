@@ -27,7 +27,7 @@ tests:
     testString: assert( $('input')[0].hasAttribute('type') );
   - text: Your `input` element should have a `type` attribute with the value `text`.
     testString: assert( $('input')[0].getAttribute('type').replace(/\s+/g, ' ').match(/text/i) );
-  - text: Although you have set the input element's `placeholder` attribute to the correct value`, it is recommended to always surround the value of an attribute with quotation marks.
+  - text: Although you have set the input element's `type` attribute to the `text`, it is recommended to always surround the value of an attribute with quotation marks.
     testString: assert( !/\<input\s+type\s*=\s*text/.test(code) );
 
 ```

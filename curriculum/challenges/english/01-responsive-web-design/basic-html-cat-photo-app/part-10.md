@@ -29,7 +29,7 @@ tests:
     testString: assert( document.querySelector('a').hasAttribute('href') );
   - text: "Your anchor (`a`) element should link to `https://www.freecodecamp.org/cat-photos`. You have either omitted the URL or have a typo."
     testString: assert( document.querySelector('a').getAttribute('href') === 'https://www.freecodecamp.org/cat-photos' );
-  - text: Although you have set the anchor ('a') element's `href` attribute to `text`, it is recommended to always surround the value of an attribute with quotation marks.
+  - text: Although you have set the anchor ('a') element's `href` attribute to the correct link, it is recommended to always surround the value of an attribute with quotation marks.
     testString: assert( !/\<a\s+href\s*=\s*https:\/\/www.freecodecamp.org\/cat-photos/.test(code) );
 
 ```
