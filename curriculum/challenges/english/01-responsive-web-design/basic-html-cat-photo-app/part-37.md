@@ -10,7 +10,7 @@ isHidden: true
 
 Use the `button` element to create a clickable button. For example, `<button>Click Here</button>` creates a button with the text `Click Here`.
 
-Under the `input` element, add a `button` element with the text `Submit`.
+Add a `button` element with the text `Submit` below the `input` element.
 
 </section>
 
@@ -19,8 +19,14 @@ Under the `input` element, add a `button` element with the text `Submit`.
 
 ```yml
 tests:
-  - text: See description above for instructions.
-    testString: ''
+  - text: 'Your `button` element should have an opening tag. Opening tags have this syntax: `<elementName>`.'
+    testString: assert( document.querySelector('button') );
+  - text: Your `button` element should have a closing tag. Closing tags have a `/` just after the `<` character.
+    testString: assert( code.match(/<\/button\>/) );
+  - text: Your `button` element's text should be 'Submit'. You have either omitted the text or have a typo.
+    testString: assert( document.querySelector('button').innerText.toLowerCase() === 'submit' );
+  - text: Your `button` element should be below the `input` element. You have them in the wrong order.
+    testString: const collection = [...document.querySelectorAll('input, button')].map(node => node.nodeName); assert( collection.indexOf('INPUT') < collection.indexOf('BUTTON') );
 
 ```
 
