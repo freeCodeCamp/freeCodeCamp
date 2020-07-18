@@ -19,10 +19,14 @@ Add the placeholder text `cat photo URL` to your `input` element.
 
 ```yml
 tests:
-  - text: Your `input` element should have a `placeholder` attribute with the value `cat photo URL`.
-    testString: assert( $('input')[0].getAttribute('placeholder').replace(/\s+/g, ' ').match(/cat photo URL/i) );
+  - text: You have either deleted your `input` element or it has invalid syntax. All attributes' values should be surrounded by quotation marks.
+    testString: assert( $('input').length );
   - text: Your `form` should only contain the `input` element. Remove any HTML additional elements or text within the `form` element.
     testString: assert( $('form')[0].children.length === 1 && $('form')[0].innerText.trim().length === 0 );
+  - text: Your `input` element should have a `placeholder` attribute with the value `cat photo URL`.
+    testString: assert( $('input')[0].getAttribute('placeholder').replace(/\s+/g, ' ').match(/cat photo URL/i) );
+  - text: Although you have set the input element's `placeholder` attribute to `text`, it is recommended to always surround the value of an attribute with quotation marks.
+    testString: assert( !/\<input\s+type\s*=\s*text/.test(code) );
 
 ```
 

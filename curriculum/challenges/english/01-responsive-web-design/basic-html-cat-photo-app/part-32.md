@@ -25,9 +25,13 @@ tests:
         document.querySelector('form') &&
         code.match(/<\/form>/g)
       );
+  - text: Your `form` element tags are not in the correct order.
+    testString: |
+      const noSpaces = code.replace(/\s/g, '');
+      assert( noSpaces.indexOf('<form>') < noSpaces.indexOf('</form>') );
   - text: The `form` element nested in the last `section` element should be below the `h2` element. You have the `h2` element and the `form` element in the wrong order.
     testString: assert( document.querySelector('form').previousElementSibling.nodeName === 'H2');
-  - text: The `form` element should have no content. Remove any HTML elements or text within the `form` element.
+  - text: The `form` element should have no content. Remove any HTML elements or text between the `form` element's tags.
     testString: assert( $('form')[0].innerHTML.trim().length === 0 );
 
 ```

@@ -19,10 +19,14 @@ To get text input from a user, add the `type` attribute with the value `text` to
 
 ```yml
 tests:
+  - text: You have either deleted your `input` element or it has invalid syntax. If you have added an attributes, make sure their values are surrounded by quotation marks.
+    testString: assert( $('input').length );
+  - text: Your `form` element should only contain the `input` element. Remove any extra HTML elements or text between the `form` element's tags.
+    testString: assert( $('form')[0].children.length === 1 && $('form')[0].innerText.trim().length === 0 );
   - text: Your `input` element should have a `type` attribute with the value `text`.
     testString: assert( $('input')[0].getAttribute('type').replace(/\s+/g, ' ').match(/text/i) );
-  - text: Your `form` should only contain the `input` element. Remove any HTML additional elements or text within the `form` element.
-    testString: assert( $('form')[0].children.length === 1 && $('form')[0].innerText.trim().length === 0 );
+  - text: Although you have set the input element's `placeholder` attribute to the correct value`, it is recommended to always surround the value of an attribute with quotation marks.
+    testString: assert( !/\<input\s+type\s*=\s*text/.test(code) );
 
 ```
 

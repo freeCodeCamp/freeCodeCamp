@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-The `input` element is one of the most versatile HTML elements, and gives you many ways to collect data from web forms. Like anchor (`a`) elements, `input` elements are <dfn>self-closing</dfn> and do not need closing tags.
+The `input` element is allows you several ways to collect data from a web form. Like anchor (`a`) elements, `input` elements are <dfn>self-closing</dfn> and do not need closing tags.
 
 Nest an `input` element in the `form` element.
 
@@ -19,11 +19,23 @@ Nest an `input` element in the `form` element.
 
 ```yml
 tests:
+  - text: Your `form` element should have an opening tag and closing tag in the correct order. You may be missing one or both of the required tags, or have them in the wrong order.
+    testString: |
+      const noSpaces = code.replace(/\s/g, '');
+      assert(
+        document.querySelector('form') &&
+        code.match(/<\/form>/g) &&
+        noSpaces.indexOf('<form') < noSpaces.indexOf('</form>')
+      );
+  - text: Your `form` element's opening tag should only have an `action` attribute. Remove anything else you may have typed in it.
+    testString: assert( [...document.querySelector('form').attributes].length < 2 );
+  - text: You should create an input element. Check the syntax.
+    testString: assert( document.querySelector('input') );
   - text: Your `input` element should have an opening tag, but not a closing tag.
     testString: assert( document.querySelector('input') && !code.match(/<\/input\>/g) );
   - text: Your `input` element should be nested within the `form` element.
     testString: assert( document.querySelector('form > input') );
-  - text: Your `form` should only contain the `input` element. Remove any HTML additional elements or text within the `form` element.
+  - text: Your `form` should only contain the `input` element. Remove any HTML elements or text between the `form` element's tags.
     testString: assert( $('form')[0].children.length === 1 && $('form')[0].innerText.trim().length === 0 );
 
 ```

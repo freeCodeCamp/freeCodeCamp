@@ -19,18 +19,22 @@ Add an `action` attribute with the value `https://freecatphotoapp.com/submit-cat
 
 ```yml
 tests:
-  - text: Your `form` element should have an opening tag and closing tag. You may be missing one or both of the required tags, or have them in the wrong order.
+  - text: Your `form` element should have an opening tag and closing tag in the correct order. You may be missing one or both of the required tags, or have them in the wrong order.
     testString: |
+      const noSpaces = code.replace(/\s/g, '');
       assert(
         document.querySelector('form') &&
-        code.match(/<\/form>/g)
+        code.match(/<\/form>/g) &&
+        noSpaces.indexOf('<form') < noSpaces.indexOf('</form>')
       );
   - text: Your `form` element nested in the last `section` element should be below the `h2` element. You have the `h2` element and the `form` element in the wrong order.
     testString: assert( document.querySelector('form').previousElementSibling.nodeName === 'H2');
-  - text: Your `form` element should have no content. Remove any HTML elements or text within the `form` element.
+  - text: Your `form` element should have no content. Remove any HTML elements or text between the `form` element's tags.
     testString: assert( $('form')[0].innerHTML.trim().length === 0 );
   - text: Your `form` element should have an `action` attribute with the value `https://freecatphotoapp.com/submit-cat-photo`.
     testString: const form = document.querySelector('form'); assert( form.getAttribute('action').match(/https:\/\/freecatphotoapp\.com\/submit-cat-photo/) );
+  - text: Although you have set the `action` attribute to the correct URL, it is recommended to always surround the value of an attribute with quotation marks.
+    testString: assert( !/\<form\s+action\s*=\s*https:\/\/freecatphotoapp\.com\/submit-cat-photo/.test(code) );
 
 ```
 
