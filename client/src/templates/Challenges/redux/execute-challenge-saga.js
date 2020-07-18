@@ -40,12 +40,21 @@ import {
 
 // How long before bailing out of a preview.
 const previewTimeout = 2500;
+let previewTask;
 
 export function* executeCancellableChallengeSaga() {
+  if (previewTask) {
+    yield cancel(previewTask);
+  }
   const task = yield fork(executeChallengeSaga);
+  previewTask = yield fork(previewChallengeSaga, { flushLogs: false });
 
   yield take(types.cancelTests);
   yield cancel(task);
+}
+
+export function* executeCancellablePreviewSaga() {
+  previewTask = yield fork(previewChallengeSaga);
 }
 
 export function* executeChallengeSaga() {
@@ -157,7 +166,7 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
 }
 
 // updates preview frame and the fcc console.
-function* previewChallengeSaga() {
+function* previewChallengeSaga({ flushLogs = true } = {}) {
   yield delay(700);
 
   const isBuildEnabled = yield select(isBuildEnabledSelector);
@@ -169,8 +178,10 @@ function* previewChallengeSaga() {
   const proxyLogger = args => logProxy.put(args);
 
   try {
-    yield put(initLogs());
-    yield put(initConsole(''));
+    if (flushLogs) {
+      yield put(initLogs());
+      yield put(initConsole(''));
+    }
     yield fork(takeEveryConsole, logProxy);
 
     const challengeData = yield select(challengeDataSelector);
@@ -212,7 +223,7 @@ export function createExecuteChallengeSaga(types) {
         types.challengeMounted,
         types.resetChallenge
       ],
-      previewChallengeSaga
+      executeCancellablePreviewSaga
     )
   ];
 }
