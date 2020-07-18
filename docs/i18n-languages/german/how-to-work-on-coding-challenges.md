@@ -309,6 +309,6 @@ function myFunc() {
 
 Erstellen und Bearbeiten von Herausforderungen:
 
-1. [Herausforderungstypen](https://github.com/freeCodeCamp/learn/blob/a5cb25704168aa37f59a582f0bb5a19b7bd89b46/utils/challengeTypes.js) - was die Werte der numerischen Challenge-Typen bedeuten (Enum).
+1. [Herausforderungstypen](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/client/utils/challengeTypes.js#L1-L13) - was die Werte der numerischen Challenge-Typen bedeuten (Enum).
 
 2. [Beim FreeCodeCamp mitwirken - ES6 Challenge Tests schreiben](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - ein Video nach [Ethan Arrowood](https://twitter.com/ArrowoodTech), in dem er zur alten Version des Curriculum beiträgt.
