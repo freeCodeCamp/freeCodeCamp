@@ -180,9 +180,9 @@ const certText = {
 };
 
 const completionHours = {
-  [certTypes.frontEnd]: 400,
-  [certTypes.backEnd]: 400,
-  [certTypes.dataVis]: 400,
+  [certTypes.frontEnd]: 300,
+  [certTypes.backEnd]: 300,
+  [certTypes.dataVis]: 300,
   [certTypes.infosecQa]: 300,
   [certTypes.fullStack]: 1800,
   [certTypes.respWebDesign]: 300,
@@ -192,9 +192,9 @@ const completionHours = {
   [certTypes.apisMicroservices]: 300,
   [certTypes.qaV7]: 300,
   [certTypes.infosecV7]: 300,
-  [certTypes.sciCompPyV7]: 400,
-  [certTypes.dataAnalysisPyV7]: 400,
-  [certTypes.machineLearningPyV7]: 400
+  [certTypes.sciCompPyV7]: 300,
+  [certTypes.dataAnalysisPyV7]: 300,
+  [certTypes.machineLearningPyV7]: 300
 };
 
 // returns an array with a single element, to be flatMap'd by createdVerifyCert
