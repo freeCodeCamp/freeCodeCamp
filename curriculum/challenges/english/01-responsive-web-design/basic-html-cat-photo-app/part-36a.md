@@ -8,7 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Require the user to fill out the text field before submitting the form by adding the word `required` like in this example: `<input type="text" required>`.
+To force a user to enter information in a form before submitting the form, you need to add the `required` attribute to the applicable `input` element. 
+
+Instead of setting a value to the `required` attribute, just add it to the `input` element by making sure there is space between it and other attributes.
 
 </section>
 
@@ -17,8 +19,12 @@ Require the user to fill out the text field before submitting the form by adding
 
 ```yml
 tests:
-  - text: See description above for instructions.
-    testString: ''
+  - text: You have either deleted your `input` element or it has invalid syntax. All attributes' values should be surrounded by quotation marks.
+    testString: assert( $('input').length );
+  - text: Your `form` should only contain the `input` element. Remove any HTML additional elements or text within the `form` element.
+    testString: assert( $('form')[0].children.length === 1 && $('form')[0].innerText.trim().length === 0 );
+  - text: Your `input` element should have a `required` attribute`.  Remember, you just add the word `required` inside the `input` element's tag.
+    testString: assert( $('input')[0].hasAttribute('required') );
 
 ```
 
