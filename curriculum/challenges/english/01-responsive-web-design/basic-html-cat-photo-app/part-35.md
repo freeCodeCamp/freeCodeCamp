@@ -23,6 +23,8 @@ tests:
     testString: assert( $('input').length );
   - text: Your `form` element should only contain the `input` element. Remove any extra HTML elements or text between the `form` element's tags.
     testString: assert( $('form')[0].children.length === 1 && $('form')[0].innerText.trim().length === 0 );
+  - text: Your `input` element does not have a `type` attribute. with the value `text`. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
+    testString: assert( $('input')[0].hasAttribute('type') );
   - text: Your `input` element should have a `type` attribute with the value `text`.
     testString: assert( $('input')[0].getAttribute('type').replace(/\s+/g, ' ').match(/text/i) );
   - text: Although you have set the input element's `placeholder` attribute to the correct value`, it is recommended to always surround the value of an attribute with quotation marks.

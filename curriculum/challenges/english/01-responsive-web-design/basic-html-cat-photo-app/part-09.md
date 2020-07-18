@@ -22,9 +22,9 @@ tests:
 
   - text: Your code should have an `img` element. You removed the `img` element from an earlier step.
     testString: assert( document.querySelector('img') );
-  - text: Your `img` element either does not have an `alt` attribute or it is not set to a non-blank value. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
-    testString: assert( document.querySelector('img').getAttribute('alt') );
-  - text: Your `img` element's `alt` attribute value is set to something other than 'A cute orange cat lying on its back'. Make sure the `alt` attribute's value is surrounded with quotes.
+  - text: Your `img` element does not have an `alt` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
+    testString: assert( document.querySelector('img').hasAttribute('alt') );
+  - text: Your `img` element's `alt` attribute value is set to something other than 'A cute orange cat lying on its back'. Make sure the `alt` attribute's value is surrounded with quotation marks.
     testString: const altText = document.querySelector('img').alt.toLowerCase().replace(/\s+/g, ' '); assert( altText.match(/A cute orange cat lying on its back\.?$/i) );
 
 ```

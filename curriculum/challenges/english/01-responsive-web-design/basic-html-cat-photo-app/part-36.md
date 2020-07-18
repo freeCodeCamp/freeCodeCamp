@@ -23,6 +23,8 @@ tests:
     testString: assert( $('input').length );
   - text: Your `form` should only contain the `input` element. Remove any HTML additional elements or text within the `form` element.
     testString: assert( $('form')[0].children.length === 1 && $('form')[0].innerText.trim().length === 0 );
+  - text: Your `input` element does not have a `placeholder` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
+    testString: assert( $('input')[0].hasAttribute('placeholder') );
   - text: Your `input` element should have a `placeholder` attribute with the value `cat photo URL`.
     testString: assert( $('input')[0].getAttribute('placeholder').replace(/\s+/g, ' ').match(/cat photo URL/i) );
   - text: Although you have set the input element's `placeholder` attribute to `text`, it is recommended to always surround the value of an attribute with quotation marks.

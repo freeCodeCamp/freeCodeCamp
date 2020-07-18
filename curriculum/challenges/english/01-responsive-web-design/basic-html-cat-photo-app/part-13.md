@@ -21,9 +21,9 @@ tests:
     testString: |
       const anchor = $('p > a');
       assert(anchor.length && anchor[0].innerText.toLowerCase().replace(/\s+/g, ' ') === 'cat photos');
-  - text: Your anchor (`a`) element either does not have a `target` attribute or it is not set to a non-blank value. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
-    testString: assert( document.querySelector('a').getAttribute('target') );
-  - text: The value of the `target` attribute should '_blank'. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotes.
+  - text: Your anchor (`a`) element does not have a `target` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
+    testString: assert( document.querySelector('a').hasAttribute('target') );
+  - text: The value of the `target` attribute should '_blank'. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
     testString: assert( document.querySelector('a').getAttribute('target') === '_blank' );
 
 ```
