@@ -10,7 +10,7 @@ isHidden: true
 
 Use the `button` element to create a clickable button. For example, `<button>Click Here</button>` creates a button with the text `Click Here`.
 
-Add a `button` element with the text `Submit` below the `input` element.
+Add a `button` element with the text `Submit` below the `input` element.  Note the default behavior of clicking a form button with any attributes submits the form to the location specified in the form's `action` attribute.
 
 </section>
 
