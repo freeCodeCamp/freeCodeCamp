@@ -20,8 +20,55 @@ wrapRootElement.propTypes = {
 
 export const wrapPageElement = layoutSelector;
 
-export const onRenderBody = ({ setHeadComponents, setPostBodyComponents }) => {
+export const onRenderBody = ({
+  setHeadComponents,
+  setPreBodyComponents,
+  setPostBodyComponents
+}) => {
   setHeadComponents([...headComponents]);
+  setPreBodyComponents([
+    React.createElement('script', {
+      key: 'gatsby-plugin-dark-mode',
+      dangerouslySetInnerHTML: {
+        __html: `
+        void function() {
+
+          var preferredTheme;
+            
+          window.__onThemeChange = function() {};
+          window.__onThemeChangeEditor = function() {};
+
+          function setTheme(newTheme) {
+            window.__theme = newTheme;
+            preferredTheme = newTheme;
+            document.body.className = newTheme;
+            window.__onThemeChange(newTheme);
+            window.__onThemeChangeEditor(newTheme);
+          }
+
+          try {
+            preferredTheme = localStorage.getItem('theme');
+          } catch (err) { }
+
+          window.__setPreferredTheme = function(newTheme) {
+            setTheme(newTheme);
+            try {
+              localStorage.setItem('theme', newTheme);
+            } catch (err) {}
+          }
+
+          var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+          darkQuery.addListener(function(e) {
+            window.__setPreferredTheme(e.matches ? 'dark' : 'light')
+          });
+
+          setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
+
+        }()
+    `
+      }
+    })
+  ]);
   setPostBodyComponents(
     [
       /* eslint-disable max-len */

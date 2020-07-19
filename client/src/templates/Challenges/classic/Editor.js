@@ -9,7 +9,7 @@ import {
   setEditorFocusability,
   updateFile
 } from '../redux';
-import { userSelector, isDonationModalOpenSelector } from '../../../redux';
+import { isDonationModalOpenSelector } from '../../../redux';
 import { Loader } from '../../../components/helpers';
 
 const MonacoEditor = React.lazy(() => import('react-monaco-editor'));
@@ -23,17 +23,14 @@ const propTypes = {
   ext: PropTypes.string,
   fileKey: PropTypes.string,
   setEditorFocusability: PropTypes.func,
-  theme: PropTypes.string,
   updateFile: PropTypes.func.isRequired
 };
 
 const mapStateToProps = createSelector(
   canFocusEditorSelector,
   isDonationModalOpenSelector,
-  userSelector,
-  (canFocus, open, { theme = 'night' }) => ({
-    canFocus: open ? false : canFocus,
-    theme
+  (canFocus, open) => ({
+    canFocus: open ? false : canFocus
   })
 );
 
@@ -63,7 +60,7 @@ const defineMonacoThemes = monaco => {
     base: 'vs-dark',
     inherit: true,
     colors: {
-      'editor.background': '#2a2a40'
+      'editor.background': '#1b1b32'
     },
     rules: [
       { token: 'delimiter.js', foreground: lightBlueColor },
@@ -75,6 +72,9 @@ const defineMonacoThemes = monaco => {
   monaco.editor.defineTheme('vs-custom', {
     base: 'vs',
     inherit: true,
+    colors: {
+      'editor.background': '#f5f6f7'
+    },
     rules: [{ token: 'identifier.js', foreground: darkBlueColor }]
   });
 };
@@ -82,7 +82,9 @@ const defineMonacoThemes = monaco => {
 class Editor extends Component {
   constructor(...props) {
     super(...props);
-
+    this.state = {
+      theme: typeof window !== `undefined` ? window.__theme : null
+    };
     this.options = {
       fontSize: '18px',
       scrollBeyondLastLine: false,
@@ -103,7 +105,6 @@ class Editor extends Component {
         verticalScrollbarSize: 5
       }
     };
-
     this._editor = null;
   }
 
@@ -112,6 +113,9 @@ class Editor extends Component {
   };
 
   editorDidMount = (editor, monaco) => {
+    window.__onThemeChangeEditor = theme => {
+      this.setState({ theme: theme });
+    };
     this._editor = editor;
     if (this.props.canFocus) {
       this._editor.focus();
@@ -156,9 +160,14 @@ class Editor extends Component {
     }
   }
 
+  componentWillUnmount() {
+    window.__onThemeChangeEditor = () => {};
+  }
+
   render() {
-    const { contents, ext, theme, fileKey } = this.props;
-    const editorTheme = theme === 'night' ? 'vs-dark-custom' : 'vs-custom';
+    const { contents, ext, fileKey } = this.props;
+    const editorTheme =
+      this.state.theme === 'dark' ? 'vs-dark-custom' : 'vs-custom';
     return (
       <Suspense fallback={<Loader timeout={600} />}>
         <MonacoEditor

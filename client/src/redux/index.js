@@ -9,7 +9,6 @@ import { createAcceptTermsSaga } from './accept-terms-saga';
 import { createAppMountSaga } from './app-mount-saga';
 import { createReportUserSaga } from './report-user-saga';
 import { createShowCertSaga } from './show-cert-saga';
-import { createNightModeSaga } from './night-mode-saga';
 
 import hardGoToEpic from './hard-go-to-epic';
 import failedUpdatesEpic from './failed-updates-epic';
@@ -79,8 +78,7 @@ export const sagas = [
   ...createAppMountSaga(types),
   ...createFetchUserSaga(types),
   ...createShowCertSaga(types),
-  ...createReportUserSaga(types),
-  ...createNightModeSaga({ ...types, ...settingsTypes })
+  ...createReportUserSaga(types)
 ];
 
 export const appMount = createAction(types.appMount);

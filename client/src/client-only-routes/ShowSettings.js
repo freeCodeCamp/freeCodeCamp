@@ -79,7 +79,6 @@ const propTypes = {
       })
     ),
     sendQuincyEmail: PropTypes.bool,
-    theme: PropTypes.string,
     twitter: PropTypes.string,
     username: PropTypes.string,
     website: PropTypes.string
@@ -105,7 +104,6 @@ const mapDispatchToProps = dispatch =>
       hardGoTo,
       navigate: location => dispatch(hardGoTo(location)),
       submitNewAbout,
-      toggleNightMode: theme => updateUserFlag({ theme }),
       updateInternetSettings: updateUserFlag,
       updateIsHonest: updateUserFlag,
       updatePortfolio: updateUserFlag,
@@ -147,7 +145,6 @@ export function ShowSettings(props) {
       about,
       picture,
       points,
-      theme,
       location,
       name,
       githubProfile,
@@ -203,7 +200,6 @@ export function ShowSettings(props) {
           <h1 className='text-center'>{`Account Settings for ${username}`}</h1>
           <About
             about={about}
-            currentTheme={theme}
             location={location}
             name={name}
             picture={picture}

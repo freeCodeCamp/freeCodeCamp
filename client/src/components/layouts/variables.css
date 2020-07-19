@@ -20,25 +20,7 @@
   --red-light: #ffadad;
   --red-dark: #850000;
 }
-
-.dark-palette {
-  --primary-color: var(--gray-00);
-  --secondary-color: var(--gray-05);
-  --tertiary-color: var(--gray-10);
-  --quaternary-color: var(--gray-15);
-  --quaternary-background: var(--gray-75);
-  --tertiary-background: var(--gray-80);
-  --secondary-background: var(--gray-85);
-  --primary-background: var(--gray-90);
-  --highlight-color: var(--blue-light);
-  --highlight-background: var(--blue-dark);
-  --success-color: var(--green-light);
-  --success-background: var(--green-dark);
-  --danger-color: var(--red-light);
-  --danger-background: var(--red-dark);
-}
-
-.light-palette {
+body {
   --primary-color: var(--gray-90);
   --secondary-color: var(--gray-85);
   --tertiary-color: var(--gray-80);
@@ -53,4 +35,21 @@
   --success-background: var(--green-light);
   --danger-color: var(--red-dark);
   --danger-background: var(--red-light);
+}
+
+body.dark {
+  --primary-color: var(--gray-00);
+  --secondary-color: var(--gray-05);
+  --tertiary-color: var(--gray-10);
+  --quaternary-color: var(--gray-15);
+  --quaternary-background: var(--gray-75);
+  --tertiary-background: var(--gray-80);
+  --secondary-background: var(--gray-85);
+  --primary-background: var(--gray-90);
+  --highlight-color: var(--blue-light);
+  --highlight-background: var(--blue-dark);
+  --success-color: var(--green-light);
+  --success-background: var(--green-dark);
+  --danger-color: var(--red-light);
+  --danger-background: var(--red-dark);
 }

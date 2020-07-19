@@ -7,13 +7,11 @@ import {
 } from '@freecodecamp/react-bootstrap';
 
 import { FullWidthRow, Spacer } from '../helpers';
-import ThemeSettings from './Theme';
 import UsernameSettings from './Username';
 import BlockSaveButton from '../helpers/form/BlockSaveButton';
 
 const propTypes = {
   about: PropTypes.string,
-  currentTheme: PropTypes.string,
   location: PropTypes.string,
   name: PropTypes.string,
   picture: PropTypes.string,
@@ -125,7 +123,7 @@ class AboutSettings extends Component {
     const {
       formValues: { name, location, picture, about }
     } = this.state;
-    const { currentTheme, username, toggleNightMode } = this.props;
+    const { username } = this.props;
     return (
       <div className='about-settings'>
         <UsernameSettings username={username} />
@@ -177,12 +175,6 @@ class AboutSettings extends Component {
           </form>
         </FullWidthRow>
         <Spacer />
-        <FullWidthRow>
-          <ThemeSettings
-            currentTheme={currentTheme}
-            toggleNightMode={toggleNightMode}
-          />
-        </FullWidthRow>
       </div>
     );
   }
