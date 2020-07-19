@@ -16,7 +16,7 @@ For example:
 
 ## Instructions
 <section id='instructions'>
-Nest your text field inside a <code>form</code> element, and add the <code>action="/submit-cat-photo"</code> attribute to the form element.
+Nest your text field inside a <code>form</code> element, and add the <code>action="https://freecatphotoapp.com/submit-cat-photo"</code> attribute to the form element.
 </section>
 
 ## Tests
@@ -26,8 +26,8 @@ Nest your text field inside a <code>form</code> element, and add the <code>actio
 tests:
   - text: Your text input element should be nested within a <code>form</code> element.
     testString: assert($("form") && $("form").children("input") && $("form").children("input").length > 0);
-  - text: Your <code>form</code> should have an <code>action</code> attribute which is set to <code>/submit-cat-photo</code>
-    testString: assert($("form").attr("action") === "/submit-cat-photo");
+  - text: Your <code>form</code> should have an <code>action</code> attribute which is set to <code>https://freecatphotoapp.com/submit-cat-photo</code>
+    testString: assert($("form").attr("action") === "https://freecatphotoapp.com/submit-cat-photo");
   - text: Your <code>form</code> element should have well-formed open and close tags.
     testString: assert(code.match(/<\/form>/g) && code.match(/<form [^<]*>/g) && code.match(/<\/form>/g).length === code.match(/<form [^<]*>/g).length);
 
@@ -91,7 +91,7 @@ tests:
     <li>thunder</li>
     <li>other cats</li>
   </ol>
-  <form action="/submit-cat-photo">
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
     <input type="text" placeholder="cat photo URL">
   </form>
 </main>

@@ -17,7 +17,7 @@ localeTitle: 用 a 实现网页间的跳转
 
 ## Instructions
 <section id='instructions'>
-创建一个 <code>a</code>，它的<code>href</code>属性为<code>http://freecatphotoapp.com</code> ，它的文本为<code>cat photos</code>。
+创建一个 <code>a</code>，它的<code>href</code>属性为<code>https://freecatphotoapp.com</code> ，它的文本为<code>cat photos</code>。
 </section>
 
 ## Tests

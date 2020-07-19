@@ -84,7 +84,7 @@ tests:
     <li>打雷</li>
     <li>同类</li>
   </ol>
-  <form action="/submit-cat-photo">
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
     <input type="text" placeholder="猫咪图片地址" required>
     <button type="submit">提交</button>
   </form>

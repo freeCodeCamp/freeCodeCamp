@@ -40,7 +40,7 @@ tests:
 
 
 </style>
-<a href="http://freecatphotoapp.com/" target="_blank">CatPhotoApp</a>
+<a href="https://freecatphotoapp.com/" target="_blank">CatPhotoApp</a>
 
 ```
 
@@ -56,4 +56,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>
