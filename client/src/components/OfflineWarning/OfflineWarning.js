@@ -13,6 +13,7 @@ function OfflineWarning({ isOnline, isSignedIn }) {
   const [showWarning, setShowWarning] = React.useState(false);
   if (!isSignedIn || isOnline) {
     clearTimeout(id);
+    if (showWarning) setShowWarning(false);
   } else {
     timeout();
   }
