@@ -74,7 +74,7 @@ const propTypes = {
   }),
   initConsole: PropTypes.func.isRequired,
   initTests: PropTypes.func.isRequired,
-  output: PropTypes.string,
+  output: PropTypes.arrayOf(PropTypes.string),
   pageContext: PropTypes.shape({
     challengeMeta: PropTypes.shape({
       id: PropTypes.string,

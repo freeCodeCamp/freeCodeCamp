@@ -8,6 +8,8 @@ videoId: -ZOrgV_aA9A
 
 ## Description
 <section id='description'>
+More resources:
+- <a href="https://notebooks.ai/rmotr-curriculum/freecodecamp-intro-to-pandas-902ae59b" target='_blank'>Notebook</a>
 </section>
 
 ## Tests

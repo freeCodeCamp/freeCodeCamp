@@ -53,7 +53,7 @@ tests:
   
   
 </style>
-<a href="http://freecatphotoapp.com/" target="_blank">猫咪相册 App</a>
+<a href="https://freecatphotoapp.com/" target="_blank">猫咪相册 App</a>
 ```
 
 </div>
