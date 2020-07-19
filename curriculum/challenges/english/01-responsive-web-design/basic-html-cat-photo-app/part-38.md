@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Even through you added your button below the text input, they appear next to each other on the page. That's because both `input` and `button` elements are inline elements, which don't appear on new lines.
+Even through you added your button below the text input, they appear next to each other on the page. That's because both `input` and `button` elements are <dfn>inline elements</dfn>, which don't appear on new lines.
 
-Now add the `type` attribute with the value `submit` to the button. After that, clicking this button will send the data from your form to the URL in your form's action attribute.
+You learned previously that the button submits the form by default, but you can explicity add the `type` attribute with the value `submit` to it to make it clearer.  Go ahead and do this to specify this button should submit the form.
 
 </section>
 
@@ -19,8 +19,16 @@ Now add the `type` attribute with the value `submit` to the button. After that, 
 
 ```yml
 tests:
-  - text: See description above for instructions.
-    testString: ''
+  - text: 'Your `button` element should have an opening tag. Opening tags have this syntax: `<elementName>`.'
+    testString: assert( document.querySelector('button') );
+  - text: Your `button` element should have a closing tag. Closing tags have a `/` just after the `<` character.
+    testString: assert( code.match(/<\/button\>/) );
+  - text: Your `button` element does not have a `type` attribute. Check that there is a space after the opening tag's name.
+    testString: assert( $('button')[0].hasAttribute('type') );
+  - text: Your `button` element should have a `type` attribute with the value `submit`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
+    testString: assert( $('button')[0].getAttribute('type').match(/submit/i) );
+  - text: Although you have set the `button` element's `type` attribute to `submit`, it is recommended to always surround the value of an attribute with quotation marks.
+    testString: assert( !/\<\s*button\s+type\s*=\s*submit/i.test(code) );
 
 ```
 
