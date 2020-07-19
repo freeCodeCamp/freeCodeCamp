@@ -25,9 +25,9 @@ tests:
     testString: assert( $('form')[0].children.length === 1 && $('form')[0].innerText.trim().length === 0 );
   - text: Your `input` element does not have a `type` attribute. with the value `text`. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
     testString: assert( $('input')[0].hasAttribute('type') );
-  - text: Your `input` element should have a `type` attribute with the value `text`.
+  - text: Your `input` element should have a `type` attribute with the value `text`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
     testString: assert( $('input')[0].getAttribute('type').replace(/\s+/g, ' ').match(/text/i) );
-  - text: Although you have set the input element's `type` attribute to the `text`, it is recommended to always surround the value of an attribute with quotation marks.
+  - text: Although you have set the `input` element's `type` attribute to the `text`, it is recommended to always surround the value of an attribute with quotation marks.
     testString: assert( !/\<input\s+type\s*=\s*text/.test(code) );
 
 ```
