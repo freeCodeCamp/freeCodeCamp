@@ -192,10 +192,10 @@ class DisplayMessages extends React.Component {
   }
   submitMessage() {
     const currentMessage = this.state.input;
-    this.setState((state) => {
+    this.setState((state) => ({
       input: '',
       messages: state.messages.concat(currentMessage)
-    });
+    }));
   }
   render() {
     return (
