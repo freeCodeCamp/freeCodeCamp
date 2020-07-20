@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-All related radio buttons should have the same `name` attribute to create a radio button group. For example, `<label><input type="radio" name="animal"> cat</label>`. By creating a radio group, selecting a radio button will automatically deselect the other buttons within the same group.
+Related radio buttons should have the a `name` attribute with the same value to create a radio button group. For example, `<label><input type="radio" name="animal"> cat</label>`. By creating a radio group, selecting a radio button will automatically deselect the other buttons within the same group. 
 
 Add the `name` attribute with the value `indoor-outdoor` to the radio button.
 
@@ -19,8 +19,14 @@ Add the `name` attribute with the value `indoor-outdoor` to the radio button.
 
 ```yml
 tests:
-  - text: See description above for instructions.
-    testString: ''
+  - text: Your radio button should still be located between the opening and closing tags of the `label` element. 
+    testString: |
+      const labelChildNodes = [ ...$('form > label')[0].childNodes ];
+      assert( labelChildNodes.filter(childNode => childNode.nodeName === "INPUT").length );
+  - text: Your radio button should have a `name` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
+    testString: assert( $('input')[0].hasAttribute('name') );
+  - text: Your radio element should have a `name` attribute with the value `indoor-outdoor`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
+    testString: assert( $('input')[0].getAttribute('name').match(/^indoor-outdoor$/) );
 
 ```
 

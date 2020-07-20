@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-The `id` attribute is used to identify specific HTML elements, and each `id` must be unique.
+The `id` attribute is used to identify specific HTML elements, and each `id` must be unique to the entire page.
 
 Add an `id` attribute with the value `indoor` to the radio button. When elements have multiple attributes, the order of the attributes doesn't matter.
 
@@ -19,8 +19,14 @@ Add an `id` attribute with the value `indoor` to the radio button. When elements
 
 ```yml
 tests:
-  - text: See description above for instructions.
-    testString: ''
+  - text: Your radio button should still be located between the opening and closing tags of the `label` element. 
+    testString: |
+      const labelChildNodes = [ ...$('form > label')[0].childNodes ];
+      assert( labelChildNodes.filter(childNode => childNode.nodeName === "INPUT").length );
+  - text: Your radio button should have an `id` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
+    testString: assert( $('input')[0].hasAttribute('id') );
+  - text: Your radio element should have an `id` attribute with the value `indoor`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
+    testString: assert( $('input')[0].id.match(/^indoor$/) );
 
 ```
 
@@ -67,7 +73,7 @@ tests:
       <section>
         <h2>Cat Form</h2>
         <form action="https://freecatphotoapp.com/submit-cat-photo">
-          --fcc-editable-region--  
+          --fcc-editable-region--
           <label><input type="radio" name="indoor-outdoor"> Indoor</label>
           --fcc-editable-region--
           <input type="text" placeholder="cat photo URL" required>
