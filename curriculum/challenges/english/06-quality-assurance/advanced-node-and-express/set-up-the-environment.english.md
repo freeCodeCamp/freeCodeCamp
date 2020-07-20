@@ -8,7 +8,7 @@ forumTopicId: 301566
 
 ## Description
 <section id='description'>
-For the following challenges, you will be working with a new starter project that is different from the previous one. You can find the new starter project on <a href='https://glitch.com/edit/#!/remix/clone-from-repo?REPO_URL=https://github.com/freeCodeCamp/boilerplate-socketio/'>Glitch</a>, or clone it from <a href='https://github.com/freeCodeCamp/boilerplate-socketio/'>GitHub</a>.
+For the following challenges, you will be working with a new starter project that is different from the previous one. You can find the new starter project on <a href="https://repl.it/github/freeCodeCamp/boilerplate-socketio">Repl.it</a>, or clone it from <a href='https://github.com/freeCodeCamp/boilerplate-socketio/'>GitHub</a>.
 Add Socket.IO as a dependency and require/instantiate it in your server defined as 'io' with the http server as an argument. <code>const io = require('socket.io')(http);</code>
 The first thing needing to be handled is listening for a new connection from the client. The <dfn>on</dfn> keyword does just that- listen for a specific event. It requires 2 arguments: a string containing the title of the event thats emitted, and a function with which the data is passed though. In the case of our connection listener, we use <em>socket</em> to define the data in the second argument. A socket is an individual client who is connected.
 For listening for connections on our server, add the following between the comments in your project:
