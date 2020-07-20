@@ -26,7 +26,7 @@ tests:
   - text: The Cats `img` element should be nested in the `figure` element.
     testString: const catsImg = document.querySelectorAll('figure > img')[1]; assert( catsImg && catsImg.getAttribute('src').toLowerCase() === 'https://bit.ly/fcc-cats');
   - text: The Cats `img` element should have an `alt` attribute with the value `Five cats looking around a field.`
-    testString: const catsImg = document.querySelectorAll('figure > img')[1]; assert( catsImg.getAttribute('alt').replace(/\s+/g, ' ').match(/Five cats looking around a field\.?/i) );
+    testString: const catsImg = document.querySelectorAll('figure > img')[1]; assert( catsImg.getAttribute('alt').replace(/\s+/g, ' ').match(/^Five cats looking around a field\.?$/i) );
 
 ```
 

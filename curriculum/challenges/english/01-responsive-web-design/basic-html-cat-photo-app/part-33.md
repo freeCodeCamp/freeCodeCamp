@@ -34,7 +34,7 @@ tests:
   - text: Your `form` element does not have an `action` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
     testString: const form = document.querySelector('form'); assert( form.hasAttribute('action') );
   - text: Your `form` element should have an `action` attribute with the value `https://freecatphotoapp.com/submit-cat-photo`.
-    testString: const form = document.querySelector('form'); assert( form.getAttribute('action').match(/https:\/\/freecatphotoapp\.com\/submit-cat-photo/) );
+    testString: const form = document.querySelector('form'); assert( form.getAttribute('action').match(/^https:\/\/freecatphotoapp\.com\/submit-cat-photo$/) );
   - text: Although you have set the `action` attribute to the correct URL, it is recommended to always surround the value of an attribute with quotation marks.
     testString: assert( !/\<form\s+action\s*=\s*https:\/\/freecatphotoapp\.com\/submit-cat-photo/.test(code) );
 

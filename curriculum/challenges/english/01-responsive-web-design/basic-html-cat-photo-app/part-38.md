@@ -26,7 +26,7 @@ tests:
   - text: Your `button` element does not have a `type` attribute. Check that there is a space after the opening tag's name.
     testString: assert( $('button')[0].hasAttribute('type') );
   - text: Your `button` element should have a `type` attribute with the value `submit`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
-    testString: assert( $('button')[0].getAttribute('type').match(/submit/i) );
+    testString: assert( $('button')[0].getAttribute('type').match(/^submit$/i) );
   - text: Although you have set the `button` element's `type` attribute to `submit`, it is recommended to always surround the value of an attribute with quotation marks.
     testString: assert( !/\<\s*button\s+type\s*=\s*submit/i.test(code) );
 
