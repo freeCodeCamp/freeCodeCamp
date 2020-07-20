@@ -177,7 +177,8 @@ class DonateFormChildViewForHOC extends Component {
             ? error.response.data
             : {
                 error:
-                  'Something is not right. Please contact team@freecodecamp.org'
+                  'Something is not right. ' +
+                  'Please contact donors@freecodecamp.org.'
               };
         this.setState(state => ({
           ...state,

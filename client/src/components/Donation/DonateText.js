@@ -28,7 +28,7 @@ const DonateText = () => {
           <b>Need help with your current or past donations?</b>
         </h4>
         <p>
-          Forward a copy of your donation receipt to team@freeCodeCamp.org and
+          Forward a copy of your donation receipt to donors@freecodecamp.org and
           tell us how we can help.
         </p>
       </Col>
