@@ -966,6 +966,8 @@ class Editor extends Component {
           <MonacoEditor
             editorDidMount={this.editorDidMount}
             editorWillMount={this.editorWillMount}
+            // TODO: avoid hard-coding this (it's the tab height)
+            height='calc(100% - 39px)'
             key={`${editorTheme}`}
             onChange={this.onChange}
             options={this.options}
