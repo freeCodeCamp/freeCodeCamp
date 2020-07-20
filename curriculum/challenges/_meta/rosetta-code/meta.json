@@ -429,8 +429,16 @@
       "LZW compression"
     ],
     [
+      "59667989bf71cf555dd5d2ff",
+      "S-Expressions"
+    ],
+    [
       "59da22823d04c95919d46269",
       "Sailors, coconuts and a monkey problem"
+    ],
+    [
+      "5eb3e497b8d6d7f63c5517ea",
+      "Search a list of records"
     ],
     [
       "59d9c6bc214c613ba73ff012",
@@ -441,8 +449,28 @@
       "Self Describing Numbers"
     ],
     [
-      "59667989bf71cf555dd5d2ff",
-      "S-Expressions"
+      "5eb3e4a21f462f409d656c73",
+      "Self-referential sequence"
+    ],
+    [
+      "5eb3e4aa847216613aa81983",
+      "Semiprime"
+    ],
+    [
+      "5eb3e4af7d0e7b760b46cedc",
+      "Set consolidation"
+    ],
+    [
+      "5eb3e4b20aa93c437f9e9717",
+      "Set of real numbers"
+    ],
+    [
+      "5eb3e4b5f629b9a07429a5d2",
+      "SHA-1"
+    ],
+    [
+      "5eb3e4c3a894c333d2811a3f",
+      "SHA-256"
     ],
     [
       "5a23c84252665b21eecc7ffe",
