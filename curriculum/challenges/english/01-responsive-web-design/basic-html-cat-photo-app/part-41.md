@@ -10,7 +10,7 @@ isHidden: true
 
 `label` elements are used to associate the text of an input with the input element itself. For example, `<label><input type="radio"> cat</label>` makes it so clicking the word `cat` also selects the corresponding radio button.
 
-Wrap the radio button with a `label` element.
+Nest your `radio` button inside a `label` element.
 
 </section>
 
@@ -19,8 +19,20 @@ Wrap the radio button with a `label` element.
 
 ```yml
 tests:
-  - text: See description above for instructions.
-    testString: ''
+  - text: You should make sure the radio button is still present.
+    testString: assert( $('input[type="radio"]')[0] );
+  - text: The text ` Indoor` should be located directly to the right of your `radio` button. Make sure there is a space between the element and the text. You have either omitted the text or have a typo.
+    testString: |
+      const radioInputElem = $('input')[0];
+      assert( radioInputElem.nextSibling.nodeValue.replace(/\s+/g, ' ').match(/ Indoor/i) );
+  - text: 'Your `label` element should have an opening tag. Opening tags have this syntax: `<elementName>`.'
+    testString: assert( document.querySelector('label') );
+  - text: Your `button` element should have a closing tag. Closing tags have a `/` just after the `<` character.
+    testString: assert( code.match(/<\/label\>/) );
+  - text: Your radio button and its text should all be located between the opening and closing tags of the `label` element. 
+    testString: |
+      const labelChildNodes = [ ...$('form > label')[0].childNodes ];
+      assert( labelChildNodes.filter(childNode => childNode.nodeName === "INPUT").length );
 
 ```
 
