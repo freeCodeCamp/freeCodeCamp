@@ -120,9 +120,9 @@ class MyForm extends React.Component {
   }
   handleSubmit(event) {
     event.preventDefault()
-    this.setState({
-      submit: this.state.input
-    });
+    this.setState((state) => ({
+      submit: state.input
+    }));
   }
   render() {
     return (

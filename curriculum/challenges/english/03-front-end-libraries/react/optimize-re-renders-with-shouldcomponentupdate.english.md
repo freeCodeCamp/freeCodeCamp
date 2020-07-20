@@ -69,9 +69,9 @@ class Controller extends React.Component {
     this.addValue = this.addValue.bind(this);
   }
   addValue() {
-    this.setState({
-      value: this.state.value + 1
-    });
+    this.setState((state) => ({
+      value: state.value + 1
+    }));
   }
   render() {
     return (
@@ -130,9 +130,9 @@ class Controller extends React.Component {
   this.addValue = this.addValue.bind(this);
   }
   addValue() {
-    this.setState({
-      value: this.state.value + 1
-    });
+    this.setState((state) => ({
+      value: state.value + 1
+    }));
   }
   render() {
     return (
