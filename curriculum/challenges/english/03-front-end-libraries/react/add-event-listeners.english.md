@@ -63,8 +63,7 @@ class MyComponent extends React.Component {
   handleEnter() {
     this.setState({
     message: this.state.message + 'You pressed the enter key! '
-  }
-      );
+  });
   }
   handleKeyPress(event) {
     if (event.keyCode === 13) {
