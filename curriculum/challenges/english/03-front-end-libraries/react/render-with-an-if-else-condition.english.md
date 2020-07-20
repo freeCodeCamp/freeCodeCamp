@@ -51,7 +51,7 @@ class MyComponent extends React.Component {
     this.toggleDisplay = this.toggleDisplay.bind(this);
   }
   toggleDisplay() {
-    this.setState((state)=>({
+    this.setState((state) => ({
       display: !state.display
     }));
   }

@@ -61,7 +61,7 @@ class MyComponent extends React.Component {
   }
   // change code above this line
   handleEnter() {
-    this.setState((state)=>({
+    this.setState((state) => ({
       message: state.message + 'You pressed the enter key! '
     }));
   }
