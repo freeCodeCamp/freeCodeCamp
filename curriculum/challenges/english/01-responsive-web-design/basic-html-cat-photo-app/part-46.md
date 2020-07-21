@@ -75,7 +75,7 @@ tests:
           <fieldset>
             <legend>What's your cat's personality?</legend>
           </fieldset>
-          <input type="text" placeholder="cat photo URL" required>
+          <input type="text" name="catphotourl" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>
         </form>
       </section>

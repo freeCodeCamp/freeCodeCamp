@@ -76,7 +76,7 @@ tests:
         <h2>Cat Form</h2>
         <form action="https://freecatphotoapp.com/submit-cat-photo">
           --fcc-editable-region--  
-          <input type="text">
+          <input type="text" name="catphotourl">
           --fcc-editable-region--
         </form>
       </section>

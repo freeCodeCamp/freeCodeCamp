@@ -73,7 +73,7 @@ tests:
       <section>
         <h2>Cat Form</h2>
         <form action="https://freecatphotoapp.com/submit-cat-photo">
-          <input type="text" placeholder="cat photo URL">
+          <input type="text" name="catphotourl" placeholder="cat photo URL">
         </form>
       </section>
     </main>

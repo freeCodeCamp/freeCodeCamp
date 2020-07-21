@@ -25,10 +25,10 @@ tests:
     testString: assert( $('form')[0].children.length === 1 && $('form')[0].innerText.trim().length === 0 );
   - text: Your `input` element does not have a `name` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
     testString: assert( $('input')[0].hasAttribute('name') );
-  - text: Your `input` element should have a `name` attribute with the value `catphoto`.  You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
-    testString: assert( $('input')[0].getAttribute('name').match(/^catphoto$/i) );
-  - text: Although you have set the `input` element's `name` attribute to `catphoto`, it is recommended to always surround the value of an attribute with quotation marks.
-    testString: assert( !/\<\s*input\s+.*\s*=\s*catphoto/.test(code) );
+  - text: Your `input` element should have a `name` attribute with the value `catphotourl`.  You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
+    testString: assert( $('input')[0].getAttribute('name').match(/^catphotourl$/i) );
+  - text: Although you have set the `input` element's `name` attribute to `catphotourl`, it is recommended to always surround the value of an attribute with quotation marks.
+    testString: assert( !/\<\s*input\s+.*\s*=\s*catphotourl/.test(code) );
 
 ```
 

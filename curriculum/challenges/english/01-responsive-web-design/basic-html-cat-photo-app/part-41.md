@@ -82,7 +82,7 @@ tests:
           --fcc-editable-region--
           <input type="radio"> Indoor
           --fcc-editable-region--
-          <input type="text" placeholder="cat photo URL" required>
+          <input type="text" name="catphotourl" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>
         </form>
       </section>

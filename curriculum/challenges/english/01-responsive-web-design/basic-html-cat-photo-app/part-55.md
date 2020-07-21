@@ -78,7 +78,7 @@ tests:
             <label for="lazy"><input id="lazy" type="checkbox" name="personality"> Lazy</label>
             <label for="energetic"><input id="energetic" type="checkbox" name="personality"> Energetic</label>
           </fieldset>
-          <input type="text" placeholder="cat photo URL" required>
+          <input type="text" name="catphotourl" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>
         </form>
       </section>

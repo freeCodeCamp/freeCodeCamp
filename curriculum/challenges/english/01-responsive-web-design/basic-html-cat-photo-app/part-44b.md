@@ -79,7 +79,7 @@ tests:
           <label for="indoor"><input id="indoor" type="radio"> Indoor</label>
           <label for="outdoor"><input id="outdoor" type="radio"> Outdoor</label>
           --fcc-editable-region--
-          <input type="text" placeholder="cat photo URL" required>
+          <input type="text" name="catphotourl" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>
         </form>
       </section>
