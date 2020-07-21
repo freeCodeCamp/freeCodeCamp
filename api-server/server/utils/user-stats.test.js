@@ -9,10 +9,13 @@ import {
   getUserById
 } from './user-stats';
 import { mockUserID, mockApp, mockUser } from '../boot_tests/fixtures';
+import getTimezonesOrDefault from '../../../client/src/utils/get-timezones';
 
 // setting now to 2016-02-03T11:00:00 (PST)
 const clock = sinon.useFakeTimers(1454526000000);
-const PST = 'America/Los_Angeles';
+const PST = getTimezonesOrDefault().find(
+  timezone => timezone.abbreviation === 'PST'
+);
 
 describe('user stats', () => {
   afterAll(() => {
@@ -245,7 +248,7 @@ describe('user stats', () => {
                 1454333545125,
                 1454415163903,
                 1454519128123,
-                moment.tz(PST).valueOf()
+                moment.tz(PST.areas[1]).valueOf()
               ],
               PST
             ),
@@ -534,7 +537,7 @@ describe('user stats', () => {
                 1454333545125,
                 1454415163903,
                 1454519128123,
-                moment.tz(PST).valueOf()
+                moment.tz(PST.areas[1]).valueOf()
               ],
               PST
             ),

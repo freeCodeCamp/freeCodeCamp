@@ -2,8 +2,11 @@
 import moment from 'moment-timezone';
 
 import { dayCount } from './date-utils';
+import getTimezonesOrDefault from '../../../client/src/utils/get-timezones';
 
-const PST = 'America/Los_Angeles';
+const PST = getTimezonesOrDefault().find(
+  timezone => timezone.abbreviation === 'PST'
+);
 
 describe('date utils', () => {
   describe('dayCount', () => {
