@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Add a `for` attribute to the `label` element that is set to the `id` of the nested `input` element. For example: `<label for="cat"><input id="cat" type="radio"> Cat</label>`.
+The `for` attribute allows assistive technologies like screen readers to create a linked relationship between the `label` and the child `input` element. For example: `<label for="cat"><input id="cat" type="radio"> Cat</label>`.
 
-This allows assistive technologies like screen readers to create a linked relationship between the label and the child input element.
+Add a `for` attribute to the `label` element that is set to the `id` of the nested `input` element.
 
 </section>
 
@@ -68,7 +68,7 @@ tests:
         <h2>Cat Form</h2>
         <form action="https://freecatphotoapp.com/submit-cat-photo">
            --fcc-editable-region-- 
-          <label><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
+          <label><input id="indoor" type="radio"> Indoor</label>
           --fcc-editable-region--
           <input type="text" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>

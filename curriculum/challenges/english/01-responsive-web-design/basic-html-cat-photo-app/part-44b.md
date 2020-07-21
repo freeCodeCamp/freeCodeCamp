@@ -1,6 +1,6 @@
 ---
 id: 5ef9b03c81a63668521804de
-title: Part 42
+title: Part 44b
 challengeType: 0
 isHidden: true
 ---
@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Related radio buttons should have the a `name` attribute with the same value to create a radio button group. For example, `<label><input type="radio" name="animal"> cat</label>`. By creating a radio group, selecting a radio button will automatically deselect the other buttons within the same group. 
+Notice that both radio buttons can be selected at the same time. To make it so selecting one radio button automatically deselects the other, both buttons should have a `name` attribute with the same value.
 
-Add the `name` attribute with the value `indoor-outdoor` to the radio button.
+Add the `name` attribute with the value `indoor-outdoor` to both radio buttons.
 
 </section>
 
@@ -73,7 +73,8 @@ tests:
         <h2>Cat Form</h2>
         <form action="https://freecatphotoapp.com/submit-cat-photo">
           --fcc-editable-region--
-          <label><input type="radio"> Indoor</label>
+          <label for="indoor"><input id="indoor" type="radio"> Indoor</label>
+          <label for="outdoor"><input id="outdoor" type="radio"> Outdoor</label>
           --fcc-editable-region--
           <input type="text" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>

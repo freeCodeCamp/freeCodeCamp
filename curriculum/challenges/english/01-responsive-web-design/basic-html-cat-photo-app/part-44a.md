@@ -8,9 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-After the `Indoor` radio button, add another radio button and with the option `Outdoor` and wrap it in a `label`. 
-
-The `name` and attribute should be the same as the last radio button, but make sure to update the `for` and `id` attributes to `outdoor`.
+Add another radio button with the option `Outdoor` under the first one. Wrap the new radio button in a `label`, and to set the `for` and `id` attributes to `outdoor`.
 
 </section>
 
@@ -68,7 +66,7 @@ tests:
         <h2>Cat Form</h2>
         <form action="https://freecatphotoapp.com/submit-cat-photo">
           --fcc-editable-region--
-          <label><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
+          <label for="indoor"><input id="indoor" type="radio"> Indoor</label>
           --fcc-editable-region--
           <input type="text" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>
