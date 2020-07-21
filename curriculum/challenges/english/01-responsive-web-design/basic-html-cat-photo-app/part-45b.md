@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Next, you are going to add some new form `input` elements, so add another `fieldset` element below the current `fieldset` element.
+Next, you are going to add some new form `input` elements, so add another `fieldset` element directly below the current `fieldset` element.
 
 </section>
 
@@ -17,8 +17,31 @@ Next, you are going to add some new form `input` elements, so add another `field
 
 ```yml
 tests:
-  - text: See description above for instructions.
-    testString: ''
+  - text: "Your new `fieldset` element should have an opening tag. Opening tags have this syntax: `<elementName>`."
+    testString: assert( document.querySelectorAll('fieldset').length >= 2 );
+  - text: You should only add one opening `fieldset` tag. Please remove any extras.
+    testString: assert( document.querySelectorAll('fieldset').length === 2 );
+  - text: Your new `fieldset` element should have a closing tag. Closing tags have a `/` just after the `<` character.
+    testString: assert( code.match(/<\/fieldset>/g).length >= 2 );
+  - text: You should only add one closing `fieldset` tag. Please remove any extras.
+    testString: assert( code.match(/<\/fieldset>/g).length === 2 );
+  - text: The second `fieldset` element should not be nested in the first `fieldset` element.
+    testString: |
+      const childrenOf1stFieldset = [ ...document.querySelector('form > fieldset').children ];
+      const foundElems = childrenOf1stFieldset.filter(child => {
+        return child.nodeName === 'FIELDSET';
+      });
+      assert( foundElems.length === 0 );
+  - text: Both `fieldset` elements should be above the text field and its associated `label` element. They are out of order.
+    testString: |
+      const formChildren = $('form')[0].children;
+      assert(
+        formChildren[0].nodeName === 'FIELDSET' &&
+        formChildren[1].nodeName === 'FIELDSET' &&
+        formChildren[2] && formChildren[2].nodeName === 'INPUT' &&
+        formChildren[2].getAttribute('type') === 'text'
+      );
+
 
 ```
 
@@ -65,6 +88,7 @@ tests:
       <section>
         <h2>Cat Form</h2>
         <form action="https://freecatphotoapp.com/submit-cat-photo">
+          --fcc-editable-region--
           <fieldset>
             <legend>Is your cat an indoor or outdoor cat?</legend>
             <label><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
@@ -72,6 +96,7 @@ tests:
           </fieldset>
           <input type="text" name="catphotourl" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>
+          --fcc-editable-region--
         </form>
       </section>
     </main>
