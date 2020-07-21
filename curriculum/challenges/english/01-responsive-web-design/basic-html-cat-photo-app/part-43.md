@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-The `id` attribute is used to identify specific HTML elements, and each `id` must be unique to the entire page.
+The `id` attribute is used to identify specific HTML elements. Each `id` attribute's value must be unique all other `id` values for the entire page.
 
 Add an `id` attribute with the value `indoor` to the radio button. When elements have multiple attributes, the order of the attributes doesn't matter.
 
