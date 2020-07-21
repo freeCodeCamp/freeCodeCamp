@@ -19,8 +19,19 @@ Nest the `Indoor` and `Outdoor` radio buttons within a `fieldset` element, and d
 
 ```yml
 tests:
-  - text: See description above for instructions.
-    testString: ''
+  - text: Both radio buttons should still be located between opening and closing `label` element tags. 
+    testString: |
+      const labelChildNodes = [ ...$('label') ].map(node => [ ...node.childNodes ]);
+      assert( labelChildNodes.filter(childNode => childNode[0].nodeName === "INPUT").length === 2 );
+  - text: "Your `fieldset` element should have an opening tag. Opening tags have the following syntax: `<elementName>`."
+    testString: assert( document.querySelector('fieldset') );
+  - text: Your `fieldset` element should have a closing tag. Closing tags have a `/` just after the `<` character.
+    testString: assert( code.match(/<\/fieldset\>/) );
+  - text: Both radio button and associated labels should be between the opening and closing tags of the `fieldset` element.
+    testString: |
+      const radioButtons = [ ...$('input[type="radio"]') ];
+      console.log(radioButtons)
+      assert( radioButtons.every(btn => btn.parentNode.parentNode.nodeName === "FIELDSET") );
 
 ```
 
@@ -67,8 +78,10 @@ tests:
       <section>
         <h2>Cat Form</h2>
         <form action="https://freecatphotoapp.com/submit-cat-photo">
-          <label for="indoor"><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
-          <label for="outdoor"><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label>
+          --fcc-editable-region--
+          <label><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
+          <label><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label>
+          --fcc-editable-region--
           <input type="text" name="catphotourl" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>
         </form>
