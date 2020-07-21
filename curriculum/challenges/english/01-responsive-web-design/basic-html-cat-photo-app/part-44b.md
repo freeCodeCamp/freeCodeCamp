@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Notice that both radio buttons can be selected at the same time. To make it so selecting one radio button automatically deselects the other, both buttons should have a `name` attribute with the same value.
+Notice that both radio buttons can be selected at the same time. To make it so selecting one radio button automatically deselects the other, both buttons must have a `name`  attribute with the same value.
 
 Add the `name` attribute with the value `indoor-outdoor` to both radio buttons.
 
@@ -19,17 +19,18 @@ Add the `name` attribute with the value `indoor-outdoor` to both radio buttons.
 
 ```yml
 tests:
-  - text: Your radio buttons should still be located between the opening and closing tags of the `label` element. 
+  - text: Both radio buttons should still be located between opening and closing `label` element tags. 
     testString: |
       const labelChildNodes = [ ...document.querySelectorAll('form > label') ].map(node => node.childNodes);
       assert( labelChildNodes.filter(childNode => childNode[0].nodeName === "INPUT").length === 2 );
-  - text: Your radio buttons should have a `name` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
+  - text: Both radio buttons should have a `name` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
     testString: |
-      const inputNodes = [...document.querySelectorAll('input[type="radio"]')];
-      console.log(inputNodes);
-      assert( inputNodes.filter(node => node.hasAttribute('name')).length === 2 );
-  - text: Your radio element should have a `name` attribute with the value `indoor-outdoor`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
-    testString: assert( $('input')[0].getAttribute('name').match(/^indoor-outdoor$/) );
+      const radioButtons = [...document.querySelectorAll('input[type="radio"]')];
+      assert( radioButtons.every(btn => btn.hasAttribute('name')) );
+  - text: Both radio buttons should have a `name` attribute with the value `indoor-outdoor`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
+    testString: |
+      const radioButtons = [ ...$('input[type="radio"]') ];
+      assert( radioButtons.every(btn => btn.getAttribute('name').match(/^indoor-outdoor$/)) );
 
 ```
 
@@ -76,8 +77,8 @@ tests:
         <h2>Cat Form</h2>
         <form action="https://freecatphotoapp.com/submit-cat-photo">
           --fcc-editable-region--
-          <label for="indoor"><input id="indoor" type="radio"> Indoor</label>
-          <label for="outdoor"><input id="outdoor" type="radio"> Outdoor</label>
+          <label><input id="indoor" type="radio"> Indoor</label>
+          <label><input id="outdoor" type="radio"> Outdoor</label>
           --fcc-editable-region--
           <input type="text" name="catphotourl" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>
