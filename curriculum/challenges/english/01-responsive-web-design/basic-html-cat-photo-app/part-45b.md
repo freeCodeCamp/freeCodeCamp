@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Add another `fieldset` element below the current `fieldset` element.
+Next, you are going to add some new form `input` elements, so add another `fieldset` element below the current `fieldset` element.
 
 </section>
 
@@ -67,8 +67,8 @@ tests:
         <form action="https://freecatphotoapp.com/submit-cat-photo">
           <fieldset>
             <legend>Is your cat an indoor or outdoor cat?</legend>
-            <label for="indoor"><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
-            <label for="outdoor"><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label>
+            <label><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
+            <label><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label>
           </fieldset>
           <input type="text" name="catphotourl" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>
