@@ -482,7 +482,7 @@
     "offset": 0,
     "isDaylightSavingsTime": false,
     "text": "(UTC+00:00) Coordinated Universal Time",
-    "areas": ["America/Danmarkshavn"]
+    "areas": ["UTC", "America/Danmarkshavn"]
   },
   {
     "name": "GMT Standard Time",

@@ -22,7 +22,7 @@ export function prepUniqueDaysByHours(
   tz = getTimezonesOrDefault(isGetDefault)
 ) {
   let prev = null;
-  const tzAbbr = tz.abbreviation;
+  const tzAbbr = tz.areas[0];
 
   // compose goes bottom to top (map > sortBy > transform)
   return compose(
@@ -59,7 +59,7 @@ export function calcCurrentStreak(
   tz = getTimezonesOrDefault(isGetDefault)
 ) {
   let prev = last(cals);
-  const tzAbbr = tz.abbreviation;
+  const tzAbbr = tz.areas[0];
   if (
     moment()
       .tz(tzAbbr)
@@ -94,7 +94,7 @@ export function calcLongestStreak(
   tz = getTimezonesOrDefault(isGetDefault)
 ) {
   let tail = cals[0];
-  const tzAbbr = tz.abbreviation;
+  const tzAbbr = tz.areas[0];
   const longest = cals.reduce(
     (longest, head, index) => {
       const last = cals[index === 0 ? 0 : index - 1];
