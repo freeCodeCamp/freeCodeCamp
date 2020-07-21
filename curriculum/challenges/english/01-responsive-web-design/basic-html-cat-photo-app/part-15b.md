@@ -25,7 +25,7 @@ tests:
     testString: assert( code.match(/<\/section>/g).length >= 2 );
   - text: You should only add one closing `section` tag. Please remove any extras.
     testString: assert( code.match(/<\/section>/g).length === 2 );
-  - text: The second `section` element should not be nested in the first section element.
+  - text: The second `section` element should not be nested in the first `section` element.
     testString: |
       const childrenOf1stSection = [ ...document.querySelector('main > section').children ];
       const foundElems = childrenOf1stSection.filter(child => {
