@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import isEqual from 'lodash/isEqual';
+import Loadable from '@loadable/component';
 
 import {
   canFocusEditorSelector,
@@ -20,7 +21,7 @@ import { toSortedArray } from '../../../../../utils/sort-files';
 
 import './editor.css';
 
-const MonacoEditor = React.lazy(() => import('react-monaco-editor'));
+const MonacoEditor = Loadable(() => import('react-monaco-editor'));
 
 const propTypes = {
   canFocus: PropTypes.bool,
