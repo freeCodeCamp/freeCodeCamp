@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './offline-warning.css';
 
 const delayInMilliSeconds = 5000;
-var id;
+let id;
 const propTypes = {
   isOnline: PropTypes.bool.isRequired,
   isSignedIn: PropTypes.bool.isRequired
