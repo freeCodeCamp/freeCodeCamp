@@ -19,12 +19,15 @@ Add the `name` attribute with the value `indoor-outdoor` to both radio buttons.
 
 ```yml
 tests:
-  - text: Your radio button should still be located between the opening and closing tags of the `label` element. 
+  - text: Your radio buttons should still be located between the opening and closing tags of the `label` element. 
     testString: |
-      const labelChildNodes = [ ...$('form > label')[0].childNodes ];
-      assert( labelChildNodes.filter(childNode => childNode.nodeName === "INPUT").length );
-  - text: Your radio button should have a `name` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
-    testString: assert( $('input')[0].hasAttribute('name') );
+      const labelChildNodes = [ ...document.querySelectorAll('form > label') ].map(node => node.childNodes);
+      assert( labelChildNodes.filter(childNode => childNode[0].nodeName === "INPUT").length === 2 );
+  - text: Your radio buttons should have a `name` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
+    testString: |
+      const inputNodes = [...document.querySelectorAll('input[type="radio"]')];
+      console.log(inputNodes);
+      assert( inputNodes.filter(node => node.hasAttribute('name')).length === 2 );
   - text: Your radio element should have a `name` attribute with the value `indoor-outdoor`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
     testString: assert( $('input')[0].getAttribute('name').match(/^indoor-outdoor$/) );
 

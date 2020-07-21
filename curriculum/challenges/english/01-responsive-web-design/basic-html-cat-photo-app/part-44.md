@@ -19,8 +19,14 @@ Add a `for` attribute to the `label` element that is set to the `id` of the nest
 
 ```yml
 tests:
-  - text: See description above for instructions.
-    testString: ''
+  - text: Your radio button should still be located between the opening and closing tags of the `label` element. 
+    testString: |
+      const labelChildNodes = [ ...$('form > label')[0].childNodes ];
+      assert( labelChildNodes.filter(childNode => childNode.nodeName === "INPUT").length );
+  - text: Your `label` element should have a `for` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
+    testString: assert( $('label')[0].hasAttribute('for') );
+  - text: Your `label` element should have a `for` attribute with the value `indoor`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
+    testString: assert( $('label')[0].getAttribute('for').match(/^indoor$/) );
 
 ```
 
