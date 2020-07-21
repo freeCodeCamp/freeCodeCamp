@@ -183,7 +183,7 @@ export class SearchBar extends Component {
             <label className='fcc_sr_only' htmlFor='fcc_instantsearch'>
               Search
             </label>
-            <ObserveKeys>
+            <ObserveKeys except={['Space']}>
               <SearchBox
                 focusShortcuts={[83, 191]}
                 onChange={this.handleChange}
