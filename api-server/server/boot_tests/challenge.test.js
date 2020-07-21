@@ -2,6 +2,7 @@
 import { first, find } from 'lodash';
 import sinon from 'sinon';
 import { mockReq, mockRes } from 'sinon-express-mock';
+import getTimezonesOrDefault from '../../../client/src/utils/get-timezones';
 
 import {
   buildUserUpdate,
@@ -25,6 +26,8 @@ import {
   mockPathMigrationMap
 } from './fixtures';
 
+const defaultTimezone = getTimezonesOrDefault(true);
+
 describe('boot/challenge', () => {
   xdescribe('backendChallengeCompleted', () => {});
 
@@ -34,7 +37,7 @@ describe('boot/challenge', () => {
         mockUser,
         '123abc',
         mockCompletedChallenge,
-        'UTC'
+        defaultTimezone
       );
       expect(result).toHaveProperty('updateData.$set.completedChallenges');
     });
@@ -51,7 +54,7 @@ describe('boot/challenge', () => {
         mockUser,
         jsChallengeId,
         completedChallenge,
-        'UTC'
+        defaultTimezone
       );
       const firstCompletedChallenge = first(
         result.updateData.$set.completedChallenges
@@ -75,7 +78,7 @@ describe('boot/challenge', () => {
         mockUser,
         completedChallengeId,
         completedChallenge,
-        'UTC'
+        defaultTimezone
       );
 
       const firstCompletedChallenge = first(
@@ -97,7 +100,7 @@ describe('boot/challenge', () => {
         mockUser,
         completedChallengeId,
         completedChallenge,
-        'UTC'
+        defaultTimezone
       );
 
       const hasProgressTimestamps =
@@ -112,7 +115,7 @@ describe('boot/challenge', () => {
         mockUser,
         '123abc',
         mockCompletedChallenge,
-        'UTC'
+        defaultTimezone
       );
       expect(updateData).toHaveProperty('$push');
       expect(updateData.$push).toHaveProperty('progressTimestamps');
@@ -133,7 +136,7 @@ describe('boot/challenge', () => {
         mockUser,
         completedChallengeId,
         completedChallenge,
-        'UTC'
+        defaultTimezone
       );
 
       expect(completedChallenges.length).toEqual(
@@ -147,7 +150,12 @@ describe('boot/challenge', () => {
         updateData: {
           $set: { completedChallenges }
         }
-      } = buildUserUpdate(mockUser, '123abc', mockCompletedChallenge, 'UTC');
+      } = buildUserUpdate(
+        mockUser,
+        '123abc',
+        mockCompletedChallenge,
+        defaultTimezone
+      );
 
       expect(completedChallenges.length).toEqual(
         mockCompletedChallenges.length + 1

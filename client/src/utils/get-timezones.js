@@ -1,7 +1,9 @@
-import timezones from '../../../config/timezones.json';
+const timezones = require('../../../config/timezones.json');
 
-export default function getTimezonesOrDefault(isGetDefault = false) {
+function getTimezonesOrDefault(isGetDefault = false) {
   return isGetDefault
     ? timezones.find(timezone => timezone.name === 'UTC')
     : timezones;
 }
+
+module.exports = getTimezonesOrDefault;

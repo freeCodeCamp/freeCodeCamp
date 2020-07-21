@@ -7,14 +7,15 @@ export function dayCount(
   [head, tail],
   timezone = getTimezonesOrDefault(isGetDefault)
 ) {
+  const tzAbbr = timezone.abbreviation;
   return Math.ceil(
     moment(
       moment(head)
-        .tz(timezone.abbreviation)
+        .tz(tzAbbr)
         .endOf('day')
     ).diff(
       moment(tail)
-        .tz(timezone.abbreviation)
+        .tz(tzAbbr)
         .startOf('day'),
       'days',
       true

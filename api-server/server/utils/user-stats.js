@@ -9,14 +9,20 @@ import { isEmpty } from 'lodash';
 import moment from 'moment-timezone';
 
 import { dayCount } from '../utils/date-utils';
+import getTimezonesOrDefault from '../../../client/src/utils/get-timezones';
 
 const transform = trans.convert({ cap: false });
 
 const hoursBetween = 24;
 const hoursDay = 24;
+const isGetDefault = true;
 
-export function prepUniqueDaysByHours(cals, tz = 'UTC') {
+export function prepUniqueDaysByHours(
+  cals,
+  tz = getTimezonesOrDefault(isGetDefault)
+) {
   let prev = null;
+  const tzAbbr = tz.abbreviation;
 
   // compose goes bottom to top (map > sortBy > transform)
   return compose(
@@ -26,10 +32,10 @@ export function prepUniqueDaysByHours(cals, tz = 'UTC') {
         prev = cur;
       } else if (
         moment(cur)
-          .tz(tz)
+          .tz(tzAbbr)
           .diff(
             moment(prev)
-              .tz(tz)
+              .tz(tzAbbr)
               .startOf('day'),
             'hours'
           ) >= hoursDay
@@ -41,20 +47,24 @@ export function prepUniqueDaysByHours(cals, tz = 'UTC') {
     sortBy(e => e),
     map(ts =>
       moment(ts)
-        .tz(tz)
+        .tz(tzAbbr)
         .startOf('hours')
         .valueOf()
     )
   )(cals);
 }
 
-export function calcCurrentStreak(cals, tz = 'UTC') {
+export function calcCurrentStreak(
+  cals,
+  tz = getTimezonesOrDefault(isGetDefault)
+) {
   let prev = last(cals);
+  const tzAbbr = tz.abbreviation;
   if (
     moment()
-      .tz(tz)
+      .tz(tzAbbr)
       .startOf('day')
-      .diff(moment(prev).tz(tz), 'hours') > hoursBetween
+      .diff(moment(prev).tz(tzAbbr), 'hours') > hoursBetween
   ) {
     return 0;
   }
@@ -63,9 +73,9 @@ export function calcCurrentStreak(cals, tz = 'UTC') {
   forEachRight(cur => {
     if (
       moment(prev)
-        .tz(tz)
+        .tz(tzAbbr)
         .startOf('day')
-        .diff(moment(cur).tz(tz), 'hours') <= hoursBetween
+        .diff(moment(cur).tz(tzAbbr), 'hours') <= hoursBetween
     ) {
       prev = cur;
       currentStreak++;
@@ -79,17 +89,21 @@ export function calcCurrentStreak(cals, tz = 'UTC') {
   return currentStreak;
 }
 
-export function calcLongestStreak(cals, tz = 'UTC') {
+export function calcLongestStreak(
+  cals,
+  tz = getTimezonesOrDefault(isGetDefault)
+) {
   let tail = cals[0];
+  const tzAbbr = tz.abbreviation;
   const longest = cals.reduce(
     (longest, head, index) => {
       const last = cals[index === 0 ? 0 : index - 1];
       // is streak broken
       if (
         moment(head)
-          .tz(tz)
+          .tz(tzAbbr)
           .startOf('day')
-          .diff(moment(last).tz(tz), 'hours') > hoursBetween
+          .diff(moment(last).tz(tzAbbr), 'hours') > hoursBetween
       ) {
         tail = head;
       }

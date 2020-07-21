@@ -20,6 +20,8 @@ import _pathMigrations from '../resources/pathMigration.json';
 import { fixCompletedChallengeItem } from '../../common/utils';
 import { getChallenges } from '../utils/get-curriculum';
 
+import getTimezonesOrDefault from '../../../client/src/utils/get-timezones';
+
 const log = debug('fcc:boot:challenges');
 
 export default async function bootChallenge(app, done) {
@@ -77,11 +79,13 @@ const jsProjects = [
   'aa2e6f85cab2ab736c9a9b24'
 ];
 
+const isGetDefault = true;
+
 export function buildUserUpdate(
   user,
   challengeId,
   _completedChallenge,
-  timezone
+  timezone = getTimezonesOrDefault(isGetDefault)
 ) {
   const { files } = _completedChallenge;
   let completedChallenge = {};
