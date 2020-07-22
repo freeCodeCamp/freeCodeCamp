@@ -31,7 +31,9 @@ tests:
 <div id='html-seed'>
 
 ```html
+--fcc-editable-region--
 <html>
+--fcc-editable-region--
   <head>
     <title>CatPhotoApp</title>
   </head>
@@ -87,7 +89,9 @@ tests:
       </section>
     </main>
     <footer>
-      <p>No Copyright - <a href="https://www.freecodecamp.org">freeCodeCamp.org</a></p>
+      <p>
+        No Copyright - <a href="https://www.freecodecamp.org">freeCodeCamp.org</a>
+      </p>
     </footer>
   </body>
 </html>

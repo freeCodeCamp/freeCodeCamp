@@ -83,8 +83,10 @@ tests:
         </form>
       </section>
     </main>
+    --fcc-editable-region--
   </body>
 </html>
+--fcc-editable-region--
 ```
 
 </div>

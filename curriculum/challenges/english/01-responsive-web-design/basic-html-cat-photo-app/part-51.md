@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Add one more checkbox under the one you just added, this time with the option `Energetic`.
+Add a final checkbox after the previous one. The `name` and attribute should be the same as the last checkbox.
 
-Remember that the `name` attribute should be the same on every checkbox, but make sure to update the `for` and `id` attributes.
+Also add a `label` element to the right of the new checkbox with text `Energetic`. Make sure to associate the `label` element with the new checkbox.
 
 </section>
 
@@ -74,8 +74,10 @@ tests:
           </fieldset>
           <fieldset>
             <legend>What's your cat's personality?</legend>
+            --fcc-editable-region--
             <input id="loving" type="checkbox" name="personality"> <label for="loving">Loving</label>
             <input id="lazy" type="checkbox" name="personality"> <label for="lazy">Lazy</label>
+            --fcc-editable-region--
           </fieldset>
           <input type="text" name="catphotourl" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>

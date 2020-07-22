@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Nested within the `footer` element, add `p` element with the text `No Copyright - freeCodeCamp.org`.
+Nest a `p` element with the text `No Copyright - freeCodeCamp.org` within the `footer` element.
 
 </section>
 
@@ -81,8 +81,10 @@ tests:
         </form>
       </section>
     </main>
+    --fcc-editable-region--
     <footer>
     </footer>
+    --fcc-editable-region--
   </body>
 </html>
 ```

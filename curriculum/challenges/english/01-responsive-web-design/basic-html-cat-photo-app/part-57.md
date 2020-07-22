@@ -82,7 +82,11 @@ tests:
       </section>
     </main>
     <footer>
-      <p>No Copyright - freeCodeCamp.org</p>
+      <p>
+        --fcc-editable-region--
+        No Copyright - freeCodeCamp.org
+        --fcc-editable-region--
+      </p>
     </footer>
   </body>
 </html>
