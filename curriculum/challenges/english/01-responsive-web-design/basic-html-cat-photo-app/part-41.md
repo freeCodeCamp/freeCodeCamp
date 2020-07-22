@@ -27,7 +27,7 @@ tests:
       assert( radioInputElem.nextSibling.nodeValue.replace(/\s+/g, ' ').match(/ Indoor/i) );
   - text: 'Your `label` element should have an opening tag. Opening tags have this syntax: `<elementName>`.'
     testString: assert( document.querySelector('label') );
-  - text: Your `button` element should have a closing tag. Closing tags have a `/` just after the `<` character.
+  - text: Your `label` element should have a closing tag. Closing tags have a `/` just after the `<` character.
     testString: assert( code.match(/<\/label\>/) );
   - text: Your radio button and its text should all be located between the opening and closing tags of the `label` element. 
     testString: |
