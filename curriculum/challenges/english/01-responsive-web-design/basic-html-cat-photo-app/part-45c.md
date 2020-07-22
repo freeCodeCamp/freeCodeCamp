@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Nest a `legend` element with the text `What's your cat's personality?` inside the second `fieldset` element.
+Add a `legend` element with the text `What's your cat's personality?` inside the second `fieldset` element.
 
 </section>
 
@@ -17,9 +17,27 @@ Nest a `legend` element with the text `What's your cat's personality?` inside th
 
 ```yml
 tests:
-  - text: See description above for instructions.
-    testString: ''
-
+  - text: You have either deleted the second `fieldset` element or it is missing an opening tag or closing tag."
+    testString: |
+      assert(
+        document.querySelectorAll('fieldset').length === 2 &&
+        code.match(/<\/fieldset>/g).length === 2
+      );
+  - text: "Your `legend` element should have an opening tag. Opening tags have this syntax: `<elementName>`."
+    testString: |
+      const secondFieldset = $('fieldset')[1];
+      assert( secondFieldset && [ ...secondFieldset.children ].filter(child => child.nodeName === 'LEGEND').length );
+  - text: "Your `legend` element should have a closing tag. Closing tags have a `/` just after the `<` character."
+    testString: assert( code.match(/<\/legend\>/g).length === 2 );
+  - text: The `legend` element should have the text `What's your cat's personality?`. You have either omitted the text or have a typo.
+    testString: |
+      const secondFieldset = $('fieldset')[1];
+      assert(
+        secondFieldset && [ ...secondFieldset.children ].filter(child => {
+          const extraSpacesRemoved = child.innerText.replace(/\s+/g, ' ');
+          return child.nodeName === 'LEGEND' && extraSpacesRemoved.match(/What's your cat's personality\??$/i) ;
+        }).length
+      );
 ```
 
 </section>
@@ -70,8 +88,10 @@ tests:
             <label><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
             <label><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label>
           </fieldset>
+          --fcc-editable-region--
           <fieldset>
           </fieldset>
+          --fcc-editable-region--
           <input type="text" name="catphotourl" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>
         </form>
