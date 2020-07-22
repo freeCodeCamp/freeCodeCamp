@@ -30,7 +30,6 @@ tests:
   - text: Both radio button and associated labels should be between the opening and closing tags of the `fieldset` element.
     testString: |
       const radioButtons = [ ...$('input[type="radio"]') ];
-      console.log(radioButtons)
       assert( radioButtons.every(btn => btn.parentNode.parentNode.nodeName === "FIELDSET") );
 
 ```

@@ -22,7 +22,7 @@ tests:
   - text: Your `figcaption` element should have a closing tag. Closing tags have a `/` just after the `<` character.
     testString: assert( code.match(/<\/figcaption\>/g).length === 2 );
   - text: There should be a `figure` element right above the second `section` element's closing tag.
-    testString: console.log($('main > section')[1]); assert( $('main > section')[1].lastElementChild.nodeName === 'FIGURE' );
+    testString: assert( $('main > section')[1].lastElementChild.nodeName === 'FIGURE' );
   - text: The last `img` element should be nested in the `figure` element.
     testString: const catsImg = document.querySelectorAll('figure > img')[1]; assert( catsImg && catsImg.getAttribute('src').toLowerCase() === 'https://bit.ly/fcc-cats');
   - text: "Your `figure` element should have an opening tag. Opening tags have the following syntax: `<elementName>`."
