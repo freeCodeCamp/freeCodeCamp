@@ -19,8 +19,10 @@ While you won't notice this in the browser, doing this makes it easier for a ser
 
 ```yml
 tests:
-  - text: See description above for instructions.
-    testString: ''
+  - text: The checkbox `input` element does not have a `name` attribute. Check that there is a space after the opening tag's name.
+    testString: assert( $('input[type="checkbox"]')[0].hasAttribute('name') );
+  - text: The checkbox `input` element should have a `name` attribute with the value `personality`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
+    testString: assert( $('input[type="checkbox"]')[0].getAttribute('name').match(/^personality$/i) );
 
 ```
 
@@ -74,7 +76,9 @@ tests:
           </fieldset>
           <fieldset>
             <legend>What's your cat's personality?</legend>
+            --fcc-editable-region--
             <input id="loving" type="checkbox"> <label for="loving">Loving</label>
+            --fcc-editable-region--
           </fieldset>
           <input type="text" name="catphotourl" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>

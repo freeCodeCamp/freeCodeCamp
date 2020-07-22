@@ -19,8 +19,26 @@ Under the `legend` element you just added, add an `input` with its `type` attrib
 
 ```yml
 tests:
-  - text: See description above for instructions.
-    testString: ''
+  - text: The `input` element for your checkbox should have an opening tag, but not a closing tag.
+    testString: assert( $('fieldset > input') && !code.match(/<\/input\>/g) );
+  - text: You should only have added one input element for your checkbox. Remove any extras.
+    testString: assert( $('fieldset > input').length === 1 );
+  - text: Your new `input` element should be below the `legend` element with the text `What's your cat's personality?`. You have them in the wrong order.
+    testString: |
+      const existingLegendElem = $('fieldset > legend')[1];
+      assert(
+        existingLegendElem && existingLegendElem.nextElementSibling.nodeName === 'INPUT'
+      );
+  - text: Your new `input` element does not have a `type` attribute. Check that there is a space after the opening tag's name.
+    testString: assert( $('fieldset > input')[0].hasAttribute('type') );
+  - text: Your new `input` element should have a `type` attribute with the value `checkbox`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
+    testString: assert( $('fieldset > input')[0].getAttribute('type').match(/^checkbox$/i) );
+  - text: Although you have set the new `input` element's `type` attribute to `checkbox`, it is recommended to always surround the value of an attribute with quotation marks.
+    testString: assert( !/\<\s*input\s+type\s*=\s*checkbox/i.test(code) );
+  - text: The text ` Loving` should be located directly to the right of your checkbox. Make sure there is a space between the element and the text. You have either omitted the text or have a typo.
+    testString: |
+      const checkboxInputElem = $('input[type="checkbox"]')[0];
+      assert( checkboxInputElem.nextSibling.nodeValue.replace(/\s+/g, ' ').match(/ Loving/i) );
 
 ```
 
@@ -72,9 +90,11 @@ tests:
             <label><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
             <label><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label>
           </fieldset>
+          --fcc-editable-region--
           <fieldset>
             <legend>What's your cat's personality?</legend>
           </fieldset>
+          --fcc-editable-region--
           <input type="text" name="catphotourl" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>
         </form>

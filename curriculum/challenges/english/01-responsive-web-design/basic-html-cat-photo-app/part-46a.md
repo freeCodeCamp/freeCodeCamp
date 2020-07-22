@@ -16,8 +16,10 @@ Add an `id` attribute with the value `loving` to the checkbox input.
 
 ```yml
 tests:
-  - text: See description above for instructions.
-    testString: ''
+  - text: Your checkbox should have an `id` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
+    testString: assert( $('input[type="checkbox"]')[0].hasAttribute('id') );
+  - text: Your checkbox should have an `id` attribute with the value `loving`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
+    testString: assert( $('input[type="checkbox"]')[0].id.match(/^loving$/) );
 
 ```
 
@@ -71,7 +73,9 @@ tests:
           </fieldset>
           <fieldset>
             <legend>What's your cat's personality?</legend>
-           <input type="checkbox"> Loving
+            --fcc-editable-region--
+            <input type="checkbox"> Loving
+            --fcc-editable-region--
           </fieldset>
           <input type="text" name="catphotourl" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>
