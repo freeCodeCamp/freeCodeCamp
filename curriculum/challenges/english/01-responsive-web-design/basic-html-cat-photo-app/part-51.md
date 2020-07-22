@@ -74,8 +74,8 @@ tests:
           </fieldset>
           <fieldset>
             <legend>What's your cat's personality?</legend>
-            <label for="loving"><input id="loving" type="checkbox" name="personality"> Loving</label>
-            <label for="lazy"><input id="lazy" type="checkbox" name="personality"> Lazy</label>
+            <input id="loving" type="checkbox" name="personality"> <label for="loving">Loving</label>
+            <input id="lazy" type="checkbox" name="personality"> <label for="lazy">Lazy</label>
           </fieldset>
           <input type="text" name="catphotourl" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>
