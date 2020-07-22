@@ -1,3 +1,4 @@
+/* eslint-disable no-unreachable */
 /* global PAYPAL_SUPPORTERS */
 import { createAction, handleActions } from 'redux-actions';
 import { uniqBy } from 'lodash';
@@ -180,6 +181,7 @@ export const shouldRequestDonationSelector = state => {
   const canRequestProgressDonation = state[ns].canRequestProgressDonation;
   const isDonating = isDonatingSelector(state);
   const canRequestBlockDonation = canRequestBlockDonationSelector(state);
+  return true;
 
   // don't request donation if already donating
   if (isDonating) return false;
