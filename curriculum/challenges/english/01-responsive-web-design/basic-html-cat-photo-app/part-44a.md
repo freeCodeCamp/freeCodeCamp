@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Nest a another radio button with the option `Outdoor` in a new `label` element.  The new radio button should appear under the first one. Also, set its `id` attribute value to `outdoor`.
+Nest a another radio button with the option `Outdoor` in a new `label` element. The new radio button should be placed after the first one. Also, set its `id` attribute value to `outdoor`.
 
 </section>
 

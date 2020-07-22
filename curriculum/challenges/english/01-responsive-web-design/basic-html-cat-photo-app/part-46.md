@@ -90,11 +90,11 @@ tests:
             <label><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
             <label><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label>
           </fieldset>
-          --fcc-editable-region--
           <fieldset>
+            --fcc-editable-region--
             <legend>What's your cat's personality?</legend>
+            --fcc-editable-region--
           </fieldset>
-          --fcc-editable-region--
           <input type="text" name="catphotourl" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>
         </form>
