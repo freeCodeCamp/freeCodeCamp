@@ -19,6 +19,8 @@ While you won't notice this in the browser, doing this makes it easier for a ser
 
 ```yml
 tests:
+  - text: You should make sure the checkbox is still present.
+    testString: assert( $('input[type="checkbox"]')[0] );
   - text: The checkbox `input` element does not have a `name` attribute. Check that there is a space after the opening tag's name.
     testString: assert( $('input[type="checkbox"]')[0].hasAttribute('name') );
   - text: The checkbox `input` element should have a `name` attribute with the value `personality`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
