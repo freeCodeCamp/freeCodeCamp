@@ -1,6 +1,6 @@
 ---
 id: 5efc54138d6a74d05e68af76
-title: Part 49
+title: Part 46a
 challengeType: 0
 isHidden: true
 ---
@@ -8,8 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Add an `id` attribute with the value `loving` to the checkbox input. Also, to increase accessibility, add a `for` attribute to the `label` element around the checkbox input and give it the same value, `loving`.
-
+Add an `id` attribute with the value `loving` to the checkbox input.
 </section>
 
 ## Tests
@@ -72,7 +71,7 @@ tests:
           </fieldset>
           <fieldset>
             <legend>What's your cat's personality?</legend>
-            <label><input type="checkbox" name="personality"> Loving</label>
+           <input type="checkbox"> Loving
           </fieldset>
           <input type="text" name="catphotourl" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>
