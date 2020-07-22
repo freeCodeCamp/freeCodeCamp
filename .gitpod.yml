@@ -12,11 +12,11 @@ ports:
   onOpen: ignore
 
 tasks:
-- before: >
-    echo -e '
-    export COOKIE_DOMAIN=gitpod.io\n
-    export HOME_LOCATION=$(gp url 8000)\n
-    export API_LOCATION=$(gp url 3000)\n
+- before: |
+    echo '
+    export COOKIE_DOMAIN=gitpod.io
+    export HOME_LOCATION=$(gp url 8000)
+    export API_LOCATION=$(gp url 3000)
     ' >> ~/.bashrc;
     exit;
 
