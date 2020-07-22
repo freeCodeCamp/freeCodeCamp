@@ -15,6 +15,7 @@ import { stripeScriptLoader } from '../../utils/scriptLoaders';
 import DonateFormChildViewForHOC from './DonateFormChildViewForHOC';
 import DonateCompletion from './DonateCompletion';
 import PaypalButton from './PaypalButton';
+import AmazonPayButton from './AmazonPayButton';
 import { userSelector } from '../../redux';
 
 import { Spacer } from '../../components/helpers';
@@ -56,11 +57,13 @@ class MinimalDonateForm extends Component {
       ...modalDefaultStateConfig,
       ...initialState,
       isDonating: this.props.isDonating,
+      isAmazonWidgetsDisplayed: false,
       stripe: null
     };
     this.handleStripeLoad = this.handleStripeLoad.bind(this);
     this.onDonationStateChange = this.onDonationStateChange.bind(this);
     this.resetDonation = this.resetDonation.bind(this);
+    this.showAmazonWidget = this.showAmazonWidget.bind(this);
   }
 
   componentDidMount() {
@@ -96,6 +99,10 @@ class MinimalDonateForm extends Component {
     return this.setState({ ...initialState });
   }
 
+  showAmazonWidget() {
+    return this.setState({ isAmazonWidgetsDisplayed: true });
+  }
+
   onDonationStateChange(success, processing, error) {
     this.setState(state => ({
       ...state,
@@ -116,7 +123,8 @@ class MinimalDonateForm extends Component {
     const { donationAmount, donationDuration, stripe } = this.state;
     const { handleProcessing, defaultTheme } = this.props;
     const {
-      donationState: { processing, success, error }
+      donationState: { processing, success, error },
+      isAmazonWidgetsDisplayed
     } = this.state;
 
     const donationPlan = `$${donationAmount / 100} / ${donationDuration}`;
@@ -132,34 +140,51 @@ class MinimalDonateForm extends Component {
     return (
       <Row>
         <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
-          <Spacer />
-          <b>Confirm your donation of {donationPlan} with PayPal:</b>
-          <Spacer />
-          <PaypalButton
-            donationAmount={donationAmount}
-            donationDuration={donationDuration}
-            handleProcessing={handleProcessing}
-            onDonationStateChange={this.onDonationStateChange}
-          />
-        </Col>
-        <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
-          <Spacer />
-          <b>Or donate with a credit card:</b>
-          <Spacer />
-          <StripeProvider stripe={stripe}>
-            <Elements>
-              <DonateFormChildViewForHOC
-                defaultTheme={defaultTheme}
+          {!isAmazonWidgetsDisplayed && (
+            <div>
+              <Spacer />
+              <b>
+                Confirm your donation of {donationPlan} with PayPal or Amazon
+                Pay:
+              </b>
+              <Spacer />
+              <PaypalButton
                 donationAmount={donationAmount}
                 donationDuration={donationDuration}
-                getDonationButtonLabel={() =>
-                  `Confirm your donation of ${donationPlan}`
-                }
                 handleProcessing={handleProcessing}
+                onDonationStateChange={this.onDonationStateChange}
               />
-            </Elements>
-          </StripeProvider>
+            </div>
+          )}
+          <AmazonPayButton
+            donationAmount={donationAmount}
+            donationDuration={donationDuration}
+            donationPlan={donationPlan}
+            isAmazonWidgetsDisplayed={isAmazonWidgetsDisplayed}
+            showAmazonWidget={this.showAmazonWidget}
+          />
         </Col>
+
+        {!isAmazonWidgetsDisplayed && (
+          <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
+            <Spacer />
+            <b>Or donate with a credit card:</b>
+            <Spacer />
+            <StripeProvider stripe={stripe}>
+              <Elements>
+                <DonateFormChildViewForHOC
+                  defaultTheme={defaultTheme}
+                  donationAmount={donationAmount}
+                  donationDuration={donationDuration}
+                  getDonationButtonLabel={() =>
+                    `Confirm your donation of ${donationPlan}`
+                  }
+                  handleProcessing={handleProcessing}
+                />
+              </Elements>
+            </StripeProvider>
+          </Col>
+        )}
       </Row>
     );
   }

@@ -4,15 +4,14 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Alert } from '@freecodecamp/react-bootstrap';
+import { Button, Alert } from '@freecodecamp/react-bootstrap';
 
 import { signInLoadingSelector, userSelector } from '../../redux';
 import { scriptLoader } from '../../utils/scriptLoaders';
 import { postChargeAmazonPay } from '../../utils/ajax';
+import { Spacer } from '../../components/helpers';
 
 import { amazonPayClientId, amazonPaySellerId } from '../../../config/env.json';
-
-console.log(amazonPayClientId, amazonPaySellerId);
 
 export class AmazonPayButton extends Component {
   constructor(props) {
@@ -23,13 +22,19 @@ export class AmazonPayButton extends Component {
       showWalletWidget: 'true',
       showConsentWidget: 'true',
       billingAgreementStatus: 'Draft',
+      hasAmazonPayButtonLoaded: false,
       error: ''
     };
 
     this.handleConsentChange = this.handleConsentChange.bind(this);
     this.handleBillingAgreementId = this.handleBillingAgreementId.bind(this);
     this.handleOnSubmit = this.handleOnSubmit.bind(this);
+    this.showAmazonPayButton = this.showAmazonPayButton.bind(this);
   }
+
+  showAmazonPayButton = () => {
+    this.setState({ hasAmazonPayButtonLoaded: true });
+  };
 
   componentDidMount() {
     const componentContext = this;
@@ -60,12 +65,12 @@ export class AmazonPayButton extends Component {
       componentContext.showWalletWidget(null);
     };
 
-    document.getElementById('Logout').onclick = function() {
-      window.amazon.Login.logout();
-      document.cookie =
-        'amazon_Login_accessToken=; ' +
-        'expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
-    };
+    // document.getElementById('Logout').onclick = function() {
+    //   window.amazon.Login.logout();
+    //   document.cookie =
+    //     'amazon_Login_accessToken=; ' +
+    //     'expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
+    // };
 
     scriptLoader(
       'amazon-widgets',
@@ -77,6 +82,7 @@ export class AmazonPayButton extends Component {
 
   showLoginButton() {
     const componentContext = this;
+    console.log('load button');
     // eslint-disable-next-line no-unused-vars
     var authRequest;
     var loginOptions;
@@ -84,7 +90,6 @@ export class AmazonPayButton extends Component {
       type: 'PwA',
       color: 'Gold',
       size: 'large',
-
       authorization: function() {
         loginOptions = {
           scope: 'profile payments:widget payments:shipping_address',
@@ -95,10 +100,13 @@ export class AmazonPayButton extends Component {
           console.log(t.expires_in);
           console.log(t.token_type);
           componentContext.showWalletWidget(null);
+          componentContext.props.showAmazonWidget();
         });
       }
     });
+    componentContext.showAmazonPayButton();
   }
+
   showWalletWidget(billingAgreementId) {
     const componentContext = this;
     // Wallet
@@ -223,13 +231,14 @@ export class AmazonPayButton extends Component {
     console.log(this.state);
     console.log(this.props);
     let { showConsentWidget, showWalletWidget } = this.state;
-    return (
-      <div>
-        {' '}
+    let { donationAmount, donationPlan, isAmazonWidgetsDisplayed } = this.props;
+
+    if (!isAmazonWidgetsDisplayed) {
+      // if (!this.state.hasAmazonPayButtonLoaded) return <Loader />;
+      return (
         <div
           style={{
             textAlign: 'center',
-            border: '1px solid #bbb',
             borderRadius: '3px',
             padding: '5px',
             margin: '5px'
@@ -237,25 +246,37 @@ export class AmazonPayButton extends Component {
         >
           <div id='AmazonPayButton'></div>
         </div>
+      );
+    }
+    return (
+      <div>
+        <Spacer />
+        <b>
+          Confirm your donation of ${donationAmount / 100} today and at the
+          begining of every month:
+        </b>
+        <Spacer />
         <div>{this.state.error && this.renderErrorMessage()}</div>
         {showWalletWidget && (
           <div id='walletWidgetDiv' style={{ height: '250px' }} />
         )}
+        <Spacer />
         {showConsentWidget && (
           <div id='consentWidgetDiv' style={{ height: '120px' }} />
         )}
-        <button
-          // ensure consent and payment method are selected before submission
+        <Spacer />
+        <Button
+          block={true}
+          bsStyle='primary'
+          className='btn-cta'
           disabled={
             this.state.hasConsent === 'false' || !this.state.billingAgreementId
           }
           onClick={this.handleOnSubmit}
+          type='submit'
         >
-          Submit
-        </button>
-        <button id='Logout' name='button' type='button'>
-          Logout
-        </button>
+          Confirm your donation of {donationPlan}
+        </Button>
       </div>
     );
   }
@@ -264,9 +285,12 @@ export class AmazonPayButton extends Component {
 const propTypes = {
   donationAmount: PropTypes.number,
   donationDuration: PropTypes.string,
+  donationPlan: PropTypes.string,
   handleProcessing: PropTypes.func,
+  isAmazonWidgetsDisplayed: PropTypes.bool,
   isDonating: PropTypes.bool,
   onDonationStateChange: PropTypes.func,
+  showAmazonWidget: PropTypes.func,
   skipAddDonation: PropTypes.bool
 };
 
