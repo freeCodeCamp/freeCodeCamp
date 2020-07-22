@@ -19,8 +19,16 @@ After the `main` element, add a `footer` element.
 
 ```yml
 tests:
-  - text: See description above for instructions.
-    testString: ''
+  - text: You have either deleted the `main` element or it is missing an opening tag or closing tag."
+    testString: assert( document.querySelector('main') && code.match(/<\/main>/) );
+  - text: "Your `footer` element should have an opening tag. Opening tags have the following syntax: `<elementName>`."
+    testString: assert( document.querySelector('footer') );
+  - text: Your `footer` element should have a closing tag. Closing tags have a `/` just after the `<` character.
+    testString: assert( code.match(/<\/footer\>/) );
+  - text: Make sure you have not deleted the `main` element's opening tag or closing tag.
+    testString: assert( document.querySelector('main') && code.match(/<\/main\>/));
+  - text: Your `footer` element should the below the closing `main` element tag. You have it put it somewhere else.
+    testString: assert( document.querySelector('main').nextElementSibling.nodeName === 'FOOTER' );
 
 ```
 
@@ -82,8 +90,8 @@ tests:
           <button type="submit">Submit</button>
         </form>
       </section>
+    --fcc-editable-region-- 
     </main>
-    --fcc-editable-region--
   </body>
 </html>
 --fcc-editable-region--
