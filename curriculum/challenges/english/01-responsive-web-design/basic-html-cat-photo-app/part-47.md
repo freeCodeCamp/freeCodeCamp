@@ -40,7 +40,7 @@ tests:
   - text: The new `label` element should have a `for` attribute with the value `loving`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
     testString: |
       const labelElem = $('input[type="checkbox"]')[0].nextElementSibling;
-      assert( labelElem.getAttribute('for').match(/^loving$/i) );
+      assert( labelElem.getAttribute('for').match(/^loving$/) );
   - text: The text `Loving` should be nested within the new `label` element. You have either omitted the text or have a typo.
     testString: |
       const labelElem = document.querySelector('label[for="loving"]');
