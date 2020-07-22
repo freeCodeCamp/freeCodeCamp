@@ -491,8 +491,6 @@ class Editor extends Component {
     outputNode.style.zIndex = '10';
 
     outputNode.setAttribute('aria-hidden', true);
-
-    outputNode.style.background = 'var(--secondary-background)';
     outputNode.style.left = this._editor.getLayoutInfo().contentLeft + 'px';
     outputNode.style.width = this._editor.getLayoutInfo().contentWidth + 'px';
     outputNode.style.top = this.getOutputZoneTop();

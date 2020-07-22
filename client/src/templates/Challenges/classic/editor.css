@@ -35,19 +35,43 @@ button.monaco-editor-tab:hover {
 }
 
 .myInlineDecoration {
-  color: lightgray !important;
+  color: var(--gray-45) !important;
   cursor: pointer;
-  text-decoration: underline;
-  font-weight: bold;
-  font-style: oblique;
 }
 
 .myLineDecoration {
-  background: lightblue;
-  width: 5px !important;
-  margin-left: 3px;
+  background: var(--tertiary-background);
+  width: 10px !important;
+  margin-left: 6px;
 }
 
-.do-not-edit {
-  background: grey;
+#description {
+  background: var(--secondary-background);
+}
+.monaco-editor .margin-view-overlays .line-numbers {
+  color: var(--primary-color);
+}
+
+.monaco-editor .margin-view-overlays .myLineDecoration + .line-numbers {
+  color: var(--gray-45);
+}
+.instruction-panel {
+  display: none;
+}
+[widgetid='my.overlay.widget'] {
+  background: var(--secondary-background) !important;
+  padding: 10px;
+}
+
+[widgetid='my.output.widget'] {
+  background: #eeffdd;
+  padding: 10px;
+}
+
+[widgetid='my.output.widget'] p {
+  color: #154d03 !important;
+}
+
+.vs .monaco-scrollable-element > .scrollbar > .slider {
+  z-index: 11;
 }
