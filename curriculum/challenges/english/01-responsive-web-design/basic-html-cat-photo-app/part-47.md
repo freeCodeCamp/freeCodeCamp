@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Associate the text `Loving` with the checkbox by wrapping the checkbox `input` element with a `label` element.
+You have already learned that nesting an `input` element and its text inside a `label`  associates the text with the `input` element.  Sometimes you may need to keep the text of an `input` element farther from the element itself. You can still make the association by adding a `for` attribute to the `label` element but only nesting the text inside the `label` element. Then, you set the value of the `for` attibute to the same value of the `input` element's `id` attribute value.
 
-This also increases usability by making it so clicking or tapping the word `Loving` fills in the checkbox.
+Associate the text `Loving` with the checkbox by only nesting the text `Loving` in a `label` element and place it to the right side of the checkbox `input` element.
 
 </section>
 
@@ -74,7 +74,7 @@ tests:
           </fieldset>
           <fieldset>
             <legend>What's your cat's personality?</legend>
-            <input type="checkbox"> Loving
+            <input id="loving" type="checkbox"> Loving
           </fieldset>
           <input type="text" name="catphotourl" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>
