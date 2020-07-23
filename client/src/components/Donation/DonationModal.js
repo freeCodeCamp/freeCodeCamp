@@ -112,7 +112,7 @@ function DonateModal({
       <Row>
         {!closeLabel && (
           <Col sm={10} smOffset={1} xs={12}>
-            <b>Nicely done. You just completed {blockNameify(block)}. </b>
+           <center> <b>Nicely done. You just completed {blockNameify(block)}. </b></center>
             <br />
             {donationText}
           </Col>
