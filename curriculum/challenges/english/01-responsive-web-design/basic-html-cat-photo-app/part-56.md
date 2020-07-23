@@ -17,9 +17,18 @@ Nest a `p` element with the text `No Copyright - freeCodeCamp.org` within the `f
 
 ```yml
 tests:
-  - text: See description above for instructions.
-    testString: ''
-
+  - text: You have either deleted the `footer` element or it is missing an opening tag or closing tag."
+    testString: assert( document.querySelector('footer') && code.match(/<\/footer>/) );
+  - text: Your `footer` element should have a `p` element. Make sure to added an opening tag and closing tag for the `p` element.
+    testString: assert( document.querySelector('footer > p') );
+  - text: Your `footer` element should have a closing tag. Closing tags have a `/` just after the `<` character.
+    testString: |
+      const pElemClosingTags = code.match(/<\/p\>/g);
+      assert( pElemClosingTags && pElemClosingTags.length === 2);
+  - text: "Your `p` element's text should be `No Copyright - freeCodeCamp.org`. You have either omitted the text, have a typo, or it is not between the `legend` element's opening and closing tags."
+    testString: |
+      const extraSpacesRemoved = $('footer > p')[0].innerText.replace(/\s+/g, ' ');
+      assert( extraSpacesRemoved.match(/No Copyright - freeCodeCamp\.org$/i) );
 ```
 
 </section>
