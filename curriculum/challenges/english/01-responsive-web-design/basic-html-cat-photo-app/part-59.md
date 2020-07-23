@@ -29,9 +29,7 @@ tests:
     testString: |
       assert( code.match(/\<\/title\>/) );
   - text: Your `title` element's text should be `CatPhotoApp`. You have either omitted the text or have a typo.
-    testString: |
-      const noSpaces = code.replace(/\s/g, '');
-      assert( noSpaces.match(/\<title\>catphotoapp\<\/title\>/i) );
+    testString: assert( document.title && document.title.toLowerCase() === 'catphotoapp' );
 
 ```
 
