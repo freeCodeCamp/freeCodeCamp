@@ -17,8 +17,8 @@ Make the text `freeCodeCamp.org` into a link by enclosing it in an anchor (`a`) 
 
 ```yml
 tests:
-  - text: Your anchor (`a`) element should be nested within the `footer` element. Make sure to added an opening tag and closing tag for the anchor element.
-    testString: assert( $('footer > p > a') );
+  - text: Your anchor (`a`) element should be nested within the `footer` element. Make sure to added an opening tag and closing tag for the anchor (`a`) element.
+    testString: assert( $('footer > p > a').length );
   - text: Your anchor (`a`) element should have a closing tag. Closing tags have a `/` just after the `<` character.
     testString: |
       const aElemClosingTags = code.match(/<\/a\>/g);
