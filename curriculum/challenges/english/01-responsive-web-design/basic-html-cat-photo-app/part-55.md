@@ -25,8 +25,6 @@ tests:
     testString: assert( document.querySelector('footer') );
   - text: Your `footer` element should have a closing tag. Closing tags have a `/` just after the `<` character.
     testString: assert( code.match(/<\/footer\>/) );
-  - text: Make sure you have not deleted the `main` element's opening tag or closing tag.
-    testString: assert( document.querySelector('main') && code.match(/<\/main\>/));
   - text: Your `footer` element should the below the closing `main` element tag. You have it put it somewhere else.
     testString: assert( document.querySelector('main').nextElementSibling.nodeName === 'FOOTER' );
 
