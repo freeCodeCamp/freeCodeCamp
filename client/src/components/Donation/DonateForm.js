@@ -249,11 +249,11 @@ class DonateForm extends Component {
     return (
       <div>
         {isOneTime ? (
-          <b>Confirm your one-time donation of ${donationAmount / 100} :</b>
+          <b>Confirm your one-time donation of ${donationAmount / 100}:</b>
         ) : (
           <b>
             Confirm your donation of ${donationAmount / 100} /{' '}
-            {donationDuration} :
+            {donationDuration}:
           </b>
         )}
         <Spacer />
