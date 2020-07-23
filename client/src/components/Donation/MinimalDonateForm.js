@@ -133,7 +133,7 @@ class MinimalDonateForm extends Component {
       <Row>
         <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
           <Spacer />
-          <b>Confirm your donation of {donationPlan} with PayPal:</b>
+          <center><b>Confirm your donation of {donationPlan} with PayPal:</b></center>
           <Spacer />
           <PaypalButton
             donationAmount={donationAmount}
@@ -144,7 +144,7 @@ class MinimalDonateForm extends Component {
         </Col>
         <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
           <Spacer />
-          <b>Or donate with a credit card:</b>
+          <center><b>Or donate with a credit card:</b></center>
           <Spacer />
           <StripeProvider stripe={stripe}>
             <Elements>
