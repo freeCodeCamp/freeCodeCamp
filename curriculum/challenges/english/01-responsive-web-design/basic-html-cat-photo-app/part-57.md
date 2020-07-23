@@ -1,5 +1,5 @@
 ---
-id: 5ef9b03c81a63668521804e9
+id: 5efc575c8d6a74d05e68af77
 title: Part 57
 challengeType: 0
 isHidden: true
@@ -8,7 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Make the text `freeCodeCamp.org` into a link by enclosing it in an anchor (`a`) element. The `href` attribute should be set to `https://www.freecodecamp.org`.
+Add a final checkbox after the previous one with an `id` attribute value of `energetic`. The `name` and attribute should be the same as the last checkbox.
+
+Also add a `label` element to the right of the new checkbox with text `Energetic`. Make sure to associate the `label` element with the new checkbox.
 
 </section>
 
@@ -17,24 +19,22 @@ Make the text `freeCodeCamp.org` into a link by enclosing it in an anchor (`a`) 
 
 ```yml
 tests:
-  - text: Your anchor (`a`) element should be nested within the `footer` element. Make sure to added an opening tag and closing tag for the anchor (`a`) element.
-    testString: assert( $('footer > p > a').length );
-  - text: Your anchor (`a`) element should have a closing tag. Closing tags have a `/` just after the `<` character.
+  - text: You need to add a new checkbox.
+    testString: assert( $('input[type="checkbox"]').length === 3 );
+  - text: Your new checkbox should have an `id` attribute with the value `energetic` and a `name` attribute with the value `personality`. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
     testString: |
-      const aElemClosingTags = code.match(/<\/a\>/g);
-      assert( aElemClosingTags && aElemClosingTags.length === 3);
-  - text: Your anchor (`a`) element should have an `href` attribute with the value `https://www.freecodecamp.org`. You may have omitted the attribute/value, or have a typo.
+      const checkboxes = [ ...$('input[type="checkbox"]') ];
+      assert( checkboxes.some(checkbox => checkbox.id === 'energetic' && checkbox.getAttribute('name') === 'personality') );
+  - text: Your new checkbox should be after the first one. You have them in the wrong order.
     testString: |
-      const nestedAnchor = $('footer > p > a')[0];
-      assert( nestedAnchor.getAttribute('href') === 'https://www.freecodecamp.org' );
-  - text: The link's text should be `freeCodeCamp.org`. You have either omitted the text or have a typo.
+      const checkboxes = [...$('input[type="checkbox"]')].map(checkbox => checkbox.id);
+      assert( checkboxes.indexOf('lazy') < checkboxes.indexOf('energetic') );
+  - text: On the right side of your new checkbox, there should be `label` element with the text `Energetic`.
     testString: |
-      const nestedAnchor = $('footer > p > a')[0];
-      assert( nestedAnchor.innerText.toLowerCase().replace(/\s+/g, ' ') === 'freecodecamp.org');
-  - text: After nesting the anchor (`a`) element, the only `p` element content visible in the browser should be `No Copyright - freeCodeCamp.org`. Double check the text, spacing, or punctuation of both the `p` and nested anchor element.
-    testString: |
-      const pText = $('footer > p')[0].innerText.toLowerCase().replace(/\s+/g, ' ');
-      assert( pText.match(/^no copyright - freecodecamp.org$/) );
+      const nextElementSibling = $('input[type="checkbox"]')[2].nextElementSibling;
+      assert( nextElementSibling.nodeName === 'LABEL' && nextElementSibling.innerText.replace(/\s+/g, '').match(/^Energetic$/i) );
+  - text: The new `label` should have a `for` attribute with the same value as the `id` attribute of the new checkbox. You have either omitted the value or have a typo.
+    testString: assert( $('input[type="checkbox"]')[2].nextElementSibling.getAttribute('for') === 'energetic' );
 
 ```
 
@@ -83,27 +83,21 @@ tests:
         <form action="https://freecatphotoapp.com/submit-cat-photo">
           <fieldset>
             <legend>Is your cat an indoor or outdoor cat?</legend>
-            <label><input id="indoor" type="radio" name="indoor-outdoor" checked> Indoor</label>
+            <label><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
             <label><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label>
           </fieldset>
           <fieldset>
             <legend>What's your cat's personality?</legend>
-            <input id="loving" type="checkbox" name="personality" checked> <label for="loving">Loving</label>
+            --fcc-editable-region--
+            <input id="loving" type="checkbox" name="personality"> <label for="loving">Loving</label>
             <input id="lazy" type="checkbox" name="personality"> <label for="lazy">Lazy</label>
-            <input id="energetic" type="checkbox" name="personality"> <label for="energetic">Energetic</label>
+            --fcc-editable-region--
           </fieldset>
           <input type="text" name="catphotourl" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>
         </form>
       </section>
     </main>
-    <footer>
-      <p>
-        --fcc-editable-region--
-        No Copyright - freeCodeCamp.org
-        --fcc-editable-region--
-      </p>
-    </footer>
   </body>
 </html>
 ```

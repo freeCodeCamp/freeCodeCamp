@@ -1,5 +1,5 @@
 ---
-id: 5efae0543cbd2bbdab94e333
+id: 5efada803cbd2bbdab94e332
 title: Part 28
 challengeType: 0
 isHidden: true
@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-To improve accessibility of the image you just added, add an `alt` attribute with the text `Five cats looking around a field.`
+Inside the `figure` element you just added, nest an `img` element with a `src` attribute set to `https://bit.ly/fcc-cats`.
 
 </section>
 
@@ -17,16 +17,20 @@ To improve accessibility of the image you just added, add an `alt` attribute wit
 
 ```yml
 tests:
-  - text: 'Your `figure` element should have an opening tag. Opening tags have this syntax: `<elementName>`.'
+  - text: 'Your second `figure` element should have an opening tag. Opening tags have this syntax: `<elementName>`.'
     testString: assert( document.querySelectorAll('figure').length === 2 );
-  - text: Your `ol` element should have a closing tag. Closing tags have a `/` just after the `<` character.
+  - text: Your second `figure` element should have a closing tag. Closing tags have a `/` just after the `<` character.
     testString: assert( code.match(/<\/figure>/g).length === 2 );
-  - text: There should be a `figure` element right above the last `section` element's closing tag.
+  - text: There should be a second `figure` element right above the second `section` element's closing tag. You have them in the wrong order.
     testString: assert( $('main > section')[1].lastElementChild.nodeName === 'FIGURE' );
-  - text: The Cats `img` element should be nested in the `figure` element.
+  - text: You should have a third `img` element nested in the `figure` element.
     testString: const catsImg = document.querySelectorAll('figure > img')[1]; assert( catsImg && catsImg.getAttribute('src').toLowerCase() === 'https://bit.ly/fcc-cats');
-  - text: The Cats `img` element should have an `alt` attribute with the value `Five cats looking around a field.`
-    testString: const catsImg = document.querySelectorAll('figure > img')[1]; assert( catsImg.getAttribute('alt').replace(/\s+/g, ' ').match(/^Five cats looking around a field\.?$/i) );
+  - text: The third image should have an `src` attribute set to `https://bit.ly/fcc-cats`.
+    testString: |
+      const catsImg = document.querySelectorAll('figure > img')[1];
+      assert( catsImg && catsImg.getAttribute('src').toLowerCase() === 'https://bit.ly/fcc-cats');
+  - text: Although you have set the new image's `src` to the correct URL, it is recommended to always surround the value of an attribute with quotation marks.
+    testString: assert( !/\<img\s+.+\s+src\s*=\s*https:\/\/bit\.ly\/fcc-cats/.test(code) );
 
 ```
 
@@ -65,11 +69,10 @@ tests:
           <li>thunder</li>
           <li>other cats</li>
         </ol>
+        --fcc-editable-region--
         <figure>
-          --fcc-editable-region--
-          <img src="https://bit.ly/fcc-cats">
-          --fcc-editable-region--
         </figure>
+        --fcc-editable-region--
       </section>
     </main>
   </body>

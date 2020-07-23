@@ -1,5 +1,5 @@
 ---
-id: 5efc4f528d6a74d05e68af74
+id: 5ef9b03c81a63668521804de
 title: Part 47
 challengeType: 0
 isHidden: true
@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-There's another way to associate an `input` element's text with the element itself. You can nest the text within a `label` element and add a `for` attribute with the same value as the `input` element's `id` attribute.
+Notice that both radio buttons can be selected at the same time. To make it so selecting one radio button automatically deselects the other, both buttons must have a `name`  attribute with the same value.
 
-Associate the text `Loving` with the checkbox by only nesting the text `Loving` in a `label` element and place it to the right side of the checkbox `input` element.
+Add the `name` attribute with the value `indoor-outdoor` to both radio buttons.
 
 </section>
 
@@ -19,32 +19,18 @@ Associate the text `Loving` with the checkbox by only nesting the text `Loving` 
 
 ```yml
 tests:
-  - text: You should make sure the checkbox is still present.
-    testString: assert( $('input[type="checkbox"]')[0] );
-  - text: Your checkbox should still have an `id` attribute with the value `loving`. You may have removed the attribute or changed its value.
-    testString: assert( $('input[type="checkbox"]')[0].id === 'loving' );
-  - text: The text ` Loving` should no longer be located directly to the right of your checkbox.
+  - text: Both radio buttons should still be located between opening and closing `label` element tags. 
     testString: |
-      const checkboxInputElem = $('input[type="checkbox"]')[0];
-      assert( !checkboxInputElem.nextSibling.nodeValue.replace(/\s+/g, ' ').match(/ Loving/i) );
-  - text: You will need to add a new `label` element in which to nest the text `Loving`. Make sure it has both an opening and closing tag.
-    testString: assert( document.querySelectorAll('label').length === 3  && code.match(/<\/label\>/g).length === 3 );
-  - text: The new `label` element should be located directly to the right of your checkbox. Make sure there is a space between the two elements.
+      const labelChildNodes = [ ...document.querySelectorAll('form > label') ].map(node => node.childNodes);
+      assert( labelChildNodes.filter(childNode => childNode[0].nodeName === "INPUT").length === 2 );
+  - text: Both radio buttons should have a `name` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
     testString: |
-      const checkboxInputElem = $('input[type="checkbox"]')[0];
-      assert( checkboxInputElem.nextElementSibling.nodeName === 'LABEL' );
-  - text: The new `label` element does not have a `for` attribute. Check that there is a space after the opening tag's name.
+      const radioButtons = [...document.querySelectorAll('input[type="radio"]')];
+      assert( radioButtons.every(btn => btn.hasAttribute('name')) );
+  - text: Both radio buttons should have a `name` attribute with the value `indoor-outdoor`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
     testString: |
-      const labelElem = $('input[type="checkbox"]')[0].nextElementSibling;
-      assert( labelElem.hasAttribute('for') );
-  - text: The new `label` element should have a `for` attribute with the value `loving`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
-    testString: |
-      const labelElem = $('input[type="checkbox"]')[0].nextElementSibling;
-      assert( labelElem.getAttribute('for').match(/^loving$/) );
-  - text: The text `Loving` should be nested within the new `label` element. You have either omitted the text or have a typo.
-    testString: |
-      const labelElem = document.querySelector('label[for="loving"]');
-      assert( labelElem.textContent.replace(/\s/g, '').match(/Loving/i) );
+      const radioButtons = [ ...$('input[type="radio"]') ];
+      assert( radioButtons.every(btn => btn.getAttribute('name').match(/^indoor-outdoor$/)) );
 
 ```
 
@@ -64,7 +50,6 @@ tests:
         <!-- TODO: Add link to cat photos -->
         <p>Click here to view more <a target="_blank" href="https://www.freecodecamp.org/cat-photos">cat photos</a>.</p>
         <a href="https://www.freecodecamp.org/cat-photos"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-      </section>
       <section>
         <h2>Cat Lists</h2>
         <h3>Things cats love:</h3>
@@ -91,17 +76,10 @@ tests:
       <section>
         <h2>Cat Form</h2>
         <form action="https://freecatphotoapp.com/submit-cat-photo">
-          <fieldset>
-            <legend>Is your cat an indoor or outdoor cat?</legend>
-            <label><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
-            <label><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label>
-          </fieldset>
-          <fieldset>
-            <legend>What's your cat's personality?</legend>
-            --fcc-editable-region--
-            <input id="loving" type="checkbox"> Loving
-            --fcc-editable-region--
-          </fieldset>
+          --fcc-editable-region--
+          <label><input id="indoor" type="radio"> Indoor</label>
+          <label><input id="outdoor" type="radio"> Outdoor</label>
+          --fcc-editable-region--
           <input type="text" name="catphotourl" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>
         </form>

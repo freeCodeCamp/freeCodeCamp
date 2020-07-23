@@ -1,6 +1,6 @@
 ---
-id: 5efc54138d6a74d05e68af76
-title: Part 46a
+id: 5ef9b03c81a63668521804dd
+title: Part 44
 challengeType: 0
 isHidden: true
 ---
@@ -8,7 +8,10 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Add an `id` attribute with the value `loving` to the checkbox input.
+`label` elements are used to help associate the text for an `input` element with the input element itself (especially for assistive technologies like screen readers). For example, `<label><input type="radio"> cat</label>` makes it so clicking the word `cat` also selects the corresponding radio button.
+
+Nest your `radio` button inside a `label` element.
+
 </section>
 
 ## Tests
@@ -16,10 +19,20 @@ Add an `id` attribute with the value `loving` to the checkbox input.
 
 ```yml
 tests:
-  - text: Your checkbox should have an `id` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
-    testString: assert( $('input[type="checkbox"]')[0].hasAttribute('id') );
-  - text: Your checkbox should have an `id` attribute with the value `loving`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
-    testString: assert( $('input[type="checkbox"]')[0].id.match(/^loving$/) );
+  - text: You should make sure the radio button is still present.
+    testString: assert( $('input[type="radio"]')[0] );
+  - text: The text ` Indoor` should be located directly to the right of your `radio` button. Make sure there is a space between the element and the text. You have either omitted the text or have a typo.
+    testString: |
+      const radioInputElem = $('input')[0];
+      assert( radioInputElem.nextSibling.nodeValue.replace(/\s+/g, ' ').match(/ Indoor/i) );
+  - text: 'Your `label` element should have an opening tag. Opening tags have this syntax: `<elementName>`.'
+    testString: assert( document.querySelector('label') );
+  - text: Your `label` element should have a closing tag. Closing tags have a `/` just after the `<` character.
+    testString: assert( code.match(/<\/label\>/) );
+  - text: Your radio button and its text should all be located between the opening and closing tags of the `label` element. 
+    testString: |
+      const labelChildNodes = [ ...$('form > label')[0].childNodes ];
+      assert( labelChildNodes.filter(childNode => childNode.nodeName === "INPUT").length );
 
 ```
 
@@ -66,17 +79,9 @@ tests:
       <section>
         <h2>Cat Form</h2>
         <form action="https://freecatphotoapp.com/submit-cat-photo">
-          <fieldset>
-            <legend>Is your cat an indoor or outdoor cat?</legend>
-            <label><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
-            <label><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label>
-          </fieldset>
-          <fieldset>
-            <legend>What's your cat's personality?</legend>
-            --fcc-editable-region--
-            <input type="checkbox"> Loving
-            --fcc-editable-region--
-          </fieldset>
+          --fcc-editable-region--
+          <input type="radio"> Indoor
+          --fcc-editable-region--
           <input type="text" name="catphotourl" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>
         </form>

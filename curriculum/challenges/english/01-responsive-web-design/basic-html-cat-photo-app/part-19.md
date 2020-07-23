@@ -1,5 +1,5 @@
 ---
-id: 5dfb5ecbeacea3f48c6300b1
+id: 5dfa37b9eacea3f48c6300b0
 title: Part 19
 challengeType: 0
 isHidden: true
@@ -8,16 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Use list item (`li`) elements to create items in a list. Here is an example of list items in an unordered list:
-
-```html
-<ul>
-  <li>milk</li>
-  <li>cheese</li>
-</ul>
-```
-
-Nest three list items within the `ul` element to display three things cats love: `cat nip`, `laser pointers` and `lasagna`. 
+After the `h3` element with the `Things cats love:` text, add an unordered list (`ul`) element. Note that nothing will be displayed at this point.
 
 </section>
 
@@ -26,12 +17,14 @@ Nest three list items within the `ul` element to display three things cats love:
 
 ```yml
 tests:
-  - text: You should have three `li` elements. Each `li` element should have its own opening and closing tag.
-    testString: assert( $('li').length === 3 &&  code.match(/<\/li\>/g).length === 3 );
-  - text: You should have three `li` elements with the text `cat nip`, `laser pointers` and `lasagna` in any order. You have either omitted some text or have a typo.
-    testString: assert.deepStrictEqual( [ ...document.querySelectorAll('li') ].map(item => item.innerText.toLowerCase()).sort((a, b) => a.localeCompare(b)), ["cat nip", "lasagna", "laser pointers"] );
-  - text: The three `li` elements should be located between the `ul` element's opening and closing tags.
-    testString: assert( [ ...document.querySelectorAll('li') ].filter(item => item.parentNode.nodeName === 'UL').length === 3 );
+  - text: 'Your `ul` element should have an opening tag. Opening tags have this syntax: `<elementName>`.'
+    testString: assert( document.querySelector('ul') );
+  - text: Your `ul` element should have a closing tag. Closing tags have a `/` just after the `<` character.
+    testString: assert( code.match(/<\/ul>/) );
+  - text: The `ul` element should be above the second `section` element's closing tag.
+    testString: |
+      const secondSectionLastElemNode = $('main > section')[1].lastElementChild;
+      assert( secondSectionLastElemNode.nodeName === 'UL' );
 
 ```
 
@@ -48,17 +41,15 @@ tests:
     <h1>CatPhotoApp</h1>
     <main>
       <section>
-        <h2>Cat Photos</h2>
+      <h2>Cat Photos</h2>
         <!-- TODO: Add link to cat photos -->
         <p>Click here to view more <a target="_blank" href="https://www.freecodecamp.org/cat-photos">cat photos</a>.</p>
         <a href="https://www.freecodecamp.org/cat-photos"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
       </section>
       <section>
+        --fcc-editable-region--
         <h2>Cat Lists</h2>
         <h3>Things cats love:</h3>
-        --fcc-editable-region--
-        <ul>
-        </ul>
         --fcc-editable-region--
       </section>
     </main>

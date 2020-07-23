@@ -1,5 +1,5 @@
 ---
-id: 5ef9b03c81a63668521804ec
+id: 5ef9b03c81a63668521804e8
 title: Part 60
 challengeType: 0
 isHidden: true
@@ -8,9 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Notice that the entire contents of the page are nested within an `html` element. All other elements must be descendants of this `html` element.
-
-Add the `lang` attribute with the value `en` to the opening `html` tag to specify that the language of the page is English.
+Nest a `p` element with the text `No Copyright - freeCodeCamp.org` within the `footer` element.
 
 </section>
 
@@ -19,15 +17,18 @@ Add the `lang` attribute with the value `en` to the opening `html` tag to specif
 
 ```yml
 tests:
-  - text: You have either deleted the `html` element or it is missing an opening tag or closing tag.
-    testString: assert( code.match(/\<html.*?\>/) && code.match(/\<\/html\>/) );
-  - text: Your `html` element should have a `lang` attribute with the value `en`. You may have omitted the attribute/value, or have a typo.
+  - text: You have either deleted the `footer` element or it is missing an opening tag or closing tag."
+    testString: assert( document.querySelector('footer') && code.match(/<\/footer>/) );
+  - text: Your `footer` element should have a `p` element. Make sure to added an opening tag and closing tag for the `p` element.
+    testString: assert( document.querySelector('footer > p') );
+  - text: Your `footer` element should have a closing tag. Closing tags have a `/` just after the `<` character.
     testString: |
-      const extraSpacesRemoved = code.replace(/\s+/g, ' ');
-      assert( extraSpacesRemoved.match(/\<html lang\=("|')([a-z]+)\1\>/) );
-  - text: Although you have set the `html` element's `lang` attribute to `en`, it is recommended to always surround the value of an attribute with quotation marks.
-    testString: assert( !/\<\s*html\s+lang\s*=en/i.test(code) );
-
+      const pElemClosingTags = code.match(/<\/p\>/g);
+      assert( pElemClosingTags && pElemClosingTags.length === 2);
+  - text: "Your `p` element's text should be `No Copyright - freeCodeCamp.org`. You have either omitted the text, have a typo, or it is not between the `legend` element's opening and closing tags."
+    testString: |
+      const extraSpacesRemoved = $('footer > p')[0].innerText.replace(/\s+/g, ' ');
+      assert( extraSpacesRemoved.match(/No Copyright - freeCodeCamp\.org$/i) );
 ```
 
 </section>
@@ -37,12 +38,7 @@ tests:
 <div id='html-seed'>
 
 ```html
---fcc-editable-region--
 <html>
---fcc-editable-region--
-  <head>
-    <title>CatPhotoApp</title>
-  </head>
   <body>
     <h1>CatPhotoApp</h1>
     <main>
@@ -94,11 +90,10 @@ tests:
         </form>
       </section>
     </main>
+    --fcc-editable-region--
     <footer>
-      <p>
-        No Copyright - <a href="https://www.freecodecamp.org">freeCodeCamp.org</a>
-      </p>
     </footer>
+    --fcc-editable-region--
   </body>
 </html>
 ```

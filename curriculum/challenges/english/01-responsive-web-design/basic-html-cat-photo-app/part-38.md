@@ -1,5 +1,5 @@
 ---
-id: 5efb2c990dc218d6c85f89b2
+id: 7cf9b03d81a65668421804c3
 title: Part 38
 challengeType: 0
 isHidden: true
@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Even through you added your button below the text input, they appear next to each other on the page. That's because both `input` and `button` elements are <dfn>inline elements</dfn>, which don't appear on new lines.
+In order for a form's data to be accessed by the locaton specified in the `action` attribute, you must give the text field a `name` attribute and assign it a value to represent the data being submitted. For example, you could use the following syntax for an email address text field: `<input type="text" name="email">`.
 
-You learned previously that the button submits the form by default, but you can explicitly add the `type` attribute with the value `submit` to it to make it clearer.  Go ahead and do this to specify this button should submit the form.
+Add the `name` attribute with the value `catphoto ` to your text field.
 
 </section>
 
@@ -19,16 +19,16 @@ You learned previously that the button submits the form by default, but you can 
 
 ```yml
 tests:
-  - text: 'Your `button` element should have an opening tag. Opening tags have this syntax: `<elementName>`.'
-    testString: assert( document.querySelector('button') );
-  - text: Your `button` element should have a closing tag. Closing tags have a `/` just after the `<` character.
-    testString: assert( code.match(/<\/button\>/) );
-  - text: Your `button` element does not have a `type` attribute. Check that there is a space after the opening tag's name.
-    testString: assert( $('button')[0].hasAttribute('type') );
-  - text: Your `button` element should have a `type` attribute with the value `submit`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
-    testString: assert( $('button')[0].getAttribute('type').match(/^submit$/i) );
-  - text: Although you have set the `button` element's `type` attribute to `submit`, it is recommended to always surround the value of an attribute with quotation marks.
-    testString: assert( !/\<\s*button\s+type\s*=\s*submit/i.test(code) );
+  - text: You have either deleted your `input` element or it has invalid syntax. All attributes' values should be surrounded by quotation marks.
+    testString: assert( $('input').length );
+  - text: Your `form` should only contain the `input` element. Remove any HTML additional elements or text within the `form` element.
+    testString: assert( $('form')[0].children.length === 1 && $('form')[0].innerText.trim().length === 0 );
+  - text: Your `input` element does not have a `name` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
+    testString: assert( $('input')[0].hasAttribute('name') );
+  - text: Your `input` element should have a `name` attribute with the value `catphotourl`.  You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
+    testString: assert( $('input')[0].getAttribute('name').match(/^catphotourl$/i) );
+  - text: Although you have set the `input` element's `name` attribute to `catphotourl`, it is recommended to always surround the value of an attribute with quotation marks.
+    testString: assert( !/\<\s*input\s+.*\s*=\s*catphotourl/.test(code) );
 
 ```
 
@@ -75,9 +75,8 @@ tests:
       <section>
         <h2>Cat Form</h2>
         <form action="https://freecatphotoapp.com/submit-cat-photo">
-          <input type="text" name="catphotourl" placeholder="cat photo URL" required>
-          --fcc-editable-region--
-          <button>Submit</button>
+          --fcc-editable-region--  
+          <input type="text">
           --fcc-editable-region--
         </form>
       </section>

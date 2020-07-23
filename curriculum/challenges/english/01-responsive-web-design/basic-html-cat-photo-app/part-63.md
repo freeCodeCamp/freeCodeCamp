@@ -1,6 +1,6 @@
 ---
-id: 5f0d48e7b435f13ab6550051
-title: Part 45a
+id: 5ef9b03c81a63668521804eb
+title: Part 63
 challengeType: 0
 isHidden: true
 ---
@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-The `legend` element acts as a caption for the content in the `fieldset` element. It gives users context about what they should enter into that part of the form.
+The `title` element determines what browsers show in the title bar or tab for the page.
 
-Add a `legend` element with the text `Is your cat an indoor or outdoor cat?` above both of the radio buttons.
+Add a `title` element within the `head` element. Its text should be `CatPhotoApp`.
 
 </section>
 
@@ -19,24 +19,17 @@ Add a `legend` element with the text `Is your cat an indoor or outdoor cat?` abo
 
 ```yml
 tests:
-  - text: "Your `legend` element should have an opening tag. Opening tags have the following syntax: `<elementName>`."
-    testString: assert( document.querySelector('legend') );
-  - text: Your `legend` element should have a closing tag. Closing tags have a `/` just after the `<` character.
-    testString: assert( code.match(/<\/legend\>/) );
-  - text: Your `legend` element should be the first element right below `fieldset` element's opening tag and before the first radio button's opening `label` tag. It is not in the correct position.
+  - text: You have either deleted the `head` element or it is missing an opening tag or closing tag.
+    testString: assert( code.match(/\<head\>/) && code.match(/\<\/head\>/) );
+  - text: Your `title` element should be nested in the `head` element. Make sure to added an opening tag and closing tag for the `title` element.
     testString: |
-      const fieldsetElem = document.querySelector('fieldset');
-      const fieldsetElemChildren = fieldsetElem.children;
-      assert(
-        fieldsetElem.firstElementChild.nodeName === 'LEGEND' &&
-        fieldsetElemChildren[1].nodeName === 'LABEL' &&
-        fieldsetElemChildren[1].children[0].nodeName === 'INPUT' &&
-        fieldsetElemChildren[1].children[0].id === 'indoor'
-      );
-  - text: "Your `legend` element's text should be `Is your cat an indoor or outdoor cat?`. You have either omitted the text, have a typo, or it is not between the `legend` element's opening and closing tags."
+      const noSpaces = code.replace(/\s/g, '');
+      assert( noSpaces.match(/\<head\>\<title\>.*\<\/title\>\<\/head\>/) );
+  - text: Your `title` element should have a closing tag. Closing tags have a `/` just after the `<` character.
     testString: |
-      const extraSpacesRemoved = document.querySelector('legend').innerText.replace(/\s+/g, ' ');
-      assert( extraSpacesRemoved.match(/Is your cat an indoor or outdoor cat\??$/i) );
+      assert( code.match(/\<\/title\>/) );
+  - text: Your `title` element's text should be `CatPhotoApp`. You have either omitted the text or have a typo.
+    testString: assert( document.title && document.title.toLowerCase() === 'catphotoapp' );
 
 ```
 
@@ -48,6 +41,10 @@ tests:
 
 ```html
 <html>
+  --fcc-editable-region--
+  <head>
+  </head>
+  --fcc-editable-region--
   <body>
     <h1>CatPhotoApp</h1>
     <main>
@@ -84,16 +81,26 @@ tests:
         <h2>Cat Form</h2>
         <form action="https://freecatphotoapp.com/submit-cat-photo">
           <fieldset>
-            --fcc-editable-region--
-            <label><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
+            <legend>Is your cat an indoor or outdoor cat?</legend>
+            <label><input id="indoor" type="radio" name="indoor-outdoor" checked> Indoor</label>
             <label><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label>
-            --fcc-editable-region--
+          </fieldset>
+          <fieldset>
+            <legend>What's your cat's personality?</legend>
+            <input id="loving" type="checkbox" name="personality" checked> <label for="loving">Loving</label>
+            <input id="lazy" type="checkbox" name="personality"> <label for="lazy">Lazy</label>
+            <input id="energetic" type="checkbox" name="personality"> <label for="energetic">Energetic</label>
           </fieldset>
           <input type="text" name="catphotourl" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>
         </form>
       </section>
     </main>
+    <footer>
+      <p>
+        No Copyright - <a href="https://www.freecodecamp.org">freeCodeCamp.org</a>
+      </p>
+    </footer>
   </body>
 </html>
 ```

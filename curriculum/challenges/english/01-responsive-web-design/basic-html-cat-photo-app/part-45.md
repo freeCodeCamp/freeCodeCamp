@@ -1,5 +1,5 @@
 ---
-id: 5ef9b03c81a63668521804e1
+id: 5ef9b03c81a63668521804df
 title: Part 45
 challengeType: 0
 isHidden: true
@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-The `fieldset` element is used to group related inputs and labels together in a web form. `fieldset` elements are <dfn>block-level elements</dfn>, meaning that they appear on a new line.
+The `id` attribute is used to identify specific HTML elements. Each `id` attribute's value must be unique all other `id` values for the entire page.
 
-Nest the `Indoor` and `Outdoor` radio buttons within a `fieldset` element, and don't forget to indent the buttons.
+Add an `id` attribute with the value `indoor` to the radio button. When elements have multiple attributes, the order of the attributes doesn't matter.
 
 </section>
 
@@ -19,18 +19,14 @@ Nest the `Indoor` and `Outdoor` radio buttons within a `fieldset` element, and d
 
 ```yml
 tests:
-  - text: Both radio buttons should still be located between opening and closing `label` element tags. 
+  - text: Your radio button should still be located between the opening and closing tags of the `label` element. 
     testString: |
-      const labelChildNodes = [ ...$('label') ].map(node => [ ...node.childNodes ]);
-      assert( labelChildNodes.filter(childNode => childNode[0].nodeName === "INPUT").length === 2 );
-  - text: "Your `fieldset` element should have an opening tag. Opening tags have the following syntax: `<elementName>`."
-    testString: assert( document.querySelector('fieldset') );
-  - text: Your `fieldset` element should have a closing tag. Closing tags have a `/` just after the `<` character.
-    testString: assert( code.match(/<\/fieldset\>/) );
-  - text: Both radio button and associated labels should be between the opening and closing tags of the `fieldset` element.
-    testString: |
-      const radioButtons = [ ...$('input[type="radio"]') ];
-      assert( radioButtons.every(btn => btn.parentNode.parentNode.nodeName === "FIELDSET") );
+      const labelChildNodes = [ ...$('form > label')[0].childNodes ];
+      assert( labelChildNodes.filter(childNode => childNode.nodeName === "INPUT").length );
+  - text: Your radio button should have an `id` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
+    testString: assert( $('input')[0].hasAttribute('id') );
+  - text: Your radio element should have an `id` attribute with the value `indoor`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
+    testString: assert( $('input')[0].id.match(/^indoor$/) );
 
 ```
 
@@ -78,8 +74,7 @@ tests:
         <h2>Cat Form</h2>
         <form action="https://freecatphotoapp.com/submit-cat-photo">
           --fcc-editable-region--
-          <label><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
-          <label><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label>
+          <label><input type="radio"> Indoor</label>
           --fcc-editable-region--
           <input type="text" name="catphotourl" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>

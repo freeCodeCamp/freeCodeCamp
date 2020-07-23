@@ -1,5 +1,5 @@
 ---
-id: 5ef9b03c81a63668521804d3
+id: 5ef9b03c81a63668521804d2
 title: Part 26
 challengeType: 0
 isHidden: true
@@ -8,7 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-After the ordered list, add another `figure` element.
+The code for an ordered list (`ol`) is similar to an unordered list, but list items in an ordered list are numbered when displayed.
+
+After the final second section' last `h3` element, add an ordered list with these three list items: `flea treatment`, `thunder` and `other cats`.
 
 </section>
 
@@ -17,12 +19,16 @@ After the ordered list, add another `figure` element.
 
 ```yml
 tests:
-  - text: 'Your `figure` element should have an opening tag. Opening tags have this syntax: `<elementName>`.'
-    testString: assert( document.querySelectorAll('figure').length === 2 );
-  - text: Your `figure` element should have a closing tag. Closing tags have a `/` just after the `<` character.
-    testString: assert( code.match(/<\/figure>/g).length === 2 );
-  - text: There should be a `figure` element right above the second `section` element's closing tag.
-    testString: assert( $('main > section')[1].lastElementChild.nodeName === 'FIGURE' );
+  - text: 'Your `ol` element should have an opening tag. Opening tags have this syntax: `<elementName>`.'
+    testString: assert( document.querySelector('ol') );
+  - text: Your `ol` element should have a closing tag. Closing tags have a `/` just after the `<` character.
+    testString: assert( code.match(/<\/ol>/) );
+  - text: The `ol` element should be above the second `section` element's closing tag. You have them in the wrong order.
+    testString: assert( $('main > section')[1].lastElementChild.nodeName === 'OL' );
+  - text: The three `li` elements should be nested inside the `ol` element.
+    testString: assert( [ ...document.querySelectorAll('li') ].filter(item => item.parentNode.nodeName === 'OL').length === 3);
+  - text: You should have three `li` elements with the text `flea treatment`, `thunder` and `other cats` in any order.
+    testString: assert.deepStrictEqual( [ ...document.querySelectorAll('li') ].filter(item => item.parentNode.nodeName === 'OL').map(item => item.innerText.toLowerCase()).sort((a, b) => a.localeCompare(b)), ["flea treatment", "other cats", "thunder"] );
 
 ```
 
@@ -55,16 +61,12 @@ tests:
           <img src="https://bit.ly/fcc-lasagna" alt="A slice of lasagna on a plate.">
           <figcaption>Cats <em>love</em> lasagna.</figcaption>  
         </figure>
-        <h3>Top 3 things cats hate:</h3>
         --fcc-editable-region--
-        <ol>
-          <li>flea treatment</li>
-          <li>thunder</li>
-          <li>other cats</li>
-        </ol>
+        <h3>Top 3 things cats hate:</h3>
         --fcc-editable-region--
       </section>
     </main>
+
   </body>
 </html>
 ```

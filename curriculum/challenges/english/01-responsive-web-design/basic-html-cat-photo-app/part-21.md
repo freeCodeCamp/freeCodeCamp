@@ -1,5 +1,5 @@
 ---
-id: 5dfb655eeacea3f48c6300b3
+id: 5dfb6250eacea3f48c6300b2
 title: Part 21
 challengeType: 0
 isHidden: true
@@ -8,9 +8,8 @@ isHidden: true
 ## Description
 <section id='description'>
 
-The `figure` element represents self-contained content and will allow you to associate an image with a caption.
+After the unordered list, add a new image with an `src` attribute value set to `https://bit.ly/fcc-lasagna` and an `alt` attribute value set to `A slice of lasagna on a plate.`
 
-Nest the image you just added within a `figure` element.
 </section>
 
 ## Tests
@@ -18,14 +17,19 @@ Nest the image you just added within a `figure` element.
 
 ```yml
 tests:
-  - text: "Your `figure` element should have an opening tag. Opening tags have the following syntax: `<elementName>`."
-    testString: assert( document.querySelector('figure') );
-  - text: Your `figure` element should have a closing tag. Closing tags have a `/` just after the `<` character.
-    testString: assert( code.match(/<\/figure\>/) );
-  - text: There should be an `figure` element right above the second `section` element's closing tag.
-    testString: assert( $('section')[1].lastElementChild.nodeName === 'FIGURE' );
-  - text: The lasagna `img` element should be nested in the `figure` element.
-    testString: assert( document.querySelector('figure > img') && document.querySelector('figure > img').getAttribute('src').toLowerCase() === 'https://bit.ly/fcc-lasagna');
+  - text: There should be an `img` element right above the second `section` element's closing tag.
+    testString: assert( $('section')[1].lastElementChild.nodeName === 'IMG' );
+  - text: The new image either does not have an `alt` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
+    testString: assert($('section')[1].lastElementChild.hasAttribute('alt') );
+  - text: The new image should have an `alt` value of `A slice of lasagna on a plate.` Make sure the `alt` attribute's value is surrounded with quotation marks.
+    testString: assert( $('section')[1].lastElementChild.getAttribute('alt').replace(/\s+/g, ' ').match(/^A slice of lasagna on a plate\.?$/i) );
+  - text: The new image does not have an `src` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
+    testString: assert($('section')[1].lastElementChild.hasAttribute('src') );
+  - text: The new image should have an `src` value of `https://bit.ly/fcc-lasagna`. Make sure the `src` attribute's value is surrounded with quotation marks.
+    testString: assert( $('section')[1].lastElementChild.getAttribute('src') === 'https://bit.ly/fcc-lasagna');
+  - text: Although you have set the new image's `src` to the correct URL, it is recommended to always surround the value of an attribute with quotation marks.
+    testString: assert( !/\<img\s+.+\s+src\s*=\s*https:\/\/bit\.ly\/fcc-lasagna/.test(code) );
+
 ```
 
 </section>
@@ -41,25 +45,23 @@ tests:
     <h1>CatPhotoApp</h1>
     <main>
       <section>
-      <h2>Cat Photos</h2>
-      <!-- TODO: Add link to cat photos -->
+        <h2>Cat Photos</h2>
+        <!-- TODO: Add link to cat photos -->
         <p>Click here to view more <a target="_blank" href="https://www.freecodecamp.org/cat-photos">cat photos</a>.</p>
         <a href="https://www.freecodecamp.org/cat-photos"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
       </section>
       <section>
         <h2>Cat Lists</h2>
         <h3>Things cats love:</h3>
+        --fcc-editable-region--
         <ul>
           <li>cat nip</li>
           <li>laser pointers</li>
           <li>lasagna</li>
         </ul>
         --fcc-editable-region--
-        <img src="https://bit.ly/fcc-lasagna" alt="A slice of lasagna on a plate.">
-        --fcc-editable-region--
       </section>
     </main>
-
   </body>
 </html>
 ```

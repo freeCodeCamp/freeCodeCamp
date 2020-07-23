@@ -1,5 +1,5 @@
 ---
-id: 5ef9b03c81a63668521804d5
+id: 5ef9b03c81a63668521804d4
 title: Part 31
 challengeType: 0
 isHidden: true
@@ -8,7 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Inside the third `section` element add an `h2` tag with the text `Cat Form`.
+The `strong` element is used to indicate that some text is of strong importance or urgent.
+
+In the `figcaption` you just added, indicate that `hate` is of strong importance by wrapping it in a `strong` element.
 
 </section>
 
@@ -17,28 +19,14 @@ Inside the third `section` element add an `h2` tag with the text `Cat Form`.
 
 ```yml
 tests:
-  - text: "Unable to find the third `section` element. You may have accidentally deleted it or the opening tag or closing tag."
-    testString: |
-      assert(
-        document.querySelectorAll('section').length === 3 &&
-        code.match(/<\/section>/g).length === 3
-      );
-  - text: Your `h2` element should have an opening tag and closing tag. You may be missing one or both of the required tags.
-    testString: |
-      assert(
-        document.querySelectorAll('h2').length >= 3 &&
-        code.match(/<\/h2>/g).length >= 3
-      );
-  - text: You should only add one `h2` element. Please remove any extras.
-    testString: assert( document.querySelectorAll('h2').length === 3 );
-  - text: The new `h2` element should be located right above the third `section` element's closing tag.
-    testString: |
-      const thirdSection = document.querySelectorAll('section')[2];
-      assert( thirdSection.lastElementChild.nodeName === 'H2' );
-  - text: Your `h2` element's text should be `Cat Form`.
-    testString: |
-      const thirdSection = document.querySelectorAll('section')[2];
-      assert( thirdSection.querySelector('h2').innerText.toLowerCase().replace(/\s+/g, ' ') === 'cat form' );
+  - text: 'Your `strong` element should have an opening tag. Opening tags have this syntax: `<elementName>`.'
+    testString: assert( document.querySelector('strong') );
+  - text: Your strong element should have a closing tag. Closing tags have a `/` just after the `<` character.
+    testString: assert( code.match(/<\/strong\>/) );
+  - text: Your strong element should surround the word `hate` in the text `Cats hate other cats.` You have either omitted the text or have a typo.
+    testString: assert( document.querySelectorAll('figcaption')[1].querySelector('strong').innerText.toLowerCase() === 'hate' );
+  - text: The `figcaption`'s text should be `Cats hate other cats.` Check for typos and that the necessary spaces are present around the `strong` element's opening and closing tags.
+    testString: const secondFigCaption = document.querySelectorAll('figcaption')[1]; assert( secondFigCaption && secondFigCaption.innerText.replace(/\s+/gi, ' ').trim().match(/cats hate other cats\.?/i) );
 
 ```
 
@@ -79,13 +67,11 @@ tests:
         </ol>
         <figure>
           <img src="https://bit.ly/fcc-cats" alt="Five cats looking around a field.">
-          <figcaption>Cats <strong>hate</strong> other cats.</figcaption>
+          --fcc-editable-region--
+          <figcaption>Cats hate other cats.</figcaption>  
+          --fcc-editable-region--
         </figure>
       </section>
-      --fcc-editable-region--
-      <section>
-      </section>
-      --fcc-editable-region--
     </main>
   </body>
 </html>

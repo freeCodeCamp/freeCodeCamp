@@ -1,5 +1,5 @@
 ---
-id: 5ef9b03c81a63668521804ea
+id: 5ef9b03c81a63668521804e5
 title: Part 58
 challengeType: 0
 isHidden: true
@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Notice that everything you've added to the page so far is inside the `body` element. All page content elements that should be rendered to the page go inside the `body` element. However, other important information goes inside the `head` element.
+In order to make a checkbox checked or radio button selected by default, you need to add the `checked` attribute to it. There's no need to set a value to the `checked` attribute. Instead, just add the word `checked` to the `input` element, making sure there is space between it and other attributes.
 
-Add a `head` element just above the `body` element.
+Make the first radio button and the first checkbox selected by default.
 
 </section>
 
@@ -19,16 +19,18 @@ Add a `head` element just above the `body` element.
 
 ```yml
 tests:
-  - text: You have either deleted the `body` element or it is missing an opening tag or closing tag.
-    testString: assert( document.querySelector('body') && code.match(/<\/body>/) );
-  - text: "Your `head` element should have an opening tag. Opening tags have the following syntax: `<elementName>`."
-    testString: assert( code.match(/\<head\>/) );
-  - text: Your `head` element should have a closing tag. Closing tags have a `/` just after the `<` character.
-    testString: assert( code.match(/\<\/head\>/) );
-  - text: Your `head` element should be above the opening `body` element tag. You have it put it somewhere else.
-    testString: |
-      const noSpaces = code.replace(/\s/g, '');
-      assert( noSpaces.match(/\<\/head\>\<body\>/) );
+  - text: Make sure there still are two radio buttons and three checkboxes nested in their respective `fieldset` elements.
+    testString: assert( $('input[type="radio"]').length === 2 && $('fieldset > input[type="checkbox"]').length === 3 );
+  - text: The first radio button is missing the `checked` attribute.
+    testString: assert( $('input[type="radio"]')[0].hasAttribute('checked') );
+  - text: The second radio button should not have the `checked` attribute.
+    testString: assert( !$('input[type="radio"]')[1].hasAttribute('checked') );
+  - text: The first checkbox is missing the `checked` attribute.
+    testString: assert( $('input[type="checkbox"]')[0].hasAttribute('checked') );
+  - text: The second checkbox should not have the `checked` attribute.
+    testString: assert( !$('input[type="checkbox"]')[1].hasAttribute('checked') );
+  - text: The third checkbox should not have the `checked` attribute.
+    testString: assert( !$('input[type="checkbox"]')[2].hasAttribute('checked') );
 
 ```
 
@@ -40,7 +42,6 @@ tests:
 
 ```html
 <html>
-  --fcc-editable-region--
   <body>
     <h1>CatPhotoApp</h1>
     <main>
@@ -76,29 +77,25 @@ tests:
       <section>
         <h2>Cat Form</h2>
         <form action="https://freecatphotoapp.com/submit-cat-photo">
+          --fcc-editable-region--
           <fieldset>
             <legend>Is your cat an indoor or outdoor cat?</legend>
-            <label><input id="indoor" type="radio" name="indoor-outdoor" checked> Indoor</label>
+            <label><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
             <label><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label>
           </fieldset>
           <fieldset>
             <legend>What's your cat's personality?</legend>
-            <input id="loving" type="checkbox" name="personality" checked> <label for="loving">Loving</label>
+            <input id="loving" type="checkbox" name="personality"> <label for="loving">Loving</label>
             <input id="lazy" type="checkbox" name="personality"> <label for="lazy">Lazy</label>
-            <input id="energetic" type="checkbox" name="personality"> <label for="energetic">Energetic</label>
+            <input id="energetic" type="checkbox" name="personality"> <label for="energetic"> Energetic</label>
           </fieldset>
+          --fcc-editable-region--
           <input type="text" name="catphotourl" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>
         </form>
       </section>
     </main>
-    <footer>
-      <p>
-        No Copyright - <a href="https://www.freecodecamp.org">freeCodeCamp.org</a>
-      </p>
-    </footer>
   </body>
-  --fcc-editable-region--
 </html>
 ```
 

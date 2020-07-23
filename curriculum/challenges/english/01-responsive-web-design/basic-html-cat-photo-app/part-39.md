@@ -1,6 +1,6 @@
 ---
-id: 5ef9b03c81a63668521804db
-title: Part 36a
+id: 5ef9b03c81a63668521804d9
+title: Part 39
 challengeType: 0
 isHidden: true
 ---
@@ -8,7 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-To prevent a user from submitting your form when required information is missing, you need to add the `required` attribute to an `input` element. There's no need to set a value to the `required` attribute. Instead, just add the word `required` to the `input` element, making sure there is space between it and other attributes.
+Placeholder text is used to give people a hint about what kind of information to enter into an input. For example, `<input type="text" placeholder="Email address">`.
+
+Add the placeholder text `cat photo URL` to your `input` element.  
 
 </section>
 
@@ -21,10 +23,12 @@ tests:
     testString: assert( $('input').length );
   - text: Your `form` should only contain the `input` element. Remove any HTML additional elements or text within the `form` element.
     testString: assert( $('form')[0].children.length === 1 && $('form')[0].innerText.trim().length === 0 );
-  - text: Your `input` element should have a `required` attribute`. Remember, you just add the word `required` inside the `input` element's tag.
-    testString: assert( $('input')[0].hasAttribute('required') );
-  - text: A value should not be given to the `required` attribute`.
-    testString: assert( $('input')[0].getAttribute('required') === '' );
+  - text: Your `input` element does not have a `placeholder` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
+    testString: assert( $('input')[0].hasAttribute('placeholder') );
+  - text: Your `input` element should have a `placeholder` attribute with the value `cat photo URL`.  You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
+    testString: assert( $('input')[0].getAttribute('placeholder').replace(/\s+/g, ' ').match(/^cat photo URL$/i) );
+  - text: Although you have set the `input` element's `placeholder` attribute to `cat photo URL`, it is recommended to always surround the value of an attribute with quotation marks.
+    testString: assert( !/\<\s*input\s+placeholder\s*=\s*cat\s+photo\s+url/i.test(code) );
 
 ```
 
@@ -71,7 +75,9 @@ tests:
       <section>
         <h2>Cat Form</h2>
         <form action="https://freecatphotoapp.com/submit-cat-photo">
-          <input type="text" name="catphotourl" placeholder="cat photo URL">
+          --fcc-editable-region--  
+          <input type="text" name="catphotourl">
+          --fcc-editable-region--
         </form>
       </section>
     </main>

@@ -1,5 +1,5 @@
 ---
-id: 5dfa3589eacea3f48c6300ae
+id: 5f07c98cdb9413cbd4b16750
 title: Part 16
 challengeType: 0
 isHidden: true
@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Within the second `section` element, add a new `h2` element with the text `Cat Lists`.
+It is time to add a new section. Add a second `section` element below the existing `section` element.
 
 </section>
 
@@ -18,21 +18,27 @@ Within the second `section` element, add a new `h2` element with the text `Cat L
 ```yml
 tests:
   - text: "Your `section` element should have an opening tag. Opening tags have this syntax: `<elementName>`."
+    testString: assert( document.querySelectorAll('section').length >= 2 );
+  - text: You should only add one opening `section` tag. Please remove any extras.
+    testString: assert( document.querySelectorAll('section').length === 2 );
+  - text: Your `section` element should have a closing tag. Closing tags have a `/` just after the `<` character.
+    testString: assert( code.match(/<\/section>/g).length >= 2 );
+  - text: You should only add one closing `section` tag. Please remove any extras.
+    testString: assert( code.match(/<\/section>/g).length === 2 );
+  - text: The second `section` element should not be nested in the first `section` element.
     testString: |
-      assert(
-        document.querySelectorAll('section').length === 2 &&
-        code.match(/<\/section>/g).length === 2
-      );
-  - text: "Your `h2` element should have an opening tag. Opening tags have this syntax: `<elementName>`."
-    testString: assert( document.querySelectorAll('h2').length === 2 );
-  - text: "Your `h2` element should have a closing tag. Closing tags have a `/` just after the `<` character."
-    testString: assert( code.match(/<\/h2\>/g).length === 2 );
-  - text: Your second `h2` element should be right above the second `section` element's closing tag. It is not in the correct position.
+      const childrenOf1stSection = [ ...document.querySelector('main > section').children ];
+      const foundElems = childrenOf1stSection.filter(child => {
+        return child.nodeName === 'SECTION';
+      });
+      assert( foundElems.length === 0 );
+  - text: Both `section` elements should be between the opening and closing tags of the `main` element.
     testString: |
-      const secondSection = document.querySelectorAll('section')[1];
-      assert( secondSection.lastElementChild.nodeName === 'H2' );
-  - text: The second `h2` element should have the text `Cat Lists`. You have either omitted the text or have a typo.
-    testString: assert( document.querySelectorAll('main > section')[1].lastElementChild.innerText.toLowerCase() ===  'cat lists');
+      const childrenOfMain = [ ...document.querySelector('main').children ];
+      const foundElems = childrenOfMain.filter(child => {
+        return child.nodeName === 'SECTION';
+      });
+      assert( foundElems.length === 2 );
 
 ```
 
@@ -48,14 +54,12 @@ tests:
   <body>
     <h1>CatPhotoApp</h1>
     <main>
+      --fcc-editable-region--
       <section>
         <h2>Cat Photos</h2>
         <!-- TODO: Add link to cat photos -->
         <p>Click here to view more <a target="_blank" href="https://www.freecodecamp.org/cat-photos">cat photos</a>.</p>
         <a href="https://www.freecodecamp.org/cat-photos"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-      </section>
-      --fcc-editable-region--
-      <section>
       </section>
       --fcc-editable-region--
     </main>

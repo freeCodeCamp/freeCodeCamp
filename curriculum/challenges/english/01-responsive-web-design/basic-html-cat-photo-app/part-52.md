@@ -1,6 +1,6 @@
 ---
-id: 5ef9b03c81a63668521804e3
-title: Part 56
+id: 5ef9b03c81a63668521804e2
+title: Part 52
 challengeType: 0
 isHidden: true
 ---
@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Add another checkbox after the one you just added. The `id` attribute value should be `lazy` and the `name` attribute value should be the same as the last checkbox.
+Forms commonly use checkboxes for questions that may have more than one answer. For example, here's a checkbox with the option of `tacos`: `<input type="checkbox"> tacos`.
 
-Also add a `label` element to the right of the new checkbox with the text `Lazy`. Make sure to associate the `label` element with the new checkbox using the `for` attribute.
+Under the `legend` element you just added, add an `input` with its `type` attribute set to `checkbox` and give it the option of `Loving`.
 
 </section>
 
@@ -19,22 +19,26 @@ Also add a `label` element to the right of the new checkbox with the text `Lazy`
 
 ```yml
 tests:
-  - text: You need to add a new checkbox.
-    testString: assert( $('input[type="checkbox"]').length === 2 );
-  - text: Your new checkbox should have an `id` attribute with the value `lazy` and a `name` attribute with the value `personality`. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
+  - text: The `input` element for your checkbox should have an opening tag, but not a closing tag.
+    testString: assert( $('fieldset > input') && !code.match(/<\/input\>/g) );
+  - text: You should only have added one input element for your checkbox. Remove any extras.
+    testString: assert( $('fieldset > input').length === 1 );
+  - text: Your new `input` element should be below the `legend` element with the text `What's your cat's personality?`. You have them in the wrong order.
     testString: |
-      const checkboxes = [ ...$('input[type="checkbox"]') ];
-      assert( checkboxes.some(checkbox => checkbox.id === 'lazy' && checkbox.getAttribute('name') === 'personality') );
-  - text: Your new checkbox should be after the first one. You have them in the wrong order.
+      const existingLegendElem = $('fieldset > legend')[1];
+      assert(
+        existingLegendElem && existingLegendElem.nextElementSibling.nodeName === 'INPUT'
+      );
+  - text: Your new `input` element does not have a `type` attribute. Check that there is a space after the opening tag's name.
+    testString: assert( $('fieldset > input')[0].hasAttribute('type') );
+  - text: Your new `input` element should have a `type` attribute with the value `checkbox`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
+    testString: assert( $('fieldset > input')[0].getAttribute('type').match(/^checkbox$/i) );
+  - text: Although you have set the new `input` element's `type` attribute to `checkbox`, it is recommended to always surround the value of an attribute with quotation marks.
+    testString: assert( !/\<\s*input\s+type\s*=\s*checkbox/i.test(code) );
+  - text: The text ` Loving` should be located directly to the right of your checkbox. Make sure there is a space between the element and the text. You have either omitted the text or have a typo.
     testString: |
-      const checkboxes = [...$('input[type="checkbox"]')].map(checkbox => checkbox.id);
-      assert( checkboxes.indexOf('loving') < checkboxes.indexOf('lazy') );
-  - text: On the right side of your new checkbox, there should be `label` element with the text `Lazy`.
-    testString: |
-      const nextElementSibling = $('input[type="checkbox"]')[1].nextElementSibling;
-      assert( nextElementSibling.nodeName === 'LABEL' && nextElementSibling.innerText.replace(/\s+/g, '').match(/^Lazy$/i) );
-  - text: The new `label` should have a `for` attribute with the same value as the `id` attribute of the new checkbox. You have either omitted the value or have a typo.
-    testString: assert( $('input[type="checkbox"]')[1].nextElementSibling.getAttribute('for') === 'lazy' );
+      const checkboxInputElem = $('input[type="checkbox"]')[0];
+      assert( checkboxInputElem.nextSibling.nodeValue.replace(/\s+/g, ' ').match(/ Loving/i) );
 
 ```
 
@@ -87,9 +91,8 @@ tests:
             <label><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label>
           </fieldset>
           <fieldset>
-            <legend>What's your cat's personality?</legend>
             --fcc-editable-region--
-            <input id="loving" type="checkbox" name="personality"> <label for="loving">Loving</label>
+            <legend>What's your cat's personality?</legend>
             --fcc-editable-region--
           </fieldset>
           <input type="text" name="catphotourl" placeholder="cat photo URL" required>

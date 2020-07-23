@@ -1,5 +1,5 @@
 ---
-id: 5ef9b03c81a63668521804d1
+id: 5ef9b03c81a63668521804d0
 title: Part 24
 challengeType: 0
 isHidden: true
@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-After the `figure` element, add another `h3` element with the text `Top 3 things cats hate:`.
+Emphasize the word `love` in the `figcaption` element by wrapping it in an emphasis (`em`) element.
 
 </section>
 
@@ -17,17 +17,17 @@ After the `figure` element, add another `h3` element with the text `Top 3 things
 
 ```yml
 tests:
-  - text: There should be an `h3` element right above the second `section` element's closing tag. Make it has an opening and closing tag.
-    testString: assert( document.querySelectorAll('main > section')[1].lastElementChild.nodeName === 'H3' && code.match(/<\/h3\>/g).length === 2);
-  - text: The new `h3` element should have the text `Top 3 things cats hate:`. Make sure to include the colon at the end of the text.
-    testString: assert( document.querySelectorAll('main > section')[1].lastElementChild.innerText.toLowerCase().replace(/\s+/g, ' ') === 'top 3 things cats hate:' );
-  - text: There should be a `figure` above the new `h3` element. You may have accidentally deleted the `figure` element.
-    testString: |
-      const secondSectionLastElemNode = document.querySelectorAll('main > section')[1].lastElementChild;
-      assert(
-        secondSectionLastElemNode.nodeName === 'H3' && secondSectionLastElemNode.previousElementSibling.nodeName === 'FIGURE'
-      );
-
+  - text: 'Your emphasis (`em`) element should have an opening tag. Opening tags have this syntax: `<elementName>`.'
+    testString: assert( document.querySelector('em') );
+  - text: Your emphasis (`em`) element should have a closing tag. Closing tags have a `/` just after the `<` character.
+    testString: assert( code.match(/<\/em\>/) );
+  - text: You have either deleted the `figcaption` element or it is missing an opening or closing tag.
+    testString: assert( document.querySelector('figcaption') && code.match(/<\/figcaption\>/) );
+  - text: Your emphasis (`em`) element should surround the text `love`. You have either omitted the text or have a typo.
+    testString: assert( document.querySelector('figcaption > em').innerText.toLowerCase() === 'love' );
+  - text: The `figcaption`'s text should be `Cats love lasagna`. Check for typos and that the necessary spaces are present around the `em` element's opening and closing tags.
+    testString: assert( document.querySelector('figcaption').innerText.replace(/\s+/gi, ' ').match(/cats love lasagna\.?/i) );
+    
 ```
 
 </section>
@@ -55,12 +55,12 @@ tests:
           <li>laser pointers</li>
           <li>lasagna</li>
         </ul>
-        --fcc-editable-region--
         <figure>
           <img src="https://bit.ly/fcc-lasagna" alt="A slice of lasagna on a plate.">
-          <figcaption>Cats <em>love</em> lasagna.</figcaption>  
+          --fcc-editable-region--
+          <figcaption>Cats love lasagna.</figcaption>
+          --fcc-editable-region--
         </figure>
-        --fcc-editable-region--
       </section>
     </main>
   </body>

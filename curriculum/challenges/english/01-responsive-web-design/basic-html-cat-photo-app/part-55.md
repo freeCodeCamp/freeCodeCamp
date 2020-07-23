@@ -1,5 +1,5 @@
 ---
-id: 5ef9b03c81a63668521804e7
+id: 5efc518e8d6a74d05e68af75
 title: Part 55
 challengeType: 0
 isHidden: true
@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Now you will add a footer section to the page. 
+Add the `name` attribute with the value `personality` to the checkbox `input` element.
 
-After the `main` element, add a `footer` element.
+While you won't notice this in the browser, doing this makes it easier for a server to process your web form, especially when there are multiple checkboxes.
 
 </section>
 
@@ -19,14 +19,12 @@ After the `main` element, add a `footer` element.
 
 ```yml
 tests:
-  - text: You have either deleted the `main` element or it is missing an opening tag or closing tag."
-    testString: assert( document.querySelector('main') && code.match(/<\/main>/) );
-  - text: "Your `footer` element should have an opening tag. Opening tags have the following syntax: `<elementName>`."
-    testString: assert( document.querySelector('footer') );
-  - text: Your `footer` element should have a closing tag. Closing tags have a `/` just after the `<` character.
-    testString: assert( code.match(/<\/footer\>/) );
-  - text: Your `footer` element should the below the closing `main` element tag. You have it put it somewhere else.
-    testString: assert( document.querySelector('main').nextElementSibling.nodeName === 'FOOTER' );
+  - text: You should make sure the checkbox is still present.
+    testString: assert( $('input[type="checkbox"]')[0] );
+  - text: The checkbox `input` element does not have a `name` attribute. Check that there is a space after the opening tag's name.
+    testString: assert( $('input[type="checkbox"]')[0].hasAttribute('name') );
+  - text: The checkbox `input` element should have a `name` attribute with the value `personality`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
+    testString: assert( $('input[type="checkbox"]')[0].getAttribute('name').match(/^personality$/) );
 
 ```
 
@@ -75,24 +73,22 @@ tests:
         <form action="https://freecatphotoapp.com/submit-cat-photo">
           <fieldset>
             <legend>Is your cat an indoor or outdoor cat?</legend>
-            <label><input id="indoor" type="radio" name="indoor-outdoor" checked> Indoor</label>
+            <label><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
             <label><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label>
           </fieldset>
           <fieldset>
             <legend>What's your cat's personality?</legend>
-            <input id="loving" type="checkbox" name="personality" checked> <label for="loving">Loving</label>
-            <input id="lazy" type="checkbox" name="personality"> <label for="lazy">Lazy</label>
-            <input id="energetic" type="checkbox" name="personality"> <label for="energetic">Energetic</label>
+            --fcc-editable-region--
+            <input id="loving" type="checkbox"> <label for="loving">Loving</label>
+            --fcc-editable-region--
           </fieldset>
           <input type="text" name="catphotourl" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>
         </form>
       </section>
-    --fcc-editable-region-- 
     </main>
   </body>
 </html>
---fcc-editable-region--
 ```
 
 </div>

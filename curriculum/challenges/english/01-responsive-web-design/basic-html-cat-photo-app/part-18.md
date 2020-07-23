@@ -1,5 +1,5 @@
 ---
-id: 5dfa37b9eacea3f48c6300b0
+id: 5dfa371beacea3f48c6300af
 title: Part 18
 challengeType: 0
 isHidden: true
@@ -8,7 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-After the `h3` element with the `Things cats love:` text, add an unordered list (`ul`) element. Note that nothing will be displayed at this point.
+When you add a lower rank heading element to the page, it's implied that you're starting a new subsection.
+
+After the last `h2` element of the second `section` element, add an `h3` element with the text `Things cats love:`.
 
 </section>
 
@@ -17,14 +19,18 @@ After the `h3` element with the `Things cats love:` text, add an unordered list 
 
 ```yml
 tests:
-  - text: 'Your `ul` element should have an opening tag. Opening tags have this syntax: `<elementName>`.'
-    testString: assert( document.querySelector('ul') );
-  - text: Your `ul` element should have a closing tag. Closing tags have a `/` just after the `<` character.
-    testString: assert( code.match(/<\/ul>/) );
-  - text: The `ul` element should be above the second `section` element's closing tag.
+  - text: The second `section` element appears to be missing or does not have both an opening and closing tag.
+    testString: assert( (document.querySelectorAll('main > section')[1] && code.match(/\<\/section>/g).length == 2) );
+  - text: There should be an `h3` element right above the second `section` element's closing tag.
+    testString: assert( document.querySelectorAll('main > section')[1].lastElementChild.nodeName === 'H3' );
+  - text: The `h3` element right above the second `section` element's closing tag should have the text `Things cats love:`. Make sure to include the colon at the end of the text.
+    testString: assert( document.querySelectorAll('main > section')[1].lastElementChild.innerText.toLowerCase().replace(/\s+/g, ' ') === 'things cats love:' );
+  - text: There should be an `h2` element with the text `Cat Lists` above the last `h3` element that is nested in the last `section` element'. You may have accidentally deleted the `h2` element.
     testString: |
-      const secondSectionLastElemNode = $('main > section')[1].lastElementChild;
-      assert( secondSectionLastElemNode.nodeName === 'UL' );
+      const secondSectionLastElemNode = document.querySelectorAll('main > section')[1].lastElementChild;
+      assert(
+        secondSectionLastElemNode.nodeName === 'H3' && secondSectionLastElemNode.previousElementSibling.innerText.toLowerCase().replace(/\s+/g, ' ') === 'cat lists'
+      );
 
 ```
 
@@ -41,17 +47,16 @@ tests:
     <h1>CatPhotoApp</h1>
     <main>
       <section>
-      <h2>Cat Photos</h2>
+        <h2>Cat Photos</h2>
         <!-- TODO: Add link to cat photos -->
         <p>Click here to view more <a target="_blank" href="https://www.freecodecamp.org/cat-photos">cat photos</a>.</p>
         <a href="https://www.freecodecamp.org/cat-photos"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
       </section>
+      --fcc-editable-region--
       <section>
-        --fcc-editable-region--
         <h2>Cat Lists</h2>
-        <h3>Things cats love:</h3>
-        --fcc-editable-region--
       </section>
+      --fcc-editable-region--
     </main>
   </body>
 </html>

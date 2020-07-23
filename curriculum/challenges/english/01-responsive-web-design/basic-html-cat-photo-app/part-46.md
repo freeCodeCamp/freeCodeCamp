@@ -1,5 +1,5 @@
 ---
-id: 5ef9b03c81a63668521804e2
+id: 5f05a1d8e233dff4a68508d8
 title: Part 46
 challengeType: 0
 isHidden: true
@@ -8,9 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Forms commonly use checkboxes for questions that may have more than one answer. For example, here's a checkbox with the option of `tacos`: `<input type="checkbox"> tacos`.
-
-Under the `legend` element you just added, add an `input` with its `type` attribute set to `checkbox` and give it the option of `Loving`.
+Nest a another radio button with the option `Outdoor` in a new `label` element. The new radio button should be placed after the first one. Also, set its `id` attribute value to `outdoor`.
 
 </section>
 
@@ -19,26 +17,20 @@ Under the `legend` element you just added, add an `input` with its `type` attrib
 
 ```yml
 tests:
-  - text: The `input` element for your checkbox should have an opening tag, but not a closing tag.
-    testString: assert( $('fieldset > input') && !code.match(/<\/input\>/g) );
-  - text: You should only have added one input element for your checkbox. Remove any extras.
-    testString: assert( $('fieldset > input').length === 1 );
-  - text: Your new `input` element should be below the `legend` element with the text `What's your cat's personality?`. You have them in the wrong order.
+  - text: You will need to add a new `label` element in which to nest your new radio button. Make sure it has both an opening and closing tag.
+    testString: assert( document.querySelectorAll('label').length === 2  && code.match(/<\/label\>/g).length === 2 );
+  - text: The text ` Outdoor` should be located directly to the right of your new `radio` button. Make sure there is a space between the element and the text. You have either omitted the text or have a typo.
     testString: |
-      const existingLegendElem = $('fieldset > legend')[1];
-      assert(
-        existingLegendElem && existingLegendElem.nextElementSibling.nodeName === 'INPUT'
-      );
-  - text: Your new `input` element does not have a `type` attribute. Check that there is a space after the opening tag's name.
-    testString: assert( $('fieldset > input')[0].hasAttribute('type') );
-  - text: Your new `input` element should have a `type` attribute with the value `checkbox`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
-    testString: assert( $('fieldset > input')[0].getAttribute('type').match(/^checkbox$/i) );
-  - text: Although you have set the new `input` element's `type` attribute to `checkbox`, it is recommended to always surround the value of an attribute with quotation marks.
-    testString: assert( !/\<\s*input\s+type\s*=\s*checkbox/i.test(code) );
-  - text: The text ` Loving` should be located directly to the right of your checkbox. Make sure there is a space between the element and the text. You have either omitted the text or have a typo.
+      const radioButtons = [ ...$('input')];
+      assert( radioButtons.filter(btn => btn.nextSibling.nodeValue.replace(/\s+/g, ' ').match(/ Outdoor/i)).length );
+  - text: Your new radio button and associated label should be below the first one. You have them in the wrong order.
     testString: |
-      const checkboxInputElem = $('input[type="checkbox"]')[0];
-      assert( checkboxInputElem.nextSibling.nodeValue.replace(/\s+/g, ' ').match(/ Loving/i) );
+      const collection = [...document.querySelectorAll('input[type="radio"]')].map(node => node.nextSibling.nodeValue.replace(/\s+/g, ''));
+      assert( collection.indexOf('Indoor') < collection.indexOf('Outdoor') );
+  - text: Your new radio button should have an `id` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
+    testString: assert( $('input')[1].hasAttribute('id') );
+  - text: Your new radio element should have an `id` attribute with the value `outdoor`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
+    testString: assert( $('input')[1].id.match(/^outdoor$/) );
 
 ```
 
@@ -85,16 +77,9 @@ tests:
       <section>
         <h2>Cat Form</h2>
         <form action="https://freecatphotoapp.com/submit-cat-photo">
-          <fieldset>
-            <legend>Is your cat an indoor or outdoor cat?</legend>
-            <label><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
-            <label><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label>
-          </fieldset>
-          <fieldset>
-            --fcc-editable-region--
-            <legend>What's your cat's personality?</legend>
-            --fcc-editable-region--
-          </fieldset>
+          --fcc-editable-region--
+          <label><input id="indoor" type="radio"> Indoor</label>
+          --fcc-editable-region--
           <input type="text" name="catphotourl" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>
         </form>

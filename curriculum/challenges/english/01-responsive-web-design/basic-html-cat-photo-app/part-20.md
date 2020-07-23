@@ -1,5 +1,5 @@
 ---
-id: 5dfb6250eacea3f48c6300b2
+id: 5dfb5ecbeacea3f48c6300b1
 title: Part 20
 challengeType: 0
 isHidden: true
@@ -8,7 +8,16 @@ isHidden: true
 ## Description
 <section id='description'>
 
-After the unordered list, add a new image with an `src` attribute value set to `https://bit.ly/fcc-lasagna` and an `alt` attribute value set to `A slice of lasagna on a plate.`
+Use list item (`li`) elements to create items in a list. Here is an example of list items in an unordered list:
+
+```html
+<ul>
+  <li>milk</li>
+  <li>cheese</li>
+</ul>
+```
+
+Nest three list items within the `ul` element to display three things cats love: `cat nip`, `laser pointers` and `lasagna`. 
 
 </section>
 
@@ -17,18 +26,12 @@ After the unordered list, add a new image with an `src` attribute value set to `
 
 ```yml
 tests:
-  - text: There should be an `img` element right above the second `section` element's closing tag.
-    testString: assert( $('section')[1].lastElementChild.nodeName === 'IMG' );
-  - text: The new image either does not have an `alt` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
-    testString: assert($('section')[1].lastElementChild.hasAttribute('alt') );
-  - text: The new image should have an `alt` value of `A slice of lasagna on a plate.` Make sure the `alt` attribute's value is surrounded with quotation marks.
-    testString: assert( $('section')[1].lastElementChild.getAttribute('alt').replace(/\s+/g, ' ').match(/^A slice of lasagna on a plate\.?$/i) );
-  - text: The new image does not have an `src` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
-    testString: assert($('section')[1].lastElementChild.hasAttribute('src') );
-  - text: The new image should have an `src` value of `https://bit.ly/fcc-lasagna`. Make sure the `src` attribute's value is surrounded with quotation marks.
-    testString: assert( $('section')[1].lastElementChild.getAttribute('src') === 'https://bit.ly/fcc-lasagna');
-  - text: Although you have set the new image's `src` to the correct URL, it is recommended to always surround the value of an attribute with quotation marks.
-    testString: assert( !/\<img\s+.+\s+src\s*=\s*https:\/\/bit\.ly\/fcc-lasagna/.test(code) );
+  - text: You should have three `li` elements. Each `li` element should have its own opening and closing tag.
+    testString: assert( $('li').length === 3 &&  code.match(/<\/li\>/g).length === 3 );
+  - text: You should have three `li` elements with the text `cat nip`, `laser pointers` and `lasagna` in any order. You have either omitted some text or have a typo.
+    testString: assert.deepStrictEqual( [ ...document.querySelectorAll('li') ].map(item => item.innerText.toLowerCase()).sort((a, b) => a.localeCompare(b)), ["cat nip", "lasagna", "laser pointers"] );
+  - text: The three `li` elements should be located between the `ul` element's opening and closing tags.
+    testString: assert( [ ...document.querySelectorAll('li') ].filter(item => item.parentNode.nodeName === 'UL').length === 3 );
 
 ```
 
@@ -55,9 +58,6 @@ tests:
         <h3>Things cats love:</h3>
         --fcc-editable-region--
         <ul>
-          <li>cat nip</li>
-          <li>laser pointers</li>
-          <li>lasagna</li>
         </ul>
         --fcc-editable-region--
       </section>

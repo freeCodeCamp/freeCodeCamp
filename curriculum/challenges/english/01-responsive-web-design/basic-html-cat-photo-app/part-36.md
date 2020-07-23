@@ -1,5 +1,5 @@
 ---
-id: 5ef9b03c81a63668521804d9
+id: 5ef9b03c81a63668521804d8
 title: Part 36
 challengeType: 0
 isHidden: true
@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Placeholder text is used to give people a hint about what kind of information to enter into an input. For example, `<input type="text" placeholder="Email address">`.
+The `input` element is allows you several ways to collect data from a web form. Like anchor (`a`) elements, `input` elements are <dfn>self-closing</dfn> and do not need closing tags.
 
-Add the placeholder text `cat photo URL` to your `input` element.  
+Nest an `input` element in the `form` element.
 
 </section>
 
@@ -19,16 +19,24 @@ Add the placeholder text `cat photo URL` to your `input` element.
 
 ```yml
 tests:
-  - text: You have either deleted your `input` element or it has invalid syntax. All attributes' values should be surrounded by quotation marks.
-    testString: assert( $('input').length );
-  - text: Your `form` should only contain the `input` element. Remove any HTML additional elements or text within the `form` element.
+  - text: Your `form` element should have an opening tag and closing tag in the correct order. You may be missing one or both of the required tags, or have them in the wrong order.
+    testString: |
+      const noSpaces = code.replace(/\s/g, '');
+      assert(
+        document.querySelector('form') &&
+        code.match(/<\/form>/g) &&
+        noSpaces.indexOf('<form') < noSpaces.indexOf('</form>')
+      );
+  - text: Your `form` element's opening tag should only have an `action` attribute. Remove anything else you may have typed in it.
+    testString: assert( [...document.querySelector('form').attributes].length < 2 );
+  - text: You should create an input element. Check the syntax.
+    testString: assert( document.querySelector('input') );
+  - text: Your `input` element should have an opening tag, but not a closing tag.
+    testString: assert( document.querySelector('input') && !code.match(/<\/input\>/g) );
+  - text: Your `input` element should be nested within the `form` element.
+    testString: assert( document.querySelector('form > input') );
+  - text: Your `form` should only contain the `input` element. Remove any HTML elements or text between the `form` element's tags.
     testString: assert( $('form')[0].children.length === 1 && $('form')[0].innerText.trim().length === 0 );
-  - text: Your `input` element does not have a `placeholder` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
-    testString: assert( $('input')[0].hasAttribute('placeholder') );
-  - text: Your `input` element should have a `placeholder` attribute with the value `cat photo URL`.  You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
-    testString: assert( $('input')[0].getAttribute('placeholder').replace(/\s+/g, ' ').match(/^cat photo URL$/i) );
-  - text: Although you have set the `input` element's `placeholder` attribute to `cat photo URL`, it is recommended to always surround the value of an attribute with quotation marks.
-    testString: assert( !/\<\s*input\s+placeholder\s*=\s*cat\s+photo\s+url/i.test(code) );
 
 ```
 
@@ -74,11 +82,10 @@ tests:
       </section>
       <section>
         <h2>Cat Form</h2>
+        --fcc-editable-region--
         <form action="https://freecatphotoapp.com/submit-cat-photo">
-          --fcc-editable-region--  
-          <input type="text" name="catphotourl">
-          --fcc-editable-region--
         </form>
+        --fcc-editable-region--
       </section>
     </main>
   </body>

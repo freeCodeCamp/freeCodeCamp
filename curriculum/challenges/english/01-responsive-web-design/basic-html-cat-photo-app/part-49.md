@@ -1,6 +1,6 @@
 ---
-id: 5f0d4d04b435f13ab6550053
-title: Part 45c
+id: 5f0d48e7b435f13ab6550051
+title: Part 49
 challengeType: 0
 isHidden: true
 ---
@@ -8,7 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Add a `legend` element with the text `What's your cat's personality?` inside the second `fieldset` element.
+The `legend` element acts as a caption for the content in the `fieldset` element. It gives users context about what they should enter into that part of the form.
+
+Add a `legend` element with the text `Is your cat an indoor or outdoor cat?` above both of the radio buttons.
 
 </section>
 
@@ -17,27 +19,25 @@ Add a `legend` element with the text `What's your cat's personality?` inside the
 
 ```yml
 tests:
-  - text: You have either deleted the second `fieldset` element or it is missing an opening tag or closing tag."
+  - text: "Your `legend` element should have an opening tag. Opening tags have the following syntax: `<elementName>`."
+    testString: assert( document.querySelector('legend') );
+  - text: Your `legend` element should have a closing tag. Closing tags have a `/` just after the `<` character.
+    testString: assert( code.match(/<\/legend\>/) );
+  - text: Your `legend` element should be the first element right below `fieldset` element's opening tag and before the first radio button's opening `label` tag. It is not in the correct position.
     testString: |
+      const fieldsetElem = document.querySelector('fieldset');
+      const fieldsetElemChildren = fieldsetElem.children;
       assert(
-        document.querySelectorAll('fieldset').length === 2 &&
-        code.match(/<\/fieldset>/g).length === 2
+        fieldsetElem.firstElementChild.nodeName === 'LEGEND' &&
+        fieldsetElemChildren[1].nodeName === 'LABEL' &&
+        fieldsetElemChildren[1].children[0].nodeName === 'INPUT' &&
+        fieldsetElemChildren[1].children[0].id === 'indoor'
       );
-  - text: "Your `legend` element should have an opening tag. Opening tags have this syntax: `<elementName>`."
+  - text: "Your `legend` element's text should be `Is your cat an indoor or outdoor cat?`. You have either omitted the text, have a typo, or it is not between the `legend` element's opening and closing tags."
     testString: |
-      const secondFieldset = $('fieldset')[1];
-      assert( secondFieldset && [ ...secondFieldset.children ].filter(child => child.nodeName === 'LEGEND').length );
-  - text: "Your `legend` element should have a closing tag. Closing tags have a `/` just after the `<` character."
-    testString: assert( code.match(/<\/legend\>/g).length === 2 );
-  - text: The `legend` element should have the text `What's your cat's personality?`. You have either omitted the text or have a typo.
-    testString: |
-      const secondFieldset = $('fieldset')[1];
-      assert(
-        secondFieldset && [ ...secondFieldset.children ].filter(child => {
-          const extraSpacesRemoved = child.innerText.replace(/\s+/g, ' ');
-          return child.nodeName === 'LEGEND' && extraSpacesRemoved.match(/What's your cat's personality\??$/i) ;
-        }).length
-      );
+      const extraSpacesRemoved = document.querySelector('legend').innerText.replace(/\s+/g, ' ');
+      assert( extraSpacesRemoved.match(/Is your cat an indoor or outdoor cat\??$/i) );
+
 ```
 
 </section>
@@ -84,14 +84,11 @@ tests:
         <h2>Cat Form</h2>
         <form action="https://freecatphotoapp.com/submit-cat-photo">
           <fieldset>
-            <legend>Is your cat an indoor or outdoor cat?</legend>
+            --fcc-editable-region--
             <label><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
             <label><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label>
+            --fcc-editable-region--
           </fieldset>
-          --fcc-editable-region--
-          <fieldset>
-          </fieldset>
-          --fcc-editable-region--
           <input type="text" name="catphotourl" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>
         </form>

@@ -1,5 +1,5 @@
 ---
-id: 5efae16e3cbd2bbdab94e334
+id: 5efae0543cbd2bbdab94e333
 title: Part 29
 challengeType: 0
 isHidden: true
@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-After the last `img` element, add a `figcaption` element with the text `Cats hate other cats.`
+To improve accessibility of the image you just added, add an `alt` attribute with the text `Five cats looking around a field.`
 
 </section>
 
@@ -17,25 +17,17 @@ After the last `img` element, add a `figcaption` element with the text `Cats hat
 
 ```yml
 tests:
-  - text: "Your `figcaption` element should have an opening tag. Opening tags have the following syntax: `<elementName>`."
-    testString: assert( document.querySelectorAll('figcaption').length === 2 );
-  - text: Your `figcaption` element should have a closing tag. Closing tags have a `/` just after the `<` character.
-    testString: assert( code.match(/<\/figcaption\>/g).length === 2 );
-  - text: There should be a `figure` element right above the second `section` element's closing tag.
-    testString: assert( $('main > section')[1].lastElementChild.nodeName === 'FIGURE' );
-  - text: The last `img` element should be nested in the `figure` element.
-    testString: const catsImg = document.querySelectorAll('figure > img')[1]; assert( catsImg && catsImg.getAttribute('src').toLowerCase() === 'https://bit.ly/fcc-cats');
-  - text: "Your `figure` element should have an opening tag. Opening tags have the following syntax: `<elementName>`."
+  - text: 'Your `figure` element should have an opening tag. Opening tags have this syntax: `<elementName>`.'
     testString: assert( document.querySelectorAll('figure').length === 2 );
-  - text: Your `figure` element should have a closing tag. Closing tags have a `/` just after the `<` character.
-    testString: assert( code.match(/<\/figure\>/g).length === 2 );
-  - text: The `figcaption` element should be nested in the `figure` element.
-    testString: assert( document.querySelectorAll('figure > figcaption').length === 2);
-  - text: The `figcaption` element nested in the `figure` element should be below the `img` element. You have the `img` element and the `figcaption` element in the wrong order.
-    testString: assert( document.querySelectorAll('figcaption')[1].previousElementSibling.nodeName === 'IMG');
-  - text: The `figcaption` element should have the text `Cats hate other cats.` You have omitted a word or have a typo.
-    testString: assert( document.querySelectorAll('figcaption')[1].innerText.toLowerCase().match(/Cats hate other cats\.?$/i));
-    
+  - text: Your `ol` element should have a closing tag. Closing tags have a `/` just after the `<` character.
+    testString: assert( code.match(/<\/figure>/g).length === 2 );
+  - text: There should be a `figure` element right above the last `section` element's closing tag.
+    testString: assert( $('main > section')[1].lastElementChild.nodeName === 'FIGURE' );
+  - text: The Cats `img` element should be nested in the `figure` element.
+    testString: const catsImg = document.querySelectorAll('figure > img')[1]; assert( catsImg && catsImg.getAttribute('src').toLowerCase() === 'https://bit.ly/fcc-cats');
+  - text: The Cats `img` element should have an `alt` attribute with the value `Five cats looking around a field.`
+    testString: const catsImg = document.querySelectorAll('figure > img')[1]; assert( catsImg.getAttribute('alt').replace(/\s+/g, ' ').match(/^Five cats looking around a field\.?$/i) );
+
 ```
 
 </section>
@@ -75,7 +67,7 @@ tests:
         </ol>
         <figure>
           --fcc-editable-region--
-          <img src="https://bit.ly/fcc-cats" alt="Five cats looking around a field.">
+          <img src="https://bit.ly/fcc-cats">
           --fcc-editable-region--
         </figure>
       </section>

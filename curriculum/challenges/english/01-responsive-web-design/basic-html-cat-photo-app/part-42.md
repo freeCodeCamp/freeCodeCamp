@@ -1,6 +1,6 @@
 ---
-id: 5ef9b03c81a63668521804da
-title: Part 41
+id: 5efb2c990dc218d6c85f89b2
+title: Part 42
 challengeType: 0
 isHidden: true
 ---
@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Use the `button` element to create a clickable button. For example, `<button>Click Here</button>` creates a button with the text `Click Here`.
+Even through you added your button below the text input, they appear next to each other on the page. That's because both `input` and `button` elements are <dfn>inline elements</dfn>, which don't appear on new lines.
 
-Add a `button` element with the text `Submit` below the `input` element.  Note the default behavior of clicking a form button with any attributes submits the form to the location specified in the form's `action` attribute.
+You learned previously that the button submits the form by default, but you can explicitly add the `type` attribute with the value `submit` to it to make it clearer.  Go ahead and do this to specify this button should submit the form.
 
 </section>
 
@@ -23,10 +23,12 @@ tests:
     testString: assert( document.querySelector('button') );
   - text: Your `button` element should have a closing tag. Closing tags have a `/` just after the `<` character.
     testString: assert( code.match(/<\/button\>/) );
-  - text: Your `button` element's text should be 'Submit'. You have either omitted the text or have a typo.
-    testString: assert( document.querySelector('button').innerText.toLowerCase() === 'submit' );
-  - text: Your `button` element should be below the `input` element. You have them in the wrong order.
-    testString: const collection = [...document.querySelectorAll('input, button')].map(node => node.nodeName); assert( collection.indexOf('INPUT') < collection.indexOf('BUTTON') );
+  - text: Your `button` element does not have a `type` attribute. Check that there is a space after the opening tag's name.
+    testString: assert( $('button')[0].hasAttribute('type') );
+  - text: Your `button` element should have a `type` attribute with the value `submit`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
+    testString: assert( $('button')[0].getAttribute('type').match(/^submit$/i) );
+  - text: Although you have set the `button` element's `type` attribute to `submit`, it is recommended to always surround the value of an attribute with quotation marks.
+    testString: assert( !/\<\s*button\s+type\s*=\s*submit/i.test(code) );
 
 ```
 
@@ -73,8 +75,9 @@ tests:
       <section>
         <h2>Cat Form</h2>
         <form action="https://freecatphotoapp.com/submit-cat-photo">
-          --fcc-editable-region--
           <input type="text" name="catphotourl" placeholder="cat photo URL" required>
+          --fcc-editable-region--
+          <button>Submit</button>
           --fcc-editable-region--
         </form>
       </section>

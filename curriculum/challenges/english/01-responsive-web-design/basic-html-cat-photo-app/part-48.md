@@ -1,5 +1,5 @@
 ---
-id: 5efc518e8d6a74d05e68af75
+id: 5ef9b03c81a63668521804e1
 title: Part 48
 challengeType: 0
 isHidden: true
@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Add the `name` attribute with the value `personality` to the checkbox `input` element.
+The `fieldset` element is used to group related inputs and labels together in a web form. `fieldset` elements are <dfn>block-level elements</dfn>, meaning that they appear on a new line.
 
-While you won't notice this in the browser, doing this makes it easier for a server to process your web form, especially when there are multiple checkboxes.
+Nest the `Indoor` and `Outdoor` radio buttons within a `fieldset` element, and don't forget to indent the buttons.
 
 </section>
 
@@ -19,12 +19,18 @@ While you won't notice this in the browser, doing this makes it easier for a ser
 
 ```yml
 tests:
-  - text: You should make sure the checkbox is still present.
-    testString: assert( $('input[type="checkbox"]')[0] );
-  - text: The checkbox `input` element does not have a `name` attribute. Check that there is a space after the opening tag's name.
-    testString: assert( $('input[type="checkbox"]')[0].hasAttribute('name') );
-  - text: The checkbox `input` element should have a `name` attribute with the value `personality`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
-    testString: assert( $('input[type="checkbox"]')[0].getAttribute('name').match(/^personality$/) );
+  - text: Both radio buttons should still be located between opening and closing `label` element tags. 
+    testString: |
+      const labelChildNodes = [ ...$('label') ].map(node => [ ...node.childNodes ]);
+      assert( labelChildNodes.filter(childNode => childNode[0].nodeName === "INPUT").length === 2 );
+  - text: "Your `fieldset` element should have an opening tag. Opening tags have the following syntax: `<elementName>`."
+    testString: assert( document.querySelector('fieldset') );
+  - text: Your `fieldset` element should have a closing tag. Closing tags have a `/` just after the `<` character.
+    testString: assert( code.match(/<\/fieldset\>/) );
+  - text: Both radio button and associated labels should be between the opening and closing tags of the `fieldset` element.
+    testString: |
+      const radioButtons = [ ...$('input[type="radio"]') ];
+      assert( radioButtons.every(btn => btn.parentNode.parentNode.nodeName === "FIELDSET") );
 
 ```
 
@@ -71,17 +77,10 @@ tests:
       <section>
         <h2>Cat Form</h2>
         <form action="https://freecatphotoapp.com/submit-cat-photo">
-          <fieldset>
-            <legend>Is your cat an indoor or outdoor cat?</legend>
-            <label><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
-            <label><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label>
-          </fieldset>
-          <fieldset>
-            <legend>What's your cat's personality?</legend>
-            --fcc-editable-region--
-            <input id="loving" type="checkbox"> <label for="loving">Loving</label>
-            --fcc-editable-region--
-          </fieldset>
+          --fcc-editable-region--
+          <label><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
+          <label><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label>
+          --fcc-editable-region--
           <input type="text" name="catphotourl" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>
         </form>

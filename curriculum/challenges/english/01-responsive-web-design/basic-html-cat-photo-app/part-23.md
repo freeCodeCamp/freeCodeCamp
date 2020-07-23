@@ -1,5 +1,5 @@
 ---
-id: 5ef9b03c81a63668521804d0
+id: 5dfb6a35eacea3f48c6300b4
 title: Part 23
 challengeType: 0
 isHidden: true
@@ -8,7 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Emphasize the word `love` in the `figcaption` element by wrapping it in an emphasis (`em`) element.
+A figure caption (`figcaption`) element is used to add a caption to describe the image contained withing the `figure` element. For example, `<figcaption>A cute cat</figcaption>` adds the caption `A cute cat`.
+
+After the image nested in the `figure` element, add a `figcaption` element with the text `Cats love lasagna.`
 
 </section>
 
@@ -17,23 +19,27 @@ Emphasize the word `love` in the `figcaption` element by wrapping it in an empha
 
 ```yml
 tests:
-  - text: 'Your emphasis (`em`) element should have an opening tag. Opening tags have this syntax: `<elementName>`.'
-    testString: assert( document.querySelector('em') );
-  - text: Your emphasis (`em`) element should have a closing tag. Closing tags have a `/` just after the `<` character.
-    testString: assert( code.match(/<\/em\>/) );
-  - text: You have either deleted the `figcaption` element or it is missing an opening or closing tag.
-    testString: assert( document.querySelector('figcaption') && code.match(/<\/figcaption\>/) );
-  - text: Your emphasis (`em`) element should surround the text `love`. You have either omitted the text or have a typo.
-    testString: assert( document.querySelector('figcaption > em').innerText.toLowerCase() === 'love' );
-  - text: The `figcaption`'s text should be `Cats love lasagna`. Check for typos and that the necessary spaces are present around the `em` element's opening and closing tags.
-    testString: assert( document.querySelector('figcaption').innerText.replace(/\s+/gi, ' ').match(/cats love lasagna\.?/i) );
-    
+  - text: The Lasagna `img` element should be nested in the `figure` element.
+    testString: assert( document.querySelector('figure > img') && document.querySelector('figure > img').getAttribute('src').toLowerCase() === 'https://bit.ly/fcc-lasagna');
+  - text: "Your `figcaption` element should have an opening tag. Opening tags have the following syntax: `<elementName>`."
+    testString: assert( document.querySelector('figcaption') );
+  - text: Your `figcaption` element should have a closing tag. Closing tags have a `/` just after the `<` character.
+    testString: assert( code.match(/<\/figcaption\>/) );
+  - text: The `figcaption` element should be nested in the `figure` element.
+    testString: assert( document.querySelector('figure > figcaption') && document.querySelector('figure > figcaption'));
+  - text: The lasagna `img` element should be nested in the `figure` element.
+    testString: assert( document.querySelector('figure > img') && document.querySelector('figure > img').getAttribute('src').toLowerCase() === 'https://bit.ly/fcc-lasagna');
+  - text: The `figcaption` element nested in the `figure` element should be below the `img` element. You have them in the wrong order.
+    testString: assert( document.querySelector('figcaption').previousElementSibling.nodeName === 'IMG');
+  - text: Your `figcaption` element's text should be `Cats love lasagna.` You have either omitted the text or have a typo.
+    testString: assert( document.querySelector('figcaption').innerText.match(/Cats love lasagna.?$/i) );
 ```
 
 </section>
 
 ## Challenge Seed
 <section id='challengeSeed'>
+
 <div id='html-seed'>
 
 ```html
@@ -56,9 +62,8 @@ tests:
           <li>lasagna</li>
         </ul>
         <figure>
-          <img src="https://bit.ly/fcc-lasagna" alt="A slice of lasagna on a plate.">
           --fcc-editable-region--
-          <figcaption>Cats love lasagna.</figcaption>
+          <img src="https://bit.ly/fcc-lasagna" alt="A slice of lasagna on a plate.">
           --fcc-editable-region--
         </figure>
       </section>

@@ -1,5 +1,5 @@
 ---
-id: 5ef9b03c81a63668521804da
+id: 5efb23e70dc218d6c85f89b1
 title: Part 37
 challengeType: 0
 isHidden: true
@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Use the `button` element to create a clickable button. For example, `<button>Click Here</button>` creates a button with the text `Click Here`.
+There are many kinds of inputs you can create using the `type` attribute. You can easily create a password field, reset button, or a control to let users select a file from their computer.
 
-Add a `button` element with the text `Submit` below the `input` element.  Note the default behavior of clicking a form button with any attributes submits the form to the location specified in the form's `action` attribute.
+Create a text field to get text input from a user by adding the `type` attribute with the value `text` to the `input` element.
 
 </section>
 
@@ -19,14 +19,16 @@ Add a `button` element with the text `Submit` below the `input` element.  Note t
 
 ```yml
 tests:
-  - text: 'Your `button` element should have an opening tag. Opening tags have this syntax: `<elementName>`.'
-    testString: assert( document.querySelector('button') );
-  - text: Your `button` element should have a closing tag. Closing tags have a `/` just after the `<` character.
-    testString: assert( code.match(/<\/button\>/) );
-  - text: Your `button` element's text should be 'Submit'. You have either omitted the text or have a typo.
-    testString: assert( document.querySelector('button').innerText.toLowerCase() === 'submit' );
-  - text: Your `button` element should be below the `input` element. You have them in the wrong order.
-    testString: const collection = [...document.querySelectorAll('input, button')].map(node => node.nodeName); assert( collection.indexOf('INPUT') < collection.indexOf('BUTTON') );
+  - text: You have either deleted your `input` element or it has invalid syntax. If you have added an attributes, make sure their values are surrounded by quotation marks.
+    testString: assert( $('input').length );
+  - text: Your `form` element should only contain the `input` element. Remove any extra HTML elements or text between the `form` element's tags.
+    testString: assert( $('form')[0].children.length === 1 && $('form')[0].innerText.trim().length === 0 );
+  - text: Your `input` element does not have a `type` attribute. with the value `text`. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
+    testString: assert( $('input')[0].hasAttribute('type') );
+  - text: Your `input` element should have a `type` attribute with the value `text`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
+    testString: assert( $('input')[0].getAttribute('type').replace(/\s+/g, ' ').match(/^text$/i) );
+  - text: Although you have set the `input` element's `type` attribute to the `text`, it is recommended to always surround the value of an attribute with quotation marks.
+    testString: assert( !/\<input\s+type\s*=\s*text/.test(code) );
 
 ```
 
@@ -74,7 +76,7 @@ tests:
         <h2>Cat Form</h2>
         <form action="https://freecatphotoapp.com/submit-cat-photo">
           --fcc-editable-region--
-          <input type="text" name="catphotourl" placeholder="cat photo URL" required>
+          <input>
           --fcc-editable-region--
         </form>
       </section>

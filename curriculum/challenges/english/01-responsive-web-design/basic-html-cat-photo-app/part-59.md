@@ -1,5 +1,5 @@
 ---
-id: 5ef9b03c81a63668521804eb
+id: 5ef9b03c81a63668521804e7
 title: Part 59
 challengeType: 0
 isHidden: true
@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-The `title` element determines what browsers show in the title bar or tab for the page.
+Now you will add a footer section to the page. 
 
-Add a `title` element within the `head` element. Its text should be `CatPhotoApp`.
+After the `main` element, add a `footer` element.
 
 </section>
 
@@ -19,17 +19,14 @@ Add a `title` element within the `head` element. Its text should be `CatPhotoApp
 
 ```yml
 tests:
-  - text: You have either deleted the `head` element or it is missing an opening tag or closing tag.
-    testString: assert( code.match(/\<head\>/) && code.match(/\<\/head\>/) );
-  - text: Your `title` element should be nested in the `head` element. Make sure to added an opening tag and closing tag for the `title` element.
-    testString: |
-      const noSpaces = code.replace(/\s/g, '');
-      assert( noSpaces.match(/\<head\>\<title\>.*\<\/title\>\<\/head\>/) );
-  - text: Your `title` element should have a closing tag. Closing tags have a `/` just after the `<` character.
-    testString: |
-      assert( code.match(/\<\/title\>/) );
-  - text: Your `title` element's text should be `CatPhotoApp`. You have either omitted the text or have a typo.
-    testString: assert( document.title && document.title.toLowerCase() === 'catphotoapp' );
+  - text: You have either deleted the `main` element or it is missing an opening tag or closing tag."
+    testString: assert( document.querySelector('main') && code.match(/<\/main>/) );
+  - text: "Your `footer` element should have an opening tag. Opening tags have the following syntax: `<elementName>`."
+    testString: assert( document.querySelector('footer') );
+  - text: Your `footer` element should have a closing tag. Closing tags have a `/` just after the `<` character.
+    testString: assert( code.match(/<\/footer\>/) );
+  - text: Your `footer` element should the below the closing `main` element tag. You have it put it somewhere else.
+    testString: assert( document.querySelector('main').nextElementSibling.nodeName === 'FOOTER' );
 
 ```
 
@@ -41,10 +38,6 @@ tests:
 
 ```html
 <html>
-  --fcc-editable-region--
-  <head>
-  </head>
-  --fcc-editable-region--
   <body>
     <h1>CatPhotoApp</h1>
     <main>
@@ -95,14 +88,11 @@ tests:
           <button type="submit">Submit</button>
         </form>
       </section>
+    --fcc-editable-region-- 
     </main>
-    <footer>
-      <p>
-        No Copyright - <a href="https://www.freecodecamp.org">freeCodeCamp.org</a>
-      </p>
-    </footer>
   </body>
 </html>
+--fcc-editable-region--
 ```
 
 </div>

@@ -1,5 +1,5 @@
 ---
-id: 5ef9b03c81a63668521804d8
+id: 5ef9b03c81a63668521804d6
 title: Part 34
 challengeType: 0
 isHidden: true
@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-The `input` element is allows you several ways to collect data from a web form. Like anchor (`a`) elements, `input` elements are <dfn>self-closing</dfn> and do not need closing tags.
+Now you will add a web form to collect information from users.
 
-Nest an `input` element in the `form` element.
+After the `Cat Form` heading, add a `form` element.
 
 </section>
 
@@ -19,24 +19,20 @@ Nest an `input` element in the `form` element.
 
 ```yml
 tests:
-  - text: Your `form` element should have an opening tag and closing tag in the correct order. You may be missing one or both of the required tags, or have them in the wrong order.
+  - text: Your `form` element should have an opening tag and closing tag. You may be missing one or both of the required tags, or have them in the wrong order.
     testString: |
-      const noSpaces = code.replace(/\s/g, '');
       assert(
         document.querySelector('form') &&
-        code.match(/<\/form>/g) &&
-        noSpaces.indexOf('<form') < noSpaces.indexOf('</form>')
+        code.match(/<\/form>/g)
       );
-  - text: Your `form` element's opening tag should only have an `action` attribute. Remove anything else you may have typed in it.
-    testString: assert( [...document.querySelector('form').attributes].length < 2 );
-  - text: You should create an input element. Check the syntax.
-    testString: assert( document.querySelector('input') );
-  - text: Your `input` element should have an opening tag, but not a closing tag.
-    testString: assert( document.querySelector('input') && !code.match(/<\/input\>/g) );
-  - text: Your `input` element should be nested within the `form` element.
-    testString: assert( document.querySelector('form > input') );
-  - text: Your `form` should only contain the `input` element. Remove any HTML elements or text between the `form` element's tags.
-    testString: assert( $('form')[0].children.length === 1 && $('form')[0].innerText.trim().length === 0 );
+  - text: Your `form` element tags are not in the correct order.
+    testString: |
+      const noSpaces = code.replace(/\s/g, '');
+      assert( noSpaces.indexOf('<form>') < noSpaces.indexOf('</form>') );
+  - text: The `form` element nested in the last `section` element should be below the `h2` element. You have the `h2` element and the `form` element in the wrong order.
+    testString: assert( document.querySelector('form').previousElementSibling.nodeName === 'H2');
+  - text: The `form` element should have no content. Remove any HTML elements or text between the `form` element's tags.
+    testString: assert( $('form')[0].innerHTML.trim().length === 0 );
 
 ```
 
@@ -81,10 +77,8 @@ tests:
         </figure>
       </section>
       <section>
-        <h2>Cat Form</h2>
         --fcc-editable-region--
-        <form action="https://freecatphotoapp.com/submit-cat-photo">
-        </form>
+        <h2>Cat Form</h2>
         --fcc-editable-region--
       </section>
     </main>
