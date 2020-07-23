@@ -24,7 +24,9 @@ tests:
   - text: Your `html` element should have a `lang` attribute with the value `en`. You may have omitted the attribute/value, or have a typo.
     testString: |
       const extraSpacesRemoved = code.replace(/\s+/g, ' ');
-      assert( extraSpacesRemoved.match(/\<html lang\=["|']?en["|']?\>/) );
+      assert( extraSpacesRemoved.match(/\<html lang\=("|')([a-z]+)\1\>/) );
+  - text: Although you have set the `html` element's `lang` attribute to `en`, it is recommended to always surround the value of an attribute with quotation marks.
+    testString: assert( !/\<\s*html\s+lang\s*=en/i.test(code) );
 
 ```
 
