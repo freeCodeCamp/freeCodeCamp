@@ -19,8 +19,16 @@ Add a `head` element just above the `body` element.
 
 ```yml
 tests:
-  - text: See description above for instructions.
-    testString: ''
+  - text: You have either deleted the `body` element or it is missing an opening tag or closing tag.
+    testString: assert( document.querySelector('body') && code.match(/<\/body>/) );
+  - text: "Your `head` element should have an opening tag. Opening tags have the following syntax: `<elementName>`."
+    testString: assert( code.match(/\<head\>/) );
+  - text: Your `head` element should have a closing tag. Closing tags have a `/` just after the `<` character.
+    testString: assert( code.match(/\<\/head\>/) );
+  - text: Your `head` element should be above the opening `body` element tag. You have it put it somewhere else.
+    testString: |
+      const noSpaces = code.replace(/\s/g, '');
+      assert( noSpaces.match(/\<\/head\>\<body\>/) );
 
 ```
 

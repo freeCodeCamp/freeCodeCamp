@@ -19,8 +19,12 @@ Add the `lang` attribute with the value `en` to the opening `html` tag to specif
 
 ```yml
 tests:
-  - text: See description above for instructions.
-    testString: ''
+  - text: You have either deleted the `html` element or it is missing an opening tag or closing tag.
+    testString: assert( code.match(/\<html.*?\>/) && code.match(/\<\/html\>/) );
+  - text: Your `html` element should have a `lang` attribute with the value `en`. You may have omitted the attribute/value, or have a typo.
+    testString: |
+      const extraSpacesRemoved = code.replace(/\s+/g, ' ');
+      assert( extraSpacesRemoved.match(/\<html lang\=["|']?en["|']?\>/) );
 
 ```
 

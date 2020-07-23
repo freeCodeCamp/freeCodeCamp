@@ -19,8 +19,10 @@ To complete this project, add this declaration as the first line of the code.
 
 ```yml
 tests:
-  - text: See description above for instructions.
-    testString: ''
+  - text: Your code should begin with the declaration `<!DOCTYPE html>`. You may have omitted the declaration, have a typo, or it is not the first line of code.
+    testString: |
+      const noSpaces = code.replace(/\s/g, '');
+      assert( noSpaces.match(/^\<\!DOCTYPEhtml\>/) );
 
 ```
 

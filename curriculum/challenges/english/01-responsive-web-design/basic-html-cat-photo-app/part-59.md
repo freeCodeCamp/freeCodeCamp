@@ -19,8 +19,19 @@ Add a `title` element within the `head` element. Its text should be `CatPhotoApp
 
 ```yml
 tests:
-  - text: See description above for instructions.
-    testString: ''
+  - text: You have either deleted the `head` element or it is missing an opening tag or closing tag.
+    testString: assert( code.match(/\<head\>/) && code.match(/\<\/head\>/) );
+  - text: Your `title` element should be nested in the `head` element. Make sure to added an opening tag and closing tag for the `title` element.
+    testString: |
+      const noSpaces = code.replace(/\s/g, '');
+      assert( noSpaces.match(/\<head\>\<title\>.*\<\/title\>\<\/head\>/) );
+  - text: Your `title` element should have a closing tag. Closing tags have a `/` just after the `<` character.
+    testString: |
+      assert( code.match(/\<\/title\>/) );
+  - text: Your `title` element's text should be `CatPhotoApp`. You have either omitted the text or have a typo.
+    testString: |
+      const noSpaces = code.replace(/\s/g, '');
+      assert( noSpaces.match(/\<title\>catphotoapp\<\/title\>/i) );
 
 ```
 

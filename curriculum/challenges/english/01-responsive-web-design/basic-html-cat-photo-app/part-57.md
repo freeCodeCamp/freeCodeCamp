@@ -17,8 +17,24 @@ Make the text `freeCodeCamp.org` into a link by enclosing it in an anchor (`a`) 
 
 ```yml
 tests:
-  - text: See description above for instructions.
-    testString: ''
+  - text: Your anchor (`a`) element should be nested within the `footer` element. Make sure to added an opening tag and closing tag for the anchor element.
+    testString: assert( $('footer > p > a') );
+  - text: Your anchor (`a`) element should have a closing tag. Closing tags have a `/` just after the `<` character.
+    testString: |
+      const aElemClosingTags = code.match(/<\/a\>/g);
+      assert( aElemClosingTags && aElemClosingTags.length === 3);
+  - text: Your anchor (`a`) element should have an `href` attribute with the value `https://www.freecodecamp.org`. You may have omitted the attribute/value, or have a typo.
+    testString: |
+      const nestedAnchor = $('footer > p > a')[0];
+      assert( nestedAnchor.getAttribute('href') === 'https://www.freecodecamp.org' );
+  - text: The link's text should be `freeCodeCamp.org`. You have either omitted the text or have a typo.
+    testString: |
+      const nestedAnchor = $('footer > p > a')[0];
+      assert( nestedAnchor.innerText.toLowerCase().replace(/\s+/g, ' ') === 'freecodecamp.org');
+  - text: After nesting the anchor (`a`) element, the only `p` element content visible in the browser should be `No Copyright - freeCodeCamp.org`. Double check the text, spacing, or punctuation of both the `p` and nested anchor element.
+    testString: |
+      const pText = $('footer > p')[0].innerText.toLowerCase().replace(/\s+/g, ' ');
+      assert( pText.match(/^no copyright - freecodecamp.org$/) );
 
 ```
 
