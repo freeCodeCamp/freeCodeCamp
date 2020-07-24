@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Turn the image into a link by surrounding it with opening and closing anchor tags. Use `https://www.freecodecamp.org/cat-photos` as the anchor's `href` attribute value.
+Turn the image into a link by surrounding it with necessary element tags. Use `https://www.freecodecamp.org/cat-photos` as the anchor's `href` attribute value.
 
 </section>
 
