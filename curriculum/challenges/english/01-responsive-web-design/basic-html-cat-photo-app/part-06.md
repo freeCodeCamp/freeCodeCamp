@@ -19,7 +19,7 @@ To make HTML easier to read, indent the `h2` element, the comment, and `p` eleme
 
 ```yml
 tests:
-  - text: Your should have an `h2` element with text of `Cat Photos`.  You may have accidentally deleted it, it is missing both opening and closing tags, or the text has changed.
+  - text: Your should have an `h2` element with text `Cat Photos`. You may have accidentally deleted it, it is missing both opening and closing tags, or the text has changed.
     testString: assert( document.querySelector('h2') && code.match(/<\/h2\>/) && document.querySelector('h2').innerText.toLowerCase() === 'cat photos' );
   - text: Your `h2` element should below the `main` element's opening tag and its opening tag should start 6 spaces over from the start of the line.
     testString: assert( code.toLowerCase().match(/<main\>\n\s{6}<h2>/) );
@@ -35,6 +35,10 @@ tests:
     testString: assert( document.querySelector('p').innerText.toLowerCase().match(/click\s+here\s+to\s+view\s+more\s+cat\s+photos\.?$/) );
   - text: Your `p` element should be below the comment and its opening tag should start 6 spaces over from the start of the line.
     testString: assert( code.toLowerCase().match(/-->\n\s{6}<p>/) );
+  - text: Your `p` element's closing tag should be before the `main` element's closing tag. You have them in the wrong order.
+    testString: |
+      const noSpaces = code.replace(/\s/g, '');
+      assert( !noSpaces.match(/\<\/main\>\<\/p\>/) );
 
 ```
 
