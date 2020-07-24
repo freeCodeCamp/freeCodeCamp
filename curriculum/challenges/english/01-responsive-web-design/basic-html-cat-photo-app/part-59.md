@@ -1,5 +1,5 @@
 ---
-id: 5ef9b03c81a63668521804e7
+id: 5f1a89f1190aff21ae42105a
 title: Part 59
 challengeType: 0
 isHidden: true
@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Now you will add a footer section to the page. 
+Like radio buttons, form data for selected checkboxes are `name` / `value` attribute pairs. While the `value` attribute is optional, it's best practice to include it with any checkboxes or radio buttons on the page.
 
-After the `main` element, add a `footer` element.
+Add a `value` attribute to each checkbox. For convenience, set each checkbox's `value` attribute to the same value as its `id` attribute.
 
 </section>
 
@@ -19,14 +19,22 @@ After the `main` element, add a `footer` element.
 
 ```yml
 tests:
-  - text: You have either deleted the `main` element or it is missing an opening tag or closing tag."
-    testString: assert( document.querySelector('main') && code.match(/<\/main>/) );
-  - text: "Your `footer` element should have an opening tag. Opening tags have the following syntax: `<elementName>`."
-    testString: assert( document.querySelector('footer') );
-  - text: Your `footer` element should have a closing tag. Closing tags have a `/` just after the `<` character.
-    testString: assert( code.match(/<\/footer\>/) );
-  - text: Your `footer` element should the below the closing `main` element tag. You have it put it somewhere else.
-    testString: assert( document.querySelector('main').nextElementSibling.nodeName === 'FOOTER' );
+  - text: All three checkboxes should have a `value` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
+    testString: |
+      const checkboxes = [...document.querySelectorAll('input[type="checkbox"]')];
+      assert( checkboxes.every(checkbox => checkbox.hasAttribute('value')) );
+  - text: The `value` attribute of the `Loving` checkbox should be set to `loving`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
+    testString: |
+      const lovingCheckbox = document.querySelector('#loving');
+      assert( lovingCheckbox.getAttribute('value').match(/^loving$/) );
+  - text: The `value` attribute of the `Lazy` checkbox should be set to `lazy`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
+    testString: |
+      const lazyCheckbox = document.querySelector('#lazy');
+      assert( lazyCheckbox.getAttribute('value').match(/^lazy$/) );
+  - text: The `value` attribute of the `Energetic` checkbox should be set to `energetic`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
+    testString: |
+      const energeticCheckbox = document.querySelector('#energetic');
+      assert( energeticCheckbox.getAttribute('value').match(/^energetic$/) );
 
 ```
 
@@ -73,26 +81,26 @@ tests:
       <section>
         <h2>Cat Form</h2>
         <form action="https://freecatphotoapp.com/submit-cat-photo">
+          --fcc-editable-region--
           <fieldset>
             <legend>Is your cat an indoor or outdoor cat?</legend>
-            <label><input id="indoor" type="radio" name="indoor-outdoor" value="indoor" checked> Indoor</label>
+            <label><input id="indoor" type="radio" name="indoor-outdoor" value="indoor"> Indoor</label>
             <label><input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor"> Outdoor</label>
           </fieldset>
           <fieldset>
             <legend>What's your cat's personality?</legend>
-            <input id="loving" type="checkbox" name="personality" value="loving" checked> <label for="loving">Loving</label>
-            <input id="lazy" type="checkbox" name="personality" value="lazy"> <label for="lazy">Lazy</label>
-            <input id="energetic" type="checkbox" name="personality" value="energetic"> <label for="energetic">Energetic</label>
+            <input id="loving" type="checkbox" name="personality"> <label for="loving">Loving</label>
+            <input id="lazy" type="checkbox" name="personality"> <label for="lazy">Lazy</label>
+            <input id="energetic" type="checkbox" name="personality"> <label for="energetic"> Energetic</label>
           </fieldset>
+          --fcc-editable-region--
           <input type="text" name="catphotourl" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>
         </form>
       </section>
-    --fcc-editable-region-- 
     </main>
   </body>
 </html>
---fcc-editable-region--
 ```
 
 </div>

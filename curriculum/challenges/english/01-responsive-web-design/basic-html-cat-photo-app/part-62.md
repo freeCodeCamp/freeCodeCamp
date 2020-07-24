@@ -1,5 +1,5 @@
 ---
-id: 5ef9b03c81a63668521804ea
+id: 5ef9b03c81a63668521804e8
 title: Part 62
 challengeType: 0
 isHidden: true
@@ -8,9 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Notice that everything you've added to the page so far is inside the `body` element. All page content elements that should be rendered to the page go inside the `body` element. However, other important information goes inside the `head` element.
-
-Add a `head` element just above the `body` element.
+Nest a `p` element with the text `No Copyright - freeCodeCamp.org` within the `footer` element.
 
 </section>
 
@@ -19,17 +17,18 @@ Add a `head` element just above the `body` element.
 
 ```yml
 tests:
-  - text: You have either deleted the `body` element or it is missing an opening tag or closing tag.
-    testString: assert( document.querySelector('body') && code.match(/<\/body>/) );
-  - text: "Your `head` element should have an opening tag. Opening tags have the following syntax: `<elementName>`."
-    testString: assert( code.match(/\<head\>/) );
-  - text: Your `head` element should have a closing tag. Closing tags have a `/` just after the `<` character.
-    testString: assert( code.match(/\<\/head\>/) );
-  - text: Your `head` element should be above the opening `body` element tag. You have it put it somewhere else.
+  - text: You have either deleted the `footer` element or it is missing an opening tag or closing tag."
+    testString: assert( document.querySelector('footer') && code.match(/<\/footer>/) );
+  - text: Your `footer` element should have a `p` element. Make sure to added an opening tag and closing tag for the `p` element.
+    testString: assert( document.querySelector('footer > p') );
+  - text: Your `footer` element should have a closing tag. Closing tags have a `/` just after the `<` character.
     testString: |
-      const noSpaces = code.replace(/\s/g, '');
-      assert( noSpaces.match(/\<\/head\>\<body\>/) );
-
+      const pElemClosingTags = code.match(/<\/p\>/g);
+      assert( pElemClosingTags && pElemClosingTags.length === 2);
+  - text: "Your `p` element's text should be `No Copyright - freeCodeCamp.org`. You have either omitted the text, have a typo, or it is not between the `legend` element's opening and closing tags."
+    testString: |
+      const extraSpacesRemoved = $('footer > p')[0].innerText.replace(/\s+/g, ' ');
+      assert( extraSpacesRemoved.match(/No Copyright - freeCodeCamp\.org$/i) );
 ```
 
 </section>
@@ -40,7 +39,6 @@ tests:
 
 ```html
 <html>
-  --fcc-editable-region--
   <body>
     <h1>CatPhotoApp</h1>
     <main>
@@ -92,13 +90,11 @@ tests:
         </form>
       </section>
     </main>
+    --fcc-editable-region--
     <footer>
-      <p>
-        No Copyright - <a href="https://www.freecodecamp.org">freeCodeCamp.org</a>
-      </p>
     </footer>
+    --fcc-editable-region--
   </body>
-  --fcc-editable-region--
 </html>
 ```
 

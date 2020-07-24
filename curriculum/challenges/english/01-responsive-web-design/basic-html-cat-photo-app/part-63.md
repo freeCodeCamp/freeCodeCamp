@@ -1,5 +1,5 @@
 ---
-id: 5ef9b03c81a63668521804eb
+id: 5ef9b03c81a63668521804e9
 title: Part 63
 challengeType: 0
 isHidden: true
@@ -8,9 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-The `title` element determines what browsers show in the title bar or tab for the page.
-
-Add a `title` element within the `head` element. Its text should be `CatPhotoApp`.
+Make the text `freeCodeCamp.org` into a link by enclosing it in an anchor (`a`) element. The `href` attribute should be set to `https://www.freecodecamp.org`.
 
 </section>
 
@@ -19,17 +17,24 @@ Add a `title` element within the `head` element. Its text should be `CatPhotoApp
 
 ```yml
 tests:
-  - text: You have either deleted the `head` element or it is missing an opening tag or closing tag.
-    testString: assert( code.match(/\<head\>/) && code.match(/\<\/head\>/) );
-  - text: Your `title` element should be nested in the `head` element. Make sure to added an opening tag and closing tag for the `title` element.
+  - text: Your anchor (`a`) element should be nested within the `footer` element. Make sure to added an opening tag and closing tag for the anchor (`a`) element.
+    testString: assert( $('footer > p > a').length );
+  - text: Your anchor (`a`) element should have a closing tag. Closing tags have a `/` just after the `<` character.
     testString: |
-      const noSpaces = code.replace(/\s/g, '');
-      assert( noSpaces.match(/\<head\>\<title\>.*\<\/title\>\<\/head\>/) );
-  - text: Your `title` element should have a closing tag. Closing tags have a `/` just after the `<` character.
+      const aElemClosingTags = code.match(/<\/a\>/g);
+      assert( aElemClosingTags && aElemClosingTags.length === 3);
+  - text: Your anchor (`a`) element should have an `href` attribute with the value `https://www.freecodecamp.org`. You may have omitted the attribute/value, or have a typo.
     testString: |
-      assert( code.match(/\<\/title\>/) );
-  - text: Your `title` element's text should be `CatPhotoApp`. You have either omitted the text or have a typo.
-    testString: assert( document.title && document.title.toLowerCase() === 'catphotoapp' );
+      const nestedAnchor = $('footer > p > a')[0];
+      assert( nestedAnchor.getAttribute('href') === 'https://www.freecodecamp.org' );
+  - text: The link's text should be `freeCodeCamp.org`. You have either omitted the text or have a typo.
+    testString: |
+      const nestedAnchor = $('footer > p > a')[0];
+      assert( nestedAnchor.innerText.toLowerCase().replace(/\s+/g, ' ') === 'freecodecamp.org');
+  - text: After nesting the anchor (`a`) element, the only `p` element content visible in the browser should be `No Copyright - freeCodeCamp.org`. Double check the text, spacing, or punctuation of both the `p` and nested anchor element.
+    testString: |
+      const pText = $('footer > p')[0].innerText.toLowerCase().replace(/\s+/g, ' ');
+      assert( pText.match(/^no copyright - freecodecamp.org$/) );
 
 ```
 
@@ -41,10 +46,6 @@ tests:
 
 ```html
 <html>
-  --fcc-editable-region--
-  <head>
-  </head>
-  --fcc-editable-region--
   <body>
     <h1>CatPhotoApp</h1>
     <main>
@@ -98,7 +99,9 @@ tests:
     </main>
     <footer>
       <p>
-        No Copyright - <a href="https://www.freecodecamp.org">freeCodeCamp.org</a>
+        --fcc-editable-region--
+        No Copyright - freeCodeCamp.org
+        --fcc-editable-region--
       </p>
     </footer>
   </body>

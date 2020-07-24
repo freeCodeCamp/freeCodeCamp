@@ -1,5 +1,5 @@
 ---
-id: 5ef9b03c81a63668521804ec
+id: 5ef9b03c81a63668521804ea
 title: Part 64
 challengeType: 0
 isHidden: true
@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Notice that the entire contents of the page are nested within an `html` element. All other elements must be descendants of this `html` element.
+Notice that everything you've added to the page so far is inside the `body` element. All page content elements that should be rendered to the page go inside the `body` element. However, other important information goes inside the `head` element.
 
-Add the `lang` attribute with the value `en` to the opening `html` tag to specify that the language of the page is English.
+Add a `head` element just above the `body` element.
 
 </section>
 
@@ -19,14 +19,16 @@ Add the `lang` attribute with the value `en` to the opening `html` tag to specif
 
 ```yml
 tests:
-  - text: You have either deleted the `html` element or it is missing an opening tag or closing tag.
-    testString: assert( code.match(/\<html.*?\>/) && code.match(/\<\/html\>/) );
-  - text: Your `html` element should have a `lang` attribute with the value `en`. You may have omitted the attribute/value, or have a typo.
+  - text: You have either deleted the `body` element or it is missing an opening tag or closing tag.
+    testString: assert( document.querySelector('body') && code.match(/<\/body>/) );
+  - text: "Your `head` element should have an opening tag. Opening tags have the following syntax: `<elementName>`."
+    testString: assert( code.match(/\<head\>/) );
+  - text: Your `head` element should have a closing tag. Closing tags have a `/` just after the `<` character.
+    testString: assert( code.match(/\<\/head\>/) );
+  - text: Your `head` element should be above the opening `body` element tag. You have it put it somewhere else.
     testString: |
-      const extraSpacesRemoved = code.replace(/\s+/g, ' ');
-      assert( extraSpacesRemoved.match(/\<html lang\=("|')([a-z]+)\1\>/) );
-  - text: Although you have set the `html` element's `lang` attribute to `en`, it is recommended to always surround the value of an attribute with quotation marks.
-    testString: assert( !/\<\s*html\s+lang\s*=en/i.test(code) );
+      const noSpaces = code.replace(/\s/g, '');
+      assert( noSpaces.match(/\<\/head\>\<body\>/) );
 
 ```
 
@@ -37,12 +39,8 @@ tests:
 <div id='html-seed'>
 
 ```html
---fcc-editable-region--
 <html>
---fcc-editable-region--
-  <head>
-    <title>CatPhotoApp</title>
-  </head>
+  --fcc-editable-region--
   <body>
     <h1>CatPhotoApp</h1>
     <main>
@@ -100,6 +98,7 @@ tests:
       </p>
     </footer>
   </body>
+  --fcc-editable-region--
 </html>
 ```
 

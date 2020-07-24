@@ -1,5 +1,5 @@
 ---
-id: 5ef9b03c81a63668521804e5
+id: 5efc575c8d6a74d05e68af77
 title: Part 58
 challengeType: 0
 isHidden: true
@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-In order to make a checkbox checked or radio button selected by default, you need to add the `checked` attribute to it. There's no need to set a value to the `checked` attribute. Instead, just add the word `checked` to the `input` element, making sure there is space between it and other attributes.
+Add a final checkbox after the previous one with an `id` attribute value of `energetic`. The `name` and attribute should be the same as the last checkbox.
 
-Make the first radio button and the first checkbox selected by default.
+Also add a `label` element to the right of the new checkbox with text `Energetic`. Make sure to associate the `label` element with the new checkbox.
 
 </section>
 
@@ -19,18 +19,22 @@ Make the first radio button and the first checkbox selected by default.
 
 ```yml
 tests:
-  - text: Make sure there still are two radio buttons and three checkboxes nested in their respective `fieldset` elements.
-    testString: assert( $('input[type="radio"]').length === 2 && $('fieldset > input[type="checkbox"]').length === 3 );
-  - text: The first radio button is missing the `checked` attribute.
-    testString: assert( $('input[type="radio"]')[0].hasAttribute('checked') );
-  - text: The second radio button should not have the `checked` attribute.
-    testString: assert( !$('input[type="radio"]')[1].hasAttribute('checked') );
-  - text: The first checkbox is missing the `checked` attribute.
-    testString: assert( $('input[type="checkbox"]')[0].hasAttribute('checked') );
-  - text: The second checkbox should not have the `checked` attribute.
-    testString: assert( !$('input[type="checkbox"]')[1].hasAttribute('checked') );
-  - text: The third checkbox should not have the `checked` attribute.
-    testString: assert( !$('input[type="checkbox"]')[2].hasAttribute('checked') );
+  - text: You need to add a new checkbox.
+    testString: assert( $('input[type="checkbox"]').length === 3 );
+  - text: Your new checkbox should have an `id` attribute with the value `energetic` and a `name` attribute with the value `personality`. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
+    testString: |
+      const checkboxes = [ ...$('input[type="checkbox"]') ];
+      assert( checkboxes.some(checkbox => checkbox.id === 'energetic' && checkbox.getAttribute('name') === 'personality') );
+  - text: Your new checkbox should be after the first one. You have them in the wrong order.
+    testString: |
+      const checkboxes = [...$('input[type="checkbox"]')].map(checkbox => checkbox.id);
+      assert( checkboxes.indexOf('lazy') < checkboxes.indexOf('energetic') );
+  - text: On the right side of your new checkbox, there should be `label` element with the text `Energetic`.
+    testString: |
+      const nextElementSibling = $('input[type="checkbox"]')[2].nextElementSibling;
+      assert( nextElementSibling.nodeName === 'LABEL' && nextElementSibling.innerText.replace(/\s+/g, '').match(/^Energetic$/i) );
+  - text: The new `label` should have a `for` attribute with the same value as the `id` attribute of the new checkbox. You have either omitted the value or have a typo.
+    testString: assert( $('input[type="checkbox"]')[2].nextElementSibling.getAttribute('for') === 'energetic' );
 
 ```
 
@@ -77,7 +81,6 @@ tests:
       <section>
         <h2>Cat Form</h2>
         <form action="https://freecatphotoapp.com/submit-cat-photo">
-          --fcc-editable-region--
           <fieldset>
             <legend>Is your cat an indoor or outdoor cat?</legend>
             <label><input id="indoor" type="radio" name="indoor-outdoor" value="indoor"> Indoor</label>
@@ -85,11 +88,11 @@ tests:
           </fieldset>
           <fieldset>
             <legend>What's your cat's personality?</legend>
-            <input id="loving" type="checkbox" name="personality" value="loving"> <label for="loving">Loving</label>
-            <input id="lazy" type="checkbox" name="personality" value="lazy"> <label for="lazy">Lazy</label>
-            <input id="energetic" type="checkbox" name="personality" value="energetic"> <label for="energetic"> Energetic</label>
+            --fcc-editable-region--
+            <input id="loving" type="checkbox" name="personality"> <label for="loving">Loving</label>
+            <input id="lazy" type="checkbox" name="personality"> <label for="lazy">Lazy</label>
+            --fcc-editable-region--
           </fieldset>
-          --fcc-editable-region--
           <input type="text" name="catphotourl" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>
         </form>

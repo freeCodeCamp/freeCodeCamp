@@ -1,5 +1,5 @@
 ---
-id: 5ef9b03c81a63668521804e1
+id: 5f1a80975fc4bcae0edb3497
 title: Part 48
 challengeType: 0
 isHidden: true
@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-The `fieldset` element is used to group related inputs and labels together in a web form. `fieldset` elements are <dfn>block-level elements</dfn>, meaning that they appear on a new line.
+If you select the `Indoor` radio button and submit the form, the form data for the button is based on its `name` and `value` attributes. Since your radio buttons do not have a `value` attribute, the form data will include `indoor-outdoor=on`, which is not useful when you have multiple buttons.
 
-Nest the `Indoor` and `Outdoor` radio buttons within a `fieldset` element, and don't forget to indent the buttons.
+Add a `value` attribute to both radio buttons. For convenience, set the button's `value` attribute to the same value as its `id` attribute.
 
 </section>
 
@@ -21,16 +21,20 @@ Nest the `Indoor` and `Outdoor` radio buttons within a `fieldset` element, and d
 tests:
   - text: Both radio buttons should still be located between opening and closing `label` element tags. 
     testString: |
-      const labelChildNodes = [ ...$('label') ].map(node => [ ...node.childNodes ]);
+      const labelChildNodes = [ ...document.querySelectorAll('form > label') ].map(node => node.childNodes);
       assert( labelChildNodes.filter(childNode => childNode[0].nodeName === "INPUT").length === 2 );
-  - text: "Your `fieldset` element should have an opening tag. Opening tags have the following syntax: `<elementName>`."
-    testString: assert( document.querySelector('fieldset') );
-  - text: Your `fieldset` element should have a closing tag. Closing tags have a `/` just after the `<` character.
-    testString: assert( code.match(/<\/fieldset\>/) );
-  - text: Both radio button and associated labels should be between the opening and closing tags of the `fieldset` element.
+  - text: Both radio buttons should have a `value` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
     testString: |
-      const radioButtons = [ ...$('input[type="radio"]') ];
-      assert( radioButtons.every(btn => btn.parentNode.parentNode.nodeName === "FIELDSET") );
+      const radioButtons = [...document.querySelectorAll('input[type="radio"]')];
+      assert( radioButtons.every(btn => btn.hasAttribute('value')) );
+  - text: The `Indoor` radio button's `value` attribute should be set to `indoor`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
+    testString: |
+      const indoorRadioButton = document.querySelector('#indoor');
+      assert( indoorRadioButton.getAttribute('value').match(/^indoor$/) );
+  - text: The `Outdoor` radio button's `value` attribute should be set to `outdoor`. You have either omitted the value or have a typo. Remember that attribute values should be surrounded with quotation marks.
+    testString: |
+      const outdoorRadioButton = document.querySelector('#outdoor');
+      assert( outdoorRadioButton.getAttribute('value').match(/^outdoor$/) );
 
 ```
 
@@ -50,7 +54,6 @@ tests:
         <!-- TODO: Add link to cat photos -->
         <p>Click here to view more <a target="_blank" href="https://www.freecodecamp.org/cat-photos">cat photos</a>.</p>
         <a href="https://www.freecodecamp.org/cat-photos"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-      </section>
       <section>
         <h2>Cat Lists</h2>
         <h3>Things cats love:</h3>
@@ -78,8 +81,8 @@ tests:
         <h2>Cat Form</h2>
         <form action="https://freecatphotoapp.com/submit-cat-photo">
           --fcc-editable-region--
-          <label><input id="indoor" type="radio" name="indoor-outdoor" value="indoor"> Indoor</label>
-          <label><input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor"> Outdoor</label>
+          <label><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
+          <label><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label>
           --fcc-editable-region--
           <input type="text" name="catphotourl" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>

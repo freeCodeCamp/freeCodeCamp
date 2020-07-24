@@ -1,6 +1,6 @@
 ---
-id: 5ef9b03c81a63668521804e3
-title: Part 57
+id: 5ef9b03c81a63668521804ec
+title: Part 66
 challengeType: 0
 isHidden: true
 ---
@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Add another checkbox after the one you just added. The `id` attribute value should be `lazy` and the `name` attribute value should be the same as the last checkbox.
+Notice that the entire contents of the page are nested within an `html` element. All other elements must be descendants of this `html` element.
 
-Also add a `label` element to the right of the new checkbox with the text `Lazy`. Make sure to associate the `label` element with the new checkbox using the `for` attribute.
+Add the `lang` attribute with the value `en` to the opening `html` tag to specify that the language of the page is English.
 
 </section>
 
@@ -19,22 +19,14 @@ Also add a `label` element to the right of the new checkbox with the text `Lazy`
 
 ```yml
 tests:
-  - text: You need to add a new checkbox.
-    testString: assert( $('input[type="checkbox"]').length === 2 );
-  - text: Your new checkbox should have an `id` attribute with the value `lazy` and a `name` attribute with the value `personality`. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
+  - text: You have either deleted the `html` element or it is missing an opening tag or closing tag.
+    testString: assert( code.match(/\<html.*?\>/) && code.match(/\<\/html\>/) );
+  - text: Your `html` element should have a `lang` attribute with the value `en`. You may have omitted the attribute/value, or have a typo.
     testString: |
-      const checkboxes = [ ...$('input[type="checkbox"]') ];
-      assert( checkboxes.some(checkbox => checkbox.id === 'lazy' && checkbox.getAttribute('name') === 'personality') );
-  - text: Your new checkbox should be after the first one. You have them in the wrong order.
-    testString: |
-      const checkboxes = [...$('input[type="checkbox"]')].map(checkbox => checkbox.id);
-      assert( checkboxes.indexOf('loving') < checkboxes.indexOf('lazy') );
-  - text: On the right side of your new checkbox, there should be `label` element with the text `Lazy`.
-    testString: |
-      const nextElementSibling = $('input[type="checkbox"]')[1].nextElementSibling;
-      assert( nextElementSibling.nodeName === 'LABEL' && nextElementSibling.innerText.replace(/\s+/g, '').match(/^Lazy$/i) );
-  - text: The new `label` should have a `for` attribute with the same value as the `id` attribute of the new checkbox. You have either omitted the value or have a typo.
-    testString: assert( $('input[type="checkbox"]')[1].nextElementSibling.getAttribute('for') === 'lazy' );
+      const extraSpacesRemoved = code.replace(/\s+/g, ' ');
+      assert( extraSpacesRemoved.match(/\<html lang\=("|')([a-z]+)\1\>/) );
+  - text: Although you have set the `html` element's `lang` attribute to `en`, it is recommended to always surround the value of an attribute with quotation marks.
+    testString: assert( !/\<\s*html\s+lang\s*=en/i.test(code) );
 
 ```
 
@@ -45,7 +37,12 @@ tests:
 <div id='html-seed'>
 
 ```html
+--fcc-editable-region--
 <html>
+--fcc-editable-region--
+  <head>
+    <title>CatPhotoApp</title>
+  </head>
   <body>
     <h1>CatPhotoApp</h1>
     <main>
@@ -83,20 +80,25 @@ tests:
         <form action="https://freecatphotoapp.com/submit-cat-photo">
           <fieldset>
             <legend>Is your cat an indoor or outdoor cat?</legend>
-            <label><input id="indoor" type="radio" name="indoor-outdoor" value="indoor"> Indoor</label>
+            <label><input id="indoor" type="radio" name="indoor-outdoor" value="indoor" checked> Indoor</label>
             <label><input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor"> Outdoor</label>
           </fieldset>
           <fieldset>
             <legend>What's your cat's personality?</legend>
-            --fcc-editable-region--
-            <input id="loving" type="checkbox" name="personality"> <label for="loving">Loving</label>
-            --fcc-editable-region--
+            <input id="loving" type="checkbox" name="personality" value="loving" checked> <label for="loving">Loving</label>
+            <input id="lazy" type="checkbox" name="personality" value="lazy"> <label for="lazy">Lazy</label>
+            <input id="energetic" type="checkbox" name="personality" value="energetic"> <label for="energetic">Energetic</label>
           </fieldset>
           <input type="text" name="catphotourl" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>
         </form>
       </section>
     </main>
+    <footer>
+      <p>
+        No Copyright - <a href="https://www.freecodecamp.org">freeCodeCamp.org</a>
+      </p>
+    </footer>
   </body>
 </html>
 ```

@@ -1,5 +1,5 @@
 ---
-id: 5ef9b03c81a63668521804e9
+id: 5ef9b03c81a63668521804e7
 title: Part 61
 challengeType: 0
 isHidden: true
@@ -8,7 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Make the text `freeCodeCamp.org` into a link by enclosing it in an anchor (`a`) element. The `href` attribute should be set to `https://www.freecodecamp.org`.
+Now you will add a footer section to the page. 
+
+After the `main` element, add a `footer` element.
 
 </section>
 
@@ -17,24 +19,14 @@ Make the text `freeCodeCamp.org` into a link by enclosing it in an anchor (`a`) 
 
 ```yml
 tests:
-  - text: Your anchor (`a`) element should be nested within the `footer` element. Make sure to added an opening tag and closing tag for the anchor (`a`) element.
-    testString: assert( $('footer > p > a').length );
-  - text: Your anchor (`a`) element should have a closing tag. Closing tags have a `/` just after the `<` character.
-    testString: |
-      const aElemClosingTags = code.match(/<\/a\>/g);
-      assert( aElemClosingTags && aElemClosingTags.length === 3);
-  - text: Your anchor (`a`) element should have an `href` attribute with the value `https://www.freecodecamp.org`. You may have omitted the attribute/value, or have a typo.
-    testString: |
-      const nestedAnchor = $('footer > p > a')[0];
-      assert( nestedAnchor.getAttribute('href') === 'https://www.freecodecamp.org' );
-  - text: The link's text should be `freeCodeCamp.org`. You have either omitted the text or have a typo.
-    testString: |
-      const nestedAnchor = $('footer > p > a')[0];
-      assert( nestedAnchor.innerText.toLowerCase().replace(/\s+/g, ' ') === 'freecodecamp.org');
-  - text: After nesting the anchor (`a`) element, the only `p` element content visible in the browser should be `No Copyright - freeCodeCamp.org`. Double check the text, spacing, or punctuation of both the `p` and nested anchor element.
-    testString: |
-      const pText = $('footer > p')[0].innerText.toLowerCase().replace(/\s+/g, ' ');
-      assert( pText.match(/^no copyright - freecodecamp.org$/) );
+  - text: You have either deleted the `main` element or it is missing an opening tag or closing tag."
+    testString: assert( document.querySelector('main') && code.match(/<\/main>/) );
+  - text: "Your `footer` element should have an opening tag. Opening tags have the following syntax: `<elementName>`."
+    testString: assert( document.querySelector('footer') );
+  - text: Your `footer` element should have a closing tag. Closing tags have a `/` just after the `<` character.
+    testString: assert( code.match(/<\/footer\>/) );
+  - text: Your `footer` element should the below the closing `main` element tag. You have it put it somewhere else.
+    testString: assert( document.querySelector('main').nextElementSibling.nodeName === 'FOOTER' );
 
 ```
 
@@ -96,16 +88,11 @@ tests:
           <button type="submit">Submit</button>
         </form>
       </section>
+    --fcc-editable-region-- 
     </main>
-    <footer>
-      <p>
-        --fcc-editable-region--
-        No Copyright - freeCodeCamp.org
-        --fcc-editable-region--
-      </p>
-    </footer>
   </body>
 </html>
+--fcc-editable-region--
 ```
 
 </div>
