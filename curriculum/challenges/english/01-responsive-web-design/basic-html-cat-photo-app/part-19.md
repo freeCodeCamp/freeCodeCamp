@@ -1,0 +1,61 @@
+---
+id: 5dfa37b9eacea3f48c6300b0
+title: Part 19
+challengeType: 0
+isHidden: true
+---
+
+## Description
+<section id='description'>
+
+After the `h3` element with the `Things cats love:` text, add an unordered list (`ul`) element. Note that nothing will be displayed at this point.
+
+</section>
+
+## Tests
+<section id='tests'>
+
+```yml
+tests:
+  - text: 'Your `ul` element should have an opening tag. Opening tags have this syntax: `<elementName>`.'
+    testString: assert( document.querySelector('ul') );
+  - text: Your `ul` element should have a closing tag. Closing tags have a `/` just after the `<` character.
+    testString: assert( code.match(/<\/ul>/) );
+  - text: The `ul` element should be above the second `section` element's closing tag.
+    testString: |
+      const secondSectionLastElemNode = $('main > section')[1].lastElementChild;
+      assert( secondSectionLastElemNode.nodeName === 'UL' );
+
+```
+
+</section>
+
+## Challenge Seed
+<section id='challengeSeed'>
+
+<div id='html-seed'>
+
+```html
+<html>
+  <body>
+    <h1>CatPhotoApp</h1>
+    <main>
+      <section>
+      <h2>Cat Photos</h2>
+        <!-- TODO: Add link to cat photos -->
+        <p>Click here to view more <a target="_blank" href="https://www.freecodecamp.org/cat-photos">cat photos</a>.</p>
+        <a href="https://www.freecodecamp.org/cat-photos"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+      </section>
+      <section>
+        --fcc-editable-region--
+        <h2>Cat Lists</h2>
+        <h3>Things cats love:</h3>
+        --fcc-editable-region--
+      </section>
+    </main>
+  </body>
+</html>
+```
+
+</div>
+</section>
