@@ -85,8 +85,8 @@ tests:
         <form action="https://freecatphotoapp.com/submit-cat-photo">
           <fieldset>
             --fcc-editable-region--
-            <label><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
-            <label><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label>
+            <label><input id="indoor" type="radio" name="indoor-outdoor" value="indoor"> Indoor</label>
+            <label><input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor"> Outdoor</label>
             --fcc-editable-region--
           </fieldset>
           <input type="text" name="catphotourl" placeholder="cat photo URL" required>

@@ -68,8 +68,8 @@ tests:
         <form action="https://freecatphotoapp.com/submit-cat-photo">
           <fieldset>
             <legend>Is your cat an indoor or outdoor cat?</legend>
-            <label><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
-            <label><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label>
+            <label><input id="indoor" type="radio" name="indoor-outdoor" value="indoor"> Indoor</label>
+            <label><input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor"> Outdoor</label>
           </fieldset>
           <fieldset>
             <legend>What's your cat's personality?</legend>

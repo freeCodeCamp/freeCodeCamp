@@ -95,8 +95,8 @@ tests:
           --fcc-editable-region--
           <fieldset>
             <legend>Is your cat an indoor or outdoor cat?</legend>
-            <label><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
-            <label><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label>
+            <label><input id="indoor" type="radio" name="indoor-outdoor" value="indoor"> Indoor</label>
+            <label><input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor"> Outdoor</label>
           </fieldset>
           <input type="text" name="catphotourl" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>

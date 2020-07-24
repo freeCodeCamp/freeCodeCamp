@@ -78,8 +78,8 @@ tests:
         <form action="https://freecatphotoapp.com/submit-cat-photo">
           <fieldset>
             <legend>Is your cat an indoor or outdoor cat?</legend>
-            <label><input id="indoor" type="radio" name="indoor-outdoor" checked> Indoor</label>
-            <label><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label>
+            <label><input id="indoor" type="radio" name="indoor-outdoor" value="indoor" checked> Indoor</label>
+            <label><input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor"> Outdoor</label>
           </fieldset>
           <fieldset>
             <legend>What's your cat's personality?</legend>
@@ -150,8 +150,8 @@ tests:
         <form action="https://freecatphotoapp.com/submit-cat-photo">
           <fieldset>
             <legend>Is your cat an indoor or outdoor cat?</legend>
-            <label><input id="indoor" type="radio" name="indoor-outdoor" checked> Indoor</label>
-            <label><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label>
+            <label><input id="indoor" type="radio" name="indoor-outdoor" value="indoor" checked> Indoor</label>
+            <label><input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor"> Outdoor</label>
           </fieldset>
           <fieldset>
             <legend>What's your cat's personality?</legend>
