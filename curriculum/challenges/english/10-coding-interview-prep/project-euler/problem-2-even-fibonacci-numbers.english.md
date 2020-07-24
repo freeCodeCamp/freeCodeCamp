@@ -32,10 +32,12 @@ By considering the terms in the Fibonacci sequence whose values do not exceed <c
 tests:
   - text: <code>fiboEvenSum(10)</code> should return a number.
     testString: assert(typeof fiboEvenSum(10) === 'number');
-  - text: <code>fiboEvenSum(10)</code> should return 10.
-    testString: assert.strictEqual(fiboEvenSum(10), 10);
+  - text: Your function should return an <code>even</code> value.
+    testString: assert.equal(fiboEvenSum(10) % 2 === 0, true);
   - text: 'Your function should sum the even-valued Fibonacci numbers: <code>fiboEvenSum(8)</code> should return 10.'
     testString: assert.strictEqual(fiboEvenSum(8), 10);
+  - text: <code>fiboEvenSum(10)</code> should return 10.
+    testString: assert.strictEqual(fiboEvenSum(10), 10);
   - text: <code>fiboEvenSum(34)</code> should return 44.
     testString: assert.strictEqual(fiboEvenSum(34), 44);
   - text: <code>fiboEvenSum(60)</code> should return 44.
@@ -46,8 +48,6 @@ tests:
     testString: assert.strictEqual(fiboEvenSum(100000), 60696);
   - text: <code>fiboEvenSum(4000000)</code> should return 4613732.
     testString: assert.strictEqual(fiboEvenSum(4000000), 4613732);
-  - text: Your function should return an <code>even</code> value.
-    testString: assert.equal(fiboEvenSum(10) % 2 === 0, true);
 ```
 
 </section>
