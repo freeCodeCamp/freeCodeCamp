@@ -23,7 +23,7 @@ tests:
     testString: assert( $('input[type="checkbox"]')[0] );
   - text: Your checkbox should still have an `id` attribute with the value `loving`. You may have removed the attribute or changed its value.
     testString: assert( $('input[type="checkbox"]')[0].id === 'loving' );
-  - text: The text ` Loving` should no longer be located directly to the right of your checkbox.
+  - text: The text ` Loving` should no longer be located directly to the right of your checkbox. It should be wrapped in a `label` element.
     testString: |
       const checkboxInputElem = $('input[type="checkbox"]')[0];
       assert( !checkboxInputElem.nextSibling.nodeValue.replace(/\s+/g, ' ').match(/ Loving/i) );
