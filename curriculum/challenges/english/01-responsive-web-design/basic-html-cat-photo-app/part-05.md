@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-HTML5 has tags that identify different content areas. These tags make your HTML easier to read and help with Search Engine Optimization (SEO) and accessibility. 
+HTML5 has some elements that identify different content areas. These elements make your HTML easier to read and help with Search Engine Optimization (SEO) and accessibility.
 
 Identify the main section of this page by adding a `<main>` opening tag after the `h1` element, and a `</main>` closing tag after the `p` element.
 
