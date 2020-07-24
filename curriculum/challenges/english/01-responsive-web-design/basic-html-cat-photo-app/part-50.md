@@ -41,7 +41,11 @@ tests:
         formChildren[2] && formChildren[2].nodeName === 'INPUT' &&
         formChildren[2].getAttribute('type') === 'text'
       );
-
+  - text: Your new `fieldset` element should be below the existing `fieldset` element. You have them in the wrong order.
+    testString: |
+      const fieldsetChildren = [...document.querySelectorAll('fieldset')].map(elem => elem.children);
+      assert( fieldsetChildren[0].length > fieldsetChildren
+      [1].length );
 
 ```
 
