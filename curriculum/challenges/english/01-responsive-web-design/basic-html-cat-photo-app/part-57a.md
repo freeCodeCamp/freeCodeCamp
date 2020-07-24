@@ -10,7 +10,7 @@ isHidden: true
 
 Like radio buttons, form data for selected checkboxes are `name` / `value` attribute pairs. While the `value` attribute is optional, it's best practice to include it with any checkboxes or radio buttons on the page.
 
-Add a `value` attribute to each checkbox. The `value` attribute for each checkbox should be set to the same value as its `id` attribute.
+Add a `value` attribute to each checkbox. For convenience, set each checkbox's `value` attribute to the same value as its `id` attribute.
 
 </section>
 

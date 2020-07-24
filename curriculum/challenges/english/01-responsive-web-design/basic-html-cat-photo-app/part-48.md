@@ -78,8 +78,8 @@ tests:
         <h2>Cat Form</h2>
         <form action="https://freecatphotoapp.com/submit-cat-photo">
           --fcc-editable-region--
-          <label><input id="indoor" type="radio" name="indoor-outdoor" value="indoor" value="indoor"> Indoor</label>
-          <label><input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor" value="outdoor"> Outdoor</label>
+          <label><input id="indoor" type="radio" name="indoor-outdoor" value="indoor"> Indoor</label>
+          <label><input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor"> Outdoor</label>
           --fcc-editable-region--
           <input type="text" name="catphotourl" placeholder="cat photo URL" required>
           <button type="submit">Submit</button>
