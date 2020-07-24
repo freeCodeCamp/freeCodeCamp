@@ -31,13 +31,13 @@ The function should have two parameters. The first will receive <code>n</code> o
 tests:
   - text: <code>primeGenerator</code> should be a function.
     testString: assert(typeof primeGenerator === 'function');
-  - text: <code>primeGenerator</code> should be a function.
+  - text: <code>primeGenerator(20, true)</code> should return <code>[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71]</code>.
     testString: assert.deepEqual(primeGenerator(20, true), [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71]);
-  - text: <code>primeGenerator</code> should be a function.
+  - text: <code>primeGenerator([100, 150], true)</code> should return <code>[101, 103, 107, 109, 113, 127, 131, 137, 139, 149]</code>.
     testString: assert.deepEqual(primeGenerator([100, 150], true), [101, 103, 107, 109, 113, 127, 131, 137, 139, 149]);
-  - text: <code>primeGenerator</code> should be a function.
+  - text: <code>primeGenerator([7700, 8000], false)</code> should return <code>30</code>.
     testString: assert.equal(primeGenerator([7700, 8000], false), 30);
-  - text: <code>primeGenerator</code> should be a function.
+  - text: <code>primeGenerator(10000, false)</code> should return <code>104729</code>.
     testString: assert.equal(primeGenerator(10000, false), 104729);
 
 ```
