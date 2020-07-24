@@ -8,9 +8,9 @@ isHidden: true
 ## Description
 <section id='description'>
 
-You can add a link to the app by using an anchor (`a`) element. For example, `<a href="https://www.freecodecamp.org"></a>` is an anchor (`a`) element that links to `freecodecamp.org`. 
+You can link to another page with the anchor (`a`) element. For example, <a href="https://www.freecodecamp.org"></a> would link to `freecodecamp.org`. 
 
-After the `p` element, add an anchor (`a`) element with an `href` attribute that links to a page on the Free Code Camp website located at `https://www.freecodecamp.org/cat-photos`. At this point, no link will show up in the browser.
+Add an anchor element after the paragraph that links to `https://www.freecodecamp.org/cat-photos`. At this point, the link won’t show up in the preview.
 
 </section>
 
