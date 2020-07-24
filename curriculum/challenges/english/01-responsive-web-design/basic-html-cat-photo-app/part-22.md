@@ -1,0 +1,68 @@
+---
+id: 5dfb655eeacea3f48c6300b3
+title: Part 22
+challengeType: 0
+isHidden: true
+---
+
+## Description
+<section id='description'>
+
+The `figure` element represents self-contained content and will allow you to associate an image with a caption.
+
+Nest the image you just added within a `figure` element.
+</section>
+
+## Tests
+<section id='tests'>
+
+```yml
+tests:
+  - text: "Your `figure` element should have an opening tag. Opening tags have the following syntax: `<elementName>`."
+    testString: assert( document.querySelector('figure') );
+  - text: Your `figure` element should have a closing tag. Closing tags have a `/` just after the `<` character.
+    testString: assert( code.match(/<\/figure\>/) );
+  - text: There should be an `figure` element right above the second `section` element's closing tag.
+    testString: assert( $('section')[1].lastElementChild.nodeName === 'FIGURE' );
+  - text: The lasagna `img` element should be nested in the `figure` element.
+    testString: assert( document.querySelector('figure > img') && document.querySelector('figure > img').getAttribute('src').toLowerCase() === 'https://bit.ly/fcc-lasagna');
+```
+
+</section>
+
+## Challenge Seed
+<section id='challengeSeed'>
+
+<div id='html-seed'>
+
+```html
+<html>
+  <body>
+    <h1>CatPhotoApp</h1>
+    <main>
+      <section>
+      <h2>Cat Photos</h2>
+      <!-- TODO: Add link to cat photos -->
+        <p>Click here to view more <a target="_blank" href="https://www.freecodecamp.org/cat-photos">cat photos</a>.</p>
+        <a href="https://www.freecodecamp.org/cat-photos"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+      </section>
+      <section>
+        <h2>Cat Lists</h2>
+        <h3>Things cats love:</h3>
+        <ul>
+          <li>cat nip</li>
+          <li>laser pointers</li>
+          <li>lasagna</li>
+        </ul>
+        --fcc-editable-region--
+        <img src="https://bit.ly/fcc-lasagna" alt="A slice of lasagna on a plate.">
+        --fcc-editable-region--
+      </section>
+    </main>
+
+  </body>
+</html>
+```
+
+</div>
+</section>

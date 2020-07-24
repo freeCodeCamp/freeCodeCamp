@@ -132,6 +132,7 @@ exports.helpCategory = {
   numpy: 'Python',
   'data-analysis-with-python-course': 'Python',
   'python-for-penetration-testing': 'Python',
+  'basic-html-cat-photo-app': 'HTML-CSS',
   'css-variables-skyline': 'HTML-CSS',
   'basic-javascript-rpg-game': 'JavaScript',
   'functional-programming-spreadsheet': 'JavaScript',

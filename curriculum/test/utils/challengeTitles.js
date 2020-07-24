@@ -19,10 +19,9 @@ class ChallengeTitles {
     const isKnown = this.knownTitles.includes(titleToCheck);
     if (isKnown) {
       throw new Error(`
-    All current curriculum challenges must have a unique title.
-
-    The title ${title} (at ${pathAndTitle}) is already assigned
-    `);
+        All current curriculum challenges must have a unique title.
+        The title ${title} (at ${pathAndTitle}) is already assigned
+      `);
     }
     this.knownTitles = [...this.knownTitles, titleToCheck];
   }
