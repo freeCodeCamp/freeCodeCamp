@@ -35,10 +35,6 @@ tests:
     testString: assert( document.querySelector('p').innerText.toLowerCase().match(/click\s+here\s+to\s+view\s+more\s+cat\s+photos\.?$/) );
   - text: Your `p` element should be below the comment and its opening tag should start 6 spaces over from the start of the line.
     testString: assert( code.toLowerCase().match(/-->\n\s{6}<p>/) );
-  - text: Your `p` element's closing tag should be before the `main` element's closing tag. You have them in the wrong order.
-    testString: |
-      const noSpaces = code.replace(/\s/g, '');
-      assert( !noSpaces.match(/\<\/main\>\<\/p\>/) );
 
 ```
 
