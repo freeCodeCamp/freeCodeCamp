@@ -34,7 +34,7 @@ tests:
     testString: assert(typeof fiboEvenSum(10) === 'number');
   - text: <code>fiboEvenSum(10)</code> should return 10.
     testString: assert.strictEqual(fiboEvenSum(10), 10);
-  - text: <code> Your function should sum the even-valued Fibonacci numbers:fiboEvenSum(8)</code> should return 10.
+  - text:  Your function should sum the even-valued Fibonacci numbers: <code>fiboEvenSum(8)</code> should return 10.
     testString: assert.strictEqual(fiboEvenSum(8), 10);
   - text: <code>fiboEvenSum(34)</code> should return 44.
     testString: assert.strictEqual(fiboEvenSum(34), 44);
