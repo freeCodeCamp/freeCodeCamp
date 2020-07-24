@@ -22,13 +22,81 @@ Start this project on Repl.it using <a href='https://repl.it/github/freeCodeCamp
 
 ```yml
 tests:
-  - text: I can pass a URL as a parameter and I will receive a shortened URL in the JSON response.
-    testString: ''
-  - text: 'If I pass an invalid URL that doesn''t follow the valid http://www.example.com format, the JSON response will contain an error instead.'
-    testString: ''
-  - text: 'When I visit that shortened URL, it will redirect me to my original link.'
-    testString: ''
+  - text: You should supply your own project, not the example url.
+    testString: "getUserInput => {
+      const url = getUserInput('url');
+      assert(!(new RegExp('.*/thread-paper\\.glitch\\.me\\.*')).test(url));
+    }
+    "
 
+  - text: I can pass a URL as a parameter and I will receive a shortened URL in the JSON response.
+    testString: "async getUserInput => {
+      const url = getUserInput('url');
+      const urlVariable = url.length; 
+      const res = await fetch(url + '/api/shorturl/new/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body:  `url=https://fcc-back-end-tester.glitch.me/url-shortener-helper/rand-${urlVariable}`
+      });
+      
+      if (res.ok) {
+        const { short_url, original_url } = await res.json();
+        assert.isNotNull(short_url);
+        assert.match(original_url, new RegExp(`fcc-back-end-tester.glitch.me/url-shortener-helper/rand-${urlVariable}`)); 
+      } else {
+        throw new Error(`${res.status} ${res.statusText}`);
+      }
+    }
+    "
+  
+  - text: When I visit that shortened URL, it will redirect me to my original link.
+    testString: "async getUserInput => {
+      const url = getUserInput('url');
+      const urlVariable = url.length;
+      let shortenedUrlVariable = '';
+      
+      const postResponse = await fetch(url + '/api/shorturl/new/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body:  `url=https://fcc-back-end-tester.glitch.me/url-shortener-helper/rand-${urlVariable}`
+      });
+      
+      if (postResponse.ok) {
+        const { short_url } = await postResponse.json();
+        shortenedUrlVariable = short_url
+      } else {
+        throw new Error(`${postResponse.status} ${postResponse.statusText}`);
+      }
+    
+      const getResponse = await fetch(url + '/api/shorturl/' + shortenedUrlVariable)
+      
+      if (getResponse.ok) {
+        const data = await getResponse.json();
+        assert.equal(data.str, `rand-${urlVariable}`); 
+      } else {
+        throw new Error(`${getResponse.status} ${getResponse.statusText}`);
+      }
+    }
+    "
+
+  - text: If I pass an invalid URL that doesn't follow the valid http://www.example.com format, the JSON response will contain an error instead.
+    testString: "async getUserInput => {
+      const url = getUserInput('url');
+      const res = await fetch(url + '/api/shorturl/new/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body:  `url=ftp:/john-doe.org`
+      });
+      
+      if (res.ok) {
+        const { error } = await res.json();
+        assert.isNotNull(error);
+        assert.equal(error.toLowerCase(), 'invalid url'); 
+      } else {
+        throw new Error(`${res.status} ${res.statusText}`);
+      }
+    }
+    "
 ```
 
 </section>
