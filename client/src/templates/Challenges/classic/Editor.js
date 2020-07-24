@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import isEqual from 'lodash/isEqual';
 import Loadable from '@loadable/component';
 
 import {
@@ -291,8 +290,6 @@ class Editor extends Component {
     ];
 
     if (editableBoundaries.length === 2) {
-      this.showEditableRegion(editableBoundaries);
-
       // TODO: is there a nicer approach/way of organising everything that
       // avoids the binds? babel-plugin-transform-class-properties ?
       const getViewZoneTop = this.getViewZoneTop.bind(this);
@@ -349,6 +346,7 @@ class Editor extends Component {
         editor.layoutOverlayWidget(this._overlayWidget);
         editor.layoutOverlayWidget(this._outputWidget);
       });
+      this.showEditableRegion(editableBoundaries);
     }
   };
 
@@ -501,18 +499,21 @@ class Editor extends Component {
 
   showEditableRegion(editableBoundaries) {
     if (editableBoundaries.length !== 2) return;
+    // TODO: The heuristic has been commented out for now because the cursor
+    // position is not saved at the moment, so it's redundant. I'm leaving it
+    // here for now, in case we decide to save it in future.
     // this is a heuristic: if the cursor is at the start of the page, chances
     // are the user has not edited yet. If so, move to the start of the editable
     // region.
-    if (
-      isEqual({ ...this._editor.getPosition() }, { lineNumber: 1, column: 1 })
-    ) {
-      this._editor.setPosition({
-        lineNumber: editableBoundaries[0] + 1,
-        column: 1
-      });
-      this._editor.revealLines(...editableBoundaries);
-    }
+    // if (
+    //  isEqual({ ...this._editor.getPosition() }, { lineNumber: 1, column: 1 })
+    // ) {
+    this._editor.setPosition({
+      lineNumber: editableBoundaries[0] + 1,
+      column: 1
+    });
+    this._editor.revealLinesInCenter(...editableBoundaries);
+    // }
   }
 
   highlightLines(stickiness, target, range, oldIds = []) {
