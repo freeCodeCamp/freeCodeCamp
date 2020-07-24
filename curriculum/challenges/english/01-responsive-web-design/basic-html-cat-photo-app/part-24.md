@@ -55,12 +55,12 @@ tests:
           <li>laser pointers</li>
           <li>lasagna</li>
         </ul>
-        --fcc-editable-region--
         <figure>
           <img src="https://bit.ly/fcc-lasagna" alt="A slice of lasagna on a plate.">
+          --fcc-editable-region--
           <figcaption>Cats love lasagna.</figcaption>
+          --fcc-editable-region--
         </figure>
-        --fcc-editable-region--
       </section>
     </main>
   </body>
