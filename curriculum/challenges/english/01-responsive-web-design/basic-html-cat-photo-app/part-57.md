@@ -89,8 +89,8 @@ tests:
           <fieldset>
             <legend>What's your cat's personality?</legend>
             --fcc-editable-region--
-            <input id="loving" type="checkbox" name="personality" value="loving"> <label for="loving">Loving</label>
-            <input id="lazy" type="checkbox" name="personality" value="lazy"> <label for="lazy">Lazy</label>
+            <input id="loving" type="checkbox" name="personality"> <label for="loving">Loving</label>
+            <input id="lazy" type="checkbox" name="personality"> <label for="lazy">Lazy</label>
             --fcc-editable-region--
           </fieldset>
           <input type="text" name="catphotourl" placeholder="cat photo URL" required>
