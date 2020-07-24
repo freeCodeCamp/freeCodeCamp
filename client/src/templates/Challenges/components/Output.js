@@ -13,7 +13,6 @@ const propTypes = {
 class Output extends Component {
   render() {
     const { output, defaultOutput } = this.props;
-    console.log('output', output);
     const message = sanitizeHtml(
       !isEmpty(output) ? output.join('\n') : defaultOutput,
       {
