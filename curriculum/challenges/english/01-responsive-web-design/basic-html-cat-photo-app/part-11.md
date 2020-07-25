@@ -44,7 +44,7 @@ tests:
       <!-- TODO: Add link to cat photos -->
       <p>Click here to view more cat photos.</p>
       --fcc-editable-region--
-      <a href="https://www.freecodecamp.org/cat-photos"></a>
+      <a href="https://freecatphotoapp.com"></a>
       --fcc-editable-region--
       <img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
     </main>
