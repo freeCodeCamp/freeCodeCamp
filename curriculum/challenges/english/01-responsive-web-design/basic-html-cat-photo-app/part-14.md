@@ -8,7 +8,7 @@ isHidden: true
 ## Description
 <section id='description'>
 
-Turn the image into a link by surrounding it with necessary element tags. Use `https://www.freecodecamp.org/cat-photos` as the anchor's `href` attribute value.
+Turn the image into a link by surrounding it with necessary element tags. Use `https://freecatphotoapp.com` as the anchor's `href` attribute value.
 
 </section>
 
@@ -29,8 +29,8 @@ tests:
     testString: assert( code.match(/<\/a>/g).length === 2 );
   - text: Your anchor (`a`) element does not have an `href` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
     testString: assert( document.querySelector('a').hasAttribute('href') );
-  - text: Your anchor (`a`) element should link to `https://www.freecodecamp.org/cat-photos`. You have either omitted the URL or have a typo.
-    testString: assert( document.querySelectorAll('a')[1].getAttribute('href') === 'https://www.freecodecamp.org/cat-photos' );
+  - text: Your anchor (`a`) element should link to `https://freecatphotoapp.com`. You have either omitted the URL or have a typo.
+    testString: assert( document.querySelectorAll('a')[1].getAttribute('href') === 'https://freecatphotoapp.com' );
   - text: Your `img` element should be nested within the anchor (`a`) element. The entire `img` element should be inside the opening and closing tags of the anchor (`a`) element. 
     testString: assert( document.querySelector('img').parentNode.nodeName === "A" );
 
@@ -50,7 +50,7 @@ tests:
     <main>
       <h2>Cat Photos</h2>
       <!-- TODO: Add link to cat photos -->
-      <p>Click here to view more <a target="_blank" href="https://www.freecodecamp.org/cat-photos">cat photos</a>.</p>
+      <p>Click here to view more <a target="_blank" href="https://freecatphotoapp.com">cat photos</a>.</p>
       --fcc-editable-region--
       <img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
       --fcc-editable-region--
