@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
@@ -42,7 +42,8 @@ const initialState = {
   donationState: {
     processing: false,
     success: false,
-    error: ''
+    error: '',
+    successMessage: ''
   }
 };
 
@@ -103,14 +104,15 @@ class MinimalDonateForm extends Component {
     return this.setState({ isAmazonWidgetsDisplayed: true });
   }
 
-  onDonationStateChange(success, processing, error) {
+  onDonationStateChange(success, processing, error, successMessage = '') {
     this.setState(state => ({
       ...state,
       donationState: {
         ...state.donationState,
         processing: processing,
         success: success,
-        error: error
+        error: error,
+        successMessage: successMessage
       }
     }));
   }
@@ -123,69 +125,75 @@ class MinimalDonateForm extends Component {
     const { donationAmount, donationDuration, stripe } = this.state;
     const { handleProcessing, defaultTheme } = this.props;
     const {
-      donationState: { processing, success, error },
+      donationState: { processing, success, error, successMessage },
       isAmazonWidgetsDisplayed
     } = this.state;
 
     const donationPlan = `$${donationAmount / 100} / ${donationDuration}`;
-    if (processing || success || error) {
-      return this.renderCompletion({
-        processing,
-        success,
-        error,
-        reset: this.resetDonation
-      });
-    }
+    const isDonationState = processing || success || error;
 
     return (
-      <Row>
-        <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
-          {!isAmazonWidgetsDisplayed && (
-            <div>
-              <Spacer />
-              <b>
-                Confirm your donation of {donationPlan} with PayPal or Amazon
-                Pay:
-              </b>
-              <Spacer />
-              <PaypalButton
-                donationAmount={donationAmount}
-                donationDuration={donationDuration}
-                handleProcessing={handleProcessing}
-                onDonationStateChange={this.onDonationStateChange}
-              />
-            </div>
-          )}
-          <AmazonPayButton
-            donationAmount={donationAmount}
-            donationDuration={donationDuration}
-            donationPlan={donationPlan}
-            isAmazonWidgetsDisplayed={isAmazonWidgetsDisplayed}
-            showAmazonWidget={this.showAmazonWidget}
-          />
-        </Col>
-
-        {!isAmazonWidgetsDisplayed && (
+      <Fragment>
+        {isDonationState
+          ? this.renderCompletion({
+              processing,
+              success,
+              error,
+              reset: this.resetDonation,
+              successMessage
+            })
+          : ''}
+        <Row className={isDonationState && 'hide'}>
           <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
-            <Spacer />
-            <b>Or donate with a credit card:</b>
-            <Spacer />
-            <StripeProvider stripe={stripe}>
-              <Elements>
-                <DonateFormChildViewForHOC
-                  defaultTheme={defaultTheme}
+            {!isAmazonWidgetsDisplayed && (
+              <div>
+                <Spacer />
+                <b>
+                  Confirm your donation of {donationPlan} with PayPal or Amazon
+                  Pay:
+                </b>
+                <Spacer />
+                <PaypalButton
                   donationAmount={donationAmount}
                   donationDuration={donationDuration}
-                  getDonationButtonLabel={() =>
-                    `Confirm your donation of ${donationPlan}`
-                  }
                   handleProcessing={handleProcessing}
+                  onDonationStateChange={this.onDonationStateChange}
                 />
-              </Elements>
-            </StripeProvider>
+              </div>
+            )}
+            <AmazonPayButton
+              donationAmount={donationAmount}
+              donationDuration={donationDuration}
+              donationPlan={donationPlan}
+              handleProcessing={handleProcessing}
+              isAmazonWidgetsDisplayed={isAmazonWidgetsDisplayed}
+              onDonationStateChange={this.onDonationStateChange}
+              showAmazonWidget={this.showAmazonWidget}
+            />
           </Col>
-        )}
-      </Row>
+
+          {!isAmazonWidgetsDisplayed && (
+            <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
+              <Spacer />
+              <b>Or donate with a credit card:</b>
+              <Spacer />
+              <StripeProvider stripe={stripe}>
+                <Elements>
+                  <DonateFormChildViewForHOC
+                    defaultTheme={defaultTheme}
+                    donationAmount={donationAmount}
+                    donationDuration={donationDuration}
+                    getDonationButtonLabel={() =>
+                      `Confirm your donation of ${donationPlan}`
+                    }
+                    handleProcessing={handleProcessing}
+                  />
+                </Elements>
+              </StripeProvider>
+            </Col>
+          )}
+        </Row>
+      </Fragment>
     );
   }
 }

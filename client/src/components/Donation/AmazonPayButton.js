@@ -13,6 +13,11 @@ import { Spacer } from '../../components/helpers';
 
 import { amazonPayClientId, amazonPaySellerId } from '../../../config/env.json';
 
+const consentErrorMessage =
+  'Please check the box below to consent to reccuring payments.';
+const generalErrorMessage =
+  'Something is not right. Please contact team@freecodecamp.org';
+
 export class AmazonPayButton extends Component {
   constructor(props) {
     super(props);
@@ -23,7 +28,8 @@ export class AmazonPayButton extends Component {
       showConsentWidget: 'true',
       billingAgreementStatus: 'Draft',
       hasAmazonPayButtonLoaded: false,
-      error: ''
+      error: '',
+      consentError: ''
     };
 
     this.handleConsentChange = this.handleConsentChange.bind(this);
@@ -183,58 +189,65 @@ export class AmazonPayButton extends Component {
   }
 
   handleOnSubmit() {
-    let { donationAmount, donationDuration } = this.props;
-    console.log(`Submitting ${this.state.billingAgreementId}`);
-    this.setState({ error: '' });
-    postChargeAmazonPay({ ...this.state, donationAmount, donationDuration })
-      .then(response => {
-        console.log(response);
-        // const data = response && response.data;
-        // this.setState(state => ({
-        //   ...state,
-        //   donationState: {
-        //     ...state.donationState,
-        //     processing: false,
-        //     success: true,
-        //     error: data.error ? data.error : null
-        //   }
-        // }));
-        console.log('success', response);
-      })
-      .catch(error => {
-        const data =
-          error.response && error.response.data
-            ? error.response.data
-            : {
-                error:
-                  'Something is not right. Please contact team@freecodecamp.org'
-              };
-        console.log(data);
-        if (
-          error.response &&
-          error.response.data &&
-          error.response.data.type === 'InvalidPaymentMethod'
-        ) {
-          this.showWalletWidget(this.state.billingAgreementId);
-          this.setState({ showConsentWidget: false });
-        }
-        this.setState({ error: data.error });
-      });
+    this.setState({ error: '', consentError: '' });
+    if (this.state.hasConsent === 'false' || !this.state.billingAgreementId) {
+      this.setState({ consentError: consentErrorMessage });
+    } else {
+      let { donationAmount, donationDuration } = this.props;
+      console.log(`Submitting ${this.state.billingAgreementId}`);
+
+      postChargeAmazonPay({ ...this.state, donationAmount, donationDuration })
+        .then(response => {
+          console.log(response);
+          // const data = response && response.data;
+          // this.setState(state => ({
+          //   ...state,
+          //   donationState: {
+          //     ...state.donationState,
+          //     processing: false,
+          //     success: true,
+          //     error: data.error ? data.error : null
+          //   }
+          // }));
+          console.log('success', response);
+        })
+        .catch(error => {
+          const data =
+            error.response && error.response.data
+              ? error.response.data
+              : {
+                  error: generalErrorMessage
+                };
+          console.log(data);
+          if (
+            error.response &&
+            error.response.data &&
+            error.response.data.type === 'InvalidPaymentMethod'
+          ) {
+            this.showWalletWidget(this.state.billingAgreementId);
+            this.setState({ showConsentWidget: false });
+          }
+          this.setState({ error: data.error });
+        });
+    }
   }
 
-  renderErrorMessage() {
-    const { error } = this.state;
+  renderErrorMessage(error) {
     return <Alert bsStyle='danger'>{error}</Alert>;
   }
 
   render() {
     console.log(this.state);
     console.log(this.props);
-    let { showConsentWidget, showWalletWidget } = this.state;
+    let {
+      showConsentWidget,
+      showWalletWidget,
+      error,
+      consentError
+    } = this.state;
     let { donationAmount, donationPlan, isAmazonWidgetsDisplayed } = this.props;
-
+    console.log(consentError);
     if (!isAmazonWidgetsDisplayed) {
-      // if (!this.state.hasAmazonPayButtonLoaded) return <Loader />;
       return (
         <div
           style={{
@@ -256,11 +269,12 @@ export class AmazonPayButton extends Component {
           begining of every month:
         </b>
         <Spacer />
-        <div>{this.state.error && this.renderErrorMessage()}</div>
+        <div>{error && this.renderErrorMessage(error)}</div>
         {showWalletWidget && (
           <div id='walletWidgetDiv' style={{ height: '250px' }} />
         )}
         <Spacer />
+        <div>{consentError && this.renderErrorMessage(consentError)}</div>
         {showConsentWidget && (
           <div id='consentWidgetDiv' style={{ height: '120px' }} />
         )}
@@ -269,9 +283,6 @@ export class AmazonPayButton extends Component {
           block={true}
           bsStyle='primary'
           className='btn-cta'
-          disabled={
-            this.state.hasConsent === 'false' || !this.state.billingAgreementId
-          }
           onClick={this.handleOnSubmit}
           type='submit'
         >

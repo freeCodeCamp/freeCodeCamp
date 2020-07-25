@@ -9,10 +9,17 @@ const propTypes = {
   error: PropTypes.string,
   processing: PropTypes.bool,
   reset: PropTypes.func.isRequired,
-  success: PropTypes.bool
+  success: PropTypes.bool,
+  successMessage: PropTypes.string
 };
 
-function DonateCompletion({ processing, reset, success, error = null }) {
+function DonateCompletion({
+  processing,
+  reset,
+  success,
+  error = null,
+  successMessage
+}) {
   /* eslint-disable no-nested-ternary */
   const style = processing ? 'info' : success ? 'success' : 'danger';
   const heading = processing
@@ -37,8 +44,10 @@ function DonateCompletion({ processing, reset, success, error = null }) {
         {success && (
           <div>
             <p>
-              Your donations will support free technology education for people
-              all over the world.
+              {successMessage
+                ? successMessage
+                : 'Your donations will support free technology education' +
+                  ' for people all over the world.'}
             </p>
           </div>
         )}
