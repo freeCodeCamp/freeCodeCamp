@@ -118,6 +118,7 @@ export function getAgreementDetails(billingAgreementId) {
       },
       (err, data) => {
         if (err) {
+          console.log(err);
           return reject(err);
         }
 
@@ -130,6 +131,8 @@ export function getAgreementDetails(billingAgreementId) {
             data.BillingAgreementDetails.Constraints.Constraint.ConstraintID;
           let constraintMessage;
 
+          console.log(constraintType);
+
           if (constraintType === 'PaymentPlanNotSet')
             constraintMessage = 'Please choose a payment method and resubmit';
           if (constraintType === 'BuyerConsentNotSet')
@@ -139,6 +142,10 @@ export function getAgreementDetails(billingAgreementId) {
           if (constraintType === 'BuyerEqualsSeller')
             constraintMessage =
               'Buyer cannot be sellers. Please try with another account';
+          if (constraintType === 'PaymentMethodNotAllowed') {
+            constraintMessage =
+              'Please choose a different payment method and resubmit';
+          }
 
           return reject({
             message: constraintMessage,
@@ -332,10 +339,10 @@ export async function respondToClient(req, res, app, syncAuthInfo) {
       throw generalError;
     }
   } else if (donationState === 'CancelOrderRefrence') {
-    const BillingAgreementDetails = await getAgreementDetails(
-      billingAgreementId
+    const orderReferenceDetails = await getOrderReferenceDetails(
+      orderReferenceId
     );
-    if (BillingAgreementDetails.BillingAgreementStatus.State === 'Open')
+    if (orderReferenceDetails.OrderReferenceStatus.State === 'Open')
       CancelOrderReference(orderReferenceId);
     throw generalError;
   } else {
@@ -512,6 +519,7 @@ export default function donateAmazonPay(app, done) {
   function createAmazonPayDonation(req, res) {
     // return if user is not signed in
     checkAuthorizatioin(req, res);
+    console.log('hello');
 
     billingAgreementId = req.body.billingAgreementId;
 
@@ -529,7 +537,8 @@ export default function donateAmazonPay(app, done) {
             err.type === 'PaymentPlanNotSet' ||
             err.type === 'BuyerConsentNotSet' ||
             err.type === 'BuyerEqualsSeller' ||
-            err.type === 'InvalidPaymentMethod'
+            err.type === 'InvalidPaymentMethod' ||
+            err.type === 'PaymentMethodNotAllowed'
           ) {
             return res.status(402).send({ error: err.message, type: err.type });
           }

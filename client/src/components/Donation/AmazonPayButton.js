@@ -195,20 +195,23 @@ export class AmazonPayButton extends Component {
     } else {
       let { donationAmount, donationDuration } = this.props;
       console.log(`Submitting ${this.state.billingAgreementId}`);
-
+      this.props.handleProcessing(
+        donationDuration,
+        donationAmount,
+        'AmazonPay payment submission'
+      );
+      this.props.onDonationStateChange(false, true, '');
       postChargeAmazonPay({ ...this.state, donationAmount, donationDuration })
         .then(response => {
           console.log(response);
-          // const data = response && response.data;
-          // this.setState(state => ({
-          //   ...state,
-          //   donationState: {
-          //     ...state.donationState,
-          //     processing: false,
-          //     success: true,
-          //     error: data.error ? data.error : null
-          //   }
-          // }));
+          const data = response && response.data;
+          this.props.onDonationStateChange(
+            true,
+            false,
+            data.error ? data.error : '',
+            data.message
+          );
+
           console.log('success', response);
         })
         .catch(error => {
@@ -224,10 +227,14 @@ export class AmazonPayButton extends Component {
             error.response.data &&
             error.response.data.type === 'InvalidPaymentMethod'
           ) {
+            // a local warning will be shown insead
+            this.props.onDonationStateChange(false, false, false);
             this.showWalletWidget(this.state.billingAgreementId);
             this.setState({ showConsentWidget: false });
+            this.setState({ error: data.error });
+          } else {
+            this.props.onDonationStateChange(false, false, data.error);
           }
-          this.setState({ error: data.error });
         });
     }
   }
