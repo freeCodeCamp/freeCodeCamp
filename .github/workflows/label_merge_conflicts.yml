@@ -3,7 +3,7 @@ on:
   push
 jobs:
   triage:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
       - uses: mschilde/auto-label-merge-conflicts@master
         with:
