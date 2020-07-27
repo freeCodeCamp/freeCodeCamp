@@ -3,6 +3,7 @@ import React, { Component, Suspense } from 'react';
 import { connect } from 'react-redux';
 import { ReflexContainer, ReflexElement, ReflexSplitter } from 'react-reflex';
 import { createSelector } from 'reselect';
+import { isEmpty } from 'lodash';
 import { isDonationModalOpenSelector, userSelector } from '../../../redux';
 import {
   canFocusEditorSelector,
@@ -69,6 +70,15 @@ const mapDispatchToProps = {
   updateFile
 };
 
+function getTargetEditor(challengeFiles) {
+  let targetEditor = Object.values(challengeFiles).find(
+    ({ editableRegionBoundaries }) => !isEmpty(editableRegionBoundaries)
+  )?.key;
+
+  // fallback for when there is no editable region.
+  return targetEditor || toSortedArray(challengeFiles)[0].key;
+}
+
 class MultifileEditor extends Component {
   constructor(...props) {
     super(...props);
@@ -129,7 +139,7 @@ class MultifileEditor extends Component {
 
     const { challengeFiles } = this.props;
 
-    const targetEditor = toSortedArray(challengeFiles)[0].key;
+    const targetEditor = getTargetEditor(challengeFiles);
 
     this.state = {
       visibleEditors: { [targetEditor]: true }
