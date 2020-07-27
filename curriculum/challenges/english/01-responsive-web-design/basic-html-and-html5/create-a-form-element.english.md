@@ -17,7 +17,7 @@ For example:
 ## Instructions
 <section id='instructions'>
 
-Nest the existing input element inside a <code>form</code> element and assign <code>"https://freecatphotoapp.com/submit-cat-photo"</code> to the <code>action</code> attribute of the <code>form</code> element.
+Nest the existing input element inside a <code>form</code> element and assign `"https://freecatphotoapp.com/submit-cat-photo"` to the <code>action</code> attribute of the <code>form</code> element.
 
 </section>
 
