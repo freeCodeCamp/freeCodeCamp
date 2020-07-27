@@ -1,6 +1,8 @@
 name: 'Check for merge conflicts'
 on:
-  push
+  schedule:
+    # run this Action every 15 minutes
+    - cron:  '*/15 * * * *'
 jobs:
   triage:
     runs-on: ubuntu-18.04
