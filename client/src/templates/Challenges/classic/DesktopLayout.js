@@ -17,6 +17,12 @@ const propTypes = {
   testOutput: PropTypes.element
 };
 
+const reflexProps = {
+  propagateDimensions: true,
+  renderOnResize: true,
+  renderOnResizeRate: 20
+};
+
 class DesktopLayout extends Component {
   render() {
     const {
@@ -37,23 +43,11 @@ class DesktopLayout extends Component {
         <ReflexElement flex={1} {...resizeProps}>
           {challengeFile && (
             <ReflexContainer key={challengeFile.key} orientation='horizontal'>
-              <ReflexElement
-                flex={1}
-                propagateDimensions={true}
-                renderOnResize={true}
-                renderOnResizeRate={20}
-                {...resizeProps}
-              >
+              <ReflexElement flex={1} {...reflexProps} {...resizeProps}>
                 {editor}
               </ReflexElement>
               <ReflexSplitter propagate={true} {...resizeProps} />
-              <ReflexElement
-                flex={0.25}
-                propagateDimensions={true}
-                renderOnResize={true}
-                renderOnResizeRate={20}
-                {...resizeProps}
-              >
+              <ReflexElement flex={0.25} {...reflexProps} {...resizeProps}>
                 {testOutput}
               </ReflexElement>
             </ReflexContainer>
