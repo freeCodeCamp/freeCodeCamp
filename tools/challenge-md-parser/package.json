@@ -16,7 +16,6 @@
     "jest": "^24.9.0"
   },
   "dependencies": {
-    "@google-cloud/translate": "^2.1.3",
     "hast-util-select": "^2.1.0",
     "hast-util-to-html": "^4.0.1",
     "js-yaml": "^3.12.0",

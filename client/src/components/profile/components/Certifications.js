@@ -1,14 +1,12 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
 import { curry } from 'lodash';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 import { Row, Col } from '@freecodecamp/react-bootstrap';
 
 import { certificatesByNameSelector } from '../../../redux';
-import FullWidthRow from '../../helpers/FullWidthRow';
-import { ButtonSpacer, Spacer } from '../../helpers';
+import { ButtonSpacer, FullWidthRow, Link, Spacer } from '../../helpers';
 import './certifications.css';
 
 const mapStateToProps = (state, props) =>
@@ -45,6 +43,7 @@ function renderCertShow(username, cert) {
         <Col className='certifications' sm={10} smPush={1}>
           <Link
             className='btn btn-lg btn-primary btn-block'
+            external={true}
             to={`/certification/${username}/${cert.showURL}`}
           >
             View {cert.title}
