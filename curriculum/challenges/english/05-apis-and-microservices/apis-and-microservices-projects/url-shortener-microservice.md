@@ -29,7 +29,7 @@ tests:
     }
     "
 
-  - text: I can pass a URL as a parameter and I will receive a shortened URL in the JSON response.
+  - text: You can pass a URL as a parameter to your app, and you will receive a shortened URL in the JSON response.
     testString: "async getUserInput => {
       const url = getUserInput('url');
       const urlVariable = url.length; 
@@ -49,7 +49,7 @@ tests:
     }
     "
   
-  - text: When I visit that shortened URL, it will redirect me to my original link.
+  - text: When you visit that shortened URL, it will redirect you to your original link.
     testString: "async getUserInput => {
       const url = getUserInput('url');
       const urlVariable = url.length;
@@ -79,7 +79,7 @@ tests:
     }
     "
 
-  - text: If I pass an invalid URL that doesn't follow the valid http://www.example.com format, the JSON response will contain an error instead.
+  - text: If you pass an invalid URL that doesn't follow the valid http://www.example.com format, the JSON response will contain an error instead.
     testString: "async getUserInput => {
       const url = getUserInput('url');
       const res = await fetch(url + '/api/shorturl/new/', {
