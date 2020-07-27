@@ -105,7 +105,7 @@ function DonateModal({
     </b>
   );
   const blockDonationText = (
-    <div className='block-modal-text'>
+    <div className=' text-center block-modal-text'>
       <div className='donation-icon-container'>
         <Cup className='donation-icon' />
       </div>

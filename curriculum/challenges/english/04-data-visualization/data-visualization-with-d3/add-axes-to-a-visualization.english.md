@@ -9,8 +9,12 @@ forumTopicId: 301472
 ## Description
 <section id='description'>
 Another way to improve the scatter plot is to add an x-axis and a y-axis.
-D3 has two methods <code>axisLeft()</code> and <code>axisBottom()</code> to render the y and x axes, respectively. (Axes is the plural form of axis). Here's an example to create the x-axis based on the <code>xScale</code> in the previous challenges:
-<code>const xAxis = d3.axisBottom(xScale);</code>
+D3 has two methods, <code>axisLeft()</code> and <code>axisBottom()</code>, to render the y-axis and x-axis, respectively. Here's an example to create the x-axis based on the <code>xScale</code> in the previous challenges:
+
+```js
+const xAxis = d3.axisBottom(xScale);
+```
+
 The next step is to render the axis on the SVG canvas. To do so, you can use a general SVG component, the <code>g</code> element. The <code>g</code> stands for group.
 Unlike <code>rect</code>, <code>circle</code>, and <code>text</code>, an axis is just a straight line when it's rendered. Because it is a simple shape, using <code>g</code> works.
 The last step is to apply a <code>transform</code> attribute to position the axis on the SVG canvas in the right place. Otherwise, the line would render along the border of SVG canvas and wouldn't be visible.

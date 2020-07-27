@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import format from 'date-fns/format';
 import { find, reverse, sortBy } from 'lodash';
 import { Button, Modal, Table } from '@freecodecamp/react-bootstrap';
-import { Link, useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 
 import TimelinePagination from './TimelinePagination';
-import { FullWidthRow } from '../../helpers';
+import { FullWidthRow, Link } from '../../helpers';
 import SolutionViewer from '../../settings/SolutionViewer';
 import {
   getCertIds,
@@ -88,6 +88,7 @@ class TimelineInner extends Component {
           {certPath ? (
             <Link
               className='timeline-cert-link'
+              external={true}
               to={`certification/${username}/${certPath}`}
             >
               {challengeTitle}
