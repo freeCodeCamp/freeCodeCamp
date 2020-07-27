@@ -22,7 +22,7 @@ Start this project on Repl.it using <a href='https://repl.it/github/freeCodeCamp
 
 ```yml
 tests:
-  - text: I can provide my own project, not the example URL.
+  - text: You should provide your own project, not the example URL.
     testString: "getUserInput => {
       const url = getUserInput('url');
       assert(!(new RegExp('.*/url-shortener\\.freecodecamp\\.repl\\.co\\.*')).test(url));
