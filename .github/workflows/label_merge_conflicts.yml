@@ -1,9 +1,6 @@
 name: 'Check for merge conflicts'
 on:
-  push:
-    branches:
-      - master
-      - 'next-curriculum'
+  push
 jobs:
   triage:
     runs-on: ubuntu-latest
