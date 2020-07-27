@@ -13,7 +13,6 @@ import {
 import createRedirect from '../../components/createRedirect';
 import DonateModal from '../Donation/DonationModal';
 
-import 'prismjs/themes/prism.css';
 import './prism.css';
 import './prism-night.css';
 import 'react-reflex/styles.css';

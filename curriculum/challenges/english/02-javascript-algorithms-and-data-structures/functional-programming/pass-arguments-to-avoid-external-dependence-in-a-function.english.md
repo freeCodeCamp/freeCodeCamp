@@ -2,6 +2,7 @@
 id: 587d7b8e367417b2b2512b5f
 title: Pass Arguments to Avoid External Dependence in a Function
 challengeType: 1
+isHidden: false
 forumTopicId: 301234
 ---
 
@@ -18,7 +19,7 @@ Finally, the function would always produce the same output for the same set of i
 ## Instructions
 <section id='instructions'>
 Let's update the <code>incrementer</code> function to clearly declare its dependencies.
-Write the <code>incrementer</code> function so it takes an argument, and then increases the value by one.
+Write the <code>incrementer</code> function so it takes an argument, and then returns a result after increasing the value by one.
 </section>
 
 ## Tests
@@ -64,9 +65,17 @@ function incrementer () {
 <section id='solution'>
 
 ```js
+// The global variable
 var fixedValue = 4;
 
-const incrementer = val => val + 1;
+// Only change code below this line
+function incrementer (fixedValue) {
+  return fixedValue + 1;
+
+  // Only change code above this line
+}
+
+  
 ```
 
 </section>

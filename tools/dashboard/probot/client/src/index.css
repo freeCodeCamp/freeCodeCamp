@@ -1,0 +1,64 @@
+@font-face {
+  font-family: 'Lato';
+  src: url(./fonts/Lato-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Lato Light';
+  src: url(./fonts/Lato-Light.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Lato Bold';
+  src: url(./fonts/Lato-Bold.ttf) format('truetype');
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Lato, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app-menu {
+  margin: 0;
+  padding: 13px 15px;
+  margin-right: 15px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+}
+
+.app-menu li a {
+  padding: 13px 15px;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.app-menu li a:hover {
+  color: #006400;
+  background: #eee;
+}
+
+a {
+  text-decoration: none;
+  color: #006400;
+}
+
+a:visited {
+  text-decoration: none;
+  color: purple;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

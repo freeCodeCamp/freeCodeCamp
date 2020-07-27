@@ -2,6 +2,7 @@
 id: 587d7db2367417b2b2512b8c
 title: Use an IIFE to Create a Module
 challengeType: 1
+isHidden: false
 forumTopicId: 301332
 ---
 

@@ -2,6 +2,7 @@
 id: 587d7fa7367417b2b2512bc5
 title: Work with Dynamic Data in D3
 challengeType: 6
+isHidden: false
 forumTopicId: 301498
 ---
 
@@ -80,8 +81,20 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<body>
+  <script>
+    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+
+    d3.select("body").selectAll("h2")
+      .data(dataset)
+      .enter()
+      .append("h2")
+      .text((d) => `${d} USD`);
+
+  </script>
+</body>
+
 ```
 
 </section>

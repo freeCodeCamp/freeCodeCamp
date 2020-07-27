@@ -2,6 +2,7 @@
 id: 587d778a367417b2b2512aa6
 title: Improve Form Field Accessibility with the label Element
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cGJMMAN'
 forumTopicId: 301016
 ---
@@ -70,7 +71,7 @@ tests:
   <img src="samuraiSwords.jpeg" alt="">
   <article>
     <h2>Defeating your Foe: the Red Dot is Ours!</h2>
-    <p>Felines the world over have been waging war on the most persistent of foes. This red nemesis combines both cunning stealth and lightening speed. But chin up, fellow fighters, our time for victory may soon be near...</p>
+    <p>Felines the world over have been waging war on the most persistent of foes. This red nemesis combines both cunning stealth and lightning speed. But chin up, fellow fighters, our time for victory may soon be near...</p>
   </article>
   <img src="samuraiSwords.jpeg" alt="">
   <article>
@@ -114,7 +115,7 @@ tests:
   <img src="samuraiSwords.jpeg" alt="">
   <article>
     <h2>Defeating your Foe: the Red Dot is Ours!</h2>
-    <p>Felines the world over have been waging war on the most persistent of foes. This red nemesis combines both cunning stealth and lightening speed. But chin up, fellow fighters, our time for victory may soon be near...</p>
+    <p>Felines the world over have been waging war on the most persistent of foes. This red nemesis combines both cunning stealth and lightning speed. But chin up, fellow fighters, our time for victory may soon be near...</p>
   </article>
   <img src="samuraiSwords.jpeg" alt="">
   <article>

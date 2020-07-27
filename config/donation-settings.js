@@ -11,7 +11,7 @@ const amountsConfig = {
 };
 const defaultAmount = {
   year: 25000,
-  month: 3500,
+  month: 500,
   onetime: 25000
 };
 const defaultStateConfig = {
@@ -21,6 +21,19 @@ const defaultStateConfig = {
 const modalDefaultStateConfig = {
   donationAmount: 500,
   donationDuration: 'month'
+};
+
+const onetimeSKUConfig = {
+  live: [
+    { amount: '100000', id: 'sku_GwHogRRJrCYGms' },
+    { amount: '25000', id: 'sku_GwHnCde23uDH5R' },
+    { amount: '6000', id: 'sku_H5mjFgpayAzJzT' }
+  ],
+  staging: [
+    { amount: '100000', id: 'sku_GvAeUdWLsmGO9O' },
+    { amount: '25000', id: 'sku_GvAdXbsotjFi7G' },
+    { amount: '6000', id: 'sku_GvAeJDgwjnGAdy' }
+  ]
 };
 
 // Configuration for server side
@@ -109,6 +122,7 @@ module.exports = {
   donationOneTimeConfig,
   donationSubscriptionConfig,
   modalDefaultStateConfig,
+  onetimeSKUConfig,
   paypalConfigTypes,
   paypalConfigurator
 };

@@ -1,11 +1,3 @@
-<!-- do not translate this -->
-
-| [Read these guidelines in other languages](/docs/i18n-languages) |
-| :--------------------------------------------------------------- |
-
-
-<!-- do not translate this -->
-
 # Developer Operations at freeCodeCamp.org
 
 This guide will help you understand our infrastructure stack and how we maintain our platforms. While this guide does not have exhaustive details for all operations, it could be used as a reference for your understanding of the systems.
@@ -26,7 +18,7 @@ This involves three steps to be followed in sequence:
 
 Typically, [`master`](https://github.com/freeCodeCamp/freeCodeCamp/tree/master) (the default development branch) is merged into the [`production-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) branch once a day and is released into an isolated infrastructure.
 
-This is an intermediate release for our developers and volunteer contributors. It also known as our "staging" or "beta" release.
+This is an intermediate release for our developers and volunteer contributors. It is also known as our "staging" or "beta" release.
 
 It is identical to our live production environment at `freeCodeCamp.org`, other than it using a separate set of databases, servers, web-proxies, etc. This isolation lets us test ongoing development and features in a "production" like scenario, without affecting regular users of freeCodeCamp.org's main platforms.
 
@@ -40,7 +32,8 @@ We employ various levels of integration and acceptance testing to check on the q
 
 We have unit tests for testing our challenge solutions, Server APIs and Client User interfaces. These help us test the integration between different components.
 
-> Note: We are also in the process of writing end user tests which will help in replicating real world scenarios like updating an email or making a call to the API or third-party services.
+> [!NOTE]
+> We are also in the process of writing end user tests which will help in replicating real world scenarios like updating an email or making a call to the API or third-party services.
 
 Together these tests help in preventing issues from repeating themselves and ensure we do not introduce a bug while working on another bug or a feature.
 
@@ -58,7 +51,8 @@ Status of builds and releases are [available here](#build-test-and-deployment-st
 
 Currently, only members on the developer team can push to the production branches. The changes to the `production-*` branches can land only via fast-forward merge to the [`upstream`](https://github.com/freeCodeCamp/freeCodeCamp).
 
-> Note: In the upcoming days we would improve this flow to be done via pull-requests, for better access management and transparency.
+> [!NOTE]
+> In the upcoming days we would improve this flow to be done via pull-requests, for better access management and transparency.
 
 ### Pushing changes to Staging Applications.
 
@@ -113,14 +107,16 @@ Currently, only members on the developer team can push to the production branche
    git push upstream
    ```
 
-   **Note:** You will not be able to force push and if you have re-written the history in anyway these commands will error out. If they do, you may have done something incorrectly and you should just start over.
+   > [!NOTE]
+   > You will not be able to force push and if you have re-written the history in anyway these commands will error out.
+   >
+   > If they do, you may have done something incorrectly and you should just start over.
 
 The above steps will automatically trigger a run on the build pipeline for the `production-staging` branch. Once the build is complete, the artifacts are saved as `.zip` files in a cold storage to be retrieved and used later.
 
-The release pipeline is triggered automatically when a fresh artefact is available from the connected build pipeline. For staging platforms, this process does not involve manual approval and the artifacts are pushed to the Client CDN and API servers.
+The release pipeline is triggered automatically when a fresh artifact is available from the connected build pipeline. For staging platforms, this process does not involve manual approval and the artifacts are pushed to the Client CDN and API servers.
 
-> **Estimates:**
->
+> [!TIP|label:Estimates]
 > Typically the build run takes ~20-25 minutes to complete followed by the release run which takes ~15-20 mins for the client, and ~5-10 mins for the API to be available live. From code push to being live on the staging platforms the whole process takes **~35-45 mins** in total.
 
 ### Pushing changes to Production Applications.
@@ -147,11 +143,15 @@ The process is mostly the same as the staging platforms, with a few extra checks
    git push upstream
    ```
 
-   **Note:** You will not be able to force push and if you have re-written the history in anyway these commands will error out. If they do, you may have done something incorrectly and you should just start over.
+   > [!NOTE]
+   > You will not be able to force push and if you have re-written the history in anyway these commands will error out.
+   >
+   > If they do, you may have done something incorrectly and you should just start over.
 
 The above steps will automatically trigger a run on the build pipeline for the `production-current` branch. Once a build artifact is ready, it will trigger a run on the release pipeline.
 
-> **Estimates:** Typically the build run takes ~20-25 minutes to complete.
+> [!TIP|label:Estimates]
+> Typically the build run takes ~20-25 minutes to complete.
 
 **Additional Steps for Staff Action**
 
@@ -167,8 +167,7 @@ For staff use:
 
 Once one of the staff members approves a release, the pipeline will push the changes live to freeCodeCamp.org's production CDN and API servers. They typically take ~15-20 mins for the client, and ~5 mins for the API servers to be available live.
 
-> **Estimates:**
->
+> [!TIP|label:Estimates]
 > The release run typically takes ~15-20 mins for each client instance, and ~5-10 mins for each API instance to be available live. From code push to being live on the production platforms the whole process takes **~90-120 mins** in total (not counting the wait time for the staff approval).
 
 ## Build, Test and Deployment Status
@@ -197,9 +196,10 @@ We thank you for reporting bugs that you encounter and help in making freeCodeCa
 
 Currently a public beta testing version is available at:
 
-<h3 align="center"><a href='https://www.freecodecamp.dev' _target='blank'><code>www.freecodecamp.dev</code></a></h3>
+<h1 align="center"><a href='https://www.freecodecamp.dev' _target='blank'>freecodecamp.dev</a></h1>
 
-> **Note:** The domain name is different than **`freeCodeCamp.org`**. This is intentional to prevent search engine indexing and avoid confusion for regular users of the platform.
+> [!NOTE]
+> The domain name is different than **`freeCodeCamp.org`**. This is intentional to prevent search engine indexing and avoid confusion for regular users of the platform.
 
 ### Identifying the current version of the platforms
 
@@ -225,14 +225,12 @@ There are some known limitations and tradeoffs when using the beta version of th
 
   The beta site is and always has been to augment local development and testing, nothing else. It's not a promise of what’s coming, but a glimpse of what is being worked upon.
 
-- #### Sign in and authentication only available via email, not social.
+- #### Sign page may look different than production
 
-  Google, GitHub and Facebook logins will NOT be available in this beta mode. This is simply a technical limitation, because we are using a separate `test domain` for this version. **Email logins will work just as fine.**
-
-  The sign page may look different than production.
+   We use a test tenant for freecodecamp.dev on Auth0, and hence do not have the ability to set a custom domain. This makes it so that all the redirect callbacks and the login page appear at a default domain like: `https://freecodecamp-dev.auth0.com/`. This does not affect the functionality is as close to production as we can get.
 
 ## Reporting issues and leaving feedback
 
 Please open fresh issues for discussions and reporting bugs. You can label them as **[`release: next/beta`](https://github.com/freeCodeCamp/freeCodeCamp/labels/release%3A%20next%2Fbeta)** for triage.
 
-You may send an email to `dev@freecodecamp.org` if you have any queries. As always all security vulnerabilities should be reported to `security@freecodecamp.org` instead of the public tracker and forum.
+You may send an email to `dev[at]freecodecamp.org` if you have any queries. As always all security vulnerabilities should be reported to `security[at]freecodecamp.org` instead of the public tracker and forum.

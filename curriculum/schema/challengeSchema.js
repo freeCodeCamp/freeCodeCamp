@@ -10,12 +10,12 @@ function getSchemaForLang(lang) {
     challengeOrder: Joi.number(),
     challengeType: Joi.number()
       .min(0)
-      .max(9)
+      .max(11)
       .required(),
     checksum: Joi.number(),
     dashedName: Joi.string(),
     description: Joi.when('challengeType', {
-      is: challengeTypes.step,
+      is: Joi.only([challengeTypes.step, challengeTypes.video]),
       then: Joi.string().allow(''),
       otherwise: Joi.string().required()
     }),
@@ -45,13 +45,25 @@ function getSchemaForLang(lang) {
     helpRoom: Joi.string(),
     id: Joi.objectId().required(),
     instructions: Joi.string().allow(''),
-    isBeta: Joi.bool(),
+    isHidden: Joi.bool().required(),
     isComingSoon: Joi.bool(),
     isLocked: Joi.bool(),
     isPrivate: Joi.bool(),
     isRequired: Joi.bool(),
     name: Joi.string(),
     order: Joi.number(),
+    // video challenges only:
+    videoId: Joi.when('challengeType', {
+      is: challengeTypes.video,
+      then: Joi.string().required()
+    }),
+    question: Joi.object().keys({
+      text: Joi.string().required(),
+      answers: Joi.array()
+        .items(Joi.string())
+        .required(),
+      solution: Joi.number().required()
+    }),
     required: Joi.array().items(
       Joi.object().keys({
         link: Joi.string(),

@@ -2,6 +2,7 @@
 id: bad87fee1348bd9acdd08826
 title: Learn How Script Tags and Document Ready Work
 challengeType: 6
+isHidden: false
 forumTopicId: 18224
 ---
 

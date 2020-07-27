@@ -8,7 +8,7 @@ localeTitle: 脊椎龙头套
 ---
 
 ## Description
-<section id="description">将字符串转换为脊柱案例。脊柱情况是全小写单词连接的破折号。如果卡住，请记得使用<a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> 。尝试配对程序。编写自己的代码。 </section>
+<section id="description">将字符串转换为脊柱案例。脊柱情况是全小写单词连接的破折号。如果卡住，请记得使用<a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> 。尝试配对程序。编写自己的代码。 </section>
 
 ## Instructions
 <section id="instructions">

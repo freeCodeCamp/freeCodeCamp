@@ -1,5 +1,7 @@
+/* eslint-disable no-loop-func */
 const path = require('path');
 const liveServer = require('live-server');
+const stringSimilarity = require('string-similarity');
 
 const spinner = require('ora')();
 
@@ -32,7 +34,7 @@ const vm = require('vm');
 
 const puppeteer = require('puppeteer');
 
-const { getChallengesForLang } = require('../getChallenges');
+const { getChallengesForLang, getMetaForBlock } = require('../getChallenges');
 
 const MongoIds = require('./utils/mongoIds');
 const ChallengeTitles = require('./utils/challengeTitles');
@@ -51,9 +53,7 @@ const {
   buildJSChallenge
 } = require('../../client/src/templates/Challenges/utils/build');
 
-const {
-  createPoly
-} = require('../../client/src/templates/Challenges/utils/polyvinyl');
+const { createPoly } = require('../../utils/polyvinyl');
 
 const testEvaluator = require('../../client/config/test-evaluator').filename;
 
@@ -86,59 +86,139 @@ spinner.text = 'Populate tests.';
 let browser;
 let page;
 
-runTests();
-
-async function runTests() {
-  process.on('unhandledRejection', err => {
-    spinner.stop();
-    throw new Error(`unhandledRejection: ${err.name}, ${err.message}`);
+setup()
+  .then(runTests)
+  .catch(err => {
+    cleanup();
+    // setting the error code because node does not (yet) exit with a non-zero
+    // code on unhandled exceptions.
+    process.exitCode = 1;
+    throw err;
   });
 
-  const testLangs = testedLangs();
+async function setup() {
+  if (process.env.npm_config_superblock && process.env.npm_config_block) {
+    throw new Error(`Please do not use both a block and superblock as input.`);
+  }
 
-  const challenges = await Promise.all(
+  // liveServer starts synchronously
+  liveServer.start({
+    host: '127.0.0.1',
+    port: '8080',
+    root: path.resolve(__dirname, 'stubs'),
+    mount: [['/js', path.join(clientPath, 'static/js')]],
+    open: false,
+    logLevel: 0
+  });
+  browser = await puppeteer.launch({
+    args: [
+      // Required for Docker version of Puppeteer
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+      // This will write shared memory files into /tmp instead of /dev/shm,
+      // because Docker’s default for /dev/shm is 64MB
+      '--disable-dev-shm-usage'
+      // dumpio: true
+    ]
+  });
+  global.Worker = createPseudoWorker(await newPageContext(browser));
+  page = await newPageContext(browser);
+  await page.setViewport({ width: 300, height: 150 });
+  const testLangs = testedLangs();
+  if (testLangs.length > 1)
+    throw Error(
+      `Testing more than one language at once is not currently supported
+please change the TEST_CHALLENGES_FOR_LANGS env variable to a single language`
+    );
+  const challengesForLang = await Promise.all(
     testLangs.map(lang => getChallenges(lang))
   );
 
-  describe('Check challenges', function() {
-    before(async function() {
-      spinner.text = 'Testing';
-      this.timeout(50000);
-      liveServer.start({
-        host: '127.0.0.1',
-        port: '8080',
-        root: path.resolve(__dirname, 'stubs'),
-        mount: [['/js', path.join(clientPath, 'static/js')]],
-        open: false,
-        logLevel: 0
-      });
-      browser = await puppeteer.launch({
-        args: [
-          // Required for Docker version of Puppeteer
-          '--no-sandbox',
-          '--disable-setuid-sandbox',
-          // This will write shared memory files into /tmp instead of /dev/shm,
-          // because Docker’s default for /dev/shm is 64MB
-          '--disable-dev-shm-usage'
-          // dumpio: true
-        ]
-      });
-      global.Worker = createPseudoWorker(await newPageContext(browser));
-      page = await newPageContext(browser);
-      await page.setViewport({ width: 300, height: 150 });
-    });
-    after(async function() {
-      this.timeout(30000);
-      if (browser) {
-        await browser.close();
-      }
-      liveServer.shutdown();
-      spinner.stop();
-    });
+  // the next few statements create a list of all blocks and superblocks
+  // as they appear in the list of challenges
+  const blocks = challengesForLang[0].challenges.map(({ block }) => block);
+  const superBlocks = challengesForLang[0].challenges.map(
+    ({ superBlock }) => superBlock
+  );
+  const targetBlockStrings = [...new Set(blocks)];
+  const targetSuperBlockStrings = [...new Set(superBlocks)];
 
-    challenges.forEach(populateTestsForLang);
+  // the next few statements will filter challenges based on command variables
+  if (process.env.npm_config_superblock) {
+    const filter = stringSimilarity.findBestMatch(
+      process.env.npm_config_superblock,
+      targetSuperBlockStrings
+    ).bestMatch.target;
+
+    console.log(`\nsuperBlock being tested: ${filter}`);
+    challengesForLang[0].challenges = challengesForLang[0].challenges.filter(
+      challenge => challenge.superBlock === filter
+    );
+
+    if (!challengesForLang[0].challenges.length) {
+      throw new Error(`No challenges found with superBlock "${filter}"`);
+    }
+  }
+
+  if (process.env.npm_config_block) {
+    const filter = stringSimilarity.findBestMatch(
+      process.env.npm_config_block,
+      targetBlockStrings
+    ).bestMatch.target;
+
+    console.log(`\nblock being tested: ${filter}`);
+    challengesForLang[0].challenges = challengesForLang[0].challenges.filter(
+      challenge => challenge.block === filter
+    );
+
+    if (!challengesForLang[0].challenges.length) {
+      throw new Error(`No challenges found with block "${filter}"`);
+    }
+  }
+
+  const meta = {};
+  for (const { lang, challenges } of challengesForLang) {
+    meta[lang] = {};
+    for (const challenge of challenges) {
+      const dashedBlockName = dasherize(challenge.block);
+      if (!meta[dashedBlockName]) {
+        meta[lang][dashedBlockName] = (await getMetaForBlock(
+          dashedBlockName
+        )).challengeOrder;
+      }
+    }
+  }
+  return {
+    meta,
+    challengesForLang
+  };
+}
+
+// cleanup calls some async functions, but it's the last thing that happens, so
+// no need to await anything.
+function cleanup() {
+  if (browser) {
+    browser.close();
+  }
+  liveServer.shutdown();
+  spinner.stop();
+}
+
+function runTests({ challengesForLang, meta }) {
+  // rethrow unhandled rejections to make sure the tests exit with -1
+  process.on('unhandledRejection', err => {
+    throw err;
   });
 
+  describe('Check challenges', function() {
+    after(function() {
+      cleanup();
+    });
+    for (const challenge of challengesForLang) {
+      populateTestsForLang(challenge, meta);
+    }
+  });
+  spinner.text = 'Testing';
   run();
 }
 
@@ -165,130 +245,156 @@ function validateBlock(challenge) {
   }
 }
 
-function populateTestsForLang({ lang, challenges }) {
+function populateTestsForLang({ lang, challenges }, meta) {
   const mongoIds = new MongoIds();
   const challengeTitles = new ChallengeTitles();
   const validateChallenge = challengeSchemaValidator(lang);
 
   describe(`Check challenges (${lang})`, function() {
     this.timeout(5000);
-
     challenges.forEach(challenge => {
-      describe(challenge.title || 'No title', function() {
-        it('Common checks', function() {
-          const result = validateChallenge(challenge);
-          const invalidBlock = validateBlock(challenge);
+      const dashedBlockName = dasherize(challenge.block);
+      describe(challenge.block || 'No block', function() {
+        describe(challenge.title || 'No title', function() {
+          it('Matches a title in meta.json', function() {
+            const index = meta[lang][dashedBlockName].findIndex(
+              arr => arr[1] === challenge.title
+            );
 
-          if (result.error) {
-            throw new AssertionError(result.error);
+            if (index < 0) {
+              throw new AssertionError(
+                `Cannot find title "${challenge.title}" in meta.json file`
+              );
+            }
+          });
+
+          it('Matches an ID in meta.json', function() {
+            const index = meta[lang][dashedBlockName].findIndex(
+              arr => arr[0] === challenge.id
+            );
+
+            if (index < 0) {
+              throw new AssertionError(
+                `Cannot find ID "${challenge.id}" in meta.json file`
+              );
+            }
+          });
+
+          it('Common checks', function() {
+            const result = validateChallenge(challenge);
+            const invalidBlock = validateBlock(challenge);
+
+            if (result.error) {
+              throw new AssertionError(result.error);
+            }
+            if (challenge.challengeType !== 7 && invalidBlock) {
+              throw new Error(invalidBlock);
+            }
+            const { id, title } = challenge;
+            mongoIds.check(id, title);
+            challengeTitles.check(title);
+          });
+
+          const { challengeType } = challenge;
+          if (
+            challengeType !== challengeTypes.html &&
+            challengeType !== challengeTypes.js &&
+            challengeType !== challengeTypes.bonfire &&
+            challengeType !== challengeTypes.modern &&
+            challengeType !== challengeTypes.backend
+          ) {
+            return;
           }
-          if (challenge.challengeType !== 7 && invalidBlock) {
-            throw new Error(invalidBlock);
+
+          let { tests = [] } = challenge;
+          tests = tests.filter(test => !!test.testString);
+          if (tests.length === 0) {
+            it('Check tests. No tests.');
+            return;
           }
-          const { id, title } = challenge;
-          mongoIds.check(id, title);
-          challengeTitles.check(title);
-        });
 
-        const { challengeType } = challenge;
-        if (
-          challengeType !== challengeTypes.html &&
-          challengeType !== challengeTypes.js &&
-          challengeType !== challengeTypes.bonfire &&
-          challengeType !== challengeTypes.modern &&
-          challengeType !== challengeTypes.backend
-        ) {
-          return;
-        }
-
-        let { tests = [] } = challenge;
-        tests = tests.filter(test => !!test.testString);
-        if (tests.length === 0) {
-          it('Check tests. No tests.');
-          return;
-        }
-
-        describe('Check tests syntax', function() {
-          tests.forEach(test => {
-            it(`Check for: ${test.text}`, function() {
-              assert.doesNotThrow(() => new vm.Script(test.testString));
+          describe('Check tests syntax', function() {
+            tests.forEach(test => {
+              it(`Check for: ${test.text}`, function() {
+                assert.doesNotThrow(() => new vm.Script(test.testString));
+              });
             });
           });
-        });
 
-        let { files = [] } = challenge;
-        let createTestRunner;
-        if (challengeType === challengeTypes.backend) {
-          it('Check tests is not implemented.');
-          return;
-        } else if (
-          challengeType === challengeTypes.js ||
-          challengeType === challengeTypes.bonfire
-        ) {
-          createTestRunner = createTestRunnerForJSChallenge;
-        } else if (files.length === 1) {
-          createTestRunner = createTestRunnerForDOMChallenge;
-        } else {
-          it('Check tests.', () => {
-            throw new Error('Seed file should be only the one.');
-          });
-          return;
-        }
-
-        files = files.map(createPoly);
-        it('Test suite must fail on the initial contents', async function() {
-          this.timeout(5000 * tests.length + 1000);
-          // suppress errors in the console.
-          const oldConsoleError = console.error;
-          console.error = () => {};
-          let fails = false;
-          let testRunner;
-          try {
-            testRunner = await createTestRunner(
-              { ...challenge, files },
-              '',
-              page
-            );
-          } catch {
-            fails = true;
+          let { files = [] } = challenge;
+          if (challengeType === challengeTypes.backend) {
+            it('Check tests is not implemented.');
+            return;
           }
-          if (!fails) {
-            for (const test of tests) {
-              try {
-                await testRunner(test);
-              } catch (e) {
-                fails = true;
-                break;
+
+          if (files.length > 1) {
+            it('Check tests.', () => {
+              throw new Error('Seed file should be only the one.');
+            });
+            return;
+          }
+
+          const buildChallenge =
+            challengeType === challengeTypes.js ||
+            challengeType === challengeTypes.bonfire
+              ? buildJSChallenge
+              : buildDOMChallenge;
+
+          files = files.map(createPoly);
+          it('Test suite must fail on the initial contents', async function() {
+            this.timeout(5000 * tests.length + 1000);
+            // suppress errors in the console.
+            const oldConsoleError = console.error;
+            console.error = () => {};
+            let fails = false;
+            let testRunner;
+            try {
+              testRunner = await createTestRunner(
+                { ...challenge, files },
+                '',
+                buildChallenge
+              );
+            } catch {
+              fails = true;
+            }
+            if (!fails) {
+              for (const test of tests) {
+                try {
+                  await testRunner(test);
+                } catch (e) {
+                  fails = true;
+                  break;
+                }
               }
             }
+            console.error = oldConsoleError;
+            assert(fails, 'Test suit does not fail on the initial contents');
+          });
+
+          let { solutions = [] } = challenge;
+          const noSolution = new RegExp('// solution required');
+          solutions = solutions.filter(
+            solution => !!solution && !noSolution.test(solution)
+          );
+
+          if (solutions.length === 0) {
+            it('Check tests. No solutions');
+            return;
           }
-          console.error = oldConsoleError;
-          assert(fails, 'Test suit does not fail on the initial contents');
-        });
 
-        let { solutions = [] } = challenge;
-        const noSolution = new RegExp('// solution required');
-        solutions = solutions.filter(
-          solution => !!solution && !noSolution.test(solution)
-        );
-
-        if (solutions.length === 0) {
-          it('Check tests. No solutions');
-          return;
-        }
-
-        describe('Check tests against solutions', function() {
-          solutions.forEach((solution, index) => {
-            it(`Solution ${index + 1} must pass the tests`, async function() {
-              this.timeout(5000 * tests.length + 1000);
-              const testRunner = await createTestRunner(
-                { ...challenge, files },
-                solution,
-                page
-              );
-              for (const test of tests) {
-                await testRunner(test);
-              }
+          describe('Check tests against solutions', function() {
+            solutions.forEach((solution, index) => {
+              it(`Solution ${index + 1} must pass the tests`, async function() {
+                this.timeout(5000 * tests.length + 1000);
+                const testRunner = await createTestRunner(
+                  { ...challenge, files },
+                  solution,
+                  buildChallenge
+                );
+                for (const test of tests) {
+                  await testRunner(test);
+                }
+              });
             });
           });
         });
@@ -297,41 +403,29 @@ function populateTestsForLang({ lang, challenges }) {
   });
 }
 
-async function createTestRunnerForDOMChallenge(
+async function createTestRunner(
   { required = [], template, files },
   solution,
-  context
+  buildChallenge
 ) {
   if (solution) {
     files[0].contents = solution;
   }
 
-  const { build, sources, loadEnzyme } = await buildDOMChallenge({
+  const { build, sources, loadEnzyme } = await buildChallenge({
     files,
     required,
     template
   });
+  const code = sources && 'index' in sources ? sources['index'] : '';
 
-  await context.reload();
-  await context.setContent(build);
-  await context.evaluate(
-    async (sources, loadEnzyme) => {
-      const code = sources && 'index' in sources ? sources['index'] : '';
-      const getUserInput = fileName => sources[fileName];
-      await document.__initTestFrame({ code, getUserInput, loadEnzyme });
-    },
-    sources,
-    loadEnzyme
-  );
+  const evaluator = await (buildChallenge === buildDOMChallenge
+    ? getContextEvaluator(build, sources, code, loadEnzyme)
+    : getWorkerEvaluator(build, sources, code));
 
   return async ({ text, testString }) => {
     try {
-      const { pass, err } = await Promise.race([
-        new Promise((_, reject) => setTimeout(() => reject('timeout'), 5000)),
-        await context.evaluate(async testString => {
-          return await document.__runTest(testString);
-        }, testString)
-      ]);
+      const { pass, err } = await evaluator.evaluate(testString, 5000);
       if (!pass) {
         throw new AssertionError(err.message);
       }
@@ -341,28 +435,43 @@ async function createTestRunnerForDOMChallenge(
   };
 }
 
-async function createTestRunnerForJSChallenge({ files }, solution) {
-  if (solution) {
-    files[0].contents = solution;
-  }
+async function getContextEvaluator(build, sources, code, loadEnzyme) {
+  await initializeTestRunner(build, sources, code, loadEnzyme);
 
-  const { build, sources } = await buildJSChallenge({ files });
-  const code = sources && 'index' in sources ? sources['index'] : '';
-
-  const testWorker = createWorker(testEvaluator, { terminateWorker: true });
-  return async ({ text, testString }) => {
-    try {
-      const { pass, err } = await testWorker.execute(
-        { testString, build, code, sources },
-        5000
-      ).done;
-      if (!pass) {
-        throw new AssertionError(err.message);
-      }
-    } catch (err) {
-      reThrow(err, text);
-    }
+  return {
+    evaluate: async (testString, timeout) =>
+      Promise.race([
+        new Promise((_, reject) =>
+          setTimeout(() => reject('timeout'), timeout)
+        ),
+        await page.evaluate(async testString => {
+          return await document.__runTest(testString);
+        }, testString)
+      ])
   };
+}
+
+async function getWorkerEvaluator(build, sources, code) {
+  const testWorker = createWorker(testEvaluator, { terminateWorker: true });
+  return {
+    evaluate: async (testString, timeout) =>
+      await testWorker.execute({ testString, build, code, sources }, timeout)
+        .done
+  };
+}
+
+async function initializeTestRunner(build, sources, code, loadEnzyme) {
+  await page.reload();
+  await page.setContent(build);
+  await page.evaluate(
+    async (code, sources, loadEnzyme) => {
+      const getUserInput = fileName => sources[fileName];
+      await document.__initTestFrame({ code, getUserInput, loadEnzyme });
+    },
+    code,
+    sources,
+    loadEnzyme
+  );
 }
 
 function reThrow(err, text) {

@@ -2,6 +2,7 @@
 id: bad87fee1348bd9acde08712
 title: Use Responsive Design with Bootstrap Fluid Containers
 challengeType: 0
+isHidden: false
 forumTopicId: 18362
 ---
 
@@ -88,7 +89,7 @@ tests:
   <li>thunder</li>
   <li>other cats</li>
 </ol>
-<form action="/submit-cat-photo">
+<form action="https://freecatphotoapp.com/submit-cat-photo">
   <label><input type="radio" name="indoor-outdoor"> Indoor</label>
   <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
   <label><input type="checkbox" name="personality"> Loving</label>
@@ -154,7 +155,7 @@ tests:
   <li>thunder</li>
   <li>other cats</li>
 </ol>
-<form action="/submit-cat-photo">
+<form action="https://freecatphotoapp.com/submit-cat-photo">
   <label><input type="radio" name="indoor-outdoor"> Indoor</label>
   <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
   <label><input type="checkbox" name="personality"> Loving</label>

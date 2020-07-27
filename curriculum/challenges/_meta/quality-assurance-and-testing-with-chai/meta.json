@@ -1,11 +1,11 @@
 {
   "name": "Quality Assurance and Testing with Chai",
   "dashedName": "quality-assurance-and-testing-with-chai",
-  "order": 2,
+  "order": 1,
   "time": "5 hours",
   "template": "",
   "required": [],
-  "superBlock": "information-security-and-quality-assurance",
+  "superBlock": "quality-assurance",
   "superOrder": 6,
   "challengeOrder": [
     [
@@ -106,5 +106,5 @@
     ]
   ],
   "helpRoom": "Help",
-  "fileName": "06-information-security-and-quality-assurance/testing-with-chai.json"
+  "fileName": "06-quality-assurance/quality-assurance-and-testing-with-chai.json"
 }

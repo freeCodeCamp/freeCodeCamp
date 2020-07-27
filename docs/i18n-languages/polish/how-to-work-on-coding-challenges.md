@@ -244,7 +244,7 @@ Oto szczegółowe wytyczne dotyczące formatowania kodu nasion wyzwania:
 
 # Curriculum Challenge Hints and Solutions (Wyzwania programowe)
 
-Każde wyzwanie posiada przycisk `Uzyskaj podpowiedź`, dzięki czemu użytkownik ma dostęp do wszelkich podpowiedzi/rozwiązań, które zostały stworzone dla wyzwania.  Tematy podpowiedzi/rozwiązań programowych znajdują się na [naszym forum](https://www.freecodecamp.org/forum/c/guide) pod kategorią `Guide`.
+Każde wyzwanie posiada przycisk `Uzyskaj podpowiedź`, dzięki czemu użytkownik ma dostęp do wszelkich podpowiedzi/rozwiązań, które zostały stworzone dla wyzwania.  Tematy podpowiedzi/rozwiązań programowych znajdują się na [naszym forum](https://forum.freecodecamp.org/c/guide) pod kategorią `Guide`.
 
 Jeśli znajdziesz problem z istniejącym tematem podpowiedzi/rozwiązań wyzwania, możesz zgłosić sugestie w komentarzach poniżej głównego postu wiki, jeśli jesteś co najmniej użytkownikiem forum poziomu 3.  Wybierz moderatorów, którzy zapoznają się z komentarzami i zdecydują, czy włączyć zmiany w istniejącym temacie.
 
@@ -331,7 +331,7 @@ Po sprawdzeniu, że każde wyzwanie, nad którym pracowałeś, przejdzie pomyśl
 
 Tworzenie i edycja wyzwań:
 
-1. Typy wyzwań](https://github.com/freeCodeCamp/learn/blob/a5cb25704168aa37f59a582f0bb5a19b7bd89b46/utils/challengeTypes.js) - co oznaczają liczbowe wartości typu wyzwania (wyliczenie).
+1. Typy wyzwań](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/client/utils/challengeTypes.js#L1-L13) - co oznaczają liczbowe wartości typu wyzwania (wyliczenie).
 
-2. [Przyczyniając się do FreeCodeCamp - Writing ES6 Challenge Tests ](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - film video po [Ethan Arrowood](https://twitter.com/ArrowoodTech) jako wkład do starej wersji programu nauczania.
+2. [Przyczyniając się do FreeCodeCamp - Writing ES6 Challenge Tests](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - film video po [Ethan Arrowood](https://twitter.com/ArrowoodTech) jako wkład do starej wersji programu nauczania.
 

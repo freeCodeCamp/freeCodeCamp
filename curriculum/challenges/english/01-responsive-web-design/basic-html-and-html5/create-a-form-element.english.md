@@ -2,6 +2,7 @@
 id: bad87fee1348bd9aede08830
 title: Create a Form Element
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/p/pVMPUv/cmQ3Kfa'
 forumTopicId: 16817
 ---
@@ -15,7 +16,9 @@ For example:
 
 ## Instructions
 <section id='instructions'>
-Nest the existing input element inside a <code>form</code> element and assign <code>"/submit-cat-photo"</code> to the <code>action</code> attribute of the <code>form</code> element.
+
+Nest the existing input element inside a <code>form</code> element and assign <code>"https://freecatphotoapp.com/submit-cat-photo"</code> to the <code>action</code> attribute of the <code>form</code> element.
+
 </section>
 
 ## Tests
@@ -25,8 +28,8 @@ Nest the existing input element inside a <code>form</code> element and assign <c
 tests:
   - text: The existing <code>input</code> element should be nested within a <code>form</code> element.
     testString: const inputElem = document.querySelector('form input'); assert(inputElem.getAttribute('type') === 'text' && inputElem.getAttribute('placeholder') === 'cat photo URL');
-  - text: Your <code>form</code> should have an <code>action</code> attribute which is set to <code>/submit-cat-photo</code>
-    testString: assert($("form").attr("action") === "/submit-cat-photo");
+  - text: Your <code>form</code> should have an <code>action</code> attribute which is set to <code>https://freecatphotoapp.com/submit-cat-photo</code>
+    testString: assert($("form").attr("action") === "https://freecatphotoapp.com/submit-cat-photo");
   - text: Your <code>form</code> element should have well-formed open and close tags.
     testString: assert(code.match(/<\/form>/g) && code.match(/<form [^<]*>/g) && code.match(/<\/form>/g).length === code.match(/<form [^<]*>/g).length);
 
@@ -90,7 +93,7 @@ tests:
     <li>thunder</li>
     <li>other cats</li>
   </ol>
-  <form action="/submit-cat-photo">
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
     <input type="text" placeholder="cat photo URL">
   </form>
 </main>

@@ -2,6 +2,7 @@
 id: 5a24c314108439a4d403617a
 title: Pass State as Props to Child Components
 challengeType: 6
+isHidden: false
 isRequired: false
 forumTopicId: 301403
 ---

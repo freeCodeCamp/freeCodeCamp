@@ -2,6 +2,7 @@
 id: 5a24c314108439a4d4036184
 title: Render with an If-Else Condition
 challengeType: 6
+isHidden: false
 isRequired: false
 forumTopicId: 301410
 ---

@@ -8,7 +8,7 @@ localeTitle: 二元代理商
 ---
 
 ## Description
-<section id="description">返回传递的二进制字符串的英文翻译句子。二进制字符串将以空格分隔。如果卡住，请记得使用<a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> 。尝试配对程序。编写自己的代码。 </section>
+<section id="description">返回传递的二进制字符串的英文翻译句子。二进制字符串将以空格分隔。如果卡住，请记得使用<a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> 。尝试配对程序。编写自己的代码。 </section>
 
 ## Instructions
 <section id="instructions">

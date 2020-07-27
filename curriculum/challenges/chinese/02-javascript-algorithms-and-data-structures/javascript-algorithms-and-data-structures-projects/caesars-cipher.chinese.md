@@ -8,7 +8,7 @@ localeTitle: 凯撒密码
 ---
 
 ## Description
-<section id="description">最简单和最广为人知的<dfn>密码之一</dfn>是<code>Caesar cipher</code> ，也称为<code>shift cipher</code> 。在<code>shift cipher</code>中，字母的含义被移动一些设定量。一种常见的现代用途是<a href="https://en.wikipedia.org/wiki/ROT13" target="_blank">ROT13</a>密码，其中字母的值移动了13个位置。因此&#39;A&#39;&#39;&#39;N&#39;，&#39;B&#39;&#39;&#39;O&#39;等等。编写一个函数，它将<a href="https://en.wikipedia.org/wiki/ROT13" target="_blank">ROT13</a>编码的字符串作为输入并返回一个已解码的字符串。所有字母都是大写的。不要转换任何非字母字符（即空格，标点符号），但要传递它们。如果卡住，请记得使用<a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> 。尝试配对程序。编写自己的代码。 </section>
+<section id="description">最简单和最广为人知的<dfn>密码之一</dfn>是<code>Caesar cipher</code> ，也称为<code>shift cipher</code> 。在<code>shift cipher</code>中，字母的含义被移动一些设定量。一种常见的现代用途是<a href="https://en.wikipedia.org/wiki/ROT13" target="_blank">ROT13</a>密码，其中字母的值移动了13个位置。因此&#39;A&#39;&#39;&#39;N&#39;，&#39;B&#39;&#39;&#39;O&#39;等等。编写一个函数，它将<a href="https://en.wikipedia.org/wiki/ROT13" target="_blank">ROT13</a>编码的字符串作为输入并返回一个已解码的字符串。所有字母都是大写的。不要转换任何非字母字符（即空格，标点符号），但要传递它们。如果卡住，请记得使用<a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> 。尝试配对程序。编写自己的代码。 </section>
 
 ## Instructions
 <section id="instructions">

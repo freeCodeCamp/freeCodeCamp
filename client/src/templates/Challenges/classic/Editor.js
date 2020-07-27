@@ -115,7 +115,13 @@ class Editor extends Component {
       parameterHints: {
         enabled: false
       },
-      tabSize: 2
+      tabSize: 2,
+      hover: false,
+      dragAndDrop: true,
+      lightbulb: {
+        enabled: false
+      },
+      quickSuggestions: false
     };
 
     this._editor = null;
@@ -128,15 +134,15 @@ class Editor extends Component {
 
   editorDidMount = (editor, monaco) => {
     this._editor = editor;
-    this._editor.updateOptions({
+    editor.updateOptions({
       accessibilitySupport: this.props.inAccessibilityMode ? 'on' : 'auto'
     });
     // Users who are using screen readers should not have to move focus from
     // the editor to the description every time they open a challenge.
     if (this.props.canFocus && !this.props.inAccessibilityMode) {
-      this._editor.focus();
+      editor.focus();
     } else this.focusOnHotkeys();
-    this._editor.addAction({
+    editor.addAction({
       id: 'execute-challenge',
       label: 'Run tests',
       keybindings: [
@@ -145,7 +151,7 @@ class Editor extends Component {
       ],
       run: this.props.executeChallenge
     });
-    this._editor.addAction({
+    editor.addAction({
       id: 'leave-editor',
       label: 'Leave editor',
       keybindings: [monaco.KeyCode.Escape],
@@ -154,7 +160,7 @@ class Editor extends Component {
         this.props.setEditorFocusability(false);
       }
     });
-    this._editor.addAction({
+    editor.addAction({
       id: 'save-editor-content',
       label: 'Save editor content to localStorage',
       keybindings: [
@@ -162,7 +168,7 @@ class Editor extends Component {
       ],
       run: this.props.saveEditorContent
     });
-    this._editor.addAction({
+    editor.addAction({
       id: 'toggle-accessibility',
       label: 'Toggle Accessibility Mode',
       keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.F1],
@@ -171,19 +177,17 @@ class Editor extends Component {
         // The store needs to be updated first, as onDidChangeConfiguration is
         // called before updateOptions returns
         this.props.setAccessibilityMode(!currentAccessibility);
-        this._editor.updateOptions({
+        editor.updateOptions({
           accessibilitySupport: currentAccessibility ? 'auto' : 'on'
         });
       }
     });
-    this._editor.onDidFocusEditorWidget(() =>
-      this.props.setEditorFocusability(true)
-    );
+    editor.onDidFocusEditorWidget(() => this.props.setEditorFocusability(true));
     // This is to persist changes caused by the accessibility tooltip.
-    // Unfortunately it relies on Monaco's implementation details
-    this._editor.onDidChangeConfiguration(() => {
+    editor.onDidChangeConfiguration(event => {
       if (
-        this._editor.getConfiguration().accessibilitySupport === 2 &&
+        event.hasChanged(monaco.editor.EditorOption.accessibilitySupport) &&
+        editor.getRawOptions().accessibilitySupport === 'on' &&
         !this.props.inAccessibilityMode
       ) {
         this.props.setAccessibilityMode(true);
@@ -217,16 +221,18 @@ class Editor extends Component {
     const editorTheme = theme === 'night' ? 'vs-dark-custom' : 'vs-custom';
     return (
       <Suspense fallback={<Loader timeout={600} />}>
-        <MonacoEditor
-          editorDidMount={this.editorDidMount}
-          editorWillMount={this.editorWillMount}
-          key={`${editorTheme}-${fileKey}`}
-          language={modeMap[ext]}
-          onChange={this.onChange}
-          options={this.options}
-          theme={editorTheme}
-          value={contents}
-        />
+        <span className='notranslate'>
+          <MonacoEditor
+            editorDidMount={this.editorDidMount}
+            editorWillMount={this.editorWillMount}
+            key={`${editorTheme}-${fileKey}`}
+            language={modeMap[ext]}
+            onChange={this.onChange}
+            options={this.options}
+            theme={editorTheme}
+            value={contents}
+          />
+        </span>
       </Suspense>
     );
   }
