@@ -138,7 +138,6 @@ class MultifileEditor extends Component {
     };
 
     const { challengeFiles } = this.props;
-
     const targetEditor = getTargetEditor(challengeFiles);
 
     this.state = {
@@ -207,6 +206,7 @@ class MultifileEditor extends Component {
     // TODO: tabs should be dynamically created from the challengeFiles
     // TODO: the tabs mess up the rendering (scroll doesn't work properly and
     // the in-editor description)
+    const targetEditor = getTargetEditor(challengeFiles);
 
     return (
       <ReflexContainer
@@ -230,9 +230,9 @@ class MultifileEditor extends Component {
                     <Editor
                       challengeFiles={challengeFiles}
                       containerRef={containerRef}
-                      // TODO: only pass description to the editor with the
-                      // editable region
-                      description={description}
+                      description={
+                        targetEditor === 'indexhtml' ? description : null
+                      }
                       fileKey='indexhtml'
                       key='indexhtml'
                       ref={editorRef}
@@ -251,9 +251,9 @@ class MultifileEditor extends Component {
                     <Editor
                       challengeFiles={challengeFiles}
                       containerRef={containerRef}
-                      // TODO: only pass description to the editor with the
-                      // editable region
-                      description={'this sentence is not here'}
+                      description={
+                        targetEditor === 'indexcss' ? description : null
+                      }
                       fileKey='indexcss'
                       key='indexcss'
                       resizeProps={resizeProps}
@@ -272,9 +272,9 @@ class MultifileEditor extends Component {
                     <Editor
                       challengeFiles={challengeFiles}
                       containerRef={containerRef}
-                      // TODO: only pass description to the editor with the
-                      // editable region
-                      description={'neither is this one'}
+                      description={
+                        targetEditor === 'indexjs' ? description : null
+                      }
                       fileKey='indexjs'
                       key='indexjs'
                       resizeProps={resizeProps}
