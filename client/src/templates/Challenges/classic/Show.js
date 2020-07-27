@@ -9,7 +9,7 @@ import { first } from 'lodash';
 import Media from 'react-responsive';
 
 import LearnLayout from '../../../components/layouts/Learn';
-import Editor from './Editor';
+import MultifileEditor from './MultifileEditor';
 import Preview from '../components/Preview';
 import SidePanel from '../components/Side-Panel';
 import Output from '../components/Output';
@@ -224,11 +224,12 @@ class ShowClassic extends Component {
     const { description } = this.getChallenge();
     return (
       files && (
-        <Editor
+        <MultifileEditor
           challengeFiles={files}
           containerRef={this.containerRef}
           description={description}
-          ref={this.editorRef}
+          editorRef={this.editorRef}
+          resizeProps={this.resizeProps}
         />
       )
     );

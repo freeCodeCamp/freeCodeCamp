@@ -1,4 +1,4 @@
-import React, { Component, Suspense } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
@@ -16,8 +16,6 @@ import {
   updateFile
 } from '../redux';
 import { userSelector, isDonationModalOpenSelector } from '../../../redux';
-import { Loader } from '../../../components/helpers';
-import { toSortedArray } from '../../../../../utils/sort-files';
 
 import './editor.css';
 
@@ -25,6 +23,7 @@ const MonacoEditor = Loadable(() => import('react-monaco-editor'));
 
 const propTypes = {
   canFocus: PropTypes.bool,
+  // TODO: use shape
   challengeFiles: PropTypes.object,
   containerRef: PropTypes.any.isRequired,
   contents: PropTypes.string,
@@ -37,6 +36,10 @@ const propTypes = {
   initialEditorContent: PropTypes.string,
   initialExt: PropTypes.string,
   output: PropTypes.arrayOf(PropTypes.string),
+  resizeProps: PropTypes.shape({
+    onStopResize: PropTypes.func,
+    onResize: PropTypes.func
+  }),
   saveEditorContent: PropTypes.func.isRequired,
   setAccessibilityMode: PropTypes.func.isRequired,
   setEditorFocusability: PropTypes.func,
@@ -118,9 +121,6 @@ class Editor extends Component {
     // available files into that order.  i.e. if it's just one file it will
     // automatically be first, but  if there's jsx and js (for some reason) it
     //  will be [jsx, js].
-    // this.state = {
-    //   fileKey: 'indexhtml'
-    // };
 
     // NOTE: This looks like it should be react state. However we need
     // to access monaco.editor to create the models and store the state and that
@@ -129,52 +129,22 @@ class Editor extends Component {
     // As a result it was unclear how to link up the editor's lifecycle with
     // react's lifecycle. Simply storing the models and state here and letting
     // the editor control them seems to be the best solution.
+    // TODO: IS THIS STILL TRUE NOW EACH EDITOR IS AN ISLAND, ENTIRE OF ITSELF?
 
     // TODO: is there any point in initializing this? It should be fine with
-    // this.data = {indexjs:{}, indexcss:{}, indexhtml:{}, indexjsx: {}}
+    // this.data = {}
 
     this.data = {
-      indexjs: {
-        model: null,
-        state: null,
-        viewZoneId: null,
-        startEditDecId: null,
-        endEditDecId: null,
-        viewZoneHeight: null
-      },
-      indexcss: {
-        model: null,
-        state: null,
-        viewZoneId: null,
-        startEditDecId: null,
-        endEditDecId: null,
-        viewZoneHeight: null
-      },
-      indexhtml: {
-        model: null,
-        state: null,
-        viewZoneId: null,
-        startEditDecId: null,
-        endEditDecId: null,
-        viewZoneHeight: null
-      },
-      indexjsx: {
-        model: null,
-        state: null,
-        viewZoneId: null,
-        startEditDecId: null,
-        endEditDecId: null,
-        viewZoneHeight: null
-      }
+      model: null,
+      state: null,
+      viewZoneId: null,
+      startEditDecId: null,
+      endEditDecId: null,
+      viewZoneHeight: null
     };
-
-    const { challengeFiles } = this.props;
 
     // NOTE: the ARIA state is controlled by fileKey, so changes to it must
     // trigger a re-render.  Hence state:
-    this.state = {
-      fileKey: toSortedArray(challengeFiles)[0].key
-    };
 
     this.options = {
       fontSize: '18px',
@@ -214,53 +184,54 @@ class Editor extends Component {
 
   editorWillMount = monaco => {
     this._monaco = monaco;
-    const { challengeFiles } = this.props;
+    const { challengeFiles, fileKey } = this.props;
     defineMonacoThemes(monaco);
     // If a model is not provided, then the editor 'owns' the model it creates
     // and will dispose of that model if it is replaced. Since we intend to
     // swap and reuse models, we have to create our own models to prevent
     // disposal.
 
-    Object.keys(challengeFiles).forEach(key => {
-      // If a model exists, there is no need to recreate it.
-      const model =
-        this.data[key].model ||
-        monaco.editor.createModel(
-          challengeFiles[key].contents,
-          modeMap[challengeFiles[key].ext]
-        );
-      this.data[key].model = model;
+    // TODO: For now, I'm keeping the 'data' machinery, but it'll probably go
 
-      const editableRegion = [...challengeFiles[key].editableRegionBoundaries];
+    const model =
+      this.data.model ||
+      monaco.editor.createModel(
+        challengeFiles[fileKey].contents,
+        modeMap[challengeFiles[fileKey].ext]
+      );
+    this.data.model = model;
 
-      if (editableRegion.length === 2)
-        this.decorateForbiddenRanges(key, editableRegion);
-    });
-    return { model: this.data[this.state.fileKey].model };
+    const editableRegion = [
+      ...challengeFiles[fileKey].editableRegionBoundaries
+    ];
+
+    if (editableRegion.length === 2)
+      this.decorateForbiddenRanges(editableRegion);
+
+    return { model: this.data.model };
   };
 
   // Updates the model if the contents has changed. This is only necessary for
   // changes coming from outside the editor (such as code resets).
   updateEditorValues = () => {
-    const { challengeFiles } = this.props;
-    Object.keys(challengeFiles).forEach(key => {
-      const newContents = challengeFiles[key].contents;
-      if (this.data[key].model.getValue() !== newContents) {
-        this.data[key].model.setValue(newContents);
-      }
-    });
+    const { challengeFiles, fileKey } = this.props;
+
+    const newContents = challengeFiles[fileKey].contents;
+    if (this.data.model.getValue() !== newContents) {
+      this.data.model.setValue(newContents);
+    }
   };
 
   editorDidMount = (editor, monaco) => {
     this._editor = editor;
-    const { challengeFiles } = this.props;
-    const { fileKey } = this.state;
+    const { challengeFiles, fileKey } = this.props;
     editor.updateOptions({
       accessibilitySupport: this.props.inAccessibilityMode ? 'on' : 'auto'
     });
     // Users who are using screen readers should not have to move focus from
     // the editor to the description every time they open a challenge.
     if (this.props.canFocus && !this.props.inAccessibilityMode) {
+      // TODO: only one Editor should be calling for focus at once.
       editor.focus();
     } else this.focusOnHotkeys();
     editor.addAction({
@@ -382,7 +353,6 @@ class Editor extends Component {
   };
 
   viewZoneCallback = changeAccessor => {
-    const { fileKey } = this.state;
     // TODO: is there any point creating this here? I know it's cached, but
     // would it not be better just sourced from the overlayWidget?
     const domNode = this.createDescription();
@@ -391,7 +361,7 @@ class Editor extends Component {
     domNode.style.width = this._editor.getLayoutInfo().contentWidth + 'px';
 
     // TODO: set via onComputedHeight?
-    this.data[fileKey].viewZoneHeight = domNode.offsetHeight;
+    this.data.viewZoneHeight = domNode.offsetHeight;
 
     var background = document.createElement('div');
     background.style.background = 'lightgreen';
@@ -407,12 +377,11 @@ class Editor extends Component {
         this._editor.layoutOverlayWidget(this._overlayWidget)
     };
 
-    this.data[fileKey].viewZoneId = changeAccessor.addZone(viewZone);
+    this.data.viewZoneId = changeAccessor.addZone(viewZone);
   };
 
   // TODO: this is basically the same as viewZoneCallback, so DRY them out.
   outputZoneCallback = changeAccessor => {
-    const { fileKey } = this.state;
     // TODO: is there any point creating this here? I know it's cached, but
     // would it not be better just sourced from the overlayWidget?
     const outputNode = this.createOutputNode();
@@ -421,7 +390,7 @@ class Editor extends Component {
     outputNode.style.width = this._editor.getLayoutInfo().contentWidth + 'px';
 
     // TODO: set via onComputedHeight?
-    this.data[fileKey].outputZoneHeight = outputNode.offsetHeight;
+    this.data.outputZoneHeight = outputNode.offsetHeight;
 
     var background = document.createElement('div');
     background.style.background = 'lightpink';
@@ -437,7 +406,7 @@ class Editor extends Component {
         this._editor.layoutOverlayWidget(this._outputWidget)
     };
 
-    this.data[fileKey].outputZoneId = changeAccessor.addZone(viewZone);
+    this.data.outputZoneId = changeAccessor.addZone(viewZone);
   };
 
   createDescription() {
@@ -516,7 +485,7 @@ class Editor extends Component {
   onChange = editorValue => {
     const { updateFile } = this.props;
     // TODO: use fileKey everywhere?
-    const { fileKey: key } = this.state;
+    const { fileKey: key } = this.props;
     // TODO: now that we have getCurrentEditableRegion, should the overlays
     // follow that directly? We could subscribe to changes to that and redraw if
     // those imply that the positions have changed (i.e. if the content height
@@ -528,28 +497,6 @@ class Editor extends Component {
       editableRegion.endLineNumber + 1
     ];
     updateFile({ key, editorValue, editableRegionBoundaries });
-  };
-
-  changeTab = newFileKey => {
-    const { challengeFiles } = this.props;
-    this.setState({ fileKey: newFileKey });
-    const editor = this._editor;
-    const currentState = editor.saveViewState();
-    const currentModel = editor.getModel();
-    for (const key in this.data) {
-      if (currentModel === this.data[key].model) {
-        this.data[key].state = currentState;
-      }
-    }
-
-    editor.setModel(this.data[newFileKey].model);
-    editor.restoreViewState(this.data[newFileKey].state);
-    editor.focus();
-
-    const editableBoundaries = [
-      ...challengeFiles[newFileKey].editableRegionBoundaries
-    ];
-    this.showEditableRegion(editableBoundaries);
   };
 
   showEditableRegion(editableBoundaries) {
@@ -597,7 +544,7 @@ class Editor extends Component {
   // currently is. (see getLineAfterViewZone)
   // TODO: DRY this and getOutputZoneTop out.
   getViewZoneTop() {
-    const heightDelta = this.data[this.state.fileKey].viewZoneHeight || 0;
+    const heightDelta = this.data.viewZoneHeight || 0;
 
     const top =
       this._editor.getTopForLineNumber(this.getLineAfterViewZone()) -
@@ -609,7 +556,7 @@ class Editor extends Component {
   }
 
   getOutputZoneTop() {
-    const heightDelta = this.data[this.state.fileKey].outputZoneHeight || 0;
+    const heightDelta = this.data.outputZoneHeight || 0;
 
     const top =
       this._editor.getTopForLineNumber(this.getLineAfterEditableRegion()) -
@@ -624,19 +571,15 @@ class Editor extends Component {
   // the region it should cover instead.
   // TODO: DRY
   getLineAfterViewZone() {
-    const { fileKey } = this.state;
     return (
-      this.data[fileKey].model.getDecorationRange(
-        this.data[fileKey].startEditDecId
-      ).endLineNumber + 1
+      this.data.model.getDecorationRange(this.data.startEditDecId)
+        .endLineNumber + 1
     );
   }
 
   getLineAfterEditableRegion() {
-    const { fileKey } = this.state;
-    return this.data[fileKey].model.getDecorationRange(
-      this.data[fileKey].endEditDecId
-    ).startLineNumber;
+    return this.data.model.getDecorationRange(this.data.endEditDecId)
+      .startLineNumber;
   }
 
   translateRange = (range, lineDelta) => {
@@ -661,14 +604,13 @@ class Editor extends Component {
     };
   };
 
-  getCurrentEditableRegion = key => {
-    const model = this.data[key].model;
+  getCurrentEditableRegion = () => {
+    const model = this.data.model;
     // TODO: this is a little low-level, but we should bail if there is no
     // editable region defined.
-    if (!this.data[key].startEditDecId || !this.data[key].endEditDecId)
-      return null;
-    const firstRange = model.getDecorationRange(this.data[key].startEditDecId);
-    const secondRange = model.getDecorationRange(this.data[key].endEditDecId);
+    if (!this.data.startEditDecId || !this.data.endEditDecId) return null;
+    const firstRange = model.getDecorationRange(this.data.startEditDecId);
+    const secondRange = model.getDecorationRange(this.data.endEditDecId);
     const { startLineNumber, endLineNumber } = this.getLinesBetweenRanges(
       firstRange,
       secondRange
@@ -681,8 +623,8 @@ class Editor extends Component {
     return new this._monaco.Range(startLineNumber, 1, endLineNumber, endColumn);
   };
 
-  decorateForbiddenRanges(key, editableRegion) {
-    const model = this.data[key].model;
+  decorateForbiddenRanges(editableRegion) {
+    const model = this.data.model;
     const forbiddenRanges = [
       [1, editableRegion[0]],
       [editableRegion[1], model.getLineCount()]
@@ -693,7 +635,7 @@ class Editor extends Component {
     });
 
     // the first range should expand at the top
-    this.data[key].startEditDecId = this.highlightLines(
+    this.data.startEditDecId = this.highlightLines(
       this._monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingBefore,
       model,
       ranges[0]
@@ -706,7 +648,7 @@ class Editor extends Component {
     );
 
     // the second range should expand at the bottom
-    this.data[key].endEditDecId = this.highlightLines(
+    this.data.endEditDecId = this.highlightLines(
       this._monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingAfter,
       model,
       ranges[1]
@@ -871,15 +813,15 @@ class Editor extends Component {
 
       // we only need to handle the special case of the second region being
       // pulled up, the first region already behaves correctly.
-      this.data[key].endEditDecId = preventOverlap(this.data[key].endEditDecId);
+      this.data.endEditDecId = preventOverlap(this.data.endEditDecId);
 
       // TODO: do the same for the description widget
       // this has to be handle differently, because we care about the END
       // of the zone, not the START
-      handleDescriptionZoneChange(this.data[key].startEditDecId);
-      handleHintsZoneChange(this.data[key].endEditDecId);
-      warnUser(this.data[key].startEditDecId);
-      warnUser(this.data[key].endEditDecId);
+      handleDescriptionZoneChange(this.data.startEditDecId);
+      handleHintsZoneChange(this.data.endEditDecId);
+      warnUser(this.data.startEditDecId);
+      warnUser(this.data.endEditDecId);
     });
   }
 
@@ -908,7 +850,7 @@ class Editor extends Component {
 
   componentDidUpdate(prevProps) {
     // TODO: re-organise into something less nested
-    const { fileKey } = this.state;
+
     // If a challenge is reset, it needs to communicate that change to the
     // editor. This looks for changes any challenge files and updates if needed.
     if (this.props.challengeFiles !== prevProps.challengeFiles) {
@@ -924,7 +866,6 @@ class Editor extends Component {
         // (shownHint,maybe) and have that persist through previews.  But, for
         // now:
         if (output) {
-          console.log('OUTPUT', output);
           if (output[0]) {
             document.getElementById('test-status').innerHTML = output[0];
           }
@@ -933,17 +874,19 @@ class Editor extends Component {
             document.getElementById('test-output').innerHTML = output[1];
           }
 
-          if (this.data[fileKey].startEditDecId) {
+          if (this.data.startEditDecId) {
             this.updateOutputZone();
           }
         }
       }
 
+      // TODO: to get the 'dimensions' prop, this needs to be a inside a
+      // ReflexElement
       if (this.props.dimensions !== prevProps.dimensions) {
         // Order matters here. The view zones need to know the new editor
         // dimensions in order to render correctly.
         this._editor.layout();
-        if (this.data[fileKey].startEditDecId) {
+        if (this.data.startEditDecId) {
           this.updateViewZone();
           this.updateOutputZone();
         }
@@ -954,86 +897,34 @@ class Editor extends Component {
   // TODO: DRY (there's going to be a lot of that)
   updateOutputZone() {
     this._editor.changeViewZones(changeAccessor => {
-      changeAccessor.removeZone(this.data[this.state.fileKey].outputZoneId);
+      changeAccessor.removeZone(this.data.outputZoneId);
       this.outputZoneCallback(changeAccessor);
     });
   }
 
   updateViewZone() {
     this._editor.changeViewZones(changeAccessor => {
-      changeAccessor.removeZone(this.data[this.state.fileKey].viewZoneId);
+      changeAccessor.removeZone(this.data.viewZoneId);
       this.viewZoneCallback(changeAccessor);
     });
   }
 
   componentWillUnmount() {
-    this.setState({ fileKey: null });
     this.data = null;
   }
 
   render() {
-    const { challengeFiles, theme } = this.props;
+    const { theme } = this.props;
     const editorTheme = theme === 'night' ? 'vs-dark-custom' : 'vs-custom';
 
-    // TODO: tabs should be dynamically created from the challengeFiles
-    // TODO: is the key necessary? Try switching themes without it.
-    // TODO: the tabs mess up the rendering (scroll doesn't work properly and
-    // the in-editor description)
     return (
-      <Suspense fallback={<Loader timeout={600} />}>
-        <span className='notranslate'>
-          <div className='monaco-editor-tabs'>
-            {challengeFiles['indexjsx'] && (
-              <button
-                aria-selected={this.state.fileKey === 'indexjsx'}
-                className='monaco-editor-tab'
-                onClick={() => this.changeTab('indexjsx')}
-                role='tab'
-              >
-                script.jsx
-              </button>
-            )}
-            {challengeFiles['indexhtml'] && (
-              <button
-                aria-selected={this.state.fileKey === 'indexhtml'}
-                className='monaco-editor-tab'
-                onClick={() => this.changeTab('indexhtml')}
-                role='tab'
-              >
-                index.html
-              </button>
-            )}
-            {challengeFiles['indexjs'] && (
-              <button
-                aria-selected={this.state.fileKey === 'indexjs'}
-                className='monaco-editor-tab'
-                onClick={() => this.changeTab('indexjs')}
-                role='tab'
-              >
-                script.js
-              </button>
-            )}
-            {challengeFiles['indexcss'] && (
-              <button
-                aria-selected={this.state.fileKey === 'indexcss'}
-                className='monaco-editor-tab'
-                onClick={() => this.changeTab('indexcss')}
-                role='tab'
-              >
-                styles.css
-              </button>
-            )}
-          </div>
-          <MonacoEditor
-            editorDidMount={this.editorDidMount}
-            editorWillMount={this.editorWillMount}
-            key={`${editorTheme}`}
-            onChange={this.onChange}
-            options={this.options}
-            theme={editorTheme}
-          />
-        </span>
-      </Suspense>
+      <MonacoEditor
+        editorDidMount={this.editorDidMount}
+        editorWillMount={this.editorWillMount}
+        onChange={this.onChange}
+        options={this.options}
+        theme={editorTheme}
+      />
     );
   }
 }
