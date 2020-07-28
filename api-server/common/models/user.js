@@ -353,8 +353,8 @@ export default function(User) {
     const usernameFilter = new badwordFilter();
     if (
       username &&
-      (blocklistedUsernames.indexOf(username) !== -1 ||
-        usernameFilter.isProfane(username) === true)
+      (blocklistedUsernames.includes(username) ||
+        usernameFilter.isProfane(username))
     ) {
       return Promise.resolve(true);
     }
