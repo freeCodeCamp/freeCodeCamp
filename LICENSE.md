@@ -1,4 +1,4 @@
-BSD 3-Clause License
+# BSD 3-Clause License
 
 Copyright (c) 2020, freeCodeCamp.
 All rights reserved.

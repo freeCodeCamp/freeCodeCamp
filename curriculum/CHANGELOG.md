@@ -1,12 +1,11 @@
-## [3.2.1](https://github.com/freeCodeCamp/curriculum/compare/v3.2.0...v3.2.1) (2018-09-25)
+# [3.2.1](https://github.com/freeCodeCamp/curriculum/compare/v3.2.0...v3.2.1) (2018-09-25)
 
 
-### Bug Fixes
+## Bug Fixes
 
 * Add videoUrl field ([#298](https://github.com/freeCodeCamp/curriculum/issues/298)) ([ce3cc22](https://github.com/freeCodeCamp/curriculum/commit/ce3cc22))
 
-# [3.2.0](https://github.com/freeCodeCamp/curriculum/compare/v3.1.2...v3.2.0) (2018-09-20)
-
+## [3.2.0](https://github.com/freeCodeCamp/curriculum/compare/v3.1.2...v3.2.0) (2018-09-20)
 
 ### Bug Fixes
 
@@ -58,7 +57,6 @@
 * **challenges:** Update test to include whitespace ([#272](https://github.com/freeCodeCamp/curriculum/issues/272)) ([77689f4](https://github.com/freeCodeCamp/curriculum/commit/77689f4)), closes [#271](https://github.com/freeCodeCamp/curriculum/issues/271)
 * **schema:** change schema and unpack script ([b014b23](https://github.com/freeCodeCamp/curriculum/commit/b014b23))
 
-
 ### Features
 
 * **challenges:** add browser fallback challenge ([b090e8b](https://github.com/freeCodeCamp/curriculum/commit/b090e8b)), closes [freeCodeCamp/freeCodeCamp#17546](https://github.com/freeCodeCamp/freeCodeCamp/issues/17546)
@@ -77,12 +75,11 @@
 
 ## [3.1.1](https://github.com/freeCodeCamp/curriculum/compare/v3.1.0...v3.1.1) (2018-07-28)
 
-
 ### Bug Fixes
 
 * **challenges:** improve test for mongodb and mongoose ([8ae372a](https://github.com/freeCodeCamp/curriculum/commit/8ae372a))
 
-# [3.1.0](https://github.com/freeCodeCamp/curriculum/compare/v3.0.1...v3.1.0) (2018-07-27)
+### [3.1.0](https://github.com/freeCodeCamp/curriculum/compare/v3.0.1...v3.1.0) (2018-07-27)
 
 
 ### Bug Fixes
@@ -170,7 +167,7 @@
 * **challenges:** Typo errors ([#39](https://github.com/freeCodeCamp/curriculum/issues/39)) ([0c0702d](https://github.com/freeCodeCamp/curriculum/commit/0c0702d))
 * **challenges:** update regular expression that fails ([#56](https://github.com/freeCodeCamp/curriculum/issues/56)) ([9fa5907](https://github.com/freeCodeCamp/curriculum/commit/9fa5907)), closes [#55](https://github.com/freeCodeCamp/curriculum/issues/55)
 
-# [2.0.0](https://github.com/freeCodeCamp/curriculum/compare/v1.2.1...v2.0.0) (2018-06-24)
+### [2.0.0](https://github.com/freeCodeCamp/curriculum/compare/v1.2.1...v2.0.0) (2018-06-24)
 
 
 ### Bug Fixes
@@ -195,7 +192,7 @@
 * sample code in intro to currying ([d4cf9de](https://github.com/freeCodeCamp/curriculum/commit/d4cf9de))
 * typo errors ([#23](https://github.com/freeCodeCamp/curriculum/issues/23)) ([16ff132](https://github.com/freeCodeCamp/curriculum/commit/16ff132))
 
-# [1.2.0](https://github.com/freeCodeCamp/curriculum/compare/v1.1.3...v1.2.0) (2018-06-19)
+### [1.2.0](https://github.com/freeCodeCamp/curriculum/compare/v1.1.3...v1.2.0) (2018-06-19)
 
 
 ### Bug Fixes
@@ -214,7 +211,6 @@
 * "test(challenges): Corrected expected average value" ([#17568](https://github.com/freeCodeCamp/curriculum/issues/17568)) ([20fac4e](https://github.com/freeCodeCamp/curriculum/commit/20fac4e))
 
 ## [1.1.3](https://github.com/freeCodeCamp/curriculum/compare/v1.1.2...v1.1.3) (2018-06-13)
-
 
 ### Bug Fixes
 

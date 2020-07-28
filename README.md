@@ -1,4 +1,4 @@
-![freeCodeCamp.org Social Banner](https://s3.amazonaws.com/freecodecamp/wide-social-banner.png)
+# ![freeCodeCamp.org Social Banner](https://s3.amazonaws.com/freecodecamp/wide-social-banner.png)
 
 [![Pull Requests Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
 [![first-timers-only Friendly](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](http://www.firsttimersonly.com/)
@@ -124,7 +124,7 @@ Our community also has:
 - A [podcast](https://podcast.freecodecamp.org/) with technology insights and inspiring stories from developers.
 - A [Developer News](https://www.freecodecamp.org/news) publication, a free, open source, no-ads place to cross-post your blog articles.
 
-> #### [Join our community here](https://www.freecodecamp.org/signin).
+> #### [Join our community here](https://www.freecodecamp.org/signin)
 
 ### Reporting Bugs and Issues
 
@@ -142,7 +142,7 @@ We appreciate any responsible disclosure of vulnerabilities that might impact th
 
 The freeCodeCamp.org community is possible thanks to thousands of kind volunteers like you. We welcome any and all contributions to the community and are excited to welcome you aboard.
 
-> #### [Please follow these steps to contribute](https://contribute.freecodecamp.org).
+> #### [Please follow these steps to contribute](https://contribute.freecodecamp.org)
 
 ### Platform, Build and Deployment Status
 
