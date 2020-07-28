@@ -40,7 +40,7 @@ tests:
   - text: The result of <code>sum()</code> should be 0
     testString: assert(sum() === 0);
   - text: The <code>sum</code> function should use the <code>...</code> rest parameter on the <code>args</code> parameter.
-    testString: assert(code.replace(/\s/g,'').match(/sum=\(\.\.\.args\)=>/));
+    testString: assert(__helpers.removeWhiteSpace(code).match(/sum=\(\.\.\.args\)=>/));
 
 ```
 

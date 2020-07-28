@@ -33,7 +33,7 @@ tests:
   - text: The variable <code>difference</code> should be equal to 12.
     testString: assert(difference === 12);
   - text: You should only subtract one number from 45.
-    testString: assert(/difference=45-33;?/.test(code.replace(/\s/g, '')));
+    testString: assert(/difference=45-33;?/.test(__helpers.removeWhiteSpace(code)));
 ```
 
 </section>

@@ -52,9 +52,9 @@ tests:
   - text: <code>countdown(5)</code> should return <code>[5, 4, 3, 2, 1]</code>
     testString: assert.deepStrictEqual(countdown(5), [5, 4, 3, 2, 1]);
   - text: Your code should not rely on any kind of loops (<code>for</code>, <code>while</code> or higher order functions such as <code>forEach</code>, <code>map</code>, <code>filter</code>, and <code>reduce</code>).
-    testString: assert(!removeJSComments(code).match(/for|while|forEach|map|filter|reduce/g));
+    testString: assert(!__helpers.removeJSComments(code).match(/for|while|forEach|map|filter|reduce/g));
   - text: You should use recursion to solve this problem.
-    testString: assert(removeJSComments(countdown.toString()).match(/countdown\s*\(.+\)/));
+    testString: assert(__helpers.removeJSComments(countdown.toString()).match(/countdown\s*\(.+\)/));
 ```
 
 </section>
@@ -72,15 +72,6 @@ function countdown(n){
   return;
 }
 // Only change code above this line
-```
-
-</div>
-
-### After Test
-<div id='js-teardown'>
-
-```js
-const removeJSComments = str => str.replace(/\/\*[\s\S]*?\*\/|\/\/.*$/gm, '');
 ```
 
 </div>
