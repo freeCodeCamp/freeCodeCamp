@@ -13,7 +13,7 @@ import {
 import Helmet from 'react-helmet';
 import { createSelector } from 'reselect';
 
-import { ButtonSpacer, Spacer, Link } from '../components/helpers';
+import { ButtonSpacer, Spacer } from '../components/helpers';
 import { acceptTerms, userSelector } from '../redux';
 import createRedirect from '../components/createRedirect';
 
@@ -31,16 +31,14 @@ const mapStateToProps = createSelector(
 );
 const mapDispatchToProps = dispatch =>
   bindActionCreators({ acceptTerms }, dispatch);
-const RedirectHome = createRedirect('/');
+const RedirectToLearn = createRedirect('/learn');
 
 class AcceptPrivacyTerms extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      privacyPolicy: false,
-      termsOfService: false,
-      quincyEmail: true
+      quincyEmail: false
     };
     this.createHandleChange = this.createHandleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -55,74 +53,43 @@ class AcceptPrivacyTerms extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const { privacyPolicy, termsOfService, quincyEmail } = this.state;
-    if (!privacyPolicy || !termsOfService) {
-      return null;
-    }
+    const { quincyEmail } = this.state;
+
     return this.props.acceptTerms(quincyEmail);
+  }
+
+  componentWillUnmount() {
+    // if a user navigates away from here we should set acceptedPrivacyTerms
+    // to true (so they do not get pulled back) without changing their email
+    // preferences (hence the null payload)
+    // This ensures the user has to click the checkbox and then click the
+    // 'Continue...' button to sign up.
+    if (!this.props.acceptedPrivacyTerms) {
+      this.props.acceptTerms(null);
+    }
   }
 
   render() {
     const { acceptedPrivacyTerms } = this.props;
     if (acceptedPrivacyTerms) {
-      return <RedirectHome />;
+      return <RedirectToLearn />;
     }
-    const { privacyPolicy, termsOfService, quincyEmail } = this.state;
+    const { quincyEmail } = this.state;
     return (
       <Fragment>
         <Helmet>
-          <title>Privacy Policy and Terms of Service | freeCodeCamp.org</title>
+          <title>Email Sign Up | freeCodeCamp.org</title>
         </Helmet>
         <Spacer size={2} />
         <Row className='text-center'>
           <Col sm={8} smOffset={2} xs={12}>
-            <h1>
-              Please review our updated privacy policy and the terms of service.
-            </h1>
+            <h1>Email Sign Up </h1>
           </Col>
         </Row>
         <Spacer size={2} />
         <Row>
           <Col sm={8} smOffset={2} xs={12}>
             <form onSubmit={this.handleSubmit}>
-              <FormGroup>
-                <ControlLabel htmlFor='terms-of-service'>
-                  Terms of Service
-                </ControlLabel>
-                <Spacer />
-                <Checkbox
-                  checked={termsOfService}
-                  id='terms-of-service'
-                  inline={true}
-                  onChange={this.createHandleChange('termsOfService')}
-                >
-                  I accept the{' '}
-                  <Link external={true} to='/news/terms-of-service'>
-                    terms of service
-                  </Link>{' '}
-                  (required)
-                </Checkbox>
-              </FormGroup>
-              <Spacer />
-              <FormGroup>
-                <ControlLabel htmlFor='privacy-policy'>
-                  Privacy Policy
-                </ControlLabel>
-                <Spacer />
-                <Checkbox
-                  checked={privacyPolicy}
-                  id='privacy-policy'
-                  inline={true}
-                  onChange={this.createHandleChange('privacyPolicy')}
-                >
-                  I accept the{' '}
-                  <Link external={true} to='/news/privacy-policy'>
-                    privacy policy
-                  </Link>{' '}
-                  (required)
-                </Checkbox>
-              </FormGroup>
-              <Spacer />
               <FormGroup>
                 <ControlLabel htmlFor='quincy-email'>
                   Quincy's Emails
@@ -142,7 +109,6 @@ class AcceptPrivacyTerms extends Component {
                 block={true}
                 bsStyle='primary'
                 className='big-cta-btn'
-                disabled={!privacyPolicy || !termsOfService}
                 type='submit'
               >
                 Continue to freeCodeCamp.org
