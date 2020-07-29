@@ -21,7 +21,8 @@ const io = require('socket.io')(http);
 Now that the _http_ server is mounted on the _express app_, you need to listen from the _http_ server. Change the line with <code>app.listen</code> to <code>http.listen</code>.
 
 The first thing needing to be handled is listening for a new connection from the client. The <dfn>on</dfn> keyword does just that- listen for a specific event. It requires 2 arguments: a string containing the title of the event thats emitted, and a function with which the data is passed though. In the case of our connection listener, we use <em>socket</em> to define the data in the second argument. A socket is an individual client who is connected.
-For listening for connections on our server, add the following within your database connection:
+
+To listen for connections to your server, add the following within your database connection:
 
 ```javascript
 io.on('connection', socket => {
@@ -58,8 +59,8 @@ Submit your page when you think you've got it right.
 tests:
   - text: <code>socket.io</code> should be a dependency.
     testString: getUserInput => $.get(getUserInput('url')+ '/_api/package.json') .then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, 'socket.io', 'Your project should list "socket.io" as a dependency'); }, xhr => { throw new Error(xhr.statusText); })
-  - text: <code>http</code> should be a dependency.
-    testString: getUserInput => $.get(getUserInput('url')+ '/_api/package.json') .then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, 'html', 'Your project should list "html" as a dependency'); }, xhr => { throw new Error(xhr.statusText); })
+  - text: You should correctly require and instantiate <code>http</code> as <code>http</code>.
+    testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /http.*=.*require.*('|")http\1/gi, 'Your project should list "html" as a dependency'); }, xhr => { throw new Error(xhr.statusText); })
   - text: You should correctly require and instantiate <code>socket.io</code> as <code>io</code>.
     testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js').then(data => {assert.match(data, /io.*=.*require.*('|")socket.io('|").*http/gi, 'You should correctly require and instantiate socket.io as io.');}, xhr => { throw new Error(xhr.statusText); })
   - text: Socket.IO should be listening for connections.

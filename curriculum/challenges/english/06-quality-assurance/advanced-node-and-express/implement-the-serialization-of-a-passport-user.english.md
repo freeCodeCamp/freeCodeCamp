@@ -7,26 +7,32 @@ forumTopicId: 301556
 ---
 
 ## Description
+
 <section id='description'>
-As a reminder, this project is being built upon the following starter project on <a href="https://repl.it/github/freeCodeCamp/boilerplate-advancednode">Repl.it</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a>.
+As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/edit/#!/remix/clone-from-repo?REPO_URL=https://github.com/freeCodeCamp/boilerplate-advancednode/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a>.
+
 Right now we're not loading an actual user object since we haven't set up our database. This can be done many different ways, but for our project we will connect to the database once when we start the server and keep a persistent connection for the full life-cycle of the app.
-To do this, add your database's connection string (for example: <code>DATABASE=mongodb://admin:pass@mlab.com:12345/my-project</code>) to the environment variable <code>MONGO_URI</code>. This is used in the <em>connection.js</em> file.
+To do this, add your database's connection string (for example: <code>mongodb+srv://:@cluster0-jvwxi.mongodb.net/?retryWrites=true&w=majority</code>) to the environment variable <code>MONGO_URI</code>. This is used in the <em>connection.js</em> file.
+
 Now we want to the connect to our database then start listening for requests. The purpose of this is to not allow requests before our database is connected or if there is a database error. To accomplish you will want to encompass your serialization and your app routes in the following:
 
 ```js
-myDB(async (client) => {
+myDB(async client => {
   const myDataBase = await client.db('database').collection('users');
 
   // Be sure to change the title
-  app.route("/").get((req, res) => {
+  app.route('/').get((req, res) => {
     //Change the response to render the Pug template
-    res.render('pug', { title: 'Connected to Database', message: 'Please login' });
+    res.render('pug', {
+      title: 'Connected to Database',
+      message: 'Please login'
+    });
   });
 
   // Serialization and deserialization here...
 
-// Be sure to add this...
-}).catch((e) => {
+  // Be sure to add this...
+}).catch(e => {
   app.route('/').get((req, res) => {
     res.render('pug', { title: e, message: 'Unable to login' });
   });
@@ -38,14 +44,17 @@ Be sure to remove the <code>myDB</code> code in deserializeUser and edit your <c
 
 You can set up a free database on <a href='https://mlab.com/welcome/'>mLab</a>. Congratulations- you've finished setting up serialization!
 Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/JosephLivengood/e192e809a1d27cb80dc2c6d3467b7477'>here</a>.
+
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -54,17 +63,18 @@ tests:
     testString: getUserInput => $.get(getUserInput('url')+ '/') .then(data => { assert.match(data, /Connected to Database/gi, 'You successfully connected to the database!'); }, xhr => { throw new Error(xhr.statusText); })
   - text: Deserialization should now be correctly using the DB and <code>done(null, null)</code> should be erased.
     testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.notMatch(data, /null,( |)null/gi, 'The callback in deserializeUser of (null, null) should be completely removed for the db block uncommented out'); }, xhr => { throw new Error(xhr.statusText); })
-
 ```
 
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```js

@@ -14,7 +14,7 @@ As a reminder, this project is being built upon the following starter project on
 You may notice that up to now you have only been increasing the user count. Handling a user disconnecting is just as easy as handling the initial connect except the difference is you have to listen for it on each socket versus on the whole server.
 
 <hr>
-To do this, add in to your existing connect listener a listener that listens for <code>'disconnect'</code> on the socket with no data passed through. You can test this functionality by just logging to the console a user has disconnected.
+To do this, add another listener inside the existing <code>'connect'</code> listener that listens for <code>'disconnect'</code> on the socket with no data passed through. You can test this functionality by just logging that a user has disconnected to the console.
 
 ```js
 socket.on('disconnect', () => {
