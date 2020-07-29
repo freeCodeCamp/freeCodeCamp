@@ -370,7 +370,19 @@ function populateTestsForLang({ lang, challenges }, meta) {
           let { solutions = [] } = challenge;
 
           // if there's an empty string as solution, this is likely a mistake
-          // TODO: what does this look like now?
+          // TODO: what does this look like now? (this being detection of empty
+          // lines in solutions - rather than entirely missing solutions)
+
+          function getLines(contents, range) {
+            if (isEmpty(range)) {
+              return '';
+            }
+            const lines = contents.split('\n');
+            const editableLines = isEmpty(lines)
+              ? []
+              : lines.slice(range[0], range[1] - 1);
+            return editableLines.join('\n');
+          }
 
           if (isEmpty(solutions)) {
             // if there are no solutions in the challenge, it's assumed the next
@@ -378,9 +390,18 @@ function populateTestsForLang({ lang, challenges }, meta) {
             // This is expected to happen in the project based curriculum.
 
             const nextChallenge = challenges[id + 1];
-            // TODO: check this actually works...
+            // TODO: can this be dried out, ideally by removing the redux
+            // handler?
             if (nextChallenge) {
-              solutions = [nextChallenge.files];
+              const solutionFiles = cloneDeep(nextChallenge.files);
+              Object.keys(solutionFiles).forEach(key => {
+                const file = solutionFiles[key];
+                file.editableContents = getLines(
+                  file.contents,
+                  challenge.files[key].editableRegionBoundaries
+                );
+              });
+              solutions = [solutionFiles];
             } else {
               throw Error('solution omitted');
             }
@@ -396,8 +417,6 @@ function populateTestsForLang({ lang, challenges }, meta) {
               solution.filter(file => !noSolution.test(file.contents))
             );
           });
-
-          // console.log('filteredSolutions', filteredSolutions);
 
           if (isEmpty(filteredSolutions)) {
             it('Check tests. No solutions');
@@ -432,6 +451,7 @@ async function createTestRunner(challenge, solution, buildChallenge) {
 
   Object.keys(solution).forEach(key => {
     files[key].contents = solution[key].contents;
+    files[key].editableContents = solution[key].editableContents;
   });
 
   const { build, sources, loadEnzyme } = await buildChallenge({
