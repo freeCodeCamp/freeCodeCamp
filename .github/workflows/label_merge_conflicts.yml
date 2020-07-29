@@ -1,7 +1,7 @@
 name: 'Check for merge conflicts'
 on:
   schedule:
-    # run this Action every 15 minutes
+    # run this Action every 12 hours
     - cron:  '* */12 * * *'
 jobs:
   triage:
