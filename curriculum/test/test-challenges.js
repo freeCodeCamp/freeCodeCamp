@@ -384,6 +384,10 @@ function populateTestsForLang({ lang, challenges }, meta) {
             return editableLines.join('\n');
           }
 
+          // We need to track where the solution came from to give better
+          // feedback if the solution is failing.
+          let solutionFromNext = false;
+
           if (isEmpty(solutions)) {
             // if there are no solutions in the challenge, it's assumed the next
             // challenge's seed will be a solution to the current challenge.
@@ -402,6 +406,7 @@ function populateTestsForLang({ lang, challenges }, meta) {
                 );
               });
               solutions = [solutionFiles];
+              solutionFromNext = true;
             } else {
               throw Error('solution omitted');
             }
@@ -430,7 +435,8 @@ function populateTestsForLang({ lang, challenges }, meta) {
                 const testRunner = await createTestRunner(
                   challenge,
                   solution,
-                  buildChallenge
+                  buildChallenge,
+                  solutionFromNext
                 );
                 for (const test of tests) {
                   await testRunner(test);
@@ -444,7 +450,12 @@ function populateTestsForLang({ lang, challenges }, meta) {
   });
 }
 
-async function createTestRunner(challenge, solution, buildChallenge) {
+async function createTestRunner(
+  challenge,
+  solution,
+  buildChallenge,
+  solutionFromNext
+) {
   const { required = [], template } = challenge;
   // we should avoid modifying challenge, as it gets reused:
   const files = cloneDeep(challenge.files);
@@ -475,7 +486,11 @@ async function createTestRunner(challenge, solution, buildChallenge) {
         throw new AssertionError(err.message);
       }
     } catch (err) {
-      reThrow(err, text);
+      text = 'Test text: ' + text;
+      const message = solutionFromNext
+        ? 'Check next step for solution!\n' + text
+        : text;
+      reThrow(err, message);
     }
   };
 }
@@ -520,14 +535,11 @@ async function initializeTestRunner(build, sources, code, loadEnzyme) {
 }
 
 function reThrow(err, text) {
-  if (typeof err === 'string') {
-    throw new AssertionError(
-      `${text}
-         ${err}`
-    );
+  const newMessage = `${text}
+  ${err.message}`;
+  if (err.name === 'AssertionError') {
+    throw new AssertionError(newMessage);
   } else {
-    err.message = `${text}
-       ${err.message}`;
-    throw err;
+    throw Error(newMessage);
   }
 }

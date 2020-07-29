@@ -97,12 +97,8 @@ async function initTestFrame(e = { code: {} }) {
       if (!(err instanceof chai.AssertionError)) {
         console.error(err);
       }
-      return {
-        err: {
-          message: err.message,
-          stack: err.stack
-        }
-      };
+      // return the error so that the curriculum tests are more informative
+      return err;
     }
   };
 }
