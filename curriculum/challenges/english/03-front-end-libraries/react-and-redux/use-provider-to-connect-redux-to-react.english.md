@@ -83,7 +83,8 @@ class DisplayMessages extends React.Component {
     super(props);
     this.state = {
       input: '',
-      messages: []
+      messages: [],
+      currentMessage: ''
     }
     this.handleChange = this.handleChange.bind(this);
     this.submitMessage = this.submitMessage.bind(this);
@@ -94,7 +95,9 @@ class DisplayMessages extends React.Component {
     });
   }
   submitMessage() {
-    const currentMessage = this.state.input;
+    this.setState((state) => ({
+      currentMessage: state.input
+    }));
     this.setState((state) => ({
       input: '',
       messages: state.messages.concat(currentMessage)
@@ -180,7 +183,8 @@ class DisplayMessages extends React.Component {
     super(props);
     this.state = {
       input: '',
-      messages: []
+      messages: [],
+      currentMessage: ''
     }
  this.handleChange = this.handleChange.bind(this);
  this.submitMessage = this.submitMessage.bind(this);
@@ -191,7 +195,10 @@ class DisplayMessages extends React.Component {
     });
   }
   submitMessage() {
-    const currentMessage = this.state.input;
+    this.setState((state) => ({
+      currentMessage: state.input
+    }));
+    currentMessage = this.state.input;
     this.setState((state) => ({
       input: '',
       messages: state.messages.concat(currentMessage)
