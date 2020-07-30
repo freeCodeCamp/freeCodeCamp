@@ -24,6 +24,7 @@ const {
 const { assert, AssertionError } = require('chai');
 const Mocha = require('mocha');
 const { flatten, isEmpty, cloneDeep } = require('lodash');
+const { getLines } = require('../../utils/get-lines');
 
 const jsdom = require('jsdom');
 
@@ -372,17 +373,6 @@ function populateTestsForLang({ lang, challenges }, meta) {
           // if there's an empty string as solution, this is likely a mistake
           // TODO: what does this look like now? (this being detection of empty
           // lines in solutions - rather than entirely missing solutions)
-
-          function getLines(contents, range) {
-            if (isEmpty(range)) {
-              return '';
-            }
-            const lines = contents.split('\n');
-            const editableLines = isEmpty(lines)
-              ? []
-              : lines.slice(range[0], range[1] - 1);
-            return editableLines.join('\n');
-          }
 
           // We need to track where the solution came from to give better
           // feedback if the solution is failing.
