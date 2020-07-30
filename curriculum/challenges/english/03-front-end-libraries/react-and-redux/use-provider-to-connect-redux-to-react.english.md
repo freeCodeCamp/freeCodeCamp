@@ -83,8 +83,7 @@ class DisplayMessages extends React.Component {
     super(props);
     this.state = {
       input: '',
-      messages: [],
-      currentMessage: ''
+      messages: []
     }
     this.handleChange = this.handleChange.bind(this);
     this.submitMessage = this.submitMessage.bind(this);
@@ -94,14 +93,14 @@ class DisplayMessages extends React.Component {
       input: event.target.value
     });
   }
-  submitMessage() {
-    this.setState((state) => ({
-      currentMessage: state.input
-    }));
-    this.setState((state) => ({
-      input: '',
-      messages: state.messages.concat(currentMessage)
-    }));
+  submitMessage() {  
+    this.setState((state) => {
+      const currentMessage = state.input;
+      return {
+        input: '',
+        messages: state.messages.concat(currentMessage)
+      };
+    });
   }
   render() {
     return (
@@ -183,8 +182,7 @@ class DisplayMessages extends React.Component {
     super(props);
     this.state = {
       input: '',
-      messages: [],
-      currentMessage: ''
+      messages: []
     }
  this.handleChange = this.handleChange.bind(this);
  this.submitMessage = this.submitMessage.bind(this);
@@ -195,14 +193,13 @@ class DisplayMessages extends React.Component {
     });
   }
   submitMessage() {
-    this.setState((state) => ({
-      currentMessage: state.input
-    }));
-    currentMessage = this.state.input;
-    this.setState((state) => ({
-      input: '',
-      messages: state.messages.concat(currentMessage)
-    }));
+    this.setState((state) => {
+      const currentMessage = state.input;
+      return {
+        input: '',
+        messages: state.messages.concat(currentMessage)
+      };  
+    });
   }
   render() {
     return (
