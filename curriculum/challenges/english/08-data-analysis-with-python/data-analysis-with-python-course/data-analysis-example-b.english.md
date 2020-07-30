@@ -19,7 +19,7 @@ More resources:
 question:
   text: 'What does the <code>loc</code> method allow you to do?'
   answers:
-    - 'Retrieve a subset of rows and columns by supplying interger-location arguments.'
+    - 'Retrieve a subset of rows and columns by supplying integer-location arguments.'
     - 'Access a group of rows and columns by supplying label(s) arguments.'
     - 'Returns the first <code>n</code> rows based on the integer argument supplied.'
   solution: 2
