@@ -302,19 +302,21 @@ Provisioning VMs with the Code
 
 4. Create the `.env` from the secure credentials storage.
 
-5. Install dependencies
+5. Create the `google-credentials.json` from the secure credentials storage.
+
+6. Install dependencies
 
    ```console
    npm ci
    ```
 
-6. Build the server
+7. Build the server
 
    ```console
    npm run ensure-env && npm run build:server
    ```
 
-7. Start Instances
+8. Start Instances
 
    ```console
    cd api-server
