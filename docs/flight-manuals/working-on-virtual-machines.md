@@ -297,7 +297,7 @@ Provisioning VMs with the Code
    ```console
    git clone https://github.com/freeCodeCamp/freeCodeCamp.git
    cd freeCodeCamp
-   git checkout production-current
+   git checkout production-current # or any other branch to be deployed
    ```
 
 4. Create the `.env` from the secure credentials storage.
