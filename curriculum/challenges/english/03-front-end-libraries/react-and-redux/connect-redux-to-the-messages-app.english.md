@@ -85,11 +85,14 @@ class Presentational extends React.Component {
     });
   }
   submitMessage() {
-    const currentMessage = this.state.input;
-    this.setState((state) => ({
-      input: '',
-      messages: state.messages.concat(currentMessage)
-    }));
+    this.setState((state) => {
+      const currentMessage = state.input;
+      return {
+        input: '',
+        messages: state.messages.concat(currentMessage)
+      }
+
+    });
   }
   render() {
     return (
@@ -202,11 +205,13 @@ class Presentational extends React.Component {
     });
   }
   submitMessage() {
-    const currentMessage = this.state.input;
-    this.setState((state) => ({
-      input: '',
-      messages: state.messages.concat(currentMessage)
-    }));
+    this.setState((state) => {
+      const currentMessage = state.input;
+      return {
+        input: '',
+        messages: state.messages.concat(currentMessage)
+      };
+    });
   }
   render() {
     return (
