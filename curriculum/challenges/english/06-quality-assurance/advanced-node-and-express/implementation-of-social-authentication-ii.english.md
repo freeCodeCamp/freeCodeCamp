@@ -8,7 +8,7 @@ forumTopicId: 301557
 
 ## Description
 <section id='description'>
-As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/edit/#!/remix/clone-from-repo?REPO_URL=https://github.com/freeCodeCamp/boilerplate-advancednode/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a>.
+As a reminder, this project is being built upon the following starter project on <a href='https://repl.it/github/freeCodeCamp/boilerplate-advancednode'>Repl.it</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a>.
 
 The last part of setting up your GitHub authentication is to create the strategy itself. For this, you will need to add the dependency of 'passport-github' to your project and require it in your <code>auth.js</code> as GithubStrategy like <code>const GitHubStrategy = require('passport-github').Strategy;</code>. Do not forget to require and configure <code>dotenv</code> to use your environment variables.
 

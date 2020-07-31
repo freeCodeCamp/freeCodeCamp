@@ -9,7 +9,7 @@ forumTopicId: 301546
 ## Description
 
 <section id='description'>
-As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/edit/#!/remix/clone-from-repo?REPO_URL=https://github.com/freeCodeCamp/boilerplate-advancednode/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a>.
+As a reminder, this project is being built upon the following starter project on <a href='https://repl.it/github/freeCodeCamp/boilerplate-advancednode'>Repl.it</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a>.
 
 Many chat rooms are able to announce when a user connects or disconnects and then display that to all of the connected users in the chat. Seeing as though you already are emitting an event on connect and disconnect, you will just have to modify this event to support such feature. The most logical way of doing so is sending 3 pieces of data with the event: name of the user connected/disconnected, the current user count, and if that name connected or disconnected.
 

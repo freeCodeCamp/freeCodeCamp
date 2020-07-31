@@ -9,7 +9,7 @@ forumTopicId: 301563
 ## Description
 
 <section id='description'>
-As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/edit/#!/remix/clone-from-repo?REPO_URL=https://github.com/freeCodeCamp/boilerplate-advancednode/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a>.
+As a reminder, this project is being built upon the following starter project on <a href='https://repl.it/github/freeCodeCamp/boilerplate-advancednode'>Repl.it</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a>.
 
 Serialization and deserialization are important concepts in regards to authentication. To serialize an object means to convert its contents into a small <em>key</em> essentially that can then be deserialized into the original object. This is what allows us to know whos communicated with the server without having to send the authentication data like username and password at each request for a new page.
 To set this up properly, we need to have a serialize function and a deserialize function. In passport we create these with <code>passport.serializeUser( OURFUNCTION )</code> and <code>passport.deserializeUser( OURFUNCTION )</code>
