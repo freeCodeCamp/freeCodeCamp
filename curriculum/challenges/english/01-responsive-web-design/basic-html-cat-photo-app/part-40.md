@@ -71,7 +71,9 @@ tests:
       <section>
         <h2>Cat Form</h2>
         <form action="https://freecatphotoapp.com/submit-cat-photo">
+          --fcc-editable-region--
           <input type="text" name="catphotourl" placeholder="cat photo URL">
+          --fcc-editable-region--
         </form>
       </section>
     </main>
