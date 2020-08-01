@@ -90,8 +90,7 @@ class Presentational extends React.Component {
       return {
         input: '',
         messages: state.messages.concat(currentMessage)
-      }
-
+      };
     });
   }
   render() {
