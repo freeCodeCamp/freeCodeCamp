@@ -17,7 +17,7 @@ jobs:
       # our .npmrc sets a default version to 0, and prevents download. This installs it.
       CYPRESS_INSTALL_BINARY: '4.6.0'
     name: Cypress run
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     services:
       mongodb:
         image: mongo:3.5.5

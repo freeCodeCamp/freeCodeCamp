@@ -178,11 +178,12 @@ export class Project extends Component {
           <Helmet title={`${blockNameTitle} | Learn | freeCodeCamp.org`} />
           <Grid>
             <Row>
-              <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-                <Spacer />
-                <ChallengeTitle isCompleted={isChallengeCompleted}>
-                  {blockNameTitle}
-                </ChallengeTitle>
+              <Spacer />
+              <ChallengeTitle isCompleted={isChallengeCompleted}>
+                {blockNameTitle}
+              </ChallengeTitle>
+
+              <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
                 <div className='video-wrapper'>
                   {!this.state.videoIsLoaded ? (
                     <div className='video-placeholder-loader'>
@@ -200,8 +201,8 @@ export class Project extends Component {
                       playerVars: {
                         rel: 0
                       },
-                      width: '960px',
-                      height: '540px'
+                      width: 'auto',
+                      height: 'auto'
                     }}
                     videoId={videoId}
                   />
@@ -220,6 +221,8 @@ export class Project extends Component {
                     .
                   </i>
                 </div>
+              </Col>
+              <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <ChallengeDescription description={description} />
                 <PrismFormatted className={'line-numbers'} text={text} />
                 <Spacer />
