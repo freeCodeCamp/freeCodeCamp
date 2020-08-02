@@ -6,7 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
-      - name: Set environment variable
+      - name: Set environment variables
         run: cp sample.env .env
       - name: Install all the dependencies
         run: npm install && npm install -g @lhci/cli@0.4.x && cd client && npm install && cd ../
