@@ -1,0 +1,14 @@
+name: CI
+on: [push]
+jobs:
+  lighthouseci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - name: Install all the dependencies
+        run: npm install && npm install -g @lhci/cli@0.4.x && cd client && npm install && cd ../
+      - name: Build the production website and server
+        run: npm run build
+      - name: Run LightHouse CI
+        run: lhci autorun
