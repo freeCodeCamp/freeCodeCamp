@@ -28,7 +28,7 @@ tests:
   - text: <code>insertionSort</code> returns an array that is unchanged except for order.
     testString: assert.sameMembers(insertionSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]), [1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]);
   - text: <code>insertionSort</code> should not use the built-in <code>.sort()</code> method.
-    testString: assert(checkInBuiltSort());
+    testString: assert(checkBuilitInSort());
 
 ```
 
@@ -63,7 +63,7 @@ function isSorted(a){
   return true;
 }
 
-function checkInBuiltSort(){
+function checkBuilitInSort(){
   let sortUsed = false;
   Array.prototype.sort = () => sortUsed = true;
   insertionSort([0, 1]);
