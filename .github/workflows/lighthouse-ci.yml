@@ -1,5 +1,8 @@
 name: CI
-on: [push]
+on:
+  schedule:
+    # run this Action every 14 days
+    - cron: '0 * */14 * *'
 jobs:
   lighthouseci:
     runs-on: ubuntu-latest
