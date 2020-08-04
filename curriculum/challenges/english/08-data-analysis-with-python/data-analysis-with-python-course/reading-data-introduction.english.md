@@ -7,6 +7,7 @@ videoId: cDnt02BcHng
 ---
 
 ## Description
+
 <section id='description'>
 More resources:
 - <a href="https://notebooks.ai/rmotr-curriculum/rdp-reading-csv-and-txt-files-fb829f46" target='_blank'>Reading CSVs Notebook</a>
@@ -16,9 +17,10 @@ More resources:
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-```yml
+````yml
 question:
   text: |
     Given a file named `certificates.csv` with these contents:
@@ -58,14 +60,12 @@ question:
 
       C: `certs_num`
     - |
-
       A: `'certificates'`
 
       B: `'$'`
 
       C: `certs_num`
   solution: 2
-```
+````
 
 </section>
-

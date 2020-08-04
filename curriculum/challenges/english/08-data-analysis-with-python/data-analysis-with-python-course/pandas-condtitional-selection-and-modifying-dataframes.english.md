@@ -7,18 +7,20 @@ videoId: BFlH0fN5xRQ
 ---
 
 ## Description
+
 <section id='description'>
 More resources:
 - <a href="https://notebooks.ai/rmotr-curriculum/freecodecamp-intro-to-pandas-902ae59b" target='_blank'>Notebook</a>
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-```yml
+````yml
 question:
   text: |
-    What will the following code print out?:
+    What will the following code print out?
 
     ```py
     import pandas as pd
@@ -62,7 +64,6 @@ question:
       Beau              6                7
       ```
   solution: 2
-```
+````
 
 </section>
-

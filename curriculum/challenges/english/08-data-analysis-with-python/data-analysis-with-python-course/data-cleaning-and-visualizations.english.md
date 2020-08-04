@@ -7,23 +7,32 @@ videoId: mHjxzFS5_Z0
 ---
 
 ## Description
+
 <section id='description'>
 More resources:
 - <a href="https://notebooks.ai/rmotr-curriculum/data-cleaning-rmotr-freecodecamp-fd76fa59" target='_blank'>Notebook</a>
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-```yml
+````yml
 question:
   text: |
-    When using Matplotlib's global API, what does the order of numbers mean here?: `plt.subplot(1, 2, 1)`
+    When using Matplotlib's global API, what does the order of numbers mean here?
+    ```py
+    plt.subplot(1, 2, 1)
+    ```
+
   answers:
-    - 'My figure will have one column, two rows, and I am going to start drawing in the first (left) plot.'
-    - 'I am going to start drawing in the first (left) plot, my figure will have two rows, and my figure will have one column.'
-    - 'My figure will have one row, two columns, and I am going to start drawing in the first (left) plot.'
+    - |
+      My figure will have one column, two rows, and I am going to start drawing in the first (left) plot.
+    - |
+      I am going to start drawing in the first (left) plot, my figure will have two rows, and my figure will have one column.
+    - |
+      My figure will have one row, two columns, and I am going to start drawing in the first (left) plot.
   solution: 3
-```
+````
 
 </section>

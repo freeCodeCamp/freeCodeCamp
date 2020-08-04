@@ -7,23 +7,30 @@ videoId: r9hRyGGjOgQ
 ---
 
 ## Description
+
 <section id='description'>
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
 question:
-  text: Which of the following is **not** a type of tensor?
+  text: |
+    Which of the following is **not** a type of tensor?
   answers:
-    - Variable
-    - Flowing
-    - Placeholder
-    - SparseTensor
-    - Constant
+    - |
+      Variable
+    - |
+      Flowing
+    - |
+      Placeholder
+    - |
+      SparseTensor
+    - |
+      Constant
   solution: 2
 ```
 
 </section>
-

@@ -7,15 +7,18 @@ videoId: fYAYvLUawnc
 ---
 
 ## Description
+
 <section id='description'>
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
 question:
-  text: What TensorFlow module should you import to implement `.HiddenMarkovModel()`?
+  text: |
+    What TensorFlow module should you import to implement `.HiddenMarkovModel()`?
   answers:
     - |
       `tensorflow.keras`
@@ -27,4 +30,3 @@ question:
 ```
 
 </section>
-

@@ -7,23 +7,43 @@ videoId: XzosGWLafrY
 ---
 
 ## Description
+
 <section id='description'>
 More resources:
 - <a href="https://notebooks.ai/rmotr-curriculum/python-under-10-minutes-15addcb2" target='_blank'>Notebook</a>
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-```yml
+````yml
 question:
-  text: How would you iterate over and print the keys and values of a dictionary named "user"?
+  text: |
+    How would you iterate over and print the keys and values of a dictionary named `user`?
   answers:
-    - '<pre>for key in user.items():<br>    print(key)</pre>'
-    - '<pre>for key, value in user.all():<br>    print(key, value)<br>    print(value)'
-    - '<pre>for key, value in user.items():<br>    print(key, value)</pre>'
-    - '<pre>for key, value in user<br>    print(key, value)</pre>'
+    - |
+      ```python
+      for key in user.items():
+          print(key)
+      ```
+    - |
+      ```python
+      for key, value in user.all():
+          print(key, value)
+          print(value)
+      ```
+    - |
+      ```python
+      for key, value in user.items():
+          print(key, value)
+      ```
+    - |
+      ```python
+      for key, value in user
+          print(key, value)
+      ```
   solution: 3
-```
+````
 
 </section>

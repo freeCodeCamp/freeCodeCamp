@@ -7,22 +7,29 @@ videoId: 5Nwfs5Ej85Q
 ---
 
 ## Description
+
 <section id='description'>
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
 question:
-  text: 'Why are Numpy arrays faster than regular Python lists?:'
+  text: |
+    Why are Numpy arrays faster than regular Python lists?
+
   answers:
-    - Numpy does not perform type checking while iterating through objects.
-    - Numpy uses fixed types.
-    - Numpy uses contiguous memory.
-    - All of the above.
+    - |
+      Numpy does not perform type checking while iterating through objects.
+    - |
+      Numpy uses fixed types.
+    - |
+      Numpy uses contiguous memory.
+    - |
+      All of the above.
   solution: 4
 ```
 
 </section>
-
