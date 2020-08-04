@@ -2,18 +2,21 @@ import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import SectionHeader from '../components/settings/SectionHeader';
+
 import {
   Row,
   Col,
   Button,
   FormGroup,
   ControlLabel,
+  Grid,
   Checkbox
 } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 import { createSelector } from 'reselect';
 
-import { ButtonSpacer, Spacer } from '../components/helpers';
+import { ButtonSpacer } from '../components/helpers';
 import { acceptTerms, userSelector } from '../redux';
 import createRedirect from '../components/createRedirect';
 
@@ -80,43 +83,40 @@ class AcceptPrivacyTerms extends Component {
         <Helmet>
           <title>Email Sign Up | freeCodeCamp.org</title>
         </Helmet>
-        <Spacer size={2} />
-        <Row className='text-center'>
-          <Col sm={8} smOffset={2} xs={12}>
-            <h1>Email Sign Up </h1>
-          </Col>
-        </Row>
-        <Spacer size={2} />
-        <Row>
-          <Col sm={8} smOffset={2} xs={12}>
-            <form onSubmit={this.handleSubmit}>
-              <FormGroup>
-                <ControlLabel htmlFor='quincy-email'>
-                  Quincy's Emails
-                </ControlLabel>
-                <Spacer />
-                <Checkbox
-                  checked={quincyEmail}
-                  id='quincy-email'
-                  inline={true}
-                  onChange={this.createHandleChange('quincyEmail')}
+        <Grid className='default-page-wrapper'>
+          <SectionHeader>Email Sign Up</SectionHeader>
+          <Row>
+            <Col sm={8} smOffset={2} xs={12}>
+              <form onSubmit={this.handleSubmit}>
+                <FormGroup>
+                  <ControlLabel htmlFor='quincy-email'>
+                    Quincy's Emails
+                  </ControlLabel>
+                  <ButtonSpacer />
+                  <Checkbox
+                    checked={quincyEmail}
+                    id='quincy-email'
+                    inline={true}
+                    onChange={this.createHandleChange('quincyEmail')}
+                  >
+                    I want weekly emails from Quincy, freeCodeCamp.org's
+                    founder.
+                  </Checkbox>
+                </FormGroup>
+                <ButtonSpacer />
+                <Button
+                  block={true}
+                  bsSize='lg'
+                  bsStyle='primary'
+                  className='big-cta-btn'
+                  type='submit'
                 >
-                  I want weekly emails from Quincy, freeCodeCamp.org's founder.
-                </Checkbox>
-              </FormGroup>
-              <ButtonSpacer />
-              <Button
-                block={true}
-                bsStyle='primary'
-                className='big-cta-btn'
-                type='submit'
-              >
-                Continue to freeCodeCamp.org
-              </Button>
-              <Spacer size={2} />
-            </form>
-          </Col>
-        </Row>
+                  Continue to freeCodeCamp.org
+                </Button>
+              </form>
+            </Col>
+          </Row>
+        </Grid>
       </Fragment>
     );
   }
