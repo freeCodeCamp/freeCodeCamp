@@ -40,7 +40,7 @@ myDB(async client => {
 // app.listen out here...
 ```
 
-Be sure to remove the <code>myDB</code> code in deserializeUser and edit your <code>done(null, null)</code> to include the <code>doc</code>.
+Be sure to uncomment the <code>myDataBase</code> code in deserializeUser, and edit your <code>done(null, null)</code> to include the <code>doc</code>.
 
 You can set up a free database on <a href='https://mlab.com/welcome/'>mLab</a>. Congratulations- you've finished setting up serialization!
 Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/JosephLivengood/e192e809a1d27cb80dc2c6d3467b7477'>here</a>.
@@ -61,8 +61,8 @@ Submit your page when you think you've got it right. If you're running into erro
 tests:
   - text: Database connection should be present.
     testString: getUserInput => $.get(getUserInput('url')+ '/') .then(data => { assert.match(data, /Connected to Database/gi, 'You successfully connected to the database!'); }, xhr => { throw new Error(xhr.statusText); })
-  - text: Deserialization should now be correctly using the DB and <code>done(null, null)</code> should be erased.
-    testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.notMatch(data, /null,( |)null/gi, 'The callback in deserializeUser of (null, null) should be completely removed for the db block uncommented out'); }, xhr => { throw new Error(xhr.statusText); })
+  - text: Deserialization should now be correctly using the DB and <code>done(null, null)</code> should be called with the <code>doc</code>.
+    testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /null,\s*doc/gi, 'The callback in deserializeUser of (null, null) should be altered to (null, doc)'); }, xhr => { throw new Error(xhr.statusText); })
 ```
 
 </section>
