@@ -15,7 +15,7 @@ jobs:
       CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       # our .npmrc sets a default version to 0, and prevents download. This installs it.
-      CYPRESS_INSTALL_BINARY: '4.6.0'
+      CYPRESS_INSTALL_BINARY: '4.11.0'
     name: Cypress run
     runs-on: ubuntu-18.04
     services:
