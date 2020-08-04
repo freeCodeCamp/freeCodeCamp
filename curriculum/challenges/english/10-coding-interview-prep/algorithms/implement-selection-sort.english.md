@@ -30,7 +30,7 @@ tests:
   - text: <code>selectionSort</code> should return an array that is unchanged except for order.
     testString: assert.sameMembers(selectionSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]), [1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]);
   - text: <code>selectionSort</code> should not use the built-in <code>.sort()</code> method.
-    testString: assert(checkBuilitInSort());
+    testString: assert(isBuiltInSortUsed());
 
 ```
 
@@ -66,7 +66,7 @@ function isSorted(a){
   return true;
 }
 
-function checkBuilitInSort(){
+function isBuiltInSortUsed(){
   let sortUsed = false;
   Array.prototype.sort = () => sortUsed = true;
   selectionSort([0, 1]);

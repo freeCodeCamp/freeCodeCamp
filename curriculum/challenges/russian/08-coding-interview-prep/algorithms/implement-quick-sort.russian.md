@@ -28,7 +28,7 @@ tests:
   - text: <code>quickSort</code> returns an array that is unchanged except for order.
     testString: assert.sameMembers(quickSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]), [1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]);
   - text: <code>quickSort</code> should not use the built-in <code>.sort()</code> method.
-    testString: assert(checkBuilitInSort());
+    testString: assert(isBuiltInSortUsed());
 
 ```
 
@@ -65,7 +65,7 @@ function isSorted(a){
   return true;
 }
 
-function checkBuilitInSort(){
+function isBuiltInSortUsed(){
   let sortUsed = false;
   Array.prototype.sort = () => sortUsed = true;
   quickSort([0, 1]);
