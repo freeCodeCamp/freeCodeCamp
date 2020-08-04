@@ -37,6 +37,7 @@ const propTypes = {
     isLinkedIn: PropTypes.bool,
     isTwitter: PropTypes.bool,
     isWebsite: PropTypes.bool,
+    joinDate: PropTypes.string,
     linkedin: PropTypes.string,
     location: PropTypes.string,
     name: PropTypes.string,
@@ -114,6 +115,7 @@ function renderProfile(user) {
     website,
     name,
     username,
+    joinDate,
     location,
     points,
     picture,
@@ -133,6 +135,7 @@ function renderProfile(user) {
         isLinkedIn={isLinkedIn}
         isTwitter={isTwitter}
         isWebsite={isWebsite}
+        joinDate={showAbout ? joinDate : null}
         linkedin={linkedin}
         location={showLocation ? location : null}
         name={showName ? name : null}
