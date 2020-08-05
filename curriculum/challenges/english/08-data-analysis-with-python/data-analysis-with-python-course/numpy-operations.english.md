@@ -20,7 +20,7 @@ More resources:
 ````yml
 question:
   text: |
-    What is the value of `a` after you run the following code?:
+    What is the value of `a` after you run the following code?
 
     ```py
     a = np.arange(5)
@@ -28,9 +28,18 @@ question:
     ```
 
   answers:
-    - '[20, 21, 22, 24, 24]'
-    - '[0, 1, 2, 3, 4]'
-    - '[25, 26, 27, 28, 29]'
+    - |
+      ```python
+      [20, 21, 22, 24, 24]
+      ```
+    - |
+      ```python
+      [0, 1, 2, 3, 4]
+      ```
+    - |
+      ```python
+      [25, 26, 27, 28, 29]
+      ```
   solution: 2
 ````
 

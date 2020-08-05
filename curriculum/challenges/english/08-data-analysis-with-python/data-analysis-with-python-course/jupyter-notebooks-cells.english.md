@@ -7,6 +7,7 @@ videoId: 5PPegAs9aLA
 ---
 
 ## Description
+
 <section id='description'>
 More resources:
 - <a href="https://notebooks.ai/rmotr-curriculum/interactive-jupyterlab-tutorial-ac5fa63f" target='_blank'>Notebook</a>
@@ -14,17 +15,22 @@ More resources:
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
 question:
-  text: <pre>Which cells are responsible for rich display?</pre>
+  text: |
+    Which cells are responsible for rich display?
+
   answers:
-    - Code Cells
-    - Markdown Cells
-    - Raw Cells
+    - |
+      Code Cells
+    - |
+      Markdown Cells
+    - |
+      Raw Cells
   solution: 1
 ```
 
 </section>
-

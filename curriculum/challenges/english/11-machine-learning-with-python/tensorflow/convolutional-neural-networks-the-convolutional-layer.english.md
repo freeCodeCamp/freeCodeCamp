@@ -7,21 +7,26 @@ videoId: LrdmcQpTyLw
 ---
 
 ## Description
+
 <section id='description'>
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
 question:
-  text: What are the three main properties of each convolutional layer?
+  text: |
+    What are the three main properties of each convolutional layer?
   answers:
-    - Input size, the number of filters, and the sample size of the filters.
-    - Input size, input dimensions, and the color values of the input.
-    - Input size, input padding, and stride.
+    - |
+      Input size, the number of filters, and the sample size of the filters.
+    - |
+      Input size, input dimensions, and the color values of the input.
+    - |
+      Input size, input padding, and stride.
   solution: 1
 ```
 
 </section>
-

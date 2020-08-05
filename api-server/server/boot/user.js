@@ -39,7 +39,6 @@ function createReadSessionUser(app) {
 
   return function getSessionUser(req, res, next) {
     const queryUser = req.user;
-
     const source =
       queryUser &&
       Observable.forkJoin(
@@ -75,7 +74,8 @@ function createReadSessionUser(app) {
               isLinkedIn: !!user.linkedin,
               isTwitter: !!user.twitter,
               isWebsite: !!user.website,
-              ...normaliseUserFields(user)
+              ...normaliseUserFields(user),
+              joinDate: user.id.getTimestamp()
             }
           },
           sessionMeta,

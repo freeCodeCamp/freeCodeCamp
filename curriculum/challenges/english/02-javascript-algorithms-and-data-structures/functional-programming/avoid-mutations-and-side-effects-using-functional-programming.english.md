@@ -27,7 +27,7 @@ Fill in the code for the function <code>incrementer</code> so it returns the val
 ```yml
 tests:
   - text: Your function <code>incrementer</code> should not change the value of <code>fixedValue</code> (which is <code>4</code>).
-    testString: assert(fixedValue === 4);
+    testString: incrementer(); assert(fixedValue === 4);
   - text: Your <code>incrementer</code> function should return a value that is one larger than the <code>fixedValue</code> value.
     testString: const newValue = incrementer(); assert(newValue === 5);
 
