@@ -7,21 +7,26 @@ videoId: qFF7ZQNvK9E
 ---
 
 ## Description
+
 <section id='description'>
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
 question:
-  text: What is classification?
+  text: |
+    What is classification?
   answers:
-    - The process of separating data points into different classes.
-    - Predicting a numeric value or forecast based on independent and dependent variables.
-    - None of the above.
+    - |
+      The process of separating data points into different classes.
+    - |
+      Predicting a numeric value or forecast based on independent and dependent variables.
+    - |
+      None of the above.
   solution: 1
 ```
 
 </section>
-

@@ -7,21 +7,26 @@ videoId: eCATNvwraXg
 ---
 
 ## Description
+
 <section id='description'>
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
 question:
-  text: What is **not** a good way to increase the accuracy of a convolutional neural network?
+  text: |
+    What is **not** a good way to increase the accuracy of a convolutional neural network?
   answers:
-    - Augmenting the data you already have.
-    - Using a pre-trained model.
-    - Using your test data to retrain the model.
+    - |
+      Augmenting the data you already have.
+    - |
+      Using a pre-trained model.
+    - |
+      Using your test data to retrain the model.
   solution: 3
 ```
 
 </section>
-

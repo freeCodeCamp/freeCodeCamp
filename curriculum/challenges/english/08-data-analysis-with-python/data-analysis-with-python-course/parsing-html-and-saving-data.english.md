@@ -7,6 +7,7 @@ videoId: bJaqnTWQmb0
 ---
 
 ## Description
+
 <section id='description'>
 More resources:
 - <a href="https://notebooks.ai/rmotr-curriculum/rdp-reading-csv-and-txt-files-fb829f46" target='_blank'>Reading CSVs Notebook</a>
@@ -16,16 +17,22 @@ More resources:
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
 question:
-  text: What Python library has the <code>.read_html()</code> method we can we use for parsing HTML documents and extracting tables?
+  text: |
+    What Python library has the `.read_html()` method we can we use for parsing HTML documents and extracting tables?
   answers:
-    - 'BeautifierSoupy'
-    - 'WebReader'
-    - 'HTTP-master'
-    - 'Pandas'
+    - |
+      BeautifierSoupy
+    - |
+      WebReader
+    - |
+      HTTP-master
+    - |
+      Pandas
   solution: 4
 ```
 

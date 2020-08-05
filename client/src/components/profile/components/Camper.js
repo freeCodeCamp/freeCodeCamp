@@ -2,7 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Col, Row, Image } from '@freecodecamp/react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAward, faHeart } from '@fortawesome/free-solid-svg-icons';
+import {
+  faAward,
+  faHeart,
+  faCalendar
+} from '@fortawesome/free-solid-svg-icons';
 import Identicon from 'react-identicons';
 
 import SocialIcons from './SocialIcons';
@@ -17,6 +21,7 @@ const propTypes = {
   isLinkedIn: PropTypes.bool,
   isTwitter: PropTypes.bool,
   isWebsite: PropTypes.bool,
+  joinDate: PropTypes.string,
   linkedin: PropTypes.string,
   location: PropTypes.string,
   name: PropTypes.string,
@@ -46,6 +51,13 @@ function joinArray(array) {
   });
 }
 
+function parseDate(joinDate) {
+  joinDate = new Date(joinDate);
+  const year = joinDate.getFullYear();
+  const month = joinDate.toLocaleString('en-US', { month: 'long' });
+  return `Joined ${month} ${year}`;
+}
+
 function Camper({
   name,
   username,
@@ -60,6 +72,7 @@ function Camper({
   isGithub,
   isTwitter,
   isWebsite,
+  joinDate,
   linkedin,
   twitter,
   website
@@ -110,6 +123,11 @@ function Camper({
         </p>
       )}
       {about && <p className='bio text-center'>{about}</p>}
+      {joinDate && (
+        <p className='bio text-center'>
+          <FontAwesomeIcon icon={faCalendar} /> {parseDate(joinDate)}
+        </p>
+      )}
       {yearsTopContributor.filter(Boolean).length > 0 && (
         <div>
           <br />

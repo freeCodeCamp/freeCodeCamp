@@ -7,18 +7,20 @@ videoId: _sSo2XZoB3E
 ---
 
 ## Description
+
 <section id='description'>
 More resources:
 - <a href="https://notebooks.ai/rmotr-curriculum/freecodecamp-intro-to-pandas-902ae59b" target='_blank'>Notebook</a>
 </section>
 
 ## Tests
+
 <section id='tests'>
 
-```yml
+````yml
 question:
   text: |
-    What code would add a "Certificates per month" column to the `certificates_earned` DataFrame like the one below?:
+    What code would add a "Certificates per month" column to the `certificates_earned` DataFrame like the one below?
 
     ```
           Certificates  Time (in months)  Certificates per month
@@ -49,7 +51,6 @@ question:
       )
       ```
   solution: 3
-```
+````
 
 </section>
-
