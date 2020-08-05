@@ -27,7 +27,7 @@ tests:
   - text: '<code>frankenSplice([&quot;claw&quot;, &quot;tentacle&quot;], [&quot;head&quot;, &quot;shoulders&quot;, &quot;knees&quot;, &quot;toes&quot;], 2)</code> deve retornar <code>[&quot;head&quot;, &quot;shoulders&quot;, &quot;claw&quot;, &quot;tentacle&quot;, &quot;knees&quot;, &quot;toes&quot;]</code> .'
     testString: 'assert.deepEqual(frankenSplice(["claw", "tentacle"], ["head", "shoulders", "knees", "toes"], 2), ["head", "shoulders", "claw", "tentacle", "knees", "toes"], "<code>frankenSplice(["claw", "tentacle"], ["head", "shoulders", "knees", "toes"], 2)</code> deve retornar <code>["head", "shoulders", "claw", "tentacle", "knees", "toes"]</code>.");'
   - text: Todos os elementos do primeiro array devem ser adicionados à segunda matriz na ordem original.
-    testString: 'assert.deepEqual(frankenSplice([1, 2, 3, 4], [], 0), [1, 2, 3, 4], "ATodos os elementos do primeiro array devem ser adicionados à segunda matriz na ordem original.");'
+    testString: 'assert.deepEqual(frankenSplice([1, 2, 3, 4], [], 0), [1, 2, 3, 4], "Todos os elementos do primeiro array devem ser adicionados à segunda matriz na ordem original.");'
   - text: O primeiro array deve permanecer o mesmo após a execução da função.
     testString: 'assert(testArr1[0] === 1 && testArr1[1] === 2, "TO primeiro array deve permanecer o mesmo após a execução da função.");'
   - text: O segundo array deve permanecer o mesmo após a execução da função.
