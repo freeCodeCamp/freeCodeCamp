@@ -1,4 +1,4 @@
-name: CI
+name: Lighthouse CI
 on:
   workflow_dispatch:
   schedule:
@@ -9,7 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        name: Checkout source files
       - uses: actions/setup-node@v1
+        name: Setup Node
       - name: Set environment variables
         run: cp sample.env .env
       - name: Install all the dependencies
