@@ -1,0 +1,26 @@
+name: CI
+on:
+  workflow_dispatch:
+  schedule:
+    # run this Action every 14 days
+    - cron: '0 * */14 * *'
+jobs:
+  lighthouseci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - name: Set environment variables
+        run: cp sample.env .env
+      - name: Install all the dependencies
+        run: npm install && npm install -g @lhci/cli@0.4.x && cd client && npm install && cd ../
+      - name: Start MongoDB
+        uses: supercharge/mongodb-github-action@1.3.0
+        with:
+          mongodb-version: 3.6
+      - name: Seed sample data
+        run: npm run seed
+      - name: Build the production website and server
+        run: npm run build
+      - name: Run LightHouse CI
+        run: lhci autorun
