@@ -1,5 +1,6 @@
 name: CI
 on:
+  workflow_dispatch:
   schedule:
     # run this Action every 14 days
     - cron: '0 * */14 * *'
