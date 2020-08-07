@@ -133,7 +133,7 @@ Here are our ten core certifications:
   
 #### Full Stack Development and Python Certifications
 
-Once you have earned 6 of these Front End Web Development skills and Back End API design certifications, you'll be able to claim your freeCodeCamp.org Full Stack Development Certification along with Additional Certifications in Python, in the emerging field of Data Science and Machine Learning. This final distinction signifies that you’ve completed around 3,000 hours of coursework.
+Once you have earned the Responsive Web Design, Algorithms and Data Structures, Front End Libraries, Data Visualization, APIs and Microservices, and Legacy Information Security and Quality Assurance certifications, you'll be able to claim your freeCodeCamp.org Full Stack Development Certification. This distinction signifies that you've completed around 1,800 hours of coding with a wide range of web development tools.
 
 #### Legacy Certifications
 
