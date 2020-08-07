@@ -1,53 +1,15 @@
-.monaco-editor-tabs {
-  display: flex;
-  padding: 0px 10px;
-  background-color: var(--primary-background);
-  border-bottom: 2px solid var(--primary-color);
+#description {
+  background: var(--secondary-background);
+}
+.monaco-editor .margin-view-overlays .line-numbers,
+.monaco-editor .margin-view-overlays .myLineDecoration + .line-numbers {
+  color: var(--primary-color);
 }
 
-.monaco-editor-tab {
-  position: relative;
-  top: 2px;
-  padding: 4px 16px;
-  border: 2px solid var(--primary-color);
-  border-left: none;
-  background-color: var(--secondary-background);
+[widgetid='my.overlay.widget'] {
+  padding: 10px;
 }
 
-button.monaco-editor-tab:hover {
-  color: var(--quaternary-color);
-  background-color: var(--quaternary-background);
-}
-
-.monaco-editor-tab:first-child {
-  border-left: 2px solid var(--primary-color);
-}
-
-.monaco-editor-tab-selected {
-  background-color: var(--primary-background);
-  border-bottom: 2px solid var(--primary-background);
-}
-
-.monaco-editor-tab[role='tab'][aria-selected='true'] {
-  border-color: var(--secondary-color);
-  background-color: var(--secondary-color);
-  color: var(--secondary-background);
-}
-
-.myInlineDecoration {
-  color: lightgray !important;
-  cursor: pointer;
-  text-decoration: underline;
-  font-weight: bold;
-  font-style: oblique;
-}
-
-.myLineDecoration {
-  background: lightblue;
-  width: 5px !important;
-  margin-left: 3px;
-}
-
-.do-not-edit {
-  background: grey;
+.vs .monaco-scrollable-element > .scrollbar > .slider {
+  z-index: 11;
 }

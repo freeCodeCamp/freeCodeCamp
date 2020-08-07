@@ -12,6 +12,7 @@ import codeStorageEpic from './code-storage-epic';
 import { createExecuteChallengeSaga } from './execute-challenge-saga';
 import { createCurrentChallengeSaga } from './current-challenge-saga';
 import { challengeTypes } from '../../../../utils/challengeTypes';
+import { getTargetEditor } from '../utils/getTargetEditor';
 import { completedChallengesSelector } from '../../../redux';
 import { isEmpty } from 'lodash';
 
@@ -20,6 +21,7 @@ export const backendNS = 'backendChallenge';
 
 const initialState = {
   canFocusEditor: true,
+  visibleEditors: {},
   challengeFiles: {},
   challengeMeta: {
     superBlock: '',
@@ -86,6 +88,7 @@ export const types = createTypes(
     'moveToTab',
 
     'setEditorFocusability',
+    'toggleVisibleEditor',
     'setAccessibilityMode',
 
     'lastBlockChalSubmitted'
@@ -179,6 +182,7 @@ export const submitChallenge = createAction(types.submitChallenge);
 export const moveToTab = createAction(types.moveToTab);
 
 export const setEditorFocusability = createAction(types.setEditorFocusability);
+export const toggleVisibleEditor = createAction(types.toggleVisibleEditor);
 export const setAccessibilityMode = createAction(types.setAccessibilityMode);
 
 export const lastBlockChalSubmitted = createAction(
@@ -258,6 +262,8 @@ export const challengeDataSelector = state => {
 };
 
 export const canFocusEditorSelector = state => state[ns].canFocusEditor;
+export const visibleEditorsSelector = state => state[ns].visibleEditors;
+
 export const inAccessibilityModeSelector = state =>
   state[ns].inAccessibilityMode;
 
@@ -265,7 +271,8 @@ export const reducer = handleActions(
   {
     [types.createFiles]: (state, { payload }) => ({
       ...state,
-      challengeFiles: payload
+      challengeFiles: payload,
+      visibleEditors: { [getTargetEditor(payload)]: true }
     }),
     [types.updateFile]: (
       state,
@@ -399,6 +406,15 @@ export const reducer = handleActions(
       ...state,
       canFocusEditor: payload
     }),
+    [types.toggleVisibleEditor]: (state, { payload }) => {
+      return {
+        ...state,
+        visibleEditors: {
+          ...state.visibleEditors,
+          [payload]: !state.visibleEditors[payload]
+        }
+      };
+    },
     [types.setAccessibilityMode]: (state, { payload }) => ({
       ...state,
       inAccessibilityMode: payload
