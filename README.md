@@ -131,7 +131,7 @@ Here are our ten core certifications:
   <br />
   **Projects**: Rock Paper Scissors, Cat and Dog Image Classifier, Book Recommendation Engine using KNN, Linear Regression Health Costs Calculator, Neural Network SMS Text Classifier
   
-#### Full Stack Development and Python Certifications
+#### Legacy Full Stack Development Certification
 
 Once you have earned the Responsive Web Design, Algorithms and Data Structures, Front End Libraries, Data Visualization, APIs and Microservices, and Legacy Information Security and Quality Assurance certifications, you'll be able to claim your freeCodeCamp.org Full Stack Development Certification. This distinction signifies that you've completed around 1,800 hours of coding with a wide range of web development tools.
 
