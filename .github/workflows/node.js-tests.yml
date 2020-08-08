@@ -1,9 +1,6 @@
 name: Node.js CI
-
-push:
-    branches:
-      - master
-      - production-**
+on:
+  push:
   pull_request:
     branches:
       - master
@@ -26,14 +23,17 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
+      - name: Set Environment variables
+        run: cp sample.env .env
+
       - name: Lint Source Files
         run: |
           npm ci
           npm run ensure-env --if-present
           npm run lint --if-present
 
-  build:
-    name: Check Builds and Run Integration Tests
+  test:
+    name: Test
     needs: lint
     runs-on: ubuntu-latest
 
@@ -57,9 +57,6 @@ jobs:
         run: |
           npm ci
           npm run ensure-env --if-present
-
-      - name: Build Packages
-        run: npm run build --if-present
 
       - name: Run Tests
         run: npm test

@@ -1,35 +1,44 @@
-name: Cypress tests
+name: Cypress Tests
 on:
   push:
-    branches:
-      - master
-      - production-**
-      # This will let us work on cypress config itself
-      - cypress-**
   pull_request:
     branches:
       - master
 jobs:
   cypress-run:
+    name: Cypress Tests
     env:
       CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      # our .npmrc sets a default version to 0, and prevents download. This installs it.
+      # We use .npmrc to set the default version to 0, and prevents download during developement.
+      # This installs it specifically in the CI runs.
       CYPRESS_INSTALL_BINARY: '4.11.0'
-    name: Cypress run
     runs-on: ubuntu-18.04
     services:
       mongodb:
-        image: mongo:3.5.5
-        # ports may not be necessary, try without
+        image: mongo:3.6.19
         ports:
           - 27017:27017
+
     steps:
-      - name: Checkout
+      - name: Checkout Source Files
         uses: actions/checkout@v2
 
-      - name: Set up environment
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Set Environment variables
         run: cp sample.env .env
+
+      - name: Install Dependencies
+        run: |
+          npm ci
+          npm run ensure-env
+
+      - name: Seed Database
+        run: npm run seed
 
       - name: Cypress run
         uses: cypress-io/github-action@v1

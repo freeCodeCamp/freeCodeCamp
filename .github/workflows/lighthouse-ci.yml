@@ -1,28 +1,51 @@
 name: Lighthouse CI
 on:
-  workflow_dispatch:
+  push:
+    # Treat the below branches as special case for working on workflows
+    - actions-**
   schedule:
     # run this Action every 14 days
     - cron: '0 * */14 * *'
+  workflow_dispatch:
+
 jobs:
   lighthouseci:
+    name: Lighthouse CI
     runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
+    services:
+      mongodb:
+        image: mongo:3.6.19
+        ports:
+          - 27017:27017
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
     steps:
-      - uses: actions/checkout@v2
-        name: Checkout source files
-      - uses: actions/setup-node@v1
-        name: Setup Node
-      - name: Set environment variables
-        run: cp sample.env .env
-      - name: Install all the dependencies
-        run: npm install && npm install -g @lhci/cli@0.4.x && cd client && npm install && cd ../
-      - name: Start MongoDB
-        uses: supercharge/mongodb-github-action@1.3.0
+      - name: Checkout Source Files
+        uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
         with:
-          mongodb-version: 3.6
-      - name: Seed sample data
+          node-version: ${{ matrix.node-version }}
+
+      - name: Set Environment variables
+        run: cp sample.env .env
+
+      - name: Install Dependencies
+        run: |
+          npm install -g @lhci/cli@0.4
+          npm ci
+          npm run ensure-env
+
+      - name: Seed Database
         run: npm run seed
-      - name: Build the production website and server
+
+      - name: Build Packages
         run: npm run build
-      - name: Run LightHouse CI
+
+      - name: Run Lighthouse CI
         run: lhci autorun
