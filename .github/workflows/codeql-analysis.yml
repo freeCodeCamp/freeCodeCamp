@@ -1,4 +1,4 @@
-name: "CodeQL Scanning"
+name: CodeQL Scanning
 
 on:
   push:
@@ -9,11 +9,11 @@ on:
 jobs:
   CodeQL-Build:
     name: CodeQL Build
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
 
     steps:
       - name: Checkout Source Files
-          uses: actions/checkout@v2
+        uses: actions/checkout@v2
         with:
           # We must fetch at least the immediate parents so that if this is
           # a pull request then we can checkout the head.

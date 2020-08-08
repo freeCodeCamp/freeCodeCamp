@@ -4,6 +4,7 @@ on:
   pull_request:
     branches:
       - master
+
 jobs:
   cypress-run:
     name: Cypress Tests

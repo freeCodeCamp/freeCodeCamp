@@ -1,8 +1,9 @@
 name: Lighthouse CI
 on:
   push:
-    # Treat the below branches as special case for working on workflows
-    - actions-**
+    branches:
+      # Treat the below branches as special case for working on workflows
+      - actions-**
   schedule:
     # run this Action every 14 days
     - cron: '0 * */14 * *'
@@ -11,7 +12,6 @@ on:
 jobs:
   lighthouseci:
     name: Lighthouse CI
-    runs-on: ubuntu-latest
     runs-on: ubuntu-18.04
     services:
       mongodb:
