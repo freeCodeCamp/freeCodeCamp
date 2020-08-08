@@ -149,9 +149,13 @@ The freeCodeCamp.org community is possible thanks to thousands of kind volunteer
 
 The general platform status for all our applications is available at [`status.freecodecamp.org`](https://status.freecodecamp.org). The build and deployment status for the code is available in [our DevOps Guide](/docs/devops.md).
 
+### Donation
+
+You can make a [tax-deductible donation here.](https://www.freecodecamp.org/donate/)
+
 ### License
 
-Copyright © 2020 freeCodeCamp.org
+Copyright © 2020 [freeCodeCamp.org](https://www.freecodecamp.org/)
 
 The content of this repository is bound by the following licenses:
 
