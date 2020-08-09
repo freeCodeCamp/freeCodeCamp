@@ -33,9 +33,10 @@ tests:
   - text: Your <code>incrementer</code> function return a value based on the global `fixedValue` variable value.
     testString: |
       (function() {
-       const fixedValue = 10;
+       fixedValue = 10;
        const newValue = incrementer();
        assert(fixedValue === 10 && newValue === 11);
+       fixedValue = 4;
       })();
 
 ```
