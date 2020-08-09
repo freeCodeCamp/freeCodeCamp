@@ -5,63 +5,63 @@
 [![Open Source Helpers](https://www.codetriage.com/freecodecamp/freecodecamp/badges/users.svg)](https://www.codetriage.com/freecodecamp/freecodecamp)
 [![Setup Automated](https://img.shields.io/badge/setup-automated-blue?logo=gitpod)](https://gitpod.io/from-referrer/)
 
-## Benvenuti nel programma di studio del codice open source di freeCodeCamp.org!
+## Benvenuti nel codice open source di freeCodeCamp.org!
 
-[freeCodeCamp.org](https://www.freecodecamp.org) è una comunità amichevole dove puoi imparare a programmare gratuitamente. È gestito da una [non profit finanziata dal donatore 501(c)(3)](https://donate.freecodecamp.org) con lo scopo di aiutare milioni di adulti impegnati a passare alla tecnologia. La nostra comunità ha già aiutato più di 10.000 persone a ottenere il loro primo incarico di sviluppatore.
+[freeCodeCamp.org](https://www.freecodecamp.org) è una comunità amichevole dove puoi imparare a programmare gratuitamente. È gestito da una [non profit supportata da donazioni 501(c)(3)](https://donate.freecodecamp.org) con lo scopo di aiutare milioni di adulti pieni di impegni a a passare al campo della tecnologia. La nostra comunità ha già aiutato più di 10.000 persone a ottenere il loro primo lavoro da sviluppatore.
 
-Il nostro curriculum stack completo di sviluppo web è completamente gratuito e autonomo. Abbiamo migliaia di sfide di codifica interattive per aiutarti ad espandere le tue capacità.
+Il nostro curriculum full-stack di sviluppo web è completamente gratuito e senza scadenze. Abbiamo migliaia di sfide di programmazione interattive per aiutarti ad espandere le tue capacità.
 
 ## Sommario
 
 - [Certificazioni](#certificazioni)
-- [La Piattaforma di apprendimento](#la-piattaforma-di-apprendimento)
+- [La piattaforma di apprendimento](#la-piattaforma-di-apprendimento)
 - [Trovato un bug/errore di codice](#trovato-un-bugerrore-di-codice)
 - [Trovato un problema di sicurezza](#trovato-un-problema-di-sicurezza)
-- [Come Contribuire](#come-contribuire)
-- [Stato di Piattaforma, Build e Distribuzione](#stato-di-piattaforma-build-e-distribuzione)
+- [Come contribuire](#come-contribuire)
+- [Stato di piattaforma, build e distribuzione](#stato-di-piattaforma-build-e-distribuzione)
 - [Licenza](#licenza)
 
 ### Certificazioni
 
-freeCodeCamp.org offre diverse certificazioni gratuite per gli sviluppatori. Ciascuna di queste certificazioni prevede la realizzazione di 5 progetti di Web app, insieme a centinaia di sfide di codifica opzionali per aiutarti a prepararti per tali progetti. Estimiamo che ogni certificazione richiederà a un programmatore principiante circa 300 ore per guadagnarle.
+freeCodeCamp.org offre diverse certificazioni gratuite per gli sviluppatori. Ciascuna di queste certificazioni prevede 5 progetti: la realizzazione di web app di natura diversa, insieme a centinaia di sfide di programmazione opzionali per aiutarti a prepararti per tali progetti. Si stima che ogni certificazione richiede a un programmatore principiante circa 300 ore per ottenerla.
 
-Ognuno di questi 30 progetti nel curriculum di FreeCodeCamp.org ha le proprie richieste da tenere in conto quando costruire il progetto e test automatizzati. Questi ti aiutano a sviluppare il tuo progetto in modo incrementale e assicurarti di aver soddisfatto tutte le richieste prima di inviarlo.
+Ognuno di questi 30 progetti nel curriculum di FreeCodeCamp.org ha i propri requisiti da rispettare mentre si realizza il progetto, e test automatizzati. Questi ti aiutano a sviluppare il tuo progetto in modo incrementale e assicurarti di aver soddisfatto tutti i requisiti prima di inviarlo.
 
-È possibile inserire queste suite di test attraverso [CDN di FreeCodeCamp](https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js). Ciò significa che puoi creare questi progetti su siti Web come CodePen e Glitch o persino sull'ambiente di sviluppo del tuo computer locale.
+È possibile inserire queste suite di test utilizzando il pacchetto [CDN di FreeCodeCamp](https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js). Ciò significa che puoi creare questi progetti su siti Web come CodePen e Glitch o persino nell'ambiente di sviluppo del tuo computer locale.
 
 Una volta ottenuto un certificato, lo avrai per sempre. Sarai sempre in grado di collegarti ad esso dal tuo LinkedIn o curriculum. E quando i tuoi potenziali datori di lavoro o clienti freelance cliccano su quel link, vedranno una certificazione verificata specifica per te.
 
-L'unica eccezione a questo è nel caso in cui scopriamo violazioni della nostra [Politica sull'Onestà Accademica](https://www.freecodecamp.org/academic-honesty). Quando catturiamo le persone plagiando in modo inequivocabile (sottomettendo il codice o i progetti di altre persone come loro senza citazione), facciamo ciò che dovrebbero fare tutte le rigorose istituzioni di apprendimento - revociamo le loro certificazioni e bandiamo/proibiamo quelle persone.
+L'unica eccezione è nel caso in cui scopriamo violazioni della nostra [Politica sull'Onestà Accademica](https://www.freecodecamp.org/academic-honesty). Quando scopriamo le persone commento plagio in modo inequivocabile (sottomettendo il codice o i progetti di altre persone come loro senza citazione), facciamo ciò che dovrebbero fare tutte le rigorose istituzioni accademice - revochiamo le loro certificazioni e bandiamo quelle persone.
 
-Ecco le nostre sei certificazioni di base:
+Ecco le nostre sei certificazioni di base (il curriculum è completamente in inglese):
 
 #### 1. Certificazione di Responsive Web Design
 
-- [HTML di base e HTML5](https://learn.freecodecamp.org/responsive-web-design/basic-html-and-html5)
-- [CSS di base](https://learn.freecodecamp.org/responsive-web-design/basic-css)
-- [Design Visual Applicato](https://learn.freecodecamp.org/responsive-web-design/applied-visual-design)
+- [Fondamenti di HTML e HTML5](https://learn.freecodecamp.org/responsive-web-design/basic-html-and-html5)
+- [Fondamenti di CSS](https://learn.freecodecamp.org/responsive-web-design/basic-css)
+- [Visual Desgin Applicato](https://learn.freecodecamp.org/responsive-web-design/applied-visual-design)
 - [Accessibilità applicata](https://learn.freecodecamp.org/responsive-web-design/applied-accessibility)
-- [Principi di Responsive Web Design](https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-principles)
+- [Principi di Web Design Responsivo](https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-principles)
 - [CSS Flexbox](https://learn.freecodecamp.org/responsive-web-design/css-flexbox)
-- [Griglia CSS](https://learn.freecodecamp.org/responsive-web-design/css-grid)
+- [CSS Grid](https://learn.freecodecamp.org/responsive-web-design/css-grid)
   <br />
   <br />
-  **Progetti**: La Pagina tributo, Il Modulo di indagine, La Pagina di destinazione del prodotto, La Pagina di documentazione tecnica, La Pagina web del portafoglio personale
+  **Progetti**: pagina tributo, modulo di sondaggio, Landing Page di un prodotto, Pagina di documentazione tecnica, sito di portfolio personale
 
 #### 2. Certificazione di algoritmi JavaScript e strutture di dati 
 
-- [JavaScript di base](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript)
+- [Fondamenti di JavaScript](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript)
 - [ES6](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6)
 - [Espressioni regolari](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/regular-expressions)
 - [Debugging](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/debugging)
-- [Strutture dati di base](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-data-structures)
-- [Scripting dell'algoritmo](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-algorithm-scripting)
+- [Fondamenti di strutture dati](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-data-structures)
+- [Scripting di algoritmi](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-algorithm-scripting)
 - [Programmazione orientata agli oggetti](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/object-oriented-programming)
 - [Programmazione funzionale](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/functional-programming)
 - [Scripting di algoritmi intermedi](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/intermediate-algorithm-scripting)
   <br />
   <br />
-  **Progetti**: Il Correttore di Palindrome, Convertitore dei numeri romani, La cifra di Cesare, Il validatore di numero telefonico, Il registratore di cassa
+  **Progetti**: il verificatore di palindromi, il convertitore di numeri romani, il cifrario di Cesare, il validatore di numeri telefonici, il registratore di cassa
 
 #### 3. Certificazione di Librerie Front End
 
