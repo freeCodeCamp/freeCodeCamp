@@ -1,4 +1,4 @@
-name: Cypress Tests
+name: Cypress
 on:
   push:
   pull_request:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   cypress-run:
-    name: Cypress Tests
+    name: Test
     env:
       CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
