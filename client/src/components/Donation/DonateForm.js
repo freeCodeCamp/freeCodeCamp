@@ -11,7 +11,6 @@ import {
   ToggleButton,
   ToggleButtonGroup
 } from '@freecodecamp/react-bootstrap';
-// import { StripeProvider, Elements } from 'react-stripe-elements';
 import ApplePay from './assets/ApplePay';
 import GooglePay from './assets/GooglePay';
 import acceptedCards from './assets/accepted-cards.png';
@@ -24,14 +23,9 @@ import {
 } from '../../../../config/donation-settings';
 import { deploymentEnv } from '../../../config/env.json';
 import Spacer from '../helpers/Spacer';
-// import DonateFormChildViewForHOC from './DonateFormChildViewForHOC';
 import PaypalButton from './PaypalButton';
 import DonateCompletion from './DonateCompletion';
-import {
-  isSignedInSelector,
-  signInLoadingSelector,
-  hardGoTo as navigate
-} from '../../redux';
+import { isSignedInSelector, signInLoadingSelector } from '../../redux';
 
 import './Donation.css';
 
@@ -42,7 +36,6 @@ const propTypes = {
   handleProcessing: PropTypes.func,
   isDonating: PropTypes.bool,
   isSignedIn: PropTypes.bool,
-  navigate: PropTypes.func.isRequired,
   showLoading: PropTypes.bool.isRequired,
   stripe: PropTypes.shape({
     createToken: PropTypes.func.isRequired,
@@ -58,9 +51,6 @@ const mapStateToProps = createSelector(
     showLoading
   })
 );
-const mapDispatchToProps = {
-  navigate
-};
 
 const initialState = {
   donationState: {
@@ -345,7 +335,4 @@ class DonateForm extends Component {
 DonateForm.displayName = 'DonateForm';
 DonateForm.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(DonateForm);
+export default connect(mapStateToProps)(DonateForm);

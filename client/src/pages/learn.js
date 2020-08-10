@@ -13,8 +13,7 @@ import Intro from '../components/Intro';
 import {
   userFetchStateSelector,
   isSignedInSelector,
-  userSelector,
-  hardGoTo as navigate
+  userSelector
 } from '../redux';
 import {
   ChallengeNode,
@@ -47,7 +46,6 @@ const propTypes = {
   hash: PropTypes.string,
   isSignedIn: PropTypes.bool,
   location: PropTypes.object,
-  navigate: PropTypes.func.isRequired,
   state: PropTypes.object,
   user: PropTypes.shape({
     name: PropTypes.string,
@@ -62,14 +60,10 @@ const hashValueSelector = (state, hash) => {
   else if (hash) return hash.substr(1);
   else return null;
 };
-const mapDispatchToProps = {
-  navigate
-};
 
 export const LearnPage = ({
   location: { hash = '', state = '' },
   isSignedIn,
-  navigate,
   fetchState: { pending, complete },
   user: { name = '', username = '', completedChallengeCount = 0 },
   data: {
@@ -90,7 +84,6 @@ export const LearnPage = ({
           completedChallengeCount={completedChallengeCount}
           isSignedIn={isSignedIn}
           name={name}
-          navigate={navigate}
           pending={pending}
           slug={slug}
           username={username}
@@ -111,10 +104,7 @@ export const LearnPage = ({
 LearnPage.displayName = 'LearnPage';
 LearnPage.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(LearnPage);
+export default connect(mapStateToProps)(LearnPage);
 
 export const query = graphql`
   query FirstChallenge {
