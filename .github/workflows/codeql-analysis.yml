@@ -1,4 +1,4 @@
-name: CodeQL Scanning
+name: CodeQL
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
 
 jobs:
   CodeQL-Build:
-    name: CodeQL Build
+    name: Scan
     runs-on: ubuntu-18.04
 
     steps:
