@@ -30,7 +30,7 @@ tests:
     testString: incrementer(); assert(fixedValue === 4);
   - text: Your <code>incrementer</code> function should return a value that is one larger than the <code>fixedValue</code> value.
     testString: const __newValue = incrementer(); assert(__newValue === 5);
-  - text: Your <code>incrementer</code> function return a value based on the global `fixedValue` variable value.
+  - text: Your <code>incrementer</code> function should return a value based on the global `fixedValue` variable value.
     testString: |
       (function() {
        fixedValue = 10;
