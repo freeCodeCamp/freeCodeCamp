@@ -2,18 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, Spacer, Loader, FullWidthRow } from '../helpers';
 import { Row, Col } from '@freecodecamp/react-bootstrap';
-import { apiLocation, forumLocation } from '../../../config/env.json';
+import { forumLocation } from '../../../config/env.json';
 import { randomQuote } from '../../utils/get-words';
 import CurrentChallengeLink from '../helpers/CurrentChallengeLink';
 
 import './intro.css';
+import Login from '../Header/components/Login';
 
 const propTypes = {
   complete: PropTypes.bool,
   completedChallengeCount: PropTypes.number,
   isSignedIn: PropTypes.bool,
   name: PropTypes.string,
-  navigate: PropTypes.func,
   pending: PropTypes.bool,
   slug: PropTypes.string,
   username: PropTypes.string
@@ -23,7 +23,6 @@ function Intro({
   isSignedIn,
   username,
   name,
-  navigate,
   pending,
   complete,
   completedChallengeCount,
@@ -163,14 +162,9 @@ function Intro({
           </Col>
 
           <Col sm={8} smOffset={2} xs={12}>
-            <button
-              className={'btn-cta-big signup-btn btn-cta center-block'}
-              onClick={() => {
-                navigate(`${apiLocation}/signin`);
-              }}
-            >
+            <Login block={true}>
               Sign in to save your progress (it's free)
-            </button>
+            </Login>
           </Col>
         </Row>
         <Spacer />
