@@ -99,14 +99,14 @@ function Intro({
   } else {
     return (
       <>
-        <Row>
+        <Row className='intro-description'>
           <Col sm={10} smOffset={1} xs={12}>
             <Spacer />
             <h1 className='big-heading text-center'>
               Welcome to freeCodeCamp's curriculum.
             </h1>
           </Col>
-          <Col sm={8} smOffset={2} xs={12}>
+          <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
             <Spacer size={2} />
             <strong>Please slow down and read this.</strong>
             <Spacer />
