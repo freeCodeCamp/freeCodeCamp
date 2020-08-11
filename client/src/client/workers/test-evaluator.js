@@ -80,8 +80,15 @@ ${e.data.testString}`);
         // rethrow error, since test failed.
         throw err;
       }
-      // log build errors
-      __utils.log(err);
+      // log build errors unless they're related to import/export/require (there
+      // are challenges that use them and they should not trigger warnings)
+      if (
+        err.name !== 'ReferenceError' ||
+        (err.message !== 'require is not defined' &&
+          err.message !== 'exports is not defined')
+      ) {
+        __utils.log(err);
+      }
       // the tests may not require working code, so they are evaluated even if
       // the user code does not get executed.
       testResult = eval(e.data.testString);
