@@ -364,6 +364,27 @@ function spreadThePayloadOnUser(state, payload) {
 
 export const reducer = handleActions(
   {
+    [types.acceptTermsComplete]: (state, { payload }) => {
+      const { appUsername } = state;
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          [appUsername]: {
+            ...state.user[appUsername],
+            // TODO: the user accepts the privacy terms in practice during auth
+            // however, it's currently being used to track if they've accepted
+            // or rejected the newsletter. Ideally this should be migrated,
+            // since they can't sign up without accepting the terms.
+            acceptedPrivacyTerms: true,
+            sendQuincyEmail:
+              payload === null
+                ? state.user[appUsername].sendQuincyEmail
+                : payload
+          }
+        }
+      };
+    },
     [types.allowBlockDonationRequests]: state => ({
       ...state,
       canRequestBlockDonation: true

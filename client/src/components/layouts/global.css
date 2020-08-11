@@ -493,3 +493,27 @@ blockquote .small {
 #search::placeholder {
   color: var(--secondary-color);
 }
+
+/* checkbox */
+
+.checkbox-inline input[type='checkbox'] {
+  margin-left: -30px;
+}
+
+.checkbox-inline {
+  padding-left: 30px;
+}
+
+input[type='checkbox'] {
+  height: 21px;
+  width: 21px;
+}
+
+/* general page styling */
+.default-page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+}
