@@ -32,11 +32,11 @@ const __utils = (() => {
     self.postMessage(data);
   }
 
-  function log(msg) {
-    if (!(msg instanceof chai.AssertionError)) {
+  function log(...msgs) {
+    if (msgs && msgs[0] && !(msgs[0] instanceof chai.AssertionError)) {
       // discards the stack trace via toString as it only useful to debug the
       // site, not a specific challenge.
-      console.log(msg.toString());
+      console.log(...msgs.map(msg => msg.toString()));
     }
   }
 
