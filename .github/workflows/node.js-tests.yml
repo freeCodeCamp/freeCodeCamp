@@ -1,0 +1,62 @@
+name: Node.js CI
+on:
+  push:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-18.04
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - name: Checkout Source Files
+        uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Set Environment variables
+        run: cp sample.env .env
+
+      - name: Lint Source Files
+        run: |
+          npm ci
+          npm run ensure-env --if-present
+          npm run lint --if-present
+
+  test:
+    name: Test
+    needs: lint
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - name: Checkout Source Files
+        uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Set Environment variables
+        run: cp sample.env .env
+
+      - name: Install Dependencies
+        run: |
+          npm ci
+          npm run ensure-env --if-present
+
+      - name: Run Tests
+        run: npm test
