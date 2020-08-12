@@ -3,7 +3,7 @@ import React, { Component, Suspense } from 'react';
 import { connect } from 'react-redux';
 import { ReflexContainer, ReflexElement, ReflexSplitter } from 'react-reflex';
 import { createSelector } from 'reselect';
-import { isEmpty } from 'lodash';
+import { getTargetEditor } from '../utils/getTargetEditor';
 import { isDonationModalOpenSelector, userSelector } from '../../../redux';
 import {
   canFocusEditorSelector,
@@ -13,13 +13,12 @@ import {
   saveEditorContent,
   setAccessibilityMode,
   setEditorFocusability,
+  visibleEditorsSelector,
   updateFile
 } from '../redux';
 import './editor.css';
 import { Loader } from '../../../components/helpers';
-import EditorTabs from './EditorTabs';
 import Editor from './Editor';
-import { toSortedArray } from '../../../../../utils/sort-files';
 
 const propTypes = {
   canFocus: PropTypes.bool,
@@ -45,16 +44,31 @@ const propTypes = {
   setAccessibilityMode: PropTypes.func.isRequired,
   setEditorFocusability: PropTypes.func,
   theme: PropTypes.string,
-  updateFile: PropTypes.func.isRequired
+  updateFile: PropTypes.func.isRequired,
+  visibleEditors: PropTypes.shape({
+    indexjs: PropTypes.bool,
+    indexjsx: PropTypes.bool,
+    indexcss: PropTypes.bool,
+    indexhtml: PropTypes.bool
+  })
 };
 
 const mapStateToProps = createSelector(
+  visibleEditorsSelector,
   canFocusEditorSelector,
   consoleOutputSelector,
   inAccessibilityModeSelector,
   isDonationModalOpenSelector,
   userSelector,
-  (canFocus, output, accessibilityMode, open, { theme = 'default' }) => ({
+  (
+    visibleEditors,
+    canFocus,
+    output,
+    accessibilityMode,
+    open,
+    { theme = 'default' }
+  ) => ({
+    visibleEditors,
     canFocus: open ? false : canFocus,
     output,
     inAccessibilityMode: accessibilityMode,
@@ -69,15 +83,6 @@ const mapDispatchToProps = {
   setEditorFocusability,
   updateFile
 };
-
-function getTargetEditor(challengeFiles) {
-  let targetEditor = Object.values(challengeFiles).find(
-    ({ editableRegionBoundaries }) => !isEmpty(editableRegionBoundaries)
-  )?.key;
-
-  // fallback for when there is no editable region.
-  return targetEditor || toSortedArray(challengeFiles)[0].key;
-}
 
 class MultifileEditor extends Component {
   constructor(...props) {
@@ -137,13 +142,6 @@ class MultifileEditor extends Component {
       }
     };
 
-    const { challengeFiles } = this.props;
-    const targetEditor = getTargetEditor(challengeFiles);
-
-    this.state = {
-      visibleEditors: { [targetEditor]: true }
-    };
-
     // TODO: we might want to store the current editor here
     this.focusOnEditor = this.focusOnEditor.bind(this);
   }
@@ -159,15 +157,6 @@ class MultifileEditor extends Component {
     // this._editor.focus();
   }
 
-  toggleTab = newFileKey => {
-    this.setState(state => ({
-      visibleEditors: {
-        ...state.visibleEditors,
-        [newFileKey]: !state.visibleEditors[newFileKey]
-      }
-    }));
-  };
-
   componentWillUnmount() {
     // this.setState({ fileKey: null });
     this.data = null;
@@ -180,9 +169,9 @@ class MultifileEditor extends Component {
       description,
       editorRef,
       theme,
-      resizeProps
+      resizeProps,
+      visibleEditors
     } = this.props;
-    const { visibleEditors } = this.state;
     const editorTheme = theme === 'night' ? 'vs-dark-custom' : 'vs-custom';
     // TODO: the tabs mess up the rendering (scroll doesn't work properly and
     // the in-editor description)
@@ -207,21 +196,13 @@ class MultifileEditor extends Component {
     // TODO: the tabs mess up the rendering (scroll doesn't work properly and
     // the in-editor description)
     const targetEditor = getTargetEditor(challengeFiles);
-
     return (
       <ReflexContainer
         orientation='horizontal'
         {...reflexProps}
         {...resizeProps}
       >
-        <ReflexElement flex={0.1}>
-          <EditorTabs
-            challengeFiles={challengeFiles}
-            toggleTab={this.toggleTab.bind(this)}
-            visibleEditors={visibleEditors}
-          />
-        </ReflexElement>
-        <ReflexElement flex={0.9} {...reflexProps} {...resizeProps}>
+        <ReflexElement flex={10} {...reflexProps} {...resizeProps}>
           <ReflexContainer orientation='vertical'>
             {visibleEditors.indexhtml && (
               <ReflexElement {...reflexProps} {...resizeProps}>

@@ -57,3 +57,54 @@
 .monaco-menu .monaco-action-bar.vertical .action-label.separator {
   display: none !important;
 }
+
+.monaco-editor-tabs {
+  display: flex;
+  padding: 0px 10px;
+  background-color: var(--primary-background);
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.monaco-editor-tab {
+  position: relative;
+  top: 2px;
+  padding: 4px 16px;
+  border: 2px solid var(--primary-color);
+  border-left: none;
+  background-color: var(--secondary-background);
+}
+
+button.monaco-editor-tab:hover {
+  color: var(--quaternary-color);
+  background-color: var(--quaternary-background);
+}
+
+.monaco-editor-tab:first-child {
+  border-left: 2px solid var(--primary-color);
+}
+
+.monaco-editor-tab-selected {
+  background-color: var(--primary-background);
+  border-bottom: 2px solid var(--primary-background);
+}
+
+.monaco-editor-tab[role='tab'][aria-selected='true'] {
+  border-color: var(--secondary-color);
+  background-color: var(--secondary-color);
+  color: var(--secondary-background);
+}
+
+.action-row {
+  padding: 10px;
+  border-bottom: 1px solid var(--quaternary-background);
+}
+
+.action-row .monaco-editor-tabs {
+  padding: 0;
+  border-bottom: none;
+  background-color: var(--secondary-background);
+}
+
+.action-row .monaco-editor-tabs .monaco-editor-tab {
+  top: 0;
+}
