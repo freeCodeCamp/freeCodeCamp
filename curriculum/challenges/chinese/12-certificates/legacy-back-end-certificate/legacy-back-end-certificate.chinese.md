@@ -2,17 +2,19 @@
 id: 660add10cb82ac38a17513be
 title: Legacy Back End Certificate
 challengeType: 7
+isHidden: false
 isPrivate: true
-videoUrl: ''
 localeTitle: 旧版后端证书
 ---
 
 ## Description
-<section id="description">
+<section id='description'>
+
 </section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -56,4 +58,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

@@ -2,17 +2,19 @@
 id: 561acd10cb82ac38a17513bc
 title: Front End Libraries Certificate
 challengeType: 7
+isHidden: false
 isPrivate: true
-videoUrl: ''
 localeTitle: 前端库证书
 ---
 
 ## Description
-<section id="description">
+<section id='description'>
+
 </section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -46,4 +48,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

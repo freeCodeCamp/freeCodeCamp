@@ -2,17 +2,19 @@
 id: 5a553ca864b52e1d8bceea14
 title: Data Visualization Certificate
 challengeType: 7
+isHidden: false
 isPrivate: true
-videoUrl: ''
 localeTitle: 数据可视化证书
 ---
 
 ## Description
-<section id="description">
+<section id='description'>
+
 </section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -46,4 +48,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

@@ -1,18 +1,20 @@
 ---
 id: 561add10cb82ac38a17523bc
-title: API's and Microservices Certificate
+title: APIs and Microservices Certificate
 challengeType: 7
+isHidden: false
 isPrivate: true
-videoUrl: ''
 localeTitle: API和微服务证书
 ---
 
 ## Description
-<section id="description">
+<section id='description'>
+
 </section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -46,4 +48,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>
