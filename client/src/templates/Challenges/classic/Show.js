@@ -5,7 +5,6 @@ import { createStructuredSelector } from 'reselect';
 import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
-import { first } from 'lodash';
 import Media from 'react-responsive';
 
 import LearnLayout from '../../../components/layouts/Learn';
@@ -184,11 +183,6 @@ class ShowClassic extends Component {
 
   getVideoUrl = () => this.getChallenge().videoUrl;
 
-  getChallengeFile() {
-    const { files } = this.props;
-    return first(Object.keys(files).map(key => files[key]));
-  }
-
   hasPreview() {
     const { challengeType } = this.getChallenge();
     return (
@@ -229,6 +223,7 @@ class ShowClassic extends Component {
           containerRef={this.containerRef}
           description={description}
           editorRef={this.editorRef}
+          hasEditableBoundries={this.hasEditableBoundries()}
           resizeProps={this.resizeProps}
         />
       )
@@ -255,6 +250,15 @@ class ShowClassic extends Component {
     );
   }
 
+  hasEditableBoundries() {
+    const { files } = this.props;
+    return Object.values(files).some(
+      file =>
+        file.editableRegionBoundaries &&
+        file.editableRegionBoundaries.length === 2
+    );
+  }
+
   render() {
     const {
       fields: { blockName },
@@ -265,8 +269,10 @@ class ShowClassic extends Component {
       executeChallenge,
       pageContext: {
         challengeMeta: { introPath, nextChallengePath, prevChallengePath }
-      }
+      },
+      files
     } = this.props;
+
     return (
       <Hotkeys
         editorRef={this.editorRef}
@@ -295,8 +301,9 @@ class ShowClassic extends Component {
           </Media>
           <Media minWidth={MAX_MOBILE_WIDTH + 1}>
             <DesktopLayout
-              challengeFile={this.getChallengeFile()}
+              challengeFiles={files}
               editor={this.renderEditor()}
+              hasEditableBoundries={this.hasEditableBoundries()}
               hasPreview={this.hasPreview()}
               instructions={this.renderInstructionsPanel({
                 showToolPanel: true
