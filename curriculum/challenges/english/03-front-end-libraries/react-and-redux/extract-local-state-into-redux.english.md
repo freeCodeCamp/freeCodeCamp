@@ -97,10 +97,10 @@ class Presentational extends React.Component {
     });
   }
   submitMessage() {
-    this.setState({
+    this.setState((state) => ({
       input: '',
-      messages: this.state.messages.concat(this.state.input)
-    });
+      messages: state.messages.concat(state.input)
+    }));
   }
   render() {
     return (

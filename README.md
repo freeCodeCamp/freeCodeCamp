@@ -9,7 +9,7 @@
 
 [freeCodeCamp.org](https://www.freecodecamp.org) is a friendly community where you can learn to code for free. It is run by a [donor-supported 501(c)(3) nonprofit](https://donate.freecodecamp.org) to help millions of busy adults transition into tech. Our community has already helped more than 10,000 people get their first developer job.
 
-Our full-stack web development curriculum is completely free and self-paced. We have thousands of interactive coding challenges to help you expand your skills.
+Our full-stack web development and machine learning curriculum is completely free and self-paced. We have thousands of interactive coding challenges to help you expand your skills.
 
 ## Table of Contents
 
@@ -25,7 +25,7 @@ Our full-stack web development curriculum is completely free and self-paced. We 
 
 freeCodeCamp.org offers several free developer certifications. Each of these certifications involves building 5 required web app projects, along with hundreds of optional coding challenges to help you prepare for those projects. We estimate that each certification will take a beginner programmer around 300 hours to earn.
 
-Each of these 30 projects in the freeCodeCamp.org curriculum has its own agile user stories and automated tests. These help you build up your project incrementally and ensure you've fulfilled all the user stories before you submit it.
+Each of these 50 projects in the freeCodeCamp.org curriculum has its own agile user stories and automated tests. These help you build up your project incrementally and ensure you've fulfilled all the user stories before you submit it.
 
 You can pull in these test suites through [freeCodeCamp's CDN](https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js). This means you can build these projects on websites like CodePen and Glitch - or even on your local computer's development environment.
 
@@ -33,7 +33,7 @@ Once you’ve earned a certification, you will always have it. You will always b
 
 The one exception to this is if we discover violations of our [Academic Honesty Policy](https://www.freecodecamp.org/academic-honesty). When we catch people unambiguously plagiarizing (submitting other people's code or projects as their own without citation), we do what all rigorous institutions of learning should do - we revoke their certifications and ban those people.
 
-Here are our six core certifications:
+Here are our ten core certifications:
 
 #### 1. Responsive Web Design Certification
 
@@ -92,18 +92,48 @@ Here are our six core certifications:
   <br />
   **Projects**: Timestamp Microservice, Request Header Parser, URL Shortener, Exercise Tracker, File Metadata Microservice
 
-#### 6. Information Security and Quality Assurance Certification
+#### 6. Quality Assurance Certification
 
-- [Information Security with HelmetJS](https://learn.freecodecamp.org/information-security-and-quality-assurance/information-security-with-helmetjs)
 - [Quality Assurance and Testing with Chai](https://learn.freecodecamp.org/information-security-and-quality-assurance/quality-assurance-and-testing-with-chai)
 - [Advanced Node and Express](https://learn.freecodecamp.org/information-security-and-quality-assurance/advanced-node-and-express)
   <br />
   <br />
-  **Projects**: Metric-Imperial Converter, Issue Tracker, Personal Library, Stock Price Checker, Anonymous Message Board
+  **Projects**: Metric-Imperial Converter, Issue Tracker, Personal Library, Sudoku Solver, American British Translator
+   
+#### 7. Scientific Computing with Python Certification
 
-#### Full Stack Development Certification
+- [Introduction to Python for Everybody](https://learn.freecodecamp.org/scientific-computing-with-python/python-for-everybody)
+  <br />
+  <br />
+  **Projects**: Arithmetic Formatter, Time Calculator, Budget App, Polygon Area Calculator, Probability Calculator
 
-Once you have earned all 6 of these certifications, you'll be able to claim your freeCodeCamp.org Full Stack Development Certification. This final distinction signifies that you’ve completed around 1,800 hours of coding with a wide range of web development tools.
+#### 8. Data Analysis with Python Certification
+
+- [Data Analysis with Python Course](https://learn.freecodecamp.org/data-analysis-with-python/data-analysis-with-python-course)
+- [NumPy](https://learn.freecodecamp.org/data-analysis-with-python/numpy)
+  <br />
+  <br />
+  **Projects**: Mean-Variance-Standard Deviation Calculator, Demographic Data Analyzer, Medical Data Visualizer, Page View Time Series Visualizer, Sea Level Predictor
+  
+#### 9. Information Security Certification
+
+- [Information Security with HelmetJS](https://learn.freecodecamp.org/information-security/information-security-with-helmetjs)
+- [Python for Penetration Testing](https://learn.freecodecamp.org/information-security/python-for-penetration-testing)
+  <br />
+  <br />
+  **Projects**: Stock Price Checker, Anonymous Message Board, Port Scanner, SHA-1 Password Cracker, Secure Real Time Multiplayer Game 
+  
+#### 10. Machine Learning with Python Certification
+
+- [TensorFlow](https://learn.freecodecamp.org/machine-learning-with-python/tensorflow)
+- [How Neural Networks Work](https://learn.freecodecamp.org/machine-learning-with-python/how-neural-networks-work)
+  <br />
+  <br />
+  **Projects**: Rock Paper Scissors, Cat and Dog Image Classifier, Book Recommendation Engine using KNN, Linear Regression Health Costs Calculator, Neural Network SMS Text Classifier
+  
+#### Legacy Full Stack Development Certification
+
+Once you have earned the Responsive Web Design, Algorithms and Data Structures, Front End Libraries, Data Visualization, APIs and Microservices, and Legacy Information Security and Quality Assurance certifications, you'll be able to claim your freeCodeCamp.org Full Stack Development Certification. This distinction signifies that you've completed around 1,800 hours of coding with a wide range of web development tools.
 
 #### Legacy Certifications
 
