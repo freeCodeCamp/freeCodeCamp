@@ -357,7 +357,7 @@ You are also able to test one challenge individually by performing the following
 Once you have verified that each challenge you've worked on passes the tests, [please create a pull request](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/docs/how-to-open-a-pull-request.md).
 
 > [!TIP]
-> You can set the environment variable `TEST_CHALLENGES_FOR_LANGS` in the `.env` to the language of the challenge(s) you need to test.
+> You can set the environment variable `LOCALE` in the `.env` to the language of the challenge(s) you need to test.
 > 
 > The currently accepted values are `english` and `chinese`, with `english` being set by default.
 

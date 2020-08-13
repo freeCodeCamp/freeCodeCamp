@@ -46,7 +46,7 @@ const {
 
 const { dasherize } = require('../../utils/slugs');
 
-const { testedLangs } = require('../utils');
+const { testedLang } = require('../utils');
 
 const {
   buildDOMChallenge,
@@ -124,22 +124,15 @@ async function setup() {
   global.Worker = createPseudoWorker(await newPageContext(browser));
   page = await newPageContext(browser);
   await page.setViewport({ width: 300, height: 150 });
-  const testLangs = testedLangs();
-  if (testLangs.length > 1)
-    throw Error(
-      `Testing more than one language at once is not currently supported
-please change the TEST_CHALLENGES_FOR_LANGS env variable to a single language`
-    );
-  const challengesForLang = await Promise.all(
-    testLangs.map(lang => getChallenges(lang))
-  );
+
+  const lang = testedLang();
+
+  let challenges = await getChallenges(lang);
 
   // the next few statements create a list of all blocks and superblocks
   // as they appear in the list of challenges
-  const blocks = challengesForLang[0].challenges.map(({ block }) => block);
-  const superBlocks = challengesForLang[0].challenges.map(
-    ({ superBlock }) => superBlock
-  );
+  const blocks = challenges.map(({ block }) => block);
+  const superBlocks = challenges.map(({ superBlock }) => superBlock);
   const targetBlockStrings = [...new Set(blocks)];
   const targetSuperBlockStrings = [...new Set(superBlocks)];
 
@@ -151,11 +144,11 @@ please change the TEST_CHALLENGES_FOR_LANGS env variable to a single language`
     ).bestMatch.target;
 
     console.log(`\nsuperBlock being tested: ${filter}`);
-    challengesForLang[0].challenges = challengesForLang[0].challenges.filter(
+    challenges = challenges.filter(
       challenge => challenge.superBlock === filter
     );
 
-    if (!challengesForLang[0].challenges.length) {
+    if (!challenges.length) {
       throw new Error(`No challenges found with superBlock "${filter}"`);
     }
   }
@@ -167,30 +160,26 @@ please change the TEST_CHALLENGES_FOR_LANGS env variable to a single language`
     ).bestMatch.target;
 
     console.log(`\nblock being tested: ${filter}`);
-    challengesForLang[0].challenges = challengesForLang[0].challenges.filter(
-      challenge => challenge.block === filter
-    );
+    challenges = challenges.filter(challenge => challenge.block === filter);
 
-    if (!challengesForLang[0].challenges.length) {
+    if (!challenges.length) {
       throw new Error(`No challenges found with block "${filter}"`);
     }
   }
 
   const meta = {};
-  for (const { lang, challenges } of challengesForLang) {
-    meta[lang] = {};
-    for (const challenge of challenges) {
-      const dashedBlockName = dasherize(challenge.block);
-      if (!meta[dashedBlockName]) {
-        meta[lang][dashedBlockName] = (await getMetaForBlock(
-          dashedBlockName
-        )).challengeOrder;
-      }
+  for (const challenge of challenges) {
+    const dashedBlockName = dasherize(challenge.block);
+    if (!meta[dashedBlockName]) {
+      meta[dashedBlockName] = (await getMetaForBlock(
+        dashedBlockName
+      )).challengeOrder;
     }
   }
   return {
     meta,
-    challengesForLang
+    challenges,
+    lang
   };
 }
 
@@ -204,7 +193,7 @@ function cleanup() {
   spinner.stop();
 }
 
-function runTests({ challengesForLang, meta }) {
+function runTests(challengeData) {
   // rethrow unhandled rejections to make sure the tests exit with -1
   process.on('unhandledRejection', err => {
     throw err;
@@ -214,9 +203,7 @@ function runTests({ challengesForLang, meta }) {
     after(function() {
       cleanup();
     });
-    for (const challenge of challengesForLang) {
-      populateTestsForLang(challenge, meta);
-    }
+    populateTestsForLang(challengeData);
   });
   spinner.text = 'Testing';
   run();
@@ -233,7 +220,7 @@ async function getChallenges(lang) {
         return [...challengeArray, ...flatten(challengesForBlock)];
       }, [])
   );
-  return { lang, challenges };
+  return challenges;
 }
 
 function validateBlock(challenge) {
@@ -245,7 +232,7 @@ function validateBlock(challenge) {
   }
 }
 
-function populateTestsForLang({ lang, challenges }, meta) {
+function populateTestsForLang({ lang, challenges, meta }) {
   const mongoIds = new MongoIds();
   const challengeTitles = new ChallengeTitles();
   const validateChallenge = challengeSchemaValidator(lang);
@@ -257,7 +244,7 @@ function populateTestsForLang({ lang, challenges }, meta) {
       describe(challenge.block || 'No block', function() {
         describe(challenge.title || 'No title', function() {
           it('Matches a title in meta.json', function() {
-            const index = meta[lang][dashedBlockName].findIndex(
+            const index = meta[dashedBlockName].findIndex(
               arr => arr[1] === challenge.title
             );
 
@@ -269,7 +256,7 @@ function populateTestsForLang({ lang, challenges }, meta) {
           });
 
           it('Matches an ID in meta.json', function() {
-            const index = meta[lang][dashedBlockName].findIndex(
+            const index = meta[dashedBlockName].findIndex(
               arr => arr[0] === challenge.id
             );
 
