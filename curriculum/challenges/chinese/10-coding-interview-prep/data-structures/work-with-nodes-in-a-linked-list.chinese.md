@@ -59,4 +59,5 @@ console.log(Kitten.next);
 ```js
 // solution required
 ```
-</section>
+
+/section>

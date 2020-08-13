@@ -59,4 +59,5 @@ function binom (n, k) {
 ```js
 // solution required
 ```
-</section>
+
+/section>

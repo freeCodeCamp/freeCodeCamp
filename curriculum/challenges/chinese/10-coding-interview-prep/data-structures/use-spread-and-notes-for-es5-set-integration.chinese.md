@@ -50,4 +50,5 @@ function checkSet(set){
 ```js
 // solution required
 ```
-</section>
+
+/section>

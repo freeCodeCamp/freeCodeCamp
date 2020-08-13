@@ -66,4 +66,5 @@ codedTriangleNumbers(1786);
 ```js
 // solution required
 ```
-</section>
+
+/section>

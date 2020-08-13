@@ -60,4 +60,5 @@ divisibleTriangleNumber(500);
 ```js
 // solution required
 ```
-</section>
+
+/section>

@@ -87,4 +87,5 @@ var HashTable = function() {
 ```js
 // solution required
 ```
-</section>
+
+/section>

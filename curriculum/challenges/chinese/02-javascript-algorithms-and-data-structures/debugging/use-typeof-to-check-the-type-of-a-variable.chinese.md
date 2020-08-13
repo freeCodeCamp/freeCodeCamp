@@ -53,4 +53,5 @@ console.log(seven + three);
 ```js
 // solution required
 ```
-</section>
+
+/section>

@@ -68,4 +68,5 @@ const numTriangle = [[75, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [95, 64, 0,
 ```js
 // solution required
 ```
-</section>
+
+/section>

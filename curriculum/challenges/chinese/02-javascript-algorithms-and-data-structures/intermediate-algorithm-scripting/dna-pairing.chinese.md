@@ -56,4 +56,5 @@ pairElement("GCG");
 ```js
 // solution required
 ```
-</section>
+
+/section>

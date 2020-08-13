@@ -77,4 +77,5 @@ updateInventory(curInv, newInv);
 ```js
 // solution required
 ```
-</section>
+
+/section>

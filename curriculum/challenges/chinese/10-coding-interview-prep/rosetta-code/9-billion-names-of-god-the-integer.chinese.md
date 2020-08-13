@@ -68,4 +68,5 @@ function numberOfNames (num) {
 ```js
 // solution required
 ```
-</section>
+
+/section>

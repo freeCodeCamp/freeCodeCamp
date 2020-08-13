@@ -73,4 +73,5 @@ function happy (number) {
 ```js
 // solution required
 ```
-</section>
+
+/section>

@@ -76,4 +76,5 @@ euler295();
 ```js
 // solution required
 ```
-</section>
+
+/section>

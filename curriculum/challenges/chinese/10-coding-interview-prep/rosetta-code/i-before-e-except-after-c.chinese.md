@@ -63,4 +63,5 @@ function IBeforeExceptC (word) {
 ```js
 // solution required
 ```
-</section>
+
+/section>

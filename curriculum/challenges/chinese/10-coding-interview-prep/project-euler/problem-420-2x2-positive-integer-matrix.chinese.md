@@ -66,4 +66,5 @@ euler420();
 ```js
 // solution required
 ```
-</section>
+
+/section>

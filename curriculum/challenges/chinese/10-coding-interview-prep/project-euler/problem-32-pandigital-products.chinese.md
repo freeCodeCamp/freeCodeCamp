@@ -62,4 +62,5 @@ pandigitalProducts();
 ```js
 // solution required
 ```
-</section>
+
+/section>

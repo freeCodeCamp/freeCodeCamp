@@ -61,4 +61,5 @@ function entropy (s) {
 ```js
 // solution required
 ```
-</section>
+
+/section>

@@ -52,4 +52,5 @@ euler60();
 ```js
 // solution required
 ```
-</section>
+
+/section>

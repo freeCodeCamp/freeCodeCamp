@@ -59,4 +59,5 @@ function eth_mult (a, b) {
 ```js
 // solution required
 ```
-</section>
+
+/section>

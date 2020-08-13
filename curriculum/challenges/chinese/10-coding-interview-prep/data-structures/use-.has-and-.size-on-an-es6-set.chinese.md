@@ -54,4 +54,5 @@ checkSet([ 1, 2, 3], 2); // Should return [ true, 3 ]
 ```js
 // solution required
 ```
-</section>
+
+/section>

@@ -52,4 +52,5 @@ pandigitalMultiples();
 ```js
 // solution required
 ```
-</section>
+
+/section>

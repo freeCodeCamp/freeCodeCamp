@@ -56,4 +56,5 @@ countingSundays(1943, 1946);
 ```js
 // solution required
 ```
-</section>
+
+/section>

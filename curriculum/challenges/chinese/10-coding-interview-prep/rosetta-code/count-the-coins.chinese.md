@@ -52,4 +52,5 @@ function countCoins () {
 ```js
 // solution required
 ```
-</section>
+
+/section>

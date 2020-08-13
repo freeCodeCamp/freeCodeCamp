@@ -57,4 +57,5 @@ function primeGenerator (num, showPrimes) {
 ```js
 // solution required
 ```
-</section>
+
+/section>

@@ -79,4 +79,5 @@ palindrome("eye");
 ```js
 // solution required
 ```
-</section>
+
+/section>

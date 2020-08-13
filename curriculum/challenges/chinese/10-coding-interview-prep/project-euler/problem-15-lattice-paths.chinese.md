@@ -56,4 +56,5 @@ latticePaths(4);
 ```js
 // solution required
 ```
-</section>
+
+/section>

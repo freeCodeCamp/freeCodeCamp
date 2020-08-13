@@ -67,4 +67,5 @@ function PriorityQueue () {
 ```js
 // solution required
 ```
-</section>
+
+/section>

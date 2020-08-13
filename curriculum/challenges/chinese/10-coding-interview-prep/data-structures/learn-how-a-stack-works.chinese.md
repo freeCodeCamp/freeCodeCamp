@@ -53,4 +53,5 @@ var homeworkStack = ["BIO12","HIS80","MAT122","PSY44"];
 ```js
 // solution required
 ```
-</section>
+
+/section>

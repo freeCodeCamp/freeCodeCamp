@@ -59,4 +59,5 @@ function dotProduct() {
 ```js
 // solution required
 ```
-</section>
+
+/section>

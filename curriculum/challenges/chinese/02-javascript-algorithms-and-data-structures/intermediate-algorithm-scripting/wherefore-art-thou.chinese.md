@@ -68,4 +68,5 @@ whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: 
 ```js
 // solution required
 ```
-</section>
+
+/section>

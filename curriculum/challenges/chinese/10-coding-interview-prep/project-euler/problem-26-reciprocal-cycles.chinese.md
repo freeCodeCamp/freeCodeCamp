@@ -58,4 +58,5 @@ reciprocalCycles(1000);
 ```js
 // solution required
 ```
-</section>
+
+/section>

@@ -58,4 +58,5 @@ lexicographicPermutations(999999);
 ```js
 // solution required
 ```
-</section>
+
+/section>

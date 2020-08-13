@@ -63,4 +63,5 @@ function gray(enc, number) {
 ```js
 // solution required
 ```
-</section>
+
+/section>

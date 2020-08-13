@@ -52,4 +52,5 @@ permutedMultiples();
 ```js
 // solution required
 ```
-</section>
+
+/section>

@@ -57,4 +57,5 @@ function splitCoconuts(intSailors) {
 ```js
 // solution required
 ```
-</section>
+
+/section>

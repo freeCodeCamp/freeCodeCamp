@@ -66,4 +66,5 @@ necklace(1000000000)
 ```js
 // solution required
 ```
-</section>
+
+/section>

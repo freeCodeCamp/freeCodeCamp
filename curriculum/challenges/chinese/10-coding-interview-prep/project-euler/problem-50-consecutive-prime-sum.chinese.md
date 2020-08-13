@@ -54,4 +54,5 @@ consecutivePrimeSum(1000000);
 ```js
 // solution required
 ```
-</section>
+
+/section>

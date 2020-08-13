@@ -61,4 +61,5 @@ function josephus (init, kill) {
 ```js
 // solution required
 ```
-</section>
+
+/section>

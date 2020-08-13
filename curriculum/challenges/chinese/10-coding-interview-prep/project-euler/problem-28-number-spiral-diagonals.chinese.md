@@ -67,4 +67,5 @@ spiralDiagonals(1001);
 ```js
 // solution required
 ```
-</section>
+
+/section>

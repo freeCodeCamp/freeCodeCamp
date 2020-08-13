@@ -52,4 +52,5 @@ digitCancellingFractions();
 ```js
 // solution required
 ```
-</section>
+
+/section>

@@ -52,4 +52,5 @@ euler278();
 ```js
 // solution required
 ```
-</section>
+
+/section>

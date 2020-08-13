@@ -54,4 +54,5 @@ pandigitalPrime(7);
 ```js
 // solution required
 ```
-</section>
+
+/section>

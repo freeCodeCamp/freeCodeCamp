@@ -56,4 +56,5 @@ distinctPrimeFactors(4, 4);
 ```js
 // solution required
 ```
-</section>
+
+/section>

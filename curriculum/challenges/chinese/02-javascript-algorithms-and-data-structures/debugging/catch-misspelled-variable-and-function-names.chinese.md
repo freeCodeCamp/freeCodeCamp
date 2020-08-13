@@ -57,4 +57,5 @@ console.log(`Net working capital is: ${netWorkingCapital}`);
 ```js
 // solution required
 ```
-</section>
+
+/section>

@@ -64,4 +64,5 @@ function discordianDate (date) {
 ```js
 // solution required
 ```
-</section>
+
+/section>

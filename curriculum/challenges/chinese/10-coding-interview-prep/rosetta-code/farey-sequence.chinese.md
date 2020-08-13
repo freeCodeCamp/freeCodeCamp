@@ -57,4 +57,5 @@ function farey (n) {
 ```js
 // solution required
 ```
-</section>
+
+/section>

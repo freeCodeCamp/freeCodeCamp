@@ -63,4 +63,5 @@ truncateString("A-tisket a-tasket A green and yellow basket", 8);
 ```js
 // solution required
 ```
-</section>
+
+/section>

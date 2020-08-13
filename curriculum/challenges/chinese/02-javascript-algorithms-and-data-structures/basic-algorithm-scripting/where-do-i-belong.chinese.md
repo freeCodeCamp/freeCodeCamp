@@ -83,4 +83,5 @@ getIndexToIns([40, 60], 50);
 ```js
 // solution required
 ```
-</section>
+
+/section>

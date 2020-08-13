@@ -71,4 +71,5 @@ function Stack() {
 ```js
 // solution required
 ```
-</section>
+
+/section>

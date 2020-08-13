@@ -60,4 +60,5 @@ sumFactorialDigits(100);
 ```js
 // solution required
 ```
-</section>
+
+/section>

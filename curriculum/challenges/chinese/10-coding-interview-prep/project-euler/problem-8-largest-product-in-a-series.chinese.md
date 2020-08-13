@@ -55,4 +55,5 @@ largestProductinaSeries(13);
 ```js
 // solution required
 ```
-</section>
+
+/section>

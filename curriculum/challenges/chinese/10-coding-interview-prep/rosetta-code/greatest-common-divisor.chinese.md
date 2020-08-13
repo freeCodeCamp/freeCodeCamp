@@ -63,4 +63,5 @@ function gcd(a, b) {
 ```js
 // solution required
 ```
-</section>
+
+/section>

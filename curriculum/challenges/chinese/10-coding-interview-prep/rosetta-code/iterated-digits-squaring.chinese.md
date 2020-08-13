@@ -64,4 +64,5 @@ function iteratedSquare (n) {
 ```js
 // solution required
 ```
-</section>
+
+/section>

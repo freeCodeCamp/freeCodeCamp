@@ -67,4 +67,5 @@ distinctPowers(30);
 ```js
 // solution required
 ```
-</section>
+
+/section>

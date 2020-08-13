@@ -59,4 +59,5 @@ pairwise([1,4,2,3,0,5], 7);
 ```js
 // solution required
 ```
-</section>
+
+/section>
