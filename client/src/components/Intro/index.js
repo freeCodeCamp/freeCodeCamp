@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, Spacer, Loader, FullWidthRow } from '../helpers';
 import { Row, Col } from '@freecodecamp/react-bootstrap';
-import { apiLocation } from '../../../config/env.json';
+import { apiLocation, forumLocation } from '../../../config/env.json';
 import { randomQuote } from '../../utils/get-words';
 import CurrentChallengeLink from '../helpers/CurrentChallengeLink';
 
@@ -153,7 +153,7 @@ function Intro({
             </p>
             <p>
               You can do this on Twitter and GitHub, and also on{' '}
-              <Link className='inline' to='/forum'>
+              <Link className='inline' to={forumLocation}>
                 the freeCodeCamp forum
               </Link>
               .
