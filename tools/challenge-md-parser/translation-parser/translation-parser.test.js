@@ -9,9 +9,11 @@ const {
   ENGLISH_CHALLENGE,
   ENGLISH_CHALLENGE_NO_FILES,
   ENGLISH_CHALLENGE_TWO_SOLUTIONS,
+  ENGLISH_VIDEO_CHALLENGE,
   TRANSLATED_CERTIFICATE,
   TRANSLATED_CHALLENGE,
-  WRONG_NUM_TESTS_CHALLENGE
+  TRANSLATED_VIDEO_CHALLENGE
+  // WRONG_NUM_TESTS_CHALLENGE
 } = require('./__fixtures__/challenge-objects');
 const { SIMPLE_TRANSLATION } = require('./__mocks__/mock-comments');
 
@@ -28,6 +30,11 @@ const COMBINED_CHALLENGE_TWO_SOLUTIONS = mergeChallenges(
 const COMBINED_CERTIFICATE = mergeChallenges(
   ENGLISH_CERTIFICATE,
   TRANSLATED_CERTIFICATE
+);
+
+const COMBINED_VIDEO_CHALLENGE = mergeChallenges(
+  ENGLISH_VIDEO_CHALLENGE,
+  TRANSLATED_VIDEO_CHALLENGE
 );
 
 let logSpy;
@@ -98,11 +105,12 @@ describe('translation parser', () => {
         TRANSLATED_CHALLENGE.localeTitle
       );
     });
-    it('throws an error if the numbers of tests do not match', () => {
-      expect(() =>
-        mergeChallenges(ENGLISH_CHALLENGE, WRONG_NUM_TESTS_CHALLENGE)
-      ).toThrow();
-    });
+    // TODO: reinstate this after alpha testing.
+    // it('throws an error if the numbers of tests do not match', () => {
+    //   expect(() =>
+    //     mergeChallenges(ENGLISH_CHALLENGE, WRONG_NUM_TESTS_CHALLENGE)
+    //   ).toThrow();
+    // });
     it('takes the forum id from the second challenge', () => {
       expect(COMBINED_CHALLENGE.forumTopicId).toBe(
         TRANSLATED_CHALLENGE.forumTopicId
@@ -128,6 +136,11 @@ describe('translation parser', () => {
     it('certificates do not have a forumTopicId property', () => {
       expect(Object.keys(COMBINED_CERTIFICATE).includes('forumTopicId')).toBe(
         false
+      );
+    });
+    it('takes the question from the second challenge', () => {
+      expect(COMBINED_VIDEO_CHALLENGE.question).toBe(
+        TRANSLATED_VIDEO_CHALLENGE.question
       );
     });
   });

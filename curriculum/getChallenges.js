@@ -93,14 +93,17 @@ async function buildCurriculum(file, curriculum) {
 async function parseTranslation(engPath, transPath, dict) {
   const engChal = await parseMarkdown(engPath);
   const translatedChal = await parseMarkdown(transPath);
-  const codeLang = engChal.files[0] ? engChal.files[0].ext : null;
+  const codeLang =
+    engChal.files && engChal.files[0] ? engChal.files[0].ext : null;
 
-  const engWithTranslatedComments = translateCommentsInChallenge(
-    engChal,
-    getChallengeLang(transPath),
-    dict,
-    codeLang
-  );
+  const engWithTranslatedComments = codeLang
+    ? translateCommentsInChallenge(
+        engChal,
+        getChallengeLang(transPath),
+        dict,
+        codeLang
+      )
+    : engChal;
   return mergeChallenges(engWithTranslatedComments, translatedChal);
 }
 

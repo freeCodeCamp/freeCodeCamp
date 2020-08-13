@@ -109,6 +109,17 @@ const ENGLISH_CHALLENGE_NO_FILES = {
   files: []
 };
 
+const ENGLISH_VIDEO_CHALLENGE = {
+  id: 'id',
+  title: 'Title',
+  challengeType: 0,
+  videoId: 'abc123',
+  forumTopicId: 12345,
+  question: 'english question',
+  description: 'description html string',
+  instructions: 'instructions html string'
+};
+
 const TRANSLATED_CERTIFICATE = {
   id: '561add10cb82ac38a17513bc',
   title: 'Responsive Web Design Certificate',
@@ -170,6 +181,17 @@ const TRANSLATED_CHALLENGE = {
   ]
 };
 
+const TRANSLATED_VIDEO_CHALLENGE = {
+  id: 'id',
+  title: 'Title',
+  challengeType: 0,
+  videoId: 'abc123',
+  forumTopicId: 12345,
+  question: 'translated question',
+  description: 'translated description html string',
+  instructions: 'translated instructions html string'
+};
+
 const WRONG_NUM_TESTS_CHALLENGE = {
   id: 'id',
   title: 'Title',
@@ -202,6 +224,8 @@ exports.ENGLISH_CERTIFICATE = ENGLISH_CERTIFICATE;
 exports.ENGLISH_CHALLENGE = ENGLISH_CHALLENGE;
 exports.ENGLISH_CHALLENGE_TWO_SOLUTIONS = ENGLISH_CHALLENGE_TWO_SOLUTIONS;
 exports.ENGLISH_CHALLENGE_NO_FILES = ENGLISH_CHALLENGE_NO_FILES;
+exports.ENGLISH_VIDEO_CHALLENGE = ENGLISH_VIDEO_CHALLENGE;
 exports.TRANSLATED_CERTIFICATE = TRANSLATED_CERTIFICATE;
 exports.TRANSLATED_CHALLENGE = TRANSLATED_CHALLENGE;
+exports.TRANSLATED_VIDEO_CHALLENGE = TRANSLATED_VIDEO_CHALLENGE;
 exports.WRONG_NUM_TESTS_CHALLENGE = WRONG_NUM_TESTS_CHALLENGE;

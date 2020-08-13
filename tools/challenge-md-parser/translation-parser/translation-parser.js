@@ -31,31 +31,55 @@ exports.translateCommentsInChallenge = (challenge, lang, dict, codeLang) => {
 };
 
 exports.mergeChallenges = (engChal, transChal) => {
-  if (!transChal.tests || transChal.tests.length !== engChal.tests.length)
-    throw Error(
-      `Challenges in both languages must have the same number of tests.
-    title: ${engChal.title}
-    localeTitle: ${transChal.localeTitle}`
-    );
-
-  const translatedTests =
-    engChal.challengeType === 7
-      ? transChal.tests.map(({ title }, i) => ({
-          title,
-          id: engChal.tests[i].id
-        }))
-      : transChal.tests.map(({ text }, i) => ({
-          text,
-          testString: engChal.tests[i].testString
-        }));
+  const hasTests =
+    (engChal.tests && transChal.tests) ||
+    (engChal.question && transChal.question);
   const challenge = {
     ...engChal,
     description: transChal.description,
     instructions: transChal.instructions,
     localeTitle: transChal.localeTitle,
-    forumTopicId: transChal.forumTopicId,
-    tests: translatedTests
+    forumTopicId: transChal.forumTopicId
   };
+  if (!hasTests)
+    throw Error(
+      `Both challenges must have tests or questions.
+      title: ${engChal.title}
+      localeTitle: ${transChal.localeTitle}`
+    );
+  // TODO: this should break the build when we go to production, but
+  // not for testing.
+  if (transChal.tests && transChal.tests.length !== engChal.tests.length) {
+    console.error(
+      `Challenges in both languages must have the same number of tests.
+    title: ${engChal.title}
+    localeTitle: ${transChal.localeTitle}`
+    );
+    return challenge;
+  }
+
+  // throw Error(
+  //   `Challenges in both languages must have the same number of tests.
+  // title: ${engChal.title}
+  // localeTitle: ${transChal.localeTitle}`
+  // );
+
+  if (transChal.tests) {
+    const translatedTests =
+      engChal.challengeType === 7
+        ? transChal.tests.map(({ title }, i) => ({
+            title,
+            id: engChal.tests[i].id
+          }))
+        : transChal.tests.map(({ text }, i) => ({
+            text,
+            testString: engChal.tests[i].testString
+          }));
+    challenge.tests = translatedTests;
+  } else {
+    challenge.question = transChal.question;
+  }
+
   // certificates do not have forumTopicIds
   if (challenge.challengeType === 7) delete challenge.forumTopicId;
   return challenge;
