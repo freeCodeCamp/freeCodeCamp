@@ -53,7 +53,7 @@ apply1 @ 1  - > x，@ y的下一阶段
 1 + _  - > 1
 _ + _  - >
 </pre><p>示例文本： </p><p> <code>_1111*11111_</code> </p> <p>应该生成输出： </p><p> <code>11111111111111111111</code> </p>规则集5： <p>一台简单的<a href="http://en.wikipedia.org/wiki/Turing_machine" title="链接：http：//en.wikipedia.org/wiki/Turing_machine">图灵机</a> ， </p><p>实施三态<a href="http://en.wikipedia.org/wiki/Busy_beaver" title="链接：http：//en.wikipedia.org/wiki/Busy_beaver">繁忙的海狸</a> 。 </p><p>磁带由0和1组成，状态为A，B，C和H（对于Halt），并且通过在头部所在的字符之前写入状态字母来指示磁头位置。 </p><p>必须在输入中给出机器操作的初始磁带的所有部分。 </p><p>除了证明Markov算法是Turing-complete之外，它还让我抓住了C ++实现中的一个错误，这个错误没有被前四个规则集捕获。 </p><pre>图灵机：三态繁忙的海狸
-#sta A，符号0 =>写1，向右移动，新状态BA0  - > 1B
+状态A，符号0 =>写1，向右移动，新状态BA0  - > 1B
 状态A，符号1 =>写1，向左移动，新状态C0A1  - > C01
 1A1  - > C11
 状态B，符号0 =>写1，向左移动，新状态A0B0  - > A01
