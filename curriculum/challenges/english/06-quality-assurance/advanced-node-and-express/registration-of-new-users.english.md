@@ -60,9 +60,63 @@ tests:
   - text: You should register route and display on home.
     testString: 'getUserInput => $.get(getUserInput(''url'')+ ''/_api/server.js'') .then(data => { assert.match(data, /showRegistration:( |)true/gi, ''You should be passing the variable "showRegistration" as true to your render function for the homepage''); assert.match(data, /register[^]*post[^]*findOne[^]*username:( |)req.body.username/gi, ''You should have a route accepted a post request on register that querys the db with findone and the query being "username: req.body.username"''); }, xhr => { throw new Error(xhr.statusText); })'
   - text: Registering should work.
-    testString: 'getUserInput => $.ajax({url: getUserInput(''url'')+ ''/register'',data: {username: ''freeCodeCampTester'', password: ''freeCodeCampTester''},crossDomain: true, type: ''POST'', xhrFields: { withCredentials: true }}) .then(data => { assert.match(data, /Profile/gi, ''I should be able to register and it direct me to my profile. CLEAR YOUR DATABASE if this test fails (each time until its right!)''); }, xhr => { throw new Error(xhr.statusText); })'
+    testString: "async getUserInput => {
+      const url = getUserInput('url');
+      const user = `freeCodeCampTester${Date.now()}`;
+      const xhttp=new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          test(this);
+        } else {
+          throw new Error(`${this.status} ${this.statusText}`);
+        }
+      };
+      xhttp.open('POST', url+'/register', true);
+      xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+      xhttp.send(`username=${user}&password=${user}`);  
+
+      function test(xhttpRes) {
+        const data = xhttpRes.responseText;
+        assert.match(data, /Profile/gi, 'Register should work, and redirect successfully to the profile.');
+      }
+    }
+    "
   - text: Login should work.
-    testString: 'getUserInput => $.ajax({url: getUserInput(''url'')+ ''/login'',data: {username: ''freeCodeCampTester'', password: ''freeCodeCampTester''}, type: ''POST'', xhrFields: { withCredentials: true }}) .then(data => { assert.match(data, /Profile/gi, ''Login should work if previous test was done successfully and redirect successfully to the profile. Check your work and clear your DB''); assert.match(data, /freeCodeCampTester/gi, ''The profile should properly display the welcome to the user logged in''); }, xhr => { throw new Error(xhr.statusText); })'
+    testString: "async getUserInput => {
+      const url = getUserInput('url');
+      const user = `freeCodeCampTester${Date.now()}`;
+      const xhttpReg = new XMLHttpRequest();
+      xhttpReg.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          login();
+        } else {
+          throw new Error(`${this.status} ${this.statusText}`);
+        }
+      };
+      xhttpReg.open('POST', url+'/register', true);
+      xhttpReg.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+      xhttpReg.send(`username=${user}&password=${user}`);
+
+      function login() {
+        const xhttp=new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            test(this);
+          } else {
+            throw new Error(`${this.status} ${this.statusText}`);
+          }
+        };
+        xhttp.open('POST', url+'/login', true);
+        xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xhttp.send(`username=${user}&password=${user}`);  
+      }
+      function test(xhttpRes) {
+        const data = xhttpRes.responseText;
+        assert.match(data, /Profile/gi, 'Login should work if previous test was done successfully and redirect successfully to the profile.');
+        assert.match(data, new RegExp(user, 'g'), 'The profile should properly display the welcome to the user logged in');
+      }
+    }
+    "
   - text: Logout should work.
     testString: 'getUserInput => $.ajax({url: getUserInput(''url'')+ ''/logout'', type: ''GET'', xhrFields: { withCredentials: true }}) .then(data => { assert.match(data, /Home/gi, ''Logout should redirect to home''); }, xhr => { throw new Error(xhr.statusText); })'
   - text: Profile should no longer work after logout.
