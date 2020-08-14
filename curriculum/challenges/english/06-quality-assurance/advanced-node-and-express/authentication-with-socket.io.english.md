@@ -15,7 +15,7 @@ Currently, you cannot determine who is connected to your web socket. While <code
 
 <hr>
 
-Add <code>passport.socketio</code>, <code>mongo-connect</code>, and <code>cookie-parser</code> as dependencies and require them as <code>passportSocketIo</code>, <code>MongoStore</code>, and <code>cookieParser</code> respectfully. Also, we need to initialise a new memory store, from <code>express-session</code> which we previously required. It should look as follows:
+Add <code>passport.socketio</code>, <code>connect-mongo</code>, and <code>cookie-parser</code> as dependencies and require them as <code>passportSocketIo</code>, <code>MongoStore</code>, and <code>cookieParser</code> respectfully. Also, we need to initialise a new memory store, from <code>express-session</code> which we previously required. It should look as follows:
 
 ```js
 const MongoStore = require('connect-mongo')(session);
@@ -38,6 +38,10 @@ io.use(
 );
 ```
 
+Be sure to add the <code>key</code> and <code>store</code> to the <code>session</code> middleware mounted on the app. This is necessary to tell _SocketIO_ which session to relate to.
+
+<hr>
+
 Now, define the <code>success</code>, and <code>fail</code> callback functions:
 
 ```js
@@ -57,7 +61,7 @@ function onAuthorizeFail(data, message, error, accept) {
 The user object is now accessible on your socket object as <code>socket.request.user</code>. For example, now you can add the following:
 
 ```js
-console.log('user ' + socket.request.user.username + ' connected');
+console.log('user ' + socket.request.user.name + ' connected');
 ```
 
 It will log to the server console who has connected!

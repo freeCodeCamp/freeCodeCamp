@@ -10,7 +10,7 @@ forumTopicId: 301549
 <section id='description'>
 As a reminder, this project is being built upon the following starter project on <a href='https://repl.it/github/freeCodeCamp/boilerplate-advancednode'>Repl.it</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a>.
 Right now everything you have is in your server.js file. This can lead to hard to manage code that isn't very expandable.
-Create 2 new files: routes.js and auth.js
+Create 2 new files: <code>routes.js</code> and <code>auth.js</code>
 Both should start with the following code:
 
 ```js
