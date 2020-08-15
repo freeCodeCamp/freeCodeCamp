@@ -65,6 +65,6 @@ function IntroDescription() {
   );
 }
 
-IntroDescription.displayName = 'IntroDecription';
+IntroDescription.displayName = 'IntroDescription';
 
 export default IntroDescription;
