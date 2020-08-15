@@ -2,23 +2,41 @@
 id: 58965611f9fc0f352b528e6c
 title: Logging a User Out
 challengeType: 2
-videoUrl: ''
-localeTitle: 记录用户
+isHidden: false
+forumTopicId: 301560
+localeTitle: 用户退出
 ---
 
 ## Description
-<section id="description">提醒一下，这个项目是基于<a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/">Glitch</a>的以下入门项目构建的，或者是从<a href="https://github.com/freeCodeCamp/boilerplate-advancednode/">GitHub</a>克隆的。创建注销逻辑很容易。路径应该只是取消认证用户并重定向到主页而不是渲染任何视图。在护照中， <code>req.logout();</code>认证用户就像调用<code>req.logout();</code>一样简单<code>req.logout();</code>在重定向之前。 <pre> app.route（ &#39;/注销&#39;）
-  .get（（req，res）=&gt; {
-      req.logout（）;
-      res.redirect（ &#39;/&#39;）;
-  }）; </pre>您可能已经注意到我们也没有处理丢失的页面（404），在Node中处理此问题的常用方法是使用以下中间件。继续在所有其他路线之后添加： <pre> app.use（（req，res，next）=&gt; {
-  res.status（404）
-    .TYPE（ &#39;文本&#39;）
-    .send（&#39;未找到&#39;）;
-}）; </pre>当您认为自己已经做对时，请提交您的页面。 </section>
+<section id='description'>
+注意，本项目在<a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/'>这个 Glitch 项目</a>的基础上进行开发，你也可以从 <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a> 上克隆。
+创建退出登录的逻辑是比较简单的。只要用户尝试退出登录，路由就应重定向到主页，而不应该显示任何其他页面。
+在 passport 里，只需要在重定向前调用<code>req.logout();</code>即可完成用户登出。
+
+```js
+app.route('/logout')
+  .get((req, res) => {
+    req.logout();
+    res.redirect('/');
+});
+```
+
+你可能注意到我们还没有处理 404 错误，这个错误码代表页面无法找到。在 Node.js 中我们通常会用如下的中间件来处理，请在所有路由之后添加这段代码：
+
+```js
+app.use((req, res, next) => {
+  res.status(404)
+    .type('text')
+    .send('Not Found');
+});
+```
+
+完成上述要求后，你就可以在左边提交你的页面链接。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -26,9 +44,9 @@ localeTitle: 记录用户
 
 ```yml
 tests:
-  - text: 退出路线
+  - text: 应存在退出登录的路由。
     testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /req.logout/gi, 'You should be calling req.logout() in your /logout route'); }, xhr => { throw new Error(xhr.statusText); })
-  - text: 注销应该重定向到主页/
+  - text: 退出登录后应重定向到主页 /
     testString: getUserInput => $.get(getUserInput('url')+ '/logout') .then(data => { assert.match(data, /Home page/gi, 'When a user logs out they should be redirected to the homepage'); }, xhr => { throw new Error(xhr.statusText); })
 
 ```
@@ -44,6 +62,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
+
 </section>
