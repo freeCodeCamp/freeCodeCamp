@@ -2,17 +2,22 @@
 id: 587d8249367417b2b2512c3f
 title: Set a Content Security Policy with helmet.contentSecurityPolicy()
 challengeType: 2
-videoUrl: ''
-localeTitle: 使用helmet.contentSecurityPolicy（）设置内容安全策略
+isHidden: false
+forumTopicId: 301585
+localeTitle: 使用 helment.contentSecurityPolicy() 设置内容安全策略
 ---
 
 ## Description
-<section id="description">提醒一下，这个项目是基于<a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-infosec/">Glitch</a>的以下入门项目构建的，或者是从<a href="https://github.com/freeCodeCamp/boilerplate-infosec/">GitHub</a>克隆的。这一挑战突出了一个有希望的新防御，它可以显着降低现代浏览器中许多类型攻击的风险和影响。通过设置和配置内容安全策略，您可以防止在页面中无意中注入任何内容。这样可以保护您的应用免受XSS漏洞，不受欢迎的跟踪，恶意帧等攻击。 CSP通过定义受信任的内容源的白名单来工作。您可以为网页可能需要的每种资源（脚本，样式表，字体，框架，媒体等等）配置它们。有多个指令可用，因此网站所有者可以拥有精细控制。有关详细信息，请参阅HTML 5 Rocks，KeyCDN。不幸的是旧版浏览器不支持CSP。默认情况下，指令是全开的，因此将defaultSrc指令设置为回退非常重要。 Helmet支持defaultSrc和default-src命名样式。回退适用于大多数未指定的指令。在本练习中，使用helmet.contentSecurityPolicy（），并将其配置为将defaultSrc指令设置为["self"]（允许的源列表必须在数组中），以便默认只信任您的网站地址。同时设置scriptSrc指令，以便允许从您的网站和域"trusted-cdn.com"下载脚本。提示：在"&#39;self&#39;"关键字中，单引号是关键字本身的一部分，因此需要用双引号括起来才能生效。 </section>
+<section id='description'>
+温馨提醒，本项目在 <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-infosec/'>这个 Glitch 项目</a> 的基础上进行开发。你也可以从 <a href='https://github.com/freeCodeCamp/boilerplate-infosec/'>GitHub</a> 上克隆。
+这个挑战重点讨论一种现代浏览器中有效并且能大幅度减轻安全风险和很多种类型常见攻击的安全防护。通过配置内容安全策略你可以防止很多类型的脚本恶意注入。这会让你的应用远离 XSS 漏洞、恶意追踪、恶意 frames 和很多很多其他攻击。CSP 通过配置资源白名单来避免这些问题。 你可以给任何一种类型的页面资源 (脚本、样式文件、字体、frames、媒体文件等等等）做这个配置，它支持很多指令，所以网站管理员可以做细致的控制。更多详情请参考 HTML 5 Rocks，KeyCDN。不幸的是。一些旧的浏览器不支持 CSP。
+默认的指令很容易受到攻击, 所以设置 defaultSrc 指令作为降级方案很重要。Helmet 同时支持 defaultSrc 和 default-src 命名规范。降级方案可以被应用在大部分指令上。
+</section>
 
 ## Instructions
-<section id="instructions">
-在本练习中，使用<code>helmet.contentSecurityPolicy()</code>，并将其配置为将<code>defaultSrc指令</code>设置为<code>["self"]</code>（允许的列表） 来源必须位于一个数组中，以便默认情况下仅信任您的网站地址。 还设置<code>scriptSrc</code>指令，以便您允许从您的网站以及"trusted-cdn.com"域下载脚本。
-提示：在<code>self</code>关键字中，单引号是关键字本身的一部分，因此需要使用双引号将其括起来才能起作用。
+<section id='instructions'>
+在这个练习中，我们使用 helmet.contentSecurityPolicy()，并配置 defaultSrc 指令为 ["self"] (允许的资源列表必须在一个数组当中), 这样做表示只信任自己的网站域名。另外配置 scriptSrc 指令可以限制脚本只能本网站域名上或者信任的域名‘trusted-cdn.com’上下载
+提示: 在 "'self'" 关键词, 单引号也是关键词的一部分, 所以你应该用双引号来包起它才能正常工作。
 </section>
 
 ## Tests
@@ -20,9 +25,9 @@ localeTitle: 使用helmet.contentSecurityPolicy（）设置内容安全策略
 
 ```yml
 tests:
-  - text: helmet.csp()中间件应该正确安装。
+  - text: helmet.csp() 中间件应该被正确加载
     testString: getUserInput => $.get(getUserInput('url') + '/_api/app-info').then(data => { assert.include(data.appStack, 'csp'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: 你的csp配置不正确。 defaultSrc应该是["self"]而scriptSrc应该是["self"，"trusted-cdn.com"]
+  - text: '你的 csp 配置不正确. defaultSrc 应该是 [""self""] 并且scriptSrc 应该是 [""self"", "trusted-cdn.com"]'
     testString: getUserInput => $.get(getUserInput('url') + '/_api/app-info').then(data => { var cspHeader = Object.keys(data.headers).filter(function(k){ return k === 'content-security-policy' || k === 'x-webkit-csp' || k === 'x-content-security-policy' })[0]; assert.equal(data.headers[cspHeader], "default-src 'self'; script-src 'self' trusted-cdn.com"); }, xhr => { throw new Error(xhr.responseText); })
 
 ```
@@ -38,6 +43,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
+
 </section>
