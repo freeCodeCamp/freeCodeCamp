@@ -1,18 +1,20 @@
 ---
 id: 587d7fb8367417b2b2512c11
 title: Delete Many Documents with model.remove()
-localeTitle: 使用model.remove（）删除许多文档
 challengeType: 2
+isHidden: false
+localeTitle: 使用 model.remove() 删除许多文档
 ---
 
 ## Description
-<section id='description'> 
-Model.remove（）用于删除与给定条件匹配的所有文档。使用Model.remove（）删除名称为“Mary”的所有人员。将其传递给查询文档，其中设置了“name”字段，当然还有回调。 <code>0</code>注意：Model.remove（）不返回已删除的文档，而是返回包含操作结果和受影响项目数的JSON对象。不要忘记将它传递给done（）回调，因为我们在测试中使用它。 
+<section id='description'>
+<code>Model.remove()</code> 可用于删除与给定条件匹配的所有 document。
 </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id='instructions'>
+如果想要删除所有叫 “Mary” 的人, 可以使用 <code>Model.remove()</code>。 传入一个设置了 “name” 字段的 document 作为查询条件，当然还需要一个回调函数。
+注意: <code>Model.remove()</code> 不会返回被删除的 document, 但是会返回一个包含操作结果和受影响的 item 数量的 JSON 对象。 不要忘记将它传递给 <code>done()</code> 回调，因为我们在测试中使用它。
 </section>
 
 ## Tests
@@ -20,7 +22,7 @@ Model.remove（）用于删除与给定条件匹配的所有文档。使用Model
 
 ```yml
 tests:
-  - text: 一次删除多个项目应该会成功
+  - text: 一次性成功的删除多个 item(项目)。
     testString: 'getUserInput => $.ajax({url: getUserInput(''url'') + ''/_api/remove-many-people'', type: ''POST'', contentType:''application/json'', data: JSON.stringify([{name: ''Mary'', age: 16, favoriteFoods: [''lollipop'']}, {name: ''Mary'', age: 21, favoriteFoods: [''steak'']}])}).then(data => { assert.isTrue(!!data.ok, ''The mongo stats are not what expected''); assert.equal(data.n, 2, ''The number of items affected is not what expected''); assert.equal(data.count, 0, ''the db items count is not what expected''); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
@@ -36,6 +38,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
+
 </section>
