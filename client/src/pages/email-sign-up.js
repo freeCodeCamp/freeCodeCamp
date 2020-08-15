@@ -3,22 +3,17 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import SectionHeader from '../components/settings/SectionHeader';
+import IntroDescription from '../components/Intro/components/IntroDescription';
 
-import {
-  Row,
-  Col,
-  Button,
-  FormGroup,
-  ControlLabel,
-  Grid,
-  Checkbox
-} from '@freecodecamp/react-bootstrap';
+import { Row, Col, Button, Grid } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 import { createSelector } from 'reselect';
 
-import { ButtonSpacer } from '../components/helpers';
+import { ButtonSpacer, Spacer } from '../components/helpers';
 import { acceptTerms, userSelector } from '../redux';
 import createRedirect from '../components/createRedirect';
+
+import './email-sign-up.css';
 
 const propTypes = {
   acceptTerms: PropTypes.func.isRequired,
@@ -37,30 +32,6 @@ const mapDispatchToProps = dispatch =>
 const RedirectToLearn = createRedirect('/learn');
 
 class AcceptPrivacyTerms extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      quincyEmail: false
-    };
-    this.createHandleChange = this.createHandleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  createHandleChange(prop) {
-    return () =>
-      this.setState(prevState => ({
-        [prop]: !prevState[prop]
-      }));
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
-    const { quincyEmail } = this.state;
-
-    return this.props.acceptTerms(quincyEmail);
-  }
-
   componentWillUnmount() {
     // if a user navigates away from here we should set acceptedPrivacyTerms
     // to true (so they do not get pulled back) without changing their email
@@ -72,48 +43,67 @@ class AcceptPrivacyTerms extends Component {
     }
   }
 
+  onClick(isWeeklyEmailAccepted) {
+    this.props.acceptTerms(isWeeklyEmailAccepted);
+  }
+
   render() {
     const { acceptedPrivacyTerms } = this.props;
     if (acceptedPrivacyTerms) {
       return <RedirectToLearn />;
     }
-    const { quincyEmail } = this.state;
+
     return (
       <Fragment>
         <Helmet>
           <title>Email Sign Up | freeCodeCamp.org</title>
         </Helmet>
-        <Grid className='default-page-wrapper'>
+        <Grid className='default-page-wrapper email-sign-up'>
           <SectionHeader>Email Sign Up</SectionHeader>
           <Row>
-            <Col sm={8} smOffset={2} xs={12}>
-              <form onSubmit={this.handleSubmit}>
-                <FormGroup>
-                  <ControlLabel htmlFor='quincy-email'>
-                    Quincy's Emails
-                  </ControlLabel>
-                  <ButtonSpacer />
-                  <Checkbox
-                    checked={quincyEmail}
-                    id='quincy-email'
-                    inline={true}
-                    onChange={this.createHandleChange('quincyEmail')}
-                  >
-                    I want weekly emails from Quincy, freeCodeCamp.org's
-                    founder.
-                  </Checkbox>
-                </FormGroup>
-                <ButtonSpacer />
-                <Button
-                  block={true}
-                  bsSize='lg'
-                  bsStyle='primary'
-                  className='big-cta-btn'
-                  type='submit'
-                >
-                  Continue to freeCodeCamp.org
-                </Button>
-              </form>
+            <IntroDescription />
+            <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+              <hr />
+            </Col>
+            <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+              <strong>
+                - Quincy Larson, the teacher who founded freeCodeCamp.org
+              </strong>
+              <Spacer />
+              <p>
+                By the way, each Friday I send an email with 5 links about
+                programming and computer science. I send these to about 4
+                million people. Would you like me to send this to you, too?
+              </p>
+              <Spacer />
+            </Col>
+
+            <Col md={4} mdOffset={2} sm={5} smOffset={1} xs={12}>
+              <Button
+                block={true}
+                bsSize='lg'
+                bsStyle='primary'
+                className='big-cta-btn'
+                onClick={() => this.onClick(true)}
+              >
+                Yes
+              </Button>
+              <ButtonSpacer />
+            </Col>
+            <Col md={4} sm={5} xs={12}>
+              <Button
+                block={true}
+                bsSize='lg'
+                bsStyle='primary'
+                className='big-cta-btn'
+                onClick={() => this.onClick(false)}
+              >
+                No thanks
+              </Button>
+              <ButtonSpacer />
+            </Col>
+            <Col xs={12}>
+              <Spacer />
             </Col>
           </Row>
         </Grid>
