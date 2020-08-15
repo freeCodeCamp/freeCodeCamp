@@ -246,7 +246,7 @@ const updatePrivacyTerms = (req, res, next) => {
     }
     return res.status(200).json({
       type: 'success',
-      message: 'We have updated your preferences. '
+      message: `We have updated your preferences.`
     });
   });
 };
