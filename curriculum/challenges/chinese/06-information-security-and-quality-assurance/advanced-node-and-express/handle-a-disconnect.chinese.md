@@ -2,24 +2,15 @@
 id: 589fc831f9fc0f352b528e76
 title: Handle a Disconnect
 challengeType: 2
-isHidden: false
-forumTopicId: 301552
-localeTitle: 处理连接断开
+videoUrl: ''
+localeTitle: 处理断开连接
 ---
 
 ## Description
-<section id='description'>
-注意，本项目在<a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-socketio/'>这个 Glitch 项目</a>的基础上进行开发，你也可以从 <a href='https://github.com/freeCodeCamp/boilerplate-socialauth/'>GitHub</a> 上克隆。
-你也许注意到，目前为止我们只处理用户数量的增加，没有处理减少。事实上，处理用户断开连接也很简单。区别在于，新连接的监听是发生在整个服务器上，但连接断开的监听是发生在每个 socket 上。
-<hr>为此，我们需要在目前的监听回调里面监听 socket 断开连接的事件。在断开连接的回调函数中，我们可以不传任何参数，但你可以在这里添加连接断开的测试代码：<code>socket.on('disconnect', () => { /* 在这里添加连接断开的测试代码 */ });</code>
-为确保客户端可以看到实时的用户数量，显然，我们应该在用户断开时让 currentUsers 减 1，然后发送 'user count' 事件，并使用修改后的用户数量。
-<strong>注意：</strong><br>和 'disconnect' 类似，所有 socket 可以发送到服务器的事件，我们都应该在有 'socket' 定义的连接监听器里处理。
-完成上述要求后，你就可以在左边提交你的页面链接。
-</section>
+<section id="description">提醒一下，这个项目是基于<a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-socketio/">Glitch</a>的以下入门项目构建的，或者是从<a href="https://github.com/freeCodeCamp/boilerplate-socketio/">GitHub</a>克隆的。您可能会注意到，到目前为止，您只增加了用户数。处理用户断开连接就像处理初始连接一样简单，除了区别在于你必须在每个套接字上监听它而不是在整个服务器上监听它。 <hr>为此，请在现有的连接侦听器中添加一个侦听器，该侦听器在没有数据传递的情况下侦听套接字上的“disconnect”。您只需登录用户已断开连接的控制台即可测试此功能。 <code>socket.on(&#39;disconnect&#39;, () =&gt; { /*anything you want to do on disconnect*/ });</code>要确保客户端持续获得当前用户的更新计数，您应该在断开连接时将currentUsers减少1，然后使用更新的计数发出&#39;user count&#39;事件！ <strong>注意</strong> <br>就像&#39;disconnect&#39;一样，套接字可以向服务器发出的所有其他事件应该在我们定义了&#39;socket&#39;的连接监听器中处理。当您认为自己已经做对时，请提交您的页面。 </section>
 
 ## Instructions
-<section id='instructions'>
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -27,9 +18,9 @@ localeTitle: 处理连接断开
 
 ```yml
 tests:
-  - text: 服务器应处理断开 socket 连接的事件。
+  - text: 服务器处理与套接字的事件断开连接
     testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /socket.on.*('|")disconnect('|")/gi, ''); }, xhr => { throw new Error(xhr.statusText); })
-  - text: '客户端应监听 "user count" 事件。'
+  - text: 您的客户正在侦听“用户计数”事件
     testString: getUserInput => $.get(getUserInput('url')+ '/public/client.js') .then(data => { assert.match(data, /socket.on.*('|")user count('|")/gi, 'Your client should be connection to server with the connection defined as socket'); }, xhr => { throw new Error(xhr.statusText); })
 
 ```
@@ -45,11 +36,6 @@ tests:
 <section id='solution'>
 
 ```js
-/**
-  Backend challenges don't need solutions, 
-  because they would need to be tested against a full working project. 
-  Please check our contributing guidelines to learn more.
-*/
+// solution required
 ```
-
 </section>

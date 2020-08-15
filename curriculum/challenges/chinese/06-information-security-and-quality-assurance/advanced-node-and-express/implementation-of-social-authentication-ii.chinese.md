@@ -2,37 +2,24 @@
 id: 589a69f5f9fc0f352b528e71
 title: Implementation of Social Authentication II
 challengeType: 2
-isHidden: false
-forumTopicId: 301557
+videoUrl: ''
+localeTitle: 社会认证的实施II
 ---
 
 ## Description
-<section id='description'>
-注意，本项目在<a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-socialauth/'>这个 Glitch 项目</a>的基础上进行开发，你也可以从 <a href='https://github.com/freeCodeCamp/boilerplate-socialauth/'>GitHub</a> 上克隆。
-设置 GitHub 验证的最后一步是创建策略本身。为此，你需要在项目中<code>require</code>'passport-github'，且实例化为 GithubStrategy：<code>const GitHubStrategy = require('passport-github').Strategy;</code>。
-为了设置 GitHub 策略，我们需要在 <b>passport</b> 中使用实例化的 <b>GithubStrategy</b>，它可以接收两个参数：一个对象（包括 <em>clientID</em>, <em>clientSecret</em> 和 <em>callbackURL</em>），以及一个回调函数。在这个回调函数中，我们要处理验证成功时，判断用户是否已经在数据库中存在的逻辑，还有如果数据库中不存在，把用户数据添加到数据库的代码。这种处理方式适用于绝大部分第三方验证策略，但有些策略会需要我们提供更多的信息，详情请参考相关策略的 README。例如，Google 的验证策略会要求你提供一个 <em>scope</em>，用于标示用户成功登录后，你需要从返回的对象中获取那些信息。以及，这也需要经过用户同意，你才可以获取到。当前我们使用的验证策略，你也可以从它 GitHub 的页面上了解它的用法，不过我们也会在这里进行详细讲解。
-你的新策略应该这样去实现：
-
-```js
-passport.use(new GitHubStrategy({
-  clientID: process.env.GITHUB_CLIENT_ID,
-  clientSecret: process.env.GITHUB_CLIENT_SECRET,
-  callbackURL: /*INSERT CALLBACK URL ENTERED INTO GITHUB HERE*/
-},
-  function(accessToken, refreshToken, profile, cb) {
-    console.log(profile);
-    //Database logic here with callback containing our user object
+<section id="description">提醒一下，这个项目是基于<a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-socialauth/">Glitch</a>的以下入门项目构建的，或者是从<a href="https://github.com/freeCodeCamp/boilerplate-socialauth/">GitHub</a>克隆的。设置Github身份验证的最后一部分是创建策略本身。为此，您需要将&#39;passport-github&#39;的依赖项添加到项目中，并将其作为GithubStrategy，例如<code>const GitHubStrategy = require(&#39;passport-github&#39;).Strategy;</code> 。要设置Github策略，你必须告诉<b>护照</b> <b>使用</b>实例化的<b>GithubStrategy</b> ，它接受2个参数：一个对象（包含<em>clientID</em> ， <em>clientSecret</em>和<em>callbackURL</em> ）和一个在成功验证用户时要调用的函数，我们将确定如果用户是新用户以及最初要保存在用户数据库对象中的字段。这在许多策略中很常见，但有些可能需要更多信息，如特定策略的github README所述;例如，Google也需要一个<em>范围</em>来确定您的请求所返回的信息类型，并要求用户批准此类访问。我们正在实施的当前策略<a>在此处</a>列出<a>了</a>它的用法，但我们将在freeCodeCamp上完成所有这些工作！以下是您的新战略应该如何看待这一点： <pre> passport.use（new GitHubStrategy（{
+    clientID：process.env.GITHUB_CLIENT_ID，
+    clientSecret：process.env.GITHUB_CLIENT_SECRET，
+    callbackURL：/ * INSERT CALLBACK URL在这里输入GITHUB * /
+  }，
+  function（accessToken，refreshToken，profile，cb）{
+      的console.log（配置文件）;
+      //这里的数据库逻辑带有包含我们用户对象的回调
   }
-));
-```
-
-目前，你的验证部分不会成功。由于没有数据库的逻辑和回调函数，你的代码目前还会报错。但如果你试一试，就可以在右边的控制台里看到输出了你的 GitHub 的个人信息。
-完成上述要求后，你就可以在左边提交你的页面链接。
-</section>
+））; </pre>您的身份验证还不会成功，并且实际上会抛出错误，没有数据库逻辑和回调，但如果您尝试它，它应该将您的Github配置文件记录到您的控制台！当您认为自己已经做对时，请提交您的页面。 </section>
 
 ## Instructions
-<section id='instructions'>
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -40,11 +27,11 @@ passport.use(new GitHubStrategy({
 
 ```yml
 tests:
-  - text: 应添加依赖。
+  - text: 依赖性增加了
     testString: getUserInput => $.get(getUserInput('url')+ '/_api/package.json') .then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, 'passport-github', 'Your project should list "passport-github" as a dependency'); }, xhr => { throw new Error(xhr.statusText); })
-  - text: 应引入依赖
+  - text: 需要依赖性
     testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /require.*("|')passport-github("|')/gi, 'You should have required passport-github'); }, xhr => { throw new Error(xhr.statusText); })
-  - text: 到目前为止，Github 策略应正确设置。
+  - text: 到目前为止，Github策略设置正确
     testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /passport.use.*new GitHubStrategy/gi, 'Passport should use a new GitHubStrategy'); assert.match(data, /callbackURL:( |)("|').*("|')/gi, 'You should have a callbackURL'); assert.match(data, /process.env.GITHUB_CLIENT_SECRET/g, 'You should use process.env.GITHUB_CLIENT_SECRET'); assert.match(data, /process.env.GITHUB_CLIENT_ID/g, 'You should use process.env.GITHUB_CLIENT_ID'); }, xhr => { throw new Error(xhr.statusText); })
 
 ```
@@ -60,11 +47,6 @@ tests:
 <section id='solution'>
 
 ```js
-/**
-  Backend challenges don't need solutions, 
-  because they would need to be tested against a full working project. 
-  Please check our contributing guidelines to learn more.
-*/
+// solution required
 ```
-
 </section>

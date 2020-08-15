@@ -2,38 +2,24 @@
 id: 589fc832f9fc0f352b528e78
 title: Announce New Users
 challengeType: 2
-isHidden: false
-forumTopicId: 301546
-localeTitle: 用户公告
+videoUrl: ''
+localeTitle: 宣布新用户
 ---
 
 ## Description
-<section id='description'>
-注意，本项目在<a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-socketio/'>这个 Glitch 项目</a>的基础上进行开发，你也可以从 <a href='https://github.com/freeCodeCamp/boilerplate-socialauth/'>GitHub</a> 上克隆。
-许多聊天室都有这个功能：所有已连接到服务器的在线用户都会看到有人加入或退出的提醒。我们已经写好了处理连接和断开事件的代码，只要对这个方法稍作修改就可以实现这个功能。在事件中，我们需要发送这三条信息：连接或断开的用户名、当前用户数量、事件类型（即需要知道用户究竟是连接还是断开）。
-<hr>请将事件名称更改为 'user'，其中应包含如下字段：'name'、'currentUsers'、'connected'（布尔值，对于连接是 true，断开是 false）。记得要修改之前我们写好的处理 'user count' 的那部分代码，现在我们应传入布尔值：<code>io.emit('user', {name: socket.request.user.name, currentUsers, connected: true});</code>
-现在，我们的客户端已经有足够的信息显示现有用户数量和发送用户上下线通知。接下来我们需要在客户端监听 'user' 事件，然后使用 jQuery 把<code>#num-users</code>节点的文本内容更新为 '{NUMBER} users online'。同时，我们需要为<code>&#60;ul&#62;</code>添加一个 id 为 'messages' 且带有 '{NAME} has {joined/left} the chat.' 文本的<code>&#60;li&#62;</code>：An implementation of this could look like the following:<br>
-其中一种实现如下：<br>
-
-```js
-socket.on('user', function(data){
-  $('#num-users').text(data.currentUsers+' users online');
+<section id="description">提醒一下，这个项目是基于<a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-socketio/">Glitch</a>的以下入门项目构建的，或者是从<a href="https://github.com/freeCodeCamp/boilerplate-socketio/">GitHub</a>克隆的。许多聊天室能够在用户连接或断开连接时进行通知，然后将其显示给聊天中的所有连接用户。看起来您已经在连接和断开连接上发出事件，您只需修改此事件即可支持此功能。最合乎逻辑的方法是使用事件发送3个数据：连接/断开用户的名称，当前用户计数以及连接或断开连接的名称。 <hr>将事件名称更改为“user”，并且数据传递一个对象，包含字段&#39;name&#39;，&#39;currentUsers&#39;和boolean&#39;connected&#39;（如果是连接则为true，对于断开发送的用户，则为false）。确保对我们有&#39;用户计数&#39;事件的两个点进行更改，并将断开连接设置为对&#39;field&#39;字段发送false，而不是像在connect上发出的事件那样为true。 <code>io.emit(&#39;user&#39;, {name: socket.request.user.name, currentUsers, connected: true});</code>现在，您的客户端将拥有所有必要信息，以便在用户连接或断开连接时正确显示当前用户数和通知！要在客户端处理此事件，我们应该监听“用户”，然后使用jQuery将<code>#num-users</code>的文本更改为“{NUMBER}在线用户”，并附加<code>&lt;li&gt;</code> ，以更新当前用户数<code>&lt;li&gt;</code>使用ID为&#39;messages&#39;的无序列表，其中&#39;{NAME}已{加/左}聊天。&#39;。此实现可能如下所示： <pre> socket.on（&#39;user&#39;，function（data）{
+  $（&#39;＃num-users&#39;）。text（data.currentUsers +&#39;users online&#39;）;
   var message = data.name;
-  if(data.connected) {
-    message += ' has joined the chat.';
+  if（data.connected）{
+    消息+ =&#39;已加入聊天。&#39;;
   } else {
-    message += ' has left the chat.';
+    消息+ =&#39;离开了聊天。&#39;;
   }
-  $('#messages').append($('<li>').html('<b>'+ message +'<\/b>'));
-});
-```
-
-完成上述要求后，你就可以在左边提交你的页面链接。
-</section>
+  $（&#39;＃messages&#39;）。append（$（&#39;&lt;li&gt;&#39;）。html（&#39;&lt;b&gt;&#39;+ message +&#39;&lt;\ / b&gt;&#39;））;
+}）; </pre>当您认为自己已经做对时，请提交您的页面。 </section>
 
 ## Instructions
-<section id='instructions'>
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -41,9 +27,9 @@ socket.on('user', function(data){
 
 ```yml
 tests:
-  - text: user 事件应发送包含 name、currentUsers、connected 字段的对象。
+  - text: 使用name，currentUsers和connected发出事件“user”
     testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /io.emit.*('|")user('|").*name.*currentUsers.*connected/gi, 'You should have an event emitted named user sending name, currentUsers, and connected'); }, xhr => { throw new Error(xhr.statusText); })
-  - text: '客户端应处理和显示  "user" 对象中的信息。'
+  - text: 客户正确处理和显示事件'用户'中的新数据
     testString: "getUserInput => $.get(getUserInput('url')+ '/public/client.js') .then(data => { assert.match(data, /socket.on.*('|\")user('|\")[^]*num-users/gi, 'You should change the text of #num-users within on your client within the \"user\" even listener to show the current users connected'); assert.match(data, /socket.on.*('|\")user('|\")[^]*messages.*li/gi, 'You should append a list item to #messages on your client within the \"user\" event listener to announce a user came or went'); }, xhr => { throw new Error(xhr.statusText); })"
 
 ```
@@ -59,11 +45,6 @@ tests:
 <section id='solution'>
 
 ```js
-/**
-  Backend challenges don't need solutions, 
-  because they would need to be tested against a full working project. 
-  Please check our contributing guidelines to learn more.
-*/
+// solution required
 ```
-
 </section>

@@ -1,21 +1,17 @@
 ---
 id: 587d7fb8367417b2b2512c0f
 title: Perform New Updates on a Document Using model.findOneAndUpdate()
+localeTitle: 使用model.findOneAndUpdate（）对文档执行新更新
 challengeType: 2
-isHidden: false
-forumTopicId: 301542
-localeTitle: 使用 model.findOneAndUpdate() 对文档执行新的更新
 ---
 
 ## Description
-<section id='description'>
-mongoose 的最新版本简化了 documents 的更新。 但是一些高级的用法 (比如 pre/post 钩子, 验证) 更复杂, 所以老方法更常用。当通过 Id 进行搜索时还可以使用 <code>findByIdAndUpdate()</code>。
+<section id='description'> <code>0</code>最新版本的mongoose具有简化文档更新的方法。一些更高级的功能（即前/后挂钩，验证）与此方法的行为不同，因此Classic方法在许多情况下仍然有用。在按Id搜索时可以使用findByIdAndUpdate（）。 <code>0</code>按名称查找人员并将其年龄设置为20.使用函数参数personName作为搜索关键字。 <code>0</code>提示：我们希望您返回更新的文档。为此，您需要将选项文档{new：true}作为findOneAndUpdate（）的第三个参数传递。默认情况下，这些方法返回未修改的对象。 
 </section>
 
 ## Instructions
-<section id='instructions'>
-使用 personName 作为搜索的关键词查找 person，并将查到的 person 的年龄设为 20 岁。
-提示: 我们想要你返更新后的 document，你可以把 <code>findOneAndUpdate()</code> 的第三个参数设置为 <code>{new: true}</code>。 默认情况下，这些方法返回未被修改的数据。
+<section id='instructions'> 
+
 </section>
 
 ## Tests
@@ -23,7 +19,7 @@ mongoose 的最新版本简化了 documents 的更新。 但是一些高级的�
 
 ```yml
 tests:
-  - text: 对一个 item（项目）的  findOneAndUpdate  操作成功
+  - text: findOneAndUpdate项应该成功
     testString: 'getUserInput => $.post(getUserInput(''url'') + ''/_api/find-one-update'', {name:''Dorian Gray'', age: 35, favoriteFoods:[''unknown'']}).then(data => { assert.equal(data.name, ''Dorian Gray'', ''item.name is not what expected''); assert.equal(data.age, 20, ''item.age is not what expected''); assert.deepEqual(data.favoriteFoods, [''unknown''], ''item.favoriteFoods is not what expected''); assert.equal(data.__v, 0, ''findOneAndUpdate does not increment version by design !!!''); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
@@ -39,11 +35,6 @@ tests:
 <section id='solution'>
 
 ```js
-/**
-  Backend challenges don't need solutions, 
-  because they would need to be tested against a full working project. 
-  Please check our contributing guidelines to learn more.
-*/
+// solution required
 ```
-
 </section>

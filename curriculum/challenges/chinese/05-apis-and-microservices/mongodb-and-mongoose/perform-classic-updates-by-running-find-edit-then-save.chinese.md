@@ -1,23 +1,17 @@
 ---
 id: 587d7fb8367417b2b2512c0e
 title: 'Perform Classic Updates by Running Find, Edit, then Save'
+localeTitle: '通过运行查找，编辑然后保存来执行经典更新'
 challengeType: 2
-isHidden: false
-localeTitle: 通过运行 find、edit、save 来执行经典更新
 ---
 
 ## Description
-<section id='description'>
-
-传统应用里，如果你想要编辑 document，然后在某处使用它。你就必须在服务器响应中将其返回。Mongoose 有一个专用的更新方法：<code>Model.update() </code>, 它与低级的 mongo 驱动绑定，可以批量编辑符合特定条件的多个 document，而不用返回更新后的 document，取而代之返回'状态'消息。此外，它使模型校验变得更棘手，因为它是直接调用了 mongo 的驱动程序。
+<section id='description'> <code>0</code>在过去的好时光中，如果您想编辑文档并能够以某种方式使用它，例如在服务器响应中将其发回，则需要执行此操作。 Mongoose有一个专用的更新方法：Model.update（）。它与低级mongo驱动程序绑定。它可以批量编辑符合特定条件的许多文档，但它不会发回更新的文档，只会发送“状态”消息。此外，它使模型验证变得困难，因为它只是直接调用mongo驱动程序。 <code>0</code>使用参数personId作为搜索关键字，通过_id（使用上述任何方法）查找人物。将“hamburger”添加到她最喜欢的食物列表中（您可以使用Array.push（））。然后 - 在find回调中 -  save（）更新的Person。 
+[*]提示：如果你的Schema中你将favoriteFoods声明为一个数组而没有指定类型（即[String]），这可能会很棘手。在那种情况下，favorsFoods默认为Mixed type，你必须使用document.markModified（'edited-field'）手动将其标记为已编辑。 （http://mongoosejs.com/docs/schematypes.html  -  #Mixed） 
 </section>
 
 ## Instructions
-<section id='instructions'>
-
-使用参数 personId 作为搜索关键字，然后通过 _id 找到一个 person（使用上述任何一种方法）. 将 “hamburger” 添加到她的 favoriteFoods 列中去 (可以使用 <code>Array.push()</code>)。然后在 <code>.find()</code> 的回调里通过 <code>.save()</code> 方法更新。
-
-[*] 提示: 如果你在 Schema 中将 favoriteFoods 声明为一个 Array(数组), 而没有指定数组的类型(如：[String])，结果会让人很意外。 在这种情况下，favoriteFoods 默认为 Mixed 类型。如果想要编辑它，就必须执行 <code>document.markModified（'edited-field'）</code>。(http://mongoosejs.com/docs/schematypes.html - #Mixed)
+<section id='instructions'> 
 
 </section>
 
@@ -26,8 +20,9 @@ localeTitle: 通过运行 find、edit、save 来执行经典更新
 
 ```yml
 tests:
-  - text: 对一个 item（项目）的 Find-edit-update 操作成功
+  - text: 查找 - 编辑 - 更新项目应该成功
     testString: "getUserInput => $.post(getUserInput('url') + '/_api/find-edit-save', {name:'Poldo', age: 40, favoriteFoods:['spaghetti']}).then(data => { assert.equal(data.name, 'Poldo', 'item.name is not what is expected'); assert.equal(data.age, 40, 'item.age is not what expected'); assert.deepEqual(data.favoriteFoods, ['spaghetti', 'hamburger'], 'item.favoriteFoods is not what expected'); assert.equal(data.__v, 1, 'The item should be previously edited'); }, xhr => { throw new Error(xhr.responseText); })"
+
 ```
 
 </section>
@@ -41,11 +36,6 @@ tests:
 <section id='solution'>
 
 ```js
-/**
-  Backend challenges don't need solutions, 
-  because they would need to be tested against a full working project. 
-  Please check our contributing guidelines to learn more.
-*/
+// solution required
 ```
-
 </section>

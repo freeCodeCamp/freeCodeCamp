@@ -2,19 +2,15 @@
 id: 587d824d367417b2b2512c51
 title: Test if an Array Contains an Item
 challengeType: 2
-isHidden: false
-forumTopicId: 301603
-localeTitle: 测试数组是否包含某个项目
+videoUrl: ''
+localeTitle: 测试数组是否包含项目
 ---
 
 ## Description
-<section id='description'>
-注意，本项目在 <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-infosec/'>这个 Glitch 项目</a> 的基础上进行开发。你也可以从 <a href='https://github.com/freeCodeCamp/boilerplate-infosec/'>GitHub</a> 上克隆。
-</section>
+<section id="description">提醒一下，这个项目是基于<a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/">Glitch</a>的以下入门项目构建的，或者是从<a href="https://github.com/freeCodeCamp/boilerplate-mochachai/">GitHub</a>克隆的。 </section>
 
 ## Instructions
-<section id='instructions'>
-使用 <code>assert.include()</code> 或者 <code>assert.notInclude()</code> 来通过所有测试。 
+<section id="instructions">
 </section>
 
 ## Tests
@@ -22,11 +18,11 @@ localeTitle: 测试数组是否包含某个项目
 
 ```yml
 tests:
-  - text: 需通过全部测试
+  - text: 所有测试都应该通过
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=11').then(data => { assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: 请选择正确的断言--include 或 notInclude
+  - text: 选择正确的断言 -  include与notInclude
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=11').then(data => {  assert.equal(data.assertions[0].method, 'notInclude', 'It\'s summer in july...'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: 请选择正确的断言--include 或 notInclude
+  - text: 选择正确的断言 -  include与notInclude
     testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=11').then(data => {  assert.equal(data.assertions[1].method, 'include', 'JavaScript is a backend language !!'); }, xhr => { throw new Error(xhr.responseText); })
 
 ```
@@ -42,11 +38,6 @@ tests:
 <section id='solution'>
 
 ```js
-/**
-  Backend challenges don't need solutions, 
-  because they would need to be tested against a full working project. 
-  Please check our contributing guidelines to learn more.
-*/
+// solution required
 ```
-
 </section>

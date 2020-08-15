@@ -2,40 +2,18 @@
 id: 589fc830f9fc0f352b528e74
 title: Set up the Environment
 challengeType: 2
-isHidden: false
-forumTopicId: 301566
+videoUrl: ''
 localeTitle: 设置环境
 ---
 
 ## Description
-<section id='description'>
-注意，本项目在<a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-socketio/'>这个 Glitch 项目</a>的基础上进行开发，你也可以从 <a href='https://github.com/freeCodeCamp/boilerplate-socialauth/'>GitHub</a> 上克隆。
-现在，我们需要添加 Socket.IO 作为依赖，在你的代码中引入，给它传入参数 http 并实例化，将其命名为<code>io</code>，就像这样：<code>const io = require('socket.io')(http);</code>
-我们需要处理的第一件事是监听从客户端发出的连接事件，我们可以调用 <em>on</em> 方法来监听具体的事件。它接收两个参数：一个是发出的事件的标题字符串，另一个是后续用来传递数据的回调函数。在这个回调函数中，我们用 <em>socket</em> 来代表它所包含的数据。简单来说，socket 就是指已连接到服务器的客户端。
-在我们服务器代码中，只需要在注释间添加以下内容即可：
-
-```js
-io.on('connection', socket => {
-  console.log('A user has connected');
-});
-```
-
-对于发出连接事件的客户端，只需要在 client.js 中添加以下内容：
-
-```js
-/*global io*/
-var socket = io();
-```
-
-注意，这个 client.js 文件是在用户通过验证后加载到客户端的。在这个文件中，我们没有定义 io 变量，但第一行的注释会阻止运行时产生的报错。然后，我们在 chat.pug 的页面上已经为你添加好了 Socket.IO 库的 CDN。
-现在你可以尝试启动你的 app 并登录，你会看到服务器的控制台中打印了 'A user has connected'
-<strong>注意：</strong><br>只有在连接到处于同一个 url/server 上的 socket 时，<code>io()</code>才可以正常执行。如果需要连接到外部的 socket，就需要这样调用：<code>io.connect('URL');</code>。
-完成上述要求后，你就可以在左边提交你的页面链接。
-</section>
+<section id="description">提醒一下，这个项目是基于<a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-socketio/">Glitch</a>的以下入门项目构建的，或者是从<a href="https://github.com/freeCodeCamp/boilerplate-socketio/">GitHub</a>克隆的。将Socket.IO添加为依赖项，并在服务器中要求/实例化它，定义为&#39;io&#39;，并将http服务器作为参数。 <code>const io = require(&#39;socket.io&#39;)(http);</code>需要处理的第一件事是从客户端侦听新连接。 <dfn>on</dfn>关键字就是这样 - 监听特定事件。它需要2个参数：一个包含所发出事件标题的字符串，以及一个用于传递数据的函数。在我们的连接侦听器的情况下，我们使用<em>socket</em>来定义第二个参数中的数据。套接字是连接的个人客户端。要在我们的服务器上侦听连接，请在项目中的注释之间添加以下内容： <pre> io.on（&#39;connection&#39;，socket =&gt; {
+  console.log（&#39;用户已连接&#39;）;
+}）; </pre>现在，对于客户端进行连接，您只需要将以下内容添加到client.js中，该客户端经过身份验证后由页面加载： <pre> / * global io * /
+var socket = io（）; </pre>注释会抑制您通常会看到的错误，因为文件中未定义“io”。我们已经在chat.pug页面上的Socket.IO库中添加了一个可靠的CDN。现在尝试加载您的应用并进行身份验证，您应该在服务器控制台中看到“用户已连接”！ <strong>注意</strong> <br> <code>io()</code>仅在连接到同一URL /服务器上托管的套接字时起作用。要连接到其他地方托管的外部套接字，您可以使用<code>io.connect(&#39;URL&#39;);</code> 。当您认为自己已经做对时，请提交您的页面。 </section>
 
 ## Instructions
-<section id='instructions'>
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -43,13 +21,13 @@ var socket = io();
 
 ```yml
 tests:
-  - text: 应添加 Socket.IO 作为依赖。
+  - text: Socket.IO是一个依赖项
     testString: getUserInput => $.get(getUserInput('url')+ '/_api/package.json') .then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, 'socket.io', 'Your project should list "socket.io" as a dependency'); }, xhr => { throw new Error(xhr.statusText); })
-  - text: Socket.IO 应正确地引入和实例化。
+  - text: Socket.IO已得到适当的要求和实例化
     testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js').then(data => {assert.match(data, /io.*=.*require.*('|")socket.io('|").*http/gi, 'You should correctly require and instantiate socket.io as io.');}, xhr => { throw new Error(xhr.statusText); })
-  - text: Socket.IO 应监听连接。
+  - text: Socket.IO应该正在监听连接
     testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /io.on.*('|")connection('|").*socket/gi, 'io should listen for "connection" and socket should be the 2nd arguments variable'); }, xhr => { throw new Error(xhr.statusText); })
-  - text: 客户端应连接到服务器。
+  - text: 您的客户端应该连接到您的服务器
     testString: getUserInput => $.get(getUserInput('url')+ '/public/client.js') .then(data => { assert.match(data, /socket.*=.*io/gi, 'Your client should be connection to server with the connection defined as socket'); }, xhr => { throw new Error(xhr.statusText); })
 
 ```
@@ -65,11 +43,6 @@ tests:
 <section id='solution'>
 
 ```js
-/**
-  Backend challenges don't need solutions, 
-  because they would need to be tested against a full working project. 
-  Please check our contributing guidelines to learn more.
-*/
+// solution required
 ```
-
 </section>
