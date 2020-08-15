@@ -44,7 +44,7 @@ class AcceptPrivacyTerms extends Component {
   }
 
   onClick(isWeeklyEmailAccepted) {
-    return this.props.acceptTerms(isWeeklyEmailAccepted);
+    this.props.acceptTerms(isWeeklyEmailAccepted);
   }
 
   render() {
