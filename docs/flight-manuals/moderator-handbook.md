@@ -96,11 +96,13 @@ freeCodeCamp is an active open source project. We get new issues every day, all 
    >
    > This is a standard message notifying you that this issue seems to be a request for help. Instead of asking for help here, please click the \*\*"Help"\*\* button on the challenge on freeCodeCamp, which will help you create a question in the right part of the forum. Volunteers on the forum usually respond to questions within a few hours and can help determine if there is an issue with your code or the challenge's tests.
    >
-   > If you think I'm wrong in closing this issue, please reopen it and add further clarification. Thank you and happy coding.
+If the forum members determine there is nothing wrong with your code, you can request this issue to be reopened. 
+
+Thank you and happy coding.
 
 2. **Bug or Clarification issues** Try to reproduce the bug yourself if you can. If not, ask them for the steps to reproduce the bug, and whether they have any screenshots, videos, or additional details that can help you reproduce the issue. Once you can reproduce the issue - or at least confirm it's a legit issue - label it `confirmed`. Then:
 
-- If it's a simple change to an existing challenge, flag as `help wanted` and, optionally, as `first-timers-only`. Use other tags as appropriate.
+- If it's a simple change to an existing challenge, label as `first timers only`, otherwise label as `help wanted`. Use other labels as appropriate.
 - If the issue is more significant, flag as `bug`.
   &nbsp;
   If there is any ambiguity as to the proper course of action on an issue, feel free to tag @raisedadead on the issue get his opinion on it, then add the `Discussing` label.
@@ -113,7 +115,7 @@ freeCodeCamp is an active open source project. We get new issues every day, all 
    >
    > If you think I'm wrong in closing this issue, please reopen it and add further clarification. Thank you and happy coding.
 
-4. **Fixed in staging** Some problems may have already been fixed in staging, but don't have an GitHub issue associated with them. If this is the case, you can paste the following message, then close the issue:
+4. **Fixed in staging** Some problems may have already been fixed in staging, but don't have an GitHub issue associated with them. If this is the case, you can paste the following message, close the issue, and add a `status: resolved/shipping` label:
    > Thank you for reporting this issue.
    >
    > This is a standard message notifying you that the problem you mentioned here is present in production, but that it has already been fixed in staging. This means that the next time we push our staging branch to production, this problem should be fixed. Because of this, I'm closing this issue.
@@ -122,11 +124,11 @@ freeCodeCamp is an active open source project. We get new issues every day, all 
 
 ### Closing Stale, Outdated, Inactive Issues and Pull Requests
 
-- Merge-conflicts and Stale PRs that have not seen any activity from anyone for 21 days (3 weeks from the last activity), we can close them in an automated/bot script or the moderators themselves.
+- Stale Issues or PRs are those that have not seen any activity from the OP for 21 days (3 weeks from the last activity), but only after a moderator has requested more information/changes.  These can be closed in an automated/bot script or by the moderators themselves.
 
 - Activity is defined as: Comments requesting an update on the PR and triages like `status: update needed` label etc.
 
-- If the OP ask for additional assistance or even time, the above can be relaxed and revisited after a response is given. In any case the mods should use their best judgement to resolve the outstanding PR's status.
+- If the OP asks for additional assistance or even time, the above can be relaxed and revisited after a response is given. In any case the mods should use their best judgement to resolve the outstanding PR's status.
 
 ### Other guidelines for Moderators on GitHub
 
@@ -156,13 +158,13 @@ Forum moderators have the ability to delete user's posts. You should only do thi
 
 ### Dealing with spam
 
-For the first spam post of a user, send them a message explaining the problem, and remove the link or post as appropriate. Leave a note on the user's profile explaining the action you have taken. If the problem persists, then follow the process above. Quietly block user from posting, then send warning with Code of Conduct. Check the box in the private message indicating that your message is a "formal warning."
+For the first spam post of a user, send them a message explaining the problem, and remove the link or post as appropriate. Leave a note on the user's profile explaining the action you have taken. If the problem persists, then follow the process above. Quietly block the user from posting (using the silence option on the User Admin panel), then send a warning with the Code of Conduct. Check the box in the private message indicating that your message is a "formal warning."
 
 You can ask questions and report incidents in the in the [staff forum section](https://forum.freecodecamp.com/c/staff).
 
 ### Dealing with off-topic conversations
 
-Posts or topics that seems to be in the wrong place, can be re-categorized or renamed to whatever would be appropriate.
+Posts or topics that seems to be in the wrong place can be re-categorized or renamed to whatever would be appropriate.
 
 In exceptional circumstances, it may be appropriate for a moderator to fork a discussion into multiple threads.
 
@@ -243,14 +245,14 @@ Discord Bans are global - you cannot ban a user from a specific channel, only fr
 - Someone has flooded the chat with lots of spam messages to such an extreme extent (usually involving bots) as to render chat completely unusable.
 - Someone has posted advertisement and / or a self-promoting message / image (social media).
 
-In all other situations - even situations where the code of conduct is violated - Moderators should not delete the message as these are an important historic record. When you do delete a message, make sure you _always_ make a screenshot of it first! The screenshot can be logged in the #mod-log channel, but for the #admin log it is sufficient to say the evidence was "removed due to sensitive content".
+In all other situations - even situations where the code of conduct is violated - Moderators should not delete the message as these are an important historic record. When you do delete a message, make sure you take a screenshot of it first! The screenshot can be logged in the #mod-log channel, but for the #activity-log it is sufficient to say the evidence was "removed due to sensitive content". Note: If the message contains material that would be illegal to take a screenshot of, copy the message link instead - provide that message link to @raisedadead to forward to Discord's Trust and Safety team.
 
 5. **Don’t use @everyone or @here**
    Don’t use @everyone or @here under any circumstances! Every single person in that chat room will get a notification. In some cases, tens of thousands of people.
    Instead, if you want people to see an announcement, you can pin it to the channel to allow everyone to read it.
 
 6. **Don’t threaten to ban or suspend**
-   If a camper is breaking the code of conduct, don’t threaten to ban or suspend them, and never warn them in public. Instead, talk to them privately, or send them a DM and issue a suspension (per the above protocol). No one else in that channel needs to know that you banned / suspended the person - campers can view the summary in the #admin channel if they want to keep up on that information. If a violation was clearly unintended and doesn't warrant a suspension or private conversation, make the offending camper aware of his / her actions without making it come across as a warning. For example:
+   If a camper is breaking the code of conduct, don’t threaten to ban or suspend them, and never warn them in public. Instead, talk to them privately, or send them a DM and issue a suspension (per the above protocol). No one else in that channel needs to know that you banned / suspended the person - campers can view the summary in the #activity-log channel if they want to keep up on that information. If a violation was clearly unintended and doesn't warrant a suspension or private conversation, make the offending camper aware of his / her actions without making it come across as a warning. For example:
 
 - Camper posts a wall of code to request help
 
@@ -302,7 +304,7 @@ Our assumption is that contributors will read anything in this room that directl
 
 # Dealing with solicitors
 
-You may be approached by organizations who want to partner or co-brand with freeCodeCamp in some way. Once you realize that this is what they're after, please stop talking to them and tell them to email quincy@freecodecamp.org. He get proposals like this all the time and is in the best position to judge whether such a relationship will be worth it for our community (and it rarely is).
+You may be approached by organizations who want to partner or co-brand with freeCodeCamp in some way. Once you realize that this is what they're after, please stop talking to them and tell them to email quincy@freecodecamp.org. He gets proposals like this all the time and is in the best position to judge whether such a relationship will be worth it for our community (and it rarely is).
 
 # A note on free speech
 
