@@ -64,7 +64,7 @@ If the pull request looks ready to merge (and doesn't require approval from @rai
 
 You should then comment on the pull request, thanking the contributor in your own personal way.
 
-If the author of the pull request is a "first time contributor" you should also congratulate them on their first merged pull request to the repository. Here's how you can tell that:
+If the author of the pull request is a "first time contributor" you should also congratulate them on their first merged pull request to the repository. You can look at the upper right-hand corner of the PR's body to determine a first-time contributor.  It will show `First-time contributor` as shown below:
 
 ![Copy_edits_for_Java_arrays_article_by_karentobo_%C2%B7_Pull_Request__20615_%C2%B7_freeCodeCamp_freeCodeCamp|690x281](https://i.imgur.com/dTQMjGM.png)
 
