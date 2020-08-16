@@ -94,7 +94,7 @@ freeCodeCamp is an active open source project. We get new issues every day, all 
 
    > Thank you for reporting this issue.
    >
-   > This is a standard message notifying you that this issue seems to be a request for help. Instead of asking for help here, please click the \*\*"Help"\*\* button on the challenge on freeCodeCamp, which will help you create a question in the right part of the forum. Volunteers on the forum usually respond to questions within a few hours.
+   > This is a standard message notifying you that this issue seems to be a request for help. Instead of asking for help here, please click the \*\*"Help"\*\* button on the challenge on freeCodeCamp, which will help you create a question in the right part of the forum. Volunteers on the forum usually respond to questions within a few hours and can help determine if there is an issue with your code or the challenge's tests.
    >
    > If you think I'm wrong in closing this issue, please reopen it and add further clarification. Thank you and happy coding.
 
