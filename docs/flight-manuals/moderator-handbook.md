@@ -115,7 +115,7 @@ freeCodeCamp is an active open source project. We get new issues every day, all 
    >
    > If you think I'm wrong in closing this issue, please reopen it and add further clarification. Thank you and happy coding.
 
-4. **Fixed in staging** Some problems may have already been fixed in staging, but don't have an GitHub issue associated with them. If this is the case, you can paste the following message, close the issue, and add a `status: resolved/shipping` label:
+4. **Fixed in staging** Some problems may have already been fixed in staging, but don't have a GitHub issue associated with them. If this is the case, you can paste the following message, close the issue, and add a `status: resolved/shipping` label:
    > Thank you for reporting this issue.
    >
    > This is a standard message notifying you that the problem you mentioned here is present in production, but that it has already been fixed in staging. This means that the next time we push our staging branch to production, this problem should be fixed. Because of this, I'm closing this issue.
