@@ -96,10 +96,10 @@ freeCodeCamp is an active open source project. We get new issues every day, all 
    >
    > This is a standard message notifying you that this issue seems to be a request for help. Instead of asking for help here, please click the \*\*"Help"\*\* button on the challenge on freeCodeCamp, which will help you create a question in the right part of the forum. Volunteers on the forum usually respond to questions within a few hours and can help determine if there is an issue with your code or the challenge's tests.
    >
-If the forum members determine there is nothing wrong with your code, you can request this issue to be reopened. 
-
-Thank you and happy coding.
-
+   > If the forum members determine there is nothing wrong with your code, you can request this issue to be reopened. 
+   > 
+   > Thank you and happy coding.
+   
 2. **Bug or Clarification issues** Try to reproduce the bug yourself if you can. If not, ask them for the steps to reproduce the bug, and whether they have any screenshots, videos, or additional details that can help you reproduce the issue. Once you can reproduce the issue - or at least confirm it's a legit issue - label it `confirmed`. Then:
 
 - If it's a simple change to an existing challenge, label as `first timers only`, otherwise label as `help wanted`. Use other labels as appropriate.
