@@ -24,6 +24,7 @@ const {
 const { assert, AssertionError } = require('chai');
 const Mocha = require('mocha');
 const { flatten, isEmpty, cloneDeep } = require('lodash');
+const { getLines } = require('../../utils/get-lines');
 
 const jsdom = require('jsdom');
 
@@ -363,7 +364,12 @@ function populateTestsForLang({ lang, challenges, meta }) {
           let { solutions = [] } = challenge;
 
           // if there's an empty string as solution, this is likely a mistake
-          // TODO: what does this look like now?
+          // TODO: what does this look like now? (this being detection of empty
+          // lines in solutions - rather than entirely missing solutions)
+
+          // We need to track where the solution came from to give better
+          // feedback if the solution is failing.
+          let solutionFromNext = false;
 
           if (isEmpty(solutions)) {
             // if there are no solutions in the challenge, it's assumed the next
@@ -371,9 +377,19 @@ function populateTestsForLang({ lang, challenges, meta }) {
             // This is expected to happen in the project based curriculum.
 
             const nextChallenge = challenges[id + 1];
-            // TODO: check this actually works...
+            // TODO: can this be dried out, ideally by removing the redux
+            // handler?
             if (nextChallenge) {
-              solutions = [nextChallenge.files];
+              const solutionFiles = cloneDeep(nextChallenge.files);
+              Object.keys(solutionFiles).forEach(key => {
+                const file = solutionFiles[key];
+                file.editableContents = getLines(
+                  file.contents,
+                  challenge.files[key].editableRegionBoundaries
+                );
+              });
+              solutions = [solutionFiles];
+              solutionFromNext = true;
             } else {
               throw Error('solution omitted');
             }
@@ -390,8 +406,6 @@ function populateTestsForLang({ lang, challenges, meta }) {
             );
           });
 
-          // console.log('filteredSolutions', filteredSolutions);
-
           if (isEmpty(filteredSolutions)) {
             it('Check tests. No solutions');
             return;
@@ -404,7 +418,8 @@ function populateTestsForLang({ lang, challenges, meta }) {
                 const testRunner = await createTestRunner(
                   challenge,
                   solution,
-                  buildChallenge
+                  buildChallenge,
+                  solutionFromNext
                 );
                 for (const test of tests) {
                   await testRunner(test);
@@ -418,13 +433,19 @@ function populateTestsForLang({ lang, challenges, meta }) {
   });
 }
 
-async function createTestRunner(challenge, solution, buildChallenge) {
+async function createTestRunner(
+  challenge,
+  solution,
+  buildChallenge,
+  solutionFromNext
+) {
   const { required = [], template } = challenge;
   // we should avoid modifying challenge, as it gets reused:
   const files = cloneDeep(challenge.files);
 
   Object.keys(solution).forEach(key => {
     files[key].contents = solution[key].contents;
+    files[key].editableContents = solution[key].editableContents;
   });
 
   const { build, sources, loadEnzyme } = await buildChallenge({
@@ -448,7 +469,11 @@ async function createTestRunner(challenge, solution, buildChallenge) {
         throw new AssertionError(err.message);
       }
     } catch (err) {
-      reThrow(err, text);
+      text = 'Test text: ' + text;
+      const message = solutionFromNext
+        ? 'Check next step for solution!\n' + text
+        : text;
+      reThrow(err, message);
     }
   };
 }
@@ -493,14 +518,11 @@ async function initializeTestRunner(build, sources, code, loadEnzyme) {
 }
 
 function reThrow(err, text) {
-  if (typeof err === 'string') {
-    throw new AssertionError(
-      `${text}
-         ${err}`
-    );
+  const newMessage = `${text}
+  ${err.message}`;
+  if (err.name === 'AssertionError') {
+    throw new AssertionError(newMessage);
   } else {
-    err.message = `${text}
-       ${err.message}`;
-    throw err;
+    throw Error(newMessage);
   }
 }
