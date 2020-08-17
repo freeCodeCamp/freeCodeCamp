@@ -75,4 +75,5 @@ checkCashRegister(19.5, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], [
 ```js
 // solution required
 ```
-</section>
+
+/section>

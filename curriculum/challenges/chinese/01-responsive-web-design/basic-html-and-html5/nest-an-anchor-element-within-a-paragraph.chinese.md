@@ -22,7 +22,7 @@ localeTitle: 将 a 嵌套在段落中
 通常，文本是被包裹在<code>p</code>段落内：<br><code>&#60;p&#62; Here's a ... for you to follow. &#60;/p&#62;</code>
 接下来是<code>anchor</code> <code>a</code> <code>&#60;a&#62;</code>（需要结束标记 <code>&#60;/a&#62;</code>）:<br> <code>&#60;a&#62; ... &#60;/a&#62;</code>
 <code>target</code>是 <code>a</code> 的一个属性，用来指定链接的打开方式。属性值 <code>"_blank"</code> 的意思是链接会在新标签页打开。
-<code>href</code>是 <code>a</code> 的另一个属性：用来指定链接的 URL：<br><code>&#60;a href="https://freecodecamp.org"> ... &#60;/a&#62;</code>
+<code>href</code>是 <code>a</code> 的另一个属性：用来指定链接的 URL：<br>`<a href="https://freecodecamp.org"> ... </a>`
  <code>a</code> 元素内的文本：<strong>"link to freecodecamp.org"</strong>，会显示为一个可以点击的链接：<br>  <code>&#60;a href=" ... "&#62;link to freecodecamp.org&#60;/a&#62;</code>
 例子的最后输出将会是这样：<br><p>Here's a <a target="_blank" href="http://freecodecamp.one"> link to freecodecamp.org</a> for you to follow.</p>
 </section>

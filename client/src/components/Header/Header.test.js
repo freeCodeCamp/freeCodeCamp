@@ -5,6 +5,8 @@ import TestRenderer from 'react-test-renderer';
 import { UniversalNav } from './components/UniversalNav';
 import NavLinks from './components/NavLinks';
 
+import { forumLocation } from '../../../config/env.json';
+
 describe('<UniversalNav />', () => {
   it('renders to the DOM', () => {
     const shallow = new ShallowRenderer();
@@ -23,7 +25,7 @@ describe('<NavLinks />', () => {
     return acc;
   }, []);
 
-  const expectedLinks = ['/learn', '/news', 'https://forum.freecodecamp.org'];
+  const expectedLinks = ['/learn', '/news', forumLocation];
 
   it('renders to the DOM', () => {
     expect(root).toBeTruthy();

@@ -21,6 +21,7 @@ romanNumerals.unshift('XIX', 'XX');
 romanNumerals.push(twentyThree);
 // 数组现在为 ['XIX', 'XX', 'XXI', 'XXII', 'XXIII']
 ```
+
 注意，我们还可以输入变量，这允许我们很灵活地动态改变我们数组中的数据。
 </section>
 

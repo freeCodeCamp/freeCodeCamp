@@ -60,4 +60,5 @@ myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
 ```js
 // solution required
 ```
-</section>
+
+/section>

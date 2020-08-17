@@ -55,4 +55,5 @@ orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]);
 ```js
 // solution required
 ```
-</section>
+
+/section>

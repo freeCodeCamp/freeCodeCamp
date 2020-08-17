@@ -62,4 +62,5 @@ findLongestWordLength("The quick brown fox jumped over the lazy dog");
 ```js
 // solution required
 ```
-</section>
+
+/section>

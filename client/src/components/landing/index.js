@@ -4,7 +4,7 @@ import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
-import { uniq } from 'lodash';
+import { uniq, partition } from 'lodash';
 import { Spacer } from '../helpers';
 import Login from '../Header/components/Login';
 import CompanyLogos from './components/CompanyLogos';
@@ -39,8 +39,11 @@ const AsFeaturedSection = () => (
 );
 
 export const Landing = ({ nodes }) => {
-  const superBlocks = uniq(nodes.map(node => node.superBlock));
-  const interviewPrep = superBlocks.splice(-1);
+  const [superBlocks, rest] = partition(
+    uniq(nodes.map(node => node.superBlock)),
+    name => name !== 'Coding Interview Prep'
+  );
+  const interviewPrep = rest[0];
   return (
     <Fragment>
       <Helmet>

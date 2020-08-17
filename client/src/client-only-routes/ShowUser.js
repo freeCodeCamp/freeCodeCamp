@@ -16,7 +16,6 @@ import Helmet from 'react-helmet';
 import Login from '../components/Header/components/Login';
 
 import {
-  hardGoTo as navigate,
   isSignedInSelector,
   userFetchStateSelector,
   userSelector,
@@ -29,7 +28,6 @@ import './showuser.css';
 const propTypes = {
   email: PropTypes.string,
   isSignedIn: PropTypes.bool,
-  navigate: PropTypes.func.isRequired,
   reportUser: PropTypes.func.isRequired,
   userFetchState: PropTypes.shape({
     pending: PropTypes.bool,
@@ -51,7 +49,6 @@ const mapStateToProps = createSelector(
 );
 
 const mapDispatchToProps = {
-  navigate,
   reportUser
 };
 

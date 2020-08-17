@@ -59,4 +59,5 @@ bouncer([7, "ate", "", false, 9]);
 ```js
 // solution required
 ```
-</section>
+
+/section>
