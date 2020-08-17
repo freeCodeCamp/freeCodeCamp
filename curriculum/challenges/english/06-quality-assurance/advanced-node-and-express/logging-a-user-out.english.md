@@ -8,8 +8,11 @@ forumTopicId: 301560
 
 ## Description
 <section id='description'>
+
 As a reminder, this project is being built upon the following starter project on <a href='https://repl.it/github/freeCodeCamp/boilerplate-advancednode'>Repl.it</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a>.
+
 Creating the logout logic is easy. The route should just unauthenticate the user and redirect to the home page instead of rendering any view.
+
 In passport, unauthenticating a user is as easy as just calling <code>req.logout();</code> before redirecting.
 
 ```js
@@ -31,6 +34,7 @@ app.use((req, res, next) => {
 ```
 
 Submit your page when you think you've got it right.
+
 </section>
 
 ## Instructions

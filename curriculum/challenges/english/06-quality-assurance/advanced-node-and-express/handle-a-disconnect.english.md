@@ -9,11 +9,11 @@ forumTopicId: 301552
 ## Description
 
 <section id='description'>
+
 As a reminder, this project is being built upon the following starter project on <a href='https://repl.it/github/freeCodeCamp/boilerplate-advancednode'>Repl.it</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a>.
 
 You may notice that up to now you have only been increasing the user count. Handling a user disconnecting is just as easy as handling the initial connect except the difference is you have to listen for it on each socket versus on the whole server.
 
-<hr>
 To do this, add another listener inside the existing <code>'connect'</code> listener that listens for <code>'disconnect'</code> on the socket with no data passed through. You can test this functionality by just logging that a user has disconnected to the console.
 
 ```js
@@ -25,6 +25,7 @@ socket.on('disconnect', () => {
 To make sure clients continuously have the updated count of current users, you should decrease the currentUsers by 1 when the disconnect happens then emit the 'user count' event with the updated count!
 
 <strong>Note:</strong> Just like <code>'disconnect'</code>, all other events that a socket can emit to the server should be handled within the connecting listener where we have 'socket' defined.
+
 Submit your page when you think you've got it right.
 
 </section>

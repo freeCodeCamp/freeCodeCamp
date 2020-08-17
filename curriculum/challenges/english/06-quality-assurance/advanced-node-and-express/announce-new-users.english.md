@@ -9,11 +9,10 @@ forumTopicId: 301546
 ## Description
 
 <section id='description'>
+
 As a reminder, this project is being built upon the following starter project on <a href='https://repl.it/github/freeCodeCamp/boilerplate-advancednode'>Repl.it</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a>.
 
 Many chat rooms are able to announce when a user connects or disconnects and then display that to all of the connected users in the chat. Seeing as though you already are emitting an event on connect and disconnect, you will just have to modify this event to support such feature. The most logical way of doing so is sending 3 pieces of data with the event: name of the user connected/disconnected, the current user count, and if that name connected or disconnected.
-
-<hr>
 
 Change the event name to <code>'user'</code>, and pass an object along containing fields 'name', 'currentUsers', and 'connected' (to be <code>true</code> if connection, or <code>false</code> for disconnection of the user sent). Be sure to change both 'user count' events and set the disconnect one to send <code>false</code> for field 'connected' instead of <code>true</code> like the event emitted on connect.
 
@@ -26,6 +25,7 @@ io.emit('user', {
 ```
 
 Now your client will have all the necessary information to correctly display the current user count and announce when a user connects or disconnects! To handle this event on the client side we should listen for <code>'user'</code>, then update the current user count by using jQuery to change the text of <code>#num-users</code> to <code>'{NUMBER} users online'</code>, as well as append a <code>&#60;li&#62;</code> to the unordered list with id <code>messages</code> with <code>'{NAME} has {joined/left} the chat.'</code>.
+
 An implementation of this could look like the following:
 
 ```js

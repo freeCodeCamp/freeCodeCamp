@@ -9,6 +9,7 @@ forumTopicId: 301566
 ## Description
 
 <section id='description'>
+
 The following challenges will make use of the <code>chat.pug</code> file. So, in your <code>routes.js</code> file, add a GET route pointing to <code>/chat</code> which makes use of <code>ensureAuthenticated</code>, and renders <code>chat.pug</code>, with <code>{ user: req.user }</code> passed as an argument to the response. Now, alter your existing <code>/auth/github/callback</code> route to set the <code>req.session.user_id = req.user.id</code>, and redirect to <code>/chat</code>.
 
 Add <code>html</code> and <code>socket.io</code> as a dependency and require/instantiate them in your server defined as follows:
@@ -38,9 +39,11 @@ let socket = io();
 ```
 
 The comment suppresses the error you would normally see since 'io' is not defined in the file. We've already added a reliable CDN to the Socket.IO library on the page in chat.pug.
+
 Now try loading up your app and authenticate and you should see in your server console 'A user has connected'!
 
 <strong>Note:</strong><code>io()</code> works only when connecting to a socket hosted on the same url/server. For connecting to an external socket hosted elsewhere, you would use <code>io.connect('URL');</code>.
+
 Submit your page when you think you've got it right.
 
 </section>

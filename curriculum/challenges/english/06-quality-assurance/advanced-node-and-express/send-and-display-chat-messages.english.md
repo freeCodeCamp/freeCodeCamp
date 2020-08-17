@@ -9,6 +9,7 @@ forumTopicId: 301562
 ## Description
 
 <section id='description'>
+
 As a reminder, this project is being built upon the following starter project on <a href='https://repl.it/github/freeCodeCamp/boilerplate-advancednode'>Repl.it</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a>.
 
 It's time you start allowing clients to send a chat message to the server to emit to all the clients! Already in your client.js file you should see there is already a block of code handling when the message form is submitted.
@@ -18,8 +19,6 @@ $('form').submit(function() {
   /*logic*/
 });
 ```
-
-<hr>
 
 Within the form submit code, you should emit an event after you define <code>messageToSend</code> but before you clear the text box <code>#m</code>. The event should be named <code>'chat message'</code> and the data should just be <code>messageToSend</code>.
 

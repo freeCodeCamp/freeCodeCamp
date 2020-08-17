@@ -9,13 +9,12 @@ forumTopicId: 301548
 ## Description
 
 <section id='description'>
+
 As a reminder, this project is being built upon the following starter project on <a href='https://repl.it/github/freeCodeCamp/boilerplate-advancednode'>Repl.it</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a>.
 
 Currently, you cannot determine who is connected to your web socket. While <code>req.user</code> contains the user object, that's only when your user interacts with the web server and with web sockets you have no <code>req</code> (request) and therefore no user data. One way to solve the problem of knowing who is connected to your web socket is by parsing and decoding the cookie that contains the passport session then deserializing it to obtain the user object. Luckily, there is a package on NPM just for this that turns a once complex task into something simple!
 
-<hr>
-
-Add <code>passport.socketio</code>, <code>connect-mongo</code>, and <code>cookie-parser</code> as dependencies and require them as <code>passportSocketIo</code>, <code>MongoStore</code>, and <code>cookieParser</code> respectfully. Also, we need to initialise a new memory store, from <code>express-session</code> which we previously required. It should look as follows:
+Add <code>passport.socketio</code>, <code>connect-mongo</code>, and <code>cookie-parser</code> as dependencies and require them as <code>passportSocketIo</code>, <code>MongoStore</code>, and <code>cookieParser</code> respectfully. Also, we need to initialize a new memory store, from <code>express-session</code> which we previously required. It should look as follows:
 
 ```js
 const MongoStore = require('connect-mongo')(session);
@@ -65,6 +64,7 @@ console.log('user ' + socket.request.user.name + ' connected');
 ```
 
 It will log to the server console who has connected!
+
 Submit your page when you think you've got it right. If you're running into errors, you can check out the project up to this point <a href='https://gist.github.com/JosephLivengood/a9e69ff91337500d5171e29324e1ff35'>here</a>.
 
 </section>

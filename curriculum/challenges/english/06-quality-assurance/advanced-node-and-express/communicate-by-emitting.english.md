@@ -9,11 +9,10 @@ forumTopicId: 301550
 ## Description
 
 <section id='description'>
+
 As a reminder, this project is being built upon the following starter project on <a href='https://repl.it/github/freeCodeCamp/boilerplate-advancednode'>Repl.it</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a>.
 
 <dfn>Emit</dfn> is the most common way of communicating you will use. When you emit something from the server to 'io', you send an event's name and data to all the connected sockets. A good example of this concept would be emitting the current count of connected users each time a new user connects!
-
-<hr>
 
 Start by adding a variable to keep track of the users, just before where you are currently listening for connections.
 
@@ -33,8 +32,6 @@ Finally, after incrementing the count, you should emit the event (still within t
 io.emit('user count', currentUsers);
 ```
 
-<hr>
-
 Now, you can implement a way for your client to listen for this event! Similarly to listening for a connection on the server, you will use the <em>on</em> keyword.
 
 ```js
@@ -44,6 +41,7 @@ socket.on('user count', function(data) {
 ```
 
 Now, try loading up your app, authenticate, and you should see in your client console '1' representing the current user count! Try loading more clients up, and authenticating to see the number go up.
+
 Submit your page when you think you've got it right.
 
 </section>
