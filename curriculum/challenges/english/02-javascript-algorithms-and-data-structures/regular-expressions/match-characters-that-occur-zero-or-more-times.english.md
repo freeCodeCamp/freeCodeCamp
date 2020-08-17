@@ -2,6 +2,7 @@
 id: 587d7db6367417b2b2512b9a
 title: Match Characters that Occur Zero or More Times
 challengeType: 1
+isHidden: false
 forumTopicId: 301351
 ---
 

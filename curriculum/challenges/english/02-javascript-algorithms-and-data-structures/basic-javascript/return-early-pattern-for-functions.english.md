@@ -2,6 +2,7 @@
 id: 56533eb9ac21ba0edf2244c4
 title: Return Early Pattern for Functions
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cQe39Sq'
 forumTopicId: 18272
 ---
@@ -26,7 +27,7 @@ The above outputs "Hello" to the console, returns "World", but <code>"byebye"</c
 ## Instructions
 <section id='instructions'>
 Modify the function <code>abTest</code> so that if <code>a</code> or <code>b</code> are less than <code>0</code> the function will immediately exit with a value of <code>undefined</code>.
-<strong>Hint</strong><br>Remember that <a href='http://www.freecodecamp.org/challenges/understanding-uninitialized-variables' target='_blank'><code>undefined</code> is a keyword</a>, not a string.
+<strong>Hint</strong><br>Remember that <a href='https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-uninitialized-variables' target='_blank'><code>undefined</code> is a keyword</a>, not a string.
 </section>
 
 ## Tests
@@ -46,7 +47,9 @@ tests:
     testString: assert(abTest(2,8) === 18 );
   - text: <code>abTest(3,3)</code> should return <code>12</code>
     testString: assert(abTest(3,3) === 12 );
-
+  - text: <code>abTest(0,0)</code> should return <code>0</code>
+    testString: assert(abTest(0,0) === 0);
+    
 ```
 
 </section>

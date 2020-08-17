@@ -262,5 +262,4 @@ class AppWrapper extends React.Component {
   }
 };
 ```
-
 </section>

@@ -3,6 +3,7 @@ id: a103376db3ba46b2d50db289
 title: Spinal Tap Case
 isRequired: true
 challengeType: 5
+isHidden: false
 forumTopicId: 16078
 ---
 

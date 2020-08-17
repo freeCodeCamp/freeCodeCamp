@@ -232,5 +232,4 @@ class AppWrapper extends React.Component {
   // change code above this line
 };
 ```
-
 </section>

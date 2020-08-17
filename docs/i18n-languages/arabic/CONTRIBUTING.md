@@ -19,7 +19,7 @@
 
 1. [تطوع لهذا الcodebase](#تطوع-لهذا-الcodebase). ساعد في إعداد [مقالات الدليل](https://guide.freecodecamp.org/), [تحديات الcoding](https://learn.freecodecamp.org/), أو تشخيص المشاكل في برنامج التعليم.
 
-2. ساعد المخيمين (المستخدمين) على [المنتدى العام](https://www.freecodecamp.org/forum/). [أجب عن أسئلتهم](https://www.freecodecamp.org/forum/?max_posts=1) او [أعطهم رأيك على مشاريعهم](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1)
+2. ساعد المخيمين (المستخدمين) على [المنتدى العام](https://forum.freecodecamp.org/). [أجب عن أسئلتهم](https://forum.freecodecamp.org/?max_posts=1) او [أعطهم رأيك على مشاريعهم](https://forum.freecodecamp.org/c/project-feedback?max_posts=1)
 
 3. ساعد في إضافة ترجمة إلى مقاطع الفيديو على [قناتنا على الYouTube](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ/videos)
 
@@ -101,7 +101,7 @@
 
 إذا كنت متيقنا أنها مشكلة جديدة, قم بإنشاء issue جديدة على GitHub. كن متأكدا انها تتضمن أكثر معلومات ممكنة حتى نتمكن من تجريب المشكلة لدينا. لدينا قالب مخصص ليساعدك في ذلك.
 
-ننوه إلى أن اي issue مفتوحة لأجل طلب المساعدة في تحدي برمجة سوف يتم إقفالها. ذلك لأن استخدام ال issues محصور في مشاكل و مناقشات الcodebase. قم [بطلب المساعدة على المنتدى](https://www.freecodecamp.org/forum) قبل التبليغ عن المشكلة إن كنت تشعر بالأرتياب.
+ننوه إلى أن اي issue مفتوحة لأجل طلب المساعدة في تحدي برمجة سوف يتم إقفالها. ذلك لأن استخدام ال issues محصور في مشاكل و مناقشات الcodebase. قم [بطلب المساعدة على المنتدى](https://forum.freecodecamp.org) قبل التبليغ عن المشكلة إن كنت تشعر بالأرتياب.
 
 **كيف يمكنني أن أبلغ عن مشكلة أمنية؟**
 
@@ -111,7 +111,7 @@
 
 يمكنك الأتسفسار عن أسئلتك عن طريق:
 
-- [فئة "Contributors" في المنتدى العام](https://www.freecodecamp.org/forum/c/contributors)
+- [فئة "Contributors" في المنتدى العام](https://forum.freecodecamp.org/c/contributors)
 - [المتطوعين على غرفة الدردشة في Gitter](https://gitter.im/FreeCodeCamp/Contributors)
 
 نحن متشوقين لمساعدتك في التطوع لأي من المواضيع التي تريد العمل عليها. كن متأكدا أن تقوم بالبحث على سؤالك قبل طرحه. كن مؤدبا و أنتظر الأجابة. إن المتطوعين و المسؤولين لدينا دائما موجودون لمسعادتك في أية مشكلة لديك.
@@ -124,7 +124,7 @@
 
 إن المسؤولين لدينا يقومون [بتنظيم](https://en.wikipedia.org/wiki/Software_bug#Bug_management) الissues و الPull Requests بحسب الأولوية و الخطورة و عوامل أخرى. يمكنك أن تجد [قاموس المطلحات هنا](https://github.com/freecodecamp/freecodecamp/labels).
 
-يجب أن تلق نظرة على الissues ذات الطوابع **`Help Wanted`** أو **`first timers welcome`** من أجل نظرة سريعة على ما هو متوفر و الذي يمكنك العمل عليه. يفضل أن تقوم بالعمل على تلك الissues قبل الأنتقال إلى ما بعد ذلك.
+يجب أن تلق نظرة على الissues ذات الطوابع **`Help Wanted`** أو **`first timers only`** من أجل نظرة سريعة على ما هو متوفر و الذي يمكنك العمل عليه. يفضل أن تقوم بالعمل على تلك الissues قبل الأنتقال إلى ما بعد ذلك.
 
 إن كانت تلك الissues غير واضحة حول ما هو مطلوب فعله, يمكنك أن تسأل في قسم التعليقات على الissue.
 

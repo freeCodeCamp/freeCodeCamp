@@ -140,7 +140,12 @@ we recommend using your email address: ${user.email} to sign in instead.
         setAccessTokenToResponse({ accessToken }, req, res);
         req.login(user);
       }
-      return res.redirectWithFlash(redirect);
+      // TODO: enable 'returnTo' for sign-up
+      if (user.acceptedPrivacyTerms) {
+        return res.redirectWithFlash(redirect);
+      } else {
+        return res.redirectWithFlash(`${homeLocation}/email-sign-up`);
+      }
     }
   )(req, res, next);
 };

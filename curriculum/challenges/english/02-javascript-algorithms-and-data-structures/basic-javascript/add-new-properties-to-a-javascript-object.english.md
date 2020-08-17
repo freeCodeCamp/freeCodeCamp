@@ -2,6 +2,7 @@
 id: 56bbb991ad1ed5201cd392d2
 title: Add New Properties to a JavaScript Object
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cQe38UD'
 forumTopicId: 301169
 ---

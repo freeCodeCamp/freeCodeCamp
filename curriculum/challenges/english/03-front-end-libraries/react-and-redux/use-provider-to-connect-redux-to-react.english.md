@@ -2,6 +2,7 @@
 id: 5a24c314108439a4d4036144
 title: Use Provider to Connect Redux to React
 challengeType: 6
+isHidden: false
 isRequired: false
 forumTopicId: 301435
 ---
@@ -92,11 +93,13 @@ class DisplayMessages extends React.Component {
       input: event.target.value
     });
   }
-  submitMessage() {
-    const currentMessage = this.state.input;
-    this.setState({
-      input: '',
-      messages: this.state.messages.concat(currentMessage)
+  submitMessage() {  
+    this.setState((state) => {
+      const currentMessage = state.input;
+      return {
+        input: '',
+        messages: state.messages.concat(currentMessage)
+      };
     });
   }
   render() {
@@ -190,10 +193,12 @@ class DisplayMessages extends React.Component {
     });
   }
   submitMessage() {
-    const currentMessage = this.state.input;
-    this.setState({
-      input: '',
-      messages: this.state.messages.concat(currentMessage)
+    this.setState((state) => {
+      const currentMessage = state.input;
+      return {
+        input: '',
+        messages: state.messages.concat(currentMessage)
+      };  
     });
   }
   render() {

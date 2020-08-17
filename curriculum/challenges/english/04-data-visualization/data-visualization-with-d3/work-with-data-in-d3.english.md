@@ -2,6 +2,7 @@
 id: 587d7fa7367417b2b2512bc4
 title: Work with Data in D3
 challengeType: 6
+isHidden: false
 forumTopicId: 301497
 ---
 
@@ -81,8 +82,21 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<body>
+  <script>
+    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+
+    d3.select("body")
+      .selectAll("h2")
+      .data(dataset)
+      .enter()
+      .append("h2")
+      .text("New Title")
+
+  </script>
+</body>
+
 ```
 
 </section>
