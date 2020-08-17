@@ -2,6 +2,7 @@
 id: 587d7b7e367417b2b2512b23
 title: Use the parseInt Function
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cm83LSW'
 forumTopicId: 301183
 ---

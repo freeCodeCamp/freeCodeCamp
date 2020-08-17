@@ -17,16 +17,16 @@ localeTitle: Aninhar um elemento âncora dentro de um parágrafo
 
 ```yml
 tests:
-  - text: 'Você precisa de <code>a</code> elemento que vincule a &quot;http://freecatphotoapp.com&quot;.'
-    testString: 'assert(($("a[href=\"http://freecatphotoapp.com\"]").length > 0 || $("a[href=\"http://www.freecatphotoapp.com\"]").length > 0), "You need an <code>a</code> element that links to "http://freecatphotoapp.com".");'
+  - text: 'Você precisa de <code>a</code> elemento que vincule a &quot;https://freecatphotoapp.com&quot;.'
+    testString: 'assert(($("a[href=\"https://freecatphotoapp.com\"]").length > 0 || $("a[href=\"http://www.freecatphotoapp.com\"]").length > 0), "You need an <code>a</code> element that links to "https://freecatphotoapp.com".");'
   - text: Sua <code>a</code> elemento deve ter o texto âncora de &quot;fotos do gato&quot;
     testString: 'assert($("a").text().match(/cat\sphotos/gi), "Your <code>a</code> element should have the anchor text of "cat photos"");'
   - text: Criar um novo <code>p</code> elemento em torno de seu <code>a</code> elemento. Deve haver pelo menos três tags <code>p</code> no seu código HTML.
     testString: 'assert($("p") && $("p").length > 2, "Create a new <code>p</code> element around your <code>a</code> element. There should be at least 3 total <code>p</code> tags in your HTML code.");'
   - text: Seu <code>a</code> elemento deve ser aninhado em seu novo elemento <code>p</code> .
-    testString: 'assert(($("a[href=\"http://freecatphotoapp.com\"]").parent().is("p") || $("a[href=\"http://www.freecatphotoapp.com\"]").parent().is("p")), "Your <code>a</code> element should be nested within your new <code>p</code> element.");'
+    testString: 'assert(($("a[href=\"https://freecatphotoapp.com\"]").parent().is("p") || $("a[href=\"http://www.freecatphotoapp.com\"]").parent().is("p")), "Your <code>a</code> element should be nested within your new <code>p</code> element.");'
   - text: Seu elemento <code>p</code> deve ter o texto &quot;Ver mais&quot; (com um espaço após ele).
-    testString: 'assert(($("a[href=\"http://freecatphotoapp.com\"]").parent().text().match(/View\smore\s/gi) || $("a[href=\"http://www.freecatphotoapp.com\"]").parent().text().match(/View\smore\s/gi)), "Your <code>p</code> element should have the text "View more " (with a space after it).");'
+    testString: 'assert(($("a[href=\"https://freecatphotoapp.com\"]").parent().text().match(/View\smore\s/gi) || $("a[href=\"http://www.freecatphotoapp.com\"]").parent().text().match(/View\smore\s/gi)), "Your <code>p</code> element should have the text "View more " (with a space after it).");'
   - text: Sua <code>a</code> elemento <em>não</em> deve ter o texto &quot;Ver mais&quot;.
     testString: 'assert(!$("a").text().match(/View\smore/gi), "Your <code>a</code> element should <em>not</em> have the text "View more".");'
   - text: Certifique-se de que cada um dos seus elementos <code>p</code> tenha uma tag de fechamento.
@@ -47,7 +47,7 @@ tests:
 <h2>CatPhotoApp</h2>
 <main>
 
-  <a href="http://freecatphotoapp.com" target="_blank">cat photos</a>
+  <a href="https://freecatphotoapp.com" target="_blank">cat photos</a>
 
   <img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
 

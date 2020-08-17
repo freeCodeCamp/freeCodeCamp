@@ -2,6 +2,7 @@
 id: 587d7fa8367417b2b2512bca
 title: Change the Presentation of a Bar Chart
 challengeType: 6
+isHidden: false
 forumTopicId: 301481
 ---
 
@@ -106,13 +107,10 @@ tests:
       .enter()
       .append("div")
       .attr("class", "bar")
-      // Add your code below this line
-      .style("height", (d) => (d*10 + "px"))
-
-
-      // Add your code above this line
+      .style("height", (d) => (d * 10 + "px"))
   </script>
 </body>
+
 ```
 
 </section>

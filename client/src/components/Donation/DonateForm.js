@@ -11,7 +11,6 @@ import {
   ToggleButton,
   ToggleButtonGroup
 } from '@freecodecamp/react-bootstrap';
-// import { StripeProvider, Elements } from 'react-stripe-elements';
 import ApplePay from './assets/ApplePay';
 import GooglePay from './assets/GooglePay';
 import acceptedCards from './assets/accepted-cards.png';
@@ -24,14 +23,9 @@ import {
 } from '../../../../config/donation-settings';
 import { deploymentEnv } from '../../../config/env.json';
 import Spacer from '../helpers/Spacer';
-// import DonateFormChildViewForHOC from './DonateFormChildViewForHOC';
 import PaypalButton from './PaypalButton';
 import DonateCompletion from './DonateCompletion';
-import {
-  isSignedInSelector,
-  signInLoadingSelector,
-  hardGoTo as navigate
-} from '../../redux';
+import { isSignedInSelector, signInLoadingSelector } from '../../redux';
 
 import './Donation.css';
 
@@ -42,7 +36,6 @@ const propTypes = {
   handleProcessing: PropTypes.func,
   isDonating: PropTypes.bool,
   isSignedIn: PropTypes.bool,
-  navigate: PropTypes.func.isRequired,
   showLoading: PropTypes.bool.isRequired,
   stripe: PropTypes.shape({
     createToken: PropTypes.func.isRequired,
@@ -58,9 +51,6 @@ const mapStateToProps = createSelector(
     showLoading
   })
 );
-const mapDispatchToProps = {
-  navigate
-};
 
 const initialState = {
   donationState: {
@@ -240,18 +230,6 @@ class DonateForm extends Component {
     this.setState({ processing: hide });
   }
 
-  renderPayPalMeLink(donationAmount) {
-    const payPalMeLinkURL =
-      'https://paypal.me/freecodecamp/' + donationAmount / 100 + 'USD';
-    return (
-      <Button
-        block={true}
-        className='paypal-button-onetime'
-        href={payPalMeLinkURL}
-      ></Button>
-    );
-  }
-
   renderDonationOptions() {
     const { handleProcessing, isSignedIn } = this.props;
     const { donationAmount, donationDuration } = this.state;
@@ -261,11 +239,11 @@ class DonateForm extends Component {
     return (
       <div>
         {isOneTime ? (
-          <b>Confirm your one-time donation of ${donationAmount / 100} :</b>
+          <b>Confirm your one-time donation of ${donationAmount / 100}:</b>
         ) : (
           <b>
             Confirm your donation of ${donationAmount / 100} /{' '}
-            {donationDuration} :
+            {donationDuration}:
           </b>
         )}
         <Spacer />
@@ -308,17 +286,14 @@ class DonateForm extends Component {
           />
         </Button>
         <Spacer />
-        {isOneTime ? (
-          this.renderPayPalMeLink(donationAmount)
-        ) : (
-          <PaypalButton
-            donationAmount={donationAmount}
-            donationDuration={donationDuration}
-            handleProcessing={handleProcessing}
-            onDonationStateChange={this.onDonationStateChange}
-            skipAddDonation={!isSignedIn}
-          />
-        )}
+        <PaypalButton
+          donationAmount={donationAmount}
+          donationDuration={donationDuration}
+          handleProcessing={handleProcessing}
+          isSubscription={isOneTime ? false : true}
+          onDonationStateChange={this.onDonationStateChange}
+          skipAddDonation={!isSignedIn}
+        />
         <Spacer size={2} />
       </div>
     );
@@ -360,7 +335,4 @@ class DonateForm extends Component {
 DonateForm.displayName = 'DonateForm';
 DonateForm.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(DonateForm);
+export default connect(mapStateToProps)(DonateForm);

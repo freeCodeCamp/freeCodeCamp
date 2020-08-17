@@ -86,4 +86,5 @@ console.info('after the test');
 ```js
 // solution required
 ```
-</section>
+
+/section>

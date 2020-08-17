@@ -22,7 +22,7 @@ localeTitle: 将 a 嵌套在段落中
 通常，文本是被包裹在<code>p</code>段落内：<br><code>&#60;p&#62; Here's a ... for you to follow. &#60;/p&#62;</code>
 接下来是<code>anchor</code> <code>a</code> <code>&#60;a&#62;</code>（需要结束标记 <code>&#60;/a&#62;</code>）:<br> <code>&#60;a&#62; ... &#60;/a&#62;</code>
 <code>target</code>是 <code>a</code> 的一个属性，用来指定链接的打开方式。属性值 <code>"_blank"</code> 的意思是链接会在新标签页打开。
-<code>href</code>是 <code>a</code> 的另一个属性：用来指定链接的 URL：<br><code>&#60;a href="https://freecodecamp.org"> ... &#60;/a&#62;</code>
+<code>href</code>是 <code>a</code> 的另一个属性：用来指定链接的 URL：<br>`<a href="https://freecodecamp.org"> ... </a>`
  <code>a</code> 元素内的文本：<strong>"link to freecodecamp.org"</strong>，会显示为一个可以点击的链接：<br>  <code>&#60;a href=" ... "&#62;link to freecodecamp.org&#60;/a&#62;</code>
 例子的最后输出将会是这样：<br><p>Here's a <a target="_blank" href="http://freecodecamp.one"> link to freecodecamp.org</a> for you to follow.</p>
 </section>
@@ -38,16 +38,16 @@ localeTitle: 将 a 嵌套在段落中
 
 ```yml
 tests:
-  - text: '你需要一个指向 "http://freecatphotoapp.com" 的 <code>a</code> 。'
-    testString: assert(($("a[href=\"http://freecatphotoapp.com\"]").length > 0 || $("a[href=\"http://www.freecatphotoapp.com\"]").length > 0));
+  - text: '你需要一个指向 "https://freecatphotoapp.com" 的 <code>a</code> 。'
+    testString: assert(($("a[href=\"https://freecatphotoapp.com\"]").length > 0 || $("a[href=\"http://www.freecatphotoapp.com\"]").length > 0));
   - text: '<code>a</code> 的文本应为：cat photos。'
     testString: assert($("a").text().match(/cat\sphotos/gi));
   - text: '在 <code>a</code> 的外部创建一个新段落，这样页面就有 3 个段落了。'
     testString: assert($("p") && $("p").length > 2);
   - text: '<code>a</code> 应嵌套在新段落内。'
-    testString: assert(($("a[href=\"http://freecatphotoapp.com\"]").parent().is("p") || $("a[href=\"http://www.freecatphotoapp.com\"]").parent().is("p")));
+    testString: assert(($("a[href=\"https://freecatphotoapp.com\"]").parent().is("p") || $("a[href=\"http://www.freecatphotoapp.com\"]").parent().is("p")));
   - text: '段落应该包含文本 View more（记得 more 后面有一个空格）。'
-    testString: assert(($("a[href=\"http://freecatphotoapp.com\"]").parent().text().match(/View\smore\s/gi) || $("a[href=\"http://www.freecatphotoapp.com\"]").parent().text().match(/View\smore\s/gi)));
+    testString: assert(($("a[href=\"https://freecatphotoapp.com\"]").parent().text().match(/View\smore\s/gi) || $("a[href=\"http://www.freecatphotoapp.com\"]").parent().text().match(/View\smore\s/gi)));
   - text: '<code>a</code> 不应该包含文本 View more。'
     testString: assert(!$("a").text().match(/View\smore/gi));
   - text: '确保每个段落有结束标记。'
@@ -68,7 +68,7 @@ tests:
 <h2>CatPhotoApp</h2>
 <main>
   
-  <a href="http://freecatphotoapp.com" target="_blank">cat photos</a>
+  <a href="https://freecatphotoapp.com" target="_blank">cat photos</a>
   
   <img src="https://bit.ly/fcc-relaxing-cat" alt="一只仰卧着的萌猫">
   
@@ -85,5 +85,6 @@ tests:
 
 ## Solution
 <section id='solution'>
+
 </section>
-              
+

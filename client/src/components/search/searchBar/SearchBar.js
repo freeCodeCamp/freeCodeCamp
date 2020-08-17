@@ -43,7 +43,7 @@ const mapDispatchToProps = dispatch =>
     dispatch
   );
 
-const placeholder = 'Search 5,000+ tutorials';
+const placeholder = 'Search 6,000+ tutorials';
 
 export class SearchBar extends Component {
   constructor(props) {

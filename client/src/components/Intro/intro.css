@@ -46,3 +46,16 @@
 .quote-author {
   font-style: normal;
 }
+
+.intro-description strong,
+.intro-description p {
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+}
+
+@media (min-width: 500px) {
+  .intro-description strong,
+  .intro-description p {
+    font-size: 1.22rem;
+  }
+}

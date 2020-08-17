@@ -2,6 +2,7 @@
 id: 587d7b7b367417b2b2512b14
 title: Check For The Presence of an Element With indexOf()
 challengeType: 1
+isHidden: false
 forumTopicId: 301154
 ---
 
@@ -30,6 +31,8 @@ fruits.indexOf('pears'); // returns 1, the first index at which the element exis
 
 ```yml
 tests:
+  - text: The <code>quickCheck</code> function should return a boolean (<code>true</code> or <code>false</code>), not a string (<code>"true"</code> or <code>"false"</code>)
+    testString: assert.isBoolean(quickCheck(['squash', 'onions', 'shallots'], 'mushrooms'));
   - text: <code>quickCheck(["squash", "onions", "shallots"], "mushrooms")</code> should return <code>false</code>
     testString: assert.strictEqual(quickCheck(['squash', 'onions', 'shallots'], 'mushrooms'), false);
   - text: <code>quickCheck(["onions", "squash", "shallots"], "onions")</code> should return <code>true</code>

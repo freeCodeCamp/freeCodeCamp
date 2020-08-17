@@ -2,6 +2,7 @@
 id: 587d7fb6367417b2b2512c06
 title: Install and Set Up Mongoose
 challengeType: 2
+isHidden: false
 forumTopicId: 301540
 ---
 

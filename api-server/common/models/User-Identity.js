@@ -8,6 +8,12 @@ import { wrapHandledError } from '../../server/utils/create-handled-error.js';
 
 // const log = debug('fcc:models:userIdent');
 
+export function ensureLowerCaseEmail(profile) {
+  return typeof profile?.emails?.[0]?.value === 'string'
+    ? profile.emails[0].value.toLowerCase()
+    : '';
+}
+
 export default function(UserIdent) {
   UserIdent.on('dataSourceAttached', () => {
     UserIdent.findOne$ = observeMethod(UserIdent, 'findOne');
@@ -41,10 +47,8 @@ export default function(UserIdent) {
       include: 'user'
     };
     // get the email from the auth0 (its expected from social providers)
-    const email =
-      profile && profile.emails && profile.emails[0]
-        ? profile.emails[0].value
-        : '';
+    const email = ensureLowerCaseEmail(profile);
+
     if (!isEmail('' + email)) {
       throw wrapHandledError(
         new Error('invalid or empty email received from auth0'),

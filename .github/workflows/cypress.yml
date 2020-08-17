@@ -1,0 +1,56 @@
+name: Cypress
+on:
+  push:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  cypress-run:
+    name: Test
+    env:
+      CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # We use .npmrc to set the default version to 0, and prevents download during developement.
+      # This installs it specifically in the CI runs.
+      CYPRESS_INSTALL_BINARY: '4.11.0'
+    runs-on: ubuntu-18.04
+    services:
+      mongodb:
+        image: mongo:3.6.19
+        ports:
+          - 27017:27017
+
+    steps:
+      - name: Checkout Source Files
+        uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Set Environment variables
+        run: cp sample.env .env
+
+      - name: Install Dependencies
+        run: |
+          npm ci
+          npm run ensure-env
+
+      - name: Seed Database
+        run: npm run seed
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v1
+        with:
+          record: ${{ env.CYPRESS_RECORD_KEY != 0 }}
+          build: npm run build
+          # this should mirror the production build, but for now we're just using the dev
+          # server and gatsby serve instead (the npm script serve:client needs updating!)
+          start: npm start
+          wait-on: http://localhost:8000
+          # the site builds in about 8 minutes, so there is currently 12 minutes of time
+          # left for testing.
+          wait-on-timeout: 1200
+          config: baseUrl=http://localhost:8000

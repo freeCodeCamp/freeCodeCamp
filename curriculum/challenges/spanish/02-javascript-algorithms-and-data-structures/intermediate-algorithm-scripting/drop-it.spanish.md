@@ -8,7 +8,7 @@ localeTitle: Déjalo caer
 ---
 
 ## Description
-<section id="description"> Dada la matriz <code>arr</code> , iterar a través y eliminar cada elemento a partir del primer elemento (el índice 0) hasta que la función <code>func</code> devuelva <code>true</code> cuando el elemento iterado se pasa a través de él. Luego, devuelva el resto de la matriz una vez que se cumpla la condición; de lo contrario, <code>arr</code> debe devolverse como una matriz vacía. Recuerda usar <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> si te atascas. Trate de emparejar el programa. Escribe tu propio código. </section>
+<section id="description"> Dada la matriz <code>arr</code> , iterar a través y eliminar cada elemento a partir del primer elemento (el índice 0) hasta que la función <code>func</code> devuelva <code>true</code> cuando el elemento iterado se pasa a través de él. Luego, devuelva el resto de la matriz una vez que se cumpla la condición; de lo contrario, <code>arr</code> debe devolverse como una matriz vacía. Recuerda usar <a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> si te atascas. Trate de emparejar el programa. Escribe tu propio código. </section>
 
 ## Instructions
 <section id="instructions">

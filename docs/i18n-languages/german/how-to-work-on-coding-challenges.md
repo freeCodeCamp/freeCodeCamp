@@ -243,9 +243,9 @@ Beispiel: `// Fix this line`
 
 ## Tipps und Lösungen zur Curriculum Herausforderung
 
-Jede Challenge hat eine Schaltfläche "Get a Hint", so dass ein Benutzer auf alle Hinweise/Lösungen zugreifen kann, die für die Challenge erstellt wurden. Curriculum Hinweise/Lösungsinhalte findest du auf [unseren Forum](https://www.freecodecamp.org/forum/c/guide) unter der Kategorie "Guide".
+Jede Challenge hat eine Schaltfläche "Get a Hint", so dass ein Benutzer auf alle Hinweise/Lösungen zugreifen kann, die für die Challenge erstellt wurden. Curriculum Hinweise/Lösungsinhalte findest du auf [unseren Forum](https://forum.freecodecamp.org/c/guide) unter der Kategorie "Guide".
 
-Wenn du einen Fehler in einem Hinweis/Lösungsinhalt zu einer bestehenden Herausforderung findest, kannst du Vorschläge unter der Kategorie [Beitragende](https://www.freecodecamp.org/forum/c/contributors) machen. Moderatoren und Benutzer mit Vertrauensstufe 3 überprüfen die Kommentare und entscheiden, ob die Änderungen in der entsprechende Vorschlag aufgenommen werden sollen oder nicht.
+Wenn du einen Fehler in einem Hinweis/Lösungsinhalt zu einer bestehenden Herausforderung findest, kannst du Vorschläge unter der Kategorie [Beitragende](https://forum.freecodecamp.org/c/contributors) machen. Moderatoren und Benutzer mit Vertrauensstufe 3 überprüfen die Kommentare und entscheiden, ob die Änderungen in der entsprechende Vorschlag aufgenommen werden sollen oder nicht.
 
 ### Hinzufügen neuer Herausforderungs-Hinweise/Lösungen Themenbereiche
 
@@ -309,6 +309,6 @@ function myFunc() {
 
 Erstellen und Bearbeiten von Herausforderungen:
 
-1. [Herausforderungstypen](https://github.com/freeCodeCamp/learn/blob/a5cb25704168aa37f59a582f0bb5a19b7bd89b46/utils/challengeTypes.js) - was die Werte der numerischen Challenge-Typen bedeuten (Enum).
+1. [Herausforderungstypen](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/client/utils/challengeTypes.js#L1-L13) - was die Werte der numerischen Challenge-Typen bedeuten (Enum).
 
 2. [Beim FreeCodeCamp mitwirken - ES6 Challenge Tests schreiben](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - ein Video nach [Ethan Arrowood](https://twitter.com/ArrowoodTech), in dem er zur alten Version des Curriculum beiträgt.

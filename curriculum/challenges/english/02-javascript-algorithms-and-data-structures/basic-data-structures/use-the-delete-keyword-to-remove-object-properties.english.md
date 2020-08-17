@@ -2,6 +2,7 @@
 id: 587d7b7c367417b2b2512b1b
 title: Use the delete Keyword to Remove Object Properties
 challengeType: 1
+isHidden: false
 forumTopicId: 301168
 ---
 
