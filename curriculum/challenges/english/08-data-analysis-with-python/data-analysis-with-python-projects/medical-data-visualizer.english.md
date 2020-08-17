@@ -10,7 +10,7 @@ isRequired: true
 <section id='description'>
 In this project, you will visualize and make calculations from medical examination data using matplotlib, seaborn, and pandas.
 
-You can access <a href='https://repl.it/@freeCodeCamp/fcc-medical-data-visualizer' target='_blank'>the full project description and starter code on repl.it</a>.
+You can access <a href='https://repl.it/@freeCodeCamp/fcc-medical-data-visualizer' target='_blank'>the full project description and starter code on Repl.it</a>.
 
 After going to that link, fork the project. Once you complete the project based on the instructions in 'README.md', submit your project link below.
 
