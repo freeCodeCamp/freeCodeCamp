@@ -59,4 +59,5 @@ steamrollArray([1, [2], [3, [[4]]]]);
 ```js
 // solution required
 ```
-</section>
+
+/section>

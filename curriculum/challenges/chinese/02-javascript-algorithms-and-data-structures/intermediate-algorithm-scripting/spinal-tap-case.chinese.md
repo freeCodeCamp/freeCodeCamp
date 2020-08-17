@@ -62,4 +62,5 @@ spinalCase('This Is Spinal Tap');
 ```js
 // solution required
 ```
-</section>
+
+/section>

@@ -69,4 +69,5 @@ truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "ma
 ```js
 // solution required
 ```
-</section>
+
+/section>

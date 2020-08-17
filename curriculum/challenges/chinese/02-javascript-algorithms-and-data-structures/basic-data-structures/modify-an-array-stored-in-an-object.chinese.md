@@ -25,7 +25,7 @@ tests:
     testString: assert('name' in user && 'age' in user && 'data' in user);
   - text: <code>addFriend</code>函数应该接受一个<code>user</code>对象和一个<code>friend</code>字符串作为输入参数，并将 friend 插入到<code>user</code>对象的<code>friends</code>数组中。
     testString: assert((function() { let L1 = user.data.friends.length; addFriend(user, 'Sean'); let L2 = user.data.friends.length; return (L2 === L1 + 1); })());
-  - text: '<code>addFriend(user, &quot;Pete&quot;)</code>应该返回<code>[&quot;Sam&quot;, &quot;Kira&quot;, &quot;Tomo&quot;, &quot;Pete&quot;]</code>。"
+  - text: '<code>addFriend(user, &quot;Pete&quot;)</code>应该返回<code>[&quot;Sam&quot;, &quot;Kira&quot;, &quot;Tomo&quot;, &quot;Pete&quot;]</code>。'
     testString: assert.deepEqual((function() { delete user.data.friends; user.data.friends = ['Sam', 'Kira', 'Tomo']; return addFriend(user, 'Pete') })(), ['Sam', 'Kira', 'Tomo', 'Pete']);
 
 ```

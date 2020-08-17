@@ -113,11 +113,6 @@ const mapDispatchToProps = {
   verifyCert
 };
 
-const createHandleSignoutClick = navigate => e => {
-  e.preventDefault();
-  return navigate(`${apiLocation}/signout`);
-};
-
 export function ShowSettings(props) {
   const {
     createFlashMessage,
@@ -194,8 +189,7 @@ export function ShowSettings(props) {
               bsSize='lg'
               bsStyle='primary'
               className='btn-invert'
-              href={'/signout'}
-              onClick={createHandleSignoutClick(navigate)}
+              href={`${apiLocation}/signout`}
             >
               Sign me out of freeCodeCamp
             </Button>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from '../../helpers';
+import { forumLocation } from '../../../../../config/env.json';
 
 import PropTypes from 'prop-types';
 
@@ -17,11 +18,7 @@ function NavLinks({ displayMenu }) {
           </Link>
         </li>
         <li className='nav-forum'>
-          <Link
-            external={true}
-            sameTab={true}
-            to='https://forum.freecodecamp.org'
-          >
+          <Link external={true} sameTab={true} to={forumLocation}>
             /forum
           </Link>
         </li>

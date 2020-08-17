@@ -3,14 +3,20 @@
 import '@testing-library/jest-dom/extend-expect';
 import React from 'react';
 import { render } from '@testing-library/react';
+import { Provider } from 'react-redux';
+import { createStore } from '../../redux/createStore';
 
 import { CertificationSettings } from './Certification';
+
+function renderWithRedux(ui) {
+  return render(<Provider store={createStore()}>{ui}</Provider>);
+}
 
 describe('<certification />', () => {
   // shallow rendering does not render children component
   // form buttons are not included in shallow render
   it('Should render show cert button for claimed legacy cert', () => {
-    const { container } = render(
+    const { container } = renderWithRedux(
       <CertificationSettings {...defaultTestProps} />
     );
 
@@ -20,7 +26,7 @@ describe('<certification />', () => {
   });
 
   it('Should link show cert button to the claimed legacy cert', () => {
-    const { container } = render(
+    const { container } = renderWithRedux(
       <CertificationSettings {...defaultTestProps} />
     );
 
@@ -34,7 +40,7 @@ describe('<certification />', () => {
 
   // full forms with unclaimed certs should should not shallow render button
   it('Should not render show cert button for unclaimed full form', () => {
-    const { container } = render(
+    const { container } = renderWithRedux(
       <CertificationSettings {...defaultTestProps} />
     );
 
@@ -45,7 +51,7 @@ describe('<certification />', () => {
 
   // empty forms with unclaimed certs should should not shallow render button
   it('Should not render show cert button for empty form', () => {
-    const { container } = render(
+    const { container } = renderWithRedux(
       <CertificationSettings {...defaultTestProps} />
     );
 
