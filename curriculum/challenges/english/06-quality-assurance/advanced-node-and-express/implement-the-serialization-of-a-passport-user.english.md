@@ -45,7 +45,7 @@ myDB(async client => {
 
 Be sure to uncomment the <code>myDataBase</code> code in deserializeUser, and edit your <code>done(null, null)</code> to include the <code>doc</code>.
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/JosephLivengood/e192e809a1d27cb80dc2c6d3467b7477'>here</a>.
+Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/camperbot/175f2f585a2d8034044c7e8857d5add7'>here</a>.
 
 </section>
 

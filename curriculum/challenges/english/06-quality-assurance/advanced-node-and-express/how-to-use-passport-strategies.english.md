@@ -21,7 +21,7 @@ If the authentication was successful, the user object will be saved in <em>req.u
 
 Now at this point if you enter a username and password in the form, it should redirect to the home page <code>/</code> and in the console of your server should be 'User {USERNAME} attempted to log in.' since we currently cannot login a user who isn't registered.
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/JosephLivengood/8a335d1a68ed9170da02bb9d8f5b71d5'>here</a>.
+Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/camperbot/7ad011ac54612ad53188b500c5e99cb9'>here</a>.
 
 </section>
 

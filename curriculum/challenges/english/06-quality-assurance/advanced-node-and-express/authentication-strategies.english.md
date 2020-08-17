@@ -35,7 +35,9 @@ This is defining the process to take when we try to authenticate someone locally
 
 Many strategies are set up using different settings, general it is easy to set it up based on the README in that strategies repository though. A good example of this is the GitHub strategy where we don't need to worry about a username or password because the user will be sent to GitHub's auth page to authenticate and as long as they are logged in and agree then GitHub returns their profile for us to use.
 
-In the next step we will set up how to actually call the authentication strategy to validate a user based on form data! Submit your page when you think you've got it right up to this point.
+In the next step we will set up how to actually call the authentication strategy to validate a user based on form data!
+
+Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/camperbot/53b495c02b92adeee0aa1bd3f3be8a4b'>here</a>.
 
 </section>
 

@@ -34,7 +34,7 @@ app
  });
 ```
 
-Submit your page when you think you've got it right.
+Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/camperbot/ae49b8778cab87e93284a91343da0959'>here</a>.
 
 </section>
 

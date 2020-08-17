@@ -26,7 +26,7 @@ To make sure clients continuously have the updated count of current users, you s
 
 <strong>Note:</strong> Just like <code>'disconnect'</code>, all other events that a socket can emit to the server should be handled within the connecting listener where we have 'socket' defined.
 
-Submit your page when you think you've got it right.
+Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/camperbot/ab1007b76069884fb45b215d3c4496fa'>here</a>.
 
 </section>
 

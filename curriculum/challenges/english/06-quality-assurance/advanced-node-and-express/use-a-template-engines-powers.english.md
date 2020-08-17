@@ -22,7 +22,9 @@ Looking at our pug file 'index.pug' included in your project, we used the variab
 To pass those along from our server, you will need to add an object as a second argument to your <em>res.render</em> with the variables and their values. For example, pass this object along setting the variables for your index view: <code>{title: 'Hello', message: 'Please login'}</code>
 
 It should look like: <code>res.render(process.cwd() + '/views/pug/index', {title: 'Hello', message: 'Please login'});</code>
-Now refresh your page and you should see those values rendered in your view in the correct spot as laid out in your index.pug file! Submit your page when you think you've got it right.
+Now refresh your page and you should see those values rendered in your view in the correct spot as laid out in your index.pug file!
+
+Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/camperbot/4af125119ed36e6e6a8bb920db0c0871'>here</a>.
 
 </section>
 

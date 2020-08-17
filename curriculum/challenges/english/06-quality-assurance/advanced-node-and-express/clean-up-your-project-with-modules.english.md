@@ -31,7 +31,7 @@ Keep adding them until no more errors exist, and your server file no longer has 
 
 Now do the same thing in your auth.js file with all of the things related to authentication such as the serialization and the setting up of the local strategy and erase them from your server file. Be sure to add the dependencies in and call <code>auth(app, myDataBase)</code> in the server in the same spot.
 
-Congratulations- you're at the end of this section of Advanced Node and Express and have some beautiful code to show for it! Submit your page when you think you've got it right. If you're running into errors, you can check out an example of the completed project <a href='https://glitch.com/#!/project/delicious-herring'>here</a>.
+Submit your page when you think you've got it right. If you're running into errors, you can check out an example of the completed project <a href='https://gist.github.com/camperbot/2d06ac5c7d850d8cf073d2c2c794cc92'>here</a>.
 
 </section>
 

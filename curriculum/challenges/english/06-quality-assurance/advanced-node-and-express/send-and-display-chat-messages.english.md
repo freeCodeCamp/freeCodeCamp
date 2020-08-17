@@ -30,7 +30,9 @@ Now on your server you should be listening to the socket for the event <code>'ch
 
 In <code>client.js</code>, you should now listen for event <code>'chat message'</code> and, when received, append a list item to <code>#messages</code> with the name a colon and the message!
 
-At this point the chat should be fully functional and sending messages across all clients! Submit your page when you think you've got it right. If you're running into errors, you can check out the project up to this point <a href='https://gist.github.com/JosephLivengood/3e4b7750f6cd42feaa2768458d682136' target='_blank'>here for the server</a> and <a href='https://gist.github.com/JosephLivengood/41ba76348df3013b7870dc64861de744' target='_blank'>here for the client</a>.
+At this point the chat should be fully functional and sending messages across all clients!
+
+Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/camperbot/d7af9864375207e254f73262976d2016'>here</a>.
 
 </section>
 

@@ -22,7 +22,9 @@ Your page will not load until you correctly <em>render</em> the index file in ou
 
 You should change the response for the <code>/</code> route to use <code>res.render()</code>. This method takes a string of a file path as an argument. The path can be a relative path (relative to views), or an absolute path, and does not require a file extension.
 
-If all went as planned, your app home page will stop showing the message "Pug template is not defined." and will now display a message indicating you've successfully rendered the Pug template! Submit your page when you think you've got it right.
+If all went as planned, your app home page will stop showing the message "Pug template is not defined." and will now display a message indicating you've successfully rendered the Pug template!
+
+Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/camperbot/3515cd676ea4dfceab4e322f59a37791'>here</a>.
 
 </section>
 

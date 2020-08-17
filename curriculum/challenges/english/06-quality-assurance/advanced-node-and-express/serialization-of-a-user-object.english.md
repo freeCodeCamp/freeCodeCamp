@@ -31,7 +31,7 @@ passport.deserializeUser((id, done) => {
 
 NOTE: This deserializeUser will throw an error until we set up the DB in the next step so comment out the whole block and just call <code>done(null, null)</code> in the function deserializeUser.
 
-Submit your page when you think you've got it right.
+Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/camperbot/7068a0d09e61ec7424572b366751f048'>here</a>.
 
 </section>
 

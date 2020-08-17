@@ -33,7 +33,7 @@ app.use((req, res, next) => {
 });
 ```
 
-Submit your page when you think you've got it right.
+Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/camperbot/c3eeb8a3ebf855e021fd0c044095a23b'>here</a>.
 
 </section>
 
