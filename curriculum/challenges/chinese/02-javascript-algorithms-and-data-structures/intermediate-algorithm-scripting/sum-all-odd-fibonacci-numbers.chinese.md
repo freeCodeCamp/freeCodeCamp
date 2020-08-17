@@ -79,6 +79,4 @@ function sumFibs(num) {
   return s;
 }
 ```
-
 </section>
-              

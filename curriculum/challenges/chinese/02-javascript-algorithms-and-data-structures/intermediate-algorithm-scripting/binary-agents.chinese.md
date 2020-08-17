@@ -8,6 +8,7 @@ localeTitle: 二进制转化
 ---
 
 ## Description
+
 <section id='description'>
 写一个函数，把输入的二进制字符串转换成英文句子。
 二进制字符串将以空格分隔。

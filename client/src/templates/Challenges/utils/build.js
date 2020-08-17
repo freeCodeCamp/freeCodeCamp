@@ -68,7 +68,8 @@ const buildFunctions = {
   [challengeTypes.html]: buildDOMChallenge,
   [challengeTypes.modern]: buildDOMChallenge,
   [challengeTypes.backend]: buildBackendChallenge,
-  [challengeTypes.backEndProject]: buildBackendChallenge
+  [challengeTypes.backEndProject]: buildBackendChallenge,
+  [challengeTypes.pythonProject]: buildBackendChallenge
 };
 
 export function canBuildChallenge(challengeData) {
@@ -88,7 +89,8 @@ export async function buildChallenge(challengeData, options) {
 const testRunners = {
   [challengeTypes.js]: getJSTestRunner,
   [challengeTypes.html]: getDOMTestRunner,
-  [challengeTypes.backend]: getDOMTestRunner
+  [challengeTypes.backend]: getDOMTestRunner,
+  [challengeTypes.pythonProject]: getDOMTestRunner
 };
 export function getTestRunner(buildData, { proxyLogger }, document) {
   const { challengeType } = buildData;

@@ -10,7 +10,7 @@ localeTitle: Faça links mortos usando o símbolo Hash
 <section id="description"> Alguma vezes você irá adicionar elementos <code>a</code> em seu site antes mesmo de saber para onde eles irão ligar. Isso também é útil quando você está alterando o comportamento de um link usando <code>JavaScript</code> , o qual aprenderemos mais tarde. </section>
 
 ## Instructions
-<section id="instructions"> O valor atual do atributo <code>href</code> é um link que aponta para &quot;http://freecatphotoapp.com&quot;. Substitua o valor do atributo <code>href</code> por um <code>#</code> , também conhecido como um símbolo de hash, para criar um link morto. Por exemplo: <code>href=&quot;#&quot;</code> </section>
+<section id="instructions"> O valor atual do atributo <code>href</code> é um link que aponta para &quot;https://freecatphotoapp.com&quot;. Substitua o valor do atributo <code>href</code> por um <code>#</code> , também conhecido como um símbolo de hash, para criar um link morto. Por exemplo: <code>href=&quot;#&quot;</code> </section>
 
 ## Tests
 <section id='tests'>
@@ -32,7 +32,7 @@ tests:
 ```html
 <h2>CatPhotoApp</h2>
 <main>
-  <p>Click here to view more <a href="http://freecatphotoapp.com" target="_blank">cat photos</a>.</p>
+  <p>Click here to view more <a href="https://freecatphotoapp.com" target="_blank">cat photos</a>.</p>
 
   <img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
 

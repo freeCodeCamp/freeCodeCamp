@@ -82,4 +82,3 @@ function addTogether() {
 ```
 
 </section>
-              

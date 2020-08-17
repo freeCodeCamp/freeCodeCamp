@@ -46,16 +46,14 @@ const {
 
 const { dasherize } = require('../../utils/slugs');
 
-const { testedLangs } = require('../utils');
+const { testedLang } = require('../utils');
 
 const {
   buildDOMChallenge,
   buildJSChallenge
 } = require('../../client/src/templates/Challenges/utils/build');
 
-const {
-  createPoly
-} = require('../../client/src/templates/Challenges/utils/polyvinyl');
+const { createPoly } = require('../../utils/polyvinyl');
 
 const testEvaluator = require('../../client/config/test-evaluator').filename;
 
@@ -126,22 +124,15 @@ async function setup() {
   global.Worker = createPseudoWorker(await newPageContext(browser));
   page = await newPageContext(browser);
   await page.setViewport({ width: 300, height: 150 });
-  const testLangs = testedLangs();
-  if (testLangs.length > 1)
-    throw Error(
-      `Testing more than one language at once is not currently supported
-please change the TEST_CHALLENGES_FOR_LANGS env variable to a single language`
-    );
-  const challengesForLang = await Promise.all(
-    testLangs.map(lang => getChallenges(lang))
-  );
+
+  const lang = testedLang();
+
+  let challenges = await getChallenges(lang);
 
   // the next few statements create a list of all blocks and superblocks
   // as they appear in the list of challenges
-  const blocks = challengesForLang[0].challenges.map(({ block }) => block);
-  const superBlocks = challengesForLang[0].challenges.map(
-    ({ superBlock }) => superBlock
-  );
+  const blocks = challenges.map(({ block }) => block);
+  const superBlocks = challenges.map(({ superBlock }) => superBlock);
   const targetBlockStrings = [...new Set(blocks)];
   const targetSuperBlockStrings = [...new Set(superBlocks)];
 
@@ -153,11 +144,11 @@ please change the TEST_CHALLENGES_FOR_LANGS env variable to a single language`
     ).bestMatch.target;
 
     console.log(`\nsuperBlock being tested: ${filter}`);
-    challengesForLang[0].challenges = challengesForLang[0].challenges.filter(
+    challenges = challenges.filter(
       challenge => challenge.superBlock === filter
     );
 
-    if (!challengesForLang[0].challenges.length) {
+    if (!challenges.length) {
       throw new Error(`No challenges found with superBlock "${filter}"`);
     }
   }
@@ -169,30 +160,26 @@ please change the TEST_CHALLENGES_FOR_LANGS env variable to a single language`
     ).bestMatch.target;
 
     console.log(`\nblock being tested: ${filter}`);
-    challengesForLang[0].challenges = challengesForLang[0].challenges.filter(
-      challenge => challenge.block === filter
-    );
+    challenges = challenges.filter(challenge => challenge.block === filter);
 
-    if (!challengesForLang[0].challenges.length) {
+    if (!challenges.length) {
       throw new Error(`No challenges found with block "${filter}"`);
     }
   }
 
   const meta = {};
-  for (const { lang, challenges } of challengesForLang) {
-    meta[lang] = {};
-    for (const challenge of challenges) {
-      const dashedBlockName = dasherize(challenge.block);
-      if (!meta[dashedBlockName]) {
-        meta[lang][dashedBlockName] = (await getMetaForBlock(
-          dashedBlockName
-        )).challengeOrder;
-      }
+  for (const challenge of challenges) {
+    const dashedBlockName = dasherize(challenge.block);
+    if (!meta[dashedBlockName]) {
+      meta[dashedBlockName] = (await getMetaForBlock(
+        dashedBlockName
+      )).challengeOrder;
     }
   }
   return {
     meta,
-    challengesForLang
+    challenges,
+    lang
   };
 }
 
@@ -206,18 +193,17 @@ function cleanup() {
   spinner.stop();
 }
 
-function runTests({ challengesForLang, meta }) {
+function runTests(challengeData) {
+  // rethrow unhandled rejections to make sure the tests exit with -1
   process.on('unhandledRejection', err => {
-    throw new Error(`unhandledRejection: ${err.name}, ${err.message}`);
+    throw err;
   });
 
   describe('Check challenges', function() {
     after(function() {
       cleanup();
     });
-    for (const challenge of challengesForLang) {
-      populateTestsForLang(challenge, meta);
-    }
+    populateTestsForLang(challengeData);
   });
   spinner.text = 'Testing';
   run();
@@ -234,7 +220,7 @@ async function getChallenges(lang) {
         return [...challengeArray, ...flatten(challengesForBlock)];
       }, [])
   );
-  return { lang, challenges };
+  return challenges;
 }
 
 function validateBlock(challenge) {
@@ -246,7 +232,7 @@ function validateBlock(challenge) {
   }
 }
 
-function populateTestsForLang({ lang, challenges }, meta) {
+function populateTestsForLang({ lang, challenges, meta }) {
   const mongoIds = new MongoIds();
   const challengeTitles = new ChallengeTitles();
   const validateChallenge = challengeSchemaValidator(lang);
@@ -258,7 +244,7 @@ function populateTestsForLang({ lang, challenges }, meta) {
       describe(challenge.block || 'No block', function() {
         describe(challenge.title || 'No title', function() {
           it('Matches a title in meta.json', function() {
-            const index = meta[lang][dashedBlockName].findIndex(
+            const index = meta[dashedBlockName].findIndex(
               arr => arr[1] === challenge.title
             );
 
@@ -270,7 +256,7 @@ function populateTestsForLang({ lang, challenges }, meta) {
           });
 
           it('Matches an ID in meta.json', function() {
-            const index = meta[lang][dashedBlockName].findIndex(
+            const index = meta[dashedBlockName].findIndex(
               arr => arr[0] === challenge.id
             );
 
@@ -323,23 +309,23 @@ function populateTestsForLang({ lang, challenges }, meta) {
           });
 
           let { files = [] } = challenge;
-          let createTestRunner;
           if (challengeType === challengeTypes.backend) {
             it('Check tests is not implemented.');
             return;
-          } else if (
-            challengeType === challengeTypes.js ||
-            challengeType === challengeTypes.bonfire
-          ) {
-            createTestRunner = createTestRunnerForJSChallenge;
-          } else if (files.length === 1) {
-            createTestRunner = createTestRunnerForDOMChallenge;
-          } else {
+          }
+
+          if (files.length > 1) {
             it('Check tests.', () => {
               throw new Error('Seed file should be only the one.');
             });
             return;
           }
+
+          const buildChallenge =
+            challengeType === challengeTypes.js ||
+            challengeType === challengeTypes.bonfire
+              ? buildJSChallenge
+              : buildDOMChallenge;
 
           files = files.map(createPoly);
           it('Test suite must fail on the initial contents', async function() {
@@ -353,7 +339,7 @@ function populateTestsForLang({ lang, challenges }, meta) {
               testRunner = await createTestRunner(
                 { ...challenge, files },
                 '',
-                page
+                buildChallenge
               );
             } catch {
               fails = true;
@@ -390,7 +376,7 @@ function populateTestsForLang({ lang, challenges }, meta) {
                 const testRunner = await createTestRunner(
                   { ...challenge, files },
                   solution,
-                  page
+                  buildChallenge
                 );
                 for (const test of tests) {
                   await testRunner(test);
@@ -404,41 +390,29 @@ function populateTestsForLang({ lang, challenges }, meta) {
   });
 }
 
-async function createTestRunnerForDOMChallenge(
+async function createTestRunner(
   { required = [], template, files },
   solution,
-  context
+  buildChallenge
 ) {
   if (solution) {
     files[0].contents = solution;
   }
 
-  const { build, sources, loadEnzyme } = await buildDOMChallenge({
+  const { build, sources, loadEnzyme } = await buildChallenge({
     files,
     required,
     template
   });
+  const code = sources && 'index' in sources ? sources['index'] : '';
 
-  await context.reload();
-  await context.setContent(build);
-  await context.evaluate(
-    async (sources, loadEnzyme) => {
-      const code = sources && 'index' in sources ? sources['index'] : '';
-      const getUserInput = fileName => sources[fileName];
-      await document.__initTestFrame({ code, getUserInput, loadEnzyme });
-    },
-    sources,
-    loadEnzyme
-  );
+  const evaluator = await (buildChallenge === buildDOMChallenge
+    ? getContextEvaluator(build, sources, code, loadEnzyme)
+    : getWorkerEvaluator(build, sources, code));
 
   return async ({ text, testString }) => {
     try {
-      const { pass, err } = await Promise.race([
-        new Promise((_, reject) => setTimeout(() => reject('timeout'), 5000)),
-        await context.evaluate(async testString => {
-          return await document.__runTest(testString);
-        }, testString)
-      ]);
+      const { pass, err } = await evaluator.evaluate(testString, 5000);
       if (!pass) {
         throw new AssertionError(err.message);
       }
@@ -448,28 +422,43 @@ async function createTestRunnerForDOMChallenge(
   };
 }
 
-async function createTestRunnerForJSChallenge({ files }, solution) {
-  if (solution) {
-    files[0].contents = solution;
-  }
+async function getContextEvaluator(build, sources, code, loadEnzyme) {
+  await initializeTestRunner(build, sources, code, loadEnzyme);
 
-  const { build, sources } = await buildJSChallenge({ files });
-  const code = sources && 'index' in sources ? sources['index'] : '';
-
-  const testWorker = createWorker(testEvaluator, { terminateWorker: true });
-  return async ({ text, testString }) => {
-    try {
-      const { pass, err } = await testWorker.execute(
-        { testString, build, code, sources },
-        5000
-      ).done;
-      if (!pass) {
-        throw new AssertionError(err.message);
-      }
-    } catch (err) {
-      reThrow(err, text);
-    }
+  return {
+    evaluate: async (testString, timeout) =>
+      Promise.race([
+        new Promise((_, reject) =>
+          setTimeout(() => reject('timeout'), timeout)
+        ),
+        await page.evaluate(async testString => {
+          return await document.__runTest(testString);
+        }, testString)
+      ])
   };
+}
+
+async function getWorkerEvaluator(build, sources, code) {
+  const testWorker = createWorker(testEvaluator, { terminateWorker: true });
+  return {
+    evaluate: async (testString, timeout) =>
+      await testWorker.execute({ testString, build, code, sources }, timeout)
+        .done
+  };
+}
+
+async function initializeTestRunner(build, sources, code, loadEnzyme) {
+  await page.reload();
+  await page.setContent(build);
+  await page.evaluate(
+    async (code, sources, loadEnzyme) => {
+      const getUserInput = fileName => sources[fileName];
+      await document.__initTestFrame({ code, getUserInput, loadEnzyme });
+    },
+    code,
+    sources,
+    loadEnzyme
+  );
 }
 
 function reThrow(err, text) {

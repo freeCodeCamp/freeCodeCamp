@@ -78,4 +78,3 @@ orbitalPeriod([{name : "sputkin", avgAlt : 35873.5553}]);
 ```
 
 </section>
-              

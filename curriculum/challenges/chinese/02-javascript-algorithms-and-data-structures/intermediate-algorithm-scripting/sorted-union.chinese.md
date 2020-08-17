@@ -69,4 +69,3 @@ function uniteUnique(arr) {
 ```
 
 </section>
-              

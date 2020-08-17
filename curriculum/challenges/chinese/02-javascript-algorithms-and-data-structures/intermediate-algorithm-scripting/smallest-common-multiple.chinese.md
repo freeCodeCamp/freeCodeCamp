@@ -89,4 +89,3 @@ function smallestCommons(arr) {
 ```
 
 </section>
-              

@@ -124,8 +124,8 @@ Every challenge needs an `id`. If you don't specify one, then MongoDB will creat
 
 To generate a new one in a shell (assuming MongoDB is running separately):
 
-1. Run `mongo` command
-2. Run `ObjectId()` command
+1. Run `mongo` command.
+2. Run `ObjectId()` command.
 
 For example:
 
@@ -252,9 +252,9 @@ Here are specific formatting guidelines for the challenge seed code:
 
 ## Hints and Solutions
 
-Each challenge has a `Get a Hint` button, so a user can access any hints/solutions which have been created for the challenge. Curriculum hints/solutions topics are located on [our forum](https://www.freecodecamp.org/forum/c/guide) under the `Guide` category.
+Each challenge has a `Get a Hint` button, so a user can access any hints/solutions which have been created for the challenge. Curriculum hints/solutions topics are located on [our forum](https://forum.freecodecamp.org/c/guide) under the `Guide` category.
 
-If you find a problem with an existing challenge's hints/solutions topic, you can make suggestions in the [contributors category](https://www.freecodecamp.org/forum/c/contributors) on the forum. Moderators and users with trust level 3 will review the comments and decide whether or not to include the changes in the corresponding hint/solutions topic.
+If you find a problem with an existing challenge's hints/solutions topic, you can make suggestions in the [contributors category](https://forum.freecodecamp.org/c/contributors) on the forum. Moderators and users with trust level 3 will review the comments and decide whether or not to include the changes in the corresponding hint/solutions topic.
 
 ### Adding new Challenge hints/solutions Topics
 
@@ -322,28 +322,50 @@ function myFunc() {
 
 ## Testing Challenges
 
-Before you [create a pull request](how-to-open-a-pull-request.md) for your changes, you need to validate that the changes you have made do not inadvertently cause problems with the challenge. To test all challenges run `npm run test:curriculum`. To save time you can limit the tests to one challenge by performing the following steps:
+Before you [create a pull request](how-to-open-a-pull-request.md) for your changes, you need to validate that the changes you have made do not inadvertently cause problems with the challenge. 
 
-1. In the `.env` file, set the environment variable `TEST_CHALLENGES_FOR_LANGS` to the language of the challenge(s) you need to test. The currently accepted values are `english`, `arabic`, `chinese`, `portuguese`, `russian` and `spanish`.
-
-2. Switch to the `curriculum` directory:
+1. To test all challenges run the below command from the root directory
 
 ```
-  cd curriculum
+npm run test:curriculum
+``` 
+
+2. You can also test a block or a superblock of challenges with these commands
+
+```
+npm run test:curriculum --block='Basic HTML and HTML5'
 ```
 
-3. Run the following for each challenge file for which you have changed any `testString`s or added solutions:
+```
+npm run test:curriculum --superblock=responsive-web-design
+```
 
-```
-npm run test -- -g 'the full English title of the challenge'
-```
+You are also able to test one challenge individually by performing the following steps:
+
+1. Switch to the `curriculum` directory:
+
+   ```
+   cd curriculum
+   ```
+
+2. Run the following for each challenge file for which you have changed:
+
+   ```
+   npm run test -- -g 'the full English title of the challenge'
+   ```
 
 Once you have verified that each challenge you've worked on passes the tests, [please create a pull request](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/docs/how-to-open-a-pull-request.md).
+
+> [!TIP]
+> You can set the environment variable `LOCALE` in the `.env` to the language of the challenge(s) you need to test.
+> 
+> The currently accepted values are `english` and `chinese`, with `english` being set by default.
+
 
 ### Useful Links
 
 Creating and Editing Challenges:
 
-1. [Challenge types](https://github.com/freeCodeCamp/learn/blob/a5cb25704168aa37f59a582f0bb5a19b7bd89b46/utils/challengeTypes.js) - what the numeric challenge type values mean (enum).
+1. [Challenge types](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/client/utils/challengeTypes.js#L1-L13) - what the numeric challenge type values mean (enum).
 
-2. [Contributing to FreeCodeCamp - Writing ES6 Challenge Tests ](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - a video following [Ethan Arrowood](https://twitter.com/ArrowoodTech) as he contributes to the old version of the curriculum
+2. [Contributing to FreeCodeCamp - Writing ES6 Challenge Tests](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - a video following [Ethan Arrowood](https://twitter.com/ArrowoodTech) as he contributes to the old version of the curriculum.

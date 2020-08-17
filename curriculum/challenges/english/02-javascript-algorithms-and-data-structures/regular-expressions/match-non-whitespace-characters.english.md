@@ -2,6 +2,7 @@
 id: 587d7db9367417b2b2512ba4
 title: Match Non-Whitespace Characters
 challengeType: 1
+isHidden: false
 forumTopicId: 18210
 ---
 

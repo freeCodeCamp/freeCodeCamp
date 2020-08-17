@@ -73,4 +73,3 @@ function spinalCase(str) {
 ```
 
 </section>
-              

@@ -17,16 +17,16 @@ localeTitle: عش عنصر الارتساء ضمن فقرة
 
 ```yml
 tests:
-  - text: 'تحتاج إلى <code>a</code> العنصر الذي يربط &quot;http://freecatphotoapp.com&quot;.'
-    testString: 'assert(($("a[href=\"http://freecatphotoapp.com\"]").length > 0 || $("a[href=\"http://www.freecatphotoapp.com\"]").length > 0), "You need an <code>a</code> element that links to "http://freecatphotoapp.com".");'
+  - text: 'تحتاج إلى <code>a</code> العنصر الذي يربط &quot;https://freecatphotoapp.com&quot;.'
+    testString: 'assert(($("a[href=\"https://freecatphotoapp.com\"]").length > 0 || $("a[href=\"http://www.freecatphotoapp.com\"]").length > 0), "You need an <code>a</code> element that links to "https://freecatphotoapp.com".");'
   - text: الخاص بك <code>a</code> يجب أن يكون عنصر النص مرساة &quot;صور القط&quot;
     testString: 'assert($("a").text().match(/cat\sphotos/gi), "Your <code>a</code> element should have the anchor text of "cat photos"");'
   - text: إنشاء جديد <code>p</code> العنصر حول الخاص <code>a</code> العنصر. يجب أن يكون هناك 3 علامات <code>p</code> على الأقل في كود HTML الخاص بك.
     testString: 'assert($("p") && $("p").length > 2, "Create a new <code>p</code> element around your <code>a</code> element. There should be at least 3 total <code>p</code> tags in your HTML code.");'
   - text: ''
-    testString: 'assert(($("a[href=\"http://freecatphotoapp.com\"]").parent().is("p") || $("a[href=\"http://www.freecatphotoapp.com\"]").parent().is("p")), "Your <code>a</code> element should be nested within your new <code>p</code> element.");'
+    testString: 'assert(($("a[href=\"https://freecatphotoapp.com\"]").parent().is("p") || $("a[href=\"http://www.freecatphotoapp.com\"]").parent().is("p")), "Your <code>a</code> element should be nested within your new <code>p</code> element.");'
   - text: يجب أن يحتوي عنصر <code>p</code> على النص &quot;عرض المزيد&quot; (مع وجود مسافة بعده).
-    testString: 'assert(($("a[href=\"http://freecatphotoapp.com\"]").parent().text().match(/View\smore\s/gi) || $("a[href=\"http://www.freecatphotoapp.com\"]").parent().text().match(/View\smore\s/gi)), "Your <code>p</code> element should have the text "View more " (with a space after it).");'
+    testString: 'assert(($("a[href=\"https://freecatphotoapp.com\"]").parent().text().match(/View\smore\s/gi) || $("a[href=\"http://www.freecatphotoapp.com\"]").parent().text().match(/View\smore\s/gi)), "Your <code>p</code> element should have the text "View more " (with a space after it).");'
   - text: الخاص بك <code>a</code> يجب أن <em>لا</em> يكون عنصر النص &quot;عرض أكثر&quot;.
     testString: 'assert(!$("a").text().match(/View\smore/gi), "Your <code>a</code> element should <em>not</em> have the text "View more".");'
   - text: تأكد من أن كل عنصر من عناصر <code>p</code> لديه علامة إغلاق.
@@ -47,7 +47,7 @@ tests:
 <h2>CatPhotoApp</h2>
 <main>
 
-  <a href="http://freecatphotoapp.com" target="_blank">cat photos</a>
+  <a href="https://freecatphotoapp.com" target="_blank">cat photos</a>
 
   <img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
 
@@ -69,4 +69,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

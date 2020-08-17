@@ -79,10 +79,30 @@ const legacyDataVisProjects = {
   superBlock: 'legacy-data-visualization'
 };
 
+const legacyInfosecQaProjects = {
+  challenges: [
+    // metric-imperial-converter
+    '587d8249367417b2b2512c41',
+    // issue-tracker
+    '587d8249367417b2b2512c42',
+    // personal-library
+    '587d824a367417b2b2512c43',
+    // stock-price-checker
+    '587d824a367417b2b2512c44',
+    // anonymous-message-board
+    '587d824a367417b2b2512c45'
+  ],
+  title: 'Legacy Information Security and Quality Assurance Projects',
+  // Keep the settings page "Show Certification" button
+  // pointing to information-security-and-quality-assurance
+  superBlock: 'information-security-and-quality-assurance'
+};
+
 const legacyProjects = [
   legacyFrontEndProjects,
   legacyBackEndProjects,
-  legacyDataVisProjects
+  legacyDataVisProjects,
+  legacyInfosecQaProjects
 ];
 
 export default legacyProjects;

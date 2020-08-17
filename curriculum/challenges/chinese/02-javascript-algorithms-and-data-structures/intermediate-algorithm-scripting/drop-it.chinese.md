@@ -75,4 +75,3 @@ function dropElements(arr, func) {
 ```
 
 </section>
-              

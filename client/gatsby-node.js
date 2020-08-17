@@ -3,7 +3,7 @@ const env = require('../config/env');
 const { createFilePath } = require('gatsby-source-filesystem');
 
 const { dasherize } = require('../utils/slugs');
-const { blockNameify } = require('./utils/blockNameify');
+const { blockNameify } = require('../utils/block-nameify');
 const {
   createChallengePages,
   createBlockIntroPages,
@@ -73,6 +73,7 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
         {
           allChallengeNode(
             sort: { fields: [superOrder, order, challengeOrder] }
+            filter: { isHidden: { eq: false } }
           ) {
             edges {
               node {
@@ -208,4 +209,42 @@ exports.onCreateBabelConfig = ({ actions }) => {
       }
     }
   });
+};
+
+// Typically the schema can be inferred, but not when some challenges are
+// skipped (at time of writing the Chinese only has responsive web design), so
+// this makes the missing fields explicit.
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+  const typeDefs = `
+    type ChallengeNode implements Node {
+      question: Question
+      videoId: String
+      required: ExternalFile
+      files: ChallengeFile
+    }
+    type Question {
+      text: String
+      answers: [String]
+      solution: Int
+    }
+    type ChallengeFile {
+      indexhtml: FileContents
+      indexjs: FileContents
+      indexjsx: FileContents
+    }
+    type ExternalFile {
+      link: String
+      src: String
+    }
+    type FileContents {
+      key: String
+      ext: String
+      name: String
+      contents: String
+      head: String
+      tail: String
+    }
+  `;
+  createTypes(typeDefs);
 };

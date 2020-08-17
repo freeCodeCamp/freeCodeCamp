@@ -2,6 +2,7 @@
 id: 587d7b84367417b2b2512b36
 title: 'Catch Unclosed Parentheses, Brackets, Braces and Quotes'
 challengeType: 1
+isHidden: false
 forumTopicId: 301190
 ---
 

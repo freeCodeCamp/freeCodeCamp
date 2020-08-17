@@ -82,6 +82,4 @@ function whatIsInAName(collection, source) {
   return arr;
 }
 ```
-
 </section>
-              

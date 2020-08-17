@@ -12,6 +12,14 @@ ports:
   onOpen: ignore
 
 tasks:
+- before: |
+    echo '
+    export COOKIE_DOMAIN=gitpod.io
+    export HOME_LOCATION=$(gp url 8000)
+    export API_LOCATION=$(gp url 3000)
+    ' >> ~/.bashrc;
+    exit;
+
 - name: db
   # starting mongo in background, so it doesn't block prebuilds
   before: >
@@ -66,3 +74,8 @@ github:
     addBadge: false
     # add a label once the prebuild is ready to pull requests (defaults to false)
     addLabel: false
+
+vscode:
+  extensions:
+    - dbaeumer.vscode-eslint@2.1.5:9Wg0Glx/TwD8ElFBg+FKcQ==
+    - esbenp.prettier-vscode@4.7.0:kgoYSh1LwTixKtJtQWtodQ==

@@ -2,6 +2,7 @@
 id: 587d7daf367417b2b2512b7f
 title: Change the Prototype to a New Object
 challengeType: 1
+isHidden: false
 forumTopicId: 301316
 ---
 

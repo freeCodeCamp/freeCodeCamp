@@ -80,4 +80,3 @@ function truthCheck(collection, pre) {
 ```
 
 </section>
-              

@@ -1,0 +1,104 @@
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+.video-wrapper iframe,
+.video-wrapper object,
+.video-wrapper embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video-placeholder-loader {
+  min-height: 540px;
+  display: flex;
+  align-items: center;
+}
+
+.display-youtube-video {
+  display: block;
+}
+
+.hide-youtube-video {
+  display: none;
+}
+
+.video-quiz-options {
+  background-color: var(--primary-background);
+}
+
+/* remove bootstrap margin and center the radio buttons */
+.video-quiz-options > label {
+  margin: 0;
+  align-items: center;
+}
+
+.video-quiz-option-label {
+  display: block;
+  padding: 20px;
+  cursor: pointer;
+  display: flex;
+  font-weight: normal;
+  border-left: 4px solid var(--tertiary-background);
+  border-right: 4px solid var(--tertiary-background);
+  border-top: 2px solid var(--tertiary-background);
+  border-bottom: 2px solid var(--tertiary-background);
+}
+
+.video-quiz-option-label:first-child {
+  border-top: 4px solid var(--tertiary-background);
+}
+
+.video-quiz-option-label:last-child {
+  border-bottom: 4px solid var(--tertiary-background);
+}
+
+.video-quiz-input-hidden {
+  position: absolute;
+  left: -9999px;
+}
+
+.video-quiz-input-visible {
+  margin-right: 15px;
+  position: relative;
+  top: 2px;
+  display: inline-block;
+  min-width: 20px;
+  min-height: 20px;
+  max-width: 20px;
+  max-height: 20px;
+  border-radius: 50%;
+  background-color: var(--secondary-background);
+  border: 2px solid var(--primary-color);
+  position: relative;
+}
+
+.video-quiz-selected-input {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* remove bootstrap properties */
+.video-quiz-option > p {
+  margin: 0;
+}
+
+/* remove bootstrap properties */
+.video-quiz-option > pre {
+  padding: 0;
+  margin: 0;
+  /* remove default prism background */
+  background: none;
+}

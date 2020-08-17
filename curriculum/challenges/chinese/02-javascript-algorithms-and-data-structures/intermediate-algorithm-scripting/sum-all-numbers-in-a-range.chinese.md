@@ -75,6 +75,4 @@ function sumAll(arr) {
   return sum;
 }
 ```
-
 </section>
-              

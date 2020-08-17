@@ -2,6 +2,7 @@
 id: 587d7b8c367417b2b2512b56
 title: Use export to Share a Code Block
 challengeType: 1
+isHidden: false
 forumTopicId: 301219
 ---
 

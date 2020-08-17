@@ -140,6 +140,16 @@ Software required for both Docker and Local builds:
 | [Node.js](http://nodejs.org)  | `12.x`  | [LTS Schedule](https://github.com/nodejs/Release#release-schedule)   |
 | npm (comes bundled with Node) | `6.x`   | Does not have LTS releases, we use the version bundled with Node LTS |
 
+If Node.js is already installed on your machine, run the following commands to validate the versions:
+
+```sh
+node -v
+npm -v
+```
+
+> [!DANGER]
+> If you have a different version, please install the recommended version. We can only support installation issues for recommended versions. See [troubleshooting](#troubleshooting) for details.
+
 **Docker Build additional prerequisite:**
 
 | Prerequisite                                                               | Version    | Notes                                                                                                        |
@@ -156,16 +166,6 @@ Software required for both Docker and Local builds:
 
 > [!TIP]
 > We highly recommend updating to the latest stable releases of the software listed above, also known as Long Term Support (LTS) releases.
-
-If Node.js is already installed on your machine, run the following commands to validate the versions:
-
-```sh
-node -v
-npm -v
-```
-
-> [!DANGER]
-> If you have a different version, please install the recommended version. We can only support installation issues for recommended versions. See [troubleshooting](#troubleshooting) for details.
 
 ### Configuring dependencies
 
@@ -318,6 +318,7 @@ A quick reference to the commands that you will need when working locally.
 | `npm run test:curriculum --block='Basic HTML and HTML5'`       | Test a specific Block.                                                              |
 | `npm run test:curriculum --superblock='responsive-web-design'` | Test a specific SuperBlock.                                                         |
 | `npm run test:server`                                          | Run the server test suite.                                                          |
+| `npm run e2e`                                                  | Run the Cypress end to end tests.                                   |
 | `npm run clean`                                                | Uninstalls all dependencies and cleans up caches.                                   |
 
 ## Making changes locally
@@ -582,6 +583,6 @@ If you get errors while installing the dependencies, please make sure that you a
 
 ## Getting Help
 
-If you are stuck and need help, let us know by asking in the ['Contributors' category on our forum](https://www.freecodecamp.org/forum/c/contributors) or the [Contributors chat room](https://gitter.im/FreeCodeCamp/Contributors) on Gitter.
+If you are stuck and need help, let us know by asking in the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or the [Contributors chat room](https://gitter.im/FreeCodeCamp/Contributors) on Gitter.
 
 There might be an error in the console of your browser or in Bash / Terminal / Command Line that will help identify the problem. Provide this error message in your problem description so others can more easily identify the issue and help you find a resolution.
