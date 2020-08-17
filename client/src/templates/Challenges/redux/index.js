@@ -3,6 +3,7 @@ import { createAction, handleActions } from 'redux-actions';
 import { createTypes } from '../../../../utils/stateManagement';
 
 import { createPoly } from '../../../../../utils/polyvinyl';
+import { getLines } from '../../../../../utils/get-lines';
 import challengeModalEpic from './challenge-modal-epic';
 import completionEpic from './completion-epic';
 import codeLockEpic from './code-lock-epic';
@@ -130,18 +131,6 @@ export const createFiles = createAction(types.createFiles, challengeFiles =>
       {}
     )
 );
-
-// TODO: secure with tests
-function getLines(contents, range) {
-  if (isEmpty(range)) {
-    return '';
-  }
-  const lines = contents.split('\n');
-  const editableLines = isEmpty(lines)
-    ? []
-    : lines.slice(range[0], range[1] - 1);
-  return editableLines.join('\n');
-}
 
 export const createQuestion = createAction(types.createQuestion);
 export const initTests = createAction(types.initTests);

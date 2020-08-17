@@ -58,7 +58,7 @@ function buildSourceMap(files) {
   return files.reduce(
     (sources, file) => {
       sources[file.name] += file.source || file.contents;
-      sources.editableContents += file.editableContents;
+      sources.editableContents += file.editableContents || '';
       return sources;
     },
     { index: '', editableContents: '' }
