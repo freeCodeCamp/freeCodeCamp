@@ -211,40 +211,42 @@ exports.onCreateBabelConfig = ({ actions }) => {
   });
 };
 
+// TODO: this broke the React challenges, not sure why, but I'll investigate
+// further and reimplement if it's possible and necessary (Oliver)
 // Typically the schema can be inferred, but not when some challenges are
 // skipped (at time of writing the Chinese only has responsive web design), so
 // this makes the missing fields explicit.
-exports.createSchemaCustomization = ({ actions }) => {
-  const { createTypes } = actions;
-  const typeDefs = `
-    type ChallengeNode implements Node {
-      question: Question
-      videoId: String
-      required: ExternalFile
-      files: ChallengeFile
-    }
-    type Question {
-      text: String
-      answers: [String]
-      solution: Int
-    }
-    type ChallengeFile {
-      indexhtml: FileContents
-      indexjs: FileContents
-      indexjsx: FileContents
-    }
-    type ExternalFile {
-      link: String
-      src: String
-    }
-    type FileContents {
-      key: String
-      ext: String
-      name: String
-      contents: String
-      head: String
-      tail: String
-    }
-  `;
-  createTypes(typeDefs);
-};
+// exports.createSchemaCustomization = ({ actions }) => {
+//   const { createTypes } = actions;
+//   const typeDefs = `
+//     type ChallengeNode implements Node {
+//       question: Question
+//       videoId: String
+//       required: ExternalFile
+//       files: ChallengeFile
+//     }
+//     type Question {
+//       text: String
+//       answers: [String]
+//       solution: Int
+//     }
+//     type ChallengeFile {
+//       indexhtml: FileContents
+//       indexjs: FileContents
+//       indexjsx: FileContents
+//     }
+//     type ExternalFile {
+//       link: String
+//       src: String
+//     }
+//     type FileContents {
+//       key: String
+//       ext: String
+//       name: String
+//       contents: String
+//       head: String
+//       tail: String
+//     }
+//   `;
+//   createTypes(typeDefs);
+// };
