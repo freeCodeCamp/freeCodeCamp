@@ -58,7 +58,7 @@ export class SolutionForm extends Component {
 
       case backEndProject:
         solutionFormFields = backEndProjectFields;
-        solutionLink = solutionLink + 'https://camperbot.glitch.me';
+        solutionLink = solutionLink + 'https://project-name.camperbot.repl.co/';
         solutionFormID = 'back-end-form';
         break;
 

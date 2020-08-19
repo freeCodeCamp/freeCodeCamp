@@ -10,7 +10,7 @@ isRequired: true
 <section id='description'>
 For this project you will learn about the importance of good security by creating a password cracker to figure out passwords that were hashed using SHA-1.
 
-You can access <a href='https://repl.it/@freeCodeCamp/fcc-brute-force-password-cracker' target='_blank'>the full project description and starter code on repl.it</a>.
+You can access <a href='https://repl.it/@freeCodeCamp/fcc-brute-force-password-cracker' target='_blank'>the full project description and starter code on Repl.it</a>.
 
 After going to that link, fork the project. Once you complete the project based on the instructions in 'README.md', submit your project link below.
 
