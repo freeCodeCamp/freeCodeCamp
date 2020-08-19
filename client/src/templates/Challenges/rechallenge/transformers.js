@@ -59,11 +59,12 @@ async function loadBabel() {
 }
 
 async function loadPresetEnv() {
-  if (presetEnv) return;
+  if (babelOptionsJSBase && babelOptionsJSBase.presets) return;
   /* eslint-disable no-inline-comments */
-  presetEnv = await import(
-    /* webpackChunkName: "@babel/preset-env" */ '@babel/preset-env'
-  );
+  if (!presetEnv)
+    presetEnv = await import(
+      /* webpackChunkName: "@babel/preset-env" */ '@babel/preset-env'
+    );
   /* eslint-enable no-inline-comments */
 
   babelOptionsJSBase = {
