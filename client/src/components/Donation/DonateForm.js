@@ -37,6 +37,7 @@ const propTypes = {
   handleProcessing: PropTypes.func,
   isDonating: PropTypes.bool,
   isSignedIn: PropTypes.bool,
+  navigate: PropTypes.func.isRequired,
   showLoading: PropTypes.bool.isRequired,
   stripe: PropTypes.shape({
     createToken: PropTypes.func.isRequired,
