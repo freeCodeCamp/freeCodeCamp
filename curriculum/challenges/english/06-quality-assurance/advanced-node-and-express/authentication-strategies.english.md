@@ -9,7 +9,7 @@ forumTopicId: 301547
 ## Description
 <section id='description'>
 
-A strategy is a way of authenticating a user. You can use a strategy for allowing users to authenticate based on locally saved information (if you have them register first) or from a variety of providers such as Google or GitHub. For this project we will set up a local strategy. To see a list of the 100's of strategies, visit Passports site <a href='http://passportjs.org/'>here</a>.
+A strategy is a way of authenticating a user. You can use a strategy for allowing users to authenticate based on locally saved information (if you have them register first) or from a variety of providers such as Google or GitHub. For this project we will set up a local strategy. To see a list of the 100's of strategies, visit Passports site <a href='http://passportjs.org/' target='_blank'>here</a>.
 
 Add <em>passport-local</em> as a dependency and add it to your server as follows: <code>const LocalStrategy = require('passport-local');</code>
 
@@ -35,7 +35,7 @@ Many strategies are set up using different settings, general it is easy to set i
 
 In the next step we will set up how to actually call the authentication strategy to validate a user based on form data!
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/camperbot/53b495c02b92adeee0aa1bd3f3be8a4b'>here</a>.
+Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/camperbot/53b495c02b92adeee0aa1bd3f3be8a4b' target='_blank'>here</a>.
 
 </section>
 

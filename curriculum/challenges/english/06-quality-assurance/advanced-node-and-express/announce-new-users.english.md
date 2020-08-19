@@ -36,7 +36,7 @@ socket.on('user', data => {
 });
 ```
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/camperbot/bf95a0f74b756cf0771cd62c087b8286'>here</a>.
+Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/camperbot/bf95a0f74b756cf0771cd62c087b8286' target='_blank'>here</a>.
 
 </section>
 

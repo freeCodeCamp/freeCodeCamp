@@ -15,7 +15,7 @@ Go ahead and pass the object containing the variable <em>username</em> equaling 
 
 Also in the profile, add a link to <em>/logout</em>. That route will host the logic to unauthenticate a user. <code>a(href='/logout') Logout</code>
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/camperbot/136b3ad611cc80b41cab6f74bb460f6a'>here</a>.
+Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/camperbot/136b3ad611cc80b41cab6f74bb460f6a' target='_blank'>here</a>.
 
 </section>
 

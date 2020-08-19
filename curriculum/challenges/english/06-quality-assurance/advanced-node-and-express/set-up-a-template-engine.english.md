@@ -10,7 +10,7 @@ forumTopicId: 301564
 
 <section id='description'>
 
-As a reminder, this project is built upon the following starter project on <a href='https://repl.it/github/freeCodeCamp/boilerplate-advancednode'>Repl.it</a>, or clone from <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a>.
+As a reminder, this project is built upon the following starter project on <a href='https://repl.it/github/freeCodeCamp/boilerplate-advancednode' target='_blank'>Repl.it</a>, or clone from <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/' target='_blank'>GitHub</a>.
 
 A template engine enables you to use static template files (such as those written in <em>Pug</em>) in your app. At runtime, the template engine replaces variables in a template file with actual values which can be supplied by your server. Then it transforms the template into a static HTML file that is sent to the client. This approach makes it easier to design an HTML page and allows for displaying variables on the page without needing to make an API call from the client.
 
@@ -24,7 +24,7 @@ You should change the response for the <code>/</code> route to use <code>res.ren
 
 If all went as planned, your app home page will stop showing the message "Pug template is not defined." and will now display a message indicating you've successfully rendered the Pug template!
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/camperbot/3515cd676ea4dfceab4e322f59a37791'>here</a>.
+Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/camperbot/3515cd676ea4dfceab4e322f59a37791' target='_blank'>here</a>.
 
 </section>
 

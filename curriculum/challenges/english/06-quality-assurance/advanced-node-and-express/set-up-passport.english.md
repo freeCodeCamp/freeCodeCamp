@@ -30,7 +30,7 @@ app.use(session({
 
 As well you can go ahead and tell your express app to <b>use</b> 'passport.initialize()' and 'passport.session()'. (For example, <code>app.use(passport.initialize());</code>)
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/camperbot/4068a7662a2f9f5d5011074397d6788c'>here</a>.
+Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/camperbot/4068a7662a2f9f5d5011074397d6788c' target='_blank'>here</a>.
 
 </section>
 

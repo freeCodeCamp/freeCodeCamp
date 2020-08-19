@@ -44,7 +44,7 @@ Now try loading up your app and authenticate and you should see in your server c
 
 <strong>Note:</strong><code>io()</code> works only when connecting to a socket hosted on the same url/server. For connecting to an external socket hosted elsewhere, you would use <code>io.connect('URL');</code>.
 
-Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/camperbot/aae41cf59debc1a4755c9a00ee3859d1'>here</a>.
+Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/camperbot/aae41cf59debc1a4755c9a00ee3859d1' target='_blank'>here</a>.
 
 </section>
 
