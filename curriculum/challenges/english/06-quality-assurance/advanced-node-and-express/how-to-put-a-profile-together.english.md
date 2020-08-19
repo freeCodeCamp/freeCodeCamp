@@ -9,8 +9,6 @@ forumTopicId: 301554
 ## Description
 <section id='description'>
 
-As a reminder, this project is being built upon the following starter project on <a href='https://repl.it/github/freeCodeCamp/boilerplate-advancednode'>Repl.it</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a>.
-
 Now that we can ensure the user accessing the <em>/profile</em> is authenticated, we can use the information contained in 'req.user' on our page!
 
 Go ahead and pass the object containing the variable <em>username</em> equaling <code>req.user.username</code> into the render method of the profile view. Then go to your <code>profile.pug</code> view and add the line <code>h2.center#welcome Welcome, #{username}!</code> creating the h2 element with the class 'center' and id 'welcome' containing the text 'Welcome, ' and the username!

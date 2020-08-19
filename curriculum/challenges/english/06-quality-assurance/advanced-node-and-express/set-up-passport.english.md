@@ -9,8 +9,6 @@ forumTopicId: 301565
 ## Description
 <section id='description'>
 
-As a reminder, this project is being built upon the following starter project on <a href='https://repl.it/github/freeCodeCamp/boilerplate-advancednode'>Repl.it</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a>.
-
 It's time to set up <em>Passport</em> so we can finally start allowing a user to register or login to an account! In addition to Passport, we will use Express-session to handle sessions. Using this middleware saves the session id as a cookie in the client and allows us to access the session data using that id on the server. This way we keep personal account information out of the cookie used by the client to verify to our server they are authenticated and just keep the <em>key</em> to access the data stored on the server.
 
 To set up Passport for use in your project, you will need to add it as a dependency first in your package.json. <code>"passport": "^0.3.2"</code>

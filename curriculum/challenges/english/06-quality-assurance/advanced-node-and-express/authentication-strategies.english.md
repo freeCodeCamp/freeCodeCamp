@@ -9,8 +9,6 @@ forumTopicId: 301547
 ## Description
 <section id='description'>
 
-As a reminder, this project is being built upon the following starter project on <a href='https://repl.it/github/freeCodeCamp/boilerplate-advancednode'>Repl.it</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a>.
-
 A strategy is a way of authenticating a user. You can use a strategy for allowing users to authenticate based on locally saved information (if you have them register first) or from a variety of providers such as Google or GitHub. For this project we will set up a local strategy. To see a list of the 100's of strategies, visit Passports site <a href='http://passportjs.org/'>here</a>.
 
 Add <em>passport-local</em> as a dependency and add it to your server as follows: <code>const LocalStrategy = require('passport-local');</code>

@@ -10,8 +10,6 @@ forumTopicId: 301556
 
 <section id='description'>
 
-As a reminder, this project is being built upon the following starter project on <a href='https://repl.it/github/freeCodeCamp/boilerplate-advancednode'>Repl.it</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a>.
-
 Right now we're not loading an actual user object since we haven't set up our database. This can be done many different ways, but for our project we will connect to the database once when we start the server and keep a persistent connection for the full life-cycle of the app.
 To do this, add your database's connection string (for example: <code>mongodb+srv://:@cluster0-jvwxi.mongodb.net/?retryWrites=true&w=majority</code>) to the environment variable <code>MONGO_URI</code>. This is used in the <em>connection.js</em> file.
 

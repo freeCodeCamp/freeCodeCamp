@@ -9,8 +9,6 @@ forumTopicId: 301567
 ## Description
 <section id='description'>
 
-As a reminder, this project is being built upon the following starter project on <a href='https://repl.it/github/freeCodeCamp/boilerplate-advancednode'>Repl.it</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a>.
-
 One of the greatest features of using a template engine is being able to pass variables from the server to the template file before rendering it to HTML.
 
 In your Pug file, you're able to use a variable by referencing the variable name as <code>#{variable_name}</code> inline with other text on an element or by using an equal sign on the element without a space such as <code>p=variable_name</code> which assigns the variable's value to the p element's text.

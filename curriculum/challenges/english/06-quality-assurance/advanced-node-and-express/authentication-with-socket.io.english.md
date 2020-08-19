@@ -10,8 +10,6 @@ forumTopicId: 301548
 
 <section id='description'>
 
-As a reminder, this project is being built upon the following starter project on <a href='https://repl.it/github/freeCodeCamp/boilerplate-advancednode'>Repl.it</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a>.
-
 Currently, you cannot determine who is connected to your web socket. While <code>req.user</code> contains the user object, that's only when your user interacts with the web server and with web sockets you have no <code>req</code> (request) and therefore no user data. One way to solve the problem of knowing who is connected to your web socket is by parsing and decoding the cookie that contains the passport session then deserializing it to obtain the user object. Luckily, there is a package on NPM just for this that turns a once complex task into something simple!
 
 Add <code>passport.socketio</code>, <code>connect-mongo</code>, and <code>cookie-parser</code> as dependencies and require them as <code>passportSocketIo</code>, <code>MongoStore</code>, and <code>cookieParser</code> respectfully. Also, we need to initialize a new memory store, from <code>express-session</code> which we previously required. It should look as follows:

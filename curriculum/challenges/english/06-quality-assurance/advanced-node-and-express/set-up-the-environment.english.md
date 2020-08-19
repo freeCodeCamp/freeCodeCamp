@@ -10,8 +10,6 @@ forumTopicId: 301566
 
 <section id='description'>
 
-As a reminder, this project is being built upon the following starter project on <a href='https://repl.it/github/freeCodeCamp/boilerplate-advancednode'>Repl.it</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a>.
-
 The following challenges will make use of the <code>chat.pug</code> file. So, in your <code>routes.js</code> file, add a GET route pointing to <code>/chat</code> which makes use of <code>ensureAuthenticated</code>, and renders <code>chat.pug</code>, with <code>{ user: req.user }</code> passed as an argument to the response. Now, alter your existing <code>/auth/github/callback</code> route to set the <code>req.session.user_id = req.user.id</code>, and redirect to <code>/chat</code>.
 
 Add <code>html</code> and <code>socket.io</code> as a dependency and require/instantiate them in your server defined as follows:
