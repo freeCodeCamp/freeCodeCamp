@@ -99,16 +99,16 @@ function Intro({
     return (
       <>
         <Row>
-          <Col sm={10} smOffset={1} xs={12}>
+          <Col sm={8} smOffset={2} xs={12}>
             <Spacer />
-            <h1 className='big-heading text-center'>
+            <h1 className='big-heading'>
               Welcome to freeCodeCamp's curriculum.
             </h1>
+            <Spacer size={1} />
           </Col>
-          <Spacer size={2} />
           <IntroDescription />
-          <Spacer />
           <Col sm={8} smOffset={2} xs={12}>
+            <Spacer />
             <Login block={true}>
               Sign in to save your progress (it's free)
             </Login>

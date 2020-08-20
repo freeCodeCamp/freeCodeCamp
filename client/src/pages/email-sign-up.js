@@ -63,9 +63,6 @@ class AcceptPrivacyTerms extends Component {
           <Row>
             <IntroDescription />
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-              <hr />
-            </Col>
-            <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
               <strong>
                 - Quincy Larson, the teacher who founded freeCodeCamp.org
               </strong>
