@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
+import format from 'date-fns/format';
 import { Grid, Row, Col, Image, Button } from '@freecodecamp/react-bootstrap';
 import FreeCodeCampLogo from '../assets/icons/freeCodeCampLogo';
 // eslint-disable-next-line max-len
@@ -45,7 +46,6 @@ const propTypes = {
     errored: PropTypes.bool
   }),
   isDonating: PropTypes.bool,
-  issueDate: PropTypes.string,
   showCert: PropTypes.func.isRequired,
   signedInUserName: PropTypes.string,
   userFetchState: PropTypes.shape({
@@ -250,7 +250,7 @@ class ShowCertification extends Component {
               <Col md={7} sm={12}>
                 <div className='issue-date'>
                   Issued&nbsp;
-                  <strong>{issueDate}</strong>
+                  <strong>{format(new Date(issueDate), 'MMMM D, YYYY')}</strong>
                 </div>
               </Col>
             </header>
