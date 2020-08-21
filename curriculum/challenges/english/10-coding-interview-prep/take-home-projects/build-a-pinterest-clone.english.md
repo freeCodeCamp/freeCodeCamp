@@ -17,8 +17,8 @@ Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_bl
 <strong>User Story:</strong> As an unauthenticated user, I can browse other users' walls of images.
 <strong>User Story:</strong> As an authenticated user, if I upload an image that is broken, it will be replaced by a placeholder image. (can use jQuery broken image detection)
 <strong>Hint:</strong> <a href='http://masonry.desandro.com/' target='_blank'>Masonry.js</a> is a library that allows for Pinterest-style image grids.
-Once you've finished implementing these user stories, click the "I've completed this challenge" button and enter the URLs for both your GitHub repository and your live app running on Heroku.
-You can get feedback on your project by sharing it with your friends on Facebook.
+Once you've finished implementing these user stories, enter the URLs for both your live app running on Repl.it and your GitHub repository and click the "I've completed this challenge" button.
+You can get feedback on your project by sharing it on the <a href='https://forum.freecodecamp.org/' target='_blank'>freeCodeCamp forum</a>.
 </section>
 
 ## Instructions
