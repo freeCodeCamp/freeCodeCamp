@@ -208,6 +208,18 @@ exports.onCreateBabelConfig = ({ actions }) => {
   });
 };
 
+exports.onCreatePage = async ({ page, actions }) => {
+  const { createPage } = actions;
+  // Only update the `/challenges` page.
+  if (page.path.match(/^\/challenges/)) {
+    // page.matchPath is a special key that's used for matching pages
+    // with corresponding routes only on the client.
+    page.matchPath = '/challenges/*';
+    // Update the page.
+    createPage(page);
+  }
+};
+
 // TODO: this broke the React challenges, not sure why, but I'll investigate
 // further and reimplement if it's possible and necessary (Oliver)
 // Typically the schema can be inferred, but not when some challenges are
