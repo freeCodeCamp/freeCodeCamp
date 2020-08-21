@@ -73,7 +73,7 @@ Here are our ten core certifications:
 - [React and Redux](https://learn.freecodecamp.org/front-end-libraries/react-and-redux)
   <br />
   <br />
-  **Projects**: Random Quote Machine, Markdown Previewer, Drum Machine, JavaScript Calculator, Pomodoro Clock
+  **Projects**: [Random Quote Machine](JavaScript Algorithms and Data Structures Certification), [Markdown Previewer](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-markdown-previewer), [Drum Machine](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-drum-machine), [JavaScript Calculator](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-javascript-calculator), [Pomodoro Clock](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-pomodoro-clock)
 
 #### 4. Data Visualization Certification
 
