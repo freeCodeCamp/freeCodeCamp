@@ -40,4 +40,4 @@ and serve the `/docs` directory
 docsify serve docs
 ```
 
-Alternatively, if you have installed freeCodeCamp locally (see the local setup guide), we bundle the CLI with the development tools so you can run `npm run docs:serve` from the root of the repo.
+Alternatively, if you have installed freeCodeCamp locally (see the local setup guide), we bundle the CLI with the development tools so you can execute `npm run docs:serve` from the root of the repo.
