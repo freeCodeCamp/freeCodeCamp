@@ -14,7 +14,7 @@ First of all we need a Schema. Each schema maps to a MongoDB collection. It defi
 Schemas are building block for Models. They can be nested to create complex models, but in this case we’ll keep things simple.
 A model allows you to create instances of your objects, called documents.
 
-Glitch is a real server, and in real servers the interactions with the db happen in handler functions. These function are executed when some event happens (e.g. someone hits an endpoint on your API). We’ll follow the same approach in these exercises. The <code>done()</code> function is a callback that tells us that we can proceed after completing an asynchronous operation such as inserting, searching, updating or deleting. It’s following the Node convention and should be called as <code>done(null, data)</code> on success, or <code>done(err)</code> on error.
+Repl.it is a real server, and in real servers the interactions with the db happen in handler functions. These function are executed when some event happens (e.g. someone hits an endpoint on your API). We’ll follow the same approach in these exercises. The <code>done()</code> function is a callback that tells us that we can proceed after completing an asynchronous operation such as inserting, searching, updating or deleting. It’s following the Node convention and should be called as <code>done(null, data)</code> on success, or <code>done(err)</code> on error.
 Warning - When interacting with remote services, errors may occur!
 
 ```js

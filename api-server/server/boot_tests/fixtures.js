@@ -16,7 +16,10 @@ export const mockFirstChallenge = {
   id: '456def',
   block: 'first',
   superBlock: 'the',
-  dashedName: 'challenge'
+  dashedName: 'challenge',
+  challengeOrder: 0,
+  superOrder: 1,
+  order: 0
 };
 
 export const mockCompletedChallenge = {
@@ -117,16 +120,6 @@ export function createNewUserFromEmail(email) {
 
 export const mockApp = {
   models: {
-    Challenge: {
-      find() {
-        return firstChallengeUrl;
-      },
-      findById(id, cb) {
-        return id === mockChallenge.id
-          ? cb(null, mockChallenge)
-          : cb(new Error('challenge not found'));
-      }
-    },
     Donation: {
       findOne(query, cb) {
         return isEqual(query, matchSubscriptionIdQuery)
@@ -156,6 +149,8 @@ export const mockApp = {
     }
   }
 };
+
+export const mockAllChallenges = [mockFirstChallenge, mockChallenge];
 
 export const mockGetFirstChallenge = () => firstChallengeUrl;
 

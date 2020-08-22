@@ -85,10 +85,12 @@ class Presentational extends React.Component {
     });
   }
   submitMessage() {
-    const currentMessage = this.state.input;
-    this.setState({
-      input: '',
-      messages: this.state.messages.concat(currentMessage)
+    this.setState((state) => {
+      const currentMessage = state.input;
+      return {
+        input: '',
+        messages: state.messages.concat(currentMessage)
+      };
     });
   }
   render() {
@@ -202,10 +204,12 @@ class Presentational extends React.Component {
     });
   }
   submitMessage() {
-    const currentMessage = this.state.input;
-    this.setState({
-      input: '',
-      messages: this.state.messages.concat(currentMessage)
+    this.setState((state) => {
+      const currentMessage = state.input;
+      return {
+        input: '',
+        messages: state.messages.concat(currentMessage)
+      };
     });
   }
   render() {

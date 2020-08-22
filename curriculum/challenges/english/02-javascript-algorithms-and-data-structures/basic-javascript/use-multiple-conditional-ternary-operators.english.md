@@ -36,7 +36,7 @@ function findGreaterOrEqual(a, b) {
 }
 ```
 
-However, this should be used with care as using multiple conditional operators without proper indentation may make your code hard to read. For example:
+It is considered best practice to format multiple conditional operators such that each condition is on a separate line, as shown above. Using multiple conditional operators without proper indentation may make your code hard to read. For example:
 
 ```js
 function findGreaterOrEqual(a, b) {
@@ -48,7 +48,7 @@ function findGreaterOrEqual(a, b) {
 
 ## Instructions
 <section id='instructions'>
-Use multiple conditional operators in the <code>checkSign</code> function to check if a number is positive, negative or zero. The function should return "positive", "negative" or "zero".
+In the <code>checkSign</code> function, use multiple conditional operators - following the recommended format used in <code>findGreaterOrEqual</code> - to check if a number is positive, negative or zero. The function should return <code>"positive"</code>, <code>"negative"</code> or <code>"zero"</code>.
 </section>
 
 ## Tests

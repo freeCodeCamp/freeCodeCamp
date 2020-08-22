@@ -9,7 +9,7 @@ localeTitle: Подтвердить завершение
 
 ## Description
 <section id='description'>
-Проверьте, заканчивается ли строка (первый аргумент, <code>str</code> ) заданной целевой строкой (второй аргумент, <code>target</code> ). Эта проблема <em>может</em> быть решена с помощью <code>.endsWith()</code> , который был введен в ES2015. Но для этой задачи мы хотели бы, чтобы вы использовали один из методов подстроки JavaScript. Не забудьте использовать <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask,</a> если вы застряли. Напишите свой собственный код.
+Проверьте, заканчивается ли строка (первый аргумент, <code>str</code> ) заданной целевой строкой (второй аргумент, <code>target</code> ). Эта проблема <em>может</em> быть решена с помощью <code>.endsWith()</code> , который был введен в ES2015. Но для этой задачи мы хотели бы, чтобы вы использовали один из методов подстроки JavaScript. Не забудьте использовать <a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask,</a> если вы застряли. Напишите свой собственный код.
 </section>
 
 ## Instructions

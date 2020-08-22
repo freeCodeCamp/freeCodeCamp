@@ -2,26 +2,66 @@
 id: 587d7b7d367417b2b2512b1d
 title: 'Iterate Through the Keys of an Object with a for...in Statement'
 challengeType: 1
-videoUrl: ''
-localeTitle: 使用for ... in Statement中的对象键迭代
+forumTopicId: 301162
+localeTitle: '使用 for...in 语句迭代对象'
 ---
 
 ## Description
-<section id="description">有时您可能需要遍历对象中的所有键。这需要JavaScript中的特定语法，称为<dfn>for ... in</dfn>语句。对于我们的<code>users</code>对象，这可能看起来像： <blockquote> for（让用户在用户中）{ <br>的console.log（用户）; <br> }; <br><br> //日志： <br>艾伦<br>杰夫<br>莎拉<br>瑞安</blockquote>在这个语句中，我们定义了一个变量<code>user</code> ，正如您所看到的，在每次迭代期间，当该语句循环遍历该对象时，该变量被重置为每个对象的键，从而导致每个用户的名称被打印到控制台。 <strong>注意：</strong> <br>对象不像数组那样保持对存储键的排序;因此，当引用或访问该密钥时，对象上的键位置或其出现的相对顺序是无关紧要的。 </section>
+<section id='description'>
+
+有时候你需要遍历一个对象中的所有键。这需要 JavaScript 中的一个特殊语法：<dfn>for...in</dfn> 语句。以遍历 <code>users</code> 对象的键为例：
+
+```js
+for (let user in users) {
+  console.log(user);
+}
+
+// logs:
+Alan
+Jeff
+Sarah
+Ryan
+```
+
+在这个语句中，我们定义了一个<code>user</code>变量，你可以看到，这个变量在 for...in 语句对对象的每一个键的遍历中都会被重置。
+<strong>注意：</strong><br>跟数组不同，对象中的键是无序的，因此一个对象中某个键的位置，或者说它出现的相对顺序，在引用或访问该键时是不确定的。
+</section>
 
 ## Instructions
-<section id="instructions">我们定义了一个函数<code>countOnline</code> ;在此函数中使用<dfn>for ... in</dfn>语句循环访问<code>users</code>对象中的<code>users</code>并返回其<code>online</code>属性设置为<code>true</code>的用户数。 </section>
+<section id='instructions'>
+
+我们已经定义了一个<code>countOnline</code>函数，请在其中使用一个 <dfn>for...in</dfn> 语句来遍历<code>users</code>对象中的用户，并返回<code>online</code>属性为<code>true</code>的用户的数量。
+
+
+```js
+{
+  Alan: {
+    online: false
+  },
+  Jeff: {
+    online: true
+  },
+  Sarah: {
+    online: false
+  }
+}
+```
+
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>users</code>对象包含用户<code>Jeff</code>和<code>Ryan</code> ， <code>online</code>设置为<code>true</code> ，用户<code>Alan</code>和<code>Sarah</code> <code>online</code>设置为<code>false</code>
-    testString: 'assert(users.Alan.online === false && users.Jeff.online === true &&  users.Sarah.online === false &&  users.Ryan.online === true, "The <code>users</code> object contains users <code>Jeff</code> and <code>Ryan</code> with <code>online</code> set to <code>true</code> and users <code>Alan</code> and <code>Sarah</code> with <code>online</code> set to <code>false</code>");'
-  - text: 函数<code>countOnline</code>返回<code>online</code>属性设置为<code>true</code>的用户数
-    testString: 'assert((function() { users.Harry = {online: true}; users.Sam = {online: true}; users.Carl = {online: true}; return countOnline(users) })() === 5, "The function <code>countOnline</code> returns the number of users with the <code>online</code> property set to <code>true</code>");'
-
+  - text: 函数 <code>countOnline</code> 应该使用 `for in` 语句遍历传入对象的key。
+    testString: assert(code.match(/for\s*\(\s*(var|let)\s+[a-zA-Z_$]\w*\s+in\s+[a-zA-Z_$]\w*\s*\)\s*{/));
+  - text: '当传入 <code>{ Alan: { online: false }, Jeff: { online: true }, Sarah: { online: false } }</code> 时，函数 <code>countOnline</code> 应该返回  <code>1</code>。'
+    testString: assert(countOnline(usersObj1) === 1);
+  - text: '当传入 <code>{ Alan: { online: true }, Jeff: { online: false }, Sarah: { online: true } }</code> 时，函数 <code>countOnline</code> 应该返回  <code>2</code>。'
+    testString: assert(countOnline(usersObj2) === 2);
+  - text: '当传入 <code>{ Alan: { online: false }, Jeff: { online: false }, Sarah: { online: false } }</code> 时，函数 <code>countOnline</code> 应该返回  <code>0</code>。'
+    testString: assert(countOnline(usersObj3) === 0);
 ```
 
 </section>
@@ -32,37 +72,58 @@ tests:
 <div id='js-seed'>
 
 ```js
-let users = {
-  Alan: {
-    age: 27,
-    online: false
-  },
-  Jeff: {
-    age: 32,
-    online: true
-  },
-  Sarah: {
-    age: 48,
-    online: false
-  },
-  Ryan: {
-    age: 19,
-    online: true
-  }
-};
-
-function countOnline(obj) {
+function countOnline(usersObj) {
   // change code below this line
 
   // change code above this line
 }
-
-console.log(countOnline(users));
-
 ```
 
 </div>
 
+### After Test
+<div id='js-teardown'>
+
+```js
+const usersObj1 = {
+  Alan: {
+    online: false
+  },
+  Jeff: {
+    online: true
+  },
+  Sarah: {
+    online: false
+  }
+}
+
+const usersObj2 = {
+  Alan: {
+    online: true
+  },
+  Jeff: {
+    online: false
+  },
+  Sarah: {
+    online: true
+  }
+}
+
+
+const usersObj3 = {
+  Alan: {
+    online: false
+  },
+  Jeff: {
+    online: false
+  },
+  Sarah: {
+    online: false
+  }
+}
+```
+
+</div>
 
 
 </section>
@@ -71,6 +132,17 @@ console.log(countOnline(users));
 <section id='solution'>
 
 ```js
-// solution required
+
+function countOnline(usersObj) {
+  let online = 0;
+  for(let user in usersObj){
+    if(usersObj[user].online) {
+      online++;
+    }
+  }
+  return online;
+}
+
 ```
+
 </section>

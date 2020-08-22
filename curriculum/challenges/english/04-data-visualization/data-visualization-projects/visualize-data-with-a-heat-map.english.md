@@ -28,7 +28,7 @@ You can use HTML, JavaScript, CSS, and the D3 svg-based visualization library. R
 <strong>User Story #14:</strong> My legend should contain <code>rect</code> elements.
 <strong>User Story #15:</strong> The <code>rect</code> elements in the legend should use at least 4 different fill colors.
 <strong>User Story #16:</strong> I can mouse over an area and see a tooltip with a corresponding <code>id="tooltip"</code> which displays more information about the area.
-<strong>User Story #16:</strong> My tooltip should have a <code>data-year</code> property that corresponds to the <code>data-year</code> of the active area.
+<strong>User Story #17:</strong> My tooltip should have a <code>data-year</code> property that corresponds to the <code>data-year</code> of the active area.
 Here is the dataset you will need to complete this project: <code>https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/global-temperature.json</code>
 You can build your project by forking <a href='https://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code>
 Once you're done, submit the URL to your working project with all its tests passing.

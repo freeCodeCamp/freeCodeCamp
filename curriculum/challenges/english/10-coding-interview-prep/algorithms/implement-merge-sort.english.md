@@ -34,7 +34,7 @@ tests:
   - text: <code>mergeSort</code> should return an array that is unchanged except for order.
     testString: assert.sameMembers(mergeSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]), [1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]);
   - text: <code>mergeSort</code> should not use the built-in <code>.sort()</code> method.
-    testString: assert(!removeJSComments(code).match(/\.?[\s\S]*?sort\s*\(/));
+    testString: assert(isBuiltInSortUsed());
 
 ```
 
@@ -63,12 +63,19 @@ mergeSort([1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]);
 <div id='js-teardown'>
 
 ```js
-const removeJSComments = str => str.replace(/\/\*[\s\S]*?\*\/|\/\/.*$/gm, '');
+function isSorted(a){
+  for(let i = 0; i < a.length - 1; i++)
+    if(a[i] > a[i + 1])
+      return false;
+  return true;
+}
 
-function isSorted(arr) {
-  var check = (i) => (i == arr.length - 1) ? true : (arr[i] > arr[i + 1]) ? false : check(i + 1);
-  return check(0);
-};
+function isBuiltInSortUsed(){
+  let sortUsed = false;
+  Array.prototype.sort = () => sortUsed = true;
+  mergeSort([0, 1]);
+  return !sortUsed;
+}
 ```
 
 </div>
@@ -79,7 +86,37 @@ function isSorted(arr) {
 <section id='solution'>
 
 ```js
-// solution required
+function mergeSort(array) {
+  if (array.length === 1) {
+    return array;
+  } else {
+    const splitIndex = Math.floor(array.length / 2);
+    return merge(
+      mergeSort(array.slice(0, splitIndex)),
+      mergeSort(array.slice(splitIndex))
+    );
+  }
+
+  // Merge two sorted arrays
+  function merge(array1, array2) {
+    let merged = [];
+    while (array1.length && array2.length) {
+      if (array1[0] < array2[0]) {
+        merged.push(array1.shift());
+      } else if (array1[0] > array2[0]) {
+        merged.push(array2.shift());
+      } else {
+        merged.push(array1.shift(), array2.shift());
+      }
+    }
+
+    // After looping ends, one array is empty, and other array contains only
+    // values greater than all values in `merged`
+    return [...merged, ...array1, ...array2];
+  }
+}
+
+mergeSort([1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]);
 ```
 
 </section>

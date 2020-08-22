@@ -40,9 +40,11 @@ tests:
 
 ```js
 // check if array is sorted
-function isSorted(arr) {
-  var check = (i) => (i == arr.length - 1) ? true : (arr[i] > arr[i + 1]) ? false : check(i + 1);
-  return check(0);
+function isSorted(a){
+  for(let i = 0; i < a.length - 1; i++)
+    if(a[i] > a[i + 1])
+      return false;
+  return true;
 }
 // generate a randomly filled array
 var array = new Array();
@@ -69,4 +71,5 @@ var MinHeap = function() {
 ```js
 // solution required
 ```
+
 </section>

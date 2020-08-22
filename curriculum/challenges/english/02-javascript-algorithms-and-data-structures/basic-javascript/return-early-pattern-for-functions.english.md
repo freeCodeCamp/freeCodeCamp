@@ -27,7 +27,7 @@ The above outputs "Hello" to the console, returns "World", but <code>"byebye"</c
 ## Instructions
 <section id='instructions'>
 Modify the function <code>abTest</code> so that if <code>a</code> or <code>b</code> are less than <code>0</code> the function will immediately exit with a value of <code>undefined</code>.
-<strong>Hint</strong><br>Remember that <a href='http://www.freecodecamp.org/challenges/understanding-uninitialized-variables' target='_blank'><code>undefined</code> is a keyword</a>, not a string.
+<strong>Hint</strong><br>Remember that <a href='https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-uninitialized-variables' target='_blank'><code>undefined</code> is a keyword</a>, not a string.
 </section>
 
 ## Tests

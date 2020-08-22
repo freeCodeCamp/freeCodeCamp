@@ -57,11 +57,11 @@ Read our [How to Contribute to Open Source Guide](https://github.com/freeCodeCam
 
 ### Where are the Guide articles (guide.freecodecamp.org)?
 
-We have sunset the general guide articles. 
+We have sunset the general guide articles.
 
-The guide articles redirect to high quality tutorials on freeCodeCamp news. 
+The guide articles redirect to high quality tutorials on freeCodeCamp news.
 
-The challenge hint articles  are available on the freeCodeCamp forum as hint topics. We have updated the links on our curriculum help button to point to the hint topics instead.
+The challenge hint articles are available on the freeCodeCamp forum as hint topics. We have updated the links on our curriculum help button to point to the hint topics instead.
 
 ### Can I translate freeCodeCamp's curriculum?
 
@@ -75,11 +75,11 @@ We do intend to make the curriculum available in more languages, but we do not h
 
 China is the largest demographic regions, in our non-native English speaking audience. Currently, we have hundreds of thousands of users using an old version of the platform. This will give us an estimate of logistics involved in the i18n efforts to other languages.
 
-We intend to start i18n efforts in these languages post the Chinese language launch: 
+We intend to start i18n efforts in these languages post the Chinese language launch:
 
-Arabic, Portuguese, Russian and Spanish (in no particular order). 
+Arabic, Portuguese, Russian and Spanish (in no particular order).
 
-We will focus on Latin America as the demographic region for Portuguese and Spanish. 
+We will focus on Latin America as the demographic region for Portuguese and Spanish.
 
 We do not have any plans for i18n to any other languages other than the above for the foreseeable future.
 
@@ -95,7 +95,7 @@ If you think you've found a bug, first read the ["Help I've Found a Bug"](https:
 
 If you're confident it's a new bug, go ahead and create a new GitHub issue. Be sure to include as much information as possible so that we can reproduce the bug. We have a pre-defined issue template to help you through this.
 
-Please note that any issues that seek coding help on a challenge will be closed. The issue tracker is strictly for codebase related issues and discussions. Whenever in doubt, you should [seek assistance on the forum](https://www.freecodecamp.org/forum) before making a report.
+Please note that any issues that seek coding help on a challenge will be closed. The issue tracker is strictly for codebase related issues and discussions. Whenever in doubt, you should [seek assistance on the forum](https://forum.freecodecamp.org) before making a report.
 
 ### How can I report a security issue?
 
@@ -115,9 +115,9 @@ Our community moderators [triage](https://en.wikipedia.org/wiki/Software_bug#Bug
 
 ### Where do I start if I want to work on an issue?
 
-You should go through [**`help wanted`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) or [**`first timers welcome`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+welcome%22) issues for a quick overview of what is available for you to work on.
+You should go through [**`help wanted`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) or [**`first timers only`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+only%22) issues for a quick overview of what is available for you to work on.
 
-> [!TIP] These are up for grabs, and you do not need to seek permission before working on them. If these issues lack clarity on what needs to be done, feel free to ask questions in the comments.
+> [!TIP] **`help wanted`** issues are up for grabs, and you do not need to seek permission before working on them. However, issues with the **`first timers only`** label are reserved for people that have not contributed to the freeCodeCamp codebase before. If these issues lack clarity on what needs to be done, feel free to ask questions in the comments.
 
 ### I found a typo, should I report an issue before I can make a pull request?
 
@@ -138,7 +138,7 @@ We typically do not assign issues to anyone other than long-time contributors to
    - Did you follow the pull request checklist?
    - Did you name your pull request title meaningfully?
 
-You do not need any permission for issues that are marked `help wanted` or `first timers welcome` as explained earlier.
+You do not need any permission for issues that are marked `help wanted` or `first timers only` as explained earlier.
 
 Follow the guidelines carefully and open a pull request.
 
@@ -146,7 +146,7 @@ Follow the guidelines carefully and open a pull request.
 
 **Feel free to ask for help in:**
 
-- The "Contributors" category of [our community forum](https://www.freecodecamp.org/forum/c/contributors).
+- The "Contributors" category of [our community forum](https://forum.freecodecamp.org/c/contributors).
 - Our public contributors [chat room on Gitter](https://gitter.im/FreeCodeCamp/Contributors).
 
 We are excited to help you contribute to any of the topics that you would like to work on. Feel free to ask us questions on the related issue threads, and we will be glad to clarify. Make sure you search for your query before posting a new one.
@@ -157,11 +157,13 @@ Be polite and patient. Our community of volunteers and moderators are always aro
 
 If you have queries about the stack, architecture of the codebase, feel free to reach out to our staff dev team:
 
-| Staff                | Send message on Gitter                                        | DM on Twitter                                         |
-| :------------------- | :------------------------------------------------------------ | :---------------------------------------------------- |
-| Mrugesh Mohapatra    | [@raisedadead](https://gitter.im/raisedadead)                 | [@raisedadead](https://twitter.com/raisedadead)       |
-| Ahmad Abdolsaheb     | [@ahmadabdolsaheb](https://gitter.im/ahmadabdolsaheb)         | [@Abdolsaheb](https://twitter.com/Abdolsaheb)         |
-| Kristofer Koishigawa | [@scissorsneedfoodtoo](https://gitter.im/scissorsneedfoodtoo) | [@kriskoishigawa](https://twitter.com/kriskoishigawa) |
-| Tom Mondloc          | [@moT01](https://gitter.im/moT01)                             | -                                                     |
+| Staff                 | Send message on Forum                                                        |
+| :-------------------- | :--------------------------------------------------------------------------- |
+| Mrugesh Mohapatra     | [@raisedadead](https://forum.freecodecamp.org/u/raisedadead)                 |
+| Ahmad Abdolsaheb      | [@abdolsa](https://forum.freecodecamp.org/u/abdolsa)                         |
+| Kristofer Koishigawa  | [@scissorsneedfoodtoo](https://forum.freecodecamp.org/u/scissorsneedfoodtoo) |
+| Tom Mondloc           | [@moT01](https://forum.freecodecamp.org/u/moT01)                             |
+| Oliver Eyton-Williams | [@ojeytonwilliams](https://forum.freecodecamp.org/u/ojeytonwilliams)         |
+| Randell Dawson        | [@RandellDawson](https://forum.freecodecamp.org/u/randelldawson)             |
 
 **You can email our developer staff at: `dev[at]freecodecamp.org`**

@@ -101,11 +101,11 @@
     },
     "acceptedPrivacyTerms": {
       "type": "boolean",
-      "default": true
+      "default": false
     },
     "sendQuincyEmail": {
       "type": "boolean",
-      "default": true
+      "default": false
     },
     "currentChallengeId": {
       "type": "string",
@@ -167,12 +167,12 @@
       "description": "Camper is information security and quality assurance certified",
       "default": false
     },
-    "isQaCert": {
+    "isQaCertV7": {
       "type": "boolean",
       "description": "Camper is quality assurance certified",
       "default": false
     },
-    "isInfosecCert": {
+    "isInfosecCertV7": {
       "type": "boolean",
       "description": "Camper is information security certified",
       "default": false
@@ -182,17 +182,17 @@
       "description": "Camper is full stack certified (2018)",
       "default": false
     },
-    "isSciCompPyCert": {
+    "isSciCompPyCertV7": {
       "type": "boolean",
       "description": "Camper is scientific computing with Python certified",
       "default": false
     },
-    "isDataAnalysisPyCert": {
+    "isDataAnalysisPyCertV7": {
       "type": "boolean",
       "description": "Camper is data analysis with Python certified",
       "default": false
     },
-    "isMachineLearningPyCert": {
+    "isMachineLearningPyCertV7": {
       "type": "boolean",
       "description": "Camper is machine learning with Python certified",
       "default": false
