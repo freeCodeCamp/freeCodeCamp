@@ -66,4 +66,5 @@ const store = null; // define the Redux store here, passing in your reducers
 ```js
 // solution required
 ```
-</section>
+
+/section>

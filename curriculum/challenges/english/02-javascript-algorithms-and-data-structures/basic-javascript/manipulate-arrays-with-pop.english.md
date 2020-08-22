@@ -2,6 +2,7 @@
 id: 56bbb991ad1ed5201cd392cc
 title: Manipulate Arrays With pop()
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cRbVZAB'
 forumTopicId: 18236
 ---

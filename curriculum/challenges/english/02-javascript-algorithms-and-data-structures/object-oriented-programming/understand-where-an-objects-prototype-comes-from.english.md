@@ -2,6 +2,7 @@
 id: 587d7db0367417b2b2512b81
 title: Understand Where an Object’s Prototype Comes From
 challengeType: 1
+isHidden: false
 forumTopicId: 301330
 ---
 

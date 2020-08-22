@@ -2,6 +2,7 @@
 id: 587d7b8c367417b2b2512b55
 title: Reuse JavaScript Code Using import
 challengeType: 1
+isHidden: false
 forumTopicId: 301208
 ---
 

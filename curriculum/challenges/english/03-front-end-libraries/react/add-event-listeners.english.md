@@ -2,6 +2,7 @@
 id: 5a24c314108439a4d403617e
 title: Add Event Listeners
 challengeType: 6
+isHidden: false
 isRequired: false
 forumTopicId: 301377
 ---
@@ -60,9 +61,9 @@ class MyComponent extends React.Component {
   }
   // change code above this line
   handleEnter() {
-    this.setState({
-      message: this.state.message + 'You pressed the enter key! '
-    });
+    this.setState((state) => ({
+      message: state.message + 'You pressed the enter key! '
+    }));
   }
   handleKeyPress(event) {
     if (event.keyCode === 13) {
@@ -117,9 +118,9 @@ class MyComponent extends React.Component {
     // change code above this line
   }
   handleEnter() {
-    this.setState({
-      message: this.state.message + 'You pressed the enter key! '
-    });
+    this.setState((state) => ({
+      message: state.message + 'You pressed the enter key! '
+    }));
   }
   handleKeyPress(event) {
     if (event.keyCode === 13) {

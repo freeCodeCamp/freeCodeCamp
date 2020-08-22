@@ -45,7 +45,7 @@ tests:
 
 
 </style>
-<a href="http://freecatphotoapp.com/" target="_blank">CatPhotoApp</a>
+<a href="https://freecatphotoapp.com/" target="_blank">CatPhotoApp</a>
 
 ```
 
@@ -65,7 +65,7 @@ tests:
     color: rgba(0,0,255,1);
   }
 </style>
-<a href="http://freecatphotoapp.com/" target="_blank">CatPhotoApp</a>
+<a href="https://freecatphotoapp.com/" target="_blank">CatPhotoApp</a>
 ```
 
 </section>

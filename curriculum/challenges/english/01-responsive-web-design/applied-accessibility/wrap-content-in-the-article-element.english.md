@@ -2,6 +2,7 @@
 id: 587d774e367417b2b2512aa0
 title: Wrap Content in the article Element
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cPp79S3'
 forumTopicId: 301029
 ---
@@ -57,7 +58,7 @@ tests:
 
   <article>
     <h2>Defeating your Foe: the Red Dot is Ours!</h2>
-    <p>Felines the world over have been waging war on the most persistent of foes. This red nemesis combines both cunning stealth and lightening speed. But chin up, fellow fighters, our time for victory may soon be near...</p>
+    <p>Felines the world over have been waging war on the most persistent of foes. This red nemesis combines both cunning stealth and lightning speed. But chin up, fellow fighters, our time for victory may soon be near...</p>
   </article>
 
   <img src="samuraiSwords.jpeg" alt="">
@@ -90,7 +91,7 @@ tests:
 
   <article>
     <h2>Defeating your Foe: the Red Dot is Ours!</h2>
-    <p>Felines the world over have been waging war on the most persistent of foes. This red nemesis combines both cunning stealth and lightening speed. But chin up, fellow fighters, our time for victory may soon be near...</p>
+    <p>Felines the world over have been waging war on the most persistent of foes. This red nemesis combines both cunning stealth and lightning speed. But chin up, fellow fighters, our time for victory may soon be near...</p>
   </article>
 
   <img src="samuraiSwords.jpeg" alt="">

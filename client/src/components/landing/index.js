@@ -4,7 +4,7 @@ import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
-import { uniq } from 'lodash';
+import { uniq, partition } from 'lodash';
 import { Spacer } from '../helpers';
 import Login from '../Header/components/Login';
 import CompanyLogos from './components/CompanyLogos';
@@ -14,7 +14,7 @@ import './landing.css';
 import '../Map/map.css';
 
 const propTypes = {
-  edges: PropTypes.array
+  nodes: PropTypes.array
 };
 
 const BigCallToAction = () => (
@@ -38,9 +38,12 @@ const AsFeaturedSection = () => (
   </Row>
 );
 
-export const Landing = ({ edges }) => {
-  const superBlocks = uniq(edges.map(element => element.node.superBlock));
-  const interviewPrep = superBlocks.splice(6, 1);
+export const Landing = ({ nodes }) => {
+  const [superBlocks, rest] = partition(
+    uniq(nodes.map(node => node.superBlock)),
+    name => name !== 'Coding Interview Prep'
+  );
+  const interviewPrep = rest[0];
   return (
     <Fragment>
       <Helmet>

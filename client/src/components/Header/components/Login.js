@@ -2,10 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { navigate as gatsbyNavigate } from 'gatsby';
 import { Button } from '@freecodecamp/react-bootstrap';
 
-import { hardGoTo as navigate, isSignedInSelector } from '../../../redux';
+import { isSignedInSelector } from '../../../redux';
 import { apiLocation } from '../../../../config/env.json';
 
 import { gtagReportConversion } from '../../../analytics/gtag';
@@ -18,27 +17,16 @@ const mapStateToProps = createSelector(
     isSignedIn
   })
 );
-const mapDispatchToProps = {
-  navigate
-};
-
-const createOnClick = (navigate, isSignedIn) => e => {
-  e.preventDefault();
-  gtagReportConversion();
-  if (isSignedIn) {
-    return gatsbyNavigate('/learn');
-  }
-  return navigate(`${apiLocation}/signin`);
-};
 
 function Login(props) {
-  const { children, navigate, isSignedIn, ...restProps } = props;
+  const { children, isSignedIn, ...restProps } = props;
+  const href = isSignedIn ? '/learn' : `${apiLocation}/signin`;
   return (
     <Button
       bsStyle='default'
       className={(restProps.block ? 'btn-cta-big' : '') + ' signup-btn btn-cta'}
-      href='/signin'
-      onClick={createOnClick(navigate, isSignedIn)}
+      href={href}
+      onClick={() => gtagReportConversion()}
       {...restProps}
     >
       {children || 'Sign In'}
@@ -49,11 +37,7 @@ function Login(props) {
 Login.displayName = 'Login';
 Login.propTypes = {
   children: PropTypes.any,
-  isSignedIn: PropTypes.bool,
-  navigate: PropTypes.func.isRequired
+  isSignedIn: PropTypes.bool
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Login);
+export default connect(mapStateToProps)(Login);

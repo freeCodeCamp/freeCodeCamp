@@ -111,7 +111,7 @@ freeCodeCamp.org提供了一些免费的开发技能认证证书。每个证书�
 
 同时我们社区还有：
 
-- 一个[论坛](https://www.freecodecamp.org/forum)，在这里你可以经常获取编程帮助或者在几小时内得到工程反馈。
+- 一个[论坛](https://forum.freecodecamp.org)，在这里你可以经常获取编程帮助或者在几小时内得到工程反馈。
 - 一个[YouTube频道](https://youtube.com/freecodecamp)，在这里有免费的课程，有关Python、SQL、Android和其他各种各样的技术。
 - 遍布全球的[线下学习社团](https://study-group-directory.freecodecamp.org/)，在这里你可以和志同道合的人一起编程。
 - 一个综合的[数以千计的编程话题向导](https://guide.freecodecamp.org/)。
@@ -122,7 +122,7 @@ freeCodeCamp.org提供了一些免费的开发技能认证证书。每个证书�
 
 ### 发现了一个异常？
 
-如果你认为你发现了一个异常， 首先请阅读[关于我发现了一个异常的帮助](https://www.freecodecamp.org/forum/t/how-to-report-a-bug/19543)文章并且循序其中的指示。如果你确信这是一个新的异常，并且确认其他人页遇到了一样的问题，请继续创建一个新的GitHub Issue。并且确保包含了足够多的信息以方便我们能重现这个异常。
+如果你认为你发现了一个异常， 首先请阅读[关于我发现了一个异常的帮助](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543)文章并且循序其中的指示。如果你确信这是一个新的异常，并且确认其他人页遇到了一样的问题，请继续创建一个新的GitHub Issue。并且确保包含了足够多的信息以方便我们能重现这个异常。
 
 ### 发现了一个安全问题？
 

@@ -2,6 +2,7 @@
 id: 5a661e0f1068aca922b3ef17
 title: Access an Array's Contents Using Bracket Notation
 challengeType: 1
+isHidden: false
 forumTopicId: 301149
 ---
 

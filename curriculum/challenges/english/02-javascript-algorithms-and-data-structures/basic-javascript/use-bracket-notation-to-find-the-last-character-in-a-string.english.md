@@ -2,6 +2,7 @@
 id: bd7123c9c451eddfaeb5bdef
 title: Use Bracket Notation to Find the Last Character in a String
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cBZQGcv'
 forumTopicId: 18342
 ---

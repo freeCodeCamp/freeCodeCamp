@@ -2,6 +2,7 @@
 id: bad87fee1348bd9aedf0887a
 title: Headline with the h2 Element
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/p/pVMPUv/cE8Gqf3'
 forumTopicId: 18196
 ---
@@ -54,7 +55,7 @@ tests:
 ## Solution
 
 <section id='solution'>
-  
+
 ```html
 <h1>Hello World</h1>
 <h2>CatPhotoApp</h2>
