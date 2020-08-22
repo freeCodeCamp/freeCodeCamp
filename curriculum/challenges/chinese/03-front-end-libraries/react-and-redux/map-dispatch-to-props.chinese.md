@@ -60,4 +60,5 @@ const addMessage = (message) => {
 ```js
 // solution required
 ```
-</section>
+
+/section>

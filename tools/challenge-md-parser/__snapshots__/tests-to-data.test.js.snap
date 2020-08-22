@@ -10,3 +10,19 @@ Object {
   ],
 }
 `;
+
+exports[`tests-to-data plugin should match the video snapshot 1`] = `
+Object {
+  "question": Object {
+    "answers": Array [
+      "<p>inline <code>code</code></p>",
+      "<p>some <em>italics</em></p>",
+      "<p><code> code in </code> code tags</p>",
+    ],
+    "solution": 3,
+    "text": "<p>Question line one</p>
+<pre><code class=\\"language-js\\">  var x = 'y';
+</code></pre>",
+  },
+}
+`;

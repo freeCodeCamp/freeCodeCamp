@@ -62,4 +62,5 @@ countToFive();
 ```js
 // solution required
 ```
-</section>
+
+/section>

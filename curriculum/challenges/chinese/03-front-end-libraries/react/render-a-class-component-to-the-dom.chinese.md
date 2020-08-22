@@ -110,4 +110,5 @@ const Vegetables = () => {
 ```js
 // solution required
 ```
-</section>
+
+/section>

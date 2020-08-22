@@ -2,6 +2,7 @@
 id: 587d7db9367417b2b2512ba5
 title: Specify Upper and Lower Number of Matches
 challengeType: 1
+isHidden: false
 forumTopicId: 301367
 ---
 

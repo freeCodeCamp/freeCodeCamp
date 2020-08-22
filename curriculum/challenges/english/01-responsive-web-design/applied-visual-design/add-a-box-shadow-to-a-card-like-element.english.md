@@ -2,6 +2,7 @@
 id: 587d781b367417b2b2512abe
 title: Add a box-shadow to a Card-like Element
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cvVZdUd'
 forumTopicId: 301031
 ---

@@ -2,6 +2,7 @@
 id: 587d781d367417b2b2512ac8
 title: Adjust the Hover State of an Anchor Tag
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cakRGcm'
 forumTopicId: 301035
 ---
@@ -52,7 +53,7 @@ tests:
 
 
 </style>
-<a href="http://freecatphotoapp.com/" target="_blank">CatPhotoApp</a>
+<a href="https://freecatphotoapp.com/" target="_blank">CatPhotoApp</a>
 ```
 
 </div>
@@ -73,7 +74,7 @@ tests:
     color: rgba(0,0,255,1);
   }
 </style>
-<a href="http://freecatphotoapp.com/" target="_blank">CatPhotoApp</a>
+<a href="https://freecatphotoapp.com/" target="_blank">CatPhotoApp</a>
 ```
 
 </section>

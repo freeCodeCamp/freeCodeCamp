@@ -8,7 +8,7 @@ localeTitle: Rolo compressor
 ---
 
 ## Description
-<section id="description"> Achatar uma matriz aninhada. Você deve considerar vários níveis de aninhamento. Lembre-se de usar <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Tente emparelhar o programa. Escreva seu próprio código. </section>
+<section id="description"> Achatar uma matriz aninhada. Você deve considerar vários níveis de aninhamento. Lembre-se de usar <a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Tente emparelhar o programa. Escreva seu próprio código. </section>
 
 ## Instructions
 <section id="instructions">

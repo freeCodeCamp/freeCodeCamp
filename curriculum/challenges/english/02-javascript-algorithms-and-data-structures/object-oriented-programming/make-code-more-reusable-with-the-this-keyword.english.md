@@ -2,6 +2,7 @@
 id: 587d7dad367417b2b2512b76
 title: Make Code More Reusable with the this Keyword
 challengeType: 1
+isHidden: false
 forumTopicId: 301321
 ---
 

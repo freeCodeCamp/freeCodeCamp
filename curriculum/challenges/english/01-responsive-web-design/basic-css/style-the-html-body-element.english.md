@@ -2,6 +2,7 @@
 id: bad87fee1348bd9aedf08736
 title: Style the HTML Body Element
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cB77PHW'
 forumTopicId: 18313
 ---

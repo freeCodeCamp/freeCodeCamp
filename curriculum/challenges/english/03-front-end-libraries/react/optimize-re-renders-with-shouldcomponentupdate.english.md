@@ -2,6 +2,7 @@
 id: 5a24c314108439a4d4036180
 title: Optimize Re-Renders with shouldComponentUpdate
 challengeType: 6
+isHidden: false
 isRequired: false
 forumTopicId: 301398
 ---
@@ -68,9 +69,9 @@ class Controller extends React.Component {
     this.addValue = this.addValue.bind(this);
   }
   addValue() {
-    this.setState({
-      value: this.state.value + 1
-    });
+    this.setState((state) => ({
+      value: state.value + 1
+    }));
   }
   render() {
     return (
@@ -129,9 +130,9 @@ class Controller extends React.Component {
   this.addValue = this.addValue.bind(this);
   }
   addValue() {
-    this.setState({
-      value: this.state.value + 1
-    });
+    this.setState((state) => ({
+      value: state.value + 1
+    }));
   }
   render() {
     return (
