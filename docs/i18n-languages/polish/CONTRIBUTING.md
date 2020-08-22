@@ -15,7 +15,7 @@ Możesz przyczynić się do jednego z tych rzeczy:
  
 1. [Rozwijaj tę otwartoźródłową bazę danych](#https://github.com/freeCodeCamp/freeCodeCamp/). Pomóż nam edytować wyzwania związane z kodowaniem lub naprawiaj błędy na platformie edukacyjnej.
 
-2. Pomoc dla kamperów na naszym [forum publicznym](https://www.freecodecamp.org/forum/). [Odpowiedz na pytania dotyczące kodowania](https://www.freecodecamp.org/forum/?max_posts=1) lub [podaj im informacje zwrotne na temat ich projektów kodowania](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1).
+2. Pomoc dla kamperów na naszym [forum publicznym](https://forum.freecodecamp.org/). [Odpowiedz na pytania dotyczące kodowania](https://forum.freecodecamp.org/?max_posts=1) lub [podaj im informacje zwrotne na temat ich projektów kodowania](https://forum.freecodecamp.org/c/project-feedback?max_posts=1).
 
 3. Pomóż nam dodawać napisy (podpisy zamknięte) do naszych [Filmów na kanale YouTube](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ/videos).
 
@@ -58,7 +58,7 @@ Jeśli uważasz, że znalazłeś błąd, przeczytaj najpierw artykuł ["Help I'v
 
 Jeśli jesteś pewien, że jest to nowy błąd, stwórz nowy problem z GitHub. Upewnij się, że dołączysz jak najwięcej informacji, abyśmy mogli odtworzyć błąd. Mamy predefiniowany szablon problemu, który pomoże Ci w jego rozwiązaniu.
 
-Proszę zwrócić uwagę, że wszelkie problemy, które szukają pomocy przy kodowaniu w przypadku wyzwania, zostaną zamknięte. Śledzenie spraw jest ściśle związane z zagadnieniami związanymi z bazą danych i dyskusjami. W razie wątpliwości, przed sporządzeniem raportu należy [szukać pomocy na forum](https://www.freecodecamp.org/forum).
+Proszę zwrócić uwagę, że wszelkie problemy, które szukają pomocy przy kodowaniu w przypadku wyzwania, zostaną zamknięte. Śledzenie spraw jest ściśle związane z zagadnieniami związanymi z bazą danych i dyskusjami. W razie wątpliwości, przed sporządzeniem raportu należy [szukać pomocy na forum](https://forum.freecodecamp.org).
 
 ##### Jak mogę zgłosić problem bezpieczeństwa?
 
@@ -68,7 +68,7 @@ Proszę nie tworzyć problemów z GitHub w sprawach bezpieczeństwa. Zamiast teg
 
 Nasi moderatorzy społeczności [triage](https://en.wikipedia.org/wiki/Software_bug#Bug_management) zgłaszają problemy i wnioski w oparciu o ich priorytet, dotkliwość i inne czynniki. Możesz [znaleźć kompletny słowniczek ich znaczeń tutaj](https://github.com/freecodecamp/freecodecamp/labels).
 
-Powinieneś przejść przez [**`help wanted`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) lub [**`first timers welcome`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+welcome%22) w celu szybkiego przeglądu tego, nad czym możesz pracować. 
+Powinieneś przejść przez [**`help wanted`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) lub [**`first timers only`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+only%22) w celu szybkiego przeglądu tego, nad czym możesz pracować. 
 
 Są one do pobrania i nie musisz ubiegać się o pozwolenie przed rozpoczęciem pracy nad nimi. Jeśli te kwestie nie są jasne, co należy zrobić, nie krępuj się zadawać pytań w komentarzach.
 
@@ -99,7 +99,7 @@ Przeczytaj nasz [Poradnik jak wnieść wkład do Open Source](https://github.com
 
 Możesz poprosić o pomoc:
 
-- [Kategoria "Współtwórcy" na naszym forum publicznym](https://www.freecodecamp.org/forum/c/contributors)
+- [Kategoria "Współtwórcy" na naszym forum publicznym](https://forum.freecodecamp.org/c/contributors)
 - [Nasz publiczny chat room dla współpracowników na Gitterze](https://gitter.im/FreeCodeCamp/Contributors)
 
 Jesteśmy podekscytowani, by pomóc Ci we wzięciu udziału we wszystkich tematach, nad którymi chciałbyś pracować. Zachęcamy do zadawania nam pytań na tematy pokrewne, a my chętnie udzielimy wyjaśnień. Upewnij się, że szukasz swojego zapytania przed wysłaniem nowego. Bądź uprzejmy i cierpliwy. Nasza społeczność wolontariuszy i moderatorów jest zawsze w pobliżu, aby poprowadzić Cię przez Twoje pytania.

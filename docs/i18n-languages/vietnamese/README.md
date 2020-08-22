@@ -124,7 +124,7 @@ Mã lập trình đang được chạy trực tiếp trên [freeCodeCamp.org](ht
 
 Cộng đồng của chúng tôi còn có:
 
-- [Diễn đàn](https://www.freecodecamp.org/forum) nơi bạn thường có thể nhận trợ giúp lập trình hoặc phản hồi dự án trong vài giờ.
+- [Diễn đàn](https://forum.freecodecamp.org) nơi bạn thường có thể nhận trợ giúp lập trình hoặc phản hồi dự án trong vài giờ.
 - [Kênh YouTube](https://youtube.com/freecodecamp) với các khóa học miễn phí về Python, SQL, Android và nhiều công nghệ khác.
 - [Podcast](https://podcast.freecodecamp.org/) với những thông tin công nghệ và các câu truyện truyền cảm hứng từ các nhà phát triển.
 - [Hướng dẫn toàn diện cho hàng ngàn chủ đề lập trình](https://guide.freecodecamp.org/)
@@ -136,7 +136,7 @@ Cộng đồng của chúng tôi còn có:
 
 ### Báo Lỗi và Vấn Đề
 
-Nếu bạn nghĩ rằng bạn đã tìm thấy một lỗi, đầu tiên hãy đọc bài viết [Cách báo cáo lỗi](https://www.freecodecamp.org/forum/t/how-to-report-a-bug/19543) và làm theo hướng dẫn
+Nếu bạn nghĩ rằng bạn đã tìm thấy một lỗi, đầu tiên hãy đọc bài viết [Cách báo cáo lỗi](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) và làm theo hướng dẫn
 
 Nếu bạn nghĩ đó là một lỗi mới và đã xác nhận rằng ai đó cũng đang gặp phải vấn đề tương tự, hãy tiếp tục và tạo một vấn đề mới trên Github. Hãy chắc chắn cung cấp càng nhiều thông tin càng tốt để chúng tôi có thể sửa lỗi.
 

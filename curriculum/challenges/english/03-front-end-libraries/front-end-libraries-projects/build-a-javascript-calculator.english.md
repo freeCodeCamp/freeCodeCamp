@@ -2,6 +2,7 @@
 id: bd7158d8c442eddfaeb5bd17
 title: Build a JavaScript Calculator
 challengeType: 3
+isHidden: false
 isRequired: true
 forumTopicId: 301371
 ---

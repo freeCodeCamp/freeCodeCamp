@@ -2,6 +2,7 @@
 id: 587d7fa5367417b2b2512bbd
 title: Extend One Set of CSS Styles to Another Element
 challengeType: 0
+isHidden: false
 forumTopicId: 301456
 ---
 

@@ -2,6 +2,7 @@
 id: 587d78ae367417b2b2512afe
 title: Use the flex Shorthand Property
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/p/pVaDAv/cbpW2tE'
 forumTopicId: 301112
 ---

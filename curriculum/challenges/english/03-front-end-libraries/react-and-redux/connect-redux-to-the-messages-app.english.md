@@ -2,6 +2,7 @@
 id: 5a24c314108439a4d4036148
 title: Connect Redux to the Messages App
 challengeType: 6
+isHidden: false
 isRequired: false
 forumTopicId: 301427
 ---
@@ -84,10 +85,12 @@ class Presentational extends React.Component {
     });
   }
   submitMessage() {
-    const currentMessage = this.state.input;
-    this.setState({
-      input: '',
-      messages: this.state.messages.concat(currentMessage)
+    this.setState((state) => {
+      const currentMessage = state.input;
+      return {
+        input: '',
+        messages: state.messages.concat(currentMessage)
+      };
     });
   }
   render() {
@@ -201,10 +204,12 @@ class Presentational extends React.Component {
     });
   }
   submitMessage() {
-    const currentMessage = this.state.input;
-    this.setState({
-      input: '',
-      messages: this.state.messages.concat(currentMessage)
+    this.setState((state) => {
+      const currentMessage = state.input;
+      return {
+        input: '',
+        messages: state.messages.concat(currentMessage)
+      };
     });
   }
   render() {

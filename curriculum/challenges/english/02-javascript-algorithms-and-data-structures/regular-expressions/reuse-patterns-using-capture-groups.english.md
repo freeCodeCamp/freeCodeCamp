@@ -2,6 +2,7 @@
 id: 587d7dbb367417b2b2512baa
 title: Reuse Patterns Using Capture Groups
 challengeType: 1
+isHidden: false
 forumTopicId: 301364
 ---
 

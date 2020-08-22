@@ -4,6 +4,7 @@ title: Target Even Elements Using jQuery
 required:
   - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 challengeType: 6
+isHidden: false
 forumTopicId: 18318
 ---
 

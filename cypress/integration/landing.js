@@ -11,6 +11,6 @@ describe('Landing page', function() {
     cy.title().should('eq', 'Learn to code at home | freeCodeCamp.org');
 
     cy.contains(selectors.heading, 'Welcome to freeCodeCamp.org');
-    cy.contains(selectors.callToAction, "Sign in and get started (it's free)");
+    cy.contains(selectors.callToAction, "Get started (it's free)");
   });
 });
