@@ -4,7 +4,7 @@ const through2 = require('through2');
 
 const { locale } = require('../config/env.json');
 const { getChallengesForLang } = require('./getChallenges');
-const { testedLangs } = require('./utils');
+const { testedLang } = require('./utils');
 const lintMarkdown = require('../tools/scripts/lint');
 
 /**
@@ -28,7 +28,7 @@ function watchFiles() {
 }
 
 function lint() {
-  return gulp.src(globLangs(testedLangs()), { read: false }).pipe(
+  return gulp.src(globLang(testedLang()), { read: false }).pipe(
     through2.obj(function obj(file, enc, next) {
       lintMarkdown(file, next);
     })
@@ -41,8 +41,8 @@ const defaultTask = gulp.series(generateCurriculum, watchFiles);
  * Helper functions
  **/
 
-function globLangs(langs) {
-  return langs.map(lang => `./challenges/${lang}/**/*.md`);
+function globLang(lang) {
+  return `./challenges/${lang}/**/*.md`;
 }
 
 gulp.task('default', defaultTask);

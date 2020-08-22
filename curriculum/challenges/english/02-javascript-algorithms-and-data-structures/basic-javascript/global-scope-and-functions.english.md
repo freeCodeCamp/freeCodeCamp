@@ -2,6 +2,7 @@
 id: 56533eb9ac21ba0edf2244be
 title: Global Scope and Functions
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cQM7mCN'
 forumTopicId: 18193
 ---

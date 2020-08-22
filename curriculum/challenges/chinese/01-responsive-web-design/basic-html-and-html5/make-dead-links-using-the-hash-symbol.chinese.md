@@ -15,7 +15,7 @@ localeTitle: '用 # 号来创建链接占位符'
 
 ## Instructions
 <section id='instructions'>
-<code>href</code>属性的当前值是指向 "http://freecatphotoapp.com"，将<code>href</code>属性的值替换为<code>#</code>，就可以创建固定链接。
+<code>href</code>属性的当前值是指向 "https://freecatphotoapp.com"，将<code>href</code>属性的值替换为<code>#</code>，就可以创建固定链接。
 例如: <code>href="#"</code>
 </section>
 
@@ -39,7 +39,7 @@ tests:
 ```html
 <h2>CatPhotoApp</h2>
 <main>
-  <p>点击这里可以获取更多<a href="http://freecatphotoapp.com" target="_blank">猫咪图片</a>。</p>
+  <p>点击这里可以获取更多<a href="https://freecatphotoapp.com" target="_blank">猫咪图片</a>。</p>
   
   <img src="https://bit.ly/fcc-relaxing-cat" alt="一只仰卧着的萌猫">
   

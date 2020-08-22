@@ -8,7 +8,7 @@ localeTitle: Reverter uma string
 ---
 
 ## Description
-<section id="description"> Inverta a string fornecida. Você pode precisar transformar a string em uma matriz antes de poder revertê-la. Seu resultado deve ser uma string. Lembre-se de usar <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Escreva seu próprio código. </section>
+<section id="description"> Inverta a string fornecida. Você pode precisar transformar a string em uma matriz antes de poder revertê-la. Seu resultado deve ser uma string. Lembre-se de usar <a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Escreva seu próprio código. </section>
 
 ## Instructions
 <section id="instructions">

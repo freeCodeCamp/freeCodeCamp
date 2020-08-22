@@ -2,6 +2,7 @@
 id: 587d7fac367417b2b2512bdd
 title: Use Dynamic Scales
 challengeType: 6
+isHidden: false
 forumTopicId: 301495
 ---
 

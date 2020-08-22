@@ -2,6 +2,7 @@
 id: a2f1d72d9b908d0bd72bb9f6
 title: Make a Person
 challengeType: 5
+isHidden: false
 forumTopicId: 16020
 ---
 
@@ -69,6 +70,7 @@ tests:
 
 ```js
 var Person = function(firstAndLast) {
+  // Only change code below this line
   // Complete the method below and implement the others similarly
   this.getFullName = function() {
     return "";
@@ -82,6 +84,17 @@ bob.getFullName();
 
 </div>
 
+### After Test
+
+<div id='js-teardown'>
+
+```js
+if(bob){
+  bob = new Person("Bob Ross");
+}
+```
+
+</div>
 
 
 </section>

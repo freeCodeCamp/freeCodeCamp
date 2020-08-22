@@ -119,7 +119,7 @@ freeCodeCamp.org のカリキュラムにある30のプロジェクトそれぞ�
 
 私達のコミュニティには他にも
 
-- [フォーラム](https://www.freecodecamp.org/forum) 通常数時間以内にプログラミングやプロジェクトに関するフィードバックが得られます。
+- [フォーラム](https://forum.freecodecamp.org) 通常数時間以内にプログラミングやプロジェクトに関するフィードバックが得られます。
 - [YouTube チャンネル](https://youtube.com/freecodecamp) Python、SQL、Android、その他いろいろな技術に関する無料のコース。
 - [ポッドキャスト](https://podcast.freecodecamp.org/) 開発者からの気づきや、刺激的なお話。
 - [ローカルの勉強会](https://study-group-directory.freecodecamp.org/) 世界中にあるコードを一緒に書ける人々の集まり。
@@ -131,7 +131,7 @@ freeCodeCamp.org のカリキュラムにある30のプロジェクトそれぞ�
 
 ### バグや問題を報告する
 
-もしバグをを発見したときには、 [How to Report a Bug](https://www.freecodecamp.org/forum/t/how-to-report-a-bug/19543) の記事を閲覧し、その内容に従ってください。もしそのバグが新しいものであって同様の問題を他の誰かが直面していないと革新するのであれば、そのまま GitHub のイシューを作成してください。私達がバグを再現できるよう、必ず必要十分な情報を含めるようにしてください。
+もしバグをを発見したときには、 [How to Report a Bug](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) の記事を閲覧し、その内容に従ってください。もしそのバグが新しいものであって同様の問題を他の誰かが直面していないと革新するのであれば、そのまま GitHub のイシューを作成してください。私達がバグを再現できるよう、必ず必要十分な情報を含めるようにしてください。
 
 ### セキュリティに関する問題を報告する
 

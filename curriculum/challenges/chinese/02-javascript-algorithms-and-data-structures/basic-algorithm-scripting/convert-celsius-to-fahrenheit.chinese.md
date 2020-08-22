@@ -69,4 +69,5 @@ function convertToF(celsius) {
 
 convertToF(30);
 ```
-</section>
+
+/section>

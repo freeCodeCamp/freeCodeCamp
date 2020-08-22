@@ -2,6 +2,7 @@
 id: bad87fee1348bd9aed608826
 title: Use appendTo to Move Elements with jQuery
 challengeType: 6
+isHidden: false
 forumTopicId: 18340
 ---
 

@@ -79,4 +79,5 @@ const store = Redux.createStore(immutableReducer);
 ```js
 // solution required
 ```
-</section>
+
+/section>

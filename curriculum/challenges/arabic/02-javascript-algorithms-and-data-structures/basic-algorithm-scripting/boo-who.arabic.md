@@ -8,7 +8,7 @@ localeTitle: بو من
 ---
 
 ## Description
-<section id="description"> تحقق مما إذا كانت القيمة مصنفة على أنها بدائية منطقية. إرجاع صح أو خطأ. الأجناس البولية هي صحيحة وكاذبة. تذكر استخدام <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> إذا واجهتك مشكلة. حاول إقران البرنامج. اكتب الكود الخاص بك. </section>
+<section id="description"> تحقق مما إذا كانت القيمة مصنفة على أنها بدائية منطقية. إرجاع صح أو خطأ. الأجناس البولية هي صحيحة وكاذبة. تذكر استخدام <a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> إذا واجهتك مشكلة. حاول إقران البرنامج. اكتب الكود الخاص بك. </section>
 
 ## Instructions
 <section id="instructions">

@@ -2,6 +2,7 @@
 id: 587d7b87367417b2b2512b41
 title: Declare a Read-Only Variable with the const Keyword
 challengeType: 1
+isHidden: false
 forumTopicId: 301201
 ---
 

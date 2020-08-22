@@ -6,7 +6,7 @@
   "template": "",
   "required": [],
   "superBlock": "certificates",
-  "superOrder": 9,
+  "superOrder": 12,
   "challengeOrder": [
     [
       "561abd10cb81ac38a17513bc",
@@ -14,5 +14,5 @@
     ]
   ],
   "isPrivate": true,
-  "fileName": "09-certificates/javascript-algorithms-and-data-structures-certificate.json"
+  "fileName": "12-certificates/javascript-algorithms-and-data-structures-certificate.json"
 }

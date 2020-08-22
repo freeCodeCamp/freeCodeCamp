@@ -116,7 +116,7 @@ freeCodeCamp.org 커리큘럼의 30개의 프로젝트에는 각각 휼륭한 �
 
 이 커뮤니티는:
 
-- 몇 시간 안에 프로그래밍을 도와주고 프로젝트 피드백을 받을 수 있는 [포럼](https://www.freecodecamp.org/forum)
+- 몇 시간 안에 프로그래밍을 도와주고 프로젝트 피드백을 받을 수 있는 [포럼](https://forum.freecodecamp.org)
 - Python, SQL, Android 및 기타 다양한 기술에 대한 무료 강좌가 있는 [YouTube 채널](https://youtube.com/freecodecamp)
 - 기술 통찰력과 영감을 주분 개발자의 스토리가 담긴 [팟 캐스트](https://podcast.freecodecamp.org/)
 - 함께 코드를 작성할 수 있는 세계 각지의 [지역 스터디 그룹](https://study-group-directory.freecodecamp.org/)
@@ -128,7 +128,7 @@ freeCodeCamp.org 커리큘럼의 30개의 프로젝트에는 각각 휼륭한 �
 
 ### 버그 찾기란?
 
-버그를 찾았다고 생각되면 [How to Report a Bug](https://www.freecodecamp.org/forum/t/how-to-report-a-bug/19543)를 읽고 지침을 따라야 합니다. 자신이 새로운 버그라고 확신하면 다른 사람이 같은 문제를 겪고 있는지 확인하고 새로운 GitHub 이슈를 만드십시오. 가능한 한 많은 정보를 포함시켜 버그를 재현할 수 있게 하십시오.
+버그를 찾았다고 생각되면 [How to Report a Bug](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543)를 읽고 지침을 따라야 합니다. 자신이 새로운 버그라고 확신하면 다른 사람이 같은 문제를 겪고 있는지 확인하고 새로운 GitHub 이슈를 만드십시오. 가능한 한 많은 정보를 포함시켜 버그를 재현할 수 있게 하십시오.
 
 ### 보안 문제 찾기란?
 

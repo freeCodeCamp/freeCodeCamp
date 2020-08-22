@@ -2,18 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, Spacer, Loader, FullWidthRow } from '../helpers';
 import { Row, Col } from '@freecodecamp/react-bootstrap';
-import { apiLocation } from '../../../config/env.json';
 import { randomQuote } from '../../utils/get-words';
 import CurrentChallengeLink from '../helpers/CurrentChallengeLink';
+import IntroDescription from './components/IntroDescription';
 
 import './intro.css';
+import Login from '../Header/components/Login';
 
 const propTypes = {
   complete: PropTypes.bool,
   completedChallengeCount: PropTypes.number,
   isSignedIn: PropTypes.bool,
   name: PropTypes.string,
-  navigate: PropTypes.func,
   pending: PropTypes.bool,
   slug: PropTypes.string,
   username: PropTypes.string
@@ -23,7 +23,6 @@ function Intro({
   isSignedIn,
   username,
   name,
-  navigate,
   pending,
   complete,
   completedChallengeCount,
@@ -100,38 +99,19 @@ function Intro({
     return (
       <>
         <Row>
-          <Col sm={10} smOffset={1} xs={12}>
-            <Spacer />
-            <h1 className='big-heading text-center'>
-              Welcome to freeCodeCamp.org
-            </h1>
-            <Spacer />
-            <h2 className='medium-heading'>Learn to code at home.</h2>
-            <h2 className='medium-heading'>Build projects.</h2>
-            <h2 className='medium-heading'>Earn certifications.</h2>
-            <h2 className='medium-heading'>
-              Since 2014, more than 40,000 freeCodeCamp.org graduates have
-              gotten jobs at tech companies including:
-            </h2>
-            <div className='logo-row'>
-              <h2 className='medium-heading'>Apple</h2>
-              <h2 className='medium-heading'>Google</h2>
-              <h2 className='medium-heading'>Amazon</h2>
-              <h2 className='medium-heading'>Microsoft</h2>
-              <h2 className='medium-heading'>Spotify</h2>
-            </div>
-            <Spacer />
-          </Col>
-
           <Col sm={8} smOffset={2} xs={12}>
-            <button
-              className={'btn-cta-big signup-btn btn-cta center-block'}
-              onClick={() => {
-                navigate(`${apiLocation}/signin`);
-              }}
-            >
+            <Spacer />
+            <h1 className='big-heading'>
+              Welcome to freeCodeCamp's curriculum.
+            </h1>
+            <Spacer size={1} />
+          </Col>
+          <IntroDescription />
+          <Col sm={8} smOffset={2} xs={12}>
+            <Spacer />
+            <Login block={true}>
               Sign in to save your progress (it's free)
-            </button>
+            </Login>
           </Col>
         </Row>
         <Spacer />
