@@ -176,13 +176,15 @@ exports.createChallenge = createChallenge;
 
 function getEnglishPath(fullPath) {
   const posix = path.posix.normalize(fullPath);
-  const match = posix.match(/(.*curriculum\/challenges\/)([^/]*)(.*)(\2)(.*)/);
+  const match = posix.match(
+    /(.*curriculum(\/|\\)challenges\2)([^/\\]*)(.*)(\3)(.*)/
+  );
   const lang = getChallengeLang(fullPath);
   if (!isAcceptedLanguage(lang))
     throw Error(`${getChallengeLang(fullPath)} is not a accepted language.
 Trying to parse ${fullPath}`);
   if (match) {
-    return path.join(match[1], 'english', match[3] + 'english' + match[5]);
+    return path.join(match[1], 'english', match[4] + 'english' + match[6]);
   } else {
     throw Error(`Malformed challenge path, ${fullPath} unable to parse.`);
   }
