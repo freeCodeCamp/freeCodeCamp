@@ -2,6 +2,7 @@
 id: 587d7b8e367417b2b2512b5c
 title: Understand Functional Programming Terminology
 challengeType: 1
+isHidden: false
 forumTopicId: 301240
 ---
 
@@ -46,24 +47,17 @@ tests:
 <div id='js-seed'>
 
 ```js
-/**
- * A long process to prepare green tea.
- * @return {string} A cup of green tea.
- **/
+// Function that returns a string representing a cup of green tea
 const prepareGreenTea = () => 'greenTea';
 
-/**
- * A long process to prepare black tea.
- * @return {string} A cup of black tea.
- **/
+// Function that returns a string representing a cup of black tea
 const prepareBlackTea = () => 'blackTea';
 
-/**
- * Get given number of cups of tea.
- * @param {function():string} prepareTea The type of tea preparing function.
- * @param {number} numOfCups Number of required cups of tea.
- * @return {Array<string>} Given amount of tea cups.
- **/
+/*
+Given a function (representing the tea type) and number of cups needed, the
+following function returns an array of strings (each representing a cup of
+a specific type of tea).
+*/
 const getTea = (prepareTea, numOfCups) => {
   const teaCups = [];
 
@@ -71,16 +65,13 @@ const getTea = (prepareTea, numOfCups) => {
     const teaCup = prepareTea();
     teaCups.push(teaCup);
   }
-
   return teaCups;
 };
 
-// Add your code below this line
-
-const tea4GreenTeamFCC = null; // :(
-const tea4BlackTeamFCC = null; // :(
-
-// Add your code above this line
+// Only change code below this line
+const tea4GreenTeamFCC = null;
+const tea4BlackTeamFCC = null;
+// Only change code above this line
 
 console.log(
   tea4GreenTeamFCC,
@@ -98,7 +89,6 @@ console.log(
 <section id='solution'>
 
 ```js
-// solution required
 const prepareGreenTea = () => 'greenTea';
 const prepareBlackTea = () => 'blackTea';
 

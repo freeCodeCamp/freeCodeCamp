@@ -2,6 +2,7 @@
 id: 587d78ac367417b2b2512af4
 title: Use the flex-direction Property to Make a Column
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/p/pVaDAv/cZmWeA4'
 forumTopicId: 301109
 ---
@@ -13,7 +14,7 @@ The last two challenges used the <code>flex-direction</code> property set to row
 
 ## Instructions
 <section id='instructions'>
-Add the CSS property <code>flex-direction</code> to the <code>#box-container</code> element, and give it a value of column.
+Add the CSS property <code>flex-direction</code> to the <code>#box-container</code> element, and give it a value of <code>column</code>.
 </section>
 
 ## Tests

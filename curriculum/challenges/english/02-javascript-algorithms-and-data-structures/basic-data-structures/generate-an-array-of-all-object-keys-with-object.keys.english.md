@@ -2,6 +2,7 @@
 id: 587d7b7d367417b2b2512b1e
 title: Generate an Array of All Object Keys with Object.keys()
 challengeType: 1
+isHidden: false
 forumTopicId: 301160
 ---
 
@@ -55,9 +56,9 @@ let users = {
 };
 
 function getArrayOfUsers(obj) {
-  // change code below this line
+  // Only change code below this line
 
-  // change code above this line
+  // Only change code above this line
 }
 
 console.log(getArrayOfUsers(users));

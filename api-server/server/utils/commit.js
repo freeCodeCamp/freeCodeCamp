@@ -17,7 +17,12 @@ export function completeCommitment$(user) {
     isJsAlgoDataStructCert,
     isDataVisCert,
     isApisMicroservicesCert,
-    isInfosecQaCert
+    isInfosecQaCert,
+    isQaCertV7,
+    isInfosecCertV7,
+    isSciCompPyCertV7,
+    isDataAnalysisPyCertV7,
+    isMachineLearningPyCertV7
   } = user;
 
   return Observable.fromNodeCallback(user.pledge, user)().flatMap(pledge => {
@@ -36,7 +41,12 @@ export function completeCommitment$(user) {
       (isJsAlgoDataStructCert && goal === commitGoals.jsAlgoDataStructCert) ||
       (isDataVisCert && goal === commitGoals.dataVisCert) ||
       (isApisMicroservicesCert && goal === commitGoals.apisMicroservicesCert) ||
-      (isInfosecQaCert && goal === commitGoals.infosecQaCert)
+      (isInfosecQaCert && goal === commitGoals.infosecQaCert) ||
+      (isQaCertV7 && goal === commitGoals.QaCert) ||
+      (isInfosecCertV7 && goal === commitGoals.infosecCert) ||
+      (isSciCompPyCertV7 && goal === commitGoals.sciCompPyCert) ||
+      (isDataAnalysisPyCertV7 && goal === commitGoals.dataAnalysisPyCert) ||
+      (isMachineLearningPyCertV7 && goal === commitGoals.machineLearningPyCert)
     ) {
       debug('marking goal complete');
       pledge.isCompleted = true;

@@ -19,15 +19,15 @@ localeTitle: 使用中间件处理异步操作
 ```yml
 tests:
   - text: <code>requestingData</code>操作创建者应返回类型等于<code>REQUESTING_DATA</code>值的对象。
-    testString: 'assert(requestingData().type === REQUESTING_DATA, "The <code>requestingData</code> action creator should return an object of type equal to the value of <code>REQUESTING_DATA</code>.");'
+    testString: assert(requestingData().type === REQUESTING_DATA);
   - text: <code>receivedData</code>操作创建者应返回类型等于<code>RECEIVED_DATA</code>值的对象。
-    testString: 'assert(receivedData("data").type === RECEIVED_DATA, "The <code>receivedData</code> action creator should return an object of type equal to the value of <code>RECEIVED_DATA</code>.");'
+    testString: assert(receivedData('data').type === RECEIVED_DATA);
   - text: <code>asyncDataReducer</code>应该是一个函数。
-    testString: 'assert(typeof asyncDataReducer === "function", "<code>asyncDataReducer</code> should be a function.");'
+    testString: assert(typeof asyncDataReducer === 'function');
   - text: 调度requestedData操作创建者应该将获取的store <code>state</code>属性更新为<code>true</code> 。
-    testString: 'assert((function() { const initialState = store.getState(); store.dispatch(requestingData()); const reqState = store.getState(); return initialState.fetching === false && reqState.fetching === true })(), "Dispatching the requestingData action creator should update the store <code>state</code> property of fetching to <code>true</code>.");'
+    testString: assert((function() { const initialState = store.getState(); store.dispatch(requestingData()); const reqState = store.getState(); return initialState.fetching === false && reqState.fetching === true })());
   - text: 调度<code>handleAsync</code>应调度数据请求操作，然后在延迟后调度接收的数据操作。
-    testString: 'assert((function() { const noWhiteSpace = handleAsync.toString().replace(/\s/g,""); return noWhiteSpace.includes("dispatch(requestingData())") === true && noWhiteSpace.includes("dispatch(receivedData(data))") === true })(), "Dispatching <code>handleAsync</code> should dispatch the data request action and then dispatch the received data action after a delay.");'
+    testString: assert((function() { const noWhiteSpace = handleAsync.toString().replace(/\s/g,''); return noWhiteSpace.includes('dispatch(requestingData())') === true && noWhiteSpace.includes('dispatch(receivedData(data))') === true })());
 
 ```
 
@@ -100,4 +100,5 @@ const store = Redux.createStore(
 ```js
 // solution required
 ```
-</section>
+
+/section>

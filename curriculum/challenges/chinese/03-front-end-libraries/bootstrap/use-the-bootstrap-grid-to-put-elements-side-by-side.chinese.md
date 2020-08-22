@@ -19,13 +19,13 @@ localeTitle: 使用Bootstrap网格并排放置元素
 ```yml
 tests:
   - text: 您的按钮应全部嵌套在具有类<code>row</code>的同一<code>div</code>元素中。
-    testString: 'assert($("div.row:has(button)").length > 0, "Your buttons should all be nested within the same <code>div</code> element with the class <code>row</code>.");'
+    testString: assert($("div.row:has(button)").length > 0);
   - text: 每个Bootstrap按钮都应嵌套在自己的<code>div</code>元素中，类别为<code>col-xs-4</code> 。
-    testString: 'assert($("div.col-xs-4:has(button)").length > 2, "Each of your Bootstrap buttons should be nested within its own <code>div</code> element with the class <code>col-xs-4</code>.");'
+    testString: assert($("div.col-xs-4:has(button)").length > 2);
   - text: 确保每个<code>button</code>元素都有一个结束标记。
-    testString: 'assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length, "Make sure each of your <code>button</code> elements has a closing tag.");'
+    testString: assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length);
   - text: 确保每个<code>div</code>元素都有一个结束标记。
-    testString: 'assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length, "Make sure each of your <code>div</code> elements has a closing tag.");'
+    testString: assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length);
 
 ```
 
@@ -87,7 +87,7 @@ tests:
     <li>thunder</li>
     <li>other cats</li>
   </ol>
-  <form action="/submit-cat-photo">
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor"> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
     <label><input type="checkbox" name="personality"> Loving</label>
@@ -112,4 +112,5 @@ tests:
 ```js
 // solution required
 ```
-</section>
+
+/section>

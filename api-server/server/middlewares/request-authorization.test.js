@@ -28,26 +28,59 @@ const mockGetUserById = id =>
 
 describe('request-authorization', () => {
   describe('isWhiteListedPath', () => {
-    const whiteList = [/^\/is-ok\//, /^\/this-is\/also\/ok\//];
+    const authRE = /^\/auth\//;
+    const confirmEmailRE = /^\/confirm-email$/;
+    const newsShortLinksRE = /^\/n\/|^\/p\//;
+    const publicUserRE = /^\/api\/users\/get-public-profile$/;
+    const publicUsernameRE = /^\/api\/users\/exists$/;
+    const resubscribeRE = /^\/resubscribe\//;
+    const showCertRE = /^\/certificate\/showCert\//;
+    // note: signin may not have a trailing slash
+    const signinRE = /^\/signin/;
+    const statusRE = /^\/status\/ping$/;
+    const unsubscribedRE = /^\/unsubscribed\//;
+    const unsubscribeRE = /^\/u\/|^\/unsubscribe\/|^\/ue\//;
+    const updateHooksRE = /^\/hooks\/update-paypal$|^\/hooks\/update-stripe$/;
+
+    const whiteList = [
+      authRE,
+      confirmEmailRE,
+      newsShortLinksRE,
+      publicUserRE,
+      publicUsernameRE,
+      resubscribeRE,
+      showCertRE,
+      signinRE,
+      statusRE,
+      unsubscribedRE,
+      unsubscribeRE,
+      updateHooksRE
+    ];
 
     it('returns a boolean', () => {
       const result = isWhiteListedPath();
-
       expect(typeof result).toBe('boolean');
     });
 
     it('returns true for a white listed path', () => {
-      expect.assertions(2);
-
-      const resultA = isWhiteListedPath('/is-ok/should-be/good', whiteList);
-      const resultB = isWhiteListedPath('/this-is/also/ok/surely', whiteList);
+      const resultA = isWhiteListedPath(
+        '/auth/auth0/callback?code=yF_mGjswLsef-_RLo',
+        whiteList
+      );
+      const resultB = isWhiteListedPath('/ue/WmjInLerysPrcon6fMb/', whiteList);
+      const resultC = isWhiteListedPath('/hooks/update-paypal', whiteList);
+      const resultD = isWhiteListedPath('/hooks/update-stripe', whiteList);
       expect(resultA).toBe(true);
       expect(resultB).toBe(true);
+      expect(resultC).toBe(true);
+      expect(resultD).toBe(true);
     });
 
     it('returns false for a non-white-listed path', () => {
-      const result = isWhiteListedPath('/hax0r-42/no-go', whiteList);
-      expect(result).toBe(false);
+      const resultA = isWhiteListedPath('/hax0r-42/no-go', whiteList);
+      const resultB = isWhiteListedPath('/update-current-challenge', whiteList);
+      expect(resultA).toBe(false);
+      expect(resultB).toBe(false);
     });
   });
 
@@ -64,7 +97,7 @@ describe('request-authorization', () => {
     describe('cookies', () => {
       it('throws when no access token is present', () => {
         expect.assertions(2);
-        const req = mockReq({ path: '/internal/some-path/that-needs/auth' });
+        const req = mockReq({ path: '/some-path/that-needs/auth' });
         const res = mockRes();
         const next = sinon.spy();
         expect(() => requestAuthorization(req, res, next)).toThrowError(
@@ -77,7 +110,7 @@ describe('request-authorization', () => {
         expect.assertions(2);
         const invalidJWT = jwt.sign({ accessToken }, invalidJWTSecret);
         const req = mockReq({
-          path: '/internal/some-path/that-needs/auth',
+          path: '/some-path/that-needs/auth',
           // eslint-disable-next-line camelcase
           cookie: { jwt_access_token: invalidJWT }
         });
@@ -97,7 +130,7 @@ describe('request-authorization', () => {
           validJWTSecret
         );
         const req = mockReq({
-          path: '/internal/some-path/that-needs/auth',
+          path: '/some-path/that-needs/auth',
           // eslint-disable-next-line camelcase
           cookie: { jwt_access_token: invalidJWT }
         });
@@ -114,7 +147,7 @@ describe('request-authorization', () => {
         expect.assertions(3);
         const validJWT = jwt.sign({ accessToken }, validJWTSecret);
         const req = mockReq({
-          path: '/internal/some-path/that-needs/auth',
+          path: '/some-path/that-needs/auth',
           // eslint-disable-next-line camelcase
           cookie: { jwt_access_token: validJWT }
         });
@@ -130,7 +163,7 @@ describe('request-authorization', () => {
       it('adds the jwt to the headers', async done => {
         const validJWT = jwt.sign({ accessToken }, validJWTSecret);
         const req = mockReq({
-          path: '/internal/some-path/that-needs/auth',
+          path: '/some-path/that-needs/auth',
           // eslint-disable-next-line camelcase
           cookie: { jwt_access_token: validJWT }
         });
@@ -142,7 +175,8 @@ describe('request-authorization', () => {
       });
 
       it('calls next if request does not require authorization', async () => {
-        const req = mockReq({ path: '/unauthenticated/another/route' });
+        // currently /unsubscribe does not require authorization
+        const req = mockReq({ path: '/unsubscribe/another/route' });
         const res = mockRes();
         const next = sinon.spy();
         await requestAuthorization(req, res, next);
@@ -153,7 +187,7 @@ describe('request-authorization', () => {
     describe('Auth header', () => {
       it('throws when no access token is present', () => {
         expect.assertions(2);
-        const req = mockReq({ path: '/internal/some-path/that-needs/auth' });
+        const req = mockReq({ path: '/some-path/that-needs/auth' });
         const res = mockRes();
         const next = sinon.spy();
         expect(() => requestAuthorization(req, res, next)).toThrowError(
@@ -166,7 +200,7 @@ describe('request-authorization', () => {
         expect.assertions(2);
         const invalidJWT = jwt.sign({ accessToken }, invalidJWTSecret);
         const req = mockReq({
-          path: '/internal/some-path/that-needs/auth',
+          path: '/some-path/that-needs/auth',
           headers: { 'X-fcc-access-token': invalidJWT }
         });
         const res = mockRes();
@@ -185,7 +219,7 @@ describe('request-authorization', () => {
           validJWTSecret
         );
         const req = mockReq({
-          path: '/internal/some-path/that-needs/auth',
+          path: '/some-path/that-needs/auth',
           headers: { 'X-fcc-access-token': invalidJWT }
         });
         const res = mockRes();
@@ -201,7 +235,7 @@ describe('request-authorization', () => {
         expect.assertions(3);
         const validJWT = jwt.sign({ accessToken }, validJWTSecret);
         const req = mockReq({
-          path: '/internal/some-path/that-needs/auth',
+          path: '/some-path/that-needs/auth',
           headers: { 'X-fcc-access-token': validJWT }
         });
         const res = mockRes();
@@ -216,7 +250,7 @@ describe('request-authorization', () => {
       it('adds the jwt to the headers', async done => {
         const validJWT = jwt.sign({ accessToken }, validJWTSecret);
         const req = mockReq({
-          path: '/internal/some-path/that-needs/auth',
+          path: '/some-path/that-needs/auth',
           // eslint-disable-next-line camelcase
           cookie: { jwt_access_token: validJWT }
         });
@@ -228,7 +262,8 @@ describe('request-authorization', () => {
       });
 
       it('calls next if request does not require authorization', async () => {
-        const req = mockReq({ path: '/unauthenticated/another/route' });
+        // currently /unsubscribe does not require authorization
+        const req = mockReq({ path: '/unsubscribe/another/route' });
         const res = mockRes();
         const next = sinon.spy();
         await requestAuthorization(req, res, next);

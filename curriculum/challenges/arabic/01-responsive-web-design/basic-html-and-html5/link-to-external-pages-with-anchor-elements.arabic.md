@@ -17,7 +17,7 @@ localeTitle: ربط الصفحات الخارجية بستخدام عناصر ا
 </section>
 
 ## Instructions
-<section id="instructions"> إنشاء العنصر <code>a</code> الذي يربط <code>http://freecatphotoapp.com</code> له النص &quot;cat photos&quot;، في <code> نص الرابط</code> . </section>
+<section id="instructions"> إنشاء العنصر <code>a</code> الذي يربط <code>https://freecatphotoapp.com</code> له النص &quot;cat photos&quot;، في <code> نص الرابط</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -26,7 +26,7 @@ localeTitle: ربط الصفحات الخارجية بستخدام عناصر ا
 tests:
   - text: يجب أن يحتوي العنصر <code>a</code> الخاص بك على &quot;cat photos&quot; كنص للرابط <code>anchor text </code>.  
     testString: 'assert((/cat photos/gi).test($("a").text()), "Your <code>a</code> element should have the <code>anchor text</code> of "cat photos".");'
-  - text: 'تحتاج إلى عنصر <code>a</code> يربط بالعنوان <code>http://freecatphotoapp.com</code>'
+  - text: 'تحتاج إلى عنصر <code>a</code> يربط بالعنوان <code>https://freecatphotoapp.com</code>'
     testString: 'assert(/http:\/\/(www\.)?freecatphotoapp\.com/gi.test($("a").attr("href")), "You need an <code>a</code> element that links to <code>http&#58;//freecatphotoapp<wbr>.com</code>");'
   - text: تأكد من ان العنصر <code>a</code> يحتوي على وسم إغلاق.
     testString: 'assert(code.match(/<\/a>/g) && code.match(/<\/a>/g).length === code.match(/<a/g).length, "Make sure your <code>a</code> element has a closing tag.");'
@@ -66,4 +66,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

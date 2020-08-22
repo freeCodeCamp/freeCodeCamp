@@ -2,23 +2,31 @@
 id: 587d78ad367417b2b2512afa
 title: Use the flex-wrap Property to Wrap a Row or Column
 challengeType: 0
-videoUrl: ''
-localeTitle: 使用flex-wrap属性包装行或列
+videoUrl: 'https://scrimba.com/p/pVaDAv/cQv9ZtG'
+forumTopicId: 301114
+localeTitle: 使用 flex-wrap 属性包裹一行或一列
 ---
 
 ## Description
-<section id="description"> CSS flexbox具有将flex项分割为多行（或列）的功能。默认情况下，Flex容器将所有Flex项目放在一起。例如，一行将全部在一行上。但是，使用<code>flex-wrap</code>属性，它会告诉CSS包装项目。这意味着额外的项目将移动到新的行或列中。包装发生的断点取决于物品的大小和容器的大小。 CSS还有包装方向的选项： <ul><li> <code>nowrap</code> ：这是默认设置，不包装项目。 </li><li> <code>wrap</code> ：如果项目在一行中，则从左到右包装，如果它们在列中，则从上到下包装。 </li><li> <code>wrap-reverse</code> ：如果项目在一行中，则从下到上包装项目;如果它们在列中，则从右到左包装。 </li></ul></section>
+<section id='description'>
+CSS flexbox 有一个把 flex 子元素拆分为多行（或多列）的特性。默认情况下，flex 容器会调整项目大小，把它们都塞到一起。如果是行的话，所有项目都会在一条直线上。
+不过，使用<code>flex-wrap</code>属性可以使项目换行。这意味着多出来的项目会被移到新的行或列。换行发生的断点由项目和容器的大小决定。
+换行方向的可选值有这些：
+<ul><li><code>nowrap</code>：默认值，不换行。</li><li><code>wrap</code>：行从上到下排，列从左到又排。</li><li><code>wrap-reverse</code>：行从下到上排，列从左到右排。</li></ul>
+</section>
 
 ## Instructions
-<section id="instructions">当前布局对于一行有太多的框。将CSS属性<code>flex-wrap</code>添加到<code>#box-container</code>元素，并为其赋值wrap。 </section>
+<section id='instructions'>
+现在的布局一行里面元素太多了，在<code>#box-container</code>元素添加 CSS 属性<code>flex-wrap</code>，把值设为 <code>wrap</code>。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: '<code>#box-container</code>元素应该将<code>flex-wrap</code>属性设置为wrap值。'
-    testString: 'assert($("#box-container").css("flex-wrap") == "wrap", "The <code>#box-container</code> element should have the <code>flex-wrap</code> property set to a value of wrap.");'
+  - text: <code>#box-container</code>元素应有<code>flex-wrap</code>属性，其值应为 <code>wrap</code>。
+    testString: assert($('#box-container').css('flex-wrap') == 'wrap');
 
 ```
 
@@ -35,7 +43,7 @@ tests:
     background: gray;
     display: flex;
     height: 100%;
-
+      
   }
   #box-1 {
     background-color: dodgerblue;
@@ -78,7 +86,6 @@ tests:
   <div id="box-5"></div>
   <div id="box-6"></div>
 </div>
-
 ```
 
 </div>
@@ -90,7 +97,9 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>
+              

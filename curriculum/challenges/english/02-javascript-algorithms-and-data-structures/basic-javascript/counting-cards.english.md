@@ -2,6 +2,7 @@
 id: 565bbe00e9cc8ac0725390f4
 title: Counting Cards
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/c6KE7ty'
 forumTopicId: 16809
 ---
@@ -61,8 +62,6 @@ function cc(card) {
   // Only change code above this line
 }
 
-// Add/remove calls to test your function.
-// Note: Only the last will display
 cc(2); cc(3); cc(7); cc('K'); cc('A');
 ```
 

@@ -3,6 +3,7 @@ id: a8d97bd4c764e91f9d2bda01
 title: Binary Agents
 isRequired: true
 challengeType: 5
+isHidden: false
 forumTopicId: 14273
 ---
 
@@ -10,7 +11,6 @@ forumTopicId: 14273
 <section id='description'>
 Return an English translated sentence of the passed binary string.
 The binary string will be space separated.
-Remember to use <a href='https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code.
 </section>
 
 ## Instructions

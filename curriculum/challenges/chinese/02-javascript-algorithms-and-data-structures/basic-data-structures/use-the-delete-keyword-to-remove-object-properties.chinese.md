@@ -2,25 +2,36 @@
 id: 587d7b7c367417b2b2512b1b
 title: Use the delete Keyword to Remove Object Properties
 challengeType: 1
-videoUrl: ''
-localeTitle: 使用删除关键字删除对象属性
+forumTopicId: 301168
+localeTitle: 使用 delete 关键字删除对象属性
 ---
 
 ## Description
-<section id="description">现在你知道了什么是对象及其基本特征和优点。简而言之，它们是键值存储，它提供了一种灵活，直观的数据结构方式， <strong><em>并且</em></strong>它们提供了非常快速的查找时间。在其余的挑战中，我们将描述您可以对对象执行的几个常见操作，以便您可以轻松地在程序中应用这些有用的数据结构。在早期的挑战中，我们都添加并修改了对象的键值对。在这里，我们将看到如何从对象中<em>删除</em>键值对。让我们最后一次重新审视我们的<code>foods</code>对象示例。如果我们想删除<code>apples</code>键，我们可以使用<code>delete</code>关键字删除它，如下所示： <blockquote>删除foods.apples; </blockquote></section>
+<section id='description'>
+现在你已经知道什么是对象以及对象的基本特性和用途。总之，对象是以键值对的形式，灵活、直观地存储结构化数据的一种方式，<strong><em>并且</em></strong>查找对象属性的速度是很快的。在本章剩下的挑战中，我们会讲对象的几种常用操作，这样你能更好地在你的程序中使用这种有用的数据结构。
+在之前的挑战中，我们已经试过新增和修改对象中的键值对。现在我们来看如何从一个对象中<em>移除</em>一个键值对。
+我们再来看上一个挑战中的<code>foods</code>对象。如果我们想移除<code>apples</code>属性，我们可以使用<code>delete</code>关键字：
+
+```js
+delete foods.apples;
+```
+
+</section>
 
 ## Instructions
-<section id="instructions">使用delete关键字从<code>foods</code>对象中删除<code>oranges</code> ， <code>plums</code>和<code>strawberries</code>键。 </section>
+<section id='instructions'>
+请你用 delete 关键字来移除<code>foods</code>中的<code>oranges</code>、<code>plums</code>和<code>strawberries</code>属性。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>foods</code>对象只有三个键： <code>apples</code> ， <code>grapes</code>和<code>bananas</code>
-    testString: 'assert(!foods.hasOwnProperty("oranges") && !foods.hasOwnProperty("plums") && !foods.hasOwnProperty("strawberries") && Object.keys(foods).length === 3, "The <code>foods</code> object only has three keys: <code>apples</code>, <code>grapes</code>, and <code>bananas</code>");'
-  - text: 使用<code>delete</code> <code>oranges</code> ， <code>plums</code>和<code>strawberries</code>键
-    testString: 'assert(code.search(/oranges:/) !== -1 && code.search(/plums:/) !== -1 && code.search(/strawberries:/) !== -1, "The <code>oranges</code>, <code>plums</code>, and <code>strawberries</code> keys are removed using <code>delete</code>");'
+  - text: <code>foods</code>对象应该只含有 3 个键：<code>apples</code>、<code>grapes</code>和<code>bananas</code>。
+    testString: 'assert(!foods.hasOwnProperty(''oranges'') && !foods.hasOwnProperty(''plums'') && !foods.hasOwnProperty(''strawberries'') && Object.keys(foods).length === 3);'
+  - text: 你应该用<code>delete</code>关键字来移除<code>oranges</code>、<code>plums</code>和<code>strawberries</code>属性。
+    testString: assert(code.search(/oranges:/) !== -1 && code.search(/plums:/) !== -1 && code.search(/strawberries:/) !== -1);
 
 ```
 
@@ -46,7 +57,6 @@ let foods = {
 // change code above this line
 
 console.log(foods);
-
 ```
 
 </div>
@@ -60,5 +70,20 @@ console.log(foods);
 
 ```js
 // solution required
+let foods = {
+  apples: 25,
+  oranges: 32,
+  plums: 28,
+  bananas: 13,
+  grapes: 35,
+  strawberries: 27
+};
+
+delete foods.oranges;
+delete foods.plums;
+delete foods.strawberries;
+
+console.log(foods);
 ```
+
 </section>

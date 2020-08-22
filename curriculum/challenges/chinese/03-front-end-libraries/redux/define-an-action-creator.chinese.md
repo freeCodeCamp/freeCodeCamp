@@ -19,11 +19,11 @@ localeTitle: 定义一个Action Creator
 ```yml
 tests:
   - text: 函数<code>actionCreator</code>应该存在。
-    testString: 'assert(typeof actionCreator === "function", "The function <code>actionCreator</code> should exist.");'
+    testString: assert(typeof actionCreator === 'function');
   - text: 运行<code>actionCreator</code>函数应该返回操作对象。
-    testString: 'assert(typeof action === "object", "Running the <code>actionCreator</code> function should return the action object.");'
+    testString: assert(typeof action === 'object');
   - text: 返回的操作应具有值为<code>LOGIN</code>的键属性类型。
-    testString: 'assert(action.type === "LOGIN", "The returned action should have a key property type with value <code>LOGIN</code>.");'
+    testString: assert(action.type === 'LOGIN');
 
 ```
 
@@ -54,4 +54,5 @@ const action = {
 ```js
 // solution required
 ```
-</section>
+
+/section>

@@ -18,13 +18,13 @@ localeTitle: 获取地理位置数据以查找用户的GPS坐标
 ```yml
 tests:
   - text: 您的代码应使用<code>navigator.geolocation</code>来访问用户的当前位置。
-    testString: 'assert(code.match(/navigator\.geolocation\.getCurrentPosition/g), "Your code should use <code>navigator.geolocation</code> to access the user&#39;s current location.");'
+    testString: assert(code.match(/navigator\.geolocation\.getCurrentPosition/g));
   - text: 您的代码应使用<code>position.coords.latitude</code>来显示用户的纬度位置。
-    testString: 'assert(code.match(/position\.coords\.latitude/g), "Your code should use <code>position.coords.latitude</code> to display the user&#39;s latitudinal location.");'
+    testString: assert(code.match(/position\.coords\.latitude/g));
   - text: 您的代码应使用<code>position.coords.longitude</code>来显示用户的纵向位置。
-    testString: 'assert(code.match(/position\.coords\.longitude/g), "Your code should use <code>position.coords.longitude</code> to display the user&#39;s longitudinal location.");'
+    testString: assert(code.match(/position\.coords\.longitude/g));
   - text: 您应该在<code>data</code> div元素中显示用户的位置。
-    testString: 'assert(code.match(/document\.getElementById\(\s*?("|")data\1\s*?\)\.innerHTML/g), "You should display the user&#39;s position within the <code>data</code> div element.");'
+    testString: assert(code.match(/document\.getElementById\(\s*?('|")data\1\s*?\)\.innerHTML/g));
 
 ```
 
@@ -61,4 +61,5 @@ tests:
 ```js
 // solution required
 ```
-</section>
+
+/section>

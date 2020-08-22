@@ -2,6 +2,7 @@
 id: 56533eb9ac21ba0edf2244d7
 title: Comparison with the Less Than Or Equal To Operator
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cNVR7Am'
 forumTopicId: 16788
 ---
@@ -70,7 +71,6 @@ function testLessOrEqual(val) {
   return "More Than 24";
 }
 
-// Change this value to test
 testLessOrEqual(10);
 
 ```

@@ -2,6 +2,7 @@
 id: cf1111c1c12feddfaeb3bdef
 title: Use Conditional Logic with If Statements
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cy87mf3'
 forumTopicId: 18348
 ---
@@ -59,27 +60,14 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Example
-function ourTrueOrFalse(isItTrue) {
-  if (isItTrue) {
-    return "Yes, it's true";
-  }
-  return "No, it's false";
-}
-
-// Setup
 function trueOrFalse(wasThatTrue) {
-
-  // Only change code below this line.
-
+  // Only change code below this line
 
 
-  // Only change code above this line.
+
+  // Only change code above this line
 
 }
-
-// Change this value to test
-trueOrFalse(true);
 ```
 
 </div>

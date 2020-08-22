@@ -1,94 +1,22 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
 import { curry } from 'lodash';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 import { Row, Col } from '@freecodecamp/react-bootstrap';
 
-import { userByNameSelector } from '../../../redux';
-import FullWidthRow from '../../helpers/FullWidthRow';
-import { ButtonSpacer, Spacer } from '../../helpers';
+import { certificatesByNameSelector } from '../../../redux';
+import { ButtonSpacer, FullWidthRow, Link, Spacer } from '../../helpers';
 import './certifications.css';
 
 const mapStateToProps = (state, props) =>
   createSelector(
-    userByNameSelector(props.username),
-    ({
-      isRespWebDesignCert,
-      is2018DataVisCert,
-      isFrontEndLibsCert,
-      isJsAlgoDataStructCert,
-      isApisMicroservicesCert,
-      isInfosecQaCert,
-      isFrontEndCert,
-      isBackEndCert,
-      isDataVisCert,
-      isFullStackCert
-    }) => ({
-      hasModernCert:
-        isRespWebDesignCert ||
-        is2018DataVisCert ||
-        isFrontEndLibsCert ||
-        isJsAlgoDataStructCert ||
-        isApisMicroservicesCert ||
-        isInfosecQaCert ||
-        isFullStackCert,
-      hasLegacyCert: isFrontEndCert || isBackEndCert || isDataVisCert,
-      currentCerts: [
-        {
-          show: isFullStackCert,
-          title: 'Full Stack Certification',
-          showURL: 'full-stack'
-        },
-        {
-          show: isRespWebDesignCert,
-          title: 'Responsive Web Design Certification',
-          showURL: 'responsive-web-design'
-        },
-        {
-          show: isJsAlgoDataStructCert,
-          title: 'JavaScript Algorithms and Data Structures Certification',
-          showURL: 'javascript-algorithms-and-data-structures'
-        },
-        {
-          show: isFrontEndLibsCert,
-          title: 'Front End Libraries Certification',
-          showURL: 'front-end-libraries'
-        },
-        {
-          show: is2018DataVisCert,
-          title: 'Data Visualization Certification',
-          showURL: 'data-visualization'
-        },
-        {
-          show: isApisMicroservicesCert,
-          title: 'APIs and Microservices Certification',
-          showURL: 'apis-and-microservices'
-        },
-        {
-          show: isInfosecQaCert,
-          title: 'Information Security and Quality Assurance Certification',
-          showURL: 'information-security-and-quality-assurance'
-        }
-      ],
-      legacyCerts: [
-        {
-          show: isFrontEndCert,
-          title: 'Front End Certification',
-          showURL: 'legacy-front-end'
-        },
-        {
-          show: isBackEndCert,
-          title: 'Back End Certification',
-          showURL: 'legacy-back-end'
-        },
-        {
-          show: isDataVisCert,
-          title: 'Data Visualization Certification',
-          showURL: 'legacy-data-visualization'
-        }
-      ]
+    certificatesByNameSelector(props.username),
+    ({ hasModernCert, hasLegacyCert, currentCerts, legacyCerts }) => ({
+      hasModernCert,
+      hasLegacyCert,
+      currentCerts,
+      legacyCerts
     })
   )(state, props);
 
@@ -115,6 +43,7 @@ function renderCertShow(username, cert) {
         <Col className='certifications' sm={10} smPush={1}>
           <Link
             className='btn btn-lg btn-primary btn-block'
+            external={true}
             to={`/certification/${username}/${cert.showURL}`}
           >
             View {cert.title}

@@ -3,13 +3,13 @@ id: a9bd25c716030ec90084d8a1
 title: Chunky Monkey
 isRequired: true
 challengeType: 5
+isHidden: false
 forumTopicId: 16005
 ---
 
 ## Description
 <section id='description'>
 Write a function that splits an array (first argument) into groups the length of <code>size</code> (second argument) and returns them as a two-dimensional array.
-Remember to use <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> if you get stuck. Write your own code.
 </section>
 
 ## Instructions
@@ -48,7 +48,6 @@ tests:
 
 ```js
 function chunkArrayInGroups(arr, size) {
-  // Break it up.
   return arr;
 }
 

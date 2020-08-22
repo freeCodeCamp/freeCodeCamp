@@ -19,11 +19,11 @@ localeTitle: 注册商店监听器
 ```yml
 tests:
   - text: 在商店上调度<code>ADD</code>操作应该将状态增加<code>1</code> 。
-    testString: 'assert((function() { const initialState = store.getState(); store.dispatch({ type: "ADD" }); const newState = store.getState(); return newState === (initialState + 1); })(), "Dispatching the <code>ADD</code> action on the store should increment the state by <code>1</code>.");'
+    testString: 'assert((function() { const initialState = store.getState(); store.dispatch({ type: ''ADD'' }); const newState = store.getState(); return newState === (initialState + 1); })());'
   - text: 应该有一个使用<code>store.subscribe</code>订阅商店的监听器功能。
-    testString: 'getUserInput => assert(getUserInput("index").includes("store.subscribe("), "There should be a listener function subscribed to the store using <code>store.subscribe</code>.");'
+    testString: getUserInput => assert(getUserInput('index').includes('store.subscribe('));
   - text: <code>store.subscribe</code>的回调还应该在存储更新时增加全局<code>count</code>变量。
-    testString: 'assert(store.getState() === count, "The callback to <code>store.subscribe</code> should also increment the global <code>count</code> variable as the store is updated.");'
+    testString: assert(store.getState() === count);
 
 ```
 
@@ -85,4 +85,5 @@ count = 0;
 ```js
 // solution required
 ```
-</section>
+
+/section>

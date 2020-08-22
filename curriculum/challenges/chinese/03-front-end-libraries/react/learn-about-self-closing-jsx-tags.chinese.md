@@ -19,11 +19,11 @@ localeTitle: 了解自我关闭JSX标签
 ```yml
 tests:
   - text: 常量<code>JSX</code>应该返回一个<code>div</code>元素。
-    testString: 'assert.strictEqual(JSX.type, "div", "The constant <code>JSX</code> should return a <code>div</code> element.");'
+    testString: assert.strictEqual(JSX.type, 'div');
   - text: <code>div</code>应该包含一个<code>br</code>标签。
-    testString: 'assert(Enzyme.shallow(JSX).find("br").length === 1, "The <code>div</code> should contain a <code>br</code> tag.");'
+    testString: assert(Enzyme.shallow(JSX).find('br').length === 1);
   - text: <code>div</code>应包含<code>hr</code>标记。
-    testString: 'assert(Enzyme.shallow(JSX).find("hr").length === 1, "The <code>div</code> should contain an <code>hr</code> tag.");'
+    testString: assert(Enzyme.shallow(JSX).find('hr').length === 1);
 
 ```
 
@@ -67,4 +67,5 @@ console.info('after the test');
 ```js
 // solution required
 ```
-</section>
+
+/section>

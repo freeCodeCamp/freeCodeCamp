@@ -2,25 +2,32 @@
 id: 587d781a367417b2b2512ab8
 title: Use the u Tag to Underline Text
 challengeType: 0
-videoUrl: ''
-localeTitle: 使用u标签为文本加下划线
+videoUrl: 'https://scrimba.com/c/cN6aQCL'
+forumTopicId: 301082
+localeTitle: 使用 u 标签给文本添加下划线
 ---
 
 ## Description
-<section id="description">要为文本加下划线，您可以使用<code>u</code>标记。这通常用于表示一段文字很重要，或者需要记住的东西。使用<code>u</code>标签，浏览器应用<code>text-decoration: underline;</code>的CSS <code>text-decoration: underline;</code>对元素。 </section>
+<section id='description'>
+术语：Underline => u => 下划线。
+你可以使用 <code>u</code> 标签来给文字添加下划线。添加了 <code>u</code> 标签后，浏览器会自动给元素应用 <code>text-decoration: underline;</code>。
+</section>
 
 ## Instructions
-<section id="instructions">仅在“Ph.D. students”文本周围包裹<code>u</code>标签。 <strong>注意</strong> <br>当它可能与链接混淆时尽量避免使用<code>u</code>标签。 Anchor标签也有默认的带下划线的格式。 </section>
+<section id='instructions'>
+给 “理工博士” 添加 <code>u</code> 标签，不要给整个 class 为 <code>cardText</code> 的父 <code>div</code> 添加。
+<strong>注意：</strong>锚点默认给文本添加下划线，如果 <code>u</code> 标签的下划线和页面的锚点混淆，请避免使用它。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您的代码应该在标记中添加<code>u</code>标记。
-    testString: 'assert($("u").length === 1, "Your code should add a <code>u</code> tag to the markup.");'
-  - text: <code>u</code>标签应该包含文本“Ph.D. students”。
-    testString: 'assert($("u").text() === "Ph.D. students", "The <code>u</code> tag should wrap around the text "Ph.D. students".");'
+  - text: 你应该有一个 <code>u</code> 标签。
+    testString: assert($('u').length === 1);
+  - text: <code>u</code> 标签应该包围 “理工博士”。
+    testString: assert($('u').text() === '理工博士');
 
 ```
 
@@ -62,15 +69,14 @@ tests:
   <div class="cardContent">
     <div class="cardText">
       <h4>Google</h4>
-      <p>Google was founded by Larry Page and Sergey Brin while they were Ph.D. students at <strong>Stanford University</strong>.</p>
+      <p>Google 由在<strong>斯坦福大学</strong>攻读理工博士的拉里·佩奇和谢尔盖·布林共同创建。</p>
     </div>
     <div class="cardLinks">
-      <a href="https://en.wikipedia.org/wiki/Larry_Page" target="_blank" class="links">Larry Page</a><br><br>
-      <a href="https://en.wikipedia.org/wiki/Sergey_Brin" target="_blank" class="links">Sergey Brin</a>
+      <a href="https://en.wikipedia.org/wiki/Larry_Page" target="_blank" class="links">拉里·佩奇</a><br><br>
+      <a href="https://en.wikipedia.org/wiki/Sergey_Brin" target="_blank" class="links">谢尔盖·布林</a>
     </div>
   </div>
 </div>
-
 ```
 
 </div>
@@ -82,7 +88,9 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>
+              

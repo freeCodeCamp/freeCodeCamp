@@ -19,13 +19,13 @@ localeTitle: 结合多个减速器
 ```yml
 tests:
   - text: <code>counterReducer</code>应该递增和递减<code>state</code> 。
-    testString: 'assert((function() { const initalState = store.getState().count; store.dispatch({type: INCREMENT}); store.dispatch({type: INCREMENT}); const firstState = store.getState().count; store.dispatch({type: DECREMENT}); const secondState = store.getState().count; return firstState === initalState + 2 && secondState === firstState - 1  })(), "The <code>counterReducer</code> should increment and decrement the <code>state</code>.");'
+    testString: 'assert((function() { const initialState = store.getState().count; store.dispatch({type: INCREMENT}); store.dispatch({type: INCREMENT}); const firstState = store.getState().count; store.dispatch({type: DECREMENT}); const secondState = store.getState().count; return firstState === initialState + 2 && secondState === firstState - 1  })());'
   - text: <code>authReducer</code>应切换在<code>true</code>和<code>false</code>之间进行<code>authenticated</code>的<code>state</code> 。
-    testString: 'assert((function() {  store.dispatch({type: LOGIN}); const loggedIn = store.getState().auth.authenticated; store.dispatch({type: LOGOUT}); const loggedOut = store.getState().auth.authenticated; return loggedIn === true && loggedOut === false  })(), "The <code>authReducer</code> should toggle the <code>state</code> of <code>authenticated</code> between <code>true</code> and <code>false</code>.");'
+    testString: 'assert((function() {  store.dispatch({type: LOGIN}); const loggedIn = store.getState().auth.authenticated; store.dispatch({type: LOGOUT}); const loggedOut = store.getState().auth.authenticated; return loggedIn === true && loggedOut === false  })());'
   - text: 存储<code>state</code>应该有两个键： <code>count</code> ，它包含一个数字， <code>auth</code> ，它包含一个对象。 <code>auth</code>对象应具有<code>authenticated</code>属性，该属性包含布尔值。
-    testString: 'assert((function() { const state = store.getState(); return typeof state.auth === "object" && typeof state.auth.authenticated === "boolean" && typeof state.count === "number" })(), "The store <code>state</code> should have two keys: <code>count</code>, which holds a number, and <code>auth</code>, which holds an object. The <code>auth</code> object should have a property of <code>authenticated</code>, which holds a boolean.");'
+    testString: "assert((function() { const state = store.getState(); return typeof state.auth === 'object' && typeof state.auth.authenticated === 'boolean' && typeof state.count === 'number' })());"
   - text: 该<code>rootReducer</code>应该是结合了功能<code>counterReducer</code>和<code>authReducer</code> 。
-    testString: 'getUserInput => assert((function() {  const noWhiteSpace = getUserInput("index").replace(/\s/g,""); return typeof rootReducer === "function" && noWhiteSpace.includes("Redux.combineReducers")  })(), "The <code>rootReducer</code> should be a function that combines the <code>counterReducer</code> and the <code>authReducer</code>.");'
+    testString: getUserInput => assert((function() {  const noWhiteSpace = getUserInput('index').replace(/\s/g,''); return typeof rootReducer === 'function' && noWhiteSpace.includes('Redux.combineReducers')  })());
 
 ```
 
@@ -87,4 +87,5 @@ const store = Redux.createStore(rootReducer);
 ```js
 // solution required
 ```
-</section>
+
+/section>

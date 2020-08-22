@@ -19,9 +19,9 @@ localeTitle: 中心文本与引导程序
 ```yml
 tests:
   - text: 应用类<code>text-center</code>应该使<code>h2</code>元素居中
-    testString: 'assert($("h2").hasClass("text-center"), "Your <code>h2</code> element should be centered by applying the class <code>text-center</code>");'
+    testString: assert($("h2").hasClass("text-center"));
   - text: 您的<code>h2</code>元素仍应具有类<code>red-text</code>
-    testString: 'assert($("h2").hasClass("red-text"), "Your <code>h2</code> element should still have the class <code>red-text</code>");'
+    testString: assert($("h2").hasClass("red-text"));
 
 ```
 
@@ -80,7 +80,7 @@ tests:
     <li>thunder</li>
     <li>other cats</li>
   </ol>
-  <form action="/submit-cat-photo">
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor"> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
     <label><input type="checkbox" name="personality"> Loving</label>
@@ -105,4 +105,5 @@ tests:
 ```js
 // solution required
 ```
-</section>
+
+/section>

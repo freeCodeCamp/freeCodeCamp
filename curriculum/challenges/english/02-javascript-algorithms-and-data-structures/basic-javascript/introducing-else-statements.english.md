@@ -2,6 +2,7 @@
 id: 56533eb9ac21ba0edf2244da
 title: Introducing Else Statements
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cek4Efq'
 forumTopicId: 18207
 ---
@@ -71,7 +72,6 @@ function testElse(val) {
   return result;
 }
 
-// Change this value to test
 testElse(4);
 
 ```

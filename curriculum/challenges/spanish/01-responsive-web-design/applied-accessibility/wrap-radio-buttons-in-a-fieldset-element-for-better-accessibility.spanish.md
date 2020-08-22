@@ -8,8 +8,8 @@ localeTitle: Envolver los botones de radio en un elemento fieldset para mejorar 
 
 ## Description
 <section id="description">
-El siguiente tema sobre formularios trata la accesibilidad de los botones de radio. A cada opción se le asigna un <code>label</code> con un atributo <code>for</code> vinculado con el <code>id</code> del elemento correspondiente, tal como se describe en el último desafío. Dado que los botones de radio a menudo vienen en un grupo en que el usuario debe elegir uno, hay una manera de mostrar semánticamente que las opciones son parte de un conjunto.
-La etiqueta <code>fieldset</code> rodea todo el grupo de botones de radio para lograrlo. A menudo utiliza una etiqueta de <code>legend</code> para proporcionar una descripción de la agrupación, que los lectores de pantalla leen para cada opción en el elemento <code>fieldset</code>. El <code>fieldset</code> y la etiqueta de <code>legend</code> no son necesarios cuando las opciones se explican por sí mismas, como una selección de género. Usando un <code>label</code> con el atributo <code>for</code> para cada botón de radio es suficiente.
+El siguiente tema sobre formularios trata sobre la accesibilidad de los botones de radio. A cada opción se le asigna un <code>label</code> con un atributo <code>for</code> vinculado con el <code>id</code> del elemento correspondiente, tal como se describe en el último desafío. Dado que los botones de radio a menudo vienen en un grupo en que el usuario debe elegir uno, hay una manera de mostrar semánticamente que las opciones son parte de un conjunto.
+La etiqueta <code>fieldset</code> rodea todo el grupo de botones de radio para lograrlo. A menudo se utiliza una etiqueta de <code>legend</code> para proporcionar una descripción de la agrupación, que los lectores de pantalla leen para cada opción en el elemento <code>fieldset</code>. El <code>fieldset</code> y la etiqueta de <code>legend</code> no son necesarios cuando las opciones se explican por sí mismas, como una selección de género. Usando un <code>label</code> con el atributo <code>for</code> para cada botón de radio es suficiente.
 Aquí hay un ejemplo:
 <blockquote> &lt;form&gt; <br> &lt;fieldset&gt; <br> &lt;legend&gt; Elija uno de estos tres elementos: &lt;/legend&gt; <br> &lt;input id = &quot;one&quot; type = &quot;radio&quot; name = &quot;items&quot; value = &quot;one&quot;&gt; <br> &lt;label for = &quot;one&quot;&gt; Opción Uno &lt;/label&gt; &lt;br&gt; <br> &lt;input id = &quot;two&quot; type = &quot;radio&quot; name = &quot;items&quot; value = &quot;two&quot;&gt; <br> &lt;label for = &quot;two&quot;&gt; Opción Dos &lt;/label&gt; &lt;br&gt; <br> &lt;input id = &quot;three&quot; type = &quot;radio&quot; name = &quot;items&quot; value = &quot;three&quot;&gt; <br> &lt;label for = &quot;three&quot;&gt; Opción Tres &lt;/label&gt; <br> &lt;/fieldset&gt; <br> &lt;/form&gt; <br></blockquote>
 </section>
@@ -47,24 +47,24 @@ tests:
 ```html
 <body>
   <header>
-    <h1>Deep Thoughts with Master Camper Cat</h1>
+    <h1>Pensamientos Profundos con el Maestro Camper Cat</h1>
   </header>
   <section>
     <form>
-      <p>Sign up to receive Camper Cat's blog posts by email here!</p>
+      <p>¡Subscríbete aquí para recibir por email los posts del blog de Camper Cat!</p>
       <label for="email">Email:</label>
       <input type="text" id="email" name="email">
 
 
       <!-- Add your code below this line -->
       <div>
-        <p>What level ninja are you?</p>
+        <p>Cuál es su nivel de ninja?</p>
         <input id="newbie" type="radio" name="levels" value="newbie">
-        <label for="newbie">Newbie Kitten</label><br>
+        <label for="newbie">Gatito Novato</label><br>
         <input id="intermediate" type="radio" name="levels" value="intermediate">
-        <label for="intermediate">Developing Student</label><br>
+        <label for="intermediate">Estudiante en Desarrollo</label><br>
         <input id="master" type="radio" name="levels" value="master">
-        <label for="master">Master</label>
+        <label for="master">Maestro</label>
       </div>
       <!-- Add your code above this line -->
 
@@ -73,18 +73,18 @@ tests:
     </form>
   </section>
   <article>
-    <h2>The Garfield Files: Lasagna as Training Fuel?</h2>
-    <p>The internet is littered with varying opinions on nutritional paradigms, from catnip paleo to hairball cleanses. But let's turn our attention to an often overlooked fitness fuel, and examine the protein-carb-NOM trifecta that is lasagna...</p>
+    <h2>Los Archivos Garfield: ¿Lasagna como Combustible de Entrenamiento?</h2>
+    <p>Internet está repleto de diversas opiniones sobre los paradigmas nutricionales, desde catnip paleo hasta limpieza de bolas de pelos. Pero pongamos ahora nuestra atención en un combustible del bienestar físico muchas veces olvidado, y examinemos la trifecta proteína-carbohidrato-NOM que es la lasagna... </p>
   </article>
   <img src="samuraiSwords.jpeg" alt="">
   <article>
-    <h2>Defeating your Foe: the Red Dot is Ours!</h2>
-    <p>Felines the world over have been waging war on the most persistent of foes. This red nemesis combines both cunning stealth and lightening speed. But chin up, fellow fighters, our time for victory may soon be near...</p>
+    <h2>Venciendo a tu Rival: el Punto Rojo es Nuestro!</h2>
+    <p>Felinos de todo el mundo vienen dándole batalla a uno de los rivales más persistentes. Este némesis colorado combina un sigilo ingenioso con la velocidad del rayo. Pero anímense, compañeros luchadores, nuestra victoria está cerca...</p>
   </article>
   <img src="samuraiSwords.jpeg" alt="">
   <article>
-    <h2>Is Chuck Norris a Cat Person?</h2>
-    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is he a cat person?...</p>
+    <h2>Es Chuck Norris un Hombre Gato?</h2>
+    <p>Chuck Norris es ampliamente reconocido como el primer artista marcial del planeta, y es una completa coincidencia que todo aquel que no opina lo mismo desaparece misteriosamente poco tiempo después. Pero la verdadera pregunta es: es un hombre gato?...</p>
   </article>
   <footer>&copy; 2018 Camper Cat</footer>
 </body>
@@ -101,6 +101,7 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+// solución requerida
 ```
+
 </section>

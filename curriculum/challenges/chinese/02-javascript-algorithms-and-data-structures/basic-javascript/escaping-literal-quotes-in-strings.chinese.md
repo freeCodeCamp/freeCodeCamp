@@ -2,25 +2,35 @@
 id: 56533eb9ac21ba0edf2244b5
 title: Escaping Literal Quotes in Strings
 challengeType: 1
-videoUrl: ''
-localeTitle: 逃避字符串中的字面引用
+videoUrl: 'https://scrimba.com/c/c2QvgSr'
+forumTopicId: 17568
+localeTitle: 转义字符串中的引号
 ---
 
 ## Description
-<section id="description">在定义字符串时，必须以单引号或双引号开头和结尾。当你需要一个文字报价会发生什么： <code>&quot;</code>还是<code>&#39;</code> ？你的字符串里面在JavaScript中，你可以放置一个<dfn>反斜杠</dfn> （从考虑到它作为字符串报价的最终<dfn>逃脱</dfn>报价<code>\</code>在引号前）。 <code>var sampleStr = &quot;Alan said, \&quot;Peter is learning JavaScript\&quot;.&quot;;</code>这告诉JavaScript，以下引用不是字符串的结尾，而是应该出现在字符串中。所以如果要将它打印到控制台，你会得到： <code>Alan said, &quot;Peter is learning JavaScript&quot;.</code> </section>
+<section id='description'>
+定义一个字符串必须要用单引号或双引号来包裹它。那么当你的字符串里面包含：<code>"</code>或者<code>'</code>时该怎么办呢?
+在 JavaScript 中，你可以通过在引号前面使用<dfn>反斜杠</dfn>（<code>\</code>）来转义引号。
+<code>var sampleStr = "Alan said, \"Peter is learning JavaScript\".";</code>
+有了转义符号，JavaScript 就知道这个单引号或双引号并不是字符串的结尾，而是字符串内的字符。所以，上面的字符串打印到控制台的结果为：
+<code>Alan said, "Peter is learning JavaScript".</code>
+</section>
 
 ## Instructions
-<section id="instructions">使用<dfn>反斜杠</dfn>将字符串分配给<code>myStr</code>变量，这样如果要将其打印到控制台，您会看到： <code>I am a &quot;double quoted&quot; string inside &quot;double quotes&quot;.</code> </section>
+<section id='instructions'>
+使用<dfn>反斜杠</dfn>将一个字符串赋值给变量<code>myStr</code>，打印到控制台，输出为：
+<code>I am a "double quoted" string inside "double quotes".</code>
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您应该使用两个双引号（ <code>&quot;</code> ）和四个转义双引号（ <code>\&quot;</code> ）。
-    testString: 'assert(code.match(/\\"/g).length === 4 && code.match(/[^\\]"/g).length === 2, "You should use two double quotes (<code>&quot;</code>) and four escaped double quotes (<code>&#92;&quot;</code>).");'
-  - text: 变量myStr应该包含字符串： <code>I am a &quot;double quoted&quot; string inside &quot;double quotes&quot;.</code>
-    testString: 'assert(myStr === "I am a \"double quoted\" string inside \"double quotes\".", "Variable myStr should contain the string: <code>I am a "double quoted" string inside "double quotes".</code>");'
+  - text: 你的代码中应该包含两个双引号 (<code>&quot;</code>) 以及四个转义的双引 (<code>&#92;&quot;</code>)。
+    testString: assert(code.match(/\\"/g).length === 4 && code.match(/[^\\]"/g).length === 2);
+  - text: 变量 myStr 应该包含字符串<code>I am a "double quoted" string inside "double quotes".</code>。
+    testString: assert(myStr === "I am a \"double quoted\" string inside \"double quotes\".");
 
 ```
 
@@ -34,6 +44,7 @@ tests:
 ```js
 var myStr = ""; // Change this line
 
+
 ```
 
 </div>
@@ -43,7 +54,13 @@ var myStr = ""; // Change this line
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(){
+  if(typeof myStr === 'string') {
+    console.log("myStr = \"" + myStr + "\"");
+  } else {
+    console.log("myStr is undefined");
+  }
+})();
 ```
 
 </div>
@@ -53,7 +70,9 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+var myStr = "I am a \"double quoted\" string inside \"double quotes\".";
 ```
+
 </section>

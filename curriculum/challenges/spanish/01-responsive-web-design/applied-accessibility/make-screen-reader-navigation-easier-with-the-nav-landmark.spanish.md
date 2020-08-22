@@ -41,7 +41,7 @@ tests:
         <h1>Entrenamiento con Camper Cat</h1>
     <div>
       <ul>
-         <li><a href="#stealth">Sigilo & Agilidad</a></li>
+         <li><a href="#stealth">Sigilo &amp; Agilidad</a></li>
         <li><a href="#combat">Combate</a></li>
         <li><a href="#weapons">Armas</a></li>
       </ul>
@@ -79,6 +79,7 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+// solución requerida
 ```
+
 </section>

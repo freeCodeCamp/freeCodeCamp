@@ -1,0 +1,30 @@
+{
+  "name": "Machine Learning with Python Projects",
+  "dashedName": "machine-learning-with-python-projects",
+  "order": 3,
+  "time": "150 hours",
+  "superBlock": "machine-learning-with-python",
+  "superOrder": 10,
+  "challengeOrder": [
+    [
+      "5e46f8d6ac417301a38fb92d",
+      "Rock Paper Scissors"
+    ],
+    [
+      "5e46f8dcac417301a38fb92e",
+      "Cat and Dog Image Classifier"
+    ],
+    [
+      "5e46f8e3ac417301a38fb92f",
+      "Book Recommendation Engine using KNN"
+    ],
+    [
+      "5e46f8edac417301a38fb930",
+      "Linear Regression Health Costs Calculator"
+    ],
+    [
+      "5e46f8edac417301a38fb931",
+      "Neural Network SMS Text Classifier"
+    ]
+  ]
+}

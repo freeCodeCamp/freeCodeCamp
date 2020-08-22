@@ -10,6 +10,13 @@ export const scriptLoader = (id, key, async, src, onload, text) => {
   document.getElementsByTagName('head')[0].appendChild(s);
 };
 
+export const scriptRemover = id => {
+  let script = document.getElementById(id);
+  if (script) {
+    script.remove();
+  }
+};
+
 export const stripeScriptLoader = onload =>
   scriptLoader(
     'stripe-js',
@@ -39,12 +46,13 @@ export const mathJaxScriptLoader = () =>
       tex2jax: {
         inlineMath: [['$', '$'], ['\\\\(', '\\\\)']],
         processEscapes: true,
-        processClass: 'rosetta-code'
+        processClass: 'rosetta-code|project-euler'
       }
     });
     MathJax.Hub.Queue([
       'Typeset',
       MathJax.Hub,
-      document.querySelector('.rosetta-code')
+      document.querySelector('.rosetta-code'),
+      document.querySelector('.project-euler')
     ]);`
   );

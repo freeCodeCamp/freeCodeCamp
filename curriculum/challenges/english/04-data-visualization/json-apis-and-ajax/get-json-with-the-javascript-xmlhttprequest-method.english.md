@@ -2,6 +2,7 @@
 id: 587d7fae367417b2b2512be3
 title: Get JSON with the JavaScript XMLHttpRequest Method
 challengeType: 6
+isHidden: false
 forumTopicId: 301502
 ---
 
@@ -122,7 +123,6 @@ tests:
 <section id='solution'>
 
 ```html
-// solution required
 <script>
   document.addEventListener('DOMContentLoaded',function(){
     document.getElementById('getMessage').onclick = function(){

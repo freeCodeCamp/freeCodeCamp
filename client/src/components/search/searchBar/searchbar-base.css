@@ -626,10 +626,6 @@ a[class^='ais-'] {
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-.ais-SearchBox-submit {
-  left: 0.3rem;
-  top: 57%;
-}
 .ais-SearchBox-reset {
   right: 0.3rem;
 }
@@ -668,10 +664,16 @@ a[class^='ais-'] {
   background-color: #fff;
 }
 .ais-Hits-item {
-  width: 100%;
+  border-bottom: 0.75px solid var(--gray-45);
   margin: 0;
-  padding: 0;
-  border: 0;
+  padding: 5px 0;
+  width: 100%;
+}
+.ais-Hits-item:first-of-type {
+  border-top: 0.75px solid var(--gray-45);
+}
+.ais-Hits-item:last-of-type {
+  border-top: 1px solid var(--gray-00);
 }
 .ais-Hits-list {
   margin: 0;

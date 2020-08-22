@@ -8,7 +8,7 @@ localeTitle: União ordenada
 ---
 
 ## Description
-<section id="description"> Escreva uma função que usa dois ou mais arrays e retorna um novo array de valores exclusivos na ordem dos arrays fornecidos originalmente. Em outras palavras, todos os valores presentes em todos os arrays devem ser incluídos em sua ordem original, mas sem duplicatas no array final. Os números únicos devem ser classificados por ordem original, mas o array final não deve ser classificado em ordem numérica. Verifique os testes de asserção para exemplos. Lembre-se de usar <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Tente emparelhar o programa. Escreva seu próprio código. </section>
+<section id="description"> Escreva uma função que usa dois ou mais arrays e retorna um novo array de valores exclusivos na ordem dos arrays fornecidos originalmente. Em outras palavras, todos os valores presentes em todos os arrays devem ser incluídos em sua ordem original, mas sem duplicatas no array final. Os números únicos devem ser classificados por ordem original, mas o array final não deve ser classificado em ordem numérica. Verifique os testes de asserção para exemplos. Lembre-se de usar <a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Tente emparelhar o programa. Escreva seu próprio código. </section>
 
 ## Instructions
 <section id="instructions">

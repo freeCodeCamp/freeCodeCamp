@@ -7,7 +7,7 @@ localeTitle: Facilita la navegación por el lector de pantalla con el pie de pá
 ---
 
 ## Description
-<section id="description"> Al igual que el <code>header</code> y la <code>nav</code> , el elemento de <code>footer</code> tiene una característica de hito incorporada que permite que los dispositivos de asistencia naveguen rápidamente hacia él. Se utiliza principalmente para contener información de derechos de autor o enlaces a documentos relacionados que generalmente se encuentran en la parte inferior de una página. </section>
+<section id="description"> Al igual que el <code>header</code> y el <code>nav</code> , el elemento de <code>footer</code> tiene incorporado un punto de referencia que permite que los dispositivos de asistencia naveguen rápidamente hacia él. Se utiliza principalmente para contener información de derechos de autor o enlaces a documentos relacionados que generalmente se encuentran en la parte inferior de una página. </section>
 
 ## Instructions
 <section id="instructions"> La página de entrenamiento de Camper Cat está progresando bien. Cambie el <code>div</code> que usó para ajustar su información de copyright en la parte inferior de la página a un elemento de <code>footer</code> . </section>
@@ -81,6 +81,7 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+// solución requerida
 ```
+
 </section>

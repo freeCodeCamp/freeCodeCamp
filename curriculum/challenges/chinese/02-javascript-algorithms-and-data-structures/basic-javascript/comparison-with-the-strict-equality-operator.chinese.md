@@ -2,29 +2,43 @@
 id: 56533eb9ac21ba0edf2244d1
 title: Comparison with the Strict Equality Operator
 challengeType: 1
-videoUrl: ''
-localeTitle: 与严格平等算子的比较
+videoUrl: 'https://scrimba.com/c/cy87atr'
+forumTopicId: 16790
+localeTitle: 严格相等运算符
 ---
 
 ## Description
-<section id="description">严格相等（ <code>===</code> ）是相等运算符（ <code>==</code> ）的对应物。但是，与尝试将两个值转换为常见类型的等式运算符不同，严格相等运算符不执行类型转换。如果要比较的值具有不同的类型，则认为它们不相等，并且严格相等运算符将返回false。 <strong>例子</strong> <blockquote> 3 === 3 //是的<br> 3 ===&#39;3&#39;//假</blockquote>在第二个示例中， <code>3</code>是<code>Number</code>类型， <code>&#39;3&#39;</code>是<code>String</code>类型。 </section>
+<section id='description'>
+严格相等运算符（<code>===</code>）是相对相等操作符（<code>==</code>）的另一种比较操作符。与相等操作符不同的是，它会同时比较元素的值和<code>数据类型</code>。
+如果比较的值类型不同，那么在严格相等运算符比较下它们是不相等的，会返回 false 。
+<strong>示例</strong>
+
+```js
+3 ===  3   // true
+3 === '3'  // false
+```
+
+<code>3</code>是一个<code>数字</code>类型的，而<code>'3'</code>是一个<code>字符串</code>类型的，所以 3 不全等于 '3'。
+</section>
 
 ## Instructions
-<section id="instructions">在<code>if</code>语句中使用strict equality运算符，因此当<code>val</code>严格等于<code>7</code>时，函数将返回“Equal” </section>
+<section id='instructions'>
+在<code>if</code>语句值使用严格相等运算符，这样当<code>val</code>严格等于7的时候，函数会返回"Equal"。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>testStrict(10)</code>应返回“Not Equal”
-    testString: 'assert(testStrict(10) === "Not Equal", "<code>testStrict(10)</code> should return "Not Equal"");'
-  - text: <code>testStrict(7)</code>应返回“Equal”
-    testString: 'assert(testStrict(7) === "Equal", "<code>testStrict(7)</code> should return "Equal"");'
-  - text: <code>testStrict(&quot;7&quot;)</code>应返回“Not Equal”
-    testString: 'assert(testStrict("7") === "Not Equal", "<code>testStrict("7")</code> should return "Not Equal"");'
-  - text: 您应该使用<code>===</code>运算符
-    testString: 'assert(code.match(/(val\s*===\s*\d+)|(\d+\s*===\s*val)/g).length > 0, "You should use the <code>===</code> operator");'
+  - text: <code>testStrict(10)</code>应该返回 "Not Equal"。
+    testString: assert(testStrict(10) === "Not Equal");
+  - text: <code>testStrict(7)</code>应该返回 "Equal"。
+    testString: assert(testStrict(7) === "Equal");
+  - text: <code>testStrict("7")</code>应该返回 "Not Equal"。
+    testString: assert(testStrict("7") === "Not Equal");
+  - text: 你应该使用<code>===</code>运算符。
+    testString: assert(code.match(/(val\s*===\s*\d+)|(\d+\s*===\s*val)/g).length > 0);
 
 ```
 
@@ -46,7 +60,6 @@ function testStrict(val) {
 
 // Change this value to test
 testStrict(10);
-
 ```
 
 </div>
@@ -58,7 +71,14 @@ testStrict(10);
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+function testStrict(val) {
+  if (val === 7) {
+    return "Equal";
+  }
+  return "Not Equal";
+}
 ```
+
 </section>

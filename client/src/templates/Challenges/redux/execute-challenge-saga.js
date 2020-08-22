@@ -6,13 +6,16 @@ import {
   takeLatest,
   takeEvery,
   fork,
-  getContext
+  getContext,
+  take,
+  cancel
 } from 'redux-saga/effects';
 import { channel } from 'redux-saga';
 import escape from 'lodash/escape';
 
 import {
   challengeDataSelector,
+  challengeMetaSelector,
   challengeTestsSelector,
   initConsole,
   updateConsole,
@@ -21,7 +24,8 @@ import {
   logsToConsole,
   updateTests,
   isBuildEnabledSelector,
-  disableBuildOnError
+  disableBuildOnError,
+  types
 } from './';
 
 import {
@@ -30,8 +34,28 @@ import {
   getTestRunner,
   challengeHasPreview,
   updatePreview,
-  isJavaScriptChallenge
+  isJavaScriptChallenge,
+  isLoopProtected
 } from '../utils/build';
+
+// How long before bailing out of a preview.
+const previewTimeout = 2500;
+let previewTask;
+
+export function* executeCancellableChallengeSaga() {
+  if (previewTask) {
+    yield cancel(previewTask);
+  }
+  const task = yield fork(executeChallengeSaga);
+  previewTask = yield fork(previewChallengeSaga, { flushLogs: false });
+
+  yield take(types.cancelTests);
+  yield cancel(task);
+}
+
+export function* executeCancellablePreviewSaga() {
+  previewTask = yield fork(previewChallengeSaga);
+}
 
 export function* executeChallengeSaga() {
   const isBuildEnabled = yield select(isBuildEnabledSelector);
@@ -54,7 +78,12 @@ export function* executeChallengeSaga() {
     const proxyLogger = args => consoleProxy.put(args);
 
     const challengeData = yield select(challengeDataSelector);
-    const buildData = yield buildChallengeData(challengeData);
+    const challengeMeta = yield select(challengeMetaSelector);
+    const protect = isLoopProtected(challengeMeta);
+    const buildData = yield buildChallengeData(challengeData, {
+      preview: false,
+      protect
+    });
     const document = yield getContext('document');
     const testRunner = yield call(
       getTestRunner,
@@ -90,9 +119,9 @@ function* takeEveryConsole(channel) {
   });
 }
 
-function* buildChallengeData(challengeData) {
+function* buildChallengeData(challengeData, options) {
   try {
-    return yield call(buildChallenge, challengeData);
+    return yield call(buildChallenge, challengeData, options);
   } catch (e) {
     yield put(disableBuildOnError());
     throw e;
@@ -137,7 +166,7 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
 }
 
 // updates preview frame and the fcc console.
-function* previewChallengeSaga() {
+function* previewChallengeSaga({ flushLogs = true } = {}) {
   yield delay(700);
 
   const isBuildEnabled = yield select(isBuildEnabledSelector);
@@ -149,13 +178,21 @@ function* previewChallengeSaga() {
   const proxyLogger = args => logProxy.put(args);
 
   try {
-    yield put(initLogs());
-    yield put(initConsole(''));
+    if (flushLogs) {
+      yield put(initLogs());
+      yield put(initConsole(''));
+    }
     yield fork(takeEveryConsole, logProxy);
 
     const challengeData = yield select(challengeDataSelector);
+
     if (canBuildChallenge(challengeData)) {
-      const buildData = yield buildChallengeData(challengeData);
+      const challengeMeta = yield select(challengeMetaSelector);
+      const protect = isLoopProtected(challengeMeta);
+      const buildData = yield buildChallengeData(challengeData, {
+        preview: true,
+        protect
+      });
       // evaluate the user code in the preview frame or in the worker
       if (challengeHasPreview(challengeData)) {
         const document = yield getContext('document');
@@ -163,10 +200,14 @@ function* previewChallengeSaga() {
       } else if (isJavaScriptChallenge(challengeData)) {
         const runUserCode = getTestRunner(buildData, { proxyLogger });
         // without a testString the testRunner just evaluates the user's code
-        yield call(runUserCode, null, 5000);
+        yield call(runUserCode, null, previewTimeout);
       }
     }
   } catch (err) {
+    if (err === 'timeout') {
+      // eslint-disable-next-line no-ex-assign
+      err = `The code you have written is taking longer than the ${previewTimeout}ms our challenges allow. You may have created an infinite loop or need to write a more efficient algorithm`;
+    }
     console.log(err);
     yield put(updateConsole(escape(err)));
   }
@@ -174,7 +215,7 @@ function* previewChallengeSaga() {
 
 export function createExecuteChallengeSaga(types) {
   return [
-    takeLatest(types.executeChallenge, executeChallengeSaga),
+    takeLatest(types.executeChallenge, executeCancellableChallengeSaga),
     takeLatest(
       [
         types.updateFile,
@@ -182,7 +223,7 @@ export function createExecuteChallengeSaga(types) {
         types.challengeMounted,
         types.resetChallenge
       ],
-      previewChallengeSaga
+      executeCancellablePreviewSaga
     )
   ];
 }

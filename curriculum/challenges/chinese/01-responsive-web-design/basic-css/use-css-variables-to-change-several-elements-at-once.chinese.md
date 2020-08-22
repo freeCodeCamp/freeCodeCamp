@@ -2,27 +2,33 @@
 id: 5a9d725e424fe3d0e10cad10
 title: Use CSS Variables to change several elements at once
 challengeType: 0
-videoUrl: ''
-localeTitle: 使用CSS变量一次更改多个元素
+videoUrl: 'https://scrimba.com/c/c6bDECm'
+forumTopicId: 301093
+localeTitle: 使用 CSS 变量一次更改多个元素
 ---
 
 ## Description
-<section id="description"> <dfn>CSS变量</dfn>是一种通过仅更改一个值来一次更改许多CSS样式属性的强大方法。按照以下说明查看如何仅更改三个值可以更改许多元素的样式。 </section>
+<section id='description'>
+<dfn>CSS 变量</dfn>是一种仅更改一个值，来一次性更改多个 CSS 样式属性的强大方法。
+按照下面指示的来做，我们只需要改变三个值，多个样式将会同时被修改。
+</section>
 
 ## Instructions
-<section id="instructions">在<code>penguin</code>类中，将<code>black</code>值更改为<code>gray</code> ，将<code>gray</code>值更改为<code>white</code> ，将<code>yellow</code>值更改为<code>orange</code> 。 </section>
+<section id='instructions'>
+在<code>penguin</code>class 里，将<code>black</code>改为<code>gray</code>，<code>gray</code>改为<code>white</code>，<code>yellow</code>改为<code>orange</code>。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>penguin</code>类应声明<code>--penguin-skin</code>变量并将其指定为<code>gray</code> 。
-    testString: 'assert(code.match(/.penguin\s*?{[\s\S]*--penguin-skin\s*?:\s*?gray\s*?;[\s\S]*}/gi), "<code>penguin</code> class should declare the <code>--penguin-skin</code> variable and assign it to <code>gray</code>.");'
-  - text: <code>penguin</code>类应声明<code>--penguin-belly</code>变量并将其指定为<code>white</code> 。
-    testString: 'assert(code.match(/.penguin\s*?{[\s\S]*--penguin-belly\s*?:\s*?white\s*?;[\s\S]*}/gi), "<code>penguin</code> class should declare the <code>--penguin-belly</code> variable and assign it to <code>white</code>.");'
-  - text: <code>penguin</code>类应声明<code>--penguin-beak</code>变量并将其指定为<code>orange</code> 。
-    testString: 'assert(code.match(/.penguin\s*?{[\s\S]*--penguin-beak\s*?:\s*?orange\s*?;[\s\S]*}/gi), "<code>penguin</code> class should declare the <code>--penguin-beak</code> variable and assign it to <code>orange</code>.");'
+  - text: '<code>penguin</code> class 声明的<code>--penguin-skin</code>变量的值应为<code>gray</code>。'
+    testString: assert(code.match(/.penguin\s*?{[\s\S]*--penguin-skin\s*?:\s*?gray\s*?;[\s\S]*}/gi));
+  - text: '<code>penguin</code> class 声明的<code>--penguin-belly</code>变量的值应为<code>white</code>。'
+    testString: assert(code.match(/.penguin\s*?{[\s\S]*--penguin-belly\s*?:\s*?white\s*?;[\s\S]*}/gi));
+  - text: '<code>penguin</code> class 声明的<code>--penguin-beak</code>变量的值应为<code>orange</code>。'
+    testString: assert(code.match(/.penguin\s*?{[\s\S]*--penguin-beak\s*?:\s*?orange\s*?;[\s\S]*}/gi));
 
 ```
 
@@ -36,13 +42,13 @@ tests:
 ```html
 <style>
   .penguin {
-
+    
     /* change code below */
     --penguin-skin: black;
     --penguin-belly: gray;
     --penguin-beak: yellow;
     /* change code above */
-
+    
     position: relative;
     margin: auto;
     display: block;
@@ -50,7 +56,7 @@ tests:
     width: 300px;
     height: 300px;
   }
-
+  
   .penguin-top {
     top: 10%;
     left: 25%;
@@ -59,7 +65,7 @@ tests:
     height: 45%;
     border-radius: 70% 70% 60% 60%;
   }
-
+  
   .penguin-bottom {
     top: 40%;
     left: 23.5%;
@@ -68,7 +74,7 @@ tests:
     height: 45%;
     border-radius: 70% 70% 100% 100%;
   }
-
+  
   .right-hand {
     top: 0%;
     left: -5%;
@@ -79,7 +85,7 @@ tests:
     transform: rotate(45deg);
     z-index: -1;
   }
-
+  
   .left-hand {
     top: 0%;
     left: 75%;
@@ -90,7 +96,7 @@ tests:
     transform: rotate(-45deg);
     z-index: -1;
   }
-
+  
   .right-cheek {
     top: 15%;
     left: 35%;
@@ -99,7 +105,7 @@ tests:
     height: 70%;
     border-radius: 70% 70% 60% 60%;
   }
-
+  
   .left-cheek {
     top: 15%;
     left: 5%;
@@ -108,7 +114,7 @@ tests:
     height: 70%;
     border-radius: 70% 70% 60% 60%;
   }
-
+  
   .belly {
     top: 60%;
     left: 2.5%;
@@ -117,7 +123,7 @@ tests:
     height: 100%;
     border-radius: 120% 120% 100% 100%;
   }
-
+  
   .right-feet {
     top: 85%;
     left: 60%;
@@ -126,9 +132,9 @@ tests:
     height: 30%;
     border-radius: 50% 50% 50% 50%;
     transform: rotate(-80deg);
-    z-index: -2222;
+    z-index: -2222;  
   }
-
+  
   .left-feet {
     top: 85%;
     left: 25%;
@@ -137,76 +143,76 @@ tests:
     height: 30%;
     border-radius: 50% 50% 50% 50%;
     transform: rotate(80deg);
-    z-index: -2222;
+    z-index: -2222;  
   }
-
+  
   .right-eye {
     top: 45%;
     left: 60%;
     background: black;
     width: 15%;
     height: 17%;
-    border-radius: 50%;
+    border-radius: 50%; 
   }
-
+  
   .left-eye {
     top: 45%;
     left: 25%;
     background: black;
     width: 15%;
     height: 17%;
-    border-radius: 50%;
+    border-radius: 50%;  
   }
-
+  
   .sparkle {
     top: 25%;
     left: 15%;
     background: white;
     width: 35%;
     height: 35%;
-    border-radius: 50%;
+    border-radius: 50%;  
   }
-
+  
   .blush-right {
     top: 65%;
     left: 15%;
     background: pink;
     width: 15%;
     height: 10%;
-    border-radius: 50%;
+    border-radius: 50%;  
   }
-
+  
   .blush-left {
     top: 65%;
     left: 70%;
     background: pink;
     width: 15%;
     height: 10%;
-    border-radius: 50%;
+    border-radius: 50%;  
   }
-
+  
   .beak-top {
     top: 60%;
     left: 40%;
     background: var(--penguin-beak, orange);
     width: 20%;
     height: 10%;
-    border-radius: 50%;
+    border-radius: 50%;  
   }
-
+  
   .beak-bottom {
     top: 65%;
     left: 42%;
     background: var(--penguin-beak, orange);
     width: 16%;
     height: 10%;
-    border-radius: 50%;
+    border-radius: 50%;  
   }
-
+  
   body {
     background:#c6faf1;
   }
-
+  
   .penguin * {
     position: absolute;
   }
@@ -234,7 +240,6 @@ tests:
     <div class="beak-bottom"></div>
   </div>
 </div>
-
 ```
 
 </div>
@@ -246,7 +251,10 @@ tests:
 ## Solution
 <section id='solution'>
 
+
 ```js
 // solution required
 ```
+
 </section>
+              

@@ -2,6 +2,7 @@
 id: 587d7b7d367417b2b2512b1f
 title: Modify an Array Stored in an Object
 challengeType: 1
+isHidden: false
 forumTopicId: 301163
 ---
 
@@ -58,9 +59,9 @@ let user = {
 };
 
 function addFriend(userObj, friend) {
-  // change code below this line
+  // Only change code below this line
 
-  // change code above this line
+  // Only change code above this line
 }
 
 console.log(addFriend(user, 'Pete'));

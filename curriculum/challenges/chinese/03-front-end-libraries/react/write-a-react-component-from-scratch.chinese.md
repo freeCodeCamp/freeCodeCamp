@@ -19,11 +19,11 @@ localeTitle: 从Scratch写一个React组件
 ```yml
 tests:
   - text: 应该有一个名为<code>MyComponent</code>的React组件。
-    testString: 'getUserInput => assert(getUserInput("index").replace(/\s/g, "").includes("classMyComponentextendsReact.Component{"), "There should be a React component called <code>MyComponent</code>.");'
+    testString: getUserInput => assert(getUserInput('index').replace(/\s/g, '').includes('classMyComponentextendsReact.Component{'));
   - text: <code>MyComponent</code>应该包含带有文本<code>My First React Component!</code>的<code>h1</code>标签<code>My First React Component!</code>案例和标点符号问题。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find("h1").text() === "My First React Component!"; })(), "<code>MyComponent</code> should contain an <code>h1</code> tag with text <code>My First React Component!</code> Case and punctuation matter.");'
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find('h1').text() === 'My First React Component!'; })());
   - text: <code>MyComponent</code>应该呈现给DOM。
-    testString: 'assert(document.getElementById("challenge-node").childNodes.length === 1, "<code>MyComponent</code> should render to the DOM.");'
+    testString: assert(document.getElementById('challenge-node').childNodes.length === 1);
 
 ```
 
@@ -51,4 +51,5 @@ tests:
 ```js
 // solution required
 ```
-</section>
+
+/section>

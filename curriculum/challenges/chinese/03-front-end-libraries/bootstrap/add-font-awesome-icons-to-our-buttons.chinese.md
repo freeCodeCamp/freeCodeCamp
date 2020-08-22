@@ -22,13 +22,13 @@ localeTitle: 添加字体真棒图标到我们的按钮
 ```yml
 tests:
   - text: 使用<code>fa</code>和<code>fa-thumbs-up</code>类添加<code>i</code>元素。
-    testString: 'assert($("i").is(".fa.fa-thumbs-up") || $("span").is(".fa.fa-thumbs-up"), "Add an <code>i</code> element with the classes <code>fa</code> and <code>fa-thumbs-up</code>.");'
+    testString: assert($("i").is(".fas.fa-thumbs-up") || $("span").is(".fas.fa-thumbs-up"));
   - text: 您的<code>fa-thumbs-up</code>图标应位于Like按钮内。
-    testString: 'assert(($("i.fa-thumbs-up").parent().text().match(/Like/gi) && $(".btn-primary > i").is(".fa.fa-thumbs-up")) || ($("span.fa-thumbs-up").parent().text().match(/Like/gi) && $(".btn-primary > span").is(".fa.fa-thumbs-up")), "Your <code>fa-thumbs-up</code> icon should be located within the Like button.");'
+    testString: assert(($("i.fa-thumbs-up").parent().text().match(/Like/gi) && $(".btn-primary > i").is(".fas.fa-thumbs-up")) || ($("span.fa-thumbs-up").parent().text().match(/Like/gi) && $(".btn-primary > span").is(".fas.fa-thumbs-up")));
   - text: 将您的<code>i</code>元素嵌套在<code>button</code>元素中。
-    testString: 'assert($("button").children("i").length > 0 || $("button").children("span").length > 0, "Nest your <code>i</code> element within your <code>button</code> element.");'
+    testString: assert($("button").children("i").length > 0 || $("button").children("span").length > 0);
   - text: 确保您的图标元素具有结束标记。
-    testString: 'assert(code.match(/<\/i>|<\/span>/g), "Make sure your icon element has a closing tag.");'
+    testString: assert(code.match(/<\/i>|<\/span>/g));
 
 ```
 
@@ -87,7 +87,7 @@ tests:
     <li>thunder</li>
     <li>other cats</li>
   </ol>
-  <form action="/submit-cat-photo">
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor"> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
     <label><input type="checkbox" name="personality"> Loving</label>
@@ -112,4 +112,5 @@ tests:
 ```js
 // solution required
 ```
-</section>
+
+/section>

@@ -2,35 +2,42 @@
 id: 587d7db4367417b2b2512b90
 title: Match a Literal String with Different Possibilities
 challengeType: 1
-videoUrl: ''
-localeTitle: 匹配具有不同可能性的文字字符串
+forumTopicId: 301345
+localeTitle: 同时用多种模式匹配文字字符串
 ---
 
 ## Description
-<section id="description">使用<code>/coding/</code>等正则表达式，可以在另一个字符串中查找<code>&quot;coding&quot;</code>模式。这对搜索单个字符串很有用，但它仅限于一种模式。您可以使用<code>alternation</code>或<code>OR</code>运算符搜索多个模式： <code>|</code> 。此运算符在其之前或之后匹配模式。例如，如果你想匹配<code>&quot;yes&quot;</code>或<code>&quot;no&quot;</code> ，你想要的正则表达式是<code>/yes|no/</code> 。您还可以搜索两种以上的模式。您可以通过添加更多模式来实现此操作，其中更多<code>OR</code>运算符将它们分开，例如<code>/yes|no|maybe/</code> 。 </section>
+<section id='description'>
+使用正则表达式<code>/coding/</code>，你可以在其他字符串中查找<code>"coding"</code>。
+这对于搜寻单个字符串非常有用，但仅限于一种匹配模式。你可以使用<code>|</code>操作符来匹配多个规则。
+此操作符匹配操作符前面或后面的字符。例如，如果你想匹配<code>"yes"</code>或<code>"no"</code>，你需要的正则表达式是<code>/yes|no/</code>。
+你还可以匹配多个规则，这可以通过添加更多的匹配模式来实现。这些匹配模式将包含更多的<code>|</code>操作符来分隔它们，比如<code>/yes|no|maybe/</code>。
+</section>
 
 ## Instructions
-<section id="instructions">完成正则表达式<code>petRegex</code>以匹配宠物<code>&quot;dog&quot;</code> ， <code>&quot;cat&quot;</code> ， <code>&quot;bird&quot;</code>或<code>&quot;fish&quot;</code> 。 </section>
+<section id='instructions'>
+完成正则表达式<code>petRegex</code>以匹配<code>"dog"</code>、<code>"cat"</code>、<code>"bird"</code>或者<code>"fish"</code>。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 你的正则表达式<code>petRegex</code>应该为字符串<code>&quot;John has a pet dog.&quot;</code>返回<code>true</code> <code>&quot;John has a pet dog.&quot;</code>
-    testString: 'assert(petRegex.test("John has a pet dog."), "Your regex <code>petRegex</code> should return <code>true</code> for the string <code>"John has a pet dog."</code>");'
-  - text: 你的正则表达式<code>petRegex</code>应该为字符串<code>&quot;Emma has a pet rock.&quot;</code>返回<code>false</code> <code>&quot;Emma has a pet rock.&quot;</code>
-    testString: 'assert(!petRegex.test("Emma has a pet rock."), "Your regex <code>petRegex</code> should return <code>false</code> for the string <code>"Emma has a pet rock."</code>");'
-  - text: 你的正则表达式<code>petRegex</code>应该为字符串<code>&quot;Emma has a pet bird.&quot;</code>返回<code>true</code> <code>&quot;Emma has a pet bird.&quot;</code>
-    testString: 'assert(petRegex.test("Emma has a pet bird."), "Your regex <code>petRegex</code> should return <code>true</code> for the string <code>"Emma has a pet bird."</code>");'
-  - text: 你的正则表达式<code>petRegex</code>应该返回<code>true</code>为字符串<code>&quot;Liz has a pet cat.&quot;</code>
-    testString: 'assert(petRegex.test("Liz has a pet cat."), "Your regex <code>petRegex</code> should return <code>true</code> for the string <code>"Liz has a pet cat."</code>");'
-  - text: 你的正则表达式<code>petRegex</code>应该返回<code>false</code>为<code>&quot;Kara has a pet dolphin.&quot;</code>的字符串<code>&quot;Kara has a pet dolphin.&quot;</code>
-    testString: 'assert(!petRegex.test("Kara has a pet dolphin."), "Your regex <code>petRegex</code> should return <code>false</code> for the string <code>"Kara has a pet dolphin."</code>");'
-  - text: 你的正则表达式<code>petRegex</code>应该返回<code>true</code>为字符串<code>&quot;Alice has a pet fish.&quot;</code>
-    testString: 'assert(petRegex.test("Alice has a pet fish."), "Your regex <code>petRegex</code> should return <code>true</code> for the string <code>"Alice has a pet fish."</code>");'
-  - text: 你的正则表达式<code>petRegex</code>应该返回<code>false</code>为字符串<code>&quot;Jimmy has a pet computer.&quot;</code>
-    testString: 'assert(!petRegex.test("Jimmy has a pet computer."), "Your regex <code>petRegex</code> should return <code>false</code> for the string <code>"Jimmy has a pet computer."</code>");'
+  - text: "对于字符串<code>'John has a pet dog.'</code>，你的正则表达式<code>petRegex</code>的<code>test</code>方法应该返回<code>true</code>。"
+    testString: assert(petRegex.test('John has a pet dog.'));
+  - text: "对于字符串<code>'Emma has a pet rock.'</code>，你的正则表达式<code>petRegex</code>的<code>test</code>方法应该返回<code>false</code>。"
+    testString: assert(!petRegex.test('Emma has a pet rock.'));
+  - text: "对于字符串<code>'Emma has a pet bird.'</code>，你的正则表达式<code>petRegex</code>的<code>test</code>方法应该返回<code>true</code>。"
+    testString: assert(petRegex.test('Emma has a pet bird.'));
+  - text: "对于字符串<code>'Liz has a pet cat.'</code>，你的正则表达式<code>petRegex</code>的<code>test</code>方法应该返回<code>true</code>。"
+    testString: assert(petRegex.test('Liz has a pet cat.'));
+  - text: "对于字符串<code>'Kara has a pet dolphin.'</code>，你的正则表达式<code>petRegex</code>的<code>test</code>方法应该返回<code>false</code>。"
+    testString: assert(!petRegex.test('Kara has a pet dolphin.'));
+  - text: "对于字符串<code>'Alice has a pet fish.'</code>，你的正则表达式<code>petRegex</code>的<code>test</code>方法应该返回<code>true</code>。"
+    testString: assert(petRegex.test('Alice has a pet fish.'));
+  - text: "对于字符串<code>'Jimmy has a pet computer.'</code>，你的正则表达式<code>petRegex</code>的<code>test</code>方法应该返回<code>false</code>。"
+    testString: assert(!petRegex.test('Jimmy has a pet computer.'));
 
 ```
 
@@ -45,7 +52,6 @@ tests:
 let petString = "James has a pet cat.";
 let petRegex = /change/; // Change this line
 let result = petRegex.test(petString);
-
 ```
 
 </div>
@@ -58,6 +64,9 @@ let result = petRegex.test(petString);
 <section id='solution'>
 
 ```js
-// solution required
+let petString = "James has a pet cat.";
+let petRegex = /dog|cat|bird|fish/; // Change this line
+let result = petRegex.test(petString);
 ```
+
 </section>

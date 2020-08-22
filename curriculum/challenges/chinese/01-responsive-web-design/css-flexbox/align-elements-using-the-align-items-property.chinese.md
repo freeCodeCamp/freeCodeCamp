@@ -2,23 +2,33 @@
 id: 587d78ad367417b2b2512af8
 title: Align Elements Using the align-items Property
 challengeType: 0
-videoUrl: ''
-localeTitle: 使用align-items属性对齐元素
+videoUrl: 'https://scrimba.com/p/pVaDAv/c8aggtk'
+forumTopicId: 301101
+localeTitle: 使用 align-items 属性对齐元素
 ---
 
 ## Description
-<section id="description"> <code>align-items</code>属性类似于<code>justify-content</code> 。回想一下， <code>justify-content</code>属性沿主轴对齐flex项目。对于行，主轴是水平线，对于列，它是垂直线。 Flex容器还具有与<strong>主轴</strong>相反的横轴。对于行，横轴是垂直的，对于列，横轴是水平的。 CSS提供<code>align-items</code>属性以沿着交叉轴对齐flex项。对于一行，它告诉CSS如何在容器内向上或向下推动整行中的项目。对于列，如何在容器内向左或向右推送所有项目。 <code>align-items</code>可用的不同值包括： <ul><li> <code>flex-start</code> ：将项目对齐到Flex容器的开头。对于行，这会将项目对齐到容器的顶部。对于列，这会将项目对齐到容器的左侧。 </li><li> <code>flex-end</code> ：将项目对齐到Flex容器的末尾。对于行，这会将项目对齐到容器的底部。对于列，这会将项目对齐到容器的右侧。 </li><li> <code>center</code> ：将项目对齐到中心。对于行，这会垂直对齐项目（项目上方和下方的空格相等）。对于列，它会水平对齐它们（项目左侧和右侧的空格相等）。 </li><li> <code>stretch</code> ：拉伸项目以填充弹性容器。例如，行项目被拉伸以从上到下填充Flex容器。 </li><li> <code>baseline</code> ：将项目与其基线对齐。基线是一个文本概念，将其视为字母所在的行。 </li></ul></section>
+<section id='description'>
+<code>align-items</code>属性与<code>justify-content</code>类似。回忆一下，<code>justify-content</code>属性使 flex 子元素沿主轴排列。行的主轴是水平线，列的主轴是垂直线。
+Flex 容器中，与主轴垂直的叫做 <strong>cross axis（交叉轴）</strong>。行的交叉轴是垂直的，列的交叉轴是水平的。
+使用 CSS 中的<code>align-items</code>属性定义 flex 子元素沿交叉轴的对齐方式，对行来说，将行中的项目在容器中往上或往下移动；对列来说，将列中的项目在容器中往左或往右移动。
+<code>align-items</code>的可选值包括：
+<ul><li><code>flex-start</code>：从 flex 容器的起始位置开始对齐项目。对行来说，把项目移至容器顶部；对列来说，是把项目移至容器左边。</li><li><code>flex-end</code>：从 flex 容器的终止位置开始对齐项目。对行来说，把项目移至容器底部；对列来说，把项目移至容器右边。</li><li><code>center</code>：把项目居中放置。对行来说，垂直居中（项目距离顶部和底部的距离相等）；对列来说，水平居中（项目距离左边和右边的距离相等）。</li><li><code>stretch</code>：拉伸项目，填满 flex 容器。例如，排成行的项目从容器顶部拉伸到底部。如未设置<code>align-items</code>的值，那么默认值是<code>stretch</code>。</li><li><code>baseline</code>：沿基线对齐。基线是文本相关的概念，可以认为它是字母排列的下端基准线。</li></ul>
+</section>
 
 ## Instructions
-<section id="instructions">一个示例有助于显示此属性的运行情况。将CSS属性<code>align-items</code>添加到<code>#box-container</code>元素，并为其指定center值。 <strong>奖金</strong> <br>在代码编辑器中尝试使用<code>align-items</code>属性的其他选项来查看它们之间的差异。但请注意，中心值是唯一能够通过此挑战的值。 </section>
+<section id='instructions'>
+这个例子可以帮助你理解这个属性，在<code>#box-container</code>添加 CSS 属性<code>align-items</code>并将值设为 center。
+<strong>提示：</strong><br>在编辑器里试试<code>align-items</code>的其他可用值，看看它们之间的区别。但要通过挑战，你必须把值设为 <code>center</code>。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: '<code>#box-container</code>元素的<code>align-items</code>属性应设置为center的值。'
-    testString: 'assert($("#box-container").css("align-items") == "center", "The <code>#box-container</code> element should have an <code>align-items</code> property set to a value of center.");'
+  - text: <code>#box-container</code>元素应有<code>align-items</code>属性，其值应为 <code>center</code>。
+    testString: assert($('#box-container').css('align-items') == 'center');
 
 ```
 
@@ -35,7 +45,7 @@ tests:
     background: gray;
     display: flex;
     height: 500px;
-
+    
   }
   #box-1 {
     background-color: dodgerblue;
@@ -54,7 +64,6 @@ tests:
   <div id="box-1"><p>Hello</p></div>
   <div id="box-2"><p>Goodbye</p></div>
 </div>
-
 ```
 
 </div>
@@ -66,7 +75,9 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>
+              

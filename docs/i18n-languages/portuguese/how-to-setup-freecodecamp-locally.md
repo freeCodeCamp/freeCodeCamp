@@ -448,7 +448,7 @@ Siga estes passos:
 
 ## Obtendo ajuda
 
-Se você está com dificuldades e precisa de ajuda, deixa-nos saber ao perguntar na [categoria 'Contributors' em nosso fórum](https://www.freecodecamp.org/forum/c/contributors) ou o [Chat de Contribuidores](https://gitter.im/FreeCodeCamp/Contributors) no Gitter.
+Se você está com dificuldades e precisa de ajuda, deixa-nos saber ao perguntar na [categoria 'Contributors' em nosso fórum](https://forum.freecodecamp.org/c/contributors) ou o [Chat de Contribuidores](https://gitter.im/FreeCodeCamp/Contributors) no Gitter.
 
 Deve haver um erro no console do seu _browser_ ou no Bash / Terminal / Linha de Comando que pode ajudar a identificar o problema.
 

@@ -2,6 +2,7 @@
 id: 56533eb9ac21ba0edf2244c2
 title: Return a Value from a Function with Return
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cy87wue'
 forumTopicId: 18271
 ---
@@ -50,16 +51,9 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Example
-function minusSeven(num) {
-  return num - 7;
-}
-
-// Only change code below this line
 
 
 
-console.log(minusSeven(10));
 ```
 
 </div>

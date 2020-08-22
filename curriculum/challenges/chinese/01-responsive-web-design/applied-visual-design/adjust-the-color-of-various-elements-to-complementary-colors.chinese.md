@@ -2,29 +2,34 @@
 id: 587d78a4367417b2b2512ad3
 title: Adjust the Color of Various Elements to Complementary Colors
 challengeType: 0
-videoUrl: ''
+videoUrl: 'https://scrimba.com/c/cWmPpud'
+forumTopicId: 301033
 localeTitle: 将各种元素的颜色调整为互补色
 ---
 
 ## Description
-<section id="description">互补色挑战表明，色轮上的相反颜色可以使并排放置时彼此显得更加生动。然而，如果在网站上过度使用，强烈的视觉对比可能会很刺耳，如果将文本置于互补色背景上，有时可能会使文本难以阅读。在实践中，其中一种颜色通常占主导地位，补充用于将视觉注意力集中在页面上的某些内容上。 </section>
+<section id='description'>
+通过前面关卡的学习，我们知道了补色搭配能形成强列的对比效果，让内容更富生机。但是如果使用不当效果会适得其反，比如如果文字背景色和文字颜色互为补色，文字会很难看清。通常的做法是，一种颜色做为主要颜色，其补色用来装点页面。
+</section>
 
 ## Instructions
-<section id="instructions">此页面将使用深青色（ <code>#09A7A1</code> ）作为主色，其橙色（ <code>#FF790E</code> ）补充以在视觉上突出显示注册按钮。将<code>header</code>和<code>footer</code>的<code>background-color</code>从黑色更改为青色。然后将<code>h2</code>文本<code>color</code>更改为蓝绿色。最后，将<code>button</code>的<code>background-color</code>更改为橙色。 </section>
+<section id='instructions'>
+使用深青色（<code>#09A7A1</code>）做为页面主色，用其补色橙色（<code>#FF790E</code>）来装饰登录按钮。把 <code>header</code> 和 <code>footer</code> 的 <code>background-color</code> 从黑色改成深青色。然后把 <code>h2</code> 的文字 <code>color</code> 也改成深青色。最后，把 <code>button</code> 的 <code>background-color</code> 改成橙色。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>header</code>元素的<code>background-color</code>为＃09A7A1。
-    testString: 'assert($("header").css("background-color") == "rgb(9, 167, 161)", "The <code>header</code> element should have a <code>background-color</code> of #09A7A1.");'
-  - text: <code>footer</code>元素的<code>background-color</code>为＃09A7A1。
-    testString: 'assert($("footer").css("background-color") == "rgb(9, 167, 161)", "The <code>footer</code> element should have a <code>background-color</code> of #09A7A1.");'
-  - text: <code>h2</code>元素的<code>color</code>应为＃09A7A1。
-    testString: 'assert($("h2").css("color") == "rgb(9, 167, 161)", "The <code>h2</code> element should have a <code>color</code> of #09A7A1.");'
-  - text: <code>button</code>元素的<code>background-color</code>为＃FF790E。
-    testString: 'assert($("button").css("background-color") == "rgb(255, 121, 14)", "The <code>button</code> element should have a <code>background-color</code> of #FF790E.");'
+  - text: '<code>header</code> 元素应该有一个值为 <code>#09A7A1</code> 的 <code>background-color</code> CSS 属性。'
+    testString: "assert($('header').css('background-color') == 'rgb(9, 167, 161)');"
+  - text: '<code>footer</code> 元素应该有一个值为 <code>#09A7A1</code> 的 <code>background-color</code>CSS 属性。'
+    testString: "assert($('footer').css('background-color') == 'rgb(9, 167, 161)');"
+  - text: '<code>h2</code> 元素应该有一个值为 <code>#09A7A1</code> 的 <code>color</code> CSS 属性。'
+    testString: "assert($('h2').css('color') == 'rgb(9, 167, 161)');"
+  - text: '<code>button</code> 元素应该有一个值为 <code>#FF790E</code> 的 <code>background-color</code> CSS 属性。'
+    testString: "assert($('button').css('background-color') == 'rgb(255, 121, 14)');"
 
 ```
 
@@ -58,23 +63,22 @@ tests:
   }
 </style>
 <header>
-  <h1>Cooking with FCC!</h1>
+  <h1>freeCodeCamp 中国</h1>
 </header>
 <main>
   <article>
-    <h2>Machine Learning in the Kitchen</h2>
-    <p>Join this two day workshop that walks through how to implement cutting-edge snack-getting algorithms with a command line interface. Coding usually involves writing exact instructions, but sometimes you need your computer to execute flexible commands, like <code>fetch Pringles</code>.</p>
-    <button>Sign Up</button>
+    <h2>freeCodeCamp 成都社区</h2>
+    <p>【freeCodeCamp 成都社区】是一个非营利性的公益性技术社区，由一群编程技术爱好者利用业余时间搭建的一个友好的交流、学习、互助的平台，帮助开发者、技术爱好者提升个人技术能力，同时帮助企业解决人才问题。</p>
+    <button><a href="https://freecodecamp-chengdu.github.io/" target="_blank">更多</a></button>
   </article>
   <article>
-    <h2>Bisection Vegetable Chopping</h2>
-    <p>This week-long retreat will level-up your coding ninja skills to actual ninja skills. No longer is the humble bisection search limited to sorted arrays or coding interview questions, applying its concepts in the kitchen will have you chopping carrots in O(log n) time before you know it.</p>
-    <button>Sign Up</button>
+    <h2>freeCodeCamp 深圳社区</h2>
+    <p>【freeCodeCamp 深圳社区】面向深圳所有有意学习编程、热爱编程、甚至想要通过编程找到一份好工作的学生和社会群众，传承 freeCodeCamp 中文社区的主旨思想，倡导人人皆可编程。</p>
+    <button><a href="https://freecodecamp-shenzhen.github.io/" target="_blank">更多</a></button>
   </article>
 </main>
 <br>
-<footer>&copy; 2018 FCC Kitchen</footer>
-
+<footer>&copy;2020 freeCodeCamp 中国</footer>
 ```
 
 </div>
@@ -86,7 +90,9 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>
+              

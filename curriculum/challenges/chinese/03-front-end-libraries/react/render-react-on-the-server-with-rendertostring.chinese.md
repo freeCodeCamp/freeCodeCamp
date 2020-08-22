@@ -19,7 +19,7 @@ localeTitle: 使用renderToString在服务器上渲染React
 ```yml
 tests:
   - text: <code>App</code>组件应使用<code>ReactDOMServer.renderToString</code>呈现为字符串。
-    testString: 'getUserInput => assert(getUserInput("index").replace(/ /g,"").includes("ReactDOMServer.renderToString(<App/>)") && Enzyme.mount(React.createElement(App)).children().name() === "div", "The <code>App</code> component should render to a string using <code>ReactDOMServer.renderToString</code>.");'
+    testString: getUserInput => assert(getUserInput('index').replace(/ /g,'').includes('ReactDOMServer.renderToString(<App/>)') && Enzyme.mount(React.createElement(App)).children().name() === 'div');
 
 ```
 
@@ -73,4 +73,5 @@ console.info('after the test');
 ```js
 // solution required
 ```
-</section>
+
+/section>

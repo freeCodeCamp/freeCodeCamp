@@ -19,11 +19,11 @@ localeTitle: 从不改变国家
 ```yml
 tests:
   - text: Redux存储应该存在并使用等于代码编辑器中的<code>todos</code>数组的状态进行初始化。
-    testString: 'assert((function() { const todos = [ "Go to the store", "Clean the house", "Cook dinner", "Learn to code" ]; const initialState = store.getState(); return Array.isArray(initialState) && initialState.join(",") === todos.join(","); })(), "The Redux store should exist and initialize with a state equal to the <code>todos</code> array in the code editor.");'
+    testString: assert((function() { const todos = [ 'Go to the store', 'Clean the house', 'Cook dinner', 'Learn to code' ]; const initialState = store.getState(); return Array.isArray(initialState) && initialState.join(',') === todos.join(','); })());
   - text: <code>addToDo</code>和<code>immutableReducer</code>都应该是函数。
-    testString: 'assert(typeof addToDo === "function" && typeof immutableReducer === "function", "<code>addToDo</code> and <code>immutableReducer</code> both should be functions.");'
+    testString: assert(typeof addToDo === 'function' && typeof immutableReducer === 'function');
   - text: 在Redux存储上调度<code>ADD_TO_DO</code>类型的操作应该添加<code>todo</code> ，不应该改变状态。
-    testString: 'assert((function() { const initialState = store.getState(); const isFrozen = DeepFreeze(initialState); store.dispatch(addToDo("__TEST__TO__DO__")); const finalState = store.getState(); const expectedState = [ "Go to the store", "Clean the house", "Cook dinner", "Learn to code", "__TEST__TO__DO__" ]; return( isFrozen && DeepEqual(finalState, expectedState)); })(), "Dispatching an action of type <code>ADD_TO_DO</code> on the Redux store should add a <code>todo</code> item and should NOT mutate state.");'
+    testString: assert((function() { const initialState = store.getState(); const isFrozen = DeepFreeze(initialState); store.dispatch(addToDo('__TEST__TO__DO__')); const finalState = store.getState(); const expectedState = [ 'Go to the store', 'Clean the house', 'Cook dinner', 'Learn to code', '__TEST__TO__DO__' ]; return( isFrozen && DeepEqual(finalState, expectedState)); })());
 
 ```
 
@@ -79,4 +79,5 @@ const store = Redux.createStore(immutableReducer);
 ```js
 // solution required
 ```
-</section>
+
+/section>

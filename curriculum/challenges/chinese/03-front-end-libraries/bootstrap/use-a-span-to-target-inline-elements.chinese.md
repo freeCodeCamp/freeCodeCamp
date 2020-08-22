@@ -19,13 +19,13 @@ localeTitle: 使用跨度来定位内联元素
 ```yml
 tests:
   - text: 你的<code>span</code>元素应该在你的<code>p</code>元素中。
-    testString: 'assert($("p span") && $("p span").length > 0, "Your <code>span</code> element should be inside your <code>p</code> element.");'
+    testString: assert($("p span") && $("p span").length > 0);
   - text: 你的<code>span</code>元素应该只有文字<code>love</code> 。
-    testString: 'assert($("p span") && $("p span").text().match(/love/i) && !$("p span").text().match(/Things cats/i), "Your <code>span</code> element should have just the text <code>love</code>.");'
+    testString: assert($("p span") && $("p span").text().match(/love/i) && !$("p span").text().match(/Things cats/i));
   - text: 你的<code>span</code>元素应该有class <code>text-danger</code> 。
-    testString: 'assert($("span").hasClass("text-danger"), "Your <code>span</code> element should have class <code>text-danger</code>.");'
+    testString: assert($("span").hasClass("text-danger"));
   - text: 确保您的<code>span</code>元素具有结束标记。
-    testString: 'assert(code.match(/<\/span>/g) && code.match(/<span/g) && code.match(/<\/span>/g).length === code.match(/<span/g).length, "Make sure your <code>span</code> element has a closing tag.");'
+    testString: assert(code.match(/<\/span>/g) && code.match(/<span/g) && code.match(/<\/span>/g).length === code.match(/<span/g).length);
 
 ```
 
@@ -82,7 +82,7 @@ tests:
     <li>thunder</li>
     <li>other cats</li>
   </ol>
-  <form action="/submit-cat-photo">
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor"> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
     <label><input type="checkbox" name="personality"> Loving</label>
@@ -107,4 +107,5 @@ tests:
 ```js
 // solution required
 ```
-</section>
+
+/section>

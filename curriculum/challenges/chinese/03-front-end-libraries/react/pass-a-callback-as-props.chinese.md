@@ -19,15 +19,15 @@ localeTitle: 将回调作为道具传递
 ```yml
 tests:
   - text: <code>MyApp</code>组件应该呈现。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyApp)); return mockedComponent.find("MyApp").length === 1; })(), "The <code>MyApp</code> component should render.");'
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyApp)); return mockedComponent.find('MyApp').length === 1; })());
   - text: <code>GetInput</code>组件应该呈现。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyApp)); return mockedComponent.find("GetInput").length === 1; })(), "The <code>GetInput</code> component should render.");'
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyApp)); return mockedComponent.find('GetInput').length === 1; })());
   - text: <code>RenderInput</code>组件应该呈现。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyApp)); return mockedComponent.find("RenderInput").length === 1; })(), "The <code>RenderInput</code> component should render.");'
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyApp)); return mockedComponent.find('RenderInput').length === 1; })());
   - text: <code>GetInput</code>组件应该将<code>MyApp</code>状态属性<code>inputValue</code>作为props接收，并包含一个修改<code>MyApp</code>状态的<code>input</code>元素。
-    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyApp)); const state_1 = () => { mockedComponent.setState({inputValue: ""}); return waitForIt(() => mockedComponent.state() )}; const state_2 = () => { mockedComponent.find("input").simulate("change", {target: {value: "TestInput"}}); return waitForIt(() => mockedComponent.state() )}; const updated_1 = await state_1(); const updated_2 = await state_2(); assert(updated_1.inputValue === "" && updated_2.inputValue === "TestInput", "The <code>GetInput</code> component should receive the <code>MyApp</code> state property <code>inputValue</code> as props and contain an <code>input</code> element which modifies <code>MyApp</code> state."); }; '
+    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyApp)); const state_1 = () => { mockedComponent.setState({inputValue: ''''}); return waitForIt(() => mockedComponent.state() )}; const state_2 = () => { mockedComponent.find(''input'').simulate(''change'', {target: {value: ''TestInput''}}); return waitForIt(() => mockedComponent.state() )}; const updated_1 = await state_1(); const updated_2 = await state_2(); assert(updated_1.inputValue === '''' && updated_2.inputValue === ''TestInput''); }; '
   - text: <code>RenderInput</code>组件应该将<code>MyApp</code>状态属性<code>inputValue</code>作为props接收。
-    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyApp)); const state_1 = () => { mockedComponent.setState({inputValue: "TestName"}); return waitForIt(() => mockedComponent )}; const updated_1 = await state_1(); assert(updated_1.find("p").text().includes("TestName"), "The <code>RenderInput</code> component should receive the <code>MyApp</code> state property <code>inputValue</code> as props."); }; '
+    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyApp)); const state_1 = () => { mockedComponent.setState({inputValue: ''TestName''}); return waitForIt(() => mockedComponent )}; const updated_1 = await state_1(); assert(updated_1.find(''p'').text().includes(''TestName'')); }; '
 
 ```
 
@@ -115,4 +115,5 @@ console.info('after the test');
 ```js
 // solution required
 ```
-</section>
+
+/section>

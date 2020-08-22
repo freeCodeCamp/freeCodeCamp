@@ -2,29 +2,63 @@
 id: 587d7dae367417b2b2512b79
 title: Extend Constructors to Receive Arguments
 challengeType: 1
-videoUrl: ''
+forumTopicId: 18235
 localeTitle: 扩展构造函数以接收参数
 ---
 
 ## Description
-<section id="description">最后一次挑战的<code>Bird</code>和<code>Dog</code>建设者运作良好。但是，请注意，所有的<code>Birds</code>与该创建<code>Bird</code>构造自动命名伟业，颜色为蓝色，有两条腿。如果您希望鸟类的名称和颜色具有不同的值，该怎么办？可以手动更改每只鸟的属性，但这将是很多工作： <blockquote>让swan = new Bird（）; <br> swan.name =“卡洛斯”; <br> swan.color =“white”; </blockquote>假设您正在编写一个程序来跟踪鸟舍中数百甚至数千种不同的鸟类。创建所有鸟类需要花费大量时间，然后将每个属性的属性更改为不同的值。为了更轻松地创建不同的<code>Bird</code>对象，您可以设计Bird构造函数来接受参数： <blockquote> function Bird（名称，颜色）{ <br> this.name = name; <br> this.color = color; <br> this.numLegs = 2; <br> } </blockquote>然后传入值作为参数，将每个独特的鸟定义到<code>Bird</code>构造函数中： <code>let cardinal = new Bird(&quot;Bruce&quot;, &quot;red&quot;);</code>这给出了一个<code>Bird</code>的新实例，其名称和颜色属性分别设置为Bruce和red。 <code>numLegs</code>属性仍设置为2. <code>cardinal</code>具有以下属性： <blockquote> cardinal.name // =&gt;布鲁斯<br> cardinal.color // =&gt;红色<br> cardinal.numLegs // =&gt; 2 </blockquote>构造函数更灵活。现在可以在创建时为每个<code>Bird</code>定义属性，这是JavaScript构造函数如此有用的一种方式。他们根据共享的特征和行为将对象组合在一起，并定义一个自动创建的蓝图。 </section>
+<section id='description'>
+上一个挑战中<code>Bird</code>和<code>Dog</code>构造函数运行得不错。但是，注意到没有：所有通过<code>Bird</code>构造函数创建出来的实例<code>Birds</code>都自动的取名为 Albert，颜色都是蓝色，还都有两条腿。如果你想要新创建出来的小鸟们拥有不同的名字和颜色要怎么办呢？当然，手动的去修改每一个小鸟实例自己的属性也是可以实现的，只是会增加很多无谓的工作量：
+
+```js
+let swan = new Bird();
+swan.name = "Carlos";
+swan.color = "white";
+```
+
+假如你写了一个程序来追踪一个鸟舍里面的几百只甚至几千只不同的小鸟，你将会花费很多时间去创建所有的小鸟实例并给它们的属性一一修改为不同的值。
+为了减轻创建不同<code>Bird</code>对象的工作量，你可以给你的<code>Bird</code>设置为可以接收参数的构造函数：
+
+```js
+function Bird(name, color) {
+  this.name = name;
+  this.color = color;
+  this.numLegs = 2;
+}
+```
+
+然后将值通过参数的方式传递给<code>Bird</code>构造函数来定义每一个唯一的小鸟实例：
+<code>let cardinal = new Bird("Bruce", "red");</code>
+这给<code>Bird</code>的名字和颜色属性分别赋值为 Bruce 和红色提供了另外一种方法。但<code>numLegs</code>属性被默认赋值为 2。
+<code>cardinal</code>有以下这些属性：
+
+```js
+cardinal.name // => Bruce
+cardinal.color // => red
+cardinal.numLegs // => 2
+```
+
+这样一来构造函数就变得很灵活了。现在可以直接定义每个<code>Bird</code>实例在创建时的属性，这是 JavaScript 构造函数非常实用的用法之一。它们根据共同或相似的属性和行为将对象归纳为一组，并能够自动的创建各自实例。
+</section>
 
 ## Instructions
-<section id="instructions">创建另一个<code>Dog</code>构造函数。这次，将其设置为采用参数<code>name</code>和<code>color</code> ，并将属性<code>numLegs</code>固定为4.然后创建一个保存在变量<code>terrier</code>的新<code>Dog</code> 。将两个字符串作为<code>name</code>和<code>color</code>属性的参数传递给它。 </section>
+<section id='instructions'>
+创建另一个<code>Dog</code>构造函数。这一次，给它设置两个参数：<code>name</code>和<code>color</code>，同时给<code>numLegs</code>赋值为 4。然后创建一个新<code>Dog</code>实例保存为变量名：<code>terrier</code>，再将两个字符串通过参数的形式传入<code>name</code>和<code>color</code>属性。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>Dog</code>应该收到<code>name</code>的论据。
-    testString: 'assert((new Dog("Clifford")).name === "Clifford", "<code>Dog</code> should receive an argument for <code>name</code>.");'
-  - text: <code>Dog</code>应该收到<code>color</code>的论据。
-    testString: 'assert((new Dog("Clifford", "yellow")).color === "yellow", "<code>Dog</code> should receive an argument for <code>color</code>.");'
-  - text: <code>Dog</code>应该将属性<code>numLegs</code>设置为4。
-    testString: 'assert((new Dog("Clifford")).numLegs === 4, "<code>Dog</code> should have property <code>numLegs</code> set to 4.");'
-  - text: 应该使用<code>Dog</code>构造函数创建<code>terrier</code> 。
-    testString: 'assert(terrier instanceof Dog, "<code>terrier</code> should be created using the <code>Dog</code> constructor.");'
+  - text: <code>Dog</code>应该接收一个<code>name</code>参数。
+    testString: assert((new Dog('Clifford')).name === 'Clifford');
+  - text: <code>Dog</code>应该接收一个<code>color</code>参数。
+    testString: assert((new Dog('Clifford', 'yellow')).color === 'yellow');
+  - text: <code>Dog</code>应该有一个<code>numLegs</code>属性且值为 4。
+    testString: assert((new Dog('Clifford')).numLegs === 4);
+  - text: <code>terrier</code>应该是通过<code>Dog</code>构造函数创建的。
+    testString: assert(terrier instanceof Dog);
 
 ```
 
@@ -40,6 +74,7 @@ function Dog() {
 
 }
 
+
 ```
 
 </div>
@@ -51,7 +86,15 @@ function Dog() {
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+function Dog (name, color) {
+  this.numLegs = 4;
+  this.name = name;
+  this.color = color;
+}
+
+const terrier = new Dog();
 ```
+
 </section>

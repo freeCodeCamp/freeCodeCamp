@@ -22,11 +22,11 @@ localeTitle: 响应式样式复选框
 ```yml
 tests:
   - text: 将所有复选框<code>div</code>带有类<code>row</code> <code>div</code> 。
-    testString: 'assert($("div.row:has(input[type=\"checkbox\"])").length > 0, "Nest all of your checkboxes inside one <code>div</code> with the class <code>row</code>.");'
+    testString: assert($("div.row:has(input[type=\"checkbox\"])").length > 0);
   - text: 使用类<code>col-xs-4</code>将每个复选框嵌入其自己的<code>div</code> 。
-    testString: 'assert($("div.col-xs-4:has(input[type=\"checkbox\"])").length > 2, "Nest each of your checkboxes inside its own <code>div</code> with the class <code>col-xs-4</code>.");'
+    testString: assert($("div.col-xs-4:has(input[type=\"checkbox\"])").length > 2);
   - text: 确保每个<code>div</code>元素都有一个结束标记。
-    testString: 'assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length, "Make sure each of your <code>div</code> elements has a closing tag.");'
+    testString: assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length);
 
 ```
 
@@ -86,7 +86,7 @@ tests:
     <li>thunder</li>
     <li>other cats</li>
   </ol>
-  <form action="/submit-cat-photo">
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
     <div class="row">
       <div class="col-xs-6">
         <label><input type="radio" name="indoor-outdoor"> Indoor</label>
@@ -117,4 +117,5 @@ tests:
 ```js
 // solution required
 ```
-</section>
+
+/section>

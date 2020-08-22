@@ -8,10 +8,10 @@ localeTitle: Регистрация новых пользователей
 
 ## Description
 <section id='description'>
-As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a>.
-Now we need to allow a new user on our site to register an account. On the res.render for the home page add a new variable to the object passed along- <code>showRegistration: true</code>. When you refresh your page, you should then see the registration form that was already created in your index.pug file! This form is set up to <b>POST</b> on <em>/register</em> so this is where we should set up to accept the POST and create the user object in the database.
-The logic of the registration route should be as follows: Register the new user > Authenticate the new user > Redirect to /profile
-The logic of step 1, registering the new user, should be as follows: Query database with a findOne command > if user is returned then it exists and redirect back to home <em>OR</em> if user is undefined and no error occurs then 'insertOne' into the database with the username and password and as long as no errors occur then call <em>next</em> to go to step 2, authenticating the new user, which we've already written the logic for in our POST /login route.
+Напомним, что этот проект строится на следующем стартовом проекте на <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/'>Glitch</a>, или клонированном из <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a>.
+Теперь нам нужно разрешить новому пользователю на нашем сайте зарегистрировать учетную запись. На res.render для домашней страницы добавьте новую переменную к переданному объекту- <code>showRegistration: true</code>. При обновлении страницы вы должны увидеть регистрационную форму, которая уже была создана в файле index.pug ! Эта форма настроена на <b>POST</b> на <em>/register</em> поэтому здесь мы должны настроить прием POST и создать объект пользователя в базе данных.
+Логика регистрационного маршрута должна выглядеть следующим образом: Регистрация нового пользователя > аутентификация нового пользователя > перенаправление в /profile
+Логика шага 1, регистрация нового пользователя, должна быть следующей: Запрос базы данных с помощью команды findOne > если пользователь возвращается, то он существует и перенаправляется обратно на home <em>или</em> если пользователь не определен и не возникает ошибок, то 'insertOne' в базу данных с именем пользователя и паролем и до тех пор, пока не возникнет ошибок, затем вызовите  <em>next</em>  чтобы перейти к Шагу 2, аутентифицируя нового пользователя, для которого мы уже написали логику в нашем POST /login маршруте.
 
 ```js
 app.route('/register')

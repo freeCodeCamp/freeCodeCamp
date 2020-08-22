@@ -19,15 +19,15 @@ localeTitle: Ditch Custom CSS for Bootstrap
 ```yml
 tests:
   - text: 你的h2元素不应该有<code>red-text</code>类。
-    testString: 'assert(!$("h2").hasClass("red-text"), "Your h2 element should no longer have the class <code>red-text</code>.");'
+    testString: assert(!$("h2").hasClass("red-text"));
   - text: 您的h2元素现在应该具有<code>text-primary</code>类。
-    testString: 'assert($("h2").hasClass("text-primary"), "Your h2 element should now have the class <code>text-primary</code>.");'
+    testString: assert($("h2").hasClass("text-primary"));
   - text: 您的段落元素不应再使用<code>Monospace</code> 。
-    testString: 'assert(!$("p").css("font-family").match(/monospace/i), "Your paragraph elements should no longer use the font <code>Monospace</code>.");'
+    testString: assert(!$("p").css("font-family").match(/monospace/i));
   - text: 从顶部图像中删除<code>smaller-image</code>类。
-    testString: 'assert(!$("img").hasClass("smaller-image"), "Remove the <code>smaller-image</code> class from your top image.");'
+    testString: assert(!$("img").hasClass("smaller-image"));
   - text: 将<code>img-responsive</code>类添加到您的顶部图像。
-    testString: 'assert($(".img-responsive").length > 1, "Add the <code>img-responsive</code> class to your top image.");'
+    testString: assert($(".img-responsive").length > 1);
 
 ```
 
@@ -97,7 +97,7 @@ tests:
     <li>thunder</li>
     <li>other cats</li>
   </ol>
-  <form action="/submit-cat-photo">
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor"> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
     <label><input type="checkbox" name="personality"> Loving</label>
@@ -122,4 +122,5 @@ tests:
 ```js
 // solution required
 ```
-</section>
+
+/section>

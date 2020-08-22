@@ -2,27 +2,41 @@
 id: bad87fee1348bd9aedf08736
 title: Style the HTML Body Element
 challengeType: 0
-videoUrl: ''
-localeTitle: 设置HTML Body Element的样式
+videoUrl: 'https://scrimba.com/c/cB77PHW'
+forumTopicId: 18313
+localeTitle: 给 HTML 的 Body 元素添加样式
 ---
 
 ## Description
-<section id="description">现在让我们重新开始讨论CSS继承。每个HTML页面都有一个<code>body</code>元素。 </section>
+<section id='description'>
+现在让我们来讨论一下 CSS 继承。
+每一个 HTML 页面都含有一个<code>body</code>元素。
+</section>
 
 ## Instructions
-<section id="instructions">我们可以通过给它一个黑色的<code>background-color</code>来证明<code>body</code>元素存在。我们可以通过在<code>style</code>元素中添加以下内容来实现： <blockquote>身体 { <br>背景颜色：黑色; <br> } </blockquote></section>
+<section id='instructions'>
+我们可以通过设置<code>background-color</code>为<code>black</code>，来证明<code>body</code>元素的存在。
+添加以下的代码到<code>style</code>标签里面：
+
+```css
+body {
+  background-color: black;
+}
+```
+
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 给你的<code>body</code>元素黑色的<code>background-color</code> 。
-    testString: 'assert($("body").css("background-color") === "rgb(0, 0, 0)", "Give your <code>body</code> element the <code>background-color</code> of black.");'
-  - text: 确保您的CSS规则使用左右大括号正确格式化。
-    testString: 'assert(code.match(/<style>\s*body\s*\{\s*background.*\s*:\s*.*;\s*\}\s*<\/style>/i), "Make sure your CSS rule is properly formatted with both opening and closing curly brackets.");'
-  - text: 确保您的CSS规则以分号结尾。
-    testString: 'assert(code.match(/<style>\s*body\s*\{\s*background.*\s*:\s*.*;\s*\}\s*<\/style>/i), "Make sure your CSS rule ends with a semi-colon.");'
+  - text: '<code>body</code>元素的<code>background-color</code>应该是黑色的。'
+    testString: assert($("body").css("background-color") === "rgb(0, 0, 0)");
+  - text: '确保 CSS 规则格式书写正确，需要开关大括号。'
+    testString: assert(code.match(/<style>\s*body\s*\{\s*background.*\s*:\s*.*;\s*\}\s*<\/style>/i));
+  - text: '确保 CSS 规则要以分号结尾。'
+    testString: assert(code.match(/<style>\s*body\s*\{\s*background.*\s*:\s*.*;\s*\}\s*<\/style>/i));
 
 ```
 
@@ -37,7 +51,6 @@ tests:
 <style>
 
 </style>
-
 ```
 
 </div>
@@ -49,7 +62,9 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>
+              

@@ -2,6 +2,7 @@
 id: 5a94fe8569fb03452672e464
 title: Create Grids within Grids
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/p/pByETK/c6N78Ap'
 forumTopicId: 301128
 ---
@@ -65,10 +66,10 @@ tests:
   .item3 {
     background: PaleTurquoise;
     grid-area: content;
-    /* enter your code below this line */
+    /* Only change code below this line */
 
 
-    /* enter your code above this line */
+    /* Only change code above this line */
   }
 
   .item4 {

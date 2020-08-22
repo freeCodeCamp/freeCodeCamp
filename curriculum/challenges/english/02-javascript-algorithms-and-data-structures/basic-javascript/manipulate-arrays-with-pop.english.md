@@ -2,6 +2,7 @@
 id: 56bbb991ad1ed5201cd392cc
 title: Manipulate Arrays With pop()
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cRbVZAB'
 forumTopicId: 18236
 ---
@@ -48,15 +49,10 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Example
-var ourArray = [1,2,3];
-var removedFromOurArray = ourArray.pop();
-// removedFromOurArray now equals 3, and ourArray now equals [1,2]
-
 // Setup
 var myArray = [["John", 23], ["cat", 2]];
 
-// Only change code below this line.
+// Only change code below this line
 var removedFromMyArray;
 
 

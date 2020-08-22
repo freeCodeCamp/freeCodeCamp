@@ -2,6 +2,7 @@
 id: 598e8944f009e646fc236146
 title: Understanding Undefined Value returned from a Function
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/ce2p7cL'
 forumTopicId: 301177
 ---
@@ -51,15 +52,18 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Example
+// Setup
 var sum = 0;
+
 function addThree() {
   sum = sum + 3;
 }
 
 // Only change code below this line
 
+
 // Only change code above this line
+
 addThree();
 addFive();
 ```
@@ -72,19 +76,16 @@ addFive();
 
 
 ```js
-// Example
 var sum = 0;
+
 function addThree() {
   sum = sum + 3;
 }
-
-// Only change code below this line
 
 function addFive() {
   sum = sum + 5;
 }
 
-// Only change code above this line
 addThree();
 addFive();
 ```

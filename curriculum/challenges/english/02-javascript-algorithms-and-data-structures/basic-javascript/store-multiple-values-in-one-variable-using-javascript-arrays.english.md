@@ -2,6 +2,7 @@
 id: bd7993c9c69feddfaeb8bdef
 title: Store Multiple Values in one Variable using JavaScript Arrays
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/crZQWAm'
 forumTopicId: 18309
 ---
@@ -41,10 +42,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Example
-var ourArray = ["John", 23];
-
-// Only change code below this line.
+// Only change code below this line
 var myArray = [];
 
 ```

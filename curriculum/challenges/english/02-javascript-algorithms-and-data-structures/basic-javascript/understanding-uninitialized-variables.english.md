@@ -2,6 +2,7 @@
 id: 56533eb9ac21ba0edf2244aa
 title: Understanding Uninitialized Variables
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cBa2JAL'
 forumTopicId: 18335
 ---
@@ -40,17 +41,15 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Initialize these three variables
+// Only change code below this line
 var a;
 var b;
 var c;
-
-// Do not change code below this line
+// Only change code above this line
 
 a = a + 1;
 b = b + 5;
 c = c + " String!";
-
 ```
 
 </div>

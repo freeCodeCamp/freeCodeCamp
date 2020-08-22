@@ -2,25 +2,31 @@
 id: bad87fee1348bd9aedd08835
 title: Check Radio Buttons and Checkboxes by Default
 challengeType: 0
-videoUrl: ''
-localeTitle: 默认情况下检查单选按钮和复选框
+videoUrl: 'https://scrimba.com/p/pVMPUv/cWk3Qh6'
+forumTopicId: 301094
+localeTitle: 给单选按钮和复选框添加默认选中项
 ---
 
 ## Description
-<section id="description">您可以使用<code>checked</code>属性设置默认情况下要选中的复选框或单选按钮。为此，只需将“checked”一词添加到input元素的内部即可。例如： <code>&lt;input type=&quot;radio&quot; name=&quot;test-name&quot; checked&gt;</code> </section>
+<section id='description'>
+如果想设置某个单选按钮或多选按钮默认被选中，只需给<code>input</code>元素添加 "checked" 属性。 例如:
+<code>&#60;input type="radio" name="test-name" checked&#62;</code>
+</section>
 
 ## Instructions
-<section id="instructions">默认情况下，设置第一个<code>radio buttons</code>和第一个<code>checkboxes</code> 。 </section>
+<section id='instructions'>
+把第一个<code>radio button</code>和第一个<code>checkbox</code>都设置为默认选中。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 默认情况下，应检查表单上的第一个单选按钮。
-    testString: 'assert($("input[type="radio"]").prop("checked"), "Your first radio button on your form should be checked by default.");'
-  - text: 默认情况下，应检查表单上的第一个复选框。
-    testString: 'assert($("input[type="checkbox"]").prop("checked"), "Your first checkbox on your form should be checked by default.");'
+  - text: '表单的第一个单选按钮应该被默认选中。'
+    testString: assert($('input[type="radio"]').prop("checked"));
+  - text: '表单的第一个多选按钮应该被默认选中。'
+    testString: assert($('input[type="checkbox"]').prop("checked"));
 
 ```
 
@@ -34,33 +40,32 @@ tests:
 ```html
 <h2>CatPhotoApp</h2>
 <main>
-  <p>Click here to view more <a href="#">cat photos</a>.</p>
-
-  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-
-  <p>Things cats love:</p>
+<p>点击查看更多<a href="#">猫咪图片</a>。</p>
+  
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="一只仰卧着的萌猫"></a>
+  
+  <p>猫咪最喜欢的三件东西：</p>
   <ul>
-    <li>cat nip</li>
-    <li>laser pointers</li>
-    <li>lasagna</li>
+    <li>猫薄荷</li>
+    <li>激光笔</li>
+    <li>千层饼</li>
   </ul>
-  <p>Top 3 things cats hate:</p>
+  <p>猫咪最讨厌的三件东西：</p>
   <ol>
-    <li>flea treatment</li>
-    <li>thunder</li>
-    <li>other cats</li>
+    <li>跳蚤</li>
+    <li>打雷</li>
+    <li>同类</li>
   </ol>
-  <form action="/submit-cat-photo">
-    <label><input type="radio" name="indoor-outdoor"> Indoor</label>
-    <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
-    <label><input type="checkbox" name="personality"> Loving</label>
-    <label><input type="checkbox" name="personality"> Lazy</label>
-    <label><input type="checkbox" name="personality"> Energetic</label><br>
-    <input type="text" placeholder="cat photo URL" required>
-    <button type="submit">Submit</button>
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
+    <label><input type="radio" name="indoor-outdoor">室内</label>
+    <label><input type="radio" name="indoor-outdoor">室外</label><br>
+    <label><input type="checkbox" name="personality">忠诚</label>
+    <label><input type="checkbox" name="personality">懒惰</label>
+    <label><input type="checkbox" name="personality">积极</label><br>
+    <input type="text" placeholder="猫咪图片地址" required>
+    <button type="submit">提交</button>
   </form>
 </main>
-
 ```
 
 </div>
@@ -71,8 +76,5 @@ tests:
 
 ## Solution
 <section id='solution'>
-
-```js
-// solution required
-```
 </section>
+              

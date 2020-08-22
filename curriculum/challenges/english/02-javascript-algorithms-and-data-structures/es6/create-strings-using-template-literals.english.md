@@ -2,6 +2,7 @@
 id: 587d7b8a367417b2b2512b4e
 title: Create Strings using Template Literals
 challengeType: 1
+isHidden: false
 forumTopicId: 301200
 ---
 
@@ -37,7 +38,16 @@ This new way of creating strings gives you more flexibility to create robust str
 ## Instructions
 <section id='instructions'>
 Use template literal syntax with backticks to display each entry of the <code>result</code> object's <code>failure</code> array. Each entry should be wrapped inside an <code>li</code> element with the class attribute <code>text-warning</code>, and listed within the <code>resultDisplayArray</code>.
-Use an iterator method (any kind of loop) to get the desired output.
+Use an iterator method (any kind of loop) to get the desired output (shown below).
+
+```js
+[
+  '<li class="text-warning">no-var</li>',
+  '<li class="text-warning">var-on-top</li>',
+  '<li class="text-warning">linebreak</li>'
+]
+```
+
 </section>
 
 ## Tests
@@ -71,18 +81,13 @@ const result = {
 function makeList(arr) {
   "use strict";
 
-  // change code below this line
+  // Only change code below this line
   const resultDisplayArray = null;
-  // change code above this line
+  // Only change code above this line
 
   return resultDisplayArray;
 }
-/**
- * makeList(result.failure) should return:
- * [ `<li class="text-warning">no-var</li>`,
- *   `<li class="text-warning">var-on-top</li>`,
- *   `<li class="text-warning">linebreak</li>` ]
- **/
+
 const resultDisplayArray = makeList(result.failure);
 ```
 
@@ -108,12 +113,7 @@ function makeList(arr) {
   
   return resultDisplayArray;
 }
-/**
- * makeList(result.failure) should return:
- * [ `<li class="text-warning">no-var</li>`,
- *   `<li class="text-warning">var-on-top</li>`,
- *   `<li class="text-warning">linebreak</li>` ]
- **/
+
 const resultDisplayArray = makeList(result.failure);
 ```
 

@@ -2,6 +2,7 @@
 id: 587d7db6367417b2b2512b9a
 title: Match Characters that Occur Zero or More Times
 challengeType: 1
+isHidden: false
 forumTopicId: 301351
 ---
 
@@ -55,7 +56,10 @@ tests:
 <div id='js-seed'>
 
 ```js
-let chewieRegex = /change/; // Only change this line
+// Only change code below this line
+let chewieRegex = /change/; // Change this line
+// Only change code above this line
+
 let result = chewieQuote.match(chewieRegex);
 ```
 

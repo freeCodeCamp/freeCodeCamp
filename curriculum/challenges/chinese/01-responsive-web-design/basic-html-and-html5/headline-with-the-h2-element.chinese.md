@@ -2,29 +2,36 @@
 id: bad87fee1348bd9aedf0887a
 title: Headline with the h2 Element
 challengeType: 0
-videoUrl: ''
-localeTitle: 标题与h2元素
+videoUrl: 'https://scrimba.com/p/pVMPUv/cE8Gqf3'
+forumTopicId: 18196
+localeTitle: 用 h2 元素代表副标题
 ---
 
 ## Description
-<section id="description">在接下来的几节课中，我们将逐个构建一个HTML5猫照片网络应用程序。您将在此步骤中添加的<code>h2</code>元素将向网页添加第二级标题。此元素告诉浏览器您的网站结构。 <code>h1</code>元素通常用于主标题，而<code>h2</code>元素通常用于子标题。还有<code>h3</code> ， <code>h4</code> ， <code>h5</code>和<code>h6</code>元素表示不同级别的副标题。 </section>
+<section id='description'>
+在接下来的几节课里，我们将会由浅入深地制作一个 CatPhotoApp。
+这节课将会引入<code>h2</code>元素。
+这些元素用来告诉浏览器，网站的结构是什么样子。<code>h1</code>元素通常被用作主标题，<code>h2</code>元素通常被用作副标题，还有<code>h3</code>、<code>h4</code>、<code>h5</code>、<code>h6</code>元素，它们分别用作不同级别的标题。
+</section>
 
 ## Instructions
-<section id="instructions">添加<code>h2</code>标签，上面写着“CatPhotoApp”创建第二个HTML <code>element</code>你的“Hello World”的<code>h1</code>元素。 </section>
+<section id='instructions'>
+在<code>h1</code>元素下面创建一个<code>h2</code>元素，元素内容为：<code>CatPhotoApp</code>。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 创建一个<code>h2</code>元素。
-    testString: 'assert(($("h2").length > 0), "Create an <code>h2</code> element.");'
-  - text: 确保您的<code>h2</code>元素具有结束标记。
-    testString: 'assert(code.match(/<\/h2>/g) && code.match(/<\/h2>/g).length === code.match(/<h2>/g).length, "Make sure your <code>h2</code> element has a closing tag.");'
-  - text: 您的<code>h2</code>元素应该包含文本“CatPhotoApp”。
-    testString: 'assert.isTrue((/cat(\s)?photo(\s)?app/gi).test($("h2").text()), "Your <code>h2</code> element should have the text "CatPhotoApp".");'
-  - text: 你的<code>h1</code>元素应该有“Hello World”文本。
-    testString: 'assert.isTrue((/hello(\s)+world/gi).test($("h1").text()), "Your <code>h1</code> element should have the text "Hello World".");'
+  - text: '创建一个<code>h2</code>元素。'
+    testString: assert(($("h2").length > 0));
+  - text: '<code>h2</code>元素应该有结束标记。'
+    testString: assert(code.match(/<\/h2>/g) && code.match(/<\/h2>/g).length === code.match(/<h2>/g).length);
+  - text: '<code>h2</code>元素的内容应为：<code>CatPhotoApp</code>。'
+    testString: assert.isTrue((/cat(\s)?photo(\s)?app/gi).test($("h2").text()));
+  - text: '<code>h1</code>元素的内容应为：<code>Hello World</code>。'
+    testString: assert.isTrue((/hello(\s)+world/gi).test($("h1").text()));
 
 ```
 
@@ -37,7 +44,6 @@ tests:
 
 ```html
 <h1>Hello World</h1>
-
 ```
 
 </div>
@@ -48,8 +54,5 @@ tests:
 
 ## Solution
 <section id='solution'>
-
-```js
-// solution required
-```
 </section>
+              

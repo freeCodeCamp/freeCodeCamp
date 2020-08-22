@@ -2,25 +2,30 @@
 id: bad87fee1348bd9aedf08815
 title: Make Circular Images with a border-radius
 challengeType: 0
-videoUrl: ''
-localeTitle: 使用border-radius制作圆形图像
+videoUrl: 'https://scrimba.com/c/c2MvrcB'
+forumTopicId: 18229
+localeTitle: 用 border-radius 制作圆形图片
 ---
 
 ## Description
-<section id="description">除像素外，您还可以使用百分比指定<code>border-radius</code> 。 </section>
+<section id='description'>
+除像素外，你也可以使用百分比来指定<code>border-radius</code>的值。
+</section>
 
 ## Instructions
-<section id="instructions">给你的猫照片<code>border-radius</code>为<code>50%</code> 。 </section>
+<section id='instructions'>
+将<code>border-radius</code>的值设置为<code>50%</code>。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您的图像应具有<code>50%</code>的边框半径，使其完美呈圆形。
-    testString: 'assert(parseInt($("img").css("border-top-left-radius")) > 48, "Your image should have a border radius of <code>50%</code>, making it perfectly circular.");'
-  - text: 请务必使用<code>50%</code>的百分比值。
-    testString: 'assert(code.match(/50%/g), "Be sure to use a percentage value of <code>50%</code>.");'
+  - text: '你图片的边框圆角应设置为<code>50%</code>，让它看起来就像一个完整的圆。'
+    testString: assert(parseInt($("img").css("border-top-left-radius")) > 48);
+  - text: '请确保百分值为<code>50%</code>。'
+    testString: assert(code.match(/50%/g));
 
 ```
 
@@ -61,36 +66,35 @@ tests:
 
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
-  <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
+  <p class="red-text">点击查看更多<a href="#">猫图</a>.</p>
 
-  <a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="一只仰卧着的萌猫" class="smaller-image thick-green-border"></a>
 
   <div>
-    <p>Things cats love:</p>
+    <p>猫咪最喜欢的三件东西：</p>
     <ul>
-      <li>cat nip</li>
-      <li>laser pointers</li>
-      <li>lasagna</li>
+      <li>猫薄荷</li>
+      <li>激光笔</li>
+      <li>千层饼</li>
     </ul>
-    <p>Top 3 things cats hate:</p>
+    <p>猫咪最讨厌的三件东西：</p>
     <ol>
-      <li>flea treatment</li>
-      <li>thunder</li>
-      <li>other cats</li>
+      <li>跳蚤</li>
+      <li>打雷</li>
+      <li>同类</li>
     </ol>
   </div>
-
-  <form action="/submit-cat-photo">
-    <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
-    <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
-    <label><input type="checkbox" name="personality" checked> Loving</label>
-    <label><input type="checkbox" name="personality"> Lazy</label>
-    <label><input type="checkbox" name="personality"> Energetic</label><br>
-    <input type="text" placeholder="cat photo URL" required>
-    <button type="submit">Submit</button>
+  
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
+    <label><input type="radio" name="indoor-outdoor">室内</label>
+    <label><input type="radio" name="indoor-outdoor">室外</label><br>
+    <label><input type="checkbox" name="personality">忠诚</label>
+    <label><input type="checkbox" name="personality">懒惰</label>
+    <label><input type="checkbox" name="personality">积极</label><br>
+    <input type="text" placeholder="猫咪图片地址" required>
+    <button type="submit">提交</button>
   </form>
 </main>
-
 ```
 
 </div>
@@ -102,7 +106,9 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>
+              

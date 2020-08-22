@@ -2,6 +2,7 @@
 id: 587d7b84367417b2b2512b34
 title: Use typeof to Check the Type of a Variable
 challengeType: 1
+isHidden: false
 forumTopicId: 18374
 ---
 
@@ -50,7 +51,7 @@ tests:
 let seven = 7;
 let three = "3";
 console.log(seven + three);
-// Add your code below this line
+// Only change code below this line
 
 ```
 

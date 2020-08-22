@@ -3,6 +3,7 @@ id: af7588ade1100bde429baf20
 title: Missing letters
 isRequired: true
 challengeType: 5
+isHidden: false
 forumTopicId: 16023
 ---
 
@@ -10,7 +11,6 @@ forumTopicId: 16023
 <section id='description'>
 Find the missing letter in the passed letter range and return it.
 If all letters are present in the range, return undefined.
-Remember to use <a href='https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code.
 </section>
 
 ## Instructions

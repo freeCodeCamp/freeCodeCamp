@@ -21,9 +21,9 @@ localeTitle: 使用jQuery按类目标元素
 ```yml
 tests:
   - text: 使用jQuery <code>addClass()</code>函数为类赋予<code>animated</code>并使用类<code>well</code> <code>shake</code>所有元素。
-    testString: 'assert($(".well").hasClass("animated") && $(".well").hasClass("shake"), "Use the jQuery <code>addClass&#40&#41</code> function to give the classes <code>animated</code> and <code>shake</code> to all your elements with the class <code>well</code>.");'
+    testString: assert($(".well").hasClass("animated") && $(".well").hasClass("shake"));
   - text: 只使用jQuery将这些类添加到元素中。
-    testString: 'assert(!code.match(/class\.\*animated/g), "Only use jQuery to add these classes to the element.");'
+    testString: assert(!code.match(/class\.\*animated/g));
 
 ```
 
@@ -79,4 +79,5 @@ tests:
 ```js
 // solution required
 ```
-</section>
+
+/section>

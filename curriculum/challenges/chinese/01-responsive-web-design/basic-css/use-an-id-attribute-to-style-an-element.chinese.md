@@ -2,29 +2,44 @@
 id: bad87dee1348bd9aede07836
 title: Use an id Attribute to Style an Element
 challengeType: 0
-videoUrl: ''
-localeTitle: 使用id属性为元素设置样式
+videoUrl: 'https://scrimba.com/c/cakyZfL'
+forumTopicId: 18339
+localeTitle: 使用 id 属性来设定元素的样式
 ---
 
 ## Description
-<section id="description">关于<code>id</code>属性的一个很酷的事情是，像类一样，你可以使用CSS来设置它们的样式。但是， <code>id</code>不可重用，只应应用于一个元素。 <code>id</code>也具有比类更高的特异性（重要性），因此如果两者都应用于同一元素并且具有冲突的样式，则将应用<code>id</code>的样式。下面是一个示例，说明如何使用<code>cat-photo-element</code>的<code>id</code>属性获取<code>cat-photo-element</code>并为其指定绿色的背景颜色。在你的<code>style</code>元素中： <blockquote> #cat-photo-element { <br>背景颜色：绿色; <br> } </blockquote>请注意，在<code>style</code>元素中，您始终通过放置a来引用类<code>.</code>在他们的名字前面。你总是通过在他们的名字前放一个<code>#</code>来引用id。 </section>
+<section id='description'>
+通过<code>id</code>属性，你可以做一些很酷的事情，例如，就像 class 一样，你可以使用 CSS 来设置他们的样式
+可是，<code>id</code>不可以重用，只应用于一个元素上。同时，在 CSS 里，<code>id</code>的优先级要高于<code>class</code>，如果一个元素同时应用了<code>class</code>和<code>id</code>，并设置样式有冲突，会优先应用<code>id</code>的样式。
+选择<code>id</code>为<code>cat-photo-element</code>的元素，并设置它的背景样式为<code>green</code>，可以在<code>style</code>标签里这样写：
+
+```css
+#cat-photo-element {
+  background-color: green;
+}
+```
+
+注意在<code>style</code>标签里，声明 class 的时候必须在名字前插入<code>.</code>符号。同样，在声明 id 的时候，也必须在名字前插入<code>#</code>符号。
+</section>
 
 ## Instructions
-<section id="instructions">尝试提供您的表单，该表单现在具有<code>cat-photo-form</code>的<code>id</code>属性，绿色背景。 </section>
+<section id='instructions'>
+尝试给含有<code>cat-photo-form</code>id属性的<code>form</code>表单的背景颜色设置为<code>green</code>。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 为<code>form</code>元素添加<code>cat-photo-form</code>的id。
-    testString: 'assert($("form").attr("id") === "cat-photo-form", "Give your <code>form</code> element the id of <code>cat-photo-form</code>.");'
-  - text: 您的<code>form</code>元素应具有绿色的<code>background-color</code> 。
-    testString: 'assert($("#cat-photo-form").css("background-color") === "rgb(0, 128, 0)", "Your <code>form</code> element should have the <code>background-color</code> of green.");'
-  - text: 确保您的<code>form</code>元素具有<code>id</code>属性。
-    testString: 'assert(code.match(/<form.*cat-photo-form.*>/gi) && code.match(/<form.*cat-photo-form.*>/gi).length > 0, "Make sure your <code>form</code> element has an <code>id</code> attribute.");'
-  - text: 不要为<code>form</code>任何<code>class</code>或<code>style</code>属性。
-    testString: 'assert(!code.match(/<form.*style.*>/gi) && !code.match(/<form.*class.*>/gi), "Do not give your <code>form</code> any <code>class</code> or <code>style</code> attributes.");'
+  - text: '设置<code>form</code>元素的 id 为<code>cat-photo-form</code>。'
+    testString: assert($("form").attr("id") === "cat-photo-form");
+  - text: '<code>form</code>元素应该含有<code>background-color</code>css 属性并且值为 <code>green</code>。'
+    testString: assert($("#cat-photo-form").css("background-color") === "rgb(0, 128, 0)");
+  - text: '确保<code>form</code>元素含有<code>id</code>属性。'
+    testString: assert(code.match(/<form.*cat-photo-form.*>/gi) && code.match(/<form.*cat-photo-form.*>/gi).length > 0);
+  - text: '不要在<code>form</code>元素上添加其他<code>class</code>属性或者<code>style</code>行内样式。'
+    testString: assert(!code.match(/<form.*style.*>/gi) && !code.match(/<form.*class.*>/gi));
 
 ```
 
@@ -69,36 +84,34 @@ tests:
 
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
-  <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
-
-  <a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-
+  
+  <a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="一只仰卧着的萌猫"></a>
+  
   <div class="silver-background">
-    <p>Things cats love:</p>
+    <p>猫咪最喜欢的三件东西：</p>
     <ul>
-      <li>cat nip</li>
-      <li>laser pointers</li>
-      <li>lasagna</li>
+      <li>猫薄荷</li>
+      <li>激光笔</li>
+      <li>千层饼</li>
     </ul>
-    <p>Top 3 things cats hate:</p>
+    <p>猫咪最讨厌的三件东西：</p>
     <ol>
-      <li>flea treatment</li>
-      <li>thunder</li>
-      <li>other cats</li>
+      <li>跳蚤</li>
+      <li>打雷</li>
+      <li>同类</li>
     </ol>
   </div>
-
-  <form action="/submit-cat-photo" id="cat-photo-form">
-    <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
-    <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
-    <label><input type="checkbox" name="personality" checked> Loving</label>
-    <label><input type="checkbox" name="personality"> Lazy</label>
-    <label><input type="checkbox" name="personality"> Energetic</label><br>
-    <input type="text" placeholder="cat photo URL" required>
-    <button type="submit">Submit</button>
+  
+  <form action="https://freecatphotoapp.com/submit-cat-photo" id="cat-photo-form">
+    <label><input type="radio" name="indoor-outdoor">室内</label>
+    <label><input type="radio" name="indoor-outdoor">室外</label><br>
+    <label><input type="checkbox" name="personality">忠诚</label>
+    <label><input type="checkbox" name="personality">懒惰</label>
+    <label><input type="checkbox" name="personality">积极</label><br>
+    <input type="text" placeholder="猫咪图片地址" required>
+    <button type="submit">提交</button>
   </form>
 </main>
-
 ```
 
 </div>
@@ -110,7 +123,9 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>
+              

@@ -19,11 +19,11 @@ localeTitle: 创建一个Bootstrap按钮
 ```yml
 tests:
   - text: 使用文本“Like”创建一个新的<code>button</code>元素。
-    testString: 'assert(new RegExp("like","gi").test($("button").text()) && ($("img.img-responsive + button.btn").length > 0), "Create a new <code>button</code> element with the text "Like".");'
+    testString: assert(new RegExp("like","gi").test($("button").text()) && ($("img.img-responsive + button.btn").length > 0));
   - text: 你的新按钮应该有两个类： <code>btn</code>和<code>btn-default</code> 。
-    testString: 'assert($("button").hasClass("btn") && $("button").hasClass("btn-default"), "Your new button should have two classes: <code>btn</code> and <code>btn-default</code>.");'
+    testString: assert($("button").hasClass("btn") && $("button").hasClass("btn-default"));
   - text: 确保所有<code>button</code>元素都有一个结束标记。
-    testString: 'assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length, "Make sure all your <code>button</code> elements have a closing tag.");'
+    testString: assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length);
 
 ```
 
@@ -83,7 +83,7 @@ tests:
     <li>thunder</li>
     <li>other cats</li>
   </ol>
-  <form action="/submit-cat-photo">
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor"> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
     <label><input type="checkbox" name="personality"> Loving</label>
@@ -108,4 +108,5 @@ tests:
 ```js
 // solution required
 ```
-</section>
+
+/section>

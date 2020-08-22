@@ -19,15 +19,15 @@ localeTitle: 查看使用无状态功能组件的道具
 ```yml
 tests:
   - text: <code>CampSite</code>组件应该呈现。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(CampSite)); return mockedComponent.find("CampSite").length === 1; })(), "The <code>CampSite</code> component should render.");'
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(CampSite)); return mockedComponent.find('CampSite').length === 1; })());
   - text: <code>Camper</code>组件应呈现。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(CampSite)); return mockedComponent.find("Camper").length === 1; })(), "The <code>Camper</code> component should render.");'
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(CampSite)); return mockedComponent.find('Camper').length === 1; })());
   - text: <code>Camper</code>组件应该包含默认道具，它将字符串<code>CamperBot</code>分配给键<code>name</code> 。
-    testString: 'getUserInput => assert((function() { const noWhiteSpace = getUserInput("index").replace(/\s/g, ""); const verify1 = "Camper.defaultProps={name:\"CamperBot\"}"; const verify2 = "Camper.defaultProps={name:"CamperBot"}"; return (noWhiteSpace.includes(verify1) || noWhiteSpace.includes(verify2)); })(), "The <code>Camper</code> component should include default props which assign the string <code>CamperBot</code> to the key <code>name</code>.");'
+    testString: assert(/Camper.defaultProps={name:(['"`])CamperBot\1,?}/.test(code.replace(/\s/g, '')));
   - text: <code>Camper</code>组件应包含要求<code>name</code> prop为<code>string</code>类型的prop类型。
-    testString: 'getUserInput => assert((function() { const mockedComponent = Enzyme.mount(React.createElement(CampSite)); const noWhiteSpace = getUserInput("index").replace(/\s/g, ""); const verifyDefaultProps = "Camper.propTypes={name:PropTypes.string.isRequired}"; return noWhiteSpace.includes(verifyDefaultProps); })(), "The <code>Camper</code> component should include prop types which require the <code>name</code> prop to be of type <code>string</code>.");'
+    testString: assert(/Camper.propTypes={name:PropTypes.string.isRequired,?}/.test(code.replace(/\s/g, '')));
   - text: <code>Camper</code>组件应包含一个<code>p</code>元素，其中只包含<code>name</code> prop的文本。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(CampSite)); return mockedComponent.find("p").text() === mockedComponent.find("Camper").props().name; })(), "The <code>Camper</code> component should contain a <code>p</code> element with only the text from the <code>name</code> prop.");'
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(CampSite)); return mockedComponent.find('p').text() === mockedComponent.find('Camper').props().name; })());
 
 ```
 
@@ -86,4 +86,5 @@ console.info('after the test');
 ```js
 // solution required
 ```
-</section>
+
+/section>

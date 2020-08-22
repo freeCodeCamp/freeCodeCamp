@@ -2,6 +2,7 @@
 id: 56bbb991ad1ed5201cd392ca
 title: Access Array Data with Indexes
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cBZQbTz'
 forumTopicId: 16158
 ---
@@ -47,14 +48,10 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Example
-var ourArray = [50,60,70];
-var ourData = ourArray[0]; // equals 50
-
 // Setup
 var myArray = [50,60,70];
 
-// Only change code below this line.
+// Only change code below this line
 
 ```
 

@@ -5,11 +5,10 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Link } from 'gatsby';
 
-import ga from '../../../analytics';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
-import { completedChallengesSelector } from '../../../redux';
+import { completedChallengesSelector, executeGA } from '../../../redux';
 import Caret from '../../../assets/icons/Caret';
-import { blockNameify } from '../../../../utils/blockNameify';
+import { blockNameify } from '../../../../../utils/block-nameify';
 import GreenPass from '../../../assets/icons/GreenPass';
 import GreenNotCompleted from '../../../assets/icons/GreenNotCompleted';
 import IntroInformation from '../../../assets/icons/IntroInformation';
@@ -29,12 +28,13 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch =>
-  bindActionCreators({ toggleBlock }, dispatch);
+  bindActionCreators({ toggleBlock, executeGA }, dispatch);
 
 const propTypes = {
   blockDashedName: PropTypes.string,
   challenges: PropTypes.array,
   completedChallenges: PropTypes.arrayOf(PropTypes.string),
+  executeGA: PropTypes.func,
   intro: PropTypes.shape({
     fields: PropTypes.shape({ slug: PropTypes.string.isRequired }),
     frontmatter: PropTypes.shape({
@@ -58,19 +58,25 @@ export class Block extends Component {
   }
 
   handleBlockClick() {
-    const { blockDashedName, toggleBlock } = this.props;
-    ga.event({
-      category: 'Map Block Click',
-      action: blockDashedName
+    const { blockDashedName, toggleBlock, executeGA } = this.props;
+    executeGA({
+      type: 'event',
+      data: {
+        category: 'Map Block Click',
+        action: blockDashedName
+      }
     });
     return toggleBlock(blockDashedName);
   }
 
   handleChallengeClick(slug) {
     return () => {
-      return ga.event({
-        category: 'Map Challenge Click',
-        action: slug
+      return this.props.executeGA({
+        type: 'event',
+        data: {
+          category: 'Map Challenge Click',
+          action: slug
+        }
       });
     };
   }

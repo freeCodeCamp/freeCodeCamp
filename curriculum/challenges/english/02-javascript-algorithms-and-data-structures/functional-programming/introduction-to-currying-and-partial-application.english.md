@@ -2,6 +2,7 @@
 id: 587d7dab367417b2b2512b70
 title: Introduction to Currying and Partial Application
 challengeType: 1
+isHidden: false
 forumTopicId: 301232
 ---
 
@@ -81,10 +82,10 @@ tests:
 
 ```js
 function add(x) {
-  // Add your code below this line
+  // Only change code below this line
 
 
-  // Add your code above this line
+  // Only change code above this line
 }
 add(10)(20)(30);
 ```

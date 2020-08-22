@@ -2,27 +2,42 @@
 id: 587d7db4367417b2b2512b92
 title: Extract Matches
 challengeType: 1
-videoUrl: ''
-localeTitle: 提取匹配
+forumTopicId: 301340
+localeTitle: 提取匹配项
 ---
 
 ## Description
-<section id="description">到目前为止，您只是检查字符串中是否存在模式。您还可以使用<code>.match()</code>方法提取您找到的实际匹配项。要使用<code>.match()</code>方法，请将该方法应用于字符串并传入括号内的正则表达式。这是一个例子： <blockquote> “你好，世界！”。匹配（/ Hello /）; <br> //返回[“Hello”] <br>让ourStr =“正则表达式”; <br>让ourRegex = / expressions /; <br> ourStr.match（ourRegex）; <br> //返回[“表达式”] </blockquote></section>
+<section id='description'>
+到目前为止，只是检查了一个匹配模式是否存在于字符串中。还可以使用<code>.match()</code>方法来提取找到的实际匹配项。
+可以使用字符串来调用<code>.match()</code>方法，并在括号内传入正则表达式。以下是一个示例：
+
+```js
+"Hello, World!".match(/Hello/);
+// Returns ["Hello"]
+let ourStr = "Regular expressions";
+let ourRegex = /expressions/;
+ourStr.match(ourRegex);
+// Returns ["expressions"]
+```
+
+</section>
 
 ## Instructions
-<section id="instructions">应用<code>.match()</code>方法来提取单词<code>coding</code> 。 </section>
+<section id='instructions'>
+利用<code>.match()</code>方法提取单词<code>coding</code>。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>result</code>应该有单词<code>coding</code>
-    testString: 'assert(result.join() === "coding", "The <code>result</code> should have the word <code>coding</code>");'
-  - text: 你的regex <code>codingRegex</code>应该搜索<code>coding</code>
-    testString: 'assert(codingRegex.source === "coding", "Your regex <code>codingRegex</code> should search for <code>coding</code>");'
-  - text: 您应该使用<code>.match()</code>方法。
-    testString: 'assert(code.match(/\.match\(.*\)/), "You should use the <code>.match()</code> method.");'
+  - text: <code>结果</code>应该包含单词<code>coding</code>。
+    testString: assert(result.join() === "coding");
+  - text: 你的正则表达式<code>codingRegex</code>应该搜寻<code>coding</code>。
+    testString: assert(codingRegex.source === "coding");
+  - text: 你应该使用<code>.match()</code>方法。
+    testString: assert(code.match(/\.match\(.*\)/));
 
 ```
 
@@ -37,7 +52,6 @@ tests:
 let extractStr = "Extract the word 'coding' from this string.";
 let codingRegex = /change/; // Change this line
 let result = extractStr; // Change this line
-
 ```
 
 </div>
@@ -50,6 +64,9 @@ let result = extractStr; // Change this line
 <section id='solution'>
 
 ```js
-// solution required
+let extractStr = "Extract the word 'coding' from this string.";
+let codingRegex = /coding/; // Change this line
+let result = extractStr.match(codingRegex); // Change this line
 ```
+
 </section>

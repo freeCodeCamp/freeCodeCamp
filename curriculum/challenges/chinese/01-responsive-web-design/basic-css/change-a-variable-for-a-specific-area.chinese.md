@@ -2,23 +2,30 @@
 id: 5a9d72a1424fe3d0e10cad15
 title: Change a variable for a specific area
 challengeType: 0
-videoUrl: ''
+videoUrl: 'https://scrimba.com/c/cdRwbuW'
+forumTopicId: 301085
 localeTitle: 更改特定区域的变量
 ---
 
 ## Description
-<section id="description">当您在创建变量<code>:root</code> ，他们将设置可变整个页面的价值。然后，您可以通过在特定元素中再次设置它们来覆盖这些变量。 </section>
+<section id='description'>
+当你在<code>:root</code>里创建变量时，这些变量的作用域是整个页面。
+如果在元素里创建相同的变量，会重写<code>:root</code>变量设置的值。
+
+</section>
 
 ## Instructions
-<section id="instructions">在<code>penguin</code>类<code>--penguin-belly</code>的值更改为<code>white</code> 。 </section>
+<section id='instructions'>
+在<code>penguin</code>class 里，设置<code>--penguin-belly</code>的值为<code>white</code>。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>penguin</code>类应该将<code>--penguin-belly</code>变量重新分配为<code>white</code> 。
-    testString: 'assert(code.match(/.penguin\s*?{[\s\S]*--penguin-belly\s*?:\s*?white\s*?;[\s\S]*}/gi), "The <code>penguin</code> class should reassign the <code>--penguin-belly</code> variable to <code>white</code>.");'
+  - text: '应该在<code>penguin</code>clas 里重定义<code>--penguin-belly</code>的变量值，且它的值为<code>white</code>。'
+    testString: assert(code.match(/.penguin\s*?{[\s\S]*--penguin-belly\s*?:\s*?white\s*?;[\s\S]*}/gi));
 
 ```
 
@@ -36,17 +43,17 @@ tests:
     --penguin-belly: pink;
     --penguin-beak: orange;
   }
-
+  
   body {
     background: var(--penguin-belly, #c6faf1);
   }
-
+  
   .penguin {
-
+    
     /* add code below */
-
+    
     /* add code above */
-
+    
     position: relative;
     margin: auto;
     display: block;
@@ -54,7 +61,7 @@ tests:
     width: 300px;
     height: 300px;
   }
-
+  
   .right-cheek {
     top: 15%;
     left: 35%;
@@ -63,7 +70,7 @@ tests:
     height: 70%;
     border-radius: 70% 70% 60% 60%;
   }
-
+  
   .left-cheek {
     top: 15%;
     left: 5%;
@@ -72,7 +79,7 @@ tests:
     height: 70%;
     border-radius: 70% 70% 60% 60%;
   }
-
+  
   .belly {
     top: 60%;
     left: 2.5%;
@@ -81,7 +88,7 @@ tests:
     height: 100%;
     border-radius: 120% 120% 100% 100%;
   }
-
+  
   .penguin-top {
     top: 10%;
     left: 25%;
@@ -90,7 +97,7 @@ tests:
     height: 45%;
     border-radius: 70% 70% 60% 60%;
   }
-
+  
   .penguin-bottom {
     top: 40%;
     left: 23.5%;
@@ -99,7 +106,7 @@ tests:
     height: 45%;
     border-radius: 70% 70% 100% 100%;
   }
-
+  
   .right-hand {
     top: 0%;
     left: -5%;
@@ -110,7 +117,7 @@ tests:
     transform: rotate(45deg);
     z-index: -1;
   }
-
+  
   .left-hand {
     top: 0%;
     left: 75%;
@@ -121,7 +128,7 @@ tests:
     transform: rotate(-45deg);
     z-index: -1;
   }
-
+  
   .right-feet {
     top: 85%;
     left: 60%;
@@ -132,7 +139,7 @@ tests:
     transform: rotate(-80deg);
     z-index: -2222;
   }
-
+  
   .left-feet {
     top: 85%;
     left: 25%;
@@ -143,7 +150,7 @@ tests:
     transform: rotate(80deg);
     z-index: -2222;
   }
-
+  
   .right-eye {
     top: 45%;
     left: 60%;
@@ -152,7 +159,7 @@ tests:
     height: 17%;
     border-radius: 50%;
   }
-
+  
   .left-eye {
     top: 45%;
     left: 25%;
@@ -161,7 +168,7 @@ tests:
     height: 17%;
     border-radius: 50%;
   }
-
+  
   .sparkle {
     top: 25%;
     left: 15%;
@@ -170,7 +177,7 @@ tests:
     height: 35%;
     border-radius: 50%;
   }
-
+  
   .blush-right {
     top: 65%;
     left: 15%;
@@ -179,7 +186,7 @@ tests:
     height: 10%;
     border-radius: 50%;
   }
-
+  
   .blush-left {
     top: 65%;
     left: 70%;
@@ -188,7 +195,7 @@ tests:
     height: 10%;
     border-radius: 50%;
   }
-
+  
   .beak-top {
     top: 60%;
     left: 40%;
@@ -197,7 +204,7 @@ tests:
     height: 10%;
     border-radius: 50%;
   }
-
+  
   .beak-bottom {
     top: 65%;
     left: 42%;
@@ -206,7 +213,7 @@ tests:
     height: 10%;
     border-radius: 50%;
   }
-
+  
   .penguin * {
     position: absolute;
   }
@@ -234,7 +241,6 @@ tests:
     <div class="beak-bottom"></div>
   </div>
 </div>
-
 ```
 
 </div>
@@ -246,7 +252,10 @@ tests:
 ## Solution
 <section id='solution'>
 
+
 ```js
 // solution required
 ```
+
 </section>
+              

@@ -19,11 +19,11 @@ localeTitle: 创建一个块元素引导按钮
 ```yml
 tests:
   - text: 你的按钮应该仍然有<code>btn</code>和<code>btn-default</code>类。
-    testString: 'assert($("button").hasClass("btn") && $("button").hasClass("btn-default"), "Your button should still have the <code>btn</code> and <code>btn-default</code> classes.");'
+    testString: assert($("button").hasClass("btn") && $("button").hasClass("btn-default"));
   - text: 你的按钮应该有类<code>btn-block</code> 。
-    testString: 'assert($("button").hasClass("btn-block"), "Your button should have the class <code>btn-block</code>.");'
+    testString: assert($("button").hasClass("btn-block"));
   - text: 确保所有<code>button</code>元素都有一个结束标记。
-    testString: 'assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length, "Make sure all your <code>button</code> elements have a closing tag.");'
+    testString: assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length);
 
 ```
 
@@ -83,7 +83,7 @@ tests:
     <li>thunder</li>
     <li>other cats</li>
   </ol>
-  <form action="/submit-cat-photo">
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor"> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
     <label><input type="checkbox" name="personality"> Loving</label>
@@ -108,4 +108,5 @@ tests:
 ```js
 // solution required
 ```
-</section>
+
+/section>

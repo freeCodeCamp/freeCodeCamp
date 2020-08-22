@@ -3,6 +3,7 @@ id: a3bfc1673c0526e06d3ac698
 title: Sum All Primes
 isRequired: true
 challengeType: 5
+isHidden: false
 forumTopicId: 16085
 ---
 
@@ -16,7 +17,6 @@ contrast, 4 is not prime since it is divisible by 1, 2 and 4.
 Rewrite `sumPrimes` so it returns the sum of all prime numbers that are less than or
 equal to num.
 
-Remember to use <a href='https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code.
 </section>
 
 ## Instructions

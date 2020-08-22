@@ -11,8 +11,8 @@ localeTitle: Попросите Браузеры получить доступ �
 
 ## Instructions
 <section id='instructions'>
-Configure <code>helmet.hsts()</code> to use HTTPS for the next 90 days. Pass the config object <code>{maxAge: timeInMilliseconds, force: true}</code>. Glitch already has hsts enabled. To override its settings you need to set the field "force" to true in the config object. We will intercept and restore the Glitch header, after inspecting it for testing.
-Note: Configuring HTTPS on a custom website requires the acquisition of a domain, and a SSL/TSL Certificate.
+Сконфигурируйте <code>helmet.hsts()</code> для использования HTTPS в течение следующих 90 дней. Передайте объект конфигурации <code>{maxAge: timeInMilliseconds, force: true}</code>. Glitch уже имеет hsts включенным. Чтобы переопределить его настройки, вам нужно установить в поле «force» значение true в объекте config. Мы перехватим и восстановим заголовок Glitch после проверки его на предмет тестирования.
+Примечание. Настройка HTTPS на пользовательском веб-сайте требует приобретения домена и сертификата SSL/TSL.
 </section>
 
 ## Tests
@@ -20,9 +20,9 @@ Note: Configuring HTTPS on a custom website requires the acquisition of a domain
 
 ```yml
 tests:
-  - text: Средство шлема helmet.hsts () должно быть правильно установлено
+  - text: Средство helmet.hsts() должно быть правильно установлено
     testString: 'getUserInput => $.get(getUserInput("url") + "/_api/app-info").then(data => { assert.include(data.appStack, "hsts"); assert.property(data.headers, "strict-transport-security"); }, xhr => { throw new Error(xhr.responseText); })'
-  - text: maxAge должно быть равно 7776000 мс (90 дней)
+  - text: maxAge должно быть равно 7776000 мс(90 дней)
     testString: 'getUserInput => $.get(getUserInput("url") + "/_api/app-info").then(data => { assert.match(data.headers["strict-transport-security"], /^max-age=7776000;?/); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```

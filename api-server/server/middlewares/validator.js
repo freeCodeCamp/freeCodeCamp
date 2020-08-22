@@ -1,5 +1,5 @@
 import validator from 'express-validator';
-import { isPoly } from '../../common/utils/polyvinyl';
+import { isPoly } from '../../../utils/polyvinyl';
 
 const isObject = val => !!val && typeof val === 'object';
 

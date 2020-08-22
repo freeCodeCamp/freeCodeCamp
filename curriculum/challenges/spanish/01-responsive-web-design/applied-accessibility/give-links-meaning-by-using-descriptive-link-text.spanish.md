@@ -3,11 +3,11 @@ id: 587d778f367417b2b2512aae
 title: Give Links Meaning by Using Descriptive Link Text
 challengeType: 0
 videoUrl: ''
-localeTitle: Dar Significado a Enlaces Usando Texto Descriptivo en el Enlace
+localeTitle: Darle Significado a los Enlaces Usando Texto Descriptivo
 ---
 
 ## Descripción
-<section id="description"> Los usuarios de lectores de pantalla tienen diferentes opciones para el tipo de contenido que lee su dispositivo. Esto incluye saltar a (o sobre) elementos de hito, saltar al contenido principal u obtener un resumen de la página de los encabezados. Otra opción es escuchar solo los enlaces disponibles en una página. Los lectores de pantalla hacen esto leyendo el texto del enlace, o lo que hay entre las etiquetas ancla ( <code>a</code> ). Tener una lista de enlaces &quot;haga clic aquí&quot; o &quot;leer más&quot; no es útil. En su lugar, debemos utilizar un texto breve pero descriptivo dentro de las etiquetas <code>a</code> para proporcionar más contexto a estos usuarios. </section>
+<section id="description"> Los usuarios de lectores de pantalla tienen diferentes opciones para el tipo de contenido que lee su dispositivo. Esto incluye saltar a (o sobre) elementos de hito, saltar al contenido principal u obtener un resumen de la página de los encabezados. Otra opción es solo escuchar los enlaces disponibles en una página. Los lectores de pantalla hacen esto leyendo el texto del enlace, o lo que hay entre las etiquetas ancla ( <code>a</code> ). Tener una lista de enlaces de &quot;haga clic aquí&quot; o &quot;leer más&quot; no es útil. En su lugar, debemos utilizar un texto breve pero descriptivo dentro de las etiquetas <code>a</code> para proporcionar más contexto a estos usuarios. </section>
 
 ## Instrucciones
 <section id="instructions"> El texto del enlace que está utilizando Camper Cat no es muy descriptivo sin el contexto que lo rodea. Mueve las etiquetas de anclaje ( <code>a</code> ) para que envuelvan el texto &quot;información sobre baterías&quot; en lugar de &quot;Haga clic aquí&quot;. </section>
@@ -54,6 +54,7 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+// solución requerida
 ```
+
 </section>

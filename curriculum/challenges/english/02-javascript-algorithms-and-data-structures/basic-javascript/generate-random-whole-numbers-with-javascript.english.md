@@ -2,6 +2,7 @@
 id: cf1111c1c12feddfaeb1bdef
 title: Generate Random Whole Numbers with JavaScript
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cRn6bfr'
 forumTopicId: 18186
 ---
@@ -28,12 +29,12 @@ Use this technique to generate and return a random whole number between <code>0<
 tests:
   - text: The result of <code>randomWholeNum</code> should be a whole number.
     testString: assert(typeof randomWholeNum() === "number" && (function(){var r = randomWholeNum();return Math.floor(r) === r;})());
-  - text: You should be using <code>Math.random</code> to generate a random number.
-    testString: assert(code.match(/Math.random/g).length > 1);
+  - text: You should use <code>Math.random</code> to generate a random number.
+    testString: assert(code.match(/Math.random/g).length >= 1);
   - text: You should have multiplied the result of <code>Math.random</code> by 10 to make it a number that is between zero and nine.
     testString: assert(code.match(/\s*?Math.random\s*?\(\s*?\)\s*?\*\s*?10[\D]\s*?/g) || code.match(/\s*?10\s*?\*\s*?Math.random\s*?\(\s*?\)\s*?/g));
   - text: You should use <code>Math.floor</code> to remove the decimal part of the number.
-    testString: assert(code.match(/Math.floor/g).length > 1);
+    testString: assert(code.match(/Math.floor/g).length >= 1);
 
 ```
 
@@ -45,11 +46,9 @@ tests:
 <div id='js-seed'>
 
 ```js
-var randomNumberBetween0and19 = Math.floor(Math.random() * 20);
-
 function randomWholeNum() {
 
-  // Only change code below this line.
+  // Only change code below this line
 
   return Math.random();
 }
@@ -74,7 +73,6 @@ function randomWholeNum() {
 
 
 ```js
-var randomNumberBetween0and19 = Math.floor(Math.random() * 20);
 function randomWholeNum() {
   return Math.floor(Math.random() * 10);
 }

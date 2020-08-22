@@ -64,7 +64,10 @@ export const onRenderBody = ({
     />
   ];
 
-  if (pathname.includes('/learn/coding-interview-prep/rosetta-code')) {
+  if (
+    pathname.includes('/learn/coding-interview-prep/rosetta-code') ||
+    pathname.includes('/learn/coding-interview-prep/project-euler')
+  ) {
     scripts.push(
       <script
         async={false}

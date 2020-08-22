@@ -19,11 +19,11 @@ localeTitle: 创建一个React组件
 ```yml
 tests:
   - text: React组件应返回<code>div</code>元素。
-    testString: 'assert(Enzyme.shallow(React.createElement(MyComponent)).type() === "div", "The React component should return a <code>div</code> element.");'
+    testString: assert(Enzyme.shallow(React.createElement(MyComponent)).type() === 'div');
   - text: 返回的<code>div</code>应该在其中呈现一个<code>h1</code>头。
-    testString: 'assert(/<div><h1>.*<\/h1><\/div>/.test(Enzyme.shallow(React.createElement(MyComponent)).html()), "The returned <code>div</code> should render an <code>h1</code> header within it.");'
+    testString: assert(/<div><h1>.*<\/h1><\/div>/.test(Enzyme.shallow(React.createElement(MyComponent)).html()));
   - text: <code>h1</code>标头应该包含字符串<code>Hello React!</code> 。
-    testString: 'assert(Enzyme.shallow(React.createElement(MyComponent)).html() === "<div><h1>Hello React!</h1></div>", "The <code>h1</code> header should contain the string <code>Hello React!</code>.");'
+    testString: assert(Enzyme.shallow(React.createElement(MyComponent)).html() === '<div><h1>Hello React!</h1></div>');
 
 ```
 
@@ -70,4 +70,5 @@ console.info('after the test');
 ```js
 // solution required
 ```
-</section>
+
+/section>

@@ -15,11 +15,16 @@
 }
 
 .ais-SearchBox-input {
-  padding: 1px 10px 1px 30px;
+  padding: 0 10px 0 30px;
   font-size: 18px;
   display: inline-block;
   margin-top: 6px;
   height: 26px;
+}
+
+.ais-SearchBox-submit {
+  left: 0.3rem;
+  top: 59.5%;
 }
 
 .fcc_searchBar .ais-SearchBox-input,
@@ -61,7 +66,7 @@
 
 .fcc_suggestion_item {
   display: block;
-  padding: 8px;
+  padding: 5px;
   color: var(--gray-00) !important;
   text-decoration: none;
 }
@@ -72,6 +77,10 @@
 
 .fcc_suggestion_item:hover {
   cursor: pointer;
+}
+
+.no-hits-footer.fcc_suggestion_item:hover {
+  cursor: default;
 }
 
 .fcc_sr_only {
@@ -104,11 +113,16 @@ and arrow keys */
 
 /* Dropdown footer */
 .fcc_suggestion_footer {
-  border-top: 1.5px solid var(--gray-00);
+  padding: 6.5px 8px 8px;
 }
 
-.fcc_suggestion_footer .hit-name .ais-Highlight .ais-Highlight-nonHighlighted {
+.fcc_suggestion_footer .hit-name .ais-Highlight {
   font-weight: bold;
+}
+
+.no-hits-footer {
+  border-top: 0px;
+  font-weight: 300;
 }
 
 .ais-SearchBox-input {
@@ -129,6 +143,7 @@ and arrow keys */
   }
   .fcc_searchBar {
     position: relative;
+    max-width: 520px;
   }
   .fcc_searchBar .ais-Hits {
     top: auto;

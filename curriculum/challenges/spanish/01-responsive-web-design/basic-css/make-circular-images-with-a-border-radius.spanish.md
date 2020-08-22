@@ -80,7 +80,7 @@ tests:
     </ol>
   </div>
 
-  <form action="/submit-cat-photo">
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
       <label><input type="radio" name="indoor-outdoor" checked> Interior</label>
     <label><input type="radio" name="indoor-outdoor"> Exterior</label><br>
     <label><input type="checkbox" name="personality" checked> Amoroso</label>

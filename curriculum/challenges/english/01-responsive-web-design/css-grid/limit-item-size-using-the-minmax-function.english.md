@@ -2,6 +2,7 @@
 id: 5a94fe4469fb03452672e460
 title: Limit Item Size Using the minmax Function
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/p/pByETK/cD97RTv'
 forumTopicId: 301131
 ---
@@ -53,11 +54,11 @@ tests:
     width: 100%;
     background: LightGray;
     display: grid;
-    /* change the code below this line */
+    /* Only change code below this line */
 
     grid-template-columns: repeat(3, 1fr);
 
-    /* change the code above this line */
+    /* Only change code above this line */
     grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 10px;
   }

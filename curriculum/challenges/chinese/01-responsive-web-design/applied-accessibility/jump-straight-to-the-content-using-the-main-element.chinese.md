@@ -2,25 +2,33 @@
 id: 587d774e367417b2b2512a9f
 title: Jump Straight to the Content Using the main Element
 challengeType: 0
-videoUrl: ''
-localeTitle: 使用主元素直接跳转到内容
+videoUrl: 'https://scrimba.com/c/cPp7zuE'
+forumTopicId: 301018
+localeTitle: 使用 main 元素包裹主题内容
 ---
 
 ## Description
-<section id="description"> HTML5引入了许多新元素，为开发人员提供了更多选项，同时还包含了辅助功能。这些标签包括<code>main</code> ， <code>header</code> ， <code>footer</code> ， <code>nav</code> ， <code>article</code>和<code>section</code>等。默认情况下，浏览器渲染这些元素与简单的<code>div</code>类似。但是，在适当的地方使用它们会在标记中提供额外的含义。标记名称本身可以指示它包含的信息类型，这为该内容添加了语义含义。辅助技术可以访问此信息，以便为其用户提供更好的页面摘要或导航选项。 <code>main</code>元素用于包装（您猜对了）主要内容，每页应该只有一个。它旨在包含与页面中心主题相关的信息。它并不意味着包含跨页面重复的项目，例如导航链接或横幅。 <code>main</code>标签还具有嵌入式地标功能，辅助技术可用于快速导航到主要内容。如果您曾在页面顶部看到“跳转到主要内容”链接，则使用主标签会自动为辅助设备提供该功能。 </section>
+<section id='description'>
+HTML5 添加了诸如<code>main</code>、<code>header</code>、<code>footer</code>、<code>nav</code>、<code>article</code>、<code>section</code>等大量新标签，开发人员提供更多的选择，也兼顾了无障碍特性。
+默认情况下，浏览器呈现这些新标签的方式与<code>div</code>相似。然而，合理地使用它们，可以使你的标签更加的语义化。辅助技术（如：屏幕阅读器）可以通过这些标签为用户提供更加准确的、易于理解的页面信息。
+<code>main</code>标签用于呈现网页的主体内容，且每个页面只能有一个。这意味着它只应包含与页面中心主题相关的信息，而不应包含如导航连接、网页横幅等可以在多个页面中重复出现的内容。
+<code>main</code>标签的语义化特性可以使辅助技术快速定位到页面的主体。 如果页面顶部有一个 “跳转到主要内容” 的链接，那么辅助设备会自动识别<code>main</code>标签，实现这个功能。
+</section>
 
 ## Instructions
-<section id="instructions"> Camper Cat对他的忍者武器页面有一些重要的想法。通过在<code>header</code>和<code>footer</code>之间添加打开和关闭<code>main</code>标记来帮助他设置标记（在其他挑战中涵盖）。暂时保持<code>main</code>标签为空。 </section>
+<section id='instructions'>
+Camper Cat 对他的忍者武器页面有一些新的想法，请帮助他在<code>header</code>标签和<code>footer</code>标签（在接下来的挑战中会详细介绍）之间添加完整<code>main</code>标签来使页面语义化。在这个挑战中，你可以先让<code>main</code>为空。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您的代码应该有一个<code>main</code>标记。
-    testString: 'assert($("main").length == 1, "Your code should have one <code>main</code> tag.");'
-  - text: <code>main</code>标记应位于结束<code>header</code>标记和开放<code>footer</code>标记之间。
-    testString: 'assert(code.match(/<\/header>\s*?<main>\s*?<\/main>/gi), "The <code>main</code> tags should be between the closing <code>header</code> tag and the opening <code>footer</code> tag.");'
+  - text: '你的代码应该有一个<code>main</code>标签。'
+    testString: assert($('main').length == 1);
+  - text: '<code>main</code>标签应该在<code>header</code>标签与<code>footer</code>标签之间。'
+    testString: assert(code.match(/<\/header>\s*?<main>\s*?<\/main>/gi));
 
 ```
 
@@ -39,7 +47,6 @@ tests:
 
 
 <footer></footer>
-
 ```
 
 </div>
@@ -51,7 +58,9 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>
+              

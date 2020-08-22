@@ -2,6 +2,7 @@
 id: 56533eb9ac21ba0edf2244bb
 title: Word Blanks
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/caqn8zuP'
 forumTopicId: 18377
 ---
@@ -54,8 +55,9 @@ var myAdjective = "big";
 var myVerb = "ran";
 var myAdverb = "quickly";
 
-var wordBlanks = ""; // Only change this line;
-
+// Only change code below this line
+var wordBlanks = ""; // Change this line
+// Only change code above this line
 ```
 
 </div>

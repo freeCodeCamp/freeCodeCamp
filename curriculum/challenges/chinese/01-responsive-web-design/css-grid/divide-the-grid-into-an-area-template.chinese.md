@@ -2,23 +2,39 @@
 id: 5a94fe0569fb03452672e45c
 title: Divide the Grid Into an Area Template
 challengeType: 0
-videoUrl: ''
+videoUrl: 'https://scrimba.com/p/pByETK/cLLpGAy'
+forumTopicId: 301130
 localeTitle: 将网格划分为区域模板
 ---
 
 ## Description
-<section id="description">您可以将网格的单元格组合到一个<dfn>区域中，</dfn>并为该区域指定自定义名称。通过在容器上使用<code>grid-template-areas</code>来执行此操作，如下所示： <blockquote>网格模板方面： <br> “标题标题” <br> “广告内容内容” <br> “页脚页脚”; </blockquote>上面的代码将前三个单元格合并为一个名为<code>header</code>的区域，将底部的三个单元格合并为一个<code>footer</code>区域，并在中间行中生成两个区域; <code>advert</code>和<code>content</code> 。 <strong>注意</strong> <br>代码中的每个单词代表一个单元格，每对引号代表一行。除自定义标签外，您还可以使用句点（ <code>.</code> ）指定网格中的空单元格。 </section>
+<section id='description'>
+你可以将网格中的一些网格单元格组合成一个<dfn>区域（area）</dfn>，并为该区域指定一个自定义名称。你可以通过给容器加上<code>grid-template-areas</code>来实现：
+
+```css
+grid-template-areas:
+  "header header header"
+  "advert content content"
+  "footer footer footer";
+```
+
+上面的代码将顶部三个单元格合并成一个名为<code>header</code>的区域，将底部三个单元格合并为一个名为<code>footer</code>的区域，并在中间行生成两个区域————<code>advert</code>和<code>content</code>。
+<strong>注意：</strong><br>在代码中，每个单词代表一个网格单元格，每对引号代表一行。
+除了自定义标签，你还能使用句点（<code>.</code>）来表示一个空单元格。
+</section>
 
 ## Instructions
-<section id="instructions">放置区域模板，以便标记为<code>advert</code>的单元格变为空单元格。 </section>
+<section id='instructions'>
+请放置区域模板，让名为<code>advert</code>的区域变成空单元格。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>container</code>类应该具有类似于预览但具有的<code>grid-template-areas</code>属性<code>.</code>而不是<code>advert</code>区域。
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-template-areas\s*?:\s*?"\s*?header\s*?header\s*?header\s*?"\s*?"\s*?.\s*?content\s*?content\s*?"\s*?"\s*?footer\s*?footer\s*?footer\s*?"\s*?;[\s\S]*}/gi), "<code>container</code> class should have a <code>grid-template-areas</code> propertiy similar to the preview but has <code>.</code> instead of the <code>advert</code> area.");'
+  - text: '<code>container</code>类应该有类似于最右侧预览区的<code>grid-template-areas</code>属性且用<code>.</code>代替<code>advert</code>。'
+    testString: assert(code.match(/.container\s*?{[\s\S]*grid-template-areas\s*?:\s*?"\s*?header\s*?header\s*?header\s*?"\s*?"\s*?.\s*?content\s*?content\s*?"\s*?"\s*?footer\s*?footer\s*?footer\s*?"\s*?;[\s\S]*}/gi));
 
 ```
 
@@ -36,7 +52,7 @@ tests:
   .item3{background:PaleTurquoise;}
   .item4{background:LightPink;}
   .item5{background:PaleGreen;}
-
+  
   .container {
     font-size: 40px;
     min-height: 300px;
@@ -46,16 +62,16 @@ tests:
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 10px;
-    /* change code below this line */
-
+    /* 请修改本行以下的代码 */
+    
     grid-template-areas:
       "header header header"
       "advert content content"
       "footer footer footer";
-    /* change code above this line */
+    /* 请修改本行以上的代码 */
   }
 </style>
-
+  
 <div class="container">
   <div class="item1">1</div>
   <div class="item2">2</div>
@@ -63,7 +79,6 @@ tests:
   <div class="item4">4</div>
   <div class="item5">5</div>
 </div>
-
 ```
 
 </div>
@@ -75,7 +90,9 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>
+              

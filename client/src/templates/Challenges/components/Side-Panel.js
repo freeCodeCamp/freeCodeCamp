@@ -37,7 +37,9 @@ export class SidePanel extends Component {
   componentDidMount() {
     const MathJax = global.MathJax;
     const mathJaxMountPoint = document.querySelector('#mathjax');
-    const rosettaCodeChallenge = this.props.section === 'rosetta-code';
+    const mathJaxChallenge =
+      this.props.section === 'rosetta-code' ||
+      this.props.section === 'project-euler';
     if (MathJax) {
       // Configure MathJax when it's loaded and
       // users navigate from another challenge
@@ -45,15 +47,16 @@ export class SidePanel extends Component {
         tex2jax: {
           inlineMath: [['$', '$'], ['\\(', '\\)']],
           processEscapes: true,
-          processClass: 'rosetta-code'
+          processClass: 'rosetta-code|project-euler'
         }
       });
       MathJax.Hub.Queue([
         'Typeset',
         MathJax.Hub,
-        document.querySelector('.rosetta-code')
+        document.querySelector('.rosetta-code'),
+        document.querySelector('.project-euler')
       ]);
-    } else if (!mathJaxMountPoint && rosettaCodeChallenge) {
+    } else if (!mathJaxMountPoint && mathJaxChallenge) {
       mathJaxScriptLoader();
     }
   }

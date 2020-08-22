@@ -19,13 +19,13 @@ localeTitle: 使用注释来澄清代码
 ```yml
 tests:
   - text: 在HTML的顶部用<code>&lt;!--</code>开始评论。
-    testString: 'assert(code.match(/^\s*<!--/), "Start a comment with <code>&#60;!--</code> at the top of your HTML.");'
+    testString: assert(code.match(/^\s*<!--/));
   - text: 您的评论应该包含<code>Only change code above this line</code>的文本。
-    testString: 'assert(code.match(/<!--(?!(>|->|.*-->.*this line))\s*.*this line.*\s*-->/gi), "Your comment should have the text <code>Only change code above this line</code>.");'
+    testString: assert(code.match(/<!--(?!(>|->|.*-->.*this line))\s*.*this line.*\s*-->/gi));
   - text: 请务必使用<code>--&gt;</code>关闭您的评论。
-    testString: 'assert(code.match(/-->.*\n+.+/g), "Be sure to close your comment with <code>--&#62;</code>.");'
+    testString: assert(code.match(/-->.*\n+.+/g));
   - text: 你应该有相同数量的评论开启者和关闭者。
-    testString: 'assert(code.match(/<!--/g).length === code.match(/-->/g).length, "You should have the same number of comment openers and closers.");'
+    testString: assert(code.match(/<!--/g).length === code.match(/-->/g).length);
 
 ```
 
@@ -73,4 +73,5 @@ tests:
 ```js
 // solution required
 ```
-</section>
+
+/section>

@@ -21,13 +21,13 @@ localeTitle: 使用jQuery定位元素的特定子元素
 ```yml
 tests:
   - text: <code>target</code>元素中的第二个元素应该反弹。
-    testString: 'assert($(".target:nth-child(2)").hasClass("animated") && $(".target:nth-child(2)").hasClass("bounce"), "The second element in your <code>target</code> elements should bounce.");'
+    testString: assert($(".target:nth-child(2)").hasClass("animated") && $(".target:nth-child(2)").hasClass("bounce"));
   - text: 只有两个元素应该反弹。
-    testString: 'assert($(".animated.bounce").length === 2, "Only two elements should bounce.");'
+    testString: assert($(".animated.bounce").length === 2);
   - text: '您应该使用<code>:nth-child()</code>选择器来修改这些元素。'
-    testString: 'assert(code.match(/\:nth-child\(/g), "You should use the <code>&#58;nth-child&#40&#41</code> selector to modify these elements.");'
+    testString: assert(code.match(/\:nth-child\(/g));
   - text: 只使用jQuery将这些类添加到元素中。
-    testString: 'assert(code.match(/\$\(".target:nth-child\(2\)"\)/g) || code.match(/\$\(".target:nth-child\(2\)"\)/g) || code.match(/\$\(".target"\).filter\(":nth-child\(2\)"\)/g) || code.match(/\$\(".target"\).filter\(":nth-child\(2\)"\)/g), "Only use jQuery to add these classes to the element.");'
+    testString: assert(code.match(/\$\(".target:nth-child\(2\)"\)/g) || code.match(/\$\('.target:nth-child\(2\)'\)/g) || code.match(/\$\(".target"\).filter\(":nth-child\(2\)"\)/g) || code.match(/\$\('.target'\).filter\(':nth-child\(2\)'\)/g));
 
 ```
 
@@ -90,4 +90,5 @@ tests:
 ```js
 // solution required
 ```
-</section>
+
+/section>

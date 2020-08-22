@@ -19,11 +19,11 @@ localeTitle: 使用具有Bootstrap Fluid Containers的响应式设计
 ```yml
 tests:
   - text: 你的<code>div</code>元素应该有class <code>container-fluid</code> 。
-    testString: 'assert($("div").hasClass("container-fluid"), "Your <code>div</code> element should have the class <code>container-fluid</code>.");'
+    testString: assert($("div").hasClass("container-fluid"));
   - text: 确保你的<code>div</code>元素有一个结束标记。
-    testString: 'assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length, "Make sure your <code>div</code> element has a closing tag.");'
+    testString: assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length);
   - text: 确保在<code>.container-fluid</code>的结束<code>style</code>标记之后嵌套了所有HTML元素。
-    testString: 'assert($(".container-fluid").children().length >= 8, "Make sure you have nested all HTML elements after the closing <code>style</code> tag in <code>.container-fluid</code>.");'
+    testString: assert($(".container-fluid").children().length >= 8);
 
 ```
 
@@ -80,7 +80,7 @@ tests:
   <li>thunder</li>
   <li>other cats</li>
 </ol>
-<form action="/submit-cat-photo">
+<form action="https://freecatphotoapp.com/submit-cat-photo">
   <label><input type="radio" name="indoor-outdoor"> Indoor</label>
   <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
   <label><input type="checkbox" name="personality"> Loving</label>
@@ -104,4 +104,5 @@ tests:
 ```js
 // solution required
 ```
-</section>
+
+/section>

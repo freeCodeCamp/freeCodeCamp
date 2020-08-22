@@ -2,6 +2,7 @@
 id: 5a9d726c424fe3d0e10cad11
 title: Create a custom CSS Variable
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cQd27Hr'
 forumTopicId: 301086
 ---
@@ -29,7 +30,7 @@ In the <code>penguin</code> class, create a variable name <code>--penguin-skin</
 ```yml
 tests:
   - text: <code>penguin</code> class should declare the <code>--penguin-skin</code> variable and assign it to <code>gray</code>.
-    testString: assert(code.match(/.penguin\s*?{[\s\S]*--penguin-skin\s*?:\s*?gray\s*?;[\s\S]*}/gi));
+    testString: assert(code.match(/\.penguin\s*\{[^{}]*?--penguin-skin\s*:\s*gr[ae]y\s*;[^{}]*?\}/gi));
 
 ```
 
@@ -43,10 +44,9 @@ tests:
 ```html
 <style>
   .penguin {
+    /* Only change code below this line */
 
-    /* add code below */
-
-    /* add code above */
+    /* Only change code above this line */
     position: relative;
     margin: auto;
     display: block;

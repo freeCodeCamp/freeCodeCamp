@@ -21,9 +21,9 @@ localeTitle: 使用jQuery更改元素的CSS
 ```yml
 tests:
   - text: 您的<code>target1</code>元素应该有红色文本。
-    testString: 'assert($("#target1").css("color") === "rgb(255, 0, 0)", "Your <code>target1</code> element should have red text.");'
+    testString: assert($("#target1").css("color") === 'rgb(255, 0, 0)');
   - text: 只使用jQuery将这些类添加到元素中。
-    testString: 'assert(!code.match(/class.*animated/g), "Only use jQuery to add these classes to the element.");'
+    testString: assert(!code.match(/class.*animated/g));
 
 ```
 
@@ -83,4 +83,5 @@ tests:
 ```js
 // solution required
 ```
-</section>
+
+/section>

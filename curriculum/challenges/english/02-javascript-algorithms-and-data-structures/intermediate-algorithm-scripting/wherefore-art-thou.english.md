@@ -3,6 +3,7 @@ id: a8e512fbe388ac2f9198f0fa
 title: Wherefore art thou
 isRequired: true
 challengeType: 5
+isHidden: false
 forumTopicId: 16092
 ---
 
@@ -10,7 +11,6 @@ forumTopicId: 16092
 <section id='description'>
 Make a function that looks through an array of objects (first argument) and returns an array of all objects that have matching name and value pairs (second argument). Each name and value pair of the source object has to be present in the object from the collection if it is to be included in the returned array.
 For example, if the first argument is <code>[{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }]</code>, and the second argument is <code>{ last: "Capulet" }</code>, then you must return the third object from the array (the first argument), because it contains the name and its value, that was passed on as the second argument.
-Remember to use <a href='https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Write your own code.
 </section>
 
 ## Instructions
@@ -47,7 +47,6 @@ tests:
 
 ```js
 function whatIsInAName(collection, source) {
-  // What's in a name?
   var arr = [];
   // Only change code below this line
 

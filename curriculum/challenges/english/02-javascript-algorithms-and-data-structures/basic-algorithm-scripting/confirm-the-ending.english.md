@@ -3,6 +3,7 @@ id: acda2fb1324d9b0fa741e6b5
 title: Confirm the Ending
 isRequired: true
 challengeType: 5
+isHidden: false
 forumTopicId: 16006
 ---
 
@@ -10,7 +11,6 @@ forumTopicId: 16006
 <section id='description'>
 Check if a string (first argument, <code>str</code>) ends with the given target string (second argument, <code>target</code>).
 This challenge <em>can</em> be solved with the <code>.endsWith()</code> method, which was introduced in ES2015. But for the purpose of this challenge, we would like you to use one of the JavaScript substring methods instead.
-Remember to use <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> if you get stuck. Write your own code.
 </section>
 
 ## Instructions
@@ -35,8 +35,8 @@ tests:
     testString: assert(confirmEnding("He has to give me a new name", "name") === true);
   - text: <code>confirmEnding("Open sesame", "same")</code> should return true.
     testString: assert(confirmEnding("Open sesame", "same") === true);
-  - text: <code>confirmEnding("Open sesame", "pen")</code> should return false.
-    testString: assert(confirmEnding("Open sesame", "pen") === false);
+  - text: <code>confirmEnding("Open sesame", "sage")</code> should return false.
+    testString: assert(confirmEnding("Open sesame", "sage") === false);
   - text: <code>confirmEnding("Open sesame", "game")</code> should return false.
     testString: assert(confirmEnding("Open sesame", "game") === false);
   - text: <code>confirmEnding("If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing", "mountain")</code> should return false.
@@ -57,8 +57,6 @@ tests:
 
 ```js
 function confirmEnding(str, target) {
-  // "Never give up and good luck will find you."
-  // -- Falcor
   return str;
 }
 

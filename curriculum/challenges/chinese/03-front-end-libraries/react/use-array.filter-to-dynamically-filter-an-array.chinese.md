@@ -19,15 +19,15 @@ localeTitle: 使用Array.filter（）动态过滤数组
 ```yml
 tests:
   - text: <code>MyComponent</code>应该存在并呈现给页面。
-    testString: 'assert.strictEqual(Enzyme.mount(React.createElement(MyComponent)).find("MyComponent").length, 1, "<code>MyComponent</code> should exist and render to the page.");'
+    testString: assert.strictEqual(Enzyme.mount(React.createElement(MyComponent)).find('MyComponent').length, 1);
   - text: <code>MyComponent</code>的状态应初始化为六个用户的数组。“）
-    testString: 'assert(Array.isArray(Enzyme.mount(React.createElement(MyComponent)).state("users")) === true && Enzyme.mount(React.createElement(MyComponent)).state("users").length === 6, "<code>MyComponent</code>&apos;s state should be initialized to an array of six users.");'
+    testString: assert(Array.isArray(Enzyme.mount(React.createElement(MyComponent)).state('users')) === true && Enzyme.mount(React.createElement(MyComponent)).state('users').length === 6);
   - text: <code>MyComponent</code>应该返回一个<code>div</code> ，一个<code>h1</code> ，然后是一个无序列表，其中包含每个在线状态设置为<code>true</code>用户的<code>li</code>元素。
-    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const comp = Enzyme.mount(React.createElement(MyComponent)); const users = (bool) => ({users:[ { username: "Jeff", online: bool }, { username: "Alan", online: bool }, { username: "Mary", online: bool }, { username: "Jim", online: bool   }, { username: "Laura", online: bool } ]}); const result = () => comp.find("li").length; const _1 = result(); const _2 = () => { comp.setState(users(true)); return waitForIt(() => result()) }; const _3 = () => { comp.setState(users(false)); return waitForIt(() => result()) }; const _4 = () => { comp.setState({ users: [] }); return waitForIt(() => result()) }; const _2_val = await _2(); const _3_val = await _3(); const _4_val = await _4(); assert(comp.find("div").length === 1 && comp.find("h1").length === 1 && comp.find("ul").length === 1 && _1 === 4 && _2_val === 5 && _3_val === 0 && _4_val === 0, "<code>MyComponent</code> should return a <code>div</code>, an <code>h1</code>, and then an unordered list containing <code>li</code> elements for every user whose online status is set to <code>true</code>."); }; '
+    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const comp = Enzyme.mount(React.createElement(MyComponent)); const users = (bool) => ({users:[ { username: ''Jeff'', online: bool }, { username: ''Alan'', online: bool }, { username: ''Mary'', online: bool }, { username: ''Jim'', online: bool   }, { username: ''Laura'', online: bool } ]}); const result = () => comp.find(''li'').length; const _1 = result(); const _2 = () => { comp.setState(users(true)); return waitForIt(() => result()) }; const _3 = () => { comp.setState(users(false)); return waitForIt(() => result()) }; const _4 = () => { comp.setState({ users: [] }); return waitForIt(() => result()) }; const _2_val = await _2(); const _3_val = await _3(); const _4_val = await _4(); assert(comp.find(''div'').length === 1 && comp.find(''h1'').length === 1 && comp.find(''ul'').length === 1 && _1 === 4 && _2_val === 5 && _3_val === 0 && _4_val === 0); }; '
   - text: <code>MyComponent</code>应该呈现包含每个在线用户的用户名的<code>li</code>元素。
-    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const comp = Enzyme.mount(React.createElement(MyComponent)); const users = (bool) => ({users:[ { username: "Jeff", online: bool }, { username: "Alan", online: bool }, { username: "Mary", online: bool }, { username: "Jim", online: bool   }, { username: "Laura", online: bool } ]}); const ul = () => { comp.setState(users(true)); return waitForIt(() => comp.find("ul").html()) }; const html = await ul(); assert(html === "<ul><li>Jeff</li><li>Alan</li><li>Mary</li><li>Jim</li><li>Laura</li></ul>", "<code>MyComponent</code> should render <code>li</code> elements that contain the username of each online user."); }; '
+    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const comp = Enzyme.mount(React.createElement(MyComponent)); const users = (bool) => ({users:[ { username: ''Jeff'', online: bool }, { username: ''Alan'', online: bool }, { username: ''Mary'', online: bool }, { username: ''Jim'', online: bool   }, { username: ''Laura'', online: bool } ]}); const ul = () => { comp.setState(users(true)); return waitForIt(() => comp.find(''ul'').html()) }; const html = await ul(); assert(html === ''<ul><li>Jeff</li><li>Alan</li><li>Mary</li><li>Jim</li><li>Laura</li></ul>''); }; '
   - text: 每个列表项元素都应具有唯一的<code>key</code>属性。
-    testString: 'assert((() => { const ul = Enzyme.mount(React.createElement(MyComponent)).find("ul"); console.log(ul.debug()); const keys = new Set([ ul.childAt(0).key(), ul.childAt(1).key(), ul.childAt(2).key(), ul.childAt(3).key() ]); return keys.size === 4; })(), "Each list item element should have a unique <code>key</code> attribute.");'
+    testString: assert((() => { const ul = Enzyme.mount(React.createElement(MyComponent)).find('ul'); console.log(ul.debug()); const keys = new Set([ ul.childAt(0).key(), ul.childAt(1).key(), ul.childAt(2).key(), ul.childAt(3).key() ]); return keys.size === 4; })());
 
 ```
 
@@ -107,4 +107,5 @@ console.info('after the test');
 ```js
 // solution required
 ```
-</section>
+
+/section>

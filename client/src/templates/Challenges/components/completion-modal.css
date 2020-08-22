@@ -11,6 +11,14 @@
   justify-content: space-evenly;
 }
 
+.video-modal-body {
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-left: 30px;
+}
+
 .completion-challenge-details {
   display: flex;
   flex-direction: column;

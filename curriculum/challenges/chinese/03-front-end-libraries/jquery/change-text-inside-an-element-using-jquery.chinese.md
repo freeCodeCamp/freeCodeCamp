@@ -19,15 +19,15 @@ localeTitle: 使用jQuery更改元素内的文本
 ```yml
 tests:
   - text: 通过添加HTML标记强调<code>target4</code>按钮中的文本。
-    testString: 'assert.isTrue((/<em>|<i>\s*#target4\s*<\/em>|<\/i>/gi).test($("#target4").html()), "Emphasize the text in your <code>target4</code> button by adding HTML tags.");'
+    testString: assert.isTrue((/<em>|<i>\s*#target4\s*<\/em>|<\/i>/gi).test($("#target4").html()));
   - text: 确保文本不变。
-    testString: 'assert($("#target4") && $("#target4").text().trim() === "#target4", "Make sure the text is otherwise unchanged.");'
+    testString: assert($("#target4") && $("#target4").text().trim() === '#target4');
   - text: 不要改变任何其他文字。
-    testString: 'assert.isFalse((/<em>|<i>/gi).test($("h3").html()), "Do not alter any other text.");'
+    testString: assert.isFalse((/<em>|<i>/gi).test($("h3").html()));
   - text: 确保使用<code>.html()</code>而不是<code>.text()</code> 。
-    testString: 'assert(code.match(/\.html\(/g), "Make sure you are using <code>.html()</code> and not <code>.text()</code>.");'
+    testString: assert(code.match(/\.html\(/g));
   - text: 确保使用jQuery选择<code>button id=&quot;target4&quot;</code> 。
-    testString: 'assert(code.match(/\$\(\s*?(\"|\")#target4(\"|\")\s*?\)\.html\(/), "Make sure to select <code>button id="target4"</code> with jQuery.");'
+    testString: assert(code.match(/\$\(\s*?(\"|\')#target4(\"|\')\s*?\)\.html\(/));
 
 ```
 
@@ -84,4 +84,5 @@ tests:
 ```js
 // solution required
 ```
-</section>
+
+/section>

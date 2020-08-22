@@ -19,17 +19,17 @@ localeTitle: 在React中添加内联样式
 ```yml
 tests:
   - text: <code>styles</code>变量应该是具有三个属性的<code>object</code> 。
-    testString: 'assert(Object.keys(styles).length === 3, "The <code>styles</code> variable should be an <code>object</code> with three properties.");'
+    testString: assert(Object.keys(styles).length === 3);
   - text: <code>styles</code>变量的<code>color</code>属性应设置为<code>purple</code>的值。
-    testString: 'assert(styles.color === "purple", "The <code>styles</code> variable should have a <code>color</code> property set to a value of <code>purple</code>.");'
+    testString: assert(styles.color === 'purple');
   - text: <code>styles</code>变量应该将<code>fontSize</code>属性设置为值<code>40</code> 。
-    testString: 'assert(styles.fontSize === 40, "The <code>styles</code> variable should have a <code>fontSize</code> property set to a value of <code>40</code>.");'
+    testString: assert(styles.fontSize === 40);
   - text: <code>styles</code>变量应该将<code>border</code>属性设置为<code>2px solid purple</code>的值。
-    testString: 'assert(styles.border === "2px solid purple", "The <code>styles</code> variable should have a <code>border</code> property set to a value of <code>2px solid purple</code>.");'
+    testString: assert(styles.border === "2px solid purple");
   - text: 该组件应呈现<code>div</code>元素。
-    testString: 'assert((function() { const mockedComponent = Enzyme.shallow(React.createElement(Colorful)); return mockedComponent.type() === "div"; })(), "The component should render a <code>div</code> element.");'
+    testString: assert((function() { const mockedComponent = Enzyme.shallow(React.createElement(Colorful)); return mockedComponent.type() === 'div'; })());
   - text: <code>div</code>元素的样式应该由<code>styles</code>对象定义。
-    testString: 'assert((function() { const mockedComponent = Enzyme.shallow(React.createElement(Colorful)); return (mockedComponent.props().style.color === "purple" && mockedComponent.props().style.fontSize === 40 && mockedComponent.props().style.border === "2px solid purple"); })(), "The <code>div</code> element should have its styles defined by the <code>styles</code> object.");'
+    testString: assert((function() { const mockedComponent = Enzyme.shallow(React.createElement(Colorful)); return (mockedComponent.props().style.color === "purple" && mockedComponent.props().style.fontSize === 40 && mockedComponent.props().style.border === "2px solid purple"); })());
 
 ```
 
@@ -75,4 +75,5 @@ console.info('after the test');
 ```js
 // solution required
 ```
-</section>
+
+/section>
