@@ -2,6 +2,7 @@
 id: 587d7fb8367417b2b2512c10
 title: Delete One Document Using model.findByIdAndRemove
 challengeType: 2
+isHidden: false
 forumTopicId: 301539
 ---
 

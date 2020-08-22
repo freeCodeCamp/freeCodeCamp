@@ -10,8 +10,8 @@ import { SuperBlock } from './SuperBlock';
 import mockChallengeNodes from '../../../__mocks__/challenge-nodes';
 import mockIntroNodes from '../../../__mocks__/intro-nodes';
 
-function renderWithRedux(ui) {
-  return render(<Provider store={createStore()}>{ui}</Provider>);
+function renderWithRedux(ui, store) {
+  return render(<Provider store={store || createStore()}>{ui}</Provider>);
 }
 
 test('<SuperBlock /> not expanded snapshot', () => {
@@ -52,7 +52,11 @@ test('<SuperBlock should handle toggle clicks correctly', () => {
     toggleSuperBlock: toggleSpy
   };
 
-  const { container, rerender } = renderWithRedux(<SuperBlock {...props} />);
+  const store = createStore();
+  const { container, rerender } = renderWithRedux(
+    <SuperBlock {...props} />,
+    store
+  );
 
   expect(toggleSpy).not.toHaveBeenCalled();
   expect(container.querySelector('.map-title h4')).toHaveTextContent(
@@ -66,7 +70,7 @@ test('<SuperBlock should handle toggle clicks correctly', () => {
   expect(toggleSpy).toHaveBeenCalledWith('Super Block One');
 
   rerender(
-    <Provider store={createStore()}>
+    <Provider store={store}>
       <SuperBlock {...props} isExpanded={true} />
     </Provider>
   );

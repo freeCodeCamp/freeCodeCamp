@@ -79,4 +79,5 @@ const logoutUser = () => {
 ```js
 // solution required
 ```
-</section>
+
+/section>

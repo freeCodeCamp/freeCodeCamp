@@ -11,7 +11,6 @@ import {
   ToggleButton,
   ToggleButtonGroup
 } from '@freecodecamp/react-bootstrap';
-// import { StripeProvider, Elements } from 'react-stripe-elements';
 import ApplePay from './assets/ApplePay';
 import GooglePay from './assets/GooglePay';
 import acceptedCards from './assets/accepted-cards.png';
@@ -20,18 +19,14 @@ import {
   durationsConfig,
   defaultAmount,
   defaultStateConfig,
-  onetimeSKUConfig
+  onetimeSKUConfig,
+  donationUrls
 } from '../../../../config/donation-settings';
 import { deploymentEnv } from '../../../config/env.json';
 import Spacer from '../helpers/Spacer';
-// import DonateFormChildViewForHOC from './DonateFormChildViewForHOC';
 import PaypalButton from './PaypalButton';
 import DonateCompletion from './DonateCompletion';
-import {
-  isSignedInSelector,
-  signInLoadingSelector,
-  hardGoTo as navigate
-} from '../../redux';
+import { isSignedInSelector, signInLoadingSelector } from '../../redux';
 
 import './Donation.css';
 
@@ -58,9 +53,6 @@ const mapStateToProps = createSelector(
     showLoading
   })
 );
-const mapDispatchToProps = {
-  navigate
-};
 
 const initialState = {
   donationState: {
@@ -105,6 +97,9 @@ class DonateForm extends Component {
         error: error
       }
     }));
+    if (success) {
+      this.props.navigate(donationUrls.successUrl);
+    }
   }
 
   getActiveDonationAmount(durationSelected, amountSelected) {
@@ -169,8 +164,8 @@ class DonateForm extends Component {
         };
     const { error } = await stripe.redirectToCheckout({
       items: [item],
-      successUrl: 'https://www.freecodecamp.org/news/thank-you-for-donating/',
-      cancelUrl: 'https://freecodecamp.org/donate'
+      successUrl: donationUrls.successUrl,
+      cancelUrl: donationUrls.cancelUrl
     });
     console.error(error);
   }
@@ -249,11 +244,11 @@ class DonateForm extends Component {
     return (
       <div>
         {isOneTime ? (
-          <b>Confirm your one-time donation of ${donationAmount / 100} :</b>
+          <b>Confirm your one-time donation of ${donationAmount / 100}:</b>
         ) : (
           <b>
             Confirm your donation of ${donationAmount / 100} /{' '}
-            {donationDuration} :
+            {donationDuration}:
           </b>
         )}
         <Spacer />
@@ -345,7 +340,4 @@ class DonateForm extends Component {
 DonateForm.displayName = 'DonateForm';
 DonateForm.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(DonateForm);
+export default connect(mapStateToProps)(DonateForm);

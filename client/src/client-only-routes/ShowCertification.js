@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
+import format from 'date-fns/format';
 import { Grid, Row, Col, Image, Button } from '@freecodecamp/react-bootstrap';
 import FreeCodeCampLogo from '../assets/icons/freeCodeCampLogo';
 // eslint-disable-next-line max-len
@@ -18,7 +19,7 @@ import {
   isDonatingSelector,
   executeGA
 } from '../redux';
-import validCertNames from '../../utils/validCertNames';
+import { certMap } from '../../src/resources/certAndProjectMap';
 import { createFlashMessage } from '../components/Flash/redux';
 import standardErrorMessage from '../utils/standardErrorMessage';
 import reallyWeirdErrorMessage from '../utils/reallyWeirdErrorMessage';
@@ -45,7 +46,6 @@ const propTypes = {
     errored: PropTypes.bool
   }),
   isDonating: PropTypes.bool,
-  issueDate: PropTypes.string,
   showCert: PropTypes.func.isRequired,
   signedInUserName: PropTypes.string,
   userFetchState: PropTypes.shape({
@@ -55,6 +55,8 @@ const propTypes = {
   username: PropTypes.string,
   validCertName: PropTypes.bool
 };
+
+const validCertNames = certMap.map(cert => cert.slug);
 
 const mapStateToProps = (state, { certName }) => {
   const validCertName = validCertNames.some(name => name === certName);
@@ -248,7 +250,7 @@ class ShowCertification extends Component {
               <Col md={7} sm={12}>
                 <div className='issue-date'>
                   Issued&nbsp;
-                  <strong>{issueDate}</strong>
+                  <strong>{format(new Date(issueDate), 'MMMM D, YYYY')}</strong>
                 </div>
               </Col>
             </header>

@@ -2,6 +2,7 @@
 id: 5a90372638fddaf9a66b5d38
 title: Use grid-column to Control Spacing
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/p/pByETK/cnzkDSr'
 forumTopicId: 301136
 ---

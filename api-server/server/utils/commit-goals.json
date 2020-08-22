@@ -2,10 +2,15 @@
   "frontEndCert": "Front End Development Certification",
   "backEndCert": "Back End Development Certification",
   "fullStackCert": "Full Stack Development Certification",
-  "respWebDesign": "Responsive Web Design Certification",
-  "frontEndLibs": "Front End Libraries Certification",
-  "jsAlgoDataStruct": "JavaScript Algorithms and Data Structures Certification",
-  "dataVis": "Data Visualisation Certification",
-  "apisMicroservices": "APIs and Microservices Certification",
-  "infosecQa": "Information Security and Quality Assurance Certification"
+  "respWebDesignCert": "Responsive Web Design Certification",
+  "frontEndLibsCert": "Front End Libraries Certification",
+  "jsAlgoDataStructCert": "JavaScript Algorithms and Data Structures Certification",
+  "dataVisCert": "Data Visualisation Certification",
+  "apisMicroservicesCert": "APIs and Microservices Certification",
+  "infosecQaCert": "Information Security and Quality Assurance Certification",
+  "qaCert": "Quality Assurance Certification",
+  "infosecCert": "Information Security Certification",
+  "sciCompPyCert": "Scientific Computing with Python Certification",
+  "dataAnalysisPyCert": "Data Analysis with Python Certification",
+  "machineLearningPyCert": "Machine Learning with Python Certification"
 }

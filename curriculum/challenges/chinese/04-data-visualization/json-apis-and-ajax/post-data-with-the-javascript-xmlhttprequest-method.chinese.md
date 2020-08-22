@@ -178,8 +178,7 @@ tests:
     border: 1px solid #0F5897;
   }
 </style>
-
-<h1>Cat Friends</h1>
+                    
 <p class="message">
   Reply from Server will be here
 </p>
@@ -194,3 +193,4 @@ tests:
 ```
 
 </section>
+

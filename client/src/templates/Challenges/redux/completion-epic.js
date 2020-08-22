@@ -11,7 +11,6 @@ import { ofType } from 'redux-observable';
 import { navigate } from 'gatsby';
 
 import {
-  backendFormValuesSelector,
   projectFormValuesSelector,
   types,
   challengeMetaSelector,
@@ -50,8 +49,12 @@ function postChallenge(update, username) {
 }
 
 function submitModern(type, state) {
+  const challengeType = state.challenge.challengeMeta.challengeType;
   const tests = challengeTestsSelector(state);
-  if (tests.length > 0 && tests.every(test => test.pass && !test.err)) {
+  if (
+    challengeType === 11 ||
+    (tests.length > 0 && tests.every(test => test.pass && !test.err))
+  ) {
     if (type === types.checkChallenge) {
       return of({ type: 'this was a check challenge' });
     }
@@ -104,7 +107,7 @@ function submitBackendChallenge(type, state) {
       const { username } = userSelector(state);
       const {
         solution: { value: solution }
-      } = backendFormValuesSelector(state);
+      } = projectFormValuesSelector(state);
       const challengeInfo = { id, solution };
 
       const update = {

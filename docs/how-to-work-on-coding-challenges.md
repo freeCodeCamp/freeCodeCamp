@@ -252,9 +252,9 @@ Here are specific formatting guidelines for the challenge seed code:
 
 ## Hints and Solutions
 
-Each challenge has a `Get a Hint` button, so a user can access any hints/solutions which have been created for the challenge. Curriculum hints/solutions topics are located on [our forum](https://www.freecodecamp.org/forum/c/guide) under the `Guide` category.
+Each challenge has a `Get a Hint` button, so a user can access any hints/solutions which have been created for the challenge. Curriculum hints/solutions topics are located on [our forum](https://forum.freecodecamp.org/c/guide) under the `Guide` category.
 
-If you find a problem with an existing challenge's hints/solutions topic, you can make suggestions in the [contributors category](https://www.freecodecamp.org/forum/c/contributors) on the forum. Moderators and users with trust level 3 will review the comments and decide whether or not to include the changes in the corresponding hint/solutions topic.
+If you find a problem with an existing challenge's hints/solutions topic, you can make suggestions in the [contributors category](https://forum.freecodecamp.org/c/contributors) on the forum. Moderators and users with trust level 3 will review the comments and decide whether or not to include the changes in the corresponding hint/solutions topic.
 
 ### Adding new Challenge hints/solutions Topics
 
@@ -357,7 +357,7 @@ You are also able to test one challenge individually by performing the following
 Once you have verified that each challenge you've worked on passes the tests, [please create a pull request](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/docs/how-to-open-a-pull-request.md).
 
 > [!TIP]
-> You can set the environment variable `TEST_CHALLENGES_FOR_LANGS` in the `.env` to the language of the challenge(s) you need to test.
+> You can set the environment variable `LOCALE` in the `.env` to the language of the challenge(s) you need to test.
 > 
 > The currently accepted values are `english` and `chinese`, with `english` being set by default.
 
@@ -366,6 +366,6 @@ Once you have verified that each challenge you've worked on passes the tests, [p
 
 Creating and Editing Challenges:
 
-1. [Challenge types](https://github.com/freeCodeCamp/learn/blob/a5cb25704168aa37f59a582f0bb5a19b7bd89b46/utils/challengeTypes.js) - what the numeric challenge type values mean (enum).
+1. [Challenge types](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/client/utils/challengeTypes.js#L1-L13) - what the numeric challenge type values mean (enum).
 
-2. [Contributing to FreeCodeCamp - Writing ES6 Challenge Tests ](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - a video following [Ethan Arrowood](https://twitter.com/ArrowoodTech) as he contributes to the old version of the curriculum.
+2. [Contributing to FreeCodeCamp - Writing ES6 Challenge Tests](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - a video following [Ethan Arrowood](https://twitter.com/ArrowoodTech) as he contributes to the old version of the curriculum.

@@ -2,63 +2,94 @@
 id: 587d7b89367417b2b2512b49
 title: Use Destructuring Assignment to Assign Variables from Objects
 challengeType: 1
-videoUrl: ''
-localeTitle: 使用解构分配从对象分配变量
+forumTopicId: 301215
+localeTitle: 使用解构赋值从对象中分配变量
 ---
 
 ## Description
-<section id="description">我们之前看到扩展运算符如何有效地扩展或解包数组的内容。我们也可以用对象做类似的事情。 <dfn>解构赋值</dfn>是一种特殊的语法，用于将直接从对象获取的值整齐地分配给变量。请考虑以下ES5代码： <blockquote> var voxel = {x：3.6，y：7.4，z：6.54}; <br> var x = voxel.x; // x = 3.6 <br> var y = voxel.y; // y = 7.4 <br> var z = voxel.z; // z = 6.54 </blockquote>这是与ES6解构语法相同的赋值语句： <blockquote> const {x，y，z} =体素; // x = 3.6，y = 7.4，z = 6.54 </blockquote>相反，如果你想将<code>voxel.x</code>的值存储到<code>a</code> ，将<code>voxel.y</code>到<code>b</code> ，将<code>voxel.z</code>到<code>c</code> ，那么你也有这种自由。 <blockquote> const {x：a，y：b，z：c} =体素// a = 3.6，b = 7.4，c = 6.54 </blockquote>您可以将其读作“获取字段<code>x</code>并将值复制到<code>a</code>中”，依此类推。 </section>
+<section id='description'>
+可以在解构的属性后添加冒号和新的变量名来给解构的值赋予一个新的变量名。
+
+还是以上个例子的对象来举例：
+
+```js
+const user = { name: 'John Doe', age: 34 };
+```
+
+这是指定新的变量名的例子：
+
+```js
+const { name: userName, age: userAge } = user;
+// userName = 'John Doe', userAge = 34
+```
+
+获取到了 <code>user.name</code> 的值并赋值给名为 <code>userName</code> 的变量。
+</section>
 
 ## Instructions
-<section id="instructions">使用解构从输入对象<code>AVG_TEMPERATURES</code>获得明天的平均温度，并在<code>tomorrow</code>将关键值赋值给<code>tempOfTomorrow</code> 。 </section>
+<section id='instructions'>
+使用解构赋值语句替换两个赋值语句。确保 <code>HIGH_TEMPERATURES</code> 的 <code>today</code> 和 <code>tomorrow</code> 属性赋值给 <code>highToday</code> 和 <code>highTomorrow</code>。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>getTempOfTmrw(AVG_TEMPERATURES)</code>应为<code>79</code>
-    testString: 'assert(getTempOfTmrw(AVG_TEMPERATURES) === 79, "<code>getTempOfTmrw(AVG_TEMPERATURES)</code> should be <code>79</code>");'
-  - text: 使用了重新分配的解构
-    testString: 'getUserInput => assert(getUserInput("index").match(/\{\s*tomorrow\s*:\s*tempOfTomorrow\s*}\s*=\s*avgTemperatures/g),"destructuring with reassignment was used");'
-
+  - text: 应该移除 ES5 赋值语句。
+    testString: assert(!code.match(/highToday = HIGH_TEMPERATURES\.today/g) && !code.match(/highTomorrow = HIGH_TEMPERATURES\.tomorrow/g))
+  - text: 应该使用解构赋值语句创建  <code>highToday</code> 变量。
+    testString: assert(code.match(/(var|const|let)\s*{\s*(today:\s*highToday[^}]*|[^,]*,\s*today\s*:\s*highToday\s*)}\s*=\s*HIGH_TEMPERATURES(;|\s+|\/\/)/g));
+  - text: 应该使用解构赋值语句创建  <code>highTomorrow</code> 变量。
+    testString: assert(code.match(/(var|const|let)\s*{\s*(tomorrow:\s*highTomorrow[^}]*|[^,]*,\s*tomorrow\s*:\s*highTomorrow\s*)}\s*=\s*HIGH_TEMPERATURES(;|\s+|\/\/)/g));
 ```
 
 </section>
 
 ## Challenge Seed
 <section id='challengeSeed'>
-
 <div id='js-seed'>
 
 ```js
-const AVG_TEMPERATURES = {
-  today: 77.5,
-  tomorrow: 79
+const HIGH_TEMPERATURES = {
+  yesterday: 75,
+  today: 77,
+  tomorrow: 80
 };
 
-function getTempOfTmrw(avgTemperatures) {
-  "use strict";
-  // change code below this line
-  const tempOfTomorrow = undefined; // change this line
-  // change code above this line
-  return tempOfTomorrow;
-}
+// change code below this line
+  
+const highToday = HIGH_TEMPERATURES.today;
+const highTomorrow = HIGH_TEMPERATURES.tomorrow; 
 
-console.log(getTempOfTmrw(AVG_TEMPERATURES)); // should be 79
+// change code above this line
 
+console.log(yesterday) // should be not defined
+console.log(highToday); // should be 77
+console.log(highTomorrow); // should be 80
 ```
 
 </div>
-
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
 ```js
-// solution required
+const HIGH_TEMPERATURES = {
+  yesterday: 75,
+  today: 77,
+  tomorrow: 80
+};
+
+// change code below this line
+  
+const { today: highToday, tomorrow: highTomorrow } = HIGH_TEMPERATURES;
+
+// change code above this line
+
+console.log(highToday); // should be 77
+console.log(highTomorrow); // should be 80
 ```
+
 </section>

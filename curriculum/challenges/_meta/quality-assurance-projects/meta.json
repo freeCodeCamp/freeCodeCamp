@@ -1,0 +1,34 @@
+{
+  "name": "Quality Assurance Projects",
+  "dashedName": "quality-assurance-projects",
+  "order": 3,
+  "time": "150 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "quality-assurance",
+  "superOrder": 6,
+  "challengeOrder": [
+    [
+      "587d8249367417b2b2512c41",
+      "Metric-Imperial Converter"
+    ],
+    [
+      "587d8249367417b2b2512c42",
+      "Issue Tracker"
+    ],
+    [
+      "587d824a367417b2b2512c43",
+      "Personal Library"
+    ],
+    [
+      "5e601bf95ac9d0ecd8b94afd",
+      "Sudoku Solver"
+    ],
+    [
+      "5e601c0d5ac9d0ecd8b94afe",
+      "American British Translator"
+    ]
+  ],
+  "helpRoom": "HelpBackend",
+  "fileName": "06-quality-assurance/quality-assurance-projects.json"
+}
