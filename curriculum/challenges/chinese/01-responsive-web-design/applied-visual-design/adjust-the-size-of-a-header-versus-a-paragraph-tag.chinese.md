@@ -2,23 +2,28 @@
 id: 587d781b367417b2b2512abd
 title: Adjust the Size of a Header Versus a Paragraph Tag
 challengeType: 0
-videoUrl: ''
-localeTitle: 调整标题的大小与段落标记
+videoUrl: 'https://scrimba.com/c/c3bRPTz'
+forumTopicId: 301037
+localeTitle: 调整标题与段落的大小
 ---
 
 ## Description
-<section id="description">标题标记（ <code>h1</code>到<code>h6</code> ）的字体大小通常应大于段落标记的字体大小。这使用户更容易在视觉上理解页面上所有内容的布局和重要性级别。您可以使用<code>font-size</code>属性调整元素中文本的大小。 </section>
+<section id='description'>
+标题（<code>h1</code> 到 <code>h6</code>）的文字应该比段落的文字大，这样可以让用户更直观的看到页面的布局，同时能区别出不同元素的重要程度，更方便用户捕捉关键的信息。你可以使用 <code>font-size</code> 属性来设置元素内文字的大小。
+</section>
 
 ## Instructions
-<section id="instructions">若要使标题明显大于段落，请将<code>h4</code>标记的<code>font-size</code>更改为27像素。 </section>
+<section id='instructions'>
+把 <code>h4</code> 标签的 <code>font-size</code >改成 27 像素，让标题更醒目。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您的代码应该将<code>font-size</code>属性添加到设置为27像素的<code>h4</code>元素。
-    testString: 'assert($("h4").css("font-size") == "27px", "Your code should add a <code>font-size</code> property to the <code>h4</code> element set to 27 pixels.");'
+  - text: '你应该给 <code>h4</code> 元素添加一个 <code>font-size</code> 属性并且赋值 <code>27px</code>。'
+    testString: assert($('h4').css('font-size') == '27px');
 
 ```
 
@@ -35,7 +40,7 @@ tests:
     text-align: center;
     background-color: rgba(45, 45, 45, 0.1);
     padding: 10px;
-
+    
   }
   p {
     text-align: justify;
@@ -63,15 +68,14 @@ tests:
     <div class="cardText">
       <h4>Alphabet</h4>
       <hr>
-      <p><em>Google was founded by Larry Page and Sergey Brin while they were <u>Ph.D. students</u> at <strong>Stanford University</strong>.</em></p>
+      <p><em>Google 由在<strong>斯坦福大学</strong>攻读<u>理工博士</u>的拉里·佩奇和谢尔盖·布林共同创建。</em></p>
     </div>
     <div class="cardLinks">
-      <a href="https://en.wikipedia.org/wiki/Larry_Page" target="_blank" class="links">Larry Page</a><br><br>
-      <a href="https://en.wikipedia.org/wiki/Sergey_Brin" target="_blank" class="links">Sergey Brin</a>
+      <a href="https://en.wikipedia.org/wiki/Larry_Page" target="_blank" class="links">拉里·佩奇</a><br><br>
+      <a href="https://en.wikipedia.org/wiki/Sergey_Brin" target="_blank" class="links">谢尔盖·布林</a>
     </div>
   </div>
 </div>
-
 ```
 
 </div>
@@ -83,7 +87,9 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>
+              

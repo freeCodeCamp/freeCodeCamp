@@ -2,27 +2,38 @@
 id: 587d78a4367417b2b2512ad2
 title: Learn about Tertiary Colors
 challengeType: 0
-videoUrl: ''
-localeTitle: 了解第三色
+videoUrl: 'https://scrimba.com/c/c3bRDAb'
+forumTopicId: 301057
+localeTitle: 了解三原色
 ---
 
 ## Description
-<section id="description">计算机显示器和设备屏幕通过组合红色，绿色和蓝色光的数量来创建不同的颜色。这被称为现代色彩理论中的RGB加色模型。红色（R），绿色（G）和蓝色（B）被称为原色。混合两种基色会产生青色（G + B），品红色（R + B）和黄色（R + G）的二次色。您在Complementary Colors挑战中看到了这些颜色。这些次要颜色恰好是其创建时未使用的原色的补充，并且与色轮上的原色相反。例如，洋红色由红色和蓝色制成，是绿色的补充。三原色是将原色与其次要颜色邻居组合的结果。例如，红色（主要）和黄色（次要）使橙色。这为简单的色轮增加了六种颜色，总共十二种颜色。有多种选择不同颜色的方法可以在设计中实现和谐组合。可以使用三级颜色的一个示例称为分裂互补色方案。该方案以基色开始，然后将其与其补色相邻的两种颜色配对。三种颜色在设计中提供强烈的视觉对比度，但比使用两种互补色更微妙。以下是使用拆分补充方案创建的三种颜色： <table class="table table-striped"><thead><tr><th>颜色</th><th> Hex代码</th></tr></thead><thead></thead><tbody><tr><td>橙子</td><td> ＃FF7D00 </td></tr><tr><td>青色</td><td> ＃00FFFF </td></tr><tr><td>覆盆子</td><td> ＃FF007D </td></tr></tbody></table></section>
+<section id='description'>
+电脑显示器和手机屏幕是一种加色模型，将红（R）、绿（G）、蓝（B）三原色的色光以不同的比例相加，以产生多种多样的色光。两种原色相加产生二次色：蓝绿（G+B）、品红（R+B）和黄色（R+G）。你在上一个挑战里已经见过这些颜色了。这些二次色恰好是在合成它们时未使用的原色的补色，即在色环中位于两端。例如，品红色是红色和蓝色相加产生，它是绿色的补色。
+三次色是由原色和二次色相加产生的颜色，例如红色（原色）和黄色（二次色）相加产生橙色。将这六种颜色中相邻的颜色相加，便产生了十二色色环。
+设计里面有很多种颜色搭配方法。涉及到三次色的一种配色方法是分裂补色搭配法。选定主色之后，在色环上选择与它的补色相邻的两种颜色与之搭配。此种搭配既有对比，又不失和谐。
+下面是使用分裂补色搭配法创建的三个颜色：
+<table class="table table-striped"><thead><tr><th>颜色</th><th>HEX 颜色码</th></tr><thead><tbody><tr><td>橙色</td><td>#FF7D00</td></tr><tr><td>蓝绿色</td><td>#00FFFF</td></tr><tr><td>树莓红</td><td>#FF007D</td></tr></tbody></table>
+</section>
 
 ## Instructions
-<section id="instructions">将<code>orange</code> ， <code>cyan</code>和<code>raspberry</code>类的<code>background-color</code>属性更改为各自的颜色。确保使用十六进制代码，因为橙色和覆盆子不是浏览器识别的颜色名称。 </section>
+<section id='instructions'>
+把 class 为 <code>orange</code>、<code>cyan</code> 和 <code>rasberry</code> 的 <code>background-color</code> 改成其对应的颜色。由于 rasberry 不在浏览器 17 种标准色之内，不能直接用作颜色名，所以要使用 HEX 颜色码。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 具有<code>orange</code>等级的<code>div</code>元素应具有<code>orange</code>的<code>background-color</code> 。
-    testString: 'assert($(".orange").css("background-color") == "rgb(255, 125, 0)", "The <code>div</code> element with class <code>orange</code> should have a <code>background-color</code> of orange.");'
-  - text: 具有<code>cyan</code>类的<code>div</code>元素应具有<code>cyan</code>的<code>background-color</code> 。
-    testString: 'assert($(".cyan").css("background-color") == "rgb(0, 255, 255)", "The <code>div</code> element with class <code>cyan</code> should have a <code>background-color</code> of cyan.");'
-  - text: 具有类<code>raspberry</code>的<code>div</code>元素应该具有<code>raspberry</code>的<code>background-color</code> 。
-    testString: 'assert($(".raspberry").css("background-color") == "rgb(255, 0, 125)", "The <code>div</code> element with class <code>raspberry</code> should have a <code>background-color</code> of raspberry.");'
+  - text: 'class 为 <code>orange</code> 的 <code>div</code> 应该有值为橙色的 <code>background-color</code> CSS 属性。'
+    testString: assert($('.orange').css('background-color') == 'rgb(255, 127, 0)');
+  - text: 'class 为 <code>cyan</code> 的 <code>div</code> 应该有值为蓝绿色的 <code>background-color</code> CSS 属性。'
+    testString: assert($('.cyan').css('background-color') == 'rgb(0, 255, 255)');
+  - text: 'class 为 <code>raspberry</code> 的 <code>div</code> 应该有值为树莓红色的 <code>background-color</code> CSS 属性。'
+    testString: assert($('.raspberry').css('background-color') == 'rgb(255, 0, 127)');
+  - text: 'corlor classes 里的所有的 <code>background-color</code> 应该是 HEX 颜色码而不是颜色名称。'
+    testString: assert(!/background-color:\s(orange|cyan|raspberry)/.test(code));
 
 ```
 
@@ -38,30 +49,29 @@ tests:
   body {
     background-color: #FFFFFF;
   }
-
+  
   .orange {
     background-color: #000000;
   }
-
+  
   .cyan {
     background-color: #000000;
   }
-
+  
   .raspberry {
     background-color: #000000;
   }
-
+  
   div {
     height: 100px;
     width: 100px;
     margin-bottom: 5px;
   }
 </style>
-
+  
 <div class="orange"></div>
 <div class="cyan"></div>
 <div class="raspberry"></div>
-
 ```
 
 </div>
@@ -73,7 +83,9 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>
+              

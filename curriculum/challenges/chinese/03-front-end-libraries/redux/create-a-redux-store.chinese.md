@@ -19,9 +19,9 @@ localeTitle: 创建一个Redux商店
 ```yml
 tests:
   - text: redux商店存在。
-    testString: 'assert(typeof store.getState === "function", "The redux store exists.");'
+    testString: assert(typeof store.getState === 'function');
   - text: redux商店的状态值为5。
-    testString: 'assert(store.getState()=== 5, "The redux store has a value of 5 for the state.");'
+    testString: assert(store.getState()=== 5);
 
 ```
 
@@ -55,4 +55,5 @@ const reducer = (state = 5) => {
 ```js
 // solution required
 ```
-</section>
+
+/section>

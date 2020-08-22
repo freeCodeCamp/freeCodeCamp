@@ -19,11 +19,11 @@ localeTitle: 了解脚本标签和文档准备工作的方式
 ```yml
 tests:
   - text: 创建一个<code>script</code>元素，确保它有效并具有结束标记。
-    testString: 'assert(code.match(/<\/script\s*>/g) && code.match(/<script(\sasync|\sdefer)*(\s(charset|src|type)\s*=\s*["\"]+[^"\"]*["\"]+)*(\sasync|\sdefer)*\s*>/g) && code.match(/<\/script\s*>/g).length === code.match(/<script(\sasync|\sdefer)*(\s(charset|src|type)\s*=\s*["\"]+[^"\"]*["\"]+)*(\sasync|\sdefer)*\s*>/g).length, "Create a <code>script</code> element making sure it is valid and has a closing tag.");'
+    testString: 'assert(code.match(/<\/script\s*>/g) && code.match(/<script(\sasync|\sdefer)*(\s(charset|src|type)\s*=\s*["\"]+[^"\"]*["\"]+)*(\sasync|\sdefer)*\s*>/g) && code.match(/<\/script\s*>/g).length === code.match(/<script(\sasync|\sdefer)*(\s(charset|src|type)\s*=\s*["\"]+[^"\"]*["\"]+)*(\sasync|\sdefer)*\s*>/g).length);'
   - text: '您应该将<code>$(document).ready (function() {</code>到<code>script</code>元素的开头。'
-    testString: 'assert(code.match(/\$\s*?\(\s*?document\s*?\)\.ready\s*?\(\s*?function\s*?\(\s*?\)\s*?\{/g), "You should add <code>$&#40;document&#41;.ready<wbr>&#40;function&#40;&#41; {</code> to the beginning of your <code>script</code> element.");'
+    testString: 'assert(code.match(/\$\s*?\(\s*?document\s*?\)\.ready\s*?\(\s*?function\s*?\(\s*?\)\s*?\{/g));'
   - text: '关闭<code>$(document).ready (function() {</code> function with <code>});</code>'
-    testString: 'assert(code.match(/\n*?\s*?\}\s*?\);/g), "Close your <code>$&#40;document&#41;.ready<wbr>&#40;function&#40;&#41; {</code> function with <code>}&#41;;</code>");'
+    testString: 'assert(code.match(/\n*?\s*?\}\s*?\);/g));'
 
 ```
 
@@ -73,4 +73,5 @@ tests:
 ```js
 // solution required
 ```
-</section>
+
+/section>

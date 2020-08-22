@@ -2,6 +2,7 @@
 id: 587d7b88367417b2b2512b46
 title: Set Default Parameters for Your Functions
 challengeType: 1
+isHidden: false
 forumTopicId: 301209
 ---
 
@@ -47,10 +48,9 @@ tests:
 <div id='js-seed'>
 
 ```js
+// Only change code below this line
 const increment = (number, value) => number + value;
-
-console.log(increment(5, 2)); // returns 7
-console.log(increment(5)); // returns 6
+// Only change code above this line
 ```
 
 </div>

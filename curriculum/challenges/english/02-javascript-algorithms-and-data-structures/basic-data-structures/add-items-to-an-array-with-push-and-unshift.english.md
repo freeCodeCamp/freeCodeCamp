@@ -2,6 +2,7 @@
 id: 587d78b2367417b2b2512b0e
 title: Add Items to an Array with push() and unshift()
 challengeType: 1
+isHidden: false
 forumTopicId: 301151
 ---
 
@@ -51,13 +52,12 @@ tests:
 
 ```js
 function mixedNumbers(arr) {
-  // change code below this line
+  // Only change code below this line
 
-  // change code above this line
+  // Only change code above this line
   return arr;
 }
 
-// do not change code below this line
 console.log(mixedNumbers(['IV', 5, 'six']));
 ```
 
@@ -72,10 +72,8 @@ console.log(mixedNumbers(['IV', 5, 'six']));
 
 ```js
 function mixedNumbers(arr) {
-  // change code below this line
   arr.push(7,'VIII',9);
   arr.unshift('I',2,'three');
-  // change code above this line
   return arr;
 }
 ```

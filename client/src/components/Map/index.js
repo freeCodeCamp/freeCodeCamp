@@ -81,7 +81,7 @@ export class Map extends Component {
       node = nodes.find(node => dasherize(node.superBlock) === hash);
     }
 
-    // whitout hash only expand when signed in
+    // without hash only expand when signed in
     if (isSignedIn) {
       // if there is no hash or the hash did not match any challenge superblock
       // and there was a currentChallengeId
@@ -111,11 +111,13 @@ export class Map extends Component {
 
   render() {
     const { nodes } = this.props;
+    // if a given superBlock's nodes have been filtered (via isHidden, say) that
+    // superBlock will not appear in superBlocks and will not be rendered.
     const superBlocks = uniq(nodes.map(({ superBlock }) => superBlock));
     return (
       <Row>
         <Col sm={10} smOffset={1} xs={12}>
-          <div className='map-ui'>
+          <div className='map-ui' data-test-label='learn-curriculum-map'>
             <ul>
               {this.renderSuperBlocks(superBlocks)}
               <Spacer />

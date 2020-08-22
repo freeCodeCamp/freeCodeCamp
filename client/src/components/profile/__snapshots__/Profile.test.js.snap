@@ -20,11 +20,15 @@ exports[`<Profile/> renders correctly 1`] = `
         <div
           class="avatar-container col-xs-12"
         >
-          <img
-            alt="string's avatar"
-            class="avatar img-responsive"
-            src="string"
-          />
+          <div
+            class=""
+          >
+            <img
+              alt="string's avatar"
+              class="avatar img-responsive"
+              src="string"
+            />
+          </div>
         </div>
       </div>
       <div
@@ -142,7 +146,7 @@ exports[`<Profile/> renders correctly 1`] = `
       <a
         href="/user/string/report-user"
       >
-        Report This User
+        Flag This User's Account for Abuse
       </a>
     </div>
     <div

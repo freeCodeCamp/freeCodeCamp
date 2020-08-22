@@ -19,17 +19,17 @@ localeTitle: 用Redux写一个计数器
 ```yml
 tests:
   - text: 动作创建者<code>incAction</code>应返回<code>type</code>等于<code>INCREMENT</code>值的动作对象
-    testString: 'assert(incAction().type ===INCREMENT, "The action creator <code>incAction</code> should return an action object with <code>type</code> equal to the value of <code>INCREMENT</code>");'
+    testString: assert(incAction().type ===INCREMENT);
   - text: 动作创建者<code>decAction</code>应与返回动作对象<code>type</code>等于的值<code>DECREMENT</code>
-    testString: 'assert(decAction().type === DECREMENT, "The action creator <code>decAction</code> should return an action object with <code>type</code> equal to the value of <code>DECREMENT</code>");'
+    testString: assert(decAction().type === DECREMENT);
   - text: Redux存储应该以0 <code>state</code>初始化。
-    testString: 'assert(store.getState() === 0, "The Redux store should initialize with a <code>state</code> of 0.");'
+    testString: assert(store.getState() === 0);
   - text: 在Redux存储上调度<code>incAction</code>应该将<code>state</code>增加1。
-    testString: 'assert((function() { const initialState = store.getState(); store.dispatch(incAction()); const incState = store.getState(); return initialState + 1 === incState })(), "Dispatching <code>incAction</code> on the Redux store should increment the <code>state</code> by 1.");'
+    testString: assert((function() { const initialState = store.getState(); store.dispatch(incAction()); const incState = store.getState(); return initialState + 1 === incState })());
   - text: 在Redux存储上调度<code>decAction</code>应该将<code>state</code>减1。
-    testString: 'assert((function() { const initialState = store.getState(); store.dispatch(decAction()); const decState = store.getState(); return initialState - 1 === decState })(), "Dispatching <code>decAction</code> on the Redux store should decrement the <code>state</code> by 1.");'
+    testString: assert((function() { const initialState = store.getState(); store.dispatch(decAction()); const decState = store.getState(); return initialState - 1 === decState })());
   - text: <code>counterReducer</code>应该是一个函数
-    testString: 'assert(typeof counterReducer === "function", "<code>counterReducer</code> should be a function");'
+    testString: assert(typeof counterReducer === 'function');
 
 ```
 
@@ -66,4 +66,5 @@ const store = null; // define the Redux store here, passing in your reducers
 ```js
 // solution required
 ```
-</section>
+
+/section>

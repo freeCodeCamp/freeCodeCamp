@@ -2,6 +2,7 @@
 id: 56533eb9ac21ba0edf2244b9
 title: Constructing Strings with Variables
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cqk8rf4'
 forumTopicId: 16805
 ---
@@ -9,6 +10,15 @@ forumTopicId: 16805
 ## Description
 <section id='description'>
 Sometimes you will need to build a string, <a href="https://en.wikipedia.org/wiki/Mad_Libs" target="_blank">Mad Libs</a> style. By using the concatenation operator (<code>+</code>), you can insert one or more variables into a string you're building.
+
+Example:
+
+```js
+var ourName = "freeCodeCamp";
+var ourStr = "Hello, our name is " + ourName + ", how are you?";
+// ourStr is now "Hello, our name is freeCodeCamp, how are you?"
+```
+
 </section>
 
 ## Instructions
@@ -36,10 +46,6 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Example
-var ourName = "freeCodeCamp";
-var ourStr = "Hello, our name is " + ourName + ", how are you?";
-
 // Only change code below this line
 var myName;
 var myStr;

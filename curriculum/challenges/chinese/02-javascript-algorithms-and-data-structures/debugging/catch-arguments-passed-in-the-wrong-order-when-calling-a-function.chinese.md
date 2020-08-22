@@ -18,9 +18,9 @@ localeTitle: 调用函数时捕获以错误顺序传递的参数
 ```yml
 tests:
   - text: 你的代码应该固定可变<code>power</code>因此它等于2提升到3功率，而不是3增加到2功率。
-    testString: 'assert(power == 8, "Your code should fix the variable <code>power</code> so it equals 2 raised to the 3rd power, not 3 raised to the 2nd power.");'
+    testString: assert(power == 8);
   - text: 您的代码应使用<code>raiseToPower</code>函数调用的正确参数顺序。
-    testString: 'assert(code.match(/raiseToPower\(\s*?base\s*?,\s*?exp\s*?\);/g), "Your code should use the correct order of the arguments for the <code>raiseToPower</code> function call.");'
+    testString: assert(code.match(/raiseToPower\(\s*?base\s*?,\s*?exp\s*?\);/g));
 
 ```
 
@@ -55,4 +55,5 @@ console.log(power);
 ```js
 // solution required
 ```
-</section>
+
+/section>

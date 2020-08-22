@@ -19,13 +19,13 @@ localeTitle: 添加事件监听器
 ```yml
 tests:
   - text: <code>MyComponent</code>应该呈现一个包含<code>h1</code>标记的<code>div</code>元素。
-    testString: 'assert((() => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find("div").children().find("h1").length === 1; })(), "<code>MyComponent</code> should render a <code>div</code> element which wraps an <code>h1</code> tag.");'
+    testString: assert((() => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find('div').children().find('h1').length === 1; })());
   - text: keydown侦听器应附加到<code>componentDidMount</code>的文档。
-    testString: 'assert((() => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const didMountString = mockedComponent.instance().componentDidMount.toString(); return new RegExp("document\.addEventListener(.|\n|\r)+keydown(.|\n|\r)+this\.handleKeyPress").test(didMountString); })(), "A keydown listener should be attached to the document in <code>componentDidMount</code>.");'
+    testString: assert((() => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const didMountString = mockedComponent.instance().componentDidMount.toString(); return new RegExp('document\.addEventListener(.|\n|\r)+keydown(.|\n|\r)+this\.handleKeyPress').test(didMountString); })());
   - text: 应该从<code>componentWillUnmount</code>的文档中删除keydown侦听器。
-    testString: 'assert((() => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const willUnmountString = mockedComponent.instance().componentWillUnmount.toString(); return new RegExp("document\.removeEventListener(.|\n|\r)+keydown(.|\n|\r)+this\.handleKeyPress").test(willUnmountString); })(), "The keydown listener should be removed from the document in <code>componentWillUnmount</code>.");'
+    testString: assert((() => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const willUnmountString = mockedComponent.instance().componentWillUnmount.toString(); return new RegExp('document\.removeEventListener(.|\n|\r)+keydown(.|\n|\r)+this\.handleKeyPress').test(willUnmountString); })());
   - text: 组件安装完成后，按<code>enter</code>应更新其状态和渲染的<code>h1</code>标签。
-    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const beforeState = mockedComponent.state("message"); const beforeText = mockedComponent.find("h1").text(); const pressEnterKey = () => { mockedComponent.instance().handleKeyPress({ keyCode: 13 }); return waitForIt(() => { mockedComponent.update(); return { state: mockedComponent.state("message"), text: mockedComponent.find("h1").text()}; });}; const afterKeyPress = await pressEnterKey(); assert(beforeState !== afterKeyPress.state && beforeText !== afterKeyPress.text, "Once the component has mounted, pressing <code>enter</code> should update its state and the rendered <code>h1</code> tag."); }; '
+    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const beforeState = mockedComponent.state(''message''); const beforeText = mockedComponent.find(''h1'').text(); const pressEnterKey = () => { mockedComponent.instance().handleKeyPress({ keyCode: 13 }); return waitForIt(() => { mockedComponent.update(); return { state: mockedComponent.state(''message''), text: mockedComponent.find(''h1'').text()}; });}; const afterKeyPress = await pressEnterKey(); assert(beforeState !== afterKeyPress.state && beforeText !== afterKeyPress.text); }; '
 
 ```
 
@@ -95,4 +95,5 @@ console.info('after the test');
 ```js
 // solution required
 ```
-</section>
+
+/section>

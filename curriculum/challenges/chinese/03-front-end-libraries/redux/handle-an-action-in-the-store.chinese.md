@@ -19,13 +19,13 @@ localeTitle: 处理商店中的操作
 ```yml
 tests:
   - text: 调用函数<code>loginAction</code>应该返回一个对象，其type属性设置为字符串<code>LOGIN</code> 。
-    testString: 'assert(loginAction().type === "LOGIN", "Calling the function <code>loginAction</code> should return an object with type property set to the string <code>LOGIN</code>.");'
+    testString: assert(loginAction().type === 'LOGIN');
   - text: 应使用属性<code>login</code>设置为<code>false</code>的对象初始化存储。
-    testString: 'assert(store.getState().login === false, "The store should be initialized with an object with property <code>login</code> set to <code>false</code>.");'
+    testString: assert(store.getState().login === false);
   - text: 调度<code>loginAction</code>应该将store状态中的<code>login</code>属性更新为<code>true</code> 。
-    testString: 'assert((function() {  const initialState = store.getState(); store.dispatch(loginAction()); const afterState = store.getState(); return initialState.login === false && afterState.login === true })(), "Dispatching <code>loginAction</code> should update the <code>login</code> property in the store state to <code>true</code>.");'
+    testString: assert((function() {  const initialState = store.getState(); store.dispatch(loginAction()); const afterState = store.getState(); return initialState.login === false && afterState.login === true })());
   - text: 如果操作不是<code>LOGIN</code>类型，则存储应返回当前状态。
-    testString: 'assert((function() { store.dispatch({type: "__TEST__ACTION__"}); let afterTest = store.getState(); return typeof afterTest === "object" && afterTest.hasOwnProperty("login") })(), "If the action is not of type <code>LOGIN</code>, the store should return the current state.");'
+    testString: 'assert((function() { store.dispatch({type: ''__TEST__ACTION__''}); let afterTest = store.getState(); return typeof afterTest === ''object'' && afterTest.hasOwnProperty(''login'') })());'
 
 ```
 
@@ -69,4 +69,5 @@ const loginAction = () => {
 ```js
 // solution required
 ```
-</section>
+
+/section>

@@ -19,9 +19,9 @@ localeTitle: 创建一个简单的JSX元素
 ```yml
 tests:
   - text: 常量<code>JSX</code>应该返回一个<code>h1</code>元素。
-    testString: 'assert(JSX.type === "h1", "The constant <code>JSX</code> should return an <code>h1</code> element.");'
+    testString: assert(JSX.type === 'h1');
   - text: <code>h1</code>标签应该包含文本<code>Hello JSX!</code>
-    testString: 'assert(Enzyme.shallow(JSX).contains("Hello JSX!"), "The <code>h1</code> tag should include the text <code>Hello JSX!</code>");'
+    testString: assert(Enzyme.shallow(JSX).contains('Hello JSX!'));
 
 ```
 
@@ -57,4 +57,5 @@ console.info('after the test');
 ```js
 // solution required
 ```
-</section>
+
+/section>

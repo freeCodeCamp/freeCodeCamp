@@ -19,15 +19,15 @@ localeTitle: 有条件地改变内联CSS基于组件状态
 ```yml
 tests:
   - text: <code>GateKeeper</code>组件应该呈现<code>div</code>元素。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(GateKeeper)); return mockedComponent.find("div").length === 1; })(), "The <code>GateKeeper</code> component should render a <code>div</code> element.");'
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(GateKeeper)); return mockedComponent.find('div').length === 1; })());
   - text: 应使用设置为空字符串的状态键<code>input</code>初始化<code>GateKeeper</code>组件。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(GateKeeper)); return mockedComponent.state().input === ""; })(), "The <code>GateKeeper</code> component should be initialized with a state key <code>input</code> set to an empty string.");'
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(GateKeeper)); return mockedComponent.state().input === ''; })());
   - text: <code>GateKeeper</code>组件应呈现<code>h3</code>标记和<code>input</code>标记。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(GateKeeper)); return mockedComponent.find("h3").length === 1 && mockedComponent.find("input").length === 1; })(), "The <code>GateKeeper</code> component should render an <code>h3</code> tag and an <code>input</code> tag.");'
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(GateKeeper)); return mockedComponent.find('h3').length === 1 && mockedComponent.find('input').length === 1; })());
   - text: <code>input</code>标记最初应为<code>border</code>属性的<code>1px solid black</code>样式。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(GateKeeper)); return mockedComponent.find("input").props().style.border === "1px solid black"; })(), "The <code>input</code> tag should initially have a style of <code>1px solid black</code> for the <code>border</code> property.");'
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(GateKeeper)); return mockedComponent.find('input').props().style.border === '1px solid black'; })());
   - text: 如果状态中的输入值超过15个字符，则<code>input</code>标记应使用<code>3px solid red</code>边框进行样式设置。
-    testString: 'async () => {  const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); const mockedComponent = Enzyme.mount(React.createElement(GateKeeper)); const simulateChange = (el, value) => el.simulate("change", {target: {value}}); let initialStyle = mockedComponent.find("input").props().style.border; const state_1 = () => { mockedComponent.setState({input: "this is 15 char" }); return waitForIt(() => mockedComponent.find("input").props().style.border )}; const state_2 = () => { mockedComponent.setState({input: "A very long string longer than 15 characters." }); return waitForIt(() => mockedComponent.find("input").props().style.border )}; const style_1 = await state_1(); const style_2 = await state_2(); assert(initialStyle === "1px solid black" && style_1 === "1px solid black" && style_2 === "3px solid red", "The <code>input</code> tag should be styled with a border of <code>3px solid red</code> if the input value in state is longer than 15 characters."); }; '
+    testString: 'async () => {  const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); const mockedComponent = Enzyme.mount(React.createElement(GateKeeper)); const simulateChange = (el, value) => el.simulate(''change'', {target: {value}}); let initialStyle = mockedComponent.find(''input'').props().style.border; const state_1 = () => { mockedComponent.setState({input: ''this is 15 char'' }); return waitForIt(() => mockedComponent.find(''input'').props().style.border )}; const state_2 = () => { mockedComponent.setState({input: ''A very long string longer than 15 characters.'' }); return waitForIt(() => mockedComponent.find(''input'').props().style.border )}; const style_1 = await state_1(); const style_2 = await state_2(); assert(initialStyle === ''1px solid black'' && style_1 === ''1px solid black'' && style_2 === ''3px solid red''); }; '
 
 ```
 
@@ -92,4 +92,5 @@ console.info('after the test');
 ```js
 // solution required
 ```
-</section>
+
+/section>

@@ -22,13 +22,13 @@ localeTitle: 样式文本输入作为表单控件
 ```yml
 tests:
   - text: 在表单中提交<code>btn btn-primary</code>类的提交按钮。
-    testString: 'assert($("button[type=\"submit\"]").hasClass("btn btn-primary"), "Give the submit button in your form the classes <code>btn btn-primary</code>.");'
+    testString: assert($("button[type=\"submit\"]").hasClass("btn btn-primary"));
   - text: 在提交<code>button</code>元素中添加<code>&lt;i class=&quot;fa fa-paper-plane&quot;&gt;&lt;/i&gt;</code> 。
-    testString: 'assert($("button[type=\"submit\"]:has(i.fa.fa-paper-plane)").length > 0, "Add a <code>&#60;i class="fa fa-paper-plane"&#62;&#60;/i&#62;</code> within your submit <code>button</code> element.");'
+    testString: assert($("button[type=\"submit\"]:has(i.fa.fa-paper-plane)").length > 0);
   - text: 在表单中<code>input</code>文本<code>input</code>类<code>form-control</code> 。
-    testString: 'assert($("input[type=\"text\"]").hasClass("form-control"), "Give the text <code>input</code> in your form the class <code>form-control</code>.");'
+    testString: assert($("input[type=\"text\"]").hasClass("form-control"));
   - text: 确保每个<code>i</code>元素都有一个结束标记。
-    testString: 'assert(code.match(/<\/i>/g) && code.match(/<\/i/g).length > 3, "Make sure each of your <code>i</code> elements has a closing tag.");'
+    testString: assert(code.match(/<\/i>/g) && code.match(/<\/i/g).length > 3);
 
 ```
 
@@ -88,7 +88,7 @@ tests:
     <li>thunder</li>
     <li>other cats</li>
   </ol>
-  <form action="/submit-cat-photo">
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
     <div class="row">
       <div class="col-xs-6">
         <label><input type="radio" name="indoor-outdoor"> Indoor</label>
@@ -127,4 +127,5 @@ tests:
 ```js
 // solution required
 ```
-</section>
+
+/section>

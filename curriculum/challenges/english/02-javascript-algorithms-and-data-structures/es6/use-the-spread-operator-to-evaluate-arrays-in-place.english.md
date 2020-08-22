@@ -2,6 +2,7 @@
 id: 587d7b89367417b2b2512b48
 title: Use the Spread Operator to Evaluate Arrays In-Place
 challengeType: 1
+isHidden: false
 forumTopicId: 301222
 ---
 
@@ -62,7 +63,7 @@ tests:
 const arr1 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY'];
 let arr2;
 
-arr2 = [];  // change this line
+arr2 = [];  // Change this line
 
 console.log(arr2);
 ```

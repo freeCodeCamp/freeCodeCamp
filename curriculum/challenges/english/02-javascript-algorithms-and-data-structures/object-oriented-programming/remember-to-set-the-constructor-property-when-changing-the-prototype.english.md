@@ -2,6 +2,7 @@
 id: 587d7daf367417b2b2512b80
 title: Remember to Set the Constructor Property when Changing the Prototype
 challengeType: 1
+isHidden: false
 forumTopicId: 301323
 ---
 
@@ -59,7 +60,7 @@ function Dog(name) {
   this.name = name;
 }
 
-// Modify the code below this line
+// Only change code below this line
 Dog.prototype = {
 
   numLegs: 4,

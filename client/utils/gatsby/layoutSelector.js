@@ -22,7 +22,10 @@ export default function layoutSelector({ element, props }) {
   if (/^\/guide(\/.*)*/.test(pathname)) {
     console.log('Hitting guide for some reason. Need a redirect.');
   }
-  if (/^\/learn(\/.*)*/.test(pathname)) {
+  if (
+    /^\/learn(\/.*)*/.test(pathname) &&
+    false === /^\/learn\/$|^\/learn$/.test(pathname)
+  ) {
     return (
       <DefaultLayout pathname={pathname} showFooter={false}>
         {element}

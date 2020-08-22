@@ -19,7 +19,7 @@ localeTitle: 在当地管理国家
 ```yml
 tests:
   - text: '<code>DisplayMessages</code>组件应使用等于<code>{ input: &quot;&quot;, messages: [] }</code>的状态进行初始化。'
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); const initialState = mockedComponent.state(); return ( typeof initialState === "object" && initialState.input === "" && initialState.messages.length === 0); })(), "The <code>DisplayMessages</code> component should initialize with a state equal to <code>{ input: "", messages: [] }</code>.");'
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); const initialState = mockedComponent.state(); return ( typeof initialState === "object" && initialState.input === "" && initialState.messages.length === 0); })());
   - text: <code>DisplayMessages</code>组件应该呈现包含<code>h2</code>元素， <code>button</code>元素， <code>ul</code>元素和<code>li</code>元素作为子元素的<code>div</code> 。
     testString: 'async () => { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); const state = () => { mockedComponent.setState({messages: ["__TEST__MESSAGE"]}); return waitForIt(() => mockedComponent )}; const updated = await state(); assert(updated.find("div").length === 1 && updated.find("h2").length === 1 && updated.find("button").length === 1 && updated.find("ul").length === 1, "The <code>DisplayMessages</code> component should render a <code>div</code> containing an <code>h2</code> element, a <code>button</code> element, a <code>ul</code> element, and <code>li</code> elements as children."); }; '
   - text: <code>input</code>元素应该以本地状态呈现<code>input</code>值。
@@ -85,4 +85,5 @@ console.info('after the test');
 ```js
 // solution required
 ```
-</section>
+
+/section>

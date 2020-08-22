@@ -19,13 +19,13 @@ localeTitle: 将调度映射到道具
 ```yml
 tests:
   - text: <code>addMessage</code>应该返回一个带有键<code>type</code>和<code>message</code>的对象。
-    testString: 'assert((function() { const addMessageTest = addMessage(); return ( addMessageTest.hasOwnProperty("type") && addMessageTest.hasOwnProperty("message")); })(), "<code>addMessage</code> should return an object with keys <code>type</code> and <code>message</code>.");'
+    testString: assert((function() { const addMessageTest = addMessage(); return ( addMessageTest.hasOwnProperty('type') && addMessageTest.hasOwnProperty('message')); })());
   - text: <code>mapDispatchToProps</code>应该是一个函数。
-    testString: 'assert(typeof mapDispatchToProps === "function", "<code>mapDispatchToProps</code> should be a function.");'
+    testString: assert(typeof mapDispatchToProps === 'function');
   - text: <code>mapDispatchToProps</code>应该返回一个对象。
-    testString: 'assert(typeof mapDispatchToProps() === "object", "<code>mapDispatchToProps</code> should return an object.");'
+    testString: assert(typeof mapDispatchToProps() === 'object');
   - text: 使用<code>submitNewMessage</code>的<code>mapDispatchToProps</code>调度<code>addMessage</code>应该向调度函数返回一条消息。
-    testString: 'assert((function() { let testAction; const dispatch = (fn) => { testAction = fn; }; let dispatchFn = mapDispatchToProps(dispatch); dispatchFn.submitNewMessage("__TEST__MESSAGE__"); return (testAction.type === "ADD" && testAction.message === "__TEST__MESSAGE__"); })(), "Dispatching <code>addMessage</code> with <code>submitNewMessage</code> from <code>mapDispatchToProps</code> should return a message to the dispatch function.");'
+    testString: assert((function() { let testAction; const dispatch = (fn) => { testAction = fn; }; let dispatchFn = mapDispatchToProps(dispatch); dispatchFn.submitNewMessage('__TEST__MESSAGE__'); return (testAction.type === 'ADD' && testAction.message === '__TEST__MESSAGE__'); })());
 
 ```
 
@@ -60,4 +60,5 @@ const addMessage = (message) => {
 ```js
 // solution required
 ```
-</section>
+
+/section>

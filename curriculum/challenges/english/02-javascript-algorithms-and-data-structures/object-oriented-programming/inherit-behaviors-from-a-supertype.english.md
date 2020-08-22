@@ -2,6 +2,7 @@
 id: 587d7db0367417b2b2512b84
 title: Inherit Behaviors from a Supertype
 challengeType: 1
+isHidden: false
 forumTopicId: 301319
 ---
 
@@ -81,13 +82,10 @@ Animal.prototype = {
   }
 };
 
-// Add your code below this line
+// Only change code below this line
 
 let duck; // Change this line
 let beagle; // Change this line
-
-duck.eat(); // Should print "nom nom nom"
-beagle.eat(); // Should print "nom nom nom"
 ```
 
 </div>

@@ -2,31 +2,53 @@
 id: cf1111c1c12feddfaeb3bdef
 title: Use Conditional Logic with If Statements
 challengeType: 1
-videoUrl: ''
-localeTitle: 使用条件逻辑和If语句
+videoUrl: 'https://scrimba.com/c/cy87mf3'
+forumTopicId: 18348
+localeTitle: 用 if 语句来表达条件逻辑
 ---
 
 ## Description
-<section id="description"> <code>If</code>语句用于在代码中做出决定。关键字<code>if</code>告诉JavaScript在括号中定义的特定条件下执行花括号中的代码。这些条件称为<code>Boolean</code>条件，它们可能只是<code>true</code>或<code>false</code> 。当条件计算结果为<code>true</code> ，程序将执行花括号内的语句。当布尔条件的计算结果为<code>false</code> ，大括号内的语句将不会执行。 <strong>伪代码</strong> <blockquote> if（ <i>condition为true</i> ）{ <br> <i>声明被执行</i> <br> } </blockquote> <strong>例</strong> <blockquote>功能测试（myCondition）{ <br> if（myCondition）{ <br>回归“这是真的”; <br> } <br>返回“这是假的”; <br> } <br>测试（真）; //返回“这是真的” <br>测试（假）; //返回“这是假的” </blockquote>当使用值<code>true</code>调用<code>test</code> ， <code>if</code>语句将评估<code>myCondition</code>以查看它是否为<code>true</code> 。因为它是<code>true</code> ，函数返回<code>&quot;It was true&quot;</code> 。当我们使用<code>false</code>值调用<code>test</code>时， <code>myCondition</code> <em>不为</em> <code>true</code>并且不执行花括号中的语句，函数返回<code>&quot;It was false&quot;</code> 。 </section>
+<section id='description'>
+<code>If</code>语句用于在代码中做条件判断。关键字<code>if</code>告诉 JavaScript 在小括号中的条件为真的情况下去执行定义在大括号里面的代码。这种条件被称为<code>Boolean</code>条件，因为他们只可能是<code>true</code>（真）或<code>false</code>（假）。
+当条件的计算结果为<code>true</code>，程序执行大括号内的语句。当布尔条件的计算结果为<code>false</code>，大括号内的代码将不会执行。
+<strong>伪代码</strong>
+<blockquote>if(<i>条件为真</i>){<br>  <i>语句被执行</i><br>}</blockquote>
+<strong>示例</strong>
+
+```js
+function test (myCondition) {
+  if (myCondition) {
+     return "It was true";
+  }
+  return "It was false";
+}
+test(true);  // returns "It was true"
+test(false); // returns "It was false"
+```
+
+当<code>test</code>被调用，并且传递进来的参数值为<code>true</code>，<code>if</code>语句会计算<code>myCondition</code>的结果，看它是真还是假。如果条件为<code>true</code>，函数会返回<code>"It was true"</code>。当<code>test</code>被调用，并且传递进来的参数值为<code>false</code>，<code>myCondition</code><em>不</em> 为<code>true</code>，并且不执行大括号后面的语句，函数返回<code>"It was false"</code>。
+</section>
 
 ## Instructions
-<section id="instructions">在函数内部创建一个<code>if</code>语句<code>&quot;Yes, that was true&quot;</code>如果参数<code>wasThatTrue</code>为<code>true</code>则返回<code>&quot;Yes, that was true&quot;</code> <code>&quot;No, that was false&quot;</code>否则返回<code>&quot;No, that was false&quot;</code> 。 </section>
+<section id='instructions'>
+在函数内部创建一个<code>if</code>语句，如果该参数<code>wasThatTrue</code>值为<code>true</code>，返回<code>"Yes, that was true"</code>，否则，并返回<code>"No, that was false"</code>。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>trueOrFalse</code>应该是一个函数
-    testString: 'assert(typeof trueOrFalse === "function", "<code>trueOrFalse</code> should be a function");'
-  - text: <code>trueOrFalse(true)</code>应该返回一个字符串
-    testString: 'assert(typeof trueOrFalse(true) === "string", "<code>trueOrFalse(true)</code> should return a string");'
-  - text: <code>trueOrFalse(false)</code>应该返回一个字符串
-    testString: 'assert(typeof trueOrFalse(false) === "string", "<code>trueOrFalse(false)</code> should return a string");'
-  - text: <code>trueOrFalse(true)</code>应该返回“是的，那是真的”
-    testString: 'assert(trueOrFalse(true) === "Yes, that was true", "<code>trueOrFalse(true)</code> should return "Yes, that was true"");'
-  - text: <code>trueOrFalse(false)</code>应该返回“No，that was false”
-    testString: 'assert(trueOrFalse(false) === "No, that was false", "<code>trueOrFalse(false)</code> should return "No, that was false"");'
+  - text: <code>trueOrFalse</code>应该是一个函数。
+    testString: assert(typeof trueOrFalse === "function");
+  - text: <code>trueOrFalse(true)</code>应该返回一个字符串。
+    testString: assert(typeof trueOrFalse(true) === "string");
+  - text: <code>trueOrFalse(false)</code>应该返回一个字符串。
+    testString: assert(typeof trueOrFalse(false) === "string");
+  - text: <code>trueOrFalse(true)</code>应该返回 "Yes, that was true"。
+    testString: assert(trueOrFalse(true) === "Yes, that was true");
+  - text: <code>trueOrFalse(false)</code>应该返回 "No, that was false"。
+    testString: assert(trueOrFalse(false) === "No, that was false");
 
 ```
 
@@ -59,7 +81,6 @@ function trueOrFalse(wasThatTrue) {
 
 // Change this value to test
 trueOrFalse(true);
-
 ```
 
 </div>
@@ -71,7 +92,14 @@ trueOrFalse(true);
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+function trueOrFalse(wasThatTrue) {
+  if (wasThatTrue) {
+    return "Yes, that was true";
+  }
+  return "No, that was false";
+}
 ```
+
 </section>

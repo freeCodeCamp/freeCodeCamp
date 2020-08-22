@@ -2,31 +2,45 @@
 id: 587d7da9367417b2b2512b67
 title: Add Elements to the End of an Array Using concat Instead of push
 challengeType: 1
-videoUrl: ''
-localeTitle: 使用concat将元素添加到数组的末尾而不是push
+forumTopicId: 301226
+localeTitle: 使用 concat 而不是 push 将元素添加到数组的末尾
 ---
 
 ## Description
-<section id="description">函数式编程就是创建和使用非变异函数。最后一个挑战是将<code>concat</code>方法作为一种将数组组合成新数组而不改变原始数组的方法。将<code>concat</code>与<code>push</code>方法进行比较。 <code>Push</code>将一个项添加到调用它的同一个数组的末尾，这会改变该数组。这是一个例子： <blockquote> var arr = [1,2,3]; <br> arr.push（[4,5,6]）; <br> // arr更改为[1,2,3，[4,5,6]] <br> //不是函数式编程方式</blockquote> <code>Concat</code>提供了一种在数组末尾添加新项目而无任何变异副作用的方法。 </section>
+<section id='description'>
+函数式编程就是创建和使用具有不变性的函数。
+上一个挑战介绍了<code>concat</code>方法，这是一种在不改变原始数组的前提下，将数组组合成新数组的方法。将<code>concat</code>方法与<code>push</code>方法做比较，<code>Push</code>将元素添加到调用它的数组的末尾，这样会改变该数组。举个例子：
+
+```js
+var arr = [1, 2, 3];
+arr.push([4, 5, 6]);
+// arr is changed to [1, 2, 3, [4, 5, 6]]
+// Not the functional programming way
+```
+
+<code>Concat</code>方法可以将新项目添加到数组末尾，而不产生任何变化。
+</section>
 
 ## Instructions
-<section id="instructions">更改<code>nonMutatingPush</code>函数，使其使用<code>concat</code>将<code>newItem</code>添加到<code>original</code>结尾而不是<code>push</code> 。该函数应返回一个数组。 </section>
+<section id='instructions'>
+修改<code>nonMutatingPush</code>函数，用<code>concat</code>替代<code>push</code>将<code>newItem</code>添加到<code>original</code>末尾，该函数应返回一个数组。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您的代码应使用<code>concat</code>方法。
-    testString: 'assert(code.match(/\.concat/g), "Your code should use the <code>concat</code> method.");'
-  - text: 您的代码不应使用<code>push</code>方法。
-    testString: 'assert(!code.match(/\.push/g), "Your code should not use the <code>push</code> method.");'
-  - text: 第<code>first</code>数组不应该改变。
-    testString: 'assert(JSON.stringify(first) === JSON.stringify([1, 2, 3]), "The <code>first</code> array should not change.");'
-  - text: <code>second</code>数组不应该改变。
-    testString: 'assert(JSON.stringify(second) === JSON.stringify([4, 5]), "The <code>second</code> array should not change.");'
-  - text: '<code>nonMutatingPush([1, 2, 3], [4, 5])</code>应该返回<code>[1, 2, 3, 4, 5]</code> 。'
-    testString: 'assert(JSON.stringify(nonMutatingPush([1, 2, 3], [4, 5])) === JSON.stringify([1, 2, 3, 4, 5]), "<code>nonMutatingPush([1, 2, 3], [4, 5])</code> should return <code>[1, 2, 3, 4, 5]</code>.");'
+  - text: 应该使用<code>concat</code>方法。
+    testString: assert(code.match(/\.concat/g));
+  - text: 不能使用<code>push</code>方法。
+    testString: assert(!code.match(/\.push/g));
+  - text: 不能改变<code>first</code>数组。
+    testString: assert(JSON.stringify(first) === JSON.stringify([1, 2, 3]));
+  - text: 不能改变<code>second</code>数组。
+    testString: assert(JSON.stringify(second) === JSON.stringify([4, 5]));
+  - text: <code>nonMutatingPush([1, 2, 3], [4, 5])</code>应返回<code>[1, 2, 3, 4, 5]</code>。
+    testString: assert(JSON.stringify(nonMutatingPush([1, 2, 3], [4, 5])) === JSON.stringify([1, 2, 3, 4, 5]));
 
 ```
 
@@ -47,7 +61,6 @@ function nonMutatingPush(original, newItem) {
 var first = [1, 2, 3];
 var second = [4, 5];
 nonMutatingPush(first, second);
-
 ```
 
 </div>
@@ -60,6 +73,12 @@ nonMutatingPush(first, second);
 <section id='solution'>
 
 ```js
-// solution required
+function nonMutatingPush(original, newItem) {
+  return original.concat(newItem);
+}
+var first = [1, 2, 3];
+var second = [4, 5];
+nonMutatingPush(first, second);
 ```
+
 </section>

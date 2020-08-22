@@ -2,6 +2,7 @@
 id: 598f48a36c8c40764b4e52b3
 title: Prevent Object Mutation
 challengeType: 1
+isHidden: false
 forumTopicId: 301207
 ---
 
@@ -58,10 +59,10 @@ function freezeObj() {
   const MATH_CONSTANTS = {
     PI: 3.14
   };
-  // change code below this line
+  // Only change code below this line
 
 
-  // change code above this line
+  // Only change code above this line
   try {
     MATH_CONSTANTS.PI = 99;
   } catch(ex) {
@@ -87,10 +88,8 @@ function freezeObj() {
   const MATH_CONSTANTS = {
     PI: 3.14
   };
-  // change code below this line
   Object.freeze(MATH_CONSTANTS);
 
-  // change code above this line
   try {
     MATH_CONSTANTS.PI = 99;
   } catch(ex) {

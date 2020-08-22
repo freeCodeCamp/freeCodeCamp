@@ -2,6 +2,7 @@
 id: 56533eb9ac21ba0edf2244af
 title: Compound Assignment With Augmented Addition
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cDR6LCb'
 forumTopicId: 16661
 ---
@@ -56,12 +57,10 @@ var a = 3;
 var b = 17;
 var c = 12;
 
-// Only modify code below this line
-
+// Only change code below this line
 a = a + 12;
 b = 9 + b;
 c = c + 7;
-
 ```
 
 </div>

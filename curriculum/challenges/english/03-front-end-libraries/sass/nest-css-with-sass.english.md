@@ -2,6 +2,7 @@
 id: 587d7dbd367417b2b2512bb5
 title: Nest CSS with Sass
 challengeType: 0
+isHidden: false
 forumTopicId: 301457
 ---
 
@@ -66,7 +67,7 @@ tests:
 <div id='html-seed'>
 
 ```html
-<style type='text/sass'>
+<style type='text/scss'>
   .blog-post {
 
   }
@@ -95,7 +96,7 @@ tests:
 <section id='solution'>
 
 ```html
-<style type='text/sass'>
+<style type='text/scss'>
   .blog-post {
     h1 {
       text-align: center;

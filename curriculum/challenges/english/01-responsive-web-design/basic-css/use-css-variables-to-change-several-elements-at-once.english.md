@@ -2,6 +2,7 @@
 id: 5a9d725e424fe3d0e10cad10
 title: Use CSS Variables to change several elements at once
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/c/c6bDECm'
 forumTopicId: 301093
 ---
@@ -42,11 +43,11 @@ tests:
 <style>
   .penguin {
 
-    /* change code below */
+    /* Only change code below this line */
     --penguin-skin: black;
     --penguin-belly: gray;
     --penguin-beak: yellow;
-    /* change code above */
+    /* Only change code above this line */
 
     position: relative;
     margin: auto;

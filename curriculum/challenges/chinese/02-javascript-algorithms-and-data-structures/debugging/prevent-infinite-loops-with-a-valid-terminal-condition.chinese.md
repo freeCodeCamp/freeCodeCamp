@@ -18,9 +18,9 @@ localeTitle: 使用有效的终端条件防止无限循环
 ```yml
 tests:
   - text: 您的代码应该更改<code>for</code>循环的终端条件（中间部分）中的比较运算符。
-    testString: 'assert(code.match(/i\s*?<=\s*?4;/g).length == 1, "Your code should change the comparison operator in the terminal condition (the middle part) of the <code>for</code> loop.");'
+    testString: assert(code.match(/i\s*?<=\s*?4;/g).length == 1);
   - text: 您的代码应该在循环的终端条件中修复比较运算符。
-    testString: 'assert(!code.match(/i\s*?!=\s*?4;/g), "Your code should fix the comparison operator in the terminal condition of the loop.");'
+    testString: assert(!code.match(/i\s*?!=\s*?4;/g));
 
 ```
 
@@ -52,4 +52,5 @@ function myFunc() {
 ```js
 // solution required
 ```
-</section>
+
+/section>

@@ -19,13 +19,13 @@ localeTitle: 标签Bootstrap Wells
 ```yml
 tests:
   - text: 在每个<code>&lt;div class=&quot;col-xs-6&quot;&gt;</code>元素中添加一个<code>h4</code>元素。
-    testString: 'assert($(".col-xs-6").children("h4") && $(".col-xs-6").children("h4").length > 1, "Add an <code>h4</code> element to each of your <code>&#60;div class="col-xs-6"&#62;</code> elements.");'
+    testString: assert($(".col-xs-6").children("h4") && $(".col-xs-6").children("h4").length > 1);
   - text: '一个<code>h4</code>元素应该有<code>#left-well</code>文本。'
-    testString: 'assert(new RegExp("#left-well","gi").test($("h4").text()), "One <code>h4</code> element should have the text <code>#left-well</code>.");'
+    testString: assert(new RegExp("#left-well","gi").test($("h4").text()));
   - text: '一个<code>h4</code>元素应该有<code>#right-well</code>文本。'
-    testString: 'assert(new RegExp("#right-well","gi").test($("h4").text()), "One <code>h4</code> element should have the text <code>#right-well</code>.");'
+    testString: assert(new RegExp("#right-well","gi").test($("h4").text()));
   - text: 确保所有<code>h4</code>元素都有结束标记。
-    testString: 'assert(code.match(/<\/h4>/g) && code.match(/<h4/g) && code.match(/<\/h4>/g).length === code.match(/<h4/g).length, "Make sure all your <code>h4</code> elements have closing tags.");'
+    testString: assert(code.match(/<\/h4>/g) && code.match(/<h4/g) && code.match(/<\/h4>/g).length === code.match(/<h4/g).length);
 
 ```
 
@@ -73,4 +73,5 @@ tests:
 ```js
 // solution required
 ```
-</section>
+
+/section>

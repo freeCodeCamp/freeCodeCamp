@@ -19,9 +19,9 @@ localeTitle: 从Redux商店获取状态
 ```yml
 tests:
   - text: 对于初始状态，redux存储的值应为5。
-    testString: 'assert(store.getState()===5, "The redux store should have a value of 5 for the initial state.");'
+    testString: assert(store.getState()===5);
   - text: 应该存在一个变量<code>currentState</code> ，并且应该为其分配Redux存储的当前状态。
-    testString: 'getUserInput => assert(currentState === 5 && getUserInput("index").includes("store.getState()"), "A variable <code>currentState</code> should exist and should be assigned the current state of the Redux store.");'
+    testString: getUserInput => assert(currentState === 5 && getUserInput('index').includes('store.getState()'));
 
 ```
 
@@ -53,4 +53,5 @@ const store = Redux.createStore(
 ```js
 // solution required
 ```
-</section>
+
+/section>

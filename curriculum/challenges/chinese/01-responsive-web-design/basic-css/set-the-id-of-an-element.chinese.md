@@ -2,23 +2,32 @@
 id: bad87eee1348bd9aede07836
 title: Set the id of an Element
 challengeType: 0
-videoUrl: ''
-localeTitle: 设置元素的id
+videoUrl: 'https://scrimba.com/c/cN6MEc2'
+forumTopicId: 18279
+localeTitle: 设置元素的 id
 ---
 
 ## Description
-<section id="description">除了类之外，每个HTML元素还可以具有<code>id</code>属性。使用<code>id</code>属性有几个好处：您可以使用<code>id</code>来设置单个元素的样式，稍后您将学习如何使用它来使用JavaScript选择和修改特定元素。 <code>id</code>属性应该是唯一的。浏览器不会强制执行此操作，但这是广泛认可的最佳实践。所以请不要给多个元素赋予相同的<code>id</code>属性。这里有一个例子，说明如何为你的<code>h2</code>元素提供<code>cat-photo-app</code> <code>&lt;h2 id=&quot;cat-photo-app&quot;&gt;</code> ： <code>&lt;h2 id=&quot;cat-photo-app&quot;&gt;</code> </section>
+<section id='description'>
+除了class属性，每一个 HTML 元素也都有<code>id</code>属性。
+使用<code>id</code>有几个好处：你可以通过<code>id</code>选择器来改变单个元素的样式，稍后的课程中，你也会了解到在 JavaScript 里面，可以通过<code>id</code>来选择元素和操作元素。
+<code>id</code>属性应是唯一的。浏览器不强迫执行这规范，但是这是广泛认可的最佳实践。所以，请不要给多个元素设置相同的<code>id</code>属性。
+设置<code>h2</code>元素的 id 为<code>cat-photo-app</code>的方法如下：
+<code>&#60;h2 id="cat-photo-app"></code>
+</section>
 
 ## Instructions
-<section id="instructions">为<code>form</code>元素添加id <code>cat-photo-form</code> 。 </section>
+<section id='instructions'>
+设置<code>form</code>元素的 id 为<code>cat-photo-form</code>。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 为<code>form</code>元素添加<code>cat-photo-form</code>的id。
-    testString: 'assert($("form").attr("id") === "cat-photo-form", "Give your <code>form</code> element the id of <code>cat-photo-form</code>.");'
+  - text: '<code>form</code>元素的 id 应为<code>cat-photo-form</code>。'
+    testString: assert($("form").attr("id") === "cat-photo-form");
 
 ```
 
@@ -63,36 +72,35 @@ tests:
 
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
-  <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
-
-  <a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-
+  <p class="red-text">点击查看更多<a href="#">猫图</a>.</p>
+  
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="一只仰卧着的萌猫" class="smaller-image thick-green-border"></a>
+  
   <div class="silver-background">
-    <p>Things cats love:</p>
+    <p>猫咪最喜欢的三件东西：</p>
     <ul>
-      <li>cat nip</li>
-      <li>laser pointers</li>
-      <li>lasagna</li>
+      <li>猫薄荷</li>
+      <li>激光笔</li>
+      <li>千层饼</li>
     </ul>
-    <p>Top 3 things cats hate:</p>
+    <p>猫咪最讨厌的三件东西：</p>
     <ol>
-      <li>flea treatment</li>
-      <li>thunder</li>
-      <li>other cats</li>
+      <li>跳蚤</li>
+      <li>打雷</li>
+      <li>同类</li>
     </ol>
   </div>
-
-  <form action="/submit-cat-photo">
-    <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
-    <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
-    <label><input type="checkbox" name="personality" checked> Loving</label>
-    <label><input type="checkbox" name="personality"> Lazy</label>
-    <label><input type="checkbox" name="personality"> Energetic</label><br>
-    <input type="text" placeholder="cat photo URL" required>
-    <button type="submit">Submit</button>
+  
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
+    <label><input type="radio" name="indoor-outdoor">室内</label>
+    <label><input type="radio" name="indoor-outdoor">室外</label><br>
+    <label><input type="checkbox" name="personality">忠诚</label>
+    <label><input type="checkbox" name="personality">懒惰</label>
+    <label><input type="checkbox" name="personality">积极</label><br>
+    <input type="text" placeholder="猫咪图片地址" required>
+    <button type="submit">提交</button>
   </form>
 </main>
-
 ```
 
 </div>
@@ -104,7 +112,9 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>
+              

@@ -18,9 +18,9 @@ localeTitle: 捕获使用赋值运算符而不是等式运算符
 ```yml
 tests:
   - text: 您的代码应该修复条件，以便检查是否相等，而不是使用赋值。
-    testString: 'assert(result == "Not equal!", "Your code should fix the condition so it checks for equality, instead of using assignment.");'
+    testString: assert(result == "Not equal!");
   - text: 条件可以使用<code>==</code>或<code>===</code>来测试相等性。
-    testString: 'assert(code.match(/x\s*?===?\s*?y/g), "The condition can use either <code>==</code> or <code>===</code> to test for equality.");'
+    testString: assert(code.match(/x\s*?===?\s*?y/g));
 
 ```
 
@@ -58,4 +58,5 @@ console.log(result);
 ```js
 // solution required
 ```
-</section>
+
+/section>

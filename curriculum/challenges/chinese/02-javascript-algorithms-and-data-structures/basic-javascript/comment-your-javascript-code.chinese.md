@@ -2,25 +2,45 @@
 id: bd7123c9c441eddfaeb4bdef
 title: Comment Your JavaScript Code
 challengeType: 1
-videoUrl: ''
-localeTitle: 评论您的JavaScript代码
+videoUrl: 'https://scrimba.com/c/c7ynnTp'
+forumTopicId: 16783
+localeTitle: 给代码添加注释
 ---
 
 ## Description
-<section id="description">注释是JavaScript有意忽略的代码行。注释是一种很好的方式，可以将注释留给自己和其他人，这些人稍后需要弄清楚代码的作用。在JavaScript中编写注释有两种方法：使用<code>//</code>将告诉JavaScript忽略当前行上的其余文本： <blockquote> //这是一个内嵌评论。 </blockquote>您可以使用<code>/*</code>开头并以<code>*/</code>结尾的多行注释： <blockquote> /* 这是一个<br>多行评论* / </blockquote> <strong>最佳实践</strong> <br>在编写代码时，应定期添加注释以阐明代码部分的功能。良好的评论可以帮助传达您的代码的意图 - 包括他人<em>和</em>未来的自我。 </section>
+<section id='description'>
+被注释的代码块在 JavaScript 之中是不会执行的。在代码中写注释是一个非常好的方式让你自己和其他人理解代码。
+JavaScript 中的注释方式有以下两种：
+使用<code>//</code>注释掉当前行的代码
+
+```js
+// This is an in-line comment.
+```
+
+你也可以使用多行注释来注释你的代码，以<code>/*</code>开始，用<code>*/</code>来结束，就像下面这样：
+
+```js
+/* This is a
+multi-line comment */
+```
+
+<strong>最佳实践</strong><br>写代码的时候，要定期添加注释对部分代码块进行解释。适当的注释能让别人和你自己更容易看懂代码。
+</section>
 
 ## Instructions
-<section id="instructions">尝试创建每种评论类型之一。 </section>
+<section id='instructions'>
+尝试创建这两种类型的注释。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 创建一个包含至少五个字母的<code>//</code>样式注释。
-    testString: 'assert(code.match(/(\/\/)...../g), "Create a <code>//</code> style comment that contains at least five letters.");'
-  - text: 创建包含至少五个字母的<code>/* */</code>样式注释。
-    testString: 'assert(code.match(/(\/\*)([^\/]{5,})(?=\*\/)/gm), "Create a <code>/* */</code> style comment that contains at least five letters.");'
+  - text: 创建一个<code>//</code>样式的注释, 被注释的文本至少要包含 5 个字符。
+    testString: assert(code.match(/(\/\/)...../g));
+  - text: 创建一个<code>/* */</code>样式的注释, 被注释的文本至少要包含 5 个字符。
+    testString: assert(code.match(/(\/\*)([^\/]{5,})(?=\*\/)/gm));
 
 ```
 
@@ -44,7 +64,10 @@ tests:
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+// Fake Comment
+/* Another Comment */
 ```
+
 </section>

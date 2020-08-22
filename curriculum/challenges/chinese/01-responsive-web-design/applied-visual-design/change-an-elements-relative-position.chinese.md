@@ -2,25 +2,41 @@
 id: 587d781e367417b2b2512ac9
 title: Change an Element's Relative Position
 challengeType: 0
-videoUrl: ''
+videoUrl: 'https://scrimba.com/c/czVmMtZ'
+forumTopicId: 301044
 localeTitle: 更改元素的相对位置
 ---
 
 ## Description
-<section id="description"> CSS将每个HTML元素视为自己的框，通常称为<code>CSS Box Model</code> 。块级项目自动从新行开始（想想标题，段落和div），而内联项目位于周围内容（如图像或跨度）中。以这种方式的元素的默认布局称为文档的<code>normal flow</code> ，但CSS提供position属性来覆盖它。当元素的位置设置为<code>relative</code> ，它允许您指定CSS应如何<i>相</i>对于页面正常流中的当前位置移动它。它与<code>left</code>或<code>right</code>以及<code>top</code>或<code>bottom</code>的CSS偏移属性配对。这些表示将物品从通常定位的位置<i>移开的</i>像素，百分比或ems的数量。以下示例将段落从底部移开10个像素： <blockquote> p { <br>位置：相对; <br>底部：10px; <br> } </blockquote>将元素的位置更改为相对位置不会将其从正常流中移除 - 其周围的其他元素仍然表现为该项位于其默认位置。 <strong>注意</strong> <br>定位为页面的可视化布局提供了很大的灵活性和强大功能。值得记住的是，无论元素的位置如何，底层的HTML标记都应该有条理，从上到下阅读时才有意义。这就是具有视觉障碍的用户（依赖屏幕阅读器等辅助设备）访问您的内容的方式。 </section>
+<section id='description'>
+在 CSS 里一切 HTML 元素皆为盒子，也就是通常所说的 <code>盒模型</code>。块级元素自动从新的一行开始（比如标题、段落以及 div），行内元素排列在上一个元素后（比如图片以及 span）。元素默认按照这种方式布局称为文档的 <code>普通流</code>，同时 CSS 提供了 position 属性来覆盖它。
+当元素的 position 设置为 <code>relative</code> 时，它允许你通过 CSS 指定该元素在当前普通流页面下的相对偏移量。 CSS 里控制各个方向偏移量的对应的属性是 <code>left</code>、<code>right</code>、<code>top</code> 和 <code>bottom</code>。它们代表着从原来的位置向对应的方向偏移指定的像素、百分比或者 ems。下面的例子展示了段落向上偏移 10 像素：
+
+```css
+p {
+  position: relative;
+  bottom: 10px;
+}
+```
+
+把元素的 position 设置成 relative 并不会改变该元素在普通流布局所占的位置，也不会对其它元素的位置产生影响。
+<strong>注意</strong><br>定位可以让你在页面布局上更灵活、高效。注意不管元素的定位是怎样，内部的 HTML 代码阅读起来应该是整洁、有意义的。这样也可以让视障人员（他们重度依赖辅助设备比如屏幕阅读软件）能够浏览你的网页。
+</section>
 
 ## Instructions
-<section id="instructions">将<code>h2</code>的<code>position</code>更改为<code>relative</code> <code>position</code> ，并使用CSS偏移将其移动到距离正常流动位置<code>top</code> 15个像素的位置。请注意，周围的h1和p元素的位置没有影响。 </section>
+<section id='instructions'>
+把 <code>h2</code> 的 <code>position</code> 设置成 <code>relative</code>，使用相应的 CSS 属性调整 <code>h2</code> 的位置，使其向下偏移 15 像素，同时还在普通流中占据原来的位置。注意不要对 h1 和 p 元素的位置产生影响。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>h2</code>元素的<code>position</code>属性应设置为<code>relative</code> 。
-    testString: 'assert($("h2").css("position") == "relative", "The <code>h2</code> element should have a <code>position</code> property set to <code>relative</code>.");'
-  - text: 您的代码应该使用CSS偏移来相对地将<code>h2</code> 15px定位在远离其正常位置的<code>top</code> 。
-    testString: 'assert($("h2").css("top") == "15px", "Your code should use a CSS offset to relatively position the <code>h2</code> 15px away from the <code>top</code> of where it normally sits.");'
+  - text: '<code>h2</code> 元素应该添加 <code>position</code> 属性并赋值 <code>relative</code>。'
+    testString: assert($('h2').css('position') == 'relative');
+  - text: '你应该使用 CSS 属性调整 <code>h2</code> 的位置使其从原来的位置向下偏移 <code>15px</code>。'
+    testString: assert($('h2').css('top') == '15px');
 
 ```
 
@@ -34,16 +50,15 @@ tests:
 ```html
 <style>
   h2 {
-
-
+    
+    
   }
 </style>
 <body>
-  <h1>On Being Well-Positioned</h1>
-  <h2>Move me!</h2>
-  <p>I still think the h2 is where it normally sits.</p>
+  <h1>论如何优雅定位</h1>
+  <h2>我要离 h1 远一点！</h2>
+  <p>我觉得 h2 没变，还是在它原来的位置，相离莫相忘，且行且珍惜。</p>
 </body>
-
 ```
 
 </div>
@@ -55,7 +70,9 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>
+              

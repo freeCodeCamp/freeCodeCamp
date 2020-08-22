@@ -3,6 +3,7 @@ id: a789b3483989747d63b0e427
 title: Return Largest Numbers in Arrays
 isRequired: true
 challengeType: 5
+isHidden: false
 forumTopicId: 16042
 ---
 
@@ -10,7 +11,6 @@ forumTopicId: 16042
 <section id='description'>
 Return an array consisting of the largest number from each provided sub-array. For simplicity, the provided array will contain exactly 4 sub-arrays.
 Remember, you can iterate through an array with a simple for loop, and access each member with array syntax <code>arr[i]</code>.
-Remember to use <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> if you get stuck. Write your own code.
 </section>
 
 ## Instructions
@@ -43,7 +43,6 @@ tests:
 
 ```js
 function largestOfFour(arr) {
-  // You can do this!
   return arr;
 }
 

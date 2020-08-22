@@ -2,31 +2,63 @@
 id: 587d7db1367417b2b2512b87
 title: Add Methods After Inheritance
 challengeType: 1
-videoUrl: ''
+forumTopicId: 301315
 localeTitle: 继承后添加方法
 ---
 
 ## Description
-<section id="description">除了继承的方法之外，从<code>supertype</code>构造函数继承其<code>prototype</code>对象的构造函数仍然可以拥有自己的方法。例如， <code>Bird</code>是一个从<code>Animal</code>继承其<code>prototype</code>的构造函数： <blockquote> function Animal（）{} <br> Animal.prototype.eat = function（）{ <br> console.log（“nom nom nom”）; <br> }; <br>函数Bird（）{} <br> Bird.prototype = Object.create（Animal.prototype）; <br> Bird.prototype.constructor = Bird; </blockquote>除了从<code>Animal</code>继承的内容之外，您还希望添加<code>Bird</code>对象独有的行为。在这里， <code>Bird</code>将获得一个<code>fly()</code>函数。函数以与任何构造函数相同的方式添加到<code>Bird&#39;s</code> <code>prototype</code> ： <blockquote> Bird.prototype.fly = function（）{ <br> console.log（“我在飞！”）; <br> }; </blockquote>现在<code>Bird</code>实例将同时使用<code>eat()</code>和<code>fly()</code>方法： <blockquote> let duck = new Bird（）; <br> duck.eat（）; //打印“nom nom nom” <br> duck.fly（）; //打印“我在飞！” </blockquote></section>
+<section id='description'>
+从<code>父类</code>继承其<code>原型</code>对象的构造函数除了继承的方法之外，还可以有自己的方法。
+请看举例：<code>Bird</code>是一个构造函数，它继承了<code>Animal</code>构造函数的<code>原型</code>：
+
+```js
+function Animal() { }
+Animal.prototype.eat = function() {
+  console.log("nom nom nom");
+};
+function Bird() { }
+Bird.prototype = Object.create(Animal.prototype);
+Bird.prototype.constructor = Bird;
+```
+
+除了从<code>Animal</code>构造函数继承的行为之外，还需要给<code>Bird</code>对象添加它独有的行为。这里，我们给<code>Bird</code>对象添加一个<code>fly()</code>函数。函数会以一种与其他构造函数相同的方式添加到<code>Bird</code>的<code>原型</code>中：
+
+```js
+Bird.prototype.fly = function() {
+  console.log("I'm flying!");
+};
+```
+
+现在<code>Bird</code>的实例中就有了<code>eat()</code>和<code>fly()</code>这两个方法：
+
+```js
+let duck = new Bird();
+duck.eat(); // prints "nom nom nom"
+duck.fly(); // prints "I'm flying!"
+```
+
+</section>
 
 ## Instructions
-<section id="instructions">添加所有必需的代码，以便<code>Dog</code>对象继承自<code>Animal</code> ， <code>Dog&#39;s</code> <code>prototype</code>构造函数设置为Dog。然后将一个<code>bark()</code>方法添加到<code>Dog</code>对象，以便<code>beagle</code>可以<code>eat()</code>和<code>bark()</code> 。 <code>bark()</code>方法应该打印“Woof！”到控制台。 </section>
+<section id='instructions'>
+添加必要的代码，使得<code>Dog</code>对象继承<code>Animal</code>构造函数，并且把<code>Dog 原型</code>上的 constructor 属性设置为 Dog。然后给<code>Dog</code>对象添加一个<code>bark()</code>方法，这样的话，<code>beagle</code>将同时拥有<code>eat()</code>和<code>bark()</code>这两个方法。<code>bark()</code>方法中应该输出 "Woof!" 到控制台。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>Animal</code>不应该响应<code>bark()</code>方法。
-    testString: 'assert(typeof Animal.prototype.bark == "undefined", "<code>Animal</code> should not respond to the <code>bark()</code> method.");'
-  - text: <code>Dog</code>应该继承<code>Animal</code>的<code>eat()</code>方法。
-    testString: 'assert(typeof Dog.prototype.eat == "function", "<code>Dog</code> should inherit the <code>eat()</code> method from <code>Animal</code>.");'
-  - text: <code>Dog</code>应该将<code>bark()</code>方法作为<code>own</code>属性。
-    testString: 'assert(Dog.prototype.hasOwnProperty("bark"), "<code>Dog</code> should have the <code>bark()</code> method as an <code>own</code> property.");'
-  - text: <code>beagle</code>应该是<code>Animal</code>一个<code>instanceof</code> 。
-    testString: 'assert(beagle instanceof Animal, "<code>beagle</code> should be an <code>instanceof</code> <code>Animal</code>.");'
-  - text: <code>beagle</code>的构造函数应该设置为<code>Dog</code> 。
-    testString: 'assert(beagle.constructor === Dog, "The constructor for <code>beagle</code> should be set to <code>Dog</code>.");'
+  - text: <code>Animal</code>应该没有<code>bark()</code>方法。
+    testString: assert(typeof Animal.prototype.bark == "undefined");
+  - text: <code>Dog</code>应该继承了<code>Animal</code>构造函数的<code>eat()</code>方法。
+    testString: assert(typeof Dog.prototype.eat == "function");
+  - text: <code>Dog</code>应该有一个<code>bark()</code>方法作为<code>自身</code>属性。
+    testString: assert(Dog.prototype.hasOwnProperty('bark'));
+  - text: <code>beagle</code>应该是<code>Animal</code>的一个<code>instanceof</code>。
+    testString: assert(beagle instanceof Animal);
+  - text: <code>beagle</code>的 constructor 属性应该被设置为<code>Dog</code>。
+    testString: assert(beagle.constructor === Dog);
 
 ```
 
@@ -54,7 +86,6 @@ let beagle = new Dog();
 
 beagle.eat(); // Should print "nom nom nom"
 beagle.bark(); // Should print "Woof!"
-
 ```
 
 </div>
@@ -66,7 +97,21 @@ beagle.bark(); // Should print "Woof!"
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+function Animal() { }
+Animal.prototype.eat = function() { console.log("nom nom nom"); };
+
+function Dog() { }
+Dog.prototype = Object.create(Animal.prototype);
+Dog.prototype.constructor = Dog;
+Dog.prototype.bark = function () {
+  console.log('Woof!');
+};
+let beagle = new Dog();
+
+beagle.eat();
+beagle.bark();
 ```
+
 </section>

@@ -2,6 +2,7 @@
 id: 587d78ab367417b2b2512af1
 title: Add Flex Superpowers to the Tweet Embed
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/p/pVaDAv/c9W7MhM'
 forumTopicId: 301100
 ---
@@ -22,19 +23,19 @@ Add the CSS property <code>display: flex</code> to all of the following items - 
 
 ```yml
 tests:
-  - text: Your <code>header</code> should have a <code>display</code> property set to flex.
+  - text: Your <code>header</code> should have a <code>display</code> property set to <code>flex</code>.
     testString: assert($('header').css('display') == 'flex');
-  - text: Your <code>footer</code> should have a <code>display</code> property set to flex.
+  - text: Your <code>footer</code> should have a <code>display</code> property set to <code>flex</code>.
     testString: assert($('footer').css('display') == 'flex');
-  - text: Your <code>h3</code> should have a <code>display</code> property set to flex.
+  - text: Your <code>h3</code> should have a <code>display</code> property set to <code>flex</code>.
     testString: assert($('h3').css('display') == 'flex');
-  - text: Your <code>h4</code> should have a <code>display</code> property set to flex.
+  - text: Your <code>h4</code> should have a <code>display</code> property set to <code>flex</code>.
     testString: assert($('h4').css('display') == 'flex');
-  - text: Your <code>.profile-name</code> should have a <code>display</code> property set to flex.
+  - text: Your <code>.profile-name</code> should have a <code>display</code> property set to <code>flex</code>.
     testString: assert($('.profile-name').css('display') == 'flex');
-  - text: Your <code>.follow-btn</code> should have a <code>display</code> property set to flex.
+  - text: Your <code>.follow-btn</code> should have a <code>display</code> property set to <code>flex</code>.
     testString: assert($('.follow-btn').css('display') == 'flex');
-  - text: Your <code>.stats</code> should have a <code>display</code> property set to flex.
+  - text: Your <code>.stats</code> should have a <code>display</code> property set to <code>flex</code>.
     testString: assert($('.stats').css('display') == 'flex');
 
 ```

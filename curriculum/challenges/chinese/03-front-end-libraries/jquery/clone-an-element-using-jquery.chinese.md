@@ -19,11 +19,11 @@ localeTitle: 使用jQuery克隆元素
 ```yml
 tests:
   - text: 你的<code>target5</code>元素应该在你的<code>right-well</code> 。
-    testString: 'assert($("#right-well").children("#target5").length > 0, "Your <code>target5</code> element should be inside your <code>right-well</code>.");'
+    testString: assert($("#right-well").children("#target5").length > 0);
   - text: 您的<code>target5</code>元素的副本也应该在您的<code>left-well</code> 。
-    testString: 'assert($("#left-well").children("#target5").length > 0, "A copy of your <code>target5</code> element should also be inside your <code>left-well</code>.");'
+    testString: assert($("#left-well").children("#target5").length > 0);
   - text: 只使用jQuery来移动这些元素。
-    testString: 'assert(!code.match(/class.*animated/g), "Only use jQuery to move these elements.");'
+    testString: assert(!code.match(/class.*animated/g));
 
 ```
 
@@ -83,4 +83,5 @@ tests:
 ```js
 // solution required
 ```
-</section>
+
+/section>

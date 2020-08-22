@@ -21,11 +21,11 @@ localeTitle: 使用jQuery定位偶数元素
 ```yml
 tests:
   - text: jQuery认为的所有<code>target</code>元素都应该动摇。
-    testString: 'assert($(".target:even").hasClass("animated") && $(".target:even").hasClass("shake"), "All of the <code>target</code> elements that jQuery considers to be even should shake.");'
+    testString: assert($('.target:even').hasClass('animated') && $('.target:even').hasClass('shake'));
   - text: '您应该使用<code>:even</code>选择器来修改这些元素。'
-    testString: 'assert(code.match(/\:even/g), "You should use the <code>&#58;even</code> selector to modify these elements.");'
+    testString: assert(code.match(/\:even/g));
   - text: 只使用jQuery将这些类添加到元素中。
-    testString: 'assert(code.match(/\$\(".target:even"\)/g) || code.match(/\$\(".target:even"\)/g) || code.match(/\$\(".target"\).filter\(":even"\)/g) || code.match(/\$\(".target"\).filter\(":even"\)/g), "Only use jQuery to add these classes to the element.");'
+    testString: assert(code.match(/\$\(".target:even"\)/g) || code.match(/\$\('.target:even'\)/g) || code.match(/\$\(".target"\).filter\(":even"\)/g) || code.match(/\$\('.target'\).filter\(':even'\)/g));
 
 ```
 
@@ -90,4 +90,5 @@ tests:
 ```js
 // solution required
 ```
-</section>
+
+/section>

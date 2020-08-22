@@ -2,6 +2,7 @@
 id: 5a90376038fddaf9a66b5d3c
 title: Align All Items Horizontally using justify-items
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/p/pByETK/cJbpECn'
 forumTopicId: 301120
 ---
@@ -50,10 +51,10 @@ tests:
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 10px;
-    /* add your code below this line */
+    /* Only change code below this line */
 
-
-    /* add your code above this line */
+    
+    /* Only change code above this line */
   }
 </style>
 

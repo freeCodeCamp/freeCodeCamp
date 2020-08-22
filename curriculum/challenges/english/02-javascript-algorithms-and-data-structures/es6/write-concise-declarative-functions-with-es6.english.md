@@ -2,6 +2,7 @@
 id: 587d7b8b367417b2b2512b50
 title: Write Concise Declarative Functions with ES6
 challengeType: 1
+isHidden: false
 forumTopicId: 301224
 ---
 
@@ -58,14 +59,14 @@ tests:
 <div id='js-seed'>
 
 ```js
-// change code below this line
+// Only change code below this line
 const bicycle = {
   gear: 2,
   setGear: function(newGear) {
     this.gear = newGear;
   }
 };
-// change code above this line
+// Only change code above this line
 bicycle.setGear(3);
 console.log(bicycle.gear);
 ```

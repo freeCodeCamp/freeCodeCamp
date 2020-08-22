@@ -2,6 +2,7 @@
 id: 587d781c367417b2b2512ac4
 title: Set the font-size of Paragraph Text
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cVJ36Cr'
 forumTopicId: 301068
 ---

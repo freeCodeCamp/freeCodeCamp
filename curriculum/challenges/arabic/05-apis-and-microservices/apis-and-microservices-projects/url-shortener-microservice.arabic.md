@@ -8,9 +8,11 @@ isRequired: true
 
 ## Description
 <section id='description'> 
-بإنشاء تطبيق جافا سكريبت كامل المكدس الذي يشبه وظيفيًا هذا: <a href='https://thread-paper.glitch.me/' target='_blank'>https://thread-paper.glitch.me/</a> . 
-سيشركك العمل في هذا المشروع في كتابة شفرتك على Glitch في مشروعنا المبدئي. بعد الانتهاء من هذا المشروع ، يمكنك نسخ عنوان URL الافتراضي الخاص بك (إلى الصفحة الرئيسية لتطبيقك) في هذه الشاشة لاختباره! اختياريًا ، يمكنك اختيار كتابة مشروعك على نظام أساسي آخر ، ولكن يجب أن يكون مرئيًا بشكل عام لاختبارنا. 
-ابدأ هذا المشروع على خلل باستخدام <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-project-urlshortener/' target='_blank'>هذا الرابط</a> أو استنساخ <a href='https://github.com/freeCodeCamp/boilerplate-project-urlshortener/'>هذا المستودع</a> على GitHub! إذا كنت تستخدم خلل ، تذكر لحفظ الرابط لمشروعك في مكان آمن! 
+قم بإنشاء تطبيق جافا سكريبت كاملا يشبه وظيفيًا ما يلي:<a href='https://thread-paper.glitch.me/' target='_blank'>https://thread-paper.glitch.me/</a>  .
+ 
+سيتطلب عملك كتابة برنامجك على مشروعنا المبدأي في Glitch. بعد الانتهاء من هذا المشروع ، يمكنك نسخ عنوان URL الافتراضي الخاص بك (إلى الصفحة الرئيسية لتطبيقك) في هذه الشاشة لاختباره!
+يمكنك أيضا اختياريا كتابة مشروعك على نظام أساسي آخر ، ولكن يجب أن يكون مرئيًا بشكل عام لاختبارنا. 
+ابدأ هذا المشروع على Glitch باستخدام <a href='https://glitch.com/edit/#!/remix/clone-from-repo?REPO_URL=https://github.com/freeCodeCamp/boilerplate-project-urlshortener/' target='_blank'>هذا الرابط</a> أو استنساخ <a href='https://github.com/freeCodeCamp/boilerplate-project-urlshortener/'>هذا المشروع</a> على GitHub! إذا كنت تستخدم Glitch ، تذكر لحفظ الرابط لمشروعك في مكان آمن! 
 </section>
 
 ## Instructions
@@ -43,6 +45,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
+
 </section>

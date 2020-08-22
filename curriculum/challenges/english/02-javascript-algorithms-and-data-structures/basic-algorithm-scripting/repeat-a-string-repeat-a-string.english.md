@@ -3,13 +3,13 @@ id: afcc8d540bea9ea2669306b6
 title: Repeat a String Repeat a String
 isRequired: true
 challengeType: 5
+isHidden: false
 forumTopicId: 16041
 ---
 
 ## Description
 <section id='description'>
 Repeat a given string <code>str</code> (first argument) for <code>num</code> times (second argument). Return an empty string if <code>num</code> is not a positive number.
-Remember to use <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> if you get stuck. Write your own code.
 </section>
 
 ## Instructions
@@ -50,7 +50,6 @@ tests:
 
 ```js
 function repeatStringNumTimes(str, num) {
-  // repeat after me
   return str;
 }
 

@@ -2,6 +2,7 @@
 id: 587d7b87367417b2b2512b41
 title: Declare a Read-Only Variable with the const Keyword
 challengeType: 1
+isHidden: false
 forumTopicId: 301201
 ---
 
@@ -53,14 +54,14 @@ tests:
 function printManyTimes(str) {
   "use strict";
 
-  // change code below this line
+  // Only change code below this line
 
   var sentence = str + " is cool!";
   for (var i = 0; i < str.length; i+=2) {
     console.log(sentence);
   }
 
-  // change code above this line
+  // Only change code above this line
 
 }
 printManyTimes("freeCodeCamp");
@@ -79,14 +80,10 @@ printManyTimes("freeCodeCamp");
 function printManyTimes(str) {
   "use strict";
 
-  // change code below this line
-
   const SENTENCE = str + " is cool!";
   for (let i = 0; i < str.length; i+=2) {
     console.log(SENTENCE);
   }
-
-  // change code above this line
 
 }
 printManyTimes("freeCodeCamp");

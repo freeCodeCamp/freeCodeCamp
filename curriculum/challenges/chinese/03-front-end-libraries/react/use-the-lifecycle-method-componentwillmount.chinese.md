@@ -19,9 +19,9 @@ localeTitle: 使用生命周期方法componentWillMount
 ```yml
 tests:
   - text: <code>MyComponent</code>应该呈现<code>div</code>元素。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find("div").length === 1; })(), "<code>MyComponent</code> should render a <code>div</code> element.");'
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find('div').length === 1; })());
   - text: 应该在<code>componentWillMount</code>调用<code>console.log</code> 。
-    testString: 'assert((function() { const lifecycle = React.createElement(MyComponent).type.prototype.componentWillMount.toString().replace(/ /g,""); return lifecycle.includes("console.log("); })(), "<code>console.log</code> should be called in <code>componentWillMount</code>.");'
+    testString: assert((function() { const lifecycle = React.createElement(MyComponent).type.prototype.componentWillMount.toString().replace(/ /g,''); return lifecycle.includes('console.log('); })());
 
 ```
 
@@ -69,4 +69,5 @@ console.info('after the test');
 ```js
 // solution required
 ```
-</section>
+
+/section>

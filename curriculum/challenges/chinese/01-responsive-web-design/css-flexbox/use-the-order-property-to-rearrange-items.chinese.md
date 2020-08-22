@@ -2,25 +2,30 @@
 id: 587d78ae367417b2b2512aff
 title: Use the order Property to Rearrange Items
 challengeType: 0
-videoUrl: ''
-localeTitle: 使用order属性重新排列项目
+videoUrl: 'https://scrimba.com/p/pVaDAv/cMbvNAG'
+forumTopicId: 301116
+localeTitle: 使用 order 属性重新排列项目
 ---
 
 ## Description
-<section id="description"> <code>order</code>属性用于告诉CSS Flex项目在Flex容器中的显示顺序。默认情况下，项目将以与源HTML相同的顺序显示。该属性将数字作为值，可以使用负数。 </section>
+<section id='description'>
+<code>order</code>属性告诉 CSS flex 容器里项目的顺序。默认情况下，项目排列顺序与源 HTML 文件中顺序相同。这个属性接受数字作为参数，可以使用负数。
+</section>
 
 ## Instructions
-<section id="instructions">将CSS属性<code>order</code>添加到<code>#box-1</code>和<code>#box-2</code> 。给<code>#box-1</code>一个值2，给<code>#box-2</code>一个值1。 </section>
+<section id='instructions'>
+给<code>#box-1</code>和<code>#box-2</code>添加 CSS 属性<code>order</code>，<code>#box-1</code>的<code>order</code>属性值设为 <code>2</code>，<code>#box-2</code>的<code>order</code>属性值设为 <code>1</code>。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: '<code>#box-1</code>元素的<code>order</code>属性应设置为值2。'
-    testString: 'assert($("#box-1").css("order") == "2", "The <code>#box-1</code> element should have the <code>order</code> property set to a value of 2.");'
-  - text: '<code>#box-2</code>元素应该将<code>order</code>属性设置为值1。'
-    testString: 'assert($("#box-2").css("order") == "1", "The <code>#box-2</code> element should have the <code>order</code> property set to a value of 1.");'
+  - text: <code>#box-1</code>元素应有<code>order</code>属性，其值应为 <code>2</code>。
+    testString: assert($('#box-1').css('order') == '2');
+  - text: <code>#box-2</code>元素应有<code>order</code>属性，其值应为 <code>1</code>。
+    testString: assert($('#box-2').css('order') == '1');
 
 ```
 
@@ -39,14 +44,14 @@ tests:
   }
   #box-1 {
     background-color: dodgerblue;
-
+    
     height: 200px;
     width: 200px;
   }
 
   #box-2 {
     background-color: orangered;
-
+    
     height: 200px;
     width: 200px;
   }
@@ -56,7 +61,6 @@ tests:
   <div id="box-1"></div>
   <div id="box-2"></div>
 </div>
-
 ```
 
 </div>
@@ -68,7 +72,9 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>
+              

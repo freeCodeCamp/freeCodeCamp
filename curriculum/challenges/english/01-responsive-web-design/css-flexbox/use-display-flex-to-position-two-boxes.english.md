@@ -2,6 +2,7 @@
 id: 587d78ab367417b2b2512af0
 title: 'Use display: flex to Position Two Boxes'
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/p/pVaDAv/cgz3QS7'
 forumTopicId: 301105
 ---
@@ -14,7 +15,7 @@ Placing the CSS property <code>display: flex;</code> on an element allows you to
 
 ## Instructions
 <section id='instructions'>
-Add the CSS property <code>display</code> to <code>#box-container</code> and set its value to flex.
+Add the CSS property <code>display</code> to <code>#box-container</code> and set its value to <code>flex</code>.
 </section>
 
 ## Tests
@@ -22,7 +23,7 @@ Add the CSS property <code>display</code> to <code>#box-container</code> and set
 
 ```yml
 tests:
-  - text: <code>#box-container</code> should have the <code>display</code> property set to a value of flex.
+  - text: <code>#box-container</code> should have the <code>display</code> property set to a value of <code>flex</code>.
     testString: assert($('#box-container').css('display') == 'flex');
 
 ```

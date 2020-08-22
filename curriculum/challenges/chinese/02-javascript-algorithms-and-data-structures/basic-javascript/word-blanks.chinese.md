@@ -2,27 +2,43 @@
 id: 56533eb9ac21ba0edf2244bb
 title: Word Blanks
 challengeType: 1
-videoUrl: ''
-localeTitle: 字空白
+videoUrl: 'https://scrimba.com/c/caqn8zuP'
+forumTopicId: 18377
+localeTitle: 填词造句
 ---
 
 ## Description
-<section id="description">我们现在将使用我们的弦乐知识来构建一个“ <a href="https://en.wikipedia.org/wiki/Mad_Libs" target="_blank">疯狂的自由</a> ”风格的文字游戏，我们称之为“Word Blanks”。您将创建一个（可选幽默的）“填空”样式句子。在“疯狂的自由人”游戏中，您将获得包含名词，动词，形容词和副词等缺失单词的句子。然后，您可以用完成的句子有意义的方式用您选择的单词填写缺失的部分。想想这句话- “这是真的<strong>____，</strong>我们<strong>____</strong> <strong>____</strong>自己”。这句话有三个缺失的部分 - 形容词，动词和副词，我们可以添加我们选择的单词来完成它。然后我们可以将完成的句子分配给变量，如下所示： <blockquote> var sentence =“它真的是”+“热”+“，我们”+“笑”+“自己”+“傻。”; </blockquote></section>
+<section id='description'>
+现在，我们来用字符串的相关知识实现一个 "<a href='https://en.wikipedia.org/wiki/Mad_Libs' target='_blank'>Mad Libs</a>" 类的文字游戏，称为 "Word Blanks"。 你将创建一个（可选幽默的）“填空”样式句子。
+在 "Mad Libs" 游戏中，提供一个缺少一些单词的句子，缺少的单词包括名词，动词，形容词和副词等。然后，你选择一些单词填写句子缺失的地方，使句子完整并且有意义。
+思考一下这句话 - "It was really <strong>____</strong>, and we <strong>____</strong> ourselves <strong>____</strong>"。这句话有三个缺失的部分 - 形容词，动词和副词，选择合适单词填入完成它。然后将完成的句子赋值给变量，如下所示：
+
+```js
+var sentence = "It was really " + "hot" + ", and we " + "laughed" + " ourselves " + "silly" + ".";
+```
+
+</section>
 
 ## Instructions
-<section id="instructions">在这个挑战中，我们为您提供名词，动词，形容词和副词。您需要使用您选择的单词以及我们提供的单词来形成完整的句子。您将需要使用字符串连接运算符<code>+</code>来使用提供的变量构建新字符串： <code>myNoun</code> ， <code>myAdjective</code> ， <code>myVerb</code>和<code>myAdverb</code> 。然后，您将形成的字符串分配给<code>result</code>变量。您还需要考虑字符串中的空格，以便最后一句话在所有单词之间有空格。结果应该是一个完整的句子。 </section>
+<section id='instructions'>
+在这个挑战中，我们为你提供名词，动词，形容词和副词。你需要使用合适单词以及我们提供的单词来形成完整的句子。
+你需要使用字符串连接运算符<code>+</code>来拼接字符串变量：<code>myNoun</code>，<code>myAdjective</code>，<code>myVerb</code>，和<code>myAdverb</code>来构建一个新字符串。然后，将新字符串赋给<code>result</code>变量。
+你还需要考虑字符串中的空格，确保句子的所有单词之间有空格。结果应该是一个完整的句子。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: '<code>wordBlanks(&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;)</code>应该返回一个字符串。'
-    testString: 'assert(typeof wordBlanks("","","","") === "string", "<code>wordBlanks("","","","")</code> should return a string.");'
-  - text: '<code>wordBlanks(&quot;dog&quot;, &quot;big&quot;, &quot;ran&quot;, &quot;quickly&quot;)</code>应包含由非单词字符（以及madlib中的任何其他单词）分隔的所有传入单词。'
-    testString: 'assert(/\bdog\b/.test(test1) && /\bbig\b/.test(test1) && /\bran\b/.test(test1) && /\bquickly\b/.test(test1),"<code>wordBlanks("dog", "big", "ran", "quickly")</code> should contain all of the passed in words separated by non-word characters (and any additional words in your madlib).");'
-  - text: '<code>wordBlanks(&quot;cat&quot;, &quot;little&quot;, &quot;hit&quot;, &quot;slowly&quot;)</code>应包含由非单词字符（以及madlib中的任何其他单词）分隔的所有传入单词。'
-    testString: 'assert(/\bcat\b/.test(test2) && /\blittle\b/.test(test2) && /\bhit\b/.test(test2) && /\bslowly\b/.test(test2),"<code>wordBlanks("cat", "little", "hit", "slowly")</code> should contain all of the passed in words separated by non-word characters (and any additional words in your madlib).");'
+  - text: <code>wordBlanks("","","","")</code>应该返回一个字符串。
+    testString: assert(typeof wordBlanks === 'string');
+  - text: 不能改变 <code>myNoun</code>、<code>myVerb</code>、<code>myAdjective</code> 或者 <code>myAdverb</code> 的值。
+    testString: assert(myNoun === "dog" && myVerb === "ran" && myAdjective === "big" && myAdverb === "quickly");    
+  - text: 不能直接使用 "dog"、"ran"、"big" 或者 "quickly" 来创建 <code>wordBlanks</code>。
+    testString: const newCode = removeAssignments(code); assert(!/dog/.test(newCode) && !/ran/.test(newCode) && !/big/.test(newCode) && !/quickly/.test(newCode));    
+  - text: <code>wordBlanks</code> 应包含分配给变量 <code>myNoun</code>、<code>myVerb</code>、<code>myAdjective</code> 和 <code>myAdverb</code> 的所有单词，并用非单词字符（以及 madlib 中的其它单词）分隔。
+    testString: assert(/\bdog\b/.test(wordBlanks) && /\bbig\b/.test(wordBlanks) && /\bran\b/.test(wordBlanks) && /\bquickly\b/.test(wordBlanks));
 
 ```
 
@@ -34,27 +50,25 @@ tests:
 <div id='js-seed'>
 
 ```js
-function wordBlanks(myNoun, myAdjective, myVerb, myAdverb) {
-  // Your code below this line
-  var result = "";
+var myNoun = "dog";
+var myAdjective = "big";
+var myVerb = "ran";
+var myAdverb = "quickly";
 
-  // Your code above this line
-  return result;
-}
-
-// Change the words here to test your function
-wordBlanks("dog", "big", "ran", "quickly");
+var wordBlanks = ""; // Only change this line;
 
 ```
 
 </div>
 
-
-### After Test
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const removeAssignments = str => str
+  .replace(/myNoun\s*=\s*["']dog["']/g, '')
+  .replace(/myAdjective\s*=\s*["']big["']/g, '')
+  .replace(/myVerb\s*=\s*["']ran["']/g, '')
+  .replace(/myAdverb\s*=\s*["']quickly["']/g, '');
 ```
 
 </div>
@@ -64,7 +78,15 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+var myNoun = "dog";
+var myAdjective = "big";
+var myVerb = "ran";
+var myAdverb = "quickly";
+
+var wordBlanks = "Once there was a " + myNoun + " which was very " + myAdjective + ". ";
+wordBlanks += "It " + myVerb + " " + myAdverb + " around the yard.";
 ```
+
 </section>

@@ -2,25 +2,39 @@
 id: 5a9d7286424fe3d0e10cad13
 title: Attach a Fallback value to a CSS Variable
 challengeType: 0
-videoUrl: ''
-localeTitle: 将Fallback值附加到CSS变量
+videoUrl: 'https://scrimba.com/c/c6bDNfp'
+forumTopicId: 301084
+localeTitle: 给 CSS 变量附加回退值
 ---
 
 ## Description
-<section id="description">将变量用作CSS属性值时，如果给定变量无效，则可以附加浏览器将恢复的回退值。 <strong>注意：</strong>此回退不用于增加浏览器兼容性，并且它不适用于IE浏览器。而是使用它，以便浏览器在无法找到变量时显示颜色。这是你如何做到的： <blockquote>背景：var（ - 企鹅皮，黑色）; </blockquote>如果未设置变量，则会将背景设置为黑色。请注意，这对于调试很有用。 </section>
+<section id='description'>
+使用变量来作为 CSS 属性值的时候，可以设置一个备用值来防止由于某些原因导致变量不生效的情况。
+或许有些人正在使用着不支持 CSS 变量的旧浏览器，又或者，设备不支持你设置的变量值。为了防止这种情况出现，那么你可以这样写：
+
+```css
+background: var(--penguin-skin, black);
+```
+
+这样，当变量有问题的时候，它会设置背景颜色为黑色。
+提示：这对调试会很有帮助。
+</section>
 
 ## Instructions
-<section id="instructions">它看起来提供给<code>.penguin-top</code>和<code>.penguin-bottom</code>类的变量存在问题。而不是修复拼写错误，将<code>.penguin-top</code>值的<code>black</code>添加到<code>.penguin-top</code>和<code>.penguin-bottom</code>类的<code>background</code>属性中。 </section>
+<section id='instructions'>
+在<code>penguin-top</code>和<code>penguin-bottom</code>class 里面，<code>background</code>属性设置一个<code>black</code>的备用色。
+<strong>注意：</strong>因为 CSS 变量名拼写错了，所以备用值会被使用。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 的后退值应用于<code>black</code>为<code>background</code>的财产<code>penguin-top</code>班。
-    testString: 'assert(code.match(/.penguin-top\s*?{[\s\S]*background\s*?:\s*?var\(\s*?--pengiun-skin\s*?,\s*?black\s*?\)\s*?;[\s\S]*}[\s\S]*.penguin-bottom\s{/gi), "Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-top</code> class.");'
-  - text: 将<code>black</code>的后备值应用于<code>penguin-bottom</code>类的<code>background</code>属性。
-    testString: 'assert(code.match(/.penguin-bottom\s*?{[\s\S]*background\s*?:\s*?var\(\s*?--pengiun-skin\s*?,\s*?black\s*?\)\s*?;[\s\S]*}/gi), "Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-bottom</code> class.");'
+  - text: '<code>penguin-top</code> class 的<code>background</code>属性应设置一个<code>black</code>备用颜色。'
+    testString: assert(code.match(/.penguin-top\s*?{[\s\S]*background\s*?:\s*?var\(\s*?--pengiun-skin\s*?,\s*?black\s*?\)\s*?;[\s\S]*}[\s\S]*.penguin-bottom\s{/gi));
+  - text: '<code>penguin-bottom</code> class 的<code>background</code>属性应设置一个<code>black</code>备用颜色。'
+    testString: assert(code.match(/.penguin-bottom\s*?{[\s\S]*background\s*?:\s*?var\(\s*?--pengiun-skin\s*?,\s*?black\s*?\)\s*?;[\s\S]*}/gi));
 
 ```
 
@@ -44,33 +58,33 @@ tests:
     width: 300px;
     height: 300px;
   }
-
+  
   .penguin-top {
     top: 10%;
     left: 25%;
-
+  
     /* change code below */
     background: var(--pengiun-skin);
     /* change code above */
-
+  
     width: 50%;
     height: 45%;
     border-radius: 70% 70% 60% 60%;
   }
-
+  
   .penguin-bottom {
     top: 40%;
     left: 23.5%;
-
+  
     /* change code below */
     background: var(--pengiun-skin);
     /* change code above */
-
+  
     width: 53%;
     height: 45%;
     border-radius: 70% 70% 100% 100%;
   }
-
+  
   .right-hand {
     top: 0%;
     left: -5%;
@@ -81,7 +95,7 @@ tests:
     transform: rotate(45deg);
     z-index: -1;
   }
-
+  
   .left-hand {
     top: 0%;
     left: 75%;
@@ -92,7 +106,7 @@ tests:
     transform: rotate(-45deg);
     z-index: -1;
   }
-
+  
   .right-cheek {
     top: 15%;
     left: 35%;
@@ -101,7 +115,7 @@ tests:
     height: 70%;
     border-radius: 70% 70% 60% 60%;
   }
-
+  
   .left-cheek {
     top: 15%;
     left: 5%;
@@ -110,7 +124,7 @@ tests:
     height: 70%;
     border-radius: 70% 70% 60% 60%;
   }
-
+  
   .belly {
     top: 60%;
     left: 2.5%;
@@ -119,7 +133,7 @@ tests:
     height: 100%;
     border-radius: 120% 120% 100% 100%;
   }
-
+  
   .right-feet {
     top: 85%;
     left: 60%;
@@ -130,7 +144,7 @@ tests:
     transform: rotate(-80deg);
     z-index: -2222;
   }
-
+  
   .left-feet {
     top: 85%;
     left: 25%;
@@ -141,7 +155,7 @@ tests:
     transform: rotate(80deg);
     z-index: -2222;
   }
-
+  
   .right-eye {
     top: 45%;
     left: 60%;
@@ -150,7 +164,7 @@ tests:
     height: 17%;
     border-radius: 50%;
   }
-
+  
   .left-eye {
     top: 45%;
     left: 25%;
@@ -159,7 +173,7 @@ tests:
     height: 17%;
     border-radius: 50%;
   }
-
+  
   .sparkle {
     top: 25%;
     left: 15%;
@@ -168,7 +182,7 @@ tests:
     height: 35%;
     border-radius: 50%;
   }
-
+  
   .blush-right {
     top: 65%;
     left: 15%;
@@ -177,7 +191,7 @@ tests:
     height: 10%;
     border-radius: 50%;
   }
-
+  
   .blush-left {
     top: 65%;
     left: 70%;
@@ -186,7 +200,7 @@ tests:
     height: 10%;
     border-radius: 50%;
   }
-
+  
   .beak-top {
     top: 60%;
     left: 40%;
@@ -195,7 +209,7 @@ tests:
     height: 10%;
     border-radius: 50%;
   }
-
+  
   .beak-bottom {
     top: 65%;
     left: 42%;
@@ -204,11 +218,11 @@ tests:
     height: 10%;
     border-radius: 50%;
   }
-
+  
   body {
     background:#c6faf1;
   }
-
+  
   .penguin * {
     position: absolute;
   }
@@ -236,7 +250,6 @@ tests:
     <div class="beak-bottom"></div>
   </div>
 </div>
-
 ```
 
 </div>
@@ -248,7 +261,10 @@ tests:
 ## Solution
 <section id='solution'>
 
+
 ```js
 // solution required
 ```
+
 </section>
+              

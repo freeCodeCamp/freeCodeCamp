@@ -1,9 +1,14 @@
+/* eslint-disable react/jsx-sort-props */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Grid, Row, Col, Image } from '@freecodecamp/react-bootstrap';
+import format from 'date-fns/format';
+import { Grid, Row, Col, Image, Button } from '@freecodecamp/react-bootstrap';
+import FreeCodeCampLogo from '../assets/icons/freeCodeCampLogo';
+// eslint-disable-next-line max-len
+import MinimalDonateForm from '../components/Donation/MinimalDonateForm';
 
 import {
   showCertSelector,
@@ -11,15 +16,16 @@ import {
   showCert,
   userFetchStateSelector,
   usernameSelector,
-  isDonatingSelector
+  isDonatingSelector,
+  executeGA
 } from '../redux';
-import validCertNames from '../../utils/validCertNames';
+import { certMap } from '../../src/resources/certAndProjectMap';
 import { createFlashMessage } from '../components/Flash/redux';
 import standardErrorMessage from '../utils/standardErrorMessage';
 import reallyWeirdErrorMessage from '../utils/reallyWeirdErrorMessage';
 
 import RedirectHome from '../components/RedirectHome';
-import { Loader, Link } from '../components/helpers';
+import { Loader } from '../components/helpers';
 
 const propTypes = {
   cert: PropTypes.shape({
@@ -33,13 +39,13 @@ const propTypes = {
   certDashedName: PropTypes.string,
   certName: PropTypes.string,
   createFlashMessage: PropTypes.func.isRequired,
+  executeGA: PropTypes.func,
   fetchState: PropTypes.shape({
     pending: PropTypes.bool,
     complete: PropTypes.bool,
     errored: PropTypes.bool
   }),
   isDonating: PropTypes.bool,
-  issueDate: PropTypes.string,
   showCert: PropTypes.func.isRequired,
   signedInUserName: PropTypes.string,
   userFetchState: PropTypes.shape({
@@ -49,6 +55,8 @@ const propTypes = {
   username: PropTypes.string,
   validCertName: PropTypes.bool
 };
+
+const validCertNames = certMap.map(cert => cert.slug);
 
 const mapStateToProps = (state, { certName }) => {
   const validCertName = validCertNames.some(name => name === certName);
@@ -70,9 +78,22 @@ const mapStateToProps = (state, { certName }) => {
 };
 
 const mapDispatchToProps = dispatch =>
-  bindActionCreators({ createFlashMessage, showCert }, dispatch);
+  bindActionCreators({ createFlashMessage, showCert, executeGA }, dispatch);
 
 class ShowCertification extends Component {
+  constructor(...args) {
+    super(...args);
+
+    this.state = {
+      isDonationSubmitted: false,
+      isDonationDisplayed: false,
+      isDonationClosed: false
+    };
+
+    this.hideDonationSection = this.hideDonationSection.bind(this);
+    this.handleProcessing = this.handleProcessing.bind(this);
+  }
+
   componentDidMount() {
     const { username, certName, validCertName, showCert } = this.props;
     if (validCertName) {
@@ -80,17 +101,71 @@ class ShowCertification extends Component {
     }
     return null;
   }
+
+  shouldComponentUpdate(nextProps) {
+    const {
+      userFetchState: { complete: userComplete },
+      signedInUserName,
+      isDonating,
+      cert: { username = '' },
+      executeGA
+    } = nextProps;
+    const { isDonationDisplayed } = this.state;
+
+    if (
+      !isDonationDisplayed &&
+      userComplete &&
+      signedInUserName &&
+      signedInUserName === username &&
+      !isDonating
+    ) {
+      this.setState({
+        isDonationDisplayed: true
+      });
+
+      executeGA({
+        type: 'event',
+        data: {
+          category: 'Donation',
+          action: 'Displayed Certificate Donation',
+          nonInteraction: true
+        }
+      });
+    }
+    return true;
+  }
+
+  hideDonationSection() {
+    this.setState({ isDonationDisplayed: false, isDonationClosed: true });
+  }
+
+  handleProcessing(duration, amount, action = 'stripe form submission') {
+    this.props.executeGA({
+      type: 'event',
+      data: {
+        category: 'donation',
+        action: `certificate ${action}`,
+        label: duration,
+        value: amount
+      }
+    });
+    this.setState({ isDonationSubmitted: true });
+  }
+
   render() {
     const {
       cert,
       fetchState,
       validCertName,
       createFlashMessage,
-      certName,
-      signedInUserName,
-      isDonating,
-      userFetchState
+      certName
     } = this.props;
+
+    const {
+      isDonationSubmitted,
+      isDonationDisplayed,
+      isDonationClosed
+    } = this.state;
 
     if (!validCertName) {
       createFlashMessage(standardErrorMessage);
@@ -98,7 +173,6 @@ class ShowCertification extends Component {
     }
 
     const { pending, complete, errored } = fetchState;
-    const { complete: userComplete } = userFetchState;
 
     if (pending) {
       return <Loader fullScreen={true} />;
@@ -122,49 +196,61 @@ class ShowCertification extends Component {
       completionTime
     } = cert;
 
-    let conditionalDonationMessage = '';
+    const donationCloseBtn = (
+      <div>
+        <Button
+          block={true}
+          bsSize='sm'
+          bsStyle='primary'
+          onClick={this.hideDonationSection}
+        >
+          Close
+        </Button>
+      </div>
+    );
 
-    if (userComplete && signedInUserName === username && !isDonating) {
-      conditionalDonationMessage = (
-        <Grid>
-          <Row className='certification-donation text-center'>
-            <p>
-              Only you can see this message. Congratulations on earning this
-              certification. It’s no easy task. Running freeCodeCamp isn’t easy
-              either. Nor is it cheap. Help us help you and many other people
-              around the world. Make a tax-deductible supporting donation to our
-              nonprofit today.
-            </p>
-            <Link className={'btn'} to={'/donate'}>
-              Check out our donation dashboard
-            </Link>
+    let donationSection = (
+      <Grid className='donation-section'>
+        {!isDonationSubmitted && (
+          <Row>
+            <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
+              <p>
+                Only you can see this message. Congratulations on earning this
+                certification. It’s no easy task. Running freeCodeCamp isn’t
+                easy either. Nor is it cheap. Help us help you and many other
+                people around the world. Make a tax-deductible supporting
+                donation to our nonprofit today.
+              </p>
+            </Col>
           </Row>
-        </Grid>
-      );
-    }
+        )}
+        <MinimalDonateForm
+          handleProcessing={this.handleProcessing}
+          defaultTheme='light'
+        />
+        <Row>
+          <Col sm={4} smOffset={4} xs={6} xsOffset={3}>
+            {isDonationSubmitted && donationCloseBtn}
+          </Col>
+        </Row>
+      </Grid>
+    );
 
     return (
       <div className='certificate-outer-wrapper'>
-        {conditionalDonationMessage}
+        {isDonationDisplayed && !isDonationClosed ? donationSection : ''}
         <Grid className='certificate-wrapper certification-namespace'>
           <Row>
             <header>
               <Col md={5} sm={12}>
                 <div className='logo'>
-                  <Image
-                    alt="freeCodeCamp.org's Logo"
-                    responsive={true}
-                    src={
-                      'https://s3.amazonaws.com/freecodecamp/freecodecamp_logo' +
-                      '.svg'
-                    }
-                  />
+                  <FreeCodeCampLogo />
                 </div>
               </Col>
               <Col md={7} sm={12}>
                 <div className='issue-date'>
                   Issued&nbsp;
-                  <strong>{issueDate}</strong>
+                  <strong>{format(new Date(issueDate), 'MMMM D, YYYY')}</strong>
                 </div>
               </Col>
             </header>
@@ -177,7 +263,7 @@ class ShowCertification extends Component {
                 </h1>
                 <h3>has successfully completed the freeCodeCamp.org</h3>
                 <h1>
-                  <strong>{certTitle} Certification</strong>
+                  <strong>{certTitle}</strong>
                 </h1>
                 <h4>
                   Developer Certification, representing approximately{' '}

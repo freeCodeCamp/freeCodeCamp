@@ -21,11 +21,11 @@ localeTitle: 使用选择器使用jQuery定位HTML元素
 ```yml
 tests:
   - text: 使用jQuery <code>addClass()</code>函数将类<code>animated</code>并<code>bounce</code>回到<code>button</code>元素。
-    testString: 'assert($("button").hasClass("animated") && $("button").hasClass("bounce"), "Use the jQuery <code>addClass&#40&#41</code> function to give the classes <code>animated</code> and <code>bounce</code> to your <code>button</code> elements.");'
+    testString: 'assert($("button").hasClass("animated") && $("button").hasClass("bounce"));'
   - text: 只使用jQuery将这些颜色添加到元素中。
-    testString: 'assert(!code.match(/class.*animated/g), "Only use jQuery to add these colors to the element.");'
+    testString: 'assert(!code.match(/class.*animated/g));'
   - text: 你的jQuery代码应该在<code>$(document).ready();</code>功能。
-    testString: 'assert(code.match(/\$\(document\)\.ready\(function.*(\s|\n)*.*button.*.addClass.*\);/g), "Your jQuery code should be within the <code>$(document).ready();</code> function.");'
+    testString: assert(code.match(/\$\(document\)\.ready\(function.*(\s|\n)*.*button.*.addClass.*\);/g));
 
 ```
 
@@ -81,4 +81,5 @@ tests:
 ```js
 // solution required
 ```
-</section>
+
+/section>

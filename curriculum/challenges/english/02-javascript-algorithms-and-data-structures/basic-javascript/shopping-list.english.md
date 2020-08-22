@@ -2,6 +2,7 @@
 id: 56533eb9ac21ba0edf2244bc
 title: Shopping List
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/c9MEKHZ'
 forumTopicId: 18280
 ---

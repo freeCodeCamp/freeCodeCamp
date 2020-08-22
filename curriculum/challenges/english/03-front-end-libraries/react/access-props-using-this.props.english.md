@@ -2,6 +2,7 @@
 id: 5a24c314108439a4d403616e
 title: Access Props Using this.props
 challengeType: 6
+isHidden: false
 isRequired: false
 forumTopicId: 301375
 ---

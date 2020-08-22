@@ -19,9 +19,9 @@ localeTitle: 拆分你的Bootstrap行
 ```yml
 tests:
   - text: 在<code>div class=&quot;row&quot;</code>元素中嵌套两个<code>div class=&quot;col-xs-6&quot;</code>元素。
-    testString: 'assert($("div.row > div.col-xs-6").length > 1, "Nest two <code>div class="col-xs-6"</code> elements within your <code>div class="row"</code> element.");'
+    testString: assert($("div.row > div.col-xs-6").length > 1);
   - text: 确保所有<code>div</code>元素都有结束标记。
-    testString: 'assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length, "Make sure all your <code>div</code> elements have closing tags.");'
+    testString: assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length);
 
 ```
 
@@ -55,4 +55,5 @@ tests:
 ```js
 // solution required
 ```
-</section>
+
+/section>

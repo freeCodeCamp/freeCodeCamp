@@ -15,7 +15,6 @@ function ResetModal(props) {
   return (
     <Modal
       aria-labelledby='modal-title'
-      autoFocus={true}
       backdrop={true}
       bsSize='lg'
       className='text-center'

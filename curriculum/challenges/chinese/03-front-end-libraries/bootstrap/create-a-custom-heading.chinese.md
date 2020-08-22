@@ -19,13 +19,13 @@ localeTitle: 创建自定义标题
 ```yml
 tests:
   - text: 你的<code>h2</code>元素和最顶层的<code>img</code>元素都应该在带有类<code>row</code>的<code>div</code>元素中嵌套在一起。
-    testString: 'assert($("div.row:has(h2)").length > 0 && $("div.row:has(img)").length > 0, "Your <code>h2</code> element and topmost <code>img</code> element should both be nested together within a <code>div</code> element with the class <code>row</code>.");'
+    testString: assert($("div.row:has(h2)").length > 0 && $("div.row:has(img)").length > 0);
   - text: 使用类<code>col-xs-4</code>将最顶层的<code>img</code>元素嵌套在<code>div</code> 。
-    testString: 'assert($("div.col-xs-4:has(img)").length > 0 && $("div.col-xs-4:has(div)").length === 0, "Nest your topmost <code>img</code> element within a <code>div</code> with the class <code>col-xs-4</code>.");'
+    testString: assert($("div.col-xs-4:has(img)").length > 0 && $("div.col-xs-4:has(div)").length === 0);
   - text: 使用类<code>col-xs-8</code>将<code>h2</code>元素嵌套在<code>div</code> 。
-    testString: 'assert($("div.col-xs-8:has(h2)").length > 0 && $("div.col-xs-8:has(div)").length === 0, "Nest your <code>h2</code> element within a <code>div</code> with the class <code>col-xs-8</code>.");'
+    testString: assert($("div.col-xs-8:has(h2)").length > 0 && $("div.col-xs-8:has(div)").length === 0);
   - text: 确保每个<code>div</code>元素都有一个结束标记。
-    testString: 'assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length, "Make sure each of your <code>div</code> elements has a closing tag.");'
+    testString: assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length);
 
 ```
 
@@ -81,7 +81,7 @@ tests:
     <li>thunder</li>
     <li>other cats</li>
   </ol>
-  <form action="/submit-cat-photo">
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor"> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
     <label><input type="checkbox" name="personality"> Loving</label>
@@ -106,4 +106,5 @@ tests:
 ```js
 // solution required
 ```
-</section>
+
+/section>

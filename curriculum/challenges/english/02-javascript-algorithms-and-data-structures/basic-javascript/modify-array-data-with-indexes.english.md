@@ -2,6 +2,7 @@
 id: cf1111c1c11feddfaeb8bdef
 title: Modify Array Data With Indexes
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/czQM4A8'
 forumTopicId: 18241
 ---
@@ -44,14 +45,10 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Example
-var ourArray = [18,64,99];
-ourArray[1] = 45; // ourArray now equals [18,45,99].
-
 // Setup
 var myArray = [18,64,99];
 
-// Only change code below this line.
+// Only change code below this line
 
 
 ```

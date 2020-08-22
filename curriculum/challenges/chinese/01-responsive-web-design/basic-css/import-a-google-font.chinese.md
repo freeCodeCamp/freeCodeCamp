@@ -2,29 +2,41 @@
 id: bad87fee1348bd9aedf08807
 title: Import a Google Font
 challengeType: 0
-videoUrl: ''
-localeTitle: 导入Google字体
+videoUrl: 'https://scrimba.com/c/cM9MRsJ'
+forumTopicId: 18200
+localeTitle: 引入谷歌字体
 ---
 
 ## Description
-<section id="description">除了指定在大多数操作系统上找到的常用字体外，我们还可以指定在我们的网站上使用的非标准自定义Web字体。互联网上有各种网络字体来源，但在本例中，我们将重点关注Google字体库。 <a href="https://fonts.google.com/" target="_blank">Google字体</a>是一个免费的网络字体库，您可以通过引用字体的URL在CSS中使用它。因此，让我们继续导入并应用Google字体（请注意，如果Google在您所在的国家/地区被屏蔽，则需要跳过此挑战）。要导入Google字体，您可以从Google字体库中复制字体网址，然后将其粘贴到HTML中。对于这个挑战，我们将导入<code>Lobster</code>字体。为此，请复制以下代码段并将其粘贴到代码编辑器的顶部（在开始<code>style</code>元素之前）： <code>&lt;link href=&quot;https://fonts.googleapis.com/css?family=Lobster&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;</code>现在，您可以使用<code>Lobster</code>作为FAMILY_NAME在CSS中使用<code>Lobster</code>字体，如下例所示： <br> <code>font-family: FAMILY_NAME, GENERIC_NAME;</code> 。 GENERIC_NAME是可选的，如果其他指定的字体不可用，则为后备字体。这将在下一个挑战中得到体现。系列名称区分大小写，如果名称中有空格，则需要用引号括起来。例如，您需要引号才能使用<code>&quot;Open Sans&quot;</code>字体，但不能使用<code>Lobster</code>字体。 </section>
+<section id='description'>
+除了大多数系统提供的默认字体以外，我们也可以使用自定义字体。网络上有各种各样的字体，不过在这个例子中，我们将会尝试使用<code>Google</code>字体库。
+<a href='https://fonts.google.com/' target='_blank'>Google 字体</a>是一个免费的字体库，可以通过在 CSS 里面设置字体的 URL 来引用。
+因此，下一步，我们将引入和使用<code>Google</code>字体。
+引入<code>Google</code>字体，你需要复制<code>Google</code>字体的 URL，并粘贴到 HTML 里面。在这个挑战中，我们需要引入<code>Lobster</code>字体。因此，请复制以下代码段，并粘贴到代码编辑器顶部，即放到<code>style</code>标签之前。
+<code>&#60;link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css"&#62;</code>
+现在你可以设置<code>font-family</code>属性为<code>Lobster</code>，来使用<code>Lobster</code>字体。例子如下：<br><code>font-family: FAMILY_NAME, GENERIC_NAME;</code>.
+<code>GENERIC_NAME</code>是可选的，其他字体不可用时便作为后备字体，在下一个挑战中可以得到体现。
+字体名区分大小写，并且如果字体名含有空格，需要用引号括起来。例如，使用<code>"Open Sans"</code>字体需要添加引号，而<code>Lobster</code>字体则不需要。
+</section>
 
 ## Instructions
-<section id="instructions">创建使用<code>Lobster</code>字体的<code>font-family</code> CSS规则，并确保它将应用于您的<code>h2</code>元素。 </section>
+<section id='instructions'>
+创建一个 CSS 规则，<code>font-family</code>属性里设置为<code>Lobster</code>字体，并把这个字体应用到所有的<code>h2</code>元素。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 导入<code>Lobster</code>字体。
-    testString: 'assert(new RegExp("googleapis", "gi").test(code), "Import the <code>Lobster</code> font.");'
-  - text: 你的<code>h2</code>元素应该使用字体<code>Lobster</code> 。
-    testString: 'assert($("h2").css("font-family").match(/lobster/i), "Your <code>h2</code> element should use the font <code>Lobster</code>.");'
-  - text: 使用<code>h2</code> CSS选择器更改字体。
-    testString: 'assert(/\s*h2\s*\{\s*font-family\:\s*(\"|")?Lobster(\"|")?\s*;\s*\}/gi.test(code), "Use an <code>h2</code> CSS selector to change the font.");'
-  - text: 你的<code>p</code>元素仍然应该使用字体<code>monospace</code> 。
-    testString: 'assert($("p").css("font-family").match(/monospace/i), "Your <code>p</code> element should still use the font <code>monospace</code>.");'
+  - text: '引入<code>Lobster</code>字体。'
+    testString: assert(new RegExp("googleapis", "gi").test(code));
+  - text: '<code>h2</code>元素必须使用<code>Lobster</code>字体。'
+    testString: assert($("h2").css("font-family").match(/lobster/i));
+  - text: '使用<code>h2</code>选择器去改变字体样式。'
+    testString: 'assert(/\s*h2\s*\{\s*font-family\:\s*(\"|")?Lobster(\"|")?(.{0,})\s*;\s*\}/gi.test(code));'
+  - text: '<code>p</code>元素应该保持使用<code>monospace</code>字体。'
+    testString: assert($("p").css("font-family").match(/monospace/i));
 
 ```
 
@@ -49,36 +61,35 @@ tests:
 
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
-  <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
+  <p class="red-text">点击查看更多<a href="#">猫图</a>.</p>
 
-  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="一只仰卧着的萌猫"></a>
 
   <div>
-    <p>Things cats love:</p>
+    <p>猫咪最喜欢的三件东西：</p>
     <ul>
-      <li>cat nip</li>
-      <li>laser pointers</li>
-      <li>lasagna</li>
+      <li>猫薄荷</li>
+      <li>激光笔</li>
+      <li>千层饼</li>
     </ul>
-    <p>Top 3 things cats hate:</p>
+    <p>猫咪最讨厌的三件东西：</p>
     <ol>
-      <li>flea treatment</li>
-      <li>thunder</li>
-      <li>other cats</li>
+      <li>跳蚤</li>
+      <li>打雷</li>
+      <li>同类</li>
     </ol>
   </div>
-
-  <form action="/submit-cat-photo">
-    <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
-    <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
-    <label><input type="checkbox" name="personality" checked> Loving</label>
-    <label><input type="checkbox" name="personality"> Lazy</label>
-    <label><input type="checkbox" name="personality"> Energetic</label><br>
-    <input type="text" placeholder="cat photo URL" required>
-    <button type="submit">Submit</button>
+  
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
+    <label><input type="radio" name="indoor-outdoor">室内</label>
+    <label><input type="radio" name="indoor-outdoor">室外</label><br>
+    <label><input type="checkbox" name="personality">忠诚</label>
+    <label><input type="checkbox" name="personality">懒惰</label>
+    <label><input type="checkbox" name="personality">积极</label><br>
+    <input type="text" placeholder="猫咪图片地址" required>
+    <button type="submit">提交</button>
   </form>
 </main>
-
 ```
 
 </div>
@@ -90,7 +101,9 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>
+              

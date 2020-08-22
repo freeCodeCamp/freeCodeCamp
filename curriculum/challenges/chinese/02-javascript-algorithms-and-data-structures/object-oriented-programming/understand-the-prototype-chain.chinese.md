@@ -2,23 +2,53 @@
 id: 587d7db0367417b2b2512b82
 title: Understand the Prototype Chain
 challengeType: 1
-videoUrl: ''
-localeTitle: 理解原型链
+forumTopicId: 301329
+localeTitle: 了解原型链
 ---
 
 ## Description
-<section id="description"> JavaScript中的所有对象（除少数例外）都有<code>prototype</code> 。此外，对象的<code>prototype</code>本身就是一个对象。 <blockquote> function Bird（name）{ <br> this.name = name; <br> } <br><br> typeof Bird.prototype; // =&gt;对象</blockquote>因为<code>prototype</code>是一个对象， <code>prototype</code>可以拥有自己的<code>prototype</code> ！在这种情况下， <code>Bird.prototype</code>的<code>prototype</code>是<code>Object.prototype</code> ： <blockquote> Object.prototype.isPrototypeOf（Bird.prototype）; <br> //返回true </blockquote>这有用吗？您可以回想一下之前挑战中的<code>hasOwnProperty</code>方法： <blockquote>让鸭子=新鸟（“唐纳德”）; <br> duck.hasOwnProperty（ “名称”）; // =&gt;是的</blockquote> <code>hasOwnProperty</code>方法在<code>Object.prototype</code>定义，可以通过<code>Bird.prototype</code>访问，然后可以通过<code>duck</code>访问它。这是<code>prototype</code>链的一个例子。在这个<code>prototype</code>链中， <code>Bird</code>是<code>duck</code>的<code>supertype</code> ，而<code>duck</code>是<code>subtype</code> 。 <code>Object</code>是<code>Bird</code>和<code>duck</code>的<code>supertype</code> 。 <code>Object</code>是JavaScript中所有对象的<code>supertype</code> 。因此，任何对象都可以使用<code>hasOwnProperty</code>方法。 </section>
+<section id='description'>
+JavaScript 中所有的对象（除了少数例外）都有自己的<code>原型</code>。而且，对象的<code>原型</code>本身也是一个对象。
+
+```js
+function Bird(name) {
+  this.name = name;
+}
+
+typeof Bird.prototype; // => object
+```
+
+正因为<code>原型</code>是一个对象，所以<code>原型</code>对象也有它自己的<code>原型</code>！这样看来的话，<code>Bird.prototype</code>的<code>原型</code>就是<code>Object.prototype</code>：
+
+```js
+Object.prototype.isPrototypeOf(Bird.prototype);
+// 返回 true
+```
+
+这有什么作用呢？你可能还记得我们在上一个挑战中学到的<code>hasOwnProperty</code>方法：
+
+```js
+let duck = new Bird("Donald");
+duck.hasOwnProperty("name"); // => true
+```
+
+<code>hasOwnProperty</code>是定义在<code>Object.prototype</code>上的一个方法，尽管在<code>Bird.prototype</code>和<code>duck</code>上并没有定义该方法，但是我们依然可以在这两个对象上访问到。这就是一个<code>原型</code>链。
+在这个<code>原型</code>链中，<code>Bird</code>构造函数是<code>父级</code>，<code>duck</code>是<code>子级</code>。<code>Object</code>则是<code>Bird</code>构造函数和<code>duck</code>实例共同的<code>父级</code>。
+<code>Object</code>是 JavaScript 中所有对象的<code>父级</code>，也就是原型链的最顶层。因此，所有对象都可以访问<code>hasOwnProperty</code>方法。
+</section>
 
 ## Instructions
-<section id="instructions">修改代码以显示正确的原型链。 </section>
+<section id='instructions'>
+修改以下代码使其展示出正确的原型链。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您的代码应该显示<code>Object.prototype</code>是原型<code>Dog.prototype</code> “）
-    testString: 'assert(/Object\.prototype\.isPrototypeOf/.test(code), "Your code should show that <code>Object.prototype</code> is the prototype of <code>Dog.prototype</code>");'
+  - text: 你的代码应该展示<code>Object.prototype</code>是<code>Dog.prototype</code>的原型。
+    testString: assert(/Object\.prototype\.isPrototypeOf/.test(code));
 
 ```
 
@@ -52,7 +82,14 @@ Dog.prototype.isPrototypeOf(beagle);  // => true
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+function Dog(name) {
+  this.name = name;
+}
+let beagle = new Dog("Snoopy");
+Dog.prototype.isPrototypeOf(beagle);
+Object.prototype.isPrototypeOf(Dog.prototype);
 ```
+
 </section>

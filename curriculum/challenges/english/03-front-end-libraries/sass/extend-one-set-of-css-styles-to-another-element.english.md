@@ -2,6 +2,7 @@
 id: 587d7fa5367417b2b2512bbd
 title: Extend One Set of CSS Styles to Another Element
 challengeType: 0
+isHidden: false
 forumTopicId: 301456
 ---
 
@@ -58,7 +59,7 @@ tests:
 <div id='html-seed'>
 
 ```html
-<style type='text/sass'>
+<style type='text/scss'>
   h3{
     text-align: center;
   }
@@ -92,7 +93,7 @@ tests:
 <section id='solution'>
 
 ```html
-<style type='text/sass'>
+<style type='text/scss'>
   h3{
     text-align: center;
   }

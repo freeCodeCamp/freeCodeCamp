@@ -18,15 +18,15 @@ localeTitle: 捕获拼错的变量和函数名称
 ```yml
 tests:
   - text: 检查netWorkingCapital计算中使用的两个变量的拼写，控制台输出应显示“净营运资金为：2”。
-    testString: 'assert(netWorkingCapital === 2, "Check the spelling of the two variables used in the netWorkingCapital calculation, the console output should show that "Net working capital is: 2".");'
+    testString: 'assert(netWorkingCapital === 2);'
   - text: 代码中不应存在拼写错误的变量。
-    testString: 'assert(!code.match(/recievables/g), "There should be no instances of mis-spelled variables in the code.");'
+    testString: assert(!code.match(/recievables/g));
   - text: <code>receivables</code>在代码中声明并正确使用应<code>receivables</code>变量。
-    testString: 'assert(code.match(/receivables/g).length == 2, "The <code>receivables</code> variable should be declared and used properly in the code.");'
+    testString: assert(code.match(/receivables/g).length == 2);
   - text: 代码中不应存在拼写错误的变量。
-    testString: 'assert(!code.match(/payable;/g), "There should be no instances of mis-spelled variables in the code.");'
+    testString: assert(!code.match(/payable;/g));
   - text: 应在组织中声明并正确使用<code>payables</code>变量。
-    testString: 'assert(code.match(/payables/g).length == 2, "The <code>payables</code> variable should be declared and used properly in the code.");'
+    testString: assert(code.match(/payables/g).length == 2);
 
 ```
 
@@ -57,4 +57,5 @@ console.log(`Net working capital is: ${netWorkingCapital}`);
 ```js
 // solution required
 ```
-</section>
+
+/section>

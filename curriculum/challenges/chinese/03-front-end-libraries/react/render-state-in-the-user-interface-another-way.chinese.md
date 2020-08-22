@@ -19,13 +19,13 @@ localeTitle: 用户界面中的渲染状态另一种方式
 ```yml
 tests:
   - text: <code>MyComponent</code>应该有一个键<code>name</code> ，其<code>freeCodeCamp</code>值存储在其状态中。
-    testString: 'assert(Enzyme.mount(React.createElement(MyComponent)).state("name") === "freeCodeCamp", "<code>MyComponent</code> should have a key <code>name</code> with value <code>freeCodeCamp</code> stored in its state.");'
+    testString: assert(Enzyme.mount(React.createElement(MyComponent)).state('name') === 'freeCodeCamp');
   - text: <code>MyComponent</code>应该渲染一个包含在单个<code>div</code>的<code>h1</code>标头。
-    testString: 'assert(/<div><h1>.*<\/h1><\/div>/.test(Enzyme.mount(React.createElement(MyComponent)).html()), "<code>MyComponent</code> should render an <code>h1</code> header enclosed in a single <code>div</code>.");'
+    testString: assert(/<div><h1>.*<\/h1><\/div>/.test(Enzyme.mount(React.createElement(MyComponent)).html()));
   - text: '渲染的<code>h1</code>标记应包含对<code>{name}</code>的引用。'
-    testString: 'getUserInput => assert(/<h1>\n*\s*\{\s*name\s*\}\s*\n*<\/h1>/.test(getUserInput("index")), "The rendered <code>h1</code> tag should include a reference to <code>{name}</code>.");'
+    testString: getUserInput => assert(/<h1>\n*\s*\{\s*name\s*\}\s*\n*<\/h1>/.test(getUserInput('index')));
   - text: 渲染的<code>h1</code>标头应包含从组件状态呈现的文本。
-    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const first = () => { mockedComponent.setState({ name: "TestName" });   return waitForIt(() => mockedComponent.html()) }; const firstValue = await first(); assert(firstValue === "<div><h1>TestName</h1></div>", "The rendered <code>h1</code> header should contain text rendered from the component&apos;s state."); };'
+    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const first = () => { mockedComponent.setState({ name: ''TestName'' });   return waitForIt(() => mockedComponent.html()) }; const firstValue = await first(); assert(firstValue === ''<div><h1>TestName</h1></div>''); };'
 
 ```
 
@@ -80,4 +80,5 @@ console.info('after the test');
 ```js
 // solution required
 ```
-</section>
+
+/section>

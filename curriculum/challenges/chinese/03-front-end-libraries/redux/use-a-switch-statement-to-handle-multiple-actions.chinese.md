@@ -19,17 +19,17 @@ localeTitle: 使用Switch语句处理多个操作
 ```yml
 tests:
   - text: 调用函数<code>loginUser</code>应该返回一个对象，其type属性设置为字符串<code>LOGIN</code> 。
-    testString: 'assert(loginUser().type === "LOGIN", "Calling the function <code>loginUser</code> should return an object with type property set to the string <code>LOGIN</code>.");'
+    testString: assert(loginUser().type === 'LOGIN');
   - text: 调用函数<code>logoutUser</code>应该返回一个对象，其type属性设置为字符串<code>LOGOUT</code> 。
-    testString: 'assert(logoutUser().type === "LOGOUT", "Calling the function <code>logoutUser</code> should return an object with type property set to the string <code>LOGOUT</code>.");'
+    testString: assert(logoutUser().type === 'LOGOUT');
   - text: 应使用经过<code>authenticated</code>属性设置为<code>false</code>的对象初始化存储。
-    testString: 'assert(store.getState().authenticated === false, "The store should be initialized with an object with an <code>authenticated</code> property set to <code>false</code>.");'
+    testString: assert(store.getState().authenticated === false);
   - text: 调度<code>loginUser</code>应该将store状态中的<code>authenticated</code>属性更新为<code>true</code> 。
-    testString: 'assert((function() {  const initialState = store.getState(); store.dispatch(loginUser()); const afterLogin = store.getState(); return initialState.authenticated === false && afterLogin.authenticated === true })(), "Dispatching <code>loginUser</code> should update the <code>authenticated</code> property in the store state to <code>true</code>.");'
+    testString: assert((function() {  const initialState = store.getState(); store.dispatch(loginUser()); const afterLogin = store.getState(); return initialState.authenticated === false && afterLogin.authenticated === true })());
   - text: 调度<code>logoutUser</code>应将store状态中的<code>authenticated</code>属性更新为<code>false</code> 。
-    testString: 'assert((function() {  store.dispatch(loginUser()); const loggedIn = store.getState(); store.dispatch(logoutUser()); const afterLogout = store.getState(); return loggedIn.authenticated === true && afterLogout.authenticated === false  })(), "Dispatching <code>logoutUser</code> should update the <code>authenticated</code> property in the store state to <code>false</code>.");'
+    testString: assert((function() {  store.dispatch(loginUser()); const loggedIn = store.getState(); store.dispatch(logoutUser()); const afterLogout = store.getState(); return loggedIn.authenticated === true && afterLogout.authenticated === false  })());
   - text: <code>authReducer</code>函数应该使用<code>switch</code>语句处理多个动作类型。
-    testString: 'getUserInput => assert( getUserInput("index").toString().includes("switch") && getUserInput("index").toString().includes("case") && getUserInput("index").toString().includes("default"), "The <code>authReducer</code> function should handle multiple action types with a <code>switch</code> statement.");'
+    testString: getUserInput => assert( getUserInput('index').toString().includes('switch') && getUserInput('index').toString().includes('case') && getUserInput('index').toString().includes('default'));
 
 ```
 
@@ -79,4 +79,5 @@ const logoutUser = () => {
 ```js
 // solution required
 ```
-</section>
+
+/section>

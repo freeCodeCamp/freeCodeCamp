@@ -2,6 +2,7 @@
 id: 5a94fe7769fb03452672e463
 title: Use Media Queries to Create Responsive Layouts
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/p/pByETK/cMbqeHk'
 forumTopicId: 301138
 ---
@@ -23,7 +24,7 @@ When the viewport width is <code>400px</code> or more, make the header area occu
 ```yml
 tests:
   - text: When the viewport is <code>400px</code> or more, <code>container</code> class should have a <code>grid-template-areas</code> property in which the header and footer areas occupy the top and bottom rows respectively and advert and content occupy the left and right columns of the middle row.
-    testString: assert(code.match(/@media\s*?\(\s*?min-width\s*?:\s*?400px\s*?\)[\s\S]*.container\s*?{[\s\S]*grid-template-areas\s*?:\s*?"\s*?header\s*?header\s*?"\s*?"\s*?advert\s*?content\s*?"\s*?"\s*?footer\s*?footer\s*?"\s*?;[\s\S]*}/gi));
+    testString: const removeCssComments = str => str.replace(/\/\*[\s\S]+?\*\//g, ''); assert(removeCssComments(code).match(/@media\s*?\(\s*?min-width\s*?:\s*?400px\s*?\)[\s\S]*.container\s*?{[\s\S]*grid-template-areas\s*?:\s*?"\s*?header\s*?header\s*?"\s*?"\s*?advert\s*?content\s*?"\s*?"\s*?footer\s*?footer\s*?"\s*?;[\s\S]*}/gi));
 
 ```
 
@@ -85,14 +86,12 @@ tests:
 
   @media (min-width: 400px){
     .container{
-      /* change the code below this line */
-
       grid-template-areas:
+      /* Only change code below this line */
         "advert header"
         "advert content"
         "advert footer";
-
-    /* change the code above this line */
+      /* Only change code above this line */
     }
   }
 </style>
@@ -165,14 +164,10 @@ tests:
 
   @media (min-width: 400px){
     .container{
-      /* change the code below this line */
-
       grid-template-areas:
         "header header"
         "advert content"
         "footer footer";
-
-    /* change the code above this line */
     }
   }
 </style>

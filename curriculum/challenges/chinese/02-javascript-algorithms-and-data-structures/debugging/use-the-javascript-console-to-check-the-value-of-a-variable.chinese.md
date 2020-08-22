@@ -18,7 +18,7 @@ localeTitle: 使用JavaScript控制台检查变量的值
 ```yml
 tests:
   - text: 您的代码应使用<code>console.log()</code>来检查变量<code>a</code>的值。
-    testString: 'assert(code.match(/console\.log\(a\)/g), "Your code should use <code>console.log()</code> to check the value of the variable <code>a</code>.");'
+    testString: assert(code.match(/console\.log\(a\)/g));
 
 ```
 
@@ -53,4 +53,5 @@ console.log(sumAB);
 ```js
 // solution required
 ```
-</section>
+
+/section>

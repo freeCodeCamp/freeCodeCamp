@@ -2,6 +2,7 @@
 id: 587d7da9367417b2b2512b69
 title: Sort an Array Alphabetically using the sort Method
 challengeType: 1
+isHidden: false
 forumTopicId: 18303
 ---
 
@@ -65,10 +66,10 @@ tests:
 
 ```js
 function alphabeticalOrder(arr) {
-  // Add your code below this line
+  // Only change code below this line
 
 
-  // Add your code above this line
+  // Only change code above this line
 }
 alphabeticalOrder(["a", "d", "c", "a", "z", "g"]);
 ```
@@ -84,9 +85,9 @@ alphabeticalOrder(["a", "d", "c", "a", "z", "g"]);
 
 ```js
 function alphabeticalOrder(arr) {
-  // Add your code below this line
+  // Only change code below this line
   return arr.sort();
-  // Add your code above this line
+  // Only change code above this line
 }
 alphabeticalOrder(["a", "d", "c", "a", "z", "g"]);
 ```

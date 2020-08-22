@@ -2,7 +2,7 @@
 name: 'Bug Report: Issues with Coding challenges'
 about: Report issue with a specific challenge, like broken tests, unclear instructions.
 title: ''
-labels: 'scope: curriculum, status: needs investigation'
+labels: 'scope: learn, status: needs help for triage'
 assignees: ''
 
 ---

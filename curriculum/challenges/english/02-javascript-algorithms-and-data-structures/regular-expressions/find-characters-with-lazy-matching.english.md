@@ -2,6 +2,7 @@
 id: 587d7db6367417b2b2512b9b
 title: Find Characters with Lazy Matching
 challengeType: 1
+isHidden: false
 forumTopicId: 301341
 ---
 
@@ -26,6 +27,10 @@ Fix the regex <code>/&lt;.*&gt;/</code> to return the HTML tag <code>&lt;h1&gt;<
 tests:
   - text: The <code>result</code> variable should be an array with <code>&lt;h1&gt;</code> in it
     testString: assert(result[0] == '<h1>');
+  - text: <code>myRegex</code> should use lazy matching
+    testString: assert(/\?/g.test(myRegex));
+  - text: <code>myRegex</code></code> should not include the string 'h1'
+    testString: assert(!myRegex.source.match('h1'));
 
 ```
 

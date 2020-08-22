@@ -19,13 +19,13 @@ localeTitle: 使用jQuery定位元素的父级
 ```yml
 tests:
   - text: 你的<code>left-well</code>元素应该有红色背景。
-    testString: 'assert($("#left-well").css("background-color") === "red" || $("#left-well").css("background-color") === "rgb(255, 0, 0)" || $("#left-well").css("background-color").toLowerCase() === "#ff0000" || $("#left-well").css("background-color").toLowerCase() === "#f00", "Your <code>left-well</code> element should have a red background.");'
+    testString: assert($("#left-well").css("background-color") === 'red' || $("#left-well").css("background-color") === 'rgb(255, 0, 0)' || $("#left-well").css("background-color").toLowerCase() === '#ff0000' || $("#left-well").css("background-color").toLowerCase() === '#f00');
   - text: 您应该使用<code>.parent()</code>函数来修改此元素。
-    testString: 'assert(code.match(/\.parent\s*\(\s*\)\s*\.css/g), "You should use the <code>&#46;parent&#40;&#41;</code> function to modify this element.");'
+    testString: assert(code.match(/\.parent\s*\(\s*\)\s*\.css/g));
   - text: '应该在<code>#target1</code>元素上调用<code>.parent()</code>方法。'
-    testString: 'assert(code.match(/\$\s*?\(\s*?(?:"|")\s*?#target1\s*?(?:"|")\s*?\)\s*?\.parent/gi), "The <code>&#46;parent&#40;&#41;</code> method should be called on the <code>&#35;target1</code> element.");'
+    testString: assert(code.match(/\$\s*?\(\s*?(?:'|")\s*?#target1\s*?(?:'|")\s*?\)\s*?\.parent/gi));
   - text: 只使用jQuery将这些类添加到元素中。
-    testString: 'assert(code.match(/<div class="well" id="left-well">/g), "Only use jQuery to add these classes to the element.");'
+    testString: assert(code.match(/<div class="well" id="left-well">/g));
 
 ```
 
@@ -88,4 +88,5 @@ tests:
 ```js
 // solution required
 ```
-</section>
+
+/section>

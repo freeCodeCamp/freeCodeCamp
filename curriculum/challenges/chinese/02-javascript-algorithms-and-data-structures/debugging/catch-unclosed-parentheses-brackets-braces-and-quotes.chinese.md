@@ -18,9 +18,9 @@ localeTitle: 抓住未封闭的圆括号，括号，括号和引号
 ```yml
 tests:
   - text: 您的代码应该修复数组中缺少的部分。
-    testString: 'assert(code.match(/myArray\s*?=\s*?\[\s*?1\s*?,\s*?2\s*?,\s*?3\s*?\];/g), "Your code should fix the missing piece of the array.");'
+    testString: assert(code.match(/myArray\s*?=\s*?\[\s*?1\s*?,\s*?2\s*?,\s*?3\s*?\];/g));
   - text: 您的代码应该修复<code>.reduce()</code>方法的缺失部分。控制台输出应显示“数组值的总和为：6”。
-    testString: 'assert(arraySum === 6, "Your code should fix the missing piece of the <code>.reduce()</code> method. The console output should show that "Sum of array values is: 6".");'
+    testString: 'assert(arraySum === 6);'
 
 ```
 
@@ -50,4 +50,5 @@ console.log(`Sum of array values is: ${arraySum}`);
 ```js
 // solution required
 ```
-</section>
+
+/section>

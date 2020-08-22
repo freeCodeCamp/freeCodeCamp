@@ -19,11 +19,11 @@ localeTitle: 创建Bootstrap Wells
 ```yml
 tests:
   - text: 添加一个<code>div</code>与类元素<code>well</code>内部的每个的<code>div</code>与类元素<code>&quot;col-xs-6&quot;</code>
-    testString: 'assert($("div.col-xs-6").not(":has(>div.well)").length < 1, "Add a <code>div</code> element with the class <code>well</code> inside each of your <code>div</code> elements with the class <code>"col-xs-6"</code>");'
+    testString: assert($("div.col-xs-6").not(":has(>div.well)").length < 1);
   - text: 巢既您的<code>div</code>与类元素<code>&quot;col-xs-6&quot;</code>你中<code>div</code>与类元素<code>&quot;row&quot;</code> 。
-    testString: 'assert($("div.row > div.col-xs-6").length > 1, "Nest both of your <code>div</code> elements with the class <code>"col-xs-6"</code> within your <code>div</code> element with the class <code>"row"</code>.");'
+    testString: assert($("div.row > div.col-xs-6").length > 1);
   - text: 确保所有<code>div</code>元素都有结束标记。
-    testString: 'assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length, "Make sure all your <code>div</code> elements have closing tags.");'
+    testString: assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length);
 
 ```
 
@@ -61,4 +61,5 @@ tests:
 ```js
 // solution required
 ```
-</section>
+
+/section>

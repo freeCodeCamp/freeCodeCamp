@@ -2,25 +2,42 @@
 id: 56104e9e514f539506016a5c
 title: Iterate Odd Numbers With a For Loop
 challengeType: 1
-videoUrl: ''
-localeTitle: 使用For循环迭代奇数
+videoUrl: 'https://scrimba.com/c/cm8n7T9'
+forumTopicId: 18212
+localeTitle: 使用 For 循环遍历数组的奇数
 ---
 
 ## Description
-<section id="description"> For循环不必一次迭代一个循环。通过改变我们的<code>final-expression</code> ，我们可以计算偶数。我们将从<code>i = 0</code>开始并在<code>i &lt; 10</code>循环。我们会增加<code>i</code>的2每个回路与<code>i += 2</code> 。 <blockquote> var ourArray = []; <br> for（var i = 0; i &lt;10; i + = 2）{ <br> ourArray.push（ⅰ）; <br> } </blockquote> <code>ourArray</code>现在包含<code>[0,2,4,6,8]</code> 。让我们改变<code>initialization</code>这样我们就可以用奇数来计算。 </section>
+<section id='description'>
+for循环可以按照我们指定的顺序来迭代，通过更改我们的<code>计数器</code>，我们可以按照偶数顺序来迭代。
+初始化<code>i = 0</code>，当<code>i < 10</code>的时候继续循环。
+<code>i += 2</code>让<code>i</code>每次循环之后增加2。
+
+```js
+var ourArray = [];
+for (var i = 0; i < 10; i += 2) {
+  ourArray.push(i);
+}
+```
+
+循环结束后，<code>ourArray</code>的值为<code>[0,2,4,6,8]</code>。
+改变<code>计数器</code>，这样我们可以用奇数来数。
+</section>
 
 ## Instructions
-<section id="instructions">使用<code>for</code>循环将奇数从1到9推送到<code>myArray</code> 。 </section>
+<section id='instructions'>
+写一个<code>for</code>循环，把从 1 到 9 的奇数添加到<code>myArray</code>。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 你应该为此使用<code>for</code>循环。
-    testString: 'assert(code.match(/for\s*\(/g).length > 1, "You should be using a <code>for</code> loop for this.");'
-  - text: '<code>myArray</code>应该等于<code>[1,3,5,7,9]</code> 。'
-    testString: 'assert.deepEqual(myArray, [1,3,5,7,9], "<code>myArray</code> should equal <code>[1,3,5,7,9]</code>.");'
+  - text: 你应该使用<code>for</code>循环。
+    testString: assert(code.match(/for\s*\(/g).length > 1);
+  - text: <code>myArray</code>应该等于<code>[1,3,5,7,9]</code>。
+    testString: assert.deepEqual(myArray, [1,3,5,7,9]);
 
 ```
 
@@ -44,6 +61,7 @@ var myArray = [];
 
 // Only change code below this line.
 
+
 ```
 
 </div>
@@ -53,7 +71,7 @@ var myArray = [];
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+if(typeof myArray !== "undefined"){(function(){return myArray;})();}
 ```
 
 </div>
@@ -63,7 +81,16 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+var ourArray = [];
+for (var i = 0; i < 10; i += 2) {
+  ourArray.push(i);
+}
+var myArray = [];
+for (var i = 1; i < 10; i += 2) {
+  myArray.push(i);
+}
 ```
+
 </section>

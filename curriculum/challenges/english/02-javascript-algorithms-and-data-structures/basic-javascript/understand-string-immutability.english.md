@@ -2,6 +2,7 @@
 id: 56533eb9ac21ba0edf2244ba
 title: Understand String Immutability
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cWPVaUR'
 forumTopicId: 18331
 ---
@@ -54,9 +55,8 @@ tests:
 var myStr = "Jello World";
 
 // Only change code below this line
-
-myStr[0] = "H"; // Fix Me
-
+myStr[0] = "H"; // Change this line
+// Only change code above this line
 
 ```
 

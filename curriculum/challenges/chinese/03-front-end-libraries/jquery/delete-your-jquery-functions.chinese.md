@@ -21,15 +21,15 @@ localeTitle: 删除您的jQuery函数
 ```yml
 tests:
   - text: 从<code>document ready function</code>删除所有三个jQuery <code>document ready function</code> 。
-    testString: 'assert(code.match(/\{\s*\}\);/g), "Delete all three of your jQuery functions from your <code>document ready function</code>.");'
+    testString: assert(code.match(/\{\s*\}\);/g));
   - text: 保持<code>script</code>元素不变。
-    testString: 'assert(code.match(/<script>/g), "Leave your <code>script</code> element intact.");'
+    testString: assert(code.match(/<script>/g));
   - text: '将<code>$(document).ready(function() {</code>保留到<code>script</code>元素的开头。'
-    testString: 'assert(code.match(/\$\(document\)\.ready\(function\(\)\s?\{/g), "Leave your <code>$&#40document&#41.ready&#40function&#40&#41 {</code> to the beginning of your <code>script</code> element.");'
+    testString: assert(code.match(/\$\(document\)\.ready\(function\(\)\s?\{/g));
   - text: '保持“文档就绪功能”关闭<code>})</code>完好无损。'
-    testString: 'assert(code.match(/.*\s*\}\);/g), "Leave your "document ready function" closing <code>&#125;&#41;</code> intact.");'
+    testString: assert(code.match(/.*\s*\}\);/g));
   - text: 保持<code>script</code>元素结束标记不变。
-    testString: 'assert(code.match(/<\/script>/g) && code.match(/<script/g) && code.match(/<\/script>/g).length === code.match(/<script/g).length, "Leave your <code>script</code> element closing tag intact.");'
+    testString: assert(code.match(/<\/script>/g) && code.match(/<script/g) && code.match(/<\/script>/g).length === code.match(/<script/g).length);
 
 ```
 
@@ -88,4 +88,5 @@ tests:
 ```js
 // solution required
 ```
-</section>
+
+/section>

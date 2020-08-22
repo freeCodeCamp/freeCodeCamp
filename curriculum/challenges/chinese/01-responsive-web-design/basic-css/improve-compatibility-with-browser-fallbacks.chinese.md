@@ -3,22 +3,29 @@ id: 5b7d72c338cd7e35b63f3e14
 title: Improve Compatibility with Browser Fallbacks
 challengeType: 0
 videoUrl: ''
-localeTitle: 改善与浏览器回退的兼容性
+forumTopicId: 301087
+localeTitle: 通过浏览器降级提高兼容性
 ---
 
 ## Description
-<section id="description">使用CSS时，您可能会在某些时候遇到浏览器兼容性问题。这就是为什么提供浏览器回退以避免潜在问题的重要性。当您的浏览器解析网页的CSS时，它会忽略它无法识别或支持的任何属性。例如，如果使用CSS变量在站点上分配背景颜色，Internet Explorer将忽略背景颜色，因为它不支持CSS变量。在这种情况下，浏览器将使用它对该属性的任何值。如果找不到该属性的任何其他值集，它将恢复为默认值，这通常不理想。这意味着如果您确实希望提供浏览器回退，那么就像在声明之前提供另一个更广泛支持的值一样简单。这样，较旧的浏览器将有一些东西可以依赖，而较新的浏览器只会解释级联后期的任何声明。 </section>
+<section id='description'>
+使用 CSS 时可能会遇到浏览器兼容性问题。提供浏览器降级方案来避免潜在的问题就显得很重要。
+当浏览器解析页面的 CSS 时，会自动忽视不能识别或者不支持的属性。举个栗子，如果使用 CSS 变量来指定站点的背景色， IE 浏览器由于不支持 CSS 变量会忽视背景色。因此，浏览器会使用其它值。如果没有找到其它值，会使用默认值，也就是没有背景色。
+这意味着如果想提供浏览器降级方案，在声明之前提供另一个更宽泛的值即可。这样老旧的浏览器会降级使用这个方案，新的浏览器会在后面的声明里覆盖降级方案。
+</section>
 
 ## Instructions
-<section id="instructions">它看起来像一个变量用于设置<code>.red-box</code>类的背景颜色。让我们通过在现有声明之前添加另一个<code>background</code>声明来提高我们的浏览器兼容性，并将其值设置为红色。 </section>
+<section id='instructions'>
+看来已经使用了变量做为 <code>.red-box</code> class 的背景色。来通过在存在的声明前添加其它的值为 red 的 <code>background</code> 声明来提高浏览器的兼容性。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您的<code>.red-box</code>规则应包括在现有<code>background</code>声明之前立即将<code>background</code>设置为红色的后备。
-    testString: 'assert(code.match(/.red-box\s*{[^}]*background:\s*(red|#ff0000|#f00|rgb\(\s*255\s*,\s*0\s*,\s*0\s*\)|rgb\(\s*100%\s*,\s*0%\s*,\s*0%\s*\)|hsl\(\s*0\s*,\s*100%\s*,\s*50%\s*\))\s*;\s*background:\s*var\(\s*--red-color\s*\);/gi), "Your <code>.red-box</code> rule should include a fallback with the <code>background</code> set to red immediately before the existing <code>background</code> declaration.");'
+  - text: '<code>.red-box</code> 应该通过在存在的 <code>background</code> 声明前添加其它的值为 red 的<code>background</code> 来提供降级。'
+    testString: assert(code.replace(/\s/g, "").match(/\.red-box{background:(red|#ff0000|#f00|rgb\(255,0,0\)|rgb\(100%,0%,0%\)|hsl\(0,100%,50%\));background:var\(--red-color\);height:200px;width:200px;}/gi));
 
 ```
 
@@ -42,7 +49,6 @@ tests:
   }
 </style>
 <div class="red-box"></div>
-
 ```
 
 </div>
@@ -54,7 +60,20 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+
+```html
+<style>
+  :root {
+    --red-color: red;
+  }
+  .red-box {
+    background: red;
+    background: var(--red-color);
+    height: 200px;
+    width:200px;
+  }
+</style>
+<div class="red-box"></div>
 ```
+
 </section>

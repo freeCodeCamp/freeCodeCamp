@@ -3,6 +3,7 @@ id: a77dbc43c33f39daa4429b4f
 title: Boo who
 isRequired: true
 challengeType: 5
+isHidden: false
 forumTopicId: 16000
 ---
 
@@ -10,7 +11,6 @@ forumTopicId: 16000
 <section id='description'>
 Check if a value is classified as a boolean primitive. Return true or false.
 Boolean primitives are true and false.
-Remember to use <a href='https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code.
 </section>
 
 ## Instructions
@@ -55,7 +55,6 @@ tests:
 
 ```js
 function booWho(bool) {
-  // What is the new fad diet for ghost developers? The Boolean.
   return bool;
 }
 

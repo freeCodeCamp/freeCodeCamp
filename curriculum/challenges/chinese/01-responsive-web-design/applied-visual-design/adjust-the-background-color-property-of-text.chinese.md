@@ -2,27 +2,36 @@
 id: 587d781b367417b2b2512abc
 title: Adjust the background-color Property of Text
 challengeType: 0
-videoUrl: ''
-localeTitle: 调整文本的背景颜色属性
+videoUrl: 'https://scrimba.com/c/cEDqwA6'
+forumTopicId: 301032
+localeTitle: 调整文本的背景色
 ---
 
 ## Description
-<section id="description">您可以为包含要强调的文本的元素添加<code>background-color</code> ，而不是调整整体背景或文本颜色以使前景易于阅读。此挑战使用<code>rgba()</code>而不是<code>hex</code>代码或普通<code>rgb()</code> 。 <blockquote> rgba代表： <br> r =红色<br> g =绿色<br> b =蓝色<br> a = alpha /不透明度</blockquote> RGB值的范围可以是0到255.α值的范围可以从1（完全不透明或纯色）到0（完全透明或清晰）。 <code>rgba()</code>非常适合在这种情况下使用，因为它允许您调整不透明度。这意味着您不必完全阻挡背景。您将使用<code>background-color: rgba(45, 45, 45, 0.1)</code>来应对此挑战。它产生深灰色，在低不透明度值为0.1时几乎是透明的。 </section>
+<section id='description'>
+为了让页面更美观，除了设置整个页面的背景色以及文字颜色外，你还可以单独设置文字的背景色，即在文字的父元素上添加 <code>background-color</code> 属性。在本挑战里我们将使用 <code>rgba()</code> 颜色，而不是之前学到的 <code>hex</code> 编码或者 <code>rgb()</code> 颜色。
+<blockquote>rgba 代表：<br>&nbsp;&nbsp;r = red 红色<br>&nbsp;&nbsp;g = green 绿色<br>&nbsp;&nbsp;b = blue 蓝色<br>&nbsp;&nbsp;a = alpha 透明度</blockquote>
+RGB 值可以在 0 到 255 之间。alpha 值可以在 0 到 1 之间，其中 0 代表完全透明，1 代表完全不透明。<code>rgba()</code> 非常棒，因为你可以设置颜色的透明度，这意味着你可以做出一些很漂亮的半透明效果。
+在本挑战里你将会用到这个代码 <code>background-color: rgba(45, 45, 45, 0.1)</code>。它表示背景是黑灰色，因为设置了透明度为 0.1，所以几乎是透明的。
+</section>
 
 ## Instructions
-<section id="instructions">要使文本更突出，请将<code>h4</code>元素的<code>background-color</code>调整为给定的<code>rgba()</code>值。同样对于<code>h4</code> ，删除<code>height</code>属性并添加10px的<code>padding</code> 。 </section>
+<section id='instructions'>
+为了让文字更醒目，设置 <code>h4</code> 元素的 <code>background-color</code> 属性值为上面指定的 <code>rgba()</code>。
+同时移除 <code>h4</code> 的 <code>height</code> 属性，并添加 <code>padding</code> 属性，值为 10px。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: '您的代码应该将<code>background-color</code>属性添加到设置为<code>rgba(45, 45, 45, 0.1)</code>的<code>h4</code>元素。'
-    testString: 'assert(code.match(/background-color:\s*?rgba\(\s*?45\s*?,\s*?45\s*?,\s*?45\s*?,\s*?0?\.1\s*?\)/gi), "Your code should add a <code>background-color</code> property to the <code>h4</code> element set to <code>rgba(45, 45, 45, 0.1)</code>.");'
-  - text: 您的代码应该为<code>h4</code>元素添加<code>padding</code>属性并将其设置为10像素。
-    testString: 'assert($("h4").css("padding-top") == "10px" && $("h4").css("padding-right") == "10px" && $("h4").css("padding-bottom") == "10px" && $("h4").css("padding-left") == "10px", "Your code should add a <code>padding</code> property to the <code>h4</code> element and set it to 10 pixels.");'
-  - text: 应删除<code>h4</code>元素上的<code>height</code>属性。
-    testString: 'assert(!($("h4").css("height") == "25px"), "The <code>height</code> property on the <code>h4</code> element should be removed.");'
+  - text: '你应该给 <code>h4</code> 元素添加一个 <code>background-color</code> 属性并且赋值 <code>rgba(45, 45, 45, 0.1)</code>。'
+    testString: assert(code.match(/(background-color|background):\s*?rgba\(\s*?45\s*?,\s*?45\s*?,\s*?45\s*?,\s*?0?\.1\s*?\);/gi));
+  - text: '你应该给 <code>h4</code> 元素添加一个 <code>padding</code> 属性并且赋值 <code>10px</code>。'
+    testString: assert($('h4').css('padding-top') == '10px' && $('h4').css('padding-right') == '10px' && $('h4').css('padding-bottom') == '10px' && $('h4').css('padding-left') == '10px');
+  - text: '<code>h4</code> 元素的 <code>height</code> 属性应该被移除。'
+    testString: assert(!($('h4').css('height') == '25px'));
 
 ```
 
@@ -38,8 +47,8 @@ tests:
   h4 {
     text-align: center;
     height: 25px;
-
-
+    
+    
   }
   p {
     text-align: justify;
@@ -67,15 +76,14 @@ tests:
     <div class="cardText">
       <h4>Alphabet</h4>
       <hr>
-      <p><em>Google was founded by Larry Page and Sergey Brin while they were <u>Ph.D. students</u> at <strong>Stanford University</strong>.</em></p>
+      <p><em>Google 由在<strong>斯坦福大学</strong>攻读<u>理工博士</u>的拉里·佩奇和谢尔盖·布林共同创建。</em></p>
     </div>
     <div class="cardLinks">
-      <a href="https://en.wikipedia.org/wiki/Larry_Page" target="_blank" class="links">Larry Page</a><br><br>
-      <a href="https://en.wikipedia.org/wiki/Sergey_Brin" target="_blank" class="links">Sergey Brin</a>
+      <a href="https://en.wikipedia.org/wiki/Larry_Page" target="_blank" class="links">拉里·佩奇</a><br><br>
+      <a href="https://en.wikipedia.org/wiki/Sergey_Brin" target="_blank" class="links">谢尔盖·布林</a>
     </div>
   </div>
 </div>
-
 ```
 
 </div>
@@ -87,7 +95,9 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>
+              

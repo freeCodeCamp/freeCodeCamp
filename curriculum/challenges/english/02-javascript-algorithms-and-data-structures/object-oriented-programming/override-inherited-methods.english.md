@@ -2,6 +2,7 @@
 id: 587d7db1367417b2b2512b88
 title: Override Inherited Methods
 challengeType: 1
+isHidden: false
 forumTopicId: 301322
 ---
 
@@ -82,11 +83,11 @@ function Penguin() { }
 Penguin.prototype = Object.create(Bird.prototype);
 Penguin.prototype.constructor = Penguin;
 
-// Add your code below this line
+// Only change code below this line
 
 
 
-// Add your code above this line
+// Only change code above this line
 
 let penguin = new Penguin();
 console.log(penguin.fly());

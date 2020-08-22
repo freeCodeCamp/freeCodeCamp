@@ -44,7 +44,7 @@ function* submitNewUsernameSaga({ payload: username }) {
   }
 }
 
-function* sumbitProfileUISaga({ payload }) {
+function* submitProfileUISaga({ payload }) {
   try {
     const { data: response } = yield call(putUpdateMyProfileUI, payload);
     yield put(submitProfileUIComplete({ ...response, payload }));
@@ -79,9 +79,14 @@ function* validateUsernameSaga({ payload }) {
 function* verifyCertificationSaga({ payload }) {
   try {
     const {
-      data: { response, isCertMap }
+      data: { response, isCertMap, completedChallenges }
     } = yield call(putVerifyCert, payload);
-    yield put(verifyCertComplete({ ...response, payload: isCertMap }));
+    yield put(
+      verifyCertComplete({
+        ...response,
+        payload: { ...isCertMap, completedChallenges }
+      })
+    );
     yield put(createFlashMessage(response));
   } catch (e) {
     yield put(verifyCertError(e));
@@ -94,7 +99,7 @@ export function createSettingsSagas(types) {
     takeLatest(types.submitNewAbout, submitNewAboutSaga),
     takeLatest(types.submitNewUsername, submitNewUsernameSaga),
     takeLatest(types.validateUsername, validateUsernameSaga),
-    takeLatest(types.submitProfileUI, sumbitProfileUISaga),
+    takeLatest(types.submitProfileUI, submitProfileUISaga),
     takeEvery(types.verifyCert, verifyCertificationSaga)
   ];
 }

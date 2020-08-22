@@ -2,30 +2,57 @@
 id: 587d7b7e367417b2b2512b24
 title: Use the Conditional (Ternary) Operator
 challengeType: 1
-videoUrl: ''
-localeTitle: 使用条件（三元）运算符
+videoUrl: 'https://scrimba.com/c/c3JRmSg'
+forumTopicId: 301181
+localeTitle: 使用三元运算符
 ---
 
 ## Description
-<section id="description"> <dfn>条件运算符</dfn> （也称为<dfn>三元运算符</dfn> ）可以用作一行if-else表达式。语法是： <code>condition ? statement-if-true : statement-if-false;</code>以下函数使用if-else语句来检查条件： <blockquote> function findGreater（a，b）{ <br> if（a&gt; b）{ <br>返回“a更大”; <br> } <br>其他{ <br>返回“b更大”; <br> } <br> } </blockquote>这可以使用<code>conditional operator</code>重写： <blockquote> function findGreater（a，b）{ <br>返回a&gt; b？ “a更大”：“b更大”; <br> } </blockquote></section>
+<section id='description'>
+条件运算符（也称为三元运算符）的用处就像写成一行的 if-else 表达式
+语法如下所示：
+<code>condition ? statement-if-true : statement-if-false;</code>
+以下函数使用 if-else 语句来检查条件：
+
+```js
+function findGreater(a, b) {
+  if(a > b) {
+    return "a is greater";
+  }
+  else {
+    return "b is greater";
+  }
+}
+```
+
+上面的函数使用条件运算符写法如下：
+
+```js
+function findGreater(a, b) {
+  return a > b ? "a is greater" : "b is greater";
+}
+```
+
+</section>
 
 ## Instructions
-<section id="instructions">在<code>checkEqual</code>函数中使用<code>conditional operator</code>来检查两个数字是否相等。该函数应返回true或false。 </section>
+<section id='instructions'>
+在<code>checkEqual</code>函数中使用条件运算符检查两个数字是否相等，函数应该返回 "Equal" 或 "Not Equal"
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>checkEqual</code>应该使用<code>conditional operator</code>
-    testString: 'assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?/gi.test(code), "<code>checkEqual</code> should use the <code>conditional operator</code>");'
-  - text: '<code>checkEqual(1, 2)</code>应该返回false'
-    testString: 'assert(checkEqual(1, 2) === false, "<code>checkEqual(1, 2)</code> should return false");'
-  - text: '<code>checkEqual(1, 1)</code>应该返回true'
-    testString: 'assert(checkEqual(1, 1) === true, "<code>checkEqual(1, 1)</code> should return true");'
-  - text: '<code>checkEqual(1, -1)</code>应该返回false'
-    testString: 'assert(checkEqual(1, -1) === false, "<code>checkEqual(1, -1)</code> should return false");'
-
+  - text: <code>checkEqual</code>应该使用条件运算符。
+    testString: assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?/.test(code));
+  - text: <code>checkEqual(1, 2)</code>应该返回 "Not Equal"。
+    testString: assert(checkEqual(1, 2) === "Not Equal");
+  - text: <code>checkEqual(1, 1)</code>应该返回 "Equal"。
+    testString: assert(checkEqual(1, 1) === "Equal");
+  - text: <code>checkEqual(1, -1)</code>应该返回 "Not Equal"。
+    testString: assert(checkEqual(1, -1) === "Not Equal");
 ```
 
 </section>
@@ -41,7 +68,6 @@ function checkEqual(a, b) {
 }
 
 checkEqual(1, 2);
-
 ```
 
 </div>
@@ -54,6 +80,9 @@ checkEqual(1, 2);
 <section id='solution'>
 
 ```js
-// solution required
+function checkEqual(a, b) {
+  return a === b ? "Equal" : "Not Equal";
+}
 ```
+
 </section>

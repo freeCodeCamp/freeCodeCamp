@@ -2,27 +2,33 @@
 id: bad87fed1348bd9aedf08833
 title: Delete HTML Elements
 challengeType: 0
-videoUrl: ''
-localeTitle: 删除HTML元素
+videoUrl: 'https://scrimba.com/p/pVMPUv/ckK73C9'
+forumTopicId: 17559
+localeTitle: 删除 HTML 元素
 ---
 
 ## Description
-<section id="description">我们的手机没有太多的垂直空间。让我们删除不必要的元素，以便我们开始构建CatPhotoApp。 </section>
+<section id='description'>
+手机的屏幕空间是有限的。
+让我们删除不必要的元素，开始设计我们的CatPhotoApp。
+</section>
 
 ## Instructions
-<section id="instructions">删除你的<code>h1</code>元素，以便我们简化视图。 </section>
+<section id='instructions'>
+任务：删除<code>h1</code>元素以简化视图。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 删除你的<code>h1</code>元素。
-    testString: 'assert(!code.match(/<h1>/gi) && !code.match(/<\/h1>/gi), "Delete your <code>h1</code> element.");'
-  - text: 将<code>h2</code>元素留在页面上。
-    testString: 'assert(code.match(/<h2>[\w\W]*<\/h2>/gi), "Leave your <code>h2</code> element on the page.");'
-  - text: 将<code>p</code>元素留在页面上。
-    testString: 'assert(code.match(/<p>[\w\W]*<\/p>/gi), "Leave your <code>p</code> element on the page.");'
+  - text: '删除<code>h1</code>元素。'
+    testString: assert(!code.match(/<h1>/gi) && !code.match(/<\/h1>/gi));
+  - text: '保留<code>h2</code>元素。'
+    testString: assert(code.match(/<h2>[\w\W]*<\/h2>/gi));
+  - text: '保留<code>p</code>元素。'
+    testString: assert(code.match(/<p>[\w\W]*<\/p>/gi));
 
 ```
 
@@ -38,8 +44,7 @@ tests:
 
 <h2>CatPhotoApp</h2>
 
-<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
-
+<p>在大家心目中，猫是慵懒和可爱的化身，它可以睡饱了再起来吃饭，可以逗趣小耗子，可以卖得了萌，使得了坏，这样百变的小怪兽就集结在一只宠物上，怎能不惹人怜爱。</p>
 ```
 
 </div>
@@ -50,8 +55,5 @@ tests:
 
 ## Solution
 <section id='solution'>
-
-```js
-// solution required
-```
 </section>
+              

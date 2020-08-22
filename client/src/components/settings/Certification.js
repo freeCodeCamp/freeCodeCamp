@@ -13,7 +13,10 @@ import {
 import { Link, navigate } from 'gatsby';
 import { createSelector } from 'reselect';
 
-import { projectMap, legacyProjectMap } from '../../resources/certProjectMap';
+import {
+  projectMap,
+  legacyProjectMap
+} from '../../resources/certAndProjectMap';
 
 import SectionHeader from './SectionHeader';
 import SolutionViewer from './SolutionViewer';
@@ -44,14 +47,19 @@ const propTypes = {
   is2018DataVisCert: PropTypes.bool,
   isApisMicroservicesCert: PropTypes.bool,
   isBackEndCert: PropTypes.bool,
+  isDataAnalysisPyCertV7: PropTypes.bool,
   isDataVisCert: PropTypes.bool,
   isFrontEndCert: PropTypes.bool,
   isFrontEndLibsCert: PropTypes.bool,
   isFullStackCert: PropTypes.bool,
   isHonest: PropTypes.bool,
+  isInfosecCertV7: PropTypes.bool,
   isInfosecQaCert: PropTypes.bool,
   isJsAlgoDataStructCert: PropTypes.bool,
+  isMachineLearningPyCertV7: PropTypes.bool,
+  isQaCertV7: PropTypes.bool,
   isRespWebDesignCert: PropTypes.bool,
+  isSciCompPyCertV7: PropTypes.bool,
   updateLegacyCert: PropTypes.func.isRequired,
   username: PropTypes.string,
   verifyCert: PropTypes.func.isRequired
@@ -67,9 +75,14 @@ const isCertSelector = ({
   isDataVisCert,
   isFrontEndCert,
   isInfosecQaCert,
+  isQaCertV7,
+  isInfosecCertV7,
   isFrontEndLibsCert,
   isFullStackCert,
-  isRespWebDesignCert
+  isRespWebDesignCert,
+  isSciCompPyCertV7,
+  isDataAnalysisPyCertV7,
+  isMachineLearningPyCertV7
 }) => ({
   is2018DataVisCert,
   isApisMicroservicesCert,
@@ -78,9 +91,14 @@ const isCertSelector = ({
   isDataVisCert,
   isFrontEndCert,
   isInfosecQaCert,
+  isQaCertV7,
+  isInfosecCertV7,
   isFrontEndLibsCert,
   isFullStackCert,
-  isRespWebDesignCert
+  isRespWebDesignCert,
+  isSciCompPyCertV7,
+  isDataAnalysisPyCertV7,
+  isMachineLearningPyCertV7
 });
 
 const isCertMapSelector = createSelector(
@@ -90,21 +108,31 @@ const isCertMapSelector = createSelector(
     isApisMicroservicesCert,
     isJsAlgoDataStructCert,
     isInfosecQaCert,
+    isQaCertV7,
+    isInfosecCertV7,
     isFrontEndLibsCert,
     isRespWebDesignCert,
     isDataVisCert,
     isFrontEndCert,
-    isBackEndCert
+    isBackEndCert,
+    isSciCompPyCertV7,
+    isDataAnalysisPyCertV7,
+    isMachineLearningPyCertV7
   }) => ({
     'Responsive Web Design': isRespWebDesignCert,
     'JavaScript Algorithms and Data Structures': isJsAlgoDataStructCert,
     'Front End Libraries': isFrontEndLibsCert,
     'Data Visualization': is2018DataVisCert,
-    "API's and Microservices": isApisMicroservicesCert,
-    'Information Security And Quality Assurance': isInfosecQaCert,
+    'APIs and Microservices': isApisMicroservicesCert,
+    'Quality Assurance': isQaCertV7,
+    'Information Security': isInfosecCertV7,
+    'Scientific Computing with Python': isSciCompPyCertV7,
+    'Data Analysis with Python': isDataAnalysisPyCertV7,
+    'Machine Learning with Python': isMachineLearningPyCertV7,
     'Legacy Front End': isFrontEndCert,
     'Legacy Data Visualization': isDataVisCert,
-    'Legacy Back End': isBackEndCert
+    'Legacy Back End': isBackEndCert,
+    'Legacy Information Security and Quality Assurance': isInfosecQaCert
   })
 );
 
@@ -326,7 +354,7 @@ export class CertificationSettings extends Component {
     // filter the new solutions that need to be updated
     const completedChallenges = this.props.completedChallenges;
     let challengesToUpdate = {};
-    let newChalleneFound = true;
+    let newChallengeFound = true;
     let oldSubmissions = 0;
     for (let submittedChal of Object.keys(idsToSolutions)) {
       for (let i of completedChallenges) {
@@ -335,14 +363,14 @@ export class CertificationSettings extends Component {
             challengesToUpdate[submittedChal] = idsToSolutions[submittedChal];
           }
           oldSubmissions++;
-          newChalleneFound = false;
+          newChallengeFound = false;
           break;
         }
       }
-      if (newChalleneFound && idsToSolutions[submittedChal] !== '') {
+      if (newChallengeFound && idsToSolutions[submittedChal] !== '') {
         challengesToUpdate[submittedChal] = idsToSolutions[submittedChal];
       }
-      newChalleneFound = true;
+      newChallengeFound = true;
     }
 
     const valuesSaved = values(formChalObj)
@@ -437,7 +465,7 @@ export class CertificationSettings extends Component {
     );
   };
 
-  renderFullStack = () => {
+  renderLegacyFullStack = () => {
     const {
       isFullStackCert,
       username,
@@ -460,6 +488,8 @@ export class CertificationSettings extends Component {
       isJsAlgoDataStructCert &&
       isRespWebDesignCert;
 
+    // Keep the settings page slug as full-stack rather than
+    // legacy-full-stack so we don't break existing links
     const superBlock = 'full-stack';
     const certLocation = `/certification/${username}/${superBlock}`;
 
@@ -482,11 +512,11 @@ export class CertificationSettings extends Component {
     return (
       <FullWidthRow key={superBlock}>
         <Spacer />
-        <h3>Full Stack Certification</h3>
+        <h3 className='text-center'>Legacy Full Stack Certification</h3>
         <div>
           <p>
             Once you've earned the following freeCodeCamp certifications, you'll
-            be able to claim The Full Stack Developer Certification:
+            be able to claim the Legacy Full Stack Developer Certification:
           </p>
           <ul>
             <li>Responsive Web Design</li>
@@ -494,7 +524,7 @@ export class CertificationSettings extends Component {
             <li>Front End Libraries</li>
             <li>Data Visualization</li>
             <li>APIs and Microservices</li>
-            <li>Information Security and Quality Assurance</li>
+            <li>Legacy Information Security and Quality Assurance</li>
           </ul>
         </div>
 
@@ -536,11 +566,11 @@ export class CertificationSettings extends Component {
       solutionViewer: { files, solution, isOpen, projectTitle }
     } = this.state;
     return (
-      <section id='certifcation-settings'>
+      <section id='certification-settings'>
         <SectionHeader>Certifications</SectionHeader>
         {certifications.map(this.renderCertifications)}
-        {this.renderFullStack()}
         <SectionHeader>Legacy Certifications</SectionHeader>
+        {this.renderLegacyFullStack()}
         {legacyCertifications.map(this.renderLegacyCertifications)}
         {isOpen ? (
           <Modal

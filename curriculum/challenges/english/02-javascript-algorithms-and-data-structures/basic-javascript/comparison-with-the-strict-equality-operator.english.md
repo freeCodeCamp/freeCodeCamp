@@ -2,6 +2,7 @@
 id: 56533eb9ac21ba0edf2244d1
 title: Comparison with the Strict Equality Operator
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cy87atr'
 forumTopicId: 16790
 ---
@@ -57,7 +58,6 @@ function testStrict(val) {
   return "Not Equal";
 }
 
-// Change this value to test
 testStrict(10);
 ```
 

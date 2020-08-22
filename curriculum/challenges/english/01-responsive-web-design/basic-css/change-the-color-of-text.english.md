@@ -2,6 +2,7 @@
 id: bad87fee1348bd9aedf08803
 title: Change the Color of Text
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cRkVmSm'
 forumTopicId: 16775
 ---
@@ -28,8 +29,8 @@ Change your <code>h2</code> element's style so that its text color is red.
 tests:
   - text: Your <code>h2</code> element should have a <code>style</code> declaration.
     testString: assert($("h2").attr('style'));
-  - text: Your <code>h2</code> element should be red.
-    testString: assert($("h2").css("color") === "rgb(255, 0, 0)");
+  - text: Your <code>h2</code> element should have color set to <code>red</code>.
+    testString: assert($("h2")[0].style.color === "red");
   - text: Your <code>style</code> declaration should end with a <code>;</code> .
     testString: assert($("h2").attr('style') && $("h2").attr('style').endsWith(';'));
 
@@ -64,7 +65,7 @@ tests:
     </ol>
   </div>
 
-  <form action="/submit-cat-photo">
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
     <label><input type="checkbox" name="personality" checked> Loving</label>
@@ -107,7 +108,7 @@ tests:
     </ol>
   </div>
 
-  <form action="/submit-cat-photo">
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
     <label><input type="checkbox" name="personality" checked> Loving</label>

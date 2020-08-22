@@ -2,6 +2,7 @@
 id: 56bbb991ad1ed5201cd392d2
 title: Add New Properties to a JavaScript Object
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cQe38UD'
 forumTopicId: 301169
 ---
@@ -14,6 +15,20 @@ Here's how we would add a <code>"bark"</code> property to <code>ourDog</code>:
 or
 <code>ourDog["bark"] = "bow-wow";</code>
 Now when we evaluate <code>ourDog.bark</code>, we'll get his bark, "bow-wow".
+
+Example:
+
+```js
+var ourDog = {
+  "name": "Camper",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["everything!"]
+};
+
+ourDog.bark = "bow-wow";
+```
+
 </section>
 
 ## Instructions
@@ -41,16 +56,6 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Example
-var ourDog = {
-  "name": "Camper",
-  "legs": 4,
-  "tails": 1,
-  "friends": ["everything!"]
-};
-
-ourDog.bark = "bow-wow";
-
 // Setup
 var myDog = {
   "name": "Happy Coder",
@@ -59,7 +64,7 @@ var myDog = {
   "friends": ["freeCodeCamp Campers"]
 };
 
-// Only change code below this line.
+// Only change code below this line
 
 ```
 

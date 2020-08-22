@@ -18,11 +18,11 @@ localeTitle: 在循环内重新初始化变量时请小心
 ```yml
 tests:
   - text: 您的代码应该将<code>matrix</code>变量设置为一个数组，每个数组包含3行，每列2列零。
-    testString: 'assert(JSON.stringify(matrix) == "[[0,0],[0,0],[0,0]]", "Your code should set the <code>matrix</code> variable to an array holding 3 rows of 2 columns of zeroes each.");'
+    testString: assert(JSON.stringify(matrix) == "[[0,0],[0,0],[0,0]]");
   - text: <code>matrix</code>变量应该有3行。
-    testString: 'assert(matrix.length == 3, "The <code>matrix</code> variable should have 3 rows.");'
+    testString: assert(matrix.length == 3);
   - text: <code>matrix</code>变量每行应有2列。
-    testString: 'assert(matrix[0].length == 2 && matrix[1].length === 2 && matrix[2].length === 2, "The <code>matrix</code> variable should have 2 columns in each row.");'
+    testString: assert(matrix[0].length == 2 && matrix[1].length === 2 && matrix[2].length === 2);
 
 ```
 
@@ -68,4 +68,5 @@ console.log(matrix);
 ```js
 // solution required
 ```
-</section>
+
+/section>

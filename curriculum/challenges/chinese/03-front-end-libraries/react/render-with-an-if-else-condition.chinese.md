@@ -19,13 +19,13 @@ localeTitle: 使用If-Else条件渲染
 ```yml
 tests:
   - text: <code>MyComponent</code>应该存在并呈现。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find("MyComponent").length === 1; })(), "<code>MyComponent</code> should exist and render.");'
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find('MyComponent').length === 1; })());
   - text: 当<code>display</code>设置为<code>true</code> ，应该渲染<code>div</code> ， <code>button</code>和<code>h1</code> 。
-    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const state_1 = () => { mockedComponent.setState({display: true}); return waitForIt(() => mockedComponent )}; const updated = await state_1(); assert(mockedComponent.find("div").length === 1 && mockedComponent.find("div").children().length === 2 && mockedComponent.find("button").length === 1 && mockedComponent.find("h1").length === 1, "When <code>display</code> is set to <code>true</code>, a <code>div</code>, <code>button</code>, and <code>h1</code> should render."); }; '
+    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const state_1 = () => { mockedComponent.setState({display: true}); return waitForIt(() => mockedComponent )}; const updated = await state_1(); assert(mockedComponent.find(''div'').length === 1 && mockedComponent.find(''div'').children().length === 2 && mockedComponent.find(''button'').length === 1 && mockedComponent.find(''h1'').length === 1); }; '
   - text: 当<code>display</code>设置为<code>false</code> ，只应呈现<code>div</code>和<code>button</code> 。
-    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const state_1 = () => { mockedComponent.setState({display: false}); return waitForIt(() => mockedComponent )}; const updated = await state_1(); assert(mockedComponent.find("div").length === 1 && mockedComponent.find("div").children().length === 1 && mockedComponent.find("button").length === 1 && mockedComponent.find("h1").length === 0, "When <code>display</code> is set to <code>false</code>, only a <code>div</code> and <code>button</code> should render."); }; '
+    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const state_1 = () => { mockedComponent.setState({display: false}); return waitForIt(() => mockedComponent )}; const updated = await state_1(); assert(mockedComponent.find(''div'').length === 1 && mockedComponent.find(''div'').children().length === 1 && mockedComponent.find(''button'').length === 1 && mockedComponent.find(''h1'').length === 0); }; '
   - text: render方法应使用<code>if/else</code>语句来检查<code>this.state.display</code>的条件。
-    testString: 'getUserInput => assert(getUserInput("index").includes("if") && getUserInput("index").includes("else"), "The render method should use an <code>if/else</code> statement to check the condition of <code>this.state.display</code>.");'
+    testString: getUserInput => assert(getUserInput('index').includes('if') && getUserInput('index').includes('else'));
 
 ```
 
@@ -84,4 +84,5 @@ console.info('after the test');
 ```js
 // solution required
 ```
-</section>
+
+/section>

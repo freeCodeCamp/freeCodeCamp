@@ -2,6 +2,7 @@
 id: 587d778b367417b2b2512aa7
 title: Wrap Radio Buttons in a fieldset Element for Better Accessibility
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cVJVefw'
 forumTopicId: 301030
 ---
@@ -71,7 +72,7 @@ tests:
       <input type="text" id="email" name="email">
 
 
-      <!-- Add your code below this line -->
+      <!-- Only change code below this line -->
       <div>
         <p>What level ninja are you?</p>
         <input id="newbie" type="radio" name="levels" value="newbie">
@@ -81,7 +82,7 @@ tests:
         <input id="master" type="radio" name="levels" value="master">
         <label for="master">Master</label>
       </div>
-      <!-- Add your code above this line -->
+      <!-- Only change code above this line -->
 
 
       <input type="submit" name="submit" value="Submit">
@@ -94,7 +95,7 @@ tests:
   <img src="samuraiSwords.jpeg" alt="">
   <article>
     <h2>Defeating your Foe: the Red Dot is Ours!</h2>
-    <p>Felines the world over have been waging war on the most persistent of foes. This red nemesis combines both cunning stealth and lightening speed. But chin up, fellow fighters, our time for victory may soon be near...</p>
+    <p>Felines the world over have been waging war on the most persistent of foes. This red nemesis combines both cunning stealth and lightning speed. But chin up, fellow fighters, our time for victory may soon be near...</p>
   </article>
   <img src="samuraiSwords.jpeg" alt="">
   <article>
@@ -125,8 +126,6 @@ tests:
       <label for="email">Email:</label>
       <input type="text" id="email" name="email">
 
-
-      <!-- Add your code below this line -->
       <fieldset>
         <legend>What level ninja are you?</legend>
         <input id="newbie" type="radio" name="levels" value="newbie">
@@ -136,8 +135,6 @@ tests:
         <input id="master" type="radio" name="levels" value="master">
         <label for="master">Master</label>
       </fieldset>
-      <!-- Add your code above this line -->
-
 
       <input type="submit" name="submit" value="Submit">
     </form>
@@ -149,7 +146,7 @@ tests:
   <img src="samuraiSwords.jpeg" alt="">
   <article>
     <h2>Defeating your Foe: the Red Dot is Ours!</h2>
-    <p>Felines the world over have been waging war on the most persistent of foes. This red nemesis combines both cunning stealth and lightening speed. But chin up, fellow fighters, our time for victory may soon be near...</p>
+    <p>Felines the world over have been waging war on the most persistent of foes. This red nemesis combines both cunning stealth and lightning speed. But chin up, fellow fighters, our time for victory may soon be near...</p>
   </article>
   <img src="samuraiSwords.jpeg" alt="">
   <article>

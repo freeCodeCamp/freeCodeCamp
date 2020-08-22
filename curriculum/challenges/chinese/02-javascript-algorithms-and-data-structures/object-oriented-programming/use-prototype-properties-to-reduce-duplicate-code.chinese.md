@@ -2,27 +2,48 @@
 id: 587d7dae367417b2b2512b7c
 title: Use Prototype Properties to Reduce Duplicate Code
 challengeType: 1
-videoUrl: ''
+forumTopicId: 301336
 localeTitle: 使用原型属性来减少重复代码
 ---
 
 ## Description
-<section id="description">由于<code>numLegs</code>对于<code>Bird</code>所有实例可能具有相同的值， <code>numLegs</code>在每个<code>Bird</code>实例中基本上都有一个重复的变量<code>numLegs</code> 。当只有两个实例时，这可能不是问题，但想象一下，如果有数百万个实例。这将是许多重复的变量。更好的方法是使用<code>Bird&#39;s</code> <code>prototype</code> 。 <code>prototype</code>是一个在<code>Bird</code>所有实例之间共享的对象。以下是如何将<code>numLegs</code>添加到<code>Bird prototype</code> ： <blockquote> Bird.prototype.numLegs = 2; </blockquote>现在<code>Bird</code>所有实例都具有<code>numLegs</code>属性。 <blockquote>的console.log（duck.numLegs）; //打印2 <br>的console.log（canary.numLegs）; //打印2 </blockquote>由于所有实例都自动拥有<code>prototype</code>上的属性，因此将<code>prototype</code>视为创建对象的“配方”。请注意， <code>duck</code>和<code>canary</code>的<code>prototype</code>是<code>Bird</code>构造函数的一部分，如<code>Bird.prototype</code> 。 JavaScript中几乎每个对象都有一个<code>prototype</code>属性，它是创建它的构造函数的一部分。 </section>
+<section id='description'>
+所有<code>Bird</code>实例可能会有相同的<code>numLegs</code>值，所以在每一个<code>Bird</code>的实例中本质上都有一个重复的变量<code>numLegs</code>。
+当只有两个实例时可能并不是什么问题，但想象一下如果有数百万个实例，这将会产生许许多多重复的变量。
+这里有一个更好的方法可以解决上述问题，那就是使用<code>Bird</code>的<code>原型</code>。<code>原型</code>是一个可以在所有<code>Bird</code>实例之间共享的对象。以下是一个在<code>Bird prototype</code>中添加<code>numLegs</code>属性的示例：
+
+```js
+Bird.prototype.numLegs = 2;
+```
+
+现在所有的<code>Bird</code>实例都拥有了共同的<code>numLegs</code>属性值。
+
+```js
+console.log(duck.numLegs);  // prints 2
+console.log(canary.numLegs);  // prints 2
+```
+
+由于所有的实例都可以继承<code>原型</code>上的属性，所以可以把<code>原型</code>看作是创建对象的 "配方"。
+请注意：<code>duck</code>和<code>canary</code>的<code>原型</code>属于<code>Bird</code>的构造函数，即 Bird 的原型 <code>Bird.prototype</code>。JavaScript 中几乎所有的对象都有一个<code>原型</code>属性，这个属性是属于它所在的构造函数。
+</section>
+
 
 ## Instructions
-<section id="instructions">将<code>numLegs</code>属性添加到<code>Dog</code>的<code>prototype</code>中</section>
+<section id='instructions'>
+给<code>Dog</code>的<code>原型</code>添加一个<code>numLegs</code>属性。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>beagle</code>应该有一个<code>numLegs</code>财产。
-    testString: 'assert(beagle.numLegs !== undefined, "<code>beagle</code> should have a <code>numLegs</code> property.");'
+  - text: <code>beagle</code>应该有一个<code>numLegs</code>属性。
+    testString: assert(beagle.numLegs !== undefined);
   - text: <code>beagle.numLegs</code>应该是一个数字。
-    testString: 'assert(typeof(beagle.numLegs) === "number" , "<code>beagle.numLegs</code> should be a number.");'
-  - text: <code>numLegs</code>应该是<code>prototype</code>属性而不是<code>own</code>属性。
-    testString: 'assert(beagle.hasOwnProperty("numLegs") === false, "<code>numLegs</code> should be a <code>prototype</code> property not an <code>own</code> property.");'
+    testString: assert(typeof(beagle.numLegs) === 'number' );
+  - text: <code>numLegs</code>应该是一个<code>原型</code>属性而不是一个<code>自身</code>属性。
+    testString: assert(beagle.hasOwnProperty('numLegs') === false);
 
 ```
 
@@ -42,7 +63,6 @@ function Dog(name) {
 
 // Add your code above this line
 let beagle = new Dog("Snoopy");
-
 ```
 
 </div>
@@ -54,7 +74,13 @@ let beagle = new Dog("Snoopy");
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+function Dog (name) {
+  this.name = name;
+}
+Dog.prototype.numLegs = 4;
+let beagle = new Dog("Snoopy");
 ```
+
 </section>

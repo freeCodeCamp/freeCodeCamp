@@ -2,25 +2,31 @@
 id: 587d781a367417b2b2512ab9
 title: Use the em Tag to Italicize Text
 challengeType: 0
-videoUrl: ''
-localeTitle: 使用em标记来显示文本
+videoUrl: 'https://scrimba.com/c/cVJRBtp'
+forumTopicId: 301078
+localeTitle: 使用 em 标签强调文本
 ---
 
 ## Description
-<section id="description">要强调文本，您可以使用<code>em</code>标记。这显示文本为斜体，因为浏览器应用了<code>font-style: italic;</code>的CSS <code>font-style: italic;</code>对元素。 </section>
+<section id='description'>
+术语：emphasis => em => 强调。
+你可以使用 <code>em</code> 标签来强调文本。由于浏览器会自动给元素应用 <code>font-style: italic;</code>，所以文本会显示为斜体。
+</section>
 
 ## Instructions
-<section id="instructions">围绕段落标记的内容包装<code>em</code>标记以强调它。 </section>
+<section id='instructions'>
+在 <code>p</code> 标签里面嵌套 <code>em</code> 标签来强调文本。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您的代码应该在标记中添加<code>em</code>标记。
-    testString: 'assert($("em").length == 1, "Your code should add an <code>em</code> tag to the markup.");'
-  - text: <code>em</code>标签应该环绕<code>p</code>标签的内容，而不是<code>p</code>标签本身。
-    testString: 'assert($("p").children().length == 1 && $("em").children().length == 2, "The <code>em</code> tag should wrap around the contents of the <code>p</code> tag but not the <code>p</code> tag itself.");'
+  - text: '你应该添加一个 <code>em</code> 标签。'
+    testString: assert($('em').length == 1);
+  - text: '<code>em</code> 标签应该嵌套在 <code>p</code> 标签里面。'
+    testString: assert($('p').children().length == 1 && $('em').children().length == 2);
 
 ```
 
@@ -62,15 +68,14 @@ tests:
   <div class="cardContent">
     <div class="cardText">
       <h4>Google</h4>
-      <p>Google was founded by Larry Page and Sergey Brin while they were <u>Ph.D. students</u> at <strong>Stanford University</strong>.</p>
+      <p>Google 由在<strong>斯坦福大学</strong>攻读<u>理工博士</u>的拉里·佩奇和谢尔盖·布林共同创建。</p>
     </div>
     <div class="cardLinks">
-      <a href="https://en.wikipedia.org/wiki/Larry_Page" target="_blank" class="links">Larry Page</a><br><br>
-      <a href="https://en.wikipedia.org/wiki/Sergey_Brin" target="_blank" class="links">Sergey Brin</a>
+      <a href="https://en.wikipedia.org/wiki/Larry_Page" target="_blank" class="links">拉里·佩奇</a><br><br>
+      <a href="https://en.wikipedia.org/wiki/Sergey_Brin" target="_blank" class="links">谢尔盖·布林</a>
     </div>
   </div>
 </div>
-
 ```
 
 </div>
@@ -82,7 +87,9 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>
+              

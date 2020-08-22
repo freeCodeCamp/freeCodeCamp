@@ -2,6 +2,7 @@
 id: 587d778d367417b2b2512aaa
 title: Make Elements Only Visible to a Screen Reader by Using Custom CSS
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cJ8QGkhJ'
 forumTopicId: 301020
 ---
@@ -85,7 +86,7 @@ tests:
   <section>
     <h2>Master Camper Cat's Beginner Three Week Training Program</h2>
     <figure>
-      <!-- Stacked bar chart of weekly training-->
+      <!-- Stacked bar chart of weekly training -->
       <p>[Stacked bar chart]</p>
       <br />
       <figcaption>Breakdown per week of time to spend training in stealth, combat, and weapons.</figcaption>
@@ -181,7 +182,7 @@ tests:
   <section>
     <h2>Master Camper Cat's Beginner Three Week Training Program</h2>
     <figure>
-      <!-- Stacked bar chart of weekly training-->
+      <!-- Stacked bar chart of weekly training -->
       <p>[Stacked bar chart]</p>
       <br />
       <figcaption>Breakdown per week of time to spend training in stealth, combat, and weapons.</figcaption>

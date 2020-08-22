@@ -19,11 +19,11 @@ localeTitle: 创建无状态功能组件
 ```yml
 tests:
   - text: <code>MyComponent</code>应该返回JSX。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.length === 1; })(), "<code>MyComponent</code> should return JSX.");'
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.length === 1; })());
   - text: <code>MyComponent</code>应该返回一个<code>div</code>元素。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.children().type() === "div" })(), "<code>MyComponent</code> should return a <code>div</code> element.");'
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.children().type() === 'div' })());
   - text: <code>div</code>元素应包含一串文本。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find("div").text() !== ""; })(), "The <code>div</code> element should contain a string of text.");'
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find('div').text() !== ''; })());
 
 ```
 
@@ -65,4 +65,5 @@ console.info('after the test');
 ```js
 // solution required
 ```
-</section>
+
+/section>

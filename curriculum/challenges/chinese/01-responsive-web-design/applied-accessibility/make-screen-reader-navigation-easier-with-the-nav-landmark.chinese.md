@@ -2,29 +2,35 @@
 id: 587d7788367417b2b2512aa2
 title: Make Screen Reader Navigation Easier with the nav Landmark
 challengeType: 0
-videoUrl: ''
-localeTitle: 使用导航Landmark使屏幕阅读器导航更轻松
+videoUrl: 'https://scrimba.com/c/czVwWSv'
+forumTopicId: 301024
+localeTitle: 使用 nav 元素使屏幕阅读器更容易导航
 ---
 
 ## Description
-<section id="description"> <code>nav</code>元素是另一个HTML5项目，具有嵌入的地标功能，便于屏幕阅读器导航。此标记用于包围页面中的主导航链接。如果页面底部有重复的站点链接，则没有必要标记带有<code>nav</code>标签的链接。使用<code>footer</code> （在下一个挑战中涵盖）就足够了。 </section>
+<section id='description'>
+<code>nav</code>也是一个具有语义化特性的 HTML5 标签，用于呈现页面中的主导航链接。它可以使屏幕阅读器快速识别页面中的导航信息。
+对于在多个页面底部出现的站点链接，不需要使用<code>nav</code>，用<code>footer</code>（在下个挑战中介绍）会更好。
+</section>
 
 ## Instructions
-<section id="instructions"> Camper Cat在他的训练页面顶部包含了导航链接，但是将它们包裹在一个<code>div</code> 。将<code>div</code>更改为<code>nav</code>标记以改善其页面上的可访问性。 </section>
+<section id='instructions'>
+Camper Cat 在他的忍者训练页面顶端使用了很多导航链接，但把它们写在了<code>div</code>中。请将<code>div</code>更改为<code>nav</code>标签，以提升页面的可访问性。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您的代码应该有一个<code>nav</code>标记。
-    testString: 'assert($("nav").length == 1, "Your code should have one <code>nav</code> tag.");'
-  - text: 你的<code>nav</code>标签应该包裹<code>ul</code>及其列表项。
-    testString: 'assert($("nav").children("ul").length == 1, "Your <code>nav</code> tags should wrap around the <code>ul</code> and its list items.");'
-  - text: 您的代码不应包含任何<code>div</code>标记。
-    testString: 'assert($("div").length == 0, "Your code should not have any <code>div</code> tags.");'
-  - text: 确保您的<code>nav</code>元素具有结束标记。
-    testString: 'assert(code.match(/<\/nav>/g) && code.match(/<\/nav>/g).length === code.match(/<nav>/g).length, "Make sure your <code>nav</code> element has a closing tag.");'
+  - text: '你的代码应该有 1 个<code>nav</code>标签。'
+    testString: assert($('nav').length == 1);
+  - text: '你的<code>nav</code>标签应该包含<code>ul</code>标签及其列表项。'
+    testString: assert($('nav').children('ul').length == 1);
+  - text: '你的代码不应包含<code>div</code>标签。'
+    testString: assert($('div').length == 0);
+  - text: '确保你的<code>nav</code>标签是闭合的。'
+    testString: assert(code.match(/<\/nav>/g) && code.match(/<\/nav>/g).length === code.match(/<nav>/g).length);
 
 ```
 
@@ -67,7 +73,6 @@ tests:
     </section>
   </main>
 </body>
-
 ```
 
 </div>
@@ -79,7 +84,9 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>
+              

@@ -19,13 +19,13 @@ localeTitle: 使用shouldComponentUpdate优化重新渲染
 ```yml
 tests:
   - text: <code>Controller</code>组件应将<code>OnlyEvens</code>组件呈现为<code>OnlyEvens</code>组件。
-    testString: 'assert((() => { const mockedComponent = Enzyme.mount(React.createElement(Controller)); return mockedComponent.find("Controller").length === 1 && mockedComponent.find("OnlyEvens").length === 1; })(), "The <code>Controller</code> component should render the <code>OnlyEvens</code> component as a child.");'
+    testString: assert((() => { const mockedComponent = Enzyme.mount(React.createElement(Controller)); return mockedComponent.find('Controller').length === 1 && mockedComponent.find('OnlyEvens').length === 1; })());
   - text: 应该在<code>OnlyEvens</code>组件上定义<code>shouldComponentUpdate</code>方法。
-    testString: 'assert((() => { const child = React.createElement(OnlyEvens).type.prototype.shouldComponentUpdate.toString().replace(/s/g,""); return child !== "undefined"; })(), "The <code>shouldComponentUpdate</code> method should be defined on the <code>OnlyEvens</code> component.");'
+    testString: assert((() => { const child = React.createElement(OnlyEvens).type.prototype.shouldComponentUpdate.toString().replace(/s/g,''); return child !== 'undefined'; })());
   - text: <code>OnlyEvens</code>组件应返回一个<code>h1</code>标记，该标记呈现<code>this.props.value</code>的值。
-    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(Controller)); const first = () => { mockedComponent.setState({ value: 1000 }); return waitForIt(() => mockedComponent.find("h1").html()); }; const second = () => { mockedComponent.setState({ value: 10 }); return waitForIt(() => mockedComponent.find("h1").html()); }; const firstValue = await first(); const secondValue = await second(); assert(firstValue === "<h1>1000</h1>" && secondValue === "<h1>10</h1>", "The <code>OnlyEvens</code> component should return an <code>h1</code> tag which renders the value of <code>this.props.value</code>."); }; '
+    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(Controller)); const first = () => { mockedComponent.setState({ value: 1000 }); return waitForIt(() => mockedComponent.find(''h1'').html()); }; const second = () => { mockedComponent.setState({ value: 10 }); return waitForIt(() => mockedComponent.find(''h1'').html()); }; const firstValue = await first(); const secondValue = await second(); assert(firstValue === ''<h1>1000</h1>'' && secondValue === ''<h1>10</h1>''); }; '
   - text: <code>OnlyEvens</code>只有在<code>nextProps.value</code>为偶数<code>OnlyEvens</code>应该重新渲染。
-    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(Controller)); const first = () => { mockedComponent.setState({ value: 8 }); return waitForIt(() => mockedComponent.find("h1").text()); }; const second = () => { mockedComponent.setState({ value: 7 }); return waitForIt(() => mockedComponent.find("h1").text()); }; const third = () => { mockedComponent.setState({ value: 42 }); return waitForIt(() => mockedComponent.find("h1").text()); }; const firstValue = await first(); const secondValue = await second(); const thirdValue = await third(); assert(firstValue === "8" && secondValue === "8" && thirdValue === "42", "<code>OnlyEvens</code> should re-render only when <code>nextProps.value</code> is even."); }; '
+    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(Controller)); const first = () => { mockedComponent.setState({ value: 8 }); return waitForIt(() => mockedComponent.find(''h1'').text()); }; const second = () => { mockedComponent.setState({ value: 7 }); return waitForIt(() => mockedComponent.find(''h1'').text()); }; const third = () => { mockedComponent.setState({ value: 42 }); return waitForIt(() => mockedComponent.find(''h1'').text()); }; const firstValue = await first(); const secondValue = await second(); const thirdValue = await third(); assert(firstValue === ''8'' && secondValue === ''8'' && thirdValue === ''42''); }; '
 
 ```
 
@@ -103,4 +103,5 @@ console.info('after the test');
 ```js
 // solution required
 ```
-</section>
+
+/section>

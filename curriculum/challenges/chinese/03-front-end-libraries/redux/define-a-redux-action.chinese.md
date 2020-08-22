@@ -19,9 +19,9 @@ localeTitle: 定义Redux动作
 ```yml
 tests:
   - text: 应该存在一个操作对象。
-    testString: 'assert((function() { return typeof action === "object" })(), "An action object should exist.");'
+    testString: assert((function() { return typeof action === 'object' })());
   - text: 该操作应具有值为<code>LOGIN</code>的键属性类型。
-    testString: 'assert((function() { return action.type === "LOGIN" })(), "The action should have a key property type with value <code>LOGIN</code>.");'
+    testString: assert((function() { return action.type === 'LOGIN' })());
 
 ```
 
@@ -49,4 +49,5 @@ tests:
 ```js
 // solution required
 ```
-</section>
+
+/section>

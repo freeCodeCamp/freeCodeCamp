@@ -19,19 +19,19 @@ localeTitle: 将数组作为道具传递
 ```yml
 tests:
   - text: <code>ToDo</code>组件应返回单个外部<code>div</code> 。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.children().first().type() === "div"; })(), "The <code>ToDo</code> component should return a single outer <code>div</code>.");'
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.children().first().type() === 'div'; })());
   - text: <code>ToDo</code>组件的第三个子<code>ToDo</code>应该是<code>List</code>组件的实例。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.children().first().childAt(2).name() === "List"; })(), "The third child of the <code>ToDo</code> component should be an instance of the <code>List</code> component.");'
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.children().first().childAt(2).name() === 'List'; })());
   - text: <code>ToDo</code>组件的第五个子<code>ToDo</code>应该是<code>List</code>组件的一个实例。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.children().first().childAt(4).name() === "List"; })(), "The fifth child of the <code>ToDo</code> component should be an instance of the <code>List</code> component.");'
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.children().first().childAt(4).name() === 'List'; })());
   - text: <code>List</code>组件的两个实例都应该有一个名为<code>tasks</code>的属性，而<code>tasks</code>应该是array类型。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return Array.isArray(mockedComponent.find("List").get(0).props.tasks) && Array.isArray(mockedComponent.find("List").get(1).props.tasks); })(), "Both instances of the <code>List</code> component should have a property called <code>tasks</code> and <code>tasks</code> should be of type array.");'
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return Array.isArray(mockedComponent.find('List').get(0).props.tasks) && Array.isArray(mockedComponent.find('List').get(1).props.tasks); })());
   - text: 表示今天任务的第一个<code>List</code>组件应该有2个或更多项。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.find("List").get(0).props.tasks.length >= 2; })(), "The first <code>List</code> component representing the tasks for today should have 2 or more items.");'
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.find('List').get(0).props.tasks.length >= 2; })());
   - text: 表示明天任务的第二个<code>List</code>组件应该有3个或更多项。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.find("List").get(1).props.tasks.length >= 3; })(), "The second <code>List</code> component representing the tasks for tomorrow should have 3 or more items.");'
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.find('List').get(1).props.tasks.length >= 3; })());
   - text: '<code>List</code>组件应该将<code>p</code>标记中的<code>tasks</code> prop的值呈现为以逗号分隔的列表，例如<code>walk dog, workout</code> 。'
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.find("p").get(0).props.children === mockedComponent.find("List").get(0).props.tasks.join(", ") && mockedComponent.find("p").get(1).props.children === mockedComponent.find("List").get(1).props.tasks.join(", "); })(), "The <code>List</code> component should render the value from the <code>tasks</code> prop in the <code>p</code> tag as a comma separated list, for example <code>walk dog, workout</code>.");'
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.find('p').get(0).props.children === mockedComponent.find('List').get(0).props.tasks.join(', ') && mockedComponent.find('p').get(1).props.children === mockedComponent.find('List').get(1).props.tasks.join(', '); })());
 
 ```
 
@@ -90,4 +90,5 @@ console.info('after the test');
 ```js
 // solution required
 ```
-</section>
+
+/section>

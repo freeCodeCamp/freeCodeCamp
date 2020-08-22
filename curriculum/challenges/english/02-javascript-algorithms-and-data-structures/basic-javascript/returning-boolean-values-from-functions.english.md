@@ -2,13 +2,14 @@
 id: 5679ceb97cbaa8c51670a16b
 title: Returning Boolean Values from Functions
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cp62qAQ'
 forumTopicId: 18273
 ---
 
 ## Description
 <section id='description'>
-You may recall from <a href="learn/javascript-algorithms-and-data-structures/basic-javascript/comparison-with-the-equality-operator" target="_blank">Comparison with the Equality Operator</a> that all comparison operators return a boolean <code>true</code> or <code>false</code> value.
+You may recall from <a href="/learn/javascript-algorithms-and-data-structures/basic-javascript/comparison-with-the-equality-operator" target="_blank">Comparison with the Equality Operator</a> that all comparison operators return a boolean <code>true</code> or <code>false</code> value.
 Sometimes people use an if/else statement to do a comparison, like this:
 
 ```js
@@ -59,15 +60,15 @@ tests:
 
 ```js
 function isLess(a, b) {
-  // Fix this code
+  // Only change code below this line
   if (a < b) {
     return true;
   } else {
     return false;
   }
+  // Only change code above this line
 }
 
-// Change these values to test
 isLess(10, 15);
 ```
 

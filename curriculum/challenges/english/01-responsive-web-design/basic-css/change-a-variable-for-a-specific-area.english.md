@@ -2,6 +2,7 @@
 id: 5a9d72a1424fe3d0e10cad15
 title: Change a variable for a specific area
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cdRwbuW'
 forumTopicId: 301085
 ---
@@ -47,11 +48,9 @@ tests:
   }
 
   .penguin {
+    /* Only change code below this line */
 
-    /* add code below */
-
-    /* add code above */
-
+    /* Only change code above this line */
     position: relative;
     margin: auto;
     display: block;

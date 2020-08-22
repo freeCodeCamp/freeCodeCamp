@@ -2,25 +2,40 @@
 id: 587d774e367417b2b2512aa0
 title: Wrap Content in the article Element
 challengeType: 0
-videoUrl: ''
-localeTitle: 在文章元素中包装内容
+videoUrl: 'https://scrimba.com/c/cPp79S3'
+forumTopicId: 301029
+localeTitle: 使用 article 元素包裹文章内容
 ---
 
 ## Description
-<section id="description"> <code>article</code>是另一个新的HTML5元素，它为您的标记添加了语义含义。 <code>Article</code>是一个sectioning元素，用于包装独立的，自包含的内容。该标记适用于博客条目，论坛帖子或新闻文章。确定内容是否可以独立通常是一种判断调用，但您可以使用几种简单的测试。问问自己是否删除了所有周围环境，该内容是否仍然有意义？类似地，对于文本，如果它在RSS提要中，内容是否会保留？请记住，使用辅助技术的人们依赖于有组织的，语义上有意义的标记来更好地理解您的工作。 <strong>关于<code>section</code>和<code>div</code>注意事项</strong> <br> <code>section</code>元素也是HTML5的新元素，与<code>article</code>语义含义略有不同。 <code>article</code>适用于独立内容，一个<code>section</code>用于分组与主题相关的内容。根据需要，它们可以在彼此之间使用。例如，如果一本书是<code>article</code> ，那么每章都是一个<code>section</code> 。当内容组之间没有关系时，请使用<code>div</code> 。 <blockquote> &lt;div&gt;  - 分组内容<br> &lt;section&gt;  - 分组相关内容<br> &lt;article&gt;  - 分组独立，自包含的内容<br></blockquote></section>
+<section id='description'>
+<code>article</code>是另一个具有语义化特性的 HTML5 新标签。<code>article</code>是一个分段标签，用于呈现独立及完整的内容。这个标签适用于博客入口、论坛帖子或者新闻文章。
+有些技巧可以用来判断内容是否独立，像是如果内容脱离了上下文，是否仍然有意义？类似地，对于 RSS 提要中的文本，它是否有意义？
+请牢记，使用辅助设备的用户依赖组织良好的、语义化的标签来获取页面中的信息。
+<strong>请注意<code>section</code>和<code>div</code>的区别：</strong><br><code>section</code>也是一个 HTML5 新标签，与<code>article</code>标签的语义含义略有不同。<code>article</code>用于独立的、完整的内容，而<code>section</code>用于对与主题相关的内容进行分组。它们可以根据需要嵌套着使用。举个例子：如果一本书是一个<code>article</code>的话，那么每个章节就是<code>section</code>。当内容组之间没有联系时，可以使用<code>div</code>。
+
+```html
+<div> - groups content
+<section> - groups related content
+<article> - groups independent, self-contained content
+```
+
+</section>
 
 ## Instructions
-<section id="instructions"> Camper Cat使用<code>article</code>标签将帖子包装在他的博客页面上，但他忘了在最顶层的帖子中使用它们。更改<code>div</code>标签以改为使用<code>article</code>标签。 </section>
+<section id='instructions'>
+Camper Cat 打算使用<code>article</code>标签来呈现他的博客页面里的帖子，但是他忘记在顶部的帖子上使用它。请使用<code>article</code>标签来代替<code>div</code>标签。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您的代码应该有三个<code>article</code>标签。
-    testString: 'assert($("article").length == 3, "Your code should have three <code>article</code> tags.");'
-  - text: 您的代码不应包含任何<code>div</code>标记。
-    testString: 'assert($("div").length == 0, "Your code should not have any <code>div</code> tags.");'
+  - text: '你的代码中应该有 3 个<code>article</code>标签。'
+    testString: assert($('article').length == 3);
+  - text: '你的代码不应包含<code>div</code>标签。'
+    testString: assert($('div').length == 0);
 
 ```
 
@@ -43,7 +58,7 @@ tests:
 
   <article>
     <h2>Defeating your Foe: the Red Dot is Ours!</h2>
-    <p>Felines the world over have been waging war on the most persistent of foes. This red nemesis combines both cunning stealth and lightening speed. But chin up, fellow fighters, our time for victory may soon be near...</p>
+    <p>Felines the world over have been waging war on the most persistent of foes. This red nemesis combines both cunning stealth and lightning speed. But chin up, fellow fighters, our time for victory may soon be near...</p>
   </article>
 
   <img src="samuraiSwords.jpeg" alt="">
@@ -53,7 +68,6 @@ tests:
     <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is he a cat person?...</p>
   </article>
 </main>
-
 ```
 
 </div>
@@ -65,7 +79,9 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>
+              

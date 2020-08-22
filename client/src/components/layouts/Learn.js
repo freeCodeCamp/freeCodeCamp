@@ -2,7 +2,7 @@ import React, { Fragment, Component } from 'react';
 import PropTypes from 'prop-types';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
-
+import { Helmet } from 'react-helmet';
 import { Loader } from '../../components/helpers';
 import {
   userSelector,
@@ -11,9 +11,8 @@ import {
   tryToShowDonationModal
 } from '../../redux';
 import createRedirect from '../../components/createRedirect';
-import DonateModal from '../Donation/components/DonationModal';
+import DonateModal from '../Donation/DonationModal';
 
-import 'prismjs/themes/prism.css';
 import './prism.css';
 import './prism-night.css';
 import 'react-reflex/styles.css';
@@ -34,11 +33,18 @@ const mapDispatchToProps = {
   tryToShowDonationModal
 };
 
-const RedirectAcceptPrivacyTerm = createRedirect('/accept-privacy-terms');
+const RedirectEmailSignUp = createRedirect('/email-sign-up');
 
 class LearnLayout extends Component {
   componentDidMount() {
     this.props.tryToShowDonationModal();
+  }
+
+  componentWillUnmount() {
+    const metaTag = document.querySelector(`meta[name="robots"]`);
+    if (metaTag) {
+      metaTag.remove();
+    }
   }
 
   render() {
@@ -54,11 +60,14 @@ class LearnLayout extends Component {
     }
 
     if (isSignedIn && !acceptedPrivacyTerms) {
-      return <RedirectAcceptPrivacyTerm />;
+      return <RedirectEmailSignUp />;
     }
 
     return (
       <Fragment>
+        <Helmet>
+          <meta content='noindex' name='robots' />
+        </Helmet>
         <main id='learn-app-wrapper'>{children}</main>
         <DonateModal />
       </Fragment>

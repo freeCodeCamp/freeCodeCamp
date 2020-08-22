@@ -18,9 +18,9 @@ localeTitle: 在函数调用后捕获缺失的打开和关闭括号
 ```yml
 tests:
   - text: 您的代码应修复变量<code>result</code>以便将其设置为函数<code>getNine</code>返回的数字。
-    testString: 'assert(result == 9, "Your code should fix the variable <code>result</code> so it is set to the number that the function <code>getNine</code> returns.");'
+    testString: assert(result == 9);
   - text: 您的代码应该调用<code>getNine</code>函数。
-    testString: 'assert(code.match(/getNine\(\)/g).length == 2, "Your code should call the <code>getNine</code> function.");'
+    testString: assert(code.match(/getNine\(\)/g).length == 2);
 
 ```
 
@@ -55,4 +55,5 @@ console.log(result);
 ```js
 // solution required
 ```
-</section>
+
+/section>

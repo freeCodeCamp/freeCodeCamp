@@ -3,6 +3,7 @@ id: 587d78af367417b2b2512b04
 title: Build a Product Landing Page
 isRequired: true
 challengeType: 3
+isHidden: false
 forumTopicId: 301144
 ---
 
@@ -22,13 +23,12 @@ You can use HTML, JavaScript, and CSS to complete this project. Plain CSS is rec
 <strong>User Story #9:</strong> The <code>#email</code> input field should have placeholder text to let the user know what the field is for.
 <strong>User Story #10:</strong> The <code>#email</code> input field uses HTML5 validation to confirm that the entered text is an email address.
 <strong>User Story #11:</strong> Within the form, there is a submit <code>input</code> with a corresponding <code>id="submit"</code>.
-<strong>User Story #12:</strong> When I click the <code>#submit</code> element, the email is submitted to a static page (use this mock URL: <a href='https://www.freecodecamp.com/email-submit' target='_blank'>https://www.freecodecamp.com/email-submit</a>) that confirms the email address was entered and that it posted successfully.
+<strong>User Story #12:</strong> When I click the <code>#submit</code> element, the email is submitted to a static page (use this mock URL: <a href='https://www.freecodecamp.com/email-submit' target='_blank'>https://www.freecodecamp.com/email-submit</a>).
 <strong>User Story #13:</strong> The navbar should always be at the top of the viewport.
 <strong>User Story #14:</strong> My product landing page should have at least one media query.
 <strong>User Story #15:</strong> My product landing page should utilize CSS flexbox at least once.
-You can build your project by forking <a href='http://codepen.io/freeCodeCamp/full/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code>
+You can build your project by forking <a href='https://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code>
 Once you're done, submit the URL to your working project with all its tests passing.
-Remember to use the <a href='https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck.
 </section>
 
 ## Instructions

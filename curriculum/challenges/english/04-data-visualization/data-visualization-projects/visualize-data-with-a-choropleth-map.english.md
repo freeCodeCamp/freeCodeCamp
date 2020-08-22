@@ -3,6 +3,7 @@ id: 587d7fa6367417b2b2512bbf
 title: Visualize Data with a Choropleth Map
 isRequired: true
 challengeType: 3
+isHidden: false
 forumTopicId: 301465
 ---
 
@@ -25,7 +26,6 @@ You can use HTML, JavaScript, CSS, and the D3 svg-based visualization library. R
 Here are the datasets you will need to complete this project:<br><ul><li><strong>US Education Data: </strong><code>https://cdn.freecodecamp.org/testable-projects-fcc/data/choropleth_map/for_user_education.json</code></li><li><strong>US County Data: </strong><code>https://cdn.freecodecamp.org/testable-projects-fcc/data/choropleth_map/counties.json</code></li></ul>
 You can build your project by forking <a href='https://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code>
 Once you're done, submit the URL to your working project with all its tests passing.
-Remember to use the <a href='https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck.
 </section>
 
 ## Instructions

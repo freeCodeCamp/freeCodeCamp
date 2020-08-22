@@ -19,11 +19,11 @@ localeTitle: 将'this'绑定到类方法
 ```yml
 tests:
   - text: <code>MyComponent</code>应该返回一个<code>div</code>元素，它按顺序包装两个元素，一个按钮和一个<code>h1</code>元素。
-    testString: 'assert(Enzyme.mount(React.createElement(MyComponent)).find("div").length === 1 && Enzyme.mount(React.createElement(MyComponent)).find("div").childAt(0).type() === "button" && Enzyme.mount(React.createElement(MyComponent)).find("div").childAt(1).type() === "h1", "<code>MyComponent</code> should return a <code>div</code> element which wraps two elements, a button and an <code>h1</code> element, in that order.");'
+    testString: assert(Enzyme.mount(React.createElement(MyComponent)).find('div').length === 1 && Enzyme.mount(React.createElement(MyComponent)).find('div').childAt(0).type() === 'button' && Enzyme.mount(React.createElement(MyComponent)).find('div').childAt(1).type() === 'h1');
   - text: '<code>MyComponent</code>的状态应使用键值对<code>{ itemCount: 0 }</code>初始化。'
-    testString: 'assert(Enzyme.mount(React.createElement(MyComponent)).state("itemCount") === 0, "The state of <code>MyComponent</code> should initialize with the key value pair <code>{ itemCount: 0 }</code>.");'
+    testString: 'assert(Enzyme.mount(React.createElement(MyComponent)).state(''text'') === ''Hello'');'
   - text: 单击<code>button</code>元素应该运行<code>addItem</code>方法并将状态<code>itemCount</code>递增<code>1</code> 。
-    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const first = () => { mockedComponent.setState({ itemCount: 0 }); return waitForIt(() => mockedComponent.state("itemCount")); }; const second = () => { mockedComponent.find("button").simulate("click"); return waitForIt(() => mockedComponent.state("itemCount")); }; const firstValue = await first(); const secondValue = await second(); assert(firstValue === 0 && secondValue === 1, "Clicking the <code>button</code> element should run the <code>addItem</code> method and increment the state <code>itemCount</code> by <code>1</code>."); };'
+    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const first = () => { mockedComponent.setState({ text: ''Hello'' }); return waitForIt(() => mockedComponent.state(''text'')); }; const second = () => { mockedComponent.find(''button'').simulate(''click''); return waitForIt(() => mockedComponent.state(''text'')); }; const firstValue = await first(); const secondValue = await second(); assert(firstValue === ''Hello'' && secondValue === ''You clicked!''); };'
 
 ```
 
@@ -84,4 +84,5 @@ console.info('after the test');
 ```js
 // solution required
 ```
-</section>
+
+/section>

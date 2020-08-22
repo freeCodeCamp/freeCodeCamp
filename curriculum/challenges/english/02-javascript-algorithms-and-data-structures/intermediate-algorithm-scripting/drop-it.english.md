@@ -3,6 +3,7 @@ id: a5deed1811a43193f9f1c841
 title: Drop it
 isRequired: true
 challengeType: 5
+isHidden: false
 forumTopicId: 16010
 ---
 
@@ -10,7 +11,6 @@ forumTopicId: 16010
 <section id='description'>
 Given the array <code>arr</code>, iterate through and remove each element starting from the first element (the 0 index) until the function <code>func</code> returns <code>true</code> when the iterated element is passed through it.
 Then return the rest of the array once the condition is satisfied, otherwise, <code>arr</code> should be returned as an empty array.
-Remember to use <a href='https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code.
 </section>
 
 ## Instructions
@@ -47,7 +47,6 @@ tests:
 
 ```js
 function dropElements(arr, func) {
-  // Drop them elements.
   return arr;
 }
 
@@ -66,7 +65,6 @@ dropElements([1, 2, 3], function(n) {return n < 3; });
 
 ```js
 function dropElements(arr, func) {
-  // Drop them elements.
   while (arr.length && !func(arr[0])) {
     arr.shift();
   }

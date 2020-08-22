@@ -18,13 +18,13 @@ localeTitle: 使用索引时捕获一个错误
 ```yml
 tests:
   - text: 您的代码应该设置循环的初始条件，以便从第一个索引开始。
-    testString: 'assert(code.match(/i\s*?=\s*?0\s*?;/g).length == 1, "Your code should set the initial condition of the loop so it starts at the first index.");'
+    testString: assert(code.match(/i\s*?=\s*?0\s*?;/g).length == 1);
   - text: 您的代码应该修复循环的初始条件，以便索引从0开始。
-    testString: 'assert(!code.match(/i\s?=\s*?1\s*?;/g), "Your code should fix the initial condition of the loop so that the index starts at 0.");'
+    testString: assert(!code.match(/i\s?=\s*?1\s*?;/g));
   - text: 您的代码应设置循环的终端条件，以便它停在最后一个索引处。
-    testString: 'assert(code.match(/i\s*?<\s*?len\s*?;/g).length == 1, "Your code should set the terminal condition of the loop so it stops at the last index.");'
+    testString: assert(code.match(/i\s*?<\s*?len\s*?;/g).length == 1);
   - text: 您的代码应该修复循环的终端条件，使其在长度之前停止在1。
-    testString: 'assert(!code.match(/i\s*?<=\s*?len;/g), "Your code should fix the terminal condition of the loop so that it stops at 1 before the length.");'
+    testString: assert(!code.match(/i\s*?<=\s*?len;/g));
 
 ```
 
@@ -62,4 +62,5 @@ countToFive();
 ```js
 // solution required
 ```
-</section>
+
+/section>

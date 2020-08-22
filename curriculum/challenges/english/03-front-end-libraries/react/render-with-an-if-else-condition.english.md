@@ -2,6 +2,7 @@
 id: 5a24c314108439a4d4036184
 title: Render with an If-Else Condition
 challengeType: 6
+isHidden: false
 isRequired: false
 forumTopicId: 301410
 ---
@@ -50,9 +51,9 @@ class MyComponent extends React.Component {
     this.toggleDisplay = this.toggleDisplay.bind(this);
   }
   toggleDisplay() {
-    this.setState({
-      display: !this.state.display
-    });
+    this.setState((state) => ({
+      display: !state.display
+    }));
   }
   render() {
     // change code below this line
@@ -95,9 +96,9 @@ class MyComponent extends React.Component {
  this.toggleDisplay = this.toggleDisplay.bind(this);
  }
   toggleDisplay() {
-    this.setState({
-      display: !this.state.display
-    });
+    this.setState((state) => ({
+      display: !state.display
+    }));
   }
   render() {
     // change code below this line

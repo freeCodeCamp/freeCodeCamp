@@ -3,6 +3,7 @@ id: bd7158d8c442eddfaeb5bd13
 title: Build a Random Quote Machine
 isRequired: true
 challengeType: 3
+isHidden: false
 forumTopicId: 301374
 ---
 
@@ -22,9 +23,8 @@ You can use any mix of HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux, and
 <strong>User Story #9:</strong> My quote machine should fetch the new quote's author when the <code>#new-quote</code> button is clicked and display it in the <code>#author</code> element.
 <strong>User Story #10:</strong> I can tweet the current quote by clicking on the <code>#tweet-quote</code><code>a</code> element. This <code>a</code> element should include the <code>"twitter.com/intent/tweet"</code> path in its <code>href</code> attribute to tweet the current quote.
 <strong>User Story #11:</strong> The <code>#quote-box</code> wrapper element should be horizontally centered. Please run tests with browser's zoom level at 100% and page maximized.
-You can build your project by forking <a href='http://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code>
+You can build your project by forking <a href='https://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code>
 Once you're done, submit the URL to your working project with all its tests passing.
-Remember to use the <a href='https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck.
 </section>
 
 ## Instructions

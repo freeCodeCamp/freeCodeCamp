@@ -19,13 +19,13 @@ localeTitle: 将HTML元素渲染到DOM
 ```yml
 tests:
   - text: 常量<code>JSX</code>应该返回一个<code>div</code>元素。
-    testString: 'assert(JSX.type === "div", "The constant <code>JSX</code> should return a <code>div</code> element.");'
+    testString: assert(JSX.type === 'div');
   - text: <code>div</code>应包含一个<code>h1</code>标记作为第一个元素。
-    testString: 'assert(JSX.props.children[0].type === "h1", "The <code>div</code> should contain an <code>h1</code> tag as the first element.");'
+    testString: assert(JSX.props.children[0].type === 'h1');
   - text: <code>div</code>应该包含一个<code>p</code>标签作为第二个元素。
-    testString: 'assert(JSX.props.children[1].type === "p", "The <code>div</code> should contain a <code>p</code> tag as the second element.");'
+    testString: assert(JSX.props.children[1].type === 'p');
   - text: 提供的JSX元素应该使用id <code>challenge-node</code>呈现给DOM <code>challenge-node</code> 。
-    testString: 'assert(document.getElementById("challenge-node").childNodes[0].innerHTML === "<h1>Hello World</h1><p>Lets render this to the DOM</p>", "The provided JSX element should render to the DOM node with id <code>challenge-node</code>.");'
+    testString: assert(document.getElementById('challenge-node').childNodes[0].innerHTML === '<h1>Hello World</h1><p>Lets render this to the DOM</p>');
 
 ```
 
@@ -59,4 +59,5 @@ const JSX = (
 ```js
 // solution required
 ```
-</section>
+
+/section>

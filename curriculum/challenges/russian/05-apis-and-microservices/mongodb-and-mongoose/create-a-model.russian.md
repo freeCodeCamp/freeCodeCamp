@@ -19,9 +19,9 @@ localeTitle: Создать модель
 <code>favoriteFoods : array of strings (*)</code> 
 Используйте базовые типы схем mongoose. Если вы хотите, вы также можете добавить еще 
 полей, использовать простые валидаторы, такие как обязательные или уникальные, 
-и установить значения по умолчанию. Смотрите <a href='http://mongoosejs.com/docs/guide.html'>документы</a> по <a href='http://mongoosejs.com/docs/guide.html'>мангустам</a> . 
+и установить значения по умолчанию. Смотрите <a href='http://mongoosejs.com/docs/guide.html'>документы</a> по <a href='http://mongoosejs.com/docs/guide.html'>mongoose</a>. 
 [C] RUD Part I - CREATE 
-Примечание: Glitch - это настоящий сервер, и на реальных серверах взаимодействия с db происходят в функциях-обработчиках. Эти функции выполняются, когда происходит какое-то событие (например, кто-то попадает в конечную точку вашего API). Мы будем следовать тому же подходу в этих упражнениях. Функция done () - это обратный вызов, который говорит нам, что мы можем продолжить после завершения асинхронной операции, такой как вставка, поиск, обновление или удаление. Он следует соглашению Node и должен вызываться как done (null, data) в случае успеха или done (err) в случае ошибки. 
+Примечание: Glitch - это настоящий сервер, и на реальных серверах взаимодействия с db происходят в функциях-обработчиках. Эти функции выполняются, когда происходит какое-то событие (например, кто-то попадает в конечную точку вашего API). Мы будем следовать тому же подходу в этих упражнениях. Функция done() - это обратный вызов, который говорит нам, что мы можем продолжить после завершения асинхронной операции, такой как вставка, поиск, обновление или удаление. Он следует соглашению Node и должен вызываться как done (null, data) в случае успеха или done(err) в случае ошибки. 
 Предупреждение. При взаимодействии с удаленными службами могут возникнуть ошибки! 
 <code>/* Example */</code> 
 <code>var someFunc = function(done) {</code> 
@@ -33,7 +33,7 @@ localeTitle: Создать модель
 
 ## Instructions
 <section id='instructions'>
-Create a person having this prototype :
+Создайте человека, имеющего этот прототип:
 <blockquote>
 - Person Prototype -<br>
 --------------------<br>
@@ -42,9 +42,9 @@ age :  number<br>
 favoriteFoods : array of strings (*)
 </blockquote>
 
-Use the mongoose basic schema types. If you want you can also add
-more fields, use simple validators like required or unique,
-and set default values. See the <a href='http://mongoosejs.com/docs/guide.html'>mongoose docs</a>.
+Используйте основные типы схем mongoose. Если вы хотите, вы также можете добавить
+больше полей, используйте простые валидаторы, такие как обязательные или уникальные,
+и установить значения по умолчанию. Смотрите <a href='http://mongoosejs.com/docs/guide.html'>документацию mongoose</a>.
 </section>
 
 ## Tests
@@ -52,7 +52,7 @@ and set default values. See the <a href='http://mongoosejs.com/docs/guide.html'>
 
 ```yml
 tests:
-  - text: Creating an instance from a mongoose schema should succeed
+  - text: Создание экземпляра из схемы мангуста должно завершиться успешно
     testString: 'getUserInput => $.post(getUserInput(''url'') + ''/_api/mongoose-model'', {name: ''Mike'', age: 28, favoriteFoods: [''pizza'', ''cheese'']}).then(data => { assert.equal(data.name, ''Mike'', ''"model.name" is not what expected''); assert.equal(data.age, ''28'', ''"model.age" is not what expected''); assert.isArray(data.favoriteFoods, ''"model.favoriteFoods" is not an Array''); assert.include(data.favoriteFoods, ''pizza'', ''"model.favoriteFoods" does not include the expected items''); assert.include(data.favoriteFoods, ''cheese'', ''"model.favoriteFoods" does not include the expected items''); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```

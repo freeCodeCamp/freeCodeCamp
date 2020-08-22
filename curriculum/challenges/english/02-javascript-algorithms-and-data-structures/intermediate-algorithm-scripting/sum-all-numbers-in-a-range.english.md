@@ -3,6 +3,7 @@ id: a3566b1109230028080c9345
 title: Sum All Numbers in a Range
 isRequired: true
 challengeType: 5
+isHidden: false
 forumTopicId: 16083
 ---
 
@@ -12,7 +13,6 @@ We'll pass you an array of two numbers. Return the sum of those two numbers plus
 
 For example, <code>sumAll([4,1])</code> should return <code>10</code> because sum of all the numbers between 1 and 4 (both inclusive) is <code>10</code>.
 
-Remember to use <a href='https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code.
 
 </section>
 

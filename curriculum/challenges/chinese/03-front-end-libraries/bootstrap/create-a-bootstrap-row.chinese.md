@@ -19,13 +19,13 @@ localeTitle: 创建一个Bootstrap行
 ```yml
 tests:
   - text: 在<code>h3</code>元素下面添加一个<code>div</code>元素。
-    testString: 'assert(($("div").length > 1) && ($("div.row h3.text-primary").length == 0) && ($("div.row + h3.text-primary").length == 0) && ($("h3.text-primary + div.row").length > 0), "Add a <code>div</code> element below your <code>h3</code> element.");'
+    testString: assert(($("div").length > 1) && ($("div.row h3.text-primary").length == 0) && ($("div.row + h3.text-primary").length == 0) && ($("h3.text-primary + div.row").length > 0));
   - text: 你的<code>div</code>元素应该有类<code>row</code>
-    testString: 'assert($("div").hasClass("row"), "Your <code>div</code> element should have the class <code>row</code>");'
+    testString: assert($("div").hasClass("row"));
   - text: 你的<code>row div</code>应该嵌套在<code>container-fluid div</code>
-    testString: 'assert($("div.container-fluid div.row").length > 0, "Your <code>row div</code> should be nested inside the <code>container-fluid div</code>");'
+    testString: assert($("div.container-fluid div.row").length > 0);
   - text: 确保你的<code>div</code>元素有一个结束标记。
-    testString: 'assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length, "Make sure your <code>div</code> element has a closing tag.");'
+    testString: assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length);
 
 ```
 
@@ -56,4 +56,5 @@ tests:
 ```js
 // solution required
 ```
-</section>
+
+/section>

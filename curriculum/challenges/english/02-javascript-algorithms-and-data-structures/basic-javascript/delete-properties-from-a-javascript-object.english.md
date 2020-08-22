@@ -2,6 +2,7 @@
 id: 56bbb991ad1ed5201cd392d3
 title: Delete Properties from a JavaScript Object
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cDqKdTv'
 forumTopicId: 17560
 ---
@@ -10,6 +11,32 @@ forumTopicId: 17560
 <section id='description'>
 We can also delete properties from objects like this:
 <code>delete ourDog.bark;</code>
+
+Example:
+
+```js
+var ourDog = {
+  "name": "Camper",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["everything!"],
+  "bark": "bow-wow"
+};
+
+delete ourDog.bark;
+```
+
+After the last line shown above, <code>ourDog</code> looks like:
+
+```js
+{
+  "name": "Camper",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["everything!"]
+}
+```
+
 </section>
 
 ## Instructions
@@ -25,7 +52,7 @@ tests:
   - text: You should delete the property <code>"tails"</code> from <code>myDog</code>.
     testString: assert(typeof myDog === "object" && myDog.tails === undefined);
   - text: You should not modify the <code>myDog</code> setup.
-    testString: 'assert(code.match(/"tails": 1/g).length > 1);'
+    testString: 'assert(code.match(/"tails": 1/g).length > 0);'
 
 ```
 
@@ -37,17 +64,6 @@ tests:
 <div id='js-seed'>
 
 ```js
-// Example
-var ourDog = {
-  "name": "Camper",
-  "legs": 4,
-  "tails": 1,
-  "friends": ["everything!"],
-  "bark": "bow-wow"
-};
-
-delete ourDog.bark;
-
 // Setup
 var myDog = {
   "name": "Happy Coder",
@@ -57,7 +73,7 @@ var myDog = {
   "bark": "woof"
 };
 
-// Only change code below this line.
+// Only change code below this line
 
 
 ```
@@ -81,13 +97,6 @@ var myDog = {
 
 
 ```js
-var ourDog = {
-  "name": "Camper",
-  "legs": 4,
-  "tails": 1,
-  "friends": ["everything!"],
-  "bark": "bow-wow"
-};
 var myDog = {
   "name": "Happy Coder",
   "legs": 4,

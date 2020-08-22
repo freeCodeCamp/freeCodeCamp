@@ -19,11 +19,11 @@ localeTitle: 使用Composition创建一个Component
 ```yml
 tests:
   - text: React组件应返回单个<code>div</code>元素。
-    testString: 'assert((function() { var shallowRender = Enzyme.shallow(React.createElement(ParentComponent)); return shallowRender.type() === "div"; })(), "The React component should return a single <code>div</code> element.");'
+    testString: assert((function() { var shallowRender = Enzyme.shallow(React.createElement(ParentComponent)); return shallowRender.type() === 'div'; })());
   - text: 该组件应返回两个嵌套元素。
-    testString: 'assert((function() { var shallowRender = Enzyme.shallow(React.createElement(ParentComponent)); return shallowRender.children().length === 2; })(), "The component should return two nested elements.");'
+    testString: assert((function() { var shallowRender = Enzyme.shallow(React.createElement(ParentComponent)); return shallowRender.children().length === 2; })());
   - text: 该组件应将ChildComponent作为其第二个子项返回。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ParentComponent)); return mockedComponent.find("ParentComponent").find("ChildComponent").length === 1; })(), "The component should return the ChildComponent as its second child.");'
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ParentComponent)); return mockedComponent.find('ParentComponent').find('ChildComponent').length === 1; })());
 
 ```
 
@@ -82,4 +82,5 @@ console.info('after the test');
 ```js
 // solution required
 ```
-</section>
+
+/section>

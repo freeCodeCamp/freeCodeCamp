@@ -2,33 +2,38 @@
 id: 587d781c367417b2b2512ac2
 title: Set the font-size for Multiple Heading Elements
 challengeType: 0
-videoUrl: ''
-localeTitle: 设置多个标题元素的字体大小
+videoUrl: 'https://scrimba.com/c/cPpQNT3'
+forumTopicId: 301067
+localeTitle: 设置多个标题元素的 font-size
 ---
 
 ## Description
-<section id="description"> <code>font-size</code>属性用于指定给定元素中文本的大小。此规则可用于多个元素，以在页面上创建文本的视觉一致性。在此挑战中，您将设置所有<code>h1</code>到<code>h6</code>标记的值以平衡标题大小。 </section>
+<section id='description'>
+<code>font-size</code> 属性用来指定元素内文字的大小。这个规则可以应用到多个元素上，合理的使用，能让页面的文字显示的错落有致。在本挑战里，你将要设置 <code>h1</code> 到 <code>h6</code> 的每个标题文字的大小。
+</section>
 
 ## Instructions
-<section id="instructions"><ul><li>将<code>h1</code>标记的<code>font-size</code>设置为68px。 </li><li>将<code>h2</code>标记的<code>font-size</code>设置为52px。 </li><li>将<code>h3</code>标签的<code>font-size</code>设置为40px。 </li><li>将<code>h4</code>标记的<code>font-size</code>设置为32px。 </li><li>将<code>h5</code>标记的<code>font-size</code>设置为21px。 </li><li>将<code>h6</code>标记的<code>font-size</code>设置为14px。 </li></ul></section>
+<section id='instructions'>
+<ul><li>设置 <code>h1</code> 标签的 <code>font-size</code> 为 68px。</li><li>设置 <code>h2</code> 标签的 <code>font-size</code> 为 52px。</li><li>设置 <code>h3</code> 标签的 <code>font-size</code> 为 40px。</li><li>设置 <code>h4</code> 标签的 <code>font-size</code> 为 32px。</li><li>设置 <code>h5</code> 标签的 <code>font-size</code> 为 21px。</li><li>设置 <code>h6</code> 标签的 <code>font-size</code> 为 14px。</li></ul>
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您的代码应将<code>h1</code>标记的<code>font-size</code>属性设置为68像素。
-    testString: 'assert($("h1").css("font-size") == "68px", "Your code should set the <code>font-size</code> property for the <code>h1</code> tag to 68 pixels.");'
-  - text: 您的代码应将<code>h2</code>标记的<code>font-size</code>属性设置为52像素。
-    testString: 'assert($("h2").css("font-size") == "52px", "Your code should set the <code>font-size</code> property for the <code>h2</code> tag to 52 pixels.");'
-  - text: 您的代码应将<code>h3</code>标记的<code>font-size</code>属性设置为40像素。
-    testString: 'assert($("h3").css("font-size") == "40px", "Your code should set the <code>font-size</code> property for the <code>h3</code> tag to 40 pixels.");'
-  - text: 您的代码应将<code>h4</code>标记的<code>font-size</code>属性设置为32像素。
-    testString: 'assert($("h4").css("font-size") == "32px", "Your code should set the <code>font-size</code> property for the <code>h4</code> tag to 32 pixels.");'
-  - text: 您的代码应将<code>h5</code>标记的<code>font-size</code>属性设置为21像素。
-    testString: 'assert($("h5").css("font-size") == "21px", "Your code should set the <code>font-size</code> property for the <code>h5</code> tag to 21 pixels.");'
-  - text: 您的代码应将<code>h6</code>标记的<code>font-size</code>属性设置为14像素。
-    testString: 'assert($("h6").css("font-size") == "14px", "Your code should set the <code>font-size</code> property for the <code>h6</code> tag to 14 pixels.");'
+  - text: '你应该设置 <code>h1</code> 标签的 <code>font-size</code> 为 <code>68px</code>。'
+    testString: assert($('h1').css('font-size') == '68px');
+  - text: '你应该设置 <code>h2</code> 标签的 <code>font-size</code> 为 <code>52px</code>。'
+    testString: assert($('h2').css('font-size') == '52px');
+  - text: '你应该设置 <code>h3</code> 标签的 <code>font-size</code> 为 <code>40px</code>。'
+    testString: assert($('h3').css('font-size') == '40px');
+  - text: '你应该设置 <code>h4</code> 标签的 <code>font-size</code> 为 <code>32px</code>。'
+    testString: assert($('h4').css('font-size') == '32px');
+  - text: '你应该设置 <code>h5</code> 标签的 <code>font-size</code> 为 <code>21px</code>。'
+    testString: assert($('h5').css('font-size') == '21px');
+  - text: '你应该设置 <code>h6</code> 标签的 <code>font-size</code> 为 <code>14px</code>。'
+    testString: assert($('h6').css('font-size') == '14px');
 
 ```
 
@@ -41,20 +46,19 @@ tests:
 
 ```html
 <style>
-
-
-
-
-
-
+  
+  
+  
+  
+  
+  
 </style>
-<h1>This is h1 text</h1>
-<h2>This is h2 text</h2>
-<h3>This is h3 text</h3>
-<h4>This is h4 text</h4>
-<h5>This is h5 text</h5>
-<h6>This is h6 text</h6>
-
+<h1>我是 h1 文字</h1>
+<h2>我是 h2 文字</h2>
+<h3>我是 h3 文字</h3>
+<h4>我是 h4 文字</h4>
+<h5>我是 h5 文字</h5>
+<h6>我是 h6 文字</h6>
 ```
 
 </div>
@@ -66,7 +70,9 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>
+              

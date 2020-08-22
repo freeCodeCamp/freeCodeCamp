@@ -19,13 +19,13 @@ localeTitle: 使用Object.assign复制对象
 ```yml
 tests:
   - text: Redux存储应该存在并使用等效于第1行声明的<code>defaultState</code>对象的状态进行初始化。
-    testString: 'assert((function() { const expectedState = { user: "CamperBot", status: "offline", friends: "732,982", community: "freeCodeCamp" }; const initialState = store.getState(); return DeepEqual(expectedState, initialState); })(), "The Redux store should exist and initialize with a state that is equivalent to the <code>defaultState</code> object declared on line 1.");'
+    testString: 'assert((function() { const expectedState = { user: ''CamperBot'', status: ''offline'', friends: ''732,982'', community: ''freeCodeCamp'' }; const initialState = store.getState(); return DeepEqual(expectedState, initialState); })());'
   - text: <code>wakeUp</code>和<code>immutableReducer</code>都应该是函数。
-    testString: 'assert(typeof wakeUp === "function" && typeof immutableReducer === "function", "<code>wakeUp</code> and <code>immutableReducer</code> both should be functions.");'
+    testString: assert(typeof wakeUp === 'function' && typeof immutableReducer === 'function');
   - text: 调度<code>ONLINE</code>类型的操作应该将<code>status</code>中的属性<code>status</code>更新为<code>online</code>并且不应该改变状态。
-    testString: 'assert((function() { const initialState = store.getState(); const isFrozen = DeepFreeze(initialState); store.dispatch({type: "ONLINE"}); const finalState = store.getState(); const expectedState = { user: "CamperBot", status: "online", friends: "732,982", community: "freeCodeCamp" }; return isFrozen && DeepEqual(finalState, expectedState); })(), "Dispatching an action of type <code>ONLINE</code> should update the property <code>status</code> in state to <code>online</code> and should NOT mutate state.");'
+    testString: 'assert((function() { const initialState = store.getState(); const isFrozen = DeepFreeze(initialState); store.dispatch({type: ''ONLINE''}); const finalState = store.getState(); const expectedState = { user: ''CamperBot'', status: ''online'', friends: ''732,982'', community: ''freeCodeCamp'' }; return isFrozen && DeepEqual(finalState, expectedState); })());'
   - text: <code>Object.assign</code>应该用于返回新状态。
-    testString: 'getUserInput => assert(getUserInput("index").includes("Object.assign"), "<code>Object.assign</code> should be used to return new state.");'
+    testString: getUserInput => assert(getUserInput('index').includes('Object.assign'));
 
 ```
 
@@ -76,4 +76,5 @@ const store = Redux.createStore(immutableReducer);
 ```js
 // solution required
 ```
-</section>
+
+/section>

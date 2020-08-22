@@ -2,6 +2,7 @@
 id: 5a94fe2669fb03452672e45e
 title: Use grid-area Without Creating an Areas Template
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/p/pByETK/c6N7VhK'
 forumTopicId: 301135
 ---
@@ -54,10 +55,10 @@ tests:
 
   .item5 {
     background: PaleGreen;
-    /* add your code below this line */
+    /* Only change code below this line */
 
 
-    /* add your code above this line */
+    /* Only change code above this line */
   }
 
   .container {

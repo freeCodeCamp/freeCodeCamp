@@ -19,13 +19,13 @@ localeTitle: 用btn-danger警告你的危险行为用户
 ```yml
 tests:
   - text: 创建一个带有“删除”文本的新<code>button</code>元素。
-    testString: 'assert(new RegExp("Delete","gi").test($("button").text()), "Create a new <code>button</code> element with the text "Delete".");'
+    testString: assert(new RegExp("Delete","gi").test($("button").text()));
   - text: 你的所有Bootstrap按钮都应该有<code>btn</code>和<code>btn-block</code>类。
-    testString: 'assert($("button.btn-block.btn").length > 2, "All of your Bootstrap buttons should have the <code>btn</code> and <code>btn-block</code> classes.");'
+    testString: assert($("button.btn-block.btn").length > 2);
   - text: 你的新按钮应该有类<code>btn-danger</code> 。
-    testString: 'assert($("button").hasClass("btn-danger"), "Your new button should have the class <code>btn-danger</code>.");'
+    testString: assert($("button").hasClass("btn-danger"));
   - text: 确保所有<code>button</code>元素都有一个结束标记。
-    testString: 'assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length, "Make sure all your <code>button</code> elements have a closing tag.");'
+    testString: assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length);
 
 ```
 
@@ -86,7 +86,7 @@ tests:
     <li>thunder</li>
     <li>other cats</li>
   </ol>
-  <form action="/submit-cat-photo">
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor"> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
     <label><input type="checkbox" name="personality"> Loving</label>
@@ -111,4 +111,5 @@ tests:
 ```js
 // solution required
 ```
-</section>
+
+/section>

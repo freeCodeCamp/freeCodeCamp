@@ -3,6 +3,7 @@ id: a97fd23d9b809dac9921074f
 title: Arguments Optional
 isRequired: true
 challengeType: 5
+isHidden: false
 forumTopicId: 14271
 ---
 
@@ -14,7 +15,6 @@ Calling this returned function with a single argument will then return the sum:
 <code>var sumTwoAnd = addTogether(2);</code>
 <code>sumTwoAnd(3)</code> returns <code>5</code>.
 If either argument isn't a valid number, return undefined.
-Remember to use <a href='https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code.
 </section>
 
 ## Instructions
@@ -29,8 +29,10 @@ Remember to use <a href='https://www.freecodecamp.org/forum/t/how-to-get-help-wh
 tests:
   - text: <code>addTogether(2, 3)</code> should return 5.
     testString: assert.deepEqual(addTogether(2, 3), 5);
-  - text: <code>addTogether(2)(3)</code> should return 5.
-    testString: assert.deepEqual(addTogether(2)(3), 5);
+  - text: <code>addTogether(23, 30)</code> should return 53.
+    testString: assert.deepEqual(addTogether(23, 30), 53);
+  - text: <code>addTogether(5)(7)</code> should return 12.
+    testString: assert.deepEqual(addTogether(5)(7), 12);
   - text: <code>addTogether("http://bit.ly/IqT6zt")</code> should return undefined.
     testString: assert.isUndefined(addTogether("http://bit.ly/IqT6zt"));
   - text: <code>addTogether(2, "3")</code> should return undefined.

@@ -21,11 +21,11 @@ localeTitle: 使用jQuery从元素中删除类
 ```yml
 tests:
   - text: 从所有<code>button</code>元素中删除<code>btn-default</code>类。
-    testString: 'assert($(".btn-default").length === 0, "Remove the <code>btn-default</code> class from all of your <code>button</code> elements.");'
+    testString: assert($(".btn-default").length === 0);
   - text: 仅使用jQuery从元素中删除此类。
-    testString: 'assert(code.match(/btn btn-default/g), "Only use jQuery to remove this class from the element.");'
+    testString: assert(code.match(/btn btn-default/g));
   - text: 只删除<code>btn-default</code>类。
-    testString: 'assert(code.match(/\.[\v\s]*removeClass[\s\v]*\([\s\v]*("|")\s*btn-default\s*("|")[\s\v]*\)/gm), "Only remove the <code>btn-default</code> class.");'
+    testString: assert(code.match(/\.[\v\s]*removeClass[\s\v]*\([\s\v]*('|")\s*btn-default\s*('|")[\s\v]*\)/gm));
 
 ```
 
@@ -84,4 +84,5 @@ tests:
 ```js
 // solution required
 ```
-</section>
+
+/section>

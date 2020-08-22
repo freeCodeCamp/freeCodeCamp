@@ -2,6 +2,7 @@
 id: a2f1d72d9b908d0bd72bb9f6
 title: Make a Person
 challengeType: 5
+isHidden: false
 forumTopicId: 16020
 ---
 
@@ -21,7 +22,6 @@ setFullName(firstAndLast)
 Run the tests to see the expected output for each method.
 The methods that take an argument must accept only one argument and it has to be a string.
 These methods must be the only available means of interacting with the object.
-Remember to use <a href='https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code.
 </section>
 
 ## Instructions
@@ -70,6 +70,7 @@ tests:
 
 ```js
 var Person = function(firstAndLast) {
+  // Only change code below this line
   // Complete the method below and implement the others similarly
   this.getFullName = function() {
     return "";
@@ -83,6 +84,17 @@ bob.getFullName();
 
 </div>
 
+### After Test
+
+<div id='js-teardown'>
+
+```js
+if(bob){
+  bob = new Person("Bob Ross");
+}
+```
+
+</div>
 
 
 </section>

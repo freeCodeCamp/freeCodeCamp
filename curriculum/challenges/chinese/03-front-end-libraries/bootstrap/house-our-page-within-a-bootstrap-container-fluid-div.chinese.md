@@ -19,11 +19,11 @@ localeTitle: 将我们的页面放在Bootstrap容器 - 流体div中
 ```yml
 tests:
   - text: 你的<code>div</code>元素应该有class <code>container-fluid</code> 。
-    testString: 'assert($("div").hasClass("container-fluid"), "Your <code>div</code> element should have the class <code>container-fluid</code>.");'
+    testString: assert($("div").hasClass("container-fluid"));
   - text: 确保每个<code>div</code>元素都有一个结束标记。
-    testString: 'assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length, "Make sure each of your <code>div</code> elements has a closing tag.");'
+    testString: assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length);
   - text: 将<code>h3</code>元素<code>div</code>元素中。
-    testString: 'assert($("div").children("h3").length >0, "Nest your <code>h3</code> element inside a <code>div</code> element.");'
+    testString: assert($("div").children("h3").length >0);
 
 ```
 
@@ -51,4 +51,5 @@ tests:
 ```js
 // solution required
 ```
-</section>
+
+/section>

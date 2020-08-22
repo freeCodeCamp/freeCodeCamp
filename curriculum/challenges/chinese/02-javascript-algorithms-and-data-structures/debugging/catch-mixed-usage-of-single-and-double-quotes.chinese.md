@@ -18,9 +18,9 @@ localeTitle: 抓住单引号和双引号的混合使用
 ```yml
 tests:
   - text: '您的代码应该通过更改或转义它们来修复<code>href</code>值“#Home”周围的引号。'
-    testString: 'assert(code.match(/<a href=\s*?("|\\")#Home\1\s*?>/g), "Your code should fix the quotes around the <code>href</code> value "#Home" by either changing or escaping them.");'
+    testString: assert(code.match(/<a href=\s*?('|\\")#Home\1\s*?>/g));
   - text: 您的代码应该在整个字符串周围保留双引号。
-    testString: 'assert(code.match(/"<p>.*?<\/p>";/g), "Your code should keep the double quotes around the entire string.");'
+    testString: assert(code.match(/"<p>.*?<\/p>";/g));
 
 ```
 
@@ -49,4 +49,5 @@ console.log(innerHtml);
 ```js
 // solution required
 ```
-</section>
+
+/section>

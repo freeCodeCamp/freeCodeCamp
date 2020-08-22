@@ -2,6 +2,7 @@
 id: 5a90372638fddaf9a66b5d38
 title: Use grid-column to Control Spacing
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/p/pByETK/cnzkDSr'
 forumTopicId: 301136
 ---
@@ -61,10 +62,10 @@ tests:
 
   .item5 {
     background: PaleGreen;
-    /* add your code below this line */
+    /* Only change code below this line */
 
 
-    /* add your code above this line */
+    /* Only change code above this line */
   }
 
   .container {

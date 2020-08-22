@@ -2,29 +2,40 @@
 id: 587d7b8e367417b2b2512b5c
 title: Understand Functional Programming Terminology
 challengeType: 1
-videoUrl: ''
-localeTitle: 理解功能编程术语
+forumTopicId: 301240
+localeTitle: 了解函数式编程术语
 ---
 
 ## Description
-<section id="description">联邦通信委员会团队有一种情绪波动，现在想要两种类型的茶：绿茶和红茶。一般事实：客户情绪波动很常见。有了这些信息，我们需要重新审视上次挑战中的<code>getTea</code>功能，以处理各种茶叶请求。我们可以修改<code>getTea</code>来接受一个函数作为参数，以便能够改变它准备的茶的类型。这使得<code>getTea</code>更加灵活，并且在客户端请求发生变化时为程序员提供更多控制。但首先，让我们介绍一些函数术语： <code>Callbacks</code>函数是滑动或传递给另一个函数来决定函数调用的函数。您可能已经看到它们传递给其他方法，例如在<code>filter</code> ，回调函数告诉JavaScript如何过滤数组的标准。可以分配给变量，传递到另一个函数或从其他函数返回的函数就像任何其他正常值一样，称为<code>first class</code>函数。在JavaScript中，所有函数都是<code>first class</code>函数。将函数作为参数或将函数作为返回值返回的函数称为<code>higher order</code>函数。当函数传递给另一个函数或从另一个函数返回时，那些传入或返回的函数可以称为<code>lambda</code> 。 </section>
+<section id='description'>
+FCC 团队需求有变更，现在想要两种茶：绿茶（green tea）和红茶（black tea）。事实证明，用户需求变更是很常见的。
+基于以上信息，我们需要重构上一节挑战中的<code>getTea</code>函数来处理多种茶的请求。我们可以修改<code>getTea</code>接受一个函数作为参数，使它能够修改茶的类型。这让<code>getTea</code>更灵活，也使需求变更时为程序员提供更多控制权。
+首先，我们将介绍一些术语：
+<code>Callbacks</code>是被传递到另一个函数中调用的函数。你应该已经在其他函数中看过这个写法，例如在<code>filter</code>中，回调函数告诉 JavaScript 以什么规则过滤数组。
+函数就像其他正常值一样，可以赋值给变量、传递给另一个函数，或从其它函数返回，这种函数叫做<code>头等</code>函数。在 JavaScript 中，所有函数都是<code>头等</code>函数。
+将函数为参数或返回值的函数叫做<code>高阶</code>函数。
+当函数传递给另一个函数或从另一个函数返回时，那些传入或返回的函数可以叫做<code>lambda</code>。
+</section>
 
 ## Instructions
-<section id="instructions">准备27杯绿茶和13杯红茶，分别储存在<code>tea4GreenTeamFCC</code>和<code>tea4BlackTeamFCC</code>变量中。请注意， <code>getTea</code>函数已被修改，因此它现在将函数作为第一个参数。注意：数据（茶杯数量）作为最后一个参数提供。我们将在后面的课程中对此进行更多讨论。 </section>
+<section id='instructions'>
+准备 27 杯绿茶和 13 杯红茶，分别存入<code>tea4GreenTeamFCC</code>和<code>tea4BlackTeamFCC</code>变量。请注意，<code>getTea</code>函数已经变了，现在它接收一个函数作为第一个参数。
+注意：数据（茶的数量）作为最后一个参数。我们将在后面的课程中对此进行更多讨论。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>tea4GreenTeamFCC</code>变量应该为团队提供27杯绿茶。
-    testString: 'assert(tea4GreenTeamFCC.length === 27, "The <code>tea4GreenTeamFCC</code> variable should hold 27 cups of green tea for the team.");'
-  - text: <code>tea4GreenTeamFCC</code>变量应该拿着一杯绿茶。
-    testString: 'assert(tea4GreenTeamFCC[0] === "greenTea", "The <code>tea4GreenTeamFCC</code> variable should hold cups of green tea.");'
-  - text: <code>tea4BlackTeamFCC</code>变量应该可以容纳13杯红茶。
-    testString: 'assert(tea4BlackTeamFCC.length === 13, "The <code>tea4BlackTeamFCC</code> variable should hold 13 cups of black tea.");'
-  - text: <code>tea4BlackTeamFCC</code>变量应该拿着一杯红茶。
-    testString: 'assert(tea4BlackTeamFCC[0] === "blackTea", "The <code>tea4BlackTeamFCC</code> variable should hold cups of black tea.");'
+  - text: <code>tea4GreenTeamFCC</code>变量应存有为团队准备的 27 杯茶。
+    testString: assert(tea4GreenTeamFCC.length === 27);
+  - text: <code>tea4GreenTeamFCC</code>变量应存有绿茶。
+    testString: assert(tea4GreenTeamFCC[0] === 'greenTea');
+  - text: <code>tea4BlackTeamFCC</code>变量应存有 13 杯红茶。
+    testString: assert(tea4BlackTeamFCC.length === 13);
+  - text: <code>tea4BlackTeamFCC</code>变量应存有红茶。
+    testString: assert(tea4BlackTeamFCC[0] === 'blackTea');
 
 ```
 
@@ -76,7 +87,6 @@ console.log(
   tea4GreenTeamFCC,
   tea4BlackTeamFCC
 );
-
 ```
 
 </div>
@@ -90,5 +100,21 @@ console.log(
 
 ```js
 // solution required
+const prepareGreenTea = () => 'greenTea';
+const prepareBlackTea = () => 'blackTea';
+
+const getTea = (prepareTea, numOfCups) => {
+  const teaCups = [];
+
+  for(let cups = 1; cups <= numOfCups; cups += 1) {
+    const teaCup = prepareTea();
+    teaCups.push(teaCup);
+  }
+  return teaCups;
+};
+
+const tea4BlackTeamFCC = getTea(prepareBlackTea, 13);
+const tea4GreenTeamFCC = getTea(prepareGreenTea, 27);
 ```
+
 </section>

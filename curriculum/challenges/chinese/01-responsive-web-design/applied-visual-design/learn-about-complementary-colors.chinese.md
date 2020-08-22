@@ -2,25 +2,35 @@
 id: 587d78a3367417b2b2512ad1
 title: Learn about Complementary Colors
 challengeType: 0
-videoUrl: ''
+videoUrl: 'https://scrimba.com/c/c2MD3Tr'
+forumTopicId: 301056
 localeTitle: 了解互补色
 ---
 
 ## Description
-<section id="description">色彩理论及其对设计的影响是一个深层次的主题，只有基础知识才能应对以下挑战。在网站上，颜色可以引起对内容的注意，唤起情感或创造视觉和谐。使用不同的颜色组合可以真正改变网站的外观，并且可以考虑选择适合您内容的调色板。色轮是一种有用的工具，用于可视化颜色彼此之间的关系 - 它是一个圆圈，其中相似的色调是邻居，不同的色调相距较远。当两种颜色在车轮上彼此相对时，它们被称为互补色。它们具有如下特征：如果它们组合，它们彼此“抵消”并产生灰色。然而，当并排放置时，这些颜色看起来更加生动，并产生强烈的视觉对比。补充颜色及其十六进制代码的一些示例是： <blockquote>红色（＃FF0000）和青色（＃00FFFF） <br>绿色（＃00FF00）和洋红色（＃FF00FF） <br>蓝色（＃0000FF）和黄色（＃FFFF00） </blockquote>这与我们许多人在学校教授的过时的RYB颜色模型不同，后者具有不同的主色和互补色。现代色彩理论使用加性RGB模型（如在计算机屏幕上）和减色CMY（K）模型（如在打印中）。请阅读<a href="https://en.wikipedia.org/wiki/Color_model" target="_blank">此处</a>了解有关此复杂主题的更多信息。网上有许多颜色挑选工具可以选择找到颜色的补充。 <strong>注意</strong> <br>对于所有颜色挑战：使用颜色可以是增加页面视觉兴趣的有效方式。但是，不应仅使用颜色作为传达重要信息的唯一方式，因为有视力障碍的用户可能不理解该内容。应用辅助功能挑战中将更详细地介绍此问题。 </section>
+<section id='description'>
+色彩理论以及设计色彩学很复杂，这里将只涉及很基础的部分。在网站设计里，颜色能让内容更醒目，能调动情绪，从而创造舒适的视觉体验。不同的颜色组合对网站的视觉效果影响很大，精妙的设计都需要适宜的颜色来美化页面内容。
+ 一半是科学，一半是艺术，色环是我们认识颜色关系的好工具 - 它是一个近色相邻异色相离的圆环。当两个颜色恰好在色环的两端时，这两个颜色叫做补色。绘画中两只补色在混合后会变成灰色。补色搭配能形成强列的对比效果，传达出活力、能量、兴奋等意义。
+下面是一些十六进制码（hex code）补色的例子：
+<blockquote>红色（#FF0000）和蓝绿色 (#00FFFF)<br>绿色（#00FF00）和品红色（#FF00FF）<br>蓝色（#0000FF）和黄色（#FFFF00）</blockquote>
+现在很多的在线选色工具都有寻找补色的功能。
+<strong>注意</strong><br>对于所有的颜色关卡： 颜色能吸引用户的注意，但不是唯一的方式，切勿喧宾夺主，过度使用会适得其反。详细会在应用无障碍章节介绍。
+</section>
 
 ## Instructions
-<section id="instructions">将<code>blue</code>和<code>yellow</code>类的<code>background-color</code>属性更改为各自的颜色。注意颜色与白色背景相比看起来彼此不同。 </section>
+<section id='instructions'>
+把 <code>blue</code> 和 <code>yellow</code> class 的 <code>background-color</code> 属性改成相应的颜色。注意观察它们之间的编码区别以及和它们和白色的编码区别。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 具有<code>blue</code>类的<code>div</code>元素应具有<code>blue</code>的<code>background-color</code> 。
-    testString: 'assert($(".blue").css("background-color") == "rgb(0, 0, 255)", "The <code>div</code> element with class <code>blue</code> should have a <code>background-color</code> of blue.");'
-  - text: 类<code>yellow</code>的<code>div</code>元素应该具有<code>yellow</code>的<code>background-color</code> 。
-    testString: 'assert($(".yellow").css("background-color") == "rgb(255, 255, 0)", "The <code>div</code> element with class <code>yellow</code> should have a <code>background-color</code> of yellow.");'
+  - text: 'class 为 <code>blue</code> 的 <code>div</code> 元素应该有值为蓝色的 <code>background-color</code> CSS 属性。'
+    testString: assert($('.blue').css('background-color') == 'rgb(0, 0, 255)');
+  - text: 'class 为 <code>yellow</code> 的 <code>div</code> 元素应该有值为黄色的 <code>background-color</code> CSS 属性。'
+    testString: assert($('.yellow').css('background-color') == 'rgb(255, 255, 0)');
 
 ```
 
@@ -50,7 +60,6 @@ tests:
 </style>
 <div class="blue"></div>
 <div class="yellow"></div>
-
 ```
 
 </div>
@@ -62,7 +71,9 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
+```html
 // solution required
 ```
+
 </section>
+              

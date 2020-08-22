@@ -2,25 +2,33 @@
 id: bd7123c9c549eddfaeb5bdef
 title: Use Bracket Notation to Find the First Character in a String
 challengeType: 1
-videoUrl: ''
-localeTitle: 使用括号表示法查找字符串中的第一个字符
+videoUrl: 'https://scrimba.com/c/ca8JwhW'
+forumTopicId: 18341
+localeTitle: 使用方括号查找字符串中的第一个字符
 ---
 
 ## Description
-<section id="description"> <code>Bracket notation</code>是一种在字符串中的特定<code>index</code>处获取字符的方法。大多数现代编程语言，如JavaScript，都不像人类那样开始计算。它们从0开始。这称为<dfn>基于零的</dfn>索引。例如，单词“Charles”中索引0处的字符是“C”。因此，如果<code>var firstName = &quot;Charles&quot;</code> ，则可以使用<code>firstName[0]</code>获取字符串第一个字母的值。 </section>
+<section id='description'>
+方括号表示法是一种在字符串中的特定<code>index</code>（索引）处获取字符的方法。
+大多数现代编程语言，如JavaScript，不同于人类从 1 开始计数。它们是从 0 开始计数，这被称为 <dfn>基于零</dfn> 的索引。
+例如, 在单词 "Charles" 中索引 0 上的字符为 "C"，所以在<code>var firstName = "Charles"</code>中，你可以使用<code>firstName[0]</code>来获得第一个位置上的字符。
+</section>
 
 ## Instructions
-<section id="instructions">使用<dfn>括号表示法</dfn>查找<code>lastName</code>变量中的第一个字符并将其分配给<code>firstLetterOfLastName</code> 。 <strong>暗示</strong> <br>如果卡住，请尝试查看<code>firstLetterOfFirstName</code>变量声明。 </section>
+<section id='instructions'>
+使用方括号获取变量<code>lastName</code>中的第一个字符，并赋给变量<code>firstLetterOfLastName</code>。
+<strong>提示</strong><br>如果你遇到困难了，不妨看看变量<code>firstLetterOfFirstName</code>是如何赋值的。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>firstLetterOfLastName</code>变量的值应为<code>L</code>
-    testString: 'assert(firstLetterOfLastName === "L", "The <code>firstLetterOfLastName</code> variable should have the value of <code>L</code>.");'
-  - text: 您应该使用括号表示法。
-    testString: 'assert(code.match(/firstLetterOfLastName\s*?=\s*?lastName\[.*?\]/), "You should use bracket notation.");'
+  - text: <code>firstLetterOfLastName</code>的值应该是<code>L</code>。
+    testString: assert(firstLetterOfLastName === 'L');
+  - text: 你应该使用中括号。
+    testString: assert(code.match(/firstLetterOfLastName\s*?=\s*?lastName\[.*?\]/));
 
 ```
 
@@ -45,6 +53,7 @@ var lastName = "Lovelace";
 // Only change code below this line
 firstLetterOfLastName = lastName;
 
+
 ```
 
 </div>
@@ -54,7 +63,7 @@ firstLetterOfLastName = lastName;
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(v){return v;})(firstLetterOfLastName);
 ```
 
 </div>
@@ -64,7 +73,13 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+var firstLetterOfLastName = "";
+var lastName = "Lovelace";
+
+// Only change code below this line
+firstLetterOfLastName = lastName[0];
 ```
+
 </section>

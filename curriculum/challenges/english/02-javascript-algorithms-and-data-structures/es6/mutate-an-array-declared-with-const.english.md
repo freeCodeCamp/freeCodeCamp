@@ -2,6 +2,7 @@
 id: 587d7b87367417b2b2512b42
 title: Mutate an Array Declared with const
 challengeType: 1
+isHidden: false
 forumTopicId: 301206
 ---
 
@@ -54,11 +55,11 @@ tests:
 const s = [5, 7, 2];
 function editInPlace() {
   'use strict';
-  // change code below this line
+  // Only change code below this line
 
-  // s = [2, 5, 7]; <- this is invalid
+  // Using s = [2, 5, 7] would be invalid
 
-  // change code above this line
+  // Only change code above this line
 }
 editInPlace();
 ```
@@ -76,13 +77,9 @@ editInPlace();
 const s = [5, 7, 2];
 function editInPlace() {
   'use strict';
-  // change code below this line
-
-  // s = [2, 5, 7]; <- this is invalid
   s[0] = 2;
   s[1] = 5;
   s[2] = 7;
-  // change code above this line
 }
 editInPlace();
 ```

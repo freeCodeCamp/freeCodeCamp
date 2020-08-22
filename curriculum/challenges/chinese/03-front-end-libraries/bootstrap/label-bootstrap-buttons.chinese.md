@@ -19,17 +19,17 @@ localeTitle: 标签引导按钮
 ```yml
 tests:
   - text: '给你的<code>button</code>元素id为<code>target1</code>文本<code>#target1</code> 。'
-    testString: 'assert(new RegExp("#target1","gi").test($("#target1").text()), "Give your <code>button</code> element with the id <code>target1</code> the text <code>#target1</code>.");'
+    testString: assert(new RegExp("#target1","gi").test($("#target1").text()));
   - text: '给你的<code>button</code>元素id为<code>target2</code>文本<code>#target2</code> 。'
-    testString: 'assert(new RegExp("#target2","gi").test($("#target2").text()), "Give your <code>button</code> element with the id <code>target2</code> the text <code>#target2</code>.");'
+    testString: assert(new RegExp("#target2","gi").test($("#target2").text()));
   - text: '给你的<code>button</code>元素id为<code>target3</code>文本<code>#target3</code> 。'
-    testString: 'assert(new RegExp("#target3","gi").test($("#target3").text()), "Give your <code>button</code> element with the id <code>target3</code> the text <code>#target3</code>.");'
+    testString: assert(new RegExp("#target3","gi").test($("#target3").text()));
   - text: '给你的<code>button</code>元素id为<code>target4</code>文本<code>#target4</code> 。'
-    testString: 'assert(new RegExp("#target4","gi").test($("#target4").text()), "Give your <code>button</code> element with the id <code>target4</code> the text <code>#target4</code>.");'
+    testString: assert(new RegExp("#target4","gi").test($("#target4").text()));
   - text: '给你的<code>button</code>元素id为<code>target5</code>文本<code>#target5</code> 。'
-    testString: 'assert(new RegExp("#target5","gi").test($("#target5").text()), "Give your <code>button</code> element with the id <code>target5</code> the text <code>#target5</code>.");'
+    testString: assert(new RegExp("#target5","gi").test($("#target5").text()));
   - text: '使用id <code>target6</code>为您的<code>button</code>元素提供文本<code>#target6</code> 。'
-    testString: 'assert(new RegExp("#target6","gi").test($("#target6").text()), "Give your <code>button</code> element with the id <code>target6</code> the text <code>#target6</code>.");'
+    testString: assert(new RegExp("#target6","gi").test($("#target6").text()));
 
 ```
 
@@ -77,4 +77,5 @@ tests:
 ```js
 // solution required
 ```
-</section>
+
+/section>
