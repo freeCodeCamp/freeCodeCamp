@@ -19,7 +19,8 @@ import {
   durationsConfig,
   defaultAmount,
   defaultStateConfig,
-  onetimeSKUConfig
+  onetimeSKUConfig,
+  donationUrls
 } from '../../../../config/donation-settings';
 import { deploymentEnv } from '../../../config/env.json';
 import Spacer from '../helpers/Spacer';
@@ -36,6 +37,7 @@ const propTypes = {
   handleProcessing: PropTypes.func,
   isDonating: PropTypes.bool,
   isSignedIn: PropTypes.bool,
+  navigate: PropTypes.func.isRequired,
   showLoading: PropTypes.bool.isRequired,
   stripe: PropTypes.shape({
     createToken: PropTypes.func.isRequired,
@@ -95,6 +97,9 @@ class DonateForm extends Component {
         error: error
       }
     }));
+    if (success) {
+      this.props.navigate(donationUrls.successUrl);
+    }
   }
 
   getActiveDonationAmount(durationSelected, amountSelected) {
@@ -159,8 +164,8 @@ class DonateForm extends Component {
         };
     const { error } = await stripe.redirectToCheckout({
       items: [item],
-      successUrl: 'https://www.freecodecamp.org/news/thank-you-for-donating/',
-      cancelUrl: 'https://freecodecamp.org/donate'
+      successUrl: donationUrls.successUrl,
+      cancelUrl: donationUrls.cancelUrl
     });
     console.error(error);
   }
