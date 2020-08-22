@@ -59,4 +59,5 @@ const JSX = (
 ```js
 // solution required
 ```
-</section>
+
+/section>

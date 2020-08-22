@@ -2,6 +2,7 @@
 id: 587d7dac367417b2b2512b74
 title: Use Dot Notation to Access the Properties of an Object
 challengeType: 1
+isHidden: false
 forumTopicId: 301333
 ---
 

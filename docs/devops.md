@@ -18,7 +18,7 @@ This involves three steps to be followed in sequence:
 
 Typically, [`master`](https://github.com/freeCodeCamp/freeCodeCamp/tree/master) (the default development branch) is merged into the [`production-staging`](https://github.com/freeCodeCamp/freeCodeCamp/tree/production-staging) branch once a day and is released into an isolated infrastructure.
 
-This is an intermediate release for our developers and volunteer contributors. It also known as our "staging" or "beta" release.
+This is an intermediate release for our developers and volunteer contributors. It is also known as our "staging" or "beta" release.
 
 It is identical to our live production environment at `freeCodeCamp.org`, other than it using a separate set of databases, servers, web-proxies, etc. This isolation lets us test ongoing development and features in a "production" like scenario, without affecting regular users of freeCodeCamp.org's main platforms.
 
@@ -227,7 +227,7 @@ There are some known limitations and tradeoffs when using the beta version of th
 
 - #### Sign page may look different than production
 
-   We use a test tenant for freecodecamp.dev on Auth0, and hence donot have the ability to set a custom domain. This makes is so that all the redirect callbacks and the login page appear at a default domain like: `https://freecodecamp-dev.auth0.com/`. This does not affect the functionality is as close to production as we can get.
+   We use a test tenant for freecodecamp.dev on Auth0, and hence do not have the ability to set a custom domain. This makes it so that all the redirect callbacks and the login page appear at a default domain like: `https://freecodecamp-dev.auth0.com/`. This does not affect the functionality is as close to production as we can get.
 
 ## Reporting issues and leaving feedback
 

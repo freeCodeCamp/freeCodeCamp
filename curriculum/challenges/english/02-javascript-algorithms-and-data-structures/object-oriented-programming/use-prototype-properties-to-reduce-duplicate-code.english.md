@@ -2,6 +2,7 @@
 id: 587d7dae367417b2b2512b7c
 title: Use Prototype Properties to Reduce Duplicate Code
 challengeType: 1
+isHidden: false
 forumTopicId: 301336
 ---
 

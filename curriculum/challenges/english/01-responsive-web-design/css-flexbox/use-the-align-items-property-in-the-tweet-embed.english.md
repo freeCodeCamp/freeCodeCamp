@@ -2,6 +2,7 @@
 id: 587d78ad367417b2b2512af9
 title: Use the align-items Property in the Tweet Embed
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/p/pVaDAv/cd3PNfq'
 forumTopicId: 301106
 ---

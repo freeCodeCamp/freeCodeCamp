@@ -79,9 +79,14 @@ function* validateUsernameSaga({ payload }) {
 function* verifyCertificationSaga({ payload }) {
   try {
     const {
-      data: { response, isCertMap }
+      data: { response, isCertMap, completedChallenges }
     } = yield call(putVerifyCert, payload);
-    yield put(verifyCertComplete({ ...response, payload: isCertMap }));
+    yield put(
+      verifyCertComplete({
+        ...response,
+        payload: { ...isCertMap, completedChallenges }
+      })
+    );
     yield put(createFlashMessage(response));
   } catch (e) {
     yield put(verifyCertError(e));

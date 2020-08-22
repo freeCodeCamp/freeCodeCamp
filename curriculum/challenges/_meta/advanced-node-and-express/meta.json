@@ -1,11 +1,11 @@
 {
   "name": "Advanced Node and Express",
   "dashedName": "advanced-node-and-express",
-  "order": 3,
+  "order": 2,
   "time": "5 hours",
   "template": "",
   "required": [],
-  "superBlock": "information-security-and-quality-assurance",
+  "superBlock": "quality-assurance",
   "superOrder": 6,
   "challengeOrder": [
     [

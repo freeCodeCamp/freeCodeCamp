@@ -2,6 +2,7 @@
 id: 587d78a5367417b2b2512ad6
 title: Create a Gradual CSS Linear Gradient
 challengeType: 0
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cg4dpt9'
 forumTopicId: 301047
 ---

@@ -8,8 +8,7 @@ import {
   userByNameSelector,
   userProfileFetchStateSelector,
   fetchProfileForUser,
-  usernameSelector,
-  hardGoTo as navigate
+  usernameSelector
 } from '../redux';
 import FourOhFourPage from '../components/FourOhFour';
 import Profile from '../components/profile/Profile';
@@ -19,7 +18,6 @@ const propTypes = {
   fetchProfileForUser: PropTypes.func.isRequired,
   isSessionUser: PropTypes.bool,
   maybeUser: PropTypes.string,
-  navigate: PropTypes.func.isRequired,
   requestedUser: PropTypes.shape({
     username: PropTypes.string,
     profileUI: PropTypes.object
@@ -45,8 +43,7 @@ const makeMapStateToProps = () => (state, props) => {
 };
 
 const mapDispatchToProps = {
-  fetchProfileForUser,
-  navigate
+  fetchProfileForUser
 };
 
 class ShowProfileOrFourOhFour extends Component {
@@ -62,7 +59,7 @@ class ShowProfileOrFourOhFour extends Component {
       return null;
     }
 
-    const { isSessionUser, requestedUser, showLoading, navigate } = this.props;
+    const { isSessionUser, requestedUser, showLoading } = this.props;
     if (isEmpty(requestedUser)) {
       if (showLoading) {
         // We don't know if /:maybeUser is a user or not, we will show
@@ -77,13 +74,7 @@ class ShowProfileOrFourOhFour extends Component {
 
     // We have a response from the API, and we have some state in the
     // store for /:maybeUser, we now handover rendering to the Profile component
-    return (
-      <Profile
-        isSessionUser={isSessionUser}
-        navigate={navigate}
-        user={requestedUser}
-      />
-    );
+    return <Profile isSessionUser={isSessionUser} user={requestedUser} />;
   }
 }
 

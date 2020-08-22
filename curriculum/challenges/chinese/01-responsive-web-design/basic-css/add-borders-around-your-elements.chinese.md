@@ -98,7 +98,7 @@ tests:
     </ol>
   </div>
   
-  <form action="/submit-cat-photo">
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor">室内</label>
     <label><input type="radio" name="indoor-outdoor">室外</label><br>
     <label><input type="checkbox" name="personality">忠诚</label>

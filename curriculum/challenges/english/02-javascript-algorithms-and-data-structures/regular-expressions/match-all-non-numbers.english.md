@@ -2,6 +2,7 @@
 id: 587d7db8367417b2b2512ba1
 title: Match All Non-Numbers
 challengeType: 1
+isHidden: false
 forumTopicId: 301347
 ---
 

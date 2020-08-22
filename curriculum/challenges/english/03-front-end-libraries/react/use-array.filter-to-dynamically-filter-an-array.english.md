@@ -2,6 +2,7 @@
 id: 5a24c314108439a4d403618c
 title: Use Array.filter() to Dynamically Filter an Array
 challengeType: 6
+isHidden: false
 isRequired: false
 forumTopicId: 301416
 ---
@@ -145,7 +146,7 @@ class MyComponent extends React.Component {
     const usersOnline = this.state.users.filter(user => {
       return user.online;
     });
-    const renderOnlineUsers = usersOnline.map(user => {
+    const renderOnline = usersOnline.map(user => {
       return (
         <li key={user.username}>{user.username}</li>
       );
@@ -154,7 +155,7 @@ class MyComponent extends React.Component {
        <div>
          <h1>Current Online Users:</h1>
          <ul>
-          {renderOnlineUsers}
+          {renderOnline}
         </ul>
        </div>
     );

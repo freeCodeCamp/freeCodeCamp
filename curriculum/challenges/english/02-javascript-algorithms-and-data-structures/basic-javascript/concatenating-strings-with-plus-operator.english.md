@@ -2,6 +2,7 @@
 id: 56533eb9ac21ba0edf2244b7
 title: Concatenating Strings with Plus Operator
 challengeType: 1
+isHidden: false
 videoUrl: 'https://scrimba.com/c/cNpM8AN'
 forumTopicId: 16802
 ---
@@ -21,7 +22,7 @@ Example:
 
 ```js
 var ourStr = "I come first. " + "I come second.";
-// ourStr is "I come first.  I come second."
+// ourStr is "I come first. I come second."
 ```
 
 </section>

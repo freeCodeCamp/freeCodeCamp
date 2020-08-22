@@ -12,7 +12,7 @@ import {
 
 import protect from '@freecodecamp/loop-protect';
 
-import * as vinyl from '../utils/polyvinyl.js';
+import * as vinyl from '../../../../../utils/polyvinyl.js';
 import createWorker from '../utils/worker-executor';
 
 // the config files are created during the build, but not before linting
@@ -59,11 +59,12 @@ async function loadBabel() {
 }
 
 async function loadPresetEnv() {
-  if (presetEnv) return;
+  if (babelOptionsJSBase && babelOptionsJSBase.presets) return;
   /* eslint-disable no-inline-comments */
-  presetEnv = await import(
-    /* webpackChunkName: "@babel/preset-env" */ '@babel/preset-env'
-  );
+  if (!presetEnv)
+    presetEnv = await import(
+      /* webpackChunkName: "@babel/preset-env" */ '@babel/preset-env'
+    );
   /* eslint-enable no-inline-comments */
 
   babelOptionsJSBase = {

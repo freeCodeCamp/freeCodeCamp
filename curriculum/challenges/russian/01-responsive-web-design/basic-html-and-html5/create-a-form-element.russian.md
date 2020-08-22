@@ -14,7 +14,7 @@ localeTitle: Создание элемента формы
 
 ## Instructions
 <section id='instructions'>
-Заглушите свое текстовое поле внутри элемента <code>form</code> и добавьте атрибут <code>action=&quot;/submit-cat-photo&quot;</code> в элемент формы.
+Заглушите свое текстовое поле внутри элемента <code>form</code> и добавьте атрибут <code>action=&quot;https://freecatphotoapp.com/submit-cat-photo&quot;</code> в элемент формы.
 </section>
 
 ## Tests
@@ -24,8 +24,8 @@ localeTitle: Создание элемента формы
 tests:
   - text: Nest your text input element within a <code>form</code> element.
     testString: assert($("form") && $("form").children("input") && $("form").children("input").length > 0);
-  - text: Make sure your <code>form</code> has an <code>action</code> attribute which is set to <code>/submit-cat-photo</code>
-    testString: assert($("form").attr("action") === "/submit-cat-photo");
+  - text: Make sure your <code>form</code> has an <code>action</code> attribute which is set to <code>https://freecatphotoapp.com/submit-cat-photo</code>
+    testString: assert($("form").attr("action") === "https://freecatphotoapp.com/submit-cat-photo");
   - text: Make sure your <code>form</code> element has well-formed open and close tags.
     testString: assert(code.match(/<\/form>/g) && code.match(/<form [^<]*>/g) && code.match(/<\/form>/g).length === code.match(/<form [^<]*>/g).length);
 
@@ -88,7 +88,7 @@ tests:
     <li>thunder</li>
     <li>other cats</li>
   </ol>
-  <form action="/submit-cat-photo">
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
     <input type="text" placeholder="cat photo URL">
   </form>
 </main>

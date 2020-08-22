@@ -2,6 +2,7 @@
 id: 587d7fa9367417b2b2512bd1
 title: Change the Color of an SVG Element
 challengeType: 6
+isHidden: false
 forumTopicId: 301480
 ---
 
