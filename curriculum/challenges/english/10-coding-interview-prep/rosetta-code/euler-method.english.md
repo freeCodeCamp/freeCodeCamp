@@ -97,7 +97,7 @@ tests:
 function eulersMethod(x1, y1, x2, h) {
   // x1 and y1 are initial conditions. y1 is initial temperature at x1 seconds
   // h is step size
-  // return temperature after x2 seconds
+  // time interval is from x1 seconds to x2 seconds
   // Good luck!
 }
 ```
