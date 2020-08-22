@@ -129,7 +129,7 @@ Here are our ten core certifications:
 - [How Neural Networks Work](https://learn.freecodecamp.org/machine-learning-with-python/how-neural-networks-work)
   <br />
   <br />
-  **Projects**: [Rock Paper Scissors](https://repl.it/@freeCodeCamp/fcc-rock-paper-scissors), [Cat and Dog Image Classifier](https://colab.research.google.com/drive/1UCHiRuBLxo0S3aMuiDXlaP54LsxzrXHz), [Book Recommendation Engine using KNN](https://colab.research.google.com/drive/1TDgXyXqZwsiGlnuF-bmQ2Rh3x5NcrHEn), [Linear Regression Health Costs Calculator](https://colab.research.google.com/drive/1o8sTSCMa8Tnmcqhp_2BKKJEaHFoFmRzI?usp=sharing), [Neural Network SMS Text Classifier](https://colab.research.google.com/drive/1qfVQwSKAKU-NKPY4ByBhr93EqSqds4dJ)
+  **Projects**: [Rock Paper Scissors](https://www.freecodecamp.org/learn/machine-learning-with-python/machine-learning-with-python-projects/rock-paper-scissors), [Cat and Dog Image Classifier](https://www.freecodecamp.org/learn/machine-learning-with-python/machine-learning-with-python-projects/cat-and-dog-image-classifier), [Book Recommendation Engine using KNN](https://www.freecodecamp.org/learn/machine-learning-with-python/machine-learning-with-python-projects/book-recommendation-engine-using-knn), [Linear Regression Health Costs Calculator](https://www.freecodecamp.org/learn/machine-learning-with-python/machine-learning-with-python-projects/linear-regression-health-costs-calculator), [Neural Network SMS Text Classifier](https://www.freecodecamp.org/learn/machine-learning-with-python/machine-learning-with-python-projects/neural-network-sms-text-classifier)
   
 #### Legacy Full Stack Development Certification
 
