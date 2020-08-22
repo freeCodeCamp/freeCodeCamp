@@ -7,7 +7,7 @@ function MicrosoftLogo(props) {
   return (
     <svg
       id='microsoft-logo'
-      viewBox='939.813 1145 1400 572'
+      viewBox='939.813 1185 1400 472'
       xmlns='http://www.w3.org/2000/svg'
       xmlnsXlink='http://www.w3.org/1999/xlink'
       {...props}

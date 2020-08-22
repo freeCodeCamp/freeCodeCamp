@@ -7,7 +7,7 @@ function SpotifyLogo(props) {
   return (
     <svg
       id='amazon-logo'
-      viewBox='93.907 230.751 1400 572'
+      viewBox='93.907 250 1350 472'
       xmlns='http://www.w3.org/2000/svg'
       xmlnsXlink='http://www.w3.org/1999/xlink'
       {...props}

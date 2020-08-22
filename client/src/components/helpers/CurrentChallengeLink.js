@@ -15,7 +15,7 @@ function CurrentChallengeLink({ children, isLargeBtn }) {
   if (isLargeBtn) {
     classNames = 'btn btn-lg btn-primary btn-block';
   } else {
-    classNames = 'btn btn-cta-big btn-primary btn-block';
+    classNames = 'btn btn-primary btn-block';
   }
   return (
     <a className={classNames} href={`${apiLocation}${currentChallengeApi}`}>
