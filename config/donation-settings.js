@@ -11,7 +11,7 @@ const amountsConfig = {
 };
 const defaultAmount = {
   year: 25000,
-  month: 3500,
+  month: 500,
   onetime: 25000
 };
 const defaultStateConfig = {
@@ -113,6 +113,12 @@ const paypalConfigurator = (donationAmount, donationDuration, paypalConfig) => {
   };
 };
 
+//
+const donationUrls = {
+  successUrl: 'https://www.freecodecamp.org/news/thank-you-for-donating/',
+  cancelUrl: 'https://freecodecamp.org/donate'
+};
+
 module.exports = {
   durationsConfig,
   amountsConfig,
@@ -124,5 +130,6 @@ module.exports = {
   modalDefaultStateConfig,
   onetimeSKUConfig,
   paypalConfigTypes,
-  paypalConfigurator
+  paypalConfigurator,
+  donationUrls
 };

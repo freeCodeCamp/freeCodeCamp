@@ -2,6 +2,7 @@
 id: 587d7fae367417b2b2512be7
 title: Pre-filter JSON to Get the Data You Need
 challengeType: 6
+isHidden: false
 forumTopicId: 18257
 ---
 

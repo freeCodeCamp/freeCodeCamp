@@ -93,6 +93,6 @@ videoUrl：'视频解释的网址'
 
 1. [挑战风格指南]（style-guide-for-curriculum-challenges.md） - 如何创建和格式化挑战
 
-2. [挑战类型]（https://github.com/freeCodeCamp/learn/blob/a5cb25704168aa37f59a582f0bb5a19b7bd89b46/utils/challengeTypes.js） - 数字挑战类型值的含义（枚举）。
+2. [挑战类型]（https://github.com/freeCodeCamp/freeCodeCamp/blob/master/client/utils/challengeTypes.js#L1-L13） - 数字挑战类型值的含义（枚举）。
 
 3. [贡献FreeCodeCamp  - 编写ES6挑战测试]（https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s） - 视频[Ethan Arrowood]（https://twitter.com/ ArrowoodTech）因为他对旧版课程做出了贡献

@@ -50,4 +50,5 @@ console.log(`Sum of array values is: ${arraySum}`);
 ```js
 // solution required
 ```
-</section>
+
+/section>

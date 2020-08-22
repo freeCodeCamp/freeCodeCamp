@@ -18,7 +18,9 @@ This is essential, as it allows you to work on your own copy of freeCodeCamp on 
 **Follow these steps to fork the `https://github.com/freeCodeCamp/freeCodeCamp` repository:**
 
 1. Go to the freeCodeCamp repository on GitHub: <https://github.com/freeCodeCamp/freeCodeCamp>
+
 2. Click the "Fork" Button in the upper right-hand corner of the interface ([More Details Here](https://help.github.com/articles/fork-a-repo/))
+
 3. After the repository has been forked, you will be taken to your copy of the freeCodeCamp repository at `https://github.com/YOUR_USER_NAME/freeCodeCamp`
 
 ![GIF - How to fork freeCodeCamp on GitHub](./images/github/how-to-fork-freeCodeCamp.gif)
@@ -31,7 +33,7 @@ Once you have the prerequisites installed, you need to prepare your development 
 
 1. Install [Git](https://git-scm.com/) or your favorite Git client, if you haven't already. Update to the latest version; the version that came bundled with your OS may be outdated.
 
-2. (Optional but recommended) [Setup an SSH Key](https://help.github.com/articles/generating-an-ssh-key/) for GitHub.
+2. (Optional but recommended) [Set up an SSH Key](https://help.github.com/articles/generating-an-ssh-key/) for GitHub.
 
 3. Install a code editor of your choice.
 
@@ -64,7 +66,7 @@ This will download the entire freeCodeCamp repository to your projects directory
 
 Note: `--depth=1` creates a shallow clone of your fork, with only the most recent history/commit.
 
-## Setup syncing from parent
+## Set up syncing from parent
 
 Now that you have downloaded a copy of your fork, you will need to set up an `upstream` remote to the parent repository.
 
@@ -138,6 +140,16 @@ Software required for both Docker and Local builds:
 | [Node.js](http://nodejs.org)  | `12.x`  | [LTS Schedule](https://github.com/nodejs/Release#release-schedule)   |
 | npm (comes bundled with Node) | `6.x`   | Does not have LTS releases, we use the version bundled with Node LTS |
 
+If Node.js is already installed on your machine, run the following commands to validate the versions:
+
+```sh
+node -v
+npm -v
+```
+
+> [!DANGER]
+> If you have a different version, please install the recommended version. We can only support installation issues for recommended versions. See [troubleshooting](#troubleshooting) for details.
+
 **Docker Build additional prerequisite:**
 
 | Prerequisite                                                               | Version    | Notes                                                                                                        |
@@ -155,19 +167,9 @@ Software required for both Docker and Local builds:
 > [!TIP]
 > We highly recommend updating to the latest stable releases of the software listed above, also known as Long Term Support (LTS) releases.
 
-If Node.js is already installed on your machine, run the following commands to validate the versions:
-
-```sh
-node -v
-npm -v
-```
-
-> [!DANGER]
-> If you have a different version, please install the recommended version. We can only support installation issues for recommended versions. See [troubleshooting](#troubleshooting) for details.
-
 ### Configuring dependencies
 
-#### Step 1: Setup the environment variable file
+#### Step 1: Set up the environment variable file
 
 The default API keys and environment variables are stored in the file `sample.env`. This file needs to be copied to a new file named `.env` that is accessed dynamically during the installation step.
 
@@ -305,16 +307,19 @@ A quick reference to the commands that you will need when working locally.
 
 **Local Build:**
 
-| command                   | description                                                                         |
-| ------------------------- | ----------------------------------------------------------------------------------- |
-| `npm ci`                  | Installs / re-install all dependencies and bootstraps the different services.       |
-| `npm run seed`            | Parses all the challenge markdown files and inserts them into MongoDB.              |
-| `npm run develop`         | Starts the freeCodeCamp API Server and Client Applications.                         |
-| `npm test`                | Run all JS tests in the system, including client, server, lint and challenge tests. |
-| `npm run test:client`     | Run the client test suite.                                                          |
-| `npm run test:curriculum` | Run the curriculum test suite.                                                      |
-| `npm run test:server`     | Run the server test suite.                                                          |
-| `npm run clean`           | Uninstalls all dependencies and cleans up caches.                                   |
+| command                                                        | description                                                                         |
+| -------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `npm ci`                                                       | Installs / re-install all dependencies and bootstraps the different services.       |
+| `npm run seed`                                                 | Parses all the challenge markdown files and inserts them into MongoDB.              |
+| `npm run develop`                                              | Starts the freeCodeCamp API Server and Client Applications.                         |
+| `npm test`                                                     | Run all JS tests in the system, including client, server, lint and challenge tests. |
+| `npm run test:client`                                          | Run the client test suite.                                                          |
+| `npm run test:curriculum`                                      | Run the curriculum test suite.                                                      |
+| `npm run test:curriculum --block='Basic HTML and HTML5'`       | Test a specific Block.                                                              |
+| `npm run test:curriculum --superblock='responsive-web-design'` | Test a specific SuperBlock.                                                         |
+| `npm run test:server`                                          | Run the server test suite.                                                          |
+| `npm run e2e`                                                  | Run the Cypress end to end tests.                                   |
+| `npm run clean`                                                | Uninstalls all dependencies and cleans up caches.                                   |
 
 ## Making changes locally
 
@@ -512,7 +517,7 @@ Follow these steps:
 
 ## Proposing a Pull Request (PR)
 
-After you've committed your changes, check here for [how to open a Pull Request](/how-to-open-a-pull-request.md).
+After you've committed your changes, check here for [how to open a Pull Request](how-to-open-a-pull-request.md).
 
 ## Troubleshooting
 
@@ -578,6 +583,6 @@ If you get errors while installing the dependencies, please make sure that you a
 
 ## Getting Help
 
-If you are stuck and need help, let us know by asking in the ['Contributors' category on our forum](https://www.freecodecamp.org/forum/c/contributors) or the [Contributors chat room](https://gitter.im/FreeCodeCamp/Contributors) on Gitter.
+If you are stuck and need help, let us know by asking in the ['Contributors' category on our forum](https://forum.freecodecamp.org/c/contributors) or the [Contributors chat room](https://gitter.im/FreeCodeCamp/Contributors) on Gitter.
 
 There might be an error in the console of your browser or in Bash / Terminal / Command Line that will help identify the problem. Provide this error message in your problem description so others can more easily identify the issue and help you find a resolution.

@@ -2,6 +2,7 @@
 id: 587d7db5367417b2b2512b97
 title: Match Numbers and Letters of the Alphabet
 challengeType: 1
+isHidden: false
 forumTopicId: 301356
 ---
 

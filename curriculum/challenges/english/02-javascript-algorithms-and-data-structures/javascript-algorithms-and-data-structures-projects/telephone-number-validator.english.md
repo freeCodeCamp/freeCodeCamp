@@ -2,6 +2,7 @@
 id: aff0395860f5d3034dc0bfc9
 title: Telephone Number Validator
 challengeType: 5
+isHidden: false
 isRequired: true
 forumTopicId: 16090
 ---

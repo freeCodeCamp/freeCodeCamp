@@ -2,38 +2,63 @@
 id: 56533eb9ac21ba0edf2244ca
 title: Using Objects for Lookups
 challengeType: 1
-videoUrl: ''
+videoUrl: 'https://scrimba.com/c/cdBk8sM'
+forumTopicId: 18373
 localeTitle: 使用对象进行查找
 ---
 
 ## Description
-<section id="description">对象可以被认为是键/值存储，就像字典一样。如果您有表格数据，则可以使用对象“查找”值而不是<code>switch</code>语句或<code>if/else</code>链。当您知道输入数据限制在特定范围内时，这非常有用。以下是简单反向字母查找的示例： <blockquote> var alpha = { <br> 1： “Z”， <br> 2： “Y”， <br> 3： “X”， <br> 4： “W”， <br> ... <br> 24： “C”， <br> 25： “B”， <br> 26： “A” <br> }; <br>阿尔法[2]; //“Y” <br>阿尔法[24]; // “C” <br><br> var value = 2; <br>阿尔法[值]。 //“Y” </blockquote></section>
+<section id='description'>
+对象和字典一样，可以用来存储键/值对。如果你的数据跟对象一样，你可以用对象来查找你想要的值，而不是使用switch或if/else语句。当你知道你的输入数据在某个范围时，这种查找方式极为有效。
+这是简单的反向字母表：
+
+```js
+var alpha = {
+  1:"Z",
+  2:"Y",
+  3:"X",
+  4:"W",
+  ...
+  24:"C",
+  25:"B",
+  26:"A"
+};
+alpha[2]; // "Y"
+alpha[24]; // "C"
+
+var value = 2;
+alpha[value]; // "Y"
+```
+
+</section>
 
 ## Instructions
-<section id="instructions">将switch语句转换为名为<code>lookup</code>的对象。使用它来查找<code>val</code>并将关联的字符串分配给<code>result</code>变量。 </section>
+<section id='instructions'>
+把 switch 语句转化为<code>lookup</code>对象。使用它来查找<code>val</code>属性的值，并赋值给<code>result</code>变量。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>phoneticLookup(&quot;alpha&quot;)</code>应该等于<code>&quot;Adams&quot;</code>
+  - text: <code>phoneticLookup("alpha")</code>应该等于<code>"Adams"</code>。
     testString: assert(phoneticLookup("alpha") === 'Adams');
-  - text: <code>phoneticLookup(&quot;bravo&quot;)</code>应该等于<code>&quot;Boston&quot;</code>
+  - text: <code>phoneticLookup("bravo")</code>应该等于<code>"Boston"</code>。
     testString: assert(phoneticLookup("bravo") === 'Boston');
-  - text: <code>phoneticLookup(&quot;charlie&quot;)</code>应该等于<code>&quot;Chicago&quot;</code>
+  - text: <code>phoneticLookup("charlie")</code>应该等于<code>"Chicago"</code>。
     testString: assert(phoneticLookup("charlie") === 'Chicago');
-  - text: <code>phoneticLookup(&quot;delta&quot;)</code>应该等于<code>&quot;Denver&quot;</code>
+  - text: <code>phoneticLookup("delta")</code>应该等于<code>"Denver"</code>。
     testString: assert(phoneticLookup("delta") === 'Denver');
-  - text: <code>phoneticLookup(&quot;echo&quot;)</code>应该等于<code>&quot;Easy&quot;</code>
+  - text: <code>phoneticLookup("echo")</code>应该等于<code>"Easy"</code>。
     testString: assert(phoneticLookup("echo") === 'Easy');
-  - text: <code>phoneticLookup(&quot;foxtrot&quot;)</code>应该等于<code>&quot;Frank&quot;</code>
+  - text: <code>phoneticLookup("foxtrot")</code>应该等于<code>"Frank"</code>。
     testString: assert(phoneticLookup("foxtrot") === 'Frank');
-  - text: <code>phoneticLookup(&quot;&quot;)</code>应该等于<code>undefined</code>
+  - text: <code>phoneticLookup("")</code>应该等于<code>undefined</code>。
     testString: assert(typeof phoneticLookup("") === 'undefined');
-  - text: 您不应该修改<code>return</code>语句
+  - text: 请不要修改<code>return</code>语句。
     testString: assert(code.match(/return\sresult;/));
-  - text: 您不应该使用<code>case</code> ， <code>switch</code>或<code>if</code>语句
+  - text: 请不要使用<code>case</code>，<code>switch</code>，或<code>if</code>语句。
     testString: assert(!/case|switch|if/g.test(code.replace(/([/]{2}.*)|([/][*][^/*]*[*][/])/g,'')));
 
 ```
@@ -77,7 +102,6 @@ function phoneticLookup(val) {
 
 // Change this value to test
 phoneticLookup("charlie");
-
 ```
 
 </div>
@@ -89,7 +113,24 @@ phoneticLookup("charlie");
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+function phoneticLookup(val) {
+  var result = "";
+
+  var lookup = {
+    alpha: "Adams",
+    bravo: "Boston",
+    charlie: "Chicago",
+    delta: "Denver",
+    echo: "Easy",
+    foxtrot: "Frank"
+  };
+
+  result = lookup[val];
+
+  return result;
+}
 ```
+
 </section>

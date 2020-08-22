@@ -2,14 +2,19 @@
 id: 587d7fad367417b2b2512bdf
 title: Add Axes to a Visualization
 challengeType: 6
+isHidden: false
 forumTopicId: 301472
 ---
 
 ## Description
 <section id='description'>
 Another way to improve the scatter plot is to add an x-axis and a y-axis.
-D3 has two methods <code>axisLeft()</code> and <code>axisBottom()</code> to render the y and x axes, respectively. (Axes is the plural form of axis). Here's an example to create the x-axis based on the <code>xScale</code> in the previous challenges:
-<code>const xAxis = d3.axisBottom(xScale);</code>
+D3 has two methods, <code>axisLeft()</code> and <code>axisBottom()</code>, to render the y-axis and x-axis, respectively. Here's an example to create the x-axis based on the <code>xScale</code> in the previous challenges:
+
+```js
+const xAxis = d3.axisBottom(xScale);
+```
+
 The next step is to render the axis on the SVG canvas. To do so, you can use a general SVG component, the <code>g</code> element. The <code>g</code> stands for group.
 Unlike <code>rect</code>, <code>circle</code>, and <code>text</code>, an axis is just a straight line when it's rendered. Because it is a simple shape, using <code>g</code> works.
 The last step is to apply a <code>transform</code> attribute to position the axis on the SVG canvas in the right place. Otherwise, the line would render along the border of SVG canvas and wouldn't be visible.
@@ -130,8 +135,71 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<body>
+  <script>
+    const dataset = [
+                  [ 34,     78 ],
+                  [ 109,   280 ],
+                  [ 310,   120 ],
+                  [ 79,   411 ],
+                  [ 420,   220 ],
+                  [ 233,   145 ],
+                  [ 333,   96 ],
+                  [ 222,    333 ],
+                  [ 78,    320 ],
+                  [ 21,   123 ]
+                ];
+
+    const w = 500;
+    const h = 500;
+    const padding = 60;
+
+    const xScale = d3.scaleLinear()
+                     .domain([0, d3.max(dataset, (d) => d[0])])
+                     .range([padding, w - padding]);
+
+    const yScale = d3.scaleLinear()
+                     .domain([0, d3.max(dataset, (d) => d[1])])
+                     .range([h - padding, padding]);
+
+    const svg = d3.select("body")
+                  .append("svg")
+                  .attr("width", w)
+                  .attr("height", h);
+
+    svg.selectAll("circle")
+       .data(dataset)
+       .enter()
+       .append("circle")
+       .attr("cx", (d) => xScale(d[0]))
+       .attr("cy",(d) => yScale(d[1]))
+       .attr("r", (d) => 5);
+
+    svg.selectAll("text")
+       .data(dataset)
+       .enter()
+       .append("text")
+       .text((d) =>  (d[0] + "," + d[1]))
+       .attr("x", (d) => xScale(d[0] + 10))
+       .attr("y", (d) => yScale(d[1]))
+
+    const xAxis = d3.axisBottom(xScale);
+    
+    const yAxis = d3.axisLeft(yScale);
+    
+
+    svg.append("g")
+       .attr("transform", "translate(0," + (h - padding) + ")")
+       .call(xAxis);
+
+    svg.append("g")
+       .attr("transform", "translate(" + padding + ",0)")
+       .call(yAxis)
+
+  </script>
+</body>
+
 ```
 
 </section>

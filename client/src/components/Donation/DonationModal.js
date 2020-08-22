@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Modal, Button, Col, Row } from '@freecodecamp/react-bootstrap';
 import { Spacer } from '../helpers';
-import { blockNameify } from '../../../utils/blockNameify';
+import { blockNameify } from '../../../../utils/block-nameify';
 import Heart from '../../assets/icons/Heart';
 import Cup from '../../assets/icons/Cup';
 import MinimalDonateForm from './MinimalDonateForm';
@@ -105,7 +105,7 @@ function DonateModal({
     </b>
   );
   const blockDonationText = (
-    <div className='block-modal-text'>
+    <div className=' text-center block-modal-text'>
       <div className='donation-icon-container'>
         <Cup className='donation-icon' />
       </div>
