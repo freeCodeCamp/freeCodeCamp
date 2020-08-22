@@ -570,13 +570,16 @@ class Editor extends Component {
   // the region it should cover instead.
   // TODO: DRY
   getLineAfterViewZone() {
-    return (
-      this.data.model.getDecorationRange(this.data.startEditDecId)
-        .endLineNumber + 1
-    );
+    // TODO: abstract away the data, ids etc.
+    const range = this.data.model.getDecorationRange(this.data.startEditDecId);
+    // if the first decoration is missing, this implies the region reaches the
+    // start of the editor.
+    return range ? range.endLineNumber + 1 : 1;
   }
 
   getLineAfterEditableRegion() {
+    // TODO: handle the case that the editable region reaches the bottom of the
+    // editor
     return this.data.model.getDecorationRange(this.data.endEditDecId)
       .startLineNumber;
   }
@@ -590,6 +593,8 @@ class Editor extends Component {
     return this._monaco.Range.lift(iRange);
   };
 
+  // TODO: TESTS!
+  // Make 100% sure this is inclusive.
   getLinesBetweenRanges = (firstRange, secondRange) => {
     const startRange = this.translateRange(toLastLine(firstRange), 1);
     const endRange = this.translateRange(
@@ -607,8 +612,15 @@ class Editor extends Component {
     const model = this.data.model;
     // TODO: this is a little low-level, but we should bail if there is no
     // editable region defined.
-    if (!this.data.startEditDecId || !this.data.endEditDecId) return null;
-    const firstRange = model.getDecorationRange(this.data.startEditDecId);
+    // NOTE: if a decoration is missing, there is still an editable region - it
+    // just extends to the edge of the editor. However, no decorations means no
+    // editable region.
+    if (!this.data.startEditDecId && !this.data.endEditDecId) return null;
+    const firstRange = this.data.startEditDecId
+      ? model.getDecorationRange(this.data.startEditDecId)
+      : this.getStartOfEditor();
+    // TODO: handle the case that the editable region reaches the bottom of the
+    // editor
     const secondRange = model.getDecorationRange(this.data.endEditDecId);
     const { startLineNumber, endLineNumber } = this.getLinesBetweenRanges(
       firstRange,
@@ -622,10 +634,19 @@ class Editor extends Component {
     return new this._monaco.Range(startLineNumber, 1, endLineNumber, endColumn);
   };
 
+  // TODO: do this once after _monaco has been created.
+  getStartOfEditor = () =>
+    this._monaco.Range.lift({
+      startLineNumber: 1,
+      endLineNumber: 1,
+      startColumn: 1,
+      endColumn: 1
+    });
+
   decorateForbiddenRanges(editableRegion) {
     const model = this.data.model;
     const forbiddenRanges = [
-      [1, editableRegion[0]],
+      [0, editableRegion[0]],
       [editableRegion[1], model.getLineCount()]
     ];
 
@@ -633,19 +654,24 @@ class Editor extends Component {
       return this.positionsToRange(model, positions);
     });
 
-    // the first range should expand at the top
-    this.data.startEditDecId = this.highlightLines(
-      this._monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingBefore,
-      model,
-      ranges[0]
-    );
+    // if the forbidden range includes the top of the editor
+    // we simply don't add those decorations
+    if (forbiddenRanges[0][1] > 0) {
+      // the first range should expand at the top
+      this.data.startEditDecId = this.highlightLines(
+        this._monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingBefore,
+        model,
+        ranges[0]
+      );
 
-    this.highlightText(
-      this._monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingBefore,
-      model,
-      ranges[0]
-    );
+      this.highlightText(
+        this._monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingBefore,
+        model,
+        ranges[0]
+      );
+    }
 
+    // TODO: handle the case the region covers the bottom of the editor
     // the second range should expand at the bottom
     this.data.endEditDecId = this.highlightLines(
       this._monaco.editor.TrackedRangeStickiness.GrowsOnlyWhenTypingAfter,
@@ -817,9 +843,13 @@ class Editor extends Component {
       // TODO: do the same for the description widget
       // this has to be handle differently, because we care about the END
       // of the zone, not the START
-      handleDescriptionZoneChange(this.data.startEditDecId);
+      // if the editable region includes the first line, the first decoration
+      // will be missing.
+      if (this.data.startEditDecId) {
+        handleDescriptionZoneChange(this.data.startEditDecId);
+        warnUser(this.data.startEditDecId);
+      }
       handleHintsZoneChange(this.data.endEditDecId);
-      warnUser(this.data.startEditDecId);
       warnUser(this.data.endEditDecId);
     });
   }
@@ -827,6 +857,7 @@ class Editor extends Component {
   // creates a range covering all the lines in 'positions'
   // NOTE: positions is an array of [startLine, endLine]
   positionsToRange(model, [start, end]) {
+    console.log('positionsToRange', start, end);
     // start and end should always be defined, but if not:
     start = start || 1;
     end = end || model.getLineCount();
@@ -873,7 +904,10 @@ class Editor extends Component {
             document.getElementById('test-output').innerHTML = output[1];
           }
 
-          if (this.data.startEditDecId) {
+          // if either id exists, the editable region exists
+          // TODO: add a layer of abstraction: we should be interacting with
+          // the editable region, not the ids
+          if (this.data.startEditDecId || this.data.endEditDecId) {
             this.updateOutputZone();
           }
         }
