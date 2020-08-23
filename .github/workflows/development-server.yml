@@ -18,7 +18,14 @@ jobs:
     strategy:
       matrix:
         node-version: [12.x]
-        os: [ubuntu-16.04, ubuntu-18.04]
+        os:
+          [
+            ubuntu-16.04,
+            ubuntu-18.04,
+            ubuntu-20.04,
+            windows-latest,
+            macos-latest,
+          ]
 
     steps:
       - name: Checkout Source Files
