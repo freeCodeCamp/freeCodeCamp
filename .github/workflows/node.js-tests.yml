@@ -64,6 +64,11 @@ jobs:
   ensure-dev-server:
     name: Run Dev Server on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
+    services:
+      mongodb:
+        image: mongo:3.6.19
+        ports:
+          - 27017:27017
 
     strategy:
       matrix:
@@ -94,6 +99,11 @@ jobs:
   ensure-production-server:
     name: Build Production Server on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
+    services:
+      mongodb:
+        image: mongo:3.6.19
+        ports:
+          - 27017:27017
 
     strategy:
       matrix:
