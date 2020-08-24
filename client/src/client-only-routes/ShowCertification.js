@@ -25,7 +25,7 @@ import standardErrorMessage from '../utils/standardErrorMessage';
 import reallyWeirdErrorMessage from '../utils/reallyWeirdErrorMessage';
 
 import RedirectHome from '../components/RedirectHome';
-import { Loader } from '../components/helpers';
+import { Loader, Spacer } from '../components/helpers';
 
 const propTypes = {
   cert: PropTypes.shape({
@@ -158,7 +158,8 @@ class ShowCertification extends Component {
       fetchState,
       validCertName,
       createFlashMessage,
-      certName
+      certName,
+      signedInUserName
     } = this.props;
 
     const {
@@ -236,6 +237,26 @@ class ShowCertification extends Component {
       </Grid>
     );
 
+    const linkedInBtn = (
+      <Row>
+        <Spacer size={2} />
+        <Button
+          bsStyle='primary'
+          className='btn-invert'
+          target='_blank'
+          href={`https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=${certTitle}&organizationId=4831032&issueYear=${new Date(
+            issueDate
+          ).getFullYear()}&
+issueMonth=${new Date(
+            issueDate
+          ).getMonth()}&certUrl=https://freecodecamp.org/certification/
+                  {username}/{certName}`}
+        >
+          Add this certification to my LinkedIn profile
+        </Button>
+      </Row>
+    );
+
     return (
       <div className='certificate-outer-wrapper'>
         {isDonationDisplayed && !isDonationClosed ? donationSection : ''}
@@ -295,6 +316,7 @@ class ShowCertification extends Component {
             </footer>
           </Row>
         </Grid>
+        {signedInUserName === username ? linkedInBtn : ''}
       </div>
     );
   }
