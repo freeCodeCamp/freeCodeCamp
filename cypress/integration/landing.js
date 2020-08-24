@@ -7,8 +7,8 @@ const selectors = {
   landingPageImage: '.landing-page-image'
 };
 
-describe('Landing page', function() {
-  it('renders', function() {
+describe('Landing page', () => {
+  beforeEach(() => {
     cy.visit('/');
     cy.title().should('eq', 'Learn to code at home | freeCodeCamp.org');
     cy.contains(selectors.heading, 'Learn to code at home.');
