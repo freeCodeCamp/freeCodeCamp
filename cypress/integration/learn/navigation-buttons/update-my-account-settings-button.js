@@ -12,6 +12,8 @@ describe('The `Update my account settings` button works properly', function() {
       'have.class',
       'btn btn-lg btn-primary btn-block'
     );
+
+    cy.contains('View my Portfolio').should('be.visible');
   });
 
   it('Should take user to their account settings when clicked', function() {

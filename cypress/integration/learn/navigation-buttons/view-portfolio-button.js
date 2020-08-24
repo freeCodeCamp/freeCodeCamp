@@ -12,6 +12,8 @@ describe('The `View my Portfolio` button works properly', function() {
       'have.class',
       'btn btn-lg btn-primary btn-block'
     );
+
+    cy.contains('View my Portfolio').should('be.visible');
   });
 
   it('Button takes user to their portfolio when clicked', function() {
