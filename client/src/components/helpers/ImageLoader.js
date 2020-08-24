@@ -1,26 +1,23 @@
-/* eslint-disable react/sort-prop-types */
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React from 'react';
 
-import './imageLoader.css';
+import './image-loader.css';
 import LazyLoad from 'react-lazy-load';
 import PropTypes from 'prop-types';
 
-const _loaded = {};
 const propTypes = {
   alt: PropTypes.string,
   className: PropTypes.string,
+  height: PropTypes.number,
   loadedClassName: PropTypes.string,
   loadingClassName: PropTypes.string,
-  width: PropTypes.number,
-  height: PropTypes.number,
-  src: PropTypes.string
+  src: PropTypes.string,
+  width: PropTypes.number
 };
 
 class ImageLoader extends React.Component {
   // initial state: image loaded stage
   state = {
-    loaded: _loaded[this.props.src]
+    loaded: false
   };
 
   // define our loading and loaded image classes
@@ -32,7 +29,6 @@ class ImageLoader extends React.Component {
 
   // image onLoad handler to update state to loaded
   onLoad = () => {
-    _loaded[this.props.src] = true;
     this.setState(() => ({ loaded: true }));
   };
 
@@ -58,7 +54,9 @@ class ImageLoader extends React.Component {
         offsetVertical={100}
         width={width}
       >
+        {/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */}
         <img alt={alt} className={className} onLoad={this.onLoad} src={src} />
+        {/* eslint-enable jsx-a11y/no-noninteractive-element-interactions */}
       </LazyLoad>
     );
   }

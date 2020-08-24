@@ -68,21 +68,9 @@ p {
   overflow-wrap: break-word;
 }
 
-.medium-heading {
-  font-size: 1.25rem !important;
-  font-weight: normal;
-}
-
-.medium-heading.text-center {
-  margin-bottom: 50px;
-}
-
 @media (max-width: 500px) {
   .big-heading {
     font-size: 1.5rem !important;
-  }
-  .medium-heading {
-    font-size: 1.1rem !important;
   }
   h1 {
     font-size: 1.3rem;

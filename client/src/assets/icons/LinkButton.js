@@ -3,6 +3,7 @@ import React from 'react';
 export default function LinkButton(props) {
   return (
     <svg
+      aria-hidden='true'
       height='20px'
       version='1.1'
       viewBox='0 0 16 20'
@@ -12,11 +13,8 @@ export default function LinkButton(props) {
       {...props}
       fill='inherit'
     >
-      <title>Group 2</title>
-      <desc>Created with Sketch.</desc>
-      <g id='Group-2'>
+      <g>
         <polygon
-          id='Path-1'
           points={
             '-2.68014473e-15 -1.06357708e-13 2.01917516 ' +
             '-1.06357708e-13 8.99824941 9.00746464 2.01917516 ' +
@@ -24,7 +22,6 @@ export default function LinkButton(props) {
           }
         />
         <polygon
-          id='Path-2'
           points={
             '7.99971435 -1.06357708e-13 10.0188895 ' +
             '-1.06357708e-13 16.9979638 9.00746464 ' +
