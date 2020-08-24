@@ -173,6 +173,7 @@ const reorderSteps = () => {
 
   const newMeta = { ...parsedData, challengeOrder };
   fs.writeFileSync(projectMetaPath, JSON.stringify(newMeta, null, 2));
+  console.log('Reordered steps');
 };
 
 module.exports = {

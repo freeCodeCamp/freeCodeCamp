@@ -44,4 +44,3 @@ const { nextStepNum, challengeSeed } = getLastStepFileContent();
 createStepFile({ stepNum: nextStepNum, projectPath, challengeSeed });
 console.log(`Sucessfully added step #${nextStepNum}`);
 reorderSteps();
-console.log('Reordered steps');

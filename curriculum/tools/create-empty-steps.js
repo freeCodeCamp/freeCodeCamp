@@ -28,4 +28,3 @@ for (let stepNum = stepStart; stepNum <= maxStepNum; stepNum++) {
 }
 console.log(`Sucessfully added ${num} steps`);
 reorderSteps();
-console.log('Reordered steps');
