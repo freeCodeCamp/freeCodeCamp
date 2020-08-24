@@ -68,7 +68,7 @@ jobs:
     strategy:
       matrix:
         node-version: [12.x]
-        os: [ubuntu-16.04, windows-latest, macos-latest]
+        os: [ubuntu-16.04, macos-latest]
 
     steps:
       - name: Checkout Source Files
@@ -84,7 +84,7 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-        
+
       - name: Start MongoDB
         uses: supercharge/mongodb-github-action@1.3.0
         with:
@@ -103,7 +103,7 @@ jobs:
     strategy:
       matrix:
         node-version: [12.x]
-        os: [ubuntu-16.04, windows-latest, macos-latest]
+        os: [ubuntu-16.04, macos-latest]
 
     steps:
       - name: Checkout Source Files
@@ -119,7 +119,7 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-        
+
       - name: Start MongoDB
         uses: supercharge/mongodb-github-action@1.3.0
         with:
@@ -133,3 +133,40 @@ jobs:
 
       - name: Start Production Server
         run: npm run start
+
+  ensure-dev-server-on-windows:
+    name: Run Dev Server on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+        os: [windows-latest]
+
+    steps:
+      - name: Checkout Source Files
+        uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Set Environment variables
+        run: cp sample.env .env
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Start MongoDB
+        run: |
+          powershell
+          ls
+          wget https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-3.6.19-signed.msi -OutFile mongodb-win32-x86_64-2008plus-ssl-3.6.19-signed.msi
+          msiexec.exe /q /i mongodb-win32-x86_64-2008plus-ssl-3.6.19-signed.msi
+
+      - name: Seed MongoDB
+        run: npm run seed
+
+      - name: Run Dev Server
+        run: npm run develop
