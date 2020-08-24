@@ -8,8 +8,7 @@ const selectors = {
 };
 
 describe('Landing page', () => {
-  beforeEach(() => {
-    cy.visit('/');
+  it('Should render', () => {
     cy.title().should('eq', 'Learn to code at home | freeCodeCamp.org');
     cy.contains(selectors.heading, 'Learn to code at home.');
     cy.contains(selectors.callToAction, "Get started (it's free)");
