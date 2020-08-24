@@ -15,7 +15,7 @@ Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_bl
 <strong>User Story:</strong> My game will reset as soon as it's over so I can play again.
 <strong>User Story:</strong> I can choose whether I want to play as X or O.
 When you are finished, include a link to your project on CodePen and click the "I've completed this challenge" button.
-You can get feedback on your project by sharing it on the freeCodeCamp <a href='https://forum.freecodecamp.org/' target='_blank'>forum</a>.
+You can get feedback on your project by sharing it on the <a href='https://forum.freecodecamp.org/c/project-feedback/409' target='_blank'>freeCodeCamp forum</a>.
 </section>
 
 ## Instructions

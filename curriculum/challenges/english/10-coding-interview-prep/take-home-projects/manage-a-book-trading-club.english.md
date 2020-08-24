@@ -15,7 +15,7 @@ Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_bl
 <strong>User Story:</strong> I can update my settings to store my full name, city, and state.
 <strong>User Story:</strong> I can propose a trade and wait for the other user to accept the trade.
 Once you've finished implementing these user stories, enter the URL to your live app and, optionally, your GitHub repository. Then click the "I've completed this challenge" button.
-You can get feedback on your project by sharing it on the <a href='https://forum.freecodecamp.org/' target='_blank'>freeCodeCamp forum</a>.
+You can get feedback on your project by sharing it on the <a href='https://forum.freecodecamp.org/c/project-feedback/409' target='_blank'>freeCodeCamp forum</a>.
 </section>
 
 ## Instructions

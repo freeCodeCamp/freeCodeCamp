@@ -17,7 +17,7 @@ Here are the specific user stories you should implement for this project:
 <strong>User Story:</strong> As an unauthenticated user, when I login I should not have to search again.
 <strong>Hint:</strong> Try using the <a href='https://www.yelp.com/developers/documentation/v3' target='_blank'>Yelp API</a> to find venues in the cities your users search for. If you use Yelp's API, be sure to mention so in your app.
 Once you've finished implementing these user stories, enter the URL to your live app and, optionally, your GitHub repository. Then click the "I've completed this challenge" button.
-You can get feedback on your project by sharing it on the <a href='https://forum.freecodecamp.org/' target='_blank'>freeCodeCamp forum</a>.
+You can get feedback on your project by sharing it on the <a href='https://forum.freecodecamp.org/c/project-feedback/409' target='_blank'>freeCodeCamp forum</a>.
 </section>
 
 ## Instructions

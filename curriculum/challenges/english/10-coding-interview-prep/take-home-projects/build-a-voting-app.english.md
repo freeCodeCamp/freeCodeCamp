@@ -20,7 +20,7 @@ Here are the specific user stories you should implement for this project:
 <strong>User Story:</strong> As an unauthenticated or authenticated user, I can see the results of polls in chart form. (This could be implemented using Chart.js or Google Charts.)
 <strong>User Story:</strong> As an authenticated user, if I don't like the options on a poll, I can create a new option.
 Once you've finished implementing these user stories, enter the URL to your live app and, optionally, your GitHub repository. Then click the "I've completed this challenge" button.
-You can get feedback on your project by sharing it on the <a href='https://forum.freecodecamp.org/' target='_blank'>freeCodeCamp forum</a>.
+You can get feedback on your project by sharing it on the <a href='https://forum.freecodecamp.org/c/project-feedback/409' target='_blank'>freeCodeCamp forum</a>.
 </section>
 
 ## Instructions

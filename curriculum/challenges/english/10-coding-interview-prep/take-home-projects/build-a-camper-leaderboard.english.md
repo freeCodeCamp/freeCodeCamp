@@ -16,7 +16,7 @@ Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_bl
 <strong>User Story:</strong> I can see the number of replies and views that each topic has had, and a timestamp of when the topic was last active.
 <strong>Hint:</strong> To get the 30 most recent forum posts: <a href='https://fcc-forum-proxy.freecodecamp.repl.co/latest' target='_blank'>https://fcc-forum-proxy.freecodecamp.repl.co/latest</a>.
 When you are finished, include a link to your project on CodePen and click the "I've completed this challenge" button.
-You can get feedback on your project by sharing it on the freeCodeCamp <a href='https://forum.freecodecamp.org/' target='_blank'>forum</a>.
+You can get feedback on your project by sharing it on the <a href='https://forum.freecodecamp.org/c/project-feedback/409' target='_blank'>freeCodeCamp forum</a>.
 </section>
 
 ## Instructions

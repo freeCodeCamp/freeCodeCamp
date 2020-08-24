@@ -20,7 +20,7 @@ Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_bl
 <strong>Hint:</strong> Here's an explanation of Conway's Game of Life from John Conway himself: <a href='https://www.youtube.com/watch?v=E8kUJL04ELA' target='_blank'>https://www.youtube.com/watch?v=E8kUJL04ELA</a>
 <strong>Hint:</strong> Here's an overview of Conway's Game of Life with rules for your reference: <a href='https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life' target='_blank'>https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life</a>
 When you are finished, include a link to your project on CodePen and click the "I've completed this challenge" button.
-You can get feedback on your project by sharing it on the freeCodeCamp <a href='https://forum.freecodecamp.org/' target='_blank'>forum</a>.
+You can get feedback on your project by sharing it on the <a href='https://forum.freecodecamp.org/c/project-feedback/409' target='_blank'>freeCodeCamp forum</a>.
 </section>
 
 ## Instructions

@@ -15,7 +15,7 @@ Here are the specific user stories you should implement for this project:
 <strong>User Story:</strong> I can paginate through the responses by adding a ?offset=2 parameter to the URL.
 <strong>User Story:</strong> I can get a list of the most recently submitted search strings.
 Once you've finished implementing these user stories, enter the URL to your live app and, optionally, your GitHub repository. Then click the "I've completed this challenge" button.
-You can get feedback on your project by sharing it on the <a href='https://forum.freecodecamp.org/' target='_blank'>freeCodeCamp forum</a>.
+You can get feedback on your project by sharing it on the <a href='https://forum.freecodecamp.org/c/project-feedback/409' target='_blank'>freeCodeCamp forum</a>.
 </section>
 
 ## Instructions

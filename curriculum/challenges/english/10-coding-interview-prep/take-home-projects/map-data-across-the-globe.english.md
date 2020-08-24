@@ -16,7 +16,7 @@ Fulfill the following <a href='https://en.wikipedia.org/wiki/User_story' target=
 <strong>User Story:</strong> I can mouse over the meteorite's data point for additional data.
 <strong>Hint:</strong> Here's a dataset you can use to build this: <a href='https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/meteorite-strike-data.json' target='_blank'>https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/meteorite-strike-data.json</a>
 When you are finished, include a link to your project on CodePen and click the "I've completed this challenge" button.
-You can get feedback on your project by sharing it on the freeCodeCamp <a href='https://forum.freecodecamp.org/' target='_blank'>forum</a>.
+You can get feedback on your project by sharing it on the <a href='https://forum.freecodecamp.org/c/project-feedback/409' target='_blank'>freeCodeCamp forum</a>.
 </section>
 
 ## Instructions
