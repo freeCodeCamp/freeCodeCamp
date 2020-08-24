@@ -67,7 +67,7 @@ and compare with the analytical solution.
   <li>time interval to calculate shall be from <code>0 s</code> to <code>100 s</code></li>
 </ul> 
 </section>
-
+First parameter to the function is `initial time`, second parameter is `initial temperature`, third parameter is `elapsed time` and fourth parameter is `step size`.
 ## Tests
 <section id='tests'>
 
@@ -95,9 +95,6 @@ tests:
 
 ```js
 function eulersMethod(x1, y1, x2, h) {
-  // x1 and y1 are initial conditions. y1 is initial temperature at x1 seconds
-  // h is step size
-  // time interval is from x1 seconds to x2 seconds
   // Good luck!
 }
 ```
