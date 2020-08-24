@@ -20,7 +20,7 @@ Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_bl
 <strong>User Story:</strong> I can choose to not permit the site to access my microphone and webcam. If I choose not to do this, or if some other driver problem occurs, I see an error message saying these are required.
 <strong>User Story:</strong> When I choose to cancel the room name input step, or if I type in no name, or just spaces, it should again ask me again to type in a valid room name.
 <strong>User Story:</strong> If one of the two people in the room get disconnected, they can reconnect to the same room and continue chatting.
-Once you've finished implementing these user stories, enter the URLs for both your live app running on Repl.it and your GitHub repository and click the "I've completed this challenge" button.
+Once you've finished implementing these user stories, enter the URL to your live app and, optionally, your GitHub repository. Then click the "I've completed this challenge" button.
 You can get feedback on your project by sharing it on the <a href='https://forum.freecodecamp.org/' target='_blank'>freeCodeCamp forum</a>.
 </section>
 
