@@ -18,14 +18,7 @@ jobs:
     strategy:
       matrix:
         node-version: [12.x]
-        os:
-          [
-            ubuntu-16.04,
-            ubuntu-18.04,
-            ubuntu-20.04,
-            windows-latest,
-            macos-latest,
-          ]
+        os: [ ubuntu-16.04, ubuntu-18.04, ubuntu-20.04, windows-latest, macos-latest ]
 
     steps:
       - name: Checkout Source Files
@@ -37,7 +30,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Set Environment variables
-        run: cp sample.env .env
+        run: cp sample.env .env && copy sample.env .env
 
       - name: Install Dependencies
         run: |
@@ -48,4 +41,4 @@ jobs:
         run: npm run seed
 
       - name: Run Dev Server
-        run: npm run development
+        run: npm run develop
