@@ -37,7 +37,11 @@ export const Landing = ({ page = 'landing' }) => {
       <main className='landing-page'>
         <Grid>
           <LandingTop page={page} />
+        </Grid>
+        <Grid fluid={true}>
           <AsSeenIn />
+        </Grid>
+        <Grid>
           <Testimonials />
           <Certifications nodes={data.challenges.nodes} page={page} />
         </Grid>

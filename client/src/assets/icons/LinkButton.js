@@ -4,7 +4,6 @@ export default function LinkButton(props) {
   return (
     <svg
       height='20px'
-      id='button-link-icon'
       version='1.1'
       viewBox='0 0 16 20'
       width='18px'
