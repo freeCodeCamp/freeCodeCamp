@@ -30,7 +30,9 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Set Environment variables
-        run: cp sample.env .env && copy sample.env .env
+        run: |
+          cp sample.env .env
+          copy sample.env .env
 
       - name: Install Dependencies
         run: |
