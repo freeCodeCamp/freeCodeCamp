@@ -84,28 +84,29 @@ ${challengeSeedSection}
 
 const reorderSteps = () => {
   const projectPath = (process.env.CALLING_DIR || process.cwd()) + path.sep;
-  let projectName =
-    process.env.CALLING_DIR &&
-    process.env.CALLING_DIR.split(path.sep)
-      .slice(-1)
-      .toString();
-  if (!projectName) {
-    projectName = process
-      .cwd()
-      .split(path.sep)
-      .slice(-1)
-      .toString();
-  }
+
+  const projectName = process.env.CALLING_DIR
+    ? process.env.CALLING_DIR.split(path.sep)
+        .slice(-1)
+        .toString()
+    : process
+        .cwd()
+        .split(path.sep)
+        .slice(-1)
+        .toString();
+
+  const curriculumPath = process.env.CALLING_DIR
+    ? ''
+    : '../../../../../curriculum';
+
   const projectMetaPath = path.resolve(
+    curriculumPath,
     'challenges',
     '_meta',
     projectName,
     'meta.json'
   );
 
-  // console.log('projectMetaPath');
-  // console.log(projectMetaPath);
-  // process.exit();
   let metaData;
   try {
     metaData = fs.readFileSync(projectMetaPath);
