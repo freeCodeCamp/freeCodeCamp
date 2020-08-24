@@ -48,9 +48,9 @@ tests:
   - text: Your regex <code>unRegex</code> should match <code>"bun"</code> in <code>"She got fired from the hot dog stand for putting her hair in a bun."</code>
     testString: unRegex.lastIndex = 0; assert(unRegex.test("She got fired from the hot dog stand for putting her hair in a bun."));
   - text: Your regex <code>unRegex</code> should not match <code>"There is a bug in my code."</code>
-    testString: assert(!unRegex.test("There is a bug in my code."));
+    testString: unRegex.lastIndex = 0; assert(!unRegex.test("There is a bug in my code."));
   - text: Your regex <code>unRegex</code> should not match <code>"Catch me if you can."</code>
-    testString: assert(!unRegex.test("Can me if you can."));
+    testString: unRegex.lastIndex = 0; assert(!unRegex.test("Catch me if you can."));
 
 ```
 
