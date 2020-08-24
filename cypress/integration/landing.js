@@ -31,6 +31,7 @@ describe('Landing page', () => {
       .its('length')
       .should('eq', 10);
   });
+
   it('has 3 testimonial cards', function() {
     cy.get(selectors.testimonials)
       .children()
