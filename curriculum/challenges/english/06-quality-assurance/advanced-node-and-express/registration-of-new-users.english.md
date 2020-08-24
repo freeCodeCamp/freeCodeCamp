@@ -9,10 +9,6 @@ forumTopicId: 301561
 ## Description
 <section id='description'>
 
-**NOTE:** From this point onwards, issues can arise relating to the use of the _picture-in-picture_ browser. If you are using an online IDE which offers a preview of the app within the editor, it is recommended to open this preview in a new tab.
-
-<hr/>
-
 Now we need to allow a new user on our site to register an account. On the res.render for the home page add a new variable to the object passed along- <code>showRegistration: true</code>. When you refresh your page, you should then see the registration form that was already created in your index.pug file! This form is set up to <b>POST</b> on <em>/register</em> so this is where we should set up to accept the POST and create the user object in the database.
 
 The logic of the registration route should be as follows: Register the new user > Authenticate the new user > Redirect to /profile
@@ -53,6 +49,8 @@ app.route('/register')
 ```
 
 Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/camperbot/b230a5b3bbc89b1fa0ce32a2aa7b083e' target='_blank'>here</a>.
+
+**NOTE:** From this point onwards, issues can arise relating to the use of the _picture-in-picture_ browser. If you are using an online IDE which offers a preview of the app within the editor, it is recommended to open this preview in a new tab.
 
 </section>
 
