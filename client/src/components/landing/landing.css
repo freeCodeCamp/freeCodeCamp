@@ -101,7 +101,7 @@ p.caption {
 
 /* testimonials */
 
-.testimnials-row {
+.testimonials-row {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
