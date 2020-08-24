@@ -47,6 +47,7 @@
     "babel-preset-stage-0": "^6.3.13",
     "babel-preset-stage-3": "^6.24.1",
     "babel-standalone": "^6.26.0",
+    "bson-objectid": "^1.3.1",
     "chai": "4.2.0",
     "cross-env": "^7.0.2",
     "fs-extra": "^6.0.1",

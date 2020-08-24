@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const matter = require('gray-matter');
+const ObjectID = require('bson-objectid');
 
 const padWithLeadingZeros = originalNum => {
   /* always want file step numbers 3 digits */
@@ -19,22 +20,6 @@ const removeErms = seedCode => {
     .join('\n');
 };
 
-/*
-function below modifed from GitHub user @solenoid's gist https://gist.github.com/solenoid/1372386
-*/
-const mongoObjectId = () => {
-  /* eslint-disable no-bitwise */
-  var timestamp = ((new Date().getTime() / 1000) | 0).toString(16);
-  return (
-    timestamp +
-    'xxxxxxxxxxxxxxxx'
-      .replace(/[x]/g, function() {
-        return ((Math.random() * 16) | 0).toString(16);
-      })
-      .toLowerCase()
-  );
-};
-
 const createStepFile = ({ projectPath, stepNum, challengeSeed = '' }) => {
   if (challengeSeed) {
     challengeSeed = removeErms(challengeSeed);
@@ -47,7 +32,7 @@ ${challengeSeed.trim()}
 </section>`;
 
   const template = `---
-id: ${mongoObjectId()}
+id: ${ObjectID.generate()}
 title: Part ${stepNum}
 challengeType: 0
 isHidden: true
@@ -152,7 +137,7 @@ const reorderSteps = () => {
     );
     const filePath = `${projectPath}${newFileName}.tmp`;
     const frontMatter = matter.read(filePath);
-    const challengeID = frontMatter.data.id || mongoObjectId();
+    const challengeID = frontMatter.data.id || ObjectID.generate();
     const title =
       newFileName === 'final.md' ? 'Final Prototype' : `Part ${newStepNum}`;
     challengeOrder.push(['' + challengeID, title]);
@@ -178,7 +163,6 @@ const reorderSteps = () => {
 
 module.exports = {
   padWithLeadingZeros,
-  mongoObjectId,
   createStepFile,
   reorderSteps
 };
