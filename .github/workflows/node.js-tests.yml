@@ -64,11 +64,6 @@ jobs:
   ensure-dev-server:
     name: Run Dev Server on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
-    services:
-      mongodb:
-        image: mongo:3.6.19
-        ports:
-          - 27017:27017
 
     strategy:
       matrix:
@@ -89,6 +84,11 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+        
+      - name: Start MongoDB
+        uses: supercharge/mongodb-github-action@1.3.0
+        with:
+          mongodb-version: 3.6
 
       - name: Seed MongoDB
         run: npm run seed
@@ -99,11 +99,6 @@ jobs:
   ensure-production-server:
     name: Build Production Server on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
-    services:
-      mongodb:
-        image: mongo:3.6.19
-        ports:
-          - 27017:27017
 
     strategy:
       matrix:
@@ -124,6 +119,11 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+        
+      - name: Start MongoDB
+        uses: supercharge/mongodb-github-action@1.3.0
+        with:
+          mongodb-version: 3.6
 
       - name: Seed MongoDB
         run: npm run seed
