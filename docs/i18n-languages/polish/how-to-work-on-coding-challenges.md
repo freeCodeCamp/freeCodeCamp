@@ -311,7 +311,7 @@ function myFunc() {
 
 Przed utworzeniem [prośby o wyciągnięcie](how-to-open-a-pull-request.md) dla Twoich zmian, musisz sprawdzić, czy wprowadzone zmiany nie powodują nieumyślnie problemów z wyzwaniem.  Aby przetestować wszystkie wyzwania, należy wykonać "test npm run test:curriculum". Aby zaoszczędzić czas możesz ograniczyć testy do jednego wyzwania wykonując następujące kroki:
 
-1. W pliku `.env` ustaw zmienną środowiskową `TEST_CHALLENGES_FOR_LANGS` na język wyzwania (wyzwań), które musisz przetestować.  Obecnie akceptowane wartości to `angielski`, `arabski`, `chiński`, `portugalski`, `rosyjski` i `hiszpański`.
+1. W pliku `.env` ustaw zmienną środowiskową `LOCALE` na język wyzwania (wyzwań), które musisz przetestować.  Obecnie akceptowane wartości to `angielski`, `arabski`, `chiński`, `portugalski`, `rosyjski` i `hiszpański`.
 
 2.  Przełączyć do katalogu `curriculum`:
 

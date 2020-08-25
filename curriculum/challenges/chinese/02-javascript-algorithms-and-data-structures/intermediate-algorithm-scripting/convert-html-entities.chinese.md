@@ -65,4 +65,5 @@ convertHTML("Dolce & Gabbana");
 ```js
 // solution required
 ```
-</section>
+
+/section>

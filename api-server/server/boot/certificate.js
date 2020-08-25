@@ -5,7 +5,6 @@ import dedent from 'dedent';
 import { Observable } from 'rx';
 import debug from 'debug';
 import { isEmail } from 'validator';
-import format from 'date-fns/format';
 import { reportError } from '../middlewares/sentry-error-handler.js';
 
 import { ifNoUser401 } from '../utils/middleware';
@@ -542,7 +541,7 @@ function createShowCert(app) {
           certTitle,
           username,
           name,
-          date: format(new Date(completedDate), 'MMMM D, YYYY'),
+          date: completedDate,
           completionTime
         });
       }

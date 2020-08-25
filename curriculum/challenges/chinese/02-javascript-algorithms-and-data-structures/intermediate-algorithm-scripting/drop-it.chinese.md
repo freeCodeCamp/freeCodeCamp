@@ -63,4 +63,5 @@ dropElements([1, 2, 3], function(n) {return n < 3; });
 ```js
 // solution required
 ```
-</section>
+
+/section>

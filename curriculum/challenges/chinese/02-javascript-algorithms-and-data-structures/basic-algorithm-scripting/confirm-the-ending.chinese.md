@@ -74,4 +74,5 @@ confirmEnding("Bastian", "n");
 ```js
 // solution required
 ```
-</section>
+
+/section>

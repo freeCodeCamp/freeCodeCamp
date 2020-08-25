@@ -59,8 +59,7 @@
     "test": "npm-run-all -p test:*",
     "test:client": "cd ./client && npm test && cd ../",
     "test:curriculum": "cd ./curriculum && npm test && cd ../",
-    "test:guide-formatting": "node ./tools/scripts/ci/ensure-guide-formatting.js",
-    "test:search-indexing": "jest ./search-indexing",
+    "test:curriculum-js": "jest --rootDir ./curriculum",
     "test:server": "cd ./api-server && npm test && cd ../",
     "test:tools": "jest ./tools",
     "test:utils": "jest --rootDir ./utils"
@@ -69,7 +68,7 @@
     "@freecodecamp/eslint-config": "^2.0.2",
     "babel-eslint": "^10.1.0",
     "cross-env": "^7.0.2",
-    "cypress": "^4.6.0",
+    "cypress": "^4.11.0",
     "debug": "^4.1.1",
     "docsify-cli": "^4.4.0",
     "dotenv": "^6.2.0",

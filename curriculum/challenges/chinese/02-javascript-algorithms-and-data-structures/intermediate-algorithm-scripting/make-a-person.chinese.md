@@ -78,4 +78,5 @@ bob.getFullName();
 ```js
 // solution required
 ```
-</section>
+
+/section>

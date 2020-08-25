@@ -769,6 +769,7 @@ export default function(User) {
       calendar,
       completedChallenges,
       isDonating,
+      joinDate,
       location,
       name,
       points,
@@ -813,6 +814,7 @@ export default function(User) {
         }
       })(),
       isDonating: showDonation ? isDonating : null,
+      joinDate: showAbout ? joinDate : '',
       location: showLocation ? location : '',
       name: showName ? name : '',
       points: showPoints ? points : null,
@@ -843,7 +845,8 @@ export default function(User) {
           points: progressTimestamps.length,
           completedChallenges,
           ...getProgress(progressTimestamps, timezone),
-          ...normaliseUserFields(user)
+          ...normaliseUserFields(user),
+          joinDate: user.id.getTimestamp()
         };
 
         const publicUser = prepUserForPublish(allUser, profileUI);

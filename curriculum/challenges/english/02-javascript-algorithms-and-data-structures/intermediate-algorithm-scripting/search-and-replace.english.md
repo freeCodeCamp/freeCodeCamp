@@ -30,6 +30,8 @@ tests:
     testString: assert.deepEqual(myReplace("Let us go to the store", "store", "mall"), "Let us go to the mall");
   - text: <code>myReplace("He is Sleeping on the couch", "Sleeping", "sitting")</code> should return "He is Sitting on the couch".
     testString: assert.deepEqual(myReplace("He is Sleeping on the couch", "Sleeping", "sitting"), "He is Sitting on the couch");
+  - text: <code>myReplace("I think we should look up there", "up", "Down")</code> should return "I think we should look down there".
+    testString: assert.deepEqual(myReplace("I think we should look up there", "up", "Down"), "I think we should look down there");
   - text: <code>myReplace("This has a spellngi error", "spellngi", "spelling")</code> should return "This has a spelling error".
     testString: assert.deepEqual(myReplace("This has a spellngi error", "spellngi", "spelling"), "This has a spelling error");
   - text: <code>myReplace("His name is Tom", "Tom", "john")</code> should return "His name is John".

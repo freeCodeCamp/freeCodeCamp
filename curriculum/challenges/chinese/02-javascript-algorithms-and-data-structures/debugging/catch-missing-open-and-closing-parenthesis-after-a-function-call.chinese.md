@@ -55,4 +55,5 @@ console.log(result);
 ```js
 // solution required
 ```
-</section>
+
+/section>

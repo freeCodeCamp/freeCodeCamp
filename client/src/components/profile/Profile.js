@@ -14,7 +14,6 @@ import { apiLocation } from '../../../config/env.json';
 
 const propTypes = {
   isSessionUser: PropTypes.bool,
-  navigate: PropTypes.func.isRequired,
   user: PropTypes.shape({
     profileUI: PropTypes.shape({
       isLocked: PropTypes.bool,
@@ -37,6 +36,7 @@ const propTypes = {
     isLinkedIn: PropTypes.bool,
     isTwitter: PropTypes.bool,
     isWebsite: PropTypes.bool,
+    joinDate: PropTypes.string,
     linkedin: PropTypes.string,
     location: PropTypes.string,
     name: PropTypes.string,
@@ -114,6 +114,7 @@ function renderProfile(user) {
     website,
     name,
     username,
+    joinDate,
     location,
     points,
     picture,
@@ -133,6 +134,7 @@ function renderProfile(user) {
         isLinkedIn={isLinkedIn}
         isTwitter={isTwitter}
         isWebsite={isWebsite}
+        joinDate={showAbout ? joinDate : null}
         linkedin={linkedin}
         location={showLocation ? location : null}
         name={showName ? name : null}
@@ -154,16 +156,11 @@ function renderProfile(user) {
   );
 }
 
-function Profile({ user, isSessionUser, navigate }) {
+function Profile({ user, isSessionUser }) {
   const {
     profileUI: { isLocked = true },
     username
   } = user;
-
-  const createHandleSignoutClick = navigate => e => {
-    e.preventDefault();
-    return navigate(`${apiLocation}/signout`);
-  };
 
   return (
     <Fragment>
@@ -182,8 +179,7 @@ function Profile({ user, isSessionUser, navigate }) {
               bsSize='lg'
               bsStyle='primary'
               className='btn-invert'
-              href={'/signout'}
-              onClick={createHandleSignoutClick(navigate)}
+              href={`${apiLocation}/signout`}
             >
               Sign me out of freeCodeCamp
             </Button>

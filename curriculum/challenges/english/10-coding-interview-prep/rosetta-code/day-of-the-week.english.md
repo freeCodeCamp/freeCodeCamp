@@ -23,11 +23,11 @@ Write a function that takes a start year and an end year and return an array of 
 tests:
   - text: <code>findXmasSunday</code> should be a function.
     testString: assert(typeof findXmasSunday === 'function');
-  - text: <code>findChristmasSunday(2000, 2100)</code> should return an array.
+  - text: <code>findXmasSunday(2000, 2100)</code> should return an array.
     testString: assert(typeof findXmasSunday(2000, 2100) === 'object');
-  - text: <code>findChristmasSunday(2008, 2121</code> should return [1977, 1983, 1988, 1994, 2005, 2011, 2016]
+  - text: <code>findXmasSunday(2008, 2121)</code> should return <code>[1977, 1983, 1988, 1994, 2005, 2011, 2016]</code>
     testString: assert.deepEqual(findXmasSunday(1970, 2017), firstSolution);
-  - text: <code>findChristmasSunday(2008, 2121</code> should return [2011, 2016, 2022, 2033, 2039, 2044, 2050, 2061, 2067, 2072, 2078, 2089, 2095, 2101, 2107, 2112, 2118]
+  - text: <code>findXmasSunday(2008, 2121)</code> should return <code>[2011, 2016, 2022, 2033, 2039, 2044, 2050, 2061, 2067, 2072, 2078, 2089, 2095, 2101, 2107, 2112, 2118]</code>
     testString: assert.deepEqual(findXmasSunday(2008, 2121), secondSolution);
 
 ```
