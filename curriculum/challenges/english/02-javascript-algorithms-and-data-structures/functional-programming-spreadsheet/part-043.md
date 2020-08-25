@@ -1,6 +1,6 @@
 ---
 id: 5d792535b0b3c198ee3ed6f9
-title: Part 043
+title: Part 43
 challengeType: 0
 isHidden: true
 ---
