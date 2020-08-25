@@ -175,7 +175,10 @@ Trying to parse ${fullPath}`);
 exports.createChallenge = createChallenge;
 
 function getEnglishPath(fullPath) {
-  const posix = path.posix.normalize(fullPath);
+  const posix = path
+    .normalize(fullPath)
+    .split(path.sep)
+    .join(path.posix.sep);
   const match = posix.match(/(.*curriculum\/challenges\/)([^/]*)(.*)(\2)(.*)/);
   const lang = getChallengeLang(fullPath);
   if (!isAcceptedLanguage(lang))
