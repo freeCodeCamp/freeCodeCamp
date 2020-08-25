@@ -66,9 +66,10 @@ and compare with the analytical solution.
   <li>cooling constant <big>$k$</big> shall be <code>0.07</code></li>
   <li>time interval to calculate shall be from <code>0 s</code> to <code>100 s</code></li>
 </ul> 
+First parameter to the function is initial time, second parameter is initial temperature, third parameter is elapsed time and fourth parameter is step size.
 </section>
 
-First parameter to the function is initial time, second parameter is initial temperature, third parameter is elapsed time and fourth parameter is step size.
+
 
 ## Tests
 <section id='tests'>
