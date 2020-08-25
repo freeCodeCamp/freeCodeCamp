@@ -152,10 +152,10 @@ Our community also has:
 
 - A [forum](https://forum.freecodecamp.org) where you can usually get programming help or project feedback within hours.
 - A [YouTube channel](https://youtube.com/freecodecamp) with free courses on Python, SQL, Android, and a wide variety of other technologies.
-- A [podcast](https://podcast.freecodecamp.org/) with technology insights and inspiring stories from developers.
-- A [Developer News](https://www.freecodecamp.org/news) publication, a free, open source, no-ads place to cross-post your blog articles.
+- A [technical publication](https://www.freecodecamp.org/news) with thousands of programming tutorials and articles about math and computer science.
+- A [Discord chat room](https://discord.gg/KVUmVXA) where you can hang out and talk with developers and people who are learning to code.
 
-> #### [Join our community here](https://www.freecodecamp.org/signin).
+> #### [Join the community here](https://www.freecodecamp.org/signin).
 
 ### Reporting Bugs and Issues
 
