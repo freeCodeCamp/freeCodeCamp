@@ -19,15 +19,20 @@ const mapStateToProps = createSelector(
 );
 
 function Login(props) {
-  const { children, isSignedIn, ...restProps } = props;
+  const {
+    block,
+    'data-test-label': dataTestLabel,
+    children,
+    isSignedIn
+  } = props;
   const href = isSignedIn ? '/learn' : `${apiLocation}/signin`;
   return (
     <Button
       bsStyle='default'
-      className={(restProps.block ? 'btn-cta-big' : '') + ' signup-btn btn-cta'}
+      className={(block ? 'btn-cta-big' : '') + ' signup-btn btn-cta'}
+      data-test-label={dataTestLabel}
       href={href}
       onClick={() => gtagReportConversion()}
-      {...restProps}
     >
       {children || 'Sign In'}
     </Button>
@@ -36,7 +41,9 @@ function Login(props) {
 
 Login.displayName = 'Login';
 Login.propTypes = {
+  block: PropTypes.bool,
   children: PropTypes.any,
+  'data-test-label': PropTypes.string,
   isSignedIn: PropTypes.bool
 };
 
