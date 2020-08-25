@@ -161,8 +161,8 @@ jobs:
       - name: Start MongoDB
         run: |
           powershell
+          $wc.DownloadFile("https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-3.6.19-signed.msi", "mongodb-win32-x86_64-2008plus-ssl-3.6.19-signed.msi")
           ls
-          wget https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-3.6.19-signed.msi -OutFile mongodb-win32-x86_64-2008plus-ssl-3.6.19-signed.msi
           msiexec.exe /q /i mongodb-win32-x86_64-2008plus-ssl-3.6.19-signed.msi
 
       - name: Seed MongoDB
